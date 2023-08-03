@@ -82,6 +82,10 @@ impl MembershipDatasourcesBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The account identifier of the Amazon Web Services account.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The ARN of the organization behavior graph.</p>
     pub fn graph_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.graph_arn = ::std::option::Option::Some(input.into());
@@ -91,6 +95,10 @@ impl MembershipDatasourcesBuilder {
     pub fn set_graph_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.graph_arn = input;
         self
+    }
+    /// <p>The ARN of the organization behavior graph.</p>
+    pub fn get_graph_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.graph_arn
     }
     /// Adds a key-value pair to `datasource_package_ingest_history`.
     ///
@@ -125,6 +133,20 @@ impl MembershipDatasourcesBuilder {
     ) -> Self {
         self.datasource_package_ingest_history = input;
         self
+    }
+    /// <p>Details on when a data source package was added to a behavior graph.</p>
+    pub fn get_datasource_package_ingest_history(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::DatasourcePackage,
+            ::std::collections::HashMap<
+                crate::types::DatasourcePackageIngestState,
+                crate::types::TimestampForCollection,
+            >,
+        >,
+    > {
+        &self.datasource_package_ingest_history
     }
     /// Consumes the builder and constructs a [`MembershipDatasources`](crate::types::MembershipDatasources).
     pub fn build(self) -> crate::types::MembershipDatasources {

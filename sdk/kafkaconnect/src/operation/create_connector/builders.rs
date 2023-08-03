@@ -36,6 +36,12 @@ impl CreateConnectorFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateConnector as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_connector::builders::CreateConnectorInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateConnectorFluentBuilder {
         self.inner = self.inner.set_capacity(input);
         self
     }
+    /// <p>Information about the capacity allocated to the connector. Exactly one of the two properties must be specified.</p>
+    pub fn get_capacity(&self) -> &::std::option::Option<crate::types::Capacity> {
+        self.inner.get_capacity()
+    }
     /// Adds a key-value pair to `connectorConfiguration`.
     ///
     /// To override the contents of this collection use [`set_connector_configuration`](Self::set_connector_configuration).
@@ -149,6 +159,14 @@ impl CreateConnectorFluentBuilder {
         self.inner = self.inner.set_connector_configuration(input);
         self
     }
+    /// <p>A map of keys to values that represent the configuration for the connector.</p>
+    pub fn get_connector_configuration(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_connector_configuration()
+    }
     /// <p>A summary description of the connector.</p>
     pub fn connector_description(
         mut self,
@@ -164,6 +182,10 @@ impl CreateConnectorFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_connector_description(input);
         self
+    }
+    /// <p>A summary description of the connector.</p>
+    pub fn get_connector_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connector_description()
     }
     /// <p>The name of the connector.</p>
     pub fn connector_name(
@@ -181,6 +203,10 @@ impl CreateConnectorFluentBuilder {
         self.inner = self.inner.set_connector_name(input);
         self
     }
+    /// <p>The name of the connector.</p>
+    pub fn get_connector_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connector_name()
+    }
     /// <p>Specifies which Apache Kafka cluster to connect to.</p>
     pub fn kafka_cluster(mut self, input: crate::types::KafkaCluster) -> Self {
         self.inner = self.inner.kafka_cluster(input);
@@ -193,6 +219,10 @@ impl CreateConnectorFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_kafka_cluster(input);
         self
+    }
+    /// <p>Specifies which Apache Kafka cluster to connect to.</p>
+    pub fn get_kafka_cluster(&self) -> &::std::option::Option<crate::types::KafkaCluster> {
+        self.inner.get_kafka_cluster()
     }
     /// <p>Details of the client authentication used by the Apache Kafka cluster.</p>
     pub fn kafka_cluster_client_authentication(
@@ -210,6 +240,12 @@ impl CreateConnectorFluentBuilder {
         self.inner = self.inner.set_kafka_cluster_client_authentication(input);
         self
     }
+    /// <p>Details of the client authentication used by the Apache Kafka cluster.</p>
+    pub fn get_kafka_cluster_client_authentication(
+        &self,
+    ) -> &::std::option::Option<crate::types::KafkaClusterClientAuthentication> {
+        self.inner.get_kafka_cluster_client_authentication()
+    }
     /// <p>Details of encryption in transit to the Apache Kafka cluster.</p>
     pub fn kafka_cluster_encryption_in_transit(
         mut self,
@@ -225,6 +261,12 @@ impl CreateConnectorFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_kafka_cluster_encryption_in_transit(input);
         self
+    }
+    /// <p>Details of encryption in transit to the Apache Kafka cluster.</p>
+    pub fn get_kafka_cluster_encryption_in_transit(
+        &self,
+    ) -> &::std::option::Option<crate::types::KafkaClusterEncryptionInTransit> {
+        self.inner.get_kafka_cluster_encryption_in_transit()
     }
     /// <p>The version of Kafka Connect. It has to be compatible with both the Apache Kafka cluster's version and the plugins.</p>
     pub fn kafka_connect_version(
@@ -242,6 +284,10 @@ impl CreateConnectorFluentBuilder {
         self.inner = self.inner.set_kafka_connect_version(input);
         self
     }
+    /// <p>The version of Kafka Connect. It has to be compatible with both the Apache Kafka cluster's version and the plugins.</p>
+    pub fn get_kafka_connect_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kafka_connect_version()
+    }
     /// <p>Details about log delivery.</p>
     pub fn log_delivery(mut self, input: crate::types::LogDelivery) -> Self {
         self.inner = self.inner.log_delivery(input);
@@ -254,6 +300,10 @@ impl CreateConnectorFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_log_delivery(input);
         self
+    }
+    /// <p>Details about log delivery.</p>
+    pub fn get_log_delivery(&self) -> &::std::option::Option<crate::types::LogDelivery> {
+        self.inner.get_log_delivery()
     }
     /// Appends an item to `plugins`.
     ///
@@ -272,6 +322,10 @@ impl CreateConnectorFluentBuilder {
         self.inner = self.inner.set_plugins(input);
         self
     }
+    /// <p>Specifies which plugins to use for the connector.</p>
+    pub fn get_plugins(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Plugin>> {
+        self.inner.get_plugins()
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used by the connector to access the Amazon Web Services resources that it needs. The types of resources depends on the logic of the connector. For example, a connector that has Amazon S3 as a destination must have permissions that allow it to write to the S3 destination bucket.</p>
     pub fn service_execution_role_arn(
         mut self,
@@ -288,6 +342,10 @@ impl CreateConnectorFluentBuilder {
         self.inner = self.inner.set_service_execution_role_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role used by the connector to access the Amazon Web Services resources that it needs. The types of resources depends on the logic of the connector. For example, a connector that has Amazon S3 as a destination must have permissions that allow it to write to the S3 destination bucket.</p>
+    pub fn get_service_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_execution_role_arn()
+    }
     /// <p>Specifies which worker configuration to use with the connector.</p>
     pub fn worker_configuration(mut self, input: crate::types::WorkerConfiguration) -> Self {
         self.inner = self.inner.worker_configuration(input);
@@ -300,5 +358,11 @@ impl CreateConnectorFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_worker_configuration(input);
         self
+    }
+    /// <p>Specifies which worker configuration to use with the connector.</p>
+    pub fn get_worker_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::WorkerConfiguration> {
+        self.inner.get_worker_configuration()
     }
 }

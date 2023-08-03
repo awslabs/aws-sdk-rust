@@ -49,6 +49,10 @@ impl RemoveFlowVpcInterfaceInputBuilder {
         self.flow_arn = input;
         self
     }
+    /// The flow that you want to remove a VPC interface from.
+    pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_arn
+    }
     /// The name of the VPC interface that you want to remove.
     pub fn vpc_interface_name(
         mut self,
@@ -64,6 +68,10 @@ impl RemoveFlowVpcInterfaceInputBuilder {
     ) -> Self {
         self.vpc_interface_name = input;
         self
+    }
+    /// The name of the VPC interface that you want to remove.
+    pub fn get_vpc_interface_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_interface_name
     }
     /// Consumes the builder and constructs a [`RemoveFlowVpcInterfaceInput`](crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterfaceInput).
     pub fn build(

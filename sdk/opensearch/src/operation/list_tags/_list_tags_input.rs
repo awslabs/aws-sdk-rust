@@ -40,6 +40,10 @@ impl ListTagsInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) for the domain to view tags for.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`ListTagsInput`](crate::operation::list_tags::ListTagsInput).
     pub fn build(
         self,

@@ -38,6 +38,10 @@ impl DeleteCustomVerificationEmailTemplateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteCustomVerificationEmailTemplate as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_custom_verification_email_template::builders::DeleteCustomVerificationEmailTemplateInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -107,5 +111,9 @@ impl DeleteCustomVerificationEmailTemplateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_template_name(input);
         self
+    }
+    /// <p>The name of the custom verification email template that you want to delete.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_name()
     }
 }

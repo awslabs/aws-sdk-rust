@@ -37,6 +37,13 @@ impl RemoveFlowVpcInterfaceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RemoveFlowVpcInterface as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::remove_flow_vpc_interface::builders::RemoveFlowVpcInterfaceInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl RemoveFlowVpcInterfaceFluentBuilder {
         self.inner = self.inner.set_flow_arn(input);
         self
     }
+    /// The flow that you want to remove a VPC interface from.
+    pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_flow_arn()
+    }
     /// The name of the VPC interface that you want to remove.
     pub fn vpc_interface_name(
         mut self,
@@ -142,5 +153,9 @@ impl RemoveFlowVpcInterfaceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_vpc_interface_name(input);
         self
+    }
+    /// The name of the VPC interface that you want to remove.
+    pub fn get_vpc_interface_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpc_interface_name()
     }
 }

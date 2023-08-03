@@ -36,6 +36,12 @@ impl ListScheduledQueriesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListScheduledQueries as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_scheduled_queries::builders::ListScheduledQueriesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl ListScheduledQueriesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of items to return in the output. If the total number of items available is more than the value specified, a <code>NextToken</code> is provided in the output. To resume pagination, provide the <code>NextToken</code> value as the argument to the subsequent call to <code>ListScheduledQueriesRequest</code>.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p> A pagination token to resume pagination.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -146,5 +156,9 @@ impl ListScheduledQueriesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p> A pagination token to resume pagination.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

@@ -65,6 +65,10 @@ impl CreateAppImageConfigInputBuilder {
         self.app_image_config_name = input;
         self
     }
+    /// <p>The name of the AppImageConfig. Must be unique to your account.</p>
+    pub fn get_app_image_config_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_image_config_name
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -84,6 +88,10 @@ impl CreateAppImageConfigInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>A list of tags to apply to the AppImageConfig.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The KernelGatewayImageConfig. You can only specify one image kernel in the AppImageConfig API. This kernel will be shown to users before the image starts. Once the image runs, all kernels are visible in JupyterLab.</p>
     pub fn kernel_gateway_image_config(
         mut self,
@@ -99,6 +107,12 @@ impl CreateAppImageConfigInputBuilder {
     ) -> Self {
         self.kernel_gateway_image_config = input;
         self
+    }
+    /// <p>The KernelGatewayImageConfig. You can only specify one image kernel in the AppImageConfig API. This kernel will be shown to users before the image starts. Once the image runs, all kernels are visible in JupyterLab.</p>
+    pub fn get_kernel_gateway_image_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::KernelGatewayImageConfig> {
+        &self.kernel_gateway_image_config
     }
     /// Consumes the builder and constructs a [`CreateAppImageConfigInput`](crate::operation::create_app_image_config::CreateAppImageConfigInput).
     pub fn build(

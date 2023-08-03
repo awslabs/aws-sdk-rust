@@ -40,6 +40,10 @@ impl TeletextSourceSettingsBuilder {
         self.page_number = input;
         self
     }
+    /// Use Page Number to specify the three-digit hexadecimal page number that will be used for Teletext captions. Do not use this setting if you are passing through teletext from the input source to output.
+    pub fn get_page_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.page_number
+    }
     /// Consumes the builder and constructs a [`TeletextSourceSettings`](crate::types::TeletextSourceSettings).
     pub fn build(self) -> crate::types::TeletextSourceSettings {
         crate::types::TeletextSourceSettings {

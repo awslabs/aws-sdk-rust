@@ -56,6 +56,10 @@ impl DescribeDbEngineVersionsOutputBuilder {
         self.marker = input;
         self
     }
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// Appends an item to `db_engine_versions`.
     ///
     /// To override the contents of this collection use [`set_db_engine_versions`](Self::set_db_engine_versions).
@@ -74,6 +78,12 @@ impl DescribeDbEngineVersionsOutputBuilder {
     ) -> Self {
         self.db_engine_versions = input;
         self
+    }
+    /// <p>Detailed information about one or more engine versions.</p>
+    pub fn get_db_engine_versions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DbEngineVersion>> {
+        &self.db_engine_versions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

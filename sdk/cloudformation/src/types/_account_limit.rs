@@ -59,6 +59,11 @@ impl AccountLimitBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the account limit.</p>
+    /// <p>Values: <code>ConcurrentResourcesLimit</code> | <code>StackLimit</code> | <code>StackOutputsLimit</code> </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The value that's associated with the account limit name.</p>
     pub fn value(mut self, input: i32) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -68,6 +73,10 @@ impl AccountLimitBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<i32>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value that's associated with the account limit name.</p>
+    pub fn get_value(&self) -> &::std::option::Option<i32> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`AccountLimit`](crate::types::AccountLimit).
     pub fn build(self) -> crate::types::AccountLimit {

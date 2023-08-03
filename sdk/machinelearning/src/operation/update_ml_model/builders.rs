@@ -37,6 +37,12 @@ impl UpdateMLModelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateMLModel as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_ml_model::builders::UpdateMlModelInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +125,10 @@ impl UpdateMLModelFluentBuilder {
         self.inner = self.inner.set_ml_model_id(input);
         self
     }
+    /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
+    pub fn get_ml_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ml_model_id()
+    }
     /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
     pub fn ml_model_name(
         mut self,
@@ -135,6 +145,10 @@ impl UpdateMLModelFluentBuilder {
         self.inner = self.inner.set_ml_model_name(input);
         self
     }
+    /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
+    pub fn get_ml_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ml_model_name()
+    }
     /// <p>The <code>ScoreThreshold</code> used in binary classification <code>MLModel</code> that marks the boundary between a positive prediction and a negative prediction.</p>
     /// <p>Output values greater than or equal to the <code>ScoreThreshold</code> receive a positive result from the <code>MLModel</code>, such as <code>true</code>. Output values less than the <code>ScoreThreshold</code> receive a negative response from the <code>MLModel</code>, such as <code>false</code>.</p>
     pub fn score_threshold(mut self, input: f32) -> Self {
@@ -146,5 +160,10 @@ impl UpdateMLModelFluentBuilder {
     pub fn set_score_threshold(mut self, input: ::std::option::Option<f32>) -> Self {
         self.inner = self.inner.set_score_threshold(input);
         self
+    }
+    /// <p>The <code>ScoreThreshold</code> used in binary classification <code>MLModel</code> that marks the boundary between a positive prediction and a negative prediction.</p>
+    /// <p>Output values greater than or equal to the <code>ScoreThreshold</code> receive a positive result from the <code>MLModel</code>, such as <code>true</code>. Output values less than the <code>ScoreThreshold</code> receive a negative response from the <code>MLModel</code>, such as <code>false</code>.</p>
+    pub fn get_score_threshold(&self) -> &::std::option::Option<f32> {
+        self.inner.get_score_threshold()
     }
 }

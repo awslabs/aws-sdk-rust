@@ -53,6 +53,10 @@ impl StopVoiceToneAnalysisTaskInputBuilder {
         self.voice_connector_id = input;
         self
     }
+    /// <p>The Voice Connector ID.</p>
+    pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_connector_id
+    }
     /// <p>The ID of the voice tone analysis task.</p>
     pub fn voice_tone_analysis_task_id(
         mut self,
@@ -68,6 +72,10 @@ impl StopVoiceToneAnalysisTaskInputBuilder {
     ) -> Self {
         self.voice_tone_analysis_task_id = input;
         self
+    }
+    /// <p>The ID of the voice tone analysis task.</p>
+    pub fn get_voice_tone_analysis_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_tone_analysis_task_id
     }
     /// Consumes the builder and constructs a [`StopVoiceToneAnalysisTaskInput`](crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTaskInput).
     pub fn build(

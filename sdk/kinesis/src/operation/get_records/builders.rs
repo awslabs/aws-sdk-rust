@@ -45,6 +45,10 @@ impl GetRecordsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetRecords as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_records::builders::GetRecordsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,10 @@ impl GetRecordsFluentBuilder {
         self.inner = self.inner.set_shard_iterator(input);
         self
     }
+    /// <p>The position in the shard from which you want to start sequentially reading data records. A shard iterator specifies this position using the sequence number of a data record in the shard.</p>
+    pub fn get_shard_iterator(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_shard_iterator()
+    }
     /// <p>The maximum number of records to return. Specify a value of up to 10,000. If you specify a value that is greater than 10,000, <code>GetRecords</code> throws <code>InvalidArgumentException</code>. The default value is 10,000.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -143,6 +151,10 @@ impl GetRecordsFluentBuilder {
         self.inner = self.inner.set_limit(input);
         self
     }
+    /// <p>The maximum number of records to return. Specify a value of up to 10,000. If you specify a value that is greater than 10,000, <code>GetRecords</code> throws <code>InvalidArgumentException</code>. The default value is 10,000.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
+    }
     /// <p>The ARN of the stream.</p>
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stream_arn(input.into());
@@ -152,5 +164,9 @@ impl GetRecordsFluentBuilder {
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stream_arn(input);
         self
+    }
+    /// <p>The ARN of the stream.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_arn()
     }
 }

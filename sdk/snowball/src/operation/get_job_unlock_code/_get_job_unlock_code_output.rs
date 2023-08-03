@@ -47,6 +47,10 @@ impl GetJobUnlockCodeOutputBuilder {
         self.unlock_code = input;
         self
     }
+    /// <p>The <code>UnlockCode</code> value for the specified job. The <code>UnlockCode</code> value can be accessed for up to 360 days after the job has been created.</p>
+    pub fn get_unlock_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.unlock_code
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -39,6 +39,10 @@ impl GetFirewallRuleGroupPolicyInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN (Amazon Resource Name) for the rule group.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`GetFirewallRuleGroupPolicyInput`](crate::operation::get_firewall_rule_group_policy::GetFirewallRuleGroupPolicyInput).
     pub fn build(
         self,

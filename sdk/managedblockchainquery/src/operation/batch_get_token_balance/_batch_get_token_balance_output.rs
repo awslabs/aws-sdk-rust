@@ -70,6 +70,12 @@ impl BatchGetTokenBalanceOutputBuilder {
         self.token_balances = input;
         self
     }
+    /// <p>An array of <code>BatchGetTokenBalanceOutputItem</code> objects returned by the response.</p>
+    pub fn get_token_balances(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetTokenBalanceOutputItem>> {
+        &self.token_balances
+    }
     /// Appends an item to `errors`.
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
@@ -88,6 +94,12 @@ impl BatchGetTokenBalanceOutputBuilder {
     ) -> Self {
         self.errors = input;
         self
+    }
+    /// <p>An array of <code>BatchGetTokenBalanceErrorItem</code> objects returned from the request.</p>
+    pub fn get_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetTokenBalanceErrorItem>> {
+        &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

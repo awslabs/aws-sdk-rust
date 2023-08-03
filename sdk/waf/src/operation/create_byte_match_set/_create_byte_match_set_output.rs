@@ -59,6 +59,10 @@ impl CreateByteMatchSetOutputBuilder {
         self.byte_match_set = input;
         self
     }
+    /// <p>A <code>ByteMatchSet</code> that contains no <code>ByteMatchTuple</code> objects.</p>
+    pub fn get_byte_match_set(&self) -> &::std::option::Option<crate::types::ByteMatchSet> {
+        &self.byte_match_set
+    }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateByteMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_token = ::std::option::Option::Some(input.into());
@@ -68,6 +72,10 @@ impl CreateByteMatchSetOutputBuilder {
     pub fn set_change_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_token = input;
         self
+    }
+    /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateByteMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
+    pub fn get_change_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.change_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

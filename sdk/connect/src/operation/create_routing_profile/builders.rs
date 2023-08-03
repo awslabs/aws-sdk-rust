@@ -36,6 +36,12 @@ impl CreateRoutingProfileFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateRoutingProfile as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_routing_profile::builders::CreateRoutingProfileInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateRoutingProfileFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>The name of the routing profile. Must not be more than 127 characters.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -136,6 +146,10 @@ impl CreateRoutingProfileFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the routing profile. Must not be more than 127 characters.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>Description of the routing profile. Must not be more than 250 characters.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -145,6 +159,10 @@ impl CreateRoutingProfileFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>Description of the routing profile. Must not be more than 250 characters.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The default outbound queue for the routing profile.</p>
     pub fn default_outbound_queue_id(
@@ -161,6 +179,10 @@ impl CreateRoutingProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_default_outbound_queue_id(input);
         self
+    }
+    /// <p>The default outbound queue for the routing profile.</p>
+    pub fn get_default_outbound_queue_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_default_outbound_queue_id()
     }
     /// Appends an item to `QueueConfigs`.
     ///
@@ -181,6 +203,13 @@ impl CreateRoutingProfileFluentBuilder {
         self.inner = self.inner.set_queue_configs(input);
         self
     }
+    /// <p>The inbound queues associated with the routing profile. If no queue is added, the agent can make only outbound calls.</p>
+    /// <p>The limit of 10 array members applies to the maximum number of <code>RoutingProfileQueueConfig</code> objects that can be passed during a CreateRoutingProfile API request. It is different from the quota of 50 queues per routing profile per instance that is listed in <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect service quotas</a>. </p>
+    pub fn get_queue_configs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueConfig>> {
+        self.inner.get_queue_configs()
+    }
     /// Appends an item to `MediaConcurrencies`.
     ///
     /// To override the contents of this collection use [`set_media_concurrencies`](Self::set_media_concurrencies).
@@ -197,6 +226,12 @@ impl CreateRoutingProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_media_concurrencies(input);
         self
+    }
+    /// <p>The channels that agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
+    pub fn get_media_concurrencies(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaConcurrency>> {
+        self.inner.get_media_concurrencies()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -220,5 +255,13 @@ impl CreateRoutingProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

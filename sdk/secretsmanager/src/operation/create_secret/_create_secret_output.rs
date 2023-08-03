@@ -84,6 +84,10 @@ impl CreateSecretOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the new secret. The ARN includes the name of the secret followed by six random characters. This ensures that if you create a new secret with the same name as a deleted secret, then users with access to the old secret don't get access to the new secret because the ARNs are different.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the new secret.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -94,6 +98,10 @@ impl CreateSecretOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the new secret.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The unique identifier associated with the version of the new secret.</p>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_id = ::std::option::Option::Some(input.into());
@@ -103,6 +111,10 @@ impl CreateSecretOutputBuilder {
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_id = input;
         self
+    }
+    /// <p>The unique identifier associated with the version of the new secret.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_id
     }
     /// Appends an item to `replication_status`.
     ///
@@ -132,6 +144,17 @@ impl CreateSecretOutputBuilder {
     ) -> Self {
         self.replication_status = input;
         self
+    }
+    /// <p>A list of the replicas of this secret and their status:</p>
+    /// <ul>
+    /// <li> <p> <code>Failed</code>, which indicates that the replica was not created.</p> </li>
+    /// <li> <p> <code>InProgress</code>, which indicates that Secrets Manager is in the process of creating the replica.</p> </li>
+    /// <li> <p> <code>InSync</code>, which indicates that the replica was created.</p> </li>
+    /// </ul>
+    pub fn get_replication_status(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatusType>> {
+        &self.replication_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

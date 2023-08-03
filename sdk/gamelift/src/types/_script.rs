@@ -90,6 +90,10 @@ impl ScriptBuilder {
         self.script_id = input;
         self
     }
+    /// <p>A unique identifier for the Realtime script</p>
+    pub fn get_script_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.script_id
+    }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift script resource and uniquely identifies it. ARNs are unique across all Regions. In a GameLift script ARN, the resource ID matches the <i>ScriptId</i> value.</p>
     pub fn script_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.script_arn = ::std::option::Option::Some(input.into());
@@ -99,6 +103,10 @@ impl ScriptBuilder {
     pub fn set_script_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.script_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift script resource and uniquely identifies it. ARNs are unique across all Regions. In a GameLift script ARN, the resource ID matches the <i>ScriptId</i> value.</p>
+    pub fn get_script_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.script_arn
     }
     /// <p>A descriptive label that is associated with a script. Script names don't need to be unique.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -110,6 +118,10 @@ impl ScriptBuilder {
         self.name = input;
         self
     }
+    /// <p>A descriptive label that is associated with a script. Script names don't need to be unique.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Version information associated with a build or script. Version strings don't need to be unique.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -120,6 +132,10 @@ impl ScriptBuilder {
         self.version = input;
         self
     }
+    /// <p>Version information associated with a build or script. Version strings don't need to be unique.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
+    }
     /// <p>The file size of the uploaded Realtime script, expressed in bytes. When files are uploaded from an S3 location, this value remains at "0".</p>
     pub fn size_on_disk(mut self, input: i64) -> Self {
         self.size_on_disk = ::std::option::Option::Some(input);
@@ -129,6 +145,10 @@ impl ScriptBuilder {
     pub fn set_size_on_disk(mut self, input: ::std::option::Option<i64>) -> Self {
         self.size_on_disk = input;
         self
+    }
+    /// <p>The file size of the uploaded Realtime script, expressed in bytes. When files are uploaded from an S3 location, this value remains at "0".</p>
+    pub fn get_size_on_disk(&self) -> &::std::option::Option<i64> {
+        &self.size_on_disk
     }
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -143,6 +163,10 @@ impl ScriptBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
     pub fn storage_location(mut self, input: crate::types::S3Location) -> Self {
         self.storage_location = ::std::option::Option::Some(input);
@@ -155,6 +179,10 @@ impl ScriptBuilder {
     ) -> Self {
         self.storage_location = input;
         self
+    }
+    /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
+    pub fn get_storage_location(&self) -> &::std::option::Option<crate::types::S3Location> {
+        &self.storage_location
     }
     /// Consumes the builder and constructs a [`Script`](crate::types::Script).
     pub fn build(self) -> crate::types::Script {

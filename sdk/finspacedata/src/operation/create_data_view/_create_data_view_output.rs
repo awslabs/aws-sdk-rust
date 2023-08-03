@@ -55,6 +55,10 @@ impl CreateDataViewOutputBuilder {
         self.dataset_id = input;
         self
     }
+    /// <p>The unique identifier of the Dataset used for the Dataview.</p>
+    pub fn get_dataset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_id
+    }
     /// <p>The unique identifier for the created Dataview.</p>
     pub fn data_view_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_view_id = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl CreateDataViewOutputBuilder {
     pub fn set_data_view_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_view_id = input;
         self
+    }
+    /// <p>The unique identifier for the created Dataview.</p>
+    pub fn get_data_view_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_view_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -154,6 +154,10 @@ impl ProjectBuilder {
         self.arn = input;
         self
     }
+    /// <p>The name or ARN of the project.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the project.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -163,6 +167,10 @@ impl ProjectBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the project.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The current state of the project.</p>
     pub fn status(mut self, input: crate::types::ProjectStatus) -> Self {
@@ -174,6 +182,10 @@ impl ProjectBuilder {
         self.status = input;
         self
     }
+    /// <p>The current state of the project.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ProjectStatus> {
+        &self.status
+    }
     /// <p>The user-entered description of the project.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -183,6 +195,10 @@ impl ProjectBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The user-entered description of the project.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The date and time that the project is created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -197,6 +213,10 @@ impl ProjectBuilder {
         self.created_time = input;
         self
     }
+    /// <p>The date and time that the project is created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
     /// <p>The date and time that the project was most recently updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
@@ -210,6 +230,10 @@ impl ProjectBuilder {
         self.last_updated_time = input;
         self
     }
+    /// <p>The date and time that the project was most recently updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
+    }
     /// <p>The number of features currently in the project.</p>
     pub fn feature_count(mut self, input: i64) -> Self {
         self.feature_count = ::std::option::Option::Some(input);
@@ -219,6 +243,10 @@ impl ProjectBuilder {
     pub fn set_feature_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.feature_count = input;
         self
+    }
+    /// <p>The number of features currently in the project.</p>
+    pub fn get_feature_count(&self) -> &::std::option::Option<i64> {
+        &self.feature_count
     }
     /// <p>The number of launches currently in the project. This includes all launches that have been created and not deleted, whether they are ongoing or not.</p>
     pub fn launch_count(mut self, input: i64) -> Self {
@@ -230,6 +258,10 @@ impl ProjectBuilder {
         self.launch_count = input;
         self
     }
+    /// <p>The number of launches currently in the project. This includes all launches that have been created and not deleted, whether they are ongoing or not.</p>
+    pub fn get_launch_count(&self) -> &::std::option::Option<i64> {
+        &self.launch_count
+    }
     /// <p>The number of ongoing launches currently in the project.</p>
     pub fn active_launch_count(mut self, input: i64) -> Self {
         self.active_launch_count = ::std::option::Option::Some(input);
@@ -239,6 +271,10 @@ impl ProjectBuilder {
     pub fn set_active_launch_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.active_launch_count = input;
         self
+    }
+    /// <p>The number of ongoing launches currently in the project.</p>
+    pub fn get_active_launch_count(&self) -> &::std::option::Option<i64> {
+        &self.active_launch_count
     }
     /// <p>The number of experiments currently in the project. This includes all experiments that have been created and not deleted, whether they are ongoing or not.</p>
     pub fn experiment_count(mut self, input: i64) -> Self {
@@ -250,6 +286,10 @@ impl ProjectBuilder {
         self.experiment_count = input;
         self
     }
+    /// <p>The number of experiments currently in the project. This includes all experiments that have been created and not deleted, whether they are ongoing or not.</p>
+    pub fn get_experiment_count(&self) -> &::std::option::Option<i64> {
+        &self.experiment_count
+    }
     /// <p>The number of ongoing experiments currently in the project.</p>
     pub fn active_experiment_count(mut self, input: i64) -> Self {
         self.active_experiment_count = ::std::option::Option::Some(input);
@@ -259,6 +299,10 @@ impl ProjectBuilder {
     pub fn set_active_experiment_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.active_experiment_count = input;
         self
+    }
+    /// <p>The number of ongoing experiments currently in the project.</p>
+    pub fn get_active_experiment_count(&self) -> &::std::option::Option<i64> {
+        &self.active_experiment_count
     }
     /// <p>A structure that contains information about where Evidently is to store evaluation events for longer term storage.</p>
     pub fn data_delivery(mut self, input: crate::types::ProjectDataDelivery) -> Self {
@@ -273,6 +317,10 @@ impl ProjectBuilder {
         self.data_delivery = input;
         self
     }
+    /// <p>A structure that contains information about where Evidently is to store evaluation events for longer term storage.</p>
+    pub fn get_data_delivery(&self) -> &::std::option::Option<crate::types::ProjectDataDelivery> {
+        &self.data_delivery
+    }
     /// <p>This structure defines the configuration of how your application integrates with AppConfig to run client-side evaluation.</p>
     pub fn app_config_resource(mut self, input: crate::types::ProjectAppConfigResource) -> Self {
         self.app_config_resource = ::std::option::Option::Some(input);
@@ -285,6 +333,12 @@ impl ProjectBuilder {
     ) -> Self {
         self.app_config_resource = input;
         self
+    }
+    /// <p>This structure defines the configuration of how your application integrates with AppConfig to run client-side evaluation.</p>
+    pub fn get_app_config_resource(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProjectAppConfigResource> {
+        &self.app_config_resource
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -310,6 +364,14 @@ impl ProjectBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The list of tag keys and values associated with this project.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`Project`](crate::types::Project).
     pub fn build(self) -> crate::types::Project {

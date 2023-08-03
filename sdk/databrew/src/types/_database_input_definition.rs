@@ -70,6 +70,10 @@ impl DatabaseInputDefinitionBuilder {
         self.glue_connection_name = input;
         self
     }
+    /// <p>The Glue Connection that stores the connection information for the target database.</p>
+    pub fn get_glue_connection_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.glue_connection_name
+    }
     /// <p>The table within the target database.</p>
     pub fn database_table_name(
         mut self,
@@ -86,6 +90,10 @@ impl DatabaseInputDefinitionBuilder {
         self.database_table_name = input;
         self
     }
+    /// <p>The table within the target database.</p>
+    pub fn get_database_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_table_name
+    }
     /// <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.</p>
     pub fn temp_directory(mut self, input: crate::types::S3Location) -> Self {
         self.temp_directory = ::std::option::Option::Some(input);
@@ -99,6 +107,10 @@ impl DatabaseInputDefinitionBuilder {
         self.temp_directory = input;
         self
     }
+    /// <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.</p>
+    pub fn get_temp_directory(&self) -> &::std::option::Option<crate::types::S3Location> {
+        &self.temp_directory
+    }
     /// <p>Custom SQL to run against the provided Glue connection. This SQL will be used as the input for DataBrew projects and jobs.</p>
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_string = ::std::option::Option::Some(input.into());
@@ -108,6 +120,10 @@ impl DatabaseInputDefinitionBuilder {
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_string = input;
         self
+    }
+    /// <p>Custom SQL to run against the provided Glue connection. This SQL will be used as the input for DataBrew projects and jobs.</p>
+    pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_string
     }
     /// Consumes the builder and constructs a [`DatabaseInputDefinition`](crate::types::DatabaseInputDefinition).
     pub fn build(self) -> crate::types::DatabaseInputDefinition {

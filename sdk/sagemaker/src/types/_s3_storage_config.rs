@@ -68,6 +68,11 @@ impl S3StorageConfigBuilder {
         self.s3_uri = input;
         self
     }
+    /// <p>The S3 URI, or location in Amazon S3, of <code>OfflineStore</code>.</p>
+    /// <p>S3 URIs have a format similar to the following: <code>s3://example-bucket/prefix/</code>.</p>
+    pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_uri
+    }
     /// <p>The Amazon Web Services Key Management Service (KMS) key ARN of the key used to encrypt any objects written into the <code>OfflineStore</code> S3 location.</p>
     /// <p>The IAM <code>roleARN</code> that is passed as a parameter to <code>CreateFeatureGroup</code> must have below permissions to the <code>KmsKeyId</code>:</p>
     /// <ul>
@@ -86,6 +91,14 @@ impl S3StorageConfigBuilder {
         self.kms_key_id = input;
         self
     }
+    /// <p>The Amazon Web Services Key Management Service (KMS) key ARN of the key used to encrypt any objects written into the <code>OfflineStore</code> S3 location.</p>
+    /// <p>The IAM <code>roleARN</code> that is passed as a parameter to <code>CreateFeatureGroup</code> must have below permissions to the <code>KmsKeyId</code>:</p>
+    /// <ul>
+    /// <li> <p> <code>"kms:GenerateDataKey"</code> </p> </li>
+    /// </ul>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
+    }
     /// <p>The S3 path where offline records are written.</p>
     pub fn resolved_output_s3_uri(
         mut self,
@@ -101,6 +114,10 @@ impl S3StorageConfigBuilder {
     ) -> Self {
         self.resolved_output_s3_uri = input;
         self
+    }
+    /// <p>The S3 path where offline records are written.</p>
+    pub fn get_resolved_output_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resolved_output_s3_uri
     }
     /// Consumes the builder and constructs a [`S3StorageConfig`](crate::types::S3StorageConfig).
     pub fn build(self) -> crate::types::S3StorageConfig {

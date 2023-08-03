@@ -47,6 +47,10 @@ impl DescribeEndpointGroupInputBuilder {
         self.endpoint_group_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the endpoint group to describe.</p>
+    pub fn get_endpoint_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_group_arn
+    }
     /// Consumes the builder and constructs a [`DescribeEndpointGroupInput`](crate::operation::describe_endpoint_group::DescribeEndpointGroupInput).
     pub fn build(
         self,

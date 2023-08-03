@@ -61,6 +61,12 @@ impl UserGroupsUpdateStatusBuilder {
         self.user_group_ids_to_add = input;
         self
     }
+    /// <p>The ID of the user group to add.</p>
+    pub fn get_user_group_ids_to_add(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.user_group_ids_to_add
+    }
     /// Appends an item to `user_group_ids_to_remove`.
     ///
     /// To override the contents of this collection use [`set_user_group_ids_to_remove`](Self::set_user_group_ids_to_remove).
@@ -82,6 +88,12 @@ impl UserGroupsUpdateStatusBuilder {
     ) -> Self {
         self.user_group_ids_to_remove = input;
         self
+    }
+    /// <p>The ID of the user group to remove.</p>
+    pub fn get_user_group_ids_to_remove(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.user_group_ids_to_remove
     }
     /// Consumes the builder and constructs a [`UserGroupsUpdateStatus`](crate::types::UserGroupsUpdateStatus).
     pub fn build(self) -> crate::types::UserGroupsUpdateStatus {

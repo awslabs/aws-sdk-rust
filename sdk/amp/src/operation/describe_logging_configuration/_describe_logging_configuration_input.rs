@@ -40,6 +40,10 @@ impl DescribeLoggingConfigurationInputBuilder {
         self.workspace_id = input;
         self
     }
+    /// The ID of the workspace to vend logs to.
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
+    }
     /// Consumes the builder and constructs a [`DescribeLoggingConfigurationInput`](crate::operation::describe_logging_configuration::DescribeLoggingConfigurationInput).
     pub fn build(
         self,

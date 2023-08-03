@@ -36,6 +36,13 @@ impl DeleteSourceRepositoryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteSourceRepository as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_source_repository::builders::DeleteSourceRepositoryInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl DeleteSourceRepositoryFluentBuilder {
         self.inner = self.inner.set_space_name(input);
         self
     }
+    /// <p>The name of the space.</p>
+    pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_space_name()
+    }
     /// <p>The name of the project in the space.</p>
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.project_name(input.into());
@@ -136,6 +147,10 @@ impl DeleteSourceRepositoryFluentBuilder {
         self.inner = self.inner.set_project_name(input);
         self
     }
+    /// <p>The name of the project in the space.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_name()
+    }
     /// <p>The name of the source repository.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -145,5 +160,9 @@ impl DeleteSourceRepositoryFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the source repository.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
 }

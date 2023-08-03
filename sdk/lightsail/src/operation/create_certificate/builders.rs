@@ -39,6 +39,12 @@ impl CreateCertificateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateCertificate as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_certificate::builders::CreateCertificateInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +141,10 @@ impl CreateCertificateFluentBuilder {
         self.inner = self.inner.set_certificate_name(input);
         self
     }
+    /// <p>The name for the certificate.</p>
+    pub fn get_certificate_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_certificate_name()
+    }
     /// <p>The domain name (e.g., <code>example.com</code>) for the certificate.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_name(input.into());
@@ -144,6 +154,10 @@ impl CreateCertificateFluentBuilder {
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_name(input);
         self
+    }
+    /// <p>The domain name (e.g., <code>example.com</code>) for the certificate.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
     }
     /// Appends an item to `subjectAlternativeNames`.
     ///
@@ -169,6 +183,14 @@ impl CreateCertificateFluentBuilder {
         self.inner = self.inner.set_subject_alternative_names(input);
         self
     }
+    /// <p>An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>) for the certificate.</p>
+    /// <p>You can specify a maximum of nine alternate domains (in addition to the primary domain name).</p>
+    /// <p>Wildcard domain entries (e.g., <code>*.example.com</code>) are not supported.</p>
+    pub fn get_subject_alternative_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_subject_alternative_names()
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -187,5 +209,10 @@ impl CreateCertificateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tag keys and optional values to add to the certificate during create.</p>
+    /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

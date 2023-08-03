@@ -76,6 +76,10 @@ impl ListPricingRulesAssociatedToPricingPlanOutputBuilder {
         self.billing_period = input;
         self
     }
+    /// <p> The billing period for which the pricing rule associations are listed. </p>
+    pub fn get_billing_period(&self) -> &::std::option::Option<::std::string::String> {
+        &self.billing_period
+    }
     /// <p> The Amazon Resource Name (ARN) of the pricing plan for which associations are listed.</p>
     pub fn pricing_plan_arn(
         mut self,
@@ -91,6 +95,10 @@ impl ListPricingRulesAssociatedToPricingPlanOutputBuilder {
     ) -> Self {
         self.pricing_plan_arn = input;
         self
+    }
+    /// <p> The Amazon Resource Name (ARN) of the pricing plan for which associations are listed.</p>
+    pub fn get_pricing_plan_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pricing_plan_arn
     }
     /// Appends an item to `pricing_rule_arns`.
     ///
@@ -114,6 +122,12 @@ impl ListPricingRulesAssociatedToPricingPlanOutputBuilder {
         self.pricing_rule_arns = input;
         self
     }
+    /// <p> A list containing pricing rules that are associated with the requested pricing plan. </p>
+    pub fn get_pricing_rule_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.pricing_rule_arns
+    }
     /// <p> The pagination token to be used on subsequent calls. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -123,6 +137,10 @@ impl ListPricingRulesAssociatedToPricingPlanOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p> The pagination token to be used on subsequent calls. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

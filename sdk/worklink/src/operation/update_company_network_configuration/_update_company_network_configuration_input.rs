@@ -63,6 +63,10 @@ impl UpdateCompanyNetworkConfigurationInputBuilder {
         self.fleet_arn = input;
         self
     }
+    /// <p>The ARN of the fleet.</p>
+    pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_arn
+    }
     /// <p>The VPC with connectivity to associated websites.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl UpdateCompanyNetworkConfigurationInputBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The VPC with connectivity to associated websites.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -91,6 +99,10 @@ impl UpdateCompanyNetworkConfigurationInputBuilder {
     ) -> Self {
         self.subnet_ids = input;
         self
+    }
+    /// <p>The subnets used for X-ENI connections from Amazon WorkLink rendering containers.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
     }
     /// Appends an item to `security_group_ids`.
     ///
@@ -113,6 +125,12 @@ impl UpdateCompanyNetworkConfigurationInputBuilder {
     ) -> Self {
         self.security_group_ids = input;
         self
+    }
+    /// <p>The security groups associated with access to the provided subnets.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
     }
     /// Consumes the builder and constructs a [`UpdateCompanyNetworkConfigurationInput`](crate::operation::update_company_network_configuration::UpdateCompanyNetworkConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_company_network_configuration::UpdateCompanyNetworkConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{

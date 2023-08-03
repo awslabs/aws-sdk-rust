@@ -36,6 +36,10 @@ impl ListDevicesForWirelessDeviceImportTaskFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListDevicesForWirelessDeviceImportTask as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_devices_for_wireless_device_import_task::builders::ListDevicesForWirelessDeviceImportTaskInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl ListDevicesForWirelessDeviceImportTaskFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The identifier of the import task for which wireless devices are listed.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The maximum number of results to return in this operation.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -109,6 +117,10 @@ impl ListDevicesForWirelessDeviceImportTaskFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return in this operation.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <code>null</code> to receive the first set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -120,6 +132,10 @@ impl ListDevicesForWirelessDeviceImportTaskFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <code>null</code> to receive the first set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The status of the devices in the import task.</p>
     pub fn status(mut self, input: crate::types::OnboardStatus) -> Self {
         self.inner = self.inner.status(input);
@@ -129,5 +145,9 @@ impl ListDevicesForWirelessDeviceImportTaskFluentBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OnboardStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
+    }
+    /// <p>The status of the devices in the import task.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::OnboardStatus> {
+        self.inner.get_status()
     }
 }

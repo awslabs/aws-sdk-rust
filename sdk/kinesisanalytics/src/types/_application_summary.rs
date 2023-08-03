@@ -65,6 +65,10 @@ impl ApplicationSummaryBuilder {
         self.application_name = input;
         self
     }
+    /// <p>Name of the application.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// <p>ARN of the application.</p>
     pub fn application_arn(
         mut self,
@@ -81,6 +85,10 @@ impl ApplicationSummaryBuilder {
         self.application_arn = input;
         self
     }
+    /// <p>ARN of the application.</p>
+    pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_arn
+    }
     /// <p>Status of the application.</p>
     pub fn application_status(mut self, input: crate::types::ApplicationStatus) -> Self {
         self.application_status = ::std::option::Option::Some(input);
@@ -93,6 +101,12 @@ impl ApplicationSummaryBuilder {
     ) -> Self {
         self.application_status = input;
         self
+    }
+    /// <p>Status of the application.</p>
+    pub fn get_application_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationStatus> {
+        &self.application_status
     }
     /// Consumes the builder and constructs a [`ApplicationSummary`](crate::types::ApplicationSummary).
     pub fn build(self) -> crate::types::ApplicationSummary {

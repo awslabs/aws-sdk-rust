@@ -85,6 +85,10 @@ impl ProvisionIpamPoolCidrInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>The ID of the IPAM pool to which you want to assign a CIDR.</p>
     pub fn ipam_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_pool_id = ::std::option::Option::Some(input.into());
@@ -95,6 +99,10 @@ impl ProvisionIpamPoolCidrInputBuilder {
         self.ipam_pool_id = input;
         self
     }
+    /// <p>The ID of the IPAM pool to which you want to assign a CIDR.</p>
+    pub fn get_ipam_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipam_pool_id
+    }
     /// <p>The CIDR you want to assign to the IPAM pool. Either "NetmaskLength" or "Cidr" is required. This value will be null if you specify "NetmaskLength" and will be filled in during the provisioning process.</p>
     pub fn cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cidr = ::std::option::Option::Some(input.into());
@@ -104,6 +112,10 @@ impl ProvisionIpamPoolCidrInputBuilder {
     pub fn set_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cidr = input;
         self
+    }
+    /// <p>The CIDR you want to assign to the IPAM pool. Either "NetmaskLength" or "Cidr" is required. This value will be null if you specify "NetmaskLength" and will be filled in during the provisioning process.</p>
+    pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr
     }
     /// <p>A signed document that proves that you are authorized to bring a specified IP address range to Amazon using BYOIP. This option applies to public pools only.</p>
     pub fn cidr_authorization_context(
@@ -121,6 +133,12 @@ impl ProvisionIpamPoolCidrInputBuilder {
         self.cidr_authorization_context = input;
         self
     }
+    /// <p>A signed document that proves that you are authorized to bring a specified IP address range to Amazon using BYOIP. This option applies to public pools only.</p>
+    pub fn get_cidr_authorization_context(
+        &self,
+    ) -> &::std::option::Option<crate::types::IpamCidrAuthorizationContext> {
+        &self.cidr_authorization_context
+    }
     /// <p>The netmask length of the CIDR you'd like to provision to a pool. Can be used for provisioning Amazon-provided IPv6 CIDRs to top-level pools and for provisioning CIDRs to pools with source pools. Cannot be used to provision BYOIP CIDRs to top-level pools. Either "NetmaskLength" or "Cidr" is required.</p>
     pub fn netmask_length(mut self, input: i32) -> Self {
         self.netmask_length = ::std::option::Option::Some(input);
@@ -131,6 +149,10 @@ impl ProvisionIpamPoolCidrInputBuilder {
         self.netmask_length = input;
         self
     }
+    /// <p>The netmask length of the CIDR you'd like to provision to a pool. Can be used for provisioning Amazon-provided IPv6 CIDRs to top-level pools and for provisioning CIDRs to pools with source pools. Cannot be used to provision BYOIP CIDRs to top-level pools. Either "NetmaskLength" or "Cidr" is required.</p>
+    pub fn get_netmask_length(&self) -> &::std::option::Option<i32> {
+        &self.netmask_length
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -140,6 +162,10 @@ impl ProvisionIpamPoolCidrInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`ProvisionIpamPoolCidrInput`](crate::operation::provision_ipam_pool_cidr::ProvisionIpamPoolCidrInput).
     pub fn build(

@@ -37,6 +37,13 @@ impl GetMediaCapturePipelineFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetMediaCapturePipeline as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_media_capture_pipeline::builders::GetMediaCapturePipelineInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +139,9 @@ impl GetMediaCapturePipelineFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_media_pipeline_id(input);
         self
+    }
+    /// <p>The ID of the pipeline that you want to get.</p>
+    pub fn get_media_pipeline_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_media_pipeline_id()
     }
 }

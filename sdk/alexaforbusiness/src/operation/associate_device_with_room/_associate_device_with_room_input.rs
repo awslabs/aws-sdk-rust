@@ -49,6 +49,10 @@ impl AssociateDeviceWithRoomInputBuilder {
         self.device_arn = input;
         self
     }
+    /// <p>The ARN of the device to associate to a room. Required.</p>
+    pub fn get_device_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_arn
+    }
     /// <p>The ARN of the room with which to associate the device. Required.</p>
     pub fn room_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.room_arn = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl AssociateDeviceWithRoomInputBuilder {
     pub fn set_room_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.room_arn = input;
         self
+    }
+    /// <p>The ARN of the room with which to associate the device. Required.</p>
+    pub fn get_room_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.room_arn
     }
     /// Consumes the builder and constructs a [`AssociateDeviceWithRoomInput`](crate::operation::associate_device_with_room::AssociateDeviceWithRoomInput).
     pub fn build(

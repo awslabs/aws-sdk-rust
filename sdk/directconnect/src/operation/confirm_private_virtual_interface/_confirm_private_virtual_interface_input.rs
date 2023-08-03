@@ -61,6 +61,10 @@ impl ConfirmPrivateVirtualInterfaceInputBuilder {
         self.virtual_interface_id = input;
         self
     }
+    /// <p>The ID of the virtual interface.</p>
+    pub fn get_virtual_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_interface_id
+    }
     /// <p>The ID of the virtual private gateway.</p>
     pub fn virtual_gateway_id(
         mut self,
@@ -77,6 +81,10 @@ impl ConfirmPrivateVirtualInterfaceInputBuilder {
         self.virtual_gateway_id = input;
         self
     }
+    /// <p>The ID of the virtual private gateway.</p>
+    pub fn get_virtual_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_gateway_id
+    }
     /// <p>The ID of the Direct Connect gateway.</p>
     pub fn direct_connect_gateway_id(
         mut self,
@@ -92,6 +100,10 @@ impl ConfirmPrivateVirtualInterfaceInputBuilder {
     ) -> Self {
         self.direct_connect_gateway_id = input;
         self
+    }
+    /// <p>The ID of the Direct Connect gateway.</p>
+    pub fn get_direct_connect_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.direct_connect_gateway_id
     }
     /// Consumes the builder and constructs a [`ConfirmPrivateVirtualInterfaceInput`](crate::operation::confirm_private_virtual_interface::ConfirmPrivateVirtualInterfaceInput).
     pub fn build(

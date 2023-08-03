@@ -49,6 +49,10 @@ impl GeometryBuilder {
         self.r#type = input;
         self
     }
+    /// <p>GeoJson Geometry types like Polygon and MultiPolygon.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// Appends an item to `coordinates`.
     ///
     /// To override the contents of this collection use [`set_coordinates`](Self::set_coordinates).
@@ -67,6 +71,12 @@ impl GeometryBuilder {
     ) -> Self {
         self.coordinates = input;
         self
+    }
+    /// <p>The coordinates of the GeoJson Geometry.</p>
+    pub fn get_coordinates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>> {
+        &self.coordinates
     }
     /// Consumes the builder and constructs a [`Geometry`](crate::types::Geometry).
     pub fn build(self) -> crate::types::Geometry {

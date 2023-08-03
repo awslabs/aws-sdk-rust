@@ -43,6 +43,10 @@ impl UpdateConfigurationInputBuilder {
         self.ecr_configuration = input;
         self
     }
+    /// <p>Specifies how the ECR automated re-scan will be updated for your environment.</p>
+    pub fn get_ecr_configuration(&self) -> &::std::option::Option<crate::types::EcrConfiguration> {
+        &self.ecr_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateConfigurationInput`](crate::operation::update_configuration::UpdateConfigurationInput).
     pub fn build(
         self,

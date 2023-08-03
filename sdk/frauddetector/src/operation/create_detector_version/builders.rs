@@ -36,6 +36,13 @@ impl CreateDetectorVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDetectorVersion as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_detector_version::builders::CreateDetectorVersionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl CreateDetectorVersionFluentBuilder {
         self.inner = self.inner.set_detector_id(input);
         self
     }
+    /// <p>The ID of the detector under which you want to create a new version.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_detector_id()
+    }
     /// <p>The description of the detector version.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -135,6 +146,10 @@ impl CreateDetectorVersionFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the detector version.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `externalModelEndpoints`.
     ///
@@ -156,6 +171,12 @@ impl CreateDetectorVersionFluentBuilder {
         self.inner = self.inner.set_external_model_endpoints(input);
         self
     }
+    /// <p>The Amazon Sagemaker model endpoints to include in the detector version.</p>
+    pub fn get_external_model_endpoints(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_external_model_endpoints()
+    }
     /// Appends an item to `rules`.
     ///
     /// To override the contents of this collection use [`set_rules`](Self::set_rules).
@@ -173,6 +194,10 @@ impl CreateDetectorVersionFluentBuilder {
         self.inner = self.inner.set_rules(input);
         self
     }
+    /// <p>The rules to include in the detector version.</p>
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Rule>> {
+        self.inner.get_rules()
+    }
     /// Appends an item to `modelVersions`.
     ///
     /// To override the contents of this collection use [`set_model_versions`](Self::set_model_versions).
@@ -189,6 +214,12 @@ impl CreateDetectorVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_model_versions(input);
         self
+    }
+    /// <p>The model versions to include in the detector version.</p>
+    pub fn get_model_versions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelVersion>> {
+        self.inner.get_model_versions()
     }
     /// <p>The rule execution mode for the rules included in the detector version.</p>
     /// <p>You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
@@ -211,6 +242,16 @@ impl CreateDetectorVersionFluentBuilder {
         self.inner = self.inner.set_rule_execution_mode(input);
         self
     }
+    /// <p>The rule execution mode for the rules included in the detector version.</p>
+    /// <p>You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
+    /// <p>If you specify <code>FIRST_MATCHED</code>, Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
+    /// <p>If you specifiy <code>ALL_MATCHED</code>, Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. </p>
+    /// <p>The default behavior is <code>FIRST_MATCHED</code>.</p>
+    pub fn get_rule_execution_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::RuleExecutionMode> {
+        self.inner.get_rule_execution_mode()
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -227,5 +268,9 @@ impl CreateDetectorVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A collection of key and value pairs.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

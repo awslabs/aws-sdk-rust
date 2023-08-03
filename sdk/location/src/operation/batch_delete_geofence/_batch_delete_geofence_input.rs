@@ -55,6 +55,10 @@ impl BatchDeleteGeofenceInputBuilder {
         self.collection_name = input;
         self
     }
+    /// <p>The geofence collection storing the geofences to be deleted.</p>
+    pub fn get_collection_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collection_name
+    }
     /// Appends an item to `geofence_ids`.
     ///
     /// To override the contents of this collection use [`set_geofence_ids`](Self::set_geofence_ids).
@@ -73,6 +77,12 @@ impl BatchDeleteGeofenceInputBuilder {
     ) -> Self {
         self.geofence_ids = input;
         self
+    }
+    /// <p>The batch of geofences to be deleted.</p>
+    pub fn get_geofence_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.geofence_ids
     }
     /// Consumes the builder and constructs a [`BatchDeleteGeofenceInput`](crate::operation::batch_delete_geofence::BatchDeleteGeofenceInput).
     pub fn build(

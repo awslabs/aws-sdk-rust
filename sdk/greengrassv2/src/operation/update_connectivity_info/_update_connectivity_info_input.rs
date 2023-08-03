@@ -50,6 +50,10 @@ impl UpdateConnectivityInfoInputBuilder {
         self.thing_name = input;
         self
     }
+    /// <p>The name of the core device. This is also the name of the IoT thing.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_name
+    }
     /// Appends an item to `connectivity_info`.
     ///
     /// To override the contents of this collection use [`set_connectivity_info`](Self::set_connectivity_info).
@@ -68,6 +72,12 @@ impl UpdateConnectivityInfoInputBuilder {
     ) -> Self {
         self.connectivity_info = input;
         self
+    }
+    /// <p>The connectivity information for the core device.</p>
+    pub fn get_connectivity_info(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectivityInfo>> {
+        &self.connectivity_info
     }
     /// Consumes the builder and constructs a [`UpdateConnectivityInfoInput`](crate::operation::update_connectivity_info::UpdateConnectivityInfoInput).
     pub fn build(

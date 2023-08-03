@@ -63,6 +63,10 @@ impl DescribeDestinationsInputBuilder {
         self.destination_name_prefix = input;
         self
     }
+    /// <p>The prefix to match. If you don't specify a value, no prefix filter is applied.</p>
+    pub fn get_destination_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_name_prefix
+    }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl DescribeDestinationsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of items returned. If you don't specify a value, the default maximum value of 50 items is used.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -82,6 +90,10 @@ impl DescribeDestinationsInputBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
+    }
+    /// <p>The maximum number of items returned. If you don't specify a value, the default maximum value of 50 items is used.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// Consumes the builder and constructs a [`DescribeDestinationsInput`](crate::operation::describe_destinations::DescribeDestinationsInput).
     pub fn build(

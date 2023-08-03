@@ -69,6 +69,10 @@ impl ListFunctionsInputBuilder {
         self.master_region = input;
         self
     }
+    /// <p>For Lambda@Edge functions, the Amazon Web Services Region of the master function. For example, <code>us-east-1</code> filters the list of functions to include only Lambda@Edge functions replicated from a master function in US East (N. Virginia). If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.</p>
+    pub fn get_master_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.master_region
+    }
     /// <p>Set to <code>ALL</code> to include entries for all published versions of each function.</p>
     pub fn function_version(mut self, input: crate::types::FunctionVersion) -> Self {
         self.function_version = ::std::option::Option::Some(input);
@@ -82,6 +86,10 @@ impl ListFunctionsInputBuilder {
         self.function_version = input;
         self
     }
+    /// <p>Set to <code>ALL</code> to include entries for all published versions of each function.</p>
+    pub fn get_function_version(&self) -> &::std::option::Option<crate::types::FunctionVersion> {
+        &self.function_version
+    }
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -92,6 +100,10 @@ impl ListFunctionsInputBuilder {
         self.marker = input;
         self
     }
+    /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// <p>The maximum number of functions to return in the response. Note that <code>ListFunctions</code> returns a maximum of 50 items in each response, even if you set the number higher.</p>
     pub fn max_items(mut self, input: i32) -> Self {
         self.max_items = ::std::option::Option::Some(input);
@@ -101,6 +113,10 @@ impl ListFunctionsInputBuilder {
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_items = input;
         self
+    }
+    /// <p>The maximum number of functions to return in the response. Note that <code>ListFunctions</code> returns a maximum of 50 items in each response, even if you set the number higher.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        &self.max_items
     }
     /// Consumes the builder and constructs a [`ListFunctionsInput`](crate::operation::list_functions::ListFunctionsInput).
     pub fn build(

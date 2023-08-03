@@ -36,6 +36,10 @@ impl DeleteSiteFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteSite as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_site::builders::DeleteSiteInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl DeleteSiteFluentBuilder {
         self.inner = self.inner.set_global_network_id(input);
         self
     }
+    /// <p>The ID of the global network.</p>
+    pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_global_network_id()
+    }
     /// <p>The ID of the site.</p>
     pub fn site_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.site_id(input.into());
@@ -133,5 +141,9 @@ impl DeleteSiteFluentBuilder {
     pub fn set_site_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_site_id(input);
         self
+    }
+    /// <p>The ID of the site.</p>
+    pub fn get_site_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_site_id()
     }
 }

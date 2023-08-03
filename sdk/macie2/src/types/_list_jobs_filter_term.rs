@@ -59,6 +59,10 @@ impl ListJobsFilterTermBuilder {
         self.comparator = input;
         self
     }
+    /// <p>The operator to use to filter the results.</p>
+    pub fn get_comparator(&self) -> &::std::option::Option<crate::types::JobComparator> {
+        &self.comparator
+    }
     /// <p>The property to use to filter the results.</p>
     pub fn key(mut self, input: crate::types::ListJobsFilterKey) -> Self {
         self.key = ::std::option::Option::Some(input);
@@ -71,6 +75,10 @@ impl ListJobsFilterTermBuilder {
     ) -> Self {
         self.key = input;
         self
+    }
+    /// <p>The property to use to filter the results.</p>
+    pub fn get_key(&self) -> &::std::option::Option<crate::types::ListJobsFilterKey> {
+        &self.key
     }
     /// Appends an item to `values`.
     ///
@@ -90,6 +98,10 @@ impl ListJobsFilterTermBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>An array that lists one or more values to use to filter the results.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`ListJobsFilterTerm`](crate::types::ListJobsFilterTerm).
     pub fn build(self) -> crate::types::ListJobsFilterTerm {

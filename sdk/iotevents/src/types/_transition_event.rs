@@ -64,6 +64,10 @@ impl TransitionEventBuilder {
         self.event_name = input;
         self
     }
+    /// <p>The name of the transition event.</p>
+    pub fn get_event_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_name
+    }
     /// <p>Required. A Boolean expression that when TRUE causes the actions to be performed and the <code>nextState</code> to be entered.</p>
     pub fn condition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.condition = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl TransitionEventBuilder {
     pub fn set_condition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.condition = input;
         self
+    }
+    /// <p>Required. A Boolean expression that when TRUE causes the actions to be performed and the <code>nextState</code> to be entered.</p>
+    pub fn get_condition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.condition
     }
     /// Appends an item to `actions`.
     ///
@@ -93,6 +101,10 @@ impl TransitionEventBuilder {
         self.actions = input;
         self
     }
+    /// <p>The actions to be performed.</p>
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Action>> {
+        &self.actions
+    }
     /// <p>The next state to enter.</p>
     pub fn next_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_state = ::std::option::Option::Some(input.into());
@@ -102,6 +114,10 @@ impl TransitionEventBuilder {
     pub fn set_next_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_state = input;
         self
+    }
+    /// <p>The next state to enter.</p>
+    pub fn get_next_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_state
     }
     /// Consumes the builder and constructs a [`TransitionEvent`](crate::types::TransitionEvent).
     pub fn build(self) -> crate::types::TransitionEvent {

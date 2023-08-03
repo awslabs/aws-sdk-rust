@@ -127,6 +127,10 @@ impl CreateFeatureInputBuilder {
         self.project = input;
         self
     }
+    /// <p>The name or ARN of the project that is to contain the new feature.</p>
+    pub fn get_project(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project
+    }
     /// <p>The name for the new feature.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -136,6 +140,10 @@ impl CreateFeatureInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name for the new feature.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Specify <code>ALL_RULES</code> to activate the traffic allocation specified by any ongoing launches or experiments. Specify <code>DEFAULT_VARIATION</code> to serve the default variation to all users instead.</p>
     pub fn evaluation_strategy(mut self, input: crate::types::FeatureEvaluationStrategy) -> Self {
@@ -150,6 +158,12 @@ impl CreateFeatureInputBuilder {
         self.evaluation_strategy = input;
         self
     }
+    /// <p>Specify <code>ALL_RULES</code> to activate the traffic allocation specified by any ongoing launches or experiments. Specify <code>DEFAULT_VARIATION</code> to serve the default variation to all users instead.</p>
+    pub fn get_evaluation_strategy(
+        &self,
+    ) -> &::std::option::Option<crate::types::FeatureEvaluationStrategy> {
+        &self.evaluation_strategy
+    }
     /// <p>An optional description of the feature.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -159,6 +173,10 @@ impl CreateFeatureInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>An optional description of the feature.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `variations`.
     ///
@@ -179,6 +197,12 @@ impl CreateFeatureInputBuilder {
         self.variations = input;
         self
     }
+    /// <p>An array of structures that contain the configuration of the feature's different variations.</p>
+    pub fn get_variations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VariationConfig>> {
+        &self.variations
+    }
     /// <p>The name of the variation to use as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
     /// <p>This variation must also be listed in the <code>variations</code> structure.</p>
     /// <p>If you omit <code>defaultVariation</code>, the first variation listed in the <code>variations</code> structure is used as the default variation.</p>
@@ -198,6 +222,12 @@ impl CreateFeatureInputBuilder {
     ) -> Self {
         self.default_variation = input;
         self
+    }
+    /// <p>The name of the variation to use as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
+    /// <p>This variation must also be listed in the <code>variations</code> structure.</p>
+    /// <p>If you omit <code>defaultVariation</code>, the first variation listed in the <code>variations</code> structure is used as the default variation.</p>
+    pub fn get_default_variation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_variation
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -232,6 +262,18 @@ impl CreateFeatureInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Assigns one or more tags (key-value pairs) to the feature.</p>
+    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
+    /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
+    /// <p>You can associate as many as 50 tags with a feature.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// Adds a key-value pair to `entity_overrides`.
     ///
     /// To override the contents of this collection use [`set_entity_overrides`](Self::set_entity_overrides).
@@ -258,6 +300,15 @@ impl CreateFeatureInputBuilder {
     ) -> Self {
         self.entity_overrides = input;
         self
+    }
+    /// <p>Specify users that should always be served a specific variation of a feature. Each user is specified by a key-value pair . For each key, specify a user by entering their user ID, account ID, or some other identifier. For the value, specify the name of the variation that they are to be served.</p>
+    /// <p>This parameter is limited to 2500 overrides or a total of 40KB. The 40KB limit includes an overhead of 6 bytes per override.</p>
+    pub fn get_entity_overrides(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.entity_overrides
     }
     /// Consumes the builder and constructs a [`CreateFeatureInput`](crate::operation::create_feature::CreateFeatureInput).
     pub fn build(

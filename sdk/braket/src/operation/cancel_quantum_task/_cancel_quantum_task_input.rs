@@ -54,6 +54,10 @@ impl CancelQuantumTaskInputBuilder {
         self.quantum_task_arn = input;
         self
     }
+    /// <p>The ARN of the task to cancel.</p>
+    pub fn get_quantum_task_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.quantum_task_arn
+    }
     /// <p>The client token associated with the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl CancelQuantumTaskInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>The client token associated with the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`CancelQuantumTaskInput`](crate::operation::cancel_quantum_task::CancelQuantumTaskInput).
     pub fn build(

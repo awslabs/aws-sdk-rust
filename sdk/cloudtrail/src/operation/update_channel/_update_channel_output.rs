@@ -70,6 +70,10 @@ impl UpdateChannelOutputBuilder {
         self.channel_arn = input;
         self
     }
+    /// <p>The ARN of the channel that was updated.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
+    }
     /// <p>The name of the channel that was updated.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl UpdateChannelOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the channel that was updated.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The event source of the channel that was updated.</p>
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source = ::std::option::Option::Some(input.into());
@@ -89,6 +97,10 @@ impl UpdateChannelOutputBuilder {
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source = input;
         self
+    }
+    /// <p>The event source of the channel that was updated.</p>
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source
     }
     /// Appends an item to `destinations`.
     ///
@@ -108,6 +120,12 @@ impl UpdateChannelOutputBuilder {
     ) -> Self {
         self.destinations = input;
         self
+    }
+    /// <p>The event data stores that log events arriving through the channel.</p>
+    pub fn get_destinations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Destination>> {
+        &self.destinations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -62,6 +62,10 @@ impl GetAccountBalanceOutputBuilder {
         self
     }
     /// <p>A string representing a currency amount.</p>
+    pub fn get_available_balance(&self) -> &::std::option::Option<::std::string::String> {
+        &self.available_balance
+    }
+    /// <p>A string representing a currency amount.</p>
     pub fn on_hold_balance(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -76,6 +80,10 @@ impl GetAccountBalanceOutputBuilder {
     ) -> Self {
         self.on_hold_balance = input;
         self
+    }
+    /// <p>A string representing a currency amount.</p>
+    pub fn get_on_hold_balance(&self) -> &::std::option::Option<::std::string::String> {
+        &self.on_hold_balance
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

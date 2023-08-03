@@ -48,6 +48,10 @@ impl GetWorldTemplateBodyInputBuilder {
         self.template = input;
         self
     }
+    /// <p>The Amazon Resource Name (arn) of the world template.</p>
+    pub fn get_template(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template
+    }
     /// <p>The Amazon Resource Name (arn) of the world generator job.</p>
     pub fn generation_job(
         mut self,
@@ -63,6 +67,10 @@ impl GetWorldTemplateBodyInputBuilder {
     ) -> Self {
         self.generation_job = input;
         self
+    }
+    /// <p>The Amazon Resource Name (arn) of the world generator job.</p>
+    pub fn get_generation_job(&self) -> &::std::option::Option<::std::string::String> {
+        &self.generation_job
     }
     /// Consumes the builder and constructs a [`GetWorldTemplateBodyInput`](crate::operation::get_world_template_body::GetWorldTemplateBodyInput).
     pub fn build(

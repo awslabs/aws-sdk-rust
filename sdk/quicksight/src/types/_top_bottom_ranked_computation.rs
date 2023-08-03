@@ -94,6 +94,10 @@ impl TopBottomRankedComputationBuilder {
         self.computation_id = input;
         self
     }
+    /// <p>The ID for a computation.</p>
+    pub fn get_computation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.computation_id
+    }
     /// <p>The name of a computation.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -103,6 +107,10 @@ impl TopBottomRankedComputationBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of a computation.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The category field that is used in a computation.</p>
     pub fn category(mut self, input: crate::types::DimensionField) -> Self {
@@ -117,6 +125,10 @@ impl TopBottomRankedComputationBuilder {
         self.category = input;
         self
     }
+    /// <p>The category field that is used in a computation.</p>
+    pub fn get_category(&self) -> &::std::option::Option<crate::types::DimensionField> {
+        &self.category
+    }
     /// <p>The value field that is used in a computation.</p>
     pub fn value(mut self, input: crate::types::MeasureField) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -127,6 +139,10 @@ impl TopBottomRankedComputationBuilder {
         self.value = input;
         self
     }
+    /// <p>The value field that is used in a computation.</p>
+    pub fn get_value(&self) -> &::std::option::Option<crate::types::MeasureField> {
+        &self.value
+    }
     /// <p>The result size of a top and bottom ranked computation.</p>
     pub fn result_size(mut self, input: i32) -> Self {
         self.result_size = ::std::option::Option::Some(input);
@@ -136,6 +152,10 @@ impl TopBottomRankedComputationBuilder {
     pub fn set_result_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.result_size = input;
         self
+    }
+    /// <p>The result size of a top and bottom ranked computation.</p>
+    pub fn get_result_size(&self) -> &::std::option::Option<i32> {
+        &self.result_size
     }
     /// <p>The computation type. Choose one of the following options:</p>
     /// <ul>
@@ -157,6 +177,14 @@ impl TopBottomRankedComputationBuilder {
     ) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The computation type. Choose one of the following options:</p>
+    /// <ul>
+    /// <li> <p>TOP: A top ranked computation.</p> </li>
+    /// <li> <p>BOTTOM: A bottom ranked computation.</p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::TopBottomComputationType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`TopBottomRankedComputation`](crate::types::TopBottomRankedComputation).
     pub fn build(self) -> crate::types::TopBottomRankedComputation {

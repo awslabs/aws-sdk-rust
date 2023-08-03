@@ -57,6 +57,12 @@ impl BoxPlotAggregatedFieldWellsBuilder {
         self.group_by = input;
         self
     }
+    /// <p>The group by field well of a box plot chart. Values are grouped based on group by fields.</p>
+    pub fn get_group_by(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
+        &self.group_by
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -75,6 +81,12 @@ impl BoxPlotAggregatedFieldWellsBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>The value field well of a box plot chart. Values are aggregated based on group by fields.</p>
+    pub fn get_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`BoxPlotAggregatedFieldWells`](crate::types::BoxPlotAggregatedFieldWells).
     pub fn build(self) -> crate::types::BoxPlotAggregatedFieldWells {

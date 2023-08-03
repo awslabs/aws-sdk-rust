@@ -52,6 +52,10 @@ impl DataModelConfigurationBuilder {
         self
     }
     /// <p></p>
+    pub fn get_data_model(&self) -> &::std::option::Option<crate::types::DataModel> {
+        &self.data_model
+    }
+    /// <p></p>
     pub fn data_model_s3_configuration(
         mut self,
         input: crate::types::DataModelS3Configuration,
@@ -66,6 +70,12 @@ impl DataModelConfigurationBuilder {
     ) -> Self {
         self.data_model_s3_configuration = input;
         self
+    }
+    /// <p></p>
+    pub fn get_data_model_s3_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataModelS3Configuration> {
+        &self.data_model_s3_configuration
     }
     /// Consumes the builder and constructs a [`DataModelConfiguration`](crate::types::DataModelConfiguration).
     pub fn build(self) -> crate::types::DataModelConfiguration {

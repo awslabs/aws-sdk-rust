@@ -97,6 +97,12 @@ impl AwsEcrContainerAggregationBuilder {
         self.resource_ids = input;
         self
     }
+    /// <p>The container resource IDs.</p>
+    pub fn get_resource_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.resource_ids
+    }
     /// Appends an item to `image_shas`.
     ///
     /// To override the contents of this collection use [`set_image_shas`](Self::set_image_shas).
@@ -115,6 +121,12 @@ impl AwsEcrContainerAggregationBuilder {
     ) -> Self {
         self.image_shas = input;
         self
+    }
+    /// <p>The image SHA values.</p>
+    pub fn get_image_shas(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.image_shas
     }
     /// Appends an item to `repositories`.
     ///
@@ -135,6 +147,12 @@ impl AwsEcrContainerAggregationBuilder {
         self.repositories = input;
         self
     }
+    /// <p>The container repositories.</p>
+    pub fn get_repositories(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.repositories
+    }
     /// Appends an item to `architectures`.
     ///
     /// To override the contents of this collection use [`set_architectures`](Self::set_architectures).
@@ -153,6 +171,12 @@ impl AwsEcrContainerAggregationBuilder {
     ) -> Self {
         self.architectures = input;
         self
+    }
+    /// <p>The architecture of the containers.</p>
+    pub fn get_architectures(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.architectures
     }
     /// Appends an item to `image_tags`.
     ///
@@ -173,6 +197,12 @@ impl AwsEcrContainerAggregationBuilder {
         self.image_tags = input;
         self
     }
+    /// <p>The image tags.</p>
+    pub fn get_image_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.image_tags
+    }
     /// <p>The sort order (ascending or descending).</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -182,6 +212,10 @@ impl AwsEcrContainerAggregationBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.sort_order = input;
         self
+    }
+    /// <p>The sort order (ascending or descending).</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.sort_order
     }
     /// <p>The value to sort by.</p>
     pub fn sort_by(mut self, input: crate::types::AwsEcrContainerSortBy) -> Self {
@@ -195,6 +229,10 @@ impl AwsEcrContainerAggregationBuilder {
     ) -> Self {
         self.sort_by = input;
         self
+    }
+    /// <p>The value to sort by.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::AwsEcrContainerSortBy> {
+        &self.sort_by
     }
     /// Consumes the builder and constructs a [`AwsEcrContainerAggregation`](crate::types::AwsEcrContainerAggregation).
     pub fn build(self) -> crate::types::AwsEcrContainerAggregation {

@@ -37,6 +37,10 @@ impl CreateTokenFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateToken as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_token::builders::CreateTokenInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl CreateTokenFluentBuilder {
         self.inner = self.inner.set_license_arn(input);
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the license. The ARN is mapped to the aud claim of the JWT token.</p>
+    pub fn get_license_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_license_arn()
+    }
     /// Appends an item to `RoleArns`.
     ///
     /// To override the contents of this collection use [`set_role_arns`](Self::set_role_arns).
@@ -136,6 +144,10 @@ impl CreateTokenFluentBuilder {
         self.inner = self.inner.set_role_arns(input);
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the IAM roles to embed in the token. License Manager does not check whether the roles are in use.</p>
+    pub fn get_role_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_role_arns()
+    }
     /// <p>Token expiration, in days, counted from token creation. The default is 365 days.</p>
     pub fn expiration_in_days(mut self, input: i32) -> Self {
         self.inner = self.inner.expiration_in_days(input);
@@ -145,6 +157,10 @@ impl CreateTokenFluentBuilder {
     pub fn set_expiration_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_expiration_in_days(input);
         self
+    }
+    /// <p>Token expiration, in days, counted from token creation. The default is 365 days.</p>
+    pub fn get_expiration_in_days(&self) -> &::std::option::Option<i32> {
+        self.inner.get_expiration_in_days()
     }
     /// Appends an item to `TokenProperties`.
     ///
@@ -166,6 +182,12 @@ impl CreateTokenFluentBuilder {
         self.inner = self.inner.set_token_properties(input);
         self
     }
+    /// <p>Data specified by the caller to be included in the JWT token. The data is mapped to the amr claim of the JWT token.</p>
+    pub fn get_token_properties(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_token_properties()
+    }
     /// <p>Idempotency token, valid for 10 minutes.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -175,5 +197,9 @@ impl CreateTokenFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>Idempotency token, valid for 10 minutes.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

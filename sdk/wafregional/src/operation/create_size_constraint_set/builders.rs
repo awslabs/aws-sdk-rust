@@ -49,6 +49,13 @@ impl CreateSizeConstraintSetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateSizeConstraintSet as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_size_constraint_set::builders::CreateSizeConstraintSetInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -139,6 +146,10 @@ impl CreateSizeConstraintSetFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>A friendly name or description of the <code>SizeConstraintSet</code>. You can't change <code>Name</code> after you create a <code>SizeConstraintSet</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.change_token(input.into());
@@ -148,5 +159,9 @@ impl CreateSizeConstraintSetFluentBuilder {
     pub fn set_change_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_change_token(input);
         self
+    }
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    pub fn get_change_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_change_token()
     }
 }

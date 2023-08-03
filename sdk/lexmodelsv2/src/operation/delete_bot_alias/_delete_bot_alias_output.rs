@@ -62,6 +62,10 @@ impl DeleteBotAliasOutputBuilder {
         self.bot_alias_id = input;
         self
     }
+    /// <p>The unique identifier of the bot alias to delete.</p>
+    pub fn get_bot_alias_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_alias_id
+    }
     /// <p>The unique identifier of the bot that contains the alias to delete.</p>
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl DeleteBotAliasOutputBuilder {
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_id = input;
         self
+    }
+    /// <p>The unique identifier of the bot that contains the alias to delete.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
     }
     /// <p>The current status of the alias. The status is <code>Deleting</code> while the alias is in the process of being deleted. Once the alias is deleted, it will no longer appear in the list of aliases returned by the <code>ListBotAliases</code> operation.</p>
     pub fn bot_alias_status(mut self, input: crate::types::BotAliasStatus) -> Self {
@@ -84,6 +92,10 @@ impl DeleteBotAliasOutputBuilder {
     ) -> Self {
         self.bot_alias_status = input;
         self
+    }
+    /// <p>The current status of the alias. The status is <code>Deleting</code> while the alias is in the process of being deleted. Once the alias is deleted, it will no longer appear in the list of aliases returned by the <code>ListBotAliases</code> operation.</p>
+    pub fn get_bot_alias_status(&self) -> &::std::option::Option<crate::types::BotAliasStatus> {
+        &self.bot_alias_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

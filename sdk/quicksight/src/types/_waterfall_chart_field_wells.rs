@@ -50,6 +50,12 @@ impl WaterfallChartFieldWellsBuilder {
         self.waterfall_chart_aggregated_field_wells = input;
         self
     }
+    /// <p>The field well configuration of a waterfall visual.</p>
+    pub fn get_waterfall_chart_aggregated_field_wells(
+        &self,
+    ) -> &::std::option::Option<crate::types::WaterfallChartAggregatedFieldWells> {
+        &self.waterfall_chart_aggregated_field_wells
+    }
     /// Consumes the builder and constructs a [`WaterfallChartFieldWells`](crate::types::WaterfallChartFieldWells).
     pub fn build(self) -> crate::types::WaterfallChartFieldWells {
         crate::types::WaterfallChartFieldWells {

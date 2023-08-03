@@ -46,6 +46,10 @@ impl CreateAgreementOutputBuilder {
         self.agreement_id = input;
         self
     }
+    /// <p>The unique identifier for the agreement. Use this ID for deleting, or updating an agreement, as well as in any other API calls that require that you specify the agreement ID.</p>
+    pub fn get_agreement_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agreement_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

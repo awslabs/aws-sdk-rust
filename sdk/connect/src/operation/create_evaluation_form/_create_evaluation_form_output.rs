@@ -61,6 +61,10 @@ impl CreateEvaluationFormOutputBuilder {
         self.evaluation_form_id = input;
         self
     }
+    /// <p>The unique identifier for the evaluation form.</p>
+    pub fn get_evaluation_form_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evaluation_form_id
+    }
     /// <p>The Amazon Resource Name (ARN) for the evaluation form resource.</p>
     pub fn evaluation_form_arn(
         mut self,
@@ -76,6 +80,10 @@ impl CreateEvaluationFormOutputBuilder {
     ) -> Self {
         self.evaluation_form_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the evaluation form resource.</p>
+    pub fn get_evaluation_form_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evaluation_form_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

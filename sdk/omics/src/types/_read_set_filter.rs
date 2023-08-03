@@ -96,6 +96,10 @@ impl ReadSetFilterBuilder {
         self.name = input;
         self
     }
+    /// <p>A name to filter on.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A status to filter on.</p>
     pub fn status(mut self, input: crate::types::ReadSetStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -105,6 +109,10 @@ impl ReadSetFilterBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReadSetStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>A status to filter on.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ReadSetStatus> {
+        &self.status
     }
     /// <p>A genome reference ARN to filter on.</p>
     pub fn reference_arn(
@@ -122,6 +130,10 @@ impl ReadSetFilterBuilder {
         self.reference_arn = input;
         self
     }
+    /// <p>A genome reference ARN to filter on.</p>
+    pub fn get_reference_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reference_arn
+    }
     /// <p>The filter's start date.</p>
     pub fn created_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_after = ::std::option::Option::Some(input);
@@ -134,6 +146,10 @@ impl ReadSetFilterBuilder {
     ) -> Self {
         self.created_after = input;
         self
+    }
+    /// <p>The filter's start date.</p>
+    pub fn get_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_after
     }
     /// <p>The filter's end date.</p>
     pub fn created_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -148,6 +164,10 @@ impl ReadSetFilterBuilder {
         self.created_before = input;
         self
     }
+    /// <p>The filter's end date.</p>
+    pub fn get_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_before
+    }
     /// <p> The read set source's sample ID. </p>
     pub fn sample_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sample_id = ::std::option::Option::Some(input.into());
@@ -158,6 +178,10 @@ impl ReadSetFilterBuilder {
         self.sample_id = input;
         self
     }
+    /// <p> The read set source's sample ID. </p>
+    pub fn get_sample_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sample_id
+    }
     /// <p> The read set source's subject ID. </p>
     pub fn subject_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subject_id = ::std::option::Option::Some(input.into());
@@ -167,6 +191,10 @@ impl ReadSetFilterBuilder {
     pub fn set_subject_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subject_id = input;
         self
+    }
+    /// <p> The read set source's subject ID. </p>
+    pub fn get_subject_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subject_id
     }
     /// <p> Where the source originated. </p>
     pub fn generated_from(
@@ -183,6 +211,10 @@ impl ReadSetFilterBuilder {
     ) -> Self {
         self.generated_from = input;
         self
+    }
+    /// <p> Where the source originated. </p>
+    pub fn get_generated_from(&self) -> &::std::option::Option<::std::string::String> {
+        &self.generated_from
     }
     /// Consumes the builder and constructs a [`ReadSetFilter`](crate::types::ReadSetFilter).
     pub fn build(self) -> crate::types::ReadSetFilter {

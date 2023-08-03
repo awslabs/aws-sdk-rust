@@ -38,6 +38,10 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeReservedInstancesOfferings as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_reserved_instances_offerings::builders::DescribeReservedInstancesOfferingsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -114,6 +118,10 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
         self.inner = self.inner.set_availability_zone(input);
         self
     }
+    /// <p>The Availability Zone in which the Reserved Instance can be used.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_availability_zone()
+    }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -153,6 +161,21 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>One or more filters.</p>
+    /// <ul>
+    /// <li> <p> <code>availability-zone</code> - The Availability Zone where the Reserved Instance can be used.</p> </li>
+    /// <li> <p> <code>duration</code> - The duration of the Reserved Instance (for example, one year or three years), in seconds (<code>31536000</code> | <code>94608000</code>).</p> </li>
+    /// <li> <p> <code>fixed-price</code> - The purchase price of the Reserved Instance (for example, 9800.0).</p> </li>
+    /// <li> <p> <code>instance-type</code> - The instance type that is covered by the reservation.</p> </li>
+    /// <li> <p> <code>marketplace</code> - Set to <code>true</code> to show only Reserved Instance Marketplace offerings. When this filter is not used, which is the default behavior, all offerings from both Amazon Web Services and the Reserved Instance Marketplace are listed.</p> </li>
+    /// <li> <p> <code>product-description</code> - The Reserved Instance product platform description (<code>Linux/UNIX</code> | <code>Linux with SQL Server Standard</code> | <code>Linux with SQL Server Web</code> | <code>Linux with SQL Server Enterprise</code> | <code>SUSE Linux</code> | <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux with HA</code> | <code>Windows</code> | <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server Web</code> | <code>Windows with SQL Server Enterprise</code>).</p> </li>
+    /// <li> <p> <code>reserved-instances-offering-id</code> - The Reserved Instances offering ID.</p> </li>
+    /// <li> <p> <code>scope</code> - The scope of the Reserved Instance (<code>Availability Zone</code> or <code>Region</code>).</p> </li>
+    /// <li> <p> <code>usage-price</code> - The usage price of the Reserved Instance, per hour (for example, 0.84).</p> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
+    }
     /// <p>Include Reserved Instance Marketplace offerings in the response.</p>
     pub fn include_marketplace(mut self, input: bool) -> Self {
         self.inner = self.inner.include_marketplace(input);
@@ -162,6 +185,10 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
     pub fn set_include_marketplace(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_marketplace(input);
         self
+    }
+    /// <p>Include Reserved Instance Marketplace offerings in the response.</p>
+    pub fn get_include_marketplace(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_marketplace()
     }
     /// <p>The instance type that the reservation will cover (for example, <code>m1.small</code>). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn instance_type(mut self, input: crate::types::InstanceType) -> Self {
@@ -176,6 +203,10 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
         self.inner = self.inner.set_instance_type(input);
         self
     }
+    /// <p>The instance type that the reservation will cover (for example, <code>m1.small</code>). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::InstanceType> {
+        self.inner.get_instance_type()
+    }
     /// <p>The maximum duration (in seconds) to filter when searching for offerings.</p>
     /// <p>Default: 94608000 (3 years)</p>
     pub fn max_duration(mut self, input: i64) -> Self {
@@ -187,6 +218,11 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
     pub fn set_max_duration(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_max_duration(input);
         self
+    }
+    /// <p>The maximum duration (in seconds) to filter when searching for offerings.</p>
+    /// <p>Default: 94608000 (3 years)</p>
+    pub fn get_max_duration(&self) -> &::std::option::Option<i64> {
+        self.inner.get_max_duration()
     }
     /// <p>The maximum number of instances to filter when searching for offerings.</p>
     /// <p>Default: 20</p>
@@ -200,6 +236,11 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
         self.inner = self.inner.set_max_instance_count(input);
         self
     }
+    /// <p>The maximum number of instances to filter when searching for offerings.</p>
+    /// <p>Default: 20</p>
+    pub fn get_max_instance_count(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_instance_count()
+    }
     /// <p>The minimum duration (in seconds) to filter when searching for offerings.</p>
     /// <p>Default: 2592000 (1 month)</p>
     pub fn min_duration(mut self, input: i64) -> Self {
@@ -211,6 +252,11 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
     pub fn set_min_duration(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_min_duration(input);
         self
+    }
+    /// <p>The minimum duration (in seconds) to filter when searching for offerings.</p>
+    /// <p>Default: 2592000 (1 month)</p>
+    pub fn get_min_duration(&self) -> &::std::option::Option<i64> {
+        self.inner.get_min_duration()
     }
     /// <p>The offering class of the Reserved Instance. Can be <code>standard</code> or <code>convertible</code>.</p>
     pub fn offering_class(mut self, input: crate::types::OfferingClassType) -> Self {
@@ -225,6 +271,10 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
         self.inner = self.inner.set_offering_class(input);
         self
     }
+    /// <p>The offering class of the Reserved Instance. Can be <code>standard</code> or <code>convertible</code>.</p>
+    pub fn get_offering_class(&self) -> &::std::option::Option<crate::types::OfferingClassType> {
+        self.inner.get_offering_class()
+    }
     /// <p>The Reserved Instance product platform description. Instances that include <code>(Amazon VPC)</code> in the description are for use with Amazon VPC.</p>
     pub fn product_description(mut self, input: crate::types::RiProductDescription) -> Self {
         self.inner = self.inner.product_description(input);
@@ -237,6 +287,12 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_product_description(input);
         self
+    }
+    /// <p>The Reserved Instance product platform description. Instances that include <code>(Amazon VPC)</code> in the description are for use with Amazon VPC.</p>
+    pub fn get_product_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::RiProductDescription> {
+        self.inner.get_product_description()
     }
     /// Appends an item to `ReservedInstancesOfferingIds`.
     ///
@@ -258,6 +314,12 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
         self.inner = self.inner.set_reserved_instances_offering_ids(input);
         self
     }
+    /// <p>One or more Reserved Instances offering IDs.</p>
+    pub fn get_reserved_instances_offering_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_reserved_instances_offering_ids()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -267,6 +329,10 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
     /// <p>The tenancy of the instances covered by the reservation. A Reserved Instance with a tenancy of <code>dedicated</code> is applied to instances that run in a VPC on single-tenant hardware (i.e., Dedicated Instances).</p>
     /// <p> <b>Important:</b> The <code>host</code> value cannot be used with this parameter. Use the <code>default</code> or <code>dedicated</code> values only.</p>
@@ -285,6 +351,12 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
         self.inner = self.inner.set_instance_tenancy(input);
         self
     }
+    /// <p>The tenancy of the instances covered by the reservation. A Reserved Instance with a tenancy of <code>dedicated</code> is applied to instances that run in a VPC on single-tenant hardware (i.e., Dedicated Instances).</p>
+    /// <p> <b>Important:</b> The <code>host</code> value cannot be used with this parameter. Use the <code>default</code> or <code>dedicated</code> values only.</p>
+    /// <p>Default: <code>default</code> </p>
+    pub fn get_instance_tenancy(&self) -> &::std::option::Option<crate::types::Tenancy> {
+        self.inner.get_instance_tenancy()
+    }
     /// <p>The maximum number of results to return for the request in a single page. The remaining results of the initial request can be seen by sending another request with the returned <code>NextToken</code> value. The maximum is 100.</p>
     /// <p>Default: 100</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -297,6 +369,11 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return for the request in a single page. The remaining results of the initial request can be seen by sending another request with the returned <code>NextToken</code> value. The maximum is 100.</p>
+    /// <p>Default: 100</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -306,6 +383,10 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token to retrieve the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The Reserved Instance offering type. If you are using tools that predate the 2011-11-01 API version, you only have access to the <code>Medium Utilization</code> Reserved Instance offering type. </p>
     pub fn offering_type(mut self, input: crate::types::OfferingTypeValues) -> Self {
@@ -319,5 +400,9 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_offering_type(input);
         self
+    }
+    /// <p>The Reserved Instance offering type. If you are using tools that predate the 2011-11-01 API version, you only have access to the <code>Medium Utilization</code> Reserved Instance offering type. </p>
+    pub fn get_offering_type(&self) -> &::std::option::Option<crate::types::OfferingTypeValues> {
+        self.inner.get_offering_type()
     }
 }

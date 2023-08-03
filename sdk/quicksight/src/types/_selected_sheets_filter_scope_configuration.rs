@@ -59,6 +59,13 @@ impl SelectedSheetsFilterScopeConfigurationBuilder {
         self.sheet_visual_scoping_configurations = input;
         self
     }
+    /// <p>The sheet ID and visual IDs of the sheet and visuals that the filter is applied to.</p>
+    pub fn get_sheet_visual_scoping_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SheetVisualScopingConfiguration>>
+    {
+        &self.sheet_visual_scoping_configurations
+    }
     /// Consumes the builder and constructs a [`SelectedSheetsFilterScopeConfiguration`](crate::types::SelectedSheetsFilterScopeConfiguration).
     pub fn build(self) -> crate::types::SelectedSheetsFilterScopeConfiguration {
         crate::types::SelectedSheetsFilterScopeConfiguration {

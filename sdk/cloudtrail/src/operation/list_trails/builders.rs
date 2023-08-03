@@ -36,6 +36,10 @@ impl ListTrailsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListTrails as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_trails::builders::ListTrailsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -123,5 +127,9 @@ impl ListTrailsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

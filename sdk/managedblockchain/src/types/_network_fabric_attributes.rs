@@ -54,6 +54,10 @@ impl NetworkFabricAttributesBuilder {
         self.ordering_service_endpoint = input;
         self
     }
+    /// <p>The endpoint of the ordering service for the network.</p>
+    pub fn get_ordering_service_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ordering_service_endpoint
+    }
     /// <p>The edition of Amazon Managed Blockchain that Hyperledger Fabric uses. For more information, see <a href="http://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain Pricing</a>.</p>
     pub fn edition(mut self, input: crate::types::Edition) -> Self {
         self.edition = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl NetworkFabricAttributesBuilder {
     pub fn set_edition(mut self, input: ::std::option::Option<crate::types::Edition>) -> Self {
         self.edition = input;
         self
+    }
+    /// <p>The edition of Amazon Managed Blockchain that Hyperledger Fabric uses. For more information, see <a href="http://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain Pricing</a>.</p>
+    pub fn get_edition(&self) -> &::std::option::Option<crate::types::Edition> {
+        &self.edition
     }
     /// Consumes the builder and constructs a [`NetworkFabricAttributes`](crate::types::NetworkFabricAttributes).
     pub fn build(self) -> crate::types::NetworkFabricAttributes {

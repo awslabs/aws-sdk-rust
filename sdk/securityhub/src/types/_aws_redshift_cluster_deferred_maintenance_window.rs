@@ -68,6 +68,11 @@ impl AwsRedshiftClusterDeferredMaintenanceWindowBuilder {
         self.defer_maintenance_end_time = input;
         self
     }
+    /// <p>The end of the time window for which maintenance was deferred.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_defer_maintenance_end_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.defer_maintenance_end_time
+    }
     /// <p>The identifier of the maintenance window.</p>
     pub fn defer_maintenance_identifier(
         mut self,
@@ -83,6 +88,12 @@ impl AwsRedshiftClusterDeferredMaintenanceWindowBuilder {
     ) -> Self {
         self.defer_maintenance_identifier = input;
         self
+    }
+    /// <p>The identifier of the maintenance window.</p>
+    pub fn get_defer_maintenance_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.defer_maintenance_identifier
     }
     /// <p>The start of the time window for which maintenance was deferred.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
@@ -101,6 +112,13 @@ impl AwsRedshiftClusterDeferredMaintenanceWindowBuilder {
     ) -> Self {
         self.defer_maintenance_start_time = input;
         self
+    }
+    /// <p>The start of the time window for which maintenance was deferred.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_defer_maintenance_start_time(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.defer_maintenance_start_time
     }
     /// Consumes the builder and constructs a [`AwsRedshiftClusterDeferredMaintenanceWindow`](crate::types::AwsRedshiftClusterDeferredMaintenanceWindow).
     pub fn build(self) -> crate::types::AwsRedshiftClusterDeferredMaintenanceWindow {

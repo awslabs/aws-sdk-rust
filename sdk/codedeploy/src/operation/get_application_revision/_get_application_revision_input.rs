@@ -56,6 +56,10 @@ impl GetApplicationRevisionInputBuilder {
         self.application_name = input;
         self
     }
+    /// <p>The name of the application that corresponds to the revision.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// <p>Information about the application revision to get, including type and location.</p>
     pub fn revision(mut self, input: crate::types::RevisionLocation) -> Self {
         self.revision = ::std::option::Option::Some(input);
@@ -68,6 +72,10 @@ impl GetApplicationRevisionInputBuilder {
     ) -> Self {
         self.revision = input;
         self
+    }
+    /// <p>Information about the application revision to get, including type and location.</p>
+    pub fn get_revision(&self) -> &::std::option::Option<crate::types::RevisionLocation> {
+        &self.revision
     }
     /// Consumes the builder and constructs a [`GetApplicationRevisionInput`](crate::operation::get_application_revision::GetApplicationRevisionInput).
     pub fn build(

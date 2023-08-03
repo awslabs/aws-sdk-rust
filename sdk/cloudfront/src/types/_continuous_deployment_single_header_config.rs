@@ -48,6 +48,10 @@ impl ContinuousDeploymentSingleHeaderConfigBuilder {
         self.header = input;
         self
     }
+    /// <p>The request header name that you want CloudFront to send to your staging distribution. The header must contain the prefix <code>aws-cf-cd-</code>.</p>
+    pub fn get_header(&self) -> &::std::option::Option<::std::string::String> {
+        &self.header
+    }
     /// <p>The request header value.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl ContinuousDeploymentSingleHeaderConfigBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The request header value.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`ContinuousDeploymentSingleHeaderConfig`](crate::types::ContinuousDeploymentSingleHeaderConfig).
     pub fn build(self) -> crate::types::ContinuousDeploymentSingleHeaderConfig {

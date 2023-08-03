@@ -47,6 +47,10 @@ impl DeleteForecastExportJobInputBuilder {
         self.forecast_export_job_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the forecast export job to delete.</p>
+    pub fn get_forecast_export_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.forecast_export_job_arn
+    }
     /// Consumes the builder and constructs a [`DeleteForecastExportJobInput`](crate::operation::delete_forecast_export_job::DeleteForecastExportJobInput).
     pub fn build(
         self,

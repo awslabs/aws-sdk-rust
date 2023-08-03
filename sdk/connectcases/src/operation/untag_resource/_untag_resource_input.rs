@@ -47,6 +47,10 @@ impl UntagResourceInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN)</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Appends an item to `tag_keys`.
     ///
     /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
@@ -65,6 +69,10 @@ impl UntagResourceInputBuilder {
     ) -> Self {
         self.tag_keys = input;
         self
+    }
+    /// <p>List of tag keys.</p>
+    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tag_keys
     }
     /// Consumes the builder and constructs a [`UntagResourceInput`](crate::operation::untag_resource::UntagResourceInput).
     pub fn build(

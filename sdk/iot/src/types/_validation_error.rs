@@ -46,6 +46,10 @@ impl ValidationErrorBuilder {
         self.error_message = input;
         self
     }
+    /// <p>The description of an error found in the behaviors.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
+    }
     /// Consumes the builder and constructs a [`ValidationError`](crate::types::ValidationError).
     pub fn build(self) -> crate::types::ValidationError {
         crate::types::ValidationError {

@@ -54,6 +54,10 @@ impl CodeSigningCertificateChainBuilder {
         self.certificate_name = input;
         self
     }
+    /// <p>The name of the certificate.</p>
+    pub fn get_certificate_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_name
+    }
     /// <p>A base64 encoded binary representation of the code signing certificate chain.</p>
     pub fn inline_document(
         mut self,
@@ -69,6 +73,10 @@ impl CodeSigningCertificateChainBuilder {
     ) -> Self {
         self.inline_document = input;
         self
+    }
+    /// <p>A base64 encoded binary representation of the code signing certificate chain.</p>
+    pub fn get_inline_document(&self) -> &::std::option::Option<::std::string::String> {
+        &self.inline_document
     }
     /// Consumes the builder and constructs a [`CodeSigningCertificateChain`](crate::types::CodeSigningCertificateChain).
     pub fn build(self) -> crate::types::CodeSigningCertificateChain {

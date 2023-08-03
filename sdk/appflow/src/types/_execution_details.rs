@@ -66,6 +66,12 @@ impl ExecutionDetailsBuilder {
         self.most_recent_execution_message = input;
         self
     }
+    /// <p> Describes the details of the most recent flow run. </p>
+    pub fn get_most_recent_execution_message(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.most_recent_execution_message
+    }
     /// <p> Specifies the time of the most recent flow run. </p>
     pub fn most_recent_execution_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.most_recent_execution_time = ::std::option::Option::Some(input);
@@ -79,6 +85,12 @@ impl ExecutionDetailsBuilder {
         self.most_recent_execution_time = input;
         self
     }
+    /// <p> Specifies the time of the most recent flow run. </p>
+    pub fn get_most_recent_execution_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.most_recent_execution_time
+    }
     /// <p> Specifies the status of the most recent flow run. </p>
     pub fn most_recent_execution_status(mut self, input: crate::types::ExecutionStatus) -> Self {
         self.most_recent_execution_status = ::std::option::Option::Some(input);
@@ -91,6 +103,12 @@ impl ExecutionDetailsBuilder {
     ) -> Self {
         self.most_recent_execution_status = input;
         self
+    }
+    /// <p> Specifies the status of the most recent flow run. </p>
+    pub fn get_most_recent_execution_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExecutionStatus> {
+        &self.most_recent_execution_status
     }
     /// Consumes the builder and constructs a [`ExecutionDetails`](crate::types::ExecutionDetails).
     pub fn build(self) -> crate::types::ExecutionDetails {

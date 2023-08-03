@@ -63,6 +63,10 @@ impl CreateAliasInputBuilder {
         self.name = input;
         self
     }
+    /// <p>A descriptive label that is associated with an alias. Alias names do not need to be unique.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A human-readable description of the alias.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl CreateAliasInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A human-readable description of the alias.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The routing configuration, including routing type and fleet target, for the alias. </p>
     pub fn routing_strategy(mut self, input: crate::types::RoutingStrategy) -> Self {
@@ -85,6 +93,10 @@ impl CreateAliasInputBuilder {
     ) -> Self {
         self.routing_strategy = input;
         self
+    }
+    /// <p>The routing configuration, including routing type and fleet target, for the alias. </p>
+    pub fn get_routing_strategy(&self) -> &::std::option::Option<crate::types::RoutingStrategy> {
+        &self.routing_strategy
     }
     /// Appends an item to `tags`.
     ///
@@ -104,6 +116,10 @@ impl CreateAliasInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of labels to assign to the new alias resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateAliasInput`](crate::operation::create_alias::CreateAliasInput).
     pub fn build(

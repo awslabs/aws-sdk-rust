@@ -63,6 +63,10 @@ impl TransferCertificateInputBuilder {
         self.certificate_id = input;
         self
     }
+    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
+    pub fn get_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_id
+    }
     /// <p>The Amazon Web Services account.</p>
     pub fn target_aws_account(
         mut self,
@@ -79,6 +83,10 @@ impl TransferCertificateInputBuilder {
         self.target_aws_account = input;
         self
     }
+    /// <p>The Amazon Web Services account.</p>
+    pub fn get_target_aws_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_aws_account
+    }
     /// <p>The transfer message.</p>
     pub fn transfer_message(
         mut self,
@@ -94,6 +102,10 @@ impl TransferCertificateInputBuilder {
     ) -> Self {
         self.transfer_message = input;
         self
+    }
+    /// <p>The transfer message.</p>
+    pub fn get_transfer_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transfer_message
     }
     /// Consumes the builder and constructs a [`TransferCertificateInput`](crate::operation::transfer_certificate::TransferCertificateInput).
     pub fn build(

@@ -80,6 +80,10 @@ impl DescribeLocationFsxOpenZfsOutputBuilder {
         self.location_arn = input;
         self
     }
+    /// <p>The ARN of the FSx for OpenZFS location that was described.</p>
+    pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location_arn
+    }
     /// <p>The uniform resource identifier (URI) of the FSx for OpenZFS location that was described.</p>
     /// <p>Example: <code>fsxz://us-west-2.fs-1234567890abcdef02/fsx/folderA/folder</code> </p>
     pub fn location_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -91,6 +95,11 @@ impl DescribeLocationFsxOpenZfsOutputBuilder {
     pub fn set_location_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location_uri = input;
         self
+    }
+    /// <p>The uniform resource identifier (URI) of the FSx for OpenZFS location that was described.</p>
+    /// <p>Example: <code>fsxz://us-west-2.fs-1234567890abcdef02/fsx/folderA/folder</code> </p>
+    pub fn get_location_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location_uri
     }
     /// Appends an item to `security_group_arns`.
     ///
@@ -114,6 +123,12 @@ impl DescribeLocationFsxOpenZfsOutputBuilder {
         self.security_group_arns = input;
         self
     }
+    /// <p>The ARNs of the security groups that are configured for the FSx for OpenZFS file system.</p>
+    pub fn get_security_group_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_arns
+    }
     /// <p>The type of protocol that DataSync uses to access your file system.</p>
     pub fn protocol(mut self, input: crate::types::FsxProtocol) -> Self {
         self.protocol = ::std::option::Option::Some(input);
@@ -123,6 +138,10 @@ impl DescribeLocationFsxOpenZfsOutputBuilder {
     pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::FsxProtocol>) -> Self {
         self.protocol = input;
         self
+    }
+    /// <p>The type of protocol that DataSync uses to access your file system.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<crate::types::FsxProtocol> {
+        &self.protocol
     }
     /// <p>The time that the FSx for OpenZFS location was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -136,6 +155,10 @@ impl DescribeLocationFsxOpenZfsOutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The time that the FSx for OpenZFS location was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

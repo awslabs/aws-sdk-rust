@@ -98,6 +98,10 @@ impl DescribedExecutionBuilder {
         self.execution_id = input;
         self
     }
+    /// <p>A unique identifier for the execution of a workflow.</p>
+    pub fn get_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_id
+    }
     /// <p>A structure that describes the Amazon S3 or EFS file location. This is the file location when the execution begins: if the file is being copied, this is the initial (as opposed to destination) file location.</p>
     pub fn initial_file_location(mut self, input: crate::types::FileLocation) -> Self {
         self.initial_file_location = ::std::option::Option::Some(input);
@@ -111,6 +115,10 @@ impl DescribedExecutionBuilder {
         self.initial_file_location = input;
         self
     }
+    /// <p>A structure that describes the Amazon S3 or EFS file location. This is the file location when the execution begins: if the file is being copied, this is the initial (as opposed to destination) file location.</p>
+    pub fn get_initial_file_location(&self) -> &::std::option::Option<crate::types::FileLocation> {
+        &self.initial_file_location
+    }
     /// <p>A container object for the session details that are associated with a workflow.</p>
     pub fn service_metadata(mut self, input: crate::types::ServiceMetadata) -> Self {
         self.service_metadata = ::std::option::Option::Some(input);
@@ -123,6 +131,10 @@ impl DescribedExecutionBuilder {
     ) -> Self {
         self.service_metadata = input;
         self
+    }
+    /// <p>A container object for the session details that are associated with a workflow.</p>
+    pub fn get_service_metadata(&self) -> &::std::option::Option<crate::types::ServiceMetadata> {
+        &self.service_metadata
     }
     /// <p>The IAM role associated with the execution.</p>
     pub fn execution_role(
@@ -140,6 +152,10 @@ impl DescribedExecutionBuilder {
         self.execution_role = input;
         self
     }
+    /// <p>The IAM role associated with the execution.</p>
+    pub fn get_execution_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_role
+    }
     /// <p>The IAM logging role associated with the execution.</p>
     pub fn logging_configuration(mut self, input: crate::types::LoggingConfiguration) -> Self {
         self.logging_configuration = ::std::option::Option::Some(input);
@@ -152,6 +168,12 @@ impl DescribedExecutionBuilder {
     ) -> Self {
         self.logging_configuration = input;
         self
+    }
+    /// <p>The IAM logging role associated with the execution.</p>
+    pub fn get_logging_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::LoggingConfiguration> {
+        &self.logging_configuration
     }
     /// <p>The full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon EFS file systems. The POSIX permissions that are set on files and directories in your file system determine the level of access your users get when transferring files into and out of your Amazon EFS file systems.</p>
     pub fn posix_profile(mut self, input: crate::types::PosixProfile) -> Self {
@@ -166,6 +188,10 @@ impl DescribedExecutionBuilder {
         self.posix_profile = input;
         self
     }
+    /// <p>The full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon EFS file systems. The POSIX permissions that are set on files and directories in your file system determine the level of access your users get when transferring files into and out of your Amazon EFS file systems.</p>
+    pub fn get_posix_profile(&self) -> &::std::option::Option<crate::types::PosixProfile> {
+        &self.posix_profile
+    }
     /// <p>The status is one of the execution. Can be in progress, completed, exception encountered, or handling the exception. </p>
     pub fn status(mut self, input: crate::types::ExecutionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -179,6 +205,10 @@ impl DescribedExecutionBuilder {
         self.status = input;
         self
     }
+    /// <p>The status is one of the execution. Can be in progress, completed, exception encountered, or handling the exception. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ExecutionStatus> {
+        &self.status
+    }
     /// <p>A structure that describes the execution results. This includes a list of the steps along with the details of each step, error type and message (if any), and the <code>OnExceptionSteps</code> structure.</p>
     pub fn results(mut self, input: crate::types::ExecutionResults) -> Self {
         self.results = ::std::option::Option::Some(input);
@@ -191,6 +221,10 @@ impl DescribedExecutionBuilder {
     ) -> Self {
         self.results = input;
         self
+    }
+    /// <p>A structure that describes the execution results. This includes a list of the steps along with the details of each step, error type and message (if any), and the <code>OnExceptionSteps</code> structure.</p>
+    pub fn get_results(&self) -> &::std::option::Option<crate::types::ExecutionResults> {
+        &self.results
     }
     /// Consumes the builder and constructs a [`DescribedExecution`](crate::types::DescribedExecution).
     pub fn build(self) -> crate::types::DescribedExecution {

@@ -93,6 +93,10 @@ impl CreateBotLocaleInputBuilder {
         self.bot_id = input;
         self
     }
+    /// <p>The identifier of the bot to create the locale for.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
+    }
     /// <p>The version of the bot to create the locale for. This can only be the draft version of the bot.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
@@ -102,6 +106,10 @@ impl CreateBotLocaleInputBuilder {
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_version = input;
         self
+    }
+    /// <p>The version of the bot to create the locale for. This can only be the draft version of the bot.</p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_version
     }
     /// <p>The identifier of the language and locale that the bot will be used in. The string must match one of the supported locales. All of the intents, slot types, and slots used in the bot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -113,6 +121,10 @@ impl CreateBotLocaleInputBuilder {
         self.locale_id = input;
         self
     }
+    /// <p>The identifier of the language and locale that the bot will be used in. The string must match one of the supported locales. All of the intents, slot types, and slots used in the bot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale_id
+    }
     /// <p>A description of the bot locale. Use this to help identify the bot locale in lists.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -122,6 +134,10 @@ impl CreateBotLocaleInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the bot locale. Use this to help identify the bot locale in lists.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot.</p>
     /// <p>For example, suppose a bot is configured with the confidence threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the <code>RecognizeText</code> operation would be:</p>
@@ -150,6 +166,17 @@ impl CreateBotLocaleInputBuilder {
         self.nlu_intent_confidence_threshold = input;
         self
     }
+    /// <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot.</p>
+    /// <p>For example, suppose a bot is configured with the confidence threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the <code>RecognizeText</code> operation would be:</p>
+    /// <ul>
+    /// <li> <p>AMAZON.FallbackIntent</p> </li>
+    /// <li> <p>IntentA</p> </li>
+    /// <li> <p>IntentB</p> </li>
+    /// <li> <p>IntentC</p> </li>
+    /// </ul>
+    pub fn get_nlu_intent_confidence_threshold(&self) -> &::std::option::Option<f64> {
+        &self.nlu_intent_confidence_threshold
+    }
     /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user.</p>
     pub fn voice_settings(mut self, input: crate::types::VoiceSettings) -> Self {
         self.voice_settings = ::std::option::Option::Some(input);
@@ -162,6 +189,10 @@ impl CreateBotLocaleInputBuilder {
     ) -> Self {
         self.voice_settings = input;
         self
+    }
+    /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user.</p>
+    pub fn get_voice_settings(&self) -> &::std::option::Option<crate::types::VoiceSettings> {
+        &self.voice_settings
     }
     /// Consumes the builder and constructs a [`CreateBotLocaleInput`](crate::operation::create_bot_locale::CreateBotLocaleInput).
     pub fn build(

@@ -38,6 +38,13 @@ impl OpenInstancePublicPortsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the OpenInstancePublicPorts as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::open_instance_public_ports::builders::OpenInstancePublicPortsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +135,10 @@ impl OpenInstancePublicPortsFluentBuilder {
         self.inner = self.inner.set_port_info(input);
         self
     }
+    /// <p>An object to describe the ports to open for the specified instance.</p>
+    pub fn get_port_info(&self) -> &::std::option::Option<crate::types::PortInfo> {
+        self.inner.get_port_info()
+    }
     /// <p>The name of the instance for which to open ports.</p>
     pub fn instance_name(
         mut self,
@@ -143,5 +154,9 @@ impl OpenInstancePublicPortsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_instance_name(input);
         self
+    }
+    /// <p>The name of the instance for which to open ports.</p>
+    pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_name()
     }
 }

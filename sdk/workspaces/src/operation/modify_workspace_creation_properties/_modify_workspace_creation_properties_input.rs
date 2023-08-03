@@ -51,6 +51,10 @@ impl ModifyWorkspaceCreationPropertiesInputBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The identifier of the directory.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// <p>The default properties for creating WorkSpaces.</p>
     pub fn workspace_creation_properties(
         mut self,
@@ -66,6 +70,12 @@ impl ModifyWorkspaceCreationPropertiesInputBuilder {
     ) -> Self {
         self.workspace_creation_properties = input;
         self
+    }
+    /// <p>The default properties for creating WorkSpaces.</p>
+    pub fn get_workspace_creation_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::WorkspaceCreationProperties> {
+        &self.workspace_creation_properties
     }
     /// Consumes the builder and constructs a [`ModifyWorkspaceCreationPropertiesInput`](crate::operation::modify_workspace_creation_properties::ModifyWorkspaceCreationPropertiesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::modify_workspace_creation_properties::ModifyWorkspaceCreationPropertiesInput, ::aws_smithy_http::operation::error::BuildError>{

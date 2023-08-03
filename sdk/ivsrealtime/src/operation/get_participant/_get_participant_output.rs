@@ -49,6 +49,10 @@ impl GetParticipantOutputBuilder {
         self.participant = input;
         self
     }
+    /// <p>The participant that is returned.</p>
+    pub fn get_participant(&self) -> &::std::option::Option<crate::types::Participant> {
+        &self.participant
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

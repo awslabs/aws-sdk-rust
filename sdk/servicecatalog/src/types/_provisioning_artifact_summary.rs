@@ -80,6 +80,10 @@ impl ProvisioningArtifactSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the provisioning artifact.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the provisioning artifact.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl ProvisioningArtifactSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the provisioning artifact.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the provisioning artifact.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -99,6 +107,10 @@ impl ProvisioningArtifactSummaryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the provisioning artifact.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The UTC time stamp of the creation time.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -112,6 +124,10 @@ impl ProvisioningArtifactSummaryBuilder {
     ) -> Self {
         self.created_time = input;
         self
+    }
+    /// <p>The UTC time stamp of the creation time.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
     }
     /// Adds a key-value pair to `provisioning_artifact_metadata`.
     ///
@@ -137,6 +153,14 @@ impl ProvisioningArtifactSummaryBuilder {
     ) -> Self {
         self.provisioning_artifact_metadata = input;
         self
+    }
+    /// <p>The metadata for the provisioning artifact. This is used with Amazon Web Services Marketplace products.</p>
+    pub fn get_provisioning_artifact_metadata(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.provisioning_artifact_metadata
     }
     /// Consumes the builder and constructs a [`ProvisioningArtifactSummary`](crate::types::ProvisioningArtifactSummary).
     pub fn build(self) -> crate::types::ProvisioningArtifactSummary {

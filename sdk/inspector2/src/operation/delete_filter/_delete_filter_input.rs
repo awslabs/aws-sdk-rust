@@ -39,6 +39,10 @@ impl DeleteFilterInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Number (ARN) of the filter to be deleted.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`DeleteFilterInput`](crate::operation::delete_filter::DeleteFilterInput).
     pub fn build(
         self,

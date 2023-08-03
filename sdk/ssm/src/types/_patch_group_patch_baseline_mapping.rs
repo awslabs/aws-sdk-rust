@@ -48,6 +48,10 @@ impl PatchGroupPatchBaselineMappingBuilder {
         self.patch_group = input;
         self
     }
+    /// <p>The name of the patch group registered with the patch baseline.</p>
+    pub fn get_patch_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.patch_group
+    }
     /// <p>The patch baseline the patch group is registered with.</p>
     pub fn baseline_identity(mut self, input: crate::types::PatchBaselineIdentity) -> Self {
         self.baseline_identity = ::std::option::Option::Some(input);
@@ -60,6 +64,12 @@ impl PatchGroupPatchBaselineMappingBuilder {
     ) -> Self {
         self.baseline_identity = input;
         self
+    }
+    /// <p>The patch baseline the patch group is registered with.</p>
+    pub fn get_baseline_identity(
+        &self,
+    ) -> &::std::option::Option<crate::types::PatchBaselineIdentity> {
+        &self.baseline_identity
     }
     /// Consumes the builder and constructs a [`PatchGroupPatchBaselineMapping`](crate::types::PatchGroupPatchBaselineMapping).
     pub fn build(self) -> crate::types::PatchGroupPatchBaselineMapping {

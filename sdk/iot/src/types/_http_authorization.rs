@@ -43,6 +43,10 @@ impl HttpAuthorizationBuilder {
         self.sigv4 = input;
         self
     }
+    /// <p>Use Sig V4 authorization. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a>.</p>
+    pub fn get_sigv4(&self) -> &::std::option::Option<crate::types::SigV4Authorization> {
+        &self.sigv4
+    }
     /// Consumes the builder and constructs a [`HttpAuthorization`](crate::types::HttpAuthorization).
     pub fn build(self) -> crate::types::HttpAuthorization {
         crate::types::HttpAuthorization { sigv4: self.sigv4 }

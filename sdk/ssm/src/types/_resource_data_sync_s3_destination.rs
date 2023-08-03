@@ -84,6 +84,10 @@ impl ResourceDataSyncS3DestinationBuilder {
         self.bucket_name = input;
         self
     }
+    /// <p>The name of the S3 bucket where the aggregated data is stored.</p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_name
+    }
     /// <p>An Amazon S3 prefix for the bucket.</p>
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix = ::std::option::Option::Some(input.into());
@@ -93,6 +97,10 @@ impl ResourceDataSyncS3DestinationBuilder {
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix = input;
         self
+    }
+    /// <p>An Amazon S3 prefix for the bucket.</p>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
     }
     /// <p>A supported sync format. The following format is currently supported: JsonSerDe</p>
     pub fn sync_format(mut self, input: crate::types::ResourceDataSyncS3Format) -> Self {
@@ -107,6 +115,12 @@ impl ResourceDataSyncS3DestinationBuilder {
         self.sync_format = input;
         self
     }
+    /// <p>A supported sync format. The following format is currently supported: JsonSerDe</p>
+    pub fn get_sync_format(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceDataSyncS3Format> {
+        &self.sync_format
+    }
     /// <p>The Amazon Web Services Region with the S3 bucket targeted by the resource data sync.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
@@ -116,6 +130,10 @@ impl ResourceDataSyncS3DestinationBuilder {
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
+    }
+    /// <p>The Amazon Web Services Region with the S3 bucket targeted by the resource data sync.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
     }
     /// <p>The ARN of an encryption key for a destination in Amazon S3. Must belong to the same Region as the destination S3 bucket.</p>
     pub fn awskms_key_arn(
@@ -133,6 +151,10 @@ impl ResourceDataSyncS3DestinationBuilder {
         self.awskms_key_arn = input;
         self
     }
+    /// <p>The ARN of an encryption key for a destination in Amazon S3. Must belong to the same Region as the destination S3 bucket.</p>
+    pub fn get_awskms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.awskms_key_arn
+    }
     /// <p>Enables destination data sharing. By default, this field is <code>null</code>.</p>
     pub fn destination_data_sharing(
         mut self,
@@ -148,6 +170,12 @@ impl ResourceDataSyncS3DestinationBuilder {
     ) -> Self {
         self.destination_data_sharing = input;
         self
+    }
+    /// <p>Enables destination data sharing. By default, this field is <code>null</code>.</p>
+    pub fn get_destination_data_sharing(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceDataSyncDestinationDataSharing> {
+        &self.destination_data_sharing
     }
     /// Consumes the builder and constructs a [`ResourceDataSyncS3Destination`](crate::types::ResourceDataSyncS3Destination).
     pub fn build(self) -> crate::types::ResourceDataSyncS3Destination {

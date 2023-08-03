@@ -114,6 +114,10 @@ impl InferenceExperimentSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the inference experiment.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The type of the inference experiment.</p>
     pub fn r#type(mut self, input: crate::types::InferenceExperimentType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -126,6 +130,10 @@ impl InferenceExperimentSummaryBuilder {
     ) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of the inference experiment.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::InferenceExperimentType> {
+        &self.r#type
     }
     /// <p>The duration for which the inference experiment ran or will run.</p>
     /// <p>The maximum duration that you can set for an inference experiment is 30 days.</p>
@@ -142,6 +150,13 @@ impl InferenceExperimentSummaryBuilder {
         self.schedule = input;
         self
     }
+    /// <p>The duration for which the inference experiment ran or will run.</p>
+    /// <p>The maximum duration that you can set for an inference experiment is 30 days.</p>
+    pub fn get_schedule(
+        &self,
+    ) -> &::std::option::Option<crate::types::InferenceExperimentSchedule> {
+        &self.schedule
+    }
     /// <p>The status of the inference experiment.</p>
     pub fn status(mut self, input: crate::types::InferenceExperimentStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -154,6 +169,10 @@ impl InferenceExperimentSummaryBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the inference experiment.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::InferenceExperimentStatus> {
+        &self.status
     }
     /// <p>The error message for the inference experiment status result.</p>
     pub fn status_reason(
@@ -171,6 +190,10 @@ impl InferenceExperimentSummaryBuilder {
         self.status_reason = input;
         self
     }
+    /// <p>The error message for the inference experiment status result.</p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_reason
+    }
     /// <p>The description of the inference experiment.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -180,6 +203,10 @@ impl InferenceExperimentSummaryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the inference experiment.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The timestamp at which the inference experiment was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -194,6 +221,10 @@ impl InferenceExperimentSummaryBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The timestamp at which the inference experiment was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The timestamp at which the inference experiment was completed.</p>
     pub fn completion_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.completion_time = ::std::option::Option::Some(input);
@@ -206,6 +237,10 @@ impl InferenceExperimentSummaryBuilder {
     ) -> Self {
         self.completion_time = input;
         self
+    }
+    /// <p>The timestamp at which the inference experiment was completed.</p>
+    pub fn get_completion_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.completion_time
     }
     /// <p>The timestamp when you last modified the inference experiment.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -220,6 +255,10 @@ impl InferenceExperimentSummaryBuilder {
         self.last_modified_time = input;
         self
     }
+    /// <p>The timestamp when you last modified the inference experiment.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
     /// <p> The ARN of the IAM role that Amazon SageMaker can assume to access model artifacts and container images, and manage Amazon SageMaker Inference endpoints for model deployment. </p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -229,6 +268,10 @@ impl InferenceExperimentSummaryBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p> The ARN of the IAM role that Amazon SageMaker can assume to access model artifacts and container images, and manage Amazon SageMaker Inference endpoints for model deployment. </p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Consumes the builder and constructs a [`InferenceExperimentSummary`](crate::types::InferenceExperimentSummary).
     pub fn build(self) -> crate::types::InferenceExperimentSummary {

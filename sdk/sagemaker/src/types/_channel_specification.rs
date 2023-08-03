@@ -93,6 +93,10 @@ impl ChannelSpecificationBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the channel.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A brief description of the channel.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -103,6 +107,10 @@ impl ChannelSpecificationBuilder {
         self.description = input;
         self
     }
+    /// <p>A brief description of the channel.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>Indicates whether the channel is required by the algorithm.</p>
     pub fn is_required(mut self, input: bool) -> Self {
         self.is_required = ::std::option::Option::Some(input);
@@ -112,6 +120,10 @@ impl ChannelSpecificationBuilder {
     pub fn set_is_required(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_required = input;
         self
+    }
+    /// <p>Indicates whether the channel is required by the algorithm.</p>
+    pub fn get_is_required(&self) -> &::std::option::Option<bool> {
+        &self.is_required
     }
     /// Appends an item to `supported_content_types`.
     ///
@@ -135,6 +147,12 @@ impl ChannelSpecificationBuilder {
         self.supported_content_types = input;
         self
     }
+    /// <p>The supported MIME types for the data.</p>
+    pub fn get_supported_content_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.supported_content_types
+    }
     /// Appends an item to `supported_compression_types`.
     ///
     /// To override the contents of this collection use [`set_supported_compression_types`](Self::set_supported_compression_types).
@@ -153,6 +171,12 @@ impl ChannelSpecificationBuilder {
     ) -> Self {
         self.supported_compression_types = input;
         self
+    }
+    /// <p>The allowed compression types, if data compression is used.</p>
+    pub fn get_supported_compression_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CompressionType>> {
+        &self.supported_compression_types
     }
     /// Appends an item to `supported_input_modes`.
     ///
@@ -176,6 +200,14 @@ impl ChannelSpecificationBuilder {
     ) -> Self {
         self.supported_input_modes = input;
         self
+    }
+    /// <p>The allowed input mode, either FILE or PIPE.</p>
+    /// <p>In FILE mode, Amazon SageMaker copies the data from the input source onto the local Amazon Elastic Block Store (Amazon EBS) volumes before starting your training algorithm. This is the most commonly used input mode.</p>
+    /// <p>In PIPE mode, Amazon SageMaker streams input data from the source directly to your algorithm without using the EBS volume.</p>
+    pub fn get_supported_input_modes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TrainingInputMode>> {
+        &self.supported_input_modes
     }
     /// Consumes the builder and constructs a [`ChannelSpecification`](crate::types::ChannelSpecification).
     pub fn build(self) -> crate::types::ChannelSpecification {

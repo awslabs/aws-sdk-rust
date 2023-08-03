@@ -44,6 +44,10 @@ impl DescribeLoadBalancerTargetGroupsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeLoadBalancerTargetGroups as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_load_balancer_target_groups::builders::DescribeLoadBalancerTargetGroupsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -114,6 +118,10 @@ impl DescribeLoadBalancerTargetGroupsFluentBuilder {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_auto_scaling_group_name()
+    }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -124,6 +132,10 @@ impl DescribeLoadBalancerTargetGroupsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of items to return with this call. The default value is <code>100</code> and the maximum value is <code>100</code>.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.inner = self.inner.max_records(input);
@@ -133,5 +145,9 @@ impl DescribeLoadBalancerTargetGroupsFluentBuilder {
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_records(input);
         self
+    }
+    /// <p>The maximum number of items to return with this call. The default value is <code>100</code> and the maximum value is <code>100</code>.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_records()
     }
 }

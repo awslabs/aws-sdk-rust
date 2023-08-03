@@ -50,6 +50,12 @@ impl ProtectedQueryResultConfigurationBuilder {
         self.output_configuration = input;
         self
     }
+    /// <p>Configuration for protected query results.</p>
+    pub fn get_output_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProtectedQueryOutputConfiguration> {
+        &self.output_configuration
+    }
     /// Consumes the builder and constructs a [`ProtectedQueryResultConfiguration`](crate::types::ProtectedQueryResultConfiguration).
     pub fn build(self) -> crate::types::ProtectedQueryResultConfiguration {
         crate::types::ProtectedQueryResultConfiguration {

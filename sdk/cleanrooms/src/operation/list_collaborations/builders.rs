@@ -36,6 +36,12 @@ impl ListCollaborationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListCollaborations as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_collaborations::builders::ListCollaborationsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl ListCollaborationsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token value retrieved from a previous call to access the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum size of the results that is returned per call. Service chooses a default if it has not been set. Service may return a nextToken even if the maximum results has not been met.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -146,6 +156,10 @@ impl ListCollaborationsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum size of the results that is returned per call. Service chooses a default if it has not been set. Service may return a nextToken even if the maximum results has not been met.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>The caller's status in a collaboration.</p>
     pub fn member_status(mut self, input: crate::types::FilterableMemberStatus) -> Self {
@@ -159,5 +173,11 @@ impl ListCollaborationsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_member_status(input);
         self
+    }
+    /// <p>The caller's status in a collaboration.</p>
+    pub fn get_member_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::FilterableMemberStatus> {
+        self.inner.get_member_status()
     }
 }

@@ -39,6 +39,10 @@ impl GetRunGroupInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The group's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`GetRunGroupInput`](crate::operation::get_run_group::GetRunGroupInput).
     pub fn build(
         self,

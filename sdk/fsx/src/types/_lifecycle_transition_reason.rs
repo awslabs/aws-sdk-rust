@@ -40,6 +40,10 @@ impl LifecycleTransitionReasonBuilder {
         self.message = input;
         self
     }
+    /// <p>A detailed error message.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Consumes the builder and constructs a [`LifecycleTransitionReason`](crate::types::LifecycleTransitionReason).
     pub fn build(self) -> crate::types::LifecycleTransitionReason {
         crate::types::LifecycleTransitionReason {

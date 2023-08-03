@@ -80,6 +80,10 @@ impl CacheParameterGroupBuilder {
         self.cache_parameter_group_name = input;
         self
     }
+    /// <p>The name of the cache parameter group.</p>
+    pub fn get_cache_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_parameter_group_name
+    }
     /// <p>The name of the cache parameter group family that this cache parameter group is compatible with.</p>
     /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis7</code> </p>
     pub fn cache_parameter_group_family(
@@ -98,6 +102,13 @@ impl CacheParameterGroupBuilder {
         self.cache_parameter_group_family = input;
         self
     }
+    /// <p>The name of the cache parameter group family that this cache parameter group is compatible with.</p>
+    /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis7</code> </p>
+    pub fn get_cache_parameter_group_family(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.cache_parameter_group_family
+    }
     /// <p>The description for this cache parameter group.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -107,6 +118,10 @@ impl CacheParameterGroupBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description for this cache parameter group.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Indicates whether the parameter group is associated with a Global datastore</p>
     pub fn is_global(mut self, input: bool) -> Self {
@@ -118,6 +133,10 @@ impl CacheParameterGroupBuilder {
         self.is_global = input;
         self
     }
+    /// <p>Indicates whether the parameter group is associated with a Global datastore</p>
+    pub fn get_is_global(&self) -> &::std::option::Option<bool> {
+        &self.is_global
+    }
     /// <p>The ARN (Amazon Resource Name) of the cache parameter group.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -127,6 +146,10 @@ impl CacheParameterGroupBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The ARN (Amazon Resource Name) of the cache parameter group.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`CacheParameterGroup`](crate::types::CacheParameterGroup).
     pub fn build(self) -> crate::types::CacheParameterGroup {

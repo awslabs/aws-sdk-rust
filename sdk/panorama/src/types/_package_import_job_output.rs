@@ -64,6 +64,10 @@ impl PackageImportJobOutputBuilder {
         self.package_id = input;
         self
     }
+    /// <p>The package's ID.</p>
+    pub fn get_package_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_id
+    }
     /// <p>The package's version.</p>
     pub fn package_version(
         mut self,
@@ -79,6 +83,10 @@ impl PackageImportJobOutputBuilder {
     ) -> Self {
         self.package_version = input;
         self
+    }
+    /// <p>The package's version.</p>
+    pub fn get_package_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_version
     }
     /// <p>The package's patch version.</p>
     pub fn patch_version(
@@ -96,6 +104,10 @@ impl PackageImportJobOutputBuilder {
         self.patch_version = input;
         self
     }
+    /// <p>The package's patch version.</p>
+    pub fn get_patch_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.patch_version
+    }
     /// <p>The package's output location.</p>
     pub fn output_s3_location(mut self, input: crate::types::OutPutS3Location) -> Self {
         self.output_s3_location = ::std::option::Option::Some(input);
@@ -108,6 +120,10 @@ impl PackageImportJobOutputBuilder {
     ) -> Self {
         self.output_s3_location = input;
         self
+    }
+    /// <p>The package's output location.</p>
+    pub fn get_output_s3_location(&self) -> &::std::option::Option<crate::types::OutPutS3Location> {
+        &self.output_s3_location
     }
     /// Consumes the builder and constructs a [`PackageImportJobOutput`](crate::types::PackageImportJobOutput).
     pub fn build(self) -> crate::types::PackageImportJobOutput {

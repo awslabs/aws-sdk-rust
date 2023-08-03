@@ -80,6 +80,12 @@ impl InventoryS3BucketDestinationBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The account ID that owns the destination S3 bucket. If no account ID is provided, the owner is not validated before exporting data. </p> <note>
+    /// <p> Although this value is optional, we strongly recommend that you set it to help prevent problems if the destination bucket ownership changes. </p>
+    /// </note>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the bucket where inventory results will be published.</p>
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
@@ -89,6 +95,10 @@ impl InventoryS3BucketDestinationBuilder {
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the bucket where inventory results will be published.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
     }
     /// <p>Specifies the output format of the inventory results.</p>
     pub fn format(mut self, input: crate::types::InventoryFormat) -> Self {
@@ -103,6 +113,10 @@ impl InventoryS3BucketDestinationBuilder {
         self.format = input;
         self
     }
+    /// <p>Specifies the output format of the inventory results.</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::InventoryFormat> {
+        &self.format
+    }
     /// <p>The prefix that is prepended to all inventory results.</p>
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix = ::std::option::Option::Some(input.into());
@@ -112,6 +126,10 @@ impl InventoryS3BucketDestinationBuilder {
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix = input;
         self
+    }
+    /// <p>The prefix that is prepended to all inventory results.</p>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
     }
     /// <p>Contains the type of server-side encryption used to encrypt the inventory results.</p>
     pub fn encryption(mut self, input: crate::types::InventoryEncryption) -> Self {
@@ -125,6 +143,10 @@ impl InventoryS3BucketDestinationBuilder {
     ) -> Self {
         self.encryption = input;
         self
+    }
+    /// <p>Contains the type of server-side encryption used to encrypt the inventory results.</p>
+    pub fn get_encryption(&self) -> &::std::option::Option<crate::types::InventoryEncryption> {
+        &self.encryption
     }
     /// Consumes the builder and constructs a [`InventoryS3BucketDestination`](crate::types::InventoryS3BucketDestination).
     pub fn build(self) -> crate::types::InventoryS3BucketDestination {

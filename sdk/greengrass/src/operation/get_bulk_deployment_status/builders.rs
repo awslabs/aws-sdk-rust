@@ -37,6 +37,13 @@ impl GetBulkDeploymentStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetBulkDeploymentStatus as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_bulk_deployment_status::builders::GetBulkDeploymentStatusInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +139,9 @@ impl GetBulkDeploymentStatusFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_bulk_deployment_id(input);
         self
+    }
+    /// The ID of the bulk deployment.
+    pub fn get_bulk_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bulk_deployment_id()
     }
 }

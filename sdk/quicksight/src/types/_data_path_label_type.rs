@@ -63,6 +63,10 @@ impl DataPathLabelTypeBuilder {
         self.field_id = input;
         self
     }
+    /// <p>The field ID of the field that the data label needs to be applied to.</p>
+    pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_id
+    }
     /// <p>The actual value of the field that is labeled.</p>
     pub fn field_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.field_value = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl DataPathLabelTypeBuilder {
     pub fn set_field_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.field_value = input;
         self
+    }
+    /// <p>The actual value of the field that is labeled.</p>
+    pub fn get_field_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_value
     }
     /// <p>The visibility of the data label.</p>
     pub fn visibility(mut self, input: crate::types::Visibility) -> Self {
@@ -85,6 +93,10 @@ impl DataPathLabelTypeBuilder {
     ) -> Self {
         self.visibility = input;
         self
+    }
+    /// <p>The visibility of the data label.</p>
+    pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.visibility
     }
     /// Consumes the builder and constructs a [`DataPathLabelType`](crate::types::DataPathLabelType).
     pub fn build(self) -> crate::types::DataPathLabelType {

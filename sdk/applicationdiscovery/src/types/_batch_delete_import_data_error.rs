@@ -64,6 +64,10 @@ impl BatchDeleteImportDataErrorBuilder {
         self.import_task_id = input;
         self
     }
+    /// <p>The unique import ID associated with the error that occurred.</p>
+    pub fn get_import_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.import_task_id
+    }
     /// <p>The type of error that occurred for a specific import task.</p>
     pub fn error_code(mut self, input: crate::types::BatchDeleteImportDataErrorCode) -> Self {
         self.error_code = ::std::option::Option::Some(input);
@@ -76,6 +80,12 @@ impl BatchDeleteImportDataErrorBuilder {
     ) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>The type of error that occurred for a specific import task.</p>
+    pub fn get_error_code(
+        &self,
+    ) -> &::std::option::Option<crate::types::BatchDeleteImportDataErrorCode> {
+        &self.error_code
     }
     /// <p>The description of the error that occurred for a specific import task.</p>
     pub fn error_description(
@@ -92,6 +102,10 @@ impl BatchDeleteImportDataErrorBuilder {
     ) -> Self {
         self.error_description = input;
         self
+    }
+    /// <p>The description of the error that occurred for a specific import task.</p>
+    pub fn get_error_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_description
     }
     /// Consumes the builder and constructs a [`BatchDeleteImportDataError`](crate::types::BatchDeleteImportDataError).
     pub fn build(self) -> crate::types::BatchDeleteImportDataError {

@@ -37,6 +37,12 @@ impl CreateOutpostFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateOutpost as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_outpost::builders::CreateOutpostInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +125,10 @@ impl CreateOutpostFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the Outpost.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The description of the Outpost.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -129,6 +139,10 @@ impl CreateOutpostFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>The description of the Outpost.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
     pub fn site_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.site_id(input.into());
@@ -138,6 +152,10 @@ impl CreateOutpostFluentBuilder {
     pub fn set_site_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_site_id(input);
         self
+    }
+    /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
+    pub fn get_site_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_site_id()
     }
     /// <p>The Availability Zone.</p>
     pub fn availability_zone(
@@ -155,6 +173,10 @@ impl CreateOutpostFluentBuilder {
         self.inner = self.inner.set_availability_zone(input);
         self
     }
+    /// <p>The Availability Zone.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_availability_zone()
+    }
     /// <p>The ID of the Availability Zone.</p>
     pub fn availability_zone_id(
         mut self,
@@ -170,6 +192,10 @@ impl CreateOutpostFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_availability_zone_id(input);
         self
+    }
+    /// <p>The ID of the Availability Zone.</p>
+    pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_availability_zone_id()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -194,6 +220,14 @@ impl CreateOutpostFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tags to apply to the Outpost.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p> The type of hardware for this Outpost. </p>
     pub fn supported_hardware_type(mut self, input: crate::types::SupportedHardwareType) -> Self {
         self.inner = self.inner.supported_hardware_type(input);
@@ -206,5 +240,11 @@ impl CreateOutpostFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_supported_hardware_type(input);
         self
+    }
+    /// <p> The type of hardware for this Outpost. </p>
+    pub fn get_supported_hardware_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::SupportedHardwareType> {
+        self.inner.get_supported_hardware_type()
     }
 }

@@ -39,6 +39,10 @@ impl RemoveRegionInputBuilder {
         self.directory_id = input;
         self
     }
+    /// <p>The identifier of the directory for which you want to remove Region replication.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
+    }
     /// Consumes the builder and constructs a [`RemoveRegionInput`](crate::operation::remove_region::RemoveRegionInput).
     pub fn build(
         self,

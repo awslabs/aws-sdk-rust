@@ -74,6 +74,12 @@ impl IoTJobAbortCriteriaBuilder {
         self.failure_type = input;
         self
     }
+    /// <p>The type of job deployment failure that can cancel a job.</p>
+    pub fn get_failure_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::IoTJobExecutionFailureType> {
+        &self.failure_type
+    }
     /// <p>The action to perform when the criteria are met.</p>
     pub fn action(mut self, input: crate::types::IoTJobAbortAction) -> Self {
         self.action = ::std::option::Option::Some(input);
@@ -87,6 +93,10 @@ impl IoTJobAbortCriteriaBuilder {
         self.action = input;
         self
     }
+    /// <p>The action to perform when the criteria are met.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::IoTJobAbortAction> {
+        &self.action
+    }
     /// <p>The minimum percentage of <code>failureType</code> failures that occur before the job can cancel.</p>
     /// <p>This parameter supports up to two digits after the decimal (for example, you can specify <code>10.9</code> or <code>10.99</code>, but not <code>10.999</code>).</p>
     pub fn threshold_percentage(mut self, input: f64) -> Self {
@@ -99,6 +109,11 @@ impl IoTJobAbortCriteriaBuilder {
         self.threshold_percentage = input;
         self
     }
+    /// <p>The minimum percentage of <code>failureType</code> failures that occur before the job can cancel.</p>
+    /// <p>This parameter supports up to two digits after the decimal (for example, you can specify <code>10.9</code> or <code>10.99</code>, but not <code>10.999</code>).</p>
+    pub fn get_threshold_percentage(&self) -> &::std::option::Option<f64> {
+        &self.threshold_percentage
+    }
     /// <p>The minimum number of things that receive the configuration before the job can cancel.</p>
     pub fn min_number_of_executed_things(mut self, input: i32) -> Self {
         self.min_number_of_executed_things = ::std::option::Option::Some(input);
@@ -108,6 +123,10 @@ impl IoTJobAbortCriteriaBuilder {
     pub fn set_min_number_of_executed_things(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_number_of_executed_things = input;
         self
+    }
+    /// <p>The minimum number of things that receive the configuration before the job can cancel.</p>
+    pub fn get_min_number_of_executed_things(&self) -> &::std::option::Option<i32> {
+        &self.min_number_of_executed_things
     }
     /// Consumes the builder and constructs a [`IoTJobAbortCriteria`](crate::types::IoTJobAbortCriteria).
     pub fn build(self) -> crate::types::IoTJobAbortCriteria {

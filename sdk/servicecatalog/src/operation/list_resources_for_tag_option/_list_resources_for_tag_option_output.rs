@@ -64,6 +64,12 @@ impl ListResourcesForTagOptionOutputBuilder {
         self.resource_details = input;
         self
     }
+    /// <p>Information about the resources.</p>
+    pub fn get_resource_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceDetail>> {
+        &self.resource_details
+    }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.page_token = ::std::option::Option::Some(input.into());
@@ -73,6 +79,10 @@ impl ListResourcesForTagOptionOutputBuilder {
     pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.page_token = input;
         self
+    }
+    /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.page_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

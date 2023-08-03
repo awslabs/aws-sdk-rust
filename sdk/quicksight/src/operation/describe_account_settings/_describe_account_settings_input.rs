@@ -47,6 +47,10 @@ impl DescribeAccountSettingsInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The ID for the Amazon Web Services account that contains the settings that you want to list.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// Consumes the builder and constructs a [`DescribeAccountSettingsInput`](crate::operation::describe_account_settings::DescribeAccountSettingsInput).
     pub fn build(
         self,

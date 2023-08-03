@@ -64,6 +64,12 @@ impl AssociateSubnetCidrBlockOutputBuilder {
         self.ipv6_cidr_block_association = input;
         self
     }
+    /// <p>Information about the IPv6 association.</p>
+    pub fn get_ipv6_cidr_block_association(
+        &self,
+    ) -> &::std::option::Option<crate::types::SubnetIpv6CidrBlockAssociation> {
+        &self.ipv6_cidr_block_association
+    }
     /// <p>The ID of the subnet.</p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
@@ -73,6 +79,10 @@ impl AssociateSubnetCidrBlockOutputBuilder {
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_id = input;
         self
+    }
+    /// <p>The ID of the subnet.</p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

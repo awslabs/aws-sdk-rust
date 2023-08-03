@@ -55,6 +55,10 @@ impl CreateCapacityReservationInputBuilder {
         self.target_dpus = input;
         self
     }
+    /// <p>The number of requested data processing units.</p>
+    pub fn get_target_dpus(&self) -> &::std::option::Option<i32> {
+        &self.target_dpus
+    }
     /// <p>The name of the capacity reservation to create.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl CreateCapacityReservationInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the capacity reservation to create.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `tags`.
     ///
@@ -83,6 +91,10 @@ impl CreateCapacityReservationInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags for the capacity reservation.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateCapacityReservationInput`](crate::operation::create_capacity_reservation::CreateCapacityReservationInput).
     pub fn build(

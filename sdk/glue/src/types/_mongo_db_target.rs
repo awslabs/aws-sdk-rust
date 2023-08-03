@@ -64,6 +64,10 @@ impl MongoDbTargetBuilder {
         self.connection_name = input;
         self
     }
+    /// <p>The name of the connection to use to connect to the Amazon DocumentDB or MongoDB target.</p>
+    pub fn get_connection_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_name
+    }
     /// <p>The path of the Amazon DocumentDB or MongoDB target (database/collection).</p>
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl MongoDbTargetBuilder {
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path = input;
         self
+    }
+    /// <p>The path of the Amazon DocumentDB or MongoDB target (database/collection).</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
     }
     /// <p>Indicates whether to scan all the records, or to sample rows from the table. Scanning all the records can take a long time when the table is not a high throughput table.</p>
     /// <p>A value of <code>true</code> means to scan all records, while a value of <code>false</code> means to sample the records. If no value is specified, the value defaults to <code>true</code>.</p>
@@ -85,6 +93,11 @@ impl MongoDbTargetBuilder {
     pub fn set_scan_all(mut self, input: ::std::option::Option<bool>) -> Self {
         self.scan_all = input;
         self
+    }
+    /// <p>Indicates whether to scan all the records, or to sample rows from the table. Scanning all the records can take a long time when the table is not a high throughput table.</p>
+    /// <p>A value of <code>true</code> means to scan all records, while a value of <code>false</code> means to sample the records. If no value is specified, the value defaults to <code>true</code>.</p>
+    pub fn get_scan_all(&self) -> &::std::option::Option<bool> {
+        &self.scan_all
     }
     /// Consumes the builder and constructs a [`MongoDbTarget`](crate::types::MongoDbTarget).
     pub fn build(self) -> crate::types::MongoDbTarget {

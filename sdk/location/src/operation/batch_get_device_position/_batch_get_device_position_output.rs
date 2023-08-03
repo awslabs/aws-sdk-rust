@@ -67,6 +67,12 @@ impl BatchGetDevicePositionOutputBuilder {
         self.errors = input;
         self
     }
+    /// <p>Contains error details for each device that failed to send its position to the tracker resource.</p>
+    pub fn get_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetDevicePositionError>> {
+        &self.errors
+    }
     /// Appends an item to `device_positions`.
     ///
     /// To override the contents of this collection use [`set_device_positions`](Self::set_device_positions).
@@ -85,6 +91,12 @@ impl BatchGetDevicePositionOutputBuilder {
     ) -> Self {
         self.device_positions = input;
         self
+    }
+    /// <p>Contains device position details such as the device ID, position, and timestamps for when the position was received and sampled.</p>
+    pub fn get_device_positions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DevicePosition>> {
+        &self.device_positions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

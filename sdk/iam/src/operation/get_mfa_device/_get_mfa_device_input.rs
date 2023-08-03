@@ -53,6 +53,10 @@ impl GetMfaDeviceInputBuilder {
         self.serial_number = input;
         self
     }
+    /// <p>Serial number that uniquely identifies the MFA device. For this API, we only accept FIDO security key <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">ARNs</a>.</p>
+    pub fn get_serial_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.serial_number
+    }
     /// <p>The friendly name identifying the user.</p>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl GetMfaDeviceInputBuilder {
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_name = input;
         self
+    }
+    /// <p>The friendly name identifying the user.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
     }
     /// Consumes the builder and constructs a [`GetMfaDeviceInput`](crate::operation::get_mfa_device::GetMfaDeviceInput).
     pub fn build(

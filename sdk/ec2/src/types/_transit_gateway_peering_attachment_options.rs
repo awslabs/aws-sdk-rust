@@ -43,6 +43,10 @@ impl TransitGatewayPeeringAttachmentOptionsBuilder {
         self.dynamic_routing = input;
         self
     }
+    /// <p>Describes whether dynamic routing is enabled or disabled for the transit gateway peering attachment.</p>
+    pub fn get_dynamic_routing(&self) -> &::std::option::Option<crate::types::DynamicRoutingValue> {
+        &self.dynamic_routing
+    }
     /// Consumes the builder and constructs a [`TransitGatewayPeeringAttachmentOptions`](crate::types::TransitGatewayPeeringAttachmentOptions).
     pub fn build(self) -> crate::types::TransitGatewayPeeringAttachmentOptions {
         crate::types::TransitGatewayPeeringAttachmentOptions {

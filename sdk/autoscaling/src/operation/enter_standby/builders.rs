@@ -39,6 +39,10 @@ impl EnterStandbyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the EnterStandby as a reference.
+    pub fn as_input(&self) -> &crate::operation::enter_standby::builders::EnterStandbyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +132,12 @@ impl EnterStandbyFluentBuilder {
         self.inner = self.inner.set_instance_ids(input);
         self
     }
+    /// <p>The IDs of the instances. You can specify up to 20 instances.</p>
+    pub fn get_instance_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_instance_ids()
+    }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn auto_scaling_group_name(
         mut self,
@@ -144,6 +154,10 @@ impl EnterStandbyFluentBuilder {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_auto_scaling_group_name()
+    }
     /// <p>Indicates whether to decrement the desired capacity of the Auto Scaling group by the number of instances moved to <code>Standby</code> mode.</p>
     pub fn should_decrement_desired_capacity(mut self, input: bool) -> Self {
         self.inner = self.inner.should_decrement_desired_capacity(input);
@@ -156,5 +170,9 @@ impl EnterStandbyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_should_decrement_desired_capacity(input);
         self
+    }
+    /// <p>Indicates whether to decrement the desired capacity of the Auto Scaling group by the number of instances moved to <code>Standby</code> mode.</p>
+    pub fn get_should_decrement_desired_capacity(&self) -> &::std::option::Option<bool> {
+        self.inner.get_should_decrement_desired_capacity()
     }
 }

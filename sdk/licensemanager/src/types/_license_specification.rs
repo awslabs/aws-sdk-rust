@@ -54,6 +54,10 @@ impl LicenseSpecificationBuilder {
         self.license_configuration_arn = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
+    pub fn get_license_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_configuration_arn
+    }
     /// <p>Scope of AMI associations. The possible value is <code>cross-account</code>.</p>
     pub fn ami_association_scope(
         mut self,
@@ -69,6 +73,10 @@ impl LicenseSpecificationBuilder {
     ) -> Self {
         self.ami_association_scope = input;
         self
+    }
+    /// <p>Scope of AMI associations. The possible value is <code>cross-account</code>.</p>
+    pub fn get_ami_association_scope(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ami_association_scope
     }
     /// Consumes the builder and constructs a [`LicenseSpecification`](crate::types::LicenseSpecification).
     pub fn build(self) -> crate::types::LicenseSpecification {

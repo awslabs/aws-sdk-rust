@@ -51,6 +51,12 @@ impl CreateRecommendationTemplateOutputBuilder {
         self.recommendation_template = input;
         self
     }
+    /// <p>The newly created recommendation template, returned as an object. This object includes the template's name, format, status, tags, Amazon S3 bucket location, and more.</p>
+    pub fn get_recommendation_template(
+        &self,
+    ) -> &::std::option::Option<crate::types::RecommendationTemplate> {
+        &self.recommendation_template
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

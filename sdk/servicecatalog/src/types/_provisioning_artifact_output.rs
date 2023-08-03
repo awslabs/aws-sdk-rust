@@ -48,6 +48,10 @@ impl ProvisioningArtifactOutputBuilder {
         self.key = input;
         self
     }
+    /// <p>The provisioning artifact output key.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>Description of the provisioning artifact output key.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl ProvisioningArtifactOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>Description of the provisioning artifact output key.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`ProvisioningArtifactOutput`](crate::types::ProvisioningArtifactOutput).
     pub fn build(self) -> crate::types::ProvisioningArtifactOutput {

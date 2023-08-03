@@ -46,6 +46,10 @@ impl CreateWorkflowOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the workflow which was provided as part of the request.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

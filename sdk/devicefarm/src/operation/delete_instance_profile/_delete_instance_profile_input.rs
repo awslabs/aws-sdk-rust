@@ -41,6 +41,10 @@ impl DeleteInstanceProfileInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the instance profile you are requesting to delete.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`DeleteInstanceProfileInput`](crate::operation::delete_instance_profile::DeleteInstanceProfileInput).
     pub fn build(
         self,

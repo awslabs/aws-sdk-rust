@@ -51,6 +51,10 @@ impl UpdateAppAuthorizationOutputBuilder {
         self.app_authorization = input;
         self
     }
+    /// <p>Contains information about an app authorization.</p>
+    pub fn get_app_authorization(&self) -> &::std::option::Option<crate::types::AppAuthorization> {
+        &self.app_authorization
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

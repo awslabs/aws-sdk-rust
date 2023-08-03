@@ -50,6 +50,12 @@ impl AttachTypedLinkOutputBuilder {
         self.typed_link_specifier = input;
         self
     }
+    /// <p>Returns a typed link specifier as output.</p>
+    pub fn get_typed_link_specifier(
+        &self,
+    ) -> &::std::option::Option<crate::types::TypedLinkSpecifier> {
+        &self.typed_link_specifier
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

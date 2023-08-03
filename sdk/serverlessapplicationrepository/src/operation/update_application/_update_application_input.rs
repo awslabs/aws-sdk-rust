@@ -108,6 +108,10 @@ impl UpdateApplicationInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The name of the author publishing the app.</p>
     /// <p>Minimum length=1. Maximum length=127.</p>
     /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
@@ -122,6 +126,12 @@ impl UpdateApplicationInputBuilder {
         self.author = input;
         self
     }
+    /// <p>The name of the author publishing the app.</p>
+    /// <p>Minimum length=1. Maximum length=127.</p>
+    /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+    pub fn get_author(&self) -> &::std::option::Option<::std::string::String> {
+        &self.author
+    }
     /// <p>The description of the application.</p>
     /// <p>Minimum length=1. Maximum length=256</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -133,6 +143,11 @@ impl UpdateApplicationInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the application.</p>
+    /// <p>Minimum length=1. Maximum length=256</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
     pub fn home_page_url(
@@ -149,6 +164,10 @@ impl UpdateApplicationInputBuilder {
     ) -> Self {
         self.home_page_url = input;
         self
+    }
+    /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
+    pub fn get_home_page_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.home_page_url
     }
     /// Appends an item to `labels`.
     ///
@@ -173,6 +192,12 @@ impl UpdateApplicationInputBuilder {
         self.labels = input;
         self
     }
+    /// <p>Labels to improve discovery of apps in search results.</p>
+    /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
+    /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
+    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.labels
+    }
     /// <p>A text readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
     /// <p>Maximum size 5 MB</p>
     pub fn readme_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -185,6 +210,11 @@ impl UpdateApplicationInputBuilder {
         self.readme_body = input;
         self
     }
+    /// <p>A text readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
+    /// <p>Maximum size 5 MB</p>
+    pub fn get_readme_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.readme_body
+    }
     /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
     /// <p>Maximum size 5 MB</p>
     pub fn readme_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -196,6 +226,11 @@ impl UpdateApplicationInputBuilder {
     pub fn set_readme_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.readme_url = input;
         self
+    }
+    /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
+    /// <p>Maximum size 5 MB</p>
+    pub fn get_readme_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.readme_url
     }
     /// Consumes the builder and constructs a [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
     pub fn build(

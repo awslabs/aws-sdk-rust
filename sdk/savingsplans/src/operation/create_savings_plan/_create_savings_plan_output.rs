@@ -53,6 +53,10 @@ impl CreateSavingsPlanOutputBuilder {
         self.savings_plan_id = input;
         self
     }
+    /// <p>The ID of the Savings Plan.</p>
+    pub fn get_savings_plan_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.savings_plan_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

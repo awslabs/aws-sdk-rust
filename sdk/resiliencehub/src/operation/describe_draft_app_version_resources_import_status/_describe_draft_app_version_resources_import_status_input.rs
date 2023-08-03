@@ -39,6 +39,10 @@ impl DescribeDraftAppVersionResourcesImportStatusInputBuilder {
         self.app_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_arn
+    }
     /// Consumes the builder and constructs a [`DescribeDraftAppVersionResourcesImportStatusInput`](crate::operation::describe_draft_app_version_resources_import_status::DescribeDraftAppVersionResourcesImportStatusInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_draft_app_version_resources_import_status::DescribeDraftAppVersionResourcesImportStatusInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

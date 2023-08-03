@@ -55,6 +55,13 @@ impl CreateResourceGroupInputBuilder {
         self.resource_group_tags = input;
         self
     }
+    /// <p>A collection of keys and an array of possible values, '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</p>
+    /// <p>For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.</p>
+    pub fn get_resource_group_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceGroupTag>> {
+        &self.resource_group_tags
+    }
     /// Consumes the builder and constructs a [`CreateResourceGroupInput`](crate::operation::create_resource_group::CreateResourceGroupInput).
     pub fn build(
         self,

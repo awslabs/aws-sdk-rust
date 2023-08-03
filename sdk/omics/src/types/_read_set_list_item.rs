@@ -138,6 +138,10 @@ impl ReadSetListItemBuilder {
         self.id = input;
         self
     }
+    /// <p>The read set's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The read set's ARN.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -147,6 +151,10 @@ impl ReadSetListItemBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The read set's ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The read set's sequence store ID.</p>
     pub fn sequence_store_id(
@@ -164,6 +172,10 @@ impl ReadSetListItemBuilder {
         self.sequence_store_id = input;
         self
     }
+    /// <p>The read set's sequence store ID.</p>
+    pub fn get_sequence_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sequence_store_id
+    }
     /// <p>The read set's subject ID.</p>
     pub fn subject_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subject_id = ::std::option::Option::Some(input.into());
@@ -173,6 +185,10 @@ impl ReadSetListItemBuilder {
     pub fn set_subject_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subject_id = input;
         self
+    }
+    /// <p>The read set's subject ID.</p>
+    pub fn get_subject_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subject_id
     }
     /// <p>The read set's sample ID.</p>
     pub fn sample_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -184,6 +200,10 @@ impl ReadSetListItemBuilder {
         self.sample_id = input;
         self
     }
+    /// <p>The read set's sample ID.</p>
+    pub fn get_sample_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sample_id
+    }
     /// <p>The read set's status.</p>
     pub fn status(mut self, input: crate::types::ReadSetStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -193,6 +213,10 @@ impl ReadSetListItemBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReadSetStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The read set's status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ReadSetStatus> {
+        &self.status
     }
     /// <p>The read set's name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -204,6 +228,10 @@ impl ReadSetListItemBuilder {
         self.name = input;
         self
     }
+    /// <p>The read set's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The read set's description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -213,6 +241,10 @@ impl ReadSetListItemBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The read set's description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The read set's genome reference ARN.</p>
     pub fn reference_arn(
@@ -230,6 +262,10 @@ impl ReadSetListItemBuilder {
         self.reference_arn = input;
         self
     }
+    /// <p>The read set's genome reference ARN.</p>
+    pub fn get_reference_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reference_arn
+    }
     /// <p>The read set's file type.</p>
     pub fn file_type(mut self, input: crate::types::FileType) -> Self {
         self.file_type = ::std::option::Option::Some(input);
@@ -239,6 +275,10 @@ impl ReadSetListItemBuilder {
     pub fn set_file_type(mut self, input: ::std::option::Option<crate::types::FileType>) -> Self {
         self.file_type = input;
         self
+    }
+    /// <p>The read set's file type.</p>
+    pub fn get_file_type(&self) -> &::std::option::Option<crate::types::FileType> {
+        &self.file_type
     }
     /// <p>Details about a sequence.</p>
     pub fn sequence_information(mut self, input: crate::types::SequenceInformation) -> Self {
@@ -253,6 +293,12 @@ impl ReadSetListItemBuilder {
         self.sequence_information = input;
         self
     }
+    /// <p>Details about a sequence.</p>
+    pub fn get_sequence_information(
+        &self,
+    ) -> &::std::option::Option<crate::types::SequenceInformation> {
+        &self.sequence_information
+    }
     /// <p>When the read set was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -265,6 +311,10 @@ impl ReadSetListItemBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>When the read set was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p> The status for a read set. It provides more detail as to why the read set has a status. </p>
     pub fn status_message(
@@ -281,6 +331,10 @@ impl ReadSetListItemBuilder {
     ) -> Self {
         self.status_message = input;
         self
+    }
+    /// <p> The status for a read set. It provides more detail as to why the read set has a status. </p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     /// Consumes the builder and constructs a [`ReadSetListItem`](crate::types::ReadSetListItem).
     pub fn build(self) -> crate::types::ReadSetListItem {

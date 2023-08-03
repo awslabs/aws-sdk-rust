@@ -63,6 +63,10 @@ impl UpdateStreamInputBuilder {
         self.stream_id = input;
         self
     }
+    /// <p>The stream ID.</p>
+    pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_id
+    }
     /// <p>The description of the stream.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl UpdateStreamInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the stream.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `files`.
     ///
@@ -92,6 +100,10 @@ impl UpdateStreamInputBuilder {
         self.files = input;
         self
     }
+    /// <p>The files associated with the stream.</p>
+    pub fn get_files(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamFile>> {
+        &self.files
+    }
     /// <p>An IAM role that allows the IoT service principal assumes to access your S3 files.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -101,6 +113,10 @@ impl UpdateStreamInputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>An IAM role that allows the IoT service principal assumes to access your S3 files.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Consumes the builder and constructs a [`UpdateStreamInput`](crate::operation::update_stream::UpdateStreamInput).
     pub fn build(

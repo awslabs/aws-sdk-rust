@@ -74,6 +74,10 @@ impl DiskImageDescriptionBuilder {
         self.checksum = input;
         self
     }
+    /// <p>The checksum computed for the disk image.</p>
+    pub fn get_checksum(&self) -> &::std::option::Option<::std::string::String> {
+        &self.checksum
+    }
     /// <p>The disk image format.</p>
     pub fn format(mut self, input: crate::types::DiskImageFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
@@ -86,6 +90,10 @@ impl DiskImageDescriptionBuilder {
     ) -> Self {
         self.format = input;
         self
+    }
+    /// <p>The disk image format.</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::DiskImageFormat> {
+        &self.format
     }
     /// <p>A presigned URL for the import manifest stored in Amazon S3. For information about creating a presigned URL for an Amazon S3 object, read the "Query String Request Authentication Alternative" section of the <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating REST Requests</a> topic in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
     /// <p>For information about the import manifest referenced by this API action, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM Import Manifest</a>.</p>
@@ -105,6 +113,11 @@ impl DiskImageDescriptionBuilder {
         self.import_manifest_url = input;
         self
     }
+    /// <p>A presigned URL for the import manifest stored in Amazon S3. For information about creating a presigned URL for an Amazon S3 object, read the "Query String Request Authentication Alternative" section of the <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating REST Requests</a> topic in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
+    /// <p>For information about the import manifest referenced by this API action, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM Import Manifest</a>.</p>
+    pub fn get_import_manifest_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.import_manifest_url
+    }
     /// <p>The size of the disk image, in GiB.</p>
     pub fn size(mut self, input: i64) -> Self {
         self.size = ::std::option::Option::Some(input);
@@ -114,6 +127,10 @@ impl DiskImageDescriptionBuilder {
     pub fn set_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.size = input;
         self
+    }
+    /// <p>The size of the disk image, in GiB.</p>
+    pub fn get_size(&self) -> &::std::option::Option<i64> {
+        &self.size
     }
     /// Consumes the builder and constructs a [`DiskImageDescription`](crate::types::DiskImageDescription).
     pub fn build(self) -> crate::types::DiskImageDescription {

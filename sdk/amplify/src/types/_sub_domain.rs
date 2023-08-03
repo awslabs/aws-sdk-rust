@@ -59,6 +59,10 @@ impl SubDomainBuilder {
         self.sub_domain_setting = input;
         self
     }
+    /// <p> Describes the settings for the subdomain. </p>
+    pub fn get_sub_domain_setting(&self) -> &::std::option::Option<crate::types::SubDomainSetting> {
+        &self.sub_domain_setting
+    }
     /// <p> The verified status of the subdomain </p>
     pub fn verified(mut self, input: bool) -> Self {
         self.verified = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl SubDomainBuilder {
         self.verified = input;
         self
     }
+    /// <p> The verified status of the subdomain </p>
+    pub fn get_verified(&self) -> &::std::option::Option<bool> {
+        &self.verified
+    }
     /// <p> The DNS record for the subdomain. </p>
     pub fn dns_record(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dns_record = ::std::option::Option::Some(input.into());
@@ -78,6 +86,10 @@ impl SubDomainBuilder {
     pub fn set_dns_record(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dns_record = input;
         self
+    }
+    /// <p> The DNS record for the subdomain. </p>
+    pub fn get_dns_record(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dns_record
     }
     /// Consumes the builder and constructs a [`SubDomain`](crate::types::SubDomain).
     pub fn build(self) -> crate::types::SubDomain {

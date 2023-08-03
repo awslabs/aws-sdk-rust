@@ -40,6 +40,10 @@ impl CapacityUsageSummaryBuilder {
         self.cid_rs = input;
         self
     }
+    /// <p>Describes the capacity usage of the CIDR blocks used by the IP set references in a firewall.</p>
+    pub fn get_cid_rs(&self) -> &::std::option::Option<crate::types::CidrSummary> {
+        &self.cid_rs
+    }
     /// Consumes the builder and constructs a [`CapacityUsageSummary`](crate::types::CapacityUsageSummary).
     pub fn build(self) -> crate::types::CapacityUsageSummary {
         crate::types::CapacityUsageSummary {

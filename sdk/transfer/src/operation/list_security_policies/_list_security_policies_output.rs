@@ -55,6 +55,10 @@ impl ListSecurityPoliciesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>When you can get additional results from the <code>ListSecurityPolicies</code> operation, a <code>NextToken</code> parameter is returned in the output. In a following command, you can pass in the <code>NextToken</code> parameter to continue listing security policies.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `security_policy_names`.
     ///
     /// To override the contents of this collection use [`set_security_policy_names`](Self::set_security_policy_names).
@@ -76,6 +80,12 @@ impl ListSecurityPoliciesOutputBuilder {
     ) -> Self {
         self.security_policy_names = input;
         self
+    }
+    /// <p>An array of security policies that were listed.</p>
+    pub fn get_security_policy_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_policy_names
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -109,6 +109,14 @@ impl DescribeProvisioningParametersInputBuilder {
         self.accept_language = input;
         self
     }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accept_language
+    }
     /// <p>The product identifier. You must provide the product name or ID, but not both.</p>
     pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_id = ::std::option::Option::Some(input.into());
@@ -119,6 +127,10 @@ impl DescribeProvisioningParametersInputBuilder {
         self.product_id = input;
         self
     }
+    /// <p>The product identifier. You must provide the product name or ID, but not both.</p>
+    pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product_id
+    }
     /// <p>The name of the product. You must provide the name or ID, but not both.</p>
     pub fn product_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_name = ::std::option::Option::Some(input.into());
@@ -128,6 +140,10 @@ impl DescribeProvisioningParametersInputBuilder {
     pub fn set_product_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product_name = input;
         self
+    }
+    /// <p>The name of the product. You must provide the name or ID, but not both.</p>
+    pub fn get_product_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product_name
     }
     /// <p>The identifier of the provisioning artifact. You must provide the name or ID, but not both.</p>
     pub fn provisioning_artifact_id(
@@ -145,6 +161,10 @@ impl DescribeProvisioningParametersInputBuilder {
         self.provisioning_artifact_id = input;
         self
     }
+    /// <p>The identifier of the provisioning artifact. You must provide the name or ID, but not both.</p>
+    pub fn get_provisioning_artifact_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provisioning_artifact_id
+    }
     /// <p>The name of the provisioning artifact. You must provide the name or ID, but not both.</p>
     pub fn provisioning_artifact_name(
         mut self,
@@ -161,6 +181,10 @@ impl DescribeProvisioningParametersInputBuilder {
         self.provisioning_artifact_name = input;
         self
     }
+    /// <p>The name of the provisioning artifact. You must provide the name or ID, but not both.</p>
+    pub fn get_provisioning_artifact_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provisioning_artifact_name
+    }
     /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>. You must provide the name or ID, but not both.</p>
     pub fn path_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path_id = ::std::option::Option::Some(input.into());
@@ -171,6 +195,10 @@ impl DescribeProvisioningParametersInputBuilder {
         self.path_id = input;
         self
     }
+    /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>. You must provide the name or ID, but not both.</p>
+    pub fn get_path_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path_id
+    }
     /// <p>The name of the path. You must provide the name or ID, but not both.</p>
     pub fn path_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path_name = ::std::option::Option::Some(input.into());
@@ -180,6 +208,10 @@ impl DescribeProvisioningParametersInputBuilder {
     pub fn set_path_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path_name = input;
         self
+    }
+    /// <p>The name of the path. You must provide the name or ID, but not both.</p>
+    pub fn get_path_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path_name
     }
     /// Consumes the builder and constructs a [`DescribeProvisioningParametersInput`](crate::operation::describe_provisioning_parameters::DescribeProvisioningParametersInput).
     pub fn build(

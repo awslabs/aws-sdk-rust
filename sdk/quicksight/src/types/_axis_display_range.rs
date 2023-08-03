@@ -52,6 +52,10 @@ impl AxisDisplayRangeBuilder {
         self.min_max = input;
         self
     }
+    /// <p>The minimum and maximum setup of an axis display range.</p>
+    pub fn get_min_max(&self) -> &::std::option::Option<crate::types::AxisDisplayMinMaxRange> {
+        &self.min_max
+    }
     /// <p>The data-driven setup of an axis display range.</p>
     pub fn data_driven(mut self, input: crate::types::AxisDisplayDataDrivenRange) -> Self {
         self.data_driven = ::std::option::Option::Some(input);
@@ -64,6 +68,12 @@ impl AxisDisplayRangeBuilder {
     ) -> Self {
         self.data_driven = input;
         self
+    }
+    /// <p>The data-driven setup of an axis display range.</p>
+    pub fn get_data_driven(
+        &self,
+    ) -> &::std::option::Option<crate::types::AxisDisplayDataDrivenRange> {
+        &self.data_driven
     }
     /// Consumes the builder and constructs a [`AxisDisplayRange`](crate::types::AxisDisplayRange).
     pub fn build(self) -> crate::types::AxisDisplayRange {

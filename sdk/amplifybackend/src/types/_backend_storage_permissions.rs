@@ -62,6 +62,12 @@ impl BackendStoragePermissionsBuilder {
         self.authenticated = input;
         self
     }
+    /// <p>Lists all authenticated user read, write, and delete permissions for your S3 bucket.</p>
+    pub fn get_authenticated(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthenticatedElement>> {
+        &self.authenticated
+    }
     /// Appends an item to `un_authenticated`.
     ///
     /// To override the contents of this collection use [`set_un_authenticated`](Self::set_un_authenticated).
@@ -80,6 +86,12 @@ impl BackendStoragePermissionsBuilder {
     ) -> Self {
         self.un_authenticated = input;
         self
+    }
+    /// <p>Lists all unauthenticated user read, write, and delete permissions for your S3 bucket.</p>
+    pub fn get_un_authenticated(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnAuthenticatedElement>> {
+        &self.un_authenticated
     }
     /// Consumes the builder and constructs a [`BackendStoragePermissions`](crate::types::BackendStoragePermissions).
     pub fn build(self) -> crate::types::BackendStoragePermissions {

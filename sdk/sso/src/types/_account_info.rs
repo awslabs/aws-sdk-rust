@@ -56,6 +56,10 @@ impl AccountInfoBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The identifier of the AWS account that is assigned to the user.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The display name of the AWS account that is assigned to the user.</p>
     pub fn account_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_name = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl AccountInfoBuilder {
     pub fn set_account_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_name = input;
         self
+    }
+    /// <p>The display name of the AWS account that is assigned to the user.</p>
+    pub fn get_account_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_name
     }
     /// <p>The email address of the AWS account that is assigned to the user.</p>
     pub fn email_address(
@@ -81,6 +89,10 @@ impl AccountInfoBuilder {
     ) -> Self {
         self.email_address = input;
         self
+    }
+    /// <p>The email address of the AWS account that is assigned to the user.</p>
+    pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email_address
     }
     /// Consumes the builder and constructs a [`AccountInfo`](crate::types::AccountInfo).
     pub fn build(self) -> crate::types::AccountInfo {

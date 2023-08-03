@@ -49,6 +49,10 @@ impl AttachThingPrincipalInputBuilder {
         self.thing_name = input;
         self
     }
+    /// <p>The name of the thing.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_name
+    }
     /// <p>The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</p>
     pub fn principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl AttachThingPrincipalInputBuilder {
     pub fn set_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal = input;
         self
+    }
+    /// <p>The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</p>
+    pub fn get_principal(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal
     }
     /// Consumes the builder and constructs a [`AttachThingPrincipalInput`](crate::operation::attach_thing_principal::AttachThingPrincipalInput).
     pub fn build(

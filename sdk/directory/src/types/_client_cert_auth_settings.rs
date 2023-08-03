@@ -40,6 +40,10 @@ impl ClientCertAuthSettingsBuilder {
         self.ocsp_url = input;
         self
     }
+    /// <p>Specifies the URL of the default OCSP server used to check for revocation status. A secondary value to any OCSP address found in the AIA extension of the user certificate.</p>
+    pub fn get_ocsp_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ocsp_url
+    }
     /// Consumes the builder and constructs a [`ClientCertAuthSettings`](crate::types::ClientCertAuthSettings).
     pub fn build(self) -> crate::types::ClientCertAuthSettings {
         crate::types::ClientCertAuthSettings {

@@ -110,6 +110,12 @@ impl OutputBuilder {
         self.audio_descriptions = input;
         self
     }
+    /// Contains groups of audio encoding settings organized by audio codec. Include one instance of per output. Can contain multiple groups of encoding settings.
+    pub fn get_audio_descriptions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AudioDescription>> {
+        &self.audio_descriptions
+    }
     /// Appends an item to `caption_descriptions`.
     ///
     /// To override the contents of this collection use [`set_caption_descriptions`](Self::set_caption_descriptions).
@@ -129,6 +135,12 @@ impl OutputBuilder {
         self.caption_descriptions = input;
         self
     }
+    /// Contains groups of captions settings. For each output that has captions, include one instance of CaptionDescriptions. Can contain multiple groups of captions settings.
+    pub fn get_caption_descriptions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CaptionDescription>> {
+        &self.caption_descriptions
+    }
     /// Container specific settings.
     pub fn container_settings(mut self, input: crate::types::ContainerSettings) -> Self {
         self.container_settings = ::std::option::Option::Some(input);
@@ -142,6 +154,12 @@ impl OutputBuilder {
         self.container_settings = input;
         self
     }
+    /// Container specific settings.
+    pub fn get_container_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContainerSettings> {
+        &self.container_settings
+    }
     /// Use Extension to specify the file extension for outputs in File output groups. If you do not specify a value, the service will use default extensions by container type as follows * MPEG-2 transport stream, m2ts * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container, webm * No Container, the service will use codec extensions (e.g. AAC, H265, H265, AC3)
     pub fn extension(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.extension = ::std::option::Option::Some(input.into());
@@ -151,6 +169,10 @@ impl OutputBuilder {
     pub fn set_extension(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.extension = input;
         self
+    }
+    /// Use Extension to specify the file extension for outputs in File output groups. If you do not specify a value, the service will use default extensions by container type as follows * MPEG-2 transport stream, m2ts * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container, webm * No Container, the service will use codec extensions (e.g. AAC, H265, H265, AC3)
+    pub fn get_extension(&self) -> &::std::option::Option<::std::string::String> {
+        &self.extension
     }
     /// Use Name modifier to have the service add a string to the end of each output filename. You specify the base filename as part of your destination URI. When you create multiple outputs in the same output group, Name modifier is required. Name modifier also accepts format identifiers. For DASH ISO outputs, if you use the format identifiers $Number$ or $Time$ in one output, you must use them in the same way in all outputs of the output group.
     pub fn name_modifier(
@@ -168,6 +190,10 @@ impl OutputBuilder {
         self.name_modifier = input;
         self
     }
+    /// Use Name modifier to have the service add a string to the end of each output filename. You specify the base filename as part of your destination URI. When you create multiple outputs in the same output group, Name modifier is required. Name modifier also accepts format identifiers. For DASH ISO outputs, if you use the format identifiers $Number$ or $Time$ in one output, you must use them in the same way in all outputs of the output group.
+    pub fn get_name_modifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name_modifier
+    }
     /// Specific settings for this type of output.
     pub fn output_settings(mut self, input: crate::types::OutputSettings) -> Self {
         self.output_settings = ::std::option::Option::Some(input);
@@ -181,6 +207,10 @@ impl OutputBuilder {
         self.output_settings = input;
         self
     }
+    /// Specific settings for this type of output.
+    pub fn get_output_settings(&self) -> &::std::option::Option<crate::types::OutputSettings> {
+        &self.output_settings
+    }
     /// Use Preset to specify a preset for your transcoding settings. Provide the system or custom preset name. You can specify either Preset or Container settings, but not both.
     pub fn preset(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preset = ::std::option::Option::Some(input.into());
@@ -190,6 +220,10 @@ impl OutputBuilder {
     pub fn set_preset(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preset = input;
         self
+    }
+    /// Use Preset to specify a preset for your transcoding settings. Provide the system or custom preset name. You can specify either Preset or Container settings, but not both.
+    pub fn get_preset(&self) -> &::std::option::Option<::std::string::String> {
+        &self.preset
     }
     /// VideoDescription contains a group of video encoding settings. The specific video settings depend on the video codec that you choose for the property codec. Include one instance of VideoDescription per output.
     pub fn video_description(mut self, input: crate::types::VideoDescription) -> Self {
@@ -203,6 +237,10 @@ impl OutputBuilder {
     ) -> Self {
         self.video_description = input;
         self
+    }
+    /// VideoDescription contains a group of video encoding settings. The specific video settings depend on the video codec that you choose for the property codec. Include one instance of VideoDescription per output.
+    pub fn get_video_description(&self) -> &::std::option::Option<crate::types::VideoDescription> {
+        &self.video_description
     }
     /// Consumes the builder and constructs a [`Output`](crate::types::Output).
     pub fn build(self) -> crate::types::Output {

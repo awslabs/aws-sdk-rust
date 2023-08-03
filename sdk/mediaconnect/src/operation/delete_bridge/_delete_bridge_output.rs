@@ -46,6 +46,10 @@ impl DeleteBridgeOutputBuilder {
         self.bridge_arn = input;
         self
     }
+    /// The Amazon Resource Number (ARN) of the deleted bridge.
+    pub fn get_bridge_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bridge_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

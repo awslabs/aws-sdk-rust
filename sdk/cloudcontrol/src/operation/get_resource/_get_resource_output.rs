@@ -56,6 +56,10 @@ impl GetResourceOutputBuilder {
         self.type_name = input;
         self
     }
+    /// <p>The name of the resource type.</p>
+    pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.type_name
+    }
     /// <p>Represents information about a provisioned resource.</p>
     pub fn resource_description(mut self, input: crate::types::ResourceDescription) -> Self {
         self.resource_description = ::std::option::Option::Some(input);
@@ -68,6 +72,12 @@ impl GetResourceOutputBuilder {
     ) -> Self {
         self.resource_description = input;
         self
+    }
+    /// <p>Represents information about a provisioned resource.</p>
+    pub fn get_resource_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceDescription> {
+        &self.resource_description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -45,6 +45,10 @@ impl StopKeyUsageInputBuilder {
         self.key_identifier = input;
         self
     }
+    /// <p>The <code>KeyArn</code> of the key.</p>
+    pub fn get_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_identifier
+    }
     /// Consumes the builder and constructs a [`StopKeyUsageInput`](crate::operation::stop_key_usage::StopKeyUsageInput).
     pub fn build(
         self,

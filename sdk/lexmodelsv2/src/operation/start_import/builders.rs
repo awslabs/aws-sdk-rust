@@ -36,6 +36,10 @@ impl StartImportFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartImport as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_import::builders::StartImportInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl StartImportFluentBuilder {
         self.inner = self.inner.set_import_id(input);
         self
     }
+    /// <p>The unique identifier for the import. It is included in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateUploadUrl.html">CreateUploadUrl</a> operation.</p>
+    pub fn get_import_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_import_id()
+    }
     /// <p>Parameters for creating the bot, bot locale or custom vocabulary.</p>
     pub fn resource_specification(
         mut self,
@@ -134,6 +142,12 @@ impl StartImportFluentBuilder {
         self.inner = self.inner.set_resource_specification(input);
         self
     }
+    /// <p>Parameters for creating the bot, bot locale or custom vocabulary.</p>
+    pub fn get_resource_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImportResourceSpecification> {
+        self.inner.get_resource_specification()
+    }
     /// <p>The strategy to use when there is a name conflict between the imported resource and an existing resource. When the merge strategy is <code>FailOnConflict</code> existing resources are not overwritten and the import fails.</p>
     pub fn merge_strategy(mut self, input: crate::types::MergeStrategy) -> Self {
         self.inner = self.inner.merge_strategy(input);
@@ -146,6 +160,10 @@ impl StartImportFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_merge_strategy(input);
         self
+    }
+    /// <p>The strategy to use when there is a name conflict between the imported resource and an existing resource. When the merge strategy is <code>FailOnConflict</code> existing resources are not overwritten and the import fails.</p>
+    pub fn get_merge_strategy(&self) -> &::std::option::Option<crate::types::MergeStrategy> {
+        self.inner.get_merge_strategy()
     }
     /// <p>The password used to encrypt the zip archive that contains the resource definition. You should always encrypt the zip archive to protect it during transit between your site and Amazon Lex.</p>
     pub fn file_password(
@@ -162,5 +180,9 @@ impl StartImportFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_file_password(input);
         self
+    }
+    /// <p>The password used to encrypt the zip archive that contains the resource definition. You should always encrypt the zip archive to protect it during transit between your site and Amazon Lex.</p>
+    pub fn get_file_password(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_file_password()
     }
 }

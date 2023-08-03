@@ -73,6 +73,10 @@ impl UpdatePermissionSetInputBuilder {
         self.instance_arn = input;
         self
     }
+    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+    pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_arn
+    }
     /// <p>The ARN of the permission set.</p>
     pub fn permission_set_arn(
         mut self,
@@ -89,6 +93,10 @@ impl UpdatePermissionSetInputBuilder {
         self.permission_set_arn = input;
         self
     }
+    /// <p>The ARN of the permission set.</p>
+    pub fn get_permission_set_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.permission_set_arn
+    }
     /// <p>The description of the <code>PermissionSet</code>.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -98,6 +106,10 @@ impl UpdatePermissionSetInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the <code>PermissionSet</code>.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The length of time that the application user sessions are valid for in the ISO-8601 standard.</p>
     pub fn session_duration(
@@ -115,6 +127,10 @@ impl UpdatePermissionSetInputBuilder {
         self.session_duration = input;
         self
     }
+    /// <p>The length of time that the application user sessions are valid for in the ISO-8601 standard.</p>
+    pub fn get_session_duration(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_duration
+    }
     /// <p>Used to redirect users within the application during the federation authentication process.</p>
     pub fn relay_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.relay_state = ::std::option::Option::Some(input.into());
@@ -124,6 +140,10 @@ impl UpdatePermissionSetInputBuilder {
     pub fn set_relay_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.relay_state = input;
         self
+    }
+    /// <p>Used to redirect users within the application during the federation authentication process.</p>
+    pub fn get_relay_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.relay_state
     }
     /// Consumes the builder and constructs a [`UpdatePermissionSetInput`](crate::operation::update_permission_set::UpdatePermissionSetInput).
     pub fn build(

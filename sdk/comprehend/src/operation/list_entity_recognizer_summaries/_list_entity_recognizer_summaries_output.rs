@@ -70,6 +70,12 @@ impl ListEntityRecognizerSummariesOutputBuilder {
         self.entity_recognizer_summaries_list = input;
         self
     }
+    /// <p>The list entity recognizer summaries.</p>
+    pub fn get_entity_recognizer_summaries_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityRecognizerSummary>> {
+        &self.entity_recognizer_summaries_list
+    }
     /// <p>Identifies the next page of results to return.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -79,6 +85,10 @@ impl ListEntityRecognizerSummariesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Identifies the next page of results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

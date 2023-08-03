@@ -118,6 +118,10 @@ impl QuantumTaskSummaryBuilder {
         self.quantum_task_arn = input;
         self
     }
+    /// <p>The ARN of the task.</p>
+    pub fn get_quantum_task_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.quantum_task_arn
+    }
     /// <p>The status of the task.</p>
     pub fn status(mut self, input: crate::types::QuantumTaskStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -131,6 +135,10 @@ impl QuantumTaskSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the task.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::QuantumTaskStatus> {
+        &self.status
+    }
     /// <p>The ARN of the device the task ran on.</p>
     pub fn device_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_arn = ::std::option::Option::Some(input.into());
@@ -141,6 +149,10 @@ impl QuantumTaskSummaryBuilder {
         self.device_arn = input;
         self
     }
+    /// <p>The ARN of the device the task ran on.</p>
+    pub fn get_device_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_arn
+    }
     /// <p>The shots used for the task.</p>
     pub fn shots(mut self, input: i64) -> Self {
         self.shots = ::std::option::Option::Some(input);
@@ -150,6 +162,10 @@ impl QuantumTaskSummaryBuilder {
     pub fn set_shots(mut self, input: ::std::option::Option<i64>) -> Self {
         self.shots = input;
         self
+    }
+    /// <p>The shots used for the task.</p>
+    pub fn get_shots(&self) -> &::std::option::Option<i64> {
+        &self.shots
     }
     /// <p>The S3 bucket where the task result file is stored..</p>
     pub fn output_s3_bucket(
@@ -167,6 +183,10 @@ impl QuantumTaskSummaryBuilder {
         self.output_s3_bucket = input;
         self
     }
+    /// <p>The S3 bucket where the task result file is stored..</p>
+    pub fn get_output_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_s3_bucket
+    }
     /// <p>The folder in the S3 bucket where the task result file is stored.</p>
     pub fn output_s3_directory(
         mut self,
@@ -183,6 +203,10 @@ impl QuantumTaskSummaryBuilder {
         self.output_s3_directory = input;
         self
     }
+    /// <p>The folder in the S3 bucket where the task result file is stored.</p>
+    pub fn get_output_s3_directory(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_s3_directory
+    }
     /// <p>The time at which the task was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -196,6 +220,10 @@ impl QuantumTaskSummaryBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The time at which the task was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The time at which the task finished.</p>
     pub fn ended_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.ended_at = ::std::option::Option::Some(input);
@@ -208,6 +236,10 @@ impl QuantumTaskSummaryBuilder {
     ) -> Self {
         self.ended_at = input;
         self
+    }
+    /// <p>The time at which the task finished.</p>
+    pub fn get_ended_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.ended_at
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -233,6 +265,14 @@ impl QuantumTaskSummaryBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Displays the key, value pairs of tags associated with this quantum task.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`QuantumTaskSummary`](crate::types::QuantumTaskSummary).
     pub fn build(self) -> crate::types::QuantumTaskSummary {

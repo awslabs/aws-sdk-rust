@@ -57,6 +57,10 @@ impl ResultSetBuilder {
         self.rows = input;
         self
     }
+    /// <p>The rows in the table.</p>
+    pub fn get_rows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Row>> {
+        &self.rows
+    }
     /// <p>The metadata that describes the column structure and data types of a table of query results.</p>
     pub fn result_set_metadata(mut self, input: crate::types::ResultSetMetadata) -> Self {
         self.result_set_metadata = ::std::option::Option::Some(input);
@@ -69,6 +73,12 @@ impl ResultSetBuilder {
     ) -> Self {
         self.result_set_metadata = input;
         self
+    }
+    /// <p>The metadata that describes the column structure and data types of a table of query results.</p>
+    pub fn get_result_set_metadata(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResultSetMetadata> {
+        &self.result_set_metadata
     }
     /// Consumes the builder and constructs a [`ResultSet`](crate::types::ResultSet).
     pub fn build(self) -> crate::types::ResultSet {

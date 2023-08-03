@@ -89,6 +89,12 @@ impl OAuth2DefaultsBuilder {
         self.oauth_scopes = input;
         self
     }
+    /// <p>OAuth 2.0 scopes that the connector supports.</p>
+    pub fn get_oauth_scopes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.oauth_scopes
+    }
     /// Appends an item to `token_urls`.
     ///
     /// To override the contents of this collection use [`set_token_urls`](Self::set_token_urls).
@@ -107,6 +113,10 @@ impl OAuth2DefaultsBuilder {
     ) -> Self {
         self.token_urls = input;
         self
+    }
+    /// <p>Token URLs that can be used for OAuth 2.0 authentication.</p>
+    pub fn get_token_urls(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.token_urls
     }
     /// Appends an item to `auth_code_urls`.
     ///
@@ -130,6 +140,12 @@ impl OAuth2DefaultsBuilder {
         self.auth_code_urls = input;
         self
     }
+    /// <p>Auth code URLs that can be used for OAuth 2.0 authentication.</p>
+    pub fn get_auth_code_urls(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.auth_code_urls
+    }
     /// Appends an item to `oauth2_grant_types_supported`.
     ///
     /// To override the contents of this collection use [`set_oauth2_grant_types_supported`](Self::set_oauth2_grant_types_supported).
@@ -149,6 +165,12 @@ impl OAuth2DefaultsBuilder {
         self.oauth2_grant_types_supported = input;
         self
     }
+    /// <p>OAuth 2.0 grant types supported by the connector.</p>
+    pub fn get_oauth2_grant_types_supported(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OAuth2GrantType>> {
+        &self.oauth2_grant_types_supported
+    }
     /// Appends an item to `oauth2_custom_properties`.
     ///
     /// To override the contents of this collection use [`set_oauth2_custom_properties`](Self::set_oauth2_custom_properties).
@@ -167,6 +189,12 @@ impl OAuth2DefaultsBuilder {
     ) -> Self {
         self.oauth2_custom_properties = input;
         self
+    }
+    /// <p>List of custom parameters required for OAuth 2.0 authentication.</p>
+    pub fn get_oauth2_custom_properties(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OAuth2CustomParameter>> {
+        &self.oauth2_custom_properties
     }
     /// Consumes the builder and constructs a [`OAuth2Defaults`](crate::types::OAuth2Defaults).
     pub fn build(self) -> crate::types::OAuth2Defaults {

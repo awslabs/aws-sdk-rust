@@ -36,6 +36,10 @@ impl GetMeetingFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetMeeting as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_meeting::builders::GetMeetingInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -117,5 +121,9 @@ impl GetMeetingFluentBuilder {
     pub fn set_meeting_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_meeting_id(input);
         self
+    }
+    /// <p>The Amazon Chime SDK meeting ID.</p>
+    pub fn get_meeting_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_meeting_id()
     }
 }

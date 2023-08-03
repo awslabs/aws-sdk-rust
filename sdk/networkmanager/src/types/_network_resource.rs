@@ -178,6 +178,10 @@ impl NetworkResourceBuilder {
         self.registered_gateway_arn = input;
         self
     }
+    /// <p>The ARN of the gateway.</p>
+    pub fn get_registered_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registered_gateway_arn
+    }
     /// <p>The ID of a core network.</p>
     pub fn core_network_id(
         mut self,
@@ -194,6 +198,10 @@ impl NetworkResourceBuilder {
         self.core_network_id = input;
         self
     }
+    /// <p>The ID of a core network.</p>
+    pub fn get_core_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.core_network_id
+    }
     /// <p>The Amazon Web Services Region.</p>
     pub fn aws_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_region = ::std::option::Option::Some(input.into());
@@ -204,6 +212,10 @@ impl NetworkResourceBuilder {
         self.aws_region = input;
         self
     }
+    /// <p>The Amazon Web Services Region.</p>
+    pub fn get_aws_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_region
+    }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -213,6 +225,10 @@ impl NetworkResourceBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// <p>The resource type.</p>
     /// <p>The following are the supported resource types for Direct Connect:</p>
@@ -274,6 +290,32 @@ impl NetworkResourceBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The resource type.</p>
+    /// <p>The following are the supported resource types for Direct Connect:</p>
+    /// <ul>
+    /// <li> <p> <code>dxcon</code> </p> </li>
+    /// <li> <p> <code>dx-gateway</code> </p> </li>
+    /// <li> <p> <code>dx-vif</code> </p> </li>
+    /// </ul>
+    /// <p>The following are the supported resource types for Network Manager:</p>
+    /// <ul>
+    /// <li> <p> <code>connection</code> </p> </li>
+    /// <li> <p> <code>device</code> </p> </li>
+    /// <li> <p> <code>link</code> </p> </li>
+    /// <li> <p> <code>site</code> </p> </li>
+    /// </ul>
+    /// <p>The following are the supported resource types for Amazon VPC:</p>
+    /// <ul>
+    /// <li> <p> <code>customer-gateway</code> </p> </li>
+    /// <li> <p> <code>transit-gateway</code> </p> </li>
+    /// <li> <p> <code>transit-gateway-attachment</code> </p> </li>
+    /// <li> <p> <code>transit-gateway-connect-peer</code> </p> </li>
+    /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
+    /// <li> <p> <code>vpn-connection</code> </p> </li>
+    /// </ul>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
+    }
     /// <p>The ID of the resource.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -283,6 +325,10 @@ impl NetworkResourceBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>The ID of the resource.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// <p>The ARN of the resource.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -294,6 +340,10 @@ impl NetworkResourceBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The ARN of the resource.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// <p>Information about the resource, in JSON format. Network Manager gets this information by describing the resource using its Describe API call.</p>
     pub fn definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.definition = ::std::option::Option::Some(input.into());
@@ -303,6 +353,10 @@ impl NetworkResourceBuilder {
     pub fn set_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.definition = input;
         self
+    }
+    /// <p>Information about the resource, in JSON format. Network Manager gets this information by describing the resource using its Describe API call.</p>
+    pub fn get_definition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.definition
     }
     /// <p>The time that the resource definition was retrieved.</p>
     pub fn definition_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -316,6 +370,10 @@ impl NetworkResourceBuilder {
     ) -> Self {
         self.definition_timestamp = input;
         self
+    }
+    /// <p>The time that the resource definition was retrieved.</p>
+    pub fn get_definition_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.definition_timestamp
     }
     /// Appends an item to `tags`.
     ///
@@ -335,6 +393,10 @@ impl NetworkResourceBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Adds a key-value pair to `metadata`.
     ///
@@ -360,6 +422,14 @@ impl NetworkResourceBuilder {
     ) -> Self {
         self.metadata = input;
         self
+    }
+    /// <p>The resource metadata.</p>
+    pub fn get_metadata(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.metadata
     }
     /// Consumes the builder and constructs a [`NetworkResource`](crate::types::NetworkResource).
     pub fn build(self) -> crate::types::NetworkResource {

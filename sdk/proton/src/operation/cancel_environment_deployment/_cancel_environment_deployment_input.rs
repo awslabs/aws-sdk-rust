@@ -45,6 +45,10 @@ impl CancelEnvironmentDeploymentInputBuilder {
         self.environment_name = input;
         self
     }
+    /// <p>The name of the environment with the deployment to cancel.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_name
+    }
     /// Consumes the builder and constructs a [`CancelEnvironmentDeploymentInput`](crate::operation::cancel_environment_deployment::CancelEnvironmentDeploymentInput).
     pub fn build(
         self,

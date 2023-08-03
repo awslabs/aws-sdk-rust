@@ -45,6 +45,10 @@ impl CreateMultiRegionAccessPointFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateMultiRegionAccessPoint as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_multi_region_access_point::builders::CreateMultiRegionAccessPointInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +139,10 @@ impl CreateMultiRegionAccessPointFluentBuilder {
         self.inner = self.inner.set_account_id(input);
         self
     }
+    /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point. The owner of the Multi-Region Access Point also must own the underlying buckets.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// <p>An idempotency token used to identify the request and guarantee that requests are unique.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -144,6 +152,10 @@ impl CreateMultiRegionAccessPointFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>An idempotency token used to identify the request and guarantee that requests are unique.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// <p>A container element containing details about the Multi-Region Access Point.</p>
     pub fn details(mut self, input: crate::types::CreateMultiRegionAccessPointInput) -> Self {
@@ -157,5 +169,11 @@ impl CreateMultiRegionAccessPointFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_details(input);
         self
+    }
+    /// <p>A container element containing details about the Multi-Region Access Point.</p>
+    pub fn get_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateMultiRegionAccessPointInput> {
+        self.inner.get_details()
     }
 }

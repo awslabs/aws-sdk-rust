@@ -110,6 +110,14 @@ impl GetLatestConfigurationOutputBuilder {
         self.next_poll_configuration_token = input;
         self
     }
+    /// <p>The latest token describing the current state of the configuration session. This <i>must</i> be provided to the next call to <code>GetLatestConfiguration.</code> </p> <important>
+    /// <p>This token should only be used once. To support long poll use cases, the token is valid for up to 24 hours. If a <code>GetLatestConfiguration</code> call uses an expired token, the system returns <code>BadRequestException</code>.</p>
+    /// </important>
+    pub fn get_next_poll_configuration_token(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.next_poll_configuration_token
+    }
     /// <p>The amount of time the client should wait before polling for configuration updates again. Use <code>RequiredMinimumPollIntervalInSeconds</code> to set the desired poll interval.</p>
     pub fn next_poll_interval_in_seconds(mut self, input: i32) -> Self {
         self.next_poll_interval_in_seconds = ::std::option::Option::Some(input);
@@ -120,6 +128,10 @@ impl GetLatestConfigurationOutputBuilder {
         self.next_poll_interval_in_seconds = input;
         self
     }
+    /// <p>The amount of time the client should wait before polling for configuration updates again. Use <code>RequiredMinimumPollIntervalInSeconds</code> to set the desired poll interval.</p>
+    pub fn get_next_poll_interval_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.next_poll_interval_in_seconds
+    }
     /// <p>A standard MIME type describing the format of the configuration content.</p>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
@@ -129,6 +141,10 @@ impl GetLatestConfigurationOutputBuilder {
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
         self
+    }
+    /// <p>A standard MIME type describing the format of the configuration content.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_type
     }
     /// <p>The data of the configuration. This may be empty if the client already has the latest version of configuration.</p>
     pub fn configuration(mut self, input: ::aws_smithy_types::Blob) -> Self {
@@ -142,6 +158,10 @@ impl GetLatestConfigurationOutputBuilder {
     ) -> Self {
         self.configuration = input;
         self
+    }
+    /// <p>The data of the configuration. This may be empty if the client already has the latest version of configuration.</p>
+    pub fn get_configuration(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.configuration
     }
     /// <p>The user-defined label for the AppConfig hosted configuration version. This attribute doesn't apply if the configuration is not from an AppConfig hosted configuration version. If the client already has the latest version of the configuration data, this value is empty.</p>
     pub fn version_label(
@@ -158,6 +178,10 @@ impl GetLatestConfigurationOutputBuilder {
     ) -> Self {
         self.version_label = input;
         self
+    }
+    /// <p>The user-defined label for the AppConfig hosted configuration version. This attribute doesn't apply if the configuration is not from an AppConfig hosted configuration version. If the client already has the latest version of the configuration data, this value is empty.</p>
+    pub fn get_version_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_label
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

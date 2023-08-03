@@ -38,6 +38,13 @@ impl ModifyIpamResourceCidrFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyIpamResourceCidr as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::modify_ipam_resource_cidr::builders::ModifyIpamResourceCidrInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +135,10 @@ impl ModifyIpamResourceCidrFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>The ID of the resource you want to modify.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_id(input.into());
@@ -137,6 +148,10 @@ impl ModifyIpamResourceCidrFluentBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_id(input);
         self
+    }
+    /// <p>The ID of the resource you want to modify.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_id()
     }
     /// <p>The CIDR of the resource you want to modify.</p>
     pub fn resource_cidr(
@@ -154,6 +169,10 @@ impl ModifyIpamResourceCidrFluentBuilder {
         self.inner = self.inner.set_resource_cidr(input);
         self
     }
+    /// <p>The CIDR of the resource you want to modify.</p>
+    pub fn get_resource_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_cidr()
+    }
     /// <p>The Amazon Web Services Region of the resource you want to modify.</p>
     pub fn resource_region(
         mut self,
@@ -169,6 +188,10 @@ impl ModifyIpamResourceCidrFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_region(input);
         self
+    }
+    /// <p>The Amazon Web Services Region of the resource you want to modify.</p>
+    pub fn get_resource_region(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_region()
     }
     /// <p>The ID of the current scope that the resource CIDR is in.</p>
     pub fn current_ipam_scope_id(
@@ -186,6 +209,10 @@ impl ModifyIpamResourceCidrFluentBuilder {
         self.inner = self.inner.set_current_ipam_scope_id(input);
         self
     }
+    /// <p>The ID of the current scope that the resource CIDR is in.</p>
+    pub fn get_current_ipam_scope_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_current_ipam_scope_id()
+    }
     /// <p>The ID of the scope you want to transfer the resource CIDR to.</p>
     pub fn destination_ipam_scope_id(
         mut self,
@@ -202,6 +229,10 @@ impl ModifyIpamResourceCidrFluentBuilder {
         self.inner = self.inner.set_destination_ipam_scope_id(input);
         self
     }
+    /// <p>The ID of the scope you want to transfer the resource CIDR to.</p>
+    pub fn get_destination_ipam_scope_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_ipam_scope_id()
+    }
     /// <p>Determines if the resource is monitored by IPAM. If a resource is monitored, the resource is discovered by IPAM and you can view details about the resource’s CIDR.</p>
     pub fn monitored(mut self, input: bool) -> Self {
         self.inner = self.inner.monitored(input);
@@ -211,5 +242,9 @@ impl ModifyIpamResourceCidrFluentBuilder {
     pub fn set_monitored(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_monitored(input);
         self
+    }
+    /// <p>Determines if the resource is monitored by IPAM. If a resource is monitored, the resource is discovered by IPAM and you can view details about the resource’s CIDR.</p>
+    pub fn get_monitored(&self) -> &::std::option::Option<bool> {
+        self.inner.get_monitored()
     }
 }

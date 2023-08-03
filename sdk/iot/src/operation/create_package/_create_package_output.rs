@@ -70,6 +70,10 @@ impl CreatePackageOutputBuilder {
         self.package_name = input;
         self
     }
+    /// <p>The name of the package.</p>
+    pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_name
+    }
     /// <p>The Amazon Resource Name (ARN) for the package.</p>
     pub fn package_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_arn = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl CreatePackageOutputBuilder {
         self.package_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the package.</p>
+    pub fn get_package_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_arn
+    }
     /// <p>The package description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -89,6 +97,10 @@ impl CreatePackageOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The package description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

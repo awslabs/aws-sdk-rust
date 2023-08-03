@@ -38,6 +38,10 @@ impl ImportModelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ImportModel as a reference.
+    pub fn as_input(&self) -> &crate::operation::import_model::builders::ImportModelInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl ImportModelFluentBuilder {
         self.inner = self.inner.set_source_model_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the custom model to import.</p>
+    pub fn get_source_model_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_model_arn()
+    }
     /// <p>The name to assign to the custom model that is created in Amazon Comprehend by this import.</p>
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_name(input.into());
@@ -136,6 +144,10 @@ impl ImportModelFluentBuilder {
         self.inner = self.inner.set_model_name(input);
         self
     }
+    /// <p>The name to assign to the custom model that is created in Amazon Comprehend by this import.</p>
+    pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_model_name()
+    }
     /// <p>The version name given to the custom model that is created by this import. Version names can have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The version name must be unique among all models with the same classifier name in the account/Region.</p>
     pub fn version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version_name(input.into());
@@ -145,6 +157,10 @@ impl ImportModelFluentBuilder {
     pub fn set_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version_name(input);
         self
+    }
+    /// <p>The version name given to the custom model that is created by this import. Version names can have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The version name must be unique among all models with the same classifier name in the account/Region.</p>
+    pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_version_name()
     }
     /// <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
     /// <ul>
@@ -170,6 +186,14 @@ impl ImportModelFluentBuilder {
         self.inner = self.inner.set_model_kms_key_id(input);
         self
     }
+    /// <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
+    /// <ul>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// </ul>
+    pub fn get_model_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_model_kms_key_id()
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend permission to use Amazon Key Management Service (KMS) to encrypt or decrypt the custom model.</p>
     pub fn data_access_role_arn(
         mut self,
@@ -185,6 +209,10 @@ impl ImportModelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_data_access_role_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend permission to use Amazon Key Management Service (KMS) to encrypt or decrypt the custom model.</p>
+    pub fn get_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_data_access_role_arn()
     }
     /// Appends an item to `Tags`.
     ///
@@ -202,5 +230,9 @@ impl ImportModelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Tags to associate with the custom model that is created by this import. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

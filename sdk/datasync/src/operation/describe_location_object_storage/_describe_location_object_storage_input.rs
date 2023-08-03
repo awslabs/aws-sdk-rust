@@ -40,6 +40,10 @@ impl DescribeLocationObjectStorageInputBuilder {
         self.location_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the object storage system location that you want information about.</p>
+    pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location_arn
+    }
     /// Consumes the builder and constructs a [`DescribeLocationObjectStorageInput`](crate::operation::describe_location_object_storage::DescribeLocationObjectStorageInput).
     pub fn build(
         self,

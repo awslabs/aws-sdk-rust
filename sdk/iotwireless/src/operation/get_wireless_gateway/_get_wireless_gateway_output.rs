@@ -95,6 +95,10 @@ impl GetWirelessGatewayOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the resource.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The ID of the wireless gateway.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl GetWirelessGatewayOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the wireless gateway.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The description of the resource.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -114,6 +122,10 @@ impl GetWirelessGatewayOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the resource.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Information about the wireless gateway.</p>
     pub fn lo_ra_wan(mut self, input: crate::types::LoRaWanGateway) -> Self {
@@ -128,6 +140,10 @@ impl GetWirelessGatewayOutputBuilder {
         self.lo_ra_wan = input;
         self
     }
+    /// <p>Information about the wireless gateway.</p>
+    pub fn get_lo_ra_wan(&self) -> &::std::option::Option<crate::types::LoRaWanGateway> {
+        &self.lo_ra_wan
+    }
     /// <p>The Amazon Resource Name of the resource.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -137,6 +153,10 @@ impl GetWirelessGatewayOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name of the resource.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The name of the thing associated with the wireless gateway. The value is empty if a thing isn't associated with the gateway.</p>
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -148,6 +168,10 @@ impl GetWirelessGatewayOutputBuilder {
         self.thing_name = input;
         self
     }
+    /// <p>The name of the thing associated with the wireless gateway. The value is empty if a thing isn't associated with the gateway.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_name
+    }
     /// <p>The ARN of the thing associated with the wireless gateway.</p>
     pub fn thing_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_arn = ::std::option::Option::Some(input.into());
@@ -157,6 +181,10 @@ impl GetWirelessGatewayOutputBuilder {
     pub fn set_thing_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_arn = input;
         self
+    }
+    /// <p>The ARN of the thing associated with the wireless gateway.</p>
+    pub fn get_thing_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

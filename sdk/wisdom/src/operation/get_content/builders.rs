@@ -36,6 +36,10 @@ impl GetContentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetContent as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_content::builders::GetContentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl GetContentFluentBuilder {
         self.inner = self.inner.set_content_id(input);
         self
     }
+    /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn get_content_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_content_id()
+    }
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn knowledge_base_id(
         mut self,
@@ -133,5 +141,9 @@ impl GetContentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_knowledge_base_id(input);
         self
+    }
+    /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_knowledge_base_id()
     }
 }

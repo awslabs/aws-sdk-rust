@@ -91,6 +91,10 @@ impl CreateVehicleRequestItemBuilder {
         self.vehicle_name = input;
         self
     }
+    /// <p>The unique ID of the vehicle to create.</p>
+    pub fn get_vehicle_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vehicle_name
+    }
     /// <p>The ARN of the vehicle model (model manifest) to create the vehicle from.</p>
     pub fn model_manifest_arn(
         mut self,
@@ -107,6 +111,10 @@ impl CreateVehicleRequestItemBuilder {
         self.model_manifest_arn = input;
         self
     }
+    /// <p>The ARN of the vehicle model (model manifest) to create the vehicle from.</p>
+    pub fn get_model_manifest_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_manifest_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of a decoder manifest associated with the vehicle to create. </p>
     pub fn decoder_manifest_arn(
         mut self,
@@ -122,6 +130,10 @@ impl CreateVehicleRequestItemBuilder {
     ) -> Self {
         self.decoder_manifest_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a decoder manifest associated with the vehicle to create. </p>
+    pub fn get_decoder_manifest_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.decoder_manifest_arn
     }
     /// Adds a key-value pair to `attributes`.
     ///
@@ -148,6 +160,14 @@ impl CreateVehicleRequestItemBuilder {
         self.attributes = input;
         self
     }
+    /// <p>Static information about a vehicle in a key-value pair. For example: <code>"engine Type"</code> : <code>"v6"</code> </p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.attributes
+    }
     /// <p>An option to create a new Amazon Web Services IoT thing when creating a vehicle, or to validate an existing thing as a vehicle.</p>
     pub fn association_behavior(mut self, input: crate::types::VehicleAssociationBehavior) -> Self {
         self.association_behavior = ::std::option::Option::Some(input);
@@ -160,6 +180,12 @@ impl CreateVehicleRequestItemBuilder {
     ) -> Self {
         self.association_behavior = input;
         self
+    }
+    /// <p>An option to create a new Amazon Web Services IoT thing when creating a vehicle, or to validate an existing thing as a vehicle.</p>
+    pub fn get_association_behavior(
+        &self,
+    ) -> &::std::option::Option<crate::types::VehicleAssociationBehavior> {
+        &self.association_behavior
     }
     /// Appends an item to `tags`.
     ///
@@ -179,6 +205,10 @@ impl CreateVehicleRequestItemBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Metadata which can be used to manage the vehicle.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateVehicleRequestItem`](crate::types::CreateVehicleRequestItem).
     pub fn build(self) -> crate::types::CreateVehicleRequestItem {

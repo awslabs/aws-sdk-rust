@@ -81,6 +81,10 @@ impl DescribeTagsInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -118,6 +122,19 @@ impl DescribeTagsInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>The filters.</p>
+    /// <ul>
+    /// <li> <p> <code>key</code> - The tag key.</p> </li>
+    /// <li> <p> <code>resource-id</code> - The ID of the resource.</p> </li>
+    /// <li> <p> <code>resource-type</code> - The resource type (<code>customer-gateway</code> | <code>dedicated-host</code> | <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> | <code>fpga-image</code> | <code>host-reservation</code> | <code>image</code> | <code>instance</code> | <code>internet-gateway</code> | <code>key-pair</code> | <code>launch-template</code> | <code>natgateway</code> | <code>network-acl</code> | <code>network-interface</code> | <code>placement-group</code> | <code>reserved-instances</code> | <code>route-table</code> | <code>security-group</code> | <code>snapshot</code> | <code>spot-instances-request</code> | <code>subnet</code> | <code>volume</code> | <code>vpc</code> | <code>vpc-endpoint</code> | <code>vpc-endpoint-service</code> | <code>vpc-peering-connection</code> | <code>vpn-connection</code> | <code>vpn-gateway</code>).</p> </li>
+    /// <li> <p> <code>tag</code>:<key>
+    /// - The key/value combination of the tag. For example, specify "tag:Owner" for the filter name and "TeamA" for the filter value to find resources with the tag "Owner=TeamA".
+    /// </key></p> </li>
+    /// <li> <p> <code>value</code> - The tag value.</p> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
+    }
     /// <p>The maximum number of items to return for this request. This value can be between 5 and 1000. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -128,6 +145,10 @@ impl DescribeTagsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of items to return for this request. This value can be between 5 and 1000. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -137,6 +158,10 @@ impl DescribeTagsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeTagsInput`](crate::operation::describe_tags::DescribeTagsInput).
     pub fn build(

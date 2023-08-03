@@ -39,6 +39,12 @@ impl AddApplicationOutputFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AddApplicationOutput as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::add_application_output::builders::AddApplicationOutputInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +141,10 @@ impl AddApplicationOutputFluentBuilder {
         self.inner = self.inner.set_application_name(input);
         self
     }
+    /// <p>The name of the application to which you want to add the output configuration.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_name()
+    }
     /// <p>The version of the application to which you want to add the output configuration. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
     pub fn current_application_version_id(mut self, input: i64) -> Self {
         self.inner = self.inner.current_application_version_id(input);
@@ -145,6 +155,10 @@ impl AddApplicationOutputFluentBuilder {
         self.inner = self.inner.set_current_application_version_id(input);
         self
     }
+    /// <p>The version of the application to which you want to add the output configuration. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
+    pub fn get_current_application_version_id(&self) -> &::std::option::Option<i64> {
+        self.inner.get_current_application_version_id()
+    }
     /// <p>An array of objects, each describing one output configuration. In the output configuration, you specify the name of an in-application stream, a destination (that is, a Kinesis data stream, a Kinesis Data Firehose delivery stream, or an Amazon Lambda function), and record the formation to use when writing to the destination.</p>
     pub fn output(mut self, input: crate::types::Output) -> Self {
         self.inner = self.inner.output(input);
@@ -154,5 +168,9 @@ impl AddApplicationOutputFluentBuilder {
     pub fn set_output(mut self, input: ::std::option::Option<crate::types::Output>) -> Self {
         self.inner = self.inner.set_output(input);
         self
+    }
+    /// <p>An array of objects, each describing one output configuration. In the output configuration, you specify the name of an in-application stream, a destination (that is, a Kinesis data stream, a Kinesis Data Firehose delivery stream, or an Amazon Lambda function), and record the formation to use when writing to the destination.</p>
+    pub fn get_output(&self) -> &::std::option::Option<crate::types::Output> {
+        self.inner.get_output()
     }
 }

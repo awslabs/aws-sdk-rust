@@ -43,6 +43,10 @@ impl ArtifactConfigOutputBuilder {
         self.s3_encryption = input;
         self
     }
+    /// <p>A structure that contains the configuration of encryption settings for canary artifacts that are stored in Amazon S3. </p>
+    pub fn get_s3_encryption(&self) -> &::std::option::Option<crate::types::S3EncryptionConfig> {
+        &self.s3_encryption
+    }
     /// Consumes the builder and constructs a [`ArtifactConfigOutput`](crate::types::ArtifactConfigOutput).
     pub fn build(self) -> crate::types::ArtifactConfigOutput {
         crate::types::ArtifactConfigOutput {

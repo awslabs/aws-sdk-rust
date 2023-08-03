@@ -56,6 +56,10 @@ impl PersonMatchBuilder {
         self.timestamp = input;
         self
     }
+    /// <p>The time, in milliseconds from the beginning of the video, that the person was matched in the video.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<i64> {
+        &self.timestamp
+    }
     /// <p>Information about the matched person.</p>
     pub fn person(mut self, input: crate::types::PersonDetail) -> Self {
         self.person = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl PersonMatchBuilder {
     pub fn set_person(mut self, input: ::std::option::Option<crate::types::PersonDetail>) -> Self {
         self.person = input;
         self
+    }
+    /// <p>Information about the matched person.</p>
+    pub fn get_person(&self) -> &::std::option::Option<crate::types::PersonDetail> {
+        &self.person
     }
     /// Appends an item to `face_matches`.
     ///
@@ -84,6 +92,12 @@ impl PersonMatchBuilder {
     ) -> Self {
         self.face_matches = input;
         self
+    }
+    /// <p>Information about the faces in the input collection that match the face of a person in the video.</p>
+    pub fn get_face_matches(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FaceMatch>> {
+        &self.face_matches
     }
     /// Consumes the builder and constructs a [`PersonMatch`](crate::types::PersonMatch).
     pub fn build(self) -> crate::types::PersonMatch {

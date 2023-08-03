@@ -56,6 +56,10 @@ impl MicrosoftSqlServerCatalogSourceBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the data source.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The name of the database to read from.</p>
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl MicrosoftSqlServerCatalogSourceBuilder {
         self.database = input;
         self
     }
+    /// <p>The name of the database to read from.</p>
+    pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database
+    }
     /// <p>The name of the table in the database to read from.</p>
     pub fn table(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl MicrosoftSqlServerCatalogSourceBuilder {
     pub fn set_table(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table = input;
         self
+    }
+    /// <p>The name of the table in the database to read from.</p>
+    pub fn get_table(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table
     }
     /// Consumes the builder and constructs a [`MicrosoftSqlServerCatalogSource`](crate::types::MicrosoftSqlServerCatalogSource).
     pub fn build(self) -> crate::types::MicrosoftSqlServerCatalogSource {

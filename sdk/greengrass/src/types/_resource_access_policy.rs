@@ -51,6 +51,10 @@ impl ResourceAccessPolicyBuilder {
         self.permission = input;
         self
     }
+    /// The permissions that the Lambda function has to the resource. Can be one of ''rw'' (read/write) or ''ro'' (read-only).
+    pub fn get_permission(&self) -> &::std::option::Option<crate::types::Permission> {
+        &self.permission
+    }
     /// The ID of the resource. (This ID is assigned to the resource when you create the resource definiton.)
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl ResourceAccessPolicyBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// The ID of the resource. (This ID is assigned to the resource when you create the resource definiton.)
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// Consumes the builder and constructs a [`ResourceAccessPolicy`](crate::types::ResourceAccessPolicy).
     pub fn build(self) -> crate::types::ResourceAccessPolicy {

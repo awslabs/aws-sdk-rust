@@ -63,6 +63,10 @@ impl UpdateLicenseSpecificationsForResourceInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// Appends an item to `add_license_specifications`.
     ///
     /// To override the contents of this collection use [`set_add_license_specifications`](Self::set_add_license_specifications).
@@ -81,6 +85,12 @@ impl UpdateLicenseSpecificationsForResourceInputBuilder {
     ) -> Self {
         self.add_license_specifications = input;
         self
+    }
+    /// <p>ARNs of the license configurations to add.</p>
+    pub fn get_add_license_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LicenseSpecification>> {
+        &self.add_license_specifications
     }
     /// Appends an item to `remove_license_specifications`.
     ///
@@ -103,6 +113,12 @@ impl UpdateLicenseSpecificationsForResourceInputBuilder {
     ) -> Self {
         self.remove_license_specifications = input;
         self
+    }
+    /// <p>ARNs of the license configurations to remove.</p>
+    pub fn get_remove_license_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LicenseSpecification>> {
+        &self.remove_license_specifications
     }
     /// Consumes the builder and constructs a [`UpdateLicenseSpecificationsForResourceInput`](crate::operation::update_license_specifications_for_resource::UpdateLicenseSpecificationsForResourceInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_license_specifications_for_resource::UpdateLicenseSpecificationsForResourceInput, ::aws_smithy_http::operation::error::BuildError>{

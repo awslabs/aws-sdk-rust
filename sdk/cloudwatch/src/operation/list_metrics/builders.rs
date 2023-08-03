@@ -40,6 +40,10 @@ impl ListMetricsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListMetrics as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_metrics::builders::ListMetricsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +135,10 @@ impl ListMetricsFluentBuilder {
         self.inner = self.inner.set_namespace(input);
         self
     }
+    /// <p>The metric namespace to filter against. Only the namespace that matches exactly will be returned.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_namespace()
+    }
     /// <p>The name of the metric to filter against. Only the metrics with names that match exactly will be returned.</p>
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.metric_name(input.into());
@@ -140,6 +148,10 @@ impl ListMetricsFluentBuilder {
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_metric_name(input);
         self
+    }
+    /// <p>The name of the metric to filter against. Only the metrics with names that match exactly will be returned.</p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_metric_name()
     }
     /// Appends an item to `Dimensions`.
     ///
@@ -158,6 +170,12 @@ impl ListMetricsFluentBuilder {
         self.inner = self.inner.set_dimensions(input);
         self
     }
+    /// <p>The dimensions to filter against. Only the dimensions that match exactly will be returned.</p>
+    pub fn get_dimensions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionFilter>> {
+        self.inner.get_dimensions()
+    }
     /// <p>The token returned by a previous call to indicate that there is more data available.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -167,6 +185,10 @@ impl ListMetricsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token returned by a previous call to indicate that there is more data available.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>To filter the results to show only metrics that have had data points published in the past three hours, specify this parameter with a value of <code>PT3H</code>. This is the only valid value for this parameter.</p>
     /// <p>The results that are returned are an approximation of the value you specify. There is a low probability that the returned results include metrics with last published data as much as 40 minutes more than the specified time interval.</p>
@@ -183,6 +205,11 @@ impl ListMetricsFluentBuilder {
         self.inner = self.inner.set_recently_active(input);
         self
     }
+    /// <p>To filter the results to show only metrics that have had data points published in the past three hours, specify this parameter with a value of <code>PT3H</code>. This is the only valid value for this parameter.</p>
+    /// <p>The results that are returned are an approximation of the value you specify. There is a low probability that the returned results include metrics with last published data as much as 40 minutes more than the specified time interval.</p>
+    pub fn get_recently_active(&self) -> &::std::option::Option<crate::types::RecentlyActive> {
+        self.inner.get_recently_active()
+    }
     /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include metrics from source accounts in the returned data.</p>
     /// <p>The default is <code>false</code>.</p>
     pub fn include_linked_accounts(mut self, input: bool) -> Self {
@@ -194,6 +221,11 @@ impl ListMetricsFluentBuilder {
     pub fn set_include_linked_accounts(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_linked_accounts(input);
         self
+    }
+    /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include metrics from source accounts in the returned data.</p>
+    /// <p>The default is <code>false</code>.</p>
+    pub fn get_include_linked_accounts(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_linked_accounts()
     }
     /// <p>When you use this operation in a monitoring account, use this field to return metrics only from one source account. To do so, specify that source account ID in this field, and also specify <code>true</code> for <code>IncludeLinkedAccounts</code>.</p>
     pub fn owning_account(
@@ -210,5 +242,9 @@ impl ListMetricsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_owning_account(input);
         self
+    }
+    /// <p>When you use this operation in a monitoring account, use this field to return metrics only from one source account. To do so, specify that source account ID in this field, and also specify <code>true</code> for <code>IncludeLinkedAccounts</code>.</p>
+    pub fn get_owning_account(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_owning_account()
     }
 }

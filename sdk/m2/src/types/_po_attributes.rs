@@ -57,6 +57,10 @@ impl PoAttributesBuilder {
         self.format = input;
         self
     }
+    /// <p>The format of the data set records.</p>
+    pub fn get_format(&self) -> &::std::option::Option<::std::string::String> {
+        &self.format
+    }
     /// <p>The character set encoding of the data set.</p>
     pub fn encoding(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encoding = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl PoAttributesBuilder {
     pub fn set_encoding(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encoding = input;
         self
+    }
+    /// <p>The character set encoding of the data set.</p>
+    pub fn get_encoding(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encoding
     }
     /// Appends an item to `member_file_extensions`.
     ///
@@ -88,6 +96,12 @@ impl PoAttributesBuilder {
     ) -> Self {
         self.member_file_extensions = input;
         self
+    }
+    /// <p>An array containing one or more filename extensions, allowing you to specify which files to be included as PDS member.</p>
+    pub fn get_member_file_extensions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.member_file_extensions
     }
     /// Consumes the builder and constructs a [`PoAttributes`](crate::types::PoAttributes).
     pub fn build(self) -> crate::types::PoAttributes {

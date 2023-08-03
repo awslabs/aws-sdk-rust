@@ -63,6 +63,14 @@ impl CampaignConfigBuilder {
         self.item_exploration_config = input;
         self
     }
+    /// <p>Specifies the exploration configuration hyperparameters, including <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure the amount of item exploration Amazon Personalize uses when recommending items. Provide <code>itemExplorationConfig</code> data only if your solution uses the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe.</p>
+    pub fn get_item_exploration_config(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.item_exploration_config
+    }
     /// Consumes the builder and constructs a [`CampaignConfig`](crate::types::CampaignConfig).
     pub fn build(self) -> crate::types::CampaignConfig {
         crate::types::CampaignConfig {

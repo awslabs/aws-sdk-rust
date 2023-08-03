@@ -59,6 +59,10 @@ impl ListMigrationTasksOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If there are more migration tasks than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `migration_task_summary_list`.
     ///
     /// To override the contents of this collection use [`set_migration_task_summary_list`](Self::set_migration_task_summary_list).
@@ -80,6 +84,12 @@ impl ListMigrationTasksOutputBuilder {
     ) -> Self {
         self.migration_task_summary_list = input;
         self
+    }
+    /// <p>Lists the migration task's summary which includes: <code>MigrationTaskName</code>, <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>, and the <code>UpdateDateTime</code> for each task.</p>
+    pub fn get_migration_task_summary_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MigrationTaskSummary>> {
+        &self.migration_task_summary_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

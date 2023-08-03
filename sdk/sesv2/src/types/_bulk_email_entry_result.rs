@@ -127,6 +127,27 @@ impl BulkEmailEntryResultBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of a message sent using the <code>SendBulkTemplatedEmail</code> operation.</p>
+    /// <p>Possible values for this parameter include:</p>
+    /// <ul>
+    /// <li> <p>SUCCESS: Amazon SES accepted the message, and will attempt to deliver it to the recipients.</p> </li>
+    /// <li> <p>MESSAGE_REJECTED: The message was rejected because it contained a virus.</p> </li>
+    /// <li> <p>MAIL_FROM_DOMAIN_NOT_VERIFIED: The sender's email address or domain was not verified.</p> </li>
+    /// <li> <p>CONFIGURATION_SET_DOES_NOT_EXIST: The configuration set you specified does not exist.</p> </li>
+    /// <li> <p>TEMPLATE_DOES_NOT_EXIST: The template you specified does not exist.</p> </li>
+    /// <li> <p>ACCOUNT_SUSPENDED: Your account has been shut down because of issues related to your email sending practices.</p> </li>
+    /// <li> <p>ACCOUNT_THROTTLED: The number of emails you can send has been reduced because your account has exceeded its allocated sending limit.</p> </li>
+    /// <li> <p>ACCOUNT_DAILY_QUOTA_EXCEEDED: You have reached or exceeded the maximum number of emails you can send from your account in a 24-hour period.</p> </li>
+    /// <li> <p>INVALID_SENDING_POOL_NAME: The configuration set you specified refers to an IP pool that does not exist.</p> </li>
+    /// <li> <p>ACCOUNT_SENDING_PAUSED: Email sending for the Amazon SES account was disabled using the <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateAccountSendingEnabled.html">UpdateAccountSendingEnabled</a> operation.</p> </li>
+    /// <li> <p>CONFIGURATION_SET_SENDING_PAUSED: Email sending for this configuration set was disabled using the <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateConfigurationSetSendingEnabled.html">UpdateConfigurationSetSendingEnabled</a> operation.</p> </li>
+    /// <li> <p>INVALID_PARAMETER_VALUE: One or more of the parameters you specified when calling this operation was invalid. See the error message for additional information.</p> </li>
+    /// <li> <p>TRANSIENT_FAILURE: Amazon SES was unable to process your request because of a temporary issue.</p> </li>
+    /// <li> <p>FAILED: Amazon SES was unable to process your request. See the error message for additional information.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::BulkEmailStatus> {
+        &self.status
+    }
     /// <p>A description of an error that prevented a message being sent using the <code>SendBulkTemplatedEmail</code> operation.</p>
     pub fn error(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error = ::std::option::Option::Some(input.into());
@@ -137,6 +158,10 @@ impl BulkEmailEntryResultBuilder {
         self.error = input;
         self
     }
+    /// <p>A description of an error that prevented a message being sent using the <code>SendBulkTemplatedEmail</code> operation.</p>
+    pub fn get_error(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error
+    }
     /// <p>The unique message identifier returned from the <code>SendBulkTemplatedEmail</code> operation.</p>
     pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_id = ::std::option::Option::Some(input.into());
@@ -146,6 +171,10 @@ impl BulkEmailEntryResultBuilder {
     pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message_id = input;
         self
+    }
+    /// <p>The unique message identifier returned from the <code>SendBulkTemplatedEmail</code> operation.</p>
+    pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message_id
     }
     /// Consumes the builder and constructs a [`BulkEmailEntryResult`](crate::types::BulkEmailEntryResult).
     pub fn build(self) -> crate::types::BulkEmailEntryResult {

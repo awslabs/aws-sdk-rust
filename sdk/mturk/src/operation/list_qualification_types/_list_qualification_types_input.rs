@@ -73,6 +73,10 @@ impl ListQualificationTypesInputBuilder {
         self.query = input;
         self
     }
+    /// <p> A text query against all of the searchable attributes of Qualification types. </p>
+    pub fn get_query(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query
+    }
     /// <p>Specifies that only Qualification types that a user can request through the Amazon Mechanical Turk web site, such as by taking a Qualification test, are returned as results of the search. Some Qualification types, such as those assigned automatically by the system, cannot be requested directly by users. If false, all Qualification types, including those managed by the system, are considered. Valid values are True | False. </p>
     pub fn must_be_requestable(mut self, input: bool) -> Self {
         self.must_be_requestable = ::std::option::Option::Some(input);
@@ -82,6 +86,10 @@ impl ListQualificationTypesInputBuilder {
     pub fn set_must_be_requestable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.must_be_requestable = input;
         self
+    }
+    /// <p>Specifies that only Qualification types that a user can request through the Amazon Mechanical Turk web site, such as by taking a Qualification test, are returned as results of the search. Some Qualification types, such as those assigned automatically by the system, cannot be requested directly by users. If false, all Qualification types, including those managed by the system, are considered. Valid values are True | False. </p>
+    pub fn get_must_be_requestable(&self) -> &::std::option::Option<bool> {
+        &self.must_be_requestable
     }
     /// <p> Specifies that only Qualification types that the Requester created are returned. If false, the operation returns all Qualification types. </p>
     pub fn must_be_owned_by_caller(mut self, input: bool) -> Self {
@@ -93,6 +101,10 @@ impl ListQualificationTypesInputBuilder {
         self.must_be_owned_by_caller = input;
         self
     }
+    /// <p> Specifies that only Qualification types that the Requester created are returned. If false, the operation returns all Qualification types. </p>
+    pub fn get_must_be_owned_by_caller(&self) -> &::std::option::Option<bool> {
+        &self.must_be_owned_by_caller
+    }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -103,6 +115,10 @@ impl ListQualificationTypesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p> The maximum number of results to return in a single call. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -112,6 +128,10 @@ impl ListQualificationTypesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p> The maximum number of results to return in a single call. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListQualificationTypesInput`](crate::operation::list_qualification_types::ListQualificationTypesInput).
     pub fn build(

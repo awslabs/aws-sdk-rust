@@ -54,6 +54,10 @@ impl ListLegalHoldsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `legal_holds`.
     ///
     /// To override the contents of this collection use [`set_legal_holds`](Self::set_legal_holds).
@@ -72,6 +76,12 @@ impl ListLegalHoldsOutputBuilder {
     ) -> Self {
         self.legal_holds = input;
         self
+    }
+    /// <p>This is an array of returned legal holds, both active and previous.</p>
+    pub fn get_legal_holds(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LegalHold>> {
+        &self.legal_holds
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

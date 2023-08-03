@@ -113,6 +113,10 @@ impl ScheduleEntryBuilder {
         self.approximate_duration_seconds = input;
         self
     }
+    /// <p>The approximate duration of this program, in seconds.</p>
+    pub fn get_approximate_duration_seconds(&self) -> &::std::option::Option<i64> {
+        &self.approximate_duration_seconds
+    }
     /// <p>The approximate time that the program will start playing.</p>
     pub fn approximate_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.approximate_start_time = ::std::option::Option::Some(input);
@@ -126,6 +130,12 @@ impl ScheduleEntryBuilder {
         self.approximate_start_time = input;
         self
     }
+    /// <p>The approximate time that the program will start playing.</p>
+    pub fn get_approximate_start_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.approximate_start_time
+    }
     /// <p>The ARN of the program.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -136,6 +146,10 @@ impl ScheduleEntryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the program.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the channel that uses this schedule.</p>
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_name = ::std::option::Option::Some(input.into());
@@ -145,6 +159,10 @@ impl ScheduleEntryBuilder {
     pub fn set_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_name = input;
         self
+    }
+    /// <p>The name of the channel that uses this schedule.</p>
+    pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_name
     }
     /// <p>The name of the live source used for the program.</p>
     pub fn live_source_name(
@@ -162,6 +180,10 @@ impl ScheduleEntryBuilder {
         self.live_source_name = input;
         self
     }
+    /// <p>The name of the live source used for the program.</p>
+    pub fn get_live_source_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.live_source_name
+    }
     /// <p>The name of the program.</p>
     pub fn program_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.program_name = ::std::option::Option::Some(input.into());
@@ -171,6 +193,10 @@ impl ScheduleEntryBuilder {
     pub fn set_program_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.program_name = input;
         self
+    }
+    /// <p>The name of the program.</p>
+    pub fn get_program_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.program_name
     }
     /// Appends an item to `schedule_ad_breaks`.
     ///
@@ -191,6 +217,12 @@ impl ScheduleEntryBuilder {
         self.schedule_ad_breaks = input;
         self
     }
+    /// <p>The schedule's ad break properties.</p>
+    pub fn get_schedule_ad_breaks(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduleAdBreak>> {
+        &self.schedule_ad_breaks
+    }
     /// <p>The type of schedule entry.</p>
     pub fn schedule_entry_type(mut self, input: crate::types::ScheduleEntryType) -> Self {
         self.schedule_entry_type = ::std::option::Option::Some(input);
@@ -203,6 +235,12 @@ impl ScheduleEntryBuilder {
     ) -> Self {
         self.schedule_entry_type = input;
         self
+    }
+    /// <p>The type of schedule entry.</p>
+    pub fn get_schedule_entry_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ScheduleEntryType> {
+        &self.schedule_entry_type
     }
     /// <p>The name of the source location.</p>
     pub fn source_location_name(
@@ -220,6 +258,10 @@ impl ScheduleEntryBuilder {
         self.source_location_name = input;
         self
     }
+    /// <p>The name of the source location.</p>
+    pub fn get_source_location_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_location_name
+    }
     /// <p>The name of the VOD source.</p>
     pub fn vod_source_name(
         mut self,
@@ -235,6 +277,10 @@ impl ScheduleEntryBuilder {
     ) -> Self {
         self.vod_source_name = input;
         self
+    }
+    /// <p>The name of the VOD source.</p>
+    pub fn get_vod_source_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vod_source_name
     }
     /// Consumes the builder and constructs a [`ScheduleEntry`](crate::types::ScheduleEntry).
     pub fn build(self) -> crate::types::ScheduleEntry {

@@ -78,6 +78,10 @@ impl FeaturedResultsConflictExceptionBuilder {
         self.message = input;
         self
     }
+    /// <p>An explanation for the conflicting queries.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Appends an item to `conflicting_items`.
     ///
     /// To override the contents of this collection use [`set_conflicting_items`](Self::set_conflicting_items).
@@ -96,6 +100,12 @@ impl FeaturedResultsConflictExceptionBuilder {
     ) -> Self {
         self.conflicting_items = input;
         self
+    }
+    /// <p>A list of the conflicting queries, including the query text, the name for the featured results set, and the identifier of the featured results set.</p>
+    pub fn get_conflicting_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConflictingItem>> {
+        &self.conflicting_items
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

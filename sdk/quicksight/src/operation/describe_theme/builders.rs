@@ -36,6 +36,12 @@ impl DescribeThemeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeTheme as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_theme::builders::DescribeThemeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl DescribeThemeFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The ID of the Amazon Web Services account that contains the theme that you're describing.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>The ID for the theme.</p>
     pub fn theme_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.theme_id(input.into());
@@ -133,6 +143,10 @@ impl DescribeThemeFluentBuilder {
     pub fn set_theme_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_theme_id(input);
         self
+    }
+    /// <p>The ID for the theme.</p>
+    pub fn get_theme_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_theme_id()
     }
     /// <p>The version number for the version to describe. If a <code>VersionNumber</code> parameter value isn't provided, the latest version of the theme is described.</p>
     pub fn version_number(mut self, input: i64) -> Self {
@@ -144,6 +158,10 @@ impl DescribeThemeFluentBuilder {
         self.inner = self.inner.set_version_number(input);
         self
     }
+    /// <p>The version number for the version to describe. If a <code>VersionNumber</code> parameter value isn't provided, the latest version of the theme is described.</p>
+    pub fn get_version_number(&self) -> &::std::option::Option<i64> {
+        self.inner.get_version_number()
+    }
     /// <p>The alias of the theme that you want to describe. If you name a specific alias, you describe the version that the alias points to. You can specify the latest version of the theme by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to themes.</p>
     pub fn alias_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.alias_name(input.into());
@@ -153,5 +171,9 @@ impl DescribeThemeFluentBuilder {
     pub fn set_alias_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_alias_name(input);
         self
+    }
+    /// <p>The alias of the theme that you want to describe. If you name a specific alias, you describe the version that the alias points to. You can specify the latest version of the theme by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to themes.</p>
+    pub fn get_alias_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_alias_name()
     }
 }

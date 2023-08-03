@@ -62,6 +62,10 @@ impl DescribeCommandsInputBuilder {
         self.deployment_id = input;
         self
     }
+    /// <p>The deployment ID. If you include this parameter, <code>DescribeCommands</code> returns a description of the commands associated with the specified deployment.</p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_id
+    }
     /// <p>The instance ID. If you include this parameter, <code>DescribeCommands</code> returns a description of the commands associated with the specified instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl DescribeCommandsInputBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
+    }
+    /// <p>The instance ID. If you include this parameter, <code>DescribeCommands</code> returns a description of the commands associated with the specified instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// Appends an item to `command_ids`.
     ///
@@ -90,6 +98,12 @@ impl DescribeCommandsInputBuilder {
     ) -> Self {
         self.command_ids = input;
         self
+    }
+    /// <p>An array of command IDs. If you include this parameter, <code>DescribeCommands</code> returns a description of the specified commands. Otherwise, it returns a description of every command.</p>
+    pub fn get_command_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.command_ids
     }
     /// Consumes the builder and constructs a [`DescribeCommandsInput`](crate::operation::describe_commands::DescribeCommandsInput).
     pub fn build(

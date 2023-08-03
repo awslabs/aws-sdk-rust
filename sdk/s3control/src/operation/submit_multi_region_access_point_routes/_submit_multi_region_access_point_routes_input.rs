@@ -59,6 +59,10 @@ impl SubmitMultiRegionAccessPointRoutesInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The Multi-Region Access Point ARN.</p>
     pub fn mrap(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mrap = ::std::option::Option::Some(input.into());
@@ -68,6 +72,10 @@ impl SubmitMultiRegionAccessPointRoutesInputBuilder {
     pub fn set_mrap(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mrap = input;
         self
+    }
+    /// <p>The Multi-Region Access Point ARN.</p>
+    pub fn get_mrap(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mrap
     }
     /// Appends an item to `route_updates`.
     ///
@@ -87,6 +95,12 @@ impl SubmitMultiRegionAccessPointRoutesInputBuilder {
     ) -> Self {
         self.route_updates = input;
         self
+    }
+    /// <p>The different routes that make up the new route configuration. Active routes return a value of <code>100</code>, and passive routes return a value of <code>0</code>.</p>
+    pub fn get_route_updates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MultiRegionAccessPointRoute>> {
+        &self.route_updates
     }
     /// Consumes the builder and constructs a [`SubmitMultiRegionAccessPointRoutesInput`](crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesInput, ::aws_smithy_http::operation::error::BuildError>{

@@ -39,6 +39,13 @@ impl ModifyManagedPrefixListFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyManagedPrefixList as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::modify_managed_prefix_list::builders::ModifyManagedPrefixListInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +136,10 @@ impl ModifyManagedPrefixListFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>The ID of the prefix list.</p>
     pub fn prefix_list_id(
         mut self,
@@ -145,6 +156,10 @@ impl ModifyManagedPrefixListFluentBuilder {
         self.inner = self.inner.set_prefix_list_id(input);
         self
     }
+    /// <p>The ID of the prefix list.</p>
+    pub fn get_prefix_list_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_prefix_list_id()
+    }
     /// <p>The current version of the prefix list.</p>
     pub fn current_version(mut self, input: i64) -> Self {
         self.inner = self.inner.current_version(input);
@@ -154,6 +169,10 @@ impl ModifyManagedPrefixListFluentBuilder {
     pub fn set_current_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_current_version(input);
         self
+    }
+    /// <p>The current version of the prefix list.</p>
+    pub fn get_current_version(&self) -> &::std::option::Option<i64> {
+        self.inner.get_current_version()
     }
     /// <p>A name for the prefix list.</p>
     pub fn prefix_list_name(
@@ -170,6 +189,10 @@ impl ModifyManagedPrefixListFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_prefix_list_name(input);
         self
+    }
+    /// <p>A name for the prefix list.</p>
+    pub fn get_prefix_list_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_prefix_list_name()
     }
     /// Appends an item to `AddEntries`.
     ///
@@ -188,6 +211,12 @@ impl ModifyManagedPrefixListFluentBuilder {
         self.inner = self.inner.set_add_entries(input);
         self
     }
+    /// <p>One or more entries to add to the prefix list.</p>
+    pub fn get_add_entries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AddPrefixListEntry>> {
+        self.inner.get_add_entries()
+    }
     /// Appends an item to `RemoveEntries`.
     ///
     /// To override the contents of this collection use [`set_remove_entries`](Self::set_remove_entries).
@@ -205,6 +234,12 @@ impl ModifyManagedPrefixListFluentBuilder {
         self.inner = self.inner.set_remove_entries(input);
         self
     }
+    /// <p>One or more entries to remove from the prefix list.</p>
+    pub fn get_remove_entries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RemovePrefixListEntry>> {
+        self.inner.get_remove_entries()
+    }
     /// <p>The maximum number of entries for the prefix list. You cannot modify the entries of a prefix list and modify the size of a prefix list at the same time.</p>
     /// <p>If any of the resources that reference the prefix list cannot support the new maximum size, the modify operation fails. Check the state message for the IDs of the first ten resources that do not support the new maximum size.</p>
     pub fn max_entries(mut self, input: i32) -> Self {
@@ -216,5 +251,10 @@ impl ModifyManagedPrefixListFluentBuilder {
     pub fn set_max_entries(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_entries(input);
         self
+    }
+    /// <p>The maximum number of entries for the prefix list. You cannot modify the entries of a prefix list and modify the size of a prefix list at the same time.</p>
+    /// <p>If any of the resources that reference the prefix list cannot support the new maximum size, the modify operation fails. Check the state message for the IDs of the first ten resources that do not support the new maximum size.</p>
+    pub fn get_max_entries(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_entries()
     }
 }

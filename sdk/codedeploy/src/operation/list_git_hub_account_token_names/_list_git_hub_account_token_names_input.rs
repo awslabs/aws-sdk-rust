@@ -40,6 +40,10 @@ impl ListGitHubAccountTokenNamesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>An identifier returned from the previous <code>ListGitHubAccountTokenNames</code> call. It can be used to return the next set of names in the list. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Consumes the builder and constructs a [`ListGitHubAccountTokenNamesInput`](crate::operation::list_git_hub_account_token_names::ListGitHubAccountTokenNamesInput).
     pub fn build(
         self,

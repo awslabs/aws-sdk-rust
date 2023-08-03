@@ -49,6 +49,10 @@ impl GetAddressBookOutputBuilder {
         self.address_book = input;
         self
     }
+    /// <p>The details of the requested address book.</p>
+    pub fn get_address_book(&self) -> &::std::option::Option<crate::types::AddressBook> {
+        &self.address_book
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

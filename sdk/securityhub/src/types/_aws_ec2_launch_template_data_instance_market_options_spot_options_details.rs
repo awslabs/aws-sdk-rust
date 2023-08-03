@@ -72,6 +72,10 @@ impl AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetailsBuilder {
         self.block_duration_minutes = input;
         self
     }
+    /// <p> Deprecated. </p>
+    pub fn get_block_duration_minutes(&self) -> &::std::option::Option<i32> {
+        &self.block_duration_minutes
+    }
     /// <p> The behavior when a Spot Instance is interrupted. </p>
     pub fn instance_interruption_behavior(
         mut self,
@@ -88,6 +92,12 @@ impl AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetailsBuilder {
         self.instance_interruption_behavior = input;
         self
     }
+    /// <p> The behavior when a Spot Instance is interrupted. </p>
+    pub fn get_instance_interruption_behavior(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.instance_interruption_behavior
+    }
     /// <p> The maximum hourly price you're willing to pay for the Spot Instances. </p>
     pub fn max_price(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.max_price = ::std::option::Option::Some(input.into());
@@ -97,6 +107,10 @@ impl AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetailsBuilder {
     pub fn set_max_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_price = input;
         self
+    }
+    /// <p> The maximum hourly price you're willing to pay for the Spot Instances. </p>
+    pub fn get_max_price(&self) -> &::std::option::Option<::std::string::String> {
+        &self.max_price
     }
     /// <p> The Spot Instance request type. </p>
     pub fn spot_instance_type(
@@ -114,6 +128,10 @@ impl AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetailsBuilder {
         self.spot_instance_type = input;
         self
     }
+    /// <p> The Spot Instance request type. </p>
+    pub fn get_spot_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.spot_instance_type
+    }
     /// <p> The end date of the request, in UTC format (YYYY-MM-DDTHH:MM:SSZ), for persistent requests. </p>
     pub fn valid_until(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.valid_until = ::std::option::Option::Some(input.into());
@@ -123,6 +141,10 @@ impl AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetailsBuilder {
     pub fn set_valid_until(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.valid_until = input;
         self
+    }
+    /// <p> The end date of the request, in UTC format (YYYY-MM-DDTHH:MM:SSZ), for persistent requests. </p>
+    pub fn get_valid_until(&self) -> &::std::option::Option<::std::string::String> {
+        &self.valid_until
     }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails).
     pub fn build(

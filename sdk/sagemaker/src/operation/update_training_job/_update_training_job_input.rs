@@ -74,6 +74,10 @@ impl UpdateTrainingJobInputBuilder {
         self.training_job_name = input;
         self
     }
+    /// <p>The name of a training job to update the Debugger profiling configuration.</p>
+    pub fn get_training_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.training_job_name
+    }
     /// <p>Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage paths.</p>
     pub fn profiler_config(mut self, input: crate::types::ProfilerConfigForUpdate) -> Self {
         self.profiler_config = ::std::option::Option::Some(input);
@@ -86,6 +90,12 @@ impl UpdateTrainingJobInputBuilder {
     ) -> Self {
         self.profiler_config = input;
         self
+    }
+    /// <p>Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage paths.</p>
+    pub fn get_profiler_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProfilerConfigForUpdate> {
+        &self.profiler_config
     }
     /// Appends an item to `profiler_rule_configurations`.
     ///
@@ -109,6 +119,12 @@ impl UpdateTrainingJobInputBuilder {
         self.profiler_rule_configurations = input;
         self
     }
+    /// <p>Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.</p>
+    pub fn get_profiler_rule_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProfilerRuleConfiguration>> {
+        &self.profiler_rule_configurations
+    }
     /// <p>The training job <code>ResourceConfig</code> to update warm pool retention length.</p>
     pub fn resource_config(mut self, input: crate::types::ResourceConfigForUpdate) -> Self {
         self.resource_config = ::std::option::Option::Some(input);
@@ -121,6 +137,12 @@ impl UpdateTrainingJobInputBuilder {
     ) -> Self {
         self.resource_config = input;
         self
+    }
+    /// <p>The training job <code>ResourceConfig</code> to update warm pool retention length.</p>
+    pub fn get_resource_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceConfigForUpdate> {
+        &self.resource_config
     }
     /// Consumes the builder and constructs a [`UpdateTrainingJobInput`](crate::operation::update_training_job::UpdateTrainingJobInput).
     pub fn build(

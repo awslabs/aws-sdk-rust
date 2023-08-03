@@ -63,6 +63,14 @@ impl ChannelsResponseBuilder {
         self.channels = input;
         self
     }
+    /// <p>A map that contains a multipart response for each channel. For each item in this object, the ChannelType is the key and the Channel is the value.</p>
+    pub fn get_channels(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::ChannelResponse>,
+    > {
+        &self.channels
+    }
     /// Consumes the builder and constructs a [`ChannelsResponse`](crate::types::ChannelsResponse).
     pub fn build(self) -> crate::types::ChannelsResponse {
         crate::types::ChannelsResponse {

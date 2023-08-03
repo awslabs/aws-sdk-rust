@@ -51,6 +51,12 @@ impl CreateDocumentOutputBuilder {
         self.document_description = input;
         self
     }
+    /// <p>Information about the SSM document.</p>
+    pub fn get_document_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::DocumentDescription> {
+        &self.document_description
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

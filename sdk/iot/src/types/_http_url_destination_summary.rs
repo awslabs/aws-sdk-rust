@@ -46,6 +46,10 @@ impl HttpUrlDestinationSummaryBuilder {
         self.confirmation_url = input;
         self
     }
+    /// <p>The URL used to confirm ownership of or access to the HTTP topic rule destination URL.</p>
+    pub fn get_confirmation_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.confirmation_url
+    }
     /// Consumes the builder and constructs a [`HttpUrlDestinationSummary`](crate::types::HttpUrlDestinationSummary).
     pub fn build(self) -> crate::types::HttpUrlDestinationSummary {
         crate::types::HttpUrlDestinationSummary {

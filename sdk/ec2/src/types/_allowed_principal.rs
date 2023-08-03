@@ -75,6 +75,10 @@ impl AllowedPrincipalBuilder {
         self.principal_type = input;
         self
     }
+    /// <p>The type of principal.</p>
+    pub fn get_principal_type(&self) -> &::std::option::Option<crate::types::PrincipalType> {
+        &self.principal_type
+    }
     /// <p>The Amazon Resource Name (ARN) of the principal.</p>
     pub fn principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal = ::std::option::Option::Some(input.into());
@@ -84,6 +88,10 @@ impl AllowedPrincipalBuilder {
     pub fn set_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the principal.</p>
+    pub fn get_principal(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal
     }
     /// <p>The ID of the service permission.</p>
     pub fn service_permission_id(
@@ -100,6 +108,10 @@ impl AllowedPrincipalBuilder {
     ) -> Self {
         self.service_permission_id = input;
         self
+    }
+    /// <p>The ID of the service permission.</p>
+    pub fn get_service_permission_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_permission_id
     }
     /// Appends an item to `tags`.
     ///
@@ -120,6 +132,10 @@ impl AllowedPrincipalBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The ID of the service.</p>
     pub fn service_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_id = ::std::option::Option::Some(input.into());
@@ -129,6 +145,10 @@ impl AllowedPrincipalBuilder {
     pub fn set_service_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_id = input;
         self
+    }
+    /// <p>The ID of the service.</p>
+    pub fn get_service_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_id
     }
     /// Consumes the builder and constructs a [`AllowedPrincipal`](crate::types::AllowedPrincipal).
     pub fn build(self) -> crate::types::AllowedPrincipal {

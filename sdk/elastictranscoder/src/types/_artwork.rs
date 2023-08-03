@@ -110,6 +110,11 @@ impl ArtworkBuilder {
         self.input_key = input;
         self
     }
+    /// <p>The name of the file to be used as album art. To determine which Amazon S3 bucket contains the specified file, Elastic Transcoder checks the pipeline specified by <code>PipelineId</code>; the <code>InputBucket</code> object in that pipeline identifies the bucket.</p>
+    /// <p>If the file name includes a prefix, for example, <code>cooking/pie.jpg</code>, include the prefix in the key. If the file isn't in the specified bucket, Elastic Transcoder returns an error.</p>
+    pub fn get_input_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_key
+    }
     /// <p>The maximum width of the output album art in pixels. If you specify <code>auto</code>, Elastic Transcoder uses 600 as the default value. If you specify a numeric value, enter an even integer between 32 and 4096, inclusive.</p>
     pub fn max_width(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.max_width = ::std::option::Option::Some(input.into());
@@ -120,6 +125,10 @@ impl ArtworkBuilder {
         self.max_width = input;
         self
     }
+    /// <p>The maximum width of the output album art in pixels. If you specify <code>auto</code>, Elastic Transcoder uses 600 as the default value. If you specify a numeric value, enter an even integer between 32 and 4096, inclusive.</p>
+    pub fn get_max_width(&self) -> &::std::option::Option<::std::string::String> {
+        &self.max_width
+    }
     /// <p>The maximum height of the output album art in pixels. If you specify <code>auto</code>, Elastic Transcoder uses 600 as the default value. If you specify a numeric value, enter an even integer between 32 and 3072, inclusive.</p>
     pub fn max_height(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.max_height = ::std::option::Option::Some(input.into());
@@ -129,6 +138,10 @@ impl ArtworkBuilder {
     pub fn set_max_height(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_height = input;
         self
+    }
+    /// <p>The maximum height of the output album art in pixels. If you specify <code>auto</code>, Elastic Transcoder uses 600 as the default value. If you specify a numeric value, enter an even integer between 32 and 3072, inclusive.</p>
+    pub fn get_max_height(&self) -> &::std::option::Option<::std::string::String> {
+        &self.max_height
     }
     /// <p>Specify one of the following values to control scaling of the output album art:</p>
     /// <ul>
@@ -162,6 +175,18 @@ impl ArtworkBuilder {
         self.sizing_policy = input;
         self
     }
+    /// <p>Specify one of the following values to control scaling of the output album art:</p>
+    /// <ul>
+    /// <li> <p> <code>Fit:</code> Elastic Transcoder scales the output art so it matches the value that you specified in either <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the other value.</p> </li>
+    /// <li> <p> <code>Fill:</code> Elastic Transcoder scales the output art so it matches the value that you specified in either <code>MaxWidth</code> or <code>MaxHeight</code> and matches or exceeds the other value. Elastic Transcoder centers the output art and then crops it in the dimension (if any) that exceeds the maximum value. </p> </li>
+    /// <li> <p> <code>Stretch:</code> Elastic Transcoder stretches the output art to match the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of the input art and the output art are different, the output art will be distorted.</p> </li>
+    /// <li> <p> <code>Keep:</code> Elastic Transcoder does not scale the output art. If either dimension of the input art exceeds the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>, Elastic Transcoder crops the output art.</p> </li>
+    /// <li> <p> <code>ShrinkToFit:</code> Elastic Transcoder scales the output art down so that its dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding either value. If you specify this option, Elastic Transcoder does not scale the art up.</p> </li>
+    /// <li> <p> <code>ShrinkToFill</code> Elastic Transcoder scales the output art down so that its dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without dropping below either value. If you specify this option, Elastic Transcoder does not scale the art up.</p> </li>
+    /// </ul>
+    pub fn get_sizing_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sizing_policy
+    }
     /// <p>When you set <code>PaddingPolicy</code> to <code>Pad</code>, Elastic Transcoder may add white bars to the top and bottom and/or left and right sides of the output album art to make the total size of the output art match the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>.</p>
     pub fn padding_policy(
         mut self,
@@ -177,6 +202,10 @@ impl ArtworkBuilder {
     ) -> Self {
         self.padding_policy = input;
         self
+    }
+    /// <p>When you set <code>PaddingPolicy</code> to <code>Pad</code>, Elastic Transcoder may add white bars to the top and bottom and/or left and right sides of the output album art to make the total size of the output art match the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>.</p>
+    pub fn get_padding_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.padding_policy
     }
     /// <p>The format of album art, if any. Valid formats are <code>.jpg</code> and <code>.png</code>.</p>
     pub fn album_art_format(
@@ -194,6 +223,10 @@ impl ArtworkBuilder {
         self.album_art_format = input;
         self
     }
+    /// <p>The format of album art, if any. Valid formats are <code>.jpg</code> and <code>.png</code>.</p>
+    pub fn get_album_art_format(&self) -> &::std::option::Option<::std::string::String> {
+        &self.album_art_format
+    }
     /// <p>The encryption settings, if any, that you want Elastic Transcoder to apply to your artwork.</p>
     pub fn encryption(mut self, input: crate::types::Encryption) -> Self {
         self.encryption = ::std::option::Option::Some(input);
@@ -206,6 +239,10 @@ impl ArtworkBuilder {
     ) -> Self {
         self.encryption = input;
         self
+    }
+    /// <p>The encryption settings, if any, that you want Elastic Transcoder to apply to your artwork.</p>
+    pub fn get_encryption(&self) -> &::std::option::Option<crate::types::Encryption> {
+        &self.encryption
     }
     /// Consumes the builder and constructs a [`Artwork`](crate::types::Artwork).
     pub fn build(self) -> crate::types::Artwork {

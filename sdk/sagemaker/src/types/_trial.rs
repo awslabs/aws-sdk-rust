@@ -132,6 +132,10 @@ impl TrialBuilder {
         self.trial_name = input;
         self
     }
+    /// <p>The name of the trial.</p>
+    pub fn get_trial_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trial_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the trial.</p>
     pub fn trial_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trial_arn = ::std::option::Option::Some(input.into());
@@ -142,6 +146,10 @@ impl TrialBuilder {
         self.trial_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the trial.</p>
+    pub fn get_trial_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trial_arn
+    }
     /// <p>The name of the trial as displayed. If <code>DisplayName</code> isn't specified, <code>TrialName</code> is displayed.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -151,6 +159,10 @@ impl TrialBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
+    }
+    /// <p>The name of the trial as displayed. If <code>DisplayName</code> isn't specified, <code>TrialName</code> is displayed.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// <p>The name of the experiment the trial is part of.</p>
     pub fn experiment_name(
@@ -168,6 +180,10 @@ impl TrialBuilder {
         self.experiment_name = input;
         self
     }
+    /// <p>The name of the experiment the trial is part of.</p>
+    pub fn get_experiment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.experiment_name
+    }
     /// <p>The source of the trial.</p>
     pub fn source(mut self, input: crate::types::TrialSource) -> Self {
         self.source = ::std::option::Option::Some(input);
@@ -177,6 +193,10 @@ impl TrialBuilder {
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::TrialSource>) -> Self {
         self.source = input;
         self
+    }
+    /// <p>The source of the trial.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::TrialSource> {
+        &self.source
     }
     /// <p>When the trial was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -191,6 +211,10 @@ impl TrialBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>When the trial was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>Who created the trial.</p>
     pub fn created_by(mut self, input: crate::types::UserContext) -> Self {
         self.created_by = ::std::option::Option::Some(input);
@@ -203,6 +227,10 @@ impl TrialBuilder {
     ) -> Self {
         self.created_by = input;
         self
+    }
+    /// <p>Who created the trial.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<crate::types::UserContext> {
+        &self.created_by
     }
     /// <p>Who last modified the trial.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -217,6 +245,10 @@ impl TrialBuilder {
         self.last_modified_time = input;
         self
     }
+    /// <p>Who last modified the trial.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn last_modified_by(mut self, input: crate::types::UserContext) -> Self {
         self.last_modified_by = ::std::option::Option::Some(input);
@@ -230,6 +262,10 @@ impl TrialBuilder {
         self.last_modified_by = input;
         self
     }
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    pub fn get_last_modified_by(&self) -> &::std::option::Option<crate::types::UserContext> {
+        &self.last_modified_by
+    }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     pub fn metadata_properties(mut self, input: crate::types::MetadataProperties) -> Self {
         self.metadata_properties = ::std::option::Option::Some(input);
@@ -242,6 +278,12 @@ impl TrialBuilder {
     ) -> Self {
         self.metadata_properties = input;
         self
+    }
+    /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
+    pub fn get_metadata_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::MetadataProperties> {
+        &self.metadata_properties
     }
     /// Appends an item to `tags`.
     ///
@@ -261,6 +303,10 @@ impl TrialBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The list of tags that are associated with the trial. You can use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search on the tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Appends an item to `trial_component_summaries`.
     ///
@@ -283,6 +329,12 @@ impl TrialBuilder {
     ) -> Self {
         self.trial_component_summaries = input;
         self
+    }
+    /// <p>A list of the components associated with the trial. For each component, a summary of the component's properties is included.</p>
+    pub fn get_trial_component_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TrialComponentSimpleSummary>> {
+        &self.trial_component_summaries
     }
     /// Consumes the builder and constructs a [`Trial`](crate::types::Trial).
     pub fn build(self) -> crate::types::Trial {

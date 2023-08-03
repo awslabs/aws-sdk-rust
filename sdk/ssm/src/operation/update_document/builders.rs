@@ -36,6 +36,12 @@ impl UpdateDocumentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDocument as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_document::builders::UpdateDocumentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl UpdateDocumentFluentBuilder {
         self.inner = self.inner.set_content(input);
         self
     }
+    /// <p>A valid JSON or YAML string.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_content()
+    }
     /// Appends an item to `Attachments`.
     ///
     /// To override the contents of this collection use [`set_attachments`](Self::set_attachments).
@@ -135,6 +145,12 @@ impl UpdateDocumentFluentBuilder {
         self.inner = self.inner.set_attachments(input);
         self
     }
+    /// <p>A list of key-value pairs that describe attachments to a version of a document.</p>
+    pub fn get_attachments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttachmentsSource>> {
+        self.inner.get_attachments()
+    }
     /// <p>The name of the SSM document that you want to update.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -144,6 +160,10 @@ impl UpdateDocumentFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the SSM document that you want to update.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The friendly name of the SSM document that you want to update. This value can differ for each version of the document. If you don't specify a value for this parameter in your request, the existing value is applied to the new document version.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -155,6 +175,10 @@ impl UpdateDocumentFluentBuilder {
         self.inner = self.inner.set_display_name(input);
         self
     }
+    /// <p>The friendly name of the SSM document that you want to update. This value can differ for each version of the document. If you don't specify a value for this parameter in your request, the existing value is applied to the new document version.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_display_name()
+    }
     /// <p>An optional field specifying the version of the artifact you are updating with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
     pub fn version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version_name(input.into());
@@ -164,6 +188,10 @@ impl UpdateDocumentFluentBuilder {
     pub fn set_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version_name(input);
         self
+    }
+    /// <p>An optional field specifying the version of the artifact you are updating with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
+    pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_version_name()
     }
     /// <p>The version of the document that you want to update. Currently, Systems Manager supports updating only the latest version of the document. You can specify the version number of the latest version or use the <code>$LATEST</code> variable.</p> <note>
     /// <p>If you change a document version for a State Manager association, Systems Manager immediately runs the association unless you previously specifed the <code>apply-only-at-cron-interval</code> parameter.</p>
@@ -185,6 +213,12 @@ impl UpdateDocumentFluentBuilder {
         self.inner = self.inner.set_document_version(input);
         self
     }
+    /// <p>The version of the document that you want to update. Currently, Systems Manager supports updating only the latest version of the document. You can specify the version number of the latest version or use the <code>$LATEST</code> variable.</p> <note>
+    /// <p>If you change a document version for a State Manager association, Systems Manager immediately runs the association unless you previously specifed the <code>apply-only-at-cron-interval</code> parameter.</p>
+    /// </note>
+    pub fn get_document_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_document_version()
+    }
     /// <p>Specify the document format for the new document version. Systems Manager supports JSON and YAML documents. JSON is the default format.</p>
     pub fn document_format(mut self, input: crate::types::DocumentFormat) -> Self {
         self.inner = self.inner.document_format(input);
@@ -198,6 +232,10 @@ impl UpdateDocumentFluentBuilder {
         self.inner = self.inner.set_document_format(input);
         self
     }
+    /// <p>Specify the document format for the new document version. Systems Manager supports JSON and YAML documents. JSON is the default format.</p>
+    pub fn get_document_format(&self) -> &::std::option::Option<crate::types::DocumentFormat> {
+        self.inner.get_document_format()
+    }
     /// <p>Specify a new target type for the document.</p>
     pub fn target_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_type(input.into());
@@ -207,5 +245,9 @@ impl UpdateDocumentFluentBuilder {
     pub fn set_target_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_type(input);
         self
+    }
+    /// <p>Specify a new target type for the document.</p>
+    pub fn get_target_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_type()
     }
 }

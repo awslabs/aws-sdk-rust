@@ -79,6 +79,10 @@ impl StartSpeakerSearchTaskInputBuilder {
         self.voice_connector_id = input;
         self
     }
+    /// <p>The Voice Connector ID.</p>
+    pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_connector_id
+    }
     /// <p>The transaction ID of the call being analyzed.</p>
     pub fn transaction_id(
         mut self,
@@ -94,6 +98,10 @@ impl StartSpeakerSearchTaskInputBuilder {
     ) -> Self {
         self.transaction_id = input;
         self
+    }
+    /// <p>The transaction ID of the call being analyzed.</p>
+    pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transaction_id
     }
     /// <p>The ID of the voice profile domain that will store the voice profile.</p>
     pub fn voice_profile_domain_id(
@@ -111,6 +119,10 @@ impl StartSpeakerSearchTaskInputBuilder {
         self.voice_profile_domain_id = input;
         self
     }
+    /// <p>The ID of the voice profile domain that will store the voice profile.</p>
+    pub fn get_voice_profile_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_profile_domain_id
+    }
     /// <p>The unique identifier for the client request. Use a different token for different speaker search tasks.</p>
     pub fn client_request_token(
         mut self,
@@ -127,6 +139,10 @@ impl StartSpeakerSearchTaskInputBuilder {
         self.client_request_token = input;
         self
     }
+    /// <p>The unique identifier for the client request. Use a different token for different speaker search tasks.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
+    }
     /// <p>Specifies which call leg to stream for speaker search.</p>
     pub fn call_leg(mut self, input: crate::types::CallLegType) -> Self {
         self.call_leg = ::std::option::Option::Some(input);
@@ -136,6 +152,10 @@ impl StartSpeakerSearchTaskInputBuilder {
     pub fn set_call_leg(mut self, input: ::std::option::Option<crate::types::CallLegType>) -> Self {
         self.call_leg = input;
         self
+    }
+    /// <p>Specifies which call leg to stream for speaker search.</p>
+    pub fn get_call_leg(&self) -> &::std::option::Option<crate::types::CallLegType> {
+        &self.call_leg
     }
     /// Consumes the builder and constructs a [`StartSpeakerSearchTaskInput`](crate::operation::start_speaker_search_task::StartSpeakerSearchTaskInput).
     pub fn build(

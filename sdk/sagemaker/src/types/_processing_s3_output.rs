@@ -56,6 +56,10 @@ impl ProcessingS3OutputBuilder {
         self.s3_uri = input;
         self
     }
+    /// <p>A URI that identifies the Amazon S3 bucket where you want Amazon SageMaker to save the results of a processing job.</p>
+    pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_uri
+    }
     /// <p>The local path of a directory where you want Amazon SageMaker to upload its contents to Amazon S3. <code>LocalPath</code> is an absolute path to a directory containing output files. This directory will be created by the platform and exist when your container's entrypoint is invoked.</p>
     pub fn local_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.local_path = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl ProcessingS3OutputBuilder {
     pub fn set_local_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.local_path = input;
         self
+    }
+    /// <p>The local path of a directory where you want Amazon SageMaker to upload its contents to Amazon S3. <code>LocalPath</code> is an absolute path to a directory containing output files. This directory will be created by the platform and exist when your container's entrypoint is invoked.</p>
+    pub fn get_local_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.local_path
     }
     /// <p>Whether to upload the results of the processing job continuously or after the job completes.</p>
     pub fn s3_upload_mode(mut self, input: crate::types::ProcessingS3UploadMode) -> Self {
@@ -78,6 +86,12 @@ impl ProcessingS3OutputBuilder {
     ) -> Self {
         self.s3_upload_mode = input;
         self
+    }
+    /// <p>Whether to upload the results of the processing job continuously or after the job completes.</p>
+    pub fn get_s3_upload_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProcessingS3UploadMode> {
+        &self.s3_upload_mode
     }
     /// Consumes the builder and constructs a [`ProcessingS3Output`](crate::types::ProcessingS3Output).
     pub fn build(self) -> crate::types::ProcessingS3Output {

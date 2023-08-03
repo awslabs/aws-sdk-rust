@@ -79,6 +79,10 @@ impl SendUsersMessageResponseBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The unique identifier for the application that was used to send the message.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The unique identifier that was assigned to the message request.</p>
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_id = ::std::option::Option::Some(input.into());
@@ -88,6 +92,10 @@ impl SendUsersMessageResponseBuilder {
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_id = input;
         self
+    }
+    /// <p>The unique identifier that was assigned to the message request.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
     }
     /// Adds a key-value pair to `result`.
     ///
@@ -119,6 +127,17 @@ impl SendUsersMessageResponseBuilder {
     ) -> Self {
         self.result = input;
         self
+    }
+    /// <p>An object that indicates which endpoints the message was sent to, for each user. The object lists user IDs and, for each user ID, provides the endpoint IDs that the message was sent to. For each endpoint ID, it provides an EndpointMessageResult object.</p>
+    pub fn get_result(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            ::std::collections::HashMap<::std::string::String, crate::types::EndpointMessageResult>,
+        >,
+    > {
+        &self.result
     }
     /// Consumes the builder and constructs a [`SendUsersMessageResponse`](crate::types::SendUsersMessageResponse).
     pub fn build(self) -> crate::types::SendUsersMessageResponse {

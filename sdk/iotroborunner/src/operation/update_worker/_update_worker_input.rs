@@ -87,6 +87,10 @@ impl UpdateWorkerInputBuilder {
         self.id = input;
         self
     }
+    /// Full ARN of the worker.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Human friendly name of the resource.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -96,6 +100,10 @@ impl UpdateWorkerInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// Human friendly name of the resource.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// JSON blob containing unstructured worker properties that are transient and may change during regular operation.
     pub fn additional_transient_properties(
@@ -113,6 +121,12 @@ impl UpdateWorkerInputBuilder {
         self.additional_transient_properties = input;
         self
     }
+    /// JSON blob containing unstructured worker properties that are transient and may change during regular operation.
+    pub fn get_additional_transient_properties(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.additional_transient_properties
+    }
     /// JSON blob containing unstructured worker properties that are fixed and won't change during regular operation.
     pub fn additional_fixed_properties(
         mut self,
@@ -129,6 +143,10 @@ impl UpdateWorkerInputBuilder {
         self.additional_fixed_properties = input;
         self
     }
+    /// JSON blob containing unstructured worker properties that are fixed and won't change during regular operation.
+    pub fn get_additional_fixed_properties(&self) -> &::std::option::Option<::std::string::String> {
+        &self.additional_fixed_properties
+    }
     /// Properties of the worker that are provided by the vendor FMS.
     pub fn vendor_properties(mut self, input: crate::types::VendorProperties) -> Self {
         self.vendor_properties = ::std::option::Option::Some(input);
@@ -141,6 +159,10 @@ impl UpdateWorkerInputBuilder {
     ) -> Self {
         self.vendor_properties = input;
         self
+    }
+    /// Properties of the worker that are provided by the vendor FMS.
+    pub fn get_vendor_properties(&self) -> &::std::option::Option<crate::types::VendorProperties> {
+        &self.vendor_properties
     }
     /// Supported coordinates for worker position.
     pub fn position(mut self, input: crate::types::PositionCoordinates) -> Self {
@@ -155,6 +177,10 @@ impl UpdateWorkerInputBuilder {
         self.position = input;
         self
     }
+    /// Supported coordinates for worker position.
+    pub fn get_position(&self) -> &::std::option::Option<crate::types::PositionCoordinates> {
+        &self.position
+    }
     /// Worker orientation measured in units clockwise from north.
     pub fn orientation(mut self, input: crate::types::Orientation) -> Self {
         self.orientation = ::std::option::Option::Some(input);
@@ -167,6 +193,10 @@ impl UpdateWorkerInputBuilder {
     ) -> Self {
         self.orientation = input;
         self
+    }
+    /// Worker orientation measured in units clockwise from north.
+    pub fn get_orientation(&self) -> &::std::option::Option<crate::types::Orientation> {
+        &self.orientation
     }
     /// Consumes the builder and constructs a [`UpdateWorkerInput`](crate::operation::update_worker::UpdateWorkerInput).
     pub fn build(

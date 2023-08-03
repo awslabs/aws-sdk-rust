@@ -37,6 +37,13 @@ impl CreateStandbyWorkspacesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateStandbyWorkspaces as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_standby_workspaces::builders::CreateStandbyWorkspacesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl CreateStandbyWorkspacesFluentBuilder {
         self.inner = self.inner.set_primary_region(input);
         self
     }
+    /// <p>The Region of the primary WorkSpace.</p>
+    pub fn get_primary_region(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_primary_region()
+    }
     /// Appends an item to `StandbyWorkspaces`.
     ///
     /// To override the contents of this collection use [`set_standby_workspaces`](Self::set_standby_workspaces).
@@ -149,5 +160,11 @@ impl CreateStandbyWorkspacesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_standby_workspaces(input);
         self
+    }
+    /// <p>Information about the standby WorkSpace to be created.</p>
+    pub fn get_standby_workspaces(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StandbyWorkspace>> {
+        self.inner.get_standby_workspaces()
     }
 }

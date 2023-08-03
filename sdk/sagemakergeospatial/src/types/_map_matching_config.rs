@@ -70,6 +70,10 @@ impl MapMatchingConfigBuilder {
         self.id_attribute_name = input;
         self
     }
+    /// <p>The field name for the data that describes the identifier representing a collection of GPS points belonging to an individual trace.</p>
+    pub fn get_id_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id_attribute_name
+    }
     /// <p>The name of the Y-attribute</p>
     pub fn y_attribute_name(
         mut self,
@@ -85,6 +89,10 @@ impl MapMatchingConfigBuilder {
     ) -> Self {
         self.y_attribute_name = input;
         self
+    }
+    /// <p>The name of the Y-attribute</p>
+    pub fn get_y_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.y_attribute_name
     }
     /// <p>The name of the X-attribute</p>
     pub fn x_attribute_name(
@@ -102,6 +110,10 @@ impl MapMatchingConfigBuilder {
         self.x_attribute_name = input;
         self
     }
+    /// <p>The name of the X-attribute</p>
+    pub fn get_x_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.x_attribute_name
+    }
     /// <p>The name of the timestamp attribute.</p>
     pub fn timestamp_attribute_name(
         mut self,
@@ -117,6 +129,10 @@ impl MapMatchingConfigBuilder {
     ) -> Self {
         self.timestamp_attribute_name = input;
         self
+    }
+    /// <p>The name of the timestamp attribute.</p>
+    pub fn get_timestamp_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timestamp_attribute_name
     }
     /// Consumes the builder and constructs a [`MapMatchingConfig`](crate::types::MapMatchingConfig).
     pub fn build(self) -> crate::types::MapMatchingConfig {

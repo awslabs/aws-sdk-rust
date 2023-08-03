@@ -36,6 +36,12 @@ impl UpdateDeploymentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDeployment as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_deployment::builders::UpdateDeploymentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateDeploymentFluentBuilder {
         self.inner = self.inner.set_rest_api_id(input);
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rest_api_id()
+    }
     /// <p>The replacement identifier for the Deployment resource to change information about.</p>
     pub fn deployment_id(
         mut self,
@@ -141,6 +151,10 @@ impl UpdateDeploymentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_deployment_id(input);
         self
+    }
+    /// <p>The replacement identifier for the Deployment resource to change information about.</p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_deployment_id()
     }
     /// Appends an item to `patchOperations`.
     ///
@@ -158,5 +172,11 @@ impl UpdateDeploymentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_patch_operations(input);
         self
+    }
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
+    pub fn get_patch_operations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
+        self.inner.get_patch_operations()
     }
 }

@@ -39,6 +39,10 @@ impl GetMetricStreamInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the metric stream to retrieve information about.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`GetMetricStreamInput`](crate::operation::get_metric_stream::GetMetricStreamInput).
     pub fn build(
         self,

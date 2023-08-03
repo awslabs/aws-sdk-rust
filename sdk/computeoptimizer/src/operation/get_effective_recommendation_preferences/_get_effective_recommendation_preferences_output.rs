@@ -85,6 +85,15 @@ impl GetEffectiveRecommendationPreferencesOutputBuilder {
         self.enhanced_infrastructure_metrics = input;
         self
     }
+    /// <p>The status of the enhanced infrastructure metrics recommendation preference. Considers all applicable preferences that you might have set at the resource, account, and organization level.</p>
+    /// <p>A status of <code>Active</code> confirms that the preference is applied in the latest recommendation refresh, and a status of <code>Inactive</code> confirms that it's not yet applied to recommendations.</p>
+    /// <p>To validate whether the preference is applied to your last generated set of recommendations, review the <code>effectiveRecommendationPreferences</code> value in the response of the <code>GetAutoScalingGroupRecommendations</code> and <code>GetEC2InstanceRecommendations</code> actions.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    pub fn get_enhanced_infrastructure_metrics(
+        &self,
+    ) -> &::std::option::Option<crate::types::EnhancedInfrastructureMetrics> {
+        &self.enhanced_infrastructure_metrics
+    }
     /// <p>The provider of the external metrics recommendation preference. Considers all applicable preferences that you might have set at the account and organization level.</p>
     /// <p>If the preference is applied in the latest recommendation refresh, an object with a valid <code>source</code> value appears in the response. If the preference isn't applied to the recommendations already, then this object doesn't appear in the response.</p>
     /// <p>To validate whether the preference is applied to your last generated set of recommendations, review the <code>effectiveRecommendationPreferences</code> value in the response of the <code>GetEC2InstanceRecommendations</code> actions.</p>
@@ -106,6 +115,15 @@ impl GetEffectiveRecommendationPreferencesOutputBuilder {
     ) -> Self {
         self.external_metrics_preference = input;
         self
+    }
+    /// <p>The provider of the external metrics recommendation preference. Considers all applicable preferences that you might have set at the account and organization level.</p>
+    /// <p>If the preference is applied in the latest recommendation refresh, an object with a valid <code>source</code> value appears in the response. If the preference isn't applied to the recommendations already, then this object doesn't appear in the response.</p>
+    /// <p>To validate whether the preference is applied to your last generated set of recommendations, review the <code>effectiveRecommendationPreferences</code> value in the response of the <code>GetEC2InstanceRecommendations</code> actions.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    pub fn get_external_metrics_preference(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExternalMetricsPreference> {
+        &self.external_metrics_preference
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -62,6 +62,12 @@ impl GetCompatibleVersionsOutputBuilder {
         self.compatible_versions = input;
         self
     }
+    /// <p>A map of OpenSearch or Elasticsearch versions and the versions you can upgrade them to.</p>
+    pub fn get_compatible_versions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CompatibleVersionsMap>> {
+        &self.compatible_versions
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

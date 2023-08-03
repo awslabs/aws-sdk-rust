@@ -56,6 +56,10 @@ impl EdgeBuilder {
         self.source_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the source lineage entity of the directed edge.</p>
+    pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the destination lineage entity of the directed edge.</p>
     pub fn destination_arn(
         mut self,
@@ -72,6 +76,10 @@ impl EdgeBuilder {
         self.destination_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the destination lineage entity of the directed edge.</p>
+    pub fn get_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_arn
+    }
     /// <p>The type of the Association(Edge) between the source and destination. For example <code>ContributedTo</code>, <code>Produced</code>, or <code>DerivedFrom</code>.</p>
     pub fn association_type(mut self, input: crate::types::AssociationEdgeType) -> Self {
         self.association_type = ::std::option::Option::Some(input);
@@ -84,6 +92,12 @@ impl EdgeBuilder {
     ) -> Self {
         self.association_type = input;
         self
+    }
+    /// <p>The type of the Association(Edge) between the source and destination. For example <code>ContributedTo</code>, <code>Produced</code>, or <code>DerivedFrom</code>.</p>
+    pub fn get_association_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::AssociationEdgeType> {
+        &self.association_type
     }
     /// Consumes the builder and constructs a [`Edge`](crate::types::Edge).
     pub fn build(self) -> crate::types::Edge {

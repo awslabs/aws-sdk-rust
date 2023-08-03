@@ -36,6 +36,12 @@ impl CreateSourceNetworkFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateSourceNetwork as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_source_network::builders::CreateSourceNetworkInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateSourceNetworkFluentBuilder {
         self.inner = self.inner.set_vpc_id(input);
         self
     }
+    /// <p>Which VPC ID to protect.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpc_id()
+    }
     /// <p>Account containing the VPC to protect.</p>
     pub fn origin_account_id(
         mut self,
@@ -142,6 +152,10 @@ impl CreateSourceNetworkFluentBuilder {
         self.inner = self.inner.set_origin_account_id(input);
         self
     }
+    /// <p>Account containing the VPC to protect.</p>
+    pub fn get_origin_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_origin_account_id()
+    }
     /// <p>Region containing the VPC to protect.</p>
     pub fn origin_region(
         mut self,
@@ -157,6 +171,10 @@ impl CreateSourceNetworkFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_origin_region(input);
         self
+    }
+    /// <p>Region containing the VPC to protect.</p>
+    pub fn get_origin_region(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_origin_region()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -180,5 +198,13 @@ impl CreateSourceNetworkFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A set of tags to be associated with the Source Network resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

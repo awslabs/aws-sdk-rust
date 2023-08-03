@@ -41,6 +41,10 @@ impl DeleteMaintenanceWindowInputBuilder {
         self.window_id = input;
         self
     }
+    /// <p>The ID of the maintenance window to delete.</p>
+    pub fn get_window_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.window_id
+    }
     /// Consumes the builder and constructs a [`DeleteMaintenanceWindowInput`](crate::operation::delete_maintenance_window::DeleteMaintenanceWindowInput).
     pub fn build(
         self,

@@ -36,6 +36,12 @@ impl GetBlacklistReportsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetBlacklistReports as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_blacklist_reports::builders::GetBlacklistReportsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,5 +141,11 @@ impl GetBlacklistReportsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_blacklist_item_names(input);
         self
+    }
+    /// <p>A list of IP addresses that you want to retrieve blacklist information about. You can only specify the dedicated IP addresses that you use to send email using Amazon SES or Amazon Pinpoint.</p>
+    pub fn get_blacklist_item_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_blacklist_item_names()
     }
 }

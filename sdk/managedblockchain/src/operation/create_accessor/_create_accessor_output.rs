@@ -54,6 +54,10 @@ impl CreateAccessorOutputBuilder {
         self.accessor_id = input;
         self
     }
+    /// <p>The unique identifier of the accessor.</p>
+    pub fn get_accessor_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accessor_id
+    }
     /// <p>The billing token is a property of the Accessor. Use this token to make Ethereum API calls to your Ethereum node. The billing token is used to track your accessor object for billing Ethereum API requests made to your Ethereum nodes.</p>
     pub fn billing_token(
         mut self,
@@ -69,6 +73,10 @@ impl CreateAccessorOutputBuilder {
     ) -> Self {
         self.billing_token = input;
         self
+    }
+    /// <p>The billing token is a property of the Accessor. Use this token to make Ethereum API calls to your Ethereum node. The billing token is used to track your accessor object for billing Ethereum API requests made to your Ethereum nodes.</p>
+    pub fn get_billing_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.billing_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

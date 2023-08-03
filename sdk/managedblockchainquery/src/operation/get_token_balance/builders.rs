@@ -38,6 +38,12 @@ impl GetTokenBalanceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetTokenBalance as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_token_balance::builders::GetTokenBalanceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +137,10 @@ impl GetTokenBalanceFluentBuilder {
         self.inner = self.inner.set_token_identifier(input);
         self
     }
+    /// <p>The container for the identifier for the token, including the unique token ID and its blockchain network.</p>
+    pub fn get_token_identifier(&self) -> &::std::option::Option<crate::types::TokenIdentifier> {
+        self.inner.get_token_identifier()
+    }
     /// <p>The container for the identifier for the owner.</p>
     pub fn owner_identifier(mut self, input: crate::types::OwnerIdentifier) -> Self {
         self.inner = self.inner.owner_identifier(input);
@@ -143,6 +153,10 @@ impl GetTokenBalanceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_owner_identifier(input);
         self
+    }
+    /// <p>The container for the identifier for the owner.</p>
+    pub fn get_owner_identifier(&self) -> &::std::option::Option<crate::types::OwnerIdentifier> {
+        self.inner.get_owner_identifier()
     }
     /// <p>The time for when the TokenBalance is requested or the current time if a time is not provided in the request.</p> <note>
     /// <p>This time will only be recorded up to the second.</p>
@@ -160,5 +174,13 @@ impl GetTokenBalanceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_at_blockchain_instant(input);
         self
+    }
+    /// <p>The time for when the TokenBalance is requested or the current time if a time is not provided in the request.</p> <note>
+    /// <p>This time will only be recorded up to the second.</p>
+    /// </note>
+    pub fn get_at_blockchain_instant(
+        &self,
+    ) -> &::std::option::Option<crate::types::BlockchainInstant> {
+        self.inner.get_at_blockchain_instant()
     }
 }

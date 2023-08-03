@@ -48,6 +48,10 @@ impl BuiltinIntentMetadataBuilder {
         self.signature = input;
         self
     }
+    /// <p>A unique identifier for the built-in intent. To find the signature for an intent, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
+    pub fn get_signature(&self) -> &::std::option::Option<::std::string::String> {
+        &self.signature
+    }
     /// Appends an item to `supported_locales`.
     ///
     /// To override the contents of this collection use [`set_supported_locales`](Self::set_supported_locales).
@@ -66,6 +70,12 @@ impl BuiltinIntentMetadataBuilder {
     ) -> Self {
         self.supported_locales = input;
         self
+    }
+    /// <p>A list of identifiers for the locales that the intent supports.</p>
+    pub fn get_supported_locales(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Locale>> {
+        &self.supported_locales
     }
     /// Consumes the builder and constructs a [`BuiltinIntentMetadata`](crate::types::BuiltinIntentMetadata).
     pub fn build(self) -> crate::types::BuiltinIntentMetadata {

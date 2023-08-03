@@ -46,6 +46,10 @@ impl InstanceTypeInfoFromInstanceRequirementsBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The matching instance type.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_type
+    }
     /// Consumes the builder and constructs a [`InstanceTypeInfoFromInstanceRequirements`](crate::types::InstanceTypeInfoFromInstanceRequirements).
     pub fn build(self) -> crate::types::InstanceTypeInfoFromInstanceRequirements {
         crate::types::InstanceTypeInfoFromInstanceRequirements {

@@ -75,6 +75,10 @@ impl SendDataPointBuilder {
         self.timestamp = input;
         self
     }
+    /// <p>Time of the data point.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.timestamp
+    }
     /// <p>Number of emails that have been sent.</p>
     pub fn delivery_attempts(mut self, input: i64) -> Self {
         self.delivery_attempts = ::std::option::Option::Some(input);
@@ -84,6 +88,10 @@ impl SendDataPointBuilder {
     pub fn set_delivery_attempts(mut self, input: ::std::option::Option<i64>) -> Self {
         self.delivery_attempts = input;
         self
+    }
+    /// <p>Number of emails that have been sent.</p>
+    pub fn get_delivery_attempts(&self) -> &::std::option::Option<i64> {
+        &self.delivery_attempts
     }
     /// <p>Number of emails that have bounced.</p>
     pub fn bounces(mut self, input: i64) -> Self {
@@ -95,6 +103,10 @@ impl SendDataPointBuilder {
         self.bounces = input;
         self
     }
+    /// <p>Number of emails that have bounced.</p>
+    pub fn get_bounces(&self) -> &::std::option::Option<i64> {
+        &self.bounces
+    }
     /// <p>Number of unwanted emails that were rejected by recipients.</p>
     pub fn complaints(mut self, input: i64) -> Self {
         self.complaints = ::std::option::Option::Some(input);
@@ -105,6 +117,10 @@ impl SendDataPointBuilder {
         self.complaints = input;
         self
     }
+    /// <p>Number of unwanted emails that were rejected by recipients.</p>
+    pub fn get_complaints(&self) -> &::std::option::Option<i64> {
+        &self.complaints
+    }
     /// <p>Number of emails rejected by Amazon SES.</p>
     pub fn rejects(mut self, input: i64) -> Self {
         self.rejects = ::std::option::Option::Some(input);
@@ -114,6 +130,10 @@ impl SendDataPointBuilder {
     pub fn set_rejects(mut self, input: ::std::option::Option<i64>) -> Self {
         self.rejects = input;
         self
+    }
+    /// <p>Number of emails rejected by Amazon SES.</p>
+    pub fn get_rejects(&self) -> &::std::option::Option<i64> {
+        &self.rejects
     }
     /// Consumes the builder and constructs a [`SendDataPoint`](crate::types::SendDataPoint).
     pub fn build(self) -> crate::types::SendDataPoint {

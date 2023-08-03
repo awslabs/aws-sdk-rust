@@ -42,6 +42,10 @@ impl UpdateSipMediaApplicationCallFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateSipMediaApplicationCall as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_sip_media_application_call::builders::UpdateSipMediaApplicationCallInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +142,10 @@ impl UpdateSipMediaApplicationCallFluentBuilder {
         self.inner = self.inner.set_sip_media_application_id(input);
         self
     }
+    /// <p>The ID of the SIP media application handling the call.</p>
+    pub fn get_sip_media_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sip_media_application_id()
+    }
     /// <p>The ID of the call transaction.</p>
     pub fn transaction_id(
         mut self,
@@ -153,6 +161,10 @@ impl UpdateSipMediaApplicationCallFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_transaction_id(input);
         self
+    }
+    /// <p>The ID of the call transaction.</p>
+    pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_transaction_id()
     }
     /// Adds a key-value pair to `Arguments`.
     ///
@@ -176,5 +188,13 @@ impl UpdateSipMediaApplicationCallFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_arguments(input);
         self
+    }
+    /// <p>Arguments made available to the Lambda function as part of the <code>CALL_UPDATE_REQUESTED</code> event. Can contain 0-20 key-value pairs.</p>
+    pub fn get_arguments(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_arguments()
     }
 }

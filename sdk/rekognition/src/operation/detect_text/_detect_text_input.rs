@@ -51,6 +51,11 @@ impl DetectTextInputBuilder {
         self.image = input;
         self
     }
+    /// <p>The input image as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Rekognition operations, you can't pass image bytes. </p>
+    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
+    pub fn get_image(&self) -> &::std::option::Option<crate::types::Image> {
+        &self.image
+    }
     /// <p>Optional parameters that let you set the criteria that the text must meet to be included in your response.</p>
     pub fn filters(mut self, input: crate::types::DetectTextFilters) -> Self {
         self.filters = ::std::option::Option::Some(input);
@@ -63,6 +68,10 @@ impl DetectTextInputBuilder {
     ) -> Self {
         self.filters = input;
         self
+    }
+    /// <p>Optional parameters that let you set the criteria that the text must meet to be included in your response.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::DetectTextFilters> {
+        &self.filters
     }
     /// Consumes the builder and constructs a [`DetectTextInput`](crate::operation::detect_text::DetectTextInput).
     pub fn build(

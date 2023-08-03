@@ -63,6 +63,10 @@ impl UpdateUsageInputBuilder {
         self.usage_plan_id = input;
         self
     }
+    /// <p>The Id of the usage plan associated with the usage data.</p>
+    pub fn get_usage_plan_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.usage_plan_id
+    }
     /// <p>The identifier of the API key associated with the usage plan in which a temporary extension is granted to the remaining quota.</p>
     pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_id = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl UpdateUsageInputBuilder {
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_id = input;
         self
+    }
+    /// <p>The identifier of the API key associated with the usage plan in which a temporary extension is granted to the remaining quota.</p>
+    pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_id
     }
     /// Appends an item to `patch_operations`.
     ///
@@ -91,6 +99,12 @@ impl UpdateUsageInputBuilder {
     ) -> Self {
         self.patch_operations = input;
         self
+    }
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
+    pub fn get_patch_operations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
+        &self.patch_operations
     }
     /// Consumes the builder and constructs a [`UpdateUsageInput`](crate::operation::update_usage::UpdateUsageInput).
     pub fn build(

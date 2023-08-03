@@ -54,6 +54,10 @@ impl ListEngagementsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The pagination token to continue to the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `engagements`.
     ///
     /// To override the contents of this collection use [`set_engagements`](Self::set_engagements).
@@ -72,6 +76,12 @@ impl ListEngagementsOutputBuilder {
     ) -> Self {
         self.engagements = input;
         self
+    }
+    /// <p>A list of each engagement that occurred during the specified time range of an incident.</p>
+    pub fn get_engagements(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Engagement>> {
+        &self.engagements
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

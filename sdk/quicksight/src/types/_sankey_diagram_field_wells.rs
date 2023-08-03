@@ -50,6 +50,12 @@ impl SankeyDiagramFieldWellsBuilder {
         self.sankey_diagram_aggregated_field_wells = input;
         self
     }
+    /// <p>The field well configuration of a sankey diagram.</p>
+    pub fn get_sankey_diagram_aggregated_field_wells(
+        &self,
+    ) -> &::std::option::Option<crate::types::SankeyDiagramAggregatedFieldWells> {
+        &self.sankey_diagram_aggregated_field_wells
+    }
     /// Consumes the builder and constructs a [`SankeyDiagramFieldWells`](crate::types::SankeyDiagramFieldWells).
     pub fn build(self) -> crate::types::SankeyDiagramFieldWells {
         crate::types::SankeyDiagramFieldWells {

@@ -96,6 +96,10 @@ impl CreateSolNetworkInstanceOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>Network instance ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>Network instance ARN.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -106,6 +110,10 @@ impl CreateSolNetworkInstanceOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>Network instance ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>Network service descriptor ID.</p>
     pub fn nsd_info_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nsd_info_id = ::std::option::Option::Some(input.into());
@@ -115,6 +123,10 @@ impl CreateSolNetworkInstanceOutputBuilder {
     pub fn set_nsd_info_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.nsd_info_id = input;
         self
+    }
+    /// <p>Network service descriptor ID.</p>
+    pub fn get_nsd_info_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nsd_info_id
     }
     /// <p>Network instance name.</p>
     pub fn ns_instance_name(
@@ -131,6 +143,10 @@ impl CreateSolNetworkInstanceOutputBuilder {
     ) -> Self {
         self.ns_instance_name = input;
         self
+    }
+    /// <p>Network instance name.</p>
+    pub fn get_ns_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ns_instance_name
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -156,6 +172,14 @@ impl CreateSolNetworkInstanceOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

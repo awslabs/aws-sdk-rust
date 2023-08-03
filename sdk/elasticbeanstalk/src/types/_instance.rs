@@ -40,6 +40,10 @@ impl InstanceBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the Amazon EC2 instance.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`Instance`](crate::types::Instance).
     pub fn build(self) -> crate::types::Instance {
         crate::types::Instance { id: self.id }

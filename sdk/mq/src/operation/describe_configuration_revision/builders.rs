@@ -36,6 +36,10 @@ impl DescribeConfigurationRevisionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeConfigurationRevision as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_configuration_revision::builders::DescribeConfigurationRevisionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl DescribeConfigurationRevisionFluentBuilder {
         self.inner = self.inner.set_configuration_id(input);
         self
     }
+    /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
+    pub fn get_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration_id()
+    }
     /// <p>The revision of the configuration.</p>
     pub fn configuration_revision(
         mut self,
@@ -147,5 +155,9 @@ impl DescribeConfigurationRevisionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_configuration_revision(input);
         self
+    }
+    /// <p>The revision of the configuration.</p>
+    pub fn get_configuration_revision(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration_revision()
     }
 }

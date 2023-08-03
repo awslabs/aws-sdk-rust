@@ -39,6 +39,10 @@ impl DescribeInstanceAccessControlAttributeConfigurationInputBuilder {
         self.instance_arn = input;
         self
     }
+    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
+    pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_arn
+    }
     /// Consumes the builder and constructs a [`DescribeInstanceAccessControlAttributeConfigurationInput`](crate::operation::describe_instance_access_control_attribute_configuration::DescribeInstanceAccessControlAttributeConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_instance_access_control_attribute_configuration::DescribeInstanceAccessControlAttributeConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

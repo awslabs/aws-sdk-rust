@@ -38,6 +38,13 @@ impl DeleteApplicationVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteApplicationVersion as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_application_version::builders::DeleteApplicationVersionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +141,10 @@ impl DeleteApplicationVersionFluentBuilder {
         self.inner = self.inner.set_application_name(input);
         self
     }
+    /// <p>The name of the application to which the version belongs.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_name()
+    }
     /// <p>The label of the version to delete.</p>
     pub fn version_label(
         mut self,
@@ -150,6 +161,10 @@ impl DeleteApplicationVersionFluentBuilder {
         self.inner = self.inner.set_version_label(input);
         self
     }
+    /// <p>The label of the version to delete.</p>
+    pub fn get_version_label(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_version_label()
+    }
     /// <p>Set to <code>true</code> to delete the source bundle from your storage bucket. Otherwise, the application version is deleted only from Elastic Beanstalk and the source bundle remains in Amazon S3.</p>
     pub fn delete_source_bundle(mut self, input: bool) -> Self {
         self.inner = self.inner.delete_source_bundle(input);
@@ -159,5 +174,9 @@ impl DeleteApplicationVersionFluentBuilder {
     pub fn set_delete_source_bundle(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_delete_source_bundle(input);
         self
+    }
+    /// <p>Set to <code>true</code> to delete the source bundle from your storage bucket. Otherwise, the application version is deleted only from Elastic Beanstalk and the source bundle remains in Amazon S3.</p>
+    pub fn get_delete_source_bundle(&self) -> &::std::option::Option<bool> {
+        self.inner.get_delete_source_bundle()
     }
 }

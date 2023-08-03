@@ -51,6 +51,10 @@ impl GetNotebookMetadataOutputBuilder {
         self.notebook_metadata = input;
         self
     }
+    /// <p>The metadata that is returned for the specified notebook ID.</p>
+    pub fn get_notebook_metadata(&self) -> &::std::option::Option<crate::types::NotebookMetadata> {
+        &self.notebook_metadata
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

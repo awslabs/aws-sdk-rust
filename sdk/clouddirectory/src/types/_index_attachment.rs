@@ -61,6 +61,12 @@ impl IndexAttachmentBuilder {
         self.indexed_attributes = input;
         self
     }
+    /// <p>The indexed attribute values.</p>
+    pub fn get_indexed_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>> {
+        &self.indexed_attributes
+    }
     /// <p>In response to <code>ListIndex</code>, the <code>ObjectIdentifier</code> of the object attached to the index. In response to <code>ListAttachedIndices</code>, the <code>ObjectIdentifier</code> of the index attached to the object. This field will always contain the <code>ObjectIdentifier</code> of the object on the opposite side of the attachment specified in the query.</p>
     pub fn object_identifier(
         mut self,
@@ -76,6 +82,10 @@ impl IndexAttachmentBuilder {
     ) -> Self {
         self.object_identifier = input;
         self
+    }
+    /// <p>In response to <code>ListIndex</code>, the <code>ObjectIdentifier</code> of the object attached to the index. In response to <code>ListAttachedIndices</code>, the <code>ObjectIdentifier</code> of the index attached to the object. This field will always contain the <code>ObjectIdentifier</code> of the object on the opposite side of the attachment specified in the query.</p>
+    pub fn get_object_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_identifier
     }
     /// Consumes the builder and constructs a [`IndexAttachment`](crate::types::IndexAttachment).
     pub fn build(self) -> crate::types::IndexAttachment {

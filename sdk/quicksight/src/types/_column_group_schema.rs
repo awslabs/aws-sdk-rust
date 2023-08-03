@@ -52,6 +52,10 @@ impl ColumnGroupSchemaBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the column group schema.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `column_group_column_schema_list`.
     ///
     /// To override the contents of this collection use [`set_column_group_column_schema_list`](Self::set_column_group_column_schema_list).
@@ -73,6 +77,12 @@ impl ColumnGroupSchemaBuilder {
     ) -> Self {
         self.column_group_column_schema_list = input;
         self
+    }
+    /// <p>A structure containing the list of schemas for column group columns.</p>
+    pub fn get_column_group_column_schema_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnGroupColumnSchema>> {
+        &self.column_group_column_schema_list
     }
     /// Consumes the builder and constructs a [`ColumnGroupSchema`](crate::types::ColumnGroupSchema).
     pub fn build(self) -> crate::types::ColumnGroupSchema {

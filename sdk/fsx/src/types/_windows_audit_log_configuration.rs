@@ -110,6 +110,18 @@ impl WindowsAuditLogConfigurationBuilder {
         self.file_access_audit_log_level = input;
         self
     }
+    /// <p>Sets which attempt type is logged by Amazon FSx for file and folder accesses.</p>
+    /// <ul>
+    /// <li> <p> <code>SUCCESS_ONLY</code> - only successful attempts to access files or folders are logged.</p> </li>
+    /// <li> <p> <code>FAILURE_ONLY</code> - only failed attempts to access files or folders are logged.</p> </li>
+    /// <li> <p> <code>SUCCESS_AND_FAILURE</code> - both successful attempts and failed attempts to access files or folders are logged.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - access auditing of files and folders is turned off.</p> </li>
+    /// </ul>
+    pub fn get_file_access_audit_log_level(
+        &self,
+    ) -> &::std::option::Option<crate::types::WindowsAccessAuditLogLevel> {
+        &self.file_access_audit_log_level
+    }
     /// <p>Sets which attempt type is logged by Amazon FSx for file share accesses.</p>
     /// <ul>
     /// <li> <p> <code>SUCCESS_ONLY</code> - only successful attempts to access file shares are logged.</p> </li>
@@ -138,6 +150,18 @@ impl WindowsAuditLogConfigurationBuilder {
         self.file_share_access_audit_log_level = input;
         self
     }
+    /// <p>Sets which attempt type is logged by Amazon FSx for file share accesses.</p>
+    /// <ul>
+    /// <li> <p> <code>SUCCESS_ONLY</code> - only successful attempts to access file shares are logged.</p> </li>
+    /// <li> <p> <code>FAILURE_ONLY</code> - only failed attempts to access file shares are logged.</p> </li>
+    /// <li> <p> <code>SUCCESS_AND_FAILURE</code> - both successful attempts and failed attempts to access file shares are logged.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - access auditing of file shares is turned off.</p> </li>
+    /// </ul>
+    pub fn get_file_share_access_audit_log_level(
+        &self,
+    ) -> &::std::option::Option<crate::types::WindowsAccessAuditLogLevel> {
+        &self.file_share_access_audit_log_level
+    }
     /// <p>The Amazon Resource Name (ARN) for the destination of the audit logs. The destination can be any Amazon CloudWatch Logs log group ARN or Amazon Kinesis Data Firehose delivery stream ARN.</p>
     /// <p>The name of the Amazon CloudWatch Logs log group must begin with the <code>/aws/fsx</code> prefix. The name of the Amazon Kinesis Data Firehouse delivery stream must begin with the <code>aws-fsx</code> prefix.</p>
     /// <p>The destination ARN (either CloudWatch Logs log group or Kinesis Data Firehose delivery stream) must be in the same Amazon Web Services partition, Amazon Web Services Region, and Amazon Web Services account as your Amazon FSx file system.</p>
@@ -157,6 +181,12 @@ impl WindowsAuditLogConfigurationBuilder {
     ) -> Self {
         self.audit_log_destination = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the destination of the audit logs. The destination can be any Amazon CloudWatch Logs log group ARN or Amazon Kinesis Data Firehose delivery stream ARN.</p>
+    /// <p>The name of the Amazon CloudWatch Logs log group must begin with the <code>/aws/fsx</code> prefix. The name of the Amazon Kinesis Data Firehouse delivery stream must begin with the <code>aws-fsx</code> prefix.</p>
+    /// <p>The destination ARN (either CloudWatch Logs log group or Kinesis Data Firehose delivery stream) must be in the same Amazon Web Services partition, Amazon Web Services Region, and Amazon Web Services account as your Amazon FSx file system.</p>
+    pub fn get_audit_log_destination(&self) -> &::std::option::Option<::std::string::String> {
+        &self.audit_log_destination
     }
     /// Consumes the builder and constructs a [`WindowsAuditLogConfiguration`](crate::types::WindowsAuditLogConfiguration).
     pub fn build(self) -> crate::types::WindowsAuditLogConfiguration {

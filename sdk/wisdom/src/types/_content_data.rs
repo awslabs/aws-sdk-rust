@@ -178,6 +178,10 @@ impl ContentDataBuilder {
         self.content_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the content.</p>
+    pub fn get_content_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_arn
+    }
     /// <p>The identifier of the content.</p>
     pub fn content_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_id = ::std::option::Option::Some(input.into());
@@ -187,6 +191,10 @@ impl ContentDataBuilder {
     pub fn set_content_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_id = input;
         self
+    }
+    /// <p>The identifier of the content.</p>
+    pub fn get_content_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_id
     }
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
     pub fn knowledge_base_arn(
@@ -204,6 +212,10 @@ impl ContentDataBuilder {
         self.knowledge_base_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
+    pub fn get_knowledge_base_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.knowledge_base_arn
+    }
     /// <p>The identifier of the knowledge base.</p>
     pub fn knowledge_base_id(
         mut self,
@@ -220,6 +232,10 @@ impl ContentDataBuilder {
         self.knowledge_base_id = input;
         self
     }
+    /// <p>The identifier of the knowledge base.</p>
+    pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.knowledge_base_id
+    }
     /// <p>The name of the content.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -229,6 +245,10 @@ impl ContentDataBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the content.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The identifier of the content revision.</p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -240,6 +260,10 @@ impl ContentDataBuilder {
         self.revision_id = input;
         self
     }
+    /// <p>The identifier of the content revision.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision_id
+    }
     /// <p>The title of the content.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
@@ -249,6 +273,10 @@ impl ContentDataBuilder {
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
+    }
+    /// <p>The title of the content.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
     }
     /// <p>The media type of the content.</p>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -260,6 +288,10 @@ impl ContentDataBuilder {
         self.content_type = input;
         self
     }
+    /// <p>The media type of the content.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_type
+    }
     /// <p>The status of the content.</p>
     pub fn status(mut self, input: crate::types::ContentStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -269,6 +301,10 @@ impl ContentDataBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ContentStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the content.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ContentStatus> {
+        &self.status
     }
     /// Adds a key-value pair to `metadata`.
     ///
@@ -295,6 +331,14 @@ impl ContentDataBuilder {
         self.metadata = input;
         self
     }
+    /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
+    pub fn get_metadata(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.metadata
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -320,6 +364,14 @@ impl ContentDataBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The URI of the content.</p>
     pub fn link_out_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.link_out_uri = ::std::option::Option::Some(input.into());
@@ -330,6 +382,10 @@ impl ContentDataBuilder {
         self.link_out_uri = input;
         self
     }
+    /// <p>The URI of the content.</p>
+    pub fn get_link_out_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.link_out_uri
+    }
     /// <p>The URL of the content.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
@@ -339,6 +395,10 @@ impl ContentDataBuilder {
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
+    }
+    /// <p>The URL of the content.</p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
     }
     /// <p>The expiration time of the URL as an epoch timestamp.</p>
     pub fn url_expiry(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -352,6 +412,10 @@ impl ContentDataBuilder {
     ) -> Self {
         self.url_expiry = input;
         self
+    }
+    /// <p>The expiration time of the URL as an epoch timestamp.</p>
+    pub fn get_url_expiry(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.url_expiry
     }
     /// Consumes the builder and constructs a [`ContentData`](crate::types::ContentData).
     pub fn build(self) -> crate::types::ContentData {

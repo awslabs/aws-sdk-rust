@@ -67,6 +67,12 @@ impl DescribeWorkspaceDirectoriesInputBuilder {
         self.directory_ids = input;
         self
     }
+    /// <p>The identifiers of the directories. If the value is null, all directories are retrieved.</p>
+    pub fn get_directory_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.directory_ids
+    }
     /// <p>The maximum number of directories to return.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -77,6 +83,10 @@ impl DescribeWorkspaceDirectoriesInputBuilder {
         self.limit = input;
         self
     }
+    /// <p>The maximum number of directories to return.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
+    }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -86,6 +96,10 @@ impl DescribeWorkspaceDirectoriesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeWorkspaceDirectoriesInput`](crate::operation::describe_workspace_directories::DescribeWorkspaceDirectoriesInput).
     pub fn build(

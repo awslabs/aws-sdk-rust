@@ -66,6 +66,10 @@ impl CreateBackendEnvironmentInputBuilder {
         self.app_id = input;
         self
     }
+    /// <p> The unique ID for an Amplify app. </p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// <p> The name for the backend environment. </p>
     pub fn environment_name(
         mut self,
@@ -82,6 +86,10 @@ impl CreateBackendEnvironmentInputBuilder {
         self.environment_name = input;
         self
     }
+    /// <p> The name for the backend environment. </p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_name
+    }
     /// <p> The AWS CloudFormation stack name of a backend environment. </p>
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_name = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl CreateBackendEnvironmentInputBuilder {
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_name = input;
         self
+    }
+    /// <p> The AWS CloudFormation stack name of a backend environment. </p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_name
     }
     /// <p> The name of deployment artifacts. </p>
     pub fn deployment_artifacts(
@@ -107,6 +119,10 @@ impl CreateBackendEnvironmentInputBuilder {
     ) -> Self {
         self.deployment_artifacts = input;
         self
+    }
+    /// <p> The name of deployment artifacts. </p>
+    pub fn get_deployment_artifacts(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_artifacts
     }
     /// Consumes the builder and constructs a [`CreateBackendEnvironmentInput`](crate::operation::create_backend_environment::CreateBackendEnvironmentInput).
     pub fn build(

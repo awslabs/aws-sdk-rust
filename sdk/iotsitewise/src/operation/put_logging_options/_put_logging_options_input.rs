@@ -43,6 +43,10 @@ impl PutLoggingOptionsInputBuilder {
         self.logging_options = input;
         self
     }
+    /// <p>The logging options to set.</p>
+    pub fn get_logging_options(&self) -> &::std::option::Option<crate::types::LoggingOptions> {
+        &self.logging_options
+    }
     /// Consumes the builder and constructs a [`PutLoggingOptionsInput`](crate::operation::put_logging_options::PutLoggingOptionsInput).
     pub fn build(
         self,

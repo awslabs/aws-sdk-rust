@@ -146,6 +146,10 @@ impl RestApiBuilder {
         self.id = input;
         self
     }
+    /// <p>The API's identifier. This identifier is unique across all of your APIs in API Gateway.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The API's name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -156,6 +160,10 @@ impl RestApiBuilder {
         self.name = input;
         self
     }
+    /// <p>The API's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The API's description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -165,6 +173,10 @@ impl RestApiBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The API's description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The timestamp when the API was created.</p>
     pub fn created_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -179,6 +191,10 @@ impl RestApiBuilder {
         self.created_date = input;
         self
     }
+    /// <p>The timestamp when the API was created.</p>
+    pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_date
+    }
     /// <p>A version identifier for the API.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -188,6 +204,10 @@ impl RestApiBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>A version identifier for the API.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Appends an item to `warnings`.
     ///
@@ -207,6 +227,10 @@ impl RestApiBuilder {
     ) -> Self {
         self.warnings = input;
         self
+    }
+    /// <p>The warning messages reported when <code>failonwarnings</code> is turned on during API import.</p>
+    pub fn get_warnings(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.warnings
     }
     /// Appends an item to `binary_media_types`.
     ///
@@ -230,6 +254,12 @@ impl RestApiBuilder {
         self.binary_media_types = input;
         self
     }
+    /// <p>The list of binary media types supported by the RestApi. By default, the RestApi supports only UTF-8-encoded text payloads.</p>
+    pub fn get_binary_media_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.binary_media_types
+    }
     /// <p>A nullable integer that is used to enable compression (with non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable compression (with a null value) on an API. When compression is enabled, compression or decompression is not applied on the payload if the payload size is smaller than this value. Setting it to zero allows compression for any payload size.</p>
     pub fn minimum_compression_size(mut self, input: i32) -> Self {
         self.minimum_compression_size = ::std::option::Option::Some(input);
@@ -239,6 +269,10 @@ impl RestApiBuilder {
     pub fn set_minimum_compression_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.minimum_compression_size = input;
         self
+    }
+    /// <p>A nullable integer that is used to enable compression (with non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable compression (with a null value) on an API. When compression is enabled, compression or decompression is not applied on the payload if the payload size is smaller than this value. Setting it to zero allows compression for any payload size.</p>
+    pub fn get_minimum_compression_size(&self) -> &::std::option::Option<i32> {
+        &self.minimum_compression_size
     }
     /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: &gt;<code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
     pub fn api_key_source(mut self, input: crate::types::ApiKeySourceType) -> Self {
@@ -253,6 +287,10 @@ impl RestApiBuilder {
         self.api_key_source = input;
         self
     }
+    /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: &gt;<code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
+    pub fn get_api_key_source(&self) -> &::std::option::Option<crate::types::ApiKeySourceType> {
+        &self.api_key_source
+    }
     /// <p>The endpoint configuration of this RestApi showing the endpoint types of the API. </p>
     pub fn endpoint_configuration(mut self, input: crate::types::EndpointConfiguration) -> Self {
         self.endpoint_configuration = ::std::option::Option::Some(input);
@@ -266,6 +304,12 @@ impl RestApiBuilder {
         self.endpoint_configuration = input;
         self
     }
+    /// <p>The endpoint configuration of this RestApi showing the endpoint types of the API. </p>
+    pub fn get_endpoint_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::EndpointConfiguration> {
+        &self.endpoint_configuration
+    }
     /// <p>A stringified JSON policy document that applies to this RestApi regardless of the caller and Method configuration.</p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
@@ -275,6 +319,10 @@ impl RestApiBuilder {
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy = input;
         self
+    }
+    /// <p>A stringified JSON policy document that applies to this RestApi regardless of the caller and Method configuration.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -301,6 +349,14 @@ impl RestApiBuilder {
         self.tags = input;
         self
     }
+    /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default <code>https://{api_id}.execute-api.{region}.amazonaws.com</code> endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
     pub fn disable_execute_api_endpoint(mut self, input: bool) -> Self {
         self.disable_execute_api_endpoint = ::std::option::Option::Some(input);
@@ -310,6 +366,10 @@ impl RestApiBuilder {
     pub fn set_disable_execute_api_endpoint(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disable_execute_api_endpoint = input;
         self
+    }
+    /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default <code>https://{api_id}.execute-api.{region}.amazonaws.com</code> endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
+    pub fn get_disable_execute_api_endpoint(&self) -> &::std::option::Option<bool> {
+        &self.disable_execute_api_endpoint
     }
     /// Consumes the builder and constructs a [`RestApi`](crate::types::RestApi).
     pub fn build(self) -> crate::types::RestApi {

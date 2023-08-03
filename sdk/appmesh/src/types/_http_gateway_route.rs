@@ -51,6 +51,10 @@ impl HttpGatewayRouteBuilder {
         self.r#match = input;
         self
     }
+    /// <p>An object that represents the criteria for determining a request match.</p>
+    pub fn get_match(&self) -> &::std::option::Option<crate::types::HttpGatewayRouteMatch> {
+        &self.r#match
+    }
     /// <p>An object that represents the action to take if a match is determined.</p>
     pub fn action(mut self, input: crate::types::HttpGatewayRouteAction) -> Self {
         self.action = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl HttpGatewayRouteBuilder {
     ) -> Self {
         self.action = input;
         self
+    }
+    /// <p>An object that represents the action to take if a match is determined.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::HttpGatewayRouteAction> {
+        &self.action
     }
     /// Consumes the builder and constructs a [`HttpGatewayRoute`](crate::types::HttpGatewayRoute).
     pub fn build(self) -> crate::types::HttpGatewayRoute {

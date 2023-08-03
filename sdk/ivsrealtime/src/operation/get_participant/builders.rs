@@ -36,6 +36,12 @@ impl GetParticipantFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetParticipant as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_participant::builders::GetParticipantInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl GetParticipantFluentBuilder {
         self.inner = self.inner.set_stage_arn(input);
         self
     }
+    /// <p>Stage ARN.</p>
+    pub fn get_stage_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stage_arn()
+    }
     /// <p>ID of a session within the stage.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.session_id(input.into());
@@ -127,6 +137,10 @@ impl GetParticipantFluentBuilder {
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_session_id(input);
         self
+    }
+    /// <p>ID of a session within the stage.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_session_id()
     }
     /// <p>Unique identifier for the participant. This is assigned by IVS and returned by <code>CreateParticipantToken</code>.</p>
     pub fn participant_id(
@@ -143,5 +157,9 @@ impl GetParticipantFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_participant_id(input);
         self
+    }
+    /// <p>Unique identifier for the participant. This is assigned by IVS and returned by <code>CreateParticipantToken</code>.</p>
+    pub fn get_participant_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_participant_id()
     }
 }

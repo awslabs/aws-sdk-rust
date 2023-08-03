@@ -72,6 +72,10 @@ impl RetryStageExecutionInputBuilder {
         self.pipeline_name = input;
         self
     }
+    /// <p>The name of the pipeline that contains the failed stage.</p>
+    pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_name
+    }
     /// <p>The name of the failed stage to be retried.</p>
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_name = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl RetryStageExecutionInputBuilder {
     pub fn set_stage_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stage_name = input;
         self
+    }
+    /// <p>The name of the failed stage to be retried.</p>
+    pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stage_name
     }
     /// <p>The ID of the pipeline execution in the failed stage to be retried. Use the <code>GetPipelineState</code> action to retrieve the current pipelineExecutionId of the failed stage</p>
     pub fn pipeline_execution_id(
@@ -98,6 +106,10 @@ impl RetryStageExecutionInputBuilder {
         self.pipeline_execution_id = input;
         self
     }
+    /// <p>The ID of the pipeline execution in the failed stage to be retried. Use the <code>GetPipelineState</code> action to retrieve the current pipelineExecutionId of the failed stage</p>
+    pub fn get_pipeline_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_execution_id
+    }
     /// <p>The scope of the retry attempt. Currently, the only supported value is FAILED_ACTIONS.</p>
     pub fn retry_mode(mut self, input: crate::types::StageRetryMode) -> Self {
         self.retry_mode = ::std::option::Option::Some(input);
@@ -110,6 +122,10 @@ impl RetryStageExecutionInputBuilder {
     ) -> Self {
         self.retry_mode = input;
         self
+    }
+    /// <p>The scope of the retry attempt. Currently, the only supported value is FAILED_ACTIONS.</p>
+    pub fn get_retry_mode(&self) -> &::std::option::Option<crate::types::StageRetryMode> {
+        &self.retry_mode
     }
     /// Consumes the builder and constructs a [`RetryStageExecutionInput`](crate::operation::retry_stage_execution::RetryStageExecutionInput).
     pub fn build(

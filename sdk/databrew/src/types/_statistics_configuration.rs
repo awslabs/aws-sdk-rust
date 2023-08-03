@@ -60,6 +60,12 @@ impl StatisticsConfigurationBuilder {
         self.included_statistics = input;
         self
     }
+    /// <p>List of included evaluations. When the list is undefined, all supported evaluations will be included.</p>
+    pub fn get_included_statistics(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.included_statistics
+    }
     /// Appends an item to `overrides`.
     ///
     /// To override the contents of this collection use [`set_overrides`](Self::set_overrides).
@@ -78,6 +84,12 @@ impl StatisticsConfigurationBuilder {
     ) -> Self {
         self.overrides = input;
         self
+    }
+    /// <p>List of overrides for evaluations.</p>
+    pub fn get_overrides(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StatisticOverride>> {
+        &self.overrides
     }
     /// Consumes the builder and constructs a [`StatisticsConfiguration`](crate::types::StatisticsConfiguration).
     pub fn build(self) -> crate::types::StatisticsConfiguration {

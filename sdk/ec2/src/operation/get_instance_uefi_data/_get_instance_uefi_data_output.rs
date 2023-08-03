@@ -55,6 +55,10 @@ impl GetInstanceUefiDataOutputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The ID of the instance from which to retrieve the UEFI data.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>Base64 representation of the non-volatile UEFI variable store.</p>
     pub fn uefi_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.uefi_data = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl GetInstanceUefiDataOutputBuilder {
     pub fn set_uefi_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.uefi_data = input;
         self
+    }
+    /// <p>Base64 representation of the non-volatile UEFI variable store.</p>
+    pub fn get_uefi_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.uefi_data
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

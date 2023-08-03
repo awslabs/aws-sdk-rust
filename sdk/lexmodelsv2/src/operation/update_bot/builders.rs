@@ -36,6 +36,10 @@ impl UpdateBotFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateBot as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_bot::builders::UpdateBotInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl UpdateBotFluentBuilder {
         self.inner = self.inner.set_bot_id(input);
         self
     }
+    /// <p>The unique identifier of the bot to update. This identifier is returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBot.html">CreateBot</a> operation.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bot_id()
+    }
     /// <p>The new name of the bot. The name must be unique in the account that creates the bot.</p>
     pub fn bot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_name(input.into());
@@ -127,6 +135,10 @@ impl UpdateBotFluentBuilder {
     pub fn set_bot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bot_name(input);
         self
+    }
+    /// <p>The new name of the bot. The name must be unique in the account that creates the bot.</p>
+    pub fn get_bot_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bot_name()
     }
     /// <p>A description of the bot.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -138,6 +150,10 @@ impl UpdateBotFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>A description of the bot.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the bot.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -147,6 +163,10 @@ impl UpdateBotFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the bot.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
     /// <p>Provides information on additional privacy protections Amazon Lex should use with the bot's data.</p>
     pub fn data_privacy(mut self, input: crate::types::DataPrivacy) -> Self {
@@ -160,6 +180,10 @@ impl UpdateBotFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_data_privacy(input);
         self
+    }
+    /// <p>Provides information on additional privacy protections Amazon Lex should use with the bot's data.</p>
+    pub fn get_data_privacy(&self) -> &::std::option::Option<crate::types::DataPrivacy> {
+        self.inner.get_data_privacy()
     }
     /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot.</p>
     /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
@@ -175,6 +199,12 @@ impl UpdateBotFluentBuilder {
         self.inner = self.inner.set_idle_session_ttl_in_seconds(input);
         self
     }
+    /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot.</p>
+    /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
+    /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.</p>
+    pub fn get_idle_session_ttl_in_seconds(&self) -> &::std::option::Option<i32> {
+        self.inner.get_idle_session_ttl_in_seconds()
+    }
     /// <p>The type of the bot to be updated.</p>
     pub fn bot_type(mut self, input: crate::types::BotType) -> Self {
         self.inner = self.inner.bot_type(input);
@@ -184,6 +214,10 @@ impl UpdateBotFluentBuilder {
     pub fn set_bot_type(mut self, input: ::std::option::Option<crate::types::BotType>) -> Self {
         self.inner = self.inner.set_bot_type(input);
         self
+    }
+    /// <p>The type of the bot to be updated.</p>
+    pub fn get_bot_type(&self) -> &::std::option::Option<crate::types::BotType> {
+        self.inner.get_bot_type()
     }
     /// Appends an item to `botMembers`.
     ///
@@ -201,5 +235,11 @@ impl UpdateBotFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_bot_members(input);
         self
+    }
+    /// <p>The list of bot members in the network associated with the update action.</p>
+    pub fn get_bot_members(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BotMember>> {
+        self.inner.get_bot_members()
     }
 }

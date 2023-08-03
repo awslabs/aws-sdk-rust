@@ -46,6 +46,10 @@ impl DeleteDataSourceInputBuilder {
         self.data_source_id = input;
         self
     }
+    /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
+    pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source_id
+    }
     /// Consumes the builder and constructs a [`DeleteDataSourceInput`](crate::operation::delete_data_source::DeleteDataSourceInput).
     pub fn build(
         self,

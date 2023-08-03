@@ -72,6 +72,10 @@ impl DomainInfoBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the domain. This name is unique within the account.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The status of the domain:</p>
     /// <ul>
     /// <li> <p> <code>REGISTERED</code> – The domain is properly registered and available. You can use this domain for registering types and creating new workflow executions. </p> </li>
@@ -93,6 +97,14 @@ impl DomainInfoBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the domain:</p>
+    /// <ul>
+    /// <li> <p> <code>REGISTERED</code> – The domain is properly registered and available. You can use this domain for registering types and creating new workflow executions. </p> </li>
+    /// <li> <p> <code>DEPRECATED</code> – The domain was deprecated using <code>DeprecateDomain</code>, but is still in use. You should not create new workflow executions in this domain. </p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::RegistrationStatus> {
+        &self.status
+    }
     /// <p>The description of the domain provided through <code>RegisterDomain</code>.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -103,6 +115,10 @@ impl DomainInfoBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the domain provided through <code>RegisterDomain</code>.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The ARN of the domain.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -112,6 +128,10 @@ impl DomainInfoBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The ARN of the domain.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`DomainInfo`](crate::types::DomainInfo).
     pub fn build(self) -> crate::types::DomainInfo {

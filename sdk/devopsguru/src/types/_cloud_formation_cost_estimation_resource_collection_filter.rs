@@ -51,6 +51,12 @@ impl CloudFormationCostEstimationResourceCollectionFilterBuilder {
         self.stack_names = input;
         self
     }
+    /// <p>An array of CloudFormation stack names. Its size is fixed at 1 item.</p>
+    pub fn get_stack_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.stack_names
+    }
     /// Consumes the builder and constructs a [`CloudFormationCostEstimationResourceCollectionFilter`](crate::types::CloudFormationCostEstimationResourceCollectionFilter).
     pub fn build(self) -> crate::types::CloudFormationCostEstimationResourceCollectionFilter {
         crate::types::CloudFormationCostEstimationResourceCollectionFilter {

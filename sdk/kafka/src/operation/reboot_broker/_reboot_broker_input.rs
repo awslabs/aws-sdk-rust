@@ -57,6 +57,10 @@ impl RebootBrokerInputBuilder {
         self.broker_ids = input;
         self
     }
+    /// <p>The list of broker IDs to be rebooted. The reboot-broker operation supports rebooting one broker at a time.</p>
+    pub fn get_broker_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.broker_ids
+    }
     /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_arn = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl RebootBrokerInputBuilder {
     pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_arn
     }
     /// Consumes the builder and constructs a [`RebootBrokerInput`](crate::operation::reboot_broker::RebootBrokerInput).
     pub fn build(

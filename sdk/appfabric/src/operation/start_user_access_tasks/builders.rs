@@ -37,6 +37,13 @@ impl StartUserAccessTasksFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartUserAccessTasks as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_user_access_tasks::builders::StartUserAccessTasksInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl StartUserAccessTasksFluentBuilder {
         self.inner = self.inner.set_app_bundle_identifier(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
+    pub fn get_app_bundle_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_bundle_identifier()
+    }
     /// <p>The email address of the target user.</p>
     pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.email(input.into());
@@ -142,5 +153,9 @@ impl StartUserAccessTasksFluentBuilder {
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_email(input);
         self
+    }
+    /// <p>The email address of the target user.</p>
+    pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_email()
     }
 }

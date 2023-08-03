@@ -64,6 +64,10 @@ impl MergeMetadataBuilder {
         self.is_merged = input;
         self
     }
+    /// <p>A Boolean value indicating whether the merge has been made.</p>
+    pub fn get_is_merged(&self) -> &::std::option::Option<bool> {
+        &self.is_merged
+    }
     /// <p>The Amazon Resource Name (ARN) of the user who merged the branches.</p>
     pub fn merged_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.merged_by = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl MergeMetadataBuilder {
     pub fn set_merged_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.merged_by = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the user who merged the branches.</p>
+    pub fn get_merged_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.merged_by
     }
     /// <p>The commit ID for the merge commit, if any.</p>
     pub fn merge_commit_id(
@@ -90,6 +98,10 @@ impl MergeMetadataBuilder {
         self.merge_commit_id = input;
         self
     }
+    /// <p>The commit ID for the merge commit, if any.</p>
+    pub fn get_merge_commit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.merge_commit_id
+    }
     /// <p>The merge strategy used in the merge.</p>
     pub fn merge_option(mut self, input: crate::types::MergeOptionTypeEnum) -> Self {
         self.merge_option = ::std::option::Option::Some(input);
@@ -102,6 +114,10 @@ impl MergeMetadataBuilder {
     ) -> Self {
         self.merge_option = input;
         self
+    }
+    /// <p>The merge strategy used in the merge.</p>
+    pub fn get_merge_option(&self) -> &::std::option::Option<crate::types::MergeOptionTypeEnum> {
+        &self.merge_option
     }
     /// Consumes the builder and constructs a [`MergeMetadata`](crate::types::MergeMetadata).
     pub fn build(self) -> crate::types::MergeMetadata {

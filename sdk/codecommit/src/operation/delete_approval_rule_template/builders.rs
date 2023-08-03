@@ -36,6 +36,10 @@ impl DeleteApprovalRuleTemplateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteApprovalRuleTemplate as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_approval_rule_template::builders::DeleteApprovalRuleTemplateInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +135,9 @@ impl DeleteApprovalRuleTemplateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_approval_rule_template_name(input);
         self
+    }
+    /// <p>The name of the approval rule template to delete.</p>
+    pub fn get_approval_rule_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_approval_rule_template_name()
     }
 }

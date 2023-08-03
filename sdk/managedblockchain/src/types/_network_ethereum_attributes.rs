@@ -60,6 +60,15 @@ impl NetworkEthereumAttributesBuilder {
         self.chain_id = input;
         self
     }
+    /// <p>The Ethereum <code>CHAIN_ID</code> associated with the Ethereum network. Chain IDs are as follows:</p>
+    /// <ul>
+    /// <li> <p>mainnet = <code>1</code> </p> </li>
+    /// <li> <p>goerli = <code>5</code> </p> </li>
+    /// <li> <p>rinkeby = <code>4</code> </p> </li>
+    /// </ul>
+    pub fn get_chain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.chain_id
+    }
     /// Consumes the builder and constructs a [`NetworkEthereumAttributes`](crate::types::NetworkEthereumAttributes).
     pub fn build(self) -> crate::types::NetworkEthereumAttributes {
         crate::types::NetworkEthereumAttributes {

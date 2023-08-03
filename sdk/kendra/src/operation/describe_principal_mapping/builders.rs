@@ -37,6 +37,13 @@ impl DescribePrincipalMappingFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribePrincipalMapping as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_principal_mapping::builders::DescribePrincipalMappingInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl DescribePrincipalMappingFluentBuilder {
         self.inner = self.inner.set_index_id(input);
         self
     }
+    /// <p>The identifier of the index required to check the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
+    pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_index_id()
+    }
     /// <p>The identifier of the data source to check the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
     pub fn data_source_id(
         mut self,
@@ -143,6 +154,10 @@ impl DescribePrincipalMappingFluentBuilder {
         self.inner = self.inner.set_data_source_id(input);
         self
     }
+    /// <p>The identifier of the data source to check the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
+    pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_data_source_id()
+    }
     /// <p>The identifier of the group required to check the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_id(input.into());
@@ -152,5 +167,9 @@ impl DescribePrincipalMappingFluentBuilder {
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group_id(input);
         self
+    }
+    /// <p>The identifier of the group required to check the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group_id()
     }
 }

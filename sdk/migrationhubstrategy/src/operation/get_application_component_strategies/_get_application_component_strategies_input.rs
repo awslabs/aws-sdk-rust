@@ -45,6 +45,10 @@ impl GetApplicationComponentStrategiesInputBuilder {
         self.application_component_id = input;
         self
     }
+    /// <p> The ID of the application component. The ID is unique within an AWS account.</p>
+    pub fn get_application_component_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_component_id
+    }
     /// Consumes the builder and constructs a [`GetApplicationComponentStrategiesInput`](crate::operation::get_application_component_strategies::GetApplicationComponentStrategiesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_application_component_strategies::GetApplicationComponentStrategiesInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

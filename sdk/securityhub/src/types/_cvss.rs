@@ -72,6 +72,10 @@ impl CvssBuilder {
         self.version = input;
         self
     }
+    /// <p>The version of CVSS for the CVSS score.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
+    }
     /// <p>The base CVSS score.</p>
     pub fn base_score(mut self, input: f64) -> Self {
         self.base_score = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl CvssBuilder {
     pub fn set_base_score(mut self, input: ::std::option::Option<f64>) -> Self {
         self.base_score = input;
         self
+    }
+    /// <p>The base CVSS score.</p>
+    pub fn get_base_score(&self) -> &::std::option::Option<f64> {
+        &self.base_score
     }
     /// <p>The base scoring vector for the CVSS score.</p>
     pub fn base_vector(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -92,6 +100,10 @@ impl CvssBuilder {
         self.base_vector = input;
         self
     }
+    /// <p>The base scoring vector for the CVSS score.</p>
+    pub fn get_base_vector(&self) -> &::std::option::Option<::std::string::String> {
+        &self.base_vector
+    }
     /// <p>The origin of the original CVSS score and vector.</p>
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source = ::std::option::Option::Some(input.into());
@@ -101,6 +113,10 @@ impl CvssBuilder {
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source = input;
         self
+    }
+    /// <p>The origin of the original CVSS score and vector.</p>
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source
     }
     /// Appends an item to `adjustments`.
     ///
@@ -120,6 +136,12 @@ impl CvssBuilder {
     ) -> Self {
         self.adjustments = input;
         self
+    }
+    /// <p>Adjustments to the CVSS metrics.</p>
+    pub fn get_adjustments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Adjustment>> {
+        &self.adjustments
     }
     /// Consumes the builder and constructs a [`Cvss`](crate::types::Cvss).
     pub fn build(self) -> crate::types::Cvss {

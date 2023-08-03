@@ -80,6 +80,10 @@ impl AttributeValueBuilder {
         self.s = input;
         self
     }
+    /// <p>A string.</p>
+    pub fn get_s(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s
+    }
     /// <p>A number.</p>
     pub fn n(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.n = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl AttributeValueBuilder {
         self.n = input;
         self
     }
+    /// <p>A number.</p>
+    pub fn get_n(&self) -> &::std::option::Option<::std::string::String> {
+        &self.n
+    }
     /// <p>A binary value.</p>
     pub fn b(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.b = ::std::option::Option::Some(input.into());
@@ -99,6 +107,10 @@ impl AttributeValueBuilder {
     pub fn set_b(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.b = input;
         self
+    }
+    /// <p>A binary value.</p>
+    pub fn get_b(&self) -> &::std::option::Option<::std::string::String> {
+        &self.b
     }
     /// Appends an item to `ss`.
     ///
@@ -119,6 +131,10 @@ impl AttributeValueBuilder {
         self.ss = input;
         self
     }
+    /// <p>A list of strings.</p>
+    pub fn get_ss(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ss
+    }
     /// Appends an item to `ns`.
     ///
     /// To override the contents of this collection use [`set_ns`](Self::set_ns).
@@ -138,6 +154,10 @@ impl AttributeValueBuilder {
         self.ns = input;
         self
     }
+    /// <p>A list of numbers.</p>
+    pub fn get_ns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ns
+    }
     /// Appends an item to `bs`.
     ///
     /// To override the contents of this collection use [`set_bs`](Self::set_bs).
@@ -156,6 +176,10 @@ impl AttributeValueBuilder {
     ) -> Self {
         self.bs = input;
         self
+    }
+    /// <p>A list of binary values.</p>
+    pub fn get_bs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.bs
     }
     /// Consumes the builder and constructs a [`AttributeValue`](crate::types::AttributeValue).
     pub fn build(self) -> crate::types::AttributeValue {

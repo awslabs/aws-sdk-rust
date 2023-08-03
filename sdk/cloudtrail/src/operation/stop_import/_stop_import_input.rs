@@ -39,6 +39,10 @@ impl StopImportInputBuilder {
         self.import_id = input;
         self
     }
+    /// <p> The ID of the import. </p>
+    pub fn get_import_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.import_id
+    }
     /// Consumes the builder and constructs a [`StopImportInput`](crate::operation::stop_import::StopImportInput).
     pub fn build(
         self,

@@ -167,6 +167,10 @@ impl CreateMeetingInputBuilder {
         self.client_request_token = input;
         self
     }
+    /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
+    }
     /// <p>The Region in which to create the meeting.</p>
     /// <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p>
     /// <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
@@ -180,6 +184,12 @@ impl CreateMeetingInputBuilder {
     pub fn set_media_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.media_region = input;
         self
+    }
+    /// <p>The Region in which to create the meeting.</p>
+    /// <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p>
+    /// <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
+    pub fn get_media_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.media_region
     }
     /// <p>Reserved.</p>
     pub fn meeting_host_id(
@@ -196,6 +206,10 @@ impl CreateMeetingInputBuilder {
     ) -> Self {
         self.meeting_host_id = input;
         self
+    }
+    /// <p>Reserved.</p>
+    pub fn get_meeting_host_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.meeting_host_id
     }
     /// <p>The external meeting ID.</p>
     /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p>
@@ -217,6 +231,12 @@ impl CreateMeetingInputBuilder {
         self.external_meeting_id = input;
         self
     }
+    /// <p>The external meeting ID.</p>
+    /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p>
+    /// <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case insensitive.</p>
+    pub fn get_external_meeting_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.external_meeting_id
+    }
     /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
     pub fn notifications_configuration(
         mut self,
@@ -233,6 +253,12 @@ impl CreateMeetingInputBuilder {
         self.notifications_configuration = input;
         self
     }
+    /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
+    pub fn get_notifications_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::NotificationsConfiguration> {
+        &self.notifications_configuration
+    }
     /// <p>Lists the audio and video features enabled for a meeting, such as echo reduction.</p>
     pub fn meeting_features(mut self, input: crate::types::MeetingFeaturesConfiguration) -> Self {
         self.meeting_features = ::std::option::Option::Some(input);
@@ -245,6 +271,12 @@ impl CreateMeetingInputBuilder {
     ) -> Self {
         self.meeting_features = input;
         self
+    }
+    /// <p>Lists the audio and video features enabled for a meeting, such as echo reduction.</p>
+    pub fn get_meeting_features(
+        &self,
+    ) -> &::std::option::Option<crate::types::MeetingFeaturesConfiguration> {
+        &self.meeting_features
     }
     /// <p>When specified, replicates the media from the primary meeting to the new meeting.</p>
     pub fn primary_meeting_id(
@@ -261,6 +293,10 @@ impl CreateMeetingInputBuilder {
     ) -> Self {
         self.primary_meeting_id = input;
         self
+    }
+    /// <p>When specified, replicates the media from the primary meeting to the new meeting.</p>
+    pub fn get_primary_meeting_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.primary_meeting_id
     }
     /// Appends an item to `tenant_ids`.
     ///
@@ -280,6 +316,10 @@ impl CreateMeetingInputBuilder {
     ) -> Self {
         self.tenant_ids = input;
         self
+    }
+    /// <p>A consistent and opaque identifier, created and maintained by the builder to represent a segment of their users.</p>
+    pub fn get_tenant_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tenant_ids
     }
     /// Appends an item to `tags`.
     ///
@@ -327,6 +367,24 @@ impl CreateMeetingInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Applies one or more tags to an Amazon Chime SDK meeting. Note the following:</p>
+    /// <ul>
+    /// <li> <p>Not all resources have tags. For a list of services with resources that support tagging using this operation, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a>. If the resource doesn't yet support this operation, the resource's service might support tagging using its own API operations. For more information, refer to the documentation for that service.</p> </li>
+    /// <li> <p>Each resource can have up to 50 tags. For other limits, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag Naming and Usage Conventions</a> in the <i>AWS General Reference</i>.</p> </li>
+    /// <li> <p>You can only tag resources that are located in the specified AWS Region for the AWS account.</p> </li>
+    /// <li> <p>To add tags to a resource, you need the necessary permissions for the service that the resource belongs to as well as permissions for adding tags. For more information, see the documentation for each service.</p> </li>
+    /// </ul> <important>
+    /// <p>Do not store personally identifiable information (PII) or other confidential or sensitive information in tags. We use tags to provide you with billing and administration services. Tags are not intended to be used for private or sensitive data.</p>
+    /// </important>
+    /// <p> <b>Minimum permissions</b> </p>
+    /// <p>In addition to the <code>tag:TagResources</code> permission required by this operation, you must also have the tagging permission defined by the service that created the resource. For example, to tag a <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code> operation, you must have both of the following permissions:</p>
+    /// <p> <code>tag:TagResources</code> </p>
+    /// <p> <code>ChimeSDKMeetings:CreateTags</code> </p> <note>
+    /// <p>Some services might have specific requirements for tagging some resources. For example, to tag an Amazon S3 bucket, you must also have the <code>s3:GetBucketTagging</code> permission. If the expected minimum permissions don't work, check the documentation for that service's tagging APIs for more information.</p>
+    /// </note>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateMeetingInput`](crate::operation::create_meeting::CreateMeetingInput).
     pub fn build(

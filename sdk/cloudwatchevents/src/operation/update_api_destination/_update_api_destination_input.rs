@@ -81,6 +81,10 @@ impl UpdateApiDestinationInputBuilder {
         self
     }
     /// <p>The name of the API destination to update.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
+    /// <p>The name of the API destination to update.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
@@ -89,6 +93,10 @@ impl UpdateApiDestinationInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The name of the API destination to update.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The ARN of the connection to use for the API destination.</p>
     pub fn connection_arn(
@@ -106,6 +114,10 @@ impl UpdateApiDestinationInputBuilder {
         self.connection_arn = input;
         self
     }
+    /// <p>The ARN of the connection to use for the API destination.</p>
+    pub fn get_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_arn
+    }
     /// <p>The URL to the endpoint to use for the API destination.</p>
     pub fn invocation_endpoint(
         mut self,
@@ -122,6 +134,10 @@ impl UpdateApiDestinationInputBuilder {
         self.invocation_endpoint = input;
         self
     }
+    /// <p>The URL to the endpoint to use for the API destination.</p>
+    pub fn get_invocation_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.invocation_endpoint
+    }
     /// <p>The method to use for the API destination.</p>
     pub fn http_method(mut self, input: crate::types::ApiDestinationHttpMethod) -> Self {
         self.http_method = ::std::option::Option::Some(input);
@@ -135,6 +151,12 @@ impl UpdateApiDestinationInputBuilder {
         self.http_method = input;
         self
     }
+    /// <p>The method to use for the API destination.</p>
+    pub fn get_http_method(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApiDestinationHttpMethod> {
+        &self.http_method
+    }
     /// <p>The maximum number of invocations per second to send to the API destination.</p>
     pub fn invocation_rate_limit_per_second(mut self, input: i32) -> Self {
         self.invocation_rate_limit_per_second = ::std::option::Option::Some(input);
@@ -147,6 +169,10 @@ impl UpdateApiDestinationInputBuilder {
     ) -> Self {
         self.invocation_rate_limit_per_second = input;
         self
+    }
+    /// <p>The maximum number of invocations per second to send to the API destination.</p>
+    pub fn get_invocation_rate_limit_per_second(&self) -> &::std::option::Option<i32> {
+        &self.invocation_rate_limit_per_second
     }
     /// Consumes the builder and constructs a [`UpdateApiDestinationInput`](crate::operation::update_api_destination::UpdateApiDestinationInput).
     pub fn build(

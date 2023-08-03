@@ -89,6 +89,10 @@ impl DescribeAppImageConfigOutputBuilder {
         self.app_image_config_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the AppImageConfig.</p>
+    pub fn get_app_image_config_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_image_config_arn
+    }
     /// <p>The name of the AppImageConfig.</p>
     pub fn app_image_config_name(
         mut self,
@@ -105,6 +109,10 @@ impl DescribeAppImageConfigOutputBuilder {
         self.app_image_config_name = input;
         self
     }
+    /// <p>The name of the AppImageConfig.</p>
+    pub fn get_app_image_config_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_image_config_name
+    }
     /// <p>When the AppImageConfig was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -118,6 +126,10 @@ impl DescribeAppImageConfigOutputBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>When the AppImageConfig was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>When the AppImageConfig was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -130,6 +142,10 @@ impl DescribeAppImageConfigOutputBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>When the AppImageConfig was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// <p>The configuration of a KernelGateway app.</p>
     pub fn kernel_gateway_image_config(
@@ -146,6 +162,12 @@ impl DescribeAppImageConfigOutputBuilder {
     ) -> Self {
         self.kernel_gateway_image_config = input;
         self
+    }
+    /// <p>The configuration of a KernelGateway app.</p>
+    pub fn get_kernel_gateway_image_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::KernelGatewayImageConfig> {
+        &self.kernel_gateway_image_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

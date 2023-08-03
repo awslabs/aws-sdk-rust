@@ -71,6 +71,10 @@ impl ListSchedulesInputBuilder {
         self.group_name = input;
         self
     }
+    /// <p>If specified, only lists the schedules whose associated schedule group matches the given filter.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
+    }
     /// <p>Schedule name prefix to return the filtered list of resources.</p>
     pub fn name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name_prefix = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl ListSchedulesInputBuilder {
     pub fn set_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name_prefix = input;
         self
+    }
+    /// <p>Schedule name prefix to return the filtered list of resources.</p>
+    pub fn get_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name_prefix
     }
     /// <p>If specified, only lists the schedules whose current state matches the given filter.</p>
     pub fn state(mut self, input: crate::types::ScheduleState) -> Self {
@@ -91,6 +99,10 @@ impl ListSchedulesInputBuilder {
         self.state = input;
         self
     }
+    /// <p>If specified, only lists the schedules whose current state matches the given filter.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ScheduleState> {
+        &self.state
+    }
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -101,6 +113,10 @@ impl ListSchedulesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>If specified, limits the number of results returned by this operation. The operation also returns a <code>NextToken</code> which you can use in a subsequent operation to retrieve the next set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -110,6 +126,10 @@ impl ListSchedulesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>If specified, limits the number of results returned by this operation. The operation also returns a <code>NextToken</code> which you can use in a subsequent operation to retrieve the next set of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListSchedulesInput`](crate::operation::list_schedules::ListSchedulesInput).
     pub fn build(

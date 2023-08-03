@@ -86,6 +86,12 @@ impl DescribeSourceServersRequestFiltersBuilder {
         self.source_server_i_ds = input;
         self
     }
+    /// <p>Request to filter Source Servers list by Source Server ID.</p>
+    pub fn get_source_server_i_ds(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.source_server_i_ds
+    }
     /// <p>Request to filter Source Servers list by archived.</p>
     pub fn is_archived(mut self, input: bool) -> Self {
         self.is_archived = ::std::option::Option::Some(input);
@@ -95,6 +101,10 @@ impl DescribeSourceServersRequestFiltersBuilder {
     pub fn set_is_archived(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_archived = input;
         self
+    }
+    /// <p>Request to filter Source Servers list by archived.</p>
+    pub fn get_is_archived(&self) -> &::std::option::Option<bool> {
+        &self.is_archived
     }
     /// Appends an item to `replication_types`.
     ///
@@ -115,6 +125,12 @@ impl DescribeSourceServersRequestFiltersBuilder {
         self.replication_types = input;
         self
     }
+    /// <p>Request to filter Source Servers list by replication type.</p>
+    pub fn get_replication_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationType>> {
+        &self.replication_types
+    }
     /// Appends an item to `life_cycle_states`.
     ///
     /// To override the contents of this collection use [`set_life_cycle_states`](Self::set_life_cycle_states).
@@ -133,6 +149,12 @@ impl DescribeSourceServersRequestFiltersBuilder {
     ) -> Self {
         self.life_cycle_states = input;
         self
+    }
+    /// <p>Request to filter Source Servers list by life cycle states.</p>
+    pub fn get_life_cycle_states(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LifeCycleState>> {
+        &self.life_cycle_states
     }
     /// Appends an item to `application_i_ds`.
     ///
@@ -155,6 +177,12 @@ impl DescribeSourceServersRequestFiltersBuilder {
     ) -> Self {
         self.application_i_ds = input;
         self
+    }
+    /// <p>Request to filter Source Servers list by application IDs.</p>
+    pub fn get_application_i_ds(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.application_i_ds
     }
     /// Consumes the builder and constructs a [`DescribeSourceServersRequestFilters`](crate::types::DescribeSourceServersRequestFilters).
     pub fn build(self) -> crate::types::DescribeSourceServersRequestFilters {

@@ -67,6 +67,10 @@ impl FieldBasedTooltipBuilder {
         self.aggregation_visibility = input;
         self
     }
+    /// <p>The visibility of <code>Show aggregations</code>.</p>
+    pub fn get_aggregation_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.aggregation_visibility
+    }
     /// <p>The type for the &gt;tooltip title. Choose one of the following options:</p>
     /// <ul>
     /// <li> <p> <code>NONE</code>: Doesn't use the primary value as the title.</p> </li>
@@ -88,6 +92,14 @@ impl FieldBasedTooltipBuilder {
         self.tooltip_title_type = input;
         self
     }
+    /// <p>The type for the &gt;tooltip title. Choose one of the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>NONE</code>: Doesn't use the primary value as the title.</p> </li>
+    /// <li> <p> <code>PRIMARY_VALUE</code>: Uses primary value as the title.</p> </li>
+    /// </ul>
+    pub fn get_tooltip_title_type(&self) -> &::std::option::Option<crate::types::TooltipTitleType> {
+        &self.tooltip_title_type
+    }
     /// Appends an item to `tooltip_fields`.
     ///
     /// To override the contents of this collection use [`set_tooltip_fields`](Self::set_tooltip_fields).
@@ -106,6 +118,12 @@ impl FieldBasedTooltipBuilder {
     ) -> Self {
         self.tooltip_fields = input;
         self
+    }
+    /// <p>The fields configuration in the tooltip.</p>
+    pub fn get_tooltip_fields(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TooltipItem>> {
+        &self.tooltip_fields
     }
     /// Consumes the builder and constructs a [`FieldBasedTooltip`](crate::types::FieldBasedTooltip).
     pub fn build(self) -> crate::types::FieldBasedTooltip {

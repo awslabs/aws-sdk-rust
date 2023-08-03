@@ -54,6 +54,10 @@ impl EcrConfigurationBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name of the container repository that Amazon Inspector scans to identify findings for your container images. The name includes the path for the repository location. If you don’t provide this information, Image Builder creates a repository in your account named <code>image-builder-image-scanning-repository</code> for vulnerability scans of your output container images.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// Appends an item to `container_tags`.
     ///
     /// To override the contents of this collection use [`set_container_tags`](Self::set_container_tags).
@@ -75,6 +79,12 @@ impl EcrConfigurationBuilder {
     ) -> Self {
         self.container_tags = input;
         self
+    }
+    /// <p>Tags for Image Builder to apply to the output container image that &amp;INS; scans. Tags can help you identify and manage your scanned images.</p>
+    pub fn get_container_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.container_tags
     }
     /// Consumes the builder and constructs a [`EcrConfiguration`](crate::types::EcrConfiguration).
     pub fn build(self) -> crate::types::EcrConfiguration {

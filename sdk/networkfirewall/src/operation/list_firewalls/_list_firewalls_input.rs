@@ -55,6 +55,10 @@ impl ListFirewallsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `vpc_ids`.
     ///
     /// To override the contents of this collection use [`set_vpc_ids`](Self::set_vpc_ids).
@@ -74,6 +78,10 @@ impl ListFirewallsInputBuilder {
         self.vpc_ids = input;
         self
     }
+    /// <p>The unique identifiers of the VPCs that you want Network Firewall to retrieve the firewalls for. Leave this blank to retrieve all firewalls that you have defined.</p>
+    pub fn get_vpc_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.vpc_ids
+    }
     /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -83,6 +91,10 @@ impl ListFirewallsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListFirewallsInput`](crate::operation::list_firewalls::ListFirewallsInput).
     pub fn build(

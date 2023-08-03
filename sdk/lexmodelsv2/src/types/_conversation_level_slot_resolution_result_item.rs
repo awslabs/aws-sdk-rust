@@ -56,6 +56,10 @@ impl ConversationLevelSlotResolutionResultItemBuilder {
         self.intent_name = input;
         self
     }
+    /// <p>The intents used in the slots list for the slot resolution details.</p>
+    pub fn get_intent_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.intent_name
+    }
     /// <p>The slot name in the slots list for the slot resolution details.</p>
     pub fn slot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.slot_name = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl ConversationLevelSlotResolutionResultItemBuilder {
     pub fn set_slot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.slot_name = input;
         self
+    }
+    /// <p>The slot name in the slots list for the slot resolution details.</p>
+    pub fn get_slot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.slot_name
     }
     /// <p>The number of matching slots used in the slots listings for the slot resolution evaluation.</p>
     pub fn match_result(mut self, input: crate::types::TestResultMatchStatus) -> Self {
@@ -78,6 +86,10 @@ impl ConversationLevelSlotResolutionResultItemBuilder {
     ) -> Self {
         self.match_result = input;
         self
+    }
+    /// <p>The number of matching slots used in the slots listings for the slot resolution evaluation.</p>
+    pub fn get_match_result(&self) -> &::std::option::Option<crate::types::TestResultMatchStatus> {
+        &self.match_result
     }
     /// Consumes the builder and constructs a [`ConversationLevelSlotResolutionResultItem`](crate::types::ConversationLevelSlotResolutionResultItem).
     pub fn build(self) -> crate::types::ConversationLevelSlotResolutionResultItem {

@@ -64,6 +64,10 @@ impl BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name of the repository where the association with the template was not able to be removed.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>An error code that specifies whether the repository name was not valid or not found.</p>
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>An error code that specifies whether the repository name was not valid or not found.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
     }
     /// <p>An error message that provides details about why the repository name was either not found or not valid.</p>
     pub fn error_message(
@@ -89,6 +97,10 @@ impl BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>An error message that provides details about why the repository name was either not found or not valid.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`BatchDisassociateApprovalRuleTemplateFromRepositoriesError`](crate::types::BatchDisassociateApprovalRuleTemplateFromRepositoriesError).
     pub fn build(self) -> crate::types::BatchDisassociateApprovalRuleTemplateFromRepositoriesError {

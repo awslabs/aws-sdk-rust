@@ -40,6 +40,10 @@ impl LifecyclePolicyPreviewFilterBuilder {
         self.tag_status = input;
         self
     }
+    /// <p>The tag status of the image.</p>
+    pub fn get_tag_status(&self) -> &::std::option::Option<crate::types::TagStatus> {
+        &self.tag_status
+    }
     /// Consumes the builder and constructs a [`LifecyclePolicyPreviewFilter`](crate::types::LifecyclePolicyPreviewFilter).
     pub fn build(self) -> crate::types::LifecyclePolicyPreviewFilter {
         crate::types::LifecyclePolicyPreviewFilter {

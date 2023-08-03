@@ -56,6 +56,10 @@ impl DescribeExportTasksOutputBuilder {
         self.marker = input;
         self
     }
+    /// <p>A pagination token that can be used in a later <code>DescribeExportTasks</code> request. A marker is used for pagination to identify the location to begin output for the next response of <code>DescribeExportTasks</code>.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// Appends an item to `export_tasks`.
     ///
     /// To override the contents of this collection use [`set_export_tasks`](Self::set_export_tasks).
@@ -74,6 +78,12 @@ impl DescribeExportTasksOutputBuilder {
     ) -> Self {
         self.export_tasks = input;
         self
+    }
+    /// <p>Information about an export of a snapshot or cluster to Amazon S3.</p>
+    pub fn get_export_tasks(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportTask>> {
+        &self.export_tasks
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

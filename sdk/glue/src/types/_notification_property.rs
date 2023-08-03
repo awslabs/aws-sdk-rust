@@ -40,6 +40,10 @@ impl NotificationPropertyBuilder {
         self.notify_delay_after = input;
         self
     }
+    /// <p>After a job run starts, the number of minutes to wait before sending a job run delay notification.</p>
+    pub fn get_notify_delay_after(&self) -> &::std::option::Option<i32> {
+        &self.notify_delay_after
+    }
     /// Consumes the builder and constructs a [`NotificationProperty`](crate::types::NotificationProperty).
     pub fn build(self) -> crate::types::NotificationProperty {
         crate::types::NotificationProperty {

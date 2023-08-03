@@ -104,6 +104,10 @@ impl ReadOptionsBuilder {
         self.sep = input;
         self
     }
+    /// <p>The file's field separator.</p>
+    pub fn get_sep(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sep
+    }
     /// <p>The file's encoding.</p>
     pub fn encoding(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encoding = ::std::option::Option::Some(input.into());
@@ -113,6 +117,10 @@ impl ReadOptionsBuilder {
     pub fn set_encoding(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encoding = input;
         self
+    }
+    /// <p>The file's encoding.</p>
+    pub fn get_encoding(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encoding
     }
     /// <p>The file's quote character.</p>
     pub fn quote(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -124,6 +132,10 @@ impl ReadOptionsBuilder {
         self.quote = input;
         self
     }
+    /// <p>The file's quote character.</p>
+    pub fn get_quote(&self) -> &::std::option::Option<::std::string::String> {
+        &self.quote
+    }
     /// <p>Whether all values need to be quoted, or just those that contain quotes.</p>
     pub fn quote_all(mut self, input: bool) -> Self {
         self.quote_all = ::std::option::Option::Some(input);
@@ -133,6 +145,10 @@ impl ReadOptionsBuilder {
     pub fn set_quote_all(mut self, input: ::std::option::Option<bool>) -> Self {
         self.quote_all = input;
         self
+    }
+    /// <p>Whether all values need to be quoted, or just those that contain quotes.</p>
+    pub fn get_quote_all(&self) -> &::std::option::Option<bool> {
+        &self.quote_all
     }
     /// <p>A character for escaping quotes in the file.</p>
     pub fn escape(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -144,6 +160,10 @@ impl ReadOptionsBuilder {
         self.escape = input;
         self
     }
+    /// <p>A character for escaping quotes in the file.</p>
+    pub fn get_escape(&self) -> &::std::option::Option<::std::string::String> {
+        &self.escape
+    }
     /// <p>Whether quotes need to be escaped in the file.</p>
     pub fn escape_quotes(mut self, input: bool) -> Self {
         self.escape_quotes = ::std::option::Option::Some(input);
@@ -153,6 +173,10 @@ impl ReadOptionsBuilder {
     pub fn set_escape_quotes(mut self, input: ::std::option::Option<bool>) -> Self {
         self.escape_quotes = input;
         self
+    }
+    /// <p>Whether quotes need to be escaped in the file.</p>
+    pub fn get_escape_quotes(&self) -> &::std::option::Option<bool> {
+        &self.escape_quotes
     }
     /// <p>The file's comment character.</p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -164,6 +188,10 @@ impl ReadOptionsBuilder {
         self.comment = input;
         self
     }
+    /// <p>The file's comment character.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comment
+    }
     /// <p>Whether the file has a header row.</p>
     pub fn header(mut self, input: bool) -> Self {
         self.header = ::std::option::Option::Some(input);
@@ -174,6 +202,10 @@ impl ReadOptionsBuilder {
         self.header = input;
         self
     }
+    /// <p>Whether the file has a header row.</p>
+    pub fn get_header(&self) -> &::std::option::Option<bool> {
+        &self.header
+    }
     /// <p>A line separator for the file.</p>
     pub fn line_sep(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.line_sep = ::std::option::Option::Some(input.into());
@@ -183,6 +215,10 @@ impl ReadOptionsBuilder {
     pub fn set_line_sep(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.line_sep = input;
         self
+    }
+    /// <p>A line separator for the file.</p>
+    pub fn get_line_sep(&self) -> &::std::option::Option<::std::string::String> {
+        &self.line_sep
     }
     /// Consumes the builder and constructs a [`ReadOptions`](crate::types::ReadOptions).
     pub fn build(self) -> crate::types::ReadOptions {

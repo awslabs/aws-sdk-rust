@@ -71,6 +71,10 @@ impl CreateModelInputBuilder {
         self.model_id = input;
         self
     }
+    /// <p>The model ID.</p>
+    pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_id
+    }
     /// <p>The model type. </p>
     pub fn model_type(mut self, input: crate::types::ModelTypeEnum) -> Self {
         self.model_type = ::std::option::Option::Some(input);
@@ -84,6 +88,10 @@ impl CreateModelInputBuilder {
         self.model_type = input;
         self
     }
+    /// <p>The model type. </p>
+    pub fn get_model_type(&self) -> &::std::option::Option<crate::types::ModelTypeEnum> {
+        &self.model_type
+    }
     /// <p>The model description. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -93,6 +101,10 @@ impl CreateModelInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The model description. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The name of the event type.</p>
     pub fn event_type_name(
@@ -109,6 +121,10 @@ impl CreateModelInputBuilder {
     ) -> Self {
         self.event_type_name = input;
         self
+    }
+    /// <p>The name of the event type.</p>
+    pub fn get_event_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_type_name
     }
     /// Appends an item to `tags`.
     ///
@@ -128,6 +144,10 @@ impl CreateModelInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A collection of key and value pairs.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateModelInput`](crate::operation::create_model::CreateModelInput).
     pub fn build(

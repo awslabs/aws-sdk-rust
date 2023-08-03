@@ -56,6 +56,10 @@ impl RowInfoBuilder {
         self.rows_ingested = input;
         self
     }
+    /// <p>The number of rows that were ingested.</p>
+    pub fn get_rows_ingested(&self) -> &::std::option::Option<i64> {
+        &self.rows_ingested
+    }
     /// <p>The number of rows that were not ingested.</p>
     pub fn rows_dropped(mut self, input: i64) -> Self {
         self.rows_dropped = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl RowInfoBuilder {
         self.rows_dropped = input;
         self
     }
+    /// <p>The number of rows that were not ingested.</p>
+    pub fn get_rows_dropped(&self) -> &::std::option::Option<i64> {
+        &self.rows_dropped
+    }
     /// <p>The total number of rows in the dataset.</p>
     pub fn total_rows_in_dataset(mut self, input: i64) -> Self {
         self.total_rows_in_dataset = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl RowInfoBuilder {
     pub fn set_total_rows_in_dataset(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_rows_in_dataset = input;
         self
+    }
+    /// <p>The total number of rows in the dataset.</p>
+    pub fn get_total_rows_in_dataset(&self) -> &::std::option::Option<i64> {
+        &self.total_rows_in_dataset
     }
     /// Consumes the builder and constructs a [`RowInfo`](crate::types::RowInfo).
     pub fn build(self) -> crate::types::RowInfo {

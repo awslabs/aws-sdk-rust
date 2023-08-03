@@ -37,6 +37,13 @@ impl DeleteRelationalDatabaseFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteRelationalDatabase as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_relational_database::builders::DeleteRelationalDatabaseInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl DeleteRelationalDatabaseFluentBuilder {
         self.inner = self.inner.set_relational_database_name(input);
         self
     }
+    /// <p>The name of the database that you are deleting.</p>
+    pub fn get_relational_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_relational_database_name()
+    }
     /// <p>Determines whether a final database snapshot is created before your database is deleted. If <code>true</code> is specified, no database snapshot is created. If <code>false</code> is specified, a database snapshot is created before your database is deleted.</p>
     /// <p>You must specify the <code>final relational database snapshot name</code> parameter if the <code>skip final snapshot</code> parameter is <code>false</code>.</p>
     /// <p>Default: <code>false</code> </p>
@@ -146,6 +157,12 @@ impl DeleteRelationalDatabaseFluentBuilder {
     pub fn set_skip_final_snapshot(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_skip_final_snapshot(input);
         self
+    }
+    /// <p>Determines whether a final database snapshot is created before your database is deleted. If <code>true</code> is specified, no database snapshot is created. If <code>false</code> is specified, a database snapshot is created before your database is deleted.</p>
+    /// <p>You must specify the <code>final relational database snapshot name</code> parameter if the <code>skip final snapshot</code> parameter is <code>false</code>.</p>
+    /// <p>Default: <code>false</code> </p>
+    pub fn get_skip_final_snapshot(&self) -> &::std::option::Option<bool> {
+        self.inner.get_skip_final_snapshot()
     }
     /// <p>The name of the database snapshot created if <code>skip final snapshot</code> is <code>false</code>, which is the default value for that parameter.</p> <note>
     /// <p>Specifying this parameter and also specifying the <code>skip final snapshot</code> parameter to <code>true</code> results in an error.</p>
@@ -180,5 +197,18 @@ impl DeleteRelationalDatabaseFluentBuilder {
             .inner
             .set_final_relational_database_snapshot_name(input);
         self
+    }
+    /// <p>The name of the database snapshot created if <code>skip final snapshot</code> is <code>false</code>, which is the default value for that parameter.</p> <note>
+    /// <p>Specifying this parameter and also specifying the <code>skip final snapshot</code> parameter to <code>true</code> results in an error.</p>
+    /// </note>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
+    /// <li> <p>The first and last character must be a letter or number.</p> </li>
+    /// </ul>
+    pub fn get_final_relational_database_snapshot_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_final_relational_database_snapshot_name()
     }
 }

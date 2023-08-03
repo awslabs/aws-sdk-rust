@@ -54,6 +54,10 @@ impl ValidatorBuilder {
         self.r#type = input;
         self
     }
+    /// <p>AppConfig supports validators of type <code>JSON_SCHEMA</code> and <code>LAMBDA</code> </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ValidatorType> {
+        &self.r#type
+    }
     /// <p>Either the JSON Schema content or the Amazon Resource Name (ARN) of an Lambda function.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl ValidatorBuilder {
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
         self
+    }
+    /// <p>Either the JSON Schema content or the Amazon Resource Name (ARN) of an Lambda function.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
     }
     /// Consumes the builder and constructs a [`Validator`](crate::types::Validator).
     pub fn build(self) -> crate::types::Validator {

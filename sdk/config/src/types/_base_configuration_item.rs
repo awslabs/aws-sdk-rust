@@ -175,6 +175,10 @@ impl BaseConfigurationItemBuilder {
         self.version = input;
         self
     }
+    /// <p>The version number of the resource configuration.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
+    }
     /// <p>The 12-digit Amazon Web Services account ID associated with the resource.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -184,6 +188,10 @@ impl BaseConfigurationItemBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>The 12-digit Amazon Web Services account ID associated with the resource.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// <p>The time when the configuration recording was initiated.</p>
     pub fn configuration_item_capture_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -197,6 +205,12 @@ impl BaseConfigurationItemBuilder {
     ) -> Self {
         self.configuration_item_capture_time = input;
         self
+    }
+    /// <p>The time when the configuration recording was initiated.</p>
+    pub fn get_configuration_item_capture_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.configuration_item_capture_time
     }
     /// <p>The configuration item status. The valid values are:</p>
     /// <ul>
@@ -232,6 +246,21 @@ impl BaseConfigurationItemBuilder {
         self.configuration_item_status = input;
         self
     }
+    /// <p>The configuration item status. The valid values are:</p>
+    /// <ul>
+    /// <li> <p>OK – The resource configuration has been updated</p> </li>
+    /// <li> <p>ResourceDiscovered – The resource was newly discovered</p> </li>
+    /// <li> <p>ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the recorder excludes the recording of resources of this type</p> </li>
+    /// <li> <p>ResourceDeleted – The resource was deleted</p> </li>
+    /// <li> <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the recorder excludes the recording of resources of this type</p> </li>
+    /// </ul> <note>
+    /// <p>The CIs do not incur any cost.</p>
+    /// </note>
+    pub fn get_configuration_item_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConfigurationItemStatus> {
+        &self.configuration_item_status
+    }
     /// <p>An identifier that indicates the ordering of the configuration items of a resource.</p>
     pub fn configuration_state_id(
         mut self,
@@ -248,6 +277,10 @@ impl BaseConfigurationItemBuilder {
         self.configuration_state_id = input;
         self
     }
+    /// <p>An identifier that indicates the ordering of the configuration items of a resource.</p>
+    pub fn get_configuration_state_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_state_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -257,6 +290,10 @@ impl BaseConfigurationItemBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The type of Amazon Web Services resource.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
@@ -271,6 +308,10 @@ impl BaseConfigurationItemBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The type of Amazon Web Services resource.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
+    }
     /// <p>The ID of the resource (for example., sg-xxxxxx).</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -280,6 +321,10 @@ impl BaseConfigurationItemBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>The ID of the resource (for example., sg-xxxxxx).</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// <p>The custom name of the resource, if available.</p>
     pub fn resource_name(
@@ -297,6 +342,10 @@ impl BaseConfigurationItemBuilder {
         self.resource_name = input;
         self
     }
+    /// <p>The custom name of the resource, if available.</p>
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_name
+    }
     /// <p>The region where the resource resides.</p>
     pub fn aws_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_region = ::std::option::Option::Some(input.into());
@@ -306,6 +355,10 @@ impl BaseConfigurationItemBuilder {
     pub fn set_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_region = input;
         self
+    }
+    /// <p>The region where the resource resides.</p>
+    pub fn get_aws_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_region
     }
     /// <p>The Availability Zone associated with the resource.</p>
     pub fn availability_zone(
@@ -323,6 +376,10 @@ impl BaseConfigurationItemBuilder {
         self.availability_zone = input;
         self
     }
+    /// <p>The Availability Zone associated with the resource.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p>The time stamp when the resource was created.</p>
     pub fn resource_creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.resource_creation_time = ::std::option::Option::Some(input);
@@ -335,6 +392,12 @@ impl BaseConfigurationItemBuilder {
     ) -> Self {
         self.resource_creation_time = input;
         self
+    }
+    /// <p>The time stamp when the resource was created.</p>
+    pub fn get_resource_creation_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.resource_creation_time
     }
     /// <p>The description of the resource configuration.</p>
     pub fn configuration(
@@ -351,6 +414,10 @@ impl BaseConfigurationItemBuilder {
     ) -> Self {
         self.configuration = input;
         self
+    }
+    /// <p>The description of the resource configuration.</p>
+    pub fn get_configuration(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration
     }
     /// Adds a key-value pair to `supplementary_configuration`.
     ///
@@ -376,6 +443,14 @@ impl BaseConfigurationItemBuilder {
     ) -> Self {
         self.supplementary_configuration = input;
         self
+    }
+    /// <p>Configuration attributes that Config returns for certain resource types to supplement the information returned for the configuration parameter.</p>
+    pub fn get_supplementary_configuration(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.supplementary_configuration
     }
     /// Consumes the builder and constructs a [`BaseConfigurationItem`](crate::types::BaseConfigurationItem).
     pub fn build(self) -> crate::types::BaseConfigurationItem {

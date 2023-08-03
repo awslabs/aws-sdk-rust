@@ -151,6 +151,10 @@ impl RedshiftDestinationConfigurationBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>The database connection string.</p>
     pub fn cluster_jdbcurl(
         mut self,
@@ -167,6 +171,10 @@ impl RedshiftDestinationConfigurationBuilder {
         self.cluster_jdbcurl = input;
         self
     }
+    /// <p>The database connection string.</p>
+    pub fn get_cluster_jdbcurl(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_jdbcurl
+    }
     /// <p>The <code>COPY</code> command.</p>
     pub fn copy_command(mut self, input: crate::types::CopyCommand) -> Self {
         self.copy_command = ::std::option::Option::Some(input);
@@ -180,6 +188,10 @@ impl RedshiftDestinationConfigurationBuilder {
         self.copy_command = input;
         self
     }
+    /// <p>The <code>COPY</code> command.</p>
+    pub fn get_copy_command(&self) -> &::std::option::Option<crate::types::CopyCommand> {
+        &self.copy_command
+    }
     /// <p>The name of the user.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
@@ -190,6 +202,10 @@ impl RedshiftDestinationConfigurationBuilder {
         self.username = input;
         self
     }
+    /// <p>The name of the user.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
+    }
     /// <p>The user password.</p>
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
@@ -199,6 +215,10 @@ impl RedshiftDestinationConfigurationBuilder {
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.password = input;
         self
+    }
+    /// <p>The user password.</p>
+    pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.password
     }
     /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
     pub fn retry_options(mut self, input: crate::types::RedshiftRetryOptions) -> Self {
@@ -212,6 +232,10 @@ impl RedshiftDestinationConfigurationBuilder {
     ) -> Self {
         self.retry_options = input;
         self
+    }
+    /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
+    pub fn get_retry_options(&self) -> &::std::option::Option<crate::types::RedshiftRetryOptions> {
+        &self.retry_options
     }
     /// <p>The configuration for the intermediate Amazon S3 location from which Amazon Redshift obtains data. Restrictions are described in the topic for <code>CreateDeliveryStream</code>.</p>
     /// <p>The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified in <code>RedshiftDestinationConfiguration.S3Configuration</code> because the Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket doesn't support these compression formats.</p>
@@ -227,6 +251,13 @@ impl RedshiftDestinationConfigurationBuilder {
     ) -> Self {
         self.s3_configuration = input;
         self
+    }
+    /// <p>The configuration for the intermediate Amazon S3 location from which Amazon Redshift obtains data. Restrictions are described in the topic for <code>CreateDeliveryStream</code>.</p>
+    /// <p>The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified in <code>RedshiftDestinationConfiguration.S3Configuration</code> because the Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket doesn't support these compression formats.</p>
+    pub fn get_s3_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3DestinationConfiguration> {
+        &self.s3_configuration
     }
     /// <p>The data processing configuration.</p>
     pub fn processing_configuration(
@@ -244,6 +275,12 @@ impl RedshiftDestinationConfigurationBuilder {
         self.processing_configuration = input;
         self
     }
+    /// <p>The data processing configuration.</p>
+    pub fn get_processing_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProcessingConfiguration> {
+        &self.processing_configuration
+    }
     /// <p>The Amazon S3 backup mode. After you create a delivery stream, you can update it to enable Amazon S3 backup if it is disabled. If backup is enabled, you can't update the delivery stream to disable it. </p>
     pub fn s3_backup_mode(mut self, input: crate::types::RedshiftS3BackupMode) -> Self {
         self.s3_backup_mode = ::std::option::Option::Some(input);
@@ -256,6 +293,10 @@ impl RedshiftDestinationConfigurationBuilder {
     ) -> Self {
         self.s3_backup_mode = input;
         self
+    }
+    /// <p>The Amazon S3 backup mode. After you create a delivery stream, you can update it to enable Amazon S3 backup if it is disabled. If backup is enabled, you can't update the delivery stream to disable it. </p>
+    pub fn get_s3_backup_mode(&self) -> &::std::option::Option<crate::types::RedshiftS3BackupMode> {
+        &self.s3_backup_mode
     }
     /// <p>The configuration for backup in Amazon S3.</p>
     pub fn s3_backup_configuration(
@@ -273,6 +314,12 @@ impl RedshiftDestinationConfigurationBuilder {
         self.s3_backup_configuration = input;
         self
     }
+    /// <p>The configuration for backup in Amazon S3.</p>
+    pub fn get_s3_backup_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3DestinationConfiguration> {
+        &self.s3_backup_configuration
+    }
     /// <p>The CloudWatch logging options for your delivery stream.</p>
     pub fn cloud_watch_logging_options(
         mut self,
@@ -288,6 +335,12 @@ impl RedshiftDestinationConfigurationBuilder {
     ) -> Self {
         self.cloud_watch_logging_options = input;
         self
+    }
+    /// <p>The CloudWatch logging options for your delivery stream.</p>
+    pub fn get_cloud_watch_logging_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::CloudWatchLoggingOptions> {
+        &self.cloud_watch_logging_options
     }
     /// Consumes the builder and constructs a [`RedshiftDestinationConfiguration`](crate::types::RedshiftDestinationConfiguration).
     pub fn build(self) -> crate::types::RedshiftDestinationConfiguration {

@@ -58,6 +58,10 @@ impl SubscriptionBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The ARN of the assessment template that is used during the event for which the SNS notification is sent.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// <p>The ARN of the Amazon Simple Notification Service (SNS) topic to which the SNS notifications are sent.</p>
     pub fn topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_arn = ::std::option::Option::Some(input.into());
@@ -67,6 +71,10 @@ impl SubscriptionBuilder {
     pub fn set_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.topic_arn = input;
         self
+    }
+    /// <p>The ARN of the Amazon Simple Notification Service (SNS) topic to which the SNS notifications are sent.</p>
+    pub fn get_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_arn
     }
     /// Appends an item to `event_subscriptions`.
     ///
@@ -86,6 +94,12 @@ impl SubscriptionBuilder {
     ) -> Self {
         self.event_subscriptions = input;
         self
+    }
+    /// <p>The list of existing event subscriptions.</p>
+    pub fn get_event_subscriptions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventSubscription>> {
+        &self.event_subscriptions
     }
     /// Consumes the builder and constructs a [`Subscription`](crate::types::Subscription).
     pub fn build(self) -> crate::types::Subscription {

@@ -36,6 +36,13 @@ impl DetectDominantLanguageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DetectDominantLanguage as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::detect_dominant_language::builders::DetectDominantLanguageInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +132,9 @@ impl DetectDominantLanguageFluentBuilder {
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_text(input);
         self
+    }
+    /// <p>A UTF-8 text string. The string must contain at least 20 characters. The maximum string size is 100 KB.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_text()
     }
 }

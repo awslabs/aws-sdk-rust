@@ -61,6 +61,10 @@ impl TagBuilder {
         self.key = input;
         self
     }
+    /// <p>A key is the required name of the tag. The string value can be 1-128 Unicode characters in length and can't be prefixed with "aws:" or "dms:". The string can only contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java regular expressions: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>A value is the optional value of the tag. The string value can be 1-256 Unicode characters in length and can't be prefixed with "aws:" or "dms:". The string can only contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java regular expressions: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl TagBuilder {
         self.value = input;
         self
     }
+    /// <p>A value is the optional value of the tag. The string value can be 1-256 Unicode characters in length and can't be prefixed with "aws:" or "dms:". The string can only contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java regular expressions: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the resource for which the tag is created.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
@@ -80,6 +88,10 @@ impl TagBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the resource for which the tag is created.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// Consumes the builder and constructs a [`Tag`](crate::types::Tag).
     pub fn build(self) -> crate::types::Tag {

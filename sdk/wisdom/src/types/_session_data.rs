@@ -92,6 +92,10 @@ impl SessionDataBuilder {
         self.session_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the session.</p>
+    pub fn get_session_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_arn
+    }
     /// <p>The identifier of the session.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
@@ -101,6 +105,10 @@ impl SessionDataBuilder {
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_id = input;
         self
+    }
+    /// <p>The identifier of the session.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
     }
     /// <p>The name of the session.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -112,6 +120,10 @@ impl SessionDataBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the session.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the session.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -121,6 +133,10 @@ impl SessionDataBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the session.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -147,6 +163,14 @@ impl SessionDataBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The configuration information for the session integration.</p>
     pub fn integration_configuration(
         mut self,
@@ -162,6 +186,12 @@ impl SessionDataBuilder {
     ) -> Self {
         self.integration_configuration = input;
         self
+    }
+    /// <p>The configuration information for the session integration.</p>
+    pub fn get_integration_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SessionIntegrationConfiguration> {
+        &self.integration_configuration
     }
     /// Consumes the builder and constructs a [`SessionData`](crate::types::SessionData).
     pub fn build(self) -> crate::types::SessionData {

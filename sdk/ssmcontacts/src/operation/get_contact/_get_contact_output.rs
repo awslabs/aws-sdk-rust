@@ -78,6 +78,10 @@ impl GetContactOutputBuilder {
         self.contact_arn = input;
         self
     }
+    /// <p>The ARN of the contact or escalation plan.</p>
+    pub fn get_contact_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_arn
+    }
     /// <p>The alias of the contact or escalation plan. The alias is unique and identifiable.</p>
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias = ::std::option::Option::Some(input.into());
@@ -87,6 +91,10 @@ impl GetContactOutputBuilder {
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alias = input;
         self
+    }
+    /// <p>The alias of the contact or escalation plan. The alias is unique and identifiable.</p>
+    pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias
     }
     /// <p>The full name of the contact or escalation plan.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -98,6 +106,10 @@ impl GetContactOutputBuilder {
         self.display_name = input;
         self
     }
+    /// <p>The full name of the contact or escalation plan.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
+    }
     /// <p>The type of contact, either <code>PERSONAL</code> or <code>ESCALATION</code>.</p>
     pub fn r#type(mut self, input: crate::types::ContactType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -108,6 +120,10 @@ impl GetContactOutputBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of contact, either <code>PERSONAL</code> or <code>ESCALATION</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ContactType> {
+        &self.r#type
+    }
     /// <p>Details about the specific timing or stages and targets of the escalation plan or engagement plan.</p>
     pub fn plan(mut self, input: crate::types::Plan) -> Self {
         self.plan = ::std::option::Option::Some(input);
@@ -117,6 +133,10 @@ impl GetContactOutputBuilder {
     pub fn set_plan(mut self, input: ::std::option::Option<crate::types::Plan>) -> Self {
         self.plan = input;
         self
+    }
+    /// <p>Details about the specific timing or stages and targets of the escalation plan or engagement plan.</p>
+    pub fn get_plan(&self) -> &::std::option::Option<crate::types::Plan> {
+        &self.plan
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -65,6 +65,10 @@ impl GetPartitionIndexesInputBuilder {
         self.catalog_id = input;
         self
     }
+    /// <p>The catalog ID where the table resides.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// <p>Specifies the name of a database from which you want to retrieve partition indexes.</p>
     pub fn database_name(
         mut self,
@@ -81,6 +85,10 @@ impl GetPartitionIndexesInputBuilder {
         self.database_name = input;
         self
     }
+    /// <p>Specifies the name of a database from which you want to retrieve partition indexes.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>Specifies the name of a table for which you want to retrieve the partition indexes.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl GetPartitionIndexesInputBuilder {
         self.table_name = input;
         self
     }
+    /// <p>Specifies the name of a table for which you want to retrieve the partition indexes.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
+    }
     /// <p>A continuation token, included if this is a continuation call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -100,6 +112,10 @@ impl GetPartitionIndexesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A continuation token, included if this is a continuation call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`GetPartitionIndexesInput`](crate::operation::get_partition_indexes::GetPartitionIndexesInput).
     pub fn build(

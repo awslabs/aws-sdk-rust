@@ -49,6 +49,10 @@ impl PositionBuilder {
         self.line = input;
         self
     }
+    /// <p>The line containing the specified position in the document.</p>
+    pub fn get_line(&self) -> &::std::option::Option<i32> {
+        &self.line
+    }
     /// <p>The column in the line containing the specified position in the document.</p>
     pub fn column(mut self, input: i32) -> Self {
         self.column = ::std::option::Option::Some(input);
@@ -58,6 +62,10 @@ impl PositionBuilder {
     pub fn set_column(mut self, input: ::std::option::Option<i32>) -> Self {
         self.column = input;
         self
+    }
+    /// <p>The column in the line containing the specified position in the document.</p>
+    pub fn get_column(&self) -> &::std::option::Option<i32> {
+        &self.column
     }
     /// Consumes the builder and constructs a [`Position`](crate::types::Position).
     pub fn build(self) -> crate::types::Position {

@@ -59,6 +59,10 @@ impl SalesforceStandardObjectAttachmentConfigurationBuilder {
         self.document_title_field_name = input;
         self
     }
+    /// <p>The name of the field used for the document title.</p>
+    pub fn get_document_title_field_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_title_field_name
+    }
     /// Appends an item to `field_mappings`.
     ///
     /// To override the contents of this collection use [`set_field_mappings`](Self::set_field_mappings).
@@ -77,6 +81,12 @@ impl SalesforceStandardObjectAttachmentConfigurationBuilder {
     ) -> Self {
         self.field_mappings = input;
         self
+    }
+    /// <p>One or more objects that map fields in attachments to Amazon Kendra index fields.</p>
+    pub fn get_field_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>> {
+        &self.field_mappings
     }
     /// Consumes the builder and constructs a [`SalesforceStandardObjectAttachmentConfiguration`](crate::types::SalesforceStandardObjectAttachmentConfiguration).
     pub fn build(self) -> crate::types::SalesforceStandardObjectAttachmentConfiguration {

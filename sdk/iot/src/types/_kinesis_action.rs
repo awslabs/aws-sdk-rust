@@ -56,6 +56,10 @@ impl KinesisActionBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The ARN of the IAM role that grants access to the Amazon Kinesis stream.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>The name of the Amazon Kinesis stream.</p>
     pub fn stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_name = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl KinesisActionBuilder {
     pub fn set_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_name = input;
         self
+    }
+    /// <p>The name of the Amazon Kinesis stream.</p>
+    pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_name
     }
     /// <p>The partition key.</p>
     pub fn partition_key(
@@ -81,6 +89,10 @@ impl KinesisActionBuilder {
     ) -> Self {
         self.partition_key = input;
         self
+    }
+    /// <p>The partition key.</p>
+    pub fn get_partition_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.partition_key
     }
     /// Consumes the builder and constructs a [`KinesisAction`](crate::types::KinesisAction).
     pub fn build(self) -> crate::types::KinesisAction {

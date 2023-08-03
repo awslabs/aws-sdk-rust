@@ -70,6 +70,10 @@ impl UpdateLocationNfsInputBuilder {
         self.location_arn = input;
         self
     }
+    /// <p>Specifies the Amazon Resource Name (ARN) of the NFS location that you want to update.</p>
+    pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location_arn
+    }
     /// <p>Specifies the subdirectory in your NFS file system that DataSync uses to read from or write to during a transfer. The NFS path should be exported by the NFS server, or a subdirectory of that path. The path should be such that it can be mounted by other NFS clients in your network.</p>
     /// <p>To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS client that has access to your server. You can specify any directory that appears in the results, and any subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos authentication. </p>
     /// <p>To transfer all the data in the folder that you specified, DataSync must have permissions to read all the data. To ensure this, either configure the NFS export with <code>no_root_squash</code>, or ensure that the files you want DataSync to access have permissions that allow read access for all users. Doing either option enables the agent to read the files. For the agent to access directories, you must additionally enable all execute access.</p>
@@ -86,6 +90,13 @@ impl UpdateLocationNfsInputBuilder {
         self.subdirectory = input;
         self
     }
+    /// <p>Specifies the subdirectory in your NFS file system that DataSync uses to read from or write to during a transfer. The NFS path should be exported by the NFS server, or a subdirectory of that path. The path should be such that it can be mounted by other NFS clients in your network.</p>
+    /// <p>To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS client that has access to your server. You can specify any directory that appears in the results, and any subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos authentication. </p>
+    /// <p>To transfer all the data in the folder that you specified, DataSync must have permissions to read all the data. To ensure this, either configure the NFS export with <code>no_root_squash</code>, or ensure that the files you want DataSync to access have permissions that allow read access for all users. Doing either option enables the agent to read the files. For the agent to access directories, you must additionally enable all execute access.</p>
+    /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
+    pub fn get_subdirectory(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subdirectory
+    }
     /// <p>A list of Amazon Resource Names (ARNs) of agents to use for a Network File System (NFS) location.</p>
     pub fn on_prem_config(mut self, input: crate::types::OnPremConfig) -> Self {
         self.on_prem_config = ::std::option::Option::Some(input);
@@ -99,6 +110,10 @@ impl UpdateLocationNfsInputBuilder {
         self.on_prem_config = input;
         self
     }
+    /// <p>A list of Amazon Resource Names (ARNs) of agents to use for a Network File System (NFS) location.</p>
+    pub fn get_on_prem_config(&self) -> &::std::option::Option<crate::types::OnPremConfig> {
+        &self.on_prem_config
+    }
     /// <p>Specifies how DataSync can access a location using the NFS protocol.</p>
     pub fn mount_options(mut self, input: crate::types::NfsMountOptions) -> Self {
         self.mount_options = ::std::option::Option::Some(input);
@@ -111,6 +126,10 @@ impl UpdateLocationNfsInputBuilder {
     ) -> Self {
         self.mount_options = input;
         self
+    }
+    /// <p>Specifies how DataSync can access a location using the NFS protocol.</p>
+    pub fn get_mount_options(&self) -> &::std::option::Option<crate::types::NfsMountOptions> {
+        &self.mount_options
     }
     /// Consumes the builder and constructs a [`UpdateLocationNfsInput`](crate::operation::update_location_nfs::UpdateLocationNfsInput).
     pub fn build(

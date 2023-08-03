@@ -59,6 +59,10 @@ impl DescribeReservedDbInstancesOutputBuilder {
         self.marker = input;
         self
     }
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// Appends an item to `reserved_db_instances`.
     ///
     /// To override the contents of this collection use [`set_reserved_db_instances`](Self::set_reserved_db_instances).
@@ -77,6 +81,12 @@ impl DescribeReservedDbInstancesOutputBuilder {
     ) -> Self {
         self.reserved_db_instances = input;
         self
+    }
+    /// <p>A list of reserved DB instances.</p>
+    pub fn get_reserved_db_instances(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedDbInstance>> {
+        &self.reserved_db_instances
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

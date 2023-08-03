@@ -72,6 +72,10 @@ impl RescoreExecutionPlanSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the rescore execution plan.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The identifier of the rescore execution plan.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl RescoreExecutionPlanSummaryBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The identifier of the rescore execution plan.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The Unix timestamp when the rescore execution plan was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -95,6 +103,10 @@ impl RescoreExecutionPlanSummaryBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The Unix timestamp when the rescore execution plan was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The Unix timestamp when the rescore execution plan was last updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
@@ -108,6 +120,10 @@ impl RescoreExecutionPlanSummaryBuilder {
         self.updated_at = input;
         self
     }
+    /// <p>The Unix timestamp when the rescore execution plan was last updated.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
+    }
     /// <p>The current status of the rescore execution plan. When the value is <code>ACTIVE</code>, the rescore execution plan is ready for use.</p>
     pub fn status(mut self, input: crate::types::RescoreExecutionPlanStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -120,6 +136,10 @@ impl RescoreExecutionPlanSummaryBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the rescore execution plan. When the value is <code>ACTIVE</code>, the rescore execution plan is ready for use.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::RescoreExecutionPlanStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`RescoreExecutionPlanSummary`](crate::types::RescoreExecutionPlanSummary).
     pub fn build(self) -> crate::types::RescoreExecutionPlanSummary {

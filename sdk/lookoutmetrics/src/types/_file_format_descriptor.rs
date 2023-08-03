@@ -55,6 +55,12 @@ impl FileFormatDescriptorBuilder {
         self.csv_format_descriptor = input;
         self
     }
+    /// <p>Contains information about how a source CSV data file should be analyzed.</p>
+    pub fn get_csv_format_descriptor(
+        &self,
+    ) -> &::std::option::Option<crate::types::CsvFormatDescriptor> {
+        &self.csv_format_descriptor
+    }
     /// <p>Contains information about how a source JSON data file should be analyzed.</p>
     pub fn json_format_descriptor(mut self, input: crate::types::JsonFormatDescriptor) -> Self {
         self.json_format_descriptor = ::std::option::Option::Some(input);
@@ -67,6 +73,12 @@ impl FileFormatDescriptorBuilder {
     ) -> Self {
         self.json_format_descriptor = input;
         self
+    }
+    /// <p>Contains information about how a source JSON data file should be analyzed.</p>
+    pub fn get_json_format_descriptor(
+        &self,
+    ) -> &::std::option::Option<crate::types::JsonFormatDescriptor> {
+        &self.json_format_descriptor
     }
     /// Consumes the builder and constructs a [`FileFormatDescriptor`](crate::types::FileFormatDescriptor).
     pub fn build(self) -> crate::types::FileFormatDescriptor {

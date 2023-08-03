@@ -97,6 +97,10 @@ impl DecreaseReplicaCountInputBuilder {
         self.replication_group_id = input;
         self
     }
+    /// <p>The id of the replication group from which you want to remove replica nodes.</p>
+    pub fn get_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_group_id
+    }
     /// <p>The number of read replica nodes you want at the completion of this operation. For Redis (cluster mode disabled) replication groups, this is the number of replica nodes in the replication group. For Redis (cluster mode enabled) replication groups, this is the number of replica nodes in each of the replication group's node groups.</p>
     /// <p>The minimum number of replicas in a shard or replication group is:</p>
     /// <ul>
@@ -125,6 +129,19 @@ impl DecreaseReplicaCountInputBuilder {
         self.new_replica_count = input;
         self
     }
+    /// <p>The number of read replica nodes you want at the completion of this operation. For Redis (cluster mode disabled) replication groups, this is the number of replica nodes in the replication group. For Redis (cluster mode enabled) replication groups, this is the number of replica nodes in each of the replication group's node groups.</p>
+    /// <p>The minimum number of replicas in a shard or replication group is:</p>
+    /// <ul>
+    /// <li> <p>Redis (cluster mode disabled)</p>
+    /// <ul>
+    /// <li> <p>If Multi-AZ is enabled: 1</p> </li>
+    /// <li> <p>If Multi-AZ is not enabled: 0</p> </li>
+    /// </ul> </li>
+    /// <li> <p>Redis (cluster mode enabled): 0 (though you will not be able to failover to a replica if your primary node fails)</p> </li>
+    /// </ul>
+    pub fn get_new_replica_count(&self) -> &::std::option::Option<i32> {
+        &self.new_replica_count
+    }
     /// Appends an item to `replica_configuration`.
     ///
     /// To override the contents of this collection use [`set_replica_configuration`](Self::set_replica_configuration).
@@ -143,6 +160,12 @@ impl DecreaseReplicaCountInputBuilder {
     ) -> Self {
         self.replica_configuration = input;
         self
+    }
+    /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard in a Redis (cluster mode enabled) replication group. The <code>ConfigureShard</code> has three members: <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
+    pub fn get_replica_configuration(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigureShard>> {
+        &self.replica_configuration
     }
     /// Appends an item to `replicas_to_remove`.
     ///
@@ -166,6 +189,12 @@ impl DecreaseReplicaCountInputBuilder {
         self.replicas_to_remove = input;
         self
     }
+    /// <p>A list of the node ids to remove from the replication group or node group (shard).</p>
+    pub fn get_replicas_to_remove(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.replicas_to_remove
+    }
     /// <p>If <code>True</code>, the number of replica nodes is decreased immediately. <code>ApplyImmediately=False</code> is not currently supported.</p>
     pub fn apply_immediately(mut self, input: bool) -> Self {
         self.apply_immediately = ::std::option::Option::Some(input);
@@ -175,6 +204,10 @@ impl DecreaseReplicaCountInputBuilder {
     pub fn set_apply_immediately(mut self, input: ::std::option::Option<bool>) -> Self {
         self.apply_immediately = input;
         self
+    }
+    /// <p>If <code>True</code>, the number of replica nodes is decreased immediately. <code>ApplyImmediately=False</code> is not currently supported.</p>
+    pub fn get_apply_immediately(&self) -> &::std::option::Option<bool> {
+        &self.apply_immediately
     }
     /// Consumes the builder and constructs a [`DecreaseReplicaCountInput`](crate::operation::decrease_replica_count::DecreaseReplicaCountInput).
     pub fn build(

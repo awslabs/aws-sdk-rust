@@ -50,6 +50,12 @@ impl DistributeDatasetEntriesInputBuilder {
         self.datasets = input;
         self
     }
+    /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to the same project. The test dataset must be empty. </p>
+    pub fn get_datasets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DistributeDataset>> {
+        &self.datasets
+    }
     /// Consumes the builder and constructs a [`DistributeDatasetEntriesInput`](crate::operation::distribute_dataset_entries::DistributeDatasetEntriesInput).
     pub fn build(
         self,

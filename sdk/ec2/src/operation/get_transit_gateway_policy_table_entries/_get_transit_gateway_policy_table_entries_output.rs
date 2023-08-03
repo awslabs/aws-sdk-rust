@@ -64,6 +64,12 @@ impl GetTransitGatewayPolicyTableEntriesOutputBuilder {
         self.transit_gateway_policy_table_entries = input;
         self
     }
+    /// <p>The entries for the transit gateway policy table.</p>
+    pub fn get_transit_gateway_policy_table_entries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayPolicyTableEntry>> {
+        &self.transit_gateway_policy_table_entries
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

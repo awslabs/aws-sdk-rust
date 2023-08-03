@@ -50,6 +50,12 @@ impl GetStageDeploymentOutputBuilder {
         self.stage_deployment = input;
         self
     }
+    /// <p>Properties that provide details of the stage deployment.</p>
+    pub fn get_stage_deployment(
+        &self,
+    ) -> &::std::option::Option<crate::types::StageDeploymentDetails> {
+        &self.stage_deployment
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

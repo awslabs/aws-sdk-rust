@@ -41,6 +41,10 @@ impl GetCatalogImportStatusInputBuilder {
         self.catalog_id = input;
         self
     }
+    /// <p>The ID of the catalog to migrate. Currently, this should be the Amazon Web Services account ID.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// Consumes the builder and constructs a [`GetCatalogImportStatusInput`](crate::operation::get_catalog_import_status::GetCatalogImportStatusInput).
     pub fn build(
         self,

@@ -68,6 +68,10 @@ impl CreateConfiguredTableAnalysisRuleInputBuilder {
         self.configured_table_identifier = input;
         self
     }
+    /// <p>The identifier for the configured table to create the analysis rule for. Currently accepts the configured table ID. </p>
+    pub fn get_configured_table_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configured_table_identifier
+    }
     /// <p>The type of analysis rule. Valid values are AGGREGATION and LIST.</p>
     pub fn analysis_rule_type(
         mut self,
@@ -84,6 +88,12 @@ impl CreateConfiguredTableAnalysisRuleInputBuilder {
         self.analysis_rule_type = input;
         self
     }
+    /// <p>The type of analysis rule. Valid values are AGGREGATION and LIST.</p>
+    pub fn get_analysis_rule_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConfiguredTableAnalysisRuleType> {
+        &self.analysis_rule_type
+    }
     /// <p>The entire created configured table analysis rule object.</p>
     pub fn analysis_rule_policy(
         mut self,
@@ -99,6 +109,12 @@ impl CreateConfiguredTableAnalysisRuleInputBuilder {
     ) -> Self {
         self.analysis_rule_policy = input;
         self
+    }
+    /// <p>The entire created configured table analysis rule object.</p>
+    pub fn get_analysis_rule_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConfiguredTableAnalysisRulePolicy> {
+        &self.analysis_rule_policy
     }
     /// Consumes the builder and constructs a [`CreateConfiguredTableAnalysisRuleInput`](crate::operation::create_configured_table_analysis_rule::CreateConfiguredTableAnalysisRuleInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_configured_table_analysis_rule::CreateConfiguredTableAnalysisRuleInput, ::aws_smithy_http::operation::error::BuildError>{

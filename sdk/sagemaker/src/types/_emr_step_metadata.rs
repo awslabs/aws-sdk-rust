@@ -64,6 +64,10 @@ impl EmrStepMetadataBuilder {
         self.cluster_id = input;
         self
     }
+    /// <p>The identifier of the EMR cluster.</p>
+    pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_id
+    }
     /// <p>The identifier of the EMR cluster step.</p>
     pub fn step_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.step_id = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl EmrStepMetadataBuilder {
         self.step_id = input;
         self
     }
+    /// <p>The identifier of the EMR cluster step.</p>
+    pub fn get_step_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.step_id
+    }
     /// <p>The name of the EMR cluster step.</p>
     pub fn step_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.step_name = ::std::option::Option::Some(input.into());
@@ -83,6 +91,10 @@ impl EmrStepMetadataBuilder {
     pub fn set_step_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.step_name = input;
         self
+    }
+    /// <p>The name of the EMR cluster step.</p>
+    pub fn get_step_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.step_name
     }
     /// <p>The path to the log file where the cluster step's failure root cause is recorded.</p>
     pub fn log_file_path(
@@ -99,6 +111,10 @@ impl EmrStepMetadataBuilder {
     ) -> Self {
         self.log_file_path = input;
         self
+    }
+    /// <p>The path to the log file where the cluster step's failure root cause is recorded.</p>
+    pub fn get_log_file_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_file_path
     }
     /// Consumes the builder and constructs a [`EmrStepMetadata`](crate::types::EmrStepMetadata).
     pub fn build(self) -> crate::types::EmrStepMetadata {

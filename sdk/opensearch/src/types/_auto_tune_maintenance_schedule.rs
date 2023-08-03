@@ -62,6 +62,10 @@ impl AutoTuneMaintenanceScheduleBuilder {
         self.start_at = input;
         self
     }
+    /// <p>The Epoch timestamp at which the Auto-Tune maintenance schedule starts.</p>
+    pub fn get_start_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_at
+    }
     /// <p>The duration of the maintenance schedule. For example, <code>"Duration": {"Value": 2, "Unit": "HOURS"}</code>.</p>
     pub fn duration(mut self, input: crate::types::Duration) -> Self {
         self.duration = ::std::option::Option::Some(input);
@@ -71,6 +75,10 @@ impl AutoTuneMaintenanceScheduleBuilder {
     pub fn set_duration(mut self, input: ::std::option::Option<crate::types::Duration>) -> Self {
         self.duration = input;
         self
+    }
+    /// <p>The duration of the maintenance schedule. For example, <code>"Duration": {"Value": 2, "Unit": "HOURS"}</code>.</p>
+    pub fn get_duration(&self) -> &::std::option::Option<crate::types::Duration> {
+        &self.duration
     }
     /// <p>A cron expression for a recurring maintenance schedule during which Auto-Tune can deploy changes.</p>
     pub fn cron_expression_for_recurrence(
@@ -87,6 +95,12 @@ impl AutoTuneMaintenanceScheduleBuilder {
     ) -> Self {
         self.cron_expression_for_recurrence = input;
         self
+    }
+    /// <p>A cron expression for a recurring maintenance schedule during which Auto-Tune can deploy changes.</p>
+    pub fn get_cron_expression_for_recurrence(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.cron_expression_for_recurrence
     }
     /// Consumes the builder and constructs a [`AutoTuneMaintenanceSchedule`](crate::types::AutoTuneMaintenanceSchedule).
     pub fn build(self) -> crate::types::AutoTuneMaintenanceSchedule {

@@ -51,6 +51,10 @@ impl StartProtectedQueryOutputBuilder {
         self.protected_query = input;
         self
     }
+    /// <p>The protected query.</p>
+    pub fn get_protected_query(&self) -> &::std::option::Option<crate::types::ProtectedQuery> {
+        &self.protected_query
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

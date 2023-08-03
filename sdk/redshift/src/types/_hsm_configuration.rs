@@ -78,6 +78,12 @@ impl HsmConfigurationBuilder {
         self.hsm_configuration_identifier = input;
         self
     }
+    /// <p>The name of the Amazon Redshift HSM configuration.</p>
+    pub fn get_hsm_configuration_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.hsm_configuration_identifier
+    }
     /// <p>A text description of the HSM configuration.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -87,6 +93,10 @@ impl HsmConfigurationBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A text description of the HSM configuration.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The IP address that the Amazon Redshift cluster must use to access the HSM.</p>
     pub fn hsm_ip_address(
@@ -104,6 +114,10 @@ impl HsmConfigurationBuilder {
         self.hsm_ip_address = input;
         self
     }
+    /// <p>The IP address that the Amazon Redshift cluster must use to access the HSM.</p>
+    pub fn get_hsm_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hsm_ip_address
+    }
     /// <p>The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption keys.</p>
     pub fn hsm_partition_name(
         mut self,
@@ -119,6 +133,10 @@ impl HsmConfigurationBuilder {
     ) -> Self {
         self.hsm_partition_name = input;
         self
+    }
+    /// <p>The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption keys.</p>
+    pub fn get_hsm_partition_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hsm_partition_name
     }
     /// Appends an item to `tags`.
     ///
@@ -138,6 +156,10 @@ impl HsmConfigurationBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The list of tags for the HSM configuration.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`HsmConfiguration`](crate::types::HsmConfiguration).
     pub fn build(self) -> crate::types::HsmConfiguration {

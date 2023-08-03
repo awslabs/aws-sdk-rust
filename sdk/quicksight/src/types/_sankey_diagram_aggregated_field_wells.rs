@@ -65,6 +65,12 @@ impl SankeyDiagramAggregatedFieldWellsBuilder {
         self.source = input;
         self
     }
+    /// <p>The source field wells of a sankey diagram.</p>
+    pub fn get_source(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
+        &self.source
+    }
     /// Appends an item to `destination`.
     ///
     /// To override the contents of this collection use [`set_destination`](Self::set_destination).
@@ -84,6 +90,12 @@ impl SankeyDiagramAggregatedFieldWellsBuilder {
         self.destination = input;
         self
     }
+    /// <p>The destination field wells of a sankey diagram.</p>
+    pub fn get_destination(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
+        &self.destination
+    }
     /// Appends an item to `weight`.
     ///
     /// To override the contents of this collection use [`set_weight`](Self::set_weight).
@@ -102,6 +114,12 @@ impl SankeyDiagramAggregatedFieldWellsBuilder {
     ) -> Self {
         self.weight = input;
         self
+    }
+    /// <p>The weight field wells of a sankey diagram.</p>
+    pub fn get_weight(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
+        &self.weight
     }
     /// Consumes the builder and constructs a [`SankeyDiagramAggregatedFieldWells`](crate::types::SankeyDiagramAggregatedFieldWells).
     pub fn build(self) -> crate::types::SankeyDiagramAggregatedFieldWells {

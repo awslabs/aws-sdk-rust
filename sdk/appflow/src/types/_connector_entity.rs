@@ -56,6 +56,10 @@ impl ConnectorEntityBuilder {
         self.name = input;
         self
     }
+    /// <p> The name of the connector entity. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p> The label applied to the connector entity. </p>
     pub fn label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl ConnectorEntityBuilder {
         self.label = input;
         self
     }
+    /// <p> The label applied to the connector entity. </p>
+    pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label
+    }
     /// <p> Specifies whether the connector entity is a parent or a category and has more entities nested underneath it. If another call is made with <code>entitiesPath = "the_current_entity_name_with_hasNestedEntities_true"</code>, then it returns the nested entities underneath it. This provides a way to retrieve all supported entities in a recursive fashion. </p>
     pub fn has_nested_entities(mut self, input: bool) -> Self {
         self.has_nested_entities = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl ConnectorEntityBuilder {
     pub fn set_has_nested_entities(mut self, input: ::std::option::Option<bool>) -> Self {
         self.has_nested_entities = input;
         self
+    }
+    /// <p> Specifies whether the connector entity is a parent or a category and has more entities nested underneath it. If another call is made with <code>entitiesPath = "the_current_entity_name_with_hasNestedEntities_true"</code>, then it returns the nested entities underneath it. This provides a way to retrieve all supported entities in a recursive fashion. </p>
+    pub fn get_has_nested_entities(&self) -> &::std::option::Option<bool> {
+        &self.has_nested_entities
     }
     /// Consumes the builder and constructs a [`ConnectorEntity`](crate::types::ConnectorEntity).
     pub fn build(self) -> crate::types::ConnectorEntity {

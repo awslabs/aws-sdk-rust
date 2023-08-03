@@ -50,6 +50,10 @@ impl GetVoiceConnectorOutputBuilder {
         self.voice_connector = input;
         self
     }
+    /// <p>The Amazon Chime Voice Connector details.</p>
+    pub fn get_voice_connector(&self) -> &::std::option::Option<crate::types::VoiceConnector> {
+        &self.voice_connector
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -52,6 +52,10 @@ impl RegexPatternSetUpdateBuilder {
         self.action = input;
         self
     }
+    /// <p>Specifies whether to insert or delete a <code>RegexPatternString</code>.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::ChangeAction> {
+        &self.action
+    }
     /// <p>Specifies the regular expression (regex) pattern that you want AWS WAF to search for, such as <code>B[a@]dB[o0]t</code>.</p>
     pub fn regex_pattern_string(
         mut self,
@@ -67,6 +71,10 @@ impl RegexPatternSetUpdateBuilder {
     ) -> Self {
         self.regex_pattern_string = input;
         self
+    }
+    /// <p>Specifies the regular expression (regex) pattern that you want AWS WAF to search for, such as <code>B[a@]dB[o0]t</code>.</p>
+    pub fn get_regex_pattern_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.regex_pattern_string
     }
     /// Consumes the builder and constructs a [`RegexPatternSetUpdate`](crate::types::RegexPatternSetUpdate).
     pub fn build(self) -> crate::types::RegexPatternSetUpdate {

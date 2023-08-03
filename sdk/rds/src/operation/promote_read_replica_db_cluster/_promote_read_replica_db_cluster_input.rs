@@ -66,6 +66,15 @@ impl PromoteReadReplicaDbClusterInputBuilder {
         self.db_cluster_identifier = input;
         self
     }
+    /// <p>The identifier of the DB cluster read replica to promote. This parameter isn't case-sensitive.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match the identifier of an existing DB cluster read replica.</p> </li>
+    /// </ul>
+    /// <p>Example: <code>my-cluster-replica1</code> </p>
+    pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_identifier
+    }
     /// Consumes the builder and constructs a [`PromoteReadReplicaDbClusterInput`](crate::operation::promote_read_replica_db_cluster::PromoteReadReplicaDbClusterInput).
     pub fn build(
         self,

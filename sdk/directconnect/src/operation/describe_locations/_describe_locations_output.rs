@@ -56,6 +56,10 @@ impl DescribeLocationsOutputBuilder {
         self.locations = input;
         self
     }
+    /// <p>The locations.</p>
+    pub fn get_locations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Location>> {
+        &self.locations
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

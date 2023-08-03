@@ -56,6 +56,10 @@ impl ProjectSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the project in the space.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The friendly name displayed to users of the project in Amazon CodeCatalyst.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl ProjectSummaryBuilder {
         self.display_name = input;
         self
     }
+    /// <p>The friendly name displayed to users of the project in Amazon CodeCatalyst.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
+    }
     /// <p>The description of the project.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl ProjectSummaryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the project.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`ProjectSummary`](crate::types::ProjectSummary).
     pub fn build(self) -> crate::types::ProjectSummary {

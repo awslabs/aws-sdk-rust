@@ -48,6 +48,10 @@ impl BinWidthOptionsBuilder {
         self.value = input;
         self
     }
+    /// <p>The options that determine the bin width value.</p>
+    pub fn get_value(&self) -> &::std::option::Option<f64> {
+        &self.value
+    }
     /// <p>The options that determine the bin count limit.</p>
     pub fn bin_count_limit(mut self, input: i64) -> Self {
         self.bin_count_limit = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl BinWidthOptionsBuilder {
     pub fn set_bin_count_limit(mut self, input: ::std::option::Option<i64>) -> Self {
         self.bin_count_limit = input;
         self
+    }
+    /// <p>The options that determine the bin count limit.</p>
+    pub fn get_bin_count_limit(&self) -> &::std::option::Option<i64> {
+        &self.bin_count_limit
     }
     /// Consumes the builder and constructs a [`BinWidthOptions`](crate::types::BinWidthOptions).
     pub fn build(self) -> crate::types::BinWidthOptions {

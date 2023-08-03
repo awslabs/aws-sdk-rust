@@ -51,6 +51,10 @@ impl CoverageDateFilterBuilder {
         self.start_inclusive = input;
         self
     }
+    /// <p>A timestamp representing the start of the time period to filter results by.</p>
+    pub fn get_start_inclusive(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_inclusive
+    }
     /// <p>A timestamp representing the end of the time period to filter results by.</p>
     pub fn end_inclusive(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_inclusive = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl CoverageDateFilterBuilder {
     ) -> Self {
         self.end_inclusive = input;
         self
+    }
+    /// <p>A timestamp representing the end of the time period to filter results by.</p>
+    pub fn get_end_inclusive(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_inclusive
     }
     /// Consumes the builder and constructs a [`CoverageDateFilter`](crate::types::CoverageDateFilter).
     pub fn build(self) -> crate::types::CoverageDateFilter {

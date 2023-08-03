@@ -49,6 +49,12 @@ impl PurchaseReservedDbInstancesOfferingOutputBuilder {
         self.reserved_db_instance = input;
         self
     }
+    /// <p>This data type is used as a response element in the <code>DescribeReservedDBInstances</code> and <code>PurchaseReservedDBInstancesOffering</code> actions.</p>
+    pub fn get_reserved_db_instance(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReservedDbInstance> {
+        &self.reserved_db_instance
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

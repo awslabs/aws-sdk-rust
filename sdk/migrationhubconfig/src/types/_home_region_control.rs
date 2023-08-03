@@ -64,6 +64,10 @@ impl HomeRegionControlBuilder {
         self.control_id = input;
         self
     }
+    /// <p>A unique identifier that's generated for each home region control. It's always a string that begins with "hrc-" followed by 12 lowercase letters and numbers.</p>
+    pub fn get_control_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control_id
+    }
     /// <p>The AWS Region that's been set as home region. For example, "us-west-2" or "eu-central-1" are valid home regions.</p>
     pub fn home_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.home_region = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl HomeRegionControlBuilder {
         self.home_region = input;
         self
     }
+    /// <p>The AWS Region that's been set as home region. For example, "us-west-2" or "eu-central-1" are valid home regions.</p>
+    pub fn get_home_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.home_region
+    }
     /// <p>The target parameter specifies the identifier to which the home region is applied, which is always an <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>.</p>
     pub fn target(mut self, input: crate::types::Target) -> Self {
         self.target = ::std::option::Option::Some(input);
@@ -83,6 +91,10 @@ impl HomeRegionControlBuilder {
     pub fn set_target(mut self, input: ::std::option::Option<crate::types::Target>) -> Self {
         self.target = input;
         self
+    }
+    /// <p>The target parameter specifies the identifier to which the home region is applied, which is always an <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>.</p>
+    pub fn get_target(&self) -> &::std::option::Option<crate::types::Target> {
+        &self.target
     }
     /// <p>A timestamp representing the time when the customer called <code>CreateHomeregionControl</code> and set the home region for the account.</p>
     pub fn requested_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -96,6 +108,10 @@ impl HomeRegionControlBuilder {
     ) -> Self {
         self.requested_time = input;
         self
+    }
+    /// <p>A timestamp representing the time when the customer called <code>CreateHomeregionControl</code> and set the home region for the account.</p>
+    pub fn get_requested_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.requested_time
     }
     /// Consumes the builder and constructs a [`HomeRegionControl`](crate::types::HomeRegionControl).
     pub fn build(self) -> crate::types::HomeRegionControl {

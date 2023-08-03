@@ -72,6 +72,12 @@ impl DescribeReservedNodeExchangeStatusOutputBuilder {
         self.reserved_node_exchange_status_details = input;
         self
     }
+    /// <p>The details of the reserved-node exchange request, including the status, request time, source reserved-node identifier, and additional details.</p>
+    pub fn get_reserved_node_exchange_status_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedNodeExchangeStatus>> {
+        &self.reserved_node_exchange_status_details
+    }
     /// <p>A pagination token provided by a previous <code>DescribeReservedNodeExchangeStatus</code> request.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -81,6 +87,10 @@ impl DescribeReservedNodeExchangeStatusOutputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>A pagination token provided by a previous <code>DescribeReservedNodeExchangeStatus</code> request.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

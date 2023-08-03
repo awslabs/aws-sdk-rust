@@ -82,6 +82,10 @@ impl DescribeOptedOutNumbersOutputBuilder {
         self.opt_out_list_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the OptOutList.</p>
+    pub fn get_opt_out_list_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.opt_out_list_arn
+    }
     /// <p>The name of the OptOutList.</p>
     pub fn opt_out_list_name(
         mut self,
@@ -97,6 +101,10 @@ impl DescribeOptedOutNumbersOutputBuilder {
     ) -> Self {
         self.opt_out_list_name = input;
         self
+    }
+    /// <p>The name of the OptOutList.</p>
+    pub fn get_opt_out_list_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.opt_out_list_name
     }
     /// Appends an item to `opted_out_numbers`.
     ///
@@ -117,6 +125,12 @@ impl DescribeOptedOutNumbersOutputBuilder {
         self.opted_out_numbers = input;
         self
     }
+    /// <p>An array of OptedOutNumbersInformation objects that provide information about the requested OptedOutNumbers.</p>
+    pub fn get_opted_out_numbers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OptedOutNumberInformation>> {
+        &self.opted_out_numbers
+    }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -126,6 +140,10 @@ impl DescribeOptedOutNumbersOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

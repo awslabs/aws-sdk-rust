@@ -36,6 +36,10 @@ impl ListEulasFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListEulas as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_eulas::builders::ListEulasInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +135,10 @@ impl ListEulasFluentBuilder {
         self.inner = self.inner.set_eula_ids(input);
         self
     }
+    /// <p>The list of EULA IDs that should be returned</p>
+    pub fn get_eula_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_eula_ids()
+    }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -140,5 +148,9 @@ impl ListEulasFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

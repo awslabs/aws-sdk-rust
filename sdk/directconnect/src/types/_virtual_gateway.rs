@@ -66,6 +66,10 @@ impl VirtualGatewayBuilder {
         self.virtual_gateway_id = input;
         self
     }
+    /// <p>The ID of the virtual private gateway.</p>
+    pub fn get_virtual_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_gateway_id
+    }
     /// <p>The state of the virtual private gateway. The following are the possible values:</p>
     /// <ul>
     /// <li> <p> <code>pending</code>: Initial state after creating the virtual private gateway.</p> </li>
@@ -93,6 +97,16 @@ impl VirtualGatewayBuilder {
     ) -> Self {
         self.virtual_gateway_state = input;
         self
+    }
+    /// <p>The state of the virtual private gateway. The following are the possible values:</p>
+    /// <ul>
+    /// <li> <p> <code>pending</code>: Initial state after creating the virtual private gateway.</p> </li>
+    /// <li> <p> <code>available</code>: Ready for use by a private virtual interface.</p> </li>
+    /// <li> <p> <code>deleting</code>: Initial state after deleting the virtual private gateway.</p> </li>
+    /// <li> <p> <code>deleted</code>: The virtual private gateway is deleted. The private virtual interface is unable to send traffic over this gateway.</p> </li>
+    /// </ul>
+    pub fn get_virtual_gateway_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_gateway_state
     }
     /// Consumes the builder and constructs a [`VirtualGateway`](crate::types::VirtualGateway).
     pub fn build(self) -> crate::types::VirtualGateway {

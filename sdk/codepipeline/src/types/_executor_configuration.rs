@@ -62,6 +62,12 @@ impl ExecutorConfigurationBuilder {
         self.lambda_executor_configuration = input;
         self
     }
+    /// <p>Details about the <code>Lambda</code> executor of the action type.</p>
+    pub fn get_lambda_executor_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::LambdaExecutorConfiguration> {
+        &self.lambda_executor_configuration
+    }
     /// <p>Details about the <code>JobWorker</code> executor of the action type.</p>
     pub fn job_worker_executor_configuration(
         mut self,
@@ -77,6 +83,12 @@ impl ExecutorConfigurationBuilder {
     ) -> Self {
         self.job_worker_executor_configuration = input;
         self
+    }
+    /// <p>Details about the <code>JobWorker</code> executor of the action type.</p>
+    pub fn get_job_worker_executor_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::JobWorkerExecutorConfiguration> {
+        &self.job_worker_executor_configuration
     }
     /// Consumes the builder and constructs a [`ExecutorConfiguration`](crate::types::ExecutorConfiguration).
     pub fn build(self) -> crate::types::ExecutorConfiguration {

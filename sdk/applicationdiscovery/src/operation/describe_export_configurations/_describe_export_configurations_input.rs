@@ -64,6 +64,10 @@ impl DescribeExportConfigurationsInputBuilder {
         self.export_ids = input;
         self
     }
+    /// <p>A list of continuous export IDs to search for.</p>
+    pub fn get_export_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.export_ids
+    }
     /// <p>A number between 1 and 100 specifying the maximum number of continuous export descriptions returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl DescribeExportConfigurationsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>A number between 1 and 100 specifying the maximum number of continuous export descriptions returned.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token from the previous call to describe-export-tasks.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -83,6 +91,10 @@ impl DescribeExportConfigurationsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token from the previous call to describe-export-tasks.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeExportConfigurationsInput`](crate::operation::describe_export_configurations::DescribeExportConfigurationsInput).
     pub fn build(

@@ -72,6 +72,10 @@ impl ApplicationSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the application.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The type of the application.</p>
     pub fn r#type(mut self, input: crate::types::ApplicationType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -82,6 +86,10 @@ impl ApplicationSummaryBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of the application.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ApplicationType> {
+        &self.r#type
+    }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl ApplicationSummaryBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -116,6 +128,14 @@ impl ApplicationSummaryBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags on the application.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`ApplicationSummary`](crate::types::ApplicationSummary).
     pub fn build(self) -> crate::types::ApplicationSummary {

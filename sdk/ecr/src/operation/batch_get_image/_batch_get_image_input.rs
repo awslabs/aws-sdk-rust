@@ -65,6 +65,10 @@ impl BatchGetImageInputBuilder {
         self.registry_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the images to describe. If you do not specify a registry, the default registry is assumed.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_id
+    }
     /// <p>The repository that contains the images to describe.</p>
     pub fn repository_name(
         mut self,
@@ -80,6 +84,10 @@ impl BatchGetImageInputBuilder {
     ) -> Self {
         self.repository_name = input;
         self
+    }
+    /// <p>The repository that contains the images to describe.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
     }
     /// Appends an item to `image_ids`.
     ///
@@ -99,6 +107,12 @@ impl BatchGetImageInputBuilder {
     ) -> Self {
         self.image_ids = input;
         self
+    }
+    /// <p>A list of image ID references that correspond to images to describe. The format of the <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.</p>
+    pub fn get_image_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>> {
+        &self.image_ids
     }
     /// Appends an item to `accepted_media_types`.
     ///
@@ -123,6 +137,13 @@ impl BatchGetImageInputBuilder {
     ) -> Self {
         self.accepted_media_types = input;
         self
+    }
+    /// <p>The accepted media types for the request.</p>
+    /// <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> | <code>application/vnd.docker.distribution.manifest.v2+json</code> | <code>application/vnd.oci.image.manifest.v1+json</code> </p>
+    pub fn get_accepted_media_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.accepted_media_types
     }
     /// Consumes the builder and constructs a [`BatchGetImageInput`](crate::operation::batch_get_image::BatchGetImageInput).
     pub fn build(

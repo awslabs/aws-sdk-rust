@@ -71,6 +71,12 @@ impl SameSheetTargetVisualConfigurationBuilder {
         self.target_visuals = input;
         self
     }
+    /// <p>A list of the target visual IDs that are located in the same sheet of the analysis.</p>
+    pub fn get_target_visuals(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.target_visuals
+    }
     /// <p>The options that choose the target visual in the same sheet.</p>
     /// <p>Valid values are defined as follows:</p>
     /// <ul>
@@ -91,6 +97,16 @@ impl SameSheetTargetVisualConfigurationBuilder {
     ) -> Self {
         self.target_visual_options = input;
         self
+    }
+    /// <p>The options that choose the target visual in the same sheet.</p>
+    /// <p>Valid values are defined as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>ALL_VISUALS</code>: Applies the filter operation to all visuals in the same sheet.</p> </li>
+    /// </ul>
+    pub fn get_target_visual_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::TargetVisualOptions> {
+        &self.target_visual_options
     }
     /// Consumes the builder and constructs a [`SameSheetTargetVisualConfiguration`](crate::types::SameSheetTargetVisualConfiguration).
     pub fn build(self) -> crate::types::SameSheetTargetVisualConfiguration {

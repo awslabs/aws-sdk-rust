@@ -49,6 +49,10 @@ impl PublishFunctionOutputBuilder {
         self.function_summary = input;
         self
     }
+    /// <p>Contains configuration information and metadata about a CloudFront function.</p>
+    pub fn get_function_summary(&self) -> &::std::option::Option<crate::types::FunctionSummary> {
+        &self.function_summary
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -48,6 +48,10 @@ impl NullValueFieldBuilder {
         self.value = input;
         self
     }
+    /// <p>The value of the null placeholder.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// <p>The datatype of the value.</p>
     pub fn datatype(mut self, input: crate::types::Datatype) -> Self {
         self.datatype = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl NullValueFieldBuilder {
     pub fn set_datatype(mut self, input: ::std::option::Option<crate::types::Datatype>) -> Self {
         self.datatype = input;
         self
+    }
+    /// <p>The datatype of the value.</p>
+    pub fn get_datatype(&self) -> &::std::option::Option<crate::types::Datatype> {
+        &self.datatype
     }
     /// Consumes the builder and constructs a [`NullValueField`](crate::types::NullValueField).
     pub fn build(self) -> crate::types::NullValueField {

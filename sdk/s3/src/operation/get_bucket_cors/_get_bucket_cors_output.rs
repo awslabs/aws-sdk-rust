@@ -62,6 +62,12 @@ impl GetBucketCorsOutputBuilder {
         self.cors_rules = input;
         self
     }
+    /// <p>A set of origins and methods (cross-origin access that you want to allow). You can add up to 100 rules to the configuration.</p>
+    pub fn get_cors_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CorsRule>> {
+        &self.cors_rules
+    }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
         self._extended_request_id = Some(extended_request_id.into());
         self

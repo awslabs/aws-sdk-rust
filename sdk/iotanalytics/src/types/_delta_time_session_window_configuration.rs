@@ -45,6 +45,11 @@ impl DeltaTimeSessionWindowConfigurationBuilder {
         self.timeout_in_minutes = input;
         self
     }
+    /// <p>A time interval. You can use <code>timeoutInMinutes</code> so that IoT Analytics can batch up late data notifications that have been generated since the last execution. IoT Analytics sends one batch of notifications to Amazon CloudWatch Events at one time.</p>
+    /// <p>For more information about how to write a timestamp expression, see <a href="https://prestodb.io/docs/0.172/functions/datetime.html">Date and Time Functions and Operators</a>, in the <i>Presto 0.172 Documentation</i>.</p>
+    pub fn get_timeout_in_minutes(&self) -> &::std::option::Option<i32> {
+        &self.timeout_in_minutes
+    }
     /// Consumes the builder and constructs a [`DeltaTimeSessionWindowConfiguration`](crate::types::DeltaTimeSessionWindowConfiguration).
     pub fn build(self) -> crate::types::DeltaTimeSessionWindowConfiguration {
         crate::types::DeltaTimeSessionWindowConfiguration {

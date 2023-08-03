@@ -99,6 +99,12 @@ impl DeleteObjectsInputBuilder {
         self.bucket = input;
         self
     }
+    /// <p>The bucket name containing the objects to delete. </p>
+    /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p>Container for the request.</p>
     pub fn delete(mut self, input: crate::types::Delete) -> Self {
         self.delete = ::std::option::Option::Some(input);
@@ -109,6 +115,10 @@ impl DeleteObjectsInputBuilder {
         self.delete = input;
         self
     }
+    /// <p>Container for the request.</p>
+    pub fn get_delete(&self) -> &::std::option::Option<crate::types::Delete> {
+        &self.delete
+    }
     /// <p>The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device. Required to permanently delete a versioned object if versioning is configured with MFA delete enabled.</p>
     pub fn mfa(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mfa = ::std::option::Option::Some(input.into());
@@ -118,6 +128,10 @@ impl DeleteObjectsInputBuilder {
     pub fn set_mfa(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mfa = input;
         self
+    }
+    /// <p>The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device. Required to permanently delete a versioned object if versioning is configured with MFA delete enabled.</p>
+    pub fn get_mfa(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mfa
     }
     /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(mut self, input: crate::types::RequestPayer) -> Self {
@@ -132,6 +146,10 @@ impl DeleteObjectsInputBuilder {
         self.request_payer = input;
         self
     }
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn get_request_payer(&self) -> &::std::option::Option<crate::types::RequestPayer> {
+        &self.request_payer
+    }
     /// <p>Specifies whether you want to delete this object even if it has a Governance-type Object Lock in place. To use this header, you must have the <code>s3:BypassGovernanceRetention</code> permission.</p>
     pub fn bypass_governance_retention(mut self, input: bool) -> Self {
         self.bypass_governance_retention = ::std::option::Option::Some(input);
@@ -141,6 +159,10 @@ impl DeleteObjectsInputBuilder {
     pub fn set_bypass_governance_retention(mut self, input: ::std::option::Option<bool>) -> Self {
         self.bypass_governance_retention = input;
         self
+    }
+    /// <p>Specifies whether you want to delete this object even if it has a Governance-type Object Lock in place. To use this header, you must have the <code>s3:BypassGovernanceRetention</code> permission.</p>
+    pub fn get_bypass_governance_retention(&self) -> &::std::option::Option<bool> {
+        &self.bypass_governance_retention
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(
@@ -158,6 +180,10 @@ impl DeleteObjectsInputBuilder {
         self.expected_bucket_owner = input;
         self
     }
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
+    pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expected_bucket_owner
+    }
     /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
     /// <p>This checksum algorithm must be the same for all parts and it match the checksum value supplied in the <code>CreateMultipartUpload</code> request.</p>
@@ -174,6 +200,14 @@ impl DeleteObjectsInputBuilder {
     ) -> Self {
         self.checksum_algorithm = input;
         self
+    }
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    /// <p>This checksum algorithm must be the same for all parts and it match the checksum value supplied in the <code>CreateMultipartUpload</code> request.</p>
+    pub fn get_checksum_algorithm(
+        &self,
+    ) -> &::std::option::Option<crate::types::ChecksumAlgorithm> {
+        &self.checksum_algorithm
     }
     /// Consumes the builder and constructs a [`DeleteObjectsInput`](crate::operation::delete_objects::DeleteObjectsInput).
     pub fn build(

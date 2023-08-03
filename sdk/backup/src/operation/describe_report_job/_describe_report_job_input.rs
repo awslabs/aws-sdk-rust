@@ -46,6 +46,10 @@ impl DescribeReportJobInputBuilder {
         self.report_job_id = input;
         self
     }
+    /// <p>The identifier of the report job. A unique, randomly generated, Unicode, UTF-8 encoded string that is at most 1,024 bytes long. The report job ID cannot be edited.</p>
+    pub fn get_report_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.report_job_id
+    }
     /// Consumes the builder and constructs a [`DescribeReportJobInput`](crate::operation::describe_report_job::DescribeReportJobInput).
     pub fn build(
         self,

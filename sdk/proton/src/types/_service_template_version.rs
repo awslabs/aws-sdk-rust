@@ -177,6 +177,10 @@ impl ServiceTemplateVersionBuilder {
         self.template_name = input;
         self
     }
+    /// <p>The name of the version of a service template.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
     /// <p>The latest major version that's associated with the version of a service template.</p>
     pub fn major_version(
         mut self,
@@ -192,6 +196,10 @@ impl ServiceTemplateVersionBuilder {
     ) -> Self {
         self.major_version = input;
         self
+    }
+    /// <p>The latest major version that's associated with the version of a service template.</p>
+    pub fn get_major_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.major_version
     }
     /// <p>The minor version of a service template.</p>
     pub fn minor_version(
@@ -209,6 +217,10 @@ impl ServiceTemplateVersionBuilder {
         self.minor_version = input;
         self
     }
+    /// <p>The minor version of a service template.</p>
+    pub fn get_minor_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.minor_version
+    }
     /// <p>The recommended minor version of the service template.</p>
     pub fn recommended_minor_version(
         mut self,
@@ -225,6 +237,10 @@ impl ServiceTemplateVersionBuilder {
         self.recommended_minor_version = input;
         self
     }
+    /// <p>The recommended minor version of the service template.</p>
+    pub fn get_recommended_minor_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommended_minor_version
+    }
     /// <p>The service template version status.</p>
     pub fn status(mut self, input: crate::types::TemplateVersionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -237,6 +253,10 @@ impl ServiceTemplateVersionBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The service template version status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TemplateVersionStatus> {
+        &self.status
     }
     /// <p>A service template version status message.</p>
     pub fn status_message(
@@ -254,6 +274,10 @@ impl ServiceTemplateVersionBuilder {
         self.status_message = input;
         self
     }
+    /// <p>A service template version status message.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>A description of the version of a service template.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -264,6 +288,10 @@ impl ServiceTemplateVersionBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the version of a service template.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The Amazon Resource Name (ARN) of the version of a service template.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -273,6 +301,10 @@ impl ServiceTemplateVersionBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the version of a service template.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The time when the version of a service template was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -287,6 +319,10 @@ impl ServiceTemplateVersionBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The time when the version of a service template was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The time when the version of a service template was last modified.</p>
     pub fn last_modified_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_at = ::std::option::Option::Some(input);
@@ -299,6 +335,10 @@ impl ServiceTemplateVersionBuilder {
     ) -> Self {
         self.last_modified_at = input;
         self
+    }
+    /// <p>The time when the version of a service template was last modified.</p>
+    pub fn get_last_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_at
     }
     /// Appends an item to `compatible_environment_templates`.
     ///
@@ -322,6 +362,12 @@ impl ServiceTemplateVersionBuilder {
         self.compatible_environment_templates = input;
         self
     }
+    /// <p>An array of compatible environment template names for the major version of a service template.</p>
+    pub fn get_compatible_environment_templates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CompatibleEnvironmentTemplate>> {
+        &self.compatible_environment_templates
+    }
     /// <p>The schema of the version of a service template.</p>
     pub fn schema(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema = ::std::option::Option::Some(input.into());
@@ -331,6 +377,10 @@ impl ServiceTemplateVersionBuilder {
     pub fn set_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema = input;
         self
+    }
+    /// <p>The schema of the version of a service template.</p>
+    pub fn get_schema(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema
     }
     /// Appends an item to `supported_component_sources`.
     ///
@@ -357,6 +407,15 @@ impl ServiceTemplateVersionBuilder {
     ) -> Self {
         self.supported_component_sources = input;
         self
+    }
+    /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
+    pub fn get_supported_component_sources(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::ServiceTemplateSupportedComponentSourceType>,
+    > {
+        &self.supported_component_sources
     }
     /// Consumes the builder and constructs a [`ServiceTemplateVersion`](crate::types::ServiceTemplateVersion).
     pub fn build(self) -> crate::types::ServiceTemplateVersion {

@@ -64,6 +64,10 @@ impl ExperimentReportBuilder {
         self.metric_name = input;
         self
     }
+    /// <p>The name of the metric that is analyzed in this experiment report.</p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_name
+    }
     /// <p>The name of the variation that this report pertains to.</p>
     pub fn treatment_name(
         mut self,
@@ -80,6 +84,10 @@ impl ExperimentReportBuilder {
         self.treatment_name = input;
         self
     }
+    /// <p>The name of the variation that this report pertains to.</p>
+    pub fn get_treatment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.treatment_name
+    }
     /// <p>The type of analysis used for this report.</p>
     pub fn report_name(mut self, input: crate::types::ExperimentReportName) -> Self {
         self.report_name = ::std::option::Option::Some(input);
@@ -93,6 +101,10 @@ impl ExperimentReportBuilder {
         self.report_name = input;
         self
     }
+    /// <p>The type of analysis used for this report.</p>
+    pub fn get_report_name(&self) -> &::std::option::Option<crate::types::ExperimentReportName> {
+        &self.report_name
+    }
     /// <p>The content of the report.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
@@ -102,6 +114,10 @@ impl ExperimentReportBuilder {
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
         self
+    }
+    /// <p>The content of the report.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
     }
     /// Consumes the builder and constructs a [`ExperimentReport`](crate::types::ExperimentReport).
     pub fn build(self) -> crate::types::ExperimentReport {

@@ -57,6 +57,10 @@ impl LocationBuilder {
         self.path = input;
         self
     }
+    /// <p>A path in a policy, represented as a sequence of path elements.</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PathElement>> {
+        &self.path
+    }
     /// <p>A span in a policy.</p>
     pub fn span(mut self, input: crate::types::Span) -> Self {
         self.span = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl LocationBuilder {
     pub fn set_span(mut self, input: ::std::option::Option<crate::types::Span>) -> Self {
         self.span = input;
         self
+    }
+    /// <p>A span in a policy.</p>
+    pub fn get_span(&self) -> &::std::option::Option<crate::types::Span> {
+        &self.span
     }
     /// Consumes the builder and constructs a [`Location`](crate::types::Location).
     pub fn build(self) -> crate::types::Location {

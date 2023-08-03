@@ -56,6 +56,10 @@ impl PlayerLatencyBuilder {
         self.player_id = input;
         self
     }
+    /// <p>A unique identifier for a player associated with the latency data.</p>
+    pub fn get_player_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.player_id
+    }
     /// <p>Name of the Region that is associated with the latency value.</p>
     pub fn region_identifier(
         mut self,
@@ -72,6 +76,10 @@ impl PlayerLatencyBuilder {
         self.region_identifier = input;
         self
     }
+    /// <p>Name of the Region that is associated with the latency value.</p>
+    pub fn get_region_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region_identifier
+    }
     /// <p>Amount of time that represents the time lag experienced by the player when connected to the specified Region.</p>
     pub fn latency_in_milliseconds(mut self, input: f32) -> Self {
         self.latency_in_milliseconds = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl PlayerLatencyBuilder {
     pub fn set_latency_in_milliseconds(mut self, input: ::std::option::Option<f32>) -> Self {
         self.latency_in_milliseconds = input;
         self
+    }
+    /// <p>Amount of time that represents the time lag experienced by the player when connected to the specified Region.</p>
+    pub fn get_latency_in_milliseconds(&self) -> &::std::option::Option<f32> {
+        &self.latency_in_milliseconds
     }
     /// Consumes the builder and constructs a [`PlayerLatency`](crate::types::PlayerLatency).
     pub fn build(self) -> crate::types::PlayerLatency {

@@ -62,6 +62,10 @@ impl CreateOptOutListInputBuilder {
         self.opt_out_list_name = input;
         self
     }
+    /// <p>The name of the new OptOutList.</p>
+    pub fn get_opt_out_list_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.opt_out_list_name
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -81,6 +85,10 @@ impl CreateOptOutListInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>An array of tags (key and value pairs) to associate with the new OptOutList.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -90,6 +98,10 @@ impl CreateOptOutListInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateOptOutListInput`](crate::operation::create_opt_out_list::CreateOptOutListInput).
     pub fn build(

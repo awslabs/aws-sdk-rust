@@ -65,6 +65,12 @@ impl GetCrawlerMetricsOutputBuilder {
         self.crawler_metrics_list = input;
         self
     }
+    /// <p>A list of metrics for the specified crawler.</p>
+    pub fn get_crawler_metrics_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CrawlerMetrics>> {
+        &self.crawler_metrics_list
+    }
     /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -74,6 +80,10 @@ impl GetCrawlerMetricsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

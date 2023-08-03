@@ -179,6 +179,10 @@ impl DocDbSettingsBuilder {
         self.username = input;
         self
     }
+    /// <p>The user name you use to access the DocumentDB source endpoint. </p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
+    }
     /// <p> The password for the user account you use to access the DocumentDB source endpoint. </p>
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
@@ -188,6 +192,10 @@ impl DocDbSettingsBuilder {
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.password = input;
         self
+    }
+    /// <p> The password for the user account you use to access the DocumentDB source endpoint. </p>
+    pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.password
     }
     /// <p> The name of the server on the DocumentDB source endpoint. </p>
     pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -199,6 +207,10 @@ impl DocDbSettingsBuilder {
         self.server_name = input;
         self
     }
+    /// <p> The name of the server on the DocumentDB source endpoint. </p>
+    pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_name
+    }
     /// <p> The port value for the DocumentDB source endpoint. </p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -208,6 +220,10 @@ impl DocDbSettingsBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
+    }
+    /// <p> The port value for the DocumentDB source endpoint. </p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// <p> The database name on the DocumentDB source endpoint. </p>
     pub fn database_name(
@@ -225,6 +241,10 @@ impl DocDbSettingsBuilder {
         self.database_name = input;
         self
     }
+    /// <p> The database name on the DocumentDB source endpoint. </p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p> Specifies either document or table mode. </p>
     /// <p>Default value is <code>"none"</code>. Specify <code>"none"</code> to use document mode. Specify <code>"one"</code> to use table mode.</p>
     pub fn nesting_level(mut self, input: crate::types::NestingLevelValue) -> Self {
@@ -240,6 +260,11 @@ impl DocDbSettingsBuilder {
         self.nesting_level = input;
         self
     }
+    /// <p> Specifies either document or table mode. </p>
+    /// <p>Default value is <code>"none"</code>. Specify <code>"none"</code> to use document mode. Specify <code>"one"</code> to use table mode.</p>
+    pub fn get_nesting_level(&self) -> &::std::option::Option<crate::types::NestingLevelValue> {
+        &self.nesting_level
+    }
     /// <p> Specifies the document ID. Use this setting when <code>NestingLevel</code> is set to <code>"none"</code>. </p>
     /// <p>Default value is <code>"false"</code>. </p>
     pub fn extract_doc_id(mut self, input: bool) -> Self {
@@ -251,6 +276,11 @@ impl DocDbSettingsBuilder {
     pub fn set_extract_doc_id(mut self, input: ::std::option::Option<bool>) -> Self {
         self.extract_doc_id = input;
         self
+    }
+    /// <p> Specifies the document ID. Use this setting when <code>NestingLevel</code> is set to <code>"none"</code>. </p>
+    /// <p>Default value is <code>"false"</code>. </p>
+    pub fn get_extract_doc_id(&self) -> &::std::option::Option<bool> {
+        &self.extract_doc_id
     }
     /// <p> Indicates the number of documents to preview to determine the document organization. Use this setting when <code>NestingLevel</code> is set to <code>"one"</code>. </p>
     /// <p>Must be a positive value greater than <code>0</code>. Default value is <code>1000</code>.</p>
@@ -264,6 +294,11 @@ impl DocDbSettingsBuilder {
         self.docs_to_investigate = input;
         self
     }
+    /// <p> Indicates the number of documents to preview to determine the document organization. Use this setting when <code>NestingLevel</code> is set to <code>"one"</code>. </p>
+    /// <p>Must be a positive value greater than <code>0</code>. Default value is <code>1000</code>.</p>
+    pub fn get_docs_to_investigate(&self) -> &::std::option::Option<i32> {
+        &self.docs_to_investigate
+    }
     /// <p>The KMS key identifier that is used to encrypt the content on the replication instance. If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key. KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -273,6 +308,10 @@ impl DocDbSettingsBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p>The KMS key identifier that is used to encrypt the content on the replication instance. If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key. KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the DocumentDB endpoint.</p> <note>
     /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
@@ -294,6 +333,14 @@ impl DocDbSettingsBuilder {
         self.secrets_manager_access_role_arn = input;
         self
     }
+    /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the DocumentDB endpoint.</p> <note>
+    /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
+    /// </note>
+    pub fn get_secrets_manager_access_role_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.secrets_manager_access_role_arn
+    }
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the DocumentDB endpoint connection details.</p>
     pub fn secrets_manager_secret_id(
         mut self,
@@ -310,6 +357,10 @@ impl DocDbSettingsBuilder {
         self.secrets_manager_secret_id = input;
         self
     }
+    /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the DocumentDB endpoint connection details.</p>
+    pub fn get_secrets_manager_secret_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secrets_manager_secret_id
+    }
     /// <p>If <code>true</code>, DMS retrieves the entire document from the DocumentDB source during migration. This may cause a migration failure if the server response exceeds bandwidth limits. To fetch only updates and deletes during migration, set this parameter to <code>false</code>.</p>
     pub fn use_update_look_up(mut self, input: bool) -> Self {
         self.use_update_look_up = ::std::option::Option::Some(input);
@@ -319,6 +370,10 @@ impl DocDbSettingsBuilder {
     pub fn set_use_update_look_up(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_update_look_up = input;
         self
+    }
+    /// <p>If <code>true</code>, DMS retrieves the entire document from the DocumentDB source during migration. This may cause a migration failure if the server response exceeds bandwidth limits. To fetch only updates and deletes during migration, set this parameter to <code>false</code>.</p>
+    pub fn get_use_update_look_up(&self) -> &::std::option::Option<bool> {
+        &self.use_update_look_up
     }
     /// <p>If <code>true</code>, DMS replicates data to shard collections. DMS only uses this setting if the target endpoint is a DocumentDB elastic cluster.</p>
     /// <p>When this setting is <code>true</code>, note the following:</p>
@@ -339,6 +394,15 @@ impl DocDbSettingsBuilder {
     pub fn set_replicate_shard_collections(mut self, input: ::std::option::Option<bool>) -> Self {
         self.replicate_shard_collections = input;
         self
+    }
+    /// <p>If <code>true</code>, DMS replicates data to shard collections. DMS only uses this setting if the target endpoint is a DocumentDB elastic cluster.</p>
+    /// <p>When this setting is <code>true</code>, note the following:</p>
+    /// <ul>
+    /// <li> <p>You must set <code>TargetTablePrepMode</code> to <code>nothing</code>.</p> </li>
+    /// <li> <p>DMS automatically sets <code>useUpdateLookup</code> to <code>false</code>.</p> </li>
+    /// </ul>
+    pub fn get_replicate_shard_collections(&self) -> &::std::option::Option<bool> {
+        &self.replicate_shard_collections
     }
     /// Consumes the builder and constructs a [`DocDbSettings`](crate::types::DocDbSettings).
     pub fn build(self) -> crate::types::DocDbSettings {

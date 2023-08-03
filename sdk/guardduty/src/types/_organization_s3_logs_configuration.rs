@@ -40,6 +40,10 @@ impl OrganizationS3LogsConfigurationBuilder {
         self.auto_enable = input;
         self
     }
+    /// <p>A value that contains information on whether S3 data event logs will be enabled automatically as a data source for the organization.</p>
+    pub fn get_auto_enable(&self) -> &::std::option::Option<bool> {
+        &self.auto_enable
+    }
     /// Consumes the builder and constructs a [`OrganizationS3LogsConfiguration`](crate::types::OrganizationS3LogsConfiguration).
     pub fn build(self) -> crate::types::OrganizationS3LogsConfiguration {
         crate::types::OrganizationS3LogsConfiguration {

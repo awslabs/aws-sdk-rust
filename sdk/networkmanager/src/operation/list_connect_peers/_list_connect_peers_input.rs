@@ -70,6 +70,10 @@ impl ListConnectPeersInputBuilder {
         self.core_network_id = input;
         self
     }
+    /// <p>The ID of a core network.</p>
+    pub fn get_core_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.core_network_id
+    }
     /// <p>The ID of the attachment.</p>
     pub fn connect_attachment_id(
         mut self,
@@ -86,6 +90,10 @@ impl ListConnectPeersInputBuilder {
         self.connect_attachment_id = input;
         self
     }
+    /// <p>The ID of the attachment.</p>
+    pub fn get_connect_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connect_attachment_id
+    }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -96,6 +104,10 @@ impl ListConnectPeersInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -105,6 +117,10 @@ impl ListConnectPeersInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListConnectPeersInput`](crate::operation::list_connect_peers::ListConnectPeersInput).
     pub fn build(

@@ -36,6 +36,10 @@ impl ListTypesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListTypes as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_types::builders::ListTypesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl ListTypesFluentBuilder {
         self.inner = self.inner.set_api_id(input);
         self
     }
+    /// <p>The API ID.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_api_id()
+    }
     /// <p>The type format: SDL or JSON.</p>
     pub fn format(mut self, input: crate::types::TypeDefinitionFormat) -> Self {
         self.inner = self.inner.format(input);
@@ -131,6 +139,10 @@ impl ListTypesFluentBuilder {
         self.inner = self.inner.set_format(input);
         self
     }
+    /// <p>The type format: SDL or JSON.</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::TypeDefinitionFormat> {
+        self.inner.get_format()
+    }
     /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -141,6 +153,10 @@ impl ListTypesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results that you want the request to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -150,5 +166,9 @@ impl ListTypesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results that you want the request to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

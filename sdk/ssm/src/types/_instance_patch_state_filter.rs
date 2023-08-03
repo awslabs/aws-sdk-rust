@@ -102,6 +102,20 @@ impl InstancePatchStateFilterBuilder {
         self.key = input;
         self
     }
+    /// <p>The key for the filter. Supported values include the following:</p>
+    /// <ul>
+    /// <li> <p> <code>InstalledCount</code> </p> </li>
+    /// <li> <p> <code>InstalledOtherCount</code> </p> </li>
+    /// <li> <p> <code>InstalledPendingRebootCount</code> </p> </li>
+    /// <li> <p> <code>InstalledRejectedCount</code> </p> </li>
+    /// <li> <p> <code>MissingCount</code> </p> </li>
+    /// <li> <p> <code>FailedCount</code> </p> </li>
+    /// <li> <p> <code>UnreportedNotApplicableCount</code> </p> </li>
+    /// <li> <p> <code>NotApplicableCount</code> </p> </li>
+    /// </ul>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -121,6 +135,10 @@ impl InstancePatchStateFilterBuilder {
         self.values = input;
         self
     }
+    /// <p>The value for the filter. Must be an integer greater than or equal to 0.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
+    }
     /// <p>The type of comparison that should be performed for the value.</p>
     pub fn r#type(mut self, input: crate::types::InstancePatchStateOperatorType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -133,6 +151,10 @@ impl InstancePatchStateFilterBuilder {
     ) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of comparison that should be performed for the value.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::InstancePatchStateOperatorType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`InstancePatchStateFilter`](crate::types::InstancePatchStateFilter).
     pub fn build(self) -> crate::types::InstancePatchStateFilter {

@@ -38,6 +38,12 @@ impl DeleteReceiptFilterFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteReceiptFilter as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_receipt_filter::builders::DeleteReceiptFilterInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,5 +133,9 @@ impl DeleteReceiptFilterFluentBuilder {
     pub fn set_filter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_filter_name(input);
         self
+    }
+    /// <p>The name of the IP address filter to delete.</p>
+    pub fn get_filter_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_filter_name()
     }
 }

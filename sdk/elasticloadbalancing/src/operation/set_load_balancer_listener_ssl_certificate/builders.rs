@@ -37,6 +37,10 @@ impl SetLoadBalancerListenerSSLCertificateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SetLoadBalancerListenerSSLCertificate as a reference.
+    pub fn as_input(&self) -> &crate::operation::set_load_balancer_listener_ssl_certificate::builders::SetLoadBalancerListenerSslCertificateInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -107,6 +111,10 @@ impl SetLoadBalancerListenerSSLCertificateFluentBuilder {
         self.inner = self.inner.set_load_balancer_name(input);
         self
     }
+    /// <p>The name of the load balancer.</p>
+    pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_load_balancer_name()
+    }
     /// <p>The port that uses the specified SSL certificate.</p>
     pub fn load_balancer_port(mut self, input: i32) -> Self {
         self.inner = self.inner.load_balancer_port(input);
@@ -116,6 +124,10 @@ impl SetLoadBalancerListenerSSLCertificateFluentBuilder {
     pub fn set_load_balancer_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_load_balancer_port(input);
         self
+    }
+    /// <p>The port that uses the specified SSL certificate.</p>
+    pub fn get_load_balancer_port(&self) -> &::std::option::Option<i32> {
+        self.inner.get_load_balancer_port()
     }
     /// <p>The Amazon Resource Name (ARN) of the SSL certificate.</p>
     pub fn ssl_certificate_id(
@@ -132,5 +144,9 @@ impl SetLoadBalancerListenerSSLCertificateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ssl_certificate_id(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the SSL certificate.</p>
+    pub fn get_ssl_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ssl_certificate_id()
     }
 }

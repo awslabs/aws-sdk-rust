@@ -36,6 +36,10 @@ impl StartChangeRequestExecutionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartChangeRequestExecution as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_change_request_execution::builders::StartChangeRequestExecutionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,12 @@ impl StartChangeRequestExecutionFluentBuilder {
         self.inner = self.inner.set_scheduled_time(input);
         self
     }
+    /// <p>The date and time specified in the change request to run the Automation runbooks.</p> <note>
+    /// <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>
+    /// </note>
+    pub fn get_scheduled_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_scheduled_time()
+    }
     /// <p>The name of the change template document to run during the runbook workflow.</p>
     pub fn document_name(
         mut self,
@@ -149,6 +159,10 @@ impl StartChangeRequestExecutionFluentBuilder {
         self.inner = self.inner.set_document_name(input);
         self
     }
+    /// <p>The name of the change template document to run during the runbook workflow.</p>
+    pub fn get_document_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_document_name()
+    }
     /// <p>The version of the change template document to run during the runbook workflow.</p>
     pub fn document_version(
         mut self,
@@ -164,6 +178,10 @@ impl StartChangeRequestExecutionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_document_version(input);
         self
+    }
+    /// <p>The version of the change template document to run during the runbook workflow.</p>
+    pub fn get_document_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_document_version()
     }
     /// Adds a key-value pair to `Parameters`.
     ///
@@ -191,6 +209,14 @@ impl StartChangeRequestExecutionFluentBuilder {
         self.inner = self.inner.set_parameters(input);
         self
     }
+    /// <p>A key-value map of parameters that match the declared parameters in the change template document.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
+    > {
+        self.inner.get_parameters()
+    }
     /// <p>The name of the change request associated with the runbook workflow to be run.</p>
     pub fn change_request_name(
         mut self,
@@ -207,6 +233,10 @@ impl StartChangeRequestExecutionFluentBuilder {
         self.inner = self.inner.set_change_request_name(input);
         self
     }
+    /// <p>The name of the change request associated with the runbook workflow to be run.</p>
+    pub fn get_change_request_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_change_request_name()
+    }
     /// <p>The user-provided idempotency token. The token must be unique, is case insensitive, enforces the UUID format, and can't be reused.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -216,6 +246,10 @@ impl StartChangeRequestExecutionFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>The user-provided idempotency token. The token must be unique, is case insensitive, enforces the UUID format, and can't be reused.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// <p>Indicates whether the change request can be approved automatically without the need for manual approvals.</p>
     /// <p>If <code>AutoApprovable</code> is enabled in a change template, then setting <code>AutoApprove</code> to <code>true</code> in <code>StartChangeRequestExecution</code> creates a change request that bypasses approver review.</p> <note>
@@ -232,6 +266,13 @@ impl StartChangeRequestExecutionFluentBuilder {
     pub fn set_auto_approve(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_auto_approve(input);
         self
+    }
+    /// <p>Indicates whether the change request can be approved automatically without the need for manual approvals.</p>
+    /// <p>If <code>AutoApprovable</code> is enabled in a change template, then setting <code>AutoApprove</code> to <code>true</code> in <code>StartChangeRequestExecution</code> creates a change request that bypasses approver review.</p> <note>
+    /// <p>Change Calendar restrictions are not bypassed in this scenario. If the state of an associated calendar is <code>CLOSED</code>, change freeze approvers must still grant permission for this change request to run. If they don't, the change won't be processed until the calendar state is again <code>OPEN</code>. </p>
+    /// </note>
+    pub fn get_auto_approve(&self) -> &::std::option::Option<bool> {
+        self.inner.get_auto_approve()
     }
     /// Appends an item to `Runbooks`.
     ///
@@ -253,6 +294,12 @@ impl StartChangeRequestExecutionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_runbooks(input);
         self
+    }
+    /// <p>Information about the Automation runbooks that are run during the runbook workflow.</p> <note>
+    /// <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>
+    /// </note>
+    pub fn get_runbooks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Runbook>> {
+        self.inner.get_runbooks()
     }
     /// Appends an item to `Tags`.
     ///
@@ -279,6 +326,14 @@ impl StartChangeRequestExecutionFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for a change request. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a change request to identify an environment or target Amazon Web Services Region. In this case, you could specify the following key-value pairs:</p>
+    /// <ul>
+    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
+    /// <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li>
+    /// </ul>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>The time that the requester expects the runbook workflow related to the change request to complete. The time is an estimate only that the requester provides for reviewers.</p>
     pub fn scheduled_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.scheduled_end_time(input);
@@ -291,6 +346,10 @@ impl StartChangeRequestExecutionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_scheduled_end_time(input);
         self
+    }
+    /// <p>The time that the requester expects the runbook workflow related to the change request to complete. The time is an estimate only that the requester provides for reviewers.</p>
+    pub fn get_scheduled_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_scheduled_end_time()
     }
     /// <p>User-provided details about the change. If no details are provided, content specified in the <b>Template information</b> section of the associated change template is added.</p>
     pub fn change_details(
@@ -307,5 +366,9 @@ impl StartChangeRequestExecutionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_change_details(input);
         self
+    }
+    /// <p>User-provided details about the change. If no details are provided, content specified in the <b>Template information</b> section of the associated change template is added.</p>
+    pub fn get_change_details(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_change_details()
     }
 }

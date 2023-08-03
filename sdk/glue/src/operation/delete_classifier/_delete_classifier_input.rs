@@ -40,6 +40,10 @@ impl DeleteClassifierInputBuilder {
         self.name = input;
         self
     }
+    /// <p>Name of the classifier to remove.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DeleteClassifierInput`](crate::operation::delete_classifier::DeleteClassifierInput).
     pub fn build(
         self,

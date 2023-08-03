@@ -64,6 +64,10 @@ impl DeleteServiceNetworkServiceAssociationOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the association.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The operation's status. You can retry the operation if the status is <code>DELETE_FAILED</code>. However, if you retry it when the status is <code>DELETE_IN_PROGRESS</code>, there is no change in the status.</p>
     pub fn status(mut self, input: crate::types::ServiceNetworkServiceAssociationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -77,6 +81,12 @@ impl DeleteServiceNetworkServiceAssociationOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The operation's status. You can retry the operation if the status is <code>DELETE_FAILED</code>. However, if you retry it when the status is <code>DELETE_IN_PROGRESS</code>, there is no change in the status.</p>
+    pub fn get_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServiceNetworkServiceAssociationStatus> {
+        &self.status
+    }
     /// <p>The Amazon Resource Name (ARN) of the association.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -86,6 +96,10 @@ impl DeleteServiceNetworkServiceAssociationOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the association.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

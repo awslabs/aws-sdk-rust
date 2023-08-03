@@ -48,6 +48,10 @@ impl StartingEventBatchConditionBuilder {
         self.batch_size = input;
         self
     }
+    /// <p>Number of events in the batch.</p>
+    pub fn get_batch_size(&self) -> &::std::option::Option<i32> {
+        &self.batch_size
+    }
     /// <p>Duration of the batch window in seconds.</p>
     pub fn batch_window(mut self, input: i32) -> Self {
         self.batch_window = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl StartingEventBatchConditionBuilder {
     pub fn set_batch_window(mut self, input: ::std::option::Option<i32>) -> Self {
         self.batch_window = input;
         self
+    }
+    /// <p>Duration of the batch window in seconds.</p>
+    pub fn get_batch_window(&self) -> &::std::option::Option<i32> {
+        &self.batch_window
     }
     /// Consumes the builder and constructs a [`StartingEventBatchCondition`](crate::types::StartingEventBatchCondition).
     pub fn build(self) -> crate::types::StartingEventBatchCondition {

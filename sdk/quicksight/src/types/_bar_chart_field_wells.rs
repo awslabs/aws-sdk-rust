@@ -51,6 +51,12 @@ impl BarChartFieldWellsBuilder {
         self.bar_chart_aggregated_field_wells = input;
         self
     }
+    /// <p>The aggregated field wells of a bar chart.</p>
+    pub fn get_bar_chart_aggregated_field_wells(
+        &self,
+    ) -> &::std::option::Option<crate::types::BarChartAggregatedFieldWells> {
+        &self.bar_chart_aggregated_field_wells
+    }
     /// Consumes the builder and constructs a [`BarChartFieldWells`](crate::types::BarChartFieldWells).
     pub fn build(self) -> crate::types::BarChartFieldWells {
         crate::types::BarChartFieldWells {

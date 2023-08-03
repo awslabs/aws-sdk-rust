@@ -40,6 +40,13 @@ impl UpdateGameServerGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateGameServerGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_game_server_group::builders::UpdateGameServerGroupInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +143,10 @@ impl UpdateGameServerGroupFluentBuilder {
         self.inner = self.inner.set_game_server_group_name(input);
         self
     }
+    /// <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
+    pub fn get_game_server_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_game_server_group_name()
+    }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto Scaling groups.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -145,6 +156,10 @@ impl UpdateGameServerGroupFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your Amazon EC2 Auto Scaling groups.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
     /// Appends an item to `InstanceDefinitions`.
     ///
@@ -163,6 +178,12 @@ impl UpdateGameServerGroupFluentBuilder {
         self.inner = self.inner.set_instance_definitions(input);
         self
     }
+    /// <p>An updated list of Amazon EC2 instance types to use in the Auto Scaling group. The instance definitions must specify at least two different instance types that are supported by Amazon GameLift FleetIQ. This updated list replaces the entire current list of instance definitions for the game server group. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each instance type. If no weight value is specified for an instance type, it is set to the default value "1". For more information about capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
+    pub fn get_instance_definitions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceDefinition>> {
+        self.inner.get_instance_definitions()
+    }
     /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by Amazon Web Services regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
     pub fn game_server_protection_policy(
         mut self,
@@ -178,6 +199,12 @@ impl UpdateGameServerGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_game_server_protection_policy(input);
         self
+    }
+    /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by Amazon Web Services regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
+    pub fn get_game_server_protection_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::GameServerProtectionPolicy> {
+        self.inner.get_game_server_protection_policy()
     }
     /// <p>Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server group. Method options include the following:</p>
     /// <ul>
@@ -201,5 +228,16 @@ impl UpdateGameServerGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_balancing_strategy(input);
         self
+    }
+    /// <p>Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server group. Method options include the following:</p>
+    /// <ul>
+    /// <li> <p> <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot Instances are unavailable or not viable for game hosting, the game server group provides no hosting capacity until Spot Instances can again be used. Until then, no new instances are started, and the existing nonviable Spot Instances are terminated (after current gameplay ends) and are not replaced.</p> </li>
+    /// <li> <p> <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game server group. If Spot Instances are unavailable, the game server group continues to provide hosting capacity by falling back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after current gameplay ends) and are replaced with new On-Demand Instances.</p> </li>
+    /// <li> <p> <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are used, even when available, while this balancing strategy is in force.</p> </li>
+    /// </ul>
+    pub fn get_balancing_strategy(
+        &self,
+    ) -> &::std::option::Option<crate::types::BalancingStrategy> {
+        self.inner.get_balancing_strategy()
     }
 }

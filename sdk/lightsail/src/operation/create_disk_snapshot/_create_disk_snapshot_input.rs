@@ -78,6 +78,12 @@ impl CreateDiskSnapshotInputBuilder {
         self.disk_name = input;
         self
     }
+    /// <p>The unique name of the source disk (e.g., <code>Disk-Virginia-1</code>).</p> <note>
+    /// <p>This parameter cannot be defined together with the <code>instance name</code> parameter. The <code>disk name</code> and <code>instance name</code> parameters are mutually exclusive.</p>
+    /// </note>
+    pub fn get_disk_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.disk_name
+    }
     /// <p>The name of the destination disk snapshot (e.g., <code>my-disk-snapshot</code>) based on the source disk.</p>
     pub fn disk_snapshot_name(
         mut self,
@@ -93,6 +99,10 @@ impl CreateDiskSnapshotInputBuilder {
     ) -> Self {
         self.disk_snapshot_name = input;
         self
+    }
+    /// <p>The name of the destination disk snapshot (e.g., <code>my-disk-snapshot</code>) based on the source disk.</p>
+    pub fn get_disk_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.disk_snapshot_name
     }
     /// <p>The unique name of the source instance (e.g., <code>Amazon_Linux-512MB-Virginia-1</code>). When this is defined, a snapshot of the instance's system volume is created.</p> <note>
     /// <p>This parameter cannot be defined together with the <code>disk name</code> parameter. The <code>instance name</code> and <code>disk name</code> parameters are mutually exclusive.</p>
@@ -114,6 +124,12 @@ impl CreateDiskSnapshotInputBuilder {
         self.instance_name = input;
         self
     }
+    /// <p>The unique name of the source instance (e.g., <code>Amazon_Linux-512MB-Virginia-1</code>). When this is defined, a snapshot of the instance's system volume is created.</p> <note>
+    /// <p>This parameter cannot be defined together with the <code>disk name</code> parameter. The <code>instance name</code> and <code>disk name</code> parameters are mutually exclusive.</p>
+    /// </note>
+    pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_name
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -134,6 +150,11 @@ impl CreateDiskSnapshotInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tag keys and optional values to add to the resource during create.</p>
+    /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateDiskSnapshotInput`](crate::operation::create_disk_snapshot::CreateDiskSnapshotInput).
     pub fn build(

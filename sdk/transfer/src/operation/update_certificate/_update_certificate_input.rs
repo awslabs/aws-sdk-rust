@@ -70,6 +70,10 @@ impl UpdateCertificateInputBuilder {
         self.certificate_id = input;
         self
     }
+    /// <p>The identifier of the certificate object that you are updating.</p>
+    pub fn get_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_id
+    }
     /// <p>An optional date that specifies when the certificate becomes active.</p>
     pub fn active_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.active_date = ::std::option::Option::Some(input);
@@ -82,6 +86,10 @@ impl UpdateCertificateInputBuilder {
     ) -> Self {
         self.active_date = input;
         self
+    }
+    /// <p>An optional date that specifies when the certificate becomes active.</p>
+    pub fn get_active_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.active_date
     }
     /// <p>An optional date that specifies when the certificate becomes inactive.</p>
     pub fn inactive_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -96,6 +104,10 @@ impl UpdateCertificateInputBuilder {
         self.inactive_date = input;
         self
     }
+    /// <p>An optional date that specifies when the certificate becomes inactive.</p>
+    pub fn get_inactive_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.inactive_date
+    }
     /// <p>A short description to help identify the certificate.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -105,6 +117,10 @@ impl UpdateCertificateInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A short description to help identify the certificate.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`UpdateCertificateInput`](crate::operation::update_certificate::UpdateCertificateInput).
     pub fn build(

@@ -36,6 +36,10 @@ impl CreateUserFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateUser as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_user::builders::CreateUserInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl CreateUserFluentBuilder {
         self.inner = self.inner.set_account_id(input);
         self
     }
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// <p>The user name.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.username(input.into());
@@ -127,6 +135,10 @@ impl CreateUserFluentBuilder {
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_username(input);
         self
+    }
+    /// <p>The user name.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_username()
     }
     /// <p>The user's email address.</p>
     pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -138,6 +150,10 @@ impl CreateUserFluentBuilder {
         self.inner = self.inner.set_email(input);
         self
     }
+    /// <p>The user's email address.</p>
+    pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_email()
+    }
     /// <p>The user type.</p>
     pub fn user_type(mut self, input: crate::types::UserType) -> Self {
         self.inner = self.inner.user_type(input);
@@ -147,5 +163,9 @@ impl CreateUserFluentBuilder {
     pub fn set_user_type(mut self, input: ::std::option::Option<crate::types::UserType>) -> Self {
         self.inner = self.inner.set_user_type(input);
         self
+    }
+    /// <p>The user type.</p>
+    pub fn get_user_type(&self) -> &::std::option::Option<crate::types::UserType> {
+        self.inner.get_user_type()
     }
 }

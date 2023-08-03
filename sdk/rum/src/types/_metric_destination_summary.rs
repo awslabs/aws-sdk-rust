@@ -59,6 +59,10 @@ impl MetricDestinationSummaryBuilder {
         self.destination = input;
         self
     }
+    /// <p>Specifies whether the destination is <code>CloudWatch</code> or <code>Evidently</code>.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<crate::types::MetricDestination> {
+        &self.destination
+    }
     /// <p>If the destination is <code>Evidently</code>, this specifies the ARN of the Evidently experiment that receives the metrics.</p>
     pub fn destination_arn(
         mut self,
@@ -75,6 +79,10 @@ impl MetricDestinationSummaryBuilder {
         self.destination_arn = input;
         self
     }
+    /// <p>If the destination is <code>Evidently</code>, this specifies the ARN of the Evidently experiment that receives the metrics.</p>
+    pub fn get_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_arn
+    }
     /// <p>This field appears only when the destination is <code>Evidently</code>. It specifies the ARN of the IAM role that is used to write to the Evidently experiment that receives the metrics.</p>
     pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_role_arn = ::std::option::Option::Some(input.into());
@@ -84,6 +92,10 @@ impl MetricDestinationSummaryBuilder {
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_role_arn = input;
         self
+    }
+    /// <p>This field appears only when the destination is <code>Evidently</code>. It specifies the ARN of the IAM role that is used to write to the Evidently experiment that receives the metrics.</p>
+    pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iam_role_arn
     }
     /// Consumes the builder and constructs a [`MetricDestinationSummary`](crate::types::MetricDestinationSummary).
     pub fn build(self) -> crate::types::MetricDestinationSummary {

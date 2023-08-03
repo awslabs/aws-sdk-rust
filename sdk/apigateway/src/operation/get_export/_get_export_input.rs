@@ -80,6 +80,10 @@ impl GetExportInputBuilder {
         self.rest_api_id = input;
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rest_api_id
+    }
     /// <p>The name of the Stage that will be exported.</p>
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_name = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl GetExportInputBuilder {
         self.stage_name = input;
         self
     }
+    /// <p>The name of the Stage that will be exported.</p>
+    pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stage_name
+    }
     /// <p>The type of export. Acceptable values are 'oas30' for OpenAPI 3.0.x and 'swagger' for Swagger/OpenAPI 2.0.</p>
     pub fn export_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.export_type = ::std::option::Option::Some(input.into());
@@ -99,6 +107,10 @@ impl GetExportInputBuilder {
     pub fn set_export_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.export_type = input;
         self
+    }
+    /// <p>The type of export. Acceptable values are 'oas30' for OpenAPI 3.0.x and 'swagger' for Swagger/OpenAPI 2.0.</p>
+    pub fn get_export_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.export_type
     }
     /// Adds a key-value pair to `parameters`.
     ///
@@ -125,6 +137,14 @@ impl GetExportInputBuilder {
         self.parameters = input;
         self
     }
+    /// <p>A key-value map of query string parameters that specify properties of the export, depending on the requested <code>exportType</code>. For <code>exportType</code> <code>oas30</code> and <code>swagger</code>, any combination of the following parameters are supported: <code>extensions='integrations'</code> or <code>extensions='apigateway'</code> will export the API with x-amazon-apigateway-integration extensions. <code>extensions='authorizers'</code> will export the API with x-amazon-apigateway-authorizer extensions. <code>postman</code> will export the API with Postman extensions, allowing for import to the Postman tool</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.parameters
+    }
     /// <p>The content-type of the export, for example <code>application/json</code>. Currently <code>application/json</code> and <code>application/yaml</code> are supported for <code>exportType</code> of<code>oas30</code> and <code>swagger</code>. This should be specified in the <code>Accept</code> header for direct API requests.</p>
     pub fn accepts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accepts = ::std::option::Option::Some(input.into());
@@ -134,6 +154,10 @@ impl GetExportInputBuilder {
     pub fn set_accepts(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accepts = input;
         self
+    }
+    /// <p>The content-type of the export, for example <code>application/json</code>. Currently <code>application/json</code> and <code>application/yaml</code> are supported for <code>exportType</code> of<code>oas30</code> and <code>swagger</code>. This should be specified in the <code>Accept</code> header for direct API requests.</p>
+    pub fn get_accepts(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accepts
     }
     /// Consumes the builder and constructs a [`GetExportInput`](crate::operation::get_export::GetExportInput).
     pub fn build(

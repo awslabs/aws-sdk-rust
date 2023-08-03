@@ -74,6 +74,10 @@ impl DescribeInstancePatchStatesForPatchGroupInputBuilder {
         self.patch_group = input;
         self
     }
+    /// <p>The name of the patch group for which the patch state information should be retrieved.</p>
+    pub fn get_patch_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.patch_group
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -103,6 +107,17 @@ impl DescribeInstancePatchStatesForPatchGroupInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>Each entry in the array is a structure containing:</p>
+    /// <ul>
+    /// <li> <p>Key (string between 1 and 200 characters)</p> </li>
+    /// <li> <p>Values (array containing a single string)</p> </li>
+    /// <li> <p>Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p> </li>
+    /// </ul>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstancePatchStateFilter>> {
+        &self.filters
+    }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -113,6 +128,10 @@ impl DescribeInstancePatchStatesForPatchGroupInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of patches to return (per page).</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -122,6 +141,10 @@ impl DescribeInstancePatchStatesForPatchGroupInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of patches to return (per page).</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeInstancePatchStatesForPatchGroupInput`](crate::operation::describe_instance_patch_states_for_patch_group::DescribeInstancePatchStatesForPatchGroupInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_instance_patch_states_for_patch_group::DescribeInstancePatchStatesForPatchGroupInput, ::aws_smithy_http::operation::error::BuildError>{

@@ -50,6 +50,10 @@ impl DescribePlacementOutputBuilder {
         self.placement = input;
         self
     }
+    /// <p>An object describing the placement.</p>
+    pub fn get_placement(&self) -> &::std::option::Option<crate::types::PlacementDescription> {
+        &self.placement
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

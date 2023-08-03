@@ -128,6 +128,10 @@ impl RouteAnalysisBuilder {
         self.global_network_id = input;
         self
     }
+    /// <p>The ID of the global network.</p>
+    pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_network_id
+    }
     /// <p>The ID of the AWS account that created the route analysis.</p>
     pub fn owner_account_id(
         mut self,
@@ -143,6 +147,10 @@ impl RouteAnalysisBuilder {
     ) -> Self {
         self.owner_account_id = input;
         self
+    }
+    /// <p>The ID of the AWS account that created the route analysis.</p>
+    pub fn get_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_account_id
     }
     /// <p>The ID of the route analysis.</p>
     pub fn route_analysis_id(
@@ -160,6 +168,10 @@ impl RouteAnalysisBuilder {
         self.route_analysis_id = input;
         self
     }
+    /// <p>The ID of the route analysis.</p>
+    pub fn get_route_analysis_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.route_analysis_id
+    }
     /// <p>The time that the analysis started.</p>
     pub fn start_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_timestamp = ::std::option::Option::Some(input);
@@ -172,6 +184,10 @@ impl RouteAnalysisBuilder {
     ) -> Self {
         self.start_timestamp = input;
         self
+    }
+    /// <p>The time that the analysis started.</p>
+    pub fn get_start_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_timestamp
     }
     /// <p>The status of the route analysis.</p>
     pub fn status(mut self, input: crate::types::RouteAnalysisStatus) -> Self {
@@ -186,6 +202,10 @@ impl RouteAnalysisBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the route analysis.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::RouteAnalysisStatus> {
+        &self.status
+    }
     /// <p>The source.</p>
     pub fn source(mut self, input: crate::types::RouteAnalysisEndpointOptions) -> Self {
         self.source = ::std::option::Option::Some(input);
@@ -198,6 +218,10 @@ impl RouteAnalysisBuilder {
     ) -> Self {
         self.source = input;
         self
+    }
+    /// <p>The source.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::RouteAnalysisEndpointOptions> {
+        &self.source
     }
     /// <p>The destination.</p>
     pub fn destination(mut self, input: crate::types::RouteAnalysisEndpointOptions) -> Self {
@@ -212,6 +236,12 @@ impl RouteAnalysisBuilder {
         self.destination = input;
         self
     }
+    /// <p>The destination.</p>
+    pub fn get_destination(
+        &self,
+    ) -> &::std::option::Option<crate::types::RouteAnalysisEndpointOptions> {
+        &self.destination
+    }
     /// <p>Indicates whether to analyze the return path. The return path is not analyzed if the forward path analysis does not succeed.</p>
     pub fn include_return_path(mut self, input: bool) -> Self {
         self.include_return_path = ::std::option::Option::Some(input);
@@ -222,6 +252,10 @@ impl RouteAnalysisBuilder {
         self.include_return_path = input;
         self
     }
+    /// <p>Indicates whether to analyze the return path. The return path is not analyzed if the forward path analysis does not succeed.</p>
+    pub fn get_include_return_path(&self) -> &::std::option::Option<bool> {
+        &self.include_return_path
+    }
     /// <p>Indicates whether to include the location of middlebox appliances in the route analysis.</p>
     pub fn use_middleboxes(mut self, input: bool) -> Self {
         self.use_middleboxes = ::std::option::Option::Some(input);
@@ -231,6 +265,10 @@ impl RouteAnalysisBuilder {
     pub fn set_use_middleboxes(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_middleboxes = input;
         self
+    }
+    /// <p>Indicates whether to include the location of middlebox appliances in the route analysis.</p>
+    pub fn get_use_middleboxes(&self) -> &::std::option::Option<bool> {
+        &self.use_middleboxes
     }
     /// <p>The forward path.</p>
     pub fn forward_path(mut self, input: crate::types::RouteAnalysisPath) -> Self {
@@ -245,6 +283,10 @@ impl RouteAnalysisBuilder {
         self.forward_path = input;
         self
     }
+    /// <p>The forward path.</p>
+    pub fn get_forward_path(&self) -> &::std::option::Option<crate::types::RouteAnalysisPath> {
+        &self.forward_path
+    }
     /// <p>The return path.</p>
     pub fn return_path(mut self, input: crate::types::RouteAnalysisPath) -> Self {
         self.return_path = ::std::option::Option::Some(input);
@@ -257,6 +299,10 @@ impl RouteAnalysisBuilder {
     ) -> Self {
         self.return_path = input;
         self
+    }
+    /// <p>The return path.</p>
+    pub fn get_return_path(&self) -> &::std::option::Option<crate::types::RouteAnalysisPath> {
+        &self.return_path
     }
     /// Consumes the builder and constructs a [`RouteAnalysis`](crate::types::RouteAnalysis).
     pub fn build(self) -> crate::types::RouteAnalysis {

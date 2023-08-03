@@ -40,6 +40,10 @@ impl DescribeTaskInputBuilder {
         self.task_arn = input;
         self
     }
+    /// <p>Specifies the Amazon Resource Name (ARN) of the transfer task.</p>
+    pub fn get_task_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_arn
+    }
     /// Consumes the builder and constructs a [`DescribeTaskInput`](crate::operation::describe_task::DescribeTaskInput).
     pub fn build(
         self,

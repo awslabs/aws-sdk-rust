@@ -46,6 +46,10 @@ impl GetGroupOutputBuilder {
         self.group = input;
         self
     }
+    /// <p>The group that was requested. Contains the name of the group, the ARN of the group, the filter expression, and the insight configuration assigned to the group.</p>
+    pub fn get_group(&self) -> &::std::option::Option<crate::types::Group> {
+        &self.group
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -57,6 +57,12 @@ impl StartReplicationTaskAssessmentRunOutputBuilder {
         self.replication_task_assessment_run = input;
         self
     }
+    /// <p>The premigration assessment run that was started.</p>
+    pub fn get_replication_task_assessment_run(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReplicationTaskAssessmentRun> {
+        &self.replication_task_assessment_run
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

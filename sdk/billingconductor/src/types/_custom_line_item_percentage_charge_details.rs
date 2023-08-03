@@ -48,6 +48,10 @@ impl CustomLineItemPercentageChargeDetailsBuilder {
         self.percentage_value = input;
         self
     }
+    /// <p>The custom line item's percentage value. This will be multiplied against the combined value of its associated resources to determine its charge value. </p>
+    pub fn get_percentage_value(&self) -> &::std::option::Option<f64> {
+        &self.percentage_value
+    }
     /// Appends an item to `associated_values`.
     ///
     /// To override the contents of this collection use [`set_associated_values`](Self::set_associated_values).
@@ -69,6 +73,12 @@ impl CustomLineItemPercentageChargeDetailsBuilder {
     ) -> Self {
         self.associated_values = input;
         self
+    }
+    /// <p>A list of resource ARNs to associate to the percentage custom line item.</p>
+    pub fn get_associated_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.associated_values
     }
     /// Consumes the builder and constructs a [`CustomLineItemPercentageChargeDetails`](crate::types::CustomLineItemPercentageChargeDetails).
     pub fn build(self) -> crate::types::CustomLineItemPercentageChargeDetails {

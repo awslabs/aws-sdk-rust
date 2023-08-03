@@ -82,6 +82,10 @@ impl ConnectPeerConfigurationBuilder {
         self.core_network_address = input;
         self
     }
+    /// <p>The IP address of a core network.</p>
+    pub fn get_core_network_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.core_network_address
+    }
     /// <p>The IP address of the Connect peer.</p>
     pub fn peer_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.peer_address = ::std::option::Option::Some(input.into());
@@ -91,6 +95,10 @@ impl ConnectPeerConfigurationBuilder {
     pub fn set_peer_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.peer_address = input;
         self
+    }
+    /// <p>The IP address of the Connect peer.</p>
+    pub fn get_peer_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.peer_address
     }
     /// Appends an item to `inside_cidr_blocks`.
     ///
@@ -114,6 +122,12 @@ impl ConnectPeerConfigurationBuilder {
         self.inside_cidr_blocks = input;
         self
     }
+    /// <p>The inside IP addresses used for a Connect peer configuration.</p>
+    pub fn get_inside_cidr_blocks(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.inside_cidr_blocks
+    }
     /// <p>The protocol used for a Connect peer configuration.</p>
     pub fn protocol(mut self, input: crate::types::TunnelProtocol) -> Self {
         self.protocol = ::std::option::Option::Some(input);
@@ -126,6 +140,10 @@ impl ConnectPeerConfigurationBuilder {
     ) -> Self {
         self.protocol = input;
         self
+    }
+    /// <p>The protocol used for a Connect peer configuration.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<crate::types::TunnelProtocol> {
+        &self.protocol
     }
     /// Appends an item to `bgp_configurations`.
     ///
@@ -145,6 +163,12 @@ impl ConnectPeerConfigurationBuilder {
     ) -> Self {
         self.bgp_configurations = input;
         self
+    }
+    /// <p>The Connect peer BGP configurations.</p>
+    pub fn get_bgp_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectPeerBgpConfiguration>> {
+        &self.bgp_configurations
     }
     /// Consumes the builder and constructs a [`ConnectPeerConfiguration`](crate::types::ConnectPeerConfiguration).
     pub fn build(self) -> crate::types::ConnectPeerConfiguration {

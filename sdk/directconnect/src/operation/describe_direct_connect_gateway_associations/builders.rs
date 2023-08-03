@@ -43,6 +43,10 @@ impl DescribeDirectConnectGatewayAssociationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeDirectConnectGatewayAssociations as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_direct_connect_gateway_associations::builders::DescribeDirectConnectGatewayAssociationsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -113,6 +117,10 @@ impl DescribeDirectConnectGatewayAssociationsFluentBuilder {
         self.inner = self.inner.set_association_id(input);
         self
     }
+    /// <p>The ID of the Direct Connect gateway association.</p>
+    pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_association_id()
+    }
     /// <p>The ID of the associated gateway.</p>
     pub fn associated_gateway_id(
         mut self,
@@ -128,6 +136,10 @@ impl DescribeDirectConnectGatewayAssociationsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_associated_gateway_id(input);
         self
+    }
+    /// <p>The ID of the associated gateway.</p>
+    pub fn get_associated_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_associated_gateway_id()
     }
     /// <p>The ID of the Direct Connect gateway.</p>
     pub fn direct_connect_gateway_id(
@@ -145,6 +157,10 @@ impl DescribeDirectConnectGatewayAssociationsFluentBuilder {
         self.inner = self.inner.set_direct_connect_gateway_id(input);
         self
     }
+    /// <p>The ID of the Direct Connect gateway.</p>
+    pub fn get_direct_connect_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_direct_connect_gateway_id()
+    }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -157,6 +173,11 @@ impl DescribeDirectConnectGatewayAssociationsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token provided in the previous call to retrieve the next page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -166,6 +187,10 @@ impl DescribeDirectConnectGatewayAssociationsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token provided in the previous call to retrieve the next page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The ID of the virtual private gateway or transit gateway.</p>
     pub fn virtual_gateway_id(
@@ -182,5 +207,9 @@ impl DescribeDirectConnectGatewayAssociationsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_virtual_gateway_id(input);
         self
+    }
+    /// <p>The ID of the virtual private gateway or transit gateway.</p>
+    pub fn get_virtual_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_virtual_gateway_id()
     }
 }

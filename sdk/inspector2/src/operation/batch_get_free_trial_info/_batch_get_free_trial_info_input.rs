@@ -50,6 +50,12 @@ impl BatchGetFreeTrialInfoInputBuilder {
         self.account_ids = input;
         self
     }
+    /// <p>The account IDs to get free trial status for.</p>
+    pub fn get_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.account_ids
+    }
     /// Consumes the builder and constructs a [`BatchGetFreeTrialInfoInput`](crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoInput).
     pub fn build(
         self,

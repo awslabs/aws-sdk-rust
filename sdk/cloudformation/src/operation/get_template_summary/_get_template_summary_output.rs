@@ -136,6 +136,12 @@ impl GetTemplateSummaryOutputBuilder {
         self.parameters = input;
         self
     }
+    /// <p>A list of parameter declarations that describe various properties for each parameter.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterDeclaration>> {
+        &self.parameters
+    }
     /// <p>The value that's defined in the <code>Description</code> property of the template.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -145,6 +151,10 @@ impl GetTemplateSummaryOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The value that's defined in the <code>Description</code> property of the template.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `capabilities`.
     ///
@@ -167,6 +177,13 @@ impl GetTemplateSummaryOutputBuilder {
         self.capabilities = input;
         self
     }
+    /// <p>The capabilities found within the template. If your template contains IAM resources, you must specify the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code> value for this parameter when you use the <code>CreateStack</code> or <code>UpdateStack</code> actions with your template; otherwise, those actions return an <code>InsufficientCapabilities</code> error.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in CloudFormation Templates</a>.</p>
+    pub fn get_capabilities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Capability>> {
+        &self.capabilities
+    }
     /// <p>The list of resources that generated the values in the <code>Capabilities</code> response element.</p>
     pub fn capabilities_reason(
         mut self,
@@ -182,6 +199,10 @@ impl GetTemplateSummaryOutputBuilder {
     ) -> Self {
         self.capabilities_reason = input;
         self
+    }
+    /// <p>The list of resources that generated the values in the <code>Capabilities</code> response element.</p>
+    pub fn get_capabilities_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.capabilities_reason
     }
     /// Appends an item to `resource_types`.
     ///
@@ -205,6 +226,12 @@ impl GetTemplateSummaryOutputBuilder {
         self.resource_types = input;
         self
     }
+    /// <p>A list of all the template resource types that are defined in the template, such as <code>AWS::EC2::Instance</code>, <code>AWS::Dynamo::Table</code>, and <code>Custom::MyCustomInstance</code>.</p>
+    pub fn get_resource_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resource_types
+    }
     /// <p>The Amazon Web Services template format version, which identifies the capabilities of the template.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -215,6 +242,10 @@ impl GetTemplateSummaryOutputBuilder {
         self.version = input;
         self
     }
+    /// <p>The Amazon Web Services template format version, which identifies the capabilities of the template.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
+    }
     /// <p>The value that's defined for the <code>Metadata</code> property of the template.</p>
     pub fn metadata(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metadata = ::std::option::Option::Some(input.into());
@@ -224,6 +255,10 @@ impl GetTemplateSummaryOutputBuilder {
     pub fn set_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metadata = input;
         self
+    }
+    /// <p>The value that's defined for the <code>Metadata</code> property of the template.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metadata
     }
     /// Appends an item to `declared_transforms`.
     ///
@@ -247,6 +282,12 @@ impl GetTemplateSummaryOutputBuilder {
         self.declared_transforms = input;
         self
     }
+    /// <p>A list of the transforms that are declared in the template.</p>
+    pub fn get_declared_transforms(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.declared_transforms
+    }
     /// Appends an item to `resource_identifier_summaries`.
     ///
     /// To override the contents of this collection use [`set_resource_identifier_summaries`](Self::set_resource_identifier_summaries).
@@ -269,6 +310,12 @@ impl GetTemplateSummaryOutputBuilder {
         self.resource_identifier_summaries = input;
         self
     }
+    /// <p>A list of resource identifier summaries that describe the target resources of an import operation and the properties you can provide during the import to identify the target resources. For example, <code>BucketName</code> is a possible identifier property for an <code>AWS::S3::Bucket</code> resource.</p>
+    pub fn get_resource_identifier_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceIdentifierSummary>> {
+        &self.resource_identifier_summaries
+    }
     /// <p>An object containing any warnings returned.</p>
     pub fn warnings(mut self, input: crate::types::Warnings) -> Self {
         self.warnings = ::std::option::Option::Some(input);
@@ -278,6 +325,10 @@ impl GetTemplateSummaryOutputBuilder {
     pub fn set_warnings(mut self, input: ::std::option::Option<crate::types::Warnings>) -> Self {
         self.warnings = input;
         self
+    }
+    /// <p>An object containing any warnings returned.</p>
+    pub fn get_warnings(&self) -> &::std::option::Option<crate::types::Warnings> {
+        &self.warnings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

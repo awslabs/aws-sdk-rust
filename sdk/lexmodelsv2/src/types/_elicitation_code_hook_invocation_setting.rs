@@ -48,6 +48,10 @@ impl ElicitationCodeHookInvocationSettingBuilder {
         self.enable_code_hook_invocation = input;
         self
     }
+    /// <p>Indicates whether a Lambda function should be invoked for the dialog.</p>
+    pub fn get_enable_code_hook_invocation(&self) -> &::std::option::Option<bool> {
+        &self.enable_code_hook_invocation
+    }
     /// <p>A label that indicates the dialog step from which the dialog code hook is happening.</p>
     pub fn invocation_label(
         mut self,
@@ -63,6 +67,10 @@ impl ElicitationCodeHookInvocationSettingBuilder {
     ) -> Self {
         self.invocation_label = input;
         self
+    }
+    /// <p>A label that indicates the dialog step from which the dialog code hook is happening.</p>
+    pub fn get_invocation_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.invocation_label
     }
     /// Consumes the builder and constructs a [`ElicitationCodeHookInvocationSetting`](crate::types::ElicitationCodeHookInvocationSetting).
     pub fn build(self) -> crate::types::ElicitationCodeHookInvocationSetting {

@@ -62,6 +62,11 @@ impl ResponseInspectionStatusCodeBuilder {
         self.success_codes = input;
         self
     }
+    /// <p>Status codes in the response that indicate a successful login or account creation attempt. To be counted as a success, the response status code must match one of these. Each code must be unique among the success and failure status codes. </p>
+    /// <p>JSON example: <code>"SuccessCodes": [ 200, 201 ]</code> </p>
+    pub fn get_success_codes(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        &self.success_codes
+    }
     /// Appends an item to `failure_codes`.
     ///
     /// To override the contents of this collection use [`set_failure_codes`](Self::set_failure_codes).
@@ -79,6 +84,11 @@ impl ResponseInspectionStatusCodeBuilder {
     pub fn set_failure_codes(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.failure_codes = input;
         self
+    }
+    /// <p>Status codes in the response that indicate a failed login or account creation attempt. To be counted as a failure, the response status code must match one of these. Each code must be unique among the success and failure status codes. </p>
+    /// <p>JSON example: <code>"FailureCodes": [ 400, 404 ]</code> </p>
+    pub fn get_failure_codes(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        &self.failure_codes
     }
     /// Consumes the builder and constructs a [`ResponseInspectionStatusCode`](crate::types::ResponseInspectionStatusCode).
     pub fn build(self) -> crate::types::ResponseInspectionStatusCode {

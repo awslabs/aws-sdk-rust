@@ -39,6 +39,10 @@ impl DeleteRoomInputBuilder {
         self.room_arn = input;
         self
     }
+    /// <p>The ARN of the room to delete. Required.</p>
+    pub fn get_room_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.room_arn
+    }
     /// Consumes the builder and constructs a [`DeleteRoomInput`](crate::operation::delete_room::DeleteRoomInput).
     pub fn build(
         self,

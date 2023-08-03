@@ -73,6 +73,12 @@ impl AwsBackupBackupPlanDetailsBuilder {
         self.backup_plan = input;
         self
     }
+    /// <p>Uniquely identifies the backup plan to be associated with the selection of resources. </p>
+    pub fn get_backup_plan(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsBackupBackupPlanBackupPlanDetails> {
+        &self.backup_plan
+    }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies the backup plan. </p>
     pub fn backup_plan_arn(
         mut self,
@@ -88,6 +94,10 @@ impl AwsBackupBackupPlanDetailsBuilder {
     ) -> Self {
         self.backup_plan_arn = input;
         self
+    }
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies the backup plan. </p>
+    pub fn get_backup_plan_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_plan_arn
     }
     /// <p>A unique ID for the backup plan. </p>
     pub fn backup_plan_id(
@@ -105,6 +115,10 @@ impl AwsBackupBackupPlanDetailsBuilder {
         self.backup_plan_id = input;
         self
     }
+    /// <p>A unique ID for the backup plan. </p>
+    pub fn get_backup_plan_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_plan_id
+    }
     /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings. Version IDs cannot be edited. </p>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_id = ::std::option::Option::Some(input.into());
@@ -114,6 +128,10 @@ impl AwsBackupBackupPlanDetailsBuilder {
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_id = input;
         self
+    }
+    /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings. Version IDs cannot be edited. </p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_id
     }
     /// Consumes the builder and constructs a [`AwsBackupBackupPlanDetails`](crate::types::AwsBackupBackupPlanDetails).
     pub fn build(self) -> crate::types::AwsBackupBackupPlanDetails {

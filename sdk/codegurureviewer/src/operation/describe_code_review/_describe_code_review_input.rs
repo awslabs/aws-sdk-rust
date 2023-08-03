@@ -46,6 +46,10 @@ impl DescribeCodeReviewInputBuilder {
         self.code_review_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
+    pub fn get_code_review_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code_review_arn
+    }
     /// Consumes the builder and constructs a [`DescribeCodeReviewInput`](crate::operation::describe_code_review::DescribeCodeReviewInput).
     pub fn build(
         self,

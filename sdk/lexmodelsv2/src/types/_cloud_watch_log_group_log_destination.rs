@@ -54,6 +54,10 @@ impl CloudWatchLogGroupLogDestinationBuilder {
         self.cloud_watch_log_group_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the log group where text and metadata logs are delivered.</p>
+    pub fn get_cloud_watch_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cloud_watch_log_group_arn
+    }
     /// <p>The prefix of the log stream name within the log group that you specified </p>
     pub fn log_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_prefix = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl CloudWatchLogGroupLogDestinationBuilder {
     pub fn set_log_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_prefix = input;
         self
+    }
+    /// <p>The prefix of the log stream name within the log group that you specified </p>
+    pub fn get_log_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_prefix
     }
     /// Consumes the builder and constructs a [`CloudWatchLogGroupLogDestination`](crate::types::CloudWatchLogGroupLogDestination).
     pub fn build(self) -> crate::types::CloudWatchLogGroupLogDestination {

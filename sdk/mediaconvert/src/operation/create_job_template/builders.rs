@@ -36,6 +36,12 @@ impl CreateJobTemplateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateJobTemplate as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_job_template::builders::CreateJobTemplateInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,12 @@ impl CreateJobTemplateFluentBuilder {
         self.inner = self.inner.set_acceleration_settings(input);
         self
     }
+    /// Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental MediaConvert User Guide.
+    pub fn get_acceleration_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::AccelerationSettings> {
+        self.inner.get_acceleration_settings()
+    }
     /// Optional. A category for the job template you are creating
     pub fn category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.category(input.into());
@@ -139,6 +151,10 @@ impl CreateJobTemplateFluentBuilder {
         self.inner = self.inner.set_category(input);
         self
     }
+    /// Optional. A category for the job template you are creating
+    pub fn get_category(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_category()
+    }
     /// Optional. A description of the job template you are creating.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -148,6 +164,10 @@ impl CreateJobTemplateFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// Optional. A description of the job template you are creating.
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `HopDestinations`.
     ///
@@ -166,6 +186,12 @@ impl CreateJobTemplateFluentBuilder {
         self.inner = self.inner.set_hop_destinations(input);
         self
     }
+    /// Optional. Use queue hopping to avoid overly long waits in the backlog of the queue that you submit your job to. Specify an alternate queue and the maximum time that your job will wait in the initial queue before hopping. For more information about this feature, see the AWS Elemental MediaConvert User Guide.
+    pub fn get_hop_destinations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HopDestination>> {
+        self.inner.get_hop_destinations()
+    }
     /// The name of the job template you are creating.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -175,6 +201,10 @@ impl CreateJobTemplateFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// The name of the job template you are creating.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// Specify the relative priority for this job. In any given queue, the service begins processing the job with the highest value first. When more than one job has the same priority, the service begins processing the job that you submitted first. If you don't specify a priority, the service uses the default value 0.
     pub fn priority(mut self, input: i32) -> Self {
@@ -186,6 +216,10 @@ impl CreateJobTemplateFluentBuilder {
         self.inner = self.inner.set_priority(input);
         self
     }
+    /// Specify the relative priority for this job. In any given queue, the service begins processing the job with the highest value first. When more than one job has the same priority, the service begins processing the job that you submitted first. If you don't specify a priority, the service uses the default value 0.
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        self.inner.get_priority()
+    }
     /// Optional. The queue that jobs created from this template are assigned to. If you don't specify this, jobs will go to the default queue.
     pub fn queue(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.queue(input.into());
@@ -195,6 +229,10 @@ impl CreateJobTemplateFluentBuilder {
     pub fn set_queue(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_queue(input);
         self
+    }
+    /// Optional. The queue that jobs created from this template are assigned to. If you don't specify this, jobs will go to the default queue.
+    pub fn get_queue(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_queue()
     }
     /// JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs created from it.
     pub fn settings(mut self, input: crate::types::JobTemplateSettings) -> Self {
@@ -209,6 +247,10 @@ impl CreateJobTemplateFluentBuilder {
         self.inner = self.inner.set_settings(input);
         self
     }
+    /// JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs created from it.
+    pub fn get_settings(&self) -> &::std::option::Option<crate::types::JobTemplateSettings> {
+        self.inner.get_settings()
+    }
     /// Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
     pub fn status_update_interval(mut self, input: crate::types::StatusUpdateInterval) -> Self {
         self.inner = self.inner.status_update_interval(input);
@@ -221,6 +263,12 @@ impl CreateJobTemplateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_status_update_interval(input);
         self
+    }
+    /// Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
+    pub fn get_status_update_interval(
+        &self,
+    ) -> &::std::option::Option<crate::types::StatusUpdateInterval> {
+        self.inner.get_status_update_interval()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -244,5 +292,13 @@ impl CreateJobTemplateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

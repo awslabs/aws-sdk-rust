@@ -36,6 +36,10 @@ impl GetDeviceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetDevice as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_device::builders::GetDeviceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl GetDeviceFluentBuilder {
         self.inner = self.inner.set_device_key(input);
         self
     }
+    /// <p>The device key.</p>
+    pub fn get_device_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_key()
+    }
     /// <p>A valid access token that Amazon Cognito issued to the user whose device information you want to request.</p>
     pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.access_token(input.into());
@@ -127,5 +135,9 @@ impl GetDeviceFluentBuilder {
     pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_access_token(input);
         self
+    }
+    /// <p>A valid access token that Amazon Cognito issued to the user whose device information you want to request.</p>
+    pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_access_token()
     }
 }

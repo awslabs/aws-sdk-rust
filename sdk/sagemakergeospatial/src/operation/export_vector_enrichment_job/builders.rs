@@ -36,6 +36,10 @@ impl ExportVectorEnrichmentJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ExportVectorEnrichmentJob as a reference.
+    pub fn as_input(&self) -> &crate::operation::export_vector_enrichment_job::builders::ExportVectorEnrichmentJobInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl ExportVectorEnrichmentJobFluentBuilder {
         self.inner = self.inner.set_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
+    }
     /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -135,6 +143,10 @@ impl ExportVectorEnrichmentJobFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM rolewith permission to upload to the location in OutputConfig.</p>
     pub fn execution_role_arn(
@@ -152,6 +164,10 @@ impl ExportVectorEnrichmentJobFluentBuilder {
         self.inner = self.inner.set_execution_role_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM rolewith permission to upload to the location in OutputConfig.</p>
+    pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_execution_role_arn()
+    }
     /// <p>Output location information for exporting Vector Enrichment Job results. </p>
     pub fn output_config(
         mut self,
@@ -167,5 +183,11 @@ impl ExportVectorEnrichmentJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_output_config(input);
         self
+    }
+    /// <p>Output location information for exporting Vector Enrichment Job results. </p>
+    pub fn get_output_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExportVectorEnrichmentJobOutputConfig> {
+        self.inner.get_output_config()
     }
 }

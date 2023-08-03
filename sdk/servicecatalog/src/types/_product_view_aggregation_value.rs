@@ -48,6 +48,10 @@ impl ProductViewAggregationValueBuilder {
         self.value = input;
         self
     }
+    /// <p>The value of the product view aggregation.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// <p>An approximate count of the products that match the value.</p>
     pub fn approximate_count(mut self, input: i32) -> Self {
         self.approximate_count = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ProductViewAggregationValueBuilder {
     pub fn set_approximate_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.approximate_count = input;
         self
+    }
+    /// <p>An approximate count of the products that match the value.</p>
+    pub fn get_approximate_count(&self) -> &::std::option::Option<i32> {
+        &self.approximate_count
     }
     /// Consumes the builder and constructs a [`ProductViewAggregationValue`](crate::types::ProductViewAggregationValue).
     pub fn build(self) -> crate::types::ProductViewAggregationValue {

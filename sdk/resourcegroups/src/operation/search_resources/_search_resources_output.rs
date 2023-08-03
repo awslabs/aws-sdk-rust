@@ -85,6 +85,12 @@ impl SearchResourcesOutputBuilder {
         self.resource_identifiers = input;
         self
     }
+    /// <p>The ARNs and resource types of resources that are members of the group that you specified.</p>
+    pub fn get_resource_identifiers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceIdentifier>> {
+        &self.resource_identifiers
+    }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -94,6 +100,10 @@ impl SearchResourcesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `query_errors`.
     ///
@@ -123,6 +133,17 @@ impl SearchResourcesOutputBuilder {
     ) -> Self {
         self.query_errors = input;
         self
+    }
+    /// <p>A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and <code>Message</code> structures.</p>
+    /// <p>Possible values for <code>ErrorCode</code>:</p>
+    /// <ul>
+    /// <li> <p> <code>CLOUDFORMATION_STACK_INACTIVE</code> </p> </li>
+    /// <li> <p> <code>CLOUDFORMATION_STACK_NOT_EXISTING</code> </p> </li>
+    /// </ul>
+    pub fn get_query_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryError>> {
+        &self.query_errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

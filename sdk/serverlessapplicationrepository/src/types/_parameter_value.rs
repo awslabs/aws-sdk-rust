@@ -48,6 +48,10 @@ impl ParameterValueBuilder {
         self.name = input;
         self
     }
+    /// <p>The key associated with the parameter. If you don't specify a key and value for a particular parameter, AWS CloudFormation uses the default value that is specified in your template.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The input value associated with the parameter.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl ParameterValueBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The input value associated with the parameter.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`ParameterValue`](crate::types::ParameterValue).
     pub fn build(self) -> crate::types::ParameterValue {

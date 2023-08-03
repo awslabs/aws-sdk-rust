@@ -61,6 +61,10 @@ impl DeleteDistributionInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The distribution ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The value of the <code>ETag</code> header that you received when you disabled the distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.if_match = ::std::option::Option::Some(input.into());
@@ -70,6 +74,10 @@ impl DeleteDistributionInputBuilder {
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.if_match = input;
         self
+    }
+    /// <p>The value of the <code>ETag</code> header that you received when you disabled the distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
+        &self.if_match
     }
     /// Consumes the builder and constructs a [`DeleteDistributionInput`](crate::operation::delete_distribution::DeleteDistributionInput).
     pub fn build(

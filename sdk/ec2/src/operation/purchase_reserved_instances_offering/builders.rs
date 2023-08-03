@@ -39,6 +39,10 @@ impl PurchaseReservedInstancesOfferingFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PurchaseReservedInstancesOffering as a reference.
+    pub fn as_input(&self) -> &crate::operation::purchase_reserved_instances_offering::builders::PurchaseReservedInstancesOfferingInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -103,6 +107,10 @@ impl PurchaseReservedInstancesOfferingFluentBuilder {
         self.inner = self.inner.set_instance_count(input);
         self
     }
+    /// <p>The number of Reserved Instances to purchase.</p>
+    pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
+        self.inner.get_instance_count()
+    }
     /// <p>The ID of the Reserved Instance offering to purchase.</p>
     pub fn reserved_instances_offering_id(
         mut self,
@@ -119,6 +127,12 @@ impl PurchaseReservedInstancesOfferingFluentBuilder {
         self.inner = self.inner.set_reserved_instances_offering_id(input);
         self
     }
+    /// <p>The ID of the Reserved Instance offering to purchase.</p>
+    pub fn get_reserved_instances_offering_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reserved_instances_offering_id()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -128,6 +142,10 @@ impl PurchaseReservedInstancesOfferingFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
     /// <p>Specified for Reserved Instance Marketplace offerings to limit the total order and ensure that the Reserved Instances are not purchased at unexpected prices.</p>
     pub fn limit_price(mut self, input: crate::types::ReservedInstanceLimitPrice) -> Self {
@@ -142,6 +160,12 @@ impl PurchaseReservedInstancesOfferingFluentBuilder {
         self.inner = self.inner.set_limit_price(input);
         self
     }
+    /// <p>Specified for Reserved Instance Marketplace offerings to limit the total order and ensure that the Reserved Instances are not purchased at unexpected prices.</p>
+    pub fn get_limit_price(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReservedInstanceLimitPrice> {
+        self.inner.get_limit_price()
+    }
     /// <p>The time at which to purchase the Reserved Instance, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
     pub fn purchase_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.purchase_time(input);
@@ -154,5 +178,9 @@ impl PurchaseReservedInstancesOfferingFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_purchase_time(input);
         self
+    }
+    /// <p>The time at which to purchase the Reserved Instance, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+    pub fn get_purchase_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_purchase_time()
     }
 }

@@ -133,6 +133,10 @@ impl StartSnapshotOutputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the snapshot.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The ID of the snapshot.</p>
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_id = ::std::option::Option::Some(input.into());
@@ -142,6 +146,10 @@ impl StartSnapshotOutputBuilder {
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_id = input;
         self
+    }
+    /// <p>The ID of the snapshot.</p>
+    pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_id
     }
     /// <p>The Amazon Web Services account ID of the snapshot owner.</p>
     pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -153,6 +161,10 @@ impl StartSnapshotOutputBuilder {
         self.owner_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID of the snapshot owner.</p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
+    }
     /// <p>The status of the snapshot.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -162,6 +174,10 @@ impl StartSnapshotOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the snapshot.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.status
     }
     /// <p>The timestamp when the snapshot was created.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -176,6 +192,10 @@ impl StartSnapshotOutputBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The timestamp when the snapshot was created.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The size of the volume, in GiB.</p>
     pub fn volume_size(mut self, input: i64) -> Self {
         self.volume_size = ::std::option::Option::Some(input);
@@ -186,6 +206,10 @@ impl StartSnapshotOutputBuilder {
         self.volume_size = input;
         self
     }
+    /// <p>The size of the volume, in GiB.</p>
+    pub fn get_volume_size(&self) -> &::std::option::Option<i64> {
+        &self.volume_size
+    }
     /// <p>The size of the blocks in the snapshot, in bytes.</p>
     pub fn block_size(mut self, input: i32) -> Self {
         self.block_size = ::std::option::Option::Some(input);
@@ -195,6 +219,10 @@ impl StartSnapshotOutputBuilder {
     pub fn set_block_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.block_size = input;
         self
+    }
+    /// <p>The size of the blocks in the snapshot, in bytes.</p>
+    pub fn get_block_size(&self) -> &::std::option::Option<i32> {
+        &self.block_size
     }
     /// Appends an item to `tags`.
     ///
@@ -215,6 +243,10 @@ impl StartSnapshotOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags applied to the snapshot. You can specify up to 50 tags per snapshot. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html"> Tagging your Amazon EC2 resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The ID of the parent snapshot.</p>
     pub fn parent_snapshot_id(
         mut self,
@@ -231,6 +263,10 @@ impl StartSnapshotOutputBuilder {
         self.parent_snapshot_id = input;
         self
     }
+    /// <p>The ID of the parent snapshot.</p>
+    pub fn get_parent_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent_snapshot_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt the snapshot.</p>
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_arn = ::std::option::Option::Some(input.into());
@@ -240,6 +276,10 @@ impl StartSnapshotOutputBuilder {
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt the snapshot.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

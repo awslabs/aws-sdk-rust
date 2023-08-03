@@ -56,6 +56,10 @@ impl TelemetryMetadataBuilder {
         self.message_type = input;
         self
     }
+    /// <p>A specific type of behavioral data that is collected by the agent.</p>
+    pub fn get_message_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message_type
+    }
     /// <p>The count of messages that the agent sends to the Amazon Inspector service.</p>
     pub fn count(mut self, input: i64) -> Self {
         self.count = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl TelemetryMetadataBuilder {
         self.count = input;
         self
     }
+    /// <p>The count of messages that the agent sends to the Amazon Inspector service.</p>
+    pub fn get_count(&self) -> &::std::option::Option<i64> {
+        &self.count
+    }
     /// <p>The data size of messages that the agent sends to the Amazon Inspector service.</p>
     pub fn data_size(mut self, input: i64) -> Self {
         self.data_size = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl TelemetryMetadataBuilder {
     pub fn set_data_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.data_size = input;
         self
+    }
+    /// <p>The data size of messages that the agent sends to the Amazon Inspector service.</p>
+    pub fn get_data_size(&self) -> &::std::option::Option<i64> {
+        &self.data_size
     }
     /// Consumes the builder and constructs a [`TelemetryMetadata`](crate::types::TelemetryMetadata).
     pub fn build(self) -> crate::types::TelemetryMetadata {

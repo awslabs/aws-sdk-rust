@@ -41,6 +41,10 @@ impl StopPhiDetectionJobInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The identifier of the PHI detection job to stop.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// Consumes the builder and constructs a [`StopPhiDetectionJobInput`](crate::operation::stop_phi_detection_job::StopPhiDetectionJobInput).
     pub fn build(
         self,

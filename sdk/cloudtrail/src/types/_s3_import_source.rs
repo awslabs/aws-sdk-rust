@@ -62,6 +62,10 @@ impl S3ImportSourceBuilder {
         self.s3_location_uri = input;
         self
     }
+    /// <p> The URI for the source S3 bucket. </p>
+    pub fn get_s3_location_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_location_uri
+    }
     /// <p> The Region associated with the source S3 bucket. </p>
     pub fn s3_bucket_region(
         mut self,
@@ -78,6 +82,10 @@ impl S3ImportSourceBuilder {
         self.s3_bucket_region = input;
         self
     }
+    /// <p> The Region associated with the source S3 bucket. </p>
+    pub fn get_s3_bucket_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket_region
+    }
     /// <p> The IAM ARN role used to access the source S3 bucket. </p>
     pub fn s3_bucket_access_role_arn(
         mut self,
@@ -93,6 +101,10 @@ impl S3ImportSourceBuilder {
     ) -> Self {
         self.s3_bucket_access_role_arn = input;
         self
+    }
+    /// <p> The IAM ARN role used to access the source S3 bucket. </p>
+    pub fn get_s3_bucket_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket_access_role_arn
     }
     /// Consumes the builder and constructs a [`S3ImportSource`](crate::types::S3ImportSource).
     pub fn build(self) -> crate::types::S3ImportSource {

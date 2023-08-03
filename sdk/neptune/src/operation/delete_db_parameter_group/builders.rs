@@ -37,6 +37,13 @@ impl DeleteDBParameterGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteDBParameterGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_db_parameter_group::builders::DeleteDbParameterGroupInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -144,5 +151,15 @@ impl DeleteDBParameterGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_db_parameter_group_name(input);
         self
+    }
+    /// <p>The name of the DB parameter group.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be the name of an existing DB parameter group</p> </li>
+    /// <li> <p>You can't delete a default DB parameter group</p> </li>
+    /// <li> <p>Cannot be associated with any DB instances</p> </li>
+    /// </ul>
+    pub fn get_db_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_parameter_group_name()
     }
 }

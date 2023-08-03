@@ -46,6 +46,10 @@ impl FargatePlatformConfigurationBuilder {
         self.platform_version = input;
         self
     }
+    /// <p>The Fargate platform version where the jobs are running. A platform version is specified only for jobs that are running on Fargate resources. If one isn't specified, the <code>LATEST</code> platform version is used by default. This uses a recent, approved version of the Fargate platform for compute resources. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn get_platform_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform_version
+    }
     /// Consumes the builder and constructs a [`FargatePlatformConfiguration`](crate::types::FargatePlatformConfiguration).
     pub fn build(self) -> crate::types::FargatePlatformConfiguration {
         crate::types::FargatePlatformConfiguration {

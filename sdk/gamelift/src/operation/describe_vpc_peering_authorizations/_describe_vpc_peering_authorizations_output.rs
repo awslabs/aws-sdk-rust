@@ -62,6 +62,12 @@ impl DescribeVpcPeeringAuthorizationsOutputBuilder {
         self.vpc_peering_authorizations = input;
         self
     }
+    /// <p>A collection of objects that describe all valid VPC peering operations for the current Amazon Web Services account.</p>
+    pub fn get_vpc_peering_authorizations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcPeeringAuthorization>> {
+        &self.vpc_peering_authorizations
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

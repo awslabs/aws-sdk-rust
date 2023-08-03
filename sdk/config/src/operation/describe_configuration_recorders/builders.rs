@@ -38,6 +38,10 @@ impl DescribeConfigurationRecordersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeConfigurationRecorders as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_configuration_recorders::builders::DescribeConfigurationRecordersInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,5 +141,11 @@ impl DescribeConfigurationRecordersFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_configuration_recorder_names(input);
         self
+    }
+    /// <p>A list of configuration recorder names.</p>
+    pub fn get_configuration_recorder_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_configuration_recorder_names()
     }
 }

@@ -36,6 +36,13 @@ impl ListApplicationInstancesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListApplicationInstances as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_application_instances::builders::ListApplicationInstancesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +142,10 @@ impl ListApplicationInstancesFluentBuilder {
         self.inner = self.inner.set_device_id(input);
         self
     }
+    /// <p>The application instances' device ID.</p>
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_id()
+    }
     /// <p>Only include instances with a specific status.</p>
     pub fn status_filter(mut self, input: crate::types::StatusFilter) -> Self {
         self.inner = self.inner.status_filter(input);
@@ -148,6 +159,10 @@ impl ListApplicationInstancesFluentBuilder {
         self.inner = self.inner.set_status_filter(input);
         self
     }
+    /// <p>Only include instances with a specific status.</p>
+    pub fn get_status_filter(&self) -> &::std::option::Option<crate::types::StatusFilter> {
+        self.inner.get_status_filter()
+    }
     /// <p>The maximum number of application instances to return in one page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -158,6 +173,10 @@ impl ListApplicationInstancesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of application instances to return in one page of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -167,5 +186,9 @@ impl ListApplicationInstancesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

@@ -85,6 +85,10 @@ impl CreateOtaUpdateOutputBuilder {
         self.ota_update_id = input;
         self
     }
+    /// <p>The OTA update ID.</p>
+    pub fn get_ota_update_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ota_update_id
+    }
     /// <p>The IoT job ID associated with the OTA update.</p>
     pub fn aws_iot_job_id(
         mut self,
@@ -100,6 +104,10 @@ impl CreateOtaUpdateOutputBuilder {
     ) -> Self {
         self.aws_iot_job_id = input;
         self
+    }
+    /// <p>The IoT job ID associated with the OTA update.</p>
+    pub fn get_aws_iot_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_iot_job_id
     }
     /// <p>The OTA update ARN.</p>
     pub fn ota_update_arn(
@@ -117,6 +125,10 @@ impl CreateOtaUpdateOutputBuilder {
         self.ota_update_arn = input;
         self
     }
+    /// <p>The OTA update ARN.</p>
+    pub fn get_ota_update_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ota_update_arn
+    }
     /// <p>The IoT job ARN associated with the OTA update.</p>
     pub fn aws_iot_job_arn(
         mut self,
@@ -133,6 +145,10 @@ impl CreateOtaUpdateOutputBuilder {
         self.aws_iot_job_arn = input;
         self
     }
+    /// <p>The IoT job ARN associated with the OTA update.</p>
+    pub fn get_aws_iot_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_iot_job_arn
+    }
     /// <p>The OTA update status.</p>
     pub fn ota_update_status(mut self, input: crate::types::OtaUpdateStatus) -> Self {
         self.ota_update_status = ::std::option::Option::Some(input);
@@ -145,6 +161,10 @@ impl CreateOtaUpdateOutputBuilder {
     ) -> Self {
         self.ota_update_status = input;
         self
+    }
+    /// <p>The OTA update status.</p>
+    pub fn get_ota_update_status(&self) -> &::std::option::Option<crate::types::OtaUpdateStatus> {
+        &self.ota_update_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

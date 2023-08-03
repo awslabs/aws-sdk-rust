@@ -40,6 +40,10 @@ impl DeletePricingPlanInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're deleting. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`DeletePricingPlanInput`](crate::operation::delete_pricing_plan::DeletePricingPlanInput).
     pub fn build(
         self,

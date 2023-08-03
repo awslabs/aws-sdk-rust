@@ -42,6 +42,10 @@ impl PutSipMediaApplicationLoggingConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutSipMediaApplicationLoggingConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_sip_media_application_logging_configuration::builders::PutSipMediaApplicationLoggingConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -112,6 +116,10 @@ impl PutSipMediaApplicationLoggingConfigurationFluentBuilder {
         self.inner = self.inner.set_sip_media_application_id(input);
         self
     }
+    /// <p>The SIP media application ID.</p>
+    pub fn get_sip_media_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sip_media_application_id()
+    }
     /// <p>The actual logging configuration.</p>
     pub fn sip_media_application_logging_configuration(
         mut self,
@@ -131,5 +139,11 @@ impl PutSipMediaApplicationLoggingConfigurationFluentBuilder {
             .inner
             .set_sip_media_application_logging_configuration(input);
         self
+    }
+    /// <p>The actual logging configuration.</p>
+    pub fn get_sip_media_application_logging_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SipMediaApplicationLoggingConfiguration> {
+        self.inner.get_sip_media_application_logging_configuration()
     }
 }

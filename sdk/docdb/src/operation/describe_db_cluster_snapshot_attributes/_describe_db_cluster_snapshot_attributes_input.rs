@@ -46,6 +46,12 @@ impl DescribeDbClusterSnapshotAttributesInputBuilder {
         self.db_cluster_snapshot_identifier = input;
         self
     }
+    /// <p>The identifier for the cluster snapshot to describe the attributes for.</p>
+    pub fn get_db_cluster_snapshot_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_snapshot_identifier
+    }
     /// Consumes the builder and constructs a [`DescribeDbClusterSnapshotAttributesInput`](crate::operation::describe_db_cluster_snapshot_attributes::DescribeDbClusterSnapshotAttributesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_db_cluster_snapshot_attributes::DescribeDbClusterSnapshotAttributesInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

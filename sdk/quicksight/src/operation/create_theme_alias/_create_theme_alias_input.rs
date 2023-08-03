@@ -70,6 +70,10 @@ impl CreateThemeAliasInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services account that contains the theme for the new theme alias.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>An ID for the theme alias.</p>
     pub fn theme_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.theme_id = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl CreateThemeAliasInputBuilder {
     pub fn set_theme_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.theme_id = input;
         self
+    }
+    /// <p>An ID for the theme alias.</p>
+    pub fn get_theme_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.theme_id
     }
     /// <p>The name that you want to give to the theme alias that you are creating. The alias name can't begin with a <code>$</code>. Alias names that start with <code>$</code> are reserved by Amazon QuickSight. </p>
     pub fn alias_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -90,6 +98,10 @@ impl CreateThemeAliasInputBuilder {
         self.alias_name = input;
         self
     }
+    /// <p>The name that you want to give to the theme alias that you are creating. The alias name can't begin with a <code>$</code>. Alias names that start with <code>$</code> are reserved by Amazon QuickSight. </p>
+    pub fn get_alias_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias_name
+    }
     /// <p>The version number of the theme.</p>
     pub fn theme_version_number(mut self, input: i64) -> Self {
         self.theme_version_number = ::std::option::Option::Some(input);
@@ -99,6 +111,10 @@ impl CreateThemeAliasInputBuilder {
     pub fn set_theme_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.theme_version_number = input;
         self
+    }
+    /// <p>The version number of the theme.</p>
+    pub fn get_theme_version_number(&self) -> &::std::option::Option<i64> {
+        &self.theme_version_number
     }
     /// Consumes the builder and constructs a [`CreateThemeAliasInput`](crate::operation::create_theme_alias::CreateThemeAliasInput).
     pub fn build(

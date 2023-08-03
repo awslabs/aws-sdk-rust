@@ -46,6 +46,10 @@ impl DeleteEventTrackerInputBuilder {
         self.event_tracker_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the event tracker to delete.</p>
+    pub fn get_event_tracker_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_tracker_arn
+    }
     /// Consumes the builder and constructs a [`DeleteEventTrackerInput`](crate::operation::delete_event_tracker::DeleteEventTrackerInput).
     pub fn build(
         self,

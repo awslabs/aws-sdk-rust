@@ -47,6 +47,10 @@ impl GetFunctionInputBuilder {
         self.api_id = input;
         self
     }
+    /// <p>The GraphQL API ID.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_id
+    }
     /// <p>The <code>Function</code> ID.</p>
     pub fn function_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_id = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl GetFunctionInputBuilder {
     pub fn set_function_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.function_id = input;
         self
+    }
+    /// <p>The <code>Function</code> ID.</p>
+    pub fn get_function_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.function_id
     }
     /// Consumes the builder and constructs a [`GetFunctionInput`](crate::operation::get_function::GetFunctionInput).
     pub fn build(

@@ -54,6 +54,10 @@ impl DimensionMappingBuilder {
         self.source_column = input;
         self
     }
+    /// <p></p>
+    pub fn get_source_column(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_column
+    }
     /// <p> </p>
     pub fn destination_column(
         mut self,
@@ -69,6 +73,10 @@ impl DimensionMappingBuilder {
     ) -> Self {
         self.destination_column = input;
         self
+    }
+    /// <p> </p>
+    pub fn get_destination_column(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_column
     }
     /// Consumes the builder and constructs a [`DimensionMapping`](crate::types::DimensionMapping).
     pub fn build(self) -> crate::types::DimensionMapping {

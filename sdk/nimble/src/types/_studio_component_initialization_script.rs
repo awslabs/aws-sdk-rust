@@ -85,6 +85,12 @@ impl StudioComponentInitializationScriptBuilder {
         self.launch_profile_protocol_version = input;
         self
     }
+    /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
+    pub fn get_launch_profile_protocol_version(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.launch_profile_protocol_version
+    }
     /// <p>The platform of the initialization script, either Windows or Linux.</p>
     pub fn platform(mut self, input: crate::types::LaunchProfilePlatform) -> Self {
         self.platform = ::std::option::Option::Some(input);
@@ -97,6 +103,10 @@ impl StudioComponentInitializationScriptBuilder {
     ) -> Self {
         self.platform = input;
         self
+    }
+    /// <p>The platform of the initialization script, either Windows or Linux.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<crate::types::LaunchProfilePlatform> {
+        &self.platform
     }
     /// <p>The method to use when running the initialization script.</p>
     pub fn run_context(
@@ -114,6 +124,12 @@ impl StudioComponentInitializationScriptBuilder {
         self.run_context = input;
         self
     }
+    /// <p>The method to use when running the initialization script.</p>
+    pub fn get_run_context(
+        &self,
+    ) -> &::std::option::Option<crate::types::StudioComponentInitializationScriptRunContext> {
+        &self.run_context
+    }
     /// <p>The initialization script.</p>
     pub fn script(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.script = ::std::option::Option::Some(input.into());
@@ -123,6 +139,10 @@ impl StudioComponentInitializationScriptBuilder {
     pub fn set_script(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.script = input;
         self
+    }
+    /// <p>The initialization script.</p>
+    pub fn get_script(&self) -> &::std::option::Option<::std::string::String> {
+        &self.script
     }
     /// Consumes the builder and constructs a [`StudioComponentInitializationScript`](crate::types::StudioComponentInitializationScript).
     pub fn build(self) -> crate::types::StudioComponentInitializationScript {

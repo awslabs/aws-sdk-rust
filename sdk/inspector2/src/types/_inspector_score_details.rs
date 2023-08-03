@@ -43,6 +43,10 @@ impl InspectorScoreDetailsBuilder {
         self.adjusted_cvss = input;
         self
     }
+    /// <p>An object that contains details about the CVSS score given to a finding.</p>
+    pub fn get_adjusted_cvss(&self) -> &::std::option::Option<crate::types::CvssScoreDetails> {
+        &self.adjusted_cvss
+    }
     /// Consumes the builder and constructs a [`InspectorScoreDetails`](crate::types::InspectorScoreDetails).
     pub fn build(self) -> crate::types::InspectorScoreDetails {
         crate::types::InspectorScoreDetails {

@@ -36,6 +36,10 @@ impl DeregisterGatewayInstanceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeregisterGatewayInstance as a reference.
+    pub fn as_input(&self) -> &crate::operation::deregister_gateway_instance::builders::DeregisterGatewayInstanceInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl DeregisterGatewayInstanceFluentBuilder {
         self.inner = self.inner.set_force(input);
         self
     }
+    /// Force the deregistration of an instance. Force will deregister an instance, even if there are bridges running on it.
+    pub fn get_force(&self) -> &::std::option::Option<bool> {
+        self.inner.get_force()
+    }
     /// The Amazon Resource Name (ARN) of the gateway that contains the instance that you want to deregister.
     pub fn gateway_instance_arn(
         mut self,
@@ -141,5 +149,9 @@ impl DeregisterGatewayInstanceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_gateway_instance_arn(input);
         self
+    }
+    /// The Amazon Resource Name (ARN) of the gateway that contains the instance that you want to deregister.
+    pub fn get_gateway_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_gateway_instance_arn()
     }
 }

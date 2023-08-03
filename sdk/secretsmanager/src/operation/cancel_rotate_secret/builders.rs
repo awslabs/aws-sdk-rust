@@ -40,6 +40,12 @@ impl CancelRotateSecretFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CancelRotateSecret as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::cancel_rotate_secret::builders::CancelRotateSecretInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,10 @@ impl CancelRotateSecretFluentBuilder {
     pub fn set_secret_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_secret_id(input);
         self
+    }
+    /// <p>The ARN or name of the secret.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
+    pub fn get_secret_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_secret_id()
     }
 }

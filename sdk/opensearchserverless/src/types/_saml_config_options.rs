@@ -64,6 +64,10 @@ impl SamlConfigOptionsBuilder {
         self.metadata = input;
         self
     }
+    /// <p>The XML IdP metadata file generated from your identity provider.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metadata
+    }
     /// <p>A user attribute for this SAML integration.</p>
     pub fn user_attribute(
         mut self,
@@ -79,6 +83,10 @@ impl SamlConfigOptionsBuilder {
     ) -> Self {
         self.user_attribute = input;
         self
+    }
+    /// <p>A user attribute for this SAML integration.</p>
+    pub fn get_user_attribute(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_attribute
     }
     /// <p>The group attribute for this SAML integration.</p>
     pub fn group_attribute(
@@ -96,6 +104,10 @@ impl SamlConfigOptionsBuilder {
         self.group_attribute = input;
         self
     }
+    /// <p>The group attribute for this SAML integration.</p>
+    pub fn get_group_attribute(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_attribute
+    }
     /// <p>The session timeout, in minutes. Default is 60 minutes (12 hours).</p>
     pub fn session_timeout(mut self, input: i32) -> Self {
         self.session_timeout = ::std::option::Option::Some(input);
@@ -105,6 +117,10 @@ impl SamlConfigOptionsBuilder {
     pub fn set_session_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.session_timeout = input;
         self
+    }
+    /// <p>The session timeout, in minutes. Default is 60 minutes (12 hours).</p>
+    pub fn get_session_timeout(&self) -> &::std::option::Option<i32> {
+        &self.session_timeout
     }
     /// Consumes the builder and constructs a [`SamlConfigOptions`](crate::types::SamlConfigOptions).
     pub fn build(self) -> crate::types::SamlConfigOptions {

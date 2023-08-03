@@ -86,6 +86,10 @@ impl TargetNetworkBuilder {
         self.association_id = input;
         self
     }
+    /// <p>The ID of the association.</p>
+    pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_id
+    }
     /// <p>The ID of the VPC in which the target network (subnet) is located.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -95,6 +99,10 @@ impl TargetNetworkBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The ID of the VPC in which the target network (subnet) is located.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// <p>The ID of the subnet specified as the target network.</p>
     pub fn target_network_id(
@@ -112,6 +120,10 @@ impl TargetNetworkBuilder {
         self.target_network_id = input;
         self
     }
+    /// <p>The ID of the subnet specified as the target network.</p>
+    pub fn get_target_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_network_id
+    }
     /// <p>The ID of the Client VPN endpoint with which the target network is associated.</p>
     pub fn client_vpn_endpoint_id(
         mut self,
@@ -128,6 +140,10 @@ impl TargetNetworkBuilder {
         self.client_vpn_endpoint_id = input;
         self
     }
+    /// <p>The ID of the Client VPN endpoint with which the target network is associated.</p>
+    pub fn get_client_vpn_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_vpn_endpoint_id
+    }
     /// <p>The current state of the target network association.</p>
     pub fn status(mut self, input: crate::types::AssociationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -140,6 +156,10 @@ impl TargetNetworkBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current state of the target network association.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AssociationStatus> {
+        &self.status
     }
     /// Appends an item to `security_groups`.
     ///
@@ -162,6 +182,12 @@ impl TargetNetworkBuilder {
     ) -> Self {
         self.security_groups = input;
         self
+    }
+    /// <p>The IDs of the security groups applied to the target network association.</p>
+    pub fn get_security_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_groups
     }
     /// Consumes the builder and constructs a [`TargetNetwork`](crate::types::TargetNetwork).
     pub fn build(self) -> crate::types::TargetNetwork {

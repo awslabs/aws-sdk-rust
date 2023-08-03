@@ -56,6 +56,12 @@ impl GetCapacityAssignmentConfigurationOutputBuilder {
         self.capacity_assignment_configuration = input;
         self
     }
+    /// <p>The requested capacity assignment configuration for the specified capacity reservation.</p>
+    pub fn get_capacity_assignment_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CapacityAssignmentConfiguration> {
+        &self.capacity_assignment_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

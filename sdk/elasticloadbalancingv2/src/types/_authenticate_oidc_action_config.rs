@@ -152,6 +152,10 @@ impl AuthenticateOidcActionConfigBuilder {
         self.issuer = input;
         self
     }
+    /// <p>The OIDC issuer identifier of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.</p>
+    pub fn get_issuer(&self) -> &::std::option::Option<::std::string::String> {
+        &self.issuer
+    }
     /// <p>The authorization endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.</p>
     pub fn authorization_endpoint(
         mut self,
@@ -167,6 +171,10 @@ impl AuthenticateOidcActionConfigBuilder {
     ) -> Self {
         self.authorization_endpoint = input;
         self
+    }
+    /// <p>The authorization endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.</p>
+    pub fn get_authorization_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authorization_endpoint
     }
     /// <p>The token endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.</p>
     pub fn token_endpoint(
@@ -184,6 +192,10 @@ impl AuthenticateOidcActionConfigBuilder {
         self.token_endpoint = input;
         self
     }
+    /// <p>The token endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.</p>
+    pub fn get_token_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.token_endpoint
+    }
     /// <p>The user info endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.</p>
     pub fn user_info_endpoint(
         mut self,
@@ -200,6 +212,10 @@ impl AuthenticateOidcActionConfigBuilder {
         self.user_info_endpoint = input;
         self
     }
+    /// <p>The user info endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.</p>
+    pub fn get_user_info_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_info_endpoint
+    }
     /// <p>The OAuth 2.0 client identifier.</p>
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
@@ -209,6 +225,10 @@ impl AuthenticateOidcActionConfigBuilder {
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_id = input;
         self
+    }
+    /// <p>The OAuth 2.0 client identifier.</p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_id
     }
     /// <p>The OAuth 2.0 client secret. This parameter is required if you are creating a rule. If you are modifying a rule, you can omit this parameter if you set <code>UseExistingClientSecret</code> to true.</p>
     pub fn client_secret(
@@ -226,6 +246,10 @@ impl AuthenticateOidcActionConfigBuilder {
         self.client_secret = input;
         self
     }
+    /// <p>The OAuth 2.0 client secret. This parameter is required if you are creating a rule. If you are modifying a rule, you can omit this parameter if you set <code>UseExistingClientSecret</code> to true.</p>
+    pub fn get_client_secret(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_secret
+    }
     /// <p>The name of the cookie used to maintain session information. The default is AWSELBAuthSessionCookie.</p>
     pub fn session_cookie_name(
         mut self,
@@ -242,6 +266,10 @@ impl AuthenticateOidcActionConfigBuilder {
         self.session_cookie_name = input;
         self
     }
+    /// <p>The name of the cookie used to maintain session information. The default is AWSELBAuthSessionCookie.</p>
+    pub fn get_session_cookie_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_cookie_name
+    }
     /// <p>The set of user claims to be requested from the IdP. The default is <code>openid</code>.</p>
     /// <p>To verify which scope values your IdP supports and how to separate multiple values, see the documentation for your IdP.</p>
     pub fn scope(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -254,6 +282,11 @@ impl AuthenticateOidcActionConfigBuilder {
         self.scope = input;
         self
     }
+    /// <p>The set of user claims to be requested from the IdP. The default is <code>openid</code>.</p>
+    /// <p>To verify which scope values your IdP supports and how to separate multiple values, see the documentation for your IdP.</p>
+    pub fn get_scope(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scope
+    }
     /// <p>The maximum duration of the authentication session, in seconds. The default is 604800 seconds (7 days).</p>
     pub fn session_timeout(mut self, input: i64) -> Self {
         self.session_timeout = ::std::option::Option::Some(input);
@@ -263,6 +296,10 @@ impl AuthenticateOidcActionConfigBuilder {
     pub fn set_session_timeout(mut self, input: ::std::option::Option<i64>) -> Self {
         self.session_timeout = input;
         self
+    }
+    /// <p>The maximum duration of the authentication session, in seconds. The default is 604800 seconds (7 days).</p>
+    pub fn get_session_timeout(&self) -> &::std::option::Option<i64> {
+        &self.session_timeout
     }
     /// Adds a key-value pair to `authentication_request_extra_params`.
     ///
@@ -288,6 +325,14 @@ impl AuthenticateOidcActionConfigBuilder {
     ) -> Self {
         self.authentication_request_extra_params = input;
         self
+    }
+    /// <p>The query parameters (up to 10) to include in the redirect request to the authorization endpoint.</p>
+    pub fn get_authentication_request_extra_params(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.authentication_request_extra_params
     }
     /// <p>The behavior if the user is not authenticated. The following are possible values:</p>
     /// <ul>
@@ -315,6 +360,17 @@ impl AuthenticateOidcActionConfigBuilder {
         self.on_unauthenticated_request = input;
         self
     }
+    /// <p>The behavior if the user is not authenticated. The following are possible values:</p>
+    /// <ul>
+    /// <li> <p>deny<code></code> - Return an HTTP 401 Unauthorized error.</p> </li>
+    /// <li> <p>allow<code></code> - Allow the request to be forwarded to the target.</p> </li>
+    /// <li> <p>authenticate<code></code> - Redirect the request to the IdP authorization endpoint. This is the default value.</p> </li>
+    /// </ul>
+    pub fn get_on_unauthenticated_request(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuthenticateOidcActionConditionalBehaviorEnum> {
+        &self.on_unauthenticated_request
+    }
     /// <p>Indicates whether to use the existing client secret when modifying a rule. If you are creating a rule, you can omit this parameter or set it to false.</p>
     pub fn use_existing_client_secret(mut self, input: bool) -> Self {
         self.use_existing_client_secret = ::std::option::Option::Some(input);
@@ -324,6 +380,10 @@ impl AuthenticateOidcActionConfigBuilder {
     pub fn set_use_existing_client_secret(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_existing_client_secret = input;
         self
+    }
+    /// <p>Indicates whether to use the existing client secret when modifying a rule. If you are creating a rule, you can omit this parameter or set it to false.</p>
+    pub fn get_use_existing_client_secret(&self) -> &::std::option::Option<bool> {
+        &self.use_existing_client_secret
     }
     /// Consumes the builder and constructs a [`AuthenticateOidcActionConfig`](crate::types::AuthenticateOidcActionConfig).
     pub fn build(self) -> crate::types::AuthenticateOidcActionConfig {

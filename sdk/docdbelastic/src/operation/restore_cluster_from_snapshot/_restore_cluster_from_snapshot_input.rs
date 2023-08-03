@@ -92,6 +92,10 @@ impl RestoreClusterFromSnapshotInputBuilder {
         self.cluster_name = input;
         self
     }
+    /// <p>The name of the Elastic DocumentDB cluster.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_name
+    }
     /// <p>The arn of the Elastic DocumentDB snapshot.</p>
     pub fn snapshot_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_arn = ::std::option::Option::Some(input.into());
@@ -101,6 +105,10 @@ impl RestoreClusterFromSnapshotInputBuilder {
     pub fn set_snapshot_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_arn = input;
         self
+    }
+    /// <p>The arn of the Elastic DocumentDB snapshot.</p>
+    pub fn get_snapshot_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_arn
     }
     /// Appends an item to `vpc_security_group_ids`.
     ///
@@ -124,6 +132,12 @@ impl RestoreClusterFromSnapshotInputBuilder {
         self.vpc_security_group_ids = input;
         self
     }
+    /// <p>A list of EC2 VPC security groups to associate with the Elastic DocumentDB cluster.</p>
+    pub fn get_vpc_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.vpc_security_group_ids
+    }
     /// Appends an item to `subnet_ids`.
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
@@ -143,6 +157,10 @@ impl RestoreClusterFromSnapshotInputBuilder {
         self.subnet_ids = input;
         self
     }
+    /// <p>The Amazon EC2 subnet IDs for the Elastic DocumentDB cluster.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
+    }
     /// <p>The KMS key identifier to use to encrypt the new Elastic DocumentDB cluster.</p>
     /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a cluster using the same Amazon account that owns this KMS encryption key, you can use the KMS key alias instead of the ARN as the KMS encryption key.</p>
     /// <p>If an encryption key is not specified here, Elastic DocumentDB uses the default encryption key that KMS creates for your account. Your account has a different default encryption key for each Amazon Region.</p>
@@ -156,6 +174,12 @@ impl RestoreClusterFromSnapshotInputBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p>The KMS key identifier to use to encrypt the new Elastic DocumentDB cluster.</p>
+    /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a cluster using the same Amazon account that owns this KMS encryption key, you can use the KMS key alias instead of the ARN as the KMS encryption key.</p>
+    /// <p>If an encryption key is not specified here, Elastic DocumentDB uses the default encryption key that KMS creates for your account. Your account has a different default encryption key for each Amazon Region.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -181,6 +205,14 @@ impl RestoreClusterFromSnapshotInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of the tag names to be assigned to the restored DB cluster, in the form of an array of key-value pairs in which the key is the tag name and the value is the key value.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`RestoreClusterFromSnapshotInput`](crate::operation::restore_cluster_from_snapshot::RestoreClusterFromSnapshotInput).
     pub fn build(

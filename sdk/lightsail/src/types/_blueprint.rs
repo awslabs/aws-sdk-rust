@@ -140,6 +140,10 @@ impl BlueprintBuilder {
         self.blueprint_id = input;
         self
     }
+    /// <p>The ID for the virtual private server image (e.g., <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>).</p>
+    pub fn get_blueprint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.blueprint_id
+    }
     /// <p>The friendly name of the blueprint (e.g., <code>Amazon Linux</code>).</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -149,6 +153,10 @@ impl BlueprintBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The friendly name of the blueprint (e.g., <code>Amazon Linux</code>).</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The group name of the blueprint (e.g., <code>amazon-linux</code>).</p>
     pub fn group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -160,6 +168,10 @@ impl BlueprintBuilder {
         self.group = input;
         self
     }
+    /// <p>The group name of the blueprint (e.g., <code>amazon-linux</code>).</p>
+    pub fn get_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group
+    }
     /// <p>The type of the blueprint (e.g., <code>os</code> or <code>app</code>).</p>
     pub fn r#type(mut self, input: crate::types::BlueprintType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -169,6 +181,10 @@ impl BlueprintBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::BlueprintType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of the blueprint (e.g., <code>os</code> or <code>app</code>).</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::BlueprintType> {
+        &self.r#type
     }
     /// <p>The description of the blueprint.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -180,6 +196,10 @@ impl BlueprintBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the blueprint.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>A Boolean value indicating whether the blueprint is active. Inactive blueprints are listed to support customers with existing instances but are not necessarily available for launch of new instances. Blueprints are marked inactive when they become outdated due to operating system updates or new application releases.</p>
     pub fn is_active(mut self, input: bool) -> Self {
         self.is_active = ::std::option::Option::Some(input);
@@ -189,6 +209,10 @@ impl BlueprintBuilder {
     pub fn set_is_active(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_active = input;
         self
+    }
+    /// <p>A Boolean value indicating whether the blueprint is active. Inactive blueprints are listed to support customers with existing instances but are not necessarily available for launch of new instances. Blueprints are marked inactive when they become outdated due to operating system updates or new application releases.</p>
+    pub fn get_is_active(&self) -> &::std::option::Option<bool> {
+        &self.is_active
     }
     /// <p>The minimum bundle power required to run this blueprint. For example, you need a bundle with a power value of 500 or more to create an instance that uses a blueprint with a minimum power value of 500. <code>0</code> indicates that the blueprint runs on all instance sizes. </p>
     pub fn min_power(mut self, input: i32) -> Self {
@@ -200,6 +224,10 @@ impl BlueprintBuilder {
         self.min_power = input;
         self
     }
+    /// <p>The minimum bundle power required to run this blueprint. For example, you need a bundle with a power value of 500 or more to create an instance that uses a blueprint with a minimum power value of 500. <code>0</code> indicates that the blueprint runs on all instance sizes. </p>
+    pub fn get_min_power(&self) -> &::std::option::Option<i32> {
+        &self.min_power
+    }
     /// <p>The version number of the operating system, application, or stack (e.g., <code>2016.03.0</code>).</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -209,6 +237,10 @@ impl BlueprintBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The version number of the operating system, application, or stack (e.g., <code>2016.03.0</code>).</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// <p>The version code.</p>
     pub fn version_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -220,6 +252,10 @@ impl BlueprintBuilder {
         self.version_code = input;
         self
     }
+    /// <p>The version code.</p>
+    pub fn get_version_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_code
+    }
     /// <p>The product URL to learn more about the image or blueprint.</p>
     pub fn product_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_url = ::std::option::Option::Some(input.into());
@@ -230,6 +266,10 @@ impl BlueprintBuilder {
         self.product_url = input;
         self
     }
+    /// <p>The product URL to learn more about the image or blueprint.</p>
+    pub fn get_product_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product_url
+    }
     /// <p>The end-user license agreement URL for the image or blueprint.</p>
     pub fn license_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_url = ::std::option::Option::Some(input.into());
@@ -239,6 +279,10 @@ impl BlueprintBuilder {
     pub fn set_license_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.license_url = input;
         self
+    }
+    /// <p>The end-user license agreement URL for the image or blueprint.</p>
+    pub fn get_license_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_url
     }
     /// <p>The operating system platform (either Linux/Unix-based or Windows Server-based) of the blueprint.</p>
     pub fn platform(mut self, input: crate::types::InstancePlatform) -> Self {
@@ -252,6 +296,10 @@ impl BlueprintBuilder {
     ) -> Self {
         self.platform = input;
         self
+    }
+    /// <p>The operating system platform (either Linux/Unix-based or Windows Server-based) of the blueprint.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<crate::types::InstancePlatform> {
+        &self.platform
     }
     /// <p>Virtual computer blueprints that are supported by Lightsail for Research.</p> <important>
     /// <p>This parameter only applies to Lightsail for Research resources.</p>
@@ -269,6 +317,12 @@ impl BlueprintBuilder {
     ) -> Self {
         self.app_category = input;
         self
+    }
+    /// <p>Virtual computer blueprints that are supported by Lightsail for Research.</p> <important>
+    /// <p>This parameter only applies to Lightsail for Research resources.</p>
+    /// </important>
+    pub fn get_app_category(&self) -> &::std::option::Option<crate::types::AppCategory> {
+        &self.app_category
     }
     /// Consumes the builder and constructs a [`Blueprint`](crate::types::Blueprint).
     pub fn build(self) -> crate::types::Blueprint {

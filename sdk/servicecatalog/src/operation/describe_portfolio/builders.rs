@@ -37,6 +37,12 @@ impl DescribePortfolioFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribePortfolio as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_portfolio::builders::DescribePortfolioInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -141,6 +147,14 @@ impl DescribePortfolioFluentBuilder {
         self.inner = self.inner.set_accept_language(input);
         self
     }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_accept_language()
+    }
     /// <p>The portfolio identifier.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
@@ -150,5 +164,9 @@ impl DescribePortfolioFluentBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
+    }
+    /// <p>The portfolio identifier.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
     }
 }

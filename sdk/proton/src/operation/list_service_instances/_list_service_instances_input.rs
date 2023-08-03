@@ -87,6 +87,10 @@ impl ListServiceInstancesInputBuilder {
         self.service_name = input;
         self
     }
+    /// <p>The name of the service that the service instance belongs to.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
+    }
     /// <p>A token that indicates the location of the next service in the array of service instances, after the list of service instances that was previously requested.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -97,6 +101,10 @@ impl ListServiceInstancesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token that indicates the location of the next service in the array of service instances, after the list of service instances that was previously requested.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of service instances to list.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -106,6 +114,10 @@ impl ListServiceInstancesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of service instances to list.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Appends an item to `filters`.
     ///
@@ -126,6 +138,12 @@ impl ListServiceInstancesInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>An array of filtering criteria that scope down the result list. By default, all service instances in the Amazon Web Services account are returned.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListServiceInstancesFilter>> {
+        &self.filters
+    }
     /// <p>The field that the result list is sorted by.</p>
     /// <p>When you choose to sort by <code>serviceName</code>, service instances within each service are sorted by service instance name.</p>
     /// <p>Default: <code>serviceName</code> </p>
@@ -143,6 +161,12 @@ impl ListServiceInstancesInputBuilder {
         self.sort_by = input;
         self
     }
+    /// <p>The field that the result list is sorted by.</p>
+    /// <p>When you choose to sort by <code>serviceName</code>, service instances within each service are sorted by service instance name.</p>
+    /// <p>Default: <code>serviceName</code> </p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ListServiceInstancesSortBy> {
+        &self.sort_by
+    }
     /// <p>Result list sort order.</p>
     /// <p>Default: <code>ASCENDING</code> </p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
@@ -154,6 +178,11 @@ impl ListServiceInstancesInputBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.sort_order = input;
         self
+    }
+    /// <p>Result list sort order.</p>
+    /// <p>Default: <code>ASCENDING</code> </p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.sort_order
     }
     /// Consumes the builder and constructs a [`ListServiceInstancesInput`](crate::operation::list_service_instances::ListServiceInstancesInput).
     pub fn build(

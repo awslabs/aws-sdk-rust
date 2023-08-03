@@ -135,6 +135,10 @@ impl ConnectorEntityFieldBuilder {
         self.identifier = input;
         self
     }
+    /// <p> The unique identifier of the connector field. </p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
+    }
     /// <p>The parent identifier of the connector field.</p>
     pub fn parent_identifier(
         mut self,
@@ -151,6 +155,10 @@ impl ConnectorEntityFieldBuilder {
         self.parent_identifier = input;
         self
     }
+    /// <p>The parent identifier of the connector field.</p>
+    pub fn get_parent_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent_identifier
+    }
     /// <p> The label applied to a connector entity field. </p>
     pub fn label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label = ::std::option::Option::Some(input.into());
@@ -161,6 +169,10 @@ impl ConnectorEntityFieldBuilder {
         self.label = input;
         self
     }
+    /// <p> The label applied to a connector entity field. </p>
+    pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label
+    }
     /// <p>Booelan value that indicates whether this field can be used as a primary key.</p>
     pub fn is_primary_key(mut self, input: bool) -> Self {
         self.is_primary_key = ::std::option::Option::Some(input);
@@ -170,6 +182,10 @@ impl ConnectorEntityFieldBuilder {
     pub fn set_is_primary_key(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_primary_key = input;
         self
+    }
+    /// <p>Booelan value that indicates whether this field can be used as a primary key.</p>
+    pub fn get_is_primary_key(&self) -> &::std::option::Option<bool> {
+        &self.is_primary_key
     }
     /// <p>Default value that can be assigned to this field.</p>
     pub fn default_value(
@@ -187,6 +203,10 @@ impl ConnectorEntityFieldBuilder {
         self.default_value = input;
         self
     }
+    /// <p>Default value that can be assigned to this field.</p>
+    pub fn get_default_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_value
+    }
     /// <p>Booelan value that indicates whether this field is deprecated or not.</p>
     pub fn is_deprecated(mut self, input: bool) -> Self {
         self.is_deprecated = ::std::option::Option::Some(input);
@@ -196,6 +216,10 @@ impl ConnectorEntityFieldBuilder {
     pub fn set_is_deprecated(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_deprecated = input;
         self
+    }
+    /// <p>Booelan value that indicates whether this field is deprecated or not.</p>
+    pub fn get_is_deprecated(&self) -> &::std::option::Option<bool> {
+        &self.is_deprecated
     }
     /// <p> Contains details regarding the supported <code>FieldType</code>, including the corresponding <code>filterOperators</code> and <code>supportedValues</code>. </p>
     pub fn supported_field_type_details(
@@ -213,6 +237,12 @@ impl ConnectorEntityFieldBuilder {
         self.supported_field_type_details = input;
         self
     }
+    /// <p> Contains details regarding the supported <code>FieldType</code>, including the corresponding <code>filterOperators</code> and <code>supportedValues</code>. </p>
+    pub fn get_supported_field_type_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::SupportedFieldTypeDetails> {
+        &self.supported_field_type_details
+    }
     /// <p> A description of the connector entity field. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -222,6 +252,10 @@ impl ConnectorEntityFieldBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p> A description of the connector entity field. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p> The properties that can be applied to a field when the connector is being used as a source. </p>
     pub fn source_properties(mut self, input: crate::types::SourceFieldProperties) -> Self {
@@ -235,6 +269,12 @@ impl ConnectorEntityFieldBuilder {
     ) -> Self {
         self.source_properties = input;
         self
+    }
+    /// <p> The properties that can be applied to a field when the connector is being used as a source. </p>
+    pub fn get_source_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::SourceFieldProperties> {
+        &self.source_properties
     }
     /// <p> The properties applied to a field when the connector is being used as a destination. </p>
     pub fn destination_properties(
@@ -251,6 +291,12 @@ impl ConnectorEntityFieldBuilder {
     ) -> Self {
         self.destination_properties = input;
         self
+    }
+    /// <p> The properties applied to a field when the connector is being used as a destination. </p>
+    pub fn get_destination_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::DestinationFieldProperties> {
+        &self.destination_properties
     }
     /// Adds a key-value pair to `custom_properties`.
     ///
@@ -276,6 +322,14 @@ impl ConnectorEntityFieldBuilder {
     ) -> Self {
         self.custom_properties = input;
         self
+    }
+    /// <p>A map that has specific properties related to the ConnectorEntityField.</p>
+    pub fn get_custom_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.custom_properties
     }
     /// Consumes the builder and constructs a [`ConnectorEntityField`](crate::types::ConnectorEntityField).
     pub fn build(self) -> crate::types::ConnectorEntityField {

@@ -104,6 +104,10 @@ impl ValidationExceptionBuilder {
         self.message = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The reason that validation failed.</p>
     pub fn reason(mut self, input: crate::types::ValidationExceptionReason) -> Self {
         self.reason = ::std::option::Option::Some(input);
@@ -117,6 +121,10 @@ impl ValidationExceptionBuilder {
         self.reason = input;
         self
     }
+    /// <p>The reason that validation failed.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<crate::types::ValidationExceptionReason> {
+        &self.reason
+    }
     /// <p>A unique ID for the error.</p>
     pub fn error_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_id = ::std::option::Option::Some(input.into());
@@ -126,6 +134,10 @@ impl ValidationExceptionBuilder {
     pub fn set_error_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_id = input;
         self
+    }
+    /// <p>A unique ID for the error.</p>
+    pub fn get_error_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_id
     }
     /// Appends an item to `error_arguments`.
     ///
@@ -151,6 +163,13 @@ impl ValidationExceptionBuilder {
         self.error_arguments = input;
         self
     }
+    /// <p>A list of attributes that led to the exception and their values.</p>
+    pub fn get_error_arguments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionErrorArgument>>
+    {
+        &self.error_arguments
+    }
     /// Appends an item to `fields`.
     ///
     /// To override the contents of this collection use [`set_fields`](Self::set_fields).
@@ -169,6 +188,12 @@ impl ValidationExceptionBuilder {
     ) -> Self {
         self.fields = input;
         self
+    }
+    /// <p>A list of request parameters that failed validation.</p>
+    pub fn get_fields(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionField>> {
+        &self.fields
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

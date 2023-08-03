@@ -72,6 +72,10 @@ impl TransitGatewayAttachmentBgpConfigurationBuilder {
         self.transit_gateway_asn = input;
         self
     }
+    /// <p>The transit gateway Autonomous System Number (ASN).</p>
+    pub fn get_transit_gateway_asn(&self) -> &::std::option::Option<i64> {
+        &self.transit_gateway_asn
+    }
     /// <p>The peer Autonomous System Number (ASN).</p>
     pub fn peer_asn(mut self, input: i64) -> Self {
         self.peer_asn = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl TransitGatewayAttachmentBgpConfigurationBuilder {
     pub fn set_peer_asn(mut self, input: ::std::option::Option<i64>) -> Self {
         self.peer_asn = input;
         self
+    }
+    /// <p>The peer Autonomous System Number (ASN).</p>
+    pub fn get_peer_asn(&self) -> &::std::option::Option<i64> {
+        &self.peer_asn
     }
     /// <p>The interior BGP peer IP address for the transit gateway.</p>
     pub fn transit_gateway_address(
@@ -98,6 +106,10 @@ impl TransitGatewayAttachmentBgpConfigurationBuilder {
         self.transit_gateway_address = input;
         self
     }
+    /// <p>The interior BGP peer IP address for the transit gateway.</p>
+    pub fn get_transit_gateway_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_address
+    }
     /// <p>The interior BGP peer IP address for the appliance.</p>
     pub fn peer_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.peer_address = ::std::option::Option::Some(input.into());
@@ -108,6 +120,10 @@ impl TransitGatewayAttachmentBgpConfigurationBuilder {
         self.peer_address = input;
         self
     }
+    /// <p>The interior BGP peer IP address for the appliance.</p>
+    pub fn get_peer_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.peer_address
+    }
     /// <p>The BGP status.</p>
     pub fn bgp_status(mut self, input: crate::types::BgpStatus) -> Self {
         self.bgp_status = ::std::option::Option::Some(input);
@@ -117,6 +133,10 @@ impl TransitGatewayAttachmentBgpConfigurationBuilder {
     pub fn set_bgp_status(mut self, input: ::std::option::Option<crate::types::BgpStatus>) -> Self {
         self.bgp_status = input;
         self
+    }
+    /// <p>The BGP status.</p>
+    pub fn get_bgp_status(&self) -> &::std::option::Option<crate::types::BgpStatus> {
+        &self.bgp_status
     }
     /// Consumes the builder and constructs a [`TransitGatewayAttachmentBgpConfiguration`](crate::types::TransitGatewayAttachmentBgpConfiguration).
     pub fn build(self) -> crate::types::TransitGatewayAttachmentBgpConfiguration {

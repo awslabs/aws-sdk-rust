@@ -37,6 +37,13 @@ impl ModifyDBClusterEndpointFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyDBClusterEndpoint as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::modify_db_cluster_endpoint::builders::ModifyDbClusterEndpointInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,12 @@ impl ModifyDBClusterEndpointFluentBuilder {
         self.inner = self.inner.set_db_cluster_endpoint_identifier(input);
         self
     }
+    /// <p>The identifier of the endpoint to modify. This parameter is stored as a lowercase string.</p>
+    pub fn get_db_cluster_endpoint_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_cluster_endpoint_identifier()
+    }
     /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
     pub fn endpoint_type(
         mut self,
@@ -148,6 +161,10 @@ impl ModifyDBClusterEndpointFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_endpoint_type(input);
         self
+    }
+    /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
+    pub fn get_endpoint_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_endpoint_type()
     }
     /// Appends an item to `StaticMembers`.
     ///
@@ -169,6 +186,12 @@ impl ModifyDBClusterEndpointFluentBuilder {
         self.inner = self.inner.set_static_members(input);
         self
     }
+    /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
+    pub fn get_static_members(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_static_members()
+    }
     /// Appends an item to `ExcludedMembers`.
     ///
     /// To override the contents of this collection use [`set_excluded_members`](Self::set_excluded_members).
@@ -188,5 +211,11 @@ impl ModifyDBClusterEndpointFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_excluded_members(input);
         self
+    }
+    /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
+    pub fn get_excluded_members(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_excluded_members()
     }
 }

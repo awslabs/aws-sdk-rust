@@ -36,6 +36,12 @@ impl SetIpAddressTypeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SetIpAddressType as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::set_ip_address_type::builders::SetIpAddressTypeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl SetIpAddressTypeFluentBuilder {
         self.inner = self.inner.set_load_balancer_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
+    pub fn get_load_balancer_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_load_balancer_arn()
+    }
     /// <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.</p>
     pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
         self.inner = self.inner.ip_address_type(input);
@@ -144,5 +154,9 @@ impl SetIpAddressTypeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ip_address_type(input);
         self
+    }
+    /// <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
+        self.inner.get_ip_address_type()
     }
 }

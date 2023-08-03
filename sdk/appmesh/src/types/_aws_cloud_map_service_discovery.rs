@@ -76,6 +76,10 @@ impl AwsCloudMapServiceDiscoveryBuilder {
         self.namespace_name = input;
         self
     }
+    /// <p>The name of the Cloud Map namespace to use.</p>
+    pub fn get_namespace_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace_name
+    }
     /// <p>The name of the Cloud Map service to use.</p>
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
@@ -85,6 +89,10 @@ impl AwsCloudMapServiceDiscoveryBuilder {
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_name = input;
         self
+    }
+    /// <p>The name of the Cloud Map service to use.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
     }
     /// Appends an item to `attributes`.
     ///
@@ -105,6 +113,12 @@ impl AwsCloudMapServiceDiscoveryBuilder {
         self.attributes = input;
         self
     }
+    /// <p>A string map that contains attributes with values that you can use to filter instances by any custom attribute that you specified when you registered the instance. Only instances that match all of the specified key/value pairs will be returned.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsCloudMapInstanceAttribute>> {
+        &self.attributes
+    }
     /// <p>The preferred IP version that this virtual node uses. Setting the IP preference on the virtual node only overrides the IP preference set for the mesh on this specific node.</p>
     pub fn ip_preference(mut self, input: crate::types::IpPreference) -> Self {
         self.ip_preference = ::std::option::Option::Some(input);
@@ -117,6 +131,10 @@ impl AwsCloudMapServiceDiscoveryBuilder {
     ) -> Self {
         self.ip_preference = input;
         self
+    }
+    /// <p>The preferred IP version that this virtual node uses. Setting the IP preference on the virtual node only overrides the IP preference set for the mesh on this specific node.</p>
+    pub fn get_ip_preference(&self) -> &::std::option::Option<crate::types::IpPreference> {
+        &self.ip_preference
     }
     /// Consumes the builder and constructs a [`AwsCloudMapServiceDiscovery`](crate::types::AwsCloudMapServiceDiscovery).
     pub fn build(self) -> crate::types::AwsCloudMapServiceDiscovery {

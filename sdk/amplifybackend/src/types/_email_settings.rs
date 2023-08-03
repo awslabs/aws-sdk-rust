@@ -54,6 +54,10 @@ impl EmailSettingsBuilder {
         self.email_message = input;
         self
     }
+    /// <p>The contents of the email message.</p>
+    pub fn get_email_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email_message
+    }
     /// <p>The contents of the subject line of the email message.</p>
     pub fn email_subject(
         mut self,
@@ -69,6 +73,10 @@ impl EmailSettingsBuilder {
     ) -> Self {
         self.email_subject = input;
         self
+    }
+    /// <p>The contents of the subject line of the email message.</p>
+    pub fn get_email_subject(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email_subject
     }
     /// Consumes the builder and constructs a [`EmailSettings`](crate::types::EmailSettings).
     pub fn build(self) -> crate::types::EmailSettings {

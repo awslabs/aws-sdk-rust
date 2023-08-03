@@ -48,6 +48,10 @@ impl IcmpTypeCodeBuilder {
         self.code = input;
         self
     }
+    /// <p>The ICMP code. A value of -1 means all codes for the specified ICMP type.</p>
+    pub fn get_code(&self) -> &::std::option::Option<i32> {
+        &self.code
+    }
     /// <p>The ICMP type. A value of -1 means all types.</p>
     pub fn r#type(mut self, input: i32) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl IcmpTypeCodeBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<i32>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The ICMP type. A value of -1 means all types.</p>
+    pub fn get_type(&self) -> &::std::option::Option<i32> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`IcmpTypeCode`](crate::types::IcmpTypeCode).
     pub fn build(self) -> crate::types::IcmpTypeCode {

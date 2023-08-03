@@ -56,6 +56,10 @@ impl CaptchaResponseBuilder {
         self.response_code = input;
         self
     }
+    /// <p>The HTTP response code indicating the status of the <code>CAPTCHA</code> token in the web request. If the token is missing, invalid, or expired, this code is <code>405 Method Not Allowed</code>.</p>
+    pub fn get_response_code(&self) -> &::std::option::Option<i32> {
+        &self.response_code
+    }
     /// <p>The time that the <code>CAPTCHA</code> was last solved for the supplied token. </p>
     pub fn solve_timestamp(mut self, input: i64) -> Self {
         self.solve_timestamp = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl CaptchaResponseBuilder {
     pub fn set_solve_timestamp(mut self, input: ::std::option::Option<i64>) -> Self {
         self.solve_timestamp = input;
         self
+    }
+    /// <p>The time that the <code>CAPTCHA</code> was last solved for the supplied token. </p>
+    pub fn get_solve_timestamp(&self) -> &::std::option::Option<i64> {
+        &self.solve_timestamp
     }
     /// <p>The reason for failure, populated when the evaluation of the token fails.</p>
     pub fn failure_reason(mut self, input: crate::types::FailureReason) -> Self {
@@ -78,6 +86,10 @@ impl CaptchaResponseBuilder {
     ) -> Self {
         self.failure_reason = input;
         self
+    }
+    /// <p>The reason for failure, populated when the evaluation of the token fails.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<crate::types::FailureReason> {
+        &self.failure_reason
     }
     /// Consumes the builder and constructs a [`CaptchaResponse`](crate::types::CaptchaResponse).
     pub fn build(self) -> crate::types::CaptchaResponse {

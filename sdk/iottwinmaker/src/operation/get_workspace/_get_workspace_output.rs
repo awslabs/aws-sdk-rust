@@ -94,6 +94,10 @@ impl GetWorkspaceOutputBuilder {
         self.workspace_id = input;
         self
     }
+    /// <p>The ID of the workspace.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
+    }
     /// <p>The ARN of the workspace.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -103,6 +107,10 @@ impl GetWorkspaceOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The ARN of the workspace.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The description of the workspace.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -114,6 +122,10 @@ impl GetWorkspaceOutputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the workspace.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The ARN of the S3 bucket where resources associated with the workspace are stored.</p>
     pub fn s3_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_location = ::std::option::Option::Some(input.into());
@@ -124,6 +136,10 @@ impl GetWorkspaceOutputBuilder {
         self.s3_location = input;
         self
     }
+    /// <p>The ARN of the S3 bucket where resources associated with the workspace are stored.</p>
+    pub fn get_s3_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_location
+    }
     /// <p>The ARN of the execution role associated with the workspace.</p>
     pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role = ::std::option::Option::Some(input.into());
@@ -133,6 +149,10 @@ impl GetWorkspaceOutputBuilder {
     pub fn set_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role = input;
         self
+    }
+    /// <p>The ARN of the execution role associated with the workspace.</p>
+    pub fn get_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role
     }
     /// <p>The date and time when the workspace was created.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -147,6 +167,10 @@ impl GetWorkspaceOutputBuilder {
         self.creation_date_time = input;
         self
     }
+    /// <p>The date and time when the workspace was created.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
+    }
     /// <p>The date and time when the workspace was last updated.</p>
     pub fn update_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_date_time = ::std::option::Option::Some(input);
@@ -159,6 +183,10 @@ impl GetWorkspaceOutputBuilder {
     ) -> Self {
         self.update_date_time = input;
         self
+    }
+    /// <p>The date and time when the workspace was last updated.</p>
+    pub fn get_update_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_date_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

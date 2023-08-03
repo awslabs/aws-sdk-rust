@@ -70,6 +70,10 @@ impl BatchImportEvidenceToAssessmentControlInputBuilder {
         self.assessment_id = input;
         self
     }
+    /// <p> The identifier for the assessment. </p>
+    pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assessment_id
+    }
     /// <p> The identifier for the control set. </p>
     pub fn control_set_id(
         mut self,
@@ -86,6 +90,10 @@ impl BatchImportEvidenceToAssessmentControlInputBuilder {
         self.control_set_id = input;
         self
     }
+    /// <p> The identifier for the control set. </p>
+    pub fn get_control_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control_set_id
+    }
     /// <p> The identifier for the control. </p>
     pub fn control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_id = ::std::option::Option::Some(input.into());
@@ -95,6 +103,10 @@ impl BatchImportEvidenceToAssessmentControlInputBuilder {
     pub fn set_control_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.control_id = input;
         self
+    }
+    /// <p> The identifier for the control. </p>
+    pub fn get_control_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control_id
     }
     /// Appends an item to `manual_evidence`.
     ///
@@ -114,6 +126,12 @@ impl BatchImportEvidenceToAssessmentControlInputBuilder {
     ) -> Self {
         self.manual_evidence = input;
         self
+    }
+    /// <p> The list of manual evidence objects. </p>
+    pub fn get_manual_evidence(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ManualEvidence>> {
+        &self.manual_evidence
     }
     /// Consumes the builder and constructs a [`BatchImportEvidenceToAssessmentControlInput`](crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlInput, ::aws_smithy_http::operation::error::BuildError>{

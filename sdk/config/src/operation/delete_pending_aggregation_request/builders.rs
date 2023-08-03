@@ -36,6 +36,10 @@ impl DeletePendingAggregationRequestFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeletePendingAggregationRequest as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_pending_aggregation_request::builders::DeletePendingAggregationRequestInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl DeletePendingAggregationRequestFluentBuilder {
         self.inner = self.inner.set_requester_account_id(input);
         self
     }
+    /// <p>The 12-digit account ID of the account requesting to aggregate data.</p>
+    pub fn get_requester_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_requester_account_id()
+    }
     /// <p>The region requesting to aggregate data.</p>
     pub fn requester_aws_region(
         mut self,
@@ -121,5 +129,9 @@ impl DeletePendingAggregationRequestFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_requester_aws_region(input);
         self
+    }
+    /// <p>The region requesting to aggregate data.</p>
+    pub fn get_requester_aws_region(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_requester_aws_region()
     }
 }

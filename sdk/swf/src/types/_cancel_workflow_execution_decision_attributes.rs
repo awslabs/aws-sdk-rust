@@ -48,6 +48,10 @@ impl CancelWorkflowExecutionDecisionAttributesBuilder {
         self.details = input;
         self
     }
+    /// <p> Details of the cancellation.</p>
+    pub fn get_details(&self) -> &::std::option::Option<::std::string::String> {
+        &self.details
+    }
     /// Consumes the builder and constructs a [`CancelWorkflowExecutionDecisionAttributes`](crate::types::CancelWorkflowExecutionDecisionAttributes).
     pub fn build(self) -> crate::types::CancelWorkflowExecutionDecisionAttributes {
         crate::types::CancelWorkflowExecutionDecisionAttributes {

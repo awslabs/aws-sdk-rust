@@ -172,6 +172,10 @@ impl MatchingBucketBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The unique identifier for the Amazon Web Services account that owns the bucket.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The name of the bucket.</p>
     pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_name = ::std::option::Option::Some(input.into());
@@ -182,6 +186,10 @@ impl MatchingBucketBuilder {
         self.bucket_name = input;
         self
     }
+    /// <p>The name of the bucket.</p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_name
+    }
     /// <p>The total number of objects that Amazon Macie can analyze in the bucket. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
     pub fn classifiable_object_count(mut self, input: i64) -> Self {
         self.classifiable_object_count = ::std::option::Option::Some(input);
@@ -191,6 +199,10 @@ impl MatchingBucketBuilder {
     pub fn set_classifiable_object_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.classifiable_object_count = input;
         self
+    }
+    /// <p>The total number of objects that Amazon Macie can analyze in the bucket. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
+    pub fn get_classifiable_object_count(&self) -> &::std::option::Option<i64> {
+        &self.classifiable_object_count
     }
     /// <p>The total storage size, in bytes, of the objects that Amazon Macie can analyze in the bucket. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
     /// <p>If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest version of each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each applicable object in the bucket.</p>
@@ -204,6 +216,11 @@ impl MatchingBucketBuilder {
         self.classifiable_size_in_bytes = input;
         self
     }
+    /// <p>The total storage size, in bytes, of the objects that Amazon Macie can analyze in the bucket. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
+    /// <p>If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest version of each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each applicable object in the bucket.</p>
+    pub fn get_classifiable_size_in_bytes(&self) -> &::std::option::Option<i64> {
+        &self.classifiable_size_in_bytes
+    }
     /// <p>The error code for an error that prevented Amazon Macie from retrieving and processing information about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the request. If this value is null, Macie was able to retrieve and process the information.</p>
     pub fn error_code(mut self, input: crate::types::BucketMetadataErrorCode) -> Self {
         self.error_code = ::std::option::Option::Some(input);
@@ -216,6 +233,10 @@ impl MatchingBucketBuilder {
     ) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>The error code for an error that prevented Amazon Macie from retrieving and processing information about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the request. If this value is null, Macie was able to retrieve and process the information.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<crate::types::BucketMetadataErrorCode> {
+        &self.error_code
     }
     /// <p>A brief description of the error (errorCode) that prevented Amazon Macie from retrieving and processing information about the bucket and the bucket's objects. This value is null if Macie was able to retrieve and process the information.</p>
     pub fn error_message(
@@ -233,6 +254,10 @@ impl MatchingBucketBuilder {
         self.error_message = input;
         self
     }
+    /// <p>A brief description of the error (errorCode) that prevented Amazon Macie from retrieving and processing information about the bucket and the bucket's objects. This value is null if Macie was able to retrieve and process the information.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
+    }
     /// <p>Specifies whether any one-time or recurring classification jobs are configured to analyze objects in the bucket, and, if so, the details of the job that ran most recently.</p>
     pub fn job_details(mut self, input: crate::types::JobDetails) -> Self {
         self.job_details = ::std::option::Option::Some(input);
@@ -245,6 +270,10 @@ impl MatchingBucketBuilder {
     ) -> Self {
         self.job_details = input;
         self
+    }
+    /// <p>Specifies whether any one-time or recurring classification jobs are configured to analyze objects in the bucket, and, if so, the details of the job that ran most recently.</p>
+    pub fn get_job_details(&self) -> &::std::option::Option<crate::types::JobDetails> {
+        &self.job_details
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently analyzed data in the bucket while performing automated sensitive data discovery for your account. This value is null if automated sensitive data discovery is currently disabled for your account.</p>
     pub fn last_automated_discovery_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -259,6 +288,12 @@ impl MatchingBucketBuilder {
         self.last_automated_discovery_time = input;
         self
     }
+    /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently analyzed data in the bucket while performing automated sensitive data discovery for your account. This value is null if automated sensitive data discovery is currently disabled for your account.</p>
+    pub fn get_last_automated_discovery_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_automated_discovery_time
+    }
     /// <p>The total number of objects in the bucket.</p>
     pub fn object_count(mut self, input: i64) -> Self {
         self.object_count = ::std::option::Option::Some(input);
@@ -268,6 +303,10 @@ impl MatchingBucketBuilder {
     pub fn set_object_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.object_count = input;
         self
+    }
+    /// <p>The total number of objects in the bucket.</p>
+    pub fn get_object_count(&self) -> &::std::option::Option<i64> {
+        &self.object_count
     }
     /// <p>The total number of objects in the bucket, grouped by server-side encryption type. This includes a grouping that reports the total number of objects that aren't encrypted or use client-side encryption.</p>
     pub fn object_count_by_encryption_type(
@@ -285,6 +324,12 @@ impl MatchingBucketBuilder {
         self.object_count_by_encryption_type = input;
         self
     }
+    /// <p>The total number of objects in the bucket, grouped by server-side encryption type. This includes a grouping that reports the total number of objects that aren't encrypted or use client-side encryption.</p>
+    pub fn get_object_count_by_encryption_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ObjectCountByEncryptionType> {
+        &self.object_count_by_encryption_type
+    }
     /// <p>The current sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). This value is null if automated sensitive data discovery is currently disabled for your account.</p>
     pub fn sensitivity_score(mut self, input: i32) -> Self {
         self.sensitivity_score = ::std::option::Option::Some(input);
@@ -294,6 +339,10 @@ impl MatchingBucketBuilder {
     pub fn set_sensitivity_score(mut self, input: ::std::option::Option<i32>) -> Self {
         self.sensitivity_score = input;
         self
+    }
+    /// <p>The current sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). This value is null if automated sensitive data discovery is currently disabled for your account.</p>
+    pub fn get_sensitivity_score(&self) -> &::std::option::Option<i32> {
+        &self.sensitivity_score
     }
     /// <p>The total storage size, in bytes, of the bucket.</p>
     /// <p>If versioning is enabled for the bucket, Amazon Macie calculates this value based on the size of the latest version of each object in the bucket. This value doesn't reflect the storage size of all versions of each object in the bucket.</p>
@@ -307,6 +356,11 @@ impl MatchingBucketBuilder {
         self.size_in_bytes = input;
         self
     }
+    /// <p>The total storage size, in bytes, of the bucket.</p>
+    /// <p>If versioning is enabled for the bucket, Amazon Macie calculates this value based on the size of the latest version of each object in the bucket. This value doesn't reflect the storage size of all versions of each object in the bucket.</p>
+    pub fn get_size_in_bytes(&self) -> &::std::option::Option<i64> {
+        &self.size_in_bytes
+    }
     /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the bucket.</p>
     /// <p>If versioning is enabled for the bucket, Amazon Macie calculates this value based on the size of the latest version of each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each applicable object in the bucket.</p>
     pub fn size_in_bytes_compressed(mut self, input: i64) -> Self {
@@ -318,6 +372,11 @@ impl MatchingBucketBuilder {
     pub fn set_size_in_bytes_compressed(mut self, input: ::std::option::Option<i64>) -> Self {
         self.size_in_bytes_compressed = input;
         self
+    }
+    /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the bucket.</p>
+    /// <p>If versioning is enabled for the bucket, Amazon Macie calculates this value based on the size of the latest version of each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each applicable object in the bucket.</p>
+    pub fn get_size_in_bytes_compressed(&self) -> &::std::option::Option<i64> {
+        &self.size_in_bytes_compressed
     }
     /// <p>The total number of objects that Amazon Macie can't analyze in the bucket. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
     pub fn unclassifiable_object_count(
@@ -335,6 +394,12 @@ impl MatchingBucketBuilder {
         self.unclassifiable_object_count = input;
         self
     }
+    /// <p>The total number of objects that Amazon Macie can't analyze in the bucket. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
+    pub fn get_unclassifiable_object_count(
+        &self,
+    ) -> &::std::option::Option<crate::types::ObjectLevelStatistics> {
+        &self.unclassifiable_object_count
+    }
     /// <p>The total storage size, in bytes, of the objects that Amazon Macie can't analyze in the bucket. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
     pub fn unclassifiable_object_size_in_bytes(
         mut self,
@@ -350,6 +415,12 @@ impl MatchingBucketBuilder {
     ) -> Self {
         self.unclassifiable_object_size_in_bytes = input;
         self
+    }
+    /// <p>The total storage size, in bytes, of the objects that Amazon Macie can't analyze in the bucket. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
+    pub fn get_unclassifiable_object_size_in_bytes(
+        &self,
+    ) -> &::std::option::Option<crate::types::ObjectLevelStatistics> {
+        &self.unclassifiable_object_size_in_bytes
     }
     /// Consumes the builder and constructs a [`MatchingBucket`](crate::types::MatchingBucket).
     pub fn build(self) -> crate::types::MatchingBucket {

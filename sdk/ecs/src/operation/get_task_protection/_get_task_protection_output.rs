@@ -84,6 +84,17 @@ impl GetTaskProtectionOutputBuilder {
         self.protected_tasks = input;
         self
     }
+    /// <p>A list of tasks with the following information.</p>
+    /// <ul>
+    /// <li> <p> <code>taskArn</code>: The task ARN.</p> </li>
+    /// <li> <p> <code>protectionEnabled</code>: The protection status of the task. If scale-in protection is turned on for a task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p> </li>
+    /// <li> <p> <code>expirationDate</code>: The epoch time when protection for the task will expire.</p> </li>
+    /// </ul>
+    pub fn get_protected_tasks(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProtectedTask>> {
+        &self.protected_tasks
+    }
     /// Appends an item to `failures`.
     ///
     /// To override the contents of this collection use [`set_failures`](Self::set_failures).
@@ -102,6 +113,10 @@ impl GetTaskProtectionOutputBuilder {
     ) -> Self {
         self.failures = input;
         self
+    }
+    /// <p>Any failures associated with the call.</p>
+    pub fn get_failures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Failure>> {
+        &self.failures
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

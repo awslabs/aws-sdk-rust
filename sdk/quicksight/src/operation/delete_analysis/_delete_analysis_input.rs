@@ -69,6 +69,10 @@ impl DeleteAnalysisInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services account where you want to delete an analysis.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The ID of the analysis that you're deleting.</p>
     pub fn analysis_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analysis_id = ::std::option::Option::Some(input.into());
@@ -78,6 +82,10 @@ impl DeleteAnalysisInputBuilder {
     pub fn set_analysis_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.analysis_id = input;
         self
+    }
+    /// <p>The ID of the analysis that you're deleting.</p>
+    pub fn get_analysis_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.analysis_id
     }
     /// <p>A value that specifies the number of days that Amazon QuickSight waits before it deletes the analysis. You can't use this parameter with the <code>ForceDeleteWithoutRecovery</code> option in the same API call. The default value is 30.</p>
     pub fn recovery_window_in_days(mut self, input: i64) -> Self {
@@ -89,6 +97,10 @@ impl DeleteAnalysisInputBuilder {
         self.recovery_window_in_days = input;
         self
     }
+    /// <p>A value that specifies the number of days that Amazon QuickSight waits before it deletes the analysis. You can't use this parameter with the <code>ForceDeleteWithoutRecovery</code> option in the same API call. The default value is 30.</p>
+    pub fn get_recovery_window_in_days(&self) -> &::std::option::Option<i64> {
+        &self.recovery_window_in_days
+    }
     /// <p>This option defaults to the value <code>NoForceDeleteWithoutRecovery</code>. To immediately delete the analysis, add the <code>ForceDeleteWithoutRecovery</code> option. You can't restore an analysis after it's deleted. </p>
     pub fn force_delete_without_recovery(mut self, input: bool) -> Self {
         self.force_delete_without_recovery = ::std::option::Option::Some(input);
@@ -98,6 +110,10 @@ impl DeleteAnalysisInputBuilder {
     pub fn set_force_delete_without_recovery(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force_delete_without_recovery = input;
         self
+    }
+    /// <p>This option defaults to the value <code>NoForceDeleteWithoutRecovery</code>. To immediately delete the analysis, add the <code>ForceDeleteWithoutRecovery</code> option. You can't restore an analysis after it's deleted. </p>
+    pub fn get_force_delete_without_recovery(&self) -> &::std::option::Option<bool> {
+        &self.force_delete_without_recovery
     }
     /// Consumes the builder and constructs a [`DeleteAnalysisInput`](crate::operation::delete_analysis::DeleteAnalysisInput).
     pub fn build(

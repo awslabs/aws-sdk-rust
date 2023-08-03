@@ -67,6 +67,10 @@ impl InputDecryptionSettingsBuilder {
         self.decryption_mode = input;
         self
     }
+    /// Specify the encryption mode that you used to encrypt your input files.
+    pub fn get_decryption_mode(&self) -> &::std::option::Option<crate::types::DecryptionMode> {
+        &self.decryption_mode
+    }
     /// Warning! Don't provide your encryption key in plaintext. Your job settings could be intercepted, making your encrypted content vulnerable. Specify the encrypted version of the data key that you used to encrypt your content. The data key must be encrypted by AWS Key Management Service (KMS). The key can be 128, 192, or 256 bits.
     pub fn encrypted_decryption_key(
         mut self,
@@ -82,6 +86,10 @@ impl InputDecryptionSettingsBuilder {
     ) -> Self {
         self.encrypted_decryption_key = input;
         self
+    }
+    /// Warning! Don't provide your encryption key in plaintext. Your job settings could be intercepted, making your encrypted content vulnerable. Specify the encrypted version of the data key that you used to encrypt your content. The data key must be encrypted by AWS Key Management Service (KMS). The key can be 128, 192, or 256 bits.
+    pub fn get_encrypted_decryption_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encrypted_decryption_key
     }
     /// Specify the initialization vector that you used when you encrypted your content before uploading it to Amazon S3. You can use a 16-byte initialization vector with any encryption mode. Or, you can use a 12-byte initialization vector with GCM or CTR. MediaConvert accepts only initialization vectors that are base64-encoded.
     pub fn initialization_vector(
@@ -99,6 +107,10 @@ impl InputDecryptionSettingsBuilder {
         self.initialization_vector = input;
         self
     }
+    /// Specify the initialization vector that you used when you encrypted your content before uploading it to Amazon S3. You can use a 16-byte initialization vector with any encryption mode. Or, you can use a 12-byte initialization vector with GCM or CTR. MediaConvert accepts only initialization vectors that are base64-encoded.
+    pub fn get_initialization_vector(&self) -> &::std::option::Option<::std::string::String> {
+        &self.initialization_vector
+    }
     /// Specify the AWS Region for AWS Key Management Service (KMS) that you used to encrypt your data key, if that Region is different from the one you are using for AWS Elemental MediaConvert.
     pub fn kms_key_region(
         mut self,
@@ -114,6 +126,10 @@ impl InputDecryptionSettingsBuilder {
     ) -> Self {
         self.kms_key_region = input;
         self
+    }
+    /// Specify the AWS Region for AWS Key Management Service (KMS) that you used to encrypt your data key, if that Region is different from the one you are using for AWS Elemental MediaConvert.
+    pub fn get_kms_key_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_region
     }
     /// Consumes the builder and constructs a [`InputDecryptionSettings`](crate::types::InputDecryptionSettings).
     pub fn build(self) -> crate::types::InputDecryptionSettings {

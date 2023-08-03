@@ -52,6 +52,10 @@ impl UpdateGlobalSecondaryIndexActionBuilder {
         self.index_name = input;
         self
     }
+    /// <p>The name of the global secondary index to be updated.</p>
+    pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_name
+    }
     /// <p>Represents the provisioned throughput settings for the specified global secondary index.</p>
     /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn provisioned_throughput(mut self, input: crate::types::ProvisionedThroughput) -> Self {
@@ -66,6 +70,13 @@ impl UpdateGlobalSecondaryIndexActionBuilder {
     ) -> Self {
         self.provisioned_throughput = input;
         self
+    }
+    /// <p>Represents the provisioned throughput settings for the specified global secondary index.</p>
+    /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    pub fn get_provisioned_throughput(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProvisionedThroughput> {
+        &self.provisioned_throughput
     }
     /// Consumes the builder and constructs a [`UpdateGlobalSecondaryIndexAction`](crate::types::UpdateGlobalSecondaryIndexAction).
     pub fn build(self) -> crate::types::UpdateGlobalSecondaryIndexAction {

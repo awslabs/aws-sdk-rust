@@ -36,6 +36,13 @@ impl ActivateContactChannelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ActivateContactChannel as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::activate_contact_channel::builders::ActivateContactChannelInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl ActivateContactChannelFluentBuilder {
         self.inner = self.inner.set_contact_channel_id(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
+    pub fn get_contact_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_contact_channel_id()
+    }
     /// <p>The code sent to the contact channel when it was created in the contact.</p>
     pub fn activation_code(
         mut self,
@@ -147,5 +158,9 @@ impl ActivateContactChannelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_activation_code(input);
         self
+    }
+    /// <p>The code sent to the contact channel when it was created in the contact.</p>
+    pub fn get_activation_code(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_activation_code()
     }
 }

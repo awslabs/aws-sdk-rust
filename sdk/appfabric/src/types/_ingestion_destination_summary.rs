@@ -40,6 +40,10 @@ impl IngestionDestinationSummaryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the ingestion destination.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`IngestionDestinationSummary`](crate::types::IngestionDestinationSummary).
     pub fn build(self) -> crate::types::IngestionDestinationSummary {
         crate::types::IngestionDestinationSummary { arn: self.arn }

@@ -57,6 +57,10 @@ impl AwsCodeBuildProjectLogsConfigCloudWatchLogsDetailsBuilder {
         self.group_name = input;
         self
     }
+    /// <p>The group name of the logs in CloudWatch Logs.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
+    }
     /// <p>The current status of the logs in CloudWatch Logs for a build project.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -67,6 +71,10 @@ impl AwsCodeBuildProjectLogsConfigCloudWatchLogsDetailsBuilder {
         self.status = input;
         self
     }
+    /// <p>The current status of the logs in CloudWatch Logs for a build project.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>The prefix of the stream name of the CloudWatch Logs.</p>
     pub fn stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_name = ::std::option::Option::Some(input.into());
@@ -76,6 +84,10 @@ impl AwsCodeBuildProjectLogsConfigCloudWatchLogsDetailsBuilder {
     pub fn set_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_name = input;
         self
+    }
+    /// <p>The prefix of the stream name of the CloudWatch Logs.</p>
+    pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_name
     }
     /// Consumes the builder and constructs a [`AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails`](crate::types::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails).
     pub fn build(self) -> crate::types::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails {

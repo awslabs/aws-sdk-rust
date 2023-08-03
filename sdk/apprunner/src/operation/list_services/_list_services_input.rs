@@ -53,6 +53,11 @@ impl ListServicesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token from a previous result page. Used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones specified in the initial request.</p>
+    /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
     /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -64,6 +69,11 @@ impl ListServicesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
+    /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListServicesInput`](crate::operation::list_services::ListServicesInput).
     pub fn build(

@@ -81,6 +81,10 @@ impl InstanceAccessBuilder {
         self.fleet_id = input;
         self
     }
+    /// <p>A unique identifier for the fleet containing the instance being accessed.</p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_id
+    }
     /// <p>A unique identifier for the instance being accessed.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -91,6 +95,10 @@ impl InstanceAccessBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>A unique identifier for the instance being accessed.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>IP address that is assigned to the instance.</p>
     pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_address = ::std::option::Option::Some(input.into());
@@ -100,6 +108,10 @@ impl InstanceAccessBuilder {
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_address = input;
         self
+    }
+    /// <p>IP address that is assigned to the instance.</p>
+    pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_address
     }
     /// <p>Operating system that is running on the instance.</p>
     pub fn operating_system(mut self, input: crate::types::OperatingSystem) -> Self {
@@ -114,6 +126,10 @@ impl InstanceAccessBuilder {
         self.operating_system = input;
         self
     }
+    /// <p>Operating system that is running on the instance.</p>
+    pub fn get_operating_system(&self) -> &::std::option::Option<crate::types::OperatingSystem> {
+        &self.operating_system
+    }
     /// <p>Credentials required to access the instance.</p>
     pub fn credentials(mut self, input: crate::types::InstanceCredentials) -> Self {
         self.credentials = ::std::option::Option::Some(input);
@@ -126,6 +142,10 @@ impl InstanceAccessBuilder {
     ) -> Self {
         self.credentials = input;
         self
+    }
+    /// <p>Credentials required to access the instance.</p>
+    pub fn get_credentials(&self) -> &::std::option::Option<crate::types::InstanceCredentials> {
+        &self.credentials
     }
     /// Consumes the builder and constructs a [`InstanceAccess`](crate::types::InstanceAccess).
     pub fn build(self) -> crate::types::InstanceAccess {

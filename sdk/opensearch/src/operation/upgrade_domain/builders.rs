@@ -36,6 +36,12 @@ impl UpgradeDomainFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpgradeDomain as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::upgrade_domain::builders::UpgradeDomainInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl UpgradeDomainFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p>Name of the OpenSearch Service domain that you want to upgrade.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
     /// <p>OpenSearch or Elasticsearch version to which you want to upgrade, in the format Opensearch_X.Y or Elasticsearch_X.Y.</p>
     pub fn target_version(
         mut self,
@@ -134,6 +144,10 @@ impl UpgradeDomainFluentBuilder {
         self.inner = self.inner.set_target_version(input);
         self
     }
+    /// <p>OpenSearch or Elasticsearch version to which you want to upgrade, in the format Opensearch_X.Y or Elasticsearch_X.Y.</p>
+    pub fn get_target_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_version()
+    }
     /// <p>When true, indicates that an upgrade eligibility check needs to be performed. Does not actually perform the upgrade.</p>
     pub fn perform_check_only(mut self, input: bool) -> Self {
         self.inner = self.inner.perform_check_only(input);
@@ -143,6 +157,10 @@ impl UpgradeDomainFluentBuilder {
     pub fn set_perform_check_only(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_perform_check_only(input);
         self
+    }
+    /// <p>When true, indicates that an upgrade eligibility check needs to be performed. Does not actually perform the upgrade.</p>
+    pub fn get_perform_check_only(&self) -> &::std::option::Option<bool> {
+        self.inner.get_perform_check_only()
     }
     /// Adds a key-value pair to `AdvancedOptions`.
     ///
@@ -166,5 +184,13 @@ impl UpgradeDomainFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_advanced_options(input);
         self
+    }
+    /// <p>Only supports the <code>override_main_response_version</code> parameter and not other advanced options. You can only include this option when upgrading to an OpenSearch version. Specifies whether the domain reports its version as 7.10 so that it continues to work with Elasticsearch OSS clients and plugins.</p>
+    pub fn get_advanced_options(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_advanced_options()
     }
 }

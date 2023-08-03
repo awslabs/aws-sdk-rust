@@ -38,6 +38,10 @@ impl CreateRelationalDatabaseFromSnapshotFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateRelationalDatabaseFromSnapshot as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_relational_database_from_snapshot::builders::CreateRelationalDatabaseFromSnapshotInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -118,6 +122,15 @@ impl CreateRelationalDatabaseFromSnapshotFluentBuilder {
         self.inner = self.inner.set_relational_database_name(input);
         self
     }
+    /// <p>The name to use for your new Lightsail database resource.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
+    /// <li> <p>The first and last character must be a letter or number.</p> </li>
+    /// </ul>
+    pub fn get_relational_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_relational_database_name()
+    }
     /// <p>The Availability Zone in which to create your new database. Use the <code>us-east-2a</code> case-sensitive format.</p>
     /// <p>You can get a list of Availability Zones by using the <code>get regions</code> operation. Be sure to add the <code>include relational database Availability Zones</code> parameter to your request.</p>
     pub fn availability_zone(
@@ -136,6 +149,11 @@ impl CreateRelationalDatabaseFromSnapshotFluentBuilder {
         self.inner = self.inner.set_availability_zone(input);
         self
     }
+    /// <p>The Availability Zone in which to create your new database. Use the <code>us-east-2a</code> case-sensitive format.</p>
+    /// <p>You can get a list of Availability Zones by using the <code>get regions</code> operation. Be sure to add the <code>include relational database Availability Zones</code> parameter to your request.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_availability_zone()
+    }
     /// <p>Specifies the accessibility options for your new database. A value of <code>true</code> specifies a database that is available to resources outside of your Lightsail account. A value of <code>false</code> specifies a database that is available only to your Lightsail resources in the same region as your database.</p>
     pub fn publicly_accessible(mut self, input: bool) -> Self {
         self.inner = self.inner.publicly_accessible(input);
@@ -145,6 +163,10 @@ impl CreateRelationalDatabaseFromSnapshotFluentBuilder {
     pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_publicly_accessible(input);
         self
+    }
+    /// <p>Specifies the accessibility options for your new database. A value of <code>true</code> specifies a database that is available to resources outside of your Lightsail account. A value of <code>false</code> specifies a database that is available only to your Lightsail resources in the same region as your database.</p>
+    pub fn get_publicly_accessible(&self) -> &::std::option::Option<bool> {
+        self.inner.get_publicly_accessible()
     }
     /// <p>The name of the database snapshot from which to create your new database.</p>
     pub fn relational_database_snapshot_name(
@@ -161,6 +183,12 @@ impl CreateRelationalDatabaseFromSnapshotFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_relational_database_snapshot_name(input);
         self
+    }
+    /// <p>The name of the database snapshot from which to create your new database.</p>
+    pub fn get_relational_database_snapshot_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_relational_database_snapshot_name()
     }
     /// <p>The bundle ID for your new database. A bundle describes the performance specifications for your database.</p>
     /// <p>You can get a list of database bundle IDs by using the <code>get relational database bundles</code> operation.</p>
@@ -182,6 +210,14 @@ impl CreateRelationalDatabaseFromSnapshotFluentBuilder {
         self.inner = self.inner.set_relational_database_bundle_id(input);
         self
     }
+    /// <p>The bundle ID for your new database. A bundle describes the performance specifications for your database.</p>
+    /// <p>You can get a list of database bundle IDs by using the <code>get relational database bundles</code> operation.</p>
+    /// <p>When creating a new database from a snapshot, you cannot choose a bundle that is smaller than the bundle of the source database.</p>
+    pub fn get_relational_database_bundle_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_relational_database_bundle_id()
+    }
     /// <p>The name of the source database.</p>
     pub fn source_relational_database_name(
         mut self,
@@ -197,6 +233,12 @@ impl CreateRelationalDatabaseFromSnapshotFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_source_relational_database_name(input);
         self
+    }
+    /// <p>The name of the source database.</p>
+    pub fn get_source_relational_database_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_relational_database_name()
     }
     /// <p>The date and time to restore your database from.</p>
     /// <p>Constraints:</p>
@@ -225,6 +267,17 @@ impl CreateRelationalDatabaseFromSnapshotFluentBuilder {
         self.inner = self.inner.set_restore_time(input);
         self
     }
+    /// <p>The date and time to restore your database from.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be before the latest restorable time for the database.</p> </li>
+    /// <li> <p>Cannot be specified if the <code>use latest restorable time</code> parameter is <code>true</code>.</p> </li>
+    /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
+    /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use a restore time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the restore time.</p> </li>
+    /// </ul>
+    pub fn get_restore_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_restore_time()
+    }
     /// <p>Specifies whether your database is restored from the latest backup time. A value of <code>true</code> restores from the latest backup time. </p>
     /// <p>Default: <code>false</code> </p>
     /// <p>Constraints: Cannot be specified if the <code>restore time</code> parameter is provided.</p>
@@ -238,6 +291,12 @@ impl CreateRelationalDatabaseFromSnapshotFluentBuilder {
     pub fn set_use_latest_restorable_time(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_use_latest_restorable_time(input);
         self
+    }
+    /// <p>Specifies whether your database is restored from the latest backup time. A value of <code>true</code> restores from the latest backup time. </p>
+    /// <p>Default: <code>false</code> </p>
+    /// <p>Constraints: Cannot be specified if the <code>restore time</code> parameter is provided.</p>
+    pub fn get_use_latest_restorable_time(&self) -> &::std::option::Option<bool> {
+        self.inner.get_use_latest_restorable_time()
     }
     /// Appends an item to `tags`.
     ///
@@ -257,5 +316,10 @@ impl CreateRelationalDatabaseFromSnapshotFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tag keys and optional values to add to the resource during create.</p>
+    /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

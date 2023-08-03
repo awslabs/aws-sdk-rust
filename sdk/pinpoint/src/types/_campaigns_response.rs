@@ -57,6 +57,12 @@ impl CampaignsResponseBuilder {
         self.item = input;
         self
     }
+    /// <p>An array of responses, one for each campaign that's associated with the application.</p>
+    pub fn get_item(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CampaignResponse>> {
+        &self.item
+    }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -66,6 +72,10 @@ impl CampaignsResponseBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`CampaignsResponse`](crate::types::CampaignsResponse).
     pub fn build(self) -> crate::types::CampaignsResponse {

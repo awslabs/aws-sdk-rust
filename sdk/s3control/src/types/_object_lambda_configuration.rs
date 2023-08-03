@@ -80,6 +80,10 @@ impl ObjectLambdaConfigurationBuilder {
         self.supporting_access_point = input;
         self
     }
+    /// <p>Standard access point associated with the Object Lambda Access Point.</p>
+    pub fn get_supporting_access_point(&self) -> &::std::option::Option<::std::string::String> {
+        &self.supporting_access_point
+    }
     /// <p>A container for whether the CloudWatch metrics configuration is enabled.</p>
     pub fn cloud_watch_metrics_enabled(mut self, input: bool) -> Self {
         self.cloud_watch_metrics_enabled = ::std::option::Option::Some(input);
@@ -89,6 +93,10 @@ impl ObjectLambdaConfigurationBuilder {
     pub fn set_cloud_watch_metrics_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.cloud_watch_metrics_enabled = input;
         self
+    }
+    /// <p>A container for whether the CloudWatch metrics configuration is enabled.</p>
+    pub fn get_cloud_watch_metrics_enabled(&self) -> &::std::option::Option<bool> {
+        &self.cloud_watch_metrics_enabled
     }
     /// Appends an item to `allowed_features`.
     ///
@@ -108,6 +116,12 @@ impl ObjectLambdaConfigurationBuilder {
     ) -> Self {
         self.allowed_features = input;
         self
+    }
+    /// <p>A container for allowed features. Valid inputs are <code>GetObject-Range</code>, <code>GetObject-PartNumber</code>, <code>HeadObject-Range</code>, and <code>HeadObject-PartNumber</code>.</p>
+    pub fn get_allowed_features(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ObjectLambdaAllowedFeature>> {
+        &self.allowed_features
     }
     /// Appends an item to `transformation_configurations`.
     ///
@@ -132,6 +146,14 @@ impl ObjectLambdaConfigurationBuilder {
     ) -> Self {
         self.transformation_configurations = input;
         self
+    }
+    /// <p>A container for transformation configurations for an Object Lambda Access Point.</p>
+    pub fn get_transformation_configurations(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::ObjectLambdaTransformationConfiguration>,
+    > {
+        &self.transformation_configurations
     }
     /// Consumes the builder and constructs a [`ObjectLambdaConfiguration`](crate::types::ObjectLambdaConfiguration).
     pub fn build(self) -> crate::types::ObjectLambdaConfiguration {

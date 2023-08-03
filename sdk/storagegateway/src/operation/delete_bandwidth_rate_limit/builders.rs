@@ -36,6 +36,10 @@ impl DeleteBandwidthRateLimitFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteBandwidthRateLimit as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_bandwidth_rate_limit::builders::DeleteBandwidthRateLimitInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl DeleteBandwidthRateLimitFluentBuilder {
         self.inner = self.inner.set_gateway_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_gateway_arn()
+    }
     /// <p>One of the BandwidthType values that indicates the gateway bandwidth rate limit to delete.</p>
     /// <p>Valid Values: <code>UPLOAD</code> | <code>DOWNLOAD</code> | <code>ALL</code> </p>
     pub fn bandwidth_type(
@@ -143,5 +151,10 @@ impl DeleteBandwidthRateLimitFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_bandwidth_type(input);
         self
+    }
+    /// <p>One of the BandwidthType values that indicates the gateway bandwidth rate limit to delete.</p>
+    /// <p>Valid Values: <code>UPLOAD</code> | <code>DOWNLOAD</code> | <code>ALL</code> </p>
+    pub fn get_bandwidth_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bandwidth_type()
     }
 }

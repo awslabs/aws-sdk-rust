@@ -45,6 +45,10 @@ impl GetConnectPeerInputBuilder {
         self.connect_peer_id = input;
         self
     }
+    /// <p>The ID of the Connect peer.</p>
+    pub fn get_connect_peer_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connect_peer_id
+    }
     /// Consumes the builder and constructs a [`GetConnectPeerInput`](crate::operation::get_connect_peer::GetConnectPeerInput).
     pub fn build(
         self,

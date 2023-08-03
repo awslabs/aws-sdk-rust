@@ -54,6 +54,10 @@ impl CreateModelOutputBuilder {
         self.model_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the model being created. </p>
+    pub fn get_model_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_arn
+    }
     /// <p>Indicates the status of the <code>CreateModel</code> operation. </p>
     pub fn status(mut self, input: crate::types::ModelStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl CreateModelOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ModelStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Indicates the status of the <code>CreateModel</code> operation. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ModelStatus> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

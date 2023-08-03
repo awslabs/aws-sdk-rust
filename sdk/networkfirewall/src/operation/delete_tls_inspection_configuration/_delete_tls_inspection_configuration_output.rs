@@ -56,6 +56,12 @@ impl DeleteTlsInspectionConfigurationOutputBuilder {
         self.tls_inspection_configuration_response = input;
         self
     }
+    /// <p>The high-level properties of a TLS inspection configuration. This, along with the <code>TLSInspectionConfiguration</code>, define the TLS inspection configuration. You can retrieve all objects for a TLS inspection configuration by calling <code>DescribeTLSInspectionConfiguration</code>. </p>
+    pub fn get_tls_inspection_configuration_response(
+        &self,
+    ) -> &::std::option::Option<crate::types::TlsInspectionConfigurationResponse> {
+        &self.tls_inspection_configuration_response
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

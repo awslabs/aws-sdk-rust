@@ -54,6 +54,12 @@ impl UpdateRegexMatchSetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateRegexMatchSet as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_regex_match_set::builders::UpdateRegexMatchSetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -150,6 +156,10 @@ impl UpdateRegexMatchSetFluentBuilder {
         self.inner = self.inner.set_regex_match_set_id(input);
         self
     }
+    /// <p>The <code>RegexMatchSetId</code> of the <code>RegexMatchSet</code> that you want to update. <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
+    pub fn get_regex_match_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_regex_match_set_id()
+    }
     /// Appends an item to `Updates`.
     ///
     /// To override the contents of this collection use [`set_updates`](Self::set_updates).
@@ -167,6 +177,12 @@ impl UpdateRegexMatchSetFluentBuilder {
         self.inner = self.inner.set_updates(input);
         self
     }
+    /// <p>An array of <code>RegexMatchSetUpdate</code> objects that you want to insert into or delete from a <code>RegexMatchSet</code>. For more information, see <code>RegexMatchTuple</code>.</p>
+    pub fn get_updates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RegexMatchSetUpdate>> {
+        self.inner.get_updates()
+    }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.change_token(input.into());
@@ -176,5 +192,9 @@ impl UpdateRegexMatchSetFluentBuilder {
     pub fn set_change_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_change_token(input);
         self
+    }
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    pub fn get_change_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_change_token()
     }
 }

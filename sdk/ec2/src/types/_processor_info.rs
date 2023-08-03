@@ -73,6 +73,12 @@ impl ProcessorInfoBuilder {
         self.supported_architectures = input;
         self
     }
+    /// <p>The architectures supported by the instance type.</p>
+    pub fn get_supported_architectures(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ArchitectureType>> {
+        &self.supported_architectures
+    }
     /// <p>The speed of the processor, in GHz.</p>
     pub fn sustained_clock_speed_in_ghz(mut self, input: f64) -> Self {
         self.sustained_clock_speed_in_ghz = ::std::option::Option::Some(input);
@@ -82,6 +88,10 @@ impl ProcessorInfoBuilder {
     pub fn set_sustained_clock_speed_in_ghz(mut self, input: ::std::option::Option<f64>) -> Self {
         self.sustained_clock_speed_in_ghz = input;
         self
+    }
+    /// <p>The speed of the processor, in GHz.</p>
+    pub fn get_sustained_clock_speed_in_ghz(&self) -> &::std::option::Option<f64> {
+        &self.sustained_clock_speed_in_ghz
     }
     /// Appends an item to `supported_features`.
     ///
@@ -106,6 +116,13 @@ impl ProcessorInfoBuilder {
     ) -> Self {
         self.supported_features = input;
         self
+    }
+    /// <p>Indicates whether the instance type supports AMD SEV-SNP. If the request returns <code>amd-sev-snp</code>, AMD SEV-SNP is supported. Otherwise, it is not supported. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html"> AMD SEV-SNP</a>.</p>
+    pub fn get_supported_features(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SupportedAdditionalProcessorFeature>>
+    {
+        &self.supported_features
     }
     /// Consumes the builder and constructs a [`ProcessorInfo`](crate::types::ProcessorInfo).
     pub fn build(self) -> crate::types::ProcessorInfo {

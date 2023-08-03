@@ -46,6 +46,10 @@ impl GetAnalyzerInputBuilder {
         self.analyzer_name = input;
         self
     }
+    /// <p>The name of the analyzer retrieved.</p>
+    pub fn get_analyzer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.analyzer_name
+    }
     /// Consumes the builder and constructs a [`GetAnalyzerInput`](crate::operation::get_analyzer::GetAnalyzerInput).
     pub fn build(
         self,

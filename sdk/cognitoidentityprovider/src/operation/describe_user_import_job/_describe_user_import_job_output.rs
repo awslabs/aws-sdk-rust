@@ -52,6 +52,10 @@ impl DescribeUserImportJobOutputBuilder {
         self.user_import_job = input;
         self
     }
+    /// <p>The job object that represents the user import job.</p>
+    pub fn get_user_import_job(&self) -> &::std::option::Option<crate::types::UserImportJobType> {
+        &self.user_import_job
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

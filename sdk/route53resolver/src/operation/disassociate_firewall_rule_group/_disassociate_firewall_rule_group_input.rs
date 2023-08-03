@@ -45,6 +45,12 @@ impl DisassociateFirewallRuleGroupInputBuilder {
         self.firewall_rule_group_association_id = input;
         self
     }
+    /// <p>The identifier of the <code>FirewallRuleGroupAssociation</code>. </p>
+    pub fn get_firewall_rule_group_association_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.firewall_rule_group_association_id
+    }
     /// Consumes the builder and constructs a [`DisassociateFirewallRuleGroupInput`](crate::operation::disassociate_firewall_rule_group::DisassociateFirewallRuleGroupInput).
     pub fn build(
         self,

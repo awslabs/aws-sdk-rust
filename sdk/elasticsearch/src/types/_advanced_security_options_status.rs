@@ -51,6 +51,10 @@ impl AdvancedSecurityOptionsStatusBuilder {
         self.options = input;
         self
     }
+    /// <p> Specifies advanced security options for the specified Elasticsearch domain.</p>
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::AdvancedSecurityOptions> {
+        &self.options
+    }
     /// <p> Status of the advanced security options for the specified Elasticsearch domain.</p>
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl AdvancedSecurityOptionsStatusBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OptionStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p> Status of the advanced security options for the specified Elasticsearch domain.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::OptionStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`AdvancedSecurityOptionsStatus`](crate::types::AdvancedSecurityOptionsStatus).
     pub fn build(self) -> crate::types::AdvancedSecurityOptionsStatus {

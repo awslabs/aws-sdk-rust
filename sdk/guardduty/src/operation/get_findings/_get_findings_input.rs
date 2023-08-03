@@ -55,6 +55,10 @@ impl GetFindingsInputBuilder {
         self.detector_id = input;
         self
     }
+    /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to retrieve.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
+    }
     /// Appends an item to `finding_ids`.
     ///
     /// To override the contents of this collection use [`set_finding_ids`](Self::set_finding_ids).
@@ -74,6 +78,12 @@ impl GetFindingsInputBuilder {
         self.finding_ids = input;
         self
     }
+    /// <p>The IDs of the findings that you want to retrieve.</p>
+    pub fn get_finding_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.finding_ids
+    }
     /// <p>Represents the criteria used for sorting findings.</p>
     pub fn sort_criteria(mut self, input: crate::types::SortCriteria) -> Self {
         self.sort_criteria = ::std::option::Option::Some(input);
@@ -86,6 +96,10 @@ impl GetFindingsInputBuilder {
     ) -> Self {
         self.sort_criteria = input;
         self
+    }
+    /// <p>Represents the criteria used for sorting findings.</p>
+    pub fn get_sort_criteria(&self) -> &::std::option::Option<crate::types::SortCriteria> {
+        &self.sort_criteria
     }
     /// Consumes the builder and constructs a [`GetFindingsInput`](crate::operation::get_findings::GetFindingsInput).
     pub fn build(

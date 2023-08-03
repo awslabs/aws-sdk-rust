@@ -42,6 +42,10 @@ impl DisassociateResolverQueryLogConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociateResolverQueryLogConfig as a reference.
+    pub fn as_input(&self) -> &crate::operation::disassociate_resolver_query_log_config::builders::DisassociateResolverQueryLogConfigInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -112,6 +116,12 @@ impl DisassociateResolverQueryLogConfigFluentBuilder {
         self.inner = self.inner.set_resolver_query_log_config_id(input);
         self
     }
+    /// <p>The ID of the query logging configuration that you want to disassociate a specified VPC from.</p>
+    pub fn get_resolver_query_log_config_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resolver_query_log_config_id()
+    }
     /// <p>The ID of the Amazon VPC that you want to disassociate from a specified query logging configuration.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_id(input.into());
@@ -121,5 +131,9 @@ impl DisassociateResolverQueryLogConfigFluentBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_id(input);
         self
+    }
+    /// <p>The ID of the Amazon VPC that you want to disassociate from a specified query logging configuration.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_id()
     }
 }

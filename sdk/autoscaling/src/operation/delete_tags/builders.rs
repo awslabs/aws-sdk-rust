@@ -36,6 +36,10 @@ impl DeleteTagsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteTags as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_tags::builders::DeleteTagsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,5 +128,9 @@ impl DeleteTagsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>One or more tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

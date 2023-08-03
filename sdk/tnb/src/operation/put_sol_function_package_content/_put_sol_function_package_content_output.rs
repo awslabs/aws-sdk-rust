@@ -88,6 +88,10 @@ impl PutSolFunctionPackageContentOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>Function package ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>Function package descriptor ID.</p>
     pub fn vnfd_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vnfd_id = ::std::option::Option::Some(input.into());
@@ -97,6 +101,10 @@ impl PutSolFunctionPackageContentOutputBuilder {
     pub fn set_vnfd_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vnfd_id = input;
         self
+    }
+    /// <p>Function package descriptor ID.</p>
+    pub fn get_vnfd_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vnfd_id
     }
     /// <p>Function product name.</p>
     pub fn vnf_product_name(
@@ -114,6 +122,10 @@ impl PutSolFunctionPackageContentOutputBuilder {
         self.vnf_product_name = input;
         self
     }
+    /// <p>Function product name.</p>
+    pub fn get_vnf_product_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vnf_product_name
+    }
     /// <p>Function provider.</p>
     pub fn vnf_provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vnf_provider = ::std::option::Option::Some(input.into());
@@ -124,6 +136,10 @@ impl PutSolFunctionPackageContentOutputBuilder {
         self.vnf_provider = input;
         self
     }
+    /// <p>Function provider.</p>
+    pub fn get_vnf_provider(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vnf_provider
+    }
     /// <p>Function package descriptor version.</p>
     pub fn vnfd_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vnfd_version = ::std::option::Option::Some(input.into());
@@ -133,6 +149,10 @@ impl PutSolFunctionPackageContentOutputBuilder {
     pub fn set_vnfd_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vnfd_version = input;
         self
+    }
+    /// <p>Function package descriptor version.</p>
+    pub fn get_vnfd_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vnfd_version
     }
     /// <p>Function package metadata.</p>
     pub fn metadata(mut self, input: crate::types::PutSolFunctionPackageContentMetadata) -> Self {
@@ -146,6 +166,12 @@ impl PutSolFunctionPackageContentOutputBuilder {
     ) -> Self {
         self.metadata = input;
         self
+    }
+    /// <p>Function package metadata.</p>
+    pub fn get_metadata(
+        &self,
+    ) -> &::std::option::Option<crate::types::PutSolFunctionPackageContentMetadata> {
+        &self.metadata
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

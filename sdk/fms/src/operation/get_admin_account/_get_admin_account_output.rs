@@ -61,6 +61,10 @@ impl GetAdminAccountOutputBuilder {
         self.admin_account = input;
         self
     }
+    /// <p>The account that is set as the Firewall Manager default administrator.</p>
+    pub fn get_admin_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.admin_account
+    }
     /// <p>The status of the account that you set as the Firewall Manager default administrator.</p>
     pub fn role_status(mut self, input: crate::types::AccountRoleStatus) -> Self {
         self.role_status = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl GetAdminAccountOutputBuilder {
     ) -> Self {
         self.role_status = input;
         self
+    }
+    /// <p>The status of the account that you set as the Firewall Manager default administrator.</p>
+    pub fn get_role_status(&self) -> &::std::option::Option<crate::types::AccountRoleStatus> {
+        &self.role_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

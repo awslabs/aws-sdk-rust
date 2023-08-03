@@ -55,6 +55,10 @@ impl UntagStreamInputBuilder {
         self.stream_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the stream that you want to remove tags from.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_arn
+    }
     /// <p>The name of the stream that you want to remove tags from.</p>
     pub fn stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_name = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl UntagStreamInputBuilder {
     pub fn set_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_name = input;
         self
+    }
+    /// <p>The name of the stream that you want to remove tags from.</p>
+    pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_name
     }
     /// Appends an item to `tag_key_list`.
     ///
@@ -83,6 +91,12 @@ impl UntagStreamInputBuilder {
     ) -> Self {
         self.tag_key_list = input;
         self
+    }
+    /// <p>A list of the keys of the tags that you want to remove.</p>
+    pub fn get_tag_key_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tag_key_list
     }
     /// Consumes the builder and constructs a [`UntagStreamInput`](crate::operation::untag_stream::UntagStreamInput).
     pub fn build(

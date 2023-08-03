@@ -36,6 +36,12 @@ impl GetDetectorVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetDetectorVersion as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_detector_version::builders::GetDetectorVersionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl GetDetectorVersionFluentBuilder {
         self.inner = self.inner.set_detector_id(input);
         self
     }
+    /// <p>The detector ID.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_detector_id()
+    }
     /// <p>The detector version ID.</p>
     pub fn detector_version_id(
         mut self,
@@ -141,5 +151,9 @@ impl GetDetectorVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_detector_version_id(input);
         self
+    }
+    /// <p>The detector version ID.</p>
+    pub fn get_detector_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_detector_version_id()
     }
 }

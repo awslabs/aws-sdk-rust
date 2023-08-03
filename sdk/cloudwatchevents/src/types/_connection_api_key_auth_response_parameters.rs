@@ -40,6 +40,10 @@ impl ConnectionApiKeyAuthResponseParametersBuilder {
         self.api_key_name = input;
         self
     }
+    /// <p>The name of the header to use for the <code>APIKeyValue</code> used for authorization.</p>
+    pub fn get_api_key_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_key_name
+    }
     /// Consumes the builder and constructs a [`ConnectionApiKeyAuthResponseParameters`](crate::types::ConnectionApiKeyAuthResponseParameters).
     pub fn build(self) -> crate::types::ConnectionApiKeyAuthResponseParameters {
         crate::types::ConnectionApiKeyAuthResponseParameters {

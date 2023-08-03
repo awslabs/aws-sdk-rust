@@ -94,6 +94,10 @@ impl CreateEndpointOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the endpoint that was created by this request.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The ARN of the endpoint that was created by this request.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -103,6 +107,10 @@ impl CreateEndpointOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The ARN of the endpoint that was created by this request.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The routing configuration defined by this request.</p>
     pub fn routing_config(mut self, input: crate::types::RoutingConfig) -> Self {
@@ -117,6 +125,10 @@ impl CreateEndpointOutputBuilder {
         self.routing_config = input;
         self
     }
+    /// <p>The routing configuration defined by this request.</p>
+    pub fn get_routing_config(&self) -> &::std::option::Option<crate::types::RoutingConfig> {
+        &self.routing_config
+    }
     /// <p>Whether event replication was enabled or disabled by this request.</p>
     pub fn replication_config(mut self, input: crate::types::ReplicationConfig) -> Self {
         self.replication_config = ::std::option::Option::Some(input);
@@ -129,6 +141,12 @@ impl CreateEndpointOutputBuilder {
     ) -> Self {
         self.replication_config = input;
         self
+    }
+    /// <p>Whether event replication was enabled or disabled by this request.</p>
+    pub fn get_replication_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReplicationConfig> {
+        &self.replication_config
     }
     /// Appends an item to `event_buses`.
     ///
@@ -149,6 +167,12 @@ impl CreateEndpointOutputBuilder {
         self.event_buses = input;
         self
     }
+    /// <p>The event buses used by this request.</p>
+    pub fn get_event_buses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointEventBus>> {
+        &self.event_buses
+    }
     /// <p>The ARN of the role used by event replication for this request.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -159,6 +183,10 @@ impl CreateEndpointOutputBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The ARN of the role used by event replication for this request.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>The state of the endpoint that was created by this request.</p>
     pub fn state(mut self, input: crate::types::EndpointState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -168,6 +196,10 @@ impl CreateEndpointOutputBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::EndpointState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the endpoint that was created by this request.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::EndpointState> {
+        &self.state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

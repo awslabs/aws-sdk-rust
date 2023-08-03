@@ -58,6 +58,10 @@ impl MetricSetDataQualityMetricBuilder {
         self.metric_set_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the data quality metric array.</p>
+    pub fn get_metric_set_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_set_arn
+    }
     /// Appends an item to `data_quality_metric_list`.
     ///
     /// To override the contents of this collection use [`set_data_quality_metric_list`](Self::set_data_quality_metric_list).
@@ -76,6 +80,12 @@ impl MetricSetDataQualityMetricBuilder {
     ) -> Self {
         self.data_quality_metric_list = input;
         self
+    }
+    /// <p>The array of data quality metrics contained in the data quality metric set.</p>
+    pub fn get_data_quality_metric_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataQualityMetric>> {
+        &self.data_quality_metric_list
     }
     /// Consumes the builder and constructs a [`MetricSetDataQualityMetric`](crate::types::MetricSetDataQualityMetric).
     pub fn build(self) -> crate::types::MetricSetDataQualityMetric {

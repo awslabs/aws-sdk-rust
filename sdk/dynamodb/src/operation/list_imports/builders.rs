@@ -36,6 +36,10 @@ impl ListImportsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListImports as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_imports::builders::ListImportsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl ListImportsFluentBuilder {
         self.inner = self.inner.set_table_arn(input);
         self
     }
+    /// <p> The Amazon Resource Name (ARN) associated with the table that was imported to. </p>
+    pub fn get_table_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_table_arn()
+    }
     /// <p> The number of <code>ImportSummary </code>objects returned in a single page. </p>
     pub fn page_size(mut self, input: i32) -> Self {
         self.inner = self.inner.page_size(input);
@@ -137,6 +145,10 @@ impl ListImportsFluentBuilder {
         self.inner = self.inner.set_page_size(input);
         self
     }
+    /// <p> The number of <code>ImportSummary </code>objects returned in a single page. </p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        self.inner.get_page_size()
+    }
     /// <p> An optional string that, if supplied, must be copied from the output of a previous call to <code>ListImports</code>. When provided in this manner, the API fetches the next page of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -146,5 +158,9 @@ impl ListImportsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p> An optional string that, if supplied, must be copied from the output of a previous call to <code>ListImports</code>. When provided in this manner, the API fetches the next page of results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

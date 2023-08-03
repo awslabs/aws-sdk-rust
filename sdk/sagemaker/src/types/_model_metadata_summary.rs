@@ -72,6 +72,10 @@ impl ModelMetadataSummaryBuilder {
         self.domain = input;
         self
     }
+    /// <p>The machine learning domain of the model.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
+    }
     /// <p>The machine learning framework of the model.</p>
     pub fn framework(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.framework = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl ModelMetadataSummaryBuilder {
     pub fn set_framework(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.framework = input;
         self
+    }
+    /// <p>The machine learning framework of the model.</p>
+    pub fn get_framework(&self) -> &::std::option::Option<::std::string::String> {
+        &self.framework
     }
     /// <p>The machine learning task of the model.</p>
     pub fn task(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -92,6 +100,10 @@ impl ModelMetadataSummaryBuilder {
         self.task = input;
         self
     }
+    /// <p>The machine learning task of the model.</p>
+    pub fn get_task(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task
+    }
     /// <p>The name of the model.</p>
     pub fn model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model = ::std::option::Option::Some(input.into());
@@ -101,6 +113,10 @@ impl ModelMetadataSummaryBuilder {
     pub fn set_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model = input;
         self
+    }
+    /// <p>The name of the model.</p>
+    pub fn get_model(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model
     }
     /// <p>The framework version of the model.</p>
     pub fn framework_version(
@@ -117,6 +133,10 @@ impl ModelMetadataSummaryBuilder {
     ) -> Self {
         self.framework_version = input;
         self
+    }
+    /// <p>The framework version of the model.</p>
+    pub fn get_framework_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.framework_version
     }
     /// Consumes the builder and constructs a [`ModelMetadataSummary`](crate::types::ModelMetadataSummary).
     pub fn build(self) -> crate::types::ModelMetadataSummary {

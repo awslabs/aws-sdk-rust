@@ -52,6 +52,12 @@ impl DescribeVpcEndpointsInputBuilder {
         self.vpc_endpoint_ids = input;
         self
     }
+    /// <p>The unique identifiers of the endpoints to get information about.</p>
+    pub fn get_vpc_endpoint_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.vpc_endpoint_ids
+    }
     /// Consumes the builder and constructs a [`DescribeVpcEndpointsInput`](crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsInput).
     pub fn build(
         self,

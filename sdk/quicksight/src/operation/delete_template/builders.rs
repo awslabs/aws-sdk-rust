@@ -36,6 +36,12 @@ impl DeleteTemplateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteTemplate as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_template::builders::DeleteTemplateInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl DeleteTemplateFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The ID of the Amazon Web Services account that contains the template that you're deleting.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>An ID for the template you want to delete.</p>
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_id(input.into());
@@ -134,6 +144,10 @@ impl DeleteTemplateFluentBuilder {
         self.inner = self.inner.set_template_id(input);
         self
     }
+    /// <p>An ID for the template you want to delete.</p>
+    pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_id()
+    }
     /// <p>Specifies the version of the template that you want to delete. If you don't provide a version number, <code>DeleteTemplate</code> deletes all versions of the template. </p>
     pub fn version_number(mut self, input: i64) -> Self {
         self.inner = self.inner.version_number(input);
@@ -143,5 +157,9 @@ impl DeleteTemplateFluentBuilder {
     pub fn set_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_version_number(input);
         self
+    }
+    /// <p>Specifies the version of the template that you want to delete. If you don't provide a version number, <code>DeleteTemplate</code> deletes all versions of the template. </p>
+    pub fn get_version_number(&self) -> &::std::option::Option<i64> {
+        self.inner.get_version_number()
     }
 }

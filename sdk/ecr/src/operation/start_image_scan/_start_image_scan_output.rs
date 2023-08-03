@@ -70,6 +70,10 @@ impl StartImageScanOutputBuilder {
         self.registry_id = input;
         self
     }
+    /// <p>The registry ID associated with the request.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_id
+    }
     /// <p>The repository name associated with the request.</p>
     pub fn repository_name(
         mut self,
@@ -86,6 +90,10 @@ impl StartImageScanOutputBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The repository name associated with the request.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
     pub fn image_id(mut self, input: crate::types::ImageIdentifier) -> Self {
         self.image_id = ::std::option::Option::Some(input);
@@ -99,6 +107,10 @@ impl StartImageScanOutputBuilder {
         self.image_id = input;
         self
     }
+    /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<crate::types::ImageIdentifier> {
+        &self.image_id
+    }
     /// <p>The current state of the scan.</p>
     pub fn image_scan_status(mut self, input: crate::types::ImageScanStatus) -> Self {
         self.image_scan_status = ::std::option::Option::Some(input);
@@ -111,6 +123,10 @@ impl StartImageScanOutputBuilder {
     ) -> Self {
         self.image_scan_status = input;
         self
+    }
+    /// <p>The current state of the scan.</p>
+    pub fn get_image_scan_status(&self) -> &::std::option::Option<crate::types::ImageScanStatus> {
+        &self.image_scan_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

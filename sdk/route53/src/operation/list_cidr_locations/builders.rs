@@ -36,6 +36,12 @@ impl ListCidrLocationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListCidrLocations as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_cidr_locations::builders::ListCidrLocationsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -143,6 +149,10 @@ impl ListCidrLocationsFluentBuilder {
         self.inner = self.inner.set_collection_id(input);
         self
     }
+    /// <p>The CIDR collection ID.</p>
+    pub fn get_collection_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_collection_id()
+    }
     /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
     /// <p>If no value is provided, the listing of results starts from the beginning.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -155,6 +165,11 @@ impl ListCidrLocationsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
+    /// <p>If no value is provided, the listing of results starts from the beginning.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of CIDR collection locations to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -164,5 +179,9 @@ impl ListCidrLocationsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of CIDR collection locations to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

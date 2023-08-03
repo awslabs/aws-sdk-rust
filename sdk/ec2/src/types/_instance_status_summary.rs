@@ -57,6 +57,12 @@ impl InstanceStatusSummaryBuilder {
         self.details = input;
         self
     }
+    /// <p>The system instance health or application instance health.</p>
+    pub fn get_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceStatusDetails>> {
+        &self.details
+    }
     /// <p>The status.</p>
     pub fn status(mut self, input: crate::types::SummaryStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -66,6 +72,10 @@ impl InstanceStatusSummaryBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::SummaryStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::SummaryStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`InstanceStatusSummary`](crate::types::InstanceStatusSummary).
     pub fn build(self) -> crate::types::InstanceStatusSummary {

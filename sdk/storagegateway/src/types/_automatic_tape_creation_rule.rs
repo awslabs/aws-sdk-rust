@@ -86,6 +86,12 @@ impl AutomaticTapeCreationRuleBuilder {
         self.tape_barcode_prefix = input;
         self
     }
+    /// <p>A prefix that you append to the barcode of the virtual tape that you are creating. This prefix makes the barcode unique.</p> <note>
+    /// <p>The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.</p>
+    /// </note>
+    pub fn get_tape_barcode_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tape_barcode_prefix
+    }
     /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the Amazon S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
     pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pool_id = ::std::option::Option::Some(input.into());
@@ -95,6 +101,10 @@ impl AutomaticTapeCreationRuleBuilder {
     pub fn set_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pool_id = input;
         self
+    }
+    /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the Amazon S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
+    pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pool_id
     }
     /// <p>The size, in bytes, of the virtual tape capacity.</p>
     pub fn tape_size_in_bytes(mut self, input: i64) -> Self {
@@ -106,6 +116,10 @@ impl AutomaticTapeCreationRuleBuilder {
         self.tape_size_in_bytes = input;
         self
     }
+    /// <p>The size, in bytes, of the virtual tape capacity.</p>
+    pub fn get_tape_size_in_bytes(&self) -> &::std::option::Option<i64> {
+        &self.tape_size_in_bytes
+    }
     /// <p>The minimum number of available virtual tapes that the gateway maintains at all times. If the number of tapes on the gateway goes below this value, the gateway creates as many new tapes as are needed to have <code>MinimumNumTapes</code> on the gateway. For more information about automatic tape creation, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateTapes.html#CreateTapesAutomatically">Creating Tapes Automatically</a>.</p>
     pub fn minimum_num_tapes(mut self, input: i32) -> Self {
         self.minimum_num_tapes = ::std::option::Option::Some(input);
@@ -116,6 +130,10 @@ impl AutomaticTapeCreationRuleBuilder {
         self.minimum_num_tapes = input;
         self
     }
+    /// <p>The minimum number of available virtual tapes that the gateway maintains at all times. If the number of tapes on the gateway goes below this value, the gateway creates as many new tapes as are needed to have <code>MinimumNumTapes</code> on the gateway. For more information about automatic tape creation, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateTapes.html#CreateTapesAutomatically">Creating Tapes Automatically</a>.</p>
+    pub fn get_minimum_num_tapes(&self) -> &::std::option::Option<i32> {
+        &self.minimum_num_tapes
+    }
     /// <p>Set to <code>true</code> to indicate that tapes are to be archived as write-once-read-many (WORM). Set to <code>false</code> when WORM is not enabled for tapes.</p>
     pub fn worm(mut self, input: bool) -> Self {
         self.worm = ::std::option::Option::Some(input);
@@ -125,6 +143,10 @@ impl AutomaticTapeCreationRuleBuilder {
     pub fn set_worm(mut self, input: ::std::option::Option<bool>) -> Self {
         self.worm = input;
         self
+    }
+    /// <p>Set to <code>true</code> to indicate that tapes are to be archived as write-once-read-many (WORM). Set to <code>false</code> when WORM is not enabled for tapes.</p>
+    pub fn get_worm(&self) -> &::std::option::Option<bool> {
+        &self.worm
     }
     /// Consumes the builder and constructs a [`AutomaticTapeCreationRule`](crate::types::AutomaticTapeCreationRule).
     pub fn build(self) -> crate::types::AutomaticTapeCreationRule {

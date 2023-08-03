@@ -50,6 +50,12 @@ impl LateDataRuleConfigurationBuilder {
         self.delta_time_session_window_configuration = input;
         self
     }
+    /// <p>The information needed to configure a delta time session window.</p>
+    pub fn get_delta_time_session_window_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeltaTimeSessionWindowConfiguration> {
+        &self.delta_time_session_window_configuration
+    }
     /// Consumes the builder and constructs a [`LateDataRuleConfiguration`](crate::types::LateDataRuleConfiguration).
     pub fn build(self) -> crate::types::LateDataRuleConfiguration {
         crate::types::LateDataRuleConfiguration {

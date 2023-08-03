@@ -48,6 +48,10 @@ impl JoinColumnBuilder {
         self.from = input;
         self
     }
+    /// <p>The column to be joined.</p>
+    pub fn get_from(&self) -> &::std::option::Option<::std::string::String> {
+        &self.from
+    }
     /// Appends an item to `keys`.
     ///
     /// To override the contents of this collection use [`set_keys`](Self::set_keys).
@@ -66,6 +70,12 @@ impl JoinColumnBuilder {
     ) -> Self {
         self.keys = input;
         self
+    }
+    /// <p>The key of the column to be joined.</p>
+    pub fn get_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>> {
+        &self.keys
     }
     /// Consumes the builder and constructs a [`JoinColumn`](crate::types::JoinColumn).
     pub fn build(self) -> crate::types::JoinColumn {

@@ -52,6 +52,10 @@ impl UpdateFPortsBuilder {
         self.positioning = input;
         self
     }
+    /// <p>Positioning FPorts for the ClockSync, Stream, and GNSS functions.</p>
+    pub fn get_positioning(&self) -> &::std::option::Option<crate::types::Positioning> {
+        &self.positioning
+    }
     /// Appends an item to `applications`.
     ///
     /// To override the contents of this collection use [`set_applications`](Self::set_applications).
@@ -70,6 +74,12 @@ impl UpdateFPortsBuilder {
     ) -> Self {
         self.applications = input;
         self
+    }
+    /// <p>LoRaWAN application, which can be used for geolocation by activating positioning.</p>
+    pub fn get_applications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationConfig>> {
+        &self.applications
     }
     /// Consumes the builder and constructs a [`UpdateFPorts`](crate::types::UpdateFPorts).
     pub fn build(self) -> crate::types::UpdateFPorts {

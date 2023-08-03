@@ -156,6 +156,10 @@ impl CreatePricingRuleInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p> The token that's needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p> The pricing rule name. The names must be unique to each pricing rule. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -166,6 +170,10 @@ impl CreatePricingRuleInputBuilder {
         self.name = input;
         self
     }
+    /// <p> The pricing rule name. The names must be unique to each pricing rule. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p> The pricing rule description. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -175,6 +183,10 @@ impl CreatePricingRuleInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p> The pricing rule description. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p> The scope of pricing rule that indicates if it's globally applicable, or it's service-specific. </p>
     pub fn scope(mut self, input: crate::types::PricingRuleScope) -> Self {
@@ -189,6 +201,10 @@ impl CreatePricingRuleInputBuilder {
         self.scope = input;
         self
     }
+    /// <p> The scope of pricing rule that indicates if it's globally applicable, or it's service-specific. </p>
+    pub fn get_scope(&self) -> &::std::option::Option<crate::types::PricingRuleScope> {
+        &self.scope
+    }
     /// <p> The type of pricing rule. </p>
     pub fn r#type(mut self, input: crate::types::PricingRuleType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -198,6 +214,10 @@ impl CreatePricingRuleInputBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::PricingRuleType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p> The type of pricing rule. </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::PricingRuleType> {
+        &self.r#type
     }
     /// <p> A percentage modifier that's applied on the public pricing rates. </p>
     pub fn modifier_percentage(mut self, input: f64) -> Self {
@@ -209,6 +229,10 @@ impl CreatePricingRuleInputBuilder {
         self.modifier_percentage = input;
         self
     }
+    /// <p> A percentage modifier that's applied on the public pricing rates. </p>
+    pub fn get_modifier_percentage(&self) -> &::std::option::Option<f64> {
+        &self.modifier_percentage
+    }
     /// <p> If the <code>Scope</code> attribute is set to <code>SERVICE</code> or <code>SKU</code>, the attribute indicates which service the <code>PricingRule</code> is applicable for. </p>
     pub fn service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service = ::std::option::Option::Some(input.into());
@@ -218,6 +242,10 @@ impl CreatePricingRuleInputBuilder {
     pub fn set_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service = input;
         self
+    }
+    /// <p> If the <code>Scope</code> attribute is set to <code>SERVICE</code> or <code>SKU</code>, the attribute indicates which service the <code>PricingRule</code> is applicable for. </p>
+    pub fn get_service(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -244,6 +272,14 @@ impl CreatePricingRuleInputBuilder {
         self.tags = input;
         self
     }
+    /// <p> A map that contains tag keys and tag values that are attached to a pricing rule. </p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p> The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace. </p>
     pub fn billing_entity(
         mut self,
@@ -260,6 +296,10 @@ impl CreatePricingRuleInputBuilder {
         self.billing_entity = input;
         self
     }
+    /// <p> The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace. </p>
+    pub fn get_billing_entity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.billing_entity
+    }
     /// <p> The set of tiering configurations for the pricing rule. </p>
     pub fn tiering(mut self, input: crate::types::CreateTieringInput) -> Self {
         self.tiering = ::std::option::Option::Some(input);
@@ -273,6 +313,10 @@ impl CreatePricingRuleInputBuilder {
         self.tiering = input;
         self
     }
+    /// <p> The set of tiering configurations for the pricing rule. </p>
+    pub fn get_tiering(&self) -> &::std::option::Option<crate::types::CreateTieringInput> {
+        &self.tiering
+    }
     /// <p> Usage type is the unit that each service uses to measure the usage of a specific type of resource.</p>
     /// <p>If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which usage type the <code>PricingRule</code> is modifying. For example, <code>USW2-BoxUsage:m2.2xlarge</code> describes an<code> M2 High Memory Double Extra Large</code> instance in the US West (Oregon) Region. </p>
     pub fn usage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -285,6 +329,11 @@ impl CreatePricingRuleInputBuilder {
         self.usage_type = input;
         self
     }
+    /// <p> Usage type is the unit that each service uses to measure the usage of a specific type of resource.</p>
+    /// <p>If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which usage type the <code>PricingRule</code> is modifying. For example, <code>USW2-BoxUsage:m2.2xlarge</code> describes an<code> M2 High Memory Double Extra Large</code> instance in the US West (Oregon) Region. </p>
+    pub fn get_usage_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.usage_type
+    }
     /// <p> Operation is the specific Amazon Web Services action covered by this line item. This describes the specific usage of the line item.</p>
     /// <p> If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which operation the <code>PricingRule</code> is modifying. For example, a value of <code>RunInstances:0202</code> indicates the operation of running an Amazon EC2 instance.</p>
     pub fn operation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -296,6 +345,11 @@ impl CreatePricingRuleInputBuilder {
     pub fn set_operation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operation = input;
         self
+    }
+    /// <p> Operation is the specific Amazon Web Services action covered by this line item. This describes the specific usage of the line item.</p>
+    /// <p> If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which operation the <code>PricingRule</code> is modifying. For example, a value of <code>RunInstances:0202</code> indicates the operation of running an Amazon EC2 instance.</p>
+    pub fn get_operation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operation
     }
     /// Consumes the builder and constructs a [`CreatePricingRuleInput`](crate::operation::create_pricing_rule::CreatePricingRuleInput).
     pub fn build(

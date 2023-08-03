@@ -40,6 +40,10 @@ impl DescribeAlertManagerDefinitionInputBuilder {
         self.workspace_id = input;
         self
     }
+    /// The ID of the workspace to describe.
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
+    }
     /// Consumes the builder and constructs a [`DescribeAlertManagerDefinitionInput`](crate::operation::describe_alert_manager_definition::DescribeAlertManagerDefinitionInput).
     pub fn build(
         self,

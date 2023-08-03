@@ -82,6 +82,12 @@ impl ExportResourceSpecificationBuilder {
         self.bot_export_specification = input;
         self
     }
+    /// <p>Parameters for exporting a bot.</p>
+    pub fn get_bot_export_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::BotExportSpecification> {
+        &self.bot_export_specification
+    }
     /// <p>Parameters for exporting a bot locale.</p>
     pub fn bot_locale_export_specification(
         mut self,
@@ -97,6 +103,12 @@ impl ExportResourceSpecificationBuilder {
     ) -> Self {
         self.bot_locale_export_specification = input;
         self
+    }
+    /// <p>Parameters for exporting a bot locale.</p>
+    pub fn get_bot_locale_export_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::BotLocaleExportSpecification> {
+        &self.bot_locale_export_specification
     }
     /// <p>The parameters required to export a custom vocabulary.</p>
     pub fn custom_vocabulary_export_specification(
@@ -114,6 +126,12 @@ impl ExportResourceSpecificationBuilder {
         self.custom_vocabulary_export_specification = input;
         self
     }
+    /// <p>The parameters required to export a custom vocabulary.</p>
+    pub fn get_custom_vocabulary_export_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomVocabularyExportSpecification> {
+        &self.custom_vocabulary_export_specification
+    }
     /// <p>Specifications for the test set that is exported as a resource.</p>
     pub fn test_set_export_specification(
         mut self,
@@ -129,6 +147,12 @@ impl ExportResourceSpecificationBuilder {
     ) -> Self {
         self.test_set_export_specification = input;
         self
+    }
+    /// <p>Specifications for the test set that is exported as a resource.</p>
+    pub fn get_test_set_export_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::TestSetExportSpecification> {
+        &self.test_set_export_specification
     }
     /// Consumes the builder and constructs a [`ExportResourceSpecification`](crate::types::ExportResourceSpecification).
     pub fn build(self) -> crate::types::ExportResourceSpecification {

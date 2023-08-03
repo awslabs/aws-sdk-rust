@@ -62,6 +62,10 @@ impl MutationActionSetStateParameterBuilder {
         self.component_name = input;
         self
     }
+    /// <p>The name of the component that is being modified.</p>
+    pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_name
+    }
     /// <p>The name of the component property to apply the state configuration to.</p>
     pub fn property(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.property = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl MutationActionSetStateParameterBuilder {
     pub fn set_property(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.property = input;
         self
+    }
+    /// <p>The name of the component property to apply the state configuration to.</p>
+    pub fn get_property(&self) -> &::std::option::Option<::std::string::String> {
+        &self.property
     }
     /// <p>The state configuration to assign to the property.</p>
     pub fn set(mut self, input: crate::types::ComponentProperty) -> Self {
@@ -84,6 +92,10 @@ impl MutationActionSetStateParameterBuilder {
     ) -> Self {
         self.set = input;
         self
+    }
+    /// <p>The state configuration to assign to the property.</p>
+    pub fn get_set(&self) -> &::std::option::Option<crate::types::ComponentProperty> {
+        &self.set
     }
     /// Consumes the builder and constructs a [`MutationActionSetStateParameter`](crate::types::MutationActionSetStateParameter).
     pub fn build(self) -> crate::types::MutationActionSetStateParameter {

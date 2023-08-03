@@ -64,6 +64,10 @@ impl S3FileLocationBuilder {
         self.bucket = input;
         self
     }
+    /// <p>Specifies the S3 bucket that contains the file being used.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p>The name assigned to the file when it was created in Amazon S3. You use the object key to retrieve the object.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl S3FileLocationBuilder {
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
+    }
+    /// <p>The name assigned to the file when it was created in Amazon S3. You use the object key to retrieve the object.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
     }
     /// <p>Specifies the file version.</p>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,6 +92,10 @@ impl S3FileLocationBuilder {
         self.version_id = input;
         self
     }
+    /// <p>Specifies the file version.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_id
+    }
     /// <p>The entity tag is a hash of the object. The ETag reflects changes only to the contents of an object, not its metadata.</p>
     pub fn etag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.etag = ::std::option::Option::Some(input.into());
@@ -93,6 +105,10 @@ impl S3FileLocationBuilder {
     pub fn set_etag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.etag = input;
         self
+    }
+    /// <p>The entity tag is a hash of the object. The ETag reflects changes only to the contents of an object, not its metadata.</p>
+    pub fn get_etag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.etag
     }
     /// Consumes the builder and constructs a [`S3FileLocation`](crate::types::S3FileLocation).
     pub fn build(self) -> crate::types::S3FileLocation {

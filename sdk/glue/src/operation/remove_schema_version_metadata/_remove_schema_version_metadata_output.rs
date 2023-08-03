@@ -102,6 +102,10 @@ impl RemoveSchemaVersionMetadataOutputBuilder {
         self.schema_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the schema.</p>
+    pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_arn
+    }
     /// <p>The name of the schema.</p>
     pub fn schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_name = ::std::option::Option::Some(input.into());
@@ -111,6 +115,10 @@ impl RemoveSchemaVersionMetadataOutputBuilder {
     pub fn set_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_name = input;
         self
+    }
+    /// <p>The name of the schema.</p>
+    pub fn get_schema_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_name
     }
     /// <p>The name of the registry.</p>
     pub fn registry_name(
@@ -128,6 +136,10 @@ impl RemoveSchemaVersionMetadataOutputBuilder {
         self.registry_name = input;
         self
     }
+    /// <p>The name of the registry.</p>
+    pub fn get_registry_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_name
+    }
     /// <p>The latest version of the schema.</p>
     pub fn latest_version(mut self, input: bool) -> Self {
         self.latest_version = ::std::option::Option::Some(input);
@@ -138,6 +150,10 @@ impl RemoveSchemaVersionMetadataOutputBuilder {
         self.latest_version = input;
         self
     }
+    /// <p>The latest version of the schema.</p>
+    pub fn get_latest_version(&self) -> &::std::option::Option<bool> {
+        &self.latest_version
+    }
     /// <p>The version number of the schema.</p>
     pub fn version_number(mut self, input: i64) -> Self {
         self.version_number = ::std::option::Option::Some(input);
@@ -147,6 +163,10 @@ impl RemoveSchemaVersionMetadataOutputBuilder {
     pub fn set_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.version_number = input;
         self
+    }
+    /// <p>The version number of the schema.</p>
+    pub fn get_version_number(&self) -> &::std::option::Option<i64> {
+        &self.version_number
     }
     /// <p>The version ID for the schema version.</p>
     pub fn schema_version_id(
@@ -164,6 +184,10 @@ impl RemoveSchemaVersionMetadataOutputBuilder {
         self.schema_version_id = input;
         self
     }
+    /// <p>The version ID for the schema version.</p>
+    pub fn get_schema_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_version_id
+    }
     /// <p>The metadata key.</p>
     pub fn metadata_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metadata_key = ::std::option::Option::Some(input.into());
@@ -173,6 +197,10 @@ impl RemoveSchemaVersionMetadataOutputBuilder {
     pub fn set_metadata_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metadata_key = input;
         self
+    }
+    /// <p>The metadata key.</p>
+    pub fn get_metadata_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metadata_key
     }
     /// <p>The value of the metadata key.</p>
     pub fn metadata_value(
@@ -189,6 +217,10 @@ impl RemoveSchemaVersionMetadataOutputBuilder {
     ) -> Self {
         self.metadata_value = input;
         self
+    }
+    /// <p>The value of the metadata key.</p>
+    pub fn get_metadata_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metadata_value
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

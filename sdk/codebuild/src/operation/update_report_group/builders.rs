@@ -36,6 +36,12 @@ impl UpdateReportGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateReportGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_report_group::builders::UpdateReportGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateReportGroupFluentBuilder {
         self.inner = self.inner.set_arn(input);
         self
     }
+    /// <p> The ARN of the report group to update. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
+    }
     /// <p> Used to specify an updated export type. Valid values are: </p>
     /// <ul>
     /// <li> <p> <code>S3</code>: The report results are exported to an S3 bucket. </p> </li>
@@ -147,6 +157,14 @@ impl UpdateReportGroupFluentBuilder {
         self.inner = self.inner.set_export_config(input);
         self
     }
+    /// <p> Used to specify an updated export type. Valid values are: </p>
+    /// <ul>
+    /// <li> <p> <code>S3</code>: The report results are exported to an S3 bucket. </p> </li>
+    /// <li> <p> <code>NO_EXPORT</code>: The report results are not exported. </p> </li>
+    /// </ul>
+    pub fn get_export_config(&self) -> &::std::option::Option<crate::types::ReportExportConfig> {
+        self.inner.get_export_config()
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -165,5 +183,10 @@ impl UpdateReportGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p> An updated list of tag key and value pairs associated with this report group. </p>
+    /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

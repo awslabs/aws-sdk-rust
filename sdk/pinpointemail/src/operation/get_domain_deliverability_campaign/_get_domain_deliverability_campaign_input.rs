@@ -40,6 +40,10 @@ impl GetDomainDeliverabilityCampaignInputBuilder {
         self.campaign_id = input;
         self
     }
+    /// <p>The unique identifier for the campaign. Amazon Pinpoint automatically generates and assigns this identifier to a campaign. This value is not the same as the campaign identifier that Amazon Pinpoint assigns to campaigns that you create and manage by using the Amazon Pinpoint API or the Amazon Pinpoint console.</p>
+    pub fn get_campaign_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.campaign_id
+    }
     /// Consumes the builder and constructs a [`GetDomainDeliverabilityCampaignInput`](crate::operation::get_domain_deliverability_campaign::GetDomainDeliverabilityCampaignInput).
     pub fn build(
         self,

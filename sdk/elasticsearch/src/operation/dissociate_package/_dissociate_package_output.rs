@@ -53,6 +53,12 @@ impl DissociatePackageOutputBuilder {
         self.domain_package_details = input;
         self
     }
+    /// <p><code>DomainPackageDetails</code></p>
+    pub fn get_domain_package_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::DomainPackageDetails> {
+        &self.domain_package_details
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

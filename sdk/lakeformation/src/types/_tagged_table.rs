@@ -65,6 +65,10 @@ impl TaggedTableBuilder {
         self.table = input;
         self
     }
+    /// <p>A table that has LF-tags attached to it.</p>
+    pub fn get_table(&self) -> &::std::option::Option<crate::types::TableResource> {
+        &self.table
+    }
     /// Appends an item to `lf_tag_on_database`.
     ///
     /// To override the contents of this collection use [`set_lf_tag_on_database`](Self::set_lf_tag_on_database).
@@ -83,6 +87,12 @@ impl TaggedTableBuilder {
     ) -> Self {
         self.lf_tag_on_database = input;
         self
+    }
+    /// <p>A list of LF-tags attached to the database where the table resides.</p>
+    pub fn get_lf_tag_on_database(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>> {
+        &self.lf_tag_on_database
     }
     /// Appends an item to `lf_tags_on_table`.
     ///
@@ -103,6 +113,12 @@ impl TaggedTableBuilder {
         self.lf_tags_on_table = input;
         self
     }
+    /// <p>A list of LF-tags attached to the table.</p>
+    pub fn get_lf_tags_on_table(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>> {
+        &self.lf_tags_on_table
+    }
     /// Appends an item to `lf_tags_on_columns`.
     ///
     /// To override the contents of this collection use [`set_lf_tags_on_columns`](Self::set_lf_tags_on_columns).
@@ -121,6 +137,12 @@ impl TaggedTableBuilder {
     ) -> Self {
         self.lf_tags_on_columns = input;
         self
+    }
+    /// <p>A list of LF-tags attached to columns in the table.</p>
+    pub fn get_lf_tags_on_columns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnLfTag>> {
+        &self.lf_tags_on_columns
     }
     /// Consumes the builder and constructs a [`TaggedTable`](crate::types::TaggedTable).
     pub fn build(self) -> crate::types::TaggedTable {

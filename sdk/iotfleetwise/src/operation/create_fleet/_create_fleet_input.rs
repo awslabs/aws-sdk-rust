@@ -63,6 +63,10 @@ impl CreateFleetInputBuilder {
         self.fleet_id = input;
         self
     }
+    /// <p> The unique ID of the fleet to create. </p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_id
+    }
     /// <p> A brief description of the fleet to create. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl CreateFleetInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p> A brief description of the fleet to create. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p> The Amazon Resource Name (ARN) of a signal catalog. </p>
     pub fn signal_catalog_arn(
@@ -88,6 +96,10 @@ impl CreateFleetInputBuilder {
     ) -> Self {
         self.signal_catalog_arn = input;
         self
+    }
+    /// <p> The Amazon Resource Name (ARN) of a signal catalog. </p>
+    pub fn get_signal_catalog_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.signal_catalog_arn
     }
     /// Appends an item to `tags`.
     ///
@@ -107,6 +119,10 @@ impl CreateFleetInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Metadata that can be used to manage the fleet.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateFleetInput`](crate::operation::create_fleet::CreateFleetInput).
     pub fn build(

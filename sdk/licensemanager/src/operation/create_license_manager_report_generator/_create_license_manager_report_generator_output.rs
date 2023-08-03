@@ -52,6 +52,12 @@ impl CreateLicenseManagerReportGeneratorOutputBuilder {
         self.license_manager_report_generator_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the new report generator.</p>
+    pub fn get_license_manager_report_generator_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.license_manager_report_generator_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -103,6 +103,15 @@ impl EbsSnapshotConfigurationBuilder {
         self.user_ids = input;
         self
     }
+    /// <p>The IDs of the Amazon Web Services accounts that have access to the Amazon EBS volume snapshot.</p>
+    /// <ul>
+    /// <li> <p>If the configuration is for an existing Amazon EBS volume snapshot and you do not specify the <code>userIds</code>, then the access preview uses the existing shared <code>userIds</code> for the snapshot.</p> </li>
+    /// <li> <p>If the access preview is for a new resource and you do not specify the <code>userIds</code>, then the access preview considers the snapshot without any <code>userIds</code>.</p> </li>
+    /// <li> <p>To propose deletion of existing shared <code>accountIds</code>, you can specify an empty list for <code>userIds</code>.</p> </li>
+    /// </ul>
+    pub fn get_user_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.user_ids
+    }
     /// Appends an item to `groups`.
     ///
     /// To override the contents of this collection use [`set_groups`](Self::set_groups).
@@ -132,6 +141,15 @@ impl EbsSnapshotConfigurationBuilder {
         self.groups = input;
         self
     }
+    /// <p>The groups that have access to the Amazon EBS volume snapshot. If the value <code>all</code> is specified, then the Amazon EBS volume snapshot is public.</p>
+    /// <ul>
+    /// <li> <p>If the configuration is for an existing Amazon EBS volume snapshot and you do not specify the <code>groups</code>, then the access preview uses the existing shared <code>groups</code> for the snapshot.</p> </li>
+    /// <li> <p>If the access preview is for a new resource and you do not specify the <code>groups</code>, then the access preview considers the snapshot without any <code>groups</code>.</p> </li>
+    /// <li> <p>To propose deletion of existing shared <code>groups</code>, you can specify an empty list for <code>groups</code>.</p> </li>
+    /// </ul>
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.groups
+    }
     /// <p>The KMS key identifier for an encrypted Amazon EBS volume snapshot. The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     /// <ul>
     /// <li> <p>If the configuration is for an existing Amazon EBS volume snapshot and you do not specify the <code>kmsKeyId</code>, or you specify an empty string, then the access preview uses the existing <code>kmsKeyId</code> of the snapshot.</p> </li>
@@ -149,6 +167,14 @@ impl EbsSnapshotConfigurationBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p>The KMS key identifier for an encrypted Amazon EBS volume snapshot. The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
+    /// <ul>
+    /// <li> <p>If the configuration is for an existing Amazon EBS volume snapshot and you do not specify the <code>kmsKeyId</code>, or you specify an empty string, then the access preview uses the existing <code>kmsKeyId</code> of the snapshot.</p> </li>
+    /// <li> <p>If the access preview is for a new resource and you do not specify the <code>kmsKeyId</code>, the access preview considers the snapshot as unencrypted.</p> </li>
+    /// </ul>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// Consumes the builder and constructs a [`EbsSnapshotConfiguration`](crate::types::EbsSnapshotConfiguration).
     pub fn build(self) -> crate::types::EbsSnapshotConfiguration {

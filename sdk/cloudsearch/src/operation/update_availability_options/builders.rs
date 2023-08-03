@@ -36,6 +36,10 @@ impl UpdateAvailabilityOptionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAvailabilityOptions as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_availability_options::builders::UpdateAvailabilityOptionsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl UpdateAvailabilityOptionsFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
     /// <p>You expand an existing search domain to a second Availability Zone by setting the Multi-AZ option to true. Similarly, you can turn off the Multi-AZ option to downgrade the domain to a single Availability Zone by setting the Multi-AZ option to <code>false</code>. </p>
     pub fn multi_az(mut self, input: bool) -> Self {
         self.inner = self.inner.multi_az(input);
@@ -135,5 +143,9 @@ impl UpdateAvailabilityOptionsFluentBuilder {
     pub fn set_multi_az(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_multi_az(input);
         self
+    }
+    /// <p>You expand an existing search domain to a second Availability Zone by setting the Multi-AZ option to true. Similarly, you can turn off the Multi-AZ option to downgrade the domain to a single Availability Zone by setting the Multi-AZ option to <code>false</code>. </p>
+    pub fn get_multi_az(&self) -> &::std::option::Option<bool> {
+        self.inner.get_multi_az()
     }
 }

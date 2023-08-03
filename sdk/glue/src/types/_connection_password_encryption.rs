@@ -57,6 +57,10 @@ impl ConnectionPasswordEncryptionBuilder {
         self.return_connection_password_encrypted = input;
         self
     }
+    /// <p>When the <code>ReturnConnectionPasswordEncrypted</code> flag is set to "true", passwords remain encrypted in the responses of <code>GetConnection</code> and <code>GetConnections</code>. This encryption takes effect independently from catalog encryption. </p>
+    pub fn get_return_connection_password_encrypted(&self) -> &::std::option::Option<bool> {
+        &self.return_connection_password_encrypted
+    }
     /// <p>An KMS key that is used to encrypt the connection password. </p>
     /// <p>If connection password protection is enabled, the caller of <code>CreateConnection</code> and <code>UpdateConnection</code> needs at least <code>kms:Encrypt</code> permission on the specified KMS key, to encrypt passwords before storing them in the Data Catalog. </p>
     /// <p>You can set the decrypt permission to enable or restrict access on the password key according to your security requirements.</p>
@@ -76,6 +80,12 @@ impl ConnectionPasswordEncryptionBuilder {
     ) -> Self {
         self.aws_kms_key_id = input;
         self
+    }
+    /// <p>An KMS key that is used to encrypt the connection password. </p>
+    /// <p>If connection password protection is enabled, the caller of <code>CreateConnection</code> and <code>UpdateConnection</code> needs at least <code>kms:Encrypt</code> permission on the specified KMS key, to encrypt passwords before storing them in the Data Catalog. </p>
+    /// <p>You can set the decrypt permission to enable or restrict access on the password key according to your security requirements.</p>
+    pub fn get_aws_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_kms_key_id
     }
     /// Consumes the builder and constructs a [`ConnectionPasswordEncryption`](crate::types::ConnectionPasswordEncryption).
     pub fn build(self) -> crate::types::ConnectionPasswordEncryption {

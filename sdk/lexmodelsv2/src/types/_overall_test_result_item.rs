@@ -78,6 +78,10 @@ impl OverallTestResultItemBuilder {
         self.multi_turn_conversation = input;
         self
     }
+    /// <p>Indicates whether the conversation contains multiple turns or not.</p>
+    pub fn get_multi_turn_conversation(&self) -> &::std::option::Option<bool> {
+        &self.multi_turn_conversation
+    }
     /// <p>The total number of overall results in the result of the test execution.</p>
     pub fn total_result_count(mut self, input: i32) -> Self {
         self.total_result_count = ::std::option::Option::Some(input);
@@ -87,6 +91,10 @@ impl OverallTestResultItemBuilder {
     pub fn set_total_result_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_result_count = input;
         self
+    }
+    /// <p>The total number of overall results in the result of the test execution.</p>
+    pub fn get_total_result_count(&self) -> &::std::option::Option<i32> {
+        &self.total_result_count
     }
     /// Adds a key-value pair to `speech_transcription_result_counts`.
     ///
@@ -113,6 +121,13 @@ impl OverallTestResultItemBuilder {
         self.speech_transcription_result_counts = input;
         self
     }
+    /// <p>The number of speech transcription results in the overall test.</p>
+    pub fn get_speech_transcription_result_counts(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>>
+    {
+        &self.speech_transcription_result_counts
+    }
     /// Adds a key-value pair to `end_to_end_result_counts`.
     ///
     /// To override the contents of this collection use [`set_end_to_end_result_counts`](Self::set_end_to_end_result_counts).
@@ -137,6 +152,13 @@ impl OverallTestResultItemBuilder {
     ) -> Self {
         self.end_to_end_result_counts = input;
         self
+    }
+    /// <p>The number of results that succeeded.</p>
+    pub fn get_end_to_end_result_counts(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>>
+    {
+        &self.end_to_end_result_counts
     }
     /// Consumes the builder and constructs a [`OverallTestResultItem`](crate::types::OverallTestResultItem).
     pub fn build(self) -> crate::types::OverallTestResultItem {

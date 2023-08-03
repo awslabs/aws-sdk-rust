@@ -79,6 +79,10 @@ impl CreateSessionInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn assistant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assistant_id = ::std::option::Option::Some(input.into());
@@ -88,6 +92,10 @@ impl CreateSessionInputBuilder {
     pub fn set_assistant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assistant_id = input;
         self
+    }
+    /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn get_assistant_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assistant_id
     }
     /// <p>The name of the session.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -99,6 +107,10 @@ impl CreateSessionInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the session.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -108,6 +120,10 @@ impl CreateSessionInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -133,6 +149,14 @@ impl CreateSessionInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateSessionInput`](crate::operation::create_session::CreateSessionInput).
     pub fn build(

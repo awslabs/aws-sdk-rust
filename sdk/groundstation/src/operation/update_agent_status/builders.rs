@@ -39,6 +39,12 @@ impl UpdateAgentStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAgentStatus as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_agent_status::builders::UpdateAgentStatusInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl UpdateAgentStatusFluentBuilder {
         self.inner = self.inner.set_agent_id(input);
         self
     }
+    /// <p>UUID of agent to update.</p>
+    pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_agent_id()
+    }
     /// <p>GUID of agent task.</p>
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.task_id(input.into());
@@ -138,6 +148,10 @@ impl UpdateAgentStatusFluentBuilder {
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_task_id(input);
         self
+    }
+    /// <p>GUID of agent task.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_task_id()
     }
     /// <p>Aggregate status for agent.</p>
     pub fn aggregate_status(mut self, input: crate::types::AggregateStatus) -> Self {
@@ -151,6 +165,10 @@ impl UpdateAgentStatusFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_aggregate_status(input);
         self
+    }
+    /// <p>Aggregate status for agent.</p>
+    pub fn get_aggregate_status(&self) -> &::std::option::Option<crate::types::AggregateStatus> {
+        self.inner.get_aggregate_status()
     }
     /// Appends an item to `componentStatuses`.
     ///
@@ -168,5 +186,11 @@ impl UpdateAgentStatusFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_component_statuses(input);
         self
+    }
+    /// <p>List of component statuses for agent.</p>
+    pub fn get_component_statuses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentStatusData>> {
+        self.inner.get_component_statuses()
     }
 }

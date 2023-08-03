@@ -116,6 +116,10 @@ impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetailsBuilder {
         self.delete_on_termination = input;
         self
     }
+    /// <p>Whether to delete the volume when the instance is terminated.</p>
+    pub fn get_delete_on_termination(&self) -> &::std::option::Option<bool> {
+        &self.delete_on_termination
+    }
     /// <p>Whether to encrypt the volume.</p>
     pub fn encrypted(mut self, input: bool) -> Self {
         self.encrypted = ::std::option::Option::Some(input);
@@ -125,6 +129,10 @@ impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetailsBuilder {
     pub fn set_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.encrypted = input;
         self
+    }
+    /// <p>Whether to encrypt the volume.</p>
+    pub fn get_encrypted(&self) -> &::std::option::Option<bool> {
+        &self.encrypted
     }
     /// <p>The number of input/output (I/O) operations per second (IOPS) to provision for the volume.</p>
     /// <p>Only supported for <code>gp3</code> or <code>io1</code> volumes. Required for <code>io1</code> volumes. Not used with <code>standard</code>, <code>gp2</code>, <code>st1</code>, or <code>sc1</code> volumes.</p>
@@ -138,6 +146,11 @@ impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetailsBuilder {
         self.iops = input;
         self
     }
+    /// <p>The number of input/output (I/O) operations per second (IOPS) to provision for the volume.</p>
+    /// <p>Only supported for <code>gp3</code> or <code>io1</code> volumes. Required for <code>io1</code> volumes. Not used with <code>standard</code>, <code>gp2</code>, <code>st1</code>, or <code>sc1</code> volumes.</p>
+    pub fn get_iops(&self) -> &::std::option::Option<i32> {
+        &self.iops
+    }
     /// <p>The snapshot ID of the volume to use.</p>
     /// <p>You must specify either <code>VolumeSize</code> or <code>SnapshotId</code>.</p>
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -149,6 +162,11 @@ impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetailsBuilder {
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_id = input;
         self
+    }
+    /// <p>The snapshot ID of the volume to use.</p>
+    /// <p>You must specify either <code>VolumeSize</code> or <code>SnapshotId</code>.</p>
+    pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_id
     }
     /// <p>The volume size, in GiBs. The following are the supported volumes sizes for each volume type:</p>
     /// <ul>
@@ -173,6 +191,17 @@ impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetailsBuilder {
     pub fn set_volume_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.volume_size = input;
         self
+    }
+    /// <p>The volume size, in GiBs. The following are the supported volumes sizes for each volume type:</p>
+    /// <ul>
+    /// <li> <p>gp2 and gp3: 1-16,384</p> </li>
+    /// <li> <p>io1: 4-16,384</p> </li>
+    /// <li> <p>st1 and sc1: 125-16,384</p> </li>
+    /// <li> <p>standard: 1-1,024</p> </li>
+    /// </ul>
+    /// <p>You must specify either <code>SnapshotId</code> or <code>VolumeSize</code>. If you specify both <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be equal or greater than the size of the snapshot.</p>
+    pub fn get_volume_size(&self) -> &::std::option::Option<i32> {
+        &self.volume_size
     }
     /// <p>The volume type. Valid values are as follows:</p>
     /// <ul>
@@ -199,6 +228,18 @@ impl AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetailsBuilder {
     pub fn set_volume_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_type = input;
         self
+    }
+    /// <p>The volume type. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>gp2</code> </p> </li>
+    /// <li> <p> <code>gp3</code> </p> </li>
+    /// <li> <p> <code>io1</code> </p> </li>
+    /// <li> <p> <code>sc1</code> </p> </li>
+    /// <li> <p> <code>st1</code> </p> </li>
+    /// <li> <p> <code>standard</code> </p> </li>
+    /// </ul>
+    pub fn get_volume_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_type
     }
     /// Consumes the builder and constructs a [`AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails`](crate::types::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails).
     pub fn build(

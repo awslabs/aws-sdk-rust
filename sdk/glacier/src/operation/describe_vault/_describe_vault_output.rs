@@ -87,6 +87,10 @@ impl DescribeVaultOutputBuilder {
         self.vault_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the vault.</p>
+    pub fn get_vault_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vault_arn
+    }
     /// <p>The name of the vault.</p>
     pub fn vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vault_name = ::std::option::Option::Some(input.into());
@@ -96,6 +100,10 @@ impl DescribeVaultOutputBuilder {
     pub fn set_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vault_name = input;
         self
+    }
+    /// <p>The name of the vault.</p>
+    pub fn get_vault_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vault_name
     }
     /// <p>The Universal Coordinated Time (UTC) date when the vault was created. This value should be a string in the ISO 8601 date format, for example <code>2012-03-20T17:03:43.221Z</code>.</p>
     pub fn creation_date(
@@ -113,6 +121,10 @@ impl DescribeVaultOutputBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>The Universal Coordinated Time (UTC) date when the vault was created. This value should be a string in the ISO 8601 date format, for example <code>2012-03-20T17:03:43.221Z</code>.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_date
+    }
     /// <p>The Universal Coordinated Time (UTC) date when Amazon S3 Glacier completed the last vault inventory. This value should be a string in the ISO 8601 date format, for example <code>2012-03-20T17:03:43.221Z</code>.</p>
     pub fn last_inventory_date(
         mut self,
@@ -129,6 +141,10 @@ impl DescribeVaultOutputBuilder {
         self.last_inventory_date = input;
         self
     }
+    /// <p>The Universal Coordinated Time (UTC) date when Amazon S3 Glacier completed the last vault inventory. This value should be a string in the ISO 8601 date format, for example <code>2012-03-20T17:03:43.221Z</code>.</p>
+    pub fn get_last_inventory_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_inventory_date
+    }
     /// <p>The number of archives in the vault as of the last inventory date. This field will return <code>null</code> if an inventory has not yet run on the vault, for example if you just created the vault.</p>
     pub fn number_of_archives(mut self, input: i64) -> Self {
         self.number_of_archives = ::std::option::Option::Some(input);
@@ -139,6 +155,10 @@ impl DescribeVaultOutputBuilder {
         self.number_of_archives = input;
         self
     }
+    /// <p>The number of archives in the vault as of the last inventory date. This field will return <code>null</code> if an inventory has not yet run on the vault, for example if you just created the vault.</p>
+    pub fn get_number_of_archives(&self) -> &::std::option::Option<i64> {
+        &self.number_of_archives
+    }
     /// <p>Total size, in bytes, of the archives in the vault as of the last inventory date. This field will return null if an inventory has not yet run on the vault, for example if you just created the vault.</p>
     pub fn size_in_bytes(mut self, input: i64) -> Self {
         self.size_in_bytes = ::std::option::Option::Some(input);
@@ -148,6 +168,10 @@ impl DescribeVaultOutputBuilder {
     pub fn set_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.size_in_bytes = input;
         self
+    }
+    /// <p>Total size, in bytes, of the archives in the vault as of the last inventory date. This field will return null if an inventory has not yet run on the vault, for example if you just created the vault.</p>
+    pub fn get_size_in_bytes(&self) -> &::std::option::Option<i64> {
+        &self.size_in_bytes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -48,6 +48,10 @@ impl VisualPaletteBuilder {
         self.chart_color = input;
         self
     }
+    /// <p>The chart color options for the visual palette.</p>
+    pub fn get_chart_color(&self) -> &::std::option::Option<::std::string::String> {
+        &self.chart_color
+    }
     /// Appends an item to `color_map`.
     ///
     /// To override the contents of this collection use [`set_color_map`](Self::set_color_map).
@@ -66,6 +70,12 @@ impl VisualPaletteBuilder {
     ) -> Self {
         self.color_map = input;
         self
+    }
+    /// <p>The color map options for the visual palette.</p>
+    pub fn get_color_map(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataPathColor>> {
+        &self.color_map
     }
     /// Consumes the builder and constructs a [`VisualPalette`](crate::types::VisualPalette).
     pub fn build(self) -> crate::types::VisualPalette {

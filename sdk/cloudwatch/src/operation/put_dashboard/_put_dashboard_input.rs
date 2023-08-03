@@ -55,6 +55,10 @@ impl PutDashboardInputBuilder {
         self.dashboard_name = input;
         self
     }
+    /// <p>The name of the dashboard. If a dashboard with this name already exists, this call modifies that dashboard, replacing its current contents. Otherwise, a new dashboard is created. The maximum length is 255, and valid characters are A-Z, a-z, 0-9, "-", and "_". This parameter is required.</p>
+    pub fn get_dashboard_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dashboard_name
+    }
     /// <p>The detailed information about the dashboard in JSON format, including the widgets to include and their location on the dashboard. This parameter is required.</p>
     /// <p>For more information about the syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard Body Structure and Syntax</a>.</p>
     pub fn dashboard_body(
@@ -72,6 +76,11 @@ impl PutDashboardInputBuilder {
     ) -> Self {
         self.dashboard_body = input;
         self
+    }
+    /// <p>The detailed information about the dashboard in JSON format, including the widgets to include and their location on the dashboard. This parameter is required.</p>
+    /// <p>For more information about the syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard Body Structure and Syntax</a>.</p>
+    pub fn get_dashboard_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dashboard_body
     }
     /// Consumes the builder and constructs a [`PutDashboardInput`](crate::operation::put_dashboard::PutDashboardInput).
     pub fn build(

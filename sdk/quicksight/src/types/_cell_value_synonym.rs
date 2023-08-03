@@ -48,6 +48,10 @@ impl CellValueSynonymBuilder {
         self.cell_value = input;
         self
     }
+    /// <p>The cell value.</p>
+    pub fn get_cell_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cell_value
+    }
     /// Appends an item to `synonyms`.
     ///
     /// To override the contents of this collection use [`set_synonyms`](Self::set_synonyms).
@@ -66,6 +70,10 @@ impl CellValueSynonymBuilder {
     ) -> Self {
         self.synonyms = input;
         self
+    }
+    /// <p>Other names or aliases for the cell value.</p>
+    pub fn get_synonyms(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.synonyms
     }
     /// Consumes the builder and constructs a [`CellValueSynonym`](crate::types::CellValueSynonym).
     pub fn build(self) -> crate::types::CellValueSynonym {

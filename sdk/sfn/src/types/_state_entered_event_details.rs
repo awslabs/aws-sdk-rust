@@ -65,6 +65,10 @@ impl StateEnteredEventDetailsBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the state.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The string that contains the JSON input data for the state. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn input(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl StateEnteredEventDetailsBuilder {
     pub fn set_input(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input = input;
         self
+    }
+    /// <p>The string that contains the JSON input data for the state. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    pub fn get_input(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input
     }
     /// <p>Contains details about the input for an execution history event.</p>
     pub fn input_details(mut self, input: crate::types::HistoryEventExecutionDataDetails) -> Self {
@@ -87,6 +95,12 @@ impl StateEnteredEventDetailsBuilder {
     ) -> Self {
         self.input_details = input;
         self
+    }
+    /// <p>Contains details about the input for an execution history event.</p>
+    pub fn get_input_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::HistoryEventExecutionDataDetails> {
+        &self.input_details
     }
     /// Consumes the builder and constructs a [`StateEnteredEventDetails`](crate::types::StateEnteredEventDetails).
     pub fn build(self) -> crate::types::StateEnteredEventDetails {

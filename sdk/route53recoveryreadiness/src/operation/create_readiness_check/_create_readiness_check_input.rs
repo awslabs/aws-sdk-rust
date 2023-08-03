@@ -70,6 +70,10 @@ impl CreateReadinessCheckInputBuilder {
         self.readiness_check_name = input;
         self
     }
+    /// <p>The name of the readiness check to create.</p>
+    pub fn get_readiness_check_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.readiness_check_name
+    }
     /// <p>The name of the resource set to check.</p>
     pub fn resource_set_name(
         mut self,
@@ -85,6 +89,10 @@ impl CreateReadinessCheckInputBuilder {
     ) -> Self {
         self.resource_set_name = input;
         self
+    }
+    /// <p>The name of the resource set to check.</p>
+    pub fn get_resource_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_set_name
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -110,6 +118,14 @@ impl CreateReadinessCheckInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A collection of tags associated with a resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateReadinessCheckInput`](crate::operation::create_readiness_check::CreateReadinessCheckInput).
     pub fn build(

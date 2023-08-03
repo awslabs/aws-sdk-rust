@@ -49,6 +49,13 @@ impl UpdateStateMachineAliasFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateStateMachineAlias as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_state_machine_alias::builders::UpdateStateMachineAliasInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -145,6 +152,10 @@ impl UpdateStateMachineAliasFluentBuilder {
         self.inner = self.inner.set_state_machine_alias_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the state machine alias.</p>
+    pub fn get_state_machine_alias_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_state_machine_alias_arn()
+    }
     /// <p>A description of the state machine alias.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -154,6 +165,10 @@ impl UpdateStateMachineAliasFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of the state machine alias.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `routingConfiguration`.
     ///
@@ -176,5 +191,12 @@ impl UpdateStateMachineAliasFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_routing_configuration(input);
         self
+    }
+    /// <p>The routing configuration of the state machine alias.</p>
+    /// <p>An array of <code>RoutingConfig</code> objects that specifies up to two state machine versions that the alias starts executions for.</p>
+    pub fn get_routing_configuration(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingConfigurationListItem>> {
+        self.inner.get_routing_configuration()
     }
 }

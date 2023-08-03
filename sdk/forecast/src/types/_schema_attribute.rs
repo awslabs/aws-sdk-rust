@@ -56,6 +56,10 @@ impl SchemaAttributeBuilder {
         self.attribute_name = input;
         self
     }
+    /// <p>The name of the dataset field.</p>
+    pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_name
+    }
     /// <p>The data type of the field.</p>
     /// <p>For a related time series dataset, other than date, item_id, and forecast dimensions attributes, all attributes should be of numerical type (integer/float).</p>
     pub fn attribute_type(mut self, input: crate::types::AttributeType) -> Self {
@@ -70,6 +74,11 @@ impl SchemaAttributeBuilder {
     ) -> Self {
         self.attribute_type = input;
         self
+    }
+    /// <p>The data type of the field.</p>
+    /// <p>For a related time series dataset, other than date, item_id, and forecast dimensions attributes, all attributes should be of numerical type (integer/float).</p>
+    pub fn get_attribute_type(&self) -> &::std::option::Option<crate::types::AttributeType> {
+        &self.attribute_type
     }
     /// Consumes the builder and constructs a [`SchemaAttribute`](crate::types::SchemaAttribute).
     pub fn build(self) -> crate::types::SchemaAttribute {

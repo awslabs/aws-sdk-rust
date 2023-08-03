@@ -39,6 +39,10 @@ impl GetServiceInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the service that you want to get settings for.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`GetServiceInput`](crate::operation::get_service::GetServiceInput).
     pub fn build(
         self,

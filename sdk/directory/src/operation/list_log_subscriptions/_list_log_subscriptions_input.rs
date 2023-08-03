@@ -56,6 +56,10 @@ impl ListLogSubscriptionsInputBuilder {
         self.directory_id = input;
         self
     }
+    /// <p>If a <i>DirectoryID</i> is provided, lists only the log subscription associated with that directory. If no <i>DirectoryId</i> is provided, lists all log subscriptions associated with your Amazon Web Services account. If there are no log subscriptions for the Amazon Web Services account or the directory, an empty list will be returned.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
+    }
     /// <p>The token for the next set of items to return.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl ListLogSubscriptionsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next set of items to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of items returned.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl ListLogSubscriptionsInputBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
+    }
+    /// <p>The maximum number of items returned.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// Consumes the builder and constructs a [`ListLogSubscriptionsInput`](crate::operation::list_log_subscriptions::ListLogSubscriptionsInput).
     pub fn build(

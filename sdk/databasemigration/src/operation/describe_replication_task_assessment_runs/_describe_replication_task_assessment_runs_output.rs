@@ -59,6 +59,10 @@ impl DescribeReplicationTaskAssessmentRunsOutputBuilder {
         self.marker = input;
         self
     }
+    /// <p>A pagination token returned for you to pass to a subsequent request. If you pass this token as the <code>Marker</code> value in a subsequent request, the response includes only records beyond the marker, up to the value specified in the request by <code>MaxRecords</code>.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// Appends an item to `replication_task_assessment_runs`.
     ///
     /// To override the contents of this collection use [`set_replication_task_assessment_runs`](Self::set_replication_task_assessment_runs).
@@ -80,6 +84,12 @@ impl DescribeReplicationTaskAssessmentRunsOutputBuilder {
     ) -> Self {
         self.replication_task_assessment_runs = input;
         self
+    }
+    /// <p>One or more premigration assessment runs as specified by <code>Filters</code>.</p>
+    pub fn get_replication_task_assessment_runs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationTaskAssessmentRun>> {
+        &self.replication_task_assessment_runs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

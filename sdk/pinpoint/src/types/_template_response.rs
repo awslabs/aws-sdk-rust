@@ -112,6 +112,10 @@ impl TemplateResponseBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the message template. This value isn't included in a TemplateResponse object. To retrieve the ARN of a template, use the GetEmailTemplate, GetPushTemplate, GetSmsTemplate, or GetVoiceTemplate operation, depending on the type of template that you want to retrieve the ARN for.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The date, in ISO 8601 format, when the message template was created.</p>
     pub fn creation_date(
         mut self,
@@ -127,6 +131,10 @@ impl TemplateResponseBuilder {
     ) -> Self {
         self.creation_date = input;
         self
+    }
+    /// <p>The date, in ISO 8601 format, when the message template was created.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_date
     }
     /// <p>The JSON object that specifies the default values that are used for message variables in the message template. This object isn't included in a TemplateResponse object. To retrieve this object for a template, use the GetEmailTemplate, GetPushTemplate, GetSmsTemplate, or GetVoiceTemplate operation, depending on the type of template that you want to retrieve the object for.</p>
     pub fn default_substitutions(
@@ -144,6 +152,10 @@ impl TemplateResponseBuilder {
         self.default_substitutions = input;
         self
     }
+    /// <p>The JSON object that specifies the default values that are used for message variables in the message template. This object isn't included in a TemplateResponse object. To retrieve this object for a template, use the GetEmailTemplate, GetPushTemplate, GetSmsTemplate, or GetVoiceTemplate operation, depending on the type of template that you want to retrieve the object for.</p>
+    pub fn get_default_substitutions(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_substitutions
+    }
     /// <p>The date, in ISO 8601 format, when the message template was last modified.</p>
     pub fn last_modified_date(
         mut self,
@@ -159,6 +171,10 @@ impl TemplateResponseBuilder {
     ) -> Self {
         self.last_modified_date = input;
         self
+    }
+    /// <p>The date, in ISO 8601 format, when the message template was last modified.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_date
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -185,6 +201,14 @@ impl TemplateResponseBuilder {
         self.tags = input;
         self
     }
+    /// <p>A map of key-value pairs that identifies the tags that are associated with the message template. This object isn't included in a TemplateResponse object. To retrieve this object for a template, use the GetEmailTemplate, GetPushTemplate, GetSmsTemplate, or GetVoiceTemplate operation, depending on the type of template that you want to retrieve the object for.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The custom description of the message template. This value isn't included in a TemplateResponse object. To retrieve the description of a template, use the GetEmailTemplate, GetPushTemplate, GetSmsTemplate, or GetVoiceTemplate operation, depending on the type of template that you want to retrieve the description for.</p>
     pub fn template_description(
         mut self,
@@ -200,6 +224,10 @@ impl TemplateResponseBuilder {
     ) -> Self {
         self.template_description = input;
         self
+    }
+    /// <p>The custom description of the message template. This value isn't included in a TemplateResponse object. To retrieve the description of a template, use the GetEmailTemplate, GetPushTemplate, GetSmsTemplate, or GetVoiceTemplate operation, depending on the type of template that you want to retrieve the description for.</p>
+    pub fn get_template_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_description
     }
     /// <p>The name of the message template.</p>
     pub fn template_name(
@@ -217,6 +245,10 @@ impl TemplateResponseBuilder {
         self.template_name = input;
         self
     }
+    /// <p>The name of the message template.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
     /// <p>The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, and VOICE.</p>
     pub fn template_type(mut self, input: crate::types::TemplateType) -> Self {
         self.template_type = ::std::option::Option::Some(input);
@@ -230,6 +262,10 @@ impl TemplateResponseBuilder {
         self.template_type = input;
         self
     }
+    /// <p>The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, and VOICE.</p>
+    pub fn get_template_type(&self) -> &::std::option::Option<crate::types::TemplateType> {
+        &self.template_type
+    }
     /// <p>The unique identifier, as an integer, for the active version of the message template.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -239,6 +275,10 @@ impl TemplateResponseBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The unique identifier, as an integer, for the active version of the message template.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`TemplateResponse`](crate::types::TemplateResponse).
     pub fn build(self) -> crate::types::TemplateResponse {

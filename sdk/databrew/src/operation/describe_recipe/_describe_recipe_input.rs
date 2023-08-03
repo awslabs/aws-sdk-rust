@@ -47,6 +47,10 @@ impl DescribeRecipeInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the recipe to be described.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The recipe version identifier. If this parameter isn't specified, then the latest published version is returned.</p>
     pub fn recipe_version(
         mut self,
@@ -62,6 +66,10 @@ impl DescribeRecipeInputBuilder {
     ) -> Self {
         self.recipe_version = input;
         self
+    }
+    /// <p>The recipe version identifier. If this parameter isn't specified, then the latest published version is returned.</p>
+    pub fn get_recipe_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recipe_version
     }
     /// Consumes the builder and constructs a [`DescribeRecipeInput`](crate::operation::describe_recipe::DescribeRecipeInput).
     pub fn build(

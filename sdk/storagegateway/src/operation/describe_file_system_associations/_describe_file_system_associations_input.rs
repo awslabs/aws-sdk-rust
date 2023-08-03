@@ -55,6 +55,12 @@ impl DescribeFileSystemAssociationsInputBuilder {
         self.file_system_association_arn_list = input;
         self
     }
+    /// <p>An array containing the Amazon Resource Name (ARN) of each file system association to be described.</p>
+    pub fn get_file_system_association_arn_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.file_system_association_arn_list
+    }
     /// Consumes the builder and constructs a [`DescribeFileSystemAssociationsInput`](crate::operation::describe_file_system_associations::DescribeFileSystemAssociationsInput).
     pub fn build(
         self,

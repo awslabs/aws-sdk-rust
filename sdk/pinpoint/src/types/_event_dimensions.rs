@@ -87,6 +87,14 @@ impl EventDimensionsBuilder {
         self.attributes = input;
         self
     }
+    /// <p>One or more custom attributes that your application reports to Amazon Pinpoint. You can use these attributes as selection criteria when you create an event filter.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::AttributeDimension>,
+    > {
+        &self.attributes
+    }
     /// <p>The name of the event that causes the campaign to be sent or the journey activity to be performed. This can be a standard event that Amazon Pinpoint generates, such as _email.delivered. For campaigns, this can also be a custom event that's specific to your application. For information about standard events, see <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/event-streams.html">Streaming Amazon Pinpoint Events</a> in the <i>Amazon Pinpoint Developer Guide</i>.</p>
     pub fn event_type(mut self, input: crate::types::SetDimension) -> Self {
         self.event_type = ::std::option::Option::Some(input);
@@ -99,6 +107,10 @@ impl EventDimensionsBuilder {
     ) -> Self {
         self.event_type = input;
         self
+    }
+    /// <p>The name of the event that causes the campaign to be sent or the journey activity to be performed. This can be a standard event that Amazon Pinpoint generates, such as _email.delivered. For campaigns, this can also be a custom event that's specific to your application. For information about standard events, see <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/event-streams.html">Streaming Amazon Pinpoint Events</a> in the <i>Amazon Pinpoint Developer Guide</i>.</p>
+    pub fn get_event_type(&self) -> &::std::option::Option<crate::types::SetDimension> {
+        &self.event_type
     }
     /// Adds a key-value pair to `metrics`.
     ///
@@ -124,6 +136,14 @@ impl EventDimensionsBuilder {
     ) -> Self {
         self.metrics = input;
         self
+    }
+    /// <p>One or more custom metrics that your application reports to Amazon Pinpoint. You can use these metrics as selection criteria when you create an event filter.</p>
+    pub fn get_metrics(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::MetricDimension>,
+    > {
+        &self.metrics
     }
     /// Consumes the builder and constructs a [`EventDimensions`](crate::types::EventDimensions).
     pub fn build(self) -> crate::types::EventDimensions {

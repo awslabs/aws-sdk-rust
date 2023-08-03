@@ -64,6 +64,10 @@ impl BucketCountByEffectivePermissionBuilder {
         self.publicly_accessible = input;
         self
     }
+    /// <p>The total number of buckets that allow the general public to have read or write access to the bucket.</p>
+    pub fn get_publicly_accessible(&self) -> &::std::option::Option<i64> {
+        &self.publicly_accessible
+    }
     /// <p>The total number of buckets that allow the general public to have read access to the bucket.</p>
     pub fn publicly_readable(mut self, input: i64) -> Self {
         self.publicly_readable = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl BucketCountByEffectivePermissionBuilder {
     pub fn set_publicly_readable(mut self, input: ::std::option::Option<i64>) -> Self {
         self.publicly_readable = input;
         self
+    }
+    /// <p>The total number of buckets that allow the general public to have read access to the bucket.</p>
+    pub fn get_publicly_readable(&self) -> &::std::option::Option<i64> {
+        &self.publicly_readable
     }
     /// <p>The total number of buckets that allow the general public to have write access to the bucket.</p>
     pub fn publicly_writable(mut self, input: i64) -> Self {
@@ -84,6 +92,10 @@ impl BucketCountByEffectivePermissionBuilder {
         self.publicly_writable = input;
         self
     }
+    /// <p>The total number of buckets that allow the general public to have write access to the bucket.</p>
+    pub fn get_publicly_writable(&self) -> &::std::option::Option<i64> {
+        &self.publicly_writable
+    }
     /// <p>The total number of buckets that Amazon Macie wasn't able to evaluate permissions settings for. Macie can't determine whether these buckets are publicly accessible.</p>
     pub fn unknown(mut self, input: i64) -> Self {
         self.unknown = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl BucketCountByEffectivePermissionBuilder {
     pub fn set_unknown(mut self, input: ::std::option::Option<i64>) -> Self {
         self.unknown = input;
         self
+    }
+    /// <p>The total number of buckets that Amazon Macie wasn't able to evaluate permissions settings for. Macie can't determine whether these buckets are publicly accessible.</p>
+    pub fn get_unknown(&self) -> &::std::option::Option<i64> {
+        &self.unknown
     }
     /// Consumes the builder and constructs a [`BucketCountByEffectivePermission`](crate::types::BucketCountByEffectivePermission).
     pub fn build(self) -> crate::types::BucketCountByEffectivePermission {

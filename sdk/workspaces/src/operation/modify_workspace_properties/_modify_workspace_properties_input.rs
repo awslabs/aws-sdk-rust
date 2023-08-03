@@ -49,6 +49,10 @@ impl ModifyWorkspacePropertiesInputBuilder {
         self.workspace_id = input;
         self
     }
+    /// <p>The identifier of the WorkSpace.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
+    }
     /// <p>The properties of the WorkSpace.</p>
     pub fn workspace_properties(mut self, input: crate::types::WorkspaceProperties) -> Self {
         self.workspace_properties = ::std::option::Option::Some(input);
@@ -61,6 +65,12 @@ impl ModifyWorkspacePropertiesInputBuilder {
     ) -> Self {
         self.workspace_properties = input;
         self
+    }
+    /// <p>The properties of the WorkSpace.</p>
+    pub fn get_workspace_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::WorkspaceProperties> {
+        &self.workspace_properties
     }
     /// Consumes the builder and constructs a [`ModifyWorkspacePropertiesInput`](crate::operation::modify_workspace_properties::ModifyWorkspacePropertiesInput).
     pub fn build(

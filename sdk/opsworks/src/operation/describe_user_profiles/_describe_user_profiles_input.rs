@@ -52,6 +52,12 @@ impl DescribeUserProfilesInputBuilder {
         self.iam_user_arns = input;
         self
     }
+    /// <p>An array of IAM or federated user ARNs that identify the users to be described.</p>
+    pub fn get_iam_user_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.iam_user_arns
+    }
     /// Consumes the builder and constructs a [`DescribeUserProfilesInput`](crate::operation::describe_user_profiles::DescribeUserProfilesInput).
     pub fn build(
         self,

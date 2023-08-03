@@ -46,6 +46,10 @@ impl DescribeAcceleratorInputBuilder {
         self.accelerator_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the accelerator to describe.</p>
+    pub fn get_accelerator_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accelerator_arn
+    }
     /// Consumes the builder and constructs a [`DescribeAcceleratorInput`](crate::operation::describe_accelerator::DescribeAcceleratorInput).
     pub fn build(
         self,

@@ -94,6 +94,10 @@ impl OpsAggregatorBuilder {
         self.aggregator_type = input;
         self
     }
+    /// <p>Either a <code>Range</code> or <code>Count</code> aggregator for limiting an OpsData summary.</p>
+    pub fn get_aggregator_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aggregator_type
+    }
     /// <p>The data type name to use for viewing counts of OpsData.</p>
     pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_name = ::std::option::Option::Some(input.into());
@@ -103,6 +107,10 @@ impl OpsAggregatorBuilder {
     pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.type_name = input;
         self
+    }
+    /// <p>The data type name to use for viewing counts of OpsData.</p>
+    pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.type_name
     }
     /// <p>The name of an OpsData attribute on which to limit the count of OpsData.</p>
     pub fn attribute_name(
@@ -119,6 +127,10 @@ impl OpsAggregatorBuilder {
     ) -> Self {
         self.attribute_name = input;
         self
+    }
+    /// <p>The name of an OpsData attribute on which to limit the count of OpsData.</p>
+    pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_name
     }
     /// Adds a key-value pair to `values`.
     ///
@@ -145,6 +157,14 @@ impl OpsAggregatorBuilder {
         self.values = input;
         self
     }
+    /// <p>The aggregator value.</p>
+    pub fn get_values(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.values
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -164,6 +184,10 @@ impl OpsAggregatorBuilder {
         self.filters = input;
         self
     }
+    /// <p>The aggregator filters.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsFilter>> {
+        &self.filters
+    }
     /// Appends an item to `aggregators`.
     ///
     /// To override the contents of this collection use [`set_aggregators`](Self::set_aggregators).
@@ -182,6 +206,12 @@ impl OpsAggregatorBuilder {
     ) -> Self {
         self.aggregators = input;
         self
+    }
+    /// <p>A nested aggregator for viewing counts of OpsData.</p>
+    pub fn get_aggregators(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsAggregator>> {
+        &self.aggregators
     }
     /// Consumes the builder and constructs a [`OpsAggregator`](crate::types::OpsAggregator).
     pub fn build(self) -> crate::types::OpsAggregator {

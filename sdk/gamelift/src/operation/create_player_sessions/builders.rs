@@ -41,6 +41,12 @@ impl CreatePlayerSessionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreatePlayerSessions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_player_sessions::builders::CreatePlayerSessionsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl CreatePlayerSessionsFluentBuilder {
         self.inner = self.inner.set_game_session_id(input);
         self
     }
+    /// <p>A unique identifier for the game session to add players to.</p>
+    pub fn get_game_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_game_session_id()
+    }
     /// Appends an item to `PlayerIds`.
     ///
     /// To override the contents of this collection use [`set_player_ids`](Self::set_player_ids).
@@ -153,6 +163,10 @@ impl CreatePlayerSessionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_player_ids(input);
         self
+    }
+    /// <p>List of unique identifiers for the players to be added.</p>
+    pub fn get_player_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_player_ids()
     }
     /// Adds a key-value pair to `PlayerDataMap`.
     ///
@@ -176,5 +190,13 @@ impl CreatePlayerSessionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_player_data_map(input);
         self
+    }
+    /// <p>Map of string pairs, each specifying a player ID and a set of developer-defined information related to the player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game. Any player data strings for player IDs that are not included in the <code>PlayerIds</code> parameter are ignored. </p>
+    pub fn get_player_data_map(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_player_data_map()
     }
 }

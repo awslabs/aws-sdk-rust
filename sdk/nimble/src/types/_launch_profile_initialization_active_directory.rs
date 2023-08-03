@@ -120,6 +120,13 @@ impl LaunchProfileInitializationActiveDirectoryBuilder {
         self.computer_attributes = input;
         self
     }
+    /// <p>A collection of custom attributes for an Active Directory computer.</p>
+    pub fn get_computer_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ActiveDirectoryComputerAttribute>>
+    {
+        &self.computer_attributes
+    }
     /// <p>The directory ID of the Directory Service for Microsoft Active Directory to access using this launch profile.</p>
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
@@ -129,6 +136,10 @@ impl LaunchProfileInitializationActiveDirectoryBuilder {
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.directory_id = input;
         self
+    }
+    /// <p>The directory ID of the Directory Service for Microsoft Active Directory to access using this launch profile.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
     }
     /// <p>The directory name.</p>
     pub fn directory_name(
@@ -145,6 +156,10 @@ impl LaunchProfileInitializationActiveDirectoryBuilder {
     ) -> Self {
         self.directory_name = input;
         self
+    }
+    /// <p>The directory name.</p>
+    pub fn get_directory_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_name
     }
     /// Appends an item to `dns_ip_addresses`.
     ///
@@ -168,6 +183,12 @@ impl LaunchProfileInitializationActiveDirectoryBuilder {
         self.dns_ip_addresses = input;
         self
     }
+    /// <p>The DNS IP address.</p>
+    pub fn get_dns_ip_addresses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.dns_ip_addresses
+    }
     /// <p>The name for the organizational unit distinguished name.</p>
     pub fn organizational_unit_distinguished_name(
         mut self,
@@ -183,6 +204,12 @@ impl LaunchProfileInitializationActiveDirectoryBuilder {
     ) -> Self {
         self.organizational_unit_distinguished_name = input;
         self
+    }
+    /// <p>The name for the organizational unit distinguished name.</p>
+    pub fn get_organizational_unit_distinguished_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.organizational_unit_distinguished_name
     }
     /// <p>The unique identifier for a studio component resource.</p>
     pub fn studio_component_id(
@@ -200,6 +227,10 @@ impl LaunchProfileInitializationActiveDirectoryBuilder {
         self.studio_component_id = input;
         self
     }
+    /// <p>The unique identifier for a studio component resource.</p>
+    pub fn get_studio_component_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_component_id
+    }
     /// <p>The name for the studio component.</p>
     pub fn studio_component_name(
         mut self,
@@ -215,6 +246,10 @@ impl LaunchProfileInitializationActiveDirectoryBuilder {
     ) -> Self {
         self.studio_component_name = input;
         self
+    }
+    /// <p>The name for the studio component.</p>
+    pub fn get_studio_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_component_name
     }
     /// Consumes the builder and constructs a [`LaunchProfileInitializationActiveDirectory`](crate::types::LaunchProfileInitializationActiveDirectory).
     pub fn build(self) -> crate::types::LaunchProfileInitializationActiveDirectory {

@@ -60,6 +60,10 @@ impl DeleteNamespaceOutputBuilder {
         self.namespace_arn = input;
         self
     }
+    /// <p>The ARN of the namespace to be deleted.</p>
+    pub fn get_namespace_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace_arn
+    }
     /// <p>The name of the namespace to be deleted.</p>
     pub fn namespace_name(
         mut self,
@@ -75,6 +79,10 @@ impl DeleteNamespaceOutputBuilder {
     ) -> Self {
         self.namespace_name = input;
         self
+    }
+    /// <p>The name of the namespace to be deleted.</p>
+    pub fn get_namespace_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

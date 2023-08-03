@@ -56,6 +56,12 @@ impl PutSipMediaApplicationLoggingConfigurationOutputBuilder {
         self.sip_media_application_logging_configuration = input;
         self
     }
+    /// <p>The logging configuration of the SIP media application.</p>
+    pub fn get_sip_media_application_logging_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SipMediaApplicationLoggingConfiguration> {
+        &self.sip_media_application_logging_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

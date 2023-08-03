@@ -86,6 +86,10 @@ impl LabelingJobForWorkteamSummaryBuilder {
         self.labeling_job_name = input;
         self
     }
+    /// <p>The name of the labeling job that the work team is assigned to.</p>
+    pub fn get_labeling_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.labeling_job_name
+    }
     /// <p>A unique identifier for a labeling job. You can use this to refer to a specific labeling job.</p>
     pub fn job_reference_code(
         mut self,
@@ -101,6 +105,10 @@ impl LabelingJobForWorkteamSummaryBuilder {
     ) -> Self {
         self.job_reference_code = input;
         self
+    }
+    /// <p>A unique identifier for a labeling job. You can use this to refer to a specific labeling job.</p>
+    pub fn get_job_reference_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_reference_code
     }
     /// <p>The Amazon Web Services account ID of the account used to start the labeling job.</p>
     pub fn work_requester_account_id(
@@ -118,6 +126,10 @@ impl LabelingJobForWorkteamSummaryBuilder {
         self.work_requester_account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID of the account used to start the labeling job.</p>
+    pub fn get_work_requester_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.work_requester_account_id
+    }
     /// <p>The date and time that the labeling job was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -130,6 +142,10 @@ impl LabelingJobForWorkteamSummaryBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The date and time that the labeling job was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>Provides information about the progress of a labeling job.</p>
     pub fn label_counters(mut self, input: crate::types::LabelCountersForWorkteam) -> Self {
@@ -144,6 +160,12 @@ impl LabelingJobForWorkteamSummaryBuilder {
         self.label_counters = input;
         self
     }
+    /// <p>Provides information about the progress of a labeling job.</p>
+    pub fn get_label_counters(
+        &self,
+    ) -> &::std::option::Option<crate::types::LabelCountersForWorkteam> {
+        &self.label_counters
+    }
     /// <p>The configured number of workers per data object.</p>
     pub fn number_of_human_workers_per_data_object(mut self, input: i32) -> Self {
         self.number_of_human_workers_per_data_object = ::std::option::Option::Some(input);
@@ -156,6 +178,10 @@ impl LabelingJobForWorkteamSummaryBuilder {
     ) -> Self {
         self.number_of_human_workers_per_data_object = input;
         self
+    }
+    /// <p>The configured number of workers per data object.</p>
+    pub fn get_number_of_human_workers_per_data_object(&self) -> &::std::option::Option<i32> {
+        &self.number_of_human_workers_per_data_object
     }
     /// Consumes the builder and constructs a [`LabelingJobForWorkteamSummary`](crate::types::LabelingJobForWorkteamSummary).
     pub fn build(self) -> crate::types::LabelingJobForWorkteamSummary {

@@ -54,6 +54,11 @@ impl TagBuilder {
         self.key = input;
         self
     }
+    /// <p>A string that contains <code>Tag</code> key.</p>
+    /// <p>The string length should be between 1 and 128 characters. Valid characters include <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, space, and the special characters <code>_ - . : / = + @</code>.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>A string that contains an optional <code>Tag</code> value.</p>
     /// <p>The string length should be between 0 and 256 characters. Valid characters include <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, space, and the special characters <code>_ - . : / = + @</code>.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -65,6 +70,11 @@ impl TagBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>A string that contains an optional <code>Tag</code> value.</p>
+    /// <p>The string length should be between 0 and 256 characters. Valid characters include <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, space, and the special characters <code>_ - . : / = + @</code>.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`Tag`](crate::types::Tag).
     pub fn build(self) -> crate::types::Tag {

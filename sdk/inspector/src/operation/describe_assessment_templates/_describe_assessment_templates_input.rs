@@ -51,6 +51,12 @@ impl DescribeAssessmentTemplatesInputBuilder {
         self.assessment_template_arns = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_assessment_template_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.assessment_template_arns
+    }
     /// Consumes the builder and constructs a [`DescribeAssessmentTemplatesInput`](crate::operation::describe_assessment_templates::DescribeAssessmentTemplatesInput).
     pub fn build(
         self,

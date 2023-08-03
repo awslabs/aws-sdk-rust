@@ -67,6 +67,10 @@ impl UpdateEphemerisInputBuilder {
         self.ephemeris_id = input;
         self
     }
+    /// <p>The AWS Ground Station ephemeris ID.</p>
+    pub fn get_ephemeris_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ephemeris_id
+    }
     /// <p>Whether the ephemeris is enabled or not. Changing this value will not require the ephemeris to be re-validated.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -77,6 +81,10 @@ impl UpdateEphemerisInputBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Whether the ephemeris is enabled or not. Changing this value will not require the ephemeris to be re-validated.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -86,6 +94,10 @@ impl UpdateEphemerisInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
     /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
@@ -100,6 +112,12 @@ impl UpdateEphemerisInputBuilder {
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
+    }
+    /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
+    /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
+    /// <p>Priority must be 1 or greater</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
     }
     /// Consumes the builder and constructs a [`UpdateEphemerisInput`](crate::operation::update_ephemeris::UpdateEphemerisInput).
     pub fn build(

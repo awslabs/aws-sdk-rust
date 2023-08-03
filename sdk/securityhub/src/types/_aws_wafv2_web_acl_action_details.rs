@@ -51,6 +51,10 @@ impl AwsWafv2WebAclActionDetailsBuilder {
         self.allow = input;
         self
     }
+    /// <p> Specifies that WAF should allow requests by default. </p>
+    pub fn get_allow(&self) -> &::std::option::Option<crate::types::AwsWafv2ActionAllowDetails> {
+        &self.allow
+    }
     /// <p> Specifies that WAF should block requests by default. </p>
     pub fn block(mut self, input: crate::types::AwsWafv2ActionBlockDetails) -> Self {
         self.block = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl AwsWafv2WebAclActionDetailsBuilder {
     ) -> Self {
         self.block = input;
         self
+    }
+    /// <p> Specifies that WAF should block requests by default. </p>
+    pub fn get_block(&self) -> &::std::option::Option<crate::types::AwsWafv2ActionBlockDetails> {
+        &self.block
     }
     /// Consumes the builder and constructs a [`AwsWafv2WebAclActionDetails`](crate::types::AwsWafv2WebAclActionDetails).
     pub fn build(self) -> crate::types::AwsWafv2WebAclActionDetails {

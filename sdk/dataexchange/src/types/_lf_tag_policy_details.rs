@@ -56,6 +56,10 @@ impl LfTagPolicyDetailsBuilder {
         self.catalog_id = input;
         self
     }
+    /// <p>The identifier for the AWS Glue Data Catalog.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// <p>The resource type for which the LF-tag policy applies.</p>
     pub fn resource_type(mut self, input: crate::types::LfResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl LfTagPolicyDetailsBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The resource type for which the LF-tag policy applies.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::LfResourceType> {
+        &self.resource_type
+    }
     /// <p>Details for the Lake Formation Resources included in the LF-tag policy.</p>
     pub fn resource_details(mut self, input: crate::types::LfResourceDetails) -> Self {
         self.resource_details = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl LfTagPolicyDetailsBuilder {
     ) -> Self {
         self.resource_details = input;
         self
+    }
+    /// <p>Details for the Lake Formation Resources included in the LF-tag policy.</p>
+    pub fn get_resource_details(&self) -> &::std::option::Option<crate::types::LfResourceDetails> {
+        &self.resource_details
     }
     /// Consumes the builder and constructs a [`LfTagPolicyDetails`](crate::types::LfTagPolicyDetails).
     pub fn build(self) -> crate::types::LfTagPolicyDetails {

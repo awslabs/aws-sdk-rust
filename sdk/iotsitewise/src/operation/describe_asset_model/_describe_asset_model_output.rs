@@ -145,6 +145,10 @@ impl DescribeAssetModelOutputBuilder {
         self.asset_model_id = input;
         self
     }
+    /// <p>The ID of the asset model.</p>
+    pub fn get_asset_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_model_id
+    }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
     pub fn asset_model_arn(
@@ -163,6 +167,11 @@ impl DescribeAssetModelOutputBuilder {
         self.asset_model_arn = input;
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
+    pub fn get_asset_model_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_model_arn
+    }
     /// <p>The name of the asset model.</p>
     pub fn asset_model_name(
         mut self,
@@ -179,6 +188,10 @@ impl DescribeAssetModelOutputBuilder {
         self.asset_model_name = input;
         self
     }
+    /// <p>The name of the asset model.</p>
+    pub fn get_asset_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_model_name
+    }
     /// <p>The asset model's description.</p>
     pub fn asset_model_description(
         mut self,
@@ -194,6 +207,10 @@ impl DescribeAssetModelOutputBuilder {
     ) -> Self {
         self.asset_model_description = input;
         self
+    }
+    /// <p>The asset model's description.</p>
+    pub fn get_asset_model_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_model_description
     }
     /// Appends an item to `asset_model_properties`.
     ///
@@ -216,6 +233,13 @@ impl DescribeAssetModelOutputBuilder {
         self.asset_model_properties = input;
         self
     }
+    /// <p>The list of asset properties for the asset model.</p>
+    /// <p>This object doesn't include properties that you define in composite models. You can find composite model properties in the <code>assetModelCompositeModels</code> object.</p>
+    pub fn get_asset_model_properties(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelProperty>> {
+        &self.asset_model_properties
+    }
     /// Appends an item to `asset_model_hierarchies`.
     ///
     /// To override the contents of this collection use [`set_asset_model_hierarchies`](Self::set_asset_model_hierarchies).
@@ -234,6 +258,12 @@ impl DescribeAssetModelOutputBuilder {
     ) -> Self {
         self.asset_model_hierarchies = input;
         self
+    }
+    /// <p>A list of asset model hierarchies that each contain a <code>childAssetModelId</code> and a <code>hierarchyId</code> (named <code>id</code>). A hierarchy specifies allowed parent/child asset relationships for an asset model.</p>
+    pub fn get_asset_model_hierarchies(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelHierarchy>> {
+        &self.asset_model_hierarchies
     }
     /// Appends an item to `asset_model_composite_models`.
     ///
@@ -257,6 +287,12 @@ impl DescribeAssetModelOutputBuilder {
         self.asset_model_composite_models = input;
         self
     }
+    /// <p>The list of composite asset models for the asset model.</p>
+    pub fn get_asset_model_composite_models(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelCompositeModel>> {
+        &self.asset_model_composite_models
+    }
     /// <p>The date the asset model was created, in Unix epoch time.</p>
     pub fn asset_model_creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.asset_model_creation_date = ::std::option::Option::Some(input);
@@ -269,6 +305,12 @@ impl DescribeAssetModelOutputBuilder {
     ) -> Self {
         self.asset_model_creation_date = input;
         self
+    }
+    /// <p>The date the asset model was created, in Unix epoch time.</p>
+    pub fn get_asset_model_creation_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.asset_model_creation_date
     }
     /// <p>The date the asset model was last updated, in Unix epoch time.</p>
     pub fn asset_model_last_update_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -283,6 +325,12 @@ impl DescribeAssetModelOutputBuilder {
         self.asset_model_last_update_date = input;
         self
     }
+    /// <p>The date the asset model was last updated, in Unix epoch time.</p>
+    pub fn get_asset_model_last_update_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.asset_model_last_update_date
+    }
     /// <p>The current status of the asset model, which contains a state and any error message.</p>
     pub fn asset_model_status(mut self, input: crate::types::AssetModelStatus) -> Self {
         self.asset_model_status = ::std::option::Option::Some(input);
@@ -295,6 +343,10 @@ impl DescribeAssetModelOutputBuilder {
     ) -> Self {
         self.asset_model_status = input;
         self
+    }
+    /// <p>The current status of the asset model, which contains a state and any error message.</p>
+    pub fn get_asset_model_status(&self) -> &::std::option::Option<crate::types::AssetModelStatus> {
+        &self.asset_model_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

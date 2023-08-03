@@ -55,6 +55,10 @@ impl ReloadReplicationTablesOutputBuilder {
         self.replication_config_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name of the replication config for which to reload tables.</p>
+    pub fn get_replication_config_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_config_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

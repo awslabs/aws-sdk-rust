@@ -76,6 +76,12 @@ impl DescribeAffectedEntitiesForOrganizationInputBuilder {
         self.organization_entity_filters = input;
         self
     }
+    /// <p>A JSON set of elements including the <code>awsAccountId</code> and the <code>eventArn</code>.</p>
+    pub fn get_organization_entity_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventAccountFilter>> {
+        &self.organization_entity_filters
+    }
     /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
     pub fn locale(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale = ::std::option::Option::Some(input.into());
@@ -85,6 +91,10 @@ impl DescribeAffectedEntitiesForOrganizationInputBuilder {
     pub fn set_locale(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.locale = input;
         self
+    }
+    /// <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
+    pub fn get_locale(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale
     }
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -96,6 +106,10 @@ impl DescribeAffectedEntitiesForOrganizationInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -105,6 +119,10 @@ impl DescribeAffectedEntitiesForOrganizationInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeAffectedEntitiesForOrganizationInput`](crate::operation::describe_affected_entities_for_organization::DescribeAffectedEntitiesForOrganizationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_affected_entities_for_organization::DescribeAffectedEntitiesForOrganizationInput, ::aws_smithy_http::operation::error::BuildError>{

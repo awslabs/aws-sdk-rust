@@ -92,6 +92,10 @@ impl PatternBuilder {
         self.id = input;
         self
     }
+    /// <p>The universally unique identifier (UUID) of this pattern.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name for this pattern.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -102,6 +106,10 @@ impl PatternBuilder {
         self.name = input;
         self
     }
+    /// <p>The name for this pattern.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the recommendation. This explains a potential inefficiency in a profiled application.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -111,6 +119,10 @@ impl PatternBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the recommendation. This explains a potential inefficiency in a profiled application.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p> A string that contains the steps recommended to address the potential inefficiency. </p>
     pub fn resolution_steps(
@@ -127,6 +139,10 @@ impl PatternBuilder {
     ) -> Self {
         self.resolution_steps = input;
         self
+    }
+    /// <p> A string that contains the steps recommended to address the potential inefficiency. </p>
+    pub fn get_resolution_steps(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resolution_steps
     }
     /// Appends an item to `target_frames`.
     ///
@@ -147,6 +163,12 @@ impl PatternBuilder {
         self.target_frames = input;
         self
     }
+    /// <p>A list of frame names that were searched during the analysis that generated a recommendation.</p>
+    pub fn get_target_frames(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>> {
+        &self.target_frames
+    }
     /// <p> The percentage of time an application spends in one method that triggers a recommendation. The percentage of time is the same as the percentage of the total gathered sample counts during analysis. </p>
     pub fn threshold_percent(mut self, input: f64) -> Self {
         self.threshold_percent = ::std::option::Option::Some(input);
@@ -156,6 +178,10 @@ impl PatternBuilder {
     pub fn set_threshold_percent(mut self, input: ::std::option::Option<f64>) -> Self {
         self.threshold_percent = input;
         self
+    }
+    /// <p> The percentage of time an application spends in one method that triggers a recommendation. The percentage of time is the same as the percentage of the total gathered sample counts during analysis. </p>
+    pub fn get_threshold_percent(&self) -> &::std::option::Option<f64> {
+        &self.threshold_percent
     }
     /// Appends an item to `counters_to_aggregate`.
     ///
@@ -178,6 +204,12 @@ impl PatternBuilder {
     ) -> Self {
         self.counters_to_aggregate = input;
         self
+    }
+    /// <p> A list of the different counters used to determine if there is a match. </p>
+    pub fn get_counters_to_aggregate(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.counters_to_aggregate
     }
     /// Consumes the builder and constructs a [`Pattern`](crate::types::Pattern).
     pub fn build(self) -> crate::types::Pattern {

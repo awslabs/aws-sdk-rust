@@ -55,6 +55,10 @@ impl StartBulkAssociateWirelessDeviceWithMulticastGroupInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the multicast group.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>Query string used to search for wireless devices as part of the bulk associate and disassociate process.</p>
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_string = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl StartBulkAssociateWirelessDeviceWithMulticastGroupInputBuilder {
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_string = input;
         self
+    }
+    /// <p>Query string used to search for wireless devices as part of the bulk associate and disassociate process.</p>
+    pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_string
     }
     /// Appends an item to `tags`.
     ///
@@ -83,6 +91,10 @@ impl StartBulkAssociateWirelessDeviceWithMulticastGroupInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`StartBulkAssociateWirelessDeviceWithMulticastGroupInput`](crate::operation::start_bulk_associate_wireless_device_with_multicast_group::StartBulkAssociateWirelessDeviceWithMulticastGroupInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::start_bulk_associate_wireless_device_with_multicast_group::StartBulkAssociateWirelessDeviceWithMulticastGroupInput, ::aws_smithy_http::operation::error::BuildError>{

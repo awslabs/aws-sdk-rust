@@ -65,6 +65,10 @@ impl MultiRegionAccessPointRouteBuilder {
         self.bucket = input;
         self
     }
+    /// <p>The name of the Amazon S3 bucket for which you'll submit a routing configuration change. Either the <code>Bucket</code> or the <code>Region</code> value must be provided. If both are provided, the bucket must be in the specified Region.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p>The Amazon Web Services Region to which you'll be submitting a routing configuration change. Either the <code>Bucket</code> or the <code>Region</code> value must be provided. If both are provided, the bucket must be in the specified Region.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl MultiRegionAccessPointRouteBuilder {
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
+    }
+    /// <p>The Amazon Web Services Region to which you'll be submitting a routing configuration change. Either the <code>Bucket</code> or the <code>Region</code> value must be provided. If both are provided, the bucket must be in the specified Region.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
     }
     /// <p>The traffic state for the specified bucket or Amazon Web Services Region. </p>
     /// <p>A value of <code>0</code> indicates a passive state, which means that no new traffic will be routed to the Region. </p>
@@ -92,6 +100,14 @@ impl MultiRegionAccessPointRouteBuilder {
     pub fn set_traffic_dial_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.traffic_dial_percentage = input;
         self
+    }
+    /// <p>The traffic state for the specified bucket or Amazon Web Services Region. </p>
+    /// <p>A value of <code>0</code> indicates a passive state, which means that no new traffic will be routed to the Region. </p>
+    /// <p>A value of <code>100</code> indicates an active state, which means that traffic will be routed to the specified Region. </p>
+    /// <p>When the routing configuration for a Region is changed from active to passive, any in-progress operations (uploads, copies, deletes, and so on) to the formerly active Region will continue to run to until a final success or failure status is reached.</p>
+    /// <p>If all Regions in the routing configuration are designated as passive, you'll receive an <code>InvalidRequest</code> error.</p>
+    pub fn get_traffic_dial_percentage(&self) -> &::std::option::Option<i32> {
+        &self.traffic_dial_percentage
     }
     /// Consumes the builder and constructs a [`MultiRegionAccessPointRoute`](crate::types::MultiRegionAccessPointRoute).
     pub fn build(self) -> crate::types::MultiRegionAccessPointRoute {

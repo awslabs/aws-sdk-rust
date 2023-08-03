@@ -74,6 +74,10 @@ impl ListWorkforcesInputBuilder {
         self.sort_by = input;
         self
     }
+    /// <p>Sort workforces using the workforce name or creation date.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ListWorkforcesSortByOptions> {
+        &self.sort_by
+    }
     /// <p>Sort workforces in ascending or descending order.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -83,6 +87,10 @@ impl ListWorkforcesInputBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.sort_order = input;
         self
+    }
+    /// <p>Sort workforces in ascending or descending order.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.sort_order
     }
     /// <p>A filter you can use to search for workforces using part of the workforce name.</p>
     pub fn name_contains(
@@ -100,6 +108,10 @@ impl ListWorkforcesInputBuilder {
         self.name_contains = input;
         self
     }
+    /// <p>A filter you can use to search for workforces using part of the workforce name.</p>
+    pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name_contains
+    }
     /// <p>A token to resume pagination.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -110,6 +122,10 @@ impl ListWorkforcesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token to resume pagination.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of workforces returned in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -119,6 +135,10 @@ impl ListWorkforcesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of workforces returned in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListWorkforcesInput`](crate::operation::list_workforces::ListWorkforcesInput).
     pub fn build(

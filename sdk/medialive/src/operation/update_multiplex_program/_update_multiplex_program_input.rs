@@ -61,6 +61,10 @@ impl UpdateMultiplexProgramInputBuilder {
         self.multiplex_id = input;
         self
     }
+    /// The ID of the multiplex of the program to update.
+    pub fn get_multiplex_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.multiplex_id
+    }
     /// The new settings for a multiplex program.
     pub fn multiplex_program_settings(
         mut self,
@@ -77,6 +81,12 @@ impl UpdateMultiplexProgramInputBuilder {
         self.multiplex_program_settings = input;
         self
     }
+    /// The new settings for a multiplex program.
+    pub fn get_multiplex_program_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::MultiplexProgramSettings> {
+        &self.multiplex_program_settings
+    }
     /// The name of the program to update.
     pub fn program_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.program_name = ::std::option::Option::Some(input.into());
@@ -86,6 +96,10 @@ impl UpdateMultiplexProgramInputBuilder {
     pub fn set_program_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.program_name = input;
         self
+    }
+    /// The name of the program to update.
+    pub fn get_program_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.program_name
     }
     /// Consumes the builder and constructs a [`UpdateMultiplexProgramInput`](crate::operation::update_multiplex_program::UpdateMultiplexProgramInput).
     pub fn build(

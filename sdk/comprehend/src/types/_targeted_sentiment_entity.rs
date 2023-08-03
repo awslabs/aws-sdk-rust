@@ -59,6 +59,10 @@ impl TargetedSentimentEntityBuilder {
         self.descriptive_mention_index = input;
         self
     }
+    /// <p>One or more index into the Mentions array that provides the best name for the entity group.</p>
+    pub fn get_descriptive_mention_index(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        &self.descriptive_mention_index
+    }
     /// Appends an item to `mentions`.
     ///
     /// To override the contents of this collection use [`set_mentions`](Self::set_mentions).
@@ -77,6 +81,12 @@ impl TargetedSentimentEntityBuilder {
     ) -> Self {
         self.mentions = input;
         self
+    }
+    /// <p>An array of mentions of the entity in the document. The array represents a co-reference group. See <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html#how-targeted-sentiment-values"> Co-reference group</a> for an example. </p>
+    pub fn get_mentions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetedSentimentMention>> {
+        &self.mentions
     }
     /// Consumes the builder and constructs a [`TargetedSentimentEntity`](crate::types::TargetedSentimentEntity).
     pub fn build(self) -> crate::types::TargetedSentimentEntity {

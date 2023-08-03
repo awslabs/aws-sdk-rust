@@ -47,6 +47,10 @@ impl DeleteProtectionGroupInputBuilder {
         self.protection_group_id = input;
         self
     }
+    /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
+    pub fn get_protection_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.protection_group_id
+    }
     /// Consumes the builder and constructs a [`DeleteProtectionGroupInput`](crate::operation::delete_protection_group::DeleteProtectionGroupInput).
     pub fn build(
         self,

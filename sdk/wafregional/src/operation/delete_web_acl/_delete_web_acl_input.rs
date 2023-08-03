@@ -47,6 +47,10 @@ impl DeleteWebAclInputBuilder {
         self.web_acl_id = input;
         self
     }
+    /// <p>The <code>WebACLId</code> of the <code>WebACL</code> that you want to delete. <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
+    pub fn get_web_acl_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.web_acl_id
+    }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_token = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl DeleteWebAclInputBuilder {
     pub fn set_change_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_token = input;
         self
+    }
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    pub fn get_change_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.change_token
     }
     /// Consumes the builder and constructs a [`DeleteWebAclInput`](crate::operation::delete_web_acl::DeleteWebAclInput).
     pub fn build(

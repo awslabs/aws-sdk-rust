@@ -65,6 +65,12 @@ impl GetBasePathMappingsOutputBuilder {
         self.items = input;
         self
     }
+    /// <p>The current page of elements from this collection.</p>
+    pub fn get_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BasePathMapping>> {
+        &self.items
+    }
     /// <p>The current pagination position in the paged result set.</p>
     pub fn position(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.position = ::std::option::Option::Some(input.into());
@@ -74,6 +80,10 @@ impl GetBasePathMappingsOutputBuilder {
     pub fn set_position(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.position = input;
         self
+    }
+    /// <p>The current pagination position in the paged result set.</p>
+    pub fn get_position(&self) -> &::std::option::Option<::std::string::String> {
+        &self.position
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

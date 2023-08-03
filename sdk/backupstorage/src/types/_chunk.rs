@@ -74,6 +74,10 @@ impl ChunkBuilder {
         self.index = input;
         self
     }
+    /// Chunk index
+    pub fn get_index(&self) -> &::std::option::Option<i64> {
+        &self.index
+    }
     /// Chunk length
     pub fn length(mut self, input: i64) -> Self {
         self.length = ::std::option::Option::Some(input);
@@ -84,6 +88,10 @@ impl ChunkBuilder {
         self.length = input;
         self
     }
+    /// Chunk length
+    pub fn get_length(&self) -> &::std::option::Option<i64> {
+        &self.length
+    }
     /// Chunk checksum
     pub fn checksum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.checksum = ::std::option::Option::Some(input.into());
@@ -93,6 +101,10 @@ impl ChunkBuilder {
     pub fn set_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.checksum = input;
         self
+    }
+    /// Chunk checksum
+    pub fn get_checksum(&self) -> &::std::option::Option<::std::string::String> {
+        &self.checksum
     }
     /// Checksum algorithm
     pub fn checksum_algorithm(mut self, input: crate::types::DataChecksumAlgorithm) -> Self {
@@ -107,6 +119,12 @@ impl ChunkBuilder {
         self.checksum_algorithm = input;
         self
     }
+    /// Checksum algorithm
+    pub fn get_checksum_algorithm(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataChecksumAlgorithm> {
+        &self.checksum_algorithm
+    }
     /// Chunk token
     pub fn chunk_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.chunk_token = ::std::option::Option::Some(input.into());
@@ -116,6 +134,10 @@ impl ChunkBuilder {
     pub fn set_chunk_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.chunk_token = input;
         self
+    }
+    /// Chunk token
+    pub fn get_chunk_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.chunk_token
     }
     /// Consumes the builder and constructs a [`Chunk`](crate::types::Chunk).
     pub fn build(self) -> crate::types::Chunk {

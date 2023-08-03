@@ -48,6 +48,10 @@ impl MaintenanceWindowBuilder {
         self.start_time = input;
         self
     }
+    /// <p>Displays the start time of the next maintenance window.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_time
+    }
     /// <p>Displays the duration of the next maintenance window.</p>
     pub fn duration_in_minutes(mut self, input: i32) -> Self {
         self.duration_in_minutes = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl MaintenanceWindowBuilder {
     pub fn set_duration_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.duration_in_minutes = input;
         self
+    }
+    /// <p>Displays the duration of the next maintenance window.</p>
+    pub fn get_duration_in_minutes(&self) -> &::std::option::Option<i32> {
+        &self.duration_in_minutes
     }
     /// Consumes the builder and constructs a [`MaintenanceWindow`](crate::types::MaintenanceWindow).
     pub fn build(self) -> crate::types::MaintenanceWindow {

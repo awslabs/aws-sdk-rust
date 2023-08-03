@@ -53,6 +53,10 @@ impl AcceptReservedNodeExchangeInputBuilder {
         self.reserved_node_id = input;
         self
     }
+    /// <p>A string representing the node identifier of the DC1 Reserved Node to be exchanged.</p>
+    pub fn get_reserved_node_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reserved_node_id
+    }
     /// <p>The unique identifier of the DC2 Reserved Node offering to be used for the exchange. You can obtain the value for the parameter by calling <code>GetReservedNodeExchangeOfferings</code> </p>
     pub fn target_reserved_node_offering_id(
         mut self,
@@ -68,6 +72,12 @@ impl AcceptReservedNodeExchangeInputBuilder {
     ) -> Self {
         self.target_reserved_node_offering_id = input;
         self
+    }
+    /// <p>The unique identifier of the DC2 Reserved Node offering to be used for the exchange. You can obtain the value for the parameter by calling <code>GetReservedNodeExchangeOfferings</code> </p>
+    pub fn get_target_reserved_node_offering_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.target_reserved_node_offering_id
     }
     /// Consumes the builder and constructs a [`AcceptReservedNodeExchangeInput`](crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeInput).
     pub fn build(

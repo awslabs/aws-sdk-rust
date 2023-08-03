@@ -48,6 +48,10 @@ impl DeviceStatusDetailBuilder {
         self.feature = input;
         self
     }
+    /// <p>The list of available features on the device.</p>
+    pub fn get_feature(&self) -> &::std::option::Option<crate::types::Feature> {
+        &self.feature
+    }
     /// <p>The device status detail code.</p>
     pub fn code(mut self, input: crate::types::DeviceStatusDetailCode) -> Self {
         self.code = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl DeviceStatusDetailBuilder {
     ) -> Self {
         self.code = input;
         self
+    }
+    /// <p>The device status detail code.</p>
+    pub fn get_code(&self) -> &::std::option::Option<crate::types::DeviceStatusDetailCode> {
+        &self.code
     }
     /// Consumes the builder and constructs a [`DeviceStatusDetail`](crate::types::DeviceStatusDetail).
     pub fn build(self) -> crate::types::DeviceStatusDetail {

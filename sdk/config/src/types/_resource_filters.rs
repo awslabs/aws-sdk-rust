@@ -64,6 +64,10 @@ impl ResourceFiltersBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The 12-digit source account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The ID of the resource.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl ResourceFiltersBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>The ID of the resource.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// <p>The name of the resource.</p>
     pub fn resource_name(
@@ -90,6 +98,10 @@ impl ResourceFiltersBuilder {
         self.resource_name = input;
         self
     }
+    /// <p>The name of the resource.</p>
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_name
+    }
     /// <p>The source region.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
@@ -99,6 +111,10 @@ impl ResourceFiltersBuilder {
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
+    }
+    /// <p>The source region.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
     }
     /// Consumes the builder and constructs a [`ResourceFilters`](crate::types::ResourceFilters).
     pub fn build(self) -> crate::types::ResourceFilters {

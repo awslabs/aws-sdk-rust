@@ -54,6 +54,10 @@ impl BatchWriteInputBuilder {
         self.directory_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_arn
+    }
     /// Appends an item to `operations`.
     ///
     /// To override the contents of this collection use [`set_operations`](Self::set_operations).
@@ -72,6 +76,12 @@ impl BatchWriteInputBuilder {
     ) -> Self {
         self.operations = input;
         self
+    }
+    /// <p>A list of operations that are part of the batch.</p>
+    pub fn get_operations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchWriteOperation>> {
+        &self.operations
     }
     /// Consumes the builder and constructs a [`BatchWriteInput`](crate::operation::batch_write::BatchWriteInput).
     pub fn build(

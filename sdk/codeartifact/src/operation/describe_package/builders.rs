@@ -36,6 +36,12 @@ impl DescribePackageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribePackage as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_package::builders::DescribePackageInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DescribePackageFluentBuilder {
         self.inner = self.inner.set_domain(input);
         self
     }
+    /// <p>The name of the domain that contains the repository that contains the package.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain()
+    }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_owner(input.into());
@@ -135,6 +145,10 @@ impl DescribePackageFluentBuilder {
     pub fn set_domain_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_owner(input);
         self
+    }
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_owner()
     }
     /// <p>The name of the repository that contains the requested package. </p>
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -146,6 +160,10 @@ impl DescribePackageFluentBuilder {
         self.inner = self.inner.set_repository(input);
         self
     }
+    /// <p>The name of the repository that contains the requested package. </p>
+    pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_repository()
+    }
     /// <p>A format that specifies the type of the requested package.</p>
     pub fn format(mut self, input: crate::types::PackageFormat) -> Self {
         self.inner = self.inner.format(input);
@@ -155,6 +173,10 @@ impl DescribePackageFluentBuilder {
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::PackageFormat>) -> Self {
         self.inner = self.inner.set_format(input);
         self
+    }
+    /// <p>A format that specifies the type of the requested package.</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::PackageFormat> {
+        self.inner.get_format()
     }
     /// <p>The namespace of the requested package. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
@@ -178,6 +200,16 @@ impl DescribePackageFluentBuilder {
         self.inner = self.inner.set_namespace(input);
         self
     }
+    /// <p>The namespace of the requested package. The package component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. The namespace is required when requesting Maven packages. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
+    /// </ul>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_namespace()
+    }
     /// <p>The name of the requested package.</p>
     pub fn package(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.package(input.into());
@@ -187,5 +219,9 @@ impl DescribePackageFluentBuilder {
     pub fn set_package(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_package(input);
         self
+    }
+    /// <p>The name of the requested package.</p>
+    pub fn get_package(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_package()
     }
 }

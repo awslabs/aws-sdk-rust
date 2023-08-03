@@ -64,6 +64,12 @@ impl ConfigurationOverridesBuilder {
         self.application_configuration = input;
         self
     }
+    /// <p>The configurations for the application running by the job run. </p>
+    pub fn get_application_configuration(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Configuration>> {
+        &self.application_configuration
+    }
     /// <p>The configurations for monitoring.</p>
     pub fn monitoring_configuration(
         mut self,
@@ -79,6 +85,12 @@ impl ConfigurationOverridesBuilder {
     ) -> Self {
         self.monitoring_configuration = input;
         self
+    }
+    /// <p>The configurations for monitoring.</p>
+    pub fn get_monitoring_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::MonitoringConfiguration> {
+        &self.monitoring_configuration
     }
     /// Consumes the builder and constructs a [`ConfigurationOverrides`](crate::types::ConfigurationOverrides).
     pub fn build(self) -> crate::types::ConfigurationOverrides {

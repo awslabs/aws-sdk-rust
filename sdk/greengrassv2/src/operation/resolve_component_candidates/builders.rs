@@ -40,6 +40,10 @@ impl ResolveComponentCandidatesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ResolveComponentCandidates as a reference.
+    pub fn as_input(&self) -> &crate::operation::resolve_component_candidates::builders::ResolveComponentCandidatesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,10 @@ impl ResolveComponentCandidatesFluentBuilder {
         self.inner = self.inner.set_platform(input);
         self
     }
+    /// <p>The platform to use to resolve compatible components.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<crate::types::ComponentPlatform> {
+        self.inner.get_platform()
+    }
     /// Appends an item to `componentCandidates`.
     ///
     /// To override the contents of this collection use [`set_component_candidates`](Self::set_component_candidates).
@@ -149,5 +157,11 @@ impl ResolveComponentCandidatesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_component_candidates(input);
         self
+    }
+    /// <p>The list of components to resolve.</p>
+    pub fn get_component_candidates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentCandidate>> {
+        self.inner.get_component_candidates()
     }
 }

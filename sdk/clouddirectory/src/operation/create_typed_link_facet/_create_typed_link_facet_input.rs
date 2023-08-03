@@ -48,6 +48,10 @@ impl CreateTypedLinkFacetInputBuilder {
         self.schema_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
+    pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_arn
+    }
     /// <p> <code>Facet</code> structure that is associated with the typed link facet.</p>
     pub fn facet(mut self, input: crate::types::TypedLinkFacet) -> Self {
         self.facet = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl CreateTypedLinkFacetInputBuilder {
     pub fn set_facet(mut self, input: ::std::option::Option<crate::types::TypedLinkFacet>) -> Self {
         self.facet = input;
         self
+    }
+    /// <p> <code>Facet</code> structure that is associated with the typed link facet.</p>
+    pub fn get_facet(&self) -> &::std::option::Option<crate::types::TypedLinkFacet> {
+        &self.facet
     }
     /// Consumes the builder and constructs a [`CreateTypedLinkFacetInput`](crate::operation::create_typed_link_facet::CreateTypedLinkFacetInput).
     pub fn build(

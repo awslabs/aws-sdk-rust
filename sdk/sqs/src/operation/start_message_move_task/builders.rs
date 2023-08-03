@@ -42,6 +42,13 @@ impl StartMessageMoveTaskFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartMessageMoveTask as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_message_move_task::builders::StartMessageMoveTaskInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl StartMessageMoveTaskFluentBuilder {
         self.inner = self.inner.set_source_arn(input);
         self
     }
+    /// <p>The ARN of the queue that contains the messages to be moved to another queue. Currently, only dead-letter queue (DLQ) ARNs are accepted.</p>
+    pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_arn()
+    }
     /// <p>The ARN of the queue that receives the moved messages. You can use this field to specify the destination queue where you would like to redrive messages. If this field is left blank, the messages will be redriven back to their respective original source queues.</p>
     pub fn destination_arn(
         mut self,
@@ -148,6 +159,10 @@ impl StartMessageMoveTaskFluentBuilder {
         self.inner = self.inner.set_destination_arn(input);
         self
     }
+    /// <p>The ARN of the queue that receives the moved messages. You can use this field to specify the destination queue where you would like to redrive messages. If this field is left blank, the messages will be redriven back to their respective original source queues.</p>
+    pub fn get_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_arn()
+    }
     /// <p>The number of messages to be moved per second (the message movement rate). You can use this field to define a fixed message movement rate. The maximum value for messages per second is 500. If this field is left blank, the system will optimize the rate based on the queue message backlog size, which may vary throughout the duration of the message movement task.</p>
     pub fn max_number_of_messages_per_second(mut self, input: i32) -> Self {
         self.inner = self.inner.max_number_of_messages_per_second(input);
@@ -160,5 +175,9 @@ impl StartMessageMoveTaskFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_max_number_of_messages_per_second(input);
         self
+    }
+    /// <p>The number of messages to be moved per second (the message movement rate). You can use this field to define a fixed message movement rate. The maximum value for messages per second is 500. If this field is left blank, the system will optimize the rate based on the queue message backlog size, which may vary throughout the duration of the message movement task.</p>
+    pub fn get_max_number_of_messages_per_second(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_number_of_messages_per_second()
     }
 }

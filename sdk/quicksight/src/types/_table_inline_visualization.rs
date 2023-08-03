@@ -43,6 +43,10 @@ impl TableInlineVisualizationBuilder {
         self.data_bars = input;
         self
     }
+    /// <p>The configuration of the inline visualization of the data bars within a chart.</p>
+    pub fn get_data_bars(&self) -> &::std::option::Option<crate::types::DataBarsOptions> {
+        &self.data_bars
+    }
     /// Consumes the builder and constructs a [`TableInlineVisualization`](crate::types::TableInlineVisualization).
     pub fn build(self) -> crate::types::TableInlineVisualization {
         crate::types::TableInlineVisualization {

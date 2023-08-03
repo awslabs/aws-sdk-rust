@@ -80,6 +80,10 @@ impl SyncJobSummaryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The SyncJob summary ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The ID of the workspace that contains the sync job.</p>
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl SyncJobSummaryBuilder {
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workspace_id = input;
         self
+    }
+    /// <p>The ID of the workspace that contains the sync job.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
     }
     /// <p>The sync source.</p>
     pub fn sync_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -100,6 +108,10 @@ impl SyncJobSummaryBuilder {
         self.sync_source = input;
         self
     }
+    /// <p>The sync source.</p>
+    pub fn get_sync_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sync_source
+    }
     /// <p>The SyncJob summaries status.</p>
     pub fn status(mut self, input: crate::types::SyncJobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -109,6 +121,10 @@ impl SyncJobSummaryBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::SyncJobStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The SyncJob summaries status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::SyncJobStatus> {
+        &self.status
     }
     /// <p>The creation date and time.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -123,6 +139,10 @@ impl SyncJobSummaryBuilder {
         self.creation_date_time = input;
         self
     }
+    /// <p>The creation date and time.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
+    }
     /// <p>The update date and time.</p>
     pub fn update_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_date_time = ::std::option::Option::Some(input);
@@ -135,6 +155,10 @@ impl SyncJobSummaryBuilder {
     ) -> Self {
         self.update_date_time = input;
         self
+    }
+    /// <p>The update date and time.</p>
+    pub fn get_update_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_date_time
     }
     /// Consumes the builder and constructs a [`SyncJobSummary`](crate::types::SyncJobSummary).
     pub fn build(self) -> crate::types::SyncJobSummary {

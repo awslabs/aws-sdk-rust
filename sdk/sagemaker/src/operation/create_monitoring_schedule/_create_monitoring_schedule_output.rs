@@ -54,6 +54,10 @@ impl CreateMonitoringScheduleOutputBuilder {
         self.monitoring_schedule_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the monitoring schedule.</p>
+    pub fn get_monitoring_schedule_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitoring_schedule_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

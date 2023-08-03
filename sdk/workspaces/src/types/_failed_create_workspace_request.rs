@@ -59,6 +59,10 @@ impl FailedCreateWorkspaceRequestBuilder {
         self.workspace_request = input;
         self
     }
+    /// <p>Information about the WorkSpace.</p>
+    pub fn get_workspace_request(&self) -> &::std::option::Option<crate::types::WorkspaceRequest> {
+        &self.workspace_request
+    }
     /// <p>The error code that is returned if the WorkSpace cannot be created.</p>
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
@@ -68,6 +72,10 @@ impl FailedCreateWorkspaceRequestBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>The error code that is returned if the WorkSpace cannot be created.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
     }
     /// <p>The text of the error message that is returned if the WorkSpace cannot be created.</p>
     pub fn error_message(
@@ -84,6 +92,10 @@ impl FailedCreateWorkspaceRequestBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>The text of the error message that is returned if the WorkSpace cannot be created.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`FailedCreateWorkspaceRequest`](crate::types::FailedCreateWorkspaceRequest).
     pub fn build(self) -> crate::types::FailedCreateWorkspaceRequest {

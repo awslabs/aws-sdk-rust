@@ -39,6 +39,10 @@ impl DescribeTextTranslationJobInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The identifier that Amazon Translate generated for the job. The <code>StartTextTranslationJob</code> operation returns this identifier in its response.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// Consumes the builder and constructs a [`DescribeTextTranslationJobInput`](crate::operation::describe_text_translation_job::DescribeTextTranslationJobInput).
     pub fn build(
         self,

@@ -54,6 +54,12 @@ impl BatchGetDeploymentsInputBuilder {
         self.deployment_ids = input;
         self
     }
+    /// <p> A list of deployment IDs, separated by spaces. The maximum number of deployment IDs you can specify is 25.</p>
+    pub fn get_deployment_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.deployment_ids
+    }
     /// Consumes the builder and constructs a [`BatchGetDeploymentsInput`](crate::operation::batch_get_deployments::BatchGetDeploymentsInput).
     pub fn build(
         self,

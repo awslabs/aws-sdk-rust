@@ -43,6 +43,10 @@ impl S3DestinationAccessControlBuilder {
         self.canned_acl = input;
         self
     }
+    /// Choose an Amazon S3 canned ACL for MediaConvert to apply to this output.
+    pub fn get_canned_acl(&self) -> &::std::option::Option<crate::types::S3ObjectCannedAcl> {
+        &self.canned_acl
+    }
     /// Consumes the builder and constructs a [`S3DestinationAccessControl`](crate::types::S3DestinationAccessControl).
     pub fn build(self) -> crate::types::S3DestinationAccessControl {
         crate::types::S3DestinationAccessControl {

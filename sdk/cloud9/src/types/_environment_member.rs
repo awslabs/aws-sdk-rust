@@ -95,6 +95,15 @@ impl EnvironmentMemberBuilder {
         self.permissions = input;
         self
     }
+    /// <p>The type of environment member permissions associated with this environment member. Available values include:</p>
+    /// <ul>
+    /// <li> <p> <code>owner</code>: Owns the environment.</p> </li>
+    /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
+    /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
+    /// </ul>
+    pub fn get_permissions(&self) -> &::std::option::Option<crate::types::Permissions> {
+        &self.permissions
+    }
     /// <p>The user ID in Identity and Access Management (IAM) of the environment member.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
@@ -105,6 +114,10 @@ impl EnvironmentMemberBuilder {
         self.user_id = input;
         self
     }
+    /// <p>The user ID in Identity and Access Management (IAM) of the environment member.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the environment member.</p>
     pub fn user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_arn = ::std::option::Option::Some(input.into());
@@ -114,6 +127,10 @@ impl EnvironmentMemberBuilder {
     pub fn set_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the environment member.</p>
+    pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_arn
     }
     /// <p>The ID of the environment for the environment member.</p>
     pub fn environment_id(
@@ -131,6 +148,10 @@ impl EnvironmentMemberBuilder {
         self.environment_id = input;
         self
     }
+    /// <p>The ID of the environment for the environment member.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
+    }
     /// <p>The time, expressed in epoch time format, when the environment member last opened the environment.</p>
     pub fn last_access(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_access = ::std::option::Option::Some(input);
@@ -143,6 +164,10 @@ impl EnvironmentMemberBuilder {
     ) -> Self {
         self.last_access = input;
         self
+    }
+    /// <p>The time, expressed in epoch time format, when the environment member last opened the environment.</p>
+    pub fn get_last_access(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_access
     }
     /// Consumes the builder and constructs a [`EnvironmentMember`](crate::types::EnvironmentMember).
     pub fn build(self) -> crate::types::EnvironmentMember {

@@ -72,6 +72,10 @@ impl TopicRuleListItemBuilder {
         self.rule_arn = input;
         self
     }
+    /// <p>The rule ARN.</p>
+    pub fn get_rule_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_arn
+    }
     /// <p>The name of the rule.</p>
     pub fn rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_name = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl TopicRuleListItemBuilder {
     pub fn set_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_name = input;
         self
+    }
+    /// <p>The name of the rule.</p>
+    pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_name
     }
     /// <p>The pattern for the topic names that apply.</p>
     pub fn topic_pattern(
@@ -98,6 +106,10 @@ impl TopicRuleListItemBuilder {
         self.topic_pattern = input;
         self
     }
+    /// <p>The pattern for the topic names that apply.</p>
+    pub fn get_topic_pattern(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_pattern
+    }
     /// <p>The date and time the rule was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -111,6 +123,10 @@ impl TopicRuleListItemBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The date and time the rule was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>Specifies whether the rule is disabled.</p>
     pub fn rule_disabled(mut self, input: bool) -> Self {
         self.rule_disabled = ::std::option::Option::Some(input);
@@ -120,6 +136,10 @@ impl TopicRuleListItemBuilder {
     pub fn set_rule_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.rule_disabled = input;
         self
+    }
+    /// <p>Specifies whether the rule is disabled.</p>
+    pub fn get_rule_disabled(&self) -> &::std::option::Option<bool> {
+        &self.rule_disabled
     }
     /// Consumes the builder and constructs a [`TopicRuleListItem`](crate::types::TopicRuleListItem).
     pub fn build(self) -> crate::types::TopicRuleListItem {

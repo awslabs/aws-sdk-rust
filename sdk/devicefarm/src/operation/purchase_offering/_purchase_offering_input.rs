@@ -57,6 +57,10 @@ impl PurchaseOfferingInputBuilder {
         self.offering_id = input;
         self
     }
+    /// <p>The ID of the offering.</p>
+    pub fn get_offering_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.offering_id
+    }
     /// <p>The number of device slots to purchase in an offering request.</p>
     pub fn quantity(mut self, input: i32) -> Self {
         self.quantity = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl PurchaseOfferingInputBuilder {
     pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.quantity = input;
         self
+    }
+    /// <p>The number of device slots to purchase in an offering request.</p>
+    pub fn get_quantity(&self) -> &::std::option::Option<i32> {
+        &self.quantity
     }
     /// <p>The ID of the offering promotion to be applied to the purchase.</p>
     pub fn offering_promotion_id(
@@ -82,6 +90,10 @@ impl PurchaseOfferingInputBuilder {
     ) -> Self {
         self.offering_promotion_id = input;
         self
+    }
+    /// <p>The ID of the offering promotion to be applied to the purchase.</p>
+    pub fn get_offering_promotion_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.offering_promotion_id
     }
     /// Consumes the builder and constructs a [`PurchaseOfferingInput`](crate::operation::purchase_offering::PurchaseOfferingInput).
     pub fn build(

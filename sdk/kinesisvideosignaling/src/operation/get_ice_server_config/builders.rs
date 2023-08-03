@@ -38,6 +38,12 @@ impl GetIceServerConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetIceServerConfig as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_ice_server_config::builders::GetIceServerConfigInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +134,10 @@ impl GetIceServerConfigFluentBuilder {
         self.inner = self.inner.set_channel_arn(input);
         self
     }
+    /// <p>The ARN of the signaling channel to be used for the peer-to-peer connection between configured peers. </p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_arn()
+    }
     /// <p>Unique identifier for the viewer. Must be unique within the signaling channel.</p>
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_id(input.into());
@@ -137,6 +147,10 @@ impl GetIceServerConfigFluentBuilder {
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_id(input);
         self
+    }
+    /// <p>Unique identifier for the viewer. Must be unique within the signaling channel.</p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_id()
     }
     /// <p>Specifies the desired service. Currently, <code>TURN</code> is the only valid value.</p>
     pub fn service(mut self, input: crate::types::Service) -> Self {
@@ -148,6 +162,10 @@ impl GetIceServerConfigFluentBuilder {
         self.inner = self.inner.set_service(input);
         self
     }
+    /// <p>Specifies the desired service. Currently, <code>TURN</code> is the only valid value.</p>
+    pub fn get_service(&self) -> &::std::option::Option<crate::types::Service> {
+        self.inner.get_service()
+    }
     /// <p>An optional user ID to be associated with the credentials.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.username(input.into());
@@ -157,5 +175,9 @@ impl GetIceServerConfigFluentBuilder {
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_username(input);
         self
+    }
+    /// <p>An optional user ID to be associated with the credentials.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_username()
     }
 }

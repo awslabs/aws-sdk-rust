@@ -89,6 +89,10 @@ impl DirectoryConfigBuilder {
         self.directory_name = input;
         self
     }
+    /// <p>The fully qualified name of the directory (for example, corp.example.com).</p>
+    pub fn get_directory_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_name
+    }
     /// Appends an item to `organizational_unit_distinguished_names`.
     ///
     /// To override the contents of this collection use [`set_organizational_unit_distinguished_names`](Self::set_organizational_unit_distinguished_names).
@@ -113,6 +117,12 @@ impl DirectoryConfigBuilder {
         self.organizational_unit_distinguished_names = input;
         self
     }
+    /// <p>The distinguished names of the organizational units for computer accounts.</p>
+    pub fn get_organizational_unit_distinguished_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.organizational_unit_distinguished_names
+    }
     /// <p>The credentials for the service account used by the fleet or image builder to connect to the directory.</p>
     pub fn service_account_credentials(
         mut self,
@@ -129,6 +139,12 @@ impl DirectoryConfigBuilder {
         self.service_account_credentials = input;
         self
     }
+    /// <p>The credentials for the service account used by the fleet or image builder to connect to the directory.</p>
+    pub fn get_service_account_credentials(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServiceAccountCredentials> {
+        &self.service_account_credentials
+    }
     /// <p>The time the directory configuration was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
@@ -141,6 +157,10 @@ impl DirectoryConfigBuilder {
     ) -> Self {
         self.created_time = input;
         self
+    }
+    /// <p>The time the directory configuration was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
     }
     /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory domain-joined streaming instances. Fallback is turned on by default when certificate-based authentication is <b>Enabled</b> . Fallback allows users to log in using their AD domain password if certificate-based authentication is unsuccessful, or to unlock a desktop lock screen. <b>Enabled_no_directory_login_fallback</b> enables certificate-based authentication, but does not allow users to log in using their AD domain password. Users will be disconnected to re-authenticate using certificates.</p>
     pub fn certificate_based_auth_properties(
@@ -157,6 +177,12 @@ impl DirectoryConfigBuilder {
     ) -> Self {
         self.certificate_based_auth_properties = input;
         self
+    }
+    /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory domain-joined streaming instances. Fallback is turned on by default when certificate-based authentication is <b>Enabled</b> . Fallback allows users to log in using their AD domain password if certificate-based authentication is unsuccessful, or to unlock a desktop lock screen. <b>Enabled_no_directory_login_fallback</b> enables certificate-based authentication, but does not allow users to log in using their AD domain password. Users will be disconnected to re-authenticate using certificates.</p>
+    pub fn get_certificate_based_auth_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::CertificateBasedAuthProperties> {
+        &self.certificate_based_auth_properties
     }
     /// Consumes the builder and constructs a [`DirectoryConfig`](crate::types::DirectoryConfig).
     pub fn build(self) -> crate::types::DirectoryConfig {

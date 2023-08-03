@@ -51,6 +51,10 @@ impl DependentServiceBuilder {
         self.service_name = input;
         self
     }
+    /// <p>The name of the dependent service.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<crate::types::ServiceName> {
+        &self.service_name
+    }
     /// <p>The version of the dependent service.</p>
     pub fn service_version(mut self, input: crate::types::ServiceVersion) -> Self {
         self.service_version = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl DependentServiceBuilder {
     ) -> Self {
         self.service_version = input;
         self
+    }
+    /// <p>The version of the dependent service.</p>
+    pub fn get_service_version(&self) -> &::std::option::Option<crate::types::ServiceVersion> {
+        &self.service_version
     }
     /// Consumes the builder and constructs a [`DependentService`](crate::types::DependentService).
     pub fn build(self) -> crate::types::DependentService {

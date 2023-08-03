@@ -36,6 +36,10 @@ impl DescribeEdgeDeploymentPlanFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeEdgeDeploymentPlan as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_edge_deployment_plan::builders::DescribeEdgeDeploymentPlanInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl DescribeEdgeDeploymentPlanFluentBuilder {
         self.inner = self.inner.set_edge_deployment_plan_name(input);
         self
     }
+    /// <p>The name of the deployment plan to describe.</p>
+    pub fn get_edge_deployment_plan_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_edge_deployment_plan_name()
+    }
     /// <p>If the edge deployment plan has enough stages to require tokening, then this is the response from the last list of stages returned.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -142,6 +150,10 @@ impl DescribeEdgeDeploymentPlanFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>If the edge deployment plan has enough stages to require tokening, then this is the response from the last list of stages returned.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to select (50 by default).</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -151,5 +163,9 @@ impl DescribeEdgeDeploymentPlanFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to select (50 by default).</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

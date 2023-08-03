@@ -49,6 +49,10 @@ impl ListConfigurationSetsInputBuilder {
         self.next_token = input;
         self
     }
+    /// A token returned from a previous call to the API that indicates the position in the list of results.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Used to specify the number of items that should be returned in the response.
     pub fn page_size(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.page_size = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl ListConfigurationSetsInputBuilder {
     pub fn set_page_size(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.page_size = input;
         self
+    }
+    /// Used to specify the number of items that should be returned in the response.
+    pub fn get_page_size(&self) -> &::std::option::Option<::std::string::String> {
+        &self.page_size
     }
     /// Consumes the builder and constructs a [`ListConfigurationSetsInput`](crate::operation::list_configuration_sets::ListConfigurationSetsInput).
     pub fn build(

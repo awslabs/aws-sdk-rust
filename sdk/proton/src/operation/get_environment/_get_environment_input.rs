@@ -39,6 +39,10 @@ impl GetEnvironmentInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the environment that you want to get the detailed data for.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`GetEnvironmentInput`](crate::operation::get_environment::GetEnvironmentInput).
     pub fn build(
         self,

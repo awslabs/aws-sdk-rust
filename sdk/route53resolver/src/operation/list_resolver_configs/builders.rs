@@ -36,6 +36,12 @@ impl ListResolverConfigsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListResolverConfigs as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_resolver_configs::builders::ListResolverConfigsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl ListResolverConfigsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of Resolver configurations that you want to return in the response to a <code>ListResolverConfigs</code> request. If you don't specify a value for <code>MaxResults</code>, up to 100 Resolver configurations are returned.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>(Optional) If the current Amazon Web Services account has more than <code>MaxResults</code> Resolver configurations, use <code>NextToken</code> to get the second and subsequent pages of results.</p>
     /// <p>For the first <code>ListResolverConfigs</code> request, omit this value.</p>
     /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>
@@ -150,5 +160,11 @@ impl ListResolverConfigsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>(Optional) If the current Amazon Web Services account has more than <code>MaxResults</code> Resolver configurations, use <code>NextToken</code> to get the second and subsequent pages of results.</p>
+    /// <p>For the first <code>ListResolverConfigs</code> request, omit this value.</p>
+    /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

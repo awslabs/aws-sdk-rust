@@ -51,6 +51,12 @@ impl LoRaWanUpdateGatewayTaskEntryBuilder {
         self.current_version = input;
         self
     }
+    /// <p>The version of the gateways that should receive the update.</p>
+    pub fn get_current_version(
+        &self,
+    ) -> &::std::option::Option<crate::types::LoRaWanGatewayVersion> {
+        &self.current_version
+    }
     /// <p>The firmware version to update the gateway to.</p>
     pub fn update_version(mut self, input: crate::types::LoRaWanGatewayVersion) -> Self {
         self.update_version = ::std::option::Option::Some(input);
@@ -63,6 +69,12 @@ impl LoRaWanUpdateGatewayTaskEntryBuilder {
     ) -> Self {
         self.update_version = input;
         self
+    }
+    /// <p>The firmware version to update the gateway to.</p>
+    pub fn get_update_version(
+        &self,
+    ) -> &::std::option::Option<crate::types::LoRaWanGatewayVersion> {
+        &self.update_version
     }
     /// Consumes the builder and constructs a [`LoRaWanUpdateGatewayTaskEntry`](crate::types::LoRaWanUpdateGatewayTaskEntry).
     pub fn build(self) -> crate::types::LoRaWanUpdateGatewayTaskEntry {

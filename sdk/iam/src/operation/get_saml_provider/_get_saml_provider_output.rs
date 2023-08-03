@@ -78,6 +78,10 @@ impl GetSamlProviderOutputBuilder {
         self.saml_metadata_document = input;
         self
     }
+    /// <p>The XML metadata document that includes information about an identity provider.</p>
+    pub fn get_saml_metadata_document(&self) -> &::std::option::Option<::std::string::String> {
+        &self.saml_metadata_document
+    }
     /// <p>The date and time when the SAML provider was created.</p>
     pub fn create_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_date = ::std::option::Option::Some(input);
@@ -91,6 +95,10 @@ impl GetSamlProviderOutputBuilder {
         self.create_date = input;
         self
     }
+    /// <p>The date and time when the SAML provider was created.</p>
+    pub fn get_create_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_date
+    }
     /// <p>The expiration date and time for the SAML provider.</p>
     pub fn valid_until(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.valid_until = ::std::option::Option::Some(input);
@@ -103,6 +111,10 @@ impl GetSamlProviderOutputBuilder {
     ) -> Self {
         self.valid_until = input;
         self
+    }
+    /// <p>The expiration date and time for the SAML provider.</p>
+    pub fn get_valid_until(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.valid_until
     }
     /// Appends an item to `tags`.
     ///
@@ -122,6 +134,10 @@ impl GetSamlProviderOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of tags that are attached to the specified IAM SAML provider. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

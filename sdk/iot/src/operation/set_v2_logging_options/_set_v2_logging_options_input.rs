@@ -57,6 +57,10 @@ impl SetV2LoggingOptionsInputBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The ARN of the role that allows IoT to write to Cloudwatch logs.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>The default logging level.</p>
     pub fn default_log_level(mut self, input: crate::types::LogLevel) -> Self {
         self.default_log_level = ::std::option::Option::Some(input);
@@ -70,6 +74,10 @@ impl SetV2LoggingOptionsInputBuilder {
         self.default_log_level = input;
         self
     }
+    /// <p>The default logging level.</p>
+    pub fn get_default_log_level(&self) -> &::std::option::Option<crate::types::LogLevel> {
+        &self.default_log_level
+    }
     /// <p>If true all logs are disabled. The default is false.</p>
     pub fn disable_all_logs(mut self, input: bool) -> Self {
         self.disable_all_logs = ::std::option::Option::Some(input);
@@ -79,6 +87,10 @@ impl SetV2LoggingOptionsInputBuilder {
     pub fn set_disable_all_logs(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disable_all_logs = input;
         self
+    }
+    /// <p>If true all logs are disabled. The default is false.</p>
+    pub fn get_disable_all_logs(&self) -> &::std::option::Option<bool> {
+        &self.disable_all_logs
     }
     /// Consumes the builder and constructs a [`SetV2LoggingOptionsInput`](crate::operation::set_v2_logging_options::SetV2LoggingOptionsInput).
     pub fn build(

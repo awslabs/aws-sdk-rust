@@ -36,6 +36,13 @@ impl DisconnectParticipantFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisconnectParticipant as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::disconnect_participant::builders::DisconnectParticipantInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl DisconnectParticipantFluentBuilder {
         self.inner = self.inner.set_stage_arn(input);
         self
     }
+    /// <p>ARN of the stage to which the participant is attached.</p>
+    pub fn get_stage_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stage_arn()
+    }
     /// <p>Identifier of the participant to be disconnected. This is assigned by IVS and returned by <code>CreateParticipantToken</code>.</p>
     pub fn participant_id(
         mut self,
@@ -142,6 +153,10 @@ impl DisconnectParticipantFluentBuilder {
         self.inner = self.inner.set_participant_id(input);
         self
     }
+    /// <p>Identifier of the participant to be disconnected. This is assigned by IVS and returned by <code>CreateParticipantToken</code>.</p>
+    pub fn get_participant_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_participant_id()
+    }
     /// <p>Description of why this participant is being disconnected.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reason(input.into());
@@ -151,5 +166,9 @@ impl DisconnectParticipantFluentBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reason(input);
         self
+    }
+    /// <p>Description of why this participant is being disconnected.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reason()
     }
 }

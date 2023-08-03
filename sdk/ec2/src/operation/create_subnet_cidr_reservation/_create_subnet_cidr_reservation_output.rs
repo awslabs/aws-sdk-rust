@@ -51,6 +51,12 @@ impl CreateSubnetCidrReservationOutputBuilder {
         self.subnet_cidr_reservation = input;
         self
     }
+    /// <p>Information about the created subnet CIDR reservation.</p>
+    pub fn get_subnet_cidr_reservation(
+        &self,
+    ) -> &::std::option::Option<crate::types::SubnetCidrReservation> {
+        &self.subnet_cidr_reservation
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

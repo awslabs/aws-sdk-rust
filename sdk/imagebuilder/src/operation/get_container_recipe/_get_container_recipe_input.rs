@@ -46,6 +46,10 @@ impl GetContainerRecipeInputBuilder {
         self.container_recipe_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the container recipe to retrieve.</p>
+    pub fn get_container_recipe_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.container_recipe_arn
+    }
     /// Consumes the builder and constructs a [`GetContainerRecipeInput`](crate::operation::get_container_recipe::GetContainerRecipeInput).
     pub fn build(
         self,

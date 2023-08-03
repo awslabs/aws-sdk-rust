@@ -46,6 +46,10 @@ impl DeleteAuthPolicyInputBuilder {
         self.resource_identifier = input;
         self
     }
+    /// <p>The ID or Amazon Resource Name (ARN) of the resource.</p>
+    pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_identifier
+    }
     /// Consumes the builder and constructs a [`DeleteAuthPolicyInput`](crate::operation::delete_auth_policy::DeleteAuthPolicyInput).
     pub fn build(
         self,

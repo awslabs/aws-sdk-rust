@@ -36,6 +36,12 @@ impl CreateTriggerFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateTrigger as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_trigger::builders::CreateTriggerInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl CreateTriggerFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the trigger.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The name of the workflow associated with the trigger.</p>
     pub fn workflow_name(
         mut self,
@@ -134,6 +144,10 @@ impl CreateTriggerFluentBuilder {
         self.inner = self.inner.set_workflow_name(input);
         self
     }
+    /// <p>The name of the workflow associated with the trigger.</p>
+    pub fn get_workflow_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workflow_name()
+    }
     /// <p>The type of the new trigger.</p>
     pub fn r#type(mut self, input: crate::types::TriggerType) -> Self {
         self.inner = self.inner.r#type(input);
@@ -143,6 +157,10 @@ impl CreateTriggerFluentBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::TriggerType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
+    }
+    /// <p>The type of the new trigger.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::TriggerType> {
+        self.inner.get_type()
     }
     /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
     /// <p>This field is required when the trigger type is SCHEDULED.</p>
@@ -156,6 +174,11 @@ impl CreateTriggerFluentBuilder {
         self.inner = self.inner.set_schedule(input);
         self
     }
+    /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
+    /// <p>This field is required when the trigger type is SCHEDULED.</p>
+    pub fn get_schedule(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_schedule()
+    }
     /// <p>A predicate to specify when the new trigger should fire.</p>
     /// <p>This field is required when the trigger type is <code>CONDITIONAL</code>.</p>
     pub fn predicate(mut self, input: crate::types::Predicate) -> Self {
@@ -167,6 +190,11 @@ impl CreateTriggerFluentBuilder {
     pub fn set_predicate(mut self, input: ::std::option::Option<crate::types::Predicate>) -> Self {
         self.inner = self.inner.set_predicate(input);
         self
+    }
+    /// <p>A predicate to specify when the new trigger should fire.</p>
+    /// <p>This field is required when the trigger type is <code>CONDITIONAL</code>.</p>
+    pub fn get_predicate(&self) -> &::std::option::Option<crate::types::Predicate> {
+        self.inner.get_predicate()
     }
     /// Appends an item to `Actions`.
     ///
@@ -185,6 +213,10 @@ impl CreateTriggerFluentBuilder {
         self.inner = self.inner.set_actions(input);
         self
     }
+    /// <p>The actions initiated by this trigger when it fires.</p>
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Action>> {
+        self.inner.get_actions()
+    }
     /// <p>A description of the new trigger.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -195,6 +227,10 @@ impl CreateTriggerFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>A description of the new trigger.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>Set to <code>true</code> to start <code>SCHEDULED</code> and <code>CONDITIONAL</code> triggers when created. True is not supported for <code>ON_DEMAND</code> triggers.</p>
     pub fn start_on_creation(mut self, input: bool) -> Self {
         self.inner = self.inner.start_on_creation(input);
@@ -204,6 +240,10 @@ impl CreateTriggerFluentBuilder {
     pub fn set_start_on_creation(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_start_on_creation(input);
         self
+    }
+    /// <p>Set to <code>true</code> to start <code>SCHEDULED</code> and <code>CONDITIONAL</code> triggers when created. True is not supported for <code>ON_DEMAND</code> triggers.</p>
+    pub fn get_start_on_creation(&self) -> &::std::option::Option<bool> {
+        self.inner.get_start_on_creation()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -228,6 +268,14 @@ impl CreateTriggerFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tags to use with this trigger. You may use tags to limit access to the trigger. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide. </p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
     pub fn event_batching_condition(mut self, input: crate::types::EventBatchingCondition) -> Self {
         self.inner = self.inner.event_batching_condition(input);
@@ -240,5 +288,11 @@ impl CreateTriggerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_event_batching_condition(input);
         self
+    }
+    /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
+    pub fn get_event_batching_condition(
+        &self,
+    ) -> &::std::option::Option<crate::types::EventBatchingCondition> {
+        self.inner.get_event_batching_condition()
     }
 }

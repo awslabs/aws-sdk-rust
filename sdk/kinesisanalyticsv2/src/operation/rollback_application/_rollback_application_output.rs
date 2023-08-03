@@ -51,6 +51,12 @@ impl RollbackApplicationOutputBuilder {
         self.application_detail = input;
         self
     }
+    /// <p>Describes the application, including the application Amazon Resource Name (ARN), status, latest version, and input and output configurations.</p>
+    pub fn get_application_detail(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationDetail> {
+        &self.application_detail
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -58,6 +58,10 @@ impl LayersListItemBuilder {
         self.layer_name = input;
         self
     }
+    /// <p>The name of the layer.</p>
+    pub fn get_layer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.layer_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the function layer.</p>
     pub fn layer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.layer_arn = ::std::option::Option::Some(input.into());
@@ -67,6 +71,10 @@ impl LayersListItemBuilder {
     pub fn set_layer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.layer_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the function layer.</p>
+    pub fn get_layer_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.layer_arn
     }
     /// <p>The newest version of the layer.</p>
     pub fn latest_matching_version(mut self, input: crate::types::LayerVersionsListItem) -> Self {
@@ -80,6 +88,12 @@ impl LayersListItemBuilder {
     ) -> Self {
         self.latest_matching_version = input;
         self
+    }
+    /// <p>The newest version of the layer.</p>
+    pub fn get_latest_matching_version(
+        &self,
+    ) -> &::std::option::Option<crate::types::LayerVersionsListItem> {
+        &self.latest_matching_version
     }
     /// Consumes the builder and constructs a [`LayersListItem`](crate::types::LayersListItem).
     pub fn build(self) -> crate::types::LayersListItem {

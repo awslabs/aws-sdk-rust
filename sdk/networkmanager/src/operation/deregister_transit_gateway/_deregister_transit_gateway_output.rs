@@ -58,6 +58,12 @@ impl DeregisterTransitGatewayOutputBuilder {
         self.transit_gateway_registration = input;
         self
     }
+    /// <p>The transit gateway registration information.</p>
+    pub fn get_transit_gateway_registration(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransitGatewayRegistration> {
+        &self.transit_gateway_registration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

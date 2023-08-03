@@ -64,6 +64,10 @@ impl DeregisterTargetsOutputBuilder {
         self.successful = input;
         self
     }
+    /// <p>The targets that were successfully deregistered.</p>
+    pub fn get_successful(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Target>> {
+        &self.successful
+    }
     /// Appends an item to `unsuccessful`.
     ///
     /// To override the contents of this collection use [`set_unsuccessful`](Self::set_unsuccessful).
@@ -82,6 +86,12 @@ impl DeregisterTargetsOutputBuilder {
     ) -> Self {
         self.unsuccessful = input;
         self
+    }
+    /// <p>The targets that the operation couldn't deregister.</p>
+    pub fn get_unsuccessful(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetFailure>> {
+        &self.unsuccessful
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

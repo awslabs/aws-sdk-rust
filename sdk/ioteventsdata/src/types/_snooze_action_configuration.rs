@@ -48,6 +48,10 @@ impl SnoozeActionConfigurationBuilder {
         self.snooze_duration = input;
         self
     }
+    /// <p>The snooze time in seconds. The alarm automatically changes to the <code>NORMAL</code> state after this duration.</p>
+    pub fn get_snooze_duration(&self) -> &::std::option::Option<i32> {
+        &self.snooze_duration
+    }
     /// <p>The note that you can leave when you snooze the alarm.</p>
     pub fn note(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.note = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl SnoozeActionConfigurationBuilder {
     pub fn set_note(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.note = input;
         self
+    }
+    /// <p>The note that you can leave when you snooze the alarm.</p>
+    pub fn get_note(&self) -> &::std::option::Option<::std::string::String> {
+        &self.note
     }
     /// Consumes the builder and constructs a [`SnoozeActionConfiguration`](crate::types::SnoozeActionConfiguration).
     pub fn build(self) -> crate::types::SnoozeActionConfiguration {

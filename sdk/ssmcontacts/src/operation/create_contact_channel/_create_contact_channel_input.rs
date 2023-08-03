@@ -100,6 +100,10 @@ impl CreateContactChannelInputBuilder {
         self.contact_id = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the contact you are adding the contact channel to.</p>
+    pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_id
+    }
     /// <p>The name of the contact channel.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -109,6 +113,10 @@ impl CreateContactChannelInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the contact channel.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Incident Manager supports three types of contact channels:</p>
     /// <ul>
@@ -129,6 +137,15 @@ impl CreateContactChannelInputBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ChannelType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>Incident Manager supports three types of contact channels:</p>
+    /// <ul>
+    /// <li> <p> <code>SMS</code> </p> </li>
+    /// <li> <p> <code>VOICE</code> </p> </li>
+    /// <li> <p> <code>EMAIL</code> </p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ChannelType> {
+        &self.r#type
     }
     /// <p>The details that Incident Manager uses when trying to engage the contact channel. The format is dependent on the type of the contact channel. The following are the expected formats:</p>
     /// <ul>
@@ -153,6 +170,17 @@ impl CreateContactChannelInputBuilder {
         self.delivery_address = input;
         self
     }
+    /// <p>The details that Incident Manager uses when trying to engage the contact channel. The format is dependent on the type of the contact channel. The following are the expected formats:</p>
+    /// <ul>
+    /// <li> <p>SMS - '+' followed by the country code and phone number</p> </li>
+    /// <li> <p>VOICE - '+' followed by the country code and phone number</p> </li>
+    /// <li> <p>EMAIL - any standard email format</p> </li>
+    /// </ul>
+    pub fn get_delivery_address(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContactChannelAddress> {
+        &self.delivery_address
+    }
     /// <p>If you want to activate the channel at a later time, you can choose to defer activation. Incident Manager can't engage your contact channel until it has been activated.</p>
     pub fn defer_activation(mut self, input: bool) -> Self {
         self.defer_activation = ::std::option::Option::Some(input);
@@ -162,6 +190,10 @@ impl CreateContactChannelInputBuilder {
     pub fn set_defer_activation(mut self, input: ::std::option::Option<bool>) -> Self {
         self.defer_activation = input;
         self
+    }
+    /// <p>If you want to activate the channel at a later time, you can choose to defer activation. Incident Manager can't engage your contact channel until it has been activated.</p>
+    pub fn get_defer_activation(&self) -> &::std::option::Option<bool> {
+        &self.defer_activation
     }
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub fn idempotency_token(
@@ -178,6 +210,10 @@ impl CreateContactChannelInputBuilder {
     ) -> Self {
         self.idempotency_token = input;
         self
+    }
+    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+    pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.idempotency_token
     }
     /// Consumes the builder and constructs a [`CreateContactChannelInput`](crate::operation::create_contact_channel::CreateContactChannelInput).
     pub fn build(

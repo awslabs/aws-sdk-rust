@@ -85,6 +85,14 @@ impl ListStackInstancesForProvisionedProductInputBuilder {
         self.accept_language = input;
         self
     }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accept_language
+    }
     /// <p>The identifier of the provisioned product.</p>
     pub fn provisioned_product_id(
         mut self,
@@ -101,6 +109,10 @@ impl ListStackInstancesForProvisionedProductInputBuilder {
         self.provisioned_product_id = input;
         self
     }
+    /// <p>The identifier of the provisioned product.</p>
+    pub fn get_provisioned_product_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provisioned_product_id
+    }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.page_token = ::std::option::Option::Some(input.into());
@@ -111,6 +123,10 @@ impl ListStackInstancesForProvisionedProductInputBuilder {
         self.page_token = input;
         self
     }
+    /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.page_token
+    }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn page_size(mut self, input: i32) -> Self {
         self.page_size = ::std::option::Option::Some(input);
@@ -120,6 +136,10 @@ impl ListStackInstancesForProvisionedProductInputBuilder {
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.page_size = input;
         self
+    }
+    /// <p>The maximum number of items to return with this call.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        &self.page_size
     }
     /// Consumes the builder and constructs a [`ListStackInstancesForProvisionedProductInput`](crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductInput, ::aws_smithy_http::operation::error::BuildError>{

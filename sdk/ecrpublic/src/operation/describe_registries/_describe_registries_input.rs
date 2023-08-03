@@ -56,6 +56,12 @@ impl DescribeRegistriesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The <code>nextToken</code> value that's returned from a previous paginated <code>DescribeRegistries</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. If there are no more results to return, this value is <code>null</code>.</p> <note>
+    /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// </note>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of repository results that's returned by <code>DescribeRegistries</code> in paginated output. When this parameter is used, <code>DescribeRegistries</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeRegistries</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter isn't used, then <code>DescribeRegistries</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -65,6 +71,10 @@ impl DescribeRegistriesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of repository results that's returned by <code>DescribeRegistries</code> in paginated output. When this parameter is used, <code>DescribeRegistries</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeRegistries</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter isn't used, then <code>DescribeRegistries</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeRegistriesInput`](crate::operation::describe_registries::DescribeRegistriesInput).
     pub fn build(

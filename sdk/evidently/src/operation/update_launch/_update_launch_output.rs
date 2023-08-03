@@ -46,6 +46,10 @@ impl UpdateLaunchOutputBuilder {
         self.launch = input;
         self
     }
+    /// <p>A structure that contains the new configuration of the launch that was updated.</p>
+    pub fn get_launch(&self) -> &::std::option::Option<crate::types::Launch> {
+        &self.launch
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

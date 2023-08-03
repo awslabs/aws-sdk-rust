@@ -48,6 +48,10 @@ impl ActiveContextTimeToLiveBuilder {
         self.time_to_live_in_seconds = input;
         self
     }
+    /// <p>The number of seconds that the context should be active after it is first sent in a <code>PostContent</code> or <code>PostText</code> response. You can set the value between 5 and 86,400 seconds (24 hours).</p>
+    pub fn get_time_to_live_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.time_to_live_in_seconds
+    }
     /// <p>The number of conversation turns that the context should be active. A conversation turn is one <code>PostContent</code> or <code>PostText</code> request and the corresponding response from Amazon Lex.</p>
     pub fn turns_to_live(mut self, input: i32) -> Self {
         self.turns_to_live = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ActiveContextTimeToLiveBuilder {
     pub fn set_turns_to_live(mut self, input: ::std::option::Option<i32>) -> Self {
         self.turns_to_live = input;
         self
+    }
+    /// <p>The number of conversation turns that the context should be active. A conversation turn is one <code>PostContent</code> or <code>PostText</code> request and the corresponding response from Amazon Lex.</p>
+    pub fn get_turns_to_live(&self) -> &::std::option::Option<i32> {
+        &self.turns_to_live
     }
     /// Consumes the builder and constructs a [`ActiveContextTimeToLive`](crate::types::ActiveContextTimeToLive).
     pub fn build(self) -> crate::types::ActiveContextTimeToLive {

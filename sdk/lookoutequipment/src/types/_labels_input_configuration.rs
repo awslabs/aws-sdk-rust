@@ -57,6 +57,12 @@ impl LabelsInputConfigurationBuilder {
         self.s3_input_configuration = input;
         self
     }
+    /// <p>Contains location information for the S3 location being used for label data. </p>
+    pub fn get_s3_input_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::LabelsS3InputConfiguration> {
+        &self.s3_input_configuration
+    }
     /// <p> The name of the label group to be used for label data. </p>
     pub fn label_group_name(
         mut self,
@@ -72,6 +78,10 @@ impl LabelsInputConfigurationBuilder {
     ) -> Self {
         self.label_group_name = input;
         self
+    }
+    /// <p> The name of the label group to be used for label data. </p>
+    pub fn get_label_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label_group_name
     }
     /// Consumes the builder and constructs a [`LabelsInputConfiguration`](crate::types::LabelsInputConfiguration).
     pub fn build(self) -> crate::types::LabelsInputConfiguration {

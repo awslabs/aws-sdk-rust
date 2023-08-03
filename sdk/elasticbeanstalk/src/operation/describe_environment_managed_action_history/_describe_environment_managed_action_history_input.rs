@@ -70,6 +70,10 @@ impl DescribeEnvironmentManagedActionHistoryInputBuilder {
         self.environment_id = input;
         self
     }
+    /// <p>The environment ID of the target environment.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
+    }
     /// <p>The name of the target environment.</p>
     pub fn environment_name(
         mut self,
@@ -86,6 +90,10 @@ impl DescribeEnvironmentManagedActionHistoryInputBuilder {
         self.environment_name = input;
         self
     }
+    /// <p>The name of the target environment.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_name
+    }
     /// <p>The pagination token returned by a previous request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -96,6 +104,10 @@ impl DescribeEnvironmentManagedActionHistoryInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The pagination token returned by a previous request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of items to return for a single request.</p>
     pub fn max_items(mut self, input: i32) -> Self {
         self.max_items = ::std::option::Option::Some(input);
@@ -105,6 +117,10 @@ impl DescribeEnvironmentManagedActionHistoryInputBuilder {
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_items = input;
         self
+    }
+    /// <p>The maximum number of items to return for a single request.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        &self.max_items
     }
     /// Consumes the builder and constructs a [`DescribeEnvironmentManagedActionHistoryInput`](crate::operation::describe_environment_managed_action_history::DescribeEnvironmentManagedActionHistoryInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_environment_managed_action_history::DescribeEnvironmentManagedActionHistoryInput, ::aws_smithy_http::operation::error::BuildError>{

@@ -85,6 +85,12 @@ impl DashboardSearchFilterBuilder {
         self.operator = input;
         self
     }
+    /// <p>The comparison operator that you want to use as a filter, for example <code>"Operator": "StringEquals"</code>. Valid values are <code>"StringEquals"</code> and <code>"StringLike"</code>.</p>
+    /// <p>If you set the operator value to <code>"StringEquals"</code>, you need to provide an ownership related filter in the <code>"NAME"</code> field and the arn of the user or group whose folders you want to search in the <code>"Value"</code> field. For example, <code>"Name":"DIRECT_QUICKSIGHT_OWNER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.</p>
+    /// <p>If you set the value to <code>"StringLike"</code>, you need to provide the name of the folders you are searching for. For example, <code>"Name":"DASHBOARD_NAME", "Operator": "StringLike", "Value": "Test"</code>. The <code>"StringLike"</code> operator only supports the <code>NAME</code> value <code>DASHBOARD_NAME</code>.</p>
+    pub fn get_operator(&self) -> &::std::option::Option<crate::types::FilterOperator> {
+        &self.operator
+    }
     /// <p>The name of the value that you want to use as a filter, for example, <code>"Name": "QUICKSIGHT_OWNER"</code>.</p>
     /// <p>Valid values are defined as follows:</p>
     /// <ul>
@@ -116,6 +122,19 @@ impl DashboardSearchFilterBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the value that you want to use as a filter, for example, <code>"Name": "QUICKSIGHT_OWNER"</code>.</p>
+    /// <p>Valid values are defined as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any dashboards with that ARN listed as one of the dashboards's owners or viewers are returned. Implicit permissions from folders or groups are considered.</p> </li>
+    /// <li> <p> <code>QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any dashboards with that ARN listed as one of the owners of the dashboards are returned. Implicit permissions from folders or groups are considered.</p> </li>
+    /// <li> <p> <code>DIRECT_QUICKSIGHT_SOLE_OWNER</code>: Provide an ARN of a user or group, and any dashboards with that ARN listed as the only owner of the dashboard are returned. Implicit permissions from folders or groups are not considered.</p> </li>
+    /// <li> <p> <code>DIRECT_QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any dashboards with that ARN listed as one of the owners of the dashboards are returned. Implicit permissions from folders or groups are not considered.</p> </li>
+    /// <li> <p> <code>DIRECT_QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any dashboards with that ARN listed as one of the owners or viewers of the dashboards are returned. Implicit permissions from folders or groups are not considered.</p> </li>
+    /// <li> <p> <code>DASHBOARD_NAME</code>: Any dashboards whose names have a substring match to this value will be returned.</p> </li>
+    /// </ul>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::DashboardFilterAttribute> {
+        &self.name
+    }
     /// <p>The value of the named item, in this case <code>QUICKSIGHT_USER</code>, that you want to use as a filter, for example, <code>"Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>. </p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -125,6 +144,10 @@ impl DashboardSearchFilterBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value of the named item, in this case <code>QUICKSIGHT_USER</code>, that you want to use as a filter, for example, <code>"Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>. </p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`DashboardSearchFilter`](crate::types::DashboardSearchFilter).
     pub fn build(self) -> crate::types::DashboardSearchFilter {

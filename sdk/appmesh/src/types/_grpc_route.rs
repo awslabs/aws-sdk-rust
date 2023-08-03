@@ -67,6 +67,10 @@ impl GrpcRouteBuilder {
         self.action = input;
         self
     }
+    /// <p>An object that represents the action to take if a match is determined.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::GrpcRouteAction> {
+        &self.action
+    }
     /// <p>An object that represents the criteria for determining a request match.</p>
     pub fn r#match(mut self, input: crate::types::GrpcRouteMatch) -> Self {
         self.r#match = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl GrpcRouteBuilder {
     pub fn set_match(mut self, input: ::std::option::Option<crate::types::GrpcRouteMatch>) -> Self {
         self.r#match = input;
         self
+    }
+    /// <p>An object that represents the criteria for determining a request match.</p>
+    pub fn get_match(&self) -> &::std::option::Option<crate::types::GrpcRouteMatch> {
+        &self.r#match
     }
     /// <p>An object that represents a retry policy.</p>
     pub fn retry_policy(mut self, input: crate::types::GrpcRetryPolicy) -> Self {
@@ -90,6 +98,10 @@ impl GrpcRouteBuilder {
         self.retry_policy = input;
         self
     }
+    /// <p>An object that represents a retry policy.</p>
+    pub fn get_retry_policy(&self) -> &::std::option::Option<crate::types::GrpcRetryPolicy> {
+        &self.retry_policy
+    }
     /// <p>An object that represents types of timeouts. </p>
     pub fn timeout(mut self, input: crate::types::GrpcTimeout) -> Self {
         self.timeout = ::std::option::Option::Some(input);
@@ -99,6 +111,10 @@ impl GrpcRouteBuilder {
     pub fn set_timeout(mut self, input: ::std::option::Option<crate::types::GrpcTimeout>) -> Self {
         self.timeout = input;
         self
+    }
+    /// <p>An object that represents types of timeouts. </p>
+    pub fn get_timeout(&self) -> &::std::option::Option<crate::types::GrpcTimeout> {
+        &self.timeout
     }
     /// Consumes the builder and constructs a [`GrpcRoute`](crate::types::GrpcRoute).
     pub fn build(self) -> crate::types::GrpcRoute {

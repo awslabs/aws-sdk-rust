@@ -98,6 +98,10 @@ impl CreateLegalHoldOutputBuilder {
         self.title = input;
         self
     }
+    /// <p>This is the string title of the legal hold returned after creating the legal hold.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
+    }
     /// <p>This displays the status of the legal hold returned after creating the legal hold. Statuses can be <code>ACTIVE</code>, <code>PENDING</code>, <code>CANCELED</code>, <code>CANCELING</code>, or <code>FAILED</code>.</p>
     pub fn status(mut self, input: crate::types::LegalHoldStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -111,6 +115,10 @@ impl CreateLegalHoldOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>This displays the status of the legal hold returned after creating the legal hold. Statuses can be <code>ACTIVE</code>, <code>PENDING</code>, <code>CANCELED</code>, <code>CANCELING</code>, or <code>FAILED</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::LegalHoldStatus> {
+        &self.status
+    }
     /// <p>This is the returned string description of the legal hold.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -120,6 +128,10 @@ impl CreateLegalHoldOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>This is the returned string description of the legal hold.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Legal hold ID returned for the specified legal hold on a recovery point.</p>
     pub fn legal_hold_id(
@@ -137,6 +149,10 @@ impl CreateLegalHoldOutputBuilder {
         self.legal_hold_id = input;
         self
     }
+    /// <p>Legal hold ID returned for the specified legal hold on a recovery point.</p>
+    pub fn get_legal_hold_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.legal_hold_id
+    }
     /// <p>This is the ARN (Amazon Resource Number) of the created legal hold.</p>
     pub fn legal_hold_arn(
         mut self,
@@ -153,6 +169,10 @@ impl CreateLegalHoldOutputBuilder {
         self.legal_hold_arn = input;
         self
     }
+    /// <p>This is the ARN (Amazon Resource Number) of the created legal hold.</p>
+    pub fn get_legal_hold_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.legal_hold_arn
+    }
     /// <p>Time in number format when legal hold was created.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
@@ -166,6 +186,10 @@ impl CreateLegalHoldOutputBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>Time in number format when legal hold was created.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
+    }
     /// <p>This specifies criteria to assign a set of resources, such as resource types or backup vaults.</p>
     pub fn recovery_point_selection(mut self, input: crate::types::RecoveryPointSelection) -> Self {
         self.recovery_point_selection = ::std::option::Option::Some(input);
@@ -178,6 +202,12 @@ impl CreateLegalHoldOutputBuilder {
     ) -> Self {
         self.recovery_point_selection = input;
         self
+    }
+    /// <p>This specifies criteria to assign a set of resources, such as resource types or backup vaults.</p>
+    pub fn get_recovery_point_selection(
+        &self,
+    ) -> &::std::option::Option<crate::types::RecoveryPointSelection> {
+        &self.recovery_point_selection
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

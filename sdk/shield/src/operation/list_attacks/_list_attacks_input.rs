@@ -91,6 +91,12 @@ impl ListAttacksInputBuilder {
         self.resource_arns = input;
         self
     }
+    /// <p>The ARNs (Amazon Resource Names) of the resources that were attacked. If you leave this blank, all applicable resources for this account will be included.</p>
+    pub fn get_resource_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resource_arns
+    }
     /// <p>The start of the time period for the attacks. This is a <code>timestamp</code> type. The request syntax listing for this call indicates a <code>number</code> type, but you can provide the time in any valid <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">timestamp format</a> setting. </p>
     pub fn start_time(mut self, input: crate::types::TimeRange) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -101,6 +107,10 @@ impl ListAttacksInputBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The start of the time period for the attacks. This is a <code>timestamp</code> type. The request syntax listing for this call indicates a <code>number</code> type, but you can provide the time in any valid <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">timestamp format</a> setting. </p>
+    pub fn get_start_time(&self) -> &::std::option::Option<crate::types::TimeRange> {
+        &self.start_time
+    }
     /// <p>The end of the time period for the attacks. This is a <code>timestamp</code> type. The request syntax listing for this call indicates a <code>number</code> type, but you can provide the time in any valid <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">timestamp format</a> setting. </p>
     pub fn end_time(mut self, input: crate::types::TimeRange) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -110,6 +120,10 @@ impl ListAttacksInputBuilder {
     pub fn set_end_time(mut self, input: ::std::option::Option<crate::types::TimeRange>) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>The end of the time period for the attacks. This is a <code>timestamp</code> type. The request syntax listing for this call indicates a <code>number</code> type, but you can provide the time in any valid <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">timestamp format</a> setting. </p>
+    pub fn get_end_time(&self) -> &::std::option::Option<crate::types::TimeRange> {
+        &self.end_time
     }
     /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>
     /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
@@ -127,6 +141,13 @@ impl ListAttacksInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>
+    /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+    /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
+    /// <p>On your first call to a list operation, leave this setting empty.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value in the response.</p>
     /// <p>The default setting is 20.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -138,6 +159,11 @@ impl ListAttacksInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value in the response.</p>
+    /// <p>The default setting is 20.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListAttacksInput`](crate::operation::list_attacks::ListAttacksInput).
     pub fn build(

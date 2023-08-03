@@ -72,6 +72,10 @@ impl PutPositionConfigurationInputBuilder {
         self.resource_identifier = input;
         self
     }
+    /// <p>Resource identifier used to update the position configuration.</p>
+    pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_identifier
+    }
     /// <p>Resource type of the resource for which you want to update the position configuration.</p>
     pub fn resource_type(mut self, input: crate::types::PositionResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
@@ -84,6 +88,10 @@ impl PutPositionConfigurationInputBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>Resource type of the resource for which you want to update the position configuration.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::PositionResourceType> {
+        &self.resource_type
     }
     /// <p>The positioning solvers used to update the position configuration of the resource.</p>
     pub fn solvers(mut self, input: crate::types::PositionSolverConfigurations) -> Self {
@@ -98,6 +106,12 @@ impl PutPositionConfigurationInputBuilder {
         self.solvers = input;
         self
     }
+    /// <p>The positioning solvers used to update the position configuration of the resource.</p>
+    pub fn get_solvers(
+        &self,
+    ) -> &::std::option::Option<crate::types::PositionSolverConfigurations> {
+        &self.solvers
+    }
     /// <p>The position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
     pub fn destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination = ::std::option::Option::Some(input.into());
@@ -107,6 +121,10 @@ impl PutPositionConfigurationInputBuilder {
     pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination = input;
         self
+    }
+    /// <p>The position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination
     }
     /// Consumes the builder and constructs a [`PutPositionConfigurationInput`](crate::operation::put_position_configuration::PutPositionConfigurationInput).
     pub fn build(

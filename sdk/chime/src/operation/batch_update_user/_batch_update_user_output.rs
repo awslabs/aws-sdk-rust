@@ -56,6 +56,12 @@ impl BatchUpdateUserOutputBuilder {
         self.user_errors = input;
         self
     }
+    /// <p>If the <code>BatchUpdateUser</code> action fails for one or more of the user IDs in the request, a list of the user IDs is returned, along with error codes and error messages.</p>
+    pub fn get_user_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UserError>> {
+        &self.user_errors
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

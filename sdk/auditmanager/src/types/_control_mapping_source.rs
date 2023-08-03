@@ -114,6 +114,10 @@ impl ControlMappingSourceBuilder {
         self.source_id = input;
         self
     }
+    /// <p> The unique identifier for the source. </p>
+    pub fn get_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_id
+    }
     /// <p> The name of the source. </p>
     pub fn source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_name = ::std::option::Option::Some(input.into());
@@ -123,6 +127,10 @@ impl ControlMappingSourceBuilder {
     pub fn set_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_name = input;
         self
+    }
+    /// <p> The name of the source. </p>
+    pub fn get_source_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_name
     }
     /// <p> The description of the source. </p>
     pub fn source_description(
@@ -140,6 +148,10 @@ impl ControlMappingSourceBuilder {
         self.source_description = input;
         self
     }
+    /// <p> The description of the source. </p>
+    pub fn get_source_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_description
+    }
     /// <p> The setup option for the data source. This option reflects if the evidence collection is automated or manual. </p>
     pub fn source_set_up_option(mut self, input: crate::types::SourceSetUpOption) -> Self {
         self.source_set_up_option = ::std::option::Option::Some(input);
@@ -153,6 +165,12 @@ impl ControlMappingSourceBuilder {
         self.source_set_up_option = input;
         self
     }
+    /// <p> The setup option for the data source. This option reflects if the evidence collection is automated or manual. </p>
+    pub fn get_source_set_up_option(
+        &self,
+    ) -> &::std::option::Option<crate::types::SourceSetUpOption> {
+        &self.source_set_up_option
+    }
     /// <p> Specifies one of the five data source types for evidence collection. </p>
     pub fn source_type(mut self, input: crate::types::SourceType) -> Self {
         self.source_type = ::std::option::Option::Some(input);
@@ -165,6 +183,10 @@ impl ControlMappingSourceBuilder {
     ) -> Self {
         self.source_type = input;
         self
+    }
+    /// <p> Specifies one of the five data source types for evidence collection. </p>
+    pub fn get_source_type(&self) -> &::std::option::Option<crate::types::SourceType> {
+        &self.source_type
     }
     /// <p>A keyword that relates to the control data source.</p>
     /// <p>For manual evidence, this keyword indicates if the manual evidence is a file or text.</p>
@@ -197,6 +219,19 @@ impl ControlMappingSourceBuilder {
         self.source_keyword = input;
         self
     }
+    /// <p>A keyword that relates to the control data source.</p>
+    /// <p>For manual evidence, this keyword indicates if the manual evidence is a file or text.</p>
+    /// <p>For automated evidence, this keyword identifies a specific CloudTrail event, Config rule, Security Hub control, or Amazon Web Services API name. </p>
+    /// <p> To learn more about the supported keywords that you can use when mapping a control data source, see the following pages in the <i>Audit Manager User Guide</i>:</p>
+    /// <ul>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-config.html">Config rules supported by Audit Manager</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-ash.html">Security Hub controls supported by Audit Manager</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-api.html">API calls supported by Audit Manager</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-cloudtrail.html">CloudTrail event names supported by Audit Manager</a> </p> </li>
+    /// </ul>
+    pub fn get_source_keyword(&self) -> &::std::option::Option<crate::types::SourceKeyword> {
+        &self.source_keyword
+    }
     /// <p>Specifies how often evidence is collected from the control mapping source. </p>
     pub fn source_frequency(mut self, input: crate::types::SourceFrequency) -> Self {
         self.source_frequency = ::std::option::Option::Some(input);
@@ -209,6 +244,10 @@ impl ControlMappingSourceBuilder {
     ) -> Self {
         self.source_frequency = input;
         self
+    }
+    /// <p>Specifies how often evidence is collected from the control mapping source. </p>
+    pub fn get_source_frequency(&self) -> &::std::option::Option<crate::types::SourceFrequency> {
+        &self.source_frequency
     }
     /// <p> The instructions for troubleshooting the control. </p>
     pub fn troubleshooting_text(
@@ -225,6 +264,10 @@ impl ControlMappingSourceBuilder {
     ) -> Self {
         self.troubleshooting_text = input;
         self
+    }
+    /// <p> The instructions for troubleshooting the control. </p>
+    pub fn get_troubleshooting_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.troubleshooting_text
     }
     /// Consumes the builder and constructs a [`ControlMappingSource`](crate::types::ControlMappingSource).
     pub fn build(self) -> crate::types::ControlMappingSource {

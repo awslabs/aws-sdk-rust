@@ -93,6 +93,10 @@ impl ListJobRunsInputBuilder {
         self.virtual_cluster_id = input;
         self
     }
+    /// <p>The ID of the virtual cluster for which to list the job run. </p>
+    pub fn get_virtual_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_cluster_id
+    }
     /// <p>The date and time before which the job runs were submitted.</p>
     pub fn created_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_before = ::std::option::Option::Some(input);
@@ -105,6 +109,10 @@ impl ListJobRunsInputBuilder {
     ) -> Self {
         self.created_before = input;
         self
+    }
+    /// <p>The date and time before which the job runs were submitted.</p>
+    pub fn get_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_before
     }
     /// <p>The date and time after which the job runs were submitted.</p>
     pub fn created_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -119,6 +127,10 @@ impl ListJobRunsInputBuilder {
         self.created_after = input;
         self
     }
+    /// <p>The date and time after which the job runs were submitted.</p>
+    pub fn get_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_after
+    }
     /// <p>The name of the job run.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -128,6 +140,10 @@ impl ListJobRunsInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the job run.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `states`.
     ///
@@ -148,6 +164,10 @@ impl ListJobRunsInputBuilder {
         self.states = input;
         self
     }
+    /// <p>The states of the job run.</p>
+    pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobRunState>> {
+        &self.states
+    }
     /// <p>The maximum number of job runs that can be listed.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -158,6 +178,10 @@ impl ListJobRunsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of job runs that can be listed.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token for the next set of job runs to return.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -167,6 +191,10 @@ impl ListJobRunsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token for the next set of job runs to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListJobRunsInput`](crate::operation::list_job_runs::ListJobRunsInput).
     pub fn build(

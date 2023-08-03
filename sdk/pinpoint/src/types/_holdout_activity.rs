@@ -56,6 +56,10 @@ impl HoldoutActivityBuilder {
         self.next_activity = input;
         self
     }
+    /// <p>The unique identifier for the next activity to perform, after performing the holdout activity.</p>
+    pub fn get_next_activity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_activity
+    }
     /// <p>The percentage of participants who shouldn't continue the journey.</p>
     /// <p>To determine which participants are held out, Amazon Pinpoint applies a probability-based algorithm to the percentage that you specify. Therefore, the actual percentage of participants who are held out may not be equal to the percentage that you specify.</p>
     pub fn percentage(mut self, input: i32) -> Self {
@@ -67,6 +71,11 @@ impl HoldoutActivityBuilder {
     pub fn set_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.percentage = input;
         self
+    }
+    /// <p>The percentage of participants who shouldn't continue the journey.</p>
+    /// <p>To determine which participants are held out, Amazon Pinpoint applies a probability-based algorithm to the percentage that you specify. Therefore, the actual percentage of participants who are held out may not be equal to the percentage that you specify.</p>
+    pub fn get_percentage(&self) -> &::std::option::Option<i32> {
+        &self.percentage
     }
     /// Consumes the builder and constructs a [`HoldoutActivity`](crate::types::HoldoutActivity).
     pub fn build(self) -> crate::types::HoldoutActivity {

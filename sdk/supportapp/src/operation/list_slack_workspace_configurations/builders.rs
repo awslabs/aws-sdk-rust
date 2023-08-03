@@ -36,6 +36,10 @@ impl ListSlackWorkspaceConfigurationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListSlackWorkspaceConfigurations as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_slack_workspace_configurations::builders::ListSlackWorkspaceConfigurationsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -105,5 +109,9 @@ impl ListSlackWorkspaceConfigurationsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>If the results of a search are large, the API only returns a portion of the results and includes a <code>nextToken</code> pagination token in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When the API returns the last set of results, the response doesn't include a pagination token value.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

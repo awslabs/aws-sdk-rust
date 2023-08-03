@@ -36,6 +36,12 @@ impl GetSigningProfileFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetSigningProfile as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_signing_profile::builders::GetSigningProfileInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl GetSigningProfileFluentBuilder {
         self.inner = self.inner.set_profile_name(input);
         self
     }
+    /// <p>The name of the target signing profile.</p>
+    pub fn get_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_profile_name()
+    }
     /// <p>The AWS account ID of the profile owner.</p>
     pub fn profile_owner(
         mut self,
@@ -141,5 +151,9 @@ impl GetSigningProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_profile_owner(input);
         self
+    }
+    /// <p>The AWS account ID of the profile owner.</p>
+    pub fn get_profile_owner(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_profile_owner()
     }
 }

@@ -58,6 +58,10 @@ impl BatchAssociateScramSecretOutputBuilder {
         self.cluster_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_arn
+    }
     /// Appends an item to `unprocessed_scram_secrets`.
     ///
     /// To override the contents of this collection use [`set_unprocessed_scram_secrets`](Self::set_unprocessed_scram_secrets).
@@ -79,6 +83,12 @@ impl BatchAssociateScramSecretOutputBuilder {
     ) -> Self {
         self.unprocessed_scram_secrets = input;
         self
+    }
+    /// <p>List of errors when associating secrets to cluster.</p>
+    pub fn get_unprocessed_scram_secrets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedScramSecret>> {
+        &self.unprocessed_scram_secrets
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

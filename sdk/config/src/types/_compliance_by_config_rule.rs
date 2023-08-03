@@ -54,6 +54,10 @@ impl ComplianceByConfigRuleBuilder {
         self.config_rule_name = input;
         self
     }
+    /// <p>The name of the Config rule.</p>
+    pub fn get_config_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.config_rule_name
+    }
     /// <p>Indicates whether the Config rule is compliant.</p>
     pub fn compliance(mut self, input: crate::types::Compliance) -> Self {
         self.compliance = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl ComplianceByConfigRuleBuilder {
     ) -> Self {
         self.compliance = input;
         self
+    }
+    /// <p>Indicates whether the Config rule is compliant.</p>
+    pub fn get_compliance(&self) -> &::std::option::Option<crate::types::Compliance> {
+        &self.compliance
     }
     /// Consumes the builder and constructs a [`ComplianceByConfigRule`](crate::types::ComplianceByConfigRule).
     pub fn build(self) -> crate::types::ComplianceByConfigRule {

@@ -120,6 +120,10 @@ impl MonitoringExecutionSummaryBuilder {
         self.monitoring_schedule_name = input;
         self
     }
+    /// <p>The name of the monitoring schedule.</p>
+    pub fn get_monitoring_schedule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitoring_schedule_name
+    }
     /// <p>The time the monitoring job was scheduled.</p>
     pub fn scheduled_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.scheduled_time = ::std::option::Option::Some(input);
@@ -132,6 +136,10 @@ impl MonitoringExecutionSummaryBuilder {
     ) -> Self {
         self.scheduled_time = input;
         self
+    }
+    /// <p>The time the monitoring job was scheduled.</p>
+    pub fn get_scheduled_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.scheduled_time
     }
     /// <p>The time at which the monitoring job was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -146,6 +154,10 @@ impl MonitoringExecutionSummaryBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The time at which the monitoring job was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>A timestamp that indicates the last time the monitoring job was modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -159,6 +171,10 @@ impl MonitoringExecutionSummaryBuilder {
         self.last_modified_time = input;
         self
     }
+    /// <p>A timestamp that indicates the last time the monitoring job was modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
     /// <p>The status of the monitoring job.</p>
     pub fn monitoring_execution_status(mut self, input: crate::types::ExecutionStatus) -> Self {
         self.monitoring_execution_status = ::std::option::Option::Some(input);
@@ -171,6 +187,12 @@ impl MonitoringExecutionSummaryBuilder {
     ) -> Self {
         self.monitoring_execution_status = input;
         self
+    }
+    /// <p>The status of the monitoring job.</p>
+    pub fn get_monitoring_execution_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExecutionStatus> {
+        &self.monitoring_execution_status
     }
     /// <p>The Amazon Resource Name (ARN) of the monitoring job.</p>
     pub fn processing_job_arn(
@@ -188,6 +210,10 @@ impl MonitoringExecutionSummaryBuilder {
         self.processing_job_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the monitoring job.</p>
+    pub fn get_processing_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.processing_job_arn
+    }
     /// <p>The name of the endpoint used to run the monitoring job.</p>
     pub fn endpoint_name(
         mut self,
@@ -203,6 +229,10 @@ impl MonitoringExecutionSummaryBuilder {
     ) -> Self {
         self.endpoint_name = input;
         self
+    }
+    /// <p>The name of the endpoint used to run the monitoring job.</p>
+    pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_name
     }
     /// <p>Contains the reason a monitoring job failed, if it failed.</p>
     pub fn failure_reason(
@@ -220,6 +250,10 @@ impl MonitoringExecutionSummaryBuilder {
         self.failure_reason = input;
         self
     }
+    /// <p>Contains the reason a monitoring job failed, if it failed.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
+    }
     /// <p>The name of the monitoring job.</p>
     pub fn monitoring_job_definition_name(
         mut self,
@@ -236,6 +270,12 @@ impl MonitoringExecutionSummaryBuilder {
         self.monitoring_job_definition_name = input;
         self
     }
+    /// <p>The name of the monitoring job.</p>
+    pub fn get_monitoring_job_definition_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.monitoring_job_definition_name
+    }
     /// <p>The type of the monitoring job.</p>
     pub fn monitoring_type(mut self, input: crate::types::MonitoringType) -> Self {
         self.monitoring_type = ::std::option::Option::Some(input);
@@ -248,6 +288,10 @@ impl MonitoringExecutionSummaryBuilder {
     ) -> Self {
         self.monitoring_type = input;
         self
+    }
+    /// <p>The type of the monitoring job.</p>
+    pub fn get_monitoring_type(&self) -> &::std::option::Option<crate::types::MonitoringType> {
+        &self.monitoring_type
     }
     /// Consumes the builder and constructs a [`MonitoringExecutionSummary`](crate::types::MonitoringExecutionSummary).
     pub fn build(self) -> crate::types::MonitoringExecutionSummary {

@@ -64,6 +64,10 @@ impl BatchGetCrawlersOutputBuilder {
         self.crawlers = input;
         self
     }
+    /// <p>A list of crawler definitions.</p>
+    pub fn get_crawlers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Crawler>> {
+        &self.crawlers
+    }
     /// Appends an item to `crawlers_not_found`.
     ///
     /// To override the contents of this collection use [`set_crawlers_not_found`](Self::set_crawlers_not_found).
@@ -85,6 +89,12 @@ impl BatchGetCrawlersOutputBuilder {
     ) -> Self {
         self.crawlers_not_found = input;
         self
+    }
+    /// <p>A list of names of crawlers that were not found.</p>
+    pub fn get_crawlers_not_found(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.crawlers_not_found
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

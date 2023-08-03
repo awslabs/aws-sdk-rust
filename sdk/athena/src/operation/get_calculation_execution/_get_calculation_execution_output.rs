@@ -102,6 +102,10 @@ impl GetCalculationExecutionOutputBuilder {
         self.calculation_execution_id = input;
         self
     }
+    /// <p>The calculation execution UUID.</p>
+    pub fn get_calculation_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.calculation_execution_id
+    }
     /// <p>The session ID that the calculation ran in.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
@@ -112,6 +116,10 @@ impl GetCalculationExecutionOutputBuilder {
         self.session_id = input;
         self
     }
+    /// <p>The session ID that the calculation ran in.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
+    }
     /// <p>The description of the calculation execution.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -121,6 +129,10 @@ impl GetCalculationExecutionOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the calculation execution.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The Amazon S3 location in which calculation results are stored.</p>
     pub fn working_directory(
@@ -138,6 +150,10 @@ impl GetCalculationExecutionOutputBuilder {
         self.working_directory = input;
         self
     }
+    /// <p>The Amazon S3 location in which calculation results are stored.</p>
+    pub fn get_working_directory(&self) -> &::std::option::Option<::std::string::String> {
+        &self.working_directory
+    }
     /// <p>Contains information about the status of the calculation.</p>
     pub fn status(mut self, input: crate::types::CalculationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -150,6 +166,10 @@ impl GetCalculationExecutionOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Contains information about the status of the calculation.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::CalculationStatus> {
+        &self.status
     }
     /// <p>Contains information about the data processing unit (DPU) execution time and progress. This field is populated only when statistics are available.</p>
     pub fn statistics(mut self, input: crate::types::CalculationStatistics) -> Self {
@@ -164,6 +184,10 @@ impl GetCalculationExecutionOutputBuilder {
         self.statistics = input;
         self
     }
+    /// <p>Contains information about the data processing unit (DPU) execution time and progress. This field is populated only when statistics are available.</p>
+    pub fn get_statistics(&self) -> &::std::option::Option<crate::types::CalculationStatistics> {
+        &self.statistics
+    }
     /// <p>Contains result information. This field is populated only if the calculation is completed.</p>
     pub fn result(mut self, input: crate::types::CalculationResult) -> Self {
         self.result = ::std::option::Option::Some(input);
@@ -176,6 +200,10 @@ impl GetCalculationExecutionOutputBuilder {
     ) -> Self {
         self.result = input;
         self
+    }
+    /// <p>Contains result information. This field is populated only if the calculation is completed.</p>
+    pub fn get_result(&self) -> &::std::option::Option<crate::types::CalculationResult> {
+        &self.result
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

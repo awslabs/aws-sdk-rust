@@ -49,6 +49,12 @@ impl UpdateFeaturedResultsSetOutputBuilder {
         self.featured_results_set = input;
         self
     }
+    /// <p>Information on the set of featured results. This includes the identifier of the featured results set, whether the featured results set is active or inactive, when the featured results set was last updated, and more.</p>
+    pub fn get_featured_results_set(
+        &self,
+    ) -> &::std::option::Option<crate::types::FeaturedResultsSet> {
+        &self.featured_results_set
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

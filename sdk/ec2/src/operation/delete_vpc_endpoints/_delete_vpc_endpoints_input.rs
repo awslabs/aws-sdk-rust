@@ -48,6 +48,10 @@ impl DeleteVpcEndpointsInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// Appends an item to `vpc_endpoint_ids`.
     ///
     /// To override the contents of this collection use [`set_vpc_endpoint_ids`](Self::set_vpc_endpoint_ids).
@@ -69,6 +73,12 @@ impl DeleteVpcEndpointsInputBuilder {
     ) -> Self {
         self.vpc_endpoint_ids = input;
         self
+    }
+    /// <p>The IDs of the VPC endpoints.</p>
+    pub fn get_vpc_endpoint_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.vpc_endpoint_ids
     }
     /// Consumes the builder and constructs a [`DeleteVpcEndpointsInput`](crate::operation::delete_vpc_endpoints::DeleteVpcEndpointsInput).
     pub fn build(

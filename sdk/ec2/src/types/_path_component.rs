@@ -208,6 +208,10 @@ impl PathComponentBuilder {
         self.sequence_number = input;
         self
     }
+    /// <p>The sequence number.</p>
+    pub fn get_sequence_number(&self) -> &::std::option::Option<i32> {
+        &self.sequence_number
+    }
     /// <p>The network ACL rule.</p>
     pub fn acl_rule(mut self, input: crate::types::AnalysisAclRule) -> Self {
         self.acl_rule = ::std::option::Option::Some(input);
@@ -220,6 +224,10 @@ impl PathComponentBuilder {
     ) -> Self {
         self.acl_rule = input;
         self
+    }
+    /// <p>The network ACL rule.</p>
+    pub fn get_acl_rule(&self) -> &::std::option::Option<crate::types::AnalysisAclRule> {
+        &self.acl_rule
     }
     /// <p>The resource to which the path component is attached.</p>
     pub fn attached_to(mut self, input: crate::types::AnalysisComponent) -> Self {
@@ -234,6 +242,10 @@ impl PathComponentBuilder {
         self.attached_to = input;
         self
     }
+    /// <p>The resource to which the path component is attached.</p>
+    pub fn get_attached_to(&self) -> &::std::option::Option<crate::types::AnalysisComponent> {
+        &self.attached_to
+    }
     /// <p>The component.</p>
     pub fn component(mut self, input: crate::types::AnalysisComponent) -> Self {
         self.component = ::std::option::Option::Some(input);
@@ -246,6 +258,10 @@ impl PathComponentBuilder {
     ) -> Self {
         self.component = input;
         self
+    }
+    /// <p>The component.</p>
+    pub fn get_component(&self) -> &::std::option::Option<crate::types::AnalysisComponent> {
+        &self.component
     }
     /// <p>The destination VPC.</p>
     pub fn destination_vpc(mut self, input: crate::types::AnalysisComponent) -> Self {
@@ -260,6 +276,10 @@ impl PathComponentBuilder {
         self.destination_vpc = input;
         self
     }
+    /// <p>The destination VPC.</p>
+    pub fn get_destination_vpc(&self) -> &::std::option::Option<crate::types::AnalysisComponent> {
+        &self.destination_vpc
+    }
     /// <p>The outbound header.</p>
     pub fn outbound_header(mut self, input: crate::types::AnalysisPacketHeader) -> Self {
         self.outbound_header = ::std::option::Option::Some(input);
@@ -272,6 +292,12 @@ impl PathComponentBuilder {
     ) -> Self {
         self.outbound_header = input;
         self
+    }
+    /// <p>The outbound header.</p>
+    pub fn get_outbound_header(
+        &self,
+    ) -> &::std::option::Option<crate::types::AnalysisPacketHeader> {
+        &self.outbound_header
     }
     /// <p>The inbound header.</p>
     pub fn inbound_header(mut self, input: crate::types::AnalysisPacketHeader) -> Self {
@@ -286,6 +312,10 @@ impl PathComponentBuilder {
         self.inbound_header = input;
         self
     }
+    /// <p>The inbound header.</p>
+    pub fn get_inbound_header(&self) -> &::std::option::Option<crate::types::AnalysisPacketHeader> {
+        &self.inbound_header
+    }
     /// <p>The route table route.</p>
     pub fn route_table_route(mut self, input: crate::types::AnalysisRouteTableRoute) -> Self {
         self.route_table_route = ::std::option::Option::Some(input);
@@ -298,6 +328,12 @@ impl PathComponentBuilder {
     ) -> Self {
         self.route_table_route = input;
         self
+    }
+    /// <p>The route table route.</p>
+    pub fn get_route_table_route(
+        &self,
+    ) -> &::std::option::Option<crate::types::AnalysisRouteTableRoute> {
+        &self.route_table_route
     }
     /// <p>The security group rule.</p>
     pub fn security_group_rule(mut self, input: crate::types::AnalysisSecurityGroupRule) -> Self {
@@ -312,6 +348,12 @@ impl PathComponentBuilder {
         self.security_group_rule = input;
         self
     }
+    /// <p>The security group rule.</p>
+    pub fn get_security_group_rule(
+        &self,
+    ) -> &::std::option::Option<crate::types::AnalysisSecurityGroupRule> {
+        &self.security_group_rule
+    }
     /// <p>The source VPC.</p>
     pub fn source_vpc(mut self, input: crate::types::AnalysisComponent) -> Self {
         self.source_vpc = ::std::option::Option::Some(input);
@@ -324,6 +366,10 @@ impl PathComponentBuilder {
     ) -> Self {
         self.source_vpc = input;
         self
+    }
+    /// <p>The source VPC.</p>
+    pub fn get_source_vpc(&self) -> &::std::option::Option<crate::types::AnalysisComponent> {
+        &self.source_vpc
     }
     /// <p>The subnet.</p>
     pub fn subnet(mut self, input: crate::types::AnalysisComponent) -> Self {
@@ -338,6 +384,10 @@ impl PathComponentBuilder {
         self.subnet = input;
         self
     }
+    /// <p>The subnet.</p>
+    pub fn get_subnet(&self) -> &::std::option::Option<crate::types::AnalysisComponent> {
+        &self.subnet
+    }
     /// <p>The component VPC.</p>
     pub fn vpc(mut self, input: crate::types::AnalysisComponent) -> Self {
         self.vpc = ::std::option::Option::Some(input);
@@ -350,6 +400,10 @@ impl PathComponentBuilder {
     ) -> Self {
         self.vpc = input;
         self
+    }
+    /// <p>The component VPC.</p>
+    pub fn get_vpc(&self) -> &::std::option::Option<crate::types::AnalysisComponent> {
+        &self.vpc
     }
     /// Appends an item to `additional_details`.
     ///
@@ -370,6 +424,12 @@ impl PathComponentBuilder {
         self.additional_details = input;
         self
     }
+    /// <p>The additional details.</p>
+    pub fn get_additional_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalDetail>> {
+        &self.additional_details
+    }
     /// <p>The transit gateway.</p>
     pub fn transit_gateway(mut self, input: crate::types::AnalysisComponent) -> Self {
         self.transit_gateway = ::std::option::Option::Some(input);
@@ -382,6 +442,10 @@ impl PathComponentBuilder {
     ) -> Self {
         self.transit_gateway = input;
         self
+    }
+    /// <p>The transit gateway.</p>
+    pub fn get_transit_gateway(&self) -> &::std::option::Option<crate::types::AnalysisComponent> {
+        &self.transit_gateway
     }
     /// <p>The route in a transit gateway route table.</p>
     pub fn transit_gateway_route_table_route(
@@ -398,6 +462,12 @@ impl PathComponentBuilder {
     ) -> Self {
         self.transit_gateway_route_table_route = input;
         self
+    }
+    /// <p>The route in a transit gateway route table.</p>
+    pub fn get_transit_gateway_route_table_route(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransitGatewayRouteTableRoute> {
+        &self.transit_gateway_route_table_route
     }
     /// Appends an item to `explanations`.
     ///
@@ -418,6 +488,12 @@ impl PathComponentBuilder {
         self.explanations = input;
         self
     }
+    /// <p>The explanation codes.</p>
+    pub fn get_explanations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Explanation>> {
+        &self.explanations
+    }
     /// <p>The load balancer listener.</p>
     pub fn elastic_load_balancer_listener(
         mut self,
@@ -434,6 +510,12 @@ impl PathComponentBuilder {
         self.elastic_load_balancer_listener = input;
         self
     }
+    /// <p>The load balancer listener.</p>
+    pub fn get_elastic_load_balancer_listener(
+        &self,
+    ) -> &::std::option::Option<crate::types::AnalysisComponent> {
+        &self.elastic_load_balancer_listener
+    }
     /// <p>The Network Firewall stateless rule.</p>
     pub fn firewall_stateless_rule(mut self, input: crate::types::FirewallStatelessRule) -> Self {
         self.firewall_stateless_rule = ::std::option::Option::Some(input);
@@ -446,6 +528,12 @@ impl PathComponentBuilder {
     ) -> Self {
         self.firewall_stateless_rule = input;
         self
+    }
+    /// <p>The Network Firewall stateless rule.</p>
+    pub fn get_firewall_stateless_rule(
+        &self,
+    ) -> &::std::option::Option<crate::types::FirewallStatelessRule> {
+        &self.firewall_stateless_rule
     }
     /// <p>The Network Firewall stateful rule.</p>
     pub fn firewall_stateful_rule(mut self, input: crate::types::FirewallStatefulRule) -> Self {
@@ -460,6 +548,12 @@ impl PathComponentBuilder {
         self.firewall_stateful_rule = input;
         self
     }
+    /// <p>The Network Firewall stateful rule.</p>
+    pub fn get_firewall_stateful_rule(
+        &self,
+    ) -> &::std::option::Option<crate::types::FirewallStatefulRule> {
+        &self.firewall_stateful_rule
+    }
     /// <p>The name of the VPC endpoint service.</p>
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
@@ -469,6 +563,10 @@ impl PathComponentBuilder {
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_name = input;
         self
+    }
+    /// <p>The name of the VPC endpoint service.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
     }
     /// Consumes the builder and constructs a [`PathComponent`](crate::types::PathComponent).
     pub fn build(self) -> crate::types::PathComponent {

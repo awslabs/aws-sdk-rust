@@ -48,6 +48,10 @@ impl ConsentBuilder {
         self.max_price = input;
         self
     }
+    /// <p> Maximum amount the customer agreed to accept. </p>
+    pub fn get_max_price(&self) -> &::std::option::Option<f64> {
+        &self.max_price
+    }
     /// <p> Currency for the <code>MaxPrice</code>. </p>
     pub fn currency(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.currency = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl ConsentBuilder {
     pub fn set_currency(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.currency = input;
         self
+    }
+    /// <p> Currency for the <code>MaxPrice</code>. </p>
+    pub fn get_currency(&self) -> &::std::option::Option<::std::string::String> {
+        &self.currency
     }
     /// Consumes the builder and constructs a [`Consent`](crate::types::Consent).
     pub fn build(self) -> crate::types::Consent {

@@ -40,6 +40,10 @@ impl DescribeDimensionInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The unique identifier for the dimension.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DescribeDimensionInput`](crate::operation::describe_dimension::DescribeDimensionInput).
     pub fn build(
         self,

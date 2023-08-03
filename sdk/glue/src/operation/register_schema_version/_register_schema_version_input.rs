@@ -65,6 +65,14 @@ impl RegisterSchemaVersionInputBuilder {
         self.schema_id = input;
         self
     }
+    /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
+    /// <ul>
+    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
+    /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
+    /// </ul>
+    pub fn get_schema_id(&self) -> &::std::option::Option<crate::types::SchemaId> {
+        &self.schema_id
+    }
     /// <p>The schema definition using the <code>DataFormat</code> setting for the <code>SchemaName</code>.</p>
     pub fn schema_definition(
         mut self,
@@ -80,6 +88,10 @@ impl RegisterSchemaVersionInputBuilder {
     ) -> Self {
         self.schema_definition = input;
         self
+    }
+    /// <p>The schema definition using the <code>DataFormat</code> setting for the <code>SchemaName</code>.</p>
+    pub fn get_schema_definition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_definition
     }
     /// Consumes the builder and constructs a [`RegisterSchemaVersionInput`](crate::operation::register_schema_version::RegisterSchemaVersionInput).
     pub fn build(

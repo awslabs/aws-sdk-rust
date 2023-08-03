@@ -48,6 +48,10 @@ impl OutputSerializationBuilder {
         self.csv = input;
         self
     }
+    /// <p>Describes the serialization of CSV-encoded Select results.</p>
+    pub fn get_csv(&self) -> &::std::option::Option<crate::types::CsvOutput> {
+        &self.csv
+    }
     /// <p>Specifies JSON as request's output serialization format.</p>
     pub fn json(mut self, input: crate::types::JsonOutput) -> Self {
         self.json = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl OutputSerializationBuilder {
     pub fn set_json(mut self, input: ::std::option::Option<crate::types::JsonOutput>) -> Self {
         self.json = input;
         self
+    }
+    /// <p>Specifies JSON as request's output serialization format.</p>
+    pub fn get_json(&self) -> &::std::option::Option<crate::types::JsonOutput> {
+        &self.json
     }
     /// Consumes the builder and constructs a [`OutputSerialization`](crate::types::OutputSerialization).
     pub fn build(self) -> crate::types::OutputSerialization {

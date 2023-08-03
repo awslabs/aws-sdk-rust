@@ -72,6 +72,10 @@ impl AttributesResourceBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The unique identifier for the application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The type of attribute or attributes that were removed from the endpoints. Valid values are:</p>
     /// <ul>
     /// <li><p>endpoint-custom-attributes - Custom attributes that describe endpoints.</p></li>
@@ -98,6 +102,15 @@ impl AttributesResourceBuilder {
         self.attribute_type = input;
         self
     }
+    /// <p>The type of attribute or attributes that were removed from the endpoints. Valid values are:</p>
+    /// <ul>
+    /// <li><p>endpoint-custom-attributes - Custom attributes that describe endpoints.</p></li>
+    /// <li><p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints.</p></li>
+    /// <li><p>endpoint-user-attributes - Custom attributes that describe users.</p></li>
+    /// </ul>
+    pub fn get_attribute_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_type
+    }
     /// Appends an item to `attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
@@ -116,6 +129,10 @@ impl AttributesResourceBuilder {
     ) -> Self {
         self.attributes = input;
         self
+    }
+    /// <p>An array that specifies the names of the attributes that were removed from the endpoints.</p>
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.attributes
     }
     /// Consumes the builder and constructs a [`AttributesResource`](crate::types::AttributesResource).
     pub fn build(self) -> crate::types::AttributesResource {

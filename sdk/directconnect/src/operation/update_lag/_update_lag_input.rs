@@ -65,6 +65,10 @@ impl UpdateLagInputBuilder {
         self.lag_id = input;
         self
     }
+    /// <p>The ID of the LAG.</p>
+    pub fn get_lag_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lag_id
+    }
     /// <p>The name of the LAG.</p>
     pub fn lag_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lag_name = ::std::option::Option::Some(input.into());
@@ -75,6 +79,10 @@ impl UpdateLagInputBuilder {
         self.lag_name = input;
         self
     }
+    /// <p>The name of the LAG.</p>
+    pub fn get_lag_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lag_name
+    }
     /// <p>The minimum number of physical connections that must be operational for the LAG itself to be operational.</p>
     pub fn minimum_links(mut self, input: i32) -> Self {
         self.minimum_links = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl UpdateLagInputBuilder {
     pub fn set_minimum_links(mut self, input: ::std::option::Option<i32>) -> Self {
         self.minimum_links = input;
         self
+    }
+    /// <p>The minimum number of physical connections that must be operational for the LAG itself to be operational.</p>
+    pub fn get_minimum_links(&self) -> &::std::option::Option<i32> {
+        &self.minimum_links
     }
     /// <p>The LAG MAC Security (MACsec) encryption mode.</p>
     /// <p>Amazon Web Services applies the value to all connections which are part of the LAG.</p>
@@ -102,6 +114,11 @@ impl UpdateLagInputBuilder {
     ) -> Self {
         self.encryption_mode = input;
         self
+    }
+    /// <p>The LAG MAC Security (MACsec) encryption mode.</p>
+    /// <p>Amazon Web Services applies the value to all connections which are part of the LAG.</p>
+    pub fn get_encryption_mode(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encryption_mode
     }
     /// Consumes the builder and constructs a [`UpdateLagInput`](crate::operation::update_lag::UpdateLagInput).
     pub fn build(

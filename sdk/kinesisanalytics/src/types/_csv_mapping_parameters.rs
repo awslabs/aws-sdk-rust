@@ -56,6 +56,10 @@ impl CsvMappingParametersBuilder {
         self.record_row_delimiter = input;
         self
     }
+    /// <p>Row delimiter. For example, in a CSV format, <i>'\n'</i> is the typical row delimiter.</p>
+    pub fn get_record_row_delimiter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.record_row_delimiter
+    }
     /// <p>Column delimiter. For example, in a CSV format, a comma (",") is the typical column delimiter.</p>
     pub fn record_column_delimiter(
         mut self,
@@ -71,6 +75,10 @@ impl CsvMappingParametersBuilder {
     ) -> Self {
         self.record_column_delimiter = input;
         self
+    }
+    /// <p>Column delimiter. For example, in a CSV format, a comma (",") is the typical column delimiter.</p>
+    pub fn get_record_column_delimiter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.record_column_delimiter
     }
     /// Consumes the builder and constructs a [`CsvMappingParameters`](crate::types::CsvMappingParameters).
     pub fn build(self) -> crate::types::CsvMappingParameters {

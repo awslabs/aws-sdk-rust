@@ -59,6 +59,14 @@ impl SheetElementConfigurationOverridesBuilder {
         self.visibility = input;
         self
     }
+    /// <p>Determines whether or not the overrides are visible. Choose one of the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>VISIBLE</code> </p> </li>
+    /// <li> <p> <code>HIDDEN</code> </p> </li>
+    /// </ul>
+    pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.visibility
+    }
     /// Consumes the builder and constructs a [`SheetElementConfigurationOverrides`](crate::types::SheetElementConfigurationOverrides).
     pub fn build(self) -> crate::types::SheetElementConfigurationOverrides {
         crate::types::SheetElementConfigurationOverrides {

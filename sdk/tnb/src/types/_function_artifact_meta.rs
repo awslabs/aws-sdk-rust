@@ -50,6 +50,12 @@ impl FunctionArtifactMetaBuilder {
         self.overrides = input;
         self
     }
+    /// <p>Lists of function package overrides.</p>
+    pub fn get_overrides(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ToscaOverride>> {
+        &self.overrides
+    }
     /// Consumes the builder and constructs a [`FunctionArtifactMeta`](crate::types::FunctionArtifactMeta).
     pub fn build(self) -> crate::types::FunctionArtifactMeta {
         crate::types::FunctionArtifactMeta {

@@ -56,6 +56,10 @@ impl UpdateConnectionInputBuilder {
         self.catalog_id = input;
         self
     }
+    /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// <p>The name of the connection definition to update.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl UpdateConnectionInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the connection definition to update.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>A <code>ConnectionInput</code> object that redefines the connection in question.</p>
     pub fn connection_input(mut self, input: crate::types::ConnectionInput) -> Self {
@@ -78,6 +86,10 @@ impl UpdateConnectionInputBuilder {
     ) -> Self {
         self.connection_input = input;
         self
+    }
+    /// <p>A <code>ConnectionInput</code> object that redefines the connection in question.</p>
+    pub fn get_connection_input(&self) -> &::std::option::Option<crate::types::ConnectionInput> {
+        &self.connection_input
     }
     /// Consumes the builder and constructs a [`UpdateConnectionInput`](crate::operation::update_connection::UpdateConnectionInput).
     pub fn build(

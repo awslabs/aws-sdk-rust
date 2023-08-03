@@ -54,6 +54,10 @@ impl StreamingSessionStorageRootBuilder {
         self.linux = input;
         self
     }
+    /// <p>The folder path in Linux workstations where files are uploaded.</p>
+    pub fn get_linux(&self) -> &::std::option::Option<::std::string::String> {
+        &self.linux
+    }
     /// <p>The folder path in Windows workstations where files are uploaded.</p>
     pub fn windows(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.windows = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl StreamingSessionStorageRootBuilder {
     pub fn set_windows(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.windows = input;
         self
+    }
+    /// <p>The folder path in Windows workstations where files are uploaded.</p>
+    pub fn get_windows(&self) -> &::std::option::Option<::std::string::String> {
+        &self.windows
     }
     /// Consumes the builder and constructs a [`StreamingSessionStorageRoot`](crate::types::StreamingSessionStorageRoot).
     pub fn build(self) -> crate::types::StreamingSessionStorageRoot {

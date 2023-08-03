@@ -87,6 +87,12 @@ impl OutputGroupSettingsBuilder {
         self.cmaf_group_settings = input;
         self
     }
+    /// Settings related to your CMAF output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
+    pub fn get_cmaf_group_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::CmafGroupSettings> {
+        &self.cmaf_group_settings
+    }
     /// Settings related to your DASH output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
     pub fn dash_iso_group_settings(mut self, input: crate::types::DashIsoGroupSettings) -> Self {
         self.dash_iso_group_settings = ::std::option::Option::Some(input);
@@ -99,6 +105,12 @@ impl OutputGroupSettingsBuilder {
     ) -> Self {
         self.dash_iso_group_settings = input;
         self
+    }
+    /// Settings related to your DASH output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
+    pub fn get_dash_iso_group_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::DashIsoGroupSettings> {
+        &self.dash_iso_group_settings
     }
     /// Settings related to your File output group. MediaConvert uses this group of settings to generate a single standalone file, rather than a streaming package.
     pub fn file_group_settings(mut self, input: crate::types::FileGroupSettings) -> Self {
@@ -113,6 +125,12 @@ impl OutputGroupSettingsBuilder {
         self.file_group_settings = input;
         self
     }
+    /// Settings related to your File output group. MediaConvert uses this group of settings to generate a single standalone file, rather than a streaming package.
+    pub fn get_file_group_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::FileGroupSettings> {
+        &self.file_group_settings
+    }
     /// Settings related to your HLS output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
     pub fn hls_group_settings(mut self, input: crate::types::HlsGroupSettings) -> Self {
         self.hls_group_settings = ::std::option::Option::Some(input);
@@ -125,6 +143,10 @@ impl OutputGroupSettingsBuilder {
     ) -> Self {
         self.hls_group_settings = input;
         self
+    }
+    /// Settings related to your HLS output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
+    pub fn get_hls_group_settings(&self) -> &::std::option::Option<crate::types::HlsGroupSettings> {
+        &self.hls_group_settings
     }
     /// Settings related to your Microsoft Smooth Streaming output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
     pub fn ms_smooth_group_settings(mut self, input: crate::types::MsSmoothGroupSettings) -> Self {
@@ -139,6 +161,12 @@ impl OutputGroupSettingsBuilder {
         self.ms_smooth_group_settings = input;
         self
     }
+    /// Settings related to your Microsoft Smooth Streaming output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
+    pub fn get_ms_smooth_group_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::MsSmoothGroupSettings> {
+        &self.ms_smooth_group_settings
+    }
     /// Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth Streaming, CMAF)
     pub fn r#type(mut self, input: crate::types::OutputGroupType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -148,6 +176,10 @@ impl OutputGroupSettingsBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::OutputGroupType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth Streaming, CMAF)
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::OutputGroupType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`OutputGroupSettings`](crate::types::OutputGroupSettings).
     pub fn build(self) -> crate::types::OutputGroupSettings {

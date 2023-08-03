@@ -48,6 +48,10 @@ impl WorkflowExecutionBuilder {
         self.workflow_id = input;
         self
     }
+    /// <p>The user defined identifier associated with the workflow execution.</p>
+    pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_id
+    }
     /// <p>A system-generated unique identifier for the workflow execution.</p>
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.run_id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl WorkflowExecutionBuilder {
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.run_id = input;
         self
+    }
+    /// <p>A system-generated unique identifier for the workflow execution.</p>
+    pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.run_id
     }
     /// Consumes the builder and constructs a [`WorkflowExecution`](crate::types::WorkflowExecution).
     pub fn build(self) -> crate::types::WorkflowExecution {

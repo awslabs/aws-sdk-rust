@@ -59,6 +59,10 @@ impl TrainingMetricsV2Builder {
         self.ofi = input;
         self
     }
+    /// <p> The Online Fraud Insights (OFI) model training metric details. </p>
+    pub fn get_ofi(&self) -> &::std::option::Option<crate::types::OfiTrainingMetricsValue> {
+        &self.ofi
+    }
     /// <p> The Transaction Fraud Insights (TFI) model training metric details. </p>
     pub fn tfi(mut self, input: crate::types::TfiTrainingMetricsValue) -> Self {
         self.tfi = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl TrainingMetricsV2Builder {
         self.tfi = input;
         self
     }
+    /// <p> The Transaction Fraud Insights (TFI) model training metric details. </p>
+    pub fn get_tfi(&self) -> &::std::option::Option<crate::types::TfiTrainingMetricsValue> {
+        &self.tfi
+    }
     /// <p> The Account Takeover Insights (ATI) model training metric details. </p>
     pub fn ati(mut self, input: crate::types::AtiTrainingMetricsValue) -> Self {
         self.ati = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl TrainingMetricsV2Builder {
     ) -> Self {
         self.ati = input;
         self
+    }
+    /// <p> The Account Takeover Insights (ATI) model training metric details. </p>
+    pub fn get_ati(&self) -> &::std::option::Option<crate::types::AtiTrainingMetricsValue> {
+        &self.ati
     }
     /// Consumes the builder and constructs a [`TrainingMetricsV2`](crate::types::TrainingMetricsV2).
     pub fn build(self) -> crate::types::TrainingMetricsV2 {

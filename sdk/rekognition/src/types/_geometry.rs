@@ -51,6 +51,10 @@ impl GeometryBuilder {
         self.bounding_box = input;
         self
     }
+    /// <p>An axis-aligned coarse representation of the detected item's location on the image.</p>
+    pub fn get_bounding_box(&self) -> &::std::option::Option<crate::types::BoundingBox> {
+        &self.bounding_box
+    }
     /// Appends an item to `polygon`.
     ///
     /// To override the contents of this collection use [`set_polygon`](Self::set_polygon).
@@ -69,6 +73,10 @@ impl GeometryBuilder {
     ) -> Self {
         self.polygon = input;
         self
+    }
+    /// <p>Within the bounding box, a fine-grained polygon around the detected item.</p>
+    pub fn get_polygon(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Point>> {
+        &self.polygon
     }
     /// Consumes the builder and constructs a [`Geometry`](crate::types::Geometry).
     pub fn build(self) -> crate::types::Geometry {

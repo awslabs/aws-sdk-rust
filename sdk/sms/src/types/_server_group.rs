@@ -62,6 +62,10 @@ impl ServerGroupBuilder {
         self.server_group_id = input;
         self
     }
+    /// <p>The ID of a server group.</p>
+    pub fn get_server_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_group_id
+    }
     /// <p>The name of a server group.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl ServerGroupBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of a server group.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `server_list`.
     ///
@@ -90,6 +98,10 @@ impl ServerGroupBuilder {
     ) -> Self {
         self.server_list = input;
         self
+    }
+    /// <p>The servers that belong to a server group.</p>
+    pub fn get_server_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Server>> {
+        &self.server_list
     }
     /// Consumes the builder and constructs a [`ServerGroup`](crate::types::ServerGroup).
     pub fn build(self) -> crate::types::ServerGroup {

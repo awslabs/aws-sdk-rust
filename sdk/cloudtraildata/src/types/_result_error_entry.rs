@@ -56,6 +56,10 @@ impl ResultErrorEntryBuilder {
         self.id = input;
         self
     }
+    /// <p>The original event ID from the source event that could not be ingested by CloudTrail.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The error code for events that could not be ingested by CloudTrail. Possible error codes include: <code>FieldTooLong</code>, <code>FieldNotFound</code>, <code>InvalidChecksum</code>, <code>InvalidData</code>, <code>InvalidRecipient</code>, <code>InvalidEventSource</code>, <code>AccountNotSubscribed</code>, <code>Throttling</code>, and <code>InternalFailure</code>.</p>
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl ResultErrorEntryBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>The error code for events that could not be ingested by CloudTrail. Possible error codes include: <code>FieldTooLong</code>, <code>FieldNotFound</code>, <code>InvalidChecksum</code>, <code>InvalidData</code>, <code>InvalidRecipient</code>, <code>InvalidEventSource</code>, <code>AccountNotSubscribed</code>, <code>Throttling</code>, and <code>InternalFailure</code>.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
     }
     /// <p>The message that describes the error for events that could not be ingested by CloudTrail.</p>
     pub fn error_message(
@@ -81,6 +89,10 @@ impl ResultErrorEntryBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>The message that describes the error for events that could not be ingested by CloudTrail.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`ResultErrorEntry`](crate::types::ResultErrorEntry).
     pub fn build(self) -> crate::types::ResultErrorEntry {

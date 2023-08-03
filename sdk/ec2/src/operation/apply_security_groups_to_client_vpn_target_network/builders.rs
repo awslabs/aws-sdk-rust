@@ -36,6 +36,10 @@ impl ApplySecurityGroupsToClientVpnTargetNetworkFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ApplySecurityGroupsToClientVpnTargetNetwork as a reference.
+    pub fn as_input(&self) -> &crate::operation::apply_security_groups_to_client_vpn_target_network::builders::ApplySecurityGroupsToClientVpnTargetNetworkInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl ApplySecurityGroupsToClientVpnTargetNetworkFluentBuilder {
         self.inner = self.inner.set_client_vpn_endpoint_id(input);
         self
     }
+    /// <p>The ID of the Client VPN endpoint.</p>
+    pub fn get_client_vpn_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_vpn_endpoint_id()
+    }
     /// <p>The ID of the VPC in which the associated target network is located.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_id(input.into());
@@ -115,6 +123,10 @@ impl ApplySecurityGroupsToClientVpnTargetNetworkFluentBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpc_id(input);
         self
+    }
+    /// <p>The ID of the VPC in which the associated target network is located.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpc_id()
     }
     /// Appends an item to `SecurityGroupIds`.
     ///
@@ -136,6 +148,12 @@ impl ApplySecurityGroupsToClientVpnTargetNetworkFluentBuilder {
         self.inner = self.inner.set_security_group_ids(input);
         self
     }
+    /// <p>The IDs of the security groups to apply to the associated target network. Up to 5 security groups can be applied to an associated target network.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_security_group_ids()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -145,5 +163,9 @@ impl ApplySecurityGroupsToClientVpnTargetNetworkFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

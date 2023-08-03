@@ -97,6 +97,11 @@ impl RecommendationPreferencesDetailBuilder {
         self.scope = input;
         self
     }
+    /// <p>An object that describes the scope of the recommendation preference.</p>
+    /// <p>Recommendation preferences can be created at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    pub fn get_scope(&self) -> &::std::option::Option<crate::types::Scope> {
+        &self.scope
+    }
     /// <p>The target resource type of the recommendation preference to create.</p>
     /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
@@ -111,6 +116,11 @@ impl RecommendationPreferencesDetailBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>The target resource type of the recommendation preference to create.</p>
+    /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
     }
     /// <p>The status of the enhanced infrastructure metrics recommendation preference.</p>
     /// <p>When the recommendations page is refreshed, a status of <code>Active</code> confirms that the preference is applied to the recommendations, and a status of <code>Inactive</code> confirms that the preference isn't yet applied to recommendations.</p>
@@ -132,6 +142,14 @@ impl RecommendationPreferencesDetailBuilder {
         self.enhanced_infrastructure_metrics = input;
         self
     }
+    /// <p>The status of the enhanced infrastructure metrics recommendation preference.</p>
+    /// <p>When the recommendations page is refreshed, a status of <code>Active</code> confirms that the preference is applied to the recommendations, and a status of <code>Inactive</code> confirms that the preference isn't yet applied to recommendations.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    pub fn get_enhanced_infrastructure_metrics(
+        &self,
+    ) -> &::std::option::Option<crate::types::EnhancedInfrastructureMetrics> {
+        &self.enhanced_infrastructure_metrics
+    }
     /// <p>The status of the inferred workload types recommendation preference.</p>
     /// <p>When the recommendations page is refreshed, a status of <code>Active</code> confirms that the preference is applied to the recommendations, and a status of <code>Inactive</code> confirms that the preference isn't yet applied to recommendations.</p>
     pub fn inferred_workload_types(
@@ -150,6 +168,13 @@ impl RecommendationPreferencesDetailBuilder {
         self.inferred_workload_types = input;
         self
     }
+    /// <p>The status of the inferred workload types recommendation preference.</p>
+    /// <p>When the recommendations page is refreshed, a status of <code>Active</code> confirms that the preference is applied to the recommendations, and a status of <code>Inactive</code> confirms that the preference isn't yet applied to recommendations.</p>
+    pub fn get_inferred_workload_types(
+        &self,
+    ) -> &::std::option::Option<crate::types::InferredWorkloadTypesPreference> {
+        &self.inferred_workload_types
+    }
     /// <p> An object that describes the external metrics recommendation preference. </p>
     /// <p> If the preference is applied in the latest recommendation refresh, an object with a valid <code>source</code> value appears in the response. If the preference isn't applied to the recommendations already, then this object doesn't appear in the response. </p>
     pub fn external_metrics_preference(
@@ -167,6 +192,13 @@ impl RecommendationPreferencesDetailBuilder {
     ) -> Self {
         self.external_metrics_preference = input;
         self
+    }
+    /// <p> An object that describes the external metrics recommendation preference. </p>
+    /// <p> If the preference is applied in the latest recommendation refresh, an object with a valid <code>source</code> value appears in the response. If the preference isn't applied to the recommendations already, then this object doesn't appear in the response. </p>
+    pub fn get_external_metrics_preference(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExternalMetricsPreference> {
+        &self.external_metrics_preference
     }
     /// Consumes the builder and constructs a [`RecommendationPreferencesDetail`](crate::types::RecommendationPreferencesDetail).
     pub fn build(self) -> crate::types::RecommendationPreferencesDetail {

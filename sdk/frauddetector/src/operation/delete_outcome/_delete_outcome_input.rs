@@ -39,6 +39,10 @@ impl DeleteOutcomeInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the outcome to delete.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DeleteOutcomeInput`](crate::operation::delete_outcome::DeleteOutcomeInput).
     pub fn build(
         self,

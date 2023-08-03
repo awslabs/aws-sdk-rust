@@ -48,6 +48,10 @@ impl GroupOwnerSettingBuilder {
         self.auto_add_group_owner = input;
         self
     }
+    /// If true, AWS IoT Greengrass automatically adds the specified Linux OS group owner of the resource to the Lambda process privileges. Thus the Lambda process will have the file access permissions of the added Linux group.
+    pub fn get_auto_add_group_owner(&self) -> &::std::option::Option<bool> {
+        &self.auto_add_group_owner
+    }
     /// The name of the Linux OS group whose privileges will be added to the Lambda process. This field is optional.
     pub fn group_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_owner = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl GroupOwnerSettingBuilder {
     pub fn set_group_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_owner = input;
         self
+    }
+    /// The name of the Linux OS group whose privileges will be added to the Lambda process. This field is optional.
+    pub fn get_group_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_owner
     }
     /// Consumes the builder and constructs a [`GroupOwnerSetting`](crate::types::GroupOwnerSetting).
     pub fn build(self) -> crate::types::GroupOwnerSetting {

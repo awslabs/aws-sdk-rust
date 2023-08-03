@@ -68,6 +68,12 @@ impl VpcConfigBuilder {
         self.security_group_ids = input;
         self
     }
+    /// <p>An array of one or more security groups IDs in your Amazon VPC.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
+    }
     /// Appends an item to `subnet_ids`.
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
@@ -87,6 +93,10 @@ impl VpcConfigBuilder {
         self.subnet_ids = input;
         self
     }
+    /// <p>An array of one or more subnet IDs in your Amazon VPC.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
+    }
     /// <p>The ID of the Amazon VPC.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -96,6 +106,10 @@ impl VpcConfigBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The ID of the Amazon VPC.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// Consumes the builder and constructs a [`VpcConfig`](crate::types::VpcConfig).
     pub fn build(self) -> crate::types::VpcConfig {

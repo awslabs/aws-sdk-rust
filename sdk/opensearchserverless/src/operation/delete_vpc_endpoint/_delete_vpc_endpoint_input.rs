@@ -48,6 +48,10 @@ impl DeleteVpcEndpointInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The VPC endpoint identifier.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl DeleteVpcEndpointInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`DeleteVpcEndpointInput`](crate::operation::delete_vpc_endpoint::DeleteVpcEndpointInput).
     pub fn build(

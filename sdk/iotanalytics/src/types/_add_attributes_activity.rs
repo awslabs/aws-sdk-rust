@@ -68,6 +68,10 @@ impl AddAttributesActivityBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the addAttributes activity.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Adds a key-value pair to `attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
@@ -97,6 +101,16 @@ impl AddAttributesActivityBuilder {
         self.attributes = input;
         self
     }
+    /// <p>A list of 1-50 <code>AttributeNameMapping</code> objects that map an existing attribute to a new attribute.</p> <note>
+    /// <p>The existing attributes remain in the message, so if you want to remove the originals, use <code>RemoveAttributeActivity</code>.</p>
+    /// </note>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.attributes
+    }
     /// <p>The next activity in the pipeline.</p>
     pub fn next(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next = ::std::option::Option::Some(input.into());
@@ -106,6 +120,10 @@ impl AddAttributesActivityBuilder {
     pub fn set_next(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next = input;
         self
+    }
+    /// <p>The next activity in the pipeline.</p>
+    pub fn get_next(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next
     }
     /// Consumes the builder and constructs a [`AddAttributesActivity`](crate::types::AddAttributesActivity).
     pub fn build(self) -> crate::types::AddAttributesActivity {

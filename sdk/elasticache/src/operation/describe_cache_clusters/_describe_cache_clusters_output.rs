@@ -57,6 +57,10 @@ impl DescribeCacheClustersOutputBuilder {
         self.marker = input;
         self
     }
+    /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// Appends an item to `cache_clusters`.
     ///
     /// To override the contents of this collection use [`set_cache_clusters`](Self::set_cache_clusters).
@@ -75,6 +79,12 @@ impl DescribeCacheClustersOutputBuilder {
     ) -> Self {
         self.cache_clusters = input;
         self
+    }
+    /// <p>A list of clusters. Each item in the list contains detailed information about one cluster.</p>
+    pub fn get_cache_clusters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CacheCluster>> {
+        &self.cache_clusters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

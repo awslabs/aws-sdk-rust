@@ -39,6 +39,12 @@ impl BatchUpdateVehicleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchUpdateVehicle as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_update_vehicle::builders::BatchUpdateVehicleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,5 +141,11 @@ impl BatchUpdateVehicleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_vehicles(input);
         self
+    }
+    /// <p> A list of information about the vehicles to update. For more information, see the API data type.</p>
+    pub fn get_vehicles(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleRequestItem>> {
+        self.inner.get_vehicles()
     }
 }

@@ -56,6 +56,10 @@ impl AuditTaskMetadataBuilder {
         self.task_id = input;
         self
     }
+    /// <p>The ID of this audit.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_id
+    }
     /// <p>The status of this audit. One of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
     pub fn task_status(mut self, input: crate::types::AuditTaskStatus) -> Self {
         self.task_status = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl AuditTaskMetadataBuilder {
         self.task_status = input;
         self
     }
+    /// <p>The status of this audit. One of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
+    pub fn get_task_status(&self) -> &::std::option::Option<crate::types::AuditTaskStatus> {
+        &self.task_status
+    }
     /// <p>The type of this audit. One of "ON_DEMAND_AUDIT_TASK" or "SCHEDULED_AUDIT_TASK".</p>
     pub fn task_type(mut self, input: crate::types::AuditTaskType) -> Self {
         self.task_type = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl AuditTaskMetadataBuilder {
     ) -> Self {
         self.task_type = input;
         self
+    }
+    /// <p>The type of this audit. One of "ON_DEMAND_AUDIT_TASK" or "SCHEDULED_AUDIT_TASK".</p>
+    pub fn get_task_type(&self) -> &::std::option::Option<crate::types::AuditTaskType> {
+        &self.task_type
     }
     /// Consumes the builder and constructs a [`AuditTaskMetadata`](crate::types::AuditTaskMetadata).
     pub fn build(self) -> crate::types::AuditTaskMetadata {

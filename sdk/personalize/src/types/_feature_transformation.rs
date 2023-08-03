@@ -96,6 +96,10 @@ impl FeatureTransformationBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the feature transformation.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Name (ARN) of the FeatureTransformation object.</p>
     pub fn feature_transformation_arn(
         mut self,
@@ -111,6 +115,10 @@ impl FeatureTransformationBuilder {
     ) -> Self {
         self.feature_transformation_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the FeatureTransformation object.</p>
+    pub fn get_feature_transformation_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.feature_transformation_arn
     }
     /// Adds a key-value pair to `default_parameters`.
     ///
@@ -137,6 +145,14 @@ impl FeatureTransformationBuilder {
         self.default_parameters = input;
         self
     }
+    /// <p>Provides the default parameters for feature transformation.</p>
+    pub fn get_default_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.default_parameters
+    }
     /// <p>The creation date and time (in Unix time) of the feature transformation.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
@@ -150,6 +166,10 @@ impl FeatureTransformationBuilder {
         self.creation_date_time = input;
         self
     }
+    /// <p>The creation date and time (in Unix time) of the feature transformation.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
+    }
     /// <p>The last update date and time (in Unix time) of the feature transformation.</p>
     pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date_time = ::std::option::Option::Some(input);
@@ -162,6 +182,12 @@ impl FeatureTransformationBuilder {
     ) -> Self {
         self.last_updated_date_time = input;
         self
+    }
+    /// <p>The last update date and time (in Unix time) of the feature transformation.</p>
+    pub fn get_last_updated_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date_time
     }
     /// <p>The status of the feature transformation.</p>
     /// <p>A feature transformation can be in one of the following states:</p>
@@ -180,6 +206,14 @@ impl FeatureTransformationBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the feature transformation.</p>
+    /// <p>A feature transformation can be in one of the following states:</p>
+    /// <ul>
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`FeatureTransformation`](crate::types::FeatureTransformation).
     pub fn build(self) -> crate::types::FeatureTransformation {

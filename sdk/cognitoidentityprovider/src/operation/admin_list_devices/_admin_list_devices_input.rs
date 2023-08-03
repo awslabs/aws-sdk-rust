@@ -73,6 +73,10 @@ impl AdminListDevicesInputBuilder {
         self.user_pool_id = input;
         self
     }
+    /// <p>The user pool ID.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_pool_id
+    }
     /// <p>The user name.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
@@ -83,6 +87,10 @@ impl AdminListDevicesInputBuilder {
         self.username = input;
         self
     }
+    /// <p>The user name.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
+    }
     /// <p>The limit of the devices request.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -92,6 +100,10 @@ impl AdminListDevicesInputBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
+    }
+    /// <p>The limit of the devices request.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// <p>The pagination token.</p>
     pub fn pagination_token(
@@ -108,6 +120,10 @@ impl AdminListDevicesInputBuilder {
     ) -> Self {
         self.pagination_token = input;
         self
+    }
+    /// <p>The pagination token.</p>
+    pub fn get_pagination_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pagination_token
     }
     /// Consumes the builder and constructs a [`AdminListDevicesInput`](crate::operation::admin_list_devices::AdminListDevicesInput).
     pub fn build(

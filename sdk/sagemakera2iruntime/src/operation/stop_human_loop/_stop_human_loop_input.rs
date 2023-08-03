@@ -45,6 +45,10 @@ impl StopHumanLoopInputBuilder {
         self.human_loop_name = input;
         self
     }
+    /// <p>The name of the human loop that you want to stop.</p>
+    pub fn get_human_loop_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.human_loop_name
+    }
     /// Consumes the builder and constructs a [`StopHumanLoopInput`](crate::operation::stop_human_loop::StopHumanLoopInput).
     pub fn build(
         self,

@@ -47,6 +47,10 @@ impl UntagMeetingInputBuilder {
         self.meeting_id = input;
         self
     }
+    /// <p>The Amazon Chime SDK meeting ID.</p>
+    pub fn get_meeting_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.meeting_id
+    }
     /// Appends an item to `tag_keys`.
     ///
     /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
@@ -65,6 +69,10 @@ impl UntagMeetingInputBuilder {
     ) -> Self {
         self.tag_keys = input;
         self
+    }
+    /// <p>The tag keys.</p>
+    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tag_keys
     }
     /// Consumes the builder and constructs a [`UntagMeetingInput`](crate::operation::untag_meeting::UntagMeetingInput).
     pub fn build(

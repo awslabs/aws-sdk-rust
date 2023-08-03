@@ -36,6 +36,12 @@ impl UpdateMultiplexFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateMultiplex as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_multiplex::builders::UpdateMultiplexInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateMultiplexFluentBuilder {
         self.inner = self.inner.set_multiplex_id(input);
         self
     }
+    /// ID of the multiplex to update.
+    pub fn get_multiplex_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_multiplex_id()
+    }
     /// The new settings for a multiplex.
     pub fn multiplex_settings(mut self, input: crate::types::MultiplexSettings) -> Self {
         self.inner = self.inner.multiplex_settings(input);
@@ -139,6 +149,12 @@ impl UpdateMultiplexFluentBuilder {
         self.inner = self.inner.set_multiplex_settings(input);
         self
     }
+    /// The new settings for a multiplex.
+    pub fn get_multiplex_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::MultiplexSettings> {
+        self.inner.get_multiplex_settings()
+    }
     /// Name of the multiplex.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -148,5 +164,9 @@ impl UpdateMultiplexFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// Name of the multiplex.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
 }

@@ -54,6 +54,10 @@ impl StopPiiEntitiesDetectionJobOutputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The identifier of the PII entities detection job to stop.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>The status of the PII entities detection job.</p>
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
         self.job_status = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl StopPiiEntitiesDetectionJobOutputBuilder {
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
         self.job_status = input;
         self
+    }
+    /// <p>The status of the PII entities detection job.</p>
+    pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
+        &self.job_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

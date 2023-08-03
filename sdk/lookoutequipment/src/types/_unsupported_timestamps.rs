@@ -43,6 +43,10 @@ impl UnsupportedTimestampsBuilder {
         self.total_number_of_unsupported_timestamps = input;
         self
     }
+    /// <p> Indicates the total number of unsupported timestamps across the ingested data. </p>
+    pub fn get_total_number_of_unsupported_timestamps(&self) -> &::std::option::Option<i32> {
+        &self.total_number_of_unsupported_timestamps
+    }
     /// Consumes the builder and constructs a [`UnsupportedTimestamps`](crate::types::UnsupportedTimestamps).
     pub fn build(self) -> crate::types::UnsupportedTimestamps {
         crate::types::UnsupportedTimestamps {

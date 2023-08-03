@@ -39,6 +39,10 @@ impl GetSiteInputBuilder {
         self.id = input;
         self
     }
+    /// Site ARN.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`GetSiteInput`](crate::operation::get_site::GetSiteInput).
     pub fn build(
         self,

@@ -66,6 +66,11 @@ impl SpotPlacementBuilder {
         self.availability_zone = input;
         self
     }
+    /// <p>The Availability Zone.</p>
+    /// <p>[Spot Fleet only] To specify multiple Availability Zones, separate them using commas; for example, "us-west-2a, us-west-2b".</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p>The name of the placement group.</p>
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_name = ::std::option::Option::Some(input.into());
@@ -76,6 +81,10 @@ impl SpotPlacementBuilder {
         self.group_name = input;
         self
     }
+    /// <p>The name of the placement group.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
+    }
     /// <p>The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for Spot Instances.</p>
     pub fn tenancy(mut self, input: crate::types::Tenancy) -> Self {
         self.tenancy = ::std::option::Option::Some(input);
@@ -85,6 +94,10 @@ impl SpotPlacementBuilder {
     pub fn set_tenancy(mut self, input: ::std::option::Option<crate::types::Tenancy>) -> Self {
         self.tenancy = input;
         self
+    }
+    /// <p>The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for Spot Instances.</p>
+    pub fn get_tenancy(&self) -> &::std::option::Option<crate::types::Tenancy> {
+        &self.tenancy
     }
     /// Consumes the builder and constructs a [`SpotPlacement`](crate::types::SpotPlacement).
     pub fn build(self) -> crate::types::SpotPlacement {

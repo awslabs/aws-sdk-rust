@@ -38,6 +38,12 @@ impl CreateIpGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateIpGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_ip_group::builders::CreateIpGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -120,6 +126,10 @@ impl CreateIpGroupFluentBuilder {
         self.inner = self.inner.set_group_name(input);
         self
     }
+    /// <p>The name of the group.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group_name()
+    }
     /// <p>The description of the group.</p>
     pub fn group_desc(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_desc(input.into());
@@ -129,6 +139,10 @@ impl CreateIpGroupFluentBuilder {
     pub fn set_group_desc(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group_desc(input);
         self
+    }
+    /// <p>The description of the group.</p>
+    pub fn get_group_desc(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group_desc()
     }
     /// Appends an item to `UserRules`.
     ///
@@ -147,6 +161,12 @@ impl CreateIpGroupFluentBuilder {
         self.inner = self.inner.set_user_rules(input);
         self
     }
+    /// <p>The rules to add to the group.</p>
+    pub fn get_user_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpRuleItem>> {
+        self.inner.get_user_rules()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -163,5 +183,9 @@ impl CreateIpGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

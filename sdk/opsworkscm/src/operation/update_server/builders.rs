@@ -37,6 +37,10 @@ impl UpdateServerFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateServer as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_server::builders::UpdateServerInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl UpdateServerFluentBuilder {
         self.inner = self.inner.set_disable_automated_backup(input);
         self
     }
+    /// <p>Setting DisableAutomatedBackup to <code>true</code> disables automated or scheduled backups. Automated backups are enabled by default. </p>
+    pub fn get_disable_automated_backup(&self) -> &::std::option::Option<bool> {
+        self.inner.get_disable_automated_backup()
+    }
     /// <p>Sets the number of automated backups that you want to keep. </p>
     pub fn backup_retention_count(mut self, input: i32) -> Self {
         self.inner = self.inner.backup_retention_count(input);
@@ -129,6 +137,10 @@ impl UpdateServerFluentBuilder {
         self.inner = self.inner.set_backup_retention_count(input);
         self
     }
+    /// <p>Sets the number of automated backups that you want to keep. </p>
+    pub fn get_backup_retention_count(&self) -> &::std::option::Option<i32> {
+        self.inner.get_backup_retention_count()
+    }
     /// <p>The name of the server to update. </p>
     pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.server_name(input.into());
@@ -138,6 +150,10 @@ impl UpdateServerFluentBuilder {
     pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_server_name(input);
         self
+    }
+    /// <p>The name of the server to update. </p>
+    pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_server_name()
     }
     /// <p> <code>DDD:HH:MM</code> (weekly start time) or <code>HH:MM</code> (daily start time). </p>
     /// <p> Time windows always use coordinated universal time (UTC). Valid strings for day of week (<code>DDD</code>) are: <code>Mon</code>, <code>Tue</code>, <code>Wed</code>, <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
@@ -159,6 +175,13 @@ impl UpdateServerFluentBuilder {
     }
     /// <p> <code>DDD:HH:MM</code> (weekly start time) or <code>HH:MM</code> (daily start time). </p>
     /// <p> Time windows always use coordinated universal time (UTC). Valid strings for day of week (<code>DDD</code>) are: <code>Mon</code>, <code>Tue</code>, <code>Wed</code>, <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
+    pub fn get_preferred_maintenance_window(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_preferred_maintenance_window()
+    }
+    /// <p> <code>DDD:HH:MM</code> (weekly start time) or <code>HH:MM</code> (daily start time). </p>
+    /// <p> Time windows always use coordinated universal time (UTC). Valid strings for day of week (<code>DDD</code>) are: <code>Mon</code>, <code>Tue</code>, <code>Wed</code>, <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
     pub fn preferred_backup_window(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -174,5 +197,10 @@ impl UpdateServerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_preferred_backup_window(input);
         self
+    }
+    /// <p> <code>DDD:HH:MM</code> (weekly start time) or <code>HH:MM</code> (daily start time). </p>
+    /// <p> Time windows always use coordinated universal time (UTC). Valid strings for day of week (<code>DDD</code>) are: <code>Mon</code>, <code>Tue</code>, <code>Wed</code>, <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
+    pub fn get_preferred_backup_window(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_preferred_backup_window()
     }
 }

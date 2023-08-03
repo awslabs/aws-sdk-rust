@@ -98,6 +98,10 @@ impl UpdateServiceActionInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The self-service action identifier.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The self-service action name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -107,6 +111,10 @@ impl UpdateServiceActionInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The self-service action name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Adds a key-value pair to `definition`.
     ///
@@ -136,6 +144,17 @@ impl UpdateServiceActionInputBuilder {
         self.definition = input;
         self
     }
+    /// <p>A map that defines the self-service action.</p>
+    pub fn get_definition(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::ServiceActionDefinitionKey,
+            ::std::string::String,
+        >,
+    > {
+        &self.definition
+    }
     /// <p>The self-service action description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -145,6 +164,10 @@ impl UpdateServiceActionInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The self-service action description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The language code.</p>
     /// <ul>
@@ -169,6 +192,14 @@ impl UpdateServiceActionInputBuilder {
     ) -> Self {
         self.accept_language = input;
         self
+    }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accept_language
     }
     /// Consumes the builder and constructs a [`UpdateServiceActionInput`](crate::operation::update_service_action::UpdateServiceActionInput).
     pub fn build(

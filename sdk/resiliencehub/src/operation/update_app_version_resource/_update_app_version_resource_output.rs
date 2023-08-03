@@ -62,6 +62,10 @@ impl UpdateAppVersionResourceOutputBuilder {
         self.app_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_arn
+    }
     /// <p>The Resilience Hub application version.</p>
     pub fn app_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_version = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl UpdateAppVersionResourceOutputBuilder {
     pub fn set_app_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_version = input;
         self
+    }
+    /// <p>The Resilience Hub application version.</p>
+    pub fn get_app_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_version
     }
     /// <p>Defines a physical resource. A physical resource is a resource that exists in your account. It can be identified using an Amazon Resource Name (ARN) or a Resilience Hub-native identifier.</p>
     pub fn physical_resource(mut self, input: crate::types::PhysicalResource) -> Self {
@@ -84,6 +92,10 @@ impl UpdateAppVersionResourceOutputBuilder {
     ) -> Self {
         self.physical_resource = input;
         self
+    }
+    /// <p>Defines a physical resource. A physical resource is a resource that exists in your account. It can be identified using an Amazon Resource Name (ARN) or a Resilience Hub-native identifier.</p>
+    pub fn get_physical_resource(&self) -> &::std::option::Option<crate::types::PhysicalResource> {
+        &self.physical_resource
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

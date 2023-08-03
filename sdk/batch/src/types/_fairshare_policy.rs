@@ -63,6 +63,10 @@ impl FairsharePolicyBuilder {
         self.share_decay_seconds = input;
         self
     }
+    /// <p>The amount of time (in seconds) to use to calculate a fair share percentage for each fair share identifier in use. A value of zero (0) indicates that only current usage is measured. The decay allows for more recently run jobs to have more weight than jobs that ran earlier. The maximum supported value is 604800 (1 week).</p>
+    pub fn get_share_decay_seconds(&self) -> &::std::option::Option<i32> {
+        &self.share_decay_seconds
+    }
     /// <p>A value used to reserve some of the available maximum vCPU for fair share identifiers that aren't already used.</p>
     /// <p>The reserved ratio is <code>(<i>computeReservation</i>/100)^<i>ActiveFairShares</i> </code> where <code> <i>ActiveFairShares</i> </code> is the number of active fair share identifiers.</p>
     /// <p>For example, a <code>computeReservation</code> value of 50 indicates that Batchreserves 50% of the maximum available vCPU if there's only one fair share identifier. It reserves 25% if there are two fair share identifiers. It reserves 12.5% if there are three fair share identifiers. A <code>computeReservation</code> value of 25 indicates that Batch should reserve 25% of the maximum available vCPU if there's only one fair share identifier, 6.25% if there are two fair share identifiers, and 1.56% if there are three fair share identifiers.</p>
@@ -78,6 +82,13 @@ impl FairsharePolicyBuilder {
     pub fn set_compute_reservation(mut self, input: ::std::option::Option<i32>) -> Self {
         self.compute_reservation = input;
         self
+    }
+    /// <p>A value used to reserve some of the available maximum vCPU for fair share identifiers that aren't already used.</p>
+    /// <p>The reserved ratio is <code>(<i>computeReservation</i>/100)^<i>ActiveFairShares</i> </code> where <code> <i>ActiveFairShares</i> </code> is the number of active fair share identifiers.</p>
+    /// <p>For example, a <code>computeReservation</code> value of 50 indicates that Batchreserves 50% of the maximum available vCPU if there's only one fair share identifier. It reserves 25% if there are two fair share identifiers. It reserves 12.5% if there are three fair share identifiers. A <code>computeReservation</code> value of 25 indicates that Batch should reserve 25% of the maximum available vCPU if there's only one fair share identifier, 6.25% if there are two fair share identifiers, and 1.56% if there are three fair share identifiers.</p>
+    /// <p>The minimum value is 0 and the maximum value is 99.</p>
+    pub fn get_compute_reservation(&self) -> &::std::option::Option<i32> {
+        &self.compute_reservation
     }
     /// Appends an item to `share_distribution`.
     ///
@@ -97,6 +108,12 @@ impl FairsharePolicyBuilder {
     ) -> Self {
         self.share_distribution = input;
         self
+    }
+    /// <p>An array of <code>SharedIdentifier</code> objects that contain the weights for the fair share identifiers for the fair share policy. Fair share identifiers that aren't included have a default weight of <code>1.0</code>.</p>
+    pub fn get_share_distribution(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ShareAttributes>> {
+        &self.share_distribution
     }
     /// Consumes the builder and constructs a [`FairsharePolicy`](crate::types::FairsharePolicy).
     pub fn build(self) -> crate::types::FairsharePolicy {

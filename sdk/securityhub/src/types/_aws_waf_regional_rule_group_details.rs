@@ -68,6 +68,10 @@ impl AwsWafRegionalRuleGroupDetailsBuilder {
         self.metric_name = input;
         self
     }
+    /// <p>A name for the metrics for this rule group. </p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_name
+    }
     /// <p>The descriptive name of the rule group. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -77,6 +81,10 @@ impl AwsWafRegionalRuleGroupDetailsBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The descriptive name of the rule group. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The ID of the rule group. </p>
     pub fn rule_group_id(
@@ -93,6 +101,10 @@ impl AwsWafRegionalRuleGroupDetailsBuilder {
     ) -> Self {
         self.rule_group_id = input;
         self
+    }
+    /// <p>The ID of the rule group. </p>
+    pub fn get_rule_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_group_id
     }
     /// Appends an item to `rules`.
     ///
@@ -114,6 +126,13 @@ impl AwsWafRegionalRuleGroupDetailsBuilder {
     ) -> Self {
         self.rules = input;
         self
+    }
+    /// <p>Provides information about the rule statements used to identify the web requests that you want to allow, block, or count. </p>
+    pub fn get_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsWafRegionalRuleGroupRulesDetails>>
+    {
+        &self.rules
     }
     /// Consumes the builder and constructs a [`AwsWafRegionalRuleGroupDetails`](crate::types::AwsWafRegionalRuleGroupDetails).
     pub fn build(self) -> crate::types::AwsWafRegionalRuleGroupDetails {

@@ -53,6 +53,10 @@ impl GetJobRunInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The ID of the application on which the job run is submitted.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The ID of the job run.</p>
     pub fn job_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_run_id = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl GetJobRunInputBuilder {
     pub fn set_job_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_run_id = input;
         self
+    }
+    /// <p>The ID of the job run.</p>
+    pub fn get_job_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_run_id
     }
     /// Consumes the builder and constructs a [`GetJobRunInput`](crate::operation::get_job_run::GetJobRunInput).
     pub fn build(

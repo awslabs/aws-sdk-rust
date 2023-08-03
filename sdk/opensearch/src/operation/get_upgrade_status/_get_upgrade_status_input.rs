@@ -41,6 +41,10 @@ impl GetUpgradeStatusInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The domain of the domain to get upgrade status information for.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// Consumes the builder and constructs a [`GetUpgradeStatusInput`](crate::operation::get_upgrade_status::GetUpgradeStatusInput).
     pub fn build(
         self,

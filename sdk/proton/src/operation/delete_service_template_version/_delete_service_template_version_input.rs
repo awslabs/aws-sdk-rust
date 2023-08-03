@@ -61,6 +61,10 @@ impl DeleteServiceTemplateVersionInputBuilder {
         self.template_name = input;
         self
     }
+    /// <p>The name of the service template.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
     /// <p>The service template major version to delete.</p>
     pub fn major_version(
         mut self,
@@ -77,6 +81,10 @@ impl DeleteServiceTemplateVersionInputBuilder {
         self.major_version = input;
         self
     }
+    /// <p>The service template major version to delete.</p>
+    pub fn get_major_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.major_version
+    }
     /// <p>The service template minor version to delete.</p>
     pub fn minor_version(
         mut self,
@@ -92,6 +100,10 @@ impl DeleteServiceTemplateVersionInputBuilder {
     ) -> Self {
         self.minor_version = input;
         self
+    }
+    /// <p>The service template minor version to delete.</p>
+    pub fn get_minor_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.minor_version
     }
     /// Consumes the builder and constructs a [`DeleteServiceTemplateVersionInput`](crate::operation::delete_service_template_version::DeleteServiceTemplateVersionInput).
     pub fn build(

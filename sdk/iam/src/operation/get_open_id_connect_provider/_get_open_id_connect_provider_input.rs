@@ -49,6 +49,13 @@ impl GetOpenIdConnectProviderInputBuilder {
         self.open_id_connect_provider_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the OIDC provider resource object in IAM to get information for. You can get a list of OIDC provider resource ARNs by using the <code>ListOpenIDConnectProviders</code> operation.</p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn get_open_id_connect_provider_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.open_id_connect_provider_arn
+    }
     /// Consumes the builder and constructs a [`GetOpenIdConnectProviderInput`](crate::operation::get_open_id_connect_provider::GetOpenIdConnectProviderInput).
     pub fn build(
         self,

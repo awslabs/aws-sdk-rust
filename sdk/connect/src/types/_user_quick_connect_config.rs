@@ -48,6 +48,10 @@ impl UserQuickConnectConfigBuilder {
         self.user_id = input;
         self
     }
+    /// <p>The identifier of the user.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
+    }
     /// <p>The identifier of the flow.</p>
     pub fn contact_flow_id(
         mut self,
@@ -63,6 +67,10 @@ impl UserQuickConnectConfigBuilder {
     ) -> Self {
         self.contact_flow_id = input;
         self
+    }
+    /// <p>The identifier of the flow.</p>
+    pub fn get_contact_flow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_flow_id
     }
     /// Consumes the builder and constructs a [`UserQuickConnectConfig`](crate::types::UserQuickConnectConfig).
     pub fn build(self) -> crate::types::UserQuickConnectConfig {

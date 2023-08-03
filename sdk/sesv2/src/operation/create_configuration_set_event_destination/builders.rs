@@ -37,6 +37,10 @@ impl CreateConfigurationSetEventDestinationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateConfigurationSetEventDestination as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_configuration_set_event_destination::builders::CreateConfigurationSetEventDestinationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -107,6 +111,10 @@ impl CreateConfigurationSetEventDestinationFluentBuilder {
         self.inner = self.inner.set_configuration_set_name(input);
         self
     }
+    /// <p>The name of the configuration set .</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration_set_name()
+    }
     /// <p>A name that identifies the event destination within the configuration set.</p>
     pub fn event_destination_name(
         mut self,
@@ -123,6 +131,10 @@ impl CreateConfigurationSetEventDestinationFluentBuilder {
         self.inner = self.inner.set_event_destination_name(input);
         self
     }
+    /// <p>A name that identifies the event destination within the configuration set.</p>
+    pub fn get_event_destination_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_event_destination_name()
+    }
     /// <p>An object that defines the event destination.</p>
     pub fn event_destination(mut self, input: crate::types::EventDestinationDefinition) -> Self {
         self.inner = self.inner.event_destination(input);
@@ -135,5 +147,11 @@ impl CreateConfigurationSetEventDestinationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_event_destination(input);
         self
+    }
+    /// <p>An object that defines the event destination.</p>
+    pub fn get_event_destination(
+        &self,
+    ) -> &::std::option::Option<crate::types::EventDestinationDefinition> {
+        self.inner.get_event_destination()
     }
 }

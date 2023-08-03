@@ -56,6 +56,12 @@ impl KpiConditionalFormattingBuilder {
         self.conditional_formatting_options = input;
         self
     }
+    /// <p>The conditional formatting options of a KPI visual.</p>
+    pub fn get_conditional_formatting_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KpiConditionalFormattingOption>> {
+        &self.conditional_formatting_options
+    }
     /// Consumes the builder and constructs a [`KpiConditionalFormatting`](crate::types::KpiConditionalFormatting).
     pub fn build(self) -> crate::types::KpiConditionalFormatting {
         crate::types::KpiConditionalFormatting {

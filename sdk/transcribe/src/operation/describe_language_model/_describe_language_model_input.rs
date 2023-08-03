@@ -41,6 +41,10 @@ impl DescribeLanguageModelInputBuilder {
         self.model_name = input;
         self
     }
+    /// <p>The name of the custom language model you want information about. Model names are case sensitive.</p>
+    pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_name
+    }
     /// Consumes the builder and constructs a [`DescribeLanguageModelInput`](crate::operation::describe_language_model::DescribeLanguageModelInput).
     pub fn build(
         self,

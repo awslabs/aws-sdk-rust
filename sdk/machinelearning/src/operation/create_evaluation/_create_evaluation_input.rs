@@ -72,6 +72,10 @@ impl CreateEvaluationInputBuilder {
         self.evaluation_id = input;
         self
     }
+    /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code>.</p>
+    pub fn get_evaluation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evaluation_id
+    }
     /// <p>A user-supplied name or description of the <code>Evaluation</code>.</p>
     pub fn evaluation_name(
         mut self,
@@ -88,6 +92,10 @@ impl CreateEvaluationInputBuilder {
         self.evaluation_name = input;
         self
     }
+    /// <p>A user-supplied name or description of the <code>Evaluation</code>.</p>
+    pub fn get_evaluation_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evaluation_name
+    }
     /// <p>The ID of the <code>MLModel</code> to evaluate.</p>
     /// <p>The schema used in creating the <code>MLModel</code> must match the schema of the <code>DataSource</code> used in the <code>Evaluation</code>.</p>
     pub fn ml_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -99,6 +107,11 @@ impl CreateEvaluationInputBuilder {
     pub fn set_ml_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ml_model_id = input;
         self
+    }
+    /// <p>The ID of the <code>MLModel</code> to evaluate.</p>
+    /// <p>The schema used in creating the <code>MLModel</code> must match the schema of the <code>DataSource</code> used in the <code>Evaluation</code>.</p>
+    pub fn get_ml_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ml_model_id
     }
     /// <p>The ID of the <code>DataSource</code> for the evaluation. The schema of the <code>DataSource</code> must match the schema used to create the <code>MLModel</code>.</p>
     pub fn evaluation_data_source_id(
@@ -115,6 +128,10 @@ impl CreateEvaluationInputBuilder {
     ) -> Self {
         self.evaluation_data_source_id = input;
         self
+    }
+    /// <p>The ID of the <code>DataSource</code> for the evaluation. The schema of the <code>DataSource</code> must match the schema used to create the <code>MLModel</code>.</p>
+    pub fn get_evaluation_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evaluation_data_source_id
     }
     /// Consumes the builder and constructs a [`CreateEvaluationInput`](crate::operation::create_evaluation::CreateEvaluationInput).
     pub fn build(

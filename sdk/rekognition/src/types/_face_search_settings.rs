@@ -54,6 +54,10 @@ impl FaceSearchSettingsBuilder {
         self.collection_id = input;
         self
     }
+    /// <p>The ID of a collection that contains faces that you want to search for.</p>
+    pub fn get_collection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collection_id
+    }
     /// <p>Minimum face match confidence score that must be met to return a result for a recognized face. The default is 80. 0 is the lowest confidence. 100 is the highest confidence. Values between 0 and 100 are accepted, and values lower than 80 are set to 80.</p>
     pub fn face_match_threshold(mut self, input: f32) -> Self {
         self.face_match_threshold = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl FaceSearchSettingsBuilder {
     pub fn set_face_match_threshold(mut self, input: ::std::option::Option<f32>) -> Self {
         self.face_match_threshold = input;
         self
+    }
+    /// <p>Minimum face match confidence score that must be met to return a result for a recognized face. The default is 80. 0 is the lowest confidence. 100 is the highest confidence. Values between 0 and 100 are accepted, and values lower than 80 are set to 80.</p>
+    pub fn get_face_match_threshold(&self) -> &::std::option::Option<f32> {
+        &self.face_match_threshold
     }
     /// Consumes the builder and constructs a [`FaceSearchSettings`](crate::types::FaceSearchSettings).
     pub fn build(self) -> crate::types::FaceSearchSettings {

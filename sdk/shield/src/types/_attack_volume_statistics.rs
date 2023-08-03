@@ -40,6 +40,10 @@ impl AttackVolumeStatisticsBuilder {
         self.max = input;
         self
     }
+    /// <p>The maximum attack volume observed for the given unit.</p>
+    pub fn get_max(&self) -> &::std::option::Option<f64> {
+        &self.max
+    }
     /// Consumes the builder and constructs a [`AttackVolumeStatistics`](crate::types::AttackVolumeStatistics).
     pub fn build(self) -> crate::types::AttackVolumeStatistics {
         crate::types::AttackVolumeStatistics {

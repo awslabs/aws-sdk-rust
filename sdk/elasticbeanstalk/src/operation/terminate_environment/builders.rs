@@ -36,6 +36,12 @@ impl TerminateEnvironmentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the TerminateEnvironment as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::terminate_environment::builders::TerminateEnvironmentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +140,11 @@ impl TerminateEnvironmentFluentBuilder {
         self.inner = self.inner.set_environment_id(input);
         self
     }
+    /// <p>The ID of the environment to terminate.</p>
+    /// <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_id()
+    }
     /// <p>The name of the environment to terminate.</p>
     /// <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
     pub fn environment_name(
@@ -151,6 +162,11 @@ impl TerminateEnvironmentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_environment_name(input);
         self
+    }
+    /// <p>The name of the environment to terminate.</p>
+    /// <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_name()
     }
     /// <p>Indicates whether the associated AWS resources should shut down when the environment is terminated:</p>
     /// <ul>
@@ -176,6 +192,17 @@ impl TerminateEnvironmentFluentBuilder {
         self.inner = self.inner.set_terminate_resources(input);
         self
     }
+    /// <p>Indicates whether the associated AWS resources should shut down when the environment is terminated:</p>
+    /// <ul>
+    /// <li> <p> <code>true</code>: The specified environment as well as the associated AWS resources, such as Auto Scaling group and LoadBalancer, are terminated.</p> </li>
+    /// <li> <p> <code>false</code>: AWS Elastic Beanstalk resource management is removed from the environment, but the AWS resources continue to operate.</p> </li>
+    /// </ul>
+    /// <p> For more information, see the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS Elastic Beanstalk User Guide. </a> </p>
+    /// <p> Default: <code>true</code> </p>
+    /// <p> Valid Values: <code>true</code> | <code>false</code> </p>
+    pub fn get_terminate_resources(&self) -> &::std::option::Option<bool> {
+        self.inner.get_terminate_resources()
+    }
     /// <p>Terminates the target environment even if another environment in the same group is dependent on it.</p>
     pub fn force_terminate(mut self, input: bool) -> Self {
         self.inner = self.inner.force_terminate(input);
@@ -185,5 +212,9 @@ impl TerminateEnvironmentFluentBuilder {
     pub fn set_force_terminate(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force_terminate(input);
         self
+    }
+    /// <p>Terminates the target environment even if another environment in the same group is dependent on it.</p>
+    pub fn get_force_terminate(&self) -> &::std::option::Option<bool> {
+        self.inner.get_force_terminate()
     }
 }

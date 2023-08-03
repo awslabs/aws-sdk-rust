@@ -52,6 +52,10 @@ impl ReceiptIpFilterBuilder {
         self.policy = input;
         self
     }
+    /// <p>Indicates whether to block or allow incoming mail from the specified IP addresses.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<crate::types::ReceiptFilterPolicy> {
+        &self.policy
+    }
     /// <p>A single IP address or a range of IP addresses that you want to block or allow, specified in Classless Inter-Domain Routing (CIDR) notation. An example of a single email address is 10.0.0.1. An example of a range of IP addresses is 10.0.0.1/24. For more information about CIDR notation, see <a href="https://tools.ietf.org/html/rfc2317">RFC 2317</a>.</p>
     pub fn cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cidr = ::std::option::Option::Some(input.into());
@@ -61,6 +65,10 @@ impl ReceiptIpFilterBuilder {
     pub fn set_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cidr = input;
         self
+    }
+    /// <p>A single IP address or a range of IP addresses that you want to block or allow, specified in Classless Inter-Domain Routing (CIDR) notation. An example of a single email address is 10.0.0.1. An example of a range of IP addresses is 10.0.0.1/24. For more information about CIDR notation, see <a href="https://tools.ietf.org/html/rfc2317">RFC 2317</a>.</p>
+    pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr
     }
     /// Consumes the builder and constructs a [`ReceiptIpFilter`](crate::types::ReceiptIpFilter).
     pub fn build(self) -> crate::types::ReceiptIpFilter {

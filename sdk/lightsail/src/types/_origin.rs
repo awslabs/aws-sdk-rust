@@ -67,6 +67,10 @@ impl OriginBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the origin resource.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The resource type of the origin resource (e.g., <i>Instance</i>).</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
@@ -79,6 +83,10 @@ impl OriginBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>The resource type of the origin resource (e.g., <i>Instance</i>).</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
     }
     /// <p>The AWS Region name of the origin resource.</p>
     pub fn region_name(mut self, input: crate::types::RegionName) -> Self {
@@ -93,6 +101,10 @@ impl OriginBuilder {
         self.region_name = input;
         self
     }
+    /// <p>The AWS Region name of the origin resource.</p>
+    pub fn get_region_name(&self) -> &::std::option::Option<crate::types::RegionName> {
+        &self.region_name
+    }
     /// <p>The protocol that your Amazon Lightsail distribution uses when establishing a connection with your origin to pull content.</p>
     pub fn protocol_policy(mut self, input: crate::types::OriginProtocolPolicyEnum) -> Self {
         self.protocol_policy = ::std::option::Option::Some(input);
@@ -105,6 +117,12 @@ impl OriginBuilder {
     ) -> Self {
         self.protocol_policy = input;
         self
+    }
+    /// <p>The protocol that your Amazon Lightsail distribution uses when establishing a connection with your origin to pull content.</p>
+    pub fn get_protocol_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::OriginProtocolPolicyEnum> {
+        &self.protocol_policy
     }
     /// Consumes the builder and constructs a [`Origin`](crate::types::Origin).
     pub fn build(self) -> crate::types::Origin {

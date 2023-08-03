@@ -58,6 +58,12 @@ impl NodegroupResourcesBuilder {
         self.auto_scaling_groups = input;
         self
     }
+    /// <p>The Auto Scaling groups associated with the node group.</p>
+    pub fn get_auto_scaling_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoScalingGroup>> {
+        &self.auto_scaling_groups
+    }
     /// <p>The remote access security group associated with the node group. This security group controls SSH access to the nodes.</p>
     pub fn remote_access_security_group(
         mut self,
@@ -73,6 +79,12 @@ impl NodegroupResourcesBuilder {
     ) -> Self {
         self.remote_access_security_group = input;
         self
+    }
+    /// <p>The remote access security group associated with the node group. This security group controls SSH access to the nodes.</p>
+    pub fn get_remote_access_security_group(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.remote_access_security_group
     }
     /// Consumes the builder and constructs a [`NodegroupResources`](crate::types::NodegroupResources).
     pub fn build(self) -> crate::types::NodegroupResources {

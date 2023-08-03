@@ -56,6 +56,10 @@ impl TestRenderEmailTemplateInputBuilder {
         self.template_name = input;
         self
     }
+    /// <p>The name of the template.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
     /// <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
     pub fn template_data(
         mut self,
@@ -71,6 +75,10 @@ impl TestRenderEmailTemplateInputBuilder {
     ) -> Self {
         self.template_data = input;
         self
+    }
+    /// <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
+    pub fn get_template_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_data
     }
     /// Consumes the builder and constructs a [`TestRenderEmailTemplateInput`](crate::operation::test_render_email_template::TestRenderEmailTemplateInput).
     pub fn build(

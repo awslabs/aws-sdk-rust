@@ -36,6 +36,12 @@ impl AddTagsToResourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AddTagsToResource as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::add_tags_to_resource::builders::AddTagsToResourceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl AddTagsToResourceFluentBuilder {
         self.inner = self.inner.set_resource_id(input);
         self
     }
+    /// <p>Identifier (ID) for the directory to which to add the tag.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_id()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -142,5 +152,9 @@ impl AddTagsToResourceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags to be assigned to the directory.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

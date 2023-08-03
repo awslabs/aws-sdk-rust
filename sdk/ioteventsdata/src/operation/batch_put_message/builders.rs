@@ -36,6 +36,12 @@ impl BatchPutMessageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchPutMessage as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_put_message::builders::BatchPutMessageInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +138,9 @@ impl BatchPutMessageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_messages(input);
         self
+    }
+    /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code> </p>
+    pub fn get_messages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Message>> {
+        self.inner.get_messages()
     }
 }

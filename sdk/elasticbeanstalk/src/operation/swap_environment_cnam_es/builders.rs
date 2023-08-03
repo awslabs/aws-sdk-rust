@@ -36,6 +36,13 @@ impl SwapEnvironmentCNAMEsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SwapEnvironmentCNAMEs as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::swap_environment_cnam_es::builders::SwapEnvironmentCnamEsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +141,11 @@ impl SwapEnvironmentCNAMEsFluentBuilder {
         self.inner = self.inner.set_source_environment_id(input);
         self
     }
+    /// <p>The ID of the source environment.</p>
+    /// <p> Condition: You must specify at least the <code>SourceEnvironmentID</code> or the <code>SourceEnvironmentName</code>. You may also specify both. If you specify the <code>SourceEnvironmentId</code>, you must specify the <code>DestinationEnvironmentId</code>. </p>
+    pub fn get_source_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_environment_id()
+    }
     /// <p>The name of the source environment.</p>
     /// <p> Condition: You must specify at least the <code>SourceEnvironmentID</code> or the <code>SourceEnvironmentName</code>. You may also specify both. If you specify the <code>SourceEnvironmentName</code>, you must specify the <code>DestinationEnvironmentName</code>. </p>
     pub fn source_environment_name(
@@ -151,6 +163,11 @@ impl SwapEnvironmentCNAMEsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_source_environment_name(input);
         self
+    }
+    /// <p>The name of the source environment.</p>
+    /// <p> Condition: You must specify at least the <code>SourceEnvironmentID</code> or the <code>SourceEnvironmentName</code>. You may also specify both. If you specify the <code>SourceEnvironmentName</code>, you must specify the <code>DestinationEnvironmentName</code>. </p>
+    pub fn get_source_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_environment_name()
     }
     /// <p>The ID of the destination environment.</p>
     /// <p> Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the <code>SourceEnvironmentId</code> with the <code>DestinationEnvironmentId</code>. </p>
@@ -170,6 +187,11 @@ impl SwapEnvironmentCNAMEsFluentBuilder {
         self.inner = self.inner.set_destination_environment_id(input);
         self
     }
+    /// <p>The ID of the destination environment.</p>
+    /// <p> Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the <code>SourceEnvironmentId</code> with the <code>DestinationEnvironmentId</code>. </p>
+    pub fn get_destination_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_environment_id()
+    }
     /// <p>The name of the destination environment.</p>
     /// <p> Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the <code>SourceEnvironmentName</code> with the <code>DestinationEnvironmentName</code>. </p>
     pub fn destination_environment_name(
@@ -187,5 +209,12 @@ impl SwapEnvironmentCNAMEsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_destination_environment_name(input);
         self
+    }
+    /// <p>The name of the destination environment.</p>
+    /// <p> Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the <code>SourceEnvironmentName</code> with the <code>DestinationEnvironmentName</code>. </p>
+    pub fn get_destination_environment_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_environment_name()
     }
 }

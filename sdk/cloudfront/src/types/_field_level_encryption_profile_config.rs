@@ -64,6 +64,10 @@ impl FieldLevelEncryptionProfileConfigBuilder {
         self.name = input;
         self
     }
+    /// <p>Profile name for the field-level encryption profile.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A unique number that ensures that the request can't be replayed.</p>
     pub fn caller_reference(
         mut self,
@@ -80,6 +84,10 @@ impl FieldLevelEncryptionProfileConfigBuilder {
         self.caller_reference = input;
         self
     }
+    /// <p>A unique number that ensures that the request can't be replayed.</p>
+    pub fn get_caller_reference(&self) -> &::std::option::Option<::std::string::String> {
+        &self.caller_reference
+    }
     /// <p>An optional comment for the field-level encryption profile. The comment cannot be longer than 128 characters.</p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment = ::std::option::Option::Some(input.into());
@@ -89,6 +97,10 @@ impl FieldLevelEncryptionProfileConfigBuilder {
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comment = input;
         self
+    }
+    /// <p>An optional comment for the field-level encryption profile. The comment cannot be longer than 128 characters.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comment
     }
     /// <p>A complex data type of encryption entities for the field-level encryption profile that include the public key ID, provider, and field patterns for specifying which fields to encrypt with this key.</p>
     pub fn encryption_entities(mut self, input: crate::types::EncryptionEntities) -> Self {
@@ -102,6 +114,12 @@ impl FieldLevelEncryptionProfileConfigBuilder {
     ) -> Self {
         self.encryption_entities = input;
         self
+    }
+    /// <p>A complex data type of encryption entities for the field-level encryption profile that include the public key ID, provider, and field patterns for specifying which fields to encrypt with this key.</p>
+    pub fn get_encryption_entities(
+        &self,
+    ) -> &::std::option::Option<crate::types::EncryptionEntities> {
+        &self.encryption_entities
     }
     /// Consumes the builder and constructs a [`FieldLevelEncryptionProfileConfig`](crate::types::FieldLevelEncryptionProfileConfig).
     pub fn build(self) -> crate::types::FieldLevelEncryptionProfileConfig {

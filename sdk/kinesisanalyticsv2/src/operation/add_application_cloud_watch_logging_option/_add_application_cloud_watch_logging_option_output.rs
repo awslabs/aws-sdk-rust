@@ -72,6 +72,10 @@ impl AddApplicationCloudWatchLoggingOptionOutputBuilder {
         self.application_arn = input;
         self
     }
+    /// <p>The application's ARN.</p>
+    pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_arn
+    }
     /// <p>The new version ID of the Kinesis Data Analytics application. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging options. </p>
     pub fn application_version_id(mut self, input: i64) -> Self {
         self.application_version_id = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl AddApplicationCloudWatchLoggingOptionOutputBuilder {
     pub fn set_application_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.application_version_id = input;
         self
+    }
+    /// <p>The new version ID of the Kinesis Data Analytics application. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging options. </p>
+    pub fn get_application_version_id(&self) -> &::std::option::Option<i64> {
+        &self.application_version_id
     }
     /// Appends an item to `cloud_watch_logging_option_descriptions`.
     ///
@@ -107,6 +115,13 @@ impl AddApplicationCloudWatchLoggingOptionOutputBuilder {
     ) -> Self {
         self.cloud_watch_logging_option_descriptions = input;
         self
+    }
+    /// <p>The descriptions of the current CloudWatch logging options for the Kinesis Data Analytics application.</p>
+    pub fn get_cloud_watch_logging_option_descriptions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOptionDescription>>
+    {
+        &self.cloud_watch_logging_option_descriptions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

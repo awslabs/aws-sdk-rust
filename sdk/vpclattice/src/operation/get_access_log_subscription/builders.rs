@@ -36,6 +36,10 @@ impl GetAccessLogSubscriptionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetAccessLogSubscription as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_access_log_subscription::builders::GetAccessLogSubscriptionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +135,11 @@ impl GetAccessLogSubscriptionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_access_log_subscription_identifier(input);
         self
+    }
+    /// <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
+    pub fn get_access_log_subscription_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_access_log_subscription_identifier()
     }
 }

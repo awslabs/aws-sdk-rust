@@ -63,6 +63,12 @@ impl ListTestGridSessionActionsOutputBuilder {
         self.actions = input;
         self
     }
+    /// <p>The action taken by the session.</p>
+    pub fn get_actions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TestGridSessionAction>> {
+        &self.actions
+    }
     /// <p>Pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -72,6 +78,10 @@ impl ListTestGridSessionActionsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

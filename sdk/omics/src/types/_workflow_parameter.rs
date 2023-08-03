@@ -48,6 +48,10 @@ impl WorkflowParameterBuilder {
         self.description = input;
         self
     }
+    /// <p>The parameter's description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>Whether the parameter is optional.</p>
     pub fn optional(mut self, input: bool) -> Self {
         self.optional = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl WorkflowParameterBuilder {
     pub fn set_optional(mut self, input: ::std::option::Option<bool>) -> Self {
         self.optional = input;
         self
+    }
+    /// <p>Whether the parameter is optional.</p>
+    pub fn get_optional(&self) -> &::std::option::Option<bool> {
+        &self.optional
     }
     /// Consumes the builder and constructs a [`WorkflowParameter`](crate::types::WorkflowParameter).
     pub fn build(self) -> crate::types::WorkflowParameter {

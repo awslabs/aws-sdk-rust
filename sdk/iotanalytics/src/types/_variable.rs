@@ -78,6 +78,10 @@ impl VariableBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the variable.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The value of the variable as a string.</p>
     pub fn string_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.string_value = ::std::option::Option::Some(input.into());
@@ -88,6 +92,10 @@ impl VariableBuilder {
         self.string_value = input;
         self
     }
+    /// <p>The value of the variable as a string.</p>
+    pub fn get_string_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.string_value
+    }
     /// <p>The value of the variable as a double (numeric).</p>
     pub fn double_value(mut self, input: f64) -> Self {
         self.double_value = ::std::option::Option::Some(input);
@@ -97,6 +105,10 @@ impl VariableBuilder {
     pub fn set_double_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.double_value = input;
         self
+    }
+    /// <p>The value of the variable as a double (numeric).</p>
+    pub fn get_double_value(&self) -> &::std::option::Option<f64> {
+        &self.double_value
     }
     /// <p>The value of the variable as a structure that specifies a dataset content version.</p>
     pub fn dataset_content_version_value(
@@ -114,6 +126,12 @@ impl VariableBuilder {
         self.dataset_content_version_value = input;
         self
     }
+    /// <p>The value of the variable as a structure that specifies a dataset content version.</p>
+    pub fn get_dataset_content_version_value(
+        &self,
+    ) -> &::std::option::Option<crate::types::DatasetContentVersionValue> {
+        &self.dataset_content_version_value
+    }
     /// <p>The value of the variable as a structure that specifies an output file URI.</p>
     pub fn output_file_uri_value(mut self, input: crate::types::OutputFileUriValue) -> Self {
         self.output_file_uri_value = ::std::option::Option::Some(input);
@@ -126,6 +144,12 @@ impl VariableBuilder {
     ) -> Self {
         self.output_file_uri_value = input;
         self
+    }
+    /// <p>The value of the variable as a structure that specifies an output file URI.</p>
+    pub fn get_output_file_uri_value(
+        &self,
+    ) -> &::std::option::Option<crate::types::OutputFileUriValue> {
+        &self.output_file_uri_value
     }
     /// Consumes the builder and constructs a [`Variable`](crate::types::Variable).
     pub fn build(self) -> crate::types::Variable {

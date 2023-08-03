@@ -39,6 +39,10 @@ impl DisassociateWirelessGatewayFromCertificateInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the resource to update.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`DisassociateWirelessGatewayFromCertificateInput`](crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificateInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificateInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

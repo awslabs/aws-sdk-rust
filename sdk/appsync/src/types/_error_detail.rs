@@ -40,6 +40,10 @@ impl ErrorDetailBuilder {
         self.message = input;
         self
     }
+    /// <p>The error payload.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Consumes the builder and constructs a [`ErrorDetail`](crate::types::ErrorDetail).
     pub fn build(self) -> crate::types::ErrorDetail {
         crate::types::ErrorDetail {

@@ -56,6 +56,10 @@ impl DescribeAddressesOutputBuilder {
         self.addresses = input;
         self
     }
+    /// <p>Information about the Elastic IP addresses.</p>
+    pub fn get_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Address>> {
+        &self.addresses
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

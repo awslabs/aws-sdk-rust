@@ -80,6 +80,10 @@ impl EksClusterDetailsBuilder {
         self.name = input;
         self
     }
+    /// <p>EKS cluster name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>EKS cluster ARN.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl EksClusterDetailsBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>EKS cluster ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The VPC ID to which the EKS cluster is attached.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -100,6 +108,10 @@ impl EksClusterDetailsBuilder {
         self.vpc_id = input;
         self
     }
+    /// <p>The VPC ID to which the EKS cluster is attached.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
+    }
     /// <p>The EKS cluster status.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -109,6 +121,10 @@ impl EksClusterDetailsBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The EKS cluster status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Appends an item to `tags`.
     ///
@@ -129,6 +145,10 @@ impl EksClusterDetailsBuilder {
         self.tags = input;
         self
     }
+    /// <p>The EKS cluster tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The timestamp when the EKS cluster was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -141,6 +161,10 @@ impl EksClusterDetailsBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The timestamp when the EKS cluster was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// Consumes the builder and constructs a [`EksClusterDetails`](crate::types::EksClusterDetails).
     pub fn build(self) -> crate::types::EksClusterDetails {

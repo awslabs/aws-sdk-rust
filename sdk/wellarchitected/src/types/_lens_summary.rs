@@ -118,6 +118,10 @@ impl LensSummaryBuilder {
         self.lens_arn = input;
         self
     }
+    /// <p>The ARN of the lens.</p>
+    pub fn get_lens_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lens_arn
+    }
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
@@ -134,6 +138,13 @@ impl LensSummaryBuilder {
         self.lens_alias = input;
         self
     }
+    /// <p>The alias of the lens.</p>
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    pub fn get_lens_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lens_alias
+    }
     /// <p>The full name of the lens.</p>
     pub fn lens_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lens_name = ::std::option::Option::Some(input.into());
@@ -143,6 +154,10 @@ impl LensSummaryBuilder {
     pub fn set_lens_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lens_name = input;
         self
+    }
+    /// <p>The full name of the lens.</p>
+    pub fn get_lens_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lens_name
     }
     /// <p>The type of the lens.</p>
     pub fn lens_type(mut self, input: crate::types::LensType) -> Self {
@@ -154,6 +169,10 @@ impl LensSummaryBuilder {
         self.lens_type = input;
         self
     }
+    /// <p>The type of the lens.</p>
+    pub fn get_lens_type(&self) -> &::std::option::Option<crate::types::LensType> {
+        &self.lens_type
+    }
     /// <p>The description of the lens.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -163,6 +182,10 @@ impl LensSummaryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the lens.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The date and time recorded.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -178,6 +201,10 @@ impl LensSummaryBuilder {
         self
     }
     /// <p>The date and time recorded.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
+    /// <p>The date and time recorded.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
@@ -190,6 +217,10 @@ impl LensSummaryBuilder {
         self.updated_at = input;
         self
     }
+    /// <p>The date and time recorded.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
+    }
     /// <p>The version of the lens.</p>
     pub fn lens_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lens_version = ::std::option::Option::Some(input.into());
@@ -200,6 +231,10 @@ impl LensSummaryBuilder {
         self.lens_version = input;
         self
     }
+    /// <p>The version of the lens.</p>
+    pub fn get_lens_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lens_version
+    }
     /// <p>An Amazon Web Services account ID.</p>
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner = ::std::option::Option::Some(input.into());
@@ -209,6 +244,10 @@ impl LensSummaryBuilder {
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner = input;
         self
+    }
+    /// <p>An Amazon Web Services account ID.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner
     }
     /// <p>The status of the lens.</p>
     pub fn lens_status(mut self, input: crate::types::LensStatus) -> Self {
@@ -222,6 +261,10 @@ impl LensSummaryBuilder {
     ) -> Self {
         self.lens_status = input;
         self
+    }
+    /// <p>The status of the lens.</p>
+    pub fn get_lens_status(&self) -> &::std::option::Option<crate::types::LensStatus> {
+        &self.lens_status
     }
     /// Consumes the builder and constructs a [`LensSummary`](crate::types::LensSummary).
     pub fn build(self) -> crate::types::LensSummary {

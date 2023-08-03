@@ -36,6 +36,12 @@ impl CreateEvaluationFormFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateEvaluationForm as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_evaluation_form::builders::CreateEvaluationFormInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateEvaluationFormFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>A title of the evaluation form.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.title(input.into());
@@ -136,6 +146,10 @@ impl CreateEvaluationFormFluentBuilder {
         self.inner = self.inner.set_title(input);
         self
     }
+    /// <p>A title of the evaluation form.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_title()
+    }
     /// <p>The description of the evaluation form.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -145,6 +159,10 @@ impl CreateEvaluationFormFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the evaluation form.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `Items`.
     ///
@@ -163,6 +181,12 @@ impl CreateEvaluationFormFluentBuilder {
         self.inner = self.inner.set_items(input);
         self
     }
+    /// <p>Items that are part of the evaluation form. The total number of sections and questions must not exceed 100 each. Questions must be contained in a section.</p>
+    pub fn get_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormItem>> {
+        self.inner.get_items()
+    }
     /// <p>A scoring strategy of the evaluation form.</p>
     pub fn scoring_strategy(mut self, input: crate::types::EvaluationFormScoringStrategy) -> Self {
         self.inner = self.inner.scoring_strategy(input);
@@ -176,6 +200,12 @@ impl CreateEvaluationFormFluentBuilder {
         self.inner = self.inner.set_scoring_strategy(input);
         self
     }
+    /// <p>A scoring strategy of the evaluation form.</p>
+    pub fn get_scoring_strategy(
+        &self,
+    ) -> &::std::option::Option<crate::types::EvaluationFormScoringStrategy> {
+        self.inner.get_scoring_strategy()
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -185,5 +215,9 @@ impl CreateEvaluationFormFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

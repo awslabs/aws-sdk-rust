@@ -39,6 +39,13 @@ impl SetLoadBasedAutoScalingFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SetLoadBasedAutoScaling as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::set_load_based_auto_scaling::builders::SetLoadBasedAutoScalingInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +136,10 @@ impl SetLoadBasedAutoScalingFluentBuilder {
         self.inner = self.inner.set_layer_id(input);
         self
     }
+    /// <p>The layer ID.</p>
+    pub fn get_layer_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_layer_id()
+    }
     /// <p>Enables load-based auto scaling for the layer.</p>
     pub fn enable(mut self, input: bool) -> Self {
         self.inner = self.inner.enable(input);
@@ -138,6 +149,10 @@ impl SetLoadBasedAutoScalingFluentBuilder {
     pub fn set_enable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable(input);
         self
+    }
+    /// <p>Enables load-based auto scaling for the layer.</p>
+    pub fn get_enable(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable()
     }
     /// <p>An <code>AutoScalingThresholds</code> object with the upscaling threshold configuration. If the load exceeds these thresholds for a specified amount of time, AWS OpsWorks Stacks starts a specified number of instances.</p>
     pub fn up_scaling(mut self, input: crate::types::AutoScalingThresholds) -> Self {
@@ -152,6 +167,10 @@ impl SetLoadBasedAutoScalingFluentBuilder {
         self.inner = self.inner.set_up_scaling(input);
         self
     }
+    /// <p>An <code>AutoScalingThresholds</code> object with the upscaling threshold configuration. If the load exceeds these thresholds for a specified amount of time, AWS OpsWorks Stacks starts a specified number of instances.</p>
+    pub fn get_up_scaling(&self) -> &::std::option::Option<crate::types::AutoScalingThresholds> {
+        self.inner.get_up_scaling()
+    }
     /// <p>An <code>AutoScalingThresholds</code> object with the downscaling threshold configuration. If the load falls below these thresholds for a specified amount of time, AWS OpsWorks Stacks stops a specified number of instances.</p>
     pub fn down_scaling(mut self, input: crate::types::AutoScalingThresholds) -> Self {
         self.inner = self.inner.down_scaling(input);
@@ -164,5 +183,9 @@ impl SetLoadBasedAutoScalingFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_down_scaling(input);
         self
+    }
+    /// <p>An <code>AutoScalingThresholds</code> object with the downscaling threshold configuration. If the load falls below these thresholds for a specified amount of time, AWS OpsWorks Stacks stops a specified number of instances.</p>
+    pub fn get_down_scaling(&self) -> &::std::option::Option<crate::types::AutoScalingThresholds> {
+        self.inner.get_down_scaling()
     }
 }

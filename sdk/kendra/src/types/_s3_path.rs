@@ -48,6 +48,10 @@ impl S3PathBuilder {
         self.bucket = input;
         self
     }
+    /// <p>The name of the S3 bucket that contains the file.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p>The name of the file.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl S3PathBuilder {
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
+    }
+    /// <p>The name of the file.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
     }
     /// Consumes the builder and constructs a [`S3Path`](crate::types::S3Path).
     pub fn build(self) -> crate::types::S3Path {

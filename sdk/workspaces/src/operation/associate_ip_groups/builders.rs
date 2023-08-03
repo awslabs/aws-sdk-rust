@@ -36,6 +36,12 @@ impl AssociateIpGroupsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateIpGroups as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::associate_ip_groups::builders::AssociateIpGroupsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl AssociateIpGroupsFluentBuilder {
         self.inner = self.inner.set_directory_id(input);
         self
     }
+    /// <p>The identifier of the directory.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_id()
+    }
     /// Appends an item to `GroupIds`.
     ///
     /// To override the contents of this collection use [`set_group_ids`](Self::set_group_ids).
@@ -142,5 +152,9 @@ impl AssociateIpGroupsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_group_ids(input);
         self
+    }
+    /// <p>The identifiers of one or more IP access control groups.</p>
+    pub fn get_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_group_ids()
     }
 }

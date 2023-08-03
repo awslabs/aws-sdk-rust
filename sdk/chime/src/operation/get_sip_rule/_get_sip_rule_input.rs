@@ -39,6 +39,10 @@ impl GetSipRuleInputBuilder {
         self.sip_rule_id = input;
         self
     }
+    /// <p>The SIP rule ID.</p>
+    pub fn get_sip_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sip_rule_id
+    }
     /// Consumes the builder and constructs a [`GetSipRuleInput`](crate::operation::get_sip_rule::GetSipRuleInput).
     pub fn build(
         self,

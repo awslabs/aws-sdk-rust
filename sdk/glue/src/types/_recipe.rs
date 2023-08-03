@@ -56,6 +56,10 @@ impl RecipeBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the Glue Studio node.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `inputs`.
     ///
     /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
@@ -75,6 +79,10 @@ impl RecipeBuilder {
         self.inputs = input;
         self
     }
+    /// <p>The nodes that are inputs to the recipe node, identified by id.</p>
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.inputs
+    }
     /// <p>A reference to the DataBrew recipe used by the node.</p>
     pub fn recipe_reference(mut self, input: crate::types::RecipeReference) -> Self {
         self.recipe_reference = ::std::option::Option::Some(input);
@@ -87,6 +95,10 @@ impl RecipeBuilder {
     ) -> Self {
         self.recipe_reference = input;
         self
+    }
+    /// <p>A reference to the DataBrew recipe used by the node.</p>
+    pub fn get_recipe_reference(&self) -> &::std::option::Option<crate::types::RecipeReference> {
+        &self.recipe_reference
     }
     /// Consumes the builder and constructs a [`Recipe`](crate::types::Recipe).
     pub fn build(self) -> crate::types::Recipe {

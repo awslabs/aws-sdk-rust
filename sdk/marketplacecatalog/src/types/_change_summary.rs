@@ -72,6 +72,10 @@ impl ChangeSummaryBuilder {
         self.change_type = input;
         self
     }
+    /// <p>The type of the change.</p>
+    pub fn get_change_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.change_type
+    }
     /// <p>The entity to be changed.</p>
     pub fn entity(mut self, input: crate::types::Entity) -> Self {
         self.entity = ::std::option::Option::Some(input);
@@ -82,6 +86,10 @@ impl ChangeSummaryBuilder {
         self.entity = input;
         self
     }
+    /// <p>The entity to be changed.</p>
+    pub fn get_entity(&self) -> &::std::option::Option<crate::types::Entity> {
+        &self.entity
+    }
     /// <p>This object contains details specific to the change type of the requested change.</p>
     pub fn details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.details = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl ChangeSummaryBuilder {
     pub fn set_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.details = input;
         self
+    }
+    /// <p>This object contains details specific to the change type of the requested change.</p>
+    pub fn get_details(&self) -> &::std::option::Option<::std::string::String> {
+        &self.details
     }
     /// Appends an item to `error_detail_list`.
     ///
@@ -111,6 +123,12 @@ impl ChangeSummaryBuilder {
         self.error_detail_list = input;
         self
     }
+    /// <p>An array of <code>ErrorDetail</code> objects associated with the change.</p>
+    pub fn get_error_detail_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>> {
+        &self.error_detail_list
+    }
     /// <p>Optional name for the change.</p>
     pub fn change_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_name = ::std::option::Option::Some(input.into());
@@ -120,6 +138,10 @@ impl ChangeSummaryBuilder {
     pub fn set_change_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_name = input;
         self
+    }
+    /// <p>Optional name for the change.</p>
+    pub fn get_change_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.change_name
     }
     /// Consumes the builder and constructs a [`ChangeSummary`](crate::types::ChangeSummary).
     pub fn build(self) -> crate::types::ChangeSummary {

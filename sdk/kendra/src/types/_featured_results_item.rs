@@ -110,6 +110,10 @@ impl FeaturedResultsItemBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the featured result.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The type of document within the featured result response. For example, a response could include a question-answer type that's relevant to the query.</p>
     pub fn r#type(mut self, input: crate::types::QueryResultType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -119,6 +123,10 @@ impl FeaturedResultsItemBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::QueryResultType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of document within the featured result response. For example, a response could include a question-answer type that's relevant to the query.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::QueryResultType> {
+        &self.r#type
     }
     /// Appends an item to `additional_attributes`.
     ///
@@ -139,6 +147,12 @@ impl FeaturedResultsItemBuilder {
         self.additional_attributes = input;
         self
     }
+    /// <p>One or more additional attributes associated with the featured result.</p>
+    pub fn get_additional_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalResultAttribute>> {
+        &self.additional_attributes
+    }
     /// <p>The identifier of the featured document.</p>
     pub fn document_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_id = ::std::option::Option::Some(input.into());
@@ -148,6 +162,10 @@ impl FeaturedResultsItemBuilder {
     pub fn set_document_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_id = input;
         self
+    }
+    /// <p>The identifier of the featured document.</p>
+    pub fn get_document_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_id
     }
     /// <p>Provides text and information about where to highlight the text.</p>
     pub fn document_title(mut self, input: crate::types::TextWithHighlights) -> Self {
@@ -163,6 +181,10 @@ impl FeaturedResultsItemBuilder {
         self
     }
     /// <p>Provides text and information about where to highlight the text.</p>
+    pub fn get_document_title(&self) -> &::std::option::Option<crate::types::TextWithHighlights> {
+        &self.document_title
+    }
+    /// <p>Provides text and information about where to highlight the text.</p>
     pub fn document_excerpt(mut self, input: crate::types::TextWithHighlights) -> Self {
         self.document_excerpt = ::std::option::Option::Some(input);
         self
@@ -175,6 +197,10 @@ impl FeaturedResultsItemBuilder {
         self.document_excerpt = input;
         self
     }
+    /// <p>Provides text and information about where to highlight the text.</p>
+    pub fn get_document_excerpt(&self) -> &::std::option::Option<crate::types::TextWithHighlights> {
+        &self.document_excerpt
+    }
     /// <p>The source URI location of the featured document.</p>
     pub fn document_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_uri = ::std::option::Option::Some(input.into());
@@ -184,6 +210,10 @@ impl FeaturedResultsItemBuilder {
     pub fn set_document_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_uri = input;
         self
+    }
+    /// <p>The source URI location of the featured document.</p>
+    pub fn get_document_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_uri
     }
     /// Appends an item to `document_attributes`.
     ///
@@ -204,6 +234,12 @@ impl FeaturedResultsItemBuilder {
         self.document_attributes = input;
         self
     }
+    /// <p>An array of document attributes assigned to a featured document in the search results. For example, the document author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.</p>
+    pub fn get_document_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>> {
+        &self.document_attributes
+    }
     /// <p>A token that identifies a particular featured result from a particular query. Use this token to provide click-through feedback for the result. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">Submitting feedback</a>.</p>
     pub fn feedback_token(
         mut self,
@@ -219,6 +255,10 @@ impl FeaturedResultsItemBuilder {
     ) -> Self {
         self.feedback_token = input;
         self
+    }
+    /// <p>A token that identifies a particular featured result from a particular query. Use this token to provide click-through feedback for the result. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">Submitting feedback</a>.</p>
+    pub fn get_feedback_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.feedback_token
     }
     /// Consumes the builder and constructs a [`FeaturedResultsItem`](crate::types::FeaturedResultsItem).
     pub fn build(self) -> crate::types::FeaturedResultsItem {

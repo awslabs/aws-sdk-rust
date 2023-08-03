@@ -83,6 +83,10 @@ impl AcceptPageInputBuilder {
         self.page_id = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the engagement to a contact channel.</p>
+    pub fn get_page_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.page_id
+    }
     /// <p>The ARN of the contact channel.</p>
     pub fn contact_channel_id(
         mut self,
@@ -99,6 +103,10 @@ impl AcceptPageInputBuilder {
         self.contact_channel_id = input;
         self
     }
+    /// <p>The ARN of the contact channel.</p>
+    pub fn get_contact_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_channel_id
+    }
     /// <p>The type indicates if the page was <code>DELIVERED</code> or <code>READ</code>.</p>
     pub fn accept_type(mut self, input: crate::types::AcceptType) -> Self {
         self.accept_type = ::std::option::Option::Some(input);
@@ -112,6 +120,10 @@ impl AcceptPageInputBuilder {
         self.accept_type = input;
         self
     }
+    /// <p>The type indicates if the page was <code>DELIVERED</code> or <code>READ</code>.</p>
+    pub fn get_accept_type(&self) -> &::std::option::Option<crate::types::AcceptType> {
+        &self.accept_type
+    }
     /// <p>Information provided by the user when the user acknowledges the page.</p>
     pub fn note(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.note = ::std::option::Option::Some(input.into());
@@ -122,6 +134,10 @@ impl AcceptPageInputBuilder {
         self.note = input;
         self
     }
+    /// <p>Information provided by the user when the user acknowledges the page.</p>
+    pub fn get_note(&self) -> &::std::option::Option<::std::string::String> {
+        &self.note
+    }
     /// <p>A 6-digit code used to acknowledge the page.</p>
     pub fn accept_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_code = ::std::option::Option::Some(input.into());
@@ -131,6 +147,10 @@ impl AcceptPageInputBuilder {
     pub fn set_accept_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_code = input;
         self
+    }
+    /// <p>A 6-digit code used to acknowledge the page.</p>
+    pub fn get_accept_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accept_code
     }
     /// <p>An optional field that Incident Manager uses to <code>ENFORCE</code> <code>AcceptCode</code> validation when acknowledging an page. Acknowledgement can occur by replying to a page, or when entering the AcceptCode in the console. Enforcing AcceptCode validation causes Incident Manager to verify that the code entered by the user matches the code sent by Incident Manager with the page.</p>
     /// <p>Incident Manager can also <code>IGNORE</code> <code>AcceptCode</code> validation. Ignoring <code>AcceptCode</code> validation causes Incident Manager to accept any value entered for the <code>AcceptCode</code>.</p>
@@ -146,6 +166,13 @@ impl AcceptPageInputBuilder {
     ) -> Self {
         self.accept_code_validation = input;
         self
+    }
+    /// <p>An optional field that Incident Manager uses to <code>ENFORCE</code> <code>AcceptCode</code> validation when acknowledging an page. Acknowledgement can occur by replying to a page, or when entering the AcceptCode in the console. Enforcing AcceptCode validation causes Incident Manager to verify that the code entered by the user matches the code sent by Incident Manager with the page.</p>
+    /// <p>Incident Manager can also <code>IGNORE</code> <code>AcceptCode</code> validation. Ignoring <code>AcceptCode</code> validation causes Incident Manager to accept any value entered for the <code>AcceptCode</code>.</p>
+    pub fn get_accept_code_validation(
+        &self,
+    ) -> &::std::option::Option<crate::types::AcceptCodeValidation> {
+        &self.accept_code_validation
     }
     /// Consumes the builder and constructs a [`AcceptPageInput`](crate::operation::accept_page::AcceptPageInput).
     pub fn build(

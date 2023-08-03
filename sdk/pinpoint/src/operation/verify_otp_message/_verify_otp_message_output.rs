@@ -52,6 +52,12 @@ impl VerifyOtpMessageOutputBuilder {
         self.verification_response = input;
         self
     }
+    /// <p>Verify OTP Message Response.</p>
+    pub fn get_verification_response(
+        &self,
+    ) -> &::std::option::Option<crate::types::VerificationResponse> {
+        &self.verification_response
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

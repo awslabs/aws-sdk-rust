@@ -64,6 +64,10 @@ impl VerticalLayoutConfigurationBuilder {
         self.tile_order = input;
         self
     }
+    /// <p>Sets the automatic ordering of the video tiles.</p>
+    pub fn get_tile_order(&self) -> &::std::option::Option<crate::types::TileOrder> {
+        &self.tile_order
+    }
     /// <p>Sets the position of vertical tiles.</p>
     pub fn tile_position(mut self, input: crate::types::VerticalTilePosition) -> Self {
         self.tile_position = ::std::option::Option::Some(input);
@@ -77,6 +81,10 @@ impl VerticalLayoutConfigurationBuilder {
         self.tile_position = input;
         self
     }
+    /// <p>Sets the position of vertical tiles.</p>
+    pub fn get_tile_position(&self) -> &::std::option::Option<crate::types::VerticalTilePosition> {
+        &self.tile_position
+    }
     /// <p>The maximum number of tiles to display.</p>
     pub fn tile_count(mut self, input: i32) -> Self {
         self.tile_count = ::std::option::Option::Some(input);
@@ -86,6 +94,10 @@ impl VerticalLayoutConfigurationBuilder {
     pub fn set_tile_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.tile_count = input;
         self
+    }
+    /// <p>The maximum number of tiles to display.</p>
+    pub fn get_tile_count(&self) -> &::std::option::Option<i32> {
+        &self.tile_count
     }
     /// <p>Sets the aspect ratio of the video tiles, such as 16:9.</p>
     pub fn tile_aspect_ratio(
@@ -102,6 +114,10 @@ impl VerticalLayoutConfigurationBuilder {
     ) -> Self {
         self.tile_aspect_ratio = input;
         self
+    }
+    /// <p>Sets the aspect ratio of the video tiles, such as 16:9.</p>
+    pub fn get_tile_aspect_ratio(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tile_aspect_ratio
     }
     /// Consumes the builder and constructs a [`VerticalLayoutConfiguration`](crate::types::VerticalLayoutConfiguration).
     pub fn build(self) -> crate::types::VerticalLayoutConfiguration {

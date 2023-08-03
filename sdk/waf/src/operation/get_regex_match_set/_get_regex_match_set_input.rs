@@ -46,6 +46,10 @@ impl GetRegexMatchSetInputBuilder {
         self.regex_match_set_id = input;
         self
     }
+    /// <p>The <code>RegexMatchSetId</code> of the <code>RegexMatchSet</code> that you want to get. <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
+    pub fn get_regex_match_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.regex_match_set_id
+    }
     /// Consumes the builder and constructs a [`GetRegexMatchSetInput`](crate::operation::get_regex_match_set::GetRegexMatchSetInput).
     pub fn build(
         self,

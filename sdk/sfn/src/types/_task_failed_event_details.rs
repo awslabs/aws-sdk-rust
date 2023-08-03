@@ -78,6 +78,10 @@ impl TaskFailedEventDetailsBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The service name of the resource in a task state.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
+    }
     /// <p>The action of the resource called by a task state.</p>
     pub fn resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource = ::std::option::Option::Some(input.into());
@@ -87,6 +91,10 @@ impl TaskFailedEventDetailsBuilder {
     pub fn set_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource = input;
         self
+    }
+    /// <p>The action of the resource called by a task state.</p>
+    pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource
     }
     /// <p>The error code of the failure.</p>
     pub fn error(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -98,6 +106,10 @@ impl TaskFailedEventDetailsBuilder {
         self.error = input;
         self
     }
+    /// <p>The error code of the failure.</p>
+    pub fn get_error(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error
+    }
     /// <p>A more detailed explanation of the cause of the failure.</p>
     pub fn cause(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cause = ::std::option::Option::Some(input.into());
@@ -107,6 +119,10 @@ impl TaskFailedEventDetailsBuilder {
     pub fn set_cause(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cause = input;
         self
+    }
+    /// <p>A more detailed explanation of the cause of the failure.</p>
+    pub fn get_cause(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cause
     }
     /// Consumes the builder and constructs a [`TaskFailedEventDetails`](crate::types::TaskFailedEventDetails).
     pub fn build(self) -> crate::types::TaskFailedEventDetails {

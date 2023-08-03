@@ -37,6 +37,13 @@ impl DeleteInstanceSnapshotFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteInstanceSnapshot as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_instance_snapshot::builders::DeleteInstanceSnapshotInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +139,9 @@ impl DeleteInstanceSnapshotFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_instance_snapshot_name(input);
         self
+    }
+    /// <p>The name of the snapshot to delete.</p>
+    pub fn get_instance_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_snapshot_name()
     }
 }

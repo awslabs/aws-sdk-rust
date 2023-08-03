@@ -49,6 +49,10 @@ impl UpdateConnectionOAuthClientRequestParametersBuilder {
         self.client_id = input;
         self
     }
+    /// <p>The client ID to use for OAuth authorization.</p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_id
+    }
     /// <p>The client secret assciated with the client ID to use for OAuth authorization.</p>
     pub fn client_secret(
         mut self,
@@ -64,6 +68,10 @@ impl UpdateConnectionOAuthClientRequestParametersBuilder {
     ) -> Self {
         self.client_secret = input;
         self
+    }
+    /// <p>The client secret assciated with the client ID to use for OAuth authorization.</p>
+    pub fn get_client_secret(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_secret
     }
     /// Consumes the builder and constructs a [`UpdateConnectionOAuthClientRequestParameters`](crate::types::UpdateConnectionOAuthClientRequestParameters).
     pub fn build(self) -> crate::types::UpdateConnectionOAuthClientRequestParameters {

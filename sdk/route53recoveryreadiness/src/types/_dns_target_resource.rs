@@ -72,6 +72,10 @@ impl DnsTargetResourceBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The domain name that acts as an ingress point to a portion of the customer application.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The hosted zone Amazon Resource Name (ARN) that contains the DNS record with the provided name of the target resource.</p>
     pub fn hosted_zone_arn(
         mut self,
@@ -87,6 +91,10 @@ impl DnsTargetResourceBuilder {
     ) -> Self {
         self.hosted_zone_arn = input;
         self
+    }
+    /// <p>The hosted zone Amazon Resource Name (ARN) that contains the DNS record with the provided name of the target resource.</p>
+    pub fn get_hosted_zone_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hosted_zone_arn
     }
     /// <p>The Route 53 record set ID that uniquely identifies a DNS record, given a name and a type.</p>
     pub fn record_set_id(
@@ -104,6 +112,10 @@ impl DnsTargetResourceBuilder {
         self.record_set_id = input;
         self
     }
+    /// <p>The Route 53 record set ID that uniquely identifies a DNS record, given a name and a type.</p>
+    pub fn get_record_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.record_set_id
+    }
     /// <p>The type of DNS record of the target resource.</p>
     pub fn record_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.record_type = ::std::option::Option::Some(input.into());
@@ -113,6 +125,10 @@ impl DnsTargetResourceBuilder {
     pub fn set_record_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.record_type = input;
         self
+    }
+    /// <p>The type of DNS record of the target resource.</p>
+    pub fn get_record_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.record_type
     }
     /// <p>The target resource of the DNS target resource.</p>
     pub fn target_resource(mut self, input: crate::types::TargetResource) -> Self {
@@ -126,6 +142,10 @@ impl DnsTargetResourceBuilder {
     ) -> Self {
         self.target_resource = input;
         self
+    }
+    /// <p>The target resource of the DNS target resource.</p>
+    pub fn get_target_resource(&self) -> &::std::option::Option<crate::types::TargetResource> {
+        &self.target_resource
     }
     /// Consumes the builder and constructs a [`DnsTargetResource`](crate::types::DnsTargetResource).
     pub fn build(self) -> crate::types::DnsTargetResource {

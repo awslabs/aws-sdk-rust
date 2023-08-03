@@ -36,6 +36,10 @@ impl ListPackagesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListPackages as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_packages::builders::ListPackagesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +133,10 @@ impl ListPackagesFluentBuilder {
         self.inner = self.inner.set_domain(input);
         self
     }
+    /// <p> The name of the domain that contains the repository that contains the requested packages. </p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain()
+    }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_owner(input.into());
@@ -138,6 +146,10 @@ impl ListPackagesFluentBuilder {
     pub fn set_domain_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_owner(input);
         self
+    }
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_owner()
     }
     /// <p> The name of the repository that contains the requested packages. </p>
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -149,6 +161,10 @@ impl ListPackagesFluentBuilder {
         self.inner = self.inner.set_repository(input);
         self
     }
+    /// <p> The name of the repository that contains the requested packages. </p>
+    pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_repository()
+    }
     /// <p>The format used to filter requested packages. Only packages from the provided format will be returned.</p>
     pub fn format(mut self, input: crate::types::PackageFormat) -> Self {
         self.inner = self.inner.format(input);
@@ -158,6 +174,10 @@ impl ListPackagesFluentBuilder {
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::PackageFormat>) -> Self {
         self.inner = self.inner.set_format(input);
         self
+    }
+    /// <p>The format used to filter requested packages. Only packages from the provided format will be returned.</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::PackageFormat> {
+        self.inner.get_format()
     }
     /// <p>The namespace prefix used to filter requested packages. Only packages with a namespace that starts with the provided string value are returned. Note that although this option is called <code>--namespace</code> and not <code>--namespace-prefix</code>, it has prefix-matching behavior.</p>
     /// <p>Each package format uses namespace as follows:</p>
@@ -183,6 +203,17 @@ impl ListPackagesFluentBuilder {
         self.inner = self.inner.set_namespace(input);
         self
     }
+    /// <p>The namespace prefix used to filter requested packages. Only packages with a namespace that starts with the provided string value are returned. Note that although this option is called <code>--namespace</code> and not <code>--namespace-prefix</code>, it has prefix-matching behavior.</p>
+    /// <p>Each package format uses namespace as follows:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
+    /// </ul>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_namespace()
+    }
     /// <p> A prefix used to filter requested packages. Only packages with names that start with <code>packagePrefix</code> are returned. </p>
     pub fn package_prefix(
         mut self,
@@ -199,6 +230,10 @@ impl ListPackagesFluentBuilder {
         self.inner = self.inner.set_package_prefix(input);
         self
     }
+    /// <p> A prefix used to filter requested packages. Only packages with names that start with <code>packagePrefix</code> are returned. </p>
+    pub fn get_package_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_package_prefix()
+    }
     /// <p> The maximum number of results to return per page. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -208,6 +243,10 @@ impl ListPackagesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p> The maximum number of results to return per page. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -219,6 +258,10 @@ impl ListPackagesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The value of the <code>Publish</code> package origin control restriction used to filter requested packages. Only packages with the provided restriction are returned. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>.</p>
     pub fn publish(mut self, input: crate::types::AllowPublish) -> Self {
         self.inner = self.inner.publish(input);
@@ -228,6 +271,10 @@ impl ListPackagesFluentBuilder {
     pub fn set_publish(mut self, input: ::std::option::Option<crate::types::AllowPublish>) -> Self {
         self.inner = self.inner.set_publish(input);
         self
+    }
+    /// <p>The value of the <code>Publish</code> package origin control restriction used to filter requested packages. Only packages with the provided restriction are returned. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>.</p>
+    pub fn get_publish(&self) -> &::std::option::Option<crate::types::AllowPublish> {
+        self.inner.get_publish()
     }
     /// <p>The value of the <code>Upstream</code> package origin control restriction used to filter requested packages. Only packages with the provided restriction are returned. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>.</p>
     pub fn upstream(mut self, input: crate::types::AllowUpstream) -> Self {
@@ -241,5 +288,9 @@ impl ListPackagesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_upstream(input);
         self
+    }
+    /// <p>The value of the <code>Upstream</code> package origin control restriction used to filter requested packages. Only packages with the provided restriction are returned. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>.</p>
+    pub fn get_upstream(&self) -> &::std::option::Option<crate::types::AllowUpstream> {
+        self.inner.get_upstream()
     }
 }

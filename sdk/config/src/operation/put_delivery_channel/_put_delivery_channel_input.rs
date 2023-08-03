@@ -44,6 +44,10 @@ impl PutDeliveryChannelInputBuilder {
         self.delivery_channel = input;
         self
     }
+    /// <p>The configuration delivery channel object that delivers the configuration information to an Amazon S3 bucket and to an Amazon SNS topic.</p>
+    pub fn get_delivery_channel(&self) -> &::std::option::Option<crate::types::DeliveryChannel> {
+        &self.delivery_channel
+    }
     /// Consumes the builder and constructs a [`PutDeliveryChannelInput`](crate::operation::put_delivery_channel::PutDeliveryChannelInput).
     pub fn build(
         self,

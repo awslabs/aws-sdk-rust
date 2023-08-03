@@ -47,6 +47,10 @@ impl UpdateGroupInputBuilder {
         self.group_id = input;
         self
     }
+    /// The ID of the Greengrass group.
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
+    }
     /// The name of the definition.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl UpdateGroupInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// The name of the definition.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`UpdateGroupInput`](crate::operation::update_group::UpdateGroupInput).
     pub fn build(

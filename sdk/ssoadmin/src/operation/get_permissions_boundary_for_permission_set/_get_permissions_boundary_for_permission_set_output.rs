@@ -51,6 +51,12 @@ impl GetPermissionsBoundaryForPermissionSetOutputBuilder {
         self.permissions_boundary = input;
         self
     }
+    /// <p>The permissions boundary attached to the specified permission set.</p>
+    pub fn get_permissions_boundary(
+        &self,
+    ) -> &::std::option::Option<crate::types::PermissionsBoundary> {
+        &self.permissions_boundary
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

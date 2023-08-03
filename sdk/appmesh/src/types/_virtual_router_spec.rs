@@ -50,6 +50,12 @@ impl VirtualRouterSpecBuilder {
         self.listeners = input;
         self
     }
+    /// <p>The listeners that the virtual router is expected to receive inbound traffic from. You can specify one listener.</p>
+    pub fn get_listeners(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VirtualRouterListener>> {
+        &self.listeners
+    }
     /// Consumes the builder and constructs a [`VirtualRouterSpec`](crate::types::VirtualRouterSpec).
     pub fn build(self) -> crate::types::VirtualRouterSpec {
         crate::types::VirtualRouterSpec {

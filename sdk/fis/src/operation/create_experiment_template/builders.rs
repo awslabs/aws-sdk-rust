@@ -43,6 +43,13 @@ impl CreateExperimentTemplateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateExperimentTemplate as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_experiment_template::builders::CreateExperimentTemplateInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl CreateExperimentTemplateFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>A description for the experiment template.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -142,6 +153,10 @@ impl CreateExperimentTemplateFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description for the experiment template.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `stopConditions`.
     ///
@@ -164,6 +179,14 @@ impl CreateExperimentTemplateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_stop_conditions(input);
         self
+    }
+    /// <p>The stop conditions.</p>
+    pub fn get_stop_conditions(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::CreateExperimentTemplateStopConditionInput>,
+    > {
+        self.inner.get_stop_conditions()
     }
     /// Adds a key-value pair to `targets`.
     ///
@@ -191,6 +214,17 @@ impl CreateExperimentTemplateFluentBuilder {
         self.inner = self.inner.set_targets(input);
         self
     }
+    /// <p>The targets for the experiment.</p>
+    pub fn get_targets(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::CreateExperimentTemplateTargetInput,
+        >,
+    > {
+        self.inner.get_targets()
+    }
     /// Adds a key-value pair to `actions`.
     ///
     /// To override the contents of this collection use [`set_actions`](Self::set_actions).
@@ -217,6 +251,17 @@ impl CreateExperimentTemplateFluentBuilder {
         self.inner = self.inner.set_actions(input);
         self
     }
+    /// <p>The actions for the experiment.</p>
+    pub fn get_actions(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::CreateExperimentTemplateActionInput,
+        >,
+    > {
+        self.inner.get_actions()
+    }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -226,6 +271,10 @@ impl CreateExperimentTemplateFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -250,6 +299,14 @@ impl CreateExperimentTemplateFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tags to apply to the experiment template.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>The configuration for experiment logging.</p>
     pub fn log_configuration(
         mut self,
@@ -265,5 +322,11 @@ impl CreateExperimentTemplateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_log_configuration(input);
         self
+    }
+    /// <p>The configuration for experiment logging.</p>
+    pub fn get_log_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateExperimentTemplateLogConfigurationInput> {
+        self.inner.get_log_configuration()
     }
 }

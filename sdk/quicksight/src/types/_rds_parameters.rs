@@ -48,6 +48,10 @@ impl RdsParametersBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>Instance ID.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>Database.</p>
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl RdsParametersBuilder {
     pub fn set_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database = input;
         self
+    }
+    /// <p>Database.</p>
+    pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database
     }
     /// Consumes the builder and constructs a [`RdsParameters`](crate::types::RdsParameters).
     pub fn build(self) -> crate::types::RdsParameters {

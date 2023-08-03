@@ -62,6 +62,10 @@ impl CreateGroupMembershipOutputBuilder {
         self.membership_id = input;
         self
     }
+    /// <p>The identifier for a newly created <code>GroupMembership</code> in an identity store.</p>
+    pub fn get_membership_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.membership_id
+    }
     /// <p>The globally unique identifier for the identity store.</p>
     pub fn identity_store_id(
         mut self,
@@ -77,6 +81,10 @@ impl CreateGroupMembershipOutputBuilder {
     ) -> Self {
         self.identity_store_id = input;
         self
+    }
+    /// <p>The globally unique identifier for the identity store.</p>
+    pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_store_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

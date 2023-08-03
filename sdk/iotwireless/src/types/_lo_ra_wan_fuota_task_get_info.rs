@@ -48,6 +48,10 @@ impl LoRaWanFuotaTaskGetInfoBuilder {
         self.rf_region = input;
         self
     }
+    /// <p>The frequency band (RFRegion) value.</p>
+    pub fn get_rf_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rf_region
+    }
     /// <p>Start time of a FUOTA task.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl LoRaWanFuotaTaskGetInfoBuilder {
     ) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>Start time of a FUOTA task.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// Consumes the builder and constructs a [`LoRaWanFuotaTaskGetInfo`](crate::types::LoRaWanFuotaTaskGetInfo).
     pub fn build(self) -> crate::types::LoRaWanFuotaTaskGetInfo {

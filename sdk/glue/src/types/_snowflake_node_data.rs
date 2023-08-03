@@ -208,6 +208,10 @@ impl SnowflakeNodeDataBuilder {
         self.source_type = input;
         self
     }
+    /// <p>Specifies how retrieved data is specified. Valid values: <code>"table"</code>, <code> "query"</code>.</p>
+    pub fn get_source_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_type
+    }
     /// <p>Specifies a Glue Data Catalog Connection to a Snowflake endpoint.</p>
     pub fn connection(mut self, input: crate::types::Option) -> Self {
         self.connection = ::std::option::Option::Some(input);
@@ -217,6 +221,10 @@ impl SnowflakeNodeDataBuilder {
     pub fn set_connection(mut self, input: ::std::option::Option<crate::types::Option>) -> Self {
         self.connection = input;
         self
+    }
+    /// <p>Specifies a Glue Data Catalog Connection to a Snowflake endpoint.</p>
+    pub fn get_connection(&self) -> &::std::option::Option<crate::types::Option> {
+        &self.connection
     }
     /// <p>Specifies a Snowflake database schema for your node to use.</p>
     pub fn schema(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -228,6 +236,10 @@ impl SnowflakeNodeDataBuilder {
         self.schema = input;
         self
     }
+    /// <p>Specifies a Snowflake database schema for your node to use.</p>
+    pub fn get_schema(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema
+    }
     /// <p>Specifies a Snowflake table for your node to use.</p>
     pub fn table(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table = ::std::option::Option::Some(input.into());
@@ -238,6 +250,10 @@ impl SnowflakeNodeDataBuilder {
         self.table = input;
         self
     }
+    /// <p>Specifies a Snowflake table for your node to use.</p>
+    pub fn get_table(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table
+    }
     /// <p>Specifies a Snowflake database for your node to use.</p>
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database = ::std::option::Option::Some(input.into());
@@ -247,6 +263,10 @@ impl SnowflakeNodeDataBuilder {
     pub fn set_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database = input;
         self
+    }
+    /// <p>Specifies a Snowflake database for your node to use.</p>
+    pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database
     }
     /// <p>Not currently used.</p>
     pub fn temp_dir(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -259,6 +279,10 @@ impl SnowflakeNodeDataBuilder {
         self
     }
     /// <p>Not currently used.</p>
+    pub fn get_temp_dir(&self) -> &::std::option::Option<::std::string::String> {
+        &self.temp_dir
+    }
+    /// <p>Not currently used.</p>
     pub fn iam_role(mut self, input: crate::types::Option) -> Self {
         self.iam_role = ::std::option::Option::Some(input);
         self
@@ -267,6 +291,10 @@ impl SnowflakeNodeDataBuilder {
     pub fn set_iam_role(mut self, input: ::std::option::Option<crate::types::Option>) -> Self {
         self.iam_role = input;
         self
+    }
+    /// <p>Not currently used.</p>
+    pub fn get_iam_role(&self) -> &::std::option::Option<crate::types::Option> {
+        &self.iam_role
     }
     /// Adds a key-value pair to `additional_options`.
     ///
@@ -293,6 +321,14 @@ impl SnowflakeNodeDataBuilder {
         self.additional_options = input;
         self
     }
+    /// <p>Specifies additional options passed to the Snowflake connector. If options are specified elsewhere in this node, this will take precedence.</p>
+    pub fn get_additional_options(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.additional_options
+    }
     /// <p>A SQL string used to retrieve data with the <code>query</code> sourcetype.</p>
     pub fn sample_query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sample_query = ::std::option::Option::Some(input.into());
@@ -302,6 +338,10 @@ impl SnowflakeNodeDataBuilder {
     pub fn set_sample_query(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sample_query = input;
         self
+    }
+    /// <p>A SQL string used to retrieve data with the <code>query</code> sourcetype.</p>
+    pub fn get_sample_query(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sample_query
     }
     /// <p>A SQL string run before the Snowflake connector performs its standard actions.</p>
     pub fn pre_action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -313,6 +353,10 @@ impl SnowflakeNodeDataBuilder {
         self.pre_action = input;
         self
     }
+    /// <p>A SQL string run before the Snowflake connector performs its standard actions.</p>
+    pub fn get_pre_action(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pre_action
+    }
     /// <p>A SQL string run after the Snowflake connector performs its standard actions.</p>
     pub fn post_action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.post_action = ::std::option::Option::Some(input.into());
@@ -322,6 +366,10 @@ impl SnowflakeNodeDataBuilder {
     pub fn set_post_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.post_action = input;
         self
+    }
+    /// <p>A SQL string run after the Snowflake connector performs its standard actions.</p>
+    pub fn get_post_action(&self) -> &::std::option::Option<::std::string::String> {
+        &self.post_action
     }
     /// <p>Specifies what action to take when writing to a table with preexisting data. Valid values: <code> append</code>, <code>merge</code>, <code>truncate</code>, <code>drop</code>.</p>
     pub fn action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -333,6 +381,10 @@ impl SnowflakeNodeDataBuilder {
         self.action = input;
         self
     }
+    /// <p>Specifies what action to take when writing to a table with preexisting data. Valid values: <code> append</code>, <code>merge</code>, <code>truncate</code>, <code>drop</code>.</p>
+    pub fn get_action(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action
+    }
     /// <p>Used when Action is <code>append</code>. Specifies the resolution behavior when a row already exists. If true, preexisting rows will be updated. If false, those rows will be inserted.</p>
     pub fn upsert(mut self, input: bool) -> Self {
         self.upsert = ::std::option::Option::Some(input);
@@ -343,6 +395,10 @@ impl SnowflakeNodeDataBuilder {
         self.upsert = input;
         self
     }
+    /// <p>Used when Action is <code>append</code>. Specifies the resolution behavior when a row already exists. If true, preexisting rows will be updated. If false, those rows will be inserted.</p>
+    pub fn get_upsert(&self) -> &::std::option::Option<bool> {
+        &self.upsert
+    }
     /// <p>Specifies a merge action. Valid values: <code>simple</code>, <code>custom</code>. If simple, merge behavior is defined by <code>MergeWhenMatched</code> and <code> MergeWhenNotMatched</code>. If custom, defined by <code>MergeClause</code>.</p>
     pub fn merge_action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.merge_action = ::std::option::Option::Some(input.into());
@@ -352,6 +408,10 @@ impl SnowflakeNodeDataBuilder {
     pub fn set_merge_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.merge_action = input;
         self
+    }
+    /// <p>Specifies a merge action. Valid values: <code>simple</code>, <code>custom</code>. If simple, merge behavior is defined by <code>MergeWhenMatched</code> and <code> MergeWhenNotMatched</code>. If custom, defined by <code>MergeClause</code>.</p>
+    pub fn get_merge_action(&self) -> &::std::option::Option<::std::string::String> {
+        &self.merge_action
     }
     /// <p>Specifies how to resolve records that match preexisting data when merging. Valid values: <code> update</code>, <code>delete</code>.</p>
     pub fn merge_when_matched(
@@ -369,6 +429,10 @@ impl SnowflakeNodeDataBuilder {
         self.merge_when_matched = input;
         self
     }
+    /// <p>Specifies how to resolve records that match preexisting data when merging. Valid values: <code> update</code>, <code>delete</code>.</p>
+    pub fn get_merge_when_matched(&self) -> &::std::option::Option<::std::string::String> {
+        &self.merge_when_matched
+    }
     /// <p>Specifies how to process records that do not match preexisting data when merging. Valid values: <code>insert</code>, <code>none</code>.</p>
     pub fn merge_when_not_matched(
         mut self,
@@ -385,6 +449,10 @@ impl SnowflakeNodeDataBuilder {
         self.merge_when_not_matched = input;
         self
     }
+    /// <p>Specifies how to process records that do not match preexisting data when merging. Valid values: <code>insert</code>, <code>none</code>.</p>
+    pub fn get_merge_when_not_matched(&self) -> &::std::option::Option<::std::string::String> {
+        &self.merge_when_not_matched
+    }
     /// <p>A SQL statement that specifies a custom merge behavior.</p>
     pub fn merge_clause(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.merge_clause = ::std::option::Option::Some(input.into());
@@ -394,6 +462,10 @@ impl SnowflakeNodeDataBuilder {
     pub fn set_merge_clause(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.merge_clause = input;
         self
+    }
+    /// <p>A SQL statement that specifies a custom merge behavior.</p>
+    pub fn get_merge_clause(&self) -> &::std::option::Option<::std::string::String> {
+        &self.merge_clause
     }
     /// <p>The name of a staging table used when performing <code>merge</code> or upsert <code>append</code> actions. Data is written to this table, then moved to <code>table</code> by a generated postaction.</p>
     pub fn staging_table(
@@ -410,6 +482,10 @@ impl SnowflakeNodeDataBuilder {
     ) -> Self {
         self.staging_table = input;
         self
+    }
+    /// <p>The name of a staging table used when performing <code>merge</code> or upsert <code>append</code> actions. Data is written to this table, then moved to <code>table</code> by a generated postaction.</p>
+    pub fn get_staging_table(&self) -> &::std::option::Option<::std::string::String> {
+        &self.staging_table
     }
     /// Appends an item to `selected_columns`.
     ///
@@ -430,6 +506,12 @@ impl SnowflakeNodeDataBuilder {
         self.selected_columns = input;
         self
     }
+    /// <p>Specifies the columns combined to identify a record when detecting matches for merges and upserts. A list of structures with <code>value</code>, <code>label</code> and <code> description</code> keys. Each structure describes a column.</p>
+    pub fn get_selected_columns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Option>> {
+        &self.selected_columns
+    }
     /// <p>Specifies whether automatic query pushdown is enabled. If pushdown is enabled, then when a query is run on Spark, if part of the query can be "pushed down" to the Snowflake server, it is pushed down. This improves performance of some queries.</p>
     pub fn auto_pushdown(mut self, input: bool) -> Self {
         self.auto_pushdown = ::std::option::Option::Some(input);
@@ -439,6 +521,10 @@ impl SnowflakeNodeDataBuilder {
     pub fn set_auto_pushdown(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_pushdown = input;
         self
+    }
+    /// <p>Specifies whether automatic query pushdown is enabled. If pushdown is enabled, then when a query is run on Spark, if part of the query can be "pushed down" to the Snowflake server, it is pushed down. This improves performance of some queries.</p>
+    pub fn get_auto_pushdown(&self) -> &::std::option::Option<bool> {
+        &self.auto_pushdown
     }
     /// Appends an item to `table_schema`.
     ///
@@ -458,6 +544,12 @@ impl SnowflakeNodeDataBuilder {
     ) -> Self {
         self.table_schema = input;
         self
+    }
+    /// <p>Manually defines the target schema for the node. A list of structures with <code>value</code> , <code>label</code> and <code>description</code> keys. Each structure defines a column.</p>
+    pub fn get_table_schema(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Option>> {
+        &self.table_schema
     }
     /// Consumes the builder and constructs a [`SnowflakeNodeData`](crate::types::SnowflakeNodeData).
     pub fn build(self) -> crate::types::SnowflakeNodeData {

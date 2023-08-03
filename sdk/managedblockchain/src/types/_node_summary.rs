@@ -80,6 +80,10 @@ impl NodeSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier of the node.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The status of the node.</p>
     pub fn status(mut self, input: crate::types::NodeStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -89,6 +93,10 @@ impl NodeSummaryBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::NodeStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the node.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::NodeStatus> {
+        &self.status
     }
     /// <p>The date and time that the node was created.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -102,6 +110,10 @@ impl NodeSummaryBuilder {
     ) -> Self {
         self.creation_date = input;
         self
+    }
+    /// <p>The date and time that the node was created.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
     }
     /// <p>The Availability Zone in which the node exists.</p>
     pub fn availability_zone(
@@ -119,6 +131,10 @@ impl NodeSummaryBuilder {
         self.availability_zone = input;
         self
     }
+    /// <p>The Availability Zone in which the node exists.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p>The EC2 instance type for the node.</p>
     pub fn instance_type(
         mut self,
@@ -135,6 +151,10 @@ impl NodeSummaryBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The EC2 instance type for the node.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_type
+    }
     /// <p>The Amazon Resource Name (ARN) of the node. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -144,6 +164,10 @@ impl NodeSummaryBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the node. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`NodeSummary`](crate::types::NodeSummary).
     pub fn build(self) -> crate::types::NodeSummary {

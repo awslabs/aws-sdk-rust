@@ -52,6 +52,10 @@ impl SpecificationsBuilder {
         self.slot_type_id = input;
         self
     }
+    /// <p>The unique identifier assigned to the slot type.</p>
+    pub fn get_slot_type_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.slot_type_id
+    }
     /// <p>Specifies the elicitation setting details for constituent sub slots of a composite slot.</p>
     pub fn value_elicitation_setting(
         mut self,
@@ -67,6 +71,12 @@ impl SpecificationsBuilder {
     ) -> Self {
         self.value_elicitation_setting = input;
         self
+    }
+    /// <p>Specifies the elicitation setting details for constituent sub slots of a composite slot.</p>
+    pub fn get_value_elicitation_setting(
+        &self,
+    ) -> &::std::option::Option<crate::types::SubSlotValueElicitationSetting> {
+        &self.value_elicitation_setting
     }
     /// Consumes the builder and constructs a [`Specifications`](crate::types::Specifications).
     pub fn build(self) -> crate::types::Specifications {

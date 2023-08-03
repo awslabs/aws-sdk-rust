@@ -85,6 +85,12 @@ impl BatchCreateObjectBuilder {
         self.schema_facet = input;
         self
     }
+    /// <p>A list of <code>FacetArns</code> that will be associated with the object. For more information, see <code>arns</code>.</p>
+    pub fn get_schema_facet(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaFacet>> {
+        &self.schema_facet
+    }
     /// Appends an item to `object_attribute_list`.
     ///
     /// To override the contents of this collection use [`set_object_attribute_list`](Self::set_object_attribute_list).
@@ -104,6 +110,12 @@ impl BatchCreateObjectBuilder {
         self.object_attribute_list = input;
         self
     }
+    /// <p>An attribute map, which contains an attribute ARN as the key and attribute value as the map value.</p>
+    pub fn get_object_attribute_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>> {
+        &self.object_attribute_list
+    }
     /// <p>If specified, the parent reference to which this object will be attached.</p>
     pub fn parent_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.parent_reference = ::std::option::Option::Some(input);
@@ -117,6 +129,10 @@ impl BatchCreateObjectBuilder {
         self.parent_reference = input;
         self
     }
+    /// <p>If specified, the parent reference to which this object will be attached.</p>
+    pub fn get_parent_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
+        &self.parent_reference
+    }
     /// <p>The name of the link.</p>
     pub fn link_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.link_name = ::std::option::Option::Some(input.into());
@@ -126,6 +142,10 @@ impl BatchCreateObjectBuilder {
     pub fn set_link_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.link_name = input;
         self
+    }
+    /// <p>The name of the link.</p>
+    pub fn get_link_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.link_name
     }
     /// <p>The batch reference name. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction Support</a> for more information.</p>
     pub fn batch_reference_name(
@@ -142,6 +162,10 @@ impl BatchCreateObjectBuilder {
     ) -> Self {
         self.batch_reference_name = input;
         self
+    }
+    /// <p>The batch reference name. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction Support</a> for more information.</p>
+    pub fn get_batch_reference_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.batch_reference_name
     }
     /// Consumes the builder and constructs a [`BatchCreateObject`](crate::types::BatchCreateObject).
     pub fn build(self) -> crate::types::BatchCreateObject {

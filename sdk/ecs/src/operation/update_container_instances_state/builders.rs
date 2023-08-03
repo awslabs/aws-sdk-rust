@@ -48,6 +48,10 @@ impl UpdateContainerInstancesStateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateContainerInstancesState as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_container_instances_state::builders::UpdateContainerInstancesStateInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +142,10 @@ impl UpdateContainerInstancesStateFluentBuilder {
         self.inner = self.inner.set_cluster(input);
         self
     }
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the container instance to update. If you do not specify a cluster, the default cluster is assumed.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster()
+    }
     /// Appends an item to `containerInstances`.
     ///
     /// To override the contents of this collection use [`set_container_instances`](Self::set_container_instances).
@@ -158,6 +166,12 @@ impl UpdateContainerInstancesStateFluentBuilder {
         self.inner = self.inner.set_container_instances(input);
         self
     }
+    /// <p>A list of up to 10 container instance IDs or full ARN entries.</p>
+    pub fn get_container_instances(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_container_instances()
+    }
     /// <p>The container instance state to update the container instance with. The only valid values for this action are <code>ACTIVE</code> and <code>DRAINING</code>. A container instance can only be updated to <code>DRAINING</code> status once it has reached an <code>ACTIVE</code> state. If a container instance is in <code>REGISTERING</code>, <code>DEREGISTERING</code>, or <code>REGISTRATION_FAILED</code> state you can describe the container instance but can't update the container instance state.</p>
     pub fn status(mut self, input: crate::types::ContainerInstanceStatus) -> Self {
         self.inner = self.inner.status(input);
@@ -170,5 +184,9 @@ impl UpdateContainerInstancesStateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_status(input);
         self
+    }
+    /// <p>The container instance state to update the container instance with. The only valid values for this action are <code>ACTIVE</code> and <code>DRAINING</code>. A container instance can only be updated to <code>DRAINING</code> status once it has reached an <code>ACTIVE</code> state. If a container instance is in <code>REGISTERING</code>, <code>DEREGISTERING</code>, or <code>REGISTRATION_FAILED</code> state you can describe the container instance but can't update the container instance state.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ContainerInstanceStatus> {
+        self.inner.get_status()
     }
 }

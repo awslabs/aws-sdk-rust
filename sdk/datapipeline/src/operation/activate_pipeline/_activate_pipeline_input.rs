@@ -58,6 +58,10 @@ impl ActivatePipelineInputBuilder {
         self.pipeline_id = input;
         self
     }
+    /// <p>The ID of the pipeline.</p>
+    pub fn get_pipeline_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_id
+    }
     /// Appends an item to `parameter_values`.
     ///
     /// To override the contents of this collection use [`set_parameter_values`](Self::set_parameter_values).
@@ -77,6 +81,12 @@ impl ActivatePipelineInputBuilder {
         self.parameter_values = input;
         self
     }
+    /// <p>A list of parameter values to pass to the pipeline at activation.</p>
+    pub fn get_parameter_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>> {
+        &self.parameter_values
+    }
     /// <p>The date and time to resume the pipeline. By default, the pipeline resumes from the last completed execution.</p>
     pub fn start_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_timestamp = ::std::option::Option::Some(input);
@@ -89,6 +99,10 @@ impl ActivatePipelineInputBuilder {
     ) -> Self {
         self.start_timestamp = input;
         self
+    }
+    /// <p>The date and time to resume the pipeline. By default, the pipeline resumes from the last completed execution.</p>
+    pub fn get_start_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_timestamp
     }
     /// Consumes the builder and constructs a [`ActivatePipelineInput`](crate::operation::activate_pipeline::ActivatePipelineInput).
     pub fn build(

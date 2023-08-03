@@ -39,6 +39,10 @@ impl StopCrawlerInputBuilder {
         self.name = input;
         self
     }
+    /// <p>Name of the crawler to stop.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`StopCrawlerInput`](crate::operation::stop_crawler::StopCrawlerInput).
     pub fn build(
         self,

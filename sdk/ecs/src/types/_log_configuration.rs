@@ -96,6 +96,16 @@ impl LogConfigurationBuilder {
         self.log_driver = input;
         self
     }
+    /// <p>The log driver to use for the container.</p>
+    /// <p>For tasks on Fargate, the supported log drivers are <code>awslogs</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p>
+    /// <p>For tasks hosted on Amazon EC2 instances, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>,<code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p>
+    /// <p>For more information about using the <code>awslogs</code> log driver, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs log driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>For more information about using the <code>awsfirelens</code> log driver, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom log routing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
+    /// <p>If you have a custom driver that isn't listed, you can fork the Amazon ECS container agent project that's <a href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and customize it to work with that driver. We encourage you to submit pull requests for changes that you would like to have included. However, we don't currently provide support for running modified copies of this software.</p>
+    /// </note>
+    pub fn get_log_driver(&self) -> &::std::option::Option<crate::types::LogDriver> {
+        &self.log_driver
+    }
     /// Adds a key-value pair to `options`.
     ///
     /// To override the contents of this collection use [`set_options`](Self::set_options).
@@ -121,6 +131,14 @@ impl LogConfigurationBuilder {
         self.options = input;
         self
     }
+    /// <p>The configuration options to send to the log driver. This parameter requires version 1.19 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p>
+    pub fn get_options(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.options
+    }
     /// Appends an item to `secret_options`.
     ///
     /// To override the contents of this collection use [`set_secret_options`](Self::set_secret_options).
@@ -139,6 +157,12 @@ impl LogConfigurationBuilder {
     ) -> Self {
         self.secret_options = input;
         self
+    }
+    /// <p>The secrets to pass to the log configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying sensitive data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn get_secret_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Secret>> {
+        &self.secret_options
     }
     /// Consumes the builder and constructs a [`LogConfiguration`](crate::types::LogConfiguration).
     pub fn build(self) -> crate::types::LogConfiguration {

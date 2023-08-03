@@ -76,6 +76,12 @@ impl DomainSettingsBuilder {
         self.security_group_ids = input;
         self
     }
+    /// <p>The security groups for the Amazon Virtual Private Cloud that the <code>Domain</code> uses for communication between Domain-level apps and user apps.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
+    }
     /// <p>A collection of settings that configure the <code>RStudioServerPro</code> Domain-level app.</p>
     pub fn r_studio_server_pro_domain_settings(
         mut self,
@@ -92,6 +98,12 @@ impl DomainSettingsBuilder {
         self.r_studio_server_pro_domain_settings = input;
         self
     }
+    /// <p>A collection of settings that configure the <code>RStudioServerPro</code> Domain-level app.</p>
+    pub fn get_r_studio_server_pro_domain_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::RStudioServerProDomainSettings> {
+        &self.r_studio_server_pro_domain_settings
+    }
     /// <p>The configuration for attaching a SageMaker user profile name to the execution role as a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">sts:SourceIdentity key</a>.</p>
     pub fn execution_role_identity_config(
         mut self,
@@ -107,6 +119,12 @@ impl DomainSettingsBuilder {
     ) -> Self {
         self.execution_role_identity_config = input;
         self
+    }
+    /// <p>The configuration for attaching a SageMaker user profile name to the execution role as a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">sts:SourceIdentity key</a>.</p>
+    pub fn get_execution_role_identity_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExecutionRoleIdentityConfig> {
+        &self.execution_role_identity_config
     }
     /// Consumes the builder and constructs a [`DomainSettings`](crate::types::DomainSettings).
     pub fn build(self) -> crate::types::DomainSettings {

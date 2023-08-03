@@ -56,6 +56,12 @@ impl GetContactMethodsOutputBuilder {
         self.contact_methods = input;
         self
     }
+    /// <p>An array of objects that describe the contact methods.</p>
+    pub fn get_contact_methods(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContactMethod>> {
+        &self.contact_methods
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

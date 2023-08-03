@@ -40,6 +40,10 @@ impl StopMultiplexInputBuilder {
         self.multiplex_id = input;
         self
     }
+    /// The ID of the multiplex.
+    pub fn get_multiplex_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.multiplex_id
+    }
     /// Consumes the builder and constructs a [`StopMultiplexInput`](crate::operation::stop_multiplex::StopMultiplexInput).
     pub fn build(
         self,

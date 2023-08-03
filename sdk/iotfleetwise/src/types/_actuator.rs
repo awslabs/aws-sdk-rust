@@ -122,6 +122,10 @@ impl ActuatorBuilder {
         self.fully_qualified_name = input;
         self
     }
+    /// <p>The fully qualified name of the actuator. For example, the fully qualified name of an actuator might be <code>Vehicle.Front.Left.Door.Lock</code>.</p>
+    pub fn get_fully_qualified_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fully_qualified_name
+    }
     /// <p>The specified data type of the actuator. </p>
     pub fn data_type(mut self, input: crate::types::NodeDataType) -> Self {
         self.data_type = ::std::option::Option::Some(input);
@@ -135,6 +139,10 @@ impl ActuatorBuilder {
         self.data_type = input;
         self
     }
+    /// <p>The specified data type of the actuator. </p>
+    pub fn get_data_type(&self) -> &::std::option::Option<crate::types::NodeDataType> {
+        &self.data_type
+    }
     /// <p>A brief description of the actuator.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -145,6 +153,10 @@ impl ActuatorBuilder {
         self.description = input;
         self
     }
+    /// <p>A brief description of the actuator.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The scientific unit for the actuator.</p>
     pub fn unit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.unit = ::std::option::Option::Some(input.into());
@@ -154,6 +166,10 @@ impl ActuatorBuilder {
     pub fn set_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.unit = input;
         self
+    }
+    /// <p>The scientific unit for the actuator.</p>
+    pub fn get_unit(&self) -> &::std::option::Option<::std::string::String> {
+        &self.unit
     }
     /// Appends an item to `allowed_values`.
     ///
@@ -177,6 +193,12 @@ impl ActuatorBuilder {
         self.allowed_values = input;
         self
     }
+    /// <p>A list of possible values an actuator can take.</p>
+    pub fn get_allowed_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.allowed_values
+    }
     /// <p>The specified possible minimum value of an actuator.</p>
     pub fn min(mut self, input: f64) -> Self {
         self.min = ::std::option::Option::Some(input);
@@ -187,6 +209,10 @@ impl ActuatorBuilder {
         self.min = input;
         self
     }
+    /// <p>The specified possible minimum value of an actuator.</p>
+    pub fn get_min(&self) -> &::std::option::Option<f64> {
+        &self.min
+    }
     /// <p>The specified possible maximum value of an actuator.</p>
     pub fn max(mut self, input: f64) -> Self {
         self.max = ::std::option::Option::Some(input);
@@ -196,6 +222,10 @@ impl ActuatorBuilder {
     pub fn set_max(mut self, input: ::std::option::Option<f64>) -> Self {
         self.max = input;
         self
+    }
+    /// <p>The specified possible maximum value of an actuator.</p>
+    pub fn get_max(&self) -> &::std::option::Option<f64> {
+        &self.max
     }
     /// <p>A specified value for the actuator.</p>
     #[deprecated(note = "assignedValue is no longer in use")]
@@ -215,6 +245,11 @@ impl ActuatorBuilder {
         self.assigned_value = input;
         self
     }
+    /// <p>A specified value for the actuator.</p>
+    #[deprecated(note = "assignedValue is no longer in use")]
+    pub fn get_assigned_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assigned_value
+    }
     /// <p>The deprecation message for the node or the branch that was moved or deleted.</p>
     pub fn deprecation_message(
         mut self,
@@ -231,6 +266,10 @@ impl ActuatorBuilder {
         self.deprecation_message = input;
         self
     }
+    /// <p>The deprecation message for the node or the branch that was moved or deleted.</p>
+    pub fn get_deprecation_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deprecation_message
+    }
     /// <p>A comment in addition to the description.</p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment = ::std::option::Option::Some(input.into());
@@ -240,6 +279,10 @@ impl ActuatorBuilder {
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comment = input;
         self
+    }
+    /// <p>A comment in addition to the description.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comment
     }
     /// Consumes the builder and constructs a [`Actuator`](crate::types::Actuator).
     pub fn build(self) -> crate::types::Actuator {

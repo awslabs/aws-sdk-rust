@@ -56,6 +56,10 @@ impl Ec2SecurityGroupBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the Amazon EC2 security group.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>The name of the Amazon EC2 security group.</p>
     pub fn ec2_security_group_name(
         mut self,
@@ -72,6 +76,10 @@ impl Ec2SecurityGroupBuilder {
         self.ec2_security_group_name = input;
         self
     }
+    /// <p>The name of the Amazon EC2 security group.</p>
+    pub fn get_ec2_security_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ec2_security_group_name
+    }
     /// <p>The Amazon account ID of the Amazon EC2 security group owner.</p>
     pub fn ec2_security_group_owner_id(
         mut self,
@@ -87,6 +95,10 @@ impl Ec2SecurityGroupBuilder {
     ) -> Self {
         self.ec2_security_group_owner_id = input;
         self
+    }
+    /// <p>The Amazon account ID of the Amazon EC2 security group owner.</p>
+    pub fn get_ec2_security_group_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ec2_security_group_owner_id
     }
     /// Consumes the builder and constructs a [`Ec2SecurityGroup`](crate::types::Ec2SecurityGroup).
     pub fn build(self) -> crate::types::Ec2SecurityGroup {

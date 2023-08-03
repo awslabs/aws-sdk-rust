@@ -57,6 +57,10 @@ impl DeleteRoomSkillParameterInputBuilder {
         self.room_arn = input;
         self
     }
+    /// <p>The ARN of the room from which to remove the room skill parameter details.</p>
+    pub fn get_room_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.room_arn
+    }
     /// <p>The ID of the skill from which to remove the room skill parameter details.</p>
     pub fn skill_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.skill_id = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl DeleteRoomSkillParameterInputBuilder {
     pub fn set_skill_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.skill_id = input;
         self
+    }
+    /// <p>The ID of the skill from which to remove the room skill parameter details.</p>
+    pub fn get_skill_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.skill_id
     }
     /// <p>The room skill parameter key for which to remove details.</p>
     pub fn parameter_key(
@@ -82,6 +90,10 @@ impl DeleteRoomSkillParameterInputBuilder {
     ) -> Self {
         self.parameter_key = input;
         self
+    }
+    /// <p>The room skill parameter key for which to remove details.</p>
+    pub fn get_parameter_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_key
     }
     /// Consumes the builder and constructs a [`DeleteRoomSkillParameterInput`](crate::operation::delete_room_skill_parameter::DeleteRoomSkillParameterInput).
     pub fn build(

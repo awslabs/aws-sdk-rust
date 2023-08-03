@@ -60,6 +60,10 @@ impl GetSubscriptionOutputBuilder {
         self.subscription_type = input;
         self
     }
+    /// <p>The type of the billing plan for the space.</p>
+    pub fn get_subscription_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subscription_type
+    }
     /// <p>The display name of the Amazon Web Services account used for billing for the space.</p>
     pub fn aws_account_name(
         mut self,
@@ -75,6 +79,10 @@ impl GetSubscriptionOutputBuilder {
     ) -> Self {
         self.aws_account_name = input;
         self
+    }
+    /// <p>The display name of the Amazon Web Services account used for billing for the space.</p>
+    pub fn get_aws_account_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -36,6 +36,10 @@ impl UpdateEntityFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateEntity as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_entity::builders::UpdateEntityInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl UpdateEntityFluentBuilder {
         self.inner = self.inner.set_workspace_id(input);
         self
     }
+    /// <p>The ID of the workspace that contains the entity.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workspace_id()
+    }
     /// <p>The ID of the entity.</p>
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.entity_id(input.into());
@@ -127,6 +135,10 @@ impl UpdateEntityFluentBuilder {
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_entity_id(input);
         self
+    }
+    /// <p>The ID of the entity.</p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_entity_id()
     }
     /// <p>The name of the entity.</p>
     pub fn entity_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -138,6 +150,10 @@ impl UpdateEntityFluentBuilder {
         self.inner = self.inner.set_entity_name(input);
         self
     }
+    /// <p>The name of the entity.</p>
+    pub fn get_entity_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_entity_name()
+    }
     /// <p>The description of the entity.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -147,6 +163,10 @@ impl UpdateEntityFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the entity.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Adds a key-value pair to `componentUpdates`.
     ///
@@ -174,6 +194,14 @@ impl UpdateEntityFluentBuilder {
         self.inner = self.inner.set_component_updates(input);
         self
     }
+    /// <p>An object that maps strings to the component updates in the request. Each string in the mapping must be unique to this object.</p>
+    pub fn get_component_updates(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::ComponentUpdateRequest>,
+    > {
+        self.inner.get_component_updates()
+    }
     /// <p>An object that describes the update request for a parent entity.</p>
     pub fn parent_entity_update(mut self, input: crate::types::ParentEntityUpdateRequest) -> Self {
         self.inner = self.inner.parent_entity_update(input);
@@ -186,5 +214,11 @@ impl UpdateEntityFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_parent_entity_update(input);
         self
+    }
+    /// <p>An object that describes the update request for a parent entity.</p>
+    pub fn get_parent_entity_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::ParentEntityUpdateRequest> {
+        self.inner.get_parent_entity_update()
     }
 }

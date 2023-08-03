@@ -56,6 +56,10 @@ impl OptimizationObjectiveBuilder {
         self.item_attribute = input;
         self
     }
+    /// <p>The numerical metadata column in an Items dataset related to the optimization objective. For example, VIDEO_LENGTH (to maximize streaming minutes), or PRICE (to maximize revenue).</p>
+    pub fn get_item_attribute(&self) -> &::std::option::Option<::std::string::String> {
+        &self.item_attribute
+    }
     /// <p>Specifies how Amazon Personalize balances the importance of your optimization objective versus relevance.</p>
     pub fn objective_sensitivity(mut self, input: crate::types::ObjectiveSensitivity) -> Self {
         self.objective_sensitivity = ::std::option::Option::Some(input);
@@ -68,6 +72,12 @@ impl OptimizationObjectiveBuilder {
     ) -> Self {
         self.objective_sensitivity = input;
         self
+    }
+    /// <p>Specifies how Amazon Personalize balances the importance of your optimization objective versus relevance.</p>
+    pub fn get_objective_sensitivity(
+        &self,
+    ) -> &::std::option::Option<crate::types::ObjectiveSensitivity> {
+        &self.objective_sensitivity
     }
     /// Consumes the builder and constructs a [`OptimizationObjective`](crate::types::OptimizationObjective).
     pub fn build(self) -> crate::types::OptimizationObjective {

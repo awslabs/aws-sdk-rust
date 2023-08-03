@@ -37,6 +37,12 @@ impl GetManagedResourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetManagedResource as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_managed_resource::builders::GetManagedResourceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,5 +140,10 @@ impl GetManagedResourceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_identifier(input);
         self
+    }
+    /// <p>The identifier for the resource to include in a zonal shift. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
+    /// <p>At this time, you can only start a zonal shift for Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
+    pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_identifier()
     }
 }

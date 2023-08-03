@@ -66,6 +66,12 @@ impl UpdateSystemTemplateInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the system to be updated.</p>
+    /// <p>The ID should be in the following format.</p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The <code>DefinitionDocument</code> that contains the updated system definition.</p>
     pub fn definition(mut self, input: crate::types::DefinitionDocument) -> Self {
         self.definition = ::std::option::Option::Some(input);
@@ -79,6 +85,10 @@ impl UpdateSystemTemplateInputBuilder {
         self.definition = input;
         self
     }
+    /// <p>The <code>DefinitionDocument</code> that contains the updated system definition.</p>
+    pub fn get_definition(&self) -> &::std::option::Option<crate::types::DefinitionDocument> {
+        &self.definition
+    }
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
     /// <p>If no value is specified, the latest version is used by default.</p>
     pub fn compatible_namespace_version(mut self, input: i64) -> Self {
@@ -90,6 +100,11 @@ impl UpdateSystemTemplateInputBuilder {
     pub fn set_compatible_namespace_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.compatible_namespace_version = input;
         self
+    }
+    /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
+    /// <p>If no value is specified, the latest version is used by default.</p>
+    pub fn get_compatible_namespace_version(&self) -> &::std::option::Option<i64> {
+        &self.compatible_namespace_version
     }
     /// Consumes the builder and constructs a [`UpdateSystemTemplateInput`](crate::operation::update_system_template::UpdateSystemTemplateInput).
     pub fn build(

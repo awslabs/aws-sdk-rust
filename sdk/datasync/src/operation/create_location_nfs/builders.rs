@@ -36,6 +36,12 @@ impl CreateLocationNfsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateLocationNfs as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_location_nfs::builders::CreateLocationNfsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,13 @@ impl CreateLocationNfsFluentBuilder {
         self.inner = self.inner.set_subdirectory(input);
         self
     }
+    /// <p>Specifies the subdirectory in the NFS file server that DataSync transfers to or from. The NFS path should be a path that's exported by the NFS server, or a subdirectory of that path. The path should be such that it can be mounted by other NFS clients in your network. </p>
+    /// <p>To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS client that has access to your server. You can specify any directory that appears in the results, and any subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos authentication. </p>
+    /// <p>To transfer all the data in the folder you specified, DataSync needs to have permissions to read all the data. To ensure this, either configure the NFS export with <code>no_root_squash,</code> or ensure that the permissions for all of the files that you want DataSync allow read access for all users. Doing either enables the agent to read the files. For the agent to access directories, you must additionally enable all execute access.</p>
+    /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
+    pub fn get_subdirectory(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_subdirectory()
+    }
     /// <p>Specifies the IP address or domain name of your NFS file server. An agent that is installed on-premises uses this hostname to mount the NFS server in a network. </p>
     /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p> <note>
     /// <p>You must specify be an IP version 4 address or Domain Name System (DNS)-compliant name.</p>
@@ -154,6 +167,13 @@ impl CreateLocationNfsFluentBuilder {
         self.inner = self.inner.set_server_hostname(input);
         self
     }
+    /// <p>Specifies the IP address or domain name of your NFS file server. An agent that is installed on-premises uses this hostname to mount the NFS server in a network. </p>
+    /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p> <note>
+    /// <p>You must specify be an IP version 4 address or Domain Name System (DNS)-compliant name.</p>
+    /// </note>
+    pub fn get_server_hostname(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_server_hostname()
+    }
     /// <p>Specifies the Amazon Resource Names (ARNs) of agents that DataSync uses to connect to your NFS file server. </p>
     /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
     pub fn on_prem_config(mut self, input: crate::types::OnPremConfig) -> Self {
@@ -169,6 +189,11 @@ impl CreateLocationNfsFluentBuilder {
         self.inner = self.inner.set_on_prem_config(input);
         self
     }
+    /// <p>Specifies the Amazon Resource Names (ARNs) of agents that DataSync uses to connect to your NFS file server. </p>
+    /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
+    pub fn get_on_prem_config(&self) -> &::std::option::Option<crate::types::OnPremConfig> {
+        self.inner.get_on_prem_config()
+    }
     /// <p>Specifies the mount options that DataSync can use to mount your NFS share.</p>
     pub fn mount_options(mut self, input: crate::types::NfsMountOptions) -> Self {
         self.inner = self.inner.mount_options(input);
@@ -181,6 +206,10 @@ impl CreateLocationNfsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_mount_options(input);
         self
+    }
+    /// <p>Specifies the mount options that DataSync can use to mount your NFS share.</p>
+    pub fn get_mount_options(&self) -> &::std::option::Option<crate::types::NfsMountOptions> {
+        self.inner.get_mount_options()
     }
     /// Appends an item to `Tags`.
     ///
@@ -198,5 +227,9 @@ impl CreateLocationNfsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>> {
+        self.inner.get_tags()
     }
 }

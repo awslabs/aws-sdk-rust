@@ -41,6 +41,10 @@ impl GetGroupConfigurationInputBuilder {
         self.group = input;
         self
     }
+    /// <p>The name or the ARN of the resource group for which you want to retrive the service configuration.</p>
+    pub fn get_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group
+    }
     /// Consumes the builder and constructs a [`GetGroupConfigurationInput`](crate::operation::get_group_configuration::GetGroupConfigurationInput).
     pub fn build(
         self,

@@ -36,6 +36,12 @@ impl UpdateRevisionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateRevision as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_revision::builders::UpdateRevisionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl UpdateRevisionFluentBuilder {
         self.inner = self.inner.set_comment(input);
         self
     }
+    /// <p>An optional comment about the revision.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_comment()
+    }
     /// <p>The unique identifier for a data set.</p>
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_set_id(input.into());
@@ -127,6 +137,10 @@ impl UpdateRevisionFluentBuilder {
     pub fn set_data_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_set_id(input);
         self
+    }
+    /// <p>The unique identifier for a data set.</p>
+    pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_data_set_id()
     }
     /// <p>Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>
     pub fn finalized(mut self, input: bool) -> Self {
@@ -138,6 +152,10 @@ impl UpdateRevisionFluentBuilder {
         self.inner = self.inner.set_finalized(input);
         self
     }
+    /// <p>Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>
+    pub fn get_finalized(&self) -> &::std::option::Option<bool> {
+        self.inner.get_finalized()
+    }
     /// <p>The unique identifier for a revision.</p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.revision_id(input.into());
@@ -147,5 +165,9 @@ impl UpdateRevisionFluentBuilder {
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_revision_id(input);
         self
+    }
+    /// <p>The unique identifier for a revision.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_revision_id()
     }
 }

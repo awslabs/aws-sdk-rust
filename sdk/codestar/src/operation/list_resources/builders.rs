@@ -36,6 +36,12 @@ impl ListResourcesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListResources as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_resources::builders::ListResourcesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl ListResourcesFluentBuilder {
         self.inner = self.inner.set_project_id(input);
         self
     }
+    /// <p>The ID of the project.</p>
+    pub fn get_project_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_id()
+    }
     /// <p>The continuation token for the next set of results, if the results cannot be returned in one response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -128,6 +138,10 @@ impl ListResourcesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The continuation token for the next set of results, if the results cannot be returned in one response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum amount of data that can be contained in a single set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -137,5 +151,9 @@ impl ListResourcesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum amount of data that can be contained in a single set of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

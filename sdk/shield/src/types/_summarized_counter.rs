@@ -80,6 +80,10 @@ impl SummarizedCounterBuilder {
         self.name = input;
         self
     }
+    /// <p>The counter name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The maximum value of the counter for a specified time period.</p>
     pub fn max(mut self, input: f64) -> Self {
         self.max = ::std::option::Option::Some(input);
@@ -89,6 +93,10 @@ impl SummarizedCounterBuilder {
     pub fn set_max(mut self, input: ::std::option::Option<f64>) -> Self {
         self.max = input;
         self
+    }
+    /// <p>The maximum value of the counter for a specified time period.</p>
+    pub fn get_max(&self) -> &::std::option::Option<f64> {
+        &self.max
     }
     /// <p>The average value of the counter for a specified time period.</p>
     pub fn average(mut self, input: f64) -> Self {
@@ -100,6 +108,10 @@ impl SummarizedCounterBuilder {
         self.average = input;
         self
     }
+    /// <p>The average value of the counter for a specified time period.</p>
+    pub fn get_average(&self) -> &::std::option::Option<f64> {
+        &self.average
+    }
     /// <p>The total of counter values for a specified time period.</p>
     pub fn sum(mut self, input: f64) -> Self {
         self.sum = ::std::option::Option::Some(input);
@@ -109,6 +121,10 @@ impl SummarizedCounterBuilder {
     pub fn set_sum(mut self, input: ::std::option::Option<f64>) -> Self {
         self.sum = input;
         self
+    }
+    /// <p>The total of counter values for a specified time period.</p>
+    pub fn get_sum(&self) -> &::std::option::Option<f64> {
+        &self.sum
     }
     /// <p>The number of counters for a specified time period.</p>
     pub fn n(mut self, input: i32) -> Self {
@@ -120,6 +136,10 @@ impl SummarizedCounterBuilder {
         self.n = input;
         self
     }
+    /// <p>The number of counters for a specified time period.</p>
+    pub fn get_n(&self) -> &::std::option::Option<i32> {
+        &self.n
+    }
     /// <p>The unit of the counters.</p>
     pub fn unit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.unit = ::std::option::Option::Some(input.into());
@@ -129,6 +149,10 @@ impl SummarizedCounterBuilder {
     pub fn set_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.unit = input;
         self
+    }
+    /// <p>The unit of the counters.</p>
+    pub fn get_unit(&self) -> &::std::option::Option<::std::string::String> {
+        &self.unit
     }
     /// Consumes the builder and constructs a [`SummarizedCounter`](crate::types::SummarizedCounter).
     pub fn build(self) -> crate::types::SummarizedCounter {

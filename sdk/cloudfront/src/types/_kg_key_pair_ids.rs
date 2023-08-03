@@ -48,6 +48,10 @@ impl KgKeyPairIdsBuilder {
         self.key_group_id = input;
         self
     }
+    /// <p>The identifier of the key group that contains the public keys.</p>
+    pub fn get_key_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_group_id
+    }
     /// <p>A list of CloudFront key pair identifiers.</p>
     pub fn key_pair_ids(mut self, input: crate::types::KeyPairIds) -> Self {
         self.key_pair_ids = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl KgKeyPairIdsBuilder {
     ) -> Self {
         self.key_pair_ids = input;
         self
+    }
+    /// <p>A list of CloudFront key pair identifiers.</p>
+    pub fn get_key_pair_ids(&self) -> &::std::option::Option<crate::types::KeyPairIds> {
+        &self.key_pair_ids
     }
     /// Consumes the builder and constructs a [`KgKeyPairIds`](crate::types::KgKeyPairIds).
     pub fn build(self) -> crate::types::KgKeyPairIds {

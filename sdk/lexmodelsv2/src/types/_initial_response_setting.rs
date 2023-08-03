@@ -69,6 +69,12 @@ impl InitialResponseSettingBuilder {
         self.initial_response = input;
         self
     }
+    /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+    pub fn get_initial_response(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResponseSpecification> {
+        &self.initial_response
+    }
     /// <p>The next step in the conversation.</p>
     pub fn next_step(mut self, input: crate::types::DialogState) -> Self {
         self.next_step = ::std::option::Option::Some(input);
@@ -81,6 +87,10 @@ impl InitialResponseSettingBuilder {
     ) -> Self {
         self.next_step = input;
         self
+    }
+    /// <p>The next step in the conversation.</p>
+    pub fn get_next_step(&self) -> &::std::option::Option<crate::types::DialogState> {
+        &self.next_step
     }
     /// <p>Provides a list of conditional branches. Branches are evaluated in the order that they are entered in the list. The first branch with a condition that evaluates to true is executed. The last branch in the list is the default branch. The default branch should not have any condition expression. The default branch is executed if no other branch has a matching condition.</p>
     pub fn conditional(mut self, input: crate::types::ConditionalSpecification) -> Self {
@@ -95,6 +105,12 @@ impl InitialResponseSettingBuilder {
         self.conditional = input;
         self
     }
+    /// <p>Provides a list of conditional branches. Branches are evaluated in the order that they are entered in the list. The first branch with a condition that evaluates to true is executed. The last branch in the list is the default branch. The default branch should not have any condition expression. The default branch is executed if no other branch has a matching condition.</p>
+    pub fn get_conditional(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConditionalSpecification> {
+        &self.conditional
+    }
     /// <p>Settings that specify the dialog code hook that is called by Amazon Lex at a step of the conversation. </p>
     pub fn code_hook(mut self, input: crate::types::DialogCodeHookInvocationSetting) -> Self {
         self.code_hook = ::std::option::Option::Some(input);
@@ -107,6 +123,12 @@ impl InitialResponseSettingBuilder {
     ) -> Self {
         self.code_hook = input;
         self
+    }
+    /// <p>Settings that specify the dialog code hook that is called by Amazon Lex at a step of the conversation. </p>
+    pub fn get_code_hook(
+        &self,
+    ) -> &::std::option::Option<crate::types::DialogCodeHookInvocationSetting> {
+        &self.code_hook
     }
     /// Consumes the builder and constructs a [`InitialResponseSetting`](crate::types::InitialResponseSetting).
     pub fn build(self) -> crate::types::InitialResponseSetting {

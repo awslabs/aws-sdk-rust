@@ -38,6 +38,13 @@ impl StopCalculationExecutionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StopCalculationExecution as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::stop_calculation_execution::builders::StopCalculationExecutionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,5 +140,9 @@ impl StopCalculationExecutionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_calculation_execution_id(input);
         self
+    }
+    /// <p>The calculation execution UUID.</p>
+    pub fn get_calculation_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_calculation_execution_id()
     }
 }

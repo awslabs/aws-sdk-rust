@@ -36,6 +36,12 @@ impl ResetDeploymentsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ResetDeployments as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::reset_deployments::builders::ResetDeploymentsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl ResetDeploymentsFluentBuilder {
         self.inner = self.inner.set_amzn_client_token(input);
         self
     }
+    /// A client token used to correlate requests and responses.
+    pub fn get_amzn_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_amzn_client_token()
+    }
     /// If true, performs a best-effort only core reset.
     pub fn force(mut self, input: bool) -> Self {
         self.inner = self.inner.force(input);
@@ -142,6 +152,10 @@ impl ResetDeploymentsFluentBuilder {
         self.inner = self.inner.set_force(input);
         self
     }
+    /// If true, performs a best-effort only core reset.
+    pub fn get_force(&self) -> &::std::option::Option<bool> {
+        self.inner.get_force()
+    }
     /// The ID of the Greengrass group.
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_id(input.into());
@@ -151,5 +165,9 @@ impl ResetDeploymentsFluentBuilder {
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group_id(input);
         self
+    }
+    /// The ID of the Greengrass group.
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group_id()
     }
 }

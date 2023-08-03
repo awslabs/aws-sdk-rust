@@ -63,6 +63,10 @@ impl ChangedBlockBuilder {
         self.block_index = input;
         self
     }
+    /// <p>The block index.</p>
+    pub fn get_block_index(&self) -> &::std::option::Option<i32> {
+        &self.block_index
+    }
     /// <p>The block token for the block index of the <code>FirstSnapshotId</code> specified in the <code>ListChangedBlocks</code> operation. This value is absent if the first snapshot does not have the changed block that is on the second snapshot.</p>
     pub fn first_block_token(
         mut self,
@@ -79,6 +83,10 @@ impl ChangedBlockBuilder {
         self.first_block_token = input;
         self
     }
+    /// <p>The block token for the block index of the <code>FirstSnapshotId</code> specified in the <code>ListChangedBlocks</code> operation. This value is absent if the first snapshot does not have the changed block that is on the second snapshot.</p>
+    pub fn get_first_block_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.first_block_token
+    }
     /// <p>The block token for the block index of the <code>SecondSnapshotId</code> specified in the <code>ListChangedBlocks</code> operation.</p>
     pub fn second_block_token(
         mut self,
@@ -94,6 +102,10 @@ impl ChangedBlockBuilder {
     ) -> Self {
         self.second_block_token = input;
         self
+    }
+    /// <p>The block token for the block index of the <code>SecondSnapshotId</code> specified in the <code>ListChangedBlocks</code> operation.</p>
+    pub fn get_second_block_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.second_block_token
     }
     /// Consumes the builder and constructs a [`ChangedBlock`](crate::types::ChangedBlock).
     pub fn build(self) -> crate::types::ChangedBlock {

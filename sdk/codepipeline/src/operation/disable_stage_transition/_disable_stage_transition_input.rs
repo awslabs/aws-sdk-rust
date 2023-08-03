@@ -72,6 +72,10 @@ impl DisableStageTransitionInputBuilder {
         self.pipeline_name = input;
         self
     }
+    /// <p>The name of the pipeline in which you want to disable the flow of artifacts from one stage to another.</p>
+    pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_name
+    }
     /// <p>The name of the stage where you want to disable the inbound or outbound transition of artifacts.</p>
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_name = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl DisableStageTransitionInputBuilder {
     pub fn set_stage_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stage_name = input;
         self
+    }
+    /// <p>The name of the stage where you want to disable the inbound or outbound transition of artifacts.</p>
+    pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stage_name
     }
     /// <p>Specifies whether artifacts are prevented from transitioning into the stage and being processed by the actions in that stage (inbound), or prevented from transitioning from the stage after they have been processed by the actions in that stage (outbound).</p>
     pub fn transition_type(mut self, input: crate::types::StageTransitionType) -> Self {
@@ -95,6 +103,10 @@ impl DisableStageTransitionInputBuilder {
         self.transition_type = input;
         self
     }
+    /// <p>Specifies whether artifacts are prevented from transitioning into the stage and being processed by the actions in that stage (inbound), or prevented from transitioning from the stage after they have been processed by the actions in that stage (outbound).</p>
+    pub fn get_transition_type(&self) -> &::std::option::Option<crate::types::StageTransitionType> {
+        &self.transition_type
+    }
     /// <p>The reason given to the user that a stage is disabled, such as waiting for manual approval or manual tests. This message is displayed in the pipeline console UI.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
@@ -104,6 +116,10 @@ impl DisableStageTransitionInputBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
+    }
+    /// <p>The reason given to the user that a stage is disabled, such as waiting for manual approval or manual tests. This message is displayed in the pipeline console UI.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
     }
     /// Consumes the builder and constructs a [`DisableStageTransitionInput`](crate::operation::disable_stage_transition::DisableStageTransitionInput).
     pub fn build(

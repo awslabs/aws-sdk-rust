@@ -48,6 +48,10 @@ impl ErrorInfoBuilder {
         self.error_code = input;
         self
     }
+    /// <p>A number describing the error programmatically.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
+    }
     /// <p>An optional field to provide more details about the error.</p>
     pub fn error_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_string = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl ErrorInfoBuilder {
     pub fn set_error_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_string = input;
         self
+    }
+    /// <p>An optional field to provide more details about the error.</p>
+    pub fn get_error_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_string
     }
     /// Consumes the builder and constructs a [`ErrorInfo`](crate::types::ErrorInfo).
     pub fn build(self) -> crate::types::ErrorInfo {

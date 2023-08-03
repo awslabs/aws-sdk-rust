@@ -53,6 +53,12 @@ impl GetManagedScalingPolicyOutputBuilder {
         self.managed_scaling_policy = input;
         self
     }
+    /// <p>Specifies the managed scaling policy that is attached to an Amazon EMR cluster. </p>
+    pub fn get_managed_scaling_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::ManagedScalingPolicy> {
+        &self.managed_scaling_policy
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

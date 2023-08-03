@@ -36,6 +36,10 @@ impl DeleteReplicationConfigurationTemplateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteReplicationConfigurationTemplate as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_replication_configuration_template::builders::DeleteReplicationConfigurationTemplateInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -107,5 +111,11 @@ impl DeleteReplicationConfigurationTemplateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_replication_configuration_template_id(input);
         self
+    }
+    /// <p>Request to delete Replication Configuration Template from service by Replication Configuration Template ID.</p>
+    pub fn get_replication_configuration_template_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_replication_configuration_template_id()
     }
 }

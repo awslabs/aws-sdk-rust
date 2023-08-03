@@ -81,6 +81,10 @@ impl ModelVariantConfigSummaryBuilder {
         self.model_name = input;
         self
     }
+    /// <p>The name of the Amazon SageMaker Model entity.</p>
+    pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_name
+    }
     /// <p>The name of the variant.</p>
     pub fn variant_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.variant_name = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl ModelVariantConfigSummaryBuilder {
     pub fn set_variant_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.variant_name = input;
         self
+    }
+    /// <p>The name of the variant.</p>
+    pub fn get_variant_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.variant_name
     }
     /// <p>The configuration of the infrastructure that the model has been deployed to.</p>
     pub fn infrastructure_config(mut self, input: crate::types::ModelInfrastructureConfig) -> Self {
@@ -103,6 +111,12 @@ impl ModelVariantConfigSummaryBuilder {
     ) -> Self {
         self.infrastructure_config = input;
         self
+    }
+    /// <p>The configuration of the infrastructure that the model has been deployed to.</p>
+    pub fn get_infrastructure_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ModelInfrastructureConfig> {
+        &self.infrastructure_config
     }
     /// <p>The status of deployment for the model variant on the hosted inference endpoint.</p>
     /// <ul>
@@ -130,6 +144,17 @@ impl ModelVariantConfigSummaryBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of deployment for the model variant on the hosted inference endpoint.</p>
+    /// <ul>
+    /// <li> <p> <code>Creating</code> - Amazon SageMaker is preparing the model variant on the hosted inference endpoint. </p> </li>
+    /// <li> <p> <code>InService</code> - The model variant is running on the hosted inference endpoint. </p> </li>
+    /// <li> <p> <code>Updating</code> - Amazon SageMaker is updating the model variant on the hosted inference endpoint. </p> </li>
+    /// <li> <p> <code>Deleting</code> - Amazon SageMaker is deleting the model variant on the hosted inference endpoint. </p> </li>
+    /// <li> <p> <code>Deleted</code> - The model variant has been deleted on the hosted inference endpoint. This can only happen after stopping the experiment. </p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ModelVariantStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`ModelVariantConfigSummary`](crate::types::ModelVariantConfigSummary).
     pub fn build(self) -> crate::types::ModelVariantConfigSummary {

@@ -86,6 +86,12 @@ impl ListLicenseConfigurationsInputBuilder {
         self.license_configuration_arns = input;
         self
     }
+    /// <p>Amazon Resource Names (ARN) of the license configurations.</p>
+    pub fn get_license_configuration_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.license_configuration_arns
+    }
     /// <p>Maximum number of results to return in a single call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -96,6 +102,10 @@ impl ListLicenseConfigurationsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>Maximum number of results to return in a single call.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>Token for the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -105,6 +115,10 @@ impl ListLicenseConfigurationsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `filters`.
     ///
@@ -134,6 +148,15 @@ impl ListLicenseConfigurationsInputBuilder {
     ) -> Self {
         self.filters = input;
         self
+    }
+    /// <p>Filters to scope the results. The following filters and logical operators are supported:</p>
+    /// <ul>
+    /// <li> <p> <code>licenseCountingType</code> - The dimension for which licenses are counted. Possible values are <code>vCPU</code> | <code>Instance</code> | <code>Core</code> | <code>Socket</code>. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+    /// <li> <p> <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is used. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+    /// <li> <p> <code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been exceeded. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
     }
     /// Consumes the builder and constructs a [`ListLicenseConfigurationsInput`](crate::operation::list_license_configurations::ListLicenseConfigurationsInput).
     pub fn build(

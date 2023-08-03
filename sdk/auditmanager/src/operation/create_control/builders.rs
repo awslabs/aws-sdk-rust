@@ -36,6 +36,12 @@ impl CreateControlFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateControl as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_control::builders::CreateControlInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl CreateControlFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p> The name of the control. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p> The description of the control. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -127,6 +137,10 @@ impl CreateControlFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p> The description of the control. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p> The steps to follow to determine if the control is satisfied. </p>
     pub fn testing_information(
@@ -144,6 +158,10 @@ impl CreateControlFluentBuilder {
         self.inner = self.inner.set_testing_information(input);
         self
     }
+    /// <p> The steps to follow to determine if the control is satisfied. </p>
+    pub fn get_testing_information(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_testing_information()
+    }
     /// <p> The title of the action plan for remediating the control. </p>
     pub fn action_plan_title(
         mut self,
@@ -160,6 +178,10 @@ impl CreateControlFluentBuilder {
         self.inner = self.inner.set_action_plan_title(input);
         self
     }
+    /// <p> The title of the action plan for remediating the control. </p>
+    pub fn get_action_plan_title(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_action_plan_title()
+    }
     /// <p> The recommended actions to carry out if the control isn't fulfilled. </p>
     pub fn action_plan_instructions(
         mut self,
@@ -175,6 +197,10 @@ impl CreateControlFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_action_plan_instructions(input);
         self
+    }
+    /// <p> The recommended actions to carry out if the control isn't fulfilled. </p>
+    pub fn get_action_plan_instructions(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_action_plan_instructions()
     }
     /// Appends an item to `controlMappingSources`.
     ///
@@ -195,6 +221,12 @@ impl CreateControlFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_control_mapping_sources(input);
         self
+    }
+    /// <p> The data mapping sources for the control. </p>
+    pub fn get_control_mapping_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateControlMappingSource>> {
+        self.inner.get_control_mapping_sources()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -218,5 +250,13 @@ impl CreateControlFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p> The tags that are associated with the control. </p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

@@ -56,6 +56,10 @@ impl CreateChannelModeratorOutputBuilder {
         self.channel_arn = input;
         self
     }
+    /// <p>The ARN of the channel.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
+    }
     /// <p>The ARNs of the channel and the moderator.</p>
     pub fn channel_moderator(mut self, input: crate::types::Identity) -> Self {
         self.channel_moderator = ::std::option::Option::Some(input);
@@ -68,6 +72,10 @@ impl CreateChannelModeratorOutputBuilder {
     ) -> Self {
         self.channel_moderator = input;
         self
+    }
+    /// <p>The ARNs of the channel and the moderator.</p>
+    pub fn get_channel_moderator(&self) -> &::std::option::Option<crate::types::Identity> {
+        &self.channel_moderator
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -49,6 +49,10 @@ impl NetworkPathBuilder {
         self.steps = input;
         self
     }
+    /// <p>The details on the steps in the network path.</p>
+    pub fn get_steps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Step>> {
+        &self.steps
+    }
     /// Consumes the builder and constructs a [`NetworkPath`](crate::types::NetworkPath).
     pub fn build(self) -> crate::types::NetworkPath {
         crate::types::NetworkPath { steps: self.steps }

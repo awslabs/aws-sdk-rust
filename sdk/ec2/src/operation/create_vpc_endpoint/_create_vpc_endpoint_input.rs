@@ -143,6 +143,10 @@ impl CreateVpcEndpointInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>The type of endpoint.</p>
     /// <p>Default: Gateway</p>
     pub fn vpc_endpoint_type(mut self, input: crate::types::VpcEndpointType) -> Self {
@@ -158,6 +162,11 @@ impl CreateVpcEndpointInputBuilder {
         self.vpc_endpoint_type = input;
         self
     }
+    /// <p>The type of endpoint.</p>
+    /// <p>Default: Gateway</p>
+    pub fn get_vpc_endpoint_type(&self) -> &::std::option::Option<crate::types::VpcEndpointType> {
+        &self.vpc_endpoint_type
+    }
     /// <p>The ID of the VPC.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -168,6 +177,10 @@ impl CreateVpcEndpointInputBuilder {
         self.vpc_id = input;
         self
     }
+    /// <p>The ID of the VPC.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
+    }
     /// <p>The name of the endpoint service.</p>
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
@@ -177,6 +190,10 @@ impl CreateVpcEndpointInputBuilder {
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_name = input;
         self
+    }
+    /// <p>The name of the endpoint service.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
     }
     /// <p>(Interface and gateway endpoints) A policy to attach to the endpoint that controls access to the service. The policy must be in valid JSON format. If this parameter is not specified, we attach a default policy that allows full access to the service.</p>
     pub fn policy_document(
@@ -193,6 +210,10 @@ impl CreateVpcEndpointInputBuilder {
     ) -> Self {
         self.policy_document = input;
         self
+    }
+    /// <p>(Interface and gateway endpoints) A policy to attach to the endpoint that controls access to the service. The policy must be in valid JSON format. If this parameter is not specified, we attach a default policy that allows full access to the service.</p>
+    pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_document
     }
     /// Appends an item to `route_table_ids`.
     ///
@@ -216,6 +237,12 @@ impl CreateVpcEndpointInputBuilder {
         self.route_table_ids = input;
         self
     }
+    /// <p>(Gateway endpoint) The route table IDs.</p>
+    pub fn get_route_table_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.route_table_ids
+    }
     /// Appends an item to `subnet_ids`.
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
@@ -234,6 +261,10 @@ impl CreateVpcEndpointInputBuilder {
     ) -> Self {
         self.subnet_ids = input;
         self
+    }
+    /// <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to create an endpoint network interface. For a Gateway Load Balancer endpoint, you can specify only one subnet.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
     }
     /// Appends an item to `security_group_ids`.
     ///
@@ -257,6 +288,12 @@ impl CreateVpcEndpointInputBuilder {
         self.security_group_ids = input;
         self
     }
+    /// <p>(Interface endpoint) The IDs of the security groups to associate with the endpoint network interface. If this parameter is not specified, we use the default security group for the VPC.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
+    }
     /// <p>The IP address type for the endpoint.</p>
     pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
         self.ip_address_type = ::std::option::Option::Some(input);
@@ -269,6 +306,10 @@ impl CreateVpcEndpointInputBuilder {
     ) -> Self {
         self.ip_address_type = input;
         self
+    }
+    /// <p>The IP address type for the endpoint.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
+        &self.ip_address_type
     }
     /// <p>The DNS options for the endpoint.</p>
     pub fn dns_options(mut self, input: crate::types::DnsOptionsSpecification) -> Self {
@@ -283,6 +324,10 @@ impl CreateVpcEndpointInputBuilder {
         self.dns_options = input;
         self
     }
+    /// <p>The DNS options for the endpoint.</p>
+    pub fn get_dns_options(&self) -> &::std::option::Option<crate::types::DnsOptionsSpecification> {
+        &self.dns_options
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -292,6 +337,10 @@ impl CreateVpcEndpointInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// <p>(Interface endpoint) Indicates whether to associate a private hosted zone with the specified VPC. The private hosted zone contains a record set for the default public DNS name for the service for the Region (for example, <code>kinesis.us-east-1.amazonaws.com</code>), which resolves to the private IP addresses of the endpoint network interfaces in the VPC. This enables you to make requests to the default public DNS name for the service instead of the public DNS names that are automatically generated by the VPC endpoint service.</p>
     /// <p>To use a private hosted zone, you must set the following VPC attributes to <code>true</code>: <code>enableDnsHostnames</code> and <code>enableDnsSupport</code>. Use <code>ModifyVpcAttribute</code> to set the VPC attributes.</p>
@@ -306,6 +355,12 @@ impl CreateVpcEndpointInputBuilder {
     pub fn set_private_dns_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.private_dns_enabled = input;
         self
+    }
+    /// <p>(Interface endpoint) Indicates whether to associate a private hosted zone with the specified VPC. The private hosted zone contains a record set for the default public DNS name for the service for the Region (for example, <code>kinesis.us-east-1.amazonaws.com</code>), which resolves to the private IP addresses of the endpoint network interfaces in the VPC. This enables you to make requests to the default public DNS name for the service instead of the public DNS names that are automatically generated by the VPC endpoint service.</p>
+    /// <p>To use a private hosted zone, you must set the following VPC attributes to <code>true</code>: <code>enableDnsHostnames</code> and <code>enableDnsSupport</code>. Use <code>ModifyVpcAttribute</code> to set the VPC attributes.</p>
+    /// <p>Default: <code>true</code> </p>
+    pub fn get_private_dns_enabled(&self) -> &::std::option::Option<bool> {
+        &self.private_dns_enabled
     }
     /// Appends an item to `tag_specifications`.
     ///
@@ -325,6 +380,12 @@ impl CreateVpcEndpointInputBuilder {
     ) -> Self {
         self.tag_specifications = input;
         self
+    }
+    /// <p>The tags to associate with the endpoint.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        &self.tag_specifications
     }
     /// Consumes the builder and constructs a [`CreateVpcEndpointInput`](crate::operation::create_vpc_endpoint::CreateVpcEndpointInput).
     pub fn build(

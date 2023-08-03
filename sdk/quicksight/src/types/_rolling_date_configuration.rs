@@ -60,6 +60,10 @@ impl RollingDateConfigurationBuilder {
         self.data_set_identifier = input;
         self
     }
+    /// <p>The data set that is used in the rolling date configuration.</p>
+    pub fn get_data_set_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_set_identifier
+    }
     /// <p>The expression of the rolling date configuration.</p>
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression = ::std::option::Option::Some(input.into());
@@ -69,6 +73,10 @@ impl RollingDateConfigurationBuilder {
     pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expression = input;
         self
+    }
+    /// <p>The expression of the rolling date configuration.</p>
+    pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expression
     }
     /// Consumes the builder and constructs a [`RollingDateConfiguration`](crate::types::RollingDateConfiguration).
     pub fn build(self) -> crate::types::RollingDateConfiguration {

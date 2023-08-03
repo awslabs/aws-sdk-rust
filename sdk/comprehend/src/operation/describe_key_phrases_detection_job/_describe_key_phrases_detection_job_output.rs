@@ -56,6 +56,12 @@ impl DescribeKeyPhrasesDetectionJobOutputBuilder {
         self.key_phrases_detection_job_properties = input;
         self
     }
+    /// <p>An object that contains the properties associated with a key phrases detection job. </p>
+    pub fn get_key_phrases_detection_job_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::KeyPhrasesDetectionJobProperties> {
+        &self.key_phrases_detection_job_properties
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

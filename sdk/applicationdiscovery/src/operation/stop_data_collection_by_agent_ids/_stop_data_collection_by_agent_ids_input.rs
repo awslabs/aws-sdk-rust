@@ -48,6 +48,10 @@ impl StopDataCollectionByAgentIdsInputBuilder {
         self.agent_ids = input;
         self
     }
+    /// <p>The IDs of the agents from which to stop collecting data.</p>
+    pub fn get_agent_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.agent_ids
+    }
     /// Consumes the builder and constructs a [`StopDataCollectionByAgentIdsInput`](crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIdsInput).
     pub fn build(
         self,

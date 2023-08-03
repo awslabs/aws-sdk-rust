@@ -63,6 +63,10 @@ impl UpdateJobStatusOutputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The ID for the job whose status was updated.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>The current status for the specified job.</p>
     pub fn status(mut self, input: crate::types::JobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl UpdateJobStatusOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status for the specified job.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
+        &self.status
     }
     /// <p>The reason that the specified job's status was updated.</p>
     pub fn status_update_reason(
@@ -88,6 +96,10 @@ impl UpdateJobStatusOutputBuilder {
     ) -> Self {
         self.status_update_reason = input;
         self
+    }
+    /// <p>The reason that the specified job's status was updated.</p>
+    pub fn get_status_update_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_update_reason
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

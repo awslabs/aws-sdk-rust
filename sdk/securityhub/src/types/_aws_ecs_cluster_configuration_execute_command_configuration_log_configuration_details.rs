@@ -75,6 +75,10 @@ impl AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetail
         self.cloud_watch_encryption_enabled = input;
         self
     }
+    /// <p>Whether to enable encryption on the CloudWatch logs.</p>
+    pub fn get_cloud_watch_encryption_enabled(&self) -> &::std::option::Option<bool> {
+        &self.cloud_watch_encryption_enabled
+    }
     /// <p>The name of the CloudWatch log group to send the logs to.</p>
     pub fn cloud_watch_log_group_name(
         mut self,
@@ -90,6 +94,10 @@ impl AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetail
     ) -> Self {
         self.cloud_watch_log_group_name = input;
         self
+    }
+    /// <p>The name of the CloudWatch log group to send the logs to.</p>
+    pub fn get_cloud_watch_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cloud_watch_log_group_name
     }
     /// <p>The name of the S3 bucket to send logs to.</p>
     pub fn s3_bucket_name(
@@ -107,6 +115,10 @@ impl AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetail
         self.s3_bucket_name = input;
         self
     }
+    /// <p>The name of the S3 bucket to send logs to.</p>
+    pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket_name
+    }
     /// <p>Whether to encrypt the logs that are sent to the S3 bucket.</p>
     pub fn s3_encryption_enabled(mut self, input: bool) -> Self {
         self.s3_encryption_enabled = ::std::option::Option::Some(input);
@@ -116,6 +128,10 @@ impl AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetail
     pub fn set_s3_encryption_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.s3_encryption_enabled = input;
         self
+    }
+    /// <p>Whether to encrypt the logs that are sent to the S3 bucket.</p>
+    pub fn get_s3_encryption_enabled(&self) -> &::std::option::Option<bool> {
+        &self.s3_encryption_enabled
     }
     /// <p>Identifies the folder in the S3 bucket to send the logs to.</p>
     pub fn s3_key_prefix(
@@ -132,6 +148,10 @@ impl AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetail
     ) -> Self {
         self.s3_key_prefix = input;
         self
+    }
+    /// <p>Identifies the folder in the S3 bucket to send the logs to.</p>
+    pub fn get_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_key_prefix
     }
     /// Consumes the builder and constructs a [`AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails`](crate::types::AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails).
     pub fn build(

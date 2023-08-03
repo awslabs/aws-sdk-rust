@@ -41,6 +41,10 @@ impl DeleteCustomEntityTypeInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the custom pattern that you want to delete.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DeleteCustomEntityTypeInput`](crate::operation::delete_custom_entity_type::DeleteCustomEntityTypeInput).
     pub fn build(
         self,

@@ -47,6 +47,10 @@ impl GetBucketOwnershipControlsInputBuilder {
         self.bucket = input;
         self
     }
+    /// <p>The name of the Amazon S3 bucket whose <code>OwnershipControls</code> you want to retrieve. </p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(
         mut self,
@@ -62,6 +66,10 @@ impl GetBucketOwnershipControlsInputBuilder {
     ) -> Self {
         self.expected_bucket_owner = input;
         self
+    }
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
+    pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expected_bucket_owner
     }
     /// Consumes the builder and constructs a [`GetBucketOwnershipControlsInput`](crate::operation::get_bucket_ownership_controls::GetBucketOwnershipControlsInput).
     pub fn build(

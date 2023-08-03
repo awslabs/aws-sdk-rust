@@ -70,6 +70,10 @@ impl SlotResolutionTestResultItemCountsBuilder {
         self.total_result_count = input;
         self
     }
+    /// <p>The total number of results.</p>
+    pub fn get_total_result_count(&self) -> &::std::option::Option<i32> {
+        &self.total_result_count
+    }
     /// Adds a key-value pair to `speech_transcription_result_counts`.
     ///
     /// To override the contents of this collection use [`set_speech_transcription_result_counts`](Self::set_speech_transcription_result_counts).
@@ -95,6 +99,13 @@ impl SlotResolutionTestResultItemCountsBuilder {
         self.speech_transcription_result_counts = input;
         self
     }
+    /// <p>The number of matched, mismatched and execution error results for speech transcription for the slot.</p>
+    pub fn get_speech_transcription_result_counts(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>>
+    {
+        &self.speech_transcription_result_counts
+    }
     /// Adds a key-value pair to `slot_match_result_counts`.
     ///
     /// To override the contents of this collection use [`set_slot_match_result_counts`](Self::set_slot_match_result_counts).
@@ -119,6 +130,13 @@ impl SlotResolutionTestResultItemCountsBuilder {
     ) -> Self {
         self.slot_match_result_counts = input;
         self
+    }
+    /// <p>The number of matched and mismatched results for slot resolution for the slot.</p>
+    pub fn get_slot_match_result_counts(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::TestResultMatchStatus, i32>>
+    {
+        &self.slot_match_result_counts
     }
     /// Consumes the builder and constructs a [`SlotResolutionTestResultItemCounts`](crate::types::SlotResolutionTestResultItemCounts).
     pub fn build(self) -> crate::types::SlotResolutionTestResultItemCounts {

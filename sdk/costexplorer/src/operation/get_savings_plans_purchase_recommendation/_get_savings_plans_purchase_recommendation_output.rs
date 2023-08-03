@@ -75,6 +75,12 @@ impl GetSavingsPlansPurchaseRecommendationOutputBuilder {
         self.metadata = input;
         self
     }
+    /// <p>Information that regards this specific recommendation set.</p>
+    pub fn get_metadata(
+        &self,
+    ) -> &::std::option::Option<crate::types::SavingsPlansPurchaseRecommendationMetadata> {
+        &self.metadata
+    }
     /// <p>Contains your request parameters, Savings Plan Recommendations Summary, and Details.</p>
     pub fn savings_plans_purchase_recommendation(
         mut self,
@@ -91,6 +97,12 @@ impl GetSavingsPlansPurchaseRecommendationOutputBuilder {
         self.savings_plans_purchase_recommendation = input;
         self
     }
+    /// <p>Contains your request parameters, Savings Plan Recommendations Summary, and Details.</p>
+    pub fn get_savings_plans_purchase_recommendation(
+        &self,
+    ) -> &::std::option::Option<crate::types::SavingsPlansPurchaseRecommendation> {
+        &self.savings_plans_purchase_recommendation
+    }
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn next_page_token(
         mut self,
@@ -106,6 +118,10 @@ impl GetSavingsPlansPurchaseRecommendationOutputBuilder {
     ) -> Self {
         self.next_page_token = input;
         self
+    }
+    /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_page_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

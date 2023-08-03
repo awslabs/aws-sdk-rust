@@ -57,6 +57,10 @@ impl PartitionIndexBuilder {
         self.keys = input;
         self
     }
+    /// <p>The keys for the partition index.</p>
+    pub fn get_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.keys
+    }
     /// <p>The name of the partition index.</p>
     pub fn index_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_name = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl PartitionIndexBuilder {
     pub fn set_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.index_name = input;
         self
+    }
+    /// <p>The name of the partition index.</p>
+    pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_name
     }
     /// Consumes the builder and constructs a [`PartitionIndex`](crate::types::PartitionIndex).
     pub fn build(self) -> crate::types::PartitionIndex {

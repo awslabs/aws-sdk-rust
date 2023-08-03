@@ -60,6 +60,10 @@ impl StartDiscovererOutputBuilder {
         self.discoverer_id = input;
         self
     }
+    /// <p>The ID of the discoverer.</p>
+    pub fn get_discoverer_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.discoverer_id
+    }
     /// <p>The state of the discoverer.</p>
     pub fn state(mut self, input: crate::types::DiscovererState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl StartDiscovererOutputBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the discoverer.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::DiscovererState> {
+        &self.state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

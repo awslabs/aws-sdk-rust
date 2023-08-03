@@ -51,6 +51,10 @@ impl RecordBuilder {
         self.values = input;
         self
     }
+    /// <p>The values returned in the record.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Value>> {
+        &self.values
+    }
     /// Consumes the builder and constructs a [`Record`](crate::types::Record).
     pub fn build(self) -> crate::types::Record {
         crate::types::Record {

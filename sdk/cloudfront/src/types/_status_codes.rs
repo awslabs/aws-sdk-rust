@@ -48,6 +48,10 @@ impl StatusCodesBuilder {
         self.quantity = input;
         self
     }
+    /// <p>The number of status codes.</p>
+    pub fn get_quantity(&self) -> &::std::option::Option<i32> {
+        &self.quantity
+    }
     /// Appends an item to `items`.
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
@@ -63,6 +67,10 @@ impl StatusCodesBuilder {
     pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.items = input;
         self
+    }
+    /// <p>The items (status codes) for an origin group.</p>
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        &self.items
     }
     /// Consumes the builder and constructs a [`StatusCodes`](crate::types::StatusCodes).
     pub fn build(self) -> crate::types::StatusCodes {

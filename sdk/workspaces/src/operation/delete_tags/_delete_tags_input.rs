@@ -47,6 +47,10 @@ impl DeleteTagsInputBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// Appends an item to `tag_keys`.
     ///
     /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
@@ -65,6 +69,10 @@ impl DeleteTagsInputBuilder {
     ) -> Self {
         self.tag_keys = input;
         self
+    }
+    /// <p>The tag keys.</p>
+    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tag_keys
     }
     /// Consumes the builder and constructs a [`DeleteTagsInput`](crate::operation::delete_tags::DeleteTagsInput).
     pub fn build(

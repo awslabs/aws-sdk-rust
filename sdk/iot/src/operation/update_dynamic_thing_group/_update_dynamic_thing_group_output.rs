@@ -48,6 +48,10 @@ impl UpdateDynamicThingGroupOutputBuilder {
         self.version = input;
         self
     }
+    /// <p>The dynamic thing group version.</p>
+    pub fn get_version(&self) -> &::std::option::Option<i64> {
+        &self.version
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

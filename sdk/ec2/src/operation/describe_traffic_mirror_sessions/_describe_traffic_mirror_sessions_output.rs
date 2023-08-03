@@ -67,6 +67,12 @@ impl DescribeTrafficMirrorSessionsOutputBuilder {
         self.traffic_mirror_sessions = input;
         self
     }
+    /// <p>Describes one or more Traffic Mirror sessions. By default, all Traffic Mirror sessions are described. Alternatively, you can filter the results.</p>
+    pub fn get_traffic_mirror_sessions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorSession>> {
+        &self.traffic_mirror_sessions
+    }
     /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -76,6 +82,10 @@ impl DescribeTrafficMirrorSessionsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

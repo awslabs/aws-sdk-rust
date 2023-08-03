@@ -46,6 +46,10 @@ impl DeleteActionTargetInputBuilder {
         self.action_target_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the custom action target to delete.</p>
+    pub fn get_action_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_target_arn
+    }
     /// Consumes the builder and constructs a [`DeleteActionTargetInput`](crate::operation::delete_action_target::DeleteActionTargetInput).
     pub fn build(
         self,

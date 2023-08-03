@@ -48,6 +48,12 @@ impl DeleteHsmConfigurationInputBuilder {
         self.hsm_configuration_identifier = input;
         self
     }
+    /// <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
+    pub fn get_hsm_configuration_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.hsm_configuration_identifier
+    }
     /// Consumes the builder and constructs a [`DeleteHsmConfigurationInput`](crate::operation::delete_hsm_configuration::DeleteHsmConfigurationInput).
     pub fn build(
         self,

@@ -54,6 +54,10 @@ impl EnvironmentTemplateFilterBuilder {
         self.template_name = input;
         self
     }
+    /// <p>Include <code>templateName</code> to filter search for a template name.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
     /// <p>Include <code>majorVersion</code> to filter search for a major version.</p>
     pub fn major_version(
         mut self,
@@ -69,6 +73,10 @@ impl EnvironmentTemplateFilterBuilder {
     ) -> Self {
         self.major_version = input;
         self
+    }
+    /// <p>Include <code>majorVersion</code> to filter search for a major version.</p>
+    pub fn get_major_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.major_version
     }
     /// Consumes the builder and constructs a [`EnvironmentTemplateFilter`](crate::types::EnvironmentTemplateFilter).
     pub fn build(self) -> crate::types::EnvironmentTemplateFilter {

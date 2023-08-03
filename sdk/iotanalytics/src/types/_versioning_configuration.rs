@@ -48,6 +48,10 @@ impl VersioningConfigurationBuilder {
         self.unlimited = input;
         self
     }
+    /// <p>If true, unlimited versions of dataset contents are kept.</p>
+    pub fn get_unlimited(&self) -> &::std::option::Option<bool> {
+        &self.unlimited
+    }
     /// <p>How many versions of dataset contents are kept. The <code>unlimited</code> parameter must be <code>false</code>.</p>
     pub fn max_versions(mut self, input: i32) -> Self {
         self.max_versions = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl VersioningConfigurationBuilder {
     pub fn set_max_versions(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_versions = input;
         self
+    }
+    /// <p>How many versions of dataset contents are kept. The <code>unlimited</code> parameter must be <code>false</code>.</p>
+    pub fn get_max_versions(&self) -> &::std::option::Option<i32> {
+        &self.max_versions
     }
     /// Consumes the builder and constructs a [`VersioningConfiguration`](crate::types::VersioningConfiguration).
     pub fn build(self) -> crate::types::VersioningConfiguration {

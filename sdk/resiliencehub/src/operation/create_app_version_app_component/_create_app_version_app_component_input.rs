@@ -87,6 +87,10 @@ impl CreateAppVersionAppComponentInputBuilder {
         self.app_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_arn
+    }
     /// <p>The identifier of the Application Component.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -96,6 +100,10 @@ impl CreateAppVersionAppComponentInputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The identifier of the Application Component.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The name of the Application Component.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -107,6 +115,10 @@ impl CreateAppVersionAppComponentInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the Application Component.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The type of Application Component. For more information about the types of Application Component, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/AppComponent.grouping.html">Grouping resources in an AppComponent</a>.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -116,6 +128,10 @@ impl CreateAppVersionAppComponentInputBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of Application Component. For more information about the types of Application Component, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/AppComponent.grouping.html">Grouping resources in an AppComponent</a>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// Adds a key-value pair to `additional_info`.
     ///
@@ -145,6 +161,14 @@ impl CreateAppVersionAppComponentInputBuilder {
         self.additional_info = input;
         self
     }
+    /// <p>Currently, there is no supported additional information for Application Components.</p>
+    pub fn get_additional_info(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
+    > {
+        &self.additional_info
+    }
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -154,6 +178,10 @@ impl CreateAppVersionAppComponentInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateAppVersionAppComponentInput`](crate::operation::create_app_version_app_component::CreateAppVersionAppComponentInput).
     pub fn build(

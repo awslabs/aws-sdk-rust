@@ -36,6 +36,12 @@ impl GetMapSpritesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetMapSprites as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_map_sprites::builders::GetMapSpritesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl GetMapSpritesFluentBuilder {
         self.inner = self.inner.set_map_name(input);
         self
     }
+    /// <p>The map resource associated with the sprite ﬁle.</p>
+    pub fn get_map_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_map_name()
+    }
     /// <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite sheet:</p>
     /// <ul>
     /// <li> <p> <code>sprites.png</code> </p> </li>
@@ -146,6 +156,19 @@ impl GetMapSpritesFluentBuilder {
         self.inner = self.inner.set_file_name(input);
         self
     }
+    /// <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite sheet:</p>
+    /// <ul>
+    /// <li> <p> <code>sprites.png</code> </p> </li>
+    /// <li> <p> <code>sprites@2x.png</code> for high pixel density displays</p> </li>
+    /// </ul>
+    /// <p>For the JSON document containing image offsets. Use the following ﬁle names:</p>
+    /// <ul>
+    /// <li> <p> <code>sprites.json</code> </p> </li>
+    /// <li> <p> <code>sprites@2x.json</code> for high pixel density displays</p> </li>
+    /// </ul>
+    pub fn get_file_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_file_name()
+    }
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key(input.into());
@@ -155,5 +178,9 @@ impl GetMapSpritesFluentBuilder {
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key(input);
         self
+    }
+    /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_key()
     }
 }

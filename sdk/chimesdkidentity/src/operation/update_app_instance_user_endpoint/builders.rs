@@ -36,6 +36,10 @@ impl UpdateAppInstanceUserEndpointFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAppInstanceUserEndpoint as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_app_instance_user_endpoint::builders::UpdateAppInstanceUserEndpointInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl UpdateAppInstanceUserEndpointFluentBuilder {
         self.inner = self.inner.set_app_instance_user_arn(input);
         self
     }
+    /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    pub fn get_app_instance_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_instance_user_arn()
+    }
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
     pub fn endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.endpoint_id(input.into());
@@ -142,6 +150,10 @@ impl UpdateAppInstanceUserEndpointFluentBuilder {
         self.inner = self.inner.set_endpoint_id(input);
         self
     }
+    /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
+    pub fn get_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_endpoint_id()
+    }
     /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -151,6 +163,10 @@ impl UpdateAppInstanceUserEndpointFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages. <code>NONE</code> indicates the endpoint will receive no messages.</p>
     pub fn allow_messages(mut self, input: crate::types::AllowMessages) -> Self {
@@ -164,5 +180,9 @@ impl UpdateAppInstanceUserEndpointFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_allow_messages(input);
         self
+    }
+    /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages. <code>NONE</code> indicates the endpoint will receive no messages.</p>
+    pub fn get_allow_messages(&self) -> &::std::option::Option<crate::types::AllowMessages> {
+        self.inner.get_allow_messages()
     }
 }

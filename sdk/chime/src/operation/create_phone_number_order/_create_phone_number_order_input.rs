@@ -52,6 +52,10 @@ impl CreatePhoneNumberOrderInputBuilder {
         self.product_type = input;
         self
     }
+    /// <p>The phone number product type.</p>
+    pub fn get_product_type(&self) -> &::std::option::Option<crate::types::PhoneNumberProductType> {
+        &self.product_type
+    }
     /// Appends an item to `e164_phone_numbers`.
     ///
     /// To override the contents of this collection use [`set_e164_phone_numbers`](Self::set_e164_phone_numbers).
@@ -73,6 +77,12 @@ impl CreatePhoneNumberOrderInputBuilder {
     ) -> Self {
         self.e164_phone_numbers = input;
         self
+    }
+    /// <p>List of phone numbers, in E.164 format.</p>
+    pub fn get_e164_phone_numbers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.e164_phone_numbers
     }
     /// Consumes the builder and constructs a [`CreatePhoneNumberOrderInput`](crate::operation::create_phone_number_order::CreatePhoneNumberOrderInput).
     pub fn build(

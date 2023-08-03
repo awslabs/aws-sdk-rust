@@ -58,6 +58,10 @@ impl UpdateShareInvitationInputBuilder {
         self.share_invitation_id = input;
         self
     }
+    /// <p>The ID assigned to the share invitation.</p>
+    pub fn get_share_invitation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.share_invitation_id
+    }
     /// <p>Share invitation action taken by contributor.</p>
     pub fn share_invitation_action(mut self, input: crate::types::ShareInvitationAction) -> Self {
         self.share_invitation_action = ::std::option::Option::Some(input);
@@ -70,6 +74,12 @@ impl UpdateShareInvitationInputBuilder {
     ) -> Self {
         self.share_invitation_action = input;
         self
+    }
+    /// <p>Share invitation action taken by contributor.</p>
+    pub fn get_share_invitation_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::ShareInvitationAction> {
+        &self.share_invitation_action
     }
     /// Consumes the builder and constructs a [`UpdateShareInvitationInput`](crate::operation::update_share_invitation::UpdateShareInvitationInput).
     pub fn build(

@@ -94,6 +94,10 @@ impl ClientVpnRouteBuilder {
         self.client_vpn_endpoint_id = input;
         self
     }
+    /// <p>The ID of the Client VPN endpoint with which the route is associated.</p>
+    pub fn get_client_vpn_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_vpn_endpoint_id
+    }
     /// <p>The IPv4 address range, in CIDR notation, of the route destination.</p>
     pub fn destination_cidr(
         mut self,
@@ -109,6 +113,10 @@ impl ClientVpnRouteBuilder {
     ) -> Self {
         self.destination_cidr = input;
         self
+    }
+    /// <p>The IPv4 address range, in CIDR notation, of the route destination.</p>
+    pub fn get_destination_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_cidr
     }
     /// <p>The ID of the subnet through which traffic is routed.</p>
     pub fn target_subnet(
@@ -126,6 +134,10 @@ impl ClientVpnRouteBuilder {
         self.target_subnet = input;
         self
     }
+    /// <p>The ID of the subnet through which traffic is routed.</p>
+    pub fn get_target_subnet(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_subnet
+    }
     /// <p>The route type.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -136,6 +148,10 @@ impl ClientVpnRouteBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The route type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// <p>Indicates how the route was associated with the Client VPN endpoint. <code>associate</code> indicates that the route was automatically added when the target network was associated with the Client VPN endpoint. <code>add-route</code> indicates that the route was manually added using the <b>CreateClientVpnRoute</b> action.</p>
     pub fn origin(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origin = ::std::option::Option::Some(input.into());
@@ -145,6 +161,10 @@ impl ClientVpnRouteBuilder {
     pub fn set_origin(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.origin = input;
         self
+    }
+    /// <p>Indicates how the route was associated with the Client VPN endpoint. <code>associate</code> indicates that the route was automatically added when the target network was associated with the Client VPN endpoint. <code>add-route</code> indicates that the route was manually added using the <b>CreateClientVpnRoute</b> action.</p>
+    pub fn get_origin(&self) -> &::std::option::Option<::std::string::String> {
+        &self.origin
     }
     /// <p>The current state of the route.</p>
     pub fn status(mut self, input: crate::types::ClientVpnRouteStatus) -> Self {
@@ -159,6 +179,10 @@ impl ClientVpnRouteBuilder {
         self.status = input;
         self
     }
+    /// <p>The current state of the route.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ClientVpnRouteStatus> {
+        &self.status
+    }
     /// <p>A brief description of the route.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -168,6 +192,10 @@ impl ClientVpnRouteBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A brief description of the route.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`ClientVpnRoute`](crate::types::ClientVpnRoute).
     pub fn build(self) -> crate::types::ClientVpnRoute {

@@ -54,6 +54,10 @@ impl OptionGroupMembershipBuilder {
         self.option_group_name = input;
         self
     }
+    /// <p>The name of the option group that the instance belongs to.</p>
+    pub fn get_option_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.option_group_name
+    }
     /// <p>The status of the DB instance's option group membership. Valid values are: <code>in-sync</code>, <code>pending-apply</code>, <code>pending-removal</code>, <code>pending-maintenance-apply</code>, <code>pending-maintenance-removal</code>, <code>applying</code>, <code>removing</code>, and <code>failed</code>.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl OptionGroupMembershipBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the DB instance's option group membership. Valid values are: <code>in-sync</code>, <code>pending-apply</code>, <code>pending-removal</code>, <code>pending-maintenance-apply</code>, <code>pending-maintenance-removal</code>, <code>applying</code>, <code>removing</code>, and <code>failed</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`OptionGroupMembership`](crate::types::OptionGroupMembership).
     pub fn build(self) -> crate::types::OptionGroupMembership {

@@ -88,6 +88,10 @@ impl StaleSecurityGroupBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the security group.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The ID of the security group.</p>
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
@@ -98,6 +102,10 @@ impl StaleSecurityGroupBuilder {
         self.group_id = input;
         self
     }
+    /// <p>The ID of the security group.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
+    }
     /// <p>The name of the security group.</p>
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_name = ::std::option::Option::Some(input.into());
@@ -107,6 +115,10 @@ impl StaleSecurityGroupBuilder {
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_name = input;
         self
+    }
+    /// <p>The name of the security group.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
     }
     /// Appends an item to `stale_ip_permissions`.
     ///
@@ -127,6 +139,12 @@ impl StaleSecurityGroupBuilder {
         self.stale_ip_permissions = input;
         self
     }
+    /// <p>Information about the stale inbound rules in the security group.</p>
+    pub fn get_stale_ip_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StaleIpPermission>> {
+        &self.stale_ip_permissions
+    }
     /// Appends an item to `stale_ip_permissions_egress`.
     ///
     /// To override the contents of this collection use [`set_stale_ip_permissions_egress`](Self::set_stale_ip_permissions_egress).
@@ -146,6 +164,12 @@ impl StaleSecurityGroupBuilder {
         self.stale_ip_permissions_egress = input;
         self
     }
+    /// <p>Information about the stale outbound rules in the security group.</p>
+    pub fn get_stale_ip_permissions_egress(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StaleIpPermission>> {
+        &self.stale_ip_permissions_egress
+    }
     /// <p>The ID of the VPC for the security group.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -155,6 +179,10 @@ impl StaleSecurityGroupBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The ID of the VPC for the security group.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// Consumes the builder and constructs a [`StaleSecurityGroup`](crate::types::StaleSecurityGroup).
     pub fn build(self) -> crate::types::StaleSecurityGroup {

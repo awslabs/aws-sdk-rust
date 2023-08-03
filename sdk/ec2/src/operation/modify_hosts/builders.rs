@@ -37,6 +37,10 @@ impl ModifyHostsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyHosts as a reference.
+    pub fn as_input(&self) -> &crate::operation::modify_hosts::builders::ModifyHostsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -122,6 +126,10 @@ impl ModifyHostsFluentBuilder {
         self.inner = self.inner.set_auto_placement(input);
         self
     }
+    /// <p>Specify whether to enable or disable auto-placement.</p>
+    pub fn get_auto_placement(&self) -> &::std::option::Option<crate::types::AutoPlacement> {
+        self.inner.get_auto_placement()
+    }
     /// Appends an item to `HostIds`.
     ///
     /// To override the contents of this collection use [`set_host_ids`](Self::set_host_ids).
@@ -139,6 +147,10 @@ impl ModifyHostsFluentBuilder {
         self.inner = self.inner.set_host_ids(input);
         self
     }
+    /// <p>The IDs of the Dedicated Hosts to modify.</p>
+    pub fn get_host_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_host_ids()
+    }
     /// <p>Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host recovery</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn host_recovery(mut self, input: crate::types::HostRecovery) -> Self {
         self.inner = self.inner.host_recovery(input);
@@ -151,6 +163,10 @@ impl ModifyHostsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_host_recovery(input);
         self
+    }
+    /// <p>Indicates whether to enable or disable host recovery for the Dedicated Host. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host recovery</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn get_host_recovery(&self) -> &::std::option::Option<crate::types::HostRecovery> {
+        self.inner.get_host_recovery()
     }
     /// <p>Specifies the instance type to be supported by the Dedicated Host. Specify this parameter to modify a Dedicated Host to support only a specific instance type.</p>
     /// <p>If you want to modify a Dedicated Host to support multiple instance types in its current instance family, omit this parameter and specify <b>InstanceFamily</b> instead. You cannot specify <b>InstanceType</b> and <b>InstanceFamily</b> in the same request.</p>
@@ -170,6 +186,11 @@ impl ModifyHostsFluentBuilder {
         self.inner = self.inner.set_instance_type(input);
         self
     }
+    /// <p>Specifies the instance type to be supported by the Dedicated Host. Specify this parameter to modify a Dedicated Host to support only a specific instance type.</p>
+    /// <p>If you want to modify a Dedicated Host to support multiple instance types in its current instance family, omit this parameter and specify <b>InstanceFamily</b> instead. You cannot specify <b>InstanceType</b> and <b>InstanceFamily</b> in the same request.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_type()
+    }
     /// <p>Specifies the instance family to be supported by the Dedicated Host. Specify this parameter to modify a Dedicated Host to support multiple instance types within its current instance family.</p>
     /// <p>If you want to modify a Dedicated Host to support a specific instance type only, omit this parameter and specify <b>InstanceType</b> instead. You cannot specify <b>InstanceFamily</b> and <b>InstanceType</b> in the same request.</p>
     pub fn instance_family(
@@ -188,6 +209,11 @@ impl ModifyHostsFluentBuilder {
         self.inner = self.inner.set_instance_family(input);
         self
     }
+    /// <p>Specifies the instance family to be supported by the Dedicated Host. Specify this parameter to modify a Dedicated Host to support multiple instance types within its current instance family.</p>
+    /// <p>If you want to modify a Dedicated Host to support a specific instance type only, omit this parameter and specify <b>InstanceType</b> instead. You cannot specify <b>InstanceFamily</b> and <b>InstanceType</b> in the same request.</p>
+    pub fn get_instance_family(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_family()
+    }
     /// <p>Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html"> Host maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn host_maintenance(mut self, input: crate::types::HostMaintenance) -> Self {
         self.inner = self.inner.host_maintenance(input);
@@ -200,5 +226,9 @@ impl ModifyHostsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_host_maintenance(input);
         self
+    }
+    /// <p>Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html"> Host maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn get_host_maintenance(&self) -> &::std::option::Option<crate::types::HostMaintenance> {
+        self.inner.get_host_maintenance()
     }
 }

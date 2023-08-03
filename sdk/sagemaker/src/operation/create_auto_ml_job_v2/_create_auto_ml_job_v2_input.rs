@@ -151,6 +151,10 @@ impl CreateAutoMlJobV2InputBuilder {
         self.auto_ml_job_name = input;
         self
     }
+    /// <p>Identifies an Autopilot job. The name must be unique to your account and is case insensitive.</p>
+    pub fn get_auto_ml_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auto_ml_job_name
+    }
     /// Appends an item to `auto_ml_job_input_data_config`.
     ///
     /// To override the contents of this collection use [`set_auto_ml_job_input_data_config`](Self::set_auto_ml_job_input_data_config).
@@ -182,6 +186,18 @@ impl CreateAutoMlJobV2InputBuilder {
         self.auto_ml_job_input_data_config = input;
         self
     }
+    /// <p>An array of channel objects describing the input data and their location. Each channel is a named input source. Similar to the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html#sagemaker-CreateAutoMLJob-request-InputDataConfig">InputDataConfig</a> attribute in the <code>CreateAutoMLJob</code> input parameters. The supported formats depend on the problem type:</p>
+    /// <ul>
+    /// <li> <p>For tabular problem types: <code>S3Prefix</code>, <code>ManifestFile</code>.</p> </li>
+    /// <li> <p>For image classification: <code>S3Prefix</code>, <code>ManifestFile</code>, <code>AugmentedManifestFile</code>.</p> </li>
+    /// <li> <p>For text classification: <code>S3Prefix</code>.</p> </li>
+    /// <li> <p>For time-series forecasting: <code>S3Prefix</code>.</p> </li>
+    /// </ul>
+    pub fn get_auto_ml_job_input_data_config(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoMlJobChannel>> {
+        &self.auto_ml_job_input_data_config
+    }
     /// <p>Provides information about encryption and the Amazon S3 output path needed to store artifacts from an AutoML job.</p>
     pub fn output_data_config(mut self, input: crate::types::AutoMlOutputDataConfig) -> Self {
         self.output_data_config = ::std::option::Option::Some(input);
@@ -194,6 +210,12 @@ impl CreateAutoMlJobV2InputBuilder {
     ) -> Self {
         self.output_data_config = input;
         self
+    }
+    /// <p>Provides information about encryption and the Amazon S3 output path needed to store artifacts from an AutoML job.</p>
+    pub fn get_output_data_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoMlOutputDataConfig> {
+        &self.output_data_config
     }
     /// <p>Defines the configuration settings of one of the supported problem types.</p>
     pub fn auto_ml_problem_type_config(
@@ -211,6 +233,12 @@ impl CreateAutoMlJobV2InputBuilder {
         self.auto_ml_problem_type_config = input;
         self
     }
+    /// <p>Defines the configuration settings of one of the supported problem types.</p>
+    pub fn get_auto_ml_problem_type_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoMlProblemTypeConfig> {
+        &self.auto_ml_problem_type_config
+    }
     /// <p>The ARN of the role that is used to access the data.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -220,6 +248,10 @@ impl CreateAutoMlJobV2InputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The ARN of the role that is used to access the data.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Appends an item to `tags`.
     ///
@@ -240,6 +272,10 @@ impl CreateAutoMlJobV2InputBuilder {
         self.tags = input;
         self
     }
+    /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, such as by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web ServicesResources</a>. Tag keys must be unique per resource.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The security configuration for traffic encryption or Amazon VPC settings.</p>
     pub fn security_config(mut self, input: crate::types::AutoMlSecurityConfig) -> Self {
         self.security_config = ::std::option::Option::Some(input);
@@ -252,6 +288,12 @@ impl CreateAutoMlJobV2InputBuilder {
     ) -> Self {
         self.security_config = input;
         self
+    }
+    /// <p>The security configuration for traffic encryption or Amazon VPC settings.</p>
+    pub fn get_security_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoMlSecurityConfig> {
+        &self.security_config
     }
     /// <p>Specifies a metric to minimize or maximize as the objective of a job. If not specified, the default objective metric depends on the problem type. For the list of default values per problem type, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective</a>.</p> <note>
     /// <p>For tabular problem types, you must either provide both the <code>AutoMLJobObjective</code> and indicate the type of supervised learning problem in <code>AutoMLProblemTypeConfig</code> (<code>TabularJobConfig.ProblemType</code>), or none at all.</p>
@@ -270,6 +312,14 @@ impl CreateAutoMlJobV2InputBuilder {
         self.auto_ml_job_objective = input;
         self
     }
+    /// <p>Specifies a metric to minimize or maximize as the objective of a job. If not specified, the default objective metric depends on the problem type. For the list of default values per problem type, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective</a>.</p> <note>
+    /// <p>For tabular problem types, you must either provide both the <code>AutoMLJobObjective</code> and indicate the type of supervised learning problem in <code>AutoMLProblemTypeConfig</code> (<code>TabularJobConfig.ProblemType</code>), or none at all.</p>
+    /// </note>
+    pub fn get_auto_ml_job_objective(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoMlJobObjective> {
+        &self.auto_ml_job_objective
+    }
     /// <p>Specifies how to generate the endpoint name for an automatic one-click Autopilot model deployment.</p>
     pub fn model_deploy_config(mut self, input: crate::types::ModelDeployConfig) -> Self {
         self.model_deploy_config = ::std::option::Option::Some(input);
@@ -282,6 +332,12 @@ impl CreateAutoMlJobV2InputBuilder {
     ) -> Self {
         self.model_deploy_config = input;
         self
+    }
+    /// <p>Specifies how to generate the endpoint name for an automatic one-click Autopilot model deployment.</p>
+    pub fn get_model_deploy_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ModelDeployConfig> {
+        &self.model_deploy_config
     }
     /// <p>This structure specifies how to split the data into train and validation datasets.</p>
     /// <p>The validation and training datasets must contain the same headers. For jobs created by calling <code>CreateAutoMLJob</code>, the validation dataset must be less than 2 GB in size.</p> <note>
@@ -301,6 +357,15 @@ impl CreateAutoMlJobV2InputBuilder {
     ) -> Self {
         self.data_split_config = input;
         self
+    }
+    /// <p>This structure specifies how to split the data into train and validation datasets.</p>
+    /// <p>The validation and training datasets must contain the same headers. For jobs created by calling <code>CreateAutoMLJob</code>, the validation dataset must be less than 2 GB in size.</p> <note>
+    /// <p>This attribute must not be set for the time-series forecasting problem type, as Autopilot automatically splits the input dataset into training and validation sets.</p>
+    /// </note>
+    pub fn get_data_split_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoMlDataSplitConfig> {
+        &self.data_split_config
     }
     /// Consumes the builder and constructs a [`CreateAutoMlJobV2Input`](crate::operation::create_auto_ml_job_v2::CreateAutoMlJobV2Input).
     pub fn build(

@@ -46,6 +46,12 @@ impl EnableSecurityHubFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the EnableSecurityHub as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::enable_security_hub::builders::EnableSecurityHubInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -149,6 +155,14 @@ impl EnableSecurityHubFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tags to add to the hub resource when you enable Security Hub.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>Whether to enable the security standards that Security Hub has designated as automatically enabled. If you do not provide a value for <code>EnableDefaultStandards</code>, it is set to <code>true</code>. To not enable the automatically enabled standards, set <code>EnableDefaultStandards</code> to <code>false</code>.</p>
     pub fn enable_default_standards(mut self, input: bool) -> Self {
         self.inner = self.inner.enable_default_standards(input);
@@ -158,6 +172,10 @@ impl EnableSecurityHubFluentBuilder {
     pub fn set_enable_default_standards(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_default_standards(input);
         self
+    }
+    /// <p>Whether to enable the security standards that Security Hub has designated as automatically enabled. If you do not provide a value for <code>EnableDefaultStandards</code>, it is set to <code>true</code>. To not enable the automatically enabled standards, set <code>EnableDefaultStandards</code> to <code>false</code>.</p>
+    pub fn get_enable_default_standards(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_default_standards()
     }
     /// <p>This field, used when enabling Security Hub, specifies whether the calling account has consolidated control findings turned on. If the value for this field is set to <code>SECURITY_CONTROL</code>, Security Hub generates a single finding for a control check even when the check applies to multiple enabled standards.</p>
     /// <p>If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub generates separate findings for a control check when the check applies to multiple enabled standards.</p>
@@ -178,5 +196,13 @@ impl EnableSecurityHubFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_control_finding_generator(input);
         self
+    }
+    /// <p>This field, used when enabling Security Hub, specifies whether the calling account has consolidated control findings turned on. If the value for this field is set to <code>SECURITY_CONTROL</code>, Security Hub generates a single finding for a control check even when the check applies to multiple enabled standards.</p>
+    /// <p>If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub generates separate findings for a control check when the check applies to multiple enabled standards.</p>
+    /// <p>The value for this field in a member account matches the value in the administrator account. For accounts that aren't part of an organization, the default value of this field is <code>SECURITY_CONTROL</code> if you enabled Security Hub on or after February 23, 2023.</p>
+    pub fn get_control_finding_generator(
+        &self,
+    ) -> &::std::option::Option<crate::types::ControlFindingGenerator> {
+        self.inner.get_control_finding_generator()
     }
 }

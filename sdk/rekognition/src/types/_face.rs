@@ -88,6 +88,10 @@ impl FaceBuilder {
         self.face_id = input;
         self
     }
+    /// <p>Unique identifier that Amazon Rekognition assigns to the face.</p>
+    pub fn get_face_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.face_id
+    }
     /// <p>Bounding box of the face.</p>
     pub fn bounding_box(mut self, input: crate::types::BoundingBox) -> Self {
         self.bounding_box = ::std::option::Option::Some(input);
@@ -101,6 +105,10 @@ impl FaceBuilder {
         self.bounding_box = input;
         self
     }
+    /// <p>Bounding box of the face.</p>
+    pub fn get_bounding_box(&self) -> &::std::option::Option<crate::types::BoundingBox> {
+        &self.bounding_box
+    }
     /// <p>Unique identifier that Amazon Rekognition assigns to the input image.</p>
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_id = ::std::option::Option::Some(input.into());
@@ -110,6 +118,10 @@ impl FaceBuilder {
     pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_id = input;
         self
+    }
+    /// <p>Unique identifier that Amazon Rekognition assigns to the input image.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_id
     }
     /// <p>Identifier that you assign to all the faces in the input image.</p>
     pub fn external_image_id(
@@ -127,6 +139,10 @@ impl FaceBuilder {
         self.external_image_id = input;
         self
     }
+    /// <p>Identifier that you assign to all the faces in the input image.</p>
+    pub fn get_external_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.external_image_id
+    }
     /// <p>Confidence level that the bounding box contains a face (and not a different object such as a tree).</p>
     pub fn confidence(mut self, input: f32) -> Self {
         self.confidence = ::std::option::Option::Some(input);
@@ -136,6 +152,10 @@ impl FaceBuilder {
     pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
         self.confidence = input;
         self
+    }
+    /// <p>Confidence level that the bounding box contains a face (and not a different object such as a tree).</p>
+    pub fn get_confidence(&self) -> &::std::option::Option<f32> {
+        &self.confidence
     }
     /// <p> The version of the face detect and storage model that was used when indexing the face vector. </p>
     pub fn index_faces_model_version(
@@ -153,6 +173,10 @@ impl FaceBuilder {
         self.index_faces_model_version = input;
         self
     }
+    /// <p> The version of the face detect and storage model that was used when indexing the face vector. </p>
+    pub fn get_index_faces_model_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_faces_model_version
+    }
     /// <p>Unique identifier assigned to the user.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
@@ -162,6 +186,10 @@ impl FaceBuilder {
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
+    }
+    /// <p>Unique identifier assigned to the user.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
     }
     /// Consumes the builder and constructs a [`Face`](crate::types::Face).
     pub fn build(self) -> crate::types::Face {

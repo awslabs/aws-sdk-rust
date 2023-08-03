@@ -41,6 +41,10 @@ impl AdvancedCostOptimizationMetricsBuilder {
         self.is_enabled = input;
         self
     }
+    /// <p>A container that indicates whether advanced cost-optimization metrics are enabled.</p>
+    pub fn get_is_enabled(&self) -> &::std::option::Option<bool> {
+        &self.is_enabled
+    }
     /// Consumes the builder and constructs a [`AdvancedCostOptimizationMetrics`](crate::types::AdvancedCostOptimizationMetrics).
     pub fn build(self) -> crate::types::AdvancedCostOptimizationMetrics {
         crate::types::AdvancedCostOptimizationMetrics {

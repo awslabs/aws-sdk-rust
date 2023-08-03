@@ -60,6 +60,13 @@ impl KxCacheStorageConfigurationBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of cache storage . The valid values are: </p>
+    /// <ul>
+    /// <li> <p>CACHE_1000 – This type provides at least 1000 MB/s disk access throughput. </p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// <p>The size of cache in Gigabytes.</p>
     pub fn size(mut self, input: i32) -> Self {
         self.size = ::std::option::Option::Some(input);
@@ -69,6 +76,10 @@ impl KxCacheStorageConfigurationBuilder {
     pub fn set_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.size = input;
         self
+    }
+    /// <p>The size of cache in Gigabytes.</p>
+    pub fn get_size(&self) -> &::std::option::Option<i32> {
+        &self.size
     }
     /// Consumes the builder and constructs a [`KxCacheStorageConfiguration`](crate::types::KxCacheStorageConfiguration).
     pub fn build(self) -> crate::types::KxCacheStorageConfiguration {

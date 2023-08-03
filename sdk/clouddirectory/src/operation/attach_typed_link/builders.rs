@@ -36,6 +36,12 @@ impl AttachTypedLinkFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AttachTypedLink as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::attach_typed_link::builders::AttachTypedLinkInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl AttachTypedLinkFluentBuilder {
         self.inner = self.inner.set_directory_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the directory where you want to attach the typed link.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_arn()
+    }
     /// <p>Identifies the source object that the typed link will attach to.</p>
     pub fn source_object_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.inner = self.inner.source_object_reference(input);
@@ -144,6 +154,12 @@ impl AttachTypedLinkFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_source_object_reference(input);
         self
+    }
+    /// <p>Identifies the source object that the typed link will attach to.</p>
+    pub fn get_source_object_reference(
+        &self,
+    ) -> &::std::option::Option<crate::types::ObjectReference> {
+        self.inner.get_source_object_reference()
     }
     /// <p>Identifies the target object that the typed link will attach to.</p>
     pub fn target_object_reference(mut self, input: crate::types::ObjectReference) -> Self {
@@ -158,6 +174,12 @@ impl AttachTypedLinkFluentBuilder {
         self.inner = self.inner.set_target_object_reference(input);
         self
     }
+    /// <p>Identifies the target object that the typed link will attach to.</p>
+    pub fn get_target_object_reference(
+        &self,
+    ) -> &::std::option::Option<crate::types::ObjectReference> {
+        self.inner.get_target_object_reference()
+    }
     /// <p>Identifies the typed link facet that is associated with the typed link.</p>
     pub fn typed_link_facet(mut self, input: crate::types::TypedLinkSchemaAndFacetName) -> Self {
         self.inner = self.inner.typed_link_facet(input);
@@ -170,6 +192,12 @@ impl AttachTypedLinkFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_typed_link_facet(input);
         self
+    }
+    /// <p>Identifies the typed link facet that is associated with the typed link.</p>
+    pub fn get_typed_link_facet(
+        &self,
+    ) -> &::std::option::Option<crate::types::TypedLinkSchemaAndFacetName> {
+        self.inner.get_typed_link_facet()
     }
     /// Appends an item to `Attributes`.
     ///
@@ -187,5 +215,11 @@ impl AttachTypedLinkFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
+    }
+    /// <p>A set of attributes that are associated with the typed link.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeNameAndValue>> {
+        self.inner.get_attributes()
     }
 }

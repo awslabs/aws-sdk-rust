@@ -59,6 +59,12 @@ impl ConfigSnapshotDeliveryPropertiesBuilder {
         self.delivery_frequency = input;
         self
     }
+    /// <p>The frequency with which Config delivers configuration snapshots.</p>
+    pub fn get_delivery_frequency(
+        &self,
+    ) -> &::std::option::Option<crate::types::MaximumExecutionFrequency> {
+        &self.delivery_frequency
+    }
     /// Consumes the builder and constructs a [`ConfigSnapshotDeliveryProperties`](crate::types::ConfigSnapshotDeliveryProperties).
     pub fn build(self) -> crate::types::ConfigSnapshotDeliveryProperties {
         crate::types::ConfigSnapshotDeliveryProperties {

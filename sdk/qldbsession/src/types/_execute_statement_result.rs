@@ -56,6 +56,10 @@ impl ExecuteStatementResultBuilder {
         self.first_page = input;
         self
     }
+    /// <p>Contains the details of the first fetched page.</p>
+    pub fn get_first_page(&self) -> &::std::option::Option<crate::types::Page> {
+        &self.first_page
+    }
     /// <p>Contains server-side performance information for the command.</p>
     pub fn timing_information(mut self, input: crate::types::TimingInformation) -> Self {
         self.timing_information = ::std::option::Option::Some(input);
@@ -69,6 +73,12 @@ impl ExecuteStatementResultBuilder {
         self.timing_information = input;
         self
     }
+    /// <p>Contains server-side performance information for the command.</p>
+    pub fn get_timing_information(
+        &self,
+    ) -> &::std::option::Option<crate::types::TimingInformation> {
+        &self.timing_information
+    }
     /// <p>Contains metrics about the number of I/O requests that were consumed.</p>
     pub fn consumed_i_os(mut self, input: crate::types::IoUsage) -> Self {
         self.consumed_i_os = ::std::option::Option::Some(input);
@@ -81,6 +91,10 @@ impl ExecuteStatementResultBuilder {
     ) -> Self {
         self.consumed_i_os = input;
         self
+    }
+    /// <p>Contains metrics about the number of I/O requests that were consumed.</p>
+    pub fn get_consumed_i_os(&self) -> &::std::option::Option<crate::types::IoUsage> {
+        &self.consumed_i_os
     }
     /// Consumes the builder and constructs a [`ExecuteStatementResult`](crate::types::ExecuteStatementResult).
     pub fn build(self) -> crate::types::ExecuteStatementResult {

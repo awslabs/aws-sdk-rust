@@ -40,6 +40,10 @@ impl MapRunStartedEventDetailsBuilder {
         self.map_run_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of a Map Run that was started.</p>
+    pub fn get_map_run_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.map_run_arn
+    }
     /// Consumes the builder and constructs a [`MapRunStartedEventDetails`](crate::types::MapRunStartedEventDetails).
     pub fn build(self) -> crate::types::MapRunStartedEventDetails {
         crate::types::MapRunStartedEventDetails {

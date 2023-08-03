@@ -54,6 +54,10 @@ impl CompatibleEnvironmentTemplateInputBuilder {
         self.template_name = input;
         self
     }
+    /// <p>The compatible environment template name.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
     /// <p>The major version of the compatible environment template.</p>
     pub fn major_version(
         mut self,
@@ -69,6 +73,10 @@ impl CompatibleEnvironmentTemplateInputBuilder {
     ) -> Self {
         self.major_version = input;
         self
+    }
+    /// <p>The major version of the compatible environment template.</p>
+    pub fn get_major_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.major_version
     }
     /// Consumes the builder and constructs a [`CompatibleEnvironmentTemplateInput`](crate::types::CompatibleEnvironmentTemplateInput).
     pub fn build(self) -> crate::types::CompatibleEnvironmentTemplateInput {

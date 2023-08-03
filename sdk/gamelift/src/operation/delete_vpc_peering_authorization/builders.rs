@@ -38,6 +38,10 @@ impl DeleteVpcPeeringAuthorizationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteVpcPeeringAuthorization as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_vpc_peering_authorization::builders::DeleteVpcPeeringAuthorizationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +138,10 @@ impl DeleteVpcPeeringAuthorizationFluentBuilder {
         self.inner = self.inner.set_game_lift_aws_account_id(input);
         self
     }
+    /// <p>A unique identifier for the Amazon Web Services account that you use to manage your Amazon GameLift fleet. You can find your Account ID in the Amazon Web Services Management Console under account settings.</p>
+    pub fn get_game_lift_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_game_lift_aws_account_id()
+    }
     /// <p>A unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with Amazon GameLift Fleets</a>.</p>
     pub fn peer_vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.peer_vpc_id(input.into());
@@ -143,5 +151,9 @@ impl DeleteVpcPeeringAuthorizationFluentBuilder {
     pub fn set_peer_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_peer_vpc_id(input);
         self
+    }
+    /// <p>A unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with Amazon GameLift Fleets</a>.</p>
+    pub fn get_peer_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_peer_vpc_id()
     }
 }

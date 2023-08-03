@@ -36,6 +36,10 @@ impl DescribeDBClusterSnapshotsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeDBClusterSnapshots as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_db_cluster_snapshots::builders::DescribeDbClusterSnapshotsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -146,6 +150,14 @@ impl DescribeDBClusterSnapshotsFluentBuilder {
         self.inner = self.inner.set_db_cluster_identifier(input);
         self
     }
+    /// <p>The ID of the cluster to retrieve the list of cluster snapshots for. This parameter can't be used with the <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not case sensitive. </p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>If provided, must match the identifier of an existing <code>DBCluster</code>.</p> </li>
+    /// </ul>
+    pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_cluster_identifier()
+    }
     /// <p>A specific cluster snapshot identifier to describe. This parameter can't be used with the <code>DBClusterIdentifier</code> parameter. This value is stored as a lowercase string. </p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -171,6 +183,17 @@ impl DescribeDBClusterSnapshotsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_db_cluster_snapshot_identifier(input);
         self
+    }
+    /// <p>A specific cluster snapshot identifier to describe. This parameter can't be used with the <code>DBClusterIdentifier</code> parameter. This value is stored as a lowercase string. </p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>If provided, must match the identifier of an existing <code>DBClusterSnapshot</code>.</p> </li>
+    /// <li> <p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p> </li>
+    /// </ul>
+    pub fn get_db_cluster_snapshot_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_cluster_snapshot_identifier()
     }
     /// <p>The type of cluster snapshots to be returned. You can specify one of the following values:</p>
     /// <ul>
@@ -204,6 +227,18 @@ impl DescribeDBClusterSnapshotsFluentBuilder {
         self.inner = self.inner.set_snapshot_type(input);
         self
     }
+    /// <p>The type of cluster snapshots to be returned. You can specify one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>automated</code> - Return all cluster snapshots that Amazon DocumentDB has automatically created for your Amazon Web Services account.</p> </li>
+    /// <li> <p> <code>manual</code> - Return all cluster snapshots that you have manually created for your Amazon Web Services account.</p> </li>
+    /// <li> <p> <code>shared</code> - Return all manual cluster snapshots that have been shared to your Amazon Web Services account.</p> </li>
+    /// <li> <p> <code>public</code> - Return all cluster snapshots that have been marked as public.</p> </li>
+    /// </ul>
+    /// <p>If you don't specify a <code>SnapshotType</code> value, then both automated and manual cluster snapshots are returned. You can include shared cluster snapshots with these results by setting the <code>IncludeShared</code> parameter to <code>true</code>. You can include public cluster snapshots with these results by setting the<code>IncludePublic</code> parameter to <code>true</code>.</p>
+    /// <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code> values of <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>public</code>.</p>
+    pub fn get_snapshot_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_snapshot_type()
+    }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -221,6 +256,10 @@ impl DescribeDBClusterSnapshotsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>This parameter is not currently supported.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
+    }
     /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
@@ -235,6 +274,12 @@ impl DescribeDBClusterSnapshotsFluentBuilder {
         self.inner = self.inner.set_max_records(input);
         self
     }
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_records()
+    }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -244,6 +289,10 @@ impl DescribeDBClusterSnapshotsFluentBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
+    }
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
     }
     /// <p>Set to <code>true</code> to include shared manual cluster snapshots from other Amazon Web Services accounts that this Amazon Web Services account has been given permission to copy or restore, and otherwise <code>false</code>. The default is <code>false</code>.</p>
     pub fn include_shared(mut self, input: bool) -> Self {
@@ -255,6 +304,10 @@ impl DescribeDBClusterSnapshotsFluentBuilder {
         self.inner = self.inner.set_include_shared(input);
         self
     }
+    /// <p>Set to <code>true</code> to include shared manual cluster snapshots from other Amazon Web Services accounts that this Amazon Web Services account has been given permission to copy or restore, and otherwise <code>false</code>. The default is <code>false</code>.</p>
+    pub fn get_include_shared(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_shared()
+    }
     /// <p>Set to <code>true</code> to include manual cluster snapshots that are public and can be copied or restored by any Amazon Web Services account, and otherwise <code>false</code>. The default is <code>false</code>.</p>
     pub fn include_public(mut self, input: bool) -> Self {
         self.inner = self.inner.include_public(input);
@@ -264,5 +317,9 @@ impl DescribeDBClusterSnapshotsFluentBuilder {
     pub fn set_include_public(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_public(input);
         self
+    }
+    /// <p>Set to <code>true</code> to include manual cluster snapshots that are public and can be copied or restored by any Amazon Web Services account, and otherwise <code>false</code>. The default is <code>false</code>.</p>
+    pub fn get_include_public(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_public()
     }
 }

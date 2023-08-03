@@ -36,6 +36,10 @@ impl DescribeOrganizationHealthFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeOrganizationHealth as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_organization_health::builders::DescribeOrganizationHealthInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,12 @@ impl DescribeOrganizationHealthFluentBuilder {
         self.inner = self.inner.set_account_ids(input);
         self
     }
+    /// <p>The ID of the Amazon Web Services account.</p>
+    pub fn get_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_account_ids()
+    }
     /// Appends an item to `OrganizationalUnitIds`.
     ///
     /// To override the contents of this collection use [`set_organizational_unit_ids`](Self::set_organizational_unit_ids).
@@ -152,5 +162,11 @@ impl DescribeOrganizationHealthFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_organizational_unit_ids(input);
         self
+    }
+    /// <p>The ID of the organizational unit.</p>
+    pub fn get_organizational_unit_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_organizational_unit_ids()
     }
 }

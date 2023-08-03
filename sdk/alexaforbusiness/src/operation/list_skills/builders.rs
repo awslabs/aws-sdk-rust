@@ -37,6 +37,10 @@ impl ListSkillsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListSkills as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_skills::builders::ListSkillsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +135,10 @@ impl ListSkillsFluentBuilder {
         self.inner = self.inner.set_skill_group_arn(input);
         self
     }
+    /// <p>The ARN of the skill group for which to list enabled skills.</p>
+    pub fn get_skill_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_skill_group_arn()
+    }
     /// <p>Whether the skill is enabled under the user's account.</p>
     pub fn enablement_type(mut self, input: crate::types::EnablementTypeFilter) -> Self {
         self.inner = self.inner.enablement_type(input);
@@ -143,6 +151,12 @@ impl ListSkillsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_enablement_type(input);
         self
+    }
+    /// <p>Whether the skill is enabled under the user's account.</p>
+    pub fn get_enablement_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::EnablementTypeFilter> {
+        self.inner.get_enablement_type()
     }
     /// <p>Whether the skill is publicly available or is a private skill.</p>
     pub fn skill_type(mut self, input: crate::types::SkillTypeFilter) -> Self {
@@ -157,6 +171,10 @@ impl ListSkillsFluentBuilder {
         self.inner = self.inner.set_skill_type(input);
         self
     }
+    /// <p>Whether the skill is publicly available or is a private skill.</p>
+    pub fn get_skill_type(&self) -> &::std::option::Option<crate::types::SkillTypeFilter> {
+        self.inner.get_skill_type()
+    }
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -167,6 +185,10 @@ impl ListSkillsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -176,5 +198,9 @@ impl ListSkillsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

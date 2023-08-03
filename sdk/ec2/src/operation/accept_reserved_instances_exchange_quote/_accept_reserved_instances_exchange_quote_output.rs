@@ -47,6 +47,10 @@ impl AcceptReservedInstancesExchangeQuoteOutputBuilder {
         self.exchange_id = input;
         self
     }
+    /// <p>The ID of the successful exchange.</p>
+    pub fn get_exchange_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.exchange_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

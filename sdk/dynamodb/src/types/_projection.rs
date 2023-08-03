@@ -73,6 +73,15 @@ impl ProjectionBuilder {
         self.projection_type = input;
         self
     }
+    /// <p>The set of attributes that are projected into the index:</p>
+    /// <ul>
+    /// <li> <p> <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.</p> </li>
+    /// <li> <p> <code>INCLUDE</code> - In addition to the attributes described in <code>KEYS_ONLY</code>, the secondary index will include other non-key attributes that you specify.</p> </li>
+    /// <li> <p> <code>ALL</code> - All of the table attributes are projected into the index.</p> </li>
+    /// </ul>
+    pub fn get_projection_type(&self) -> &::std::option::Option<crate::types::ProjectionType> {
+        &self.projection_type
+    }
     /// Appends an item to `non_key_attributes`.
     ///
     /// To override the contents of this collection use [`set_non_key_attributes`](Self::set_non_key_attributes).
@@ -96,6 +105,13 @@ impl ProjectionBuilder {
     ) -> Self {
         self.non_key_attributes = input;
         self
+    }
+    /// <p>Represents the non-key attribute names which will be projected into the index.</p>
+    /// <p>For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed across all of the local secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p>
+    pub fn get_non_key_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.non_key_attributes
     }
     /// Consumes the builder and constructs a [`Projection`](crate::types::Projection).
     pub fn build(self) -> crate::types::Projection {

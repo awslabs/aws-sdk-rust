@@ -51,6 +51,10 @@ impl UpdateShareInvitationOutputBuilder {
         self.share_invitation = input;
         self
     }
+    /// <p>The updated workload or custom lens share invitation.</p>
+    pub fn get_share_invitation(&self) -> &::std::option::Option<crate::types::ShareInvitation> {
+        &self.share_invitation
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -49,6 +49,11 @@ impl RestoreCertificateAuthorityInputBuilder {
         self.certificate_authority_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that was returned when you called the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action. This must be of the form: </p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
+    pub fn get_certificate_authority_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_authority_arn
+    }
     /// Consumes the builder and constructs a [`RestoreCertificateAuthorityInput`](crate::operation::restore_certificate_authority::RestoreCertificateAuthorityInput).
     pub fn build(
         self,

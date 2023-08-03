@@ -47,6 +47,10 @@ impl IdentitySourceFilterBuilder {
         self.principal_entity_type = input;
         self
     }
+    /// <p>The Cedar entity type of the principals returned by the identity provider (IdP) associated with this identity source.</p>
+    pub fn get_principal_entity_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal_entity_type
+    }
     /// Consumes the builder and constructs a [`IdentitySourceFilter`](crate::types::IdentitySourceFilter).
     pub fn build(self) -> crate::types::IdentitySourceFilter {
         crate::types::IdentitySourceFilter {

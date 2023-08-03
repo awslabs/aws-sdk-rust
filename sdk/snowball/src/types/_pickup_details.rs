@@ -107,6 +107,10 @@ impl PickupDetailsBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the person picking up the device.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The phone number of the person picking up the device.</p>
     pub fn phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number = ::std::option::Option::Some(input.into());
@@ -117,6 +121,10 @@ impl PickupDetailsBuilder {
         self.phone_number = input;
         self
     }
+    /// <p>The phone number of the person picking up the device.</p>
+    pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.phone_number
+    }
     /// <p>The email address of the person picking up the device.</p>
     pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email = ::std::option::Option::Some(input.into());
@@ -126,6 +134,10 @@ impl PickupDetailsBuilder {
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email = input;
         self
+    }
+    /// <p>The email address of the person picking up the device.</p>
+    pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email
     }
     /// <p>The number on the credential identifying the person picking up the device.</p>
     pub fn identification_number(
@@ -143,6 +155,10 @@ impl PickupDetailsBuilder {
         self.identification_number = input;
         self
     }
+    /// <p>The number on the credential identifying the person picking up the device.</p>
+    pub fn get_identification_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identification_number
+    }
     /// <p>Expiration date of the credential identifying the person picking up the device.</p>
     pub fn identification_expiration_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.identification_expiration_date = ::std::option::Option::Some(input);
@@ -155,6 +171,12 @@ impl PickupDetailsBuilder {
     ) -> Self {
         self.identification_expiration_date = input;
         self
+    }
+    /// <p>Expiration date of the credential identifying the person picking up the device.</p>
+    pub fn get_identification_expiration_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.identification_expiration_date
     }
     /// <p>Organization that issued the credential identifying the person picking up the device.</p>
     pub fn identification_issuing_org(
@@ -172,6 +194,10 @@ impl PickupDetailsBuilder {
         self.identification_issuing_org = input;
         self
     }
+    /// <p>Organization that issued the credential identifying the person picking up the device.</p>
+    pub fn get_identification_issuing_org(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identification_issuing_org
+    }
     /// <p>The unique ID for a device that will be picked up.</p>
     pub fn device_pickup_id(
         mut self,
@@ -187,6 +213,10 @@ impl PickupDetailsBuilder {
     ) -> Self {
         self.device_pickup_id = input;
         self
+    }
+    /// <p>The unique ID for a device that will be picked up.</p>
+    pub fn get_device_pickup_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_pickup_id
     }
     /// Consumes the builder and constructs a [`PickupDetails`](crate::types::PickupDetails).
     pub fn build(self) -> crate::types::PickupDetails {

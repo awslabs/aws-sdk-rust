@@ -48,6 +48,10 @@ impl EncodingParametersBuilder {
         self.compression_factor = input;
         self
     }
+    /// A value that is used to calculate compression for an output. The bitrate of the output is calculated as follows: Output bitrate = (1 / compressionFactor) * (source bitrate) This property only applies to outputs that use the ST 2110 JPEG XS protocol, with a flow source that uses the CDI protocol. Valid values are floating point numbers in the range of 3.0 to 10.0, inclusive.
+    pub fn get_compression_factor(&self) -> &::std::option::Option<f64> {
+        &self.compression_factor
+    }
     /// A setting on the encoder that drives compression settings. This property only applies to video media streams associated with outputs that use the ST 2110 JPEG XS protocol, with a flow source that uses the CDI protocol.
     pub fn encoder_profile(mut self, input: crate::types::EncoderProfile) -> Self {
         self.encoder_profile = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl EncodingParametersBuilder {
     ) -> Self {
         self.encoder_profile = input;
         self
+    }
+    /// A setting on the encoder that drives compression settings. This property only applies to video media streams associated with outputs that use the ST 2110 JPEG XS protocol, with a flow source that uses the CDI protocol.
+    pub fn get_encoder_profile(&self) -> &::std::option::Option<crate::types::EncoderProfile> {
+        &self.encoder_profile
     }
     /// Consumes the builder and constructs a [`EncodingParameters`](crate::types::EncodingParameters).
     pub fn build(self) -> crate::types::EncodingParameters {

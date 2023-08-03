@@ -40,6 +40,10 @@ impl InputDataConfigBuilder {
         self.s3_uri = input;
         self
     }
+    /// <p>The S3 location for the input manifest file that contains the list of individual enrollment or registration job requests.</p>
+    pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_uri
+    }
     /// Consumes the builder and constructs a [`InputDataConfig`](crate::types::InputDataConfig).
     pub fn build(self) -> crate::types::InputDataConfig {
         crate::types::InputDataConfig {

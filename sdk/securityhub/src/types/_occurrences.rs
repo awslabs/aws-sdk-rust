@@ -81,6 +81,10 @@ impl OccurrencesBuilder {
         self.line_ranges = input;
         self
     }
+    /// <p>Occurrences of sensitive data detected in a non-binary text file or a Microsoft Word file. Non-binary text files include files such as HTML, XML, JSON, and TXT files.</p>
+    pub fn get_line_ranges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Range>> {
+        &self.line_ranges
+    }
     /// Appends an item to `offset_ranges`.
     ///
     /// To override the contents of this collection use [`set_offset_ranges`](Self::set_offset_ranges).
@@ -99,6 +103,12 @@ impl OccurrencesBuilder {
     ) -> Self {
         self.offset_ranges = input;
         self
+    }
+    /// <p>Occurrences of sensitive data detected in a binary text file.</p>
+    pub fn get_offset_ranges(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Range>> {
+        &self.offset_ranges
     }
     /// Appends an item to `pages`.
     ///
@@ -119,6 +129,10 @@ impl OccurrencesBuilder {
         self.pages = input;
         self
     }
+    /// <p>Occurrences of sensitive data in an Adobe Portable Document Format (PDF) file.</p>
+    pub fn get_pages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Page>> {
+        &self.pages
+    }
     /// Appends an item to `records`.
     ///
     /// To override the contents of this collection use [`set_records`](Self::set_records).
@@ -138,6 +152,10 @@ impl OccurrencesBuilder {
         self.records = input;
         self
     }
+    /// <p>Occurrences of sensitive data in an Apache Avro object container or an Apache Parquet file.</p>
+    pub fn get_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Record>> {
+        &self.records
+    }
     /// Appends an item to `cells`.
     ///
     /// To override the contents of this collection use [`set_cells`](Self::set_cells).
@@ -156,6 +174,10 @@ impl OccurrencesBuilder {
     ) -> Self {
         self.cells = input;
         self
+    }
+    /// <p>Occurrences of sensitive data detected in Microsoft Excel workbooks, comma-separated value (CSV) files, or tab-separated value (TSV) files.</p>
+    pub fn get_cells(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Cell>> {
+        &self.cells
     }
     /// Consumes the builder and constructs a [`Occurrences`](crate::types::Occurrences).
     pub fn build(self) -> crate::types::Occurrences {

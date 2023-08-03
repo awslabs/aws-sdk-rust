@@ -56,6 +56,10 @@ impl GetEffectivePoliciesInputBuilder {
         self.principal = input;
         self
     }
+    /// <p>The principal. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
+    pub fn get_principal(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal
+    }
     /// <p>The Cognito identity pool ID.</p>
     pub fn cognito_identity_pool_id(
         mut self,
@@ -72,6 +76,10 @@ impl GetEffectivePoliciesInputBuilder {
         self.cognito_identity_pool_id = input;
         self
     }
+    /// <p>The Cognito identity pool ID.</p>
+    pub fn get_cognito_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cognito_identity_pool_id
+    }
     /// <p>The thing name.</p>
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_name = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl GetEffectivePoliciesInputBuilder {
     pub fn set_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_name = input;
         self
+    }
+    /// <p>The thing name.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_name
     }
     /// Consumes the builder and constructs a [`GetEffectivePoliciesInput`](crate::operation::get_effective_policies::GetEffectivePoliciesInput).
     pub fn build(

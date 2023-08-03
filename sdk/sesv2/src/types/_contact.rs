@@ -83,6 +83,10 @@ impl ContactBuilder {
         self.email_address = input;
         self
     }
+    /// <p>The contact's email address.</p>
+    pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email_address
+    }
     /// Appends an item to `topic_preferences`.
     ///
     /// To override the contents of this collection use [`set_topic_preferences`](Self::set_topic_preferences).
@@ -101,6 +105,12 @@ impl ContactBuilder {
     ) -> Self {
         self.topic_preferences = input;
         self
+    }
+    /// <p>The contact's preference for being opted-in to or opted-out of a topic.</p>
+    pub fn get_topic_preferences(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicPreference>> {
+        &self.topic_preferences
     }
     /// Appends an item to `topic_default_preferences`.
     ///
@@ -121,6 +131,12 @@ impl ContactBuilder {
         self.topic_default_preferences = input;
         self
     }
+    /// <p>The default topic preferences applied to the contact.</p>
+    pub fn get_topic_default_preferences(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicPreference>> {
+        &self.topic_default_preferences
+    }
     /// <p>A boolean value status noting if the contact is unsubscribed from all contact list topics.</p>
     pub fn unsubscribe_all(mut self, input: bool) -> Self {
         self.unsubscribe_all = ::std::option::Option::Some(input);
@@ -130,6 +146,10 @@ impl ContactBuilder {
     pub fn set_unsubscribe_all(mut self, input: ::std::option::Option<bool>) -> Self {
         self.unsubscribe_all = input;
         self
+    }
+    /// <p>A boolean value status noting if the contact is unsubscribed from all contact list topics.</p>
+    pub fn get_unsubscribe_all(&self) -> &::std::option::Option<bool> {
+        &self.unsubscribe_all
     }
     /// <p>A timestamp noting the last time the contact's information was updated.</p>
     pub fn last_updated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -143,6 +163,12 @@ impl ContactBuilder {
     ) -> Self {
         self.last_updated_timestamp = input;
         self
+    }
+    /// <p>A timestamp noting the last time the contact's information was updated.</p>
+    pub fn get_last_updated_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_timestamp
     }
     /// Consumes the builder and constructs a [`Contact`](crate::types::Contact).
     pub fn build(self) -> crate::types::Contact {

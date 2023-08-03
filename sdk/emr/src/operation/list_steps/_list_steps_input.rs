@@ -64,6 +64,10 @@ impl ListStepsInputBuilder {
         self.cluster_id = input;
         self
     }
+    /// <p>The identifier of the cluster for which to list the steps.</p>
+    pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_id
+    }
     /// Appends an item to `step_states`.
     ///
     /// To override the contents of this collection use [`set_step_states`](Self::set_step_states).
@@ -82,6 +86,12 @@ impl ListStepsInputBuilder {
     ) -> Self {
         self.step_states = input;
         self
+    }
+    /// <p>The filter to limit the step list based on certain states.</p>
+    pub fn get_step_states(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StepState>> {
+        &self.step_states
     }
     /// Appends an item to `step_ids`.
     ///
@@ -102,6 +112,10 @@ impl ListStepsInputBuilder {
         self.step_ids = input;
         self
     }
+    /// <p>The filter to limit the step list based on the identifier of the steps. You can specify a maximum of ten Step IDs. The character constraint applies to the overall length of the array.</p>
+    pub fn get_step_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.step_ids
+    }
     /// <p>The maximum number of steps that a single <code>ListSteps</code> action returns is 50. To return a longer list of steps, use multiple <code>ListSteps</code> actions along with the <code>Marker</code> parameter, which is a pagination token that indicates the next set of results to retrieve.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -111,6 +125,10 @@ impl ListStepsInputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>The maximum number of steps that a single <code>ListSteps</code> action returns is 50. To return a longer list of steps, use multiple <code>ListSteps</code> actions along with the <code>Marker</code> parameter, which is a pagination token that indicates the next set of results to retrieve.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// Consumes the builder and constructs a [`ListStepsInput`](crate::operation::list_steps::ListStepsInput).
     pub fn build(

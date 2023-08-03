@@ -37,6 +37,12 @@ impl SearchEntitiesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SearchEntities as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::search_entities::builders::SearchEntitiesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,12 @@ impl SearchEntitiesFluentBuilder {
         self.inner = self.inner.set_entity_types(input);
         self
     }
+    /// <p>The entity types for which to search.</p>
+    pub fn get_entity_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityType>> {
+        self.inner.get_entity_types()
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -156,6 +168,13 @@ impl SearchEntitiesFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>Optional filter to apply to the search. Valid filters are <code>NAME</code> <code>NAMESPACE</code>, <code>SEMANTIC_TYPE_PATH</code> and <code>REFERENCED_ENTITY_ID</code>. <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example, you can filter on the ID of a property that is used in a state.</p>
+    /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityFilter>> {
+        self.inner.get_filters()
+    }
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -165,6 +184,10 @@ impl SearchEntitiesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -176,6 +199,10 @@ impl SearchEntitiesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
     pub fn namespace_version(mut self, input: i64) -> Self {
         self.inner = self.inner.namespace_version(input);
@@ -185,5 +212,9 @@ impl SearchEntitiesFluentBuilder {
     pub fn set_namespace_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_namespace_version(input);
         self
+    }
+    /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
+    pub fn get_namespace_version(&self) -> &::std::option::Option<i64> {
+        self.inner.get_namespace_version()
     }
 }

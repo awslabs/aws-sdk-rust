@@ -46,6 +46,10 @@ impl CancelJournalKinesisStreamOutputBuilder {
         self.stream_id = input;
         self
     }
+    /// <p>The UUID (Base62-encoded text) of the canceled QLDB journal stream.</p>
+    pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

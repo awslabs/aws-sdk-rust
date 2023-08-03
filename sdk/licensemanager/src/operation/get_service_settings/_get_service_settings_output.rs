@@ -88,6 +88,10 @@ impl GetServiceSettingsOutputBuilder {
         self.s3_bucket_arn = input;
         self
     }
+    /// <p>Regional S3 bucket path for storing reports, license trail event data, discovery data, and so on.</p>
+    pub fn get_s3_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket_arn
+    }
     /// <p>SNS topic configured to receive notifications from License Manager.</p>
     pub fn sns_topic_arn(
         mut self,
@@ -103,6 +107,10 @@ impl GetServiceSettingsOutputBuilder {
     ) -> Self {
         self.sns_topic_arn = input;
         self
+    }
+    /// <p>SNS topic configured to receive notifications from License Manager.</p>
+    pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sns_topic_arn
     }
     /// <p>Indicates whether Organizations is integrated with License Manager for cross-account discovery.</p>
     pub fn organization_configuration(
@@ -120,6 +128,12 @@ impl GetServiceSettingsOutputBuilder {
         self.organization_configuration = input;
         self
     }
+    /// <p>Indicates whether Organizations is integrated with License Manager for cross-account discovery.</p>
+    pub fn get_organization_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::OrganizationConfiguration> {
+        &self.organization_configuration
+    }
     /// <p>Indicates whether cross-account discovery is enabled.</p>
     pub fn enable_cross_accounts_discovery(mut self, input: bool) -> Self {
         self.enable_cross_accounts_discovery = ::std::option::Option::Some(input);
@@ -132,6 +146,10 @@ impl GetServiceSettingsOutputBuilder {
     ) -> Self {
         self.enable_cross_accounts_discovery = input;
         self
+    }
+    /// <p>Indicates whether cross-account discovery is enabled.</p>
+    pub fn get_enable_cross_accounts_discovery(&self) -> &::std::option::Option<bool> {
+        &self.enable_cross_accounts_discovery
     }
     /// <p>Amazon Resource Name (ARN) of the resource share. The License Manager management account provides member accounts with access to this share.</p>
     pub fn license_manager_resource_share_arn(
@@ -148,6 +166,12 @@ impl GetServiceSettingsOutputBuilder {
     ) -> Self {
         self.license_manager_resource_share_arn = input;
         self
+    }
+    /// <p>Amazon Resource Name (ARN) of the resource share. The License Manager management account provides member accounts with access to this share.</p>
+    pub fn get_license_manager_resource_share_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.license_manager_resource_share_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

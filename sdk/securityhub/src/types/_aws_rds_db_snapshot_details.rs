@@ -300,6 +300,10 @@ impl AwsRdsDbSnapshotDetailsBuilder {
         self.db_snapshot_identifier = input;
         self
     }
+    /// <p>The name or ARN of the DB snapshot that is used to restore the DB instance.</p>
+    pub fn get_db_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_snapshot_identifier
+    }
     /// <p>A name for the DB instance.</p>
     pub fn db_instance_identifier(
         mut self,
@@ -316,6 +320,10 @@ impl AwsRdsDbSnapshotDetailsBuilder {
         self.db_instance_identifier = input;
         self
     }
+    /// <p>A name for the DB instance.</p>
+    pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_instance_identifier
+    }
     /// <p>When the snapshot was taken in Coordinated Universal Time (UTC).</p>
     pub fn snapshot_create_time(
         mut self,
@@ -331,6 +339,10 @@ impl AwsRdsDbSnapshotDetailsBuilder {
     ) -> Self {
         self.snapshot_create_time = input;
         self
+    }
+    /// <p>When the snapshot was taken in Coordinated Universal Time (UTC).</p>
+    pub fn get_snapshot_create_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_create_time
     }
     /// <p>The name of the database engine to use for this DB instance. Valid values are as follows:</p>
     /// <ul>
@@ -374,6 +386,26 @@ impl AwsRdsDbSnapshotDetailsBuilder {
         self.engine = input;
         self
     }
+    /// <p>The name of the database engine to use for this DB instance. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>aurora</code> </p> </li>
+    /// <li> <p> <code>aurora-mysql</code> </p> </li>
+    /// <li> <p> <code>aurora-postgresql</code> </p> </li>
+    /// <li> <p> <code>c</code> </p> </li>
+    /// <li> <p> <code>mariadb</code> </p> </li>
+    /// <li> <p> <code>mysql</code> </p> </li>
+    /// <li> <p> <code>oracle-ee</code> </p> </li>
+    /// <li> <p> <code>oracle-se</code> </p> </li>
+    /// <li> <p> <code>oracle-se1</code> </p> </li>
+    /// <li> <p> <code>oracle-se2</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ee</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ex</code> </p> </li>
+    /// <li> <p> <code>sqlserver-se</code> </p> </li>
+    /// <li> <p> <code>sqlserver-web</code> </p> </li>
+    /// </ul>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine
+    }
     /// <p>The amount of storage (in gigabytes) to be initially allocated for the database instance.</p>
     pub fn allocated_storage(mut self, input: i32) -> Self {
         self.allocated_storage = ::std::option::Option::Some(input);
@@ -383,6 +415,10 @@ impl AwsRdsDbSnapshotDetailsBuilder {
     pub fn set_allocated_storage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.allocated_storage = input;
         self
+    }
+    /// <p>The amount of storage (in gigabytes) to be initially allocated for the database instance.</p>
+    pub fn get_allocated_storage(&self) -> &::std::option::Option<i32> {
+        &self.allocated_storage
     }
     /// <p>The status of this DB snapshot.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -394,6 +430,10 @@ impl AwsRdsDbSnapshotDetailsBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of this DB snapshot.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>The port that the database engine was listening on at the time of the snapshot.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -403,6 +443,10 @@ impl AwsRdsDbSnapshotDetailsBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
+    }
+    /// <p>The port that the database engine was listening on at the time of the snapshot.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// <p>Specifies the name of the Availability Zone in which the DB instance was located at the time of the DB snapshot.</p>
     pub fn availability_zone(
@@ -420,6 +464,10 @@ impl AwsRdsDbSnapshotDetailsBuilder {
         self.availability_zone = input;
         self
     }
+    /// <p>Specifies the name of the Availability Zone in which the DB instance was located at the time of the DB snapshot.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p>The VPC ID associated with the DB snapshot.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -429,6 +477,10 @@ impl AwsRdsDbSnapshotDetailsBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The VPC ID associated with the DB snapshot.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// <p>Specifies the time in Coordinated Universal Time (UTC) when the DB instance, from which the snapshot was taken, was created.</p>
     pub fn instance_create_time(
@@ -446,6 +498,10 @@ impl AwsRdsDbSnapshotDetailsBuilder {
         self.instance_create_time = input;
         self
     }
+    /// <p>Specifies the time in Coordinated Universal Time (UTC) when the DB instance, from which the snapshot was taken, was created.</p>
+    pub fn get_instance_create_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_create_time
+    }
     /// <p>The master user name for the DB snapshot.</p>
     pub fn master_username(
         mut self,
@@ -461,6 +517,10 @@ impl AwsRdsDbSnapshotDetailsBuilder {
     ) -> Self {
         self.master_username = input;
         self
+    }
+    /// <p>The master user name for the DB snapshot.</p>
+    pub fn get_master_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.master_username
     }
     /// <p>The version of the database engine.</p>
     pub fn engine_version(
@@ -478,6 +538,10 @@ impl AwsRdsDbSnapshotDetailsBuilder {
         self.engine_version = input;
         self
     }
+    /// <p>The version of the database engine.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
+    }
     /// <p>License model information for the restored DB instance.</p>
     pub fn license_model(
         mut self,
@@ -493,6 +557,10 @@ impl AwsRdsDbSnapshotDetailsBuilder {
     ) -> Self {
         self.license_model = input;
         self
+    }
+    /// <p>License model information for the restored DB instance.</p>
+    pub fn get_license_model(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_model
     }
     /// <p>The type of the DB snapshot.</p>
     pub fn snapshot_type(
@@ -510,6 +578,10 @@ impl AwsRdsDbSnapshotDetailsBuilder {
         self.snapshot_type = input;
         self
     }
+    /// <p>The type of the DB snapshot.</p>
+    pub fn get_snapshot_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_type
+    }
     /// <p>The provisioned IOPS (I/O operations per second) value of the DB instance at the time of the snapshot.</p>
     pub fn iops(mut self, input: i32) -> Self {
         self.iops = ::std::option::Option::Some(input);
@@ -519,6 +591,10 @@ impl AwsRdsDbSnapshotDetailsBuilder {
     pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
         self.iops = input;
         self
+    }
+    /// <p>The provisioned IOPS (I/O operations per second) value of the DB instance at the time of the snapshot.</p>
+    pub fn get_iops(&self) -> &::std::option::Option<i32> {
+        &self.iops
     }
     /// <p>The option group name for the DB snapshot.</p>
     pub fn option_group_name(
@@ -536,6 +612,10 @@ impl AwsRdsDbSnapshotDetailsBuilder {
         self.option_group_name = input;
         self
     }
+    /// <p>The option group name for the DB snapshot.</p>
+    pub fn get_option_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.option_group_name
+    }
     /// <p>The percentage of the estimated data that has been transferred.</p>
     pub fn percent_progress(mut self, input: i32) -> Self {
         self.percent_progress = ::std::option::Option::Some(input);
@@ -545,6 +625,10 @@ impl AwsRdsDbSnapshotDetailsBuilder {
     pub fn set_percent_progress(mut self, input: ::std::option::Option<i32>) -> Self {
         self.percent_progress = input;
         self
+    }
+    /// <p>The percentage of the estimated data that has been transferred.</p>
+    pub fn get_percent_progress(&self) -> &::std::option::Option<i32> {
+        &self.percent_progress
     }
     /// <p>The Amazon Web Services Region that the DB snapshot was created in or copied from.</p>
     pub fn source_region(
@@ -562,6 +646,10 @@ impl AwsRdsDbSnapshotDetailsBuilder {
         self.source_region = input;
         self
     }
+    /// <p>The Amazon Web Services Region that the DB snapshot was created in or copied from.</p>
+    pub fn get_source_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_region
+    }
     /// <p>The DB snapshot ARN that the DB snapshot was copied from.</p>
     pub fn source_db_snapshot_identifier(
         mut self,
@@ -577,6 +665,12 @@ impl AwsRdsDbSnapshotDetailsBuilder {
     ) -> Self {
         self.source_db_snapshot_identifier = input;
         self
+    }
+    /// <p>The DB snapshot ARN that the DB snapshot was copied from.</p>
+    pub fn get_source_db_snapshot_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.source_db_snapshot_identifier
     }
     /// <p>The storage type associated with the DB snapshot. Valid values are as follows:</p>
     /// <ul>
@@ -598,6 +692,15 @@ impl AwsRdsDbSnapshotDetailsBuilder {
         self.storage_type = input;
         self
     }
+    /// <p>The storage type associated with the DB snapshot. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>gp2</code> </p> </li>
+    /// <li> <p> <code>io1</code> </p> </li>
+    /// <li> <p> <code>standard</code> </p> </li>
+    /// </ul>
+    pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_type
+    }
     /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
     pub fn tde_credential_arn(
         mut self,
@@ -614,6 +717,10 @@ impl AwsRdsDbSnapshotDetailsBuilder {
         self.tde_credential_arn = input;
         self
     }
+    /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
+    pub fn get_tde_credential_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tde_credential_arn
+    }
     /// <p>Whether the DB snapshot is encrypted.</p>
     pub fn encrypted(mut self, input: bool) -> Self {
         self.encrypted = ::std::option::Option::Some(input);
@@ -623,6 +730,10 @@ impl AwsRdsDbSnapshotDetailsBuilder {
     pub fn set_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.encrypted = input;
         self
+    }
+    /// <p>Whether the DB snapshot is encrypted.</p>
+    pub fn get_encrypted(&self) -> &::std::option::Option<bool> {
+        &self.encrypted
     }
     /// <p>If <code>Encrypted</code> is <code>true</code>, the KMS key identifier for the encrypted DB snapshot.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -634,6 +745,10 @@ impl AwsRdsDbSnapshotDetailsBuilder {
         self.kms_key_id = input;
         self
     }
+    /// <p>If <code>Encrypted</code> is <code>true</code>, the KMS key identifier for the encrypted DB snapshot.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
+    }
     /// <p>The time zone of the DB snapshot.</p>
     pub fn timezone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timezone = ::std::option::Option::Some(input.into());
@@ -643,6 +758,10 @@ impl AwsRdsDbSnapshotDetailsBuilder {
     pub fn set_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timezone = input;
         self
+    }
+    /// <p>The time zone of the DB snapshot.</p>
+    pub fn get_timezone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timezone
     }
     /// <p>Whether mapping of IAM accounts to database accounts is enabled.</p>
     pub fn iam_database_authentication_enabled(mut self, input: bool) -> Self {
@@ -656,6 +775,10 @@ impl AwsRdsDbSnapshotDetailsBuilder {
     ) -> Self {
         self.iam_database_authentication_enabled = input;
         self
+    }
+    /// <p>Whether mapping of IAM accounts to database accounts is enabled.</p>
+    pub fn get_iam_database_authentication_enabled(&self) -> &::std::option::Option<bool> {
+        &self.iam_database_authentication_enabled
     }
     /// Appends an item to `processor_features`.
     ///
@@ -676,6 +799,12 @@ impl AwsRdsDbSnapshotDetailsBuilder {
         self.processor_features = input;
         self
     }
+    /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
+    pub fn get_processor_features(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbProcessorFeature>> {
+        &self.processor_features
+    }
     /// <p>The identifier for the source DB instance.</p>
     pub fn dbi_resource_id(
         mut self,
@@ -691,6 +820,10 @@ impl AwsRdsDbSnapshotDetailsBuilder {
     ) -> Self {
         self.dbi_resource_id = input;
         self
+    }
+    /// <p>The identifier for the source DB instance.</p>
+    pub fn get_dbi_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dbi_resource_id
     }
     /// Consumes the builder and constructs a [`AwsRdsDbSnapshotDetails`](crate::types::AwsRdsDbSnapshotDetails).
     pub fn build(self) -> crate::types::AwsRdsDbSnapshotDetails {

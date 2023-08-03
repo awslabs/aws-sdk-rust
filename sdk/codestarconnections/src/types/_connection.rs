@@ -91,6 +91,10 @@ impl ConnectionBuilder {
         self.connection_name = input;
         self
     }
+    /// <p>The name of the connection. Connection names must be unique in an AWS user account.</p>
+    pub fn get_connection_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the connection. The ARN is used as the connection reference when the connection is shared between AWS services.</p> <note>
     /// <p>The ARN is never reused if the connection is deleted.</p>
     /// </note>
@@ -111,6 +115,12 @@ impl ConnectionBuilder {
         self.connection_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the connection. The ARN is used as the connection reference when the connection is shared between AWS services.</p> <note>
+    /// <p>The ARN is never reused if the connection is deleted.</p>
+    /// </note>
+    pub fn get_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_arn
+    }
     /// <p>The name of the external provider where your third-party code repository is configured.</p>
     pub fn provider_type(mut self, input: crate::types::ProviderType) -> Self {
         self.provider_type = ::std::option::Option::Some(input);
@@ -123,6 +133,10 @@ impl ConnectionBuilder {
     ) -> Self {
         self.provider_type = input;
         self
+    }
+    /// <p>The name of the external provider where your third-party code repository is configured.</p>
+    pub fn get_provider_type(&self) -> &::std::option::Option<crate::types::ProviderType> {
+        &self.provider_type
     }
     /// <p>The identifier of the external provider where your third-party code repository is configured. For Bitbucket, this is the account ID of the owner of the Bitbucket repository.</p>
     pub fn owner_account_id(
@@ -140,6 +154,10 @@ impl ConnectionBuilder {
         self.owner_account_id = input;
         self
     }
+    /// <p>The identifier of the external provider where your third-party code repository is configured. For Bitbucket, this is the account ID of the owner of the Bitbucket repository.</p>
+    pub fn get_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_account_id
+    }
     /// <p>The current status of the connection. </p>
     pub fn connection_status(mut self, input: crate::types::ConnectionStatus) -> Self {
         self.connection_status = ::std::option::Option::Some(input);
@@ -153,6 +171,10 @@ impl ConnectionBuilder {
         self.connection_status = input;
         self
     }
+    /// <p>The current status of the connection. </p>
+    pub fn get_connection_status(&self) -> &::std::option::Option<crate::types::ConnectionStatus> {
+        &self.connection_status
+    }
     /// <p>The Amazon Resource Name (ARN) of the host associated with the connection.</p>
     pub fn host_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host_arn = ::std::option::Option::Some(input.into());
@@ -162,6 +184,10 @@ impl ConnectionBuilder {
     pub fn set_host_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.host_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the host associated with the connection.</p>
+    pub fn get_host_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host_arn
     }
     /// Consumes the builder and constructs a [`Connection`](crate::types::Connection).
     pub fn build(self) -> crate::types::Connection {

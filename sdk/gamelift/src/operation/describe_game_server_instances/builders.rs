@@ -41,6 +41,10 @@ impl DescribeGameServerInstancesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeGameServerInstances as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_game_server_instances::builders::DescribeGameServerInstancesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -143,6 +147,10 @@ impl DescribeGameServerInstancesFluentBuilder {
         self.inner = self.inner.set_game_server_group_name(input);
         self
     }
+    /// <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
+    pub fn get_game_server_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_game_server_group_name()
+    }
     /// Appends an item to `InstanceIds`.
     ///
     /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
@@ -160,6 +168,12 @@ impl DescribeGameServerInstancesFluentBuilder {
         self.inner = self.inner.set_instance_ids(input);
         self
     }
+    /// <p>The Amazon EC2 instance IDs that you want to retrieve status on. Amazon EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>. To retrieve all instances in the game server group, leave this parameter empty. </p>
+    pub fn get_instance_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_instance_ids()
+    }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -170,6 +184,10 @@ impl DescribeGameServerInstancesFluentBuilder {
         self.inner = self.inner.set_limit(input);
         self
     }
+    /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
+    }
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -179,5 +197,9 @@ impl DescribeGameServerInstancesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

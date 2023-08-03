@@ -69,6 +69,12 @@ impl UpdateDistributionConfigurationInputBuilder {
         self.distribution_configuration_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to update.</p>
+    pub fn get_distribution_configuration_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.distribution_configuration_arn
+    }
     /// <p>The description of the distribution configuration.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -78,6 +84,10 @@ impl UpdateDistributionConfigurationInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the distribution configuration.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `distributions`.
     ///
@@ -98,6 +108,12 @@ impl UpdateDistributionConfigurationInputBuilder {
         self.distributions = input;
         self
     }
+    /// <p>The distributions of the distribution configuration.</p>
+    pub fn get_distributions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Distribution>> {
+        &self.distributions
+    }
     /// <p>The idempotency token of the distribution configuration.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -107,6 +123,10 @@ impl UpdateDistributionConfigurationInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>The idempotency token of the distribution configuration.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateDistributionConfigurationInput`](crate::operation::update_distribution_configuration::UpdateDistributionConfigurationInput).
     pub fn build(

@@ -54,6 +54,10 @@ impl AssetHierarchyInfoBuilder {
         self.parent_asset_id = input;
         self
     }
+    /// <p>The ID of the parent asset in this asset relationship.</p>
+    pub fn get_parent_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent_asset_id
+    }
     /// <p>The ID of the child asset in this asset relationship.</p>
     pub fn child_asset_id(
         mut self,
@@ -69,6 +73,10 @@ impl AssetHierarchyInfoBuilder {
     ) -> Self {
         self.child_asset_id = input;
         self
+    }
+    /// <p>The ID of the child asset in this asset relationship.</p>
+    pub fn get_child_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.child_asset_id
     }
     /// Consumes the builder and constructs a [`AssetHierarchyInfo`](crate::types::AssetHierarchyInfo).
     pub fn build(self) -> crate::types::AssetHierarchyInfo {

@@ -36,6 +36,10 @@ impl RevokeCacheSecurityGroupIngressFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RevokeCacheSecurityGroupIngress as a reference.
+    pub fn as_input(&self) -> &crate::operation::revoke_cache_security_group_ingress::builders::RevokeCacheSecurityGroupIngressInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl RevokeCacheSecurityGroupIngressFluentBuilder {
         self.inner = self.inner.set_cache_security_group_name(input);
         self
     }
+    /// <p>The name of the cache security group to revoke ingress from.</p>
+    pub fn get_cache_security_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cache_security_group_name()
+    }
     /// <p>The name of the Amazon EC2 security group to revoke access from.</p>
     pub fn ec2_security_group_name(
         mut self,
@@ -122,6 +130,10 @@ impl RevokeCacheSecurityGroupIngressFluentBuilder {
         self.inner = self.inner.set_ec2_security_group_name(input);
         self
     }
+    /// <p>The name of the Amazon EC2 security group to revoke access from.</p>
+    pub fn get_ec2_security_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ec2_security_group_name()
+    }
     /// <p>The Amazon account number of the Amazon EC2 security group owner. Note that this is not the same thing as an Amazon access key ID - you must provide a valid Amazon account number for this parameter.</p>
     pub fn ec2_security_group_owner_id(
         mut self,
@@ -137,5 +149,9 @@ impl RevokeCacheSecurityGroupIngressFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ec2_security_group_owner_id(input);
         self
+    }
+    /// <p>The Amazon account number of the Amazon EC2 security group owner. Note that this is not the same thing as an Amazon access key ID - you must provide a valid Amazon account number for this parameter.</p>
+    pub fn get_ec2_security_group_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ec2_security_group_owner_id()
     }
 }

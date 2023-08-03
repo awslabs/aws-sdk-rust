@@ -62,6 +62,10 @@ impl TemplateBuilder {
         self.template_name = input;
         self
     }
+    /// <p>The name of the template. You will refer to this name when you send email using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code> operations. </p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
     pub fn template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_arn = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl TemplateBuilder {
     pub fn set_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the template.</p>
+    pub fn get_template_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_arn
     }
     /// <p>An object that defines the values to use for message variables in the template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the value to use for that variable.</p>
     pub fn template_data(
@@ -87,6 +95,10 @@ impl TemplateBuilder {
     ) -> Self {
         self.template_data = input;
         self
+    }
+    /// <p>An object that defines the values to use for message variables in the template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the value to use for that variable.</p>
+    pub fn get_template_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_data
     }
     /// Consumes the builder and constructs a [`Template`](crate::types::Template).
     pub fn build(self) -> crate::types::Template {

@@ -51,6 +51,12 @@ impl IdentityVerificationAttributesBuilder {
         self.verification_status = input;
         self
     }
+    /// <p>The verification status of the identity: "Pending", "Success", "Failed", or "TemporaryFailure".</p>
+    pub fn get_verification_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::VerificationStatus> {
+        &self.verification_status
+    }
     /// <p>The verification token for a domain identity. Null for email address identities.</p>
     pub fn verification_token(
         mut self,
@@ -66,6 +72,10 @@ impl IdentityVerificationAttributesBuilder {
     ) -> Self {
         self.verification_token = input;
         self
+    }
+    /// <p>The verification token for a domain identity. Null for email address identities.</p>
+    pub fn get_verification_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.verification_token
     }
     /// Consumes the builder and constructs a [`IdentityVerificationAttributes`](crate::types::IdentityVerificationAttributes).
     pub fn build(self) -> crate::types::IdentityVerificationAttributes {

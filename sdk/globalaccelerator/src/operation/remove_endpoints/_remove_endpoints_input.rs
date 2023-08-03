@@ -60,6 +60,12 @@ impl RemoveEndpointsInputBuilder {
         self.endpoint_identifiers = input;
         self
     }
+    /// <p>The identifiers of the endpoints that you want to remove.</p>
+    pub fn get_endpoint_identifiers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointIdentifier>> {
+        &self.endpoint_identifiers
+    }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
     pub fn endpoint_group_arn(
         mut self,
@@ -75,6 +81,10 @@ impl RemoveEndpointsInputBuilder {
     ) -> Self {
         self.endpoint_group_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
+    pub fn get_endpoint_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_group_arn
     }
     /// Consumes the builder and constructs a [`RemoveEndpointsInput`](crate::operation::remove_endpoints::RemoveEndpointsInput).
     pub fn build(

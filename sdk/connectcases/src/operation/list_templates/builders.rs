@@ -36,6 +36,12 @@ impl ListTemplatesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListTemplates as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_templates::builders::ListTemplatesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl ListTemplatesFluentBuilder {
         self.inner = self.inner.set_domain_id(input);
         self
     }
+    /// <p>The unique identifier of the Cases domain. </p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_id()
+    }
     /// <p>The maximum number of results to return per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -139,6 +149,10 @@ impl ListTemplatesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -148,6 +162,10 @@ impl ListTemplatesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// Appends an item to `status`.
     ///
@@ -165,5 +183,11 @@ impl ListTemplatesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_status(input);
         self
+    }
+    /// <p>A list of status values to filter on.</p>
+    pub fn get_status(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateStatus>> {
+        self.inner.get_status()
     }
 }

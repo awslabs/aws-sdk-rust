@@ -174,6 +174,12 @@ impl CoverageFilterCriteriaBuilder {
         self.scan_status_code = input;
         self
     }
+    /// <p>The scan status code to filter on.</p>
+    pub fn get_scan_status_code(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
+        &self.scan_status_code
+    }
     /// Appends an item to `scan_status_reason`.
     ///
     /// To override the contents of this collection use [`set_scan_status_reason`](Self::set_scan_status_reason).
@@ -192,6 +198,12 @@ impl CoverageFilterCriteriaBuilder {
     ) -> Self {
         self.scan_status_reason = input;
         self
+    }
+    /// <p>The scan status reason to filter on.</p>
+    pub fn get_scan_status_reason(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
+        &self.scan_status_reason
     }
     /// Appends an item to `account_id`.
     ///
@@ -212,6 +224,12 @@ impl CoverageFilterCriteriaBuilder {
         self.account_id = input;
         self
     }
+    /// <p>An array of Amazon Web Services account IDs to return coverage statistics for.</p>
+    pub fn get_account_id(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
+        &self.account_id
+    }
     /// Appends an item to `resource_id`.
     ///
     /// To override the contents of this collection use [`set_resource_id`](Self::set_resource_id).
@@ -230,6 +248,12 @@ impl CoverageFilterCriteriaBuilder {
     ) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>An array of Amazon Web Services resource IDs to return coverage statistics for.</p>
+    pub fn get_resource_id(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
+        &self.resource_id
     }
     /// Appends an item to `resource_type`.
     ///
@@ -250,6 +274,12 @@ impl CoverageFilterCriteriaBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>An array of Amazon Web Services resource types to return coverage statistics for. The values can be <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code> or <code>AWS_ECR_REPOSITORY</code>.</p>
+    pub fn get_resource_type(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
+        &self.resource_type
+    }
     /// Appends an item to `scan_type`.
     ///
     /// To override the contents of this collection use [`set_scan_type`](Self::set_scan_type).
@@ -268,6 +298,12 @@ impl CoverageFilterCriteriaBuilder {
     ) -> Self {
         self.scan_type = input;
         self
+    }
+    /// <p>An array of Amazon Inspector scan types to return coverage statistics for.</p>
+    pub fn get_scan_type(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
+        &self.scan_type
     }
     /// Appends an item to `ecr_repository_name`.
     ///
@@ -288,6 +324,12 @@ impl CoverageFilterCriteriaBuilder {
         self.ecr_repository_name = input;
         self
     }
+    /// <p>The Amazon ECR repository name to filter on.</p>
+    pub fn get_ecr_repository_name(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
+        &self.ecr_repository_name
+    }
     /// Appends an item to `ecr_image_tags`.
     ///
     /// To override the contents of this collection use [`set_ecr_image_tags`](Self::set_ecr_image_tags).
@@ -306,6 +348,12 @@ impl CoverageFilterCriteriaBuilder {
     ) -> Self {
         self.ecr_image_tags = input;
         self
+    }
+    /// <p>The Amazon ECR image tags to filter on.</p>
+    pub fn get_ecr_image_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
+        &self.ecr_image_tags
     }
     /// Appends an item to `ec2_instance_tags`.
     ///
@@ -326,6 +374,12 @@ impl CoverageFilterCriteriaBuilder {
         self.ec2_instance_tags = input;
         self
     }
+    /// <p>The Amazon EC2 instance tags to filter on.</p>
+    pub fn get_ec2_instance_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageMapFilter>> {
+        &self.ec2_instance_tags
+    }
     /// Appends an item to `lambda_function_name`.
     ///
     /// To override the contents of this collection use [`set_lambda_function_name`](Self::set_lambda_function_name).
@@ -344,6 +398,12 @@ impl CoverageFilterCriteriaBuilder {
     ) -> Self {
         self.lambda_function_name = input;
         self
+    }
+    /// <p>Returns coverage statistics for AWS Lambda functions filtered by function names.</p>
+    pub fn get_lambda_function_name(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
+        &self.lambda_function_name
     }
     /// Appends an item to `lambda_function_tags`.
     ///
@@ -364,6 +424,12 @@ impl CoverageFilterCriteriaBuilder {
         self.lambda_function_tags = input;
         self
     }
+    /// <p>Returns coverage statistics for AWS Lambda functions filtered by tag.</p>
+    pub fn get_lambda_function_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageMapFilter>> {
+        &self.lambda_function_tags
+    }
     /// Appends an item to `lambda_function_runtime`.
     ///
     /// To override the contents of this collection use [`set_lambda_function_runtime`](Self::set_lambda_function_runtime).
@@ -383,6 +449,12 @@ impl CoverageFilterCriteriaBuilder {
         self.lambda_function_runtime = input;
         self
     }
+    /// <p>Returns coverage statistics for AWS Lambda functions filtered by runtime.</p>
+    pub fn get_lambda_function_runtime(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
+        &self.lambda_function_runtime
+    }
     /// Appends an item to `last_scanned_at`.
     ///
     /// To override the contents of this collection use [`set_last_scanned_at`](Self::set_last_scanned_at).
@@ -401,6 +473,12 @@ impl CoverageFilterCriteriaBuilder {
     ) -> Self {
         self.last_scanned_at = input;
         self
+    }
+    /// <p>Filters Amazon Web Services resources based on whether Amazon Inspector has checked them for vulnerabilities within the specified time range.</p>
+    pub fn get_last_scanned_at(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageDateFilter>> {
+        &self.last_scanned_at
     }
     /// Consumes the builder and constructs a [`CoverageFilterCriteria`](crate::types::CoverageFilterCriteria).
     pub fn build(self) -> crate::types::CoverageFilterCriteria {

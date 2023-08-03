@@ -48,6 +48,10 @@ impl CelebrityRecognitionBuilder {
         self.timestamp = input;
         self
     }
+    /// <p>The time, in milliseconds from the start of the video, that the celebrity was recognized. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the celebrity first appears.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<i64> {
+        &self.timestamp
+    }
     /// <p>Information about a recognized celebrity.</p>
     pub fn celebrity(mut self, input: crate::types::CelebrityDetail) -> Self {
         self.celebrity = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl CelebrityRecognitionBuilder {
     ) -> Self {
         self.celebrity = input;
         self
+    }
+    /// <p>Information about a recognized celebrity.</p>
+    pub fn get_celebrity(&self) -> &::std::option::Option<crate::types::CelebrityDetail> {
+        &self.celebrity
     }
     /// Consumes the builder and constructs a [`CelebrityRecognition`](crate::types::CelebrityRecognition).
     pub fn build(self) -> crate::types::CelebrityRecognition {

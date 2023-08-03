@@ -53,6 +53,12 @@ impl LoggingConfigurationBuilder {
         self.log_destination_configs = input;
         self
     }
+    /// <p>Defines the logging destinations for the logs for a firewall. Network Firewall generates logs for stateful rule groups. </p>
+    pub fn get_log_destination_configs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LogDestinationConfig>> {
+        &self.log_destination_configs
+    }
     /// Consumes the builder and constructs a [`LoggingConfiguration`](crate::types::LoggingConfiguration).
     pub fn build(self) -> crate::types::LoggingConfiguration {
         crate::types::LoggingConfiguration {

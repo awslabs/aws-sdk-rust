@@ -58,6 +58,10 @@ impl EventTypeBuilder {
         self.service = input;
         self
     }
+    /// <p>The Amazon Web Service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
+    pub fn get_service(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service
+    }
     /// <p>The unique identifier for the event type. The format is <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
@@ -67,6 +71,10 @@ impl EventTypeBuilder {
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code = input;
         self
+    }
+    /// <p>The unique identifier for the event type. The format is <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
     }
     /// <p>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't supported at this time.</p>
     pub fn category(mut self, input: crate::types::EventTypeCategory) -> Self {
@@ -80,6 +88,10 @@ impl EventTypeBuilder {
     ) -> Self {
         self.category = input;
         self
+    }
+    /// <p>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't supported at this time.</p>
+    pub fn get_category(&self) -> &::std::option::Option<crate::types::EventTypeCategory> {
+        &self.category
     }
     /// Consumes the builder and constructs a [`EventType`](crate::types::EventType).
     pub fn build(self) -> crate::types::EventType {

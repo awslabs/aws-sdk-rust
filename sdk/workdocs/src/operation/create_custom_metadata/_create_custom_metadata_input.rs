@@ -86,6 +86,10 @@ impl CreateCustomMetadataInputBuilder {
         self.authentication_token = input;
         self
     }
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authentication_token
+    }
     /// <p>The ID of the resource.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -96,6 +100,10 @@ impl CreateCustomMetadataInputBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The ID of the resource.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// <p>The ID of the version, if the custom metadata is being added to a document version.</p>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_id = ::std::option::Option::Some(input.into());
@@ -105,6 +113,10 @@ impl CreateCustomMetadataInputBuilder {
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_id = input;
         self
+    }
+    /// <p>The ID of the version, if the custom metadata is being added to a document version.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_id
     }
     /// Adds a key-value pair to `custom_metadata`.
     ///
@@ -130,6 +142,14 @@ impl CreateCustomMetadataInputBuilder {
     ) -> Self {
         self.custom_metadata = input;
         self
+    }
+    /// <p>Custom metadata in the form of name-value pairs.</p>
+    pub fn get_custom_metadata(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.custom_metadata
     }
     /// Consumes the builder and constructs a [`CreateCustomMetadataInput`](crate::operation::create_custom_metadata::CreateCustomMetadataInput).
     pub fn build(

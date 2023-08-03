@@ -57,6 +57,10 @@ impl SuspendContactRecordingInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The identifier of the contact.</p>
     pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_id = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl SuspendContactRecordingInputBuilder {
     pub fn set_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contact_id = input;
         self
+    }
+    /// <p>The identifier of the contact.</p>
+    pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_id
     }
     /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
     pub fn initial_contact_id(
@@ -82,6 +90,10 @@ impl SuspendContactRecordingInputBuilder {
     ) -> Self {
         self.initial_contact_id = input;
         self
+    }
+    /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
+    pub fn get_initial_contact_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.initial_contact_id
     }
     /// Consumes the builder and constructs a [`SuspendContactRecordingInput`](crate::operation::suspend_contact_recording::SuspendContactRecordingInput).
     pub fn build(

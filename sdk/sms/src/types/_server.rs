@@ -72,6 +72,10 @@ impl ServerBuilder {
         self.server_id = input;
         self
     }
+    /// <p>The ID of the server.</p>
+    pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_id
+    }
     /// <p>The type of server.</p>
     pub fn server_type(mut self, input: crate::types::ServerType) -> Self {
         self.server_type = ::std::option::Option::Some(input);
@@ -85,6 +89,10 @@ impl ServerBuilder {
         self.server_type = input;
         self
     }
+    /// <p>The type of server.</p>
+    pub fn get_server_type(&self) -> &::std::option::Option<crate::types::ServerType> {
+        &self.server_type
+    }
     /// <p>Information about the VM server.</p>
     pub fn vm_server(mut self, input: crate::types::VmServer) -> Self {
         self.vm_server = ::std::option::Option::Some(input);
@@ -94,6 +102,10 @@ impl ServerBuilder {
     pub fn set_vm_server(mut self, input: ::std::option::Option<crate::types::VmServer>) -> Self {
         self.vm_server = input;
         self
+    }
+    /// <p>Information about the VM server.</p>
+    pub fn get_vm_server(&self) -> &::std::option::Option<crate::types::VmServer> {
+        &self.vm_server
     }
     /// <p>The ID of the replication job.</p>
     pub fn replication_job_id(
@@ -111,6 +123,10 @@ impl ServerBuilder {
         self.replication_job_id = input;
         self
     }
+    /// <p>The ID of the replication job.</p>
+    pub fn get_replication_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_job_id
+    }
     /// <p>Indicates whether the replication job is deleted or failed.</p>
     pub fn replication_job_terminated(mut self, input: bool) -> Self {
         self.replication_job_terminated = ::std::option::Option::Some(input);
@@ -120,6 +136,10 @@ impl ServerBuilder {
     pub fn set_replication_job_terminated(mut self, input: ::std::option::Option<bool>) -> Self {
         self.replication_job_terminated = input;
         self
+    }
+    /// <p>Indicates whether the replication job is deleted or failed.</p>
+    pub fn get_replication_job_terminated(&self) -> &::std::option::Option<bool> {
+        &self.replication_job_terminated
     }
     /// Consumes the builder and constructs a [`Server`](crate::types::Server).
     pub fn build(self) -> crate::types::Server {

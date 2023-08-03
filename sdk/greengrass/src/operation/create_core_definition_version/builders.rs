@@ -36,6 +36,10 @@ impl CreateCoreDefinitionVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateCoreDefinitionVersion as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_core_definition_version::builders::CreateCoreDefinitionVersionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl CreateCoreDefinitionVersionFluentBuilder {
         self.inner = self.inner.set_amzn_client_token(input);
         self
     }
+    /// A client token used to correlate requests and responses.
+    pub fn get_amzn_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_amzn_client_token()
+    }
     /// The ID of the core definition.
     pub fn core_definition_id(
         mut self,
@@ -147,6 +155,10 @@ impl CreateCoreDefinitionVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_core_definition_id(input);
         self
+    }
+    /// The ID of the core definition.
+    pub fn get_core_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_core_definition_id()
     }
     /// Appends an item to `Cores`.
     ///
@@ -164,5 +176,9 @@ impl CreateCoreDefinitionVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_cores(input);
         self
+    }
+    /// A list of cores in the core definition version.
+    pub fn get_cores(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Core>> {
+        self.inner.get_cores()
     }
 }

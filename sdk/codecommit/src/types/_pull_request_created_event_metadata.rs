@@ -70,6 +70,10 @@ impl PullRequestCreatedEventMetadataBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name of the repository where the pull request was created.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>The commit ID on the source branch used when the pull request was created.</p>
     pub fn source_commit_id(
         mut self,
@@ -85,6 +89,10 @@ impl PullRequestCreatedEventMetadataBuilder {
     ) -> Self {
         self.source_commit_id = input;
         self
+    }
+    /// <p>The commit ID on the source branch used when the pull request was created.</p>
+    pub fn get_source_commit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_commit_id
     }
     /// <p>The commit ID of the tip of the branch specified as the destination branch when the pull request was created.</p>
     pub fn destination_commit_id(
@@ -102,6 +110,10 @@ impl PullRequestCreatedEventMetadataBuilder {
         self.destination_commit_id = input;
         self
     }
+    /// <p>The commit ID of the tip of the branch specified as the destination branch when the pull request was created.</p>
+    pub fn get_destination_commit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_commit_id
+    }
     /// <p>The commit ID of the most recent commit that the source branch and the destination branch have in common.</p>
     pub fn merge_base(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.merge_base = ::std::option::Option::Some(input.into());
@@ -111,6 +123,10 @@ impl PullRequestCreatedEventMetadataBuilder {
     pub fn set_merge_base(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.merge_base = input;
         self
+    }
+    /// <p>The commit ID of the most recent commit that the source branch and the destination branch have in common.</p>
+    pub fn get_merge_base(&self) -> &::std::option::Option<::std::string::String> {
+        &self.merge_base
     }
     /// Consumes the builder and constructs a [`PullRequestCreatedEventMetadata`](crate::types::PullRequestCreatedEventMetadata).
     pub fn build(self) -> crate::types::PullRequestCreatedEventMetadata {

@@ -63,6 +63,10 @@ impl UpdateTeamMemberOutputBuilder {
         self.user_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the user whose team membership attributes were updated.</p>
+    pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_arn
+    }
     /// <p>The project role granted to the user.</p>
     pub fn project_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_role = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl UpdateTeamMemberOutputBuilder {
         self.project_role = input;
         self
     }
+    /// <p>The project role granted to the user.</p>
+    pub fn get_project_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_role
+    }
     /// <p>Whether a team member is allowed to remotely access project resources using the SSH public key associated with the user's profile.</p>
     pub fn remote_access_allowed(mut self, input: bool) -> Self {
         self.remote_access_allowed = ::std::option::Option::Some(input);
@@ -82,6 +90,10 @@ impl UpdateTeamMemberOutputBuilder {
     pub fn set_remote_access_allowed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.remote_access_allowed = input;
         self
+    }
+    /// <p>Whether a team member is allowed to remotely access project resources using the SSH public key associated with the user's profile.</p>
+    pub fn get_remote_access_allowed(&self) -> &::std::option::Option<bool> {
+        &self.remote_access_allowed
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -92,6 +92,10 @@ impl UpdatePolicyTemplateInputBuilder {
         self.policy_store_id = input;
         self
     }
+    /// <p>Specifies the ID of the policy store that contains the policy template that you want to update.</p>
+    pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_store_id
+    }
     /// <p>Specifies the ID of the policy template that you want to update.</p>
     pub fn policy_template_id(
         mut self,
@@ -108,6 +112,10 @@ impl UpdatePolicyTemplateInputBuilder {
         self.policy_template_id = input;
         self
     }
+    /// <p>Specifies the ID of the policy template that you want to update.</p>
+    pub fn get_policy_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_template_id
+    }
     /// <p>Specifies a new description to apply to the policy template.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -117,6 +125,10 @@ impl UpdatePolicyTemplateInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>Specifies a new description to apply to the policy template.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Specifies new statement content written in Cedar policy language to replace the current body of the policy template.</p>
     /// <p>You can change only the following elements of the policy body:</p>
@@ -149,6 +161,21 @@ impl UpdatePolicyTemplateInputBuilder {
     pub fn set_statement(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.statement = input;
         self
+    }
+    /// <p>Specifies new statement content written in Cedar policy language to replace the current body of the policy template.</p>
+    /// <p>You can change only the following elements of the policy body:</p>
+    /// <ul>
+    /// <li> <p>The <code>action</code> referenced by the policy template.</p> </li>
+    /// <li> <p>Any conditional clauses, such as <code>when</code> or <code>unless</code> clauses.</p> </li>
+    /// </ul>
+    /// <p>You <b>can't</b> change the following elements:</p>
+    /// <ul>
+    /// <li> <p>The effect (<code>permit</code> or <code>forbid</code>) of the policy template.</p> </li>
+    /// <li> <p>The <code>principal</code> referenced by the policy template.</p> </li>
+    /// <li> <p>The <code>resource</code> referenced by the policy template.</p> </li>
+    /// </ul>
+    pub fn get_statement(&self) -> &::std::option::Option<::std::string::String> {
+        &self.statement
     }
     /// Consumes the builder and constructs a [`UpdatePolicyTemplateInput`](crate::operation::update_policy_template::UpdatePolicyTemplateInput).
     pub fn build(

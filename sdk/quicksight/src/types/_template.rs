@@ -81,6 +81,10 @@ impl TemplateBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the template.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The display name of the template.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl TemplateBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The display name of the template.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>A structure describing the versions of the template.</p>
     pub fn version(mut self, input: crate::types::TemplateVersion) -> Self {
@@ -104,6 +112,10 @@ impl TemplateBuilder {
         self.version = input;
         self
     }
+    /// <p>A structure describing the versions of the template.</p>
+    pub fn get_version(&self) -> &::std::option::Option<crate::types::TemplateVersion> {
+        &self.version
+    }
     /// <p>The ID for the template. This is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_id = ::std::option::Option::Some(input.into());
@@ -113,6 +125,10 @@ impl TemplateBuilder {
     pub fn set_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_id = input;
         self
+    }
+    /// <p>The ID for the template. This is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_id
     }
     /// <p>Time when this was last updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -127,6 +143,10 @@ impl TemplateBuilder {
         self.last_updated_time = input;
         self
     }
+    /// <p>Time when this was last updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
+    }
     /// <p>Time when this was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
@@ -139,6 +159,10 @@ impl TemplateBuilder {
     ) -> Self {
         self.created_time = input;
         self
+    }
+    /// <p>Time when this was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
     }
     /// Consumes the builder and constructs a [`Template`](crate::types::Template).
     pub fn build(self) -> crate::types::Template {

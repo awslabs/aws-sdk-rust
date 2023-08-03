@@ -36,6 +36,13 @@ impl UpdateBasePathMappingFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateBasePathMapping as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_base_path_mapping::builders::UpdateBasePathMappingInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl UpdateBasePathMappingFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p>The domain name of the BasePathMapping resource to change.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
     /// <p>The base path of the BasePathMapping resource to change.</p>
     /// <p>To specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
     pub fn base_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -137,6 +148,11 @@ impl UpdateBasePathMappingFluentBuilder {
     pub fn set_base_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_base_path(input);
         self
+    }
+    /// <p>The base path of the BasePathMapping resource to change.</p>
+    /// <p>To specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
+    pub fn get_base_path(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_base_path()
     }
     /// Appends an item to `patchOperations`.
     ///
@@ -154,5 +170,11 @@ impl UpdateBasePathMappingFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_patch_operations(input);
         self
+    }
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
+    pub fn get_patch_operations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
+        self.inner.get_patch_operations()
     }
 }

@@ -234,6 +234,12 @@ impl DescribeLabelingJobOutputBuilder {
         self.labeling_job_status = input;
         self
     }
+    /// <p>The processing status of the labeling job. </p>
+    pub fn get_labeling_job_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::LabelingJobStatus> {
+        &self.labeling_job_status
+    }
     /// <p>Provides a breakdown of the number of data objects labeled by humans, the number of objects labeled by machine, the number of objects than couldn't be labeled, and the total number of objects labeled. </p>
     pub fn label_counters(mut self, input: crate::types::LabelCounters) -> Self {
         self.label_counters = ::std::option::Option::Some(input);
@@ -246,6 +252,10 @@ impl DescribeLabelingJobOutputBuilder {
     ) -> Self {
         self.label_counters = input;
         self
+    }
+    /// <p>Provides a breakdown of the number of data objects labeled by humans, the number of objects labeled by machine, the number of objects than couldn't be labeled, and the total number of objects labeled. </p>
+    pub fn get_label_counters(&self) -> &::std::option::Option<crate::types::LabelCounters> {
+        &self.label_counters
     }
     /// <p>If the job failed, the reason that it failed. </p>
     pub fn failure_reason(
@@ -263,6 +273,10 @@ impl DescribeLabelingJobOutputBuilder {
         self.failure_reason = input;
         self
     }
+    /// <p>If the job failed, the reason that it failed. </p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
+    }
     /// <p>The date and time that the labeling job was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -276,6 +290,10 @@ impl DescribeLabelingJobOutputBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The date and time that the labeling job was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The date and time that the labeling job was last updated.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -288,6 +306,10 @@ impl DescribeLabelingJobOutputBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>The date and time that the labeling job was last updated.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// <p>A unique identifier for work done as part of a labeling job.</p>
     pub fn job_reference_code(
@@ -305,6 +327,10 @@ impl DescribeLabelingJobOutputBuilder {
         self.job_reference_code = input;
         self
     }
+    /// <p>A unique identifier for work done as part of a labeling job.</p>
+    pub fn get_job_reference_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_reference_code
+    }
     /// <p>The name assigned to the labeling job when it was created.</p>
     pub fn labeling_job_name(
         mut self,
@@ -320,6 +346,10 @@ impl DescribeLabelingJobOutputBuilder {
     ) -> Self {
         self.labeling_job_name = input;
         self
+    }
+    /// <p>The name assigned to the labeling job when it was created.</p>
+    pub fn get_labeling_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.labeling_job_name
     }
     /// <p>The Amazon Resource Name (ARN) of the labeling job.</p>
     pub fn labeling_job_arn(
@@ -337,6 +367,10 @@ impl DescribeLabelingJobOutputBuilder {
         self.labeling_job_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the labeling job.</p>
+    pub fn get_labeling_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.labeling_job_arn
+    }
     /// <p>The attribute used as the label in the output manifest file.</p>
     pub fn label_attribute_name(
         mut self,
@@ -353,6 +387,10 @@ impl DescribeLabelingJobOutputBuilder {
         self.label_attribute_name = input;
         self
     }
+    /// <p>The attribute used as the label in the output manifest file.</p>
+    pub fn get_label_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label_attribute_name
+    }
     /// <p>Input configuration information for the labeling job, such as the Amazon S3 location of the data objects and the location of the manifest file that describes the data objects.</p>
     pub fn input_config(mut self, input: crate::types::LabelingJobInputConfig) -> Self {
         self.input_config = ::std::option::Option::Some(input);
@@ -365,6 +403,10 @@ impl DescribeLabelingJobOutputBuilder {
     ) -> Self {
         self.input_config = input;
         self
+    }
+    /// <p>Input configuration information for the labeling job, such as the Amazon S3 location of the data objects and the location of the manifest file that describes the data objects.</p>
+    pub fn get_input_config(&self) -> &::std::option::Option<crate::types::LabelingJobInputConfig> {
+        &self.input_config
     }
     /// <p>The location of the job's output data and the Amazon Web Services Key Management Service key ID for the key used to encrypt the output data, if any.</p>
     pub fn output_config(mut self, input: crate::types::LabelingJobOutputConfig) -> Self {
@@ -379,6 +421,12 @@ impl DescribeLabelingJobOutputBuilder {
         self.output_config = input;
         self
     }
+    /// <p>The location of the job's output data and the Amazon Web Services Key Management Service key ID for the key used to encrypt the output data, if any.</p>
+    pub fn get_output_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::LabelingJobOutputConfig> {
+        &self.output_config
+    }
     /// <p>The Amazon Resource Name (ARN) that SageMaker assumes to perform tasks on your behalf during data labeling.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -388,6 +436,10 @@ impl DescribeLabelingJobOutputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) that SageMaker assumes to perform tasks on your behalf during data labeling.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The S3 location of the JSON file that defines the categories used to label data objects. Please note the following label-category limits:</p>
     /// <ul>
@@ -445,6 +497,32 @@ impl DescribeLabelingJobOutputBuilder {
         self.label_category_config_s3_uri = input;
         self
     }
+    /// <p>The S3 location of the JSON file that defines the categories used to label data objects. Please note the following label-category limits:</p>
+    /// <ul>
+    /// <li> <p>Semantic segmentation labeling jobs using automated labeling: 20 labels</p> </li>
+    /// <li> <p>Box bounding labeling jobs (all): 10 labels</p> </li>
+    /// </ul>
+    /// <p>The file is a JSON structure in the following format:</p>
+    /// <p> <code>{</code> </p>
+    /// <p> <code> "document-version": "2018-11-28"</code> </p>
+    /// <p> <code> "labels": [</code> </p>
+    /// <p> <code> {</code> </p>
+    /// <p> <code> "label": "<i>label 1</i>"</code> </p>
+    /// <p> <code> },</code> </p>
+    /// <p> <code> {</code> </p>
+    /// <p> <code> "label": "<i>label 2</i>"</code> </p>
+    /// <p> <code> },</code> </p>
+    /// <p> <code> ...</code> </p>
+    /// <p> <code> {</code> </p>
+    /// <p> <code> "label": "<i>label n</i>"</code> </p>
+    /// <p> <code> }</code> </p>
+    /// <p> <code> ]</code> </p>
+    /// <p> <code>}</code> </p>
+    pub fn get_label_category_config_s3_uri(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.label_category_config_s3_uri
+    }
     /// <p>A set of conditions for stopping a labeling job. If any of the conditions are met, the job is automatically stopped.</p>
     pub fn stopping_conditions(
         mut self,
@@ -460,6 +538,12 @@ impl DescribeLabelingJobOutputBuilder {
     ) -> Self {
         self.stopping_conditions = input;
         self
+    }
+    /// <p>A set of conditions for stopping a labeling job. If any of the conditions are met, the job is automatically stopped.</p>
+    pub fn get_stopping_conditions(
+        &self,
+    ) -> &::std::option::Option<crate::types::LabelingJobStoppingConditions> {
+        &self.stopping_conditions
     }
     /// <p>Configuration information for automated data labeling.</p>
     pub fn labeling_job_algorithms_config(
@@ -477,6 +561,12 @@ impl DescribeLabelingJobOutputBuilder {
         self.labeling_job_algorithms_config = input;
         self
     }
+    /// <p>Configuration information for automated data labeling.</p>
+    pub fn get_labeling_job_algorithms_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::LabelingJobAlgorithmsConfig> {
+        &self.labeling_job_algorithms_config
+    }
     /// <p>Configuration information required for human workers to complete a labeling task.</p>
     pub fn human_task_config(mut self, input: crate::types::HumanTaskConfig) -> Self {
         self.human_task_config = ::std::option::Option::Some(input);
@@ -489,6 +579,10 @@ impl DescribeLabelingJobOutputBuilder {
     ) -> Self {
         self.human_task_config = input;
         self
+    }
+    /// <p>Configuration information required for human workers to complete a labeling task.</p>
+    pub fn get_human_task_config(&self) -> &::std::option::Option<crate::types::HumanTaskConfig> {
+        &self.human_task_config
     }
     /// Appends an item to `tags`.
     ///
@@ -509,6 +603,10 @@ impl DescribeLabelingJobOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The location of the output produced by the labeling job.</p>
     pub fn labeling_job_output(mut self, input: crate::types::LabelingJobOutput) -> Self {
         self.labeling_job_output = ::std::option::Option::Some(input);
@@ -521,6 +619,12 @@ impl DescribeLabelingJobOutputBuilder {
     ) -> Self {
         self.labeling_job_output = input;
         self
+    }
+    /// <p>The location of the output produced by the labeling job.</p>
+    pub fn get_labeling_job_output(
+        &self,
+    ) -> &::std::option::Option<crate::types::LabelingJobOutput> {
+        &self.labeling_job_output
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

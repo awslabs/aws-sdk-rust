@@ -71,6 +71,10 @@ impl ListTokenBalancesInputBuilder {
         self.owner_filter = input;
         self
     }
+    /// <p>The contract or wallet address on the blockchain network by which to filter the request. You must specify the <code>address</code> property of the <code>ownerFilter</code> when listing balances of tokens owned by the address.</p>
+    pub fn get_owner_filter(&self) -> &::std::option::Option<crate::types::OwnerFilter> {
+        &self.owner_filter
+    }
     /// <p>The contract address or a token identifier on the blockchain network by which to filter the request. You must specify the contractAddress property of this container when listing tokens minted by a contract.</p> <note>
     /// <p>You must always specify the network property of this container when using this operation.</p>
     /// </note>
@@ -88,6 +92,12 @@ impl ListTokenBalancesInputBuilder {
         self.token_filter = input;
         self
     }
+    /// <p>The contract address or a token identifier on the blockchain network by which to filter the request. You must specify the contractAddress property of this container when listing tokens minted by a contract.</p> <note>
+    /// <p>You must always specify the network property of this container when using this operation.</p>
+    /// </note>
+    pub fn get_token_filter(&self) -> &::std::option::Option<crate::types::TokenFilter> {
+        &self.token_filter
+    }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -98,6 +108,10 @@ impl ListTokenBalancesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of token balances to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -107,6 +121,10 @@ impl ListTokenBalancesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of token balances to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListTokenBalancesInput`](crate::operation::list_token_balances::ListTokenBalancesInput).
     pub fn build(

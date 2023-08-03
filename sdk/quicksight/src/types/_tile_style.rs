@@ -40,6 +40,10 @@ impl TileStyleBuilder {
         self.border = input;
         self
     }
+    /// <p>The border around a tile.</p>
+    pub fn get_border(&self) -> &::std::option::Option<crate::types::BorderStyle> {
+        &self.border
+    }
     /// Consumes the builder and constructs a [`TileStyle`](crate::types::TileStyle).
     pub fn build(self) -> crate::types::TileStyle {
         crate::types::TileStyle {

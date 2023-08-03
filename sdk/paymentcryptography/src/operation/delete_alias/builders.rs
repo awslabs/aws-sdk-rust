@@ -45,6 +45,10 @@ impl DeleteAliasFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteAlias as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_alias::builders::DeleteAliasInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,5 +130,9 @@ impl DeleteAliasFluentBuilder {
     pub fn set_alias_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_alias_name(input);
         self
+    }
+    /// <p>A friendly name that you can use to refer Amazon Web Services Payment Cryptography key. This value must begin with <code>alias/</code> followed by a name, such as <code>alias/ExampleAlias</code>.</p>
+    pub fn get_alias_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_alias_name()
     }
 }

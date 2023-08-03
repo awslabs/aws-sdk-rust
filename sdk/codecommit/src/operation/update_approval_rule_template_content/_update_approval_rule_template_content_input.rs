@@ -61,6 +61,10 @@ impl UpdateApprovalRuleTemplateContentInputBuilder {
         self.approval_rule_template_name = input;
         self
     }
+    /// <p>The name of the approval rule template where you want to update the content of the rule. </p>
+    pub fn get_approval_rule_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.approval_rule_template_name
+    }
     /// <p>The content that replaces the existing content of the rule. Content statements must be complete. You cannot provide only the changes.</p>
     pub fn new_rule_content(
         mut self,
@@ -77,6 +81,10 @@ impl UpdateApprovalRuleTemplateContentInputBuilder {
         self.new_rule_content = input;
         self
     }
+    /// <p>The content that replaces the existing content of the rule. Content statements must be complete. You cannot provide only the changes.</p>
+    pub fn get_new_rule_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.new_rule_content
+    }
     /// <p>The SHA-256 hash signature for the content of the approval rule. You can retrieve this information by using <code>GetPullRequest</code>.</p>
     pub fn existing_rule_content_sha256(
         mut self,
@@ -92,6 +100,12 @@ impl UpdateApprovalRuleTemplateContentInputBuilder {
     ) -> Self {
         self.existing_rule_content_sha256 = input;
         self
+    }
+    /// <p>The SHA-256 hash signature for the content of the approval rule. You can retrieve this information by using <code>GetPullRequest</code>.</p>
+    pub fn get_existing_rule_content_sha256(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.existing_rule_content_sha256
     }
     /// Consumes the builder and constructs a [`UpdateApprovalRuleTemplateContentInput`](crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentInput, ::aws_smithy_http::operation::error::BuildError>{

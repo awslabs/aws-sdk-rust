@@ -65,6 +65,10 @@ impl NetworkFirewallUnexpectedGatewayRoutesViolationBuilder {
         self.gateway_id = input;
         self
     }
+    /// <p>Information about the gateway ID.</p>
+    pub fn get_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_id
+    }
     /// Appends an item to `violating_routes`.
     ///
     /// To override the contents of this collection use [`set_violating_routes`](Self::set_violating_routes).
@@ -84,6 +88,12 @@ impl NetworkFirewallUnexpectedGatewayRoutesViolationBuilder {
         self.violating_routes = input;
         self
     }
+    /// <p>The routes that are in violation.</p>
+    pub fn get_violating_routes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Route>> {
+        &self.violating_routes
+    }
     /// <p>Information about the route table.</p>
     pub fn route_table_id(
         mut self,
@@ -100,6 +110,10 @@ impl NetworkFirewallUnexpectedGatewayRoutesViolationBuilder {
         self.route_table_id = input;
         self
     }
+    /// <p>Information about the route table.</p>
+    pub fn get_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.route_table_id
+    }
     /// <p>Information about the VPC ID.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -109,6 +123,10 @@ impl NetworkFirewallUnexpectedGatewayRoutesViolationBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>Information about the VPC ID.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// Consumes the builder and constructs a [`NetworkFirewallUnexpectedGatewayRoutesViolation`](crate::types::NetworkFirewallUnexpectedGatewayRoutesViolation).
     pub fn build(self) -> crate::types::NetworkFirewallUnexpectedGatewayRoutesViolation {

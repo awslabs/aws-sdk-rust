@@ -54,6 +54,10 @@ impl ListPoliciesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `policies`.
     ///
     /// To override the contents of this collection use [`set_policies`](Self::set_policies).
@@ -72,6 +76,12 @@ impl ListPoliciesOutputBuilder {
     ) -> Self {
         self.policies = input;
         self
+    }
+    /// <p>Lists all policies that are available in the specified policy store.</p>
+    pub fn get_policies(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyItem>> {
+        &self.policies
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

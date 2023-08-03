@@ -36,6 +36,10 @@ impl ListMembersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListMembers as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_members::builders::ListMembersInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl ListMembersFluentBuilder {
         self.inner = self.inner.set_detector_id(input);
         self
     }
+    /// <p>The unique ID of the detector the member is associated with.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_detector_id()
+    }
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -137,6 +145,10 @@ impl ListMembersFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -146,6 +158,10 @@ impl ListMembersFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>Specifies whether to only return associated members or to return all members (including members who haven't been invited yet or have been disassociated). Member accounts must have been previously associated with the GuardDuty administrator account using <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html"> <code>Create Members</code> </a>. </p>
     pub fn only_associated(
@@ -162,5 +178,9 @@ impl ListMembersFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_only_associated(input);
         self
+    }
+    /// <p>Specifies whether to only return associated members or to return all members (including members who haven't been invited yet or have been disassociated). Member accounts must have been previously associated with the GuardDuty administrator account using <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html"> <code>Create Members</code> </a>. </p>
+    pub fn get_only_associated(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_only_associated()
     }
 }

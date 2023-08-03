@@ -163,6 +163,10 @@ impl AmazonopensearchserviceDestinationDescriptionBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. </p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>The ARN of the Amazon OpenSearch Service domain.</p>
     pub fn domain_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_arn = ::std::option::Option::Some(input.into());
@@ -172,6 +176,10 @@ impl AmazonopensearchserviceDestinationDescriptionBuilder {
     pub fn set_domain_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_arn = input;
         self
+    }
+    /// <p>The ARN of the Amazon OpenSearch Service domain.</p>
+    pub fn get_domain_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_arn
     }
     /// <p>The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this ClusterEndpoint or the DomainARN field to send data to Amazon OpenSearch Service. </p>
     pub fn cluster_endpoint(
@@ -189,6 +197,10 @@ impl AmazonopensearchserviceDestinationDescriptionBuilder {
         self.cluster_endpoint = input;
         self
     }
+    /// <p>The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this ClusterEndpoint or the DomainARN field to send data to Amazon OpenSearch Service. </p>
+    pub fn get_cluster_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_endpoint
+    }
     /// <p>The Amazon OpenSearch Service index name.</p>
     pub fn index_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_name = ::std::option::Option::Some(input.into());
@@ -199,6 +211,10 @@ impl AmazonopensearchserviceDestinationDescriptionBuilder {
         self.index_name = input;
         self
     }
+    /// <p>The Amazon OpenSearch Service index name.</p>
+    pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_name
+    }
     /// <p>The Amazon OpenSearch Service type name. This applies to Elasticsearch 6.x and lower versions. For Elasticsearch 7.x and OpenSearch Service 1.x, there's no value for TypeName. </p>
     pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_name = ::std::option::Option::Some(input.into());
@@ -208,6 +224,10 @@ impl AmazonopensearchserviceDestinationDescriptionBuilder {
     pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.type_name = input;
         self
+    }
+    /// <p>The Amazon OpenSearch Service type name. This applies to Elasticsearch 6.x and lower versions. For Elasticsearch 7.x and OpenSearch Service 1.x, there's no value for TypeName. </p>
+    pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.type_name
     }
     /// <p>The Amazon OpenSearch Service index rotation period</p>
     pub fn index_rotation_period(
@@ -225,6 +245,12 @@ impl AmazonopensearchserviceDestinationDescriptionBuilder {
         self.index_rotation_period = input;
         self
     }
+    /// <p>The Amazon OpenSearch Service index rotation period</p>
+    pub fn get_index_rotation_period(
+        &self,
+    ) -> &::std::option::Option<crate::types::AmazonopensearchserviceIndexRotationPeriod> {
+        &self.index_rotation_period
+    }
     /// <p>The buffering options.</p>
     pub fn buffering_hints(
         mut self,
@@ -240,6 +266,12 @@ impl AmazonopensearchserviceDestinationDescriptionBuilder {
     ) -> Self {
         self.buffering_hints = input;
         self
+    }
+    /// <p>The buffering options.</p>
+    pub fn get_buffering_hints(
+        &self,
+    ) -> &::std::option::Option<crate::types::AmazonopensearchserviceBufferingHints> {
+        &self.buffering_hints
     }
     /// <p>The Amazon OpenSearch Service retry options.</p>
     pub fn retry_options(
@@ -257,6 +289,12 @@ impl AmazonopensearchserviceDestinationDescriptionBuilder {
         self.retry_options = input;
         self
     }
+    /// <p>The Amazon OpenSearch Service retry options.</p>
+    pub fn get_retry_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::AmazonopensearchserviceRetryOptions> {
+        &self.retry_options
+    }
     /// <p>The Amazon S3 backup mode.</p>
     pub fn s3_backup_mode(
         mut self,
@@ -272,6 +310,12 @@ impl AmazonopensearchserviceDestinationDescriptionBuilder {
     ) -> Self {
         self.s3_backup_mode = input;
         self
+    }
+    /// <p>The Amazon S3 backup mode.</p>
+    pub fn get_s3_backup_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::AmazonopensearchserviceS3BackupMode> {
+        &self.s3_backup_mode
     }
     /// <p>Describes a destination in Amazon S3.</p>
     pub fn s3_destination_description(
@@ -289,6 +333,12 @@ impl AmazonopensearchserviceDestinationDescriptionBuilder {
         self.s3_destination_description = input;
         self
     }
+    /// <p>Describes a destination in Amazon S3.</p>
+    pub fn get_s3_destination_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3DestinationDescription> {
+        &self.s3_destination_description
+    }
     /// <p>Describes a data processing configuration.</p>
     pub fn processing_configuration(
         mut self,
@@ -304,6 +354,12 @@ impl AmazonopensearchserviceDestinationDescriptionBuilder {
     ) -> Self {
         self.processing_configuration = input;
         self
+    }
+    /// <p>Describes a data processing configuration.</p>
+    pub fn get_processing_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProcessingConfiguration> {
+        &self.processing_configuration
     }
     /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
     pub fn cloud_watch_logging_options(
@@ -321,6 +377,12 @@ impl AmazonopensearchserviceDestinationDescriptionBuilder {
         self.cloud_watch_logging_options = input;
         self
     }
+    /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
+    pub fn get_cloud_watch_logging_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::CloudWatchLoggingOptions> {
+        &self.cloud_watch_logging_options
+    }
     /// <p>The details of the VPC of the Amazon ES destination.</p>
     pub fn vpc_configuration_description(
         mut self,
@@ -336,6 +398,12 @@ impl AmazonopensearchserviceDestinationDescriptionBuilder {
     ) -> Self {
         self.vpc_configuration_description = input;
         self
+    }
+    /// <p>The details of the VPC of the Amazon ES destination.</p>
+    pub fn get_vpc_configuration_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::VpcConfigurationDescription> {
+        &self.vpc_configuration_description
     }
     /// Consumes the builder and constructs a [`AmazonopensearchserviceDestinationDescription`](crate::types::AmazonopensearchserviceDestinationDescription).
     pub fn build(self) -> crate::types::AmazonopensearchserviceDestinationDescription {

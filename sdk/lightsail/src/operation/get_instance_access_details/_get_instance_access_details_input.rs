@@ -55,6 +55,10 @@ impl GetInstanceAccessDetailsInputBuilder {
         self.instance_name = input;
         self
     }
+    /// <p>The name of the instance to access.</p>
+    pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_name
+    }
     /// <p>The protocol to use to connect to your instance. Defaults to <code>ssh</code>.</p>
     pub fn protocol(mut self, input: crate::types::InstanceAccessProtocol) -> Self {
         self.protocol = ::std::option::Option::Some(input);
@@ -67,6 +71,10 @@ impl GetInstanceAccessDetailsInputBuilder {
     ) -> Self {
         self.protocol = input;
         self
+    }
+    /// <p>The protocol to use to connect to your instance. Defaults to <code>ssh</code>.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<crate::types::InstanceAccessProtocol> {
+        &self.protocol
     }
     /// Consumes the builder and constructs a [`GetInstanceAccessDetailsInput`](crate::operation::get_instance_access_details::GetInstanceAccessDetailsInput).
     pub fn build(

@@ -46,6 +46,10 @@ impl DeleteSamlProviderInputBuilder {
         self.saml_provider_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the SAML provider to delete.</p>
+    pub fn get_saml_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.saml_provider_arn
+    }
     /// Consumes the builder and constructs a [`DeleteSamlProviderInput`](crate::operation::delete_saml_provider::DeleteSamlProviderInput).
     pub fn build(
         self,

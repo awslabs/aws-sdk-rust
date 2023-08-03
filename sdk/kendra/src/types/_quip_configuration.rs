@@ -148,6 +148,10 @@ impl QuipConfigurationBuilder {
         self.domain = input;
         self
     }
+    /// <p>The Quip site domain. For example, <i>https://quip-company.quipdomain.com/browse</i>. The domain in this example is "quipdomain".</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
+    }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs that are required to connect to your Quip. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
     /// <li> <p>accessToken—The token created in Quip. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html">Using a Quip data source</a>.</p> </li>
@@ -164,6 +168,13 @@ impl QuipConfigurationBuilder {
         self.secret_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs that are required to connect to your Quip. The secret must contain a JSON structure with the following keys:</p>
+    /// <ul>
+    /// <li> <p>accessToken—The token created in Quip. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html">Using a Quip data source</a>.</p> </li>
+    /// </ul>
+    pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_arn
+    }
     /// <p> <code>TRUE</code> to index file comments.</p>
     pub fn crawl_file_comments(mut self, input: bool) -> Self {
         self.crawl_file_comments = ::std::option::Option::Some(input);
@@ -173,6 +184,10 @@ impl QuipConfigurationBuilder {
     pub fn set_crawl_file_comments(mut self, input: ::std::option::Option<bool>) -> Self {
         self.crawl_file_comments = input;
         self
+    }
+    /// <p> <code>TRUE</code> to index file comments.</p>
+    pub fn get_crawl_file_comments(&self) -> &::std::option::Option<bool> {
+        &self.crawl_file_comments
     }
     /// <p> <code>TRUE</code> to index the contents of chat rooms.</p>
     pub fn crawl_chat_rooms(mut self, input: bool) -> Self {
@@ -184,6 +199,10 @@ impl QuipConfigurationBuilder {
         self.crawl_chat_rooms = input;
         self
     }
+    /// <p> <code>TRUE</code> to index the contents of chat rooms.</p>
+    pub fn get_crawl_chat_rooms(&self) -> &::std::option::Option<bool> {
+        &self.crawl_chat_rooms
+    }
     /// <p> <code>TRUE</code> to index attachments.</p>
     pub fn crawl_attachments(mut self, input: bool) -> Self {
         self.crawl_attachments = ::std::option::Option::Some(input);
@@ -193,6 +212,10 @@ impl QuipConfigurationBuilder {
     pub fn set_crawl_attachments(mut self, input: ::std::option::Option<bool>) -> Self {
         self.crawl_attachments = input;
         self
+    }
+    /// <p> <code>TRUE</code> to index attachments.</p>
+    pub fn get_crawl_attachments(&self) -> &::std::option::Option<bool> {
+        &self.crawl_attachments
     }
     /// Appends an item to `folder_ids`.
     ///
@@ -212,6 +235,10 @@ impl QuipConfigurationBuilder {
     ) -> Self {
         self.folder_ids = input;
         self
+    }
+    /// <p>The identifiers of the Quip folders you want to index. You can find the folder ID in your browser URL when you access your folder in Quip. For example, <i>https://quip-company.quipdomain.com/zlLuOVNSarTL/folder-name</i>. The folder ID in this example is "zlLuOVNSarTL".</p>
+    pub fn get_folder_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.folder_ids
     }
     /// Appends an item to `thread_field_mappings`.
     ///
@@ -235,6 +262,12 @@ impl QuipConfigurationBuilder {
         self.thread_field_mappings = input;
         self
     }
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Quip threads to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Quip fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Quip field names must exist in your Quip custom metadata.</p>
+    pub fn get_thread_field_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>> {
+        &self.thread_field_mappings
+    }
     /// Appends an item to `message_field_mappings`.
     ///
     /// To override the contents of this collection use [`set_message_field_mappings`](Self::set_message_field_mappings).
@@ -256,6 +289,12 @@ impl QuipConfigurationBuilder {
     ) -> Self {
         self.message_field_mappings = input;
         self
+    }
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Quip messages to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Quip fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Quip field names must exist in your Quip custom metadata.</p>
+    pub fn get_message_field_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>> {
+        &self.message_field_mappings
     }
     /// Appends an item to `attachment_field_mappings`.
     ///
@@ -279,6 +318,12 @@ impl QuipConfigurationBuilder {
         self.attachment_field_mappings = input;
         self
     }
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Quip attachments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Quip fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Quip field names must exist in your Quip custom metadata.</p>
+    pub fn get_attachment_field_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>> {
+        &self.attachment_field_mappings
+    }
     /// Appends an item to `inclusion_patterns`.
     ///
     /// To override the contents of this collection use [`set_inclusion_patterns`](Self::set_inclusion_patterns).
@@ -300,6 +345,12 @@ impl QuipConfigurationBuilder {
     ) -> Self {
         self.inclusion_patterns = input;
         self
+    }
+    /// <p>A list of regular expression patterns to include certain files in your Quip file system. Files that match the patterns are included in the index. Files that don't match the patterns are excluded from the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence, and the file isn't included in the index.</p>
+    pub fn get_inclusion_patterns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.inclusion_patterns
     }
     /// Appends an item to `exclusion_patterns`.
     ///
@@ -323,6 +374,12 @@ impl QuipConfigurationBuilder {
         self.exclusion_patterns = input;
         self
     }
+    /// <p>A list of regular expression patterns to exclude certain files in your Quip file system. Files that match the patterns are excluded from the index. Files that don’t match the patterns are included in the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence, and the file isn't included in the index.</p>
+    pub fn get_exclusion_patterns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.exclusion_patterns
+    }
     /// <p>Configuration information for an Amazon Virtual Private Cloud (VPC) to connect to your Quip. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
     pub fn vpc_configuration(mut self, input: crate::types::DataSourceVpcConfiguration) -> Self {
         self.vpc_configuration = ::std::option::Option::Some(input);
@@ -335,6 +392,12 @@ impl QuipConfigurationBuilder {
     ) -> Self {
         self.vpc_configuration = input;
         self
+    }
+    /// <p>Configuration information for an Amazon Virtual Private Cloud (VPC) to connect to your Quip. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
+    pub fn get_vpc_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataSourceVpcConfiguration> {
+        &self.vpc_configuration
     }
     /// Consumes the builder and constructs a [`QuipConfiguration`](crate::types::QuipConfiguration).
     pub fn build(self) -> crate::types::QuipConfiguration {

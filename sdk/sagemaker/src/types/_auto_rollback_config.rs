@@ -49,6 +49,10 @@ impl AutoRollbackConfigBuilder {
         self.alarms = input;
         self
     }
+    /// <p>List of CloudWatch alarms in your account that are configured to monitor metrics on an endpoint. If any alarms are tripped during a deployment, SageMaker rolls back the deployment.</p>
+    pub fn get_alarms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Alarm>> {
+        &self.alarms
+    }
     /// Consumes the builder and constructs a [`AutoRollbackConfig`](crate::types::AutoRollbackConfig).
     pub fn build(self) -> crate::types::AutoRollbackConfig {
         crate::types::AutoRollbackConfig {

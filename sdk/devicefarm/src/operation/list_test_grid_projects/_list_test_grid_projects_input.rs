@@ -48,6 +48,10 @@ impl ListTestGridProjectsInputBuilder {
         self.max_result = input;
         self
     }
+    /// <p>Return no more than this number of results.</p>
+    pub fn get_max_result(&self) -> &::std::option::Option<i32> {
+        &self.max_result
+    }
     /// <p>From a response, used to continue a paginated listing. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl ListTestGridProjectsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>From a response, used to continue a paginated listing. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListTestGridProjectsInput`](crate::operation::list_test_grid_projects::ListTestGridProjectsInput).
     pub fn build(

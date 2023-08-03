@@ -39,6 +39,10 @@ impl DescribeBridgeInputBuilder {
         self.bridge_arn = input;
         self
     }
+    /// The ARN of the bridge that you want to describe.
+    pub fn get_bridge_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bridge_arn
+    }
     /// Consumes the builder and constructs a [`DescribeBridgeInput`](crate::operation::describe_bridge::DescribeBridgeInput).
     pub fn build(
         self,

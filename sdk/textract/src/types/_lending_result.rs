@@ -56,6 +56,10 @@ impl LendingResultBuilder {
         self.page = input;
         self
     }
+    /// <p>The page number for a page, with regard to whole submission.</p>
+    pub fn get_page(&self) -> &::std::option::Option<i32> {
+        &self.page
+    }
     /// <p>The classifier result for a given page.</p>
     pub fn page_classification(mut self, input: crate::types::PageClassification) -> Self {
         self.page_classification = ::std::option::Option::Some(input);
@@ -68,6 +72,12 @@ impl LendingResultBuilder {
     ) -> Self {
         self.page_classification = input;
         self
+    }
+    /// <p>The classifier result for a given page.</p>
+    pub fn get_page_classification(
+        &self,
+    ) -> &::std::option::Option<crate::types::PageClassification> {
+        &self.page_classification
     }
     /// Appends an item to `extractions`.
     ///
@@ -87,6 +97,12 @@ impl LendingResultBuilder {
     ) -> Self {
         self.extractions = input;
         self
+    }
+    /// <p>An array of Extraction to hold structured data. e.g. normalized key value pairs instead of raw OCR detections .</p>
+    pub fn get_extractions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Extraction>> {
+        &self.extractions
     }
     /// Consumes the builder and constructs a [`LendingResult`](crate::types::LendingResult).
     pub fn build(self) -> crate::types::LendingResult {

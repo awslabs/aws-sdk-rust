@@ -36,6 +36,12 @@ impl CreateKxClusterFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateKxCluster as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_kx_cluster::builders::CreateKxClusterInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateKxClusterFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>A unique identifier for the kdb environment.</p>
     pub fn environment_id(
         mut self,
@@ -142,6 +152,10 @@ impl CreateKxClusterFluentBuilder {
         self.inner = self.inner.set_environment_id(input);
         self
     }
+    /// <p>A unique identifier for the kdb environment.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_id()
+    }
     /// <p>A unique name for the cluster that you want to create.</p>
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_name(input.into());
@@ -151,6 +165,10 @@ impl CreateKxClusterFluentBuilder {
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_name(input);
         self
+    }
+    /// <p>A unique name for the cluster that you want to create.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_name()
     }
     /// <p>Specifies the type of KDB database that is being created. The following types are available: </p>
     /// <ul>
@@ -175,6 +193,15 @@ impl CreateKxClusterFluentBuilder {
         self.inner = self.inner.set_cluster_type(input);
         self
     }
+    /// <p>Specifies the type of KDB database that is being created. The following types are available: </p>
+    /// <ul>
+    /// <li> <p>HDB – A Historical Database. The data is only accessible with read-only permissions from one of the FinSpace managed kdb databases mounted to the cluster.</p> </li>
+    /// <li> <p>RDB – A Realtime Database. This type of database captures all the data from a ticker plant and stores it in memory until the end of day, after which it writes all of its data to a disk and reloads the HDB. This cluster type requires local storage for temporary storage of data during the savedown process. If you specify this field in your request, you must provide the <code>savedownStorageConfiguration</code> parameter.</p> </li>
+    /// <li> <p>GATEWAY – A gateway cluster allows you to access data across processes in kdb systems. It allows you to create your own routing logic using the initialization scripts and custom code. This type of cluster does not require a writable local storage.</p> </li>
+    /// </ul>
+    pub fn get_cluster_type(&self) -> &::std::option::Option<crate::types::KxClusterType> {
+        self.inner.get_cluster_type()
+    }
     /// Appends an item to `databases`.
     ///
     /// To override the contents of this collection use [`set_databases`](Self::set_databases).
@@ -191,6 +218,12 @@ impl CreateKxClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_databases(input);
         self
+    }
+    /// <p>A list of databases that will be available for querying.</p>
+    pub fn get_databases(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseConfiguration>> {
+        self.inner.get_databases()
     }
     /// Appends an item to `cacheStorageConfigurations`.
     ///
@@ -212,6 +245,12 @@ impl CreateKxClusterFluentBuilder {
         self.inner = self.inner.set_cache_storage_configurations(input);
         self
     }
+    /// <p>The configurations for a read only cache storage associated with a cluster. This cache will be stored as an FSx Lustre that reads from the S3 store. </p>
+    pub fn get_cache_storage_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KxCacheStorageConfiguration>> {
+        self.inner.get_cache_storage_configurations()
+    }
     /// <p>The configuration based on which FinSpace will scale in or scale out nodes in your cluster.</p>
     pub fn auto_scaling_configuration(
         mut self,
@@ -227,6 +266,12 @@ impl CreateKxClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_auto_scaling_configuration(input);
         self
+    }
+    /// <p>The configuration based on which FinSpace will scale in or scale out nodes in your cluster.</p>
+    pub fn get_auto_scaling_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoScalingConfiguration> {
+        self.inner.get_auto_scaling_configuration()
     }
     /// <p>A description of the cluster.</p>
     pub fn cluster_description(
@@ -244,6 +289,10 @@ impl CreateKxClusterFluentBuilder {
         self.inner = self.inner.set_cluster_description(input);
         self
     }
+    /// <p>A description of the cluster.</p>
+    pub fn get_cluster_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_description()
+    }
     /// <p>A structure for the metadata of a cluster. It includes information about like the CPUs needed, memory of instances, number of instances, and the port used while establishing a connection.</p>
     pub fn capacity_configuration(mut self, input: crate::types::CapacityConfiguration) -> Self {
         self.inner = self.inner.capacity_configuration(input);
@@ -256,6 +305,12 @@ impl CreateKxClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_capacity_configuration(input);
         self
+    }
+    /// <p>A structure for the metadata of a cluster. It includes information about like the CPUs needed, memory of instances, number of instances, and the port used while establishing a connection.</p>
+    pub fn get_capacity_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CapacityConfiguration> {
+        self.inner.get_capacity_configuration()
     }
     /// <p>The version of FinSpace managed kdb to run.</p>
     pub fn release_label(
@@ -273,6 +328,10 @@ impl CreateKxClusterFluentBuilder {
         self.inner = self.inner.set_release_label(input);
         self
     }
+    /// <p>The version of FinSpace managed kdb to run.</p>
+    pub fn get_release_label(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_release_label()
+    }
     /// <p>Configuration details about the network where the Privatelink endpoint of the cluster resides.</p>
     pub fn vpc_configuration(mut self, input: crate::types::VpcConfiguration) -> Self {
         self.inner = self.inner.vpc_configuration(input);
@@ -285,6 +344,10 @@ impl CreateKxClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_vpc_configuration(input);
         self
+    }
+    /// <p>Configuration details about the network where the Privatelink endpoint of the cluster resides.</p>
+    pub fn get_vpc_configuration(&self) -> &::std::option::Option<crate::types::VpcConfiguration> {
+        self.inner.get_vpc_configuration()
     }
     /// <p>Specifies a Q program that will be run at launch of a cluster. It is a relative path within <i>.zip</i> file that contains the custom code, which will be loaded on the cluster. It must include the file name itself. For example, <code>somedir/init.q</code>.</p>
     pub fn initialization_script(
@@ -301,6 +364,10 @@ impl CreateKxClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_initialization_script(input);
         self
+    }
+    /// <p>Specifies a Q program that will be run at launch of a cluster. It is a relative path within <i>.zip</i> file that contains the custom code, which will be loaded on the cluster. It must include the file name itself. For example, <code>somedir/init.q</code>.</p>
+    pub fn get_initialization_script(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_initialization_script()
     }
     /// Appends an item to `commandLineArguments`.
     ///
@@ -319,6 +386,12 @@ impl CreateKxClusterFluentBuilder {
         self.inner = self.inner.set_command_line_arguments(input);
         self
     }
+    /// <p>Defines the key-value pairs to make them available inside the cluster.</p>
+    pub fn get_command_line_arguments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KxCommandLineArgument>> {
+        self.inner.get_command_line_arguments()
+    }
     /// <p>The details of the custom code that you want to use inside a cluster when analyzing a data. It consists of the S3 source bucket, location, S3 object version, and the relative path from where the custom code is loaded into the cluster. </p>
     pub fn code(mut self, input: crate::types::CodeConfiguration) -> Self {
         self.inner = self.inner.code(input);
@@ -331,6 +404,10 @@ impl CreateKxClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_code(input);
         self
+    }
+    /// <p>The details of the custom code that you want to use inside a cluster when analyzing a data. It consists of the S3 source bucket, location, S3 object version, and the relative path from where the custom code is loaded into the cluster. </p>
+    pub fn get_code(&self) -> &::std::option::Option<crate::types::CodeConfiguration> {
+        self.inner.get_code()
     }
     /// <p>An IAM role that defines a set of permissions associated with a cluster. These permissions are assumed when a cluster attempts to access another cluster.</p>
     pub fn execution_role(
@@ -348,6 +425,10 @@ impl CreateKxClusterFluentBuilder {
         self.inner = self.inner.set_execution_role(input);
         self
     }
+    /// <p>An IAM role that defines a set of permissions associated with a cluster. These permissions are assumed when a cluster attempts to access another cluster.</p>
+    pub fn get_execution_role(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_execution_role()
+    }
     /// <p>The size and type of the temporary storage that is used to hold data during the savedown process. This parameter is required when you choose <code>clusterType</code> as RDB. All the data written to this storage space is lost when the cluster node is restarted.</p>
     pub fn savedown_storage_configuration(
         mut self,
@@ -363,6 +444,12 @@ impl CreateKxClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_savedown_storage_configuration(input);
         self
+    }
+    /// <p>The size and type of the temporary storage that is used to hold data during the savedown process. This parameter is required when you choose <code>clusterType</code> as RDB. All the data written to this storage space is lost when the cluster node is restarted.</p>
+    pub fn get_savedown_storage_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::KxSavedownStorageConfiguration> {
+        self.inner.get_savedown_storage_configuration()
     }
     /// <p>The number of availability zones you want to assign per cluster. This can be one of the following </p>
     /// <ul>
@@ -382,6 +469,14 @@ impl CreateKxClusterFluentBuilder {
         self.inner = self.inner.set_az_mode(input);
         self
     }
+    /// <p>The number of availability zones you want to assign per cluster. This can be one of the following </p>
+    /// <ul>
+    /// <li> <p> <code>SINGLE</code> – Assigns one availability zone per cluster.</p> </li>
+    /// <li> <p> <code>MULTI</code> – Assigns all the availability zones per cluster.</p> </li>
+    /// </ul>
+    pub fn get_az_mode(&self) -> &::std::option::Option<crate::types::KxAzMode> {
+        self.inner.get_az_mode()
+    }
     /// <p>The availability zone identifiers for the requested regions.</p>
     pub fn availability_zone_id(
         mut self,
@@ -397,6 +492,10 @@ impl CreateKxClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_availability_zone_id(input);
         self
+    }
+    /// <p>The availability zone identifiers for the requested regions.</p>
+    pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_availability_zone_id()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -420,5 +519,13 @@ impl CreateKxClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of key-value pairs to label the cluster. You can add up to 50 tags to a cluster.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

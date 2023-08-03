@@ -36,6 +36,12 @@ impl PutApplicationPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutApplicationPolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_application_policy::builders::PutApplicationPolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl PutApplicationPolicyFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// Appends an item to `Statements`.
     ///
     /// To override the contents of this collection use [`set_statements`](Self::set_statements).
@@ -148,5 +158,11 @@ impl PutApplicationPolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_statements(input);
         self
+    }
+    /// <p>An array of policy statements applied to the application.</p>
+    pub fn get_statements(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationPolicyStatement>> {
+        self.inner.get_statements()
     }
 }

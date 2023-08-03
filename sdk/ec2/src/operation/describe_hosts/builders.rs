@@ -37,6 +37,12 @@ impl DescribeHostsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeHosts as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_hosts::builders::DescribeHostsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -155,6 +161,19 @@ impl DescribeHostsFluentBuilder {
         self.inner = self.inner.set_filter(input);
         self
     }
+    /// <p>The filters.</p>
+    /// <ul>
+    /// <li> <p> <code>auto-placement</code> - Whether auto-placement is enabled or disabled (<code>on</code> | <code>off</code>).</p> </li>
+    /// <li> <p> <code>availability-zone</code> - The Availability Zone of the host.</p> </li>
+    /// <li> <p> <code>client-token</code> - The idempotency token that you provided when you allocated the host.</p> </li>
+    /// <li> <p> <code>host-reservation-id</code> - The ID of the reservation assigned to this host.</p> </li>
+    /// <li> <p> <code>instance-type</code> - The instance type size that the Dedicated Host is configured to support.</p> </li>
+    /// <li> <p> <code>state</code> - The allocation state of the Dedicated Host (<code>available</code> | <code>under-assessment</code> | <code>permanent-failure</code> | <code>released</code> | <code>released-permanent-failure</code>).</p> </li>
+    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
+    /// </ul>
+    pub fn get_filter(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filter()
+    }
     /// Appends an item to `HostIds`.
     ///
     /// To override the contents of this collection use [`set_host_ids`](Self::set_host_ids).
@@ -172,6 +191,10 @@ impl DescribeHostsFluentBuilder {
         self.inner = self.inner.set_host_ids(input);
         self
     }
+    /// <p>The IDs of the Dedicated Hosts. The IDs are used for targeted instance launches.</p>
+    pub fn get_host_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_host_ids()
+    }
     /// <p>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.</p>
     /// <p>You cannot specify this parameter and the host IDs parameter in the same request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -184,6 +207,11 @@ impl DescribeHostsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.</p>
+    /// <p>You cannot specify this parameter and the host IDs parameter in the same request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token to use to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -193,5 +221,9 @@ impl DescribeHostsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token to use to retrieve the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

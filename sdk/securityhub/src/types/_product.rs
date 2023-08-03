@@ -117,6 +117,10 @@ impl ProductBuilder {
         self.product_arn = input;
         self
     }
+    /// <p>The ARN assigned to the product.</p>
+    pub fn get_product_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product_arn
+    }
     /// <p>The name of the product.</p>
     pub fn product_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_name = ::std::option::Option::Some(input.into());
@@ -126,6 +130,10 @@ impl ProductBuilder {
     pub fn set_product_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product_name = input;
         self
+    }
+    /// <p>The name of the product.</p>
+    pub fn get_product_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product_name
     }
     /// <p>The name of the company that provides the product.</p>
     pub fn company_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -137,6 +145,10 @@ impl ProductBuilder {
         self.company_name = input;
         self
     }
+    /// <p>The name of the company that provides the product.</p>
+    pub fn get_company_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.company_name
+    }
     /// <p>A description of the product.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -146,6 +158,10 @@ impl ProductBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the product.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `categories`.
     ///
@@ -165,6 +181,10 @@ impl ProductBuilder {
     ) -> Self {
         self.categories = input;
         self
+    }
+    /// <p>The categories assigned to the product.</p>
+    pub fn get_categories(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.categories
     }
     /// Appends an item to `integration_types`.
     ///
@@ -195,6 +215,17 @@ impl ProductBuilder {
         self.integration_types = input;
         self
     }
+    /// <p>The types of integration that the product supports. Available values are the following.</p>
+    /// <ul>
+    /// <li> <p> <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The integration sends findings to Security Hub.</p> </li>
+    /// <li> <p> <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives findings from Security Hub.</p> </li>
+    /// <li> <p> <code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new findings to Security Hub, but does make updates to the findings that it receives from Security Hub.</p> </li>
+    /// </ul>
+    pub fn get_integration_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IntegrationType>> {
+        &self.integration_types
+    }
     /// <p>For integrations with Amazon Web Services services, the Amazon Web Services Console URL from which to activate the service.</p>
     /// <p>For integrations with third-party products, the Amazon Web Services Marketplace URL from which to subscribe to or purchase the product.</p>
     pub fn marketplace_url(
@@ -213,6 +244,11 @@ impl ProductBuilder {
         self.marketplace_url = input;
         self
     }
+    /// <p>For integrations with Amazon Web Services services, the Amazon Web Services Console URL from which to activate the service.</p>
+    /// <p>For integrations with third-party products, the Amazon Web Services Marketplace URL from which to subscribe to or purchase the product.</p>
+    pub fn get_marketplace_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marketplace_url
+    }
     /// <p>The URL to the service or product documentation about the integration with Security Hub, including how to activate the integration.</p>
     pub fn activation_url(
         mut self,
@@ -229,6 +265,10 @@ impl ProductBuilder {
         self.activation_url = input;
         self
     }
+    /// <p>The URL to the service or product documentation about the integration with Security Hub, including how to activate the integration.</p>
+    pub fn get_activation_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.activation_url
+    }
     /// <p>The resource policy associated with the product.</p>
     pub fn product_subscription_resource_policy(
         mut self,
@@ -244,6 +284,12 @@ impl ProductBuilder {
     ) -> Self {
         self.product_subscription_resource_policy = input;
         self
+    }
+    /// <p>The resource policy associated with the product.</p>
+    pub fn get_product_subscription_resource_policy(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.product_subscription_resource_policy
     }
     /// Consumes the builder and constructs a [`Product`](crate::types::Product).
     pub fn build(self) -> crate::types::Product {

@@ -52,6 +52,10 @@ impl StreamConfigurationSessionStorageBuilder {
         self.root = input;
         self
     }
+    /// <p>The configuration for the upload storage root of the streaming session.</p>
+    pub fn get_root(&self) -> &::std::option::Option<crate::types::StreamingSessionStorageRoot> {
+        &self.root
+    }
     /// Appends an item to `mode`.
     ///
     /// To override the contents of this collection use [`set_mode`](Self::set_mode).
@@ -70,6 +74,12 @@ impl StreamConfigurationSessionStorageBuilder {
     ) -> Self {
         self.mode = input;
         self
+    }
+    /// <p>Allows artists to upload files to their workstations. The only valid option is <code>UPLOAD</code>.</p>
+    pub fn get_mode(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamingSessionStorageMode>> {
+        &self.mode
     }
     /// Consumes the builder and constructs a [`StreamConfigurationSessionStorage`](crate::types::StreamConfigurationSessionStorage).
     pub fn build(self) -> crate::types::StreamConfigurationSessionStorage {

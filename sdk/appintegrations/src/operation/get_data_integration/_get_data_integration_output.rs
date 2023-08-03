@@ -155,6 +155,10 @@ impl GetDataIntegrationOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the DataIntegration.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>A unique identifier.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -165,6 +169,10 @@ impl GetDataIntegrationOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>A unique identifier.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the DataIntegration.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -174,6 +182,10 @@ impl GetDataIntegrationOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the DataIntegration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The KMS key for the DataIntegration.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -186,6 +198,10 @@ impl GetDataIntegrationOutputBuilder {
         self
     }
     /// <p>The KMS key for the DataIntegration.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
+    /// <p>The KMS key for the DataIntegration.</p>
     pub fn kms_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key = ::std::option::Option::Some(input.into());
         self
@@ -194,6 +210,10 @@ impl GetDataIntegrationOutputBuilder {
     pub fn set_kms_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key = input;
         self
+    }
+    /// <p>The KMS key for the DataIntegration.</p>
+    pub fn get_kms_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key
     }
     /// <p>The URI of the data source.</p>
     pub fn source_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -204,6 +224,10 @@ impl GetDataIntegrationOutputBuilder {
     pub fn set_source_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_uri = input;
         self
+    }
+    /// <p>The URI of the data source.</p>
+    pub fn get_source_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_uri
     }
     /// <p>The name of the data and how often it should be pulled from the source.</p>
     pub fn schedule_configuration(mut self, input: crate::types::ScheduleConfiguration) -> Self {
@@ -217,6 +241,12 @@ impl GetDataIntegrationOutputBuilder {
     ) -> Self {
         self.schedule_configuration = input;
         self
+    }
+    /// <p>The name of the data and how often it should be pulled from the source.</p>
+    pub fn get_schedule_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ScheduleConfiguration> {
+        &self.schedule_configuration
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -243,6 +273,14 @@ impl GetDataIntegrationOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The configuration for what files should be pulled from the source.</p>
     pub fn file_configuration(mut self, input: crate::types::FileConfiguration) -> Self {
         self.file_configuration = ::std::option::Option::Some(input);
@@ -255,6 +293,12 @@ impl GetDataIntegrationOutputBuilder {
     ) -> Self {
         self.file_configuration = input;
         self
+    }
+    /// <p>The configuration for what files should be pulled from the source.</p>
+    pub fn get_file_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::FileConfiguration> {
+        &self.file_configuration
     }
     /// Adds a key-value pair to `object_configuration`.
     ///
@@ -289,6 +333,20 @@ impl GetDataIntegrationOutputBuilder {
     ) -> Self {
         self.object_configuration = input;
         self
+    }
+    /// <p>The configuration for what data should be pulled from the source.</p>
+    pub fn get_object_configuration(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            ::std::collections::HashMap<
+                ::std::string::String,
+                ::std::vec::Vec<::std::string::String>,
+            >,
+        >,
+    > {
+        &self.object_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

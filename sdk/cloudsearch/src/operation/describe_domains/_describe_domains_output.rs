@@ -57,6 +57,12 @@ impl DescribeDomainsOutputBuilder {
         self.domain_status_list = input;
         self
     }
+    /// <p>A list that contains the status of each requested domain.</p>
+    pub fn get_domain_status_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainStatus>> {
+        &self.domain_status_list
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

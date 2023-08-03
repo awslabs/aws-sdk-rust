@@ -70,6 +70,10 @@ impl UpdateArchiveOutputBuilder {
         self.archive_arn = input;
         self
     }
+    /// <p>The ARN of the archive.</p>
+    pub fn get_archive_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.archive_arn
+    }
     /// <p>The state of the archive.</p>
     pub fn state(mut self, input: crate::types::ArchiveState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -80,6 +84,10 @@ impl UpdateArchiveOutputBuilder {
         self.state = input;
         self
     }
+    /// <p>The state of the archive.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ArchiveState> {
+        &self.state
+    }
     /// <p>The reason that the archive is in the current state.</p>
     pub fn state_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_reason = ::std::option::Option::Some(input.into());
@@ -89,6 +97,10 @@ impl UpdateArchiveOutputBuilder {
     pub fn set_state_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_reason = input;
         self
+    }
+    /// <p>The reason that the archive is in the current state.</p>
+    pub fn get_state_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_reason
     }
     /// <p>The time at which the archive was updated.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -102,6 +114,10 @@ impl UpdateArchiveOutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The time at which the archive was updated.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

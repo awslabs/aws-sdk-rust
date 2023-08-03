@@ -96,6 +96,12 @@ impl BackendApiResourceConfigBuilder {
         self.additional_auth_types = input;
         self
     }
+    /// <p>Additional authentication methods used to interact with your data models.</p>
+    pub fn get_additional_auth_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BackendApiAuthType>> {
+        &self.additional_auth_types
+    }
     /// <p>The API name used to interact with the data model, configured as a part of your Amplify project.</p>
     pub fn api_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_name = ::std::option::Option::Some(input.into());
@@ -105,6 +111,10 @@ impl BackendApiResourceConfigBuilder {
     pub fn set_api_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_name = input;
         self
+    }
+    /// <p>The API name used to interact with the data model, configured as a part of your Amplify project.</p>
+    pub fn get_api_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_name
     }
     /// <p>The conflict resolution strategy for your data stored in the data models.</p>
     pub fn conflict_resolution(
@@ -122,6 +132,12 @@ impl BackendApiResourceConfigBuilder {
         self.conflict_resolution = input;
         self
     }
+    /// <p>The conflict resolution strategy for your data stored in the data models.</p>
+    pub fn get_conflict_resolution(
+        &self,
+    ) -> &::std::option::Option<crate::types::BackendApiConflictResolution> {
+        &self.conflict_resolution
+    }
     /// <p>The default authentication type for interacting with the configured data models in your Amplify project.</p>
     pub fn default_auth_type(mut self, input: crate::types::BackendApiAuthType) -> Self {
         self.default_auth_type = ::std::option::Option::Some(input);
@@ -135,6 +151,12 @@ impl BackendApiResourceConfigBuilder {
         self.default_auth_type = input;
         self
     }
+    /// <p>The default authentication type for interacting with the configured data models in your Amplify project.</p>
+    pub fn get_default_auth_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::BackendApiAuthType> {
+        &self.default_auth_type
+    }
     /// <p>The service used to provision and interact with the data model.</p>
     pub fn service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service = ::std::option::Option::Some(input.into());
@@ -144,6 +166,10 @@ impl BackendApiResourceConfigBuilder {
     pub fn set_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service = input;
         self
+    }
+    /// <p>The service used to provision and interact with the data model.</p>
+    pub fn get_service(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service
     }
     /// <p>The definition of the data model in the annotated transform of the GraphQL schema.</p>
     pub fn transform_schema(
@@ -160,6 +186,10 @@ impl BackendApiResourceConfigBuilder {
     ) -> Self {
         self.transform_schema = input;
         self
+    }
+    /// <p>The definition of the data model in the annotated transform of the GraphQL schema.</p>
+    pub fn get_transform_schema(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transform_schema
     }
     /// Consumes the builder and constructs a [`BackendApiResourceConfig`](crate::types::BackendApiResourceConfig).
     pub fn build(self) -> crate::types::BackendApiResourceConfig {

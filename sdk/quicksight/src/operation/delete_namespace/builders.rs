@@ -36,6 +36,12 @@ impl DeleteNamespaceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteNamespace as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_namespace::builders::DeleteNamespaceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl DeleteNamespaceFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The ID for the Amazon Web Services account that you want to delete the Amazon QuickSight namespace from.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>The namespace that you want to delete.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace(input.into());
@@ -141,5 +151,9 @@ impl DeleteNamespaceFluentBuilder {
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace(input);
         self
+    }
+    /// <p>The namespace that you want to delete.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_namespace()
     }
 }

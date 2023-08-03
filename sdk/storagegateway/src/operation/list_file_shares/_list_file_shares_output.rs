@@ -64,6 +64,10 @@ impl ListFileSharesOutputBuilder {
         self.marker = input;
         self
     }
+    /// <p>If the request includes <code>Marker</code>, the response returns that value in this field.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// <p>If a value is present, there are more file shares to return. In a subsequent request, use <code>NextMarker</code> as the value for <code>Marker</code> to retrieve the next set of file shares.</p>
     pub fn next_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_marker = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl ListFileSharesOutputBuilder {
     pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_marker = input;
         self
+    }
+    /// <p>If a value is present, there are more file shares to return. In a subsequent request, use <code>NextMarker</code> as the value for <code>Marker</code> to retrieve the next set of file shares.</p>
+    pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_marker
     }
     /// Appends an item to `file_share_info_list`.
     ///
@@ -92,6 +100,12 @@ impl ListFileSharesOutputBuilder {
     ) -> Self {
         self.file_share_info_list = input;
         self
+    }
+    /// <p>An array of information about the S3 File Gateway's file shares.</p>
+    pub fn get_file_share_info_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FileShareInfo>> {
+        &self.file_share_info_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

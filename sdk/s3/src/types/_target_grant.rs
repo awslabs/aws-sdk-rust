@@ -49,6 +49,10 @@ impl TargetGrantBuilder {
         self.grantee = input;
         self
     }
+    /// <p>Container for the person being granted permissions.</p>
+    pub fn get_grantee(&self) -> &::std::option::Option<crate::types::Grantee> {
+        &self.grantee
+    }
     /// <p>Logging permissions assigned to the grantee for the bucket.</p>
     pub fn permission(mut self, input: crate::types::BucketLogsPermission) -> Self {
         self.permission = ::std::option::Option::Some(input);
@@ -61,6 +65,10 @@ impl TargetGrantBuilder {
     ) -> Self {
         self.permission = input;
         self
+    }
+    /// <p>Logging permissions assigned to the grantee for the bucket.</p>
+    pub fn get_permission(&self) -> &::std::option::Option<crate::types::BucketLogsPermission> {
+        &self.permission
     }
     /// Consumes the builder and constructs a [`TargetGrant`](crate::types::TargetGrant).
     pub fn build(self) -> crate::types::TargetGrant {

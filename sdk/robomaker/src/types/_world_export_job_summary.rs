@@ -148,6 +148,10 @@ impl WorldExportJobSummaryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the world export job.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The status of the world export job.</p>
     /// <dl>
     /// <dt>
@@ -237,6 +241,48 @@ impl WorldExportJobSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the world export job.</p>
+    /// <dl>
+    /// <dt>
+    /// Pending
+    /// </dt>
+    /// <dd>
+    /// <p>The world export job request is pending.</p>
+    /// </dd>
+    /// <dt>
+    /// Running
+    /// </dt>
+    /// <dd>
+    /// <p>The world export job is running. </p>
+    /// </dd>
+    /// <dt>
+    /// Completed
+    /// </dt>
+    /// <dd>
+    /// <p>The world export job completed. </p>
+    /// </dd>
+    /// <dt>
+    /// Failed
+    /// </dt>
+    /// <dd>
+    /// <p>The world export job failed. See <code>failureCode</code> for more information. </p>
+    /// </dd>
+    /// <dt>
+    /// Canceled
+    /// </dt>
+    /// <dd>
+    /// <p>The world export job was cancelled.</p>
+    /// </dd>
+    /// <dt>
+    /// Canceling
+    /// </dt>
+    /// <dd>
+    /// <p>The world export job is being cancelled.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::WorldExportJobStatus> {
+        &self.status
+    }
     /// <p>The time, in milliseconds since the epoch, when the world export job was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -249,6 +295,10 @@ impl WorldExportJobSummaryBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The time, in milliseconds since the epoch, when the world export job was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// Appends an item to `worlds`.
     ///
@@ -269,6 +319,10 @@ impl WorldExportJobSummaryBuilder {
         self.worlds = input;
         self
     }
+    /// <p>A list of worlds.</p>
+    pub fn get_worlds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.worlds
+    }
     /// <p>The output location.</p>
     pub fn output_location(mut self, input: crate::types::OutputLocation) -> Self {
         self.output_location = ::std::option::Option::Some(input);
@@ -281,6 +335,10 @@ impl WorldExportJobSummaryBuilder {
     ) -> Self {
         self.output_location = input;
         self
+    }
+    /// <p>The output location.</p>
+    pub fn get_output_location(&self) -> &::std::option::Option<crate::types::OutputLocation> {
+        &self.output_location
     }
     /// Consumes the builder and constructs a [`WorldExportJobSummary`](crate::types::WorldExportJobSummary).
     pub fn build(self) -> crate::types::WorldExportJobSummary {

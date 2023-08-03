@@ -62,6 +62,10 @@ impl BrokerSoftwareInfoBuilder {
         self.configuration_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the configuration used for the cluster. This field isn't visible in this preview release.</p>
+    pub fn get_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_arn
+    }
     /// <p>The revision of the configuration to use. This field isn't visible in this preview release.</p>
     pub fn configuration_revision(mut self, input: i64) -> Self {
         self.configuration_revision = ::std::option::Option::Some(input);
@@ -71,6 +75,10 @@ impl BrokerSoftwareInfoBuilder {
     pub fn set_configuration_revision(mut self, input: ::std::option::Option<i64>) -> Self {
         self.configuration_revision = input;
         self
+    }
+    /// <p>The revision of the configuration to use. This field isn't visible in this preview release.</p>
+    pub fn get_configuration_revision(&self) -> &::std::option::Option<i64> {
+        &self.configuration_revision
     }
     /// <p>The version of Apache Kafka.</p>
     pub fn kafka_version(
@@ -87,6 +95,10 @@ impl BrokerSoftwareInfoBuilder {
     ) -> Self {
         self.kafka_version = input;
         self
+    }
+    /// <p>The version of Apache Kafka.</p>
+    pub fn get_kafka_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kafka_version
     }
     /// Consumes the builder and constructs a [`BrokerSoftwareInfo`](crate::types::BrokerSoftwareInfo).
     pub fn build(self) -> crate::types::BrokerSoftwareInfo {

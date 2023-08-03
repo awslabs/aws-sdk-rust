@@ -71,6 +71,10 @@ impl UpdateArtifactInputBuilder {
         self.artifact_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the artifact to update.</p>
+    pub fn get_artifact_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.artifact_arn
+    }
     /// <p>The new name for the artifact.</p>
     pub fn artifact_name(
         mut self,
@@ -86,6 +90,10 @@ impl UpdateArtifactInputBuilder {
     ) -> Self {
         self.artifact_name = input;
         self
+    }
+    /// <p>The new name for the artifact.</p>
+    pub fn get_artifact_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.artifact_name
     }
     /// Adds a key-value pair to `properties`.
     ///
@@ -112,6 +120,14 @@ impl UpdateArtifactInputBuilder {
         self.properties = input;
         self
     }
+    /// <p>The new list of properties. Overwrites the current property list.</p>
+    pub fn get_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.properties
+    }
     /// Appends an item to `properties_to_remove`.
     ///
     /// To override the contents of this collection use [`set_properties_to_remove`](Self::set_properties_to_remove).
@@ -133,6 +149,12 @@ impl UpdateArtifactInputBuilder {
     ) -> Self {
         self.properties_to_remove = input;
         self
+    }
+    /// <p>A list of properties to remove.</p>
+    pub fn get_properties_to_remove(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.properties_to_remove
     }
     /// Consumes the builder and constructs a [`UpdateArtifactInput`](crate::operation::update_artifact::UpdateArtifactInput).
     pub fn build(

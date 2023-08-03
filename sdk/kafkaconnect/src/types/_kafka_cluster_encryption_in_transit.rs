@@ -49,6 +49,12 @@ impl KafkaClusterEncryptionInTransitBuilder {
         self.encryption_type = input;
         self
     }
+    /// <p>The type of encryption in transit to the Apache Kafka cluster.</p>
+    pub fn get_encryption_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::KafkaClusterEncryptionInTransitType> {
+        &self.encryption_type
+    }
     /// Consumes the builder and constructs a [`KafkaClusterEncryptionInTransit`](crate::types::KafkaClusterEncryptionInTransit).
     pub fn build(self) -> crate::types::KafkaClusterEncryptionInTransit {
         crate::types::KafkaClusterEncryptionInTransit {

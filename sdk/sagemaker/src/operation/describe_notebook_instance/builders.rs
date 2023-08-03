@@ -36,6 +36,13 @@ impl DescribeNotebookInstanceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeNotebookInstance as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_notebook_instance::builders::DescribeNotebookInstanceInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +138,9 @@ impl DescribeNotebookInstanceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_notebook_instance_name(input);
         self
+    }
+    /// <p>The name of the notebook instance that you want information about.</p>
+    pub fn get_notebook_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_notebook_instance_name()
     }
 }

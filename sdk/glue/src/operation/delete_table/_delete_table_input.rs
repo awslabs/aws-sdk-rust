@@ -63,6 +63,10 @@ impl DeleteTableInputBuilder {
         self.catalog_id = input;
         self
     }
+    /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// <p>The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
     pub fn database_name(
         mut self,
@@ -79,6 +83,10 @@ impl DeleteTableInputBuilder {
         self.database_name = input;
         self
     }
+    /// <p>The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>The name of the table to be deleted. For Hive compatibility, this name is entirely lowercase.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -88,6 +96,10 @@ impl DeleteTableInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the table to be deleted. For Hive compatibility, this name is entirely lowercase.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The transaction ID at which to delete the table contents.</p>
     pub fn transaction_id(
@@ -104,6 +116,10 @@ impl DeleteTableInputBuilder {
     ) -> Self {
         self.transaction_id = input;
         self
+    }
+    /// <p>The transaction ID at which to delete the table contents.</p>
+    pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transaction_id
     }
     /// Consumes the builder and constructs a [`DeleteTableInput`](crate::operation::delete_table::DeleteTableInput).
     pub fn build(

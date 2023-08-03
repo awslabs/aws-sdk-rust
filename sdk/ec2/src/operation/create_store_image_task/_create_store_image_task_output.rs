@@ -48,6 +48,10 @@ impl CreateStoreImageTaskOutputBuilder {
         self.object_key = input;
         self
     }
+    /// <p>The name of the stored AMI object in the S3 bucket.</p>
+    pub fn get_object_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_key
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

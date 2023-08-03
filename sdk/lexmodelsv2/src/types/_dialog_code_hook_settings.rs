@@ -40,6 +40,10 @@ impl DialogCodeHookSettingsBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Enables the dialog code hook so that it processes user requests.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// Consumes the builder and constructs a [`DialogCodeHookSettings`](crate::types::DialogCodeHookSettings).
     pub fn build(self) -> crate::types::DialogCodeHookSettings {
         crate::types::DialogCodeHookSettings {

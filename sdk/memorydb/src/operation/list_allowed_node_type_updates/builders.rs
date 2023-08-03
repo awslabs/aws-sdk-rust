@@ -36,6 +36,10 @@ impl ListAllowedNodeTypeUpdatesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListAllowedNodeTypeUpdates as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_allowed_node_type_updates::builders::ListAllowedNodeTypeUpdatesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +129,9 @@ impl ListAllowedNodeTypeUpdatesFluentBuilder {
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_name(input);
         self
+    }
+    /// <p>The name of the cluster you want to scale. MemoryDB uses the cluster name to identify the current node type being used by this cluster, and from that to create a list of node types you can scale up to.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_name()
     }
 }

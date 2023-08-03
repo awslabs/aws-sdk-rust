@@ -36,6 +36,10 @@ impl BatchGetCustomEntityTypesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchGetCustomEntityTypes as a reference.
+    pub fn as_input(&self) -> &crate::operation::batch_get_custom_entity_types::builders::BatchGetCustomEntityTypesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +136,9 @@ impl BatchGetCustomEntityTypesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_names(input);
         self
+    }
+    /// <p>A list of names of the custom patterns that you want to retrieve.</p>
+    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_names()
     }
 }

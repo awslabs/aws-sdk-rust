@@ -47,6 +47,10 @@ impl RestoreImageFromRecycleBinInputBuilder {
         self.image_id = input;
         self
     }
+    /// <p>The ID of the AMI to restore.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_id
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -56,6 +60,10 @@ impl RestoreImageFromRecycleBinInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`RestoreImageFromRecycleBinInput`](crate::operation::restore_image_from_recycle_bin::RestoreImageFromRecycleBinInput).
     pub fn build(

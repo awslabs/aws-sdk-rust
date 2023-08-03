@@ -63,6 +63,11 @@ impl GetSecretValueInputBuilder {
         self.secret_id = input;
         self
     }
+    /// <p>The ARN or name of the secret to retrieve.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
+    pub fn get_secret_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_id
+    }
     /// <p>The unique identifier of the version of the secret to retrieve. If you include both this parameter and <code>VersionStage</code>, the two parameters must refer to the same secret version. If you don't specify either a <code>VersionStage</code> or <code>VersionId</code>, then Secrets Manager returns the <code>AWSCURRENT</code> version.</p>
     /// <p>This value is typically a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value with 32 hexadecimal digits.</p>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -74,6 +79,11 @@ impl GetSecretValueInputBuilder {
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_id = input;
         self
+    }
+    /// <p>The unique identifier of the version of the secret to retrieve. If you include both this parameter and <code>VersionStage</code>, the two parameters must refer to the same secret version. If you don't specify either a <code>VersionStage</code> or <code>VersionId</code>, then Secrets Manager returns the <code>AWSCURRENT</code> version.</p>
+    /// <p>This value is typically a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value with 32 hexadecimal digits.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_id
     }
     /// <p>The staging label of the version of the secret to retrieve. </p>
     /// <p>Secrets Manager uses staging labels to keep track of different versions during the rotation process. If you include both this parameter and <code>VersionId</code>, the two parameters must refer to the same secret version. If you don't specify either a <code>VersionStage</code> or <code>VersionId</code>, Secrets Manager returns the <code>AWSCURRENT</code> version.</p>
@@ -92,6 +102,11 @@ impl GetSecretValueInputBuilder {
     ) -> Self {
         self.version_stage = input;
         self
+    }
+    /// <p>The staging label of the version of the secret to retrieve. </p>
+    /// <p>Secrets Manager uses staging labels to keep track of different versions during the rotation process. If you include both this parameter and <code>VersionId</code>, the two parameters must refer to the same secret version. If you don't specify either a <code>VersionStage</code> or <code>VersionId</code>, Secrets Manager returns the <code>AWSCURRENT</code> version.</p>
+    pub fn get_version_stage(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_stage
     }
     /// Consumes the builder and constructs a [`GetSecretValueInput`](crate::operation::get_secret_value::GetSecretValueInput).
     pub fn build(

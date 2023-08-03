@@ -40,6 +40,10 @@ impl BulkEmailContentBuilder {
         self.template = input;
         self
     }
+    /// <p>The template to use for the bulk email message.</p>
+    pub fn get_template(&self) -> &::std::option::Option<crate::types::Template> {
+        &self.template
+    }
     /// Consumes the builder and constructs a [`BulkEmailContent`](crate::types::BulkEmailContent).
     pub fn build(self) -> crate::types::BulkEmailContent {
         crate::types::BulkEmailContent {

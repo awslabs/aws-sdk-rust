@@ -70,6 +70,12 @@ impl UpdateNotebookInstanceLifecycleConfigInputBuilder {
         self.notebook_instance_lifecycle_config_name = input;
         self
     }
+    /// <p>The name of the lifecycle configuration.</p>
+    pub fn get_notebook_instance_lifecycle_config_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.notebook_instance_lifecycle_config_name
+    }
     /// Appends an item to `on_create`.
     ///
     /// To override the contents of this collection use [`set_on_create`](Self::set_on_create).
@@ -89,6 +95,12 @@ impl UpdateNotebookInstanceLifecycleConfigInputBuilder {
         self.on_create = input;
         self
     }
+    /// <p>The shell script that runs only once, when you create a notebook instance. The shell script must be a base64-encoded string.</p>
+    pub fn get_on_create(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceLifecycleHook>> {
+        &self.on_create
+    }
     /// Appends an item to `on_start`.
     ///
     /// To override the contents of this collection use [`set_on_start`](Self::set_on_start).
@@ -107,6 +119,12 @@ impl UpdateNotebookInstanceLifecycleConfigInputBuilder {
     ) -> Self {
         self.on_start = input;
         self
+    }
+    /// <p>The shell script that runs every time you start a notebook instance, including when you create the notebook instance. The shell script must be a base64-encoded string.</p>
+    pub fn get_on_start(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceLifecycleHook>> {
+        &self.on_start
     }
     /// Consumes the builder and constructs a [`UpdateNotebookInstanceLifecycleConfigInput`](crate::operation::update_notebook_instance_lifecycle_config::UpdateNotebookInstanceLifecycleConfigInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_notebook_instance_lifecycle_config::UpdateNotebookInstanceLifecycleConfigInput, ::aws_smithy_http::operation::error::BuildError>{

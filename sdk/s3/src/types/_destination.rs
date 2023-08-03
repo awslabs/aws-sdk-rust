@@ -96,6 +96,10 @@ impl DestinationBuilder {
         self.bucket = input;
         self
     }
+    /// <p> The Amazon Resource Name (ARN) of the bucket where you want Amazon S3 to store the results.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p>Destination bucket owner account ID. In a cross-account scenario, if you direct Amazon S3 to change replica ownership to the Amazon Web Services account that owns the destination bucket by specifying the <code>AccessControlTranslation</code> property, this is the account ID of the destination bucket owner. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html">Replication Additional Configuration: Changing the Replica Owner</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl DestinationBuilder {
     pub fn set_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account = input;
         self
+    }
+    /// <p>Destination bucket owner account ID. In a cross-account scenario, if you direct Amazon S3 to change replica ownership to the Amazon Web Services account that owns the destination bucket by specifying the <code>AccessControlTranslation</code> property, this is the account ID of the destination bucket owner. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html">Replication Additional Configuration: Changing the Replica Owner</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn get_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account
     }
     /// <p> The storage class to use when replicating objects, such as S3 Standard or reduced redundancy. By default, Amazon S3 uses the storage class of the source object to create the object replica. </p>
     /// <p>For valid values, see the <code>StorageClass</code> element of the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT Bucket replication</a> action in the <i>Amazon S3 API Reference</i>.</p>
@@ -120,6 +128,11 @@ impl DestinationBuilder {
     ) -> Self {
         self.storage_class = input;
         self
+    }
+    /// <p> The storage class to use when replicating objects, such as S3 Standard or reduced redundancy. By default, Amazon S3 uses the storage class of the source object to create the object replica. </p>
+    /// <p>For valid values, see the <code>StorageClass</code> element of the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT Bucket replication</a> action in the <i>Amazon S3 API Reference</i>.</p>
+    pub fn get_storage_class(&self) -> &::std::option::Option<crate::types::StorageClass> {
+        &self.storage_class
     }
     /// <p>Specify this only in a cross-account scenario (where source and destination bucket owners are not the same), and you want to change replica ownership to the Amazon Web Services account that owns the destination bucket. If this is not specified in the replication configuration, the replicas are owned by same Amazon Web Services account that owns the source object.</p>
     pub fn access_control_translation(
@@ -137,6 +150,12 @@ impl DestinationBuilder {
         self.access_control_translation = input;
         self
     }
+    /// <p>Specify this only in a cross-account scenario (where source and destination bucket owners are not the same), and you want to change replica ownership to the Amazon Web Services account that owns the destination bucket. If this is not specified in the replication configuration, the replicas are owned by same Amazon Web Services account that owns the source object.</p>
+    pub fn get_access_control_translation(
+        &self,
+    ) -> &::std::option::Option<crate::types::AccessControlTranslation> {
+        &self.access_control_translation
+    }
     /// <p>A container that provides information about encryption. If <code>SourceSelectionCriteria</code> is specified, you must specify this element.</p>
     pub fn encryption_configuration(
         mut self,
@@ -153,6 +172,12 @@ impl DestinationBuilder {
         self.encryption_configuration = input;
         self
     }
+    /// <p>A container that provides information about encryption. If <code>SourceSelectionCriteria</code> is specified, you must specify this element.</p>
+    pub fn get_encryption_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+        &self.encryption_configuration
+    }
     /// <p> A container specifying S3 Replication Time Control (S3 RTC), including whether S3 RTC is enabled and the time when all objects and operations on objects must be replicated. Must be specified together with a <code>Metrics</code> block. </p>
     pub fn replication_time(mut self, input: crate::types::ReplicationTime) -> Self {
         self.replication_time = ::std::option::Option::Some(input);
@@ -166,6 +191,10 @@ impl DestinationBuilder {
         self.replication_time = input;
         self
     }
+    /// <p> A container specifying S3 Replication Time Control (S3 RTC), including whether S3 RTC is enabled and the time when all objects and operations on objects must be replicated. Must be specified together with a <code>Metrics</code> block. </p>
+    pub fn get_replication_time(&self) -> &::std::option::Option<crate::types::ReplicationTime> {
+        &self.replication_time
+    }
     /// <p> A container specifying replication metrics-related settings enabling replication metrics and events. </p>
     pub fn metrics(mut self, input: crate::types::Metrics) -> Self {
         self.metrics = ::std::option::Option::Some(input);
@@ -175,6 +204,10 @@ impl DestinationBuilder {
     pub fn set_metrics(mut self, input: ::std::option::Option<crate::types::Metrics>) -> Self {
         self.metrics = input;
         self
+    }
+    /// <p> A container specifying replication metrics-related settings enabling replication metrics and events. </p>
+    pub fn get_metrics(&self) -> &::std::option::Option<crate::types::Metrics> {
+        &self.metrics
     }
     /// Consumes the builder and constructs a [`Destination`](crate::types::Destination).
     pub fn build(self) -> crate::types::Destination {

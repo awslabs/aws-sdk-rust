@@ -66,6 +66,12 @@ impl BatchGetMetricDataOutputBuilder {
         self.results = input;
         self
     }
+    /// <p>A list of successfully retrieved <code>MetricDataResult</code>.</p>
+    pub fn get_results(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDataResult>> {
+        &self.results
+    }
     /// Appends an item to `errors`.
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
@@ -84,6 +90,12 @@ impl BatchGetMetricDataOutputBuilder {
     ) -> Self {
         self.errors = input;
         self
+    }
+    /// <p>A list of <code>MetricDataError</code> encountered while processing your metric data batch request.</p>
+    pub fn get_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDataError>> {
+        &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

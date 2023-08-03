@@ -36,6 +36,12 @@ impl DeleteParameterGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteParameterGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_parameter_group::builders::DeleteParameterGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl DeleteParameterGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_parameter_group_name(input);
         self
+    }
+    /// <p>The name of the parameter group to delete.</p>
+    pub fn get_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_parameter_group_name()
     }
 }

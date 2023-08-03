@@ -110,6 +110,11 @@ impl ResourceBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of the resource that details are provided for. If possible, set <code>Type</code> to one of the supported resource types. For example, if the resource is an EC2 instance, then set <code>Type</code> to <code>AwsEc2Instance</code>.</p>
+    /// <p>If the resource does not match any of the provided types, then set <code>Type</code> to <code>Other</code>. </p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// <p>The canonical identifier for the given resource type.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -119,6 +124,10 @@ impl ResourceBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The canonical identifier for the given resource type.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The canonical Amazon Web Services partition name that the Region is assigned to.</p>
     pub fn partition(mut self, input: crate::types::Partition) -> Self {
@@ -130,6 +139,10 @@ impl ResourceBuilder {
         self.partition = input;
         self
     }
+    /// <p>The canonical Amazon Web Services partition name that the Region is assigned to.</p>
+    pub fn get_partition(&self) -> &::std::option::Option<crate::types::Partition> {
+        &self.partition
+    }
     /// <p>The canonical Amazon Web Services external Region name where this resource is located.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
@@ -139,6 +152,10 @@ impl ResourceBuilder {
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
+    }
+    /// <p>The canonical Amazon Web Services external Region name where this resource is located.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
     }
     /// <p>Identifies the role of the resource in the finding. A resource is either the actor or target of the finding activity,</p>
     pub fn resource_role(
@@ -155,6 +172,10 @@ impl ResourceBuilder {
     ) -> Self {
         self.resource_role = input;
         self
+    }
+    /// <p>Identifies the role of the resource in the finding. A resource is either the actor or target of the finding activity,</p>
+    pub fn get_resource_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_role
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -181,6 +202,14 @@ impl ResourceBuilder {
         self.tags = input;
         self
     }
+    /// <p>A list of Amazon Web Services tags associated with a resource at the time the finding was processed.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>Contains information about sensitive data that was detected on the resource.</p>
     pub fn data_classification(mut self, input: crate::types::DataClassificationDetails) -> Self {
         self.data_classification = ::std::option::Option::Some(input);
@@ -194,6 +223,12 @@ impl ResourceBuilder {
         self.data_classification = input;
         self
     }
+    /// <p>Contains information about sensitive data that was detected on the resource.</p>
+    pub fn get_data_classification(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataClassificationDetails> {
+        &self.data_classification
+    }
     /// <p>Additional details about the resource related to a finding.</p>
     pub fn details(mut self, input: crate::types::ResourceDetails) -> Self {
         self.details = ::std::option::Option::Some(input);
@@ -206,6 +241,10 @@ impl ResourceBuilder {
     ) -> Self {
         self.details = input;
         self
+    }
+    /// <p>Additional details about the resource related to a finding.</p>
+    pub fn get_details(&self) -> &::std::option::Option<crate::types::ResourceDetails> {
+        &self.details
     }
     /// Consumes the builder and constructs a [`Resource`](crate::types::Resource).
     pub fn build(self) -> crate::types::Resource {

@@ -90,6 +90,15 @@ impl EnvironmentTierBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of this environment tier.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li> <p>For <i>Web server tier</i> – <code>WebServer</code> </p> </li>
+    /// <li> <p>For <i>Worker tier</i> – <code>Worker</code> </p> </li>
+    /// </ul>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The type of this environment tier.</p>
     /// <p>Valid values:</p>
     /// <ul>
@@ -110,6 +119,15 @@ impl EnvironmentTierBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of this environment tier.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li> <p>For <i>Web server tier</i> – <code>Standard</code> </p> </li>
+    /// <li> <p>For <i>Worker tier</i> – <code>SQS/HTTP</code> </p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// <p>The version of this environment tier. When you don't set a value to it, Elastic Beanstalk uses the latest compatible worker tier version.</p> <note>
     /// <p>This member is deprecated. Any specific version that you set may become out of date. We recommend leaving it unspecified.</p>
     /// </note>
@@ -123,6 +141,12 @@ impl EnvironmentTierBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The version of this environment tier. When you don't set a value to it, Elastic Beanstalk uses the latest compatible worker tier version.</p> <note>
+    /// <p>This member is deprecated. Any specific version that you set may become out of date. We recommend leaving it unspecified.</p>
+    /// </note>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`EnvironmentTier`](crate::types::EnvironmentTier).
     pub fn build(self) -> crate::types::EnvironmentTier {

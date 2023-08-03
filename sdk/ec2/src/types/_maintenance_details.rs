@@ -64,6 +64,10 @@ impl MaintenanceDetailsBuilder {
         self.pending_maintenance = input;
         self
     }
+    /// <p>Verify existence of a pending maintenance.</p>
+    pub fn get_pending_maintenance(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pending_maintenance
+    }
     /// <p>The timestamp after which Amazon Web Services will automatically apply maintenance.</p>
     pub fn maintenance_auto_applied_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.maintenance_auto_applied_after = ::std::option::Option::Some(input);
@@ -77,6 +81,12 @@ impl MaintenanceDetailsBuilder {
         self.maintenance_auto_applied_after = input;
         self
     }
+    /// <p>The timestamp after which Amazon Web Services will automatically apply maintenance.</p>
+    pub fn get_maintenance_auto_applied_after(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.maintenance_auto_applied_after
+    }
     /// <p>Timestamp of last applied maintenance.</p>
     pub fn last_maintenance_applied(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_maintenance_applied = ::std::option::Option::Some(input);
@@ -89,6 +99,12 @@ impl MaintenanceDetailsBuilder {
     ) -> Self {
         self.last_maintenance_applied = input;
         self
+    }
+    /// <p>Timestamp of last applied maintenance.</p>
+    pub fn get_last_maintenance_applied(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_maintenance_applied
     }
     /// Consumes the builder and constructs a [`MaintenanceDetails`](crate::types::MaintenanceDetails).
     pub fn build(self) -> crate::types::MaintenanceDetails {

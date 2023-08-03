@@ -90,6 +90,10 @@ impl SnapshotBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the snapshot</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The status of the snapshot. Valid values: creating | available | restoring | copying | deleting.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -99,6 +103,10 @@ impl SnapshotBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the snapshot. Valid values: creating | available | restoring | copying | deleting.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>Indicates whether the snapshot is from an automatic backup (automated) or was created manually (manual).</p>
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -110,6 +118,10 @@ impl SnapshotBuilder {
         self.source = input;
         self
     }
+    /// <p>Indicates whether the snapshot is from an automatic backup (automated) or was created manually (manual).</p>
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source
+    }
     /// <p>The ID of the KMS key used to encrypt the snapshot.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -120,6 +132,10 @@ impl SnapshotBuilder {
         self.kms_key_id = input;
         self
     }
+    /// <p>The ID of the KMS key used to encrypt the snapshot.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
+    }
     /// <p>The ARN (Amazon Resource Name) of the snapshot.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -129,6 +145,10 @@ impl SnapshotBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The ARN (Amazon Resource Name) of the snapshot.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The configuration of the cluster from which the snapshot was taken</p>
     pub fn cluster_configuration(mut self, input: crate::types::ClusterConfiguration) -> Self {
@@ -143,6 +163,12 @@ impl SnapshotBuilder {
         self.cluster_configuration = input;
         self
     }
+    /// <p>The configuration of the cluster from which the snapshot was taken</p>
+    pub fn get_cluster_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ClusterConfiguration> {
+        &self.cluster_configuration
+    }
     /// <p>Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter must be set when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.</p>
     pub fn data_tiering(mut self, input: crate::types::DataTieringStatus) -> Self {
         self.data_tiering = ::std::option::Option::Some(input);
@@ -155,6 +181,10 @@ impl SnapshotBuilder {
     ) -> Self {
         self.data_tiering = input;
         self
+    }
+    /// <p>Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter must be set when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.</p>
+    pub fn get_data_tiering(&self) -> &::std::option::Option<crate::types::DataTieringStatus> {
+        &self.data_tiering
     }
     /// Consumes the builder and constructs a [`Snapshot`](crate::types::Snapshot).
     pub fn build(self) -> crate::types::Snapshot {

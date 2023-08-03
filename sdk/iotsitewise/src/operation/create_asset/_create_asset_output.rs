@@ -64,6 +64,10 @@ impl CreateAssetOutputBuilder {
         self.asset_id = input;
         self
     }
+    /// <p>The ID of the asset. This ID uniquely identifies the asset within IoT SiteWise and can be used with other IoT SiteWise APIs.</p>
+    pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_id
+    }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
     pub fn asset_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -75,6 +79,11 @@ impl CreateAssetOutputBuilder {
     pub fn set_asset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asset_arn = input;
         self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
+    pub fn get_asset_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_arn
     }
     /// <p>The status of the asset, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
     pub fn asset_status(mut self, input: crate::types::AssetStatus) -> Self {
@@ -88,6 +97,10 @@ impl CreateAssetOutputBuilder {
     ) -> Self {
         self.asset_status = input;
         self
+    }
+    /// <p>The status of the asset, which contains a state (<code>CREATING</code> after successfully calling this operation) and any error message.</p>
+    pub fn get_asset_status(&self) -> &::std::option::Option<crate::types::AssetStatus> {
+        &self.asset_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

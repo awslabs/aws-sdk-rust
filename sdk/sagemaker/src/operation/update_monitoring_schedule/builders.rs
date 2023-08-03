@@ -36,6 +36,13 @@ impl UpdateMonitoringScheduleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateMonitoringSchedule as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_monitoring_schedule::builders::UpdateMonitoringScheduleInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl UpdateMonitoringScheduleFluentBuilder {
         self.inner = self.inner.set_monitoring_schedule_name(input);
         self
     }
+    /// <p>The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within an Amazon Web Services account.</p>
+    pub fn get_monitoring_schedule_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_monitoring_schedule_name()
+    }
     /// <p>The configuration object that specifies the monitoring schedule and defines the monitoring job.</p>
     pub fn monitoring_schedule_config(
         mut self,
@@ -147,5 +158,11 @@ impl UpdateMonitoringScheduleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_monitoring_schedule_config(input);
         self
+    }
+    /// <p>The configuration object that specifies the monitoring schedule and defines the monitoring job.</p>
+    pub fn get_monitoring_schedule_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::MonitoringScheduleConfig> {
+        self.inner.get_monitoring_schedule_config()
     }
 }

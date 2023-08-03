@@ -101,6 +101,18 @@ impl DiagnosticsBuilder {
         self.error_code = input;
         self
     }
+    /// <p>The associated error code:</p>
+    /// <ul>
+    /// <li> <p>Success: The specified script ran.</p> </li>
+    /// <li> <p>ScriptMissing: The specified script was not found in the specified location.</p> </li>
+    /// <li> <p>ScriptNotExecutable: The specified script is not a recognized executable file type.</p> </li>
+    /// <li> <p>ScriptTimedOut: The specified script did not finish running in the specified time period.</p> </li>
+    /// <li> <p>ScriptFailed: The specified script failed to run as expected.</p> </li>
+    /// <li> <p>UnknownError: The specified script did not run for an unknown reason.</p> </li>
+    /// </ul>
+    pub fn get_error_code(&self) -> &::std::option::Option<crate::types::LifecycleErrorCode> {
+        &self.error_code
+    }
     /// <p>The name of the script.</p>
     pub fn script_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.script_name = ::std::option::Option::Some(input.into());
@@ -111,6 +123,10 @@ impl DiagnosticsBuilder {
         self.script_name = input;
         self
     }
+    /// <p>The name of the script.</p>
+    pub fn get_script_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.script_name
+    }
     /// <p>The message associated with the error.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -120,6 +136,10 @@ impl DiagnosticsBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>The message associated with the error.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// <p>The last portion of the diagnostic log.</p>
     /// <p>If available, CodeDeploy returns up to the last 4 KB of the diagnostic log.</p>
@@ -132,6 +152,11 @@ impl DiagnosticsBuilder {
     pub fn set_log_tail(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_tail = input;
         self
+    }
+    /// <p>The last portion of the diagnostic log.</p>
+    /// <p>If available, CodeDeploy returns up to the last 4 KB of the diagnostic log.</p>
+    pub fn get_log_tail(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_tail
     }
     /// Consumes the builder and constructs a [`Diagnostics`](crate::types::Diagnostics).
     pub fn build(self) -> crate::types::Diagnostics {

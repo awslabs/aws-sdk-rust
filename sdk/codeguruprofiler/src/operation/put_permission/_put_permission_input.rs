@@ -70,6 +70,10 @@ impl PutPermissionInputBuilder {
         self.profiling_group_name = input;
         self
     }
+    /// <p>The name of the profiling group to grant access to.</p>
+    pub fn get_profiling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profiling_group_name
+    }
     /// <p> Specifies an action group that contains permissions to add to a profiling group resource. One action group is supported, <code>agentPermissions</code>, which grants permission to perform actions required by the profiling agent, <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions. </p>
     pub fn action_group(mut self, input: crate::types::ActionGroup) -> Self {
         self.action_group = ::std::option::Option::Some(input);
@@ -82,6 +86,10 @@ impl PutPermissionInputBuilder {
     ) -> Self {
         self.action_group = input;
         self
+    }
+    /// <p> Specifies an action group that contains permissions to add to a profiling group resource. One action group is supported, <code>agentPermissions</code>, which grants permission to perform actions required by the profiling agent, <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions. </p>
+    pub fn get_action_group(&self) -> &::std::option::Option<crate::types::ActionGroup> {
+        &self.action_group
     }
     /// Appends an item to `principals`.
     ///
@@ -102,6 +110,10 @@ impl PutPermissionInputBuilder {
         self.principals = input;
         self
     }
+    /// <p> A list ARNs for the roles and users you want to grant access to the profiling group. Wildcards are not are supported in the ARNs. </p>
+    pub fn get_principals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.principals
+    }
     /// <p> A universally unique identifier (UUID) for the revision of the policy you are adding to the profiling group. Do not specify this when you add permissions to a profiling group for the first time. If a policy already exists on the profiling group, you must specify the <code>revisionId</code>. </p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
@@ -111,6 +123,10 @@ impl PutPermissionInputBuilder {
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision_id = input;
         self
+    }
+    /// <p> A universally unique identifier (UUID) for the revision of the policy you are adding to the profiling group. Do not specify this when you add permissions to a profiling group for the first time. If a policy already exists on the profiling group, you must specify the <code>revisionId</code>. </p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision_id
     }
     /// Consumes the builder and constructs a [`PutPermissionInput`](crate::operation::put_permission::PutPermissionInput).
     pub fn build(

@@ -36,6 +36,12 @@ impl UpdateRotationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateRotation as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_rotation::builders::UpdateRotationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl UpdateRotationFluentBuilder {
         self.inner = self.inner.set_rotation_id(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the rotation to update.</p>
+    pub fn get_rotation_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rotation_id()
+    }
     /// Appends an item to `ContactIds`.
     ///
     /// To override the contents of this collection use [`set_contact_ids`](Self::set_contact_ids).
@@ -137,6 +147,13 @@ impl UpdateRotationFluentBuilder {
         self.inner = self.inner.set_contact_ids(input);
         self
     }
+    /// <p>The Amazon Resource Names (ARNs) of the contacts to include in the updated rotation. </p>
+    /// <p>The order in which you list the contacts is their shift order in the rotation schedule.</p>
+    pub fn get_contact_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_contact_ids()
+    }
     /// <p>The date and time the rotation goes into effect.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
@@ -149,6 +166,10 @@ impl UpdateRotationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
+    }
+    /// <p>The date and time the rotation goes into effect.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_time()
     }
     /// <p>The time zone to base the updated rotation’s activity on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p> <note>
     /// <p>Designators for time zones that don’t support Daylight Savings Time Rules, such as Pacific Standard Time (PST) and Pacific Daylight Time (PDT), aren't supported.</p>
@@ -164,6 +185,12 @@ impl UpdateRotationFluentBuilder {
         self.inner = self.inner.set_time_zone_id(input);
         self
     }
+    /// <p>The time zone to base the updated rotation’s activity on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p> <note>
+    /// <p>Designators for time zones that don’t support Daylight Savings Time Rules, such as Pacific Standard Time (PST) and Pacific Daylight Time (PDT), aren't supported.</p>
+    /// </note>
+    pub fn get_time_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_time_zone_id()
+    }
     /// <p>Information about how long the updated rotation lasts before restarting at the beginning of the shift order.</p>
     pub fn recurrence(mut self, input: crate::types::RecurrenceSettings) -> Self {
         self.inner = self.inner.recurrence(input);
@@ -176,5 +203,9 @@ impl UpdateRotationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_recurrence(input);
         self
+    }
+    /// <p>Information about how long the updated rotation lasts before restarting at the beginning of the shift order.</p>
+    pub fn get_recurrence(&self) -> &::std::option::Option<crate::types::RecurrenceSettings> {
+        self.inner.get_recurrence()
     }
 }

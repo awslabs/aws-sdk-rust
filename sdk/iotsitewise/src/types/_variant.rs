@@ -64,6 +64,10 @@ impl VariantBuilder {
         self.string_value = input;
         self
     }
+    /// <p>Asset property data of type string (sequence of characters).</p>
+    pub fn get_string_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.string_value
+    }
     /// <p>Asset property data of type integer (whole number).</p>
     pub fn integer_value(mut self, input: i32) -> Self {
         self.integer_value = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl VariantBuilder {
     pub fn set_integer_value(mut self, input: ::std::option::Option<i32>) -> Self {
         self.integer_value = input;
         self
+    }
+    /// <p>Asset property data of type integer (whole number).</p>
+    pub fn get_integer_value(&self) -> &::std::option::Option<i32> {
+        &self.integer_value
     }
     /// <p>Asset property data of type double (floating point number).</p>
     pub fn double_value(mut self, input: f64) -> Self {
@@ -84,6 +92,10 @@ impl VariantBuilder {
         self.double_value = input;
         self
     }
+    /// <p>Asset property data of type double (floating point number).</p>
+    pub fn get_double_value(&self) -> &::std::option::Option<f64> {
+        &self.double_value
+    }
     /// <p>Asset property data of type Boolean (true or false).</p>
     pub fn boolean_value(mut self, input: bool) -> Self {
         self.boolean_value = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl VariantBuilder {
     pub fn set_boolean_value(mut self, input: ::std::option::Option<bool>) -> Self {
         self.boolean_value = input;
         self
+    }
+    /// <p>Asset property data of type Boolean (true or false).</p>
+    pub fn get_boolean_value(&self) -> &::std::option::Option<bool> {
+        &self.boolean_value
     }
     /// Consumes the builder and constructs a [`Variant`](crate::types::Variant).
     pub fn build(self) -> crate::types::Variant {

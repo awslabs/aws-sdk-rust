@@ -49,6 +49,10 @@ impl StorageLensDataExportEncryptionBuilder {
         self
     }
     /// <p></p>
+    pub fn get_sses3(&self) -> &::std::option::Option<crate::types::Sses3> {
+        &self.sses3
+    }
+    /// <p></p>
     pub fn ssekms(mut self, input: crate::types::Ssekms) -> Self {
         self.ssekms = ::std::option::Option::Some(input);
         self
@@ -57,6 +61,10 @@ impl StorageLensDataExportEncryptionBuilder {
     pub fn set_ssekms(mut self, input: ::std::option::Option<crate::types::Ssekms>) -> Self {
         self.ssekms = input;
         self
+    }
+    /// <p></p>
+    pub fn get_ssekms(&self) -> &::std::option::Option<crate::types::Ssekms> {
+        &self.ssekms
     }
     /// Consumes the builder and constructs a [`StorageLensDataExportEncryption`](crate::types::StorageLensDataExportEncryption).
     pub fn build(self) -> crate::types::StorageLensDataExportEncryption {

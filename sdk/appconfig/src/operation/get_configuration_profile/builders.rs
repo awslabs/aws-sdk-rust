@@ -37,6 +37,13 @@ impl GetConfigurationProfileFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetConfigurationProfile as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_configuration_profile::builders::GetConfigurationProfileInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl GetConfigurationProfileFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The ID of the application that includes the configuration profile you want to get.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>The ID of the configuration profile that you want to get.</p>
     pub fn configuration_profile_id(
         mut self,
@@ -148,5 +159,9 @@ impl GetConfigurationProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_configuration_profile_id(input);
         self
+    }
+    /// <p>The ID of the configuration profile that you want to get.</p>
+    pub fn get_configuration_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration_profile_id()
     }
 }

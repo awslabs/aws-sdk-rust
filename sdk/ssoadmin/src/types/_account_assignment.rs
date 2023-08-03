@@ -66,6 +66,10 @@ impl AccountAssignmentBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The identifier of the AWS account.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     pub fn permission_set_arn(
         mut self,
@@ -82,6 +86,10 @@ impl AccountAssignmentBuilder {
         self.permission_set_arn = input;
         self
     }
+    /// <p>The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+    pub fn get_permission_set_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.permission_set_arn
+    }
     /// <p>The entity type for which the assignment will be created.</p>
     pub fn principal_type(mut self, input: crate::types::PrincipalType) -> Self {
         self.principal_type = ::std::option::Option::Some(input);
@@ -95,6 +103,10 @@ impl AccountAssignmentBuilder {
         self.principal_type = input;
         self
     }
+    /// <p>The entity type for which the assignment will be created.</p>
+    pub fn get_principal_type(&self) -> &::std::option::Option<crate::types::PrincipalType> {
+        &self.principal_type
+    }
     /// <p>An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API Reference</a>.</p>
     pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_id = ::std::option::Option::Some(input.into());
@@ -104,6 +116,10 @@ impl AccountAssignmentBuilder {
     pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal_id = input;
         self
+    }
+    /// <p>An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API Reference</a>.</p>
+    pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal_id
     }
     /// Consumes the builder and constructs a [`AccountAssignment`](crate::types::AccountAssignment).
     pub fn build(self) -> crate::types::AccountAssignment {

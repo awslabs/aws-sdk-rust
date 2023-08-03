@@ -36,6 +36,13 @@ impl UpdateDatasourcePackagesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDatasourcePackages as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_datasource_packages::builders::UpdateDatasourcePackagesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl UpdateDatasourcePackagesFluentBuilder {
         self.inner = self.inner.set_graph_arn(input);
         self
     }
+    /// <p>The ARN of the behavior graph.</p>
+    pub fn get_graph_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_graph_arn()
+    }
     /// Appends an item to `DatasourcePackages`.
     ///
     /// To override the contents of this collection use [`set_datasource_packages`](Self::set_datasource_packages).
@@ -142,5 +153,11 @@ impl UpdateDatasourcePackagesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_datasource_packages(input);
         self
+    }
+    /// <p>The data source package start for the behavior graph.</p>
+    pub fn get_datasource_packages(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasourcePackage>> {
+        self.inner.get_datasource_packages()
     }
 }

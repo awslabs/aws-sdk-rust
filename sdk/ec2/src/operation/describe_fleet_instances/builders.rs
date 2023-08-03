@@ -37,6 +37,13 @@ impl DescribeFleetInstancesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeFleetInstances as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_fleet_instances::builders::DescribeFleetInstancesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl DescribeFleetInstancesFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -136,6 +147,10 @@ impl DescribeFleetInstancesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -147,6 +162,10 @@ impl DescribeFleetInstancesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The ID of the EC2 Fleet.</p>
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fleet_id(input.into());
@@ -156,6 +175,10 @@ impl DescribeFleetInstancesFluentBuilder {
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fleet_id(input);
         self
+    }
+    /// <p>The ID of the EC2 Fleet.</p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_fleet_id()
     }
     /// Appends an item to `Filters`.
     ///
@@ -179,5 +202,12 @@ impl DescribeFleetInstancesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
+    }
+    /// <p>The filters.</p>
+    /// <ul>
+    /// <li> <p> <code>instance-type</code> - The instance type.</p> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
     }
 }

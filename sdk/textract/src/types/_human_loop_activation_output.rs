@@ -69,6 +69,10 @@ impl HumanLoopActivationOutputBuilder {
         self.human_loop_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the HumanLoop created.</p>
+    pub fn get_human_loop_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.human_loop_arn
+    }
     /// Appends an item to `human_loop_activation_reasons`.
     ///
     /// To override the contents of this collection use [`set_human_loop_activation_reasons`](Self::set_human_loop_activation_reasons).
@@ -91,6 +95,12 @@ impl HumanLoopActivationOutputBuilder {
         self.human_loop_activation_reasons = input;
         self
     }
+    /// <p>Shows if and why human review was needed.</p>
+    pub fn get_human_loop_activation_reasons(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.human_loop_activation_reasons
+    }
     /// <p>Shows the result of condition evaluations, including those conditions which activated a human review.</p>
     pub fn human_loop_activation_conditions_evaluation_results(
         mut self,
@@ -107,6 +117,12 @@ impl HumanLoopActivationOutputBuilder {
     ) -> Self {
         self.human_loop_activation_conditions_evaluation_results = input;
         self
+    }
+    /// <p>Shows the result of condition evaluations, including those conditions which activated a human review.</p>
+    pub fn get_human_loop_activation_conditions_evaluation_results(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.human_loop_activation_conditions_evaluation_results
     }
     /// Consumes the builder and constructs a [`HumanLoopActivationOutput`](crate::types::HumanLoopActivationOutput).
     pub fn build(self) -> crate::types::HumanLoopActivationOutput {

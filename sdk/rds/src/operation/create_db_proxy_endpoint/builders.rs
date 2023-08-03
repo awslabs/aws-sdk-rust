@@ -36,6 +36,13 @@ impl CreateDBProxyEndpointFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDBProxyEndpoint as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_db_proxy_endpoint::builders::CreateDbProxyEndpointInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl CreateDBProxyEndpointFluentBuilder {
         self.inner = self.inner.set_db_proxy_name(input);
         self
     }
+    /// <p>The name of the DB proxy associated with the DB proxy endpoint that you create.</p>
+    pub fn get_db_proxy_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_proxy_name()
+    }
     /// <p>The name of the DB proxy endpoint to create.</p>
     pub fn db_proxy_endpoint_name(
         mut self,
@@ -147,6 +158,10 @@ impl CreateDBProxyEndpointFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_db_proxy_endpoint_name(input);
         self
+    }
+    /// <p>The name of the DB proxy endpoint to create.</p>
+    pub fn get_db_proxy_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_proxy_endpoint_name()
     }
     /// Appends an item to `VpcSubnetIds`.
     ///
@@ -168,6 +183,12 @@ impl CreateDBProxyEndpointFluentBuilder {
         self.inner = self.inner.set_vpc_subnet_ids(input);
         self
     }
+    /// <p>The VPC subnet IDs for the DB proxy endpoint that you create. You can specify a different set of subnet IDs than for the original DB proxy.</p>
+    pub fn get_vpc_subnet_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_vpc_subnet_ids()
+    }
     /// Appends an item to `VpcSecurityGroupIds`.
     ///
     /// To override the contents of this collection use [`set_vpc_security_group_ids`](Self::set_vpc_security_group_ids).
@@ -188,6 +209,12 @@ impl CreateDBProxyEndpointFluentBuilder {
         self.inner = self.inner.set_vpc_security_group_ids(input);
         self
     }
+    /// <p>The VPC security group IDs for the DB proxy endpoint that you create. You can specify a different set of security group IDs than for the original DB proxy. The default is the default security group for the VPC.</p>
+    pub fn get_vpc_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_vpc_security_group_ids()
+    }
     /// <p>A value that indicates whether the DB proxy endpoint can be used for read/write or read-only operations. The default is <code>READ_WRITE</code>. The only role that proxies for RDS for Microsoft SQL Server support is <code>READ_WRITE</code>.</p>
     pub fn target_role(mut self, input: crate::types::DbProxyEndpointTargetRole) -> Self {
         self.inner = self.inner.target_role(input);
@@ -200,6 +227,12 @@ impl CreateDBProxyEndpointFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_target_role(input);
         self
+    }
+    /// <p>A value that indicates whether the DB proxy endpoint can be used for read/write or read-only operations. The default is <code>READ_WRITE</code>. The only role that proxies for RDS for Microsoft SQL Server support is <code>READ_WRITE</code>.</p>
+    pub fn get_target_role(
+        &self,
+    ) -> &::std::option::Option<crate::types::DbProxyEndpointTargetRole> {
+        self.inner.get_target_role()
     }
     /// Appends an item to `Tags`.
     ///
@@ -217,5 +250,9 @@ impl CreateDBProxyEndpointFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

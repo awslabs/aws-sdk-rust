@@ -41,6 +41,10 @@ impl DeactivateEventSourceInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the partner event source to deactivate.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DeactivateEventSourceInput`](crate::operation::deactivate_event_source::DeactivateEventSourceInput).
     pub fn build(
         self,

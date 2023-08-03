@@ -66,6 +66,10 @@ impl UpdateTargetBuilder {
         self.maintenance_track_name = input;
         self
     }
+    /// <p>The name of the new maintenance track.</p>
+    pub fn get_maintenance_track_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.maintenance_track_name
+    }
     /// <p>The cluster version for the new maintenance track.</p>
     pub fn database_version(
         mut self,
@@ -81,6 +85,10 @@ impl UpdateTargetBuilder {
     ) -> Self {
         self.database_version = input;
         self
+    }
+    /// <p>The cluster version for the new maintenance track.</p>
+    pub fn get_database_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_version
     }
     /// Appends an item to `supported_operations`.
     ///
@@ -100,6 +108,12 @@ impl UpdateTargetBuilder {
     ) -> Self {
         self.supported_operations = input;
         self
+    }
+    /// <p>A list of operations supported by the maintenance track.</p>
+    pub fn get_supported_operations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SupportedOperation>> {
+        &self.supported_operations
     }
     /// Consumes the builder and constructs a [`UpdateTarget`](crate::types::UpdateTarget).
     pub fn build(self) -> crate::types::UpdateTarget {

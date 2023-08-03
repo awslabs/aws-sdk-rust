@@ -55,6 +55,12 @@ impl DescribeMediaStorageConfigurationOutputBuilder {
         self.media_storage_configuration = input;
         self
     }
+    /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
+    pub fn get_media_storage_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::MediaStorageConfiguration> {
+        &self.media_storage_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -36,6 +36,12 @@ impl DeleteSessionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteSession as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_session::builders::DeleteSessionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl DeleteSessionFluentBuilder {
         self.inner = self.inner.set_bot_name(input);
         self
     }
+    /// <p>The name of the bot that contains the session data.</p>
+    pub fn get_bot_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bot_name()
+    }
     /// <p>The alias in use for the bot that contains the session data.</p>
     pub fn bot_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_alias(input.into());
@@ -128,6 +138,10 @@ impl DeleteSessionFluentBuilder {
         self.inner = self.inner.set_bot_alias(input);
         self
     }
+    /// <p>The alias in use for the bot that contains the session data.</p>
+    pub fn get_bot_alias(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bot_alias()
+    }
     /// <p>The identifier of the user associated with the session data.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
@@ -137,5 +151,9 @@ impl DeleteSessionFluentBuilder {
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_id(input);
         self
+    }
+    /// <p>The identifier of the user associated with the session data.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_id()
     }
 }

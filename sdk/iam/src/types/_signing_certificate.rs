@@ -73,6 +73,10 @@ impl SigningCertificateBuilder {
         self.user_name = input;
         self
     }
+    /// <p>The name of the user the signing certificate is associated with.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
+    }
     /// <p>The ID for the signing certificate.</p>
     pub fn certificate_id(
         mut self,
@@ -88,6 +92,10 @@ impl SigningCertificateBuilder {
     ) -> Self {
         self.certificate_id = input;
         self
+    }
+    /// <p>The ID for the signing certificate.</p>
+    pub fn get_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_id
     }
     /// <p>The contents of the signing certificate.</p>
     pub fn certificate_body(
@@ -105,6 +113,10 @@ impl SigningCertificateBuilder {
         self.certificate_body = input;
         self
     }
+    /// <p>The contents of the signing certificate.</p>
+    pub fn get_certificate_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_body
+    }
     /// <p>The status of the signing certificate. <code>Active</code> means that the key is valid for API calls, while <code>Inactive</code> means it is not.</p>
     pub fn status(mut self, input: crate::types::StatusType) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -114,6 +126,10 @@ impl SigningCertificateBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::StatusType>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the signing certificate. <code>Active</code> means that the key is valid for API calls, while <code>Inactive</code> means it is not.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::StatusType> {
+        &self.status
     }
     /// <p>The date when the signing certificate was uploaded.</p>
     pub fn upload_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -127,6 +143,10 @@ impl SigningCertificateBuilder {
     ) -> Self {
         self.upload_date = input;
         self
+    }
+    /// <p>The date when the signing certificate was uploaded.</p>
+    pub fn get_upload_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.upload_date
     }
     /// Consumes the builder and constructs a [`SigningCertificate`](crate::types::SigningCertificate).
     pub fn build(self) -> crate::types::SigningCertificate {

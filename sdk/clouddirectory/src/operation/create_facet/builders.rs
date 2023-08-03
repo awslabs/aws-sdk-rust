@@ -36,6 +36,10 @@ impl CreateFacetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateFacet as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_facet::builders::CreateFacetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl CreateFacetFluentBuilder {
         self.inner = self.inner.set_schema_arn(input);
         self
     }
+    /// <p>The schema ARN in which the new <code>Facet</code> will be created. For more information, see <code>arns</code>.</p>
+    pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_schema_arn()
+    }
     /// <p>The name of the <code>Facet</code>, which is unique for a given schema.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -127,6 +135,10 @@ impl CreateFacetFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the <code>Facet</code>, which is unique for a given schema.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// Appends an item to `Attributes`.
     ///
@@ -144,6 +156,12 @@ impl CreateFacetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
+    }
+    /// <p>The attributes that are associated with the <code>Facet</code>.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FacetAttribute>> {
+        self.inner.get_attributes()
     }
     /// <p>Specifies whether a given object created from this facet is of type node, leaf node, policy or index.</p>
     /// <ul>
@@ -182,6 +200,22 @@ impl CreateFacetFluentBuilder {
         self.inner = self.inner.set_object_type(input);
         self
     }
+    /// <p>Specifies whether a given object created from this facet is of type node, leaf node, policy or index.</p>
+    /// <ul>
+    /// <li> <p>Node: Can have multiple children but one parent.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>Leaf node: Cannot have children but can have multiple parents.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>Policy: Allows you to store a policy document and policy type. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>Index: Can be created with the Index API.</p> </li>
+    /// </ul>
+    pub fn get_object_type(&self) -> &::std::option::Option<crate::types::ObjectType> {
+        self.inner.get_object_type()
+    }
     /// <p>There are two different styles that you can define on any given facet, <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets, attributes can be defined during data plane operations.</p>
     pub fn facet_style(mut self, input: crate::types::FacetStyle) -> Self {
         self.inner = self.inner.facet_style(input);
@@ -194,5 +228,9 @@ impl CreateFacetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_facet_style(input);
         self
+    }
+    /// <p>There are two different styles that you can define on any given facet, <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets, attributes can be defined during data plane operations.</p>
+    pub fn get_facet_style(&self) -> &::std::option::Option<crate::types::FacetStyle> {
+        self.inner.get_facet_style()
     }
 }

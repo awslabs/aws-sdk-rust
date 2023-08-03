@@ -46,6 +46,12 @@ impl ListCoreDevicesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListCoreDevices as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_core_devices::builders::ListCoreDevicesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -153,6 +159,10 @@ impl ListCoreDevicesFluentBuilder {
         self.inner = self.inner.set_thing_group_arn(input);
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT thing group by which to filter. If you specify this parameter, the list includes only core devices that have successfully deployed a deployment that targets the thing group. When you remove a core device from a thing group, the list continues to include that core device.</p>
+    pub fn get_thing_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_thing_group_arn()
+    }
     /// <p>The core device status by which to filter. If you specify this parameter, the list includes only core devices that have this status. Choose one of the following options:</p>
     /// <ul>
     /// <li> <p> <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p> </li>
@@ -174,6 +184,14 @@ impl ListCoreDevicesFluentBuilder {
         self.inner = self.inner.set_status(input);
         self
     }
+    /// <p>The core device status by which to filter. If you specify this parameter, the list includes only core devices that have this status. Choose one of the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p> </li>
+    /// <li> <p> <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state on the core device.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::CoreDeviceStatus> {
+        self.inner.get_status()
+    }
     /// <p>The maximum number of results to be returned per paginated request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -184,6 +202,10 @@ impl ListCoreDevicesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to be returned per paginated request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token to be used for the next set of paginated results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -193,5 +215,9 @@ impl ListCoreDevicesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

@@ -62,6 +62,12 @@ impl ParticipantTimerConfigurationBuilder {
         self.participant_role = input;
         self
     }
+    /// <p>The role of the participant in the chat conversation.</p>
+    pub fn get_participant_role(
+        &self,
+    ) -> &::std::option::Option<crate::types::TimerEligibleParticipantRoles> {
+        &self.participant_role
+    }
     /// <p>The type of timer. <code>IDLE</code> indicates the timer applies for considering a human chat participant as idle. <code>DISCONNECT_NONCUSTOMER</code> indicates the timer applies to automatically disconnecting a chat participant due to idleness.</p>
     pub fn timer_type(mut self, input: crate::types::ParticipantTimerType) -> Self {
         self.timer_type = ::std::option::Option::Some(input);
@@ -75,6 +81,10 @@ impl ParticipantTimerConfigurationBuilder {
         self.timer_type = input;
         self
     }
+    /// <p>The type of timer. <code>IDLE</code> indicates the timer applies for considering a human chat participant as idle. <code>DISCONNECT_NONCUSTOMER</code> indicates the timer applies to automatically disconnecting a chat participant due to idleness.</p>
+    pub fn get_timer_type(&self) -> &::std::option::Option<crate::types::ParticipantTimerType> {
+        &self.timer_type
+    }
     /// <p>The value of the timer. Either the timer action (Unset to delete the timer), or the duration of the timer in minutes. Only one value can be set.</p>
     pub fn timer_value(mut self, input: crate::types::ParticipantTimerValue) -> Self {
         self.timer_value = ::std::option::Option::Some(input);
@@ -87,6 +97,10 @@ impl ParticipantTimerConfigurationBuilder {
     ) -> Self {
         self.timer_value = input;
         self
+    }
+    /// <p>The value of the timer. Either the timer action (Unset to delete the timer), or the duration of the timer in minutes. Only one value can be set.</p>
+    pub fn get_timer_value(&self) -> &::std::option::Option<crate::types::ParticipantTimerValue> {
+        &self.timer_value
     }
     /// Consumes the builder and constructs a [`ParticipantTimerConfiguration`](crate::types::ParticipantTimerConfiguration).
     pub fn build(self) -> crate::types::ParticipantTimerConfiguration {

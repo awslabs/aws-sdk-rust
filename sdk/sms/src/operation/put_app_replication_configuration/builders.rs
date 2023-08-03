@@ -36,6 +36,10 @@ impl PutAppReplicationConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutAppReplicationConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_app_replication_configuration::builders::PutAppReplicationConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl PutAppReplicationConfigurationFluentBuilder {
         self.inner = self.inner.set_app_id(input);
         self
     }
+    /// <p>The ID of the application.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_id()
+    }
     /// Appends an item to `serverGroupReplicationConfigurations`.
     ///
     /// To override the contents of this collection use [`set_server_group_replication_configurations`](Self::set_server_group_replication_configurations).
@@ -123,5 +131,12 @@ impl PutAppReplicationConfigurationFluentBuilder {
             .inner
             .set_server_group_replication_configurations(input);
         self
+    }
+    /// <p>Information about the replication configurations for server groups in the application.</p>
+    pub fn get_server_group_replication_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerGroupReplicationConfiguration>>
+    {
+        self.inner.get_server_group_replication_configurations()
     }
 }

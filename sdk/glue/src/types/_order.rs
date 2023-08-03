@@ -48,6 +48,10 @@ impl OrderBuilder {
         self.column = input;
         self
     }
+    /// <p>The name of the column.</p>
+    pub fn get_column(&self) -> &::std::option::Option<::std::string::String> {
+        &self.column
+    }
     /// <p>Indicates that the column is sorted in ascending order (<code>== 1</code>), or in descending order (<code>==0</code>).</p>
     pub fn sort_order(mut self, input: i32) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl OrderBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<i32>) -> Self {
         self.sort_order = input;
         self
+    }
+    /// <p>Indicates that the column is sorted in ascending order (<code>== 1</code>), or in descending order (<code>==0</code>).</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<i32> {
+        &self.sort_order
     }
     /// Consumes the builder and constructs a [`Order`](crate::types::Order).
     pub fn build(self) -> crate::types::Order {

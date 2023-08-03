@@ -70,6 +70,12 @@ impl ListAssistantAssociationsOutputBuilder {
         self.assistant_association_summaries = input;
         self
     }
+    /// <p>Summary information about assistant associations.</p>
+    pub fn get_assistant_association_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssistantAssociationSummary>> {
+        &self.assistant_association_summaries
+    }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -79,6 +85,10 @@ impl ListAssistantAssociationsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -80,6 +80,12 @@ impl ListAppInstanceUserEndpointsOutputBuilder {
         self.app_instance_user_endpoints = input;
         self
     }
+    /// <p>The information for each requested <code>AppInstanceUserEndpoint</code>.</p>
+    pub fn get_app_instance_user_endpoints(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AppInstanceUserEndpointSummary>> {
+        &self.app_instance_user_endpoints
+    }
     /// <p>The token passed by previous API calls until all requested endpoints are returned.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -89,6 +95,10 @@ impl ListAppInstanceUserEndpointsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token passed by previous API calls until all requested endpoints are returned.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

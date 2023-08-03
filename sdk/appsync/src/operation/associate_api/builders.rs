@@ -36,6 +36,10 @@ impl AssociateApiFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateApi as a reference.
+    pub fn as_input(&self) -> &crate::operation::associate_api::builders::AssociateApiInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl AssociateApiFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p>The domain name.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
     /// <p>The API ID. Private APIs can not be associated with custom domains.</p>
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.api_id(input.into());
@@ -127,5 +135,9 @@ impl AssociateApiFluentBuilder {
     pub fn set_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_api_id(input);
         self
+    }
+    /// <p>The API ID. Private APIs can not be associated with custom domains.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_api_id()
     }
 }

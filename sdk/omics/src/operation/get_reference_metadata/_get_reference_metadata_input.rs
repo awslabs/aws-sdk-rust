@@ -48,6 +48,10 @@ impl GetReferenceMetadataInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The reference's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The reference's reference store ID.</p>
     pub fn reference_store_id(
         mut self,
@@ -63,6 +67,10 @@ impl GetReferenceMetadataInputBuilder {
     ) -> Self {
         self.reference_store_id = input;
         self
+    }
+    /// <p>The reference's reference store ID.</p>
+    pub fn get_reference_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reference_store_id
     }
     /// Consumes the builder and constructs a [`GetReferenceMetadataInput`](crate::operation::get_reference_metadata::GetReferenceMetadataInput).
     pub fn build(

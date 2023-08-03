@@ -55,6 +55,10 @@ impl TransferDomainToAnotherAwsAccountOutputBuilder {
         self.operation_id = input;
         self
     }
+    /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
+    pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operation_id
+    }
     /// <p>To finish transferring a domain to another Amazon Web Services account, the account that the domain is being transferred to must submit an <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html">AcceptDomainTransferFromAnotherAwsAccount</a> request. The request must include the value of the <code>Password</code> element that was returned in the <code>TransferDomainToAnotherAwsAccount</code> response.</p>
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl TransferDomainToAnotherAwsAccountOutputBuilder {
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.password = input;
         self
+    }
+    /// <p>To finish transferring a domain to another Amazon Web Services account, the account that the domain is being transferred to must submit an <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html">AcceptDomainTransferFromAnotherAwsAccount</a> request. The request must include the value of the <code>Password</code> element that was returned in the <code>TransferDomainToAnotherAwsAccount</code> response.</p>
+    pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.password
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

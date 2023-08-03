@@ -82,6 +82,12 @@ impl CvssScoreDetailsBuilder {
         self.adjustments = input;
         self
     }
+    /// <p>An object that contains details about adjustment Amazon Inspector made to the CVSS score.</p>
+    pub fn get_adjustments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CvssScoreAdjustment>> {
+        &self.adjustments
+    }
     /// <p>The CVSS score.</p>
     pub fn score(mut self, input: f64) -> Self {
         self.score = ::std::option::Option::Some(input);
@@ -92,6 +98,10 @@ impl CvssScoreDetailsBuilder {
         self.score = input;
         self
     }
+    /// <p>The CVSS score.</p>
+    pub fn get_score(&self) -> &::std::option::Option<f64> {
+        &self.score
+    }
     /// <p>The source for the CVSS score.</p>
     pub fn score_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.score_source = ::std::option::Option::Some(input.into());
@@ -101,6 +111,10 @@ impl CvssScoreDetailsBuilder {
     pub fn set_score_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.score_source = input;
         self
+    }
+    /// <p>The source for the CVSS score.</p>
+    pub fn get_score_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.score_source
     }
     /// <p>The vector for the CVSS score.</p>
     pub fn scoring_vector(
@@ -118,6 +132,10 @@ impl CvssScoreDetailsBuilder {
         self.scoring_vector = input;
         self
     }
+    /// <p>The vector for the CVSS score.</p>
+    pub fn get_scoring_vector(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scoring_vector
+    }
     /// <p>The CVSS version used in scoring.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -127,6 +145,10 @@ impl CvssScoreDetailsBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The CVSS version used in scoring.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`CvssScoreDetails`](crate::types::CvssScoreDetails).
     pub fn build(self) -> crate::types::CvssScoreDetails {

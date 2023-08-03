@@ -79,6 +79,12 @@ impl ListNamespacesOutputBuilder {
         self.namespaces = input;
         self
     }
+    /// <p>The information about the namespaces in this Amazon Web Services account. The response includes the namespace ARN, name, Amazon Web Services Region, notification email address, creation status, and identity store.</p>
+    pub fn get_namespaces(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NamespaceInfoV2>> {
+        &self.namespaces
+    }
     /// <p>A unique pagination token that can be used in a subsequent request. Receiving <code>NextToken</code> in your response inticates that there is more data that can be returned. To receive the data, make another <code>ListNamespaces</code> API call with the returned token to retrieve the next page of data. Each token is valid for 24 hours. If you try to make a <code>ListNamespaces</code> API call with an expired token, you will receive a <code>HTTP 400 InvalidNextTokenException</code> error.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -88,6 +94,10 @@ impl ListNamespacesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A unique pagination token that can be used in a subsequent request. Receiving <code>NextToken</code> in your response inticates that there is more data that can be returned. To receive the data, make another <code>ListNamespaces</code> API call with the returned token to retrieve the next page of data. Each token is valid for 24 hours. If you try to make a <code>ListNamespaces</code> API call with an expired token, you will receive a <code>HTTP 400 InvalidNextTokenException</code> error.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -99,6 +109,10 @@ impl ListNamespacesOutputBuilder {
         self.request_id = input;
         self
     }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
+    }
     /// <p>The HTTP status of the request.</p>
     pub fn status(mut self, input: i32) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -108,6 +122,10 @@ impl ListNamespacesOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<i32>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<i32> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

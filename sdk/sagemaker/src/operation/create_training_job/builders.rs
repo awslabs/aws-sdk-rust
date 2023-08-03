@@ -53,6 +53,12 @@ impl CreateTrainingJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateTrainingJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_training_job::builders::CreateTrainingJobInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -149,6 +155,10 @@ impl CreateTrainingJobFluentBuilder {
         self.inner = self.inner.set_training_job_name(input);
         self
     }
+    /// <p>The name of the training job. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account. </p>
+    pub fn get_training_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_training_job_name()
+    }
     /// Adds a key-value pair to `HyperParameters`.
     ///
     /// To override the contents of this collection use [`set_hyper_parameters`](Self::set_hyper_parameters).
@@ -178,6 +188,17 @@ impl CreateTrainingJobFluentBuilder {
         self.inner = self.inner.set_hyper_parameters(input);
         self
     }
+    /// <p>Algorithm-specific parameters that influence the quality of the model. You set hyperparameters before you start the learning process. For a list of hyperparameters for each training algorithm provided by SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. </p>
+    /// <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and value is limited to 256 characters, as specified by the <code>Length Constraint</code>. </p> <important>
+    /// <p>Do not include any security-sensitive information including account access IDs, secrets or tokens in any hyperparameter field. If the use of security-sensitive credentials are detected, SageMaker will reject your training job request and return an exception error.</p>
+    /// </important>
+    pub fn get_hyper_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_hyper_parameters()
+    }
     /// <p>The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about providing your own algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>. </p>
     pub fn algorithm_specification(mut self, input: crate::types::AlgorithmSpecification) -> Self {
         self.inner = self.inner.algorithm_specification(input);
@@ -190,6 +211,12 @@ impl CreateTrainingJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_algorithm_specification(input);
         self
+    }
+    /// <p>The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about providing your own algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>. </p>
+    pub fn get_algorithm_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::AlgorithmSpecification> {
+        self.inner.get_algorithm_specification()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that SageMaker can assume to perform tasks on your behalf. </p>
     /// <p>During model training, SageMaker needs your permission to read input data from an S3 bucket, download a Docker image that contains training code, write model artifacts to an S3 bucket, write logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch. You grant permissions for all of these tasks to an IAM role. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p> <note>
@@ -206,6 +233,13 @@ impl CreateTrainingJobFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that SageMaker can assume to perform tasks on your behalf. </p>
+    /// <p>During model training, SageMaker needs your permission to read input data from an S3 bucket, download a Docker image that contains training code, write model artifacts to an S3 bucket, write logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch. You grant permissions for all of these tasks to an IAM role. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p> <note>
+    /// <p>To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
+    /// </note>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
     /// Appends an item to `InputDataConfig`.
     ///
@@ -230,6 +264,15 @@ impl CreateTrainingJobFluentBuilder {
         self.inner = self.inner.set_input_data_config(input);
         self
     }
+    /// <p>An array of <code>Channel</code> objects. Each channel is a named input source. <code>InputDataConfig</code> describes the input data and its location. </p>
+    /// <p>Algorithms can accept input data from one or more channels. For example, an algorithm might have two channels of input data, <code>training_data</code> and <code>validation_data</code>. The configuration for each channel provides the S3, EFS, or FSx location where the input data is stored. It also provides information about the stored data: the MIME type, compression method, and whether the data is wrapped in RecordIO format. </p>
+    /// <p>Depending on the input mode that the algorithm supports, SageMaker either copies input data files from an S3 bucket to a local directory in the Docker container, or makes it available as input streams. For example, if you specify an EFS location, input data files are available as input streams. They do not need to be downloaded.</p>
+    /// <p>Your input must be in the same Amazon Web Services region as your training job.</p>
+    pub fn get_input_data_config(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Channel>> {
+        self.inner.get_input_data_config()
+    }
     /// <p>Specifies the path to the S3 location where you want to store model artifacts. SageMaker creates subfolders for the artifacts. </p>
     pub fn output_data_config(mut self, input: crate::types::OutputDataConfig) -> Self {
         self.inner = self.inner.output_data_config(input);
@@ -242,6 +285,10 @@ impl CreateTrainingJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_output_data_config(input);
         self
+    }
+    /// <p>Specifies the path to the S3 location where you want to store model artifacts. SageMaker creates subfolders for the artifacts. </p>
+    pub fn get_output_data_config(&self) -> &::std::option::Option<crate::types::OutputDataConfig> {
+        self.inner.get_output_data_config()
     }
     /// <p>The resources, including the ML compute instances and ML storage volumes, to use for model training. </p>
     /// <p>ML storage volumes store model artifacts and incremental states. Training algorithms might also use ML storage volumes for scratch space. If you want SageMaker to use the ML storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p>
@@ -258,6 +305,11 @@ impl CreateTrainingJobFluentBuilder {
         self.inner = self.inner.set_resource_config(input);
         self
     }
+    /// <p>The resources, including the ML compute instances and ML storage volumes, to use for model training. </p>
+    /// <p>ML storage volumes store model artifacts and incremental states. Training algorithms might also use ML storage volumes for scratch space. If you want SageMaker to use the ML storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p>
+    pub fn get_resource_config(&self) -> &::std::option::Option<crate::types::ResourceConfig> {
+        self.inner.get_resource_config()
+    }
     /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object that specifies the VPC that you want your training job to connect to. Control access to and from your training container by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
     pub fn vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
         self.inner = self.inner.vpc_config(input);
@@ -267,6 +319,10 @@ impl CreateTrainingJobFluentBuilder {
     pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
         self.inner = self.inner.set_vpc_config(input);
         self
+    }
+    /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object that specifies the VPC that you want your training job to connect to. Control access to and from your training container by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
+    pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
+        self.inner.get_vpc_config()
     }
     /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
     /// <p>To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>
@@ -282,6 +338,13 @@ impl CreateTrainingJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_stopping_condition(input);
         self
+    }
+    /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
+    /// <p>To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>
+    pub fn get_stopping_condition(
+        &self,
+    ) -> &::std::option::Option<crate::types::StoppingCondition> {
+        self.inner.get_stopping_condition()
     }
     /// Appends an item to `Tags`.
     ///
@@ -300,6 +363,10 @@ impl CreateTrainingJobFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers within a training cluster for distributed training. If you enable network isolation for training jobs that are configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
     pub fn enable_network_isolation(mut self, input: bool) -> Self {
         self.inner = self.inner.enable_network_isolation(input);
@@ -309,6 +376,10 @@ impl CreateTrainingJobFluentBuilder {
     pub fn set_enable_network_isolation(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_network_isolation(input);
         self
+    }
+    /// <p>Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers within a training cluster for distributed training. If you enable network isolation for training jobs that are configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
+    pub fn get_enable_network_isolation(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_network_isolation()
     }
     /// <p>To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>. Encryption provides greater security for distributed training, but training might take longer. How long it takes depends on the amount of communication between compute instances, especially if you use a deep learning algorithm in distributed training. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-encrypt.html">Protect Communications Between ML Compute Instances in a Distributed Training Job</a>.</p>
     pub fn enable_inter_container_traffic_encryption(mut self, input: bool) -> Self {
@@ -325,6 +396,10 @@ impl CreateTrainingJobFluentBuilder {
             .set_enable_inter_container_traffic_encryption(input);
         self
     }
+    /// <p>To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>. Encryption provides greater security for distributed training, but training might take longer. How long it takes depends on the amount of communication between compute instances, especially if you use a deep learning algorithm in distributed training. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-encrypt.html">Protect Communications Between ML Compute Instances in a Distributed Training Job</a>.</p>
+    pub fn get_enable_inter_container_traffic_encryption(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_inter_container_traffic_encryption()
+    }
     /// <p>To train models using managed spot training, choose <code>True</code>. Managed spot training provides a fully managed and scalable infrastructure for training machine learning models. this option is useful when training jobs can be interrupted and when there is flexibility when the training job is run. </p>
     /// <p>The complete and intermediate results of jobs are stored in an Amazon S3 bucket, and can be used as a starting point to train models incrementally. Amazon SageMaker provides metrics and logs in CloudWatch. They can be used to see when managed spot training jobs are running, interrupted, resumed, or completed. </p>
     pub fn enable_managed_spot_training(mut self, input: bool) -> Self {
@@ -336,6 +411,11 @@ impl CreateTrainingJobFluentBuilder {
     pub fn set_enable_managed_spot_training(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_managed_spot_training(input);
         self
+    }
+    /// <p>To train models using managed spot training, choose <code>True</code>. Managed spot training provides a fully managed and scalable infrastructure for training machine learning models. this option is useful when training jobs can be interrupted and when there is flexibility when the training job is run. </p>
+    /// <p>The complete and intermediate results of jobs are stored in an Amazon S3 bucket, and can be used as a starting point to train models incrementally. Amazon SageMaker provides metrics and logs in CloudWatch. They can be used to see when managed spot training jobs are running, interrupted, resumed, or completed. </p>
+    pub fn get_enable_managed_spot_training(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_managed_spot_training()
     }
     /// <p>Contains information about the output location for managed spot training checkpoint data.</p>
     pub fn checkpoint_config(mut self, input: crate::types::CheckpointConfig) -> Self {
@@ -350,6 +430,10 @@ impl CreateTrainingJobFluentBuilder {
         self.inner = self.inner.set_checkpoint_config(input);
         self
     }
+    /// <p>Contains information about the output location for managed spot training checkpoint data.</p>
+    pub fn get_checkpoint_config(&self) -> &::std::option::Option<crate::types::CheckpointConfig> {
+        self.inner.get_checkpoint_config()
+    }
     /// <p>Configuration information for the Amazon SageMaker Debugger hook parameters, metric and tensor collections, and storage paths. To learn more about how to configure the <code>DebugHookConfig</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
     pub fn debug_hook_config(mut self, input: crate::types::DebugHookConfig) -> Self {
         self.inner = self.inner.debug_hook_config(input);
@@ -362,6 +446,10 @@ impl CreateTrainingJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_debug_hook_config(input);
         self
+    }
+    /// <p>Configuration information for the Amazon SageMaker Debugger hook parameters, metric and tensor collections, and storage paths. To learn more about how to configure the <code>DebugHookConfig</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
+    pub fn get_debug_hook_config(&self) -> &::std::option::Option<crate::types::DebugHookConfig> {
+        self.inner.get_debug_hook_config()
     }
     /// Appends an item to `DebugRuleConfigurations`.
     ///
@@ -383,6 +471,12 @@ impl CreateTrainingJobFluentBuilder {
         self.inner = self.inner.set_debug_rule_configurations(input);
         self
     }
+    /// <p>Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.</p>
+    pub fn get_debug_rule_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DebugRuleConfiguration>> {
+        self.inner.get_debug_rule_configurations()
+    }
     /// <p>Configuration of storage locations for the Amazon SageMaker Debugger TensorBoard output data.</p>
     pub fn tensor_board_output_config(
         mut self,
@@ -398,6 +492,12 @@ impl CreateTrainingJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tensor_board_output_config(input);
         self
+    }
+    /// <p>Configuration of storage locations for the Amazon SageMaker Debugger TensorBoard output data.</p>
+    pub fn get_tensor_board_output_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::TensorBoardOutputConfig> {
+        self.inner.get_tensor_board_output_config()
     }
     /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
     /// <ul>
@@ -422,6 +522,15 @@ impl CreateTrainingJobFluentBuilder {
         self.inner = self.inner.set_experiment_config(input);
         self
     }
+    /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
+    /// <ul>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProcessingJob.html">CreateProcessingJob</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a> </p> </li>
+    /// </ul>
+    pub fn get_experiment_config(&self) -> &::std::option::Option<crate::types::ExperimentConfig> {
+        self.inner.get_experiment_config()
+    }
     /// <p>Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage paths.</p>
     pub fn profiler_config(mut self, input: crate::types::ProfilerConfig) -> Self {
         self.inner = self.inner.profiler_config(input);
@@ -434,6 +543,10 @@ impl CreateTrainingJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_profiler_config(input);
         self
+    }
+    /// <p>Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage paths.</p>
+    pub fn get_profiler_config(&self) -> &::std::option::Option<crate::types::ProfilerConfig> {
+        self.inner.get_profiler_config()
     }
     /// Appends an item to `ProfilerRuleConfigurations`.
     ///
@@ -454,6 +567,12 @@ impl CreateTrainingJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_profiler_rule_configurations(input);
         self
+    }
+    /// <p>Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.</p>
+    pub fn get_profiler_rule_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProfilerRuleConfiguration>> {
+        self.inner.get_profiler_rule_configurations()
     }
     /// Adds a key-value pair to `Environment`.
     ///
@@ -478,6 +597,14 @@ impl CreateTrainingJobFluentBuilder {
         self.inner = self.inner.set_environment(input);
         self
     }
+    /// <p>The environment variables to set in the Docker container.</p>
+    pub fn get_environment(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_environment()
+    }
     /// <p>The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p>
     pub fn retry_strategy(mut self, input: crate::types::RetryStrategy) -> Self {
         self.inner = self.inner.retry_strategy(input);
@@ -490,5 +617,9 @@ impl CreateTrainingJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_retry_strategy(input);
         self
+    }
+    /// <p>The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p>
+    pub fn get_retry_strategy(&self) -> &::std::option::Option<crate::types::RetryStrategy> {
+        self.inner.get_retry_strategy()
     }
 }

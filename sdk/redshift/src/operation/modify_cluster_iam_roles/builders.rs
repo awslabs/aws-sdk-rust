@@ -37,6 +37,13 @@ impl ModifyClusterIamRolesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyClusterIamRoles as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::modify_cluster_iam_roles::builders::ModifyClusterIamRolesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl ModifyClusterIamRolesFluentBuilder {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
+    /// <p>The unique identifier of the cluster for which you want to associate or disassociate IAM roles.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_identifier()
+    }
     /// Appends an item to `AddIamRoles`.
     ///
     /// To override the contents of this collection use [`set_add_iam_roles`](Self::set_add_iam_roles).
@@ -152,6 +163,12 @@ impl ModifyClusterIamRolesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_add_iam_roles(input);
         self
+    }
+    /// <p>Zero or more IAM roles to associate with the cluster. The roles must be in their Amazon Resource Name (ARN) format. </p>
+    pub fn get_add_iam_roles(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_add_iam_roles()
     }
     /// Appends an item to `RemoveIamRoles`.
     ///
@@ -173,6 +190,12 @@ impl ModifyClusterIamRolesFluentBuilder {
         self.inner = self.inner.set_remove_iam_roles(input);
         self
     }
+    /// <p>Zero or more IAM roles in ARN format to disassociate from the cluster. </p>
+    pub fn get_remove_iam_roles(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_remove_iam_roles()
+    }
     /// <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last modified.</p>
     pub fn default_iam_role_arn(
         mut self,
@@ -188,5 +211,9 @@ impl ModifyClusterIamRolesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_default_iam_role_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last modified.</p>
+    pub fn get_default_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_default_iam_role_arn()
     }
 }

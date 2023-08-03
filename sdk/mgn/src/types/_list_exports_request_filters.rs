@@ -49,6 +49,12 @@ impl ListExportsRequestFiltersBuilder {
         self.export_i_ds = input;
         self
     }
+    /// <p>List exports request filters export ids.</p>
+    pub fn get_export_i_ds(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.export_i_ds
+    }
     /// Consumes the builder and constructs a [`ListExportsRequestFilters`](crate::types::ListExportsRequestFilters).
     pub fn build(self) -> crate::types::ListExportsRequestFilters {
         crate::types::ListExportsRequestFilters {

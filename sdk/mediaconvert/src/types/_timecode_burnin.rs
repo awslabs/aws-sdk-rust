@@ -56,6 +56,10 @@ impl TimecodeBurninBuilder {
         self.font_size = input;
         self
     }
+    /// Use Font size to set the font size of any burned-in timecode. Valid values are 10, 16, 32, 48.
+    pub fn get_font_size(&self) -> &::std::option::Option<i32> {
+        &self.font_size
+    }
     /// Use Position under Timecode burn-in to specify the location the burned-in timecode on output video.
     pub fn position(mut self, input: crate::types::TimecodeBurninPosition) -> Self {
         self.position = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl TimecodeBurninBuilder {
         self.position = input;
         self
     }
+    /// Use Position under Timecode burn-in to specify the location the burned-in timecode on output video.
+    pub fn get_position(&self) -> &::std::option::Option<crate::types::TimecodeBurninPosition> {
+        &self.position
+    }
     /// Use Prefix to place ASCII characters before any burned-in timecode. For example, a prefix of "EZ-" will result in the timecode "EZ-00:00:00:00". Provide either the characters themselves or the ASCII code equivalents. The supported range of characters is 0x20 through 0x7e. This includes letters, numbers, and all special characters represented on a standard English keyboard.
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix = ::std::option::Option::Some(input.into());
@@ -78,6 +86,10 @@ impl TimecodeBurninBuilder {
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix = input;
         self
+    }
+    /// Use Prefix to place ASCII characters before any burned-in timecode. For example, a prefix of "EZ-" will result in the timecode "EZ-00:00:00:00". Provide either the characters themselves or the ASCII code equivalents. The supported range of characters is 0x20 through 0x7e. This includes letters, numbers, and all special characters represented on a standard English keyboard.
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
     }
     /// Consumes the builder and constructs a [`TimecodeBurnin`](crate::types::TimecodeBurnin).
     pub fn build(self) -> crate::types::TimecodeBurnin {

@@ -48,6 +48,10 @@ impl TargetBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the target. If the target type of the target group is <code>INSTANCE</code>, this is an instance ID. If the target type is <code>IP</code> , this is an IP address. If the target type is <code>LAMBDA</code>, this is the ARN of the Lambda function. If the target type is <code>ALB</code>, this is the ARN of the Application Load Balancer.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The port on which the target is listening. For HTTP, the default is <code>80</code>. For HTTPS, the default is <code>443</code>.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl TargetBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
+    }
+    /// <p>The port on which the target is listening. For HTTP, the default is <code>80</code>. For HTTPS, the default is <code>443</code>.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// Consumes the builder and constructs a [`Target`](crate::types::Target).
     pub fn build(self) -> crate::types::Target {

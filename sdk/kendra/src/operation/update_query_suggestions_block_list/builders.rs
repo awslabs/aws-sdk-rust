@@ -40,6 +40,10 @@ impl UpdateQuerySuggestionsBlockListFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateQuerySuggestionsBlockList as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_query_suggestions_block_list::builders::UpdateQuerySuggestionsBlockListInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -104,6 +108,10 @@ impl UpdateQuerySuggestionsBlockListFluentBuilder {
         self.inner = self.inner.set_index_id(input);
         self
     }
+    /// <p>The identifier of the index for the block list.</p>
+    pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_index_id()
+    }
     /// <p>The identifier of the block list you want to update.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
@@ -113,6 +121,10 @@ impl UpdateQuerySuggestionsBlockListFluentBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
+    }
+    /// <p>The identifier of the block list you want to update.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
     }
     /// <p>A new name for the block list.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -124,6 +136,10 @@ impl UpdateQuerySuggestionsBlockListFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>A new name for the block list.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>A new description for the block list.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -133,6 +149,10 @@ impl UpdateQuerySuggestionsBlockListFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A new description for the block list.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The S3 path where your block list text file sits in S3.</p>
     /// <p>If you update your block list and provide the same path to the block list text file in S3, then Amazon Kendra reloads the file to refresh the block list. Amazon Kendra does not automatically refresh your block list. You need to call the <code>UpdateQuerySuggestionsBlockList</code> API to refresh you block list.</p>
@@ -151,6 +171,12 @@ impl UpdateQuerySuggestionsBlockListFluentBuilder {
         self.inner = self.inner.set_source_s3_path(input);
         self
     }
+    /// <p>The S3 path where your block list text file sits in S3.</p>
+    /// <p>If you update your block list and provide the same path to the block list text file in S3, then Amazon Kendra reloads the file to refresh the block list. Amazon Kendra does not automatically refresh your block list. You need to call the <code>UpdateQuerySuggestionsBlockList</code> API to refresh you block list.</p>
+    /// <p>If you update your block list, then Amazon Kendra asynchronously refreshes all query suggestions with the latest content in the S3 file. This means changes might not take effect immediately.</p>
+    pub fn get_source_s3_path(&self) -> &::std::option::Option<crate::types::S3Path> {
+        self.inner.get_source_s3_path()
+    }
     /// <p>The IAM (Identity and Access Management) role used to access the block list text file in S3.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -160,5 +186,9 @@ impl UpdateQuerySuggestionsBlockListFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p>The IAM (Identity and Access Management) role used to access the block list text file in S3.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
 }

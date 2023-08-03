@@ -36,6 +36,10 @@ impl PutAccountSendingAttributesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutAccountSendingAttributes as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_account_sending_attributes::builders::PutAccountSendingAttributesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,5 +133,11 @@ impl PutAccountSendingAttributesFluentBuilder {
     pub fn set_sending_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_sending_enabled(input);
         self
+    }
+    /// <p>Enables or disables your account's ability to send email. Set to <code>true</code> to enable email sending, or set to <code>false</code> to disable email sending.</p> <note>
+    /// <p>If Amazon Web Services paused your account's ability to send email, you can't use this operation to resume your account's ability to send email.</p>
+    /// </note>
+    pub fn get_sending_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_sending_enabled()
     }
 }

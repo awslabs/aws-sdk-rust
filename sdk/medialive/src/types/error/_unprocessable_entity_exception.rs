@@ -76,6 +76,10 @@ impl UnprocessableEntityExceptionBuilder {
         self.message = input;
         self
     }
+    /// The error message.
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Appends an item to `validation_errors`.
     ///
     /// To override the contents of this collection use [`set_validation_errors`](Self::set_validation_errors).
@@ -94,6 +98,12 @@ impl UnprocessableEntityExceptionBuilder {
     ) -> Self {
         self.validation_errors = input;
         self
+    }
+    /// A collection of validation error responses.
+    pub fn get_validation_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationError>> {
+        &self.validation_errors
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

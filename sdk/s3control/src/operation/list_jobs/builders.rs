@@ -44,6 +44,10 @@ impl ListJobsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListJobs as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_jobs::builders::ListJobsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl ListJobsFluentBuilder {
         self.inner = self.inner.set_account_id(input);
         self
     }
+    /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// Appends an item to `JobStatuses`.
     ///
     /// To override the contents of this collection use [`set_job_statuses`](Self::set_job_statuses).
@@ -149,6 +157,12 @@ impl ListJobsFluentBuilder {
         self.inner = self.inner.set_job_statuses(input);
         self
     }
+    /// <p>The <code>List Jobs</code> request returns jobs that match the statuses listed in this element.</p>
+    pub fn get_job_statuses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobStatus>> {
+        self.inner.get_job_statuses()
+    }
     /// <p>A pagination token to request the next page of results. Use the token that Amazon S3 returned in the <code>NextToken</code> element of the <code>ListJobsResult</code> from the previous <code>List Jobs</code> request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -159,6 +173,10 @@ impl ListJobsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A pagination token to request the next page of results. Use the token that Amazon S3 returned in the <code>NextToken</code> element of the <code>ListJobsResult</code> from the previous <code>List Jobs</code> request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of jobs that Amazon S3 will include in the <code>List Jobs</code> response. If there are more jobs than this number, the response will include a pagination token in the <code>NextToken</code> field to enable you to retrieve the next page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -168,5 +186,9 @@ impl ListJobsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of jobs that Amazon S3 will include in the <code>List Jobs</code> response. If there are more jobs than this number, the response will include a pagination token in the <code>NextToken</code> field to enable you to retrieve the next page of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

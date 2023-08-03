@@ -46,6 +46,10 @@ impl DescribeEngagementInputBuilder {
         self.engagement_id = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the engagement you want the details of.</p>
+    pub fn get_engagement_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engagement_id
+    }
     /// Consumes the builder and constructs a [`DescribeEngagementInput`](crate::operation::describe_engagement::DescribeEngagementInput).
     pub fn build(
         self,

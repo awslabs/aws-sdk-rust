@@ -43,6 +43,10 @@ impl ScanResultDetailsBuilder {
         self.scan_result = input;
         self
     }
+    /// <p>An enum value representing possible scan results.</p>
+    pub fn get_scan_result(&self) -> &::std::option::Option<crate::types::ScanResult> {
+        &self.scan_result
+    }
     /// Consumes the builder and constructs a [`ScanResultDetails`](crate::types::ScanResultDetails).
     pub fn build(self) -> crate::types::ScanResultDetails {
         crate::types::ScanResultDetails {

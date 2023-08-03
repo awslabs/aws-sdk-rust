@@ -131,6 +131,10 @@ impl DescribeEphemerisOutputBuilder {
         self.ephemeris_id = input;
         self
     }
+    /// <p>The AWS Ground Station ephemeris ID.</p>
+    pub fn get_ephemeris_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ephemeris_id
+    }
     /// <p>The AWS Ground Station satellite ID associated with ephemeris.</p>
     pub fn satellite_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.satellite_id = ::std::option::Option::Some(input.into());
@@ -140,6 +144,10 @@ impl DescribeEphemerisOutputBuilder {
     pub fn set_satellite_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.satellite_id = input;
         self
+    }
+    /// <p>The AWS Ground Station satellite ID associated with ephemeris.</p>
+    pub fn get_satellite_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.satellite_id
     }
     /// <p>The status of the ephemeris.</p>
     pub fn status(mut self, input: crate::types::EphemerisStatus) -> Self {
@@ -153,6 +161,10 @@ impl DescribeEphemerisOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the ephemeris.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::EphemerisStatus> {
+        &self.status
     }
     /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
     /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
@@ -168,6 +180,12 @@ impl DescribeEphemerisOutputBuilder {
         self.priority = input;
         self
     }
+    /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
+    /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
+    /// <p>Priority must be 1 or greater</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
+    }
     /// <p>The time the ephemeris was uploaded in UTC.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -181,6 +199,10 @@ impl DescribeEphemerisOutputBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The time the ephemeris was uploaded in UTC.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>Whether or not the ephemeris is enabled.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -191,6 +213,10 @@ impl DescribeEphemerisOutputBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Whether or not the ephemeris is enabled.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -200,6 +226,10 @@ impl DescribeEphemerisOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -226,6 +256,14 @@ impl DescribeEphemerisOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Tags assigned to an ephemeris.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>Supplied ephemeris data.</p>
     pub fn supplied_data(mut self, input: crate::types::EphemerisTypeDescription) -> Self {
         self.supplied_data = ::std::option::Option::Some(input);
@@ -239,6 +277,12 @@ impl DescribeEphemerisOutputBuilder {
         self.supplied_data = input;
         self
     }
+    /// <p>Supplied ephemeris data.</p>
+    pub fn get_supplied_data(
+        &self,
+    ) -> &::std::option::Option<crate::types::EphemerisTypeDescription> {
+        &self.supplied_data
+    }
     /// <p>Reason that an ephemeris failed validation. Only provided for ephemerides with <code>INVALID</code> status.</p>
     pub fn invalid_reason(mut self, input: crate::types::EphemerisInvalidReason) -> Self {
         self.invalid_reason = ::std::option::Option::Some(input);
@@ -251,6 +295,12 @@ impl DescribeEphemerisOutputBuilder {
     ) -> Self {
         self.invalid_reason = input;
         self
+    }
+    /// <p>Reason that an ephemeris failed validation. Only provided for ephemerides with <code>INVALID</code> status.</p>
+    pub fn get_invalid_reason(
+        &self,
+    ) -> &::std::option::Option<crate::types::EphemerisInvalidReason> {
+        &self.invalid_reason
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

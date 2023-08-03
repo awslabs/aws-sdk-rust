@@ -36,6 +36,12 @@ impl CreateDevicePoolFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDevicePool as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_device_pool::builders::CreateDevicePoolInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateDevicePoolFluentBuilder {
         self.inner = self.inner.set_project_arn(input);
         self
     }
+    /// <p>The ARN of the project for the device pool.</p>
+    pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_arn()
+    }
     /// <p>The device pool's name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -136,6 +146,10 @@ impl CreateDevicePoolFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The device pool's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The device pool's description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -145,6 +159,10 @@ impl CreateDevicePoolFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The device pool's description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `rules`.
     ///
@@ -163,6 +181,10 @@ impl CreateDevicePoolFluentBuilder {
         self.inner = self.inner.set_rules(input);
         self
     }
+    /// <p>The device pool's rules.</p>
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Rule>> {
+        self.inner.get_rules()
+    }
     /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are available and meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many devices meet these constraints, your device pool might contain fewer devices than the value for this parameter.</p>
     /// <p>By specifying the maximum number of devices, you can control the costs that you incur by running tests.</p>
     pub fn max_devices(mut self, input: i32) -> Self {
@@ -174,5 +196,10 @@ impl CreateDevicePoolFluentBuilder {
     pub fn set_max_devices(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_devices(input);
         self
+    }
+    /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are available and meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many devices meet these constraints, your device pool might contain fewer devices than the value for this parameter.</p>
+    /// <p>By specifying the maximum number of devices, you can control the costs that you incur by running tests.</p>
+    pub fn get_max_devices(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_devices()
     }
 }

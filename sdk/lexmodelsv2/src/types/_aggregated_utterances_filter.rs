@@ -61,6 +61,10 @@ impl AggregatedUtterancesFilterBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the field to filter the utterance list.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::AggregatedUtterancesFilterName> {
+        &self.name
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -80,6 +84,10 @@ impl AggregatedUtterancesFilterBuilder {
         self.values = input;
         self
     }
+    /// <p>The value to use for filtering the list of bots.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
+    }
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListAggregatedUtterances</code> operation should return only utterances that equal the specified value. Specify <code>CO</code> when the <code>ListAggregatedUtterances</code> operation should return utterances that contain the specified value.</p>
     pub fn operator(mut self, input: crate::types::AggregatedUtterancesFilterOperator) -> Self {
         self.operator = ::std::option::Option::Some(input);
@@ -92,6 +100,12 @@ impl AggregatedUtterancesFilterBuilder {
     ) -> Self {
         self.operator = input;
         self
+    }
+    /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListAggregatedUtterances</code> operation should return only utterances that equal the specified value. Specify <code>CO</code> when the <code>ListAggregatedUtterances</code> operation should return utterances that contain the specified value.</p>
+    pub fn get_operator(
+        &self,
+    ) -> &::std::option::Option<crate::types::AggregatedUtterancesFilterOperator> {
+        &self.operator
     }
     /// Consumes the builder and constructs a [`AggregatedUtterancesFilter`](crate::types::AggregatedUtterancesFilter).
     pub fn build(self) -> crate::types::AggregatedUtterancesFilter {

@@ -36,6 +36,12 @@ impl UpdateChannelClassFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateChannelClass as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_channel_class::builders::UpdateChannelClassInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl UpdateChannelClassFluentBuilder {
         self.inner = self.inner.set_channel_class(input);
         self
     }
+    /// The channel class that you wish to update this channel to use.
+    pub fn get_channel_class(&self) -> &::std::option::Option<crate::types::ChannelClass> {
+        self.inner.get_channel_class()
+    }
     /// Channel Id of the channel whose class should be updated.
     pub fn channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.channel_id(input.into());
@@ -138,6 +148,10 @@ impl UpdateChannelClassFluentBuilder {
     pub fn set_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_channel_id(input);
         self
+    }
+    /// Channel Id of the channel whose class should be updated.
+    pub fn get_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_id()
     }
     /// Appends an item to `Destinations`.
     ///
@@ -155,5 +169,11 @@ impl UpdateChannelClassFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_destinations(input);
         self
+    }
+    /// A list of output destinations for this channel.
+    pub fn get_destinations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputDestination>> {
+        self.inner.get_destinations()
     }
 }

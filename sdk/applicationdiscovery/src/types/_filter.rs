@@ -57,6 +57,10 @@ impl FilterBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the filter.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -76,6 +80,10 @@ impl FilterBuilder {
         self.values = input;
         self
     }
+    /// <p>A string value on which to filter. For example, if you choose the <code>destinationServer.osVersion</code> filter name, you could specify <code>Ubuntu</code> for the value.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
+    }
     /// <p>A conditional operator. The following operators are valid: EQUALS, NOT_EQUALS, CONTAINS, NOT_CONTAINS. If you specify multiple filters, the system utilizes all filters as though concatenated by <i>AND</i>. If you specify multiple values for a particular filter, the system differentiates the values using <i>OR</i>. Calling either <i>DescribeConfigurations</i> or <i>ListConfigurations</i> returns attributes of matching configuration items.</p>
     pub fn condition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.condition = ::std::option::Option::Some(input.into());
@@ -85,6 +93,10 @@ impl FilterBuilder {
     pub fn set_condition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.condition = input;
         self
+    }
+    /// <p>A conditional operator. The following operators are valid: EQUALS, NOT_EQUALS, CONTAINS, NOT_CONTAINS. If you specify multiple filters, the system utilizes all filters as though concatenated by <i>AND</i>. If you specify multiple values for a particular filter, the system differentiates the values using <i>OR</i>. Calling either <i>DescribeConfigurations</i> or <i>ListConfigurations</i> returns attributes of matching configuration items.</p>
+    pub fn get_condition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.condition
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
     pub fn build(self) -> crate::types::Filter {

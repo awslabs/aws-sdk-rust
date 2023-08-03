@@ -47,6 +47,10 @@ impl GetFunctionDefinitionInputBuilder {
         self.function_definition_id = input;
         self
     }
+    /// The ID of the Lambda function definition.
+    pub fn get_function_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.function_definition_id
+    }
     /// Consumes the builder and constructs a [`GetFunctionDefinitionInput`](crate::operation::get_function_definition::GetFunctionDefinitionInput).
     pub fn build(
         self,

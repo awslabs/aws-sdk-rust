@@ -50,6 +50,10 @@ impl PutDialRequestBatchInputBuilder {
         self.id = input;
         self
     }
+    /// Identifier representing a Campaign
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Appends an item to `dial_requests`.
     ///
     /// To override the contents of this collection use [`set_dial_requests`](Self::set_dial_requests).
@@ -68,6 +72,12 @@ impl PutDialRequestBatchInputBuilder {
     ) -> Self {
         self.dial_requests = input;
         self
+    }
+    /// A list of dial requests.
+    pub fn get_dial_requests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DialRequest>> {
+        &self.dial_requests
     }
     /// Consumes the builder and constructs a [`PutDialRequestBatchInput`](crate::operation::put_dial_request_batch::PutDialRequestBatchInput).
     pub fn build(

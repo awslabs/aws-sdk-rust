@@ -56,6 +56,10 @@ impl GetTagsInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The ARN of a resource that can be tagged.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// <p>(Not currently supported) The current pagination position in the paged result set.</p>
     pub fn position(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.position = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl GetTagsInputBuilder {
         self.position = input;
         self
     }
+    /// <p>(Not currently supported) The current pagination position in the paged result set.</p>
+    pub fn get_position(&self) -> &::std::option::Option<::std::string::String> {
+        &self.position
+    }
     /// <p>(Not currently supported) The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl GetTagsInputBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
+    }
+    /// <p>(Not currently supported) The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// Consumes the builder and constructs a [`GetTagsInput`](crate::operation::get_tags::GetTagsInput).
     pub fn build(

@@ -66,6 +66,10 @@ impl OrganizationFeatureConfigurationResultBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the feature that is configured for the member accounts within the organization.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::OrgFeature> {
+        &self.name
+    }
     /// <p>Describes how The status of the feature that are configured for the member accounts within the organization.</p>
     /// <p>If you set <code>AutoEnable</code> to <code>NEW</code>, a feature will be configured for only the new accounts when they join the organization.</p>
     /// <p>If you set <code>AutoEnable</code> to <code>NONE</code>, no feature will be configured for the accounts when they join the organization.</p>
@@ -82,6 +86,12 @@ impl OrganizationFeatureConfigurationResultBuilder {
     ) -> Self {
         self.auto_enable = input;
         self
+    }
+    /// <p>Describes how The status of the feature that are configured for the member accounts within the organization.</p>
+    /// <p>If you set <code>AutoEnable</code> to <code>NEW</code>, a feature will be configured for only the new accounts when they join the organization.</p>
+    /// <p>If you set <code>AutoEnable</code> to <code>NONE</code>, no feature will be configured for the accounts when they join the organization.</p>
+    pub fn get_auto_enable(&self) -> &::std::option::Option<crate::types::OrgFeatureStatus> {
+        &self.auto_enable
     }
     /// Appends an item to `additional_configuration`.
     ///
@@ -106,6 +116,14 @@ impl OrganizationFeatureConfigurationResultBuilder {
     ) -> Self {
         self.additional_configuration = input;
         self
+    }
+    /// <p>The additional configuration that is configured for the member accounts within the organization.</p>
+    pub fn get_additional_configuration(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::OrganizationAdditionalConfigurationResult>,
+    > {
+        &self.additional_configuration
     }
     /// Consumes the builder and constructs a [`OrganizationFeatureConfigurationResult`](crate::types::OrganizationFeatureConfigurationResult).
     pub fn build(self) -> crate::types::OrganizationFeatureConfigurationResult {

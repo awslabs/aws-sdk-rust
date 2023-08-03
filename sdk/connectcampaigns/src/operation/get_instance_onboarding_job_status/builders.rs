@@ -36,6 +36,10 @@ impl GetInstanceOnboardingJobStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetInstanceOnboardingJobStatus as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_instance_onboarding_job_status::builders::GetInstanceOnboardingJobStatusInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -105,5 +109,9 @@ impl GetInstanceOnboardingJobStatusFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_connect_instance_id(input);
         self
+    }
+    /// Amazon Connect Instance Id
+    pub fn get_connect_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connect_instance_id()
     }
 }

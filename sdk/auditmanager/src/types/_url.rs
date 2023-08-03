@@ -54,6 +54,10 @@ impl UrlBuilder {
         self.hyperlink_name = input;
         self
     }
+    /// <p> The name or word that's used as a hyperlink to the URL. </p>
+    pub fn get_hyperlink_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hyperlink_name
+    }
     /// <p> The unique identifier for the internet resource. </p>
     pub fn link(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.link = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl UrlBuilder {
     pub fn set_link(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.link = input;
         self
+    }
+    /// <p> The unique identifier for the internet resource. </p>
+    pub fn get_link(&self) -> &::std::option::Option<::std::string::String> {
+        &self.link
     }
     /// Consumes the builder and constructs a [`Url`](crate::types::Url).
     pub fn build(self) -> crate::types::Url {

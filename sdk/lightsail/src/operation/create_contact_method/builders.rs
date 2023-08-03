@@ -37,6 +37,12 @@ impl CreateContactMethodFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateContactMethod as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_contact_method::builders::CreateContactMethodInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -152,6 +158,21 @@ impl CreateContactMethodFluentBuilder {
         self.inner = self.inner.set_protocol(input);
         self
     }
+    /// <p>The protocol of the contact method, such as <code>Email</code> or <code>SMS</code> (text messaging).</p>
+    /// <p>The <code>SMS</code> protocol is supported only in the following Amazon Web Services Regions.</p>
+    /// <ul>
+    /// <li> <p>US East (N. Virginia) (<code>us-east-1</code>)</p> </li>
+    /// <li> <p>US West (Oregon) (<code>us-west-2</code>)</p> </li>
+    /// <li> <p>Europe (Ireland) (<code>eu-west-1</code>)</p> </li>
+    /// <li> <p>Asia Pacific (Tokyo) (<code>ap-northeast-1</code>)</p> </li>
+    /// <li> <p>Asia Pacific (Singapore) (<code>ap-southeast-1</code>)</p> </li>
+    /// <li> <p>Asia Pacific (Sydney) (<code>ap-southeast-2</code>)</p> </li>
+    /// </ul>
+    /// <p>For a list of countries/regions where SMS text messages can be sent, and the latest Amazon Web Services Regions where SMS text messaging is supported, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-supported-regions-countries.html">Supported Regions and Countries</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+    /// <p>For more information about notifications in Amazon Lightsail, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<crate::types::ContactProtocol> {
+        self.inner.get_protocol()
+    }
     /// <p>The destination of the contact method, such as an email address or a mobile phone number.</p>
     /// <p>Use the E.164 format when specifying a mobile phone number. E.164 is a standard for the phone number structure used for international telecommunication. Phone numbers that follow this format can have a maximum of 15 digits, and they are prefixed with the plus character (+) and the country code. For example, a U.S. phone number in E.164 format would be specified as +1XXX5550100. For more information, see <a href="https://en.wikipedia.org/wiki/E.164">E.164</a> on <i>Wikipedia</i>.</p>
     pub fn contact_endpoint(
@@ -169,5 +190,10 @@ impl CreateContactMethodFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_contact_endpoint(input);
         self
+    }
+    /// <p>The destination of the contact method, such as an email address or a mobile phone number.</p>
+    /// <p>Use the E.164 format when specifying a mobile phone number. E.164 is a standard for the phone number structure used for international telecommunication. Phone numbers that follow this format can have a maximum of 15 digits, and they are prefixed with the plus character (+) and the country code. For example, a U.S. phone number in E.164 format would be specified as +1XXX5550100. For more information, see <a href="https://en.wikipedia.org/wiki/E.164">E.164</a> on <i>Wikipedia</i>.</p>
+    pub fn get_contact_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_contact_endpoint()
     }
 }

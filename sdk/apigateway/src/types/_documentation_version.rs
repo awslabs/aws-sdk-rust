@@ -56,6 +56,10 @@ impl DocumentationVersionBuilder {
         self.version = input;
         self
     }
+    /// <p>The version identifier of the API documentation snapshot.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
+    }
     /// <p>The date when the API documentation snapshot is created.</p>
     pub fn created_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_date = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl DocumentationVersionBuilder {
         self.created_date = input;
         self
     }
+    /// <p>The date when the API documentation snapshot is created.</p>
+    pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_date
+    }
     /// <p>The description of the API documentation snapshot.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -78,6 +86,10 @@ impl DocumentationVersionBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the API documentation snapshot.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`DocumentationVersion`](crate::types::DocumentationVersion).
     pub fn build(self) -> crate::types::DocumentationVersion {

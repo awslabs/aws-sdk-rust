@@ -72,6 +72,10 @@ impl RootCauseBuilder {
         self.service = input;
         self
     }
+    /// <p>The Amazon Web Service name that's associated with the cost anomaly. </p>
+    pub fn get_service(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service
+    }
     /// <p>The Amazon Web Services Region that's associated with the cost anomaly. </p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl RootCauseBuilder {
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
+    }
+    /// <p>The Amazon Web Services Region that's associated with the cost anomaly. </p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
     }
     /// <p>The member account value that's associated with the cost anomaly. </p>
     pub fn linked_account(
@@ -98,6 +106,10 @@ impl RootCauseBuilder {
         self.linked_account = input;
         self
     }
+    /// <p>The member account value that's associated with the cost anomaly. </p>
+    pub fn get_linked_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.linked_account
+    }
     /// <p>The <code>UsageType</code> value that's associated with the cost anomaly. </p>
     pub fn usage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.usage_type = ::std::option::Option::Some(input.into());
@@ -107,6 +119,10 @@ impl RootCauseBuilder {
     pub fn set_usage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.usage_type = input;
         self
+    }
+    /// <p>The <code>UsageType</code> value that's associated with the cost anomaly. </p>
+    pub fn get_usage_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.usage_type
     }
     /// <p>The member account name value that's associated with the cost anomaly.</p>
     pub fn linked_account_name(
@@ -123,6 +139,10 @@ impl RootCauseBuilder {
     ) -> Self {
         self.linked_account_name = input;
         self
+    }
+    /// <p>The member account name value that's associated with the cost anomaly.</p>
+    pub fn get_linked_account_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.linked_account_name
     }
     /// Consumes the builder and constructs a [`RootCause`](crate::types::RootCause).
     pub fn build(self) -> crate::types::RootCause {

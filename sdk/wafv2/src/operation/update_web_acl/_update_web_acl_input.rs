@@ -167,6 +167,10 @@ impl UpdateWebAclInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance. </p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
     /// <ul>
@@ -187,6 +191,15 @@ impl UpdateWebAclInputBuilder {
         self.scope = input;
         self
     }
+    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance. </p>
+    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+    /// <ul>
+    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+    /// </ul>
+    pub fn get_scope(&self) -> &::std::option::Option<crate::types::Scope> {
+        &self.scope
+    }
     /// <p>The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -196,6 +209,10 @@ impl UpdateWebAclInputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The action to perform if none of the <code>Rules</code> contained in the <code>WebACL</code> match. </p>
     pub fn default_action(mut self, input: crate::types::DefaultAction) -> Self {
@@ -210,6 +227,10 @@ impl UpdateWebAclInputBuilder {
         self.default_action = input;
         self
     }
+    /// <p>The action to perform if none of the <code>Rules</code> contained in the <code>WebACL</code> match. </p>
+    pub fn get_default_action(&self) -> &::std::option::Option<crate::types::DefaultAction> {
+        &self.default_action
+    }
     /// <p>A description of the web ACL that helps with identification. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -219,6 +240,10 @@ impl UpdateWebAclInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the web ACL that helps with identification. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `rules`.
     ///
@@ -239,6 +264,10 @@ impl UpdateWebAclInputBuilder {
         self.rules = input;
         self
     }
+    /// <p>The <code>Rule</code> statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Rule>> {
+        &self.rules
+    }
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
     pub fn visibility_config(mut self, input: crate::types::VisibilityConfig) -> Self {
         self.visibility_config = ::std::option::Option::Some(input);
@@ -252,6 +281,10 @@ impl UpdateWebAclInputBuilder {
         self.visibility_config = input;
         self
     }
+    /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
+    pub fn get_visibility_config(&self) -> &::std::option::Option<crate::types::VisibilityConfig> {
+        &self.visibility_config
+    }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     pub fn lock_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lock_token = ::std::option::Option::Some(input.into());
@@ -261,6 +294,10 @@ impl UpdateWebAclInputBuilder {
     pub fn set_lock_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lock_token = input;
         self
+    }
+    /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
+    pub fn get_lock_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lock_token
     }
     /// Adds a key-value pair to `custom_response_bodies`.
     ///
@@ -291,6 +328,16 @@ impl UpdateWebAclInputBuilder {
         self.custom_response_bodies = input;
         self
     }
+    /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the web ACL, and then use them in the rules and default actions that you define in the web ACL. </p>
+    /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
+    /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
+    pub fn get_custom_response_bodies(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::CustomResponseBody>,
+    > {
+        &self.custom_response_bodies
+    }
     /// <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations for rules that don't have their own <code>CaptchaConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>CaptchaConfig</code>. </p>
     pub fn captcha_config(mut self, input: crate::types::CaptchaConfig) -> Self {
         self.captcha_config = ::std::option::Option::Some(input);
@@ -304,6 +351,10 @@ impl UpdateWebAclInputBuilder {
         self.captcha_config = input;
         self
     }
+    /// <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations for rules that don't have their own <code>CaptchaConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>CaptchaConfig</code>. </p>
+    pub fn get_captcha_config(&self) -> &::std::option::Option<crate::types::CaptchaConfig> {
+        &self.captcha_config
+    }
     /// <p>Specifies how WAF should handle challenge evaluations for rules that don't have their own <code>ChallengeConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>ChallengeConfig</code>. </p>
     pub fn challenge_config(mut self, input: crate::types::ChallengeConfig) -> Self {
         self.challenge_config = ::std::option::Option::Some(input);
@@ -316,6 +367,10 @@ impl UpdateWebAclInputBuilder {
     ) -> Self {
         self.challenge_config = input;
         self
+    }
+    /// <p>Specifies how WAF should handle challenge evaluations for rules that don't have their own <code>ChallengeConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>ChallengeConfig</code>. </p>
+    pub fn get_challenge_config(&self) -> &::std::option::Option<crate::types::ChallengeConfig> {
+        &self.challenge_config
     }
     /// Appends an item to `token_domains`.
     ///
@@ -343,6 +398,14 @@ impl UpdateWebAclInputBuilder {
         self.token_domains = input;
         self
     }
+    /// <p>Specifies the domains that WAF should accept in a web request token. This enables the use of tokens across multiple protected websites. When WAF provides a token, it uses the domain of the Amazon Web Services resource that the web ACL is protecting. If you don't specify a list of token domains, WAF accepts tokens only for the domain of the protected resource. With a token domain list, WAF accepts the resource's host domain plus all domains in the token domain list, including their prefixed subdomains.</p>
+    /// <p>Example JSON: <code>"TokenDomains": { "mywebsite.com", "myotherwebsite.com" }</code> </p>
+    /// <p>Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
+    pub fn get_token_domains(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.token_domains
+    }
     /// <p>Specifies custom configurations for the associations between the web ACL and protected resources. </p>
     /// <p>Use this to customize the maximum size of the request body that your protected CloudFront distributions forward to WAF for inspection. The default is 16 KB (16,384 kilobytes). </p> <note>
     /// <p>You are charged additional fees when your protected resources forward body sizes that are larger than the default. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
@@ -361,6 +424,15 @@ impl UpdateWebAclInputBuilder {
     ) -> Self {
         self.association_config = input;
         self
+    }
+    /// <p>Specifies custom configurations for the associations between the web ACL and protected resources. </p>
+    /// <p>Use this to customize the maximum size of the request body that your protected CloudFront distributions forward to WAF for inspection. The default is 16 KB (16,384 kilobytes). </p> <note>
+    /// <p>You are charged additional fees when your protected resources forward body sizes that are larger than the default. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
+    /// </note>
+    pub fn get_association_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::AssociationConfig> {
+        &self.association_config
     }
     /// Consumes the builder and constructs a [`UpdateWebAclInput`](crate::operation::update_web_acl::UpdateWebAclInput).
     pub fn build(

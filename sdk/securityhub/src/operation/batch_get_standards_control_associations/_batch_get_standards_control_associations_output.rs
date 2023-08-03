@@ -80,6 +80,13 @@ impl BatchGetStandardsControlAssociationsOutputBuilder {
         self.standards_control_association_details = input;
         self
     }
+    /// <p>Provides the enablement status of a security control in a specified standard and other details for the control in relation to the specified standard. </p>
+    pub fn get_standards_control_association_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationDetail>>
+    {
+        &self.standards_control_association_details
+    }
     /// Appends an item to `unprocessed_associations`.
     ///
     /// To override the contents of this collection use [`set_unprocessed_associations`](Self::set_unprocessed_associations).
@@ -103,6 +110,13 @@ impl BatchGetStandardsControlAssociationsOutputBuilder {
     ) -> Self {
         self.unprocessed_associations = input;
         self
+    }
+    /// <p> A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) whose enablement status in a specified standard cannot be returned. </p>
+    pub fn get_unprocessed_associations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedStandardsControlAssociation>>
+    {
+        &self.unprocessed_associations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

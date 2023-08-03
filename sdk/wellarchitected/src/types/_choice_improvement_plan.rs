@@ -60,6 +60,10 @@ impl ChoiceImprovementPlanBuilder {
         self.choice_id = input;
         self
     }
+    /// <p>The ID of a choice.</p>
+    pub fn get_choice_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.choice_id
+    }
     /// <p>The display text for the improvement plan.</p>
     pub fn display_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_text = ::std::option::Option::Some(input.into());
@@ -69,6 +73,10 @@ impl ChoiceImprovementPlanBuilder {
     pub fn set_display_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_text = input;
         self
+    }
+    /// <p>The display text for the improvement plan.</p>
+    pub fn get_display_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_text
     }
     /// <p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p>
     /// <p>This value is only available if the question has been answered.</p>
@@ -89,6 +97,12 @@ impl ChoiceImprovementPlanBuilder {
     ) -> Self {
         self.improvement_plan_url = input;
         self
+    }
+    /// <p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p>
+    /// <p>This value is only available if the question has been answered.</p>
+    /// <p>This value does not apply to custom lenses.</p>
+    pub fn get_improvement_plan_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.improvement_plan_url
     }
     /// Consumes the builder and constructs a [`ChoiceImprovementPlan`](crate::types::ChoiceImprovementPlan).
     pub fn build(self) -> crate::types::ChoiceImprovementPlan {

@@ -50,6 +50,10 @@ impl S3InputFileLocationBuilder {
         self.bucket = input;
         self
     }
+    /// <p>Specifies the S3 bucket for the customer input file.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p>The name assigned to the file when it was created in Amazon S3. You use the object key to retrieve the object.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
@@ -59,6 +63,10 @@ impl S3InputFileLocationBuilder {
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
+    }
+    /// <p>The name assigned to the file when it was created in Amazon S3. You use the object key to retrieve the object.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
     }
     /// Consumes the builder and constructs a [`S3InputFileLocation`](crate::types::S3InputFileLocation).
     pub fn build(self) -> crate::types::S3InputFileLocation {

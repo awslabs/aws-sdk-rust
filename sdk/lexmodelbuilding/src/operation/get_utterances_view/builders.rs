@@ -41,6 +41,12 @@ impl GetUtterancesViewFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetUtterancesView as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_utterances_view::builders::GetUtterancesViewInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +137,10 @@ impl GetUtterancesViewFluentBuilder {
         self.inner = self.inner.set_bot_name(input);
         self
     }
+    /// <p>The name of the bot for which utterance information should be returned.</p>
+    pub fn get_bot_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bot_name()
+    }
     /// Appends an item to `botVersions`.
     ///
     /// To override the contents of this collection use [`set_bot_versions`](Self::set_bot_versions).
@@ -148,6 +158,12 @@ impl GetUtterancesViewFluentBuilder {
         self.inner = self.inner.set_bot_versions(input);
         self
     }
+    /// <p>An array of bot versions for which utterance information should be returned. The limit is 5 versions per request.</p>
+    pub fn get_bot_versions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_bot_versions()
+    }
     /// <p>To return utterances that were recognized and handled, use <code>Detected</code>. To return utterances that were not recognized, use <code>Missed</code>.</p>
     pub fn status_type(mut self, input: crate::types::StatusType) -> Self {
         self.inner = self.inner.status_type(input);
@@ -160,5 +176,9 @@ impl GetUtterancesViewFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_status_type(input);
         self
+    }
+    /// <p>To return utterances that were recognized and handled, use <code>Detected</code>. To return utterances that were not recognized, use <code>Missed</code>.</p>
+    pub fn get_status_type(&self) -> &::std::option::Option<crate::types::StatusType> {
+        self.inner.get_status_type()
     }
 }

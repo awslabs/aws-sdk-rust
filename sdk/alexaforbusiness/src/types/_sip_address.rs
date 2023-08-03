@@ -54,6 +54,10 @@ impl SipAddressBuilder {
         self.uri = input;
         self
     }
+    /// <p>The URI for the SIP address.</p>
+    pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.uri
+    }
     /// <p>The type of the SIP address.</p>
     pub fn r#type(mut self, input: crate::types::SipType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl SipAddressBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::SipType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of the SIP address.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::SipType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`SipAddress`](crate::types::SipAddress).
     pub fn build(self) -> crate::types::SipAddress {

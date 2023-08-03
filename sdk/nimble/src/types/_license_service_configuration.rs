@@ -45,6 +45,10 @@ impl LicenseServiceConfigurationBuilder {
         self.endpoint = input;
         self
     }
+    /// <p>The endpoint of the license service that is accessed by the studio component resource.</p>
+    pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint
+    }
     /// Consumes the builder and constructs a [`LicenseServiceConfiguration`](crate::types::LicenseServiceConfiguration).
     pub fn build(self) -> crate::types::LicenseServiceConfiguration {
         crate::types::LicenseServiceConfiguration {

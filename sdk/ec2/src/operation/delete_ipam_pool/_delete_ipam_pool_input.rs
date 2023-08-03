@@ -47,6 +47,10 @@ impl DeleteIpamPoolInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>The ID of the pool to delete.</p>
     pub fn ipam_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_pool_id = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl DeleteIpamPoolInputBuilder {
     pub fn set_ipam_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipam_pool_id = input;
         self
+    }
+    /// <p>The ID of the pool to delete.</p>
+    pub fn get_ipam_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipam_pool_id
     }
     /// Consumes the builder and constructs a [`DeleteIpamPoolInput`](crate::operation::delete_ipam_pool::DeleteIpamPoolInput).
     pub fn build(

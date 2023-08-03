@@ -40,6 +40,10 @@ impl AwsEc2SecurityGroupIpv6RangeBuilder {
         self.cidr_ipv6 = input;
         self
     }
+    /// <p>The IPv6 CIDR range. You can specify either a CIDR range or a source security group, but not both. To specify a single IPv6 address, use the /128 prefix length.</p>
+    pub fn get_cidr_ipv6(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr_ipv6
+    }
     /// Consumes the builder and constructs a [`AwsEc2SecurityGroupIpv6Range`](crate::types::AwsEc2SecurityGroupIpv6Range).
     pub fn build(self) -> crate::types::AwsEc2SecurityGroupIpv6Range {
         crate::types::AwsEc2SecurityGroupIpv6Range {

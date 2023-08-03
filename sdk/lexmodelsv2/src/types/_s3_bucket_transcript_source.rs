@@ -78,6 +78,10 @@ impl S3BucketTranscriptSourceBuilder {
         self.s3_bucket_name = input;
         self
     }
+    /// <p>The name of the bucket containing the transcript and the associated metadata.</p>
+    pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket_name
+    }
     /// <p>The object that contains a path format that will be applied when Amazon Lex reads the transcript file in the bucket you provide. Specify this object if you only want Lex to read a subset of files in your Amazon S3 bucket.</p>
     pub fn path_format(mut self, input: crate::types::PathFormat) -> Self {
         self.path_format = ::std::option::Option::Some(input);
@@ -90,6 +94,10 @@ impl S3BucketTranscriptSourceBuilder {
     ) -> Self {
         self.path_format = input;
         self
+    }
+    /// <p>The object that contains a path format that will be applied when Amazon Lex reads the transcript file in the bucket you provide. Specify this object if you only want Lex to read a subset of files in your Amazon S3 bucket.</p>
+    pub fn get_path_format(&self) -> &::std::option::Option<crate::types::PathFormat> {
+        &self.path_format
     }
     /// <p>The format of the transcript content. Currently, Genie only supports the Amazon Lex transcript format.</p>
     pub fn transcript_format(mut self, input: crate::types::TranscriptFormat) -> Self {
@@ -104,6 +112,10 @@ impl S3BucketTranscriptSourceBuilder {
         self.transcript_format = input;
         self
     }
+    /// <p>The format of the transcript content. Currently, Genie only supports the Amazon Lex transcript format.</p>
+    pub fn get_transcript_format(&self) -> &::std::option::Option<crate::types::TranscriptFormat> {
+        &self.transcript_format
+    }
     /// <p>The object that contains the filter which will be applied when Amazon Lex reads through the Amazon S3 bucket. Specify this object if you want Amazon Lex to read only a subset of the Amazon S3 bucket based on the filter you provide.</p>
     pub fn transcript_filter(mut self, input: crate::types::TranscriptFilter) -> Self {
         self.transcript_filter = ::std::option::Option::Some(input);
@@ -117,6 +129,10 @@ impl S3BucketTranscriptSourceBuilder {
         self.transcript_filter = input;
         self
     }
+    /// <p>The object that contains the filter which will be applied when Amazon Lex reads through the Amazon S3 bucket. Specify this object if you want Amazon Lex to read only a subset of the Amazon S3 bucket based on the filter you provide.</p>
+    pub fn get_transcript_filter(&self) -> &::std::option::Option<crate::types::TranscriptFilter> {
+        &self.transcript_filter
+    }
     /// <p>The ARN of the KMS key that customer use to encrypt their Amazon S3 bucket. Only use this field if your bucket is encrypted using a customer managed KMS key.</p>
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_arn = ::std::option::Option::Some(input.into());
@@ -126,6 +142,10 @@ impl S3BucketTranscriptSourceBuilder {
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_arn = input;
         self
+    }
+    /// <p>The ARN of the KMS key that customer use to encrypt their Amazon S3 bucket. Only use this field if your bucket is encrypted using a customer managed KMS key.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
     }
     /// Consumes the builder and constructs a [`S3BucketTranscriptSource`](crate::types::S3BucketTranscriptSource).
     pub fn build(self) -> crate::types::S3BucketTranscriptSource {

@@ -117,6 +117,10 @@ impl UserDataBuilder {
         self.user = input;
         self
     }
+    /// <p>Information about the user for the data that is returned. It contains the <code>resourceId</code> and ARN of the user. </p>
+    pub fn get_user(&self) -> &::std::option::Option<crate::types::UserReference> {
+        &self.user
+    }
     /// <p>Information about the routing profile that is assigned to the user.</p>
     pub fn routing_profile(mut self, input: crate::types::RoutingProfileReference) -> Self {
         self.routing_profile = ::std::option::Option::Some(input);
@@ -129,6 +133,12 @@ impl UserDataBuilder {
     ) -> Self {
         self.routing_profile = input;
         self
+    }
+    /// <p>Information about the routing profile that is assigned to the user.</p>
+    pub fn get_routing_profile(
+        &self,
+    ) -> &::std::option::Option<crate::types::RoutingProfileReference> {
+        &self.routing_profile
     }
     /// <p>Contains information about the levels of a hierarchy group assigned to a user.</p>
     pub fn hierarchy_path(mut self, input: crate::types::HierarchyPathReference) -> Self {
@@ -143,6 +153,12 @@ impl UserDataBuilder {
         self.hierarchy_path = input;
         self
     }
+    /// <p>Contains information about the levels of a hierarchy group assigned to a user.</p>
+    pub fn get_hierarchy_path(
+        &self,
+    ) -> &::std::option::Option<crate::types::HierarchyPathReference> {
+        &self.hierarchy_path
+    }
     /// <p>The status of the agent that they manually set in their Contact Control Panel (CCP), or that the supervisor manually changes in the real-time metrics report.</p>
     pub fn status(mut self, input: crate::types::AgentStatusReference) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -155,6 +171,10 @@ impl UserDataBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the agent that they manually set in their Contact Control Panel (CCP), or that the supervisor manually changes in the real-time metrics report.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AgentStatusReference> {
+        &self.status
     }
     /// Adds a key-value pair to `available_slots_by_channel`.
     ///
@@ -175,6 +195,12 @@ impl UserDataBuilder {
         self.available_slots_by_channel = input;
         self
     }
+    /// <p>A map of available slots by channel. The key is a channel name. The value is an integer: the available number of slots. </p>
+    pub fn get_available_slots_by_channel(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::Channel, i32>> {
+        &self.available_slots_by_channel
+    }
     /// Adds a key-value pair to `max_slots_by_channel`.
     ///
     /// To override the contents of this collection use [`set_max_slots_by_channel`](Self::set_max_slots_by_channel).
@@ -193,6 +219,12 @@ impl UserDataBuilder {
     ) -> Self {
         self.max_slots_by_channel = input;
         self
+    }
+    /// <p>A map of maximum slots by channel. The key is a channel name. The value is an integer: the maximum number of slots. This is calculated from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_MediaConcurrency.html">MediaConcurrency</a> of the <code>RoutingProfile</code> assigned to the agent. </p>
+    pub fn get_max_slots_by_channel(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::Channel, i32>> {
+        &self.max_slots_by_channel
     }
     /// Adds a key-value pair to `active_slots_by_channel`.
     ///
@@ -213,6 +245,12 @@ impl UserDataBuilder {
         self.active_slots_by_channel = input;
         self
     }
+    /// <p> A map of active slots by channel. The key is a channel name. The value is an integer: the number of active slots. </p>
+    pub fn get_active_slots_by_channel(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::Channel, i32>> {
+        &self.active_slots_by_channel
+    }
     /// Appends an item to `contacts`.
     ///
     /// To override the contents of this collection use [`set_contacts`](Self::set_contacts).
@@ -232,6 +270,12 @@ impl UserDataBuilder {
         self.contacts = input;
         self
     }
+    /// <p>A list of contact reference information.</p>
+    pub fn get_contacts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AgentContactReference>> {
+        &self.contacts
+    }
     /// <p>The Next status of the agent.</p>
     pub fn next_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_status = ::std::option::Option::Some(input.into());
@@ -241,6 +285,10 @@ impl UserDataBuilder {
     pub fn set_next_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_status = input;
         self
+    }
+    /// <p>The Next status of the agent.</p>
+    pub fn get_next_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_status
     }
     /// Consumes the builder and constructs a [`UserData`](crate::types::UserData).
     pub fn build(self) -> crate::types::UserData {

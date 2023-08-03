@@ -56,6 +56,10 @@ impl GroupResultBuilder {
         self.group_id = input;
         self
     }
+    /// <p>Group result ID.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
+    }
     /// <p>Group Result Name.</p>
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_name = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl GroupResultBuilder {
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_name = input;
         self
+    }
+    /// <p>Group Result Name.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
     }
     /// Appends an item to `tests`.
     ///
@@ -84,6 +92,10 @@ impl GroupResultBuilder {
     ) -> Self {
         self.tests = input;
         self
+    }
+    /// <p>Tests under Group Result.</p>
+    pub fn get_tests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TestCaseRun>> {
+        &self.tests
     }
     /// Consumes the builder and constructs a [`GroupResult`](crate::types::GroupResult).
     pub fn build(self) -> crate::types::GroupResult {

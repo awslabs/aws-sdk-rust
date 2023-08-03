@@ -56,6 +56,10 @@ impl SlotValueOverrideBuilder {
         self.shape = input;
         self
     }
+    /// <p>When the shape value is <code>List</code>, it indicates that the <code>values</code> field contains a list of slot values. When the value is <code>Scalar</code>, it indicates that the <code>value</code> field contains a single value.</p>
+    pub fn get_shape(&self) -> &::std::option::Option<crate::types::SlotShape> {
+        &self.shape
+    }
     /// <p>The current value of the slot.</p>
     pub fn value(mut self, input: crate::types::SlotValue) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl SlotValueOverrideBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::SlotValue>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The current value of the slot.</p>
+    pub fn get_value(&self) -> &::std::option::Option<crate::types::SlotValue> {
+        &self.value
     }
     /// Appends an item to `values`.
     ///
@@ -84,6 +92,12 @@ impl SlotValueOverrideBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>A list of one or more values that the user provided for the slot. For example, for a slot that elicits pizza toppings, the values might be "pepperoni" and "pineapple."</p>
+    pub fn get_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SlotValueOverride>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`SlotValueOverride`](crate::types::SlotValueOverride).
     pub fn build(self) -> crate::types::SlotValueOverride {

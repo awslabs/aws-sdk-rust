@@ -57,6 +57,10 @@ impl SuggesterBuilder {
         self.suggester_name = input;
         self
     }
+    /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
+    pub fn get_suggester_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.suggester_name
+    }
     /// <p>Options for a search suggester.</p>
     pub fn document_suggester_options(
         mut self,
@@ -72,6 +76,12 @@ impl SuggesterBuilder {
     ) -> Self {
         self.document_suggester_options = input;
         self
+    }
+    /// <p>Options for a search suggester.</p>
+    pub fn get_document_suggester_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::DocumentSuggesterOptions> {
+        &self.document_suggester_options
     }
     /// Consumes the builder and constructs a [`Suggester`](crate::types::Suggester).
     pub fn build(self) -> crate::types::Suggester {

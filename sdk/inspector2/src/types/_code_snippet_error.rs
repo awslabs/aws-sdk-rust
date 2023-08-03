@@ -56,6 +56,10 @@ impl CodeSnippetErrorBuilder {
         self.finding_arn = input;
         self
     }
+    /// <p>The ARN of the finding that a code snippet couldn't be retrieved for.</p>
+    pub fn get_finding_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.finding_arn
+    }
     /// <p>The error code for the error that prevented a code snippet from being retrieved.</p>
     pub fn error_code(mut self, input: crate::types::CodeSnippetErrorCode) -> Self {
         self.error_code = ::std::option::Option::Some(input);
@@ -68,6 +72,10 @@ impl CodeSnippetErrorBuilder {
     ) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>The error code for the error that prevented a code snippet from being retrieved.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<crate::types::CodeSnippetErrorCode> {
+        &self.error_code
     }
     /// <p>The error message received when Amazon Inspector failed to retrieve a code snippet.</p>
     pub fn error_message(
@@ -84,6 +92,10 @@ impl CodeSnippetErrorBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>The error message received when Amazon Inspector failed to retrieve a code snippet.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`CodeSnippetError`](crate::types::CodeSnippetError).
     pub fn build(self) -> crate::types::CodeSnippetError {

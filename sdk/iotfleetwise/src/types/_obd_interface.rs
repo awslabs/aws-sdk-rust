@@ -88,6 +88,10 @@ impl ObdInterfaceBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the interface.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The ID of the message requesting vehicle data.</p>
     pub fn request_message_id(mut self, input: i32) -> Self {
         self.request_message_id = ::std::option::Option::Some(input);
@@ -97,6 +101,10 @@ impl ObdInterfaceBuilder {
     pub fn set_request_message_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.request_message_id = input;
         self
+    }
+    /// <p>The ID of the message requesting vehicle data.</p>
+    pub fn get_request_message_id(&self) -> &::std::option::Option<i32> {
+        &self.request_message_id
     }
     /// <p>The standard OBD II PID.</p>
     pub fn obd_standard(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -108,6 +116,10 @@ impl ObdInterfaceBuilder {
         self.obd_standard = input;
         self
     }
+    /// <p>The standard OBD II PID.</p>
+    pub fn get_obd_standard(&self) -> &::std::option::Option<::std::string::String> {
+        &self.obd_standard
+    }
     /// <p>The maximum number message requests per second.</p>
     pub fn pid_request_interval_seconds(mut self, input: i32) -> Self {
         self.pid_request_interval_seconds = ::std::option::Option::Some(input);
@@ -117,6 +129,10 @@ impl ObdInterfaceBuilder {
     pub fn set_pid_request_interval_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.pid_request_interval_seconds = input;
         self
+    }
+    /// <p>The maximum number message requests per second.</p>
+    pub fn get_pid_request_interval_seconds(&self) -> &::std::option::Option<i32> {
+        &self.pid_request_interval_seconds
     }
     /// <p>The maximum number message requests per diagnostic trouble code per second.</p>
     pub fn dtc_request_interval_seconds(mut self, input: i32) -> Self {
@@ -128,6 +144,10 @@ impl ObdInterfaceBuilder {
         self.dtc_request_interval_seconds = input;
         self
     }
+    /// <p>The maximum number message requests per diagnostic trouble code per second.</p>
+    pub fn get_dtc_request_interval_seconds(&self) -> &::std::option::Option<i32> {
+        &self.dtc_request_interval_seconds
+    }
     /// <p>Whether to use extended IDs in the message.</p>
     pub fn use_extended_ids(mut self, input: bool) -> Self {
         self.use_extended_ids = ::std::option::Option::Some(input);
@@ -138,6 +158,10 @@ impl ObdInterfaceBuilder {
         self.use_extended_ids = input;
         self
     }
+    /// <p>Whether to use extended IDs in the message.</p>
+    pub fn get_use_extended_ids(&self) -> &::std::option::Option<bool> {
+        &self.use_extended_ids
+    }
     /// <p>Whether the vehicle has a transmission control module (TCM).</p>
     pub fn has_transmission_ecu(mut self, input: bool) -> Self {
         self.has_transmission_ecu = ::std::option::Option::Some(input);
@@ -147,6 +171,10 @@ impl ObdInterfaceBuilder {
     pub fn set_has_transmission_ecu(mut self, input: ::std::option::Option<bool>) -> Self {
         self.has_transmission_ecu = input;
         self
+    }
+    /// <p>Whether the vehicle has a transmission control module (TCM).</p>
+    pub fn get_has_transmission_ecu(&self) -> &::std::option::Option<bool> {
+        &self.has_transmission_ecu
     }
     /// Consumes the builder and constructs a [`ObdInterface`](crate::types::ObdInterface).
     pub fn build(self) -> crate::types::ObdInterface {

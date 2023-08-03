@@ -49,6 +49,10 @@ impl StartSpeakerEnrollmentJobOutputBuilder {
         self.job = input;
         self
     }
+    /// <p>Details about the started speaker enrollment job.</p>
+    pub fn get_job(&self) -> &::std::option::Option<crate::types::SpeakerEnrollmentJob> {
+        &self.job
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

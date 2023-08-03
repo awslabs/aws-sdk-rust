@@ -48,6 +48,10 @@ impl ServiceInfoBuilder {
         self.service_code = input;
         self
     }
+    /// <p>The service identifier.</p>
+    pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_code
+    }
     /// <p>The service name.</p>
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl ServiceInfoBuilder {
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_name = input;
         self
+    }
+    /// <p>The service name.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
     }
     /// Consumes the builder and constructs a [`ServiceInfo`](crate::types::ServiceInfo).
     pub fn build(self) -> crate::types::ServiceInfo {

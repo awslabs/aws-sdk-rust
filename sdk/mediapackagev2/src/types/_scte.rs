@@ -49,6 +49,12 @@ impl ScteBuilder {
         self.scte_filter = input;
         self
     }
+    /// <p>The SCTE-35 message types that you want to be treated as ad markers in the output.</p>
+    pub fn get_scte_filter(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScteFilter>> {
+        &self.scte_filter
+    }
     /// Consumes the builder and constructs a [`Scte`](crate::types::Scte).
     pub fn build(self) -> crate::types::Scte {
         crate::types::Scte {

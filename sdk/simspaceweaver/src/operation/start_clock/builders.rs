@@ -36,6 +36,10 @@ impl StartClockFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartClock as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_clock::builders::StartClockInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -117,5 +121,9 @@ impl StartClockFluentBuilder {
     pub fn set_simulation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_simulation(input);
         self
+    }
+    /// <p>The name of the simulation.</p>
+    pub fn get_simulation(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_simulation()
     }
 }

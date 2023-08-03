@@ -64,6 +64,10 @@ impl DownlinkQueueMessageBuilder {
         self.message_id = input;
         self
     }
+    /// <p> The message ID assigned by IoT Wireless to each downlink message, which helps identify the message.</p>
+    pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message_id
+    }
     /// <p>The transmit mode to use for sending data to the wireless device. This can be <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge mode).</p>
     pub fn transmit_mode(mut self, input: i32) -> Self {
         self.transmit_mode = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl DownlinkQueueMessageBuilder {
         self.transmit_mode = input;
         self
     }
+    /// <p>The transmit mode to use for sending data to the wireless device. This can be <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge mode).</p>
+    pub fn get_transmit_mode(&self) -> &::std::option::Option<i32> {
+        &self.transmit_mode
+    }
     /// <p>The time at which Iot Wireless received the downlink message.</p>
     pub fn received_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.received_at = ::std::option::Option::Some(input.into());
@@ -83,6 +91,10 @@ impl DownlinkQueueMessageBuilder {
     pub fn set_received_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.received_at = input;
         self
+    }
+    /// <p>The time at which Iot Wireless received the downlink message.</p>
+    pub fn get_received_at(&self) -> &::std::option::Option<::std::string::String> {
+        &self.received_at
     }
     /// <p>LoRaWAN router info.</p>
     pub fn lo_ra_wan(mut self, input: crate::types::LoRaWanSendDataToDevice) -> Self {
@@ -96,6 +108,10 @@ impl DownlinkQueueMessageBuilder {
     ) -> Self {
         self.lo_ra_wan = input;
         self
+    }
+    /// <p>LoRaWAN router info.</p>
+    pub fn get_lo_ra_wan(&self) -> &::std::option::Option<crate::types::LoRaWanSendDataToDevice> {
+        &self.lo_ra_wan
     }
     /// Consumes the builder and constructs a [`DownlinkQueueMessage`](crate::types::DownlinkQueueMessage).
     pub fn build(self) -> crate::types::DownlinkQueueMessage {

@@ -96,6 +96,10 @@ impl GroupDetailBuilder {
         self.path = input;
         self
     }
+    /// <p>The path to the group. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
+    }
     /// <p>The friendly name that identifies the group.</p>
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_name = ::std::option::Option::Some(input.into());
@@ -106,6 +110,10 @@ impl GroupDetailBuilder {
         self.group_name = input;
         self
     }
+    /// <p>The friendly name that identifies the group.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
+    }
     /// <p>The stable and unique string identifying the group. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
@@ -115,6 +123,10 @@ impl GroupDetailBuilder {
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_id = input;
         self
+    }
+    /// <p>The stable and unique string identifying the group. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
     }
     /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
     /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. </p>
@@ -128,6 +140,11 @@ impl GroupDetailBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
+    /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the group was created.</p>
     pub fn create_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_date = ::std::option::Option::Some(input);
@@ -140,6 +157,10 @@ impl GroupDetailBuilder {
     ) -> Self {
         self.create_date = input;
         self
+    }
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the group was created.</p>
+    pub fn get_create_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_date
     }
     /// Appends an item to `group_policy_list`.
     ///
@@ -160,6 +181,12 @@ impl GroupDetailBuilder {
         self.group_policy_list = input;
         self
     }
+    /// <p>A list of the inline policies embedded in the group.</p>
+    pub fn get_group_policy_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyDetail>> {
+        &self.group_policy_list
+    }
     /// Appends an item to `attached_managed_policies`.
     ///
     /// To override the contents of this collection use [`set_attached_managed_policies`](Self::set_attached_managed_policies).
@@ -178,6 +205,12 @@ impl GroupDetailBuilder {
     ) -> Self {
         self.attached_managed_policies = input;
         self
+    }
+    /// <p>A list of the managed policies attached to the group.</p>
+    pub fn get_attached_managed_policies(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttachedPolicy>> {
+        &self.attached_managed_policies
     }
     /// Consumes the builder and constructs a [`GroupDetail`](crate::types::GroupDetail).
     pub fn build(self) -> crate::types::GroupDetail {

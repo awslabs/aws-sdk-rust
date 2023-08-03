@@ -49,6 +49,10 @@ impl CreateLocationOutputBuilder {
         self.location = input;
         self
     }
+    /// <p>The details of the custom location you created.</p>
+    pub fn get_location(&self) -> &::std::option::Option<crate::types::LocationModel> {
+        &self.location
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

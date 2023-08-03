@@ -36,6 +36,12 @@ impl GetPolicyTemplateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetPolicyTemplate as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_policy_template::builders::GetPolicyTemplateInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl GetPolicyTemplateFluentBuilder {
         self.inner = self.inner.set_policy_store_id(input);
         self
     }
+    /// <p>Specifies the ID of the policy store that contains the policy template that you want information about.</p>
+    pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_store_id()
+    }
     /// <p>Specifies the ID of the policy template that you want information about.</p>
     pub fn policy_template_id(
         mut self,
@@ -147,5 +157,9 @@ impl GetPolicyTemplateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_policy_template_id(input);
         self
+    }
+    /// <p>Specifies the ID of the policy template that you want information about.</p>
+    pub fn get_policy_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_template_id()
     }
 }

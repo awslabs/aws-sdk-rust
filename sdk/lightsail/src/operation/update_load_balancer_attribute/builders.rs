@@ -37,6 +37,10 @@ impl UpdateLoadBalancerAttributeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateLoadBalancerAttribute as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_load_balancer_attribute::builders::UpdateLoadBalancerAttributeInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,10 @@ impl UpdateLoadBalancerAttributeFluentBuilder {
         self.inner = self.inner.set_load_balancer_name(input);
         self
     }
+    /// <p>The name of the load balancer that you want to modify (e.g., <code>my-load-balancer</code>.</p>
+    pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_load_balancer_name()
+    }
     /// <p>The name of the attribute you want to update.</p>
     pub fn attribute_name(mut self, input: crate::types::LoadBalancerAttributeName) -> Self {
         self.inner = self.inner.attribute_name(input);
@@ -145,6 +153,12 @@ impl UpdateLoadBalancerAttributeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_attribute_name(input);
         self
+    }
+    /// <p>The name of the attribute you want to update.</p>
+    pub fn get_attribute_name(
+        &self,
+    ) -> &::std::option::Option<crate::types::LoadBalancerAttributeName> {
+        self.inner.get_attribute_name()
     }
     /// <p>The value that you want to specify for the attribute name.</p>
     /// <p>The following values are supported depending on what you specify for the <code>attributeName</code> request parameter:</p>
@@ -177,5 +191,17 @@ impl UpdateLoadBalancerAttributeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_attribute_value(input);
         self
+    }
+    /// <p>The value that you want to specify for the attribute name.</p>
+    /// <p>The following values are supported depending on what you specify for the <code>attributeName</code> request parameter:</p>
+    /// <ul>
+    /// <li> <p>If you specify <code>HealthCheckPath</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be the path to ping on the target (for example, <code>/weather/us/wa/seattle</code>).</p> </li>
+    /// <li> <p>If you specify <code>SessionStickinessEnabled</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be <code>true</code> to activate session stickiness or <code>false</code> to deactivate session stickiness.</p> </li>
+    /// <li> <p>If you specify <code>SessionStickiness_LB_CookieDurationSeconds</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be an interger that represents the cookie duration in seconds.</p> </li>
+    /// <li> <p>If you specify <code>HttpsRedirectionEnabled</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be <code>true</code> to activate HTTP to HTTPS redirection or <code>false</code> to deactivate HTTP to HTTPS redirection.</p> </li>
+    /// <li> <p>If you specify <code>TlsPolicyName</code> for the <code>attributeName</code> request parameter, then the <code>attributeValue</code> request parameter must be the name of the TLS policy.</p> <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a> action to get a list of TLS policy names that you can specify.</p> </li>
+    /// </ul>
+    pub fn get_attribute_value(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_attribute_value()
     }
 }

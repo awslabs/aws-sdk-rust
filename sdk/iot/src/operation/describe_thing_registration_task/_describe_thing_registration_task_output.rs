@@ -134,6 +134,10 @@ impl DescribeThingRegistrationTaskOutputBuilder {
         self.task_id = input;
         self
     }
+    /// <p>The task ID.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_id
+    }
     /// <p>The task creation date.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
@@ -147,6 +151,10 @@ impl DescribeThingRegistrationTaskOutputBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>The task creation date.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
+    }
     /// <p>The date when the task was last modified.</p>
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input);
@@ -159,6 +167,10 @@ impl DescribeThingRegistrationTaskOutputBuilder {
     ) -> Self {
         self.last_modified_date = input;
         self
+    }
+    /// <p>The date when the task was last modified.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_date
     }
     /// <p>The task's template.</p>
     pub fn template_body(
@@ -176,6 +188,10 @@ impl DescribeThingRegistrationTaskOutputBuilder {
         self.template_body = input;
         self
     }
+    /// <p>The task's template.</p>
+    pub fn get_template_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_body
+    }
     /// <p>The S3 bucket that contains the input file.</p>
     pub fn input_file_bucket(
         mut self,
@@ -191,6 +207,10 @@ impl DescribeThingRegistrationTaskOutputBuilder {
     ) -> Self {
         self.input_file_bucket = input;
         self
+    }
+    /// <p>The S3 bucket that contains the input file.</p>
+    pub fn get_input_file_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_file_bucket
     }
     /// <p>The input file key.</p>
     pub fn input_file_key(
@@ -208,6 +228,10 @@ impl DescribeThingRegistrationTaskOutputBuilder {
         self.input_file_key = input;
         self
     }
+    /// <p>The input file key.</p>
+    pub fn get_input_file_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_file_key
+    }
     /// <p>The role ARN that grants access to the input file bucket.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -217,6 +241,10 @@ impl DescribeThingRegistrationTaskOutputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The role ARN that grants access to the input file bucket.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The status of the bulk thing provisioning task.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
@@ -228,6 +256,10 @@ impl DescribeThingRegistrationTaskOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the bulk thing provisioning task.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.status
+    }
     /// <p>The message.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -237,6 +269,10 @@ impl DescribeThingRegistrationTaskOutputBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>The message.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// <p>The number of things successfully provisioned.</p>
     pub fn success_count(mut self, input: i32) -> Self {
@@ -248,6 +284,10 @@ impl DescribeThingRegistrationTaskOutputBuilder {
         self.success_count = input;
         self
     }
+    /// <p>The number of things successfully provisioned.</p>
+    pub fn get_success_count(&self) -> &::std::option::Option<i32> {
+        &self.success_count
+    }
     /// <p>The number of things that failed to be provisioned.</p>
     pub fn failure_count(mut self, input: i32) -> Self {
         self.failure_count = ::std::option::Option::Some(input);
@@ -258,6 +298,10 @@ impl DescribeThingRegistrationTaskOutputBuilder {
         self.failure_count = input;
         self
     }
+    /// <p>The number of things that failed to be provisioned.</p>
+    pub fn get_failure_count(&self) -> &::std::option::Option<i32> {
+        &self.failure_count
+    }
     /// <p>The progress of the bulk provisioning task expressed as a percentage.</p>
     pub fn percentage_progress(mut self, input: i32) -> Self {
         self.percentage_progress = ::std::option::Option::Some(input);
@@ -267,6 +311,10 @@ impl DescribeThingRegistrationTaskOutputBuilder {
     pub fn set_percentage_progress(mut self, input: ::std::option::Option<i32>) -> Self {
         self.percentage_progress = input;
         self
+    }
+    /// <p>The progress of the bulk provisioning task expressed as a percentage.</p>
+    pub fn get_percentage_progress(&self) -> &::std::option::Option<i32> {
+        &self.percentage_progress
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -80,6 +80,10 @@ impl VtlDeviceBuilder {
         self.vtl_device_arn = input;
         self
     }
+    /// <p>Specifies the unique Amazon Resource Name (ARN) of the device (tape drive or media changer).</p>
+    pub fn get_vtl_device_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vtl_device_arn
+    }
     /// <p>Specifies the type of device that the VTL device emulates.</p>
     pub fn vtl_device_type(
         mut self,
@@ -95,6 +99,10 @@ impl VtlDeviceBuilder {
     ) -> Self {
         self.vtl_device_type = input;
         self
+    }
+    /// <p>Specifies the type of device that the VTL device emulates.</p>
+    pub fn get_vtl_device_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vtl_device_type
     }
     /// <p>Specifies the vendor of the device that the VTL device object emulates.</p>
     pub fn vtl_device_vendor(
@@ -112,6 +120,10 @@ impl VtlDeviceBuilder {
         self.vtl_device_vendor = input;
         self
     }
+    /// <p>Specifies the vendor of the device that the VTL device object emulates.</p>
+    pub fn get_vtl_device_vendor(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vtl_device_vendor
+    }
     /// <p>Specifies the model number of device that the VTL device emulates.</p>
     pub fn vtl_device_product_identifier(
         mut self,
@@ -128,6 +140,12 @@ impl VtlDeviceBuilder {
         self.vtl_device_product_identifier = input;
         self
     }
+    /// <p>Specifies the model number of device that the VTL device emulates.</p>
+    pub fn get_vtl_device_product_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.vtl_device_product_identifier
+    }
     /// <p>A list of iSCSI information about a VTL device.</p>
     pub fn devicei_scsi_attributes(mut self, input: crate::types::DeviceiScsiAttributes) -> Self {
         self.devicei_scsi_attributes = ::std::option::Option::Some(input);
@@ -140,6 +158,12 @@ impl VtlDeviceBuilder {
     ) -> Self {
         self.devicei_scsi_attributes = input;
         self
+    }
+    /// <p>A list of iSCSI information about a VTL device.</p>
+    pub fn get_devicei_scsi_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeviceiScsiAttributes> {
+        &self.devicei_scsi_attributes
     }
     /// Consumes the builder and constructs a [`VtlDevice`](crate::types::VtlDevice).
     pub fn build(self) -> crate::types::VtlDevice {

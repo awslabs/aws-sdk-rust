@@ -70,6 +70,10 @@ impl ParametricMonitoringConfigurationBuilder {
         self.persistent_app_ui = input;
         self
     }
+    /// <p> Monitoring configurations for the persistent application UI.</p>
+    pub fn get_persistent_app_ui(&self) -> &::std::option::Option<::std::string::String> {
+        &self.persistent_app_ui
+    }
     /// <p> Monitoring configurations for CloudWatch.</p>
     pub fn cloud_watch_monitoring_configuration(
         mut self,
@@ -86,6 +90,12 @@ impl ParametricMonitoringConfigurationBuilder {
         self.cloud_watch_monitoring_configuration = input;
         self
     }
+    /// <p> Monitoring configurations for CloudWatch.</p>
+    pub fn get_cloud_watch_monitoring_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ParametricCloudWatchMonitoringConfiguration> {
+        &self.cloud_watch_monitoring_configuration
+    }
     /// <p> Amazon S3 configuration for monitoring log publishing.</p>
     pub fn s3_monitoring_configuration(
         mut self,
@@ -101,6 +111,12 @@ impl ParametricMonitoringConfigurationBuilder {
     ) -> Self {
         self.s3_monitoring_configuration = input;
         self
+    }
+    /// <p> Amazon S3 configuration for monitoring log publishing.</p>
+    pub fn get_s3_monitoring_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ParametricS3MonitoringConfiguration> {
+        &self.s3_monitoring_configuration
     }
     /// Consumes the builder and constructs a [`ParametricMonitoringConfiguration`](crate::types::ParametricMonitoringConfiguration).
     pub fn build(self) -> crate::types::ParametricMonitoringConfiguration {

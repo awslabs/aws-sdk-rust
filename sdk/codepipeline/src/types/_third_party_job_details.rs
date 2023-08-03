@@ -56,6 +56,10 @@ impl ThirdPartyJobDetailsBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier used to identify the job details in CodePipeline.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The data to be returned by the third party job worker.</p>
     pub fn data(mut self, input: crate::types::ThirdPartyJobData) -> Self {
         self.data = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl ThirdPartyJobDetailsBuilder {
         self.data = input;
         self
     }
+    /// <p>The data to be returned by the third party job worker.</p>
+    pub fn get_data(&self) -> &::std::option::Option<crate::types::ThirdPartyJobData> {
+        &self.data
+    }
     /// <p>A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job worker. Use this number in an <code>AcknowledgeThirdPartyJob</code> request.</p>
     pub fn nonce(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nonce = ::std::option::Option::Some(input.into());
@@ -78,6 +86,10 @@ impl ThirdPartyJobDetailsBuilder {
     pub fn set_nonce(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.nonce = input;
         self
+    }
+    /// <p>A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job worker. Use this number in an <code>AcknowledgeThirdPartyJob</code> request.</p>
+    pub fn get_nonce(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nonce
     }
     /// Consumes the builder and constructs a [`ThirdPartyJobDetails`](crate::types::ThirdPartyJobDetails).
     pub fn build(self) -> crate::types::ThirdPartyJobDetails {

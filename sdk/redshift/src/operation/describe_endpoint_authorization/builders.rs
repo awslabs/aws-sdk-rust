@@ -36,6 +36,10 @@ impl DescribeEndpointAuthorizationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeEndpointAuthorization as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_endpoint_authorization::builders::DescribeEndpointAuthorizationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +142,10 @@ impl DescribeEndpointAuthorizationFluentBuilder {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
+    /// <p>The cluster identifier of the cluster to access.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_identifier()
+    }
     /// <p>The Amazon Web Services account ID of either the cluster owner (grantor) or grantee. If <code>Grantee</code> parameter is true, then the <code>Account</code> value is of the grantor.</p>
     pub fn account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account(input.into());
@@ -147,6 +155,10 @@ impl DescribeEndpointAuthorizationFluentBuilder {
     pub fn set_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account(input);
         self
+    }
+    /// <p>The Amazon Web Services account ID of either the cluster owner (grantor) or grantee. If <code>Grantee</code> parameter is true, then the <code>Account</code> value is of the grantor.</p>
+    pub fn get_account(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account()
     }
     /// <p>Indicates whether to check authorization from a grantor or grantee point of view. If true, Amazon Redshift returns endpoint authorizations that you've been granted. If false (default), checks authorization from a grantor point of view.</p>
     pub fn grantee(mut self, input: bool) -> Self {
@@ -158,6 +170,10 @@ impl DescribeEndpointAuthorizationFluentBuilder {
         self.inner = self.inner.set_grantee(input);
         self
     }
+    /// <p>Indicates whether to check authorization from a grantor or grantee point of view. If true, Amazon Redshift returns endpoint authorizations that you've been granted. If false (default), checks authorization from a grantor point of view.</p>
+    pub fn get_grantee(&self) -> &::std::option::Option<bool> {
+        self.inner.get_grantee()
+    }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a <code>Marker</code> is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.inner = self.inner.max_records(input);
@@ -168,6 +184,10 @@ impl DescribeEndpointAuthorizationFluentBuilder {
         self.inner = self.inner.set_max_records(input);
         self
     }
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a <code>Marker</code> is included in the response so that the remaining results can be retrieved.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_records()
+    }
     /// <p>An optional pagination token provided by a previous <code>DescribeEndpointAuthorization</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -177,5 +197,9 @@ impl DescribeEndpointAuthorizationFluentBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
+    }
+    /// <p>An optional pagination token provided by a previous <code>DescribeEndpointAuthorization</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
     }
 }

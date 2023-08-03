@@ -59,6 +59,10 @@ impl LaunchDetailsBuilder {
         self.latest_launch_time = input;
         self
     }
+    /// <p>The latest time that this application was launched successfully.</p>
+    pub fn get_latest_launch_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.latest_launch_time
+    }
     /// <p>The name of the latest stack launched for this application.</p>
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_name = ::std::option::Option::Some(input.into());
@@ -69,6 +73,10 @@ impl LaunchDetailsBuilder {
         self.stack_name = input;
         self
     }
+    /// <p>The name of the latest stack launched for this application.</p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_name
+    }
     /// <p>The ID of the latest stack launched for this application.</p>
     pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_id = ::std::option::Option::Some(input.into());
@@ -78,6 +86,10 @@ impl LaunchDetailsBuilder {
     pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_id = input;
         self
+    }
+    /// <p>The ID of the latest stack launched for this application.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_id
     }
     /// Consumes the builder and constructs a [`LaunchDetails`](crate::types::LaunchDetails).
     pub fn build(self) -> crate::types::LaunchDetails {

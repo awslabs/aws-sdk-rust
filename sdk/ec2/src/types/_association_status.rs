@@ -51,6 +51,10 @@ impl AssociationStatusBuilder {
         self.code = input;
         self
     }
+    /// <p>The state of the target network association.</p>
+    pub fn get_code(&self) -> &::std::option::Option<crate::types::AssociationStatusCode> {
+        &self.code
+    }
     /// <p>A message about the status of the target network association, if applicable.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl AssociationStatusBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>A message about the status of the target network association, if applicable.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`AssociationStatus`](crate::types::AssociationStatus).
     pub fn build(self) -> crate::types::AssociationStatus {

@@ -51,6 +51,12 @@ impl CreateAppOutputBuilder {
         self.application_response = input;
         self
     }
+    /// <p>Provides information about an application.</p>
+    pub fn get_application_response(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationResponse> {
+        &self.application_response
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

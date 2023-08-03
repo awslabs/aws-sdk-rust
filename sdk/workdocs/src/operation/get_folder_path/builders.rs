@@ -37,6 +37,12 @@ impl GetFolderPathFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetFolderPath as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_folder_path::builders::GetFolderPathInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,6 +131,10 @@ impl GetFolderPathFluentBuilder {
         self.inner = self.inner.set_authentication_token(input);
         self
     }
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_authentication_token()
+    }
     /// <p>The ID of the folder.</p>
     pub fn folder_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.folder_id(input.into());
@@ -134,6 +144,10 @@ impl GetFolderPathFluentBuilder {
     pub fn set_folder_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_folder_id(input);
         self
+    }
+    /// <p>The ID of the folder.</p>
+    pub fn get_folder_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_folder_id()
     }
     /// <p>The maximum number of levels in the hierarchy to return.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -145,6 +159,10 @@ impl GetFolderPathFluentBuilder {
         self.inner = self.inner.set_limit(input);
         self
     }
+    /// <p>The maximum number of levels in the hierarchy to return.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
+    }
     /// <p>A comma-separated list of values. Specify "NAME" to include the names of the parent folders.</p>
     pub fn fields(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fields(input.into());
@@ -155,6 +173,10 @@ impl GetFolderPathFluentBuilder {
         self.inner = self.inner.set_fields(input);
         self
     }
+    /// <p>A comma-separated list of values. Specify "NAME" to include the names of the parent folders.</p>
+    pub fn get_fields(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_fields()
+    }
     /// <p>This value is not supported.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -164,5 +186,9 @@ impl GetFolderPathFluentBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
+    }
+    /// <p>This value is not supported.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
     }
 }

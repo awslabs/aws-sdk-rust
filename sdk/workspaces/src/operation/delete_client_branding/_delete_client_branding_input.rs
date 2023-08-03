@@ -48,6 +48,10 @@ impl DeleteClientBrandingInputBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The directory identifier of the WorkSpace for which you want to delete client branding.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// Appends an item to `platforms`.
     ///
     /// To override the contents of this collection use [`set_platforms`](Self::set_platforms).
@@ -66,6 +70,12 @@ impl DeleteClientBrandingInputBuilder {
     ) -> Self {
         self.platforms = input;
         self
+    }
+    /// <p>The device type for which you want to delete client branding.</p>
+    pub fn get_platforms(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClientDeviceType>> {
+        &self.platforms
     }
     /// Consumes the builder and constructs a [`DeleteClientBrandingInput`](crate::operation::delete_client_branding::DeleteClientBrandingInput).
     pub fn build(

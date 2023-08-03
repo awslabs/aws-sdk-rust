@@ -36,6 +36,12 @@ impl ListApplicationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListApplications as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_applications::builders::ListApplicationsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl ListApplicationsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A pagination token to control the number of applications displayed in the list.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of applications to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -146,6 +156,10 @@ impl ListApplicationsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of applications to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// Appends an item to `names`.
     ///
@@ -164,6 +178,10 @@ impl ListApplicationsFluentBuilder {
         self.inner = self.inner.set_names(input);
         self
     }
+    /// <p>The names of the applications.</p>
+    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_names()
+    }
     /// <p>The unique identifier of the runtime environment where the applications are deployed.</p>
     pub fn environment_id(
         mut self,
@@ -179,5 +197,9 @@ impl ListApplicationsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_environment_id(input);
         self
+    }
+    /// <p>The unique identifier of the runtime environment where the applications are deployed.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_id()
     }
 }

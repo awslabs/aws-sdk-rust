@@ -78,6 +78,10 @@ impl GrowthRateComputationBuilder {
         self.computation_id = input;
         self
     }
+    /// <p>The ID for a computation.</p>
+    pub fn get_computation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.computation_id
+    }
     /// <p>The name of a computation.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -87,6 +91,10 @@ impl GrowthRateComputationBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of a computation.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The time field that is used in a computation.</p>
     pub fn time(mut self, input: crate::types::DimensionField) -> Self {
@@ -98,6 +106,10 @@ impl GrowthRateComputationBuilder {
         self.time = input;
         self
     }
+    /// <p>The time field that is used in a computation.</p>
+    pub fn get_time(&self) -> &::std::option::Option<crate::types::DimensionField> {
+        &self.time
+    }
     /// <p>The value field that is used in a computation.</p>
     pub fn value(mut self, input: crate::types::MeasureField) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -108,6 +120,10 @@ impl GrowthRateComputationBuilder {
         self.value = input;
         self
     }
+    /// <p>The value field that is used in a computation.</p>
+    pub fn get_value(&self) -> &::std::option::Option<crate::types::MeasureField> {
+        &self.value
+    }
     /// <p>The period size setup of a growth rate computation.</p>
     pub fn period_size(mut self, input: i32) -> Self {
         self.period_size = ::std::option::Option::Some(input);
@@ -117,6 +133,10 @@ impl GrowthRateComputationBuilder {
     pub fn set_period_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.period_size = input;
         self
+    }
+    /// <p>The period size setup of a growth rate computation.</p>
+    pub fn get_period_size(&self) -> &::std::option::Option<i32> {
+        &self.period_size
     }
     /// Consumes the builder and constructs a [`GrowthRateComputation`](crate::types::GrowthRateComputation).
     pub fn build(self) -> crate::types::GrowthRateComputation {

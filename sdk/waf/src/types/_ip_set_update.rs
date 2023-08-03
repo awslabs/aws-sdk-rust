@@ -52,6 +52,10 @@ impl IpSetUpdateBuilder {
         self.action = input;
         self
     }
+    /// <p>Specifies whether to insert or delete an IP address with <code>UpdateIPSet</code>.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::ChangeAction> {
+        &self.action
+    }
     /// <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from.</p>
     pub fn ip_set_descriptor(mut self, input: crate::types::IpSetDescriptor) -> Self {
         self.ip_set_descriptor = ::std::option::Option::Some(input);
@@ -64,6 +68,10 @@ impl IpSetUpdateBuilder {
     ) -> Self {
         self.ip_set_descriptor = input;
         self
+    }
+    /// <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from.</p>
+    pub fn get_ip_set_descriptor(&self) -> &::std::option::Option<crate::types::IpSetDescriptor> {
+        &self.ip_set_descriptor
     }
     /// Consumes the builder and constructs a [`IpSetUpdate`](crate::types::IpSetUpdate).
     pub fn build(self) -> crate::types::IpSetUpdate {

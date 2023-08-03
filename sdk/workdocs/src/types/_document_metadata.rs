@@ -99,6 +99,10 @@ impl DocumentMetadataBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the document.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The ID of the creator.</p>
     pub fn creator_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creator_id = ::std::option::Option::Some(input.into());
@@ -108,6 +112,10 @@ impl DocumentMetadataBuilder {
     pub fn set_creator_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creator_id = input;
         self
+    }
+    /// <p>The ID of the creator.</p>
+    pub fn get_creator_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creator_id
     }
     /// <p>The ID of the parent folder.</p>
     pub fn parent_folder_id(
@@ -125,6 +133,10 @@ impl DocumentMetadataBuilder {
         self.parent_folder_id = input;
         self
     }
+    /// <p>The ID of the parent folder.</p>
+    pub fn get_parent_folder_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent_folder_id
+    }
     /// <p>The time when the document was created.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_timestamp = ::std::option::Option::Some(input);
@@ -137,6 +149,10 @@ impl DocumentMetadataBuilder {
     ) -> Self {
         self.created_timestamp = input;
         self
+    }
+    /// <p>The time when the document was created.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
     }
     /// <p>The time when the document was updated.</p>
     pub fn modified_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -151,6 +167,10 @@ impl DocumentMetadataBuilder {
         self.modified_timestamp = input;
         self
     }
+    /// <p>The time when the document was updated.</p>
+    pub fn get_modified_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.modified_timestamp
+    }
     /// <p>The latest version of the document.</p>
     pub fn latest_version_metadata(mut self, input: crate::types::DocumentVersionMetadata) -> Self {
         self.latest_version_metadata = ::std::option::Option::Some(input);
@@ -164,6 +184,12 @@ impl DocumentMetadataBuilder {
         self.latest_version_metadata = input;
         self
     }
+    /// <p>The latest version of the document.</p>
+    pub fn get_latest_version_metadata(
+        &self,
+    ) -> &::std::option::Option<crate::types::DocumentVersionMetadata> {
+        &self.latest_version_metadata
+    }
     /// <p>The resource state.</p>
     pub fn resource_state(mut self, input: crate::types::ResourceStateType) -> Self {
         self.resource_state = ::std::option::Option::Some(input);
@@ -176,6 +202,10 @@ impl DocumentMetadataBuilder {
     ) -> Self {
         self.resource_state = input;
         self
+    }
+    /// <p>The resource state.</p>
+    pub fn get_resource_state(&self) -> &::std::option::Option<crate::types::ResourceStateType> {
+        &self.resource_state
     }
     /// Appends an item to `labels`.
     ///
@@ -195,6 +225,10 @@ impl DocumentMetadataBuilder {
     ) -> Self {
         self.labels = input;
         self
+    }
+    /// <p>List of labels on the document.</p>
+    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.labels
     }
     /// Consumes the builder and constructs a [`DocumentMetadata`](crate::types::DocumentMetadata).
     pub fn build(self) -> crate::types::DocumentMetadata {

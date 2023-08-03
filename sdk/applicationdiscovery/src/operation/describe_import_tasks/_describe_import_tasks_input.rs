@@ -66,6 +66,12 @@ impl DescribeImportTasksInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>An array of name-value pairs that you provide to filter the results for the <code>DescribeImportTask</code> request to a specific subset of results. Currently, wildcard values aren't supported for filters.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportTaskFilter>> {
+        &self.filters
+    }
     /// <p>The maximum number of results that you want this request to return, up to 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -76,6 +82,10 @@ impl DescribeImportTasksInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results that you want this request to return, up to 100.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token to request a specific page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -85,6 +95,10 @@ impl DescribeImportTasksInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token to request a specific page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeImportTasksInput`](crate::operation::describe_import_tasks::DescribeImportTasksInput).
     pub fn build(

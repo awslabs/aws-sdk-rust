@@ -56,6 +56,12 @@ impl DescribeImageGenerationConfigurationOutputBuilder {
         self.image_generation_configuration = input;
         self
     }
+    /// <p>The structure that contains the information required for the Kinesis video stream (KVS) images delivery. If this structure is null, the configuration will be deleted from the stream.</p>
+    pub fn get_image_generation_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImageGenerationConfiguration> {
+        &self.image_generation_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -56,6 +56,12 @@ impl DescribeTopicsDetectionJobOutputBuilder {
         self.topics_detection_job_properties = input;
         self
     }
+    /// <p>The list of properties for the requested job.</p>
+    pub fn get_topics_detection_job_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::TopicsDetectionJobProperties> {
+        &self.topics_detection_job_properties
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

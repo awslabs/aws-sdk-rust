@@ -58,6 +58,10 @@ impl ListEnvironmentTemplateVersionsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token that indicates the location of the next major or minor version in the array of major or minor versions of an environment template, after the list of major or minor versions that was previously requested.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `template_versions`.
     ///
     /// To override the contents of this collection use [`set_template_versions`](Self::set_template_versions).
@@ -81,6 +85,13 @@ impl ListEnvironmentTemplateVersionsOutputBuilder {
     ) -> Self {
         self.template_versions = input;
         self
+    }
+    /// <p>An array of major or minor versions of an environment template detail data.</p>
+    pub fn get_template_versions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentTemplateVersionSummary>>
+    {
+        &self.template_versions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

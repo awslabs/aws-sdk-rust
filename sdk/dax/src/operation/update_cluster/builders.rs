@@ -36,6 +36,12 @@ impl UpdateClusterFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateCluster as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_cluster::builders::UpdateClusterInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl UpdateClusterFluentBuilder {
         self.inner = self.inner.set_cluster_name(input);
         self
     }
+    /// <p>The name of the DAX cluster to be modified.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_name()
+    }
     /// <p>A description of the changes being made to the cluster.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -127,6 +137,10 @@ impl UpdateClusterFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of the changes being made to the cluster.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>A range of time when maintenance of DAX cluster software will be performed. For example: <code>sun:01:00-sun:09:00</code>. Cluster maintenance normally takes less than 30 minutes, and is performed automatically within the maintenance window.</p>
     pub fn preferred_maintenance_window(
@@ -144,6 +158,12 @@ impl UpdateClusterFluentBuilder {
         self.inner = self.inner.set_preferred_maintenance_window(input);
         self
     }
+    /// <p>A range of time when maintenance of DAX cluster software will be performed. For example: <code>sun:01:00-sun:09:00</code>. Cluster maintenance normally takes less than 30 minutes, and is performed automatically within the maintenance window.</p>
+    pub fn get_preferred_maintenance_window(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_preferred_maintenance_window()
+    }
     /// <p>The Amazon Resource Name (ARN) that identifies the topic.</p>
     pub fn notification_topic_arn(
         mut self,
@@ -159,6 +179,10 @@ impl UpdateClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_notification_topic_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) that identifies the topic.</p>
+    pub fn get_notification_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_notification_topic_arn()
     }
     /// <p>The current state of the topic. A value of “active” means that notifications will be sent to the topic. A value of “inactive” means that notifications will not be sent to the topic.</p>
     pub fn notification_topic_status(
@@ -176,6 +200,10 @@ impl UpdateClusterFluentBuilder {
         self.inner = self.inner.set_notification_topic_status(input);
         self
     }
+    /// <p>The current state of the topic. A value of “active” means that notifications will be sent to the topic. A value of “inactive” means that notifications will not be sent to the topic.</p>
+    pub fn get_notification_topic_status(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_notification_topic_status()
+    }
     /// <p>The name of a parameter group for this cluster.</p>
     pub fn parameter_group_name(
         mut self,
@@ -191,6 +219,10 @@ impl UpdateClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_parameter_group_name(input);
         self
+    }
+    /// <p>The name of a parameter group for this cluster.</p>
+    pub fn get_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_parameter_group_name()
     }
     /// Appends an item to `SecurityGroupIds`.
     ///
@@ -211,5 +243,11 @@ impl UpdateClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_security_group_ids(input);
         self
+    }
+    /// <p>A list of user-specified security group IDs to be assigned to each node in the DAX cluster. If this parameter is not specified, DAX assigns the default VPC security group to each node.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_security_group_ids()
     }
 }

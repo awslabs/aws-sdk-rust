@@ -83,6 +83,18 @@ impl UnsearchedFaceBuilder {
         self.face_details = input;
         self
     }
+    /// <p>Structure containing attributes of the face that the algorithm detected.</p>
+    /// <p>A <code>FaceDetail</code> object contains either the default facial attributes or all facial attributes. The default attributes are <code>BoundingBox</code>, <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>.</p>
+    /// <p> <code>GetFaceDetection</code> is the only Amazon Rekognition Video stored video operation that can return a <code>FaceDetail</code> object with all attributes. To specify which attributes to return, use the <code>FaceAttributes</code> input parameter for <code>StartFaceDetection</code>. The following Amazon Rekognition Video operations return only the default attributes. The corresponding Start operations don't have a <code>FaceAttributes</code> input parameter:</p>
+    /// <ul>
+    /// <li> <p>GetCelebrityRecognition</p> </li>
+    /// <li> <p>GetPersonTracking</p> </li>
+    /// <li> <p>GetFaceSearch</p> </li>
+    /// </ul>
+    /// <p>The Amazon Rekognition Image <code>DetectFaces</code> and <code>IndexFaces</code> operations can return all facial attributes. To specify which attributes to return, use the <code>Attributes</code> input parameter for <code>DetectFaces</code>. For <code>IndexFaces</code>, use the <code>DetectAttributes</code> input parameter.</p>
+    pub fn get_face_details(&self) -> &::std::option::Option<crate::types::FaceDetail> {
+        &self.face_details
+    }
     /// Appends an item to `reasons`.
     ///
     /// To override the contents of this collection use [`set_reasons`](Self::set_reasons).
@@ -101,6 +113,12 @@ impl UnsearchedFaceBuilder {
     ) -> Self {
         self.reasons = input;
         self
+    }
+    /// <p> Reasons why a face wasn't used for Search. </p>
+    pub fn get_reasons(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnsearchedFaceReason>> {
+        &self.reasons
     }
     /// Consumes the builder and constructs a [`UnsearchedFace`](crate::types::UnsearchedFace).
     pub fn build(self) -> crate::types::UnsearchedFace {

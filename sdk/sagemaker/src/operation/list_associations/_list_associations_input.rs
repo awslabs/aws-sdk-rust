@@ -120,6 +120,10 @@ impl ListAssociationsInputBuilder {
         self.source_arn = input;
         self
     }
+    /// <p>A filter that returns only associations with the specified source ARN.</p>
+    pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_arn
+    }
     /// <p>A filter that returns only associations with the specified destination Amazon Resource Name (ARN).</p>
     pub fn destination_arn(
         mut self,
@@ -136,6 +140,10 @@ impl ListAssociationsInputBuilder {
         self.destination_arn = input;
         self
     }
+    /// <p>A filter that returns only associations with the specified destination Amazon Resource Name (ARN).</p>
+    pub fn get_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_arn
+    }
     /// <p>A filter that returns only associations with the specified source type.</p>
     pub fn source_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_type = ::std::option::Option::Some(input.into());
@@ -145,6 +153,10 @@ impl ListAssociationsInputBuilder {
     pub fn set_source_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_type = input;
         self
+    }
+    /// <p>A filter that returns only associations with the specified source type.</p>
+    pub fn get_source_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_type
     }
     /// <p>A filter that returns only associations with the specified destination type.</p>
     pub fn destination_type(
@@ -162,6 +174,10 @@ impl ListAssociationsInputBuilder {
         self.destination_type = input;
         self
     }
+    /// <p>A filter that returns only associations with the specified destination type.</p>
+    pub fn get_destination_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_type
+    }
     /// <p>A filter that returns only associations of the specified type.</p>
     pub fn association_type(mut self, input: crate::types::AssociationEdgeType) -> Self {
         self.association_type = ::std::option::Option::Some(input);
@@ -174,6 +190,12 @@ impl ListAssociationsInputBuilder {
     ) -> Self {
         self.association_type = input;
         self
+    }
+    /// <p>A filter that returns only associations of the specified type.</p>
+    pub fn get_association_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::AssociationEdgeType> {
+        &self.association_type
     }
     /// <p>A filter that returns only associations created on or after the specified time.</p>
     pub fn created_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -188,6 +210,10 @@ impl ListAssociationsInputBuilder {
         self.created_after = input;
         self
     }
+    /// <p>A filter that returns only associations created on or after the specified time.</p>
+    pub fn get_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_after
+    }
     /// <p>A filter that returns only associations created on or before the specified time.</p>
     pub fn created_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_before = ::std::option::Option::Some(input);
@@ -200,6 +226,10 @@ impl ListAssociationsInputBuilder {
     ) -> Self {
         self.created_before = input;
         self
+    }
+    /// <p>A filter that returns only associations created on or before the specified time.</p>
+    pub fn get_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_before
     }
     /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
     pub fn sort_by(mut self, input: crate::types::SortAssociationsBy) -> Self {
@@ -214,6 +244,10 @@ impl ListAssociationsInputBuilder {
         self.sort_by = input;
         self
     }
+    /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::SortAssociationsBy> {
+        &self.sort_by
+    }
     /// <p>The sort order. The default value is <code>Descending</code>.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -223,6 +257,10 @@ impl ListAssociationsInputBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.sort_order = input;
         self
+    }
+    /// <p>The sort order. The default value is <code>Descending</code>.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.sort_order
     }
     /// <p>If the previous call to <code>ListAssociations</code> didn't return the full set of associations, the call returns a token for getting the next set of associations.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -234,6 +272,10 @@ impl ListAssociationsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If the previous call to <code>ListAssociations</code> didn't return the full set of associations, the call returns a token for getting the next set of associations.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of associations to return in the response. The default value is 10.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -243,6 +285,10 @@ impl ListAssociationsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of associations to return in the response. The default value is 10.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListAssociationsInput`](crate::operation::list_associations::ListAssociationsInput).
     pub fn build(

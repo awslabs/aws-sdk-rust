@@ -74,6 +74,10 @@ impl VocabularyInfoBuilder {
         self.vocabulary_name = input;
         self
     }
+    /// <p>A unique name, chosen by you, for your custom vocabulary. This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account.</p>
+    pub fn get_vocabulary_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vocabulary_name
+    }
     /// <p>The language code used to create your custom vocabulary. Each custom vocabulary must contain terms in only one language.</p>
     /// <p>A custom vocabulary can only be used to transcribe files in the same language as the custom vocabulary. For example, if you create a custom vocabulary using US English (<code>en-US</code>), you can only apply this custom vocabulary to files that contain English audio.</p>
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
@@ -88,6 +92,11 @@ impl VocabularyInfoBuilder {
     ) -> Self {
         self.language_code = input;
         self
+    }
+    /// <p>The language code used to create your custom vocabulary. Each custom vocabulary must contain terms in only one language.</p>
+    /// <p>A custom vocabulary can only be used to transcribe files in the same language as the custom vocabulary. For example, if you create a custom vocabulary using US English (<code>en-US</code>), you can only apply this custom vocabulary to files that contain English audio.</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
+        &self.language_code
     }
     /// <p>The date and time the specified custom vocabulary was last modified.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
@@ -104,6 +113,11 @@ impl VocabularyInfoBuilder {
         self.last_modified_time = input;
         self
     }
+    /// <p>The date and time the specified custom vocabulary was last modified.</p>
+    /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
     /// <p>The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the custom vocabulary in a <code>StartTranscriptionJob</code> request.</p>
     pub fn vocabulary_state(mut self, input: crate::types::VocabularyState) -> Self {
         self.vocabulary_state = ::std::option::Option::Some(input);
@@ -116,6 +130,10 @@ impl VocabularyInfoBuilder {
     ) -> Self {
         self.vocabulary_state = input;
         self
+    }
+    /// <p>The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the custom vocabulary in a <code>StartTranscriptionJob</code> request.</p>
+    pub fn get_vocabulary_state(&self) -> &::std::option::Option<crate::types::VocabularyState> {
+        &self.vocabulary_state
     }
     /// Consumes the builder and constructs a [`VocabularyInfo`](crate::types::VocabularyInfo).
     pub fn build(self) -> crate::types::VocabularyInfo {

@@ -36,6 +36,12 @@ impl UpdateResourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateResource as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_resource::builders::UpdateResourceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl UpdateResourceFluentBuilder {
         self.inner = self.inner.set_organization_id(input);
         self
     }
+    /// <p>The identifier associated with the organization for which the resource is updated.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organization_id()
+    }
     /// <p>The identifier of the resource to be updated.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_id(input.into());
@@ -134,6 +144,10 @@ impl UpdateResourceFluentBuilder {
         self.inner = self.inner.set_resource_id(input);
         self
     }
+    /// <p>The identifier of the resource to be updated.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_id()
+    }
     /// <p>The name of the resource to be updated.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -143,6 +157,10 @@ impl UpdateResourceFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the resource to be updated.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The resource's booking options to be updated.</p>
     pub fn booking_options(mut self, input: crate::types::BookingOptions) -> Self {
@@ -156,5 +174,9 @@ impl UpdateResourceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_booking_options(input);
         self
+    }
+    /// <p>The resource's booking options to be updated.</p>
+    pub fn get_booking_options(&self) -> &::std::option::Option<crate::types::BookingOptions> {
+        self.inner.get_booking_options()
     }
 }

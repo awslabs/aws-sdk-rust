@@ -37,6 +37,12 @@ impl StopTransformJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StopTransformJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::stop_transform_job::builders::StopTransformJobInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +138,9 @@ impl StopTransformJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_transform_job_name(input);
         self
+    }
+    /// <p>The name of the batch transform job to stop.</p>
+    pub fn get_transform_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_transform_job_name()
     }
 }

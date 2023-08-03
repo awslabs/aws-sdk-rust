@@ -96,6 +96,10 @@ impl ListTestGridSessionsInputBuilder {
         self.project_arn = input;
         self
     }
+    /// <p>ARN of a <code>TestGridProject</code>.</p>
+    pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_arn
+    }
     /// <p>Return only sessions in this state.</p>
     pub fn status(mut self, input: crate::types::TestGridSessionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -108,6 +112,10 @@ impl ListTestGridSessionsInputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Return only sessions in this state.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TestGridSessionStatus> {
+        &self.status
     }
     /// <p>Return only sessions created after this time.</p>
     pub fn creation_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -122,6 +130,10 @@ impl ListTestGridSessionsInputBuilder {
         self.creation_time_after = input;
         self
     }
+    /// <p>Return only sessions created after this time.</p>
+    pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time_after
+    }
     /// <p>Return only sessions created before this time.</p>
     pub fn creation_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time_before = ::std::option::Option::Some(input);
@@ -134,6 +146,10 @@ impl ListTestGridSessionsInputBuilder {
     ) -> Self {
         self.creation_time_before = input;
         self
+    }
+    /// <p>Return only sessions created before this time.</p>
+    pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time_before
     }
     /// <p>Return only sessions that ended after this time.</p>
     pub fn end_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -148,6 +164,10 @@ impl ListTestGridSessionsInputBuilder {
         self.end_time_after = input;
         self
     }
+    /// <p>Return only sessions that ended after this time.</p>
+    pub fn get_end_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time_after
+    }
     /// <p>Return only sessions that ended before this time.</p>
     pub fn end_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time_before = ::std::option::Option::Some(input);
@@ -161,6 +181,10 @@ impl ListTestGridSessionsInputBuilder {
         self.end_time_before = input;
         self
     }
+    /// <p>Return only sessions that ended before this time.</p>
+    pub fn get_end_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time_before
+    }
     /// <p>Return only this many results at a time.</p>
     pub fn max_result(mut self, input: i32) -> Self {
         self.max_result = ::std::option::Option::Some(input);
@@ -171,6 +195,10 @@ impl ListTestGridSessionsInputBuilder {
         self.max_result = input;
         self
     }
+    /// <p>Return only this many results at a time.</p>
+    pub fn get_max_result(&self) -> &::std::option::Option<i32> {
+        &self.max_result
+    }
     /// <p>Pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -180,6 +208,10 @@ impl ListTestGridSessionsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListTestGridSessionsInput`](crate::operation::list_test_grid_sessions::ListTestGridSessionsInput).
     pub fn build(

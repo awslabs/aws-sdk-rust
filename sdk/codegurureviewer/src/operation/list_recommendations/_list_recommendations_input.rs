@@ -56,6 +56,10 @@ impl ListRecommendationsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results that are returned per call. The default is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl ListRecommendationsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results that are returned per call. The default is 100.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
     pub fn code_review_arn(
@@ -81,6 +89,10 @@ impl ListRecommendationsInputBuilder {
     ) -> Self {
         self.code_review_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
+    pub fn get_code_review_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code_review_arn
     }
     /// Consumes the builder and constructs a [`ListRecommendationsInput`](crate::operation::list_recommendations::ListRecommendationsInput).
     pub fn build(

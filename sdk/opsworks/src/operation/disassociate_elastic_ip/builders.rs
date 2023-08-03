@@ -37,6 +37,13 @@ impl DisassociateElasticIpFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociateElasticIp as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::disassociate_elastic_ip::builders::DisassociateElasticIpInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,5 +133,9 @@ impl DisassociateElasticIpFluentBuilder {
     pub fn set_elastic_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_elastic_ip(input);
         self
+    }
+    /// <p>The Elastic IP address.</p>
+    pub fn get_elastic_ip(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_elastic_ip()
     }
 }

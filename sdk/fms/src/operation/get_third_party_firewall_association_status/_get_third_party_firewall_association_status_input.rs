@@ -42,6 +42,12 @@ impl GetThirdPartyFirewallAssociationStatusInputBuilder {
         self.third_party_firewall = input;
         self
     }
+    /// <p>The name of the third-party firewall vendor.</p>
+    pub fn get_third_party_firewall(
+        &self,
+    ) -> &::std::option::Option<crate::types::ThirdPartyFirewall> {
+        &self.third_party_firewall
+    }
     /// Consumes the builder and constructs a [`GetThirdPartyFirewallAssociationStatusInput`](crate::operation::get_third_party_firewall_association_status::GetThirdPartyFirewallAssociationStatusInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_third_party_firewall_association_status::GetThirdPartyFirewallAssociationStatusInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

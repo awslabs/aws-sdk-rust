@@ -81,6 +81,12 @@ impl AwsEc2VpcDetailsBuilder {
         self.cidr_block_association_set = input;
         self
     }
+    /// <p>Information about the IPv4 CIDR blocks associated with the VPC.</p>
+    pub fn get_cidr_block_association_set(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CidrBlockAssociation>> {
+        &self.cidr_block_association_set
+    }
     /// Appends an item to `ipv6_cidr_block_association_set`.
     ///
     /// To override the contents of this collection use [`set_ipv6_cidr_block_association_set`](Self::set_ipv6_cidr_block_association_set).
@@ -103,6 +109,12 @@ impl AwsEc2VpcDetailsBuilder {
         self.ipv6_cidr_block_association_set = input;
         self
     }
+    /// <p>Information about the IPv6 CIDR blocks associated with the VPC.</p>
+    pub fn get_ipv6_cidr_block_association_set(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Ipv6CidrBlockAssociation>> {
+        &self.ipv6_cidr_block_association_set
+    }
     /// <p>The identifier of the set of Dynamic Host Configuration Protocol (DHCP) options that are associated with the VPC. If the default options are associated with the VPC, then this is default.</p>
     pub fn dhcp_options_id(
         mut self,
@@ -119,6 +131,10 @@ impl AwsEc2VpcDetailsBuilder {
         self.dhcp_options_id = input;
         self
     }
+    /// <p>The identifier of the set of Dynamic Host Configuration Protocol (DHCP) options that are associated with the VPC. If the default options are associated with the VPC, then this is default.</p>
+    pub fn get_dhcp_options_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dhcp_options_id
+    }
     /// <p>The current state of the VPC. Valid values are <code>available</code> or <code>pending</code>.</p>
     pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state = ::std::option::Option::Some(input.into());
@@ -128,6 +144,10 @@ impl AwsEc2VpcDetailsBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The current state of the VPC. Valid values are <code>available</code> or <code>pending</code>.</p>
+    pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`AwsEc2VpcDetails`](crate::types::AwsEc2VpcDetails).
     pub fn build(self) -> crate::types::AwsEc2VpcDetails {

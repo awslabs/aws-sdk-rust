@@ -61,6 +61,10 @@ impl ListProvisioningTemplateVersionsInputBuilder {
         self.template_name = input;
         self
     }
+    /// <p>The name of the provisioning template.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
     /// <p>The maximum number of results to return at one time.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -71,6 +75,10 @@ impl ListProvisioningTemplateVersionsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to return at one time.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>A token to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -80,6 +88,10 @@ impl ListProvisioningTemplateVersionsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListProvisioningTemplateVersionsInput`](crate::operation::list_provisioning_template_versions::ListProvisioningTemplateVersionsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_provisioning_template_versions::ListProvisioningTemplateVersionsInput, ::aws_smithy_http::operation::error::BuildError>{

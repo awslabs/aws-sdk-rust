@@ -80,6 +80,10 @@ impl PricingPlanBuilder {
         self.billable_entity_count = input;
         self
     }
+    /// <p>The billable entity count.</p>
+    pub fn get_billable_entity_count(&self) -> &::std::option::Option<i64> {
+        &self.billable_entity_count
+    }
     /// <p>The pricing plan's bundle information.</p>
     pub fn bundle_information(mut self, input: crate::types::BundleInformation) -> Self {
         self.bundle_information = ::std::option::Option::Some(input);
@@ -92,6 +96,12 @@ impl PricingPlanBuilder {
     ) -> Self {
         self.bundle_information = input;
         self
+    }
+    /// <p>The pricing plan's bundle information.</p>
+    pub fn get_bundle_information(
+        &self,
+    ) -> &::std::option::Option<crate::types::BundleInformation> {
+        &self.bundle_information
     }
     /// <p>The effective date and time of the pricing plan.</p>
     pub fn effective_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -106,6 +116,10 @@ impl PricingPlanBuilder {
         self.effective_date_time = input;
         self
     }
+    /// <p>The effective date and time of the pricing plan.</p>
+    pub fn get_effective_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.effective_date_time
+    }
     /// <p>The pricing mode.</p>
     pub fn pricing_mode(mut self, input: crate::types::PricingMode) -> Self {
         self.pricing_mode = ::std::option::Option::Some(input);
@@ -118,6 +132,10 @@ impl PricingPlanBuilder {
     ) -> Self {
         self.pricing_mode = input;
         self
+    }
+    /// <p>The pricing mode.</p>
+    pub fn get_pricing_mode(&self) -> &::std::option::Option<crate::types::PricingMode> {
+        &self.pricing_mode
     }
     /// <p>The set date and time for updating a pricing plan.</p>
     pub fn update_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -132,6 +150,10 @@ impl PricingPlanBuilder {
         self.update_date_time = input;
         self
     }
+    /// <p>The set date and time for updating a pricing plan.</p>
+    pub fn get_update_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_date_time
+    }
     /// <p>The update reason for changing a pricing plan.</p>
     pub fn update_reason(mut self, input: crate::types::UpdateReason) -> Self {
         self.update_reason = ::std::option::Option::Some(input);
@@ -144,6 +166,10 @@ impl PricingPlanBuilder {
     ) -> Self {
         self.update_reason = input;
         self
+    }
+    /// <p>The update reason for changing a pricing plan.</p>
+    pub fn get_update_reason(&self) -> &::std::option::Option<crate::types::UpdateReason> {
+        &self.update_reason
     }
     /// Consumes the builder and constructs a [`PricingPlan`](crate::types::PricingPlan).
     pub fn build(self) -> crate::types::PricingPlan {

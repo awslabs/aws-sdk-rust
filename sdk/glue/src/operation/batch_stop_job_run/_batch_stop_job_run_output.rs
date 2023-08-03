@@ -73,6 +73,13 @@ impl BatchStopJobRunOutputBuilder {
         self.successful_submissions = input;
         self
     }
+    /// <p>A list of the JobRuns that were successfully submitted for stopping.</p>
+    pub fn get_successful_submissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchStopJobRunSuccessfulSubmission>>
+    {
+        &self.successful_submissions
+    }
     /// Appends an item to `errors`.
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
@@ -91,6 +98,12 @@ impl BatchStopJobRunOutputBuilder {
     ) -> Self {
         self.errors = input;
         self
+    }
+    /// <p>A list of the errors that were encountered in trying to stop <code>JobRuns</code>, including the <code>JobRunId</code> for which each error was encountered and details about the error.</p>
+    pub fn get_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchStopJobRunError>> {
+        &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

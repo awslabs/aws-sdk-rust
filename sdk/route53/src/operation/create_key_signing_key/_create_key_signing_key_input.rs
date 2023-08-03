@@ -153,6 +153,10 @@ impl CreateKeySigningKeyInputBuilder {
         self.caller_reference = input;
         self
     }
+    /// <p>A unique string that identifies the request.</p>
+    pub fn get_caller_reference(&self) -> &::std::option::Option<::std::string::String> {
+        &self.caller_reference
+    }
     /// <p>The unique string (ID) used to identify a hosted zone.</p>
     pub fn hosted_zone_id(
         mut self,
@@ -168,6 +172,10 @@ impl CreateKeySigningKeyInputBuilder {
     ) -> Self {
         self.hosted_zone_id = input;
         self
+    }
+    /// <p>The unique string (ID) used to identify a hosted zone.</p>
+    pub fn get_hosted_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hosted_zone_id
     }
     /// <p>The Amazon resource name (ARN) for a customer managed key in Key Management Service (KMS). The <code>KeyManagementServiceArn</code> must be unique for each key-signing key (KSK) in a single hosted zone. To see an example of <code>KeyManagementServiceArn</code> that grants the correct permissions for DNSSEC, scroll down to <b>Example</b>. </p>
     /// <p>You must configure the customer managed customer managed key as follows:</p>
@@ -259,6 +267,47 @@ impl CreateKeySigningKeyInputBuilder {
         self.key_management_service_arn = input;
         self
     }
+    /// <p>The Amazon resource name (ARN) for a customer managed key in Key Management Service (KMS). The <code>KeyManagementServiceArn</code> must be unique for each key-signing key (KSK) in a single hosted zone. To see an example of <code>KeyManagementServiceArn</code> that grants the correct permissions for DNSSEC, scroll down to <b>Example</b>. </p>
+    /// <p>You must configure the customer managed customer managed key as follows:</p>
+    /// <dl>
+    /// <dt>
+    /// Status
+    /// </dt>
+    /// <dd>
+    /// <p>Enabled</p>
+    /// </dd>
+    /// <dt>
+    /// Key spec
+    /// </dt>
+    /// <dd>
+    /// <p>ECC_NIST_P256</p>
+    /// </dd>
+    /// <dt>
+    /// Key usage
+    /// </dt>
+    /// <dd>
+    /// <p>Sign and verify</p>
+    /// </dd>
+    /// <dt>
+    /// Key policy
+    /// </dt>
+    /// <dd>
+    /// <p>The key policy must give permission for the following actions:</p>
+    /// <ul>
+    /// <li> <p>DescribeKey</p> </li>
+    /// <li> <p>GetPublicKey</p> </li>
+    /// <li> <p>Sign</p> </li>
+    /// </ul>
+    /// <p>The key policy must also include the Amazon Route 53 service in the principal for your account. Specify the following:</p>
+    /// <ul>
+    /// <li> <p> <code>"Service": "dnssec-route53.amazonaws.com"</code> </p> </li>
+    /// </ul>
+    /// </dd>
+    /// </dl>
+    /// <p>For more information about working with a customer managed key in KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key Management Service concepts</a>.</p>
+    pub fn get_key_management_service_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_management_service_arn
+    }
     /// <p>A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters, and underscores (_). <code>Name</code> must be unique for each key-signing key in the same hosted zone.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -269,6 +318,10 @@ impl CreateKeySigningKeyInputBuilder {
         self.name = input;
         self
     }
+    /// <p>A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters, and underscores (_). <code>Name</code> must be unique for each key-signing key in the same hosted zone.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A string specifying the initial status of the key-signing key (KSK). You can set the value to <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -278,6 +331,10 @@ impl CreateKeySigningKeyInputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>A string specifying the initial status of the key-signing key (KSK). You can set the value to <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`CreateKeySigningKeyInput`](crate::operation::create_key_signing_key::CreateKeySigningKeyInput).
     pub fn build(

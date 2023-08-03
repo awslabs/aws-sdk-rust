@@ -109,6 +109,10 @@ impl DescribeStateMachineAliasOutputBuilder {
         self.state_machine_alias_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the state machine alias.</p>
+    pub fn get_state_machine_alias_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_machine_alias_arn
+    }
     /// <p>The name of the state machine alias.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -119,6 +123,10 @@ impl DescribeStateMachineAliasOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the state machine alias.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A description of the alias.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -128,6 +136,10 @@ impl DescribeStateMachineAliasOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the alias.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `routing_configuration`.
     ///
@@ -151,6 +163,12 @@ impl DescribeStateMachineAliasOutputBuilder {
         self.routing_configuration = input;
         self
     }
+    /// <p>The routing configuration of the alias.</p>
+    pub fn get_routing_configuration(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingConfigurationListItem>> {
+        &self.routing_configuration
+    }
     /// <p>The date the state machine alias was created.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
@@ -163,6 +181,10 @@ impl DescribeStateMachineAliasOutputBuilder {
     ) -> Self {
         self.creation_date = input;
         self
+    }
+    /// <p>The date the state machine alias was created.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
     }
     /// <p>The date the state machine alias was last updated.</p>
     /// <p>For a newly created state machine, this is the same as the creation date.</p>
@@ -178,6 +200,11 @@ impl DescribeStateMachineAliasOutputBuilder {
     ) -> Self {
         self.update_date = input;
         self
+    }
+    /// <p>The date the state machine alias was last updated.</p>
+    /// <p>For a newly created state machine, this is the same as the creation date.</p>
+    pub fn get_update_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

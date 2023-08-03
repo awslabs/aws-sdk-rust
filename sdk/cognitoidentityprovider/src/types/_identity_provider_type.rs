@@ -206,6 +206,10 @@ impl IdentityProviderTypeBuilder {
         self.user_pool_id = input;
         self
     }
+    /// <p>The user pool ID.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_pool_id
+    }
     /// <p>The IdP name.</p>
     pub fn provider_name(
         mut self,
@@ -222,6 +226,10 @@ impl IdentityProviderTypeBuilder {
         self.provider_name = input;
         self
     }
+    /// <p>The IdP name.</p>
+    pub fn get_provider_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provider_name
+    }
     /// <p>The IdP type.</p>
     pub fn provider_type(mut self, input: crate::types::IdentityProviderTypeType) -> Self {
         self.provider_type = ::std::option::Option::Some(input);
@@ -234,6 +242,12 @@ impl IdentityProviderTypeBuilder {
     ) -> Self {
         self.provider_type = input;
         self
+    }
+    /// <p>The IdP type.</p>
+    pub fn get_provider_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::IdentityProviderTypeType> {
+        &self.provider_type
     }
     /// Adds a key-value pair to `provider_details`.
     ///
@@ -354,6 +368,61 @@ impl IdentityProviderTypeBuilder {
         self.provider_details = input;
         self
     }
+    /// <p>The IdP details. The following list describes the provider detail keys for each IdP type.</p>
+    /// <ul>
+    /// <li> <p>For Google and Login with Amazon:</p>
+    /// <ul>
+    /// <li> <p>client_id</p> </li>
+    /// <li> <p>client_secret</p> </li>
+    /// <li> <p>authorize_scopes</p> </li>
+    /// </ul> </li>
+    /// <li> <p>For Facebook:</p>
+    /// <ul>
+    /// <li> <p>client_id</p> </li>
+    /// <li> <p>client_secret</p> </li>
+    /// <li> <p>authorize_scopes</p> </li>
+    /// <li> <p>api_version</p> </li>
+    /// </ul> </li>
+    /// <li> <p>For Sign in with Apple:</p>
+    /// <ul>
+    /// <li> <p>client_id</p> </li>
+    /// <li> <p>team_id</p> </li>
+    /// <li> <p>key_id</p> </li>
+    /// <li> <p>private_key</p> <p> <i>You can submit a private_key when you add or update an IdP. Describe operations don't return the private key.</i> </p> </li>
+    /// <li> <p>authorize_scopes</p> </li>
+    /// </ul> </li>
+    /// <li> <p>For OIDC providers:</p>
+    /// <ul>
+    /// <li> <p>client_id</p> </li>
+    /// <li> <p>client_secret</p> </li>
+    /// <li> <p>attributes_request_method</p> </li>
+    /// <li> <p>oidc_issuer</p> </li>
+    /// <li> <p>authorize_scopes</p> </li>
+    /// <li> <p>The following keys are only present if Amazon Cognito didn't discover them at the <code>oidc_issuer</code> URL.</p>
+    /// <ul>
+    /// <li> <p>authorize_url </p> </li>
+    /// <li> <p>token_url </p> </li>
+    /// <li> <p>attributes_url </p> </li>
+    /// <li> <p>jwks_uri </p> </li>
+    /// </ul> </li>
+    /// <li> <p>Amazon Cognito sets the value of the following keys automatically. They are read-only.</p>
+    /// <ul>
+    /// <li> <p>attributes_url_add_attributes </p> </li>
+    /// </ul> </li>
+    /// </ul> </li>
+    /// <li> <p>For SAML providers:</p>
+    /// <ul>
+    /// <li> <p>MetadataFile or MetadataURL</p> </li>
+    /// <li> <p>IDPSignout <i>optional</i> </p> </li>
+    /// </ul> </li>
+    /// </ul>
+    pub fn get_provider_details(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.provider_details
+    }
     /// Adds a key-value pair to `attribute_mapping`.
     ///
     /// To override the contents of this collection use [`set_attribute_mapping`](Self::set_attribute_mapping).
@@ -379,6 +448,14 @@ impl IdentityProviderTypeBuilder {
         self.attribute_mapping = input;
         self
     }
+    /// <p>A mapping of IdP attributes to standard and custom user pool attributes.</p>
+    pub fn get_attribute_mapping(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.attribute_mapping
+    }
     /// Appends an item to `idp_identifiers`.
     ///
     /// To override the contents of this collection use [`set_idp_identifiers`](Self::set_idp_identifiers).
@@ -401,6 +478,12 @@ impl IdentityProviderTypeBuilder {
         self.idp_identifiers = input;
         self
     }
+    /// <p>A list of IdP identifiers.</p>
+    pub fn get_idp_identifiers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.idp_identifiers
+    }
     /// <p>The date the IdP was last modified.</p>
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input);
@@ -414,6 +497,10 @@ impl IdentityProviderTypeBuilder {
         self.last_modified_date = input;
         self
     }
+    /// <p>The date the IdP was last modified.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_date
+    }
     /// <p>The date the IdP was created.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
@@ -426,6 +513,10 @@ impl IdentityProviderTypeBuilder {
     ) -> Self {
         self.creation_date = input;
         self
+    }
+    /// <p>The date the IdP was created.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
     }
     /// Consumes the builder and constructs a [`IdentityProviderType`](crate::types::IdentityProviderType).
     pub fn build(self) -> crate::types::IdentityProviderType {

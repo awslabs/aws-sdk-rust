@@ -37,6 +37,10 @@ impl GetColumnStatisticsForPartitionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetColumnStatisticsForPartition as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_column_statistics_for_partition::builders::GetColumnStatisticsForPartitionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -101,6 +105,10 @@ impl GetColumnStatisticsForPartitionFluentBuilder {
         self.inner = self.inner.set_catalog_id(input);
         self
     }
+    /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_catalog_id()
+    }
     /// <p>The name of the catalog database where the partitions reside.</p>
     pub fn database_name(
         mut self,
@@ -117,6 +125,10 @@ impl GetColumnStatisticsForPartitionFluentBuilder {
         self.inner = self.inner.set_database_name(input);
         self
     }
+    /// <p>The name of the catalog database where the partitions reside.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_database_name()
+    }
     /// <p>The name of the partitions' table.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.table_name(input.into());
@@ -126,6 +138,10 @@ impl GetColumnStatisticsForPartitionFluentBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_table_name(input);
         self
+    }
+    /// <p>The name of the partitions' table.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_table_name()
     }
     /// Appends an item to `PartitionValues`.
     ///
@@ -147,6 +163,12 @@ impl GetColumnStatisticsForPartitionFluentBuilder {
         self.inner = self.inner.set_partition_values(input);
         self
     }
+    /// <p>A list of partition values identifying the partition.</p>
+    pub fn get_partition_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_partition_values()
+    }
     /// Appends an item to `ColumnNames`.
     ///
     /// To override the contents of this collection use [`set_column_names`](Self::set_column_names).
@@ -163,5 +185,11 @@ impl GetColumnStatisticsForPartitionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_column_names(input);
         self
+    }
+    /// <p>A list of the column names.</p>
+    pub fn get_column_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_column_names()
     }
 }

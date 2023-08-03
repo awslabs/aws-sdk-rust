@@ -63,6 +63,10 @@ impl CreateCustomRoutingListenerInputBuilder {
         self.accelerator_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the accelerator for a custom routing listener.</p>
+    pub fn get_accelerator_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accelerator_arn
+    }
     /// Appends an item to `port_ranges`.
     ///
     /// To override the contents of this collection use [`set_port_ranges`](Self::set_port_ranges).
@@ -84,6 +88,13 @@ impl CreateCustomRoutingListenerInputBuilder {
         self.port_ranges = input;
         self
     }
+    /// <p>The port range to support for connections from clients to your accelerator.</p>
+    /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About endpoints for custom routing accelerators</a>.</p>
+    pub fn get_port_ranges(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PortRange>> {
+        &self.port_ranges
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
     pub fn idempotency_token(
         mut self,
@@ -99,6 +110,10 @@ impl CreateCustomRoutingListenerInputBuilder {
     ) -> Self {
         self.idempotency_token = input;
         self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
+    pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.idempotency_token
     }
     /// Consumes the builder and constructs a [`CreateCustomRoutingListenerInput`](crate::operation::create_custom_routing_listener::CreateCustomRoutingListenerInput).
     pub fn build(

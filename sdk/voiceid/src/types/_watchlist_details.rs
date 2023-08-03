@@ -46,6 +46,10 @@ impl WatchlistDetailsBuilder {
         self.default_watchlist_id = input;
         self
     }
+    /// <p>The identifier of the default watchlist.</p>
+    pub fn get_default_watchlist_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_watchlist_id
+    }
     /// Consumes the builder and constructs a [`WatchlistDetails`](crate::types::WatchlistDetails).
     pub fn build(self) -> crate::types::WatchlistDetails {
         crate::types::WatchlistDetails {

@@ -67,6 +67,10 @@ impl UpdateSipRuleInputBuilder {
         self.sip_rule_id = input;
         self
     }
+    /// <p>The SIP rule ID.</p>
+    pub fn get_sip_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sip_rule_id
+    }
     /// <p>The new name for the specified SIP rule.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -77,6 +81,10 @@ impl UpdateSipRuleInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The new name for the specified SIP rule.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The new value specified to indicate whether the rule is disabled.</p>
     pub fn disabled(mut self, input: bool) -> Self {
         self.disabled = ::std::option::Option::Some(input);
@@ -86,6 +94,10 @@ impl UpdateSipRuleInputBuilder {
     pub fn set_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disabled = input;
         self
+    }
+    /// <p>The new value specified to indicate whether the rule is disabled.</p>
+    pub fn get_disabled(&self) -> &::std::option::Option<bool> {
+        &self.disabled
     }
     /// Appends an item to `target_applications`.
     ///
@@ -105,6 +117,12 @@ impl UpdateSipRuleInputBuilder {
     ) -> Self {
         self.target_applications = input;
         self
+    }
+    /// <p>The new value of the list of target applications.</p>
+    pub fn get_target_applications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SipRuleTargetApplication>> {
+        &self.target_applications
     }
     /// Consumes the builder and constructs a [`UpdateSipRuleInput`](crate::operation::update_sip_rule::UpdateSipRuleInput).
     pub fn build(

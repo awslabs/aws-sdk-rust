@@ -37,6 +37,13 @@ impl DeactivateKeySigningKeyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeactivateKeySigningKey as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::deactivate_key_signing_key::builders::DeactivateKeySigningKeyInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl DeactivateKeySigningKeyFluentBuilder {
         self.inner = self.inner.set_hosted_zone_id(input);
         self
     }
+    /// <p>A unique string used to identify a hosted zone.</p>
+    pub fn get_hosted_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_hosted_zone_id()
+    }
     /// <p>A string used to identify a key-signing key (KSK).</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -142,5 +153,9 @@ impl DeactivateKeySigningKeyFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>A string used to identify a key-signing key (KSK).</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
 }

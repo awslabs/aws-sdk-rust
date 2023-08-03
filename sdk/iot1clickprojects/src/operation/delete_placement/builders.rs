@@ -38,6 +38,12 @@ impl DeletePlacementFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeletePlacement as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_placement::builders::DeletePlacementInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +140,10 @@ impl DeletePlacementFluentBuilder {
         self.inner = self.inner.set_placement_name(input);
         self
     }
+    /// <p>The name of the empty placement to delete.</p>
+    pub fn get_placement_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_placement_name()
+    }
     /// <p>The project containing the empty placement to delete.</p>
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.project_name(input.into());
@@ -143,5 +153,9 @@ impl DeletePlacementFluentBuilder {
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_project_name(input);
         self
+    }
+    /// <p>The project containing the empty placement to delete.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_name()
     }
 }

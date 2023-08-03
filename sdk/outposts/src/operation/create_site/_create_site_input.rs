@@ -98,6 +98,10 @@ impl CreateSiteInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the site.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the site.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -108,6 +112,10 @@ impl CreateSiteInputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the site.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>Additional information that you provide about site access requirements, electrician scheduling, personal protective equipment, or regulation of equipment materials that could affect your installation process. </p>
     pub fn notes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notes = ::std::option::Option::Some(input.into());
@@ -117,6 +125,10 @@ impl CreateSiteInputBuilder {
     pub fn set_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notes = input;
         self
+    }
+    /// <p>Additional information that you provide about site access requirements, electrician scheduling, personal protective equipment, or regulation of equipment materials that could affect your installation process. </p>
+    pub fn get_notes(&self) -> &::std::option::Option<::std::string::String> {
+        &self.notes
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -143,6 +155,14 @@ impl CreateSiteInputBuilder {
         self.tags = input;
         self
     }
+    /// <p> The tags to apply to a site. </p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p> The location to install and power on the hardware. This address might be different from the shipping address. </p>
     pub fn operating_address(mut self, input: crate::types::Address) -> Self {
         self.operating_address = ::std::option::Option::Some(input);
@@ -155,6 +175,10 @@ impl CreateSiteInputBuilder {
     ) -> Self {
         self.operating_address = input;
         self
+    }
+    /// <p> The location to install and power on the hardware. This address might be different from the shipping address. </p>
+    pub fn get_operating_address(&self) -> &::std::option::Option<crate::types::Address> {
+        &self.operating_address
     }
     /// <p> The location to ship the hardware. This address might be different from the operating address. </p>
     pub fn shipping_address(mut self, input: crate::types::Address) -> Self {
@@ -169,6 +193,10 @@ impl CreateSiteInputBuilder {
         self.shipping_address = input;
         self
     }
+    /// <p> The location to ship the hardware. This address might be different from the operating address. </p>
+    pub fn get_shipping_address(&self) -> &::std::option::Option<crate::types::Address> {
+        &self.shipping_address
+    }
     /// <p> Information about the physical and logistical details for the rack at this site. For more information about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network readiness checklist</a> in the Amazon Web Services Outposts User Guide. </p>
     pub fn rack_physical_properties(mut self, input: crate::types::RackPhysicalProperties) -> Self {
         self.rack_physical_properties = ::std::option::Option::Some(input);
@@ -181,6 +209,12 @@ impl CreateSiteInputBuilder {
     ) -> Self {
         self.rack_physical_properties = input;
         self
+    }
+    /// <p> Information about the physical and logistical details for the rack at this site. For more information about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network readiness checklist</a> in the Amazon Web Services Outposts User Guide. </p>
+    pub fn get_rack_physical_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::RackPhysicalProperties> {
+        &self.rack_physical_properties
     }
     /// Consumes the builder and constructs a [`CreateSiteInput`](crate::operation::create_site::CreateSiteInput).
     pub fn build(

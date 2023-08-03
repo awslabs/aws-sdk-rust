@@ -73,6 +73,10 @@ impl DedicatedIpBuilder {
         self.ip = input;
         self
     }
+    /// <p>An IP address that is reserved for use by your Amazon Pinpoint account.</p>
+    pub fn get_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip
+    }
     /// <p>The warm-up status of a dedicated IP address. The status can have one of the following values:</p>
     /// <ul>
     /// <li> <p> <code>IN_PROGRESS</code> – The IP address isn't ready to use because the dedicated IP warm-up process is ongoing.</p> </li>
@@ -94,6 +98,14 @@ impl DedicatedIpBuilder {
         self.warmup_status = input;
         self
     }
+    /// <p>The warm-up status of a dedicated IP address. The status can have one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>IN_PROGRESS</code> – The IP address isn't ready to use because the dedicated IP warm-up process is ongoing.</p> </li>
+    /// <li> <p> <code>DONE</code> – The dedicated IP warm-up process is complete, and the IP address is ready to use.</p> </li>
+    /// </ul>
+    pub fn get_warmup_status(&self) -> &::std::option::Option<crate::types::WarmupStatus> {
+        &self.warmup_status
+    }
     /// <p>Indicates how complete the dedicated IP warm-up process is. When this value equals 1, the address has completed the warm-up process and is ready for use.</p>
     pub fn warmup_percentage(mut self, input: i32) -> Self {
         self.warmup_percentage = ::std::option::Option::Some(input);
@@ -104,6 +116,10 @@ impl DedicatedIpBuilder {
         self.warmup_percentage = input;
         self
     }
+    /// <p>Indicates how complete the dedicated IP warm-up process is. When this value equals 1, the address has completed the warm-up process and is ready for use.</p>
+    pub fn get_warmup_percentage(&self) -> &::std::option::Option<i32> {
+        &self.warmup_percentage
+    }
     /// <p>The name of the dedicated IP pool that the IP address is associated with.</p>
     pub fn pool_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pool_name = ::std::option::Option::Some(input.into());
@@ -113,6 +129,10 @@ impl DedicatedIpBuilder {
     pub fn set_pool_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pool_name = input;
         self
+    }
+    /// <p>The name of the dedicated IP pool that the IP address is associated with.</p>
+    pub fn get_pool_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pool_name
     }
     /// Consumes the builder and constructs a [`DedicatedIp`](crate::types::DedicatedIp).
     pub fn build(self) -> crate::types::DedicatedIp {

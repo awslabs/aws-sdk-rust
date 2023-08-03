@@ -36,6 +36,12 @@ impl DescribeEventsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeEvents as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_events::builders::DescribeEventsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +141,10 @@ impl DescribeEventsFluentBuilder {
         self.inner = self.inner.set_source_identifier(input);
         self
     }
+    /// <p> The identifier of an event source.</p>
+    pub fn get_source_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_identifier()
+    }
     /// <p>The type of DMS resource that generates events.</p>
     /// <p>Valid values: replication-instance | replication-task</p>
     pub fn source_type(mut self, input: crate::types::SourceType) -> Self {
@@ -150,6 +160,11 @@ impl DescribeEventsFluentBuilder {
         self.inner = self.inner.set_source_type(input);
         self
     }
+    /// <p>The type of DMS resource that generates events.</p>
+    /// <p>Valid values: replication-instance | replication-task</p>
+    pub fn get_source_type(&self) -> &::std::option::Option<crate::types::SourceType> {
+        self.inner.get_source_type()
+    }
     /// <p>The start time for the events to be listed.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
@@ -162,6 +177,10 @@ impl DescribeEventsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
+    }
+    /// <p>The start time for the events to be listed.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_time()
     }
     /// <p>The end time for the events to be listed.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -176,6 +195,10 @@ impl DescribeEventsFluentBuilder {
         self.inner = self.inner.set_end_time(input);
         self
     }
+    /// <p>The end time for the events to be listed.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_time()
+    }
     /// <p>The duration of the events to be listed.</p>
     pub fn duration(mut self, input: i32) -> Self {
         self.inner = self.inner.duration(input);
@@ -185,6 +208,10 @@ impl DescribeEventsFluentBuilder {
     pub fn set_duration(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_duration(input);
         self
+    }
+    /// <p>The duration of the events to be listed.</p>
+    pub fn get_duration(&self) -> &::std::option::Option<i32> {
+        self.inner.get_duration()
     }
     /// Appends an item to `EventCategories`.
     ///
@@ -206,6 +233,12 @@ impl DescribeEventsFluentBuilder {
         self.inner = self.inner.set_event_categories(input);
         self
     }
+    /// <p>A list of event categories for the source type that you've chosen.</p>
+    pub fn get_event_categories(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_event_categories()
+    }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -223,6 +256,10 @@ impl DescribeEventsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>Filters applied to events. The only valid filter is <code>replication-instance-id</code>.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
+    }
     /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
@@ -237,6 +274,12 @@ impl DescribeEventsFluentBuilder {
         self.inner = self.inner.set_max_records(input);
         self
     }
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_records()
+    }
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -246,5 +289,9 @@ impl DescribeEventsFluentBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
+    }
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
     }
 }

@@ -61,6 +61,10 @@ impl UpdateExtensionAssociationInputBuilder {
         self.extension_association_id = input;
         self
     }
+    /// <p>The system-generated ID for the association.</p>
+    pub fn get_extension_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.extension_association_id
+    }
     /// Adds a key-value pair to `parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
@@ -85,6 +89,14 @@ impl UpdateExtensionAssociationInputBuilder {
     ) -> Self {
         self.parameters = input;
         self
+    }
+    /// <p>The parameter names and values defined in the extension.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.parameters
     }
     /// Consumes the builder and constructs a [`UpdateExtensionAssociationInput`](crate::operation::update_extension_association::UpdateExtensionAssociationInput).
     pub fn build(

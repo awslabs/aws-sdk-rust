@@ -56,6 +56,10 @@ impl SecurityGroupRuleUpdateBuilder {
         self.security_group_rule_id = input;
         self
     }
+    /// <p>The ID of the security group rule.</p>
+    pub fn get_security_group_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_group_rule_id
+    }
     /// <p>Information about the security group rule.</p>
     pub fn security_group_rule(mut self, input: crate::types::SecurityGroupRuleRequest) -> Self {
         self.security_group_rule = ::std::option::Option::Some(input);
@@ -68,6 +72,12 @@ impl SecurityGroupRuleUpdateBuilder {
     ) -> Self {
         self.security_group_rule = input;
         self
+    }
+    /// <p>Information about the security group rule.</p>
+    pub fn get_security_group_rule(
+        &self,
+    ) -> &::std::option::Option<crate::types::SecurityGroupRuleRequest> {
+        &self.security_group_rule
     }
     /// Consumes the builder and constructs a [`SecurityGroupRuleUpdate`](crate::types::SecurityGroupRuleUpdate).
     pub fn build(self) -> crate::types::SecurityGroupRuleUpdate {

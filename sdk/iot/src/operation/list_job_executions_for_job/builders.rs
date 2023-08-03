@@ -37,6 +37,13 @@ impl ListJobExecutionsForJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListJobExecutionsForJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_job_executions_for_job::builders::ListJobExecutionsForJobInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +143,10 @@ impl ListJobExecutionsForJobFluentBuilder {
         self.inner = self.inner.set_job_id(input);
         self
     }
+    /// <p>The unique identifier you assigned to this job when it was created.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_id()
+    }
     /// <p>The status of the job.</p>
     pub fn status(mut self, input: crate::types::JobExecutionStatus) -> Self {
         self.inner = self.inner.status(input);
@@ -149,6 +160,10 @@ impl ListJobExecutionsForJobFluentBuilder {
         self.inner = self.inner.set_status(input);
         self
     }
+    /// <p>The status of the job.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::JobExecutionStatus> {
+        self.inner.get_status()
+    }
     /// <p>The maximum number of results to be returned per request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -159,6 +174,10 @@ impl ListJobExecutionsForJobFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to be returned per request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -168,5 +187,9 @@ impl ListJobExecutionsForJobFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

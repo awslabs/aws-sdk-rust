@@ -41,6 +41,10 @@ impl SnsDestinationBuilder {
         self.topic_arn = input;
         self
     }
+    /// <p>The ARN of the Amazon SNS topic that email sending events will be published to. An example of an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
+    pub fn get_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_arn
+    }
     /// Consumes the builder and constructs a [`SnsDestination`](crate::types::SnsDestination).
     pub fn build(self) -> crate::types::SnsDestination {
         crate::types::SnsDestination {

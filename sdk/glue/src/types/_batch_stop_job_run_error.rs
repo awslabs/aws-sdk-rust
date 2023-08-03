@@ -56,6 +56,10 @@ impl BatchStopJobRunErrorBuilder {
         self.job_name = input;
         self
     }
+    /// <p>The name of the job definition that is used in the job run in question.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
+    }
     /// <p>The <code>JobRunId</code> of the job run in question.</p>
     pub fn job_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_run_id = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl BatchStopJobRunErrorBuilder {
     pub fn set_job_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_run_id = input;
         self
+    }
+    /// <p>The <code>JobRunId</code> of the job run in question.</p>
+    pub fn get_job_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_run_id
     }
     /// <p>Specifies details about the error that was encountered.</p>
     pub fn error_detail(mut self, input: crate::types::ErrorDetail) -> Self {
@@ -78,6 +86,10 @@ impl BatchStopJobRunErrorBuilder {
     ) -> Self {
         self.error_detail = input;
         self
+    }
+    /// <p>Specifies details about the error that was encountered.</p>
+    pub fn get_error_detail(&self) -> &::std::option::Option<crate::types::ErrorDetail> {
+        &self.error_detail
     }
     /// Consumes the builder and constructs a [`BatchStopJobRunError`](crate::types::BatchStopJobRunError).
     pub fn build(self) -> crate::types::BatchStopJobRunError {

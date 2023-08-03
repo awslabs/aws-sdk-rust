@@ -52,6 +52,10 @@ impl AssociateWebsiteAuthorizationProviderOutputBuilder {
         self.authorization_provider_id = input;
         self
     }
+    /// <p>A unique identifier for the authorization provider.</p>
+    pub fn get_authorization_provider_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authorization_provider_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

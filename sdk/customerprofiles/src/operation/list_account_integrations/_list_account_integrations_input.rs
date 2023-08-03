@@ -65,6 +65,10 @@ impl ListAccountIntegrationsInputBuilder {
         self.uri = input;
         self
     }
+    /// <p>The URI of the S3 bucket or any other type of data source.</p>
+    pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.uri
+    }
     /// <p>The pagination token from the previous ListAccountIntegrations API call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl ListAccountIntegrationsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The pagination token from the previous ListAccountIntegrations API call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The maximum number of objects returned per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -85,6 +93,10 @@ impl ListAccountIntegrationsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of objects returned per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>Boolean to indicate if hidden integration should be returned. Defaults to <code>False</code>.</p>
     pub fn include_hidden(mut self, input: bool) -> Self {
         self.include_hidden = ::std::option::Option::Some(input);
@@ -94,6 +106,10 @@ impl ListAccountIntegrationsInputBuilder {
     pub fn set_include_hidden(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_hidden = input;
         self
+    }
+    /// <p>Boolean to indicate if hidden integration should be returned. Defaults to <code>False</code>.</p>
+    pub fn get_include_hidden(&self) -> &::std::option::Option<bool> {
+        &self.include_hidden
     }
     /// Consumes the builder and constructs a [`ListAccountIntegrationsInput`](crate::operation::list_account_integrations::ListAccountIntegrationsInput).
     pub fn build(

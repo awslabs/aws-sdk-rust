@@ -64,6 +64,10 @@ impl IpAddressUpdateBuilder {
         self.ip_id = input;
         self
     }
+    /// <p> <i>Only when removing an IP address from a Resolver endpoint</i>: The ID of the IP address that you want to remove. To get this ID, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>.</p>
+    pub fn get_ip_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_id
+    }
     /// <p>The ID of the subnet that includes the IP address that you want to update. To get this ID, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>.</p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl IpAddressUpdateBuilder {
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_id = input;
         self
+    }
+    /// <p>The ID of the subnet that includes the IP address that you want to update. To get this ID, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>.</p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_id
     }
     /// <p>The new IPv4 address.</p>
     pub fn ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,6 +92,10 @@ impl IpAddressUpdateBuilder {
         self.ip = input;
         self
     }
+    /// <p>The new IPv4 address.</p>
+    pub fn get_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip
+    }
     /// <p> The new IPv6 address. </p>
     pub fn ipv6(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipv6 = ::std::option::Option::Some(input.into());
@@ -93,6 +105,10 @@ impl IpAddressUpdateBuilder {
     pub fn set_ipv6(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipv6 = input;
         self
+    }
+    /// <p> The new IPv6 address. </p>
+    pub fn get_ipv6(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv6
     }
     /// Consumes the builder and constructs a [`IpAddressUpdate`](crate::types::IpAddressUpdate).
     pub fn build(self) -> crate::types::IpAddressUpdate {

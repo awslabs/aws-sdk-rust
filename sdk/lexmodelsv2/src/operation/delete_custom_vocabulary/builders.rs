@@ -36,6 +36,13 @@ impl DeleteCustomVocabularyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteCustomVocabulary as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_custom_vocabulary::builders::DeleteCustomVocabularyInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl DeleteCustomVocabularyFluentBuilder {
         self.inner = self.inner.set_bot_id(input);
         self
     }
+    /// <p>The unique identifier of the bot to remove the custom vocabulary from.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bot_id()
+    }
     /// <p>The version of the bot to remove the custom vocabulary from.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_version(input.into());
@@ -136,6 +147,10 @@ impl DeleteCustomVocabularyFluentBuilder {
         self.inner = self.inner.set_bot_version(input);
         self
     }
+    /// <p>The version of the bot to remove the custom vocabulary from.</p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bot_version()
+    }
     /// <p>The locale identifier for the locale that contains the custom vocabulary to remove.</p>
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.locale_id(input.into());
@@ -145,5 +160,9 @@ impl DeleteCustomVocabularyFluentBuilder {
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_locale_id(input);
         self
+    }
+    /// <p>The locale identifier for the locale that contains the custom vocabulary to remove.</p>
+    pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_locale_id()
     }
 }

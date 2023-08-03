@@ -41,6 +41,10 @@ impl CreateRealtimeEndpointInputBuilder {
         self.ml_model_id = input;
         self
     }
+    /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
+    pub fn get_ml_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ml_model_id
+    }
     /// Consumes the builder and constructs a [`CreateRealtimeEndpointInput`](crate::operation::create_realtime_endpoint::CreateRealtimeEndpointInput).
     pub fn build(
         self,

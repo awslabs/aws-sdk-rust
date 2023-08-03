@@ -70,6 +70,12 @@ impl KinesisVideoStreamSourceRuntimeConfigurationBuilder {
         self.streams = input;
         self
     }
+    /// <p>The streams in the source runtime configuration of a Kinesis video stream.</p>
+    pub fn get_streams(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamConfiguration>> {
+        &self.streams
+    }
     /// <p>Specifies the encoding of your input audio. Supported format: PCM (only signed 16-bit little-endian audio formats, which does not include WAV)</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a> in the <i>Amazon Transcribe Developer Guide</i>.</p>
     pub fn media_encoding(mut self, input: crate::types::MediaEncoding) -> Self {
@@ -85,6 +91,11 @@ impl KinesisVideoStreamSourceRuntimeConfigurationBuilder {
         self.media_encoding = input;
         self
     }
+    /// <p>Specifies the encoding of your input audio. Supported format: PCM (only signed 16-bit little-endian audio formats, which does not include WAV)</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a> in the <i>Amazon Transcribe Developer Guide</i>.</p>
+    pub fn get_media_encoding(&self) -> &::std::option::Option<crate::types::MediaEncoding> {
+        &self.media_encoding
+    }
     /// <p>The sample rate of the input audio (in hertz). Low-quality audio, such as telephone audio, is typically around 8,000 Hz. High-quality audio typically ranges from 16,000 Hz to 48,000 Hz. Note that the sample rate you specify must match that of your audio.</p>
     /// <p>Valid Range: Minimum value of 8000. Maximum value of 48000.</p>
     pub fn media_sample_rate(mut self, input: i32) -> Self {
@@ -96,6 +107,11 @@ impl KinesisVideoStreamSourceRuntimeConfigurationBuilder {
     pub fn set_media_sample_rate(mut self, input: ::std::option::Option<i32>) -> Self {
         self.media_sample_rate = input;
         self
+    }
+    /// <p>The sample rate of the input audio (in hertz). Low-quality audio, such as telephone audio, is typically around 8,000 Hz. High-quality audio typically ranges from 16,000 Hz to 48,000 Hz. Note that the sample rate you specify must match that of your audio.</p>
+    /// <p>Valid Range: Minimum value of 8000. Maximum value of 48000.</p>
+    pub fn get_media_sample_rate(&self) -> &::std::option::Option<i32> {
+        &self.media_sample_rate
     }
     /// Consumes the builder and constructs a [`KinesisVideoStreamSourceRuntimeConfiguration`](crate::types::KinesisVideoStreamSourceRuntimeConfiguration).
     pub fn build(self) -> crate::types::KinesisVideoStreamSourceRuntimeConfiguration {

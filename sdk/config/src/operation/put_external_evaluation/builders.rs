@@ -36,6 +36,13 @@ impl PutExternalEvaluationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutExternalEvaluation as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_external_evaluation::builders::PutExternalEvaluationInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl PutExternalEvaluationFluentBuilder {
         self.inner = self.inner.set_config_rule_name(input);
         self
     }
+    /// <p>The name of the Config rule.</p>
+    pub fn get_config_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_config_rule_name()
+    }
     /// <p>An <code>ExternalEvaluation</code> object that provides details about compliance.</p>
     pub fn external_evaluation(mut self, input: crate::types::ExternalEvaluation) -> Self {
         self.inner = self.inner.external_evaluation(input);
@@ -144,5 +155,11 @@ impl PutExternalEvaluationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_external_evaluation(input);
         self
+    }
+    /// <p>An <code>ExternalEvaluation</code> object that provides details about compliance.</p>
+    pub fn get_external_evaluation(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExternalEvaluation> {
+        self.inner.get_external_evaluation()
     }
 }

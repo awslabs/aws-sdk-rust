@@ -56,6 +56,10 @@ impl AssessmentTemplateFilterBuilder {
         self.name_pattern = input;
         self
     }
+    /// <p>For a record to match a filter, an explicit value or a string that contains a wildcard that is specified for this data type property must match the value of the <b>assessmentTemplateName</b> property of the <code>AssessmentTemplate</code> data type.</p>
+    pub fn get_name_pattern(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name_pattern
+    }
     /// <p>For a record to match a filter, the value specified for this data type property must inclusively match any value between the specified minimum and maximum values of the <b>durationInSeconds</b> property of the <code>AssessmentTemplate</code> data type.</p>
     pub fn duration_range(mut self, input: crate::types::DurationRange) -> Self {
         self.duration_range = ::std::option::Option::Some(input);
@@ -68,6 +72,10 @@ impl AssessmentTemplateFilterBuilder {
     ) -> Self {
         self.duration_range = input;
         self
+    }
+    /// <p>For a record to match a filter, the value specified for this data type property must inclusively match any value between the specified minimum and maximum values of the <b>durationInSeconds</b> property of the <code>AssessmentTemplate</code> data type.</p>
+    pub fn get_duration_range(&self) -> &::std::option::Option<crate::types::DurationRange> {
+        &self.duration_range
     }
     /// Appends an item to `rules_package_arns`.
     ///
@@ -90,6 +98,12 @@ impl AssessmentTemplateFilterBuilder {
     ) -> Self {
         self.rules_package_arns = input;
         self
+    }
+    /// <p>For a record to match a filter, the values that are specified for this data type property must be contained in the list of values of the <b>rulesPackageArns</b> property of the <code>AssessmentTemplate</code> data type.</p>
+    pub fn get_rules_package_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.rules_package_arns
     }
     /// Consumes the builder and constructs a [`AssessmentTemplateFilter`](crate::types::AssessmentTemplateFilter).
     pub fn build(self) -> crate::types::AssessmentTemplateFilter {

@@ -72,6 +72,10 @@ impl CreateVirtualClusterInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The specified name of the virtual cluster.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The container provider of the virtual cluster.</p>
     pub fn container_provider(mut self, input: crate::types::ContainerProvider) -> Self {
         self.container_provider = ::std::option::Option::Some(input);
@@ -85,6 +89,12 @@ impl CreateVirtualClusterInputBuilder {
         self.container_provider = input;
         self
     }
+    /// <p>The container provider of the virtual cluster.</p>
+    pub fn get_container_provider(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContainerProvider> {
+        &self.container_provider
+    }
     /// <p>The client token of the virtual cluster.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -94,6 +104,10 @@ impl CreateVirtualClusterInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>The client token of the virtual cluster.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -119,6 +133,14 @@ impl CreateVirtualClusterInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags assigned to the virtual cluster.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateVirtualClusterInput`](crate::operation::create_virtual_cluster::CreateVirtualClusterInput).
     pub fn build(

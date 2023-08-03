@@ -74,6 +74,10 @@ impl UpdateTopicPermissionsInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services account that contains the topic that you want to update the permissions for.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn topic_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_id = ::std::option::Option::Some(input.into());
@@ -83,6 +87,10 @@ impl UpdateTopicPermissionsInputBuilder {
     pub fn set_topic_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.topic_id = input;
         self
+    }
+    /// <p>The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    pub fn get_topic_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_id
     }
     /// Appends an item to `grant_permissions`.
     ///
@@ -103,6 +111,12 @@ impl UpdateTopicPermissionsInputBuilder {
         self.grant_permissions = input;
         self
     }
+    /// <p>The resource permissions that you want to grant to the topic.</p>
+    pub fn get_grant_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+        &self.grant_permissions
+    }
     /// Appends an item to `revoke_permissions`.
     ///
     /// To override the contents of this collection use [`set_revoke_permissions`](Self::set_revoke_permissions).
@@ -121,6 +135,12 @@ impl UpdateTopicPermissionsInputBuilder {
     ) -> Self {
         self.revoke_permissions = input;
         self
+    }
+    /// <p>The resource permissions that you want to revoke from the topic.</p>
+    pub fn get_revoke_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+        &self.revoke_permissions
     }
     /// Consumes the builder and constructs a [`UpdateTopicPermissionsInput`](crate::operation::update_topic_permissions::UpdateTopicPermissionsInput).
     pub fn build(

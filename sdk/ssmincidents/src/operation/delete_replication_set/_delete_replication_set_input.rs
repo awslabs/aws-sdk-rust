@@ -40,6 +40,10 @@ impl DeleteReplicationSetInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the replication set you're deleting.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`DeleteReplicationSetInput`](crate::operation::delete_replication_set::DeleteReplicationSetInput).
     pub fn build(
         self,

@@ -73,6 +73,14 @@ impl SourceSelectionCriteriaBuilder {
         self.sse_kms_encrypted_objects = input;
         self
     }
+    /// <p>A filter that you can use to select Amazon S3 objects that are encrypted with server-side encryption by using Key Management Service (KMS) keys. If you include <code>SourceSelectionCriteria</code> in the replication configuration, this element is required. </p> <note>
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+    /// </note>
+    pub fn get_sse_kms_encrypted_objects(
+        &self,
+    ) -> &::std::option::Option<crate::types::SseKmsEncryptedObjects> {
+        &self.sse_kms_encrypted_objects
+    }
     /// <p>A filter that you can use to specify whether replica modification sync is enabled. S3 on Outposts replica modification sync can help you keep object metadata synchronized between replicas and source objects. By default, S3 on Outposts replicates metadata from the source objects to the replicas only. When replica modification sync is enabled, S3 on Outposts replicates metadata changes made to the replica copies back to the source object, making the replication bidirectional.</p>
     /// <p>To replicate object metadata modifications on replicas, you can specify this element and set the <code>Status</code> of this element to <code>Enabled</code>.</p> <note>
     /// <p>You must enable replica modification sync on the source and destination buckets to replicate replica metadata changes between the source and the replicas.</p>
@@ -91,6 +99,15 @@ impl SourceSelectionCriteriaBuilder {
     ) -> Self {
         self.replica_modifications = input;
         self
+    }
+    /// <p>A filter that you can use to specify whether replica modification sync is enabled. S3 on Outposts replica modification sync can help you keep object metadata synchronized between replicas and source objects. By default, S3 on Outposts replicates metadata from the source objects to the replicas only. When replica modification sync is enabled, S3 on Outposts replicates metadata changes made to the replica copies back to the source object, making the replication bidirectional.</p>
+    /// <p>To replicate object metadata modifications on replicas, you can specify this element and set the <code>Status</code> of this element to <code>Enabled</code>.</p> <note>
+    /// <p>You must enable replica modification sync on the source and destination buckets to replicate replica metadata changes between the source and the replicas.</p>
+    /// </note>
+    pub fn get_replica_modifications(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReplicaModifications> {
+        &self.replica_modifications
     }
     /// Consumes the builder and constructs a [`SourceSelectionCriteria`](crate::types::SourceSelectionCriteria).
     pub fn build(self) -> crate::types::SourceSelectionCriteria {

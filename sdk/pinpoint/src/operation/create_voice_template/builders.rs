@@ -36,6 +36,12 @@ impl CreateVoiceTemplateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateVoiceTemplate as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_voice_template::builders::CreateVoiceTemplateInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl CreateVoiceTemplateFluentBuilder {
         self.inner = self.inner.set_template_name(input);
         self
     }
+    /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_name()
+    }
     /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
     pub fn voice_template_request(mut self, input: crate::types::VoiceTemplateRequest) -> Self {
         self.inner = self.inner.voice_template_request(input);
@@ -144,5 +154,11 @@ impl CreateVoiceTemplateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_voice_template_request(input);
         self
+    }
+    /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
+    pub fn get_voice_template_request(
+        &self,
+    ) -> &::std::option::Option<crate::types::VoiceTemplateRequest> {
+        self.inner.get_voice_template_request()
     }
 }

@@ -37,6 +37,13 @@ impl BatchGetUserAccessTasksFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchGetUserAccessTasks as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_get_user_access_tasks::builders::BatchGetUserAccessTasksInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl BatchGetUserAccessTasksFluentBuilder {
         self.inner = self.inner.set_app_bundle_identifier(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
+    pub fn get_app_bundle_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_bundle_identifier()
+    }
     /// Appends an item to `taskIdList`.
     ///
     /// To override the contents of this collection use [`set_task_id_list`](Self::set_task_id_list).
@@ -149,5 +160,11 @@ impl BatchGetUserAccessTasksFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_task_id_list(input);
         self
+    }
+    /// <p>The tasks IDs to use for the request.</p>
+    pub fn get_task_id_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_task_id_list()
     }
 }

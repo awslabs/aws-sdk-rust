@@ -80,6 +80,10 @@ impl PendingMaintenanceActionBuilder {
         self.action = input;
         self
     }
+    /// <p>The type of pending maintenance action that is available for the resource.</p>
+    pub fn get_action(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action
+    }
     /// <p>The date of the maintenance window when the action is applied. The maintenance action is applied to the resource during its first maintenance window after this date. If this date is specified, any <code>next-maintenance</code> opt-in requests are ignored.</p>
     pub fn auto_applied_after_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.auto_applied_after_date = ::std::option::Option::Some(input);
@@ -93,6 +97,12 @@ impl PendingMaintenanceActionBuilder {
         self.auto_applied_after_date = input;
         self
     }
+    /// <p>The date of the maintenance window when the action is applied. The maintenance action is applied to the resource during its first maintenance window after this date. If this date is specified, any <code>next-maintenance</code> opt-in requests are ignored.</p>
+    pub fn get_auto_applied_after_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.auto_applied_after_date
+    }
     /// <p>The date when the maintenance action is automatically applied. The maintenance action is applied to the resource on this date regardless of the maintenance window for the resource. If this date is specified, any <code>immediate</code> opt-in requests are ignored.</p>
     pub fn forced_apply_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.forced_apply_date = ::std::option::Option::Some(input);
@@ -105,6 +115,10 @@ impl PendingMaintenanceActionBuilder {
     ) -> Self {
         self.forced_apply_date = input;
         self
+    }
+    /// <p>The date when the maintenance action is automatically applied. The maintenance action is applied to the resource on this date regardless of the maintenance window for the resource. If this date is specified, any <code>immediate</code> opt-in requests are ignored.</p>
+    pub fn get_forced_apply_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.forced_apply_date
     }
     /// <p>Indicates the type of opt-in request that has been received for the resource.</p>
     pub fn opt_in_status(
@@ -122,6 +136,10 @@ impl PendingMaintenanceActionBuilder {
         self.opt_in_status = input;
         self
     }
+    /// <p>Indicates the type of opt-in request that has been received for the resource.</p>
+    pub fn get_opt_in_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.opt_in_status
+    }
     /// <p>The effective date when the pending maintenance action is applied to the resource.</p>
     pub fn current_apply_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.current_apply_date = ::std::option::Option::Some(input);
@@ -135,6 +153,10 @@ impl PendingMaintenanceActionBuilder {
         self.current_apply_date = input;
         self
     }
+    /// <p>The effective date when the pending maintenance action is applied to the resource.</p>
+    pub fn get_current_apply_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.current_apply_date
+    }
     /// <p>A description providing more detail about the maintenance action.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -144,6 +166,10 @@ impl PendingMaintenanceActionBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description providing more detail about the maintenance action.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`PendingMaintenanceAction`](crate::types::PendingMaintenanceAction).
     pub fn build(self) -> crate::types::PendingMaintenanceAction {

@@ -80,6 +80,10 @@ impl LambdaFunctionScheduledEventAttributesBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique ID of the Lambda task.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the Lambda function.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl LambdaFunctionScheduledEventAttributesBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the Lambda function.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Data attached to the event that the decider can use in subsequent workflow tasks. This data isn't sent to the Lambda task.</p>
     pub fn control(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -100,6 +108,10 @@ impl LambdaFunctionScheduledEventAttributesBuilder {
         self.control = input;
         self
     }
+    /// <p>Data attached to the event that the decider can use in subsequent workflow tasks. This data isn't sent to the Lambda task.</p>
+    pub fn get_control(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control
+    }
     /// <p>The input provided to the Lambda task.</p>
     pub fn input(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input = ::std::option::Option::Some(input.into());
@@ -109,6 +121,10 @@ impl LambdaFunctionScheduledEventAttributesBuilder {
     pub fn set_input(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input = input;
         self
+    }
+    /// <p>The input provided to the Lambda task.</p>
+    pub fn get_input(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input
     }
     /// <p>The maximum amount of time a worker can take to process the Lambda task.</p>
     pub fn start_to_close_timeout(
@@ -126,6 +142,10 @@ impl LambdaFunctionScheduledEventAttributesBuilder {
         self.start_to_close_timeout = input;
         self
     }
+    /// <p>The maximum amount of time a worker can take to process the Lambda task.</p>
+    pub fn get_start_to_close_timeout(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_to_close_timeout
+    }
     /// <p>The ID of the <code>LambdaFunctionCompleted</code> event corresponding to the decision that resulted in scheduling this activity task. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
     pub fn decision_task_completed_event_id(mut self, input: i64) -> Self {
         self.decision_task_completed_event_id = ::std::option::Option::Some(input);
@@ -138,6 +158,10 @@ impl LambdaFunctionScheduledEventAttributesBuilder {
     ) -> Self {
         self.decision_task_completed_event_id = input;
         self
+    }
+    /// <p>The ID of the <code>LambdaFunctionCompleted</code> event corresponding to the decision that resulted in scheduling this activity task. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
+    pub fn get_decision_task_completed_event_id(&self) -> &::std::option::Option<i64> {
+        &self.decision_task_completed_event_id
     }
     /// Consumes the builder and constructs a [`LambdaFunctionScheduledEventAttributes`](crate::types::LambdaFunctionScheduledEventAttributes).
     pub fn build(self) -> crate::types::LambdaFunctionScheduledEventAttributes {

@@ -47,6 +47,10 @@ impl DeleteVirtualInterfaceInputBuilder {
         self.virtual_interface_id = input;
         self
     }
+    /// <p>The ID of the virtual interface.</p>
+    pub fn get_virtual_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_interface_id
+    }
     /// Consumes the builder and constructs a [`DeleteVirtualInterfaceInput`](crate::operation::delete_virtual_interface::DeleteVirtualInterfaceInput).
     pub fn build(
         self,

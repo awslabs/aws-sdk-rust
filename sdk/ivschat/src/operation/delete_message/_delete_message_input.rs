@@ -61,6 +61,10 @@ impl DeleteMessageInputBuilder {
         self.room_identifier = input;
         self
     }
+    /// <p>Identifier of the room where the message should be deleted. Currently this must be an ARN. </p>
+    pub fn get_room_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.room_identifier
+    }
     /// <p>ID of the message to be deleted. This is the <code>Id</code> field in the received message (see <a href="https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/actions-message-subscribe.html"> Message (Subscribe)</a> in the Chat Messaging API).</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl DeleteMessageInputBuilder {
         self.id = input;
         self
     }
+    /// <p>ID of the message to be deleted. This is the <code>Id</code> field in the received message (see <a href="https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/actions-message-subscribe.html"> Message (Subscribe)</a> in the Chat Messaging API).</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>Reason for deleting the message.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
@@ -80,6 +88,10 @@ impl DeleteMessageInputBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
+    }
+    /// <p>Reason for deleting the message.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
     }
     /// Consumes the builder and constructs a [`DeleteMessageInput`](crate::operation::delete_message::DeleteMessageInput).
     pub fn build(

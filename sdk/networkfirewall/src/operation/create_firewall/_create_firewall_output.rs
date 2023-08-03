@@ -54,6 +54,10 @@ impl CreateFirewallOutputBuilder {
         self.firewall = input;
         self
     }
+    /// <p>The configuration settings for the firewall. These settings include the firewall policy and the subnets in your VPC to use for the firewall endpoints. </p>
+    pub fn get_firewall(&self) -> &::std::option::Option<crate::types::Firewall> {
+        &self.firewall
+    }
     /// <p>Detailed information about the current status of a <code>Firewall</code>. You can retrieve this for a firewall by calling <code>DescribeFirewall</code> and providing the firewall name and ARN.</p>
     pub fn firewall_status(mut self, input: crate::types::FirewallStatus) -> Self {
         self.firewall_status = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl CreateFirewallOutputBuilder {
     ) -> Self {
         self.firewall_status = input;
         self
+    }
+    /// <p>Detailed information about the current status of a <code>Firewall</code>. You can retrieve this for a firewall by calling <code>DescribeFirewall</code> and providing the firewall name and ARN.</p>
+    pub fn get_firewall_status(&self) -> &::std::option::Option<crate::types::FirewallStatus> {
+        &self.firewall_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

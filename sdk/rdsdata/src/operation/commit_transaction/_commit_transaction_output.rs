@@ -54,6 +54,10 @@ impl CommitTransactionOutputBuilder {
         self.transaction_status = input;
         self
     }
+    /// <p>The status of the commit operation.</p>
+    pub fn get_transaction_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transaction_status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -71,6 +71,10 @@ impl StartChatContactOutputBuilder {
         self.contact_id = input;
         self
     }
+    /// <p>The identifier of this contact within the Amazon Connect instance. </p>
+    pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_id
+    }
     /// <p>The identifier for a chat participant. The participantId for a chat participant is the same throughout the chat lifecycle.</p>
     pub fn participant_id(
         mut self,
@@ -86,6 +90,10 @@ impl StartChatContactOutputBuilder {
     ) -> Self {
         self.participant_id = input;
         self
+    }
+    /// <p>The identifier for a chat participant. The participantId for a chat participant is the same throughout the chat lifecycle.</p>
+    pub fn get_participant_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.participant_id
     }
     /// <p>The token used by the chat participant to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>. The participant token is valid for the lifetime of a chat participant.</p>
     pub fn participant_token(
@@ -103,6 +111,10 @@ impl StartChatContactOutputBuilder {
         self.participant_token = input;
         self
     }
+    /// <p>The token used by the chat participant to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>. The participant token is valid for the lifetime of a chat participant.</p>
+    pub fn get_participant_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.participant_token
+    }
     /// <p>The contactId from which a persistent chat session is started. This field is populated only for persistent chats.</p>
     pub fn continued_from_contact_id(
         mut self,
@@ -118,6 +130,10 @@ impl StartChatContactOutputBuilder {
     ) -> Self {
         self.continued_from_contact_id = input;
         self
+    }
+    /// <p>The contactId from which a persistent chat session is started. This field is populated only for persistent chats.</p>
+    pub fn get_continued_from_contact_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.continued_from_contact_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

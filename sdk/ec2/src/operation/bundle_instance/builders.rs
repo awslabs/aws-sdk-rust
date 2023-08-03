@@ -39,6 +39,12 @@ impl BundleInstanceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BundleInstance as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::bundle_instance::builders::BundleInstanceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,13 @@ impl BundleInstanceFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The ID of the instance to bundle.</p>
+    /// <p>Type: String</p>
+    /// <p>Default: None</p>
+    /// <p>Required: Yes</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>The bucket in which to store the AMI. You can specify a bucket that you already own or a new bucket that Amazon EC2 creates on your behalf. If you specify a bucket that belongs to someone else, Amazon EC2 returns an error.</p>
     pub fn storage(mut self, input: crate::types::Storage) -> Self {
         self.inner = self.inner.storage(input);
@@ -137,6 +150,10 @@ impl BundleInstanceFluentBuilder {
         self.inner = self.inner.set_storage(input);
         self
     }
+    /// <p>The bucket in which to store the AMI. You can specify a bucket that you already own or a new bucket that Amazon EC2 creates on your behalf. If you specify a bucket that belongs to someone else, Amazon EC2 returns an error.</p>
+    pub fn get_storage(&self) -> &::std::option::Option<crate::types::Storage> {
+        self.inner.get_storage()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -146,5 +163,9 @@ impl BundleInstanceFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

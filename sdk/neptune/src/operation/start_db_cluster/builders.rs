@@ -36,6 +36,12 @@ impl StartDBClusterFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartDBCluster as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_db_cluster::builders::StartDbClusterInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl StartDBClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_db_cluster_identifier(input);
         self
+    }
+    /// <p>The DB cluster identifier of the Neptune DB cluster to be started. This parameter is stored as a lowercase string.</p>
+    pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_cluster_identifier()
     }
 }

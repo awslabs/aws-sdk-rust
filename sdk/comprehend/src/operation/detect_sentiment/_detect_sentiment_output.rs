@@ -64,6 +64,10 @@ impl DetectSentimentOutputBuilder {
         self.sentiment = input;
         self
     }
+    /// <p>The inferred sentiment that Amazon Comprehend has the highest level of confidence in.</p>
+    pub fn get_sentiment(&self) -> &::std::option::Option<crate::types::SentimentType> {
+        &self.sentiment
+    }
     /// <p>An object that lists the sentiments, and their corresponding confidence levels.</p>
     pub fn sentiment_score(mut self, input: crate::types::SentimentScore) -> Self {
         self.sentiment_score = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl DetectSentimentOutputBuilder {
     ) -> Self {
         self.sentiment_score = input;
         self
+    }
+    /// <p>An object that lists the sentiments, and their corresponding confidence levels.</p>
+    pub fn get_sentiment_score(&self) -> &::std::option::Option<crate::types::SentimentScore> {
+        &self.sentiment_score
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

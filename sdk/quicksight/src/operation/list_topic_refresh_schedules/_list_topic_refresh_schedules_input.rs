@@ -53,6 +53,10 @@ impl ListTopicRefreshSchedulesInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services account that contains the topic whose refresh schedule you want described.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The ID for the topic that you want to describe. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn topic_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_id = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl ListTopicRefreshSchedulesInputBuilder {
     pub fn set_topic_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.topic_id = input;
         self
+    }
+    /// <p>The ID for the topic that you want to describe. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    pub fn get_topic_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_id
     }
     /// Consumes the builder and constructs a [`ListTopicRefreshSchedulesInput`](crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedulesInput).
     pub fn build(

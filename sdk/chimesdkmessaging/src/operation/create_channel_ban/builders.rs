@@ -39,6 +39,12 @@ impl CreateChannelBanFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateChannelBan as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_channel_ban::builders::CreateChannelBanInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl CreateChannelBanFluentBuilder {
         self.inner = self.inner.set_channel_arn(input);
         self
     }
+    /// <p>The ARN of the ban request.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_arn()
+    }
     /// <p>The <code>AppInstanceUserArn</code> of the member being banned.</p>
     pub fn member_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.member_arn(input.into());
@@ -139,6 +149,10 @@ impl CreateChannelBanFluentBuilder {
         self.inner = self.inner.set_member_arn(input);
         self
     }
+    /// <p>The <code>AppInstanceUserArn</code> of the member being banned.</p>
+    pub fn get_member_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_member_arn()
+    }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.chime_bearer(input.into());
@@ -148,5 +162,9 @@ impl CreateChannelBanFluentBuilder {
     pub fn set_chime_bearer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_chime_bearer(input);
         self
+    }
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
+    pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_chime_bearer()
     }
 }

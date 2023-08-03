@@ -36,6 +36,12 @@ impl ListConnectionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListConnections as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_connections::builders::ListConnectionsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl ListConnectionsFluentBuilder {
         self.inner = self.inner.set_name_prefix(input);
         self
     }
+    /// <p>A name prefix to filter results returned. Only connections with a name that starts with the prefix are returned.</p>
+    pub fn get_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name_prefix()
+    }
     /// <p>The state of the connection.</p>
     pub fn connection_state(mut self, input: crate::types::ConnectionState) -> Self {
         self.inner = self.inner.connection_state(input);
@@ -139,6 +149,10 @@ impl ListConnectionsFluentBuilder {
         self.inner = self.inner.set_connection_state(input);
         self
     }
+    /// <p>The state of the connection.</p>
+    pub fn get_connection_state(&self) -> &::std::option::Option<crate::types::ConnectionState> {
+        self.inner.get_connection_state()
+    }
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -149,6 +163,10 @@ impl ListConnectionsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of connections to return.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -158,5 +176,9 @@ impl ListConnectionsFluentBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
+    }
+    /// <p>The maximum number of connections to return.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
     }
 }

@@ -133,6 +133,12 @@ impl ListPartsInputBuilder {
         self.bucket = input;
         self
     }
+    /// <p>The name of the bucket to which the parts are being uploaded. </p>
+    /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p>Object key for which the multipart upload was initiated.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
@@ -143,6 +149,10 @@ impl ListPartsInputBuilder {
         self.key = input;
         self
     }
+    /// <p>Object key for which the multipart upload was initiated.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>Sets the maximum number of parts to return.</p>
     pub fn max_parts(mut self, input: i32) -> Self {
         self.max_parts = ::std::option::Option::Some(input);
@@ -152,6 +162,10 @@ impl ListPartsInputBuilder {
     pub fn set_max_parts(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_parts = input;
         self
+    }
+    /// <p>Sets the maximum number of parts to return.</p>
+    pub fn get_max_parts(&self) -> &::std::option::Option<i32> {
+        &self.max_parts
     }
     /// <p>Specifies the part after which listing should begin. Only parts with higher part numbers will be listed.</p>
     pub fn part_number_marker(
@@ -169,6 +183,10 @@ impl ListPartsInputBuilder {
         self.part_number_marker = input;
         self
     }
+    /// <p>Specifies the part after which listing should begin. Only parts with higher part numbers will be listed.</p>
+    pub fn get_part_number_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.part_number_marker
+    }
     /// <p>Upload ID identifying the multipart upload whose parts are being listed.</p>
     pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upload_id = ::std::option::Option::Some(input.into());
@@ -178,6 +196,10 @@ impl ListPartsInputBuilder {
     pub fn set_upload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.upload_id = input;
         self
+    }
+    /// <p>Upload ID identifying the multipart upload whose parts are being listed.</p>
+    pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.upload_id
     }
     /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(mut self, input: crate::types::RequestPayer) -> Self {
@@ -191,6 +213,10 @@ impl ListPartsInputBuilder {
     ) -> Self {
         self.request_payer = input;
         self
+    }
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn get_request_payer(&self) -> &::std::option::Option<crate::types::RequestPayer> {
+        &self.request_payer
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(
@@ -208,6 +234,10 @@ impl ListPartsInputBuilder {
         self.expected_bucket_owner = input;
         self
     }
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
+    pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expected_bucket_owner
+    }
     /// <p>The server-side encryption (SSE) algorithm used to encrypt the object. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn sse_customer_algorithm(
         mut self,
@@ -223,6 +253,10 @@ impl ListPartsInputBuilder {
     ) -> Self {
         self.sse_customer_algorithm = input;
         self
+    }
+    /// <p>The server-side encryption (SSE) algorithm used to encrypt the object. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn get_sse_customer_algorithm(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sse_customer_algorithm
     }
     /// <p>The server-side encryption (SSE) customer managed key. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn sse_customer_key(
@@ -240,6 +274,10 @@ impl ListPartsInputBuilder {
         self.sse_customer_key = input;
         self
     }
+    /// <p>The server-side encryption (SSE) customer managed key. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn get_sse_customer_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sse_customer_key
+    }
     /// <p>The MD5 server-side encryption (SSE) customer managed key. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn sse_customer_key_md5(
         mut self,
@@ -255,6 +293,10 @@ impl ListPartsInputBuilder {
     ) -> Self {
         self.sse_customer_key_md5 = input;
         self
+    }
+    /// <p>The MD5 server-side encryption (SSE) customer managed key. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn get_sse_customer_key_md5(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sse_customer_key_md5
     }
     /// Consumes the builder and constructs a [`ListPartsInput`](crate::operation::list_parts::ListPartsInput).
     pub fn build(

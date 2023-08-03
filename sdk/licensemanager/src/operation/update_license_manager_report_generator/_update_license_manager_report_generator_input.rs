@@ -101,6 +101,12 @@ impl UpdateLicenseManagerReportGeneratorInputBuilder {
         self.license_manager_report_generator_arn = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the report generator to update.</p>
+    pub fn get_license_manager_report_generator_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.license_manager_report_generator_arn
+    }
     /// <p>Name of the report generator.</p>
     pub fn report_generator_name(
         mut self,
@@ -116,6 +122,10 @@ impl UpdateLicenseManagerReportGeneratorInputBuilder {
     ) -> Self {
         self.report_generator_name = input;
         self
+    }
+    /// <p>Name of the report generator.</p>
+    pub fn get_report_generator_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.report_generator_name
     }
     /// Appends an item to `r#type`.
     ///
@@ -144,6 +154,14 @@ impl UpdateLicenseManagerReportGeneratorInputBuilder {
         self.r#type = input;
         self
     }
+    /// <p>Type of reports to generate. The following report types are supported:</p>
+    /// <ul>
+    /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li>
+    /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReportType>> {
+        &self.r#type
+    }
     /// <p>The report context.</p>
     pub fn report_context(mut self, input: crate::types::ReportContext) -> Self {
         self.report_context = ::std::option::Option::Some(input);
@@ -156,6 +174,10 @@ impl UpdateLicenseManagerReportGeneratorInputBuilder {
     ) -> Self {
         self.report_context = input;
         self
+    }
+    /// <p>The report context.</p>
+    pub fn get_report_context(&self) -> &::std::option::Option<crate::types::ReportContext> {
+        &self.report_context
     }
     /// <p>Frequency by which reports are generated.</p>
     pub fn report_frequency(mut self, input: crate::types::ReportFrequency) -> Self {
@@ -170,6 +192,10 @@ impl UpdateLicenseManagerReportGeneratorInputBuilder {
         self.report_frequency = input;
         self
     }
+    /// <p>Frequency by which reports are generated.</p>
+    pub fn get_report_frequency(&self) -> &::std::option::Option<crate::types::ReportFrequency> {
+        &self.report_frequency
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -180,6 +206,10 @@ impl UpdateLicenseManagerReportGeneratorInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>Description of the report generator.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -189,6 +219,10 @@ impl UpdateLicenseManagerReportGeneratorInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>Description of the report generator.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`UpdateLicenseManagerReportGeneratorInput`](crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorInput, ::aws_smithy_http::operation::error::BuildError>{

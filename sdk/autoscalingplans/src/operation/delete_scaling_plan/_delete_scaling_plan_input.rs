@@ -54,6 +54,10 @@ impl DeleteScalingPlanInputBuilder {
         self.scaling_plan_name = input;
         self
     }
+    /// <p>The name of the scaling plan.</p>
+    pub fn get_scaling_plan_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scaling_plan_name
+    }
     /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
     pub fn scaling_plan_version(mut self, input: i64) -> Self {
         self.scaling_plan_version = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl DeleteScalingPlanInputBuilder {
     pub fn set_scaling_plan_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.scaling_plan_version = input;
         self
+    }
+    /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
+    pub fn get_scaling_plan_version(&self) -> &::std::option::Option<i64> {
+        &self.scaling_plan_version
     }
     /// Consumes the builder and constructs a [`DeleteScalingPlanInput`](crate::operation::delete_scaling_plan::DeleteScalingPlanInput).
     pub fn build(

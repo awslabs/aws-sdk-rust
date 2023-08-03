@@ -72,6 +72,10 @@ impl NodeBuilder {
         self.name = input;
         self
     }
+    /// <p>The node identifier. A node name is a numeric identifier (0001, 0002, etc.). The combination of cluster name, shard name and node name uniquely identifies every node used in a customer's Amazon account.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The status of the service update on the node</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl NodeBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the service update on the node</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>The Availability Zone in which the node resides</p>
     pub fn availability_zone(
@@ -98,6 +106,10 @@ impl NodeBuilder {
         self.availability_zone = input;
         self
     }
+    /// <p>The Availability Zone in which the node resides</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p>The date and time when the node was created.</p>
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
@@ -111,6 +123,10 @@ impl NodeBuilder {
         self.create_time = input;
         self
     }
+    /// <p>The date and time when the node was created.</p>
+    pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_time
+    }
     /// <p>The hostname for connecting to this node.</p>
     pub fn endpoint(mut self, input: crate::types::Endpoint) -> Self {
         self.endpoint = ::std::option::Option::Some(input);
@@ -120,6 +136,10 @@ impl NodeBuilder {
     pub fn set_endpoint(mut self, input: ::std::option::Option<crate::types::Endpoint>) -> Self {
         self.endpoint = input;
         self
+    }
+    /// <p>The hostname for connecting to this node.</p>
+    pub fn get_endpoint(&self) -> &::std::option::Option<crate::types::Endpoint> {
+        &self.endpoint
     }
     /// Consumes the builder and constructs a [`Node`](crate::types::Node).
     pub fn build(self) -> crate::types::Node {

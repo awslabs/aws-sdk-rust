@@ -50,6 +50,12 @@ impl RealtimeMetricsSubscriptionConfigBuilder {
         self.realtime_metrics_subscription_status = input;
         self
     }
+    /// <p>A flag that indicates whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
+    pub fn get_realtime_metrics_subscription_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::RealtimeMetricsSubscriptionStatus> {
+        &self.realtime_metrics_subscription_status
+    }
     /// Consumes the builder and constructs a [`RealtimeMetricsSubscriptionConfig`](crate::types::RealtimeMetricsSubscriptionConfig).
     pub fn build(self) -> crate::types::RealtimeMetricsSubscriptionConfig {
         crate::types::RealtimeMetricsSubscriptionConfig {

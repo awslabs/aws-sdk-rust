@@ -37,6 +37,10 @@ impl DisassociateOriginationIdentityFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociateOriginationIdentity as a reference.
+    pub fn as_input(&self) -> &crate::operation::disassociate_origination_identity::builders::DisassociateOriginationIdentityInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -101,6 +105,10 @@ impl DisassociateOriginationIdentityFluentBuilder {
         self.inner = self.inner.set_pool_id(input);
         self
     }
+    /// <p>The unique identifier for the pool to disassociate with the origination identity. This value can be either the PoolId or PoolArn.</p>
+    pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pool_id()
+    }
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> find the values for PhoneNumberId and PhoneNumberArn, or use <code>DescribeSenderIds</code> to get the values for SenderId and SenderIdArn.</p>
     pub fn origination_identity(
         mut self,
@@ -116,6 +124,10 @@ impl DisassociateOriginationIdentityFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_origination_identity(input);
         self
+    }
+    /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> find the values for PhoneNumberId and PhoneNumberArn, or use <code>DescribeSenderIds</code> to get the values for SenderId and SenderIdArn.</p>
+    pub fn get_origination_identity(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_origination_identity()
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
     pub fn iso_country_code(
@@ -133,6 +145,10 @@ impl DisassociateOriginationIdentityFluentBuilder {
         self.inner = self.inner.set_iso_country_code(input);
         self
     }
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
+    pub fn get_iso_country_code(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_iso_country_code()
+    }
     /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -142,5 +158,9 @@ impl DisassociateOriginationIdentityFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

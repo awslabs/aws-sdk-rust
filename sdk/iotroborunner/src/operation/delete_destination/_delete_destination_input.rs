@@ -40,6 +40,10 @@ impl DeleteDestinationInputBuilder {
         self.id = input;
         self
     }
+    /// Destination ARN.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`DeleteDestinationInput`](crate::operation::delete_destination::DeleteDestinationInput).
     pub fn build(
         self,

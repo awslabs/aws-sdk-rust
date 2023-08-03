@@ -48,6 +48,10 @@ impl DeletePublicIpv4PoolOutputBuilder {
         self.return_value = input;
         self
     }
+    /// <p>Information about the result of deleting the public IPv4 pool.</p>
+    pub fn get_return_value(&self) -> &::std::option::Option<bool> {
+        &self.return_value
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -125,6 +125,10 @@ impl TransitGatewayOptionsBuilder {
         self.amazon_side_asn = input;
         self
     }
+    /// <p>A private Autonomous System Number (ASN) for the Amazon side of a BGP session. The range is 64512 to 65534 for 16-bit ASNs and 4200000000 to 4294967294 for 32-bit ASNs.</p>
+    pub fn get_amazon_side_asn(&self) -> &::std::option::Option<i64> {
+        &self.amazon_side_asn
+    }
     /// Appends an item to `transit_gateway_cidr_blocks`.
     ///
     /// To override the contents of this collection use [`set_transit_gateway_cidr_blocks`](Self::set_transit_gateway_cidr_blocks).
@@ -147,6 +151,12 @@ impl TransitGatewayOptionsBuilder {
         self.transit_gateway_cidr_blocks = input;
         self
     }
+    /// <p>The transit gateway CIDR blocks.</p>
+    pub fn get_transit_gateway_cidr_blocks(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.transit_gateway_cidr_blocks
+    }
     /// <p>Indicates whether attachment requests are automatically accepted.</p>
     pub fn auto_accept_shared_attachments(
         mut self,
@@ -162,6 +172,12 @@ impl TransitGatewayOptionsBuilder {
     ) -> Self {
         self.auto_accept_shared_attachments = input;
         self
+    }
+    /// <p>Indicates whether attachment requests are automatically accepted.</p>
+    pub fn get_auto_accept_shared_attachments(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoAcceptSharedAttachmentsValue> {
+        &self.auto_accept_shared_attachments
     }
     /// <p>Indicates whether resource attachments are automatically associated with the default association route table.</p>
     pub fn default_route_table_association(
@@ -179,6 +195,12 @@ impl TransitGatewayOptionsBuilder {
         self.default_route_table_association = input;
         self
     }
+    /// <p>Indicates whether resource attachments are automatically associated with the default association route table.</p>
+    pub fn get_default_route_table_association(
+        &self,
+    ) -> &::std::option::Option<crate::types::DefaultRouteTableAssociationValue> {
+        &self.default_route_table_association
+    }
     /// <p>The ID of the default association route table.</p>
     pub fn association_default_route_table_id(
         mut self,
@@ -194,6 +216,12 @@ impl TransitGatewayOptionsBuilder {
     ) -> Self {
         self.association_default_route_table_id = input;
         self
+    }
+    /// <p>The ID of the default association route table.</p>
+    pub fn get_association_default_route_table_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.association_default_route_table_id
     }
     /// <p>Indicates whether resource attachments automatically propagate routes to the default propagation route table.</p>
     pub fn default_route_table_propagation(
@@ -211,6 +239,12 @@ impl TransitGatewayOptionsBuilder {
         self.default_route_table_propagation = input;
         self
     }
+    /// <p>Indicates whether resource attachments automatically propagate routes to the default propagation route table.</p>
+    pub fn get_default_route_table_propagation(
+        &self,
+    ) -> &::std::option::Option<crate::types::DefaultRouteTablePropagationValue> {
+        &self.default_route_table_propagation
+    }
     /// <p>The ID of the default propagation route table.</p>
     pub fn propagation_default_route_table_id(
         mut self,
@@ -227,6 +261,12 @@ impl TransitGatewayOptionsBuilder {
         self.propagation_default_route_table_id = input;
         self
     }
+    /// <p>The ID of the default propagation route table.</p>
+    pub fn get_propagation_default_route_table_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.propagation_default_route_table_id
+    }
     /// <p>Indicates whether Equal Cost Multipath Protocol support is enabled.</p>
     pub fn vpn_ecmp_support(mut self, input: crate::types::VpnEcmpSupportValue) -> Self {
         self.vpn_ecmp_support = ::std::option::Option::Some(input);
@@ -239,6 +279,12 @@ impl TransitGatewayOptionsBuilder {
     ) -> Self {
         self.vpn_ecmp_support = input;
         self
+    }
+    /// <p>Indicates whether Equal Cost Multipath Protocol support is enabled.</p>
+    pub fn get_vpn_ecmp_support(
+        &self,
+    ) -> &::std::option::Option<crate::types::VpnEcmpSupportValue> {
+        &self.vpn_ecmp_support
     }
     /// <p>Indicates whether DNS support is enabled.</p>
     pub fn dns_support(mut self, input: crate::types::DnsSupportValue) -> Self {
@@ -253,6 +299,10 @@ impl TransitGatewayOptionsBuilder {
         self.dns_support = input;
         self
     }
+    /// <p>Indicates whether DNS support is enabled.</p>
+    pub fn get_dns_support(&self) -> &::std::option::Option<crate::types::DnsSupportValue> {
+        &self.dns_support
+    }
     /// <p>Indicates whether multicast is enabled on the transit gateway</p>
     pub fn multicast_support(mut self, input: crate::types::MulticastSupportValue) -> Self {
         self.multicast_support = ::std::option::Option::Some(input);
@@ -265,6 +315,12 @@ impl TransitGatewayOptionsBuilder {
     ) -> Self {
         self.multicast_support = input;
         self
+    }
+    /// <p>Indicates whether multicast is enabled on the transit gateway</p>
+    pub fn get_multicast_support(
+        &self,
+    ) -> &::std::option::Option<crate::types::MulticastSupportValue> {
+        &self.multicast_support
     }
     /// Consumes the builder and constructs a [`TransitGatewayOptions`](crate::types::TransitGatewayOptions).
     pub fn build(self) -> crate::types::TransitGatewayOptions {

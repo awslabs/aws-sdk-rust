@@ -37,6 +37,10 @@ impl DescribeConditionalForwardersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeConditionalForwarders as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_conditional_forwarders::builders::DescribeConditionalForwardersInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl DescribeConditionalForwardersFluentBuilder {
         self.inner = self.inner.set_directory_id(input);
         self
     }
+    /// <p>The directory ID for which to get the list of associated conditional forwarders.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_id()
+    }
     /// Appends an item to `RemoteDomainNames`.
     ///
     /// To override the contents of this collection use [`set_remote_domain_names`](Self::set_remote_domain_names).
@@ -146,5 +154,11 @@ impl DescribeConditionalForwardersFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_remote_domain_names(input);
         self
+    }
+    /// <p>The fully qualified domain names (FQDN) of the remote domains for which to get the list of associated conditional forwarders. If this member is null, all conditional forwarders are returned.</p>
+    pub fn get_remote_domain_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_remote_domain_names()
     }
 }

@@ -71,6 +71,10 @@ impl BatchGetTracesOutputBuilder {
         self.traces = input;
         self
     }
+    /// <p>Full traces for the specified requests.</p>
+    pub fn get_traces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Trace>> {
+        &self.traces
+    }
     /// Appends an item to `unprocessed_trace_ids`.
     ///
     /// To override the contents of this collection use [`set_unprocessed_trace_ids`](Self::set_unprocessed_trace_ids).
@@ -93,6 +97,12 @@ impl BatchGetTracesOutputBuilder {
         self.unprocessed_trace_ids = input;
         self
     }
+    /// <p>Trace IDs of requests that haven't been processed.</p>
+    pub fn get_unprocessed_trace_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.unprocessed_trace_ids
+    }
     /// <p>Pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -102,6 +112,10 @@ impl BatchGetTracesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -71,6 +71,11 @@ impl DeleteRuleGroupInputBuilder {
         self.rule_group_name = input;
         self
     }
+    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn get_rule_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_group_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn rule_group_arn(
@@ -89,6 +94,11 @@ impl DeleteRuleGroupInputBuilder {
         self.rule_group_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn get_rule_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_group_arn
+    }
     /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
     /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
     /// </note>
@@ -102,6 +112,12 @@ impl DeleteRuleGroupInputBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::RuleGroupType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p> <note>
+    /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
+    /// </note>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::RuleGroupType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`DeleteRuleGroupInput`](crate::operation::delete_rule_group::DeleteRuleGroupInput).
     pub fn build(

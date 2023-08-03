@@ -52,6 +52,12 @@ impl GetResolverQueryLogConfigPolicyOutputBuilder {
         self.resolver_query_log_config_policy = input;
         self
     }
+    /// <p>Information about the query logging policy for the query logging configuration that you specified in a <code>GetResolverQueryLogConfigPolicy</code> request.</p>
+    pub fn get_resolver_query_log_config_policy(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.resolver_query_log_config_policy
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

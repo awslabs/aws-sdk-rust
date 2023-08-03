@@ -107,6 +107,10 @@ impl LineageObjectBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The time when the process started. This is in UTC format.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The process ID of the child process.</p>
     pub fn namespace_pid(mut self, input: i32) -> Self {
         self.namespace_pid = ::std::option::Option::Some(input);
@@ -116,6 +120,10 @@ impl LineageObjectBuilder {
     pub fn set_namespace_pid(mut self, input: ::std::option::Option<i32>) -> Self {
         self.namespace_pid = input;
         self
+    }
+    /// <p>The process ID of the child process.</p>
+    pub fn get_namespace_pid(&self) -> &::std::option::Option<i32> {
+        &self.namespace_pid
     }
     /// <p>The user ID of the user that executed the process.</p>
     pub fn user_id(mut self, input: i32) -> Self {
@@ -127,6 +135,10 @@ impl LineageObjectBuilder {
         self.user_id = input;
         self
     }
+    /// <p>The user ID of the user that executed the process.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<i32> {
+        &self.user_id
+    }
     /// <p>The name of the process.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -136,6 +148,10 @@ impl LineageObjectBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the process.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The ID of the process.</p>
     pub fn pid(mut self, input: i32) -> Self {
@@ -147,6 +163,10 @@ impl LineageObjectBuilder {
         self.pid = input;
         self
     }
+    /// <p>The ID of the process.</p>
+    pub fn get_pid(&self) -> &::std::option::Option<i32> {
+        &self.pid
+    }
     /// <p>The unique ID assigned to the process by GuardDuty.</p>
     pub fn uuid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.uuid = ::std::option::Option::Some(input.into());
@@ -156,6 +176,10 @@ impl LineageObjectBuilder {
     pub fn set_uuid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.uuid = input;
         self
+    }
+    /// <p>The unique ID assigned to the process by GuardDuty.</p>
+    pub fn get_uuid(&self) -> &::std::option::Option<::std::string::String> {
+        &self.uuid
     }
     /// <p>The absolute path of the process executable file.</p>
     pub fn executable_path(
@@ -173,6 +197,10 @@ impl LineageObjectBuilder {
         self.executable_path = input;
         self
     }
+    /// <p>The absolute path of the process executable file.</p>
+    pub fn get_executable_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.executable_path
+    }
     /// <p>The effective user ID that was used to execute the process.</p>
     pub fn euid(mut self, input: i32) -> Self {
         self.euid = ::std::option::Option::Some(input);
@@ -183,6 +211,10 @@ impl LineageObjectBuilder {
         self.euid = input;
         self
     }
+    /// <p>The effective user ID that was used to execute the process.</p>
+    pub fn get_euid(&self) -> &::std::option::Option<i32> {
+        &self.euid
+    }
     /// <p>The unique ID of the parent process. This ID is assigned to the parent process by GuardDuty.</p>
     pub fn parent_uuid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_uuid = ::std::option::Option::Some(input.into());
@@ -192,6 +224,10 @@ impl LineageObjectBuilder {
     pub fn set_parent_uuid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parent_uuid = input;
         self
+    }
+    /// <p>The unique ID of the parent process. This ID is assigned to the parent process by GuardDuty.</p>
+    pub fn get_parent_uuid(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent_uuid
     }
     /// Consumes the builder and constructs a [`LineageObject`](crate::types::LineageObject).
     pub fn build(self) -> crate::types::LineageObject {

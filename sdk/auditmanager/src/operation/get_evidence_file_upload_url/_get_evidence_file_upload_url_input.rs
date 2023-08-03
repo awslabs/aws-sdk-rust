@@ -39,6 +39,10 @@ impl GetEvidenceFileUploadUrlInputBuilder {
         self.file_name = input;
         self
     }
+    /// <p>The file that you want to upload. For a list of supported file formats, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files">Supported file types for manual evidence</a> in the <i>Audit Manager User Guide</i>.</p>
+    pub fn get_file_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_name
+    }
     /// Consumes the builder and constructs a [`GetEvidenceFileUploadUrlInput`](crate::operation::get_evidence_file_upload_url::GetEvidenceFileUploadUrlInput).
     pub fn build(
         self,

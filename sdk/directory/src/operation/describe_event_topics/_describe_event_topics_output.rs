@@ -58,6 +58,12 @@ impl DescribeEventTopicsOutputBuilder {
         self.event_topics = input;
         self
     }
+    /// <p>A list of Amazon SNS topic names that receive status messages from the specified Directory ID.</p>
+    pub fn get_event_topics(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventTopic>> {
+        &self.event_topics
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

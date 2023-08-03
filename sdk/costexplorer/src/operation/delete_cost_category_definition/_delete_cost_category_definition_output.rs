@@ -60,6 +60,10 @@ impl DeleteCostCategoryDefinitionOutputBuilder {
         self.cost_category_arn = input;
         self
     }
+    /// <p>The unique identifier for your Cost Category. </p>
+    pub fn get_cost_category_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cost_category_arn
+    }
     /// <p>The effective end date of the Cost Category as a result of deleting it. No costs after this date is categorized by the deleted Cost Category. </p>
     pub fn effective_end(
         mut self,
@@ -75,6 +79,10 @@ impl DeleteCostCategoryDefinitionOutputBuilder {
     ) -> Self {
         self.effective_end = input;
         self
+    }
+    /// <p>The effective end date of the Cost Category as a result of deleting it. No costs after this date is categorized by the deleted Cost Category. </p>
+    pub fn get_effective_end(&self) -> &::std::option::Option<::std::string::String> {
+        &self.effective_end
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

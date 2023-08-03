@@ -173,6 +173,10 @@ impl ImportImageOutputBuilder {
         self.architecture = input;
         self
     }
+    /// <p>The architecture of the virtual machine.</p>
+    pub fn get_architecture(&self) -> &::std::option::Option<::std::string::String> {
+        &self.architecture
+    }
     /// <p>A description of the import task.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -182,6 +186,10 @@ impl ImportImageOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the import task.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Indicates whether the AMI is encrypted.</p>
     pub fn encrypted(mut self, input: bool) -> Self {
@@ -193,6 +201,10 @@ impl ImportImageOutputBuilder {
         self.encrypted = input;
         self
     }
+    /// <p>Indicates whether the AMI is encrypted.</p>
+    pub fn get_encrypted(&self) -> &::std::option::Option<bool> {
+        &self.encrypted
+    }
     /// <p>The target hypervisor of the import task.</p>
     pub fn hypervisor(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hypervisor = ::std::option::Option::Some(input.into());
@@ -203,6 +215,10 @@ impl ImportImageOutputBuilder {
         self.hypervisor = input;
         self
     }
+    /// <p>The target hypervisor of the import task.</p>
+    pub fn get_hypervisor(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hypervisor
+    }
     /// <p>The ID of the Amazon Machine Image (AMI) created by the import task.</p>
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_id = ::std::option::Option::Some(input.into());
@@ -212,6 +228,10 @@ impl ImportImageOutputBuilder {
     pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_id = input;
         self
+    }
+    /// <p>The ID of the Amazon Machine Image (AMI) created by the import task.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_id
     }
     /// <p>The task ID of the import image task.</p>
     pub fn import_task_id(
@@ -229,6 +249,10 @@ impl ImportImageOutputBuilder {
         self.import_task_id = input;
         self
     }
+    /// <p>The task ID of the import image task.</p>
+    pub fn get_import_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.import_task_id
+    }
     /// <p>The identifier for the symmetric KMS key that was used to create the encrypted AMI.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -238,6 +262,10 @@ impl ImportImageOutputBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p>The identifier for the symmetric KMS key that was used to create the encrypted AMI.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// <p>The license type of the virtual machine.</p>
     pub fn license_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -249,6 +277,10 @@ impl ImportImageOutputBuilder {
         self.license_type = input;
         self
     }
+    /// <p>The license type of the virtual machine.</p>
+    pub fn get_license_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_type
+    }
     /// <p>The operating system of the virtual machine.</p>
     pub fn platform(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform = ::std::option::Option::Some(input.into());
@@ -259,6 +291,10 @@ impl ImportImageOutputBuilder {
         self.platform = input;
         self
     }
+    /// <p>The operating system of the virtual machine.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform
+    }
     /// <p>The progress of the task.</p>
     pub fn progress(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.progress = ::std::option::Option::Some(input.into());
@@ -268,6 +304,10 @@ impl ImportImageOutputBuilder {
     pub fn set_progress(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.progress = input;
         self
+    }
+    /// <p>The progress of the task.</p>
+    pub fn get_progress(&self) -> &::std::option::Option<::std::string::String> {
+        &self.progress
     }
     /// Appends an item to `snapshot_details`.
     ///
@@ -288,6 +328,12 @@ impl ImportImageOutputBuilder {
         self.snapshot_details = input;
         self
     }
+    /// <p>Information about the snapshots.</p>
+    pub fn get_snapshot_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotDetail>> {
+        &self.snapshot_details
+    }
     /// <p>A brief status of the task.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -297,6 +343,10 @@ impl ImportImageOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>A brief status of the task.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>A detailed status message of the import task.</p>
     pub fn status_message(
@@ -313,6 +363,10 @@ impl ImportImageOutputBuilder {
     ) -> Self {
         self.status_message = input;
         self
+    }
+    /// <p>A detailed status message of the import task.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     /// Appends an item to `license_specifications`.
     ///
@@ -338,6 +392,14 @@ impl ImportImageOutputBuilder {
         self.license_specifications = input;
         self
     }
+    /// <p>The ARNs of the license configurations.</p>
+    pub fn get_license_specifications(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::ImportImageLicenseConfigurationResponse>,
+    > {
+        &self.license_specifications
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -357,6 +419,10 @@ impl ImportImageOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Any tags assigned to the import image task.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The usage operation value.</p>
     pub fn usage_operation(
         mut self,
@@ -372,6 +438,10 @@ impl ImportImageOutputBuilder {
     ) -> Self {
         self.usage_operation = input;
         self
+    }
+    /// <p>The usage operation value.</p>
+    pub fn get_usage_operation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.usage_operation
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -80,6 +80,10 @@ impl TargetSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the target. If the target type of the target group is <code>INSTANCE</code>, this is an instance ID. If the target type is <code>IP</code> , this is an IP address. If the target type is <code>LAMBDA</code>, this is the ARN of the Lambda function. If the target type is <code>ALB</code>, this is the ARN of the Application Load Balancer.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The port on which the target is listening.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -89,6 +93,10 @@ impl TargetSummaryBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
+    }
+    /// <p>The port on which the target is listening.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// <p>The status of the target.</p>
     /// <ul>
@@ -116,6 +124,18 @@ impl TargetSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the target.</p>
+    /// <ul>
+    /// <li> <p> <code>Draining</code>: The target is being deregistered. No new connections will be sent to this target while current connections are being drained. Default draining time is 5 minutes.</p> </li>
+    /// <li> <p> <code>Unavailable</code>: Health checks are unavailable for the target group.</p> </li>
+    /// <li> <p> <code>Healthy</code>: The target is healthy. </p> </li>
+    /// <li> <p> <code>Unhealthy</code>: The target is unhealthy.</p> </li>
+    /// <li> <p> <code>Initial</code>: Initial health checks on the target are being performed.</p> </li>
+    /// <li> <p> <code>Unused</code>: Target group is not used in a service.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TargetStatus> {
+        &self.status
+    }
     /// <p>The code for why the target status is what it is.</p>
     pub fn reason_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason_code = ::std::option::Option::Some(input.into());
@@ -125,6 +145,10 @@ impl TargetSummaryBuilder {
     pub fn set_reason_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason_code = input;
         self
+    }
+    /// <p>The code for why the target status is what it is.</p>
+    pub fn get_reason_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason_code
     }
     /// Consumes the builder and constructs a [`TargetSummary`](crate::types::TargetSummary).
     pub fn build(self) -> crate::types::TargetSummary {

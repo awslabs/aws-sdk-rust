@@ -37,6 +37,12 @@ impl SetIpAddressTypeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SetIpAddressType as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::set_ip_address_type::builders::SetIpAddressTypeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +142,13 @@ impl SetIpAddressTypeFluentBuilder {
         self.inner = self.inner.set_resource_type(input);
         self
     }
+    /// <p>The resource type.</p>
+    /// <p>The possible values are <code>Distribution</code>, <code>Instance</code>, and <code>LoadBalancer</code>.</p> <note>
+    /// <p>Distribution-related APIs are available only in the N. Virginia (<code>us-east-1</code>) Amazon Web Services Region. Set your Amazon Web Services Region configuration to <code>us-east-1</code> to create, view, or edit distributions.</p>
+    /// </note>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        self.inner.get_resource_type()
+    }
     /// <p>The name of the resource for which to set the IP address type.</p>
     pub fn resource_name(
         mut self,
@@ -152,6 +165,10 @@ impl SetIpAddressTypeFluentBuilder {
         self.inner = self.inner.set_resource_name(input);
         self
     }
+    /// <p>The name of the resource for which to set the IP address type.</p>
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_name()
+    }
     /// <p>The IP address type to set for the specified resource.</p>
     /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
@@ -166,5 +183,10 @@ impl SetIpAddressTypeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ip_address_type(input);
         self
+    }
+    /// <p>The IP address type to set for the specified resource.</p>
+    /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
+        self.inner.get_ip_address_type()
     }
 }

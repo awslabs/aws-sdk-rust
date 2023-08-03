@@ -64,6 +64,13 @@ impl StartConfigurationSessionOutputBuilder {
         self.initial_configuration_token = input;
         self
     }
+    /// <p>Token encapsulating state about the configuration session. Provide this token to the <code>GetLatestConfiguration</code> API to retrieve configuration data.</p> <important>
+    /// <p>This token should only be used once in your first call to <code>GetLatestConfiguration</code>. You <i>must</i> use the new token in the <code>GetLatestConfiguration</code> response (<code>NextPollConfigurationToken</code>) in each subsequent call to <code>GetLatestConfiguration</code>.</p>
+    /// <p>The <code>InitialConfigurationToken</code> and <code>NextPollConfigurationToken</code> should only be used once. To support long poll use cases, the tokens are valid for up to 24 hours. If a <code>GetLatestConfiguration</code> call uses an expired token, the system returns <code>BadRequestException</code>.</p>
+    /// </important>
+    pub fn get_initial_configuration_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.initial_configuration_token
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

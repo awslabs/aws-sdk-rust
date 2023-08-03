@@ -37,6 +37,13 @@ impl BatchDeleteImportDataFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchDeleteImportData as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_delete_import_data::builders::BatchDeleteImportDataInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,5 +143,11 @@ impl BatchDeleteImportDataFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_import_task_ids(input);
         self
+    }
+    /// <p>The IDs for the import tasks that you want to delete.</p>
+    pub fn get_import_task_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_import_task_ids()
     }
 }

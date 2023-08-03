@@ -36,6 +36,12 @@ impl EnableDirectoryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the EnableDirectory as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::enable_directory::builders::EnableDirectoryInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl EnableDirectoryFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_directory_arn(input);
         self
+    }
+    /// <p>The ARN of the directory to enable.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_arn()
     }
 }

@@ -56,6 +56,10 @@ impl ActivateReadSetSourceItemBuilder {
         self.read_set_id = input;
         self
     }
+    /// <p>The source's read set ID.</p>
+    pub fn get_read_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.read_set_id
+    }
     /// <p>The source's status.</p>
     pub fn status(mut self, input: crate::types::ReadSetActivationJobItemStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -68,6 +72,12 @@ impl ActivateReadSetSourceItemBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The source's status.</p>
+    pub fn get_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReadSetActivationJobItemStatus> {
+        &self.status
     }
     /// <p>The source's status message.</p>
     pub fn status_message(
@@ -84,6 +94,10 @@ impl ActivateReadSetSourceItemBuilder {
     ) -> Self {
         self.status_message = input;
         self
+    }
+    /// <p>The source's status message.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     /// Consumes the builder and constructs a [`ActivateReadSetSourceItem`](crate::types::ActivateReadSetSourceItem).
     pub fn build(self) -> crate::types::ActivateReadSetSourceItem {

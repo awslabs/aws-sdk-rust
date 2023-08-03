@@ -69,6 +69,10 @@ impl ListPipelineExecutionStepsInputBuilder {
         self.pipeline_execution_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
+    pub fn get_pipeline_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_execution_arn
+    }
     /// <p>If the result of the previous <code>ListPipelineExecutionSteps</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipeline execution steps, use the token in the next request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -78,6 +82,10 @@ impl ListPipelineExecutionStepsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the result of the previous <code>ListPipelineExecutionSteps</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipeline execution steps, use the token in the next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The maximum number of pipeline execution steps to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -89,6 +97,10 @@ impl ListPipelineExecutionStepsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of pipeline execution steps to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The field by which to sort results. The default is <code>CreatedTime</code>.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -98,6 +110,10 @@ impl ListPipelineExecutionStepsInputBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.sort_order = input;
         self
+    }
+    /// <p>The field by which to sort results. The default is <code>CreatedTime</code>.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.sort_order
     }
     /// Consumes the builder and constructs a [`ListPipelineExecutionStepsInput`](crate::operation::list_pipeline_execution_steps::ListPipelineExecutionStepsInput).
     pub fn build(

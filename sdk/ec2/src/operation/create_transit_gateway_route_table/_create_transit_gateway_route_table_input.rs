@@ -62,6 +62,10 @@ impl CreateTransitGatewayRouteTableInputBuilder {
         self.transit_gateway_id = input;
         self
     }
+    /// <p>The ID of the transit gateway.</p>
+    pub fn get_transit_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_id
+    }
     /// Appends an item to `tag_specifications`.
     ///
     /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
@@ -81,6 +85,12 @@ impl CreateTransitGatewayRouteTableInputBuilder {
         self.tag_specifications = input;
         self
     }
+    /// <p>The tags to apply to the transit gateway route table.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        &self.tag_specifications
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -90,6 +100,10 @@ impl CreateTransitGatewayRouteTableInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`CreateTransitGatewayRouteTableInput`](crate::operation::create_transit_gateway_route_table::CreateTransitGatewayRouteTableInput).
     pub fn build(

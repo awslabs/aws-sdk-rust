@@ -36,6 +36,12 @@ impl ActivateNetworkSiteFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ActivateNetworkSite as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::activate_network_site::builders::ActivateNetworkSiteInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl ActivateNetworkSiteFluentBuilder {
         self.inner = self.inner.set_network_site_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the network site.</p>
+    pub fn get_network_site_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_network_site_arn()
+    }
     /// <p>The shipping address of the network site.</p>
     pub fn shipping_address(mut self, input: crate::types::Address) -> Self {
         self.inner = self.inner.shipping_address(input);
@@ -145,6 +155,10 @@ impl ActivateNetworkSiteFluentBuilder {
         self.inner = self.inner.set_shipping_address(input);
         self
     }
+    /// <p>The shipping address of the network site.</p>
+    pub fn get_shipping_address(&self) -> &::std::option::Option<crate::types::Address> {
+        self.inner.get_shipping_address()
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -154,6 +168,10 @@ impl ActivateNetworkSiteFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// <p>Determines the duration and renewal status of the commitment period for all pending radio units.</p>
     /// <p>If you include <code>commitmentConfiguration</code> in the <code>ActivateNetworkSiteRequest</code> action, you must specify the following:</p>
@@ -184,5 +202,18 @@ impl ActivateNetworkSiteFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_commitment_configuration(input);
         self
+    }
+    /// <p>Determines the duration and renewal status of the commitment period for all pending radio units.</p>
+    /// <p>If you include <code>commitmentConfiguration</code> in the <code>ActivateNetworkSiteRequest</code> action, you must specify the following:</p>
+    /// <ul>
+    /// <li> <p>The commitment period for the radio unit. You can choose a 60-day, 1-year, or 3-year period.</p> </li>
+    /// <li> <p>Whether you want your commitment period to automatically renew for one more year after your current commitment period expires.</p> </li>
+    /// </ul>
+    /// <p>For pricing, see <a href="http://aws.amazon.com/private5g/pricing">Amazon Web Services Private 5G Pricing</a>.</p>
+    /// <p>If you do not include <code>commitmentConfiguration</code> in the <code>ActivateNetworkSiteRequest</code> action, the commitment period is set to 60-days.</p>
+    pub fn get_commitment_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CommitmentConfiguration> {
+        self.inner.get_commitment_configuration()
     }
 }

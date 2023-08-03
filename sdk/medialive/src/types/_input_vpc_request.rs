@@ -60,6 +60,12 @@ impl InputVpcRequestBuilder {
         self.security_group_ids = input;
         self
     }
+    /// A list of up to 5 EC2 VPC security group IDs to attach to the Input VPC network interfaces. Requires subnetIds. If none are specified then the VPC default security group will be used.
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
+    }
     /// Appends an item to `subnet_ids`.
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
@@ -78,6 +84,10 @@ impl InputVpcRequestBuilder {
     ) -> Self {
         self.subnet_ids = input;
         self
+    }
+    /// A list of 2 VPC subnet IDs from the same VPC. Subnet IDs must be mapped to two unique availability zones (AZ).
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
     }
     /// Consumes the builder and constructs a [`InputVpcRequest`](crate::types::InputVpcRequest).
     pub fn build(self) -> crate::types::InputVpcRequest {

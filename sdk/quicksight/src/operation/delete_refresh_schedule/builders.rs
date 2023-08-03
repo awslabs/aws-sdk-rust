@@ -36,6 +36,13 @@ impl DeleteRefreshScheduleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteRefreshSchedule as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_refresh_schedule::builders::DeleteRefreshScheduleInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl DeleteRefreshScheduleFluentBuilder {
         self.inner = self.inner.set_data_set_id(input);
         self
     }
+    /// <p>The ID of the dataset.</p>
+    pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_data_set_id()
+    }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn aws_account_id(
         mut self,
@@ -142,6 +153,10 @@ impl DeleteRefreshScheduleFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>The ID of the refresh schedule.</p>
     pub fn schedule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schedule_id(input.into());
@@ -151,5 +166,9 @@ impl DeleteRefreshScheduleFluentBuilder {
     pub fn set_schedule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_schedule_id(input);
         self
+    }
+    /// <p>The ID of the refresh schedule.</p>
+    pub fn get_schedule_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_schedule_id()
     }
 }

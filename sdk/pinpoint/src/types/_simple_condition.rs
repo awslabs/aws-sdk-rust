@@ -59,6 +59,10 @@ impl SimpleConditionBuilder {
         self.event_condition = input;
         self
     }
+    /// <p>The dimension settings for the event that's associated with the activity.</p>
+    pub fn get_event_condition(&self) -> &::std::option::Option<crate::types::EventCondition> {
+        &self.event_condition
+    }
     /// <p>The segment that's associated with the activity.</p>
     pub fn segment_condition(mut self, input: crate::types::SegmentCondition) -> Self {
         self.segment_condition = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl SimpleConditionBuilder {
         self.segment_condition = input;
         self
     }
+    /// <p>The segment that's associated with the activity.</p>
+    pub fn get_segment_condition(&self) -> &::std::option::Option<crate::types::SegmentCondition> {
+        &self.segment_condition
+    }
     /// <p>The dimension settings for the segment that's associated with the activity.</p>
     pub fn segment_dimensions(mut self, input: crate::types::SegmentDimensions) -> Self {
         self.segment_dimensions = ::std::option::Option::Some(input);
@@ -84,6 +92,12 @@ impl SimpleConditionBuilder {
     ) -> Self {
         self.segment_dimensions = input;
         self
+    }
+    /// <p>The dimension settings for the segment that's associated with the activity.</p>
+    pub fn get_segment_dimensions(
+        &self,
+    ) -> &::std::option::Option<crate::types::SegmentDimensions> {
+        &self.segment_dimensions
     }
     /// Consumes the builder and constructs a [`SimpleCondition`](crate::types::SimpleCondition).
     pub fn build(self) -> crate::types::SimpleCondition {

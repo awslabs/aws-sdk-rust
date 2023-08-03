@@ -47,6 +47,12 @@ impl ListFragmentsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListFragments as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_fragments::builders::ListFragmentsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl ListFragmentsFluentBuilder {
         self.inner = self.inner.set_stream_name(input);
         self
     }
+    /// <p>The name of the stream from which to retrieve a fragment list. Specify either this parameter or the <code>StreamARN</code> parameter.</p>
+    pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_name()
+    }
     /// <p>The Amazon Resource Name (ARN) of the stream from which to retrieve a fragment list. Specify either this parameter or the <code>StreamName</code> parameter.</p>
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stream_arn(input.into());
@@ -138,6 +148,10 @@ impl ListFragmentsFluentBuilder {
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stream_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the stream from which to retrieve a fragment list. Specify either this parameter or the <code>StreamName</code> parameter.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_arn()
     }
     /// <p>The total number of fragments to return. If the total number of fragments available is more than the value specified in <code>max-results</code>, then a <code>ListFragmentsOutput$NextToken</code> is provided in the output that you can use to resume pagination.</p>
     pub fn max_results(mut self, input: i64) -> Self {
@@ -149,6 +163,10 @@ impl ListFragmentsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The total number of fragments to return. If the total number of fragments available is more than the value specified in <code>max-results</code>, then a <code>ListFragmentsOutput$NextToken</code> is provided in the output that you can use to resume pagination.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i64> {
+        self.inner.get_max_results()
+    }
     /// <p>A token to specify where to start paginating. This is the <code>ListFragmentsOutput$NextToken</code> from a previously truncated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -158,6 +176,10 @@ impl ListFragmentsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>A token to specify where to start paginating. This is the <code>ListFragmentsOutput$NextToken</code> from a previously truncated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>Describes the timestamp range and timestamp origin for the range of fragments to return.</p>
     pub fn fragment_selector(mut self, input: crate::types::FragmentSelector) -> Self {
@@ -171,5 +193,9 @@ impl ListFragmentsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_fragment_selector(input);
         self
+    }
+    /// <p>Describes the timestamp range and timestamp origin for the range of fragments to return.</p>
+    pub fn get_fragment_selector(&self) -> &::std::option::Option<crate::types::FragmentSelector> {
+        self.inner.get_fragment_selector()
     }
 }

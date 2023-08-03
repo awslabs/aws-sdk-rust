@@ -51,6 +51,12 @@ impl RdsRecommendationBuilder {
         self.requirements_to_target = input;
         self
     }
+    /// <p>Supplemental information about the requirements to the recommended target database on Amazon RDS.</p>
+    pub fn get_requirements_to_target(
+        &self,
+    ) -> &::std::option::Option<crate::types::RdsRequirements> {
+        &self.requirements_to_target
+    }
     /// <p>Supplemental information about the configuration of the recommended target database on Amazon RDS.</p>
     pub fn target_configuration(mut self, input: crate::types::RdsConfiguration) -> Self {
         self.target_configuration = ::std::option::Option::Some(input);
@@ -63,6 +69,12 @@ impl RdsRecommendationBuilder {
     ) -> Self {
         self.target_configuration = input;
         self
+    }
+    /// <p>Supplemental information about the configuration of the recommended target database on Amazon RDS.</p>
+    pub fn get_target_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::RdsConfiguration> {
+        &self.target_configuration
     }
     /// Consumes the builder and constructs a [`RdsRecommendation`](crate::types::RdsRecommendation).
     pub fn build(self) -> crate::types::RdsRecommendation {

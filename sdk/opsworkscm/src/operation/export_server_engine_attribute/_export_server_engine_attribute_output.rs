@@ -57,6 +57,10 @@ impl ExportServerEngineAttributeOutputBuilder {
         self.engine_attribute = input;
         self
     }
+    /// <p>The requested engine attribute pair with attribute name and value.</p>
+    pub fn get_engine_attribute(&self) -> &::std::option::Option<crate::types::EngineAttribute> {
+        &self.engine_attribute
+    }
     /// <p>The server name used in the request.</p>
     pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_name = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl ExportServerEngineAttributeOutputBuilder {
     pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_name = input;
         self
+    }
+    /// <p>The server name used in the request.</p>
+    pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

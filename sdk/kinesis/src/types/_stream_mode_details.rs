@@ -43,6 +43,10 @@ impl StreamModeDetailsBuilder {
         self.stream_mode = input;
         self
     }
+    /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
+    pub fn get_stream_mode(&self) -> &::std::option::Option<crate::types::StreamMode> {
+        &self.stream_mode
+    }
     /// Consumes the builder and constructs a [`StreamModeDetails`](crate::types::StreamModeDetails).
     pub fn build(self) -> crate::types::StreamModeDetails {
         crate::types::StreamModeDetails {

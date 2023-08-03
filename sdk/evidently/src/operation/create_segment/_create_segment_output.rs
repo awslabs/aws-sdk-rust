@@ -46,6 +46,10 @@ impl CreateSegmentOutputBuilder {
         self.segment = input;
         self
     }
+    /// <p>A structure that contains the complete information about the segment that was just created.</p>
+    pub fn get_segment(&self) -> &::std::option::Option<crate::types::Segment> {
+        &self.segment
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

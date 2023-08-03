@@ -39,6 +39,12 @@ impl CompleteLayerUploadFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CompleteLayerUpload as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::complete_layer_upload::builders::CompleteLayerUploadInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl CompleteLayerUploadFluentBuilder {
         self.inner = self.inner.set_registry_id(input);
         self
     }
+    /// <p>The Amazon Web Services account ID, or registry alias, associated with the registry where layers are uploaded. If you do not specify a registry, the default public registry is assumed.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_registry_id()
+    }
     /// <p>The name of the repository in a public registry to associate with the image layer.</p>
     pub fn repository_name(
         mut self,
@@ -145,6 +155,10 @@ impl CompleteLayerUploadFluentBuilder {
         self.inner = self.inner.set_repository_name(input);
         self
     }
+    /// <p>The name of the repository in a public registry to associate with the image layer.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_repository_name()
+    }
     /// <p>The upload ID from a previous <code>InitiateLayerUpload</code> operation to associate with the image layer.</p>
     pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.upload_id(input.into());
@@ -154,6 +168,10 @@ impl CompleteLayerUploadFluentBuilder {
     pub fn set_upload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_upload_id(input);
         self
+    }
+    /// <p>The upload ID from a previous <code>InitiateLayerUpload</code> operation to associate with the image layer.</p>
+    pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_upload_id()
     }
     /// Appends an item to `layerDigests`.
     ///
@@ -174,5 +192,11 @@ impl CompleteLayerUploadFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_layer_digests(input);
         self
+    }
+    /// <p>The <code>sha256</code> digest of the image layer.</p>
+    pub fn get_layer_digests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_layer_digests()
     }
 }

@@ -67,6 +67,10 @@ impl ListIntentStageMetricsOutputBuilder {
         self.bot_id = input;
         self
     }
+    /// <p>The identifier for the bot for which you retrieved intent stage metrics.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
+    }
     /// Appends an item to `results`.
     ///
     /// To override the contents of this collection use [`set_results`](Self::set_results).
@@ -86,6 +90,12 @@ impl ListIntentStageMetricsOutputBuilder {
         self.results = input;
         self
     }
+    /// <p>The results for the intent stage metrics.</p>
+    pub fn get_results(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentStageResult>> {
+        &self.results
+    }
     /// <p>If the response from the ListIntentStageMetrics operation contains more results than specified in the maxResults parameter, a token is returned in the response.</p>
     /// <p>Use the returned token in the nextToken parameter of a ListIntentStageMetrics request to return the next page of results. For a complete set of results, call the ListIntentStageMetrics operation until the nextToken returned in the response is null.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -97,6 +107,11 @@ impl ListIntentStageMetricsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the response from the ListIntentStageMetrics operation contains more results than specified in the maxResults parameter, a token is returned in the response.</p>
+    /// <p>Use the returned token in the nextToken parameter of a ListIntentStageMetrics request to return the next page of results. For a complete set of results, call the ListIntentStageMetrics operation until the nextToken returned in the response is null.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

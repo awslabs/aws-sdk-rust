@@ -49,6 +49,10 @@ impl KinesisFirehoseDestinationBuilder {
         self.iam_role_arn = input;
         self
     }
+    /// <p>The ARN of the IAM role under which Amazon SES publishes email sending events to the Amazon Kinesis Firehose stream.</p>
+    pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iam_role_arn
+    }
     /// <p>The ARN of the Amazon Kinesis Firehose stream that email sending events should be published to.</p>
     pub fn delivery_stream_arn(
         mut self,
@@ -64,6 +68,10 @@ impl KinesisFirehoseDestinationBuilder {
     ) -> Self {
         self.delivery_stream_arn = input;
         self
+    }
+    /// <p>The ARN of the Amazon Kinesis Firehose stream that email sending events should be published to.</p>
+    pub fn get_delivery_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delivery_stream_arn
     }
     /// Consumes the builder and constructs a [`KinesisFirehoseDestination`](crate::types::KinesisFirehoseDestination).
     pub fn build(self) -> crate::types::KinesisFirehoseDestination {

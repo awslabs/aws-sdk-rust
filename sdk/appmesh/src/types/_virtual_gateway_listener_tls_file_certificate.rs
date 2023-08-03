@@ -54,6 +54,10 @@ impl VirtualGatewayListenerTlsFileCertificateBuilder {
         self.certificate_chain = input;
         self
     }
+    /// <p>The certificate chain for the certificate.</p>
+    pub fn get_certificate_chain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_chain
+    }
     /// <p>The private key for a certificate stored on the file system of the mesh endpoint that the proxy is running on.</p>
     pub fn private_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.private_key = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl VirtualGatewayListenerTlsFileCertificateBuilder {
     pub fn set_private_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.private_key = input;
         self
+    }
+    /// <p>The private key for a certificate stored on the file system of the mesh endpoint that the proxy is running on.</p>
+    pub fn get_private_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_key
     }
     /// Consumes the builder and constructs a [`VirtualGatewayListenerTlsFileCertificate`](crate::types::VirtualGatewayListenerTlsFileCertificate).
     pub fn build(self) -> crate::types::VirtualGatewayListenerTlsFileCertificate {

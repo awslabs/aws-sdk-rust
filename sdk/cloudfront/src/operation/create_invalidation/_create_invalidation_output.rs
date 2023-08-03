@@ -56,6 +56,10 @@ impl CreateInvalidationOutputBuilder {
         self.location = input;
         self
     }
+    /// <p>The fully qualified URI of the distribution and invalidation batch request, including the <code>Invalidation ID</code>.</p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
+    }
     /// <p>The invalidation's information.</p>
     pub fn invalidation(mut self, input: crate::types::Invalidation) -> Self {
         self.invalidation = ::std::option::Option::Some(input);
@@ -68,6 +72,10 @@ impl CreateInvalidationOutputBuilder {
     ) -> Self {
         self.invalidation = input;
         self
+    }
+    /// <p>The invalidation's information.</p>
+    pub fn get_invalidation(&self) -> &::std::option::Option<crate::types::Invalidation> {
+        &self.invalidation
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

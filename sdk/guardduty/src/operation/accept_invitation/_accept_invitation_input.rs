@@ -57,6 +57,10 @@ impl AcceptInvitationInputBuilder {
         self.detector_id = input;
         self
     }
+    /// <p>The unique ID of the detector of the GuardDuty member account.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
+    }
     /// <p>The account ID of the GuardDuty administrator account whose invitation you're accepting.</p>
     pub fn master_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_id = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl AcceptInvitationInputBuilder {
     pub fn set_master_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_id = input;
         self
+    }
+    /// <p>The account ID of the GuardDuty administrator account whose invitation you're accepting.</p>
+    pub fn get_master_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.master_id
     }
     /// <p>The value that is used to validate the administrator account to the member account.</p>
     pub fn invitation_id(
@@ -82,6 +90,10 @@ impl AcceptInvitationInputBuilder {
     ) -> Self {
         self.invitation_id = input;
         self
+    }
+    /// <p>The value that is used to validate the administrator account to the member account.</p>
+    pub fn get_invitation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.invitation_id
     }
     /// Consumes the builder and constructs a [`AcceptInvitationInput`](crate::operation::accept_invitation::AcceptInvitationInput).
     pub fn build(

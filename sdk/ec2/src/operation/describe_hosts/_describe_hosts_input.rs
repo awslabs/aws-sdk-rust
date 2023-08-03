@@ -110,6 +110,19 @@ impl DescribeHostsInputBuilder {
         self.filter = input;
         self
     }
+    /// <p>The filters.</p>
+    /// <ul>
+    /// <li> <p> <code>auto-placement</code> - Whether auto-placement is enabled or disabled (<code>on</code> | <code>off</code>).</p> </li>
+    /// <li> <p> <code>availability-zone</code> - The Availability Zone of the host.</p> </li>
+    /// <li> <p> <code>client-token</code> - The idempotency token that you provided when you allocated the host.</p> </li>
+    /// <li> <p> <code>host-reservation-id</code> - The ID of the reservation assigned to this host.</p> </li>
+    /// <li> <p> <code>instance-type</code> - The instance type size that the Dedicated Host is configured to support.</p> </li>
+    /// <li> <p> <code>state</code> - The allocation state of the Dedicated Host (<code>available</code> | <code>under-assessment</code> | <code>permanent-failure</code> | <code>released</code> | <code>released-permanent-failure</code>).</p> </li>
+    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
+    /// </ul>
+    pub fn get_filter(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filter
+    }
     /// Appends an item to `host_ids`.
     ///
     /// To override the contents of this collection use [`set_host_ids`](Self::set_host_ids).
@@ -129,6 +142,10 @@ impl DescribeHostsInputBuilder {
         self.host_ids = input;
         self
     }
+    /// <p>The IDs of the Dedicated Hosts. The IDs are used for targeted instance launches.</p>
+    pub fn get_host_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.host_ids
+    }
     /// <p>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.</p>
     /// <p>You cannot specify this parameter and the host IDs parameter in the same request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -141,6 +158,11 @@ impl DescribeHostsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.</p>
+    /// <p>You cannot specify this parameter and the host IDs parameter in the same request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token to use to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -150,6 +172,10 @@ impl DescribeHostsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token to use to retrieve the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeHostsInput`](crate::operation::describe_hosts::DescribeHostsInput).
     pub fn build(

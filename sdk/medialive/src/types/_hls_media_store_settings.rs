@@ -75,6 +75,10 @@ impl HlsMediaStoreSettingsBuilder {
         self.connection_retry_interval = input;
         self
     }
+    /// Number of seconds to wait before retrying connection to the CDN if the connection is lost.
+    pub fn get_connection_retry_interval(&self) -> &::std::option::Option<i32> {
+        &self.connection_retry_interval
+    }
     /// Size in seconds of file cache for streaming outputs.
     pub fn filecache_duration(mut self, input: i32) -> Self {
         self.filecache_duration = ::std::option::Option::Some(input);
@@ -84,6 +88,10 @@ impl HlsMediaStoreSettingsBuilder {
     pub fn set_filecache_duration(mut self, input: ::std::option::Option<i32>) -> Self {
         self.filecache_duration = input;
         self
+    }
+    /// Size in seconds of file cache for streaming outputs.
+    pub fn get_filecache_duration(&self) -> &::std::option::Option<i32> {
+        &self.filecache_duration
     }
     /// When set to temporal, output files are stored in non-persistent memory for faster reading and writing.
     pub fn media_store_storage_class(
@@ -101,6 +109,12 @@ impl HlsMediaStoreSettingsBuilder {
         self.media_store_storage_class = input;
         self
     }
+    /// When set to temporal, output files are stored in non-persistent memory for faster reading and writing.
+    pub fn get_media_store_storage_class(
+        &self,
+    ) -> &::std::option::Option<crate::types::HlsMediaStoreStorageClass> {
+        &self.media_store_storage_class
+    }
     /// Number of retry attempts that will be made before the Live Event is put into an error state. Applies only if the CDN destination URI begins with "s3" or "mediastore". For other URIs, the value is always 3.
     pub fn num_retries(mut self, input: i32) -> Self {
         self.num_retries = ::std::option::Option::Some(input);
@@ -111,6 +125,10 @@ impl HlsMediaStoreSettingsBuilder {
         self.num_retries = input;
         self
     }
+    /// Number of retry attempts that will be made before the Live Event is put into an error state. Applies only if the CDN destination URI begins with "s3" or "mediastore". For other URIs, the value is always 3.
+    pub fn get_num_retries(&self) -> &::std::option::Option<i32> {
+        &self.num_retries
+    }
     /// If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.
     pub fn restart_delay(mut self, input: i32) -> Self {
         self.restart_delay = ::std::option::Option::Some(input);
@@ -120,6 +138,10 @@ impl HlsMediaStoreSettingsBuilder {
     pub fn set_restart_delay(mut self, input: ::std::option::Option<i32>) -> Self {
         self.restart_delay = input;
         self
+    }
+    /// If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.
+    pub fn get_restart_delay(&self) -> &::std::option::Option<i32> {
+        &self.restart_delay
     }
     /// Consumes the builder and constructs a [`HlsMediaStoreSettings`](crate::types::HlsMediaStoreSettings).
     pub fn build(self) -> crate::types::HlsMediaStoreSettings {

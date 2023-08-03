@@ -58,6 +58,10 @@ impl ListMulticastGroupsByFuotaTaskOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `multicast_group_list`.
     ///
     /// To override the contents of this collection use [`set_multicast_group_list`](Self::set_multicast_group_list).
@@ -76,6 +80,12 @@ impl ListMulticastGroupsByFuotaTaskOutputBuilder {
     ) -> Self {
         self.multicast_group_list = input;
         self
+    }
+    /// <p>List of multicast groups associated with a FUOTA task.</p>
+    pub fn get_multicast_group_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MulticastGroupByFuotaTask>> {
+        &self.multicast_group_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

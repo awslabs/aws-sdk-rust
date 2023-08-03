@@ -36,6 +36,12 @@ impl GetInsightSummariesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetInsightSummaries as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_insight_summaries::builders::GetInsightSummariesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -144,6 +150,12 @@ impl GetInsightSummariesFluentBuilder {
         self.inner = self.inner.set_states(input);
         self
     }
+    /// <p>The list of insight states. </p>
+    pub fn get_states(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightState>> {
+        self.inner.get_states()
+    }
     /// <p>The Amazon Resource Name (ARN) of the group. Required if the GroupName isn't provided.</p>
     pub fn group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_arn(input.into());
@@ -154,6 +166,10 @@ impl GetInsightSummariesFluentBuilder {
         self.inner = self.inner.set_group_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the group. Required if the GroupName isn't provided.</p>
+    pub fn get_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group_arn()
+    }
     /// <p>The name of the group. Required if the GroupARN isn't provided.</p>
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_name(input.into());
@@ -163,6 +179,10 @@ impl GetInsightSummariesFluentBuilder {
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group_name(input);
         self
+    }
+    /// <p>The name of the group. Required if the GroupARN isn't provided.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group_name()
     }
     /// <p>The beginning of the time frame in which the insights started. The start time can't be more than 30 days old.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -177,6 +197,10 @@ impl GetInsightSummariesFluentBuilder {
         self.inner = self.inner.set_start_time(input);
         self
     }
+    /// <p>The beginning of the time frame in which the insights started. The start time can't be more than 30 days old.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_time()
+    }
     /// <p>The end of the time frame in which the insights ended. The end time can't be more than 30 days old.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_time(input);
@@ -190,6 +214,10 @@ impl GetInsightSummariesFluentBuilder {
         self.inner = self.inner.set_end_time(input);
         self
     }
+    /// <p>The end of the time frame in which the insights ended. The end time can't be more than 30 days old.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_time()
+    }
     /// <p>The maximum number of results to display.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -200,6 +228,10 @@ impl GetInsightSummariesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to display.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>Pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -209,5 +241,9 @@ impl GetInsightSummariesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>Pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

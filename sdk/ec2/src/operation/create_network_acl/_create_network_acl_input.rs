@@ -57,6 +57,10 @@ impl CreateNetworkAclInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>The ID of the VPC.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl CreateNetworkAclInputBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The ID of the VPC.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// Appends an item to `tag_specifications`.
     ///
@@ -85,6 +93,12 @@ impl CreateNetworkAclInputBuilder {
     ) -> Self {
         self.tag_specifications = input;
         self
+    }
+    /// <p>The tags to assign to the network ACL.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        &self.tag_specifications
     }
     /// Consumes the builder and constructs a [`CreateNetworkAclInput`](crate::operation::create_network_acl::CreateNetworkAclInput).
     pub fn build(

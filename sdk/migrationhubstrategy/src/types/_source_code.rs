@@ -67,6 +67,10 @@ impl SourceCodeBuilder {
         self.version_control = input;
         self
     }
+    /// <p> The type of repository to use for the source code. </p>
+    pub fn get_version_control(&self) -> &::std::option::Option<crate::types::VersionControl> {
+        &self.version_control
+    }
     /// <p> The branch of the source code. </p>
     pub fn source_version(
         mut self,
@@ -83,6 +87,10 @@ impl SourceCodeBuilder {
         self.source_version = input;
         self
     }
+    /// <p> The branch of the source code. </p>
+    pub fn get_source_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_version
+    }
     /// <p> The repository name for the source code. </p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
@@ -93,6 +101,10 @@ impl SourceCodeBuilder {
         self.location = input;
         self
     }
+    /// <p> The repository name for the source code. </p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
+    }
     /// <p>The name of the project.</p>
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
@@ -102,6 +114,10 @@ impl SourceCodeBuilder {
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_name = input;
         self
+    }
+    /// <p>The name of the project.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_name
     }
     /// Consumes the builder and constructs a [`SourceCode`](crate::types::SourceCode).
     pub fn build(self) -> crate::types::SourceCode {

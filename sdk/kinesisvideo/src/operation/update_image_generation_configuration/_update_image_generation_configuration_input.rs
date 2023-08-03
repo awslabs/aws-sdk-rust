@@ -59,6 +59,10 @@ impl UpdateImageGenerationConfigurationInputBuilder {
         self.stream_name = input;
         self
     }
+    /// <p>The name of the stream from which to update the image generation configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
+    pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the Kinesis video stream from where you want to update the image generation configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_arn = ::std::option::Option::Some(input.into());
@@ -68,6 +72,10 @@ impl UpdateImageGenerationConfigurationInputBuilder {
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Kinesis video stream from where you want to update the image generation configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_arn
     }
     /// <p>The structure that contains the information required for the KVS images delivery. If the structure is null, the configuration will be deleted from the stream.</p>
     pub fn image_generation_configuration(
@@ -84,6 +92,12 @@ impl UpdateImageGenerationConfigurationInputBuilder {
     ) -> Self {
         self.image_generation_configuration = input;
         self
+    }
+    /// <p>The structure that contains the information required for the KVS images delivery. If the structure is null, the configuration will be deleted from the stream.</p>
+    pub fn get_image_generation_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImageGenerationConfiguration> {
+        &self.image_generation_configuration
     }
     /// Consumes the builder and constructs a [`UpdateImageGenerationConfigurationInput`](crate::operation::update_image_generation_configuration::UpdateImageGenerationConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_image_generation_configuration::UpdateImageGenerationConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{

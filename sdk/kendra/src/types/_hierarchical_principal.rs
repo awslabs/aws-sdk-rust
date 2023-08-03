@@ -49,6 +49,12 @@ impl HierarchicalPrincipalBuilder {
         self.principal_list = input;
         self
     }
+    /// <p>A list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to. Each hierarchical list specifies which user or group has allow or deny access for each document.</p>
+    pub fn get_principal_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Principal>> {
+        &self.principal_list
+    }
     /// Consumes the builder and constructs a [`HierarchicalPrincipal`](crate::types::HierarchicalPrincipal).
     pub fn build(self) -> crate::types::HierarchicalPrincipal {
         crate::types::HierarchicalPrincipal {

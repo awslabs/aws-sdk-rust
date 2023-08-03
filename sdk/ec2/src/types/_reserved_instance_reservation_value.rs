@@ -51,6 +51,10 @@ impl ReservedInstanceReservationValueBuilder {
         self.reservation_value = input;
         self
     }
+    /// <p>The total value of the Convertible Reserved Instance that you are exchanging.</p>
+    pub fn get_reservation_value(&self) -> &::std::option::Option<crate::types::ReservationValue> {
+        &self.reservation_value
+    }
     /// <p>The ID of the Convertible Reserved Instance that you are exchanging.</p>
     pub fn reserved_instance_id(
         mut self,
@@ -66,6 +70,10 @@ impl ReservedInstanceReservationValueBuilder {
     ) -> Self {
         self.reserved_instance_id = input;
         self
+    }
+    /// <p>The ID of the Convertible Reserved Instance that you are exchanging.</p>
+    pub fn get_reserved_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reserved_instance_id
     }
     /// Consumes the builder and constructs a [`ReservedInstanceReservationValue`](crate::types::ReservedInstanceReservationValue).
     pub fn build(self) -> crate::types::ReservedInstanceReservationValue {

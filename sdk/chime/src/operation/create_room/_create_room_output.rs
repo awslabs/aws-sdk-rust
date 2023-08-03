@@ -46,6 +46,10 @@ impl CreateRoomOutputBuilder {
         self.room = input;
         self
     }
+    /// <p>The room details.</p>
+    pub fn get_room(&self) -> &::std::option::Option<crate::types::Room> {
+        &self.room
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

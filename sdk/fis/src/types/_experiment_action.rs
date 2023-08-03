@@ -112,6 +112,10 @@ impl ExperimentActionBuilder {
         self.action_id = input;
         self
     }
+    /// <p>The ID of the action.</p>
+    pub fn get_action_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_id
+    }
     /// <p>The description for the action.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -121,6 +125,10 @@ impl ExperimentActionBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description for the action.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Adds a key-value pair to `parameters`.
     ///
@@ -147,6 +155,14 @@ impl ExperimentActionBuilder {
         self.parameters = input;
         self
     }
+    /// <p>The parameters for the action.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.parameters
+    }
     /// Adds a key-value pair to `targets`.
     ///
     /// To override the contents of this collection use [`set_targets`](Self::set_targets).
@@ -172,6 +188,14 @@ impl ExperimentActionBuilder {
         self.targets = input;
         self
     }
+    /// <p>The targets for the action.</p>
+    pub fn get_targets(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.targets
+    }
     /// Appends an item to `start_after`.
     ///
     /// To override the contents of this collection use [`set_start_after`](Self::set_start_after).
@@ -191,6 +215,12 @@ impl ExperimentActionBuilder {
         self.start_after = input;
         self
     }
+    /// <p>The name of the action that must be completed before this action starts.</p>
+    pub fn get_start_after(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.start_after
+    }
     /// <p>The state of the action.</p>
     pub fn state(mut self, input: crate::types::ExperimentActionState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -203,6 +233,10 @@ impl ExperimentActionBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the action.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ExperimentActionState> {
+        &self.state
     }
     /// <p>The time that the action started.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -217,6 +251,10 @@ impl ExperimentActionBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The time that the action started.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The time that the action ended.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -229,6 +267,10 @@ impl ExperimentActionBuilder {
     ) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>The time that the action ended.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// Consumes the builder and constructs a [`ExperimentAction`](crate::types::ExperimentAction).
     pub fn build(self) -> crate::types::ExperimentAction {

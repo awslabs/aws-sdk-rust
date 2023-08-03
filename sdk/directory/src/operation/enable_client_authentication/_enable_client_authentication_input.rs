@@ -47,6 +47,10 @@ impl EnableClientAuthenticationInputBuilder {
         self.directory_id = input;
         self
     }
+    /// <p>The identifier of the specified directory. </p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
+    }
     /// <p>The type of client authentication to enable. Currently only the value <code>SmartCard</code> is supported. Smart card authentication in AD Connector requires that you enable Kerberos Constrained Delegation for the Service User to the LDAP service in your self-managed AD. </p>
     pub fn r#type(mut self, input: crate::types::ClientAuthenticationType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -59,6 +63,10 @@ impl EnableClientAuthenticationInputBuilder {
     ) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of client authentication to enable. Currently only the value <code>SmartCard</code> is supported. Smart card authentication in AD Connector requires that you enable Kerberos Constrained Delegation for the Service User to the LDAP service in your self-managed AD. </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ClientAuthenticationType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`EnableClientAuthenticationInput`](crate::operation::enable_client_authentication::EnableClientAuthenticationInput).
     pub fn build(

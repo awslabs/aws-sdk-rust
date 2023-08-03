@@ -45,6 +45,12 @@ impl RuleEvaluationBuilder {
         self.simple_rule_evaluation = input;
         self
     }
+    /// <p>Information needed to compare two values with a comparison operator.</p>
+    pub fn get_simple_rule_evaluation(
+        &self,
+    ) -> &::std::option::Option<crate::types::SimpleRuleEvaluation> {
+        &self.simple_rule_evaluation
+    }
     /// Consumes the builder and constructs a [`RuleEvaluation`](crate::types::RuleEvaluation).
     pub fn build(self) -> crate::types::RuleEvaluation {
         crate::types::RuleEvaluation {

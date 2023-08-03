@@ -49,6 +49,12 @@ impl AnalyticsExportDestinationBuilder {
         self.s3_bucket_destination = input;
         self
     }
+    /// <p>A destination signifying output to an S3 bucket.</p>
+    pub fn get_s3_bucket_destination(
+        &self,
+    ) -> &::std::option::Option<crate::types::AnalyticsS3BucketDestination> {
+        &self.s3_bucket_destination
+    }
     /// Consumes the builder and constructs a [`AnalyticsExportDestination`](crate::types::AnalyticsExportDestination).
     pub fn build(self) -> crate::types::AnalyticsExportDestination {
         crate::types::AnalyticsExportDestination {

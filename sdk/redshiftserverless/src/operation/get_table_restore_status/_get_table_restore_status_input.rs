@@ -47,6 +47,10 @@ impl GetTableRestoreStatusInputBuilder {
         self.table_restore_request_id = input;
         self
     }
+    /// <p>The ID of the <code>RestoreTableFromSnapshot</code> request to return status for.</p>
+    pub fn get_table_restore_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_restore_request_id
+    }
     /// Consumes the builder and constructs a [`GetTableRestoreStatusInput`](crate::operation::get_table_restore_status::GetTableRestoreStatusInput).
     pub fn build(
         self,

@@ -48,6 +48,10 @@ impl PortRangeBuilder {
         self.begin = input;
         self
     }
+    /// <p>The beginning port in a port range.</p>
+    pub fn get_begin(&self) -> &::std::option::Option<i32> {
+        &self.begin
+    }
     /// <p>The ending port in a port range.</p>
     pub fn end(mut self, input: i32) -> Self {
         self.end = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl PortRangeBuilder {
     pub fn set_end(mut self, input: ::std::option::Option<i32>) -> Self {
         self.end = input;
         self
+    }
+    /// <p>The ending port in a port range.</p>
+    pub fn get_end(&self) -> &::std::option::Option<i32> {
+        &self.end
     }
     /// Consumes the builder and constructs a [`PortRange`](crate::types::PortRange).
     pub fn build(self) -> crate::types::PortRange {

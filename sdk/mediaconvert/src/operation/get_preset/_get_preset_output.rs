@@ -46,6 +46,10 @@ impl GetPresetOutputBuilder {
         self.preset = input;
         self
     }
+    /// A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the output during the conversion process.
+    pub fn get_preset(&self) -> &::std::option::Option<crate::types::Preset> {
+        &self.preset
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

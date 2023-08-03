@@ -61,6 +61,10 @@ impl RegisterThingInputBuilder {
         self.template_body = input;
         self
     }
+    /// <p>The provisioning template. See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-w-cert.html">Provisioning Devices That Have Device Certificates</a> for more information.</p>
+    pub fn get_template_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_body
+    }
     /// Adds a key-value pair to `parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
@@ -85,6 +89,14 @@ impl RegisterThingInputBuilder {
     ) -> Self {
         self.parameters = input;
         self
+    }
+    /// <p>The parameters for provisioning a thing. See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning Templates</a> for more information.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.parameters
     }
     /// Consumes the builder and constructs a [`RegisterThingInput`](crate::operation::register_thing::RegisterThingInput).
     pub fn build(

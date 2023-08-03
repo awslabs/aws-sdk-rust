@@ -67,6 +67,10 @@ impl GetServiceInstanceSyncStatusOutputBuilder {
         self.latest_sync = input;
         self
     }
+    /// <p>The detailed data of the latest sync with the service instance.</p>
+    pub fn get_latest_sync(&self) -> &::std::option::Option<crate::types::ResourceSyncAttempt> {
+        &self.latest_sync
+    }
     /// <p>The detailed data of the latest successful sync with the service instance.</p>
     pub fn latest_successful_sync(mut self, input: crate::types::ResourceSyncAttempt) -> Self {
         self.latest_successful_sync = ::std::option::Option::Some(input);
@@ -80,6 +84,12 @@ impl GetServiceInstanceSyncStatusOutputBuilder {
         self.latest_successful_sync = input;
         self
     }
+    /// <p>The detailed data of the latest successful sync with the service instance.</p>
+    pub fn get_latest_successful_sync(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceSyncAttempt> {
+        &self.latest_successful_sync
+    }
     /// <p>The service instance sync desired state that's returned by Proton</p>
     pub fn desired_state(mut self, input: crate::types::Revision) -> Self {
         self.desired_state = ::std::option::Option::Some(input);
@@ -92,6 +102,10 @@ impl GetServiceInstanceSyncStatusOutputBuilder {
     ) -> Self {
         self.desired_state = input;
         self
+    }
+    /// <p>The service instance sync desired state that's returned by Proton</p>
+    pub fn get_desired_state(&self) -> &::std::option::Option<crate::types::Revision> {
+        &self.desired_state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

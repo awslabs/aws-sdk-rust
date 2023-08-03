@@ -119,6 +119,10 @@ impl GetAttributeGroupOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the attribute group.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The Amazon resource name (ARN) that specifies the attribute group across services.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -128,6 +132,10 @@ impl GetAttributeGroupOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon resource name (ARN) that specifies the attribute group across services.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The name of the attribute group.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -139,6 +147,10 @@ impl GetAttributeGroupOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the attribute group.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the attribute group that the user provides.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -149,6 +161,10 @@ impl GetAttributeGroupOutputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the attribute group that the user provides.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.</p>
     pub fn attributes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attributes = ::std::option::Option::Some(input.into());
@@ -158,6 +174,10 @@ impl GetAttributeGroupOutputBuilder {
     pub fn set_attributes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attributes = input;
         self
+    }
+    /// <p>A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.</p>
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attributes
     }
     /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -172,6 +192,10 @@ impl GetAttributeGroupOutputBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>
     pub fn last_update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_update_time = ::std::option::Option::Some(input);
@@ -184,6 +208,10 @@ impl GetAttributeGroupOutputBuilder {
     ) -> Self {
         self.last_update_time = input;
         self
+    }
+    /// <p>The ISO-8601 formatted timestamp of the moment the attribute group was last updated. This time is the same as the creationTime for a newly created attribute group.</p>
+    pub fn get_last_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_update_time
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -210,6 +238,14 @@ impl GetAttributeGroupOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Key-value pairs associated with the attribute group.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The service principal that created the attribute group.</p>
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by = ::std::option::Option::Some(input.into());
@@ -219,6 +255,10 @@ impl GetAttributeGroupOutputBuilder {
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_by = input;
         self
+    }
+    /// <p>The service principal that created the attribute group.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_by
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

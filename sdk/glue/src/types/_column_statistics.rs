@@ -64,6 +64,10 @@ impl ColumnStatisticsBuilder {
         self.column_name = input;
         self
     }
+    /// <p>Name of column which statistics belong to.</p>
+    pub fn get_column_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.column_name
+    }
     /// <p>The data type of the column.</p>
     pub fn column_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.column_type = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl ColumnStatisticsBuilder {
     pub fn set_column_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.column_type = input;
         self
+    }
+    /// <p>The data type of the column.</p>
+    pub fn get_column_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.column_type
     }
     /// <p>The timestamp of when column statistics were generated.</p>
     pub fn analyzed_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -87,6 +95,10 @@ impl ColumnStatisticsBuilder {
         self.analyzed_time = input;
         self
     }
+    /// <p>The timestamp of when column statistics were generated.</p>
+    pub fn get_analyzed_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.analyzed_time
+    }
     /// <p>A <code>ColumnStatisticData</code> object that contains the statistics data values.</p>
     pub fn statistics_data(mut self, input: crate::types::ColumnStatisticsData) -> Self {
         self.statistics_data = ::std::option::Option::Some(input);
@@ -99,6 +111,12 @@ impl ColumnStatisticsBuilder {
     ) -> Self {
         self.statistics_data = input;
         self
+    }
+    /// <p>A <code>ColumnStatisticData</code> object that contains the statistics data values.</p>
+    pub fn get_statistics_data(
+        &self,
+    ) -> &::std::option::Option<crate::types::ColumnStatisticsData> {
+        &self.statistics_data
     }
     /// Consumes the builder and constructs a [`ColumnStatistics`](crate::types::ColumnStatistics).
     pub fn build(self) -> crate::types::ColumnStatistics {

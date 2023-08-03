@@ -39,6 +39,10 @@ impl GetJobDocumentInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The unique identifier you assigned to this job when it was created.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// Consumes the builder and constructs a [`GetJobDocumentInput`](crate::operation::get_job_document::GetJobDocumentInput).
     pub fn build(
         self,

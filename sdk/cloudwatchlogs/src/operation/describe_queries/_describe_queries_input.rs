@@ -69,6 +69,10 @@ impl DescribeQueriesInputBuilder {
         self.log_group_name = input;
         self
     }
+    /// <p>Limits the returned queries to only those for the specified log group.</p>
+    pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group_name
+    }
     /// <p>Limits the returned queries to only those that have the specified status. Valid values are <code>Cancelled</code>, <code>Complete</code>, <code>Failed</code>, <code>Running</code>, and <code>Scheduled</code>.</p>
     pub fn status(mut self, input: crate::types::QueryStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -78,6 +82,10 @@ impl DescribeQueriesInputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::QueryStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Limits the returned queries to only those that have the specified status. Valid values are <code>Cancelled</code>, <code>Complete</code>, <code>Failed</code>, <code>Running</code>, and <code>Scheduled</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::QueryStatus> {
+        &self.status
     }
     /// <p>Limits the number of returned queries to the specified number.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -89,6 +97,10 @@ impl DescribeQueriesInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>Limits the number of returned queries to the specified number.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -98,6 +110,10 @@ impl DescribeQueriesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeQueriesInput`](crate::operation::describe_queries::DescribeQueriesInput).
     pub fn build(

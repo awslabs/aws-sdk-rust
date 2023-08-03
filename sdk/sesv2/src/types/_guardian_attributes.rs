@@ -59,6 +59,16 @@ impl GuardianAttributesBuilder {
         self.optimized_shared_delivery = input;
         self
     }
+    /// <p>Specifies the status of your VDM optimized shared delivery. Can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>ENABLED</code> – Amazon SES enables optimized shared delivery for your account.</p> </li>
+    /// <li> <p> <code>DISABLED</code> – Amazon SES disables optimized shared delivery for your account.</p> </li>
+    /// </ul>
+    pub fn get_optimized_shared_delivery(
+        &self,
+    ) -> &::std::option::Option<crate::types::FeatureStatus> {
+        &self.optimized_shared_delivery
+    }
     /// Consumes the builder and constructs a [`GuardianAttributes`](crate::types::GuardianAttributes).
     pub fn build(self) -> crate::types::GuardianAttributes {
         crate::types::GuardianAttributes {

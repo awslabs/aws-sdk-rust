@@ -110,6 +110,24 @@ impl WriteEventStreamBuilder {
         self.destination_stream_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Kinesis data stream or Amazon Kinesis Data Firehose delivery stream that you want to publish event data to.</p>
+    /// <p>For a Kinesis data stream, the ARN format is: arn:aws:kinesis:<replaceable>
+    /// region
+    /// </replaceable>:<replaceable>
+    /// account-id
+    /// </replaceable>:stream/<replaceable>
+    /// stream_name
+    /// </replaceable> </p>
+    /// <p>For a Kinesis Data Firehose delivery stream, the ARN format is: arn:aws:firehose:<replaceable>
+    /// region
+    /// </replaceable>:<replaceable>
+    /// account-id
+    /// </replaceable>:deliverystream/<replaceable>
+    /// stream_name
+    /// </replaceable> </p>
+    pub fn get_destination_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_stream_arn
+    }
     /// <p>The AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint to publish event data to the stream in your AWS account.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -119,6 +137,10 @@ impl WriteEventStreamBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint to publish event data to the stream in your AWS account.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Consumes the builder and constructs a [`WriteEventStream`](crate::types::WriteEventStream).
     pub fn build(self) -> crate::types::WriteEventStream {

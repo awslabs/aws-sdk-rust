@@ -66,6 +66,12 @@ impl GetResourceConfigHistoryOutputBuilder {
         self.configuration_items = input;
         self
     }
+    /// <p>A list that contains the configuration history of one or more resources.</p>
+    pub fn get_configuration_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationItem>> {
+        &self.configuration_items
+    }
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -75,6 +81,10 @@ impl GetResourceConfigHistoryOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

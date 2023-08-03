@@ -48,6 +48,10 @@ impl ModelRegisterSettingsBuilder {
         self.status = input;
         self
     }
+    /// <p>Describes whether the integration to the model registry is enabled or disabled in the Canvas application.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::FeatureStatus> {
+        &self.status
+    }
     /// <p>The Amazon Resource Name (ARN) of the SageMaker model registry account. Required only to register model versions created by a different SageMaker Canvas Amazon Web Services account than the Amazon Web Services account in which SageMaker model registry is set up.</p>
     pub fn cross_account_model_register_role_arn(
         mut self,
@@ -63,6 +67,12 @@ impl ModelRegisterSettingsBuilder {
     ) -> Self {
         self.cross_account_model_register_role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the SageMaker model registry account. Required only to register model versions created by a different SageMaker Canvas Amazon Web Services account than the Amazon Web Services account in which SageMaker model registry is set up.</p>
+    pub fn get_cross_account_model_register_role_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.cross_account_model_register_role_arn
     }
     /// Consumes the builder and constructs a [`ModelRegisterSettings`](crate::types::ModelRegisterSettings).
     pub fn build(self) -> crate::types::ModelRegisterSettings {

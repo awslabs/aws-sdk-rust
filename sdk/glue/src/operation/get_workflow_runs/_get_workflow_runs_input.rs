@@ -63,6 +63,10 @@ impl GetWorkflowRunsInputBuilder {
         self.name = input;
         self
     }
+    /// <p>Name of the workflow whose metadata of runs should be returned.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Specifies whether to include the workflow graph in response or not.</p>
     pub fn include_graph(mut self, input: bool) -> Self {
         self.include_graph = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl GetWorkflowRunsInputBuilder {
     pub fn set_include_graph(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_graph = input;
         self
+    }
+    /// <p>Specifies whether to include the workflow graph in response or not.</p>
+    pub fn get_include_graph(&self) -> &::std::option::Option<bool> {
+        &self.include_graph
     }
     /// <p>The maximum size of the response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -83,6 +91,10 @@ impl GetWorkflowRunsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The maximum size of the response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of workflow runs to be included in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -92,6 +104,10 @@ impl GetWorkflowRunsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of workflow runs to be included in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`GetWorkflowRunsInput`](crate::operation::get_workflow_runs::GetWorkflowRunsInput).
     pub fn build(

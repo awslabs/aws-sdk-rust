@@ -37,6 +37,10 @@ impl ListFindingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListFindings as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_findings::builders::ListFindingsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +134,10 @@ impl ListFindingsFluentBuilder {
         self.inner = self.inner.set_analyzer_arn(input);
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve findings from.</p>
+    pub fn get_analyzer_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_analyzer_arn()
+    }
     /// Adds a key-value pair to `filter`.
     ///
     /// To override the contents of this collection use [`set_filter`](Self::set_filter).
@@ -153,6 +161,14 @@ impl ListFindingsFluentBuilder {
         self.inner = self.inner.set_filter(input);
         self
     }
+    /// <p>A filter to match for the findings to return.</p>
+    pub fn get_filter(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::Criterion>,
+    > {
+        self.inner.get_filter()
+    }
     /// <p>The sort order for the findings returned.</p>
     pub fn sort(mut self, input: crate::types::SortCriteria) -> Self {
         self.inner = self.inner.sort(input);
@@ -162,6 +178,10 @@ impl ListFindingsFluentBuilder {
     pub fn set_sort(mut self, input: ::std::option::Option<crate::types::SortCriteria>) -> Self {
         self.inner = self.inner.set_sort(input);
         self
+    }
+    /// <p>The sort order for the findings returned.</p>
+    pub fn get_sort(&self) -> &::std::option::Option<crate::types::SortCriteria> {
+        self.inner.get_sort()
     }
     /// <p>A token used for pagination of results returned.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -173,6 +193,10 @@ impl ListFindingsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A token used for pagination of results returned.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -182,5 +206,9 @@ impl ListFindingsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

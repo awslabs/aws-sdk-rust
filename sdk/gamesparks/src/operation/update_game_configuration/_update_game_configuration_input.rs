@@ -50,6 +50,10 @@ impl UpdateGameConfigurationInputBuilder {
         self.game_name = input;
         self
     }
+    /// <p>The name of the game.</p>
+    pub fn get_game_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.game_name
+    }
     /// Appends an item to `modifications`.
     ///
     /// To override the contents of this collection use [`set_modifications`](Self::set_modifications).
@@ -68,6 +72,12 @@ impl UpdateGameConfigurationInputBuilder {
     ) -> Self {
         self.modifications = input;
         self
+    }
+    /// <p>The list of modifications to make.</p>
+    pub fn get_modifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SectionModification>> {
+        &self.modifications
     }
     /// Consumes the builder and constructs a [`UpdateGameConfigurationInput`](crate::operation::update_game_configuration::UpdateGameConfigurationInput).
     pub fn build(

@@ -39,6 +39,10 @@ impl DescribePartnerEventSourceInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the event source to display.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DescribePartnerEventSourceInput`](crate::operation::describe_partner_event_source::DescribePartnerEventSourceInput).
     pub fn build(
         self,

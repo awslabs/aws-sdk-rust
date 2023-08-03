@@ -36,6 +36,13 @@ impl UpdateFeatureMetadataFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateFeatureMetadata as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_feature_metadata::builders::UpdateFeatureMetadataInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl UpdateFeatureMetadataFluentBuilder {
         self.inner = self.inner.set_feature_group_name(input);
         self
     }
+    /// <p>The name or Amazon Resource Name (ARN) of the feature group containing the feature that you're updating.</p>
+    pub fn get_feature_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_feature_group_name()
+    }
     /// <p>The name of the feature that you're updating.</p>
     pub fn feature_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.feature_name(input.into());
@@ -142,6 +153,10 @@ impl UpdateFeatureMetadataFluentBuilder {
         self.inner = self.inner.set_feature_name(input);
         self
     }
+    /// <p>The name of the feature that you're updating.</p>
+    pub fn get_feature_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_feature_name()
+    }
     /// <p>A description that you can write to better describe the feature.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -151,6 +166,10 @@ impl UpdateFeatureMetadataFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description that you can write to better describe the feature.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `ParameterAdditions`.
     ///
@@ -168,6 +187,12 @@ impl UpdateFeatureMetadataFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_parameter_additions(input);
         self
+    }
+    /// <p>A list of key-value pairs that you can add to better describe the feature.</p>
+    pub fn get_parameter_additions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureParameter>> {
+        self.inner.get_parameter_additions()
     }
     /// Appends an item to `ParameterRemovals`.
     ///
@@ -188,5 +213,11 @@ impl UpdateFeatureMetadataFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_parameter_removals(input);
         self
+    }
+    /// <p>A list of parameter keys that you can specify to remove parameters that describe your feature.</p>
+    pub fn get_parameter_removals(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_parameter_removals()
     }
 }

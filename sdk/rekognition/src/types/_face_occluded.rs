@@ -49,6 +49,10 @@ impl FaceOccludedBuilder {
         self.value = input;
         self
     }
+    /// <p>True if a detected face’s eyes, nose, and mouth are partially captured or if they are covered by masks, dark sunglasses, cell phones, hands, or other objects. False if common occurrences that do not impact face verification are detected, such as eye glasses, lightly tinted sunglasses, strands of hair, and others.</p>
+    pub fn get_value(&self) -> &::std::option::Option<bool> {
+        &self.value
+    }
     /// <p>The confidence that the service has detected the presence of a face occlusion.</p>
     pub fn confidence(mut self, input: f32) -> Self {
         self.confidence = ::std::option::Option::Some(input);
@@ -58,6 +62,10 @@ impl FaceOccludedBuilder {
     pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
         self.confidence = input;
         self
+    }
+    /// <p>The confidence that the service has detected the presence of a face occlusion.</p>
+    pub fn get_confidence(&self) -> &::std::option::Option<f32> {
+        &self.confidence
     }
     /// Consumes the builder and constructs a [`FaceOccluded`](crate::types::FaceOccluded).
     pub fn build(self) -> crate::types::FaceOccluded {

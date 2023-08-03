@@ -64,6 +64,10 @@ impl ConnectivityInfoBuilder {
         self.id = input;
         self
     }
+    /// <p>An ID for the connectivity information.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The IP address or DNS address where client devices can connect to an MQTT broker on the Greengrass core device.</p>
     pub fn host_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host_address = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl ConnectivityInfoBuilder {
     pub fn set_host_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.host_address = input;
         self
+    }
+    /// <p>The IP address or DNS address where client devices can connect to an MQTT broker on the Greengrass core device.</p>
+    pub fn get_host_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host_address
     }
     /// <p>The port where the MQTT broker operates on the core device. This port is typically 8883, which is the default port for the MQTT broker component that runs on core devices.</p>
     pub fn port_number(mut self, input: i32) -> Self {
@@ -84,6 +92,10 @@ impl ConnectivityInfoBuilder {
         self.port_number = input;
         self
     }
+    /// <p>The port where the MQTT broker operates on the core device. This port is typically 8883, which is the default port for the MQTT broker component that runs on core devices.</p>
+    pub fn get_port_number(&self) -> &::std::option::Option<i32> {
+        &self.port_number
+    }
     /// <p>Additional metadata to provide to client devices that connect to this core device.</p>
     pub fn metadata(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metadata = ::std::option::Option::Some(input.into());
@@ -93,6 +105,10 @@ impl ConnectivityInfoBuilder {
     pub fn set_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metadata = input;
         self
+    }
+    /// <p>Additional metadata to provide to client devices that connect to this core device.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metadata
     }
     /// Consumes the builder and constructs a [`ConnectivityInfo`](crate::types::ConnectivityInfo).
     pub fn build(self) -> crate::types::ConnectivityInfo {

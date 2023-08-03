@@ -45,6 +45,10 @@ impl GetBackupPlanFromTemplateInputBuilder {
         self.backup_plan_template_id = input;
         self
     }
+    /// <p>Uniquely identifies a stored backup plan template.</p>
+    pub fn get_backup_plan_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_plan_template_id
+    }
     /// Consumes the builder and constructs a [`GetBackupPlanFromTemplateInput`](crate::operation::get_backup_plan_from_template::GetBackupPlanFromTemplateInput).
     pub fn build(
         self,

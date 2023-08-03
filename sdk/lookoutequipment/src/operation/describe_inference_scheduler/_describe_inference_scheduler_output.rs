@@ -161,6 +161,10 @@ impl DescribeInferenceSchedulerOutputBuilder {
         self.model_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the ML model of the inference scheduler being described. </p>
+    pub fn get_model_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_arn
+    }
     /// <p>The name of the ML model of the inference scheduler being described. </p>
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name = ::std::option::Option::Some(input.into());
@@ -170,6 +174,10 @@ impl DescribeInferenceSchedulerOutputBuilder {
     pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_name = input;
         self
+    }
+    /// <p>The name of the ML model of the inference scheduler being described. </p>
+    pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_name
     }
     /// <p>The name of the inference scheduler being described. </p>
     pub fn inference_scheduler_name(
@@ -187,6 +195,10 @@ impl DescribeInferenceSchedulerOutputBuilder {
         self.inference_scheduler_name = input;
         self
     }
+    /// <p>The name of the inference scheduler being described. </p>
+    pub fn get_inference_scheduler_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.inference_scheduler_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the inference scheduler being described. </p>
     pub fn inference_scheduler_arn(
         mut self,
@@ -203,6 +215,10 @@ impl DescribeInferenceSchedulerOutputBuilder {
         self.inference_scheduler_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the inference scheduler being described. </p>
+    pub fn get_inference_scheduler_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.inference_scheduler_arn
+    }
     /// <p>Indicates the status of the inference scheduler. </p>
     pub fn status(mut self, input: crate::types::InferenceSchedulerStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -216,6 +232,10 @@ impl DescribeInferenceSchedulerOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>Indicates the status of the inference scheduler. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::InferenceSchedulerStatus> {
+        &self.status
+    }
     /// <p> A period of time (in minutes) by which inference on the data is delayed after the data starts. For instance, if you select an offset delay time of five minutes, inference will not begin on the data until the first data measurement after the five minute mark. For example, if five minutes is selected, the inference scheduler will wake up at the configured frequency with the additional five minute delay time to check the customer S3 bucket. The customer can upload data at the same frequency and they don't need to stop and restart the scheduler when uploading new data.</p>
     pub fn data_delay_offset_in_minutes(mut self, input: i64) -> Self {
         self.data_delay_offset_in_minutes = ::std::option::Option::Some(input);
@@ -225,6 +245,10 @@ impl DescribeInferenceSchedulerOutputBuilder {
     pub fn set_data_delay_offset_in_minutes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.data_delay_offset_in_minutes = input;
         self
+    }
+    /// <p> A period of time (in minutes) by which inference on the data is delayed after the data starts. For instance, if you select an offset delay time of five minutes, inference will not begin on the data until the first data measurement after the five minute mark. For example, if five minutes is selected, the inference scheduler will wake up at the configured frequency with the additional five minute delay time to check the customer S3 bucket. The customer can upload data at the same frequency and they don't need to stop and restart the scheduler when uploading new data.</p>
+    pub fn get_data_delay_offset_in_minutes(&self) -> &::std::option::Option<i64> {
+        &self.data_delay_offset_in_minutes
     }
     /// <p>Specifies how often data is uploaded to the source S3 bucket for the input data. This value is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes. </p>
     pub fn data_upload_frequency(mut self, input: crate::types::DataUploadFrequency) -> Self {
@@ -239,6 +263,12 @@ impl DescribeInferenceSchedulerOutputBuilder {
         self.data_upload_frequency = input;
         self
     }
+    /// <p>Specifies how often data is uploaded to the source S3 bucket for the input data. This value is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes. </p>
+    pub fn get_data_upload_frequency(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataUploadFrequency> {
+        &self.data_upload_frequency
+    }
     /// <p>Specifies the time at which the inference scheduler was created. </p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -252,6 +282,10 @@ impl DescribeInferenceSchedulerOutputBuilder {
         self.created_at = input;
         self
     }
+    /// <p>Specifies the time at which the inference scheduler was created. </p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>Specifies the time at which the inference scheduler was last updated, if it was. </p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
@@ -264,6 +298,10 @@ impl DescribeInferenceSchedulerOutputBuilder {
     ) -> Self {
         self.updated_at = input;
         self
+    }
+    /// <p>Specifies the time at which the inference scheduler was last updated, if it was. </p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     /// <p> Specifies configuration information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
     pub fn data_input_configuration(
@@ -281,6 +319,12 @@ impl DescribeInferenceSchedulerOutputBuilder {
         self.data_input_configuration = input;
         self
     }
+    /// <p> Specifies configuration information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
+    pub fn get_data_input_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::InferenceInputConfiguration> {
+        &self.data_input_configuration
+    }
     /// <p> Specifies information for the output results for the inference scheduler, including the output S3 location. </p>
     pub fn data_output_configuration(
         mut self,
@@ -297,6 +341,12 @@ impl DescribeInferenceSchedulerOutputBuilder {
         self.data_output_configuration = input;
         self
     }
+    /// <p> Specifies information for the output results for the inference scheduler, including the output S3 location. </p>
+    pub fn get_data_output_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::InferenceOutputConfiguration> {
+        &self.data_output_configuration
+    }
     /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for the inference scheduler being described. </p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -306,6 +356,10 @@ impl DescribeInferenceSchedulerOutputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for the inference scheduler being described. </p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>Provides the identifier of the KMS key used to encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
     pub fn server_side_kms_key_id(
@@ -323,6 +377,10 @@ impl DescribeInferenceSchedulerOutputBuilder {
         self.server_side_kms_key_id = input;
         self
     }
+    /// <p>Provides the identifier of the KMS key used to encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
+    pub fn get_server_side_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_side_kms_key_id
+    }
     /// <p>Indicates whether the latest execution for the inference scheduler was Anomalous (anomalous events found) or Normal (no anomalous events found).</p>
     pub fn latest_inference_result(mut self, input: crate::types::LatestInferenceResult) -> Self {
         self.latest_inference_result = ::std::option::Option::Some(input);
@@ -335,6 +393,12 @@ impl DescribeInferenceSchedulerOutputBuilder {
     ) -> Self {
         self.latest_inference_result = input;
         self
+    }
+    /// <p>Indicates whether the latest execution for the inference scheduler was Anomalous (anomalous events found) or Normal (no anomalous events found).</p>
+    pub fn get_latest_inference_result(
+        &self,
+    ) -> &::std::option::Option<crate::types::LatestInferenceResult> {
+        &self.latest_inference_result
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

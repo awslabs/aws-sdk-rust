@@ -54,6 +54,10 @@ impl UpdateKeyGroupOutputBuilder {
         self.key_group = input;
         self
     }
+    /// <p>The key group that was just updated.</p>
+    pub fn get_key_group(&self) -> &::std::option::Option<crate::types::KeyGroup> {
+        &self.key_group
+    }
     /// <p>The identifier for this version of the key group.</p>
     pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.e_tag = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl UpdateKeyGroupOutputBuilder {
     pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.e_tag = input;
         self
+    }
+    /// <p>The identifier for this version of the key group.</p>
+    pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.e_tag
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

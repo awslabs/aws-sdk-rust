@@ -72,6 +72,10 @@ impl CreateOpsMetadataInputBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>A resource ID for a new Application Manager application.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// Adds a key-value pair to `metadata`.
     ///
     /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
@@ -96,6 +100,14 @@ impl CreateOpsMetadataInputBuilder {
     ) -> Self {
         self.metadata = input;
         self
+    }
+    /// <p>Metadata for a new Application Manager application. </p>
+    pub fn get_metadata(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>,
+    > {
+        &self.metadata
     }
     /// Appends an item to `tags`.
     ///
@@ -123,6 +135,14 @@ impl CreateOpsMetadataInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for an OpsMetadata object. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an OpsMetadata object to identify an environment or target Amazon Web Services Region. In this case, you could specify the following key-value pairs:</p>
+    /// <ul>
+    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
+    /// <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li>
+    /// </ul>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateOpsMetadataInput`](crate::operation::create_ops_metadata::CreateOpsMetadataInput).
     pub fn build(

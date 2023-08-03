@@ -64,6 +64,10 @@ impl GetIceServerConfigInputBuilder {
         self.channel_arn = input;
         self
     }
+    /// <p>The ARN of the signaling channel to be used for the peer-to-peer connection between configured peers. </p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
+    }
     /// <p>Unique identifier for the viewer. Must be unique within the signaling channel.</p>
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl GetIceServerConfigInputBuilder {
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_id = input;
         self
+    }
+    /// <p>Unique identifier for the viewer. Must be unique within the signaling channel.</p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_id
     }
     /// <p>Specifies the desired service. Currently, <code>TURN</code> is the only valid value.</p>
     pub fn service(mut self, input: crate::types::Service) -> Self {
@@ -84,6 +92,10 @@ impl GetIceServerConfigInputBuilder {
         self.service = input;
         self
     }
+    /// <p>Specifies the desired service. Currently, <code>TURN</code> is the only valid value.</p>
+    pub fn get_service(&self) -> &::std::option::Option<crate::types::Service> {
+        &self.service
+    }
     /// <p>An optional user ID to be associated with the credentials.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
@@ -93,6 +105,10 @@ impl GetIceServerConfigInputBuilder {
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
+    }
+    /// <p>An optional user ID to be associated with the credentials.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
     }
     /// Consumes the builder and constructs a [`GetIceServerConfigInput`](crate::operation::get_ice_server_config::GetIceServerConfigInput).
     pub fn build(

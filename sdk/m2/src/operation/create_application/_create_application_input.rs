@@ -104,6 +104,10 @@ impl CreateApplicationInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The unique identifier of the application.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the application.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -113,6 +117,10 @@ impl CreateApplicationInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the application.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The type of the target platform for this application.</p>
     pub fn engine_type(mut self, input: crate::types::EngineType) -> Self {
@@ -127,6 +135,10 @@ impl CreateApplicationInputBuilder {
         self.engine_type = input;
         self
     }
+    /// <p>The type of the target platform for this application.</p>
+    pub fn get_engine_type(&self) -> &::std::option::Option<crate::types::EngineType> {
+        &self.engine_type
+    }
     /// <p>The application definition for this application. You can specify either inline JSON or an S3 bucket location.</p>
     pub fn definition(mut self, input: crate::types::Definition) -> Self {
         self.definition = ::std::option::Option::Some(input);
@@ -139,6 +151,10 @@ impl CreateApplicationInputBuilder {
     ) -> Self {
         self.definition = input;
         self
+    }
+    /// <p>The application definition for this application. You can specify either inline JSON or an S3 bucket location.</p>
+    pub fn get_definition(&self) -> &::std::option::Option<crate::types::Definition> {
+        &self.definition
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -165,6 +181,14 @@ impl CreateApplicationInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>A list of tags to apply to the application.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>Unique, case-sensitive identifier the service generates to ensure the idempotency of the request to create an application. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires. </p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -174,6 +198,10 @@ impl CreateApplicationInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>Unique, case-sensitive identifier the service generates to ensure the idempotency of the request to create an application. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires. </p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// <p>The identifier of a customer managed key.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -185,6 +213,10 @@ impl CreateApplicationInputBuilder {
         self.kms_key_id = input;
         self
     }
+    /// <p>The identifier of a customer managed key.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
+    }
     /// <p>The Amazon Resource Name (ARN) that identifies a role that the application uses to access Amazon Web Services resources that are not part of the application or are in a different Amazon Web Services account.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -194,6 +226,10 @@ impl CreateApplicationInputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) that identifies a role that the application uses to access Amazon Web Services resources that are not part of the application or are in a different Amazon Web Services account.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Consumes the builder and constructs a [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
     pub fn build(

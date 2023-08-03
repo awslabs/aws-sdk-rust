@@ -57,6 +57,10 @@ impl ListOriginEndpointsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// A token that can be used to resume pagination from the end of the collection.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `origin_endpoints`.
     ///
     /// To override the contents of this collection use [`set_origin_endpoints`](Self::set_origin_endpoints).
@@ -75,6 +79,12 @@ impl ListOriginEndpointsOutputBuilder {
     ) -> Self {
         self.origin_endpoints = input;
         self
+    }
+    /// A list of OriginEndpoint records.
+    pub fn get_origin_endpoints(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OriginEndpoint>> {
+        &self.origin_endpoints
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

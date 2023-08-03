@@ -71,6 +71,10 @@ impl ListRunsInputBuilder {
         self.name = input;
         self
     }
+    /// <p>Filter the list by run name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Filter the list by run group ID.</p>
     pub fn run_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.run_group_id = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl ListRunsInputBuilder {
     pub fn set_run_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.run_group_id = input;
         self
+    }
+    /// <p>Filter the list by run group ID.</p>
+    pub fn get_run_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.run_group_id
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn starting_token(
@@ -97,6 +105,10 @@ impl ListRunsInputBuilder {
         self.starting_token = input;
         self
     }
+    /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    pub fn get_starting_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.starting_token
+    }
     /// <p>The maximum number of runs to return in one page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -107,6 +119,10 @@ impl ListRunsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of runs to return in one page of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p> The status of a run. </p>
     pub fn status(mut self, input: crate::types::RunStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -116,6 +132,10 @@ impl ListRunsInputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::RunStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p> The status of a run. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::RunStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`ListRunsInput`](crate::operation::list_runs::ListRunsInput).
     pub fn build(

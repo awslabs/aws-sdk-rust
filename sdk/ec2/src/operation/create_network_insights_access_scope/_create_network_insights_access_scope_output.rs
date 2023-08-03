@@ -68,6 +68,12 @@ impl CreateNetworkInsightsAccessScopeOutputBuilder {
         self.network_insights_access_scope = input;
         self
     }
+    /// <p>The Network Access Scope.</p>
+    pub fn get_network_insights_access_scope(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkInsightsAccessScope> {
+        &self.network_insights_access_scope
+    }
     /// <p>The Network Access Scope content.</p>
     pub fn network_insights_access_scope_content(
         mut self,
@@ -83,6 +89,12 @@ impl CreateNetworkInsightsAccessScopeOutputBuilder {
     ) -> Self {
         self.network_insights_access_scope_content = input;
         self
+    }
+    /// <p>The Network Access Scope content.</p>
+    pub fn get_network_insights_access_scope_content(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkInsightsAccessScopeContent> {
+        &self.network_insights_access_scope_content
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

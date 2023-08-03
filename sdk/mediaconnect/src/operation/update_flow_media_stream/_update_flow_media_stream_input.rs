@@ -93,6 +93,12 @@ impl UpdateFlowMediaStreamInputBuilder {
         self.attributes = input;
         self
     }
+    /// The attributes that you want to assign to the media stream.
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::MediaStreamAttributesRequest> {
+        &self.attributes
+    }
     /// The sample rate (in Hz) for the stream. If the media stream type is video or ancillary data, set this value to 90000. If the media stream type is audio, set this value to either 48000 or 96000.
     pub fn clock_rate(mut self, input: i32) -> Self {
         self.clock_rate = ::std::option::Option::Some(input);
@@ -102,6 +108,10 @@ impl UpdateFlowMediaStreamInputBuilder {
     pub fn set_clock_rate(mut self, input: ::std::option::Option<i32>) -> Self {
         self.clock_rate = input;
         self
+    }
+    /// The sample rate (in Hz) for the stream. If the media stream type is video or ancillary data, set this value to 90000. If the media stream type is audio, set this value to either 48000 or 96000.
+    pub fn get_clock_rate(&self) -> &::std::option::Option<i32> {
+        &self.clock_rate
     }
     /// Description
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -113,6 +123,10 @@ impl UpdateFlowMediaStreamInputBuilder {
         self.description = input;
         self
     }
+    /// Description
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// The Amazon Resource Name (ARN) of the flow.
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_arn = ::std::option::Option::Some(input.into());
@@ -122,6 +136,10 @@ impl UpdateFlowMediaStreamInputBuilder {
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_arn = input;
         self
+    }
+    /// The Amazon Resource Name (ARN) of the flow.
+    pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_arn
     }
     /// The name of the media stream that you want to update.
     pub fn media_stream_name(
@@ -139,6 +157,10 @@ impl UpdateFlowMediaStreamInputBuilder {
         self.media_stream_name = input;
         self
     }
+    /// The name of the media stream that you want to update.
+    pub fn get_media_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.media_stream_name
+    }
     /// The type of media stream.
     pub fn media_stream_type(mut self, input: crate::types::MediaStreamType) -> Self {
         self.media_stream_type = ::std::option::Option::Some(input);
@@ -152,6 +174,10 @@ impl UpdateFlowMediaStreamInputBuilder {
         self.media_stream_type = input;
         self
     }
+    /// The type of media stream.
+    pub fn get_media_stream_type(&self) -> &::std::option::Option<crate::types::MediaStreamType> {
+        &self.media_stream_type
+    }
     /// The resolution of the video.
     pub fn video_format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.video_format = ::std::option::Option::Some(input.into());
@@ -161,6 +187,10 @@ impl UpdateFlowMediaStreamInputBuilder {
     pub fn set_video_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.video_format = input;
         self
+    }
+    /// The resolution of the video.
+    pub fn get_video_format(&self) -> &::std::option::Option<::std::string::String> {
+        &self.video_format
     }
     /// Consumes the builder and constructs a [`UpdateFlowMediaStreamInput`](crate::operation::update_flow_media_stream::UpdateFlowMediaStreamInput).
     pub fn build(

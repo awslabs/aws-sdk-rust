@@ -60,6 +60,10 @@ impl DeleteResourcePermissionInputBuilder {
         self.action_type = input;
         self
     }
+    /// <p>Delete or restore the permissions on the target database.</p>
+    pub fn get_action_type(&self) -> &::std::option::Option<crate::types::PermissionActionType> {
+        &self.action_type
+    }
     /// <p>The Amazon Resource Name (ARN) of the source resource.</p>
     pub fn source_resource_arn(
         mut self,
@@ -76,6 +80,10 @@ impl DeleteResourcePermissionInputBuilder {
         self.source_resource_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the source resource.</p>
+    pub fn get_source_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_resource_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
@@ -85,6 +93,10 @@ impl DeleteResourcePermissionInputBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// Consumes the builder and constructs a [`DeleteResourcePermissionInput`](crate::operation::delete_resource_permission::DeleteResourcePermissionInput).
     pub fn build(

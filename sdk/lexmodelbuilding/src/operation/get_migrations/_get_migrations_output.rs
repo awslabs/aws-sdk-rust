@@ -64,6 +64,12 @@ impl GetMigrationsOutputBuilder {
         self.migration_summaries = input;
         self
     }
+    /// <p>An array of summaries for migrations from Amazon Lex V1 to Amazon Lex V2. To see details of the migration, use the <code>migrationId</code> from the summary in a call to the operation.</p>
+    pub fn get_migration_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MigrationSummary>> {
+        &self.migration_summaries
+    }
     /// <p>If the response is truncated, it includes a pagination token that you can specify in your next request to fetch the next page of migrations.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -73,6 +79,10 @@ impl GetMigrationsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the response is truncated, it includes a pagination token that you can specify in your next request to fetch the next page of migrations.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

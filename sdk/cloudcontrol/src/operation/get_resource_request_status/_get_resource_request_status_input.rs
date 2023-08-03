@@ -51,6 +51,11 @@ impl GetResourceRequestStatusInputBuilder {
         self.request_token = input;
         self
     }
+    /// <p>A unique token used to track the progress of the resource operation request.</p>
+    /// <p>Request tokens are included in the <code>ProgressEvent</code> type returned by a resource operation request.</p>
+    pub fn get_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_token
+    }
     /// Consumes the builder and constructs a [`GetResourceRequestStatusInput`](crate::operation::get_resource_request_status::GetResourceRequestStatusInput).
     pub fn build(
         self,

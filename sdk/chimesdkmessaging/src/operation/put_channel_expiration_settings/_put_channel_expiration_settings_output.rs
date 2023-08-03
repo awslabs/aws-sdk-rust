@@ -54,6 +54,10 @@ impl PutChannelExpirationSettingsOutputBuilder {
         self.channel_arn = input;
         self
     }
+    /// <p>The channel ARN.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
+    }
     /// <p>Settings that control the interval after which a channel is deleted.</p>
     pub fn expiration_settings(mut self, input: crate::types::ExpirationSettings) -> Self {
         self.expiration_settings = ::std::option::Option::Some(input);
@@ -66,6 +70,12 @@ impl PutChannelExpirationSettingsOutputBuilder {
     ) -> Self {
         self.expiration_settings = input;
         self
+    }
+    /// <p>Settings that control the interval after which a channel is deleted.</p>
+    pub fn get_expiration_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExpirationSettings> {
+        &self.expiration_settings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

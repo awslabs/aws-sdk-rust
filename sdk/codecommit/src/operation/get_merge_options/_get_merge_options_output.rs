@@ -81,6 +81,12 @@ impl GetMergeOptionsOutputBuilder {
         self.merge_options = input;
         self
     }
+    /// <p>The merge option or strategy used to merge the code.</p>
+    pub fn get_merge_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MergeOptionTypeEnum>> {
+        &self.merge_options
+    }
     /// <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
     pub fn source_commit_id(
         mut self,
@@ -96,6 +102,10 @@ impl GetMergeOptionsOutputBuilder {
     ) -> Self {
         self.source_commit_id = input;
         self
+    }
+    /// <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
+    pub fn get_source_commit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_commit_id
     }
     /// <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
     pub fn destination_commit_id(
@@ -113,6 +123,10 @@ impl GetMergeOptionsOutputBuilder {
         self.destination_commit_id = input;
         self
     }
+    /// <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
+    pub fn get_destination_commit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_commit_id
+    }
     /// <p>The commit ID of the merge base.</p>
     pub fn base_commit_id(
         mut self,
@@ -128,6 +142,10 @@ impl GetMergeOptionsOutputBuilder {
     ) -> Self {
         self.base_commit_id = input;
         self
+    }
+    /// <p>The commit ID of the merge base.</p>
+    pub fn get_base_commit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.base_commit_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

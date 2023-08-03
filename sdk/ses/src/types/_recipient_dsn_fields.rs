@@ -104,6 +104,12 @@ impl RecipientDsnFieldsBuilder {
         self.final_recipient = input;
         self
     }
+    /// <p>The email address that the message was ultimately delivered to. This corresponds to the <code>Final-Recipient</code> in the DSN. If not specified, <code>FinalRecipient</code> will be set to the <code>Recipient</code> specified in the <code>BouncedRecipientInfo</code> structure. Either <code>FinalRecipient</code> or the recipient in <code>BouncedRecipientInfo</code> must be a recipient of the original bounced message.</p> <note>
+    /// <p>Do not prepend the <code>FinalRecipient</code> email address with <code>rfc 822;</code>, as described in <a href="https://tools.ietf.org/html/rfc3798">RFC 3798</a>.</p>
+    /// </note>
+    pub fn get_final_recipient(&self) -> &::std::option::Option<::std::string::String> {
+        &self.final_recipient
+    }
     /// <p>The action performed by the reporting mail transfer agent (MTA) as a result of its attempt to deliver the message to the recipient address. This is required by <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>.</p>
     pub fn action(mut self, input: crate::types::DsnAction) -> Self {
         self.action = ::std::option::Option::Some(input);
@@ -113,6 +119,10 @@ impl RecipientDsnFieldsBuilder {
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::DsnAction>) -> Self {
         self.action = input;
         self
+    }
+    /// <p>The action performed by the reporting mail transfer agent (MTA) as a result of its attempt to deliver the message to the recipient address. This is required by <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::DsnAction> {
+        &self.action
     }
     /// <p>The MTA to which the remote MTA attempted to deliver the message, formatted as specified in <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a> (<code>mta-name-type; mta-name</code>). This parameter typically applies only to propagating synchronous bounces.</p>
     pub fn remote_mta(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -124,6 +134,10 @@ impl RecipientDsnFieldsBuilder {
         self.remote_mta = input;
         self
     }
+    /// <p>The MTA to which the remote MTA attempted to deliver the message, formatted as specified in <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a> (<code>mta-name-type; mta-name</code>). This parameter typically applies only to propagating synchronous bounces.</p>
+    pub fn get_remote_mta(&self) -> &::std::option::Option<::std::string::String> {
+        &self.remote_mta
+    }
     /// <p>The status code that indicates what went wrong. This is required by <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -133,6 +147,10 @@ impl RecipientDsnFieldsBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status code that indicates what went wrong. This is required by <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>An extended explanation of what went wrong; this is usually an SMTP response. See <a href="https://tools.ietf.org/html/rfc3463">RFC 3463</a> for the correct formatting of this parameter.</p>
     pub fn diagnostic_code(
@@ -150,6 +168,10 @@ impl RecipientDsnFieldsBuilder {
         self.diagnostic_code = input;
         self
     }
+    /// <p>An extended explanation of what went wrong; this is usually an SMTP response. See <a href="https://tools.ietf.org/html/rfc3463">RFC 3463</a> for the correct formatting of this parameter.</p>
+    pub fn get_diagnostic_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.diagnostic_code
+    }
     /// <p>The time the final delivery attempt was made, in <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
     pub fn last_attempt_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_attempt_date = ::std::option::Option::Some(input);
@@ -162,6 +184,10 @@ impl RecipientDsnFieldsBuilder {
     ) -> Self {
         self.last_attempt_date = input;
         self
+    }
+    /// <p>The time the final delivery attempt was made, in <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
+    pub fn get_last_attempt_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_attempt_date
     }
     /// Appends an item to `extension_fields`.
     ///
@@ -181,6 +207,12 @@ impl RecipientDsnFieldsBuilder {
     ) -> Self {
         self.extension_fields = input;
         self
+    }
+    /// <p>Additional X-headers to include in the DSN.</p>
+    pub fn get_extension_fields(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExtensionField>> {
+        &self.extension_fields
     }
     /// Consumes the builder and constructs a [`RecipientDsnFields`](crate::types::RecipientDsnFields).
     pub fn build(self) -> crate::types::RecipientDsnFields {

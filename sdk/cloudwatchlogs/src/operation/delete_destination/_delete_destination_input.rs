@@ -46,6 +46,10 @@ impl DeleteDestinationInputBuilder {
         self.destination_name = input;
         self
     }
+    /// <p>The name of the destination.</p>
+    pub fn get_destination_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_name
+    }
     /// Consumes the builder and constructs a [`DeleteDestinationInput`](crate::operation::delete_destination::DeleteDestinationInput).
     pub fn build(
         self,

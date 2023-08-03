@@ -39,6 +39,10 @@ impl CreateAutoScalingConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateAutoScalingConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_auto_scaling_configuration::builders::CreateAutoScalingConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -115,6 +119,15 @@ impl CreateAutoScalingConfigurationFluentBuilder {
         self.inner = self.inner.set_auto_scaling_configuration_name(input);
         self
     }
+    /// <p>A name for the auto scaling configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p> <note>
+    /// <p>The name <code>DefaultConfiguration</code> is reserved (it's the configuration that App Runner uses if you don't provide a custome one). You can't use it to create a new auto scaling configuration, and you can't create a revision of it.</p>
+    /// <p>When you want to use your own auto scaling configuration for your App Runner service, <i>create a configuration with a different name</i>, and then provide it when you create or update your service.</p>
+    /// </note>
+    pub fn get_auto_scaling_configuration_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_auto_scaling_configuration_name()
+    }
     /// <p>The maximum number of concurrent requests that you want an instance to process. If the number of concurrent requests exceeds this limit, App Runner scales up your service.</p>
     /// <p>Default: <code>100</code> </p>
     pub fn max_concurrency(mut self, input: i32) -> Self {
@@ -126,6 +139,11 @@ impl CreateAutoScalingConfigurationFluentBuilder {
     pub fn set_max_concurrency(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_concurrency(input);
         self
+    }
+    /// <p>The maximum number of concurrent requests that you want an instance to process. If the number of concurrent requests exceeds this limit, App Runner scales up your service.</p>
+    /// <p>Default: <code>100</code> </p>
+    pub fn get_max_concurrency(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_concurrency()
     }
     /// <p>The minimum number of instances that App Runner provisions for your service. The service always has at least <code>MinSize</code> provisioned instances. Some of them actively serve traffic. The rest of them (provisioned and inactive instances) are a cost-effective compute capacity reserve and are ready to be quickly activated. You pay for memory usage of all the provisioned instances. You pay for CPU usage of only the active subset.</p>
     /// <p>App Runner temporarily doubles the number of provisioned instances during deployments, to maintain the same capacity for both old and new code.</p>
@@ -141,6 +159,12 @@ impl CreateAutoScalingConfigurationFluentBuilder {
         self.inner = self.inner.set_min_size(input);
         self
     }
+    /// <p>The minimum number of instances that App Runner provisions for your service. The service always has at least <code>MinSize</code> provisioned instances. Some of them actively serve traffic. The rest of them (provisioned and inactive instances) are a cost-effective compute capacity reserve and are ready to be quickly activated. You pay for memory usage of all the provisioned instances. You pay for CPU usage of only the active subset.</p>
+    /// <p>App Runner temporarily doubles the number of provisioned instances during deployments, to maintain the same capacity for both old and new code.</p>
+    /// <p>Default: <code>1</code> </p>
+    pub fn get_min_size(&self) -> &::std::option::Option<i32> {
+        self.inner.get_min_size()
+    }
     /// <p>The maximum number of instances that your service scales up to. At most <code>MaxSize</code> instances actively serve traffic for your service.</p>
     /// <p>Default: <code>25</code> </p>
     pub fn max_size(mut self, input: i32) -> Self {
@@ -152,6 +176,11 @@ impl CreateAutoScalingConfigurationFluentBuilder {
     pub fn set_max_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_size(input);
         self
+    }
+    /// <p>The maximum number of instances that your service scales up to. At most <code>MaxSize</code> instances actively serve traffic for your service.</p>
+    /// <p>Default: <code>25</code> </p>
+    pub fn get_max_size(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_size()
     }
     /// Appends an item to `Tags`.
     ///
@@ -169,5 +198,9 @@ impl CreateAutoScalingConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of metadata items that you can associate with your auto scaling configuration resource. A tag is a key-value pair.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

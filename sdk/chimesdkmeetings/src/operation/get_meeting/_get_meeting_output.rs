@@ -46,6 +46,10 @@ impl GetMeetingOutputBuilder {
         self.meeting = input;
         self
     }
+    /// <p>The Amazon Chime SDK meeting information.</p>
+    pub fn get_meeting(&self) -> &::std::option::Option<crate::types::Meeting> {
+        &self.meeting
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

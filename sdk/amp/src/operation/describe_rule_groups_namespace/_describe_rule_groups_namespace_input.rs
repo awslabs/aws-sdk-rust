@@ -48,6 +48,10 @@ impl DescribeRuleGroupsNamespaceInputBuilder {
         self.workspace_id = input;
         self
     }
+    /// The ID of the workspace to describe.
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
+    }
     /// The rule groups namespace.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl DescribeRuleGroupsNamespaceInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// The rule groups namespace.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`DescribeRuleGroupsNamespaceInput`](crate::operation::describe_rule_groups_namespace::DescribeRuleGroupsNamespaceInput).
     pub fn build(

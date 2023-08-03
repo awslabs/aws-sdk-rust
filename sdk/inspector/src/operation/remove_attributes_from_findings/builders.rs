@@ -36,6 +36,10 @@ impl RemoveAttributesFromFindingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RemoveAttributesFromFindings as a reference.
+    pub fn as_input(&self) -> &crate::operation::remove_attributes_from_findings::builders::RemoveAttributesFromFindingsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,12 @@ impl RemoveAttributesFromFindingsFluentBuilder {
         self.inner = self.inner.set_finding_arns(input);
         self
     }
+    /// <p>The ARNs that specify the findings that you want to remove attributes from.</p>
+    pub fn get_finding_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_finding_arns()
+    }
     /// Appends an item to `attributeKeys`.
     ///
     /// To override the contents of this collection use [`set_attribute_keys`](Self::set_attribute_keys).
@@ -152,5 +162,11 @@ impl RemoveAttributesFromFindingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_attribute_keys(input);
         self
+    }
+    /// <p>The array of attribute keys that you want to remove from specified findings.</p>
+    pub fn get_attribute_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_attribute_keys()
     }
 }

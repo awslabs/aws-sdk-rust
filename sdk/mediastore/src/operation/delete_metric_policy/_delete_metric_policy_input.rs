@@ -46,6 +46,10 @@ impl DeleteMetricPolicyInputBuilder {
         self.container_name = input;
         self
     }
+    /// <p>The name of the container that is associated with the metric policy that you want to delete.</p>
+    pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.container_name
+    }
     /// Consumes the builder and constructs a [`DeleteMetricPolicyInput`](crate::operation::delete_metric_policy::DeleteMetricPolicyInput).
     pub fn build(
         self,

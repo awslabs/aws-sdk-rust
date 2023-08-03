@@ -57,6 +57,10 @@ impl ListWorkflowExecutionsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum items to return in a request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl ListWorkflowExecutionsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>List all workflow runtime instances for the specified image build version resource ARN.</p>
     pub fn image_build_version_arn(
@@ -82,6 +90,10 @@ impl ListWorkflowExecutionsInputBuilder {
     ) -> Self {
         self.image_build_version_arn = input;
         self
+    }
+    /// <p>List all workflow runtime instances for the specified image build version resource ARN.</p>
+    pub fn get_image_build_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_build_version_arn
     }
     /// Consumes the builder and constructs a [`ListWorkflowExecutionsInput`](crate::operation::list_workflow_executions::ListWorkflowExecutionsInput).
     pub fn build(

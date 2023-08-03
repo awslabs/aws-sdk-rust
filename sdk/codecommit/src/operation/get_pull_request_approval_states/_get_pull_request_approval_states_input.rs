@@ -53,6 +53,10 @@ impl GetPullRequestApprovalStatesInputBuilder {
         self.pull_request_id = input;
         self
     }
+    /// <p>The system-generated ID for the pull request.</p>
+    pub fn get_pull_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pull_request_id
+    }
     /// <p>The system-generated ID for the pull request revision.</p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl GetPullRequestApprovalStatesInputBuilder {
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision_id = input;
         self
+    }
+    /// <p>The system-generated ID for the pull request revision.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision_id
     }
     /// Consumes the builder and constructs a [`GetPullRequestApprovalStatesInput`](crate::operation::get_pull_request_approval_states::GetPullRequestApprovalStatesInput).
     pub fn build(

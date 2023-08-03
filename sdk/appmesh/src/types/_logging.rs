@@ -40,6 +40,10 @@ impl LoggingBuilder {
         self.access_log = input;
         self
     }
+    /// <p>The access log configuration for a virtual node.</p>
+    pub fn get_access_log(&self) -> &::std::option::Option<crate::types::AccessLog> {
+        &self.access_log
+    }
     /// Consumes the builder and constructs a [`Logging`](crate::types::Logging).
     pub fn build(self) -> crate::types::Logging {
         crate::types::Logging {

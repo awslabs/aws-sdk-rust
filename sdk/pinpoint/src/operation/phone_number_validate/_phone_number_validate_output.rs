@@ -54,6 +54,12 @@ impl PhoneNumberValidateOutputBuilder {
         self.number_validate_response = input;
         self
     }
+    /// <p>Provides information about a phone number.</p>
+    pub fn get_number_validate_response(
+        &self,
+    ) -> &::std::option::Option<crate::types::NumberValidateResponse> {
+        &self.number_validate_response
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

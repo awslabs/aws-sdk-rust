@@ -37,6 +37,12 @@ impl StartMaintenanceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartMaintenance as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_maintenance::builders::StartMaintenanceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl StartMaintenanceFluentBuilder {
         self.inner = self.inner.set_server_name(input);
         self
     }
+    /// <p>The name of the server on which to run maintenance. </p>
+    pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_server_name()
+    }
     /// Appends an item to `EngineAttributes`.
     ///
     /// To override the contents of this collection use [`set_engine_attributes`](Self::set_engine_attributes).
@@ -151,5 +161,15 @@ impl StartMaintenanceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_engine_attributes(input);
         self
+    }
+    /// <p>Engine attributes that are specific to the server on which you want to run maintenance.</p>
+    /// <p class="title"> <b>Attributes accepted in a StartMaintenance request for Chef</b> </p>
+    /// <ul>
+    /// <li> <p> <code>CHEF_MAJOR_UPGRADE</code>: If a Chef Automate server is eligible for upgrade to Chef Automate 2, add this engine attribute to a <code>StartMaintenance</code> request and set the value to <code>true</code> to upgrade the server to Chef Automate 2. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opscm-a2upgrade.html">Upgrade an AWS OpsWorks for Chef Automate Server to Chef Automate 2</a>. </p> </li>
+    /// </ul>
+    pub fn get_engine_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>> {
+        self.inner.get_engine_attributes()
     }
 }

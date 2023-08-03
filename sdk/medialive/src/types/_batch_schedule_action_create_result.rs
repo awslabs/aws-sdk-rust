@@ -50,6 +50,12 @@ impl BatchScheduleActionCreateResultBuilder {
         self.schedule_actions = input;
         self
     }
+    /// List of actions that have been created in the schedule.
+    pub fn get_schedule_actions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduleAction>> {
+        &self.schedule_actions
+    }
     /// Consumes the builder and constructs a [`BatchScheduleActionCreateResult`](crate::types::BatchScheduleActionCreateResult).
     pub fn build(self) -> crate::types::BatchScheduleActionCreateResult {
         crate::types::BatchScheduleActionCreateResult {

@@ -120,6 +120,10 @@ impl CertificateBuilder {
         self.certificate_identifier = input;
         self
     }
+    /// <p>A customer-assigned name for the certificate. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
+    pub fn get_certificate_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_identifier
+    }
     /// <p>The date that the certificate was created.</p>
     pub fn certificate_creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.certificate_creation_date = ::std::option::Option::Some(input);
@@ -132,6 +136,12 @@ impl CertificateBuilder {
     ) -> Self {
         self.certificate_creation_date = input;
         self
+    }
+    /// <p>The date that the certificate was created.</p>
+    pub fn get_certificate_creation_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.certificate_creation_date
     }
     /// <p>The contents of a <code>.pem</code> file, which contains an X.509 certificate.</p>
     pub fn certificate_pem(
@@ -149,6 +159,10 @@ impl CertificateBuilder {
         self.certificate_pem = input;
         self
     }
+    /// <p>The contents of a <code>.pem</code> file, which contains an X.509 certificate.</p>
+    pub fn get_certificate_pem(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_pem
+    }
     /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code> </p>
     pub fn certificate_wallet(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.certificate_wallet = ::std::option::Option::Some(input);
@@ -161,6 +175,10 @@ impl CertificateBuilder {
     ) -> Self {
         self.certificate_wallet = input;
         self
+    }
+    /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code> </p>
+    pub fn get_certificate_wallet(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.certificate_wallet
     }
     /// <p>The Amazon Resource Name (ARN) for the certificate.</p>
     pub fn certificate_arn(
@@ -178,6 +196,10 @@ impl CertificateBuilder {
         self.certificate_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the certificate.</p>
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_arn
+    }
     /// <p>The owner of the certificate.</p>
     pub fn certificate_owner(
         mut self,
@@ -194,6 +216,10 @@ impl CertificateBuilder {
         self.certificate_owner = input;
         self
     }
+    /// <p>The owner of the certificate.</p>
+    pub fn get_certificate_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_owner
+    }
     /// <p>The beginning date that the certificate is valid.</p>
     pub fn valid_from_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.valid_from_date = ::std::option::Option::Some(input);
@@ -207,6 +233,10 @@ impl CertificateBuilder {
         self.valid_from_date = input;
         self
     }
+    /// <p>The beginning date that the certificate is valid.</p>
+    pub fn get_valid_from_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.valid_from_date
+    }
     /// <p>The final date that the certificate is valid.</p>
     pub fn valid_to_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.valid_to_date = ::std::option::Option::Some(input);
@@ -219,6 +249,10 @@ impl CertificateBuilder {
     ) -> Self {
         self.valid_to_date = input;
         self
+    }
+    /// <p>The final date that the certificate is valid.</p>
+    pub fn get_valid_to_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.valid_to_date
     }
     /// <p>The signing algorithm for the certificate.</p>
     pub fn signing_algorithm(
@@ -236,6 +270,10 @@ impl CertificateBuilder {
         self.signing_algorithm = input;
         self
     }
+    /// <p>The signing algorithm for the certificate.</p>
+    pub fn get_signing_algorithm(&self) -> &::std::option::Option<::std::string::String> {
+        &self.signing_algorithm
+    }
     /// <p>The key length of the cryptographic algorithm being used.</p>
     pub fn key_length(mut self, input: i32) -> Self {
         self.key_length = ::std::option::Option::Some(input);
@@ -245,6 +283,10 @@ impl CertificateBuilder {
     pub fn set_key_length(mut self, input: ::std::option::Option<i32>) -> Self {
         self.key_length = input;
         self
+    }
+    /// <p>The key length of the cryptographic algorithm being used.</p>
+    pub fn get_key_length(&self) -> &::std::option::Option<i32> {
+        &self.key_length
     }
     /// Consumes the builder and constructs a [`Certificate`](crate::types::Certificate).
     pub fn build(self) -> crate::types::Certificate {

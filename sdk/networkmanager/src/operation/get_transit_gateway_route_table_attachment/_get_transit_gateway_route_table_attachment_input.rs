@@ -45,6 +45,10 @@ impl GetTransitGatewayRouteTableAttachmentInputBuilder {
         self.attachment_id = input;
         self
     }
+    /// <p>The ID of the transit gateway route table attachment.</p>
+    pub fn get_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attachment_id
+    }
     /// Consumes the builder and constructs a [`GetTransitGatewayRouteTableAttachmentInput`](crate::operation::get_transit_gateway_route_table_attachment::GetTransitGatewayRouteTableAttachmentInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_transit_gateway_route_table_attachment::GetTransitGatewayRouteTableAttachmentInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

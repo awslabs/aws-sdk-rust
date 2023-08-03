@@ -36,6 +36,10 @@ impl ListRealtimeContactAnalysisSegmentsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListRealtimeContactAnalysisSegments as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_realtime_contact_analysis_segments::builders::ListRealtimeContactAnalysisSegmentsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl ListRealtimeContactAnalysisSegmentsFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The identifier of the Amazon Connect instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>The identifier of the contact.</p>
     pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.contact_id(input.into());
@@ -115,6 +123,10 @@ impl ListRealtimeContactAnalysisSegmentsFluentBuilder {
     pub fn set_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_contact_id(input);
         self
+    }
+    /// <p>The identifier of the contact.</p>
+    pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_contact_id()
     }
     /// <p>The maximimum number of results to return per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -126,6 +138,10 @@ impl ListRealtimeContactAnalysisSegmentsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximimum number of results to return per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -135,5 +151,9 @@ impl ListRealtimeContactAnalysisSegmentsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

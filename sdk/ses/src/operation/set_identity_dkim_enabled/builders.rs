@@ -42,6 +42,13 @@ impl SetIdentityDkimEnabledFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SetIdentityDkimEnabled as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::set_identity_dkim_enabled::builders::SetIdentityDkimEnabledInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl SetIdentityDkimEnabledFluentBuilder {
         self.inner = self.inner.set_identity(input);
         self
     }
+    /// <p>The identity for which DKIM signing should be enabled or disabled.</p>
+    pub fn get_identity(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity()
+    }
     /// <p>Sets whether DKIM signing is enabled for an identity. Set to <code>true</code> to enable DKIM signing for this identity; <code>false</code> to disable it. </p>
     pub fn dkim_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.dkim_enabled(input);
@@ -141,5 +152,9 @@ impl SetIdentityDkimEnabledFluentBuilder {
     pub fn set_dkim_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dkim_enabled(input);
         self
+    }
+    /// <p>Sets whether DKIM signing is enabled for an identity. Set to <code>true</code> to enable DKIM signing for this identity; <code>false</code> to disable it. </p>
+    pub fn get_dkim_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dkim_enabled()
     }
 }

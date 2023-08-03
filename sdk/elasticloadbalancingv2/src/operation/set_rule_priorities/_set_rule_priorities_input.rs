@@ -50,6 +50,12 @@ impl SetRulePrioritiesInputBuilder {
         self.rule_priorities = input;
         self
     }
+    /// <p>The rule priorities.</p>
+    pub fn get_rule_priorities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RulePriorityPair>> {
+        &self.rule_priorities
+    }
     /// Consumes the builder and constructs a [`SetRulePrioritiesInput`](crate::operation::set_rule_priorities::SetRulePrioritiesInput).
     pub fn build(
         self,

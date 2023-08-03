@@ -50,6 +50,12 @@ impl CreateFileSystemFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateFileSystem as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_file_system::builders::CreateFileSystemInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -146,6 +152,10 @@ impl CreateFileSystemFluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
+    /// <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
+    }
     /// <p>The type of Amazon FSx file system to create. Valid values are <code>WINDOWS</code>, <code>LUSTRE</code>, <code>ONTAP</code>, and <code>OPENZFS</code>.</p>
     pub fn file_system_type(mut self, input: crate::types::FileSystemType) -> Self {
         self.inner = self.inner.file_system_type(input);
@@ -158,6 +168,10 @@ impl CreateFileSystemFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_file_system_type(input);
         self
+    }
+    /// <p>The type of Amazon FSx file system to create. Valid values are <code>WINDOWS</code>, <code>LUSTRE</code>, <code>ONTAP</code>, and <code>OPENZFS</code>.</p>
+    pub fn get_file_system_type(&self) -> &::std::option::Option<crate::types::FileSystemType> {
+        self.inner.get_file_system_type()
     }
     /// <p>Sets the storage capacity of the file system that you're creating, in gibibytes (GiB).</p>
     /// <p> <b>FSx for Lustre file systems</b> - The amount of storage capacity that you can configure depends on the value that you set for <code>StorageType</code> and the Lustre <code>DeploymentType</code>, as follows:</p>
@@ -195,6 +209,23 @@ impl CreateFileSystemFluentBuilder {
         self.inner = self.inner.set_storage_capacity(input);
         self
     }
+    /// <p>Sets the storage capacity of the file system that you're creating, in gibibytes (GiB).</p>
+    /// <p> <b>FSx for Lustre file systems</b> - The amount of storage capacity that you can configure depends on the value that you set for <code>StorageType</code> and the Lustre <code>DeploymentType</code>, as follows:</p>
+    /// <ul>
+    /// <li> <p>For <code>SCRATCH_2</code>, <code>PERSISTENT_2</code> and <code>PERSISTENT_1</code> deployment types using SSD storage type, the valid values are 1200 GiB, 2400 GiB, and increments of 2400 GiB.</p> </li>
+    /// <li> <p>For <code>PERSISTENT_1</code> HDD file systems, valid values are increments of 6000 GiB for 12 MB/s/TiB file systems and increments of 1800 GiB for 40 MB/s/TiB file systems.</p> </li>
+    /// <li> <p>For <code>SCRATCH_1</code> deployment type, valid values are 1200 GiB, 2400 GiB, and increments of 3600 GiB.</p> </li>
+    /// </ul>
+    /// <p> <b>FSx for ONTAP file systems</b> - The amount of storage capacity that you can configure is from 1024 GiB up to 196,608 GiB (192 TiB).</p>
+    /// <p> <b>FSx for OpenZFS file systems</b> - The amount of storage capacity that you can configure is from 64 GiB up to 524,288 GiB (512 TiB).</p>
+    /// <p> <b>FSx for Windows File Server file systems</b> - The amount of storage capacity that you can configure depends on the value that you set for <code>StorageType</code> as follows:</p>
+    /// <ul>
+    /// <li> <p>For SSD storage, valid values are 32 GiB-65,536 GiB (64 TiB).</p> </li>
+    /// <li> <p>For HDD storage, valid values are 2000 GiB-65,536 GiB (64 TiB).</p> </li>
+    /// </ul>
+    pub fn get_storage_capacity(&self) -> &::std::option::Option<i32> {
+        self.inner.get_storage_capacity()
+    }
     /// <p>Sets the storage type for the file system that you're creating. Valid values are <code>SSD</code> and <code>HDD</code>.</p>
     /// <ul>
     /// <li> <p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows, Lustre, ONTAP, and OpenZFS deployment types.</p> </li>
@@ -218,6 +249,15 @@ impl CreateFileSystemFluentBuilder {
         self.inner = self.inner.set_storage_type(input);
         self
     }
+    /// <p>Sets the storage type for the file system that you're creating. Valid values are <code>SSD</code> and <code>HDD</code>.</p>
+    /// <ul>
+    /// <li> <p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows, Lustre, ONTAP, and OpenZFS deployment types.</p> </li>
+    /// <li> <p>Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> Windows file system deployment types, and on <code>PERSISTENT_1</code> Lustre file system deployment types. </p> </li>
+    /// </ul>
+    /// <p>Default value is <code>SSD</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options"> Storage type options</a> in the <i>FSx for Windows File Server User Guide</i> and <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html#storage-options">Multiple storage options</a> in the <i>FSx for Lustre User Guide</i>. </p>
+    pub fn get_storage_type(&self) -> &::std::option::Option<crate::types::StorageType> {
+        self.inner.get_storage_type()
+    }
     /// Appends an item to `SubnetIds`.
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
@@ -236,6 +276,11 @@ impl CreateFileSystemFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_subnet_ids(input);
         self
+    }
+    /// <p>Specifies the IDs of the subnets that the file system will be accessible from. For Windows and ONTAP <code>MULTI_AZ_1</code> deployment types,provide exactly two subnet IDs, one for the preferred file server and one for the standby file server. You specify one of these subnets as the preferred subnet using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> or <code>OntapConfiguration &gt; PreferredSubnetID</code> properties. For more information about Multi-AZ file system configuration, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html"> Availability and durability: Single-AZ and Multi-AZ file systems</a> in the <i>Amazon FSx for Windows User Guide</i> and <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html"> Availability and durability</a> in the <i>Amazon FSx for ONTAP User Guide</i>.</p>
+    /// <p>For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> and all Lustre deployment types, provide exactly one subnet ID. The file server is launched in that subnet's Availability Zone.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_subnet_ids()
     }
     /// Appends an item to `SecurityGroupIds`.
     ///
@@ -257,6 +302,12 @@ impl CreateFileSystemFluentBuilder {
         self.inner = self.inner.set_security_group_ids(input);
         self
     }
+    /// <p>A list of IDs specifying the security groups to apply to all network interfaces created for file system access. This list isn't returned in later requests to describe the file system.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_security_group_ids()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -273,6 +324,10 @@ impl CreateFileSystemFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags to apply to the file system that's being created. The key value of the <code>Name</code> tag appears in the console as the file system name.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
     /// <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on Amazon FSx file systems, as follows:</p>
     /// <ul>
@@ -298,6 +353,17 @@ impl CreateFileSystemFluentBuilder {
         self.inner = self.inner.set_kms_key_id(input);
         self
     }
+    /// <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on Amazon FSx file systems, as follows:</p>
+    /// <ul>
+    /// <li> <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p> <p> <code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p> </li>
+    /// <li> <p>Amazon FSx for NetApp ONTAP</p> </li>
+    /// <li> <p>Amazon FSx for OpenZFS</p> </li>
+    /// <li> <p>Amazon FSx for Windows File Server</p> </li>
+    /// </ul>
+    /// <p>If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key_id()
+    }
     /// <p>The Microsoft Windows configuration for the file system that's being created. </p>
     pub fn windows_configuration(
         mut self,
@@ -313,6 +379,12 @@ impl CreateFileSystemFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_windows_configuration(input);
         self
+    }
+    /// <p>The Microsoft Windows configuration for the file system that's being created. </p>
+    pub fn get_windows_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateFileSystemWindowsConfiguration> {
+        self.inner.get_windows_configuration()
     }
     /// <p>The Lustre configuration for the file system being created.</p> <note>
     /// <p>The following parameters are not supported for file systems with a data repository association created with .</p>
@@ -346,6 +418,20 @@ impl CreateFileSystemFluentBuilder {
         self.inner = self.inner.set_lustre_configuration(input);
         self
     }
+    /// <p>The Lustre configuration for the file system being created.</p> <note>
+    /// <p>The following parameters are not supported for file systems with a data repository association created with .</p>
+    /// <ul>
+    /// <li> <p> <code>AutoImportPolicy</code> </p> </li>
+    /// <li> <p> <code>ExportPath</code> </p> </li>
+    /// <li> <p> <code>ImportedChunkSize</code> </p> </li>
+    /// <li> <p> <code>ImportPath</code> </p> </li>
+    /// </ul>
+    /// </note>
+    pub fn get_lustre_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateFileSystemLustreConfiguration> {
+        self.inner.get_lustre_configuration()
+    }
     /// <p>The ONTAP configuration properties of the FSx for ONTAP file system that you are creating.</p>
     pub fn ontap_configuration(
         mut self,
@@ -361,6 +447,12 @@ impl CreateFileSystemFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ontap_configuration(input);
         self
+    }
+    /// <p>The ONTAP configuration properties of the FSx for ONTAP file system that you are creating.</p>
+    pub fn get_ontap_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateFileSystemOntapConfiguration> {
+        self.inner.get_ontap_configuration()
     }
     /// <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the file system that you're creating. Valid values are <code>2.10</code> and <code>2.12</code>:</p>
     /// <ul>
@@ -392,6 +484,17 @@ impl CreateFileSystemFluentBuilder {
         self.inner = self.inner.set_file_system_type_version(input);
         self
     }
+    /// <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the file system that you're creating. Valid values are <code>2.10</code> and <code>2.12</code>:</p>
+    /// <ul>
+    /// <li> <p>2.10 is supported by the Scratch and Persistent_1 Lustre deployment types.</p> </li>
+    /// <li> <p>2.12 is supported by all Lustre deployment types. <code>2.12</code> is required when setting FSx for Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li>
+    /// </ul>
+    /// <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p> <note>
+    /// <p>If you set <code>FileSystemTypeVersion</code> to <code>2.10</code> for a <code>PERSISTENT_2</code> Lustre deployment type, the <code>CreateFileSystem</code> operation fails.</p>
+    /// </note>
+    pub fn get_file_system_type_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_file_system_type_version()
+    }
     /// <p>The OpenZFS configuration for the file system that's being created.</p>
     pub fn open_zfs_configuration(
         mut self,
@@ -407,5 +510,11 @@ impl CreateFileSystemFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_open_zfs_configuration(input);
         self
+    }
+    /// <p>The OpenZFS configuration for the file system that's being created.</p>
+    pub fn get_open_zfs_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateFileSystemOpenZfsConfiguration> {
+        self.inner.get_open_zfs_configuration()
     }
 }

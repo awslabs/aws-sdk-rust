@@ -39,6 +39,10 @@ impl DeleteNamespaceInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the namespace that you want to delete.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`DeleteNamespaceInput`](crate::operation::delete_namespace::DeleteNamespaceInput).
     pub fn build(
         self,

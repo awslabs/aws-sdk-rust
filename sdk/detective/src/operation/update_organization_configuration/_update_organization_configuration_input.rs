@@ -47,6 +47,10 @@ impl UpdateOrganizationConfigurationInputBuilder {
         self.graph_arn = input;
         self
     }
+    /// <p>The ARN of the organization behavior graph.</p>
+    pub fn get_graph_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.graph_arn
+    }
     /// <p>Indicates whether to automatically enable new organization accounts as member accounts in the organization behavior graph.</p>
     pub fn auto_enable(mut self, input: bool) -> Self {
         self.auto_enable = ::std::option::Option::Some(input);
@@ -56,6 +60,10 @@ impl UpdateOrganizationConfigurationInputBuilder {
     pub fn set_auto_enable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_enable = input;
         self
+    }
+    /// <p>Indicates whether to automatically enable new organization accounts as member accounts in the organization behavior graph.</p>
+    pub fn get_auto_enable(&self) -> &::std::option::Option<bool> {
+        &self.auto_enable
     }
     /// Consumes the builder and constructs a [`UpdateOrganizationConfigurationInput`](crate::operation::update_organization_configuration::UpdateOrganizationConfigurationInput).
     pub fn build(

@@ -78,6 +78,10 @@ impl ImportVolumeTaskDetailsBuilder {
         self.availability_zone = input;
         self
     }
+    /// <p>The Availability Zone where the resulting volume will reside.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p>The number of bytes converted so far.</p>
     pub fn bytes_converted(mut self, input: i64) -> Self {
         self.bytes_converted = ::std::option::Option::Some(input);
@@ -88,6 +92,10 @@ impl ImportVolumeTaskDetailsBuilder {
         self.bytes_converted = input;
         self
     }
+    /// <p>The number of bytes converted so far.</p>
+    pub fn get_bytes_converted(&self) -> &::std::option::Option<i64> {
+        &self.bytes_converted
+    }
     /// <p>The description you provided when starting the import volume task.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -97,6 +105,10 @@ impl ImportVolumeTaskDetailsBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description you provided when starting the import volume task.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The image.</p>
     pub fn image(mut self, input: crate::types::DiskImageDescription) -> Self {
@@ -111,6 +123,10 @@ impl ImportVolumeTaskDetailsBuilder {
         self.image = input;
         self
     }
+    /// <p>The image.</p>
+    pub fn get_image(&self) -> &::std::option::Option<crate::types::DiskImageDescription> {
+        &self.image
+    }
     /// <p>The volume.</p>
     pub fn volume(mut self, input: crate::types::DiskImageVolumeDescription) -> Self {
         self.volume = ::std::option::Option::Some(input);
@@ -123,6 +139,10 @@ impl ImportVolumeTaskDetailsBuilder {
     ) -> Self {
         self.volume = input;
         self
+    }
+    /// <p>The volume.</p>
+    pub fn get_volume(&self) -> &::std::option::Option<crate::types::DiskImageVolumeDescription> {
+        &self.volume
     }
     /// Consumes the builder and constructs a [`ImportVolumeTaskDetails`](crate::types::ImportVolumeTaskDetails).
     pub fn build(self) -> crate::types::ImportVolumeTaskDetails {

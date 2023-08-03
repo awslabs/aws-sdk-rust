@@ -49,6 +49,10 @@ impl UpdateAssessmentControlSetStatusOutputBuilder {
         self.control_set = input;
         self
     }
+    /// <p> The name of the updated control set that the <code>UpdateAssessmentControlSetStatus</code> API returned. </p>
+    pub fn get_control_set(&self) -> &::std::option::Option<crate::types::AssessmentControlSet> {
+        &self.control_set
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

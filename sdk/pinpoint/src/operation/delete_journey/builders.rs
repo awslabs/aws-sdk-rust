@@ -36,6 +36,12 @@ impl DeleteJourneyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteJourney as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_journey::builders::DeleteJourneyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl DeleteJourneyFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>The unique identifier for the journey.</p>
     pub fn journey_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.journey_id(input.into());
@@ -133,5 +143,9 @@ impl DeleteJourneyFluentBuilder {
     pub fn set_journey_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_journey_id(input);
         self
+    }
+    /// <p>The unique identifier for the journey.</p>
+    pub fn get_journey_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_journey_id()
     }
 }

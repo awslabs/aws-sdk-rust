@@ -62,6 +62,10 @@ impl DomainValidationOptionBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>A fully qualified domain name (FQDN) in the certificate request.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The domain name that you want ACM to use to send you validation emails. This domain name is the suffix of the email addresses that you want ACM to use. This must be the same as the <code>DomainName</code> value or a superdomain of the <code>DomainName</code> value. For example, if you request a certificate for <code>testing.example.com</code>, you can specify <code>example.com</code> for this value. In that case, ACM sends domain validation emails to the following five addresses:</p>
     /// <ul>
     /// <li> <p>admin@example.com</p> </li>
@@ -91,6 +95,17 @@ impl DomainValidationOptionBuilder {
     ) -> Self {
         self.validation_domain = input;
         self
+    }
+    /// <p>The domain name that you want ACM to use to send you validation emails. This domain name is the suffix of the email addresses that you want ACM to use. This must be the same as the <code>DomainName</code> value or a superdomain of the <code>DomainName</code> value. For example, if you request a certificate for <code>testing.example.com</code>, you can specify <code>example.com</code> for this value. In that case, ACM sends domain validation emails to the following five addresses:</p>
+    /// <ul>
+    /// <li> <p>admin@example.com</p> </li>
+    /// <li> <p>administrator@example.com</p> </li>
+    /// <li> <p>hostmaster@example.com</p> </li>
+    /// <li> <p>postmaster@example.com</p> </li>
+    /// <li> <p>webmaster@example.com</p> </li>
+    /// </ul>
+    pub fn get_validation_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.validation_domain
     }
     /// Consumes the builder and constructs a [`DomainValidationOption`](crate::types::DomainValidationOption).
     pub fn build(self) -> crate::types::DomainValidationOption {

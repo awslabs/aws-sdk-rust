@@ -150,6 +150,10 @@ impl CreateBotOutputBuilder {
         self.bot_id = input;
         self
     }
+    /// <p>A unique identifier for a particular bot. You use this to identify the bot when you call other Amazon Lex API operations.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
+    }
     /// <p>The name specified for the bot.</p>
     pub fn bot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_name = ::std::option::Option::Some(input.into());
@@ -159,6 +163,10 @@ impl CreateBotOutputBuilder {
     pub fn set_bot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_name = input;
         self
+    }
+    /// <p>The name specified for the bot.</p>
+    pub fn get_bot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_name
     }
     /// <p>The description specified for the bot.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -170,6 +178,10 @@ impl CreateBotOutputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description specified for the bot.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The IAM role specified for the bot.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -179,6 +191,10 @@ impl CreateBotOutputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The IAM role specified for the bot.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The data privacy settings specified for the bot.</p>
     pub fn data_privacy(mut self, input: crate::types::DataPrivacy) -> Self {
@@ -193,6 +209,10 @@ impl CreateBotOutputBuilder {
         self.data_privacy = input;
         self
     }
+    /// <p>The data privacy settings specified for the bot.</p>
+    pub fn get_data_privacy(&self) -> &::std::option::Option<crate::types::DataPrivacy> {
+        &self.data_privacy
+    }
     /// <p>The session idle time specified for the bot.</p>
     pub fn idle_session_ttl_in_seconds(mut self, input: i32) -> Self {
         self.idle_session_ttl_in_seconds = ::std::option::Option::Some(input);
@@ -203,6 +223,10 @@ impl CreateBotOutputBuilder {
         self.idle_session_ttl_in_seconds = input;
         self
     }
+    /// <p>The session idle time specified for the bot.</p>
+    pub fn get_idle_session_ttl_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.idle_session_ttl_in_seconds
+    }
     /// <p>Shows the current status of the bot. The bot is first in the <code>Creating</code> status. Once the bot is read for use, it changes to the <code>Available</code> status. After the bot is created, you can use the <code>DRAFT</code> version of the bot.</p>
     pub fn bot_status(mut self, input: crate::types::BotStatus) -> Self {
         self.bot_status = ::std::option::Option::Some(input);
@@ -212,6 +236,10 @@ impl CreateBotOutputBuilder {
     pub fn set_bot_status(mut self, input: ::std::option::Option<crate::types::BotStatus>) -> Self {
         self.bot_status = input;
         self
+    }
+    /// <p>Shows the current status of the bot. The bot is first in the <code>Creating</code> status. Once the bot is read for use, it changes to the <code>Available</code> status. After the bot is created, you can use the <code>DRAFT</code> version of the bot.</p>
+    pub fn get_bot_status(&self) -> &::std::option::Option<crate::types::BotStatus> {
+        &self.bot_status
     }
     /// <p>A timestamp indicating the date and time that the bot was created.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -225,6 +253,10 @@ impl CreateBotOutputBuilder {
     ) -> Self {
         self.creation_date_time = input;
         self
+    }
+    /// <p>A timestamp indicating the date and time that the bot was created.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
     }
     /// Adds a key-value pair to `bot_tags`.
     ///
@@ -251,6 +283,14 @@ impl CreateBotOutputBuilder {
         self.bot_tags = input;
         self
     }
+    /// <p>A list of tags associated with the bot.</p>
+    pub fn get_bot_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.bot_tags
+    }
     /// Adds a key-value pair to `test_bot_alias_tags`.
     ///
     /// To override the contents of this collection use [`set_test_bot_alias_tags`](Self::set_test_bot_alias_tags).
@@ -276,6 +316,14 @@ impl CreateBotOutputBuilder {
         self.test_bot_alias_tags = input;
         self
     }
+    /// <p>A list of tags associated with the test alias for the bot.</p>
+    pub fn get_test_bot_alias_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.test_bot_alias_tags
+    }
     /// <p>The type of a bot that was created.</p>
     pub fn bot_type(mut self, input: crate::types::BotType) -> Self {
         self.bot_type = ::std::option::Option::Some(input);
@@ -285,6 +333,10 @@ impl CreateBotOutputBuilder {
     pub fn set_bot_type(mut self, input: ::std::option::Option<crate::types::BotType>) -> Self {
         self.bot_type = input;
         self
+    }
+    /// <p>The type of a bot that was created.</p>
+    pub fn get_bot_type(&self) -> &::std::option::Option<crate::types::BotType> {
+        &self.bot_type
     }
     /// Appends an item to `bot_members`.
     ///
@@ -304,6 +356,12 @@ impl CreateBotOutputBuilder {
     ) -> Self {
         self.bot_members = input;
         self
+    }
+    /// <p>The list of bots in a network that was created.</p>
+    pub fn get_bot_members(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BotMember>> {
+        &self.bot_members
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

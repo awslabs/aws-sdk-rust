@@ -36,6 +36,10 @@ impl UpdateApprovalRuleTemplateContentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateApprovalRuleTemplateContent as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_approval_rule_template_content::builders::UpdateApprovalRuleTemplateContentInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl UpdateApprovalRuleTemplateContentFluentBuilder {
         self.inner = self.inner.set_approval_rule_template_name(input);
         self
     }
+    /// <p>The name of the approval rule template where you want to update the content of the rule. </p>
+    pub fn get_approval_rule_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_approval_rule_template_name()
+    }
     /// <p>The content that replaces the existing content of the rule. Content statements must be complete. You cannot provide only the changes.</p>
     pub fn new_rule_content(
         mut self,
@@ -122,6 +130,10 @@ impl UpdateApprovalRuleTemplateContentFluentBuilder {
         self.inner = self.inner.set_new_rule_content(input);
         self
     }
+    /// <p>The content that replaces the existing content of the rule. Content statements must be complete. You cannot provide only the changes.</p>
+    pub fn get_new_rule_content(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_new_rule_content()
+    }
     /// <p>The SHA-256 hash signature for the content of the approval rule. You can retrieve this information by using <code>GetPullRequest</code>.</p>
     pub fn existing_rule_content_sha256(
         mut self,
@@ -137,5 +149,11 @@ impl UpdateApprovalRuleTemplateContentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_existing_rule_content_sha256(input);
         self
+    }
+    /// <p>The SHA-256 hash signature for the content of the approval rule. You can retrieve this information by using <code>GetPullRequest</code>.</p>
+    pub fn get_existing_rule_content_sha256(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_existing_rule_content_sha256()
     }
 }

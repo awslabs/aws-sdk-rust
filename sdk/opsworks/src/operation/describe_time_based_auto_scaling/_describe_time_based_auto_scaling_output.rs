@@ -67,6 +67,13 @@ impl DescribeTimeBasedAutoScalingOutputBuilder {
         self.time_based_auto_scaling_configurations = input;
         self
     }
+    /// <p>An array of <code>TimeBasedAutoScalingConfiguration</code> objects that describe the configuration for the specified instances.</p>
+    pub fn get_time_based_auto_scaling_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TimeBasedAutoScalingConfiguration>>
+    {
+        &self.time_based_auto_scaling_configurations
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

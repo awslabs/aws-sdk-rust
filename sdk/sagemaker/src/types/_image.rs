@@ -99,6 +99,10 @@ impl ImageBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>When the image was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The description of the image.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -109,6 +113,10 @@ impl ImageBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the image.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The name of the image as displayed.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -118,6 +126,10 @@ impl ImageBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
+    }
+    /// <p>The name of the image as displayed.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// <p>When a create, update, or delete operation fails, the reason for the failure.</p>
     pub fn failure_reason(
@@ -135,6 +147,10 @@ impl ImageBuilder {
         self.failure_reason = input;
         self
     }
+    /// <p>When a create, update, or delete operation fails, the reason for the failure.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
+    }
     /// <p>The ARN of the image.</p>
     pub fn image_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_arn = ::std::option::Option::Some(input.into());
@@ -145,6 +161,10 @@ impl ImageBuilder {
         self.image_arn = input;
         self
     }
+    /// <p>The ARN of the image.</p>
+    pub fn get_image_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_arn
+    }
     /// <p>The name of the image.</p>
     pub fn image_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_name = ::std::option::Option::Some(input.into());
@@ -154,6 +174,10 @@ impl ImageBuilder {
     pub fn set_image_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_name = input;
         self
+    }
+    /// <p>The name of the image.</p>
+    pub fn get_image_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_name
     }
     /// <p>The status of the image.</p>
     pub fn image_status(mut self, input: crate::types::ImageStatus) -> Self {
@@ -168,6 +192,10 @@ impl ImageBuilder {
         self.image_status = input;
         self
     }
+    /// <p>The status of the image.</p>
+    pub fn get_image_status(&self) -> &::std::option::Option<crate::types::ImageStatus> {
+        &self.image_status
+    }
     /// <p>When the image was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -180,6 +208,10 @@ impl ImageBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>When the image was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// Consumes the builder and constructs a [`Image`](crate::types::Image).
     pub fn build(self) -> crate::types::Image {

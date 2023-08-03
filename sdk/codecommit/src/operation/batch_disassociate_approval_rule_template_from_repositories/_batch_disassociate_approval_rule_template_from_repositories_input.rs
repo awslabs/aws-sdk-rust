@@ -57,6 +57,10 @@ impl BatchDisassociateApprovalRuleTemplateFromRepositoriesInputBuilder {
         self.approval_rule_template_name = input;
         self
     }
+    /// <p>The name of the template that you want to disassociate from one or more repositories.</p>
+    pub fn get_approval_rule_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.approval_rule_template_name
+    }
     /// Appends an item to `repository_names`.
     ///
     /// To override the contents of this collection use [`set_repository_names`](Self::set_repository_names).
@@ -82,6 +86,14 @@ impl BatchDisassociateApprovalRuleTemplateFromRepositoriesInputBuilder {
     ) -> Self {
         self.repository_names = input;
         self
+    }
+    /// <p>The repository names that you want to disassociate from the approval rule template.</p> <note>
+    /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>
+    /// </note>
+    pub fn get_repository_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.repository_names
     }
     /// Consumes the builder and constructs a [`BatchDisassociateApprovalRuleTemplateFromRepositoriesInput`](crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesInput, ::aws_smithy_http::operation::error::BuildError>{

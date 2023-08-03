@@ -64,6 +64,10 @@ impl ContactBuilder {
         self.contact_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
+    pub fn get_contact_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_arn
+    }
     /// <p>The unique and identifiable alias of the contact or escalation plan.</p>
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl ContactBuilder {
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alias = input;
         self
+    }
+    /// <p>The unique and identifiable alias of the contact or escalation plan.</p>
+    pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias
     }
     /// <p>The full name of the contact or escalation plan.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,6 +92,10 @@ impl ContactBuilder {
         self.display_name = input;
         self
     }
+    /// <p>The full name of the contact or escalation plan.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
+    }
     /// <p>Refers to the type of contact. A single contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
     pub fn r#type(mut self, input: crate::types::ContactType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl ContactBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ContactType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>Refers to the type of contact. A single contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ContactType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`Contact`](crate::types::Contact).
     pub fn build(self) -> crate::types::Contact {

@@ -89,6 +89,14 @@ impl ReferenceLineBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the reference line. Choose one of the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>ENABLE</code> </p> </li>
+    /// <li> <p> <code>DISABLE</code> </p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::WidgetStatus> {
+        &self.status
+    }
     /// <p>The data configuration of the reference line.</p>
     pub fn data_configuration(
         mut self,
@@ -104,6 +112,12 @@ impl ReferenceLineBuilder {
     ) -> Self {
         self.data_configuration = input;
         self
+    }
+    /// <p>The data configuration of the reference line.</p>
+    pub fn get_data_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReferenceLineDataConfiguration> {
+        &self.data_configuration
     }
     /// <p>The style configuration of the reference line.</p>
     pub fn style_configuration(
@@ -121,6 +135,12 @@ impl ReferenceLineBuilder {
         self.style_configuration = input;
         self
     }
+    /// <p>The style configuration of the reference line.</p>
+    pub fn get_style_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReferenceLineStyleConfiguration> {
+        &self.style_configuration
+    }
     /// <p>The label configuration of the reference line.</p>
     pub fn label_configuration(
         mut self,
@@ -136,6 +156,12 @@ impl ReferenceLineBuilder {
     ) -> Self {
         self.label_configuration = input;
         self
+    }
+    /// <p>The label configuration of the reference line.</p>
+    pub fn get_label_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReferenceLineLabelConfiguration> {
+        &self.label_configuration
     }
     /// Consumes the builder and constructs a [`ReferenceLine`](crate::types::ReferenceLine).
     pub fn build(self) -> crate::types::ReferenceLine {

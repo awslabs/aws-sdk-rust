@@ -48,6 +48,10 @@ impl SimpleEmailPartBuilder {
         self.charset = input;
         self
     }
+    /// <p>The applicable character set for the message content.</p>
+    pub fn get_charset(&self) -> &::std::option::Option<::std::string::String> {
+        &self.charset
+    }
     /// <p>The textual data of the message content.</p>
     pub fn data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl SimpleEmailPartBuilder {
     pub fn set_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data = input;
         self
+    }
+    /// <p>The textual data of the message content.</p>
+    pub fn get_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data
     }
     /// Consumes the builder and constructs a [`SimpleEmailPart`](crate::types::SimpleEmailPart).
     pub fn build(self) -> crate::types::SimpleEmailPart {

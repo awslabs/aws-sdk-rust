@@ -104,6 +104,10 @@ impl TemplateStepSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the step.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The ID of the step group.</p>
     pub fn step_group_id(
         mut self,
@@ -120,6 +124,10 @@ impl TemplateStepSummaryBuilder {
         self.step_group_id = input;
         self
     }
+    /// <p>The ID of the step group.</p>
+    pub fn get_step_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.step_group_id
+    }
     /// <p>The ID of the template.</p>
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_id = ::std::option::Option::Some(input.into());
@@ -130,6 +138,10 @@ impl TemplateStepSummaryBuilder {
         self.template_id = input;
         self
     }
+    /// <p>The ID of the template.</p>
+    pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_id
+    }
     /// <p>The name of the step.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -139,6 +151,10 @@ impl TemplateStepSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the step.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
     pub fn step_action_type(mut self, input: crate::types::StepActionType) -> Self {
@@ -153,6 +169,10 @@ impl TemplateStepSummaryBuilder {
         self.step_action_type = input;
         self
     }
+    /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
+    pub fn get_step_action_type(&self) -> &::std::option::Option<crate::types::StepActionType> {
+        &self.step_action_type
+    }
     /// <p>The servers on which to run the script.</p>
     pub fn target_type(mut self, input: crate::types::TargetType) -> Self {
         self.target_type = ::std::option::Option::Some(input);
@@ -166,6 +186,10 @@ impl TemplateStepSummaryBuilder {
         self.target_type = input;
         self
     }
+    /// <p>The servers on which to run the script.</p>
+    pub fn get_target_type(&self) -> &::std::option::Option<crate::types::TargetType> {
+        &self.target_type
+    }
     /// <p>The owner of the step.</p>
     pub fn owner(mut self, input: crate::types::Owner) -> Self {
         self.owner = ::std::option::Option::Some(input);
@@ -175,6 +199,10 @@ impl TemplateStepSummaryBuilder {
     pub fn set_owner(mut self, input: ::std::option::Option<crate::types::Owner>) -> Self {
         self.owner = input;
         self
+    }
+    /// <p>The owner of the step.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<crate::types::Owner> {
+        &self.owner
     }
     /// Appends an item to `previous`.
     ///
@@ -195,6 +223,10 @@ impl TemplateStepSummaryBuilder {
         self.previous = input;
         self
     }
+    /// <p>The previous step.</p>
+    pub fn get_previous(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.previous
+    }
     /// Appends an item to `next`.
     ///
     /// To override the contents of this collection use [`set_next`](Self::set_next).
@@ -213,6 +245,10 @@ impl TemplateStepSummaryBuilder {
     ) -> Self {
         self.next = input;
         self
+    }
+    /// <p>The next step.</p>
+    pub fn get_next(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.next
     }
     /// Consumes the builder and constructs a [`TemplateStepSummary`](crate::types::TemplateStepSummary).
     pub fn build(self) -> crate::types::TemplateStepSummary {

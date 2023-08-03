@@ -67,6 +67,12 @@ impl GetColumnStatisticsForPartitionOutputBuilder {
         self.column_statistics_list = input;
         self
     }
+    /// <p>List of ColumnStatistics that failed to be retrieved.</p>
+    pub fn get_column_statistics_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnStatistics>> {
+        &self.column_statistics_list
+    }
     /// Appends an item to `errors`.
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
@@ -85,6 +91,10 @@ impl GetColumnStatisticsForPartitionOutputBuilder {
     ) -> Self {
         self.errors = input;
         self
+    }
+    /// <p>Error occurred during retrieving column statistics data.</p>
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnError>> {
+        &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

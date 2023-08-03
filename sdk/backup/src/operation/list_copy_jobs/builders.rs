@@ -36,6 +36,12 @@ impl ListCopyJobsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListCopyJobs as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_copy_jobs::builders::ListCopyJobsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl ListCopyJobsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The next item following a partial list of returned items. For example, if a request is made to return maxResults number of items, NextToken allows you to return more items in your list starting at the location pointed to by the next token. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of items to be returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -138,6 +148,10 @@ impl ListCopyJobsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of items to be returned.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>Returns only copy jobs that match the specified resource Amazon Resource Name (ARN). </p>
     pub fn by_resource_arn(
@@ -155,6 +169,10 @@ impl ListCopyJobsFluentBuilder {
         self.inner = self.inner.set_by_resource_arn(input);
         self
     }
+    /// <p>Returns only copy jobs that match the specified resource Amazon Resource Name (ARN). </p>
+    pub fn get_by_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_by_resource_arn()
+    }
     /// <p>Returns only copy jobs that are in the specified state.</p>
     pub fn by_state(mut self, input: crate::types::CopyJobState) -> Self {
         self.inner = self.inner.by_state(input);
@@ -167,6 +185,10 @@ impl ListCopyJobsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_by_state(input);
         self
+    }
+    /// <p>Returns only copy jobs that are in the specified state.</p>
+    pub fn get_by_state(&self) -> &::std::option::Option<crate::types::CopyJobState> {
+        self.inner.get_by_state()
     }
     /// <p>Returns only copy jobs that were created before the specified date.</p>
     pub fn by_created_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -181,6 +203,10 @@ impl ListCopyJobsFluentBuilder {
         self.inner = self.inner.set_by_created_before(input);
         self
     }
+    /// <p>Returns only copy jobs that were created before the specified date.</p>
+    pub fn get_by_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_by_created_before()
+    }
     /// <p>Returns only copy jobs that were created after the specified date.</p>
     pub fn by_created_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.by_created_after(input);
@@ -193,6 +219,10 @@ impl ListCopyJobsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_by_created_after(input);
         self
+    }
+    /// <p>Returns only copy jobs that were created after the specified date.</p>
+    pub fn get_by_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_by_created_after()
     }
     /// <p>Returns only backup jobs for the specified resources:</p>
     /// <ul>
@@ -238,6 +268,24 @@ impl ListCopyJobsFluentBuilder {
         self.inner = self.inner.set_by_resource_type(input);
         self
     }
+    /// <p>Returns only backup jobs for the specified resources:</p>
+    /// <ul>
+    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+    /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
+    /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
+    /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
+    /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
+    /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+    /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
+    /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
+    /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+    /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
+    /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
+    /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
+    /// </ul>
+    pub fn get_by_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_by_resource_type()
+    }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy from; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>. </p>
     pub fn by_destination_vault_arn(
         mut self,
@@ -253,6 +301,10 @@ impl ListCopyJobsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_by_destination_vault_arn(input);
         self
+    }
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy from; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>. </p>
+    pub fn get_by_destination_vault_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_by_destination_vault_arn()
     }
     /// <p>The account ID to list the jobs from. Returns only copy jobs associated with the specified account ID.</p>
     pub fn by_account_id(
@@ -270,6 +322,10 @@ impl ListCopyJobsFluentBuilder {
         self.inner = self.inner.set_by_account_id(input);
         self
     }
+    /// <p>The account ID to list the jobs from. Returns only copy jobs associated with the specified account ID.</p>
+    pub fn get_by_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_by_account_id()
+    }
     /// <p>Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
     pub fn by_complete_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.by_complete_before(input);
@@ -283,6 +339,10 @@ impl ListCopyJobsFluentBuilder {
         self.inner = self.inner.set_by_complete_before(input);
         self
     }
+    /// <p>Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
+    pub fn get_by_complete_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_by_complete_before()
+    }
     /// <p>Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
     pub fn by_complete_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.by_complete_after(input);
@@ -295,6 +355,10 @@ impl ListCopyJobsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_by_complete_after(input);
         self
+    }
+    /// <p>Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
+    pub fn get_by_complete_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_by_complete_after()
     }
     /// <p>This is a filter to list child (nested) jobs based on parent job ID.</p>
     pub fn by_parent_job_id(
@@ -311,5 +375,9 @@ impl ListCopyJobsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_by_parent_job_id(input);
         self
+    }
+    /// <p>This is a filter to list child (nested) jobs based on parent job ID.</p>
+    pub fn get_by_parent_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_by_parent_job_id()
     }
 }

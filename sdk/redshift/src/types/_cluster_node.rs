@@ -56,6 +56,10 @@ impl ClusterNodeBuilder {
         self.node_role = input;
         self
     }
+    /// <p>Whether the node is a leader node or a compute node.</p>
+    pub fn get_node_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_role
+    }
     /// <p>The private IP address of a node within a cluster.</p>
     pub fn private_ip_address(
         mut self,
@@ -72,6 +76,10 @@ impl ClusterNodeBuilder {
         self.private_ip_address = input;
         self
     }
+    /// <p>The private IP address of a node within a cluster.</p>
+    pub fn get_private_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_ip_address
+    }
     /// <p>The public IP address of a node within a cluster.</p>
     pub fn public_ip_address(
         mut self,
@@ -87,6 +95,10 @@ impl ClusterNodeBuilder {
     ) -> Self {
         self.public_ip_address = input;
         self
+    }
+    /// <p>The public IP address of a node within a cluster.</p>
+    pub fn get_public_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_ip_address
     }
     /// Consumes the builder and constructs a [`ClusterNode`](crate::types::ClusterNode).
     pub fn build(self) -> crate::types::ClusterNode {

@@ -37,6 +37,13 @@ impl SendAlexaOfferToMasterFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SendAlexaOfferToMaster as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::send_alexa_offer_to_master::builders::SendAlexaOfferToMasterInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl SendAlexaOfferToMasterFluentBuilder {
         self.inner = self.inner.set_channel_arn(input);
         self
     }
+    /// <p>The ARN of the signaling channel by which Alexa and the master peer communicate.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_arn()
+    }
     /// <p>The unique identifier for the sender client.</p>
     pub fn sender_client_id(
         mut self,
@@ -143,6 +154,10 @@ impl SendAlexaOfferToMasterFluentBuilder {
         self.inner = self.inner.set_sender_client_id(input);
         self
     }
+    /// <p>The unique identifier for the sender client.</p>
+    pub fn get_sender_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sender_client_id()
+    }
     /// <p>The base64-encoded SDP offer content.</p>
     pub fn message_payload(
         mut self,
@@ -158,5 +173,9 @@ impl SendAlexaOfferToMasterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_message_payload(input);
         self
+    }
+    /// <p>The base64-encoded SDP offer content.</p>
+    pub fn get_message_payload(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_message_payload()
     }
 }

@@ -72,6 +72,13 @@ impl ImportAssetsFromRedshiftDataSharesResponseDetailsBuilder {
         self.asset_sources = input;
         self
     }
+    /// <p>A list of Amazon Redshift datashare asset sources.</p>
+    pub fn get_asset_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RedshiftDataShareAssetSourceEntry>>
+    {
+        &self.asset_sources
+    }
     /// <p>The unique identifier for the data set associated with this import job.</p>
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
@@ -82,6 +89,10 @@ impl ImportAssetsFromRedshiftDataSharesResponseDetailsBuilder {
         self.data_set_id = input;
         self
     }
+    /// <p>The unique identifier for the data set associated with this import job.</p>
+    pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_set_id
+    }
     /// <p>The unique identifier for the revision associated with this import job.</p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
@@ -91,6 +102,10 @@ impl ImportAssetsFromRedshiftDataSharesResponseDetailsBuilder {
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision_id = input;
         self
+    }
+    /// <p>The unique identifier for the revision associated with this import job.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision_id
     }
     /// Consumes the builder and constructs a [`ImportAssetsFromRedshiftDataSharesResponseDetails`](crate::types::ImportAssetsFromRedshiftDataSharesResponseDetails).
     pub fn build(self) -> crate::types::ImportAssetsFromRedshiftDataSharesResponseDetails {

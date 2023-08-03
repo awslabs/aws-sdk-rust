@@ -59,6 +59,10 @@ impl ImportReadSetFilterBuilder {
         self.status = input;
         self
     }
+    /// <p>A status to filter on.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ReadSetImportJobStatus> {
+        &self.status
+    }
     /// <p>The filter's start date.</p>
     pub fn created_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_after = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl ImportReadSetFilterBuilder {
         self.created_after = input;
         self
     }
+    /// <p>The filter's start date.</p>
+    pub fn get_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_after
+    }
     /// <p>The filter's end date.</p>
     pub fn created_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_before = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl ImportReadSetFilterBuilder {
     ) -> Self {
         self.created_before = input;
         self
+    }
+    /// <p>The filter's end date.</p>
+    pub fn get_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_before
     }
     /// Consumes the builder and constructs a [`ImportReadSetFilter`](crate::types::ImportReadSetFilter).
     pub fn build(self) -> crate::types::ImportReadSetFilter {

@@ -50,6 +50,10 @@ impl DeleteNetworkInterfaceInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>The ID of the network interface.</p>
     pub fn network_interface_id(
         mut self,
@@ -65,6 +69,10 @@ impl DeleteNetworkInterfaceInputBuilder {
     ) -> Self {
         self.network_interface_id = input;
         self
+    }
+    /// <p>The ID of the network interface.</p>
+    pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_interface_id
     }
     /// Consumes the builder and constructs a [`DeleteNetworkInterfaceInput`](crate::operation::delete_network_interface::DeleteNetworkInterfaceInput).
     pub fn build(

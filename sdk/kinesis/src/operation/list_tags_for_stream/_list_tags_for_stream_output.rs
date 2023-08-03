@@ -65,6 +65,10 @@ impl ListTagsForStreamOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>A list of tags associated with <code>StreamName</code>, starting with the first tag after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>. </p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>If set to <code>true</code>, more tags are available. To request additional tags, set <code>ExclusiveStartTagKey</code> to the key of the last tag returned.</p>
     pub fn has_more_tags(mut self, input: bool) -> Self {
         self.has_more_tags = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl ListTagsForStreamOutputBuilder {
     pub fn set_has_more_tags(mut self, input: ::std::option::Option<bool>) -> Self {
         self.has_more_tags = input;
         self
+    }
+    /// <p>If set to <code>true</code>, more tags are available. To request additional tags, set <code>ExclusiveStartTagKey</code> to the key of the last tag returned.</p>
+    pub fn get_has_more_tags(&self) -> &::std::option::Option<bool> {
+        &self.has_more_tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

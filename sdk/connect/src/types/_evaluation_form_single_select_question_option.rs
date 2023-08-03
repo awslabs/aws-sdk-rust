@@ -64,6 +64,10 @@ impl EvaluationFormSingleSelectQuestionOptionBuilder {
         self.ref_id = input;
         self
     }
+    /// <p>The identifier of the answer option. An identifier must be unique within the question.</p>
+    pub fn get_ref_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ref_id
+    }
     /// <p>The title of the answer option.</p>
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl EvaluationFormSingleSelectQuestionOptionBuilder {
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.text = input;
         self
+    }
+    /// <p>The title of the answer option.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
     }
     /// <p>The score assigned to the answer option.</p>
     pub fn score(mut self, input: i32) -> Self {
@@ -84,6 +92,10 @@ impl EvaluationFormSingleSelectQuestionOptionBuilder {
         self.score = input;
         self
     }
+    /// <p>The score assigned to the answer option.</p>
+    pub fn get_score(&self) -> &::std::option::Option<i32> {
+        &self.score
+    }
     /// <p>The flag to mark the option as automatic fail. If an automatic fail answer is provided, the overall evaluation gets a score of 0.</p>
     pub fn automatic_fail(mut self, input: bool) -> Self {
         self.automatic_fail = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl EvaluationFormSingleSelectQuestionOptionBuilder {
     pub fn set_automatic_fail(mut self, input: ::std::option::Option<bool>) -> Self {
         self.automatic_fail = input;
         self
+    }
+    /// <p>The flag to mark the option as automatic fail. If an automatic fail answer is provided, the overall evaluation gets a score of 0.</p>
+    pub fn get_automatic_fail(&self) -> &::std::option::Option<bool> {
+        &self.automatic_fail
     }
     /// Consumes the builder and constructs a [`EvaluationFormSingleSelectQuestionOption`](crate::types::EvaluationFormSingleSelectQuestionOption).
     pub fn build(self) -> crate::types::EvaluationFormSingleSelectQuestionOption {

@@ -52,6 +52,12 @@ impl DeleteDashboardsInputBuilder {
         self.dashboard_names = input;
         self
     }
+    /// <p>The dashboards to be deleted. This parameter is required.</p>
+    pub fn get_dashboard_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.dashboard_names
+    }
     /// Consumes the builder and constructs a [`DeleteDashboardsInput`](crate::operation::delete_dashboards::DeleteDashboardsInput).
     pub fn build(
         self,

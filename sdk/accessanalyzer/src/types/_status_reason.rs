@@ -40,6 +40,10 @@ impl StatusReasonBuilder {
         self.code = input;
         self
     }
+    /// <p>The reason code for the current status of the analyzer.</p>
+    pub fn get_code(&self) -> &::std::option::Option<crate::types::ReasonCode> {
+        &self.code
+    }
     /// Consumes the builder and constructs a [`StatusReason`](crate::types::StatusReason).
     pub fn build(self) -> crate::types::StatusReason {
         crate::types::StatusReason { code: self.code }

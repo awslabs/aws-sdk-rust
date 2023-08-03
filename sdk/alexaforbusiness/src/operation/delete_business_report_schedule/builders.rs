@@ -37,6 +37,10 @@ impl DeleteBusinessReportScheduleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteBusinessReportSchedule as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_business_report_schedule::builders::DeleteBusinessReportScheduleInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,5 +130,9 @@ impl DeleteBusinessReportScheduleFluentBuilder {
     pub fn set_schedule_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_schedule_arn(input);
         self
+    }
+    /// <p>The ARN of the business report schedule.</p>
+    pub fn get_schedule_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_schedule_arn()
     }
 }

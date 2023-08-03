@@ -83,6 +83,10 @@ impl ListPhoneNumbersInputBuilder {
         self.status = input;
         self
     }
+    /// <p>The phone number status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::PhoneNumberStatus> {
+        &self.status
+    }
     /// <p>The phone number product type.</p>
     pub fn product_type(mut self, input: crate::types::PhoneNumberProductType) -> Self {
         self.product_type = ::std::option::Option::Some(input);
@@ -95,6 +99,10 @@ impl ListPhoneNumbersInputBuilder {
     ) -> Self {
         self.product_type = input;
         self
+    }
+    /// <p>The phone number product type.</p>
+    pub fn get_product_type(&self) -> &::std::option::Option<crate::types::PhoneNumberProductType> {
+        &self.product_type
     }
     /// <p>The filter to use to limit the number of results.</p>
     pub fn filter_name(mut self, input: crate::types::PhoneNumberAssociationName) -> Self {
@@ -109,6 +117,12 @@ impl ListPhoneNumbersInputBuilder {
         self.filter_name = input;
         self
     }
+    /// <p>The filter to use to limit the number of results.</p>
+    pub fn get_filter_name(
+        &self,
+    ) -> &::std::option::Option<crate::types::PhoneNumberAssociationName> {
+        &self.filter_name
+    }
     /// <p>The value to use for the filter.</p>
     pub fn filter_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter_value = ::std::option::Option::Some(input.into());
@@ -118,6 +132,10 @@ impl ListPhoneNumbersInputBuilder {
     pub fn set_filter_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.filter_value = input;
         self
+    }
+    /// <p>The value to use for the filter.</p>
+    pub fn get_filter_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filter_value
     }
     /// <p>The maximum number of results to return in a single call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -129,6 +147,10 @@ impl ListPhoneNumbersInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to return in a single call.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token to use to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -138,6 +160,10 @@ impl ListPhoneNumbersInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token to use to retrieve the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListPhoneNumbersInput`](crate::operation::list_phone_numbers::ListPhoneNumbersInput).
     pub fn build(

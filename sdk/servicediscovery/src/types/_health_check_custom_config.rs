@@ -87,6 +87,17 @@ impl HealthCheckCustomConfigBuilder {
         self.failure_threshold = input;
         self
     }
+    /// <important>
+    /// <p>This parameter is no longer supported and is always set to 1. Cloud Map waits for approximately 30 seconds after receiving an <code>UpdateInstanceCustomHealthStatus</code> request before changing the status of the service instance.</p>
+    /// </important>
+    /// <p>The number of 30-second intervals that you want Cloud Map to wait after receiving an <code>UpdateInstanceCustomHealthStatus</code> request before it changes the health status of a service instance.</p>
+    /// <p>Sending a second or subsequent <code>UpdateInstanceCustomHealthStatus</code> request with the same value before 30 seconds has passed doesn't accelerate the change. Cloud Map still waits <code>30</code> seconds after the first request to make the change.</p>
+    #[deprecated(
+        note = "Configurable FailureThreshold of HealthCheckCustomConfig is deprecated.  It will always have value 1."
+    )]
+    pub fn get_failure_threshold(&self) -> &::std::option::Option<i32> {
+        &self.failure_threshold
+    }
     /// Consumes the builder and constructs a [`HealthCheckCustomConfig`](crate::types::HealthCheckCustomConfig).
     pub fn build(self) -> crate::types::HealthCheckCustomConfig {
         crate::types::HealthCheckCustomConfig {

@@ -54,6 +54,10 @@ impl ExternalEventsDetailBuilder {
         self.data_location = input;
         self
     }
+    /// <p>The Amazon S3 bucket location for the data.</p>
+    pub fn get_data_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_location
+    }
     /// <p>The ARN of the role that provides Amazon Fraud Detector access to the data location.</p>
     pub fn data_access_role_arn(
         mut self,
@@ -69,6 +73,10 @@ impl ExternalEventsDetailBuilder {
     ) -> Self {
         self.data_access_role_arn = input;
         self
+    }
+    /// <p>The ARN of the role that provides Amazon Fraud Detector access to the data location.</p>
+    pub fn get_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_access_role_arn
     }
     /// Consumes the builder and constructs a [`ExternalEventsDetail`](crate::types::ExternalEventsDetail).
     pub fn build(self) -> crate::types::ExternalEventsDetail {

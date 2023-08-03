@@ -60,6 +60,10 @@ impl HttpEndpointCommonAttributeBuilder {
         self.attribute_name = input;
         self
     }
+    /// <p>The name of the HTTP endpoint common attribute.</p>
+    pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_name
+    }
     /// <p>The value of the HTTP endpoint common attribute.</p>
     pub fn attribute_value(
         mut self,
@@ -75,6 +79,10 @@ impl HttpEndpointCommonAttributeBuilder {
     ) -> Self {
         self.attribute_value = input;
         self
+    }
+    /// <p>The value of the HTTP endpoint common attribute.</p>
+    pub fn get_attribute_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_value
     }
     /// Consumes the builder and constructs a [`HttpEndpointCommonAttribute`](crate::types::HttpEndpointCommonAttribute).
     pub fn build(self) -> crate::types::HttpEndpointCommonAttribute {

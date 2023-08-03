@@ -104,6 +104,10 @@ impl CdmaObjBuilder {
         self.system_id = input;
         self
     }
+    /// <p>CDMA system ID (SID).</p>
+    pub fn get_system_id(&self) -> &::std::option::Option<i32> {
+        &self.system_id
+    }
     /// <p>CDMA network ID (NID).</p>
     pub fn network_id(mut self, input: i32) -> Self {
         self.network_id = ::std::option::Option::Some(input);
@@ -113,6 +117,10 @@ impl CdmaObjBuilder {
     pub fn set_network_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.network_id = input;
         self
+    }
+    /// <p>CDMA network ID (NID).</p>
+    pub fn get_network_id(&self) -> &::std::option::Option<i32> {
+        &self.network_id
     }
     /// <p>CDMA base station ID (BSID).</p>
     pub fn base_station_id(mut self, input: i32) -> Self {
@@ -124,6 +132,10 @@ impl CdmaObjBuilder {
         self.base_station_id = input;
         self
     }
+    /// <p>CDMA base station ID (BSID).</p>
+    pub fn get_base_station_id(&self) -> &::std::option::Option<i32> {
+        &self.base_station_id
+    }
     /// <p>CDMA registration zone (RZ).</p>
     pub fn registration_zone(mut self, input: i32) -> Self {
         self.registration_zone = ::std::option::Option::Some(input);
@@ -133,6 +145,10 @@ impl CdmaObjBuilder {
     pub fn set_registration_zone(mut self, input: ::std::option::Option<i32>) -> Self {
         self.registration_zone = input;
         self
+    }
+    /// <p>CDMA registration zone (RZ).</p>
+    pub fn get_registration_zone(&self) -> &::std::option::Option<i32> {
+        &self.registration_zone
     }
     /// <p>CDMA local identification (local ID) parameters.</p>
     pub fn cdma_local_id(mut self, input: crate::types::CdmaLocalId) -> Self {
@@ -147,6 +163,10 @@ impl CdmaObjBuilder {
         self.cdma_local_id = input;
         self
     }
+    /// <p>CDMA local identification (local ID) parameters.</p>
+    pub fn get_cdma_local_id(&self) -> &::std::option::Option<crate::types::CdmaLocalId> {
+        &self.cdma_local_id
+    }
     /// <p>Transmit power level of the pilot signal, measured in dBm (decibel-milliwatts).</p>
     pub fn pilot_power(mut self, input: i32) -> Self {
         self.pilot_power = ::std::option::Option::Some(input);
@@ -156,6 +176,10 @@ impl CdmaObjBuilder {
     pub fn set_pilot_power(mut self, input: ::std::option::Option<i32>) -> Self {
         self.pilot_power = input;
         self
+    }
+    /// <p>Transmit power level of the pilot signal, measured in dBm (decibel-milliwatts).</p>
+    pub fn get_pilot_power(&self) -> &::std::option::Option<i32> {
+        &self.pilot_power
     }
     /// <p>CDMA base station latitude in degrees.</p>
     pub fn base_lat(mut self, input: f32) -> Self {
@@ -167,6 +191,10 @@ impl CdmaObjBuilder {
         self.base_lat = input;
         self
     }
+    /// <p>CDMA base station latitude in degrees.</p>
+    pub fn get_base_lat(&self) -> &::std::option::Option<f32> {
+        &self.base_lat
+    }
     /// <p>CDMA base station longitude in degrees.</p>
     pub fn base_lng(mut self, input: f32) -> Self {
         self.base_lng = ::std::option::Option::Some(input);
@@ -176,6 +204,10 @@ impl CdmaObjBuilder {
     pub fn set_base_lng(mut self, input: ::std::option::Option<f32>) -> Self {
         self.base_lng = input;
         self
+    }
+    /// <p>CDMA base station longitude in degrees.</p>
+    pub fn get_base_lng(&self) -> &::std::option::Option<f32> {
+        &self.base_lng
     }
     /// Appends an item to `cdma_nmr`.
     ///
@@ -195,6 +227,12 @@ impl CdmaObjBuilder {
     ) -> Self {
         self.cdma_nmr = input;
         self
+    }
+    /// <p>CDMA network measurement reports.</p>
+    pub fn get_cdma_nmr(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CdmaNmrObj>> {
+        &self.cdma_nmr
     }
     /// Consumes the builder and constructs a [`CdmaObj`](crate::types::CdmaObj).
     pub fn build(self) -> crate::types::CdmaObj {

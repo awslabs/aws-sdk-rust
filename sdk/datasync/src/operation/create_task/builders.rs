@@ -39,6 +39,10 @@ impl CreateTaskFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateTask as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_task::builders::CreateTaskInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl CreateTaskFluentBuilder {
         self.inner = self.inner.set_source_location_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the source location for the task.</p>
+    pub fn get_source_location_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_location_arn()
+    }
     /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services storage resource's location. </p>
     pub fn destination_location_arn(
         mut self,
@@ -142,6 +150,10 @@ impl CreateTaskFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_destination_location_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services storage resource's location. </p>
+    pub fn get_destination_location_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_location_arn()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor and log events in the task. </p>
     pub fn cloud_watch_log_group_arn(
@@ -159,6 +171,10 @@ impl CreateTaskFluentBuilder {
         self.inner = self.inner.set_cloud_watch_log_group_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor and log events in the task. </p>
+    pub fn get_cloud_watch_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cloud_watch_log_group_arn()
+    }
     /// <p>The name of a task. This value is a text reference that is used to identify the task in the console. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -168,6 +184,10 @@ impl CreateTaskFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of a task. This value is a text reference that is used to identify the task in the console. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>Specifies the configuration options for a task. Some options include preserving file or object metadata and verifying data integrity.</p>
     /// <p>You can also override these options before starting an individual run of a task (also known as a <i>task execution</i>). For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
@@ -180,6 +200,11 @@ impl CreateTaskFluentBuilder {
     pub fn set_options(mut self, input: ::std::option::Option<crate::types::Options>) -> Self {
         self.inner = self.inner.set_options(input);
         self
+    }
+    /// <p>Specifies the configuration options for a task. Some options include preserving file or object metadata and verifying data integrity.</p>
+    /// <p>You can also override these options before starting an individual run of a task (also known as a <i>task execution</i>). For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::Options> {
+        self.inner.get_options()
     }
     /// Appends an item to `Excludes`.
     ///
@@ -198,6 +223,12 @@ impl CreateTaskFluentBuilder {
         self.inner = self.inner.set_excludes(input);
         self
     }
+    /// <p>Specifies a list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
+    pub fn get_excludes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
+        self.inner.get_excludes()
+    }
     /// <p>Specifies a schedule used to periodically transfer files from a source to a destination location. The schedule should be specified in UTC time. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
     pub fn schedule(mut self, input: crate::types::TaskSchedule) -> Self {
         self.inner = self.inner.schedule(input);
@@ -210,6 +241,10 @@ impl CreateTaskFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_schedule(input);
         self
+    }
+    /// <p>Specifies a schedule used to periodically transfer files from a source to a destination location. The schedule should be specified in UTC time. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
+    pub fn get_schedule(&self) -> &::std::option::Option<crate::types::TaskSchedule> {
+        self.inner.get_schedule()
     }
     /// Appends an item to `Tags`.
     ///
@@ -230,6 +265,11 @@ impl CreateTaskFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task.</p>
+    /// <p> <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>> {
+        self.inner.get_tags()
+    }
     /// Appends an item to `Includes`.
     ///
     /// To override the contents of this collection use [`set_includes`](Self::set_includes).
@@ -246,5 +286,11 @@ impl CreateTaskFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_includes(input);
         self
+    }
+    /// <p>Specifies a list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
+    pub fn get_includes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
+        self.inner.get_includes()
     }
 }

@@ -71,6 +71,12 @@ impl WaitAndContinueSpecificationBuilder {
         self.waiting_response = input;
         self
     }
+    /// <p>The response that Amazon Lex sends to indicate that the bot is waiting for the conversation to continue.</p>
+    pub fn get_waiting_response(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResponseSpecification> {
+        &self.waiting_response
+    }
     /// <p>The response that Amazon Lex sends to indicate that the bot is ready to continue the conversation.</p>
     pub fn continue_response(mut self, input: crate::types::ResponseSpecification) -> Self {
         self.continue_response = ::std::option::Option::Some(input);
@@ -83,6 +89,12 @@ impl WaitAndContinueSpecificationBuilder {
     ) -> Self {
         self.continue_response = input;
         self
+    }
+    /// <p>The response that Amazon Lex sends to indicate that the bot is ready to continue the conversation.</p>
+    pub fn get_continue_response(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResponseSpecification> {
+        &self.continue_response
     }
     /// <p>A response that Amazon Lex sends periodically to the user to indicate that the bot is still waiting for input from the user.</p>
     pub fn still_waiting_response(
@@ -100,6 +112,12 @@ impl WaitAndContinueSpecificationBuilder {
         self.still_waiting_response = input;
         self
     }
+    /// <p>A response that Amazon Lex sends periodically to the user to indicate that the bot is still waiting for input from the user.</p>
+    pub fn get_still_waiting_response(
+        &self,
+    ) -> &::std::option::Option<crate::types::StillWaitingResponseSpecification> {
+        &self.still_waiting_response
+    }
     /// <p>Specifies whether the bot will wait for a user to respond. When this field is false, wait and continue responses for a slot aren't used. If the <code>active</code> field isn't specified, the default is true.</p>
     pub fn active(mut self, input: bool) -> Self {
         self.active = ::std::option::Option::Some(input);
@@ -109,6 +127,10 @@ impl WaitAndContinueSpecificationBuilder {
     pub fn set_active(mut self, input: ::std::option::Option<bool>) -> Self {
         self.active = input;
         self
+    }
+    /// <p>Specifies whether the bot will wait for a user to respond. When this field is false, wait and continue responses for a slot aren't used. If the <code>active</code> field isn't specified, the default is true.</p>
+    pub fn get_active(&self) -> &::std::option::Option<bool> {
+        &self.active
     }
     /// Consumes the builder and constructs a [`WaitAndContinueSpecification`](crate::types::WaitAndContinueSpecification).
     pub fn build(self) -> crate::types::WaitAndContinueSpecification {

@@ -40,6 +40,12 @@ impl DescribeClustersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeClusters as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_clusters::builders::DescribeClustersInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +146,12 @@ impl DescribeClustersFluentBuilder {
         self.inner = self.inner.set_cluster_names(input);
         self
     }
+    /// <p>The names of the DAX clusters being described.</p>
+    pub fn get_cluster_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_cluster_names()
+    }
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -152,6 +164,11 @@ impl DescribeClustersFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -161,5 +178,9 @@ impl DescribeClustersFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

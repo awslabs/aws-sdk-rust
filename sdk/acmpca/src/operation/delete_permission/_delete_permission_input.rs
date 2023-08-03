@@ -66,6 +66,11 @@ impl DeletePermissionInputBuilder {
         self.certificate_authority_arn = input;
         self
     }
+    /// <p>The Amazon Resource Number (ARN) of the private CA that issued the permissions. You can find the CA's ARN by calling the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. This must have the following form: </p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
+    pub fn get_certificate_authority_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_authority_arn
+    }
     /// <p>The Amazon Web Services service or identity that will have its CA permissions revoked. At this time, the only valid service principal is <code>acm.amazonaws.com</code> </p>
     pub fn principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal = ::std::option::Option::Some(input.into());
@@ -75,6 +80,10 @@ impl DeletePermissionInputBuilder {
     pub fn set_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal = input;
         self
+    }
+    /// <p>The Amazon Web Services service or identity that will have its CA permissions revoked. At this time, the only valid service principal is <code>acm.amazonaws.com</code> </p>
+    pub fn get_principal(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal
     }
     /// <p>The Amazon Web Services account that calls this action.</p>
     pub fn source_account(
@@ -91,6 +100,10 @@ impl DeletePermissionInputBuilder {
     ) -> Self {
         self.source_account = input;
         self
+    }
+    /// <p>The Amazon Web Services account that calls this action.</p>
+    pub fn get_source_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_account
     }
     /// Consumes the builder and constructs a [`DeletePermissionInput`](crate::operation::delete_permission::DeletePermissionInput).
     pub fn build(

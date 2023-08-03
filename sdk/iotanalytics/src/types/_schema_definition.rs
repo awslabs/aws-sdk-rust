@@ -53,6 +53,11 @@ impl SchemaDefinitionBuilder {
         self.columns = input;
         self
     }
+    /// <p>Specifies one or more columns that store your data.</p>
+    /// <p>Each schema can have up to 100 columns. Each column can have up to 100 nested types.</p>
+    pub fn get_columns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Column>> {
+        &self.columns
+    }
     /// Consumes the builder and constructs a [`SchemaDefinition`](crate::types::SchemaDefinition).
     pub fn build(self) -> crate::types::SchemaDefinition {
         crate::types::SchemaDefinition {

@@ -37,6 +37,12 @@ impl GetTrafficPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetTrafficPolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_traffic_policy::builders::GetTrafficPolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl GetTrafficPolicyFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The ID of the traffic policy that you want to get information about.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The version number of the traffic policy that you want to get information about.</p>
     pub fn version(mut self, input: i32) -> Self {
         self.inner = self.inner.version(input);
@@ -136,5 +146,9 @@ impl GetTrafficPolicyFluentBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_version(input);
         self
+    }
+    /// <p>The version number of the traffic policy that you want to get information about.</p>
+    pub fn get_version(&self) -> &::std::option::Option<i32> {
+        self.inner.get_version()
     }
 }

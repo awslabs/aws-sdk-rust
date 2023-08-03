@@ -48,6 +48,10 @@ impl EncryptionOptionsBuilder {
         self.kms_key_id = input;
         self
     }
+    /// <p>The customer master key (CMK) to use for the A KMS (KMS). This key is used to encrypt your data at rest. If not provided, Amazon MQ will use a default CMK to encrypt your data.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
+    }
     /// <p>Enables the use of an Amazon Web Services owned CMK using KMS (KMS). Set to true by default, if no value is provided, for example, for RabbitMQ brokers.</p>
     pub fn use_aws_owned_key(mut self, input: bool) -> Self {
         self.use_aws_owned_key = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl EncryptionOptionsBuilder {
     pub fn set_use_aws_owned_key(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_aws_owned_key = input;
         self
+    }
+    /// <p>Enables the use of an Amazon Web Services owned CMK using KMS (KMS). Set to true by default, if no value is provided, for example, for RabbitMQ brokers.</p>
+    pub fn get_use_aws_owned_key(&self) -> &::std::option::Option<bool> {
+        &self.use_aws_owned_key
     }
     /// Consumes the builder and constructs a [`EncryptionOptions`](crate::types::EncryptionOptions).
     pub fn build(self) -> crate::types::EncryptionOptions {

@@ -52,6 +52,10 @@ impl InstanceConfigurationBuilder {
         self.image = input;
         self
     }
+    /// <p>The AMI ID to use as the base image for a container build and test instance. If not specified, Image Builder will use the appropriate ECS-optimized AMI as a base image.</p>
+    pub fn get_image(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image
+    }
     /// Appends an item to `block_device_mappings`.
     ///
     /// To override the contents of this collection use [`set_block_device_mappings`](Self::set_block_device_mappings).
@@ -73,6 +77,12 @@ impl InstanceConfigurationBuilder {
     ) -> Self {
         self.block_device_mappings = input;
         self
+    }
+    /// <p>Defines the block devices to attach for building an instance from this Image Builder AMI.</p>
+    pub fn get_block_device_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>> {
+        &self.block_device_mappings
     }
     /// Consumes the builder and constructs a [`InstanceConfiguration`](crate::types::InstanceConfiguration).
     pub fn build(self) -> crate::types::InstanceConfiguration {

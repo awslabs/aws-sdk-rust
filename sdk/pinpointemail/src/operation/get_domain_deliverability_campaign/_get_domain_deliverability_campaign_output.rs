@@ -57,6 +57,12 @@ impl GetDomainDeliverabilityCampaignOutputBuilder {
         self.domain_deliverability_campaign = input;
         self
     }
+    /// <p>An object that contains the deliverability data for the campaign.</p>
+    pub fn get_domain_deliverability_campaign(
+        &self,
+    ) -> &::std::option::Option<crate::types::DomainDeliverabilityCampaign> {
+        &self.domain_deliverability_campaign
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

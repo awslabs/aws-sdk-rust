@@ -65,6 +65,12 @@ impl WorkerLogDeliveryDescriptionBuilder {
         self.cloud_watch_logs = input;
         self
     }
+    /// <p>Details about delivering logs to Amazon CloudWatch Logs.</p>
+    pub fn get_cloud_watch_logs(
+        &self,
+    ) -> &::std::option::Option<crate::types::CloudWatchLogsLogDeliveryDescription> {
+        &self.cloud_watch_logs
+    }
     /// <p>Details about delivering logs to Amazon Kinesis Data Firehose.</p>
     pub fn firehose(mut self, input: crate::types::FirehoseLogDeliveryDescription) -> Self {
         self.firehose = ::std::option::Option::Some(input);
@@ -78,6 +84,12 @@ impl WorkerLogDeliveryDescriptionBuilder {
         self.firehose = input;
         self
     }
+    /// <p>Details about delivering logs to Amazon Kinesis Data Firehose.</p>
+    pub fn get_firehose(
+        &self,
+    ) -> &::std::option::Option<crate::types::FirehoseLogDeliveryDescription> {
+        &self.firehose
+    }
     /// <p>Details about delivering logs to Amazon S3.</p>
     pub fn s3(mut self, input: crate::types::S3LogDeliveryDescription) -> Self {
         self.s3 = ::std::option::Option::Some(input);
@@ -90,6 +102,10 @@ impl WorkerLogDeliveryDescriptionBuilder {
     ) -> Self {
         self.s3 = input;
         self
+    }
+    /// <p>Details about delivering logs to Amazon S3.</p>
+    pub fn get_s3(&self) -> &::std::option::Option<crate::types::S3LogDeliveryDescription> {
+        &self.s3
     }
     /// Consumes the builder and constructs a [`WorkerLogDeliveryDescription`](crate::types::WorkerLogDeliveryDescription).
     pub fn build(self) -> crate::types::WorkerLogDeliveryDescription {

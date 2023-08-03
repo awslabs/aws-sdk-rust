@@ -56,6 +56,10 @@ impl PutEventsOutputBuilder {
         self.failed_entry_count = input;
         self
     }
+    /// <p>The number of failed entries.</p>
+    pub fn get_failed_entry_count(&self) -> &::std::option::Option<i32> {
+        &self.failed_entry_count
+    }
     /// Appends an item to `entries`.
     ///
     /// To override the contents of this collection use [`set_entries`](Self::set_entries).
@@ -76,6 +80,13 @@ impl PutEventsOutputBuilder {
     ) -> Self {
         self.entries = input;
         self
+    }
+    /// <p>The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.</p>
+    /// <p>For each record, the index of the response element is the same as the index in the request array.</p>
+    pub fn get_entries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PutEventsResultEntry>> {
+        &self.entries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

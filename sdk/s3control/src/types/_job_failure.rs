@@ -48,6 +48,10 @@ impl JobFailureBuilder {
         self.failure_code = input;
         self
     }
+    /// <p>The failure code, if any, for the specified job.</p>
+    pub fn get_failure_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_code
+    }
     /// <p>The failure reason, if any, for the specified job.</p>
     pub fn failure_reason(
         mut self,
@@ -63,6 +67,10 @@ impl JobFailureBuilder {
     ) -> Self {
         self.failure_reason = input;
         self
+    }
+    /// <p>The failure reason, if any, for the specified job.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
     }
     /// Consumes the builder and constructs a [`JobFailure`](crate::types::JobFailure).
     pub fn build(self) -> crate::types::JobFailure {

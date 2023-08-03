@@ -67,6 +67,10 @@ impl EquipmentDetectionBuilder {
         self.bounding_box = input;
         self
     }
+    /// <p>A bounding box surrounding the item of detected PPE.</p>
+    pub fn get_bounding_box(&self) -> &::std::option::Option<crate::types::BoundingBox> {
+        &self.bounding_box
+    }
     /// <p>The confidence that Amazon Rekognition has that the bounding box (<code>BoundingBox</code>) contains an item of PPE.</p>
     pub fn confidence(mut self, input: f32) -> Self {
         self.confidence = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl EquipmentDetectionBuilder {
     pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
         self.confidence = input;
         self
+    }
+    /// <p>The confidence that Amazon Rekognition has that the bounding box (<code>BoundingBox</code>) contains an item of PPE.</p>
+    pub fn get_confidence(&self) -> &::std::option::Option<f32> {
+        &self.confidence
     }
     /// <p>The type of detected PPE.</p>
     pub fn r#type(mut self, input: crate::types::ProtectiveEquipmentType) -> Self {
@@ -90,6 +98,10 @@ impl EquipmentDetectionBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of detected PPE.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ProtectiveEquipmentType> {
+        &self.r#type
+    }
     /// <p>Information about the body part covered by the detected PPE.</p>
     pub fn covers_body_part(mut self, input: crate::types::CoversBodyPart) -> Self {
         self.covers_body_part = ::std::option::Option::Some(input);
@@ -102,6 +114,10 @@ impl EquipmentDetectionBuilder {
     ) -> Self {
         self.covers_body_part = input;
         self
+    }
+    /// <p>Information about the body part covered by the detected PPE.</p>
+    pub fn get_covers_body_part(&self) -> &::std::option::Option<crate::types::CoversBodyPart> {
+        &self.covers_body_part
     }
     /// Consumes the builder and constructs a [`EquipmentDetection`](crate::types::EquipmentDetection).
     pub fn build(self) -> crate::types::EquipmentDetection {

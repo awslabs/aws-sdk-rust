@@ -52,6 +52,10 @@ impl AggregateStatusBuilder {
         self.status = input;
         self
     }
+    /// <p>Aggregate status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AgentStatus> {
+        &self.status
+    }
     /// Adds a key-value pair to `signature_map`.
     ///
     /// To override the contents of this collection use [`set_signature_map`](Self::set_signature_map).
@@ -74,6 +78,12 @@ impl AggregateStatusBuilder {
     ) -> Self {
         self.signature_map = input;
         self
+    }
+    /// <p>Sparse map of failure signatures.</p>
+    pub fn get_signature_map(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, bool>> {
+        &self.signature_map
     }
     /// Consumes the builder and constructs a [`AggregateStatus`](crate::types::AggregateStatus).
     pub fn build(self) -> crate::types::AggregateStatus {

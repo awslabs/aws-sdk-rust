@@ -78,6 +78,10 @@ impl QueryDefinitionBuilder {
         self.query_definition_id = input;
         self
     }
+    /// <p>The unique ID of the query definition.</p>
+    pub fn get_query_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_definition_id
+    }
     /// <p>The name of the query definition.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -87,6 +91,10 @@ impl QueryDefinitionBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the query definition.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The query string to use for this definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -98,6 +106,10 @@ impl QueryDefinitionBuilder {
         self.query_string = input;
         self
     }
+    /// <p>The query string to use for this definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
+    pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_string
+    }
     /// <p>The date that the query definition was most recently modified.</p>
     pub fn last_modified(mut self, input: i64) -> Self {
         self.last_modified = ::std::option::Option::Some(input);
@@ -107,6 +119,10 @@ impl QueryDefinitionBuilder {
     pub fn set_last_modified(mut self, input: ::std::option::Option<i64>) -> Self {
         self.last_modified = input;
         self
+    }
+    /// <p>The date that the query definition was most recently modified.</p>
+    pub fn get_last_modified(&self) -> &::std::option::Option<i64> {
+        &self.last_modified
     }
     /// Appends an item to `log_group_names`.
     ///
@@ -129,6 +145,12 @@ impl QueryDefinitionBuilder {
     ) -> Self {
         self.log_group_names = input;
         self
+    }
+    /// <p>If this query definition contains a list of log groups that it is limited to, that list appears here.</p>
+    pub fn get_log_group_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.log_group_names
     }
     /// Consumes the builder and constructs a [`QueryDefinition`](crate::types::QueryDefinition).
     pub fn build(self) -> crate::types::QueryDefinition {

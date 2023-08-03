@@ -55,6 +55,10 @@ impl TagResourceInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The ARN of the resource the tag is associated with.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -79,6 +83,14 @@ impl TagResourceInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The list of tag keys and values to associate with the resource. You can associate tag keys only, tags (key and values) only or a combination of tag keys and tags.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`TagResourceInput`](crate::operation::tag_resource::TagResourceInput).
     pub fn build(

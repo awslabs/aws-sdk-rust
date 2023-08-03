@@ -36,6 +36,10 @@ impl ListLensesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListLenses as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_lenses::builders::ListLensesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl ListLensesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token to use to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return for this request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -134,6 +142,10 @@ impl ListLensesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return for this request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The type of lenses to be returned.</p>
     pub fn lens_type(mut self, input: crate::types::LensType) -> Self {
         self.inner = self.inner.lens_type(input);
@@ -143,6 +155,10 @@ impl ListLensesFluentBuilder {
     pub fn set_lens_type(mut self, input: ::std::option::Option<crate::types::LensType>) -> Self {
         self.inner = self.inner.set_lens_type(input);
         self
+    }
+    /// <p>The type of lenses to be returned.</p>
+    pub fn get_lens_type(&self) -> &::std::option::Option<crate::types::LensType> {
+        self.inner.get_lens_type()
     }
     /// <p>The status of lenses to be returned.</p>
     pub fn lens_status(mut self, input: crate::types::LensStatusType) -> Self {
@@ -157,6 +173,10 @@ impl ListLensesFluentBuilder {
         self.inner = self.inner.set_lens_status(input);
         self
     }
+    /// <p>The status of lenses to be returned.</p>
+    pub fn get_lens_status(&self) -> &::std::option::Option<crate::types::LensStatusType> {
+        self.inner.get_lens_status()
+    }
     /// <p>The full name of the lens.</p>
     pub fn lens_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.lens_name(input.into());
@@ -166,5 +186,9 @@ impl ListLensesFluentBuilder {
     pub fn set_lens_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_lens_name(input);
         self
+    }
+    /// <p>The full name of the lens.</p>
+    pub fn get_lens_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_lens_name()
     }
 }

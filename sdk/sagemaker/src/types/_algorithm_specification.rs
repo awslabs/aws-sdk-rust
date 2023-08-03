@@ -164,6 +164,13 @@ impl AlgorithmSpecificationBuilder {
         self.training_image = input;
         self
     }
+    /// <p>The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for SageMaker built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Docker Registry Paths and Example Code</a> in the <i>Amazon SageMaker developer guide</i>. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information about using your custom training container, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>.</p> <note>
+    /// <p>You must specify either the algorithm name to the <code>AlgorithmName</code> parameter or the image URI of the algorithm container to the <code>TrainingImage</code> parameter.</p>
+    /// <p>For more information, see the note in the <code>AlgorithmName</code> parameter description.</p>
+    /// </note>
+    pub fn get_training_image(&self) -> &::std::option::Option<::std::string::String> {
+        &self.training_image
+    }
     /// <p>The name of the algorithm resource to use for the training job. This must be an algorithm resource that you created or subscribe to on Amazon Web Services Marketplace.</p> <note>
     /// <p>You must specify either the algorithm name to the <code>AlgorithmName</code> parameter or the image URI of the algorithm container to the <code>TrainingImage</code> parameter.</p>
     /// <p>Note that the <code>AlgorithmName</code> parameter is mutually exclusive with the <code>TrainingImage</code> parameter. If you specify a value for the <code>AlgorithmName</code> parameter, you can't specify a value for <code>TrainingImage</code>, and vice versa.</p>
@@ -187,6 +194,14 @@ impl AlgorithmSpecificationBuilder {
     ) -> Self {
         self.algorithm_name = input;
         self
+    }
+    /// <p>The name of the algorithm resource to use for the training job. This must be an algorithm resource that you created or subscribe to on Amazon Web Services Marketplace.</p> <note>
+    /// <p>You must specify either the algorithm name to the <code>AlgorithmName</code> parameter or the image URI of the algorithm container to the <code>TrainingImage</code> parameter.</p>
+    /// <p>Note that the <code>AlgorithmName</code> parameter is mutually exclusive with the <code>TrainingImage</code> parameter. If you specify a value for the <code>AlgorithmName</code> parameter, you can't specify a value for <code>TrainingImage</code>, and vice versa.</p>
+    /// <p>If you specify values for both parameters, the training job might break; if you don't specify any value for both parameters, the training job might raise a <code>null</code> error.</p>
+    /// </note>
+    pub fn get_algorithm_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.algorithm_name
     }
     /// <p>The training input mode that the algorithm supports. For more information about input modes, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.</p>
     /// <p> <b>Pipe mode</b> </p>
@@ -219,6 +234,21 @@ impl AlgorithmSpecificationBuilder {
         self.training_input_mode = input;
         self
     }
+    /// <p>The training input mode that the algorithm supports. For more information about input modes, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.</p>
+    /// <p> <b>Pipe mode</b> </p>
+    /// <p>If an algorithm supports <code>Pipe</code> mode, Amazon SageMaker streams data directly from Amazon S3 to the container.</p>
+    /// <p> <b>File mode</b> </p>
+    /// <p>If an algorithm supports <code>File</code> mode, SageMaker downloads the training data from S3 to the provisioned ML storage volume, and mounts the directory to the Docker volume for the training container.</p>
+    /// <p>You must provision the ML storage volume with sufficient capacity to accommodate the data downloaded from S3. In addition to the training data, the ML storage volume also stores the output model. The algorithm container uses the ML storage volume to also store intermediate information, if any.</p>
+    /// <p>For distributed algorithms, training data is distributed uniformly. Your training duration is predictable if the input data objects sizes are approximately the same. SageMaker does not split the files any further for model training. If the object sizes are skewed, training won't be optimal as the data distribution is also skewed when one host in a training cluster is overloaded, thus becoming a bottleneck in training.</p>
+    /// <p> <b>FastFile mode</b> </p>
+    /// <p>If an algorithm supports <code>FastFile</code> mode, SageMaker streams data directly from S3 to the container with no code changes, and provides file system access to the data. Users can author their training script to interact with these files as if they were stored on disk.</p>
+    /// <p> <code>FastFile</code> mode works best when the data is read sequentially. Augmented manifest files aren't supported. The startup time is lower when there are fewer files in the S3 bucket provided.</p>
+    pub fn get_training_input_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::TrainingInputMode> {
+        &self.training_input_mode
+    }
     /// Appends an item to `metric_definitions`.
     ///
     /// To override the contents of this collection use [`set_metric_definitions`](Self::set_metric_definitions).
@@ -237,6 +267,12 @@ impl AlgorithmSpecificationBuilder {
     ) -> Self {
         self.metric_definitions = input;
         self
+    }
+    /// <p>A list of metric definition objects. Each object specifies the metric name and regular expressions used to parse algorithm logs. SageMaker publishes each metric to Amazon CloudWatch.</p>
+    pub fn get_metric_definitions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDefinition>> {
+        &self.metric_definitions
     }
     /// <p>To generate and save time-series metrics during training, set to <code>true</code>. The default is <code>false</code> and time-series metrics aren't generated except in the following cases:</p>
     /// <ul>
@@ -271,6 +307,20 @@ impl AlgorithmSpecificationBuilder {
         self.enable_sage_maker_metrics_time_series = input;
         self
     }
+    /// <p>To generate and save time-series metrics during training, set to <code>true</code>. The default is <code>false</code> and time-series metrics aren't generated except in the following cases:</p>
+    /// <ul>
+    /// <li> <p>You use one of the SageMaker built-in algorithms</p> </li>
+    /// <li> <p>You use one of the following <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pre-built-containers-frameworks-deep-learning.html">Prebuilt SageMaker Docker Images</a>:</p>
+    /// <ul>
+    /// <li> <p>Tensorflow (version &gt;= 1.15)</p> </li>
+    /// <li> <p>MXNet (version &gt;= 1.6)</p> </li>
+    /// <li> <p>PyTorch (version &gt;= 1.3)</p> </li>
+    /// </ul> </li>
+    /// <li> <p>You specify at least one <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MetricDefinition.html">MetricDefinition</a> </p> </li>
+    /// </ul>
+    pub fn get_enable_sage_maker_metrics_time_series(&self) -> &::std::option::Option<bool> {
+        &self.enable_sage_maker_metrics_time_series
+    }
     /// Appends an item to `container_entrypoint`.
     ///
     /// To override the contents of this collection use [`set_container_entrypoint`](Self::set_container_entrypoint).
@@ -292,6 +342,12 @@ impl AlgorithmSpecificationBuilder {
     ) -> Self {
         self.container_entrypoint = input;
         self
+    }
+    /// <p>The <a href="https://docs.docker.com/engine/reference/builder/">entrypoint script for a Docker container</a> used to run a training job. This script takes precedence over the default train processing instructions. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How Amazon SageMaker Runs Your Training Image</a> for more information.</p>
+    pub fn get_container_entrypoint(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.container_entrypoint
     }
     /// Appends an item to `container_arguments`.
     ///
@@ -315,6 +371,12 @@ impl AlgorithmSpecificationBuilder {
         self.container_arguments = input;
         self
     }
+    /// <p>The arguments for a container used to run a training job. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How Amazon SageMaker Runs Your Training Image</a> for additional information.</p>
+    pub fn get_container_arguments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.container_arguments
+    }
     /// <p>The configuration to use an image from a private Docker registry for a training job.</p>
     pub fn training_image_config(mut self, input: crate::types::TrainingImageConfig) -> Self {
         self.training_image_config = ::std::option::Option::Some(input);
@@ -327,6 +389,12 @@ impl AlgorithmSpecificationBuilder {
     ) -> Self {
         self.training_image_config = input;
         self
+    }
+    /// <p>The configuration to use an image from a private Docker registry for a training job.</p>
+    pub fn get_training_image_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::TrainingImageConfig> {
+        &self.training_image_config
     }
     /// Consumes the builder and constructs a [`AlgorithmSpecification`](crate::types::AlgorithmSpecification).
     pub fn build(self) -> crate::types::AlgorithmSpecification {

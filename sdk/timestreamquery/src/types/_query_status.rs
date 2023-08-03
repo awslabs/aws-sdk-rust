@@ -56,6 +56,10 @@ impl QueryStatusBuilder {
         self.progress_percentage = input;
         self
     }
+    /// <p>The progress of the query, expressed as a percentage.</p>
+    pub fn get_progress_percentage(&self) -> &::std::option::Option<f64> {
+        &self.progress_percentage
+    }
     /// <p>The amount of data scanned by the query in bytes. This is a cumulative sum and represents the total amount of bytes scanned since the query was started. </p>
     pub fn cumulative_bytes_scanned(mut self, input: i64) -> Self {
         self.cumulative_bytes_scanned = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl QueryStatusBuilder {
         self.cumulative_bytes_scanned = input;
         self
     }
+    /// <p>The amount of data scanned by the query in bytes. This is a cumulative sum and represents the total amount of bytes scanned since the query was started. </p>
+    pub fn get_cumulative_bytes_scanned(&self) -> &::std::option::Option<i64> {
+        &self.cumulative_bytes_scanned
+    }
     /// <p>The amount of data scanned by the query in bytes that you will be charged for. This is a cumulative sum and represents the total amount of data that you will be charged for since the query was started. The charge is applied only once and is either applied when the query completes running or when the query is cancelled. </p>
     pub fn cumulative_bytes_metered(mut self, input: i64) -> Self {
         self.cumulative_bytes_metered = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl QueryStatusBuilder {
     pub fn set_cumulative_bytes_metered(mut self, input: ::std::option::Option<i64>) -> Self {
         self.cumulative_bytes_metered = input;
         self
+    }
+    /// <p>The amount of data scanned by the query in bytes that you will be charged for. This is a cumulative sum and represents the total amount of data that you will be charged for since the query was started. The charge is applied only once and is either applied when the query completes running or when the query is cancelled. </p>
+    pub fn get_cumulative_bytes_metered(&self) -> &::std::option::Option<i64> {
+        &self.cumulative_bytes_metered
     }
     /// Consumes the builder and constructs a [`QueryStatus`](crate::types::QueryStatus).
     pub fn build(self) -> crate::types::QueryStatus {

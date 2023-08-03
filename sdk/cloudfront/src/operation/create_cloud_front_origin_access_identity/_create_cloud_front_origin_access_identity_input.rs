@@ -50,6 +50,12 @@ impl CreateCloudFrontOriginAccessIdentityInputBuilder {
         self.cloud_front_origin_access_identity_config = input;
         self
     }
+    /// <p>The current configuration information for the identity.</p>
+    pub fn get_cloud_front_origin_access_identity_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::CloudFrontOriginAccessIdentityConfig> {
+        &self.cloud_front_origin_access_identity_config
+    }
     /// Consumes the builder and constructs a [`CreateCloudFrontOriginAccessIdentityInput`](crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

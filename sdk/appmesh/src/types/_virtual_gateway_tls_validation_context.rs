@@ -56,6 +56,12 @@ impl VirtualGatewayTlsValidationContextBuilder {
         self.trust = input;
         self
     }
+    /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
+    pub fn get_trust(
+        &self,
+    ) -> &::std::option::Option<crate::types::VirtualGatewayTlsValidationContextTrust> {
+        &self.trust
+    }
     /// <p>A reference to an object that represents the SANs for a virtual gateway's listener's Transport Layer Security (TLS) validation context.</p>
     pub fn subject_alternative_names(
         mut self,
@@ -71,6 +77,12 @@ impl VirtualGatewayTlsValidationContextBuilder {
     ) -> Self {
         self.subject_alternative_names = input;
         self
+    }
+    /// <p>A reference to an object that represents the SANs for a virtual gateway's listener's Transport Layer Security (TLS) validation context.</p>
+    pub fn get_subject_alternative_names(
+        &self,
+    ) -> &::std::option::Option<crate::types::SubjectAlternativeNames> {
+        &self.subject_alternative_names
     }
     /// Consumes the builder and constructs a [`VirtualGatewayTlsValidationContext`](crate::types::VirtualGatewayTlsValidationContext).
     pub fn build(self) -> crate::types::VirtualGatewayTlsValidationContext {

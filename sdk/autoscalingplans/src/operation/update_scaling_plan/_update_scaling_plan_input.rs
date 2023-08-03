@@ -78,6 +78,10 @@ impl UpdateScalingPlanInputBuilder {
         self.scaling_plan_name = input;
         self
     }
+    /// <p>The name of the scaling plan.</p>
+    pub fn get_scaling_plan_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scaling_plan_name
+    }
     /// <p>The version number of the scaling plan. The only valid value is <code>1</code>. Currently, you cannot have multiple scaling plan versions.</p>
     pub fn scaling_plan_version(mut self, input: i64) -> Self {
         self.scaling_plan_version = ::std::option::Option::Some(input);
@@ -87,6 +91,10 @@ impl UpdateScalingPlanInputBuilder {
     pub fn set_scaling_plan_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.scaling_plan_version = input;
         self
+    }
+    /// <p>The version number of the scaling plan. The only valid value is <code>1</code>. Currently, you cannot have multiple scaling plan versions.</p>
+    pub fn get_scaling_plan_version(&self) -> &::std::option::Option<i64> {
+        &self.scaling_plan_version
     }
     /// <p>A CloudFormation stack or set of tags.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html">ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
@@ -102,6 +110,13 @@ impl UpdateScalingPlanInputBuilder {
     ) -> Self {
         self.application_source = input;
         self
+    }
+    /// <p>A CloudFormation stack or set of tags.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html">ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
+    pub fn get_application_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationSource> {
+        &self.application_source
     }
     /// Appends an item to `scaling_instructions`.
     ///
@@ -123,6 +138,13 @@ impl UpdateScalingPlanInputBuilder {
     ) -> Self {
         self.scaling_instructions = input;
         self
+    }
+    /// <p>The scaling instructions.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
+    pub fn get_scaling_instructions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScalingInstruction>> {
+        &self.scaling_instructions
     }
     /// Consumes the builder and constructs a [`UpdateScalingPlanInput`](crate::operation::update_scaling_plan::UpdateScalingPlanInput).
     pub fn build(

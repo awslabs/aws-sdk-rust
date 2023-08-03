@@ -36,6 +36,10 @@ impl DeleteVpnConnectionRouteFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteVpnConnectionRoute as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_vpn_connection_route::builders::DeleteVpnConnectionRouteInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl DeleteVpnConnectionRouteFluentBuilder {
         self.inner = self.inner.set_destination_cidr_block(input);
         self
     }
+    /// <p>The CIDR block associated with the local subnet of the customer network.</p>
+    pub fn get_destination_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_cidr_block()
+    }
     /// <p>The ID of the VPN connection.</p>
     pub fn vpn_connection_id(
         mut self,
@@ -147,5 +155,9 @@ impl DeleteVpnConnectionRouteFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_vpn_connection_id(input);
         self
+    }
+    /// <p>The ID of the VPN connection.</p>
+    pub fn get_vpn_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpn_connection_id()
     }
 }

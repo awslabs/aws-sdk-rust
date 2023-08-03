@@ -49,6 +49,10 @@ impl UpdateBridgeStateInputBuilder {
         self.bridge_arn = input;
         self
     }
+    /// The ARN of the bridge that you want to update.
+    pub fn get_bridge_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bridge_arn
+    }
     #[allow(missing_docs)] // documentation missing in model
     pub fn desired_state(mut self, input: crate::types::DesiredState) -> Self {
         self.desired_state = ::std::option::Option::Some(input);
@@ -61,6 +65,10 @@ impl UpdateBridgeStateInputBuilder {
     ) -> Self {
         self.desired_state = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_desired_state(&self) -> &::std::option::Option<crate::types::DesiredState> {
+        &self.desired_state
     }
     /// Consumes the builder and constructs a [`UpdateBridgeStateInput`](crate::operation::update_bridge_state::UpdateBridgeStateInput).
     pub fn build(

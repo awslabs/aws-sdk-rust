@@ -84,6 +84,17 @@ impl ProductionVariantStatusBuilder {
         self.status = input;
         self
     }
+    /// <p>The endpoint variant status which describes the current deployment stage status or operational status.</p>
+    /// <ul>
+    /// <li> <p> <code>Creating</code>: Creating inference resources for the production variant.</p> </li>
+    /// <li> <p> <code>Deleting</code>: Terminating inference resources for the production variant.</p> </li>
+    /// <li> <p> <code>Updating</code>: Updating capacity for the production variant.</p> </li>
+    /// <li> <p> <code>ActivatingTraffic</code>: Turning on traffic for the production variant.</p> </li>
+    /// <li> <p> <code>Baking</code>: Waiting period to monitor the CloudWatch alarms in the automatic rollback configuration.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::VariantStatus> {
+        &self.status
+    }
     /// <p>A message that describes the status of the production variant.</p>
     pub fn status_message(
         mut self,
@@ -100,6 +111,10 @@ impl ProductionVariantStatusBuilder {
         self.status_message = input;
         self
     }
+    /// <p>A message that describes the status of the production variant.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>The start time of the current status change.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -112,6 +127,10 @@ impl ProductionVariantStatusBuilder {
     ) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>The start time of the current status change.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// Consumes the builder and constructs a [`ProductionVariantStatus`](crate::types::ProductionVariantStatus).
     pub fn build(self) -> crate::types::ProductionVariantStatus {

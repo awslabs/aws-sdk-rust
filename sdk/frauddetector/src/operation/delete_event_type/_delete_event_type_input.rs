@@ -39,6 +39,10 @@ impl DeleteEventTypeInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the event type to delete.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DeleteEventTypeInput`](crate::operation::delete_event_type::DeleteEventTypeInput).
     pub fn build(
         self,

@@ -66,6 +66,10 @@ impl CreateKeySigningKeyOutputBuilder {
         self.change_info = input;
         self
     }
+    /// <p>A complex type that describes change information about changes made to your hosted zone.</p>
+    pub fn get_change_info(&self) -> &::std::option::Option<crate::types::ChangeInfo> {
+        &self.change_info
+    }
     /// <p>The key-signing key (KSK) that the request creates.</p>
     pub fn key_signing_key(mut self, input: crate::types::KeySigningKey) -> Self {
         self.key_signing_key = ::std::option::Option::Some(input);
@@ -79,6 +83,10 @@ impl CreateKeySigningKeyOutputBuilder {
         self.key_signing_key = input;
         self
     }
+    /// <p>The key-signing key (KSK) that the request creates.</p>
+    pub fn get_key_signing_key(&self) -> &::std::option::Option<crate::types::KeySigningKey> {
+        &self.key_signing_key
+    }
     /// <p>The unique URL representing the new key-signing key (KSK).</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
@@ -88,6 +96,10 @@ impl CreateKeySigningKeyOutputBuilder {
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
+    }
+    /// <p>The unique URL representing the new key-signing key (KSK).</p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

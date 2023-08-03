@@ -66,6 +66,12 @@ impl CloudWatchMetricsDataSummaryBuilder {
         self.timestamp_metric_value_pair_list = input;
         self
     }
+    /// <p>This is a list of Amazon CloudWatch metric values at given timestamp.</p>
+    pub fn get_timestamp_metric_value_pair_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TimestampMetricValuePair>> {
+        &self.timestamp_metric_value_pair_list
+    }
     /// <p>This is an enum of the status showing whether the metric value pair list has partial or complete data, or if there was an error.</p>
     pub fn status_code(mut self, input: crate::types::CloudWatchMetricDataStatusCode) -> Self {
         self.status_code = ::std::option::Option::Some(input);
@@ -78,6 +84,12 @@ impl CloudWatchMetricsDataSummaryBuilder {
     ) -> Self {
         self.status_code = input;
         self
+    }
+    /// <p>This is an enum of the status showing whether the metric value pair list has partial or complete data, or if there was an error.</p>
+    pub fn get_status_code(
+        &self,
+    ) -> &::std::option::Option<crate::types::CloudWatchMetricDataStatusCode> {
+        &self.status_code
     }
     /// Consumes the builder and constructs a [`CloudWatchMetricsDataSummary`](crate::types::CloudWatchMetricsDataSummary).
     pub fn build(self) -> crate::types::CloudWatchMetricsDataSummary {

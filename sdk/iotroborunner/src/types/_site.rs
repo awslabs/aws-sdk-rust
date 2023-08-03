@@ -64,6 +64,10 @@ impl SiteBuilder {
         self.arn = input;
         self
     }
+    /// Site ARN.
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// The name of the site. Mutable after creation and unique within a given account.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl SiteBuilder {
         self.name = input;
         self
     }
+    /// The name of the site. Mutable after creation and unique within a given account.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
     pub fn country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.country_code = ::std::option::Option::Some(input.into());
@@ -83,6 +91,10 @@ impl SiteBuilder {
     pub fn set_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.country_code = input;
         self
+    }
+    /// A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
+    pub fn get_country_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.country_code
     }
     /// Timestamp at which the resource was created.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -96,6 +108,10 @@ impl SiteBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// Timestamp at which the resource was created.
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// Consumes the builder and constructs a [`Site`](crate::types::Site).
     pub fn build(self) -> crate::types::Site {

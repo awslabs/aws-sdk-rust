@@ -214,6 +214,15 @@ impl GcmMessageBuilder {
         self.action = input;
         self
     }
+    /// <p>The action to occur if the recipient taps the push notification. Valid values are:</p>
+    /// <ul>
+    /// <li><p>OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default action.</p></li>
+    /// <li><p>DEEP_LINK - Your app opens and displays a designated user interface in the app. This action uses the deep-linking features of the Android platform.</p></li>
+    /// <li><p>URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.</p></li>
+    /// </ul>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::Action> {
+        &self.action
+    }
     /// <p>The body of the notification message.</p>
     pub fn body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.body = ::std::option::Option::Some(input.into());
@@ -223,6 +232,10 @@ impl GcmMessageBuilder {
     pub fn set_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.body = input;
         self
+    }
+    /// <p>The body of the notification message.</p>
+    pub fn get_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.body
     }
     /// <p>An arbitrary string that identifies a group of messages that can be collapsed to ensure that only the last message is sent when delivery can resume. This helps avoid sending too many instances of the same messages when the recipient's device comes online again or becomes active.</p>
     /// <p>Amazon Pinpoint specifies this value in the Firebase Cloud Messaging (FCM) collapse_key parameter when it sends the notification message to FCM.</p>
@@ -235,6 +248,11 @@ impl GcmMessageBuilder {
     pub fn set_collapse_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.collapse_key = input;
         self
+    }
+    /// <p>An arbitrary string that identifies a group of messages that can be collapsed to ensure that only the last message is sent when delivery can resume. This helps avoid sending too many instances of the same messages when the recipient's device comes online again or becomes active.</p>
+    /// <p>Amazon Pinpoint specifies this value in the Firebase Cloud Messaging (FCM) collapse_key parameter when it sends the notification message to FCM.</p>
+    pub fn get_collapse_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collapse_key
     }
     /// Adds a key-value pair to `data`.
     ///
@@ -261,6 +279,14 @@ impl GcmMessageBuilder {
         self.data = input;
         self
     }
+    /// <p>The JSON data payload to use for the push notification, if the notification is a silent push notification. This payload is added to the data.pinpoint.jsonBody object of the notification.</p>
+    pub fn get_data(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.data
+    }
     /// <p>The icon image name of the asset saved in your app.</p>
     pub fn icon_reference(
         mut self,
@@ -276,6 +302,10 @@ impl GcmMessageBuilder {
     ) -> Self {
         self.icon_reference = input;
         self
+    }
+    /// <p>The icon image name of the asset saved in your app.</p>
+    pub fn get_icon_reference(&self) -> &::std::option::Option<::std::string::String> {
+        &self.icon_reference
     }
     /// <p>The URL of the large icon image to display in the content view of the push notification.</p>
     pub fn image_icon_url(
@@ -293,6 +323,10 @@ impl GcmMessageBuilder {
         self.image_icon_url = input;
         self
     }
+    /// <p>The URL of the large icon image to display in the content view of the push notification.</p>
+    pub fn get_image_icon_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_icon_url
+    }
     /// <p>The URL of an image to display in the push notification.</p>
     pub fn image_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_url = ::std::option::Option::Some(input.into());
@@ -302,6 +336,10 @@ impl GcmMessageBuilder {
     pub fn set_image_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_url = input;
         self
+    }
+    /// <p>The URL of an image to display in the push notification.</p>
+    pub fn get_image_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_url
     }
     /// <p>para&gt;normal - The notification might be delayed. Delivery is optimized for battery usage on the recipient's device. Use this value unless immediate delivery is required.</p>/listitem&gt;
     /// <li><p>high - The notification is sent immediately and might wake a sleeping device.</p></li>/para&gt;
@@ -319,6 +357,13 @@ impl GcmMessageBuilder {
         self.priority = input;
         self
     }
+    /// <p>para&gt;normal - The notification might be delayed. Delivery is optimized for battery usage on the recipient's device. Use this value unless immediate delivery is required.</p>/listitem&gt;
+    /// <li><p>high - The notification is sent immediately and might wake a sleeping device.</p></li>/para&gt;
+    /// <p>Amazon Pinpoint specifies this value in the FCM priority parameter when it sends the notification message to FCM.</p>
+    /// <p>The equivalent values for Apple Push Notification service (APNs) are 5, for normal, and 10, for high. If you specify an APNs value for this property, Amazon Pinpoint accepts and converts the value to the corresponding FCM value.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<::std::string::String> {
+        &self.priority
+    }
     /// <p>The raw, JSON-formatted string to use as the payload for the notification message. If specified, this value overrides all other content for the message.</p>
     pub fn raw_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.raw_content = ::std::option::Option::Some(input.into());
@@ -328,6 +373,10 @@ impl GcmMessageBuilder {
     pub fn set_raw_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.raw_content = input;
         self
+    }
+    /// <p>The raw, JSON-formatted string to use as the payload for the notification message. If specified, this value overrides all other content for the message.</p>
+    pub fn get_raw_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.raw_content
     }
     /// <p>The package name of the application where registration tokens must match in order for the recipient to receive the message.</p>
     pub fn restricted_package_name(
@@ -345,6 +394,10 @@ impl GcmMessageBuilder {
         self.restricted_package_name = input;
         self
     }
+    /// <p>The package name of the application where registration tokens must match in order for the recipient to receive the message.</p>
+    pub fn get_restricted_package_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.restricted_package_name
+    }
     /// <p>Specifies whether the notification is a silent push notification, which is a push notification that doesn't display on a recipient's device. Silent push notifications can be used for cases such as updating an app's configuration or supporting phone home functionality.</p>
     pub fn silent_push(mut self, input: bool) -> Self {
         self.silent_push = ::std::option::Option::Some(input);
@@ -354,6 +407,10 @@ impl GcmMessageBuilder {
     pub fn set_silent_push(mut self, input: ::std::option::Option<bool>) -> Self {
         self.silent_push = input;
         self
+    }
+    /// <p>Specifies whether the notification is a silent push notification, which is a push notification that doesn't display on a recipient's device. Silent push notifications can be used for cases such as updating an app's configuration or supporting phone home functionality.</p>
+    pub fn get_silent_push(&self) -> &::std::option::Option<bool> {
+        &self.silent_push
     }
     /// <p>The URL of the small icon image to display in the status bar and the content view of the push notification.</p>
     pub fn small_image_icon_url(
@@ -371,6 +428,10 @@ impl GcmMessageBuilder {
         self.small_image_icon_url = input;
         self
     }
+    /// <p>The URL of the small icon image to display in the status bar and the content view of the push notification.</p>
+    pub fn get_small_image_icon_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.small_image_icon_url
+    }
     /// <p>The sound to play when the recipient receives the push notification. You can use the default stream or specify the file name of a sound resource that's bundled in your app. On an Android platform, the sound file must reside in /res/raw/.</p>
     pub fn sound(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sound = ::std::option::Option::Some(input.into());
@@ -380,6 +441,10 @@ impl GcmMessageBuilder {
     pub fn set_sound(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sound = input;
         self
+    }
+    /// <p>The sound to play when the recipient receives the push notification. You can use the default stream or specify the file name of a sound resource that's bundled in your app. On an Android platform, the sound file must reside in /res/raw/.</p>
+    pub fn get_sound(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sound
     }
     /// Adds a key-value pair to `substitutions`.
     ///
@@ -409,6 +474,14 @@ impl GcmMessageBuilder {
         self.substitutions = input;
         self
     }
+    /// <p>The default message variables to use in the notification message. You can override the default variables with individual address variables.</p>
+    pub fn get_substitutions(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
+    > {
+        &self.substitutions
+    }
     /// <p>The amount of time, in seconds, that FCM should store and attempt to deliver the push notification, if the service is unable to deliver the notification the first time. If you don't specify this value, FCM defaults to the maximum value, which is 2,419,200 seconds (28 days).</p>
     /// <p>Amazon Pinpoint specifies this value in the FCM time_to_live parameter when it sends the notification message to FCM.</p>
     pub fn time_to_live(mut self, input: i32) -> Self {
@@ -421,6 +494,11 @@ impl GcmMessageBuilder {
         self.time_to_live = input;
         self
     }
+    /// <p>The amount of time, in seconds, that FCM should store and attempt to deliver the push notification, if the service is unable to deliver the notification the first time. If you don't specify this value, FCM defaults to the maximum value, which is 2,419,200 seconds (28 days).</p>
+    /// <p>Amazon Pinpoint specifies this value in the FCM time_to_live parameter when it sends the notification message to FCM.</p>
+    pub fn get_time_to_live(&self) -> &::std::option::Option<i32> {
+        &self.time_to_live
+    }
     /// <p>The title to display above the notification message on the recipient's device.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
@@ -431,6 +509,10 @@ impl GcmMessageBuilder {
         self.title = input;
         self
     }
+    /// <p>The title to display above the notification message on the recipient's device.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
+    }
     /// <p>The URL to open in the recipient's default mobile browser, if a recipient taps the push notification and the value of the Action property is URL.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
@@ -440,6 +522,10 @@ impl GcmMessageBuilder {
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
+    }
+    /// <p>The URL to open in the recipient's default mobile browser, if a recipient taps the push notification and the value of the Action property is URL.</p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
     }
     /// Consumes the builder and constructs a [`GcmMessage`](crate::types::GcmMessage).
     pub fn build(self) -> crate::types::GcmMessage {

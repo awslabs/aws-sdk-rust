@@ -50,6 +50,10 @@ impl ListComponentBuildVersionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListComponentBuildVersions as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_component_build_versions::builders::ListComponentBuildVersionsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -152,6 +156,10 @@ impl ListComponentBuildVersionsFluentBuilder {
         self.inner = self.inner.set_component_version_arn(input);
         self
     }
+    /// <p>The component version Amazon Resource Name (ARN) whose versions you want to list.</p>
+    pub fn get_component_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_component_version_arn()
+    }
     /// <p>The maximum items to return in a request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -162,6 +170,10 @@ impl ListComponentBuildVersionsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum items to return in a request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -171,5 +183,9 @@ impl ListComponentBuildVersionsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

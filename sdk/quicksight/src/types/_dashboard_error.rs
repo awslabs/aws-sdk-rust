@@ -59,6 +59,10 @@ impl DashboardErrorBuilder {
         self.r#type = input;
         self
     }
+    /// <p>Type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::DashboardErrorType> {
+        &self.r#type
+    }
     /// <p>Message.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -68,6 +72,10 @@ impl DashboardErrorBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>Message.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Appends an item to `violated_entities`.
     ///
@@ -87,6 +95,12 @@ impl DashboardErrorBuilder {
     ) -> Self {
         self.violated_entities = input;
         self
+    }
+    /// <p>Lists the violated entities that caused the dashboard error.</p>
+    pub fn get_violated_entities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Entity>> {
+        &self.violated_entities
     }
     /// Consumes the builder and constructs a [`DashboardError`](crate::types::DashboardError).
     pub fn build(self) -> crate::types::DashboardError {

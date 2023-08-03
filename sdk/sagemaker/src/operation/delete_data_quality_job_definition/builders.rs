@@ -36,6 +36,10 @@ impl DeleteDataQualityJobDefinitionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteDataQualityJobDefinition as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_data_quality_job_definition::builders::DeleteDataQualityJobDefinitionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -105,5 +109,9 @@ impl DeleteDataQualityJobDefinitionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_job_definition_name(input);
         self
+    }
+    /// <p>The name of the data quality monitoring job definition to delete.</p>
+    pub fn get_job_definition_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_definition_name()
     }
 }

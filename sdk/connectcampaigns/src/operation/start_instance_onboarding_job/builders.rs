@@ -36,6 +36,10 @@ impl StartInstanceOnboardingJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartInstanceOnboardingJob as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_instance_onboarding_job::builders::StartInstanceOnboardingJobInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl StartInstanceOnboardingJobFluentBuilder {
         self.inner = self.inner.set_connect_instance_id(input);
         self
     }
+    /// Amazon Connect Instance Id
+    pub fn get_connect_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connect_instance_id()
+    }
     /// Encryption config for Connect Instance. Note that sensitive data will always be encrypted. If disabled, service will perform encryption with its own key. If enabled, a KMS key id needs to be provided and KMS charges will apply. KMS is only type supported
     pub fn encryption_config(mut self, input: crate::types::EncryptionConfig) -> Self {
         self.inner = self.inner.encryption_config(input);
@@ -144,5 +152,9 @@ impl StartInstanceOnboardingJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_encryption_config(input);
         self
+    }
+    /// Encryption config for Connect Instance. Note that sensitive data will always be encrypted. If disabled, service will perform encryption with its own key. If enabled, a KMS key id needs to be provided and KMS charges will apply. KMS is only type supported
+    pub fn get_encryption_config(&self) -> &::std::option::Option<crate::types::EncryptionConfig> {
+        self.inner.get_encryption_config()
     }
 }

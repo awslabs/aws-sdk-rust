@@ -41,6 +41,10 @@ impl OptInPhoneNumberInputBuilder {
         self.phone_number = input;
         self
     }
+    /// <p>The phone number to opt in. Use E.164 format.</p>
+    pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.phone_number
+    }
     /// Consumes the builder and constructs a [`OptInPhoneNumberInput`](crate::operation::opt_in_phone_number::OptInPhoneNumberInput).
     pub fn build(
         self,

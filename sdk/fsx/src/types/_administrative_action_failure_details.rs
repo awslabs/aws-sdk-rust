@@ -40,6 +40,10 @@ impl AdministrativeActionFailureDetailsBuilder {
         self.message = input;
         self
     }
+    /// <p>Error message providing details about the failed administrative action.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Consumes the builder and constructs a [`AdministrativeActionFailureDetails`](crate::types::AdministrativeActionFailureDetails).
     pub fn build(self) -> crate::types::AdministrativeActionFailureDetails {
         crate::types::AdministrativeActionFailureDetails {

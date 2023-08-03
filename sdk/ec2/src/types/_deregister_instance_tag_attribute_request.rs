@@ -48,6 +48,10 @@ impl DeregisterInstanceTagAttributeRequestBuilder {
         self.include_all_tags_of_instance = input;
         self
     }
+    /// <p>Indicates whether to deregister all tag keys in the current Region. Specify <code>false</code> to deregister all tag keys.</p>
+    pub fn get_include_all_tags_of_instance(&self) -> &::std::option::Option<bool> {
+        &self.include_all_tags_of_instance
+    }
     /// Appends an item to `instance_tag_keys`.
     ///
     /// To override the contents of this collection use [`set_instance_tag_keys`](Self::set_instance_tag_keys).
@@ -69,6 +73,12 @@ impl DeregisterInstanceTagAttributeRequestBuilder {
     ) -> Self {
         self.instance_tag_keys = input;
         self
+    }
+    /// <p>Information about the tag keys to deregister.</p>
+    pub fn get_instance_tag_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.instance_tag_keys
     }
     /// Consumes the builder and constructs a [`DeregisterInstanceTagAttributeRequest`](crate::types::DeregisterInstanceTagAttributeRequest).
     pub fn build(self) -> crate::types::DeregisterInstanceTagAttributeRequest {

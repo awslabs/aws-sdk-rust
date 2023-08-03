@@ -53,6 +53,10 @@ impl StartSchemaExtensionOutputBuilder {
         self.schema_extension_id = input;
         self
     }
+    /// <p>The identifier of the schema extension that will be applied.</p>
+    pub fn get_schema_extension_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_extension_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

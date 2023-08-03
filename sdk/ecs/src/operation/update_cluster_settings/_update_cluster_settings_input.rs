@@ -53,6 +53,10 @@ impl UpdateClusterSettingsInputBuilder {
         self.cluster = input;
         self
     }
+    /// <p>The name of the cluster to modify the settings for.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster
+    }
     /// Appends an item to `settings`.
     ///
     /// To override the contents of this collection use [`set_settings`](Self::set_settings).
@@ -75,6 +79,14 @@ impl UpdateClusterSettingsInputBuilder {
     ) -> Self {
         self.settings = input;
         self
+    }
+    /// <p>The setting to use by default for a cluster. This parameter is used to turn on CloudWatch Container Insights for a cluster. If this value is specified, it overrides the <code>containerInsights</code> value set with <code>PutAccountSetting</code> or <code>PutAccountSettingDefault</code>.</p> <important>
+    /// <p>Currently, if you delete an existing cluster that does not have Container Insights turned on, and then create a new cluster with the same name with Container Insights tuned on, Container Insights will not actually be turned on. If you want to preserve the same name for your existing cluster and turn on Container Insights, you must wait 7 days before you can re-create it.</p>
+    /// </important>
+    pub fn get_settings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterSetting>> {
+        &self.settings
     }
     /// Consumes the builder and constructs a [`UpdateClusterSettingsInput`](crate::operation::update_cluster_settings::UpdateClusterSettingsInput).
     pub fn build(

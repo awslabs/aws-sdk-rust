@@ -61,6 +61,10 @@ impl DeleteDirectConnectGatewayAssociationInputBuilder {
         self.association_id = input;
         self
     }
+    /// <p>The ID of the Direct Connect gateway association.</p>
+    pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_id
+    }
     /// <p>The ID of the Direct Connect gateway.</p>
     pub fn direct_connect_gateway_id(
         mut self,
@@ -77,6 +81,10 @@ impl DeleteDirectConnectGatewayAssociationInputBuilder {
         self.direct_connect_gateway_id = input;
         self
     }
+    /// <p>The ID of the Direct Connect gateway.</p>
+    pub fn get_direct_connect_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.direct_connect_gateway_id
+    }
     /// <p>The ID of the virtual private gateway.</p>
     pub fn virtual_gateway_id(
         mut self,
@@ -92,6 +100,10 @@ impl DeleteDirectConnectGatewayAssociationInputBuilder {
     ) -> Self {
         self.virtual_gateway_id = input;
         self
+    }
+    /// <p>The ID of the virtual private gateway.</p>
+    pub fn get_virtual_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_gateway_id
     }
     /// Consumes the builder and constructs a [`DeleteDirectConnectGatewayAssociationInput`](crate::operation::delete_direct_connect_gateway_association::DeleteDirectConnectGatewayAssociationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_direct_connect_gateway_association::DeleteDirectConnectGatewayAssociationInput, ::aws_smithy_http::operation::error::BuildError>{

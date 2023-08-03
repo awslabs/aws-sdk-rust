@@ -36,6 +36,12 @@ impl UpdateProfileFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateProfile as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_profile::builders::UpdateProfileInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl UpdateProfileFluentBuilder {
         self.inner = self.inner.set_profile_arn(input);
         self
     }
+    /// <p>The profile ARN.</p>
+    pub fn get_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_profile_arn()
+    }
     /// <p>The profile description.</p>
     pub fn profile_description(
         mut self,
@@ -133,6 +143,10 @@ impl UpdateProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_profile_description(input);
         self
+    }
+    /// <p>The profile description.</p>
+    pub fn get_profile_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_profile_description()
     }
     /// Appends an item to `ProfileQuestions`.
     ///
@@ -150,5 +164,11 @@ impl UpdateProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_profile_questions(input);
         self
+    }
+    /// <p>Profile questions.</p>
+    pub fn get_profile_questions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProfileQuestionUpdate>> {
+        self.inner.get_profile_questions()
     }
 }

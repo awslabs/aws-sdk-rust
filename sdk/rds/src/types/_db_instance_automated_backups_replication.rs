@@ -46,6 +46,12 @@ impl DbInstanceAutomatedBackupsReplicationBuilder {
         self.db_instance_automated_backups_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the replicated automated backups.</p>
+    pub fn get_db_instance_automated_backups_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.db_instance_automated_backups_arn
+    }
     /// Consumes the builder and constructs a [`DbInstanceAutomatedBackupsReplication`](crate::types::DbInstanceAutomatedBackupsReplication).
     pub fn build(self) -> crate::types::DbInstanceAutomatedBackupsReplication {
         crate::types::DbInstanceAutomatedBackupsReplication {

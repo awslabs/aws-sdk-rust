@@ -37,6 +37,13 @@ impl UpdatePullRequestStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdatePullRequestStatus as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_pull_request_status::builders::UpdatePullRequestStatusInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl UpdatePullRequestStatusFluentBuilder {
         self.inner = self.inner.set_pull_request_id(input);
         self
     }
+    /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+    pub fn get_pull_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pull_request_id()
+    }
     /// <p>The status of the pull request. The only valid operations are to update the status from <code>OPEN</code> to <code>OPEN</code>, <code>OPEN</code> to <code>CLOSED</code> or from <code>CLOSED</code> to <code>CLOSED</code>.</p>
     pub fn pull_request_status(mut self, input: crate::types::PullRequestStatusEnum) -> Self {
         self.inner = self.inner.pull_request_status(input);
@@ -145,5 +156,11 @@ impl UpdatePullRequestStatusFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_pull_request_status(input);
         self
+    }
+    /// <p>The status of the pull request. The only valid operations are to update the status from <code>OPEN</code> to <code>OPEN</code>, <code>OPEN</code> to <code>CLOSED</code> or from <code>CLOSED</code> to <code>CLOSED</code>.</p>
+    pub fn get_pull_request_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::PullRequestStatusEnum> {
+        self.inner.get_pull_request_status()
     }
 }

@@ -36,6 +36,10 @@ impl PutMessagingStreamingConfigurationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutMessagingStreamingConfigurations as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_messaging_streaming_configurations::builders::PutMessagingStreamingConfigurationsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl PutMessagingStreamingConfigurationsFluentBuilder {
         self.inner = self.inner.set_app_instance_arn(input);
         self
     }
+    /// <p>The ARN of the streaming configuration.</p>
+    pub fn get_app_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_instance_arn()
+    }
     /// Appends an item to `StreamingConfigurations`.
     ///
     /// To override the contents of this collection use [`set_streaming_configurations`](Self::set_streaming_configurations).
@@ -122,5 +130,11 @@ impl PutMessagingStreamingConfigurationsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_streaming_configurations(input);
         self
+    }
+    /// <p>The streaming configurations.</p>
+    pub fn get_streaming_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamingConfiguration>> {
+        self.inner.get_streaming_configurations()
     }
 }

@@ -97,6 +97,10 @@ impl CreateAppInstanceUserInputBuilder {
         self.app_instance_arn = input;
         self
     }
+    /// <p>The ARN of the <code>AppInstance</code> request.</p>
+    pub fn get_app_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_instance_arn
+    }
     /// <p>The user ID of the <code>AppInstance</code>.</p>
     pub fn app_instance_user_id(
         mut self,
@@ -113,6 +117,10 @@ impl CreateAppInstanceUserInputBuilder {
         self.app_instance_user_id = input;
         self
     }
+    /// <p>The user ID of the <code>AppInstance</code>.</p>
+    pub fn get_app_instance_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_instance_user_id
+    }
     /// <p>The user's name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -123,6 +131,10 @@ impl CreateAppInstanceUserInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The user's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The request's metadata. Limited to a 1KB string in UTF-8.</p>
     pub fn metadata(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metadata = ::std::option::Option::Some(input.into());
@@ -132,6 +144,10 @@ impl CreateAppInstanceUserInputBuilder {
     pub fn set_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metadata = input;
         self
+    }
+    /// <p>The request's metadata. Limited to a 1KB string in UTF-8.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metadata
     }
     /// <p>The token assigned to the user requesting an <code>AppInstance</code>.</p>
     pub fn client_request_token(
@@ -148,6 +164,10 @@ impl CreateAppInstanceUserInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>The token assigned to the user requesting an <code>AppInstance</code>.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Appends an item to `tags`.
     ///
@@ -167,6 +187,10 @@ impl CreateAppInstanceUserInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateAppInstanceUserInput`](crate::operation::create_app_instance_user::CreateAppInstanceUserInput).
     pub fn build(

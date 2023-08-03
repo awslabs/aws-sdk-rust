@@ -51,6 +51,10 @@ impl UpdateGameSessionQueueOutputBuilder {
         self.game_session_queue = input;
         self
     }
+    /// <p>An object that describes the newly updated game session queue.</p>
+    pub fn get_game_session_queue(&self) -> &::std::option::Option<crate::types::GameSessionQueue> {
+        &self.game_session_queue
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

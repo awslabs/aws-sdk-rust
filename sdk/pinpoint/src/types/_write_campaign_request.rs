@@ -203,6 +203,12 @@ impl WriteCampaignRequestBuilder {
         self.additional_treatments = input;
         self
     }
+    /// <p>An array of requests that defines additional treatments for the campaign, in addition to the default treatment for the campaign.</p>
+    pub fn get_additional_treatments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WriteTreatmentResource>> {
+        &self.additional_treatments
+    }
     /// <p>The delivery configuration settings for sending the campaign through a custom channel. This object is required if the MessageConfiguration object for the campaign specifies a CustomMessage object.</p>
     pub fn custom_delivery_configuration(
         mut self,
@@ -219,6 +225,12 @@ impl WriteCampaignRequestBuilder {
         self.custom_delivery_configuration = input;
         self
     }
+    /// <p>The delivery configuration settings for sending the campaign through a custom channel. This object is required if the MessageConfiguration object for the campaign specifies a CustomMessage object.</p>
+    pub fn get_custom_delivery_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomDeliveryConfiguration> {
+        &self.custom_delivery_configuration
+    }
     /// <p>A custom description of the campaign.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -228,6 +240,10 @@ impl WriteCampaignRequestBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A custom description of the campaign.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The allocated percentage of users (segment members) who shouldn't receive messages from the campaign.</p>
     pub fn holdout_percent(mut self, input: i32) -> Self {
@@ -239,6 +255,10 @@ impl WriteCampaignRequestBuilder {
         self.holdout_percent = input;
         self
     }
+    /// <p>The allocated percentage of users (segment members) who shouldn't receive messages from the campaign.</p>
+    pub fn get_holdout_percent(&self) -> &::std::option::Option<i32> {
+        &self.holdout_percent
+    }
     /// <p>The settings for the AWS Lambda function to invoke as a code hook for the campaign. You can use this hook to customize the segment that's used by the campaign.</p>
     pub fn hook(mut self, input: crate::types::CampaignHook) -> Self {
         self.hook = ::std::option::Option::Some(input);
@@ -249,6 +269,10 @@ impl WriteCampaignRequestBuilder {
         self.hook = input;
         self
     }
+    /// <p>The settings for the AWS Lambda function to invoke as a code hook for the campaign. You can use this hook to customize the segment that's used by the campaign.</p>
+    pub fn get_hook(&self) -> &::std::option::Option<crate::types::CampaignHook> {
+        &self.hook
+    }
     /// <p>Specifies whether to pause the campaign. A paused campaign doesn't run unless you resume it by changing this value to false.</p>
     pub fn is_paused(mut self, input: bool) -> Self {
         self.is_paused = ::std::option::Option::Some(input);
@@ -258,6 +282,10 @@ impl WriteCampaignRequestBuilder {
     pub fn set_is_paused(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_paused = input;
         self
+    }
+    /// <p>Specifies whether to pause the campaign. A paused campaign doesn't run unless you resume it by changing this value to false.</p>
+    pub fn get_is_paused(&self) -> &::std::option::Option<bool> {
+        &self.is_paused
     }
     /// <p>The messaging limits for the campaign.</p>
     pub fn limits(mut self, input: crate::types::CampaignLimits) -> Self {
@@ -272,6 +300,10 @@ impl WriteCampaignRequestBuilder {
         self.limits = input;
         self
     }
+    /// <p>The messaging limits for the campaign.</p>
+    pub fn get_limits(&self) -> &::std::option::Option<crate::types::CampaignLimits> {
+        &self.limits
+    }
     /// <p>The message configuration settings for the campaign.</p>
     pub fn message_configuration(mut self, input: crate::types::MessageConfiguration) -> Self {
         self.message_configuration = ::std::option::Option::Some(input);
@@ -285,6 +317,12 @@ impl WriteCampaignRequestBuilder {
         self.message_configuration = input;
         self
     }
+    /// <p>The message configuration settings for the campaign.</p>
+    pub fn get_message_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::MessageConfiguration> {
+        &self.message_configuration
+    }
     /// <p>A custom name for the campaign.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -294,6 +332,10 @@ impl WriteCampaignRequestBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A custom name for the campaign.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The schedule settings for the campaign.</p>
     pub fn schedule(mut self, input: crate::types::Schedule) -> Self {
@@ -305,6 +347,10 @@ impl WriteCampaignRequestBuilder {
         self.schedule = input;
         self
     }
+    /// <p>The schedule settings for the campaign.</p>
+    pub fn get_schedule(&self) -> &::std::option::Option<crate::types::Schedule> {
+        &self.schedule
+    }
     /// <p>The unique identifier for the segment to associate with the campaign.</p>
     pub fn segment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.segment_id = ::std::option::Option::Some(input.into());
@@ -315,6 +361,10 @@ impl WriteCampaignRequestBuilder {
         self.segment_id = input;
         self
     }
+    /// <p>The unique identifier for the segment to associate with the campaign.</p>
+    pub fn get_segment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.segment_id
+    }
     /// <p>The version of the segment to associate with the campaign.</p>
     pub fn segment_version(mut self, input: i32) -> Self {
         self.segment_version = ::std::option::Option::Some(input);
@@ -324,6 +374,10 @@ impl WriteCampaignRequestBuilder {
     pub fn set_segment_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.segment_version = input;
         self
+    }
+    /// <p>The version of the segment to associate with the campaign.</p>
+    pub fn get_segment_version(&self) -> &::std::option::Option<i32> {
+        &self.segment_version
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -356,6 +410,17 @@ impl WriteCampaignRequestBuilder {
         self.tags = input;
         self
     }
+    /// <note>
+    /// <p>As of <b>22-05-2023</b> tags has been deprecated for update operations. After this date any value in tags is not processed and an error code is not returned. To manage tags we recommend using either <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/tags-resource-arn.html">Tags</a> in the <i>API Reference for Amazon Pinpoint</i>, <a href="https://docs.aws.amazon.com/cli/latest/reference/resourcegroupstaggingapi/index.html">resourcegroupstaggingapi</a> commands in the <i>AWS Command Line Interface Documentation</i> or <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/resourcegroupstaggingapi/package-summary.html">resourcegroupstaggingapi</a> in the <i>AWS SDK</i>.</p>
+    /// </note>
+    /// <p>(Deprecated) A string-to-string map of key-value pairs that defines the tags to associate with the campaign. Each tag consists of a required tag key and an associated tag value.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The message template to use for the campaign.</p>
     pub fn template_configuration(mut self, input: crate::types::TemplateConfiguration) -> Self {
         self.template_configuration = ::std::option::Option::Some(input);
@@ -368,6 +433,12 @@ impl WriteCampaignRequestBuilder {
     ) -> Self {
         self.template_configuration = input;
         self
+    }
+    /// <p>The message template to use for the campaign.</p>
+    pub fn get_template_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::TemplateConfiguration> {
+        &self.template_configuration
     }
     /// <p>A custom description of the default treatment for the campaign.</p>
     pub fn treatment_description(
@@ -385,6 +456,10 @@ impl WriteCampaignRequestBuilder {
         self.treatment_description = input;
         self
     }
+    /// <p>A custom description of the default treatment for the campaign.</p>
+    pub fn get_treatment_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.treatment_description
+    }
     /// <p>A custom name of the default treatment for the campaign, if the campaign has multiple treatments. A <i>treatment</i> is a variation of a campaign that's used for A/B testing.</p>
     pub fn treatment_name(
         mut self,
@@ -401,6 +476,10 @@ impl WriteCampaignRequestBuilder {
         self.treatment_name = input;
         self
     }
+    /// <p>A custom name of the default treatment for the campaign, if the campaign has multiple treatments. A <i>treatment</i> is a variation of a campaign that's used for A/B testing.</p>
+    pub fn get_treatment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.treatment_name
+    }
     /// <p>Defines the priority of the campaign, used to decide the order of messages displayed to user if there are multiple messages scheduled to be displayed at the same moment.</p>
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
@@ -410,6 +489,10 @@ impl WriteCampaignRequestBuilder {
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
+    }
+    /// <p>Defines the priority of the campaign, used to decide the order of messages displayed to user if there are multiple messages scheduled to be displayed at the same moment.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
     }
     /// Consumes the builder and constructs a [`WriteCampaignRequest`](crate::types::WriteCampaignRequest).
     pub fn build(self) -> crate::types::WriteCampaignRequest {

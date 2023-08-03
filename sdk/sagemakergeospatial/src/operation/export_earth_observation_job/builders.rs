@@ -36,6 +36,10 @@ impl ExportEarthObservationJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ExportEarthObservationJob as a reference.
+    pub fn as_input(&self) -> &crate::operation::export_earth_observation_job::builders::ExportEarthObservationJobInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl ExportEarthObservationJobFluentBuilder {
         self.inner = self.inner.set_arn(input);
         self
     }
+    /// <p>The input Amazon Resource Name (ARN) of the Earth Observation job being exported.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
+    }
     /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -135,6 +143,10 @@ impl ExportEarthObservationJobFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
     pub fn execution_role_arn(
@@ -152,6 +164,10 @@ impl ExportEarthObservationJobFluentBuilder {
         self.inner = self.inner.set_execution_role_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
+    pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_execution_role_arn()
+    }
     /// <p>An object containing information about the output file.</p>
     pub fn output_config(mut self, input: crate::types::OutputConfigInput) -> Self {
         self.inner = self.inner.output_config(input);
@@ -165,6 +181,10 @@ impl ExportEarthObservationJobFluentBuilder {
         self.inner = self.inner.set_output_config(input);
         self
     }
+    /// <p>An object containing information about the output file.</p>
+    pub fn get_output_config(&self) -> &::std::option::Option<crate::types::OutputConfigInput> {
+        self.inner.get_output_config()
+    }
     /// <p>The source images provided to the Earth Observation job being exported.</p>
     pub fn export_source_images(mut self, input: bool) -> Self {
         self.inner = self.inner.export_source_images(input);
@@ -174,5 +194,9 @@ impl ExportEarthObservationJobFluentBuilder {
     pub fn set_export_source_images(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_export_source_images(input);
         self
+    }
+    /// <p>The source images provided to the Earth Observation job being exported.</p>
+    pub fn get_export_source_images(&self) -> &::std::option::Option<bool> {
+        self.inner.get_export_source_images()
     }
 }

@@ -39,6 +39,10 @@ impl GetFieldLevelEncryptionConfigInputBuilder {
         self.id = input;
         self
     }
+    /// <p>Request the ID for the field-level encryption configuration information.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`GetFieldLevelEncryptionConfigInput`](crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigInput).
     pub fn build(
         self,

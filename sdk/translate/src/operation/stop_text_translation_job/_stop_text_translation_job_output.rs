@@ -56,6 +56,10 @@ impl StopTextTranslationJobOutputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The job ID of the stopped batch translation job.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>The status of the designated job. Upon successful completion, the job's status will be <code>STOPPED</code>.</p>
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
         self.job_status = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl StopTextTranslationJobOutputBuilder {
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
         self.job_status = input;
         self
+    }
+    /// <p>The status of the designated job. Upon successful completion, the job's status will be <code>STOPPED</code>.</p>
+    pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
+        &self.job_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -71,6 +71,10 @@ impl GetApplicationRevisionOutputBuilder {
         self.application_name = input;
         self
     }
+    /// <p>The name of the application that corresponds to the revision.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// <p>Additional information about the revision, including type and location.</p>
     pub fn revision(mut self, input: crate::types::RevisionLocation) -> Self {
         self.revision = ::std::option::Option::Some(input);
@@ -84,6 +88,10 @@ impl GetApplicationRevisionOutputBuilder {
         self.revision = input;
         self
     }
+    /// <p>Additional information about the revision, including type and location.</p>
+    pub fn get_revision(&self) -> &::std::option::Option<crate::types::RevisionLocation> {
+        &self.revision
+    }
     /// <p>General information about the revision.</p>
     pub fn revision_info(mut self, input: crate::types::GenericRevisionInfo) -> Self {
         self.revision_info = ::std::option::Option::Some(input);
@@ -96,6 +104,10 @@ impl GetApplicationRevisionOutputBuilder {
     ) -> Self {
         self.revision_info = input;
         self
+    }
+    /// <p>General information about the revision.</p>
+    pub fn get_revision_info(&self) -> &::std::option::Option<crate::types::GenericRevisionInfo> {
+        &self.revision_info
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

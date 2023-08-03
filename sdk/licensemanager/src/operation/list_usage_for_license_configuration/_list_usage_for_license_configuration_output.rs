@@ -70,6 +70,12 @@ impl ListUsageForLicenseConfigurationOutputBuilder {
         self.license_configuration_usage_list = input;
         self
     }
+    /// <p>Information about the license configurations.</p>
+    pub fn get_license_configuration_usage_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LicenseConfigurationUsage>> {
+        &self.license_configuration_usage_list
+    }
     /// <p>Token for the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -79,6 +85,10 @@ impl ListUsageForLicenseConfigurationOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

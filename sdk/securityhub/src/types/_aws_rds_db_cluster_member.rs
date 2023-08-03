@@ -64,6 +64,10 @@ impl AwsRdsDbClusterMemberBuilder {
         self.is_cluster_writer = input;
         self
     }
+    /// <p>Whether the cluster member is the primary instance for the DB cluster.</p>
+    pub fn get_is_cluster_writer(&self) -> &::std::option::Option<bool> {
+        &self.is_cluster_writer
+    }
     /// <p>Specifies the order in which an Aurora replica is promoted to the primary instance when the existing primary instance fails.</p>
     pub fn promotion_tier(mut self, input: i32) -> Self {
         self.promotion_tier = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl AwsRdsDbClusterMemberBuilder {
     pub fn set_promotion_tier(mut self, input: ::std::option::Option<i32>) -> Self {
         self.promotion_tier = input;
         self
+    }
+    /// <p>Specifies the order in which an Aurora replica is promoted to the primary instance when the existing primary instance fails.</p>
+    pub fn get_promotion_tier(&self) -> &::std::option::Option<i32> {
+        &self.promotion_tier
     }
     /// <p>The instance identifier for this member of the DB cluster.</p>
     pub fn db_instance_identifier(
@@ -90,6 +98,10 @@ impl AwsRdsDbClusterMemberBuilder {
         self.db_instance_identifier = input;
         self
     }
+    /// <p>The instance identifier for this member of the DB cluster.</p>
+    pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_instance_identifier
+    }
     /// <p>The status of the DB cluster parameter group for this member of the DB cluster.</p>
     pub fn db_cluster_parameter_group_status(
         mut self,
@@ -105,6 +117,12 @@ impl AwsRdsDbClusterMemberBuilder {
     ) -> Self {
         self.db_cluster_parameter_group_status = input;
         self
+    }
+    /// <p>The status of the DB cluster parameter group for this member of the DB cluster.</p>
+    pub fn get_db_cluster_parameter_group_status(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_parameter_group_status
     }
     /// Consumes the builder and constructs a [`AwsRdsDbClusterMember`](crate::types::AwsRdsDbClusterMember).
     pub fn build(self) -> crate::types::AwsRdsDbClusterMember {

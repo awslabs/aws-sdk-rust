@@ -48,6 +48,10 @@ impl BandwidthBuilder {
         self.upload_speed = input;
         self
     }
+    /// <p>Upload speed in Mbps.</p>
+    pub fn get_upload_speed(&self) -> &::std::option::Option<i32> {
+        &self.upload_speed
+    }
     /// <p>Download speed in Mbps.</p>
     pub fn download_speed(mut self, input: i32) -> Self {
         self.download_speed = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl BandwidthBuilder {
     pub fn set_download_speed(mut self, input: ::std::option::Option<i32>) -> Self {
         self.download_speed = input;
         self
+    }
+    /// <p>Download speed in Mbps.</p>
+    pub fn get_download_speed(&self) -> &::std::option::Option<i32> {
+        &self.download_speed
     }
     /// Consumes the builder and constructs a [`Bandwidth`](crate::types::Bandwidth).
     pub fn build(self) -> crate::types::Bandwidth {

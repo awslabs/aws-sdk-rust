@@ -54,6 +54,10 @@ impl KinesisConfigurationBuilder {
         self.stream_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Kinesis Data Streams resource.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_arn
+    }
     /// <p>Enables QLDB to publish multiple data records in a single Kinesis Data Streams record, increasing the number of records sent per API call.</p>
     /// <p>Default: <code>True</code> </p> <important>
     /// <p>Record aggregation has important implications for processing records and requires de-aggregation in your stream consumer. To learn more, see <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key Concepts</a> and <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-consumer-deaggregation.html">Consumer De-aggregation</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
@@ -69,6 +73,13 @@ impl KinesisConfigurationBuilder {
     pub fn set_aggregation_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.aggregation_enabled = input;
         self
+    }
+    /// <p>Enables QLDB to publish multiple data records in a single Kinesis Data Streams record, increasing the number of records sent per API call.</p>
+    /// <p>Default: <code>True</code> </p> <important>
+    /// <p>Record aggregation has important implications for processing records and requires de-aggregation in your stream consumer. To learn more, see <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key Concepts</a> and <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-consumer-deaggregation.html">Consumer De-aggregation</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
+    /// </important>
+    pub fn get_aggregation_enabled(&self) -> &::std::option::Option<bool> {
+        &self.aggregation_enabled
     }
     /// Consumes the builder and constructs a [`KinesisConfiguration`](crate::types::KinesisConfiguration).
     pub fn build(self) -> crate::types::KinesisConfiguration {

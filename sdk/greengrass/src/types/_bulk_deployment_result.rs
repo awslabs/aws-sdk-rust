@@ -96,6 +96,10 @@ impl BulkDeploymentResultBuilder {
         self.created_at = input;
         self
     }
+    /// The time, in ISO format, when the deployment was created.
+    pub fn get_created_at(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_at
+    }
     /// The ARN of the group deployment.
     pub fn deployment_arn(
         mut self,
@@ -111,6 +115,10 @@ impl BulkDeploymentResultBuilder {
     ) -> Self {
         self.deployment_arn = input;
         self
+    }
+    /// The ARN of the group deployment.
+    pub fn get_deployment_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_arn
     }
     /// The ID of the group deployment.
     pub fn deployment_id(
@@ -128,6 +136,10 @@ impl BulkDeploymentResultBuilder {
         self.deployment_id = input;
         self
     }
+    /// The ID of the group deployment.
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_id
+    }
     /// The current status of the group deployment: ''InProgress'', ''Building'', ''Success'', or ''Failure''.
     pub fn deployment_status(
         mut self,
@@ -144,6 +156,10 @@ impl BulkDeploymentResultBuilder {
         self.deployment_status = input;
         self
     }
+    /// The current status of the group deployment: ''InProgress'', ''Building'', ''Success'', or ''Failure''.
+    pub fn get_deployment_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_status
+    }
     /// The type of the deployment.
     pub fn deployment_type(mut self, input: crate::types::DeploymentType) -> Self {
         self.deployment_type = ::std::option::Option::Some(input);
@@ -156,6 +172,10 @@ impl BulkDeploymentResultBuilder {
     ) -> Self {
         self.deployment_type = input;
         self
+    }
+    /// The type of the deployment.
+    pub fn get_deployment_type(&self) -> &::std::option::Option<crate::types::DeploymentType> {
+        &self.deployment_type
     }
     /// Appends an item to `error_details`.
     ///
@@ -176,6 +196,12 @@ impl BulkDeploymentResultBuilder {
         self.error_details = input;
         self
     }
+    /// Details about the error.
+    pub fn get_error_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>> {
+        &self.error_details
+    }
     /// The error message for a failed deployment
     pub fn error_message(
         mut self,
@@ -192,6 +218,10 @@ impl BulkDeploymentResultBuilder {
         self.error_message = input;
         self
     }
+    /// The error message for a failed deployment
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
+    }
     /// The ARN of the Greengrass group.
     pub fn group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_arn = ::std::option::Option::Some(input.into());
@@ -201,6 +231,10 @@ impl BulkDeploymentResultBuilder {
     pub fn set_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_arn = input;
         self
+    }
+    /// The ARN of the Greengrass group.
+    pub fn get_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_arn
     }
     /// Consumes the builder and constructs a [`BulkDeploymentResult`](crate::types::BulkDeploymentResult).
     pub fn build(self) -> crate::types::BulkDeploymentResult {

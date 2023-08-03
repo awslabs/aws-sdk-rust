@@ -44,6 +44,11 @@ impl CreditSpecificationBuilder {
         self.cpu_credits = input;
         self
     }
+    /// <p>The credit option for CPU usage of a T instance.</p>
+    /// <p>Valid values: <code>standard</code> | <code>unlimited</code> </p>
+    pub fn get_cpu_credits(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cpu_credits
+    }
     /// Consumes the builder and constructs a [`CreditSpecification`](crate::types::CreditSpecification).
     pub fn build(self) -> crate::types::CreditSpecification {
         crate::types::CreditSpecification {

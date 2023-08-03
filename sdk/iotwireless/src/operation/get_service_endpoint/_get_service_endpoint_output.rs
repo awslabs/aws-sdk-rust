@@ -66,6 +66,12 @@ impl GetServiceEndpointOutputBuilder {
         self.service_type = input;
         self
     }
+    /// <p>The endpoint's service type.</p>
+    pub fn get_service_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::WirelessGatewayServiceType> {
+        &self.service_type
+    }
     /// <p>The service endpoint value.</p>
     pub fn service_endpoint(
         mut self,
@@ -82,6 +88,10 @@ impl GetServiceEndpointOutputBuilder {
         self.service_endpoint = input;
         self
     }
+    /// <p>The service endpoint value.</p>
+    pub fn get_service_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_endpoint
+    }
     /// <p>The Root CA of the server trust certificate.</p>
     pub fn server_trust(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_trust = ::std::option::Option::Some(input.into());
@@ -91,6 +101,10 @@ impl GetServiceEndpointOutputBuilder {
     pub fn set_server_trust(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_trust = input;
         self
+    }
+    /// <p>The Root CA of the server trust certificate.</p>
+    pub fn get_server_trust(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_trust
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

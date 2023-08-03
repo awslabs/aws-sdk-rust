@@ -63,6 +63,12 @@ impl ListJobRunsOutputBuilder {
         self.job_runs = input;
         self
     }
+    /// <p>The output lists information about the specified job runs.</p>
+    pub fn get_job_runs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobRunSummary>> {
+        &self.job_runs
+    }
     /// <p>The output displays the token for the next set of job run results. This is required for pagination and is available as a response of the previous request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -72,6 +78,10 @@ impl ListJobRunsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The output displays the token for the next set of job run results. This is required for pagination and is available as a response of the previous request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

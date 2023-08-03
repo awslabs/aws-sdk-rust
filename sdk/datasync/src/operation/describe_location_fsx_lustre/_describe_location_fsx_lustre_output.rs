@@ -70,6 +70,10 @@ impl DescribeLocationFsxLustreOutputBuilder {
         self.location_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the FSx for Lustre location that was described.</p>
+    pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location_arn
+    }
     /// <p>The URI of the FSx for Lustre location that was described.</p>
     pub fn location_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_uri = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl DescribeLocationFsxLustreOutputBuilder {
     pub fn set_location_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location_uri = input;
         self
+    }
+    /// <p>The URI of the FSx for Lustre location that was described.</p>
+    pub fn get_location_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location_uri
     }
     /// Appends an item to `security_group_arns`.
     ///
@@ -102,6 +110,12 @@ impl DescribeLocationFsxLustreOutputBuilder {
         self.security_group_arns = input;
         self
     }
+    /// <p>The Amazon Resource Names (ARNs) of the security groups that are configured for the FSx for Lustre file system.</p>
+    pub fn get_security_group_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_arns
+    }
     /// <p>The time that the FSx for Lustre location was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -114,6 +128,10 @@ impl DescribeLocationFsxLustreOutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The time that the FSx for Lustre location was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

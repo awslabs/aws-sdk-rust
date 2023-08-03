@@ -45,6 +45,10 @@ impl GetKeyPairInputBuilder {
         self.key_pair_name = input;
         self
     }
+    /// <p>The name of the key pair for which you are requesting information.</p>
+    pub fn get_key_pair_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_pair_name
+    }
     /// Consumes the builder and constructs a [`GetKeyPairInput`](crate::operation::get_key_pair::GetKeyPairInput).
     pub fn build(
         self,

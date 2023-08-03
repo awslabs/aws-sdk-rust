@@ -47,6 +47,10 @@ impl DisableLdapsInputBuilder {
         self.directory_id = input;
         self
     }
+    /// <p>The identifier of the directory.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
+    }
     /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
     pub fn r#type(mut self, input: crate::types::LdapsType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -56,6 +60,10 @@ impl DisableLdapsInputBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::LdapsType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::LdapsType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`DisableLdapsInput`](crate::operation::disable_ldaps::DisableLdapsInput).
     pub fn build(

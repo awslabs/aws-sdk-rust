@@ -37,6 +37,13 @@ impl DeleteDeliveryChannelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteDeliveryChannel as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_delivery_channel::builders::DeleteDeliveryChannelInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +139,9 @@ impl DeleteDeliveryChannelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_delivery_channel_name(input);
         self
+    }
+    /// <p>The name of the delivery channel to delete.</p>
+    pub fn get_delivery_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_delivery_channel_name()
     }
 }

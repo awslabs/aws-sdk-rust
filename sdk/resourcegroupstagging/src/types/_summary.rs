@@ -80,6 +80,10 @@ impl SummaryBuilder {
         self.last_updated = input;
         self
     }
+    /// <p>The timestamp that shows when this summary was generated in this Region. </p>
+    pub fn get_last_updated(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_updated
+    }
     /// <p>The account identifier or the root identifier of the organization. If you don't know the root ID, you can call the Organizations <a href="https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListRoots.html">ListRoots</a> API.</p>
     pub fn target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_id = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl SummaryBuilder {
     pub fn set_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_id = input;
         self
+    }
+    /// <p>The account identifier or the root identifier of the organization. If you don't know the root ID, you can call the Organizations <a href="https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListRoots.html">ListRoots</a> API.</p>
+    pub fn get_target_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_id
     }
     /// <p>Whether the target is an account, an OU, or the organization root.</p>
     pub fn target_id_type(mut self, input: crate::types::TargetIdType) -> Self {
@@ -103,6 +111,10 @@ impl SummaryBuilder {
         self.target_id_type = input;
         self
     }
+    /// <p>Whether the target is an account, an OU, or the organization root.</p>
+    pub fn get_target_id_type(&self) -> &::std::option::Option<crate::types::TargetIdType> {
+        &self.target_id_type
+    }
     /// <p>The Amazon Web Services Region that the summary applies to.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
@@ -112,6 +124,10 @@ impl SummaryBuilder {
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
+    }
+    /// <p>The Amazon Web Services Region that the summary applies to.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
     }
     /// <p>The Amazon Web Services resource type.</p>
     pub fn resource_type(
@@ -129,6 +145,10 @@ impl SummaryBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The Amazon Web Services resource type.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
+    }
     /// <p>The count of noncompliant resources.</p>
     pub fn non_compliant_resources(mut self, input: i64) -> Self {
         self.non_compliant_resources = ::std::option::Option::Some(input);
@@ -138,6 +158,10 @@ impl SummaryBuilder {
     pub fn set_non_compliant_resources(mut self, input: ::std::option::Option<i64>) -> Self {
         self.non_compliant_resources = input;
         self
+    }
+    /// <p>The count of noncompliant resources.</p>
+    pub fn get_non_compliant_resources(&self) -> &::std::option::Option<i64> {
+        &self.non_compliant_resources
     }
     /// Consumes the builder and constructs a [`Summary`](crate::types::Summary).
     pub fn build(self) -> crate::types::Summary {

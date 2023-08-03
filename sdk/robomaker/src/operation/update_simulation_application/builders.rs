@@ -36,6 +36,10 @@ impl UpdateSimulationApplicationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateSimulationApplication as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_simulation_application::builders::UpdateSimulationApplicationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl UpdateSimulationApplicationFluentBuilder {
         self.inner = self.inner.set_application(input);
         self
     }
+    /// <p>The application information for the simulation application.</p>
+    pub fn get_application(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application()
+    }
     /// Appends an item to `sources`.
     ///
     /// To override the contents of this collection use [`set_sources`](Self::set_sources).
@@ -143,6 +151,12 @@ impl UpdateSimulationApplicationFluentBuilder {
         self.inner = self.inner.set_sources(input);
         self
     }
+    /// <p>The sources of the simulation application.</p>
+    pub fn get_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceConfig>> {
+        self.inner.get_sources()
+    }
     /// <p>The simulation software suite used by the simulation application.</p>
     pub fn simulation_software_suite(
         mut self,
@@ -159,6 +173,12 @@ impl UpdateSimulationApplicationFluentBuilder {
         self.inner = self.inner.set_simulation_software_suite(input);
         self
     }
+    /// <p>The simulation software suite used by the simulation application.</p>
+    pub fn get_simulation_software_suite(
+        &self,
+    ) -> &::std::option::Option<crate::types::SimulationSoftwareSuite> {
+        self.inner.get_simulation_software_suite()
+    }
     /// <p>Information about the robot software suite (ROS distribution).</p>
     pub fn robot_software_suite(mut self, input: crate::types::RobotSoftwareSuite) -> Self {
         self.inner = self.inner.robot_software_suite(input);
@@ -172,6 +192,12 @@ impl UpdateSimulationApplicationFluentBuilder {
         self.inner = self.inner.set_robot_software_suite(input);
         self
     }
+    /// <p>Information about the robot software suite (ROS distribution).</p>
+    pub fn get_robot_software_suite(
+        &self,
+    ) -> &::std::option::Option<crate::types::RobotSoftwareSuite> {
+        self.inner.get_robot_software_suite()
+    }
     /// <p>The rendering engine for the simulation application.</p>
     pub fn rendering_engine(mut self, input: crate::types::RenderingEngine) -> Self {
         self.inner = self.inner.rendering_engine(input);
@@ -184,6 +210,10 @@ impl UpdateSimulationApplicationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_rendering_engine(input);
         self
+    }
+    /// <p>The rendering engine for the simulation application.</p>
+    pub fn get_rendering_engine(&self) -> &::std::option::Option<crate::types::RenderingEngine> {
+        self.inner.get_rendering_engine()
     }
     /// <p>The revision id for the robot application.</p>
     pub fn current_revision_id(
@@ -201,6 +231,10 @@ impl UpdateSimulationApplicationFluentBuilder {
         self.inner = self.inner.set_current_revision_id(input);
         self
     }
+    /// <p>The revision id for the robot application.</p>
+    pub fn get_current_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_current_revision_id()
+    }
     /// <p>The object that contains the Docker image URI for your simulation application.</p>
     pub fn environment(mut self, input: crate::types::Environment) -> Self {
         self.inner = self.inner.environment(input);
@@ -213,5 +247,9 @@ impl UpdateSimulationApplicationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_environment(input);
         self
+    }
+    /// <p>The object that contains the Docker image URI for your simulation application.</p>
+    pub fn get_environment(&self) -> &::std::option::Option<crate::types::Environment> {
+        self.inner.get_environment()
     }
 }

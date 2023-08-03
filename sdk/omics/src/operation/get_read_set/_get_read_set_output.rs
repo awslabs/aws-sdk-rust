@@ -46,6 +46,12 @@ impl GetReadSetOutputBuilder {
         self.payload = input;
         self
     }
+    /// <p>The read set file payload.</p>
+    pub fn get_payload(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+        &self.payload
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -61,6 +61,12 @@ impl AppflowIntegrationWorkflowAttributesBuilder {
         self.source_connector_type = input;
         self
     }
+    /// <p>Specifies the source connector type, such as Salesforce, ServiceNow, and Marketo. Indicates source of ingestion.</p>
+    pub fn get_source_connector_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::SourceConnectorType> {
+        &self.source_connector_type
+    }
     /// <p>The name of the AppFlow connector profile used for ingestion.</p>
     pub fn connector_profile_name(
         mut self,
@@ -77,6 +83,10 @@ impl AppflowIntegrationWorkflowAttributesBuilder {
         self.connector_profile_name = input;
         self
     }
+    /// <p>The name of the AppFlow connector profile used for ingestion.</p>
+    pub fn get_connector_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connector_profile_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Customer Profiles assumes this role to create resources on your behalf as part of workflow execution.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -86,6 +96,10 @@ impl AppflowIntegrationWorkflowAttributesBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role. Customer Profiles assumes this role to create resources on your behalf as part of workflow execution.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Consumes the builder and constructs a [`AppflowIntegrationWorkflowAttributes`](crate::types::AppflowIntegrationWorkflowAttributes).
     pub fn build(self) -> crate::types::AppflowIntegrationWorkflowAttributes {

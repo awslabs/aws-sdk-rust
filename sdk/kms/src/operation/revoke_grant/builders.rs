@@ -47,6 +47,10 @@ impl RevokeGrantFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RevokeGrant as a reference.
+    pub fn as_input(&self) -> &crate::operation::revoke_grant::builders::RevokeGrantInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -143,6 +147,17 @@ impl RevokeGrantFluentBuilder {
         self.inner = self.inner.set_key_id(input);
         self
     }
+    /// <p>A unique identifier for the KMS key associated with the grant. To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
+    /// <p>Specify the key ID or key ARN of the KMS key. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN.</p>
+    /// <p>For example:</p>
+    /// <ul>
+    /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+    /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+    /// </ul>
+    /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
+    pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_key_id()
+    }
     /// <p>Identifies the grant to revoke. To get the grant ID, use <code>CreateGrant</code>, <code>ListGrants</code>, or <code>ListRetirableGrants</code>.</p>
     pub fn grant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.grant_id(input.into());
@@ -152,6 +167,10 @@ impl RevokeGrantFluentBuilder {
     pub fn set_grant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_grant_id(input);
         self
+    }
+    /// <p>Identifies the grant to revoke. To get the grant ID, use <code>CreateGrant</code>, <code>ListGrants</code>, or <code>ListRetirableGrants</code>.</p>
+    pub fn get_grant_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_grant_id()
     }
     /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
     /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
@@ -164,5 +183,10 @@ impl RevokeGrantFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

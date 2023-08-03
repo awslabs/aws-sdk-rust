@@ -89,6 +89,10 @@ impl UpdatePricingPlanOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the updated pricing plan. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p> The name of the pricing plan. The name must be unique to each pricing plan. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -98,6 +102,10 @@ impl UpdatePricingPlanOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p> The name of the pricing plan. The name must be unique to each pricing plan. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p> The new description for the pricing rule. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -109,6 +117,10 @@ impl UpdatePricingPlanOutputBuilder {
         self.description = input;
         self
     }
+    /// <p> The new description for the pricing rule. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p> The pricing rules count that's currently associated with this pricing plan list. </p>
     pub fn size(mut self, input: i64) -> Self {
         self.size = ::std::option::Option::Some(input);
@@ -119,6 +131,10 @@ impl UpdatePricingPlanOutputBuilder {
         self.size = input;
         self
     }
+    /// <p> The pricing rules count that's currently associated with this pricing plan list. </p>
+    pub fn get_size(&self) -> &::std::option::Option<i64> {
+        &self.size
+    }
     /// <p> The most recent time when the pricing plan was modified. </p>
     pub fn last_modified_time(mut self, input: i64) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -128,6 +144,10 @@ impl UpdatePricingPlanOutputBuilder {
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p> The most recent time when the pricing plan was modified. </p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<i64> {
+        &self.last_modified_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

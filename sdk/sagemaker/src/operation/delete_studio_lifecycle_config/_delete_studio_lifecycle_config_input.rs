@@ -45,6 +45,12 @@ impl DeleteStudioLifecycleConfigInputBuilder {
         self.studio_lifecycle_config_name = input;
         self
     }
+    /// <p>The name of the Studio Lifecycle Configuration to delete.</p>
+    pub fn get_studio_lifecycle_config_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.studio_lifecycle_config_name
+    }
     /// Consumes the builder and constructs a [`DeleteStudioLifecycleConfigInput`](crate::operation::delete_studio_lifecycle_config::DeleteStudioLifecycleConfigInput).
     pub fn build(
         self,

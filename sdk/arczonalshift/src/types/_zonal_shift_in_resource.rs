@@ -95,6 +95,10 @@ impl ZonalShiftInResourceBuilder {
         self.applied_status = input;
         self
     }
+    /// <p>An <code>appliedStatus</code> for a zonal shift for a resource can have one of two values: <code>APPLIED</code> or <code>NOT_APPLIED</code>. </p>
+    pub fn get_applied_status(&self) -> &::std::option::Option<crate::types::AppliedStatus> {
+        &self.applied_status
+    }
     /// <p>The identifier of a zonal shift.</p>
     pub fn zonal_shift_id(
         mut self,
@@ -110,6 +114,10 @@ impl ZonalShiftInResourceBuilder {
     ) -> Self {
         self.zonal_shift_id = input;
         self
+    }
+    /// <p>The identifier of a zonal shift.</p>
+    pub fn get_zonal_shift_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.zonal_shift_id
     }
     /// <p>The identifier for the resource to include in a zonal shift. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
     /// <p>At this time, you can only start a zonal shift for Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
@@ -129,6 +137,11 @@ impl ZonalShiftInResourceBuilder {
         self.resource_identifier = input;
         self
     }
+    /// <p>The identifier for the resource to include in a zonal shift. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
+    /// <p>At this time, you can only start a zonal shift for Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
+    pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_identifier
+    }
     /// <p>The Availability Zone that traffic is moved away from for a resource when you start a zonal shift. Until the zonal shift expires or you cancel it, traffic for the resource is instead moved to other Availability Zones in the AWS Region.</p>
     pub fn away_from(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.away_from = ::std::option::Option::Some(input.into());
@@ -138,6 +151,10 @@ impl ZonalShiftInResourceBuilder {
     pub fn set_away_from(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.away_from = input;
         self
+    }
+    /// <p>The Availability Zone that traffic is moved away from for a resource when you start a zonal shift. Until the zonal shift expires or you cancel it, traffic for the resource is instead moved to other Availability Zones in the AWS Region.</p>
+    pub fn get_away_from(&self) -> &::std::option::Option<::std::string::String> {
+        &self.away_from
     }
     /// <p>The expiry time (expiration time) for the zonal shift. A zonal shift is temporary and must be set to expire when you start the zonal shift. You can initially set a zonal shift to expire in a maximum of three days (72 hours). However, you can update a zonal shift to set a new expiration at any time. </p>
     /// <p>When you start a zonal shift, you specify how long you want it to be active, which Route 53 ARC converts to an expiry time (expiration time). You can cancel a zonal shift, for example, if you're ready to restore traffic to the Availability Zone. Or you can update the zonal shift to specify another length of time to expire in.</p>
@@ -154,6 +171,11 @@ impl ZonalShiftInResourceBuilder {
         self.expiry_time = input;
         self
     }
+    /// <p>The expiry time (expiration time) for the zonal shift. A zonal shift is temporary and must be set to expire when you start the zonal shift. You can initially set a zonal shift to expire in a maximum of three days (72 hours). However, you can update a zonal shift to set a new expiration at any time. </p>
+    /// <p>When you start a zonal shift, you specify how long you want it to be active, which Route 53 ARC converts to an expiry time (expiration time). You can cancel a zonal shift, for example, if you're ready to restore traffic to the Availability Zone. Or you can update the zonal shift to specify another length of time to expire in.</p>
+    pub fn get_expiry_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expiry_time
+    }
     /// <p>The time (UTC) when the zonal shift is started.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -167,6 +189,10 @@ impl ZonalShiftInResourceBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The time (UTC) when the zonal shift is started.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>A comment that you enter about the zonal shift. Only the latest comment is retained; no comment history is maintained. That is, a new comment overwrites any existing comment string.</p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment = ::std::option::Option::Some(input.into());
@@ -176,6 +202,10 @@ impl ZonalShiftInResourceBuilder {
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comment = input;
         self
+    }
+    /// <p>A comment that you enter about the zonal shift. Only the latest comment is retained; no comment history is maintained. That is, a new comment overwrites any existing comment string.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comment
     }
     /// Consumes the builder and constructs a [`ZonalShiftInResource`](crate::types::ZonalShiftInResource).
     pub fn build(self) -> crate::types::ZonalShiftInResource {

@@ -53,6 +53,10 @@ impl DeleteNotificationConfigurationInputBuilder {
         self.auto_scaling_group_name = input;
         self
     }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auto_scaling_group_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
     pub fn topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_arn = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl DeleteNotificationConfigurationInputBuilder {
     pub fn set_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.topic_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
+    pub fn get_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_arn
     }
     /// Consumes the builder and constructs a [`DeleteNotificationConfigurationInput`](crate::operation::delete_notification_configuration::DeleteNotificationConfigurationInput).
     pub fn build(

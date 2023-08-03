@@ -59,6 +59,10 @@ impl ConfigurationsBuilder {
         self.current = input;
         self
     }
+    /// <p>The broker's current configuration.</p>
+    pub fn get_current(&self) -> &::std::option::Option<crate::types::ConfigurationId> {
+        &self.current
+    }
     /// Appends an item to `history`.
     ///
     /// To override the contents of this collection use [`set_history`](Self::set_history).
@@ -78,6 +82,12 @@ impl ConfigurationsBuilder {
         self.history = input;
         self
     }
+    /// <p>The history of configurations applied to the broker.</p>
+    pub fn get_history(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationId>> {
+        &self.history
+    }
     /// <p>The broker's pending configuration.</p>
     pub fn pending(mut self, input: crate::types::ConfigurationId) -> Self {
         self.pending = ::std::option::Option::Some(input);
@@ -90,6 +100,10 @@ impl ConfigurationsBuilder {
     ) -> Self {
         self.pending = input;
         self
+    }
+    /// <p>The broker's pending configuration.</p>
+    pub fn get_pending(&self) -> &::std::option::Option<crate::types::ConfigurationId> {
+        &self.pending
     }
     /// Consumes the builder and constructs a [`Configurations`](crate::types::Configurations).
     pub fn build(self) -> crate::types::Configurations {

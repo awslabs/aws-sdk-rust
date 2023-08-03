@@ -62,6 +62,10 @@ impl BatchAssociateResourceOutputBuilder {
         self.resource_set_identifier = input;
         self
     }
+    /// <p>A unique identifier for the resource set, used in a request to refer to the resource set.</p>
+    pub fn get_resource_set_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_set_identifier
+    }
     /// Appends an item to `failed_items`.
     ///
     /// To override the contents of this collection use [`set_failed_items`](Self::set_failed_items).
@@ -80,6 +84,12 @@ impl BatchAssociateResourceOutputBuilder {
     ) -> Self {
         self.failed_items = input;
         self
+    }
+    /// <p>The resources that failed to associate to the resource set.</p>
+    pub fn get_failed_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedItem>> {
+        &self.failed_items
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

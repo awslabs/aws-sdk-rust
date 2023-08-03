@@ -48,6 +48,10 @@ impl PhysicalResourceIdContextKeyValuePairBuilder {
         self.key = input;
         self
     }
+    /// <p>The resource context key.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>The resource context value.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl PhysicalResourceIdContextKeyValuePairBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The resource context value.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`PhysicalResourceIdContextKeyValuePair`](crate::types::PhysicalResourceIdContextKeyValuePair).
     pub fn build(self) -> crate::types::PhysicalResourceIdContextKeyValuePair {

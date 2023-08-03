@@ -66,6 +66,12 @@ impl BatchStartOutputBuilder {
         self.failed = input;
         self
     }
+    /// List of failed operations
+    pub fn get_failed(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchFailedResultModel>> {
+        &self.failed
+    }
     /// Appends an item to `successful`.
     ///
     /// To override the contents of this collection use [`set_successful`](Self::set_successful).
@@ -84,6 +90,12 @@ impl BatchStartOutputBuilder {
     ) -> Self {
         self.successful = input;
         self
+    }
+    /// List of successful operations
+    pub fn get_successful(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchSuccessfulResultModel>> {
+        &self.successful
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

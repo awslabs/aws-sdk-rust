@@ -63,6 +63,10 @@ impl CreatePlatformVersionOutputBuilder {
         self.platform_summary = input;
         self
     }
+    /// <p>Detailed information about the new version of the custom platform.</p>
+    pub fn get_platform_summary(&self) -> &::std::option::Option<crate::types::PlatformSummary> {
+        &self.platform_summary
+    }
     /// <p>The builder used to create the custom platform.</p>
     pub fn builder_value(mut self, input: crate::types::Builder) -> Self {
         self.builder_value = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl CreatePlatformVersionOutputBuilder {
     pub fn set_builder(mut self, input: ::std::option::Option<crate::types::Builder>) -> Self {
         self.builder_value = input;
         self
+    }
+    /// <p>The builder used to create the custom platform.</p>
+    pub fn get_builder(&self) -> &::std::option::Option<crate::types::Builder> {
+        &self.builder_value
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

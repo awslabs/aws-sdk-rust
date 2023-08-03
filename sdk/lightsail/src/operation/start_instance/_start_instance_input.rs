@@ -45,6 +45,10 @@ impl StartInstanceInputBuilder {
         self.instance_name = input;
         self
     }
+    /// <p>The name of the instance (a virtual private server) to start.</p>
+    pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_name
+    }
     /// Consumes the builder and constructs a [`StartInstanceInput`](crate::operation::start_instance::StartInstanceInput).
     pub fn build(
         self,

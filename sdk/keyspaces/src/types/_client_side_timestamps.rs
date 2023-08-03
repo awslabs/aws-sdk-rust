@@ -44,6 +44,10 @@ impl ClientSideTimestampsBuilder {
         self.status = input;
         self
     }
+    /// <p>Shows how to enable client-side timestamps settings for the specified table.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ClientSideTimestampsStatus> {
+        &self.status
+    }
     /// Consumes the builder and constructs a [`ClientSideTimestamps`](crate::types::ClientSideTimestamps).
     pub fn build(self) -> crate::types::ClientSideTimestamps {
         crate::types::ClientSideTimestamps {

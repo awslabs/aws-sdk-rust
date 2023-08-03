@@ -62,6 +62,10 @@ impl StartAppOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the app.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The name of the domain of the app.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl StartAppOutputBuilder {
         self.domain = input;
         self
     }
+    /// <p>The name of the domain of the app.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
+    }
     /// <p>The name of the simulation of the app.</p>
     pub fn simulation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.simulation = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl StartAppOutputBuilder {
     pub fn set_simulation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.simulation = input;
         self
+    }
+    /// <p>The name of the simulation of the app.</p>
+    pub fn get_simulation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.simulation
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

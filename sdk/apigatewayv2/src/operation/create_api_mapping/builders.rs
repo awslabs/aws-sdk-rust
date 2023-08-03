@@ -36,6 +36,12 @@ impl CreateApiMappingFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateApiMapping as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_api_mapping::builders::CreateApiMappingInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateApiMappingFluentBuilder {
         self.inner = self.inner.set_api_id(input);
         self
     }
+    /// <p>The API identifier.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_api_id()
+    }
     /// The API mapping key.
     pub fn api_mapping_key(
         mut self,
@@ -142,6 +152,10 @@ impl CreateApiMappingFluentBuilder {
         self.inner = self.inner.set_api_mapping_key(input);
         self
     }
+    /// The API mapping key.
+    pub fn get_api_mapping_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_api_mapping_key()
+    }
     /// <p>The domain name.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_name(input.into());
@@ -152,6 +166,10 @@ impl CreateApiMappingFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p>The domain name.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
     /// <p>The API stage.</p>
     pub fn stage(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stage(input.into());
@@ -161,5 +179,9 @@ impl CreateApiMappingFluentBuilder {
     pub fn set_stage(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stage(input);
         self
+    }
+    /// <p>The API stage.</p>
+    pub fn get_stage(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stage()
     }
 }

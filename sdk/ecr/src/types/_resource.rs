@@ -75,6 +75,10 @@ impl ResourceBuilder {
         self.details = input;
         self
     }
+    /// <p>An object that contains details about the resource involved in a finding.</p>
+    pub fn get_details(&self) -> &::std::option::Option<crate::types::ResourceDetails> {
+        &self.details
+    }
     /// <p>The ID of the resource.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -84,6 +88,10 @@ impl ResourceBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The ID of the resource.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -110,6 +118,14 @@ impl ResourceBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags attached to the resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The type of resource.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -119,6 +135,10 @@ impl ResourceBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of resource.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`Resource`](crate::types::Resource).
     pub fn build(self) -> crate::types::Resource {

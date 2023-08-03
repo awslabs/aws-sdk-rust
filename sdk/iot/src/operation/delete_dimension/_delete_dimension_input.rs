@@ -39,6 +39,10 @@ impl DeleteDimensionInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The unique identifier for the dimension that you want to delete.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DeleteDimensionInput`](crate::operation::delete_dimension::DeleteDimensionInput).
     pub fn build(
         self,

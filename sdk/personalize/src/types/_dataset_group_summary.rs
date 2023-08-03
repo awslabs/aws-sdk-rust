@@ -98,6 +98,10 @@ impl DatasetGroupSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the dataset group.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
     pub fn dataset_group_arn(
         mut self,
@@ -113,6 +117,10 @@ impl DatasetGroupSummaryBuilder {
     ) -> Self {
         self.dataset_group_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
+    pub fn get_dataset_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_group_arn
     }
     /// <p>The status of the dataset group.</p>
     /// <p>A dataset group can be in one of the following states:</p>
@@ -134,6 +142,15 @@ impl DatasetGroupSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the dataset group.</p>
+    /// <p>A dataset group can be in one of the following states:</p>
+    /// <ul>
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// <li> <p>DELETE PENDING</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>The date and time (in Unix time) that the dataset group was created.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
@@ -147,6 +164,10 @@ impl DatasetGroupSummaryBuilder {
         self.creation_date_time = input;
         self
     }
+    /// <p>The date and time (in Unix time) that the dataset group was created.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
+    }
     /// <p>The date and time (in Unix time) that the dataset group was last updated.</p>
     pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date_time = ::std::option::Option::Some(input);
@@ -159,6 +180,12 @@ impl DatasetGroupSummaryBuilder {
     ) -> Self {
         self.last_updated_date_time = input;
         self
+    }
+    /// <p>The date and time (in Unix time) that the dataset group was last updated.</p>
+    pub fn get_last_updated_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date_time
     }
     /// <p>If creating a dataset group fails, the reason behind the failure.</p>
     pub fn failure_reason(
@@ -176,6 +203,10 @@ impl DatasetGroupSummaryBuilder {
         self.failure_reason = input;
         self
     }
+    /// <p>If creating a dataset group fails, the reason behind the failure.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
+    }
     /// <p>The domain of a Domain dataset group.</p>
     pub fn domain(mut self, input: crate::types::Domain) -> Self {
         self.domain = ::std::option::Option::Some(input);
@@ -185,6 +216,10 @@ impl DatasetGroupSummaryBuilder {
     pub fn set_domain(mut self, input: ::std::option::Option<crate::types::Domain>) -> Self {
         self.domain = input;
         self
+    }
+    /// <p>The domain of a Domain dataset group.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<crate::types::Domain> {
+        &self.domain
     }
     /// Consumes the builder and constructs a [`DatasetGroupSummary`](crate::types::DatasetGroupSummary).
     pub fn build(self) -> crate::types::DatasetGroupSummary {

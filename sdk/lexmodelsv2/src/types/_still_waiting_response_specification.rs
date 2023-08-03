@@ -73,6 +73,12 @@ impl StillWaitingResponseSpecificationBuilder {
         self.message_groups = input;
         self
     }
+    /// <p>One or more message groups, each containing one or more messages, that define the prompts that Amazon Lex sends to the user.</p>
+    pub fn get_message_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageGroup>> {
+        &self.message_groups
+    }
     /// <p>How often a message should be sent to the user. Minimum of 1 second, maximum of 5 minutes.</p>
     pub fn frequency_in_seconds(mut self, input: i32) -> Self {
         self.frequency_in_seconds = ::std::option::Option::Some(input);
@@ -82,6 +88,10 @@ impl StillWaitingResponseSpecificationBuilder {
     pub fn set_frequency_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.frequency_in_seconds = input;
         self
+    }
+    /// <p>How often a message should be sent to the user. Minimum of 1 second, maximum of 5 minutes.</p>
+    pub fn get_frequency_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.frequency_in_seconds
     }
     /// <p>If Amazon Lex waits longer than this length of time for a response, it will stop sending messages.</p>
     pub fn timeout_in_seconds(mut self, input: i32) -> Self {
@@ -93,6 +103,10 @@ impl StillWaitingResponseSpecificationBuilder {
         self.timeout_in_seconds = input;
         self
     }
+    /// <p>If Amazon Lex waits longer than this length of time for a response, it will stop sending messages.</p>
+    pub fn get_timeout_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.timeout_in_seconds
+    }
     /// <p>Indicates that the user can interrupt the response by speaking while the message is being played.</p>
     pub fn allow_interrupt(mut self, input: bool) -> Self {
         self.allow_interrupt = ::std::option::Option::Some(input);
@@ -102,6 +116,10 @@ impl StillWaitingResponseSpecificationBuilder {
     pub fn set_allow_interrupt(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_interrupt = input;
         self
+    }
+    /// <p>Indicates that the user can interrupt the response by speaking while the message is being played.</p>
+    pub fn get_allow_interrupt(&self) -> &::std::option::Option<bool> {
+        &self.allow_interrupt
     }
     /// Consumes the builder and constructs a [`StillWaitingResponseSpecification`](crate::types::StillWaitingResponseSpecification).
     pub fn build(self) -> crate::types::StillWaitingResponseSpecification {

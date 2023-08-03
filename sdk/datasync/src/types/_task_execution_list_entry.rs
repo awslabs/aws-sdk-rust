@@ -54,6 +54,10 @@ impl TaskExecutionListEntryBuilder {
         self.task_execution_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the task that was executed.</p>
+    pub fn get_task_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_execution_arn
+    }
     /// <p>The status of a task execution.</p>
     pub fn status(mut self, input: crate::types::TaskExecutionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl TaskExecutionListEntryBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of a task execution.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TaskExecutionStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`TaskExecutionListEntry`](crate::types::TaskExecutionListEntry).
     pub fn build(self) -> crate::types::TaskExecutionListEntry {

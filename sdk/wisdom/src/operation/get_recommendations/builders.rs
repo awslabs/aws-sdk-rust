@@ -36,6 +36,12 @@ impl GetRecommendationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetRecommendations as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_recommendations::builders::GetRecommendationsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl GetRecommendationsFluentBuilder {
         self.inner = self.inner.set_assistant_id(input);
         self
     }
+    /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn get_assistant_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_assistant_id()
+    }
     /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.session_id(input.into());
@@ -135,6 +145,10 @@ impl GetRecommendationsFluentBuilder {
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_session_id(input);
         self
+    }
+    /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_session_id()
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -146,6 +160,10 @@ impl GetRecommendationsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The duration (in seconds) for which the call waits for a recommendation to be made available before returning. If a recommendation is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the call returns successfully with an empty list.</p>
     pub fn wait_time_seconds(mut self, input: i32) -> Self {
         self.inner = self.inner.wait_time_seconds(input);
@@ -155,5 +173,9 @@ impl GetRecommendationsFluentBuilder {
     pub fn set_wait_time_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_wait_time_seconds(input);
         self
+    }
+    /// <p>The duration (in seconds) for which the call waits for a recommendation to be made available before returning. If a recommendation is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the call returns successfully with an empty list.</p>
+    pub fn get_wait_time_seconds(&self) -> &::std::option::Option<i32> {
+        self.inner.get_wait_time_seconds()
     }
 }

@@ -64,6 +64,10 @@ impl CreateChannelInputBuilder {
         self.description = input;
         self
     }
+    /// A short text description of the Channel.
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// The ID of the Channel. The ID must be unique within the region and it cannot be changed after a Channel is created.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl CreateChannelInputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// The ID of the Channel. The ID must be unique within the region and it cannot be changed after a Channel is created.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -98,6 +106,14 @@ impl CreateChannelInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// A collection of tags associated with a resource
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateChannelInput`](crate::operation::create_channel::CreateChannelInput).
     pub fn build(

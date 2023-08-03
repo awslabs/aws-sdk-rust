@@ -88,6 +88,10 @@ impl BuildConfigurationBuilder {
         self.artifact_name = input;
         self
     }
+    /// <p>The name of the artifact of the CodeBuild build. If provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>-<i>artifact-name</i>.zip. If not provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>.zip. </p>
+    pub fn get_artifact_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.artifact_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS services on behalf of the AWS account.</p>
     pub fn code_build_service_role(
         mut self,
@@ -103,6 +107,10 @@ impl BuildConfigurationBuilder {
     ) -> Self {
         self.code_build_service_role = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS services on behalf of the AWS account.</p>
+    pub fn get_code_build_service_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code_build_service_role
     }
     /// <p>Information about the compute resources the build project will use.</p>
     /// <ul>
@@ -127,6 +135,15 @@ impl BuildConfigurationBuilder {
         self.compute_type = input;
         self
     }
+    /// <p>Information about the compute resources the build project will use.</p>
+    /// <ul>
+    /// <li> <p> <code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code> </p> </li>
+    /// <li> <p> <code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code> </p> </li>
+    /// <li> <p> <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code> </p> </li>
+    /// </ul>
+    pub fn get_compute_type(&self) -> &::std::option::Option<crate::types::ComputeType> {
+        &self.compute_type
+    }
     /// <p>The ID of the Docker image to use for this build project.</p>
     pub fn image(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image = ::std::option::Option::Some(input.into());
@@ -137,6 +154,10 @@ impl BuildConfigurationBuilder {
         self.image = input;
         self
     }
+    /// <p>The ID of the Docker image to use for this build project.</p>
+    pub fn get_image(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image
+    }
     /// <p>How long in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any related build that does not get marked as completed. The default is 60 minutes.</p>
     pub fn timeout_in_minutes(mut self, input: i32) -> Self {
         self.timeout_in_minutes = ::std::option::Option::Some(input);
@@ -146,6 +167,10 @@ impl BuildConfigurationBuilder {
     pub fn set_timeout_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.timeout_in_minutes = input;
         self
+    }
+    /// <p>How long in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any related build that does not get marked as completed. The default is 60 minutes.</p>
+    pub fn get_timeout_in_minutes(&self) -> &::std::option::Option<i32> {
+        &self.timeout_in_minutes
     }
     /// Consumes the builder and constructs a [`BuildConfiguration`](crate::types::BuildConfiguration).
     pub fn build(self) -> crate::types::BuildConfiguration {

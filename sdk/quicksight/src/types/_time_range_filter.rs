@@ -122,6 +122,10 @@ impl TimeRangeFilterBuilder {
         self.filter_id = input;
         self
     }
+    /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
+    pub fn get_filter_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filter_id
+    }
     /// <p>The column that the filter is applied to.</p>
     pub fn column(mut self, input: crate::types::ColumnIdentifier) -> Self {
         self.column = ::std::option::Option::Some(input);
@@ -135,6 +139,10 @@ impl TimeRangeFilterBuilder {
         self.column = input;
         self
     }
+    /// <p>The column that the filter is applied to.</p>
+    pub fn get_column(&self) -> &::std::option::Option<crate::types::ColumnIdentifier> {
+        &self.column
+    }
     /// <p>Determines whether the minimum value in the filter value range should be included in the filtered results.</p>
     pub fn include_minimum(mut self, input: bool) -> Self {
         self.include_minimum = ::std::option::Option::Some(input);
@@ -145,6 +153,10 @@ impl TimeRangeFilterBuilder {
         self.include_minimum = input;
         self
     }
+    /// <p>Determines whether the minimum value in the filter value range should be included in the filtered results.</p>
+    pub fn get_include_minimum(&self) -> &::std::option::Option<bool> {
+        &self.include_minimum
+    }
     /// <p>Determines whether the maximum value in the filter value range should be included in the filtered results.</p>
     pub fn include_maximum(mut self, input: bool) -> Self {
         self.include_maximum = ::std::option::Option::Some(input);
@@ -154,6 +166,10 @@ impl TimeRangeFilterBuilder {
     pub fn set_include_maximum(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_maximum = input;
         self
+    }
+    /// <p>Determines whether the maximum value in the filter value range should be included in the filtered results.</p>
+    pub fn get_include_maximum(&self) -> &::std::option::Option<bool> {
+        &self.include_maximum
     }
     /// <p>The minimum value for the filter value range.</p>
     pub fn range_minimum_value(mut self, input: crate::types::TimeRangeFilterValue) -> Self {
@@ -168,6 +184,12 @@ impl TimeRangeFilterBuilder {
         self.range_minimum_value = input;
         self
     }
+    /// <p>The minimum value for the filter value range.</p>
+    pub fn get_range_minimum_value(
+        &self,
+    ) -> &::std::option::Option<crate::types::TimeRangeFilterValue> {
+        &self.range_minimum_value
+    }
     /// <p>The maximum value for the filter value range.</p>
     pub fn range_maximum_value(mut self, input: crate::types::TimeRangeFilterValue) -> Self {
         self.range_maximum_value = ::std::option::Option::Some(input);
@@ -180,6 +202,12 @@ impl TimeRangeFilterBuilder {
     ) -> Self {
         self.range_maximum_value = input;
         self
+    }
+    /// <p>The maximum value for the filter value range.</p>
+    pub fn get_range_maximum_value(
+        &self,
+    ) -> &::std::option::Option<crate::types::TimeRangeFilterValue> {
+        &self.range_maximum_value
     }
     /// <p>This option determines how null values should be treated when filtering data.</p>
     /// <ul>
@@ -204,6 +232,15 @@ impl TimeRangeFilterBuilder {
         self.null_option = input;
         self
     }
+    /// <p>This option determines how null values should be treated when filtering data.</p>
+    /// <ul>
+    /// <li> <p> <code>ALL_VALUES</code>: Include null values in filtered results.</p> </li>
+    /// <li> <p> <code>NULLS_ONLY</code>: Only include null values in filtered results.</p> </li>
+    /// <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p> </li>
+    /// </ul>
+    pub fn get_null_option(&self) -> &::std::option::Option<crate::types::FilterNullOption> {
+        &self.null_option
+    }
     /// <p>The exclude period of the time range filter.</p>
     pub fn exclude_period_configuration(
         mut self,
@@ -220,6 +257,12 @@ impl TimeRangeFilterBuilder {
         self.exclude_period_configuration = input;
         self
     }
+    /// <p>The exclude period of the time range filter.</p>
+    pub fn get_exclude_period_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExcludePeriodConfiguration> {
+        &self.exclude_period_configuration
+    }
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
     pub fn time_granularity(mut self, input: crate::types::TimeGranularity) -> Self {
         self.time_granularity = ::std::option::Option::Some(input);
@@ -232,6 +275,10 @@ impl TimeRangeFilterBuilder {
     ) -> Self {
         self.time_granularity = input;
         self
+    }
+    /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
+    pub fn get_time_granularity(&self) -> &::std::option::Option<crate::types::TimeGranularity> {
+        &self.time_granularity
     }
     /// Consumes the builder and constructs a [`TimeRangeFilter`](crate::types::TimeRangeFilter).
     pub fn build(self) -> crate::types::TimeRangeFilter {

@@ -66,6 +66,10 @@ impl DetectDocumentTextOutputBuilder {
         self.document_metadata = input;
         self
     }
+    /// <p>Metadata about the document. It contains the number of pages that are detected in the document.</p>
+    pub fn get_document_metadata(&self) -> &::std::option::Option<crate::types::DocumentMetadata> {
+        &self.document_metadata
+    }
     /// Appends an item to `blocks`.
     ///
     /// To override the contents of this collection use [`set_blocks`](Self::set_blocks).
@@ -85,6 +89,10 @@ impl DetectDocumentTextOutputBuilder {
         self.blocks = input;
         self
     }
+    /// <p>An array of <code>Block</code> objects that contain the text that's detected in the document.</p>
+    pub fn get_blocks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Block>> {
+        &self.blocks
+    }
     /// <p></p>
     pub fn detect_document_text_model_version(
         mut self,
@@ -100,6 +108,12 @@ impl DetectDocumentTextOutputBuilder {
     ) -> Self {
         self.detect_document_text_model_version = input;
         self
+    }
+    /// <p></p>
+    pub fn get_detect_document_text_model_version(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.detect_document_text_model_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

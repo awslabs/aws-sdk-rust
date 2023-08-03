@@ -36,6 +36,13 @@ impl GrantFlowEntitlementsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GrantFlowEntitlements as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::grant_flow_entitlements::builders::GrantFlowEntitlementsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,12 @@ impl GrantFlowEntitlementsFluentBuilder {
         self.inner = self.inner.set_entitlements(input);
         self
     }
+    /// The list of entitlements that you want to grant.
+    pub fn get_entitlements(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GrantEntitlementRequest>> {
+        self.inner.get_entitlements()
+    }
     /// The flow that you want to grant entitlements on.
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flow_arn(input.into());
@@ -142,5 +155,9 @@ impl GrantFlowEntitlementsFluentBuilder {
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_flow_arn(input);
         self
+    }
+    /// The flow that you want to grant entitlements on.
+    pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_flow_arn()
     }
 }

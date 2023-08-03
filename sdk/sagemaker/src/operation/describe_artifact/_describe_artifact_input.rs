@@ -40,6 +40,10 @@ impl DescribeArtifactInputBuilder {
         self.artifact_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the artifact to describe.</p>
+    pub fn get_artifact_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.artifact_arn
+    }
     /// Consumes the builder and constructs a [`DescribeArtifactInput`](crate::operation::describe_artifact::DescribeArtifactInput).
     pub fn build(
         self,

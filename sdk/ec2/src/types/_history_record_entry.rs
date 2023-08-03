@@ -59,6 +59,10 @@ impl HistoryRecordEntryBuilder {
         self.event_information = input;
         self
     }
+    /// <p>Information about the event.</p>
+    pub fn get_event_information(&self) -> &::std::option::Option<crate::types::EventInformation> {
+        &self.event_information
+    }
     /// <p>The event type.</p>
     pub fn event_type(mut self, input: crate::types::FleetEventType) -> Self {
         self.event_type = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl HistoryRecordEntryBuilder {
         self.event_type = input;
         self
     }
+    /// <p>The event type.</p>
+    pub fn get_event_type(&self) -> &::std::option::Option<crate::types::FleetEventType> {
+        &self.event_type
+    }
     /// <p>The date and time of the event, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl HistoryRecordEntryBuilder {
     ) -> Self {
         self.timestamp = input;
         self
+    }
+    /// <p>The date and time of the event, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.timestamp
     }
     /// Consumes the builder and constructs a [`HistoryRecordEntry`](crate::types::HistoryRecordEntry).
     pub fn build(self) -> crate::types::HistoryRecordEntry {

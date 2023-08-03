@@ -40,6 +40,10 @@ impl GreengrassBuilder {
         self.group_arn = input;
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Greengrass group. For more information about how to find a group's ARN, see <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html">ListGroups</a> and <a href="https://docs.aws.amazon.com/greengrass/latest/apireference/getgroup-get.html">GetGroup</a> in the <i>IoT Greengrass API Reference</i>.</p>
+    pub fn get_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_arn
+    }
     /// Consumes the builder and constructs a [`Greengrass`](crate::types::Greengrass).
     pub fn build(self) -> crate::types::Greengrass {
         crate::types::Greengrass {

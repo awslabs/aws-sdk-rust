@@ -58,6 +58,12 @@ impl UpdateElasticsearchDomainConfigOutputBuilder {
         self.domain_config = input;
         self
     }
+    /// <p>The status of the updated Elasticsearch domain. </p>
+    pub fn get_domain_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ElasticsearchDomainConfig> {
+        &self.domain_config
+    }
     /// <p>Contains result of DryRun. </p>
     pub fn dry_run_results(mut self, input: crate::types::DryRunResults) -> Self {
         self.dry_run_results = ::std::option::Option::Some(input);
@@ -70,6 +76,10 @@ impl UpdateElasticsearchDomainConfigOutputBuilder {
     ) -> Self {
         self.dry_run_results = input;
         self
+    }
+    /// <p>Contains result of DryRun. </p>
+    pub fn get_dry_run_results(&self) -> &::std::option::Option<crate::types::DryRunResults> {
+        &self.dry_run_results
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

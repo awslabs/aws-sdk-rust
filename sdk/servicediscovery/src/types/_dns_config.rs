@@ -112,6 +112,12 @@ impl DnsConfigBuilder {
         self.namespace_id = input;
         self
     }
+    /// <p> <i>Use NamespaceId in <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_Service.html">Service</a> instead.</i> </p>
+    /// <p>The ID of the namespace to use for DNS configuration.</p>
+    #[deprecated(note = "Top level attribute in request should be used to reference namespace-id")]
+    pub fn get_namespace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace_id
+    }
     /// <p>The routing policy that you want to apply to all Route&nbsp;53 DNS records that Cloud Map creates when you register an instance and specify this service.</p> <note>
     /// <p>If you want to use this service to register instances that create alias records, specify <code>WEIGHTED</code> for the routing policy.</p>
     /// </note>
@@ -171,6 +177,33 @@ impl DnsConfigBuilder {
         self.routing_policy = input;
         self
     }
+    /// <p>The routing policy that you want to apply to all Route&nbsp;53 DNS records that Cloud Map creates when you register an instance and specify this service.</p> <note>
+    /// <p>If you want to use this service to register instances that create alias records, specify <code>WEIGHTED</code> for the routing policy.</p>
+    /// </note>
+    /// <p>You can specify the following values:</p>
+    /// <dl>
+    /// <dt>
+    /// MULTIVALUE
+    /// </dt>
+    /// <dd>
+    /// <p>If you define a health check for the service and the health check is healthy, Route&nbsp;53 returns the applicable value for up to eight instances.</p>
+    /// <p>For example, suppose that the service includes configurations for one <code>A</code> record and a health check. You use the service to register 10 instances. Route&nbsp;53 responds to DNS queries with IP addresses for up to eight healthy instances. If fewer than eight instances are healthy, Route&nbsp;53 responds to every DNS query with the IP addresses for all of the healthy instances.</p>
+    /// <p>If you don't define a health check for the service, Route&nbsp;53 assumes that all instances are healthy and returns the values for up to eight instances.</p>
+    /// <p>For more information about the multivalue routing policy, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-multivalue">Multivalue Answer Routing</a> in the <i>Route&nbsp;53 Developer Guide</i>.</p>
+    /// </dd>
+    /// <dt>
+    /// WEIGHTED
+    /// </dt>
+    /// <dd>
+    /// <p>Route&nbsp;53 returns the applicable value from one randomly selected instance from among the instances that you registered using the same service. Currently, all records have the same weight, so you can't route more or less traffic to any instances.</p>
+    /// <p>For example, suppose that the service includes configurations for one <code>A</code> record and a health check. You use the service to register 10 instances. Route&nbsp;53 responds to DNS queries with the IP address for one randomly selected instance from among the healthy instances. If no instances are healthy, Route&nbsp;53 responds to DNS queries as if all of the instances were healthy.</p>
+    /// <p>If you don't define a health check for the service, Route&nbsp;53 assumes that all instances are healthy and returns the applicable value for one randomly selected instance.</p>
+    /// <p>For more information about the weighted routing policy, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted">Weighted Routing</a> in the <i>Route&nbsp;53 Developer Guide</i>.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_routing_policy(&self) -> &::std::option::Option<crate::types::RoutingPolicy> {
+        &self.routing_policy
+    }
     /// Appends an item to `dns_records`.
     ///
     /// To override the contents of this collection use [`set_dns_records`](Self::set_dns_records).
@@ -189,6 +222,12 @@ impl DnsConfigBuilder {
     ) -> Self {
         self.dns_records = input;
         self
+    }
+    /// <p>An array that contains one <code>DnsRecord</code> object for each Route&nbsp;53 DNS record that you want Cloud Map to create when you register an instance.</p>
+    pub fn get_dns_records(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DnsRecord>> {
+        &self.dns_records
     }
     /// Consumes the builder and constructs a [`DnsConfig`](crate::types::DnsConfig).
     pub fn build(self) -> crate::types::DnsConfig {

@@ -49,6 +49,10 @@ impl UpdateExpirationForHitInputBuilder {
         self.hit_id = input;
         self
     }
+    /// <p> The HIT to update. </p>
+    pub fn get_hit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hit_id
+    }
     /// <p> The date and time at which you want the HIT to expire </p>
     pub fn expire_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.expire_at = ::std::option::Option::Some(input);
@@ -61,6 +65,10 @@ impl UpdateExpirationForHitInputBuilder {
     ) -> Self {
         self.expire_at = input;
         self
+    }
+    /// <p> The date and time at which you want the HIT to expire </p>
+    pub fn get_expire_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expire_at
     }
     /// Consumes the builder and constructs a [`UpdateExpirationForHitInput`](crate::operation::update_expiration_for_hit::UpdateExpirationForHitInput).
     pub fn build(

@@ -56,6 +56,10 @@ impl GetSolVnfInfoBuilder {
         self.vnf_state = input;
         self
     }
+    /// <p>State of the network function instance.</p>
+    pub fn get_vnf_state(&self) -> &::std::option::Option<crate::types::VnfOperationalState> {
+        &self.vnf_state
+    }
     /// Appends an item to `vnfc_resource_info`.
     ///
     /// To override the contents of this collection use [`set_vnfc_resource_info`](Self::set_vnfc_resource_info).
@@ -74,6 +78,12 @@ impl GetSolVnfInfoBuilder {
     ) -> Self {
         self.vnfc_resource_info = input;
         self
+    }
+    /// <p>Compute info used by the network function instance.</p>
+    pub fn get_vnfc_resource_info(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GetSolVnfcResourceInfo>> {
+        &self.vnfc_resource_info
     }
     /// Consumes the builder and constructs a [`GetSolVnfInfo`](crate::types::GetSolVnfInfo).
     pub fn build(self) -> crate::types::GetSolVnfInfo {

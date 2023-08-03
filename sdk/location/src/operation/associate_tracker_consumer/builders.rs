@@ -39,6 +39,13 @@ impl AssociateTrackerConsumerFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateTrackerConsumer as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::associate_tracker_consumer::builders::AssociateTrackerConsumerInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +136,10 @@ impl AssociateTrackerConsumerFluentBuilder {
         self.inner = self.inner.set_tracker_name(input);
         self
     }
+    /// <p>The name of the tracker resource to be associated with a geofence collection.</p>
+    pub fn get_tracker_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_tracker_name()
+    }
     /// <p>The Amazon Resource Name (ARN) for the geofence collection to be associated to tracker resource. Used when you need to specify a resource across all Amazon Web Services.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code> </p> </li>
@@ -144,5 +155,12 @@ impl AssociateTrackerConsumerFluentBuilder {
     pub fn set_consumer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_consumer_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the geofence collection to be associated to tracker resource. Used when you need to specify a resource across all Amazon Web Services.</p>
+    /// <ul>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code> </p> </li>
+    /// </ul>
+    pub fn get_consumer_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_consumer_arn()
     }
 }

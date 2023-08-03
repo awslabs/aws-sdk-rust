@@ -64,6 +64,10 @@ impl RenameFieldBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the transform node.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `inputs`.
     ///
     /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
@@ -82,6 +86,10 @@ impl RenameFieldBuilder {
     ) -> Self {
         self.inputs = input;
         self
+    }
+    /// <p>The data inputs identified by their node names.</p>
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.inputs
     }
     /// Appends an item to `source_path`.
     ///
@@ -102,6 +110,12 @@ impl RenameFieldBuilder {
         self.source_path = input;
         self
     }
+    /// <p>A JSON path to a variable in the data structure for the source data.</p>
+    pub fn get_source_path(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.source_path
+    }
     /// Appends an item to `target_path`.
     ///
     /// To override the contents of this collection use [`set_target_path`](Self::set_target_path).
@@ -120,6 +134,12 @@ impl RenameFieldBuilder {
     ) -> Self {
         self.target_path = input;
         self
+    }
+    /// <p>A JSON path to a variable in the data structure for the target data.</p>
+    pub fn get_target_path(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.target_path
     }
     /// Consumes the builder and constructs a [`RenameField`](crate::types::RenameField).
     pub fn build(self) -> crate::types::RenameField {

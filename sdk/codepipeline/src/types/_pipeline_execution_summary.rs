@@ -111,6 +111,10 @@ impl PipelineExecutionSummaryBuilder {
         self.pipeline_execution_id = input;
         self
     }
+    /// <p>The ID of the pipeline execution.</p>
+    pub fn get_pipeline_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_execution_id
+    }
     /// <p>The status of the pipeline execution.</p>
     /// <ul>
     /// <li> <p>InProgress: The pipeline execution is currently running.</p> </li>
@@ -140,6 +144,18 @@ impl PipelineExecutionSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the pipeline execution.</p>
+    /// <ul>
+    /// <li> <p>InProgress: The pipeline execution is currently running.</p> </li>
+    /// <li> <p>Stopped: The pipeline execution was manually stopped. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li>
+    /// <li> <p>Stopping: The pipeline execution received a request to be manually stopped. Depending on the selected stop mode, the execution is either completing or abandoning in-progress actions. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li>
+    /// <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li>
+    /// <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-superseded">Superseded Executions</a>.</p> </li>
+    /// <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::PipelineExecutionStatus> {
+        &self.status
+    }
     /// <p>The date and time when the pipeline execution began, in timestamp format.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -153,6 +169,10 @@ impl PipelineExecutionSummaryBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The date and time when the pipeline execution began, in timestamp format.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The date and time of the last change to the pipeline execution, in timestamp format.</p>
     pub fn last_update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_update_time = ::std::option::Option::Some(input);
@@ -165,6 +185,10 @@ impl PipelineExecutionSummaryBuilder {
     ) -> Self {
         self.last_update_time = input;
         self
+    }
+    /// <p>The date and time of the last change to the pipeline execution, in timestamp format.</p>
+    pub fn get_last_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_update_time
     }
     /// Appends an item to `source_revisions`.
     ///
@@ -185,6 +209,12 @@ impl PipelineExecutionSummaryBuilder {
         self.source_revisions = input;
         self
     }
+    /// <p>A list of the source artifact revisions that initiated a pipeline execution.</p>
+    pub fn get_source_revisions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceRevision>> {
+        &self.source_revisions
+    }
     /// <p>The interaction or event that started a pipeline execution, such as automated change detection or a <code>StartPipelineExecution</code> API call.</p>
     pub fn trigger(mut self, input: crate::types::ExecutionTrigger) -> Self {
         self.trigger = ::std::option::Option::Some(input);
@@ -198,6 +228,10 @@ impl PipelineExecutionSummaryBuilder {
         self.trigger = input;
         self
     }
+    /// <p>The interaction or event that started a pipeline execution, such as automated change detection or a <code>StartPipelineExecution</code> API call.</p>
+    pub fn get_trigger(&self) -> &::std::option::Option<crate::types::ExecutionTrigger> {
+        &self.trigger
+    }
     /// <p>The interaction that stopped a pipeline execution.</p>
     pub fn stop_trigger(mut self, input: crate::types::StopExecutionTrigger) -> Self {
         self.stop_trigger = ::std::option::Option::Some(input);
@@ -210,6 +244,10 @@ impl PipelineExecutionSummaryBuilder {
     ) -> Self {
         self.stop_trigger = input;
         self
+    }
+    /// <p>The interaction that stopped a pipeline execution.</p>
+    pub fn get_stop_trigger(&self) -> &::std::option::Option<crate::types::StopExecutionTrigger> {
+        &self.stop_trigger
     }
     /// Consumes the builder and constructs a [`PipelineExecutionSummary`](crate::types::PipelineExecutionSummary).
     pub fn build(self) -> crate::types::PipelineExecutionSummary {

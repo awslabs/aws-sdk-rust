@@ -62,6 +62,13 @@ impl BatchUpdatePartitionOutputBuilder {
         self.errors = input;
         self
     }
+    /// <p>The errors encountered when trying to update the requested partitions. A list of <code>BatchUpdatePartitionFailureEntry</code> objects.</p>
+    pub fn get_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchUpdatePartitionFailureEntry>>
+    {
+        &self.errors
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -84,6 +84,10 @@ impl StartDocumentTextDetectionInputBuilder {
         self.document_location = input;
         self
     }
+    /// <p>The location of the document to be processed.</p>
+    pub fn get_document_location(&self) -> &::std::option::Option<crate::types::DocumentLocation> {
+        &self.document_location
+    }
     /// <p>The idempotent token that's used to identify the start request. If you use the same token with multiple <code>StartDocumentTextDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a>.</p>
     pub fn client_request_token(
         mut self,
@@ -100,6 +104,10 @@ impl StartDocumentTextDetectionInputBuilder {
         self.client_request_token = input;
         self
     }
+    /// <p>The idempotent token that's used to identify the start request. If you use the same token with multiple <code>StartDocumentTextDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a>.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
+    }
     /// <p>An identifier that you specify that's included in the completion notification published to the Amazon SNS topic. For example, you can use <code>JobTag</code> to identify the type of document that the completion notification corresponds to (such as a tax form or a receipt).</p>
     pub fn job_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_tag = ::std::option::Option::Some(input.into());
@@ -109,6 +117,10 @@ impl StartDocumentTextDetectionInputBuilder {
     pub fn set_job_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_tag = input;
         self
+    }
+    /// <p>An identifier that you specify that's included in the completion notification published to the Amazon SNS topic. For example, you can use <code>JobTag</code> to identify the type of document that the completion notification corresponds to (such as a tax form or a receipt).</p>
+    pub fn get_job_tag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_tag
     }
     /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to. </p>
     pub fn notification_channel(mut self, input: crate::types::NotificationChannel) -> Self {
@@ -123,6 +135,12 @@ impl StartDocumentTextDetectionInputBuilder {
         self.notification_channel = input;
         self
     }
+    /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to. </p>
+    pub fn get_notification_channel(
+        &self,
+    ) -> &::std::option::Option<crate::types::NotificationChannel> {
+        &self.notification_channel
+    }
     /// <p>Sets if the output will go to a customer defined bucket. By default Amazon Textract will save the results internally to be accessed with the GetDocumentTextDetection operation.</p>
     pub fn output_config(mut self, input: crate::types::OutputConfig) -> Self {
         self.output_config = ::std::option::Option::Some(input);
@@ -136,6 +154,10 @@ impl StartDocumentTextDetectionInputBuilder {
         self.output_config = input;
         self
     }
+    /// <p>Sets if the output will go to a customer defined bucket. By default Amazon Textract will save the results internally to be accessed with the GetDocumentTextDetection operation.</p>
+    pub fn get_output_config(&self) -> &::std::option::Option<crate::types::OutputConfig> {
+        &self.output_config
+    }
     /// <p>The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When this parameter is not enabled, the result will be encrypted server side,using SSE-S3.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -145,6 +167,10 @@ impl StartDocumentTextDetectionInputBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p>The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When this parameter is not enabled, the result will be encrypted server side,using SSE-S3.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// Consumes the builder and constructs a [`StartDocumentTextDetectionInput`](crate::operation::start_document_text_detection::StartDocumentTextDetectionInput).
     pub fn build(

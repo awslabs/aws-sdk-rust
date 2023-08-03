@@ -54,6 +54,10 @@ impl CreateFlowOutputBuilder {
         self.flow_arn = input;
         self
     }
+    /// <p> The flow's Amazon Resource Name (ARN). </p>
+    pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_arn
+    }
     /// <p> Indicates the current status of the flow. </p>
     pub fn flow_status(mut self, input: crate::types::FlowStatus) -> Self {
         self.flow_status = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl CreateFlowOutputBuilder {
     ) -> Self {
         self.flow_status = input;
         self
+    }
+    /// <p> Indicates the current status of the flow. </p>
+    pub fn get_flow_status(&self) -> &::std::option::Option<crate::types::FlowStatus> {
+        &self.flow_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

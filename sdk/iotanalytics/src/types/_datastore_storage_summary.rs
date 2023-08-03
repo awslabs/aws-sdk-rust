@@ -75,6 +75,12 @@ impl DatastoreStorageSummaryBuilder {
         self
     }
     /// <p>Used to store data in an Amazon S3 bucket managed by IoT Analytics.</p>
+    pub fn get_service_managed_s3(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServiceManagedDatastoreS3StorageSummary> {
+        &self.service_managed_s3
+    }
+    /// <p>Used to store data in an Amazon S3 bucket managed by IoT Analytics.</p>
     pub fn customer_managed_s3(
         mut self,
         input: crate::types::CustomerManagedDatastoreS3StorageSummary,
@@ -89,6 +95,12 @@ impl DatastoreStorageSummaryBuilder {
     ) -> Self {
         self.customer_managed_s3 = input;
         self
+    }
+    /// <p>Used to store data in an Amazon S3 bucket managed by IoT Analytics.</p>
+    pub fn get_customer_managed_s3(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomerManagedDatastoreS3StorageSummary> {
+        &self.customer_managed_s3
     }
     /// <p> Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage. </p>
     pub fn iot_site_wise_multi_layer_storage(
@@ -105,6 +117,12 @@ impl DatastoreStorageSummaryBuilder {
     ) -> Self {
         self.iot_site_wise_multi_layer_storage = input;
         self
+    }
+    /// <p> Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage. </p>
+    pub fn get_iot_site_wise_multi_layer_storage(
+        &self,
+    ) -> &::std::option::Option<crate::types::DatastoreIotSiteWiseMultiLayerStorageSummary> {
+        &self.iot_site_wise_multi_layer_storage
     }
     /// Consumes the builder and constructs a [`DatastoreStorageSummary`](crate::types::DatastoreStorageSummary).
     pub fn build(self) -> crate::types::DatastoreStorageSummary {

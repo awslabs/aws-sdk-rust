@@ -54,6 +54,10 @@ impl DeregisterTargetFromMaintenanceWindowOutputBuilder {
         self.window_id = input;
         self
     }
+    /// <p>The ID of the maintenance window the target was removed from.</p>
+    pub fn get_window_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.window_id
+    }
     /// <p>The ID of the removed target definition.</p>
     pub fn window_target_id(
         mut self,
@@ -69,6 +73,10 @@ impl DeregisterTargetFromMaintenanceWindowOutputBuilder {
     ) -> Self {
         self.window_target_id = input;
         self
+    }
+    /// <p>The ID of the removed target definition.</p>
+    pub fn get_window_target_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.window_target_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

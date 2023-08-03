@@ -80,6 +80,10 @@ impl RecipeSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the recipe.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Name (ARN) of the recipe.</p>
     pub fn recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recipe_arn = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl RecipeSummaryBuilder {
         self.recipe_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the recipe.</p>
+    pub fn get_recipe_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recipe_arn
+    }
     /// <p>The status of the recipe.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -99,6 +107,10 @@ impl RecipeSummaryBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the recipe.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>The date and time (in Unix time) that the recipe was created.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -113,6 +125,10 @@ impl RecipeSummaryBuilder {
         self.creation_date_time = input;
         self
     }
+    /// <p>The date and time (in Unix time) that the recipe was created.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
+    }
     /// <p>The date and time (in Unix time) that the recipe was last updated.</p>
     pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date_time = ::std::option::Option::Some(input);
@@ -126,6 +142,12 @@ impl RecipeSummaryBuilder {
         self.last_updated_date_time = input;
         self
     }
+    /// <p>The date and time (in Unix time) that the recipe was last updated.</p>
+    pub fn get_last_updated_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date_time
+    }
     /// <p>The domain of the recipe (if the recipe is a Domain dataset group use case).</p>
     pub fn domain(mut self, input: crate::types::Domain) -> Self {
         self.domain = ::std::option::Option::Some(input);
@@ -135,6 +157,10 @@ impl RecipeSummaryBuilder {
     pub fn set_domain(mut self, input: ::std::option::Option<crate::types::Domain>) -> Self {
         self.domain = input;
         self
+    }
+    /// <p>The domain of the recipe (if the recipe is a Domain dataset group use case).</p>
+    pub fn get_domain(&self) -> &::std::option::Option<crate::types::Domain> {
+        &self.domain
     }
     /// Consumes the builder and constructs a [`RecipeSummary`](crate::types::RecipeSummary).
     pub fn build(self) -> crate::types::RecipeSummary {

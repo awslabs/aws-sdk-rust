@@ -84,6 +84,10 @@ impl CreateNamedQueryInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The query name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The query description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -93,6 +97,10 @@ impl CreateNamedQueryInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The query description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The database to which the query belongs.</p>
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -104,6 +112,10 @@ impl CreateNamedQueryInputBuilder {
         self.database = input;
         self
     }
+    /// <p>The database to which the query belongs.</p>
+    pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database
+    }
     /// <p>The contents of the query with all query statements.</p>
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_string = ::std::option::Option::Some(input.into());
@@ -113,6 +125,10 @@ impl CreateNamedQueryInputBuilder {
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_string = input;
         self
+    }
+    /// <p>The contents of the query with all query statements.</p>
+    pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_string
     }
     /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>CreateNamedQuery</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important>
     /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
@@ -134,6 +150,12 @@ impl CreateNamedQueryInputBuilder {
         self.client_request_token = input;
         self
     }
+    /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>CreateNamedQuery</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important>
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+    /// </important>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
+    }
     /// <p>The name of the workgroup in which the named query is being created.</p>
     pub fn work_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.work_group = ::std::option::Option::Some(input.into());
@@ -143,6 +165,10 @@ impl CreateNamedQueryInputBuilder {
     pub fn set_work_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.work_group = input;
         self
+    }
+    /// <p>The name of the workgroup in which the named query is being created.</p>
+    pub fn get_work_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.work_group
     }
     /// Consumes the builder and constructs a [`CreateNamedQueryInput`](crate::operation::create_named_query::CreateNamedQueryInput).
     pub fn build(

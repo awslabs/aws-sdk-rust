@@ -56,6 +56,10 @@ impl DiskInfoBuilder {
         self.size_in_gb = input;
         self
     }
+    /// <p>The size of the disk in GB.</p>
+    pub fn get_size_in_gb(&self) -> &::std::option::Option<i64> {
+        &self.size_in_gb
+    }
     /// <p>The number of disks with this configuration.</p>
     pub fn count(mut self, input: i32) -> Self {
         self.count = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl DiskInfoBuilder {
         self.count = input;
         self
     }
+    /// <p>The number of disks with this configuration.</p>
+    pub fn get_count(&self) -> &::std::option::Option<i32> {
+        &self.count
+    }
     /// <p>The type of disk.</p>
     pub fn r#type(mut self, input: crate::types::DiskType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl DiskInfoBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DiskType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of disk.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::DiskType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`DiskInfo`](crate::types::DiskInfo).
     pub fn build(self) -> crate::types::DiskInfo {

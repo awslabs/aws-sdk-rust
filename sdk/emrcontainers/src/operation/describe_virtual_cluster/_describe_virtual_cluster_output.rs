@@ -51,6 +51,10 @@ impl DescribeVirtualClusterOutputBuilder {
         self.virtual_cluster = input;
         self
     }
+    /// <p>This output displays information about the specified virtual cluster.</p>
+    pub fn get_virtual_cluster(&self) -> &::std::option::Option<crate::types::VirtualCluster> {
+        &self.virtual_cluster
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

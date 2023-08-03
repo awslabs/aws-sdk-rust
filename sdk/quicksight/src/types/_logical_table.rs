@@ -57,6 +57,10 @@ impl LogicalTableBuilder {
         self.alias = input;
         self
     }
+    /// <p>A display name for the logical table.</p>
+    pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias
+    }
     /// Appends an item to `data_transforms`.
     ///
     /// To override the contents of this collection use [`set_data_transforms`](Self::set_data_transforms).
@@ -76,6 +80,12 @@ impl LogicalTableBuilder {
         self.data_transforms = input;
         self
     }
+    /// <p>Transform operations that act on this logical table. For this structure to be valid, only one of the attributes can be non-null. </p>
+    pub fn get_data_transforms(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TransformOperation>> {
+        &self.data_transforms
+    }
     /// <p>Source of this logical table.</p>
     pub fn source(mut self, input: crate::types::LogicalTableSource) -> Self {
         self.source = ::std::option::Option::Some(input);
@@ -88,6 +98,10 @@ impl LogicalTableBuilder {
     ) -> Self {
         self.source = input;
         self
+    }
+    /// <p>Source of this logical table.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::LogicalTableSource> {
+        &self.source
     }
     /// Consumes the builder and constructs a [`LogicalTable`](crate::types::LogicalTable).
     pub fn build(self) -> crate::types::LogicalTable {

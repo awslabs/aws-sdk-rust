@@ -36,6 +36,12 @@ impl CreateParticipantFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateParticipant as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_participant::builders::CreateParticipantInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateParticipantFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance. </p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>The identifier of the contact in this instance of Amazon Connect. Only contacts in the CHAT channel are supported.</p>
     pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.contact_id(input.into());
@@ -136,6 +146,10 @@ impl CreateParticipantFluentBuilder {
         self.inner = self.inner.set_contact_id(input);
         self
     }
+    /// <p>The identifier of the contact in this instance of Amazon Connect. Only contacts in the CHAT channel are supported.</p>
+    pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_contact_id()
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -145,6 +159,10 @@ impl CreateParticipantFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// <p>Information identifying the participant.</p> <important>
     /// <p>The only Valid value for <code>ParticipantRole</code> is <code>CUSTOM_BOT</code>. </p>
@@ -164,5 +182,14 @@ impl CreateParticipantFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_participant_details(input);
         self
+    }
+    /// <p>Information identifying the participant.</p> <important>
+    /// <p>The only Valid value for <code>ParticipantRole</code> is <code>CUSTOM_BOT</code>. </p>
+    /// <p> <code>DisplayName</code> is <b>Required</b>.</p>
+    /// </important>
+    pub fn get_participant_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::ParticipantDetailsToAdd> {
+        self.inner.get_participant_details()
     }
 }

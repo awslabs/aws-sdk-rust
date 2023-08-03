@@ -55,6 +55,10 @@ impl RegisterUsageInputBuilder {
         self.product_code = input;
         self
     }
+    /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
+    pub fn get_product_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product_code
+    }
     /// <p>Public Key Version provided by AWS Marketplace</p>
     pub fn public_key_version(mut self, input: i32) -> Self {
         self.public_key_version = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl RegisterUsageInputBuilder {
         self.public_key_version = input;
         self
     }
+    /// <p>Public Key Version provided by AWS Marketplace</p>
+    pub fn get_public_key_version(&self) -> &::std::option::Option<i32> {
+        &self.public_key_version
+    }
     /// <p>(Optional) To scope down the registration to a specific running software instance and guard against replay attacks.</p>
     pub fn nonce(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nonce = ::std::option::Option::Some(input.into());
@@ -74,6 +82,10 @@ impl RegisterUsageInputBuilder {
     pub fn set_nonce(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.nonce = input;
         self
+    }
+    /// <p>(Optional) To scope down the registration to a specific running software instance and guard against replay attacks.</p>
+    pub fn get_nonce(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nonce
     }
     /// Consumes the builder and constructs a [`RegisterUsageInput`](crate::operation::register_usage::RegisterUsageInput).
     pub fn build(

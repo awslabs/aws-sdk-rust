@@ -51,6 +51,10 @@ impl PutAppReplicationConfigurationInputBuilder {
         self.app_id = input;
         self
     }
+    /// <p>The ID of the application.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// Appends an item to `server_group_replication_configurations`.
     ///
     /// To override the contents of this collection use [`set_server_group_replication_configurations`](Self::set_server_group_replication_configurations).
@@ -76,6 +80,13 @@ impl PutAppReplicationConfigurationInputBuilder {
     ) -> Self {
         self.server_group_replication_configurations = input;
         self
+    }
+    /// <p>Information about the replication configurations for server groups in the application.</p>
+    pub fn get_server_group_replication_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerGroupReplicationConfiguration>>
+    {
+        &self.server_group_replication_configurations
     }
     /// Consumes the builder and constructs a [`PutAppReplicationConfigurationInput`](crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationInput).
     pub fn build(

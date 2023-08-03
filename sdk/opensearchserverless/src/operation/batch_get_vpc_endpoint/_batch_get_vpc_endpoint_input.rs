@@ -50,6 +50,10 @@ impl BatchGetVpcEndpointInputBuilder {
         self.ids = input;
         self
     }
+    /// <p>A list of VPC endpoint identifiers.</p>
+    pub fn get_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ids
+    }
     /// Consumes the builder and constructs a [`BatchGetVpcEndpointInput`](crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointInput).
     pub fn build(
         self,

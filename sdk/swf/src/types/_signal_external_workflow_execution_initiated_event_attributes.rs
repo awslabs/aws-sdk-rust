@@ -82,6 +82,10 @@ impl SignalExternalWorkflowExecutionInitiatedEventAttributesBuilder {
         self.workflow_id = input;
         self
     }
+    /// <p>The <code>workflowId</code> of the external workflow execution.</p>
+    pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_id
+    }
     /// <p>The <code>runId</code> of the external workflow execution to send the signal to.</p>
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.run_id = ::std::option::Option::Some(input.into());
@@ -91,6 +95,10 @@ impl SignalExternalWorkflowExecutionInitiatedEventAttributesBuilder {
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.run_id = input;
         self
+    }
+    /// <p>The <code>runId</code> of the external workflow execution to send the signal to.</p>
+    pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.run_id
     }
     /// <p>The name of the signal.</p>
     pub fn signal_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -102,6 +110,10 @@ impl SignalExternalWorkflowExecutionInitiatedEventAttributesBuilder {
         self.signal_name = input;
         self
     }
+    /// <p>The name of the signal.</p>
+    pub fn get_signal_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.signal_name
+    }
     /// <p>The input provided to the signal.</p>
     pub fn input(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input = ::std::option::Option::Some(input.into());
@@ -111,6 +123,10 @@ impl SignalExternalWorkflowExecutionInitiatedEventAttributesBuilder {
     pub fn set_input(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input = input;
         self
+    }
+    /// <p>The input provided to the signal.</p>
+    pub fn get_input(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input
     }
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>SignalExternalWorkflowExecution</code> decision for this signal. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn decision_task_completed_event_id(mut self, input: i64) -> Self {
@@ -125,6 +141,10 @@ impl SignalExternalWorkflowExecutionInitiatedEventAttributesBuilder {
         self.decision_task_completed_event_id = input;
         self
     }
+    /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>SignalExternalWorkflowExecution</code> decision for this signal. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    pub fn get_decision_task_completed_event_id(&self) -> &::std::option::Option<i64> {
+        &self.decision_task_completed_event_id
+    }
     /// <p>Data attached to the event that can be used by the decider in subsequent decision tasks.</p>
     pub fn control(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control = ::std::option::Option::Some(input.into());
@@ -134,6 +154,10 @@ impl SignalExternalWorkflowExecutionInitiatedEventAttributesBuilder {
     pub fn set_control(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.control = input;
         self
+    }
+    /// <p>Data attached to the event that can be used by the decider in subsequent decision tasks.</p>
+    pub fn get_control(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control
     }
     /// Consumes the builder and constructs a [`SignalExternalWorkflowExecutionInitiatedEventAttributes`](crate::types::SignalExternalWorkflowExecutionInitiatedEventAttributes).
     pub fn build(self) -> crate::types::SignalExternalWorkflowExecutionInitiatedEventAttributes {

@@ -38,6 +38,10 @@ impl UpdateInstanceCustomHealthStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateInstanceCustomHealthStatus as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_instance_custom_health_status::builders::UpdateInstanceCustomHealthStatusInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -102,6 +106,10 @@ impl UpdateInstanceCustomHealthStatusFluentBuilder {
         self.inner = self.inner.set_service_id(input);
         self
     }
+    /// <p>The ID of the service that includes the configuration for the custom health check that you want to change the status for.</p>
+    pub fn get_service_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_id()
+    }
     /// <p>The ID of the instance that you want to change the health status for.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
@@ -111,6 +119,10 @@ impl UpdateInstanceCustomHealthStatusFluentBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
+    }
+    /// <p>The ID of the instance that you want to change the health status for.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
     }
     /// <p>The new status of the instance, <code>HEALTHY</code> or <code>UNHEALTHY</code>.</p>
     pub fn status(mut self, input: crate::types::CustomHealthStatus) -> Self {
@@ -124,5 +136,9 @@ impl UpdateInstanceCustomHealthStatusFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_status(input);
         self
+    }
+    /// <p>The new status of the instance, <code>HEALTHY</code> or <code>UNHEALTHY</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::CustomHealthStatus> {
+        self.inner.get_status()
     }
 }

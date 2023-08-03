@@ -36,6 +36,10 @@ impl ListProgressUpdateStreamsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListProgressUpdateStreams as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_progress_update_streams::builders::ListProgressUpdateStreamsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +139,10 @@ impl ListProgressUpdateStreamsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>Filter to limit the maximum number of results to list per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -144,5 +152,9 @@ impl ListProgressUpdateStreamsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>Filter to limit the maximum number of results to list per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

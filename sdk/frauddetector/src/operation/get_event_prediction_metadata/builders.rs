@@ -36,6 +36,10 @@ impl GetEventPredictionMetadataFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetEventPredictionMetadata as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_event_prediction_metadata::builders::GetEventPredictionMetadataInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl GetEventPredictionMetadataFluentBuilder {
         self.inner = self.inner.set_event_id(input);
         self
     }
+    /// <p> The event ID. </p>
+    pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_event_id()
+    }
     /// <p> The event type associated with the detector specified for the prediction. </p>
     pub fn event_type_name(
         mut self,
@@ -142,6 +150,10 @@ impl GetEventPredictionMetadataFluentBuilder {
         self.inner = self.inner.set_event_type_name(input);
         self
     }
+    /// <p> The event type associated with the detector specified for the prediction. </p>
+    pub fn get_event_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_event_type_name()
+    }
     /// <p> The detector ID. </p>
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.detector_id(input.into());
@@ -151,6 +163,10 @@ impl GetEventPredictionMetadataFluentBuilder {
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_detector_id(input);
         self
+    }
+    /// <p> The detector ID. </p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_detector_id()
     }
     /// <p> The detector version ID. </p>
     pub fn detector_version_id(
@@ -167,6 +183,10 @@ impl GetEventPredictionMetadataFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_detector_version_id(input);
         self
+    }
+    /// <p> The detector version ID. </p>
+    pub fn get_detector_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_detector_version_id()
     }
     /// <p> The timestamp that defines when the prediction was generated. The timestamp must be specified using ISO 8601 standard in UTC.</p>
     /// <p>We recommend calling <a href="https://docs.aws.amazon.com/frauddetector/latest/api/API_ListEventPredictions.html">ListEventPredictions</a> first, and using the <code>predictionTimestamp</code> value in the response to provide an accurate prediction timestamp value.</p>
@@ -185,5 +205,10 @@ impl GetEventPredictionMetadataFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_prediction_timestamp(input);
         self
+    }
+    /// <p> The timestamp that defines when the prediction was generated. The timestamp must be specified using ISO 8601 standard in UTC.</p>
+    /// <p>We recommend calling <a href="https://docs.aws.amazon.com/frauddetector/latest/api/API_ListEventPredictions.html">ListEventPredictions</a> first, and using the <code>predictionTimestamp</code> value in the response to provide an accurate prediction timestamp value.</p>
+    pub fn get_prediction_timestamp(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_prediction_timestamp()
     }
 }

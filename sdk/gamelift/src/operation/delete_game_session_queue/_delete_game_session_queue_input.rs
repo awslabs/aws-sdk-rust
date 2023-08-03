@@ -41,6 +41,10 @@ impl DeleteGameSessionQueueInputBuilder {
         self.name = input;
         self
     }
+    /// <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region. You can use either the queue ID or ARN value. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DeleteGameSessionQueueInput`](crate::operation::delete_game_session_queue::DeleteGameSessionQueueInput).
     pub fn build(
         self,

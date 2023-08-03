@@ -47,6 +47,10 @@ impl DescribeBatchSegmentJobInputBuilder {
         self.batch_segment_job_arn = input;
         self
     }
+    /// <p>The ARN of the batch segment job to describe.</p>
+    pub fn get_batch_segment_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.batch_segment_job_arn
+    }
     /// Consumes the builder and constructs a [`DescribeBatchSegmentJobInput`](crate::operation::describe_batch_segment_job::DescribeBatchSegmentJobInput).
     pub fn build(
         self,

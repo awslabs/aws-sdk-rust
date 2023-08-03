@@ -39,6 +39,10 @@ impl StopJobInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm job to stop.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`StopJobInput`](crate::operation::stop_job::StopJobInput).
     pub fn build(
         self,

@@ -62,6 +62,10 @@ impl GetObjectTaggingOutputBuilder {
         self.version_id = input;
         self
     }
+    /// <p>The versionId of the object for which you got the tagging information.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_id
+    }
     /// Appends an item to `tag_set`.
     ///
     /// To override the contents of this collection use [`set_tag_set`](Self::set_tag_set).
@@ -80,6 +84,10 @@ impl GetObjectTaggingOutputBuilder {
     ) -> Self {
         self.tag_set = input;
         self
+    }
+    /// <p>Contains the tag set.</p>
+    pub fn get_tag_set(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tag_set
     }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
         self._extended_request_id = Some(extended_request_id.into());

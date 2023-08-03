@@ -82,6 +82,14 @@ impl ScanResourceCriteriaBuilder {
         self.include = input;
         self
     }
+    /// <p>Represents condition that when matched will allow a malware scan for a certain resource.</p>
+    pub fn get_include(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<crate::types::ScanCriterionKey, crate::types::ScanCondition>,
+    > {
+        &self.include
+    }
     /// Adds a key-value pair to `exclude`.
     ///
     /// To override the contents of this collection use [`set_exclude`](Self::set_exclude).
@@ -109,6 +117,14 @@ impl ScanResourceCriteriaBuilder {
     ) -> Self {
         self.exclude = input;
         self
+    }
+    /// <p>Represents condition that when matched will prevent a malware scan for a certain resource.</p>
+    pub fn get_exclude(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<crate::types::ScanCriterionKey, crate::types::ScanCondition>,
+    > {
+        &self.exclude
     }
     /// Consumes the builder and constructs a [`ScanResourceCriteria`](crate::types::ScanResourceCriteria).
     pub fn build(self) -> crate::types::ScanResourceCriteria {

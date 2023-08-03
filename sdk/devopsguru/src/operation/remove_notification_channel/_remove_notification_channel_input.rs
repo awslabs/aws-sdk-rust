@@ -39,6 +39,10 @@ impl RemoveNotificationChannelInputBuilder {
         self.id = input;
         self
     }
+    /// <p> The ID of the notification channel to be removed. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`RemoveNotificationChannelInput`](crate::operation::remove_notification_channel::RemoveNotificationChannelInput).
     pub fn build(
         self,

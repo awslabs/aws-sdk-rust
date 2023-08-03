@@ -57,6 +57,10 @@ impl LoginProfileBuilder {
         self.user_name = input;
         self
     }
+    /// <p>The name of the user, which can be used for signing in to the Amazon Web Services Management Console.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
+    }
     /// <p>The date when the password for the user was created.</p>
     pub fn create_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_date = ::std::option::Option::Some(input);
@@ -70,6 +74,10 @@ impl LoginProfileBuilder {
         self.create_date = input;
         self
     }
+    /// <p>The date when the password for the user was created.</p>
+    pub fn get_create_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_date
+    }
     /// <p>Specifies whether the user is required to set a new password on next sign-in.</p>
     pub fn password_reset_required(mut self, input: bool) -> Self {
         self.password_reset_required = ::std::option::Option::Some(input);
@@ -79,6 +87,10 @@ impl LoginProfileBuilder {
     pub fn set_password_reset_required(mut self, input: ::std::option::Option<bool>) -> Self {
         self.password_reset_required = input;
         self
+    }
+    /// <p>Specifies whether the user is required to set a new password on next sign-in.</p>
+    pub fn get_password_reset_required(&self) -> &::std::option::Option<bool> {
+        &self.password_reset_required
     }
     /// Consumes the builder and constructs a [`LoginProfile`](crate::types::LoginProfile).
     pub fn build(self) -> crate::types::LoginProfile {

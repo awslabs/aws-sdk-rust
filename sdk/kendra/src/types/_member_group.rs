@@ -48,6 +48,10 @@ impl MemberGroupBuilder {
         self.group_id = input;
         self
     }
+    /// <p>The identifier of the sub group you want to map to a group.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
+    }
     /// <p>The identifier of the data source for the sub group you want to map to a group.</p>
     pub fn data_source_id(
         mut self,
@@ -63,6 +67,10 @@ impl MemberGroupBuilder {
     ) -> Self {
         self.data_source_id = input;
         self
+    }
+    /// <p>The identifier of the data source for the sub group you want to map to a group.</p>
+    pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source_id
     }
     /// Consumes the builder and constructs a [`MemberGroup`](crate::types::MemberGroup).
     pub fn build(self) -> crate::types::MemberGroup {

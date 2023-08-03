@@ -40,6 +40,10 @@ impl PublishFindingToSnsParamsBuilder {
         self.topic_arn = input;
         self
     }
+    /// <p>The ARN of the topic to which you want to publish the findings.</p>
+    pub fn get_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_arn
+    }
     /// Consumes the builder and constructs a [`PublishFindingToSnsParams`](crate::types::PublishFindingToSnsParams).
     pub fn build(self) -> crate::types::PublishFindingToSnsParams {
         crate::types::PublishFindingToSnsParams {

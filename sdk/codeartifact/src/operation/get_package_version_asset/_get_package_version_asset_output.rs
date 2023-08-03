@@ -72,6 +72,10 @@ impl GetPackageVersionAssetOutputBuilder {
         self.asset = input;
         self
     }
+    /// <p> The binary file, or asset, that is downloaded.</p>
+    pub fn get_asset(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+        &self.asset
+    }
     /// <p> The name of the asset that is downloaded. </p>
     pub fn asset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_name = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl GetPackageVersionAssetOutputBuilder {
     pub fn set_asset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asset_name = input;
         self
+    }
+    /// <p> The name of the asset that is downloaded. </p>
+    pub fn get_asset_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_name
     }
     /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
     pub fn package_version(
@@ -98,6 +106,10 @@ impl GetPackageVersionAssetOutputBuilder {
         self.package_version = input;
         self
     }
+    /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
+    pub fn get_package_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_version
+    }
     /// <p> The name of the package version revision that contains the downloaded asset. </p>
     pub fn package_version_revision(
         mut self,
@@ -113,6 +125,10 @@ impl GetPackageVersionAssetOutputBuilder {
     ) -> Self {
         self.package_version_revision = input;
         self
+    }
+    /// <p> The name of the package version revision that contains the downloaded asset. </p>
+    pub fn get_package_version_revision(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_version_revision
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

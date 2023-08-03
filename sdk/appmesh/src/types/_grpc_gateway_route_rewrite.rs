@@ -43,6 +43,12 @@ impl GrpcGatewayRouteRewriteBuilder {
         self.hostname = input;
         self
     }
+    /// <p>The host name of the gateway route to rewrite.</p>
+    pub fn get_hostname(
+        &self,
+    ) -> &::std::option::Option<crate::types::GatewayRouteHostnameRewrite> {
+        &self.hostname
+    }
     /// Consumes the builder and constructs a [`GrpcGatewayRouteRewrite`](crate::types::GrpcGatewayRouteRewrite).
     pub fn build(self) -> crate::types::GrpcGatewayRouteRewrite {
         crate::types::GrpcGatewayRouteRewrite {

@@ -40,6 +40,10 @@ impl CreateVpcPeeringConnectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateVpcPeeringConnection as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_vpc_peering_connection::builders::CreateVpcPeeringConnectionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +134,10 @@ impl CreateVpcPeeringConnectionFluentBuilder {
         self.inner = self.inner.set_fleet_id(input);
         self
     }
+    /// <p>A unique identifier for the fleet. You can use either the fleet ID or ARN value. This tells Amazon GameLift which GameLift VPC to peer with. </p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_fleet_id()
+    }
     /// <p>A unique identifier for the Amazon Web Services account with the VPC that you want to peer your Amazon GameLift fleet with. You can find your Account ID in the Amazon Web Services Management Console under account settings.</p>
     pub fn peer_vpc_aws_account_id(
         mut self,
@@ -146,6 +154,10 @@ impl CreateVpcPeeringConnectionFluentBuilder {
         self.inner = self.inner.set_peer_vpc_aws_account_id(input);
         self
     }
+    /// <p>A unique identifier for the Amazon Web Services account with the VPC that you want to peer your Amazon GameLift fleet with. You can find your Account ID in the Amazon Web Services Management Console under account settings.</p>
+    pub fn get_peer_vpc_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_peer_vpc_aws_account_id()
+    }
     /// <p>A unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with Amazon GameLift Fleets</a>.</p>
     pub fn peer_vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.peer_vpc_id(input.into());
@@ -155,5 +167,9 @@ impl CreateVpcPeeringConnectionFluentBuilder {
     pub fn set_peer_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_peer_vpc_id(input);
         self
+    }
+    /// <p>A unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with Amazon GameLift Fleets</a>.</p>
+    pub fn get_peer_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_peer_vpc_id()
     }
 }

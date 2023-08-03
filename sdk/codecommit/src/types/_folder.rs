@@ -56,6 +56,10 @@ impl FolderBuilder {
         self.tree_id = input;
         self
     }
+    /// <p>The full SHA-1 pointer of the tree information for the commit that contains the folder.</p>
+    pub fn get_tree_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tree_id
+    }
     /// <p>The fully qualified path of the folder in the repository.</p>
     pub fn absolute_path(
         mut self,
@@ -72,6 +76,10 @@ impl FolderBuilder {
         self.absolute_path = input;
         self
     }
+    /// <p>The fully qualified path of the folder in the repository.</p>
+    pub fn get_absolute_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.absolute_path
+    }
     /// <p>The relative path of the specified folder from the folder where the query originated.</p>
     pub fn relative_path(
         mut self,
@@ -87,6 +95,10 @@ impl FolderBuilder {
     ) -> Self {
         self.relative_path = input;
         self
+    }
+    /// <p>The relative path of the specified folder from the folder where the query originated.</p>
+    pub fn get_relative_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.relative_path
     }
     /// Consumes the builder and constructs a [`Folder`](crate::types::Folder).
     pub fn build(self) -> crate::types::Folder {

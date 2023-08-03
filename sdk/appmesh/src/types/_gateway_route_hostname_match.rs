@@ -48,6 +48,10 @@ impl GatewayRouteHostnameMatchBuilder {
         self.exact = input;
         self
     }
+    /// <p>The exact host name to match on.</p>
+    pub fn get_exact(&self) -> &::std::option::Option<::std::string::String> {
+        &self.exact
+    }
     /// <p>The specified ending characters of the host name to match on.</p>
     pub fn suffix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suffix = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl GatewayRouteHostnameMatchBuilder {
     pub fn set_suffix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.suffix = input;
         self
+    }
+    /// <p>The specified ending characters of the host name to match on.</p>
+    pub fn get_suffix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.suffix
     }
     /// Consumes the builder and constructs a [`GatewayRouteHostnameMatch`](crate::types::GatewayRouteHostnameMatch).
     pub fn build(self) -> crate::types::GatewayRouteHostnameMatch {

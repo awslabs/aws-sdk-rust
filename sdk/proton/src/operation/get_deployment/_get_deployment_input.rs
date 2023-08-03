@@ -71,6 +71,10 @@ impl GetDeploymentInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the deployment that you want to get the detailed data for.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of a environment that you want to get the detailed data for.</p>
     pub fn environment_name(
         mut self,
@@ -87,6 +91,10 @@ impl GetDeploymentInputBuilder {
         self.environment_name = input;
         self
     }
+    /// <p>The name of a environment that you want to get the detailed data for.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_name
+    }
     /// <p>The name of the service associated with the given deployment ID.</p>
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
@@ -96,6 +104,10 @@ impl GetDeploymentInputBuilder {
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_name = input;
         self
+    }
+    /// <p>The name of the service associated with the given deployment ID.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
     }
     /// <p>The name of the service instance associated with the given deployment ID. <code>serviceName</code> must be specified to identify the service instance.</p>
     pub fn service_instance_name(
@@ -113,6 +125,10 @@ impl GetDeploymentInputBuilder {
         self.service_instance_name = input;
         self
     }
+    /// <p>The name of the service instance associated with the given deployment ID. <code>serviceName</code> must be specified to identify the service instance.</p>
+    pub fn get_service_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_instance_name
+    }
     /// <p>The name of a component that you want to get the detailed data for.</p>
     pub fn component_name(
         mut self,
@@ -128,6 +144,10 @@ impl GetDeploymentInputBuilder {
     ) -> Self {
         self.component_name = input;
         self
+    }
+    /// <p>The name of a component that you want to get the detailed data for.</p>
+    pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_name
     }
     /// Consumes the builder and constructs a [`GetDeploymentInput`](crate::operation::get_deployment::GetDeploymentInput).
     pub fn build(

@@ -48,6 +48,10 @@ impl VisaPinVerificationBuilder {
         self.pin_verification_key_index = input;
         self
     }
+    /// <p>The value for PIN verification index. It is used in the Visa PIN algorithm to calculate the PVV (PIN Verification Value).</p>
+    pub fn get_pin_verification_key_index(&self) -> &::std::option::Option<i32> {
+        &self.pin_verification_key_index
+    }
     /// <p>Parameters that are required to generate or verify Visa PVV (PIN Verification Value).</p>
     pub fn verification_value(
         mut self,
@@ -63,6 +67,10 @@ impl VisaPinVerificationBuilder {
     ) -> Self {
         self.verification_value = input;
         self
+    }
+    /// <p>Parameters that are required to generate or verify Visa PVV (PIN Verification Value).</p>
+    pub fn get_verification_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.verification_value
     }
     /// Consumes the builder and constructs a [`VisaPinVerification`](crate::types::VisaPinVerification).
     pub fn build(self) -> crate::types::VisaPinVerification {

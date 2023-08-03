@@ -36,6 +36,13 @@ impl DeleteNetworkAclEntryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteNetworkAclEntry as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_network_acl_entry::builders::DeleteNetworkAclEntryInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl DeleteNetworkAclEntryFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>Indicates whether the rule is an egress rule.</p>
     pub fn egress(mut self, input: bool) -> Self {
         self.inner = self.inner.egress(input);
@@ -135,6 +146,10 @@ impl DeleteNetworkAclEntryFluentBuilder {
     pub fn set_egress(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_egress(input);
         self
+    }
+    /// <p>Indicates whether the rule is an egress rule.</p>
+    pub fn get_egress(&self) -> &::std::option::Option<bool> {
+        self.inner.get_egress()
     }
     /// <p>The ID of the network ACL.</p>
     pub fn network_acl_id(
@@ -152,6 +167,10 @@ impl DeleteNetworkAclEntryFluentBuilder {
         self.inner = self.inner.set_network_acl_id(input);
         self
     }
+    /// <p>The ID of the network ACL.</p>
+    pub fn get_network_acl_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_network_acl_id()
+    }
     /// <p>The rule number of the entry to delete.</p>
     pub fn rule_number(mut self, input: i32) -> Self {
         self.inner = self.inner.rule_number(input);
@@ -161,5 +180,9 @@ impl DeleteNetworkAclEntryFluentBuilder {
     pub fn set_rule_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_rule_number(input);
         self
+    }
+    /// <p>The rule number of the entry to delete.</p>
+    pub fn get_rule_number(&self) -> &::std::option::Option<i32> {
+        self.inner.get_rule_number()
     }
 }

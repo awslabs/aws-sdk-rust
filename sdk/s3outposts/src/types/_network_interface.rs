@@ -46,6 +46,10 @@ impl NetworkInterfaceBuilder {
         self.network_interface_id = input;
         self
     }
+    /// <p>The ID for the network interface.</p>
+    pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_interface_id
+    }
     /// Consumes the builder and constructs a [`NetworkInterface`](crate::types::NetworkInterface).
     pub fn build(self) -> crate::types::NetworkInterface {
         crate::types::NetworkInterface {

@@ -47,6 +47,10 @@ impl AdminDisableProviderForUserInputBuilder {
         self.user_pool_id = input;
         self
     }
+    /// <p>The user pool ID for the user pool.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_pool_id
+    }
     /// <p>The user to be disabled.</p>
     pub fn user(mut self, input: crate::types::ProviderUserIdentifierType) -> Self {
         self.user = ::std::option::Option::Some(input);
@@ -59,6 +63,10 @@ impl AdminDisableProviderForUserInputBuilder {
     ) -> Self {
         self.user = input;
         self
+    }
+    /// <p>The user to be disabled.</p>
+    pub fn get_user(&self) -> &::std::option::Option<crate::types::ProviderUserIdentifierType> {
+        &self.user
     }
     /// Consumes the builder and constructs a [`AdminDisableProviderForUserInput`](crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserInput).
     pub fn build(

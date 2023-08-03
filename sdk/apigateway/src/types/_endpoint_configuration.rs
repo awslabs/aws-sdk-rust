@@ -57,6 +57,10 @@ impl EndpointConfigurationBuilder {
         self.types = input;
         self
     }
+    /// <p>A list of endpoint types of an API (RestApi) or its custom domain name (DomainName). For an edge-optimized API and its custom domain name, the endpoint type is <code>"EDGE"</code>. For a regional API and its custom domain name, the endpoint type is <code>REGIONAL</code>. For a private API, the endpoint type is <code>PRIVATE</code>.</p>
+    pub fn get_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointType>> {
+        &self.types
+    }
     /// Appends an item to `vpc_endpoint_ids`.
     ///
     /// To override the contents of this collection use [`set_vpc_endpoint_ids`](Self::set_vpc_endpoint_ids).
@@ -78,6 +82,12 @@ impl EndpointConfigurationBuilder {
     ) -> Self {
         self.vpc_endpoint_ids = input;
         self
+    }
+    /// <p>A list of VpcEndpointIds of an API (RestApi) against which to create Route53 ALIASes. It is only supported for <code>PRIVATE</code> endpoint type.</p>
+    pub fn get_vpc_endpoint_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.vpc_endpoint_ids
     }
     /// Consumes the builder and constructs a [`EndpointConfiguration`](crate::types::EndpointConfiguration).
     pub fn build(self) -> crate::types::EndpointConfiguration {

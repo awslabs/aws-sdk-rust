@@ -37,6 +37,12 @@ impl UpdateScalingPlanFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateScalingPlan as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_scaling_plan::builders::UpdateScalingPlanInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl UpdateScalingPlanFluentBuilder {
         self.inner = self.inner.set_scaling_plan_name(input);
         self
     }
+    /// <p>The name of the scaling plan.</p>
+    pub fn get_scaling_plan_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_scaling_plan_name()
+    }
     /// <p>The version number of the scaling plan. The only valid value is <code>1</code>. Currently, you cannot have multiple scaling plan versions.</p>
     pub fn scaling_plan_version(mut self, input: i64) -> Self {
         self.inner = self.inner.scaling_plan_version(input);
@@ -142,6 +152,10 @@ impl UpdateScalingPlanFluentBuilder {
     pub fn set_scaling_plan_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_scaling_plan_version(input);
         self
+    }
+    /// <p>The version number of the scaling plan. The only valid value is <code>1</code>. Currently, you cannot have multiple scaling plan versions.</p>
+    pub fn get_scaling_plan_version(&self) -> &::std::option::Option<i64> {
+        self.inner.get_scaling_plan_version()
     }
     /// <p>A CloudFormation stack or set of tags.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html">ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
@@ -157,6 +171,13 @@ impl UpdateScalingPlanFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_application_source(input);
         self
+    }
+    /// <p>A CloudFormation stack or set of tags.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html">ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
+    pub fn get_application_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationSource> {
+        self.inner.get_application_source()
     }
     /// Appends an item to `ScalingInstructions`.
     ///
@@ -176,5 +197,12 @@ impl UpdateScalingPlanFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_scaling_instructions(input);
         self
+    }
+    /// <p>The scaling instructions.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
+    pub fn get_scaling_instructions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScalingInstruction>> {
+        self.inner.get_scaling_instructions()
     }
 }

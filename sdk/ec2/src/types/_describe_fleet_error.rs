@@ -74,6 +74,12 @@ impl DescribeFleetErrorBuilder {
         self.launch_template_and_overrides = input;
         self
     }
+    /// <p>The launch templates and overrides that were used for launching the instances. The values that you specify in the Overrides replace the values in the launch template.</p>
+    pub fn get_launch_template_and_overrides(
+        &self,
+    ) -> &::std::option::Option<crate::types::LaunchTemplateAndOverridesResponse> {
+        &self.launch_template_and_overrides
+    }
     /// <p>Indicates if the instance that could not be launched was a Spot Instance or On-Demand Instance.</p>
     pub fn lifecycle(mut self, input: crate::types::InstanceLifecycle) -> Self {
         self.lifecycle = ::std::option::Option::Some(input);
@@ -87,6 +93,10 @@ impl DescribeFleetErrorBuilder {
         self.lifecycle = input;
         self
     }
+    /// <p>Indicates if the instance that could not be launched was a Spot Instance or On-Demand Instance.</p>
+    pub fn get_lifecycle(&self) -> &::std::option::Option<crate::types::InstanceLifecycle> {
+        &self.lifecycle
+    }
     /// <p>The error code that indicates why the instance could not be launched. For more information about error codes, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error codes</a>.</p>
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
@@ -96,6 +106,10 @@ impl DescribeFleetErrorBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>The error code that indicates why the instance could not be launched. For more information about error codes, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error codes</a>.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
     }
     /// <p>The error message that describes why the instance could not be launched. For more information about error messages, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error codes</a>.</p>
     pub fn error_message(
@@ -112,6 +126,10 @@ impl DescribeFleetErrorBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>The error message that describes why the instance could not be launched. For more information about error messages, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error codes</a>.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`DescribeFleetError`](crate::types::DescribeFleetError).
     pub fn build(self) -> crate::types::DescribeFleetError {

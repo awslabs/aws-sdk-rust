@@ -68,6 +68,10 @@ impl SearchFacesOutputBuilder {
         self.searched_face_id = input;
         self
     }
+    /// <p>ID of the face that was searched for matches in a collection.</p>
+    pub fn get_searched_face_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.searched_face_id
+    }
     /// Appends an item to `face_matches`.
     ///
     /// To override the contents of this collection use [`set_face_matches`](Self::set_face_matches).
@@ -87,6 +91,12 @@ impl SearchFacesOutputBuilder {
         self.face_matches = input;
         self
     }
+    /// <p>An array of faces that matched the input face, along with the confidence in the match.</p>
+    pub fn get_face_matches(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FaceMatch>> {
+        &self.face_matches
+    }
     /// <p>Version number of the face detection model associated with the input collection (<code>CollectionId</code>).</p>
     pub fn face_model_version(
         mut self,
@@ -102,6 +112,10 @@ impl SearchFacesOutputBuilder {
     ) -> Self {
         self.face_model_version = input;
         self
+    }
+    /// <p>Version number of the face detection model associated with the input collection (<code>CollectionId</code>).</p>
+    pub fn get_face_model_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.face_model_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

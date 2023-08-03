@@ -75,6 +75,11 @@ impl FulfillmentUpdatesSpecificationBuilder {
         self.active = input;
         self
     }
+    /// <p>Determines whether fulfillment updates are sent to the user. When this field is true, updates are sent.</p>
+    /// <p>If the <code>active</code> field is set to true, the <code>startResponse</code>, <code>updateResponse</code>, and <code>timeoutInSeconds</code> fields are required.</p>
+    pub fn get_active(&self) -> &::std::option::Option<bool> {
+        &self.active
+    }
     /// <p>Provides configuration information for the message sent to users when the fulfillment Lambda functions starts running.</p>
     pub fn start_response(
         mut self,
@@ -90,6 +95,12 @@ impl FulfillmentUpdatesSpecificationBuilder {
     ) -> Self {
         self.start_response = input;
         self
+    }
+    /// <p>Provides configuration information for the message sent to users when the fulfillment Lambda functions starts running.</p>
+    pub fn get_start_response(
+        &self,
+    ) -> &::std::option::Option<crate::types::FulfillmentStartResponseSpecification> {
+        &self.start_response
     }
     /// <p>Provides configuration information for messages sent periodically to the user while the fulfillment Lambda function is running.</p>
     pub fn update_response(
@@ -107,6 +118,12 @@ impl FulfillmentUpdatesSpecificationBuilder {
         self.update_response = input;
         self
     }
+    /// <p>Provides configuration information for messages sent periodically to the user while the fulfillment Lambda function is running.</p>
+    pub fn get_update_response(
+        &self,
+    ) -> &::std::option::Option<crate::types::FulfillmentUpdateResponseSpecification> {
+        &self.update_response
+    }
     /// <p>The length of time that the fulfillment Lambda function should run before it times out.</p>
     pub fn timeout_in_seconds(mut self, input: i32) -> Self {
         self.timeout_in_seconds = ::std::option::Option::Some(input);
@@ -116,6 +133,10 @@ impl FulfillmentUpdatesSpecificationBuilder {
     pub fn set_timeout_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.timeout_in_seconds = input;
         self
+    }
+    /// <p>The length of time that the fulfillment Lambda function should run before it times out.</p>
+    pub fn get_timeout_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.timeout_in_seconds
     }
     /// Consumes the builder and constructs a [`FulfillmentUpdatesSpecification`](crate::types::FulfillmentUpdatesSpecification).
     pub fn build(self) -> crate::types::FulfillmentUpdatesSpecification {

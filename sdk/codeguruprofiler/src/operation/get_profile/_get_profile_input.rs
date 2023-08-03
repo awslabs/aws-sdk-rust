@@ -100,6 +100,10 @@ impl GetProfileInputBuilder {
         self.profiling_group_name = input;
         self
     }
+    /// <p>The name of the profiling group to get.</p>
+    pub fn get_profiling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profiling_group_name
+    }
     /// <p>The start time of the profile to get. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     /// <p> If you specify <code>startTime</code>, then you must also specify <code>period</code> or <code>endTime</code>, but not both. </p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -115,6 +119,11 @@ impl GetProfileInputBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The start time of the profile to get. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
+    /// <p> If you specify <code>startTime</code>, then you must also specify <code>period</code> or <code>endTime</code>, but not both. </p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p> Used with <code>startTime</code> or <code>endTime</code> to specify the time range for the returned aggregated profile. Specify using the ISO 8601 format. For example, <code>P1DT1H1M1S</code>. </p>
     /// <p> To get the latest aggregated profile, specify only <code>period</code>. </p>
     pub fn period(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -126,6 +135,11 @@ impl GetProfileInputBuilder {
     pub fn set_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.period = input;
         self
+    }
+    /// <p> Used with <code>startTime</code> or <code>endTime</code> to specify the time range for the returned aggregated profile. Specify using the ISO 8601 format. For example, <code>P1DT1H1M1S</code>. </p>
+    /// <p> To get the latest aggregated profile, specify only <code>period</code>. </p>
+    pub fn get_period(&self) -> &::std::option::Option<::std::string::String> {
+        &self.period
     }
     /// <p> The end time of the requested profile. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     /// <p> If you specify <code>endTime</code>, then you must also specify <code>period</code> or <code>startTime</code>, but not both. </p>
@@ -142,6 +156,11 @@ impl GetProfileInputBuilder {
         self.end_time = input;
         self
     }
+    /// <p> The end time of the requested profile. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    /// <p> If you specify <code>endTime</code>, then you must also specify <code>period</code> or <code>startTime</code>, but not both. </p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p> The maximum depth of the stacks in the code that is represented in the aggregated profile. For example, if CodeGuru Profiler finds a method <code>A</code>, which calls method <code>B</code>, which calls method <code>C</code>, which calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is set to 2, then the aggregated profile contains representations of methods <code>A</code> and <code>B</code>. </p>
     pub fn max_depth(mut self, input: i32) -> Self {
         self.max_depth = ::std::option::Option::Some(input);
@@ -151,6 +170,10 @@ impl GetProfileInputBuilder {
     pub fn set_max_depth(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_depth = input;
         self
+    }
+    /// <p> The maximum depth of the stacks in the code that is represented in the aggregated profile. For example, if CodeGuru Profiler finds a method <code>A</code>, which calls method <code>B</code>, which calls method <code>C</code>, which calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is set to 2, then the aggregated profile contains representations of methods <code>A</code> and <code>B</code>. </p>
+    pub fn get_max_depth(&self) -> &::std::option::Option<i32> {
+        &self.max_depth
     }
     /// <p> The format of the returned profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default . </p>
     /// <ul>
@@ -169,6 +192,14 @@ impl GetProfileInputBuilder {
     pub fn set_accept(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept = input;
         self
+    }
+    /// <p> The format of the returned profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default . </p>
+    /// <ul>
+    /// <li> <p> <code>application/json</code> — standard JSON format </p> </li>
+    /// <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li>
+    /// </ul>
+    pub fn get_accept(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accept
     }
     /// Consumes the builder and constructs a [`GetProfileInput`](crate::operation::get_profile::GetProfileInput).
     pub fn build(

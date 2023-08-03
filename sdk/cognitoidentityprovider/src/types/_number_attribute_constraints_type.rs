@@ -48,6 +48,10 @@ impl NumberAttributeConstraintsTypeBuilder {
         self.min_value = input;
         self
     }
+    /// <p>The minimum value of an attribute that is of the number data type.</p>
+    pub fn get_min_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.min_value
+    }
     /// <p>The maximum value of an attribute that is of the number data type.</p>
     pub fn max_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.max_value = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl NumberAttributeConstraintsTypeBuilder {
     pub fn set_max_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_value = input;
         self
+    }
+    /// <p>The maximum value of an attribute that is of the number data type.</p>
+    pub fn get_max_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.max_value
     }
     /// Consumes the builder and constructs a [`NumberAttributeConstraintsType`](crate::types::NumberAttributeConstraintsType).
     pub fn build(self) -> crate::types::NumberAttributeConstraintsType {

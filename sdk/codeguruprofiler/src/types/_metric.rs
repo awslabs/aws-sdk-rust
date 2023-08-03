@@ -56,6 +56,10 @@ impl MetricBuilder {
         self.frame_name = input;
         self
     }
+    /// <p> The name of the method that appears as a frame in any stack in a profile. </p>
+    pub fn get_frame_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.frame_name
+    }
     /// <p> A type that specifies how a metric for a frame is analyzed. The supported value <code>AggregatedRelativeTotalTime</code> is an aggregation of the metric value for one frame that is calculated across the occurences of all frames in a profile.</p>
     pub fn r#type(mut self, input: crate::types::MetricType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl MetricBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::MetricType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p> A type that specifies how a metric for a frame is analyzed. The supported value <code>AggregatedRelativeTotalTime</code> is an aggregation of the metric value for one frame that is calculated across the occurences of all frames in a profile.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::MetricType> {
+        &self.r#type
     }
     /// Appends an item to `thread_states`.
     ///
@@ -87,6 +95,12 @@ impl MetricBuilder {
     ) -> Self {
         self.thread_states = input;
         self
+    }
+    /// <p> The list of application runtime thread states that is used to calculate the metric value for the frame. </p>
+    pub fn get_thread_states(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.thread_states
     }
     /// Consumes the builder and constructs a [`Metric`](crate::types::Metric).
     pub fn build(self) -> crate::types::Metric {

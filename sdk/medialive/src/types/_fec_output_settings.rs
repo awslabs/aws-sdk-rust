@@ -56,6 +56,10 @@ impl FecOutputSettingsBuilder {
         self.column_depth = input;
         self
     }
+    /// Parameter D from SMPTE 2022-1. The height of the FEC protection matrix. The number of transport stream packets per column error correction packet. Must be between 4 and 20, inclusive.
+    pub fn get_column_depth(&self) -> &::std::option::Option<i32> {
+        &self.column_depth
+    }
     /// Enables column only or column and row based FEC
     pub fn include_fec(mut self, input: crate::types::FecOutputIncludeFec) -> Self {
         self.include_fec = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl FecOutputSettingsBuilder {
         self.include_fec = input;
         self
     }
+    /// Enables column only or column and row based FEC
+    pub fn get_include_fec(&self) -> &::std::option::Option<crate::types::FecOutputIncludeFec> {
+        &self.include_fec
+    }
     /// Parameter L from SMPTE 2022-1. The width of the FEC protection matrix. Must be between 1 and 20, inclusive. If only Column FEC is used, then larger values increase robustness. If Row FEC is used, then this is the number of transport stream packets per row error correction packet, and the value must be between 4 and 20, inclusive, if includeFec is columnAndRow. If includeFec is column, this value must be 1 to 20, inclusive.
     pub fn row_length(mut self, input: i32) -> Self {
         self.row_length = ::std::option::Option::Some(input);
@@ -78,6 +86,10 @@ impl FecOutputSettingsBuilder {
     pub fn set_row_length(mut self, input: ::std::option::Option<i32>) -> Self {
         self.row_length = input;
         self
+    }
+    /// Parameter L from SMPTE 2022-1. The width of the FEC protection matrix. Must be between 1 and 20, inclusive. If only Column FEC is used, then larger values increase robustness. If Row FEC is used, then this is the number of transport stream packets per row error correction packet, and the value must be between 4 and 20, inclusive, if includeFec is columnAndRow. If includeFec is column, this value must be 1 to 20, inclusive.
+    pub fn get_row_length(&self) -> &::std::option::Option<i32> {
+        &self.row_length
     }
     /// Consumes the builder and constructs a [`FecOutputSettings`](crate::types::FecOutputSettings).
     pub fn build(self) -> crate::types::FecOutputSettings {

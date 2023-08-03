@@ -63,6 +63,12 @@ impl ListDataSetsOutputBuilder {
         self.data_sets = input;
         self
     }
+    /// <p>The list of data sets, containing information including the creation time, the data set name, the data set organization, the data set format, and the last time the data set was referenced or updated.</p>
+    pub fn get_data_sets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSetSummary>> {
+        &self.data_sets
+    }
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -72,6 +78,10 @@ impl ListDataSetsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -48,6 +48,10 @@ impl LfTagErrorBuilder {
         self.lf_tag = input;
         self
     }
+    /// <p>The key-name of the LF-tag.</p>
+    pub fn get_lf_tag(&self) -> &::std::option::Option<crate::types::LfTagPair> {
+        &self.lf_tag
+    }
     /// <p>An error that occurred with the attachment or detachment of the LF-tag.</p>
     pub fn error(mut self, input: crate::types::ErrorDetail) -> Self {
         self.error = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl LfTagErrorBuilder {
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::ErrorDetail>) -> Self {
         self.error = input;
         self
+    }
+    /// <p>An error that occurred with the attachment or detachment of the LF-tag.</p>
+    pub fn get_error(&self) -> &::std::option::Option<crate::types::ErrorDetail> {
+        &self.error
     }
     /// Consumes the builder and constructs a [`LfTagError`](crate::types::LfTagError).
     pub fn build(self) -> crate::types::LfTagError {

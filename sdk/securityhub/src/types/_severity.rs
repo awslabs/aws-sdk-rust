@@ -116,6 +116,11 @@ impl SeverityBuilder {
         self.product = input;
         self
     }
+    /// <p>Deprecated. This attribute is being deprecated. Instead of providing <code>Product</code>, provide <code>Original</code>.</p>
+    /// <p>The native severity as defined by the Amazon Web Services service or integrated partner product that generated the finding.</p>
+    pub fn get_product(&self) -> &::std::option::Option<f64> {
+        &self.product
+    }
     /// <p>The severity value of the finding. The allowed values are the following.</p>
     /// <ul>
     /// <li> <p> <code>INFORMATIONAL</code> - No issue was found.</p> </li>
@@ -156,6 +161,25 @@ impl SeverityBuilder {
         self.label = input;
         self
     }
+    /// <p>The severity value of the finding. The allowed values are the following.</p>
+    /// <ul>
+    /// <li> <p> <code>INFORMATIONAL</code> - No issue was found.</p> </li>
+    /// <li> <p> <code>LOW</code> - The issue does not require action on its own.</p> </li>
+    /// <li> <p> <code>MEDIUM</code> - The issue must be addressed but not urgently.</p> </li>
+    /// <li> <p> <code>HIGH</code> - The issue must be addressed as a priority.</p> </li>
+    /// <li> <p> <code>CRITICAL</code> - The issue must be remediated immediately to avoid it escalating.</p> </li>
+    /// </ul>
+    /// <p>If you provide <code>Normalized</code> and do not provide <code>Label</code>, then <code>Label</code> is set automatically as follows. </p>
+    /// <ul>
+    /// <li> <p>0 - <code>INFORMATIONAL</code> </p> </li>
+    /// <li> <p>1–39 - <code>LOW</code> </p> </li>
+    /// <li> <p>40–69 - <code>MEDIUM</code> </p> </li>
+    /// <li> <p>70–89 - <code>HIGH</code> </p> </li>
+    /// <li> <p>90–100 - <code>CRITICAL</code> </p> </li>
+    /// </ul>
+    pub fn get_label(&self) -> &::std::option::Option<crate::types::SeverityLabel> {
+        &self.label
+    }
     /// <p>Deprecated. The normalized severity of a finding. This attribute is being deprecated. Instead of providing <code>Normalized</code>, provide <code>Label</code>.</p>
     /// <p>If you provide <code>Label</code> and do not provide <code>Normalized</code>, then <code>Normalized</code> is set automatically as follows.</p>
     /// <ul>
@@ -182,6 +206,18 @@ impl SeverityBuilder {
         self.normalized = input;
         self
     }
+    /// <p>Deprecated. The normalized severity of a finding. This attribute is being deprecated. Instead of providing <code>Normalized</code>, provide <code>Label</code>.</p>
+    /// <p>If you provide <code>Label</code> and do not provide <code>Normalized</code>, then <code>Normalized</code> is set automatically as follows.</p>
+    /// <ul>
+    /// <li> <p> <code>INFORMATIONAL</code> - 0</p> </li>
+    /// <li> <p> <code>LOW</code> - 1</p> </li>
+    /// <li> <p> <code>MEDIUM</code> - 40</p> </li>
+    /// <li> <p> <code>HIGH</code> - 70</p> </li>
+    /// <li> <p> <code>CRITICAL</code> - 90</p> </li>
+    /// </ul>
+    pub fn get_normalized(&self) -> &::std::option::Option<i32> {
+        &self.normalized
+    }
     /// <p>The native severity from the finding product that generated the finding.</p>
     pub fn original(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.original = ::std::option::Option::Some(input.into());
@@ -191,6 +227,10 @@ impl SeverityBuilder {
     pub fn set_original(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.original = input;
         self
+    }
+    /// <p>The native severity from the finding product that generated the finding.</p>
+    pub fn get_original(&self) -> &::std::option::Option<::std::string::String> {
+        &self.original
     }
     /// Consumes the builder and constructs a [`Severity`](crate::types::Severity).
     pub fn build(self) -> crate::types::Severity {

@@ -40,6 +40,10 @@ impl PoolCidrBlockBuilder {
         self.cidr = input;
         self
     }
+    /// <p>The CIDR block.</p>
+    pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr
+    }
     /// Consumes the builder and constructs a [`PoolCidrBlock`](crate::types::PoolCidrBlock).
     pub fn build(self) -> crate::types::PoolCidrBlock {
         crate::types::PoolCidrBlock { cidr: self.cidr }

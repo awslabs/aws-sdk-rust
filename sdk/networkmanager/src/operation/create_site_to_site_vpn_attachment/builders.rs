@@ -36,6 +36,10 @@ impl CreateSiteToSiteVpnAttachmentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateSiteToSiteVpnAttachment as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_site_to_site_vpn_attachment::builders::CreateSiteToSiteVpnAttachmentInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl CreateSiteToSiteVpnAttachmentFluentBuilder {
         self.inner = self.inner.set_core_network_id(input);
         self
     }
+    /// <p>The ID of a core network where you're creating a site-to-site VPN attachment.</p>
+    pub fn get_core_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_core_network_id()
+    }
     /// <p>The ARN identifying the VPN attachment.</p>
     pub fn vpn_connection_arn(
         mut self,
@@ -121,6 +129,10 @@ impl CreateSiteToSiteVpnAttachmentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_vpn_connection_arn(input);
         self
+    }
+    /// <p>The ARN identifying the VPN attachment.</p>
+    pub fn get_vpn_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpn_connection_arn()
     }
     /// Appends an item to `Tags`.
     ///
@@ -139,6 +151,10 @@ impl CreateSiteToSiteVpnAttachmentFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tags associated with the request.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>The client token associated with the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -148,5 +164,9 @@ impl CreateSiteToSiteVpnAttachmentFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>The client token associated with the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

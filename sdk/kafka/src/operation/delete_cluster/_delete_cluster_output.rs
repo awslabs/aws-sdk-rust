@@ -54,6 +54,10 @@ impl DeleteClusterOutputBuilder {
         self.cluster_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_arn
+    }
     /// <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
     pub fn state(mut self, input: crate::types::ClusterState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl DeleteClusterOutputBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ClusterState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ClusterState> {
+        &self.state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -54,6 +54,10 @@ impl RefreshTokenRequestBodyBuilder {
         self.token = input;
         self
     }
+    /// <p>The token to use to refresh a previously issued access token that might have expired.</p>
+    pub fn get_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.token
+    }
     /// <p>The ID of the client to request the token from.</p>
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl RefreshTokenRequestBodyBuilder {
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_id = input;
         self
+    }
+    /// <p>The ID of the client to request the token from.</p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_id
     }
     /// Consumes the builder and constructs a [`RefreshTokenRequestBody`](crate::types::RefreshTokenRequestBody).
     pub fn build(self) -> crate::types::RefreshTokenRequestBody {

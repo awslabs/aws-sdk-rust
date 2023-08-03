@@ -55,6 +55,10 @@ impl GetConfigurationProfileInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The ID of the application that includes the configuration profile you want to get.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The ID of the configuration profile that you want to get.</p>
     pub fn configuration_profile_id(
         mut self,
@@ -70,6 +74,10 @@ impl GetConfigurationProfileInputBuilder {
     ) -> Self {
         self.configuration_profile_id = input;
         self
+    }
+    /// <p>The ID of the configuration profile that you want to get.</p>
+    pub fn get_configuration_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_profile_id
     }
     /// Consumes the builder and constructs a [`GetConfigurationProfileInput`](crate::operation::get_configuration_profile::GetConfigurationProfileInput).
     pub fn build(

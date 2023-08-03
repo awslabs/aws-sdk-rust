@@ -36,6 +36,10 @@ impl DescribeConnectionAliasesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeConnectionAliases as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_connection_aliases::builders::DescribeConnectionAliasesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,10 @@ impl DescribeConnectionAliasesFluentBuilder {
         self.inner = self.inner.set_alias_ids(input);
         self
     }
+    /// <p>The identifiers of the connection aliases to describe.</p>
+    pub fn get_alias_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_alias_ids()
+    }
     /// <p>The identifier of the directory associated with the connection alias.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_id(input.into());
@@ -142,6 +150,10 @@ impl DescribeConnectionAliasesFluentBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_id(input);
         self
+    }
+    /// <p>The identifier of the directory associated with the connection alias.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_id()
     }
     /// <p>The maximum number of connection aliases to return.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -153,6 +165,10 @@ impl DescribeConnectionAliasesFluentBuilder {
         self.inner = self.inner.set_limit(input);
         self
     }
+    /// <p>The maximum number of connection aliases to return.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
+    }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -162,5 +178,9 @@ impl DescribeConnectionAliasesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

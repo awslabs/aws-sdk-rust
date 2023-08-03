@@ -161,6 +161,10 @@ impl UpdateTrialComponentInputBuilder {
         self.trial_component_name = input;
         self
     }
+    /// <p>The name of the component to update.</p>
+    pub fn get_trial_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trial_component_name
+    }
     /// <p>The name of the component as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>TrialComponentName</code> is displayed.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -170,6 +174,10 @@ impl UpdateTrialComponentInputBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
+    }
+    /// <p>The name of the component as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>TrialComponentName</code> is displayed.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// <p>The new status of the component.</p>
     pub fn status(mut self, input: crate::types::TrialComponentStatus) -> Self {
@@ -184,6 +192,10 @@ impl UpdateTrialComponentInputBuilder {
         self.status = input;
         self
     }
+    /// <p>The new status of the component.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TrialComponentStatus> {
+        &self.status
+    }
     /// <p>When the component started.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -197,6 +209,10 @@ impl UpdateTrialComponentInputBuilder {
         self.start_time = input;
         self
     }
+    /// <p>When the component started.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>When the component ended.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -209,6 +225,10 @@ impl UpdateTrialComponentInputBuilder {
     ) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>When the component ended.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// Adds a key-value pair to `parameters`.
     ///
@@ -238,6 +258,17 @@ impl UpdateTrialComponentInputBuilder {
         self.parameters = input;
         self
     }
+    /// <p>Replaces all of the component's hyperparameters with the specified hyperparameters or add new hyperparameters. Existing hyperparameters are replaced if the trial component is updated with an identical hyperparameter key.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::TrialComponentParameterValue,
+        >,
+    > {
+        &self.parameters
+    }
     /// Appends an item to `parameters_to_remove`.
     ///
     /// To override the contents of this collection use [`set_parameters_to_remove`](Self::set_parameters_to_remove).
@@ -259,6 +290,12 @@ impl UpdateTrialComponentInputBuilder {
     ) -> Self {
         self.parameters_to_remove = input;
         self
+    }
+    /// <p>The hyperparameters to remove from the component.</p>
+    pub fn get_parameters_to_remove(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.parameters_to_remove
     }
     /// Adds a key-value pair to `input_artifacts`.
     ///
@@ -288,6 +325,14 @@ impl UpdateTrialComponentInputBuilder {
         self.input_artifacts = input;
         self
     }
+    /// <p>Replaces all of the component's input artifacts with the specified artifacts or adds new input artifacts. Existing input artifacts are replaced if the trial component is updated with an identical input artifact key.</p>
+    pub fn get_input_artifacts(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::TrialComponentArtifact>,
+    > {
+        &self.input_artifacts
+    }
     /// Appends an item to `input_artifacts_to_remove`.
     ///
     /// To override the contents of this collection use [`set_input_artifacts_to_remove`](Self::set_input_artifacts_to_remove).
@@ -309,6 +354,12 @@ impl UpdateTrialComponentInputBuilder {
     ) -> Self {
         self.input_artifacts_to_remove = input;
         self
+    }
+    /// <p>The input artifacts to remove from the component.</p>
+    pub fn get_input_artifacts_to_remove(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.input_artifacts_to_remove
     }
     /// Adds a key-value pair to `output_artifacts`.
     ///
@@ -338,6 +389,14 @@ impl UpdateTrialComponentInputBuilder {
         self.output_artifacts = input;
         self
     }
+    /// <p>Replaces all of the component's output artifacts with the specified artifacts or adds new output artifacts. Existing output artifacts are replaced if the trial component is updated with an identical output artifact key.</p>
+    pub fn get_output_artifacts(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::TrialComponentArtifact>,
+    > {
+        &self.output_artifacts
+    }
     /// Appends an item to `output_artifacts_to_remove`.
     ///
     /// To override the contents of this collection use [`set_output_artifacts_to_remove`](Self::set_output_artifacts_to_remove).
@@ -359,6 +418,12 @@ impl UpdateTrialComponentInputBuilder {
     ) -> Self {
         self.output_artifacts_to_remove = input;
         self
+    }
+    /// <p>The output artifacts to remove from the component.</p>
+    pub fn get_output_artifacts_to_remove(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.output_artifacts_to_remove
     }
     /// Consumes the builder and constructs a [`UpdateTrialComponentInput`](crate::operation::update_trial_component::UpdateTrialComponentInput).
     pub fn build(

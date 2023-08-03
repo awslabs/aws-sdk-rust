@@ -63,6 +63,10 @@ impl GetSessionInputBuilder {
         self.bot_id = input;
         self
     }
+    /// <p>The identifier of the bot that contains the session data.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
+    }
     /// <p>The alias identifier in use for the bot that contains the session data.</p>
     pub fn bot_alias_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_alias_id = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl GetSessionInputBuilder {
     pub fn set_bot_alias_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_alias_id = input;
         self
+    }
+    /// <p>The alias identifier in use for the bot that contains the session data.</p>
+    pub fn get_bot_alias_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_alias_id
     }
     /// <p>The locale where the session is in use.</p>
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -83,6 +91,10 @@ impl GetSessionInputBuilder {
         self.locale_id = input;
         self
     }
+    /// <p>The locale where the session is in use.</p>
+    pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale_id
+    }
     /// <p>The identifier of the session to return.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
@@ -92,6 +104,10 @@ impl GetSessionInputBuilder {
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_id = input;
         self
+    }
+    /// <p>The identifier of the session to return.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
     }
     /// Consumes the builder and constructs a [`GetSessionInput`](crate::operation::get_session::GetSessionInput).
     pub fn build(

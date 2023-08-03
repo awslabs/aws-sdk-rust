@@ -69,6 +69,16 @@ impl SuppressionOptionsBuilder {
         self.suppressed_reasons = input;
         self
     }
+    /// <p>A list that contains the reasons that email addresses are automatically added to the suppression list for your account. This list can contain any or all of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li>
+    /// <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li>
+    /// </ul>
+    pub fn get_suppressed_reasons(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>> {
+        &self.suppressed_reasons
+    }
     /// Consumes the builder and constructs a [`SuppressionOptions`](crate::types::SuppressionOptions).
     pub fn build(self) -> crate::types::SuppressionOptions {
         crate::types::SuppressionOptions {

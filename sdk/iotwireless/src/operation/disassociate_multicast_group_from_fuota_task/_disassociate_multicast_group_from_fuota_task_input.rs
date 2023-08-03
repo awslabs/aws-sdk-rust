@@ -47,6 +47,10 @@ impl DisassociateMulticastGroupFromFuotaTaskInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of a FUOTA task.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The ID of the multicast group.</p>
     pub fn multicast_group_id(
         mut self,
@@ -62,6 +66,10 @@ impl DisassociateMulticastGroupFromFuotaTaskInputBuilder {
     ) -> Self {
         self.multicast_group_id = input;
         self
+    }
+    /// <p>The ID of the multicast group.</p>
+    pub fn get_multicast_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.multicast_group_id
     }
     /// Consumes the builder and constructs a [`DisassociateMulticastGroupFromFuotaTaskInput`](crate::operation::disassociate_multicast_group_from_fuota_task::DisassociateMulticastGroupFromFuotaTaskInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_multicast_group_from_fuota_task::DisassociateMulticastGroupFromFuotaTaskInput, ::aws_smithy_http::operation::error::BuildError>{

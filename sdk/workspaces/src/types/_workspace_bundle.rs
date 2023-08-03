@@ -128,6 +128,10 @@ impl WorkspaceBundleBuilder {
         self.bundle_id = input;
         self
     }
+    /// <p>The identifier of the bundle.</p>
+    pub fn get_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bundle_id
+    }
     /// <p>The name of the bundle.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -137,6 +141,10 @@ impl WorkspaceBundleBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the bundle.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The owner of the bundle. This is the account identifier of the owner, or <code>AMAZON</code> if the bundle is provided by Amazon Web Services.</p>
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -148,6 +156,10 @@ impl WorkspaceBundleBuilder {
         self.owner = input;
         self
     }
+    /// <p>The owner of the bundle. This is the account identifier of the owner, or <code>AMAZON</code> if the bundle is provided by Amazon Web Services.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner
+    }
     /// <p>The description of the bundle.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -158,6 +170,10 @@ impl WorkspaceBundleBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the bundle.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The identifier of the image that was used to create the bundle.</p>
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_id = ::std::option::Option::Some(input.into());
@@ -167,6 +183,10 @@ impl WorkspaceBundleBuilder {
     pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_id = input;
         self
+    }
+    /// <p>The identifier of the image that was used to create the bundle.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_id
     }
     /// <p>The size of the root volume.</p>
     pub fn root_storage(mut self, input: crate::types::RootStorage) -> Self {
@@ -181,6 +201,10 @@ impl WorkspaceBundleBuilder {
         self.root_storage = input;
         self
     }
+    /// <p>The size of the root volume.</p>
+    pub fn get_root_storage(&self) -> &::std::option::Option<crate::types::RootStorage> {
+        &self.root_storage
+    }
     /// <p>The size of the user volume.</p>
     pub fn user_storage(mut self, input: crate::types::UserStorage) -> Self {
         self.user_storage = ::std::option::Option::Some(input);
@@ -193,6 +217,10 @@ impl WorkspaceBundleBuilder {
     ) -> Self {
         self.user_storage = input;
         self
+    }
+    /// <p>The size of the user volume.</p>
+    pub fn get_user_storage(&self) -> &::std::option::Option<crate::types::UserStorage> {
+        &self.user_storage
     }
     /// <p>The compute type of the bundle. For more information, see <a href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.</p>
     pub fn compute_type(mut self, input: crate::types::ComputeType) -> Self {
@@ -207,6 +235,10 @@ impl WorkspaceBundleBuilder {
         self.compute_type = input;
         self
     }
+    /// <p>The compute type of the bundle. For more information, see <a href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.</p>
+    pub fn get_compute_type(&self) -> &::std::option::Option<crate::types::ComputeType> {
+        &self.compute_type
+    }
     /// <p>The last time that the bundle was updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
@@ -219,6 +251,10 @@ impl WorkspaceBundleBuilder {
     ) -> Self {
         self.last_updated_time = input;
         self
+    }
+    /// <p>The last time that the bundle was updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
     }
     /// <p>The time when the bundle was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -233,6 +269,10 @@ impl WorkspaceBundleBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The time when the bundle was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The state of the WorkSpace bundle.</p>
     pub fn state(mut self, input: crate::types::WorkspaceBundleState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -246,6 +286,10 @@ impl WorkspaceBundleBuilder {
         self.state = input;
         self
     }
+    /// <p>The state of the WorkSpace bundle.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::WorkspaceBundleState> {
+        &self.state
+    }
     /// <p>The type of WorkSpace bundle.</p>
     pub fn bundle_type(mut self, input: crate::types::BundleType) -> Self {
         self.bundle_type = ::std::option::Option::Some(input);
@@ -258,6 +302,10 @@ impl WorkspaceBundleBuilder {
     ) -> Self {
         self.bundle_type = input;
         self
+    }
+    /// <p>The type of WorkSpace bundle.</p>
+    pub fn get_bundle_type(&self) -> &::std::option::Option<crate::types::BundleType> {
+        &self.bundle_type
     }
     /// Consumes the builder and constructs a [`WorkspaceBundle`](crate::types::WorkspaceBundle).
     pub fn build(self) -> crate::types::WorkspaceBundle {

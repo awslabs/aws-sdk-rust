@@ -62,6 +62,10 @@ impl VerifyOutputBuilder {
         self.key_id = input;
         self
     }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric KMS key that was used to verify the signature.</p>
+    pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_id
+    }
     /// <p>A Boolean value that indicates whether the signature was verified. A value of <code>True</code> indicates that the <code>Signature</code> was produced by signing the <code>Message</code> with the specified <code>KeyID</code> and <code>SigningAlgorithm.</code> If the signature is not verified, the <code>Verify</code> operation fails with a <code>KMSInvalidSignatureException</code> exception. </p>
     pub fn signature_valid(mut self, input: bool) -> Self {
         self.signature_valid = ::std::option::Option::Some(input);
@@ -71,6 +75,10 @@ impl VerifyOutputBuilder {
     pub fn set_signature_valid(mut self, input: ::std::option::Option<bool>) -> Self {
         self.signature_valid = input;
         self
+    }
+    /// <p>A Boolean value that indicates whether the signature was verified. A value of <code>True</code> indicates that the <code>Signature</code> was produced by signing the <code>Message</code> with the specified <code>KeyID</code> and <code>SigningAlgorithm.</code> If the signature is not verified, the <code>Verify</code> operation fails with a <code>KMSInvalidSignatureException</code> exception. </p>
+    pub fn get_signature_valid(&self) -> &::std::option::Option<bool> {
+        &self.signature_valid
     }
     /// <p>The signing algorithm that was used to verify the signature.</p>
     pub fn signing_algorithm(mut self, input: crate::types::SigningAlgorithmSpec) -> Self {
@@ -84,6 +92,12 @@ impl VerifyOutputBuilder {
     ) -> Self {
         self.signing_algorithm = input;
         self
+    }
+    /// <p>The signing algorithm that was used to verify the signature.</p>
+    pub fn get_signing_algorithm(
+        &self,
+    ) -> &::std::option::Option<crate::types::SigningAlgorithmSpec> {
+        &self.signing_algorithm
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

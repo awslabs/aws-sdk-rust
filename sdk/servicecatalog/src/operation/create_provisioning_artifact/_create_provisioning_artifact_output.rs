@@ -90,6 +90,12 @@ impl CreateProvisioningArtifactOutputBuilder {
         self.provisioning_artifact_detail = input;
         self
     }
+    /// <p>Information about the provisioning artifact.</p>
+    pub fn get_provisioning_artifact_detail(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProvisioningArtifactDetail> {
+        &self.provisioning_artifact_detail
+    }
     /// Adds a key-value pair to `info`.
     ///
     /// To override the contents of this collection use [`set_info`](Self::set_info).
@@ -125,6 +131,19 @@ impl CreateProvisioningArtifactOutputBuilder {
         self.info = input;
         self
     }
+    /// <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p>
+    /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. </p>
+    /// <p> <code>LoadTemplateFromURL</code> </p>
+    /// <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
+    /// <p> <code>ImportFromPhysicalId</code> </p>
+    /// <p>Use the physical id of the resource that contains the template; currently supports CloudFormation stack ARN.</p>
+    pub fn get_info(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.info
+    }
     /// <p>The status of the current request.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -134,6 +153,10 @@ impl CreateProvisioningArtifactOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the current request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

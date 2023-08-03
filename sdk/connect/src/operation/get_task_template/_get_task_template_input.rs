@@ -55,6 +55,10 @@ impl GetTaskTemplateInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>A unique identifier for the task template.</p>
     pub fn task_template_id(
         mut self,
@@ -71,6 +75,10 @@ impl GetTaskTemplateInputBuilder {
         self.task_template_id = input;
         self
     }
+    /// <p>A unique identifier for the task template.</p>
+    pub fn get_task_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_template_id
+    }
     /// <p>The system generated version of a task template that is associated with a task, when the task is created.</p>
     pub fn snapshot_version(
         mut self,
@@ -86,6 +94,10 @@ impl GetTaskTemplateInputBuilder {
     ) -> Self {
         self.snapshot_version = input;
         self
+    }
+    /// <p>The system generated version of a task template that is associated with a task, when the task is created.</p>
+    pub fn get_snapshot_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_version
     }
     /// Consumes the builder and constructs a [`GetTaskTemplateInput`](crate::operation::get_task_template::GetTaskTemplateInput).
     pub fn build(

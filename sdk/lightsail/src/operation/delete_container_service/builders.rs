@@ -36,6 +36,13 @@ impl DeleteContainerServiceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteContainerService as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_container_service::builders::DeleteContainerServiceInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +132,9 @@ impl DeleteContainerServiceFluentBuilder {
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_name(input);
         self
+    }
+    /// <p>The name of the container service to delete.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_name()
     }
 }

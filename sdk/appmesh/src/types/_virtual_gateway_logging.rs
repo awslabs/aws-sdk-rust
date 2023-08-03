@@ -43,6 +43,10 @@ impl VirtualGatewayLoggingBuilder {
         self.access_log = input;
         self
     }
+    /// <p>The access log configuration.</p>
+    pub fn get_access_log(&self) -> &::std::option::Option<crate::types::VirtualGatewayAccessLog> {
+        &self.access_log
+    }
     /// Consumes the builder and constructs a [`VirtualGatewayLogging`](crate::types::VirtualGatewayLogging).
     pub fn build(self) -> crate::types::VirtualGatewayLogging {
         crate::types::VirtualGatewayLogging {

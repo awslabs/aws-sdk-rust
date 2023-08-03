@@ -64,6 +64,10 @@ impl AutomatedAbrSettingsBuilder {
         self.max_abr_bitrate = input;
         self
     }
+    /// Optional. The maximum target bit rate used in your automated ABR stack. Use this value to set an upper limit on the bandwidth consumed by the highest-quality rendition. This is the rendition that is delivered to viewers with the fastest internet connections. If you don't specify a value, MediaConvert uses 8,000,000 (8 mb/s) by default.
+    pub fn get_max_abr_bitrate(&self) -> &::std::option::Option<i32> {
+        &self.max_abr_bitrate
+    }
     /// Optional. The maximum number of renditions that MediaConvert will create in your automated ABR stack. The number of renditions is determined automatically, based on analysis of each job, but will never exceed this limit. When you set this to Auto in the console, which is equivalent to excluding it from your JSON job specification, MediaConvert defaults to a limit of 15.
     pub fn max_renditions(mut self, input: i32) -> Self {
         self.max_renditions = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl AutomatedAbrSettingsBuilder {
         self.max_renditions = input;
         self
     }
+    /// Optional. The maximum number of renditions that MediaConvert will create in your automated ABR stack. The number of renditions is determined automatically, based on analysis of each job, but will never exceed this limit. When you set this to Auto in the console, which is equivalent to excluding it from your JSON job specification, MediaConvert defaults to a limit of 15.
+    pub fn get_max_renditions(&self) -> &::std::option::Option<i32> {
+        &self.max_renditions
+    }
     /// Optional. The minimum target bitrate used in your automated ABR stack. Use this value to set a lower limit on the bitrate of video delivered to viewers with slow internet connections. If you don't specify a value, MediaConvert uses 600,000 (600 kb/s) by default.
     pub fn min_abr_bitrate(mut self, input: i32) -> Self {
         self.min_abr_bitrate = ::std::option::Option::Some(input);
@@ -83,6 +91,10 @@ impl AutomatedAbrSettingsBuilder {
     pub fn set_min_abr_bitrate(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_abr_bitrate = input;
         self
+    }
+    /// Optional. The minimum target bitrate used in your automated ABR stack. Use this value to set a lower limit on the bitrate of video delivered to viewers with slow internet connections. If you don't specify a value, MediaConvert uses 600,000 (600 kb/s) by default.
+    pub fn get_min_abr_bitrate(&self) -> &::std::option::Option<i32> {
+        &self.min_abr_bitrate
     }
     /// Appends an item to `rules`.
     ///
@@ -102,6 +114,12 @@ impl AutomatedAbrSettingsBuilder {
     ) -> Self {
         self.rules = input;
         self
+    }
+    /// Optional. Use Automated ABR rules to specify restrictions for the rendition sizes MediaConvert will create in your ABR stack. You can use these rules if your ABR workflow has specific rendition size requirements, but you still want MediaConvert to optimize for video quality and overall file size.
+    pub fn get_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutomatedAbrRule>> {
+        &self.rules
     }
     /// Consumes the builder and constructs a [`AutomatedAbrSettings`](crate::types::AutomatedAbrSettings).
     pub fn build(self) -> crate::types::AutomatedAbrSettings {

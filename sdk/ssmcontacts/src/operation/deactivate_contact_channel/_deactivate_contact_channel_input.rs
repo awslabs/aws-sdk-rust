@@ -47,6 +47,10 @@ impl DeactivateContactChannelInputBuilder {
         self.contact_channel_id = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the contact channel you're deactivating.</p>
+    pub fn get_contact_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_channel_id
+    }
     /// Consumes the builder and constructs a [`DeactivateContactChannelInput`](crate::operation::deactivate_contact_channel::DeactivateContactChannelInput).
     pub fn build(
         self,

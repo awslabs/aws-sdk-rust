@@ -38,6 +38,13 @@ impl CreateImpersonationRoleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateImpersonationRole as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_impersonation_role::builders::CreateImpersonationRoleInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +135,10 @@ impl CreateImpersonationRoleFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>The idempotency token for the client request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>The WorkMail organization to create the new impersonation role within.</p>
     pub fn organization_id(
         mut self,
@@ -144,6 +155,10 @@ impl CreateImpersonationRoleFluentBuilder {
         self.inner = self.inner.set_organization_id(input);
         self
     }
+    /// <p>The WorkMail organization to create the new impersonation role within.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organization_id()
+    }
     /// <p>The name of the new impersonation role.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -153,6 +168,10 @@ impl CreateImpersonationRoleFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the new impersonation role.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The impersonation role's type. The available impersonation role types are <code>READ_ONLY</code> or <code>FULL_ACCESS</code>.</p>
     pub fn r#type(mut self, input: crate::types::ImpersonationRoleType) -> Self {
@@ -167,6 +186,10 @@ impl CreateImpersonationRoleFluentBuilder {
         self.inner = self.inner.set_type(input);
         self
     }
+    /// <p>The impersonation role's type. The available impersonation role types are <code>READ_ONLY</code> or <code>FULL_ACCESS</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ImpersonationRoleType> {
+        self.inner.get_type()
+    }
     /// <p>The description of the new impersonation role.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -176,6 +199,10 @@ impl CreateImpersonationRoleFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the new impersonation role.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `Rules`.
     ///
@@ -193,5 +220,11 @@ impl CreateImpersonationRoleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_rules(input);
         self
+    }
+    /// <p>The list of rules for the impersonation role.</p>
+    pub fn get_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImpersonationRule>> {
+        self.inner.get_rules()
     }
 }

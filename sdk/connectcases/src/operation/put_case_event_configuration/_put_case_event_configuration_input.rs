@@ -47,6 +47,10 @@ impl PutCaseEventConfigurationInputBuilder {
         self.domain_id = input;
         self
     }
+    /// <p>The unique identifier of the Cases domain. </p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_id
+    }
     /// <p>Configuration to enable EventBridge case event delivery and determine what data is delivered.</p>
     pub fn event_bridge(mut self, input: crate::types::EventBridgeConfiguration) -> Self {
         self.event_bridge = ::std::option::Option::Some(input);
@@ -59,6 +63,12 @@ impl PutCaseEventConfigurationInputBuilder {
     ) -> Self {
         self.event_bridge = input;
         self
+    }
+    /// <p>Configuration to enable EventBridge case event delivery and determine what data is delivered.</p>
+    pub fn get_event_bridge(
+        &self,
+    ) -> &::std::option::Option<crate::types::EventBridgeConfiguration> {
+        &self.event_bridge
     }
     /// Consumes the builder and constructs a [`PutCaseEventConfigurationInput`](crate::operation::put_case_event_configuration::PutCaseEventConfigurationInput).
     pub fn build(

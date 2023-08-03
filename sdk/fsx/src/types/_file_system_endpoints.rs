@@ -51,6 +51,10 @@ impl FileSystemEndpointsBuilder {
         self.intercluster = input;
         self
     }
+    /// <p>An endpoint for managing your file system by setting up NetApp SnapMirror with other ONTAP systems.</p>
+    pub fn get_intercluster(&self) -> &::std::option::Option<crate::types::FileSystemEndpoint> {
+        &self.intercluster
+    }
     /// <p>An endpoint for managing your file system using the NetApp ONTAP CLI and NetApp ONTAP API.</p>
     pub fn management(mut self, input: crate::types::FileSystemEndpoint) -> Self {
         self.management = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl FileSystemEndpointsBuilder {
     ) -> Self {
         self.management = input;
         self
+    }
+    /// <p>An endpoint for managing your file system using the NetApp ONTAP CLI and NetApp ONTAP API.</p>
+    pub fn get_management(&self) -> &::std::option::Option<crate::types::FileSystemEndpoint> {
+        &self.management
     }
     /// Consumes the builder and constructs a [`FileSystemEndpoints`](crate::types::FileSystemEndpoints).
     pub fn build(self) -> crate::types::FileSystemEndpoints {

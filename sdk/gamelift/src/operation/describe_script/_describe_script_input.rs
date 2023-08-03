@@ -39,6 +39,10 @@ impl DescribeScriptInputBuilder {
         self.script_id = input;
         self
     }
+    /// <p>A unique identifier for the Realtime script to retrieve properties for. You can use either the script ID or ARN value.</p>
+    pub fn get_script_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.script_id
+    }
     /// Consumes the builder and constructs a [`DescribeScriptInput`](crate::operation::describe_script::DescribeScriptInput).
     pub fn build(
         self,

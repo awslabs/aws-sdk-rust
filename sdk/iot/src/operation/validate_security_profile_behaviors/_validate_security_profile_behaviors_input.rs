@@ -48,6 +48,10 @@ impl ValidateSecurityProfileBehaviorsInputBuilder {
         self.behaviors = input;
         self
     }
+    /// <p>Specifies the behaviors that, when violated by a device (thing), cause an alert.</p>
+    pub fn get_behaviors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Behavior>> {
+        &self.behaviors
+    }
     /// Consumes the builder and constructs a [`ValidateSecurityProfileBehaviorsInput`](crate::operation::validate_security_profile_behaviors::ValidateSecurityProfileBehaviorsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::validate_security_profile_behaviors::ValidateSecurityProfileBehaviorsInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

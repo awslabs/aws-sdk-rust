@@ -127,6 +127,10 @@ impl PutBucketAclInputBuilder {
         self.acl = input;
         self
     }
+    /// <p>The canned ACL to apply to the bucket.</p>
+    pub fn get_acl(&self) -> &::std::option::Option<crate::types::BucketCannedAcl> {
+        &self.acl
+    }
     /// <p>Contains the elements that set the ACL permissions for an object per grantee.</p>
     pub fn access_control_policy(mut self, input: crate::types::AccessControlPolicy) -> Self {
         self.access_control_policy = ::std::option::Option::Some(input);
@@ -140,6 +144,12 @@ impl PutBucketAclInputBuilder {
         self.access_control_policy = input;
         self
     }
+    /// <p>Contains the elements that set the ACL permissions for an object per grantee.</p>
+    pub fn get_access_control_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::AccessControlPolicy> {
+        &self.access_control_policy
+    }
     /// <p>The bucket to which to apply the ACL.</p>
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
@@ -149,6 +159,10 @@ impl PutBucketAclInputBuilder {
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket = input;
         self
+    }
+    /// <p>The bucket to which to apply the ACL.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
     }
     /// <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used as a message integrity check to verify that the request body was not corrupted in transit. For more information, go to <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.</a> </p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
@@ -161,6 +175,11 @@ impl PutBucketAclInputBuilder {
     pub fn set_content_md5(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_md5 = input;
         self
+    }
+    /// <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used as a message integrity check to verify that the request body was not corrupted in transit. For more information, go to <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.</a> </p>
+    /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
+    pub fn get_content_md5(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_md5
     }
     /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
@@ -176,6 +195,13 @@ impl PutBucketAclInputBuilder {
     ) -> Self {
         self.checksum_algorithm = input;
         self
+    }
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    pub fn get_checksum_algorithm(
+        &self,
+    ) -> &::std::option::Option<crate::types::ChecksumAlgorithm> {
+        &self.checksum_algorithm
     }
     /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p>
     pub fn grant_full_control(
@@ -193,6 +219,10 @@ impl PutBucketAclInputBuilder {
         self.grant_full_control = input;
         self
     }
+    /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p>
+    pub fn get_grant_full_control(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grant_full_control
+    }
     /// <p>Allows grantee to list the objects in the bucket.</p>
     pub fn grant_read(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grant_read = ::std::option::Option::Some(input.into());
@@ -202,6 +232,10 @@ impl PutBucketAclInputBuilder {
     pub fn set_grant_read(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.grant_read = input;
         self
+    }
+    /// <p>Allows grantee to list the objects in the bucket.</p>
+    pub fn get_grant_read(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grant_read
     }
     /// <p>Allows grantee to read the bucket ACL.</p>
     pub fn grant_read_acp(
@@ -219,6 +253,10 @@ impl PutBucketAclInputBuilder {
         self.grant_read_acp = input;
         self
     }
+    /// <p>Allows grantee to read the bucket ACL.</p>
+    pub fn get_grant_read_acp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grant_read_acp
+    }
     /// <p>Allows grantee to create new objects in the bucket.</p>
     /// <p>For the bucket and object owners of existing objects, also allows deletions and overwrites of those objects.</p>
     pub fn grant_write(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -230,6 +268,11 @@ impl PutBucketAclInputBuilder {
     pub fn set_grant_write(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.grant_write = input;
         self
+    }
+    /// <p>Allows grantee to create new objects in the bucket.</p>
+    /// <p>For the bucket and object owners of existing objects, also allows deletions and overwrites of those objects.</p>
+    pub fn get_grant_write(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grant_write
     }
     /// <p>Allows grantee to write the ACL for the applicable bucket.</p>
     pub fn grant_write_acp(
@@ -247,6 +290,10 @@ impl PutBucketAclInputBuilder {
         self.grant_write_acp = input;
         self
     }
+    /// <p>Allows grantee to write the ACL for the applicable bucket.</p>
+    pub fn get_grant_write_acp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grant_write_acp
+    }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(
         mut self,
@@ -262,6 +309,10 @@ impl PutBucketAclInputBuilder {
     ) -> Self {
         self.expected_bucket_owner = input;
         self
+    }
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
+    pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expected_bucket_owner
     }
     /// Consumes the builder and constructs a [`PutBucketAclInput`](crate::operation::put_bucket_acl::PutBucketAclInput).
     pub fn build(

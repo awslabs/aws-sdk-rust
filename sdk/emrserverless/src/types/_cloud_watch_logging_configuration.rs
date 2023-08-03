@@ -88,6 +88,10 @@ impl CloudWatchLoggingConfigurationBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Enables CloudWatch logging.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// <p>The name of the log group in Amazon CloudWatch Logs where you want to publish your logs.</p>
     pub fn log_group_name(
         mut self,
@@ -103,6 +107,10 @@ impl CloudWatchLoggingConfigurationBuilder {
     ) -> Self {
         self.log_group_name = input;
         self
+    }
+    /// <p>The name of the log group in Amazon CloudWatch Logs where you want to publish your logs.</p>
+    pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group_name
     }
     /// <p>Prefix for the CloudWatch log stream name.</p>
     pub fn log_stream_name_prefix(
@@ -120,6 +128,10 @@ impl CloudWatchLoggingConfigurationBuilder {
         self.log_stream_name_prefix = input;
         self
     }
+    /// <p>Prefix for the CloudWatch log stream name.</p>
+    pub fn get_log_stream_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_stream_name_prefix
+    }
     /// <p>The Key Management Service (KMS) key ARN to encrypt the logs that you store in CloudWatch Logs.</p>
     pub fn encryption_key_arn(
         mut self,
@@ -135,6 +147,10 @@ impl CloudWatchLoggingConfigurationBuilder {
     ) -> Self {
         self.encryption_key_arn = input;
         self
+    }
+    /// <p>The Key Management Service (KMS) key ARN to encrypt the logs that you store in CloudWatch Logs.</p>
+    pub fn get_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encryption_key_arn
     }
     /// Adds a key-value pair to `log_types`.
     ///
@@ -171,6 +187,18 @@ impl CloudWatchLoggingConfigurationBuilder {
     ) -> Self {
         self.log_types = input;
         self
+    }
+    /// <p>The types of logs that you want to publish to CloudWatch. If you don't specify any log types, driver STDOUT and STDERR logs will be published to CloudWatch Logs by default. For more information including the supported worker types for Hive and Spark, see <a href="https://docs.aws.amazon.com/emr/latest/EMR-Serverless-UserGuide/logging.html#jobs-log-storage-cw">Logging for EMR Serverless with CloudWatch</a>.</p>
+    /// <ul>
+    /// <li> <p> <b>Key Valid Values</b>: <code>SPARK_DRIVER</code>, <code>SPARK_EXECUTOR</code>, <code>HIVE_DRIVER</code>, <code>TEZ_TASK</code> </p> </li>
+    /// <li> <p> <b>Array Members Valid Values</b>: <code>STDOUT</code>, <code>STDERR</code>, <code>HIVE_LOG</code>, <code>TEZ_AM</code>, <code>SYSTEM_LOGS</code> </p> </li>
+    /// </ul>
+    pub fn get_log_types(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
+    > {
+        &self.log_types
     }
     /// Consumes the builder and constructs a [`CloudWatchLoggingConfiguration`](crate::types::CloudWatchLoggingConfiguration).
     pub fn build(self) -> crate::types::CloudWatchLoggingConfiguration {

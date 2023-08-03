@@ -82,6 +82,10 @@ impl S3DestinationConfigurationBuilder {
         self.bucket = input;
         self
     }
+    /// <p>The name of the S3 bucket to which dataset contents are delivered.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p>The key of the dataset contents object in an S3 bucket. Each object has a key that is a unique identifier. Each object has exactly one key.</p>
     /// <p>You can create a unique key with the following options:</p>
     /// <ul>
@@ -110,6 +114,19 @@ impl S3DestinationConfigurationBuilder {
         self.key = input;
         self
     }
+    /// <p>The key of the dataset contents object in an S3 bucket. Each object has a key that is a unique identifier. Each object has exactly one key.</p>
+    /// <p>You can create a unique key with the following options:</p>
+    /// <ul>
+    /// <li> <p>Use <code>!{iotanalytics:scheduleTime}</code> to insert the time of a scheduled SQL query run.</p> </li>
+    /// <li> <p>Use <code>!{iotanalytics:versionId}</code> to insert a unique hash that identifies a dataset content.</p> </li>
+    /// <li> <p>Use <code>!{iotanalytics:creationTime}</code> to insert the creation time of a dataset content.</p> </li>
+    /// </ul>
+    /// <p>The following example creates a unique key for a CSV file: <code>dataset/mydataset/!{iotanalytics:scheduleTime}/!{iotanalytics:versionId}.csv</code> </p> <note>
+    /// <p>If you don't use <code>!{iotanalytics:versionId}</code> to specify the key, you might get duplicate keys. For example, you might have two dataset contents with the same <code>scheduleTime</code> but different <code>versionId</code>s. This means that one dataset content overwrites the other. </p>
+    /// </note>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>Configuration information for coordination with Glue, a fully managed extract, transform and load (ETL) service.</p>
     pub fn glue_configuration(mut self, input: crate::types::GlueConfiguration) -> Self {
         self.glue_configuration = ::std::option::Option::Some(input);
@@ -123,6 +140,12 @@ impl S3DestinationConfigurationBuilder {
         self.glue_configuration = input;
         self
     }
+    /// <p>Configuration information for coordination with Glue, a fully managed extract, transform and load (ETL) service.</p>
+    pub fn get_glue_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::GlueConfiguration> {
+        &self.glue_configuration
+    }
     /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 and Glue resources.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -132,6 +155,10 @@ impl S3DestinationConfigurationBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 and Glue resources.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Consumes the builder and constructs a [`S3DestinationConfiguration`](crate::types::S3DestinationConfiguration).
     pub fn build(self) -> crate::types::S3DestinationConfiguration {

@@ -59,6 +59,10 @@ impl UserTurnOutputSpecificationBuilder {
         self.intent = input;
         self
     }
+    /// <p>Contains information about the intent.</p>
+    pub fn get_intent(&self) -> &::std::option::Option<crate::types::UserTurnIntentOutput> {
+        &self.intent
+    }
     /// Appends an item to `active_contexts`.
     ///
     /// To override the contents of this collection use [`set_active_contexts`](Self::set_active_contexts).
@@ -78,6 +82,12 @@ impl UserTurnOutputSpecificationBuilder {
         self.active_contexts = input;
         self
     }
+    /// <p>The contexts that are active in the turn.</p>
+    pub fn get_active_contexts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>> {
+        &self.active_contexts
+    }
     /// <p>The transcript that is output for the user turn by the test execution.</p>
     pub fn transcript(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transcript = ::std::option::Option::Some(input.into());
@@ -87,6 +97,10 @@ impl UserTurnOutputSpecificationBuilder {
     pub fn set_transcript(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transcript = input;
         self
+    }
+    /// <p>The transcript that is output for the user turn by the test execution.</p>
+    pub fn get_transcript(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transcript
     }
     /// Consumes the builder and constructs a [`UserTurnOutputSpecification`](crate::types::UserTurnOutputSpecification).
     pub fn build(self) -> crate::types::UserTurnOutputSpecification {

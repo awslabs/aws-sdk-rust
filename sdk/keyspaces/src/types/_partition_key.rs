@@ -40,6 +40,10 @@ impl PartitionKeyBuilder {
         self.name = input;
         self
     }
+    /// <p>The name(s) of the partition key column(s).</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`PartitionKey`](crate::types::PartitionKey).
     pub fn build(self) -> crate::types::PartitionKey {
         crate::types::PartitionKey { name: self.name }

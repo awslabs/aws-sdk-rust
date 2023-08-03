@@ -88,6 +88,10 @@ impl EntityBuilder {
         self.score = input;
         self
     }
+    /// <p>The level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
+    pub fn get_score(&self) -> &::std::option::Option<f32> {
+        &self.score
+    }
     /// <p>The entity type. For entity detection using the built-in model, this field contains one of the standard entity types listed below.</p>
     /// <p>For custom entity detection, this field contains one of the entity types that you specified when you trained your custom model.</p>
     pub fn r#type(mut self, input: crate::types::EntityType) -> Self {
@@ -100,6 +104,11 @@ impl EntityBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The entity type. For entity detection using the built-in model, this field contains one of the standard entity types listed below.</p>
+    /// <p>For custom entity detection, this field contains one of the entity types that you specified when you trained your custom model.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::EntityType> {
+        &self.r#type
+    }
     /// <p>The text of the entity.</p>
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text = ::std::option::Option::Some(input.into());
@@ -109,6 +118,10 @@ impl EntityBuilder {
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.text = input;
         self
+    }
+    /// <p>The text of the entity.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
     }
     /// <p>The zero-based offset from the beginning of the source text to the first character in the entity.</p>
     /// <p>This field is empty for non-text input.</p>
@@ -122,6 +135,11 @@ impl EntityBuilder {
         self.begin_offset = input;
         self
     }
+    /// <p>The zero-based offset from the beginning of the source text to the first character in the entity.</p>
+    /// <p>This field is empty for non-text input.</p>
+    pub fn get_begin_offset(&self) -> &::std::option::Option<i32> {
+        &self.begin_offset
+    }
     /// <p>The zero-based offset from the beginning of the source text to the last character in the entity.</p>
     /// <p>This field is empty for non-text input.</p>
     pub fn end_offset(mut self, input: i32) -> Self {
@@ -133,6 +151,11 @@ impl EntityBuilder {
     pub fn set_end_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.end_offset = input;
         self
+    }
+    /// <p>The zero-based offset from the beginning of the source text to the last character in the entity.</p>
+    /// <p>This field is empty for non-text input.</p>
+    pub fn get_end_offset(&self) -> &::std::option::Option<i32> {
+        &self.end_offset
     }
     /// Appends an item to `block_references`.
     ///
@@ -152,6 +175,12 @@ impl EntityBuilder {
     ) -> Self {
         self.block_references = input;
         self
+    }
+    /// <p>A reference to each block for this entity. This field is empty for plain-text input.</p>
+    pub fn get_block_references(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BlockReference>> {
+        &self.block_references
     }
     /// Consumes the builder and constructs a [`Entity`](crate::types::Entity).
     pub fn build(self) -> crate::types::Entity {

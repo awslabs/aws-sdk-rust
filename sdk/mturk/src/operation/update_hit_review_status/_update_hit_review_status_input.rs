@@ -57,6 +57,10 @@ impl UpdateHitReviewStatusInputBuilder {
         self.hit_id = input;
         self
     }
+    /// <p> The ID of the HIT to update. </p>
+    pub fn get_hit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hit_id
+    }
     /// <p> Specifies how to update the HIT status. Default is <code>False</code>. </p>
     /// <ul>
     /// <li> <p> Setting this to false will only transition a HIT from <code>Reviewable</code> to <code>Reviewing</code> </p> </li>
@@ -74,6 +78,14 @@ impl UpdateHitReviewStatusInputBuilder {
     pub fn set_revert(mut self, input: ::std::option::Option<bool>) -> Self {
         self.revert = input;
         self
+    }
+    /// <p> Specifies how to update the HIT status. Default is <code>False</code>. </p>
+    /// <ul>
+    /// <li> <p> Setting this to false will only transition a HIT from <code>Reviewable</code> to <code>Reviewing</code> </p> </li>
+    /// <li> <p> Setting this to true will only transition a HIT from <code>Reviewing</code> to <code>Reviewable</code> </p> </li>
+    /// </ul>
+    pub fn get_revert(&self) -> &::std::option::Option<bool> {
+        &self.revert
     }
     /// Consumes the builder and constructs a [`UpdateHitReviewStatusInput`](crate::operation::update_hit_review_status::UpdateHitReviewStatusInput).
     pub fn build(

@@ -64,6 +64,10 @@ impl ErrorDetailsBuilder {
         self.message = input;
         self
     }
+    /// <p>Error details message.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>Error details code.</p>
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl ErrorDetailsBuilder {
         self.code = input;
         self
     }
+    /// <p>Error details code.</p>
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
+    }
     /// <p>Error details resourceId.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -83,6 +91,10 @@ impl ErrorDetailsBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>Error details resourceId.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// <p>Error details resourceType.</p>
     pub fn resource_type(
@@ -99,6 +111,10 @@ impl ErrorDetailsBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>Error details resourceType.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
     }
     /// Consumes the builder and constructs a [`ErrorDetails`](crate::types::ErrorDetails).
     pub fn build(self) -> crate::types::ErrorDetails {

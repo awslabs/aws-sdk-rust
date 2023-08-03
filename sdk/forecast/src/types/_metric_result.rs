@@ -49,6 +49,10 @@ impl MetricResultBuilder {
         self.metric_name = input;
         self
     }
+    /// <p>The name of the metric.</p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_name
+    }
     /// <p>The value for the metric.</p>
     pub fn metric_value(mut self, input: f64) -> Self {
         self.metric_value = ::std::option::Option::Some(input);
@@ -58,6 +62,10 @@ impl MetricResultBuilder {
     pub fn set_metric_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.metric_value = input;
         self
+    }
+    /// <p>The value for the metric.</p>
+    pub fn get_metric_value(&self) -> &::std::option::Option<f64> {
+        &self.metric_value
     }
     /// Consumes the builder and constructs a [`MetricResult`](crate::types::MetricResult).
     pub fn build(self) -> crate::types::MetricResult {

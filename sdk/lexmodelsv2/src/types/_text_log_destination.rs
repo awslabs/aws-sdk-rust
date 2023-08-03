@@ -45,6 +45,12 @@ impl TextLogDestinationBuilder {
         self.cloud_watch = input;
         self
     }
+    /// <p>Defines the Amazon CloudWatch Logs log group where text and metadata logs are delivered.</p>
+    pub fn get_cloud_watch(
+        &self,
+    ) -> &::std::option::Option<crate::types::CloudWatchLogGroupLogDestination> {
+        &self.cloud_watch
+    }
     /// Consumes the builder and constructs a [`TextLogDestination`](crate::types::TextLogDestination).
     pub fn build(self) -> crate::types::TextLogDestination {
         crate::types::TextLogDestination {

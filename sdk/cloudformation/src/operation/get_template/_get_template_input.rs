@@ -78,6 +78,15 @@ impl GetTemplateInputBuilder {
         self.stack_name = input;
         self
     }
+    /// <p>The name or the unique stack ID that's associated with the stack, which aren't always interchangeable:</p>
+    /// <ul>
+    /// <li> <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p> </li>
+    /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li>
+    /// </ul>
+    /// <p>Default: There is no default value.</p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_name
+    }
     /// <p>The name or Amazon Resource Name (ARN) of a change set for which CloudFormation returns the associated template. If you specify a name, you must also specify the <code>StackName</code>.</p>
     pub fn change_set_name(
         mut self,
@@ -94,6 +103,10 @@ impl GetTemplateInputBuilder {
         self.change_set_name = input;
         self
     }
+    /// <p>The name or Amazon Resource Name (ARN) of a change set for which CloudFormation returns the associated template. If you specify a name, you must also specify the <code>StackName</code>.</p>
+    pub fn get_change_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.change_set_name
+    }
     /// <p>For templates that include transforms, the stage of the template that CloudFormation returns. To get the user-submitted template, specify <code>Original</code>. To get the template after CloudFormation has processed all transforms, specify <code>Processed</code>.</p>
     /// <p>If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the same template. By default, CloudFormation specifies <code>Processed</code>.</p>
     pub fn template_stage(mut self, input: crate::types::TemplateStage) -> Self {
@@ -108,6 +121,11 @@ impl GetTemplateInputBuilder {
     ) -> Self {
         self.template_stage = input;
         self
+    }
+    /// <p>For templates that include transforms, the stage of the template that CloudFormation returns. To get the user-submitted template, specify <code>Original</code>. To get the template after CloudFormation has processed all transforms, specify <code>Processed</code>.</p>
+    /// <p>If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the same template. By default, CloudFormation specifies <code>Processed</code>.</p>
+    pub fn get_template_stage(&self) -> &::std::option::Option<crate::types::TemplateStage> {
+        &self.template_stage
     }
     /// Consumes the builder and constructs a [`GetTemplateInput`](crate::operation::get_template::GetTemplateInput).
     pub fn build(

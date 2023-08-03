@@ -63,6 +63,10 @@ impl CreateInputInputBuilder {
         self.input_name = input;
         self
     }
+    /// <p>The name you want to give to the input.</p>
+    pub fn get_input_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_name
+    }
     /// <p>A brief description of the input.</p>
     pub fn input_description(
         mut self,
@@ -79,6 +83,10 @@ impl CreateInputInputBuilder {
         self.input_description = input;
         self
     }
+    /// <p>A brief description of the input.</p>
+    pub fn get_input_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_description
+    }
     /// <p>The definition of the input.</p>
     pub fn input_definition(mut self, input: crate::types::InputDefinition) -> Self {
         self.input_definition = ::std::option::Option::Some(input);
@@ -91,6 +99,10 @@ impl CreateInputInputBuilder {
     ) -> Self {
         self.input_definition = input;
         self
+    }
+    /// <p>The definition of the input.</p>
+    pub fn get_input_definition(&self) -> &::std::option::Option<crate::types::InputDefinition> {
+        &self.input_definition
     }
     /// Appends an item to `tags`.
     ///
@@ -110,6 +122,10 @@ impl CreateInputInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Metadata that can be used to manage the input.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateInputInput`](crate::operation::create_input::CreateInputInput).
     pub fn build(

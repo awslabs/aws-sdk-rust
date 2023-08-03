@@ -64,6 +64,10 @@ impl ListTopicRulesInputBuilder {
         self.topic = input;
         self
     }
+    /// <p>The topic.</p>
+    pub fn get_topic(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic
+    }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl ListTopicRulesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,6 +92,10 @@ impl ListTopicRulesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>Specifies whether the rule is disabled.</p>
     pub fn rule_disabled(mut self, input: bool) -> Self {
         self.rule_disabled = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl ListTopicRulesInputBuilder {
     pub fn set_rule_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.rule_disabled = input;
         self
+    }
+    /// <p>Specifies whether the rule is disabled.</p>
+    pub fn get_rule_disabled(&self) -> &::std::option::Option<bool> {
+        &self.rule_disabled
     }
     /// Consumes the builder and constructs a [`ListTopicRulesInput`](crate::operation::list_topic_rules::ListTopicRulesInput).
     pub fn build(

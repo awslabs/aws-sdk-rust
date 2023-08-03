@@ -36,6 +36,10 @@ impl GetFindingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetFindings as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_findings::builders::GetFindingsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl GetFindingsFluentBuilder {
         self.inner = self.inner.set_detector_id(input);
         self
     }
+    /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to retrieve.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_detector_id()
+    }
     /// Appends an item to `FindingIds`.
     ///
     /// To override the contents of this collection use [`set_finding_ids`](Self::set_finding_ids).
@@ -135,6 +143,12 @@ impl GetFindingsFluentBuilder {
         self.inner = self.inner.set_finding_ids(input);
         self
     }
+    /// <p>The IDs of the findings that you want to retrieve.</p>
+    pub fn get_finding_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_finding_ids()
+    }
     /// <p>Represents the criteria used for sorting findings.</p>
     pub fn sort_criteria(mut self, input: crate::types::SortCriteria) -> Self {
         self.inner = self.inner.sort_criteria(input);
@@ -147,5 +161,9 @@ impl GetFindingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sort_criteria(input);
         self
+    }
+    /// <p>Represents the criteria used for sorting findings.</p>
+    pub fn get_sort_criteria(&self) -> &::std::option::Option<crate::types::SortCriteria> {
+        self.inner.get_sort_criteria()
     }
 }

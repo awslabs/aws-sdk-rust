@@ -50,6 +50,10 @@ impl ResponseHeadersPolicyServerTimingHeadersConfigBuilder {
         self.enabled = input;
         self
     }
+    /// <p>A Boolean that determines whether CloudFront adds the <code>Server-Timing</code> header to HTTP responses that it sends in response to requests that match a cache behavior that's associated with this response headers policy.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// <p>A number 0–100 (inclusive) that specifies the percentage of responses that you want CloudFront to add the <code>Server-Timing</code> header to. When you set the sampling rate to 100, CloudFront adds the <code>Server-Timing</code> header to the HTTP response for every request that matches the cache behavior that this response headers policy is attached to. When you set it to 50, CloudFront adds the header to 50% of the responses for requests that match the cache behavior. You can set the sampling rate to any number 0–100 with up to four decimal places.</p>
     pub fn sampling_rate(mut self, input: f64) -> Self {
         self.sampling_rate = ::std::option::Option::Some(input);
@@ -59,6 +63,10 @@ impl ResponseHeadersPolicyServerTimingHeadersConfigBuilder {
     pub fn set_sampling_rate(mut self, input: ::std::option::Option<f64>) -> Self {
         self.sampling_rate = input;
         self
+    }
+    /// <p>A number 0–100 (inclusive) that specifies the percentage of responses that you want CloudFront to add the <code>Server-Timing</code> header to. When you set the sampling rate to 100, CloudFront adds the <code>Server-Timing</code> header to the HTTP response for every request that matches the cache behavior that this response headers policy is attached to. When you set it to 50, CloudFront adds the header to 50% of the responses for requests that match the cache behavior. You can set the sampling rate to any number 0–100 with up to four decimal places.</p>
+    pub fn get_sampling_rate(&self) -> &::std::option::Option<f64> {
+        &self.sampling_rate
     }
     /// Consumes the builder and constructs a [`ResponseHeadersPolicyServerTimingHeadersConfig`](crate::types::ResponseHeadersPolicyServerTimingHeadersConfig).
     pub fn build(self) -> crate::types::ResponseHeadersPolicyServerTimingHeadersConfig {

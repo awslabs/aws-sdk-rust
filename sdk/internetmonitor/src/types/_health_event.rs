@@ -121,6 +121,10 @@ impl HealthEventBuilder {
         self.event_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the event.</p>
+    pub fn get_event_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_arn
+    }
     /// <p>The internally generated identifier of a specific network traffic impairment health event.</p>
     pub fn event_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_id = ::std::option::Option::Some(input.into());
@@ -130,6 +134,10 @@ impl HealthEventBuilder {
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_id = input;
         self
+    }
+    /// <p>The internally generated identifier of a specific network traffic impairment health event.</p>
+    pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_id
     }
     /// <p>When a health event started.</p>
     pub fn started_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -144,6 +152,10 @@ impl HealthEventBuilder {
         self.started_at = input;
         self
     }
+    /// <p>When a health event started.</p>
+    pub fn get_started_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.started_at
+    }
     /// <p>The time when a health event ended. If the health event is still active, then the end time is not set.</p>
     pub fn ended_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.ended_at = ::std::option::Option::Some(input);
@@ -156,6 +168,10 @@ impl HealthEventBuilder {
     ) -> Self {
         self.ended_at = input;
         self
+    }
+    /// <p>The time when a health event ended. If the health event is still active, then the end time is not set.</p>
+    pub fn get_ended_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.ended_at
     }
     /// <p>When the health event was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -170,6 +186,10 @@ impl HealthEventBuilder {
         self.created_at = input;
         self
     }
+    /// <p>When the health event was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>When the health event was last updated.</p>
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_at = ::std::option::Option::Some(input);
@@ -182,6 +202,10 @@ impl HealthEventBuilder {
     ) -> Self {
         self.last_updated_at = input;
         self
+    }
+    /// <p>When the health event was last updated.</p>
+    pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_at
     }
     /// Appends an item to `impacted_locations`.
     ///
@@ -202,6 +226,12 @@ impl HealthEventBuilder {
         self.impacted_locations = input;
         self
     }
+    /// <p>The locations impacted by the health event.</p>
+    pub fn get_impacted_locations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImpactedLocation>> {
+        &self.impacted_locations
+    }
     /// <p>Health event list member.</p>
     pub fn status(mut self, input: crate::types::HealthEventStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -214,6 +244,10 @@ impl HealthEventBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Health event list member.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::HealthEventStatus> {
+        &self.status
     }
     /// <p>The impact on global traffic monitored by this monitor for this health event.</p>
     pub fn percent_of_total_traffic_impacted(mut self, input: f64) -> Self {
@@ -228,6 +262,10 @@ impl HealthEventBuilder {
         self.percent_of_total_traffic_impacted = input;
         self
     }
+    /// <p>The impact on global traffic monitored by this monitor for this health event.</p>
+    pub fn get_percent_of_total_traffic_impacted(&self) -> &::std::option::Option<f64> {
+        &self.percent_of_total_traffic_impacted
+    }
     /// <p>The type of impairment for a health event.</p>
     pub fn impact_type(mut self, input: crate::types::HealthEventImpactType) -> Self {
         self.impact_type = ::std::option::Option::Some(input);
@@ -241,6 +279,10 @@ impl HealthEventBuilder {
         self.impact_type = input;
         self
     }
+    /// <p>The type of impairment for a health event.</p>
+    pub fn get_impact_type(&self) -> &::std::option::Option<crate::types::HealthEventImpactType> {
+        &self.impact_type
+    }
     /// <p>The value of the threshold percentage for performance or availability that was configured when Amazon CloudWatch Internet Monitor created the health event.</p>
     pub fn health_score_threshold(mut self, input: f64) -> Self {
         self.health_score_threshold = ::std::option::Option::Some(input);
@@ -250,6 +292,10 @@ impl HealthEventBuilder {
     pub fn set_health_score_threshold(mut self, input: ::std::option::Option<f64>) -> Self {
         self.health_score_threshold = input;
         self
+    }
+    /// <p>The value of the threshold percentage for performance or availability that was configured when Amazon CloudWatch Internet Monitor created the health event.</p>
+    pub fn get_health_score_threshold(&self) -> &::std::option::Option<f64> {
+        &self.health_score_threshold
     }
     /// Consumes the builder and constructs a [`HealthEvent`](crate::types::HealthEvent).
     pub fn build(self) -> crate::types::HealthEvent {

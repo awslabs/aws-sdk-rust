@@ -64,6 +64,10 @@ impl ListedExecutionBuilder {
         self.execution_id = input;
         self
     }
+    /// <p>A unique identifier for the execution of a workflow.</p>
+    pub fn get_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_id
+    }
     /// <p>A structure that describes the Amazon S3 or EFS file location. This is the file location when the execution begins: if the file is being copied, this is the initial (as opposed to destination) file location.</p>
     pub fn initial_file_location(mut self, input: crate::types::FileLocation) -> Self {
         self.initial_file_location = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl ListedExecutionBuilder {
     ) -> Self {
         self.initial_file_location = input;
         self
+    }
+    /// <p>A structure that describes the Amazon S3 or EFS file location. This is the file location when the execution begins: if the file is being copied, this is the initial (as opposed to destination) file location.</p>
+    pub fn get_initial_file_location(&self) -> &::std::option::Option<crate::types::FileLocation> {
+        &self.initial_file_location
     }
     /// <p>A container object for the session details that are associated with a workflow.</p>
     pub fn service_metadata(mut self, input: crate::types::ServiceMetadata) -> Self {
@@ -90,6 +98,10 @@ impl ListedExecutionBuilder {
         self.service_metadata = input;
         self
     }
+    /// <p>A container object for the session details that are associated with a workflow.</p>
+    pub fn get_service_metadata(&self) -> &::std::option::Option<crate::types::ServiceMetadata> {
+        &self.service_metadata
+    }
     /// <p>The status is one of the execution. Can be in progress, completed, exception encountered, or handling the exception.</p>
     pub fn status(mut self, input: crate::types::ExecutionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -102,6 +114,10 @@ impl ListedExecutionBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status is one of the execution. Can be in progress, completed, exception encountered, or handling the exception.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ExecutionStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`ListedExecution`](crate::types::ListedExecution).
     pub fn build(self) -> crate::types::ListedExecution {

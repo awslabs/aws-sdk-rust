@@ -36,6 +36,10 @@ impl LockRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the LockRule as a reference.
+    pub fn as_input(&self) -> &crate::operation::lock_rule::builders::LockRuleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl LockRuleFluentBuilder {
         self.inner = self.inner.set_identifier(input);
         self
     }
+    /// <p>The unique ID of the retention rule.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identifier()
+    }
     /// <p>Information about the retention rule lock configuration.</p>
     pub fn lock_configuration(mut self, input: crate::types::LockConfiguration) -> Self {
         self.inner = self.inner.lock_configuration(input);
@@ -130,5 +138,11 @@ impl LockRuleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_lock_configuration(input);
         self
+    }
+    /// <p>Information about the retention rule lock configuration.</p>
+    pub fn get_lock_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::LockConfiguration> {
+        self.inner.get_lock_configuration()
     }
 }

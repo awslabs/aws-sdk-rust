@@ -52,6 +52,10 @@ impl SetTimeBasedAutoScalingInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The instance ID.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>An <code>AutoScalingSchedule</code> with the instance schedule.</p>
     pub fn auto_scaling_schedule(mut self, input: crate::types::WeeklyAutoScalingSchedule) -> Self {
         self.auto_scaling_schedule = ::std::option::Option::Some(input);
@@ -64,6 +68,12 @@ impl SetTimeBasedAutoScalingInputBuilder {
     ) -> Self {
         self.auto_scaling_schedule = input;
         self
+    }
+    /// <p>An <code>AutoScalingSchedule</code> with the instance schedule.</p>
+    pub fn get_auto_scaling_schedule(
+        &self,
+    ) -> &::std::option::Option<crate::types::WeeklyAutoScalingSchedule> {
+        &self.auto_scaling_schedule
     }
     /// Consumes the builder and constructs a [`SetTimeBasedAutoScalingInput`](crate::operation::set_time_based_auto_scaling::SetTimeBasedAutoScalingInput).
     pub fn build(

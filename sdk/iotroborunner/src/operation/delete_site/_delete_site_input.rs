@@ -39,6 +39,10 @@ impl DeleteSiteInputBuilder {
         self.id = input;
         self
     }
+    /// Site ARN.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`DeleteSiteInput`](crate::operation::delete_site::DeleteSiteInput).
     pub fn build(
         self,

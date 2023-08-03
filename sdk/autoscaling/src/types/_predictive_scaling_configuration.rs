@@ -114,6 +114,14 @@ impl PredictiveScalingConfigurationBuilder {
         self.metric_specifications = input;
         self
     }
+    /// <p>This structure includes the metrics and target utilization to use for predictive scaling. </p>
+    /// <p>This is an array, but we currently only support a single metric specification. That is, you can specify a target value and a single metric pair, or a target value and one scaling metric and one load metric.</p>
+    pub fn get_metric_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PredictiveScalingMetricSpecification>>
+    {
+        &self.metric_specifications
+    }
     /// <p>The predictive scaling mode. Defaults to <code>ForecastOnly</code> if not specified.</p>
     pub fn mode(mut self, input: crate::types::PredictiveScalingMode) -> Self {
         self.mode = ::std::option::Option::Some(input);
@@ -127,6 +135,10 @@ impl PredictiveScalingConfigurationBuilder {
         self.mode = input;
         self
     }
+    /// <p>The predictive scaling mode. Defaults to <code>ForecastOnly</code> if not specified.</p>
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::PredictiveScalingMode> {
+        &self.mode
+    }
     /// <p>The amount of time, in seconds, by which the instance launch time can be advanced. For example, the forecast says to add capacity at 10:00 AM, and you choose to pre-launch instances by 5 minutes. In that case, the instances will be launched at 9:55 AM. The intention is to give resources time to be provisioned. It can take a few minutes to launch an EC2 instance. The actual amount of time required depends on several factors, such as the size of the instance and whether there are startup scripts to complete. </p>
     /// <p>The value must be less than the forecast interval duration of 3600 seconds (60 minutes). Defaults to 300 seconds if not specified. </p>
     pub fn scheduling_buffer_time(mut self, input: i32) -> Self {
@@ -138,6 +150,11 @@ impl PredictiveScalingConfigurationBuilder {
     pub fn set_scheduling_buffer_time(mut self, input: ::std::option::Option<i32>) -> Self {
         self.scheduling_buffer_time = input;
         self
+    }
+    /// <p>The amount of time, in seconds, by which the instance launch time can be advanced. For example, the forecast says to add capacity at 10:00 AM, and you choose to pre-launch instances by 5 minutes. In that case, the instances will be launched at 9:55 AM. The intention is to give resources time to be provisioned. It can take a few minutes to launch an EC2 instance. The actual amount of time required depends on several factors, such as the size of the instance and whether there are startup scripts to complete. </p>
+    /// <p>The value must be less than the forecast interval duration of 3600 seconds (60 minutes). Defaults to 300 seconds if not specified. </p>
+    pub fn get_scheduling_buffer_time(&self) -> &::std::option::Option<i32> {
+        &self.scheduling_buffer_time
     }
     /// <p>Defines the behavior that should be applied if the forecast capacity approaches or exceeds the maximum capacity of the Auto Scaling group. Defaults to <code>HonorMaxCapacity</code> if not specified.</p>
     /// <p>The following are possible values:</p>
@@ -165,6 +182,17 @@ impl PredictiveScalingConfigurationBuilder {
         self.max_capacity_breach_behavior = input;
         self
     }
+    /// <p>Defines the behavior that should be applied if the forecast capacity approaches or exceeds the maximum capacity of the Auto Scaling group. Defaults to <code>HonorMaxCapacity</code> if not specified.</p>
+    /// <p>The following are possible values:</p>
+    /// <ul>
+    /// <li> <p> <code>HonorMaxCapacity</code> - Amazon EC2 Auto Scaling cannot scale out capacity higher than the maximum capacity. The maximum capacity is enforced as a hard limit. </p> </li>
+    /// <li> <p> <code>IncreaseMaxCapacity</code> - Amazon EC2 Auto Scaling can scale out capacity higher than the maximum capacity when the forecast capacity is close to or exceeds the maximum capacity. The upper limit is determined by the forecasted capacity and the value for <code>MaxCapacityBuffer</code>.</p> </li>
+    /// </ul>
+    pub fn get_max_capacity_breach_behavior(
+        &self,
+    ) -> &::std::option::Option<crate::types::PredictiveScalingMaxCapacityBreachBehavior> {
+        &self.max_capacity_breach_behavior
+    }
     /// <p>The size of the capacity buffer to use when the forecast capacity is close to or exceeds the maximum capacity. The value is specified as a percentage relative to the forecast capacity. For example, if the buffer is 10, this means a 10 percent buffer, such that if the forecast capacity is 50, and the maximum capacity is 40, then the effective maximum capacity is 55.</p>
     /// <p>If set to 0, Amazon EC2 Auto Scaling may scale capacity higher than the maximum capacity to equal but not exceed forecast capacity. </p>
     /// <p>Required if the <code>MaxCapacityBreachBehavior</code> property is set to <code>IncreaseMaxCapacity</code>, and cannot be used otherwise.</p>
@@ -178,6 +206,12 @@ impl PredictiveScalingConfigurationBuilder {
     pub fn set_max_capacity_buffer(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_capacity_buffer = input;
         self
+    }
+    /// <p>The size of the capacity buffer to use when the forecast capacity is close to or exceeds the maximum capacity. The value is specified as a percentage relative to the forecast capacity. For example, if the buffer is 10, this means a 10 percent buffer, such that if the forecast capacity is 50, and the maximum capacity is 40, then the effective maximum capacity is 55.</p>
+    /// <p>If set to 0, Amazon EC2 Auto Scaling may scale capacity higher than the maximum capacity to equal but not exceed forecast capacity. </p>
+    /// <p>Required if the <code>MaxCapacityBreachBehavior</code> property is set to <code>IncreaseMaxCapacity</code>, and cannot be used otherwise.</p>
+    pub fn get_max_capacity_buffer(&self) -> &::std::option::Option<i32> {
+        &self.max_capacity_buffer
     }
     /// Consumes the builder and constructs a [`PredictiveScalingConfiguration`](crate::types::PredictiveScalingConfiguration).
     pub fn build(self) -> crate::types::PredictiveScalingConfiguration {

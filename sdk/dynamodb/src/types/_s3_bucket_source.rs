@@ -62,6 +62,10 @@ impl S3BucketSourceBuilder {
         self.s3_bucket_owner = input;
         self
     }
+    /// <p> The account number of the S3 bucket that is being imported from. If the bucket is owned by the requester this is optional. </p>
+    pub fn get_s3_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket_owner
+    }
     /// <p> The S3 bucket that is being imported from. </p>
     pub fn s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl S3BucketSourceBuilder {
     pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket = input;
         self
+    }
+    /// <p> The S3 bucket that is being imported from. </p>
+    pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket
     }
     /// <p> The key prefix shared by all S3 Objects that are being imported. </p>
     pub fn s3_key_prefix(
@@ -87,6 +95,10 @@ impl S3BucketSourceBuilder {
     ) -> Self {
         self.s3_key_prefix = input;
         self
+    }
+    /// <p> The key prefix shared by all S3 Objects that are being imported. </p>
+    pub fn get_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_key_prefix
     }
     /// Consumes the builder and constructs a [`S3BucketSource`](crate::types::S3BucketSource).
     pub fn build(self) -> crate::types::S3BucketSource {

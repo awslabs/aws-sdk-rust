@@ -58,6 +58,12 @@ impl GetPublicAccessBlockOutputBuilder {
         self.public_access_block_configuration = input;
         self
     }
+    /// <p>The <code>PublicAccessBlock</code> configuration currently in effect for this Amazon Web Services account.</p>
+    pub fn get_public_access_block_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::PublicAccessBlockConfiguration> {
+        &self.public_access_block_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

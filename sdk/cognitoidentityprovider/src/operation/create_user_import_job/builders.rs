@@ -36,6 +36,12 @@ impl CreateUserImportJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateUserImportJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_user_import_job::builders::CreateUserImportJobInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateUserImportJobFluentBuilder {
         self.inner = self.inner.set_job_name(input);
         self
     }
+    /// <p>The job name for the user import job.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_name()
+    }
     /// <p>The user pool ID for the user pool that the users are being imported into.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_pool_id(input.into());
@@ -135,6 +145,10 @@ impl CreateUserImportJobFluentBuilder {
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_pool_id(input);
         self
+    }
+    /// <p>The user pool ID for the user pool that the users are being imported into.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_pool_id()
     }
     /// <p>The role ARN for the Amazon CloudWatch Logs Logging role for the user import job.</p>
     pub fn cloud_watch_logs_role_arn(
@@ -151,5 +165,9 @@ impl CreateUserImportJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_cloud_watch_logs_role_arn(input);
         self
+    }
+    /// <p>The role ARN for the Amazon CloudWatch Logs Logging role for the user import job.</p>
+    pub fn get_cloud_watch_logs_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cloud_watch_logs_role_arn()
     }
 }

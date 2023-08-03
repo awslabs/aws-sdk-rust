@@ -37,6 +37,13 @@ impl DeleteAuditSuppressionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteAuditSuppression as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_audit_suppression::builders::DeleteAuditSuppressionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl DeleteAuditSuppressionFluentBuilder {
         self.inner = self.inner.set_check_name(input);
         self
     }
+    /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
+    pub fn get_check_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_check_name()
+    }
     /// <p>Information that identifies the noncompliant resource.</p>
     pub fn resource_identifier(mut self, input: crate::types::ResourceIdentifier) -> Self {
         self.inner = self.inner.resource_identifier(input);
@@ -139,5 +150,11 @@ impl DeleteAuditSuppressionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_identifier(input);
         self
+    }
+    /// <p>Information that identifies the noncompliant resource.</p>
+    pub fn get_resource_identifier(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceIdentifier> {
+        self.inner.get_resource_identifier()
     }
 }

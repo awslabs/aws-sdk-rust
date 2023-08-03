@@ -52,6 +52,12 @@ impl DescribeTagsInputBuilder {
         self.load_balancer_names = input;
         self
     }
+    /// <p>The names of the load balancers.</p>
+    pub fn get_load_balancer_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.load_balancer_names
+    }
     /// Consumes the builder and constructs a [`DescribeTagsInput`](crate::operation::describe_tags::DescribeTagsInput).
     pub fn build(
         self,

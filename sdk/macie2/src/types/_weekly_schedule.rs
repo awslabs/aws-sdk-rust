@@ -43,6 +43,10 @@ impl WeeklyScheduleBuilder {
         self.day_of_week = input;
         self
     }
+    /// <p>The day of the week when Amazon Macie runs the job.</p>
+    pub fn get_day_of_week(&self) -> &::std::option::Option<crate::types::DayOfWeek> {
+        &self.day_of_week
+    }
     /// Consumes the builder and constructs a [`WeeklySchedule`](crate::types::WeeklySchedule).
     pub fn build(self) -> crate::types::WeeklySchedule {
         crate::types::WeeklySchedule {

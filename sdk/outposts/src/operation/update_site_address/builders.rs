@@ -38,6 +38,12 @@ impl UpdateSiteAddressFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateSiteAddress as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_site_address::builders::UpdateSiteAddressInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +134,10 @@ impl UpdateSiteAddressFluentBuilder {
         self.inner = self.inner.set_site_id(input);
         self
     }
+    /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
+    pub fn get_site_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_site_id()
+    }
     /// <p> The type of the address. </p>
     pub fn address_type(mut self, input: crate::types::AddressType) -> Self {
         self.inner = self.inner.address_type(input);
@@ -141,6 +151,10 @@ impl UpdateSiteAddressFluentBuilder {
         self.inner = self.inner.set_address_type(input);
         self
     }
+    /// <p> The type of the address. </p>
+    pub fn get_address_type(&self) -> &::std::option::Option<crate::types::AddressType> {
+        self.inner.get_address_type()
+    }
     /// <p> The address for the site. </p>
     pub fn address(mut self, input: crate::types::Address) -> Self {
         self.inner = self.inner.address(input);
@@ -150,5 +164,9 @@ impl UpdateSiteAddressFluentBuilder {
     pub fn set_address(mut self, input: ::std::option::Option<crate::types::Address>) -> Self {
         self.inner = self.inner.set_address(input);
         self
+    }
+    /// <p> The address for the site. </p>
+    pub fn get_address(&self) -> &::std::option::Option<crate::types::Address> {
+        self.inner.get_address()
     }
 }

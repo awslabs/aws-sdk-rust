@@ -40,6 +40,10 @@ impl ClusterOperationStepInfoBuilder {
         self.step_status = input;
         self
     }
+    /// <p>The steps current status.</p>
+    pub fn get_step_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.step_status
+    }
     /// Consumes the builder and constructs a [`ClusterOperationStepInfo`](crate::types::ClusterOperationStepInfo).
     pub fn build(self) -> crate::types::ClusterOperationStepInfo {
         crate::types::ClusterOperationStepInfo {

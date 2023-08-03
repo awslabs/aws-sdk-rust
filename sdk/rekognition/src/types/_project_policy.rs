@@ -81,6 +81,10 @@ impl ProjectPolicyBuilder {
         self.project_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the project to which the project policy is attached.</p>
+    pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_arn
+    }
     /// <p>The name of the project policy.</p>
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl ProjectPolicyBuilder {
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_name = input;
         self
+    }
+    /// <p>The name of the project policy.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_name
     }
     /// <p>The revision ID of the project policy.</p>
     pub fn policy_revision_id(
@@ -107,6 +115,10 @@ impl ProjectPolicyBuilder {
         self.policy_revision_id = input;
         self
     }
+    /// <p>The revision ID of the project policy.</p>
+    pub fn get_policy_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_revision_id
+    }
     /// <p>The JSON document for the project policy.</p>
     pub fn policy_document(
         mut self,
@@ -123,6 +135,10 @@ impl ProjectPolicyBuilder {
         self.policy_document = input;
         self
     }
+    /// <p>The JSON document for the project policy.</p>
+    pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_document
+    }
     /// <p>The Unix datetime for the creation of the project policy.</p>
     pub fn creation_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_timestamp = ::std::option::Option::Some(input);
@@ -136,6 +152,10 @@ impl ProjectPolicyBuilder {
         self.creation_timestamp = input;
         self
     }
+    /// <p>The Unix datetime for the creation of the project policy.</p>
+    pub fn get_creation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_timestamp
+    }
     /// <p>The Unix datetime for when the project policy was last updated. </p>
     pub fn last_updated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_timestamp = ::std::option::Option::Some(input);
@@ -148,6 +168,12 @@ impl ProjectPolicyBuilder {
     ) -> Self {
         self.last_updated_timestamp = input;
         self
+    }
+    /// <p>The Unix datetime for when the project policy was last updated. </p>
+    pub fn get_last_updated_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_timestamp
     }
     /// Consumes the builder and constructs a [`ProjectPolicy`](crate::types::ProjectPolicy).
     pub fn build(self) -> crate::types::ProjectPolicy {

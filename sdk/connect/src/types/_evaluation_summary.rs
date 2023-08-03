@@ -110,6 +110,10 @@ impl EvaluationSummaryBuilder {
         self.evaluation_id = input;
         self
     }
+    /// <p>A unique identifier for the contact evaluation.</p>
+    pub fn get_evaluation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evaluation_id
+    }
     /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
     pub fn evaluation_arn(
         mut self,
@@ -125,6 +129,10 @@ impl EvaluationSummaryBuilder {
     ) -> Self {
         self.evaluation_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
+    pub fn get_evaluation_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evaluation_arn
     }
     /// <p>A title of the evaluation form.</p>
     pub fn evaluation_form_title(
@@ -142,6 +150,10 @@ impl EvaluationSummaryBuilder {
         self.evaluation_form_title = input;
         self
     }
+    /// <p>A title of the evaluation form.</p>
+    pub fn get_evaluation_form_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evaluation_form_title
+    }
     /// <p>The unique identifier for the evaluation form.</p>
     pub fn evaluation_form_id(
         mut self,
@@ -158,6 +170,10 @@ impl EvaluationSummaryBuilder {
         self.evaluation_form_id = input;
         self
     }
+    /// <p>The unique identifier for the evaluation form.</p>
+    pub fn get_evaluation_form_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evaluation_form_id
+    }
     /// <p>The status of the contact evaluation.</p>
     pub fn status(mut self, input: crate::types::EvaluationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -170,6 +186,10 @@ impl EvaluationSummaryBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the contact evaluation.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::EvaluationStatus> {
+        &self.status
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the evaluation.</p>
     pub fn evaluator_arn(
@@ -187,6 +207,10 @@ impl EvaluationSummaryBuilder {
         self.evaluator_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the user who last updated the evaluation.</p>
+    pub fn get_evaluator_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evaluator_arn
+    }
     /// <p>The overall score of the contact evaluation.</p>
     pub fn score(mut self, input: crate::types::EvaluationScore) -> Self {
         self.score = ::std::option::Option::Some(input);
@@ -199,6 +223,10 @@ impl EvaluationSummaryBuilder {
     ) -> Self {
         self.score = input;
         self
+    }
+    /// <p>The overall score of the contact evaluation.</p>
+    pub fn get_score(&self) -> &::std::option::Option<crate::types::EvaluationScore> {
+        &self.score
     }
     /// <p>The timestamp for when the evaluation was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -213,6 +241,10 @@ impl EvaluationSummaryBuilder {
         self.created_time = input;
         self
     }
+    /// <p>The timestamp for when the evaluation was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
     /// <p>The timestamp for when the evaluation was last updated.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -225,6 +257,10 @@ impl EvaluationSummaryBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>The timestamp for when the evaluation was last updated.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// Consumes the builder and constructs a [`EvaluationSummary`](crate::types::EvaluationSummary).
     pub fn build(self) -> crate::types::EvaluationSummary {

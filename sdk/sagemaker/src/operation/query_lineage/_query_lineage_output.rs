@@ -71,6 +71,10 @@ impl QueryLineageOutputBuilder {
         self.vertices = input;
         self
     }
+    /// <p>A list of vertices connected to the start entity(ies) in the lineage graph.</p>
+    pub fn get_vertices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Vertex>> {
+        &self.vertices
+    }
     /// Appends an item to `edges`.
     ///
     /// To override the contents of this collection use [`set_edges`](Self::set_edges).
@@ -90,6 +94,10 @@ impl QueryLineageOutputBuilder {
         self.edges = input;
         self
     }
+    /// <p>A list of edges that connect vertices in the response.</p>
+    pub fn get_edges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Edge>> {
+        &self.edges
+    }
     /// <p>Limits the number of vertices in the response. Use the <code>NextToken</code> in a response to to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -99,6 +107,10 @@ impl QueryLineageOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Limits the number of vertices in the response. Use the <code>NextToken</code> in a response to to retrieve the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

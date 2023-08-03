@@ -46,6 +46,10 @@ impl GetSizeConstraintSetInputBuilder {
         self.size_constraint_set_id = input;
         self
     }
+    /// <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to get. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
+    pub fn get_size_constraint_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.size_constraint_set_id
+    }
     /// Consumes the builder and constructs a [`GetSizeConstraintSetInput`](crate::operation::get_size_constraint_set::GetSizeConstraintSetInput).
     pub fn build(
         self,

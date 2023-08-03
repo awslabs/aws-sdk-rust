@@ -50,6 +50,10 @@ impl UpdateParameterGroupOutputBuilder {
         self.parameter_group = input;
         self
     }
+    /// <p>The parameter group that has been modified.</p>
+    pub fn get_parameter_group(&self) -> &::std::option::Option<crate::types::ParameterGroup> {
+        &self.parameter_group
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

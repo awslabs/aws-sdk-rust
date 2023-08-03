@@ -46,6 +46,10 @@ impl DeleteTrustStoreInputBuilder {
         self.trust_store_arn = input;
         self
     }
+    /// <p>The ARN of the trust store.</p>
+    pub fn get_trust_store_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trust_store_arn
+    }
     /// Consumes the builder and constructs a [`DeleteTrustStoreInput`](crate::operation::delete_trust_store::DeleteTrustStoreInput).
     pub fn build(
         self,

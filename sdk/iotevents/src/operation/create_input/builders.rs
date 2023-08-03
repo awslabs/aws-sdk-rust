@@ -36,6 +36,10 @@ impl CreateInputFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateInput as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_input::builders::CreateInputInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl CreateInputFluentBuilder {
         self.inner = self.inner.set_input_name(input);
         self
     }
+    /// <p>The name you want to give to the input.</p>
+    pub fn get_input_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_input_name()
+    }
     /// <p>A brief description of the input.</p>
     pub fn input_description(
         mut self,
@@ -134,6 +142,10 @@ impl CreateInputFluentBuilder {
         self.inner = self.inner.set_input_description(input);
         self
     }
+    /// <p>A brief description of the input.</p>
+    pub fn get_input_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_input_description()
+    }
     /// <p>The definition of the input.</p>
     pub fn input_definition(mut self, input: crate::types::InputDefinition) -> Self {
         self.inner = self.inner.input_definition(input);
@@ -146,6 +158,10 @@ impl CreateInputFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_input_definition(input);
         self
+    }
+    /// <p>The definition of the input.</p>
+    pub fn get_input_definition(&self) -> &::std::option::Option<crate::types::InputDefinition> {
+        self.inner.get_input_definition()
     }
     /// Appends an item to `tags`.
     ///
@@ -163,5 +179,9 @@ impl CreateInputFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Metadata that can be used to manage the input.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

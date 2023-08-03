@@ -39,6 +39,10 @@ impl DisassociateFromAdministratorAccountInputBuilder {
         self.detector_id = input;
         self
     }
+    /// <p>The unique ID of the detector of the GuardDuty member account.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
+    }
     /// Consumes the builder and constructs a [`DisassociateFromAdministratorAccountInput`](crate::operation::disassociate_from_administrator_account::DisassociateFromAdministratorAccountInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_from_administrator_account::DisassociateFromAdministratorAccountInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

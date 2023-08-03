@@ -62,6 +62,10 @@ impl CreateTimelineEventOutputBuilder {
         self.incident_record_arn = input;
         self
     }
+    /// <p>The ARN of the incident record that you added the event to.</p>
+    pub fn get_incident_record_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.incident_record_arn
+    }
     /// <p>The ID of the event for easy reference later. </p>
     pub fn event_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_id = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl CreateTimelineEventOutputBuilder {
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_id = input;
         self
+    }
+    /// <p>The ID of the event for easy reference later. </p>
+    pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

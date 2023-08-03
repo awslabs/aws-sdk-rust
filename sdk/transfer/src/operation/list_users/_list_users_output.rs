@@ -62,6 +62,10 @@ impl ListUsersOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>When you can get additional results from the <code>ListUsers</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional users.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>A system-assigned unique identifier for a server that the users are assigned to.</p>
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_id = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl ListUsersOutputBuilder {
     pub fn set_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_id = input;
         self
+    }
+    /// <p>A system-assigned unique identifier for a server that the users are assigned to.</p>
+    pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_id
     }
     /// Appends an item to `users`.
     ///
@@ -90,6 +98,10 @@ impl ListUsersOutputBuilder {
     ) -> Self {
         self.users = input;
         self
+    }
+    /// <p>Returns the Transfer Family users and their properties for the <code>ServerId</code> value that you specify.</p>
+    pub fn get_users(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListedUser>> {
+        &self.users
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

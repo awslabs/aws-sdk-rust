@@ -120,6 +120,10 @@ impl AlertBuilder {
         self.action = input;
         self
     }
+    /// <p>Action that will be triggered when there is an alert.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::Action> {
+        &self.action
+    }
     /// <p>A description of the alert.</p>
     pub fn alert_description(
         mut self,
@@ -136,6 +140,10 @@ impl AlertBuilder {
         self.alert_description = input;
         self
     }
+    /// <p>A description of the alert.</p>
+    pub fn get_alert_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alert_description
+    }
     /// <p>The ARN of the alert.</p>
     pub fn alert_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alert_arn = ::std::option::Option::Some(input.into());
@@ -145,6 +153,10 @@ impl AlertBuilder {
     pub fn set_alert_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alert_arn = input;
         self
+    }
+    /// <p>The ARN of the alert.</p>
+    pub fn get_alert_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alert_arn
     }
     /// <p>The ARN of the detector to which the alert is attached.</p>
     pub fn anomaly_detector_arn(
@@ -162,6 +174,10 @@ impl AlertBuilder {
         self.anomaly_detector_arn = input;
         self
     }
+    /// <p>The ARN of the detector to which the alert is attached.</p>
+    pub fn get_anomaly_detector_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.anomaly_detector_arn
+    }
     /// <p>The name of the alert.</p>
     pub fn alert_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alert_name = ::std::option::Option::Some(input.into());
@@ -171,6 +187,10 @@ impl AlertBuilder {
     pub fn set_alert_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alert_name = input;
         self
+    }
+    /// <p>The name of the alert.</p>
+    pub fn get_alert_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alert_name
     }
     /// <p>The minimum severity for an anomaly to trigger the alert.</p>
     pub fn alert_sensitivity_threshold(mut self, input: i32) -> Self {
@@ -182,6 +202,10 @@ impl AlertBuilder {
         self.alert_sensitivity_threshold = input;
         self
     }
+    /// <p>The minimum severity for an anomaly to trigger the alert.</p>
+    pub fn get_alert_sensitivity_threshold(&self) -> &::std::option::Option<i32> {
+        &self.alert_sensitivity_threshold
+    }
     /// <p>The type of the alert.</p>
     pub fn alert_type(mut self, input: crate::types::AlertType) -> Self {
         self.alert_type = ::std::option::Option::Some(input);
@@ -191,6 +215,10 @@ impl AlertBuilder {
     pub fn set_alert_type(mut self, input: ::std::option::Option<crate::types::AlertType>) -> Self {
         self.alert_type = input;
         self
+    }
+    /// <p>The type of the alert.</p>
+    pub fn get_alert_type(&self) -> &::std::option::Option<crate::types::AlertType> {
+        &self.alert_type
     }
     /// <p>The status of the alert.</p>
     pub fn alert_status(mut self, input: crate::types::AlertStatus) -> Self {
@@ -205,6 +233,10 @@ impl AlertBuilder {
         self.alert_status = input;
         self
     }
+    /// <p>The status of the alert.</p>
+    pub fn get_alert_status(&self) -> &::std::option::Option<crate::types::AlertStatus> {
+        &self.alert_status
+    }
     /// <p>The time at which the alert was last modified.</p>
     pub fn last_modification_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modification_time = ::std::option::Option::Some(input);
@@ -217,6 +249,12 @@ impl AlertBuilder {
     ) -> Self {
         self.last_modification_time = input;
         self
+    }
+    /// <p>The time at which the alert was last modified.</p>
+    pub fn get_last_modification_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modification_time
     }
     /// <p>The time at which the alert was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -231,6 +269,10 @@ impl AlertBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The time at which the alert was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The configuration of the alert filters, containing MetricList and DimensionFilter.</p>
     pub fn alert_filters(mut self, input: crate::types::AlertFilters) -> Self {
         self.alert_filters = ::std::option::Option::Some(input);
@@ -243,6 +285,10 @@ impl AlertBuilder {
     ) -> Self {
         self.alert_filters = input;
         self
+    }
+    /// <p>The configuration of the alert filters, containing MetricList and DimensionFilter.</p>
+    pub fn get_alert_filters(&self) -> &::std::option::Option<crate::types::AlertFilters> {
+        &self.alert_filters
     }
     /// Consumes the builder and constructs a [`Alert`](crate::types::Alert).
     pub fn build(self) -> crate::types::Alert {

@@ -62,6 +62,10 @@ impl WebvttHlsSourceSettingsBuilder {
         self.rendition_group_id = input;
         self
     }
+    /// Optional. Specify alternative group ID
+    pub fn get_rendition_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rendition_group_id
+    }
     /// Optional. Specify ISO 639-2 or ISO 639-3 code in the language property
     pub fn rendition_language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.rendition_language_code = ::std::option::Option::Some(input);
@@ -74,6 +78,12 @@ impl WebvttHlsSourceSettingsBuilder {
     ) -> Self {
         self.rendition_language_code = input;
         self
+    }
+    /// Optional. Specify ISO 639-2 or ISO 639-3 code in the language property
+    pub fn get_rendition_language_code(
+        &self,
+    ) -> &::std::option::Option<crate::types::LanguageCode> {
+        &self.rendition_language_code
     }
     /// Optional. Specify media name
     pub fn rendition_name(
@@ -90,6 +100,10 @@ impl WebvttHlsSourceSettingsBuilder {
     ) -> Self {
         self.rendition_name = input;
         self
+    }
+    /// Optional. Specify media name
+    pub fn get_rendition_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rendition_name
     }
     /// Consumes the builder and constructs a [`WebvttHlsSourceSettings`](crate::types::WebvttHlsSourceSettings).
     pub fn build(self) -> crate::types::WebvttHlsSourceSettings {

@@ -113,6 +113,10 @@ impl StartAssetBundleExportJobInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services account to export assets from.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The ID of the job. This ID is unique while the job is running. After the job is completed, you can reuse this ID for another job.</p>
     pub fn asset_bundle_export_job_id(
         mut self,
@@ -128,6 +132,10 @@ impl StartAssetBundleExportJobInputBuilder {
     ) -> Self {
         self.asset_bundle_export_job_id = input;
         self
+    }
+    /// <p>The ID of the job. This ID is unique while the job is running. After the job is completed, you can reuse this ID for another job.</p>
+    pub fn get_asset_bundle_export_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_bundle_export_job_id
     }
     /// Appends an item to `resource_arns`.
     ///
@@ -171,6 +179,22 @@ impl StartAssetBundleExportJobInputBuilder {
         self.resource_arns = input;
         self
     }
+    /// <p>An array of resource ARNs to export. The following resources are supported.</p>
+    /// <ul>
+    /// <li> <p> <code>Analysis</code> </p> </li>
+    /// <li> <p> <code>Dashboard</code> </p> </li>
+    /// <li> <p> <code>DataSet</code> </p> </li>
+    /// <li> <p> <code>DataSource</code> </p> </li>
+    /// <li> <p> <code>RefreshSchedule</code> </p> </li>
+    /// <li> <p> <code>Theme</code> </p> </li>
+    /// <li> <p> <code>VPCConnection</code> </p> </li>
+    /// </ul>
+    /// <p>The API caller must have the necessary permissions in their IAM role to access each resource before the resources can be exported.</p>
+    pub fn get_resource_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resource_arns
+    }
     /// <p>A Boolean that determines whether all dependencies of each resource ARN are recursively exported with the job. For example, say you provided a Dashboard ARN to the <code>ResourceArns</code> parameter. If you set <code>IncludeAllDependencies</code> to <code>TRUE</code>, any theme, dataset, and data source resource that is a dependency of the dashboard is also exported.</p>
     pub fn include_all_dependencies(mut self, input: bool) -> Self {
         self.include_all_dependencies = ::std::option::Option::Some(input);
@@ -180,6 +204,10 @@ impl StartAssetBundleExportJobInputBuilder {
     pub fn set_include_all_dependencies(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_all_dependencies = input;
         self
+    }
+    /// <p>A Boolean that determines whether all dependencies of each resource ARN are recursively exported with the job. For example, say you provided a Dashboard ARN to the <code>ResourceArns</code> parameter. If you set <code>IncludeAllDependencies</code> to <code>TRUE</code>, any theme, dataset, and data source resource that is a dependency of the dashboard is also exported.</p>
+    pub fn get_include_all_dependencies(&self) -> &::std::option::Option<bool> {
+        &self.include_all_dependencies
     }
     /// <p>The export data format.</p>
     pub fn export_format(mut self, input: crate::types::AssetBundleExportFormat) -> Self {
@@ -193,6 +221,12 @@ impl StartAssetBundleExportJobInputBuilder {
     ) -> Self {
         self.export_format = input;
         self
+    }
+    /// <p>The export data format.</p>
+    pub fn get_export_format(
+        &self,
+    ) -> &::std::option::Option<crate::types::AssetBundleExportFormat> {
+        &self.export_format
     }
     /// <p>An optional collection of structures that generate CloudFormation parameters to override the existing resource property values when the resource is exported to a new CloudFormation template.</p>
     /// <p>Use this field if the <code>ExportFormat</code> field of a <code>StartAssetBundleExportJobRequest</code> API call is set to <code>CLOUDFORMATION_JSON</code>.</p>
@@ -213,6 +247,14 @@ impl StartAssetBundleExportJobInputBuilder {
     ) -> Self {
         self.cloud_formation_override_property_configuration = input;
         self
+    }
+    /// <p>An optional collection of structures that generate CloudFormation parameters to override the existing resource property values when the resource is exported to a new CloudFormation template.</p>
+    /// <p>Use this field if the <code>ExportFormat</code> field of a <code>StartAssetBundleExportJobRequest</code> API call is set to <code>CLOUDFORMATION_JSON</code>.</p>
+    pub fn get_cloud_formation_override_property_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AssetBundleCloudFormationOverridePropertyConfiguration>
+    {
+        &self.cloud_formation_override_property_configuration
     }
     /// Consumes the builder and constructs a [`StartAssetBundleExportJobInput`](crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJobInput).
     pub fn build(

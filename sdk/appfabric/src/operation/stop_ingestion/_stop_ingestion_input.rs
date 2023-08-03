@@ -53,6 +53,10 @@ impl StopIngestionInputBuilder {
         self.ingestion_identifier = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.</p>
+    pub fn get_ingestion_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ingestion_identifier
+    }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
     pub fn app_bundle_identifier(
         mut self,
@@ -68,6 +72,10 @@ impl StopIngestionInputBuilder {
     ) -> Self {
         self.app_bundle_identifier = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
+    pub fn get_app_bundle_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_bundle_identifier
     }
     /// Consumes the builder and constructs a [`StopIngestionInput`](crate::operation::stop_ingestion::StopIngestionInput).
     pub fn build(

@@ -61,6 +61,10 @@ impl GetConnectorDefinitionVersionInputBuilder {
         self.connector_definition_id = input;
         self
     }
+    /// The ID of the connector definition.
+    pub fn get_connector_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connector_definition_id
+    }
     /// The ID of the connector definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListConnectorDefinitionVersions'' requests. If the version is the last one that was associated with a connector definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
     pub fn connector_definition_version_id(
         mut self,
@@ -77,6 +81,12 @@ impl GetConnectorDefinitionVersionInputBuilder {
         self.connector_definition_version_id = input;
         self
     }
+    /// The ID of the connector definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListConnectorDefinitionVersions'' requests. If the version is the last one that was associated with a connector definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
+    pub fn get_connector_definition_version_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.connector_definition_version_id
+    }
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -86,6 +96,10 @@ impl GetConnectorDefinitionVersionInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`GetConnectorDefinitionVersionInput`](crate::operation::get_connector_definition_version::GetConnectorDefinitionVersionInput).
     pub fn build(

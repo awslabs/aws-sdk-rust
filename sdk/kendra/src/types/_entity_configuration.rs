@@ -48,6 +48,10 @@ impl EntityConfigurationBuilder {
         self.entity_id = input;
         self
     }
+    /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_id
+    }
     /// <p>Specifies whether you are configuring a <code>User</code> or a <code>Group</code>.</p>
     pub fn entity_type(mut self, input: crate::types::EntityType) -> Self {
         self.entity_type = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl EntityConfigurationBuilder {
     ) -> Self {
         self.entity_type = input;
         self
+    }
+    /// <p>Specifies whether you are configuring a <code>User</code> or a <code>Group</code>.</p>
+    pub fn get_entity_type(&self) -> &::std::option::Option<crate::types::EntityType> {
+        &self.entity_type
     }
     /// Consumes the builder and constructs a [`EntityConfiguration`](crate::types::EntityConfiguration).
     pub fn build(self) -> crate::types::EntityConfiguration {

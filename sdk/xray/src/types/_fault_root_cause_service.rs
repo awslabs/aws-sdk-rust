@@ -81,6 +81,10 @@ impl FaultRootCauseServiceBuilder {
         self.name = input;
         self
     }
+    /// <p>The service name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `names`.
     ///
     /// To override the contents of this collection use [`set_names`](Self::set_names).
@@ -100,6 +104,10 @@ impl FaultRootCauseServiceBuilder {
         self.names = input;
         self
     }
+    /// <p>A collection of associated service names.</p>
+    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.names
+    }
     /// <p>The type associated to the service.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -110,6 +118,10 @@ impl FaultRootCauseServiceBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type associated to the service.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// <p>The account ID associated to the service.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -119,6 +131,10 @@ impl FaultRootCauseServiceBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>The account ID associated to the service.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// Appends an item to `entity_path`.
     ///
@@ -139,6 +155,12 @@ impl FaultRootCauseServiceBuilder {
         self.entity_path = input;
         self
     }
+    /// <p>The path of root cause entities found on the service. </p>
+    pub fn get_entity_path(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FaultRootCauseEntity>> {
+        &self.entity_path
+    }
     /// <p>A Boolean value indicating if the service is inferred from the trace.</p>
     pub fn inferred(mut self, input: bool) -> Self {
         self.inferred = ::std::option::Option::Some(input);
@@ -148,6 +170,10 @@ impl FaultRootCauseServiceBuilder {
     pub fn set_inferred(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inferred = input;
         self
+    }
+    /// <p>A Boolean value indicating if the service is inferred from the trace.</p>
+    pub fn get_inferred(&self) -> &::std::option::Option<bool> {
+        &self.inferred
     }
     /// Consumes the builder and constructs a [`FaultRootCauseService`](crate::types::FaultRootCauseService).
     pub fn build(self) -> crate::types::FaultRootCauseService {

@@ -36,6 +36,12 @@ impl AttachToIndexFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AttachToIndex as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::attach_to_index::builders::AttachToIndexInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl AttachToIndexFluentBuilder {
         self.inner = self.inner.set_directory_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the directory where the object and index exist.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_arn()
+    }
     /// <p>A reference to the index that you are attaching the object to.</p>
     pub fn index_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.inner = self.inner.index_reference(input);
@@ -137,6 +147,10 @@ impl AttachToIndexFluentBuilder {
         self.inner = self.inner.set_index_reference(input);
         self
     }
+    /// <p>A reference to the index that you are attaching the object to.</p>
+    pub fn get_index_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
+        self.inner.get_index_reference()
+    }
     /// <p>A reference to the object that you are attaching to the index.</p>
     pub fn target_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.inner = self.inner.target_reference(input);
@@ -149,5 +163,9 @@ impl AttachToIndexFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_target_reference(input);
         self
+    }
+    /// <p>A reference to the object that you are attaching to the index.</p>
+    pub fn get_target_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
+        self.inner.get_target_reference()
     }
 }

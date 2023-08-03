@@ -48,6 +48,10 @@ impl OperatingSystemConfigurationManagerBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the configuration manager, which is Chef.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The versions of the configuration manager that are supported by an operating system.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl OperatingSystemConfigurationManagerBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The versions of the configuration manager that are supported by an operating system.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`OperatingSystemConfigurationManager`](crate::types::OperatingSystemConfigurationManager).
     pub fn build(self) -> crate::types::OperatingSystemConfigurationManager {

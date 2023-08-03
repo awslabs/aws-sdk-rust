@@ -45,6 +45,12 @@ impl MetricMonitorConfigBuilder {
         self.metric_definition = input;
         self
     }
+    /// <p>A structure that defines the metric.</p>
+    pub fn get_metric_definition(
+        &self,
+    ) -> &::std::option::Option<crate::types::MetricDefinitionConfig> {
+        &self.metric_definition
+    }
     /// Consumes the builder and constructs a [`MetricMonitorConfig`](crate::types::MetricMonitorConfig).
     pub fn build(self) -> crate::types::MetricMonitorConfig {
         crate::types::MetricMonitorConfig {

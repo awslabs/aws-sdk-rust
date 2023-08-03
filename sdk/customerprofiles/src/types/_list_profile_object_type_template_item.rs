@@ -56,6 +56,10 @@ impl ListProfileObjectTypeTemplateItemBuilder {
         self.template_id = input;
         self
     }
+    /// <p>A unique identifier for the object template.</p>
+    pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_id
+    }
     /// <p>The name of the source of the object template.</p>
     pub fn source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_name = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl ListProfileObjectTypeTemplateItemBuilder {
     pub fn set_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_name = input;
         self
+    }
+    /// <p>The name of the source of the object template.</p>
+    pub fn get_source_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_name
     }
     /// <p>The source of the object template.</p>
     pub fn source_object(
@@ -81,6 +89,10 @@ impl ListProfileObjectTypeTemplateItemBuilder {
     ) -> Self {
         self.source_object = input;
         self
+    }
+    /// <p>The source of the object template.</p>
+    pub fn get_source_object(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_object
     }
     /// Consumes the builder and constructs a [`ListProfileObjectTypeTemplateItem`](crate::types::ListProfileObjectTypeTemplateItem).
     pub fn build(self) -> crate::types::ListProfileObjectTypeTemplateItem {

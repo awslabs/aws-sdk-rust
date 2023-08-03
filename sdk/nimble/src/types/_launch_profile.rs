@@ -208,6 +208,10 @@ impl LaunchProfileBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The ISO timestamp in seconds for when the resource was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -221,6 +225,10 @@ impl LaunchProfileBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The ISO timestamp in seconds for when the resource was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The user ID of the user that created the launch profile.</p>
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by = ::std::option::Option::Some(input.into());
@@ -231,6 +239,10 @@ impl LaunchProfileBuilder {
         self.created_by = input;
         self
     }
+    /// <p>The user ID of the user that created the launch profile.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_by
+    }
     /// <p>A human-readable description of the launch profile.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -240,6 +252,10 @@ impl LaunchProfileBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A human-readable description of the launch profile.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `ec2_subnet_ids`.
     ///
@@ -263,6 +279,12 @@ impl LaunchProfileBuilder {
         self.ec2_subnet_ids = input;
         self
     }
+    /// <p>Unique identifiers for a collection of EC2 subnets.</p>
+    pub fn get_ec2_subnet_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ec2_subnet_ids
+    }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     pub fn launch_profile_id(
         mut self,
@@ -278,6 +300,10 @@ impl LaunchProfileBuilder {
     ) -> Self {
         self.launch_profile_id = input;
         self
+    }
+    /// <p>The ID of the launch profile used to control access from the streaming session.</p>
+    pub fn get_launch_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch_profile_id
     }
     /// Appends an item to `launch_profile_protocol_versions`.
     ///
@@ -301,6 +327,12 @@ impl LaunchProfileBuilder {
         self.launch_profile_protocol_versions = input;
         self
     }
+    /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
+    pub fn get_launch_profile_protocol_versions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.launch_profile_protocol_versions
+    }
     /// <p>A friendly name for the launch profile.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -310,6 +342,10 @@ impl LaunchProfileBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A friendly name for the launch profile.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The current state.</p>
     pub fn state(mut self, input: crate::types::LaunchProfileState) -> Self {
@@ -324,6 +360,10 @@ impl LaunchProfileBuilder {
         self.state = input;
         self
     }
+    /// <p>The current state.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::LaunchProfileState> {
+        &self.state
+    }
     /// <p>The status code.</p>
     pub fn status_code(mut self, input: crate::types::LaunchProfileStatusCode) -> Self {
         self.status_code = ::std::option::Option::Some(input);
@@ -336,6 +376,10 @@ impl LaunchProfileBuilder {
     ) -> Self {
         self.status_code = input;
         self
+    }
+    /// <p>The status code.</p>
+    pub fn get_status_code(&self) -> &::std::option::Option<crate::types::LaunchProfileStatusCode> {
+        &self.status_code
     }
     /// <p>The status message for the launch profile.</p>
     pub fn status_message(
@@ -353,6 +397,10 @@ impl LaunchProfileBuilder {
         self.status_message = input;
         self
     }
+    /// <p>The status message for the launch profile.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>A configuration for a streaming session.</p>
     pub fn stream_configuration(mut self, input: crate::types::StreamConfiguration) -> Self {
         self.stream_configuration = ::std::option::Option::Some(input);
@@ -365,6 +413,12 @@ impl LaunchProfileBuilder {
     ) -> Self {
         self.stream_configuration = input;
         self
+    }
+    /// <p>A configuration for a streaming session.</p>
+    pub fn get_stream_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::StreamConfiguration> {
+        &self.stream_configuration
     }
     /// Appends an item to `studio_component_ids`.
     ///
@@ -387,6 +441,12 @@ impl LaunchProfileBuilder {
     ) -> Self {
         self.studio_component_ids = input;
         self
+    }
+    /// <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
+    pub fn get_studio_component_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.studio_component_ids
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -413,6 +473,14 @@ impl LaunchProfileBuilder {
         self.tags = input;
         self
     }
+    /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
@@ -426,6 +494,10 @@ impl LaunchProfileBuilder {
         self.updated_at = input;
         self
     }
+    /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
+    }
     /// <p>The user ID of the user that most recently updated the resource.</p>
     pub fn updated_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.updated_by = ::std::option::Option::Some(input.into());
@@ -435,6 +507,10 @@ impl LaunchProfileBuilder {
     pub fn set_updated_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.updated_by = input;
         self
+    }
+    /// <p>The user ID of the user that most recently updated the resource.</p>
+    pub fn get_updated_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.updated_by
     }
     /// Appends an item to `validation_results`.
     ///
@@ -454,6 +530,12 @@ impl LaunchProfileBuilder {
     ) -> Self {
         self.validation_results = input;
         self
+    }
+    /// <p>The list of the latest validation results.</p>
+    pub fn get_validation_results(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationResult>> {
+        &self.validation_results
     }
     /// Consumes the builder and constructs a [`LaunchProfile`](crate::types::LaunchProfile).
     pub fn build(self) -> crate::types::LaunchProfile {

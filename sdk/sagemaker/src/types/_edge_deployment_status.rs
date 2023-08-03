@@ -86,6 +86,10 @@ impl EdgeDeploymentStatusBuilder {
         self.stage_status = input;
         self
     }
+    /// <p>The general status of the current stage.</p>
+    pub fn get_stage_status(&self) -> &::std::option::Option<crate::types::StageStatus> {
+        &self.stage_status
+    }
     /// <p>The number of edge devices with the successful deployment in the current stage.</p>
     pub fn edge_deployment_success_in_stage(mut self, input: i32) -> Self {
         self.edge_deployment_success_in_stage = ::std::option::Option::Some(input);
@@ -98,6 +102,10 @@ impl EdgeDeploymentStatusBuilder {
     ) -> Self {
         self.edge_deployment_success_in_stage = input;
         self
+    }
+    /// <p>The number of edge devices with the successful deployment in the current stage.</p>
+    pub fn get_edge_deployment_success_in_stage(&self) -> &::std::option::Option<i32> {
+        &self.edge_deployment_success_in_stage
     }
     /// <p>The number of edge devices yet to pick up the deployment in current stage, or in progress.</p>
     pub fn edge_deployment_pending_in_stage(mut self, input: i32) -> Self {
@@ -112,6 +120,10 @@ impl EdgeDeploymentStatusBuilder {
         self.edge_deployment_pending_in_stage = input;
         self
     }
+    /// <p>The number of edge devices yet to pick up the deployment in current stage, or in progress.</p>
+    pub fn get_edge_deployment_pending_in_stage(&self) -> &::std::option::Option<i32> {
+        &self.edge_deployment_pending_in_stage
+    }
     /// <p>The number of edge devices that failed the deployment in current stage.</p>
     pub fn edge_deployment_failed_in_stage(mut self, input: i32) -> Self {
         self.edge_deployment_failed_in_stage = ::std::option::Option::Some(input);
@@ -124,6 +136,10 @@ impl EdgeDeploymentStatusBuilder {
     ) -> Self {
         self.edge_deployment_failed_in_stage = input;
         self
+    }
+    /// <p>The number of edge devices that failed the deployment in current stage.</p>
+    pub fn get_edge_deployment_failed_in_stage(&self) -> &::std::option::Option<i32> {
+        &self.edge_deployment_failed_in_stage
     }
     /// <p>A detailed message about deployment status in current stage.</p>
     pub fn edge_deployment_status_message(
@@ -141,6 +157,12 @@ impl EdgeDeploymentStatusBuilder {
         self.edge_deployment_status_message = input;
         self
     }
+    /// <p>A detailed message about deployment status in current stage.</p>
+    pub fn get_edge_deployment_status_message(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.edge_deployment_status_message
+    }
     /// <p>The time when the deployment API started.</p>
     pub fn edge_deployment_stage_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.edge_deployment_stage_start_time = ::std::option::Option::Some(input);
@@ -153,6 +175,12 @@ impl EdgeDeploymentStatusBuilder {
     ) -> Self {
         self.edge_deployment_stage_start_time = input;
         self
+    }
+    /// <p>The time when the deployment API started.</p>
+    pub fn get_edge_deployment_stage_start_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.edge_deployment_stage_start_time
     }
     /// Consumes the builder and constructs a [`EdgeDeploymentStatus`](crate::types::EdgeDeploymentStatus).
     pub fn build(self) -> crate::types::EdgeDeploymentStatus {

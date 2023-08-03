@@ -67,6 +67,10 @@ impl CmafPackageBuilder {
         self.encryption = input;
         self
     }
+    /// A CMAF encryption configuration.
+    pub fn get_encryption(&self) -> &::std::option::Option<crate::types::CmafEncryption> {
+        &self.encryption
+    }
     /// Appends an item to `hls_manifests`.
     ///
     /// To override the contents of this collection use [`set_hls_manifests`](Self::set_hls_manifests).
@@ -86,6 +90,12 @@ impl CmafPackageBuilder {
         self.hls_manifests = input;
         self
     }
+    /// A list of HLS manifest configurations.
+    pub fn get_hls_manifests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HlsManifest>> {
+        &self.hls_manifests
+    }
     /// When includeEncoderConfigurationInSegments is set to true, MediaPackage places your encoder's Sequence Parameter Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video segment instead of in the init fragment. This lets you use different SPS/PPS/VPS settings for your assets during content playback.
     pub fn include_encoder_configuration_in_segments(mut self, input: bool) -> Self {
         self.include_encoder_configuration_in_segments = ::std::option::Option::Some(input);
@@ -99,6 +109,10 @@ impl CmafPackageBuilder {
         self.include_encoder_configuration_in_segments = input;
         self
     }
+    /// When includeEncoderConfigurationInSegments is set to true, MediaPackage places your encoder's Sequence Parameter Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video segment instead of in the init fragment. This lets you use different SPS/PPS/VPS settings for your assets during content playback.
+    pub fn get_include_encoder_configuration_in_segments(&self) -> &::std::option::Option<bool> {
+        &self.include_encoder_configuration_in_segments
+    }
     /// Duration (in seconds) of each fragment. Actual fragments will be rounded to the nearest multiple of the source fragment duration.
     pub fn segment_duration_seconds(mut self, input: i32) -> Self {
         self.segment_duration_seconds = ::std::option::Option::Some(input);
@@ -108,6 +122,10 @@ impl CmafPackageBuilder {
     pub fn set_segment_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.segment_duration_seconds = input;
         self
+    }
+    /// Duration (in seconds) of each fragment. Actual fragments will be rounded to the nearest multiple of the source fragment duration.
+    pub fn get_segment_duration_seconds(&self) -> &::std::option::Option<i32> {
+        &self.segment_duration_seconds
     }
     /// Consumes the builder and constructs a [`CmafPackage`](crate::types::CmafPackage).
     pub fn build(self) -> crate::types::CmafPackage {

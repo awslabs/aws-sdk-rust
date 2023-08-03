@@ -43,6 +43,12 @@ impl TriggerPropertiesBuilder {
         self.scheduled = input;
         self
     }
+    /// <p> Specifies the configuration details of a schedule-triggered flow as defined by the user. </p>
+    pub fn get_scheduled(
+        &self,
+    ) -> &::std::option::Option<crate::types::ScheduledTriggerProperties> {
+        &self.scheduled
+    }
     /// Consumes the builder and constructs a [`TriggerProperties`](crate::types::TriggerProperties).
     pub fn build(self) -> crate::types::TriggerProperties {
         crate::types::TriggerProperties {

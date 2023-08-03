@@ -58,6 +58,10 @@ impl ServerGroupValidationConfigurationBuilder {
         self.server_group_id = input;
         self
     }
+    /// <p>The ID of the server group.</p>
+    pub fn get_server_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_group_id
+    }
     /// Appends an item to `server_validation_configurations`.
     ///
     /// To override the contents of this collection use [`set_server_validation_configurations`](Self::set_server_validation_configurations).
@@ -79,6 +83,12 @@ impl ServerGroupValidationConfigurationBuilder {
     ) -> Self {
         self.server_validation_configurations = input;
         self
+    }
+    /// <p>The validation configuration.</p>
+    pub fn get_server_validation_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerValidationConfiguration>> {
+        &self.server_validation_configurations
     }
     /// Consumes the builder and constructs a [`ServerGroupValidationConfiguration`](crate::types::ServerGroupValidationConfiguration).
     pub fn build(self) -> crate::types::ServerGroupValidationConfiguration {

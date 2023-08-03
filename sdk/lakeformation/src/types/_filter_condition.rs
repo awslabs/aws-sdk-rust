@@ -59,6 +59,10 @@ impl FilterConditionBuilder {
         self.field = input;
         self
     }
+    /// <p>The field to filter in the filter condition.</p>
+    pub fn get_field(&self) -> &::std::option::Option<crate::types::FieldNameString> {
+        &self.field
+    }
     /// <p>The comparison operator used in the filter condition.</p>
     pub fn comparison_operator(mut self, input: crate::types::ComparisonOperator) -> Self {
         self.comparison_operator = ::std::option::Option::Some(input);
@@ -71,6 +75,12 @@ impl FilterConditionBuilder {
     ) -> Self {
         self.comparison_operator = input;
         self
+    }
+    /// <p>The comparison operator used in the filter condition.</p>
+    pub fn get_comparison_operator(
+        &self,
+    ) -> &::std::option::Option<crate::types::ComparisonOperator> {
+        &self.comparison_operator
     }
     /// Appends an item to `string_value_list`.
     ///
@@ -93,6 +103,12 @@ impl FilterConditionBuilder {
     ) -> Self {
         self.string_value_list = input;
         self
+    }
+    /// <p>A string with values used in evaluating the filter condition.</p>
+    pub fn get_string_value_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.string_value_list
     }
     /// Consumes the builder and constructs a [`FilterCondition`](crate::types::FilterCondition).
     pub fn build(self) -> crate::types::FilterCondition {

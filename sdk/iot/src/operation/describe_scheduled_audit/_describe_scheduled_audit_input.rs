@@ -47,6 +47,10 @@ impl DescribeScheduledAuditInputBuilder {
         self.scheduled_audit_name = input;
         self
     }
+    /// <p>The name of the scheduled audit whose information you want to get.</p>
+    pub fn get_scheduled_audit_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scheduled_audit_name
+    }
     /// Consumes the builder and constructs a [`DescribeScheduledAuditInput`](crate::operation::describe_scheduled_audit::DescribeScheduledAuditInput).
     pub fn build(
         self,

@@ -43,6 +43,10 @@ impl OutputSettingsBuilder {
         self.hls_settings = input;
         self
     }
+    /// Settings for HLS output groups
+    pub fn get_hls_settings(&self) -> &::std::option::Option<crate::types::HlsSettings> {
+        &self.hls_settings
+    }
     /// Consumes the builder and constructs a [`OutputSettings`](crate::types::OutputSettings).
     pub fn build(self) -> crate::types::OutputSettings {
         crate::types::OutputSettings {

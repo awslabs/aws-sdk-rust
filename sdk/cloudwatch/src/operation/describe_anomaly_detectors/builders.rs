@@ -36,6 +36,13 @@ impl DescribeAnomalyDetectorsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeAnomalyDetectors as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_anomaly_detectors::builders::DescribeAnomalyDetectorsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +142,10 @@ impl DescribeAnomalyDetectorsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>Use the token returned by the previous operation to request the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return in one operation. The maximum value that you can specify is 100.</p>
     /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -147,6 +158,11 @@ impl DescribeAnomalyDetectorsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return in one operation. The maximum value that you can specify is 100.</p>
+    /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>Limits the results to only the anomaly detection models that are associated with the specified namespace.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace(input.into());
@@ -157,6 +173,10 @@ impl DescribeAnomalyDetectorsFluentBuilder {
         self.inner = self.inner.set_namespace(input);
         self
     }
+    /// <p>Limits the results to only the anomaly detection models that are associated with the specified namespace.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_namespace()
+    }
     /// <p>Limits the results to only the anomaly detection models that are associated with the specified metric name. If there are multiple metrics with this name in different namespaces that have anomaly detection models, they're all returned.</p>
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.metric_name(input.into());
@@ -166,6 +186,10 @@ impl DescribeAnomalyDetectorsFluentBuilder {
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_metric_name(input);
         self
+    }
+    /// <p>Limits the results to only the anomaly detection models that are associated with the specified metric name. If there are multiple metrics with this name in different namespaces that have anomaly detection models, they're all returned.</p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_metric_name()
     }
     /// Appends an item to `Dimensions`.
     ///
@@ -184,6 +208,12 @@ impl DescribeAnomalyDetectorsFluentBuilder {
         self.inner = self.inner.set_dimensions(input);
         self
     }
+    /// <p>Limits the results to only the anomaly detection models that are associated with the specified metric dimensions. If there are multiple metrics that have these dimensions and have anomaly detection models associated, they're all returned.</p>
+    pub fn get_dimensions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Dimension>> {
+        self.inner.get_dimensions()
+    }
     /// Appends an item to `AnomalyDetectorTypes`.
     ///
     /// To override the contents of this collection use [`set_anomaly_detector_types`](Self::set_anomaly_detector_types).
@@ -200,5 +230,11 @@ impl DescribeAnomalyDetectorsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_anomaly_detector_types(input);
         self
+    }
+    /// <p>The anomaly detector types to request when using <code>DescribeAnomalyDetectorsInput</code>. If empty, defaults to <code>SINGLE_METRIC</code>.</p>
+    pub fn get_anomaly_detector_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnomalyDetectorType>> {
+        self.inner.get_anomaly_detector_types()
     }
 }

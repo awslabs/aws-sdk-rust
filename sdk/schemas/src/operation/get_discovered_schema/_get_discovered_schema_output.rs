@@ -48,6 +48,10 @@ impl GetDiscoveredSchemaOutputBuilder {
         self.content = input;
         self
     }
+    /// <p>The source of the schema definition.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

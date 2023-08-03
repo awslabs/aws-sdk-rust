@@ -55,6 +55,10 @@ impl AcceptMatchInputBuilder {
         self.ticket_id = input;
         self
     }
+    /// <p>A unique identifier for a matchmaking ticket. The ticket must be in status <code>REQUIRES_ACCEPTANCE</code>; otherwise this request will fail.</p>
+    pub fn get_ticket_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ticket_id
+    }
     /// Appends an item to `player_ids`.
     ///
     /// To override the contents of this collection use [`set_player_ids`](Self::set_player_ids).
@@ -74,6 +78,10 @@ impl AcceptMatchInputBuilder {
         self.player_ids = input;
         self
     }
+    /// <p>A unique identifier for a player delivering the response. This parameter can include one or multiple player IDs.</p>
+    pub fn get_player_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.player_ids
+    }
     /// <p>Player response to the proposed match.</p>
     pub fn acceptance_type(mut self, input: crate::types::AcceptanceType) -> Self {
         self.acceptance_type = ::std::option::Option::Some(input);
@@ -86,6 +94,10 @@ impl AcceptMatchInputBuilder {
     ) -> Self {
         self.acceptance_type = input;
         self
+    }
+    /// <p>Player response to the proposed match.</p>
+    pub fn get_acceptance_type(&self) -> &::std::option::Option<crate::types::AcceptanceType> {
+        &self.acceptance_type
     }
     /// Consumes the builder and constructs a [`AcceptMatchInput`](crate::operation::accept_match::AcceptMatchInput).
     pub fn build(

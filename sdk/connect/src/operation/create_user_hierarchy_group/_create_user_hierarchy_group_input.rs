@@ -73,6 +73,10 @@ impl CreateUserHierarchyGroupInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the user hierarchy group. Must not be more than 100 characters.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The identifier for the parent hierarchy group. The user hierarchy is created at level one if the parent group ID is null.</p>
     pub fn parent_group_id(
         mut self,
@@ -89,6 +93,10 @@ impl CreateUserHierarchyGroupInputBuilder {
         self.parent_group_id = input;
         self
     }
+    /// <p>The identifier for the parent hierarchy group. The user hierarchy is created at level one if the parent group ID is null.</p>
+    pub fn get_parent_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent_group_id
+    }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -98,6 +106,10 @@ impl CreateUserHierarchyGroupInputBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
+    }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -123,6 +135,14 @@ impl CreateUserHierarchyGroupInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateUserHierarchyGroupInput`](crate::operation::create_user_hierarchy_group::CreateUserHierarchyGroupInput).
     pub fn build(

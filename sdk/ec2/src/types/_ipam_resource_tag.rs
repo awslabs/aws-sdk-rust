@@ -48,6 +48,10 @@ impl IpamResourceTagBuilder {
         self.key = input;
         self
     }
+    /// <p>The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>The value of the tag.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl IpamResourceTagBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value of the tag.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`IpamResourceTag`](crate::types::IpamResourceTag).
     pub fn build(self) -> crate::types::IpamResourceTag {

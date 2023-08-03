@@ -74,6 +74,10 @@ impl StartCalculationExecutionOutputBuilder {
         self.calculation_execution_id = input;
         self
     }
+    /// <p>The calculation execution UUID.</p>
+    pub fn get_calculation_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.calculation_execution_id
+    }
     /// <p> <code>CREATING</code> - The calculation is in the process of being created.</p>
     /// <p> <code>CREATED</code> - The calculation has been created and is ready to run.</p>
     /// <p> <code>QUEUED</code> - The calculation has been queued for processing.</p>
@@ -100,6 +104,17 @@ impl StartCalculationExecutionOutputBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p> <code>CREATING</code> - The calculation is in the process of being created.</p>
+    /// <p> <code>CREATED</code> - The calculation has been created and is ready to run.</p>
+    /// <p> <code>QUEUED</code> - The calculation has been queued for processing.</p>
+    /// <p> <code>RUNNING</code> - The calculation is running.</p>
+    /// <p> <code>CANCELING</code> - A request to cancel the calculation has been received and the system is working to stop it.</p>
+    /// <p> <code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p>
+    /// <p> <code>COMPLETED</code> - The calculation has completed without error.</p>
+    /// <p> <code>FAILED</code> - The calculation failed and is no longer running.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::CalculationExecutionState> {
+        &self.state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

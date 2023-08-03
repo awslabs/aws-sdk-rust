@@ -36,6 +36,10 @@ impl RejectClientVpcConnectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RejectClientVpcConnection as a reference.
+    pub fn as_input(&self) -> &crate::operation::reject_client_vpc_connection::builders::RejectClientVpcConnectionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl RejectClientVpcConnectionFluentBuilder {
         self.inner = self.inner.set_cluster_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_arn()
+    }
     /// <p>The VPC connection ARN.</p>
     pub fn vpc_connection_arn(
         mut self,
@@ -141,5 +149,9 @@ impl RejectClientVpcConnectionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_vpc_connection_arn(input);
         self
+    }
+    /// <p>The VPC connection ARN.</p>
+    pub fn get_vpc_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpc_connection_arn()
     }
 }

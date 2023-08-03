@@ -52,6 +52,12 @@ impl UpdateNetworkConfigurationInputBuilder {
         self.security_group_ids = input;
         self
     }
+    /// <p>A list of security group IDs. A security group must be attached to the same VPC as the subnets. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security in your VPC on Amazon MWAA</a>.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
+    }
     /// Consumes the builder and constructs a [`UpdateNetworkConfigurationInput`](crate::types::UpdateNetworkConfigurationInput).
     pub fn build(self) -> crate::types::UpdateNetworkConfigurationInput {
         crate::types::UpdateNetworkConfigurationInput {

@@ -61,6 +61,12 @@ impl UpdateGlobalSettingsInputBuilder {
         self.organization_sharing_status = input;
         self
     }
+    /// <p>The status of organization sharing settings.</p>
+    pub fn get_organization_sharing_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::OrganizationSharingStatus> {
+        &self.organization_sharing_status
+    }
     /// <p>The status of discovery support settings.</p>
     pub fn discovery_integration_status(
         mut self,
@@ -76,6 +82,12 @@ impl UpdateGlobalSettingsInputBuilder {
     ) -> Self {
         self.discovery_integration_status = input;
         self
+    }
+    /// <p>The status of discovery support settings.</p>
+    pub fn get_discovery_integration_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::DiscoveryIntegrationStatus> {
+        &self.discovery_integration_status
     }
     /// Consumes the builder and constructs a [`UpdateGlobalSettingsInput`](crate::operation::update_global_settings::UpdateGlobalSettingsInput).
     pub fn build(

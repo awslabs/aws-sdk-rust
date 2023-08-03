@@ -36,6 +36,10 @@ impl CreateEdgeDeploymentPlanFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateEdgeDeploymentPlan as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_edge_deployment_plan::builders::CreateEdgeDeploymentPlanInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl CreateEdgeDeploymentPlanFluentBuilder {
         self.inner = self.inner.set_edge_deployment_plan_name(input);
         self
     }
+    /// <p>The name of the edge deployment plan.</p>
+    pub fn get_edge_deployment_plan_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_edge_deployment_plan_name()
+    }
     /// Appends an item to `ModelConfigs`.
     ///
     /// To override the contents of this collection use [`set_model_configs`](Self::set_model_configs).
@@ -149,6 +157,12 @@ impl CreateEdgeDeploymentPlanFluentBuilder {
         self.inner = self.inner.set_model_configs(input);
         self
     }
+    /// <p>List of models associated with the edge deployment plan.</p>
+    pub fn get_model_configs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EdgeDeploymentModelConfig>> {
+        self.inner.get_model_configs()
+    }
     /// <p>The device fleet used for this edge deployment plan.</p>
     pub fn device_fleet_name(
         mut self,
@@ -164,6 +178,10 @@ impl CreateEdgeDeploymentPlanFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_device_fleet_name(input);
         self
+    }
+    /// <p>The device fleet used for this edge deployment plan.</p>
+    pub fn get_device_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_fleet_name()
     }
     /// Appends an item to `Stages`.
     ///
@@ -182,6 +200,12 @@ impl CreateEdgeDeploymentPlanFluentBuilder {
         self.inner = self.inner.set_stages(input);
         self
     }
+    /// <p>List of stages of the edge deployment plan. The number of stages is limited to 10 per deployment.</p>
+    pub fn get_stages(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentStage>> {
+        self.inner.get_stages()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -198,5 +222,9 @@ impl CreateEdgeDeploymentPlanFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>List of tags with which to tag the edge deployment plan.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

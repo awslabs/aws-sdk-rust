@@ -53,6 +53,10 @@ impl AcceptAdministratorInvitationInputBuilder {
         self.administrator_id = input;
         self
     }
+    /// <p>The account ID of the Security Hub administrator account that sent the invitation.</p>
+    pub fn get_administrator_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.administrator_id
+    }
     /// <p>The identifier of the invitation sent from the Security Hub administrator account.</p>
     pub fn invitation_id(
         mut self,
@@ -68,6 +72,10 @@ impl AcceptAdministratorInvitationInputBuilder {
     ) -> Self {
         self.invitation_id = input;
         self
+    }
+    /// <p>The identifier of the invitation sent from the Security Hub administrator account.</p>
+    pub fn get_invitation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.invitation_id
     }
     /// Consumes the builder and constructs a [`AcceptAdministratorInvitationInput`](crate::operation::accept_administrator_invitation::AcceptAdministratorInvitationInput).
     pub fn build(

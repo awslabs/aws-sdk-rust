@@ -47,6 +47,10 @@ impl AwsCloudFrontDistributionOriginS3OriginConfigBuilder {
         self.origin_access_identity = input;
         self
     }
+    /// <p>The CloudFront origin access identity to associate with the origin.</p>
+    pub fn get_origin_access_identity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.origin_access_identity
+    }
     /// Consumes the builder and constructs a [`AwsCloudFrontDistributionOriginS3OriginConfig`](crate::types::AwsCloudFrontDistributionOriginS3OriginConfig).
     pub fn build(self) -> crate::types::AwsCloudFrontDistributionOriginS3OriginConfig {
         crate::types::AwsCloudFrontDistributionOriginS3OriginConfig {

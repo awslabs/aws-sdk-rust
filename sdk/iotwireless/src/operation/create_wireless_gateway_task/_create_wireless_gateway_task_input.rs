@@ -47,6 +47,10 @@ impl CreateWirelessGatewayTaskInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the resource to update.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The ID of the WirelessGatewayTaskDefinition.</p>
     pub fn wireless_gateway_task_definition_id(
         mut self,
@@ -62,6 +66,12 @@ impl CreateWirelessGatewayTaskInputBuilder {
     ) -> Self {
         self.wireless_gateway_task_definition_id = input;
         self
+    }
+    /// <p>The ID of the WirelessGatewayTaskDefinition.</p>
+    pub fn get_wireless_gateway_task_definition_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.wireless_gateway_task_definition_id
     }
     /// Consumes the builder and constructs a [`CreateWirelessGatewayTaskInput`](crate::operation::create_wireless_gateway_task::CreateWirelessGatewayTaskInput).
     pub fn build(

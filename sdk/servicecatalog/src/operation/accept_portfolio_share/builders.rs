@@ -36,6 +36,12 @@ impl AcceptPortfolioShareFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AcceptPortfolioShare as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::accept_portfolio_share::builders::AcceptPortfolioShareInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +146,14 @@ impl AcceptPortfolioShareFluentBuilder {
         self.inner = self.inner.set_accept_language(input);
         self
     }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_accept_language()
+    }
     /// <p>The portfolio identifier.</p>
     pub fn portfolio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.portfolio_id(input.into());
@@ -149,6 +163,10 @@ impl AcceptPortfolioShareFluentBuilder {
     pub fn set_portfolio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_portfolio_id(input);
         self
+    }
+    /// <p>The portfolio identifier.</p>
+    pub fn get_portfolio_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_portfolio_id()
     }
     /// <p>The type of shared portfolios to accept. The default is to accept imported portfolios.</p>
     /// <ul>
@@ -174,5 +192,17 @@ impl AcceptPortfolioShareFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_portfolio_share_type(input);
         self
+    }
+    /// <p>The type of shared portfolios to accept. The default is to accept imported portfolios.</p>
+    /// <ul>
+    /// <li> <p> <code>AWS_ORGANIZATIONS</code> - Accept portfolios shared by the management account of your organization.</p> </li>
+    /// <li> <p> <code>IMPORTED</code> - Accept imported portfolios.</p> </li>
+    /// <li> <p> <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p> </li>
+    /// </ul>
+    /// <p>For example, <code>aws servicecatalog accept-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code> </p>
+    pub fn get_portfolio_share_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::PortfolioShareType> {
+        self.inner.get_portfolio_share_type()
     }
 }

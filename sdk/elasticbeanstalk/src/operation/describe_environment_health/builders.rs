@@ -36,6 +36,10 @@ impl DescribeEnvironmentHealthFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeEnvironmentHealth as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_environment_health::builders::DescribeEnvironmentHealthInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +138,11 @@ impl DescribeEnvironmentHealthFluentBuilder {
         self.inner = self.inner.set_environment_name(input);
         self
     }
+    /// <p>Specify the environment by name.</p>
+    /// <p>You must specify either this or an EnvironmentName, or both.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_name()
+    }
     /// <p>Specify the environment by ID.</p>
     /// <p>You must specify either this or an EnvironmentName, or both.</p>
     pub fn environment_id(
@@ -152,6 +161,11 @@ impl DescribeEnvironmentHealthFluentBuilder {
         self.inner = self.inner.set_environment_id(input);
         self
     }
+    /// <p>Specify the environment by ID.</p>
+    /// <p>You must specify either this or an EnvironmentName, or both.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_id()
+    }
     /// Appends an item to `AttributeNames`.
     ///
     /// To override the contents of this collection use [`set_attribute_names`](Self::set_attribute_names).
@@ -168,5 +182,11 @@ impl DescribeEnvironmentHealthFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_attribute_names(input);
         self
+    }
+    /// <p>Specify the response elements to return. To retrieve all attributes, set to <code>All</code>. If no attribute names are specified, returns the name of the environment.</p>
+    pub fn get_attribute_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentHealthAttribute>> {
+        self.inner.get_attribute_names()
     }
 }

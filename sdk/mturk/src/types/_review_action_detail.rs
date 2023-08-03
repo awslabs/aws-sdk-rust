@@ -96,6 +96,10 @@ impl ReviewActionDetailBuilder {
         self.action_id = input;
         self
     }
+    /// <p>The unique identifier for the action.</p>
+    pub fn get_action_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_id
+    }
     /// <p> The nature of the action itself. The Review Policy is responsible for examining the HIT and Assignments, emitting results, and deciding which other actions will be necessary. </p>
     pub fn action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_name = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl ReviewActionDetailBuilder {
     pub fn set_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action_name = input;
         self
+    }
+    /// <p> The nature of the action itself. The Review Policy is responsible for examining the HIT and Assignments, emitting results, and deciding which other actions will be necessary. </p>
+    pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_name
     }
     /// <p> The specific HITId or AssignmentID targeted by the action.</p>
     pub fn target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -116,6 +124,10 @@ impl ReviewActionDetailBuilder {
         self.target_id = input;
         self
     }
+    /// <p> The specific HITId or AssignmentID targeted by the action.</p>
+    pub fn get_target_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_id
+    }
     /// <p> The type of object in TargetId.</p>
     pub fn target_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_type = ::std::option::Option::Some(input.into());
@@ -125,6 +137,10 @@ impl ReviewActionDetailBuilder {
     pub fn set_target_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_type = input;
         self
+    }
+    /// <p> The type of object in TargetId.</p>
+    pub fn get_target_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_type
     }
     /// <p> The current disposition of the action: INTENDED, SUCCEEDED, FAILED, or CANCELLED. </p>
     pub fn status(mut self, input: crate::types::ReviewActionStatus) -> Self {
@@ -139,6 +155,10 @@ impl ReviewActionDetailBuilder {
         self.status = input;
         self
     }
+    /// <p> The current disposition of the action: INTENDED, SUCCEEDED, FAILED, or CANCELLED. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ReviewActionStatus> {
+        &self.status
+    }
     /// <p> The date when the action was completed.</p>
     pub fn complete_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.complete_time = ::std::option::Option::Some(input);
@@ -152,6 +172,10 @@ impl ReviewActionDetailBuilder {
         self.complete_time = input;
         self
     }
+    /// <p> The date when the action was completed.</p>
+    pub fn get_complete_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.complete_time
+    }
     /// <p> A description of the outcome of the review.</p>
     pub fn result(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.result = ::std::option::Option::Some(input.into());
@@ -162,6 +186,10 @@ impl ReviewActionDetailBuilder {
         self.result = input;
         self
     }
+    /// <p> A description of the outcome of the review.</p>
+    pub fn get_result(&self) -> &::std::option::Option<::std::string::String> {
+        &self.result
+    }
     /// <p> Present only when the Results have a FAILED Status.</p>
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
@@ -171,6 +199,10 @@ impl ReviewActionDetailBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p> Present only when the Results have a FAILED Status.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
     }
     /// Consumes the builder and constructs a [`ReviewActionDetail`](crate::types::ReviewActionDetail).
     pub fn build(self) -> crate::types::ReviewActionDetail {

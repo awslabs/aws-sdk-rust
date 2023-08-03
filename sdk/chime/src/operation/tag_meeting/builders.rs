@@ -40,6 +40,10 @@ impl TagMeetingFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the TagMeeting as a reference.
+    pub fn as_input(&self) -> &crate::operation::tag_meeting::builders::TagMeetingInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -122,6 +126,10 @@ impl TagMeetingFluentBuilder {
         self.inner = self.inner.set_meeting_id(input);
         self
     }
+    /// <p>The Amazon Chime SDK meeting ID.</p>
+    pub fn get_meeting_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_meeting_id()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -138,5 +146,9 @@ impl TagMeetingFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tag key-value pairs.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

@@ -59,6 +59,10 @@ impl InstanceStatusDetailsBuilder {
         self.impaired_since = input;
         self
     }
+    /// <p>The time when a status check failed. For an instance that was launched and impaired, this is the time when the instance was launched.</p>
+    pub fn get_impaired_since(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.impaired_since
+    }
     /// <p>The type of instance status.</p>
     pub fn name(mut self, input: crate::types::StatusName) -> Self {
         self.name = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl InstanceStatusDetailsBuilder {
         self.name = input;
         self
     }
+    /// <p>The type of instance status.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::StatusName> {
+        &self.name
+    }
     /// <p>The status.</p>
     pub fn status(mut self, input: crate::types::StatusType) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -78,6 +86,10 @@ impl InstanceStatusDetailsBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::StatusType>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::StatusType> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`InstanceStatusDetails`](crate::types::InstanceStatusDetails).
     pub fn build(self) -> crate::types::InstanceStatusDetails {

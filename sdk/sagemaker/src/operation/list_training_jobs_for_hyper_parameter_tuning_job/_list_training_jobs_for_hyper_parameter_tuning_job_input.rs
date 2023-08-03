@@ -87,6 +87,12 @@ impl ListTrainingJobsForHyperParameterTuningJobInputBuilder {
         self.hyper_parameter_tuning_job_name = input;
         self
     }
+    /// <p>The name of the tuning job whose training jobs you want to list.</p>
+    pub fn get_hyper_parameter_tuning_job_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.hyper_parameter_tuning_job_name
+    }
     /// <p>If the result of the previous <code>ListTrainingJobsForHyperParameterTuningJob</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of training jobs, use the token in the next request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -97,6 +103,10 @@ impl ListTrainingJobsForHyperParameterTuningJobInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If the result of the previous <code>ListTrainingJobsForHyperParameterTuningJob</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of training jobs, use the token in the next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of training jobs to return. The default value is 10.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -106,6 +116,10 @@ impl ListTrainingJobsForHyperParameterTuningJobInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of training jobs to return. The default value is 10.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>A filter that returns only training jobs with the specified status.</p>
     pub fn status_equals(mut self, input: crate::types::TrainingJobStatus) -> Self {
@@ -119,6 +133,10 @@ impl ListTrainingJobsForHyperParameterTuningJobInputBuilder {
     ) -> Self {
         self.status_equals = input;
         self
+    }
+    /// <p>A filter that returns only training jobs with the specified status.</p>
+    pub fn get_status_equals(&self) -> &::std::option::Option<crate::types::TrainingJobStatus> {
+        &self.status_equals
     }
     /// <p>The field to sort results by. The default is <code>Name</code>.</p>
     /// <p>If the value of this field is <code>FinalObjectiveMetricValue</code>, any training jobs that did not return an objective metric are not listed.</p>
@@ -135,6 +153,11 @@ impl ListTrainingJobsForHyperParameterTuningJobInputBuilder {
         self.sort_by = input;
         self
     }
+    /// <p>The field to sort results by. The default is <code>Name</code>.</p>
+    /// <p>If the value of this field is <code>FinalObjectiveMetricValue</code>, any training jobs that did not return an objective metric are not listed.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::TrainingJobSortByOptions> {
+        &self.sort_by
+    }
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -144,6 +167,10 @@ impl ListTrainingJobsForHyperParameterTuningJobInputBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.sort_order = input;
         self
+    }
+    /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.sort_order
     }
     /// Consumes the builder and constructs a [`ListTrainingJobsForHyperParameterTuningJobInput`](crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::ListTrainingJobsForHyperParameterTuningJobInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::ListTrainingJobsForHyperParameterTuningJobInput, ::aws_smithy_http::operation::error::BuildError>{

@@ -67,6 +67,10 @@ impl TemplateConfigurationBuilder {
         self.email_template = input;
         self
     }
+    /// <p>The email template to use for the message.</p>
+    pub fn get_email_template(&self) -> &::std::option::Option<crate::types::Template> {
+        &self.email_template
+    }
     /// <p>The push notification template to use for the message.</p>
     pub fn push_template(mut self, input: crate::types::Template) -> Self {
         self.push_template = ::std::option::Option::Some(input);
@@ -79,6 +83,10 @@ impl TemplateConfigurationBuilder {
     ) -> Self {
         self.push_template = input;
         self
+    }
+    /// <p>The push notification template to use for the message.</p>
+    pub fn get_push_template(&self) -> &::std::option::Option<crate::types::Template> {
+        &self.push_template
     }
     /// <p>The SMS template to use for the message.</p>
     pub fn sms_template(mut self, input: crate::types::Template) -> Self {
@@ -93,6 +101,10 @@ impl TemplateConfigurationBuilder {
         self.sms_template = input;
         self
     }
+    /// <p>The SMS template to use for the message.</p>
+    pub fn get_sms_template(&self) -> &::std::option::Option<crate::types::Template> {
+        &self.sms_template
+    }
     /// <p>The voice template to use for the message. This object isn't supported for campaigns.</p>
     pub fn voice_template(mut self, input: crate::types::Template) -> Self {
         self.voice_template = ::std::option::Option::Some(input);
@@ -105,6 +117,10 @@ impl TemplateConfigurationBuilder {
     ) -> Self {
         self.voice_template = input;
         self
+    }
+    /// <p>The voice template to use for the message. This object isn't supported for campaigns.</p>
+    pub fn get_voice_template(&self) -> &::std::option::Option<crate::types::Template> {
+        &self.voice_template
     }
     /// Consumes the builder and constructs a [`TemplateConfiguration`](crate::types::TemplateConfiguration).
     pub fn build(self) -> crate::types::TemplateConfiguration {

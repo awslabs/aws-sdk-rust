@@ -81,6 +81,11 @@ impl FindingProviderFieldsBuilder {
         self.confidence = input;
         self
     }
+    /// <p>A finding's confidence. Confidence is defined as the likelihood that a finding accurately identifies the behavior or issue that it was intended to identify.</p>
+    /// <p>Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
+    pub fn get_confidence(&self) -> &::std::option::Option<i32> {
+        &self.confidence
+    }
     /// <p>The level of importance assigned to the resources associated with the finding.</p>
     /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most critical resources.</p>
     pub fn criticality(mut self, input: i32) -> Self {
@@ -92,6 +97,11 @@ impl FindingProviderFieldsBuilder {
     pub fn set_criticality(mut self, input: ::std::option::Option<i32>) -> Self {
         self.criticality = input;
         self
+    }
+    /// <p>The level of importance assigned to the resources associated with the finding.</p>
+    /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most critical resources.</p>
+    pub fn get_criticality(&self) -> &::std::option::Option<i32> {
+        &self.criticality
     }
     /// Appends an item to `related_findings`.
     ///
@@ -112,6 +122,12 @@ impl FindingProviderFieldsBuilder {
         self.related_findings = input;
         self
     }
+    /// <p>A list of findings that are related to the current finding.</p>
+    pub fn get_related_findings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RelatedFinding>> {
+        &self.related_findings
+    }
     /// <p>The severity of a finding.</p>
     pub fn severity(mut self, input: crate::types::FindingProviderSeverity) -> Self {
         self.severity = ::std::option::Option::Some(input);
@@ -124,6 +140,10 @@ impl FindingProviderFieldsBuilder {
     ) -> Self {
         self.severity = input;
         self
+    }
+    /// <p>The severity of a finding.</p>
+    pub fn get_severity(&self) -> &::std::option::Option<crate::types::FindingProviderSeverity> {
+        &self.severity
     }
     /// Appends an item to `types`.
     ///
@@ -145,6 +165,11 @@ impl FindingProviderFieldsBuilder {
     ) -> Self {
         self.types = input;
         self
+    }
+    /// <p>One or more finding types in the format of <code>namespace/category/classifier</code> that classify a finding.</p>
+    /// <p>Valid namespace values are: Software and Configuration Checks | TTPs | Effects | Unusual Behaviors | Sensitive Data Identifications</p>
+    pub fn get_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.types
     }
     /// Consumes the builder and constructs a [`FindingProviderFields`](crate::types::FindingProviderFields).
     pub fn build(self) -> crate::types::FindingProviderFields {

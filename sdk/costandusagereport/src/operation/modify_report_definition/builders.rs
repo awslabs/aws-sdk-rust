@@ -36,6 +36,13 @@ impl ModifyReportDefinitionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyReportDefinition as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::modify_report_definition::builders::ModifyReportDefinitionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl ModifyReportDefinitionFluentBuilder {
         self.inner = self.inner.set_report_name(input);
         self
     }
+    /// <p>The name of the report that you want to create. The name must be unique, is case sensitive, and can't include spaces. </p>
+    pub fn get_report_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_report_name()
+    }
     /// <p>The definition of AWS Cost and Usage Report. You can specify the report name, time unit, report format, compression format, S3 bucket, additional artifacts, and schema elements in the definition. </p>
     pub fn report_definition(mut self, input: crate::types::ReportDefinition) -> Self {
         self.inner = self.inner.report_definition(input);
@@ -138,5 +149,9 @@ impl ModifyReportDefinitionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_report_definition(input);
         self
+    }
+    /// <p>The definition of AWS Cost and Usage Report. You can specify the report name, time unit, report format, compression format, S3 bucket, additional artifacts, and schema elements in the definition. </p>
+    pub fn get_report_definition(&self) -> &::std::option::Option<crate::types::ReportDefinition> {
+        self.inner.get_report_definition()
     }
 }

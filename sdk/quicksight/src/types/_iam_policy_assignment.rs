@@ -94,6 +94,10 @@ impl IamPolicyAssignmentBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>Assignment ID.</p>
     pub fn assignment_id(
         mut self,
@@ -109,6 +113,10 @@ impl IamPolicyAssignmentBuilder {
     ) -> Self {
         self.assignment_id = input;
         self
+    }
+    /// <p>Assignment ID.</p>
+    pub fn get_assignment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assignment_id
     }
     /// <p>Assignment name.</p>
     pub fn assignment_name(
@@ -126,6 +134,10 @@ impl IamPolicyAssignmentBuilder {
         self.assignment_name = input;
         self
     }
+    /// <p>Assignment name.</p>
+    pub fn get_assignment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assignment_name
+    }
     /// <p>The Amazon Resource Name (ARN) for the IAM policy.</p>
     pub fn policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_arn = ::std::option::Option::Some(input.into());
@@ -135,6 +147,10 @@ impl IamPolicyAssignmentBuilder {
     pub fn set_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the IAM policy.</p>
+    pub fn get_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_arn
     }
     /// Adds a key-value pair to `identities`.
     ///
@@ -164,6 +180,14 @@ impl IamPolicyAssignmentBuilder {
         self.identities = input;
         self
     }
+    /// <p>Identities.</p>
+    pub fn get_identities(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
+    > {
+        &self.identities
+    }
     /// <p>Assignment status.</p>
     pub fn assignment_status(mut self, input: crate::types::AssignmentStatus) -> Self {
         self.assignment_status = ::std::option::Option::Some(input);
@@ -176,6 +200,10 @@ impl IamPolicyAssignmentBuilder {
     ) -> Self {
         self.assignment_status = input;
         self
+    }
+    /// <p>Assignment status.</p>
+    pub fn get_assignment_status(&self) -> &::std::option::Option<crate::types::AssignmentStatus> {
+        &self.assignment_status
     }
     /// Consumes the builder and constructs a [`IamPolicyAssignment`](crate::types::IamPolicyAssignment).
     pub fn build(self) -> crate::types::IamPolicyAssignment {

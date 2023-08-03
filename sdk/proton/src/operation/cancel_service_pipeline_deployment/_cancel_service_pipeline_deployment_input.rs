@@ -39,6 +39,10 @@ impl CancelServicePipelineDeploymentInputBuilder {
         self.service_name = input;
         self
     }
+    /// <p>The name of the service with the service pipeline deployment to cancel.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
+    }
     /// Consumes the builder and constructs a [`CancelServicePipelineDeploymentInput`](crate::operation::cancel_service_pipeline_deployment::CancelServicePipelineDeploymentInput).
     pub fn build(
         self,

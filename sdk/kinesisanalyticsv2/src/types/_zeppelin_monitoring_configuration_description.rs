@@ -40,6 +40,10 @@ impl ZeppelinMonitoringConfigurationDescriptionBuilder {
         self.log_level = input;
         self
     }
+    /// <p>Describes the verbosity of the CloudWatch Logs for an application.</p>
+    pub fn get_log_level(&self) -> &::std::option::Option<crate::types::LogLevel> {
+        &self.log_level
+    }
     /// Consumes the builder and constructs a [`ZeppelinMonitoringConfigurationDescription`](crate::types::ZeppelinMonitoringConfigurationDescription).
     pub fn build(self) -> crate::types::ZeppelinMonitoringConfigurationDescription {
         crate::types::ZeppelinMonitoringConfigurationDescription {

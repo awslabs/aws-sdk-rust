@@ -38,6 +38,10 @@ impl CreateCloudFormationStackFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateCloudFormationStack as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_cloud_formation_stack::builders::CreateCloudFormationStackInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,5 +138,11 @@ impl CreateCloudFormationStackFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_instances(input);
         self
+    }
+    /// <p>An array of parameters that will be used to create the new Amazon EC2 instance. You can only pass one instance entry at a time in this array. You will get an invalid parameter error if you pass more than one instance entry in this array.</p>
+    pub fn get_instances(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceEntry>> {
+        self.inner.get_instances()
     }
 }

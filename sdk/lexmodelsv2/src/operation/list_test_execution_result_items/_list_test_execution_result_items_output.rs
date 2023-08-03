@@ -60,6 +60,12 @@ impl ListTestExecutionResultItemsOutputBuilder {
         self.test_execution_results = input;
         self
     }
+    /// <p>The list of results from the test execution.</p>
+    pub fn get_test_execution_results(
+        &self,
+    ) -> &::std::option::Option<crate::types::TestExecutionResultItems> {
+        &self.test_execution_results
+    }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListTestExecutionResultItems</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListTestExecutionResultItems</code> operation request to get the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -69,6 +75,10 @@ impl ListTestExecutionResultItemsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token that indicates whether there are more results to return in a response to the <code>ListTestExecutionResultItems</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListTestExecutionResultItems</code> operation request to get the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

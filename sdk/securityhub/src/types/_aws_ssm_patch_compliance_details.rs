@@ -40,6 +40,10 @@ impl AwsSsmPatchComplianceDetailsBuilder {
         self.patch = input;
         self
     }
+    /// <p>Information about the status of a patch.</p>
+    pub fn get_patch(&self) -> &::std::option::Option<crate::types::AwsSsmPatch> {
+        &self.patch
+    }
     /// Consumes the builder and constructs a [`AwsSsmPatchComplianceDetails`](crate::types::AwsSsmPatchComplianceDetails).
     pub fn build(self) -> crate::types::AwsSsmPatchComplianceDetails {
         crate::types::AwsSsmPatchComplianceDetails { patch: self.patch }

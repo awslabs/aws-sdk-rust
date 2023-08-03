@@ -36,6 +36,12 @@ impl DeleteImageVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteImageVersion as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_image_version::builders::DeleteImageVersionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DeleteImageVersionFluentBuilder {
         self.inner = self.inner.set_image_name(input);
         self
     }
+    /// <p>The name of the image to delete.</p>
+    pub fn get_image_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_image_name()
+    }
     /// <p>The version to delete.</p>
     pub fn version(mut self, input: i32) -> Self {
         self.inner = self.inner.version(input);
@@ -136,6 +146,10 @@ impl DeleteImageVersionFluentBuilder {
         self.inner = self.inner.set_version(input);
         self
     }
+    /// <p>The version to delete.</p>
+    pub fn get_version(&self) -> &::std::option::Option<i32> {
+        self.inner.get_version()
+    }
     /// <p>The alias of the image to delete.</p>
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.alias(input.into());
@@ -145,5 +159,9 @@ impl DeleteImageVersionFluentBuilder {
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_alias(input);
         self
+    }
+    /// <p>The alias of the image to delete.</p>
+    pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_alias()
     }
 }

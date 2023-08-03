@@ -52,6 +52,10 @@ impl KinesisFirehoseInputDescriptionBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// <p>The ARN of the IAM role that Kinesis Data Analytics assumes to access the stream.</p> <note>
     /// <p>Provided for backward compatibility. Applications that are created with the current API version have an application-level service execution role rather than a resource-level role.</p>
     /// </note>
@@ -65,6 +69,12 @@ impl KinesisFirehoseInputDescriptionBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The ARN of the IAM role that Kinesis Data Analytics assumes to access the stream.</p> <note>
+    /// <p>Provided for backward compatibility. Applications that are created with the current API version have an application-level service execution role rather than a resource-level role.</p>
+    /// </note>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Consumes the builder and constructs a [`KinesisFirehoseInputDescription`](crate::types::KinesisFirehoseInputDescription).
     pub fn build(self) -> crate::types::KinesisFirehoseInputDescription {

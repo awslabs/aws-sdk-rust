@@ -66,6 +66,12 @@ impl GetWorkflowExecutionHistoryOutputBuilder {
         self.events = input;
         self
     }
+    /// <p>The list of history events.</p>
+    pub fn get_events(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HistoryEvent>> {
+        &self.events
+    }
     /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
     pub fn next_page_token(
@@ -83,6 +89,11 @@ impl GetWorkflowExecutionHistoryOutputBuilder {
     ) -> Self {
         self.next_page_token = input;
         self
+    }
+    /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
+    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
+    pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_page_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

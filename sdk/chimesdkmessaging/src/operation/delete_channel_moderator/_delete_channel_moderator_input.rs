@@ -57,6 +57,10 @@ impl DeleteChannelModeratorInputBuilder {
         self.channel_arn = input;
         self
     }
+    /// <p>The ARN of the channel.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
+    }
     /// <p>The <code>AppInstanceUserArn</code> of the moderator being deleted.</p>
     pub fn channel_moderator_arn(
         mut self,
@@ -73,6 +77,10 @@ impl DeleteChannelModeratorInputBuilder {
         self.channel_moderator_arn = input;
         self
     }
+    /// <p>The <code>AppInstanceUserArn</code> of the moderator being deleted.</p>
+    pub fn get_channel_moderator_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_moderator_arn
+    }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.chime_bearer = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl DeleteChannelModeratorInputBuilder {
     pub fn set_chime_bearer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.chime_bearer = input;
         self
+    }
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
+    pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
+        &self.chime_bearer
     }
     /// Consumes the builder and constructs a [`DeleteChannelModeratorInput`](crate::operation::delete_channel_moderator::DeleteChannelModeratorInput).
     pub fn build(

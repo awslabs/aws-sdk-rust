@@ -134,6 +134,10 @@ impl PutSlotTypeOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the slot type.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A description of the slot type.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -143,6 +147,10 @@ impl PutSlotTypeOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the slot type.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `enumeration_values`.
     ///
@@ -163,6 +171,12 @@ impl PutSlotTypeOutputBuilder {
         self.enumeration_values = input;
         self
     }
+    /// <p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take.</p>
+    pub fn get_enumeration_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EnumerationValue>> {
+        &self.enumeration_values
+    }
     /// <p>The date that the slot type was updated. When you create a slot type, the creation date and last update date are the same.</p>
     pub fn last_updated_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date = ::std::option::Option::Some(input);
@@ -175,6 +189,10 @@ impl PutSlotTypeOutputBuilder {
     ) -> Self {
         self.last_updated_date = input;
         self
+    }
+    /// <p>The date that the slot type was updated. When you create a slot type, the creation date and last update date are the same.</p>
+    pub fn get_last_updated_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date
     }
     /// <p>The date that the slot type was created.</p>
     pub fn created_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -189,6 +207,10 @@ impl PutSlotTypeOutputBuilder {
         self.created_date = input;
         self
     }
+    /// <p>The date that the slot type was created.</p>
+    pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_date
+    }
     /// <p>The version of the slot type. For a new slot type, the version is always <code>$LATEST</code>. </p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -199,6 +221,10 @@ impl PutSlotTypeOutputBuilder {
         self.version = input;
         self
     }
+    /// <p>The version of the slot type. For a new slot type, the version is always <code>$LATEST</code>. </p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
+    }
     /// <p>Checksum of the <code>$LATEST</code> version of the slot type.</p>
     pub fn checksum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.checksum = ::std::option::Option::Some(input.into());
@@ -208,6 +234,10 @@ impl PutSlotTypeOutputBuilder {
     pub fn set_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.checksum = input;
         self
+    }
+    /// <p>Checksum of the <code>$LATEST</code> version of the slot type.</p>
+    pub fn get_checksum(&self) -> &::std::option::Option<::std::string::String> {
+        &self.checksum
     }
     /// <p>The slot resolution strategy that Amazon Lex uses to determine the value of the slot. For more information, see <code>PutSlotType</code>.</p>
     pub fn value_selection_strategy(
@@ -225,6 +255,12 @@ impl PutSlotTypeOutputBuilder {
         self.value_selection_strategy = input;
         self
     }
+    /// <p>The slot resolution strategy that Amazon Lex uses to determine the value of the slot. For more information, see <code>PutSlotType</code>.</p>
+    pub fn get_value_selection_strategy(
+        &self,
+    ) -> &::std::option::Option<crate::types::SlotValueSelectionStrategy> {
+        &self.value_selection_strategy
+    }
     /// <p> <code>True</code> if a new version of the slot type was created. If the <code>createVersion</code> field was not specified in the request, the <code>createVersion</code> field is set to false in the response.</p>
     pub fn create_version(mut self, input: bool) -> Self {
         self.create_version = ::std::option::Option::Some(input);
@@ -234,6 +270,10 @@ impl PutSlotTypeOutputBuilder {
     pub fn set_create_version(mut self, input: ::std::option::Option<bool>) -> Self {
         self.create_version = input;
         self
+    }
+    /// <p> <code>True</code> if a new version of the slot type was created. If the <code>createVersion</code> field was not specified in the request, the <code>createVersion</code> field is set to false in the response.</p>
+    pub fn get_create_version(&self) -> &::std::option::Option<bool> {
+        &self.create_version
     }
     /// <p>The built-in slot type used as the parent of the slot type.</p>
     pub fn parent_slot_type_signature(
@@ -250,6 +290,10 @@ impl PutSlotTypeOutputBuilder {
     ) -> Self {
         self.parent_slot_type_signature = input;
         self
+    }
+    /// <p>The built-in slot type used as the parent of the slot type.</p>
+    pub fn get_parent_slot_type_signature(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent_slot_type_signature
     }
     /// Appends an item to `slot_type_configurations`.
     ///
@@ -269,6 +313,12 @@ impl PutSlotTypeOutputBuilder {
     ) -> Self {
         self.slot_type_configurations = input;
         self
+    }
+    /// <p>Configuration information that extends the parent built-in slot type.</p>
+    pub fn get_slot_type_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SlotTypeConfiguration>> {
+        &self.slot_type_configurations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

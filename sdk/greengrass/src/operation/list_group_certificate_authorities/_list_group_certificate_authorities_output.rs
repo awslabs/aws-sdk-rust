@@ -64,6 +64,13 @@ impl ListGroupCertificateAuthoritiesOutputBuilder {
         self.group_certificate_authorities = input;
         self
     }
+    /// A list of certificate authorities associated with the group.
+    pub fn get_group_certificate_authorities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupCertificateAuthorityProperties>>
+    {
+        &self.group_certificate_authorities
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

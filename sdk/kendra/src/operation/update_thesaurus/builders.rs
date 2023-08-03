@@ -36,6 +36,12 @@ impl UpdateThesaurusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateThesaurus as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_thesaurus::builders::UpdateThesaurusInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateThesaurusFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The identifier of the thesaurus you want to update.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>A new name for the thesaurus.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -135,6 +145,10 @@ impl UpdateThesaurusFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>A new name for the thesaurus.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The identifier of the index for the thesaurus.</p>
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -146,6 +160,10 @@ impl UpdateThesaurusFluentBuilder {
         self.inner = self.inner.set_index_id(input);
         self
     }
+    /// <p>The identifier of the index for the thesaurus.</p>
+    pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_index_id()
+    }
     /// <p>A new description for the thesaurus.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -156,6 +174,10 @@ impl UpdateThesaurusFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>A new description for the thesaurus.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file specified in <code>SourceS3Path</code>.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -165,6 +187,10 @@ impl UpdateThesaurusFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file specified in <code>SourceS3Path</code>.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
     /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
     pub fn source_s3_path(mut self, input: crate::types::S3Path) -> Self {
@@ -178,5 +204,9 @@ impl UpdateThesaurusFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_source_s3_path(input);
         self
+    }
+    /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
+    pub fn get_source_s3_path(&self) -> &::std::option::Option<crate::types::S3Path> {
+        self.inner.get_source_s3_path()
     }
 }

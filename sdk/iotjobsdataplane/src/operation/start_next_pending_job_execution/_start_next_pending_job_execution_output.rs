@@ -49,6 +49,10 @@ impl StartNextPendingJobExecutionOutputBuilder {
         self.execution = input;
         self
     }
+    /// <p>A JobExecution object.</p>
+    pub fn get_execution(&self) -> &::std::option::Option<crate::types::JobExecution> {
+        &self.execution
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

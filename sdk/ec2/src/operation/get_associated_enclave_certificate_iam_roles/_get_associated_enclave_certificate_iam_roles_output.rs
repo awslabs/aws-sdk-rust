@@ -56,6 +56,12 @@ impl GetAssociatedEnclaveCertificateIamRolesOutputBuilder {
         self.associated_roles = input;
         self
     }
+    /// <p>Information about the associated IAM roles.</p>
+    pub fn get_associated_roles(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociatedRole>> {
+        &self.associated_roles
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

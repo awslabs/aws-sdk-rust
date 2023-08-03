@@ -50,6 +50,12 @@ impl GetSubscriptionStateOutputBuilder {
         self.subscription_state = input;
         self
     }
+    /// <p>The status of the subscription.</p>
+    pub fn get_subscription_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::SubscriptionState> {
+        &self.subscription_state
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

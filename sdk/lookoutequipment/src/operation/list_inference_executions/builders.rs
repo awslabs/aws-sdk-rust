@@ -37,6 +37,13 @@ impl ListInferenceExecutionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListInferenceExecutions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_inference_executions::builders::ListInferenceExecutionsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +143,10 @@ impl ListInferenceExecutionsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>An opaque pagination token indicating where to continue the listing of inference executions.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>Specifies the maximum number of inference executions to list. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -145,6 +156,10 @@ impl ListInferenceExecutionsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>Specifies the maximum number of inference executions to list. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>The name of the inference scheduler for the inference execution listed. </p>
     pub fn inference_scheduler_name(
@@ -162,6 +177,10 @@ impl ListInferenceExecutionsFluentBuilder {
         self.inner = self.inner.set_inference_scheduler_name(input);
         self
     }
+    /// <p>The name of the inference scheduler for the inference execution listed. </p>
+    pub fn get_inference_scheduler_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_inference_scheduler_name()
+    }
     /// <p>The time reference in the inferenced dataset after which Amazon Lookout for Equipment started the inference execution. </p>
     pub fn data_start_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.data_start_time_after(input);
@@ -174,6 +193,12 @@ impl ListInferenceExecutionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_data_start_time_after(input);
         self
+    }
+    /// <p>The time reference in the inferenced dataset after which Amazon Lookout for Equipment started the inference execution. </p>
+    pub fn get_data_start_time_after(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_data_start_time_after()
     }
     /// <p>The time reference in the inferenced dataset before which Amazon Lookout for Equipment stopped the inference execution. </p>
     pub fn data_end_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -188,6 +213,10 @@ impl ListInferenceExecutionsFluentBuilder {
         self.inner = self.inner.set_data_end_time_before(input);
         self
     }
+    /// <p>The time reference in the inferenced dataset before which Amazon Lookout for Equipment stopped the inference execution. </p>
+    pub fn get_data_end_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_data_end_time_before()
+    }
     /// <p>The status of the inference execution. </p>
     pub fn status(mut self, input: crate::types::InferenceExecutionStatus) -> Self {
         self.inner = self.inner.status(input);
@@ -200,5 +229,9 @@ impl ListInferenceExecutionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_status(input);
         self
+    }
+    /// <p>The status of the inference execution. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::InferenceExecutionStatus> {
+        self.inner.get_status()
     }
 }

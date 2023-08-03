@@ -76,6 +76,11 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetailsBuilder {
         self.date = input;
         self
     }
+    /// <p>A date on which to transition objects to the specified storage class. If you provide <code>Date</code>, you cannot provide <code>Days</code>.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.date
+    }
     /// <p>The number of days after which to transition the object to the specified storage class. If you provide <code>Days</code>, you cannot provide <code>Date</code>.</p>
     pub fn days(mut self, input: i32) -> Self {
         self.days = ::std::option::Option::Some(input);
@@ -85,6 +90,10 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetailsBuilder {
     pub fn set_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.days = input;
         self
+    }
+    /// <p>The number of days after which to transition the object to the specified storage class. If you provide <code>Days</code>, you cannot provide <code>Date</code>.</p>
+    pub fn get_days(&self) -> &::std::option::Option<i32> {
+        &self.days
     }
     /// <p>The storage class to transition the object to. Valid values are as follows:</p>
     /// <ul>
@@ -115,6 +124,17 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetailsBuilder {
     ) -> Self {
         self.storage_class = input;
         self
+    }
+    /// <p>The storage class to transition the object to. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>DEEP_ARCHIVE</code> </p> </li>
+    /// <li> <p> <code>GLACIER</code> </p> </li>
+    /// <li> <p> <code>INTELLIGENT_TIERING</code> </p> </li>
+    /// <li> <p> <code>ONEZONE_IA</code> </p> </li>
+    /// <li> <p> <code>STANDARD_IA</code> </p> </li>
+    /// </ul>
+    pub fn get_storage_class(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_class
     }
     /// Consumes the builder and constructs a [`AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails`](crate::types::AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails).
     pub fn build(

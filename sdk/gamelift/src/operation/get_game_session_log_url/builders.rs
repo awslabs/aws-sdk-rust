@@ -39,6 +39,13 @@ impl GetGameSessionLogUrlFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetGameSessionLogUrl as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_game_session_log_url::builders::GetGameSessionLogUrlInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,5 +141,9 @@ impl GetGameSessionLogUrlFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_game_session_id(input);
         self
+    }
+    /// <p>A unique identifier for the game session to get logs for. </p>
+    pub fn get_game_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_game_session_id()
     }
 }

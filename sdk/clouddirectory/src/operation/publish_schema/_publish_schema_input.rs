@@ -69,6 +69,10 @@ impl PublishSchemaInputBuilder {
         self.development_schema_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that is associated with the development schema. For more information, see <code>arns</code>.</p>
+    pub fn get_development_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.development_schema_arn
+    }
     /// <p>The major version under which the schema will be published. Schemas have both a major and minor version associated with them.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -78,6 +82,10 @@ impl PublishSchemaInputBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The major version under which the schema will be published. Schemas have both a major and minor version associated with them.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// <p>The minor version under which the schema will be published. This parameter is recommended. Schemas have both a major and minor version associated with them.</p>
     pub fn minor_version(
@@ -95,6 +103,10 @@ impl PublishSchemaInputBuilder {
         self.minor_version = input;
         self
     }
+    /// <p>The minor version under which the schema will be published. This parameter is recommended. Schemas have both a major and minor version associated with them.</p>
+    pub fn get_minor_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.minor_version
+    }
     /// <p>The new name under which the schema will be published. If this is not provided, the development schema is considered.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -104,6 +116,10 @@ impl PublishSchemaInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The new name under which the schema will be published. If this is not provided, the development schema is considered.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`PublishSchemaInput`](crate::operation::publish_schema::PublishSchemaInput).
     pub fn build(

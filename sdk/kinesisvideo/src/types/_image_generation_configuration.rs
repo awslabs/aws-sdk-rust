@@ -110,6 +110,10 @@ impl ImageGenerationConfigurationBuilder {
         self.status = input;
         self
     }
+    /// <p>Indicates whether the <code>ContinuousImageGenerationConfigurations</code> API is enabled or disabled.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ConfigurationStatus> {
+        &self.status
+    }
     /// <p>The origin of the Server or Producer timestamps to use to generate the images.</p>
     pub fn image_selector_type(mut self, input: crate::types::ImageSelectorType) -> Self {
         self.image_selector_type = ::std::option::Option::Some(input);
@@ -122,6 +126,12 @@ impl ImageGenerationConfigurationBuilder {
     ) -> Self {
         self.image_selector_type = input;
         self
+    }
+    /// <p>The origin of the Server or Producer timestamps to use to generate the images.</p>
+    pub fn get_image_selector_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImageSelectorType> {
+        &self.image_selector_type
     }
     /// <p>The structure that contains the information required to deliver images to a customer.</p>
     pub fn destination_config(
@@ -139,6 +149,12 @@ impl ImageGenerationConfigurationBuilder {
         self.destination_config = input;
         self
     }
+    /// <p>The structure that contains the information required to deliver images to a customer.</p>
+    pub fn get_destination_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImageGenerationDestinationConfig> {
+        &self.destination_config
+    }
     /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum value that can be provided is 33 ms, because a camera that generates content at 30 FPS would create a frame every 33.3 ms. If the timestamp range is less than the sampling interval, the Image from the <code>StartTimestamp</code> will be returned if available. </p>
     pub fn sampling_interval(mut self, input: i32) -> Self {
         self.sampling_interval = ::std::option::Option::Some(input);
@@ -149,6 +165,10 @@ impl ImageGenerationConfigurationBuilder {
         self.sampling_interval = input;
         self
     }
+    /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum value that can be provided is 33 ms, because a camera that generates content at 30 FPS would create a frame every 33.3 ms. If the timestamp range is less than the sampling interval, the Image from the <code>StartTimestamp</code> will be returned if available. </p>
+    pub fn get_sampling_interval(&self) -> &::std::option::Option<i32> {
+        &self.sampling_interval
+    }
     /// <p>The accepted image format.</p>
     pub fn format(mut self, input: crate::types::Format) -> Self {
         self.format = ::std::option::Option::Some(input);
@@ -158,6 +178,10 @@ impl ImageGenerationConfigurationBuilder {
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::Format>) -> Self {
         self.format = input;
         self
+    }
+    /// <p>The accepted image format.</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::Format> {
+        &self.format
     }
     /// Adds a key-value pair to `format_config`.
     ///
@@ -184,6 +208,14 @@ impl ImageGenerationConfigurationBuilder {
         self.format_config = input;
         self
     }
+    /// <p>The list of a key-value pair structure that contains extra parameters that can be applied when the image is generated. The <code>FormatConfig</code> key is the <code>JPEGQuality</code>, which indicates the JPEG quality key to be used to generate the image. The <code>FormatConfig</code> value accepts ints from 1 to 100. If the value is 1, the image will be generated with less quality and the best compression. If the value is 100, the image will be generated with the best quality and less compression. If no value is provided, the default value of the <code>JPEGQuality</code> key will be set to 80.</p>
+    pub fn get_format_config(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<crate::types::FormatConfigKey, ::std::string::String>,
+    > {
+        &self.format_config
+    }
     /// <p>The width of the output image that is used in conjunction with the <code>HeightPixels</code> parameter. When both <code>WidthPixels</code> and <code>HeightPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>WidthPixels</code> parameter is provided, its original aspect ratio will be used to calculate the <code>HeightPixels</code> ratio. If neither parameter is provided, the original image size will be returned.</p>
     pub fn width_pixels(mut self, input: i32) -> Self {
         self.width_pixels = ::std::option::Option::Some(input);
@@ -194,6 +226,10 @@ impl ImageGenerationConfigurationBuilder {
         self.width_pixels = input;
         self
     }
+    /// <p>The width of the output image that is used in conjunction with the <code>HeightPixels</code> parameter. When both <code>WidthPixels</code> and <code>HeightPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>WidthPixels</code> parameter is provided, its original aspect ratio will be used to calculate the <code>HeightPixels</code> ratio. If neither parameter is provided, the original image size will be returned.</p>
+    pub fn get_width_pixels(&self) -> &::std::option::Option<i32> {
+        &self.width_pixels
+    }
     /// <p>The height of the output image that is used in conjunction with the <code>WidthPixels</code> parameter. When both <code>HeightPixels</code> and <code>WidthPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>HeightPixels</code> parameter is provided, its original aspect ratio will be used to calculate the <code>WidthPixels</code> ratio. If neither parameter is provided, the original image size will be returned.</p>
     pub fn height_pixels(mut self, input: i32) -> Self {
         self.height_pixels = ::std::option::Option::Some(input);
@@ -203,6 +239,10 @@ impl ImageGenerationConfigurationBuilder {
     pub fn set_height_pixels(mut self, input: ::std::option::Option<i32>) -> Self {
         self.height_pixels = input;
         self
+    }
+    /// <p>The height of the output image that is used in conjunction with the <code>WidthPixels</code> parameter. When both <code>HeightPixels</code> and <code>WidthPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>HeightPixels</code> parameter is provided, its original aspect ratio will be used to calculate the <code>WidthPixels</code> ratio. If neither parameter is provided, the original image size will be returned.</p>
+    pub fn get_height_pixels(&self) -> &::std::option::Option<i32> {
+        &self.height_pixels
     }
     /// Consumes the builder and constructs a [`ImageGenerationConfiguration`](crate::types::ImageGenerationConfiguration).
     pub fn build(self) -> crate::types::ImageGenerationConfiguration {

@@ -62,6 +62,10 @@ impl StartBlueprintRunInputBuilder {
         self.blueprint_name = input;
         self
     }
+    /// <p>The name of the blueprint.</p>
+    pub fn get_blueprint_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.blueprint_name
+    }
     /// <p>Specifies the parameters as a <code>BlueprintParameters</code> object.</p>
     pub fn parameters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameters = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl StartBlueprintRunInputBuilder {
         self.parameters = input;
         self
     }
+    /// <p>Specifies the parameters as a <code>BlueprintParameters</code> object.</p>
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameters
+    }
     /// <p>Specifies the IAM role used to create the workflow.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl StartBlueprintRunInputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>Specifies the IAM role used to create the workflow.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Consumes the builder and constructs a [`StartBlueprintRunInput`](crate::operation::start_blueprint_run::StartBlueprintRunInput).
     pub fn build(

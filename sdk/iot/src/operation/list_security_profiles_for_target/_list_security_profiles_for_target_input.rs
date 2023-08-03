@@ -63,6 +63,10 @@ impl ListSecurityProfilesForTargetInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return at one time.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl ListSecurityProfilesForTargetInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to return at one time.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>If true, return child groups too.</p>
     pub fn recursive(mut self, input: bool) -> Self {
         self.recursive = ::std::option::Option::Some(input);
@@ -82,6 +90,10 @@ impl ListSecurityProfilesForTargetInputBuilder {
     pub fn set_recursive(mut self, input: ::std::option::Option<bool>) -> Self {
         self.recursive = input;
         self
+    }
+    /// <p>If true, return child groups too.</p>
+    pub fn get_recursive(&self) -> &::std::option::Option<bool> {
+        &self.recursive
     }
     /// <p>The ARN of the target (thing group) whose attached security profiles you want to get.</p>
     pub fn security_profile_target_arn(
@@ -98,6 +110,10 @@ impl ListSecurityProfilesForTargetInputBuilder {
     ) -> Self {
         self.security_profile_target_arn = input;
         self
+    }
+    /// <p>The ARN of the target (thing group) whose attached security profiles you want to get.</p>
+    pub fn get_security_profile_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_profile_target_arn
     }
     /// Consumes the builder and constructs a [`ListSecurityProfilesForTargetInput`](crate::operation::list_security_profiles_for_target::ListSecurityProfilesForTargetInput).
     pub fn build(

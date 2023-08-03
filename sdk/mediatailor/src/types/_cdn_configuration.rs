@@ -54,6 +54,10 @@ impl CdnConfigurationBuilder {
         self.ad_segment_url_prefix = input;
         self
     }
+    /// <p>A non-default content delivery network (CDN) to serve ad segments. By default, AWS Elemental MediaTailor uses Amazon CloudFront with default cache settings as its CDN for ad segments. To set up an alternate CDN, create a rule in your CDN for the origin ads.mediatailor.<i>&lt;region&gt;</i>.amazonaws.com. Then specify the rule's name in this <code>AdSegmentUrlPrefix</code>. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for ad segments.</p>
+    pub fn get_ad_segment_url_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ad_segment_url_prefix
+    }
     /// <p>A content delivery network (CDN) to cache content segments, so that content requests don’t always have to go to the origin server. First, create a rule in your CDN for the content segment origin server. Then specify the rule's name in this <code>ContentSegmentUrlPrefix</code>. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for content segments.</p>
     pub fn content_segment_url_prefix(
         mut self,
@@ -69,6 +73,10 @@ impl CdnConfigurationBuilder {
     ) -> Self {
         self.content_segment_url_prefix = input;
         self
+    }
+    /// <p>A content delivery network (CDN) to cache content segments, so that content requests don’t always have to go to the origin server. First, create a rule in your CDN for the content segment origin server. Then specify the rule's name in this <code>ContentSegmentUrlPrefix</code>. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for content segments.</p>
+    pub fn get_content_segment_url_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_segment_url_prefix
     }
     /// Consumes the builder and constructs a [`CdnConfiguration`](crate::types::CdnConfiguration).
     pub fn build(self) -> crate::types::CdnConfiguration {

@@ -51,6 +51,12 @@ impl GetAutoTerminationPolicyOutputBuilder {
         self.auto_termination_policy = input;
         self
     }
+    /// <p>Specifies the auto-termination policy that is attached to an Amazon EMR cluster. </p>
+    pub fn get_auto_termination_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoTerminationPolicy> {
+        &self.auto_termination_policy
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

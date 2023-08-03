@@ -44,6 +44,10 @@ impl UpdatePhoneNumberSettingsInputBuilder {
         self.calling_name = input;
         self
     }
+    /// <p>The default outbound calling name for the account.</p>
+    pub fn get_calling_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.calling_name
+    }
     /// Consumes the builder and constructs a [`UpdatePhoneNumberSettingsInput`](crate::operation::update_phone_number_settings::UpdatePhoneNumberSettingsInput).
     pub fn build(
         self,

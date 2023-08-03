@@ -48,6 +48,10 @@ impl LogGroupFieldBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of a log field.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The percentage of log events queried that contained the field.</p>
     pub fn percent(mut self, input: i32) -> Self {
         self.percent = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl LogGroupFieldBuilder {
     pub fn set_percent(mut self, input: ::std::option::Option<i32>) -> Self {
         self.percent = input;
         self
+    }
+    /// <p>The percentage of log events queried that contained the field.</p>
+    pub fn get_percent(&self) -> &::std::option::Option<i32> {
+        &self.percent
     }
     /// Consumes the builder and constructs a [`LogGroupField`](crate::types::LogGroupField).
     pub fn build(self) -> crate::types::LogGroupField {

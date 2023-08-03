@@ -144,6 +144,10 @@ impl AddressBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The ID of the instance that the address is associated with (if any).</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The Elastic IP address.</p>
     pub fn public_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_ip = ::std::option::Option::Some(input.into());
@@ -153,6 +157,10 @@ impl AddressBuilder {
     pub fn set_public_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_ip = input;
         self
+    }
+    /// <p>The Elastic IP address.</p>
+    pub fn get_public_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_ip
     }
     /// <p>The ID representing the allocation of the address.</p>
     pub fn allocation_id(
@@ -170,6 +178,10 @@ impl AddressBuilder {
         self.allocation_id = input;
         self
     }
+    /// <p>The ID representing the allocation of the address.</p>
+    pub fn get_allocation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.allocation_id
+    }
     /// <p>The ID representing the association of the address with an instance.</p>
     pub fn association_id(
         mut self,
@@ -186,6 +198,10 @@ impl AddressBuilder {
         self.association_id = input;
         self
     }
+    /// <p>The ID representing the association of the address with an instance.</p>
+    pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_id
+    }
     /// <p>The network (<code>vpc</code>).</p>
     pub fn domain(mut self, input: crate::types::DomainType) -> Self {
         self.domain = ::std::option::Option::Some(input);
@@ -195,6 +211,10 @@ impl AddressBuilder {
     pub fn set_domain(mut self, input: ::std::option::Option<crate::types::DomainType>) -> Self {
         self.domain = input;
         self
+    }
+    /// <p>The network (<code>vpc</code>).</p>
+    pub fn get_domain(&self) -> &::std::option::Option<crate::types::DomainType> {
+        &self.domain
     }
     /// <p>The ID of the network interface.</p>
     pub fn network_interface_id(
@@ -212,6 +232,10 @@ impl AddressBuilder {
         self.network_interface_id = input;
         self
     }
+    /// <p>The ID of the network interface.</p>
+    pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_interface_id
+    }
     /// <p>The ID of the Amazon Web Services account that owns the network interface.</p>
     pub fn network_interface_owner_id(
         mut self,
@@ -228,6 +252,10 @@ impl AddressBuilder {
         self.network_interface_owner_id = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services account that owns the network interface.</p>
+    pub fn get_network_interface_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_interface_owner_id
+    }
     /// <p>The private IP address associated with the Elastic IP address.</p>
     pub fn private_ip_address(
         mut self,
@@ -243,6 +271,10 @@ impl AddressBuilder {
     ) -> Self {
         self.private_ip_address = input;
         self
+    }
+    /// <p>The private IP address associated with the Elastic IP address.</p>
+    pub fn get_private_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_ip_address
     }
     /// Appends an item to `tags`.
     ///
@@ -263,6 +295,10 @@ impl AddressBuilder {
         self.tags = input;
         self
     }
+    /// <p>Any tags assigned to the Elastic IP address.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The ID of an address pool.</p>
     pub fn public_ipv4_pool(
         mut self,
@@ -278,6 +314,10 @@ impl AddressBuilder {
     ) -> Self {
         self.public_ipv4_pool = input;
         self
+    }
+    /// <p>The ID of an address pool.</p>
+    pub fn get_public_ipv4_pool(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_ipv4_pool
     }
     /// <p>The name of the unique set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises IP addresses.</p>
     pub fn network_border_group(
@@ -295,6 +335,10 @@ impl AddressBuilder {
         self.network_border_group = input;
         self
     }
+    /// <p>The name of the unique set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises IP addresses.</p>
+    pub fn get_network_border_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_border_group
+    }
     /// <p>The customer-owned IP address.</p>
     pub fn customer_owned_ip(
         mut self,
@@ -310,6 +354,10 @@ impl AddressBuilder {
     ) -> Self {
         self.customer_owned_ip = input;
         self
+    }
+    /// <p>The customer-owned IP address.</p>
+    pub fn get_customer_owned_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.customer_owned_ip
     }
     /// <p>The ID of the customer-owned address pool.</p>
     pub fn customer_owned_ipv4_pool(
@@ -327,6 +375,10 @@ impl AddressBuilder {
         self.customer_owned_ipv4_pool = input;
         self
     }
+    /// <p>The ID of the customer-owned address pool.</p>
+    pub fn get_customer_owned_ipv4_pool(&self) -> &::std::option::Option<::std::string::String> {
+        &self.customer_owned_ipv4_pool
+    }
     /// <p>The carrier IP address associated. This option is only available for network interfaces which reside in a subnet in a Wavelength Zone (for example an EC2 instance). </p>
     pub fn carrier_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.carrier_ip = ::std::option::Option::Some(input.into());
@@ -336,6 +388,10 @@ impl AddressBuilder {
     pub fn set_carrier_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.carrier_ip = input;
         self
+    }
+    /// <p>The carrier IP address associated. This option is only available for network interfaces which reside in a subnet in a Wavelength Zone (for example an EC2 instance). </p>
+    pub fn get_carrier_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.carrier_ip
     }
     /// Consumes the builder and constructs a [`Address`](crate::types::Address).
     pub fn build(self) -> crate::types::Address {

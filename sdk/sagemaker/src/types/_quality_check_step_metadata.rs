@@ -114,6 +114,10 @@ impl QualityCheckStepMetadataBuilder {
         self.check_type = input;
         self
     }
+    /// <p>The type of the Quality check step.</p>
+    pub fn get_check_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.check_type
+    }
     /// <p>The Amazon S3 URI of the baseline statistics file used for the drift check.</p>
     pub fn baseline_used_for_drift_check_statistics(
         mut self,
@@ -129,6 +133,12 @@ impl QualityCheckStepMetadataBuilder {
     ) -> Self {
         self.baseline_used_for_drift_check_statistics = input;
         self
+    }
+    /// <p>The Amazon S3 URI of the baseline statistics file used for the drift check.</p>
+    pub fn get_baseline_used_for_drift_check_statistics(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.baseline_used_for_drift_check_statistics
     }
     /// <p>The Amazon S3 URI of the baseline constraints file used for the drift check.</p>
     pub fn baseline_used_for_drift_check_constraints(
@@ -146,6 +156,12 @@ impl QualityCheckStepMetadataBuilder {
         self.baseline_used_for_drift_check_constraints = input;
         self
     }
+    /// <p>The Amazon S3 URI of the baseline constraints file used for the drift check.</p>
+    pub fn get_baseline_used_for_drift_check_constraints(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.baseline_used_for_drift_check_constraints
+    }
     /// <p>The Amazon S3 URI of the newly calculated baseline statistics file.</p>
     pub fn calculated_baseline_statistics(
         mut self,
@@ -161,6 +177,12 @@ impl QualityCheckStepMetadataBuilder {
     ) -> Self {
         self.calculated_baseline_statistics = input;
         self
+    }
+    /// <p>The Amazon S3 URI of the newly calculated baseline statistics file.</p>
+    pub fn get_calculated_baseline_statistics(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.calculated_baseline_statistics
     }
     /// <p>The Amazon S3 URI of the newly calculated baseline constraints file.</p>
     pub fn calculated_baseline_constraints(
@@ -178,6 +200,12 @@ impl QualityCheckStepMetadataBuilder {
         self.calculated_baseline_constraints = input;
         self
     }
+    /// <p>The Amazon S3 URI of the newly calculated baseline constraints file.</p>
+    pub fn get_calculated_baseline_constraints(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.calculated_baseline_constraints
+    }
     /// <p>The model package group name.</p>
     pub fn model_package_group_name(
         mut self,
@@ -193,6 +221,10 @@ impl QualityCheckStepMetadataBuilder {
     ) -> Self {
         self.model_package_group_name = input;
         self
+    }
+    /// <p>The model package group name.</p>
+    pub fn get_model_package_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_package_group_name
     }
     /// <p>The Amazon S3 URI of violation report if violations are detected.</p>
     pub fn violation_report(
@@ -210,6 +242,10 @@ impl QualityCheckStepMetadataBuilder {
         self.violation_report = input;
         self
     }
+    /// <p>The Amazon S3 URI of violation report if violations are detected.</p>
+    pub fn get_violation_report(&self) -> &::std::option::Option<::std::string::String> {
+        &self.violation_report
+    }
     /// <p>The Amazon Resource Name (ARN) of the Quality check processing job that was run by this step execution.</p>
     pub fn check_job_arn(
         mut self,
@@ -226,6 +262,10 @@ impl QualityCheckStepMetadataBuilder {
         self.check_job_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Quality check processing job that was run by this step execution.</p>
+    pub fn get_check_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.check_job_arn
+    }
     /// <p>This flag indicates if the drift check against the previous baseline will be skipped or not. If it is set to <code>False</code>, the previous baseline of the configured check type must be available.</p>
     pub fn skip_check(mut self, input: bool) -> Self {
         self.skip_check = ::std::option::Option::Some(input);
@@ -236,6 +276,10 @@ impl QualityCheckStepMetadataBuilder {
         self.skip_check = input;
         self
     }
+    /// <p>This flag indicates if the drift check against the previous baseline will be skipped or not. If it is set to <code>False</code>, the previous baseline of the configured check type must be available.</p>
+    pub fn get_skip_check(&self) -> &::std::option::Option<bool> {
+        &self.skip_check
+    }
     /// <p>This flag indicates if a newly calculated baseline can be accessed through step properties <code>BaselineUsedForDriftCheckConstraints</code> and <code>BaselineUsedForDriftCheckStatistics</code>. If it is set to <code>False</code>, the previous baseline of the configured check type must also be available. These can be accessed through the <code>BaselineUsedForDriftCheckConstraints</code> and <code> BaselineUsedForDriftCheckStatistics</code> properties. </p>
     pub fn register_new_baseline(mut self, input: bool) -> Self {
         self.register_new_baseline = ::std::option::Option::Some(input);
@@ -245,6 +289,10 @@ impl QualityCheckStepMetadataBuilder {
     pub fn set_register_new_baseline(mut self, input: ::std::option::Option<bool>) -> Self {
         self.register_new_baseline = input;
         self
+    }
+    /// <p>This flag indicates if a newly calculated baseline can be accessed through step properties <code>BaselineUsedForDriftCheckConstraints</code> and <code>BaselineUsedForDriftCheckStatistics</code>. If it is set to <code>False</code>, the previous baseline of the configured check type must also be available. These can be accessed through the <code>BaselineUsedForDriftCheckConstraints</code> and <code> BaselineUsedForDriftCheckStatistics</code> properties. </p>
+    pub fn get_register_new_baseline(&self) -> &::std::option::Option<bool> {
+        &self.register_new_baseline
     }
     /// Consumes the builder and constructs a [`QualityCheckStepMetadata`](crate::types::QualityCheckStepMetadata).
     pub fn build(self) -> crate::types::QualityCheckStepMetadata {

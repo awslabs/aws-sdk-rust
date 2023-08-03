@@ -52,6 +52,12 @@ impl DescribeRoleAliasOutputBuilder {
         self.role_alias_description = input;
         self
     }
+    /// <p>The role alias description.</p>
+    pub fn get_role_alias_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::RoleAliasDescription> {
+        &self.role_alias_description
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

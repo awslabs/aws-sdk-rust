@@ -181,6 +181,11 @@ impl ImportImageTaskBuilder {
         self.architecture = input;
         self
     }
+    /// <p>The architecture of the virtual machine.</p>
+    /// <p>Valid values: <code>i386</code> | <code>x86_64</code> | <code>arm64</code> </p>
+    pub fn get_architecture(&self) -> &::std::option::Option<::std::string::String> {
+        &self.architecture
+    }
     /// <p>A description of the import task.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -191,6 +196,10 @@ impl ImportImageTaskBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the import task.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>Indicates whether the image is encrypted.</p>
     pub fn encrypted(mut self, input: bool) -> Self {
         self.encrypted = ::std::option::Option::Some(input);
@@ -200,6 +209,10 @@ impl ImportImageTaskBuilder {
     pub fn set_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.encrypted = input;
         self
+    }
+    /// <p>Indicates whether the image is encrypted.</p>
+    pub fn get_encrypted(&self) -> &::std::option::Option<bool> {
+        &self.encrypted
     }
     /// <p>The target hypervisor for the import task.</p>
     /// <p>Valid values: <code>xen</code> </p>
@@ -213,6 +226,11 @@ impl ImportImageTaskBuilder {
         self.hypervisor = input;
         self
     }
+    /// <p>The target hypervisor for the import task.</p>
+    /// <p>Valid values: <code>xen</code> </p>
+    pub fn get_hypervisor(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hypervisor
+    }
     /// <p>The ID of the Amazon Machine Image (AMI) of the imported virtual machine.</p>
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_id = ::std::option::Option::Some(input.into());
@@ -222,6 +240,10 @@ impl ImportImageTaskBuilder {
     pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_id = input;
         self
+    }
+    /// <p>The ID of the Amazon Machine Image (AMI) of the imported virtual machine.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_id
     }
     /// <p>The ID of the import image task.</p>
     pub fn import_task_id(
@@ -239,6 +261,10 @@ impl ImportImageTaskBuilder {
         self.import_task_id = input;
         self
     }
+    /// <p>The ID of the import image task.</p>
+    pub fn get_import_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.import_task_id
+    }
     /// <p>The identifier for the KMS key that was used to create the encrypted image.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -248,6 +274,10 @@ impl ImportImageTaskBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p>The identifier for the KMS key that was used to create the encrypted image.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// <p>The license type of the virtual machine.</p>
     pub fn license_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -259,6 +289,10 @@ impl ImportImageTaskBuilder {
         self.license_type = input;
         self
     }
+    /// <p>The license type of the virtual machine.</p>
+    pub fn get_license_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_type
+    }
     /// <p>The description string for the import image task.</p>
     pub fn platform(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform = ::std::option::Option::Some(input.into());
@@ -269,6 +303,10 @@ impl ImportImageTaskBuilder {
         self.platform = input;
         self
     }
+    /// <p>The description string for the import image task.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform
+    }
     /// <p>The percentage of progress of the import image task.</p>
     pub fn progress(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.progress = ::std::option::Option::Some(input.into());
@@ -278,6 +316,10 @@ impl ImportImageTaskBuilder {
     pub fn set_progress(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.progress = input;
         self
+    }
+    /// <p>The percentage of progress of the import image task.</p>
+    pub fn get_progress(&self) -> &::std::option::Option<::std::string::String> {
+        &self.progress
     }
     /// Appends an item to `snapshot_details`.
     ///
@@ -298,6 +340,12 @@ impl ImportImageTaskBuilder {
         self.snapshot_details = input;
         self
     }
+    /// <p>Information about the snapshots.</p>
+    pub fn get_snapshot_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SnapshotDetail>> {
+        &self.snapshot_details
+    }
     /// <p>A brief status for the import image task.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -307,6 +355,10 @@ impl ImportImageTaskBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>A brief status for the import image task.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>A descriptive status message for the import image task.</p>
     pub fn status_message(
@@ -323,6 +375,10 @@ impl ImportImageTaskBuilder {
     ) -> Self {
         self.status_message = input;
         self
+    }
+    /// <p>A descriptive status message for the import image task.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     /// Appends an item to `tags`.
     ///
@@ -342,6 +398,10 @@ impl ImportImageTaskBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags for the import image task.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Appends an item to `license_specifications`.
     ///
@@ -367,6 +427,14 @@ impl ImportImageTaskBuilder {
         self.license_specifications = input;
         self
     }
+    /// <p>The ARNs of the license configurations that are associated with the import image task.</p>
+    pub fn get_license_specifications(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::ImportImageLicenseConfigurationResponse>,
+    > {
+        &self.license_specifications
+    }
     /// <p>The usage operation value.</p>
     pub fn usage_operation(
         mut self,
@@ -383,6 +451,10 @@ impl ImportImageTaskBuilder {
         self.usage_operation = input;
         self
     }
+    /// <p>The usage operation value.</p>
+    pub fn get_usage_operation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.usage_operation
+    }
     /// <p>The boot mode of the virtual machine.</p>
     pub fn boot_mode(mut self, input: crate::types::BootModeValues) -> Self {
         self.boot_mode = ::std::option::Option::Some(input);
@@ -395,6 +467,10 @@ impl ImportImageTaskBuilder {
     ) -> Self {
         self.boot_mode = input;
         self
+    }
+    /// <p>The boot mode of the virtual machine.</p>
+    pub fn get_boot_mode(&self) -> &::std::option::Option<crate::types::BootModeValues> {
+        &self.boot_mode
     }
     /// Consumes the builder and constructs a [`ImportImageTask`](crate::types::ImportImageTask).
     pub fn build(self) -> crate::types::ImportImageTask {

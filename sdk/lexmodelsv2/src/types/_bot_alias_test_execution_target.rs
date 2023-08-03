@@ -56,6 +56,10 @@ impl BotAliasTestExecutionTargetBuilder {
         self.bot_id = input;
         self
     }
+    /// <p>The bot Id of the bot alias used in the test set execution.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
+    }
     /// <p>The bot alias Id of the bot alias used in the test set execution.</p>
     pub fn bot_alias_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_alias_id = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl BotAliasTestExecutionTargetBuilder {
         self.bot_alias_id = input;
         self
     }
+    /// <p>The bot alias Id of the bot alias used in the test set execution.</p>
+    pub fn get_bot_alias_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_alias_id
+    }
     /// <p>The locale Id of the bot alias used in the test set execution.</p>
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl BotAliasTestExecutionTargetBuilder {
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.locale_id = input;
         self
+    }
+    /// <p>The locale Id of the bot alias used in the test set execution.</p>
+    pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale_id
     }
     /// Consumes the builder and constructs a [`BotAliasTestExecutionTarget`](crate::types::BotAliasTestExecutionTarget).
     pub fn build(self) -> crate::types::BotAliasTestExecutionTarget {

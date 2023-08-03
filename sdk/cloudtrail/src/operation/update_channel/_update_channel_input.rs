@@ -55,6 +55,10 @@ impl UpdateChannelInputBuilder {
         self.channel = input;
         self
     }
+    /// <p>The ARN or ID (the ARN suffix) of the channel that you want to update.</p>
+    pub fn get_channel(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel
+    }
     /// Appends an item to `destinations`.
     ///
     /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
@@ -74,6 +78,12 @@ impl UpdateChannelInputBuilder {
         self.destinations = input;
         self
     }
+    /// <p>The ARNs of event data stores that you want to log events arriving through the channel.</p>
+    pub fn get_destinations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Destination>> {
+        &self.destinations
+    }
     /// <p> Changes the name of the channel. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -83,6 +93,10 @@ impl UpdateChannelInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p> Changes the name of the channel. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`UpdateChannelInput`](crate::operation::update_channel::UpdateChannelInput).
     pub fn build(

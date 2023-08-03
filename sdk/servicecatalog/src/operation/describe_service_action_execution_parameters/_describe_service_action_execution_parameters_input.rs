@@ -69,6 +69,10 @@ impl DescribeServiceActionExecutionParametersInputBuilder {
         self.provisioned_product_id = input;
         self
     }
+    /// <p>The identifier of the provisioned product.</p>
+    pub fn get_provisioned_product_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provisioned_product_id
+    }
     /// <p>The self-service action identifier.</p>
     pub fn service_action_id(
         mut self,
@@ -84,6 +88,10 @@ impl DescribeServiceActionExecutionParametersInputBuilder {
     ) -> Self {
         self.service_action_id = input;
         self
+    }
+    /// <p>The self-service action identifier.</p>
+    pub fn get_service_action_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_action_id
     }
     /// <p>The language code.</p>
     /// <ul>
@@ -108,6 +116,14 @@ impl DescribeServiceActionExecutionParametersInputBuilder {
     ) -> Self {
         self.accept_language = input;
         self
+    }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accept_language
     }
     /// Consumes the builder and constructs a [`DescribeServiceActionExecutionParametersInput`](crate::operation::describe_service_action_execution_parameters::DescribeServiceActionExecutionParametersInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_service_action_execution_parameters::DescribeServiceActionExecutionParametersInput, ::aws_smithy_http::operation::error::BuildError>{

@@ -36,6 +36,10 @@ impl GetSchemaFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetSchema as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_schema::builders::GetSchemaInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl GetSchemaFluentBuilder {
         self.inner = self.inner.set_collaboration_identifier(input);
         self
     }
+    /// <p>A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</p>
+    pub fn get_collaboration_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_collaboration_identifier()
+    }
     /// <p>The name of the relation to retrieve the schema for.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -133,5 +141,9 @@ impl GetSchemaFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the relation to retrieve the schema for.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
 }

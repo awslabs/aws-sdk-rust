@@ -38,6 +38,10 @@ impl ListStreamsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListStreams as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_streams::builders::ListStreamsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -120,6 +124,10 @@ impl ListStreamsFluentBuilder {
         self.inner = self.inner.set_table_name(input);
         self
     }
+    /// <p>If this parameter is provided, then only the streams associated with this table name are returned.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_table_name()
+    }
     /// <p>The maximum number of streams to return. The upper limit is 100.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -129,6 +137,10 @@ impl ListStreamsFluentBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
+    }
+    /// <p>The maximum number of streams to return. The upper limit is 100.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
     }
     /// <p>The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation. </p>
     pub fn exclusive_start_stream_arn(
@@ -145,5 +157,9 @@ impl ListStreamsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_exclusive_start_stream_arn(input);
         self
+    }
+    /// <p>The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation. </p>
+    pub fn get_exclusive_start_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_exclusive_start_stream_arn()
     }
 }

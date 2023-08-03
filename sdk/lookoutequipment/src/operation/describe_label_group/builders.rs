@@ -36,6 +36,12 @@ impl DescribeLabelGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeLabelGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_label_group::builders::DescribeLabelGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl DescribeLabelGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_label_group_name(input);
         self
+    }
+    /// <p> Returns the name of the label group. </p>
+    pub fn get_label_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_label_group_name()
     }
 }

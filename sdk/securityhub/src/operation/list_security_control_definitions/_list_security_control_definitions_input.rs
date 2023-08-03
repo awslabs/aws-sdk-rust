@@ -61,6 +61,10 @@ impl ListSecurityControlDefinitionsInputBuilder {
         self.standards_arn = input;
         self
     }
+    /// <p> The Amazon Resource Name (ARN) of the standard that you want to view controls for. </p>
+    pub fn get_standards_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.standards_arn
+    }
     /// <p> Optional pagination parameter. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl ListSecurityControlDefinitionsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p> Optional pagination parameter. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p> An optional parameter that limits the total results of the API response to the specified number. If this parameter isn't provided in the request, the results include the first 25 security controls that apply to the specified standard. The results also include a <code>NextToken</code> parameter that you can use in a subsequent API call to get the next 25 controls. This repeats until all controls for the standard are returned. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -80,6 +88,10 @@ impl ListSecurityControlDefinitionsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p> An optional parameter that limits the total results of the API response to the specified number. If this parameter isn't provided in the request, the results include the first 25 security controls that apply to the specified standard. The results also include a <code>NextToken</code> parameter that you can use in a subsequent API call to get the next 25 controls. This repeats until all controls for the standard are returned. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListSecurityControlDefinitionsInput`](crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsInput).
     pub fn build(

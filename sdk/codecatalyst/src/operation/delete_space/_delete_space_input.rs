@@ -39,6 +39,10 @@ impl DeleteSpaceInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the space. To retrieve a list of space names, use <code>ListSpaces</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DeleteSpaceInput`](crate::operation::delete_space::DeleteSpaceInput).
     pub fn build(
         self,

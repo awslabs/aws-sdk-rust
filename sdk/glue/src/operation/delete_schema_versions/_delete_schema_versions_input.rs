@@ -56,6 +56,10 @@ impl DeleteSchemaVersionsInputBuilder {
         self.schema_id = input;
         self
     }
+    /// <p>This is a wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>
+    pub fn get_schema_id(&self) -> &::std::option::Option<crate::types::SchemaId> {
+        &self.schema_id
+    }
     /// <p>A version range may be supplied which may be of the format:</p>
     /// <ul>
     /// <li> <p>a single version number, 5</p> </li>
@@ -73,6 +77,14 @@ impl DeleteSchemaVersionsInputBuilder {
     pub fn set_versions(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.versions = input;
         self
+    }
+    /// <p>A version range may be supplied which may be of the format:</p>
+    /// <ul>
+    /// <li> <p>a single version number, 5</p> </li>
+    /// <li> <p>a range, 5-8 : deletes versions 5, 6, 7, 8</p> </li>
+    /// </ul>
+    pub fn get_versions(&self) -> &::std::option::Option<::std::string::String> {
+        &self.versions
     }
     /// Consumes the builder and constructs a [`DeleteSchemaVersionsInput`](crate::operation::delete_schema_versions::DeleteSchemaVersionsInput).
     pub fn build(

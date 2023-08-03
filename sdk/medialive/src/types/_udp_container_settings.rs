@@ -43,6 +43,10 @@ impl UdpContainerSettingsBuilder {
         self.m2ts_settings = input;
         self
     }
+    /// M2ts Settings
+    pub fn get_m2ts_settings(&self) -> &::std::option::Option<crate::types::M2tsSettings> {
+        &self.m2ts_settings
+    }
     /// Consumes the builder and constructs a [`UdpContainerSettings`](crate::types::UdpContainerSettings).
     pub fn build(self) -> crate::types::UdpContainerSettings {
         crate::types::UdpContainerSettings {

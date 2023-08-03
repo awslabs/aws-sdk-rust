@@ -37,6 +37,12 @@ impl SubmitFeedbackFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SubmitFeedback as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::submit_feedback::builders::SubmitFeedbackInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +125,10 @@ impl SubmitFeedbackFluentBuilder {
         self.inner = self.inner.set_index_id(input);
         self
     }
+    /// <p>The identifier of the index that was queried.</p>
+    pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_index_id()
+    }
     /// <p>The identifier of the specific query for which you are submitting feedback. The query ID is returned in the response to the <code>Query</code> API.</p>
     pub fn query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_id(input.into());
@@ -128,6 +138,10 @@ impl SubmitFeedbackFluentBuilder {
     pub fn set_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query_id(input);
         self
+    }
+    /// <p>The identifier of the specific query for which you are submitting feedback. The query ID is returned in the response to the <code>Query</code> API.</p>
+    pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_query_id()
     }
     /// Appends an item to `ClickFeedbackItems`.
     ///
@@ -146,6 +160,12 @@ impl SubmitFeedbackFluentBuilder {
         self.inner = self.inner.set_click_feedback_items(input);
         self
     }
+    /// <p>Tells Amazon Kendra that a particular search result link was chosen by the user. </p>
+    pub fn get_click_feedback_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClickFeedback>> {
+        self.inner.get_click_feedback_items()
+    }
     /// Appends an item to `RelevanceFeedbackItems`.
     ///
     /// To override the contents of this collection use [`set_relevance_feedback_items`](Self::set_relevance_feedback_items).
@@ -162,5 +182,11 @@ impl SubmitFeedbackFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_relevance_feedback_items(input);
         self
+    }
+    /// <p>Provides Amazon Kendra with relevant or not relevant feedback for whether a particular item was relevant to the search.</p>
+    pub fn get_relevance_feedback_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RelevanceFeedback>> {
+        self.inner.get_relevance_feedback_items()
     }
 }

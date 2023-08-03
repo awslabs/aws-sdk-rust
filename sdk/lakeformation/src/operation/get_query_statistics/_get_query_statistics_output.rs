@@ -68,6 +68,12 @@ impl GetQueryStatisticsOutputBuilder {
         self.execution_statistics = input;
         self
     }
+    /// <p>An <code>ExecutionStatistics</code> structure containing execution statistics.</p>
+    pub fn get_execution_statistics(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExecutionStatistics> {
+        &self.execution_statistics
+    }
     /// <p>A <code>PlanningStatistics</code> structure containing query planning statistics.</p>
     pub fn planning_statistics(mut self, input: crate::types::PlanningStatistics) -> Self {
         self.planning_statistics = ::std::option::Option::Some(input);
@@ -81,6 +87,12 @@ impl GetQueryStatisticsOutputBuilder {
         self.planning_statistics = input;
         self
     }
+    /// <p>A <code>PlanningStatistics</code> structure containing query planning statistics.</p>
+    pub fn get_planning_statistics(
+        &self,
+    ) -> &::std::option::Option<crate::types::PlanningStatistics> {
+        &self.planning_statistics
+    }
     /// <p>The time that the query was submitted.</p>
     pub fn query_submission_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.query_submission_time = ::std::option::Option::Some(input);
@@ -93,6 +105,12 @@ impl GetQueryStatisticsOutputBuilder {
     ) -> Self {
         self.query_submission_time = input;
         self
+    }
+    /// <p>The time that the query was submitted.</p>
+    pub fn get_query_submission_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.query_submission_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -36,6 +36,12 @@ impl BatchGetApplicationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchGetApplications as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_get_applications::builders::BatchGetApplicationsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,5 +141,11 @@ impl BatchGetApplicationsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_application_names(input);
         self
+    }
+    /// <p>A list of application names separated by spaces. The maximum number of application names you can specify is 100.</p>
+    pub fn get_application_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_application_names()
     }
 }

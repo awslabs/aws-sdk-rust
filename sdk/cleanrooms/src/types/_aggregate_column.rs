@@ -57,6 +57,12 @@ impl AggregateColumnBuilder {
         self.column_names = input;
         self
     }
+    /// <p>Column names in configured table of aggregate columns.</p>
+    pub fn get_column_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.column_names
+    }
     /// <p>Aggregation function that can be applied to aggregate column in query.</p>
     pub fn function(mut self, input: crate::types::AggregateFunctionName) -> Self {
         self.function = ::std::option::Option::Some(input);
@@ -69,6 +75,10 @@ impl AggregateColumnBuilder {
     ) -> Self {
         self.function = input;
         self
+    }
+    /// <p>Aggregation function that can be applied to aggregate column in query.</p>
+    pub fn get_function(&self) -> &::std::option::Option<crate::types::AggregateFunctionName> {
+        &self.function
     }
     /// Consumes the builder and constructs a [`AggregateColumn`](crate::types::AggregateColumn).
     pub fn build(self) -> crate::types::AggregateColumn {

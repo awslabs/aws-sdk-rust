@@ -36,6 +36,10 @@ impl PutItemsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutItems as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_items::builders::PutItemsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl PutItemsFluentBuilder {
         self.inner = self.inner.set_dataset_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Items dataset you are adding the item or items to.</p>
+    pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dataset_arn()
+    }
     /// Appends an item to `items`.
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
@@ -134,5 +142,9 @@ impl PutItemsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_items(input);
         self
+    }
+    /// <p>A list of item data.</p>
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Item>> {
+        self.inner.get_items()
     }
 }

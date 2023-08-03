@@ -59,6 +59,12 @@ impl DescribeApplicationStateOutputBuilder {
         self.application_status = input;
         self
     }
+    /// <p>Status of the application - Not Started, In-Progress, Complete.</p>
+    pub fn get_application_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationStatus> {
+        &self.application_status
+    }
     /// <p>The timestamp when the application status was last updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
@@ -71,6 +77,10 @@ impl DescribeApplicationStateOutputBuilder {
     ) -> Self {
         self.last_updated_time = input;
         self
+    }
+    /// <p>The timestamp when the application status was last updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

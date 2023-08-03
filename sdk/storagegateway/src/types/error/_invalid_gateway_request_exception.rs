@@ -75,6 +75,10 @@ impl InvalidGatewayRequestExceptionBuilder {
         self.message = input;
         self
     }
+    /// <p>A human-readable message describing the error that occurred.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>A <code>StorageGatewayError</code> that provides more detail about the cause of the error.</p>
     pub fn error(mut self, input: crate::types::StorageGatewayError) -> Self {
         self.error = ::std::option::Option::Some(input);
@@ -87,6 +91,10 @@ impl InvalidGatewayRequestExceptionBuilder {
     ) -> Self {
         self.error = input;
         self
+    }
+    /// <p>A <code>StorageGatewayError</code> that provides more detail about the cause of the error.</p>
+    pub fn get_error(&self) -> &::std::option::Option<crate::types::StorageGatewayError> {
+        &self.error
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

@@ -57,6 +57,10 @@ impl SendSerialConsoleSshPublicKeyInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The ID of the EC2 instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The serial port of the EC2 instance. Currently only port 0 is supported.</p>
     /// <p>Default: 0</p>
     pub fn serial_port(mut self, input: i32) -> Self {
@@ -68,6 +72,11 @@ impl SendSerialConsoleSshPublicKeyInputBuilder {
     pub fn set_serial_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.serial_port = input;
         self
+    }
+    /// <p>The serial port of the EC2 instance. Currently only port 0 is supported.</p>
+    /// <p>Default: 0</p>
+    pub fn get_serial_port(&self) -> &::std::option::Option<i32> {
+        &self.serial_port
     }
     /// <p>The public key material. To use the public key, you must have the matching private key. For information about the supported key formats and lengths, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#how-to-generate-your-own-key-and-import-it-to-aws">Requirements for key pairs</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn ssh_public_key(
@@ -84,6 +93,10 @@ impl SendSerialConsoleSshPublicKeyInputBuilder {
     ) -> Self {
         self.ssh_public_key = input;
         self
+    }
+    /// <p>The public key material. To use the public key, you must have the matching private key. For information about the supported key formats and lengths, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#how-to-generate-your-own-key-and-import-it-to-aws">Requirements for key pairs</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn get_ssh_public_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ssh_public_key
     }
     /// Consumes the builder and constructs a [`SendSerialConsoleSshPublicKeyInput`](crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSshPublicKeyInput).
     pub fn build(

@@ -64,6 +64,12 @@ impl StartInstancesInputBuilder {
         self.instance_ids = input;
         self
     }
+    /// <p>The IDs of the instances.</p>
+    pub fn get_instance_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.instance_ids
+    }
     /// <p>Reserved.</p>
     pub fn additional_info(
         mut self,
@@ -80,6 +86,10 @@ impl StartInstancesInputBuilder {
         self.additional_info = input;
         self
     }
+    /// <p>Reserved.</p>
+    pub fn get_additional_info(&self) -> &::std::option::Option<::std::string::String> {
+        &self.additional_info
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -89,6 +99,10 @@ impl StartInstancesInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`StartInstancesInput`](crate::operation::start_instances::StartInstancesInput).
     pub fn build(

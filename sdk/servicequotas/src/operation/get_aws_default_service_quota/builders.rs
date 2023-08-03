@@ -36,6 +36,10 @@ impl GetAWSDefaultServiceQuotaFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetAWSDefaultServiceQuota as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_aws_default_service_quota::builders::GetAwsDefaultServiceQuotaInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl GetAWSDefaultServiceQuotaFluentBuilder {
         self.inner = self.inner.set_service_code(input);
         self
     }
+    /// <p>The service identifier.</p>
+    pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_code()
+    }
     /// <p>The quota identifier.</p>
     pub fn quota_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.quota_code(input.into());
@@ -135,5 +143,9 @@ impl GetAWSDefaultServiceQuotaFluentBuilder {
     pub fn set_quota_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_quota_code(input);
         self
+    }
+    /// <p>The quota identifier.</p>
+    pub fn get_quota_code(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_quota_code()
     }
 }

@@ -63,6 +63,12 @@ impl BatchGetDataQualityResultOutputBuilder {
         self.results = input;
         self
     }
+    /// <p>A list of <code>DataQualityResult</code> objects representing the data quality results.</p>
+    pub fn get_results(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataQualityResult>> {
+        &self.results
+    }
     /// Appends an item to `results_not_found`.
     ///
     /// To override the contents of this collection use [`set_results_not_found`](Self::set_results_not_found).
@@ -84,6 +90,12 @@ impl BatchGetDataQualityResultOutputBuilder {
     ) -> Self {
         self.results_not_found = input;
         self
+    }
+    /// <p>A list of result IDs for which results were not found.</p>
+    pub fn get_results_not_found(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.results_not_found
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

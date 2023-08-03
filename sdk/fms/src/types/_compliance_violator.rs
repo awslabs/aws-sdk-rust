@@ -72,6 +72,10 @@ impl ComplianceViolatorBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The resource ID.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// <p>The reason that the resource is not protected by the policy.</p>
     pub fn violation_reason(mut self, input: crate::types::ViolationReason) -> Self {
         self.violation_reason = ::std::option::Option::Some(input);
@@ -84,6 +88,10 @@ impl ComplianceViolatorBuilder {
     ) -> Self {
         self.violation_reason = input;
         self
+    }
+    /// <p>The reason that the resource is not protected by the policy.</p>
+    pub fn get_violation_reason(&self) -> &::std::option::Option<crate::types::ViolationReason> {
+        &self.violation_reason
     }
     /// <p>The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, <code>AWS::CloudFront::Distribution</code>, or <code>AWS::NetworkFirewall::FirewallPolicy</code>.</p>
     pub fn resource_type(
@@ -100,6 +108,10 @@ impl ComplianceViolatorBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, <code>AWS::CloudFront::Distribution</code>, or <code>AWS::NetworkFirewall::FirewallPolicy</code>.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
     }
     /// Adds a key-value pair to `metadata`.
     ///
@@ -125,6 +137,14 @@ impl ComplianceViolatorBuilder {
     ) -> Self {
         self.metadata = input;
         self
+    }
+    /// <p>Metadata about the resource that doesn't comply with the policy scope.</p>
+    pub fn get_metadata(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.metadata
     }
     /// Consumes the builder and constructs a [`ComplianceViolator`](crate::types::ComplianceViolator).
     pub fn build(self) -> crate::types::ComplianceViolator {

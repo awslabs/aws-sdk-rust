@@ -60,6 +60,10 @@ impl DevicePoolCompatibilityResultBuilder {
         self.device = input;
         self
     }
+    /// <p>The device (phone or tablet) to return information about.</p>
+    pub fn get_device(&self) -> &::std::option::Option<crate::types::Device> {
+        &self.device
+    }
     /// <p>Whether the result was compatible with the device pool.</p>
     pub fn compatible(mut self, input: bool) -> Self {
         self.compatible = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl DevicePoolCompatibilityResultBuilder {
     pub fn set_compatible(mut self, input: ::std::option::Option<bool>) -> Self {
         self.compatible = input;
         self
+    }
+    /// <p>Whether the result was compatible with the device pool.</p>
+    pub fn get_compatible(&self) -> &::std::option::Option<bool> {
+        &self.compatible
     }
     /// Appends an item to `incompatibility_messages`.
     ///
@@ -88,6 +96,12 @@ impl DevicePoolCompatibilityResultBuilder {
     ) -> Self {
         self.incompatibility_messages = input;
         self
+    }
+    /// <p>Information about the compatibility.</p>
+    pub fn get_incompatibility_messages(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IncompatibilityMessage>> {
+        &self.incompatibility_messages
     }
     /// Consumes the builder and constructs a [`DevicePoolCompatibilityResult`](crate::types::DevicePoolCompatibilityResult).
     pub fn build(self) -> crate::types::DevicePoolCompatibilityResult {

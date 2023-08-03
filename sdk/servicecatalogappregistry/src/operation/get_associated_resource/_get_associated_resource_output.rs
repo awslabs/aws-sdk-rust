@@ -48,6 +48,10 @@ impl GetAssociatedResourceOutputBuilder {
         self.resource = input;
         self
     }
+    /// <p>The resource associated with the application.</p>
+    pub fn get_resource(&self) -> &::std::option::Option<crate::types::Resource> {
+        &self.resource
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

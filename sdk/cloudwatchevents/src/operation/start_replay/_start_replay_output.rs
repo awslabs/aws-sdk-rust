@@ -70,6 +70,10 @@ impl StartReplayOutputBuilder {
         self.replay_arn = input;
         self
     }
+    /// <p>The ARN of the replay.</p>
+    pub fn get_replay_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replay_arn
+    }
     /// <p>The state of the replay.</p>
     pub fn state(mut self, input: crate::types::ReplayState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -80,6 +84,10 @@ impl StartReplayOutputBuilder {
         self.state = input;
         self
     }
+    /// <p>The state of the replay.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ReplayState> {
+        &self.state
+    }
     /// <p>The reason that the replay is in the state.</p>
     pub fn state_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_reason = ::std::option::Option::Some(input.into());
@@ -89,6 +97,10 @@ impl StartReplayOutputBuilder {
     pub fn set_state_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_reason = input;
         self
+    }
+    /// <p>The reason that the replay is in the state.</p>
+    pub fn get_state_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_reason
     }
     /// <p>The time at which the replay started.</p>
     pub fn replay_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -102,6 +114,10 @@ impl StartReplayOutputBuilder {
     ) -> Self {
         self.replay_start_time = input;
         self
+    }
+    /// <p>The time at which the replay started.</p>
+    pub fn get_replay_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.replay_start_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

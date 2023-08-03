@@ -93,6 +93,12 @@ impl RouteAnalysisCompletionBuilder {
         self.result_code = input;
         self
     }
+    /// <p>The result of the analysis. If the status is <code>NOT_CONNECTED</code>, check the reason code.</p>
+    pub fn get_result_code(
+        &self,
+    ) -> &::std::option::Option<crate::types::RouteAnalysisCompletionResultCode> {
+        &self.result_code
+    }
     /// <p>The reason code. Available only if a connection is not found.</p>
     /// <ul>
     /// <li> <p> <code>BLACKHOLE_ROUTE_FOR_DESTINATION_FOUND</code> - Found a black hole route with the destination CIDR block.</p> </li>
@@ -128,6 +134,23 @@ impl RouteAnalysisCompletionBuilder {
         self.reason_code = input;
         self
     }
+    /// <p>The reason code. Available only if a connection is not found.</p>
+    /// <ul>
+    /// <li> <p> <code>BLACKHOLE_ROUTE_FOR_DESTINATION_FOUND</code> - Found a black hole route with the destination CIDR block.</p> </li>
+    /// <li> <p> <code>CYCLIC_PATH_DETECTED</code> - Found the same resource multiple times while traversing the path.</p> </li>
+    /// <li> <p> <code>INACTIVE_ROUTE_FOR_DESTINATION_FOUND</code> - Found an inactive route with the destination CIDR block.</p> </li>
+    /// <li> <p> <code>MAX_HOPS_EXCEEDED</code> - Analysis exceeded 64 hops without finding the destination.</p> </li>
+    /// <li> <p> <code>ROUTE_NOT_FOUND</code> - Cannot find a route table with the destination CIDR block.</p> </li>
+    /// <li> <p> <code>TGW_ATTACH_ARN_NO_MATCH</code> - Found an attachment, but not with the correct destination ARN.</p> </li>
+    /// <li> <p> <code>TGW_ATTACH_NOT_FOUND</code> - Cannot find an attachment.</p> </li>
+    /// <li> <p> <code>TGW_ATTACH_NOT_IN_TGW</code> - Found an attachment, but not to the correct transit gateway.</p> </li>
+    /// <li> <p> <code>TGW_ATTACH_STABLE_ROUTE_TABLE_NOT_FOUND</code> - The state of the route table association is not associated.</p> </li>
+    /// </ul>
+    pub fn get_reason_code(
+        &self,
+    ) -> &::std::option::Option<crate::types::RouteAnalysisCompletionReasonCode> {
+        &self.reason_code
+    }
     /// Adds a key-value pair to `reason_context`.
     ///
     /// To override the contents of this collection use [`set_reason_context`](Self::set_reason_context).
@@ -152,6 +175,14 @@ impl RouteAnalysisCompletionBuilder {
     ) -> Self {
         self.reason_context = input;
         self
+    }
+    /// <p>Additional information about the path. Available only if a connection is not found.</p>
+    pub fn get_reason_context(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.reason_context
     }
     /// Consumes the builder and constructs a [`RouteAnalysisCompletion`](crate::types::RouteAnalysisCompletion).
     pub fn build(self) -> crate::types::RouteAnalysisCompletion {

@@ -47,6 +47,10 @@ impl GetLicenseInputBuilder {
         self.license_arn = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the license.</p>
+    pub fn get_license_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_arn
+    }
     /// <p>License version.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl GetLicenseInputBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>License version.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`GetLicenseInput`](crate::operation::get_license::GetLicenseInput).
     pub fn build(

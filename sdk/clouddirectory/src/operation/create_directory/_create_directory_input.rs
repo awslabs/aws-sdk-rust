@@ -47,6 +47,10 @@ impl CreateDirectoryInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the <code>Directory</code>. Should be unique per account, per region.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Name (ARN) of the published schema that will be copied into the data <code>Directory</code>. For more information, see <code>arns</code>.</p>
     pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_arn = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl CreateDirectoryInputBuilder {
     pub fn set_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the published schema that will be copied into the data <code>Directory</code>. For more information, see <code>arns</code>.</p>
+    pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_arn
     }
     /// Consumes the builder and constructs a [`CreateDirectoryInput`](crate::operation::create_directory::CreateDirectoryInput).
     pub fn build(

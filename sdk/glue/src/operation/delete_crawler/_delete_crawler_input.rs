@@ -39,6 +39,10 @@ impl DeleteCrawlerInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the crawler to remove.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DeleteCrawlerInput`](crate::operation::delete_crawler::DeleteCrawlerInput).
     pub fn build(
         self,

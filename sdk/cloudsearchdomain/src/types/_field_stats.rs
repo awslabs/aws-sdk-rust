@@ -104,6 +104,11 @@ impl FieldStatsBuilder {
         self.min = input;
         self
     }
+    /// <p>The minimum value found in the specified field in the result set.</p>
+    /// <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>min</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>min</code> is the string representation of a date with the format specified in <a href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>
+    pub fn get_min(&self) -> &::std::option::Option<::std::string::String> {
+        &self.min
+    }
     /// <p>The maximum value found in the specified field in the result set.</p>
     /// <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>max</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>max</code> is the string representation of a date with the format specified in <a href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>
     pub fn max(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -116,6 +121,11 @@ impl FieldStatsBuilder {
         self.max = input;
         self
     }
+    /// <p>The maximum value found in the specified field in the result set.</p>
+    /// <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>max</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>max</code> is the string representation of a date with the format specified in <a href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>
+    pub fn get_max(&self) -> &::std::option::Option<::std::string::String> {
+        &self.max
+    }
     /// <p>The number of documents that contain a value in the specified field in the result set.</p>
     pub fn count(mut self, input: i64) -> Self {
         self.count = ::std::option::Option::Some(input);
@@ -125,6 +135,10 @@ impl FieldStatsBuilder {
     pub fn set_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.count = input;
         self
+    }
+    /// <p>The number of documents that contain a value in the specified field in the result set.</p>
+    pub fn get_count(&self) -> &::std::option::Option<i64> {
+        &self.count
     }
     /// <p>The number of documents that do not contain a value in the specified field in the result set.</p>
     pub fn missing(mut self, input: i64) -> Self {
@@ -136,6 +150,10 @@ impl FieldStatsBuilder {
         self.missing = input;
         self
     }
+    /// <p>The number of documents that do not contain a value in the specified field in the result set.</p>
+    pub fn get_missing(&self) -> &::std::option::Option<i64> {
+        &self.missing
+    }
     /// <p>The sum of the field values across the documents in the result set. <code>null</code> for date fields.</p>
     pub fn sum(mut self, input: f64) -> Self {
         self.sum = ::std::option::Option::Some(input);
@@ -146,6 +164,10 @@ impl FieldStatsBuilder {
         self.sum = input;
         self
     }
+    /// <p>The sum of the field values across the documents in the result set. <code>null</code> for date fields.</p>
+    pub fn get_sum(&self) -> &::std::option::Option<f64> {
+        &self.sum
+    }
     /// <p>The sum of all field values in the result set squared.</p>
     pub fn sum_of_squares(mut self, input: f64) -> Self {
         self.sum_of_squares = ::std::option::Option::Some(input);
@@ -155,6 +177,10 @@ impl FieldStatsBuilder {
     pub fn set_sum_of_squares(mut self, input: ::std::option::Option<f64>) -> Self {
         self.sum_of_squares = input;
         self
+    }
+    /// <p>The sum of all field values in the result set squared.</p>
+    pub fn get_sum_of_squares(&self) -> &::std::option::Option<f64> {
+        &self.sum_of_squares
     }
     /// <p>The average of the values found in the specified field in the result set.</p>
     /// <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>mean</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>mean</code> is the string representation of a date with the format specified in <a href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>
@@ -168,6 +194,11 @@ impl FieldStatsBuilder {
         self.mean = input;
         self
     }
+    /// <p>The average of the values found in the specified field in the result set.</p>
+    /// <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>mean</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>mean</code> is the string representation of a date with the format specified in <a href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>
+    pub fn get_mean(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mean
+    }
     /// <p>The standard deviation of the values in the specified field in the result set.</p>
     pub fn stddev(mut self, input: f64) -> Self {
         self.stddev = ::std::option::Option::Some(input);
@@ -177,6 +208,10 @@ impl FieldStatsBuilder {
     pub fn set_stddev(mut self, input: ::std::option::Option<f64>) -> Self {
         self.stddev = input;
         self
+    }
+    /// <p>The standard deviation of the values in the specified field in the result set.</p>
+    pub fn get_stddev(&self) -> &::std::option::Option<f64> {
+        &self.stddev
     }
     /// Consumes the builder and constructs a [`FieldStats`](crate::types::FieldStats).
     pub fn build(self) -> crate::types::FieldStats {

@@ -67,6 +67,10 @@ impl GetDisksOutputBuilder {
         self.disks = input;
         self
     }
+    /// <p>An array of objects containing information about all block storage disks.</p>
+    pub fn get_disks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Disk>> {
+        &self.disks
+    }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetDisks</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
@@ -86,6 +90,12 @@ impl GetDisksOutputBuilder {
     ) -> Self {
         self.next_page_token = input;
         self
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>To get the next page of results, perform another <code>GetDisks</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_page_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -48,6 +48,10 @@ impl StatusReportBuilder {
         self.status = input;
         self
     }
+    /// <p>A description of the status of the health check endpoint as reported by one of the Amazon Route 53 health checkers.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>The date and time that the health checker performed the health check in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC). For example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751 UTC.</p>
     pub fn checked_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.checked_time = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl StatusReportBuilder {
     ) -> Self {
         self.checked_time = input;
         self
+    }
+    /// <p>The date and time that the health checker performed the health check in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC). For example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751 UTC.</p>
+    pub fn get_checked_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.checked_time
     }
     /// Consumes the builder and constructs a [`StatusReport`](crate::types::StatusReport).
     pub fn build(self) -> crate::types::StatusReport {

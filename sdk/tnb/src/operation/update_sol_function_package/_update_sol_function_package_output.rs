@@ -49,6 +49,10 @@ impl UpdateSolFunctionPackageOutputBuilder {
         self.operational_state = input;
         self
     }
+    /// <p>Operational state of the function package.</p>
+    pub fn get_operational_state(&self) -> &::std::option::Option<crate::types::OperationalState> {
+        &self.operational_state
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

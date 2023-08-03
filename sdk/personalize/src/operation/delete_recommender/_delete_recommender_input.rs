@@ -46,6 +46,10 @@ impl DeleteRecommenderInputBuilder {
         self.recommender_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the recommender to delete.</p>
+    pub fn get_recommender_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommender_arn
+    }
     /// Consumes the builder and constructs a [`DeleteRecommenderInput`](crate::operation::delete_recommender::DeleteRecommenderInput).
     pub fn build(
         self,

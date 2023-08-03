@@ -87,6 +87,10 @@ impl DescribeVpcEndpointConnectionNotificationsInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>The ID of the notification.</p>
     pub fn connection_notification_id(
         mut self,
@@ -102,6 +106,10 @@ impl DescribeVpcEndpointConnectionNotificationsInputBuilder {
     ) -> Self {
         self.connection_notification_id = input;
         self
+    }
+    /// <p>The ID of the notification.</p>
+    pub fn get_connection_notification_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_notification_id
     }
     /// Appends an item to `filters`.
     ///
@@ -138,6 +146,18 @@ impl DescribeVpcEndpointConnectionNotificationsInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>The filters.</p>
+    /// <ul>
+    /// <li> <p> <code>connection-notification-arn</code> - The ARN of the SNS topic for the notification.</p> </li>
+    /// <li> <p> <code>connection-notification-id</code> - The ID of the notification.</p> </li>
+    /// <li> <p> <code>connection-notification-state</code> - The state of the notification (<code>Enabled</code> | <code>Disabled</code>).</p> </li>
+    /// <li> <p> <code>connection-notification-type</code> - The type of notification (<code>Topic</code>).</p> </li>
+    /// <li> <p> <code>service-id</code> - The ID of the endpoint service.</p> </li>
+    /// <li> <p> <code>vpc-endpoint-id</code> - The ID of the VPC endpoint.</p> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
+    }
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another request with the returned <code>NextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -148,6 +168,10 @@ impl DescribeVpcEndpointConnectionNotificationsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another request with the returned <code>NextToken</code> value.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token to request the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -157,6 +181,10 @@ impl DescribeVpcEndpointConnectionNotificationsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token to request the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeVpcEndpointConnectionNotificationsInput`](crate::operation::describe_vpc_endpoint_connection_notifications::DescribeVpcEndpointConnectionNotificationsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_vpc_endpoint_connection_notifications::DescribeVpcEndpointConnectionNotificationsInput, ::aws_smithy_http::operation::error::BuildError>{

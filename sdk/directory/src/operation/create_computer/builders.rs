@@ -36,6 +36,12 @@ impl CreateComputerFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateComputer as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_computer::builders::CreateComputerInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl CreateComputerFluentBuilder {
         self.inner = self.inner.set_directory_id(input);
         self
     }
+    /// <p>The identifier of the directory in which to create the computer account.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_id()
+    }
     /// <p>The name of the computer account.</p>
     pub fn computer_name(
         mut self,
@@ -134,6 +144,10 @@ impl CreateComputerFluentBuilder {
         self.inner = self.inner.set_computer_name(input);
         self
     }
+    /// <p>The name of the computer account.</p>
+    pub fn get_computer_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_computer_name()
+    }
     /// <p>A one-time password that is used to join the computer to the directory. You should generate a random, strong password to use for this parameter.</p>
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.password(input.into());
@@ -143,6 +157,10 @@ impl CreateComputerFluentBuilder {
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_password(input);
         self
+    }
+    /// <p>A one-time password that is used to join the computer to the directory. You should generate a random, strong password to use for this parameter.</p>
+    pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_password()
     }
     /// <p>The fully-qualified distinguished name of the organizational unit to place the computer account in.</p>
     pub fn organizational_unit_distinguished_name(
@@ -162,6 +180,12 @@ impl CreateComputerFluentBuilder {
         self.inner = self.inner.set_organizational_unit_distinguished_name(input);
         self
     }
+    /// <p>The fully-qualified distinguished name of the organizational unit to place the computer account in.</p>
+    pub fn get_organizational_unit_distinguished_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organizational_unit_distinguished_name()
+    }
     /// Appends an item to `ComputerAttributes`.
     ///
     /// To override the contents of this collection use [`set_computer_attributes`](Self::set_computer_attributes).
@@ -178,5 +202,11 @@ impl CreateComputerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_computer_attributes(input);
         self
+    }
+    /// <p>An array of <code>Attribute</code> objects that contain any LDAP attributes to apply to the computer account.</p>
+    pub fn get_computer_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+        self.inner.get_computer_attributes()
     }
 }

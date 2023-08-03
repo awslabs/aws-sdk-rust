@@ -54,6 +54,10 @@ impl GetSpeakerSearchTaskInputBuilder {
         self.voice_connector_id = input;
         self
     }
+    /// <p>The Voice Connector ID.</p>
+    pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_connector_id
+    }
     /// <p>The ID of the speaker search task.</p>
     pub fn speaker_search_task_id(
         mut self,
@@ -69,6 +73,10 @@ impl GetSpeakerSearchTaskInputBuilder {
     ) -> Self {
         self.speaker_search_task_id = input;
         self
+    }
+    /// <p>The ID of the speaker search task.</p>
+    pub fn get_speaker_search_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.speaker_search_task_id
     }
     /// Consumes the builder and constructs a [`GetSpeakerSearchTaskInput`](crate::operation::get_speaker_search_task::GetSpeakerSearchTaskInput).
     pub fn build(

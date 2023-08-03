@@ -125,6 +125,12 @@ impl DescribeAuditMitigationActionsTaskOutputBuilder {
         self.task_status = input;
         self
     }
+    /// <p>The current status of the task.</p>
+    pub fn get_task_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuditMitigationActionsTaskStatus> {
+        &self.task_status
+    }
     /// <p>The date and time when the task was started.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -138,6 +144,10 @@ impl DescribeAuditMitigationActionsTaskOutputBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The date and time when the task was started.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The date and time when the task was completed or canceled.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -150,6 +160,10 @@ impl DescribeAuditMitigationActionsTaskOutputBuilder {
     ) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>The date and time when the task was completed or canceled.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// Adds a key-value pair to `task_statistics`.
     ///
@@ -179,6 +193,17 @@ impl DescribeAuditMitigationActionsTaskOutputBuilder {
         self.task_statistics = input;
         self
     }
+    /// <p>Aggregate counts of the results when the mitigation tasks were applied to the findings for this audit mitigation actions task.</p>
+    pub fn get_task_statistics(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::TaskStatisticsForAuditCheck,
+        >,
+    > {
+        &self.task_statistics
+    }
     /// <p>Identifies the findings to which the mitigation actions are applied. This can be by audit checks, by audit task, or a set of findings.</p>
     pub fn target(mut self, input: crate::types::AuditMitigationActionsTaskTarget) -> Self {
         self.target = ::std::option::Option::Some(input);
@@ -191,6 +216,12 @@ impl DescribeAuditMitigationActionsTaskOutputBuilder {
     ) -> Self {
         self.target = input;
         self
+    }
+    /// <p>Identifies the findings to which the mitigation actions are applied. This can be by audit checks, by audit task, or a set of findings.</p>
+    pub fn get_target(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuditMitigationActionsTaskTarget> {
+        &self.target
     }
     /// Adds a key-value pair to `audit_check_to_actions_mapping`.
     ///
@@ -220,6 +251,14 @@ impl DescribeAuditMitigationActionsTaskOutputBuilder {
         self.audit_check_to_actions_mapping = input;
         self
     }
+    /// <p>Specifies the mitigation actions that should be applied to specific audit checks.</p>
+    pub fn get_audit_check_to_actions_mapping(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
+    > {
+        &self.audit_check_to_actions_mapping
+    }
     /// Appends an item to `actions_definition`.
     ///
     /// To override the contents of this collection use [`set_actions_definition`](Self::set_actions_definition).
@@ -238,6 +277,12 @@ impl DescribeAuditMitigationActionsTaskOutputBuilder {
     ) -> Self {
         self.actions_definition = input;
         self
+    }
+    /// <p>Specifies the mitigation actions and their parameters that are applied as part of this task.</p>
+    pub fn get_actions_definition(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MitigationAction>> {
+        &self.actions_definition
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

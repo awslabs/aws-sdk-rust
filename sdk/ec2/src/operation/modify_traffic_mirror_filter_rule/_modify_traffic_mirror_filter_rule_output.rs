@@ -55,6 +55,12 @@ impl ModifyTrafficMirrorFilterRuleOutputBuilder {
         self.traffic_mirror_filter_rule = input;
         self
     }
+    /// <p>Modifies a Traffic Mirror rule.</p>
+    pub fn get_traffic_mirror_filter_rule(
+        &self,
+    ) -> &::std::option::Option<crate::types::TrafficMirrorFilterRule> {
+        &self.traffic_mirror_filter_rule
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

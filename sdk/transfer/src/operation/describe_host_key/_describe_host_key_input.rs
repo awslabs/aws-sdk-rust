@@ -47,6 +47,10 @@ impl DescribeHostKeyInputBuilder {
         self.server_id = input;
         self
     }
+    /// <p>The identifier of the server that contains the host key that you want described.</p>
+    pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_id
+    }
     /// <p>The identifier of the host key that you want described.</p>
     pub fn host_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host_key_id = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl DescribeHostKeyInputBuilder {
     pub fn set_host_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.host_key_id = input;
         self
+    }
+    /// <p>The identifier of the host key that you want described.</p>
+    pub fn get_host_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host_key_id
     }
     /// Consumes the builder and constructs a [`DescribeHostKeyInput`](crate::operation::describe_host_key::DescribeHostKeyInput).
     pub fn build(

@@ -36,6 +36,13 @@ impl DescribeCodeCoveragesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeCodeCoverages as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_code_coverages::builders::DescribeCodeCoveragesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +144,10 @@ impl DescribeCodeCoveragesFluentBuilder {
         self.inner = self.inner.set_report_arn(input);
         self
     }
+    /// <p> The ARN of the report for which test cases are returned. </p>
+    pub fn get_report_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_report_arn()
+    }
     /// <p>The <code>nextToken</code> value returned from a previous call to <code>DescribeCodeCoverages</code>. This specifies the next item to return. To return the beginning of the list, exclude this parameter.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -147,6 +158,10 @@ impl DescribeCodeCoveragesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The <code>nextToken</code> value returned from a previous call to <code>DescribeCodeCoverages</code>. This specifies the next item to return. To return the beginning of the list, exclude this parameter.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -156,6 +171,10 @@ impl DescribeCodeCoveragesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>Specifies if the results are sorted in ascending or descending order.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrderType) -> Self {
@@ -169,6 +188,10 @@ impl DescribeCodeCoveragesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
+    }
+    /// <p>Specifies if the results are sorted in ascending or descending order.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrderType> {
+        self.inner.get_sort_order()
     }
     /// <p>Specifies how the results are sorted. Possible values are:</p>
     /// <dl>
@@ -211,6 +234,26 @@ impl DescribeCodeCoveragesFluentBuilder {
         self.inner = self.inner.set_sort_by(input);
         self
     }
+    /// <p>Specifies how the results are sorted. Possible values are:</p>
+    /// <dl>
+    /// <dt>
+    /// FILE_PATH
+    /// </dt>
+    /// <dd>
+    /// <p>The results are sorted by file path.</p>
+    /// </dd>
+    /// <dt>
+    /// LINE_COVERAGE_PERCENTAGE
+    /// </dt>
+    /// <dd>
+    /// <p>The results are sorted by the percentage of lines that are covered.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_sort_by(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReportCodeCoverageSortByType> {
+        self.inner.get_sort_by()
+    }
     /// <p>The minimum line coverage percentage to report.</p>
     pub fn min_line_coverage_percentage(mut self, input: f64) -> Self {
         self.inner = self.inner.min_line_coverage_percentage(input);
@@ -221,6 +264,10 @@ impl DescribeCodeCoveragesFluentBuilder {
         self.inner = self.inner.set_min_line_coverage_percentage(input);
         self
     }
+    /// <p>The minimum line coverage percentage to report.</p>
+    pub fn get_min_line_coverage_percentage(&self) -> &::std::option::Option<f64> {
+        self.inner.get_min_line_coverage_percentage()
+    }
     /// <p>The maximum line coverage percentage to report.</p>
     pub fn max_line_coverage_percentage(mut self, input: f64) -> Self {
         self.inner = self.inner.max_line_coverage_percentage(input);
@@ -230,5 +277,9 @@ impl DescribeCodeCoveragesFluentBuilder {
     pub fn set_max_line_coverage_percentage(mut self, input: ::std::option::Option<f64>) -> Self {
         self.inner = self.inner.set_max_line_coverage_percentage(input);
         self
+    }
+    /// <p>The maximum line coverage percentage to report.</p>
+    pub fn get_max_line_coverage_percentage(&self) -> &::std::option::Option<f64> {
+        self.inner.get_max_line_coverage_percentage()
     }
 }

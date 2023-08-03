@@ -57,6 +57,12 @@ impl DescribeBundleTasksOutputBuilder {
         self.bundle_tasks = input;
         self
     }
+    /// <p>Information about the bundle tasks.</p>
+    pub fn get_bundle_tasks(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BundleTask>> {
+        &self.bundle_tasks
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

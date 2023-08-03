@@ -64,6 +64,10 @@ impl ContentRedactionBuilder {
         self.redaction_type = input;
         self
     }
+    /// <p>Specify the category of information you want to redact; <code>PII</code> (personally identifiable information) is the only valid value. You can use <code>PiiEntityTypes</code> to choose which types of PII you want to redact.</p>
+    pub fn get_redaction_type(&self) -> &::std::option::Option<crate::types::RedactionType> {
+        &self.redaction_type
+    }
     /// <p>Specify if you want only a redacted transcript, or if you want a redacted and an unredacted transcript.</p>
     /// <p>When you choose <code>redacted</code> Amazon Transcribe creates only a redacted transcript.</p>
     /// <p>When you choose <code>redacted_and_unredacted</code> Amazon Transcribe creates a redacted and an unredacted transcript (as two separate files).</p>
@@ -80,6 +84,12 @@ impl ContentRedactionBuilder {
     ) -> Self {
         self.redaction_output = input;
         self
+    }
+    /// <p>Specify if you want only a redacted transcript, or if you want a redacted and an unredacted transcript.</p>
+    /// <p>When you choose <code>redacted</code> Amazon Transcribe creates only a redacted transcript.</p>
+    /// <p>When you choose <code>redacted_and_unredacted</code> Amazon Transcribe creates a redacted and an unredacted transcript (as two separate files).</p>
+    pub fn get_redaction_output(&self) -> &::std::option::Option<crate::types::RedactionOutput> {
+        &self.redaction_output
     }
     /// Appends an item to `pii_entity_types`.
     ///
@@ -99,6 +109,12 @@ impl ContentRedactionBuilder {
     ) -> Self {
         self.pii_entity_types = input;
         self
+    }
+    /// <p>Specify which types of personally identifiable information (PII) you want to redact in your transcript. You can include as many types as you'd like, or you can select <code>ALL</code>.</p>
+    pub fn get_pii_entity_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PiiEntityType>> {
+        &self.pii_entity_types
     }
     /// Consumes the builder and constructs a [`ContentRedaction`](crate::types::ContentRedaction).
     pub fn build(self) -> crate::types::ContentRedaction {

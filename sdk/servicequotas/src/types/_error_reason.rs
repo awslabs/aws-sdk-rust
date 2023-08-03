@@ -72,6 +72,16 @@ impl ErrorReasonBuilder {
         self.error_code = input;
         self
     }
+    /// <p>Service Quotas returns the following error values:</p>
+    /// <ul>
+    /// <li> <p> <code>DEPENDENCY_ACCESS_DENIED_ERROR</code> - The caller does not have the required permissions to complete the action. To resolve the error, you must have permission to access the service or quota.</p> </li>
+    /// <li> <p> <code>DEPENDENCY_THROTTLING_ERROR</code> - The service is throttling Service Quotas.</p> </li>
+    /// <li> <p> <code>DEPENDENCY_SERVICE_ERROR</code> - The service is not available.</p> </li>
+    /// <li> <p> <code>SERVICE_QUOTA_NOT_AVAILABLE_ERROR</code> - There was an error in Service Quotas.</p> </li>
+    /// </ul>
+    pub fn get_error_code(&self) -> &::std::option::Option<crate::types::ErrorCode> {
+        &self.error_code
+    }
     /// <p>The error message.</p>
     pub fn error_message(
         mut self,
@@ -87,6 +97,10 @@ impl ErrorReasonBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>The error message.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`ErrorReason`](crate::types::ErrorReason).
     pub fn build(self) -> crate::types::ErrorReason {

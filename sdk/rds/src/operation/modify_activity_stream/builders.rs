@@ -37,6 +37,12 @@ impl ModifyActivityStreamFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyActivityStream as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::modify_activity_stream::builders::ModifyActivityStreamInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl ModifyActivityStreamFluentBuilder {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the RDS for Oracle or Microsoft SQL Server DB instance. For example, <code>arn:aws:rds:us-east-1:12345667890:instance:my-orcl-db</code>.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
+    }
     /// <p>The audit policy state. When a policy is unlocked, it is read/write. When it is locked, it is read-only. You can edit your audit policy only when the activity stream is unlocked or stopped.</p>
     pub fn audit_policy_state(mut self, input: crate::types::AuditPolicyState) -> Self {
         self.inner = self.inner.audit_policy_state(input);
@@ -139,5 +149,9 @@ impl ModifyActivityStreamFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_audit_policy_state(input);
         self
+    }
+    /// <p>The audit policy state. When a policy is unlocked, it is read/write. When it is locked, it is read-only. You can edit your audit policy only when the activity stream is unlocked or stopped.</p>
+    pub fn get_audit_policy_state(&self) -> &::std::option::Option<crate::types::AuditPolicyState> {
+        self.inner.get_audit_policy_state()
     }
 }

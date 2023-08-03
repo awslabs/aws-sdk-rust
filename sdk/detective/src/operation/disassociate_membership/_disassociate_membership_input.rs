@@ -45,6 +45,11 @@ impl DisassociateMembershipInputBuilder {
         self.graph_arn = input;
         self
     }
+    /// <p>The ARN of the behavior graph to remove the member account from.</p>
+    /// <p>The member account's member status in the behavior graph must be <code>ENABLED</code>.</p>
+    pub fn get_graph_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.graph_arn
+    }
     /// Consumes the builder and constructs a [`DisassociateMembershipInput`](crate::operation::disassociate_membership::DisassociateMembershipInput).
     pub fn build(
         self,

@@ -71,6 +71,10 @@ impl CreateWorkerFleetOutputBuilder {
         self.arn = input;
         self
     }
+    /// Full ARN of the worker fleet.
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Filters access by the worker fleet's identifier
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl CreateWorkerFleetOutputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// Filters access by the worker fleet's identifier
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Timestamp at which the resource was created.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -94,6 +102,10 @@ impl CreateWorkerFleetOutputBuilder {
         self.created_at = input;
         self
     }
+    /// Timestamp at which the resource was created.
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// Timestamp at which the resource was last updated.
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
@@ -106,6 +118,10 @@ impl CreateWorkerFleetOutputBuilder {
     ) -> Self {
         self.updated_at = input;
         self
+    }
+    /// Timestamp at which the resource was last updated.
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -46,6 +46,10 @@ impl CreateHitOutputBuilder {
         self.hit = input;
         self
     }
+    /// <p> Contains the newly created HIT data. For a description of the HIT data structure as it appears in responses, see the HIT Data Structure documentation. </p>
+    pub fn get_hit(&self) -> &::std::option::Option<crate::types::Hit> {
+        &self.hit
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

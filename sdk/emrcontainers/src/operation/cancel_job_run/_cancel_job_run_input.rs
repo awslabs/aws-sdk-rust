@@ -47,6 +47,10 @@ impl CancelJobRunInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the job run to cancel.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The ID of the virtual cluster for which the job run will be canceled.</p>
     pub fn virtual_cluster_id(
         mut self,
@@ -62,6 +66,10 @@ impl CancelJobRunInputBuilder {
     ) -> Self {
         self.virtual_cluster_id = input;
         self
+    }
+    /// <p>The ID of the virtual cluster for which the job run will be canceled.</p>
+    pub fn get_virtual_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_cluster_id
     }
     /// Consumes the builder and constructs a [`CancelJobRunInput`](crate::operation::cancel_job_run::CancelJobRunInput).
     pub fn build(

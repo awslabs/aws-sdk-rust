@@ -70,6 +70,10 @@ impl GetDataCellsFilterInputBuilder {
         self.table_catalog_id = input;
         self
     }
+    /// <p>The ID of the catalog to which the table belongs.</p>
+    pub fn get_table_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_catalog_id
+    }
     /// <p>A database in the Glue Data Catalog.</p>
     pub fn database_name(
         mut self,
@@ -86,6 +90,10 @@ impl GetDataCellsFilterInputBuilder {
         self.database_name = input;
         self
     }
+    /// <p>A database in the Glue Data Catalog.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>A table in the database.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
@@ -96,6 +104,10 @@ impl GetDataCellsFilterInputBuilder {
         self.table_name = input;
         self
     }
+    /// <p>A table in the database.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
+    }
     /// <p>The name given by the user to the data filter cell.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -105,6 +117,10 @@ impl GetDataCellsFilterInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name given by the user to the data filter cell.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`GetDataCellsFilterInput`](crate::operation::get_data_cells_filter::GetDataCellsFilterInput).
     pub fn build(

@@ -36,6 +36,13 @@ impl StopPipelineExecutionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StopPipelineExecution as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::stop_pipeline_execution::builders::StopPipelineExecutionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl StopPipelineExecutionFluentBuilder {
         self.inner = self.inner.set_pipeline_name(input);
         self
     }
+    /// <p>The name of the pipeline to stop.</p>
+    pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pipeline_name()
+    }
     /// <p>The ID of the pipeline execution to be stopped in the current stage. Use the <code>GetPipelineState</code> action to retrieve the current pipelineExecutionId.</p>
     pub fn pipeline_execution_id(
         mut self,
@@ -148,6 +159,10 @@ impl StopPipelineExecutionFluentBuilder {
         self.inner = self.inner.set_pipeline_execution_id(input);
         self
     }
+    /// <p>The ID of the pipeline execution to be stopped in the current stage. Use the <code>GetPipelineState</code> action to retrieve the current pipelineExecutionId.</p>
+    pub fn get_pipeline_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pipeline_execution_id()
+    }
     /// <p>Use this option to stop the pipeline execution by abandoning, rather than finishing, in-progress actions.</p> <note>
     /// <p>This option can lead to failed or out-of-sequence tasks.</p>
     /// </note>
@@ -162,6 +177,12 @@ impl StopPipelineExecutionFluentBuilder {
         self.inner = self.inner.set_abandon(input);
         self
     }
+    /// <p>Use this option to stop the pipeline execution by abandoning, rather than finishing, in-progress actions.</p> <note>
+    /// <p>This option can lead to failed or out-of-sequence tasks.</p>
+    /// </note>
+    pub fn get_abandon(&self) -> &::std::option::Option<bool> {
+        self.inner.get_abandon()
+    }
     /// <p>Use this option to enter comments, such as the reason the pipeline was stopped.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reason(input.into());
@@ -171,5 +192,9 @@ impl StopPipelineExecutionFluentBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reason(input);
         self
+    }
+    /// <p>Use this option to enter comments, such as the reason the pipeline was stopped.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reason()
     }
 }

@@ -55,6 +55,10 @@ impl DescribeLagsOutputBuilder {
         self.lags = input;
         self
     }
+    /// <p>The LAGs.</p>
+    pub fn get_lags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Lag>> {
+        &self.lags
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

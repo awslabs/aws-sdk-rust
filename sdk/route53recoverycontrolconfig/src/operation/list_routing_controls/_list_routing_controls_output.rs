@@ -57,6 +57,10 @@ impl ListRoutingControlsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token that identifies which batch of results you want to see.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `routing_controls`.
     ///
     /// To override the contents of this collection use [`set_routing_controls`](Self::set_routing_controls).
@@ -75,6 +79,12 @@ impl ListRoutingControlsOutputBuilder {
     ) -> Self {
         self.routing_controls = input;
         self
+    }
+    /// <p>An array of routing controls.</p>
+    pub fn get_routing_controls(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingControl>> {
+        &self.routing_controls
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

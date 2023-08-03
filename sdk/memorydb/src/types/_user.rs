@@ -88,6 +88,10 @@ impl UserBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the user</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Indicates the user status. Can be "active", "modifying" or "deleting".</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -97,6 +101,10 @@ impl UserBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Indicates the user status. Can be "active", "modifying" or "deleting".</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>Access permissions string used for this user.</p>
     pub fn access_string(
@@ -113,6 +121,10 @@ impl UserBuilder {
     ) -> Self {
         self.access_string = input;
         self
+    }
+    /// <p>Access permissions string used for this user.</p>
+    pub fn get_access_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_string
     }
     /// Appends an item to `acl_names`.
     ///
@@ -133,6 +145,10 @@ impl UserBuilder {
         self.acl_names = input;
         self
     }
+    /// <p>The names of the Access Control Lists to which the user belongs</p>
+    pub fn get_acl_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.acl_names
+    }
     /// <p>The minimum engine version supported for the user</p>
     pub fn minimum_engine_version(
         mut self,
@@ -149,6 +165,10 @@ impl UserBuilder {
         self.minimum_engine_version = input;
         self
     }
+    /// <p>The minimum engine version supported for the user</p>
+    pub fn get_minimum_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.minimum_engine_version
+    }
     /// <p>Denotes whether the user requires a password to authenticate.</p>
     pub fn authentication(mut self, input: crate::types::Authentication) -> Self {
         self.authentication = ::std::option::Option::Some(input);
@@ -162,6 +182,10 @@ impl UserBuilder {
         self.authentication = input;
         self
     }
+    /// <p>Denotes whether the user requires a password to authenticate.</p>
+    pub fn get_authentication(&self) -> &::std::option::Option<crate::types::Authentication> {
+        &self.authentication
+    }
     /// <p>The Amazon Resource Name (ARN) of the user. </p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -171,6 +195,10 @@ impl UserBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the user. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`User`](crate::types::User).
     pub fn build(self) -> crate::types::User {

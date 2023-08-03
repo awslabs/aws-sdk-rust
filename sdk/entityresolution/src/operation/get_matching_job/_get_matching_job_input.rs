@@ -53,6 +53,10 @@ impl GetMatchingJobInputBuilder {
         self.workflow_name = input;
         self
     }
+    /// <p>The name of the workflow.</p>
+    pub fn get_workflow_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_name
+    }
     /// <p>The ID of the job.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl GetMatchingJobInputBuilder {
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_id = input;
         self
+    }
+    /// <p>The ID of the job.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
     }
     /// Consumes the builder and constructs a [`GetMatchingJobInput`](crate::operation::get_matching_job::GetMatchingJobInput).
     pub fn build(

@@ -96,6 +96,10 @@ impl Ec2InstanceAggregationResponseBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The Amazon EC2 instance ID.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The Amazon Machine Image (AMI) of the Amazon EC2 instance.</p>
     pub fn ami(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ami = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl Ec2InstanceAggregationResponseBuilder {
     pub fn set_ami(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ami = input;
         self
+    }
+    /// <p>The Amazon Machine Image (AMI) of the Amazon EC2 instance.</p>
+    pub fn get_ami(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ami
     }
     /// <p>The operating system of the Amazon EC2 instance.</p>
     pub fn operating_system(
@@ -121,6 +129,10 @@ impl Ec2InstanceAggregationResponseBuilder {
     ) -> Self {
         self.operating_system = input;
         self
+    }
+    /// <p>The operating system of the Amazon EC2 instance.</p>
+    pub fn get_operating_system(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operating_system
     }
     /// Adds a key-value pair to `instance_tags`.
     ///
@@ -147,6 +159,14 @@ impl Ec2InstanceAggregationResponseBuilder {
         self.instance_tags = input;
         self
     }
+    /// <p>The tags attached to the instance.</p>
+    pub fn get_instance_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.instance_tags
+    }
     /// <p>The Amazon Web Services account for the Amazon EC2 instance.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -156,6 +176,10 @@ impl Ec2InstanceAggregationResponseBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>The Amazon Web Services account for the Amazon EC2 instance.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// <p>An object that contains the count of matched findings per severity.</p>
     pub fn severity_counts(mut self, input: crate::types::SeverityCounts) -> Self {
@@ -170,6 +194,10 @@ impl Ec2InstanceAggregationResponseBuilder {
         self.severity_counts = input;
         self
     }
+    /// <p>An object that contains the count of matched findings per severity.</p>
+    pub fn get_severity_counts(&self) -> &::std::option::Option<crate::types::SeverityCounts> {
+        &self.severity_counts
+    }
     /// <p>The number of network findings for the Amazon EC2 instance.</p>
     pub fn network_findings(mut self, input: i64) -> Self {
         self.network_findings = ::std::option::Option::Some(input);
@@ -179,6 +207,10 @@ impl Ec2InstanceAggregationResponseBuilder {
     pub fn set_network_findings(mut self, input: ::std::option::Option<i64>) -> Self {
         self.network_findings = input;
         self
+    }
+    /// <p>The number of network findings for the Amazon EC2 instance.</p>
+    pub fn get_network_findings(&self) -> &::std::option::Option<i64> {
+        &self.network_findings
     }
     /// Consumes the builder and constructs a [`Ec2InstanceAggregationResponse`](crate::types::Ec2InstanceAggregationResponse).
     pub fn build(self) -> crate::types::Ec2InstanceAggregationResponse {

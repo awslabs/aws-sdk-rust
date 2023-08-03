@@ -65,6 +65,10 @@ impl DeleteSubscriberInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The <code>accountId</code> that is associated with the budget whose subscriber you want to delete.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The name of the budget whose subscriber you want to delete.</p>
     pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.budget_name = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl DeleteSubscriberInputBuilder {
     pub fn set_budget_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.budget_name = input;
         self
+    }
+    /// <p>The name of the budget whose subscriber you want to delete.</p>
+    pub fn get_budget_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.budget_name
     }
     /// <p>The notification whose subscriber you want to delete.</p>
     pub fn notification(mut self, input: crate::types::Notification) -> Self {
@@ -88,6 +96,10 @@ impl DeleteSubscriberInputBuilder {
         self.notification = input;
         self
     }
+    /// <p>The notification whose subscriber you want to delete.</p>
+    pub fn get_notification(&self) -> &::std::option::Option<crate::types::Notification> {
+        &self.notification
+    }
     /// <p>The subscriber that you want to delete.</p>
     pub fn subscriber(mut self, input: crate::types::Subscriber) -> Self {
         self.subscriber = ::std::option::Option::Some(input);
@@ -100,6 +112,10 @@ impl DeleteSubscriberInputBuilder {
     ) -> Self {
         self.subscriber = input;
         self
+    }
+    /// <p>The subscriber that you want to delete.</p>
+    pub fn get_subscriber(&self) -> &::std::option::Option<crate::types::Subscriber> {
+        &self.subscriber
     }
     /// Consumes the builder and constructs a [`DeleteSubscriberInput`](crate::operation::delete_subscriber::DeleteSubscriberInput).
     pub fn build(

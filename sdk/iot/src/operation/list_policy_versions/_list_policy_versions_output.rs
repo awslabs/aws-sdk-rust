@@ -57,6 +57,12 @@ impl ListPolicyVersionsOutputBuilder {
         self.policy_versions = input;
         self
     }
+    /// <p>The policy versions.</p>
+    pub fn get_policy_versions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyVersion>> {
+        &self.policy_versions
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

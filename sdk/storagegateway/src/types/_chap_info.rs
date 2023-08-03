@@ -82,6 +82,11 @@ impl ChapInfoBuilder {
         self.target_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the volume.</p>
+    /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
+    pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_arn
+    }
     /// <p>The secret key that the initiator (for example, the Windows client) must provide to participate in mutual CHAP with the target.</p>
     pub fn secret_to_authenticate_initiator(
         mut self,
@@ -97,6 +102,12 @@ impl ChapInfoBuilder {
     ) -> Self {
         self.secret_to_authenticate_initiator = input;
         self
+    }
+    /// <p>The secret key that the initiator (for example, the Windows client) must provide to participate in mutual CHAP with the target.</p>
+    pub fn get_secret_to_authenticate_initiator(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.secret_to_authenticate_initiator
     }
     /// <p>The iSCSI initiator that connects to the target.</p>
     pub fn initiator_name(
@@ -114,6 +125,10 @@ impl ChapInfoBuilder {
         self.initiator_name = input;
         self
     }
+    /// <p>The iSCSI initiator that connects to the target.</p>
+    pub fn get_initiator_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.initiator_name
+    }
     /// <p>The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g., Windows client).</p>
     pub fn secret_to_authenticate_target(
         mut self,
@@ -129,6 +144,12 @@ impl ChapInfoBuilder {
     ) -> Self {
         self.secret_to_authenticate_target = input;
         self
+    }
+    /// <p>The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g., Windows client).</p>
+    pub fn get_secret_to_authenticate_target(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.secret_to_authenticate_target
     }
     /// Consumes the builder and constructs a [`ChapInfo`](crate::types::ChapInfo).
     pub fn build(self) -> crate::types::ChapInfo {

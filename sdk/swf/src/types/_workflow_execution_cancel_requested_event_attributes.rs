@@ -64,6 +64,12 @@ impl WorkflowExecutionCancelRequestedEventAttributesBuilder {
         self.external_workflow_execution = input;
         self
     }
+    /// <p>The external workflow execution for which the cancellation was requested.</p>
+    pub fn get_external_workflow_execution(
+        &self,
+    ) -> &::std::option::Option<crate::types::WorkflowExecution> {
+        &self.external_workflow_execution
+    }
     /// <p>The ID of the <code>RequestCancelExternalWorkflowExecutionInitiated</code> event corresponding to the <code>RequestCancelExternalWorkflowExecution</code> decision to cancel this workflow execution.The source event with this ID can be found in the history of the source workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn external_initiated_event_id(mut self, input: i64) -> Self {
         self.external_initiated_event_id = ::std::option::Option::Some(input);
@@ -73,6 +79,10 @@ impl WorkflowExecutionCancelRequestedEventAttributesBuilder {
     pub fn set_external_initiated_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.external_initiated_event_id = input;
         self
+    }
+    /// <p>The ID of the <code>RequestCancelExternalWorkflowExecutionInitiated</code> event corresponding to the <code>RequestCancelExternalWorkflowExecution</code> decision to cancel this workflow execution.The source event with this ID can be found in the history of the source workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    pub fn get_external_initiated_event_id(&self) -> &::std::option::Option<i64> {
+        &self.external_initiated_event_id
     }
     /// <p>If set, indicates that the request to cancel the workflow execution was automatically generated, and specifies the cause. This happens if the parent workflow execution times out or is terminated, and the child policy is set to cancel child executions.</p>
     pub fn cause(mut self, input: crate::types::WorkflowExecutionCancelRequestedCause) -> Self {
@@ -86,6 +96,12 @@ impl WorkflowExecutionCancelRequestedEventAttributesBuilder {
     ) -> Self {
         self.cause = input;
         self
+    }
+    /// <p>If set, indicates that the request to cancel the workflow execution was automatically generated, and specifies the cause. This happens if the parent workflow execution times out or is terminated, and the child policy is set to cancel child executions.</p>
+    pub fn get_cause(
+        &self,
+    ) -> &::std::option::Option<crate::types::WorkflowExecutionCancelRequestedCause> {
+        &self.cause
     }
     /// Consumes the builder and constructs a [`WorkflowExecutionCancelRequestedEventAttributes`](crate::types::WorkflowExecutionCancelRequestedEventAttributes).
     pub fn build(self) -> crate::types::WorkflowExecutionCancelRequestedEventAttributes {

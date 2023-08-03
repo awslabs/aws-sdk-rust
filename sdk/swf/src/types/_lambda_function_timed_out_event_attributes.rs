@@ -56,6 +56,10 @@ impl LambdaFunctionTimedOutEventAttributesBuilder {
         self.scheduled_event_id = input;
         self
     }
+    /// <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
+    pub fn get_scheduled_event_id(&self) -> &::std::option::Option<i64> {
+        &self.scheduled_event_id
+    }
     /// <p>The ID of the <code>ActivityTaskStarted</code> event that was recorded when this activity task started. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
     pub fn started_event_id(mut self, input: i64) -> Self {
         self.started_event_id = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl LambdaFunctionTimedOutEventAttributesBuilder {
     pub fn set_started_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.started_event_id = input;
         self
+    }
+    /// <p>The ID of the <code>ActivityTaskStarted</code> event that was recorded when this activity task started. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
+    pub fn get_started_event_id(&self) -> &::std::option::Option<i64> {
+        &self.started_event_id
     }
     /// <p>The type of the timeout that caused this event.</p>
     pub fn timeout_type(mut self, input: crate::types::LambdaFunctionTimeoutType) -> Self {
@@ -78,6 +86,12 @@ impl LambdaFunctionTimedOutEventAttributesBuilder {
     ) -> Self {
         self.timeout_type = input;
         self
+    }
+    /// <p>The type of the timeout that caused this event.</p>
+    pub fn get_timeout_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::LambdaFunctionTimeoutType> {
+        &self.timeout_type
     }
     /// Consumes the builder and constructs a [`LambdaFunctionTimedOutEventAttributes`](crate::types::LambdaFunctionTimedOutEventAttributes).
     pub fn build(self) -> crate::types::LambdaFunctionTimedOutEventAttributes {

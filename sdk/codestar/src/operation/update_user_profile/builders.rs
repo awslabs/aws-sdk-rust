@@ -36,6 +36,12 @@ impl UpdateUserProfileFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateUserProfile as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_user_profile::builders::UpdateUserProfileInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateUserProfileFluentBuilder {
         self.inner = self.inner.set_user_arn(input);
         self
     }
+    /// <p>The name that will be displayed as the friendly name for the user in AWS CodeStar.</p>
+    pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_arn()
+    }
     /// <p>The name that is displayed as the friendly name for the user in AWS CodeStar.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.display_name(input.into());
@@ -135,6 +145,10 @@ impl UpdateUserProfileFluentBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_display_name(input);
         self
+    }
+    /// <p>The name that is displayed as the friendly name for the user in AWS CodeStar.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_display_name()
     }
     /// <p>The email address that is displayed as part of the user's profile in AWS CodeStar.</p>
     pub fn email_address(
@@ -152,6 +166,10 @@ impl UpdateUserProfileFluentBuilder {
         self.inner = self.inner.set_email_address(input);
         self
     }
+    /// <p>The email address that is displayed as part of the user's profile in AWS CodeStar.</p>
+    pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_email_address()
+    }
     /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.</p>
     pub fn ssh_public_key(
         mut self,
@@ -167,5 +185,9 @@ impl UpdateUserProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ssh_public_key(input);
         self
+    }
+    /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.</p>
+    pub fn get_ssh_public_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ssh_public_key()
     }
 }

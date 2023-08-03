@@ -78,6 +78,12 @@ impl DescribeSnapshotAttributeOutputBuilder {
         self.create_volume_permissions = input;
         self
     }
+    /// <p>The users and groups that have the permissions for creating volumes from the snapshot.</p>
+    pub fn get_create_volume_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateVolumePermission>> {
+        &self.create_volume_permissions
+    }
     /// Appends an item to `product_codes`.
     ///
     /// To override the contents of this collection use [`set_product_codes`](Self::set_product_codes).
@@ -97,6 +103,12 @@ impl DescribeSnapshotAttributeOutputBuilder {
         self.product_codes = input;
         self
     }
+    /// <p>The product codes.</p>
+    pub fn get_product_codes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductCode>> {
+        &self.product_codes
+    }
     /// <p>The ID of the EBS snapshot.</p>
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_id = ::std::option::Option::Some(input.into());
@@ -106,6 +118,10 @@ impl DescribeSnapshotAttributeOutputBuilder {
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_id = input;
         self
+    }
+    /// <p>The ID of the EBS snapshot.</p>
+    pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

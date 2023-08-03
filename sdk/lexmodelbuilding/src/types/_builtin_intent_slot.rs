@@ -40,6 +40,10 @@ impl BuiltinIntentSlotBuilder {
         self.name = input;
         self
     }
+    /// <p>A list of the slots defined for the intent.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`BuiltinIntentSlot`](crate::types::BuiltinIntentSlot).
     pub fn build(self) -> crate::types::BuiltinIntentSlot {
         crate::types::BuiltinIntentSlot { name: self.name }

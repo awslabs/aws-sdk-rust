@@ -62,6 +62,10 @@ impl DataSourceToIndexFieldMappingBuilder {
         self.data_source_field_name = input;
         self
     }
+    /// <p>The name of the column or attribute in the data source.</p>
+    pub fn get_data_source_field_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source_field_name
+    }
     /// <p>The type of data stored in the column or attribute.</p>
     pub fn date_field_format(
         mut self,
@@ -78,6 +82,10 @@ impl DataSourceToIndexFieldMappingBuilder {
         self.date_field_format = input;
         self
     }
+    /// <p>The type of data stored in the column or attribute.</p>
+    pub fn get_date_field_format(&self) -> &::std::option::Option<::std::string::String> {
+        &self.date_field_format
+    }
     /// <p>The name of the field in the index.</p>
     pub fn index_field_name(
         mut self,
@@ -93,6 +101,10 @@ impl DataSourceToIndexFieldMappingBuilder {
     ) -> Self {
         self.index_field_name = input;
         self
+    }
+    /// <p>The name of the field in the index.</p>
+    pub fn get_index_field_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_field_name
     }
     /// Consumes the builder and constructs a [`DataSourceToIndexFieldMapping`](crate::types::DataSourceToIndexFieldMapping).
     pub fn build(self) -> crate::types::DataSourceToIndexFieldMapping {

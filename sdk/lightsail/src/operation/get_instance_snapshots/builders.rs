@@ -36,6 +36,12 @@ impl GetInstanceSnapshotsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetInstanceSnapshots as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_instance_snapshots::builders::GetInstanceSnapshotsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,5 +133,10 @@ impl GetInstanceSnapshotsFluentBuilder {
     pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_page_token(input);
         self
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>To get a page token, perform an initial <code>GetInstanceSnapshots</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_page_token()
     }
 }

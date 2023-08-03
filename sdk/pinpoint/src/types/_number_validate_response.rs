@@ -144,6 +144,10 @@ impl NumberValidateResponseBuilder {
         self.carrier = input;
         self
     }
+    /// <p>The carrier or service provider that the phone number is currently registered with. In some countries and regions, this value may be the carrier or service provider that the phone number was originally registered with.</p>
+    pub fn get_carrier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.carrier
+    }
     /// <p>The name of the city where the phone number was originally registered.</p>
     pub fn city(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.city = ::std::option::Option::Some(input.into());
@@ -153,6 +157,10 @@ impl NumberValidateResponseBuilder {
     pub fn set_city(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.city = input;
         self
+    }
+    /// <p>The name of the city where the phone number was originally registered.</p>
+    pub fn get_city(&self) -> &::std::option::Option<::std::string::String> {
+        &self.city
     }
     /// <p>The cleansed phone number, in E.164 format, for the location where the phone number was originally registered.</p>
     pub fn cleansed_phone_number_e164(
@@ -170,6 +178,10 @@ impl NumberValidateResponseBuilder {
         self.cleansed_phone_number_e164 = input;
         self
     }
+    /// <p>The cleansed phone number, in E.164 format, for the location where the phone number was originally registered.</p>
+    pub fn get_cleansed_phone_number_e164(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cleansed_phone_number_e164
+    }
     /// <p>The cleansed phone number, in the format for the location where the phone number was originally registered.</p>
     pub fn cleansed_phone_number_national(
         mut self,
@@ -186,6 +198,12 @@ impl NumberValidateResponseBuilder {
         self.cleansed_phone_number_national = input;
         self
     }
+    /// <p>The cleansed phone number, in the format for the location where the phone number was originally registered.</p>
+    pub fn get_cleansed_phone_number_national(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.cleansed_phone_number_national
+    }
     /// <p>The name of the country or region where the phone number was originally registered.</p>
     pub fn country(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.country = ::std::option::Option::Some(input.into());
@@ -195,6 +213,10 @@ impl NumberValidateResponseBuilder {
     pub fn set_country(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.country = input;
         self
+    }
+    /// <p>The name of the country or region where the phone number was originally registered.</p>
+    pub fn get_country(&self) -> &::std::option::Option<::std::string::String> {
+        &self.country
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the phone number was originally registered.</p>
     pub fn country_code_iso2(
@@ -212,6 +234,10 @@ impl NumberValidateResponseBuilder {
         self.country_code_iso2 = input;
         self
     }
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the phone number was originally registered.</p>
+    pub fn get_country_code_iso2(&self) -> &::std::option::Option<::std::string::String> {
+        &self.country_code_iso2
+    }
     /// <p>The numeric code for the country or region where the phone number was originally registered.</p>
     pub fn country_code_numeric(
         mut self,
@@ -228,6 +254,10 @@ impl NumberValidateResponseBuilder {
         self.country_code_numeric = input;
         self
     }
+    /// <p>The numeric code for the country or region where the phone number was originally registered.</p>
+    pub fn get_country_code_numeric(&self) -> &::std::option::Option<::std::string::String> {
+        &self.country_code_numeric
+    }
     /// <p>The name of the county where the phone number was originally registered.</p>
     pub fn county(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.county = ::std::option::Option::Some(input.into());
@@ -237,6 +267,10 @@ impl NumberValidateResponseBuilder {
     pub fn set_county(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.county = input;
         self
+    }
+    /// <p>The name of the county where the phone number was originally registered.</p>
+    pub fn get_county(&self) -> &::std::option::Option<::std::string::String> {
+        &self.county
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, that was sent in the request body.</p>
     pub fn original_country_code_iso2(
@@ -254,6 +288,10 @@ impl NumberValidateResponseBuilder {
         self.original_country_code_iso2 = input;
         self
     }
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, that was sent in the request body.</p>
+    pub fn get_original_country_code_iso2(&self) -> &::std::option::Option<::std::string::String> {
+        &self.original_country_code_iso2
+    }
     /// <p>The phone number that was sent in the request body.</p>
     pub fn original_phone_number(
         mut self,
@@ -270,6 +308,10 @@ impl NumberValidateResponseBuilder {
         self.original_phone_number = input;
         self
     }
+    /// <p>The phone number that was sent in the request body.</p>
+    pub fn get_original_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.original_phone_number
+    }
     /// <p>The description of the phone type. Valid values are: MOBILE, LANDLINE, VOIP, INVALID, PREPAID, and OTHER.</p>
     pub fn phone_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_type = ::std::option::Option::Some(input.into());
@@ -279,6 +321,10 @@ impl NumberValidateResponseBuilder {
     pub fn set_phone_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.phone_type = input;
         self
+    }
+    /// <p>The description of the phone type. Valid values are: MOBILE, LANDLINE, VOIP, INVALID, PREPAID, and OTHER.</p>
+    pub fn get_phone_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.phone_type
     }
     /// <p>The phone type, represented by an integer. Valid values are: 0 (mobile), 1 (landline), 2 (VoIP), 3 (invalid), 4 (other), and 5 (prepaid).</p>
     pub fn phone_type_code(mut self, input: i32) -> Self {
@@ -290,6 +336,10 @@ impl NumberValidateResponseBuilder {
         self.phone_type_code = input;
         self
     }
+    /// <p>The phone type, represented by an integer. Valid values are: 0 (mobile), 1 (landline), 2 (VoIP), 3 (invalid), 4 (other), and 5 (prepaid).</p>
+    pub fn get_phone_type_code(&self) -> &::std::option::Option<i32> {
+        &self.phone_type_code
+    }
     /// <p>The time zone for the location where the phone number was originally registered.</p>
     pub fn timezone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timezone = ::std::option::Option::Some(input.into());
@@ -300,6 +350,10 @@ impl NumberValidateResponseBuilder {
         self.timezone = input;
         self
     }
+    /// <p>The time zone for the location where the phone number was originally registered.</p>
+    pub fn get_timezone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timezone
+    }
     /// <p>The postal or ZIP code for the location where the phone number was originally registered.</p>
     pub fn zip_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.zip_code = ::std::option::Option::Some(input.into());
@@ -309,6 +363,10 @@ impl NumberValidateResponseBuilder {
     pub fn set_zip_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.zip_code = input;
         self
+    }
+    /// <p>The postal or ZIP code for the location where the phone number was originally registered.</p>
+    pub fn get_zip_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.zip_code
     }
     /// Consumes the builder and constructs a [`NumberValidateResponse`](crate::types::NumberValidateResponse).
     pub fn build(self) -> crate::types::NumberValidateResponse {

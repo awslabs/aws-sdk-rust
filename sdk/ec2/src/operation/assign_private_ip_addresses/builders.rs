@@ -41,6 +41,10 @@ impl AssignPrivateIpAddressesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssignPrivateIpAddresses as a reference.
+    pub fn as_input(&self) -> &crate::operation::assign_private_ip_addresses::builders::AssignPrivateIpAddressesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +135,10 @@ impl AssignPrivateIpAddressesFluentBuilder {
         self.inner = self.inner.set_allow_reassignment(input);
         self
     }
+    /// <p>Indicates whether to allow an IP address that is already assigned to another network interface or instance to be reassigned to the specified network interface.</p>
+    pub fn get_allow_reassignment(&self) -> &::std::option::Option<bool> {
+        self.inner.get_allow_reassignment()
+    }
     /// <p>The ID of the network interface.</p>
     pub fn network_interface_id(
         mut self,
@@ -146,6 +154,10 @@ impl AssignPrivateIpAddressesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_network_interface_id(input);
         self
+    }
+    /// <p>The ID of the network interface.</p>
+    pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_network_interface_id()
     }
     /// Appends an item to `PrivateIpAddresses`.
     ///
@@ -169,6 +181,13 @@ impl AssignPrivateIpAddressesFluentBuilder {
         self.inner = self.inner.set_private_ip_addresses(input);
         self
     }
+    /// <p>The IP addresses to be assigned as a secondary private IP address to the network interface. You can't specify this parameter when also specifying a number of secondary IP addresses.</p>
+    /// <p>If you don't specify an IP address, Amazon EC2 automatically selects an IP address within the subnet range.</p>
+    pub fn get_private_ip_addresses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_private_ip_addresses()
+    }
     /// <p>The number of secondary IP addresses to assign to the network interface. You can't specify this parameter when also specifying private IP addresses.</p>
     pub fn secondary_private_ip_address_count(mut self, input: i32) -> Self {
         self.inner = self.inner.secondary_private_ip_address_count(input);
@@ -181,6 +200,10 @@ impl AssignPrivateIpAddressesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_secondary_private_ip_address_count(input);
         self
+    }
+    /// <p>The number of secondary IP addresses to assign to the network interface. You can't specify this parameter when also specifying private IP addresses.</p>
+    pub fn get_secondary_private_ip_address_count(&self) -> &::std::option::Option<i32> {
+        self.inner.get_secondary_private_ip_address_count()
     }
     /// Appends an item to `Ipv4Prefixes`.
     ///
@@ -202,6 +225,12 @@ impl AssignPrivateIpAddressesFluentBuilder {
         self.inner = self.inner.set_ipv4_prefixes(input);
         self
     }
+    /// <p>One or more IPv4 prefixes assigned to the network interface. You cannot use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
+    pub fn get_ipv4_prefixes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_ipv4_prefixes()
+    }
     /// <p>The number of IPv4 prefixes that Amazon Web Services automatically assigns to the network interface. You cannot use this option if you use the <code>Ipv4 Prefixes</code> option.</p>
     pub fn ipv4_prefix_count(mut self, input: i32) -> Self {
         self.inner = self.inner.ipv4_prefix_count(input);
@@ -211,5 +240,9 @@ impl AssignPrivateIpAddressesFluentBuilder {
     pub fn set_ipv4_prefix_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_ipv4_prefix_count(input);
         self
+    }
+    /// <p>The number of IPv4 prefixes that Amazon Web Services automatically assigns to the network interface. You cannot use this option if you use the <code>Ipv4 Prefixes</code> option.</p>
+    pub fn get_ipv4_prefix_count(&self) -> &::std::option::Option<i32> {
+        self.inner.get_ipv4_prefix_count()
     }
 }

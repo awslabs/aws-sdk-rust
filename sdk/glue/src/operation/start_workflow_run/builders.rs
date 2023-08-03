@@ -36,6 +36,12 @@ impl StartWorkflowRunFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartWorkflowRun as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_workflow_run::builders::StartWorkflowRunInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl StartWorkflowRunFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the workflow to start.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// Adds a key-value pair to `RunProperties`.
     ///
     /// To override the contents of this collection use [`set_run_properties`](Self::set_run_properties).
@@ -148,5 +158,13 @@ impl StartWorkflowRunFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_run_properties(input);
         self
+    }
+    /// <p>The workflow run properties for the new workflow run.</p>
+    pub fn get_run_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_run_properties()
     }
 }

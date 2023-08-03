@@ -64,6 +64,10 @@ impl DeleteHubContentInputBuilder {
         self.hub_name = input;
         self
     }
+    /// <p>The name of the hub that you want to delete content in.</p>
+    pub fn get_hub_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hub_name
+    }
     /// <p>The type of content that you want to delete from a hub.</p>
     pub fn hub_content_type(mut self, input: crate::types::HubContentType) -> Self {
         self.hub_content_type = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl DeleteHubContentInputBuilder {
     ) -> Self {
         self.hub_content_type = input;
         self
+    }
+    /// <p>The type of content that you want to delete from a hub.</p>
+    pub fn get_hub_content_type(&self) -> &::std::option::Option<crate::types::HubContentType> {
+        &self.hub_content_type
     }
     /// <p>The name of the content that you want to delete from a hub.</p>
     pub fn hub_content_name(
@@ -93,6 +101,10 @@ impl DeleteHubContentInputBuilder {
         self.hub_content_name = input;
         self
     }
+    /// <p>The name of the content that you want to delete from a hub.</p>
+    pub fn get_hub_content_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hub_content_name
+    }
     /// <p>The version of the content that you want to delete from a hub.</p>
     pub fn hub_content_version(
         mut self,
@@ -108,6 +120,10 @@ impl DeleteHubContentInputBuilder {
     ) -> Self {
         self.hub_content_version = input;
         self
+    }
+    /// <p>The version of the content that you want to delete from a hub.</p>
+    pub fn get_hub_content_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hub_content_version
     }
     /// Consumes the builder and constructs a [`DeleteHubContentInput`](crate::operation::delete_hub_content::DeleteHubContentInput).
     pub fn build(

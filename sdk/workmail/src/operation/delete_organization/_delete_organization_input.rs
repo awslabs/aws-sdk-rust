@@ -56,6 +56,10 @@ impl DeleteOrganizationInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>The idempotency token associated with the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>The organization ID.</p>
     pub fn organization_id(
         mut self,
@@ -72,6 +76,10 @@ impl DeleteOrganizationInputBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The organization ID.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p>If true, deletes the AWS Directory Service directory associated with the organization.</p>
     pub fn delete_directory(mut self, input: bool) -> Self {
         self.delete_directory = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl DeleteOrganizationInputBuilder {
     pub fn set_delete_directory(mut self, input: ::std::option::Option<bool>) -> Self {
         self.delete_directory = input;
         self
+    }
+    /// <p>If true, deletes the AWS Directory Service directory associated with the organization.</p>
+    pub fn get_delete_directory(&self) -> &::std::option::Option<bool> {
+        &self.delete_directory
     }
     /// Consumes the builder and constructs a [`DeleteOrganizationInput`](crate::operation::delete_organization::DeleteOrganizationInput).
     pub fn build(

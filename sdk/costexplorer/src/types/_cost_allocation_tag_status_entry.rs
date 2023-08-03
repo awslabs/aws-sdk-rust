@@ -48,6 +48,10 @@ impl CostAllocationTagStatusEntryBuilder {
         self.tag_key = input;
         self
     }
+    /// <p>The key for the cost allocation tag. </p>
+    pub fn get_tag_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tag_key
+    }
     /// <p>The status of a cost allocation tag. </p>
     pub fn status(mut self, input: crate::types::CostAllocationTagStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl CostAllocationTagStatusEntryBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of a cost allocation tag. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::CostAllocationTagStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`CostAllocationTagStatusEntry`](crate::types::CostAllocationTagStatusEntry).
     pub fn build(self) -> crate::types::CostAllocationTagStatusEntry {

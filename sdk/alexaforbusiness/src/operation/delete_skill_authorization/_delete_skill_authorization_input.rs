@@ -49,6 +49,10 @@ impl DeleteSkillAuthorizationInputBuilder {
         self.skill_id = input;
         self
     }
+    /// <p>The unique identifier of a skill.</p>
+    pub fn get_skill_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.skill_id
+    }
     /// <p>The room that the skill is authorized for.</p>
     pub fn room_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.room_arn = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl DeleteSkillAuthorizationInputBuilder {
     pub fn set_room_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.room_arn = input;
         self
+    }
+    /// <p>The room that the skill is authorized for.</p>
+    pub fn get_room_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.room_arn
     }
     /// Consumes the builder and constructs a [`DeleteSkillAuthorizationInput`](crate::operation::delete_skill_authorization::DeleteSkillAuthorizationInput).
     pub fn build(

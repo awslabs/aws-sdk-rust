@@ -171,6 +171,12 @@ impl StorageVirtualMachineBuilder {
         self.active_directory_configuration = input;
         self
     }
+    /// <p>Describes the Microsoft Active Directory configuration to which the SVM is joined, if applicable.</p>
+    pub fn get_active_directory_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SvmActiveDirectoryConfiguration> {
+        &self.active_directory_configuration
+    }
     /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -184,6 +190,10 @@ impl StorageVirtualMachineBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The endpoints that are used to access data or to manage the SVM using the NetApp ONTAP CLI, REST API, or NetApp CloudManager. They are the <code>Iscsi</code>, <code>Management</code>, <code>Nfs</code>, and <code>Smb</code> endpoints.</p>
     pub fn endpoints(mut self, input: crate::types::SvmEndpoints) -> Self {
         self.endpoints = ::std::option::Option::Some(input);
@@ -196,6 +206,10 @@ impl StorageVirtualMachineBuilder {
     ) -> Self {
         self.endpoints = input;
         self
+    }
+    /// <p>The endpoints that are used to access data or to manage the SVM using the NetApp ONTAP CLI, REST API, or NetApp CloudManager. They are the <code>Iscsi</code>, <code>Management</code>, <code>Nfs</code>, and <code>Smb</code> endpoints.</p>
+    pub fn get_endpoints(&self) -> &::std::option::Option<crate::types::SvmEndpoints> {
+        &self.endpoints
     }
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
     pub fn file_system_id(
@@ -212,6 +226,10 @@ impl StorageVirtualMachineBuilder {
     ) -> Self {
         self.file_system_id = input;
         self
+    }
+    /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
+    pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_system_id
     }
     /// <p>Describes the SVM's lifecycle status.</p>
     /// <ul>
@@ -242,6 +260,20 @@ impl StorageVirtualMachineBuilder {
         self.lifecycle = input;
         self
     }
+    /// <p>Describes the SVM's lifecycle status.</p>
+    /// <ul>
+    /// <li> <p> <code>CREATED</code> - The SVM is fully available for use.</p> </li>
+    /// <li> <p> <code>CREATING</code> - Amazon FSx is creating the new SVM.</p> </li>
+    /// <li> <p> <code>DELETING</code> - Amazon FSx is deleting an existing SVM.</p> </li>
+    /// <li> <p> <code>FAILED</code> - Amazon FSx was unable to create the SVM.</p> </li>
+    /// <li> <p> <code>MISCONFIGURED</code> - The SVM is in a failed but recoverable state.</p> </li>
+    /// <li> <p> <code>PENDING</code> - Amazon FSx has not started creating the SVM.</p> </li>
+    /// </ul>
+    pub fn get_lifecycle(
+        &self,
+    ) -> &::std::option::Option<crate::types::StorageVirtualMachineLifecycle> {
+        &self.lifecycle
+    }
     /// <p>The name of the SVM, if provisioned.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -252,6 +284,10 @@ impl StorageVirtualMachineBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the SVM, if provisioned.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
@@ -261,6 +297,10 @@ impl StorageVirtualMachineBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// <p>The SVM's system generated unique ID.</p>
     pub fn storage_virtual_machine_id(
@@ -278,6 +318,10 @@ impl StorageVirtualMachineBuilder {
         self.storage_virtual_machine_id = input;
         self
     }
+    /// <p>The SVM's system generated unique ID.</p>
+    pub fn get_storage_virtual_machine_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_virtual_machine_id
+    }
     /// <p>Describes the SVM's subtype.</p>
     pub fn subtype(mut self, input: crate::types::StorageVirtualMachineSubtype) -> Self {
         self.subtype = ::std::option::Option::Some(input);
@@ -291,6 +335,12 @@ impl StorageVirtualMachineBuilder {
         self.subtype = input;
         self
     }
+    /// <p>Describes the SVM's subtype.</p>
+    pub fn get_subtype(
+        &self,
+    ) -> &::std::option::Option<crate::types::StorageVirtualMachineSubtype> {
+        &self.subtype
+    }
     /// <p>The SVM's UUID (universally unique identifier).</p>
     pub fn uuid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.uuid = ::std::option::Option::Some(input.into());
@@ -300,6 +350,10 @@ impl StorageVirtualMachineBuilder {
     pub fn set_uuid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.uuid = input;
         self
+    }
+    /// <p>The SVM's UUID (universally unique identifier).</p>
+    pub fn get_uuid(&self) -> &::std::option::Option<::std::string::String> {
+        &self.uuid
     }
     /// Appends an item to `tags`.
     ///
@@ -320,6 +374,10 @@ impl StorageVirtualMachineBuilder {
         self.tags = input;
         self
     }
+    /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>Describes why the SVM lifecycle state changed.</p>
     pub fn lifecycle_transition_reason(
         mut self,
@@ -336,6 +394,12 @@ impl StorageVirtualMachineBuilder {
         self.lifecycle_transition_reason = input;
         self
     }
+    /// <p>Describes why the SVM lifecycle state changed.</p>
+    pub fn get_lifecycle_transition_reason(
+        &self,
+    ) -> &::std::option::Option<crate::types::LifecycleTransitionReason> {
+        &self.lifecycle_transition_reason
+    }
     /// <p>The security style of the root volume of the SVM.</p>
     pub fn root_volume_security_style(
         mut self,
@@ -351,6 +415,12 @@ impl StorageVirtualMachineBuilder {
     ) -> Self {
         self.root_volume_security_style = input;
         self
+    }
+    /// <p>The security style of the root volume of the SVM.</p>
+    pub fn get_root_volume_security_style(
+        &self,
+    ) -> &::std::option::Option<crate::types::StorageVirtualMachineRootVolumeSecurityStyle> {
+        &self.root_volume_security_style
     }
     /// Consumes the builder and constructs a [`StorageVirtualMachine`](crate::types::StorageVirtualMachine).
     pub fn build(self) -> crate::types::StorageVirtualMachine {

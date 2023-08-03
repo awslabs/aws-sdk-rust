@@ -41,6 +41,10 @@ impl DescribePatchGroupStateInputBuilder {
         self.patch_group = input;
         self
     }
+    /// <p>The name of the patch group whose patch snapshot should be retrieved.</p>
+    pub fn get_patch_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.patch_group
+    }
     /// Consumes the builder and constructs a [`DescribePatchGroupStateInput`](crate::operation::describe_patch_group_state::DescribePatchGroupStateInput).
     pub fn build(
         self,

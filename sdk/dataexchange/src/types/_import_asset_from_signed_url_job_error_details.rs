@@ -40,6 +40,10 @@ impl ImportAssetFromSignedUrlJobErrorDetailsBuilder {
         self.asset_name = input;
         self
     }
+    /// <p>Details about the job error.</p>
+    pub fn get_asset_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_name
+    }
     /// Consumes the builder and constructs a [`ImportAssetFromSignedUrlJobErrorDetails`](crate::types::ImportAssetFromSignedUrlJobErrorDetails).
     pub fn build(self) -> crate::types::ImportAssetFromSignedUrlJobErrorDetails {
         crate::types::ImportAssetFromSignedUrlJobErrorDetails {

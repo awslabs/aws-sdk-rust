@@ -70,6 +70,10 @@ impl DownloadDefaultKeyPairOutputBuilder {
         self.public_key_base64 = input;
         self
     }
+    /// <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
+    pub fn get_public_key_base64(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_key_base64
+    }
     /// <p>A base64-encoded RSA private key.</p>
     pub fn private_key_base64(
         mut self,
@@ -86,6 +90,10 @@ impl DownloadDefaultKeyPairOutputBuilder {
         self.private_key_base64 = input;
         self
     }
+    /// <p>A base64-encoded RSA private key.</p>
+    pub fn get_private_key_base64(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_key_base64
+    }
     /// <p>The timestamp when the default key pair was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -98,6 +106,10 @@ impl DownloadDefaultKeyPairOutputBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The timestamp when the default key pair was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

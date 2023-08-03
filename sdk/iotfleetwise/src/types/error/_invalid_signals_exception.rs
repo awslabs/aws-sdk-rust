@@ -75,6 +75,10 @@ impl InvalidSignalsExceptionBuilder {
         self.message = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Appends an item to `invalid_signals`.
     ///
     /// To override the contents of this collection use [`set_invalid_signals`](Self::set_invalid_signals).
@@ -93,6 +97,12 @@ impl InvalidSignalsExceptionBuilder {
     ) -> Self {
         self.invalid_signals = input;
         self
+    }
+    /// <p>The signals which caused the exception.</p>
+    pub fn get_invalid_signals(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InvalidSignal>> {
+        &self.invalid_signals
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

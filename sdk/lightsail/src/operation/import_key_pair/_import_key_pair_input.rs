@@ -53,6 +53,10 @@ impl ImportKeyPairInputBuilder {
         self.key_pair_name = input;
         self
     }
+    /// <p>The name of the key pair for which you want to import the public key.</p>
+    pub fn get_key_pair_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_pair_name
+    }
     /// <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
     pub fn public_key_base64(
         mut self,
@@ -68,6 +72,10 @@ impl ImportKeyPairInputBuilder {
     ) -> Self {
         self.public_key_base64 = input;
         self
+    }
+    /// <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
+    pub fn get_public_key_base64(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_key_base64
     }
     /// Consumes the builder and constructs a [`ImportKeyPairInput`](crate::operation::import_key_pair::ImportKeyPairInput).
     pub fn build(

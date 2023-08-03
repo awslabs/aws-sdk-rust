@@ -56,6 +56,12 @@ impl DescribeDomainChangeProgressOutputBuilder {
         self.change_progress_status = input;
         self
     }
+    /// <p>Container for information about the stages of a configuration change happening on a domain.</p>
+    pub fn get_change_progress_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ChangeProgressStatusDetails> {
+        &self.change_progress_status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

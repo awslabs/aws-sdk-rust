@@ -46,6 +46,10 @@ impl GetAccessTokenOutputBuilder {
         self.access_token = input;
         self
     }
+    /// <p>Temporary access token.</p>
+    pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_token
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

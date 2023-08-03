@@ -49,6 +49,10 @@ impl ColumnImportanceBuilder {
         self.column_name = input;
         self
     }
+    /// <p>The name of a column.</p>
+    pub fn get_column_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.column_name
+    }
     /// <p>The column importance score for the column, as a decimal.</p>
     pub fn importance(mut self, input: f64) -> Self {
         self.importance = ::std::option::Option::Some(input);
@@ -58,6 +62,10 @@ impl ColumnImportanceBuilder {
     pub fn set_importance(mut self, input: ::std::option::Option<f64>) -> Self {
         self.importance = input;
         self
+    }
+    /// <p>The column importance score for the column, as a decimal.</p>
+    pub fn get_importance(&self) -> &::std::option::Option<f64> {
+        &self.importance
     }
     /// Consumes the builder and constructs a [`ColumnImportance`](crate::types::ColumnImportance).
     pub fn build(self) -> crate::types::ColumnImportance {

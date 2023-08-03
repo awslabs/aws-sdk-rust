@@ -36,6 +36,10 @@ impl PutObjectFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutObject as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_object::builders::PutObjectInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -121,6 +125,10 @@ impl PutObjectFluentBuilder {
         self.inner = self.inner.set_body(input);
         self
     }
+    /// <p>The bytes to be stored. </p>
+    pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+        self.inner.get_body()
+    }
     /// <p>The path (including the file name) where the object is stored in the container. Format: <folder name>
     /// /
     /// <folder name>
@@ -155,6 +163,22 @@ impl PutObjectFluentBuilder {
         self.inner = self.inner.set_path(input);
         self
     }
+    /// <p>The path (including the file name) where the object is stored in the container. Format: <folder name>
+    /// /
+    /// <folder name>
+    /// /
+    /// <file name></file>
+    /// </folder>
+    /// </folder></p>
+    /// <p>For example, to upload the file <code>mlaw.avi</code> to the folder path <code>premium\canada</code> in the container <code>movies</code>, enter the path <code>premium/canada/mlaw.avi</code>.</p>
+    /// <p>Do not include the container name in this path.</p>
+    /// <p>If the path includes any folders that don't exist yet, the service creates them. For example, suppose you have an existing <code>premium/usa</code> subfolder. If you specify <code>premium/canada</code>, the service creates a <code>canada</code> subfolder in the <code>premium</code> folder. You then have two subfolders, <code>usa</code> and <code>canada</code>, in the <code>premium</code> folder. </p>
+    /// <p>There is no correlation between the path to the source and the path (folders) in the container in AWS Elemental MediaStore.</p>
+    /// <p>For more information about folders and how they exist in a container, see the <a href="http://docs.aws.amazon.com/mediastore/latest/ug/">AWS Elemental MediaStore User Guide</a>.</p>
+    /// <p>The file name is the name that is assigned to the file that you upload. The file can have the same name inside and outside of AWS Elemental MediaStore, or it can have the same name. The file name can include or omit an extension. </p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_path()
+    }
     /// <p>The content type of the object.</p>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.content_type(input.into());
@@ -164,6 +188,10 @@ impl PutObjectFluentBuilder {
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_content_type(input);
         self
+    }
+    /// <p>The content type of the object.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_content_type()
     }
     /// <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
     /// <p>Headers with a custom user-defined value are also accepted.</p>
@@ -183,6 +211,11 @@ impl PutObjectFluentBuilder {
         self.inner = self.inner.set_cache_control(input);
         self
     }
+    /// <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
+    /// <p>Headers with a custom user-defined value are also accepted.</p>
+    pub fn get_cache_control(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cache_control()
+    }
     /// <p>Indicates the storage class of a <code>Put</code> request. Defaults to high-performance temporal storage class, and objects are persisted into durable storage shortly after being received.</p>
     pub fn storage_class(mut self, input: crate::types::StorageClass) -> Self {
         self.inner = self.inner.storage_class(input);
@@ -195,6 +228,10 @@ impl PutObjectFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_storage_class(input);
         self
+    }
+    /// <p>Indicates the storage class of a <code>Put</code> request. Defaults to high-performance temporal storage class, and objects are persisted into durable storage shortly after being received.</p>
+    pub fn get_storage_class(&self) -> &::std::option::Option<crate::types::StorageClass> {
+        self.inner.get_storage_class()
     }
     /// <p>Indicates the availability of an object while it is still uploading. If the value is set to <code>streaming</code>, the object is available for downloading after some initial buffering but before the object is uploaded completely. If the value is set to <code>standard</code>, the object is available for downloading only when it is uploaded completely. The default value for this header is <code>standard</code>.</p>
     /// <p>To use this header, you must also set the HTTP <code>Transfer-Encoding</code> header to <code>chunked</code>.</p>
@@ -210,5 +247,12 @@ impl PutObjectFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_upload_availability(input);
         self
+    }
+    /// <p>Indicates the availability of an object while it is still uploading. If the value is set to <code>streaming</code>, the object is available for downloading after some initial buffering but before the object is uploaded completely. If the value is set to <code>standard</code>, the object is available for downloading only when it is uploaded completely. The default value for this header is <code>standard</code>.</p>
+    /// <p>To use this header, you must also set the HTTP <code>Transfer-Encoding</code> header to <code>chunked</code>.</p>
+    pub fn get_upload_availability(
+        &self,
+    ) -> &::std::option::Option<crate::types::UploadAvailability> {
+        self.inner.get_upload_availability()
     }
 }

@@ -55,6 +55,13 @@ impl IntentClassificationTestResultsBuilder {
         self.items = input;
         self
     }
+    /// <p>A list of the results for the intent classification test.</p>
+    pub fn get_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IntentClassificationTestResultItem>>
+    {
+        &self.items
+    }
     /// Consumes the builder and constructs a [`IntentClassificationTestResults`](crate::types::IntentClassificationTestResults).
     pub fn build(self) -> crate::types::IntentClassificationTestResults {
         crate::types::IntentClassificationTestResults { items: self.items }

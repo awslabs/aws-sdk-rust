@@ -105,6 +105,12 @@ impl RegisteredUserEmbeddingExperienceConfigurationBuilder {
         self.dashboard = input;
         self
     }
+    /// <p>The configuration details for providing a dashboard embedding experience.</p>
+    pub fn get_dashboard(
+        &self,
+    ) -> &::std::option::Option<crate::types::RegisteredUserDashboardEmbeddingConfiguration> {
+        &self.dashboard
+    }
     /// <p>The configuration details for providing each Amazon QuickSight console embedding experience. This can be used along with custom permissions to restrict access to certain features. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing Access to the Amazon QuickSight Console</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     /// <p>Use <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForRegisteredUser.html">GenerateEmbedUrlForRegisteredUser</a> </code> where you want to provide an authoring portal that allows users to create data sources, datasets, analyses, and dashboards. The users who accesses an embedded Amazon QuickSight console needs to belong to the author or admin security cohort. If you want to restrict permissions to some of these features, add a custom permissions profile to the user with the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code> API operation. Use the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html">RegisterUser</a> </code> API operation to add a new user with a custom permission profile attached. For more information, see the following sections in the <i>Amazon QuickSight User Guide</i>:</p>
     /// <ul>
@@ -135,6 +141,19 @@ impl RegisteredUserEmbeddingExperienceConfigurationBuilder {
         self.quick_sight_console = input;
         self
     }
+    /// <p>The configuration details for providing each Amazon QuickSight console embedding experience. This can be used along with custom permissions to restrict access to certain features. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing Access to the Amazon QuickSight Console</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    /// <p>Use <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForRegisteredUser.html">GenerateEmbedUrlForRegisteredUser</a> </code> where you want to provide an authoring portal that allows users to create data sources, datasets, analyses, and dashboards. The users who accesses an embedded Amazon QuickSight console needs to belong to the author or admin security cohort. If you want to restrict permissions to some of these features, add a custom permissions profile to the user with the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code> API operation. Use the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html">RegisterUser</a> </code> API operation to add a new user with a custom permission profile attached. For more information, see the following sections in the <i>Amazon QuickSight User Guide</i>:</p>
+    /// <ul>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics-full-console-for-authenticated-users.html">Embedding the Full Functionality of the Amazon QuickSight Console for Authenticated Users</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing Access to the Amazon QuickSight Console</a> </p> </li>
+    /// </ul>
+    /// <p>For more information about the high-level steps for embedding and for an interactive demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon QuickSight Developer Portal</a>.</p>
+    pub fn get_quick_sight_console(
+        &self,
+    ) -> &::std::option::Option<crate::types::RegisteredUserQuickSightConsoleEmbeddingConfiguration>
+    {
+        &self.quick_sight_console
+    }
     /// <p>The configuration details for embedding the Q search bar.</p>
     /// <p>For more information about embedding the Q search bar, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn q_search_bar(
@@ -153,6 +172,13 @@ impl RegisteredUserEmbeddingExperienceConfigurationBuilder {
         self.q_search_bar = input;
         self
     }
+    /// <p>The configuration details for embedding the Q search bar.</p>
+    /// <p>For more information about embedding the Q search bar, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a> in the <i>Amazon QuickSight User Guide</i>.</p>
+    pub fn get_q_search_bar(
+        &self,
+    ) -> &::std::option::Option<crate::types::RegisteredUserQSearchBarEmbeddingConfiguration> {
+        &self.q_search_bar
+    }
     /// <p>The type of embedding experience. In this case, Amazon QuickSight visuals.</p>
     pub fn dashboard_visual(
         mut self,
@@ -170,6 +196,13 @@ impl RegisteredUserEmbeddingExperienceConfigurationBuilder {
     ) -> Self {
         self.dashboard_visual = input;
         self
+    }
+    /// <p>The type of embedding experience. In this case, Amazon QuickSight visuals.</p>
+    pub fn get_dashboard_visual(
+        &self,
+    ) -> &::std::option::Option<crate::types::RegisteredUserDashboardVisualEmbeddingConfiguration>
+    {
+        &self.dashboard_visual
     }
     /// Consumes the builder and constructs a [`RegisteredUserEmbeddingExperienceConfiguration`](crate::types::RegisteredUserEmbeddingExperienceConfiguration).
     pub fn build(self) -> crate::types::RegisteredUserEmbeddingExperienceConfiguration {

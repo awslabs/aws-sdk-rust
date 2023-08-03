@@ -50,6 +50,12 @@ impl CertificateOptionsBuilder {
         self.certificate_transparency_logging_preference = input;
         self
     }
+    /// <p>You can opt out of certificate transparency logging by specifying the <code>DISABLED</code> option. Opt in by specifying <code>ENABLED</code>. </p>
+    pub fn get_certificate_transparency_logging_preference(
+        &self,
+    ) -> &::std::option::Option<crate::types::CertificateTransparencyLoggingPreference> {
+        &self.certificate_transparency_logging_preference
+    }
     /// Consumes the builder and constructs a [`CertificateOptions`](crate::types::CertificateOptions).
     pub fn build(self) -> crate::types::CertificateOptions {
         crate::types::CertificateOptions {

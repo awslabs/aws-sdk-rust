@@ -108,6 +108,10 @@ impl DescribeHumanLoopOutputBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The creation time when Amazon Augmented AI created the human loop.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The reason why a human loop failed. The failure reason is returned when the status of the human loop is <code>Failed</code>.</p>
     pub fn failure_reason(
         mut self,
@@ -124,6 +128,10 @@ impl DescribeHumanLoopOutputBuilder {
         self.failure_reason = input;
         self
     }
+    /// <p>The reason why a human loop failed. The failure reason is returned when the status of the human loop is <code>Failed</code>.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
+    }
     /// <p>A failure code that identifies the type of failure.</p>
     /// <p>Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code> </p>
     pub fn failure_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -135,6 +143,11 @@ impl DescribeHumanLoopOutputBuilder {
     pub fn set_failure_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_code = input;
         self
+    }
+    /// <p>A failure code that identifies the type of failure.</p>
+    /// <p>Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code> </p>
+    pub fn get_failure_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_code
     }
     /// <p>The status of the human loop. </p>
     pub fn human_loop_status(mut self, input: crate::types::HumanLoopStatus) -> Self {
@@ -148,6 +161,10 @@ impl DescribeHumanLoopOutputBuilder {
     ) -> Self {
         self.human_loop_status = input;
         self
+    }
+    /// <p>The status of the human loop. </p>
+    pub fn get_human_loop_status(&self) -> &::std::option::Option<crate::types::HumanLoopStatus> {
+        &self.human_loop_status
     }
     /// <p>The name of the human loop. The name must be lowercase, unique within the Region in your account, and can have up to 63 characters. Valid characters: a-z, 0-9, and - (hyphen).</p>
     pub fn human_loop_name(
@@ -165,6 +182,10 @@ impl DescribeHumanLoopOutputBuilder {
         self.human_loop_name = input;
         self
     }
+    /// <p>The name of the human loop. The name must be lowercase, unique within the Region in your account, and can have up to 63 characters. Valid characters: a-z, 0-9, and - (hyphen).</p>
+    pub fn get_human_loop_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.human_loop_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the human loop.</p>
     pub fn human_loop_arn(
         mut self,
@@ -180,6 +201,10 @@ impl DescribeHumanLoopOutputBuilder {
     ) -> Self {
         self.human_loop_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the human loop.</p>
+    pub fn get_human_loop_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.human_loop_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the flow definition.</p>
     pub fn flow_definition_arn(
@@ -197,6 +222,10 @@ impl DescribeHumanLoopOutputBuilder {
         self.flow_definition_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the flow definition.</p>
+    pub fn get_flow_definition_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_definition_arn
+    }
     /// <p>An object that contains information about the output of the human loop.</p>
     pub fn human_loop_output(mut self, input: crate::types::HumanLoopOutput) -> Self {
         self.human_loop_output = ::std::option::Option::Some(input);
@@ -209,6 +238,10 @@ impl DescribeHumanLoopOutputBuilder {
     ) -> Self {
         self.human_loop_output = input;
         self
+    }
+    /// <p>An object that contains information about the output of the human loop.</p>
+    pub fn get_human_loop_output(&self) -> &::std::option::Option<crate::types::HumanLoopOutput> {
+        &self.human_loop_output
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

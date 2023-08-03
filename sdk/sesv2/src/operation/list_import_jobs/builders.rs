@@ -36,6 +36,12 @@ impl ListImportJobsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListImportJobs as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_import_jobs::builders::ListImportJobsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +146,12 @@ impl ListImportJobsFluentBuilder {
         self.inner = self.inner.set_import_destination_type(input);
         self
     }
+    /// <p>The destination of the import job, which can be used to list import jobs that have a certain <code>ImportDestinationType</code>.</p>
+    pub fn get_import_destination_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImportDestinationType> {
+        self.inner.get_import_destination_type()
+    }
     /// <p>A string token indicating that there might be additional import jobs available to be listed. Copy this token to a subsequent call to <code>ListImportJobs</code> with the same parameters to retrieve the next page of import jobs.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -150,6 +162,10 @@ impl ListImportJobsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A string token indicating that there might be additional import jobs available to be listed. Copy this token to a subsequent call to <code>ListImportJobs</code> with the same parameters to retrieve the next page of import jobs.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>Maximum number of import jobs to return at once. Use this parameter to paginate results. If additional import jobs exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent requests to retrieve additional addresses.</p>
     pub fn page_size(mut self, input: i32) -> Self {
         self.inner = self.inner.page_size(input);
@@ -159,5 +175,9 @@ impl ListImportJobsFluentBuilder {
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_page_size(input);
         self
+    }
+    /// <p>Maximum number of import jobs to return at once. Use this parameter to paginate results. If additional import jobs exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent requests to retrieve additional addresses.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        self.inner.get_page_size()
     }
 }

@@ -48,6 +48,10 @@ impl ActionThresholdBuilder {
         self.action_threshold_value = input;
         self
     }
+    /// <p> The threshold of a notification.</p>
+    pub fn get_action_threshold_value(&self) -> &::std::option::Option<f64> {
+        &self.action_threshold_value
+    }
     /// <p> The type of threshold for a notification.</p>
     pub fn action_threshold_type(mut self, input: crate::types::ThresholdType) -> Self {
         self.action_threshold_type = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl ActionThresholdBuilder {
     ) -> Self {
         self.action_threshold_type = input;
         self
+    }
+    /// <p> The type of threshold for a notification.</p>
+    pub fn get_action_threshold_type(&self) -> &::std::option::Option<crate::types::ThresholdType> {
+        &self.action_threshold_type
     }
     /// Consumes the builder and constructs a [`ActionThreshold`](crate::types::ActionThreshold).
     pub fn build(self) -> crate::types::ActionThreshold {

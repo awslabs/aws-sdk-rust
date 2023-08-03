@@ -54,6 +54,10 @@ impl RowFilterBuilder {
         self.filter_expression = input;
         self
     }
+    /// <p>A filter expression.</p>
+    pub fn get_filter_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filter_expression
+    }
     /// <p>A wildcard for all rows.</p>
     pub fn all_rows_wildcard(mut self, input: crate::types::AllRowsWildcard) -> Self {
         self.all_rows_wildcard = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl RowFilterBuilder {
     ) -> Self {
         self.all_rows_wildcard = input;
         self
+    }
+    /// <p>A wildcard for all rows.</p>
+    pub fn get_all_rows_wildcard(&self) -> &::std::option::Option<crate::types::AllRowsWildcard> {
+        &self.all_rows_wildcard
     }
     /// Consumes the builder and constructs a [`RowFilter`](crate::types::RowFilter).
     pub fn build(self) -> crate::types::RowFilter {

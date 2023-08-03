@@ -36,6 +36,12 @@ impl UpdateApplicationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateApplication as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_application::builders::UpdateApplicationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateApplicationFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The unique identifier of the application you want to update.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>The description of the application to update.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -142,6 +152,10 @@ impl UpdateApplicationFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>The description of the application to update.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The current version of the application to update.</p>
     pub fn current_application_version(mut self, input: i32) -> Self {
         self.inner = self.inner.current_application_version(input);
@@ -151,6 +165,10 @@ impl UpdateApplicationFluentBuilder {
     pub fn set_current_application_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_current_application_version(input);
         self
+    }
+    /// <p>The current version of the application to update.</p>
+    pub fn get_current_application_version(&self) -> &::std::option::Option<i32> {
+        self.inner.get_current_application_version()
     }
     /// <p>The application definition for this application. You can specify either inline JSON or an S3 bucket location.</p>
     pub fn definition(mut self, input: crate::types::Definition) -> Self {
@@ -164,5 +182,9 @@ impl UpdateApplicationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_definition(input);
         self
+    }
+    /// <p>The application definition for this application. You can specify either inline JSON or an S3 bucket location.</p>
+    pub fn get_definition(&self) -> &::std::option::Option<crate::types::Definition> {
+        self.inner.get_definition()
     }
 }

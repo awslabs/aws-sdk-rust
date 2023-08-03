@@ -49,6 +49,12 @@ impl DateTimeDatasetParameterDefaultValuesBuilder {
         self.static_values = input;
         self
     }
+    /// <p>A list of static default values for a given date time parameter.</p>
+    pub fn get_static_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>> {
+        &self.static_values
+    }
     /// Consumes the builder and constructs a [`DateTimeDatasetParameterDefaultValues`](crate::types::DateTimeDatasetParameterDefaultValues).
     pub fn build(self) -> crate::types::DateTimeDatasetParameterDefaultValues {
         crate::types::DateTimeDatasetParameterDefaultValues {

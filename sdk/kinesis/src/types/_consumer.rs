@@ -74,6 +74,10 @@ impl ConsumerBuilder {
         self.consumer_name = input;
         self
     }
+    /// <p>The name of the consumer is something you choose when you register the consumer.</p>
+    pub fn get_consumer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.consumer_name
+    }
     /// <p>When you register a consumer, Kinesis Data Streams generates an ARN for it. You need this ARN to be able to call <code>SubscribeToShard</code>.</p>
     /// <p>If you delete a consumer and then create a new one with the same name, it won't have the same ARN. That's because consumer ARNs contain the creation timestamp. This is important to keep in mind if you have IAM policies that reference consumer ARNs.</p>
     pub fn consumer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -85,6 +89,11 @@ impl ConsumerBuilder {
     pub fn set_consumer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.consumer_arn = input;
         self
+    }
+    /// <p>When you register a consumer, Kinesis Data Streams generates an ARN for it. You need this ARN to be able to call <code>SubscribeToShard</code>.</p>
+    /// <p>If you delete a consumer and then create a new one with the same name, it won't have the same ARN. That's because consumer ARNs contain the creation timestamp. This is important to keep in mind if you have IAM policies that reference consumer ARNs.</p>
+    pub fn get_consumer_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.consumer_arn
     }
     /// <p>A consumer can't read data while in the <code>CREATING</code> or <code>DELETING</code> states.</p>
     pub fn consumer_status(mut self, input: crate::types::ConsumerStatus) -> Self {
@@ -99,6 +108,10 @@ impl ConsumerBuilder {
         self.consumer_status = input;
         self
     }
+    /// <p>A consumer can't read data while in the <code>CREATING</code> or <code>DELETING</code> states.</p>
+    pub fn get_consumer_status(&self) -> &::std::option::Option<crate::types::ConsumerStatus> {
+        &self.consumer_status
+    }
     /// <p></p>
     pub fn consumer_creation_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.consumer_creation_timestamp = ::std::option::Option::Some(input);
@@ -111,6 +124,12 @@ impl ConsumerBuilder {
     ) -> Self {
         self.consumer_creation_timestamp = input;
         self
+    }
+    /// <p></p>
+    pub fn get_consumer_creation_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.consumer_creation_timestamp
     }
     /// Consumes the builder and constructs a [`Consumer`](crate::types::Consumer).
     pub fn build(self) -> crate::types::Consumer {

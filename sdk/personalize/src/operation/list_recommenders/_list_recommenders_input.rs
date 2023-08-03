@@ -62,6 +62,10 @@ impl ListRecommendersInputBuilder {
         self.dataset_group_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Domain dataset group to list the recommenders for. When a Domain dataset group is not specified, all the recommenders associated with the account are listed.</p>
+    pub fn get_dataset_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_group_arn
+    }
     /// <p>A token returned from the previous call to <code>ListRecommenders</code> for getting the next set of recommenders (if they exist).</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl ListRecommendersInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token returned from the previous call to <code>ListRecommenders</code> for getting the next set of recommenders (if they exist).</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of recommenders to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl ListRecommendersInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of recommenders to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListRecommendersInput`](crate::operation::list_recommenders::ListRecommendersInput).
     pub fn build(

@@ -67,6 +67,10 @@ impl BatchStatementResponseBuilder {
         self.error = input;
         self
     }
+    /// <p> The error associated with a failed PartiQL batch statement. </p>
+    pub fn get_error(&self) -> &::std::option::Option<crate::types::BatchStatementError> {
+        &self.error
+    }
     /// <p> The table name associated with a failed PartiQL batch statement. </p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
@@ -76,6 +80,10 @@ impl BatchStatementResponseBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
+    }
+    /// <p> The table name associated with a failed PartiQL batch statement. </p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
     }
     /// Adds a key-value pair to `item`.
     ///
@@ -101,6 +109,14 @@ impl BatchStatementResponseBuilder {
     ) -> Self {
         self.item = input;
         self
+    }
+    /// <p> A DynamoDB item associated with a BatchStatementResponse </p>
+    pub fn get_item(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
+    > {
+        &self.item
     }
     /// Consumes the builder and constructs a [`BatchStatementResponse`](crate::types::BatchStatementResponse).
     pub fn build(self) -> crate::types::BatchStatementResponse {

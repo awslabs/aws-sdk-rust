@@ -39,6 +39,12 @@ impl StopDBInstanceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StopDBInstance as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::stop_db_instance::builders::StopDbInstanceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +141,10 @@ impl StopDBInstanceFluentBuilder {
         self.inner = self.inner.set_db_instance_identifier(input);
         self
     }
+    /// <p>The user-supplied instance identifier.</p>
+    pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_instance_identifier()
+    }
     /// <p>The user-supplied instance identifier of the DB Snapshot created immediately before the DB instance is stopped.</p>
     pub fn db_snapshot_identifier(
         mut self,
@@ -150,5 +160,9 @@ impl StopDBInstanceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_db_snapshot_identifier(input);
         self
+    }
+    /// <p>The user-supplied instance identifier of the DB Snapshot created immediately before the DB instance is stopped.</p>
+    pub fn get_db_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_snapshot_identifier()
     }
 }

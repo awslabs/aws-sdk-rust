@@ -55,6 +55,10 @@ impl ListEventBusesInputBuilder {
         self.name_prefix = input;
         self
     }
+    /// <p>Specifying this limits the results to only those event buses with names that start with the specified prefix.</p>
+    pub fn get_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name_prefix
+    }
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl ListEventBusesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>Specifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -74,6 +82,10 @@ impl ListEventBusesInputBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
+    }
+    /// <p>Specifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// Consumes the builder and constructs a [`ListEventBusesInput`](crate::operation::list_event_buses::ListEventBusesInput).
     pub fn build(

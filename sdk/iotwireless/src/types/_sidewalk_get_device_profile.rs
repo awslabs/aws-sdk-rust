@@ -76,6 +76,12 @@ impl SidewalkGetDeviceProfileBuilder {
         self.application_server_public_key = input;
         self
     }
+    /// <p>The Sidewalk application server public key.</p>
+    pub fn get_application_server_public_key(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.application_server_public_key
+    }
     /// <p>Gets information about the certification status of a Sidewalk device profile.</p>
     pub fn qualification_status(mut self, input: bool) -> Self {
         self.qualification_status = ::std::option::Option::Some(input);
@@ -85,6 +91,10 @@ impl SidewalkGetDeviceProfileBuilder {
     pub fn set_qualification_status(mut self, input: ::std::option::Option<bool>) -> Self {
         self.qualification_status = input;
         self
+    }
+    /// <p>Gets information about the certification status of a Sidewalk device profile.</p>
+    pub fn get_qualification_status(&self) -> &::std::option::Option<bool> {
+        &self.qualification_status
     }
     /// Appends an item to `dak_certificate_metadata`.
     ///
@@ -104,6 +114,12 @@ impl SidewalkGetDeviceProfileBuilder {
     ) -> Self {
         self.dak_certificate_metadata = input;
         self
+    }
+    /// <p>The DAK certificate information of the Sidewalk device profile.</p>
+    pub fn get_dak_certificate_metadata(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DakCertificateMetadata>> {
+        &self.dak_certificate_metadata
     }
     /// Consumes the builder and constructs a [`SidewalkGetDeviceProfile`](crate::types::SidewalkGetDeviceProfile).
     pub fn build(self) -> crate::types::SidewalkGetDeviceProfile {

@@ -54,6 +54,10 @@ impl ListWebAcLsOutputBuilder {
         self.next_marker = input;
         self
     }
+    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_marker
+    }
     /// Appends an item to `web_ac_ls`.
     ///
     /// To override the contents of this collection use [`set_web_ac_ls`](Self::set_web_ac_ls).
@@ -72,6 +76,12 @@ impl ListWebAcLsOutputBuilder {
     ) -> Self {
         self.web_ac_ls = input;
         self
+    }
+    /// <p>Array of web ACLs. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
+    pub fn get_web_ac_ls(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WebAclSummary>> {
+        &self.web_ac_ls
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

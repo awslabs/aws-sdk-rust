@@ -67,6 +67,12 @@ impl EgressOnlyInternetGatewayBuilder {
         self.attachments = input;
         self
     }
+    /// <p>Information about the attachment of the egress-only internet gateway.</p>
+    pub fn get_attachments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InternetGatewayAttachment>> {
+        &self.attachments
+    }
     /// <p>The ID of the egress-only internet gateway.</p>
     pub fn egress_only_internet_gateway_id(
         mut self,
@@ -82,6 +88,12 @@ impl EgressOnlyInternetGatewayBuilder {
     ) -> Self {
         self.egress_only_internet_gateway_id = input;
         self
+    }
+    /// <p>The ID of the egress-only internet gateway.</p>
+    pub fn get_egress_only_internet_gateway_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.egress_only_internet_gateway_id
     }
     /// Appends an item to `tags`.
     ///
@@ -101,6 +113,10 @@ impl EgressOnlyInternetGatewayBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags assigned to the egress-only internet gateway.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`EgressOnlyInternetGateway`](crate::types::EgressOnlyInternetGateway).
     pub fn build(self) -> crate::types::EgressOnlyInternetGateway {

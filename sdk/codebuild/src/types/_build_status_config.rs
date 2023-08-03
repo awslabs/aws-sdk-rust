@@ -132,6 +132,24 @@ impl BuildStatusConfigBuilder {
         self.context = input;
         self
     }
+    /// <p>Specifies the context of the build status CodeBuild sends to the source provider. The usage of this parameter depends on the source provider.</p>
+    /// <dl>
+    /// <dt>
+    /// Bitbucket
+    /// </dt>
+    /// <dd>
+    /// <p>This parameter is used for the <code>name</code> parameter in the Bitbucket commit status. For more information, see <a href="https://developer.atlassian.com/bitbucket/api/2/reference/resource/repositories/%7Bworkspace%7D/%7Brepo_slug%7D/commit/%7Bnode%7D/statuses/build">build</a> in the Bitbucket API documentation.</p>
+    /// </dd>
+    /// <dt>
+    /// GitHub/GitHub Enterprise Server
+    /// </dt>
+    /// <dd>
+    /// <p>This parameter is used for the <code>context</code> parameter in the GitHub commit status. For more information, see <a href="https://developer.github.com/v3/repos/statuses/#create-a-commit-status">Create a commit status</a> in the GitHub developer guide.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_context(&self) -> &::std::option::Option<::std::string::String> {
+        &self.context
+    }
     /// <p>Specifies the target url of the build status CodeBuild sends to the source provider. The usage of this parameter depends on the source provider.</p>
     /// <dl>
     /// <dt>
@@ -169,6 +187,24 @@ impl BuildStatusConfigBuilder {
     pub fn set_target_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_url = input;
         self
+    }
+    /// <p>Specifies the target url of the build status CodeBuild sends to the source provider. The usage of this parameter depends on the source provider.</p>
+    /// <dl>
+    /// <dt>
+    /// Bitbucket
+    /// </dt>
+    /// <dd>
+    /// <p>This parameter is used for the <code>url</code> parameter in the Bitbucket commit status. For more information, see <a href="https://developer.atlassian.com/bitbucket/api/2/reference/resource/repositories/%7Bworkspace%7D/%7Brepo_slug%7D/commit/%7Bnode%7D/statuses/build">build</a> in the Bitbucket API documentation.</p>
+    /// </dd>
+    /// <dt>
+    /// GitHub/GitHub Enterprise Server
+    /// </dt>
+    /// <dd>
+    /// <p>This parameter is used for the <code>target_url</code> parameter in the GitHub commit status. For more information, see <a href="https://developer.github.com/v3/repos/statuses/#create-a-commit-status">Create a commit status</a> in the GitHub developer guide.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_target_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_url
     }
     /// Consumes the builder and constructs a [`BuildStatusConfig`](crate::types::BuildStatusConfig).
     pub fn build(self) -> crate::types::BuildStatusConfig {

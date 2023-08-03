@@ -46,6 +46,10 @@ impl DatasetSchemaBuilder {
         self.inline_data_schema = input;
         self
     }
+    /// <p> </p>
+    pub fn get_inline_data_schema(&self) -> &::std::option::Option<::std::string::String> {
+        &self.inline_data_schema
+    }
     /// Consumes the builder and constructs a [`DatasetSchema`](crate::types::DatasetSchema).
     pub fn build(self) -> crate::types::DatasetSchema {
         crate::types::DatasetSchema {

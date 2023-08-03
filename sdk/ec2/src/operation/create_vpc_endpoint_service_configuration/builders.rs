@@ -43,6 +43,10 @@ impl CreateVpcEndpointServiceConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateVpcEndpointServiceConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_vpc_endpoint_service_configuration::builders::CreateVpcEndpointServiceConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -107,6 +111,10 @@ impl CreateVpcEndpointServiceConfigurationFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>Indicates whether requests from service consumers to create an endpoint to your service must be accepted manually.</p>
     pub fn acceptance_required(mut self, input: bool) -> Self {
         self.inner = self.inner.acceptance_required(input);
@@ -116,6 +124,10 @@ impl CreateVpcEndpointServiceConfigurationFluentBuilder {
     pub fn set_acceptance_required(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_acceptance_required(input);
         self
+    }
+    /// <p>Indicates whether requests from service consumers to create an endpoint to your service must be accepted manually.</p>
+    pub fn get_acceptance_required(&self) -> &::std::option::Option<bool> {
+        self.inner.get_acceptance_required()
     }
     /// <p>(Interface endpoint configuration) The private DNS name to assign to the VPC endpoint service.</p>
     pub fn private_dns_name(
@@ -132,6 +144,10 @@ impl CreateVpcEndpointServiceConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_private_dns_name(input);
         self
+    }
+    /// <p>(Interface endpoint configuration) The private DNS name to assign to the VPC endpoint service.</p>
+    pub fn get_private_dns_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_private_dns_name()
     }
     /// Appends an item to `NetworkLoadBalancerArns`.
     ///
@@ -153,6 +169,12 @@ impl CreateVpcEndpointServiceConfigurationFluentBuilder {
         self.inner = self.inner.set_network_load_balancer_arns(input);
         self
     }
+    /// <p>The Amazon Resource Names (ARNs) of the Network Load Balancers.</p>
+    pub fn get_network_load_balancer_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_network_load_balancer_arns()
+    }
     /// Appends an item to `GatewayLoadBalancerArns`.
     ///
     /// To override the contents of this collection use [`set_gateway_load_balancer_arns`](Self::set_gateway_load_balancer_arns).
@@ -172,6 +194,12 @@ impl CreateVpcEndpointServiceConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_gateway_load_balancer_arns(input);
         self
+    }
+    /// <p>The Amazon Resource Names (ARNs) of the Gateway Load Balancers.</p>
+    pub fn get_gateway_load_balancer_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_gateway_load_balancer_arns()
     }
     /// Appends an item to `SupportedIpAddressTypes`.
     ///
@@ -193,6 +221,12 @@ impl CreateVpcEndpointServiceConfigurationFluentBuilder {
         self.inner = self.inner.set_supported_ip_address_types(input);
         self
     }
+    /// <p>The supported IP address types. The possible values are <code>ipv4</code> and <code>ipv6</code>.</p>
+    pub fn get_supported_ip_address_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_supported_ip_address_types()
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -202,6 +236,10 @@ impl CreateVpcEndpointServiceConfigurationFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// Appends an item to `TagSpecifications`.
     ///
@@ -219,5 +257,11 @@ impl CreateVpcEndpointServiceConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
+    }
+    /// <p>The tags to associate with the service.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        self.inner.get_tag_specifications()
     }
 }

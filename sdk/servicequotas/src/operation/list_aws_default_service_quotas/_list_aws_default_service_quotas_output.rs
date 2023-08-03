@@ -54,6 +54,10 @@ impl ListAwsDefaultServiceQuotasOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `quotas`.
     ///
     /// To override the contents of this collection use [`set_quotas`](Self::set_quotas).
@@ -72,6 +76,12 @@ impl ListAwsDefaultServiceQuotasOutputBuilder {
     ) -> Self {
         self.quotas = input;
         self
+    }
+    /// <p>Information about the quotas.</p>
+    pub fn get_quotas(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceQuota>> {
+        &self.quotas
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

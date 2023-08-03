@@ -106,6 +106,10 @@ impl RecommenderSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the recommender.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Name (ARN) of the recommender.</p>
     pub fn recommender_arn(
         mut self,
@@ -121,6 +125,10 @@ impl RecommenderSummaryBuilder {
     ) -> Self {
         self.recommender_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the recommender.</p>
+    pub fn get_recommender_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommender_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the Domain dataset group that contains the recommender.</p>
     pub fn dataset_group_arn(
@@ -138,6 +146,10 @@ impl RecommenderSummaryBuilder {
         self.dataset_group_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Domain dataset group that contains the recommender.</p>
+    pub fn get_dataset_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_group_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the recipe (Domain dataset group use case) that the recommender was created for.</p>
     pub fn recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recipe_arn = ::std::option::Option::Some(input.into());
@@ -147,6 +159,10 @@ impl RecommenderSummaryBuilder {
     pub fn set_recipe_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recipe_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the recipe (Domain dataset group use case) that the recommender was created for.</p>
+    pub fn get_recipe_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recipe_arn
     }
     /// <p>The configuration details of the recommender.</p>
     pub fn recommender_config(mut self, input: crate::types::RecommenderConfig) -> Self {
@@ -160,6 +176,12 @@ impl RecommenderSummaryBuilder {
     ) -> Self {
         self.recommender_config = input;
         self
+    }
+    /// <p>The configuration details of the recommender.</p>
+    pub fn get_recommender_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::RecommenderConfig> {
+        &self.recommender_config
     }
     /// <p>The status of the recommender. A recommender can be in one of the following states:</p>
     /// <ul>
@@ -181,6 +203,15 @@ impl RecommenderSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the recommender. A recommender can be in one of the following states:</p>
+    /// <ul>
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// <li> <p>STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li>
+    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>The date and time (in Unix format) that the recommender was created.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
@@ -194,6 +225,10 @@ impl RecommenderSummaryBuilder {
         self.creation_date_time = input;
         self
     }
+    /// <p>The date and time (in Unix format) that the recommender was created.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
+    }
     /// <p>The date and time (in Unix format) that the recommender was last updated.</p>
     pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date_time = ::std::option::Option::Some(input);
@@ -206,6 +241,12 @@ impl RecommenderSummaryBuilder {
     ) -> Self {
         self.last_updated_date_time = input;
         self
+    }
+    /// <p>The date and time (in Unix format) that the recommender was last updated.</p>
+    pub fn get_last_updated_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date_time
     }
     /// Consumes the builder and constructs a [`RecommenderSummary`](crate::types::RecommenderSummary).
     pub fn build(self) -> crate::types::RecommenderSummary {

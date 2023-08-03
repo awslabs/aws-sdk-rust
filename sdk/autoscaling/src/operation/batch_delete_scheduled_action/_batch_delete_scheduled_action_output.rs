@@ -66,6 +66,14 @@ impl BatchDeleteScheduledActionOutputBuilder {
         self.failed_scheduled_actions = input;
         self
     }
+    /// <p>The names of the scheduled actions that could not be deleted, including an error message.</p>
+    pub fn get_failed_scheduled_actions(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::FailedScheduledUpdateGroupActionRequest>,
+    > {
+        &self.failed_scheduled_actions
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

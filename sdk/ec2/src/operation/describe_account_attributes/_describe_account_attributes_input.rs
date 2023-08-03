@@ -57,6 +57,12 @@ impl DescribeAccountAttributesInputBuilder {
         self.attribute_names = input;
         self
     }
+    /// <p>The account attribute names.</p>
+    pub fn get_attribute_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountAttributeName>> {
+        &self.attribute_names
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -66,6 +72,10 @@ impl DescribeAccountAttributesInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`DescribeAccountAttributesInput`](crate::operation::describe_account_attributes::DescribeAccountAttributesInput).
     pub fn build(

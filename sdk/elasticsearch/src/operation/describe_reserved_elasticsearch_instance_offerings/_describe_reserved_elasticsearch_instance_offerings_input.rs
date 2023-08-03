@@ -64,6 +64,12 @@ impl DescribeReservedElasticsearchInstanceOfferingsInputBuilder {
         self.reserved_elasticsearch_instance_offering_id = input;
         self
     }
+    /// <p>The offering identifier filter value. Use this parameter to show only the available offering that matches the specified reservation identifier.</p>
+    pub fn get_reserved_elasticsearch_instance_offering_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.reserved_elasticsearch_instance_offering_id
+    }
     /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -74,6 +80,10 @@ impl DescribeReservedElasticsearchInstanceOfferingsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -83,6 +93,10 @@ impl DescribeReservedElasticsearchInstanceOfferingsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeReservedElasticsearchInstanceOfferingsInput`](crate::operation::describe_reserved_elasticsearch_instance_offerings::DescribeReservedElasticsearchInstanceOfferingsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_reserved_elasticsearch_instance_offerings::DescribeReservedElasticsearchInstanceOfferingsInput, ::aws_smithy_http::operation::error::BuildError>{

@@ -56,6 +56,10 @@ impl EnvironmentParameterBuilder {
         self.key = input;
         self
     }
+    /// <p>The environment key suggested by the Amazon SageMaker Inference Recommender.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>The value type suggested by the Amazon SageMaker Inference Recommender.</p>
     pub fn value_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value_type = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl EnvironmentParameterBuilder {
         self.value_type = input;
         self
     }
+    /// <p>The value type suggested by the Amazon SageMaker Inference Recommender.</p>
+    pub fn get_value_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value_type
+    }
     /// <p>The value suggested by the Amazon SageMaker Inference Recommender.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl EnvironmentParameterBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value suggested by the Amazon SageMaker Inference Recommender.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`EnvironmentParameter`](crate::types::EnvironmentParameter).
     pub fn build(self) -> crate::types::EnvironmentParameter {

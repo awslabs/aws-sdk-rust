@@ -59,6 +59,10 @@ impl UpdateProfileInputBuilder {
         self.profile_arn = input;
         self
     }
+    /// <p>The profile ARN.</p>
+    pub fn get_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_arn
+    }
     /// <p>The profile description.</p>
     pub fn profile_description(
         mut self,
@@ -74,6 +78,10 @@ impl UpdateProfileInputBuilder {
     ) -> Self {
         self.profile_description = input;
         self
+    }
+    /// <p>The profile description.</p>
+    pub fn get_profile_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_description
     }
     /// Appends an item to `profile_questions`.
     ///
@@ -93,6 +101,12 @@ impl UpdateProfileInputBuilder {
     ) -> Self {
         self.profile_questions = input;
         self
+    }
+    /// <p>Profile questions.</p>
+    pub fn get_profile_questions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProfileQuestionUpdate>> {
+        &self.profile_questions
     }
     /// Consumes the builder and constructs a [`UpdateProfileInput`](crate::operation::update_profile::UpdateProfileInput).
     pub fn build(

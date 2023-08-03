@@ -36,6 +36,10 @@ impl UpdateNotificationSettingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateNotificationSettings as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_notification_settings::builders::UpdateNotificationSettingsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl UpdateNotificationSettingsFluentBuilder {
         self.inner = self.inner.set_hit_type_id(input);
         self
     }
+    /// <p> The ID of the HIT type whose notification specification is being updated. </p>
+    pub fn get_hit_type_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_hit_type_id()
+    }
     /// <p> The notification specification for the HIT type. </p>
     pub fn notification(mut self, input: crate::types::NotificationSpecification) -> Self {
         self.inner = self.inner.notification(input);
@@ -139,6 +147,12 @@ impl UpdateNotificationSettingsFluentBuilder {
         self.inner = self.inner.set_notification(input);
         self
     }
+    /// <p> The notification specification for the HIT type. </p>
+    pub fn get_notification(
+        &self,
+    ) -> &::std::option::Option<crate::types::NotificationSpecification> {
+        self.inner.get_notification()
+    }
     /// <p> Specifies whether notifications are sent for HITs of this HIT type, according to the notification specification. You must specify either the Notification parameter or the Active parameter for the call to UpdateNotificationSettings to succeed. </p>
     pub fn active(mut self, input: bool) -> Self {
         self.inner = self.inner.active(input);
@@ -148,5 +162,9 @@ impl UpdateNotificationSettingsFluentBuilder {
     pub fn set_active(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_active(input);
         self
+    }
+    /// <p> Specifies whether notifications are sent for HITs of this HIT type, according to the notification specification. You must specify either the Notification parameter or the Active parameter for the call to UpdateNotificationSettings to succeed. </p>
+    pub fn get_active(&self) -> &::std::option::Option<bool> {
+        self.inner.get_active()
     }
 }

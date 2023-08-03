@@ -36,6 +36,12 @@ impl ListPermissionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListPermissions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_permissions::builders::ListPermissionsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -145,6 +151,11 @@ impl ListPermissionsFluentBuilder {
         self.inner = self.inner.set_resource_type(input);
         self
     }
+    /// <p>Specifies that you want to list only those permissions that apply to the specified resource type. This parameter is not case sensitive.</p>
+    /// <p>For example, to list only permissions that apply to Amazon EC2 subnets, specify <code>ec2:subnet</code>. You can use the <code>ListResourceTypes</code> operation to get the specific string required.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_type()
+    }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -155,6 +166,10 @@ impl ListPermissionsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -164,6 +179,10 @@ impl ListPermissionsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>Specifies that you want to list only permissions of this type:</p>
     /// <ul>
@@ -189,5 +208,17 @@ impl ListPermissionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_permission_type(input);
         self
+    }
+    /// <p>Specifies that you want to list only permissions of this type:</p>
+    /// <ul>
+    /// <li> <p> <code>AWS</code> – returns only Amazon Web Services managed permissions.</p> </li>
+    /// <li> <p> <code>LOCAL</code> – returns only customer managed permissions</p> </li>
+    /// <li> <p> <code>ALL</code> – returns both Amazon Web Services managed permissions and customer managed permissions.</p> </li>
+    /// </ul>
+    /// <p>If you don't specify this parameter, the default is <code>All</code>.</p>
+    pub fn get_permission_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::PermissionTypeFilter> {
+        self.inner.get_permission_type()
     }
 }

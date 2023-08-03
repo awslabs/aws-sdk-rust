@@ -60,6 +60,10 @@ impl StartExecutionOutputBuilder {
         self.execution_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
+    pub fn get_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_arn
+    }
     /// <p>The date the execution is started.</p>
     pub fn start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_date = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl StartExecutionOutputBuilder {
     ) -> Self {
         self.start_date = input;
         self
+    }
+    /// <p>The date the execution is started.</p>
+    pub fn get_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

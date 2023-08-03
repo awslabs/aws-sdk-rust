@@ -71,6 +71,14 @@ impl GetQueueAttributesOutputBuilder {
         self.attributes = input;
         self
     }
+    /// <p>A map of attributes to their respective values.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<crate::types::QueueAttributeName, ::std::string::String>,
+    > {
+        &self.attributes
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

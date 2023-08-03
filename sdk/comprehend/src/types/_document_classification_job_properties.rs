@@ -178,6 +178,10 @@ impl DocumentClassificationJobPropertiesBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The identifier assigned to the document classification job.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the document classification job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
     /// <p> <code>arn:
     /// <partition>
@@ -214,6 +218,23 @@ impl DocumentClassificationJobPropertiesBuilder {
         self.job_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the document classification job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p> <code>arn:
+    /// <partition>
+    /// :comprehend:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :document-classification-job/
+    /// <job-id></job-id>
+    /// </account-id>
+    /// </region>
+    /// </partition></code> </p>
+    /// <p>The following is an example job ARN:</p>
+    /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:document-classification-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
+    pub fn get_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_arn
+    }
     /// <p>The name that you assigned to the document classification job.</p>
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name = ::std::option::Option::Some(input.into());
@@ -223,6 +244,10 @@ impl DocumentClassificationJobPropertiesBuilder {
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_name = input;
         self
+    }
+    /// <p>The name that you assigned to the document classification job.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
     }
     /// <p>The current status of the document classification job. If the status is <code>FAILED</code>, the <code>Message</code> field shows the reason for the failure.</p>
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
@@ -234,6 +259,10 @@ impl DocumentClassificationJobPropertiesBuilder {
         self.job_status = input;
         self
     }
+    /// <p>The current status of the document classification job. If the status is <code>FAILED</code>, the <code>Message</code> field shows the reason for the failure.</p>
+    pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
+        &self.job_status
+    }
     /// <p>A description of the status of the job.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -243,6 +272,10 @@ impl DocumentClassificationJobPropertiesBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>A description of the status of the job.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// <p>The time that the document classification job was submitted for processing.</p>
     pub fn submit_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -257,6 +290,10 @@ impl DocumentClassificationJobPropertiesBuilder {
         self.submit_time = input;
         self
     }
+    /// <p>The time that the document classification job was submitted for processing.</p>
+    pub fn get_submit_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.submit_time
+    }
     /// <p>The time that the document classification job completed.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -269,6 +306,10 @@ impl DocumentClassificationJobPropertiesBuilder {
     ) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>The time that the document classification job completed.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. </p>
     pub fn document_classifier_arn(
@@ -286,6 +327,10 @@ impl DocumentClassificationJobPropertiesBuilder {
         self.document_classifier_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. </p>
+    pub fn get_document_classifier_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_classifier_arn
+    }
     /// <p>The input data configuration that you supplied when you created the document classification job.</p>
     pub fn input_data_config(mut self, input: crate::types::InputDataConfig) -> Self {
         self.input_data_config = ::std::option::Option::Some(input);
@@ -299,6 +344,10 @@ impl DocumentClassificationJobPropertiesBuilder {
         self.input_data_config = input;
         self
     }
+    /// <p>The input data configuration that you supplied when you created the document classification job.</p>
+    pub fn get_input_data_config(&self) -> &::std::option::Option<crate::types::InputDataConfig> {
+        &self.input_data_config
+    }
     /// <p>The output data configuration that you supplied when you created the document classification job.</p>
     pub fn output_data_config(mut self, input: crate::types::OutputDataConfig) -> Self {
         self.output_data_config = ::std::option::Option::Some(input);
@@ -311,6 +360,10 @@ impl DocumentClassificationJobPropertiesBuilder {
     ) -> Self {
         self.output_data_config = input;
         self
+    }
+    /// <p>The output data configuration that you supplied when you created the document classification job.</p>
+    pub fn get_output_data_config(&self) -> &::std::option::Option<crate::types::OutputDataConfig> {
+        &self.output_data_config
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
     pub fn data_access_role_arn(
@@ -327,6 +380,10 @@ impl DocumentClassificationJobPropertiesBuilder {
     ) -> Self {
         self.data_access_role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
+    pub fn get_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_access_role_arn
     }
     /// <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
     /// <ul>
@@ -352,6 +409,14 @@ impl DocumentClassificationJobPropertiesBuilder {
         self.volume_kms_key_id = input;
         self
     }
+    /// <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <ul>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// </ul>
+    pub fn get_volume_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_kms_key_id
+    }
     /// <p> Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your document classification job. For more information, see <a href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     pub fn vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
         self.vpc_config = ::std::option::Option::Some(input);
@@ -362,6 +427,10 @@ impl DocumentClassificationJobPropertiesBuilder {
         self.vpc_config = input;
         self
     }
+    /// <p> Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your document classification job. For more information, see <a href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
+    pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
+        &self.vpc_config
+    }
     /// <p>The Amazon Resource Number (ARN) of the flywheel</p>
     pub fn flywheel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flywheel_arn = ::std::option::Option::Some(input.into());
@@ -371,6 +440,10 @@ impl DocumentClassificationJobPropertiesBuilder {
     pub fn set_flywheel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flywheel_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Number (ARN) of the flywheel</p>
+    pub fn get_flywheel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flywheel_arn
     }
     /// Consumes the builder and constructs a [`DocumentClassificationJobProperties`](crate::types::DocumentClassificationJobProperties).
     pub fn build(self) -> crate::types::DocumentClassificationJobProperties {

@@ -39,6 +39,10 @@ impl GetDomainInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The unique name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// Consumes the builder and constructs a [`GetDomainInput`](crate::operation::get_domain::GetDomainInput).
     pub fn build(
         self,

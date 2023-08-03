@@ -54,6 +54,10 @@ impl ListConnectorsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Returns a token that you can use to call <code>ListConnectors</code> again and receive additional results, if there are any.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `connectors`.
     ///
     /// To override the contents of this collection use [`set_connectors`](Self::set_connectors).
@@ -72,6 +76,12 @@ impl ListConnectorsOutputBuilder {
     ) -> Self {
         self.connectors = input;
         self
+    }
+    /// <p>Returns an array, where each item contains the details of a connector.</p>
+    pub fn get_connectors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListedConnector>> {
+        &self.connectors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

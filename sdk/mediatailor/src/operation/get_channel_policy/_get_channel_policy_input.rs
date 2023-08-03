@@ -40,6 +40,10 @@ impl GetChannelPolicyInputBuilder {
         self.channel_name = input;
         self
     }
+    /// <p>The name of the channel associated with this Channel Policy.</p>
+    pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_name
+    }
     /// Consumes the builder and constructs a [`GetChannelPolicyInput`](crate::operation::get_channel_policy::GetChannelPolicyInput).
     pub fn build(
         self,

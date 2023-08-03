@@ -65,6 +65,10 @@ impl TestGridSessionArtifactBuilder {
         self.filename = input;
         self
     }
+    /// <p>The file name of the artifact.</p>
+    pub fn get_filename(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filename
+    }
     /// <p>The kind of artifact.</p>
     pub fn r#type(mut self, input: crate::types::TestGridSessionArtifactType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -78,6 +82,10 @@ impl TestGridSessionArtifactBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The kind of artifact.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::TestGridSessionArtifactType> {
+        &self.r#type
+    }
     /// <p>A semi-stable URL to the content of the object.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
@@ -87,6 +95,10 @@ impl TestGridSessionArtifactBuilder {
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
+    }
+    /// <p>A semi-stable URL to the content of the object.</p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
     }
     /// Consumes the builder and constructs a [`TestGridSessionArtifact`](crate::types::TestGridSessionArtifact).
     pub fn build(self) -> crate::types::TestGridSessionArtifact {

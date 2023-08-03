@@ -59,6 +59,10 @@ impl ListEngineVersionsInputBuilder {
         self.engine_type = input;
         self
     }
+    /// <p>The type of target platform.</p>
+    pub fn get_engine_type(&self) -> &::std::option::Option<crate::types::EngineType> {
+        &self.engine_type
+    }
     /// <p>A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -69,6 +73,10 @@ impl ListEngineVersionsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of objects to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -78,6 +86,10 @@ impl ListEngineVersionsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of objects to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListEngineVersionsInput`](crate::operation::list_engine_versions::ListEngineVersionsInput).
     pub fn build(

@@ -48,6 +48,10 @@ impl SqlQueryDatasetActionBuilder {
         self.sql_query = input;
         self
     }
+    /// <p>A SQL query string.</p>
+    pub fn get_sql_query(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sql_query
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -66,6 +70,12 @@ impl SqlQueryDatasetActionBuilder {
     ) -> Self {
         self.filters = input;
         self
+    }
+    /// <p>Prefilters applied to message data.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryFilter>> {
+        &self.filters
     }
     /// Consumes the builder and constructs a [`SqlQueryDatasetAction`](crate::types::SqlQueryDatasetAction).
     pub fn build(self) -> crate::types::SqlQueryDatasetAction {

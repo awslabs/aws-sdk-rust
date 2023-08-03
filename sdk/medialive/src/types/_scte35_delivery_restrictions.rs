@@ -79,6 +79,12 @@ impl Scte35DeliveryRestrictionsBuilder {
         self.archive_allowed_flag = input;
         self
     }
+    /// Corresponds to SCTE-35 archive_allowed_flag.
+    pub fn get_archive_allowed_flag(
+        &self,
+    ) -> &::std::option::Option<crate::types::Scte35ArchiveAllowedFlag> {
+        &self.archive_allowed_flag
+    }
     /// Corresponds to SCTE-35 device_restrictions parameter.
     pub fn device_restrictions(mut self, input: crate::types::Scte35DeviceRestrictions) -> Self {
         self.device_restrictions = ::std::option::Option::Some(input);
@@ -91,6 +97,12 @@ impl Scte35DeliveryRestrictionsBuilder {
     ) -> Self {
         self.device_restrictions = input;
         self
+    }
+    /// Corresponds to SCTE-35 device_restrictions parameter.
+    pub fn get_device_restrictions(
+        &self,
+    ) -> &::std::option::Option<crate::types::Scte35DeviceRestrictions> {
+        &self.device_restrictions
     }
     /// Corresponds to SCTE-35 no_regional_blackout_flag parameter.
     pub fn no_regional_blackout_flag(
@@ -108,6 +120,12 @@ impl Scte35DeliveryRestrictionsBuilder {
         self.no_regional_blackout_flag = input;
         self
     }
+    /// Corresponds to SCTE-35 no_regional_blackout_flag parameter.
+    pub fn get_no_regional_blackout_flag(
+        &self,
+    ) -> &::std::option::Option<crate::types::Scte35NoRegionalBlackoutFlag> {
+        &self.no_regional_blackout_flag
+    }
     /// Corresponds to SCTE-35 web_delivery_allowed_flag parameter.
     pub fn web_delivery_allowed_flag(
         mut self,
@@ -123,6 +141,12 @@ impl Scte35DeliveryRestrictionsBuilder {
     ) -> Self {
         self.web_delivery_allowed_flag = input;
         self
+    }
+    /// Corresponds to SCTE-35 web_delivery_allowed_flag parameter.
+    pub fn get_web_delivery_allowed_flag(
+        &self,
+    ) -> &::std::option::Option<crate::types::Scte35WebDeliveryAllowedFlag> {
+        &self.web_delivery_allowed_flag
     }
     /// Consumes the builder and constructs a [`Scte35DeliveryRestrictions`](crate::types::Scte35DeliveryRestrictions).
     pub fn build(self) -> crate::types::Scte35DeliveryRestrictions {

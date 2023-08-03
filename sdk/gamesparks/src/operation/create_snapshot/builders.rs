@@ -36,6 +36,12 @@ impl CreateSnapshotFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateSnapshot as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_snapshot::builders::CreateSnapshotInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl CreateSnapshotFluentBuilder {
         self.inner = self.inner.set_game_name(input);
         self
     }
+    /// <p>The name of the game.</p>
+    pub fn get_game_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_game_name()
+    }
     /// <p>The description of the snapshot.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -127,5 +137,9 @@ impl CreateSnapshotFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the snapshot.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
 }

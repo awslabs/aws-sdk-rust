@@ -56,6 +56,10 @@ impl DeleteRoomMembershipInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The room ID.</p>
     pub fn room_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.room_id = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl DeleteRoomMembershipInputBuilder {
         self.room_id = input;
         self
     }
+    /// <p>The room ID.</p>
+    pub fn get_room_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.room_id
+    }
     /// <p>The member ID (user ID or bot ID).</p>
     pub fn member_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_id = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl DeleteRoomMembershipInputBuilder {
     pub fn set_member_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.member_id = input;
         self
+    }
+    /// <p>The member ID (user ID or bot ID).</p>
+    pub fn get_member_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.member_id
     }
     /// Consumes the builder and constructs a [`DeleteRoomMembershipInput`](crate::operation::delete_room_membership::DeleteRoomMembershipInput).
     pub fn build(

@@ -119,6 +119,10 @@ impl CreateResiliencyPolicyInputBuilder {
         self.policy_name = input;
         self
     }
+    /// <p>The name of the policy</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_name
+    }
     /// <p>The description for the policy.</p>
     pub fn policy_description(
         mut self,
@@ -135,6 +139,10 @@ impl CreateResiliencyPolicyInputBuilder {
         self.policy_description = input;
         self
     }
+    /// <p>The description for the policy.</p>
+    pub fn get_policy_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_description
+    }
     /// <p>Specifies a high-level geographical location constraint for where your resilience policy data can be stored.</p>
     pub fn data_location_constraint(mut self, input: crate::types::DataLocationConstraint) -> Self {
         self.data_location_constraint = ::std::option::Option::Some(input);
@@ -148,6 +156,12 @@ impl CreateResiliencyPolicyInputBuilder {
         self.data_location_constraint = input;
         self
     }
+    /// <p>Specifies a high-level geographical location constraint for where your resilience policy data can be stored.</p>
+    pub fn get_data_location_constraint(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataLocationConstraint> {
+        &self.data_location_constraint
+    }
     /// <p>The tier for this resiliency policy, ranging from the highest severity (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
     pub fn tier(mut self, input: crate::types::ResiliencyPolicyTier) -> Self {
         self.tier = ::std::option::Option::Some(input);
@@ -160,6 +174,10 @@ impl CreateResiliencyPolicyInputBuilder {
     ) -> Self {
         self.tier = input;
         self
+    }
+    /// <p>The tier for this resiliency policy, ranging from the highest severity (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
+    pub fn get_tier(&self) -> &::std::option::Option<crate::types::ResiliencyPolicyTier> {
+        &self.tier
     }
     /// Adds a key-value pair to `policy`.
     ///
@@ -186,6 +204,14 @@ impl CreateResiliencyPolicyInputBuilder {
         self.policy = input;
         self
     }
+    /// <p>The type of resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds.</p>
+    pub fn get_policy(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<crate::types::DisruptionType, crate::types::FailurePolicy>,
+    > {
+        &self.policy
+    }
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -195,6 +221,10 @@ impl CreateResiliencyPolicyInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -220,6 +250,14 @@ impl CreateResiliencyPolicyInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateResiliencyPolicyInput`](crate::operation::create_resiliency_policy::CreateResiliencyPolicyInput).
     pub fn build(

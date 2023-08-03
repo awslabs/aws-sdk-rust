@@ -58,6 +58,10 @@ impl SetIdentityPoolConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SetIdentityPoolConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::set_identity_pool_configuration::builders::SetIdentityPoolConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -154,6 +158,10 @@ impl SetIdentityPoolConfigurationFluentBuilder {
         self.inner = self.inner.set_identity_pool_id(input);
         self
     }
+    /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool to modify.</p>
+    pub fn get_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_pool_id()
+    }
     /// <p>Options to apply to this identity pool for push synchronization.</p>
     pub fn push_sync(mut self, input: crate::types::PushSync) -> Self {
         self.inner = self.inner.push_sync(input);
@@ -163,6 +171,10 @@ impl SetIdentityPoolConfigurationFluentBuilder {
     pub fn set_push_sync(mut self, input: ::std::option::Option<crate::types::PushSync>) -> Self {
         self.inner = self.inner.set_push_sync(input);
         self
+    }
+    /// <p>Options to apply to this identity pool for push synchronization.</p>
+    pub fn get_push_sync(&self) -> &::std::option::Option<crate::types::PushSync> {
+        self.inner.get_push_sync()
     }
     /// Options to apply to this identity pool for Amazon Cognito streams.
     pub fn cognito_streams(mut self, input: crate::types::CognitoStreams) -> Self {
@@ -176,5 +188,9 @@ impl SetIdentityPoolConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_cognito_streams(input);
         self
+    }
+    /// Options to apply to this identity pool for Amazon Cognito streams.
+    pub fn get_cognito_streams(&self) -> &::std::option::Option<crate::types::CognitoStreams> {
+        self.inner.get_cognito_streams()
     }
 }

@@ -64,6 +64,12 @@ impl DescribeSharedDirectoriesOutputBuilder {
         self.shared_directories = input;
         self
     }
+    /// <p>A list of all shared directories in your account.</p>
+    pub fn get_shared_directories(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SharedDirectory>> {
+        &self.shared_directories
+    }
     /// <p>If not null, token that indicates that more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeSharedDirectories</code> to retrieve the next set of items.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -73,6 +79,10 @@ impl DescribeSharedDirectoriesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If not null, token that indicates that more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeSharedDirectories</code> to retrieve the next set of items.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

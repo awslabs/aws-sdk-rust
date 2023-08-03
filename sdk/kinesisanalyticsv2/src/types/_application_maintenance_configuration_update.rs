@@ -50,6 +50,12 @@ impl ApplicationMaintenanceConfigurationUpdateBuilder {
         self.application_maintenance_window_start_time_update = input;
         self
     }
+    /// <p>The updated start time for the maintenance window.</p>
+    pub fn get_application_maintenance_window_start_time_update(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.application_maintenance_window_start_time_update
+    }
     /// Consumes the builder and constructs a [`ApplicationMaintenanceConfigurationUpdate`](crate::types::ApplicationMaintenanceConfigurationUpdate).
     pub fn build(self) -> crate::types::ApplicationMaintenanceConfigurationUpdate {
         crate::types::ApplicationMaintenanceConfigurationUpdate {

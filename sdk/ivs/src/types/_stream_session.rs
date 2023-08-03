@@ -92,6 +92,10 @@ impl StreamSessionBuilder {
         self.stream_id = input;
         self
     }
+    /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
+    pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_id
+    }
     /// <p>Time when the channel went live. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -104,6 +108,10 @@ impl StreamSessionBuilder {
     ) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>Time when the channel went live. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p>Time when the channel went offline. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. For live streams, this is <code>NULL</code>.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -118,6 +126,10 @@ impl StreamSessionBuilder {
         self.end_time = input;
         self
     }
+    /// <p>Time when the channel went offline. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. For live streams, this is <code>NULL</code>.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>The properties of the channel at the time of going live.</p>
     pub fn channel(mut self, input: crate::types::Channel) -> Self {
         self.channel = ::std::option::Option::Some(input);
@@ -127,6 +139,10 @@ impl StreamSessionBuilder {
     pub fn set_channel(mut self, input: ::std::option::Option<crate::types::Channel>) -> Self {
         self.channel = input;
         self
+    }
+    /// <p>The properties of the channel at the time of going live.</p>
+    pub fn get_channel(&self) -> &::std::option::Option<crate::types::Channel> {
+        &self.channel
     }
     /// <p>The properties of the incoming RTMP stream for the stream.</p>
     pub fn ingest_configuration(mut self, input: crate::types::IngestConfiguration) -> Self {
@@ -141,6 +157,12 @@ impl StreamSessionBuilder {
         self.ingest_configuration = input;
         self
     }
+    /// <p>The properties of the incoming RTMP stream for the stream.</p>
+    pub fn get_ingest_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::IngestConfiguration> {
+        &self.ingest_configuration
+    }
     /// <p>The properties of recording the live stream.</p>
     pub fn recording_configuration(mut self, input: crate::types::RecordingConfiguration) -> Self {
         self.recording_configuration = ::std::option::Option::Some(input);
@@ -153,6 +175,12 @@ impl StreamSessionBuilder {
     ) -> Self {
         self.recording_configuration = input;
         self
+    }
+    /// <p>The properties of recording the live stream.</p>
+    pub fn get_recording_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::RecordingConfiguration> {
+        &self.recording_configuration
     }
     /// Appends an item to `truncated_events`.
     ///
@@ -172,6 +200,12 @@ impl StreamSessionBuilder {
     ) -> Self {
         self.truncated_events = input;
         self
+    }
+    /// <p>List of Amazon IVS events that the stream encountered. The list is sorted by most recent events and contains up to 500 events. For Amazon IVS events, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html">Using Amazon EventBridge with Amazon IVS</a>.</p>
+    pub fn get_truncated_events(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamEvent>> {
+        &self.truncated_events
     }
     /// Consumes the builder and constructs a [`StreamSession`](crate::types::StreamSession).
     pub fn build(self) -> crate::types::StreamSession {

@@ -45,6 +45,10 @@ impl BatchImportEvidenceToAssessmentControlFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchImportEvidenceToAssessmentControl as a reference.
+    pub fn as_input(&self) -> &crate::operation::batch_import_evidence_to_assessment_control::builders::BatchImportEvidenceToAssessmentControlInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -115,6 +119,10 @@ impl BatchImportEvidenceToAssessmentControlFluentBuilder {
         self.inner = self.inner.set_assessment_id(input);
         self
     }
+    /// <p> The identifier for the assessment. </p>
+    pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_assessment_id()
+    }
     /// <p> The identifier for the control set. </p>
     pub fn control_set_id(
         mut self,
@@ -131,6 +139,10 @@ impl BatchImportEvidenceToAssessmentControlFluentBuilder {
         self.inner = self.inner.set_control_set_id(input);
         self
     }
+    /// <p> The identifier for the control set. </p>
+    pub fn get_control_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_control_set_id()
+    }
     /// <p> The identifier for the control. </p>
     pub fn control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.control_id(input.into());
@@ -140,6 +152,10 @@ impl BatchImportEvidenceToAssessmentControlFluentBuilder {
     pub fn set_control_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_control_id(input);
         self
+    }
+    /// <p> The identifier for the control. </p>
+    pub fn get_control_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_control_id()
     }
     /// Appends an item to `manualEvidence`.
     ///
@@ -157,5 +173,11 @@ impl BatchImportEvidenceToAssessmentControlFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_manual_evidence(input);
         self
+    }
+    /// <p> The list of manual evidence objects. </p>
+    pub fn get_manual_evidence(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ManualEvidence>> {
+        self.inner.get_manual_evidence()
     }
 }

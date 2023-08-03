@@ -52,6 +52,12 @@ impl TrafficRouteBuilder {
         self.listener_arns = input;
         self
     }
+    /// <p> The Amazon Resource Name (ARN) of one listener. The listener identifies the route between a target group and a load balancer. This is an array of strings with a maximum size of one. </p>
+    pub fn get_listener_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.listener_arns
+    }
     /// Consumes the builder and constructs a [`TrafficRoute`](crate::types::TrafficRoute).
     pub fn build(self) -> crate::types::TrafficRoute {
         crate::types::TrafficRoute {

@@ -72,6 +72,11 @@ impl FilterBuilder {
         self.name = input;
         self
     }
+    /// <p>For <code>ListEntities</code>, the supported value for this is an <code>EntityId</code>.</p>
+    /// <p>For <code>ListChangeSets</code>, the supported values are as follows:</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `value_list`.
     ///
     /// To override the contents of this collection use [`set_value_list`](Self::set_value_list).
@@ -110,6 +115,20 @@ impl FilterBuilder {
     ) -> Self {
         self.value_list = input;
         self
+    }
+    /// <p> <code>ListEntities</code> - This is a list of unique <code>EntityId</code>s.</p>
+    /// <p> <code>ListChangeSets</code> - The supported filter names and associated <code>ValueList</code>s is as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>ChangeSetName</code> - The supported <code>ValueList</code> is a list of non-unique <code>ChangeSetName</code>s. These are defined when you call the <code>StartChangeSet</code> action.</p> </li>
+    /// <li> <p> <code>Status</code> - The supported <code>ValueList</code> is a list of statuses for all change set requests.</p> </li>
+    /// <li> <p> <code>EntityId</code> - The supported <code>ValueList</code> is a list of unique <code>EntityId</code>s.</p> </li>
+    /// <li> <p> <code>BeforeStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started before the filter value.</p> </li>
+    /// <li> <p> <code>AfterStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started after the filter value.</p> </li>
+    /// <li> <p> <code>BeforeEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended before the filter value.</p> </li>
+    /// <li> <p> <code>AfterEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended after the filter value.</p> </li>
+    /// </ul>
+    pub fn get_value_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.value_list
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
     pub fn build(self) -> crate::types::Filter {

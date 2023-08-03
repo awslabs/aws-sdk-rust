@@ -48,6 +48,10 @@ impl GetHealthCheckCountOutputBuilder {
         self.health_check_count = input;
         self
     }
+    /// <p>The number of health checks associated with the current Amazon Web Services account.</p>
+    pub fn get_health_check_count(&self) -> &::std::option::Option<i64> {
+        &self.health_check_count
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

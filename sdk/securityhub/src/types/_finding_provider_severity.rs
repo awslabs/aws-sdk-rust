@@ -48,6 +48,10 @@ impl FindingProviderSeverityBuilder {
         self.label = input;
         self
     }
+    /// <p>The severity label assigned to the finding by the finding provider.</p>
+    pub fn get_label(&self) -> &::std::option::Option<crate::types::SeverityLabel> {
+        &self.label
+    }
     /// <p>The finding provider's original value for the severity.</p>
     pub fn original(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.original = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl FindingProviderSeverityBuilder {
     pub fn set_original(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.original = input;
         self
+    }
+    /// <p>The finding provider's original value for the severity.</p>
+    pub fn get_original(&self) -> &::std::option::Option<::std::string::String> {
+        &self.original
     }
     /// Consumes the builder and constructs a [`FindingProviderSeverity`](crate::types::FindingProviderSeverity).
     pub fn build(self) -> crate::types::FindingProviderSeverity {

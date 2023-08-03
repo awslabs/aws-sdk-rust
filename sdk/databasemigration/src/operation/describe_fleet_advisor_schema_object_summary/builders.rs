@@ -36,6 +36,10 @@ impl DescribeFleetAdvisorSchemaObjectSummaryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeFleetAdvisorSchemaObjectSummary as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_fleet_advisor_schema_object_summary::builders::DescribeFleetAdvisorSchemaObjectSummaryInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -121,6 +125,14 @@ impl DescribeFleetAdvisorSchemaObjectSummaryFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p> If you specify any of the following filters, the output includes information for only those schema objects that meet the filter criteria:</p>
+    /// <ul>
+    /// <li> <p> <code>schema-id</code> – The ID of the schema, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li>
+    /// </ul>
+    /// <p>Example: <code>describe-fleet-advisor-schema-object-summary --filter Name="schema-id",Values="50"</code> </p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
+    }
     /// <p>Sets the maximum number of records returned in the response.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.inner = self.inner.max_records(input);
@@ -131,6 +143,10 @@ impl DescribeFleetAdvisorSchemaObjectSummaryFluentBuilder {
         self.inner = self.inner.set_max_records(input);
         self
     }
+    /// <p>Sets the maximum number of records returned in the response.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_records()
+    }
     /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -140,5 +156,9 @@ impl DescribeFleetAdvisorSchemaObjectSummaryFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

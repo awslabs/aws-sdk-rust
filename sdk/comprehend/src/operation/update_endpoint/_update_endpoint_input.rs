@@ -71,6 +71,10 @@ impl UpdateEndpointInputBuilder {
         self.endpoint_arn = input;
         self
     }
+    /// <p>The Amazon Resource Number (ARN) of the endpoint being updated.</p>
+    pub fn get_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_arn
+    }
     /// <p>The ARN of the new model to use when updating an existing endpoint.</p>
     pub fn desired_model_arn(
         mut self,
@@ -87,6 +91,10 @@ impl UpdateEndpointInputBuilder {
         self.desired_model_arn = input;
         self
     }
+    /// <p>The ARN of the new model to use when updating an existing endpoint.</p>
+    pub fn get_desired_model_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.desired_model_arn
+    }
     /// <p> The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.</p>
     pub fn desired_inference_units(mut self, input: i32) -> Self {
         self.desired_inference_units = ::std::option::Option::Some(input);
@@ -96,6 +104,10 @@ impl UpdateEndpointInputBuilder {
     pub fn set_desired_inference_units(mut self, input: ::std::option::Option<i32>) -> Self {
         self.desired_inference_units = input;
         self
+    }
+    /// <p> The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.</p>
+    pub fn get_desired_inference_units(&self) -> &::std::option::Option<i32> {
+        &self.desired_inference_units
     }
     /// <p>Data access role ARN to use in case the new model is encrypted with a customer CMK.</p>
     pub fn desired_data_access_role_arn(
@@ -113,6 +125,12 @@ impl UpdateEndpointInputBuilder {
         self.desired_data_access_role_arn = input;
         self
     }
+    /// <p>Data access role ARN to use in case the new model is encrypted with a customer CMK.</p>
+    pub fn get_desired_data_access_role_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.desired_data_access_role_arn
+    }
     /// <p>The Amazon Resource Number (ARN) of the flywheel</p>
     pub fn flywheel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flywheel_arn = ::std::option::Option::Some(input.into());
@@ -122,6 +140,10 @@ impl UpdateEndpointInputBuilder {
     pub fn set_flywheel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flywheel_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Number (ARN) of the flywheel</p>
+    pub fn get_flywheel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flywheel_arn
     }
     /// Consumes the builder and constructs a [`UpdateEndpointInput`](crate::operation::update_endpoint::UpdateEndpointInput).
     pub fn build(

@@ -46,6 +46,10 @@ impl GetDiskOutputBuilder {
         self.disk = input;
         self
     }
+    /// <p>An object containing information about the disk.</p>
+    pub fn get_disk(&self) -> &::std::option::Option<crate::types::Disk> {
+        &self.disk
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

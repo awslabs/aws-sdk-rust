@@ -53,6 +53,12 @@ impl DescribeFhirImportJobOutputBuilder {
         self.import_job_properties = input;
         self
     }
+    /// <p>The properties of the Import job request, including the ID, ARN, name, and the status of the job.</p>
+    pub fn get_import_job_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImportJobProperties> {
+        &self.import_job_properties
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

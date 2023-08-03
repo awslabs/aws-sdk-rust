@@ -46,6 +46,10 @@ impl CreateProfileOutputBuilder {
         self.profile_id = input;
         self
     }
+    /// <p>The unique identifier for the AS2 profile, returned after the API call succeeds.</p>
+    pub fn get_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -89,6 +89,10 @@ impl ProvisionDataBuilder {
         self.provision_state = input;
         self
     }
+    /// <p>The current provisioning state </p>
+    pub fn get_provision_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provision_state
+    }
     /// <p>The number of capacity units the replication is using.</p>
     pub fn provisioned_capacity_units(mut self, input: i32) -> Self {
         self.provisioned_capacity_units = ::std::option::Option::Some(input);
@@ -98,6 +102,10 @@ impl ProvisionDataBuilder {
     pub fn set_provisioned_capacity_units(mut self, input: ::std::option::Option<i32>) -> Self {
         self.provisioned_capacity_units = input;
         self
+    }
+    /// <p>The number of capacity units the replication is using.</p>
+    pub fn get_provisioned_capacity_units(&self) -> &::std::option::Option<i32> {
+        &self.provisioned_capacity_units
     }
     /// <p>The timestamp when DMS provisioned replication resources.</p>
     pub fn date_provisioned(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -112,6 +120,10 @@ impl ProvisionDataBuilder {
         self.date_provisioned = input;
         self
     }
+    /// <p>The timestamp when DMS provisioned replication resources.</p>
+    pub fn get_date_provisioned(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.date_provisioned
+    }
     /// <p>Whether the new provisioning is available to the replication.</p>
     pub fn is_new_provisioning_available(mut self, input: bool) -> Self {
         self.is_new_provisioning_available = ::std::option::Option::Some(input);
@@ -121,6 +133,10 @@ impl ProvisionDataBuilder {
     pub fn set_is_new_provisioning_available(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_new_provisioning_available = input;
         self
+    }
+    /// <p>Whether the new provisioning is available to the replication.</p>
+    pub fn get_is_new_provisioning_available(&self) -> &::std::option::Option<bool> {
+        &self.is_new_provisioning_available
     }
     /// <p>The timestamp when provisioning became available.</p>
     pub fn date_new_provisioning_data_available(
@@ -138,6 +154,12 @@ impl ProvisionDataBuilder {
         self.date_new_provisioning_data_available = input;
         self
     }
+    /// <p>The timestamp when provisioning became available.</p>
+    pub fn get_date_new_provisioning_data_available(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.date_new_provisioning_data_available
+    }
     /// <p>A message describing the reason that DMS provisioned new resources for the serverless replication.</p>
     pub fn reason_for_new_provisioning_data(
         mut self,
@@ -153,6 +175,12 @@ impl ProvisionDataBuilder {
     ) -> Self {
         self.reason_for_new_provisioning_data = input;
         self
+    }
+    /// <p>A message describing the reason that DMS provisioned new resources for the serverless replication.</p>
+    pub fn get_reason_for_new_provisioning_data(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.reason_for_new_provisioning_data
     }
     /// Consumes the builder and constructs a [`ProvisionData`](crate::types::ProvisionData).
     pub fn build(self) -> crate::types::ProvisionData {

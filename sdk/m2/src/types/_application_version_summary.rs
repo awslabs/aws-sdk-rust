@@ -64,6 +64,10 @@ impl ApplicationVersionSummaryBuilder {
         self.application_version = input;
         self
     }
+    /// <p>The application version.</p>
+    pub fn get_application_version(&self) -> &::std::option::Option<i32> {
+        &self.application_version
+    }
     /// <p>The status of the application.</p>
     pub fn status(mut self, input: crate::types::ApplicationVersionLifecycle) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl ApplicationVersionSummaryBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the application.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ApplicationVersionLifecycle> {
+        &self.status
     }
     /// <p>The reason for the reported status.</p>
     pub fn status_reason(
@@ -93,6 +101,10 @@ impl ApplicationVersionSummaryBuilder {
         self.status_reason = input;
         self
     }
+    /// <p>The reason for the reported status.</p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_reason
+    }
     /// <p>The timestamp when the application version was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -105,6 +117,10 @@ impl ApplicationVersionSummaryBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The timestamp when the application version was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// Consumes the builder and constructs a [`ApplicationVersionSummary`](crate::types::ApplicationVersionSummary).
     pub fn build(self) -> crate::types::ApplicationVersionSummary {

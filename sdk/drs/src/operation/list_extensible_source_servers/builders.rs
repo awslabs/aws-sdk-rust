@@ -36,6 +36,10 @@ impl ListExtensibleSourceServersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListExtensibleSourceServers as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_extensible_source_servers::builders::ListExtensibleSourceServersInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +142,10 @@ impl ListExtensibleSourceServersFluentBuilder {
         self.inner = self.inner.set_staging_account_id(input);
         self
     }
+    /// <p>The Id of the staging Account to retrieve extensible source servers from.</p>
+    pub fn get_staging_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_staging_account_id()
+    }
     /// <p>The maximum number of extensible source servers to retrieve.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -148,6 +156,10 @@ impl ListExtensibleSourceServersFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of extensible source servers to retrieve.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token of the next extensible source server to retrieve.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -157,5 +169,9 @@ impl ListExtensibleSourceServersFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token of the next extensible source server to retrieve.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

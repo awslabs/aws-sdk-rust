@@ -71,6 +71,10 @@ impl ListThingGroupsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return at one time.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl ListThingGroupsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to return at one time.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>A filter that limits the results to those with the specified parent group.</p>
     pub fn parent_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_group = ::std::option::Option::Some(input.into());
@@ -90,6 +98,10 @@ impl ListThingGroupsInputBuilder {
     pub fn set_parent_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parent_group = input;
         self
+    }
+    /// <p>A filter that limits the results to those with the specified parent group.</p>
+    pub fn get_parent_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent_group
     }
     /// <p>A filter that limits the results to those with the specified name prefix.</p>
     pub fn name_prefix_filter(
@@ -107,6 +119,10 @@ impl ListThingGroupsInputBuilder {
         self.name_prefix_filter = input;
         self
     }
+    /// <p>A filter that limits the results to those with the specified name prefix.</p>
+    pub fn get_name_prefix_filter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name_prefix_filter
+    }
     /// <p>If true, return child groups as well.</p>
     pub fn recursive(mut self, input: bool) -> Self {
         self.recursive = ::std::option::Option::Some(input);
@@ -116,6 +132,10 @@ impl ListThingGroupsInputBuilder {
     pub fn set_recursive(mut self, input: ::std::option::Option<bool>) -> Self {
         self.recursive = input;
         self
+    }
+    /// <p>If true, return child groups as well.</p>
+    pub fn get_recursive(&self) -> &::std::option::Option<bool> {
+        &self.recursive
     }
     /// Consumes the builder and constructs a [`ListThingGroupsInput`](crate::operation::list_thing_groups::ListThingGroupsInput).
     pub fn build(

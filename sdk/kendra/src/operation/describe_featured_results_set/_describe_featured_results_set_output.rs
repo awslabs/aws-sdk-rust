@@ -124,6 +124,10 @@ impl DescribeFeaturedResultsSetOutputBuilder {
         self.featured_results_set_id = input;
         self
     }
+    /// <p>The identifier of the set of featured results.</p>
+    pub fn get_featured_results_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.featured_results_set_id
+    }
     /// <p>The name for the set of featured results.</p>
     pub fn featured_results_set_name(
         mut self,
@@ -140,6 +144,10 @@ impl DescribeFeaturedResultsSetOutputBuilder {
         self.featured_results_set_name = input;
         self
     }
+    /// <p>The name for the set of featured results.</p>
+    pub fn get_featured_results_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.featured_results_set_name
+    }
     /// <p>The description for the set of featured results.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -149,6 +157,10 @@ impl DescribeFeaturedResultsSetOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description for the set of featured results.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The current status of the set of featured results. When the value is <code>ACTIVE</code>, featured results are ready for use. You can still configure your settings before setting the status to <code>ACTIVE</code>. You can set the status to <code>ACTIVE</code> or <code>INACTIVE</code> using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateFeaturedResultsSet.html">UpdateFeaturedResultsSet</a> API. The queries you specify for featured results must be unique per featured results set for each index, whether the status is <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
     pub fn status(mut self, input: crate::types::FeaturedResultsSetStatus) -> Self {
@@ -162,6 +174,10 @@ impl DescribeFeaturedResultsSetOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the set of featured results. When the value is <code>ACTIVE</code>, featured results are ready for use. You can still configure your settings before setting the status to <code>ACTIVE</code>. You can set the status to <code>ACTIVE</code> or <code>INACTIVE</code> using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateFeaturedResultsSet.html">UpdateFeaturedResultsSet</a> API. The queries you specify for featured results must be unique per featured results set for each index, whether the status is <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::FeaturedResultsSetStatus> {
+        &self.status
     }
     /// Appends an item to `query_texts`.
     ///
@@ -181,6 +197,12 @@ impl DescribeFeaturedResultsSetOutputBuilder {
     ) -> Self {
         self.query_texts = input;
         self
+    }
+    /// <p>The list of queries for featuring results. For more information on the list of queries, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_FeaturedResultsSet.html">FeaturedResultsSet</a>.</p>
+    pub fn get_query_texts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.query_texts
     }
     /// Appends an item to `featured_documents_with_metadata`.
     ///
@@ -204,6 +226,12 @@ impl DescribeFeaturedResultsSetOutputBuilder {
         self.featured_documents_with_metadata = input;
         self
     }
+    /// <p>The list of document IDs for the documents you want to feature with their metadata information. For more information on the list of featured documents, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_FeaturedResultsSet.html">FeaturedResultsSet</a>.</p>
+    pub fn get_featured_documents_with_metadata(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FeaturedDocumentWithMetadata>> {
+        &self.featured_documents_with_metadata
+    }
     /// Appends an item to `featured_documents_missing`.
     ///
     /// To override the contents of this collection use [`set_featured_documents_missing`](Self::set_featured_documents_missing).
@@ -226,6 +254,12 @@ impl DescribeFeaturedResultsSetOutputBuilder {
         self.featured_documents_missing = input;
         self
     }
+    /// <p>The list of document IDs that don't exist but you have specified as featured documents. Amazon Kendra cannot feature these documents if they don't exist in the index. You can check the status of a document and its ID or check for documents with status errors using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchGetDocumentStatus.html">BatchGetDocumentStatus</a> API.</p>
+    pub fn get_featured_documents_missing(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FeaturedDocumentMissing>> {
+        &self.featured_documents_missing
+    }
     /// <p>The timestamp when the set of featured results was last updated.</p>
     pub fn last_updated_timestamp(mut self, input: i64) -> Self {
         self.last_updated_timestamp = ::std::option::Option::Some(input);
@@ -236,6 +270,10 @@ impl DescribeFeaturedResultsSetOutputBuilder {
         self.last_updated_timestamp = input;
         self
     }
+    /// <p>The timestamp when the set of featured results was last updated.</p>
+    pub fn get_last_updated_timestamp(&self) -> &::std::option::Option<i64> {
+        &self.last_updated_timestamp
+    }
     /// <p>The Unix timestamp when the set of the featured results was created.</p>
     pub fn creation_timestamp(mut self, input: i64) -> Self {
         self.creation_timestamp = ::std::option::Option::Some(input);
@@ -245,6 +283,10 @@ impl DescribeFeaturedResultsSetOutputBuilder {
     pub fn set_creation_timestamp(mut self, input: ::std::option::Option<i64>) -> Self {
         self.creation_timestamp = input;
         self
+    }
+    /// <p>The Unix timestamp when the set of the featured results was created.</p>
+    pub fn get_creation_timestamp(&self) -> &::std::option::Option<i64> {
+        &self.creation_timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -57,6 +57,10 @@ impl DescribeScheduleOutputBuilder {
         self.next_token = input;
         self
     }
+    /// The next token; for use in pagination.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `schedule_actions`.
     ///
     /// To override the contents of this collection use [`set_schedule_actions`](Self::set_schedule_actions).
@@ -75,6 +79,12 @@ impl DescribeScheduleOutputBuilder {
     ) -> Self {
         self.schedule_actions = input;
         self
+    }
+    /// The list of actions in the schedule.
+    pub fn get_schedule_actions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduleAction>> {
+        &self.schedule_actions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

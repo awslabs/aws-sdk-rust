@@ -97,6 +97,10 @@ impl AssetAttributesBuilder {
         self.schema_version = input;
         self
     }
+    /// <p>The schema version of this data type.</p>
+    pub fn get_schema_version(&self) -> &::std::option::Option<i32> {
+        &self.schema_version
+    }
     /// <p>The ID of the agent that is installed on the EC2 instance where the finding is generated.</p>
     pub fn agent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_id = ::std::option::Option::Some(input.into());
@@ -106,6 +110,10 @@ impl AssetAttributesBuilder {
     pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agent_id = input;
         self
+    }
+    /// <p>The ID of the agent that is installed on the EC2 instance where the finding is generated.</p>
+    pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_id
     }
     /// <p>The Auto Scaling group of the EC2 instance where the finding is generated.</p>
     pub fn auto_scaling_group(
@@ -123,6 +131,10 @@ impl AssetAttributesBuilder {
         self.auto_scaling_group = input;
         self
     }
+    /// <p>The Auto Scaling group of the EC2 instance where the finding is generated.</p>
+    pub fn get_auto_scaling_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auto_scaling_group
+    }
     /// <p>The ID of the Amazon Machine Image (AMI) that is installed on the EC2 instance where the finding is generated.</p>
     pub fn ami_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ami_id = ::std::option::Option::Some(input.into());
@@ -133,6 +145,10 @@ impl AssetAttributesBuilder {
         self.ami_id = input;
         self
     }
+    /// <p>The ID of the Amazon Machine Image (AMI) that is installed on the EC2 instance where the finding is generated.</p>
+    pub fn get_ami_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ami_id
+    }
     /// <p>The hostname of the EC2 instance where the finding is generated.</p>
     pub fn hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hostname = ::std::option::Option::Some(input.into());
@@ -142,6 +158,10 @@ impl AssetAttributesBuilder {
     pub fn set_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hostname = input;
         self
+    }
+    /// <p>The hostname of the EC2 instance where the finding is generated.</p>
+    pub fn get_hostname(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hostname
     }
     /// Appends an item to `ipv4_addresses`.
     ///
@@ -165,6 +185,12 @@ impl AssetAttributesBuilder {
         self.ipv4_addresses = input;
         self
     }
+    /// <p>The list of IP v4 addresses of the EC2 instance where the finding is generated.</p>
+    pub fn get_ipv4_addresses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ipv4_addresses
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -184,6 +210,10 @@ impl AssetAttributesBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags related to the EC2 instance where the finding is generated.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Appends an item to `network_interfaces`.
     ///
     /// To override the contents of this collection use [`set_network_interfaces`](Self::set_network_interfaces).
@@ -202,6 +232,12 @@ impl AssetAttributesBuilder {
     ) -> Self {
         self.network_interfaces = input;
         self
+    }
+    /// <p>An array of the network interfaces interacting with the EC2 instance where the finding is generated.</p>
+    pub fn get_network_interfaces(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>> {
+        &self.network_interfaces
     }
     /// Consumes the builder and constructs a [`AssetAttributes`](crate::types::AssetAttributes).
     pub fn build(self) -> crate::types::AssetAttributes {

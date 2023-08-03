@@ -82,6 +82,12 @@ impl CreateDataflowEndpointGroupInputBuilder {
         self.endpoint_details = input;
         self
     }
+    /// <p>Endpoint details of each endpoint in the dataflow endpoint group.</p>
+    pub fn get_endpoint_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointDetails>> {
+        &self.endpoint_details
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -107,6 +113,14 @@ impl CreateDataflowEndpointGroupInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Tags of a dataflow endpoint group.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>Amount of time, in seconds, before a contact starts that the Ground Station Dataflow Endpoint Group will be in a <code>PREPASS</code> state. A Ground Station Dataflow Endpoint Group State Change event will be emitted when the Dataflow Endpoint Group enters and exits the <code>PREPASS</code> state.</p>
     pub fn contact_pre_pass_duration_seconds(mut self, input: i32) -> Self {
         self.contact_pre_pass_duration_seconds = ::std::option::Option::Some(input);
@@ -120,6 +134,10 @@ impl CreateDataflowEndpointGroupInputBuilder {
         self.contact_pre_pass_duration_seconds = input;
         self
     }
+    /// <p>Amount of time, in seconds, before a contact starts that the Ground Station Dataflow Endpoint Group will be in a <code>PREPASS</code> state. A Ground Station Dataflow Endpoint Group State Change event will be emitted when the Dataflow Endpoint Group enters and exits the <code>PREPASS</code> state.</p>
+    pub fn get_contact_pre_pass_duration_seconds(&self) -> &::std::option::Option<i32> {
+        &self.contact_pre_pass_duration_seconds
+    }
     /// <p>Amount of time, in seconds, after a contact ends that the Ground Station Dataflow Endpoint Group will be in a <code>POSTPASS</code> state. A Ground Station Dataflow Endpoint Group State Change event will be emitted when the Dataflow Endpoint Group enters and exits the <code>POSTPASS</code> state.</p>
     pub fn contact_post_pass_duration_seconds(mut self, input: i32) -> Self {
         self.contact_post_pass_duration_seconds = ::std::option::Option::Some(input);
@@ -132,6 +150,10 @@ impl CreateDataflowEndpointGroupInputBuilder {
     ) -> Self {
         self.contact_post_pass_duration_seconds = input;
         self
+    }
+    /// <p>Amount of time, in seconds, after a contact ends that the Ground Station Dataflow Endpoint Group will be in a <code>POSTPASS</code> state. A Ground Station Dataflow Endpoint Group State Change event will be emitted when the Dataflow Endpoint Group enters and exits the <code>POSTPASS</code> state.</p>
+    pub fn get_contact_post_pass_duration_seconds(&self) -> &::std::option::Option<i32> {
+        &self.contact_post_pass_duration_seconds
     }
     /// Consumes the builder and constructs a [`CreateDataflowEndpointGroupInput`](crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupInput).
     pub fn build(

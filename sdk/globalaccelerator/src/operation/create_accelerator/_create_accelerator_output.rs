@@ -50,6 +50,10 @@ impl CreateAcceleratorOutputBuilder {
         self.accelerator = input;
         self
     }
+    /// <p>The accelerator that is created by specifying a listener and the supported IP address types.</p>
+    pub fn get_accelerator(&self) -> &::std::option::Option<crate::types::Accelerator> {
+        &self.accelerator
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

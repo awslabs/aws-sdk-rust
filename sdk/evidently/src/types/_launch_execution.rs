@@ -51,6 +51,10 @@ impl LaunchExecutionBuilder {
         self.started_time = input;
         self
     }
+    /// <p>The date and time that the launch started.</p>
+    pub fn get_started_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.started_time
+    }
     /// <p>The date and time that the launch ended.</p>
     pub fn ended_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.ended_time = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl LaunchExecutionBuilder {
     ) -> Self {
         self.ended_time = input;
         self
+    }
+    /// <p>The date and time that the launch ended.</p>
+    pub fn get_ended_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.ended_time
     }
     /// Consumes the builder and constructs a [`LaunchExecution`](crate::types::LaunchExecution).
     pub fn build(self) -> crate::types::LaunchExecution {

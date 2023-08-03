@@ -66,6 +66,12 @@ impl ListPlatformVersionsOutputBuilder {
         self.platform_summary_list = input;
         self
     }
+    /// <p>Summary information about the platform versions.</p>
+    pub fn get_platform_summary_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PlatformSummary>> {
+        &self.platform_summary_list
+    }
     /// <p>In a paginated request, if this value isn't <code>null</code>, it's the token that you can pass in a subsequent request to get the next response page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -75,6 +81,10 @@ impl ListPlatformVersionsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>In a paginated request, if this value isn't <code>null</code>, it's the token that you can pass in a subsequent request to get the next response page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

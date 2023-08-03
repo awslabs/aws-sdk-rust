@@ -116,6 +116,10 @@ impl CreatePipelineInputBuilder {
         self.pipeline_name = input;
         self
     }
+    /// <p>The name of the pipeline.</p>
+    pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_name
+    }
     /// <p>The display name of the pipeline.</p>
     pub fn pipeline_display_name(
         mut self,
@@ -131,6 +135,10 @@ impl CreatePipelineInputBuilder {
     ) -> Self {
         self.pipeline_display_name = input;
         self
+    }
+    /// <p>The display name of the pipeline.</p>
+    pub fn get_pipeline_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_display_name
     }
     /// <p>The <a href="https://aws-sagemaker-mlops.github.io/sagemaker-model-building-pipeline-definition-JSON-schema/">JSON pipeline definition</a> of the pipeline.</p>
     pub fn pipeline_definition(
@@ -148,6 +156,10 @@ impl CreatePipelineInputBuilder {
         self.pipeline_definition = input;
         self
     }
+    /// <p>The <a href="https://aws-sagemaker-mlops.github.io/sagemaker-model-building-pipeline-definition-JSON-schema/">JSON pipeline definition</a> of the pipeline.</p>
+    pub fn get_pipeline_definition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_definition
+    }
     /// <p>The location of the pipeline definition stored in Amazon S3. If specified, SageMaker will retrieve the pipeline definition from this location.</p>
     pub fn pipeline_definition_s3_location(
         mut self,
@@ -163,6 +175,12 @@ impl CreatePipelineInputBuilder {
     ) -> Self {
         self.pipeline_definition_s3_location = input;
         self
+    }
+    /// <p>The location of the pipeline definition stored in Amazon S3. If specified, SageMaker will retrieve the pipeline definition from this location.</p>
+    pub fn get_pipeline_definition_s3_location(
+        &self,
+    ) -> &::std::option::Option<crate::types::PipelineDefinitionS3Location> {
+        &self.pipeline_definition_s3_location
     }
     /// <p>A description of the pipeline.</p>
     pub fn pipeline_description(
@@ -180,6 +198,10 @@ impl CreatePipelineInputBuilder {
         self.pipeline_description = input;
         self
     }
+    /// <p>A description of the pipeline.</p>
+    pub fn get_pipeline_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_description
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
     pub fn client_request_token(
         mut self,
@@ -196,6 +218,10 @@ impl CreatePipelineInputBuilder {
         self.client_request_token = input;
         self
     }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
+    }
     /// <p>The Amazon Resource Name (ARN) of the role used by the pipeline to access and create resources.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -205,6 +231,10 @@ impl CreatePipelineInputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the role used by the pipeline to access and create resources.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Appends an item to `tags`.
     ///
@@ -225,6 +255,10 @@ impl CreatePipelineInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>A list of tags to apply to the created pipeline.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>This is the configuration that controls the parallelism of the pipeline. If specified, it applies to all runs of this pipeline by default.</p>
     pub fn parallelism_configuration(
         mut self,
@@ -240,6 +274,12 @@ impl CreatePipelineInputBuilder {
     ) -> Self {
         self.parallelism_configuration = input;
         self
+    }
+    /// <p>This is the configuration that controls the parallelism of the pipeline. If specified, it applies to all runs of this pipeline by default.</p>
+    pub fn get_parallelism_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ParallelismConfiguration> {
+        &self.parallelism_configuration
     }
     /// Consumes the builder and constructs a [`CreatePipelineInput`](crate::operation::create_pipeline::CreatePipelineInput).
     pub fn build(

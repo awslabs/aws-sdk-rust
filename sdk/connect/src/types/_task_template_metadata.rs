@@ -88,6 +88,10 @@ impl TaskTemplateMetadataBuilder {
         self.id = input;
         self
     }
+    /// <p>A unique identifier for the task template.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The Amazon Resource Name (ARN) of the task template.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -97,6 +101,10 @@ impl TaskTemplateMetadataBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the task template.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The name of the task template.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -108,6 +116,10 @@ impl TaskTemplateMetadataBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the task template.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the task template.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -117,6 +129,10 @@ impl TaskTemplateMetadataBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the task template.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.</p>
     pub fn status(mut self, input: crate::types::TaskTemplateStatus) -> Self {
@@ -131,6 +147,10 @@ impl TaskTemplateMetadataBuilder {
         self.status = input;
         self
     }
+    /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TaskTemplateStatus> {
+        &self.status
+    }
     /// <p>The timestamp when the task template was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -144,6 +164,10 @@ impl TaskTemplateMetadataBuilder {
         self.last_modified_time = input;
         self
     }
+    /// <p>The timestamp when the task template was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
     /// <p>The timestamp when the task template was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
@@ -156,6 +180,10 @@ impl TaskTemplateMetadataBuilder {
     ) -> Self {
         self.created_time = input;
         self
+    }
+    /// <p>The timestamp when the task template was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
     }
     /// Consumes the builder and constructs a [`TaskTemplateMetadata`](crate::types::TaskTemplateMetadata).
     pub fn build(self) -> crate::types::TaskTemplateMetadata {

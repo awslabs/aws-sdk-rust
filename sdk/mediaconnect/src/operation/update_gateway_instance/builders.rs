@@ -36,6 +36,13 @@ impl UpdateGatewayInstanceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateGatewayInstance as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_gateway_instance::builders::UpdateGatewayInstanceInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +136,10 @@ impl UpdateGatewayInstanceFluentBuilder {
         self.inner = self.inner.set_bridge_placement(input);
         self
     }
+    /// The availability of the instance to host new bridges. The bridgePlacement property can be LOCKED or AVAILABLE. If it is LOCKED, no new bridges can be deployed to this instance. If it is AVAILABLE, new bridges can be added to this instance.
+    pub fn get_bridge_placement(&self) -> &::std::option::Option<crate::types::BridgePlacement> {
+        self.inner.get_bridge_placement()
+    }
     /// The Amazon Resource Name (ARN) of the instance that you want to update.
     pub fn gateway_instance_arn(
         mut self,
@@ -144,5 +155,9 @@ impl UpdateGatewayInstanceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_gateway_instance_arn(input);
         self
+    }
+    /// The Amazon Resource Name (ARN) of the instance that you want to update.
+    pub fn get_gateway_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_gateway_instance_arn()
     }
 }

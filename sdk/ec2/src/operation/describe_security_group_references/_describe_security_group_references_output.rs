@@ -62,6 +62,12 @@ impl DescribeSecurityGroupReferencesOutputBuilder {
         self.security_group_reference_set = input;
         self
     }
+    /// <p>Information about the VPCs with the referencing security groups.</p>
+    pub fn get_security_group_reference_set(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupReference>> {
+        &self.security_group_reference_set
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

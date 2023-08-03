@@ -58,6 +58,12 @@ impl CustomLogSourceConfigurationBuilder {
         self.crawler_configuration = input;
         self
     }
+    /// <p>The configuration for the Glue Crawler for the third-party custom source.</p>
+    pub fn get_crawler_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomLogSourceCrawlerConfiguration> {
+        &self.crawler_configuration
+    }
     /// <p>The identity of the log provider for the third-party custom source.</p>
     pub fn provider_identity(mut self, input: crate::types::AwsIdentity) -> Self {
         self.provider_identity = ::std::option::Option::Some(input);
@@ -70,6 +76,10 @@ impl CustomLogSourceConfigurationBuilder {
     ) -> Self {
         self.provider_identity = input;
         self
+    }
+    /// <p>The identity of the log provider for the third-party custom source.</p>
+    pub fn get_provider_identity(&self) -> &::std::option::Option<crate::types::AwsIdentity> {
+        &self.provider_identity
     }
     /// Consumes the builder and constructs a [`CustomLogSourceConfiguration`](crate::types::CustomLogSourceConfiguration).
     pub fn build(self) -> crate::types::CustomLogSourceConfiguration {

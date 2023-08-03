@@ -80,6 +80,10 @@ impl QueryPlanningContextBuilder {
         self.catalog_id = input;
         self
     }
+    /// <p>The ID of the Data Catalog where the partition in question resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// <p>The database containing the table.</p>
     pub fn database_name(
         mut self,
@@ -96,6 +100,10 @@ impl QueryPlanningContextBuilder {
         self.database_name = input;
         self
     }
+    /// <p>The database containing the table.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
     pub fn query_as_of_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.query_as_of_time = ::std::option::Option::Some(input);
@@ -108,6 +116,10 @@ impl QueryPlanningContextBuilder {
     ) -> Self {
         self.query_as_of_time = input;
         self
+    }
+    /// <p>The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
+    pub fn get_query_as_of_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.query_as_of_time
     }
     /// Adds a key-value pair to `query_parameters`.
     ///
@@ -134,6 +146,14 @@ impl QueryPlanningContextBuilder {
         self.query_parameters = input;
         self
     }
+    /// <p>A map consisting of key-value pairs.</p>
+    pub fn get_query_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.query_parameters
+    }
     /// <p>The transaction ID at which to read the table contents. If this transaction is not committed, the read will be treated as part of that transaction and will see its writes. If this transaction has aborted, an error will be returned. If not set, defaults to the most recent committed transaction. Cannot be specified along with <code>QueryAsOfTime</code>.</p>
     pub fn transaction_id(
         mut self,
@@ -149,6 +169,10 @@ impl QueryPlanningContextBuilder {
     ) -> Self {
         self.transaction_id = input;
         self
+    }
+    /// <p>The transaction ID at which to read the table contents. If this transaction is not committed, the read will be treated as part of that transaction and will see its writes. If this transaction has aborted, an error will be returned. If not set, defaults to the most recent committed transaction. Cannot be specified along with <code>QueryAsOfTime</code>.</p>
+    pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transaction_id
     }
     /// Consumes the builder and constructs a [`QueryPlanningContext`](crate::types::QueryPlanningContext).
     pub fn build(self) -> crate::types::QueryPlanningContext {

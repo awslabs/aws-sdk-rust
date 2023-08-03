@@ -44,6 +44,12 @@ impl ReportTaskProgressFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ReportTaskProgress as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::report_task_progress::builders::ReportTaskProgressInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +140,10 @@ impl ReportTaskProgressFluentBuilder {
         self.inner = self.inner.set_task_id(input);
         self
     }
+    /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <code>PollForTask</code>.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_task_id()
+    }
     /// Appends an item to `fields`.
     ///
     /// To override the contents of this collection use [`set_fields`](Self::set_fields).
@@ -150,5 +160,9 @@ impl ReportTaskProgressFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_fields(input);
         self
+    }
+    /// <p>Key-value pairs that define the properties of the ReportTaskProgressInput object.</p>
+    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Field>> {
+        self.inner.get_fields()
     }
 }

@@ -55,6 +55,10 @@ impl ListEnvironmentsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `environment_ids`.
     ///
     /// To override the contents of this collection use [`set_environment_ids`](Self::set_environment_ids).
@@ -76,6 +80,12 @@ impl ListEnvironmentsOutputBuilder {
     ) -> Self {
         self.environment_ids = input;
         self
+    }
+    /// <p>The list of environment identifiers.</p>
+    pub fn get_environment_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.environment_ids
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

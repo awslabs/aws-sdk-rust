@@ -51,6 +51,11 @@ impl DeleteGroupInputBuilder {
         self.group_name = input;
         self
     }
+    /// <p>Deprecated - don't use this parameter. Use <code>Group</code> instead.</p>
+    #[deprecated(note = "This field is deprecated, use Group instead.")]
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
+    }
     /// <p>The name or the ARN of the resource group to delete.</p>
     pub fn group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group = ::std::option::Option::Some(input.into());
@@ -60,6 +65,10 @@ impl DeleteGroupInputBuilder {
     pub fn set_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group = input;
         self
+    }
+    /// <p>The name or the ARN of the resource group to delete.</p>
+    pub fn get_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group
     }
     /// Consumes the builder and constructs a [`DeleteGroupInput`](crate::operation::delete_group::DeleteGroupInput).
     pub fn build(

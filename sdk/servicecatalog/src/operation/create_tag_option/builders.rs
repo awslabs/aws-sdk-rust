@@ -36,6 +36,12 @@ impl CreateTagOptionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateTagOption as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_tag_option::builders::CreateTagOptionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateTagOptionFluentBuilder {
         self.inner = self.inner.set_key(input);
         self
     }
+    /// <p>The TagOption key.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_key()
+    }
     /// <p>The TagOption value.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.value(input.into());
@@ -135,5 +145,9 @@ impl CreateTagOptionFluentBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_value(input);
         self
+    }
+    /// <p>The TagOption value.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_value()
     }
 }

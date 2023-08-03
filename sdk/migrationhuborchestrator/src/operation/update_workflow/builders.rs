@@ -36,6 +36,12 @@ impl UpdateWorkflowFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateWorkflow as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_workflow::builders::UpdateWorkflowInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl UpdateWorkflowFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The ID of the migration workflow.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The name of the migration workflow.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -128,6 +138,10 @@ impl UpdateWorkflowFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the migration workflow.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The description of the migration workflow.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -137,6 +151,10 @@ impl UpdateWorkflowFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the migration workflow.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Adds a key-value pair to `inputParameters`.
     ///
@@ -161,6 +179,14 @@ impl UpdateWorkflowFluentBuilder {
         self.inner = self.inner.set_input_parameters(input);
         self
     }
+    /// <p>The input parameters required to update a migration workflow.</p>
+    pub fn get_input_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::StepInput>,
+    > {
+        self.inner.get_input_parameters()
+    }
     /// Appends an item to `stepTargets`.
     ///
     /// To override the contents of this collection use [`set_step_targets`](Self::set_step_targets).
@@ -177,5 +203,11 @@ impl UpdateWorkflowFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_step_targets(input);
         self
+    }
+    /// <p>The servers on which a step will be run.</p>
+    pub fn get_step_targets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_step_targets()
     }
 }

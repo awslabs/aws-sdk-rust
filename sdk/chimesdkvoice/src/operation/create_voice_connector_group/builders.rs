@@ -37,6 +37,10 @@ impl CreateVoiceConnectorGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateVoiceConnectorGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_voice_connector_group::builders::CreateVoiceConnectorGroupInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl CreateVoiceConnectorGroupFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the Voice Connector group.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// Appends an item to `VoiceConnectorItems`.
     ///
     /// To override the contents of this collection use [`set_voice_connector_items`](Self::set_voice_connector_items).
@@ -143,5 +151,11 @@ impl CreateVoiceConnectorGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_voice_connector_items(input);
         self
+    }
+    /// <p>Lists the Voice Connectors that inbound calls are routed to.</p>
+    pub fn get_voice_connector_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorItem>> {
+        self.inner.get_voice_connector_items()
     }
 }

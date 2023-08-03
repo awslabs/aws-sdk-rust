@@ -51,6 +51,10 @@ impl LoaBuilder {
         self.loa_content = input;
         self
     }
+    /// <p>The binary contents of the LOA-CFA document.</p>
+    pub fn get_loa_content(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.loa_content
+    }
     /// <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
     pub fn loa_content_type(mut self, input: crate::types::LoaContentType) -> Self {
         self.loa_content_type = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl LoaBuilder {
     ) -> Self {
         self.loa_content_type = input;
         self
+    }
+    /// <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
+    pub fn get_loa_content_type(&self) -> &::std::option::Option<crate::types::LoaContentType> {
+        &self.loa_content_type
     }
     /// Consumes the builder and constructs a [`Loa`](crate::types::Loa).
     pub fn build(self) -> crate::types::Loa {

@@ -47,6 +47,10 @@ impl DeleteArtifactInputBuilder {
         self.artifact_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the artifact to delete.</p>
+    pub fn get_artifact_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.artifact_arn
+    }
     /// <p>The URI of the source.</p>
     pub fn source(mut self, input: crate::types::ArtifactSource) -> Self {
         self.source = ::std::option::Option::Some(input);
@@ -59,6 +63,10 @@ impl DeleteArtifactInputBuilder {
     ) -> Self {
         self.source = input;
         self
+    }
+    /// <p>The URI of the source.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::ArtifactSource> {
+        &self.source
     }
     /// Consumes the builder and constructs a [`DeleteArtifactInput`](crate::operation::delete_artifact::DeleteArtifactInput).
     pub fn build(

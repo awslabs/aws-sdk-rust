@@ -40,6 +40,10 @@ impl FileSystemAssociationStatusDetailBuilder {
         self.error_code = input;
         self
     }
+    /// <p>The error code for a given file system association status.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
+    }
     /// Consumes the builder and constructs a [`FileSystemAssociationStatusDetail`](crate::types::FileSystemAssociationStatusDetail).
     pub fn build(self) -> crate::types::FileSystemAssociationStatusDetail {
         crate::types::FileSystemAssociationStatusDetail {

@@ -36,6 +36,10 @@ impl DisassociateGlobalReplicationGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociateGlobalReplicationGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::disassociate_global_replication_group::builders::DisassociateGlobalReplicationGroupInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl DisassociateGlobalReplicationGroupFluentBuilder {
         self.inner = self.inner.set_global_replication_group_id(input);
         self
     }
+    /// <p>The name of the Global datastore</p>
+    pub fn get_global_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_global_replication_group_id()
+    }
     /// <p>The name of the secondary cluster you wish to remove from the Global datastore</p>
     pub fn replication_group_id(
         mut self,
@@ -122,6 +130,10 @@ impl DisassociateGlobalReplicationGroupFluentBuilder {
         self.inner = self.inner.set_replication_group_id(input);
         self
     }
+    /// <p>The name of the secondary cluster you wish to remove from the Global datastore</p>
+    pub fn get_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_replication_group_id()
+    }
     /// <p>The Amazon region of secondary cluster you wish to remove from the Global datastore</p>
     pub fn replication_group_region(
         mut self,
@@ -137,5 +149,9 @@ impl DisassociateGlobalReplicationGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_replication_group_region(input);
         self
+    }
+    /// <p>The Amazon region of secondary cluster you wish to remove from the Global datastore</p>
+    pub fn get_replication_group_region(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_replication_group_region()
     }
 }

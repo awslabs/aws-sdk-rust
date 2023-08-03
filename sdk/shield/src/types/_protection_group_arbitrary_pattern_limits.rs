@@ -40,6 +40,10 @@ impl ProtectionGroupArbitraryPatternLimitsBuilder {
         self.max_members = input;
         self
     }
+    /// <p>The maximum number of resources you can specify for a single arbitrary pattern in a protection group.</p>
+    pub fn get_max_members(&self) -> &::std::option::Option<i64> {
+        &self.max_members
+    }
     /// Consumes the builder and constructs a [`ProtectionGroupArbitraryPatternLimits`](crate::types::ProtectionGroupArbitraryPatternLimits).
     pub fn build(self) -> crate::types::ProtectionGroupArbitraryPatternLimits {
         crate::types::ProtectionGroupArbitraryPatternLimits {

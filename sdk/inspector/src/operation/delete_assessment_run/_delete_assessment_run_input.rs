@@ -47,6 +47,10 @@ impl DeleteAssessmentRunInputBuilder {
         self.assessment_run_arn = input;
         self
     }
+    /// <p>The ARN that specifies the assessment run that you want to delete.</p>
+    pub fn get_assessment_run_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assessment_run_arn
+    }
     /// Consumes the builder and constructs a [`DeleteAssessmentRunInput`](crate::operation::delete_assessment_run::DeleteAssessmentRunInput).
     pub fn build(
         self,

@@ -39,6 +39,10 @@ impl GetContinuousDeploymentPolicyConfigInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the continuous deployment policy whose configuration you are getting.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`GetContinuousDeploymentPolicyConfigInput`](crate::operation::get_continuous_deployment_policy_config::GetContinuousDeploymentPolicyConfigInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_continuous_deployment_policy_config::GetContinuousDeploymentPolicyConfigInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

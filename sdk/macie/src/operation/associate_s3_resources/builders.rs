@@ -36,6 +36,12 @@ impl AssociateS3ResourcesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateS3Resources as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::associate_s3_resources::builders::AssociateS3ResourcesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl AssociateS3ResourcesFluentBuilder {
         self.inner = self.inner.set_member_account_id(input);
         self
     }
+    /// <p>(Discontinued) The ID of the Amazon Macie Classic member account whose resources you want to associate with Macie Classic.</p>
+    pub fn get_member_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_member_account_id()
+    }
     /// Appends an item to `s3Resources`.
     ///
     /// To override the contents of this collection use [`set_s3_resources`](Self::set_s3_resources).
@@ -148,5 +158,11 @@ impl AssociateS3ResourcesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_s3_resources(input);
         self
+    }
+    /// <p>(Discontinued) The S3 resources that you want to associate with Amazon Macie Classic for monitoring and data classification.</p>
+    pub fn get_s3_resources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::S3ResourceClassification>> {
+        self.inner.get_s3_resources()
     }
 }

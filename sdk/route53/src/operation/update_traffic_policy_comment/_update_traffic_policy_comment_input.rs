@@ -56,6 +56,10 @@ impl UpdateTrafficPolicyCommentInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The value of <code>Id</code> for the traffic policy that you want to update the comment for.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The value of <code>Version</code> for the traffic policy that you want to update the comment for.</p>
     pub fn version(mut self, input: i32) -> Self {
         self.version = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl UpdateTrafficPolicyCommentInputBuilder {
         self.version = input;
         self
     }
+    /// <p>The value of <code>Version</code> for the traffic policy that you want to update the comment for.</p>
+    pub fn get_version(&self) -> &::std::option::Option<i32> {
+        &self.version
+    }
     /// <p>The new comment for the specified traffic policy and version.</p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl UpdateTrafficPolicyCommentInputBuilder {
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comment = input;
         self
+    }
+    /// <p>The new comment for the specified traffic policy and version.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comment
     }
     /// Consumes the builder and constructs a [`UpdateTrafficPolicyCommentInput`](crate::operation::update_traffic_policy_comment::UpdateTrafficPolicyCommentInput).
     pub fn build(

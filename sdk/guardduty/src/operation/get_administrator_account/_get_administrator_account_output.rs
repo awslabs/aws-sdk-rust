@@ -51,6 +51,10 @@ impl GetAdministratorAccountOutputBuilder {
         self.administrator = input;
         self
     }
+    /// <p>The administrator account details.</p>
+    pub fn get_administrator(&self) -> &::std::option::Option<crate::types::Administrator> {
+        &self.administrator
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -70,6 +70,10 @@ impl JourneyRunResponseBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The time when the journey run was created or scheduled, in ISO 8601 format.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_time
+    }
     /// <p>The last time the journey run was updated, in ISO 8601 format..</p>
     pub fn last_update_time(
         mut self,
@@ -86,6 +90,10 @@ impl JourneyRunResponseBuilder {
         self.last_update_time = input;
         self
     }
+    /// <p>The last time the journey run was updated, in ISO 8601 format..</p>
+    pub fn get_last_update_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_update_time
+    }
     /// <p>The unique identifier for the run.</p>
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.run_id = ::std::option::Option::Some(input.into());
@@ -95,6 +103,10 @@ impl JourneyRunResponseBuilder {
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.run_id = input;
         self
+    }
+    /// <p>The unique identifier for the run.</p>
+    pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.run_id
     }
     /// <p>The current status of the journey run.</p>
     pub fn status(mut self, input: crate::types::JourneyRunStatus) -> Self {
@@ -108,6 +120,10 @@ impl JourneyRunResponseBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the journey run.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::JourneyRunStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`JourneyRunResponse`](crate::types::JourneyRunResponse).
     pub fn build(self) -> crate::types::JourneyRunResponse {

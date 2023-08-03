@@ -73,6 +73,10 @@ impl DescribeBackupsInputBuilder {
         self.backup_ids = input;
         self
     }
+    /// <p>The IDs of the backups that you want to retrieve. This parameter value overrides any filters. If any IDs aren't found, a <code>BackupNotFound</code> error occurs.</p>
+    pub fn get_backup_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.backup_ids
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -92,6 +96,10 @@ impl DescribeBackupsInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>The filters structure. The supported names are <code>file-system-id</code>, <code>backup-type</code>, <code>file-system-type</code>, and <code>volume-id</code>.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
+    }
     /// <p>Maximum number of backups to return in the response. This parameter value must be greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the request and the service's internal maximum number of items per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -102,6 +110,10 @@ impl DescribeBackupsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>Maximum number of backups to return in the response. This parameter value must be greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the request and the service's internal maximum number of items per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>An opaque pagination token returned from a previous <code>DescribeBackups</code> operation. If a token is present, the operation continues the list from where the returning call left off.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -111,6 +123,10 @@ impl DescribeBackupsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>An opaque pagination token returned from a previous <code>DescribeBackups</code> operation. If a token is present, the operation continues the list from where the returning call left off.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeBackupsInput`](crate::operation::describe_backups::DescribeBackupsInput).
     pub fn build(

@@ -63,6 +63,10 @@ impl AdminGetDeviceInputBuilder {
         self.device_key = input;
         self
     }
+    /// <p>The device key.</p>
+    pub fn get_device_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_key
+    }
     /// <p>The user pool ID.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl AdminGetDeviceInputBuilder {
         self.user_pool_id = input;
         self
     }
+    /// <p>The user pool ID.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_pool_id
+    }
     /// <p>The user name.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl AdminGetDeviceInputBuilder {
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
+    }
+    /// <p>The user name.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
     }
     /// Consumes the builder and constructs a [`AdminGetDeviceInput`](crate::operation::admin_get_device::AdminGetDeviceInput).
     pub fn build(

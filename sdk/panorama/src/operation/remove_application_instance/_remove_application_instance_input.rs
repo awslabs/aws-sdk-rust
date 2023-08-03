@@ -45,6 +45,10 @@ impl RemoveApplicationInstanceInputBuilder {
         self.application_instance_id = input;
         self
     }
+    /// <p>An application instance ID.</p>
+    pub fn get_application_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_instance_id
+    }
     /// Consumes the builder and constructs a [`RemoveApplicationInstanceInput`](crate::operation::remove_application_instance::RemoveApplicationInstanceInput).
     pub fn build(
         self,

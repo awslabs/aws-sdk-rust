@@ -49,6 +49,10 @@ impl GetBucketVersioningInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID of the S3 on Outposts bucket.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The S3 on Outposts bucket to return the versioning state for.</p>
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl GetBucketVersioningInputBuilder {
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket = input;
         self
+    }
+    /// <p>The S3 on Outposts bucket to return the versioning state for.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
     }
     /// Consumes the builder and constructs a [`GetBucketVersioningInput`](crate::operation::get_bucket_versioning::GetBucketVersioningInput).
     pub fn build(

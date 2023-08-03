@@ -45,6 +45,10 @@ impl GetDashboardInputBuilder {
         self.dashboard_name = input;
         self
     }
+    /// <p>The name of the dashboard to be described.</p>
+    pub fn get_dashboard_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dashboard_name
+    }
     /// Consumes the builder and constructs a [`GetDashboardInput`](crate::operation::get_dashboard::GetDashboardInput).
     pub fn build(
         self,

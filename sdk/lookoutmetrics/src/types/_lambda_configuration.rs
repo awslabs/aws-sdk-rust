@@ -48,6 +48,10 @@ impl LambdaConfigurationBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The ARN of an IAM role that has permission to invoke the Lambda function.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>The ARN of the Lambda function.</p>
     pub fn lambda_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lambda_arn = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl LambdaConfigurationBuilder {
     pub fn set_lambda_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lambda_arn = input;
         self
+    }
+    /// <p>The ARN of the Lambda function.</p>
+    pub fn get_lambda_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lambda_arn
     }
     /// Consumes the builder and constructs a [`LambdaConfiguration`](crate::types::LambdaConfiguration).
     pub fn build(self) -> crate::types::LambdaConfiguration {

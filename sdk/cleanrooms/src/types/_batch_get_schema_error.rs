@@ -56,6 +56,10 @@ impl BatchGetSchemaErrorBuilder {
         self.name = input;
         self
     }
+    /// <p>An error name for the error.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>An error code for the error. </p>
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl BatchGetSchemaErrorBuilder {
         self.code = input;
         self
     }
+    /// <p>An error code for the error. </p>
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
+    }
     /// <p>An error message for the error.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl BatchGetSchemaErrorBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>An error message for the error.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`BatchGetSchemaError`](crate::types::BatchGetSchemaError).
     pub fn build(self) -> crate::types::BatchGetSchemaError {

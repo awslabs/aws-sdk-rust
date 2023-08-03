@@ -53,6 +53,12 @@ impl JobDriverBuilder {
         self.spark_submit_job_driver = input;
         self
     }
+    /// <p>The job driver parameters specified for spark submit.</p>
+    pub fn get_spark_submit_job_driver(
+        &self,
+    ) -> &::std::option::Option<crate::types::SparkSubmitJobDriver> {
+        &self.spark_submit_job_driver
+    }
     /// <p>The job driver for job type.</p>
     pub fn spark_sql_job_driver(mut self, input: crate::types::SparkSqlJobDriver) -> Self {
         self.spark_sql_job_driver = ::std::option::Option::Some(input);
@@ -65,6 +71,12 @@ impl JobDriverBuilder {
     ) -> Self {
         self.spark_sql_job_driver = input;
         self
+    }
+    /// <p>The job driver for job type.</p>
+    pub fn get_spark_sql_job_driver(
+        &self,
+    ) -> &::std::option::Option<crate::types::SparkSqlJobDriver> {
+        &self.spark_sql_job_driver
     }
     /// Consumes the builder and constructs a [`JobDriver`](crate::types::JobDriver).
     pub fn build(self) -> crate::types::JobDriver {

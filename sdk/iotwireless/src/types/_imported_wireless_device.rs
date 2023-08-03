@@ -43,6 +43,10 @@ impl ImportedWirelessDeviceBuilder {
         self.sidewalk = input;
         self
     }
+    /// <p>The Sidewalk-related information about a device that has been added to an import task.</p>
+    pub fn get_sidewalk(&self) -> &::std::option::Option<crate::types::ImportedSidewalkDevice> {
+        &self.sidewalk
+    }
     /// Consumes the builder and constructs a [`ImportedWirelessDevice`](crate::types::ImportedWirelessDevice).
     pub fn build(self) -> crate::types::ImportedWirelessDevice {
         crate::types::ImportedWirelessDevice {

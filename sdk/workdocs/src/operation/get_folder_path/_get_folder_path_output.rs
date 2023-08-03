@@ -46,6 +46,10 @@ impl GetFolderPathOutputBuilder {
         self.path = input;
         self
     }
+    /// <p>The path information.</p>
+    pub fn get_path(&self) -> &::std::option::Option<crate::types::ResourcePath> {
+        &self.path
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

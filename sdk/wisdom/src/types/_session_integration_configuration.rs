@@ -46,6 +46,10 @@ impl SessionIntegrationConfigurationBuilder {
         self.topic_integration_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the integrated Amazon SNS topic used for streaming chat messages.</p>
+    pub fn get_topic_integration_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_integration_arn
+    }
     /// Consumes the builder and constructs a [`SessionIntegrationConfiguration`](crate::types::SessionIntegrationConfiguration).
     pub fn build(self) -> crate::types::SessionIntegrationConfiguration {
         crate::types::SessionIntegrationConfiguration {

@@ -89,6 +89,10 @@ impl CreateDataQualityRulesetInputBuilder {
         self.name = input;
         self
     }
+    /// <p>A unique name for the data quality ruleset.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A description of the data quality ruleset.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -99,6 +103,10 @@ impl CreateDataQualityRulesetInputBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the data quality ruleset.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide.</p>
     pub fn ruleset(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ruleset = ::std::option::Option::Some(input.into());
@@ -108,6 +116,10 @@ impl CreateDataQualityRulesetInputBuilder {
     pub fn set_ruleset(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ruleset = input;
         self
+    }
+    /// <p>A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide.</p>
+    pub fn get_ruleset(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ruleset
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -134,6 +146,14 @@ impl CreateDataQualityRulesetInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>A list of tags applied to the data quality ruleset.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>A target table associated with the data quality ruleset.</p>
     pub fn target_table(mut self, input: crate::types::DataQualityTargetTable) -> Self {
         self.target_table = ::std::option::Option::Some(input);
@@ -147,6 +167,10 @@ impl CreateDataQualityRulesetInputBuilder {
         self.target_table = input;
         self
     }
+    /// <p>A target table associated with the data quality ruleset.</p>
+    pub fn get_target_table(&self) -> &::std::option::Option<crate::types::DataQualityTargetTable> {
+        &self.target_table
+    }
     /// <p>Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -156,6 +180,10 @@ impl CreateDataQualityRulesetInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateDataQualityRulesetInput`](crate::operation::create_data_quality_ruleset::CreateDataQualityRulesetInput).
     pub fn build(

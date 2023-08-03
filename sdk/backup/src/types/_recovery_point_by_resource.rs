@@ -118,6 +118,10 @@ impl RecoveryPointByResourceBuilder {
         self.recovery_point_arn = input;
         self
     }
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+    pub fn get_recovery_point_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recovery_point_arn
+    }
     /// <p>The date and time a recovery point is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
@@ -131,6 +135,10 @@ impl RecoveryPointByResourceBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>The date and time a recovery point is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
+    }
     /// <p>A status code specifying the state of the recovery point.</p>
     pub fn status(mut self, input: crate::types::RecoveryPointStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -143,6 +151,10 @@ impl RecoveryPointByResourceBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>A status code specifying the state of the recovery point.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::RecoveryPointStatus> {
+        &self.status
     }
     /// <p>A message explaining the reason of the recovery point deletion failure.</p>
     pub fn status_message(
@@ -160,6 +172,10 @@ impl RecoveryPointByResourceBuilder {
         self.status_message = input;
         self
     }
+    /// <p>A message explaining the reason of the recovery point deletion failure.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>The server-side encryption key that is used to protect your backups; for example, <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
     pub fn encryption_key_arn(
         mut self,
@@ -176,6 +192,10 @@ impl RecoveryPointByResourceBuilder {
         self.encryption_key_arn = input;
         self
     }
+    /// <p>The server-side encryption key that is used to protect your backups; for example, <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
+    pub fn get_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encryption_key_arn
+    }
     /// <p>The size, in bytes, of a backup.</p>
     pub fn backup_size_bytes(mut self, input: i64) -> Self {
         self.backup_size_bytes = ::std::option::Option::Some(input);
@@ -185,6 +205,10 @@ impl RecoveryPointByResourceBuilder {
     pub fn set_backup_size_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.backup_size_bytes = input;
         self
+    }
+    /// <p>The size, in bytes, of a backup.</p>
+    pub fn get_backup_size_bytes(&self) -> &::std::option::Option<i64> {
+        &self.backup_size_bytes
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub fn backup_vault_name(
@@ -202,6 +226,10 @@ impl RecoveryPointByResourceBuilder {
         self.backup_vault_name = input;
         self
     }
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    pub fn get_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_vault_name
+    }
     /// <p>This is a boolean value indicating this is a parent (composite) recovery point.</p>
     pub fn is_parent(mut self, input: bool) -> Self {
         self.is_parent = ::std::option::Option::Some(input);
@@ -211,6 +239,10 @@ impl RecoveryPointByResourceBuilder {
     pub fn set_is_parent(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_parent = input;
         self
+    }
+    /// <p>This is a boolean value indicating this is a parent (composite) recovery point.</p>
+    pub fn get_is_parent(&self) -> &::std::option::Option<bool> {
+        &self.is_parent
     }
     /// <p>This is the Amazon Resource Name (ARN) of the parent (composite) recovery point.</p>
     pub fn parent_recovery_point_arn(
@@ -228,6 +260,10 @@ impl RecoveryPointByResourceBuilder {
         self.parent_recovery_point_arn = input;
         self
     }
+    /// <p>This is the Amazon Resource Name (ARN) of the parent (composite) recovery point.</p>
+    pub fn get_parent_recovery_point_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent_recovery_point_arn
+    }
     /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
     pub fn resource_name(
         mut self,
@@ -243,6 +279,10 @@ impl RecoveryPointByResourceBuilder {
     ) -> Self {
         self.resource_name = input;
         self
+    }
+    /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_name
     }
     /// Consumes the builder and constructs a [`RecoveryPointByResource`](crate::types::RecoveryPointByResource).
     pub fn build(self) -> crate::types::RecoveryPointByResource {

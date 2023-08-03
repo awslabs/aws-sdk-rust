@@ -118,6 +118,12 @@ impl ListMultipartUploadsInputBuilder {
         self.bucket = input;
         self
     }
+    /// <p>The name of the bucket to which the multipart upload was initiated. </p>
+    /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p>Character you use to group keys.</p>
     /// <p>All keys that contain the same string between the prefix, if specified, and the first occurrence of the delimiter after the prefix are grouped under a single result element, <code>CommonPrefixes</code>. If you don't specify the prefix parameter, then the substring starts at the beginning of the key. The keys that are grouped under <code>CommonPrefixes</code> result element are not returned elsewhere in the response.</p>
     pub fn delimiter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -129,6 +135,11 @@ impl ListMultipartUploadsInputBuilder {
     pub fn set_delimiter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.delimiter = input;
         self
+    }
+    /// <p>Character you use to group keys.</p>
+    /// <p>All keys that contain the same string between the prefix, if specified, and the first occurrence of the delimiter after the prefix are grouped under a single result element, <code>CommonPrefixes</code>. If you don't specify the prefix parameter, then the substring starts at the beginning of the key. The keys that are grouped under <code>CommonPrefixes</code> result element are not returned elsewhere in the response.</p>
+    pub fn get_delimiter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delimiter
     }
     /// <p>Requests Amazon S3 to encode the object keys in the response and specifies the encoding method to use. An object key can contain any Unicode character; however, the XML 1.0 parser cannot parse some characters, such as characters with an ASCII value from 0 to 10. For characters that are not supported in XML 1.0, you can add this parameter to request that Amazon S3 encode the keys in the response.</p>
     pub fn encoding_type(mut self, input: crate::types::EncodingType) -> Self {
@@ -142,6 +153,10 @@ impl ListMultipartUploadsInputBuilder {
     ) -> Self {
         self.encoding_type = input;
         self
+    }
+    /// <p>Requests Amazon S3 to encode the object keys in the response and specifies the encoding method to use. An object key can contain any Unicode character; however, the XML 1.0 parser cannot parse some characters, such as characters with an ASCII value from 0 to 10. For characters that are not supported in XML 1.0, you can add this parameter to request that Amazon S3 encode the keys in the response.</p>
+    pub fn get_encoding_type(&self) -> &::std::option::Option<crate::types::EncodingType> {
+        &self.encoding_type
     }
     /// <p>Together with <code>upload-id-marker</code>, this parameter specifies the multipart upload after which listing should begin.</p>
     /// <p>If <code>upload-id-marker</code> is not specified, only the keys lexicographically greater than the specified <code>key-marker</code> will be included in the list.</p>
@@ -157,6 +172,12 @@ impl ListMultipartUploadsInputBuilder {
         self.key_marker = input;
         self
     }
+    /// <p>Together with <code>upload-id-marker</code>, this parameter specifies the multipart upload after which listing should begin.</p>
+    /// <p>If <code>upload-id-marker</code> is not specified, only the keys lexicographically greater than the specified <code>key-marker</code> will be included in the list.</p>
+    /// <p>If <code>upload-id-marker</code> is specified, any multipart uploads for a key equal to the <code>key-marker</code> might also be included, provided those multipart uploads have upload IDs lexicographically greater than the specified <code>upload-id-marker</code>.</p>
+    pub fn get_key_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_marker
+    }
     /// <p>Sets the maximum number of multipart uploads, from 1 to 1,000, to return in the response body. 1,000 is the maximum number of uploads that can be returned in a response.</p>
     pub fn max_uploads(mut self, input: i32) -> Self {
         self.max_uploads = ::std::option::Option::Some(input);
@@ -167,6 +188,10 @@ impl ListMultipartUploadsInputBuilder {
         self.max_uploads = input;
         self
     }
+    /// <p>Sets the maximum number of multipart uploads, from 1 to 1,000, to return in the response body. 1,000 is the maximum number of uploads that can be returned in a response.</p>
+    pub fn get_max_uploads(&self) -> &::std::option::Option<i32> {
+        &self.max_uploads
+    }
     /// <p>Lists in-progress uploads only for those keys that begin with the specified prefix. You can use prefixes to separate a bucket into different grouping of keys. (You can think of using <code>prefix</code> to make groups in the same way that you'd use a folder in a file system.)</p>
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix = ::std::option::Option::Some(input.into());
@@ -176,6 +201,10 @@ impl ListMultipartUploadsInputBuilder {
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix = input;
         self
+    }
+    /// <p>Lists in-progress uploads only for those keys that begin with the specified prefix. You can use prefixes to separate a bucket into different grouping of keys. (You can think of using <code>prefix</code> to make groups in the same way that you'd use a folder in a file system.)</p>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
     }
     /// <p>Together with key-marker, specifies the multipart upload after which listing should begin. If key-marker is not specified, the upload-id-marker parameter is ignored. Otherwise, any multipart uploads for a key equal to the key-marker might be included in the list only if they have an upload ID lexicographically greater than the specified <code>upload-id-marker</code>.</p>
     pub fn upload_id_marker(
@@ -193,6 +222,10 @@ impl ListMultipartUploadsInputBuilder {
         self.upload_id_marker = input;
         self
     }
+    /// <p>Together with key-marker, specifies the multipart upload after which listing should begin. If key-marker is not specified, the upload-id-marker parameter is ignored. Otherwise, any multipart uploads for a key equal to the key-marker might be included in the list only if they have an upload ID lexicographically greater than the specified <code>upload-id-marker</code>.</p>
+    pub fn get_upload_id_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.upload_id_marker
+    }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(
         mut self,
@@ -209,6 +242,10 @@ impl ListMultipartUploadsInputBuilder {
         self.expected_bucket_owner = input;
         self
     }
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
+    pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expected_bucket_owner
+    }
     /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(mut self, input: crate::types::RequestPayer) -> Self {
         self.request_payer = ::std::option::Option::Some(input);
@@ -221,6 +258,10 @@ impl ListMultipartUploadsInputBuilder {
     ) -> Self {
         self.request_payer = input;
         self
+    }
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn get_request_payer(&self) -> &::std::option::Option<crate::types::RequestPayer> {
+        &self.request_payer
     }
     /// Consumes the builder and constructs a [`ListMultipartUploadsInput`](crate::operation::list_multipart_uploads::ListMultipartUploadsInput).
     pub fn build(

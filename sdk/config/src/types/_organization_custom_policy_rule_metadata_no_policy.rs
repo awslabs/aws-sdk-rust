@@ -129,6 +129,10 @@ impl OrganizationCustomPolicyRuleMetadataNoPolicyBuilder {
         self.description = input;
         self
     }
+    /// <p>The description that you provide for your organization Config Custom Policy rule.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// Appends an item to `organization_config_rule_trigger_types`.
     ///
     /// To override the contents of this collection use [`set_organization_config_rule_trigger_types`](Self::set_organization_config_rule_trigger_types).
@@ -163,6 +167,17 @@ impl OrganizationCustomPolicyRuleMetadataNoPolicyBuilder {
         self.organization_config_rule_trigger_types = input;
         self
     }
+    /// <p>The type of notification that triggers Config to run an evaluation for a rule. For Config Custom Policy rules, Config supports change triggered notification types:</p>
+    /// <ul>
+    /// <li> <p> <code>ConfigurationItemChangeNotification</code> - Triggers an evaluation when Config delivers a configuration item as a result of a resource change.</p> </li>
+    /// <li> <p> <code>OversizedConfigurationItemChangeNotification</code> - Triggers an evaluation when Config delivers an oversized configuration item. Config may generate this notification type when a resource changes and the notification exceeds the maximum size allowed by Amazon SNS.</p> </li>
+    /// </ul>
+    pub fn get_organization_config_rule_trigger_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OrganizationConfigRuleTriggerTypeNoSn>>
+    {
+        &self.organization_config_rule_trigger_types
+    }
     /// <p>A string, in JSON format, that is passed to your organization Config Custom Policy rule.</p>
     pub fn input_parameters(
         mut self,
@@ -179,6 +194,10 @@ impl OrganizationCustomPolicyRuleMetadataNoPolicyBuilder {
         self.input_parameters = input;
         self
     }
+    /// <p>A string, in JSON format, that is passed to your organization Config Custom Policy rule.</p>
+    pub fn get_input_parameters(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_parameters
+    }
     /// <p>The maximum frequency with which Config runs evaluations for a rule. Your Config Custom Policy rule is triggered when Config delivers the configuration snapshot. For more information, see <code>ConfigSnapshotDeliveryProperties</code>.</p>
     pub fn maximum_execution_frequency(
         mut self,
@@ -194,6 +213,12 @@ impl OrganizationCustomPolicyRuleMetadataNoPolicyBuilder {
     ) -> Self {
         self.maximum_execution_frequency = input;
         self
+    }
+    /// <p>The maximum frequency with which Config runs evaluations for a rule. Your Config Custom Policy rule is triggered when Config delivers the configuration snapshot. For more information, see <code>ConfigSnapshotDeliveryProperties</code>.</p>
+    pub fn get_maximum_execution_frequency(
+        &self,
+    ) -> &::std::option::Option<crate::types::MaximumExecutionFrequency> {
+        &self.maximum_execution_frequency
     }
     /// Appends an item to `resource_types_scope`.
     ///
@@ -217,6 +242,12 @@ impl OrganizationCustomPolicyRuleMetadataNoPolicyBuilder {
         self.resource_types_scope = input;
         self
     }
+    /// <p>The type of the Amazon Web Services resource that was evaluated.</p>
+    pub fn get_resource_types_scope(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resource_types_scope
+    }
     /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
     pub fn resource_id_scope(
         mut self,
@@ -232,6 +263,10 @@ impl OrganizationCustomPolicyRuleMetadataNoPolicyBuilder {
     ) -> Self {
         self.resource_id_scope = input;
         self
+    }
+    /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
+    pub fn get_resource_id_scope(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id_scope
     }
     /// <p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values.</p>
     pub fn tag_key_scope(
@@ -249,6 +284,10 @@ impl OrganizationCustomPolicyRuleMetadataNoPolicyBuilder {
         self.tag_key_scope = input;
         self
     }
+    /// <p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values.</p>
+    pub fn get_tag_key_scope(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tag_key_scope
+    }
     /// <p>The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).</p>
     pub fn tag_value_scope(
         mut self,
@@ -265,6 +304,10 @@ impl OrganizationCustomPolicyRuleMetadataNoPolicyBuilder {
         self.tag_value_scope = input;
         self
     }
+    /// <p>The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).</p>
+    pub fn get_tag_value_scope(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tag_value_scope
+    }
     /// <p>The runtime system for your organization Config Custom Policy rules. Guard is a policy-as-code language that allows you to write policies that are enforced by Config Custom Policy rules. For more information about Guard, see the <a href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>.</p>
     pub fn policy_runtime(
         mut self,
@@ -280,6 +323,10 @@ impl OrganizationCustomPolicyRuleMetadataNoPolicyBuilder {
     ) -> Self {
         self.policy_runtime = input;
         self
+    }
+    /// <p>The runtime system for your organization Config Custom Policy rules. Guard is a policy-as-code language that allows you to write policies that are enforced by Config Custom Policy rules. For more information about Guard, see the <a href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>.</p>
+    pub fn get_policy_runtime(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_runtime
     }
     /// Appends an item to `debug_log_delivery_accounts`.
     ///
@@ -302,6 +349,12 @@ impl OrganizationCustomPolicyRuleMetadataNoPolicyBuilder {
     ) -> Self {
         self.debug_log_delivery_accounts = input;
         self
+    }
+    /// <p>A list of accounts that you can enable debug logging for your organization Config Custom Policy rule. List is null when debug logging is enabled for all accounts.</p>
+    pub fn get_debug_log_delivery_accounts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.debug_log_delivery_accounts
     }
     /// Consumes the builder and constructs a [`OrganizationCustomPolicyRuleMetadataNoPolicy`](crate::types::OrganizationCustomPolicyRuleMetadataNoPolicy).
     pub fn build(self) -> crate::types::OrganizationCustomPolicyRuleMetadataNoPolicy {

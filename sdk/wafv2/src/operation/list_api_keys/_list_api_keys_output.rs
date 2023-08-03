@@ -63,6 +63,10 @@ impl ListApiKeysOutputBuilder {
         self.next_marker = input;
         self
     }
+    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_marker
+    }
     /// Appends an item to `api_key_summaries`.
     ///
     /// To override the contents of this collection use [`set_api_key_summaries`](Self::set_api_key_summaries).
@@ -82,6 +86,12 @@ impl ListApiKeysOutputBuilder {
         self.api_key_summaries = input;
         self
     }
+    /// <p>The array of key summaries. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
+    pub fn get_api_key_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApiKeySummary>> {
+        &self.api_key_summaries
+    }
     /// <p>The CAPTCHA application integration URL, for use in your JavaScript implementation. </p>
     pub fn application_integration_url(
         mut self,
@@ -97,6 +107,10 @@ impl ListApiKeysOutputBuilder {
     ) -> Self {
         self.application_integration_url = input;
         self
+    }
+    /// <p>The CAPTCHA application integration URL, for use in your JavaScript implementation. </p>
+    pub fn get_application_integration_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_integration_url
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

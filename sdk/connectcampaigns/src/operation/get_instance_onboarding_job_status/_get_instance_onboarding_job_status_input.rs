@@ -46,6 +46,10 @@ impl GetInstanceOnboardingJobStatusInputBuilder {
         self.connect_instance_id = input;
         self
     }
+    /// Amazon Connect Instance Id
+    pub fn get_connect_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connect_instance_id
+    }
     /// Consumes the builder and constructs a [`GetInstanceOnboardingJobStatusInput`](crate::operation::get_instance_onboarding_job_status::GetInstanceOnboardingJobStatusInput).
     pub fn build(
         self,

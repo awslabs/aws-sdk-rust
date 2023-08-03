@@ -72,6 +72,16 @@ impl ReviewDetailsBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the latest review of your account. The status can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>PENDING</code> – We have received your appeal and are in the process of reviewing it.</p> </li>
+    /// <li> <p> <code>GRANTED</code> – Your appeal has been reviewed and your production access has been granted.</p> </li>
+    /// <li> <p> <code>DENIED</code> – Your appeal has been reviewed and your production access has been denied.</p> </li>
+    /// <li> <p> <code>FAILED</code> – An internal error occurred and we didn't receive your appeal. You can submit your appeal again.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ReviewStatus> {
+        &self.status
+    }
     /// <p>The associated support center case ID (if any).</p>
     pub fn case_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.case_id = ::std::option::Option::Some(input.into());
@@ -81,6 +91,10 @@ impl ReviewDetailsBuilder {
     pub fn set_case_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.case_id = input;
         self
+    }
+    /// <p>The associated support center case ID (if any).</p>
+    pub fn get_case_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.case_id
     }
     /// Consumes the builder and constructs a [`ReviewDetails`](crate::types::ReviewDetails).
     pub fn build(self) -> crate::types::ReviewDetails {

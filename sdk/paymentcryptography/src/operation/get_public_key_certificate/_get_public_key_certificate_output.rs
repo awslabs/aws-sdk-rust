@@ -69,6 +69,10 @@ impl GetPublicKeyCertificateOutputBuilder {
         self.key_certificate = input;
         self
     }
+    /// <p>The public key component of the asymmetric key pair in a certificate (PEM) format. It is signed by the root certificate authority (CA) within your service account. The certificate expires in 90 days.</p>
+    pub fn get_key_certificate(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_certificate
+    }
     /// <p>The certificate chain that signed the public key certificate of the asymmetric key pair. This is the root certificate authority (CA) within your service account.</p>
     pub fn key_certificate_chain(
         mut self,
@@ -84,6 +88,10 @@ impl GetPublicKeyCertificateOutputBuilder {
     ) -> Self {
         self.key_certificate_chain = input;
         self
+    }
+    /// <p>The certificate chain that signed the public key certificate of the asymmetric key pair. This is the root certificate authority (CA) within your service account.</p>
+    pub fn get_key_certificate_chain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_certificate_chain
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

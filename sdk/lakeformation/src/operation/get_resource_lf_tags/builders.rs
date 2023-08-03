@@ -36,6 +36,12 @@ impl GetResourceLFTagsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetResourceLFTags as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_resource_lf_tags::builders::GetResourceLfTagsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl GetResourceLFTagsFluentBuilder {
         self.inner = self.inner.set_catalog_id(input);
         self
     }
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_catalog_id()
+    }
     /// <p>The database, table, or column resource for which you want to return LF-tags.</p>
     pub fn resource(mut self, input: crate::types::Resource) -> Self {
         self.inner = self.inner.resource(input);
@@ -136,6 +146,10 @@ impl GetResourceLFTagsFluentBuilder {
         self.inner = self.inner.set_resource(input);
         self
     }
+    /// <p>The database, table, or column resource for which you want to return LF-tags.</p>
+    pub fn get_resource(&self) -> &::std::option::Option<crate::types::Resource> {
+        self.inner.get_resource()
+    }
     /// <p>Indicates whether to show the assigned LF-tags.</p>
     pub fn show_assigned_lf_tags(mut self, input: bool) -> Self {
         self.inner = self.inner.show_assigned_lf_tags(input);
@@ -145,5 +159,9 @@ impl GetResourceLFTagsFluentBuilder {
     pub fn set_show_assigned_lf_tags(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_show_assigned_lf_tags(input);
         self
+    }
+    /// <p>Indicates whether to show the assigned LF-tags.</p>
+    pub fn get_show_assigned_lf_tags(&self) -> &::std::option::Option<bool> {
+        self.inner.get_show_assigned_lf_tags()
     }
 }

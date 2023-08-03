@@ -59,6 +59,12 @@ impl DescribeAccountPreferencesOutputBuilder {
         self.resource_id_preference = input;
         self
     }
+    /// <p>Describes the resource ID preference setting for the Amazon Web Services account associated with the user making the request, in the current Amazon Web Services Region.</p>
+    pub fn get_resource_id_preference(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceIdPreference> {
+        &self.resource_id_preference
+    }
     /// <p>Present if there are more records than returned in the response. You can use the <code>NextToken</code> in the subsequent request to fetch the additional descriptions.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -68,6 +74,10 @@ impl DescribeAccountPreferencesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Present if there are more records than returned in the response. You can use the <code>NextToken</code> in the subsequent request to fetch the additional descriptions.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

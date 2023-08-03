@@ -54,6 +54,12 @@ impl EncryptionMethodBuilder {
         self
     }
     /// <p>The encryption method to use.</p>
+    pub fn get_ts_encryption_method(
+        &self,
+    ) -> &::std::option::Option<crate::types::TsEncryptionMethod> {
+        &self.ts_encryption_method
+    }
+    /// <p>The encryption method to use.</p>
     pub fn cmaf_encryption_method(mut self, input: crate::types::CmafEncryptionMethod) -> Self {
         self.cmaf_encryption_method = ::std::option::Option::Some(input);
         self
@@ -65,6 +71,12 @@ impl EncryptionMethodBuilder {
     ) -> Self {
         self.cmaf_encryption_method = input;
         self
+    }
+    /// <p>The encryption method to use.</p>
+    pub fn get_cmaf_encryption_method(
+        &self,
+    ) -> &::std::option::Option<crate::types::CmafEncryptionMethod> {
+        &self.cmaf_encryption_method
     }
     /// Consumes the builder and constructs a [`EncryptionMethod`](crate::types::EncryptionMethod).
     pub fn build(self) -> crate::types::EncryptionMethod {

@@ -43,6 +43,12 @@ impl CreateIdentitySourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateIdentitySource as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_identity_source::builders::CreateIdentitySourceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,12 @@ impl CreateIdentitySourceFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>Specifies a unique, case-sensitive ID that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
+    /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>Specifies the ID of the policy store in which you want to store this identity source. Only policies and requests made using this policy store can reference identities from the identity provider configured in the new identity source.</p>
     pub fn policy_store_id(
         mut self,
@@ -152,6 +164,10 @@ impl CreateIdentitySourceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_policy_store_id(input);
         self
+    }
+    /// <p>Specifies the ID of the policy store in which you want to store this identity source. Only policies and requests made using this policy store can reference identities from the identity provider configured in the new identity source.</p>
+    pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_store_id()
     }
     /// <p>Specifies the details required to communicate with the identity provider (IdP) associated with this identity source.</p> <note>
     /// <p>At this time, the only valid member of this structure is a Amazon Cognito user pool configuration.</p>
@@ -172,6 +188,13 @@ impl CreateIdentitySourceFluentBuilder {
         self.inner = self.inner.set_configuration(input);
         self
     }
+    /// <p>Specifies the details required to communicate with the identity provider (IdP) associated with this identity source.</p> <note>
+    /// <p>At this time, the only valid member of this structure is a Amazon Cognito user pool configuration.</p>
+    /// <p>You must specify a <code>UserPoolArn</code>, and optionally, a <code>ClientId</code>.</p>
+    /// </note>
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::Configuration> {
+        self.inner.get_configuration()
+    }
     /// <p>Specifies the namespace and data type of the principals generated for identities authenticated by the new identity source.</p>
     pub fn principal_entity_type(
         mut self,
@@ -187,5 +210,9 @@ impl CreateIdentitySourceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_principal_entity_type(input);
         self
+    }
+    /// <p>Specifies the namespace and data type of the principals generated for identities authenticated by the new identity source.</p>
+    pub fn get_principal_entity_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_principal_entity_type()
     }
 }

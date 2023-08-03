@@ -65,6 +65,10 @@ impl CreateApiMappingInputBuilder {
         self.api_id = input;
         self
     }
+    /// <p>The API identifier.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_id
+    }
     /// The API mapping key.
     pub fn api_mapping_key(
         mut self,
@@ -81,6 +85,10 @@ impl CreateApiMappingInputBuilder {
         self.api_mapping_key = input;
         self
     }
+    /// The API mapping key.
+    pub fn get_api_mapping_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_mapping_key
+    }
     /// <p>The domain name.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl CreateApiMappingInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The domain name.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The API stage.</p>
     pub fn stage(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage = ::std::option::Option::Some(input.into());
@@ -100,6 +112,10 @@ impl CreateApiMappingInputBuilder {
     pub fn set_stage(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stage = input;
         self
+    }
+    /// <p>The API stage.</p>
+    pub fn get_stage(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stage
     }
     /// Consumes the builder and constructs a [`CreateApiMappingInput`](crate::operation::create_api_mapping::CreateApiMappingInput).
     pub fn build(

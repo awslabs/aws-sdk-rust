@@ -36,6 +36,12 @@ impl GlobalSignOutFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GlobalSignOut as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::global_sign_out::builders::GlobalSignOutInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -117,5 +123,9 @@ impl GlobalSignOutFluentBuilder {
     pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_access_token(input);
         self
+    }
+    /// <p>A valid access token that Amazon Cognito issued to the user who you want to sign out.</p>
+    pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_access_token()
     }
 }

@@ -48,6 +48,10 @@ impl BatchGetJobsInputBuilder {
         self.job_names = input;
         self
     }
+    /// <p>A list of job names, which might be the names returned from the <code>ListJobs</code> operation.</p>
+    pub fn get_job_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.job_names
+    }
     /// Consumes the builder and constructs a [`BatchGetJobsInput`](crate::operation::batch_get_jobs::BatchGetJobsInput).
     pub fn build(
         self,

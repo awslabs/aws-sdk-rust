@@ -66,6 +66,12 @@ impl DescribeUpdateDirectoryOutputBuilder {
         self.update_activities = input;
         self
     }
+    /// <p> The list of update activities on a directory for the requested update type. </p>
+    pub fn get_update_activities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateInfoEntry>> {
+        &self.update_activities
+    }
     /// <p> If not null, more results are available. Pass this value for the <code>NextToken</code> parameter. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -75,6 +81,10 @@ impl DescribeUpdateDirectoryOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p> If not null, more results are available. Pass this value for the <code>NextToken</code> parameter. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

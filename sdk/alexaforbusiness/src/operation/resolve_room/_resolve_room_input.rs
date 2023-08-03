@@ -47,6 +47,10 @@ impl ResolveRoomInputBuilder {
         self.user_id = input;
         self
     }
+    /// <p>The ARN of the user. Required.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
+    }
     /// <p>The ARN of the skill that was requested. Required.</p>
     pub fn skill_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.skill_id = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl ResolveRoomInputBuilder {
     pub fn set_skill_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.skill_id = input;
         self
+    }
+    /// <p>The ARN of the skill that was requested. Required.</p>
+    pub fn get_skill_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.skill_id
     }
     /// Consumes the builder and constructs a [`ResolveRoomInput`](crate::operation::resolve_room::ResolveRoomInput).
     pub fn build(

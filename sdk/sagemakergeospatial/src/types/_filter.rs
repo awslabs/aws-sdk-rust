@@ -64,6 +64,10 @@ impl FilterBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the filter.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The type of the filter being used.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl FilterBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of the filter being used.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// <p>The minimum value of the filter.</p>
     pub fn minimum(mut self, input: f32) -> Self {
@@ -84,6 +92,10 @@ impl FilterBuilder {
         self.minimum = input;
         self
     }
+    /// <p>The minimum value of the filter.</p>
+    pub fn get_minimum(&self) -> &::std::option::Option<f32> {
+        &self.minimum
+    }
     /// <p>The maximum value of the filter.</p>
     pub fn maximum(mut self, input: f32) -> Self {
         self.maximum = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl FilterBuilder {
     pub fn set_maximum(mut self, input: ::std::option::Option<f32>) -> Self {
         self.maximum = input;
         self
+    }
+    /// <p>The maximum value of the filter.</p>
+    pub fn get_maximum(&self) -> &::std::option::Option<f32> {
+        &self.maximum
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
     pub fn build(self) -> crate::types::Filter {

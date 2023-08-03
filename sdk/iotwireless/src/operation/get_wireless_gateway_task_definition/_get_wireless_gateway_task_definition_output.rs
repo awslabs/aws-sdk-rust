@@ -70,6 +70,10 @@ impl GetWirelessGatewayTaskDefinitionOutputBuilder {
         self.auto_create_tasks = input;
         self
     }
+    /// <p>Whether to automatically create tasks using this task definition for all gateways with the specified current version. If <code>false</code>, the task must me created by calling <code>CreateWirelessGatewayTask</code>.</p>
+    pub fn get_auto_create_tasks(&self) -> &::std::option::Option<bool> {
+        &self.auto_create_tasks
+    }
     /// <p>The name of the resource.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl GetWirelessGatewayTaskDefinitionOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the resource.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Information about the gateways to update.</p>
     pub fn update(mut self, input: crate::types::UpdateWirelessGatewayTaskCreate) -> Self {
@@ -93,6 +101,12 @@ impl GetWirelessGatewayTaskDefinitionOutputBuilder {
         self.update = input;
         self
     }
+    /// <p>Information about the gateways to update.</p>
+    pub fn get_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateWirelessGatewayTaskCreate> {
+        &self.update
+    }
     /// <p>The Amazon Resource Name of the resource.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -102,6 +116,10 @@ impl GetWirelessGatewayTaskDefinitionOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name of the resource.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

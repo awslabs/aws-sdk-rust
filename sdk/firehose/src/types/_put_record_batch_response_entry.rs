@@ -56,6 +56,10 @@ impl PutRecordBatchResponseEntryBuilder {
         self.record_id = input;
         self
     }
+    /// <p>The ID of the record.</p>
+    pub fn get_record_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.record_id
+    }
     /// <p>The error code for an individual record result.</p>
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl PutRecordBatchResponseEntryBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>The error code for an individual record result.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
     }
     /// <p>The error message for an individual record result.</p>
     pub fn error_message(
@@ -81,6 +89,10 @@ impl PutRecordBatchResponseEntryBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>The error message for an individual record result.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`PutRecordBatchResponseEntry`](crate::types::PutRecordBatchResponseEntry).
     pub fn build(self) -> crate::types::PutRecordBatchResponseEntry {

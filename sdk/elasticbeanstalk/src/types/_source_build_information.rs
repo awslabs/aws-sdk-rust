@@ -91,6 +91,14 @@ impl SourceBuildInformationBuilder {
         self.source_type = input;
         self
     }
+    /// <p>The type of repository.</p>
+    /// <ul>
+    /// <li> <p> <code>Git</code> </p> </li>
+    /// <li> <p> <code>Zip</code> </p> </li>
+    /// </ul>
+    pub fn get_source_type(&self) -> &::std::option::Option<crate::types::SourceType> {
+        &self.source_type
+    }
     /// <p>Location where the repository is stored.</p>
     /// <ul>
     /// <li> <p> <code>CodeCommit</code> </p> </li>
@@ -111,6 +119,14 @@ impl SourceBuildInformationBuilder {
     ) -> Self {
         self.source_repository = input;
         self
+    }
+    /// <p>Location where the repository is stored.</p>
+    /// <ul>
+    /// <li> <p> <code>CodeCommit</code> </p> </li>
+    /// <li> <p> <code>S3</code> </p> </li>
+    /// </ul>
+    pub fn get_source_repository(&self) -> &::std::option::Option<crate::types::SourceRepository> {
+        &self.source_repository
     }
     /// <p>The location of the source code, as a formatted string, depending on the value of <code>SourceRepository</code> </p>
     /// <ul>
@@ -135,6 +151,14 @@ impl SourceBuildInformationBuilder {
     ) -> Self {
         self.source_location = input;
         self
+    }
+    /// <p>The location of the source code, as a formatted string, depending on the value of <code>SourceRepository</code> </p>
+    /// <ul>
+    /// <li> <p>For <code>CodeCommit</code>, the format is the repository name and commit ID, separated by a forward slash. For example, <code>my-git-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p> </li>
+    /// <li> <p>For <code>S3</code>, the format is the S3 bucket name and object key, separated by a forward slash. For example, <code>my-s3-bucket/Folders/my-source-file</code>.</p> </li>
+    /// </ul>
+    pub fn get_source_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_location
     }
     /// Consumes the builder and constructs a [`SourceBuildInformation`](crate::types::SourceBuildInformation).
     pub fn build(self) -> crate::types::SourceBuildInformation {

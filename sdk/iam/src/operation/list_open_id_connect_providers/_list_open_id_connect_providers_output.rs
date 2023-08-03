@@ -63,6 +63,12 @@ impl ListOpenIdConnectProvidersOutputBuilder {
         self.open_id_connect_provider_list = input;
         self
     }
+    /// <p>The list of IAM OIDC provider resource objects defined in the Amazon Web Services account.</p>
+    pub fn get_open_id_connect_provider_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OpenIdConnectProviderListEntry>> {
+        &self.open_id_connect_provider_list
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

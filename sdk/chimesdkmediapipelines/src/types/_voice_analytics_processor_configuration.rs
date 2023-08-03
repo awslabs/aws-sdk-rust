@@ -62,6 +62,12 @@ impl VoiceAnalyticsProcessorConfigurationBuilder {
         self.speaker_search_status = input;
         self
     }
+    /// <p>The status of the speaker search task.</p>
+    pub fn get_speaker_search_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::VoiceAnalyticsConfigurationStatus> {
+        &self.speaker_search_status
+    }
     /// <p>The status of the voice tone analysis task.</p>
     pub fn voice_tone_analysis_status(
         mut self,
@@ -77,6 +83,12 @@ impl VoiceAnalyticsProcessorConfigurationBuilder {
     ) -> Self {
         self.voice_tone_analysis_status = input;
         self
+    }
+    /// <p>The status of the voice tone analysis task.</p>
+    pub fn get_voice_tone_analysis_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::VoiceAnalyticsConfigurationStatus> {
+        &self.voice_tone_analysis_status
     }
     /// Consumes the builder and constructs a [`VoiceAnalyticsProcessorConfiguration`](crate::types::VoiceAnalyticsProcessorConfiguration).
     pub fn build(self) -> crate::types::VoiceAnalyticsProcessorConfiguration {

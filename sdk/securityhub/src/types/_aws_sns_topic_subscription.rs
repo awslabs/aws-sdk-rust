@@ -48,6 +48,10 @@ impl AwsSnsTopicSubscriptionBuilder {
         self.endpoint = input;
         self
     }
+    /// <p>The subscription's endpoint (format depends on the protocol).</p>
+    pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint
+    }
     /// <p>The subscription's protocol.</p>
     pub fn protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.protocol = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl AwsSnsTopicSubscriptionBuilder {
     pub fn set_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.protocol = input;
         self
+    }
+    /// <p>The subscription's protocol.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<::std::string::String> {
+        &self.protocol
     }
     /// Consumes the builder and constructs a [`AwsSnsTopicSubscription`](crate::types::AwsSnsTopicSubscription).
     pub fn build(self) -> crate::types::AwsSnsTopicSubscription {

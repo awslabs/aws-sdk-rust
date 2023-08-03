@@ -51,6 +51,10 @@ impl GetControlOperationOutputBuilder {
         self.control_operation = input;
         self
     }
+    /// <p></p>
+    pub fn get_control_operation(&self) -> &::std::option::Option<crate::types::ControlOperation> {
+        &self.control_operation
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

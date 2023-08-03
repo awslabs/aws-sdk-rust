@@ -53,6 +53,10 @@ impl DeleteResourceInputBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The identifier associated with the organization from which the resource is deleted.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p>The identifier of the resource to be deleted.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl DeleteResourceInputBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>The identifier of the resource to be deleted.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// Consumes the builder and constructs a [`DeleteResourceInput`](crate::operation::delete_resource::DeleteResourceInput).
     pub fn build(

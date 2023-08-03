@@ -56,6 +56,10 @@ impl FilterConditionBuilder {
         self.equals_value = input;
         self
     }
+    /// <p>Represents an <i>equal</i> <b></b> condition to be applied to a single field when querying for scan entries.</p>
+    pub fn get_equals_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.equals_value
+    }
     /// <p>Represents a <i>greater than</i> condition to be applied to a single field when querying for scan entries.</p>
     pub fn greater_than(mut self, input: i64) -> Self {
         self.greater_than = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl FilterConditionBuilder {
         self.greater_than = input;
         self
     }
+    /// <p>Represents a <i>greater than</i> condition to be applied to a single field when querying for scan entries.</p>
+    pub fn get_greater_than(&self) -> &::std::option::Option<i64> {
+        &self.greater_than
+    }
     /// <p>Represents a <i>less than</i> condition to be applied to a single field when querying for scan entries.</p>
     pub fn less_than(mut self, input: i64) -> Self {
         self.less_than = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl FilterConditionBuilder {
     pub fn set_less_than(mut self, input: ::std::option::Option<i64>) -> Self {
         self.less_than = input;
         self
+    }
+    /// <p>Represents a <i>less than</i> condition to be applied to a single field when querying for scan entries.</p>
+    pub fn get_less_than(&self) -> &::std::option::Option<i64> {
+        &self.less_than
     }
     /// Consumes the builder and constructs a [`FilterCondition`](crate::types::FilterCondition).
     pub fn build(self) -> crate::types::FilterCondition {

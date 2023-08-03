@@ -65,6 +65,10 @@ impl DescribeIpGroupsInputBuilder {
         self.group_ids = input;
         self
     }
+    /// <p>The identifiers of one or more IP access control groups.</p>
+    pub fn get_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.group_ids
+    }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -75,6 +79,10 @@ impl DescribeIpGroupsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of items to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl DescribeIpGroupsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of items to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeIpGroupsInput`](crate::operation::describe_ip_groups::DescribeIpGroupsInput).
     pub fn build(

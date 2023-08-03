@@ -36,6 +36,12 @@ impl UpdateServiceActionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateServiceAction as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_service_action::builders::UpdateServiceActionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateServiceActionFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The self-service action identifier.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The self-service action name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -135,6 +145,10 @@ impl UpdateServiceActionFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The self-service action name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// Adds a key-value pair to `Definition`.
     ///
@@ -162,6 +176,17 @@ impl UpdateServiceActionFluentBuilder {
         self.inner = self.inner.set_definition(input);
         self
     }
+    /// <p>A map that defines the self-service action.</p>
+    pub fn get_definition(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::ServiceActionDefinitionKey,
+            ::std::string::String,
+        >,
+    > {
+        self.inner.get_definition()
+    }
     /// <p>The self-service action description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -171,6 +196,10 @@ impl UpdateServiceActionFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The self-service action description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The language code.</p>
     /// <ul>
@@ -195,5 +224,13 @@ impl UpdateServiceActionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
+    }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_accept_language()
     }
 }

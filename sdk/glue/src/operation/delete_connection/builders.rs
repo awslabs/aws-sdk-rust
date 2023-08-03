@@ -36,6 +36,12 @@ impl DeleteConnectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteConnection as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_connection::builders::DeleteConnectionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DeleteConnectionFluentBuilder {
         self.inner = self.inner.set_catalog_id(input);
         self
     }
+    /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_catalog_id()
+    }
     /// <p>The name of the connection to delete.</p>
     pub fn connection_name(
         mut self,
@@ -141,5 +151,9 @@ impl DeleteConnectionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_connection_name(input);
         self
+    }
+    /// <p>The name of the connection to delete.</p>
+    pub fn get_connection_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connection_name()
     }
 }

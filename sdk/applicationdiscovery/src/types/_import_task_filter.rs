@@ -53,6 +53,10 @@ impl ImportTaskFilterBuilder {
         self.name = input;
         self
     }
+    /// <p>The name, status, or import task ID for a specific import task.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::ImportTaskFilterName> {
+        &self.name
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -71,6 +75,10 @@ impl ImportTaskFilterBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>An array of strings that you can provide to match against a specific name, status, or import task ID to filter the results for your import task queries.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`ImportTaskFilter`](crate::types::ImportTaskFilter).
     pub fn build(self) -> crate::types::ImportTaskFilter {

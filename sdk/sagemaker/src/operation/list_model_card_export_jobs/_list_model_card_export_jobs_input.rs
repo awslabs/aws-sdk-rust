@@ -119,6 +119,10 @@ impl ListModelCardExportJobsInputBuilder {
         self.model_card_name = input;
         self
     }
+    /// <p>List export jobs for the model card with the specified name.</p>
+    pub fn get_model_card_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_card_name
+    }
     /// <p>List export jobs for the model card with the specified version.</p>
     pub fn model_card_version(mut self, input: i32) -> Self {
         self.model_card_version = ::std::option::Option::Some(input);
@@ -128,6 +132,10 @@ impl ListModelCardExportJobsInputBuilder {
     pub fn set_model_card_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.model_card_version = input;
         self
+    }
+    /// <p>List export jobs for the model card with the specified version.</p>
+    pub fn get_model_card_version(&self) -> &::std::option::Option<i32> {
+        &self.model_card_version
     }
     /// <p>Only list model card export jobs that were created after the time specified.</p>
     pub fn creation_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -142,6 +150,10 @@ impl ListModelCardExportJobsInputBuilder {
         self.creation_time_after = input;
         self
     }
+    /// <p>Only list model card export jobs that were created after the time specified.</p>
+    pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time_after
+    }
     /// <p>Only list model card export jobs that were created before the time specified.</p>
     pub fn creation_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time_before = ::std::option::Option::Some(input);
@@ -154,6 +166,10 @@ impl ListModelCardExportJobsInputBuilder {
     ) -> Self {
         self.creation_time_before = input;
         self
+    }
+    /// <p>Only list model card export jobs that were created before the time specified.</p>
+    pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time_before
     }
     /// <p>Only list model card export jobs with names that contain the specified string.</p>
     pub fn model_card_export_job_name_contains(
@@ -171,6 +187,12 @@ impl ListModelCardExportJobsInputBuilder {
         self.model_card_export_job_name_contains = input;
         self
     }
+    /// <p>Only list model card export jobs with names that contain the specified string.</p>
+    pub fn get_model_card_export_job_name_contains(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.model_card_export_job_name_contains
+    }
     /// <p>Only list model card export jobs with the specified status.</p>
     pub fn status_equals(mut self, input: crate::types::ModelCardExportJobStatus) -> Self {
         self.status_equals = ::std::option::Option::Some(input);
@@ -183,6 +205,12 @@ impl ListModelCardExportJobsInputBuilder {
     ) -> Self {
         self.status_equals = input;
         self
+    }
+    /// <p>Only list model card export jobs with the specified status.</p>
+    pub fn get_status_equals(
+        &self,
+    ) -> &::std::option::Option<crate::types::ModelCardExportJobStatus> {
+        &self.status_equals
     }
     /// <p>Sort model card export jobs by either name or creation time. Sorts by creation time by default.</p>
     pub fn sort_by(mut self, input: crate::types::ModelCardExportJobSortBy) -> Self {
@@ -197,6 +225,10 @@ impl ListModelCardExportJobsInputBuilder {
         self.sort_by = input;
         self
     }
+    /// <p>Sort model card export jobs by either name or creation time. Sorts by creation time by default.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ModelCardExportJobSortBy> {
+        &self.sort_by
+    }
     /// <p>Sort model card export jobs by ascending or descending order.</p>
     pub fn sort_order(mut self, input: crate::types::ModelCardExportJobSortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -210,6 +242,12 @@ impl ListModelCardExportJobsInputBuilder {
         self.sort_order = input;
         self
     }
+    /// <p>Sort model card export jobs by ascending or descending order.</p>
+    pub fn get_sort_order(
+        &self,
+    ) -> &::std::option::Option<crate::types::ModelCardExportJobSortOrder> {
+        &self.sort_order
+    }
     /// <p>If the response to a previous <code>ListModelCardExportJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model card export jobs, use the token in the next request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -220,6 +258,10 @@ impl ListModelCardExportJobsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If the response to a previous <code>ListModelCardExportJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model card export jobs, use the token in the next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of model card export jobs to list.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -229,6 +271,10 @@ impl ListModelCardExportJobsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of model card export jobs to list.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListModelCardExportJobsInput`](crate::operation::list_model_card_export_jobs::ListModelCardExportJobsInput).
     pub fn build(

@@ -106,6 +106,10 @@ impl DetectMitigationActionExecutionBuilder {
         self.task_id = input;
         self
     }
+    /// <p> The unique identifier of the task. </p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_id
+    }
     /// <p> The unique identifier of the violation. </p>
     pub fn violation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.violation_id = ::std::option::Option::Some(input.into());
@@ -115,6 +119,10 @@ impl DetectMitigationActionExecutionBuilder {
     pub fn set_violation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.violation_id = input;
         self
+    }
+    /// <p> The unique identifier of the violation. </p>
+    pub fn get_violation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.violation_id
     }
     /// <p> The friendly name that uniquely identifies the mitigation action. </p>
     pub fn action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -126,6 +134,10 @@ impl DetectMitigationActionExecutionBuilder {
         self.action_name = input;
         self
     }
+    /// <p> The friendly name that uniquely identifies the mitigation action. </p>
+    pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_name
+    }
     /// <p> The name of the thing. </p>
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_name = ::std::option::Option::Some(input.into());
@@ -135,6 +147,10 @@ impl DetectMitigationActionExecutionBuilder {
     pub fn set_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_name = input;
         self
+    }
+    /// <p> The name of the thing. </p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_name
     }
     /// <p> The date a mitigation action was started. </p>
     pub fn execution_start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -149,6 +165,10 @@ impl DetectMitigationActionExecutionBuilder {
         self.execution_start_date = input;
         self
     }
+    /// <p> The date a mitigation action was started. </p>
+    pub fn get_execution_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.execution_start_date
+    }
     /// <p> The date a mitigation action ended. </p>
     pub fn execution_end_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.execution_end_date = ::std::option::Option::Some(input);
@@ -161,6 +181,10 @@ impl DetectMitigationActionExecutionBuilder {
     ) -> Self {
         self.execution_end_date = input;
         self
+    }
+    /// <p> The date a mitigation action ended. </p>
+    pub fn get_execution_end_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.execution_end_date
     }
     /// <p> The status of a mitigation action. </p>
     pub fn status(mut self, input: crate::types::DetectMitigationActionExecutionStatus) -> Self {
@@ -175,6 +199,12 @@ impl DetectMitigationActionExecutionBuilder {
         self.status = input;
         self
     }
+    /// <p> The status of a mitigation action. </p>
+    pub fn get_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::DetectMitigationActionExecutionStatus> {
+        &self.status
+    }
     /// <p> The error code of a mitigation action. </p>
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
@@ -185,6 +215,10 @@ impl DetectMitigationActionExecutionBuilder {
         self.error_code = input;
         self
     }
+    /// <p> The error code of a mitigation action. </p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
+    }
     /// <p> The message of a mitigation action. </p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -194,6 +228,10 @@ impl DetectMitigationActionExecutionBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p> The message of a mitigation action. </p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`DetectMitigationActionExecution`](crate::types::DetectMitigationActionExecution).
     pub fn build(self) -> crate::types::DetectMitigationActionExecution {

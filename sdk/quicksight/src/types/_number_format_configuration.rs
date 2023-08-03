@@ -46,6 +46,12 @@ impl NumberFormatConfigurationBuilder {
         self.format_configuration = input;
         self
     }
+    /// <p>The options that determine the numeric format configuration.</p>
+    pub fn get_format_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::NumericFormatConfiguration> {
+        &self.format_configuration
+    }
     /// Consumes the builder and constructs a [`NumberFormatConfiguration`](crate::types::NumberFormatConfiguration).
     pub fn build(self) -> crate::types::NumberFormatConfiguration {
         crate::types::NumberFormatConfiguration {

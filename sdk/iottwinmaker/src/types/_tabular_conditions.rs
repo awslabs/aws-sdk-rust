@@ -60,6 +60,10 @@ impl TabularConditionsBuilder {
         self.order_by = input;
         self
     }
+    /// <p>Filter criteria that orders the output. It can be sorted in ascending or descending order.</p>
+    pub fn get_order_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OrderBy>> {
+        &self.order_by
+    }
     /// Appends an item to `property_filters`.
     ///
     /// To override the contents of this collection use [`set_property_filters`](Self::set_property_filters).
@@ -80,6 +84,13 @@ impl TabularConditionsBuilder {
     ) -> Self {
         self.property_filters = input;
         self
+    }
+    /// <p>You can filter the request using various logical operators and a key-value format. For example:</p>
+    /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
+    pub fn get_property_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PropertyFilter>> {
+        &self.property_filters
     }
     /// Consumes the builder and constructs a [`TabularConditions`](crate::types::TabularConditions).
     pub fn build(self) -> crate::types::TabularConditions {

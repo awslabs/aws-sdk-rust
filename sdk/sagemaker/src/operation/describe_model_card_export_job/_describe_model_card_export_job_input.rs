@@ -45,6 +45,10 @@ impl DescribeModelCardExportJobInputBuilder {
         self.model_card_export_job_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the model card export job to describe.</p>
+    pub fn get_model_card_export_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_card_export_job_arn
+    }
     /// Consumes the builder and constructs a [`DescribeModelCardExportJobInput`](crate::operation::describe_model_card_export_job::DescribeModelCardExportJobInput).
     pub fn build(
         self,

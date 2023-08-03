@@ -56,6 +56,10 @@ impl S3BucketConfigurationBuilder {
         self.bucket_name = input;
         self
     }
+    /// <p>The name of an existing Amazon S3 bucket where the generated snapshot artifacts are sent.</p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_name
+    }
     /// <p>The prefix of the Amazon S3 bucket that the generated snapshots are stored in.</p>
     pub fn bucket_prefix(
         mut self,
@@ -72,6 +76,10 @@ impl S3BucketConfigurationBuilder {
         self.bucket_prefix = input;
         self
     }
+    /// <p>The prefix of the Amazon S3 bucket that the generated snapshots are stored in.</p>
+    pub fn get_bucket_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_prefix
+    }
     /// <p>The region that the Amazon S3 bucket is located in. The bucket must be located in the same region that the <code>StartDashboardSnapshotJob</code> API call is made.</p>
     pub fn bucket_region(
         mut self,
@@ -87,6 +95,10 @@ impl S3BucketConfigurationBuilder {
     ) -> Self {
         self.bucket_region = input;
         self
+    }
+    /// <p>The region that the Amazon S3 bucket is located in. The bucket must be located in the same region that the <code>StartDashboardSnapshotJob</code> API call is made.</p>
+    pub fn get_bucket_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_region
     }
     /// Consumes the builder and constructs a [`S3BucketConfiguration`](crate::types::S3BucketConfiguration).
     pub fn build(self) -> crate::types::S3BucketConfiguration {

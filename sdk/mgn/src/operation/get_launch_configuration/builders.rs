@@ -36,6 +36,13 @@ impl GetLaunchConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetLaunchConfiguration as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_launch_configuration::builders::GetLaunchConfigurationInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl GetLaunchConfigurationFluentBuilder {
         self.inner = self.inner.set_source_server_id(input);
         self
     }
+    /// <p>Request to get Launch Configuration information by Source Server ID.</p>
+    pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_server_id()
+    }
     /// <p>Request to get Launch Configuration information by Account ID.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());
@@ -141,5 +152,9 @@ impl GetLaunchConfigurationFluentBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_id(input);
         self
+    }
+    /// <p>Request to get Launch Configuration information by Account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
     }
 }

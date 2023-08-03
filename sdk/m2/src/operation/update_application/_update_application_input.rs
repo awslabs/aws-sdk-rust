@@ -70,6 +70,10 @@ impl UpdateApplicationInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The unique identifier of the application you want to update.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The description of the application to update.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl UpdateApplicationInputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the application to update.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The current version of the application to update.</p>
     pub fn current_application_version(mut self, input: i32) -> Self {
         self.current_application_version = ::std::option::Option::Some(input);
@@ -89,6 +97,10 @@ impl UpdateApplicationInputBuilder {
     pub fn set_current_application_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.current_application_version = input;
         self
+    }
+    /// <p>The current version of the application to update.</p>
+    pub fn get_current_application_version(&self) -> &::std::option::Option<i32> {
+        &self.current_application_version
     }
     /// <p>The application definition for this application. You can specify either inline JSON or an S3 bucket location.</p>
     pub fn definition(mut self, input: crate::types::Definition) -> Self {
@@ -102,6 +114,10 @@ impl UpdateApplicationInputBuilder {
     ) -> Self {
         self.definition = input;
         self
+    }
+    /// <p>The application definition for this application. You can specify either inline JSON or an S3 bucket location.</p>
+    pub fn get_definition(&self) -> &::std::option::Option<crate::types::Definition> {
+        &self.definition
     }
     /// Consumes the builder and constructs a [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
     pub fn build(

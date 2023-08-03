@@ -43,6 +43,10 @@ impl CaptureOptionBuilder {
         self.capture_mode = input;
         self
     }
+    /// <p>Specify the boundary of data to capture.</p>
+    pub fn get_capture_mode(&self) -> &::std::option::Option<crate::types::CaptureMode> {
+        &self.capture_mode
+    }
     /// Consumes the builder and constructs a [`CaptureOption`](crate::types::CaptureOption).
     pub fn build(self) -> crate::types::CaptureOption {
         crate::types::CaptureOption {

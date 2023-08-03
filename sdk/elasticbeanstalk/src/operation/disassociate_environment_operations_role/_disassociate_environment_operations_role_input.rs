@@ -46,6 +46,10 @@ impl DisassociateEnvironmentOperationsRoleInputBuilder {
         self.environment_name = input;
         self
     }
+    /// <p>The name of the environment from which to disassociate the operations role.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_name
+    }
     /// Consumes the builder and constructs a [`DisassociateEnvironmentOperationsRoleInput`](crate::operation::disassociate_environment_operations_role::DisassociateEnvironmentOperationsRoleInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_environment_operations_role::DisassociateEnvironmentOperationsRoleInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

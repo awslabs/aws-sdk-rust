@@ -66,6 +66,10 @@ impl CreateIndexOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the new local index for the Region. You can reference this ARN in IAM permission policies to authorize the following operations: <code>DeleteIndex</code> | <code>GetIndex</code> | <code>UpdateIndexType</code> | <code>CreateView</code> </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>Indicates the current state of the index. You can check for changes to the state for asynchronous operations by calling the <code>GetIndex</code> operation.</p> <note>
     /// <p>The state can remain in the <code>CREATING</code> or <code>UPDATING</code> state for several hours as Resource Explorer discovers the information about your resources and populates the index.</p>
     /// </note>
@@ -80,6 +84,12 @@ impl CreateIndexOutputBuilder {
         self.state = input;
         self
     }
+    /// <p>Indicates the current state of the index. You can check for changes to the state for asynchronous operations by calling the <code>GetIndex</code> operation.</p> <note>
+    /// <p>The state can remain in the <code>CREATING</code> or <code>UPDATING</code> state for several hours as Resource Explorer discovers the information about your resources and populates the index.</p>
+    /// </note>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::IndexState> {
+        &self.state
+    }
     /// <p>The date and timestamp when the index was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -92,6 +102,10 @@ impl CreateIndexOutputBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The date and timestamp when the index was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

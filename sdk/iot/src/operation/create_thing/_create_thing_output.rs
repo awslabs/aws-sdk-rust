@@ -63,6 +63,10 @@ impl CreateThingOutputBuilder {
         self.thing_name = input;
         self
     }
+    /// <p>The name of the new thing.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_name
+    }
     /// <p>The ARN of the new thing.</p>
     pub fn thing_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_arn = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl CreateThingOutputBuilder {
         self.thing_arn = input;
         self
     }
+    /// <p>The ARN of the new thing.</p>
+    pub fn get_thing_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_arn
+    }
     /// <p>The thing ID.</p>
     pub fn thing_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_id = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl CreateThingOutputBuilder {
     pub fn set_thing_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_id = input;
         self
+    }
+    /// <p>The thing ID.</p>
+    pub fn get_thing_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

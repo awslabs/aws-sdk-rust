@@ -36,6 +36,13 @@ impl CreateUserPoolDomainFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateUserPoolDomain as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_user_pool_domain::builders::CreateUserPoolDomainInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl CreateUserPoolDomainFluentBuilder {
         self.inner = self.inner.set_domain(input);
         self
     }
+    /// <p>The domain string. For custom domains, this is the fully-qualified domain name, such as <code>auth.example.com</code>. For Amazon Cognito prefix domains, this is the prefix alone, such as <code>auth</code>.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain()
+    }
     /// <p>The user pool ID.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_pool_id(input.into());
@@ -135,6 +146,10 @@ impl CreateUserPoolDomainFluentBuilder {
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_pool_id(input);
         self
+    }
+    /// <p>The user pool ID.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_pool_id()
     }
     /// <p>The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.</p>
     /// <p>Provide this parameter only if you want to use a custom domain for your user pool. Otherwise, you can exclude this parameter and use the Amazon Cognito hosted domain instead.</p>
@@ -152,5 +167,13 @@ impl CreateUserPoolDomainFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_custom_domain_config(input);
         self
+    }
+    /// <p>The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.</p>
+    /// <p>Provide this parameter only if you want to use a custom domain for your user pool. Otherwise, you can exclude this parameter and use the Amazon Cognito hosted domain instead.</p>
+    /// <p>For more information about the hosted domain and custom domains, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain.html">Configuring a User Pool Domain</a>.</p>
+    pub fn get_custom_domain_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomDomainConfigType> {
+        self.inner.get_custom_domain_config()
     }
 }

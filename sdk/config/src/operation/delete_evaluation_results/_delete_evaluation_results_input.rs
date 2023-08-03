@@ -48,6 +48,10 @@ impl DeleteEvaluationResultsInputBuilder {
         self.config_rule_name = input;
         self
     }
+    /// <p>The name of the Config rule for which you want to delete the evaluation results.</p>
+    pub fn get_config_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.config_rule_name
+    }
     /// Consumes the builder and constructs a [`DeleteEvaluationResultsInput`](crate::operation::delete_evaluation_results::DeleteEvaluationResultsInput).
     pub fn build(
         self,

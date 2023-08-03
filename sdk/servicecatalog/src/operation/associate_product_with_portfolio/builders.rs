@@ -37,6 +37,10 @@ impl AssociateProductWithPortfolioFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateProductWithPortfolio as a reference.
+    pub fn as_input(&self) -> &crate::operation::associate_product_with_portfolio::builders::AssociateProductWithPortfolioInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -141,6 +145,14 @@ impl AssociateProductWithPortfolioFluentBuilder {
         self.inner = self.inner.set_accept_language(input);
         self
     }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_accept_language()
+    }
     /// <p>The product identifier.</p>
     pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.product_id(input.into());
@@ -151,6 +163,10 @@ impl AssociateProductWithPortfolioFluentBuilder {
         self.inner = self.inner.set_product_id(input);
         self
     }
+    /// <p>The product identifier.</p>
+    pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_product_id()
+    }
     /// <p>The portfolio identifier.</p>
     pub fn portfolio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.portfolio_id(input.into());
@@ -160,6 +176,10 @@ impl AssociateProductWithPortfolioFluentBuilder {
     pub fn set_portfolio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_portfolio_id(input);
         self
+    }
+    /// <p>The portfolio identifier.</p>
+    pub fn get_portfolio_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_portfolio_id()
     }
     /// <p>The identifier of the source portfolio.</p>
     pub fn source_portfolio_id(
@@ -176,5 +196,9 @@ impl AssociateProductWithPortfolioFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_source_portfolio_id(input);
         self
+    }
+    /// <p>The identifier of the source portfolio.</p>
+    pub fn get_source_portfolio_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_portfolio_id()
     }
 }

@@ -69,6 +69,12 @@ impl GetOrganizationConfigRuleDetailedStatusInputBuilder {
         self.organization_config_rule_name = input;
         self
     }
+    /// <p>The name of your organization Config rule for which you want status details for member accounts.</p>
+    pub fn get_organization_config_rule_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.organization_config_rule_name
+    }
     /// <p>A <code>StatusDetailFilters</code> object.</p>
     pub fn filters(mut self, input: crate::types::StatusDetailFilters) -> Self {
         self.filters = ::std::option::Option::Some(input);
@@ -82,6 +88,10 @@ impl GetOrganizationConfigRuleDetailedStatusInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>A <code>StatusDetailFilters</code> object.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::StatusDetailFilters> {
+        &self.filters
+    }
     /// <p>The maximum number of <code>OrganizationConfigRuleDetailedStatus</code> returned on each page. If you do not specify a number, Config uses the default. The default is 100.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -92,6 +102,10 @@ impl GetOrganizationConfigRuleDetailedStatusInputBuilder {
         self.limit = input;
         self
     }
+    /// <p>The maximum number of <code>OrganizationConfigRuleDetailedStatus</code> returned on each page. If you do not specify a number, Config uses the default. The default is 100.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
+    }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -101,6 +115,10 @@ impl GetOrganizationConfigRuleDetailedStatusInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`GetOrganizationConfigRuleDetailedStatusInput`](crate::operation::get_organization_config_rule_detailed_status::GetOrganizationConfigRuleDetailedStatusInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_organization_config_rule_detailed_status::GetOrganizationConfigRuleDetailedStatusInput, ::aws_smithy_http::operation::error::BuildError>{

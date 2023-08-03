@@ -188,6 +188,10 @@ impl CreateIntentOutputBuilder {
         self.intent_id = input;
         self
     }
+    /// <p>A unique identifier for the intent.</p>
+    pub fn get_intent_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.intent_id
+    }
     /// <p>The name specified for the intent.</p>
     pub fn intent_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.intent_name = ::std::option::Option::Some(input.into());
@@ -198,6 +202,10 @@ impl CreateIntentOutputBuilder {
         self.intent_name = input;
         self
     }
+    /// <p>The name specified for the intent.</p>
+    pub fn get_intent_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.intent_name
+    }
     /// <p>The description specified for the intent.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -207,6 +215,10 @@ impl CreateIntentOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description specified for the intent.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The signature of the parent intent specified for the intent.</p>
     pub fn parent_intent_signature(
@@ -223,6 +235,10 @@ impl CreateIntentOutputBuilder {
     ) -> Self {
         self.parent_intent_signature = input;
         self
+    }
+    /// <p>The signature of the parent intent specified for the intent.</p>
+    pub fn get_parent_intent_signature(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent_intent_signature
     }
     /// Appends an item to `sample_utterances`.
     ///
@@ -243,6 +259,12 @@ impl CreateIntentOutputBuilder {
         self.sample_utterances = input;
         self
     }
+    /// <p>The sample utterances specified for the intent.</p>
+    pub fn get_sample_utterances(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SampleUtterance>> {
+        &self.sample_utterances
+    }
     /// <p>The dialog Lambda function specified for the intent.</p>
     pub fn dialog_code_hook(mut self, input: crate::types::DialogCodeHookSettings) -> Self {
         self.dialog_code_hook = ::std::option::Option::Some(input);
@@ -255,6 +277,12 @@ impl CreateIntentOutputBuilder {
     ) -> Self {
         self.dialog_code_hook = input;
         self
+    }
+    /// <p>The dialog Lambda function specified for the intent.</p>
+    pub fn get_dialog_code_hook(
+        &self,
+    ) -> &::std::option::Option<crate::types::DialogCodeHookSettings> {
+        &self.dialog_code_hook
     }
     /// <p>The fulfillment Lambda function specified for the intent.</p>
     pub fn fulfillment_code_hook(
@@ -272,6 +300,12 @@ impl CreateIntentOutputBuilder {
         self.fulfillment_code_hook = input;
         self
     }
+    /// <p>The fulfillment Lambda function specified for the intent.</p>
+    pub fn get_fulfillment_code_hook(
+        &self,
+    ) -> &::std::option::Option<crate::types::FulfillmentCodeHookSettings> {
+        &self.fulfillment_code_hook
+    }
     /// <p>The confirmation setting specified for the intent.</p>
     pub fn intent_confirmation_setting(
         mut self,
@@ -288,6 +322,12 @@ impl CreateIntentOutputBuilder {
         self.intent_confirmation_setting = input;
         self
     }
+    /// <p>The confirmation setting specified for the intent.</p>
+    pub fn get_intent_confirmation_setting(
+        &self,
+    ) -> &::std::option::Option<crate::types::IntentConfirmationSetting> {
+        &self.intent_confirmation_setting
+    }
     /// <p>The closing setting specified for the intent.</p>
     pub fn intent_closing_setting(mut self, input: crate::types::IntentClosingSetting) -> Self {
         self.intent_closing_setting = ::std::option::Option::Some(input);
@@ -300,6 +340,12 @@ impl CreateIntentOutputBuilder {
     ) -> Self {
         self.intent_closing_setting = input;
         self
+    }
+    /// <p>The closing setting specified for the intent.</p>
+    pub fn get_intent_closing_setting(
+        &self,
+    ) -> &::std::option::Option<crate::types::IntentClosingSetting> {
+        &self.intent_closing_setting
     }
     /// Appends an item to `input_contexts`.
     ///
@@ -320,6 +366,12 @@ impl CreateIntentOutputBuilder {
         self.input_contexts = input;
         self
     }
+    /// <p>The list of input contexts specified for the intent.</p>
+    pub fn get_input_contexts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputContext>> {
+        &self.input_contexts
+    }
     /// Appends an item to `output_contexts`.
     ///
     /// To override the contents of this collection use [`set_output_contexts`](Self::set_output_contexts).
@@ -339,6 +391,12 @@ impl CreateIntentOutputBuilder {
         self.output_contexts = input;
         self
     }
+    /// <p>The list of output contexts specified for the intent.</p>
+    pub fn get_output_contexts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputContext>> {
+        &self.output_contexts
+    }
     /// <p>Configuration for searching a Amazon Kendra index specified for the intent.</p>
     pub fn kendra_configuration(mut self, input: crate::types::KendraConfiguration) -> Self {
         self.kendra_configuration = ::std::option::Option::Some(input);
@@ -352,6 +410,12 @@ impl CreateIntentOutputBuilder {
         self.kendra_configuration = input;
         self
     }
+    /// <p>Configuration for searching a Amazon Kendra index specified for the intent.</p>
+    pub fn get_kendra_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::KendraConfiguration> {
+        &self.kendra_configuration
+    }
     /// <p>The identifier of the bot associated with the intent.</p>
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
@@ -361,6 +425,10 @@ impl CreateIntentOutputBuilder {
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_id = input;
         self
+    }
+    /// <p>The identifier of the bot associated with the intent.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
     }
     /// <p>The version of the bot associated with the intent.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -372,6 +440,10 @@ impl CreateIntentOutputBuilder {
         self.bot_version = input;
         self
     }
+    /// <p>The version of the bot associated with the intent.</p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_version
+    }
     /// <p>The locale that the intent is specified to use.</p>
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
@@ -381,6 +453,10 @@ impl CreateIntentOutputBuilder {
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.locale_id = input;
         self
+    }
+    /// <p>The locale that the intent is specified to use.</p>
+    pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale_id
     }
     /// <p>A timestamp of the date and time that the intent was created.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -395,6 +471,10 @@ impl CreateIntentOutputBuilder {
         self.creation_date_time = input;
         self
     }
+    /// <p>A timestamp of the date and time that the intent was created.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
+    }
     /// <p>Configuration settings for the response that is sent to the user at the beginning of a conversation, before eliciting slot values.</p>
     pub fn initial_response_setting(mut self, input: crate::types::InitialResponseSetting) -> Self {
         self.initial_response_setting = ::std::option::Option::Some(input);
@@ -407,6 +487,12 @@ impl CreateIntentOutputBuilder {
     ) -> Self {
         self.initial_response_setting = input;
         self
+    }
+    /// <p>Configuration settings for the response that is sent to the user at the beginning of a conversation, before eliciting slot values.</p>
+    pub fn get_initial_response_setting(
+        &self,
+    ) -> &::std::option::Option<crate::types::InitialResponseSetting> {
+        &self.initial_response_setting
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

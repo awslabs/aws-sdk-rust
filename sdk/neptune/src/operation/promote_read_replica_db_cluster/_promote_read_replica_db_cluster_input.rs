@@ -45,6 +45,10 @@ impl PromoteReadReplicaDbClusterInputBuilder {
         self.db_cluster_identifier = input;
         self
     }
+    /// <p>Not supported.</p>
+    pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_identifier
+    }
     /// Consumes the builder and constructs a [`PromoteReadReplicaDbClusterInput`](crate::operation::promote_read_replica_db_cluster::PromoteReadReplicaDbClusterInput).
     pub fn build(
         self,

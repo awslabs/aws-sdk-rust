@@ -37,6 +37,10 @@ impl UpdateAccountAuditConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAccountAuditConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_account_audit_configuration::builders::UpdateAccountAuditConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -101,6 +105,10 @@ impl UpdateAccountAuditConfigurationFluentBuilder {
         self.inner = self.inner.set_role_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the role that grants permission to IoT to access information about your devices, policies, certificates, and other items as required when performing an audit.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
+    }
     /// Adds a key-value pair to `auditNotificationTargetConfigurations`.
     ///
     /// To override the contents of this collection use [`set_audit_notification_target_configurations`](Self::set_audit_notification_target_configurations).
@@ -128,6 +136,17 @@ impl UpdateAccountAuditConfigurationFluentBuilder {
             .inner
             .set_audit_notification_target_configurations(input);
         self
+    }
+    /// <p>Information about the targets to which audit notifications are sent.</p>
+    pub fn get_audit_notification_target_configurations(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::AuditNotificationType,
+            crate::types::AuditNotificationTarget,
+        >,
+    > {
+        self.inner.get_audit_notification_target_configurations()
     }
     /// Adds a key-value pair to `auditCheckConfigurations`.
     ///
@@ -160,5 +179,16 @@ impl UpdateAccountAuditConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_audit_check_configurations(input);
         self
+    }
+    /// <p>Specifies which audit checks are enabled and disabled for this account. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are currently enabled.</p>
+    /// <p>Some data collection might start immediately when certain checks are enabled. When a check is disabled, any data collected so far in relation to the check is deleted.</p>
+    /// <p>You cannot disable a check if it's used by any scheduled audit. You must first delete the check from the scheduled audit or delete the scheduled audit itself.</p>
+    /// <p>On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter is required and must specify at least one enabled check.</p>
+    pub fn get_audit_check_configurations(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::AuditCheckConfiguration>,
+    > {
+        self.inner.get_audit_check_configurations()
     }
 }

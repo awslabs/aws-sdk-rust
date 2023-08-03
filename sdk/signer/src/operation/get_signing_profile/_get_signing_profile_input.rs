@@ -48,6 +48,10 @@ impl GetSigningProfileInputBuilder {
         self.profile_name = input;
         self
     }
+    /// <p>The name of the target signing profile.</p>
+    pub fn get_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_name
+    }
     /// <p>The AWS account ID of the profile owner.</p>
     pub fn profile_owner(
         mut self,
@@ -63,6 +67,10 @@ impl GetSigningProfileInputBuilder {
     ) -> Self {
         self.profile_owner = input;
         self
+    }
+    /// <p>The AWS account ID of the profile owner.</p>
+    pub fn get_profile_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_owner
     }
     /// Consumes the builder and constructs a [`GetSigningProfileInput`](crate::operation::get_signing_profile::GetSigningProfileInput).
     pub fn build(

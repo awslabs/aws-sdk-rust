@@ -48,6 +48,10 @@ impl EventBridgeConfigurationBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Indicates whether the to broadcast case event data to the customer.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// <p>Details of what case and related item data is published through the case event stream.</p>
     pub fn included_data(mut self, input: crate::types::EventIncludedData) -> Self {
         self.included_data = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl EventBridgeConfigurationBuilder {
     ) -> Self {
         self.included_data = input;
         self
+    }
+    /// <p>Details of what case and related item data is published through the case event stream.</p>
+    pub fn get_included_data(&self) -> &::std::option::Option<crate::types::EventIncludedData> {
+        &self.included_data
     }
     /// Consumes the builder and constructs a [`EventBridgeConfiguration`](crate::types::EventBridgeConfiguration).
     pub fn build(self) -> crate::types::EventBridgeConfiguration {

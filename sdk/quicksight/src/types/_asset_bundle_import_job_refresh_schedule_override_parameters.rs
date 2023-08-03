@@ -57,6 +57,10 @@ impl AssetBundleImportJobRefreshScheduleOverrideParametersBuilder {
         self.data_set_id = input;
         self
     }
+    /// <p>A partial identifier for the specific <code>RefreshSchedule</code> resource that is being overridden. This structure is used together with the <code>ScheduleID</code> structure.</p>
+    pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_set_id
+    }
     /// <p>A partial identifier for the specific <code>RefreshSchedule</code> resource being overridden. This structure is used together with the <code>DataSetId</code> structure.</p>
     pub fn schedule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule_id = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl AssetBundleImportJobRefreshScheduleOverrideParametersBuilder {
     pub fn set_schedule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schedule_id = input;
         self
+    }
+    /// <p>A partial identifier for the specific <code>RefreshSchedule</code> resource being overridden. This structure is used together with the <code>DataSetId</code> structure.</p>
+    pub fn get_schedule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schedule_id
     }
     /// <p>An override for the <code>StartAfterDateTime</code> of a <code>RefreshSchedule</code>. Make sure that the <code>StartAfterDateTime</code> is set to a time that takes place in the future.</p>
     pub fn start_after_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -79,6 +87,12 @@ impl AssetBundleImportJobRefreshScheduleOverrideParametersBuilder {
     ) -> Self {
         self.start_after_date_time = input;
         self
+    }
+    /// <p>An override for the <code>StartAfterDateTime</code> of a <code>RefreshSchedule</code>. Make sure that the <code>StartAfterDateTime</code> is set to a time that takes place in the future.</p>
+    pub fn get_start_after_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_after_date_time
     }
     /// Consumes the builder and constructs a [`AssetBundleImportJobRefreshScheduleOverrideParameters`](crate::types::AssetBundleImportJobRefreshScheduleOverrideParameters).
     pub fn build(self) -> crate::types::AssetBundleImportJobRefreshScheduleOverrideParameters {

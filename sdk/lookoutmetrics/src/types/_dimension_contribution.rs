@@ -58,6 +58,10 @@ impl DimensionContributionBuilder {
         self.dimension_name = input;
         self
     }
+    /// <p>The name of the dimension.</p>
+    pub fn get_dimension_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dimension_name
+    }
     /// Appends an item to `dimension_value_contribution_list`.
     ///
     /// To override the contents of this collection use [`set_dimension_value_contribution_list`](Self::set_dimension_value_contribution_list).
@@ -79,6 +83,12 @@ impl DimensionContributionBuilder {
     ) -> Self {
         self.dimension_value_contribution_list = input;
         self
+    }
+    /// <p>A list of dimension values that contributed to the anomaly.</p>
+    pub fn get_dimension_value_contribution_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionValueContribution>> {
+        &self.dimension_value_contribution_list
     }
     /// Consumes the builder and constructs a [`DimensionContribution`](crate::types::DimensionContribution).
     pub fn build(self) -> crate::types::DimensionContribution {

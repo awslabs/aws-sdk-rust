@@ -60,6 +60,10 @@ impl GetEvidenceFileUploadUrlOutputBuilder {
         self.evidence_file_name = input;
         self
     }
+    /// <p>The name of the uploaded manual evidence file that the presigned URL was generated for.</p>
+    pub fn get_evidence_file_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evidence_file_name
+    }
     /// <p>The presigned URL that was generated.</p>
     pub fn upload_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upload_url = ::std::option::Option::Some(input.into());
@@ -69,6 +73,10 @@ impl GetEvidenceFileUploadUrlOutputBuilder {
     pub fn set_upload_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.upload_url = input;
         self
+    }
+    /// <p>The presigned URL that was generated.</p>
+    pub fn get_upload_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.upload_url
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

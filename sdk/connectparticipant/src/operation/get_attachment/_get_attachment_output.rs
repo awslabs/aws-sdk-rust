@@ -54,6 +54,10 @@ impl GetAttachmentOutputBuilder {
         self.url = input;
         self
     }
+    /// <p>This is the pre-signed URL that can be used for uploading the file to Amazon S3 when used in response to <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_StartAttachmentUpload.html">StartAttachmentUpload</a>.</p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
+    }
     /// <p>The expiration time of the URL in ISO timestamp. It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
     pub fn url_expiry(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url_expiry = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl GetAttachmentOutputBuilder {
     pub fn set_url_expiry(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url_expiry = input;
         self
+    }
+    /// <p>The expiration time of the URL in ISO timestamp. It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
+    pub fn get_url_expiry(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url_expiry
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

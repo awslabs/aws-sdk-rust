@@ -55,6 +55,10 @@ impl BatchGetDevicePositionInputBuilder {
         self.tracker_name = input;
         self
     }
+    /// <p>The tracker resource retrieving the device position.</p>
+    pub fn get_tracker_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tracker_name
+    }
     /// Appends an item to `device_ids`.
     ///
     /// To override the contents of this collection use [`set_device_ids`](Self::set_device_ids).
@@ -79,6 +83,13 @@ impl BatchGetDevicePositionInputBuilder {
     ) -> Self {
         self.device_ids = input;
         self
+    }
+    /// <p>Devices whose position you want to retrieve.</p>
+    /// <ul>
+    /// <li> <p>For example, for two devices: <code>device-ids=DeviceId1&amp;device-ids=DeviceId2</code> </p> </li>
+    /// </ul>
+    pub fn get_device_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.device_ids
     }
     /// Consumes the builder and constructs a [`BatchGetDevicePositionInput`](crate::operation::batch_get_device_position::BatchGetDevicePositionInput).
     pub fn build(

@@ -48,6 +48,10 @@ impl UpdateDeviceStateInputBuilder {
         self.device_id = input;
         self
     }
+    /// <p>The unique identifier of the device.</p>
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_id
+    }
     /// <p>If true, the device is enabled. If false, the device is disabled.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl UpdateDeviceStateInputBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    /// <p>If true, the device is enabled. If false, the device is disabled.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// Consumes the builder and constructs a [`UpdateDeviceStateInput`](crate::operation::update_device_state::UpdateDeviceStateInput).
     pub fn build(

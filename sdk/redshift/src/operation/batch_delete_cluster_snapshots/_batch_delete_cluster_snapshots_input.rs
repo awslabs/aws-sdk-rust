@@ -52,6 +52,12 @@ impl BatchDeleteClusterSnapshotsInputBuilder {
         self.identifiers = input;
         self
     }
+    /// <p>A list of identifiers for the snapshots that you want to delete.</p>
+    pub fn get_identifiers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeleteClusterSnapshotMessage>> {
+        &self.identifiers
+    }
     /// Consumes the builder and constructs a [`BatchDeleteClusterSnapshotsInput`](crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsInput).
     pub fn build(
         self,

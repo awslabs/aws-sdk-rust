@@ -40,6 +40,13 @@ impl GetRepositorySyncStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetRepositorySyncStatus as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_repository_sync_status::builders::GetRepositorySyncStatusInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +143,10 @@ impl GetRepositorySyncStatusFluentBuilder {
         self.inner = self.inner.set_repository_name(input);
         self
     }
+    /// <p>The repository name.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_repository_name()
+    }
     /// <p>The repository provider.</p>
     pub fn repository_provider(mut self, input: crate::types::RepositoryProvider) -> Self {
         self.inner = self.inner.repository_provider(input);
@@ -149,6 +160,12 @@ impl GetRepositorySyncStatusFluentBuilder {
         self.inner = self.inner.set_repository_provider(input);
         self
     }
+    /// <p>The repository provider.</p>
+    pub fn get_repository_provider(
+        &self,
+    ) -> &::std::option::Option<crate::types::RepositoryProvider> {
+        self.inner.get_repository_provider()
+    }
     /// <p>The repository branch.</p>
     pub fn branch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.branch(input.into());
@@ -159,6 +176,10 @@ impl GetRepositorySyncStatusFluentBuilder {
         self.inner = self.inner.set_branch(input);
         self
     }
+    /// <p>The repository branch.</p>
+    pub fn get_branch(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_branch()
+    }
     /// <p>The repository sync type.</p>
     pub fn sync_type(mut self, input: crate::types::SyncType) -> Self {
         self.inner = self.inner.sync_type(input);
@@ -168,5 +189,9 @@ impl GetRepositorySyncStatusFluentBuilder {
     pub fn set_sync_type(mut self, input: ::std::option::Option<crate::types::SyncType>) -> Self {
         self.inner = self.inner.set_sync_type(input);
         self
+    }
+    /// <p>The repository sync type.</p>
+    pub fn get_sync_type(&self) -> &::std::option::Option<crate::types::SyncType> {
+        self.inner.get_sync_type()
     }
 }

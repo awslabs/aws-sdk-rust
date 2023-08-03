@@ -83,6 +83,10 @@ impl CreateEndpointInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the global endpoint. For example, <code>"Name":"us-east-2-custom_bus_A-endpoint"</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A description of the global endpoint.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -92,6 +96,10 @@ impl CreateEndpointInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the global endpoint.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Configure the routing policy, including the health check and secondary Region..</p>
     pub fn routing_config(mut self, input: crate::types::RoutingConfig) -> Self {
@@ -106,6 +114,10 @@ impl CreateEndpointInputBuilder {
         self.routing_config = input;
         self
     }
+    /// <p>Configure the routing policy, including the health check and secondary Region..</p>
+    pub fn get_routing_config(&self) -> &::std::option::Option<crate::types::RoutingConfig> {
+        &self.routing_config
+    }
     /// <p>Enable or disable event replication. The default state is <code>ENABLED</code> which means you must supply a <code>RoleArn</code>. If you don't have a <code>RoleArn</code> or you don't want event replication enabled, set the state to <code>DISABLED</code>.</p>
     pub fn replication_config(mut self, input: crate::types::ReplicationConfig) -> Self {
         self.replication_config = ::std::option::Option::Some(input);
@@ -118,6 +130,12 @@ impl CreateEndpointInputBuilder {
     ) -> Self {
         self.replication_config = input;
         self
+    }
+    /// <p>Enable or disable event replication. The default state is <code>ENABLED</code> which means you must supply a <code>RoleArn</code>. If you don't have a <code>RoleArn</code> or you don't want event replication enabled, set the state to <code>DISABLED</code>.</p>
+    pub fn get_replication_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReplicationConfig> {
+        &self.replication_config
     }
     /// Appends an item to `event_buses`.
     ///
@@ -142,6 +160,14 @@ impl CreateEndpointInputBuilder {
         self.event_buses = input;
         self
     }
+    /// <p>Define the event buses used. </p> <important>
+    /// <p>The names of the event buses must be identical in each Region.</p>
+    /// </important>
+    pub fn get_event_buses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointEventBus>> {
+        &self.event_buses
+    }
     /// <p>The ARN of the role used for replication.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -151,6 +177,10 @@ impl CreateEndpointInputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The ARN of the role used for replication.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Consumes the builder and constructs a [`CreateEndpointInput`](crate::operation::create_endpoint::CreateEndpointInput).
     pub fn build(

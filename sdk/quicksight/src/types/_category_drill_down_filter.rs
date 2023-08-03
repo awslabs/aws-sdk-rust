@@ -51,6 +51,10 @@ impl CategoryDrillDownFilterBuilder {
         self.column = input;
         self
     }
+    /// <p>The column that the filter is applied to.</p>
+    pub fn get_column(&self) -> &::std::option::Option<crate::types::ColumnIdentifier> {
+        &self.column
+    }
     /// Appends an item to `category_values`.
     ///
     /// To override the contents of this collection use [`set_category_values`](Self::set_category_values).
@@ -72,6 +76,12 @@ impl CategoryDrillDownFilterBuilder {
     ) -> Self {
         self.category_values = input;
         self
+    }
+    /// <p>A list of the string inputs that are the values of the category drill down filter.</p>
+    pub fn get_category_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.category_values
     }
     /// Consumes the builder and constructs a [`CategoryDrillDownFilter`](crate::types::CategoryDrillDownFilter).
     pub fn build(self) -> crate::types::CategoryDrillDownFilter {

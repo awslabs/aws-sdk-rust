@@ -38,6 +38,12 @@ impl TranslateDocumentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the TranslateDocument as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::translate_document::builders::TranslateDocumentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +134,10 @@ impl TranslateDocumentFluentBuilder {
         self.inner = self.inner.set_document(input);
         self
     }
+    /// <p>The content and content type for the document to be translated. The document size must not exceed 100 KB.</p>
+    pub fn get_document(&self) -> &::std::option::Option<crate::types::Document> {
+        self.inner.get_document()
+    }
     /// Appends an item to `TerminologyNames`.
     ///
     /// To override the contents of this collection use [`set_terminology_names`](Self::set_terminology_names).
@@ -152,6 +162,14 @@ impl TranslateDocumentFluentBuilder {
         self.inner = self.inner.set_terminology_names(input);
         self
     }
+    /// <p>The name of a terminology list file to add to the translation job. This file provides source terms and the desired translation for each term. A terminology list can contain a maximum of 256 terms. You can use one custom terminology resource in your translation request.</p>
+    /// <p>Use the <code>ListTerminologies</code> operation to get the available terminology lists.</p>
+    /// <p>For more information about custom terminology lists, see <a href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom terminology</a>.</p>
+    pub fn get_terminology_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_terminology_names()
+    }
     /// <p>The language code for the language of the source text. Do not use <code>auto</code>, because <code>TranslateDocument</code> does not support language auto-detection. For a list of supported language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
     pub fn source_language_code(
         mut self,
@@ -167,6 +185,10 @@ impl TranslateDocumentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_source_language_code(input);
         self
+    }
+    /// <p>The language code for the language of the source text. Do not use <code>auto</code>, because <code>TranslateDocument</code> does not support language auto-detection. For a list of supported language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
+    pub fn get_source_language_code(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_language_code()
     }
     /// <p>The language code requested for the translated document. For a list of supported language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
     pub fn target_language_code(
@@ -184,6 +206,10 @@ impl TranslateDocumentFluentBuilder {
         self.inner = self.inner.set_target_language_code(input);
         self
     }
+    /// <p>The language code requested for the translated document. For a list of supported language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
+    pub fn get_target_language_code(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_language_code()
+    }
     /// <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
     pub fn settings(mut self, input: crate::types::TranslationSettings) -> Self {
         self.inner = self.inner.settings(input);
@@ -196,5 +222,9 @@ impl TranslateDocumentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_settings(input);
         self
+    }
+    /// <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
+    pub fn get_settings(&self) -> &::std::option::Option<crate::types::TranslationSettings> {
+        self.inner.get_settings()
     }
 }

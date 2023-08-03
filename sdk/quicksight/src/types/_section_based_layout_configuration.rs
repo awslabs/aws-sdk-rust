@@ -94,6 +94,13 @@ impl SectionBasedLayoutConfigurationBuilder {
         self.header_sections = input;
         self
     }
+    /// <p>A list of header section configurations.</p>
+    pub fn get_header_sections(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HeaderFooterSectionConfiguration>>
+    {
+        &self.header_sections
+    }
     /// Appends an item to `body_sections`.
     ///
     /// To override the contents of this collection use [`set_body_sections`](Self::set_body_sections).
@@ -112,6 +119,12 @@ impl SectionBasedLayoutConfigurationBuilder {
     ) -> Self {
         self.body_sections = input;
         self
+    }
+    /// <p>A list of body section configurations.</p>
+    pub fn get_body_sections(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BodySectionConfiguration>> {
+        &self.body_sections
     }
     /// Appends an item to `footer_sections`.
     ///
@@ -137,6 +150,13 @@ impl SectionBasedLayoutConfigurationBuilder {
         self.footer_sections = input;
         self
     }
+    /// <p>A list of footer section configurations.</p>
+    pub fn get_footer_sections(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HeaderFooterSectionConfiguration>>
+    {
+        &self.footer_sections
+    }
     /// <p>The options for the canvas of a section-based layout.</p>
     pub fn canvas_size_options(
         mut self,
@@ -152,6 +172,12 @@ impl SectionBasedLayoutConfigurationBuilder {
     ) -> Self {
         self.canvas_size_options = input;
         self
+    }
+    /// <p>The options for the canvas of a section-based layout.</p>
+    pub fn get_canvas_size_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::SectionBasedLayoutCanvasSizeOptions> {
+        &self.canvas_size_options
     }
     /// Consumes the builder and constructs a [`SectionBasedLayoutConfiguration`](crate::types::SectionBasedLayoutConfiguration).
     pub fn build(self) -> crate::types::SectionBasedLayoutConfiguration {

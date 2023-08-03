@@ -48,6 +48,10 @@ impl ResourceServerScopeTypeBuilder {
         self.scope_name = input;
         self
     }
+    /// <p>The name of the scope.</p>
+    pub fn get_scope_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scope_name
+    }
     /// <p>A description of the scope.</p>
     pub fn scope_description(
         mut self,
@@ -63,6 +67,10 @@ impl ResourceServerScopeTypeBuilder {
     ) -> Self {
         self.scope_description = input;
         self
+    }
+    /// <p>A description of the scope.</p>
+    pub fn get_scope_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scope_description
     }
     /// Consumes the builder and constructs a [`ResourceServerScopeType`](crate::types::ResourceServerScopeType).
     pub fn build(self) -> crate::types::ResourceServerScopeType {

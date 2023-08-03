@@ -56,6 +56,10 @@ impl TemporalStatisticsConfigInputBuilder {
         self.group_by = input;
         self
     }
+    /// <p>The input for the temporal statistics grouping by time frequency option.</p>
+    pub fn get_group_by(&self) -> &::std::option::Option<crate::types::GroupBy> {
+        &self.group_by
+    }
     /// Appends an item to `statistics`.
     ///
     /// To override the contents of this collection use [`set_statistics`](Self::set_statistics).
@@ -75,6 +79,12 @@ impl TemporalStatisticsConfigInputBuilder {
         self.statistics = input;
         self
     }
+    /// <p>The list of the statistics method options.</p>
+    pub fn get_statistics(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TemporalStatistics>> {
+        &self.statistics
+    }
     /// Appends an item to `target_bands`.
     ///
     /// To override the contents of this collection use [`set_target_bands`](Self::set_target_bands).
@@ -93,6 +103,12 @@ impl TemporalStatisticsConfigInputBuilder {
     ) -> Self {
         self.target_bands = input;
         self
+    }
+    /// <p>The list of target band names for the temporal statistic to calculate.</p>
+    pub fn get_target_bands(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.target_bands
     }
     /// Consumes the builder and constructs a [`TemporalStatisticsConfigInput`](crate::types::TemporalStatisticsConfigInput).
     pub fn build(self) -> crate::types::TemporalStatisticsConfigInput {

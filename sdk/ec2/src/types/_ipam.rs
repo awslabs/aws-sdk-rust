@@ -149,6 +149,10 @@ impl IpamBuilder {
         self.owner_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID of the owner of the IPAM.</p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
+    }
     /// <p>The ID of the IPAM.</p>
     pub fn ipam_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_id = ::std::option::Option::Some(input.into());
@@ -158,6 +162,10 @@ impl IpamBuilder {
     pub fn set_ipam_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipam_id = input;
         self
+    }
+    /// <p>The ID of the IPAM.</p>
+    pub fn get_ipam_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipam_id
     }
     /// <p>The Amazon Resource Name (ARN) of the IPAM.</p>
     pub fn ipam_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -169,6 +177,10 @@ impl IpamBuilder {
         self.ipam_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the IPAM.</p>
+    pub fn get_ipam_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipam_arn
+    }
     /// <p>The Amazon Web Services Region of the IPAM.</p>
     pub fn ipam_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_region = ::std::option::Option::Some(input.into());
@@ -178,6 +190,10 @@ impl IpamBuilder {
     pub fn set_ipam_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipam_region = input;
         self
+    }
+    /// <p>The Amazon Web Services Region of the IPAM.</p>
+    pub fn get_ipam_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipam_region
     }
     /// <p>The ID of the IPAM's default public scope.</p>
     pub fn public_default_scope_id(
@@ -195,6 +211,10 @@ impl IpamBuilder {
         self.public_default_scope_id = input;
         self
     }
+    /// <p>The ID of the IPAM's default public scope.</p>
+    pub fn get_public_default_scope_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_default_scope_id
+    }
     /// <p>The ID of the IPAM's default private scope.</p>
     pub fn private_default_scope_id(
         mut self,
@@ -211,6 +231,10 @@ impl IpamBuilder {
         self.private_default_scope_id = input;
         self
     }
+    /// <p>The ID of the IPAM's default private scope.</p>
+    pub fn get_private_default_scope_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_default_scope_id
+    }
     /// <p>The number of scopes in the IPAM. The scope quota is 5. For more information on quotas, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
     pub fn scope_count(mut self, input: i32) -> Self {
         self.scope_count = ::std::option::Option::Some(input);
@@ -221,6 +245,10 @@ impl IpamBuilder {
         self.scope_count = input;
         self
     }
+    /// <p>The number of scopes in the IPAM. The scope quota is 5. For more information on quotas, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
+    pub fn get_scope_count(&self) -> &::std::option::Option<i32> {
+        &self.scope_count
+    }
     /// <p>The description for the IPAM.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -230,6 +258,10 @@ impl IpamBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description for the IPAM.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `operating_regions`.
     ///
@@ -252,6 +284,13 @@ impl IpamBuilder {
         self.operating_regions = input;
         self
     }
+    /// <p>The operating Regions for an IPAM. Operating Regions are Amazon Web Services Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services Regions you select as operating Regions.</p>
+    /// <p>For more information about operating Regions, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    pub fn get_operating_regions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpamOperatingRegion>> {
+        &self.operating_regions
+    }
     /// <p>The state of the IPAM.</p>
     pub fn state(mut self, input: crate::types::IpamState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -261,6 +300,10 @@ impl IpamBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::IpamState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the IPAM.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::IpamState> {
+        &self.state
     }
     /// Appends an item to `tags`.
     ///
@@ -281,6 +324,10 @@ impl IpamBuilder {
         self.tags = input;
         self
     }
+    /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The IPAM's default resource discovery ID.</p>
     pub fn default_resource_discovery_id(
         mut self,
@@ -296,6 +343,12 @@ impl IpamBuilder {
     ) -> Self {
         self.default_resource_discovery_id = input;
         self
+    }
+    /// <p>The IPAM's default resource discovery ID.</p>
+    pub fn get_default_resource_discovery_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.default_resource_discovery_id
     }
     /// <p>The IPAM's default resource discovery association ID.</p>
     pub fn default_resource_discovery_association_id(
@@ -313,6 +366,12 @@ impl IpamBuilder {
         self.default_resource_discovery_association_id = input;
         self
     }
+    /// <p>The IPAM's default resource discovery association ID.</p>
+    pub fn get_default_resource_discovery_association_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.default_resource_discovery_association_id
+    }
     /// <p>The IPAM's resource discovery association count.</p>
     pub fn resource_discovery_association_count(mut self, input: i32) -> Self {
         self.resource_discovery_association_count = ::std::option::Option::Some(input);
@@ -325,6 +384,10 @@ impl IpamBuilder {
     ) -> Self {
         self.resource_discovery_association_count = input;
         self
+    }
+    /// <p>The IPAM's resource discovery association count.</p>
+    pub fn get_resource_discovery_association_count(&self) -> &::std::option::Option<i32> {
+        &self.resource_discovery_association_count
     }
     /// Consumes the builder and constructs a [`Ipam`](crate::types::Ipam).
     pub fn build(self) -> crate::types::Ipam {

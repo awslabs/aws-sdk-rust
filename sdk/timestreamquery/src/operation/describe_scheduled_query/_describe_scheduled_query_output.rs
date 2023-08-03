@@ -53,6 +53,12 @@ impl DescribeScheduledQueryOutputBuilder {
         self.scheduled_query = input;
         self
     }
+    /// <p>The scheduled query.</p>
+    pub fn get_scheduled_query(
+        &self,
+    ) -> &::std::option::Option<crate::types::ScheduledQueryDescription> {
+        &self.scheduled_query
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

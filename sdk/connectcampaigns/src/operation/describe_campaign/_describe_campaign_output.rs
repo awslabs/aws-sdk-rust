@@ -48,6 +48,10 @@ impl DescribeCampaignOutputBuilder {
         self.campaign = input;
         self
     }
+    /// An Amazon Connect campaign.
+    pub fn get_campaign(&self) -> &::std::option::Option<crate::types::Campaign> {
+        &self.campaign
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

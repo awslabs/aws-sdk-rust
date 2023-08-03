@@ -192,6 +192,10 @@ impl DiskBuilder {
         self.name = input;
         self
     }
+    /// <p>The unique name of the disk.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Name (ARN) of the disk.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -202,6 +206,10 @@ impl DiskBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the disk.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The support code. Include this code in your email to support when you have questions about an instance or another resource in Lightsail. This code enables our support team to look up your Lightsail information more easily.</p>
     pub fn support_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.support_code = ::std::option::Option::Some(input.into());
@@ -211,6 +219,10 @@ impl DiskBuilder {
     pub fn set_support_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.support_code = input;
         self
+    }
+    /// <p>The support code. Include this code in your email to support when you have questions about an instance or another resource in Lightsail. This code enables our support team to look up your Lightsail information more easily.</p>
+    pub fn get_support_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.support_code
     }
     /// <p>The date when the disk was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -225,6 +237,10 @@ impl DiskBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The date when the disk was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The AWS Region and Availability Zone where the disk is located.</p>
     pub fn location(mut self, input: crate::types::ResourceLocation) -> Self {
         self.location = ::std::option::Option::Some(input);
@@ -238,6 +254,10 @@ impl DiskBuilder {
         self.location = input;
         self
     }
+    /// <p>The AWS Region and Availability Zone where the disk is located.</p>
+    pub fn get_location(&self) -> &::std::option::Option<crate::types::ResourceLocation> {
+        &self.location
+    }
     /// <p>The Lightsail resource type (e.g., <code>Disk</code>).</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
@@ -250,6 +270,10 @@ impl DiskBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>The Lightsail resource type (e.g., <code>Disk</code>).</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
     }
     /// Appends an item to `tags`.
     ///
@@ -270,6 +294,10 @@ impl DiskBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Appends an item to `add_ons`.
     ///
     /// To override the contents of this collection use [`set_add_ons`](Self::set_add_ons).
@@ -289,6 +317,10 @@ impl DiskBuilder {
         self.add_ons = input;
         self
     }
+    /// <p>An array of objects representing the add-ons enabled on the disk.</p>
+    pub fn get_add_ons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddOn>> {
+        &self.add_ons
+    }
     /// <p>The size of the disk in GB.</p>
     pub fn size_in_gb(mut self, input: i32) -> Self {
         self.size_in_gb = ::std::option::Option::Some(input);
@@ -298,6 +330,10 @@ impl DiskBuilder {
     pub fn set_size_in_gb(mut self, input: ::std::option::Option<i32>) -> Self {
         self.size_in_gb = input;
         self
+    }
+    /// <p>The size of the disk in GB.</p>
+    pub fn get_size_in_gb(&self) -> &::std::option::Option<i32> {
+        &self.size_in_gb
     }
     /// <p>A Boolean value indicating whether this disk is a system disk (has an operating system loaded on it).</p>
     pub fn is_system_disk(mut self, input: bool) -> Self {
@@ -309,6 +345,10 @@ impl DiskBuilder {
         self.is_system_disk = input;
         self
     }
+    /// <p>A Boolean value indicating whether this disk is a system disk (has an operating system loaded on it).</p>
+    pub fn get_is_system_disk(&self) -> &::std::option::Option<bool> {
+        &self.is_system_disk
+    }
     /// <p>The input/output operations per second (IOPS) of the disk.</p>
     pub fn iops(mut self, input: i32) -> Self {
         self.iops = ::std::option::Option::Some(input);
@@ -318,6 +358,10 @@ impl DiskBuilder {
     pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
         self.iops = input;
         self
+    }
+    /// <p>The input/output operations per second (IOPS) of the disk.</p>
+    pub fn get_iops(&self) -> &::std::option::Option<i32> {
+        &self.iops
     }
     /// <p>The disk path.</p>
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -329,6 +373,10 @@ impl DiskBuilder {
         self.path = input;
         self
     }
+    /// <p>The disk path.</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
+    }
     /// <p>Describes the status of the disk.</p>
     pub fn state(mut self, input: crate::types::DiskState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -338,6 +386,10 @@ impl DiskBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::DiskState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>Describes the status of the disk.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::DiskState> {
+        &self.state
     }
     /// <p>The resources to which the disk is attached.</p>
     pub fn attached_to(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -349,6 +401,10 @@ impl DiskBuilder {
         self.attached_to = input;
         self
     }
+    /// <p>The resources to which the disk is attached.</p>
+    pub fn get_attached_to(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attached_to
+    }
     /// <p>A Boolean value indicating whether the disk is attached.</p>
     pub fn is_attached(mut self, input: bool) -> Self {
         self.is_attached = ::std::option::Option::Some(input);
@@ -358,6 +414,10 @@ impl DiskBuilder {
     pub fn set_is_attached(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_attached = input;
         self
+    }
+    /// <p>A Boolean value indicating whether the disk is attached.</p>
+    pub fn get_is_attached(&self) -> &::std::option::Option<bool> {
+        &self.is_attached
     }
     /// <p>(Deprecated) The attachment state of the disk.</p> <note>
     /// <p>In releases prior to November 14, 2017, this parameter returned <code>attached</code> for system disks in the API response. It is now deprecated, but still included in the response. Use <code>isAttached</code> instead.</p>
@@ -381,6 +441,13 @@ impl DiskBuilder {
         self.attachment_state = input;
         self
     }
+    /// <p>(Deprecated) The attachment state of the disk.</p> <note>
+    /// <p>In releases prior to November 14, 2017, this parameter returned <code>attached</code> for system disks in the API response. It is now deprecated, but still included in the response. Use <code>isAttached</code> instead.</p>
+    /// </note>
+    #[deprecated]
+    pub fn get_attachment_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attachment_state
+    }
     /// <p>(Deprecated) The number of GB in use by the disk.</p> <note>
     /// <p>In releases prior to November 14, 2017, this parameter was not included in the API response. It is now deprecated.</p>
     /// </note>
@@ -396,6 +463,13 @@ impl DiskBuilder {
     pub fn set_gb_in_use(mut self, input: ::std::option::Option<i32>) -> Self {
         self.gb_in_use = input;
         self
+    }
+    /// <p>(Deprecated) The number of GB in use by the disk.</p> <note>
+    /// <p>In releases prior to November 14, 2017, this parameter was not included in the API response. It is now deprecated.</p>
+    /// </note>
+    #[deprecated]
+    pub fn get_gb_in_use(&self) -> &::std::option::Option<i32> {
+        &self.gb_in_use
     }
     /// <p>The status of automatically mounting a storage disk to a virtual computer.</p> <important>
     /// <p>This parameter only applies to Lightsail for Research resources.</p>
@@ -413,6 +487,12 @@ impl DiskBuilder {
     ) -> Self {
         self.auto_mount_status = input;
         self
+    }
+    /// <p>The status of automatically mounting a storage disk to a virtual computer.</p> <important>
+    /// <p>This parameter only applies to Lightsail for Research resources.</p>
+    /// </important>
+    pub fn get_auto_mount_status(&self) -> &::std::option::Option<crate::types::AutoMountStatus> {
+        &self.auto_mount_status
     }
     /// Consumes the builder and constructs a [`Disk`](crate::types::Disk).
     pub fn build(self) -> crate::types::Disk {

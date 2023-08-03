@@ -39,6 +39,13 @@ impl PutNotificationSettingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutNotificationSettings as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_notification_settings::builders::PutNotificationSettingsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +142,10 @@ impl PutNotificationSettingsFluentBuilder {
         self.inner = self.inner.set_trust_anchor_id(input);
         self
     }
+    /// <p>The unique identifier of the trust anchor.</p>
+    pub fn get_trust_anchor_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_trust_anchor_id()
+    }
     /// Appends an item to `notificationSettings`.
     ///
     /// To override the contents of this collection use [`set_notification_settings`](Self::set_notification_settings).
@@ -151,5 +162,11 @@ impl PutNotificationSettingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_notification_settings(input);
         self
+    }
+    /// <p>A list of notification settings to be associated to the trust anchor.</p>
+    pub fn get_notification_settings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationSetting>> {
+        self.inner.get_notification_settings()
     }
 }

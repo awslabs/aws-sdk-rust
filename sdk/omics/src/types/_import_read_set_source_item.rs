@@ -131,6 +131,10 @@ impl ImportReadSetSourceItemBuilder {
         self.source_files = input;
         self
     }
+    /// <p>The source files' location in Amazon S3.</p>
+    pub fn get_source_files(&self) -> &::std::option::Option<crate::types::SourceFiles> {
+        &self.source_files
+    }
     /// <p>The source's file type.</p>
     pub fn source_file_type(mut self, input: crate::types::FileType) -> Self {
         self.source_file_type = ::std::option::Option::Some(input);
@@ -144,6 +148,10 @@ impl ImportReadSetSourceItemBuilder {
         self.source_file_type = input;
         self
     }
+    /// <p>The source's file type.</p>
+    pub fn get_source_file_type(&self) -> &::std::option::Option<crate::types::FileType> {
+        &self.source_file_type
+    }
     /// <p>The source's status.</p>
     pub fn status(mut self, input: crate::types::ReadSetImportJobItemStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -156,6 +164,10 @@ impl ImportReadSetSourceItemBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The source's status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ReadSetImportJobItemStatus> {
+        &self.status
     }
     /// <p>The source's status message.</p>
     pub fn status_message(
@@ -173,6 +185,10 @@ impl ImportReadSetSourceItemBuilder {
         self.status_message = input;
         self
     }
+    /// <p>The source's status message.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>The source's subject ID.</p>
     pub fn subject_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subject_id = ::std::option::Option::Some(input.into());
@@ -183,6 +199,10 @@ impl ImportReadSetSourceItemBuilder {
         self.subject_id = input;
         self
     }
+    /// <p>The source's subject ID.</p>
+    pub fn get_subject_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subject_id
+    }
     /// <p>The source's sample ID.</p>
     pub fn sample_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sample_id = ::std::option::Option::Some(input.into());
@@ -192,6 +212,10 @@ impl ImportReadSetSourceItemBuilder {
     pub fn set_sample_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sample_id = input;
         self
+    }
+    /// <p>The source's sample ID.</p>
+    pub fn get_sample_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sample_id
     }
     /// <p>Where the source originated.</p>
     pub fn generated_from(
@@ -209,6 +233,10 @@ impl ImportReadSetSourceItemBuilder {
         self.generated_from = input;
         self
     }
+    /// <p>Where the source originated.</p>
+    pub fn get_generated_from(&self) -> &::std::option::Option<::std::string::String> {
+        &self.generated_from
+    }
     /// <p>The source's genome reference ARN.</p>
     pub fn reference_arn(
         mut self,
@@ -225,6 +253,10 @@ impl ImportReadSetSourceItemBuilder {
         self.reference_arn = input;
         self
     }
+    /// <p>The source's genome reference ARN.</p>
+    pub fn get_reference_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reference_arn
+    }
     /// <p>The source's name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -235,6 +267,10 @@ impl ImportReadSetSourceItemBuilder {
         self.name = input;
         self
     }
+    /// <p>The source's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The source's description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -244,6 +280,10 @@ impl ImportReadSetSourceItemBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The source's description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -269,6 +309,14 @@ impl ImportReadSetSourceItemBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The source's tags.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`ImportReadSetSourceItem`](crate::types::ImportReadSetSourceItem).
     pub fn build(self) -> crate::types::ImportReadSetSourceItem {

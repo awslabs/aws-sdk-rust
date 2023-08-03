@@ -48,6 +48,10 @@ impl AcceleratorTotalMemoryMiBRequestBuilder {
         self.min = input;
         self
     }
+    /// <p>The minimum amount of accelerator memory, in MiB. To specify no minimum limit, omit this parameter.</p>
+    pub fn get_min(&self) -> &::std::option::Option<i32> {
+        &self.min
+    }
     /// <p>The maximum amount of accelerator memory, in MiB. To specify no maximum limit, omit this parameter.</p>
     pub fn max(mut self, input: i32) -> Self {
         self.max = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl AcceleratorTotalMemoryMiBRequestBuilder {
     pub fn set_max(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max = input;
         self
+    }
+    /// <p>The maximum amount of accelerator memory, in MiB. To specify no maximum limit, omit this parameter.</p>
+    pub fn get_max(&self) -> &::std::option::Option<i32> {
+        &self.max
     }
     /// Consumes the builder and constructs a [`AcceleratorTotalMemoryMiBRequest`](crate::types::AcceleratorTotalMemoryMiBRequest).
     pub fn build(self) -> crate::types::AcceleratorTotalMemoryMiBRequest {

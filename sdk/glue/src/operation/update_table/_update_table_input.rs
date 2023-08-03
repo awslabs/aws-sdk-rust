@@ -79,6 +79,10 @@ impl UpdateTableInputBuilder {
         self.catalog_id = input;
         self
     }
+    /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// <p>The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
     pub fn database_name(
         mut self,
@@ -95,6 +99,10 @@ impl UpdateTableInputBuilder {
         self.database_name = input;
         self
     }
+    /// <p>The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>An updated <code>TableInput</code> object to define the metadata table in the catalog.</p>
     pub fn table_input(mut self, input: crate::types::TableInput) -> Self {
         self.table_input = ::std::option::Option::Some(input);
@@ -108,6 +116,10 @@ impl UpdateTableInputBuilder {
         self.table_input = input;
         self
     }
+    /// <p>An updated <code>TableInput</code> object to define the metadata table in the catalog.</p>
+    pub fn get_table_input(&self) -> &::std::option::Option<crate::types::TableInput> {
+        &self.table_input
+    }
     /// <p>By default, <code>UpdateTable</code> always creates an archived version of the table before updating it. However, if <code>skipArchive</code> is set to true, <code>UpdateTable</code> does not create the archived version.</p>
     pub fn skip_archive(mut self, input: bool) -> Self {
         self.skip_archive = ::std::option::Option::Some(input);
@@ -117,6 +129,10 @@ impl UpdateTableInputBuilder {
     pub fn set_skip_archive(mut self, input: ::std::option::Option<bool>) -> Self {
         self.skip_archive = input;
         self
+    }
+    /// <p>By default, <code>UpdateTable</code> always creates an archived version of the table before updating it. However, if <code>skipArchive</code> is set to true, <code>UpdateTable</code> does not create the archived version.</p>
+    pub fn get_skip_archive(&self) -> &::std::option::Option<bool> {
+        &self.skip_archive
     }
     /// <p>The transaction ID at which to update the table contents. </p>
     pub fn transaction_id(
@@ -134,6 +150,10 @@ impl UpdateTableInputBuilder {
         self.transaction_id = input;
         self
     }
+    /// <p>The transaction ID at which to update the table contents. </p>
+    pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transaction_id
+    }
     /// <p>The version ID at which to update the table contents. </p>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_id = ::std::option::Option::Some(input.into());
@@ -143,6 +163,10 @@ impl UpdateTableInputBuilder {
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_id = input;
         self
+    }
+    /// <p>The version ID at which to update the table contents. </p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_id
     }
     /// Consumes the builder and constructs a [`UpdateTableInput`](crate::operation::update_table::UpdateTableInput).
     pub fn build(

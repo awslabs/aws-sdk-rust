@@ -56,6 +56,10 @@ impl ListDataSetRevisionsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token value retrieved from a previous call to access the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `revisions`.
     ///
     /// To override the contents of this collection use [`set_revisions`](Self::set_revisions).
@@ -74,6 +78,12 @@ impl ListDataSetRevisionsOutputBuilder {
     ) -> Self {
         self.revisions = input;
         self
+    }
+    /// <p>The asset objects listed by the request.</p>
+    pub fn get_revisions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RevisionEntry>> {
+        &self.revisions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

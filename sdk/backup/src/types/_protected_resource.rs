@@ -64,6 +64,10 @@ impl ProtectedResourceBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// <p>The type of Amazon Web Services resource; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database. For Windows Volume Shadow Copy Service (VSS) backups, the only supported resource type is Amazon EC2.</p>
     pub fn resource_type(
         mut self,
@@ -80,6 +84,10 @@ impl ProtectedResourceBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The type of Amazon Web Services resource; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database. For Windows Volume Shadow Copy Service (VSS) backups, the only supported resource type is Amazon EC2.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
+    }
     /// <p>The date and time a resource was last backed up, in Unix format and Coordinated Universal Time (UTC). The value of <code>LastBackupTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn last_backup_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_backup_time = ::std::option::Option::Some(input);
@@ -92,6 +100,10 @@ impl ProtectedResourceBuilder {
     ) -> Self {
         self.last_backup_time = input;
         self
+    }
+    /// <p>The date and time a resource was last backed up, in Unix format and Coordinated Universal Time (UTC). The value of <code>LastBackupTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    pub fn get_last_backup_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_backup_time
     }
     /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
     pub fn resource_name(
@@ -108,6 +120,10 @@ impl ProtectedResourceBuilder {
     ) -> Self {
         self.resource_name = input;
         self
+    }
+    /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_name
     }
     /// Consumes the builder and constructs a [`ProtectedResource`](crate::types::ProtectedResource).
     pub fn build(self) -> crate::types::ProtectedResource {

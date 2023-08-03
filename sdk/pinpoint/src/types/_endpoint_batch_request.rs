@@ -49,6 +49,12 @@ impl EndpointBatchRequestBuilder {
         self.item = input;
         self
     }
+    /// <p>An array that defines the endpoints to create or update and, for each endpoint, the property values to set or change. An array can contain a maximum of 100 items.</p>
+    pub fn get_item(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointBatchItem>> {
+        &self.item
+    }
     /// Consumes the builder and constructs a [`EndpointBatchRequest`](crate::types::EndpointBatchRequest).
     pub fn build(self) -> crate::types::EndpointBatchRequest {
         crate::types::EndpointBatchRequest { item: self.item }

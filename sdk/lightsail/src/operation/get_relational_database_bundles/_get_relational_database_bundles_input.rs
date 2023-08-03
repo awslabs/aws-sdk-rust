@@ -51,6 +51,11 @@ impl GetRelationalDatabaseBundlesInputBuilder {
         self.page_token = input;
         self
     }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseBundles</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.page_token
+    }
     /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.</p>
     pub fn include_inactive(mut self, input: bool) -> Self {
         self.include_inactive = ::std::option::Option::Some(input);
@@ -60,6 +65,10 @@ impl GetRelationalDatabaseBundlesInputBuilder {
     pub fn set_include_inactive(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_inactive = input;
         self
+    }
+    /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the response of your request.</p>
+    pub fn get_include_inactive(&self) -> &::std::option::Option<bool> {
+        &self.include_inactive
     }
     /// Consumes the builder and constructs a [`GetRelationalDatabaseBundlesInput`](crate::operation::get_relational_database_bundles::GetRelationalDatabaseBundlesInput).
     pub fn build(

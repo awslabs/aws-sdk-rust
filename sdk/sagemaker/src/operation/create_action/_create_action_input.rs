@@ -103,6 +103,10 @@ impl CreateActionInputBuilder {
         self.action_name = input;
         self
     }
+    /// <p>The name of the action. Must be unique to your account in an Amazon Web Services Region.</p>
+    pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_name
+    }
     /// <p>The source type, ID, and URI.</p>
     pub fn source(mut self, input: crate::types::ActionSource) -> Self {
         self.source = ::std::option::Option::Some(input);
@@ -112,6 +116,10 @@ impl CreateActionInputBuilder {
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::ActionSource>) -> Self {
         self.source = input;
         self
+    }
+    /// <p>The source type, ID, and URI.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::ActionSource> {
+        &self.source
     }
     /// <p>The action type.</p>
     pub fn action_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -123,6 +131,10 @@ impl CreateActionInputBuilder {
         self.action_type = input;
         self
     }
+    /// <p>The action type.</p>
+    pub fn get_action_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_type
+    }
     /// <p>The description of the action.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -133,6 +145,10 @@ impl CreateActionInputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the action.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The status of the action.</p>
     pub fn status(mut self, input: crate::types::ActionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -142,6 +158,10 @@ impl CreateActionInputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ActionStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the action.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ActionStatus> {
+        &self.status
     }
     /// Adds a key-value pair to `properties`.
     ///
@@ -168,6 +188,14 @@ impl CreateActionInputBuilder {
         self.properties = input;
         self
     }
+    /// <p>A list of properties to add to the action.</p>
+    pub fn get_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.properties
+    }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     pub fn metadata_properties(mut self, input: crate::types::MetadataProperties) -> Self {
         self.metadata_properties = ::std::option::Option::Some(input);
@@ -180,6 +208,12 @@ impl CreateActionInputBuilder {
     ) -> Self {
         self.metadata_properties = input;
         self
+    }
+    /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
+    pub fn get_metadata_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::MetadataProperties> {
+        &self.metadata_properties
     }
     /// Appends an item to `tags`.
     ///
@@ -199,6 +233,10 @@ impl CreateActionInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of tags to apply to the action.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateActionInput`](crate::operation::create_action::CreateActionInput).
     pub fn build(

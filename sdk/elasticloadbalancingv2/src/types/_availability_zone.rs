@@ -68,6 +68,10 @@ impl AvailabilityZoneBuilder {
         self.zone_name = input;
         self
     }
+    /// <p>The name of the Availability Zone.</p>
+    pub fn get_zone_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.zone_name
+    }
     /// <p>The ID of the subnet. You can specify one subnet per Availability Zone.</p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
@@ -78,6 +82,10 @@ impl AvailabilityZoneBuilder {
         self.subnet_id = input;
         self
     }
+    /// <p>The ID of the subnet. You can specify one subnet per Availability Zone.</p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_id
+    }
     /// <p>[Application Load Balancers on Outposts] The ID of the Outpost.</p>
     pub fn outpost_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outpost_id = ::std::option::Option::Some(input.into());
@@ -87,6 +95,10 @@ impl AvailabilityZoneBuilder {
     pub fn set_outpost_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outpost_id = input;
         self
+    }
+    /// <p>[Application Load Balancers on Outposts] The ID of the Outpost.</p>
+    pub fn get_outpost_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.outpost_id
     }
     /// Appends an item to `load_balancer_addresses`.
     ///
@@ -106,6 +118,12 @@ impl AvailabilityZoneBuilder {
     ) -> Self {
         self.load_balancer_addresses = input;
         self
+    }
+    /// <p>[Network Load Balancers] If you need static IP addresses for your load balancer, you can specify one Elastic IP address per Availability Zone when you create an internal-facing load balancer. For internal load balancers, you can specify a private IP address from the IPv4 range of the subnet.</p>
+    pub fn get_load_balancer_addresses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerAddress>> {
+        &self.load_balancer_addresses
     }
     /// Consumes the builder and constructs a [`AvailabilityZone`](crate::types::AvailabilityZone).
     pub fn build(self) -> crate::types::AvailabilityZone {

@@ -87,6 +87,10 @@ impl GetRecommendationsOutputBuilder {
         self.profiling_group_name = input;
         self
     }
+    /// <p>The name of the profiling group the analysis data is about.</p>
+    pub fn get_profiling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profiling_group_name
+    }
     /// <p> The start time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     pub fn profile_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.profile_start_time = ::std::option::Option::Some(input);
@@ -100,6 +104,10 @@ impl GetRecommendationsOutputBuilder {
         self.profile_start_time = input;
         self
     }
+    /// <p> The start time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    pub fn get_profile_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.profile_start_time
+    }
     /// <p> The end time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     pub fn profile_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.profile_end_time = ::std::option::Option::Some(input);
@@ -112,6 +120,10 @@ impl GetRecommendationsOutputBuilder {
     ) -> Self {
         self.profile_end_time = input;
         self
+    }
+    /// <p> The end time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+    pub fn get_profile_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.profile_end_time
     }
     /// Appends an item to `recommendations`.
     ///
@@ -132,6 +144,12 @@ impl GetRecommendationsOutputBuilder {
         self.recommendations = input;
         self
     }
+    /// <p>The list of recommendations that the analysis found for this profile.</p>
+    pub fn get_recommendations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Recommendation>> {
+        &self.recommendations
+    }
     /// Appends an item to `anomalies`.
     ///
     /// To override the contents of this collection use [`set_anomalies`](Self::set_anomalies).
@@ -150,6 +168,10 @@ impl GetRecommendationsOutputBuilder {
     ) -> Self {
         self.anomalies = input;
         self
+    }
+    /// <p> The list of anomalies that the analysis has found for this profile. </p>
+    pub fn get_anomalies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Anomaly>> {
+        &self.anomalies
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

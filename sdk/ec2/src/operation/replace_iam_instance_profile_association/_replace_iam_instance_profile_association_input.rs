@@ -56,6 +56,12 @@ impl ReplaceIamInstanceProfileAssociationInputBuilder {
         self.iam_instance_profile = input;
         self
     }
+    /// <p>The IAM instance profile.</p>
+    pub fn get_iam_instance_profile(
+        &self,
+    ) -> &::std::option::Option<crate::types::IamInstanceProfileSpecification> {
+        &self.iam_instance_profile
+    }
     /// <p>The ID of the existing IAM instance profile association.</p>
     pub fn association_id(
         mut self,
@@ -71,6 +77,10 @@ impl ReplaceIamInstanceProfileAssociationInputBuilder {
     ) -> Self {
         self.association_id = input;
         self
+    }
+    /// <p>The ID of the existing IAM instance profile association.</p>
+    pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_id
     }
     /// Consumes the builder and constructs a [`ReplaceIamInstanceProfileAssociationInput`](crate::operation::replace_iam_instance_profile_association::ReplaceIamInstanceProfileAssociationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::replace_iam_instance_profile_association::ReplaceIamInstanceProfileAssociationInput, ::aws_smithy_http::operation::error::BuildError>{

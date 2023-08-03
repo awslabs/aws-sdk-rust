@@ -62,6 +62,10 @@ impl UpdateNetworkResourceMetadataOutputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The ARN of the resource.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// Adds a key-value pair to `metadata`.
     ///
     /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
@@ -86,6 +90,14 @@ impl UpdateNetworkResourceMetadataOutputBuilder {
     ) -> Self {
         self.metadata = input;
         self
+    }
+    /// <p>The updated resource metadata.</p>
+    pub fn get_metadata(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.metadata
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -36,6 +36,10 @@ impl GetRepositoryCatalogDataFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetRepositoryCatalogData as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_repository_catalog_data::builders::GetRepositoryCatalogDataInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl GetRepositoryCatalogDataFluentBuilder {
         self.inner = self.inner.set_registry_id(input);
         self
     }
+    /// <p>The Amazon Web Services account ID that's associated with the registry that contains the repositories to be described. If you do not specify a registry, the default public registry is assumed.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_registry_id()
+    }
     /// <p>The name of the repository to retrieve the catalog metadata for.</p>
     pub fn repository_name(
         mut self,
@@ -141,5 +149,9 @@ impl GetRepositoryCatalogDataFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
+    }
+    /// <p>The name of the repository to retrieve the catalog metadata for.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_repository_name()
     }
 }

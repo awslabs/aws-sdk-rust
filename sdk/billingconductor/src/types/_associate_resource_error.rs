@@ -48,6 +48,10 @@ impl AssociateResourceErrorBuilder {
         self.message = input;
         self
     }
+    /// <p>The reason why the resource association failed.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>A static error code that's used to classify the type of failure.</p>
     pub fn reason(mut self, input: crate::types::AssociateResourceErrorReason) -> Self {
         self.reason = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl AssociateResourceErrorBuilder {
     ) -> Self {
         self.reason = input;
         self
+    }
+    /// <p>A static error code that's used to classify the type of failure.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<crate::types::AssociateResourceErrorReason> {
+        &self.reason
     }
     /// Consumes the builder and constructs a [`AssociateResourceError`](crate::types::AssociateResourceError).
     pub fn build(self) -> crate::types::AssociateResourceError {

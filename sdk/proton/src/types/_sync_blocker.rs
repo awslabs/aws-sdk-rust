@@ -96,6 +96,10 @@ impl SyncBlockerBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the sync blocker.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The type of the sync blocker.</p>
     pub fn r#type(mut self, input: crate::types::BlockerType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -106,6 +110,10 @@ impl SyncBlockerBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of the sync blocker.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::BlockerType> {
+        &self.r#type
+    }
     /// <p>The status of the sync blocker.</p>
     pub fn status(mut self, input: crate::types::BlockerStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -115,6 +123,10 @@ impl SyncBlockerBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::BlockerStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the sync blocker.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::BlockerStatus> {
+        &self.status
     }
     /// <p>The reason why the sync blocker was created.</p>
     pub fn created_reason(
@@ -132,6 +144,10 @@ impl SyncBlockerBuilder {
         self.created_reason = input;
         self
     }
+    /// <p>The reason why the sync blocker was created.</p>
+    pub fn get_created_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_reason
+    }
     /// <p>The time when the sync blocker was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -144,6 +160,10 @@ impl SyncBlockerBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The time when the sync blocker was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// Appends an item to `contexts`.
     ///
@@ -164,6 +184,12 @@ impl SyncBlockerBuilder {
         self.contexts = input;
         self
     }
+    /// <p>The contexts for the sync blocker.</p>
+    pub fn get_contexts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SyncBlockerContext>> {
+        &self.contexts
+    }
     /// <p>The reason the sync blocker was resolved.</p>
     pub fn resolved_reason(
         mut self,
@@ -180,6 +206,10 @@ impl SyncBlockerBuilder {
         self.resolved_reason = input;
         self
     }
+    /// <p>The reason the sync blocker was resolved.</p>
+    pub fn get_resolved_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resolved_reason
+    }
     /// <p>The time the sync blocker was resolved.</p>
     pub fn resolved_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.resolved_at = ::std::option::Option::Some(input);
@@ -192,6 +222,10 @@ impl SyncBlockerBuilder {
     ) -> Self {
         self.resolved_at = input;
         self
+    }
+    /// <p>The time the sync blocker was resolved.</p>
+    pub fn get_resolved_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.resolved_at
     }
     /// Consumes the builder and constructs a [`SyncBlocker`](crate::types::SyncBlocker).
     pub fn build(self) -> crate::types::SyncBlocker {

@@ -40,6 +40,12 @@ impl GetSessionEmbedUrlFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetSessionEmbedUrl as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_session_embed_url::builders::GetSessionEmbedUrlInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +142,10 @@ impl GetSessionEmbedUrlFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The ID for the Amazon Web Services account associated with your Amazon QuickSight subscription.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>The URL you use to access the embedded session. The entry point URL is constrained to the following paths:</p>
     /// <ul>
     /// <li> <p> <code>/start</code> </p> </li>
@@ -162,6 +172,18 @@ impl GetSessionEmbedUrlFluentBuilder {
         self.inner = self.inner.set_entry_point(input);
         self
     }
+    /// <p>The URL you use to access the embedded session. The entry point URL is constrained to the following paths:</p>
+    /// <ul>
+    /// <li> <p> <code>/start</code> </p> </li>
+    /// <li> <p> <code>/start/analyses</code> </p> </li>
+    /// <li> <p> <code>/start/dashboards</code> </p> </li>
+    /// <li> <p> <code>/start/favorites</code> </p> </li>
+    /// <li> <p> <code>/dashboards/<i>DashboardId</i> </code> - where <code>DashboardId</code> is the actual ID key from the Amazon QuickSight console URL of the dashboard</p> </li>
+    /// <li> <p> <code>/analyses/<i>AnalysisId</i> </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon QuickSight console URL of the analysis</p> </li>
+    /// </ul>
+    pub fn get_entry_point(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_entry_point()
+    }
     /// <p>How many minutes the session is valid. The session lifetime must be 15-600 minutes.</p>
     pub fn session_lifetime_in_minutes(mut self, input: i64) -> Self {
         self.inner = self.inner.session_lifetime_in_minutes(input);
@@ -171,6 +193,10 @@ impl GetSessionEmbedUrlFluentBuilder {
     pub fn set_session_lifetime_in_minutes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_session_lifetime_in_minutes(input);
         self
+    }
+    /// <p>How many minutes the session is valid. The session lifetime must be 15-600 minutes.</p>
+    pub fn get_session_lifetime_in_minutes(&self) -> &::std::option::Option<i64> {
+        self.inner.get_session_lifetime_in_minutes()
     }
     /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any type of Amazon QuickSight users in your account (readers, authors, or admins). They need to be authenticated as one of the following:</p>
     /// <ol>
@@ -193,5 +219,15 @@ impl GetSessionEmbedUrlFluentBuilder {
     pub fn set_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_arn(input);
         self
+    }
+    /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any type of Amazon QuickSight users in your account (readers, authors, or admins). They need to be authenticated as one of the following:</p>
+    /// <ol>
+    /// <li> <p>Active Directory (AD) users or group members</p> </li>
+    /// <li> <p>Invited nonfederated users</p> </li>
+    /// <li> <p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation</p> </li>
+    /// </ol>
+    /// <p>Omit this parameter for users in the third group, IAM users and IAM role-based sessions.</p>
+    pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_arn()
     }
 }

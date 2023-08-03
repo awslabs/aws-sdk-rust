@@ -45,6 +45,10 @@ impl GetCatalogItemInputBuilder {
         self.catalog_item_id = input;
         self
     }
+    /// <p>The ID of the catalog item.</p>
+    pub fn get_catalog_item_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_item_id
+    }
     /// Consumes the builder and constructs a [`GetCatalogItemInput`](crate::operation::get_catalog_item::GetCatalogItemInput).
     pub fn build(
         self,

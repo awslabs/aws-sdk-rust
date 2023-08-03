@@ -48,6 +48,10 @@ impl CreateBotVersionInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the bot that you want to create a new version of. The name is case sensitive. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Identifies a specific revision of the <code>$LATEST</code> version of the bot. If you specify a checksum and the <code>$LATEST</code> version of the bot has a different checksum, a <code>PreconditionFailedException</code> exception is returned and Amazon Lex doesn't publish a new version. If you don't specify a checksum, Amazon Lex publishes the <code>$LATEST</code> version.</p>
     pub fn checksum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.checksum = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl CreateBotVersionInputBuilder {
     pub fn set_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.checksum = input;
         self
+    }
+    /// <p>Identifies a specific revision of the <code>$LATEST</code> version of the bot. If you specify a checksum and the <code>$LATEST</code> version of the bot has a different checksum, a <code>PreconditionFailedException</code> exception is returned and Amazon Lex doesn't publish a new version. If you don't specify a checksum, Amazon Lex publishes the <code>$LATEST</code> version.</p>
+    pub fn get_checksum(&self) -> &::std::option::Option<::std::string::String> {
+        &self.checksum
     }
     /// Consumes the builder and constructs a [`CreateBotVersionInput`](crate::operation::create_bot_version::CreateBotVersionInput).
     pub fn build(

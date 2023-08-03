@@ -47,6 +47,10 @@ impl RegisterPatchBaselineForPatchGroupInputBuilder {
         self.baseline_id = input;
         self
     }
+    /// <p>The ID of the patch baseline to register with the patch group.</p>
+    pub fn get_baseline_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.baseline_id
+    }
     /// <p>The name of the patch group to be registered with the patch baseline.</p>
     pub fn patch_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.patch_group = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl RegisterPatchBaselineForPatchGroupInputBuilder {
     pub fn set_patch_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.patch_group = input;
         self
+    }
+    /// <p>The name of the patch group to be registered with the patch baseline.</p>
+    pub fn get_patch_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.patch_group
     }
     /// Consumes the builder and constructs a [`RegisterPatchBaselineForPatchGroupInput`](crate::operation::register_patch_baseline_for_patch_group::RegisterPatchBaselineForPatchGroupInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::register_patch_baseline_for_patch_group::RegisterPatchBaselineForPatchGroupInput, ::aws_smithy_http::operation::error::BuildError>{

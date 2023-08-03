@@ -58,6 +58,10 @@ impl ListMultiplexProgramsInputBuilder {
         self.max_results = input;
         self
     }
+    /// The maximum number of items to return.
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// The ID of the multiplex that the programs belong to.
     pub fn multiplex_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.multiplex_id = ::std::option::Option::Some(input.into());
@@ -68,6 +72,10 @@ impl ListMultiplexProgramsInputBuilder {
         self.multiplex_id = input;
         self
     }
+    /// The ID of the multiplex that the programs belong to.
+    pub fn get_multiplex_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.multiplex_id
+    }
     /// The token to retrieve the next page of results.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -77,6 +85,10 @@ impl ListMultiplexProgramsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// The token to retrieve the next page of results.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListMultiplexProgramsInput`](crate::operation::list_multiplex_programs::ListMultiplexProgramsInput).
     pub fn build(

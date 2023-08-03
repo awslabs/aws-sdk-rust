@@ -88,6 +88,10 @@ impl ListImageScanFindingAggregationsOutputBuilder {
         self.request_id = input;
         self
     }
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
+    }
     /// <p>The aggregation type specifies what type of key is used to group the image scan findings. Image Builder returns results based on the request filter. If you didn't specify a filter in the request, the type defaults to <code>accountId</code>.</p>
     /// <p class="title"> <b>Aggregation types</b> </p>
     /// <ul>
@@ -120,6 +124,18 @@ impl ListImageScanFindingAggregationsOutputBuilder {
         self.aggregation_type = input;
         self
     }
+    /// <p>The aggregation type specifies what type of key is used to group the image scan findings. Image Builder returns results based on the request filter. If you didn't specify a filter in the request, the type defaults to <code>accountId</code>.</p>
+    /// <p class="title"> <b>Aggregation types</b> </p>
+    /// <ul>
+    /// <li> <p>accountId</p> </li>
+    /// <li> <p>imageBuildVersionArn</p> </li>
+    /// <li> <p>imagePipelineArn</p> </li>
+    /// <li> <p>vulnerabilityId</p> </li>
+    /// </ul>
+    /// <p>Each aggregation includes counts by severity level for medium severity and higher level findings, plus a total for all of the findings for each key value.</p>
+    pub fn get_aggregation_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aggregation_type
+    }
     /// Appends an item to `responses`.
     ///
     /// To override the contents of this collection use [`set_responses`](Self::set_responses).
@@ -139,6 +155,12 @@ impl ListImageScanFindingAggregationsOutputBuilder {
         self.responses = input;
         self
     }
+    /// <p>An array of image scan finding aggregations that match the filter criteria.</p>
+    pub fn get_responses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageScanFindingAggregation>> {
+        &self.responses
+    }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -148,6 +170,10 @@ impl ListImageScanFindingAggregationsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

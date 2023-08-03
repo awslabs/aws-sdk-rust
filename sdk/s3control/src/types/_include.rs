@@ -57,6 +57,10 @@ impl IncludeBuilder {
         self.buckets = input;
         self
     }
+    /// <p>A container for the S3 Storage Lens bucket includes.</p>
+    pub fn get_buckets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.buckets
+    }
     /// Appends an item to `regions`.
     ///
     /// To override the contents of this collection use [`set_regions`](Self::set_regions).
@@ -75,6 +79,10 @@ impl IncludeBuilder {
     ) -> Self {
         self.regions = input;
         self
+    }
+    /// <p>A container for the S3 Storage Lens Region includes.</p>
+    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.regions
     }
     /// Consumes the builder and constructs a [`Include`](crate::types::Include).
     pub fn build(self) -> crate::types::Include {

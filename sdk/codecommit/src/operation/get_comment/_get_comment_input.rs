@@ -39,6 +39,10 @@ impl GetCommentInputBuilder {
         self.comment_id = input;
         self
     }
+    /// <p>The unique, system-generated ID of the comment. To get this ID, use <code>GetCommentsForComparedCommit</code> or <code>GetCommentsForPullRequest</code>.</p>
+    pub fn get_comment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comment_id
+    }
     /// Consumes the builder and constructs a [`GetCommentInput`](crate::operation::get_comment::GetCommentInput).
     pub fn build(
         self,

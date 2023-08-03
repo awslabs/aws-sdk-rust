@@ -73,6 +73,12 @@ impl TopicRelativeDateFilterBuilder {
         self.time_granularity = input;
         self
     }
+    /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
+    pub fn get_time_granularity(
+        &self,
+    ) -> &::std::option::Option<crate::types::TopicTimeGranularity> {
+        &self.time_granularity
+    }
     /// <p>The function to be used in a relative date filter to determine the range of dates to include in the results. Valid values for this structure are <code>BEFORE</code>, <code>AFTER</code>, and <code>BETWEEN</code>.</p>
     pub fn relative_date_filter_function(
         mut self,
@@ -89,6 +95,12 @@ impl TopicRelativeDateFilterBuilder {
         self.relative_date_filter_function = input;
         self
     }
+    /// <p>The function to be used in a relative date filter to determine the range of dates to include in the results. Valid values for this structure are <code>BEFORE</code>, <code>AFTER</code>, and <code>BETWEEN</code>.</p>
+    pub fn get_relative_date_filter_function(
+        &self,
+    ) -> &::std::option::Option<crate::types::TopicRelativeDateFilterFunction> {
+        &self.relative_date_filter_function
+    }
     /// <p>The constant used in a relative date filter.</p>
     pub fn constant(mut self, input: crate::types::TopicSingularFilterConstant) -> Self {
         self.constant = ::std::option::Option::Some(input);
@@ -101,6 +113,12 @@ impl TopicRelativeDateFilterBuilder {
     ) -> Self {
         self.constant = input;
         self
+    }
+    /// <p>The constant used in a relative date filter.</p>
+    pub fn get_constant(
+        &self,
+    ) -> &::std::option::Option<crate::types::TopicSingularFilterConstant> {
+        &self.constant
     }
     /// Consumes the builder and constructs a [`TopicRelativeDateFilter`](crate::types::TopicRelativeDateFilter).
     pub fn build(self) -> crate::types::TopicRelativeDateFilter {

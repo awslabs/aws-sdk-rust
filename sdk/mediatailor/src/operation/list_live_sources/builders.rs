@@ -36,6 +36,12 @@ impl ListLiveSourcesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListLiveSources as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_live_sources::builders::ListLiveSourcesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl ListLiveSourcesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of live sources that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> live sources, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -146,6 +156,10 @@ impl ListLiveSourcesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The name of the source location associated with this Live Sources list.</p>
     pub fn source_location_name(
@@ -162,5 +176,9 @@ impl ListLiveSourcesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_source_location_name(input);
         self
+    }
+    /// <p>The name of the source location associated with this Live Sources list.</p>
+    pub fn get_source_location_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_location_name()
     }
 }

@@ -68,6 +68,12 @@ impl OrganizationalUnitScopeBuilder {
         self.organizational_units = input;
         self
     }
+    /// <p>The list of OUs within the organization that the specified Firewall Manager administrator either can or cannot apply policies to, based on the value of <code>OrganizationalUnitScope$ExcludeSpecifiedOrganizationalUnits</code>. If <code>OrganizationalUnitScope$ExcludeSpecifiedOrganizationalUnits</code> is set to <code>true</code>, then the Firewall Manager administrator can apply policies to all OUs in the organization except for the OUs in this list. If <code>OrganizationalUnitScope$ExcludeSpecifiedOrganizationalUnits</code> is set to <code>false</code>, then the Firewall Manager administrator can only apply policies to the OUs in this list.</p>
+    pub fn get_organizational_units(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.organizational_units
+    }
     /// <p>A boolean value that indicates if the administrator can apply policies to all OUs within an organization. If true, the administrator can manage all OUs within the organization. You can either enable management of all OUs through this operation, or you can specify OUs to manage in <code>OrganizationalUnitScope$OrganizationalUnits</code>. You cannot specify both.</p>
     pub fn all_organizational_units_enabled(mut self, input: bool) -> Self {
         self.all_organizational_units_enabled = ::std::option::Option::Some(input);
@@ -81,6 +87,10 @@ impl OrganizationalUnitScopeBuilder {
         self.all_organizational_units_enabled = input;
         self
     }
+    /// <p>A boolean value that indicates if the administrator can apply policies to all OUs within an organization. If true, the administrator can manage all OUs within the organization. You can either enable management of all OUs through this operation, or you can specify OUs to manage in <code>OrganizationalUnitScope$OrganizationalUnits</code>. You cannot specify both.</p>
+    pub fn get_all_organizational_units_enabled(&self) -> &::std::option::Option<bool> {
+        &self.all_organizational_units_enabled
+    }
     /// <p>A boolean value that excludes the OUs in <code>OrganizationalUnitScope$OrganizationalUnits</code> from the administrator's scope. If true, the Firewall Manager administrator can apply policies to all OUs in the organization except for the OUs listed in <code>OrganizationalUnitScope$OrganizationalUnits</code>. You can either specify a list of OUs to exclude by <code>OrganizationalUnitScope$OrganizationalUnits</code>, or you can enable management of all OUs by <code>OrganizationalUnitScope$AllOrganizationalUnitsEnabled</code>. You cannot specify both.</p>
     pub fn exclude_specified_organizational_units(mut self, input: bool) -> Self {
         self.exclude_specified_organizational_units = ::std::option::Option::Some(input);
@@ -93,6 +103,10 @@ impl OrganizationalUnitScopeBuilder {
     ) -> Self {
         self.exclude_specified_organizational_units = input;
         self
+    }
+    /// <p>A boolean value that excludes the OUs in <code>OrganizationalUnitScope$OrganizationalUnits</code> from the administrator's scope. If true, the Firewall Manager administrator can apply policies to all OUs in the organization except for the OUs listed in <code>OrganizationalUnitScope$OrganizationalUnits</code>. You can either specify a list of OUs to exclude by <code>OrganizationalUnitScope$OrganizationalUnits</code>, or you can enable management of all OUs by <code>OrganizationalUnitScope$AllOrganizationalUnitsEnabled</code>. You cannot specify both.</p>
+    pub fn get_exclude_specified_organizational_units(&self) -> &::std::option::Option<bool> {
+        &self.exclude_specified_organizational_units
     }
     /// Consumes the builder and constructs a [`OrganizationalUnitScope`](crate::types::OrganizationalUnitScope).
     pub fn build(self) -> crate::types::OrganizationalUnitScope {

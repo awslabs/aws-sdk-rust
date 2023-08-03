@@ -50,6 +50,10 @@ impl GetChannelMessageOutputBuilder {
         self.channel_message = input;
         self
     }
+    /// <p>The details of and content in the message.</p>
+    pub fn get_channel_message(&self) -> &::std::option::Option<crate::types::ChannelMessage> {
+        &self.channel_message
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

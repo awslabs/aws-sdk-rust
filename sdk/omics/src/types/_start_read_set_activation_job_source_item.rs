@@ -40,6 +40,10 @@ impl StartReadSetActivationJobSourceItemBuilder {
         self.read_set_id = input;
         self
     }
+    /// <p>The source's read set ID.</p>
+    pub fn get_read_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.read_set_id
+    }
     /// Consumes the builder and constructs a [`StartReadSetActivationJobSourceItem`](crate::types::StartReadSetActivationJobSourceItem).
     pub fn build(self) -> crate::types::StartReadSetActivationJobSourceItem {
         crate::types::StartReadSetActivationJobSourceItem {

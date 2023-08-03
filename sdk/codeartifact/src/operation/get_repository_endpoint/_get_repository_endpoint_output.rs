@@ -54,6 +54,10 @@ impl GetRepositoryEndpointOutputBuilder {
         self.repository_endpoint = input;
         self
     }
+    /// <p> A string that specifies the URL of the returned endpoint. </p>
+    pub fn get_repository_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_endpoint
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

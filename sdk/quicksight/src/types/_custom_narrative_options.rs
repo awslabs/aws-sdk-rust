@@ -40,6 +40,10 @@ impl CustomNarrativeOptionsBuilder {
         self.narrative = input;
         self
     }
+    /// <p>The string input of custom narrative.</p>
+    pub fn get_narrative(&self) -> &::std::option::Option<::std::string::String> {
+        &self.narrative
+    }
     /// Consumes the builder and constructs a [`CustomNarrativeOptions`](crate::types::CustomNarrativeOptions).
     pub fn build(self) -> crate::types::CustomNarrativeOptions {
         crate::types::CustomNarrativeOptions {

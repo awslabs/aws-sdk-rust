@@ -75,6 +75,16 @@ impl ClientVpnEndpointStatusBuilder {
         self.code = input;
         self
     }
+    /// <p>The state of the Client VPN endpoint. Possible states include:</p>
+    /// <ul>
+    /// <li> <p> <code>pending-associate</code> - The Client VPN endpoint has been created but no target networks have been associated. The Client VPN endpoint cannot accept connections.</p> </li>
+    /// <li> <p> <code>available</code> - The Client VPN endpoint has been created and a target network has been associated. The Client VPN endpoint can accept connections.</p> </li>
+    /// <li> <p> <code>deleting</code> - The Client VPN endpoint is being deleted. The Client VPN endpoint cannot accept connections.</p> </li>
+    /// <li> <p> <code>deleted</code> - The Client VPN endpoint has been deleted. The Client VPN endpoint cannot accept connections.</p> </li>
+    /// </ul>
+    pub fn get_code(&self) -> &::std::option::Option<crate::types::ClientVpnEndpointStatusCode> {
+        &self.code
+    }
     /// <p>A message about the status of the Client VPN endpoint.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -84,6 +94,10 @@ impl ClientVpnEndpointStatusBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>A message about the status of the Client VPN endpoint.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`ClientVpnEndpointStatus`](crate::types::ClientVpnEndpointStatus).
     pub fn build(self) -> crate::types::ClientVpnEndpointStatus {

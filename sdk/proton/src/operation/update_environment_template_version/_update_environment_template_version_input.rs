@@ -86,6 +86,10 @@ impl UpdateEnvironmentTemplateVersionInputBuilder {
         self.template_name = input;
         self
     }
+    /// <p>The name of the environment template.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
     /// <p>To update a major version of an environment template, include <code>major Version</code>.</p>
     pub fn major_version(
         mut self,
@@ -101,6 +105,10 @@ impl UpdateEnvironmentTemplateVersionInputBuilder {
     ) -> Self {
         self.major_version = input;
         self
+    }
+    /// <p>To update a major version of an environment template, include <code>major Version</code>.</p>
+    pub fn get_major_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.major_version
     }
     /// <p>To update a minor version of an environment template, include <code>minorVersion</code>.</p>
     pub fn minor_version(
@@ -118,6 +126,10 @@ impl UpdateEnvironmentTemplateVersionInputBuilder {
         self.minor_version = input;
         self
     }
+    /// <p>To update a minor version of an environment template, include <code>minorVersion</code>.</p>
+    pub fn get_minor_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.minor_version
+    }
     /// <p>A description of environment template version to update.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -127,6 +139,10 @@ impl UpdateEnvironmentTemplateVersionInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of environment template version to update.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The status of the environment template minor version to update.</p>
     pub fn status(mut self, input: crate::types::TemplateVersionStatus) -> Self {
@@ -140,6 +156,10 @@ impl UpdateEnvironmentTemplateVersionInputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the environment template minor version to update.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TemplateVersionStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`UpdateEnvironmentTemplateVersionInput`](crate::operation::update_environment_template_version::UpdateEnvironmentTemplateVersionInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_environment_template_version::UpdateEnvironmentTemplateVersionInput, ::aws_smithy_http::operation::error::BuildError>{

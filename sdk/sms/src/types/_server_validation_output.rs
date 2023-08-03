@@ -40,6 +40,10 @@ impl ServerValidationOutputBuilder {
         self.server = input;
         self
     }
+    /// <p>Represents a server.</p>
+    pub fn get_server(&self) -> &::std::option::Option<crate::types::Server> {
+        &self.server
+    }
     /// Consumes the builder and constructs a [`ServerValidationOutput`](crate::types::ServerValidationOutput).
     pub fn build(self) -> crate::types::ServerValidationOutput {
         crate::types::ServerValidationOutput {

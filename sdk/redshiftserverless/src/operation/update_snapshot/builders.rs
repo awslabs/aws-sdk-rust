@@ -36,6 +36,12 @@ impl UpdateSnapshotFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateSnapshot as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_snapshot::builders::UpdateSnapshotInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl UpdateSnapshotFluentBuilder {
         self.inner = self.inner.set_snapshot_name(input);
         self
     }
+    /// <p>The name of the snapshot.</p>
+    pub fn get_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_snapshot_name()
+    }
     /// <p>The new retention period of the snapshot.</p>
     pub fn retention_period(mut self, input: i32) -> Self {
         self.inner = self.inner.retention_period(input);
@@ -133,5 +143,9 @@ impl UpdateSnapshotFluentBuilder {
     pub fn set_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_retention_period(input);
         self
+    }
+    /// <p>The new retention period of the snapshot.</p>
+    pub fn get_retention_period(&self) -> &::std::option::Option<i32> {
+        self.inner.get_retention_period()
     }
 }

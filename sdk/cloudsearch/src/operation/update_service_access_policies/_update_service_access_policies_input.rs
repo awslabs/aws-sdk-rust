@@ -48,6 +48,10 @@ impl UpdateServiceAccessPoliciesInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The access rules you want to configure. These rules replace any existing rules. </p>
     pub fn access_policies(
         mut self,
@@ -63,6 +67,10 @@ impl UpdateServiceAccessPoliciesInputBuilder {
     ) -> Self {
         self.access_policies = input;
         self
+    }
+    /// <p>The access rules you want to configure. These rules replace any existing rules. </p>
+    pub fn get_access_policies(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_policies
     }
     /// Consumes the builder and constructs a [`UpdateServiceAccessPoliciesInput`](crate::operation::update_service_access_policies::UpdateServiceAccessPoliciesInput).
     pub fn build(

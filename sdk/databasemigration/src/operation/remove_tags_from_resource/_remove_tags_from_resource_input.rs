@@ -50,6 +50,10 @@ impl RemoveTagsFromResourceInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>An DMS resource from which you want to remove tag(s). The value for this parameter is an Amazon Resource Name (ARN).</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// Appends an item to `tag_keys`.
     ///
     /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
@@ -68,6 +72,10 @@ impl RemoveTagsFromResourceInputBuilder {
     ) -> Self {
         self.tag_keys = input;
         self
+    }
+    /// <p>The tag key (name) of the tag to be removed.</p>
+    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tag_keys
     }
     /// Consumes the builder and constructs a [`RemoveTagsFromResourceInput`](crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput).
     pub fn build(

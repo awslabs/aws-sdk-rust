@@ -73,6 +73,10 @@ impl DescribeUsersOutputBuilder {
         self.users = input;
         self
     }
+    /// <p>The users.</p>
+    pub fn get_users(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::User>> {
+        &self.users
+    }
     /// <p>The total number of users included in the results.</p>
     #[deprecated]
     pub fn total_number_of_users(mut self, input: i64) -> Self {
@@ -85,6 +89,11 @@ impl DescribeUsersOutputBuilder {
         self.total_number_of_users = input;
         self
     }
+    /// <p>The total number of users included in the results.</p>
+    #[deprecated]
+    pub fn get_total_number_of_users(&self) -> &::std::option::Option<i64> {
+        &self.total_number_of_users
+    }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -94,6 +103,10 @@ impl DescribeUsersOutputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

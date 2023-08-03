@@ -36,6 +36,12 @@ impl UpdateTargetGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateTargetGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_target_group::builders::UpdateTargetGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateTargetGroupFluentBuilder {
         self.inner = self.inner.set_target_group_identifier(input);
         self
     }
+    /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
+    pub fn get_target_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_group_identifier()
+    }
     /// <p>The health check configuration.</p>
     pub fn health_check(mut self, input: crate::types::HealthCheckConfig) -> Self {
         self.inner = self.inner.health_check(input);
@@ -144,5 +154,9 @@ impl UpdateTargetGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_health_check(input);
         self
+    }
+    /// <p>The health check configuration.</p>
+    pub fn get_health_check(&self) -> &::std::option::Option<crate::types::HealthCheckConfig> {
+        self.inner.get_health_check()
     }
 }

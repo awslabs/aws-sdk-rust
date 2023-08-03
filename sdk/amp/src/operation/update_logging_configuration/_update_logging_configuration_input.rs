@@ -56,6 +56,10 @@ impl UpdateLoggingConfigurationInputBuilder {
         self.workspace_id = input;
         self
     }
+    /// The ID of the workspace to vend logs to.
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
+    }
     /// The ARN of the CW log group to which the vended log data will be published.
     pub fn log_group_arn(
         mut self,
@@ -72,6 +76,10 @@ impl UpdateLoggingConfigurationInputBuilder {
         self.log_group_arn = input;
         self
     }
+    /// The ARN of the CW log group to which the vended log data will be published.
+    pub fn get_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group_arn
+    }
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl UpdateLoggingConfigurationInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateLoggingConfigurationInput`](crate::operation::update_logging_configuration::UpdateLoggingConfigurationInput).
     pub fn build(

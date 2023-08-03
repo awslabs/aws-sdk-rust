@@ -87,6 +87,10 @@ impl GetDocumentVersionInputBuilder {
         self.authentication_token = input;
         self
     }
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authentication_token
+    }
     /// <p>The ID of the document.</p>
     pub fn document_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_id = ::std::option::Option::Some(input.into());
@@ -96,6 +100,10 @@ impl GetDocumentVersionInputBuilder {
     pub fn set_document_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_id = input;
         self
+    }
+    /// <p>The ID of the document.</p>
+    pub fn get_document_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_id
     }
     /// <p>The version ID of the document.</p>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -107,6 +115,10 @@ impl GetDocumentVersionInputBuilder {
         self.version_id = input;
         self
     }
+    /// <p>The version ID of the document.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_id
+    }
     /// <p>A comma-separated list of values. Specify "SOURCE" to include a URL for the source document.</p>
     pub fn fields(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fields = ::std::option::Option::Some(input.into());
@@ -117,6 +129,10 @@ impl GetDocumentVersionInputBuilder {
         self.fields = input;
         self
     }
+    /// <p>A comma-separated list of values. Specify "SOURCE" to include a URL for the source document.</p>
+    pub fn get_fields(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fields
+    }
     /// <p>Set this to TRUE to include custom metadata in the response.</p>
     pub fn include_custom_metadata(mut self, input: bool) -> Self {
         self.include_custom_metadata = ::std::option::Option::Some(input);
@@ -126,6 +142,10 @@ impl GetDocumentVersionInputBuilder {
     pub fn set_include_custom_metadata(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_custom_metadata = input;
         self
+    }
+    /// <p>Set this to TRUE to include custom metadata in the response.</p>
+    pub fn get_include_custom_metadata(&self) -> &::std::option::Option<bool> {
+        &self.include_custom_metadata
     }
     /// Consumes the builder and constructs a [`GetDocumentVersionInput`](crate::operation::get_document_version::GetDocumentVersionInput).
     pub fn build(

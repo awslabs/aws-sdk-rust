@@ -48,6 +48,10 @@ impl ListUserProfilesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The continuation token for the next set of results, if the results cannot be returned in one response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return in a response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ListUserProfilesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return in a response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListUserProfilesInput`](crate::operation::list_user_profiles::ListUserProfilesInput).
     pub fn build(

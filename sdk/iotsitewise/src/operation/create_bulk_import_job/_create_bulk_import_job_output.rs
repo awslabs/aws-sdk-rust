@@ -79,6 +79,10 @@ impl CreateBulkImportJobOutputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The ID of the job.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>The unique name that helps identify the job request.</p>
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name = ::std::option::Option::Some(input.into());
@@ -88,6 +92,10 @@ impl CreateBulkImportJobOutputBuilder {
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_name = input;
         self
+    }
+    /// <p>The unique name that helps identify the job request.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
     }
     /// <p>The status of the bulk import job can be one of following values.</p>
     /// <ul>
@@ -114,6 +122,18 @@ impl CreateBulkImportJobOutputBuilder {
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
         self.job_status = input;
         self
+    }
+    /// <p>The status of the bulk import job can be one of following values.</p>
+    /// <ul>
+    /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li>
+    /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li>
+    /// <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li>
+    /// <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li>
+    /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
+    /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
+    /// </ul>
+    pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
+        &self.job_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

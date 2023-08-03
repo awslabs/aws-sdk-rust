@@ -42,6 +42,10 @@ impl ListPlatformApplicationsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>NextToken string is used when calling ListPlatformApplications action to retrieve additional records that are available after the first page results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Consumes the builder and constructs a [`ListPlatformApplicationsInput`](crate::operation::list_platform_applications::ListPlatformApplicationsInput).
     pub fn build(
         self,

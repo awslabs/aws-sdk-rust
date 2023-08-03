@@ -187,6 +187,10 @@ impl ApplicationDetailBuilder {
         self.application_arn = input;
         self
     }
+    /// <p>The ARN of the application.</p>
+    pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_arn
+    }
     /// <p>The description of the application.</p>
     pub fn application_description(
         mut self,
@@ -202,6 +206,10 @@ impl ApplicationDetailBuilder {
     ) -> Self {
         self.application_description = input;
         self
+    }
+    /// <p>The description of the application.</p>
+    pub fn get_application_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_description
     }
     /// <p>The name of the application.</p>
     pub fn application_name(
@@ -219,6 +227,10 @@ impl ApplicationDetailBuilder {
         self.application_name = input;
         self
     }
+    /// <p>The name of the application.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// <p>The runtime environment for the application.</p>
     pub fn runtime_environment(mut self, input: crate::types::RuntimeEnvironment) -> Self {
         self.runtime_environment = ::std::option::Option::Some(input);
@@ -231,6 +243,12 @@ impl ApplicationDetailBuilder {
     ) -> Self {
         self.runtime_environment = input;
         self
+    }
+    /// <p>The runtime environment for the application.</p>
+    pub fn get_runtime_environment(
+        &self,
+    ) -> &::std::option::Option<crate::types::RuntimeEnvironment> {
+        &self.runtime_environment
     }
     /// <p>Specifies the IAM role that the application uses to access external resources.</p>
     pub fn service_execution_role(
@@ -248,6 +266,10 @@ impl ApplicationDetailBuilder {
         self.service_execution_role = input;
         self
     }
+    /// <p>Specifies the IAM role that the application uses to access external resources.</p>
+    pub fn get_service_execution_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_execution_role
+    }
     /// <p>The status of the application.</p>
     pub fn application_status(mut self, input: crate::types::ApplicationStatus) -> Self {
         self.application_status = ::std::option::Option::Some(input);
@@ -261,6 +283,12 @@ impl ApplicationDetailBuilder {
         self.application_status = input;
         self
     }
+    /// <p>The status of the application.</p>
+    pub fn get_application_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationStatus> {
+        &self.application_status
+    }
     /// <p>Provides the current application version. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you update the application.</p>
     pub fn application_version_id(mut self, input: i64) -> Self {
         self.application_version_id = ::std::option::Option::Some(input);
@@ -270,6 +298,10 @@ impl ApplicationDetailBuilder {
     pub fn set_application_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.application_version_id = input;
         self
+    }
+    /// <p>Provides the current application version. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you update the application.</p>
+    pub fn get_application_version_id(&self) -> &::std::option::Option<i64> {
+        &self.application_version_id
     }
     /// <p>The current timestamp when the application was created.</p>
     pub fn create_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -284,6 +316,10 @@ impl ApplicationDetailBuilder {
         self.create_timestamp = input;
         self
     }
+    /// <p>The current timestamp when the application was created.</p>
+    pub fn get_create_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_timestamp
+    }
     /// <p>The current timestamp when the application was last updated.</p>
     pub fn last_update_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_update_timestamp = ::std::option::Option::Some(input);
@@ -296,6 +332,12 @@ impl ApplicationDetailBuilder {
     ) -> Self {
         self.last_update_timestamp = input;
         self
+    }
+    /// <p>The current timestamp when the application was last updated.</p>
+    pub fn get_last_update_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_update_timestamp
     }
     /// <p>Describes details about the application code and starting parameters for a Kinesis Data Analytics application.</p>
     pub fn application_configuration_description(
@@ -312,6 +354,12 @@ impl ApplicationDetailBuilder {
     ) -> Self {
         self.application_configuration_description = input;
         self
+    }
+    /// <p>Describes details about the application code and starting parameters for a Kinesis Data Analytics application.</p>
+    pub fn get_application_configuration_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationConfigurationDescription> {
+        &self.application_configuration_description
     }
     /// Appends an item to `cloud_watch_logging_option_descriptions`.
     ///
@@ -339,6 +387,13 @@ impl ApplicationDetailBuilder {
         self.cloud_watch_logging_option_descriptions = input;
         self
     }
+    /// <p>Describes the application Amazon CloudWatch logging options.</p>
+    pub fn get_cloud_watch_logging_option_descriptions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOptionDescription>>
+    {
+        &self.cloud_watch_logging_option_descriptions
+    }
     /// <p>The details of the maintenance configuration for the application.</p>
     pub fn application_maintenance_configuration_description(
         mut self,
@@ -355,6 +410,12 @@ impl ApplicationDetailBuilder {
         self.application_maintenance_configuration_description = input;
         self
     }
+    /// <p>The details of the maintenance configuration for the application.</p>
+    pub fn get_application_maintenance_configuration_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationMaintenanceConfigurationDescription> {
+        &self.application_maintenance_configuration_description
+    }
     /// <p>The previous application version before the latest application update. <code>RollbackApplication</code> reverts the application to this version.</p>
     pub fn application_version_updated_from(mut self, input: i64) -> Self {
         self.application_version_updated_from = ::std::option::Option::Some(input);
@@ -368,6 +429,10 @@ impl ApplicationDetailBuilder {
         self.application_version_updated_from = input;
         self
     }
+    /// <p>The previous application version before the latest application update. <code>RollbackApplication</code> reverts the application to this version.</p>
+    pub fn get_application_version_updated_from(&self) -> &::std::option::Option<i64> {
+        &self.application_version_updated_from
+    }
     /// <p>If you reverted the application using <code>RollbackApplication</code>, the application version when <code>RollbackApplication</code> was called.</p>
     pub fn application_version_rolled_back_from(mut self, input: i64) -> Self {
         self.application_version_rolled_back_from = ::std::option::Option::Some(input);
@@ -380,6 +445,10 @@ impl ApplicationDetailBuilder {
     ) -> Self {
         self.application_version_rolled_back_from = input;
         self
+    }
+    /// <p>If you reverted the application using <code>RollbackApplication</code>, the application version when <code>RollbackApplication</code> was called.</p>
+    pub fn get_application_version_rolled_back_from(&self) -> &::std::option::Option<i64> {
+        &self.application_version_rolled_back_from
     }
     /// <p>A value you use to implement strong concurrency for application updates.</p>
     pub fn conditional_token(
@@ -397,6 +466,10 @@ impl ApplicationDetailBuilder {
         self.conditional_token = input;
         self
     }
+    /// <p>A value you use to implement strong concurrency for application updates.</p>
+    pub fn get_conditional_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.conditional_token
+    }
     /// <p>The version to which you want to roll back the application.</p>
     pub fn application_version_rolled_back_to(mut self, input: i64) -> Self {
         self.application_version_rolled_back_to = ::std::option::Option::Some(input);
@@ -410,6 +483,10 @@ impl ApplicationDetailBuilder {
         self.application_version_rolled_back_to = input;
         self
     }
+    /// <p>The version to which you want to roll back the application.</p>
+    pub fn get_application_version_rolled_back_to(&self) -> &::std::option::Option<i64> {
+        &self.application_version_rolled_back_to
+    }
     /// <p>To create a Kinesis Data Analytics Studio notebook, you must set the mode to <code>INTERACTIVE</code>. However, for a Kinesis Data Analytics for Apache Flink application, the mode is optional.</p>
     pub fn application_mode(mut self, input: crate::types::ApplicationMode) -> Self {
         self.application_mode = ::std::option::Option::Some(input);
@@ -422,6 +499,10 @@ impl ApplicationDetailBuilder {
     ) -> Self {
         self.application_mode = input;
         self
+    }
+    /// <p>To create a Kinesis Data Analytics Studio notebook, you must set the mode to <code>INTERACTIVE</code>. However, for a Kinesis Data Analytics for Apache Flink application, the mode is optional.</p>
+    pub fn get_application_mode(&self) -> &::std::option::Option<crate::types::ApplicationMode> {
+        &self.application_mode
     }
     /// Consumes the builder and constructs a [`ApplicationDetail`](crate::types::ApplicationDetail).
     pub fn build(self) -> crate::types::ApplicationDetail {

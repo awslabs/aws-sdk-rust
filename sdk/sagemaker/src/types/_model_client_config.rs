@@ -48,6 +48,10 @@ impl ModelClientConfigBuilder {
         self.invocations_timeout_in_seconds = input;
         self
     }
+    /// <p>The timeout value in seconds for an invocation request. The default value is 600.</p>
+    pub fn get_invocations_timeout_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.invocations_timeout_in_seconds
+    }
     /// <p>The maximum number of retries when invocation requests are failing. The default value is 3.</p>
     pub fn invocations_max_retries(mut self, input: i32) -> Self {
         self.invocations_max_retries = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ModelClientConfigBuilder {
     pub fn set_invocations_max_retries(mut self, input: ::std::option::Option<i32>) -> Self {
         self.invocations_max_retries = input;
         self
+    }
+    /// <p>The maximum number of retries when invocation requests are failing. The default value is 3.</p>
+    pub fn get_invocations_max_retries(&self) -> &::std::option::Option<i32> {
+        &self.invocations_max_retries
     }
     /// Consumes the builder and constructs a [`ModelClientConfig`](crate::types::ModelClientConfig).
     pub fn build(self) -> crate::types::ModelClientConfig {

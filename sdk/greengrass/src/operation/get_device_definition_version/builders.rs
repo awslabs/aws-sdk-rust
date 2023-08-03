@@ -36,6 +36,10 @@ impl GetDeviceDefinitionVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetDeviceDefinitionVersion as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_device_definition_version::builders::GetDeviceDefinitionVersionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl GetDeviceDefinitionVersionFluentBuilder {
         self.inner = self.inner.set_device_definition_id(input);
         self
     }
+    /// The ID of the device definition.
+    pub fn get_device_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_definition_id()
+    }
     /// The ID of the device definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListDeviceDefinitionVersions'' requests. If the version is the last one that was associated with a device definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
     pub fn device_definition_version_id(
         mut self,
@@ -148,6 +156,12 @@ impl GetDeviceDefinitionVersionFluentBuilder {
         self.inner = self.inner.set_device_definition_version_id(input);
         self
     }
+    /// The ID of the device definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListDeviceDefinitionVersions'' requests. If the version is the last one that was associated with a device definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
+    pub fn get_device_definition_version_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_definition_version_id()
+    }
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -157,5 +171,9 @@ impl GetDeviceDefinitionVersionFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

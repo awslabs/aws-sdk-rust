@@ -47,6 +47,10 @@ impl StopBgpFailoverTestInputBuilder {
         self.virtual_interface_id = input;
         self
     }
+    /// <p>The ID of the virtual interface you no longer want to test.</p>
+    pub fn get_virtual_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_interface_id
+    }
     /// Consumes the builder and constructs a [`StopBgpFailoverTestInput`](crate::operation::stop_bgp_failover_test::StopBgpFailoverTestInput).
     pub fn build(
         self,

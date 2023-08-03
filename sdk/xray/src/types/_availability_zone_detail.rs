@@ -40,6 +40,10 @@ impl AvailabilityZoneDetailBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of a corresponding Availability Zone.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`AvailabilityZoneDetail`](crate::types::AvailabilityZoneDetail).
     pub fn build(self) -> crate::types::AvailabilityZoneDetail {
         crate::types::AvailabilityZoneDetail { name: self.name }

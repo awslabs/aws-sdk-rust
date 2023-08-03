@@ -36,6 +36,12 @@ impl GetApplicationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetApplication as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_application::builders::GetApplicationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl GetApplicationFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>The semantic version of the application to get.</p>
     pub fn semantic_version(
         mut self,
@@ -139,5 +149,9 @@ impl GetApplicationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_semantic_version(input);
         self
+    }
+    /// <p>The semantic version of the application to get.</p>
+    pub fn get_semantic_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_semantic_version()
     }
 }

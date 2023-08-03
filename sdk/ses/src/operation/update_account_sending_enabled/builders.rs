@@ -37,6 +37,10 @@ impl UpdateAccountSendingEnabledFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAccountSendingEnabled as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_account_sending_enabled::builders::UpdateAccountSendingEnabledInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,5 +130,9 @@ impl UpdateAccountSendingEnabledFluentBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enabled(input);
         self
+    }
+    /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the current AWS Region.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enabled()
     }
 }

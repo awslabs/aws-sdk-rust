@@ -43,6 +43,10 @@ impl TextControlPlaceholderOptionsBuilder {
         self.visibility = input;
         self
     }
+    /// <p>The visibility configuration of the placeholder options in a text control.</p>
+    pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.visibility
+    }
     /// Consumes the builder and constructs a [`TextControlPlaceholderOptions`](crate::types::TextControlPlaceholderOptions).
     pub fn build(self) -> crate::types::TextControlPlaceholderOptions {
         crate::types::TextControlPlaceholderOptions {

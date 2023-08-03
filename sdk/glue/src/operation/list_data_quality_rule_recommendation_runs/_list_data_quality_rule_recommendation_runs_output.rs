@@ -74,6 +74,14 @@ impl ListDataQualityRuleRecommendationRunsOutputBuilder {
         self.runs = input;
         self
     }
+    /// <p>A list of <code>DataQualityRuleRecommendationRunDescription</code> objects.</p>
+    pub fn get_runs(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::DataQualityRuleRecommendationRunDescription>,
+    > {
+        &self.runs
+    }
     /// <p>A pagination token, if more results are available.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -83,6 +91,10 @@ impl ListDataQualityRuleRecommendationRunsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A pagination token, if more results are available.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

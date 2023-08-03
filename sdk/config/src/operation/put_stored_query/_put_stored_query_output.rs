@@ -46,6 +46,10 @@ impl PutStoredQueryOutputBuilder {
         self.query_arn = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the query. For example, arn:partition:service:region:account-id:resource-type/resource-name/resource-id.</p>
+    pub fn get_query_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

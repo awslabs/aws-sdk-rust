@@ -56,6 +56,12 @@ impl BatchGetTokenBalanceInputBuilder {
         self.get_token_balance_inputs = input;
         self
     }
+    /// <p>An array of <code>GetTokenBalanceInput</code> objects whose balance is being requested.</p>
+    pub fn get_get_token_balance_inputs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetTokenBalanceInputItem>> {
+        &self.get_token_balance_inputs
+    }
     /// Consumes the builder and constructs a [`BatchGetTokenBalanceInput`](crate::operation::batch_get_token_balance::BatchGetTokenBalanceInput).
     pub fn build(
         self,

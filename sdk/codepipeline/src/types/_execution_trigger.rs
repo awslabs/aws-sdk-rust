@@ -51,6 +51,10 @@ impl ExecutionTriggerBuilder {
         self.trigger_type = input;
         self
     }
+    /// <p>The type of change-detection method, command, or user interaction that started a pipeline execution.</p>
+    pub fn get_trigger_type(&self) -> &::std::option::Option<crate::types::TriggerType> {
+        &self.trigger_type
+    }
     /// <p>Detail related to the event that started a pipeline execution, such as the webhook ARN of the webhook that triggered the pipeline execution or the user ARN for a user-initiated <code>start-pipeline-execution</code> CLI command.</p>
     pub fn trigger_detail(
         mut self,
@@ -66,6 +70,10 @@ impl ExecutionTriggerBuilder {
     ) -> Self {
         self.trigger_detail = input;
         self
+    }
+    /// <p>Detail related to the event that started a pipeline execution, such as the webhook ARN of the webhook that triggered the pipeline execution or the user ARN for a user-initiated <code>start-pipeline-execution</code> CLI command.</p>
+    pub fn get_trigger_detail(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trigger_detail
     }
     /// Consumes the builder and constructs a [`ExecutionTrigger`](crate::types::ExecutionTrigger).
     pub fn build(self) -> crate::types::ExecutionTrigger {

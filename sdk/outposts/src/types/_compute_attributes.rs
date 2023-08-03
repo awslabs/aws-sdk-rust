@@ -58,6 +58,10 @@ impl ComputeAttributesBuilder {
         self.host_id = input;
         self
     }
+    /// <p> The host ID of the Dedicated Host on the asset. </p>
+    pub fn get_host_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host_id
+    }
     /// <p>The state.</p>
     /// <ul>
     /// <li> <p>ACTIVE - The asset is available and can provide capacity for new compute resources.</p> </li>
@@ -80,6 +84,15 @@ impl ComputeAttributesBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state.</p>
+    /// <ul>
+    /// <li> <p>ACTIVE - The asset is available and can provide capacity for new compute resources.</p> </li>
+    /// <li> <p>ISOLATED - The asset is undergoing maintenance and can't provide capacity for new compute resources. Existing compute resources on the asset are not affected.</p> </li>
+    /// <li> <p>RETIRING - The underlying hardware for the asset is degraded. Capacity for new compute resources is reduced. Amazon Web Services sends notifications for resources that must be stopped before the asset can be replaced.</p> </li>
+    /// </ul>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ComputeAssetState> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`ComputeAttributes`](crate::types::ComputeAttributes).
     pub fn build(self) -> crate::types::ComputeAttributes {

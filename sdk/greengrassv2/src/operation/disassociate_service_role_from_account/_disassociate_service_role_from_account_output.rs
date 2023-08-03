@@ -52,6 +52,10 @@ impl DisassociateServiceRoleFromAccountOutputBuilder {
         self.disassociated_at = input;
         self
     }
+    /// <p>The time when the service role was disassociated from IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region.</p>
+    pub fn get_disassociated_at(&self) -> &::std::option::Option<::std::string::String> {
+        &self.disassociated_at
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

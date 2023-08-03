@@ -59,6 +59,10 @@ impl ListProtectedQueriesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token value retrieved from a previous call to access the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `protected_queries`.
     ///
     /// To override the contents of this collection use [`set_protected_queries`](Self::set_protected_queries).
@@ -77,6 +81,12 @@ impl ListProtectedQueriesOutputBuilder {
     ) -> Self {
         self.protected_queries = input;
         self
+    }
+    /// <p>A list of protected queries.</p>
+    pub fn get_protected_queries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProtectedQuerySummary>> {
+        &self.protected_queries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

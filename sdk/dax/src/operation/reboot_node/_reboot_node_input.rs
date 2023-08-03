@@ -47,6 +47,10 @@ impl RebootNodeInputBuilder {
         self.cluster_name = input;
         self
     }
+    /// <p>The name of the DAX cluster containing the node to be rebooted.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_name
+    }
     /// <p>The system-assigned ID of the node to be rebooted.</p>
     pub fn node_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_id = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl RebootNodeInputBuilder {
     pub fn set_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_id = input;
         self
+    }
+    /// <p>The system-assigned ID of the node to be rebooted.</p>
+    pub fn get_node_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_id
     }
     /// Consumes the builder and constructs a [`RebootNodeInput`](crate::operation::reboot_node::RebootNodeInput).
     pub fn build(

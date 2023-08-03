@@ -38,6 +38,12 @@ impl AddApplicationInputFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AddApplicationInput as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::add_application_input::builders::AddApplicationInputInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +140,10 @@ impl AddApplicationInputFluentBuilder {
         self.inner = self.inner.set_application_name(input);
         self
     }
+    /// <p>The name of your existing application to which you want to add the streaming source.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_name()
+    }
     /// <p>The current version of your application. You must provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>.You can use the <code>DescribeApplication</code> operation to find the current application version.</p>
     pub fn current_application_version_id(mut self, input: i64) -> Self {
         self.inner = self.inner.current_application_version_id(input);
@@ -144,6 +154,10 @@ impl AddApplicationInputFluentBuilder {
         self.inner = self.inner.set_current_application_version_id(input);
         self
     }
+    /// <p>The current version of your application. You must provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>.You can use the <code>DescribeApplication</code> operation to find the current application version.</p>
+    pub fn get_current_application_version_id(&self) -> &::std::option::Option<i64> {
+        self.inner.get_current_application_version_id()
+    }
     /// <p>The <code>Input</code> to add.</p>
     pub fn input(mut self, input: crate::types::Input) -> Self {
         self.inner = self.inner.input(input);
@@ -153,5 +167,9 @@ impl AddApplicationInputFluentBuilder {
     pub fn set_input(mut self, input: ::std::option::Option<crate::types::Input>) -> Self {
         self.inner = self.inner.set_input(input);
         self
+    }
+    /// <p>The <code>Input</code> to add.</p>
+    pub fn get_input(&self) -> &::std::option::Option<crate::types::Input> {
+        self.inner.get_input()
     }
 }

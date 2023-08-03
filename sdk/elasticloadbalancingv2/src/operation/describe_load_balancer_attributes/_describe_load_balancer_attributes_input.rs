@@ -45,6 +45,10 @@ impl DescribeLoadBalancerAttributesInputBuilder {
         self.load_balancer_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
+    pub fn get_load_balancer_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.load_balancer_arn
+    }
     /// Consumes the builder and constructs a [`DescribeLoadBalancerAttributesInput`](crate::operation::describe_load_balancer_attributes::DescribeLoadBalancerAttributesInput).
     pub fn build(
         self,

@@ -54,6 +54,10 @@ impl CreateIntegrationWorkflowOutputBuilder {
         self.workflow_id = input;
         self
     }
+    /// <p>Unique identifier for the workflow.</p>
+    pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_id
+    }
     /// <p>A message indicating create request was received.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl CreateIntegrationWorkflowOutputBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>A message indicating create request was received.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

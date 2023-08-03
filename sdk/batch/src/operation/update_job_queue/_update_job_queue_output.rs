@@ -60,6 +60,10 @@ impl UpdateJobQueueOutputBuilder {
         self.job_queue_name = input;
         self
     }
+    /// <p>The name of the job queue.</p>
+    pub fn get_job_queue_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_queue_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the job queue.</p>
     pub fn job_queue_arn(
         mut self,
@@ -75,6 +79,10 @@ impl UpdateJobQueueOutputBuilder {
     ) -> Self {
         self.job_queue_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the job queue.</p>
+    pub fn get_job_queue_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_queue_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

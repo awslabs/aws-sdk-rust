@@ -63,6 +63,13 @@ impl DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutputBuilder {
         self.local_gateway_route_table_virtual_interface_group_association = input;
         self
     }
+    /// <p>Information about the association.</p>
+    pub fn get_local_gateway_route_table_virtual_interface_group_association(
+        &self,
+    ) -> &::std::option::Option<crate::types::LocalGatewayRouteTableVirtualInterfaceGroupAssociation>
+    {
+        &self.local_gateway_route_table_virtual_interface_group_association
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

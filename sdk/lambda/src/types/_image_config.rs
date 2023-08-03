@@ -65,6 +65,12 @@ impl ImageConfigBuilder {
         self.entry_point = input;
         self
     }
+    /// <p>Specifies the entry point to their application, which is typically the location of the runtime executable.</p>
+    pub fn get_entry_point(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.entry_point
+    }
     /// Appends an item to `command`.
     ///
     /// To override the contents of this collection use [`set_command`](Self::set_command).
@@ -84,6 +90,10 @@ impl ImageConfigBuilder {
         self.command = input;
         self
     }
+    /// <p>Specifies parameters that you want to pass in with ENTRYPOINT.</p>
+    pub fn get_command(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.command
+    }
     /// <p>Specifies the working directory.</p>
     pub fn working_directory(
         mut self,
@@ -99,6 +109,10 @@ impl ImageConfigBuilder {
     ) -> Self {
         self.working_directory = input;
         self
+    }
+    /// <p>Specifies the working directory.</p>
+    pub fn get_working_directory(&self) -> &::std::option::Option<::std::string::String> {
+        &self.working_directory
     }
     /// Consumes the builder and constructs a [`ImageConfig`](crate::types::ImageConfig).
     pub fn build(self) -> crate::types::ImageConfig {

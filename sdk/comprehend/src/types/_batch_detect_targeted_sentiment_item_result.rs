@@ -49,6 +49,10 @@ impl BatchDetectTargetedSentimentItemResultBuilder {
         self.index = input;
         self
     }
+    /// <p>The zero-based index of this result in the input list.</p>
+    pub fn get_index(&self) -> &::std::option::Option<i32> {
+        &self.index
+    }
     /// Appends an item to `entities`.
     ///
     /// To override the contents of this collection use [`set_entities`](Self::set_entities).
@@ -67,6 +71,12 @@ impl BatchDetectTargetedSentimentItemResultBuilder {
     ) -> Self {
         self.entities = input;
         self
+    }
+    /// <p>An array of targeted sentiment entities.</p>
+    pub fn get_entities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetedSentimentEntity>> {
+        &self.entities
     }
     /// Consumes the builder and constructs a [`BatchDetectTargetedSentimentItemResult`](crate::types::BatchDetectTargetedSentimentItemResult).
     pub fn build(self) -> crate::types::BatchDetectTargetedSentimentItemResult {

@@ -37,6 +37,12 @@ impl DeleteAccountPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteAccountPolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_account_policy::builders::DeleteAccountPolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl DeleteAccountPolicyFluentBuilder {
         self.inner = self.inner.set_policy_name(input);
         self
     }
+    /// <p>The name of the policy to delete.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_name()
+    }
     /// <p>The type of policy to delete. Currently, the only valid value is <code>DATA_PROTECTION_POLICY</code>.</p>
     pub fn policy_type(mut self, input: crate::types::PolicyType) -> Self {
         self.inner = self.inner.policy_type(input);
@@ -139,5 +149,9 @@ impl DeleteAccountPolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_policy_type(input);
         self
+    }
+    /// <p>The type of policy to delete. Currently, the only valid value is <code>DATA_PROTECTION_POLICY</code>.</p>
+    pub fn get_policy_type(&self) -> &::std::option::Option<crate::types::PolicyType> {
+        self.inner.get_policy_type()
     }
 }

@@ -48,6 +48,10 @@ impl BackendApiAuthTypeBuilder {
         self.mode = input;
         self
     }
+    /// <p>Describes the authentication mode.</p>
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::Mode> {
+        &self.mode
+    }
     /// <p>Describes settings for the authentication mode.</p>
     pub fn settings(mut self, input: crate::types::BackendApiAppSyncAuthSettings) -> Self {
         self.settings = ::std::option::Option::Some(input);
@@ -60,6 +64,12 @@ impl BackendApiAuthTypeBuilder {
     ) -> Self {
         self.settings = input;
         self
+    }
+    /// <p>Describes settings for the authentication mode.</p>
+    pub fn get_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::BackendApiAppSyncAuthSettings> {
+        &self.settings
     }
     /// Consumes the builder and constructs a [`BackendApiAuthType`](crate::types::BackendApiAuthType).
     pub fn build(self) -> crate::types::BackendApiAuthType {

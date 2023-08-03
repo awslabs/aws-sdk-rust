@@ -123,6 +123,10 @@ impl BuildBuilder {
         self.build_id = input;
         self
     }
+    /// <p>A unique identifier for the build.</p>
+    pub fn get_build_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.build_id
+    }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) assigned to a Amazon GameLift build resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::build/build-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
@@ -139,6 +143,13 @@ impl BuildBuilder {
         self.build_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) assigned to a Amazon GameLift build resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+    /// <region>
+    /// ::build/build-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
+    /// </region></code>. In a GameLift build ARN, the resource ID matches the <i>BuildId</i> value.</p>
+    pub fn get_build_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.build_arn
+    }
     /// <p>A descriptive label associated with a build. Build names don't need to be unique. It can be set using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateBuild.html">CreateBuild</a> or <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/UpdateBuild">UpdateBuild</a>.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -149,6 +160,10 @@ impl BuildBuilder {
         self.name = input;
         self
     }
+    /// <p>A descriptive label associated with a build. Build names don't need to be unique. It can be set using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateBuild.html">CreateBuild</a> or <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/UpdateBuild">UpdateBuild</a>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Version information associated with a build or script. Version strings don't need to be unique.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -158,6 +173,10 @@ impl BuildBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>Version information associated with a build or script. Version strings don't need to be unique.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// <p>Current status of the build.</p>
     /// <p>Possible build statuses include the following:</p>
@@ -181,6 +200,16 @@ impl BuildBuilder {
         self.status = input;
         self
     }
+    /// <p>Current status of the build.</p>
+    /// <p>Possible build statuses include the following:</p>
+    /// <ul>
+    /// <li> <p> <b>INITIALIZED</b> -- A new build has been defined, but no files have been uploaded. You cannot create fleets for builds that are in this status. When a build is successfully created, the build status is set to this value. </p> </li>
+    /// <li> <p> <b>READY</b> -- The game build has been successfully uploaded. You can now create new fleets for this build.</p> </li>
+    /// <li> <p> <b>FAILED</b> -- The game build upload failed. You cannot create new fleets for this build. </p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::BuildStatus> {
+        &self.status
+    }
     /// <p>File size of the uploaded game build, expressed in bytes. When the build status is <code>INITIALIZED</code> or when using a custom Amazon S3 storage location, this value is 0.</p>
     pub fn size_on_disk(mut self, input: i64) -> Self {
         self.size_on_disk = ::std::option::Option::Some(input);
@@ -190,6 +219,10 @@ impl BuildBuilder {
     pub fn set_size_on_disk(mut self, input: ::std::option::Option<i64>) -> Self {
         self.size_on_disk = input;
         self
+    }
+    /// <p>File size of the uploaded game build, expressed in bytes. When the build status is <code>INITIALIZED</code> or when using a custom Amazon S3 storage location, this value is 0.</p>
+    pub fn get_size_on_disk(&self) -> &::std::option::Option<i64> {
+        &self.size_on_disk
     }
     /// <p>Operating system that the game server binaries are built to run on. This value determines the type of fleet resources that you can use for this build.</p>
     pub fn operating_system(mut self, input: crate::types::OperatingSystem) -> Self {
@@ -204,6 +237,10 @@ impl BuildBuilder {
         self.operating_system = input;
         self
     }
+    /// <p>Operating system that the game server binaries are built to run on. This value determines the type of fleet resources that you can use for this build.</p>
+    pub fn get_operating_system(&self) -> &::std::option::Option<crate::types::OperatingSystem> {
+        &self.operating_system
+    }
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -216,6 +253,10 @@ impl BuildBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The Amazon GameLift Server SDK version used to develop your game server.</p>
     pub fn server_sdk_version(
@@ -232,6 +273,10 @@ impl BuildBuilder {
     ) -> Self {
         self.server_sdk_version = input;
         self
+    }
+    /// <p>The Amazon GameLift Server SDK version used to develop your game server.</p>
+    pub fn get_server_sdk_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_sdk_version
     }
     /// Consumes the builder and constructs a [`Build`](crate::types::Build).
     pub fn build(self) -> crate::types::Build {

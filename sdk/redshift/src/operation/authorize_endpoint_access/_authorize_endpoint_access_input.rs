@@ -63,6 +63,10 @@ impl AuthorizeEndpointAccessInputBuilder {
         self.cluster_identifier = input;
         self
     }
+    /// <p>The cluster identifier of the cluster to grant access to.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_identifier
+    }
     /// <p>The Amazon Web Services account ID to grant access to.</p>
     pub fn account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl AuthorizeEndpointAccessInputBuilder {
     pub fn set_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account = input;
         self
+    }
+    /// <p>The Amazon Web Services account ID to grant access to.</p>
+    pub fn get_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account
     }
     /// Appends an item to `vpc_ids`.
     ///
@@ -91,6 +99,10 @@ impl AuthorizeEndpointAccessInputBuilder {
     ) -> Self {
         self.vpc_ids = input;
         self
+    }
+    /// <p>The virtual private cloud (VPC) identifiers to grant access to.</p>
+    pub fn get_vpc_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.vpc_ids
     }
     /// Consumes the builder and constructs a [`AuthorizeEndpointAccessInput`](crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessInput).
     pub fn build(

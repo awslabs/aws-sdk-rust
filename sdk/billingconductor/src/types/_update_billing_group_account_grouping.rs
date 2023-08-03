@@ -40,6 +40,10 @@ impl UpdateBillingGroupAccountGroupingBuilder {
         self.auto_associate = input;
         self
     }
+    /// <p>Specifies if this billing group will automatically associate newly added Amazon Web Services accounts that join your consolidated billing family.</p>
+    pub fn get_auto_associate(&self) -> &::std::option::Option<bool> {
+        &self.auto_associate
+    }
     /// Consumes the builder and constructs a [`UpdateBillingGroupAccountGrouping`](crate::types::UpdateBillingGroupAccountGrouping).
     pub fn build(self) -> crate::types::UpdateBillingGroupAccountGrouping {
         crate::types::UpdateBillingGroupAccountGrouping {

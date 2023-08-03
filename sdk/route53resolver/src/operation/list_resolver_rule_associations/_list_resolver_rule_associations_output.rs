@@ -66,6 +66,10 @@ impl ListResolverRuleAssociationsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If more than <code>MaxResults</code> rule associations match the specified criteria, you can submit another <code>ListResolverRuleAssociation</code> request to get the next group of results. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The value that you specified for <code>MaxResults</code> in the request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl ListResolverRuleAssociationsOutputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The value that you specified for <code>MaxResults</code> in the request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Appends an item to `resolver_rule_associations`.
     ///
@@ -97,6 +105,12 @@ impl ListResolverRuleAssociationsOutputBuilder {
     ) -> Self {
         self.resolver_rule_associations = input;
         self
+    }
+    /// <p>The associations that were created between Resolver rules and VPCs using the current Amazon Web Services account, and that match the specified filters, if any.</p>
+    pub fn get_resolver_rule_associations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResolverRuleAssociation>> {
+        &self.resolver_rule_associations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

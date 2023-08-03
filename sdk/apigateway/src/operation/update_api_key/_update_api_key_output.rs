@@ -127,6 +127,10 @@ impl UpdateApiKeyOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the API Key.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The value of the API Key.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -136,6 +140,10 @@ impl UpdateApiKeyOutputBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value of the API Key.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// <p>The name of the API Key.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -147,6 +155,10 @@ impl UpdateApiKeyOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the API Key.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
     pub fn customer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_id = ::std::option::Option::Some(input.into());
@@ -156,6 +168,10 @@ impl UpdateApiKeyOutputBuilder {
     pub fn set_customer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_id = input;
         self
+    }
+    /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
+    pub fn get_customer_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.customer_id
     }
     /// <p>The description of the API Key.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -167,6 +183,10 @@ impl UpdateApiKeyOutputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the API Key.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>Specifies whether the API Key can be used by callers.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -176,6 +196,10 @@ impl UpdateApiKeyOutputBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    /// <p>Specifies whether the API Key can be used by callers.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// <p>The timestamp when the API Key was created.</p>
     pub fn created_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -190,6 +214,10 @@ impl UpdateApiKeyOutputBuilder {
         self.created_date = input;
         self
     }
+    /// <p>The timestamp when the API Key was created.</p>
+    pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_date
+    }
     /// <p>The timestamp when the API Key was last updated.</p>
     pub fn last_updated_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date = ::std::option::Option::Some(input);
@@ -202,6 +230,10 @@ impl UpdateApiKeyOutputBuilder {
     ) -> Self {
         self.last_updated_date = input;
         self
+    }
+    /// <p>The timestamp when the API Key was last updated.</p>
+    pub fn get_last_updated_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date
     }
     /// Appends an item to `stage_keys`.
     ///
@@ -221,6 +253,10 @@ impl UpdateApiKeyOutputBuilder {
     ) -> Self {
         self.stage_keys = input;
         self
+    }
+    /// <p>A list of Stage resources that are associated with the ApiKey resource.</p>
+    pub fn get_stage_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.stage_keys
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -246,6 +282,14 @@ impl UpdateApiKeyOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

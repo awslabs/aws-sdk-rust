@@ -112,6 +112,10 @@ impl RepositoryMetadataBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The ID of the AWS account associated with the repository.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The ID of the repository.</p>
     pub fn repository_id(
         mut self,
@@ -127,6 +131,10 @@ impl RepositoryMetadataBuilder {
     ) -> Self {
         self.repository_id = input;
         self
+    }
+    /// <p>The ID of the repository.</p>
+    pub fn get_repository_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_id
     }
     /// <p>The repository's name.</p>
     pub fn repository_name(
@@ -144,6 +152,10 @@ impl RepositoryMetadataBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The repository's name.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>A comment or description about the repository.</p>
     pub fn repository_description(
         mut self,
@@ -159,6 +171,10 @@ impl RepositoryMetadataBuilder {
     ) -> Self {
         self.repository_description = input;
         self
+    }
+    /// <p>A comment or description about the repository.</p>
+    pub fn get_repository_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_description
     }
     /// <p>The repository's default branch name.</p>
     pub fn default_branch(
@@ -176,6 +192,10 @@ impl RepositoryMetadataBuilder {
         self.default_branch = input;
         self
     }
+    /// <p>The repository's default branch name.</p>
+    pub fn get_default_branch(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_branch
+    }
     /// <p>The date and time the repository was last modified, in timestamp format.</p>
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input);
@@ -189,6 +209,10 @@ impl RepositoryMetadataBuilder {
         self.last_modified_date = input;
         self
     }
+    /// <p>The date and time the repository was last modified, in timestamp format.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_date
+    }
     /// <p>The date and time the repository was created, in timestamp format.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
@@ -201,6 +225,10 @@ impl RepositoryMetadataBuilder {
     ) -> Self {
         self.creation_date = input;
         self
+    }
+    /// <p>The date and time the repository was created, in timestamp format.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
     }
     /// <p>The URL to use for cloning the repository over HTTPS.</p>
     pub fn clone_url_http(
@@ -218,6 +246,10 @@ impl RepositoryMetadataBuilder {
         self.clone_url_http = input;
         self
     }
+    /// <p>The URL to use for cloning the repository over HTTPS.</p>
+    pub fn get_clone_url_http(&self) -> &::std::option::Option<::std::string::String> {
+        &self.clone_url_http
+    }
     /// <p>The URL to use for cloning the repository over SSH.</p>
     pub fn clone_url_ssh(
         mut self,
@@ -234,6 +266,10 @@ impl RepositoryMetadataBuilder {
         self.clone_url_ssh = input;
         self
     }
+    /// <p>The URL to use for cloning the repository over SSH.</p>
+    pub fn get_clone_url_ssh(&self) -> &::std::option::Option<::std::string::String> {
+        &self.clone_url_ssh
+    }
     /// <p>The Amazon Resource Name (ARN) of the repository.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -243,6 +279,10 @@ impl RepositoryMetadataBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the repository.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`RepositoryMetadata`](crate::types::RepositoryMetadata).
     pub fn build(self) -> crate::types::RepositoryMetadata {

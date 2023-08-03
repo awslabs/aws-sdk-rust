@@ -40,6 +40,10 @@ impl GetTrafficPolicyInstanceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetTrafficPolicyInstance as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_traffic_policy_instance::builders::GetTrafficPolicyInstanceInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,5 +133,9 @@ impl GetTrafficPolicyInstanceFluentBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
+    }
+    /// <p>The ID of the traffic policy instance that you want to get information about.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
     }
 }

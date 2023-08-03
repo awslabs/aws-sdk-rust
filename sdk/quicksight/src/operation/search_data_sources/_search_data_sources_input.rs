@@ -71,6 +71,10 @@ impl SearchDataSourcesInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -90,6 +94,12 @@ impl SearchDataSourcesInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>The filters to apply to the search.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceSearchFilter>> {
+        &self.filters
+    }
     /// <p>A pagination token that can be used in a subsequent request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -100,6 +110,10 @@ impl SearchDataSourcesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A pagination token that can be used in a subsequent request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to be returned per request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -109,6 +123,10 @@ impl SearchDataSourcesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to be returned per request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`SearchDataSourcesInput`](crate::operation::search_data_sources::SearchDataSourcesInput).
     pub fn build(

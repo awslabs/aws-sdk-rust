@@ -50,6 +50,10 @@ impl DeleteMultiplexProgramInputBuilder {
         self.multiplex_id = input;
         self
     }
+    /// The ID of the multiplex that the program belongs to.
+    pub fn get_multiplex_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.multiplex_id
+    }
     /// The multiplex program name.
     pub fn program_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.program_name = ::std::option::Option::Some(input.into());
@@ -59,6 +63,10 @@ impl DeleteMultiplexProgramInputBuilder {
     pub fn set_program_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.program_name = input;
         self
+    }
+    /// The multiplex program name.
+    pub fn get_program_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.program_name
     }
     /// Consumes the builder and constructs a [`DeleteMultiplexProgramInput`](crate::operation::delete_multiplex_program::DeleteMultiplexProgramInput).
     pub fn build(

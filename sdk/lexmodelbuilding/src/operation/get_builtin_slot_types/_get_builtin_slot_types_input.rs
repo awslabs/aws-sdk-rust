@@ -65,6 +65,10 @@ impl GetBuiltinSlotTypesInputBuilder {
         self.locale = input;
         self
     }
+    /// <p>A list of locales that the slot type supports.</p>
+    pub fn get_locale(&self) -> &::std::option::Option<crate::types::Locale> {
+        &self.locale
+    }
     /// <p>Substring to match in built-in slot type signatures. A slot type will be returned if any part of its signature matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."</p>
     pub fn signature_contains(
         mut self,
@@ -81,6 +85,10 @@ impl GetBuiltinSlotTypesInputBuilder {
         self.signature_contains = input;
         self
     }
+    /// <p>Substring to match in built-in slot type signatures. A slot type will be returned if any part of its signature matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."</p>
+    pub fn get_signature_contains(&self) -> &::std::option::Option<::std::string::String> {
+        &self.signature_contains
+    }
     /// <p>A pagination token that fetches the next page of slot types. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of slot types, specify the pagination token in the next request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl GetBuiltinSlotTypesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A pagination token that fetches the next page of slot types. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of slot types, specify the pagination token in the next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of slot types to return in the response. The default is 10.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -100,6 +112,10 @@ impl GetBuiltinSlotTypesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of slot types to return in the response. The default is 10.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`GetBuiltinSlotTypesInput`](crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesInput).
     pub fn build(

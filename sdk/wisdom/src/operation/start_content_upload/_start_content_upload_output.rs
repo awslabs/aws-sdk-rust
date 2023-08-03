@@ -88,6 +88,10 @@ impl StartContentUploadOutputBuilder {
         self.upload_id = input;
         self
     }
+    /// <p>The identifier of the upload.</p>
+    pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.upload_id
+    }
     /// <p>The URL of the upload.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
@@ -97,6 +101,10 @@ impl StartContentUploadOutputBuilder {
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
+    }
+    /// <p>The URL of the upload.</p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
     }
     /// <p>The expiration time of the URL as an epoch timestamp.</p>
     pub fn url_expiry(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -110,6 +118,10 @@ impl StartContentUploadOutputBuilder {
     ) -> Self {
         self.url_expiry = input;
         self
+    }
+    /// <p>The expiration time of the URL as an epoch timestamp.</p>
+    pub fn get_url_expiry(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.url_expiry
     }
     /// Adds a key-value pair to `headers_to_include`.
     ///
@@ -135,6 +147,14 @@ impl StartContentUploadOutputBuilder {
     ) -> Self {
         self.headers_to_include = input;
         self
+    }
+    /// <p>The headers to include in the upload.</p>
+    pub fn get_headers_to_include(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.headers_to_include
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

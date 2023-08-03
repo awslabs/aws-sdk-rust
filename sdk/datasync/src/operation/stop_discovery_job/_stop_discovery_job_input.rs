@@ -46,6 +46,10 @@ impl StopDiscoveryJobInputBuilder {
         self.discovery_job_arn = input;
         self
     }
+    /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want to stop. </p>
+    pub fn get_discovery_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.discovery_job_arn
+    }
     /// Consumes the builder and constructs a [`StopDiscoveryJobInput`](crate::operation::stop_discovery_job::StopDiscoveryJobInput).
     pub fn build(
         self,

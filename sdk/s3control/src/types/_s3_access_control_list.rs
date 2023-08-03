@@ -48,6 +48,10 @@ impl S3AccessControlListBuilder {
         self.owner = input;
         self
     }
+    /// <p></p>
+    pub fn get_owner(&self) -> &::std::option::Option<crate::types::S3ObjectOwner> {
+        &self.owner
+    }
     /// Appends an item to `grants`.
     ///
     /// To override the contents of this collection use [`set_grants`](Self::set_grants).
@@ -66,6 +70,10 @@ impl S3AccessControlListBuilder {
     ) -> Self {
         self.grants = input;
         self
+    }
+    /// <p></p>
+    pub fn get_grants(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::S3Grant>> {
+        &self.grants
     }
     /// Consumes the builder and constructs a [`S3AccessControlList`](crate::types::S3AccessControlList).
     pub fn build(self) -> crate::types::S3AccessControlList {

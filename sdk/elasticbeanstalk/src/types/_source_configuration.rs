@@ -54,6 +54,10 @@ impl SourceConfigurationBuilder {
         self.application_name = input;
         self
     }
+    /// <p>The name of the application associated with the configuration.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// <p>The name of the configuration template.</p>
     pub fn template_name(
         mut self,
@@ -69,6 +73,10 @@ impl SourceConfigurationBuilder {
     ) -> Self {
         self.template_name = input;
         self
+    }
+    /// <p>The name of the configuration template.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
     }
     /// Consumes the builder and constructs a [`SourceConfiguration`](crate::types::SourceConfiguration).
     pub fn build(self) -> crate::types::SourceConfiguration {

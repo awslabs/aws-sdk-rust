@@ -72,6 +72,10 @@ impl GetCelebrityInfoOutputBuilder {
         self.urls = input;
         self
     }
+    /// <p>An array of URLs pointing to additional celebrity information. </p>
+    pub fn get_urls(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.urls
+    }
     /// <p>The name of the celebrity.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl GetCelebrityInfoOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the celebrity.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Retrieves the known gender for the celebrity.</p>
     pub fn known_gender(mut self, input: crate::types::KnownGender) -> Self {
@@ -94,6 +102,10 @@ impl GetCelebrityInfoOutputBuilder {
     ) -> Self {
         self.known_gender = input;
         self
+    }
+    /// <p>Retrieves the known gender for the celebrity.</p>
+    pub fn get_known_gender(&self) -> &::std::option::Option<crate::types::KnownGender> {
+        &self.known_gender
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

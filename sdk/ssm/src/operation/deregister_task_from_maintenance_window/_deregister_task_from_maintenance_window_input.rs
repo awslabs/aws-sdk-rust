@@ -47,6 +47,10 @@ impl DeregisterTaskFromMaintenanceWindowInputBuilder {
         self.window_id = input;
         self
     }
+    /// <p>The ID of the maintenance window the task should be removed from.</p>
+    pub fn get_window_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.window_id
+    }
     /// <p>The ID of the task to remove from the maintenance window.</p>
     pub fn window_task_id(
         mut self,
@@ -62,6 +66,10 @@ impl DeregisterTaskFromMaintenanceWindowInputBuilder {
     ) -> Self {
         self.window_task_id = input;
         self
+    }
+    /// <p>The ID of the task to remove from the maintenance window.</p>
+    pub fn get_window_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.window_task_id
     }
     /// Consumes the builder and constructs a [`DeregisterTaskFromMaintenanceWindowInput`](crate::operation::deregister_task_from_maintenance_window::DeregisterTaskFromMaintenanceWindowInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::deregister_task_from_maintenance_window::DeregisterTaskFromMaintenanceWindowInput, ::aws_smithy_http::operation::error::BuildError>{

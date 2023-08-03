@@ -63,6 +63,10 @@ impl DisassociateOriginationIdentityInputBuilder {
         self.pool_id = input;
         self
     }
+    /// <p>The unique identifier for the pool to disassociate with the origination identity. This value can be either the PoolId or PoolArn.</p>
+    pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pool_id
+    }
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> find the values for PhoneNumberId and PhoneNumberArn, or use <code>DescribeSenderIds</code> to get the values for SenderId and SenderIdArn.</p>
     pub fn origination_identity(
         mut self,
@@ -78,6 +82,10 @@ impl DisassociateOriginationIdentityInputBuilder {
     ) -> Self {
         self.origination_identity = input;
         self
+    }
+    /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> find the values for PhoneNumberId and PhoneNumberArn, or use <code>DescribeSenderIds</code> to get the values for SenderId and SenderIdArn.</p>
+    pub fn get_origination_identity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.origination_identity
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
     pub fn iso_country_code(
@@ -95,6 +103,10 @@ impl DisassociateOriginationIdentityInputBuilder {
         self.iso_country_code = input;
         self
     }
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
+    pub fn get_iso_country_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iso_country_code
+    }
     /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -104,6 +116,10 @@ impl DisassociateOriginationIdentityInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`DisassociateOriginationIdentityInput`](crate::operation::disassociate_origination_identity::DisassociateOriginationIdentityInput).
     pub fn build(

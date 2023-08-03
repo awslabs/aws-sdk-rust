@@ -38,6 +38,10 @@ impl PutEmailIdentityFeedbackAttributesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutEmailIdentityFeedbackAttributes as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_email_identity_feedback_attributes::builders::PutEmailIdentityFeedbackAttributesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -108,6 +112,10 @@ impl PutEmailIdentityFeedbackAttributesFluentBuilder {
         self.inner = self.inner.set_email_identity(input);
         self
     }
+    /// <p>The email identity.</p>
+    pub fn get_email_identity(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_email_identity()
+    }
     /// <p>Sets the feedback forwarding configuration for the identity.</p>
     /// <p>If the value is <code>true</code>, you receive email notifications when bounce or complaint events occur. These notifications are sent to the address that you specified in the <code>Return-Path</code> header of the original email.</p>
     /// <p>You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications (for example, by setting up an event destination), you receive an email notification when these events occur (even if this setting is disabled).</p>
@@ -121,5 +129,11 @@ impl PutEmailIdentityFeedbackAttributesFluentBuilder {
     pub fn set_email_forwarding_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_email_forwarding_enabled(input);
         self
+    }
+    /// <p>Sets the feedback forwarding configuration for the identity.</p>
+    /// <p>If the value is <code>true</code>, you receive email notifications when bounce or complaint events occur. These notifications are sent to the address that you specified in the <code>Return-Path</code> header of the original email.</p>
+    /// <p>You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications (for example, by setting up an event destination), you receive an email notification when these events occur (even if this setting is disabled).</p>
+    pub fn get_email_forwarding_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_email_forwarding_enabled()
     }
 }

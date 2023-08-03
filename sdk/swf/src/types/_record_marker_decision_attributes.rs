@@ -56,6 +56,10 @@ impl RecordMarkerDecisionAttributesBuilder {
         self.marker_name = input;
         self
     }
+    /// <p> The name of the marker.</p>
+    pub fn get_marker_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker_name
+    }
     /// <p> The details of the marker.</p>
     pub fn details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.details = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl RecordMarkerDecisionAttributesBuilder {
     pub fn set_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.details = input;
         self
+    }
+    /// <p> The details of the marker.</p>
+    pub fn get_details(&self) -> &::std::option::Option<::std::string::String> {
+        &self.details
     }
     /// Consumes the builder and constructs a [`RecordMarkerDecisionAttributes`](crate::types::RecordMarkerDecisionAttributes).
     pub fn build(self) -> crate::types::RecordMarkerDecisionAttributes {

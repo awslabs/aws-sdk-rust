@@ -57,6 +57,10 @@ impl UpdateResourceInputBuilder {
         self.rest_api_id = input;
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rest_api_id
+    }
     /// <p>The identifier of the Resource resource.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl UpdateResourceInputBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>The identifier of the Resource resource.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// Appends an item to `patch_operations`.
     ///
@@ -85,6 +93,12 @@ impl UpdateResourceInputBuilder {
     ) -> Self {
         self.patch_operations = input;
         self
+    }
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
+    pub fn get_patch_operations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
+        &self.patch_operations
     }
     /// Consumes the builder and constructs a [`UpdateResourceInput`](crate::operation::update_resource::UpdateResourceInput).
     pub fn build(

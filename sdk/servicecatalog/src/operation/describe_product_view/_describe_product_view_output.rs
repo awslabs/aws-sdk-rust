@@ -63,6 +63,12 @@ impl DescribeProductViewOutputBuilder {
         self.product_view_summary = input;
         self
     }
+    /// <p>Summary information about the product.</p>
+    pub fn get_product_view_summary(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProductViewSummary> {
+        &self.product_view_summary
+    }
     /// Appends an item to `provisioning_artifacts`.
     ///
     /// To override the contents of this collection use [`set_provisioning_artifacts`](Self::set_provisioning_artifacts).
@@ -81,6 +87,12 @@ impl DescribeProductViewOutputBuilder {
     ) -> Self {
         self.provisioning_artifacts = input;
         self
+    }
+    /// <p>Information about the provisioning artifacts for the product.</p>
+    pub fn get_provisioning_artifacts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifact>> {
+        &self.provisioning_artifacts
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

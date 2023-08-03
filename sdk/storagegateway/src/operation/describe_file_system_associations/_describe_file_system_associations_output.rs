@@ -62,6 +62,12 @@ impl DescribeFileSystemAssociationsOutputBuilder {
         self.file_system_association_info_list = input;
         self
     }
+    /// <p>An array containing the <code>FileSystemAssociationInfo</code> data type of each file system association to be described. </p>
+    pub fn get_file_system_association_info_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FileSystemAssociationInfo>> {
+        &self.file_system_association_info_list
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

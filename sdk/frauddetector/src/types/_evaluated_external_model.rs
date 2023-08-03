@@ -94,6 +94,10 @@ impl EvaluatedExternalModelBuilder {
         self.model_endpoint = input;
         self
     }
+    /// <p> The endpoint of the external (Amazon Sagemaker) model. </p>
+    pub fn get_model_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_endpoint
+    }
     /// <p> Indicates whether event variables were used to generate predictions. </p>
     pub fn use_event_variables(mut self, input: bool) -> Self {
         self.use_event_variables = ::std::option::Option::Some(input);
@@ -103,6 +107,10 @@ impl EvaluatedExternalModelBuilder {
     pub fn set_use_event_variables(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_event_variables = input;
         self
+    }
+    /// <p> Indicates whether event variables were used to generate predictions. </p>
+    pub fn get_use_event_variables(&self) -> &::std::option::Option<bool> {
+        &self.use_event_variables
     }
     /// Adds a key-value pair to `input_variables`.
     ///
@@ -129,6 +137,14 @@ impl EvaluatedExternalModelBuilder {
         self.input_variables = input;
         self
     }
+    /// <p> Input variables use for generating predictions. </p>
+    pub fn get_input_variables(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.input_variables
+    }
     /// Adds a key-value pair to `output_variables`.
     ///
     /// To override the contents of this collection use [`set_output_variables`](Self::set_output_variables).
@@ -153,6 +169,14 @@ impl EvaluatedExternalModelBuilder {
     ) -> Self {
         self.output_variables = input;
         self
+    }
+    /// <p> Output variables. </p>
+    pub fn get_output_variables(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.output_variables
     }
     /// Consumes the builder and constructs a [`EvaluatedExternalModel`](crate::types::EvaluatedExternalModel).
     pub fn build(self) -> crate::types::EvaluatedExternalModel {

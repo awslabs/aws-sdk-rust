@@ -46,6 +46,10 @@ impl DeleteWhatIfAnalysisInputBuilder {
         self.what_if_analysis_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the what-if analysis that you want to delete.</p>
+    pub fn get_what_if_analysis_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.what_if_analysis_arn
+    }
     /// Consumes the builder and constructs a [`DeleteWhatIfAnalysisInput`](crate::operation::delete_what_if_analysis::DeleteWhatIfAnalysisInput).
     pub fn build(
         self,

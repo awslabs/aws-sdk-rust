@@ -37,6 +37,10 @@ impl UpdateThingGroupsForThingFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateThingGroupsForThing as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_thing_groups_for_thing::builders::UpdateThingGroupsForThingInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl UpdateThingGroupsForThingFluentBuilder {
         self.inner = self.inner.set_thing_name(input);
         self
     }
+    /// <p>The thing whose group memberships will be updated.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_thing_name()
+    }
     /// Appends an item to `thingGroupsToAdd`.
     ///
     /// To override the contents of this collection use [`set_thing_groups_to_add`](Self::set_thing_groups_to_add).
@@ -146,6 +154,12 @@ impl UpdateThingGroupsForThingFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_thing_groups_to_add(input);
         self
+    }
+    /// <p>The groups to which the thing will be added.</p>
+    pub fn get_thing_groups_to_add(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_thing_groups_to_add()
     }
     /// Appends an item to `thingGroupsToRemove`.
     ///
@@ -167,6 +181,12 @@ impl UpdateThingGroupsForThingFluentBuilder {
         self.inner = self.inner.set_thing_groups_to_remove(input);
         self
     }
+    /// <p>The groups from which the thing will be removed.</p>
+    pub fn get_thing_groups_to_remove(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_thing_groups_to_remove()
+    }
     /// <p>Override dynamic thing groups with static thing groups when 10-group limit is reached. If a thing belongs to 10 thing groups, and one or more of those groups are dynamic thing groups, adding a thing to a static group removes the thing from the last dynamic group.</p>
     pub fn override_dynamic_groups(mut self, input: bool) -> Self {
         self.inner = self.inner.override_dynamic_groups(input);
@@ -176,5 +196,9 @@ impl UpdateThingGroupsForThingFluentBuilder {
     pub fn set_override_dynamic_groups(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_override_dynamic_groups(input);
         self
+    }
+    /// <p>Override dynamic thing groups with static thing groups when 10-group limit is reached. If a thing belongs to 10 thing groups, and one or more of those groups are dynamic thing groups, adding a thing to a static group removes the thing from the last dynamic group.</p>
+    pub fn get_override_dynamic_groups(&self) -> &::std::option::Option<bool> {
+        self.inner.get_override_dynamic_groups()
     }
 }

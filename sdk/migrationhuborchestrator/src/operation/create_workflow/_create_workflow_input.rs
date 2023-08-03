@@ -117,6 +117,10 @@ impl CreateWorkflowInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the migration workflow.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the migration workflow.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -127,6 +131,10 @@ impl CreateWorkflowInputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the migration workflow.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The ID of the template.</p>
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_id = ::std::option::Option::Some(input.into());
@@ -136,6 +144,10 @@ impl CreateWorkflowInputBuilder {
     pub fn set_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_id = input;
         self
+    }
+    /// <p>The ID of the template.</p>
+    pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_id
     }
     /// <p>The configuration ID of the application configured in Application Discovery Service.</p>
     pub fn application_configuration_id(
@@ -152,6 +164,12 @@ impl CreateWorkflowInputBuilder {
     ) -> Self {
         self.application_configuration_id = input;
         self
+    }
+    /// <p>The configuration ID of the application configured in Application Discovery Service.</p>
+    pub fn get_application_configuration_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.application_configuration_id
     }
     /// Adds a key-value pair to `input_parameters`.
     ///
@@ -178,6 +196,14 @@ impl CreateWorkflowInputBuilder {
         self.input_parameters = input;
         self
     }
+    /// <p>The input parameters required to create a migration workflow.</p>
+    pub fn get_input_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::StepInput>,
+    > {
+        &self.input_parameters
+    }
     /// Appends an item to `step_targets`.
     ///
     /// To override the contents of this collection use [`set_step_targets`](Self::set_step_targets).
@@ -196,6 +222,12 @@ impl CreateWorkflowInputBuilder {
     ) -> Self {
         self.step_targets = input;
         self
+    }
+    /// <p>The servers on which a step will be run.</p>
+    pub fn get_step_targets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.step_targets
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -221,6 +253,14 @@ impl CreateWorkflowInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags to add on a migration workflow.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateWorkflowInput`](crate::operation::create_workflow::CreateWorkflowInput).
     pub fn build(

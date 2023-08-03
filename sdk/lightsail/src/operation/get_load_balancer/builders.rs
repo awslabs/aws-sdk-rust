@@ -36,6 +36,12 @@ impl GetLoadBalancerFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetLoadBalancer as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_load_balancer::builders::GetLoadBalancerInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl GetLoadBalancerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_load_balancer_name(input);
         self
+    }
+    /// <p>The name of the load balancer.</p>
+    pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_load_balancer_name()
     }
 }

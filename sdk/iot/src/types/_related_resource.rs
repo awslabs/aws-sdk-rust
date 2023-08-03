@@ -67,6 +67,10 @@ impl RelatedResourceBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The type of resource.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
+    }
     /// <p>Information that identifies the resource.</p>
     pub fn resource_identifier(mut self, input: crate::types::ResourceIdentifier) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input);
@@ -79,6 +83,12 @@ impl RelatedResourceBuilder {
     ) -> Self {
         self.resource_identifier = input;
         self
+    }
+    /// <p>Information that identifies the resource.</p>
+    pub fn get_resource_identifier(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceIdentifier> {
+        &self.resource_identifier
     }
     /// Adds a key-value pair to `additional_info`.
     ///
@@ -104,6 +114,14 @@ impl RelatedResourceBuilder {
     ) -> Self {
         self.additional_info = input;
         self
+    }
+    /// <p>Other information about the resource.</p>
+    pub fn get_additional_info(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.additional_info
     }
     /// Consumes the builder and constructs a [`RelatedResource`](crate::types::RelatedResource).
     pub fn build(self) -> crate::types::RelatedResource {

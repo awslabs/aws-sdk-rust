@@ -67,6 +67,12 @@ impl GetAssetPropertyValueHistoryOutputBuilder {
         self.asset_property_value_history = input;
         self
     }
+    /// <p>The asset property's value history.</p>
+    pub fn get_asset_property_value_history(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyValue>> {
+        &self.asset_property_value_history
+    }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -76,6 +82,10 @@ impl GetAssetPropertyValueHistoryOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token for the next set of results, or null if there are no additional results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

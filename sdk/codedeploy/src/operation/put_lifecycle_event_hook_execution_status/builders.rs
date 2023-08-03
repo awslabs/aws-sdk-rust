@@ -36,6 +36,10 @@ impl PutLifecycleEventHookExecutionStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutLifecycleEventHookExecutionStatus as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_lifecycle_event_hook_execution_status::builders::PutLifecycleEventHookExecutionStatusInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl PutLifecycleEventHookExecutionStatusFluentBuilder {
         self.inner = self.inner.set_deployment_id(input);
         self
     }
+    /// <p> The unique ID of a deployment. Pass this ID to a Lambda function that validates a deployment lifecycle event. </p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_deployment_id()
+    }
     /// <p> The execution ID of a deployment's lifecycle hook. A deployment lifecycle hook is specified in the <code>hooks</code> section of the AppSpec file. </p>
     pub fn lifecycle_event_hook_execution_id(
         mut self,
@@ -122,6 +130,12 @@ impl PutLifecycleEventHookExecutionStatusFluentBuilder {
         self.inner = self.inner.set_lifecycle_event_hook_execution_id(input);
         self
     }
+    /// <p> The execution ID of a deployment's lifecycle hook. A deployment lifecycle hook is specified in the <code>hooks</code> section of the AppSpec file. </p>
+    pub fn get_lifecycle_event_hook_execution_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_lifecycle_event_hook_execution_id()
+    }
     /// <p>The result of a Lambda function that validates a deployment lifecycle event. The values listed in <b>Valid Values</b> are valid for lifecycle statuses in general; however, only <code>Succeeded</code> and <code>Failed</code> can be passed successfully in your API call.</p>
     pub fn status(mut self, input: crate::types::LifecycleEventStatus) -> Self {
         self.inner = self.inner.status(input);
@@ -134,5 +148,9 @@ impl PutLifecycleEventHookExecutionStatusFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_status(input);
         self
+    }
+    /// <p>The result of a Lambda function that validates a deployment lifecycle event. The values listed in <b>Valid Values</b> are valid for lifecycle statuses in general; however, only <code>Succeeded</code> and <code>Failed</code> can be passed successfully in your API call.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::LifecycleEventStatus> {
+        self.inner.get_status()
     }
 }

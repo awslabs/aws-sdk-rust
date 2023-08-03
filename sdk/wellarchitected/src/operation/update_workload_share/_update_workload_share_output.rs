@@ -57,6 +57,10 @@ impl UpdateWorkloadShareOutputBuilder {
         self.workload_id = input;
         self
     }
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workload_id
+    }
     /// <p>A workload share return object.</p>
     pub fn workload_share(mut self, input: crate::types::WorkloadShare) -> Self {
         self.workload_share = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl UpdateWorkloadShareOutputBuilder {
     ) -> Self {
         self.workload_share = input;
         self
+    }
+    /// <p>A workload share return object.</p>
+    pub fn get_workload_share(&self) -> &::std::option::Option<crate::types::WorkloadShare> {
+        &self.workload_share
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

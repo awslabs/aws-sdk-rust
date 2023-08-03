@@ -66,6 +66,12 @@ impl DescribeDomainAutoTunesOutputBuilder {
         self.auto_tunes = input;
         self
     }
+    /// <p>Specifies the list of setting adjustments that Auto-Tune has made to the domain. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information.</p>
+    pub fn get_auto_tunes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoTune>> {
+        &self.auto_tunes
+    }
     /// <p>Specifies an identifier to allow retrieval of paginated results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -75,6 +81,10 @@ impl DescribeDomainAutoTunesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Specifies an identifier to allow retrieval of paginated results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

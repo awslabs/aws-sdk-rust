@@ -36,6 +36,12 @@ impl DescribeAssetModelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeAssetModel as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_asset_model::builders::DescribeAssetModelInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl DescribeAssetModelFluentBuilder {
         self.inner = self.inner.set_asset_model_id(input);
         self
     }
+    /// <p>The ID of the asset model.</p>
+    pub fn get_asset_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_asset_model_id()
+    }
     /// <p> Whether or not to exclude asset model properties from the response. </p>
     pub fn exclude_properties(mut self, input: bool) -> Self {
         self.inner = self.inner.exclude_properties(input);
@@ -141,5 +151,9 @@ impl DescribeAssetModelFluentBuilder {
     pub fn set_exclude_properties(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_exclude_properties(input);
         self
+    }
+    /// <p> Whether or not to exclude asset model properties from the response. </p>
+    pub fn get_exclude_properties(&self) -> &::std::option::Option<bool> {
+        self.inner.get_exclude_properties()
     }
 }

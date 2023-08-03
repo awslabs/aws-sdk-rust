@@ -78,6 +78,10 @@ impl ListLensReviewsOutputBuilder {
         self.workload_id = input;
         self
     }
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workload_id
+    }
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
     pub fn milestone_number(mut self, input: i32) -> Self {
@@ -89,6 +93,11 @@ impl ListLensReviewsOutputBuilder {
     pub fn set_milestone_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.milestone_number = input;
         self
+    }
+    /// <p>The milestone number.</p>
+    /// <p>A workload can have a maximum of 100 milestones.</p>
+    pub fn get_milestone_number(&self) -> &::std::option::Option<i32> {
+        &self.milestone_number
     }
     /// Appends an item to `lens_review_summaries`.
     ///
@@ -109,6 +118,12 @@ impl ListLensReviewsOutputBuilder {
         self.lens_review_summaries = input;
         self
     }
+    /// <p>List of lens summaries of lens reviews of a workload.</p>
+    pub fn get_lens_review_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LensReviewSummary>> {
+        &self.lens_review_summaries
+    }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -118,6 +133,10 @@ impl ListLensReviewsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token to use to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

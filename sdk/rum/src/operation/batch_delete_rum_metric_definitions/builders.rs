@@ -38,6 +38,10 @@ impl BatchDeleteRumMetricDefinitionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchDeleteRumMetricDefinitions as a reference.
+    pub fn as_input(&self) -> &crate::operation::batch_delete_rum_metric_definitions::builders::BatchDeleteRumMetricDefinitionsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -108,6 +112,10 @@ impl BatchDeleteRumMetricDefinitionsFluentBuilder {
         self.inner = self.inner.set_app_monitor_name(input);
         self
     }
+    /// <p>The name of the CloudWatch RUM app monitor that is sending these metrics.</p>
+    pub fn get_app_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_monitor_name()
+    }
     /// <p>Defines the destination where you want to stop sending the specified metrics. Valid values are <code>CloudWatch</code> and <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently experiment that is to be the destination and an IAM role that has permission to write to the experiment.</p>
     pub fn destination(mut self, input: crate::types::MetricDestination) -> Self {
         self.inner = self.inner.destination(input);
@@ -120,6 +128,10 @@ impl BatchDeleteRumMetricDefinitionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_destination(input);
         self
+    }
+    /// <p>Defines the destination where you want to stop sending the specified metrics. Valid values are <code>CloudWatch</code> and <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently experiment that is to be the destination and an IAM role that has permission to write to the experiment.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<crate::types::MetricDestination> {
+        self.inner.get_destination()
     }
     /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter. </p>
     /// <p>This parameter specifies the ARN of the Evidently experiment that was receiving the metrics that are being deleted.</p>
@@ -138,6 +150,11 @@ impl BatchDeleteRumMetricDefinitionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_destination_arn(input);
         self
+    }
+    /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter. </p>
+    /// <p>This parameter specifies the ARN of the Evidently experiment that was receiving the metrics that are being deleted.</p>
+    pub fn get_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_arn()
     }
     /// Appends an item to `MetricDefinitionIds`.
     ///
@@ -158,5 +175,11 @@ impl BatchDeleteRumMetricDefinitionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_metric_definition_ids(input);
         self
+    }
+    /// <p>An array of structures which define the metrics that you want to stop sending.</p>
+    pub fn get_metric_definition_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_metric_definition_ids()
     }
 }

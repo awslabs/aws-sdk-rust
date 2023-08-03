@@ -58,6 +58,12 @@ impl AnalysisSourceTemplateBuilder {
         self.data_set_references = input;
         self
     }
+    /// <p>The dataset references of the source template of an analysis.</p>
+    pub fn get_data_set_references(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSetReference>> {
+        &self.data_set_references
+    }
     /// <p>The Amazon Resource Name (ARN) of the source template of an analysis.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -67,6 +73,10 @@ impl AnalysisSourceTemplateBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the source template of an analysis.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`AnalysisSourceTemplate`](crate::types::AnalysisSourceTemplate).
     pub fn build(self) -> crate::types::AnalysisSourceTemplate {

@@ -36,6 +36,10 @@ impl BatchModifyClusterSnapshotsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchModifyClusterSnapshots as a reference.
+    pub fn as_input(&self) -> &crate::operation::batch_modify_cluster_snapshots::builders::BatchModifyClusterSnapshotsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +140,12 @@ impl BatchModifyClusterSnapshotsFluentBuilder {
         self.inner = self.inner.set_snapshot_identifier_list(input);
         self
     }
+    /// <p>A list of snapshot identifiers you want to modify.</p>
+    pub fn get_snapshot_identifier_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_snapshot_identifier_list()
+    }
     /// <p>The number of days that a manual snapshot is retained. If you specify the value -1, the manual snapshot is retained indefinitely.</p>
     /// <p>The number must be either -1 or an integer between 1 and 3,653.</p>
     /// <p>If you decrease the manual snapshot retention period from its current value, existing manual snapshots that fall outside of the new retention period will return an error. If you want to suppress the errors and delete the snapshots, use the force option. </p>
@@ -153,6 +163,12 @@ impl BatchModifyClusterSnapshotsFluentBuilder {
         self.inner = self.inner.set_manual_snapshot_retention_period(input);
         self
     }
+    /// <p>The number of days that a manual snapshot is retained. If you specify the value -1, the manual snapshot is retained indefinitely.</p>
+    /// <p>The number must be either -1 or an integer between 1 and 3,653.</p>
+    /// <p>If you decrease the manual snapshot retention period from its current value, existing manual snapshots that fall outside of the new retention period will return an error. If you want to suppress the errors and delete the snapshots, use the force option. </p>
+    pub fn get_manual_snapshot_retention_period(&self) -> &::std::option::Option<i32> {
+        self.inner.get_manual_snapshot_retention_period()
+    }
     /// <p>A boolean value indicating whether to override an exception if the retention period has passed. </p>
     pub fn force(mut self, input: bool) -> Self {
         self.inner = self.inner.force(input);
@@ -162,5 +178,9 @@ impl BatchModifyClusterSnapshotsFluentBuilder {
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force(input);
         self
+    }
+    /// <p>A boolean value indicating whether to override an exception if the retention period has passed. </p>
+    pub fn get_force(&self) -> &::std::option::Option<bool> {
+        self.inner.get_force()
     }
 }

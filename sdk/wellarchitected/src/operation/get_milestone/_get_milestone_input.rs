@@ -50,6 +50,10 @@ impl GetMilestoneInputBuilder {
         self.workload_id = input;
         self
     }
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workload_id
+    }
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
     pub fn milestone_number(mut self, input: i32) -> Self {
@@ -61,6 +65,11 @@ impl GetMilestoneInputBuilder {
     pub fn set_milestone_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.milestone_number = input;
         self
+    }
+    /// <p>The milestone number.</p>
+    /// <p>A workload can have a maximum of 100 milestones.</p>
+    pub fn get_milestone_number(&self) -> &::std::option::Option<i32> {
+        &self.milestone_number
     }
     /// Consumes the builder and constructs a [`GetMilestoneInput`](crate::operation::get_milestone::GetMilestoneInput).
     pub fn build(

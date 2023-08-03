@@ -66,6 +66,12 @@ impl GetConnectivityInfoOutputBuilder {
         self.connectivity_info = input;
         self
     }
+    /// <p>The connectivity information for the core device.</p>
+    pub fn get_connectivity_info(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectivityInfo>> {
+        &self.connectivity_info
+    }
     /// <p>A message about the connectivity information request.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -75,6 +81,10 @@ impl GetConnectivityInfoOutputBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>A message about the connectivity information request.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

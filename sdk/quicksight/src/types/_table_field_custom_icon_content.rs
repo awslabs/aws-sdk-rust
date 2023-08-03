@@ -43,6 +43,10 @@ impl TableFieldCustomIconContentBuilder {
         self.icon = input;
         self
     }
+    /// <p>The icon set type (link) of the custom icon content for table URL link content.</p>
+    pub fn get_icon(&self) -> &::std::option::Option<crate::types::TableFieldIconSetType> {
+        &self.icon
+    }
     /// Consumes the builder and constructs a [`TableFieldCustomIconContent`](crate::types::TableFieldCustomIconContent).
     pub fn build(self) -> crate::types::TableFieldCustomIconContent {
         crate::types::TableFieldCustomIconContent { icon: self.icon }

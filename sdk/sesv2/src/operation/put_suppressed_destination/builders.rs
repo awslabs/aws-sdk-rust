@@ -36,6 +36,13 @@ impl PutSuppressedDestinationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutSuppressedDestination as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_suppressed_destination::builders::PutSuppressedDestinationInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl PutSuppressedDestinationFluentBuilder {
         self.inner = self.inner.set_email_address(input);
         self
     }
+    /// <p>The email address that should be added to the suppression list for your account.</p>
+    pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_email_address()
+    }
     /// <p>The factors that should cause the email address to be added to the suppression list for your account.</p>
     pub fn reason(mut self, input: crate::types::SuppressionListReason) -> Self {
         self.inner = self.inner.reason(input);
@@ -144,5 +155,9 @@ impl PutSuppressedDestinationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_reason(input);
         self
+    }
+    /// <p>The factors that should cause the email address to be added to the suppression list for your account.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<crate::types::SuppressionListReason> {
+        self.inner.get_reason()
     }
 }

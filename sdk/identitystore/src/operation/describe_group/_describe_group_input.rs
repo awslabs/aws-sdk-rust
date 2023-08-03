@@ -53,6 +53,10 @@ impl DescribeGroupInputBuilder {
         self.identity_store_id = input;
         self
     }
+    /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.</p>
+    pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_store_id
+    }
     /// <p>The identifier for a group in the identity store.</p>
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl DescribeGroupInputBuilder {
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_id = input;
         self
+    }
+    /// <p>The identifier for a group in the identity store.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
     }
     /// Consumes the builder and constructs a [`DescribeGroupInput`](crate::operation::describe_group::DescribeGroupInput).
     pub fn build(

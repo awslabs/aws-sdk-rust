@@ -64,6 +64,10 @@ impl NotificationActionBuilder {
         self.action = input;
         self
     }
+    /// <p>Specifies an AWS Lambda function to manage alarm notifications. You can create one or use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">AWS Lambda function provided by AWS IoT Events</a>.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::NotificationTargetActions> {
+        &self.action
+    }
     /// Appends an item to `sms_configurations`.
     ///
     /// To override the contents of this collection use [`set_sms_configurations`](Self::set_sms_configurations).
@@ -83,6 +87,12 @@ impl NotificationActionBuilder {
         self.sms_configurations = input;
         self
     }
+    /// <p>Contains the configuration information of SMS notifications.</p>
+    pub fn get_sms_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SmsConfiguration>> {
+        &self.sms_configurations
+    }
     /// Appends an item to `email_configurations`.
     ///
     /// To override the contents of this collection use [`set_email_configurations`](Self::set_email_configurations).
@@ -101,6 +111,12 @@ impl NotificationActionBuilder {
     ) -> Self {
         self.email_configurations = input;
         self
+    }
+    /// <p>Contains the configuration information of email notifications.</p>
+    pub fn get_email_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EmailConfiguration>> {
+        &self.email_configurations
     }
     /// Consumes the builder and constructs a [`NotificationAction`](crate::types::NotificationAction).
     pub fn build(self) -> crate::types::NotificationAction {

@@ -39,6 +39,10 @@ impl UpdateCompanyNetworkConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateCompanyNetworkConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_company_network_configuration::builders::UpdateCompanyNetworkConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -103,6 +107,10 @@ impl UpdateCompanyNetworkConfigurationFluentBuilder {
         self.inner = self.inner.set_fleet_arn(input);
         self
     }
+    /// <p>The ARN of the fleet.</p>
+    pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_fleet_arn()
+    }
     /// <p>The VPC with connectivity to associated websites.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_id(input.into());
@@ -112,6 +120,10 @@ impl UpdateCompanyNetworkConfigurationFluentBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpc_id(input);
         self
+    }
+    /// <p>The VPC with connectivity to associated websites.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpc_id()
     }
     /// Appends an item to `SubnetIds`.
     ///
@@ -129,6 +141,10 @@ impl UpdateCompanyNetworkConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_subnet_ids(input);
         self
+    }
+    /// <p>The subnets used for X-ENI connections from Amazon WorkLink rendering containers.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_subnet_ids()
     }
     /// Appends an item to `SecurityGroupIds`.
     ///
@@ -149,5 +165,11 @@ impl UpdateCompanyNetworkConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_security_group_ids(input);
         self
+    }
+    /// <p>The security groups associated with access to the provided subnets.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_security_group_ids()
     }
 }

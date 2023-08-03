@@ -48,6 +48,10 @@ impl DescribeThesaurusInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the thesaurus you want to get information on.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The identifier of the index for the thesaurus.</p>
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl DescribeThesaurusInputBuilder {
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.index_id = input;
         self
+    }
+    /// <p>The identifier of the index for the thesaurus.</p>
+    pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_id
     }
     /// Consumes the builder and constructs a [`DescribeThesaurusInput`](crate::operation::describe_thesaurus::DescribeThesaurusInput).
     pub fn build(

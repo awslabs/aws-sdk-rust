@@ -131,6 +131,10 @@ impl DescribeDomainConfigurationOutputBuilder {
         self.domain_configuration_name = input;
         self
     }
+    /// <p>The name of the domain configuration.</p>
+    pub fn get_domain_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_configuration_name
+    }
     /// <p>The ARN of the domain configuration.</p>
     pub fn domain_configuration_arn(
         mut self,
@@ -147,6 +151,10 @@ impl DescribeDomainConfigurationOutputBuilder {
         self.domain_configuration_arn = input;
         self
     }
+    /// <p>The ARN of the domain configuration.</p>
+    pub fn get_domain_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_configuration_arn
+    }
     /// <p>The name of the domain.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
@@ -156,6 +164,10 @@ impl DescribeDomainConfigurationOutputBuilder {
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
+    }
+    /// <p>The name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
     }
     /// Appends an item to `server_certificates`.
     ///
@@ -176,6 +188,12 @@ impl DescribeDomainConfigurationOutputBuilder {
         self.server_certificates = input;
         self
     }
+    /// <p>A list containing summary information about the server certificate included in the domain configuration.</p>
+    pub fn get_server_certificates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerCertificateSummary>> {
+        &self.server_certificates
+    }
     /// <p>An object that specifies the authorization service for a domain.</p>
     pub fn authorizer_config(mut self, input: crate::types::AuthorizerConfig) -> Self {
         self.authorizer_config = ::std::option::Option::Some(input);
@@ -188,6 +206,10 @@ impl DescribeDomainConfigurationOutputBuilder {
     ) -> Self {
         self.authorizer_config = input;
         self
+    }
+    /// <p>An object that specifies the authorization service for a domain.</p>
+    pub fn get_authorizer_config(&self) -> &::std::option::Option<crate::types::AuthorizerConfig> {
+        &self.authorizer_config
     }
     /// <p>A Boolean value that specifies the current state of the domain configuration.</p>
     pub fn domain_configuration_status(
@@ -205,6 +227,12 @@ impl DescribeDomainConfigurationOutputBuilder {
         self.domain_configuration_status = input;
         self
     }
+    /// <p>A Boolean value that specifies the current state of the domain configuration.</p>
+    pub fn get_domain_configuration_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::DomainConfigurationStatus> {
+        &self.domain_configuration_status
+    }
     /// <p>The type of service delivered by the endpoint.</p>
     pub fn service_type(mut self, input: crate::types::ServiceType) -> Self {
         self.service_type = ::std::option::Option::Some(input);
@@ -217,6 +245,10 @@ impl DescribeDomainConfigurationOutputBuilder {
     ) -> Self {
         self.service_type = input;
         self
+    }
+    /// <p>The type of service delivered by the endpoint.</p>
+    pub fn get_service_type(&self) -> &::std::option::Option<crate::types::ServiceType> {
+        &self.service_type
     }
     /// <p>The type of the domain.</p>
     pub fn domain_type(mut self, input: crate::types::DomainType) -> Self {
@@ -231,6 +263,10 @@ impl DescribeDomainConfigurationOutputBuilder {
         self.domain_type = input;
         self
     }
+    /// <p>The type of the domain.</p>
+    pub fn get_domain_type(&self) -> &::std::option::Option<crate::types::DomainType> {
+        &self.domain_type
+    }
     /// <p>The date and time the domain configuration's status was last changed.</p>
     pub fn last_status_change_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_status_change_date = ::std::option::Option::Some(input);
@@ -244,6 +280,12 @@ impl DescribeDomainConfigurationOutputBuilder {
         self.last_status_change_date = input;
         self
     }
+    /// <p>The date and time the domain configuration's status was last changed.</p>
+    pub fn get_last_status_change_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_status_change_date
+    }
     /// <p>An object that specifies the TLS configuration for a domain.</p>
     pub fn tls_config(mut self, input: crate::types::TlsConfig) -> Self {
         self.tls_config = ::std::option::Option::Some(input);
@@ -253,6 +295,10 @@ impl DescribeDomainConfigurationOutputBuilder {
     pub fn set_tls_config(mut self, input: ::std::option::Option<crate::types::TlsConfig>) -> Self {
         self.tls_config = input;
         self
+    }
+    /// <p>An object that specifies the TLS configuration for a domain.</p>
+    pub fn get_tls_config(&self) -> &::std::option::Option<crate::types::TlsConfig> {
+        &self.tls_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

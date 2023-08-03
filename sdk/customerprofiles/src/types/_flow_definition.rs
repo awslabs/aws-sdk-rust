@@ -80,6 +80,10 @@ impl FlowDefinitionBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the flow you want to create.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The specified name of the flow. Use underscores (_) or hyphens (-) only. Spaces are not allowed.</p>
     pub fn flow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_name = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl FlowDefinitionBuilder {
         self.flow_name = input;
         self
     }
+    /// <p>The specified name of the flow. Use underscores (_) or hyphens (-) only. Spaces are not allowed.</p>
+    pub fn get_flow_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_name
+    }
     /// <p>The Amazon Resource Name of the AWS Key Management Service (KMS) key you provide for encryption.</p>
     pub fn kms_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_arn = ::std::option::Option::Some(input.into());
@@ -99,6 +107,10 @@ impl FlowDefinitionBuilder {
     pub fn set_kms_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name of the AWS Key Management Service (KMS) key you provide for encryption.</p>
+    pub fn get_kms_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_arn
     }
     /// <p>The configuration that controls how Customer Profiles retrieves data from the source.</p>
     pub fn source_flow_config(mut self, input: crate::types::SourceFlowConfig) -> Self {
@@ -112,6 +124,10 @@ impl FlowDefinitionBuilder {
     ) -> Self {
         self.source_flow_config = input;
         self
+    }
+    /// <p>The configuration that controls how Customer Profiles retrieves data from the source.</p>
+    pub fn get_source_flow_config(&self) -> &::std::option::Option<crate::types::SourceFlowConfig> {
+        &self.source_flow_config
     }
     /// Appends an item to `tasks`.
     ///
@@ -132,6 +148,10 @@ impl FlowDefinitionBuilder {
         self.tasks = input;
         self
     }
+    /// <p>A list of tasks that Customer Profiles performs while transferring the data in the flow run.</p>
+    pub fn get_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Task>> {
+        &self.tasks
+    }
     /// <p>The trigger settings that determine how and when the flow runs.</p>
     pub fn trigger_config(mut self, input: crate::types::TriggerConfig) -> Self {
         self.trigger_config = ::std::option::Option::Some(input);
@@ -144,6 +164,10 @@ impl FlowDefinitionBuilder {
     ) -> Self {
         self.trigger_config = input;
         self
+    }
+    /// <p>The trigger settings that determine how and when the flow runs.</p>
+    pub fn get_trigger_config(&self) -> &::std::option::Option<crate::types::TriggerConfig> {
+        &self.trigger_config
     }
     /// Consumes the builder and constructs a [`FlowDefinition`](crate::types::FlowDefinition).
     pub fn build(self) -> crate::types::FlowDefinition {

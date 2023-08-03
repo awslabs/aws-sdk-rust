@@ -57,6 +57,12 @@ impl ApplicationMaintenanceConfigurationDescriptionBuilder {
         self.application_maintenance_window_start_time = input;
         self
     }
+    /// <p>The start time for the maintenance window.</p>
+    pub fn get_application_maintenance_window_start_time(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.application_maintenance_window_start_time
+    }
     /// <p>The end time for the maintenance window.</p>
     pub fn application_maintenance_window_end_time(
         mut self,
@@ -72,6 +78,12 @@ impl ApplicationMaintenanceConfigurationDescriptionBuilder {
     ) -> Self {
         self.application_maintenance_window_end_time = input;
         self
+    }
+    /// <p>The end time for the maintenance window.</p>
+    pub fn get_application_maintenance_window_end_time(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.application_maintenance_window_end_time
     }
     /// Consumes the builder and constructs a [`ApplicationMaintenanceConfigurationDescription`](crate::types::ApplicationMaintenanceConfigurationDescription).
     pub fn build(self) -> crate::types::ApplicationMaintenanceConfigurationDescription {

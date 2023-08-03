@@ -36,6 +36,10 @@ impl GetCalculatedAttributeForProfileFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetCalculatedAttributeForProfile as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_calculated_attribute_for_profile::builders::GetCalculatedAttributeForProfileInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl GetCalculatedAttributeForProfileFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p>The unique name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
     /// <p>The unique identifier of a customer profile.</p>
     pub fn profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.profile_id(input.into());
@@ -109,6 +117,10 @@ impl GetCalculatedAttributeForProfileFluentBuilder {
     pub fn set_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_profile_id(input);
         self
+    }
+    /// <p>The unique identifier of a customer profile.</p>
+    pub fn get_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_profile_id()
     }
     /// <p>The unique name of the calculated attribute.</p>
     pub fn calculated_attribute_name(
@@ -125,5 +137,9 @@ impl GetCalculatedAttributeForProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_calculated_attribute_name(input);
         self
+    }
+    /// <p>The unique name of the calculated attribute.</p>
+    pub fn get_calculated_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_calculated_attribute_name()
     }
 }

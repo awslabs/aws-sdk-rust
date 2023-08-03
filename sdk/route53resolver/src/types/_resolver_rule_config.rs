@@ -56,6 +56,10 @@ impl ResolverRuleConfigBuilder {
         self.name = input;
         self
     }
+    /// <p>The new name for the Resolver rule. The name that you specify appears in the Resolver dashboard in the Route 53 console. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `target_ips`.
     ///
     /// To override the contents of this collection use [`set_target_ips`](Self::set_target_ips).
@@ -75,6 +79,12 @@ impl ResolverRuleConfigBuilder {
         self.target_ips = input;
         self
     }
+    /// <p>For DNS queries that originate in your VPC, the new IP addresses that you want to route outbound DNS queries to.</p>
+    pub fn get_target_ips(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetAddress>> {
+        &self.target_ips
+    }
     /// <p>The ID of the new outbound Resolver endpoint that you want to use to route DNS queries to the IP addresses that you specify in <code>TargetIps</code>.</p>
     pub fn resolver_endpoint_id(
         mut self,
@@ -90,6 +100,10 @@ impl ResolverRuleConfigBuilder {
     ) -> Self {
         self.resolver_endpoint_id = input;
         self
+    }
+    /// <p>The ID of the new outbound Resolver endpoint that you want to use to route DNS queries to the IP addresses that you specify in <code>TargetIps</code>.</p>
+    pub fn get_resolver_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resolver_endpoint_id
     }
     /// Consumes the builder and constructs a [`ResolverRuleConfig`](crate::types::ResolverRuleConfig).
     pub fn build(self) -> crate::types::ResolverRuleConfig {

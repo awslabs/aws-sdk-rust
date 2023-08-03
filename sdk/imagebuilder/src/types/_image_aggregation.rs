@@ -54,6 +54,10 @@ impl ImageAggregationBuilder {
         self.image_build_version_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that identifies the image for this aggregation.</p>
+    pub fn get_image_build_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_build_version_arn
+    }
     /// <p>Counts by severity level for medium severity and higher level findings, plus a total for all of the findings for the specified image.</p>
     pub fn severity_counts(mut self, input: crate::types::SeverityCounts) -> Self {
         self.severity_counts = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl ImageAggregationBuilder {
     ) -> Self {
         self.severity_counts = input;
         self
+    }
+    /// <p>Counts by severity level for medium severity and higher level findings, plus a total for all of the findings for the specified image.</p>
+    pub fn get_severity_counts(&self) -> &::std::option::Option<crate::types::SeverityCounts> {
+        &self.severity_counts
     }
     /// Consumes the builder and constructs a [`ImageAggregation`](crate::types::ImageAggregation).
     pub fn build(self) -> crate::types::ImageAggregation {

@@ -104,6 +104,10 @@ impl ProcessingJobSummaryBuilder {
         self.processing_job_name = input;
         self
     }
+    /// <p>The name of the processing job.</p>
+    pub fn get_processing_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.processing_job_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the processing job..</p>
     pub fn processing_job_arn(
         mut self,
@@ -120,6 +124,10 @@ impl ProcessingJobSummaryBuilder {
         self.processing_job_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the processing job..</p>
+    pub fn get_processing_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.processing_job_arn
+    }
     /// <p>The time at which the processing job was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -132,6 +140,10 @@ impl ProcessingJobSummaryBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The time at which the processing job was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The time at which the processing job completed.</p>
     pub fn processing_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -146,6 +158,10 @@ impl ProcessingJobSummaryBuilder {
         self.processing_end_time = input;
         self
     }
+    /// <p>The time at which the processing job completed.</p>
+    pub fn get_processing_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.processing_end_time
+    }
     /// <p>A timestamp that indicates the last time the processing job was modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -159,6 +175,10 @@ impl ProcessingJobSummaryBuilder {
         self.last_modified_time = input;
         self
     }
+    /// <p>A timestamp that indicates the last time the processing job was modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
     /// <p>The status of the processing job.</p>
     pub fn processing_job_status(mut self, input: crate::types::ProcessingJobStatus) -> Self {
         self.processing_job_status = ::std::option::Option::Some(input);
@@ -171,6 +191,12 @@ impl ProcessingJobSummaryBuilder {
     ) -> Self {
         self.processing_job_status = input;
         self
+    }
+    /// <p>The status of the processing job.</p>
+    pub fn get_processing_job_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProcessingJobStatus> {
+        &self.processing_job_status
     }
     /// <p>A string, up to one KB in size, that contains the reason a processing job failed, if it failed.</p>
     pub fn failure_reason(
@@ -188,6 +214,10 @@ impl ProcessingJobSummaryBuilder {
         self.failure_reason = input;
         self
     }
+    /// <p>A string, up to one KB in size, that contains the reason a processing job failed, if it failed.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
+    }
     /// <p>An optional string, up to one KB in size, that contains metadata from the processing container when the processing job exits.</p>
     pub fn exit_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.exit_message = ::std::option::Option::Some(input.into());
@@ -197,6 +227,10 @@ impl ProcessingJobSummaryBuilder {
     pub fn set_exit_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.exit_message = input;
         self
+    }
+    /// <p>An optional string, up to one KB in size, that contains metadata from the processing container when the processing job exits.</p>
+    pub fn get_exit_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.exit_message
     }
     /// Consumes the builder and constructs a [`ProcessingJobSummary`](crate::types::ProcessingJobSummary).
     pub fn build(self) -> crate::types::ProcessingJobSummary {

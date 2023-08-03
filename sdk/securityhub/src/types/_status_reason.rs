@@ -48,6 +48,10 @@ impl StatusReasonBuilder {
         self.reason_code = input;
         self
     }
+    /// <p>A code that represents a reason for the control status. For the list of status reason codes and their meanings, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related information in the ASFF</a> in the <i>Security Hub User Guide</i>. </p>
+    pub fn get_reason_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason_code
+    }
     /// <p>The corresponding description for the status reason code.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl StatusReasonBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The corresponding description for the status reason code.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`StatusReason`](crate::types::StatusReason).
     pub fn build(self) -> crate::types::StatusReason {

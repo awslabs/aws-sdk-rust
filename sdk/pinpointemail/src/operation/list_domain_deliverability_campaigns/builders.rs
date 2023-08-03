@@ -36,6 +36,10 @@ impl ListDomainDeliverabilityCampaignsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListDomainDeliverabilityCampaigns as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_domain_deliverability_campaigns::builders::ListDomainDeliverabilityCampaignsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -109,6 +113,10 @@ impl ListDomainDeliverabilityCampaignsFluentBuilder {
         self.inner = self.inner.set_start_date(input);
         self
     }
+    /// <p>The first day, in Unix time format, that you want to obtain deliverability data for.</p>
+    pub fn get_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_date()
+    }
     /// <p>The last day, in Unix time format, that you want to obtain deliverability data for. This value has to be less than or equal to 30 days after the value of the <code>StartDate</code> parameter.</p>
     pub fn end_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_date(input);
@@ -121,6 +129,10 @@ impl ListDomainDeliverabilityCampaignsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_end_date(input);
         self
+    }
+    /// <p>The last day, in Unix time format, that you want to obtain deliverability data for. This value has to be less than or equal to 30 days after the value of the <code>StartDate</code> parameter.</p>
+    pub fn get_end_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_date()
     }
     /// <p>The domain to obtain deliverability data for.</p>
     pub fn subscribed_domain(
@@ -138,6 +150,10 @@ impl ListDomainDeliverabilityCampaignsFluentBuilder {
         self.inner = self.inner.set_subscribed_domain(input);
         self
     }
+    /// <p>The domain to obtain deliverability data for.</p>
+    pub fn get_subscribed_domain(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_subscribed_domain()
+    }
     /// <p>A token that’s returned from a previous call to the <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the position of a campaign in the list of campaigns.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -148,6 +164,10 @@ impl ListDomainDeliverabilityCampaignsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A token that’s returned from a previous call to the <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the position of a campaign in the list of campaigns.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to include in response to a single call to the <code>ListDomainDeliverabilityCampaigns</code> operation. If the number of results is larger than the number that you specify in this parameter, the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     pub fn page_size(mut self, input: i32) -> Self {
         self.inner = self.inner.page_size(input);
@@ -157,5 +177,9 @@ impl ListDomainDeliverabilityCampaignsFluentBuilder {
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_page_size(input);
         self
+    }
+    /// <p>The maximum number of results to include in response to a single call to the <code>ListDomainDeliverabilityCampaigns</code> operation. If the number of results is larger than the number that you specify in this parameter, the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        self.inner.get_page_size()
     }
 }

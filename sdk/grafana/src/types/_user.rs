@@ -52,6 +52,11 @@ impl UserBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the user or group.</p>
+    /// <p>Pattern: <code>^([0-9a-fA-F]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$</code> </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>Specifies whether this is a single user or a group.</p>
     pub fn r#type(mut self, input: crate::types::UserType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -61,6 +66,10 @@ impl UserBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::UserType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>Specifies whether this is a single user or a group.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::UserType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`User`](crate::types::User).
     pub fn build(self) -> crate::types::User {

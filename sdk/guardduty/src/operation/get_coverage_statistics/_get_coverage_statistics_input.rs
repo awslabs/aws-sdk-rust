@@ -61,6 +61,10 @@ impl GetCoverageStatisticsInputBuilder {
         self.detector_id = input;
         self
     }
+    /// <p>The unique ID of the GuardDuty detector associated to the coverage statistics.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
+    }
     /// <p>Represents the criteria used to filter the coverage statistics</p>
     pub fn filter_criteria(mut self, input: crate::types::CoverageFilterCriteria) -> Self {
         self.filter_criteria = ::std::option::Option::Some(input);
@@ -73,6 +77,12 @@ impl GetCoverageStatisticsInputBuilder {
     ) -> Self {
         self.filter_criteria = input;
         self
+    }
+    /// <p>Represents the criteria used to filter the coverage statistics</p>
+    pub fn get_filter_criteria(
+        &self,
+    ) -> &::std::option::Option<crate::types::CoverageFilterCriteria> {
+        &self.filter_criteria
     }
     /// Appends an item to `statistics_type`.
     ///
@@ -92,6 +102,12 @@ impl GetCoverageStatisticsInputBuilder {
     ) -> Self {
         self.statistics_type = input;
         self
+    }
+    /// <p>Represents the statistics type used to aggregate the coverage details.</p>
+    pub fn get_statistics_type(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStatisticsType>> {
+        &self.statistics_type
     }
     /// Consumes the builder and constructs a [`GetCoverageStatisticsInput`](crate::operation::get_coverage_statistics::GetCoverageStatisticsInput).
     pub fn build(

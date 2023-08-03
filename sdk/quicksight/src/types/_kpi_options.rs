@@ -100,6 +100,10 @@ impl KpiOptionsBuilder {
         self.progress_bar = input;
         self
     }
+    /// <p>The options that determine the presentation of the progress bar of a KPI visual.</p>
+    pub fn get_progress_bar(&self) -> &::std::option::Option<crate::types::ProgressBarOptions> {
+        &self.progress_bar
+    }
     /// <p>The options that determine the presentation of trend arrows in a KPI visual.</p>
     pub fn trend_arrows(mut self, input: crate::types::TrendArrowOptions) -> Self {
         self.trend_arrows = ::std::option::Option::Some(input);
@@ -112,6 +116,10 @@ impl KpiOptionsBuilder {
     ) -> Self {
         self.trend_arrows = input;
         self
+    }
+    /// <p>The options that determine the presentation of trend arrows in a KPI visual.</p>
+    pub fn get_trend_arrows(&self) -> &::std::option::Option<crate::types::TrendArrowOptions> {
+        &self.trend_arrows
     }
     /// <p>The options that determine the presentation of the secondary value of a KPI visual.</p>
     pub fn secondary_value(mut self, input: crate::types::SecondaryValueOptions) -> Self {
@@ -126,6 +134,12 @@ impl KpiOptionsBuilder {
         self.secondary_value = input;
         self
     }
+    /// <p>The options that determine the presentation of the secondary value of a KPI visual.</p>
+    pub fn get_secondary_value(
+        &self,
+    ) -> &::std::option::Option<crate::types::SecondaryValueOptions> {
+        &self.secondary_value
+    }
     /// <p>The comparison configuration of a KPI visual.</p>
     pub fn comparison(mut self, input: crate::types::ComparisonConfiguration) -> Self {
         self.comparison = ::std::option::Option::Some(input);
@@ -138,6 +152,10 @@ impl KpiOptionsBuilder {
     ) -> Self {
         self.comparison = input;
         self
+    }
+    /// <p>The comparison configuration of a KPI visual.</p>
+    pub fn get_comparison(&self) -> &::std::option::Option<crate::types::ComparisonConfiguration> {
+        &self.comparison
     }
     /// <p>The options that determine the primary value display type.</p>
     pub fn primary_value_display_type(
@@ -155,6 +173,12 @@ impl KpiOptionsBuilder {
         self.primary_value_display_type = input;
         self
     }
+    /// <p>The options that determine the primary value display type.</p>
+    pub fn get_primary_value_display_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::PrimaryValueDisplayType> {
+        &self.primary_value_display_type
+    }
     /// <p>The options that determine the primary value font configuration.</p>
     pub fn primary_value_font_configuration(
         mut self,
@@ -171,6 +195,12 @@ impl KpiOptionsBuilder {
         self.primary_value_font_configuration = input;
         self
     }
+    /// <p>The options that determine the primary value font configuration.</p>
+    pub fn get_primary_value_font_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::FontConfiguration> {
+        &self.primary_value_font_configuration
+    }
     /// <p>The options that determine the secondary value font configuration.</p>
     pub fn secondary_value_font_configuration(
         mut self,
@@ -186,6 +216,12 @@ impl KpiOptionsBuilder {
     ) -> Self {
         self.secondary_value_font_configuration = input;
         self
+    }
+    /// <p>The options that determine the secondary value font configuration.</p>
+    pub fn get_secondary_value_font_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::FontConfiguration> {
+        &self.secondary_value_font_configuration
     }
     /// Consumes the builder and constructs a [`KpiOptions`](crate::types::KpiOptions).
     pub fn build(self) -> crate::types::KpiOptions {

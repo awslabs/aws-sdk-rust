@@ -66,6 +66,10 @@ impl ClusterStatusBuilder {
         self.state = input;
         self
     }
+    /// <p>The current state of the cluster.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ClusterState> {
+        &self.state
+    }
     /// <p>The reason for the cluster status change.</p>
     pub fn state_change_reason(mut self, input: crate::types::ClusterStateChangeReason) -> Self {
         self.state_change_reason = ::std::option::Option::Some(input);
@@ -79,6 +83,12 @@ impl ClusterStatusBuilder {
         self.state_change_reason = input;
         self
     }
+    /// <p>The reason for the cluster status change.</p>
+    pub fn get_state_change_reason(
+        &self,
+    ) -> &::std::option::Option<crate::types::ClusterStateChangeReason> {
+        &self.state_change_reason
+    }
     /// <p>A timeline that represents the status of a cluster over the lifetime of the cluster.</p>
     pub fn timeline(mut self, input: crate::types::ClusterTimeline) -> Self {
         self.timeline = ::std::option::Option::Some(input);
@@ -91,6 +101,10 @@ impl ClusterStatusBuilder {
     ) -> Self {
         self.timeline = input;
         self
+    }
+    /// <p>A timeline that represents the status of a cluster over the lifetime of the cluster.</p>
+    pub fn get_timeline(&self) -> &::std::option::Option<crate::types::ClusterTimeline> {
+        &self.timeline
     }
     /// Appends an item to `error_details`.
     ///
@@ -110,6 +124,12 @@ impl ClusterStatusBuilder {
     ) -> Self {
         self.error_details = input;
         self
+    }
+    /// <p>A list of tuples that provides information about the errors that caused a cluster to terminate. This structure can contain up to 10 different <code>ErrorDetail</code> tuples.</p>
+    pub fn get_error_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>> {
+        &self.error_details
     }
     /// Consumes the builder and constructs a [`ClusterStatus`](crate::types::ClusterStatus).
     pub fn build(self) -> crate::types::ClusterStatus {

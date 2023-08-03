@@ -78,6 +78,10 @@ impl UtteranceDataBuilder {
         self.utterance_string = input;
         self
     }
+    /// <p>The text that was entered by the user or the text representation of an audio clip.</p>
+    pub fn get_utterance_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.utterance_string
+    }
     /// <p>The number of times that the utterance was processed.</p>
     pub fn count(mut self, input: i32) -> Self {
         self.count = ::std::option::Option::Some(input);
@@ -88,6 +92,10 @@ impl UtteranceDataBuilder {
         self.count = input;
         self
     }
+    /// <p>The number of times that the utterance was processed.</p>
+    pub fn get_count(&self) -> &::std::option::Option<i32> {
+        &self.count
+    }
     /// <p>The total number of individuals that used the utterance.</p>
     pub fn distinct_users(mut self, input: i32) -> Self {
         self.distinct_users = ::std::option::Option::Some(input);
@@ -97,6 +105,10 @@ impl UtteranceDataBuilder {
     pub fn set_distinct_users(mut self, input: ::std::option::Option<i32>) -> Self {
         self.distinct_users = input;
         self
+    }
+    /// <p>The total number of individuals that used the utterance.</p>
+    pub fn get_distinct_users(&self) -> &::std::option::Option<i32> {
+        &self.distinct_users
     }
     /// <p>The date that the utterance was first recorded.</p>
     pub fn first_uttered_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -111,6 +123,10 @@ impl UtteranceDataBuilder {
         self.first_uttered_date = input;
         self
     }
+    /// <p>The date that the utterance was first recorded.</p>
+    pub fn get_first_uttered_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.first_uttered_date
+    }
     /// <p>The date that the utterance was last recorded.</p>
     pub fn last_uttered_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_uttered_date = ::std::option::Option::Some(input);
@@ -123,6 +139,10 @@ impl UtteranceDataBuilder {
     ) -> Self {
         self.last_uttered_date = input;
         self
+    }
+    /// <p>The date that the utterance was last recorded.</p>
+    pub fn get_last_uttered_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_uttered_date
     }
     /// Consumes the builder and constructs a [`UtteranceData`](crate::types::UtteranceData).
     pub fn build(self) -> crate::types::UtteranceData {

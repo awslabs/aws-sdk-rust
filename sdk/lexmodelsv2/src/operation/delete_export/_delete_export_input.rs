@@ -39,6 +39,10 @@ impl DeleteExportInputBuilder {
         self.export_id = input;
         self
     }
+    /// <p>The unique identifier of the export to delete.</p>
+    pub fn get_export_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.export_id
+    }
     /// Consumes the builder and constructs a [`DeleteExportInput`](crate::operation::delete_export::DeleteExportInput).
     pub fn build(
         self,

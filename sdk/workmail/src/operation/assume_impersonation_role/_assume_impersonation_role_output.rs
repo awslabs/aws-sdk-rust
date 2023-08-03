@@ -56,6 +56,10 @@ impl AssumeImpersonationRoleOutputBuilder {
         self.token = input;
         self
     }
+    /// <p>The authentication token for the impersonation role.</p>
+    pub fn get_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.token
+    }
     /// <p>The authentication token's validity, in seconds.</p>
     pub fn expires_in(mut self, input: i64) -> Self {
         self.expires_in = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl AssumeImpersonationRoleOutputBuilder {
     pub fn set_expires_in(mut self, input: ::std::option::Option<i64>) -> Self {
         self.expires_in = input;
         self
+    }
+    /// <p>The authentication token's validity, in seconds.</p>
+    pub fn get_expires_in(&self) -> &::std::option::Option<i64> {
+        &self.expires_in
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

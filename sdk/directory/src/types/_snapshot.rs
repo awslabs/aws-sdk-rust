@@ -80,6 +80,10 @@ impl SnapshotBuilder {
         self.directory_id = input;
         self
     }
+    /// <p>The directory identifier.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
+    }
     /// <p>The snapshot identifier.</p>
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_id = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl SnapshotBuilder {
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_id = input;
         self
+    }
+    /// <p>The snapshot identifier.</p>
+    pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_id
     }
     /// <p>The snapshot type.</p>
     pub fn r#type(mut self, input: crate::types::SnapshotType) -> Self {
@@ -100,6 +108,10 @@ impl SnapshotBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The snapshot type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::SnapshotType> {
+        &self.r#type
+    }
     /// <p>The descriptive name of the snapshot.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -109,6 +121,10 @@ impl SnapshotBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The descriptive name of the snapshot.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The snapshot status.</p>
     pub fn status(mut self, input: crate::types::SnapshotStatus) -> Self {
@@ -123,6 +139,10 @@ impl SnapshotBuilder {
         self.status = input;
         self
     }
+    /// <p>The snapshot status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::SnapshotStatus> {
+        &self.status
+    }
     /// <p>The date and time that the snapshot was taken.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -135,6 +155,10 @@ impl SnapshotBuilder {
     ) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>The date and time that the snapshot was taken.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// Consumes the builder and constructs a [`Snapshot`](crate::types::Snapshot).
     pub fn build(self) -> crate::types::Snapshot {

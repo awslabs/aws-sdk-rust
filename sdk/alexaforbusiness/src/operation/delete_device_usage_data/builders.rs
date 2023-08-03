@@ -37,6 +37,13 @@ impl DeleteDeviceUsageDataFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteDeviceUsageData as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_device_usage_data::builders::DeleteDeviceUsageDataInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl DeleteDeviceUsageDataFluentBuilder {
         self.inner = self.inner.set_device_arn(input);
         self
     }
+    /// <p>The ARN of the device.</p>
+    pub fn get_device_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_arn()
+    }
     /// <p>The type of usage data to delete.</p>
     pub fn device_usage_type(mut self, input: crate::types::DeviceUsageType) -> Self {
         self.inner = self.inner.device_usage_type(input);
@@ -139,5 +150,9 @@ impl DeleteDeviceUsageDataFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_device_usage_type(input);
         self
+    }
+    /// <p>The type of usage data to delete.</p>
+    pub fn get_device_usage_type(&self) -> &::std::option::Option<crate::types::DeviceUsageType> {
+        self.inner.get_device_usage_type()
     }
 }

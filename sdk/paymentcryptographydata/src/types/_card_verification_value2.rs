@@ -46,6 +46,10 @@ impl CardVerificationValue2Builder {
         self.card_expiry_date = input;
         self
     }
+    /// <p>The expiry date of a payment card.</p>
+    pub fn get_card_expiry_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.card_expiry_date
+    }
     /// Consumes the builder and constructs a [`CardVerificationValue2`](crate::types::CardVerificationValue2).
     pub fn build(self) -> crate::types::CardVerificationValue2 {
         crate::types::CardVerificationValue2 {

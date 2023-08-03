@@ -80,6 +80,10 @@ impl DocumentClassifierSummaryBuilder {
         self.document_classifier_name = input;
         self
     }
+    /// <p>The name that you assigned the document classifier.</p>
+    pub fn get_document_classifier_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_classifier_name
+    }
     /// <p>The number of versions you created.</p>
     pub fn number_of_versions(mut self, input: i32) -> Self {
         self.number_of_versions = ::std::option::Option::Some(input);
@@ -89,6 +93,10 @@ impl DocumentClassifierSummaryBuilder {
     pub fn set_number_of_versions(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_versions = input;
         self
+    }
+    /// <p>The number of versions you created.</p>
+    pub fn get_number_of_versions(&self) -> &::std::option::Option<i32> {
+        &self.number_of_versions
     }
     /// <p>The time that the latest document classifier version was submitted for processing.</p>
     pub fn latest_version_created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -102,6 +110,12 @@ impl DocumentClassifierSummaryBuilder {
     ) -> Self {
         self.latest_version_created_at = input;
         self
+    }
+    /// <p>The time that the latest document classifier version was submitted for processing.</p>
+    pub fn get_latest_version_created_at(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.latest_version_created_at
     }
     /// <p>The version name you assigned to the latest document classifier version.</p>
     pub fn latest_version_name(
@@ -119,6 +133,10 @@ impl DocumentClassifierSummaryBuilder {
         self.latest_version_name = input;
         self
     }
+    /// <p>The version name you assigned to the latest document classifier version.</p>
+    pub fn get_latest_version_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.latest_version_name
+    }
     /// <p>Provides the status of the latest document classifier version.</p>
     pub fn latest_version_status(mut self, input: crate::types::ModelStatus) -> Self {
         self.latest_version_status = ::std::option::Option::Some(input);
@@ -131,6 +149,10 @@ impl DocumentClassifierSummaryBuilder {
     ) -> Self {
         self.latest_version_status = input;
         self
+    }
+    /// <p>Provides the status of the latest document classifier version.</p>
+    pub fn get_latest_version_status(&self) -> &::std::option::Option<crate::types::ModelStatus> {
+        &self.latest_version_status
     }
     /// Consumes the builder and constructs a [`DocumentClassifierSummary`](crate::types::DocumentClassifierSummary).
     pub fn build(self) -> crate::types::DocumentClassifierSummary {

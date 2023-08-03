@@ -36,6 +36,13 @@ impl DeleteDirectoryConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteDirectoryConfig as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_directory_config::builders::DeleteDirectoryConfigInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +138,9 @@ impl DeleteDirectoryConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_directory_name(input);
         self
+    }
+    /// <p>The name of the directory configuration.</p>
+    pub fn get_directory_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_name()
     }
 }

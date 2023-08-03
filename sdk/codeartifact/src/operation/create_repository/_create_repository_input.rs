@@ -80,6 +80,10 @@ impl CreateRepositoryInputBuilder {
         self.domain = input;
         self
     }
+    /// <p> The name of the domain that contains the created repository. </p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
+    }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_owner = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl CreateRepositoryInputBuilder {
     pub fn set_domain_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_owner = input;
         self
+    }
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_owner
     }
     /// <p> The name of the repository to create. </p>
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -100,6 +108,10 @@ impl CreateRepositoryInputBuilder {
         self.repository = input;
         self
     }
+    /// <p> The name of the repository to create. </p>
+    pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository
+    }
     /// <p> A description of the created repository. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -109,6 +121,10 @@ impl CreateRepositoryInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p> A description of the created repository. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `upstreams`.
     ///
@@ -129,6 +145,12 @@ impl CreateRepositoryInputBuilder {
         self.upstreams = input;
         self
     }
+    /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
+    pub fn get_upstreams(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpstreamRepository>> {
+        &self.upstreams
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -147,6 +169,10 @@ impl CreateRepositoryInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>One or more tag key-value pairs for the repository.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateRepositoryInput`](crate::operation::create_repository::CreateRepositoryInput).
     pub fn build(

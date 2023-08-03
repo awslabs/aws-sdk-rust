@@ -56,6 +56,10 @@ impl ReorderReceiptRuleSetInputBuilder {
         self.rule_set_name = input;
         self
     }
+    /// <p>The name of the receipt rule set to reorder.</p>
+    pub fn get_rule_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_set_name
+    }
     /// Appends an item to `rule_names`.
     ///
     /// To override the contents of this collection use [`set_rule_names`](Self::set_rule_names).
@@ -74,6 +78,10 @@ impl ReorderReceiptRuleSetInputBuilder {
     ) -> Self {
         self.rule_names = input;
         self
+    }
+    /// <p>A list of the specified receipt rule set's receipt rules in the order that you want to put them.</p>
+    pub fn get_rule_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.rule_names
     }
     /// Consumes the builder and constructs a [`ReorderReceiptRuleSetInput`](crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSetInput).
     pub fn build(

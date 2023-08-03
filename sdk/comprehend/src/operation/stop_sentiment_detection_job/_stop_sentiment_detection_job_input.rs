@@ -39,6 +39,10 @@ impl StopSentimentDetectionJobInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The identifier of the sentiment detection job to stop.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// Consumes the builder and constructs a [`StopSentimentDetectionJobInput`](crate::operation::stop_sentiment_detection_job::StopSentimentDetectionJobInput).
     pub fn build(
         self,

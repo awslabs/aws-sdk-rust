@@ -38,6 +38,12 @@ impl UpdateServiceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateService as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_service::builders::UpdateServiceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -120,6 +126,10 @@ impl UpdateServiceFluentBuilder {
         self.inner = self.inner.set_service_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to update.</p>
+    pub fn get_service_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_arn()
+    }
     /// <p>The source configuration to apply to the App Runner service.</p>
     /// <p>You can change the configuration of the code or image repository that the service uses. However, you can't switch from code to image or the other way around. This means that you must provide the same structure member of <code>SourceConfiguration</code> that you originally included when you created the service. Specifically, you can include either <code>CodeRepository</code> or <code>ImageRepository</code>. To update the source configuration, set the values to members of the structure that you include.</p>
     pub fn source_configuration(mut self, input: crate::types::SourceConfiguration) -> Self {
@@ -135,6 +145,13 @@ impl UpdateServiceFluentBuilder {
         self.inner = self.inner.set_source_configuration(input);
         self
     }
+    /// <p>The source configuration to apply to the App Runner service.</p>
+    /// <p>You can change the configuration of the code or image repository that the service uses. However, you can't switch from code to image or the other way around. This means that you must provide the same structure member of <code>SourceConfiguration</code> that you originally included when you created the service. Specifically, you can include either <code>CodeRepository</code> or <code>ImageRepository</code>. To update the source configuration, set the values to members of the structure that you include.</p>
+    pub fn get_source_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SourceConfiguration> {
+        self.inner.get_source_configuration()
+    }
     /// <p>The runtime configuration to apply to instances (scaling units) of your service.</p>
     pub fn instance_configuration(mut self, input: crate::types::InstanceConfiguration) -> Self {
         self.inner = self.inner.instance_configuration(input);
@@ -147,6 +164,12 @@ impl UpdateServiceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_instance_configuration(input);
         self
+    }
+    /// <p>The runtime configuration to apply to instances (scaling units) of your service.</p>
+    pub fn get_instance_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceConfiguration> {
+        self.inner.get_instance_configuration()
     }
     /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with the App Runner service.</p>
     pub fn auto_scaling_configuration_arn(
@@ -164,6 +187,12 @@ impl UpdateServiceFluentBuilder {
         self.inner = self.inner.set_auto_scaling_configuration_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with the App Runner service.</p>
+    pub fn get_auto_scaling_configuration_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_auto_scaling_configuration_arn()
+    }
     /// <p>The settings for the health check that App Runner performs to monitor the health of the App Runner service.</p>
     pub fn health_check_configuration(
         mut self,
@@ -180,6 +209,12 @@ impl UpdateServiceFluentBuilder {
         self.inner = self.inner.set_health_check_configuration(input);
         self
     }
+    /// <p>The settings for the health check that App Runner performs to monitor the health of the App Runner service.</p>
+    pub fn get_health_check_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::HealthCheckConfiguration> {
+        self.inner.get_health_check_configuration()
+    }
     /// <p>Configuration settings related to network traffic of the web application that the App Runner service runs.</p>
     pub fn network_configuration(mut self, input: crate::types::NetworkConfiguration) -> Self {
         self.inner = self.inner.network_configuration(input);
@@ -192,6 +227,12 @@ impl UpdateServiceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_network_configuration(input);
         self
+    }
+    /// <p>Configuration settings related to network traffic of the web application that the App Runner service runs.</p>
+    pub fn get_network_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkConfiguration> {
+        self.inner.get_network_configuration()
     }
     /// <p>The observability configuration of your service.</p>
     pub fn observability_configuration(
@@ -208,5 +249,11 @@ impl UpdateServiceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_observability_configuration(input);
         self
+    }
+    /// <p>The observability configuration of your service.</p>
+    pub fn get_observability_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServiceObservabilityConfiguration> {
+        self.inner.get_observability_configuration()
     }
 }

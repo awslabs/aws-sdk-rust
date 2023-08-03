@@ -72,6 +72,10 @@ impl GetAutoMergingPreviewOutputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The unique name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The number of match groups in the domain that have been reviewed in this preview dry run.</p>
     pub fn number_of_matches_in_sample(mut self, input: i64) -> Self {
         self.number_of_matches_in_sample = ::std::option::Option::Some(input);
@@ -82,6 +86,10 @@ impl GetAutoMergingPreviewOutputBuilder {
         self.number_of_matches_in_sample = input;
         self
     }
+    /// <p>The number of match groups in the domain that have been reviewed in this preview dry run.</p>
+    pub fn get_number_of_matches_in_sample(&self) -> &::std::option::Option<i64> {
+        &self.number_of_matches_in_sample
+    }
     /// <p>The number of profiles found in this preview dry run.</p>
     pub fn number_of_profiles_in_sample(mut self, input: i64) -> Self {
         self.number_of_profiles_in_sample = ::std::option::Option::Some(input);
@@ -91,6 +99,10 @@ impl GetAutoMergingPreviewOutputBuilder {
     pub fn set_number_of_profiles_in_sample(mut self, input: ::std::option::Option<i64>) -> Self {
         self.number_of_profiles_in_sample = input;
         self
+    }
+    /// <p>The number of profiles found in this preview dry run.</p>
+    pub fn get_number_of_profiles_in_sample(&self) -> &::std::option::Option<i64> {
+        &self.number_of_profiles_in_sample
     }
     /// <p>The number of profiles that would be merged if this wasn't a preview dry run.</p>
     pub fn number_of_profiles_will_be_merged(mut self, input: i64) -> Self {
@@ -104,6 +116,10 @@ impl GetAutoMergingPreviewOutputBuilder {
     ) -> Self {
         self.number_of_profiles_will_be_merged = input;
         self
+    }
+    /// <p>The number of profiles that would be merged if this wasn't a preview dry run.</p>
+    pub fn get_number_of_profiles_will_be_merged(&self) -> &::std::option::Option<i64> {
+        &self.number_of_profiles_will_be_merged
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

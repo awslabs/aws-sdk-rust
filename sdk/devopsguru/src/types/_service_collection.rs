@@ -49,6 +49,12 @@ impl ServiceCollectionBuilder {
         self.service_names = input;
         self
     }
+    /// <p>An array of strings that each specifies the name of an Amazon Web Services service.</p>
+    pub fn get_service_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceName>> {
+        &self.service_names
+    }
     /// Consumes the builder and constructs a [`ServiceCollection`](crate::types::ServiceCollection).
     pub fn build(self) -> crate::types::ServiceCollection {
         crate::types::ServiceCollection {

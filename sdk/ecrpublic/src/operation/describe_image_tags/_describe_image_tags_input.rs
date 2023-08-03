@@ -64,6 +64,10 @@ impl DescribeImageTagsInputBuilder {
         self.registry_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID that's associated with the public registry that contains the repository where images are described. If you do not specify a registry, the default public registry is assumed.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_id
+    }
     /// <p>The name of the repository that contains the image tag details to describe.</p>
     pub fn repository_name(
         mut self,
@@ -80,6 +84,10 @@ impl DescribeImageTagsInputBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name of the repository that contains the image tag details to describe.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>The <code>nextToken</code> value that's returned from a previous paginated <code>DescribeImageTags</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. If there are no more results to return, this value is <code>null</code>. If you specify images with <code>imageIds</code>, you can't use this option.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -90,6 +98,10 @@ impl DescribeImageTagsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The <code>nextToken</code> value that's returned from a previous paginated <code>DescribeImageTags</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. If there are no more results to return, this value is <code>null</code>. If you specify images with <code>imageIds</code>, you can't use this option.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of repository results that's returned by <code>DescribeImageTags</code> in paginated output. When this parameter is used, <code>DescribeImageTags</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>DescribeImageTags</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter isn't used, then <code>DescribeImageTags</code> returns up to 100 results and a <code>nextToken</code> value, if applicable. If you specify images with <code>imageIds</code>, you can't use this option.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -99,6 +111,10 @@ impl DescribeImageTagsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of repository results that's returned by <code>DescribeImageTags</code> in paginated output. When this parameter is used, <code>DescribeImageTags</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>DescribeImageTags</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter isn't used, then <code>DescribeImageTags</code> returns up to 100 results and a <code>nextToken</code> value, if applicable. If you specify images with <code>imageIds</code>, you can't use this option.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeImageTagsInput`](crate::operation::describe_image_tags::DescribeImageTagsInput).
     pub fn build(

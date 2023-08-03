@@ -66,6 +66,10 @@ impl ZendeskDestinationPropertiesBuilder {
         self.object = input;
         self
     }
+    /// <p>The object specified in the Zendesk flow destination.</p>
+    pub fn get_object(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object
+    }
     /// Appends an item to `id_field_names`.
     ///
     /// To override the contents of this collection use [`set_id_field_names`](Self::set_id_field_names).
@@ -88,6 +92,12 @@ impl ZendeskDestinationPropertiesBuilder {
         self.id_field_names = input;
         self
     }
+    /// <p> A list of field names that can be used as an ID field when performing a write operation. </p>
+    pub fn get_id_field_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.id_field_names
+    }
     /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
     pub fn error_handling_config(mut self, input: crate::types::ErrorHandlingConfig) -> Self {
         self.error_handling_config = ::std::option::Option::Some(input);
@@ -101,6 +111,12 @@ impl ZendeskDestinationPropertiesBuilder {
         self.error_handling_config = input;
         self
     }
+    /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
+    pub fn get_error_handling_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ErrorHandlingConfig> {
+        &self.error_handling_config
+    }
     /// <p> The possible write operations in the destination connector. When this value is not provided, this defaults to the <code>INSERT</code> operation. </p>
     pub fn write_operation_type(mut self, input: crate::types::WriteOperationType) -> Self {
         self.write_operation_type = ::std::option::Option::Some(input);
@@ -113,6 +129,12 @@ impl ZendeskDestinationPropertiesBuilder {
     ) -> Self {
         self.write_operation_type = input;
         self
+    }
+    /// <p> The possible write operations in the destination connector. When this value is not provided, this defaults to the <code>INSERT</code> operation. </p>
+    pub fn get_write_operation_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::WriteOperationType> {
+        &self.write_operation_type
     }
     /// Consumes the builder and constructs a [`ZendeskDestinationProperties`](crate::types::ZendeskDestinationProperties).
     pub fn build(self) -> crate::types::ZendeskDestinationProperties {

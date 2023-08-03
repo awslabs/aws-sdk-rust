@@ -41,6 +41,10 @@ impl StopMeetingTranscriptionInputBuilder {
         self.meeting_id = input;
         self
     }
+    /// <p>The unique ID of the meeting for which you stop transcription.</p>
+    pub fn get_meeting_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.meeting_id
+    }
     /// Consumes the builder and constructs a [`StopMeetingTranscriptionInput`](crate::operation::stop_meeting_transcription::StopMeetingTranscriptionInput).
     pub fn build(
         self,

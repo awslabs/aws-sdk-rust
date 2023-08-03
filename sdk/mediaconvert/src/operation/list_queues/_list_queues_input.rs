@@ -63,6 +63,10 @@ impl ListQueuesInputBuilder {
         self.list_by = input;
         self
     }
+    /// Optional. When you request a list of queues, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by creation date.
+    pub fn get_list_by(&self) -> &::std::option::Option<crate::types::QueueListBy> {
+        &self.list_by
+    }
     /// Optional. Number of queues, up to twenty, that will be returned at one time.
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl ListQueuesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// Optional. Number of queues, up to twenty, that will be returned at one time.
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Use this string, provided with the response to a previous request, to request the next batch of queues.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -83,6 +91,10 @@ impl ListQueuesInputBuilder {
         self.next_token = input;
         self
     }
+    /// Use this string, provided with the response to a previous request, to request the next batch of queues.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
     pub fn order(mut self, input: crate::types::Order) -> Self {
         self.order = ::std::option::Option::Some(input);
@@ -92,6 +104,10 @@ impl ListQueuesInputBuilder {
     pub fn set_order(mut self, input: ::std::option::Option<crate::types::Order>) -> Self {
         self.order = input;
         self
+    }
+    /// Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
+    pub fn get_order(&self) -> &::std::option::Option<crate::types::Order> {
+        &self.order
     }
     /// Consumes the builder and constructs a [`ListQueuesInput`](crate::operation::list_queues::ListQueuesInput).
     pub fn build(

@@ -36,6 +36,12 @@ impl GetPatchBaselineFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetPatchBaseline as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_patch_baseline::builders::GetPatchBaselineInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,5 +135,11 @@ impl GetPatchBaselineFluentBuilder {
     pub fn set_baseline_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_baseline_id(input);
         self
+    }
+    /// <p>The ID of the patch baseline to retrieve.</p> <note>
+    /// <p>To retrieve information about an Amazon Web Services managed patch baseline, specify the full Amazon Resource Name (ARN) of the baseline. For example, for the baseline <code>AWS-AmazonLinuxDefaultPatchBaseline</code>, specify <code>arn:aws:ssm:us-east-2:733109147000:patchbaseline/pb-0e392de35e7c563b7</code> instead of <code>pb-0e392de35e7c563b7</code>.</p>
+    /// </note>
+    pub fn get_baseline_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_baseline_id()
     }
 }

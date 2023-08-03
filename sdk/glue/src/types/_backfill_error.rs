@@ -59,6 +59,10 @@ impl BackfillErrorBuilder {
         self.code = input;
         self
     }
+    /// <p>The error code for an error that occurred when registering partition indexes for an existing table.</p>
+    pub fn get_code(&self) -> &::std::option::Option<crate::types::BackfillErrorCode> {
+        &self.code
+    }
     /// Appends an item to `partitions`.
     ///
     /// To override the contents of this collection use [`set_partitions`](Self::set_partitions).
@@ -77,6 +81,12 @@ impl BackfillErrorBuilder {
     ) -> Self {
         self.partitions = input;
         self
+    }
+    /// <p>A list of a limited number of partitions in the response.</p>
+    pub fn get_partitions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PartitionValueList>> {
+        &self.partitions
     }
     /// Consumes the builder and constructs a [`BackfillError`](crate::types::BackfillError).
     pub fn build(self) -> crate::types::BackfillError {

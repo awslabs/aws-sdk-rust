@@ -74,6 +74,10 @@ impl DescribeAgentsInputBuilder {
         self.agent_ids = input;
         self
     }
+    /// <p>The agent or the collector IDs for which you want information. If you specify no IDs, the system returns information about all agents/collectors associated with your user.</p>
+    pub fn get_agent_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.agent_ids
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -95,6 +99,11 @@ impl DescribeAgentsInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>
+    /// <p> <code>{"key": "collectionStatus", "value": "STARTED"}</code> </p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
+    }
     /// <p>The total number of agents/collectors to return in a single page of output. The maximum value is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -105,6 +114,10 @@ impl DescribeAgentsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The total number of agents/collectors to return in a single page of output. The maximum value is 100.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>Token to retrieve the next set of results. For example, if you previously specified 100 IDs for <code>DescribeAgentsRequest$agentIds</code> but set <code>DescribeAgentsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -114,6 +127,10 @@ impl DescribeAgentsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Token to retrieve the next set of results. For example, if you previously specified 100 IDs for <code>DescribeAgentsRequest$agentIds</code> but set <code>DescribeAgentsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeAgentsInput`](crate::operation::describe_agents::DescribeAgentsInput).
     pub fn build(

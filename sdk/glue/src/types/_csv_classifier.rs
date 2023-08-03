@@ -128,6 +128,10 @@ impl CsvClassifierBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the classifier.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The time that this classifier was registered.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -140,6 +144,10 @@ impl CsvClassifierBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The time that this classifier was registered.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The time that this classifier was last updated.</p>
     pub fn last_updated(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -154,6 +162,10 @@ impl CsvClassifierBuilder {
         self.last_updated = input;
         self
     }
+    /// <p>The time that this classifier was last updated.</p>
+    pub fn get_last_updated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated
+    }
     /// <p>The version of this classifier.</p>
     pub fn version(mut self, input: i64) -> Self {
         self.version = ::std::option::Option::Some(input);
@@ -163,6 +175,10 @@ impl CsvClassifierBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The version of this classifier.</p>
+    pub fn get_version(&self) -> &::std::option::Option<i64> {
+        &self.version
     }
     /// <p>A custom symbol to denote what separates each column entry in the row.</p>
     pub fn delimiter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -174,6 +190,10 @@ impl CsvClassifierBuilder {
         self.delimiter = input;
         self
     }
+    /// <p>A custom symbol to denote what separates each column entry in the row.</p>
+    pub fn get_delimiter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delimiter
+    }
     /// <p>A custom symbol to denote what combines content into a single column value. It must be different from the column delimiter.</p>
     pub fn quote_symbol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.quote_symbol = ::std::option::Option::Some(input.into());
@@ -183,6 +203,10 @@ impl CsvClassifierBuilder {
     pub fn set_quote_symbol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.quote_symbol = input;
         self
+    }
+    /// <p>A custom symbol to denote what combines content into a single column value. It must be different from the column delimiter.</p>
+    pub fn get_quote_symbol(&self) -> &::std::option::Option<::std::string::String> {
+        &self.quote_symbol
     }
     /// <p>Indicates whether the CSV file contains a header.</p>
     pub fn contains_header(mut self, input: crate::types::CsvHeaderOption) -> Self {
@@ -196,6 +220,10 @@ impl CsvClassifierBuilder {
     ) -> Self {
         self.contains_header = input;
         self
+    }
+    /// <p>Indicates whether the CSV file contains a header.</p>
+    pub fn get_contains_header(&self) -> &::std::option::Option<crate::types::CsvHeaderOption> {
+        &self.contains_header
     }
     /// Appends an item to `header`.
     ///
@@ -216,6 +244,10 @@ impl CsvClassifierBuilder {
         self.header = input;
         self
     }
+    /// <p>A list of strings representing column names.</p>
+    pub fn get_header(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.header
+    }
     /// <p>Specifies not to trim values before identifying the type of column values. The default value is <code>true</code>.</p>
     pub fn disable_value_trimming(mut self, input: bool) -> Self {
         self.disable_value_trimming = ::std::option::Option::Some(input);
@@ -225,6 +257,10 @@ impl CsvClassifierBuilder {
     pub fn set_disable_value_trimming(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disable_value_trimming = input;
         self
+    }
+    /// <p>Specifies not to trim values before identifying the type of column values. The default value is <code>true</code>.</p>
+    pub fn get_disable_value_trimming(&self) -> &::std::option::Option<bool> {
+        &self.disable_value_trimming
     }
     /// <p>Enables the processing of files that contain only one column.</p>
     pub fn allow_single_column(mut self, input: bool) -> Self {
@@ -236,6 +272,10 @@ impl CsvClassifierBuilder {
         self.allow_single_column = input;
         self
     }
+    /// <p>Enables the processing of files that contain only one column.</p>
+    pub fn get_allow_single_column(&self) -> &::std::option::Option<bool> {
+        &self.allow_single_column
+    }
     /// <p>Enables the custom datatype to be configured.</p>
     pub fn custom_datatype_configured(mut self, input: bool) -> Self {
         self.custom_datatype_configured = ::std::option::Option::Some(input);
@@ -245,6 +285,10 @@ impl CsvClassifierBuilder {
     pub fn set_custom_datatype_configured(mut self, input: ::std::option::Option<bool>) -> Self {
         self.custom_datatype_configured = input;
         self
+    }
+    /// <p>Enables the custom datatype to be configured.</p>
+    pub fn get_custom_datatype_configured(&self) -> &::std::option::Option<bool> {
+        &self.custom_datatype_configured
     }
     /// Appends an item to `custom_datatypes`.
     ///
@@ -267,6 +311,12 @@ impl CsvClassifierBuilder {
     ) -> Self {
         self.custom_datatypes = input;
         self
+    }
+    /// <p>A list of custom datatypes including "BINARY", "BOOLEAN", "DATE", "DECIMAL", "DOUBLE", "FLOAT", "INT", "LONG", "SHORT", "STRING", "TIMESTAMP".</p>
+    pub fn get_custom_datatypes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.custom_datatypes
     }
     /// Consumes the builder and constructs a [`CsvClassifier`](crate::types::CsvClassifier).
     pub fn build(self) -> crate::types::CsvClassifier {

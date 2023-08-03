@@ -71,6 +71,15 @@ impl PersistentChatBuilder {
         self.rehydration_type = input;
         self
     }
+    /// <p>The contactId that is used for rehydration depends on the rehydration type. RehydrationType is required for persistent chat. </p>
+    /// <ul>
+    /// <li> <p> <code>ENTIRE_PAST_SESSION</code>: Rehydrates a chat from the most recently terminated past chat contact of the specified past ended chat session. To use this type, provide the <code>initialContactId</code> of the past ended chat session in the <code>sourceContactId</code> field. In this type, Amazon Connect determines the most recent chat contact on the specified chat session that has ended, and uses it to start a persistent chat. </p> </li>
+    /// <li> <p> <code>FROM_SEGMENT</code>: Rehydrates a chat from the past chat contact that is specified in the <code>sourceContactId</code> field. </p> </li>
+    /// </ul>
+    /// <p>The actual contactId used for rehydration is provided in the response of this API. </p>
+    pub fn get_rehydration_type(&self) -> &::std::option::Option<crate::types::RehydrationType> {
+        &self.rehydration_type
+    }
     /// <p>The contactId from which a persistent chat session must be started.</p>
     pub fn source_contact_id(
         mut self,
@@ -86,6 +95,10 @@ impl PersistentChatBuilder {
     ) -> Self {
         self.source_contact_id = input;
         self
+    }
+    /// <p>The contactId from which a persistent chat session must be started.</p>
+    pub fn get_source_contact_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_contact_id
     }
     /// Consumes the builder and constructs a [`PersistentChat`](crate::types::PersistentChat).
     pub fn build(self) -> crate::types::PersistentChat {

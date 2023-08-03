@@ -94,6 +94,10 @@ impl ValidStorageOptionsBuilder {
         self.storage_type = input;
         self
     }
+    /// <p>The valid storage types for your DB instance. For example: gp2, gp3, io1.</p>
+    pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_type
+    }
     /// Appends an item to `storage_size`.
     ///
     /// To override the contents of this collection use [`set_storage_size`](Self::set_storage_size).
@@ -112,6 +116,10 @@ impl ValidStorageOptionsBuilder {
     ) -> Self {
         self.storage_size = input;
         self
+    }
+    /// <p>The valid range of storage in gibibytes (GiB). For example, 100 to 16,384.</p>
+    pub fn get_storage_size(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Range>> {
+        &self.storage_size
     }
     /// Appends an item to `provisioned_iops`.
     ///
@@ -132,6 +140,12 @@ impl ValidStorageOptionsBuilder {
         self.provisioned_iops = input;
         self
     }
+    /// <p>The valid range of provisioned IOPS. For example, 1000-256,000.</p>
+    pub fn get_provisioned_iops(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Range>> {
+        &self.provisioned_iops
+    }
     /// Appends an item to `iops_to_storage_ratio`.
     ///
     /// To override the contents of this collection use [`set_iops_to_storage_ratio`](Self::set_iops_to_storage_ratio).
@@ -151,6 +165,12 @@ impl ValidStorageOptionsBuilder {
         self.iops_to_storage_ratio = input;
         self
     }
+    /// <p>The valid range of Provisioned IOPS to gibibytes of storage multiplier. For example, 3-10, which means that provisioned IOPS can be between 3 and 10 times storage.</p>
+    pub fn get_iops_to_storage_ratio(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DoubleRange>> {
+        &self.iops_to_storage_ratio
+    }
     /// <p>Whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance class.</p>
     pub fn supports_storage_autoscaling(mut self, input: bool) -> Self {
         self.supports_storage_autoscaling = ::std::option::Option::Some(input);
@@ -160,6 +180,10 @@ impl ValidStorageOptionsBuilder {
     pub fn set_supports_storage_autoscaling(mut self, input: ::std::option::Option<bool>) -> Self {
         self.supports_storage_autoscaling = input;
         self
+    }
+    /// <p>Whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance class.</p>
+    pub fn get_supports_storage_autoscaling(&self) -> &::std::option::Option<bool> {
+        &self.supports_storage_autoscaling
     }
     /// Appends an item to `provisioned_storage_throughput`.
     ///
@@ -180,6 +204,12 @@ impl ValidStorageOptionsBuilder {
         self.provisioned_storage_throughput = input;
         self
     }
+    /// <p>The valid range of provisioned storage throughput. For example, 500-4,000 mebibytes per second (MiBps).</p>
+    pub fn get_provisioned_storage_throughput(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Range>> {
+        &self.provisioned_storage_throughput
+    }
     /// Appends an item to `storage_throughput_to_iops_ratio`.
     ///
     /// To override the contents of this collection use [`set_storage_throughput_to_iops_ratio`](Self::set_storage_throughput_to_iops_ratio).
@@ -198,6 +228,12 @@ impl ValidStorageOptionsBuilder {
     ) -> Self {
         self.storage_throughput_to_iops_ratio = input;
         self
+    }
+    /// <p>The valid range of storage throughput to provisioned IOPS ratios. For example, 0-0.25.</p>
+    pub fn get_storage_throughput_to_iops_ratio(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DoubleRange>> {
+        &self.storage_throughput_to_iops_ratio
     }
     /// Consumes the builder and constructs a [`ValidStorageOptions`](crate::types::ValidStorageOptions).
     pub fn build(self) -> crate::types::ValidStorageOptions {

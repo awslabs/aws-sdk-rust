@@ -64,6 +64,10 @@ impl InvokeEndpointAsyncOutputBuilder {
         self.inference_id = input;
         self
     }
+    /// <p>Identifier for an inference request. This will be the same as the <code>InferenceId</code> specified in the input. Amazon SageMaker will generate an identifier for you if you do not specify one.</p>
+    pub fn get_inference_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.inference_id
+    }
     /// <p>The Amazon S3 URI where the inference response payload is stored.</p>
     pub fn output_location(
         mut self,
@@ -80,6 +84,10 @@ impl InvokeEndpointAsyncOutputBuilder {
         self.output_location = input;
         self
     }
+    /// <p>The Amazon S3 URI where the inference response payload is stored.</p>
+    pub fn get_output_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_location
+    }
     /// <p>The Amazon S3 URI where the inference failure response payload is stored.</p>
     pub fn failure_location(
         mut self,
@@ -95,6 +103,10 @@ impl InvokeEndpointAsyncOutputBuilder {
     ) -> Self {
         self.failure_location = input;
         self
+    }
+    /// <p>The Amazon S3 URI where the inference failure response payload is stored.</p>
+    pub fn get_failure_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_location
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -70,6 +70,10 @@ impl CreateProvisioningTemplateVersionOutputBuilder {
         self.template_arn = input;
         self
     }
+    /// <p>The ARN that identifies the provisioning template.</p>
+    pub fn get_template_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_arn
+    }
     /// <p>The name of the provisioning template.</p>
     pub fn template_name(
         mut self,
@@ -86,6 +90,10 @@ impl CreateProvisioningTemplateVersionOutputBuilder {
         self.template_name = input;
         self
     }
+    /// <p>The name of the provisioning template.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
     /// <p>The version of the provisioning template.</p>
     pub fn version_id(mut self, input: i32) -> Self {
         self.version_id = ::std::option::Option::Some(input);
@@ -96,6 +104,10 @@ impl CreateProvisioningTemplateVersionOutputBuilder {
         self.version_id = input;
         self
     }
+    /// <p>The version of the provisioning template.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<i32> {
+        &self.version_id
+    }
     /// <p>True if the provisioning template version is the default version, otherwise false.</p>
     pub fn is_default_version(mut self, input: bool) -> Self {
         self.is_default_version = ::std::option::Option::Some(input);
@@ -105,6 +117,10 @@ impl CreateProvisioningTemplateVersionOutputBuilder {
     pub fn set_is_default_version(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_default_version = input;
         self
+    }
+    /// <p>True if the provisioning template version is the default version, otherwise false.</p>
+    pub fn get_is_default_version(&self) -> &::std::option::Option<bool> {
+        &self.is_default_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -88,6 +88,10 @@ impl MetricDatapointBuilder {
         self.average = input;
         self
     }
+    /// <p>The average.</p>
+    pub fn get_average(&self) -> &::std::option::Option<f64> {
+        &self.average
+    }
     /// <p>The maximum.</p>
     pub fn maximum(mut self, input: f64) -> Self {
         self.maximum = ::std::option::Option::Some(input);
@@ -97,6 +101,10 @@ impl MetricDatapointBuilder {
     pub fn set_maximum(mut self, input: ::std::option::Option<f64>) -> Self {
         self.maximum = input;
         self
+    }
+    /// <p>The maximum.</p>
+    pub fn get_maximum(&self) -> &::std::option::Option<f64> {
+        &self.maximum
     }
     /// <p>The minimum.</p>
     pub fn minimum(mut self, input: f64) -> Self {
@@ -108,6 +116,10 @@ impl MetricDatapointBuilder {
         self.minimum = input;
         self
     }
+    /// <p>The minimum.</p>
+    pub fn get_minimum(&self) -> &::std::option::Option<f64> {
+        &self.minimum
+    }
     /// <p>The sample count.</p>
     pub fn sample_count(mut self, input: f64) -> Self {
         self.sample_count = ::std::option::Option::Some(input);
@@ -118,6 +130,10 @@ impl MetricDatapointBuilder {
         self.sample_count = input;
         self
     }
+    /// <p>The sample count.</p>
+    pub fn get_sample_count(&self) -> &::std::option::Option<f64> {
+        &self.sample_count
+    }
     /// <p>The sum.</p>
     pub fn sum(mut self, input: f64) -> Self {
         self.sum = ::std::option::Option::Some(input);
@@ -127,6 +143,10 @@ impl MetricDatapointBuilder {
     pub fn set_sum(mut self, input: ::std::option::Option<f64>) -> Self {
         self.sum = input;
         self
+    }
+    /// <p>The sum.</p>
+    pub fn get_sum(&self) -> &::std::option::Option<f64> {
+        &self.sum
     }
     /// <p>The timestamp (e.g., <code>1479816991.349</code>).</p>
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -141,6 +161,10 @@ impl MetricDatapointBuilder {
         self.timestamp = input;
         self
     }
+    /// <p>The timestamp (e.g., <code>1479816991.349</code>).</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.timestamp
+    }
     /// <p>The unit. </p>
     pub fn unit(mut self, input: crate::types::MetricUnit) -> Self {
         self.unit = ::std::option::Option::Some(input);
@@ -150,6 +174,10 @@ impl MetricDatapointBuilder {
     pub fn set_unit(mut self, input: ::std::option::Option<crate::types::MetricUnit>) -> Self {
         self.unit = input;
         self
+    }
+    /// <p>The unit. </p>
+    pub fn get_unit(&self) -> &::std::option::Option<crate::types::MetricUnit> {
+        &self.unit
     }
     /// Consumes the builder and constructs a [`MetricDatapoint`](crate::types::MetricDatapoint).
     pub fn build(self) -> crate::types::MetricDatapoint {

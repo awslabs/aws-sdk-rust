@@ -36,6 +36,10 @@ impl IsAuthorizedFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the IsAuthorized as a reference.
+    pub fn as_input(&self) -> &crate::operation::is_authorized::builders::IsAuthorizedInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl IsAuthorizedFluentBuilder {
         self.inner = self.inner.set_policy_store_id(input);
         self
     }
+    /// <p>Specifies the ID of the policy store. Policies in this policy store will be used to make an authorization decision for the input.</p>
+    pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_store_id()
+    }
     /// <p>Specifies the principal for which the authorization decision is to be made.</p>
     pub fn principal(mut self, input: crate::types::EntityIdentifier) -> Self {
         self.inner = self.inner.principal(input);
@@ -136,6 +144,10 @@ impl IsAuthorizedFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_principal(input);
         self
+    }
+    /// <p>Specifies the principal for which the authorization decision is to be made.</p>
+    pub fn get_principal(&self) -> &::std::option::Option<crate::types::EntityIdentifier> {
+        self.inner.get_principal()
     }
     /// <p>Specifies the requested action to be authorized. For example, is the principal authorized to perform this action on the resource?</p>
     pub fn action(mut self, input: crate::types::ActionIdentifier) -> Self {
@@ -150,6 +162,10 @@ impl IsAuthorizedFluentBuilder {
         self.inner = self.inner.set_action(input);
         self
     }
+    /// <p>Specifies the requested action to be authorized. For example, is the principal authorized to perform this action on the resource?</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::ActionIdentifier> {
+        self.inner.get_action()
+    }
     /// <p>Specifies the resource for which the authorization decision is to be made.</p>
     pub fn resource(mut self, input: crate::types::EntityIdentifier) -> Self {
         self.inner = self.inner.resource(input);
@@ -163,6 +179,10 @@ impl IsAuthorizedFluentBuilder {
         self.inner = self.inner.set_resource(input);
         self
     }
+    /// <p>Specifies the resource for which the authorization decision is to be made.</p>
+    pub fn get_resource(&self) -> &::std::option::Option<crate::types::EntityIdentifier> {
+        self.inner.get_resource()
+    }
     /// <p>Specifies additional context that can be used to make more granular authorization decisions.</p>
     pub fn context(mut self, input: crate::types::ContextDefinition) -> Self {
         self.inner = self.inner.context(input);
@@ -175,6 +195,10 @@ impl IsAuthorizedFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_context(input);
         self
+    }
+    /// <p>Specifies additional context that can be used to make more granular authorization decisions.</p>
+    pub fn get_context(&self) -> &::std::option::Option<crate::types::ContextDefinition> {
+        self.inner.get_context()
     }
     /// <p>Specifies the list of resources and principals and their associated attributes that Verified Permissions can examine when evaluating the policies. </p> <note>
     /// <p>You can include only principal and resource entities in this parameter; you can't include actions. You must specify actions in the schema.</p>
@@ -192,5 +216,11 @@ impl IsAuthorizedFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_entities(input);
         self
+    }
+    /// <p>Specifies the list of resources and principals and their associated attributes that Verified Permissions can examine when evaluating the policies. </p> <note>
+    /// <p>You can include only principal and resource entities in this parameter; you can't include actions. You must specify actions in the schema.</p>
+    /// </note>
+    pub fn get_entities(&self) -> &::std::option::Option<crate::types::EntitiesDefinition> {
+        self.inner.get_entities()
     }
 }

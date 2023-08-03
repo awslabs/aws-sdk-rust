@@ -125,6 +125,10 @@ impl DescribeModelOutputBuilder {
         self.model_name = input;
         self
     }
+    /// <p>Name of the SageMaker model.</p>
+    pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_name
+    }
     /// <p>The location of the primary inference code, associated artifacts, and custom environment map that the inference code uses when it is deployed in production. </p>
     pub fn primary_container(mut self, input: crate::types::ContainerDefinition) -> Self {
         self.primary_container = ::std::option::Option::Some(input);
@@ -137,6 +141,12 @@ impl DescribeModelOutputBuilder {
     ) -> Self {
         self.primary_container = input;
         self
+    }
+    /// <p>The location of the primary inference code, associated artifacts, and custom environment map that the inference code uses when it is deployed in production. </p>
+    pub fn get_primary_container(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContainerDefinition> {
+        &self.primary_container
     }
     /// Appends an item to `containers`.
     ///
@@ -157,6 +167,12 @@ impl DescribeModelOutputBuilder {
         self.containers = input;
         self
     }
+    /// <p>The containers in the inference pipeline.</p>
+    pub fn get_containers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerDefinition>> {
+        &self.containers
+    }
     /// <p>Specifies details of how containers in a multi-container endpoint are called.</p>
     pub fn inference_execution_config(
         mut self,
@@ -172,6 +188,12 @@ impl DescribeModelOutputBuilder {
     ) -> Self {
         self.inference_execution_config = input;
         self
+    }
+    /// <p>Specifies details of how containers in a multi-container endpoint are called.</p>
+    pub fn get_inference_execution_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::InferenceExecutionConfig> {
+        &self.inference_execution_config
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the model.</p>
     pub fn execution_role_arn(
@@ -189,6 +211,10 @@ impl DescribeModelOutputBuilder {
         self.execution_role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the model.</p>
+    pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_role_arn
+    }
     /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object that specifies the VPC that this model has access to. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> </p>
     pub fn vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
         self.vpc_config = ::std::option::Option::Some(input);
@@ -198,6 +224,10 @@ impl DescribeModelOutputBuilder {
     pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
         self.vpc_config = input;
         self
+    }
+    /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object that specifies the VPC that this model has access to. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> </p>
+    pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
+        &self.vpc_config
     }
     /// <p>A timestamp that shows when the model was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -212,6 +242,10 @@ impl DescribeModelOutputBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>A timestamp that shows when the model was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The Amazon Resource Name (ARN) of the model.</p>
     pub fn model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_arn = ::std::option::Option::Some(input.into());
@@ -222,6 +256,10 @@ impl DescribeModelOutputBuilder {
         self.model_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the model.</p>
+    pub fn get_model_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_arn
+    }
     /// <p>If <code>True</code>, no inbound or outbound network calls can be made to or from the model container.</p>
     pub fn enable_network_isolation(mut self, input: bool) -> Self {
         self.enable_network_isolation = ::std::option::Option::Some(input);
@@ -231,6 +269,10 @@ impl DescribeModelOutputBuilder {
     pub fn set_enable_network_isolation(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_network_isolation = input;
         self
+    }
+    /// <p>If <code>True</code>, no inbound or outbound network calls can be made to or from the model container.</p>
+    pub fn get_enable_network_isolation(&self) -> &::std::option::Option<bool> {
+        &self.enable_network_isolation
     }
     /// <p>A set of recommended deployment configurations for the model.</p>
     pub fn deployment_recommendation(
@@ -247,6 +289,12 @@ impl DescribeModelOutputBuilder {
     ) -> Self {
         self.deployment_recommendation = input;
         self
+    }
+    /// <p>A set of recommended deployment configurations for the model.</p>
+    pub fn get_deployment_recommendation(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeploymentRecommendation> {
+        &self.deployment_recommendation
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

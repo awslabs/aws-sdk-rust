@@ -45,6 +45,10 @@ impl GetPolicyStoreInputBuilder {
         self.policy_store_id = input;
         self
     }
+    /// <p>Specifies the ID of the policy store that you want information about.</p>
+    pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_store_id
+    }
     /// Consumes the builder and constructs a [`GetPolicyStoreInput`](crate::operation::get_policy_store::GetPolicyStoreInput).
     pub fn build(
         self,

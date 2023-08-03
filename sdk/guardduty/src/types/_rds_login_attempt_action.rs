@@ -52,6 +52,10 @@ impl RdsLoginAttemptActionBuilder {
         self.remote_ip_details = input;
         self
     }
+    /// <p>Contains information about the remote IP address of the connection.</p>
+    pub fn get_remote_ip_details(&self) -> &::std::option::Option<crate::types::RemoteIpDetails> {
+        &self.remote_ip_details
+    }
     /// Appends an item to `login_attributes`.
     ///
     /// To override the contents of this collection use [`set_login_attributes`](Self::set_login_attributes).
@@ -70,6 +74,12 @@ impl RdsLoginAttemptActionBuilder {
     ) -> Self {
         self.login_attributes = input;
         self
+    }
+    /// <p>Indicates the login attributes used in the login attempt.</p>
+    pub fn get_login_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LoginAttribute>> {
+        &self.login_attributes
     }
     /// Consumes the builder and constructs a [`RdsLoginAttemptAction`](crate::types::RdsLoginAttemptAction).
     pub fn build(self) -> crate::types::RdsLoginAttemptAction {

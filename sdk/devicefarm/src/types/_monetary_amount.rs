@@ -48,6 +48,10 @@ impl MonetaryAmountBuilder {
         self.amount = input;
         self
     }
+    /// <p>The numerical amount of an offering or transaction.</p>
+    pub fn get_amount(&self) -> &::std::option::Option<f64> {
+        &self.amount
+    }
     /// <p>The currency code of a monetary amount. For example, <code>USD</code> means U.S. dollars.</p>
     pub fn currency_code(mut self, input: crate::types::CurrencyCode) -> Self {
         self.currency_code = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl MonetaryAmountBuilder {
     ) -> Self {
         self.currency_code = input;
         self
+    }
+    /// <p>The currency code of a monetary amount. For example, <code>USD</code> means U.S. dollars.</p>
+    pub fn get_currency_code(&self) -> &::std::option::Option<crate::types::CurrencyCode> {
+        &self.currency_code
     }
     /// Consumes the builder and constructs a [`MonetaryAmount`](crate::types::MonetaryAmount).
     pub fn build(self) -> crate::types::MonetaryAmount {

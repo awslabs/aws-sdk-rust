@@ -46,6 +46,10 @@ impl GetGrantOutputBuilder {
         self.grant = input;
         self
     }
+    /// <p>Grant details.</p>
+    pub fn get_grant(&self) -> &::std::option::Option<crate::types::Grant> {
+        &self.grant
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

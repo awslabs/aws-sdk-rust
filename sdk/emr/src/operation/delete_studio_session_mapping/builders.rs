@@ -36,6 +36,10 @@ impl DeleteStudioSessionMappingFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteStudioSessionMapping as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_studio_session_mapping::builders::DeleteStudioSessionMappingInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl DeleteStudioSessionMappingFluentBuilder {
         self.inner = self.inner.set_studio_id(input);
         self
     }
+    /// <p>The ID of the Amazon EMR Studio.</p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_studio_id()
+    }
     /// <p>The globally unique identifier (GUID) of the user or group to remove from the Amazon EMR Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
     pub fn identity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_id(input.into());
@@ -135,6 +143,10 @@ impl DeleteStudioSessionMappingFluentBuilder {
     pub fn set_identity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_id(input);
         self
+    }
+    /// <p>The globally unique identifier (GUID) of the user or group to remove from the Amazon EMR Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+    pub fn get_identity_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_id()
     }
     /// <p>The name of the user name or group to remove from the Amazon EMR Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
     pub fn identity_name(
@@ -152,6 +164,10 @@ impl DeleteStudioSessionMappingFluentBuilder {
         self.inner = self.inner.set_identity_name(input);
         self
     }
+    /// <p>The name of the user name or group to remove from the Amazon EMR Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+    pub fn get_identity_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_name()
+    }
     /// <p>Specifies whether the identity to delete from the Amazon EMR Studio is a user or a group.</p>
     pub fn identity_type(mut self, input: crate::types::IdentityType) -> Self {
         self.inner = self.inner.identity_type(input);
@@ -164,5 +180,9 @@ impl DeleteStudioSessionMappingFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_identity_type(input);
         self
+    }
+    /// <p>Specifies whether the identity to delete from the Amazon EMR Studio is a user or a group.</p>
+    pub fn get_identity_type(&self) -> &::std::option::Option<crate::types::IdentityType> {
+        self.inner.get_identity_type()
     }
 }

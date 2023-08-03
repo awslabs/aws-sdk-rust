@@ -46,6 +46,10 @@ impl GetCoreDefinitionInputBuilder {
         self.core_definition_id = input;
         self
     }
+    /// The ID of the core definition.
+    pub fn get_core_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.core_definition_id
+    }
     /// Consumes the builder and constructs a [`GetCoreDefinitionInput`](crate::operation::get_core_definition::GetCoreDefinitionInput).
     pub fn build(
         self,

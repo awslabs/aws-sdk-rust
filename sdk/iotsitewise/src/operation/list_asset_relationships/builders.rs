@@ -36,6 +36,13 @@ impl ListAssetRelationshipsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListAssetRelationships as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_asset_relationships::builders::ListAssetRelationshipsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +145,10 @@ impl ListAssetRelationshipsFluentBuilder {
         self.inner = self.inner.set_asset_id(input);
         self
     }
+    /// <p>The ID of the asset.</p>
+    pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_asset_id()
+    }
     /// <p>The type of traversal to use to identify asset relationships. Choose the following option:</p>
     /// <ul>
     /// <li> <p> <code>PATH_TO_ROOT</code> – Identify the asset's parent assets up to the root asset. The asset that you specify in <code>assetId</code> is the first result in the list of <code>assetRelationshipSummaries</code>, and the root asset is the last result.</p> </li>
@@ -157,6 +168,13 @@ impl ListAssetRelationshipsFluentBuilder {
         self.inner = self.inner.set_traversal_type(input);
         self
     }
+    /// <p>The type of traversal to use to identify asset relationships. Choose the following option:</p>
+    /// <ul>
+    /// <li> <p> <code>PATH_TO_ROOT</code> – Identify the asset's parent assets up to the root asset. The asset that you specify in <code>assetId</code> is the first result in the list of <code>assetRelationshipSummaries</code>, and the root asset is the last result.</p> </li>
+    /// </ul>
+    pub fn get_traversal_type(&self) -> &::std::option::Option<crate::types::TraversalType> {
+        self.inner.get_traversal_type()
+    }
     /// <p>The token to be used for the next set of paginated results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -167,6 +185,10 @@ impl ListAssetRelationshipsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return for each paginated request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -176,5 +198,9 @@ impl ListAssetRelationshipsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return for each paginated request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

@@ -97,6 +97,12 @@ impl TargetTrackingScalingPolicyConfigurationBuilder {
         self.target_value = input;
         self
     }
+    /// <p>The target value for the metric. Although this property accepts numbers of type Double, it won't accept values that are either too small or too large. Values must be in the range of -2^360 to 2^360. The value must be a valid number based on the choice of metric. For example, if the metric is CPU utilization, then the target value is a percent value that represents how much of the CPU can be used before scaling out. </p> <note>
+    /// <p>If the scaling policy specifies the <code>ALBRequestCountPerTarget</code> predefined metric, specify the target utilization as the optimal average request count per target during any one-minute interval.</p>
+    /// </note>
+    pub fn get_target_value(&self) -> &::std::option::Option<f64> {
+        &self.target_value
+    }
     /// <p>A predefined metric. You can specify either a predefined metric or a customized metric.</p>
     pub fn predefined_metric_specification(
         mut self,
@@ -112,6 +118,12 @@ impl TargetTrackingScalingPolicyConfigurationBuilder {
     ) -> Self {
         self.predefined_metric_specification = input;
         self
+    }
+    /// <p>A predefined metric. You can specify either a predefined metric or a customized metric.</p>
+    pub fn get_predefined_metric_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::PredefinedMetricSpecification> {
+        &self.predefined_metric_specification
     }
     /// <p>A customized metric. You can specify either a predefined metric or a customized metric.</p>
     pub fn customized_metric_specification(
@@ -129,6 +141,12 @@ impl TargetTrackingScalingPolicyConfigurationBuilder {
         self.customized_metric_specification = input;
         self
     }
+    /// <p>A customized metric. You can specify either a predefined metric or a customized metric.</p>
+    pub fn get_customized_metric_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomizedMetricSpecification> {
+        &self.customized_metric_specification
+    }
     /// <p>The amount of time, in seconds, to wait for a previous scale-out activity to take effect. For more information and for default values, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#target-tracking-cooldown">Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.</p>
     pub fn scale_out_cooldown(mut self, input: i32) -> Self {
         self.scale_out_cooldown = ::std::option::Option::Some(input);
@@ -138,6 +156,10 @@ impl TargetTrackingScalingPolicyConfigurationBuilder {
     pub fn set_scale_out_cooldown(mut self, input: ::std::option::Option<i32>) -> Self {
         self.scale_out_cooldown = input;
         self
+    }
+    /// <p>The amount of time, in seconds, to wait for a previous scale-out activity to take effect. For more information and for default values, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#target-tracking-cooldown">Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+    pub fn get_scale_out_cooldown(&self) -> &::std::option::Option<i32> {
+        &self.scale_out_cooldown
     }
     /// <p>The amount of time, in seconds, after a scale-in activity completes before another scale-in activity can start. For more information and for default values, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#target-tracking-cooldown">Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.</p>
     pub fn scale_in_cooldown(mut self, input: i32) -> Self {
@@ -149,6 +171,10 @@ impl TargetTrackingScalingPolicyConfigurationBuilder {
         self.scale_in_cooldown = input;
         self
     }
+    /// <p>The amount of time, in seconds, after a scale-in activity completes before another scale-in activity can start. For more information and for default values, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#target-tracking-cooldown">Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+    pub fn get_scale_in_cooldown(&self) -> &::std::option::Option<i32> {
+        &self.scale_in_cooldown
+    }
     /// <p>Indicates whether scale in by the target tracking scaling policy is disabled. If the value is <code>true</code>, scale in is disabled and the target tracking scaling policy won't remove capacity from the scalable target. Otherwise, scale in is enabled and the target tracking scaling policy can remove capacity from the scalable target. The default value is <code>false</code>.</p>
     pub fn disable_scale_in(mut self, input: bool) -> Self {
         self.disable_scale_in = ::std::option::Option::Some(input);
@@ -158,6 +184,10 @@ impl TargetTrackingScalingPolicyConfigurationBuilder {
     pub fn set_disable_scale_in(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disable_scale_in = input;
         self
+    }
+    /// <p>Indicates whether scale in by the target tracking scaling policy is disabled. If the value is <code>true</code>, scale in is disabled and the target tracking scaling policy won't remove capacity from the scalable target. Otherwise, scale in is enabled and the target tracking scaling policy can remove capacity from the scalable target. The default value is <code>false</code>.</p>
+    pub fn get_disable_scale_in(&self) -> &::std::option::Option<bool> {
+        &self.disable_scale_in
     }
     /// Consumes the builder and constructs a [`TargetTrackingScalingPolicyConfiguration`](crate::types::TargetTrackingScalingPolicyConfiguration).
     pub fn build(self) -> crate::types::TargetTrackingScalingPolicyConfiguration {

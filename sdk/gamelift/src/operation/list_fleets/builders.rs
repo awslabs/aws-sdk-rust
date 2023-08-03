@@ -48,6 +48,10 @@ impl ListFleetsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListFleets as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_fleets::builders::ListFleetsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +140,10 @@ impl ListFleetsFluentBuilder {
         self.inner = self.inner.set_build_id(input);
         self
     }
+    /// <p>A unique identifier for the build to request fleets for. Use this parameter to return only fleets using a specified build. Use either the build ID or ARN value.</p>
+    pub fn get_build_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_build_id()
+    }
     /// <p>A unique identifier for the Realtime script to request fleets for. Use this parameter to return only fleets using a specified script. Use either the script ID or ARN value.</p>
     pub fn script_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.script_id(input.into());
@@ -145,6 +153,10 @@ impl ListFleetsFluentBuilder {
     pub fn set_script_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_script_id(input);
         self
+    }
+    /// <p>A unique identifier for the Realtime script to request fleets for. Use this parameter to return only fleets using a specified script. Use either the script ID or ARN value.</p>
+    pub fn get_script_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_script_id()
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -156,6 +168,10 @@ impl ListFleetsFluentBuilder {
         self.inner = self.inner.set_limit(input);
         self
     }
+    /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
+    }
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -165,5 +181,9 @@ impl ListFleetsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

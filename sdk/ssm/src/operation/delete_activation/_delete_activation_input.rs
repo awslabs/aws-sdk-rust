@@ -46,6 +46,10 @@ impl DeleteActivationInputBuilder {
         self.activation_id = input;
         self
     }
+    /// <p>The ID of the activation that you want to delete.</p>
+    pub fn get_activation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.activation_id
+    }
     /// Consumes the builder and constructs a [`DeleteActivationInput`](crate::operation::delete_activation::DeleteActivationInput).
     pub fn build(
         self,

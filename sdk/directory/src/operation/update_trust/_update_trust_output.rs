@@ -54,6 +54,10 @@ impl UpdateTrustOutputBuilder {
         self.request_id = input;
         self
     }
+    /// <p>The Amazon Web Services request identifier.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
+    }
     /// <p>Identifier of the trust relationship.</p>
     pub fn trust_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trust_id = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl UpdateTrustOutputBuilder {
     pub fn set_trust_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trust_id = input;
         self
+    }
+    /// <p>Identifier of the trust relationship.</p>
+    pub fn get_trust_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trust_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

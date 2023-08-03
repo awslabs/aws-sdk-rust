@@ -61,6 +61,10 @@ impl DisassociateClientVpnTargetNetworkInputBuilder {
         self.client_vpn_endpoint_id = input;
         self
     }
+    /// <p>The ID of the Client VPN endpoint from which to disassociate the target network.</p>
+    pub fn get_client_vpn_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_vpn_endpoint_id
+    }
     /// <p>The ID of the target network association.</p>
     pub fn association_id(
         mut self,
@@ -77,6 +81,10 @@ impl DisassociateClientVpnTargetNetworkInputBuilder {
         self.association_id = input;
         self
     }
+    /// <p>The ID of the target network association.</p>
+    pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_id
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -86,6 +94,10 @@ impl DisassociateClientVpnTargetNetworkInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`DisassociateClientVpnTargetNetworkInput`](crate::operation::disassociate_client_vpn_target_network::DisassociateClientVpnTargetNetworkInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_client_vpn_target_network::DisassociateClientVpnTargetNetworkInput, ::aws_smithy_http::operation::error::BuildError>{

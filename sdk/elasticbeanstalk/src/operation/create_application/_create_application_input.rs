@@ -77,6 +77,10 @@ impl CreateApplicationInputBuilder {
         self.application_name = input;
         self
     }
+    /// <p>The name of the application. Must be unique within your account.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// <p>Your description of the application.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -86,6 +90,10 @@ impl CreateApplicationInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>Your description of the application.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Specifies an application resource lifecycle configuration to prevent your application from accumulating too many versions.</p>
     pub fn resource_lifecycle_config(
@@ -102,6 +110,12 @@ impl CreateApplicationInputBuilder {
     ) -> Self {
         self.resource_lifecycle_config = input;
         self
+    }
+    /// <p>Specifies an application resource lifecycle configuration to prevent your application from accumulating too many versions.</p>
+    pub fn get_resource_lifecycle_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationResourceLifecycleConfig> {
+        &self.resource_lifecycle_config
     }
     /// Appends an item to `tags`.
     ///
@@ -123,6 +137,11 @@ impl CreateApplicationInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Specifies the tags applied to the application.</p>
+    /// <p>Elastic Beanstalk applies these tags only to the application. Environments that you create in the application don't inherit the tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
     pub fn build(

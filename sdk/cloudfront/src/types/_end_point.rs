@@ -50,6 +50,10 @@ impl EndPointBuilder {
         self.stream_type = input;
         self
     }
+    /// <p>The type of data stream where you are sending real-time log data. The only valid value is <code>Kinesis</code>.</p>
+    pub fn get_stream_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_type
+    }
     /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
     pub fn kinesis_stream_config(mut self, input: crate::types::KinesisStreamConfig) -> Self {
         self.kinesis_stream_config = ::std::option::Option::Some(input);
@@ -62,6 +66,12 @@ impl EndPointBuilder {
     ) -> Self {
         self.kinesis_stream_config = input;
         self
+    }
+    /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
+    pub fn get_kinesis_stream_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::KinesisStreamConfig> {
+        &self.kinesis_stream_config
     }
     /// Consumes the builder and constructs a [`EndPoint`](crate::types::EndPoint).
     pub fn build(self) -> crate::types::EndPoint {

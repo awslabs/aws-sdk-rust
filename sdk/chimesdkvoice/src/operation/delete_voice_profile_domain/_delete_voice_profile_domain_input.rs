@@ -47,6 +47,10 @@ impl DeleteVoiceProfileDomainInputBuilder {
         self.voice_profile_domain_id = input;
         self
     }
+    /// <p>The voice profile domain ID.</p>
+    pub fn get_voice_profile_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_profile_domain_id
+    }
     /// Consumes the builder and constructs a [`DeleteVoiceProfileDomainInput`](crate::operation::delete_voice_profile_domain::DeleteVoiceProfileDomainInput).
     pub fn build(
         self,

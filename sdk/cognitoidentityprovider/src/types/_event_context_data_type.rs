@@ -72,6 +72,10 @@ impl EventContextDataTypeBuilder {
         self.ip_address = input;
         self
     }
+    /// <p>The source IP address of your user's device.</p>
+    pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_address
+    }
     /// <p>The user's device name.</p>
     pub fn device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_name = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl EventContextDataTypeBuilder {
     pub fn set_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_name = input;
         self
+    }
+    /// <p>The user's device name.</p>
+    pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_name
     }
     /// <p>The user's time zone.</p>
     pub fn timezone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -92,6 +100,10 @@ impl EventContextDataTypeBuilder {
         self.timezone = input;
         self
     }
+    /// <p>The user's time zone.</p>
+    pub fn get_timezone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timezone
+    }
     /// <p>The user's city.</p>
     pub fn city(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.city = ::std::option::Option::Some(input.into());
@@ -102,6 +114,10 @@ impl EventContextDataTypeBuilder {
         self.city = input;
         self
     }
+    /// <p>The user's city.</p>
+    pub fn get_city(&self) -> &::std::option::Option<::std::string::String> {
+        &self.city
+    }
     /// <p>The user's country.</p>
     pub fn country(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.country = ::std::option::Option::Some(input.into());
@@ -111,6 +127,10 @@ impl EventContextDataTypeBuilder {
     pub fn set_country(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.country = input;
         self
+    }
+    /// <p>The user's country.</p>
+    pub fn get_country(&self) -> &::std::option::Option<::std::string::String> {
+        &self.country
     }
     /// Consumes the builder and constructs a [`EventContextDataType`](crate::types::EventContextDataType).
     pub fn build(self) -> crate::types::EventContextDataType {

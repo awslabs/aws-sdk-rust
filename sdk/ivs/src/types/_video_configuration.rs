@@ -96,6 +96,10 @@ impl VideoConfigurationBuilder {
         self.avc_profile = input;
         self
     }
+    /// <p>Indicates to the decoder the requirements for decoding the stream. For definitions of the valid values, see the H.264 specification.</p>
+    pub fn get_avc_profile(&self) -> &::std::option::Option<::std::string::String> {
+        &self.avc_profile
+    }
     /// <p>Indicates the degree of required decoder performance for a profile. Normally this is set automatically by the encoder. For details, see the H.264 specification.</p>
     pub fn avc_level(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.avc_level = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl VideoConfigurationBuilder {
     pub fn set_avc_level(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.avc_level = input;
         self
+    }
+    /// <p>Indicates the degree of required decoder performance for a profile. Normally this is set automatically by the encoder. For details, see the H.264 specification.</p>
+    pub fn get_avc_level(&self) -> &::std::option::Option<::std::string::String> {
+        &self.avc_level
     }
     /// <p>Codec used for the video encoding.</p>
     pub fn codec(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -116,6 +124,10 @@ impl VideoConfigurationBuilder {
         self.codec = input;
         self
     }
+    /// <p>Codec used for the video encoding.</p>
+    pub fn get_codec(&self) -> &::std::option::Option<::std::string::String> {
+        &self.codec
+    }
     /// <p>Software or hardware used to encode the video.</p>
     pub fn encoder(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encoder = ::std::option::Option::Some(input.into());
@@ -125,6 +137,10 @@ impl VideoConfigurationBuilder {
     pub fn set_encoder(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encoder = input;
         self
+    }
+    /// <p>Software or hardware used to encode the video.</p>
+    pub fn get_encoder(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encoder
     }
     /// <p>The expected ingest bitrate (bits per second). This is configured in the encoder.</p>
     pub fn target_bitrate(mut self, input: i64) -> Self {
@@ -136,6 +152,10 @@ impl VideoConfigurationBuilder {
         self.target_bitrate = input;
         self
     }
+    /// <p>The expected ingest bitrate (bits per second). This is configured in the encoder.</p>
+    pub fn get_target_bitrate(&self) -> &::std::option::Option<i64> {
+        &self.target_bitrate
+    }
     /// <p>The expected ingest framerate. This is configured in the encoder.</p>
     pub fn target_framerate(mut self, input: i64) -> Self {
         self.target_framerate = ::std::option::Option::Some(input);
@@ -145,6 +165,10 @@ impl VideoConfigurationBuilder {
     pub fn set_target_framerate(mut self, input: ::std::option::Option<i64>) -> Self {
         self.target_framerate = input;
         self
+    }
+    /// <p>The expected ingest framerate. This is configured in the encoder.</p>
+    pub fn get_target_framerate(&self) -> &::std::option::Option<i64> {
+        &self.target_framerate
     }
     /// <p>Video-resolution height in pixels.</p>
     pub fn video_height(mut self, input: i64) -> Self {
@@ -156,6 +180,10 @@ impl VideoConfigurationBuilder {
         self.video_height = input;
         self
     }
+    /// <p>Video-resolution height in pixels.</p>
+    pub fn get_video_height(&self) -> &::std::option::Option<i64> {
+        &self.video_height
+    }
     /// <p>Video-resolution width in pixels.</p>
     pub fn video_width(mut self, input: i64) -> Self {
         self.video_width = ::std::option::Option::Some(input);
@@ -165,6 +193,10 @@ impl VideoConfigurationBuilder {
     pub fn set_video_width(mut self, input: ::std::option::Option<i64>) -> Self {
         self.video_width = input;
         self
+    }
+    /// <p>Video-resolution width in pixels.</p>
+    pub fn get_video_width(&self) -> &::std::option::Option<i64> {
+        &self.video_width
     }
     /// Consumes the builder and constructs a [`VideoConfiguration`](crate::types::VideoConfiguration).
     pub fn build(self) -> crate::types::VideoConfiguration {

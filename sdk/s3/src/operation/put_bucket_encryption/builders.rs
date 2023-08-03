@@ -45,6 +45,12 @@ impl PutBucketEncryptionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutBucketEncryption as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_bucket_encryption::builders::PutBucketEncryptionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +141,10 @@ impl PutBucketEncryptionFluentBuilder {
         self.inner = self.inner.set_bucket(input);
         self
     }
+    /// <p>Specifies default encryption for a bucket using server-side encryption with different key options. By default, all buckets have a default encryption configuration that uses server-side encryption with Amazon S3 managed keys (SSE-S3). You can optionally configure default encryption for a bucket by using server-side encryption with an Amazon Web Services KMS key (SSE-KMS) or a customer-provided key (SSE-C). For information about the bucket default encryption feature, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon S3 Bucket Default Encryption</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bucket()
+    }
     /// <p>The base64-encoded 128-bit MD5 digest of the server-side encryption configuration.</p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     pub fn content_md5(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -146,6 +156,11 @@ impl PutBucketEncryptionFluentBuilder {
     pub fn set_content_md5(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_content_md5(input);
         self
+    }
+    /// <p>The base64-encoded 128-bit MD5 digest of the server-side encryption configuration.</p>
+    /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
+    pub fn get_content_md5(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_content_md5()
     }
     /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
@@ -161,6 +176,13 @@ impl PutBucketEncryptionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_checksum_algorithm(input);
         self
+    }
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    pub fn get_checksum_algorithm(
+        &self,
+    ) -> &::std::option::Option<crate::types::ChecksumAlgorithm> {
+        self.inner.get_checksum_algorithm()
     }
     /// <p>Specifies the default server-side-encryption configuration.</p>
     pub fn server_side_encryption_configuration(
@@ -178,6 +200,12 @@ impl PutBucketEncryptionFluentBuilder {
         self.inner = self.inner.set_server_side_encryption_configuration(input);
         self
     }
+    /// <p>Specifies the default server-side-encryption configuration.</p>
+    pub fn get_server_side_encryption_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServerSideEncryptionConfiguration> {
+        self.inner.get_server_side_encryption_configuration()
+    }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(
         mut self,
@@ -193,5 +221,9 @@ impl PutBucketEncryptionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_expected_bucket_owner(input);
         self
+    }
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
+    pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_expected_bucket_owner()
     }
 }

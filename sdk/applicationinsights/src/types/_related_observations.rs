@@ -49,6 +49,12 @@ impl RelatedObservationsBuilder {
         self.observation_list = input;
         self
     }
+    /// <p>The list of observations related to the problem.</p>
+    pub fn get_observation_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Observation>> {
+        &self.observation_list
+    }
     /// Consumes the builder and constructs a [`RelatedObservations`](crate::types::RelatedObservations).
     pub fn build(self) -> crate::types::RelatedObservations {
         crate::types::RelatedObservations {

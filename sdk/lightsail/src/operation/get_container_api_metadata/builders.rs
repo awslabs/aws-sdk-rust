@@ -37,6 +37,13 @@ impl GetContainerAPIMetadataFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetContainerAPIMetadata as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_container_api_metadata::builders::GetContainerApiMetadataInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(

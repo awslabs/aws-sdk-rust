@@ -78,6 +78,10 @@ impl StartRunOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The run's ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The run's ID.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -88,6 +92,10 @@ impl StartRunOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>The run's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The run's status.</p>
     pub fn status(mut self, input: crate::types::RunStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -97,6 +105,10 @@ impl StartRunOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::RunStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The run's status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::RunStatus> {
+        &self.status
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -122,6 +134,14 @@ impl StartRunOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The run's tags.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

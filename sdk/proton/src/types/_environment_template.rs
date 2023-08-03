@@ -117,6 +117,10 @@ impl EnvironmentTemplateBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the environment template.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Name (ARN) of the environment template.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -126,6 +130,10 @@ impl EnvironmentTemplateBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the environment template.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The time when the environment template was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -140,6 +148,10 @@ impl EnvironmentTemplateBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The time when the environment template was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The time when the environment template was last modified.</p>
     pub fn last_modified_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_at = ::std::option::Option::Some(input);
@@ -153,6 +165,10 @@ impl EnvironmentTemplateBuilder {
         self.last_modified_at = input;
         self
     }
+    /// <p>The time when the environment template was last modified.</p>
+    pub fn get_last_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_at
+    }
     /// <p>The name of the environment template as displayed in the developer interface.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -163,6 +179,10 @@ impl EnvironmentTemplateBuilder {
         self.display_name = input;
         self
     }
+    /// <p>The name of the environment template as displayed in the developer interface.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
+    }
     /// <p>A description of the environment template.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -172,6 +192,10 @@ impl EnvironmentTemplateBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the environment template.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The ID of the recommended version of the environment template.</p>
     pub fn recommended_version(
@@ -189,6 +213,10 @@ impl EnvironmentTemplateBuilder {
         self.recommended_version = input;
         self
     }
+    /// <p>The ID of the recommended version of the environment template.</p>
+    pub fn get_recommended_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommended_version
+    }
     /// <p>The customer provided encryption key for the environment template.</p>
     pub fn encryption_key(
         mut self,
@@ -205,6 +233,10 @@ impl EnvironmentTemplateBuilder {
         self.encryption_key = input;
         self
     }
+    /// <p>The customer provided encryption key for the environment template.</p>
+    pub fn get_encryption_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encryption_key
+    }
     /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
     pub fn provisioning(mut self, input: crate::types::Provisioning) -> Self {
         self.provisioning = ::std::option::Option::Some(input);
@@ -217,6 +249,10 @@ impl EnvironmentTemplateBuilder {
     ) -> Self {
         self.provisioning = input;
         self
+    }
+    /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
+    pub fn get_provisioning(&self) -> &::std::option::Option<crate::types::Provisioning> {
+        &self.provisioning
     }
     /// Consumes the builder and constructs a [`EnvironmentTemplate`](crate::types::EnvironmentTemplate).
     pub fn build(self) -> crate::types::EnvironmentTemplate {

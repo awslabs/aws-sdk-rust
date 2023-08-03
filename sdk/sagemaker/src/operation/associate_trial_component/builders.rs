@@ -37,6 +37,13 @@ impl AssociateTrialComponentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateTrialComponent as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::associate_trial_component::builders::AssociateTrialComponentInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl AssociateTrialComponentFluentBuilder {
         self.inner = self.inner.set_trial_component_name(input);
         self
     }
+    /// <p>The name of the component to associated with the trial.</p>
+    pub fn get_trial_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_trial_component_name()
+    }
     /// <p>The name of the trial to associate with.</p>
     pub fn trial_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.trial_name(input.into());
@@ -142,5 +153,9 @@ impl AssociateTrialComponentFluentBuilder {
     pub fn set_trial_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_trial_name(input);
         self
+    }
+    /// <p>The name of the trial to associate with.</p>
+    pub fn get_trial_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_trial_name()
     }
 }

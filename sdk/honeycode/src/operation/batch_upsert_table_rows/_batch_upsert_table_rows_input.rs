@@ -74,6 +74,11 @@ impl BatchUpsertTableRowsInputBuilder {
         self.workbook_id = input;
         self
     }
+    /// <p>The ID of the workbook where the rows are being upserted.</p>
+    /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    pub fn get_workbook_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workbook_id
+    }
     /// <p>The ID of the table where the rows are being upserted.</p>
     /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
     pub fn table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -85,6 +90,11 @@ impl BatchUpsertTableRowsInputBuilder {
     pub fn set_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_id = input;
         self
+    }
+    /// <p>The ID of the table where the rows are being upserted.</p>
+    /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    pub fn get_table_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_id
     }
     /// Appends an item to `rows_to_upsert`.
     ///
@@ -107,6 +117,13 @@ impl BatchUpsertTableRowsInputBuilder {
         self.rows_to_upsert = input;
         self
     }
+    /// <p> The list of rows to upsert in the table. Each item in this list needs to have a batch item id to uniquely identify the element in the request, a filter expression to find the rows to update for that element and the cell values to set for each column in the upserted rows. You need to specify at least one item in this list. </p>
+    /// <p> Note that if one of the filter formulas in the request fails to evaluate because of an error or one of the column ids in any of the rows does not exist in the table, then the request fails and no updates are made to the table. </p>
+    pub fn get_rows_to_upsert(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpsertRowData>> {
+        &self.rows_to_upsert
+    }
     /// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>
     /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
     pub fn client_request_token(
@@ -124,6 +141,11 @@ impl BatchUpsertTableRowsInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>
+    /// <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Consumes the builder and constructs a [`BatchUpsertTableRowsInput`](crate::operation::batch_upsert_table_rows::BatchUpsertTableRowsInput).
     pub fn build(

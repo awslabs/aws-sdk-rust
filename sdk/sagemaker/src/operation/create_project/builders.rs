@@ -36,6 +36,12 @@ impl CreateProjectFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateProject as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_project::builders::CreateProjectInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl CreateProjectFluentBuilder {
         self.inner = self.inner.set_project_name(input);
         self
     }
+    /// <p>The name of the project.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_name()
+    }
     /// <p>A description for the project.</p>
     pub fn project_description(
         mut self,
@@ -133,6 +143,10 @@ impl CreateProjectFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_project_description(input);
         self
+    }
+    /// <p>A description for the project.</p>
+    pub fn get_project_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_description()
     }
     /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
     pub fn service_catalog_provisioning_details(
@@ -150,6 +164,12 @@ impl CreateProjectFluentBuilder {
         self.inner = self.inner.set_service_catalog_provisioning_details(input);
         self
     }
+    /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
+    pub fn get_service_catalog_provisioning_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServiceCatalogProvisioningDetails> {
+        self.inner.get_service_catalog_provisioning_details()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -166,5 +186,9 @@ impl CreateProjectFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>An array of key-value pairs that you want to use to organize and track your Amazon Web Services resource costs. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

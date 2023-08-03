@@ -36,6 +36,12 @@ impl GetWorkflowStepsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetWorkflowSteps as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_workflow_steps::builders::GetWorkflowStepsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl GetWorkflowStepsFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p>The unique name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
     /// <p>Unique identifier for the workflow.</p>
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workflow_id(input.into());
@@ -135,6 +145,10 @@ impl GetWorkflowStepsFluentBuilder {
     pub fn set_workflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workflow_id(input);
         self
+    }
+    /// <p>Unique identifier for the workflow.</p>
+    pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workflow_id()
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -146,6 +160,10 @@ impl GetWorkflowStepsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -155,5 +173,9 @@ impl GetWorkflowStepsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

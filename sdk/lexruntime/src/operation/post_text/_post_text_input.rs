@@ -136,6 +136,10 @@ impl PostTextInputBuilder {
         self.bot_name = input;
         self
     }
+    /// <p>The name of the Amazon Lex bot.</p>
+    pub fn get_bot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_name
+    }
     /// <p>The alias of the Amazon Lex bot.</p>
     pub fn bot_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_alias = ::std::option::Option::Some(input.into());
@@ -145,6 +149,10 @@ impl PostTextInputBuilder {
     pub fn set_bot_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_alias = input;
         self
+    }
+    /// <p>The alias of the Amazon Lex bot.</p>
+    pub fn get_bot_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_alias
     }
     /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. At runtime, each request must contain the <code>userID</code> field.</p>
     /// <p>To decide the user ID to use for your application, consider the following factors.</p>
@@ -169,6 +177,17 @@ impl PostTextInputBuilder {
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
+    }
+    /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. At runtime, each request must contain the <code>userID</code> field.</p>
+    /// <p>To decide the user ID to use for your application, consider the following factors.</p>
+    /// <ul>
+    /// <li> <p>The <code>userID</code> field must not contain any personally identifiable information of the user, for example, name, personal identification numbers, or other end user personal information.</p> </li>
+    /// <li> <p>If you want a user to start a conversation on one device and continue on another device, use a user-specific identifier.</p> </li>
+    /// <li> <p>If you want the same user to be able to have two independent conversations on two different devices, choose a device-specific identifier.</p> </li>
+    /// <li> <p>A user can't have two independent conversations with two different versions of the same bot. For example, a user can't have a conversation with the PROD and BETA versions of the same bot. If you anticipate that a user will need to have conversation with two different versions, for example, while testing, include the bot alias in the user ID to separate the two conversations.</p> </li>
+    /// </ul>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
     }
     /// Adds a key-value pair to `session_attributes`.
     ///
@@ -196,6 +215,15 @@ impl PostTextInputBuilder {
     ) -> Self {
         self.session_attributes = input;
         self
+    }
+    /// <p>Application-specific information passed between Amazon Lex and a client application.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting Session Attributes</a>.</p>
+    pub fn get_session_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.session_attributes
     }
     /// Adds a key-value pair to `request_attributes`.
     ///
@@ -226,6 +254,16 @@ impl PostTextInputBuilder {
         self.request_attributes = input;
         self
     }
+    /// <p>Request-specific information passed between Amazon Lex and a client application.</p>
+    /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting Request Attributes</a>.</p>
+    pub fn get_request_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.request_attributes
+    }
     /// <p>The text that the user entered (Amazon Lex interprets this text).</p>
     pub fn input_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_text = ::std::option::Option::Some(input.into());
@@ -235,6 +273,10 @@ impl PostTextInputBuilder {
     pub fn set_input_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_text = input;
         self
+    }
+    /// <p>The text that the user entered (Amazon Lex interprets this text).</p>
+    pub fn get_input_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_text
     }
     /// Appends an item to `active_contexts`.
     ///
@@ -256,6 +298,13 @@ impl PostTextInputBuilder {
     ) -> Self {
         self.active_contexts = input;
         self
+    }
+    /// <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request,</p>
+    /// <p>If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared.</p>
+    pub fn get_active_contexts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>> {
+        &self.active_contexts
     }
     /// Consumes the builder and constructs a [`PostTextInput`](crate::operation::post_text::PostTextInput).
     pub fn build(

@@ -45,6 +45,10 @@ impl DescribeWhatIfForecastExportInputBuilder {
         self.what_if_forecast_export_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the what-if forecast export that you are interested in.</p>
+    pub fn get_what_if_forecast_export_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.what_if_forecast_export_arn
+    }
     /// Consumes the builder and constructs a [`DescribeWhatIfForecastExportInput`](crate::operation::describe_what_if_forecast_export::DescribeWhatIfForecastExportInput).
     pub fn build(
         self,

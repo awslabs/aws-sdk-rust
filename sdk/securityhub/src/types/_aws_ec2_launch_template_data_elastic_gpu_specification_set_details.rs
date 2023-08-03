@@ -42,6 +42,10 @@ impl AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetailsBuilder {
         self.r#type = input;
         self
     }
+    /// <p> The type of Elastic Graphics accelerator. </p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails`](crate::types::AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails).
     pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails {
         crate::types::AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails {

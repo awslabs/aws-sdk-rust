@@ -56,6 +56,10 @@ impl BrokerInstanceBuilder {
         self.console_url = input;
         self
     }
+    /// <p>The brokers web console URL.</p>
+    pub fn get_console_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.console_url
+    }
     /// Appends an item to `endpoints`.
     ///
     /// To override the contents of this collection use [`set_endpoints`](Self::set_endpoints).
@@ -75,6 +79,10 @@ impl BrokerInstanceBuilder {
         self.endpoints = input;
         self
     }
+    /// <p>The broker's wire-level protocol endpoints.</p>
+    pub fn get_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.endpoints
+    }
     /// <p>The IP address of the Elastic Network Interface (ENI) attached to the broker. Does not apply to RabbitMQ brokers.</p>
     pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_address = ::std::option::Option::Some(input.into());
@@ -84,6 +92,10 @@ impl BrokerInstanceBuilder {
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_address = input;
         self
+    }
+    /// <p>The IP address of the Elastic Network Interface (ENI) attached to the broker. Does not apply to RabbitMQ brokers.</p>
+    pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_address
     }
     /// Consumes the builder and constructs a [`BrokerInstance`](crate::types::BrokerInstance).
     pub fn build(self) -> crate::types::BrokerInstance {

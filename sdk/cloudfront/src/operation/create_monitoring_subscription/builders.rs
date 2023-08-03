@@ -37,6 +37,10 @@ impl CreateMonitoringSubscriptionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateMonitoringSubscription as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_monitoring_subscription::builders::CreateMonitoringSubscriptionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,10 @@ impl CreateMonitoringSubscriptionFluentBuilder {
         self.inner = self.inner.set_distribution_id(input);
         self
     }
+    /// <p>The ID of the distribution that you are enabling metrics for.</p>
+    pub fn get_distribution_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_distribution_id()
+    }
     /// <p>A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
     pub fn monitoring_subscription(mut self, input: crate::types::MonitoringSubscription) -> Self {
         self.inner = self.inner.monitoring_subscription(input);
@@ -145,5 +153,11 @@ impl CreateMonitoringSubscriptionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_monitoring_subscription(input);
         self
+    }
+    /// <p>A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
+    pub fn get_monitoring_subscription(
+        &self,
+    ) -> &::std::option::Option<crate::types::MonitoringSubscription> {
+        self.inner.get_monitoring_subscription()
     }
 }

@@ -117,6 +117,10 @@ impl BotBuilder {
         self.bot_id = input;
         self
     }
+    /// <p>The bot ID.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
+    }
     /// <p>The unique ID for the bot user.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
@@ -126,6 +130,10 @@ impl BotBuilder {
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
+    }
+    /// <p>The unique ID for the bot user.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
     }
     /// <p>The bot display name.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -137,6 +145,10 @@ impl BotBuilder {
         self.display_name = input;
         self
     }
+    /// <p>The bot display name.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
+    }
     /// <p>The bot type.</p>
     pub fn bot_type(mut self, input: crate::types::BotType) -> Self {
         self.bot_type = ::std::option::Option::Some(input);
@@ -147,6 +159,10 @@ impl BotBuilder {
         self.bot_type = input;
         self
     }
+    /// <p>The bot type.</p>
+    pub fn get_bot_type(&self) -> &::std::option::Option<crate::types::BotType> {
+        &self.bot_type
+    }
     /// <p>When true, the bot is stopped from running in your account.</p>
     pub fn disabled(mut self, input: bool) -> Self {
         self.disabled = ::std::option::Option::Some(input);
@@ -156,6 +172,10 @@ impl BotBuilder {
     pub fn set_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disabled = input;
         self
+    }
+    /// <p>When true, the bot is stopped from running in your account.</p>
+    pub fn get_disabled(&self) -> &::std::option::Option<bool> {
+        &self.disabled
     }
     /// <p>The bot creation timestamp, in ISO 8601 format.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -170,6 +190,10 @@ impl BotBuilder {
         self.created_timestamp = input;
         self
     }
+    /// <p>The bot creation timestamp, in ISO 8601 format.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
+    }
     /// <p>The updated bot timestamp, in ISO 8601 format.</p>
     pub fn updated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_timestamp = ::std::option::Option::Some(input);
@@ -183,6 +207,10 @@ impl BotBuilder {
         self.updated_timestamp = input;
         self
     }
+    /// <p>The updated bot timestamp, in ISO 8601 format.</p>
+    pub fn get_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_timestamp
+    }
     /// <p>The bot email address.</p>
     pub fn bot_email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_email = ::std::option::Option::Some(input.into());
@@ -192,6 +220,10 @@ impl BotBuilder {
     pub fn set_bot_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_email = input;
         self
+    }
+    /// <p>The bot email address.</p>
+    pub fn get_bot_email(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_email
     }
     /// <p>The security token used to authenticate Amazon Chime with the outgoing event endpoint.</p>
     pub fn security_token(
@@ -208,6 +240,10 @@ impl BotBuilder {
     ) -> Self {
         self.security_token = input;
         self
+    }
+    /// <p>The security token used to authenticate Amazon Chime with the outgoing event endpoint.</p>
+    pub fn get_security_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_token
     }
     /// Consumes the builder and constructs a [`Bot`](crate::types::Bot).
     pub fn build(self) -> crate::types::Bot {

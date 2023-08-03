@@ -47,6 +47,10 @@ impl DeleteCommentContentOutputBuilder {
         self.comment = input;
         self
     }
+    /// <p>Information about the comment you just deleted.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<crate::types::Comment> {
+        &self.comment
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -73,6 +73,10 @@ impl SignalWorkflowExecutionInputBuilder {
         self.domain = input;
         self
     }
+    /// <p>The name of the domain containing the workflow execution to signal.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
+    }
     /// <p>The workflowId of the workflow execution to signal.</p>
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_id = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl SignalWorkflowExecutionInputBuilder {
     pub fn set_workflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_id = input;
         self
+    }
+    /// <p>The workflowId of the workflow execution to signal.</p>
+    pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_id
     }
     /// <p>The runId of the workflow execution to signal.</p>
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -93,6 +101,10 @@ impl SignalWorkflowExecutionInputBuilder {
         self.run_id = input;
         self
     }
+    /// <p>The runId of the workflow execution to signal.</p>
+    pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.run_id
+    }
     /// <p>The name of the signal. This name must be meaningful to the target workflow.</p>
     pub fn signal_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signal_name = ::std::option::Option::Some(input.into());
@@ -103,6 +115,10 @@ impl SignalWorkflowExecutionInputBuilder {
         self.signal_name = input;
         self
     }
+    /// <p>The name of the signal. This name must be meaningful to the target workflow.</p>
+    pub fn get_signal_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.signal_name
+    }
     /// <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the target workflow execution's history.</p>
     pub fn input(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input = ::std::option::Option::Some(input.into());
@@ -112,6 +128,10 @@ impl SignalWorkflowExecutionInputBuilder {
     pub fn set_input(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input = input;
         self
+    }
+    /// <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the target workflow execution's history.</p>
+    pub fn get_input(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input
     }
     /// Consumes the builder and constructs a [`SignalWorkflowExecutionInput`](crate::operation::signal_workflow_execution::SignalWorkflowExecutionInput).
     pub fn build(

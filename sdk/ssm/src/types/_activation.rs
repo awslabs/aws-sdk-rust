@@ -118,6 +118,10 @@ impl ActivationBuilder {
         self.activation_id = input;
         self
     }
+    /// <p>The ID created by Systems Manager when you submitted the activation.</p>
+    pub fn get_activation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.activation_id
+    }
     /// <p>A user defined description of the activation.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -127,6 +131,10 @@ impl ActivationBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A user defined description of the activation.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>A name for the managed node when it is created.</p>
     pub fn default_instance_name(
@@ -144,6 +152,10 @@ impl ActivationBuilder {
         self.default_instance_name = input;
         self
     }
+    /// <p>A name for the managed node when it is created.</p>
+    pub fn get_default_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_instance_name
+    }
     /// <p>The Identity and Access Management (IAM) role to assign to the managed node.</p>
     pub fn iam_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_role = ::std::option::Option::Some(input.into());
@@ -153,6 +165,10 @@ impl ActivationBuilder {
     pub fn set_iam_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_role = input;
         self
+    }
+    /// <p>The Identity and Access Management (IAM) role to assign to the managed node.</p>
+    pub fn get_iam_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iam_role
     }
     /// <p>The maximum number of managed nodes that can be registered using this activation.</p>
     pub fn registration_limit(mut self, input: i32) -> Self {
@@ -164,6 +180,10 @@ impl ActivationBuilder {
         self.registration_limit = input;
         self
     }
+    /// <p>The maximum number of managed nodes that can be registered using this activation.</p>
+    pub fn get_registration_limit(&self) -> &::std::option::Option<i32> {
+        &self.registration_limit
+    }
     /// <p>The number of managed nodes already registered with this activation.</p>
     pub fn registrations_count(mut self, input: i32) -> Self {
         self.registrations_count = ::std::option::Option::Some(input);
@@ -173,6 +193,10 @@ impl ActivationBuilder {
     pub fn set_registrations_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.registrations_count = input;
         self
+    }
+    /// <p>The number of managed nodes already registered with this activation.</p>
+    pub fn get_registrations_count(&self) -> &::std::option::Option<i32> {
+        &self.registrations_count
     }
     /// <p>The date when this activation can no longer be used to register managed nodes.</p>
     pub fn expiration_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -187,6 +211,10 @@ impl ActivationBuilder {
         self.expiration_date = input;
         self
     }
+    /// <p>The date when this activation can no longer be used to register managed nodes.</p>
+    pub fn get_expiration_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expiration_date
+    }
     /// <p>Whether or not the activation is expired.</p>
     pub fn expired(mut self, input: bool) -> Self {
         self.expired = ::std::option::Option::Some(input);
@@ -196,6 +224,10 @@ impl ActivationBuilder {
     pub fn set_expired(mut self, input: ::std::option::Option<bool>) -> Self {
         self.expired = input;
         self
+    }
+    /// <p>Whether or not the activation is expired.</p>
+    pub fn get_expired(&self) -> &::std::option::Option<bool> {
+        &self.expired
     }
     /// <p>The date the activation was created.</p>
     pub fn created_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -209,6 +241,10 @@ impl ActivationBuilder {
     ) -> Self {
         self.created_date = input;
         self
+    }
+    /// <p>The date the activation was created.</p>
+    pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_date
     }
     /// Appends an item to `tags`.
     ///
@@ -228,6 +264,10 @@ impl ActivationBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Tags assigned to the activation.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`Activation`](crate::types::Activation).
     pub fn build(self) -> crate::types::Activation {

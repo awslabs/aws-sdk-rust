@@ -60,6 +60,10 @@ impl ListDiscoveredResourcesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If there are more discovered resources than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `discovered_resource_list`.
     ///
     /// To override the contents of this collection use [`set_discovered_resource_list`](Self::set_discovered_resource_list).
@@ -78,6 +82,12 @@ impl ListDiscoveredResourcesOutputBuilder {
     ) -> Self {
         self.discovered_resource_list = input;
         self
+    }
+    /// <p>Returned list of discovered resources associated with the given MigrationTask.</p>
+    pub fn get_discovered_resource_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DiscoveredResource>> {
+        &self.discovered_resource_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

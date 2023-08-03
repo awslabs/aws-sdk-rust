@@ -67,6 +67,10 @@ impl AlertManagerDefinitionDescriptionBuilder {
         self.status = input;
         self
     }
+    /// The status of alert manager definition.
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AlertManagerDefinitionStatus> {
+        &self.status
+    }
     /// The alert manager definition.
     pub fn data(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.data = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl AlertManagerDefinitionDescriptionBuilder {
     pub fn set_data(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.data = input;
         self
+    }
+    /// The alert manager definition.
+    pub fn get_data(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.data
     }
     /// The time when the alert manager definition was created.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -90,6 +98,10 @@ impl AlertManagerDefinitionDescriptionBuilder {
         self.created_at = input;
         self
     }
+    /// The time when the alert manager definition was created.
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// The time when the alert manager definition was modified.
     pub fn modified_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.modified_at = ::std::option::Option::Some(input);
@@ -102,6 +114,10 @@ impl AlertManagerDefinitionDescriptionBuilder {
     ) -> Self {
         self.modified_at = input;
         self
+    }
+    /// The time when the alert manager definition was modified.
+    pub fn get_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.modified_at
     }
     /// Consumes the builder and constructs a [`AlertManagerDefinitionDescription`](crate::types::AlertManagerDefinitionDescription).
     pub fn build(self) -> crate::types::AlertManagerDefinitionDescription {

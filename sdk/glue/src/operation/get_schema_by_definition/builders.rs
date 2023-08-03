@@ -36,6 +36,13 @@ impl GetSchemaByDefinitionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetSchemaByDefinition as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_schema_by_definition::builders::GetSchemaByDefinitionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +141,14 @@ impl GetSchemaByDefinitionFluentBuilder {
         self.inner = self.inner.set_schema_id(input);
         self
     }
+    /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
+    /// <ul>
+    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
+    /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
+    /// </ul>
+    pub fn get_schema_id(&self) -> &::std::option::Option<crate::types::SchemaId> {
+        self.inner.get_schema_id()
+    }
     /// <p>The definition of the schema for which schema details are required.</p>
     pub fn schema_definition(
         mut self,
@@ -149,5 +164,9 @@ impl GetSchemaByDefinitionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_schema_definition(input);
         self
+    }
+    /// <p>The definition of the schema for which schema details are required.</p>
+    pub fn get_schema_definition(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_schema_definition()
     }
 }

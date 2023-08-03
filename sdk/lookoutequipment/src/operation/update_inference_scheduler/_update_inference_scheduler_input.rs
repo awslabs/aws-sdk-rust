@@ -96,6 +96,10 @@ impl UpdateInferenceSchedulerInputBuilder {
         self.inference_scheduler_name = input;
         self
     }
+    /// <p>The name of the inference scheduler to be updated. </p>
+    pub fn get_inference_scheduler_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.inference_scheduler_name
+    }
     /// <p> A period of time (in minutes) by which inference on the data is delayed after the data starts. For instance, if you select an offset delay time of five minutes, inference will not begin on the data until the first data measurement after the five minute mark. For example, if five minutes is selected, the inference scheduler will wake up at the configured frequency with the additional five minute delay time to check the customer S3 bucket. The customer can upload data at the same frequency and they don't need to stop and restart the scheduler when uploading new data.</p>
     pub fn data_delay_offset_in_minutes(mut self, input: i64) -> Self {
         self.data_delay_offset_in_minutes = ::std::option::Option::Some(input);
@@ -105,6 +109,10 @@ impl UpdateInferenceSchedulerInputBuilder {
     pub fn set_data_delay_offset_in_minutes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.data_delay_offset_in_minutes = input;
         self
+    }
+    /// <p> A period of time (in minutes) by which inference on the data is delayed after the data starts. For instance, if you select an offset delay time of five minutes, inference will not begin on the data until the first data measurement after the five minute mark. For example, if five minutes is selected, the inference scheduler will wake up at the configured frequency with the additional five minute delay time to check the customer S3 bucket. The customer can upload data at the same frequency and they don't need to stop and restart the scheduler when uploading new data.</p>
+    pub fn get_data_delay_offset_in_minutes(&self) -> &::std::option::Option<i64> {
+        &self.data_delay_offset_in_minutes
     }
     /// <p>How often data is uploaded to the source S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes. </p>
     pub fn data_upload_frequency(mut self, input: crate::types::DataUploadFrequency) -> Self {
@@ -118,6 +126,12 @@ impl UpdateInferenceSchedulerInputBuilder {
     ) -> Self {
         self.data_upload_frequency = input;
         self
+    }
+    /// <p>How often data is uploaded to the source S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes. </p>
+    pub fn get_data_upload_frequency(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataUploadFrequency> {
+        &self.data_upload_frequency
     }
     /// <p> Specifies information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
     pub fn data_input_configuration(
@@ -135,6 +149,12 @@ impl UpdateInferenceSchedulerInputBuilder {
         self.data_input_configuration = input;
         self
     }
+    /// <p> Specifies information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
+    pub fn get_data_input_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::InferenceInputConfiguration> {
+        &self.data_input_configuration
+    }
     /// <p> Specifies information for the output results from the inference scheduler, including the output S3 location. </p>
     pub fn data_output_configuration(
         mut self,
@@ -151,6 +171,12 @@ impl UpdateInferenceSchedulerInputBuilder {
         self.data_output_configuration = input;
         self
     }
+    /// <p> Specifies information for the output results from the inference scheduler, including the output S3 location. </p>
+    pub fn get_data_output_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::InferenceOutputConfiguration> {
+        &self.data_output_configuration
+    }
     /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for the inference scheduler. </p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -160,6 +186,10 @@ impl UpdateInferenceSchedulerInputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for the inference scheduler. </p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Consumes the builder and constructs a [`UpdateInferenceSchedulerInput`](crate::operation::update_inference_scheduler::UpdateInferenceSchedulerInput).
     pub fn build(

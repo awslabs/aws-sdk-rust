@@ -54,6 +54,10 @@ impl ApplicationCodeConfigurationDescriptionBuilder {
         self.code_content_type = input;
         self
     }
+    /// <p>Specifies whether the code content is in text or zip format.</p>
+    pub fn get_code_content_type(&self) -> &::std::option::Option<crate::types::CodeContentType> {
+        &self.code_content_type
+    }
     /// <p>Describes details about the location and format of the application code.</p>
     pub fn code_content_description(mut self, input: crate::types::CodeContentDescription) -> Self {
         self.code_content_description = ::std::option::Option::Some(input);
@@ -66,6 +70,12 @@ impl ApplicationCodeConfigurationDescriptionBuilder {
     ) -> Self {
         self.code_content_description = input;
         self
+    }
+    /// <p>Describes details about the location and format of the application code.</p>
+    pub fn get_code_content_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::CodeContentDescription> {
+        &self.code_content_description
     }
     /// Consumes the builder and constructs a [`ApplicationCodeConfigurationDescription`](crate::types::ApplicationCodeConfigurationDescription).
     pub fn build(self) -> crate::types::ApplicationCodeConfigurationDescription {

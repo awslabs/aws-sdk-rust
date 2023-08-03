@@ -121,6 +121,10 @@ impl ProfileBuilder {
         self.profile_arn = input;
         self
     }
+    /// <p>The profile ARN.</p>
+    pub fn get_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_arn
+    }
     /// <p>The profile version.</p>
     pub fn profile_version(
         mut self,
@@ -137,6 +141,10 @@ impl ProfileBuilder {
         self.profile_version = input;
         self
     }
+    /// <p>The profile version.</p>
+    pub fn get_profile_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_version
+    }
     /// <p>The profile name.</p>
     pub fn profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_name = ::std::option::Option::Some(input.into());
@@ -146,6 +154,10 @@ impl ProfileBuilder {
     pub fn set_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profile_name = input;
         self
+    }
+    /// <p>The profile name.</p>
+    pub fn get_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_name
     }
     /// <p>The profile description.</p>
     pub fn profile_description(
@@ -162,6 +174,10 @@ impl ProfileBuilder {
     ) -> Self {
         self.profile_description = input;
         self
+    }
+    /// <p>The profile description.</p>
+    pub fn get_profile_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_description
     }
     /// Appends an item to `profile_questions`.
     ///
@@ -182,6 +198,12 @@ impl ProfileBuilder {
         self.profile_questions = input;
         self
     }
+    /// <p>Profile questions.</p>
+    pub fn get_profile_questions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProfileQuestion>> {
+        &self.profile_questions
+    }
     /// <p>An Amazon Web Services account ID.</p>
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner = ::std::option::Option::Some(input.into());
@@ -191,6 +213,10 @@ impl ProfileBuilder {
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner = input;
         self
+    }
+    /// <p>An Amazon Web Services account ID.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner
     }
     /// <p>The date and time recorded.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -206,6 +232,10 @@ impl ProfileBuilder {
         self
     }
     /// <p>The date and time recorded.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
+    /// <p>The date and time recorded.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
@@ -217,6 +247,10 @@ impl ProfileBuilder {
     ) -> Self {
         self.updated_at = input;
         self
+    }
+    /// <p>The date and time recorded.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     /// <p>The ID assigned to the share invitation.</p>
     pub fn share_invitation_id(
@@ -233,6 +267,10 @@ impl ProfileBuilder {
     ) -> Self {
         self.share_invitation_id = input;
         self
+    }
+    /// <p>The ID assigned to the share invitation.</p>
+    pub fn get_share_invitation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.share_invitation_id
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -258,6 +296,14 @@ impl ProfileBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags assigned to the profile.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`Profile`](crate::types::Profile).
     pub fn build(self) -> crate::types::Profile {

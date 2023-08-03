@@ -66,6 +66,10 @@ impl StepStatusBuilder {
         self.state = input;
         self
     }
+    /// <p>The execution state of the cluster step.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::StepState> {
+        &self.state
+    }
     /// <p>The reason for the step execution status change.</p>
     pub fn state_change_reason(mut self, input: crate::types::StepStateChangeReason) -> Self {
         self.state_change_reason = ::std::option::Option::Some(input);
@@ -78,6 +82,12 @@ impl StepStatusBuilder {
     ) -> Self {
         self.state_change_reason = input;
         self
+    }
+    /// <p>The reason for the step execution status change.</p>
+    pub fn get_state_change_reason(
+        &self,
+    ) -> &::std::option::Option<crate::types::StepStateChangeReason> {
+        &self.state_change_reason
     }
     /// <p>The details for the step failure including reason, message, and log file path where the root cause was identified.</p>
     pub fn failure_details(mut self, input: crate::types::FailureDetails) -> Self {
@@ -92,6 +102,10 @@ impl StepStatusBuilder {
         self.failure_details = input;
         self
     }
+    /// <p>The details for the step failure including reason, message, and log file path where the root cause was identified.</p>
+    pub fn get_failure_details(&self) -> &::std::option::Option<crate::types::FailureDetails> {
+        &self.failure_details
+    }
     /// <p>The timeline of the cluster step status over time.</p>
     pub fn timeline(mut self, input: crate::types::StepTimeline) -> Self {
         self.timeline = ::std::option::Option::Some(input);
@@ -104,6 +118,10 @@ impl StepStatusBuilder {
     ) -> Self {
         self.timeline = input;
         self
+    }
+    /// <p>The timeline of the cluster step status over time.</p>
+    pub fn get_timeline(&self) -> &::std::option::Option<crate::types::StepTimeline> {
+        &self.timeline
     }
     /// Consumes the builder and constructs a [`StepStatus`](crate::types::StepStatus).
     pub fn build(self) -> crate::types::StepStatus {

@@ -36,6 +36,10 @@ impl UpdateAssetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAsset as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_asset::builders::UpdateAssetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl UpdateAssetFluentBuilder {
         self.inner = self.inner.set_asset_id(input);
         self
     }
+    /// <p>The ID of the asset to update.</p>
+    pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_asset_id()
+    }
     /// <p>A friendly name for the asset.</p>
     pub fn asset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.asset_name(input.into());
@@ -128,6 +136,10 @@ impl UpdateAssetFluentBuilder {
         self.inner = self.inner.set_asset_name(input);
         self
     }
+    /// <p>A friendly name for the asset.</p>
+    pub fn get_asset_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_asset_name()
+    }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -137,6 +149,10 @@ impl UpdateAssetFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// <p>A description for the asset.</p>
     pub fn asset_description(
@@ -153,5 +169,9 @@ impl UpdateAssetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_asset_description(input);
         self
+    }
+    /// <p>A description for the asset.</p>
+    pub fn get_asset_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_asset_description()
     }
 }

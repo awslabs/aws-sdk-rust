@@ -47,6 +47,10 @@ impl DeleteRuleInputBuilder {
         self.rule_id = input;
         self
     }
+    /// <p>The <code>RuleId</code> of the <code>Rule</code> that you want to delete. <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
+    pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_id
+    }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_token = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl DeleteRuleInputBuilder {
     pub fn set_change_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_token = input;
         self
+    }
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    pub fn get_change_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.change_token
     }
     /// Consumes the builder and constructs a [`DeleteRuleInput`](crate::operation::delete_rule::DeleteRuleInput).
     pub fn build(

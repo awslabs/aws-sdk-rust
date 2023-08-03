@@ -76,6 +76,10 @@ impl GetManagedResourceOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the resource.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the resource.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -85,6 +89,10 @@ impl GetManagedResourceOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the resource.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Adds a key-value pair to `applied_weights`.
     ///
@@ -109,6 +117,12 @@ impl GetManagedResourceOutputBuilder {
         self.applied_weights = input;
         self
     }
+    /// <p>A collection of key-value pairs that indicate whether resources are active in Availability Zones or not. The key name is the Availability Zone where the resource is deployed. The value is 1 or 0.</p>
+    pub fn get_applied_weights(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, f32>> {
+        &self.applied_weights
+    }
     /// Appends an item to `zonal_shifts`.
     ///
     /// To override the contents of this collection use [`set_zonal_shifts`](Self::set_zonal_shifts).
@@ -127,6 +141,12 @@ impl GetManagedResourceOutputBuilder {
     ) -> Self {
         self.zonal_shifts = input;
         self
+    }
+    /// <p>The zonal shifts that are currently active for a resource. </p>
+    pub fn get_zonal_shifts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ZonalShiftInResource>> {
+        &self.zonal_shifts
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

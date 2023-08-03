@@ -75,6 +75,10 @@ impl TestIdentityProviderOutputBuilder {
         self.response = input;
         self
     }
+    /// <p>The response that is returned from your API Gateway or your Lambda function.</p>
+    pub fn get_response(&self) -> &::std::option::Option<::std::string::String> {
+        &self.response
+    }
     /// <p>The HTTP status code that is the response from your API Gateway or your Lambda function.</p>
     pub fn status_code(mut self, input: i32) -> Self {
         self.status_code = ::std::option::Option::Some(input);
@@ -84,6 +88,10 @@ impl TestIdentityProviderOutputBuilder {
     pub fn set_status_code(mut self, input: ::std::option::Option<i32>) -> Self {
         self.status_code = input;
         self
+    }
+    /// <p>The HTTP status code that is the response from your API Gateway or your Lambda function.</p>
+    pub fn get_status_code(&self) -> &::std::option::Option<i32> {
+        &self.status_code
     }
     /// <p>A message that indicates whether the test was successful or not.</p> <note>
     /// <p>If an empty string is returned, the most likely cause is that the authentication failed due to an incorrect username or password.</p>
@@ -99,6 +107,12 @@ impl TestIdentityProviderOutputBuilder {
         self.message = input;
         self
     }
+    /// <p>A message that indicates whether the test was successful or not.</p> <note>
+    /// <p>If an empty string is returned, the most likely cause is that the authentication failed due to an incorrect username or password.</p>
+    /// </note>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The endpoint of the service used to authenticate a user.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
@@ -108,6 +122,10 @@ impl TestIdentityProviderOutputBuilder {
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
+    }
+    /// <p>The endpoint of the service used to authenticate a user.</p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

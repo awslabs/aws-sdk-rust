@@ -48,6 +48,10 @@ impl GetSqlInjectionMatchSetInputBuilder {
         self.sql_injection_match_set_id = input;
         self
     }
+    /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to get. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
+    pub fn get_sql_injection_match_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sql_injection_match_set_id
+    }
     /// Consumes the builder and constructs a [`GetSqlInjectionMatchSetInput`](crate::operation::get_sql_injection_match_set::GetSqlInjectionMatchSetInput).
     pub fn build(
         self,

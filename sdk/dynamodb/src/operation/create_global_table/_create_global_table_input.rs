@@ -54,6 +54,10 @@ impl CreateGlobalTableInputBuilder {
         self.global_table_name = input;
         self
     }
+    /// <p>The global table name.</p>
+    pub fn get_global_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_table_name
+    }
     /// Appends an item to `replication_group`.
     ///
     /// To override the contents of this collection use [`set_replication_group`](Self::set_replication_group).
@@ -72,6 +76,12 @@ impl CreateGlobalTableInputBuilder {
     ) -> Self {
         self.replication_group = input;
         self
+    }
+    /// <p>The Regions where the global table needs to be created.</p>
+    pub fn get_replication_group(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Replica>> {
+        &self.replication_group
     }
     /// Consumes the builder and constructs a [`CreateGlobalTableInput`](crate::operation::create_global_table::CreateGlobalTableInput).
     pub fn build(

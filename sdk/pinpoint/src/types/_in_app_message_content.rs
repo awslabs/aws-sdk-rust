@@ -86,6 +86,10 @@ impl InAppMessageContentBuilder {
         self.background_color = input;
         self
     }
+    /// <p>The background color for the message.</p>
+    pub fn get_background_color(&self) -> &::std::option::Option<::std::string::String> {
+        &self.background_color
+    }
     /// <p>The configuration for the message body.</p>
     pub fn body_config(mut self, input: crate::types::InAppMessageBodyConfig) -> Self {
         self.body_config = ::std::option::Option::Some(input);
@@ -98,6 +102,10 @@ impl InAppMessageContentBuilder {
     ) -> Self {
         self.body_config = input;
         self
+    }
+    /// <p>The configuration for the message body.</p>
+    pub fn get_body_config(&self) -> &::std::option::Option<crate::types::InAppMessageBodyConfig> {
+        &self.body_config
     }
     /// <p>The configuration for the message header.</p>
     pub fn header_config(mut self, input: crate::types::InAppMessageHeaderConfig) -> Self {
@@ -112,6 +120,12 @@ impl InAppMessageContentBuilder {
         self.header_config = input;
         self
     }
+    /// <p>The configuration for the message header.</p>
+    pub fn get_header_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::InAppMessageHeaderConfig> {
+        &self.header_config
+    }
     /// <p>The image url for the background of message.</p>
     pub fn image_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_url = ::std::option::Option::Some(input.into());
@@ -121,6 +135,10 @@ impl InAppMessageContentBuilder {
     pub fn set_image_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_url = input;
         self
+    }
+    /// <p>The image url for the background of message.</p>
+    pub fn get_image_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_url
     }
     /// <p>The first button inside the message.</p>
     pub fn primary_btn(mut self, input: crate::types::InAppMessageButton) -> Self {
@@ -135,6 +153,10 @@ impl InAppMessageContentBuilder {
         self.primary_btn = input;
         self
     }
+    /// <p>The first button inside the message.</p>
+    pub fn get_primary_btn(&self) -> &::std::option::Option<crate::types::InAppMessageButton> {
+        &self.primary_btn
+    }
     /// <p>The second button inside message.</p>
     pub fn secondary_btn(mut self, input: crate::types::InAppMessageButton) -> Self {
         self.secondary_btn = ::std::option::Option::Some(input);
@@ -147,6 +169,10 @@ impl InAppMessageContentBuilder {
     ) -> Self {
         self.secondary_btn = input;
         self
+    }
+    /// <p>The second button inside message.</p>
+    pub fn get_secondary_btn(&self) -> &::std::option::Option<crate::types::InAppMessageButton> {
+        &self.secondary_btn
     }
     /// Consumes the builder and constructs a [`InAppMessageContent`](crate::types::InAppMessageContent).
     pub fn build(self) -> crate::types::InAppMessageContent {

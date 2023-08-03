@@ -61,6 +61,12 @@ impl AutoDetectionS3SourceConfigBuilder {
         self.templated_path_list = input;
         self
     }
+    /// <p>The config's templated path list.</p>
+    pub fn get_templated_path_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.templated_path_list
+    }
     /// Appends an item to `historical_data_path_list`.
     ///
     /// To override the contents of this collection use [`set_historical_data_path_list`](Self::set_historical_data_path_list).
@@ -82,6 +88,12 @@ impl AutoDetectionS3SourceConfigBuilder {
     ) -> Self {
         self.historical_data_path_list = input;
         self
+    }
+    /// <p>The config's historical data path list.</p>
+    pub fn get_historical_data_path_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.historical_data_path_list
     }
     /// Consumes the builder and constructs a [`AutoDetectionS3SourceConfig`](crate::types::AutoDetectionS3SourceConfig).
     pub fn build(self) -> crate::types::AutoDetectionS3SourceConfig {

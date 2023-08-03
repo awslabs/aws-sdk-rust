@@ -47,6 +47,10 @@ impl DescribeTrainingJobInputBuilder {
         self.training_job_name = input;
         self
     }
+    /// <p>The name of the training job.</p>
+    pub fn get_training_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.training_job_name
+    }
     /// Consumes the builder and constructs a [`DescribeTrainingJobInput`](crate::operation::describe_training_job::DescribeTrainingJobInput).
     pub fn build(
         self,

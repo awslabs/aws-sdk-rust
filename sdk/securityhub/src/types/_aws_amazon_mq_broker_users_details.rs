@@ -54,6 +54,10 @@ impl AwsAmazonMqBrokerUsersDetailsBuilder {
         self.pending_change = input;
         self
     }
+    /// <p> The type of change pending for the broker user. </p>
+    pub fn get_pending_change(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pending_change
+    }
     /// <p> The username of the broker user. </p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl AwsAmazonMqBrokerUsersDetailsBuilder {
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
+    }
+    /// <p> The username of the broker user. </p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
     }
     /// Consumes the builder and constructs a [`AwsAmazonMqBrokerUsersDetails`](crate::types::AwsAmazonMqBrokerUsersDetails).
     pub fn build(self) -> crate::types::AwsAmazonMqBrokerUsersDetails {

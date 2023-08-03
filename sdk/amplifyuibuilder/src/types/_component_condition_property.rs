@@ -88,6 +88,10 @@ impl ComponentConditionPropertyBuilder {
         self.property = input;
         self
     }
+    /// <p>The name of the conditional property.</p>
+    pub fn get_property(&self) -> &::std::option::Option<::std::string::String> {
+        &self.property
+    }
     /// <p>The name of a field. Specify this when the property is a data model.</p>
     pub fn field(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.field = ::std::option::Option::Some(input.into());
@@ -97,6 +101,10 @@ impl ComponentConditionPropertyBuilder {
     pub fn set_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.field = input;
         self
+    }
+    /// <p>The name of a field. Specify this when the property is a data model.</p>
+    pub fn get_field(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field
     }
     /// <p>The operator to use to perform the evaluation, such as <code>eq</code> to represent equals.</p>
     pub fn operator(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -108,6 +116,10 @@ impl ComponentConditionPropertyBuilder {
         self.operator = input;
         self
     }
+    /// <p>The operator to use to perform the evaluation, such as <code>eq</code> to represent equals.</p>
+    pub fn get_operator(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operator
+    }
     /// <p>The value of the property to evaluate.</p>
     pub fn operand(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operand = ::std::option::Option::Some(input.into());
@@ -117,6 +129,10 @@ impl ComponentConditionPropertyBuilder {
     pub fn set_operand(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operand = input;
         self
+    }
+    /// <p>The value of the property to evaluate.</p>
+    pub fn get_operand(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operand
     }
     /// <p>The value to assign to the property if the condition is met.</p>
     pub fn then(
@@ -134,6 +150,12 @@ impl ComponentConditionPropertyBuilder {
         self.then = input;
         self
     }
+    /// <p>The value to assign to the property if the condition is met.</p>
+    pub fn get_then(
+        &self,
+    ) -> &::std::option::Option<::std::boxed::Box<crate::types::ComponentProperty>> {
+        &self.then
+    }
     /// <p>The value to assign to the property if the condition is not met.</p>
     pub fn r#else(
         mut self,
@@ -150,6 +172,12 @@ impl ComponentConditionPropertyBuilder {
         self.r#else = input;
         self
     }
+    /// <p>The value to assign to the property if the condition is not met.</p>
+    pub fn get_else(
+        &self,
+    ) -> &::std::option::Option<::std::boxed::Box<crate::types::ComponentProperty>> {
+        &self.r#else
+    }
     /// <p>The type of the property to evaluate.</p>
     pub fn operand_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operand_type = ::std::option::Option::Some(input.into());
@@ -159,6 +187,10 @@ impl ComponentConditionPropertyBuilder {
     pub fn set_operand_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operand_type = input;
         self
+    }
+    /// <p>The type of the property to evaluate.</p>
+    pub fn get_operand_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operand_type
     }
     /// Consumes the builder and constructs a [`ComponentConditionProperty`](crate::types::ComponentConditionProperty).
     pub fn build(self) -> crate::types::ComponentConditionProperty {

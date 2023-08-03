@@ -36,6 +36,12 @@ impl ListUsageTotalsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListUsageTotals as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_usage_totals::builders::ListUsageTotalsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl ListUsageTotalsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -146,6 +156,10 @@ impl ListUsageTotalsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// Appends an item to `accountIds`.
     ///
@@ -163,5 +177,11 @@ impl ListUsageTotalsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
+    }
+    /// <p>The Amazon Web Services account IDs to retrieve usage totals for.</p>
+    pub fn get_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_account_ids()
     }
 }

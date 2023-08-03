@@ -36,6 +36,12 @@ impl CreateResourceServerFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateResourceServer as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_resource_server::builders::CreateResourceServerInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateResourceServerFluentBuilder {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
+    /// <p>The user pool ID for the user pool.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_pool_id()
+    }
     /// <p>A unique resource server identifier for the resource server. This could be an HTTPS endpoint where the resource server is located, such as <code>https://my-weather-api.example.com</code>.</p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identifier(input.into());
@@ -136,6 +146,10 @@ impl CreateResourceServerFluentBuilder {
         self.inner = self.inner.set_identifier(input);
         self
     }
+    /// <p>A unique resource server identifier for the resource server. This could be an HTTPS endpoint where the resource server is located, such as <code>https://my-weather-api.example.com</code>.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identifier()
+    }
     /// <p>A friendly name for the resource server.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -145,6 +159,10 @@ impl CreateResourceServerFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>A friendly name for the resource server.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// Appends an item to `Scopes`.
     ///
@@ -162,5 +180,11 @@ impl CreateResourceServerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_scopes(input);
         self
+    }
+    /// <p>A list of scopes. Each scope is a key-value map with the keys <code>name</code> and <code>description</code>.</p>
+    pub fn get_scopes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceServerScopeType>> {
+        self.inner.get_scopes()
     }
 }

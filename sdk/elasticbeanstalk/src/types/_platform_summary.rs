@@ -134,6 +134,10 @@ impl PlatformSummaryBuilder {
         self.platform_arn = input;
         self
     }
+    /// <p>The ARN of the platform version.</p>
+    pub fn get_platform_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform_arn
+    }
     /// <p>The AWS account ID of the person who created the platform version.</p>
     pub fn platform_owner(
         mut self,
@@ -150,6 +154,10 @@ impl PlatformSummaryBuilder {
         self.platform_owner = input;
         self
     }
+    /// <p>The AWS account ID of the person who created the platform version.</p>
+    pub fn get_platform_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform_owner
+    }
     /// <p>The status of the platform version. You can create an environment from the platform version once it is ready.</p>
     pub fn platform_status(mut self, input: crate::types::PlatformStatus) -> Self {
         self.platform_status = ::std::option::Option::Some(input);
@@ -162,6 +170,10 @@ impl PlatformSummaryBuilder {
     ) -> Self {
         self.platform_status = input;
         self
+    }
+    /// <p>The status of the platform version. You can create an environment from the platform version once it is ready.</p>
+    pub fn get_platform_status(&self) -> &::std::option::Option<crate::types::PlatformStatus> {
+        &self.platform_status
     }
     /// <p>The category of platform version.</p>
     pub fn platform_category(
@@ -179,6 +191,10 @@ impl PlatformSummaryBuilder {
         self.platform_category = input;
         self
     }
+    /// <p>The category of platform version.</p>
+    pub fn get_platform_category(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform_category
+    }
     /// <p>The operating system used by the platform version.</p>
     pub fn operating_system_name(
         mut self,
@@ -195,6 +211,10 @@ impl PlatformSummaryBuilder {
         self.operating_system_name = input;
         self
     }
+    /// <p>The operating system used by the platform version.</p>
+    pub fn get_operating_system_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operating_system_name
+    }
     /// <p>The version of the operating system used by the platform version.</p>
     pub fn operating_system_version(
         mut self,
@@ -210,6 +230,10 @@ impl PlatformSummaryBuilder {
     ) -> Self {
         self.operating_system_version = input;
         self
+    }
+    /// <p>The version of the operating system used by the platform version.</p>
+    pub fn get_operating_system_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operating_system_version
     }
     /// Appends an item to `supported_tier_list`.
     ///
@@ -233,6 +257,12 @@ impl PlatformSummaryBuilder {
         self.supported_tier_list = input;
         self
     }
+    /// <p>The tiers in which the platform version runs.</p>
+    pub fn get_supported_tier_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.supported_tier_list
+    }
     /// Appends an item to `supported_addon_list`.
     ///
     /// To override the contents of this collection use [`set_supported_addon_list`](Self::set_supported_addon_list).
@@ -255,6 +285,12 @@ impl PlatformSummaryBuilder {
         self.supported_addon_list = input;
         self
     }
+    /// <p>The additions associated with the platform version.</p>
+    pub fn get_supported_addon_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.supported_addon_list
+    }
     /// <p>The state of the platform version in its lifecycle.</p>
     /// <p>Possible values: <code>recommended</code> | empty</p>
     /// <p>If an empty value is returned, the platform version is supported but isn't the recommended one for its branch.</p>
@@ -275,6 +311,12 @@ impl PlatformSummaryBuilder {
         self.platform_lifecycle_state = input;
         self
     }
+    /// <p>The state of the platform version in its lifecycle.</p>
+    /// <p>Possible values: <code>recommended</code> | empty</p>
+    /// <p>If an empty value is returned, the platform version is supported but isn't the recommended one for its branch.</p>
+    pub fn get_platform_lifecycle_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform_lifecycle_state
+    }
     /// <p>The version string of the platform version.</p>
     pub fn platform_version(
         mut self,
@@ -291,6 +333,10 @@ impl PlatformSummaryBuilder {
         self.platform_version = input;
         self
     }
+    /// <p>The version string of the platform version.</p>
+    pub fn get_platform_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform_version
+    }
     /// <p>The platform branch to which the platform version belongs.</p>
     pub fn platform_branch_name(
         mut self,
@@ -306,6 +352,10 @@ impl PlatformSummaryBuilder {
     ) -> Self {
         self.platform_branch_name = input;
         self
+    }
+    /// <p>The platform branch to which the platform version belongs.</p>
+    pub fn get_platform_branch_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform_branch_name
     }
     /// <p>The state of the platform version's branch in its lifecycle.</p>
     /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p>
@@ -324,6 +374,13 @@ impl PlatformSummaryBuilder {
     ) -> Self {
         self.platform_branch_lifecycle_state = input;
         self
+    }
+    /// <p>The state of the platform version's branch in its lifecycle.</p>
+    /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p>
+    pub fn get_platform_branch_lifecycle_state(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.platform_branch_lifecycle_state
     }
     /// Consumes the builder and constructs a [`PlatformSummary`](crate::types::PlatformSummary).
     pub fn build(self) -> crate::types::PlatformSummary {

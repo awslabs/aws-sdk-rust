@@ -45,6 +45,10 @@ impl StopDbClusterInputBuilder {
         self.db_cluster_identifier = input;
         self
     }
+    /// <p>The identifier of the cluster to stop. Example: <code>docdb-2019-05-28-15-24-52</code> </p>
+    pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_identifier
+    }
     /// Consumes the builder and constructs a [`StopDbClusterInput`](crate::operation::stop_db_cluster::StopDbClusterInput).
     pub fn build(
         self,

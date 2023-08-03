@@ -56,6 +56,10 @@ impl DeleteRecipeVersionOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the recipe that was deleted.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The version of the recipe that was deleted.</p>
     pub fn recipe_version(
         mut self,
@@ -71,6 +75,10 @@ impl DeleteRecipeVersionOutputBuilder {
     ) -> Self {
         self.recipe_version = input;
         self
+    }
+    /// <p>The version of the recipe that was deleted.</p>
+    pub fn get_recipe_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recipe_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -39,6 +39,13 @@ impl AssociateEntityToThingFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateEntityToThing as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::associate_entity_to_thing::builders::AssociateEntityToThingInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +136,10 @@ impl AssociateEntityToThingFluentBuilder {
         self.inner = self.inner.set_thing_name(input);
         self
     }
+    /// <p>The name of the thing to which the entity is to be associated.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_thing_name()
+    }
     /// <p>The ID of the device to be associated with the thing.</p>
     /// <p>The ID should be in the following format.</p>
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
@@ -143,6 +154,12 @@ impl AssociateEntityToThingFluentBuilder {
         self.inner = self.inner.set_entity_id(input);
         self
     }
+    /// <p>The ID of the device to be associated with the thing.</p>
+    /// <p>The ID should be in the following format.</p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_entity_id()
+    }
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
     pub fn namespace_version(mut self, input: i64) -> Self {
         self.inner = self.inner.namespace_version(input);
@@ -152,5 +169,9 @@ impl AssociateEntityToThingFluentBuilder {
     pub fn set_namespace_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_namespace_version(input);
         self
+    }
+    /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
+    pub fn get_namespace_version(&self) -> &::std::option::Option<i64> {
+        self.inner.get_namespace_version()
     }
 }

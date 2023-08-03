@@ -49,6 +49,10 @@ impl DescribeJobsInputBuilder {
         self.jobs = input;
         self
     }
+    /// <p>A list of up to 100 job IDs.</p>
+    pub fn get_jobs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.jobs
+    }
     /// Consumes the builder and constructs a [`DescribeJobsInput`](crate::operation::describe_jobs::DescribeJobsInput).
     pub fn build(
         self,

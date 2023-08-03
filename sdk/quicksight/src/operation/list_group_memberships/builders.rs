@@ -36,6 +36,12 @@ impl ListGroupMembershipsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListGroupMemberships as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_group_memberships::builders::ListGroupMembershipsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl ListGroupMembershipsFluentBuilder {
         self.inner = self.inner.set_group_name(input);
         self
     }
+    /// <p>The name of the group that you want to see a membership list of.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group_name()
+    }
     /// <p>A pagination token that can be used in a subsequent request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -147,6 +157,10 @@ impl ListGroupMembershipsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A pagination token that can be used in a subsequent request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return from this request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -156,6 +170,10 @@ impl ListGroupMembershipsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return from this request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub fn aws_account_id(
@@ -173,6 +191,10 @@ impl ListGroupMembershipsFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>The namespace of the group that you want a list of users from.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace(input.into());
@@ -182,5 +204,9 @@ impl ListGroupMembershipsFluentBuilder {
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace(input);
         self
+    }
+    /// <p>The namespace of the group that you want a list of users from.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_namespace()
     }
 }

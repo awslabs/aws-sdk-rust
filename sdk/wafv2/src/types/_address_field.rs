@@ -61,6 +61,15 @@ impl AddressFieldBuilder {
         self.identifier = input;
         self
     }
+    /// <p>The name of a single primary address field. </p>
+    /// <p>How you specify the address fields depends on the request inspection payload type.</p>
+    /// <ul>
+    /// <li> <p>For JSON payloads, specify the field identifiers in JSON pointer syntax. For information about the JSON Pointer syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>. </p> <p>For example, for the JSON payload <code>{ "form": { "primaryaddressline1": "THE_ADDRESS1", "primaryaddressline2": "THE_ADDRESS2", "primaryaddressline3": "THE_ADDRESS3" } }</code>, the address field idenfiers are <code>/form/primaryaddressline1</code>, <code>/form/primaryaddressline2</code>, and <code>/form/primaryaddressline3</code>.</p> </li>
+    /// <li> <p>For form encoded payload types, use the HTML form names.</p> <p>For example, for an HTML form with input elements named <code>primaryaddressline1</code>, <code>primaryaddressline2</code>, and <code>primaryaddressline3</code>, the address fields identifiers are <code>primaryaddressline1</code>, <code>primaryaddressline2</code>, and <code>primaryaddressline3</code>. </p> </li>
+    /// </ul>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
+    }
     /// Consumes the builder and constructs a [`AddressField`](crate::types::AddressField).
     pub fn build(self) -> crate::types::AddressField {
         crate::types::AddressField {

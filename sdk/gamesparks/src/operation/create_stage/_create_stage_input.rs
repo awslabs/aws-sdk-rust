@@ -87,6 +87,10 @@ impl CreateStageInputBuilder {
         self.game_name = input;
         self
     }
+    /// <p>The name of the game.</p>
+    pub fn get_game_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.game_name
+    }
     /// <p>The name of the stage.</p>
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_name = ::std::option::Option::Some(input.into());
@@ -96,6 +100,10 @@ impl CreateStageInputBuilder {
     pub fn set_stage_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stage_name = input;
         self
+    }
+    /// <p>The name of the stage.</p>
+    pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stage_name
     }
     /// <p> The Amazon Resource Name (ARN) of the role to run the game with. This role can be a game-defined role or the default role that GameSparks created. </p>
     pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -107,6 +115,10 @@ impl CreateStageInputBuilder {
         self.role = input;
         self
     }
+    /// <p> The Amazon Resource Name (ARN) of the role to run the game with. This role can be a game-defined role or the default role that GameSparks created. </p>
+    pub fn get_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role
+    }
     /// <p>The description of the stage.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -117,6 +129,10 @@ impl CreateStageInputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the stage.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p> A client-defined token. With an active client token in the request, this action is idempotent. </p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -126,6 +142,10 @@ impl CreateStageInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p> A client-defined token. With an active client token in the request, this action is idempotent. </p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -151,6 +171,14 @@ impl CreateStageInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The list of tags to apply to the stage.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateStageInput`](crate::operation::create_stage::CreateStageInput).
     pub fn build(

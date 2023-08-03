@@ -56,6 +56,10 @@ impl ReplicaUpdateBuilder {
         self.create = input;
         self
     }
+    /// <p>The parameters required for creating a replica on an existing global table.</p>
+    pub fn get_create(&self) -> &::std::option::Option<crate::types::CreateReplicaAction> {
+        &self.create
+    }
     /// <p>The name of the existing replica to be removed.</p>
     pub fn delete(mut self, input: crate::types::DeleteReplicaAction) -> Self {
         self.delete = ::std::option::Option::Some(input);
@@ -68,6 +72,10 @@ impl ReplicaUpdateBuilder {
     ) -> Self {
         self.delete = input;
         self
+    }
+    /// <p>The name of the existing replica to be removed.</p>
+    pub fn get_delete(&self) -> &::std::option::Option<crate::types::DeleteReplicaAction> {
+        &self.delete
     }
     /// Consumes the builder and constructs a [`ReplicaUpdate`](crate::types::ReplicaUpdate).
     pub fn build(self) -> crate::types::ReplicaUpdate {

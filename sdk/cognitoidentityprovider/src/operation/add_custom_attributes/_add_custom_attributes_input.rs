@@ -52,6 +52,10 @@ impl AddCustomAttributesInputBuilder {
         self.user_pool_id = input;
         self
     }
+    /// <p>The user pool ID for the user pool where you want to add custom attributes.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_pool_id
+    }
     /// Appends an item to `custom_attributes`.
     ///
     /// To override the contents of this collection use [`set_custom_attributes`](Self::set_custom_attributes).
@@ -70,6 +74,12 @@ impl AddCustomAttributesInputBuilder {
     ) -> Self {
         self.custom_attributes = input;
         self
+    }
+    /// <p>An array of custom attributes, such as Mutable and Name.</p>
+    pub fn get_custom_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaAttributeType>> {
+        &self.custom_attributes
     }
     /// Consumes the builder and constructs a [`AddCustomAttributesInput`](crate::operation::add_custom_attributes::AddCustomAttributesInput).
     pub fn build(

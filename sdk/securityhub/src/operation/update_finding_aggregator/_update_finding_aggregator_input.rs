@@ -79,6 +79,10 @@ impl UpdateFindingAggregatorInputBuilder {
         self.finding_aggregator_arn = input;
         self
     }
+    /// <p>The ARN of the finding aggregator. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
+    pub fn get_finding_aggregator_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.finding_aggregator_arn
+    }
     /// <p>Indicates whether to aggregate findings from all of the available Regions in the current partition. Also determines whether to automatically aggregate findings from new Regions as Security Hub supports them and you opt into them.</p>
     /// <p>The selected option also determines how to use the Regions provided in the Regions list.</p>
     /// <p>The options are as follows:</p>
@@ -109,6 +113,17 @@ impl UpdateFindingAggregatorInputBuilder {
         self.region_linking_mode = input;
         self
     }
+    /// <p>Indicates whether to aggregate findings from all of the available Regions in the current partition. Also determines whether to automatically aggregate findings from new Regions as Security Hub supports them and you opt into them.</p>
+    /// <p>The selected option also determines how to use the Regions provided in the Regions list.</p>
+    /// <p>The options are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
+    /// <li> <p> <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
+    /// <li> <p> <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions. </p> </li>
+    /// </ul>
+    pub fn get_region_linking_mode(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region_linking_mode
+    }
     /// Appends an item to `regions`.
     ///
     /// To override the contents of this collection use [`set_regions`](Self::set_regions).
@@ -129,6 +144,11 @@ impl UpdateFindingAggregatorInputBuilder {
     ) -> Self {
         self.regions = input;
         self
+    }
+    /// <p>If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a space-separated list of Regions that do not aggregate findings to the aggregation Region.</p>
+    /// <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a space-separated list of Regions that do aggregate findings to the aggregation Region.</p>
+    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.regions
     }
     /// Consumes the builder and constructs a [`UpdateFindingAggregatorInput`](crate::operation::update_finding_aggregator::UpdateFindingAggregatorInput).
     pub fn build(

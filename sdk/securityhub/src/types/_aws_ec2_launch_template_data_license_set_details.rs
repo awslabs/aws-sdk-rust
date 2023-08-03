@@ -46,6 +46,10 @@ impl AwsEc2LaunchTemplateDataLicenseSetDetailsBuilder {
         self.license_configuration_arn = input;
         self
     }
+    /// <p> The Amazon Resource Name (ARN) of the license configuration. </p>
+    pub fn get_license_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_configuration_arn
+    }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataLicenseSetDetails`](crate::types::AwsEc2LaunchTemplateDataLicenseSetDetails).
     pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataLicenseSetDetails {
         crate::types::AwsEc2LaunchTemplateDataLicenseSetDetails {

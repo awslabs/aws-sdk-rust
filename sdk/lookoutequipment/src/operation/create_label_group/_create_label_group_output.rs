@@ -61,6 +61,10 @@ impl CreateLabelGroupOutputBuilder {
         self.label_group_name = input;
         self
     }
+    /// <p> The name of the label group that you have created. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+    pub fn get_label_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label_group_name
+    }
     /// <p> The ARN of the label group that you have created. </p>
     pub fn label_group_arn(
         mut self,
@@ -76,6 +80,10 @@ impl CreateLabelGroupOutputBuilder {
     ) -> Self {
         self.label_group_arn = input;
         self
+    }
+    /// <p> The ARN of the label group that you have created. </p>
+    pub fn get_label_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label_group_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

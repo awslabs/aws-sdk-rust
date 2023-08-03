@@ -128,6 +128,10 @@ impl ProfileDetailBuilder {
         self.profile_id = input;
         self
     }
+    /// <p>The unique identifier of the profile.</p>
+    pub fn get_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_id
+    }
     /// <p>The ARN of the profile.</p>
     pub fn profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_arn = ::std::option::Option::Some(input.into());
@@ -137,6 +141,10 @@ impl ProfileDetailBuilder {
     pub fn set_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profile_arn = input;
         self
+    }
+    /// <p>The ARN of the profile.</p>
+    pub fn get_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_arn
     }
     /// <p>The name of the profile.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -148,6 +156,10 @@ impl ProfileDetailBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the profile.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Specifies whether instance properties are required in temporary credential requests with this profile. </p>
     pub fn require_instance_properties(mut self, input: bool) -> Self {
         self.require_instance_properties = ::std::option::Option::Some(input);
@@ -157,6 +169,10 @@ impl ProfileDetailBuilder {
     pub fn set_require_instance_properties(mut self, input: ::std::option::Option<bool>) -> Self {
         self.require_instance_properties = input;
         self
+    }
+    /// <p>Specifies whether instance properties are required in temporary credential requests with this profile. </p>
+    pub fn get_require_instance_properties(&self) -> &::std::option::Option<bool> {
+        &self.require_instance_properties
     }
     /// <p>Indicates whether the profile is enabled.</p>
     pub fn enabled(mut self, input: bool) -> Self {
@@ -168,6 +184,10 @@ impl ProfileDetailBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Indicates whether the profile is enabled.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// <p>The Amazon Web Services account that created the profile.</p>
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by = ::std::option::Option::Some(input.into());
@@ -177,6 +197,10 @@ impl ProfileDetailBuilder {
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_by = input;
         self
+    }
+    /// <p>The Amazon Web Services account that created the profile.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_by
     }
     /// <p>A session policy that applies to the trust boundary of the vended session credentials. </p>
     pub fn session_policy(
@@ -193,6 +217,10 @@ impl ProfileDetailBuilder {
     ) -> Self {
         self.session_policy = input;
         self
+    }
+    /// <p>A session policy that applies to the trust boundary of the vended session credentials. </p>
+    pub fn get_session_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_policy
     }
     /// Appends an item to `role_arns`.
     ///
@@ -212,6 +240,10 @@ impl ProfileDetailBuilder {
     ) -> Self {
         self.role_arns = input;
         self
+    }
+    /// <p>A list of IAM roles that this profile can assume in a temporary credential request.</p>
+    pub fn get_role_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.role_arns
     }
     /// Appends an item to `managed_policy_arns`.
     ///
@@ -235,6 +267,12 @@ impl ProfileDetailBuilder {
         self.managed_policy_arns = input;
         self
     }
+    /// <p>A list of managed policy ARNs that apply to the vended session credentials. </p>
+    pub fn get_managed_policy_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.managed_policy_arns
+    }
     /// <p>The ISO-8601 timestamp when the profile was created. </p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -247,6 +285,10 @@ impl ProfileDetailBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The ISO-8601 timestamp when the profile was created. </p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// <p>The ISO-8601 timestamp when the profile was last updated. </p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -261,6 +303,10 @@ impl ProfileDetailBuilder {
         self.updated_at = input;
         self
     }
+    /// <p>The ISO-8601 timestamp when the profile was last updated. </p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
+    }
     /// <p> The number of seconds the vended session credentials are valid for. </p>
     pub fn duration_seconds(mut self, input: i32) -> Self {
         self.duration_seconds = ::std::option::Option::Some(input);
@@ -270,6 +316,10 @@ impl ProfileDetailBuilder {
     pub fn set_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.duration_seconds = input;
         self
+    }
+    /// <p> The number of seconds the vended session credentials are valid for. </p>
+    pub fn get_duration_seconds(&self) -> &::std::option::Option<i32> {
+        &self.duration_seconds
     }
     /// Consumes the builder and constructs a [`ProfileDetail`](crate::types::ProfileDetail).
     pub fn build(self) -> crate::types::ProfileDetail {

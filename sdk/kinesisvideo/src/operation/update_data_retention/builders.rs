@@ -44,6 +44,12 @@ impl UpdateDataRetentionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDataRetention as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_data_retention::builders::UpdateDataRetentionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +140,10 @@ impl UpdateDataRetentionFluentBuilder {
         self.inner = self.inner.set_stream_name(input);
         self
     }
+    /// <p>The name of the stream whose retention period you want to change.</p>
+    pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_name()
+    }
     /// <p>The Amazon Resource Name (ARN) of the stream whose retention period you want to change.</p>
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stream_arn(input.into());
@@ -143,6 +153,10 @@ impl UpdateDataRetentionFluentBuilder {
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stream_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the stream whose retention period you want to change.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_arn()
     }
     /// <p>The version of the stream whose retention period you want to change. To get the version, call either the <code>DescribeStream</code> or the <code>ListStreams</code> API.</p>
     pub fn current_version(
@@ -160,6 +174,10 @@ impl UpdateDataRetentionFluentBuilder {
         self.inner = self.inner.set_current_version(input);
         self
     }
+    /// <p>The version of the stream whose retention period you want to change. To get the version, call either the <code>DescribeStream</code> or the <code>ListStreams</code> API.</p>
+    pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_current_version()
+    }
     /// <p>Indicates whether you want to increase or decrease the retention period.</p>
     pub fn operation(mut self, input: crate::types::UpdateDataRetentionOperation) -> Self {
         self.inner = self.inner.operation(input);
@@ -173,6 +191,12 @@ impl UpdateDataRetentionFluentBuilder {
         self.inner = self.inner.set_operation(input);
         self
     }
+    /// <p>Indicates whether you want to increase or decrease the retention period.</p>
+    pub fn get_operation(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateDataRetentionOperation> {
+        self.inner.get_operation()
+    }
     /// <p>The retention period, in hours. The value you specify replaces the current value. The maximum value for this parameter is 87600 (ten years).</p>
     pub fn data_retention_change_in_hours(mut self, input: i32) -> Self {
         self.inner = self.inner.data_retention_change_in_hours(input);
@@ -182,5 +206,9 @@ impl UpdateDataRetentionFluentBuilder {
     pub fn set_data_retention_change_in_hours(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_data_retention_change_in_hours(input);
         self
+    }
+    /// <p>The retention period, in hours. The value you specify replaces the current value. The maximum value for this parameter is 87600 (ten years).</p>
+    pub fn get_data_retention_change_in_hours(&self) -> &::std::option::Option<i32> {
+        self.inner.get_data_retention_change_in_hours()
     }
 }

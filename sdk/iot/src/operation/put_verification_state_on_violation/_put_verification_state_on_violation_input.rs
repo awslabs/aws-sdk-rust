@@ -55,6 +55,10 @@ impl PutVerificationStateOnViolationInputBuilder {
         self.violation_id = input;
         self
     }
+    /// <p>The violation ID.</p>
+    pub fn get_violation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.violation_id
+    }
     /// <p>The verification state of the violation.</p>
     pub fn verification_state(mut self, input: crate::types::VerificationState) -> Self {
         self.verification_state = ::std::option::Option::Some(input);
@@ -67,6 +71,12 @@ impl PutVerificationStateOnViolationInputBuilder {
     ) -> Self {
         self.verification_state = input;
         self
+    }
+    /// <p>The verification state of the violation.</p>
+    pub fn get_verification_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::VerificationState> {
+        &self.verification_state
     }
     /// <p>The description of the verification state of the violation (detect alarm).</p>
     pub fn verification_state_description(
@@ -83,6 +93,12 @@ impl PutVerificationStateOnViolationInputBuilder {
     ) -> Self {
         self.verification_state_description = input;
         self
+    }
+    /// <p>The description of the verification state of the violation (detect alarm).</p>
+    pub fn get_verification_state_description(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.verification_state_description
     }
     /// Consumes the builder and constructs a [`PutVerificationStateOnViolationInput`](crate::operation::put_verification_state_on_violation::PutVerificationStateOnViolationInput).
     pub fn build(

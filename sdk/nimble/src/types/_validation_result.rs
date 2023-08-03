@@ -69,6 +69,10 @@ impl ValidationResultBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of the validation result.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::LaunchProfileValidationType> {
+        &self.r#type
+    }
     /// <p>The current state.</p>
     pub fn state(mut self, input: crate::types::LaunchProfileValidationState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -82,6 +86,10 @@ impl ValidationResultBuilder {
         self.state = input;
         self
     }
+    /// <p>The current state.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::LaunchProfileValidationState> {
+        &self.state
+    }
     /// <p>The status code. This will contain the failure reason if the state is <code>VALIDATION_FAILED</code>.</p>
     pub fn status_code(mut self, input: crate::types::LaunchProfileValidationStatusCode) -> Self {
         self.status_code = ::std::option::Option::Some(input);
@@ -94,6 +102,12 @@ impl ValidationResultBuilder {
     ) -> Self {
         self.status_code = input;
         self
+    }
+    /// <p>The status code. This will contain the failure reason if the state is <code>VALIDATION_FAILED</code>.</p>
+    pub fn get_status_code(
+        &self,
+    ) -> &::std::option::Option<crate::types::LaunchProfileValidationStatusCode> {
+        &self.status_code
     }
     /// <p>The status message for the validation result.</p>
     pub fn status_message(
@@ -110,6 +124,10 @@ impl ValidationResultBuilder {
     ) -> Self {
         self.status_message = input;
         self
+    }
+    /// <p>The status message for the validation result.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     /// Consumes the builder and constructs a [`ValidationResult`](crate::types::ValidationResult).
     pub fn build(self) -> crate::types::ValidationResult {

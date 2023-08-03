@@ -36,6 +36,10 @@ impl ListPeeringsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListPeerings as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_peerings::builders::ListPeeringsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +139,10 @@ impl ListPeeringsFluentBuilder {
         self.inner = self.inner.set_core_network_id(input);
         self
     }
+    /// <p>The ID of a core network.</p>
+    pub fn get_core_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_core_network_id()
+    }
     /// <p>Returns a list of a peering requests.</p>
     pub fn peering_type(mut self, input: crate::types::PeeringType) -> Self {
         self.inner = self.inner.peering_type(input);
@@ -147,6 +155,10 @@ impl ListPeeringsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_peering_type(input);
         self
+    }
+    /// <p>Returns a list of a peering requests.</p>
+    pub fn get_peering_type(&self) -> &::std::option::Option<crate::types::PeeringType> {
+        self.inner.get_peering_type()
     }
     /// <p>Returns a list edge locations for the </p>
     pub fn edge_location(
@@ -164,6 +176,10 @@ impl ListPeeringsFluentBuilder {
         self.inner = self.inner.set_edge_location(input);
         self
     }
+    /// <p>Returns a list edge locations for the </p>
+    pub fn get_edge_location(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_edge_location()
+    }
     /// <p>Returns a list of the peering request states.</p>
     pub fn state(mut self, input: crate::types::PeeringState) -> Self {
         self.inner = self.inner.state(input);
@@ -173,6 +189,10 @@ impl ListPeeringsFluentBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::PeeringState>) -> Self {
         self.inner = self.inner.set_state(input);
         self
+    }
+    /// <p>Returns a list of the peering request states.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::PeeringState> {
+        self.inner.get_state()
     }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -184,6 +204,10 @@ impl ListPeeringsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -193,5 +217,9 @@ impl ListPeeringsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

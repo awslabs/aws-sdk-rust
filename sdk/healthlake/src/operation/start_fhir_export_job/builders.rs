@@ -36,6 +36,12 @@ impl StartFHIRExportJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartFHIRExportJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_fhir_export_job::builders::StartFhirExportJobInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl StartFHIRExportJobFluentBuilder {
         self.inner = self.inner.set_job_name(input);
         self
     }
+    /// <p>The user generated name for an export job.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_name()
+    }
     /// <p>The output data configuration that was supplied when the export job was created.</p>
     pub fn output_data_config(mut self, input: crate::types::OutputDataConfig) -> Self {
         self.inner = self.inner.output_data_config(input);
@@ -139,6 +149,10 @@ impl StartFHIRExportJobFluentBuilder {
         self.inner = self.inner.set_output_data_config(input);
         self
     }
+    /// <p>The output data configuration that was supplied when the export job was created.</p>
+    pub fn get_output_data_config(&self) -> &::std::option::Option<crate::types::OutputDataConfig> {
+        self.inner.get_output_data_config()
+    }
     /// <p>The AWS generated ID for the data store from which files are being exported for an export job.</p>
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.datastore_id(input.into());
@@ -148,6 +162,10 @@ impl StartFHIRExportJobFluentBuilder {
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_datastore_id(input);
         self
+    }
+    /// <p>The AWS generated ID for the data store from which files are being exported for an export job.</p>
+    pub fn get_datastore_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_datastore_id()
     }
     /// <p>The Amazon Resource Name used during the initiation of the job.</p>
     pub fn data_access_role_arn(
@@ -165,6 +183,10 @@ impl StartFHIRExportJobFluentBuilder {
         self.inner = self.inner.set_data_access_role_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name used during the initiation of the job.</p>
+    pub fn get_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_data_access_role_arn()
+    }
     /// <p>An optional user provided token used for ensuring idempotency.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -174,5 +196,9 @@ impl StartFHIRExportJobFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>An optional user provided token used for ensuring idempotency.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

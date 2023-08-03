@@ -56,6 +56,10 @@ impl SqsActionBuilder {
         self.queue_url = input;
         self
     }
+    /// <p>The URL of the SQS queue where the data is written.</p>
+    pub fn get_queue_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.queue_url
+    }
     /// <p>Set this to TRUE if you want the data to be base-64 encoded before it is written to the queue. Otherwise, set this to FALSE.</p>
     pub fn use_base64(mut self, input: bool) -> Self {
         self.use_base64 = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl SqsActionBuilder {
         self.use_base64 = input;
         self
     }
+    /// <p>Set this to TRUE if you want the data to be base-64 encoded before it is written to the queue. Otherwise, set this to FALSE.</p>
+    pub fn get_use_base64(&self) -> &::std::option::Option<bool> {
+        &self.use_base64
+    }
     /// <p>You can configure the action payload when you send a message to an Amazon SQS queue.</p>
     pub fn payload(mut self, input: crate::types::Payload) -> Self {
         self.payload = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl SqsActionBuilder {
     pub fn set_payload(mut self, input: ::std::option::Option<crate::types::Payload>) -> Self {
         self.payload = input;
         self
+    }
+    /// <p>You can configure the action payload when you send a message to an Amazon SQS queue.</p>
+    pub fn get_payload(&self) -> &::std::option::Option<crate::types::Payload> {
+        &self.payload
     }
     /// Consumes the builder and constructs a [`SqsAction`](crate::types::SqsAction).
     pub fn build(self) -> crate::types::SqsAction {

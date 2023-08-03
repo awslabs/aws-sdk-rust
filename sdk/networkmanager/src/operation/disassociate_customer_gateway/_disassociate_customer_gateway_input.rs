@@ -53,6 +53,10 @@ impl DisassociateCustomerGatewayInputBuilder {
         self.global_network_id = input;
         self
     }
+    /// <p>The ID of the global network.</p>
+    pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_network_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
     pub fn customer_gateway_arn(
         mut self,
@@ -68,6 +72,10 @@ impl DisassociateCustomerGatewayInputBuilder {
     ) -> Self {
         self.customer_gateway_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
+    pub fn get_customer_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.customer_gateway_arn
     }
     /// Consumes the builder and constructs a [`DisassociateCustomerGatewayInput`](crate::operation::disassociate_customer_gateway::DisassociateCustomerGatewayInput).
     pub fn build(

@@ -37,6 +37,10 @@ impl ModifyVpcPeeringConnectionOptionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyVpcPeeringConnectionOptions as a reference.
+    pub fn as_input(&self) -> &crate::operation::modify_vpc_peering_connection_options::builders::ModifyVpcPeeringConnectionOptionsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -107,6 +111,12 @@ impl ModifyVpcPeeringConnectionOptionsFluentBuilder {
         self.inner = self.inner.set_accepter_peering_connection_options(input);
         self
     }
+    /// <p>The VPC peering connection options for the accepter VPC.</p>
+    pub fn get_accepter_peering_connection_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::PeeringConnectionOptionsRequest> {
+        self.inner.get_accepter_peering_connection_options()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -116,6 +126,10 @@ impl ModifyVpcPeeringConnectionOptionsFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
     /// <p>The VPC peering connection options for the requester VPC.</p>
     pub fn requester_peering_connection_options(
@@ -133,6 +147,12 @@ impl ModifyVpcPeeringConnectionOptionsFluentBuilder {
         self.inner = self.inner.set_requester_peering_connection_options(input);
         self
     }
+    /// <p>The VPC peering connection options for the requester VPC.</p>
+    pub fn get_requester_peering_connection_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::PeeringConnectionOptionsRequest> {
+        self.inner.get_requester_peering_connection_options()
+    }
     /// <p>The ID of the VPC peering connection.</p>
     pub fn vpc_peering_connection_id(
         mut self,
@@ -148,5 +168,9 @@ impl ModifyVpcPeeringConnectionOptionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_vpc_peering_connection_id(input);
         self
+    }
+    /// <p>The ID of the VPC peering connection.</p>
+    pub fn get_vpc_peering_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpc_peering_connection_id()
     }
 }

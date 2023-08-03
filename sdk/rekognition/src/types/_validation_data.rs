@@ -52,6 +52,10 @@ impl ValidationDataBuilder {
         self.assets = input;
         self
     }
+    /// <p>The assets that comprise the validation data. </p>
+    pub fn get_assets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Asset>> {
+        &self.assets
+    }
     /// Consumes the builder and constructs a [`ValidationData`](crate::types::ValidationData).
     pub fn build(self) -> crate::types::ValidationData {
         crate::types::ValidationData {

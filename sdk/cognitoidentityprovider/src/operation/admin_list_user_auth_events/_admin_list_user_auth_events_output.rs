@@ -65,6 +65,12 @@ impl AdminListUserAuthEventsOutputBuilder {
         self.auth_events = input;
         self
     }
+    /// <p>The response object. It includes the <code>EventID</code>, <code>EventType</code>, <code>CreationDate</code>, <code>EventRisk</code>, and <code>EventResponse</code>.</p>
+    pub fn get_auth_events(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthEventType>> {
+        &self.auth_events
+    }
     /// <p>A pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -74,6 +80,10 @@ impl AdminListUserAuthEventsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

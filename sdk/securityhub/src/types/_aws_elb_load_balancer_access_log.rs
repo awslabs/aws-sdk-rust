@@ -70,6 +70,11 @@ impl AwsElbLoadBalancerAccessLogBuilder {
         self.emit_interval = input;
         self
     }
+    /// <p>The interval in minutes for publishing the access logs.</p>
+    /// <p>You can publish access logs either every 5 minutes or every 60 minutes.</p>
+    pub fn get_emit_interval(&self) -> &::std::option::Option<i32> {
+        &self.emit_interval
+    }
     /// <p>Indicates whether access logs are enabled for the load balancer.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -79,6 +84,10 @@ impl AwsElbLoadBalancerAccessLogBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    /// <p>Indicates whether access logs are enabled for the load balancer.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// <p>The name of the S3 bucket where the access logs are stored.</p>
     pub fn s3_bucket_name(
@@ -95,6 +104,10 @@ impl AwsElbLoadBalancerAccessLogBuilder {
     ) -> Self {
         self.s3_bucket_name = input;
         self
+    }
+    /// <p>The name of the S3 bucket where the access logs are stored.</p>
+    pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket_name
     }
     /// <p>The logical hierarchy that was created for the S3 bucket.</p>
     /// <p>If a prefix is not provided, the log is placed at the root level of the bucket.</p>
@@ -113,6 +126,11 @@ impl AwsElbLoadBalancerAccessLogBuilder {
     ) -> Self {
         self.s3_bucket_prefix = input;
         self
+    }
+    /// <p>The logical hierarchy that was created for the S3 bucket.</p>
+    /// <p>If a prefix is not provided, the log is placed at the root level of the bucket.</p>
+    pub fn get_s3_bucket_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket_prefix
     }
     /// Consumes the builder and constructs a [`AwsElbLoadBalancerAccessLog`](crate::types::AwsElbLoadBalancerAccessLog).
     pub fn build(self) -> crate::types::AwsElbLoadBalancerAccessLog {

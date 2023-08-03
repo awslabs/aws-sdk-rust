@@ -37,6 +37,10 @@ impl StartSmartHomeApplianceDiscoveryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartSmartHomeApplianceDiscovery as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_smart_home_appliance_discovery::builders::StartSmartHomeApplianceDiscoveryInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,5 +104,9 @@ impl StartSmartHomeApplianceDiscoveryFluentBuilder {
     pub fn set_room_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_room_arn(input);
         self
+    }
+    /// <p>The room where smart home appliance discovery was initiated.</p>
+    pub fn get_room_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_room_arn()
     }
 }

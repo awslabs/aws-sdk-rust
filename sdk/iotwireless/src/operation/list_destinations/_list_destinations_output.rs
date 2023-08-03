@@ -55,6 +55,10 @@ impl ListDestinationsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `destination_list`.
     ///
     /// To override the contents of this collection use [`set_destination_list`](Self::set_destination_list).
@@ -73,6 +77,12 @@ impl ListDestinationsOutputBuilder {
     ) -> Self {
         self.destination_list = input;
         self
+    }
+    /// <p>The list of destinations.</p>
+    pub fn get_destination_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Destinations>> {
+        &self.destination_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

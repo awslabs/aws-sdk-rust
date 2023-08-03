@@ -37,6 +37,12 @@ impl ReplaceTopicRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ReplaceTopicRule as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::replace_topic_rule::builders::ReplaceTopicRuleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl ReplaceTopicRuleFluentBuilder {
         self.inner = self.inner.set_rule_name(input);
         self
     }
+    /// <p>The name of the rule.</p>
+    pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rule_name()
+    }
     /// <p>The rule payload.</p>
     pub fn topic_rule_payload(mut self, input: crate::types::TopicRulePayload) -> Self {
         self.inner = self.inner.topic_rule_payload(input);
@@ -139,5 +149,9 @@ impl ReplaceTopicRuleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_topic_rule_payload(input);
         self
+    }
+    /// <p>The rule payload.</p>
+    pub fn get_topic_rule_payload(&self) -> &::std::option::Option<crate::types::TopicRulePayload> {
+        self.inner.get_topic_rule_payload()
     }
 }

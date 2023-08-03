@@ -36,6 +36,12 @@ impl DescribeReportJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeReportJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_report_job::builders::DescribeReportJobInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl DescribeReportJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_report_job_id(input);
         self
+    }
+    /// <p>The identifier of the report job. A unique, randomly generated, Unicode, UTF-8 encoded string that is at most 1,024 bytes long. The report job ID cannot be edited.</p>
+    pub fn get_report_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_report_job_id()
     }
 }

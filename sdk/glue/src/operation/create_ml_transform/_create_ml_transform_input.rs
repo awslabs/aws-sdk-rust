@@ -198,6 +198,10 @@ impl CreateMlTransformInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The unique name that you give the transform when you create it.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A description of the machine learning transform that is being defined. The default is an empty string.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -207,6 +211,10 @@ impl CreateMlTransformInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the machine learning transform that is being defined. The default is an empty string.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `input_record_tables`.
     ///
@@ -227,6 +235,12 @@ impl CreateMlTransformInputBuilder {
         self.input_record_tables = input;
         self
     }
+    /// <p>A list of Glue table definitions used by the transform.</p>
+    pub fn get_input_record_tables(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueTable>> {
+        &self.input_record_tables
+    }
     /// <p>The algorithmic parameters that are specific to the transform type used. Conditionally dependent on the transform type.</p>
     pub fn parameters(mut self, input: crate::types::TransformParameters) -> Self {
         self.parameters = ::std::option::Option::Some(input);
@@ -239,6 +253,10 @@ impl CreateMlTransformInputBuilder {
     ) -> Self {
         self.parameters = input;
         self
+    }
+    /// <p>The algorithmic parameters that are specific to the transform type used. Conditionally dependent on the transform type.</p>
+    pub fn get_parameters(&self) -> &::std::option::Option<crate::types::TransformParameters> {
+        &self.parameters
     }
     /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. The required permissions include both Glue service role permissions to Glue resources, and Amazon S3 permissions required by the transform. </p>
     /// <ul>
@@ -258,6 +276,14 @@ impl CreateMlTransformInputBuilder {
         self.role = input;
         self
     }
+    /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. The required permissions include both Glue service role permissions to Glue resources, and Amazon S3 permissions required by the transform. </p>
+    /// <ul>
+    /// <li> <p>This role needs Glue service role permissions to allow access to resources in Glue. See <a href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users That Access Glue</a>.</p> </li>
+    /// <li> <p>This role needs permission to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary directory, scripts, and any libraries used by the task run for this transform.</p> </li>
+    /// </ul>
+    pub fn get_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role
+    }
     /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
     pub fn glue_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.glue_version = ::std::option::Option::Some(input.into());
@@ -267,6 +293,10 @@ impl CreateMlTransformInputBuilder {
     pub fn set_glue_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.glue_version = input;
         self
+    }
+    /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
+    pub fn get_glue_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.glue_version
     }
     /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>
     /// <p> <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
@@ -295,6 +325,19 @@ impl CreateMlTransformInputBuilder {
     pub fn set_max_capacity(mut self, input: ::std::option::Option<f64>) -> Self {
         self.max_capacity = input;
         self
+    }
+    /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>
+    /// <p> <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
+    /// <ul>
+    /// <li> <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p> </li>
+    /// <li> <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p> </li>
+    /// <li> <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p> </li>
+    /// <li> <p> <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p> </li>
+    /// </ul>
+    /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
+    /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
+    pub fn get_max_capacity(&self) -> &::std::option::Option<f64> {
+        &self.max_capacity
     }
     /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>
     /// <ul>
@@ -333,6 +376,22 @@ impl CreateMlTransformInputBuilder {
         self.worker_type = input;
         self
     }
+    /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>
+    /// <ul>
+    /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+    /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
+    /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
+    /// </ul>
+    /// <p> <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
+    /// <ul>
+    /// <li> <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p> </li>
+    /// <li> <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p> </li>
+    /// <li> <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p> </li>
+    /// <li> <p> <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p> </li>
+    /// </ul>
+    pub fn get_worker_type(&self) -> &::std::option::Option<crate::types::WorkerType> {
+        &self.worker_type
+    }
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when this task runs.</p>
     /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
     pub fn number_of_workers(mut self, input: i32) -> Self {
@@ -345,6 +404,11 @@ impl CreateMlTransformInputBuilder {
         self.number_of_workers = input;
         self
     }
+    /// <p>The number of workers of a defined <code>workerType</code> that are allocated when this task runs.</p>
+    /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
+    pub fn get_number_of_workers(&self) -> &::std::option::Option<i32> {
+        &self.number_of_workers
+    }
     /// <p>The timeout of the task run for this transform in minutes. This is the maximum time that a task run for this transform can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
     pub fn timeout(mut self, input: i32) -> Self {
         self.timeout = ::std::option::Option::Some(input);
@@ -355,6 +419,10 @@ impl CreateMlTransformInputBuilder {
         self.timeout = input;
         self
     }
+    /// <p>The timeout of the task run for this transform in minutes. This is the maximum time that a task run for this transform can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
+    pub fn get_timeout(&self) -> &::std::option::Option<i32> {
+        &self.timeout
+    }
     /// <p>The maximum number of times to retry a task for this transform after a task run fails.</p>
     pub fn max_retries(mut self, input: i32) -> Self {
         self.max_retries = ::std::option::Option::Some(input);
@@ -364,6 +432,10 @@ impl CreateMlTransformInputBuilder {
     pub fn set_max_retries(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_retries = input;
         self
+    }
+    /// <p>The maximum number of times to retry a task for this transform after a task run fails.</p>
+    pub fn get_max_retries(&self) -> &::std::option::Option<i32> {
+        &self.max_retries
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -390,6 +462,14 @@ impl CreateMlTransformInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags to use with this machine learning transform. You may use tags to limit access to the machine learning transform. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.</p>
     pub fn transform_encryption(mut self, input: crate::types::TransformEncryption) -> Self {
         self.transform_encryption = ::std::option::Option::Some(input);
@@ -402,6 +482,12 @@ impl CreateMlTransformInputBuilder {
     ) -> Self {
         self.transform_encryption = input;
         self
+    }
+    /// <p>The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.</p>
+    pub fn get_transform_encryption(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransformEncryption> {
+        &self.transform_encryption
     }
     /// Consumes the builder and constructs a [`CreateMlTransformInput`](crate::operation::create_ml_transform::CreateMlTransformInput).
     pub fn build(

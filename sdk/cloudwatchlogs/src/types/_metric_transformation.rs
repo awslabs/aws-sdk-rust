@@ -96,6 +96,10 @@ impl MetricTransformationBuilder {
         self.metric_name = input;
         self
     }
+    /// <p>The name of the CloudWatch metric.</p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_name
+    }
     /// <p>A custom namespace to contain your metric in CloudWatch. Use namespaces to group together metrics that are similar. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Namespace">Namespaces</a>.</p>
     pub fn metric_namespace(
         mut self,
@@ -112,6 +116,10 @@ impl MetricTransformationBuilder {
         self.metric_namespace = input;
         self
     }
+    /// <p>A custom namespace to contain your metric in CloudWatch. Use namespaces to group together metrics that are similar. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Namespace">Namespaces</a>.</p>
+    pub fn get_metric_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_namespace
+    }
     /// <p>The value to publish to the CloudWatch metric when a filter pattern matches a log event.</p>
     pub fn metric_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_value = ::std::option::Option::Some(input.into());
@@ -122,6 +130,10 @@ impl MetricTransformationBuilder {
         self.metric_value = input;
         self
     }
+    /// <p>The value to publish to the CloudWatch metric when a filter pattern matches a log event.</p>
+    pub fn get_metric_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_value
+    }
     /// <p>(Optional) The value to emit when a filter pattern does not match a log event. This value can be null.</p>
     pub fn default_value(mut self, input: f64) -> Self {
         self.default_value = ::std::option::Option::Some(input);
@@ -131,6 +143,10 @@ impl MetricTransformationBuilder {
     pub fn set_default_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.default_value = input;
         self
+    }
+    /// <p>(Optional) The value to emit when a filter pattern does not match a log event. This value can be null.</p>
+    pub fn get_default_value(&self) -> &::std::option::Option<f64> {
+        &self.default_value
     }
     /// Adds a key-value pair to `dimensions`.
     ///
@@ -165,6 +181,18 @@ impl MetricTransformationBuilder {
         self.dimensions = input;
         self
     }
+    /// <p>The fields to use as dimensions for the metric. One metric filter can include as many as three dimensions.</p> <important>
+    /// <p>Metrics extracted from log events are charged as custom metrics. To prevent unexpected high charges, do not specify high-cardinality fields such as <code>IPAddress</code> or <code>requestID</code> as dimensions. Each different value found for a dimension is treated as a separate metric and accrues charges as a separate custom metric. </p>
+    /// <p>CloudWatch Logs disables a metric filter if it generates 1000 different name/value pairs for your specified dimensions within a certain amount of time. This helps to prevent accidental high charges.</p>
+    /// <p>You can also set up a billing alarm to alert you if your charges are higher than expected. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html"> Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services Charges</a>. </p>
+    /// </important>
+    pub fn get_dimensions(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.dimensions
+    }
     /// <p>The unit to assign to the metric. If you omit this, the unit is set as <code>None</code>.</p>
     pub fn unit(mut self, input: crate::types::StandardUnit) -> Self {
         self.unit = ::std::option::Option::Some(input);
@@ -174,6 +202,10 @@ impl MetricTransformationBuilder {
     pub fn set_unit(mut self, input: ::std::option::Option<crate::types::StandardUnit>) -> Self {
         self.unit = input;
         self
+    }
+    /// <p>The unit to assign to the metric. If you omit this, the unit is set as <code>None</code>.</p>
+    pub fn get_unit(&self) -> &::std::option::Option<crate::types::StandardUnit> {
+        &self.unit
     }
     /// Consumes the builder and constructs a [`MetricTransformation`](crate::types::MetricTransformation).
     pub fn build(self) -> crate::types::MetricTransformation {

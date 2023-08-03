@@ -70,6 +70,12 @@ impl AggregateConformancePackComplianceBuilder {
         self.compliance_type = input;
         self
     }
+    /// <p>The compliance status of the conformance pack.</p>
+    pub fn get_compliance_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConformancePackComplianceType> {
+        &self.compliance_type
+    }
     /// <p>The number of compliant Config Rules.</p>
     pub fn compliant_rule_count(mut self, input: i32) -> Self {
         self.compliant_rule_count = ::std::option::Option::Some(input);
@@ -79,6 +85,10 @@ impl AggregateConformancePackComplianceBuilder {
     pub fn set_compliant_rule_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.compliant_rule_count = input;
         self
+    }
+    /// <p>The number of compliant Config Rules.</p>
+    pub fn get_compliant_rule_count(&self) -> &::std::option::Option<i32> {
+        &self.compliant_rule_count
     }
     /// <p>The number of noncompliant Config Rules.</p>
     pub fn non_compliant_rule_count(mut self, input: i32) -> Self {
@@ -90,6 +100,10 @@ impl AggregateConformancePackComplianceBuilder {
         self.non_compliant_rule_count = input;
         self
     }
+    /// <p>The number of noncompliant Config Rules.</p>
+    pub fn get_non_compliant_rule_count(&self) -> &::std::option::Option<i32> {
+        &self.non_compliant_rule_count
+    }
     /// <p>Total number of compliant rules, noncompliant rules, and the rules that do not have any applicable resources to evaluate upon resulting in insufficient data.</p>
     pub fn total_rule_count(mut self, input: i32) -> Self {
         self.total_rule_count = ::std::option::Option::Some(input);
@@ -99,6 +113,10 @@ impl AggregateConformancePackComplianceBuilder {
     pub fn set_total_rule_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_rule_count = input;
         self
+    }
+    /// <p>Total number of compliant rules, noncompliant rules, and the rules that do not have any applicable resources to evaluate upon resulting in insufficient data.</p>
+    pub fn get_total_rule_count(&self) -> &::std::option::Option<i32> {
+        &self.total_rule_count
     }
     /// Consumes the builder and constructs a [`AggregateConformancePackCompliance`](crate::types::AggregateConformancePackCompliance).
     pub fn build(self) -> crate::types::AggregateConformancePackCompliance {

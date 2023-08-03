@@ -60,6 +60,10 @@ impl OperationSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID for an operation.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The status of the operation. Values include the following:</p>
     /// <ul>
     /// <li> <p> <b>SUBMITTED</b>: This is the initial state immediately after you submit a request.</p> </li>
@@ -84,6 +88,16 @@ impl OperationSummaryBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the operation. Values include the following:</p>
+    /// <ul>
+    /// <li> <p> <b>SUBMITTED</b>: This is the initial state immediately after you submit a request.</p> </li>
+    /// <li> <p> <b>PENDING</b>: Cloud Map is performing the operation.</p> </li>
+    /// <li> <p> <b>SUCCESS</b>: The operation succeeded.</p> </li>
+    /// <li> <p> <b>FAIL</b>: The operation failed. For the failure reason, see <code>ErrorMessage</code>.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::OperationStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`OperationSummary`](crate::types::OperationSummary).
     pub fn build(self) -> crate::types::OperationSummary {

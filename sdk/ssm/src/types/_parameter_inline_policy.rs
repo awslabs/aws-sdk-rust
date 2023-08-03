@@ -56,6 +56,10 @@ impl ParameterInlinePolicyBuilder {
         self.policy_text = input;
         self
     }
+    /// <p>The JSON text of the policy.</p>
+    pub fn get_policy_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_text
+    }
     /// <p>The type of policy. Parameter Store, a capability of Amazon Web Services Systems Manager, supports the following policy types: Expiration, ExpirationNotification, and NoChangeNotification. </p>
     pub fn policy_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_type = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl ParameterInlinePolicyBuilder {
     pub fn set_policy_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_type = input;
         self
+    }
+    /// <p>The type of policy. Parameter Store, a capability of Amazon Web Services Systems Manager, supports the following policy types: Expiration, ExpirationNotification, and NoChangeNotification. </p>
+    pub fn get_policy_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_type
     }
     /// <p>The status of the policy. Policies report the following statuses: Pending (the policy hasn't been enforced or applied yet), Finished (the policy was applied), Failed (the policy wasn't applied), or InProgress (the policy is being applied now). </p>
     pub fn policy_status(
@@ -81,6 +89,10 @@ impl ParameterInlinePolicyBuilder {
     ) -> Self {
         self.policy_status = input;
         self
+    }
+    /// <p>The status of the policy. Policies report the following statuses: Pending (the policy hasn't been enforced or applied yet), Finished (the policy was applied), Failed (the policy wasn't applied), or InProgress (the policy is being applied now). </p>
+    pub fn get_policy_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_status
     }
     /// Consumes the builder and constructs a [`ParameterInlinePolicy`](crate::types::ParameterInlinePolicy).
     pub fn build(self) -> crate::types::ParameterInlinePolicy {

@@ -55,6 +55,10 @@ impl DeleteAccessControlRuleInputBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The identifier for the organization.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p>The name of the access control rule.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl DeleteAccessControlRuleInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the access control rule.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`DeleteAccessControlRuleInput`](crate::operation::delete_access_control_rule::DeleteAccessControlRuleInput).
     pub fn build(

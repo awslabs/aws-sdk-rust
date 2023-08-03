@@ -73,6 +73,10 @@ impl DescribeConfigurationOptionsOutputBuilder {
         self.solution_stack_name = input;
         self
     }
+    /// <p>The name of the solution stack these configuration options belong to.</p>
+    pub fn get_solution_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.solution_stack_name
+    }
     /// <p>The ARN of the platform version.</p>
     pub fn platform_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform_arn = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl DescribeConfigurationOptionsOutputBuilder {
     pub fn set_platform_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform_arn = input;
         self
+    }
+    /// <p>The ARN of the platform version.</p>
+    pub fn get_platform_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform_arn
     }
     /// Appends an item to `options`.
     ///
@@ -101,6 +109,12 @@ impl DescribeConfigurationOptionsOutputBuilder {
     ) -> Self {
         self.options = input;
         self
+    }
+    /// <p> A list of <code>ConfigurationOptionDescription</code>. </p>
+    pub fn get_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionDescription>> {
+        &self.options
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

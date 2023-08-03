@@ -56,6 +56,10 @@ impl BatchUpdateAttendeeCapabilitiesExceptInputBuilder {
         self.meeting_id = input;
         self
     }
+    /// <p>The ID of the meeting associated with the update request.</p>
+    pub fn get_meeting_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.meeting_id
+    }
     /// Appends an item to `excluded_attendee_ids`.
     ///
     /// To override the contents of this collection use [`set_excluded_attendee_ids`](Self::set_excluded_attendee_ids).
@@ -75,6 +79,12 @@ impl BatchUpdateAttendeeCapabilitiesExceptInputBuilder {
         self.excluded_attendee_ids = input;
         self
     }
+    /// <p>The <code>AttendeeIDs</code> that you want to exclude from one or more capabilities.</p>
+    pub fn get_excluded_attendee_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttendeeIdItem>> {
+        &self.excluded_attendee_ids
+    }
     /// <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to update.</p>
     pub fn capabilities(mut self, input: crate::types::AttendeeCapabilities) -> Self {
         self.capabilities = ::std::option::Option::Some(input);
@@ -87,6 +97,10 @@ impl BatchUpdateAttendeeCapabilitiesExceptInputBuilder {
     ) -> Self {
         self.capabilities = input;
         self
+    }
+    /// <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to update.</p>
+    pub fn get_capabilities(&self) -> &::std::option::Option<crate::types::AttendeeCapabilities> {
+        &self.capabilities
     }
     /// Consumes the builder and constructs a [`BatchUpdateAttendeeCapabilitiesExceptInput`](crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::batch_update_attendee_capabilities_except::BatchUpdateAttendeeCapabilitiesExceptInput, ::aws_smithy_http::operation::error::BuildError>{

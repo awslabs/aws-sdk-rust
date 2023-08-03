@@ -96,6 +96,10 @@ impl InstanceUserSummaryBuilder {
         self.username = input;
         self
     }
+    /// <p>The user name from the identity provider for the user.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
+    }
     /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl InstanceUserSummaryBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
+    }
+    /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// <p>An object that specifies details for the identity provider.</p>
     pub fn identity_provider(mut self, input: crate::types::IdentityProvider) -> Self {
@@ -119,6 +127,10 @@ impl InstanceUserSummaryBuilder {
         self.identity_provider = input;
         self
     }
+    /// <p>An object that specifies details for the identity provider.</p>
+    pub fn get_identity_provider(&self) -> &::std::option::Option<crate::types::IdentityProvider> {
+        &self.identity_provider
+    }
     /// <p>The status of a user associated with an EC2 instance.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -128,6 +140,10 @@ impl InstanceUserSummaryBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of a user associated with an EC2 instance.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>The status message for users of an EC2 instance.</p>
     pub fn status_message(
@@ -145,6 +161,10 @@ impl InstanceUserSummaryBuilder {
         self.status_message = input;
         self
     }
+    /// <p>The status message for users of an EC2 instance.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>The domain name of the user.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
@@ -154,6 +174,10 @@ impl InstanceUserSummaryBuilder {
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain = input;
         self
+    }
+    /// <p>The domain name of the user.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
     }
     /// <p>The date a user was associated with an EC2 instance.</p>
     pub fn association_date(
@@ -171,6 +195,10 @@ impl InstanceUserSummaryBuilder {
         self.association_date = input;
         self
     }
+    /// <p>The date a user was associated with an EC2 instance.</p>
+    pub fn get_association_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_date
+    }
     /// <p>The date a user was disassociated from an EC2 instance.</p>
     pub fn disassociation_date(
         mut self,
@@ -186,6 +214,10 @@ impl InstanceUserSummaryBuilder {
     ) -> Self {
         self.disassociation_date = input;
         self
+    }
+    /// <p>The date a user was disassociated from an EC2 instance.</p>
+    pub fn get_disassociation_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.disassociation_date
     }
     /// Consumes the builder and constructs a [`InstanceUserSummary`](crate::types::InstanceUserSummary).
     pub fn build(self) -> crate::types::InstanceUserSummary {

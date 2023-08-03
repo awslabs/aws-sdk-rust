@@ -55,6 +55,10 @@ impl FSxWindowsFileServerAuthorizationConfigBuilder {
         self.credentials_parameter = input;
         self
     }
+    /// <p>The authorization credential option to use. The authorization credential options can be provided using either the Amazon Resource Name (ARN) of an Secrets Manager secret or SSM Parameter Store parameter. The ARN refers to the stored credentials.</p>
+    pub fn get_credentials_parameter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.credentials_parameter
+    }
     /// <p>A fully qualified domain name hosted by an <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">Directory Service</a> Managed Microsoft AD (Active Directory) or self-hosted AD on Amazon EC2.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl FSxWindowsFileServerAuthorizationConfigBuilder {
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain = input;
         self
+    }
+    /// <p>A fully qualified domain name hosted by an <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">Directory Service</a> Managed Microsoft AD (Active Directory) or self-hosted AD on Amazon EC2.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
     }
     /// Consumes the builder and constructs a [`FSxWindowsFileServerAuthorizationConfig`](crate::types::FSxWindowsFileServerAuthorizationConfig).
     pub fn build(self) -> crate::types::FSxWindowsFileServerAuthorizationConfig {

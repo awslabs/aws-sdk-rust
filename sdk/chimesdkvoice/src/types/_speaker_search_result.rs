@@ -48,6 +48,10 @@ impl SpeakerSearchResultBuilder {
         self.confidence_score = input;
         self
     }
+    /// <p>The confidence score in the speaker search analysis.</p>
+    pub fn get_confidence_score(&self) -> &::std::option::Option<f32> {
+        &self.confidence_score
+    }
     /// <p>The voice profile ID.</p>
     pub fn voice_profile_id(
         mut self,
@@ -63,6 +67,10 @@ impl SpeakerSearchResultBuilder {
     ) -> Self {
         self.voice_profile_id = input;
         self
+    }
+    /// <p>The voice profile ID.</p>
+    pub fn get_voice_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_profile_id
     }
     /// Consumes the builder and constructs a [`SpeakerSearchResult`](crate::types::SpeakerSearchResult).
     pub fn build(self) -> crate::types::SpeakerSearchResult {

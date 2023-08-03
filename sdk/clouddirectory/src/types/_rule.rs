@@ -56,6 +56,10 @@ impl RuleBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of attribute validation rule.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::RuleType> {
+        &self.r#type
+    }
     /// Adds a key-value pair to `parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
@@ -80,6 +84,14 @@ impl RuleBuilder {
     ) -> Self {
         self.parameters = input;
         self
+    }
+    /// <p>The minimum and maximum parameters that are associated with the rule.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.parameters
     }
     /// Consumes the builder and constructs a [`Rule`](crate::types::Rule).
     pub fn build(self) -> crate::types::Rule {

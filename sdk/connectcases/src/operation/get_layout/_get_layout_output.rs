@@ -95,6 +95,10 @@ impl GetLayoutOutputBuilder {
         self.layout_id = input;
         self
     }
+    /// <p>The unique identifier of the layout.</p>
+    pub fn get_layout_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.layout_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the newly created layout.</p>
     pub fn layout_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.layout_arn = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl GetLayoutOutputBuilder {
         self.layout_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the newly created layout.</p>
+    pub fn get_layout_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.layout_arn
+    }
     /// <p>The name of the layout. It must be unique.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -114,6 +122,10 @@ impl GetLayoutOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the layout. It must be unique.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Information about which fields will be present in the layout, the order of the fields, and read-only attribute of the field. </p>
     pub fn content(mut self, input: crate::types::LayoutContent) -> Self {
@@ -127,6 +139,10 @@ impl GetLayoutOutputBuilder {
     ) -> Self {
         self.content = input;
         self
+    }
+    /// <p>Information about which fields will be present in the layout, the order of the fields, and read-only attribute of the field. </p>
+    pub fn get_content(&self) -> &::std::option::Option<crate::types::LayoutContent> {
+        &self.content
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -155,6 +171,17 @@ impl GetLayoutOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            ::std::option::Option<::std::string::String>,
+        >,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

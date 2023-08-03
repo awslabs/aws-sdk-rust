@@ -56,6 +56,10 @@ impl SendEventOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the response.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The time when the event was sent.</p>
     /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
     pub fn absolute_time(
@@ -73,6 +77,11 @@ impl SendEventOutputBuilder {
     ) -> Self {
         self.absolute_time = input;
         self
+    }
+    /// <p>The time when the event was sent.</p>
+    /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
+    pub fn get_absolute_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.absolute_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

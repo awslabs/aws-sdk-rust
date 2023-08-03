@@ -38,6 +38,12 @@ impl DescribeKeywordsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeKeywords as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_keywords::builders::DescribeKeywordsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -145,6 +151,10 @@ impl DescribeKeywordsFluentBuilder {
         self.inner = self.inner.set_origination_identity(input);
         self
     }
+    /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
+    pub fn get_origination_identity(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_origination_identity()
+    }
     /// Appends an item to `Keywords`.
     ///
     /// To override the contents of this collection use [`set_keywords`](Self::set_keywords).
@@ -161,6 +171,10 @@ impl DescribeKeywordsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_keywords(input);
         self
+    }
+    /// <p>An array of keywords to search for.</p>
+    pub fn get_keywords(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_keywords()
     }
     /// Appends an item to `Filters`.
     ///
@@ -179,6 +193,12 @@ impl DescribeKeywordsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>An array of keyword filters to filter the results.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KeywordFilter>> {
+        self.inner.get_filters()
+    }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -189,6 +209,10 @@ impl DescribeKeywordsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return per each request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -198,5 +222,9 @@ impl DescribeKeywordsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return per each request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

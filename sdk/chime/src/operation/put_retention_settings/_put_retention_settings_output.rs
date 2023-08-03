@@ -60,6 +60,12 @@ impl PutRetentionSettingsOutputBuilder {
         self.retention_settings = input;
         self
     }
+    /// <p>The retention settings.</p>
+    pub fn get_retention_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::RetentionSettings> {
+        &self.retention_settings
+    }
     /// <p>The timestamp representing the time at which the specified items are permanently deleted, in ISO 8601 format.</p>
     pub fn initiate_deletion_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.initiate_deletion_timestamp = ::std::option::Option::Some(input);
@@ -72,6 +78,12 @@ impl PutRetentionSettingsOutputBuilder {
     ) -> Self {
         self.initiate_deletion_timestamp = input;
         self
+    }
+    /// <p>The timestamp representing the time at which the specified items are permanently deleted, in ISO 8601 format.</p>
+    pub fn get_initiate_deletion_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.initiate_deletion_timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

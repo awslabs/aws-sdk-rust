@@ -51,6 +51,10 @@ impl DeleteDbProxyEndpointOutputBuilder {
         self.db_proxy_endpoint = input;
         self
     }
+    /// <p>The data structure representing the details of the DB proxy endpoint that you delete.</p>
+    pub fn get_db_proxy_endpoint(&self) -> &::std::option::Option<crate::types::DbProxyEndpoint> {
+        &self.db_proxy_endpoint
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

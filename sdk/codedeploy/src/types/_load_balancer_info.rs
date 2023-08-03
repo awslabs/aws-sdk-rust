@@ -85,6 +85,14 @@ impl LoadBalancerInfoBuilder {
         self.elb_info_list = input;
         self
     }
+    /// <p>An array that contains information about the load balancer to use for load balancing in a deployment. In Elastic Load Balancing, load balancers are used with Classic Load Balancers.</p> <note>
+    /// <p> Adding more than one load balancer to the array is not supported. </p>
+    /// </note>
+    pub fn get_elb_info_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ElbInfo>> {
+        &self.elb_info_list
+    }
     /// Appends an item to `target_group_info_list`.
     ///
     /// To override the contents of this collection use [`set_target_group_info_list`](Self::set_target_group_info_list).
@@ -108,6 +116,14 @@ impl LoadBalancerInfoBuilder {
         self.target_group_info_list = input;
         self
     }
+    /// <p>An array that contains information about the target group to use for load balancing in a deployment. In Elastic Load Balancing, target groups are used with Application Load Balancers.</p> <note>
+    /// <p> Adding more than one target group to the array is not supported. </p>
+    /// </note>
+    pub fn get_target_group_info_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetGroupInfo>> {
+        &self.target_group_info_list
+    }
     /// Appends an item to `target_group_pair_info_list`.
     ///
     /// To override the contents of this collection use [`set_target_group_pair_info_list`](Self::set_target_group_pair_info_list).
@@ -126,6 +142,12 @@ impl LoadBalancerInfoBuilder {
     ) -> Self {
         self.target_group_pair_info_list = input;
         self
+    }
+    /// <p> The target group pair information. This is an array of <code>TargeGroupPairInfo</code> objects with a maximum size of one. </p>
+    pub fn get_target_group_pair_info_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetGroupPairInfo>> {
+        &self.target_group_pair_info_list
     }
     /// Consumes the builder and constructs a [`LoadBalancerInfo`](crate::types::LoadBalancerInfo).
     pub fn build(self) -> crate::types::LoadBalancerInfo {

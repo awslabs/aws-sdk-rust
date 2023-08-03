@@ -95,6 +95,10 @@ impl PublishLayerVersionInputBuilder {
         self.layer_name = input;
         self
     }
+    /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
+    pub fn get_layer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.layer_name
+    }
     /// <p>The description of the version.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -104,6 +108,10 @@ impl PublishLayerVersionInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the version.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The function layer archive.</p>
     pub fn content(mut self, input: crate::types::LayerVersionContentInput) -> Self {
@@ -117,6 +125,10 @@ impl PublishLayerVersionInputBuilder {
     ) -> Self {
         self.content = input;
         self
+    }
+    /// <p>The function layer archive.</p>
+    pub fn get_content(&self) -> &::std::option::Option<crate::types::LayerVersionContentInput> {
+        &self.content
     }
     /// Appends an item to `compatible_runtimes`.
     ///
@@ -139,6 +151,13 @@ impl PublishLayerVersionInputBuilder {
         self.compatible_runtimes = input;
         self
     }
+    /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function runtimes</a>. Used for filtering with <code>ListLayers</code> and <code>ListLayerVersions</code>.</p>
+    /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
+    pub fn get_compatible_runtimes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Runtime>> {
+        &self.compatible_runtimes
+    }
     /// <p>The layer's software license. It can be any of the following:</p>
     /// <ul>
     /// <li> <p>An <a href="https://spdx.org/licenses/">SPDX license identifier</a>. For example, <code>MIT</code>.</p> </li>
@@ -159,6 +178,15 @@ impl PublishLayerVersionInputBuilder {
         self.license_info = input;
         self
     }
+    /// <p>The layer's software license. It can be any of the following:</p>
+    /// <ul>
+    /// <li> <p>An <a href="https://spdx.org/licenses/">SPDX license identifier</a>. For example, <code>MIT</code>.</p> </li>
+    /// <li> <p>The URL of a license hosted on the internet. For example, <code>https://opensource.org/licenses/MIT</code>.</p> </li>
+    /// <li> <p>The full text of the license.</p> </li>
+    /// </ul>
+    pub fn get_license_info(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_info
+    }
     /// Appends an item to `compatible_architectures`.
     ///
     /// To override the contents of this collection use [`set_compatible_architectures`](Self::set_compatible_architectures).
@@ -177,6 +205,12 @@ impl PublishLayerVersionInputBuilder {
     ) -> Self {
         self.compatible_architectures = input;
         self
+    }
+    /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
+    pub fn get_compatible_architectures(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Architecture>> {
+        &self.compatible_architectures
     }
     /// Consumes the builder and constructs a [`PublishLayerVersionInput`](crate::operation::publish_layer_version::PublishLayerVersionInput).
     pub fn build(

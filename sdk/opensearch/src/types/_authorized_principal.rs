@@ -51,6 +51,10 @@ impl AuthorizedPrincipalBuilder {
         self.principal_type = input;
         self
     }
+    /// <p>The type of principal.</p>
+    pub fn get_principal_type(&self) -> &::std::option::Option<crate::types::PrincipalType> {
+        &self.principal_type
+    }
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">IAM principal</a> that is allowed access to the domain.</p>
     pub fn principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl AuthorizedPrincipalBuilder {
     pub fn set_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal = input;
         self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">IAM principal</a> that is allowed access to the domain.</p>
+    pub fn get_principal(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal
     }
     /// Consumes the builder and constructs a [`AuthorizedPrincipal`](crate::types::AuthorizedPrincipal).
     pub fn build(self) -> crate::types::AuthorizedPrincipal {

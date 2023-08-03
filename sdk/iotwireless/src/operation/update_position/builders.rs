@@ -39,6 +39,12 @@ impl UpdatePositionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdatePosition as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_position::builders::UpdatePositionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl UpdatePositionFluentBuilder {
         self.inner = self.inner.set_resource_identifier(input);
         self
     }
+    /// <p>Resource identifier of the resource for which position is updated.</p>
+    pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_identifier()
+    }
     /// <p>Resource type of the resource for which position is updated.</p>
     pub fn resource_type(mut self, input: crate::types::PositionResourceType) -> Self {
         self.inner = self.inner.resource_type(input);
@@ -139,6 +149,10 @@ impl UpdatePositionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
+    }
+    /// <p>Resource type of the resource for which position is updated.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::PositionResourceType> {
+        self.inner.get_resource_type()
     }
     /// Appends an item to `Position`.
     ///
@@ -153,5 +167,9 @@ impl UpdatePositionFluentBuilder {
     pub fn set_position(mut self, input: ::std::option::Option<::std::vec::Vec<f32>>) -> Self {
         self.inner = self.inner.set_position(input);
         self
+    }
+    /// <p>The position information of the resource.</p>
+    pub fn get_position(&self) -> &::std::option::Option<::std::vec::Vec<f32>> {
+        self.inner.get_position()
     }
 }

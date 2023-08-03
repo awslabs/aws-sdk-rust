@@ -52,6 +52,12 @@ impl ZendeskMetadataBuilder {
         self.o_auth_scopes = input;
         self
     }
+    /// <p> The desired authorization scope for the Zendesk account. </p>
+    pub fn get_o_auth_scopes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.o_auth_scopes
+    }
     /// Consumes the builder and constructs a [`ZendeskMetadata`](crate::types::ZendeskMetadata).
     pub fn build(self) -> crate::types::ZendeskMetadata {
         crate::types::ZendeskMetadata {

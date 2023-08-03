@@ -52,6 +52,10 @@ impl DetectTextFiltersBuilder {
         self.word_filter = input;
         self
     }
+    /// <p>A set of parameters that allow you to filter out certain results from your returned results.</p>
+    pub fn get_word_filter(&self) -> &::std::option::Option<crate::types::DetectionFilter> {
+        &self.word_filter
+    }
     /// Appends an item to `regions_of_interest`.
     ///
     /// To override the contents of this collection use [`set_regions_of_interest`](Self::set_regions_of_interest).
@@ -70,6 +74,12 @@ impl DetectTextFiltersBuilder {
     ) -> Self {
         self.regions_of_interest = input;
         self
+    }
+    /// <p> A Filter focusing on a certain area of the image. Uses a <code>BoundingBox</code> object to set the region of the image.</p>
+    pub fn get_regions_of_interest(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RegionOfInterest>> {
+        &self.regions_of_interest
     }
     /// Consumes the builder and constructs a [`DetectTextFilters`](crate::types::DetectTextFilters).
     pub fn build(self) -> crate::types::DetectTextFilters {

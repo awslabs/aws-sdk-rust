@@ -55,6 +55,10 @@ impl CreateProjectInputBuilder {
         self.space_name = input;
         self
     }
+    /// <p>The name of the space.</p>
+    pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.space_name
+    }
     /// <p>The friendly name of the project that will be displayed to users.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl CreateProjectInputBuilder {
         self.display_name = input;
         self
     }
+    /// <p>The friendly name of the project that will be displayed to users.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
+    }
     /// <p>The description of the project. This description will be displayed to all users of the project. We recommend providing a brief description of the project and its intended purpose.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -74,6 +82,10 @@ impl CreateProjectInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the project. This description will be displayed to all users of the project. We recommend providing a brief description of the project and its intended purpose.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`CreateProjectInput`](crate::operation::create_project::CreateProjectInput).
     pub fn build(

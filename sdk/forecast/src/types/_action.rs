@@ -74,6 +74,10 @@ impl ActionBuilder {
         self.attribute_name = input;
         self
     }
+    /// <p>The related time series that you are modifying. This value is case insensitive.</p>
+    pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_name
+    }
     /// <p>The operation that is applied to the provided attribute. Operations include:</p>
     /// <ul>
     /// <li> <p> <code>ADD</code> - adds <code>Value</code> to all rows of <code>AttributeName</code>.</p> </li>
@@ -96,6 +100,16 @@ impl ActionBuilder {
         self.operation = input;
         self
     }
+    /// <p>The operation that is applied to the provided attribute. Operations include:</p>
+    /// <ul>
+    /// <li> <p> <code>ADD</code> - adds <code>Value</code> to all rows of <code>AttributeName</code>.</p> </li>
+    /// <li> <p> <code>SUBTRACT</code> - subtracts <code>Value</code> from all rows of <code>AttributeName</code>.</p> </li>
+    /// <li> <p> <code>MULTIPLY</code> - multiplies all rows of <code>AttributeName</code> by <code>Value</code>.</p> </li>
+    /// <li> <p> <code>DIVIDE</code> - divides all rows of <code>AttributeName</code> by <code>Value</code>.</p> </li>
+    /// </ul>
+    pub fn get_operation(&self) -> &::std::option::Option<crate::types::Operation> {
+        &self.operation
+    }
     /// <p>The value that is applied for the chosen <code>Operation</code>.</p>
     pub fn value(mut self, input: f64) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -105,6 +119,10 @@ impl ActionBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value that is applied for the chosen <code>Operation</code>.</p>
+    pub fn get_value(&self) -> &::std::option::Option<f64> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`Action`](crate::types::Action).
     pub fn build(self) -> crate::types::Action {

@@ -65,6 +65,12 @@ impl LocationBuilder {
         self.jdbc = input;
         self
     }
+    /// <p>A JDBC location.</p>
+    pub fn get_jdbc(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeGenNodeArg>> {
+        &self.jdbc
+    }
     /// Appends an item to `s3`.
     ///
     /// To override the contents of this collection use [`set_s3`](Self::set_s3).
@@ -84,6 +90,10 @@ impl LocationBuilder {
         self.s3 = input;
         self
     }
+    /// <p>An Amazon Simple Storage Service (Amazon S3) location.</p>
+    pub fn get_s3(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeGenNodeArg>> {
+        &self.s3
+    }
     /// Appends an item to `dynamo_db`.
     ///
     /// To override the contents of this collection use [`set_dynamo_db`](Self::set_dynamo_db).
@@ -102,6 +112,12 @@ impl LocationBuilder {
     ) -> Self {
         self.dynamo_db = input;
         self
+    }
+    /// <p>An Amazon DynamoDB table location.</p>
+    pub fn get_dynamo_db(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeGenNodeArg>> {
+        &self.dynamo_db
     }
     /// Consumes the builder and constructs a [`Location`](crate::types::Location).
     pub fn build(self) -> crate::types::Location {

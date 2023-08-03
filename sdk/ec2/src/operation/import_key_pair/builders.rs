@@ -37,6 +37,12 @@ impl ImportKeyPairFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ImportKeyPair as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::import_key_pair::builders::ImportKeyPairInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +125,10 @@ impl ImportKeyPairFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>A unique name for the key pair.</p>
     pub fn key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key_name(input.into());
@@ -128,6 +138,10 @@ impl ImportKeyPairFluentBuilder {
     pub fn set_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key_name(input);
         self
+    }
+    /// <p>A unique name for the key pair.</p>
+    pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_key_name()
     }
     /// <p>The public key. For API calls, the text must be base64-encoded. For command line tools, base64 encoding is performed for you.</p>
     pub fn public_key_material(mut self, input: ::aws_smithy_types::Blob) -> Self {
@@ -141,6 +155,10 @@ impl ImportKeyPairFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_public_key_material(input);
         self
+    }
+    /// <p>The public key. For API calls, the text must be base64-encoded. For command line tools, base64 encoding is performed for you.</p>
+    pub fn get_public_key_material(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        self.inner.get_public_key_material()
     }
     /// Appends an item to `TagSpecifications`.
     ///
@@ -158,5 +176,11 @@ impl ImportKeyPairFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
+    }
+    /// <p>The tags to apply to the imported key pair.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        self.inner.get_tag_specifications()
     }
 }

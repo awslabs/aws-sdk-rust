@@ -58,6 +58,10 @@ impl ListMultipartReadSetUploadsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p> Next token returned in the response of a previous ListMultipartReadSetUploads call. Used to get the next page of results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `uploads`.
     ///
     /// To override the contents of this collection use [`set_uploads`](Self::set_uploads).
@@ -76,6 +80,12 @@ impl ListMultipartReadSetUploadsOutputBuilder {
     ) -> Self {
         self.uploads = input;
         self
+    }
+    /// <p> An array of multipart uploads. </p>
+    pub fn get_uploads(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MultipartReadSetUploadListItem>> {
+        &self.uploads
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

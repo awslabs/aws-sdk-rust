@@ -40,6 +40,10 @@ impl PhoneNumberQuickConnectConfigBuilder {
         self.phone_number = input;
         self
     }
+    /// <p>The phone number in E.164 format.</p>
+    pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.phone_number
+    }
     /// Consumes the builder and constructs a [`PhoneNumberQuickConnectConfig`](crate::types::PhoneNumberQuickConnectConfig).
     pub fn build(self) -> crate::types::PhoneNumberQuickConnectConfig {
         crate::types::PhoneNumberQuickConnectConfig {

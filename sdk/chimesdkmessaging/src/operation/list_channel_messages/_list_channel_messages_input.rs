@@ -113,6 +113,10 @@ impl ListChannelMessagesInputBuilder {
         self.channel_arn = input;
         self
     }
+    /// <p>The ARN of the channel.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
+    }
     /// <p>The order in which you want messages sorted. Default is Descending, based on time created.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -122,6 +126,10 @@ impl ListChannelMessagesInputBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.sort_order = input;
         self
+    }
+    /// <p>The order in which you want messages sorted. Default is Descending, based on time created.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.sort_order
     }
     /// <p>The initial or starting time stamp for your requested messages.</p>
     pub fn not_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -136,6 +144,10 @@ impl ListChannelMessagesInputBuilder {
         self.not_before = input;
         self
     }
+    /// <p>The initial or starting time stamp for your requested messages.</p>
+    pub fn get_not_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.not_before
+    }
     /// <p>The final or ending time stamp for your requested messages.</p>
     pub fn not_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.not_after = ::std::option::Option::Some(input);
@@ -149,6 +161,10 @@ impl ListChannelMessagesInputBuilder {
         self.not_after = input;
         self
     }
+    /// <p>The final or ending time stamp for your requested messages.</p>
+    pub fn get_not_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.not_after
+    }
     /// <p>The maximum number of messages that you want returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -158,6 +174,10 @@ impl ListChannelMessagesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of messages that you want returned.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The token passed by previous API calls until all requested messages are returned.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -169,6 +189,10 @@ impl ListChannelMessagesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token passed by previous API calls until all requested messages are returned.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.chime_bearer = ::std::option::Option::Some(input.into());
@@ -178,6 +202,10 @@ impl ListChannelMessagesInputBuilder {
     pub fn set_chime_bearer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.chime_bearer = input;
         self
+    }
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
+    pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
+        &self.chime_bearer
     }
     /// <p>The ID of the SubChannel in the request.</p> <note>
     /// <p>Only required when listing the messages in a SubChannel that the user belongs to.</p>
@@ -198,6 +226,12 @@ impl ListChannelMessagesInputBuilder {
     ) -> Self {
         self.sub_channel_id = input;
         self
+    }
+    /// <p>The ID of the SubChannel in the request.</p> <note>
+    /// <p>Only required when listing the messages in a SubChannel that the user belongs to.</p>
+    /// </note>
+    pub fn get_sub_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sub_channel_id
     }
     /// Consumes the builder and constructs a [`ListChannelMessagesInput`](crate::operation::list_channel_messages::ListChannelMessagesInput).
     pub fn build(

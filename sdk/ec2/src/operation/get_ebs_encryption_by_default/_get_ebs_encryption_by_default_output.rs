@@ -46,6 +46,10 @@ impl GetEbsEncryptionByDefaultOutputBuilder {
         self.ebs_encryption_by_default = input;
         self
     }
+    /// <p>Indicates whether encryption by default is enabled.</p>
+    pub fn get_ebs_encryption_by_default(&self) -> &::std::option::Option<bool> {
+        &self.ebs_encryption_by_default
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

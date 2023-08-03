@@ -82,6 +82,14 @@ impl ListReportsInputBuilder {
         self.sort_order = input;
         self
     }
+    /// <p> Specifies the sort order for the list of returned reports. Valid values are: </p>
+    /// <ul>
+    /// <li> <p> <code>ASCENDING</code>: return reports in chronological order based on their creation date. </p> </li>
+    /// <li> <p> <code>DESCENDING</code>: return reports in the reverse chronological order based on their creation date. </p> </li>
+    /// </ul>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrderType> {
+        &self.sort_order
+    }
     /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl ListReportsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p> The maximum number of paginated reports returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>Report</code> objects. The default value is 100. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -102,6 +114,10 @@ impl ListReportsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p> The maximum number of paginated reports returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>Report</code> objects. The default value is 100. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p> A <code>ReportFilter</code> object used to filter the returned reports. </p>
     pub fn filter(mut self, input: crate::types::ReportFilter) -> Self {
         self.filter = ::std::option::Option::Some(input);
@@ -111,6 +127,10 @@ impl ListReportsInputBuilder {
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ReportFilter>) -> Self {
         self.filter = input;
         self
+    }
+    /// <p> A <code>ReportFilter</code> object used to filter the returned reports. </p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::ReportFilter> {
+        &self.filter
     }
     /// Consumes the builder and constructs a [`ListReportsInput`](crate::operation::list_reports::ListReportsInput).
     pub fn build(

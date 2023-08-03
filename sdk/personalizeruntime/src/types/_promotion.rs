@@ -76,6 +76,10 @@ impl PromotionBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the promotion.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The percentage of recommended items to apply the promotion to.</p>
     pub fn percent_promoted_items(mut self, input: i32) -> Self {
         self.percent_promoted_items = ::std::option::Option::Some(input);
@@ -86,6 +90,10 @@ impl PromotionBuilder {
         self.percent_promoted_items = input;
         self
     }
+    /// <p>The percentage of recommended items to apply the promotion to.</p>
+    pub fn get_percent_promoted_items(&self) -> &::std::option::Option<i32> {
+        &self.percent_promoted_items
+    }
     /// <p>The Amazon Resource Name (ARN) of the filter used by the promotion. This filter defines the criteria for promoted items. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/promoting-items.html#promotion-filters">Promotion filters</a>.</p>
     pub fn filter_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter_arn = ::std::option::Option::Some(input.into());
@@ -95,6 +103,10 @@ impl PromotionBuilder {
     pub fn set_filter_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.filter_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the filter used by the promotion. This filter defines the criteria for promoted items. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/promoting-items.html#promotion-filters">Promotion filters</a>.</p>
+    pub fn get_filter_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filter_arn
     }
     /// Adds a key-value pair to `filter_values`.
     ///
@@ -124,6 +136,16 @@ impl PromotionBuilder {
     ) -> Self {
         self.filter_values = input;
         self
+    }
+    /// <p>The values to use when promoting items. For each placeholder parameter in your promotion's filter expression, provide the parameter name (in matching case) as a key and the filter value(s) as the corresponding value. Separate multiple values for one parameter with a comma. </p>
+    /// <p>For filter expressions that use an <code>INCLUDE</code> element to include items, you must provide values for all parameters that are defined in the expression. For filters with expressions that use an <code>EXCLUDE</code> element to exclude items, you can omit the <code>filter-values</code>. In this case, Amazon Personalize doesn't use that portion of the expression to filter recommendations.</p>
+    /// <p>For more information on creating filters, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering recommendations and user segments</a>.</p>
+    pub fn get_filter_values(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.filter_values
     }
     /// Consumes the builder and constructs a [`Promotion`](crate::types::Promotion).
     pub fn build(self) -> crate::types::Promotion {

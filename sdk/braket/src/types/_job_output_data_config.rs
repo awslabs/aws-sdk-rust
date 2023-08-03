@@ -48,6 +48,10 @@ impl JobOutputDataConfigBuilder {
         self.kms_key_id = input;
         self
     }
+    /// <p>The AWS Key Management Service (AWS KMS) key that Amazon Braket uses to encrypt the job training artifacts at rest using Amazon S3 server-side encryption.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
+    }
     /// <p>Identifies the S3 path where you want Amazon Braket to store the job training artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
     pub fn s3_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_path = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl JobOutputDataConfigBuilder {
     pub fn set_s3_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_path = input;
         self
+    }
+    /// <p>Identifies the S3 path where you want Amazon Braket to store the job training artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
+    pub fn get_s3_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_path
     }
     /// Consumes the builder and constructs a [`JobOutputDataConfig`](crate::types::JobOutputDataConfig).
     pub fn build(self) -> crate::types::JobOutputDataConfig {

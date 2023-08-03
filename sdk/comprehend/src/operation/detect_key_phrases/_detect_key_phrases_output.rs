@@ -62,6 +62,12 @@ impl DetectKeyPhrasesOutputBuilder {
         self.key_phrases = input;
         self
     }
+    /// <p>A collection of key phrases that Amazon Comprehend identified in the input text. For each key phrase, the response provides the text of the key phrase, where the key phrase begins and ends, and the level of confidence that Amazon Comprehend has in the accuracy of the detection. </p>
+    pub fn get_key_phrases(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyPhrase>> {
+        &self.key_phrases
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

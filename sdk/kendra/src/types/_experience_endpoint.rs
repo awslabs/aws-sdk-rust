@@ -51,6 +51,10 @@ impl ExperienceEndpointBuilder {
         self.endpoint_type = input;
         self
     }
+    /// <p>The type of endpoint for your Amazon Kendra experience. The type currently available is <code>HOME</code>, which is a unique and fully hosted URL to the home page of your Amazon Kendra experience.</p>
+    pub fn get_endpoint_type(&self) -> &::std::option::Option<crate::types::EndpointType> {
+        &self.endpoint_type
+    }
     /// <p>The endpoint of your Amazon Kendra experience.</p>
     pub fn endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl ExperienceEndpointBuilder {
     pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint = input;
         self
+    }
+    /// <p>The endpoint of your Amazon Kendra experience.</p>
+    pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint
     }
     /// Consumes the builder and constructs a [`ExperienceEndpoint`](crate::types::ExperienceEndpoint).
     pub fn build(self) -> crate::types::ExperienceEndpoint {

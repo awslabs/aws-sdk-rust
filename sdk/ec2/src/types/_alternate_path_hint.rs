@@ -48,6 +48,10 @@ impl AlternatePathHintBuilder {
         self.component_id = input;
         self
     }
+    /// <p>The ID of the component.</p>
+    pub fn get_component_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
     pub fn component_arn(
         mut self,
@@ -63,6 +67,10 @@ impl AlternatePathHintBuilder {
     ) -> Self {
         self.component_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the component.</p>
+    pub fn get_component_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_arn
     }
     /// Consumes the builder and constructs a [`AlternatePathHint`](crate::types::AlternatePathHint).
     pub fn build(self) -> crate::types::AlternatePathHint {

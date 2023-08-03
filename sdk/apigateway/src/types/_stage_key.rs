@@ -48,6 +48,10 @@ impl StageKeyBuilder {
         self.rest_api_id = input;
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rest_api_id
+    }
     /// <p>The stage name associated with the stage key.</p>
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_name = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl StageKeyBuilder {
     pub fn set_stage_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stage_name = input;
         self
+    }
+    /// <p>The stage name associated with the stage key.</p>
+    pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stage_name
     }
     /// Consumes the builder and constructs a [`StageKey`](crate::types::StageKey).
     pub fn build(self) -> crate::types::StageKey {

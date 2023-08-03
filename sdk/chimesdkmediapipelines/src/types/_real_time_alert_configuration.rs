@@ -48,6 +48,10 @@ impl RealTimeAlertConfigurationBuilder {
         self.disabled = input;
         self
     }
+    /// <p>Turns off real-time alerts.</p>
+    pub fn get_disabled(&self) -> &::std::option::Option<bool> {
+        &self.disabled
+    }
     /// Appends an item to `rules`.
     ///
     /// To override the contents of this collection use [`set_rules`](Self::set_rules).
@@ -66,6 +70,12 @@ impl RealTimeAlertConfigurationBuilder {
     ) -> Self {
         self.rules = input;
         self
+    }
+    /// <p>The rules in the alert. Rules specify the words or phrases that you want to be notified about.</p>
+    pub fn get_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RealTimeAlertRule>> {
+        &self.rules
     }
     /// Consumes the builder and constructs a [`RealTimeAlertConfiguration`](crate::types::RealTimeAlertConfiguration).
     pub fn build(self) -> crate::types::RealTimeAlertConfiguration {

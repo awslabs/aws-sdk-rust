@@ -40,6 +40,10 @@ impl DeleteVirtualClusterInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the virtual cluster that will be deleted.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`DeleteVirtualClusterInput`](crate::operation::delete_virtual_cluster::DeleteVirtualClusterInput).
     pub fn build(
         self,

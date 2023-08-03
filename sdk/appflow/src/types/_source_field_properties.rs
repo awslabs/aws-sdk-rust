@@ -56,6 +56,10 @@ impl SourceFieldPropertiesBuilder {
         self.is_retrievable = input;
         self
     }
+    /// <p> Indicates whether the field can be returned in a search result. </p>
+    pub fn get_is_retrievable(&self) -> &::std::option::Option<bool> {
+        &self.is_retrievable
+    }
     /// <p> Indicates if the field can be queried. </p>
     pub fn is_queryable(mut self, input: bool) -> Self {
         self.is_queryable = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl SourceFieldPropertiesBuilder {
     pub fn set_is_queryable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_queryable = input;
         self
+    }
+    /// <p> Indicates if the field can be queried. </p>
+    pub fn get_is_queryable(&self) -> &::std::option::Option<bool> {
+        &self.is_queryable
     }
     /// <p>Indicates if this timestamp field can be used for incremental queries.</p>
     pub fn is_timestamp_field_for_incremental_queries(mut self, input: bool) -> Self {
@@ -78,6 +86,10 @@ impl SourceFieldPropertiesBuilder {
     ) -> Self {
         self.is_timestamp_field_for_incremental_queries = input;
         self
+    }
+    /// <p>Indicates if this timestamp field can be used for incremental queries.</p>
+    pub fn get_is_timestamp_field_for_incremental_queries(&self) -> &::std::option::Option<bool> {
+        &self.is_timestamp_field_for_incremental_queries
     }
     /// Consumes the builder and constructs a [`SourceFieldProperties`](crate::types::SourceFieldProperties).
     pub fn build(self) -> crate::types::SourceFieldProperties {

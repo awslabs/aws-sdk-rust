@@ -48,6 +48,10 @@ impl PolicyTypeSummaryBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The name of the policy type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::PolicyType> {
+        &self.r#type
+    }
     /// <p>The status of the policy type as it relates to the associated root. To attach a policy of the specified type to a root or to an OU or account in that root, it must be available in the organization and enabled for that root.</p>
     pub fn status(mut self, input: crate::types::PolicyTypeStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl PolicyTypeSummaryBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the policy type as it relates to the associated root. To attach a policy of the specified type to a root or to an OU or account in that root, it must be available in the organization and enabled for that root.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::PolicyTypeStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`PolicyTypeSummary`](crate::types::PolicyTypeSummary).
     pub fn build(self) -> crate::types::PolicyTypeSummary {

@@ -75,6 +75,10 @@ impl ValidationExceptionBuilder {
         self.message = input;
         self
     }
+    /// <p>The message that informs you about what was invalid about the request.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The unique identifier for the resource that couldn't be found.</p>
     pub fn exception_cause(mut self, input: crate::types::ExceptionCause) -> Self {
         self.exception_cause = ::std::option::Option::Some(input);
@@ -87,6 +91,10 @@ impl ValidationExceptionBuilder {
     ) -> Self {
         self.exception_cause = input;
         self
+    }
+    /// <p>The unique identifier for the resource that couldn't be found.</p>
+    pub fn get_exception_cause(&self) -> &::std::option::Option<crate::types::ExceptionCause> {
+        &self.exception_cause
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

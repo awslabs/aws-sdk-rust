@@ -49,6 +49,10 @@ impl GetRotationOverrideInputBuilder {
         self.rotation_id = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the overridden rotation to retrieve information about.</p>
+    pub fn get_rotation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rotation_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the on-call rotation override to retrieve information about.</p>
     pub fn rotation_override_id(
         mut self,
@@ -64,6 +68,10 @@ impl GetRotationOverrideInputBuilder {
     ) -> Self {
         self.rotation_override_id = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the on-call rotation override to retrieve information about.</p>
+    pub fn get_rotation_override_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rotation_override_id
     }
     /// Consumes the builder and constructs a [`GetRotationOverrideInput`](crate::operation::get_rotation_override::GetRotationOverrideInput).
     pub fn build(

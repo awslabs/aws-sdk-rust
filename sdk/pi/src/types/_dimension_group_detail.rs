@@ -48,6 +48,10 @@ impl DimensionGroupDetailBuilder {
         self.group = input;
         self
     }
+    /// <p>The name of the dimension group.</p>
+    pub fn get_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group
+    }
     /// Appends an item to `dimensions`.
     ///
     /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
@@ -66,6 +70,12 @@ impl DimensionGroupDetailBuilder {
     ) -> Self {
         self.dimensions = input;
         self
+    }
+    /// <p>The dimensions within a dimension group.</p>
+    pub fn get_dimensions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionDetail>> {
+        &self.dimensions
     }
     /// Consumes the builder and constructs a [`DimensionGroupDetail`](crate::types::DimensionGroupDetail).
     pub fn build(self) -> crate::types::DimensionGroupDetail {

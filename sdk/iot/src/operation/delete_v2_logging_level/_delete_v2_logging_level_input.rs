@@ -51,6 +51,10 @@ impl DeleteV2LoggingLevelInputBuilder {
         self.target_type = input;
         self
     }
+    /// <p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p>
+    pub fn get_target_type(&self) -> &::std::option::Option<crate::types::LogTargetType> {
+        &self.target_type
+    }
     /// <p>The name of the resource for which you are configuring logging.</p>
     pub fn target_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_name = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl DeleteV2LoggingLevelInputBuilder {
     pub fn set_target_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_name = input;
         self
+    }
+    /// <p>The name of the resource for which you are configuring logging.</p>
+    pub fn get_target_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_name
     }
     /// Consumes the builder and constructs a [`DeleteV2LoggingLevelInput`](crate::operation::delete_v2_logging_level::DeleteV2LoggingLevelInput).
     pub fn build(

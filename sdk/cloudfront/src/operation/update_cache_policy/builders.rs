@@ -42,6 +42,12 @@ impl UpdateCachePolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateCachePolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_cache_policy::builders::UpdateCachePolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +141,12 @@ impl UpdateCachePolicyFluentBuilder {
         self.inner = self.inner.set_cache_policy_config(input);
         self
     }
+    /// <p>A cache policy configuration.</p>
+    pub fn get_cache_policy_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::CachePolicyConfig> {
+        self.inner.get_cache_policy_config()
+    }
     /// <p>The unique identifier for the cache policy that you are updating. The identifier is returned in a cache behavior's <code>CachePolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
@@ -145,6 +157,10 @@ impl UpdateCachePolicyFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The unique identifier for the cache policy that you are updating. The identifier is returned in a cache behavior's <code>CachePolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The version of the cache policy that you are updating. The version is returned in the cache policy's <code>ETag</code> field in the response to <code>GetCachePolicyConfig</code>.</p>
     pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.if_match(input.into());
@@ -154,5 +170,9 @@ impl UpdateCachePolicyFluentBuilder {
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_if_match(input);
         self
+    }
+    /// <p>The version of the cache policy that you are updating. The version is returned in the cache policy's <code>ETag</code> field in the response to <code>GetCachePolicyConfig</code>.</p>
+    pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_if_match()
     }
 }

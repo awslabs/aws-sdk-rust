@@ -40,6 +40,10 @@ impl FilterConditionBuilder {
         self.value = input;
         self
     }
+    /// <p> A statement containing a resource property and a value to specify filter condition. </p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// Consumes the builder and constructs a [`FilterCondition`](crate::types::FilterCondition).
     pub fn build(self) -> crate::types::FilterCondition {
         crate::types::FilterCondition { value: self.value }

@@ -37,6 +37,10 @@ impl UpdateSubscriptionsToEventBridgeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateSubscriptionsToEventBridge as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_subscriptions_to_event_bridge::builders::UpdateSubscriptionsToEventBridgeInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,5 +104,9 @@ impl UpdateSubscriptionsToEventBridgeFluentBuilder {
     pub fn set_force_move(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force_move(input);
         self
+    }
+    /// <p>When set to true, this operation migrates DMS subscriptions for Amazon SNS notifications no matter what your replication instance version is. If not set or set to false, this operation runs only when all your replication instances are from DMS version 3.4.6 or higher. </p>
+    pub fn get_force_move(&self) -> &::std::option::Option<bool> {
+        self.inner.get_force_move()
     }
 }

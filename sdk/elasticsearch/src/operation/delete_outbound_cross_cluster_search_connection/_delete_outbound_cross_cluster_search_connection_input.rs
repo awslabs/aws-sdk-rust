@@ -46,6 +46,12 @@ impl DeleteOutboundCrossClusterSearchConnectionInputBuilder {
         self.cross_cluster_search_connection_id = input;
         self
     }
+    /// <p>The id of the outbound connection that you want to permanently delete.</p>
+    pub fn get_cross_cluster_search_connection_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.cross_cluster_search_connection_id
+    }
     /// Consumes the builder and constructs a [`DeleteOutboundCrossClusterSearchConnectionInput`](crate::operation::delete_outbound_cross_cluster_search_connection::DeleteOutboundCrossClusterSearchConnectionInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_outbound_cross_cluster_search_connection::DeleteOutboundCrossClusterSearchConnectionInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

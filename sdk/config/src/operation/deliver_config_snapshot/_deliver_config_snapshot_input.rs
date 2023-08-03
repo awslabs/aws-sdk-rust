@@ -48,6 +48,10 @@ impl DeliverConfigSnapshotInputBuilder {
         self.delivery_channel_name = input;
         self
     }
+    /// <p>The name of the delivery channel through which the snapshot is delivered.</p>
+    pub fn get_delivery_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delivery_channel_name
+    }
     /// Consumes the builder and constructs a [`DeliverConfigSnapshotInput`](crate::operation::deliver_config_snapshot::DeliverConfigSnapshotInput).
     pub fn build(
         self,

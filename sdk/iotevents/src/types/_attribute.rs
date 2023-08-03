@@ -68,6 +68,17 @@ impl AttributeBuilder {
         self.json_path = input;
         self
     }
+    /// <p>An expression that specifies an attribute-value pair in a JSON structure. Use this to specify an attribute from the JSON payload that is made available by the input. Inputs are derived from messages sent to AWS IoT Events (<code>BatchPutMessage</code>). Each such message contains a JSON payload. The attribute (and its paired value) specified here are available for use in the <code>condition</code> expressions used by detectors. </p>
+    /// <p>Syntax: <code>
+    /// <field-name>
+    /// .
+    /// <field-name>
+    /// ...
+    /// </field-name>
+    /// </field-name></code> </p>
+    pub fn get_json_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.json_path
+    }
     /// Consumes the builder and constructs a [`Attribute`](crate::types::Attribute).
     pub fn build(self) -> crate::types::Attribute {
         crate::types::Attribute {

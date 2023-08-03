@@ -36,6 +36,12 @@ impl DescribeFraudsterFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeFraudster as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_fraudster::builders::DescribeFraudsterInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DescribeFraudsterFluentBuilder {
         self.inner = self.inner.set_domain_id(input);
         self
     }
+    /// <p>The identifier of the domain that contains the fraudster.</p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_id()
+    }
     /// <p>The identifier of the fraudster you are describing.</p>
     pub fn fraudster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fraudster_id(input.into());
@@ -135,5 +145,9 @@ impl DescribeFraudsterFluentBuilder {
     pub fn set_fraudster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fraudster_id(input);
         self
+    }
+    /// <p>The identifier of the fraudster you are describing.</p>
+    pub fn get_fraudster_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_fraudster_id()
     }
 }

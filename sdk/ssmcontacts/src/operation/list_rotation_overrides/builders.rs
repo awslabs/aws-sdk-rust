@@ -36,6 +36,13 @@ impl ListRotationOverridesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListRotationOverrides as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_rotation_overrides::builders::ListRotationOverridesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +144,10 @@ impl ListRotationOverridesFluentBuilder {
         self.inner = self.inner.set_rotation_id(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the rotation to retrieve information about.</p>
+    pub fn get_rotation_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rotation_id()
+    }
     /// <p>The date and time for the beginning of a time range for listing overrides.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
@@ -149,6 +160,10 @@ impl ListRotationOverridesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
+    }
+    /// <p>The date and time for the beginning of a time range for listing overrides.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_time()
     }
     /// <p>The date and time for the end of a time range for listing overrides.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -163,6 +178,10 @@ impl ListRotationOverridesFluentBuilder {
         self.inner = self.inner.set_end_time(input);
         self
     }
+    /// <p>The date and time for the end of a time range for listing overrides.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_time()
+    }
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -173,6 +192,10 @@ impl ListRotationOverridesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A token to start the list. Use this token to get the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -182,5 +205,9 @@ impl ListRotationOverridesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

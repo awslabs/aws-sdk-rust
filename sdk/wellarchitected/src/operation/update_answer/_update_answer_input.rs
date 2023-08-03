@@ -112,6 +112,10 @@ impl UpdateAnswerInputBuilder {
         self.workload_id = input;
         self
     }
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workload_id
+    }
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
@@ -128,6 +132,13 @@ impl UpdateAnswerInputBuilder {
         self.lens_alias = input;
         self
     }
+    /// <p>The alias of the lens.</p>
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    pub fn get_lens_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lens_alias
+    }
     /// <p>The ID of the question.</p>
     pub fn question_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.question_id = ::std::option::Option::Some(input.into());
@@ -137,6 +148,10 @@ impl UpdateAnswerInputBuilder {
     pub fn set_question_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.question_id = input;
         self
+    }
+    /// <p>The ID of the question.</p>
+    pub fn get_question_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.question_id
     }
     /// Appends an item to `selected_choices`.
     ///
@@ -161,6 +176,13 @@ impl UpdateAnswerInputBuilder {
     ) -> Self {
         self.selected_choices = input;
         self
+    }
+    /// <p>List of selected choice IDs in a question answer.</p>
+    /// <p>The values entered replace the previously selected choices.</p>
+    pub fn get_selected_choices(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.selected_choices
     }
     /// Adds a key-value pair to `choice_updates`.
     ///
@@ -187,6 +209,14 @@ impl UpdateAnswerInputBuilder {
         self.choice_updates = input;
         self
     }
+    /// <p>A list of choices to update on a question in your workload. The String key corresponds to the choice ID to be updated.</p>
+    pub fn get_choice_updates(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::ChoiceUpdate>,
+    > {
+        &self.choice_updates
+    }
     /// <p>The notes associated with the workload.</p>
     pub fn notes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notes = ::std::option::Option::Some(input.into());
@@ -196,6 +226,10 @@ impl UpdateAnswerInputBuilder {
     pub fn set_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notes = input;
         self
+    }
+    /// <p>The notes associated with the workload.</p>
+    pub fn get_notes(&self) -> &::std::option::Option<::std::string::String> {
+        &self.notes
     }
     /// <p>Defines whether this question is applicable to a lens review.</p>
     pub fn is_applicable(mut self, input: bool) -> Self {
@@ -207,6 +241,10 @@ impl UpdateAnswerInputBuilder {
         self.is_applicable = input;
         self
     }
+    /// <p>Defines whether this question is applicable to a lens review.</p>
+    pub fn get_is_applicable(&self) -> &::std::option::Option<bool> {
+        &self.is_applicable
+    }
     /// <p>The reason why a question is not applicable to your workload.</p>
     pub fn reason(mut self, input: crate::types::AnswerReason) -> Self {
         self.reason = ::std::option::Option::Some(input);
@@ -216,6 +254,10 @@ impl UpdateAnswerInputBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<crate::types::AnswerReason>) -> Self {
         self.reason = input;
         self
+    }
+    /// <p>The reason why a question is not applicable to your workload.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<crate::types::AnswerReason> {
+        &self.reason
     }
     /// Consumes the builder and constructs a [`UpdateAnswerInput`](crate::operation::update_answer::UpdateAnswerInput).
     pub fn build(

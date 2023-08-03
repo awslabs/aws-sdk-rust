@@ -57,6 +57,10 @@ impl UpdateDetectorVersionStatusInputBuilder {
         self.detector_id = input;
         self
     }
+    /// <p>The detector ID. </p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
+    }
     /// <p>The detector version ID. </p>
     pub fn detector_version_id(
         mut self,
@@ -73,6 +77,10 @@ impl UpdateDetectorVersionStatusInputBuilder {
         self.detector_version_id = input;
         self
     }
+    /// <p>The detector version ID. </p>
+    pub fn get_detector_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_version_id
+    }
     /// <p>The new status.</p>
     /// <p>The only supported values are <code>ACTIVE</code> and <code>INACTIVE</code> </p>
     pub fn status(mut self, input: crate::types::DetectorVersionStatus) -> Self {
@@ -87,6 +95,11 @@ impl UpdateDetectorVersionStatusInputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The new status.</p>
+    /// <p>The only supported values are <code>ACTIVE</code> and <code>INACTIVE</code> </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DetectorVersionStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`UpdateDetectorVersionStatusInput`](crate::operation::update_detector_version_status::UpdateDetectorVersionStatusInput).
     pub fn build(

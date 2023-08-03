@@ -45,6 +45,10 @@ impl NullValueFormatConfigurationBuilder {
         self.null_string = input;
         self
     }
+    /// <p>Determines the null string of null values.</p>
+    pub fn get_null_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.null_string
+    }
     /// Consumes the builder and constructs a [`NullValueFormatConfiguration`](crate::types::NullValueFormatConfiguration).
     pub fn build(self) -> crate::types::NullValueFormatConfiguration {
         crate::types::NullValueFormatConfiguration {

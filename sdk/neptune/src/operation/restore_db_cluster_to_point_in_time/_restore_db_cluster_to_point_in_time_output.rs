@@ -50,6 +50,11 @@ impl RestoreDbClusterToPointInTimeOutputBuilder {
         self.db_cluster = input;
         self
     }
+    /// <p>Contains the details of an Amazon Neptune DB cluster.</p>
+    /// <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
+    pub fn get_db_cluster(&self) -> &::std::option::Option<crate::types::DbCluster> {
+        &self.db_cluster
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

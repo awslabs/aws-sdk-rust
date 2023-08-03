@@ -64,6 +64,10 @@ impl CreateDeliverabilityTestReportInputBuilder {
         self.report_name = input;
         self
     }
+    /// <p>A unique name that helps you to identify the predictive inbox placement test when you retrieve the results.</p>
+    pub fn get_report_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.report_name
+    }
     /// <p>The email address that the predictive inbox placement test email was sent from.</p>
     pub fn from_email_address(
         mut self,
@@ -80,6 +84,10 @@ impl CreateDeliverabilityTestReportInputBuilder {
         self.from_email_address = input;
         self
     }
+    /// <p>The email address that the predictive inbox placement test email was sent from.</p>
+    pub fn get_from_email_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.from_email_address
+    }
     /// <p>The HTML body of the message that you sent when you performed the predictive inbox placement test.</p>
     pub fn content(mut self, input: crate::types::EmailContent) -> Self {
         self.content = ::std::option::Option::Some(input);
@@ -89,6 +97,10 @@ impl CreateDeliverabilityTestReportInputBuilder {
     pub fn set_content(mut self, input: ::std::option::Option<crate::types::EmailContent>) -> Self {
         self.content = input;
         self
+    }
+    /// <p>The HTML body of the message that you sent when you performed the predictive inbox placement test.</p>
+    pub fn get_content(&self) -> &::std::option::Option<crate::types::EmailContent> {
+        &self.content
     }
     /// Appends an item to `tags`.
     ///
@@ -108,6 +120,10 @@ impl CreateDeliverabilityTestReportInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>An array of objects that define the tags (keys and values) that you want to associate with the predictive inbox placement test.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateDeliverabilityTestReportInput`](crate::operation::create_deliverability_test_report::CreateDeliverabilityTestReportInput).
     pub fn build(

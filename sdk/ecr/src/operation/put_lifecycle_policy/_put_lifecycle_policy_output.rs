@@ -63,6 +63,10 @@ impl PutLifecyclePolicyOutputBuilder {
         self.registry_id = input;
         self
     }
+    /// <p>The registry ID associated with the request.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_id
+    }
     /// <p>The repository name associated with the request.</p>
     pub fn repository_name(
         mut self,
@@ -79,6 +83,10 @@ impl PutLifecyclePolicyOutputBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The repository name associated with the request.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>The JSON repository policy text.</p>
     pub fn lifecycle_policy_text(
         mut self,
@@ -94,6 +102,10 @@ impl PutLifecyclePolicyOutputBuilder {
     ) -> Self {
         self.lifecycle_policy_text = input;
         self
+    }
+    /// <p>The JSON repository policy text.</p>
+    pub fn get_lifecycle_policy_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lifecycle_policy_text
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

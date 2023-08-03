@@ -36,6 +36,10 @@ impl GetScanFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetScan as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_scan::builders::GetScanInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl GetScanFluentBuilder {
         self.inner = self.inner.set_scan_name(input);
         self
     }
+    /// <p>The name of the scan you want to view details about.</p>
+    pub fn get_scan_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_scan_name()
+    }
     /// <p>UUID that identifies the individual scan run you want to view details about. You retrieve this when you call the <code>CreateScan</code> operation. Defaults to the latest scan run if missing.</p>
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.run_id(input.into());
@@ -127,5 +135,9 @@ impl GetScanFluentBuilder {
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_run_id(input);
         self
+    }
+    /// <p>UUID that identifies the individual scan run you want to view details about. You retrieve this when you call the <code>CreateScan</code> operation. Defaults to the latest scan run if missing.</p>
+    pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_run_id()
     }
 }

@@ -36,6 +36,10 @@ impl DescribeMaintenanceWindowExecutionTaskInvocationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeMaintenanceWindowExecutionTaskInvocations as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_maintenance_window_execution_task_invocations::builders::DescribeMaintenanceWindowExecutionTaskInvocationsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -112,6 +116,10 @@ impl DescribeMaintenanceWindowExecutionTaskInvocationsFluentBuilder {
         self.inner = self.inner.set_window_execution_id(input);
         self
     }
+    /// <p>The ID of the maintenance window execution the task is part of.</p>
+    pub fn get_window_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_window_execution_id()
+    }
     /// <p>The ID of the specific task in the maintenance window task that should be retrieved.</p>
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.task_id(input.into());
@@ -121,6 +129,10 @@ impl DescribeMaintenanceWindowExecutionTaskInvocationsFluentBuilder {
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_task_id(input);
         self
+    }
+    /// <p>The ID of the specific task in the maintenance window task that should be retrieved.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_task_id()
     }
     /// Appends an item to `Filters`.
     ///
@@ -139,6 +151,12 @@ impl DescribeMaintenanceWindowExecutionTaskInvocationsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>Optional filters used to scope down the returned task invocations. The supported filter key is <code>STATUS</code> with the corresponding values <code>PENDING</code>, <code>IN_PROGRESS</code>, <code>SUCCESS</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, <code>CANCELLING</code>, and <code>CANCELLED</code>.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>> {
+        self.inner.get_filters()
+    }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -149,6 +167,10 @@ impl DescribeMaintenanceWindowExecutionTaskInvocationsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -158,5 +180,9 @@ impl DescribeMaintenanceWindowExecutionTaskInvocationsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

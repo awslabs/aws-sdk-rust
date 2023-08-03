@@ -43,6 +43,10 @@ impl CustomPluginLocationDescriptionBuilder {
         self.s3_location = input;
         self
     }
+    /// <p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the plugin file stored in Amazon S3.</p>
+    pub fn get_s3_location(&self) -> &::std::option::Option<crate::types::S3LocationDescription> {
+        &self.s3_location
+    }
     /// Consumes the builder and constructs a [`CustomPluginLocationDescription`](crate::types::CustomPluginLocationDescription).
     pub fn build(self) -> crate::types::CustomPluginLocationDescription {
         crate::types::CustomPluginLocationDescription {

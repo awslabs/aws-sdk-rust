@@ -42,6 +42,12 @@ impl AssignInstanceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssignInstance as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::assign_instance::builders::AssignInstanceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl AssignInstanceFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The instance ID.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// Appends an item to `LayerIds`.
     ///
     /// To override the contents of this collection use [`set_layer_ids`](Self::set_layer_ids).
@@ -140,5 +150,9 @@ impl AssignInstanceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_layer_ids(input);
         self
+    }
+    /// <p>The layer ID, which must correspond to a custom layer. You cannot assign a registered instance to a built-in layer.</p>
+    pub fn get_layer_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_layer_ids()
     }
 }

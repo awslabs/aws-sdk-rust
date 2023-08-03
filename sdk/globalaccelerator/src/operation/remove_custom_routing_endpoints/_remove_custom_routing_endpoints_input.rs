@@ -56,6 +56,12 @@ impl RemoveCustomRoutingEndpointsInputBuilder {
         self.endpoint_ids = input;
         self
     }
+    /// <p>The IDs for the endpoints. For custom routing accelerators, endpoint IDs are the virtual private cloud (VPC) subnet IDs. </p>
+    pub fn get_endpoint_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.endpoint_ids
+    }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to remove endpoints from.</p>
     pub fn endpoint_group_arn(
         mut self,
@@ -71,6 +77,10 @@ impl RemoveCustomRoutingEndpointsInputBuilder {
     ) -> Self {
         self.endpoint_group_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the endpoint group to remove endpoints from.</p>
+    pub fn get_endpoint_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_group_arn
     }
     /// Consumes the builder and constructs a [`RemoveCustomRoutingEndpointsInput`](crate::operation::remove_custom_routing_endpoints::RemoveCustomRoutingEndpointsInput).
     pub fn build(

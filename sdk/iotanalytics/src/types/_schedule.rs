@@ -40,6 +40,10 @@ impl ScheduleBuilder {
         self.expression = input;
         self
     }
+    /// <p>The expression that defines when to trigger an update. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+    pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expression
+    }
     /// Consumes the builder and constructs a [`Schedule`](crate::types::Schedule).
     pub fn build(self) -> crate::types::Schedule {
         crate::types::Schedule {

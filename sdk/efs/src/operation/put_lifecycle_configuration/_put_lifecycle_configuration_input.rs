@@ -66,6 +66,10 @@ impl PutLifecycleConfigurationInputBuilder {
         self.file_system_id = input;
         self
     }
+    /// <p>The ID of the file system for which you are creating the <code>LifecycleConfiguration</code> object (String).</p>
+    pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_system_id
+    }
     /// Appends an item to `lifecycle_policies`.
     ///
     /// To override the contents of this collection use [`set_lifecycle_policies`](Self::set_lifecycle_policies).
@@ -96,6 +100,18 @@ impl PutLifecycleConfigurationInputBuilder {
     ) -> Self {
         self.lifecycle_policies = input;
         self
+    }
+    /// <p>An array of <code>LifecyclePolicy</code> objects that define the file system's <code>LifecycleConfiguration</code> object. A <code>LifecycleConfiguration</code> object informs EFS lifecycle management and EFS Intelligent-Tiering of the following:</p>
+    /// <ul>
+    /// <li> <p>When to move files in the file system from primary storage to the IA storage class.</p> </li>
+    /// <li> <p>When to move files that are in IA storage to primary storage.</p> </li>
+    /// </ul> <note>
+    /// <p>When using the <code>put-lifecycle-configuration</code> CLI command or the <code>PutLifecycleConfiguration</code> API action, Amazon EFS requires that each <code>LifecyclePolicy</code> object have only a single transition. This means that in a request body, <code>LifecyclePolicies</code> must be structured as an array of <code>LifecyclePolicy</code> objects, one object for each transition, <code>TransitionToIA</code>, <code>TransitionToPrimaryStorageClass</code>. See the example requests in the following section for more information.</p>
+    /// </note>
+    pub fn get_lifecycle_policies(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicy>> {
+        &self.lifecycle_policies
     }
     /// Consumes the builder and constructs a [`PutLifecycleConfigurationInput`](crate::operation::put_lifecycle_configuration::PutLifecycleConfigurationInput).
     pub fn build(

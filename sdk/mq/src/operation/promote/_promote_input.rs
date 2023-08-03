@@ -48,6 +48,10 @@ impl PromoteInputBuilder {
         self.broker_id = input;
         self
     }
+    /// <p>The unique ID that Amazon MQ generates for the broker.</p>
+    pub fn get_broker_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.broker_id
+    }
     /// <p>The Promote mode requested. Note: Valid values for the parameter are SWITCHOVER, FAILOVER.</p>
     pub fn mode(mut self, input: crate::types::PromoteMode) -> Self {
         self.mode = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl PromoteInputBuilder {
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::PromoteMode>) -> Self {
         self.mode = input;
         self
+    }
+    /// <p>The Promote mode requested. Note: Valid values for the parameter are SWITCHOVER, FAILOVER.</p>
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::PromoteMode> {
+        &self.mode
     }
     /// Consumes the builder and constructs a [`PromoteInput`](crate::operation::promote::PromoteInput).
     pub fn build(

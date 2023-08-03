@@ -46,6 +46,10 @@ impl CreateVoiceProfileInputBuilder {
         self.speaker_search_task_id = input;
         self
     }
+    /// <p>The ID of the speaker search task.</p>
+    pub fn get_speaker_search_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.speaker_search_task_id
+    }
     /// Consumes the builder and constructs a [`CreateVoiceProfileInput`](crate::operation::create_voice_profile::CreateVoiceProfileInput).
     pub fn build(
         self,

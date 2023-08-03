@@ -61,6 +61,12 @@ impl AvailableCapacityBuilder {
         self.available_instance_capacity = input;
         self
     }
+    /// <p>The number of instances that can be launched onto the Dedicated Host depending on the host's available capacity. For Dedicated Hosts that support multiple instance types, this parameter represents the number of instances for each instance size that is supported on the host.</p>
+    pub fn get_available_instance_capacity(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceCapacity>> {
+        &self.available_instance_capacity
+    }
     /// <p>The number of vCPUs available for launching instances onto the Dedicated Host.</p>
     pub fn available_v_cpus(mut self, input: i32) -> Self {
         self.available_v_cpus = ::std::option::Option::Some(input);
@@ -70,6 +76,10 @@ impl AvailableCapacityBuilder {
     pub fn set_available_v_cpus(mut self, input: ::std::option::Option<i32>) -> Self {
         self.available_v_cpus = input;
         self
+    }
+    /// <p>The number of vCPUs available for launching instances onto the Dedicated Host.</p>
+    pub fn get_available_v_cpus(&self) -> &::std::option::Option<i32> {
+        &self.available_v_cpus
     }
     /// Consumes the builder and constructs a [`AvailableCapacity`](crate::types::AvailableCapacity).
     pub fn build(self) -> crate::types::AvailableCapacity {

@@ -45,6 +45,10 @@ impl StartPipelineInputBuilder {
         self.pipeline_name = input;
         self
     }
+    /// <p>The name of the pipeline to start.</p>
+    pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_name
+    }
     /// Consumes the builder and constructs a [`StartPipelineInput`](crate::operation::start_pipeline::StartPipelineInput).
     pub fn build(
         self,

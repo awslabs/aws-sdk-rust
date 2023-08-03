@@ -64,6 +64,12 @@ impl ReplacePermissionAssociationsOutputBuilder {
         self.replace_permission_associations_work = input;
         self
     }
+    /// <p>Specifies a data structure that you can use to track the asynchronous tasks that RAM performs to complete this operation. You can use the <code>ListReplacePermissionAssociationsWork</code> operation and pass the <code>id</code> value returned in this structure.</p>
+    pub fn get_replace_permission_associations_work(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReplacePermissionAssociationsWork> {
+        &self.replace_permission_associations_work
+    }
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -73,6 +79,10 @@ impl ReplacePermissionAssociationsOutputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

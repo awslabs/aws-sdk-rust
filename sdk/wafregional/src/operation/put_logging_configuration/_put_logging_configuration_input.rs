@@ -54,6 +54,14 @@ impl PutLoggingConfigurationInputBuilder {
         self.logging_configuration = input;
         self
     }
+    /// <p>The Amazon Kinesis Data Firehose that contains the inspected traffic information, the redacted fields details, and the Amazon Resource Name (ARN) of the web ACL to monitor.</p> <note>
+    /// <p>When specifying <code>Type</code> in <code>RedactedFields</code>, you must use one of the following values: <code>URI</code>, <code>QUERY_STRING</code>, <code>HEADER</code>, or <code>METHOD</code>.</p>
+    /// </note>
+    pub fn get_logging_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::LoggingConfiguration> {
+        &self.logging_configuration
+    }
     /// Consumes the builder and constructs a [`PutLoggingConfigurationInput`](crate::operation::put_logging_configuration::PutLoggingConfigurationInput).
     pub fn build(
         self,

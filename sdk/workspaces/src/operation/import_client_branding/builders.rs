@@ -44,6 +44,12 @@ impl ImportClientBrandingFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ImportClientBranding as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::import_client_branding::builders::ImportClientBrandingInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +140,10 @@ impl ImportClientBrandingFluentBuilder {
         self.inner = self.inner.set_resource_id(input);
         self
     }
+    /// <p>The directory identifier of the WorkSpace for which you want to import client branding.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_id()
+    }
     /// <p>The branding information to import for Windows devices.</p>
     pub fn device_type_windows(
         mut self,
@@ -149,6 +159,12 @@ impl ImportClientBrandingFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_device_type_windows(input);
         self
+    }
+    /// <p>The branding information to import for Windows devices.</p>
+    pub fn get_device_type_windows(
+        &self,
+    ) -> &::std::option::Option<crate::types::DefaultImportClientBrandingAttributes> {
+        self.inner.get_device_type_windows()
     }
     /// <p>The branding information to import for macOS devices.</p>
     pub fn device_type_osx(
@@ -166,6 +182,12 @@ impl ImportClientBrandingFluentBuilder {
         self.inner = self.inner.set_device_type_osx(input);
         self
     }
+    /// <p>The branding information to import for macOS devices.</p>
+    pub fn get_device_type_osx(
+        &self,
+    ) -> &::std::option::Option<crate::types::DefaultImportClientBrandingAttributes> {
+        self.inner.get_device_type_osx()
+    }
     /// <p>The branding information to import for Android devices.</p>
     pub fn device_type_android(
         mut self,
@@ -181,6 +203,12 @@ impl ImportClientBrandingFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_device_type_android(input);
         self
+    }
+    /// <p>The branding information to import for Android devices.</p>
+    pub fn get_device_type_android(
+        &self,
+    ) -> &::std::option::Option<crate::types::DefaultImportClientBrandingAttributes> {
+        self.inner.get_device_type_android()
     }
     /// <p>The branding information to import for iOS devices.</p>
     pub fn device_type_ios(
@@ -198,6 +226,12 @@ impl ImportClientBrandingFluentBuilder {
         self.inner = self.inner.set_device_type_ios(input);
         self
     }
+    /// <p>The branding information to import for iOS devices.</p>
+    pub fn get_device_type_ios(
+        &self,
+    ) -> &::std::option::Option<crate::types::IosImportClientBrandingAttributes> {
+        self.inner.get_device_type_ios()
+    }
     /// <p>The branding information to import for Linux devices.</p>
     pub fn device_type_linux(
         mut self,
@@ -214,6 +248,12 @@ impl ImportClientBrandingFluentBuilder {
         self.inner = self.inner.set_device_type_linux(input);
         self
     }
+    /// <p>The branding information to import for Linux devices.</p>
+    pub fn get_device_type_linux(
+        &self,
+    ) -> &::std::option::Option<crate::types::DefaultImportClientBrandingAttributes> {
+        self.inner.get_device_type_linux()
+    }
     /// <p>The branding information to import for web access.</p>
     pub fn device_type_web(
         mut self,
@@ -229,5 +269,11 @@ impl ImportClientBrandingFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_device_type_web(input);
         self
+    }
+    /// <p>The branding information to import for web access.</p>
+    pub fn get_device_type_web(
+        &self,
+    ) -> &::std::option::Option<crate::types::DefaultImportClientBrandingAttributes> {
+        self.inner.get_device_type_web()
     }
 }

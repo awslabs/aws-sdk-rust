@@ -53,6 +53,12 @@ impl CoverageResourceDetailsBuilder {
         self.eks_cluster_details = input;
         self
     }
+    /// <p>EKS cluster details involved in the coverage statistics.</p>
+    pub fn get_eks_cluster_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::CoverageEksClusterDetails> {
+        &self.eks_cluster_details
+    }
     /// <p>The type of Amazon Web Services resource.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
@@ -65,6 +71,10 @@ impl CoverageResourceDetailsBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>The type of Amazon Web Services resource.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
     }
     /// Consumes the builder and constructs a [`CoverageResourceDetails`](crate::types::CoverageResourceDetails).
     pub fn build(self) -> crate::types::CoverageResourceDetails {

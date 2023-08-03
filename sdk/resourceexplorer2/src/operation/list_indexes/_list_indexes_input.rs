@@ -71,6 +71,11 @@ impl ListIndexesInputBuilder {
         self.r#type = input;
         self
     }
+    /// <p>If specified, limits the output to only indexes of the specified Type, either <code>LOCAL</code> or <code>AGGREGATOR</code>.</p>
+    /// <p>Use this option to discover the aggregator index for your account.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::IndexType> {
+        &self.r#type
+    }
     /// Appends an item to `regions`.
     ///
     /// To override the contents of this collection use [`set_regions`](Self::set_regions).
@@ -90,6 +95,10 @@ impl ListIndexesInputBuilder {
         self.regions = input;
         self
     }
+    /// <p>If specified, limits the response to only information about the index in the specified list of Amazon Web Services Regions.</p>
+    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.regions
+    }
     /// <p>The maximum number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value appropriate to the operation. If additional items exist beyond those included in the current response, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results.</p> <note>
     /// <p>An API operation can return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     /// </note>
@@ -104,6 +113,12 @@ impl ListIndexesInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value appropriate to the operation. If additional items exist beyond those included in the current response, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results.</p> <note>
+    /// <p>An API operation can return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
+    /// </note>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -113,6 +128,10 @@ impl ListIndexesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListIndexesInput`](crate::operation::list_indexes::ListIndexesInput).
     pub fn build(

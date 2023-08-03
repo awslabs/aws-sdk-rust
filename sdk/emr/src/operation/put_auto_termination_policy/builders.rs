@@ -39,6 +39,10 @@ impl PutAutoTerminationPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutAutoTerminationPolicy as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_auto_termination_policy::builders::PutAutoTerminationPolicyInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +133,10 @@ impl PutAutoTerminationPolicyFluentBuilder {
         self.inner = self.inner.set_cluster_id(input);
         self
     }
+    /// <p>Specifies the ID of the Amazon EMR cluster to which the auto-termination policy will be attached.</p>
+    pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_id()
+    }
     /// <p>Specifies the auto-termination policy to attach to the cluster.</p>
     pub fn auto_termination_policy(mut self, input: crate::types::AutoTerminationPolicy) -> Self {
         self.inner = self.inner.auto_termination_policy(input);
@@ -141,5 +149,11 @@ impl PutAutoTerminationPolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_auto_termination_policy(input);
         self
+    }
+    /// <p>Specifies the auto-termination policy to attach to the cluster.</p>
+    pub fn get_auto_termination_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoTerminationPolicy> {
+        self.inner.get_auto_termination_policy()
     }
 }

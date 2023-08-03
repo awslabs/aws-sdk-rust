@@ -72,6 +72,10 @@ impl ListLensesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to use to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return for this request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -82,6 +86,10 @@ impl ListLensesInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to return for this request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The type of lenses to be returned.</p>
     pub fn lens_type(mut self, input: crate::types::LensType) -> Self {
         self.lens_type = ::std::option::Option::Some(input);
@@ -91,6 +99,10 @@ impl ListLensesInputBuilder {
     pub fn set_lens_type(mut self, input: ::std::option::Option<crate::types::LensType>) -> Self {
         self.lens_type = input;
         self
+    }
+    /// <p>The type of lenses to be returned.</p>
+    pub fn get_lens_type(&self) -> &::std::option::Option<crate::types::LensType> {
+        &self.lens_type
     }
     /// <p>The status of lenses to be returned.</p>
     pub fn lens_status(mut self, input: crate::types::LensStatusType) -> Self {
@@ -105,6 +117,10 @@ impl ListLensesInputBuilder {
         self.lens_status = input;
         self
     }
+    /// <p>The status of lenses to be returned.</p>
+    pub fn get_lens_status(&self) -> &::std::option::Option<crate::types::LensStatusType> {
+        &self.lens_status
+    }
     /// <p>The full name of the lens.</p>
     pub fn lens_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lens_name = ::std::option::Option::Some(input.into());
@@ -114,6 +130,10 @@ impl ListLensesInputBuilder {
     pub fn set_lens_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lens_name = input;
         self
+    }
+    /// <p>The full name of the lens.</p>
+    pub fn get_lens_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lens_name
     }
     /// Consumes the builder and constructs a [`ListLensesInput`](crate::operation::list_lenses::ListLensesInput).
     pub fn build(

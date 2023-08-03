@@ -37,6 +37,10 @@ impl DescribeVirtualInterfacesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeVirtualInterfaces as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_virtual_interfaces::builders::DescribeVirtualInterfacesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,10 @@ impl DescribeVirtualInterfacesFluentBuilder {
         self.inner = self.inner.set_connection_id(input);
         self
     }
+    /// <p>The ID of the connection.</p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connection_id()
+    }
     /// <p>The ID of the virtual interface.</p>
     pub fn virtual_interface_id(
         mut self,
@@ -148,5 +156,9 @@ impl DescribeVirtualInterfacesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_virtual_interface_id(input);
         self
+    }
+    /// <p>The ID of the virtual interface.</p>
+    pub fn get_virtual_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_virtual_interface_id()
     }
 }

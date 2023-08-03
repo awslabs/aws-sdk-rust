@@ -101,6 +101,10 @@ impl TargetInstanceBuilder {
         self.estimated_monthly_cost = input;
         self
     }
+    /// <p>The expected cost to operate this instance type on a monthly basis.</p>
+    pub fn get_estimated_monthly_cost(&self) -> &::std::option::Option<::std::string::String> {
+        &self.estimated_monthly_cost
+    }
     /// <p>The estimated savings that result from modification, on a monthly basis.</p>
     pub fn estimated_monthly_savings(
         mut self,
@@ -116,6 +120,10 @@ impl TargetInstanceBuilder {
     ) -> Self {
         self.estimated_monthly_savings = input;
         self
+    }
+    /// <p>The estimated savings that result from modification, on a monthly basis.</p>
+    pub fn get_estimated_monthly_savings(&self) -> &::std::option::Option<::std::string::String> {
+        &self.estimated_monthly_savings
     }
     /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
     pub fn currency_code(
@@ -133,6 +141,10 @@ impl TargetInstanceBuilder {
         self.currency_code = input;
         self
     }
+    /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
+    pub fn get_currency_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.currency_code
+    }
     /// <p>Determines whether this recommendation is the defaulted Amazon Web Services recommendation.</p>
     pub fn default_target_instance(mut self, input: bool) -> Self {
         self.default_target_instance = ::std::option::Option::Some(input);
@@ -142,6 +154,10 @@ impl TargetInstanceBuilder {
     pub fn set_default_target_instance(mut self, input: ::std::option::Option<bool>) -> Self {
         self.default_target_instance = input;
         self
+    }
+    /// <p>Determines whether this recommendation is the defaulted Amazon Web Services recommendation.</p>
+    pub fn get_default_target_instance(&self) -> &::std::option::Option<bool> {
+        &self.default_target_instance
     }
     /// <p>Details on the target instance type. </p>
     pub fn resource_details(mut self, input: crate::types::ResourceDetails) -> Self {
@@ -155,6 +171,10 @@ impl TargetInstanceBuilder {
     ) -> Self {
         self.resource_details = input;
         self
+    }
+    /// <p>Details on the target instance type. </p>
+    pub fn get_resource_details(&self) -> &::std::option::Option<crate::types::ResourceDetails> {
+        &self.resource_details
     }
     /// <p>The expected utilization metrics for target instance type.</p>
     pub fn expected_resource_utilization(
@@ -171,6 +191,12 @@ impl TargetInstanceBuilder {
     ) -> Self {
         self.expected_resource_utilization = input;
         self
+    }
+    /// <p>The expected utilization metrics for target instance type.</p>
+    pub fn get_expected_resource_utilization(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceUtilization> {
+        &self.expected_resource_utilization
     }
     /// Appends an item to `platform_differences`.
     ///
@@ -190,6 +216,12 @@ impl TargetInstanceBuilder {
     ) -> Self {
         self.platform_differences = input;
         self
+    }
+    /// <p>Explains the actions that you might need to take to successfully migrate your workloads from the current instance type to the recommended instance type. </p>
+    pub fn get_platform_differences(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PlatformDifference>> {
+        &self.platform_differences
     }
     /// Consumes the builder and constructs a [`TargetInstance`](crate::types::TargetInstance).
     pub fn build(self) -> crate::types::TargetInstance {

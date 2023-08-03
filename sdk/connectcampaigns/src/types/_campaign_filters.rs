@@ -43,6 +43,10 @@ impl CampaignFiltersBuilder {
         self.instance_id_filter = input;
         self
     }
+    /// Connect instance identifier filter
+    pub fn get_instance_id_filter(&self) -> &::std::option::Option<crate::types::InstanceIdFilter> {
+        &self.instance_id_filter
+    }
     /// Consumes the builder and constructs a [`CampaignFilters`](crate::types::CampaignFilters).
     pub fn build(self) -> crate::types::CampaignFilters {
         crate::types::CampaignFilters {

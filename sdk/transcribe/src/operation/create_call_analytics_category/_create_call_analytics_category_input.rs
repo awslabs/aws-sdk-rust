@@ -71,6 +71,11 @@ impl CreateCallAnalyticsCategoryInputBuilder {
         self.category_name = input;
         self
     }
+    /// <p>A unique name, chosen by you, for your Call Analytics category. It's helpful to use a detailed naming system that will make sense to you in the future. For example, it's better to use <code>sentiment-positive-last30seconds</code> for a category over a generic name like <code>test-category</code>.</p>
+    /// <p>Category names are case sensitive.</p>
+    pub fn get_category_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.category_name
+    }
     /// Appends an item to `rules`.
     ///
     /// To override the contents of this collection use [`set_rules`](Self::set_rules).
@@ -90,6 +95,10 @@ impl CreateCallAnalyticsCategoryInputBuilder {
         self.rules = input;
         self
     }
+    /// <p>Rules define a Call Analytics category. When creating a new category, you must create between 1 and 20 rules for that category. For each rule, you specify a filter you want applied to the attributes of a call. For example, you can choose a sentiment filter that detects if a customer's sentiment was positive during the last 30 seconds of the call.</p>
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Rule>> {
+        &self.rules
+    }
     /// <p>Choose whether you want to create a real-time or a post-call category for your Call Analytics transcription.</p>
     /// <p>Specifying <code>POST_CALL</code> assigns your category to post-call transcriptions; categories with this input type cannot be applied to streaming (real-time) transcriptions.</p>
     /// <p>Specifying <code>REAL_TIME</code> assigns your category to streaming transcriptions; categories with this input type cannot be applied to post-call transcriptions.</p>
@@ -105,6 +114,13 @@ impl CreateCallAnalyticsCategoryInputBuilder {
     pub fn set_input_type(mut self, input: ::std::option::Option<crate::types::InputType>) -> Self {
         self.input_type = input;
         self
+    }
+    /// <p>Choose whether you want to create a real-time or a post-call category for your Call Analytics transcription.</p>
+    /// <p>Specifying <code>POST_CALL</code> assigns your category to post-call transcriptions; categories with this input type cannot be applied to streaming (real-time) transcriptions.</p>
+    /// <p>Specifying <code>REAL_TIME</code> assigns your category to streaming transcriptions; categories with this input type cannot be applied to post-call transcriptions.</p>
+    /// <p>If you do not include <code>InputType</code>, your category is created as a post-call category by default.</p>
+    pub fn get_input_type(&self) -> &::std::option::Option<crate::types::InputType> {
+        &self.input_type
     }
     /// Consumes the builder and constructs a [`CreateCallAnalyticsCategoryInput`](crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryInput).
     pub fn build(

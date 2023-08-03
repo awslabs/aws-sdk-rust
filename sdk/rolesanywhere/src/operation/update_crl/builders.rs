@@ -37,6 +37,10 @@ impl UpdateCrlFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateCrl as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_crl::builders::UpdateCrlInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl UpdateCrlFluentBuilder {
         self.inner = self.inner.set_crl_id(input);
         self
     }
+    /// <p>The unique identifier of the certificate revocation list (CRL).</p>
+    pub fn get_crl_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_crl_id()
+    }
     /// <p>The name of the Crl.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -129,6 +137,10 @@ impl UpdateCrlFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the Crl.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The x509 v3 specified certificate revocation list (CRL).</p>
     pub fn crl_data(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.crl_data(input);
@@ -138,5 +150,9 @@ impl UpdateCrlFluentBuilder {
     pub fn set_crl_data(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.inner = self.inner.set_crl_data(input);
         self
+    }
+    /// <p>The x509 v3 specified certificate revocation list (CRL).</p>
+    pub fn get_crl_data(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        self.inner.get_crl_data()
     }
 }

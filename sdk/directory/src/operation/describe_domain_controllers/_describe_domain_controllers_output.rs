@@ -64,6 +64,12 @@ impl DescribeDomainControllersOutputBuilder {
         self.domain_controllers = input;
         self
     }
+    /// <p>List of the <code>DomainController</code> objects that were retrieved.</p>
+    pub fn get_domain_controllers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainController>> {
+        &self.domain_controllers
+    }
     /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeDomainControllers</code> retrieve the next set of items.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -73,6 +79,10 @@ impl DescribeDomainControllersOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeDomainControllers</code> retrieve the next set of items.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

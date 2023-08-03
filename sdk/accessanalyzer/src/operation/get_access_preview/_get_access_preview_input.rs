@@ -54,6 +54,10 @@ impl GetAccessPreviewInputBuilder {
         self.access_preview_id = input;
         self
     }
+    /// <p>The unique ID for the access preview.</p>
+    pub fn get_access_preview_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_preview_id
+    }
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access preview.</p>
     pub fn analyzer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analyzer_arn = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl GetAccessPreviewInputBuilder {
     pub fn set_analyzer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.analyzer_arn = input;
         self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access preview.</p>
+    pub fn get_analyzer_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.analyzer_arn
     }
     /// Consumes the builder and constructs a [`GetAccessPreviewInput`](crate::operation::get_access_preview::GetAccessPreviewInput).
     pub fn build(

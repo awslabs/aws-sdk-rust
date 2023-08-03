@@ -79,6 +79,10 @@ impl GetGroupVersionOutputBuilder {
         self.arn = input;
         self
     }
+    /// The ARN of the group version.
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// The time, in milliseconds since the epoch, when the group version was created.
     pub fn creation_timestamp(
         mut self,
@@ -95,6 +99,10 @@ impl GetGroupVersionOutputBuilder {
         self.creation_timestamp = input;
         self
     }
+    /// The time, in milliseconds since the epoch, when the group version was created.
+    pub fn get_creation_timestamp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_timestamp
+    }
     /// Information about the group version definition.
     pub fn definition(mut self, input: crate::types::GroupVersion) -> Self {
         self.definition = ::std::option::Option::Some(input);
@@ -108,6 +116,10 @@ impl GetGroupVersionOutputBuilder {
         self.definition = input;
         self
     }
+    /// Information about the group version definition.
+    pub fn get_definition(&self) -> &::std::option::Option<crate::types::GroupVersion> {
+        &self.definition
+    }
     /// The ID of the group that the version is associated with.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -118,6 +130,10 @@ impl GetGroupVersionOutputBuilder {
         self.id = input;
         self
     }
+    /// The ID of the group that the version is associated with.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// The ID of the group version.
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -127,6 +143,10 @@ impl GetGroupVersionOutputBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// The ID of the group version.
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

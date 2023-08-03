@@ -36,6 +36,10 @@ impl DeleteConditionalForwarderFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteConditionalForwarder as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_conditional_forwarder::builders::DeleteConditionalForwarderInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl DeleteConditionalForwarderFluentBuilder {
         self.inner = self.inner.set_directory_id(input);
         self
     }
+    /// <p>The directory ID for which you are deleting the conditional forwarder.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_id()
+    }
     /// <p>The fully qualified domain name (FQDN) of the remote domain with which you are deleting the conditional forwarder.</p>
     pub fn remote_domain_name(
         mut self,
@@ -141,5 +149,9 @@ impl DeleteConditionalForwarderFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_remote_domain_name(input);
         self
+    }
+    /// <p>The fully qualified domain name (FQDN) of the remote domain with which you are deleting the conditional forwarder.</p>
+    pub fn get_remote_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_remote_domain_name()
     }
 }

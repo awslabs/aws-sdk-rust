@@ -62,6 +62,11 @@ impl CodeErrorBuilder {
         self.error_type = input;
         self
     }
+    /// <p>The type of code error. </p>
+    /// <p>Examples include, but aren't limited to: <code>LINT_ERROR</code>, <code>PARSER_ERROR</code>.</p>
+    pub fn get_error_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_type
+    }
     /// <p>A user presentable error.</p>
     /// <p>Examples include, but aren't limited to: <code>Parsing error: Unterminated string literal</code>.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,6 +78,11 @@ impl CodeErrorBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>A user presentable error.</p>
+    /// <p>Examples include, but aren't limited to: <code>Parsing error: Unterminated string literal</code>.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// <p>The line, column, and span location of the error in the code.</p>
     pub fn location(mut self, input: crate::types::CodeErrorLocation) -> Self {
@@ -86,6 +96,10 @@ impl CodeErrorBuilder {
     ) -> Self {
         self.location = input;
         self
+    }
+    /// <p>The line, column, and span location of the error in the code.</p>
+    pub fn get_location(&self) -> &::std::option::Option<crate::types::CodeErrorLocation> {
+        &self.location
     }
     /// Consumes the builder and constructs a [`CodeError`](crate::types::CodeError).
     pub fn build(self) -> crate::types::CodeError {

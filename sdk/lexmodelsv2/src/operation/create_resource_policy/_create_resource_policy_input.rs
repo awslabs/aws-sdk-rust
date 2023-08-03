@@ -50,6 +50,10 @@ impl CreateResourcePolicyInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// <p>A resource policy to add to the resource. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html"> IAM JSON policy reference </a>. </p>
     /// <p>If the policy isn't valid, Amazon Lex returns a validation exception.</p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -61,6 +65,11 @@ impl CreateResourcePolicyInputBuilder {
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy = input;
         self
+    }
+    /// <p>A resource policy to add to the resource. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html"> IAM JSON policy reference </a>. </p>
+    /// <p>If the policy isn't valid, Amazon Lex returns a validation exception.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy
     }
     /// Consumes the builder and constructs a [`CreateResourcePolicyInput`](crate::operation::create_resource_policy::CreateResourcePolicyInput).
     pub fn build(

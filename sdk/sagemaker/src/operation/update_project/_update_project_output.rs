@@ -46,6 +46,10 @@ impl UpdateProjectOutputBuilder {
         self.project_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the project.</p>
+    pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

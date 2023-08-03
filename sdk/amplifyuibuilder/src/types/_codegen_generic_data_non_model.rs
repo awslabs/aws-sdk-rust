@@ -66,6 +66,14 @@ impl CodegenGenericDataNonModelBuilder {
         self.fields = input;
         self
     }
+    /// <p>The fields in a generic data schema non model.</p>
+    pub fn get_fields(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::CodegenGenericDataField>,
+    > {
+        &self.fields
+    }
     /// Consumes the builder and constructs a [`CodegenGenericDataNonModel`](crate::types::CodegenGenericDataNonModel).
     pub fn build(self) -> crate::types::CodegenGenericDataNonModel {
         crate::types::CodegenGenericDataNonModel {

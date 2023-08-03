@@ -47,6 +47,10 @@ impl RegisterSlackWorkspaceForOrganizationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RegisterSlackWorkspaceForOrganization as a reference.
+    pub fn as_input(&self) -> &crate::operation::register_slack_workspace_for_organization::builders::RegisterSlackWorkspaceForOrganizationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -110,5 +114,9 @@ impl RegisterSlackWorkspaceForOrganizationFluentBuilder {
     pub fn set_team_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_team_id(input);
         self
+    }
+    /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>. Specify the Slack workspace that you want to use for your organization.</p>
+    pub fn get_team_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_team_id()
     }
 }

@@ -108,6 +108,12 @@ impl ArtifactsConcatenationConfigurationBuilder {
         self.audio = input;
         self
     }
+    /// <p>The configuration for the audio artifacts concatenation.</p>
+    pub fn get_audio(
+        &self,
+    ) -> &::std::option::Option<crate::types::AudioConcatenationConfiguration> {
+        &self.audio
+    }
     /// <p>The configuration for the video artifacts concatenation.</p>
     pub fn video(mut self, input: crate::types::VideoConcatenationConfiguration) -> Self {
         self.video = ::std::option::Option::Some(input);
@@ -121,6 +127,12 @@ impl ArtifactsConcatenationConfigurationBuilder {
         self.video = input;
         self
     }
+    /// <p>The configuration for the video artifacts concatenation.</p>
+    pub fn get_video(
+        &self,
+    ) -> &::std::option::Option<crate::types::VideoConcatenationConfiguration> {
+        &self.video
+    }
     /// <p>The configuration for the content artifacts concatenation.</p>
     pub fn content(mut self, input: crate::types::ContentConcatenationConfiguration) -> Self {
         self.content = ::std::option::Option::Some(input);
@@ -133,6 +145,12 @@ impl ArtifactsConcatenationConfigurationBuilder {
     ) -> Self {
         self.content = input;
         self
+    }
+    /// <p>The configuration for the content artifacts concatenation.</p>
+    pub fn get_content(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContentConcatenationConfiguration> {
+        &self.content
     }
     /// <p>The configuration for the data channel artifacts concatenation.</p>
     pub fn data_channel(
@@ -150,6 +168,12 @@ impl ArtifactsConcatenationConfigurationBuilder {
         self.data_channel = input;
         self
     }
+    /// <p>The configuration for the data channel artifacts concatenation.</p>
+    pub fn get_data_channel(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataChannelConcatenationConfiguration> {
+        &self.data_channel
+    }
     /// <p>The configuration for the transcription messages artifacts concatenation.</p>
     pub fn transcription_messages(
         mut self,
@@ -165,6 +189,12 @@ impl ArtifactsConcatenationConfigurationBuilder {
     ) -> Self {
         self.transcription_messages = input;
         self
+    }
+    /// <p>The configuration for the transcription messages artifacts concatenation.</p>
+    pub fn get_transcription_messages(
+        &self,
+    ) -> &::std::option::Option<crate::types::TranscriptionMessagesConcatenationConfiguration> {
+        &self.transcription_messages
     }
     /// <p>The configuration for the meeting events artifacts concatenation.</p>
     pub fn meeting_events(
@@ -182,6 +212,12 @@ impl ArtifactsConcatenationConfigurationBuilder {
         self.meeting_events = input;
         self
     }
+    /// <p>The configuration for the meeting events artifacts concatenation.</p>
+    pub fn get_meeting_events(
+        &self,
+    ) -> &::std::option::Option<crate::types::MeetingEventsConcatenationConfiguration> {
+        &self.meeting_events
+    }
     /// <p>The configuration for the composited video artifacts concatenation.</p>
     pub fn composited_video(
         mut self,
@@ -197,6 +233,12 @@ impl ArtifactsConcatenationConfigurationBuilder {
     ) -> Self {
         self.composited_video = input;
         self
+    }
+    /// <p>The configuration for the composited video artifacts concatenation.</p>
+    pub fn get_composited_video(
+        &self,
+    ) -> &::std::option::Option<crate::types::CompositedVideoConcatenationConfiguration> {
+        &self.composited_video
     }
     /// Consumes the builder and constructs a [`ArtifactsConcatenationConfiguration`](crate::types::ArtifactsConcatenationConfiguration).
     pub fn build(self) -> crate::types::ArtifactsConcatenationConfiguration {

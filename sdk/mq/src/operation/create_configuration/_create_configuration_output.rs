@@ -90,6 +90,10 @@ impl CreateConfigurationOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>Required. The Amazon Resource Name (ARN) of the configuration.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>Optional. The authentication strategy associated with the configuration. The default is SIMPLE.</p>
     pub fn authentication_strategy(mut self, input: crate::types::AuthenticationStrategy) -> Self {
         self.authentication_strategy = ::std::option::Option::Some(input);
@@ -102,6 +106,12 @@ impl CreateConfigurationOutputBuilder {
     ) -> Self {
         self.authentication_strategy = input;
         self
+    }
+    /// <p>Optional. The authentication strategy associated with the configuration. The default is SIMPLE.</p>
+    pub fn get_authentication_strategy(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuthenticationStrategy> {
+        &self.authentication_strategy
     }
     /// <p>Required. The date and time of the configuration.</p>
     pub fn created(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -116,6 +126,10 @@ impl CreateConfigurationOutputBuilder {
         self.created = input;
         self
     }
+    /// <p>Required. The date and time of the configuration.</p>
+    pub fn get_created(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created
+    }
     /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -125,6 +139,10 @@ impl CreateConfigurationOutputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The latest revision of the configuration.</p>
     pub fn latest_revision(mut self, input: crate::types::ConfigurationRevision) -> Self {
@@ -139,6 +157,12 @@ impl CreateConfigurationOutputBuilder {
         self.latest_revision = input;
         self
     }
+    /// <p>The latest revision of the configuration.</p>
+    pub fn get_latest_revision(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConfigurationRevision> {
+        &self.latest_revision
+    }
     /// <p>Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -148,6 +172,10 @@ impl CreateConfigurationOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

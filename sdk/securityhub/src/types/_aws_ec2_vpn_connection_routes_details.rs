@@ -54,6 +54,10 @@ impl AwsEc2VpnConnectionRoutesDetailsBuilder {
         self.destination_cidr_block = input;
         self
     }
+    /// <p>The CIDR block associated with the local subnet of the customer data center.</p>
+    pub fn get_destination_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_cidr_block
+    }
     /// <p>The current state of the static route.</p>
     pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl AwsEc2VpnConnectionRoutesDetailsBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The current state of the static route.</p>
+    pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`AwsEc2VpnConnectionRoutesDetails`](crate::types::AwsEc2VpnConnectionRoutesDetails).
     pub fn build(self) -> crate::types::AwsEc2VpnConnectionRoutesDetails {

@@ -64,6 +64,12 @@ impl ListDeviceEventsOutputBuilder {
         self.device_events = input;
         self
     }
+    /// <p>The device events requested for the device ARN.</p>
+    pub fn get_device_events(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceEvent>> {
+        &self.device_events
+    }
     /// <p>The token returned to indicate that there is more data available.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -73,6 +79,10 @@ impl ListDeviceEventsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token returned to indicate that there is more data available.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

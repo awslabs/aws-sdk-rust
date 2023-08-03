@@ -51,6 +51,10 @@ impl UpdateVpcAttachmentOutputBuilder {
         self.vpc_attachment = input;
         self
     }
+    /// <p>Describes the updated VPC attachment.</p>
+    pub fn get_vpc_attachment(&self) -> &::std::option::Option<crate::types::VpcAttachment> {
+        &self.vpc_attachment
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -59,6 +59,10 @@ impl DeleteFleetsInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// Appends an item to `fleet_ids`.
     ///
     /// To override the contents of this collection use [`set_fleet_ids`](Self::set_fleet_ids).
@@ -78,6 +82,10 @@ impl DeleteFleetsInputBuilder {
         self.fleet_ids = input;
         self
     }
+    /// <p>The IDs of the EC2 Fleets.</p>
+    pub fn get_fleet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.fleet_ids
+    }
     /// <p>Indicates whether to terminate the associated instances when the EC2 Fleet is deleted. The default is to terminate the instances.</p>
     /// <p>To let the instances continue to run after the EC2 Fleet is deleted, specify <code>no-terminate-instances</code>. Supported only for fleets of type <code>maintain</code> and <code>request</code>.</p>
     /// <p>For <code>instant</code> fleets, you cannot specify <code>NoTerminateInstances</code>. A deleted <code>instant</code> fleet with running instances is not supported.</p>
@@ -91,6 +99,12 @@ impl DeleteFleetsInputBuilder {
     pub fn set_terminate_instances(mut self, input: ::std::option::Option<bool>) -> Self {
         self.terminate_instances = input;
         self
+    }
+    /// <p>Indicates whether to terminate the associated instances when the EC2 Fleet is deleted. The default is to terminate the instances.</p>
+    /// <p>To let the instances continue to run after the EC2 Fleet is deleted, specify <code>no-terminate-instances</code>. Supported only for fleets of type <code>maintain</code> and <code>request</code>.</p>
+    /// <p>For <code>instant</code> fleets, you cannot specify <code>NoTerminateInstances</code>. A deleted <code>instant</code> fleet with running instances is not supported.</p>
+    pub fn get_terminate_instances(&self) -> &::std::option::Option<bool> {
+        &self.terminate_instances
     }
     /// Consumes the builder and constructs a [`DeleteFleetsInput`](crate::operation::delete_fleets::DeleteFleetsInput).
     pub fn build(

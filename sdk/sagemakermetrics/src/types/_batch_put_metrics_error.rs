@@ -75,6 +75,16 @@ impl BatchPutMetricsErrorBuilder {
         self.code = input;
         self
     }
+    /// <p>The error code of an error that occured when attempting to put metrics.</p>
+    /// <ul>
+    /// <li> <p> <code>METRIC_LIMIT_EXCEEDED</code>: The maximum amount of metrics per resource is exceeded.</p> </li>
+    /// <li> <p> <code>INTERNAL_ERROR</code>: An internal error occured.</p> </li>
+    /// <li> <p> <code>VALIDATION_ERROR</code>: The metric data failed validation.</p> </li>
+    /// <li> <p> <code>CONFLICT_ERROR</code>: Multiple requests attempted to modify the same data simultaneously.</p> </li>
+    /// </ul>
+    pub fn get_code(&self) -> &::std::option::Option<crate::types::PutMetricsErrorCode> {
+        &self.code
+    }
     /// <p>An index that corresponds to the metric in the request.</p>
     pub fn metric_index(mut self, input: i32) -> Self {
         self.metric_index = ::std::option::Option::Some(input);
@@ -84,6 +94,10 @@ impl BatchPutMetricsErrorBuilder {
     pub fn set_metric_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.metric_index = input;
         self
+    }
+    /// <p>An index that corresponds to the metric in the request.</p>
+    pub fn get_metric_index(&self) -> &::std::option::Option<i32> {
+        &self.metric_index
     }
     /// Consumes the builder and constructs a [`BatchPutMetricsError`](crate::types::BatchPutMetricsError).
     pub fn build(self) -> crate::types::BatchPutMetricsError {

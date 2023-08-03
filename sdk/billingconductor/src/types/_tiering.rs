@@ -43,6 +43,10 @@ impl TieringBuilder {
         self.free_tier = input;
         self
     }
+    /// <p> The possible Amazon Web Services Free Tier configurations. </p>
+    pub fn get_free_tier(&self) -> &::std::option::Option<crate::types::FreeTierConfig> {
+        &self.free_tier
+    }
     /// Consumes the builder and constructs a [`Tiering`](crate::types::Tiering).
     pub fn build(self) -> crate::types::Tiering {
         crate::types::Tiering {

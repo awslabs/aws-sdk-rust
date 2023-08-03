@@ -215,6 +215,10 @@ impl DescribeHsmOutputBuilder {
         self.hsm_arn = input;
         self
     }
+    /// <p>The ARN of the HSM.</p>
+    pub fn get_hsm_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hsm_arn
+    }
     /// <p>The status of the HSM.</p>
     pub fn status(mut self, input: crate::types::HsmStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -224,6 +228,10 @@ impl DescribeHsmOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::HsmStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the HSM.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::HsmStatus> {
+        &self.status
     }
     /// <p>Contains additional information about the status of the HSM.</p>
     pub fn status_details(
@@ -241,6 +249,10 @@ impl DescribeHsmOutputBuilder {
         self.status_details = input;
         self
     }
+    /// <p>Contains additional information about the status of the HSM.</p>
+    pub fn get_status_details(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_details
+    }
     /// <p>The Availability Zone that the HSM is in.</p>
     pub fn availability_zone(
         mut self,
@@ -257,6 +269,10 @@ impl DescribeHsmOutputBuilder {
         self.availability_zone = input;
         self
     }
+    /// <p>The Availability Zone that the HSM is in.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p>The identifier of the elastic network interface (ENI) attached to the HSM.</p>
     pub fn eni_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.eni_id = ::std::option::Option::Some(input.into());
@@ -267,6 +283,10 @@ impl DescribeHsmOutputBuilder {
         self.eni_id = input;
         self
     }
+    /// <p>The identifier of the elastic network interface (ENI) attached to the HSM.</p>
+    pub fn get_eni_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.eni_id
+    }
     /// <p>The IP address assigned to the HSM's ENI.</p>
     pub fn eni_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.eni_ip = ::std::option::Option::Some(input.into());
@@ -276,6 +296,10 @@ impl DescribeHsmOutputBuilder {
     pub fn set_eni_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.eni_ip = input;
         self
+    }
+    /// <p>The IP address assigned to the HSM's ENI.</p>
+    pub fn get_eni_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.eni_ip
     }
     /// <p>Specifies the type of subscription for the HSM.</p>
     /// <ul>
@@ -298,6 +322,14 @@ impl DescribeHsmOutputBuilder {
         self.subscription_type = input;
         self
     }
+    /// <p>Specifies the type of subscription for the HSM.</p>
+    /// <ul>
+    /// <li> <p> <b>PRODUCTION</b> - The HSM is being used in a production environment.</p> </li>
+    /// <li> <p> <b>TRIAL</b> - The HSM is being used in a product trial.</p> </li>
+    /// </ul>
+    pub fn get_subscription_type(&self) -> &::std::option::Option<crate::types::SubscriptionType> {
+        &self.subscription_type
+    }
     /// <p>The subscription start date.</p>
     pub fn subscription_start_date(
         mut self,
@@ -313,6 +345,10 @@ impl DescribeHsmOutputBuilder {
     ) -> Self {
         self.subscription_start_date = input;
         self
+    }
+    /// <p>The subscription start date.</p>
+    pub fn get_subscription_start_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subscription_start_date
     }
     /// <p>The subscription end date.</p>
     pub fn subscription_end_date(
@@ -330,6 +366,10 @@ impl DescribeHsmOutputBuilder {
         self.subscription_end_date = input;
         self
     }
+    /// <p>The subscription end date.</p>
+    pub fn get_subscription_end_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subscription_end_date
+    }
     /// <p>The identifier of the VPC that the HSM is in.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -339,6 +379,10 @@ impl DescribeHsmOutputBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The identifier of the VPC that the HSM is in.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// <p>The identifier of the subnet that the HSM is in.</p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -350,6 +394,10 @@ impl DescribeHsmOutputBuilder {
         self.subnet_id = input;
         self
     }
+    /// <p>The identifier of the subnet that the HSM is in.</p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_id
+    }
     /// <p>The ARN of the IAM role assigned to the HSM.</p>
     pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_role_arn = ::std::option::Option::Some(input.into());
@@ -359,6 +407,10 @@ impl DescribeHsmOutputBuilder {
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_role_arn = input;
         self
+    }
+    /// <p>The ARN of the IAM role assigned to the HSM.</p>
+    pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iam_role_arn
     }
     /// <p>The serial number of the HSM.</p>
     pub fn serial_number(
@@ -376,6 +428,10 @@ impl DescribeHsmOutputBuilder {
         self.serial_number = input;
         self
     }
+    /// <p>The serial number of the HSM.</p>
+    pub fn get_serial_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.serial_number
+    }
     /// <p>The name of the HSM vendor.</p>
     pub fn vendor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vendor_name = ::std::option::Option::Some(input.into());
@@ -386,6 +442,10 @@ impl DescribeHsmOutputBuilder {
         self.vendor_name = input;
         self
     }
+    /// <p>The name of the HSM vendor.</p>
+    pub fn get_vendor_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vendor_name
+    }
     /// <p>The HSM model type.</p>
     pub fn hsm_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hsm_type = ::std::option::Option::Some(input.into());
@@ -395,6 +455,10 @@ impl DescribeHsmOutputBuilder {
     pub fn set_hsm_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hsm_type = input;
         self
+    }
+    /// <p>The HSM model type.</p>
+    pub fn get_hsm_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hsm_type
     }
     /// <p>The HSM software version.</p>
     pub fn software_version(
@@ -412,6 +476,10 @@ impl DescribeHsmOutputBuilder {
         self.software_version = input;
         self
     }
+    /// <p>The HSM software version.</p>
+    pub fn get_software_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.software_version
+    }
     /// <p>The public SSH key.</p>
     pub fn ssh_public_key(
         mut self,
@@ -427,6 +495,10 @@ impl DescribeHsmOutputBuilder {
     ) -> Self {
         self.ssh_public_key = input;
         self
+    }
+    /// <p>The public SSH key.</p>
+    pub fn get_ssh_public_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ssh_public_key
     }
     /// <p>The date and time that the SSH key was last updated.</p>
     pub fn ssh_key_last_updated(
@@ -444,6 +516,10 @@ impl DescribeHsmOutputBuilder {
         self.ssh_key_last_updated = input;
         self
     }
+    /// <p>The date and time that the SSH key was last updated.</p>
+    pub fn get_ssh_key_last_updated(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ssh_key_last_updated
+    }
     /// <p>The URI of the certificate server.</p>
     pub fn server_cert_uri(
         mut self,
@@ -460,6 +536,10 @@ impl DescribeHsmOutputBuilder {
         self.server_cert_uri = input;
         self
     }
+    /// <p>The URI of the certificate server.</p>
+    pub fn get_server_cert_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_cert_uri
+    }
     /// <p>The date and time that the server certificate was last updated.</p>
     pub fn server_cert_last_updated(
         mut self,
@@ -475,6 +555,10 @@ impl DescribeHsmOutputBuilder {
     ) -> Self {
         self.server_cert_last_updated = input;
         self
+    }
+    /// <p>The date and time that the server certificate was last updated.</p>
+    pub fn get_server_cert_last_updated(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_cert_last_updated
     }
     /// Appends an item to `partitions`.
     ///
@@ -494,6 +578,10 @@ impl DescribeHsmOutputBuilder {
     ) -> Self {
         self.partitions = input;
         self
+    }
+    /// <p>The list of partitions on the HSM.</p>
+    pub fn get_partitions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.partitions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

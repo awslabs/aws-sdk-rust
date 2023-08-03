@@ -36,6 +36,10 @@ impl RemoveListenerCertificatesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RemoveListenerCertificates as a reference.
+    pub fn as_input(&self) -> &crate::operation::remove_listener_certificates::builders::RemoveListenerCertificatesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl RemoveListenerCertificatesFluentBuilder {
         self.inner = self.inner.set_listener_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the listener.</p>
+    pub fn get_listener_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_listener_arn()
+    }
     /// Appends an item to `Certificates`.
     ///
     /// To override the contents of this collection use [`set_certificates`](Self::set_certificates).
@@ -142,5 +150,11 @@ impl RemoveListenerCertificatesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_certificates(input);
         self
+    }
+    /// <p>The certificate to remove. You can specify one certificate per call. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
+    pub fn get_certificates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
+        self.inner.get_certificates()
     }
 }

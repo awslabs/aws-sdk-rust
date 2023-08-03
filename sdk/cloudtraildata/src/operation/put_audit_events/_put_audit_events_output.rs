@@ -64,6 +64,12 @@ impl PutAuditEventsOutputBuilder {
         self.successful = input;
         self
     }
+    /// <p>Lists events in the provided event payload that were successfully ingested into CloudTrail.</p>
+    pub fn get_successful(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AuditEventResultEntry>> {
+        &self.successful
+    }
     /// Appends an item to `failed`.
     ///
     /// To override the contents of this collection use [`set_failed`](Self::set_failed).
@@ -82,6 +88,12 @@ impl PutAuditEventsOutputBuilder {
     ) -> Self {
         self.failed = input;
         self
+    }
+    /// <p>Lists events in the provided event payload that could not be ingested into CloudTrail, and includes the error code and error message returned for events that could not be ingested.</p>
+    pub fn get_failed(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResultErrorEntry>> {
+        &self.failed
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

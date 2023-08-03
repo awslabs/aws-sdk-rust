@@ -36,6 +36,12 @@ impl ListTestSetsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListTestSets as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_test_sets::builders::ListTestSetsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl ListTestSetsFluentBuilder {
         self.inner = self.inner.set_sort_by(input);
         self
     }
+    /// <p>The sort order for the list of test sets.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::TestSetSortBy> {
+        self.inner.get_sort_by()
+    }
     /// <p>The maximum number of test sets to return in each page. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -142,6 +152,10 @@ impl ListTestSetsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of test sets to return in each page. If there are fewer results than the max page size, only the actual number of results are returned.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>If the response from the ListTestSets operation contains more results than specified in the maxResults parameter, a token is returned in the response. Use that token in the nextToken parameter to return the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -151,5 +165,9 @@ impl ListTestSetsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>If the response from the ListTestSets operation contains more results than specified in the maxResults parameter, a token is returned in the response. Use that token in the nextToken parameter to return the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

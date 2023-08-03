@@ -41,6 +41,10 @@ impl DeleteSolNetworkPackageInputBuilder {
         self.nsd_info_id = input;
         self
     }
+    /// <p>ID of the network service descriptor in the network package.</p>
+    pub fn get_nsd_info_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nsd_info_id
+    }
     /// Consumes the builder and constructs a [`DeleteSolNetworkPackageInput`](crate::operation::delete_sol_network_package::DeleteSolNetworkPackageInput).
     pub fn build(
         self,

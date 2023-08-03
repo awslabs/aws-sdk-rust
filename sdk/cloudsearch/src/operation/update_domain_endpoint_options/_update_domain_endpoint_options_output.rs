@@ -56,6 +56,12 @@ impl UpdateDomainEndpointOptionsOutputBuilder {
         self.domain_endpoint_options = input;
         self
     }
+    /// <p>The newly-configured domain endpoint options.</p>
+    pub fn get_domain_endpoint_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::DomainEndpointOptionsStatus> {
+        &self.domain_endpoint_options
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

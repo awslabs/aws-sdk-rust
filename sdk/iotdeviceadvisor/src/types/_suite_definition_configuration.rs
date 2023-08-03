@@ -96,6 +96,10 @@ impl SuiteDefinitionConfigurationBuilder {
         self.suite_definition_name = input;
         self
     }
+    /// <p>Gets the suite definition name. This is a required parameter.</p>
+    pub fn get_suite_definition_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.suite_definition_name
+    }
     /// Appends an item to `devices`.
     ///
     /// To override the contents of this collection use [`set_devices`](Self::set_devices).
@@ -115,6 +119,12 @@ impl SuiteDefinitionConfigurationBuilder {
         self.devices = input;
         self
     }
+    /// <p>Gets the devices configured.</p>
+    pub fn get_devices(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceUnderTest>> {
+        &self.devices
+    }
     /// <p>Gets the tests intended for qualification in a suite.</p>
     pub fn intended_for_qualification(mut self, input: bool) -> Self {
         self.intended_for_qualification = ::std::option::Option::Some(input);
@@ -125,6 +135,10 @@ impl SuiteDefinitionConfigurationBuilder {
         self.intended_for_qualification = input;
         self
     }
+    /// <p>Gets the tests intended for qualification in a suite.</p>
+    pub fn get_intended_for_qualification(&self) -> &::std::option::Option<bool> {
+        &self.intended_for_qualification
+    }
     /// <p>Verifies if the test suite is a long duration test.</p>
     pub fn is_long_duration_test(mut self, input: bool) -> Self {
         self.is_long_duration_test = ::std::option::Option::Some(input);
@@ -134,6 +148,10 @@ impl SuiteDefinitionConfigurationBuilder {
     pub fn set_is_long_duration_test(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_long_duration_test = input;
         self
+    }
+    /// <p>Verifies if the test suite is a long duration test.</p>
+    pub fn get_is_long_duration_test(&self) -> &::std::option::Option<bool> {
+        &self.is_long_duration_test
     }
     /// <p>Gets the test suite root group. This is a required parameter. For updating or creating the latest qualification suite, if <code>intendedForQualification</code> is set to true, <code>rootGroup</code> can be an empty string. If <code>intendedForQualification</code> is false, <code>rootGroup</code> cannot be an empty string. If <code>rootGroup</code> is empty, and <code>intendedForQualification</code> is set to true, all the qualification tests are included, and the configuration is default.</p>
     /// <p> For a qualification suite, the minimum length is 0, and the maximum is 2048. For a non-qualification suite, the minimum length is 1, and the maximum is 2048. </p>
@@ -146,6 +164,11 @@ impl SuiteDefinitionConfigurationBuilder {
     pub fn set_root_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.root_group = input;
         self
+    }
+    /// <p>Gets the test suite root group. This is a required parameter. For updating or creating the latest qualification suite, if <code>intendedForQualification</code> is set to true, <code>rootGroup</code> can be an empty string. If <code>intendedForQualification</code> is false, <code>rootGroup</code> cannot be an empty string. If <code>rootGroup</code> is empty, and <code>intendedForQualification</code> is set to true, all the qualification tests are included, and the configuration is default.</p>
+    /// <p> For a qualification suite, the minimum length is 0, and the maximum is 2048. For a non-qualification suite, the minimum length is 1, and the maximum is 2048. </p>
+    pub fn get_root_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.root_group
     }
     /// <p>Gets the device permission ARN. This is a required parameter.</p>
     pub fn device_permission_role_arn(
@@ -163,6 +186,10 @@ impl SuiteDefinitionConfigurationBuilder {
         self.device_permission_role_arn = input;
         self
     }
+    /// <p>Gets the device permission ARN. This is a required parameter.</p>
+    pub fn get_device_permission_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_permission_role_arn
+    }
     /// <p>Sets the MQTT protocol that is configured in the suite definition.</p>
     pub fn protocol(mut self, input: crate::types::Protocol) -> Self {
         self.protocol = ::std::option::Option::Some(input);
@@ -172,6 +199,10 @@ impl SuiteDefinitionConfigurationBuilder {
     pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::Protocol>) -> Self {
         self.protocol = input;
         self
+    }
+    /// <p>Sets the MQTT protocol that is configured in the suite definition.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<crate::types::Protocol> {
+        &self.protocol
     }
     /// Consumes the builder and constructs a [`SuiteDefinitionConfiguration`](crate::types::SuiteDefinitionConfiguration).
     pub fn build(self) -> crate::types::SuiteDefinitionConfiguration {

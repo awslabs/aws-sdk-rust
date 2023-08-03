@@ -112,6 +112,10 @@ impl DescribePackageOutputBuilder {
         self.package_id = input;
         self
     }
+    /// <p>The package's ID.</p>
+    pub fn get_package_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_id
+    }
     /// <p>The package's name.</p>
     pub fn package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_name = ::std::option::Option::Some(input.into());
@@ -122,6 +126,10 @@ impl DescribePackageOutputBuilder {
         self.package_name = input;
         self
     }
+    /// <p>The package's name.</p>
+    pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_name
+    }
     /// <p>The package's ARN.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -131,6 +139,10 @@ impl DescribePackageOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The package's ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The package's storage location.</p>
     pub fn storage_location(mut self, input: crate::types::StorageLocation) -> Self {
@@ -144,6 +156,10 @@ impl DescribePackageOutputBuilder {
     ) -> Self {
         self.storage_location = input;
         self
+    }
+    /// <p>The package's storage location.</p>
+    pub fn get_storage_location(&self) -> &::std::option::Option<crate::types::StorageLocation> {
+        &self.storage_location
     }
     /// Appends an item to `read_access_principal_arns`.
     ///
@@ -167,6 +183,12 @@ impl DescribePackageOutputBuilder {
         self.read_access_principal_arns = input;
         self
     }
+    /// <p>ARNs of accounts that have read access to the package.</p>
+    pub fn get_read_access_principal_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.read_access_principal_arns
+    }
     /// Appends an item to `write_access_principal_arns`.
     ///
     /// To override the contents of this collection use [`set_write_access_principal_arns`](Self::set_write_access_principal_arns).
@@ -189,6 +211,12 @@ impl DescribePackageOutputBuilder {
         self.write_access_principal_arns = input;
         self
     }
+    /// <p>ARNs of accounts that have write access to the package.</p>
+    pub fn get_write_access_principal_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.write_access_principal_arns
+    }
     /// <p>When the package was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
@@ -201,6 +229,10 @@ impl DescribePackageOutputBuilder {
     ) -> Self {
         self.created_time = input;
         self
+    }
+    /// <p>When the package was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -226,6 +258,14 @@ impl DescribePackageOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The package's tags.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

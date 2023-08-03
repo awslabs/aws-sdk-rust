@@ -57,6 +57,10 @@ impl GetKxConnectionStringInputBuilder {
         self.user_arn = input;
         self
     }
+    /// <p> The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in policies, see <a href="IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>. </p>
+    pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_arn
+    }
     /// <p>A unique identifier for the kdb environment.</p>
     pub fn environment_id(
         mut self,
@@ -73,6 +77,10 @@ impl GetKxConnectionStringInputBuilder {
         self.environment_id = input;
         self
     }
+    /// <p>A unique identifier for the kdb environment.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
+    }
     /// <p>A name of the kdb cluster.</p>
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl GetKxConnectionStringInputBuilder {
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_name = input;
         self
+    }
+    /// <p>A name of the kdb cluster.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_name
     }
     /// Consumes the builder and constructs a [`GetKxConnectionStringInput`](crate::operation::get_kx_connection_string::GetKxConnectionStringInput).
     pub fn build(

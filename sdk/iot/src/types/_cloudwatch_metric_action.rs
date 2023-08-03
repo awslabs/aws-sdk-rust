@@ -80,6 +80,10 @@ impl CloudwatchMetricActionBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The IAM role that allows access to the CloudWatch metric.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>The CloudWatch metric namespace name.</p>
     pub fn metric_namespace(
         mut self,
@@ -96,6 +100,10 @@ impl CloudwatchMetricActionBuilder {
         self.metric_namespace = input;
         self
     }
+    /// <p>The CloudWatch metric namespace name.</p>
+    pub fn get_metric_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_namespace
+    }
     /// <p>The CloudWatch metric name.</p>
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_name = ::std::option::Option::Some(input.into());
@@ -105,6 +113,10 @@ impl CloudwatchMetricActionBuilder {
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_name = input;
         self
+    }
+    /// <p>The CloudWatch metric name.</p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_name
     }
     /// <p>The CloudWatch metric value.</p>
     pub fn metric_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -116,6 +128,10 @@ impl CloudwatchMetricActionBuilder {
         self.metric_value = input;
         self
     }
+    /// <p>The CloudWatch metric value.</p>
+    pub fn get_metric_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_value
+    }
     /// <p>The <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Unit">metric unit</a> supported by CloudWatch.</p>
     pub fn metric_unit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_unit = ::std::option::Option::Some(input.into());
@@ -125,6 +141,10 @@ impl CloudwatchMetricActionBuilder {
     pub fn set_metric_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_unit = input;
         self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Unit">metric unit</a> supported by CloudWatch.</p>
+    pub fn get_metric_unit(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_unit
     }
     /// <p>An optional <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Unix timestamp</a>.</p>
     pub fn metric_timestamp(
@@ -141,6 +161,10 @@ impl CloudwatchMetricActionBuilder {
     ) -> Self {
         self.metric_timestamp = input;
         self
+    }
+    /// <p>An optional <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Unix timestamp</a>.</p>
+    pub fn get_metric_timestamp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_timestamp
     }
     /// Consumes the builder and constructs a [`CloudwatchMetricAction`](crate::types::CloudwatchMetricAction).
     pub fn build(self) -> crate::types::CloudwatchMetricAction {

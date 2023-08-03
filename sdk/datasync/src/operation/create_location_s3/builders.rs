@@ -43,6 +43,12 @@ impl CreateLocationS3FluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateLocationS3 as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_location_s3::builders::CreateLocationS3InputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl CreateLocationS3FluentBuilder {
         self.inner = self.inner.set_subdirectory(input);
         self
     }
+    /// <p>A subdirectory in the Amazon S3 bucket. This subdirectory in Amazon S3 is used to read data from the S3 source location or write data to the S3 destination.</p>
+    pub fn get_subdirectory(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_subdirectory()
+    }
     /// <p>The ARN of the Amazon S3 bucket. If the bucket is on an Amazon Web Services Outpost, this must be an access point ARN.</p>
     pub fn s3_bucket_arn(
         mut self,
@@ -149,6 +159,10 @@ impl CreateLocationS3FluentBuilder {
         self.inner = self.inner.set_s3_bucket_arn(input);
         self
     }
+    /// <p>The ARN of the Amazon S3 bucket. If the bucket is on an Amazon Web Services Outpost, this must be an access point ARN.</p>
+    pub fn get_s3_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_s3_bucket_arn()
+    }
     /// <p>The Amazon S3 storage class that you want to store your files in when this location is used as a task destination. For buckets in Amazon Web Services Regions, the storage class defaults to Standard. For buckets on Outposts, the storage class defaults to Amazon Web Services S3 Outposts.</p>
     /// <p>For more information about S3 storage classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>. Some storage classes have behaviors that can affect your S3 storage cost. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with S3 storage classes in DataSync</a>.</p>
     pub fn s3_storage_class(mut self, input: crate::types::S3StorageClass) -> Self {
@@ -164,6 +178,11 @@ impl CreateLocationS3FluentBuilder {
         self.inner = self.inner.set_s3_storage_class(input);
         self
     }
+    /// <p>The Amazon S3 storage class that you want to store your files in when this location is used as a task destination. For buckets in Amazon Web Services Regions, the storage class defaults to Standard. For buckets on Outposts, the storage class defaults to Amazon Web Services S3 Outposts.</p>
+    /// <p>For more information about S3 storage classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>. Some storage classes have behaviors that can affect your S3 storage cost. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with S3 storage classes in DataSync</a>.</p>
+    pub fn get_s3_storage_class(&self) -> &::std::option::Option<crate::types::S3StorageClass> {
+        self.inner.get_s3_storage_class()
+    }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used to access an Amazon S3 bucket.</p>
     /// <p>For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>DataSync User Guide</i>.</p>
     pub fn s3_config(mut self, input: crate::types::S3Config) -> Self {
@@ -175,6 +194,11 @@ impl CreateLocationS3FluentBuilder {
     pub fn set_s3_config(mut self, input: ::std::option::Option<crate::types::S3Config>) -> Self {
         self.inner = self.inner.set_s3_config(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used to access an Amazon S3 bucket.</p>
+    /// <p>For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>DataSync User Guide</i>.</p>
+    pub fn get_s3_config(&self) -> &::std::option::Option<crate::types::S3Config> {
+        self.inner.get_s3_config()
     }
     /// Appends an item to `AgentArns`.
     ///
@@ -193,6 +217,10 @@ impl CreateLocationS3FluentBuilder {
         self.inner = self.inner.set_agent_arns(input);
         self
     }
+    /// <p>If you're using DataSync on an Amazon Web Services Outpost, specify the Amazon Resource Names (ARNs) of the DataSync agents deployed on your Outpost. For more information about launching a DataSync agent on an Amazon Web Services Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on Outposts</a>.</p>
+    pub fn get_agent_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_agent_arns()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -209,5 +237,9 @@ impl CreateLocationS3FluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>> {
+        self.inner.get_tags()
     }
 }

@@ -46,6 +46,10 @@ impl VirtualGatewayListenerTlsAcmCertificateBuilder {
         self.certificate_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the certificate. The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport Layer Security (TLS)</a>.</p>
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_arn
+    }
     /// Consumes the builder and constructs a [`VirtualGatewayListenerTlsAcmCertificate`](crate::types::VirtualGatewayListenerTlsAcmCertificate).
     pub fn build(self) -> crate::types::VirtualGatewayListenerTlsAcmCertificate {
         crate::types::VirtualGatewayListenerTlsAcmCertificate {

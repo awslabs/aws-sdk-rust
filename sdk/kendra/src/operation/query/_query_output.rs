@@ -104,6 +104,10 @@ impl QueryOutputBuilder {
         self.query_id = input;
         self
     }
+    /// <p>The identifier for the search. You also use <code>QueryId</code> to identify the search when using the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_SubmitFeedback.html">SubmitFeedback</a> API.</p>
+    pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_id
+    }
     /// Appends an item to `result_items`.
     ///
     /// To override the contents of this collection use [`set_result_items`](Self::set_result_items).
@@ -122,6 +126,12 @@ impl QueryOutputBuilder {
     ) -> Self {
         self.result_items = input;
         self
+    }
+    /// <p>The results of the search.</p>
+    pub fn get_result_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryResultItem>> {
+        &self.result_items
     }
     /// Appends an item to `facet_results`.
     ///
@@ -142,6 +152,12 @@ impl QueryOutputBuilder {
         self.facet_results = input;
         self
     }
+    /// <p>Contains the facet results. A <code>FacetResult</code> contains the counts for each field/attribute key that was specified in the <code>Facets</code> input parameter.</p>
+    pub fn get_facet_results(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FacetResult>> {
+        &self.facet_results
+    }
     /// <p>The total number of items found by the search. However, you can only retrieve up to 100 items. For example, if the search found 192 items, you can only retrieve the first 100 of the items.</p>
     pub fn total_number_of_results(mut self, input: i32) -> Self {
         self.total_number_of_results = ::std::option::Option::Some(input);
@@ -151,6 +167,10 @@ impl QueryOutputBuilder {
     pub fn set_total_number_of_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_number_of_results = input;
         self
+    }
+    /// <p>The total number of items found by the search. However, you can only retrieve up to 100 items. For example, if the search found 192 items, you can only retrieve the first 100 of the items.</p>
+    pub fn get_total_number_of_results(&self) -> &::std::option::Option<i32> {
+        &self.total_number_of_results
     }
     /// Appends an item to `warnings`.
     ///
@@ -173,6 +193,11 @@ impl QueryOutputBuilder {
         self.warnings = input;
         self
     }
+    /// <p>A list of warning codes and their messages on problems with your query.</p>
+    /// <p>Amazon Kendra currently only supports one type of warning, which is a warning on invalid syntax used in the query. For examples of invalid query syntax, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/searching-example.html#searching-index-query-syntax">Searching with advanced query syntax</a>.</p>
+    pub fn get_warnings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Warning>> {
+        &self.warnings
+    }
     /// Appends an item to `spell_corrected_queries`.
     ///
     /// To override the contents of this collection use [`set_spell_corrected_queries`](Self::set_spell_corrected_queries).
@@ -192,6 +217,12 @@ impl QueryOutputBuilder {
         self.spell_corrected_queries = input;
         self
     }
+    /// <p>A list of information related to suggested spell corrections for a query.</p>
+    pub fn get_spell_corrected_queries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SpellCorrectedQuery>> {
+        &self.spell_corrected_queries
+    }
     /// Appends an item to `featured_results_items`.
     ///
     /// To override the contents of this collection use [`set_featured_results_items`](Self::set_featured_results_items).
@@ -210,6 +241,12 @@ impl QueryOutputBuilder {
     ) -> Self {
         self.featured_results_items = input;
         self
+    }
+    /// <p>The list of featured result items. Featured results are displayed at the top of the search results page, placed above all other results for certain queries. If there's an exact match of a query, then certain documents are featured in the search results.</p>
+    pub fn get_featured_results_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FeaturedResultsItem>> {
+        &self.featured_results_items
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -36,6 +36,13 @@ impl BatchStopUpdateActionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchStopUpdateAction as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_stop_update_action::builders::BatchStopUpdateActionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +143,12 @@ impl BatchStopUpdateActionFluentBuilder {
         self.inner = self.inner.set_replication_group_ids(input);
         self
     }
+    /// <p>The replication group IDs</p>
+    pub fn get_replication_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_replication_group_ids()
+    }
     /// Appends an item to `CacheClusterIds`.
     ///
     /// To override the contents of this collection use [`set_cache_cluster_ids`](Self::set_cache_cluster_ids).
@@ -156,6 +169,12 @@ impl BatchStopUpdateActionFluentBuilder {
         self.inner = self.inner.set_cache_cluster_ids(input);
         self
     }
+    /// <p>The cache cluster IDs</p>
+    pub fn get_cache_cluster_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_cache_cluster_ids()
+    }
     /// <p>The unique ID of the service update</p>
     pub fn service_update_name(
         mut self,
@@ -171,5 +190,9 @@ impl BatchStopUpdateActionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_service_update_name(input);
         self
+    }
+    /// <p>The unique ID of the service update</p>
+    pub fn get_service_update_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_update_name()
     }
 }

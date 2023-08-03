@@ -66,6 +66,12 @@ impl CloudWatchLoggingOptionDescriptionBuilder {
         self.cloud_watch_logging_option_id = input;
         self
     }
+    /// <p>The ID of the CloudWatch logging option description.</p>
+    pub fn get_cloud_watch_logging_option_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.cloud_watch_logging_option_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch log to receive application messages.</p>
     pub fn log_stream_arn(
         mut self,
@@ -82,6 +88,10 @@ impl CloudWatchLoggingOptionDescriptionBuilder {
         self.log_stream_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the CloudWatch log to receive application messages.</p>
+    pub fn get_log_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_stream_arn
+    }
     /// <p>The IAM ARN of the role to use to send application messages. </p> <note>
     /// <p>Provided for backward compatibility. Applications created with the current API version have an application-level service execution role rather than a resource-level role.</p>
     /// </note>
@@ -95,6 +105,12 @@ impl CloudWatchLoggingOptionDescriptionBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The IAM ARN of the role to use to send application messages. </p> <note>
+    /// <p>Provided for backward compatibility. Applications created with the current API version have an application-level service execution role rather than a resource-level role.</p>
+    /// </note>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Consumes the builder and constructs a [`CloudWatchLoggingOptionDescription`](crate::types::CloudWatchLoggingOptionDescription).
     pub fn build(self) -> crate::types::CloudWatchLoggingOptionDescription {

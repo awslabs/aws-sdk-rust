@@ -60,6 +60,10 @@ impl GetOrganizationAdminAccountOutputBuilder {
         self.admin_account_id = input;
         self
     }
+    /// <p> The identifier for the administrator account. </p>
+    pub fn get_admin_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.admin_account_id
+    }
     /// <p> The identifier for the organization. </p>
     pub fn organization_id(
         mut self,
@@ -75,6 +79,10 @@ impl GetOrganizationAdminAccountOutputBuilder {
     ) -> Self {
         self.organization_id = input;
         self
+    }
+    /// <p> The identifier for the organization. </p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

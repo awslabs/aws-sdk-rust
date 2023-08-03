@@ -46,6 +46,10 @@ impl CreateAttendeeOutputBuilder {
         self.attendee = input;
         self
     }
+    /// <p>The attendee information, including attendee ID and join token.</p>
+    pub fn get_attendee(&self) -> &::std::option::Option<crate::types::Attendee> {
+        &self.attendee
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

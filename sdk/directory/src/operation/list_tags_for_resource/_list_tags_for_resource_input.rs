@@ -57,6 +57,10 @@ impl ListTagsForResourceInputBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>Identifier (ID) of the directory for which you want to retrieve tags.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// <p>Reserved for future use.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -68,6 +72,10 @@ impl ListTagsForResourceInputBuilder {
         self
     }
     /// <p>Reserved for future use.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
+    /// <p>Reserved for future use.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
         self
@@ -76,6 +84,10 @@ impl ListTagsForResourceInputBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::operation::list_tags_for_resource::ListTagsForResourceInput).
     pub fn build(

@@ -72,6 +72,10 @@ impl CreateManagedEndpointOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>The output contains the ID of the managed endpoint.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The output contains the name of the managed endpoint.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl CreateManagedEndpointOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The output contains the name of the managed endpoint.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The output contains the ARN of the managed endpoint.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl CreateManagedEndpointOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The output contains the ARN of the managed endpoint.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The output contains the ID of the virtual cluster.</p>
     pub fn virtual_cluster_id(
@@ -107,6 +119,10 @@ impl CreateManagedEndpointOutputBuilder {
     ) -> Self {
         self.virtual_cluster_id = input;
         self
+    }
+    /// <p>The output contains the ID of the virtual cluster.</p>
+    pub fn get_virtual_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_cluster_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

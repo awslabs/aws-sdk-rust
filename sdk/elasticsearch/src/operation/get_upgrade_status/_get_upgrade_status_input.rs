@@ -41,6 +41,10 @@ impl GetUpgradeStatusInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// Consumes the builder and constructs a [`GetUpgradeStatusInput`](crate::operation::get_upgrade_status::GetUpgradeStatusInput).
     pub fn build(
         self,

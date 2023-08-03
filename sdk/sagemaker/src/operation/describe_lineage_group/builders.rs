@@ -36,6 +36,12 @@ impl DescribeLineageGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeLineageGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_lineage_group::builders::DescribeLineageGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl DescribeLineageGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_lineage_group_name(input);
         self
+    }
+    /// <p>The name of the lineage group.</p>
+    pub fn get_lineage_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_lineage_group_name()
     }
 }

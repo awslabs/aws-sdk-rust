@@ -60,6 +60,10 @@ impl ProvisionedResourceBuilder {
         self.name = input;
         self
     }
+    /// <p>The provisioned resource name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The provisioned resource identifier.</p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
@@ -69,6 +73,10 @@ impl ProvisionedResourceBuilder {
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identifier = input;
         self
+    }
+    /// <p>The provisioned resource identifier.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
     }
     /// <p>The resource provisioning engine. At this time, <code>CLOUDFORMATION</code> can be used for Amazon Web Services-managed provisioning, and <code>TERRAFORM</code> can be used for self-managed provisioning.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed provisioning</a> in the <i>Proton User Guide</i>.</p>
@@ -84,6 +92,13 @@ impl ProvisionedResourceBuilder {
     ) -> Self {
         self.provisioning_engine = input;
         self
+    }
+    /// <p>The resource provisioning engine. At this time, <code>CLOUDFORMATION</code> can be used for Amazon Web Services-managed provisioning, and <code>TERRAFORM</code> can be used for self-managed provisioning.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed provisioning</a> in the <i>Proton User Guide</i>.</p>
+    pub fn get_provisioning_engine(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProvisionedResourceEngine> {
+        &self.provisioning_engine
     }
     /// Consumes the builder and constructs a [`ProvisionedResource`](crate::types::ProvisionedResource).
     pub fn build(self) -> crate::types::ProvisionedResource {

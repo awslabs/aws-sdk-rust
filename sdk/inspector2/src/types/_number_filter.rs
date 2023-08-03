@@ -48,6 +48,10 @@ impl NumberFilterBuilder {
         self.upper_inclusive = input;
         self
     }
+    /// <p>The highest number to be included in the filter.</p>
+    pub fn get_upper_inclusive(&self) -> &::std::option::Option<f64> {
+        &self.upper_inclusive
+    }
     /// <p>The lowest number to be included in the filter.</p>
     pub fn lower_inclusive(mut self, input: f64) -> Self {
         self.lower_inclusive = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl NumberFilterBuilder {
     pub fn set_lower_inclusive(mut self, input: ::std::option::Option<f64>) -> Self {
         self.lower_inclusive = input;
         self
+    }
+    /// <p>The lowest number to be included in the filter.</p>
+    pub fn get_lower_inclusive(&self) -> &::std::option::Option<f64> {
+        &self.lower_inclusive
     }
     /// Consumes the builder and constructs a [`NumberFilter`](crate::types::NumberFilter).
     pub fn build(self) -> crate::types::NumberFilter {

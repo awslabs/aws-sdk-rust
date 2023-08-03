@@ -62,6 +62,10 @@ impl UpgradeAppliedSchemaInputBuilder {
         self.published_schema_arn = input;
         self
     }
+    /// <p>The revision of the published schema to upgrade the directory to.</p>
+    pub fn get_published_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.published_schema_arn
+    }
     /// <p>The ARN for the directory to which the upgraded schema will be applied.</p>
     pub fn directory_arn(
         mut self,
@@ -78,6 +82,10 @@ impl UpgradeAppliedSchemaInputBuilder {
         self.directory_arn = input;
         self
     }
+    /// <p>The ARN for the directory to which the upgraded schema will be applied.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_arn
+    }
     /// <p>Used for testing whether the major version schemas are backward compatible or not. If schema compatibility fails, an exception would be thrown else the call would succeed but no changes will be saved. This parameter is optional.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -87,6 +95,10 @@ impl UpgradeAppliedSchemaInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Used for testing whether the major version schemas are backward compatible or not. If schema compatibility fails, an exception would be thrown else the call would succeed but no changes will be saved. This parameter is optional.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`UpgradeAppliedSchemaInput`](crate::operation::upgrade_applied_schema::UpgradeAppliedSchemaInput).
     pub fn build(

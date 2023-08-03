@@ -39,6 +39,13 @@ impl ModifySnapshotAttributeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifySnapshotAttribute as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::modify_snapshot_attribute::builders::ModifySnapshotAttributeInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl ModifySnapshotAttributeFluentBuilder {
         self.inner = self.inner.set_attribute(input);
         self
     }
+    /// <p>The snapshot attribute to modify. Only volume creation permissions can be modified.</p>
+    pub fn get_attribute(&self) -> &::std::option::Option<crate::types::SnapshotAttributeName> {
+        self.inner.get_attribute()
+    }
     /// <p>A JSON representation of the snapshot attribute modification.</p>
     pub fn create_volume_permission(
         mut self,
@@ -147,6 +158,12 @@ impl ModifySnapshotAttributeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_create_volume_permission(input);
         self
+    }
+    /// <p>A JSON representation of the snapshot attribute modification.</p>
+    pub fn get_create_volume_permission(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateVolumePermissionModifications> {
+        self.inner.get_create_volume_permission()
     }
     /// Appends an item to `GroupNames`.
     ///
@@ -165,6 +182,12 @@ impl ModifySnapshotAttributeFluentBuilder {
         self.inner = self.inner.set_group_names(input);
         self
     }
+    /// <p>The group to modify for the snapshot.</p>
+    pub fn get_group_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_group_names()
+    }
     /// <p>The type of operation to perform to the attribute.</p>
     pub fn operation_type(mut self, input: crate::types::OperationType) -> Self {
         self.inner = self.inner.operation_type(input);
@@ -178,6 +201,10 @@ impl ModifySnapshotAttributeFluentBuilder {
         self.inner = self.inner.set_operation_type(input);
         self
     }
+    /// <p>The type of operation to perform to the attribute.</p>
+    pub fn get_operation_type(&self) -> &::std::option::Option<crate::types::OperationType> {
+        self.inner.get_operation_type()
+    }
     /// <p>The ID of the snapshot.</p>
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_id(input.into());
@@ -187,6 +214,10 @@ impl ModifySnapshotAttributeFluentBuilder {
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_id(input);
         self
+    }
+    /// <p>The ID of the snapshot.</p>
+    pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_snapshot_id()
     }
     /// Appends an item to `UserIds`.
     ///
@@ -205,6 +236,10 @@ impl ModifySnapshotAttributeFluentBuilder {
         self.inner = self.inner.set_user_ids(input);
         self
     }
+    /// <p>The account ID to modify for the snapshot.</p>
+    pub fn get_user_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_user_ids()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -214,5 +249,9 @@ impl ModifySnapshotAttributeFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

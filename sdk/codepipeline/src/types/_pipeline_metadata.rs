@@ -64,6 +64,10 @@ impl PipelineMetadataBuilder {
         self.pipeline_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
+    pub fn get_pipeline_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_arn
+    }
     /// <p>The date and time the pipeline was created, in timestamp format.</p>
     pub fn created(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl PipelineMetadataBuilder {
     ) -> Self {
         self.created = input;
         self
+    }
+    /// <p>The date and time the pipeline was created, in timestamp format.</p>
+    pub fn get_created(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created
     }
     /// <p>The date and time the pipeline was last updated, in timestamp format.</p>
     pub fn updated(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -90,6 +98,10 @@ impl PipelineMetadataBuilder {
         self.updated = input;
         self
     }
+    /// <p>The date and time the pipeline was last updated, in timestamp format.</p>
+    pub fn get_updated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated
+    }
     /// <p>The date and time that polling for source changes (periodic checks) was stopped for the pipeline, in timestamp format. You can migrate (update) a polling pipeline to use event-based change detection. For example, for a pipeline with a CodeCommit source, we recommend you migrate (update) your pipeline to use CloudWatch Events. To learn more, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/update-change-detection.html">Migrate polling pipelines to use event-based change detection</a> in the CodePipeline User Guide.</p>
     pub fn polling_disabled_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.polling_disabled_at = ::std::option::Option::Some(input);
@@ -102,6 +114,10 @@ impl PipelineMetadataBuilder {
     ) -> Self {
         self.polling_disabled_at = input;
         self
+    }
+    /// <p>The date and time that polling for source changes (periodic checks) was stopped for the pipeline, in timestamp format. You can migrate (update) a polling pipeline to use event-based change detection. For example, for a pipeline with a CodeCommit source, we recommend you migrate (update) your pipeline to use CloudWatch Events. To learn more, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/update-change-detection.html">Migrate polling pipelines to use event-based change detection</a> in the CodePipeline User Guide.</p>
+    pub fn get_polling_disabled_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.polling_disabled_at
     }
     /// Consumes the builder and constructs a [`PipelineMetadata`](crate::types::PipelineMetadata).
     pub fn build(self) -> crate::types::PipelineMetadata {

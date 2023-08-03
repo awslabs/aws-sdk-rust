@@ -78,6 +78,10 @@ impl AwsCredentialsBuilder {
         self.access_key_id = input;
         self
     }
+    /// <p> The unique identifier for the security credentials.</p>
+    pub fn get_access_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_key_id
+    }
     /// <p> The secret access key that can be used to sign requests.</p>
     pub fn secret_access_key(
         mut self,
@@ -93,6 +97,10 @@ impl AwsCredentialsBuilder {
     ) -> Self {
         self.secret_access_key = input;
         self
+    }
+    /// <p> The secret access key that can be used to sign requests.</p>
+    pub fn get_secret_access_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_access_key
     }
     /// <p> The token that users must pass to use the credentials.</p>
     pub fn session_token(
@@ -110,6 +118,10 @@ impl AwsCredentialsBuilder {
         self.session_token = input;
         self
     }
+    /// <p> The token that users must pass to use the credentials.</p>
+    pub fn get_session_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_token
+    }
     /// <p> The Epoch time when the current credentials expire.</p>
     pub fn expiration(mut self, input: i64) -> Self {
         self.expiration = ::std::option::Option::Some(input);
@@ -119,6 +131,10 @@ impl AwsCredentialsBuilder {
     pub fn set_expiration(mut self, input: ::std::option::Option<i64>) -> Self {
         self.expiration = input;
         self
+    }
+    /// <p> The Epoch time when the current credentials expire.</p>
+    pub fn get_expiration(&self) -> &::std::option::Option<i64> {
+        &self.expiration
     }
     /// Consumes the builder and constructs a [`AwsCredentials`](crate::types::AwsCredentials).
     pub fn build(self) -> crate::types::AwsCredentials {

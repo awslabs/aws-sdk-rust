@@ -36,6 +36,10 @@ impl BatchGetSecurityControlsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchGetSecurityControls as a reference.
+    pub fn as_input(&self) -> &crate::operation::batch_get_security_controls::builders::BatchGetSecurityControlsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,5 +139,11 @@ impl BatchGetSecurityControlsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_security_control_ids(input);
         self
+    }
+    /// <p> A list of security controls (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters). The security control ID or Amazon Resource Name (ARN) is the same across standards. </p>
+    pub fn get_security_control_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_security_control_ids()
     }
 }

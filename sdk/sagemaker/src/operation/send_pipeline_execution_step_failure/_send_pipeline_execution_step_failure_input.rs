@@ -61,6 +61,10 @@ impl SendPipelineExecutionStepFailureInputBuilder {
         self.callback_token = input;
         self
     }
+    /// <p>The pipeline generated token from the Amazon SQS queue.</p>
+    pub fn get_callback_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.callback_token
+    }
     /// <p>A message describing why the step failed.</p>
     pub fn failure_reason(
         mut self,
@@ -77,6 +81,10 @@ impl SendPipelineExecutionStepFailureInputBuilder {
         self.failure_reason = input;
         self
     }
+    /// <p>A message describing why the step failed.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
     pub fn client_request_token(
         mut self,
@@ -92,6 +100,10 @@ impl SendPipelineExecutionStepFailureInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Consumes the builder and constructs a [`SendPipelineExecutionStepFailureInput`](crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureInput, ::aws_smithy_http::operation::error::BuildError>{

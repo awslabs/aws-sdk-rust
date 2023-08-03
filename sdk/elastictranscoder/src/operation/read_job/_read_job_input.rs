@@ -40,6 +40,10 @@ impl ReadJobInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the job for which you want to get detailed information.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`ReadJobInput`](crate::operation::read_job::ReadJobInput).
     pub fn build(
         self,

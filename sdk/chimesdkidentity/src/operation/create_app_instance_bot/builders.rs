@@ -36,6 +36,13 @@ impl CreateAppInstanceBotFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateAppInstanceBot as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_app_instance_bot::builders::CreateAppInstanceBotInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl CreateAppInstanceBotFluentBuilder {
         self.inner = self.inner.set_app_instance_arn(input);
         self
     }
+    /// <p>The ARN of the <code>AppInstance</code> request.</p>
+    pub fn get_app_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_instance_arn()
+    }
     /// <p>The user's name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -142,6 +153,10 @@ impl CreateAppInstanceBotFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The user's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The request metadata. Limited to a 1KB string in UTF-8.</p>
     pub fn metadata(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.metadata(input.into());
@@ -151,6 +166,10 @@ impl CreateAppInstanceBotFluentBuilder {
     pub fn set_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_metadata(input);
         self
+    }
+    /// <p>The request metadata. Limited to a 1KB string in UTF-8.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_metadata()
     }
     /// <p>The unique ID for the client making the request. Use different tokens for different <code>AppInstanceBots</code>.</p>
     pub fn client_request_token(
@@ -167,6 +186,10 @@ impl CreateAppInstanceBotFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
+    }
+    /// <p>The unique ID for the client making the request. Use different tokens for different <code>AppInstanceBots</code>.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
     }
     /// Appends an item to `Tags`.
     ///
@@ -185,6 +208,10 @@ impl CreateAppInstanceBotFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tags assigned to the <code>AppInstanceBot</code>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>Configuration information about the Amazon Lex V2 V2 bot.</p>
     pub fn configuration(mut self, input: crate::types::Configuration) -> Self {
         self.inner = self.inner.configuration(input);
@@ -197,5 +224,9 @@ impl CreateAppInstanceBotFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
+    }
+    /// <p>Configuration information about the Amazon Lex V2 V2 bot.</p>
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::Configuration> {
+        self.inner.get_configuration()
     }
 }

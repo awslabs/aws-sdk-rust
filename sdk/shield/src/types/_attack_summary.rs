@@ -76,6 +76,10 @@ impl AttackSummaryBuilder {
         self.attack_id = input;
         self
     }
+    /// <p>The unique identifier (ID) of the attack.</p>
+    pub fn get_attack_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attack_id
+    }
     /// <p>The ARN (Amazon Resource Name) of the resource that was attacked.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
@@ -85,6 +89,10 @@ impl AttackSummaryBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
+    }
+    /// <p>The ARN (Amazon Resource Name) of the resource that was attacked.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// <p>The start time of the attack, in Unix time in seconds. </p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -99,6 +107,10 @@ impl AttackSummaryBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The start time of the attack, in Unix time in seconds. </p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The end time of the attack, in Unix time in seconds. </p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -111,6 +123,10 @@ impl AttackSummaryBuilder {
     ) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>The end time of the attack, in Unix time in seconds. </p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// Appends an item to `attack_vectors`.
     ///
@@ -130,6 +146,12 @@ impl AttackSummaryBuilder {
     ) -> Self {
         self.attack_vectors = input;
         self
+    }
+    /// <p>The list of attacks for a specified time period.</p>
+    pub fn get_attack_vectors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttackVectorDescription>> {
+        &self.attack_vectors
     }
     /// Consumes the builder and constructs a [`AttackSummary`](crate::types::AttackSummary).
     pub fn build(self) -> crate::types::AttackSummary {

@@ -48,6 +48,10 @@ impl ActivityTaskStartedEventAttributesBuilder {
         self.identity = input;
         self
     }
+    /// <p>Identity of the worker that was assigned this task. This aids diagnostics when problems arise. The form of this identity is user defined.</p>
+    pub fn get_identity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity
+    }
     /// <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn scheduled_event_id(mut self, input: i64) -> Self {
         self.scheduled_event_id = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ActivityTaskStartedEventAttributesBuilder {
     pub fn set_scheduled_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.scheduled_event_id = input;
         self
+    }
+    /// <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    pub fn get_scheduled_event_id(&self) -> &::std::option::Option<i64> {
+        &self.scheduled_event_id
     }
     /// Consumes the builder and constructs a [`ActivityTaskStartedEventAttributes`](crate::types::ActivityTaskStartedEventAttributes).
     pub fn build(self) -> crate::types::ActivityTaskStartedEventAttributes {

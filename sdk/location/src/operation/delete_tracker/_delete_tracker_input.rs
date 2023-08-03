@@ -39,6 +39,10 @@ impl DeleteTrackerInputBuilder {
         self.tracker_name = input;
         self
     }
+    /// <p>The name of the tracker resource to be deleted.</p>
+    pub fn get_tracker_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tracker_name
+    }
     /// Consumes the builder and constructs a [`DeleteTrackerInput`](crate::operation::delete_tracker::DeleteTrackerInput).
     pub fn build(
         self,

@@ -36,6 +36,12 @@ impl ListInstancesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListInstances as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_instances::builders::ListInstancesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl ListInstancesFluentBuilder {
         self.inner = self.inner.set_service_id(input);
         self
     }
+    /// <p>The ID of the service that you want to list instances for.</p>
+    pub fn get_service_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_id()
+    }
     /// <p>For the first <code>ListInstances</code> request, omit this value.</p>
     /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another <code>ListInstances</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -141,6 +151,11 @@ impl ListInstancesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>For the first <code>ListInstances</code> request, omit this value.</p>
+    /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another <code>ListInstances</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of instances that you want Cloud Map to return in the response to a <code>ListInstances</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 instances.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -150,5 +165,9 @@ impl ListInstancesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of instances that you want Cloud Map to return in the response to a <code>ListInstances</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 instances.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

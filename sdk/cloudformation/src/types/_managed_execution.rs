@@ -56,6 +56,14 @@ impl ManagedExecutionBuilder {
         self.active = input;
         self
     }
+    /// <p>When <code>true</code>, StackSets performs non-conflicting operations concurrently and queues conflicting operations. After conflicting operations finish, StackSets starts queued operations in request order.</p> <note>
+    /// <p>If there are already running or queued operations, StackSets queues all incoming operations even if they are non-conflicting.</p>
+    /// <p>You can't modify your stack set's execution configuration while there are running or queued operations for that stack set.</p>
+    /// </note>
+    /// <p>When <code>false</code> (default), StackSets performs one operation at a time in request order.</p>
+    pub fn get_active(&self) -> &::std::option::Option<bool> {
+        &self.active
+    }
     /// Consumes the builder and constructs a [`ManagedExecution`](crate::types::ManagedExecution).
     pub fn build(self) -> crate::types::ManagedExecution {
         crate::types::ManagedExecution {

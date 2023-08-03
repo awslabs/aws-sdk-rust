@@ -101,6 +101,10 @@ impl FunctionConfigurationBuilder {
         self.encoding_type = input;
         self
     }
+    /// The expected encoding type of the input payload for the function. The default is ''json''.
+    pub fn get_encoding_type(&self) -> &::std::option::Option<crate::types::EncodingType> {
+        &self.encoding_type
+    }
     /// The environment configuration of the function.
     pub fn environment(mut self, input: crate::types::FunctionConfigurationEnvironment) -> Self {
         self.environment = ::std::option::Option::Some(input);
@@ -114,6 +118,12 @@ impl FunctionConfigurationBuilder {
         self.environment = input;
         self
     }
+    /// The environment configuration of the function.
+    pub fn get_environment(
+        &self,
+    ) -> &::std::option::Option<crate::types::FunctionConfigurationEnvironment> {
+        &self.environment
+    }
     /// The execution arguments.
     pub fn exec_args(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.exec_args = ::std::option::Option::Some(input.into());
@@ -123,6 +133,10 @@ impl FunctionConfigurationBuilder {
     pub fn set_exec_args(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.exec_args = input;
         self
+    }
+    /// The execution arguments.
+    pub fn get_exec_args(&self) -> &::std::option::Option<::std::string::String> {
+        &self.exec_args
     }
     /// The name of the function executable.
     pub fn executable(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -134,6 +148,10 @@ impl FunctionConfigurationBuilder {
         self.executable = input;
         self
     }
+    /// The name of the function executable.
+    pub fn get_executable(&self) -> &::std::option::Option<::std::string::String> {
+        &self.executable
+    }
     /// The memory size, in KB, which the function requires. This setting is not applicable and should be cleared when you run the Lambda function without containerization.
     pub fn memory_size(mut self, input: i32) -> Self {
         self.memory_size = ::std::option::Option::Some(input);
@@ -143,6 +161,10 @@ impl FunctionConfigurationBuilder {
     pub fn set_memory_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.memory_size = input;
         self
+    }
+    /// The memory size, in KB, which the function requires. This setting is not applicable and should be cleared when you run the Lambda function without containerization.
+    pub fn get_memory_size(&self) -> &::std::option::Option<i32> {
+        &self.memory_size
     }
     /// True if the function is pinned. Pinned means the function is long-lived and starts when the core starts.
     pub fn pinned(mut self, input: bool) -> Self {
@@ -154,6 +176,10 @@ impl FunctionConfigurationBuilder {
         self.pinned = input;
         self
     }
+    /// True if the function is pinned. Pinned means the function is long-lived and starts when the core starts.
+    pub fn get_pinned(&self) -> &::std::option::Option<bool> {
+        &self.pinned
+    }
     /// The allowed function execution time, after which Lambda should terminate the function. This timeout still applies to pinned Lambda functions for each request.
     pub fn timeout(mut self, input: i32) -> Self {
         self.timeout = ::std::option::Option::Some(input);
@@ -163,6 +189,10 @@ impl FunctionConfigurationBuilder {
     pub fn set_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.timeout = input;
         self
+    }
+    /// The allowed function execution time, after which Lambda should terminate the function. This timeout still applies to pinned Lambda functions for each request.
+    pub fn get_timeout(&self) -> &::std::option::Option<i32> {
+        &self.timeout
     }
     /// The Lambda runtime supported by Greengrass which is to be used instead of the one specified in the Lambda function.
     pub fn function_runtime_override(
@@ -179,6 +209,10 @@ impl FunctionConfigurationBuilder {
     ) -> Self {
         self.function_runtime_override = input;
         self
+    }
+    /// The Lambda runtime supported by Greengrass which is to be used instead of the one specified in the Lambda function.
+    pub fn get_function_runtime_override(&self) -> &::std::option::Option<::std::string::String> {
+        &self.function_runtime_override
     }
     /// Consumes the builder and constructs a [`FunctionConfiguration`](crate::types::FunctionConfiguration).
     pub fn build(self) -> crate::types::FunctionConfiguration {

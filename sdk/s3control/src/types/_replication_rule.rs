@@ -135,6 +135,10 @@ impl ReplicationRuleBuilder {
         self.id = input;
         self
     }
+    /// <p>A unique identifier for the rule. The maximum value is 255 characters.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The priority indicates which rule has precedence whenever two or more replication rules conflict. S3 on Outposts attempts to replicate objects according to all replication rules. However, if there are two or more rules with the same destination Outposts bucket, then objects will be replicated according to the rule with the highest priority. The higher the number, the higher the priority. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication-between-outposts.html">Creating replication rules on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn priority(mut self, input: i32) -> Self {
@@ -146,6 +150,11 @@ impl ReplicationRuleBuilder {
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
+    }
+    /// <p>The priority indicates which rule has precedence whenever two or more replication rules conflict. S3 on Outposts attempts to replicate objects according to all replication rules. However, if there are two or more rules with the same destination Outposts bucket, then objects will be replicated according to the rule with the highest priority. The higher the number, the higher the priority. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication-between-outposts.html">Creating replication rules on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
     }
     /// <p>An object key name prefix that identifies the object or objects to which the rule applies. The maximum prefix length is 1,024 characters. To include all objects in an Outposts bucket, specify an empty string.</p> <important>
     /// <p>When you're using XML requests, you must replace special characters (such as carriage returns) in object keys with their equivalent XML entity codes. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML-related object key constraints</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -163,6 +172,13 @@ impl ReplicationRuleBuilder {
         self.prefix = input;
         self
     }
+    /// <p>An object key name prefix that identifies the object or objects to which the rule applies. The maximum prefix length is 1,024 characters. To include all objects in an Outposts bucket, specify an empty string.</p> <important>
+    /// <p>When you're using XML requests, you must replace special characters (such as carriage returns) in object keys with their equivalent XML entity codes. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML-related object key constraints</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// </important>
+    #[deprecated(note = "Prefix has been deprecated")]
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
+    }
     /// <p>A filter that identifies the subset of objects to which the replication rule applies. A <code>Filter</code> element must specify exactly one <code>Prefix</code>, <code>Tag</code>, or <code>And</code> child element.</p>
     pub fn filter(mut self, input: crate::types::ReplicationRuleFilter) -> Self {
         self.filter = ::std::option::Option::Some(input);
@@ -176,6 +192,10 @@ impl ReplicationRuleBuilder {
         self.filter = input;
         self
     }
+    /// <p>A filter that identifies the subset of objects to which the replication rule applies. A <code>Filter</code> element must specify exactly one <code>Prefix</code>, <code>Tag</code>, or <code>And</code> child element.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::ReplicationRuleFilter> {
+        &self.filter
+    }
     /// <p>Specifies whether the rule is enabled.</p>
     pub fn status(mut self, input: crate::types::ReplicationRuleStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -188,6 +208,10 @@ impl ReplicationRuleBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Specifies whether the rule is enabled.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ReplicationRuleStatus> {
+        &self.status
     }
     /// <p>A container that describes additional filters for identifying the source Outposts objects that you want to replicate. You can choose to enable or disable the replication of these objects.</p>
     pub fn source_selection_criteria(
@@ -204,6 +228,12 @@ impl ReplicationRuleBuilder {
     ) -> Self {
         self.source_selection_criteria = input;
         self
+    }
+    /// <p>A container that describes additional filters for identifying the source Outposts objects that you want to replicate. You can choose to enable or disable the replication of these objects.</p>
+    pub fn get_source_selection_criteria(
+        &self,
+    ) -> &::std::option::Option<crate::types::SourceSelectionCriteria> {
+        &self.source_selection_criteria
     }
     /// <p>An optional configuration to replicate existing source bucket objects. </p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
@@ -225,6 +255,14 @@ impl ReplicationRuleBuilder {
         self.existing_object_replication = input;
         self
     }
+    /// <p>An optional configuration to replicate existing source bucket objects. </p> <note>
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+    /// </note>
+    pub fn get_existing_object_replication(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExistingObjectReplication> {
+        &self.existing_object_replication
+    }
     /// <p>A container for information about the replication destination and its configurations.</p>
     pub fn destination(mut self, input: crate::types::Destination) -> Self {
         self.destination = ::std::option::Option::Some(input);
@@ -237,6 +275,10 @@ impl ReplicationRuleBuilder {
     ) -> Self {
         self.destination = input;
         self
+    }
+    /// <p>A container for information about the replication destination and its configurations.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<crate::types::Destination> {
+        &self.destination
     }
     /// <p>Specifies whether S3 on Outposts replicates delete markers. If you specify a <code>Filter</code> element in your replication configuration, you must also include a <code>DeleteMarkerReplication</code> element. If your <code>Filter</code> includes a <code>Tag</code> element, the <code>DeleteMarkerReplication</code> element's <code>Status</code> child element must be set to <code>Disabled</code>, because S3 on Outposts doesn't support replicating delete markers for tag-based rules.</p>
     /// <p>For more information about delete marker replication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OutpostsReplication.html#outposts-replication-what-is-replicated">How delete operations affect replication</a> in the <i>Amazon S3 User Guide</i>. </p>
@@ -256,6 +298,13 @@ impl ReplicationRuleBuilder {
         self.delete_marker_replication = input;
         self
     }
+    /// <p>Specifies whether S3 on Outposts replicates delete markers. If you specify a <code>Filter</code> element in your replication configuration, you must also include a <code>DeleteMarkerReplication</code> element. If your <code>Filter</code> includes a <code>Tag</code> element, the <code>DeleteMarkerReplication</code> element's <code>Status</code> child element must be set to <code>Disabled</code>, because S3 on Outposts doesn't support replicating delete markers for tag-based rules.</p>
+    /// <p>For more information about delete marker replication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OutpostsReplication.html#outposts-replication-what-is-replicated">How delete operations affect replication</a> in the <i>Amazon S3 User Guide</i>. </p>
+    pub fn get_delete_marker_replication(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeleteMarkerReplication> {
+        &self.delete_marker_replication
+    }
     /// <p>The Amazon Resource Name (ARN) of the access point for the source Outposts bucket that you want S3 on Outposts to replicate the objects from.</p>
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
@@ -265,6 +314,10 @@ impl ReplicationRuleBuilder {
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the access point for the source Outposts bucket that you want S3 on Outposts to replicate the objects from.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
     }
     /// Consumes the builder and constructs a [`ReplicationRule`](crate::types::ReplicationRule).
     pub fn build(self) -> crate::types::ReplicationRule {

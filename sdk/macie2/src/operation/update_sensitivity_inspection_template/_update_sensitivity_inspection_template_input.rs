@@ -69,6 +69,10 @@ impl UpdateSensitivityInspectionTemplateInputBuilder {
         self.description = input;
         self
     }
+    /// <p>A custom description of the template. The description can contain as many as 200 characters.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The managed data identifiers to explicitly exclude (not use) when analyzing data.</p>
     /// <p>To exclude an allow list or custom data identifier that's currently included by the template, update the values for the SensitivityInspectionTemplateIncludes.allowListIds and SensitivityInspectionTemplateIncludes.customDataIdentifierIds properties, respectively.</p>
     pub fn excludes(mut self, input: crate::types::SensitivityInspectionTemplateExcludes) -> Self {
@@ -84,6 +88,13 @@ impl UpdateSensitivityInspectionTemplateInputBuilder {
         self.excludes = input;
         self
     }
+    /// <p>The managed data identifiers to explicitly exclude (not use) when analyzing data.</p>
+    /// <p>To exclude an allow list or custom data identifier that's currently included by the template, update the values for the SensitivityInspectionTemplateIncludes.allowListIds and SensitivityInspectionTemplateIncludes.customDataIdentifierIds properties, respectively.</p>
+    pub fn get_excludes(
+        &self,
+    ) -> &::std::option::Option<crate::types::SensitivityInspectionTemplateExcludes> {
+        &self.excludes
+    }
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -93,6 +104,10 @@ impl UpdateSensitivityInspectionTemplateInputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The allow lists, custom data identifiers, and managed data identifiers to include (use) when analyzing data.</p>
     pub fn includes(mut self, input: crate::types::SensitivityInspectionTemplateIncludes) -> Self {
@@ -106,6 +121,12 @@ impl UpdateSensitivityInspectionTemplateInputBuilder {
     ) -> Self {
         self.includes = input;
         self
+    }
+    /// <p>The allow lists, custom data identifiers, and managed data identifiers to include (use) when analyzing data.</p>
+    pub fn get_includes(
+        &self,
+    ) -> &::std::option::Option<crate::types::SensitivityInspectionTemplateIncludes> {
+        &self.includes
     }
     /// Consumes the builder and constructs a [`UpdateSensitivityInspectionTemplateInput`](crate::operation::update_sensitivity_inspection_template::UpdateSensitivityInspectionTemplateInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_sensitivity_inspection_template::UpdateSensitivityInspectionTemplateInput, ::aws_smithy_http::operation::error::BuildError>{

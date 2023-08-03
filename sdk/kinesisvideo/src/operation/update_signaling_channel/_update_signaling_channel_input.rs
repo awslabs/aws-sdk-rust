@@ -60,6 +60,10 @@ impl UpdateSignalingChannelInputBuilder {
         self.channel_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the signaling channel that you want to update.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
+    }
     /// <p>The current version of the signaling channel that you want to update.</p>
     pub fn current_version(
         mut self,
@@ -76,6 +80,10 @@ impl UpdateSignalingChannelInputBuilder {
         self.current_version = input;
         self
     }
+    /// <p>The current version of the signaling channel that you want to update.</p>
+    pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.current_version
+    }
     /// <p>The structure containing the configuration for the <code>SINGLE_MASTER</code> type of the signaling channel that you want to update. </p>
     pub fn single_master_configuration(
         mut self,
@@ -91,6 +99,12 @@ impl UpdateSignalingChannelInputBuilder {
     ) -> Self {
         self.single_master_configuration = input;
         self
+    }
+    /// <p>The structure containing the configuration for the <code>SINGLE_MASTER</code> type of the signaling channel that you want to update. </p>
+    pub fn get_single_master_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SingleMasterConfiguration> {
+        &self.single_master_configuration
     }
     /// Consumes the builder and constructs a [`UpdateSignalingChannelInput`](crate::operation::update_signaling_channel::UpdateSignalingChannelInput).
     pub fn build(

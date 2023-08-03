@@ -69,6 +69,11 @@ impl GetConsolidatedReportInputBuilder {
         self.format = input;
         self
     }
+    /// <p>The format of the consolidated report.</p>
+    /// <p>For <code>PDF</code>, <code>Base64String</code> is returned. For <code>JSON</code>, <code>Metrics</code> is returned.</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::ReportFormat> {
+        &self.format
+    }
     /// <p>Set to <code>true</code> to have shared resources included in the report.</p>
     pub fn include_shared_resources(mut self, input: bool) -> Self {
         self.include_shared_resources = ::std::option::Option::Some(input);
@@ -78,6 +83,10 @@ impl GetConsolidatedReportInputBuilder {
     pub fn set_include_shared_resources(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_shared_resources = input;
         self
+    }
+    /// <p>Set to <code>true</code> to have shared resources included in the report.</p>
+    pub fn get_include_shared_resources(&self) -> &::std::option::Option<bool> {
+        &self.include_shared_resources
     }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -89,6 +98,10 @@ impl GetConsolidatedReportInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to use to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return for this request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -98,6 +111,10 @@ impl GetConsolidatedReportInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return for this request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`GetConsolidatedReportInput`](crate::operation::get_consolidated_report::GetConsolidatedReportInput).
     pub fn build(

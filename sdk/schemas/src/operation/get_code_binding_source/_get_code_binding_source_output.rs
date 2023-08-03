@@ -48,6 +48,10 @@ impl GetCodeBindingSourceOutputBuilder {
         self.body = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.body
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

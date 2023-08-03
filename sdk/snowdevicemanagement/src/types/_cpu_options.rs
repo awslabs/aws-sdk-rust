@@ -48,6 +48,10 @@ impl CpuOptionsBuilder {
         self.core_count = input;
         self
     }
+    /// <p>The number of cores that the CPU can use.</p>
+    pub fn get_core_count(&self) -> &::std::option::Option<i32> {
+        &self.core_count
+    }
     /// <p>The number of threads per core in the CPU.</p>
     pub fn threads_per_core(mut self, input: i32) -> Self {
         self.threads_per_core = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl CpuOptionsBuilder {
     pub fn set_threads_per_core(mut self, input: ::std::option::Option<i32>) -> Self {
         self.threads_per_core = input;
         self
+    }
+    /// <p>The number of threads per core in the CPU.</p>
+    pub fn get_threads_per_core(&self) -> &::std::option::Option<i32> {
+        &self.threads_per_core
     }
     /// Consumes the builder and constructs a [`CpuOptions`](crate::types::CpuOptions).
     pub fn build(self) -> crate::types::CpuOptions {

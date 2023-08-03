@@ -37,6 +37,12 @@ impl StopTrainingJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StopTrainingJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::stop_training_job::builders::StopTrainingJobInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +138,9 @@ impl StopTrainingJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_training_job_name(input);
         self
+    }
+    /// <p>The name of the training job to stop.</p>
+    pub fn get_training_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_training_job_name()
     }
 }

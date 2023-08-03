@@ -52,6 +52,10 @@ impl PhoneNumberCountryBuilder {
         self.country_code = input;
         self
     }
+    /// <p>The phone number country code. Format: ISO 3166-1 alpha-2.</p>
+    pub fn get_country_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.country_code
+    }
     /// Appends an item to `supported_phone_number_types`.
     ///
     /// To override the contents of this collection use [`set_supported_phone_number_types`](Self::set_supported_phone_number_types).
@@ -70,6 +74,12 @@ impl PhoneNumberCountryBuilder {
     ) -> Self {
         self.supported_phone_number_types = input;
         self
+    }
+    /// <p>The supported phone number types. </p>
+    pub fn get_supported_phone_number_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberType>> {
+        &self.supported_phone_number_types
     }
     /// Consumes the builder and constructs a [`PhoneNumberCountry`](crate::types::PhoneNumberCountry).
     pub fn build(self) -> crate::types::PhoneNumberCountry {

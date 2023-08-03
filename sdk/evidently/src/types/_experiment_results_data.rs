@@ -66,6 +66,10 @@ impl ExperimentResultsDataBuilder {
         self.metric_name = input;
         self
     }
+    /// <p>The name of the metric.</p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_name
+    }
     /// <p>The treatment, or variation, that returned the <code>values</code> in this structure.</p>
     pub fn treatment_name(
         mut self,
@@ -82,6 +86,10 @@ impl ExperimentResultsDataBuilder {
         self.treatment_name = input;
         self
     }
+    /// <p>The treatment, or variation, that returned the <code>values</code> in this structure.</p>
+    pub fn get_treatment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.treatment_name
+    }
     /// <p>The experiment statistic that these results pertain to.</p>
     pub fn result_stat(mut self, input: crate::types::ExperimentResultResponseType) -> Self {
         self.result_stat = ::std::option::Option::Some(input);
@@ -94,6 +102,12 @@ impl ExperimentResultsDataBuilder {
     ) -> Self {
         self.result_stat = input;
         self
+    }
+    /// <p>The experiment statistic that these results pertain to.</p>
+    pub fn get_result_stat(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExperimentResultResponseType> {
+        &self.result_stat
     }
     /// Appends an item to `values`.
     ///
@@ -110,6 +124,10 @@ impl ExperimentResultsDataBuilder {
     pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.values = input;
         self
+    }
+    /// <p>The values for the <code>metricName</code> that were recorded in the experiment.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`ExperimentResultsData`](crate::types::ExperimentResultsData).
     pub fn build(self) -> crate::types::ExperimentResultsData {

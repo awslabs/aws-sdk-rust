@@ -71,6 +71,10 @@ impl UpdateKxEnvironmentInputBuilder {
         self.environment_id = input;
         self
     }
+    /// <p>A unique identifier for the kdb environment.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
+    }
     /// <p>The name of the kdb environment.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl UpdateKxEnvironmentInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the kdb environment.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>A description of the kdb environment.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -91,6 +99,10 @@ impl UpdateKxEnvironmentInputBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the kdb environment.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -100,6 +112,10 @@ impl UpdateKxEnvironmentInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateKxEnvironmentInput`](crate::operation::update_kx_environment::UpdateKxEnvironmentInput).
     pub fn build(

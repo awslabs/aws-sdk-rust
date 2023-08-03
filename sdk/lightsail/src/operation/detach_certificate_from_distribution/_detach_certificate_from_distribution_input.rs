@@ -49,6 +49,11 @@ impl DetachCertificateFromDistributionInputBuilder {
         self.distribution_name = input;
         self
     }
+    /// <p>The name of the distribution from which to detach the certificate.</p>
+    /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>
+    pub fn get_distribution_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.distribution_name
+    }
     /// Consumes the builder and constructs a [`DetachCertificateFromDistributionInput`](crate::operation::detach_certificate_from_distribution::DetachCertificateFromDistributionInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::detach_certificate_from_distribution::DetachCertificateFromDistributionInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

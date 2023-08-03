@@ -37,6 +37,13 @@ impl UpdateAppAuthorizationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAppAuthorization as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_app_authorization::builders::UpdateAppAuthorizationInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl UpdateAppAuthorizationFluentBuilder {
         self.inner = self.inner.set_app_bundle_identifier(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
+    pub fn get_app_bundle_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_bundle_identifier()
+    }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.</p>
     pub fn app_authorization_identifier(
         mut self,
@@ -149,6 +160,12 @@ impl UpdateAppAuthorizationFluentBuilder {
         self.inner = self.inner.set_app_authorization_identifier(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.</p>
+    pub fn get_app_authorization_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_authorization_identifier()
+    }
     /// <p>Contains credentials for the application, such as an API key or OAuth2 client ID and secret.</p>
     /// <p>Specify credentials that match the authorization type of the app authorization to update. For example, if the authorization type of the app authorization is OAuth2 (<code>oauth2</code>), then you should provide only the OAuth2 credentials.</p>
     pub fn credential(mut self, input: crate::types::Credential) -> Self {
@@ -164,6 +181,11 @@ impl UpdateAppAuthorizationFluentBuilder {
         self.inner = self.inner.set_credential(input);
         self
     }
+    /// <p>Contains credentials for the application, such as an API key or OAuth2 client ID and secret.</p>
+    /// <p>Specify credentials that match the authorization type of the app authorization to update. For example, if the authorization type of the app authorization is OAuth2 (<code>oauth2</code>), then you should provide only the OAuth2 credentials.</p>
+    pub fn get_credential(&self) -> &::std::option::Option<crate::types::Credential> {
+        self.inner.get_credential()
+    }
     /// <p>Contains information about an application tenant, such as the application display name and identifier.</p>
     pub fn tenant(mut self, input: crate::types::Tenant) -> Self {
         self.inner = self.inner.tenant(input);
@@ -173,5 +195,9 @@ impl UpdateAppAuthorizationFluentBuilder {
     pub fn set_tenant(mut self, input: ::std::option::Option<crate::types::Tenant>) -> Self {
         self.inner = self.inner.set_tenant(input);
         self
+    }
+    /// <p>Contains information about an application tenant, such as the application display name and identifier.</p>
+    pub fn get_tenant(&self) -> &::std::option::Option<crate::types::Tenant> {
+        self.inner.get_tenant()
     }
 }

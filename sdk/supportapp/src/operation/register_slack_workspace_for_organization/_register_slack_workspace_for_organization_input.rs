@@ -39,6 +39,10 @@ impl RegisterSlackWorkspaceForOrganizationInputBuilder {
         self.team_id = input;
         self
     }
+    /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>. Specify the Slack workspace that you want to use for your organization.</p>
+    pub fn get_team_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.team_id
+    }
     /// Consumes the builder and constructs a [`RegisterSlackWorkspaceForOrganizationInput`](crate::operation::register_slack_workspace_for_organization::RegisterSlackWorkspaceForOrganizationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::register_slack_workspace_for_organization::RegisterSlackWorkspaceForOrganizationInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

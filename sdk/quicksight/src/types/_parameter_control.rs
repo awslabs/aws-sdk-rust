@@ -87,6 +87,12 @@ impl ParameterControlBuilder {
         self.date_time_picker = input;
         self
     }
+    /// <p>A control from a date parameter that specifies date and time.</p>
+    pub fn get_date_time_picker(
+        &self,
+    ) -> &::std::option::Option<crate::types::ParameterDateTimePickerControl> {
+        &self.date_time_picker
+    }
     /// <p>A control to display a list with buttons or boxes that are used to select either a single value or multiple values.</p>
     pub fn list(mut self, input: crate::types::ParameterListControl) -> Self {
         self.list = ::std::option::Option::Some(input);
@@ -99,6 +105,10 @@ impl ParameterControlBuilder {
     ) -> Self {
         self.list = input;
         self
+    }
+    /// <p>A control to display a list with buttons or boxes that are used to select either a single value or multiple values.</p>
+    pub fn get_list(&self) -> &::std::option::Option<crate::types::ParameterListControl> {
+        &self.list
     }
     /// <p>A control to display a dropdown list with buttons that are used to select a single value.</p>
     pub fn dropdown(mut self, input: crate::types::ParameterDropDownControl) -> Self {
@@ -113,6 +123,10 @@ impl ParameterControlBuilder {
         self.dropdown = input;
         self
     }
+    /// <p>A control to display a dropdown list with buttons that are used to select a single value.</p>
+    pub fn get_dropdown(&self) -> &::std::option::Option<crate::types::ParameterDropDownControl> {
+        &self.dropdown
+    }
     /// <p>A control to display a text box that is used to enter a single entry.</p>
     pub fn text_field(mut self, input: crate::types::ParameterTextFieldControl) -> Self {
         self.text_field = ::std::option::Option::Some(input);
@@ -125,6 +139,12 @@ impl ParameterControlBuilder {
     ) -> Self {
         self.text_field = input;
         self
+    }
+    /// <p>A control to display a text box that is used to enter a single entry.</p>
+    pub fn get_text_field(
+        &self,
+    ) -> &::std::option::Option<crate::types::ParameterTextFieldControl> {
+        &self.text_field
     }
     /// <p>A control to display a text box that is used to enter multiple entries.</p>
     pub fn text_area(mut self, input: crate::types::ParameterTextAreaControl) -> Self {
@@ -139,6 +159,10 @@ impl ParameterControlBuilder {
         self.text_area = input;
         self
     }
+    /// <p>A control to display a text box that is used to enter multiple entries.</p>
+    pub fn get_text_area(&self) -> &::std::option::Option<crate::types::ParameterTextAreaControl> {
+        &self.text_area
+    }
     /// <p>A control to display a horizontal toggle bar. This is used to change a value by sliding the toggle.</p>
     pub fn slider(mut self, input: crate::types::ParameterSliderControl) -> Self {
         self.slider = ::std::option::Option::Some(input);
@@ -151,6 +175,10 @@ impl ParameterControlBuilder {
     ) -> Self {
         self.slider = input;
         self
+    }
+    /// <p>A control to display a horizontal toggle bar. This is used to change a value by sliding the toggle.</p>
+    pub fn get_slider(&self) -> &::std::option::Option<crate::types::ParameterSliderControl> {
+        &self.slider
     }
     /// Consumes the builder and constructs a [`ParameterControl`](crate::types::ParameterControl).
     pub fn build(self) -> crate::types::ParameterControl {

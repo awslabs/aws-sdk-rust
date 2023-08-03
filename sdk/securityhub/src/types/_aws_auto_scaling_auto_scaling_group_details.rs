@@ -136,6 +136,10 @@ impl AwsAutoScalingAutoScalingGroupDetailsBuilder {
         self.launch_configuration_name = input;
         self
     }
+    /// <p>The name of the launch configuration.</p>
+    pub fn get_launch_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch_configuration_name
+    }
     /// Appends an item to `load_balancer_names`.
     ///
     /// To override the contents of this collection use [`set_load_balancer_names`](Self::set_load_balancer_names).
@@ -158,6 +162,12 @@ impl AwsAutoScalingAutoScalingGroupDetailsBuilder {
         self.load_balancer_names = input;
         self
     }
+    /// <p>The list of load balancers associated with the group.</p>
+    pub fn get_load_balancer_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.load_balancer_names
+    }
     /// <p>The service to use for the health checks. Valid values are <code>EC2</code> or <code>ELB</code>.</p>
     pub fn health_check_type(
         mut self,
@@ -174,6 +184,10 @@ impl AwsAutoScalingAutoScalingGroupDetailsBuilder {
         self.health_check_type = input;
         self
     }
+    /// <p>The service to use for the health checks. Valid values are <code>EC2</code> or <code>ELB</code>.</p>
+    pub fn get_health_check_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.health_check_type
+    }
     /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before it checks the health status of an EC2 instance that has come into service.</p>
     pub fn health_check_grace_period(mut self, input: i32) -> Self {
         self.health_check_grace_period = ::std::option::Option::Some(input);
@@ -183,6 +197,10 @@ impl AwsAutoScalingAutoScalingGroupDetailsBuilder {
     pub fn set_health_check_grace_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.health_check_grace_period = input;
         self
+    }
+    /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before it checks the health status of an EC2 instance that has come into service.</p>
+    pub fn get_health_check_grace_period(&self) -> &::std::option::Option<i32> {
+        &self.health_check_grace_period
     }
     /// <p>Indicates when the auto scaling group was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
@@ -195,6 +213,11 @@ impl AwsAutoScalingAutoScalingGroupDetailsBuilder {
     pub fn set_created_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_time = input;
         self
+    }
+    /// <p>Indicates when the auto scaling group was created.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_time
     }
     /// <p>The mixed instances policy for the automatic scaling group.</p>
     pub fn mixed_instances_policy(
@@ -213,6 +236,14 @@ impl AwsAutoScalingAutoScalingGroupDetailsBuilder {
     ) -> Self {
         self.mixed_instances_policy = input;
         self
+    }
+    /// <p>The mixed instances policy for the automatic scaling group.</p>
+    pub fn get_mixed_instances_policy(
+        &self,
+    ) -> &::std::option::Option<
+        crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails,
+    > {
+        &self.mixed_instances_policy
     }
     /// Appends an item to `availability_zones`.
     ///
@@ -240,6 +271,14 @@ impl AwsAutoScalingAutoScalingGroupDetailsBuilder {
         self.availability_zones = input;
         self
     }
+    /// <p>The list of Availability Zones for the automatic scaling group.</p>
+    pub fn get_availability_zones(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails>,
+    > {
+        &self.availability_zones
+    }
     /// <p>The launch template to use.</p>
     pub fn launch_template(
         mut self,
@@ -258,6 +297,14 @@ impl AwsAutoScalingAutoScalingGroupDetailsBuilder {
         self.launch_template = input;
         self
     }
+    /// <p>The launch template to use.</p>
+    pub fn get_launch_template(
+        &self,
+    ) -> &::std::option::Option<
+        crate::types::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification,
+    > {
+        &self.launch_template
+    }
     /// <p>Indicates whether capacity rebalancing is enabled. </p>
     pub fn capacity_rebalance(mut self, input: bool) -> Self {
         self.capacity_rebalance = ::std::option::Option::Some(input);
@@ -267,6 +314,10 @@ impl AwsAutoScalingAutoScalingGroupDetailsBuilder {
     pub fn set_capacity_rebalance(mut self, input: ::std::option::Option<bool>) -> Self {
         self.capacity_rebalance = input;
         self
+    }
+    /// <p>Indicates whether capacity rebalancing is enabled. </p>
+    pub fn get_capacity_rebalance(&self) -> &::std::option::Option<bool> {
+        &self.capacity_rebalance
     }
     /// Consumes the builder and constructs a [`AwsAutoScalingAutoScalingGroupDetails`](crate::types::AwsAutoScalingAutoScalingGroupDetails).
     pub fn build(self) -> crate::types::AwsAutoScalingAutoScalingGroupDetails {

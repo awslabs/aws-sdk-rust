@@ -67,6 +67,10 @@ impl GetRelationalDatabaseMasterUserPasswordOutputBuilder {
         self.master_user_password = input;
         self
     }
+    /// <p>The master user password for the <code>password version</code> specified.</p>
+    pub fn get_master_user_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.master_user_password
+    }
     /// <p>The timestamp when the specified version of the master user password was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -79,6 +83,10 @@ impl GetRelationalDatabaseMasterUserPasswordOutputBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The timestamp when the specified version of the master user password was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

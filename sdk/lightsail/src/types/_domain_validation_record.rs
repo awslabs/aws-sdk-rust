@@ -70,6 +70,10 @@ impl DomainValidationRecordBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The domain name of the certificate validation record. For example, <code>example.com</code> or <code>www.example.com</code>.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>An object that describes the DNS records to add to your domain's DNS to validate it for the certificate.</p>
     pub fn resource_record(mut self, input: crate::types::ResourceRecord) -> Self {
         self.resource_record = ::std::option::Option::Some(input);
@@ -82,6 +86,10 @@ impl DomainValidationRecordBuilder {
     ) -> Self {
         self.resource_record = input;
         self
+    }
+    /// <p>An object that describes the DNS records to add to your domain's DNS to validate it for the certificate.</p>
+    pub fn get_resource_record(&self) -> &::std::option::Option<crate::types::ResourceRecord> {
+        &self.resource_record
     }
     /// <p>An object that describes the state of the canonical name (CNAME) records that are automatically added by Lightsail to the DNS of the domain to validate domain ownership.</p>
     pub fn dns_record_creation_state(
@@ -99,6 +107,12 @@ impl DomainValidationRecordBuilder {
         self.dns_record_creation_state = input;
         self
     }
+    /// <p>An object that describes the state of the canonical name (CNAME) records that are automatically added by Lightsail to the DNS of the domain to validate domain ownership.</p>
+    pub fn get_dns_record_creation_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::DnsRecordCreationState> {
+        &self.dns_record_creation_state
+    }
     /// <p>The validation status of the record.</p>
     pub fn validation_status(
         mut self,
@@ -114,6 +128,12 @@ impl DomainValidationRecordBuilder {
     ) -> Self {
         self.validation_status = input;
         self
+    }
+    /// <p>The validation status of the record.</p>
+    pub fn get_validation_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::CertificateDomainValidationStatus> {
+        &self.validation_status
     }
     /// Consumes the builder and constructs a [`DomainValidationRecord`](crate::types::DomainValidationRecord).
     pub fn build(self) -> crate::types::DomainValidationRecord {

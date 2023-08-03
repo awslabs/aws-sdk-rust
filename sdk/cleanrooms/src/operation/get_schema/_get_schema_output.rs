@@ -46,6 +46,10 @@ impl GetSchemaOutputBuilder {
         self.schema = input;
         self
     }
+    /// <p>The entire schema object.</p>
+    pub fn get_schema(&self) -> &::std::option::Option<crate::types::Schema> {
+        &self.schema
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

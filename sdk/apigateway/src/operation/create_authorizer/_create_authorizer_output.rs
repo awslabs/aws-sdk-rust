@@ -120,6 +120,10 @@ impl CreateAuthorizerOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier for the authorizer resource.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the authorizer.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -130,6 +134,10 @@ impl CreateAuthorizerOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the authorizer.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.</p>
     pub fn r#type(mut self, input: crate::types::AuthorizerType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -139,6 +147,10 @@ impl CreateAuthorizerOutputBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::AuthorizerType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::AuthorizerType> {
+        &self.r#type
     }
     /// Appends an item to `provider_ar_ns`.
     ///
@@ -162,6 +174,12 @@ impl CreateAuthorizerOutputBuilder {
         self.provider_ar_ns = input;
         self
     }
+    /// <p>A list of the Amazon Cognito user pool ARNs for the <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>. For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not defined. </p>
+    pub fn get_provider_ar_ns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.provider_ar_ns
+    }
     /// <p>Optional customer-defined field, used in OpenAPI imports and exports without functional impact.</p>
     pub fn auth_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auth_type = ::std::option::Option::Some(input.into());
@@ -171,6 +189,10 @@ impl CreateAuthorizerOutputBuilder {
     pub fn set_auth_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auth_type = input;
         self
+    }
+    /// <p>Optional customer-defined field, used in OpenAPI imports and exports without functional impact.</p>
+    pub fn get_auth_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auth_type
     }
     /// <p>Specifies the authorizer's Uniform Resource Identifier (URI). For <code>TOKEN</code> or <code>REQUEST</code> authorizers, this must be a well-formed Lambda function URI, for example, <code>arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations</code>. In general, the URI has this form <code>arn:aws:apigateway:{region}:lambda:path/{service_api}</code>, where <code>{region}</code> is the same as the region hosting the Lambda function, <code>path</code> indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial <code>/</code>. For Lambda functions, this is usually of the form <code>/2015-03-31/functions/[FunctionARN]/invocations</code>.</p>
     pub fn authorizer_uri(
@@ -188,6 +210,10 @@ impl CreateAuthorizerOutputBuilder {
         self.authorizer_uri = input;
         self
     }
+    /// <p>Specifies the authorizer's Uniform Resource Identifier (URI). For <code>TOKEN</code> or <code>REQUEST</code> authorizers, this must be a well-formed Lambda function URI, for example, <code>arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations</code>. In general, the URI has this form <code>arn:aws:apigateway:{region}:lambda:path/{service_api}</code>, where <code>{region}</code> is the same as the region hosting the Lambda function, <code>path</code> indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial <code>/</code>. For Lambda functions, this is usually of the form <code>/2015-03-31/functions/[FunctionARN]/invocations</code>.</p>
+    pub fn get_authorizer_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authorizer_uri
+    }
     /// <p>Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, specify null.</p>
     pub fn authorizer_credentials(
         mut self,
@@ -203,6 +229,10 @@ impl CreateAuthorizerOutputBuilder {
     ) -> Self {
         self.authorizer_credentials = input;
         self
+    }
+    /// <p>Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, specify null.</p>
+    pub fn get_authorizer_credentials(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authorizer_credentials
     }
     /// <p>The identity source for which authorization is requested. For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the request header mapping expression for the custom header holding the authorization token submitted by the client. For example, if the token header name is <code>Auth</code>, the header mapping expression is <code>method.request.header.Auth</code>. For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this value is <code>method.request.header.Auth</code>, <code>method.request.querystring.Name</code>. These parameters will be used to derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code> authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional. </p>
     pub fn identity_source(
@@ -220,6 +250,10 @@ impl CreateAuthorizerOutputBuilder {
         self.identity_source = input;
         self
     }
+    /// <p>The identity source for which authorization is requested. For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the request header mapping expression for the custom header holding the authorization token submitted by the client. For example, if the token header name is <code>Auth</code>, the header mapping expression is <code>method.request.header.Auth</code>. For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this value is <code>method.request.header.Auth</code>, <code>method.request.querystring.Name</code>. These parameters will be used to derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code> authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional. </p>
+    pub fn get_identity_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_source
+    }
     /// <p>A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers, this value is a regular expression. For <code>COGNITO_USER_POOLS</code> authorizers, API Gateway will match the <code>aud</code> field of the incoming token from the client against the specified regular expression. It will invoke the authorizer's Lambda function when there is a match. Otherwise, it will return a 401 Unauthorized response without calling the Lambda function. The validation expression does not apply to the <code>REQUEST</code> authorizer.</p>
     pub fn identity_validation_expression(
         mut self,
@@ -236,6 +270,12 @@ impl CreateAuthorizerOutputBuilder {
         self.identity_validation_expression = input;
         self
     }
+    /// <p>A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers, this value is a regular expression. For <code>COGNITO_USER_POOLS</code> authorizers, API Gateway will match the <code>aud</code> field of the incoming token from the client against the specified regular expression. It will invoke the authorizer's Lambda function when there is a match. Otherwise, it will return a 401 Unauthorized response without calling the Lambda function. The validation expression does not apply to the <code>REQUEST</code> authorizer.</p>
+    pub fn get_identity_validation_expression(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.identity_validation_expression
+    }
     /// <p>The TTL in seconds of cached authorizer results. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway will cache authorizer responses. If this field is not set, the default value is 300. The maximum value is 3600, or 1 hour.</p>
     pub fn authorizer_result_ttl_in_seconds(mut self, input: i32) -> Self {
         self.authorizer_result_ttl_in_seconds = ::std::option::Option::Some(input);
@@ -248,6 +288,10 @@ impl CreateAuthorizerOutputBuilder {
     ) -> Self {
         self.authorizer_result_ttl_in_seconds = input;
         self
+    }
+    /// <p>The TTL in seconds of cached authorizer results. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway will cache authorizer responses. If this field is not set, the default value is 300. The maximum value is 3600, or 1 hour.</p>
+    pub fn get_authorizer_result_ttl_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.authorizer_result_ttl_in_seconds
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

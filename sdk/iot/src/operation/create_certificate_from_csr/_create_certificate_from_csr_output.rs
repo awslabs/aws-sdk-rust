@@ -69,6 +69,10 @@ impl CreateCertificateFromCsrOutputBuilder {
         self.certificate_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the certificate. You can use the ARN as a principal for policy operations.</p>
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_arn
+    }
     /// <p>The ID of the certificate. Certificate management operations only take a certificateId.</p>
     pub fn certificate_id(
         mut self,
@@ -85,6 +89,10 @@ impl CreateCertificateFromCsrOutputBuilder {
         self.certificate_id = input;
         self
     }
+    /// <p>The ID of the certificate. Certificate management operations only take a certificateId.</p>
+    pub fn get_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_id
+    }
     /// <p>The certificate data, in PEM format.</p>
     pub fn certificate_pem(
         mut self,
@@ -100,6 +108,10 @@ impl CreateCertificateFromCsrOutputBuilder {
     ) -> Self {
         self.certificate_pem = input;
         self
+    }
+    /// <p>The certificate data, in PEM format.</p>
+    pub fn get_certificate_pem(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_pem
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

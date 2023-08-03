@@ -38,6 +38,13 @@ impl CreateDataIntegrationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDataIntegration as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_data_integration::builders::CreateDataIntegrationInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +135,10 @@ impl CreateDataIntegrationFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the DataIntegration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>A description of the DataIntegration.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -137,6 +148,10 @@ impl CreateDataIntegrationFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of the DataIntegration.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The KMS key for the DataIntegration.</p>
     pub fn kms_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -148,6 +163,10 @@ impl CreateDataIntegrationFluentBuilder {
         self.inner = self.inner.set_kms_key(input);
         self
     }
+    /// <p>The KMS key for the DataIntegration.</p>
+    pub fn get_kms_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key()
+    }
     /// <p>The URI of the data source.</p>
     pub fn source_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_uri(input.into());
@@ -157,6 +176,10 @@ impl CreateDataIntegrationFluentBuilder {
     pub fn set_source_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_uri(input);
         self
+    }
+    /// <p>The URI of the data source.</p>
+    pub fn get_source_uri(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_uri()
     }
     /// <p>The name of the data and how often it should be pulled from the source.</p>
     pub fn schedule_config(mut self, input: crate::types::ScheduleConfiguration) -> Self {
@@ -170,6 +193,12 @@ impl CreateDataIntegrationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_schedule_config(input);
         self
+    }
+    /// <p>The name of the data and how often it should be pulled from the source.</p>
+    pub fn get_schedule_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ScheduleConfiguration> {
+        self.inner.get_schedule_config()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -194,6 +223,14 @@ impl CreateDataIntegrationFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -203,6 +240,10 @@ impl CreateDataIntegrationFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// <p>The configuration for what files should be pulled from the source.</p>
     pub fn file_configuration(mut self, input: crate::types::FileConfiguration) -> Self {
@@ -216,6 +257,12 @@ impl CreateDataIntegrationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_file_configuration(input);
         self
+    }
+    /// <p>The configuration for what files should be pulled from the source.</p>
+    pub fn get_file_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::FileConfiguration> {
+        self.inner.get_file_configuration()
     }
     /// Adds a key-value pair to `ObjectConfiguration`.
     ///
@@ -248,5 +295,19 @@ impl CreateDataIntegrationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_object_configuration(input);
         self
+    }
+    /// <p>The configuration for what data should be pulled from the source.</p>
+    pub fn get_object_configuration(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            ::std::collections::HashMap<
+                ::std::string::String,
+                ::std::vec::Vec<::std::string::String>,
+            >,
+        >,
+    > {
+        self.inner.get_object_configuration()
     }
 }

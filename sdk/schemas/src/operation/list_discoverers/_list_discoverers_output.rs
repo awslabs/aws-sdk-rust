@@ -63,6 +63,12 @@ impl ListDiscoverersOutputBuilder {
         self.discoverers = input;
         self
     }
+    /// <p>An array of DiscovererSummary information.</p>
+    pub fn get_discoverers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DiscovererSummary>> {
+        &self.discoverers
+    }
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -72,6 +78,10 @@ impl ListDiscoverersOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -69,6 +69,12 @@ impl DetectProtectiveEquipmentOutputBuilder {
         self.protective_equipment_model_version = input;
         self
     }
+    /// <p>The version number of the PPE detection model used to detect PPE in the image.</p>
+    pub fn get_protective_equipment_model_version(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.protective_equipment_model_version
+    }
     /// Appends an item to `persons`.
     ///
     /// To override the contents of this collection use [`set_persons`](Self::set_persons).
@@ -88,6 +94,12 @@ impl DetectProtectiveEquipmentOutputBuilder {
         self.persons = input;
         self
     }
+    /// <p>An array of persons detected in the image (including persons not wearing PPE).</p>
+    pub fn get_persons(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProtectiveEquipmentPerson>> {
+        &self.persons
+    }
     /// <p>Summary information for the types of PPE specified in the <code>SummarizationAttributes</code> input parameter.</p>
     pub fn summary(mut self, input: crate::types::ProtectiveEquipmentSummary) -> Self {
         self.summary = ::std::option::Option::Some(input);
@@ -100,6 +112,10 @@ impl DetectProtectiveEquipmentOutputBuilder {
     ) -> Self {
         self.summary = input;
         self
+    }
+    /// <p>Summary information for the types of PPE specified in the <code>SummarizationAttributes</code> input parameter.</p>
+    pub fn get_summary(&self) -> &::std::option::Option<crate::types::ProtectiveEquipmentSummary> {
+        &self.summary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

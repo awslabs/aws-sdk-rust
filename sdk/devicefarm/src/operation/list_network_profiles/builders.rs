@@ -36,6 +36,12 @@ impl ListNetworkProfilesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListNetworkProfiles as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_network_profiles::builders::ListNetworkProfilesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl ListNetworkProfilesFluentBuilder {
         self.inner = self.inner.set_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the project for which you want to list network profiles.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
+    }
     /// <p>The type of network profile to return information about. Valid values are listed here.</p>
     pub fn r#type(mut self, input: crate::types::NetworkProfileType) -> Self {
         self.inner = self.inner.r#type(input);
@@ -139,6 +149,10 @@ impl ListNetworkProfilesFluentBuilder {
         self.inner = self.inner.set_type(input);
         self
     }
+    /// <p>The type of network profile to return information about. Valid values are listed here.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::NetworkProfileType> {
+        self.inner.get_type()
+    }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -148,5 +162,9 @@ impl ListNetworkProfilesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

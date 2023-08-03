@@ -41,6 +41,10 @@ impl DeletePlaybackKeyPairInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>ARN of the key pair to be deleted.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`DeletePlaybackKeyPairInput`](crate::operation::delete_playback_key_pair::DeletePlaybackKeyPairInput).
     pub fn build(
         self,

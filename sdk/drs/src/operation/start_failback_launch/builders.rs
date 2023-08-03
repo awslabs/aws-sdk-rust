@@ -36,6 +36,12 @@ impl StartFailbackLaunchFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartFailbackLaunch as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_failback_launch::builders::StartFailbackLaunchInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +142,12 @@ impl StartFailbackLaunchFluentBuilder {
         self.inner = self.inner.set_recovery_instance_i_ds(input);
         self
     }
+    /// <p>The IDs of the Recovery Instance whose failback launch we want to request.</p>
+    pub fn get_recovery_instance_i_ds(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_recovery_instance_i_ds()
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -158,5 +170,13 @@ impl StartFailbackLaunchFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags to be associated with the failback launch Job.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

@@ -45,6 +45,10 @@ impl GetAddressBookInputBuilder {
         self.address_book_arn = input;
         self
     }
+    /// <p>The ARN of the address book for which to request details.</p>
+    pub fn get_address_book_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.address_book_arn
+    }
     /// Consumes the builder and constructs a [`GetAddressBookInput`](crate::operation::get_address_book::GetAddressBookInput).
     pub fn build(
         self,

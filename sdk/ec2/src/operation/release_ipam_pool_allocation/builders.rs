@@ -38,6 +38,10 @@ impl ReleaseIpamPoolAllocationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ReleaseIpamPoolAllocation as a reference.
+    pub fn as_input(&self) -> &crate::operation::release_ipam_pool_allocation::builders::ReleaseIpamPoolAllocationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +132,10 @@ impl ReleaseIpamPoolAllocationFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>The ID of the IPAM pool which contains the allocation you want to release.</p>
     pub fn ipam_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ipam_pool_id(input.into());
@@ -138,6 +146,10 @@ impl ReleaseIpamPoolAllocationFluentBuilder {
         self.inner = self.inner.set_ipam_pool_id(input);
         self
     }
+    /// <p>The ID of the IPAM pool which contains the allocation you want to release.</p>
+    pub fn get_ipam_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ipam_pool_id()
+    }
     /// <p>The CIDR of the allocation you want to release.</p>
     pub fn cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cidr(input.into());
@@ -147,6 +159,10 @@ impl ReleaseIpamPoolAllocationFluentBuilder {
     pub fn set_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cidr(input);
         self
+    }
+    /// <p>The CIDR of the allocation you want to release.</p>
+    pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cidr()
     }
     /// <p>The ID of the allocation.</p>
     pub fn ipam_pool_allocation_id(
@@ -163,5 +179,9 @@ impl ReleaseIpamPoolAllocationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ipam_pool_allocation_id(input);
         self
+    }
+    /// <p>The ID of the allocation.</p>
+    pub fn get_ipam_pool_allocation_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ipam_pool_allocation_id()
     }
 }

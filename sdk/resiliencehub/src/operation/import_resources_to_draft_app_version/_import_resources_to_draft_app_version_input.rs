@@ -74,6 +74,10 @@ impl ImportResourcesToDraftAppVersionInputBuilder {
         self.app_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_arn
+    }
     /// Appends an item to `source_arns`.
     ///
     /// To override the contents of this collection use [`set_source_arns`](Self::set_source_arns).
@@ -92,6 +96,12 @@ impl ImportResourcesToDraftAppVersionInputBuilder {
     ) -> Self {
         self.source_arns = input;
         self
+    }
+    /// <p>The Amazon Resource Names (ARNs) for the resources.</p>
+    pub fn get_source_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.source_arns
     }
     /// Appends an item to `terraform_sources`.
     ///
@@ -112,6 +122,12 @@ impl ImportResourcesToDraftAppVersionInputBuilder {
         self.terraform_sources = input;
         self
     }
+    /// <p> A list of terraform file s3 URLs you need to import. </p>
+    pub fn get_terraform_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TerraformSource>> {
+        &self.terraform_sources
+    }
     /// <p>The import strategy you would like to set to import resources into Resilience Hub application.</p>
     pub fn import_strategy(mut self, input: crate::types::ResourceImportStrategyType) -> Self {
         self.import_strategy = ::std::option::Option::Some(input);
@@ -124,6 +140,12 @@ impl ImportResourcesToDraftAppVersionInputBuilder {
     ) -> Self {
         self.import_strategy = input;
         self
+    }
+    /// <p>The import strategy you would like to set to import resources into Resilience Hub application.</p>
+    pub fn get_import_strategy(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceImportStrategyType> {
+        &self.import_strategy
     }
     /// Appends an item to `eks_sources`.
     ///
@@ -143,6 +165,12 @@ impl ImportResourcesToDraftAppVersionInputBuilder {
     ) -> Self {
         self.eks_sources = input;
         self
+    }
+    /// <p>The input sources of the Amazon Elastic Kubernetes Service resources you need to import.</p>
+    pub fn get_eks_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EksSource>> {
+        &self.eks_sources
     }
     /// Consumes the builder and constructs a [`ImportResourcesToDraftAppVersionInput`](crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersionInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersionInput, ::aws_smithy_http::operation::error::BuildError>{

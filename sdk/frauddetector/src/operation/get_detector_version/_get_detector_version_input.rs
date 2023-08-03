@@ -48,6 +48,10 @@ impl GetDetectorVersionInputBuilder {
         self.detector_id = input;
         self
     }
+    /// <p>The detector ID.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
+    }
     /// <p>The detector version ID.</p>
     pub fn detector_version_id(
         mut self,
@@ -63,6 +67,10 @@ impl GetDetectorVersionInputBuilder {
     ) -> Self {
         self.detector_version_id = input;
         self
+    }
+    /// <p>The detector version ID.</p>
+    pub fn get_detector_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_version_id
     }
     /// Consumes the builder and constructs a [`GetDetectorVersionInput`](crate::operation::get_detector_version::GetDetectorVersionInput).
     pub fn build(

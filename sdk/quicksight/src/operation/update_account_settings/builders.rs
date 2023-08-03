@@ -36,6 +36,13 @@ impl UpdateAccountSettingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAccountSettings as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_account_settings::builders::UpdateAccountSettingsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl UpdateAccountSettingsFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight settings that you want to list.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>The default namespace for this Amazon Web Services account. Currently, the default is <code>default</code>. IAM users that register for the first time with Amazon QuickSight provide an email address that becomes associated with the default namespace. </p>
     pub fn default_namespace(
         mut self,
@@ -147,6 +158,10 @@ impl UpdateAccountSettingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_default_namespace(input);
         self
+    }
+    /// <p>The default namespace for this Amazon Web Services account. Currently, the default is <code>default</code>. IAM users that register for the first time with Amazon QuickSight provide an email address that becomes associated with the default namespace. </p>
+    pub fn get_default_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_default_namespace()
     }
     /// <p>The email address that you want Amazon QuickSight to send notifications to regarding your Amazon Web Services account or Amazon QuickSight subscription.</p>
     pub fn notification_email(
@@ -164,6 +179,10 @@ impl UpdateAccountSettingsFluentBuilder {
         self.inner = self.inner.set_notification_email(input);
         self
     }
+    /// <p>The email address that you want Amazon QuickSight to send notifications to regarding your Amazon Web Services account or Amazon QuickSight subscription.</p>
+    pub fn get_notification_email(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_notification_email()
+    }
     /// <p>A boolean value that determines whether or not an Amazon QuickSight account can be deleted. A <code>True</code> value doesn't allow the account to be deleted and results in an error message if a user tries to make a <code>DeleteAccountSubscription</code> request. A <code>False</code> value will allow the account to be deleted.</p>
     pub fn termination_protection_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.termination_protection_enabled(input);
@@ -176,5 +195,9 @@ impl UpdateAccountSettingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_termination_protection_enabled(input);
         self
+    }
+    /// <p>A boolean value that determines whether or not an Amazon QuickSight account can be deleted. A <code>True</code> value doesn't allow the account to be deleted and results in an error message if a user tries to make a <code>DeleteAccountSubscription</code> request. A <code>False</code> value will allow the account to be deleted.</p>
+    pub fn get_termination_protection_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_termination_protection_enabled()
     }
 }

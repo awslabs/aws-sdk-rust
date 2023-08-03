@@ -72,6 +72,10 @@ impl ComponentSummaryBuilder {
         self.app_id = input;
         self
     }
+    /// <p>The unique ID of the Amplify app associated with the component.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
     pub fn environment_name(
         mut self,
@@ -88,6 +92,10 @@ impl ComponentSummaryBuilder {
         self.environment_name = input;
         self
     }
+    /// <p>The name of the backend environment that is a part of the Amplify app.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_name
+    }
     /// <p>The unique ID of the component.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -98,6 +106,10 @@ impl ComponentSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique ID of the component.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the component.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -107,6 +119,10 @@ impl ComponentSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the component.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The component type.</p>
     pub fn component_type(
@@ -123,6 +139,10 @@ impl ComponentSummaryBuilder {
     ) -> Self {
         self.component_type = input;
         self
+    }
+    /// <p>The component type.</p>
+    pub fn get_component_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_type
     }
     /// Consumes the builder and constructs a [`ComponentSummary`](crate::types::ComponentSummary).
     pub fn build(self) -> crate::types::ComponentSummary {

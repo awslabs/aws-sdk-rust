@@ -40,6 +40,10 @@ impl EpssBuilder {
         self.score = input;
         self
     }
+    /// <p>The Exploit Prediction Scoring System (EPSS) score.</p>
+    pub fn get_score(&self) -> &::std::option::Option<f64> {
+        &self.score
+    }
     /// Consumes the builder and constructs a [`Epss`](crate::types::Epss).
     pub fn build(self) -> crate::types::Epss {
         crate::types::Epss {

@@ -36,6 +36,12 @@ impl ListServiceInstancesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListServiceInstances as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_service_instances::builders::ListServiceInstancesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl ListServiceInstancesFluentBuilder {
         self.inner = self.inner.set_service_name(input);
         self
     }
+    /// <p>The name of the service that the service instance belongs to.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_name()
+    }
     /// <p>A token that indicates the location of the next service in the array of service instances, after the list of service instances that was previously requested.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -147,6 +157,10 @@ impl ListServiceInstancesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A token that indicates the location of the next service in the array of service instances, after the list of service instances that was previously requested.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of service instances to list.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -156,6 +170,10 @@ impl ListServiceInstancesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of service instances to list.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// Appends an item to `filters`.
     ///
@@ -174,6 +192,12 @@ impl ListServiceInstancesFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>An array of filtering criteria that scope down the result list. By default, all service instances in the Amazon Web Services account are returned.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListServiceInstancesFilter>> {
+        self.inner.get_filters()
+    }
     /// <p>The field that the result list is sorted by.</p>
     /// <p>When you choose to sort by <code>serviceName</code>, service instances within each service are sorted by service instance name.</p>
     /// <p>Default: <code>serviceName</code> </p>
@@ -191,6 +215,12 @@ impl ListServiceInstancesFluentBuilder {
         self.inner = self.inner.set_sort_by(input);
         self
     }
+    /// <p>The field that the result list is sorted by.</p>
+    /// <p>When you choose to sort by <code>serviceName</code>, service instances within each service are sorted by service instance name.</p>
+    /// <p>Default: <code>serviceName</code> </p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ListServiceInstancesSortBy> {
+        self.inner.get_sort_by()
+    }
     /// <p>Result list sort order.</p>
     /// <p>Default: <code>ASCENDING</code> </p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
@@ -202,5 +232,10 @@ impl ListServiceInstancesFluentBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
+    }
+    /// <p>Result list sort order.</p>
+    /// <p>Default: <code>ASCENDING</code> </p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        self.inner.get_sort_order()
     }
 }

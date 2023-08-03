@@ -51,6 +51,12 @@ impl WordCloudFieldWellsBuilder {
         self.word_cloud_aggregated_field_wells = input;
         self
     }
+    /// <p>The aggregated field wells of a word cloud.</p>
+    pub fn get_word_cloud_aggregated_field_wells(
+        &self,
+    ) -> &::std::option::Option<crate::types::WordCloudAggregatedFieldWells> {
+        &self.word_cloud_aggregated_field_wells
+    }
     /// Consumes the builder and constructs a [`WordCloudFieldWells`](crate::types::WordCloudFieldWells).
     pub fn build(self) -> crate::types::WordCloudFieldWells {
         crate::types::WordCloudFieldWells {

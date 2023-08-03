@@ -43,6 +43,12 @@ impl ProcessingResourcesBuilder {
         self.cluster_config = input;
         self
     }
+    /// <p>The configuration for the resources in a cluster used to run the processing job.</p>
+    pub fn get_cluster_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProcessingClusterConfig> {
+        &self.cluster_config
+    }
     /// Consumes the builder and constructs a [`ProcessingResources`](crate::types::ProcessingResources).
     pub fn build(self) -> crate::types::ProcessingResources {
         crate::types::ProcessingResources {

@@ -40,6 +40,10 @@ impl DeleteConfigurationInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`DeleteConfigurationInput`](crate::operation::delete_configuration::DeleteConfigurationInput).
     pub fn build(
         self,

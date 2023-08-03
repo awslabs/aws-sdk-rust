@@ -57,6 +57,12 @@ impl CreateQueryLoggingConfigOutputBuilder {
         self.query_logging_config = input;
         self
     }
+    /// <p>A complex type that contains the ID for a query logging configuration, the ID of the hosted zone that you want to log queries for, and the ARN for the log group that you want Amazon Route 53 to send query logs to.</p>
+    pub fn get_query_logging_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::QueryLoggingConfig> {
+        &self.query_logging_config
+    }
     /// <p>The unique URL representing the new query logging configuration.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
@@ -66,6 +72,10 @@ impl CreateQueryLoggingConfigOutputBuilder {
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
+    }
+    /// <p>The unique URL representing the new query logging configuration.</p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

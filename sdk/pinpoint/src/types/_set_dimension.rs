@@ -51,6 +51,10 @@ impl SetDimensionBuilder {
         self.dimension_type = input;
         self
     }
+    /// <p>The type of segment dimension to use. Valid values are: INCLUSIVE, endpoints that match the criteria are included in the segment; and, EXCLUSIVE, endpoints that match the criteria are excluded from the segment.</p>
+    pub fn get_dimension_type(&self) -> &::std::option::Option<crate::types::DimensionType> {
+        &self.dimension_type
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -69,6 +73,10 @@ impl SetDimensionBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>The criteria values to use for the segment dimension. Depending on the value of the DimensionType property, endpoints are included or excluded from the segment if their values match the criteria values.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`SetDimension`](crate::types::SetDimension).
     pub fn build(self) -> crate::types::SetDimension {

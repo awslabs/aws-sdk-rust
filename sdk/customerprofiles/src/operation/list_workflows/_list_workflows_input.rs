@@ -87,6 +87,10 @@ impl ListWorkflowsInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The unique name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
     pub fn workflow_type(mut self, input: crate::types::WorkflowType) -> Self {
         self.workflow_type = ::std::option::Option::Some(input);
@@ -100,6 +104,10 @@ impl ListWorkflowsInputBuilder {
         self.workflow_type = input;
         self
     }
+    /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
+    pub fn get_workflow_type(&self) -> &::std::option::Option<crate::types::WorkflowType> {
+        &self.workflow_type
+    }
     /// <p>Status of workflow execution.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -109,6 +117,10 @@ impl ListWorkflowsInputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Status of workflow execution.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.status
     }
     /// <p>Retrieve workflows started after timestamp.</p>
     pub fn query_start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -123,6 +135,10 @@ impl ListWorkflowsInputBuilder {
         self.query_start_date = input;
         self
     }
+    /// <p>Retrieve workflows started after timestamp.</p>
+    pub fn get_query_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.query_start_date
+    }
     /// <p>Retrieve workflows ended after timestamp.</p>
     pub fn query_end_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.query_end_date = ::std::option::Option::Some(input);
@@ -136,6 +152,10 @@ impl ListWorkflowsInputBuilder {
         self.query_end_date = input;
         self
     }
+    /// <p>Retrieve workflows ended after timestamp.</p>
+    pub fn get_query_end_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.query_end_date
+    }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -146,6 +166,10 @@ impl ListWorkflowsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -155,6 +179,10 @@ impl ListWorkflowsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListWorkflowsInput`](crate::operation::list_workflows::ListWorkflowsInput).
     pub fn build(

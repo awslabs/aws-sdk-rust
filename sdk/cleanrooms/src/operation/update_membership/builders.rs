@@ -36,6 +36,12 @@ impl UpdateMembershipFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateMembership as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_membership::builders::UpdateMembershipInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateMembershipFluentBuilder {
         self.inner = self.inner.set_membership_identifier(input);
         self
     }
+    /// <p>The unique identifier of the membership.</p>
+    pub fn get_membership_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_membership_identifier()
+    }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
     pub fn query_log_status(mut self, input: crate::types::MembershipQueryLogStatus) -> Self {
         self.inner = self.inner.query_log_status(input);
@@ -144,5 +154,11 @@ impl UpdateMembershipFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_query_log_status(input);
         self
+    }
+    /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
+    pub fn get_query_log_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::MembershipQueryLogStatus> {
+        self.inner.get_query_log_status()
     }
 }

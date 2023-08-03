@@ -36,6 +36,10 @@ impl DeleteIntegrationAssociationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteIntegrationAssociation as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_integration_association::builders::DeleteIntegrationAssociationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl DeleteIntegrationAssociationFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>The identifier for the integration association.</p>
     pub fn integration_association_id(
         mut self,
@@ -141,5 +149,9 @@ impl DeleteIntegrationAssociationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_integration_association_id(input);
         self
+    }
+    /// <p>The identifier for the integration association.</p>
+    pub fn get_integration_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_integration_association_id()
     }
 }

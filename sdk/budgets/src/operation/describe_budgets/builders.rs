@@ -38,6 +38,12 @@ impl DescribeBudgetsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeBudgets as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_budgets::builders::DescribeBudgetsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -139,6 +145,10 @@ impl DescribeBudgetsFluentBuilder {
         self.inner = self.inner.set_account_id(input);
         self
     }
+    /// <p>The <code>accountId</code> that is associated with the budgets that you want descriptions of.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -149,6 +159,10 @@ impl DescribeBudgetsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -158,5 +172,9 @@ impl DescribeBudgetsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

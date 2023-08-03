@@ -61,6 +61,10 @@ impl TagResourceInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -91,6 +95,17 @@ impl TagResourceInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags to associate. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
+    /// <p>If you do not specify a value, the value is set to an empty string.</p>
+    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
+    /// <p>_ . : / = + \ - @</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`TagResourceInput`](crate::operation::tag_resource::TagResourceInput).
     pub fn build(

@@ -59,6 +59,10 @@ impl UpdateSuiteDefinitionInputBuilder {
         self.suite_definition_id = input;
         self
     }
+    /// <p>Suite definition ID of the test suite to be updated.</p>
+    pub fn get_suite_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.suite_definition_id
+    }
     /// <p>Updates a Device Advisor test suite with suite definition configuration.</p>
     pub fn suite_definition_configuration(
         mut self,
@@ -74,6 +78,12 @@ impl UpdateSuiteDefinitionInputBuilder {
     ) -> Self {
         self.suite_definition_configuration = input;
         self
+    }
+    /// <p>Updates a Device Advisor test suite with suite definition configuration.</p>
+    pub fn get_suite_definition_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SuiteDefinitionConfiguration> {
+        &self.suite_definition_configuration
     }
     /// Consumes the builder and constructs a [`UpdateSuiteDefinitionInput`](crate::operation::update_suite_definition::UpdateSuiteDefinitionInput).
     pub fn build(

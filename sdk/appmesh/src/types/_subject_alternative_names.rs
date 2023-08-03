@@ -43,6 +43,12 @@ impl SubjectAlternativeNamesBuilder {
         self.r#match = input;
         self
     }
+    /// <p>An object that represents the criteria for determining a SANs match.</p>
+    pub fn get_match(
+        &self,
+    ) -> &::std::option::Option<crate::types::SubjectAlternativeNameMatchers> {
+        &self.r#match
+    }
     /// Consumes the builder and constructs a [`SubjectAlternativeNames`](crate::types::SubjectAlternativeNames).
     pub fn build(self) -> crate::types::SubjectAlternativeNames {
         crate::types::SubjectAlternativeNames {

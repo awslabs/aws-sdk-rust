@@ -36,6 +36,12 @@ impl GetSamplingTargetsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetSamplingTargets as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_sampling_targets::builders::GetSamplingTargetsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,5 +141,11 @@ impl GetSamplingTargetsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sampling_statistics_documents(input);
         self
+    }
+    /// <p>Information about rules that the service is using to sample requests.</p>
+    pub fn get_sampling_statistics_documents(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SamplingStatisticsDocument>> {
+        self.inner.get_sampling_statistics_documents()
     }
 }

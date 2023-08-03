@@ -36,6 +36,12 @@ impl DeleteAccountSettingFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteAccountSetting as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_account_setting::builders::DeleteAccountSettingInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DeleteAccountSettingFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The resource name to disable the account setting for. If <code>serviceLongArnFormat</code> is specified, the ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS container instances is affected. If <code>awsvpcTrunking</code> is specified, the ENI limit for your Amazon ECS container instances is affected.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::SettingName> {
+        self.inner.get_name()
+    }
     /// <p>The Amazon Resource Name (ARN) of the principal. It can be an user, role, or the root user. If you specify the root user, it disables the account setting for all users, roles, and the root user of the account unless a user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p>
     pub fn principal_arn(
         mut self,
@@ -141,5 +151,9 @@ impl DeleteAccountSettingFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_principal_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the principal. It can be an user, role, or the root user. If you specify the root user, it disables the account setting for all users, roles, and the root user of the account unless a user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p>
+    pub fn get_principal_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_principal_arn()
     }
 }

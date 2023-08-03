@@ -47,6 +47,10 @@ impl DescribeJobRunInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the job run request. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The ID of the virtual cluster for which the job run is submitted.</p>
     pub fn virtual_cluster_id(
         mut self,
@@ -62,6 +66,10 @@ impl DescribeJobRunInputBuilder {
     ) -> Self {
         self.virtual_cluster_id = input;
         self
+    }
+    /// <p>The ID of the virtual cluster for which the job run is submitted.</p>
+    pub fn get_virtual_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_cluster_id
     }
     /// Consumes the builder and constructs a [`DescribeJobRunInput`](crate::operation::describe_job_run::DescribeJobRunInput).
     pub fn build(

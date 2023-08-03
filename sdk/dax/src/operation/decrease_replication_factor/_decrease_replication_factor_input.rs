@@ -63,6 +63,10 @@ impl DecreaseReplicationFactorInputBuilder {
         self.cluster_name = input;
         self
     }
+    /// <p>The name of the DAX cluster from which you want to remove nodes.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_name
+    }
     /// <p>The new number of nodes for the DAX cluster.</p>
     pub fn new_replication_factor(mut self, input: i32) -> Self {
         self.new_replication_factor = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl DecreaseReplicationFactorInputBuilder {
     pub fn set_new_replication_factor(mut self, input: ::std::option::Option<i32>) -> Self {
         self.new_replication_factor = input;
         self
+    }
+    /// <p>The new number of nodes for the DAX cluster.</p>
+    pub fn get_new_replication_factor(&self) -> &::std::option::Option<i32> {
+        &self.new_replication_factor
     }
     /// Appends an item to `availability_zones`.
     ///
@@ -95,6 +103,12 @@ impl DecreaseReplicationFactorInputBuilder {
         self.availability_zones = input;
         self
     }
+    /// <p>The Availability Zone(s) from which to remove nodes.</p>
+    pub fn get_availability_zones(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.availability_zones
+    }
     /// Appends an item to `node_ids_to_remove`.
     ///
     /// To override the contents of this collection use [`set_node_ids_to_remove`](Self::set_node_ids_to_remove).
@@ -116,6 +130,12 @@ impl DecreaseReplicationFactorInputBuilder {
     ) -> Self {
         self.node_ids_to_remove = input;
         self
+    }
+    /// <p>The unique identifiers of the nodes to be removed from the cluster.</p>
+    pub fn get_node_ids_to_remove(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.node_ids_to_remove
     }
     /// Consumes the builder and constructs a [`DecreaseReplicationFactorInput`](crate::operation::decrease_replication_factor::DecreaseReplicationFactorInput).
     pub fn build(

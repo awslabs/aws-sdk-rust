@@ -55,6 +55,10 @@ impl CreateCoipCidrInputBuilder {
         self.cidr = input;
         self
     }
+    /// <p> A customer-owned IP address range to create. </p>
+    pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr
+    }
     /// <p> The ID of the address pool. </p>
     pub fn coip_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.coip_pool_id = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl CreateCoipCidrInputBuilder {
         self.coip_pool_id = input;
         self
     }
+    /// <p> The ID of the address pool. </p>
+    pub fn get_coip_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.coip_pool_id
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -74,6 +82,10 @@ impl CreateCoipCidrInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`CreateCoipCidrInput`](crate::operation::create_coip_cidr::CreateCoipCidrInput).
     pub fn build(

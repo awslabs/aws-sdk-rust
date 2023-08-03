@@ -56,6 +56,12 @@ impl DeleteVpcEndpointOutputBuilder {
         self.delete_vpc_endpoint_detail = input;
         self
     }
+    /// <p>Details about the deleted endpoint.</p>
+    pub fn get_delete_vpc_endpoint_detail(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeleteVpcEndpointDetail> {
+        &self.delete_vpc_endpoint_detail
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

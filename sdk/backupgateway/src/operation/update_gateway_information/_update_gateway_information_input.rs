@@ -49,6 +49,10 @@ impl UpdateGatewayInformationInputBuilder {
         self.gateway_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the gateway to update.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_arn
+    }
     /// <p>The updated display name of the gateway.</p>
     pub fn gateway_display_name(
         mut self,
@@ -64,6 +68,10 @@ impl UpdateGatewayInformationInputBuilder {
     ) -> Self {
         self.gateway_display_name = input;
         self
+    }
+    /// <p>The updated display name of the gateway.</p>
+    pub fn get_gateway_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_display_name
     }
     /// Consumes the builder and constructs a [`UpdateGatewayInformationInput`](crate::operation::update_gateway_information::UpdateGatewayInformationInput).
     pub fn build(

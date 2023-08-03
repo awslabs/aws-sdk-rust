@@ -46,6 +46,10 @@ impl TrackingInformationBuilder {
         self.tracking_number = input;
         self
     }
+    /// <p>The tracking number of the shipment.</p>
+    pub fn get_tracking_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tracking_number
+    }
     /// Consumes the builder and constructs a [`TrackingInformation`](crate::types::TrackingInformation).
     pub fn build(self) -> crate::types::TrackingInformation {
         crate::types::TrackingInformation {

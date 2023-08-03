@@ -104,6 +104,10 @@ impl MessageConfigurationBuilder {
         self.adm_message = input;
         self
     }
+    /// <p>The message that the campaign sends through the ADM (Amazon Device Messaging) channel. If specified, this message overrides the default message.</p>
+    pub fn get_adm_message(&self) -> &::std::option::Option<crate::types::Message> {
+        &self.adm_message
+    }
     /// <p>The message that the campaign sends through the APNs (Apple Push Notification service) channel. If specified, this message overrides the default message.</p>
     pub fn apns_message(mut self, input: crate::types::Message) -> Self {
         self.apns_message = ::std::option::Option::Some(input);
@@ -113,6 +117,10 @@ impl MessageConfigurationBuilder {
     pub fn set_apns_message(mut self, input: ::std::option::Option<crate::types::Message>) -> Self {
         self.apns_message = input;
         self
+    }
+    /// <p>The message that the campaign sends through the APNs (Apple Push Notification service) channel. If specified, this message overrides the default message.</p>
+    pub fn get_apns_message(&self) -> &::std::option::Option<crate::types::Message> {
+        &self.apns_message
     }
     /// <p>The message that the campaign sends through the Baidu (Baidu Cloud Push) channel. If specified, this message overrides the default message.</p>
     pub fn baidu_message(mut self, input: crate::types::Message) -> Self {
@@ -127,6 +135,10 @@ impl MessageConfigurationBuilder {
         self.baidu_message = input;
         self
     }
+    /// <p>The message that the campaign sends through the Baidu (Baidu Cloud Push) channel. If specified, this message overrides the default message.</p>
+    pub fn get_baidu_message(&self) -> &::std::option::Option<crate::types::Message> {
+        &self.baidu_message
+    }
     /// <p>The message that the campaign sends through a custom channel, as specified by the delivery configuration (CustomDeliveryConfiguration) settings for the campaign. If specified, this message overrides the default message.</p>
     pub fn custom_message(mut self, input: crate::types::CampaignCustomMessage) -> Self {
         self.custom_message = ::std::option::Option::Some(input);
@@ -139,6 +151,12 @@ impl MessageConfigurationBuilder {
     ) -> Self {
         self.custom_message = input;
         self
+    }
+    /// <p>The message that the campaign sends through a custom channel, as specified by the delivery configuration (CustomDeliveryConfiguration) settings for the campaign. If specified, this message overrides the default message.</p>
+    pub fn get_custom_message(
+        &self,
+    ) -> &::std::option::Option<crate::types::CampaignCustomMessage> {
+        &self.custom_message
     }
     /// <p>The default message that the campaign sends through all the channels that are configured for the campaign.</p>
     pub fn default_message(mut self, input: crate::types::Message) -> Self {
@@ -153,6 +171,10 @@ impl MessageConfigurationBuilder {
         self.default_message = input;
         self
     }
+    /// <p>The default message that the campaign sends through all the channels that are configured for the campaign.</p>
+    pub fn get_default_message(&self) -> &::std::option::Option<crate::types::Message> {
+        &self.default_message
+    }
     /// <p>The message that the campaign sends through the email channel. If specified, this message overrides the default message.</p>
     pub fn email_message(mut self, input: crate::types::CampaignEmailMessage) -> Self {
         self.email_message = ::std::option::Option::Some(input);
@@ -166,6 +188,10 @@ impl MessageConfigurationBuilder {
         self.email_message = input;
         self
     }
+    /// <p>The message that the campaign sends through the email channel. If specified, this message overrides the default message.</p>
+    pub fn get_email_message(&self) -> &::std::option::Option<crate::types::CampaignEmailMessage> {
+        &self.email_message
+    }
     /// <p>The message that the campaign sends through the GCM channel, which enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service. If specified, this message overrides the default message.</p>
     pub fn gcm_message(mut self, input: crate::types::Message) -> Self {
         self.gcm_message = ::std::option::Option::Some(input);
@@ -175,6 +201,10 @@ impl MessageConfigurationBuilder {
     pub fn set_gcm_message(mut self, input: ::std::option::Option<crate::types::Message>) -> Self {
         self.gcm_message = input;
         self
+    }
+    /// <p>The message that the campaign sends through the GCM channel, which enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service. If specified, this message overrides the default message.</p>
+    pub fn get_gcm_message(&self) -> &::std::option::Option<crate::types::Message> {
+        &self.gcm_message
     }
     /// <p>The message that the campaign sends through the SMS channel. If specified, this message overrides the default message.</p>
     pub fn sms_message(mut self, input: crate::types::CampaignSmsMessage) -> Self {
@@ -189,6 +219,10 @@ impl MessageConfigurationBuilder {
         self.sms_message = input;
         self
     }
+    /// <p>The message that the campaign sends through the SMS channel. If specified, this message overrides the default message.</p>
+    pub fn get_sms_message(&self) -> &::std::option::Option<crate::types::CampaignSmsMessage> {
+        &self.sms_message
+    }
     /// <p>The in-app message configuration.</p>
     pub fn in_app_message(mut self, input: crate::types::CampaignInAppMessage) -> Self {
         self.in_app_message = ::std::option::Option::Some(input);
@@ -201,6 +235,10 @@ impl MessageConfigurationBuilder {
     ) -> Self {
         self.in_app_message = input;
         self
+    }
+    /// <p>The in-app message configuration.</p>
+    pub fn get_in_app_message(&self) -> &::std::option::Option<crate::types::CampaignInAppMessage> {
+        &self.in_app_message
     }
     /// Consumes the builder and constructs a [`MessageConfiguration`](crate::types::MessageConfiguration).
     pub fn build(self) -> crate::types::MessageConfiguration {

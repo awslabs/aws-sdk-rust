@@ -36,6 +36,10 @@ impl DescribeTransitGatewayRouteTableAnnouncementsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeTransitGatewayRouteTableAnnouncements as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_transit_gateway_route_table_announcements::builders::DescribeTransitGatewayRouteTableAnnouncementsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -120,6 +124,13 @@ impl DescribeTransitGatewayRouteTableAnnouncementsFluentBuilder {
             .set_transit_gateway_route_table_announcement_ids(input);
         self
     }
+    /// <p>The IDs of the transit gateway route tables that are being advertised.</p>
+    pub fn get_transit_gateway_route_table_announcement_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner
+            .get_transit_gateway_route_table_announcement_ids()
+    }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -137,6 +148,10 @@ impl DescribeTransitGatewayRouteTableAnnouncementsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>The filters associated with the transit gateway policy table.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
+    }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -146,6 +161,10 @@ impl DescribeTransitGatewayRouteTableAnnouncementsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -157,6 +176,10 @@ impl DescribeTransitGatewayRouteTableAnnouncementsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token for the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -166,5 +189,9 @@ impl DescribeTransitGatewayRouteTableAnnouncementsFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

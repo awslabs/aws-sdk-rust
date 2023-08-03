@@ -48,6 +48,10 @@ impl SignatureDetectionBuilder {
         self.confidence = input;
         self
     }
+    /// <p>The confidence, from 0 to 100, in the predicted values for a detected signature.</p>
+    pub fn get_confidence(&self) -> &::std::option::Option<f32> {
+        &self.confidence
+    }
     /// <p>Information about where the following items are located on a document page: detected page, text, key-value pairs, tables, table cells, and selection elements.</p>
     pub fn geometry(mut self, input: crate::types::Geometry) -> Self {
         self.geometry = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl SignatureDetectionBuilder {
     pub fn set_geometry(mut self, input: ::std::option::Option<crate::types::Geometry>) -> Self {
         self.geometry = input;
         self
+    }
+    /// <p>Information about where the following items are located on a document page: detected page, text, key-value pairs, tables, table cells, and selection elements.</p>
+    pub fn get_geometry(&self) -> &::std::option::Option<crate::types::Geometry> {
+        &self.geometry
     }
     /// Consumes the builder and constructs a [`SignatureDetection`](crate::types::SignatureDetection).
     pub fn build(self) -> crate::types::SignatureDetection {

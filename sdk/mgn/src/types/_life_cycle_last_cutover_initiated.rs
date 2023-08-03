@@ -54,6 +54,10 @@ impl LifeCycleLastCutoverInitiatedBuilder {
         self.api_call_date_time = input;
         self
     }
+    /// <p></p>
+    pub fn get_api_call_date_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_call_date_time
+    }
     /// <p>Lifecycle last Cutover initiated by Job ID.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl LifeCycleLastCutoverInitiatedBuilder {
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_id = input;
         self
+    }
+    /// <p>Lifecycle last Cutover initiated by Job ID.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
     }
     /// Consumes the builder and constructs a [`LifeCycleLastCutoverInitiated`](crate::types::LifeCycleLastCutoverInitiated).
     pub fn build(self) -> crate::types::LifeCycleLastCutoverInitiated {

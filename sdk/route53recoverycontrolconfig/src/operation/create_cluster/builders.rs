@@ -36,6 +36,12 @@ impl CreateClusterFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateCluster as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_cluster::builders::CreateClusterInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl CreateClusterFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>The name of the cluster.</p>
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_name(input.into());
@@ -127,6 +137,10 @@ impl CreateClusterFluentBuilder {
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_name(input);
         self
+    }
+    /// <p>The name of the cluster.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_name()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -150,5 +164,13 @@ impl CreateClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags associated with the cluster.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

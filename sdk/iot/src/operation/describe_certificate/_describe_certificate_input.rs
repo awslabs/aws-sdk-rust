@@ -47,6 +47,10 @@ impl DescribeCertificateInputBuilder {
         self.certificate_id = input;
         self
     }
+    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
+    pub fn get_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_id
+    }
     /// Consumes the builder and constructs a [`DescribeCertificateInput`](crate::operation::describe_certificate::DescribeCertificateInput).
     pub fn build(
         self,

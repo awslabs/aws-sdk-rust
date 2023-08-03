@@ -43,6 +43,10 @@ impl EvaluationAnswerInputBuilder {
         self.value = input;
         self
     }
+    /// <p>The value for an answer in a contact evaluation.</p>
+    pub fn get_value(&self) -> &::std::option::Option<crate::types::EvaluationAnswerData> {
+        &self.value
+    }
     /// Consumes the builder and constructs a [`EvaluationAnswerInput`](crate::types::EvaluationAnswerInput).
     pub fn build(self) -> crate::types::EvaluationAnswerInput {
         crate::types::EvaluationAnswerInput { value: self.value }

@@ -64,6 +64,10 @@ impl TraceBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier for the request that generated the trace's segments and subsegments.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The length of time in seconds between the start time of the root segment and the end time of the last segment that completed.</p>
     pub fn duration(mut self, input: f64) -> Self {
         self.duration = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl TraceBuilder {
         self.duration = input;
         self
     }
+    /// <p>The length of time in seconds between the start time of the root segment and the end time of the last segment that completed.</p>
+    pub fn get_duration(&self) -> &::std::option::Option<f64> {
+        &self.duration
+    }
     /// <p>LimitExceeded is set to true when the trace has exceeded the <code>Trace document size</code> limit. For more information about this limit and other X-Ray limits and quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web Services X-Ray endpoints and quotas</a>.</p>
     pub fn limit_exceeded(mut self, input: bool) -> Self {
         self.limit_exceeded = ::std::option::Option::Some(input);
@@ -83,6 +91,10 @@ impl TraceBuilder {
     pub fn set_limit_exceeded(mut self, input: ::std::option::Option<bool>) -> Self {
         self.limit_exceeded = input;
         self
+    }
+    /// <p>LimitExceeded is set to true when the trace has exceeded the <code>Trace document size</code> limit. For more information about this limit and other X-Ray limits and quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web Services X-Ray endpoints and quotas</a>.</p>
+    pub fn get_limit_exceeded(&self) -> &::std::option::Option<bool> {
+        &self.limit_exceeded
     }
     /// Appends an item to `segments`.
     ///
@@ -102,6 +114,10 @@ impl TraceBuilder {
     ) -> Self {
         self.segments = input;
         self
+    }
+    /// <p>Segment documents for the segments and subsegments that comprise the trace.</p>
+    pub fn get_segments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Segment>> {
+        &self.segments
     }
     /// Consumes the builder and constructs a [`Trace`](crate::types::Trace).
     pub fn build(self) -> crate::types::Trace {

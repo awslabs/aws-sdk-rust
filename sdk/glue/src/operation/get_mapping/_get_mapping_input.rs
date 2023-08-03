@@ -55,6 +55,10 @@ impl GetMappingInputBuilder {
         self.source = input;
         self
     }
+    /// <p>Specifies the source table.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::CatalogEntry> {
+        &self.source
+    }
     /// Appends an item to `sinks`.
     ///
     /// To override the contents of this collection use [`set_sinks`](Self::set_sinks).
@@ -74,6 +78,10 @@ impl GetMappingInputBuilder {
         self.sinks = input;
         self
     }
+    /// <p>A list of target tables.</p>
+    pub fn get_sinks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CatalogEntry>> {
+        &self.sinks
+    }
     /// <p>Parameters for the mapping.</p>
     pub fn location(mut self, input: crate::types::Location) -> Self {
         self.location = ::std::option::Option::Some(input);
@@ -83,6 +91,10 @@ impl GetMappingInputBuilder {
     pub fn set_location(mut self, input: ::std::option::Option<crate::types::Location>) -> Self {
         self.location = input;
         self
+    }
+    /// <p>Parameters for the mapping.</p>
+    pub fn get_location(&self) -> &::std::option::Option<crate::types::Location> {
+        &self.location
     }
     /// Consumes the builder and constructs a [`GetMappingInput`](crate::operation::get_mapping::GetMappingInput).
     pub fn build(

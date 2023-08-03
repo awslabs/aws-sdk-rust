@@ -45,6 +45,10 @@ impl StopSolutionVersionCreationInputBuilder {
         self.solution_version_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the solution version you want to stop creating.</p>
+    pub fn get_solution_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.solution_version_arn
+    }
     /// Consumes the builder and constructs a [`StopSolutionVersionCreationInput`](crate::operation::stop_solution_version_creation::StopSolutionVersionCreationInput).
     pub fn build(
         self,

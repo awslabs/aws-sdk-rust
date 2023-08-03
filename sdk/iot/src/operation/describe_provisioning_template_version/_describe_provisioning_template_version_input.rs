@@ -53,6 +53,10 @@ impl DescribeProvisioningTemplateVersionInputBuilder {
         self.template_name = input;
         self
     }
+    /// <p>The template name.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
     /// <p>The provisioning template version ID.</p>
     pub fn version_id(mut self, input: i32) -> Self {
         self.version_id = ::std::option::Option::Some(input);
@@ -62,6 +66,10 @@ impl DescribeProvisioningTemplateVersionInputBuilder {
     pub fn set_version_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.version_id = input;
         self
+    }
+    /// <p>The provisioning template version ID.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<i32> {
+        &self.version_id
     }
     /// Consumes the builder and constructs a [`DescribeProvisioningTemplateVersionInput`](crate::operation::describe_provisioning_template_version::DescribeProvisioningTemplateVersionInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_provisioning_template_version::DescribeProvisioningTemplateVersionInput, ::aws_smithy_http::operation::error::BuildError>{

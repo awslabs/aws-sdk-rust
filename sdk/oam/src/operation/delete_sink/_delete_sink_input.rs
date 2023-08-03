@@ -39,6 +39,10 @@ impl DeleteSinkInputBuilder {
         self.identifier = input;
         self
     }
+    /// <p>The ARN of the sink to delete.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
+    }
     /// Consumes the builder and constructs a [`DeleteSinkInput`](crate::operation::delete_sink::DeleteSinkInput).
     pub fn build(
         self,

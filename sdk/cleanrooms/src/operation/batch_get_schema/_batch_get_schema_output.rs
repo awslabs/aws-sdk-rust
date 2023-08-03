@@ -63,6 +63,10 @@ impl BatchGetSchemaOutputBuilder {
         self.schemas = input;
         self
     }
+    /// <p>The retrieved list of schemas.</p>
+    pub fn get_schemas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Schema>> {
+        &self.schemas
+    }
     /// Appends an item to `errors`.
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
@@ -81,6 +85,12 @@ impl BatchGetSchemaOutputBuilder {
     ) -> Self {
         self.errors = input;
         self
+    }
+    /// <p>Error reasons for schemas that could not be retrieved. One error is returned for every schema that could not be retrieved.</p>
+    pub fn get_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetSchemaError>> {
+        &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -53,6 +53,12 @@ impl DescribeActivationsFilterBuilder {
         self.filter_key = input;
         self
     }
+    /// <p>The name of the filter.</p>
+    pub fn get_filter_key(
+        &self,
+    ) -> &::std::option::Option<crate::types::DescribeActivationsFilterKeys> {
+        &self.filter_key
+    }
     /// Appends an item to `filter_values`.
     ///
     /// To override the contents of this collection use [`set_filter_values`](Self::set_filter_values).
@@ -74,6 +80,12 @@ impl DescribeActivationsFilterBuilder {
     ) -> Self {
         self.filter_values = input;
         self
+    }
+    /// <p>The filter values.</p>
+    pub fn get_filter_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.filter_values
     }
     /// Consumes the builder and constructs a [`DescribeActivationsFilter`](crate::types::DescribeActivationsFilter).
     pub fn build(self) -> crate::types::DescribeActivationsFilter {

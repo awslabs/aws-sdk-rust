@@ -77,6 +77,10 @@ impl DeleteBackupPlanOutputBuilder {
         self.backup_plan_id = input;
         self
     }
+    /// <p>Uniquely identifies a backup plan.</p>
+    pub fn get_backup_plan_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_plan_id
+    }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup plan; for example, <code>arn:aws:backup:us-east-1:123456789012:plan:8F81F553-3A74-4A3F-B93D-B3360DC80C50</code>.</p>
     pub fn backup_plan_arn(
         mut self,
@@ -93,6 +97,10 @@ impl DeleteBackupPlanOutputBuilder {
         self.backup_plan_arn = input;
         self
     }
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup plan; for example, <code>arn:aws:backup:us-east-1:123456789012:plan:8F81F553-3A74-4A3F-B93D-B3360DC80C50</code>.</p>
+    pub fn get_backup_plan_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_plan_arn
+    }
     /// <p>The date and time a backup plan is deleted, in Unix format and Coordinated Universal Time (UTC). The value of <code>DeletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn deletion_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.deletion_date = ::std::option::Option::Some(input);
@@ -106,6 +114,10 @@ impl DeleteBackupPlanOutputBuilder {
         self.deletion_date = input;
         self
     }
+    /// <p>The date and time a backup plan is deleted, in Unix format and Coordinated Universal Time (UTC). The value of <code>DeletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    pub fn get_deletion_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.deletion_date
+    }
     /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs cannot be edited.</p>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_id = ::std::option::Option::Some(input.into());
@@ -115,6 +127,10 @@ impl DeleteBackupPlanOutputBuilder {
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_id = input;
         self
+    }
+    /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs cannot be edited.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -36,6 +36,12 @@ impl ImportApiKeysFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ImportApiKeys as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::import_api_keys::builders::ImportApiKeysInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl ImportApiKeysFluentBuilder {
         self.inner = self.inner.set_body(input);
         self
     }
+    /// <p>The payload of the POST request to import API keys. For the payload format, see API Key File Format.</p>
+    pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        self.inner.get_body()
+    }
     /// <p>A query parameter to specify the input format to imported API keys. Currently, only the <code>csv</code> format is supported.</p>
     pub fn format(mut self, input: crate::types::ApiKeysFormat) -> Self {
         self.inner = self.inner.format(input);
@@ -128,6 +138,10 @@ impl ImportApiKeysFluentBuilder {
         self.inner = self.inner.set_format(input);
         self
     }
+    /// <p>A query parameter to specify the input format to imported API keys. Currently, only the <code>csv</code> format is supported.</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::ApiKeysFormat> {
+        self.inner.get_format()
+    }
     /// <p>A query parameter to indicate whether to rollback ApiKey importation (<code>true</code>) or not (<code>false</code>) when error is encountered.</p>
     pub fn fail_on_warnings(mut self, input: bool) -> Self {
         self.inner = self.inner.fail_on_warnings(input);
@@ -137,5 +151,9 @@ impl ImportApiKeysFluentBuilder {
     pub fn set_fail_on_warnings(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_fail_on_warnings(input);
         self
+    }
+    /// <p>A query parameter to indicate whether to rollback ApiKey importation (<code>true</code>) or not (<code>false</code>) when error is encountered.</p>
+    pub fn get_fail_on_warnings(&self) -> &::std::option::Option<bool> {
+        self.inner.get_fail_on_warnings()
     }
 }

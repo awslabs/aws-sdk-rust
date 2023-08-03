@@ -66,6 +66,10 @@ impl DataSourceCredentialsBuilder {
         self.credential_pair = input;
         self
     }
+    /// <p>Credential pair. For more information, see <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CredentialPair.html">CredentialPair</a> </code>.</p>
+    pub fn get_credential_pair(&self) -> &::std::option::Option<crate::types::CredentialPair> {
+        &self.credential_pair
+    }
     /// <p>The Amazon Resource Name (ARN) of a data source that has the credential pair that you want to use. When <code>CopySourceArn</code> is not null, the credential pair from the data source in the ARN is used as the credentials for the <code>DataSourceCredentials</code> structure.</p>
     pub fn copy_source_arn(
         mut self,
@@ -82,6 +86,10 @@ impl DataSourceCredentialsBuilder {
         self.copy_source_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of a data source that has the credential pair that you want to use. When <code>CopySourceArn</code> is not null, the credential pair from the data source in the ARN is used as the credentials for the <code>DataSourceCredentials</code> structure.</p>
+    pub fn get_copy_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.copy_source_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the secret associated with the data source in Amazon Secrets Manager.</p>
     pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_arn = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl DataSourceCredentialsBuilder {
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the secret associated with the data source in Amazon Secrets Manager.</p>
+    pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_arn
     }
     /// Consumes the builder and constructs a [`DataSourceCredentials`](crate::types::DataSourceCredentials).
     pub fn build(self) -> crate::types::DataSourceCredentials {

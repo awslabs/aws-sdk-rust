@@ -53,6 +53,11 @@ impl PathPatternConditionConfigBuilder {
         self.values = input;
         self
     }
+    /// <p>The path patterns to compare against the request URL. The maximum size of each string is 128 characters. The comparison is case sensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
+    /// <p>If you specify multiple strings, the condition is satisfied if one of them matches the request URL. The path pattern is compared only to the path of the URL, not to its query string. To compare against the query string, use <code>QueryStringConditionConfig</code>.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
+    }
     /// Consumes the builder and constructs a [`PathPatternConditionConfig`](crate::types::PathPatternConditionConfig).
     pub fn build(self) -> crate::types::PathPatternConditionConfig {
         crate::types::PathPatternConditionConfig {

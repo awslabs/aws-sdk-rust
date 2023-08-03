@@ -42,6 +42,10 @@ impl CreateMediaCapturePipelineFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateMediaCapturePipeline as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_media_capture_pipeline::builders::CreateMediaCapturePipelineInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +139,10 @@ impl CreateMediaCapturePipelineFluentBuilder {
         self.inner = self.inner.set_source_type(input);
         self
     }
+    /// <p>Source type from which the media artifacts will be captured. A Chime SDK Meeting is the only supported source.</p>
+    pub fn get_source_type(&self) -> &::std::option::Option<crate::types::MediaPipelineSourceType> {
+        self.inner.get_source_type()
+    }
     /// <p>ARN of the source from which the media artifacts are captured.</p>
     pub fn source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_arn(input.into());
@@ -144,6 +152,10 @@ impl CreateMediaCapturePipelineFluentBuilder {
     pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_arn(input);
         self
+    }
+    /// <p>ARN of the source from which the media artifacts are captured.</p>
+    pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_arn()
     }
     /// <p>Destination type to which the media artifacts are saved. You must use an S3 bucket. </p>
     pub fn sink_type(mut self, input: crate::types::MediaPipelineSinkType) -> Self {
@@ -158,6 +170,10 @@ impl CreateMediaCapturePipelineFluentBuilder {
         self.inner = self.inner.set_sink_type(input);
         self
     }
+    /// <p>Destination type to which the media artifacts are saved. You must use an S3 bucket. </p>
+    pub fn get_sink_type(&self) -> &::std::option::Option<crate::types::MediaPipelineSinkType> {
+        self.inner.get_sink_type()
+    }
     /// <p>The ARN of the sink type.</p>
     pub fn sink_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sink_arn(input.into());
@@ -167,6 +183,10 @@ impl CreateMediaCapturePipelineFluentBuilder {
     pub fn set_sink_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sink_arn(input);
         self
+    }
+    /// <p>The ARN of the sink type.</p>
+    pub fn get_sink_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sink_arn()
     }
     /// <p>The unique identifier for the client request. The token makes the API request idempotent. Use a different token for different media pipeline requests.</p>
     pub fn client_request_token(
@@ -184,6 +204,10 @@ impl CreateMediaCapturePipelineFluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
+    /// <p>The unique identifier for the client request. The token makes the API request idempotent. Use a different token for different media pipeline requests.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
+    }
     /// <p>The configuration for a specified media capture pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
     pub fn chime_sdk_meeting_configuration(
         mut self,
@@ -199,5 +223,11 @@ impl CreateMediaCapturePipelineFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_chime_sdk_meeting_configuration(input);
         self
+    }
+    /// <p>The configuration for a specified media capture pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
+    pub fn get_chime_sdk_meeting_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ChimeSdkMeetingConfiguration> {
+        self.inner.get_chime_sdk_meeting_configuration()
     }
 }

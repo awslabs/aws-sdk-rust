@@ -50,6 +50,12 @@ impl CreateDistributionWithTagsInputBuilder {
         self.distribution_config_with_tags = input;
         self
     }
+    /// <p>The distribution's configuration information.</p>
+    pub fn get_distribution_config_with_tags(
+        &self,
+    ) -> &::std::option::Option<crate::types::DistributionConfigWithTags> {
+        &self.distribution_config_with_tags
+    }
     /// Consumes the builder and constructs a [`CreateDistributionWithTagsInput`](crate::operation::create_distribution_with_tags::CreateDistributionWithTagsInput).
     pub fn build(
         self,

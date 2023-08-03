@@ -94,6 +94,11 @@ impl DescribeBundleTasksInputBuilder {
         self.bundle_ids = input;
         self
     }
+    /// <p>The bundle task IDs.</p>
+    /// <p>Default: Describes all your bundle tasks.</p>
+    pub fn get_bundle_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.bundle_ids
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -137,6 +142,22 @@ impl DescribeBundleTasksInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>The filters.</p>
+    /// <ul>
+    /// <li> <p> <code>bundle-id</code> - The ID of the bundle task.</p> </li>
+    /// <li> <p> <code>error-code</code> - If the task failed, the error code returned.</p> </li>
+    /// <li> <p> <code>error-message</code> - If the task failed, the error message returned.</p> </li>
+    /// <li> <p> <code>instance-id</code> - The ID of the instance.</p> </li>
+    /// <li> <p> <code>progress</code> - The level of task completion, as a percentage (for example, 20%).</p> </li>
+    /// <li> <p> <code>s3-bucket</code> - The Amazon S3 bucket to store the AMI.</p> </li>
+    /// <li> <p> <code>s3-prefix</code> - The beginning of the AMI name.</p> </li>
+    /// <li> <p> <code>start-time</code> - The time the task started (for example, 2013-09-15T17:15:20.000Z).</p> </li>
+    /// <li> <p> <code>state</code> - The state of the task (<code>pending</code> | <code>waiting-for-shutdown</code> | <code>bundling</code> | <code>storing</code> | <code>cancelling</code> | <code>complete</code> | <code>failed</code>).</p> </li>
+    /// <li> <p> <code>update-time</code> - The time of the most recent update for the task.</p> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -146,6 +167,10 @@ impl DescribeBundleTasksInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`DescribeBundleTasksInput`](crate::operation::describe_bundle_tasks::DescribeBundleTasksInput).
     pub fn build(

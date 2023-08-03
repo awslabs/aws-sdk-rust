@@ -36,6 +36,12 @@ impl DescribeSnapshotsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeSnapshots as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_snapshots::builders::DescribeSnapshotsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl DescribeSnapshotsFluentBuilder {
         self.inner = self.inner.set_cluster_name(input);
         self
     }
+    /// <p>A user-supplied cluster identifier. If this parameter is specified, only snapshots associated with that specific cluster are described.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_name()
+    }
     /// <p>A user-supplied name of the snapshot. If this parameter is specified, only this named snapshot is described.</p>
     pub fn snapshot_name(
         mut self,
@@ -153,6 +163,10 @@ impl DescribeSnapshotsFluentBuilder {
         self.inner = self.inner.set_snapshot_name(input);
         self
     }
+    /// <p>A user-supplied name of the snapshot. If this parameter is specified, only this named snapshot is described.</p>
+    pub fn get_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_snapshot_name()
+    }
     /// <p>If set to system, the output shows snapshots that were automatically created by MemoryDB. If set to user the output shows snapshots that were manually created. If omitted, the output shows both automatically and manually created snapshots.</p>
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source(input.into());
@@ -162,6 +176,10 @@ impl DescribeSnapshotsFluentBuilder {
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source(input);
         self
+    }
+    /// <p>If set to system, the output shows snapshots that were automatically created by MemoryDB. If set to user the output shows snapshots that were manually created. If omitted, the output shows both automatically and manually created snapshots.</p>
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source()
     }
     /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -173,6 +191,10 @@ impl DescribeSnapshotsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -183,6 +205,10 @@ impl DescribeSnapshotsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>A Boolean value which if true, the shard configuration is included in the snapshot description.</p>
     pub fn show_detail(mut self, input: bool) -> Self {
         self.inner = self.inner.show_detail(input);
@@ -192,5 +218,9 @@ impl DescribeSnapshotsFluentBuilder {
     pub fn set_show_detail(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_show_detail(input);
         self
+    }
+    /// <p>A Boolean value which if true, the shard configuration is included in the snapshot description.</p>
+    pub fn get_show_detail(&self) -> &::std::option::Option<bool> {
+        self.inner.get_show_detail()
     }
 }

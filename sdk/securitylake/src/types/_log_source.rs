@@ -56,6 +56,10 @@ impl LogSourceBuilder {
         self.account = input;
         self
     }
+    /// <p>Specify the account from which you want to collect logs.</p>
+    pub fn get_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account
+    }
     /// <p>Specify the Regions from which you want to collect logs.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl LogSourceBuilder {
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
+    }
+    /// <p>Specify the Regions from which you want to collect logs.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
     }
     /// Appends an item to `sources`.
     ///
@@ -84,6 +92,12 @@ impl LogSourceBuilder {
     ) -> Self {
         self.sources = input;
         self
+    }
+    /// <p>Specify the sources from which you want to collect logs.</p>
+    pub fn get_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>> {
+        &self.sources
     }
     /// Consumes the builder and constructs a [`LogSource`](crate::types::LogSource).
     pub fn build(self) -> crate::types::LogSource {

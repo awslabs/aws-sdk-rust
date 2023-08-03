@@ -143,6 +143,10 @@ impl LambdaConfigTypeBuilder {
         self.pre_sign_up = input;
         self
     }
+    /// <p>A pre-registration Lambda trigger.</p>
+    pub fn get_pre_sign_up(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pre_sign_up
+    }
     /// <p>A custom Message Lambda trigger.</p>
     pub fn custom_message(
         mut self,
@@ -158,6 +162,10 @@ impl LambdaConfigTypeBuilder {
     ) -> Self {
         self.custom_message = input;
         self
+    }
+    /// <p>A custom Message Lambda trigger.</p>
+    pub fn get_custom_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_message
     }
     /// <p>A post-confirmation Lambda trigger.</p>
     pub fn post_confirmation(
@@ -175,6 +183,10 @@ impl LambdaConfigTypeBuilder {
         self.post_confirmation = input;
         self
     }
+    /// <p>A post-confirmation Lambda trigger.</p>
+    pub fn get_post_confirmation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.post_confirmation
+    }
     /// <p>A pre-authentication Lambda trigger.</p>
     pub fn pre_authentication(
         mut self,
@@ -190,6 +202,10 @@ impl LambdaConfigTypeBuilder {
     ) -> Self {
         self.pre_authentication = input;
         self
+    }
+    /// <p>A pre-authentication Lambda trigger.</p>
+    pub fn get_pre_authentication(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pre_authentication
     }
     /// <p>A post-authentication Lambda trigger.</p>
     pub fn post_authentication(
@@ -207,6 +223,10 @@ impl LambdaConfigTypeBuilder {
         self.post_authentication = input;
         self
     }
+    /// <p>A post-authentication Lambda trigger.</p>
+    pub fn get_post_authentication(&self) -> &::std::option::Option<::std::string::String> {
+        &self.post_authentication
+    }
     /// <p>Defines the authentication challenge.</p>
     pub fn define_auth_challenge(
         mut self,
@@ -222,6 +242,10 @@ impl LambdaConfigTypeBuilder {
     ) -> Self {
         self.define_auth_challenge = input;
         self
+    }
+    /// <p>Defines the authentication challenge.</p>
+    pub fn get_define_auth_challenge(&self) -> &::std::option::Option<::std::string::String> {
+        &self.define_auth_challenge
     }
     /// <p>Creates an authentication challenge.</p>
     pub fn create_auth_challenge(
@@ -239,6 +263,10 @@ impl LambdaConfigTypeBuilder {
         self.create_auth_challenge = input;
         self
     }
+    /// <p>Creates an authentication challenge.</p>
+    pub fn get_create_auth_challenge(&self) -> &::std::option::Option<::std::string::String> {
+        &self.create_auth_challenge
+    }
     /// <p>Verifies the authentication challenge response.</p>
     pub fn verify_auth_challenge_response(
         mut self,
@@ -254,6 +282,12 @@ impl LambdaConfigTypeBuilder {
     ) -> Self {
         self.verify_auth_challenge_response = input;
         self
+    }
+    /// <p>Verifies the authentication challenge response.</p>
+    pub fn get_verify_auth_challenge_response(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.verify_auth_challenge_response
     }
     /// <p>A Lambda trigger that is invoked before token generation.</p>
     pub fn pre_token_generation(
@@ -271,6 +305,10 @@ impl LambdaConfigTypeBuilder {
         self.pre_token_generation = input;
         self
     }
+    /// <p>A Lambda trigger that is invoked before token generation.</p>
+    pub fn get_pre_token_generation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pre_token_generation
+    }
     /// <p>The user migration Lambda config type.</p>
     pub fn user_migration(
         mut self,
@@ -286,6 +324,10 @@ impl LambdaConfigTypeBuilder {
     ) -> Self {
         self.user_migration = input;
         self
+    }
+    /// <p>The user migration Lambda config type.</p>
+    pub fn get_user_migration(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_migration
     }
     /// <p>A custom SMS sender Lambda trigger.</p>
     pub fn custom_sms_sender(
@@ -303,6 +345,12 @@ impl LambdaConfigTypeBuilder {
         self.custom_sms_sender = input;
         self
     }
+    /// <p>A custom SMS sender Lambda trigger.</p>
+    pub fn get_custom_sms_sender(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomSmsLambdaVersionConfigType> {
+        &self.custom_sms_sender
+    }
     /// <p>A custom email sender Lambda trigger.</p>
     pub fn custom_email_sender(
         mut self,
@@ -319,6 +367,12 @@ impl LambdaConfigTypeBuilder {
         self.custom_email_sender = input;
         self
     }
+    /// <p>A custom email sender Lambda trigger.</p>
+    pub fn get_custom_email_sender(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomEmailLambdaVersionConfigType> {
+        &self.custom_email_sender
+    }
     /// <p>The Amazon Resource Name (ARN) of an <a href="/kms/latest/developerguide/concepts.html#master_keys">KMS key</a>. Amazon Cognito uses the key to encrypt codes and temporary passwords sent to <code>CustomEmailSender</code> and <code>CustomSMSSender</code>.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -328,6 +382,10 @@ impl LambdaConfigTypeBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an <a href="/kms/latest/developerguide/concepts.html#master_keys">KMS key</a>. Amazon Cognito uses the key to encrypt codes and temporary passwords sent to <code>CustomEmailSender</code> and <code>CustomSMSSender</code>.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// Consumes the builder and constructs a [`LambdaConfigType`](crate::types::LambdaConfigType).
     pub fn build(self) -> crate::types::LambdaConfigType {

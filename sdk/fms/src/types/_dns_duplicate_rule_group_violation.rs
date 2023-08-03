@@ -54,6 +54,10 @@ impl DnsDuplicateRuleGroupViolationBuilder {
         self.violation_target = input;
         self
     }
+    /// <p>Information about the VPC ID. </p>
+    pub fn get_violation_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.violation_target
+    }
     /// <p>A description of the violation that specifies the rule group and VPC.</p>
     pub fn violation_target_description(
         mut self,
@@ -69,6 +73,12 @@ impl DnsDuplicateRuleGroupViolationBuilder {
     ) -> Self {
         self.violation_target_description = input;
         self
+    }
+    /// <p>A description of the violation that specifies the rule group and VPC.</p>
+    pub fn get_violation_target_description(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.violation_target_description
     }
     /// Consumes the builder and constructs a [`DnsDuplicateRuleGroupViolation`](crate::types::DnsDuplicateRuleGroupViolation).
     pub fn build(self) -> crate::types::DnsDuplicateRuleGroupViolation {

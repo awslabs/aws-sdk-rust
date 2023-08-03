@@ -72,6 +72,12 @@ impl SecurityGroupRemediationActionBuilder {
         self.remediation_action_type = input;
         self
     }
+    /// <p>The remediation action that will be performed.</p>
+    pub fn get_remediation_action_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::RemediationActionType> {
+        &self.remediation_action_type
+    }
     /// <p>Brief description of the action that will be performed.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -81,6 +87,10 @@ impl SecurityGroupRemediationActionBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>Brief description of the action that will be performed.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The final state of the rule specified in the <code>ViolationTarget</code> after it is remediated.</p>
     pub fn remediation_result(mut self, input: crate::types::SecurityGroupRuleDescription) -> Self {
@@ -95,6 +105,12 @@ impl SecurityGroupRemediationActionBuilder {
         self.remediation_result = input;
         self
     }
+    /// <p>The final state of the rule specified in the <code>ViolationTarget</code> after it is remediated.</p>
+    pub fn get_remediation_result(
+        &self,
+    ) -> &::std::option::Option<crate::types::SecurityGroupRuleDescription> {
+        &self.remediation_result
+    }
     /// <p>Indicates if the current action is the default action.</p>
     pub fn is_default_action(mut self, input: bool) -> Self {
         self.is_default_action = ::std::option::Option::Some(input);
@@ -104,6 +120,10 @@ impl SecurityGroupRemediationActionBuilder {
     pub fn set_is_default_action(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_default_action = input;
         self
+    }
+    /// <p>Indicates if the current action is the default action.</p>
+    pub fn get_is_default_action(&self) -> &::std::option::Option<bool> {
+        &self.is_default_action
     }
     /// Consumes the builder and constructs a [`SecurityGroupRemediationAction`](crate::types::SecurityGroupRemediationAction).
     pub fn build(self) -> crate::types::SecurityGroupRemediationAction {

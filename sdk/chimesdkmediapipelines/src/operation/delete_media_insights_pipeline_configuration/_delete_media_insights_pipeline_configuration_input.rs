@@ -39,6 +39,10 @@ impl DeleteMediaInsightsPipelineConfigurationInputBuilder {
         self.identifier = input;
         self
     }
+    /// <p>The unique identifier of the resource to be deleted. Valid values include the name and ARN of the media insights pipeline configuration.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
+    }
     /// Consumes the builder and constructs a [`DeleteMediaInsightsPipelineConfigurationInput`](crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

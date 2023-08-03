@@ -54,6 +54,12 @@ impl CreateInAppTemplateInputBuilder {
         self.in_app_template_request = input;
         self
     }
+    /// <p>InApp Template Request.</p>
+    pub fn get_in_app_template_request(
+        &self,
+    ) -> &::std::option::Option<crate::types::InAppTemplateRequest> {
+        &self.in_app_template_request
+    }
     /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
     pub fn template_name(
         mut self,
@@ -69,6 +75,10 @@ impl CreateInAppTemplateInputBuilder {
     ) -> Self {
         self.template_name = input;
         self
+    }
+    /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
     }
     /// Consumes the builder and constructs a [`CreateInAppTemplateInput`](crate::operation::create_in_app_template::CreateInAppTemplateInput).
     pub fn build(

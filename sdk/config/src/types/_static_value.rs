@@ -49,6 +49,10 @@ impl StaticValueBuilder {
         self.values = input;
         self
     }
+    /// <p>A list of values. For example, the ARN of the assumed role. </p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
+    }
     /// Consumes the builder and constructs a [`StaticValue`](crate::types::StaticValue).
     pub fn build(self) -> crate::types::StaticValue {
         crate::types::StaticValue {

@@ -64,6 +64,10 @@ impl UpdateThemeDataBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique ID of the theme to update.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the theme to update.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl UpdateThemeDataBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the theme to update.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `values`.
     ///
@@ -93,6 +101,10 @@ impl UpdateThemeDataBuilder {
         self.values = input;
         self
     }
+    /// <p>A list of key-value pairs that define the theme's properties.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ThemeValues>> {
+        &self.values
+    }
     /// Appends an item to `overrides`.
     ///
     /// To override the contents of this collection use [`set_overrides`](Self::set_overrides).
@@ -111,6 +123,12 @@ impl UpdateThemeDataBuilder {
     ) -> Self {
         self.overrides = input;
         self
+    }
+    /// <p>Describes the properties that can be overriden to customize the theme.</p>
+    pub fn get_overrides(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ThemeValues>> {
+        &self.overrides
     }
     /// Consumes the builder and constructs a [`UpdateThemeData`](crate::types::UpdateThemeData).
     pub fn build(self) -> crate::types::UpdateThemeData {

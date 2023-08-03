@@ -129,6 +129,10 @@ impl DescribeAnomalyDetectorOutputBuilder {
         self.anomaly_detector_arn = input;
         self
     }
+    /// <p>The ARN of the detector.</p>
+    pub fn get_anomaly_detector_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.anomaly_detector_arn
+    }
     /// <p>The name of the detector.</p>
     pub fn anomaly_detector_name(
         mut self,
@@ -144,6 +148,10 @@ impl DescribeAnomalyDetectorOutputBuilder {
     ) -> Self {
         self.anomaly_detector_name = input;
         self
+    }
+    /// <p>The name of the detector.</p>
+    pub fn get_anomaly_detector_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.anomaly_detector_name
     }
     /// <p>A description of the detector.</p>
     pub fn anomaly_detector_description(
@@ -161,6 +169,12 @@ impl DescribeAnomalyDetectorOutputBuilder {
         self.anomaly_detector_description = input;
         self
     }
+    /// <p>A description of the detector.</p>
+    pub fn get_anomaly_detector_description(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.anomaly_detector_description
+    }
     /// <p>Contains information about the detector's configuration.</p>
     pub fn anomaly_detector_config(
         mut self,
@@ -177,6 +191,12 @@ impl DescribeAnomalyDetectorOutputBuilder {
         self.anomaly_detector_config = input;
         self
     }
+    /// <p>Contains information about the detector's configuration.</p>
+    pub fn get_anomaly_detector_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::AnomalyDetectorConfigSummary> {
+        &self.anomaly_detector_config
+    }
     /// <p>The time at which the detector was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -189,6 +209,10 @@ impl DescribeAnomalyDetectorOutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The time at which the detector was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The time at which the detector was last modified.</p>
     pub fn last_modification_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -203,6 +227,12 @@ impl DescribeAnomalyDetectorOutputBuilder {
         self.last_modification_time = input;
         self
     }
+    /// <p>The time at which the detector was last modified.</p>
+    pub fn get_last_modification_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modification_time
+    }
     /// <p>The status of the detector.</p>
     pub fn status(mut self, input: crate::types::AnomalyDetectorStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -215,6 +245,10 @@ impl DescribeAnomalyDetectorOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the detector.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AnomalyDetectorStatus> {
+        &self.status
     }
     /// <p>The reason that the detector failed.</p>
     pub fn failure_reason(
@@ -232,6 +266,10 @@ impl DescribeAnomalyDetectorOutputBuilder {
         self.failure_reason = input;
         self
     }
+    /// <p>The reason that the detector failed.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
+    }
     /// <p>The ARN of the KMS key to use to encrypt your data.</p>
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_arn = ::std::option::Option::Some(input.into());
@@ -241,6 +279,10 @@ impl DescribeAnomalyDetectorOutputBuilder {
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_arn = input;
         self
+    }
+    /// <p>The ARN of the KMS key to use to encrypt your data.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
     }
     /// <p>The process that caused the detector to fail.</p>
     pub fn failure_type(mut self, input: crate::types::AnomalyDetectorFailureType) -> Self {
@@ -254,6 +296,12 @@ impl DescribeAnomalyDetectorOutputBuilder {
     ) -> Self {
         self.failure_type = input;
         self
+    }
+    /// <p>The process that caused the detector to fail.</p>
+    pub fn get_failure_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::AnomalyDetectorFailureType> {
+        &self.failure_type
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

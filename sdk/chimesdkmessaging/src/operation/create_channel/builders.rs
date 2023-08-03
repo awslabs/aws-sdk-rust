@@ -39,6 +39,12 @@ impl CreateChannelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateChannel as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_channel::builders::CreateChannelInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl CreateChannelFluentBuilder {
         self.inner = self.inner.set_app_instance_arn(input);
         self
     }
+    /// <p>The ARN of the channel request.</p>
+    pub fn get_app_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_instance_arn()
+    }
     /// <p>The name of the channel.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -137,6 +147,10 @@ impl CreateChannelFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the channel.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators, moderators, and channel members can add themselves and other members to unrestricted channels. Only administrators and moderators can add members to restricted channels.</p>
     pub fn mode(mut self, input: crate::types::ChannelMode) -> Self {
         self.inner = self.inner.mode(input);
@@ -146,6 +160,10 @@ impl CreateChannelFluentBuilder {
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::ChannelMode>) -> Self {
         self.inner = self.inner.set_mode(input);
         self
+    }
+    /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators, moderators, and channel members can add themselves and other members to unrestricted channels. Only administrators and moderators can add members to restricted channels.</p>
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::ChannelMode> {
+        self.inner.get_mode()
     }
     /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private channels aren't discoverable by users outside the channel. Public channels are discoverable by anyone in the <code>AppInstance</code>.</p>
     pub fn privacy(mut self, input: crate::types::ChannelPrivacy) -> Self {
@@ -160,6 +178,10 @@ impl CreateChannelFluentBuilder {
         self.inner = self.inner.set_privacy(input);
         self
     }
+    /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private channels aren't discoverable by users outside the channel. Public channels are discoverable by anyone in the <code>AppInstance</code>.</p>
+    pub fn get_privacy(&self) -> &::std::option::Option<crate::types::ChannelPrivacy> {
+        self.inner.get_privacy()
+    }
     /// <p>The metadata of the creation request. Limited to 1KB and UTF-8.</p>
     pub fn metadata(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.metadata(input.into());
@@ -169,6 +191,10 @@ impl CreateChannelFluentBuilder {
     pub fn set_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_metadata(input);
         self
+    }
+    /// <p>The metadata of the creation request. Limited to 1KB and UTF-8.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_metadata()
     }
     /// <p>The client token for the request. An <code>Idempotency</code> token.</p>
     pub fn client_request_token(
@@ -185,6 +211,10 @@ impl CreateChannelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
+    }
+    /// <p>The client token for the request. An <code>Idempotency</code> token.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
     }
     /// Appends an item to `Tags`.
     ///
@@ -203,6 +233,10 @@ impl CreateChannelFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tags for the creation request.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.chime_bearer(input.into());
@@ -213,6 +247,10 @@ impl CreateChannelFluentBuilder {
         self.inner = self.inner.set_chime_bearer(input);
         self
     }
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
+    pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_chime_bearer()
+    }
     /// <p>The ID of the channel in the request.</p>
     pub fn channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.channel_id(input.into());
@@ -222,6 +260,10 @@ impl CreateChannelFluentBuilder {
     pub fn set_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_channel_id(input);
         self
+    }
+    /// <p>The ID of the channel in the request.</p>
+    pub fn get_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_id()
     }
     /// Appends an item to `MemberArns`.
     ///
@@ -239,6 +281,12 @@ impl CreateChannelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_member_arns(input);
         self
+    }
+    /// <p>The ARNs of the channel members in the request.</p>
+    pub fn get_member_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_member_arns()
     }
     /// Appends an item to `ModeratorArns`.
     ///
@@ -260,6 +308,12 @@ impl CreateChannelFluentBuilder {
         self.inner = self.inner.set_moderator_arns(input);
         self
     }
+    /// <p>The ARNs of the channel moderators in the request.</p>
+    pub fn get_moderator_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_moderator_arns()
+    }
     /// <p>The attributes required to configure and create an elastic channel. An elastic channel can support a maximum of 1-million users, excluding moderators.</p>
     pub fn elastic_channel_configuration(
         mut self,
@@ -276,6 +330,12 @@ impl CreateChannelFluentBuilder {
         self.inner = self.inner.set_elastic_channel_configuration(input);
         self
     }
+    /// <p>The attributes required to configure and create an elastic channel. An elastic channel can support a maximum of 1-million users, excluding moderators.</p>
+    pub fn get_elastic_channel_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ElasticChannelConfiguration> {
+        self.inner.get_elastic_channel_configuration()
+    }
     /// <p>Settings that control the interval after which the channel is automatically deleted.</p>
     pub fn expiration_settings(mut self, input: crate::types::ExpirationSettings) -> Self {
         self.inner = self.inner.expiration_settings(input);
@@ -288,5 +348,11 @@ impl CreateChannelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_expiration_settings(input);
         self
+    }
+    /// <p>Settings that control the interval after which the channel is automatically deleted.</p>
+    pub fn get_expiration_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExpirationSettings> {
+        self.inner.get_expiration_settings()
     }
 }

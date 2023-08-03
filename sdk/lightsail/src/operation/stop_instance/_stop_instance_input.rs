@@ -57,6 +57,10 @@ impl StopInstanceInputBuilder {
         self.instance_name = input;
         self
     }
+    /// <p>The name of the instance (a virtual private server) to stop.</p>
+    pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_name
+    }
     /// <p>When set to <code>True</code>, forces a Lightsail instance that is stuck in a <code>stopping</code> state to stop.</p> <important>
     /// <p>Only use the <code>force</code> parameter if your instance is stuck in the <code>stopping</code> state. In any other state, your instance should stop normally without adding this parameter to your API request.</p>
     /// </important>
@@ -70,6 +74,12 @@ impl StopInstanceInputBuilder {
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force = input;
         self
+    }
+    /// <p>When set to <code>True</code>, forces a Lightsail instance that is stuck in a <code>stopping</code> state to stop.</p> <important>
+    /// <p>Only use the <code>force</code> parameter if your instance is stuck in the <code>stopping</code> state. In any other state, your instance should stop normally without adding this parameter to your API request.</p>
+    /// </important>
+    pub fn get_force(&self) -> &::std::option::Option<bool> {
+        &self.force
     }
     /// Consumes the builder and constructs a [`StopInstanceInput`](crate::operation::stop_instance::StopInstanceInput).
     pub fn build(

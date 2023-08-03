@@ -36,6 +36,10 @@ impl DisassociateResourceShareFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociateResourceShare as a reference.
+    pub fn as_input(&self) -> &crate::operation::disassociate_resource_share::builders::DisassociateResourceShareInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl DisassociateResourceShareFluentBuilder {
         self.inner = self.inner.set_resource_share_arn(input);
         self
     }
+    /// <p>Specifies <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share that you want to remove resources or principals from.</p>
+    pub fn get_resource_share_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_share_arn()
+    }
     /// Appends an item to `resourceArns`.
     ///
     /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
@@ -151,6 +159,12 @@ impl DisassociateResourceShareFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_arns(input);
         self
+    }
+    /// <p>Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> for one or more resources that you want to remove from the resource share. After the operation runs, these resources are no longer shared with principals associated with the resource share.</p>
+    pub fn get_resource_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_resource_arns()
     }
     /// Appends an item to `principals`.
     ///
@@ -189,6 +203,20 @@ impl DisassociateResourceShareFluentBuilder {
         self.inner = self.inner.set_principals(input);
         self
     }
+    /// <p>Specifies a list of one or more principals that no longer are to have access to the resources in this resource share.</p>
+    /// <p>You can include the following values:</p>
+    /// <ul>
+    /// <li> <p>An Amazon Web Services account ID, for example: <code>123456789012</code> </p> </li>
+    /// <li> <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
+    /// <li> <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code> </p> </li>
+    /// <li> <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> </p> </li>
+    /// <li> <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> </p> </li>
+    /// </ul> <note>
+    /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
+    /// </note>
+    pub fn get_principals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_principals()
+    }
     /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
     /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
@@ -202,6 +230,12 @@ impl DisassociateResourceShareFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
+    /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// Appends an item to `sources`.
     ///
@@ -219,5 +253,9 @@ impl DisassociateResourceShareFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sources(input);
         self
+    }
+    /// <p>Specifies from which source accounts the service principal no longer has access to the resources in this resource share.</p>
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_sources()
     }
 }

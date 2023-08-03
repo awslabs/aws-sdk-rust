@@ -36,6 +36,13 @@ impl StopNotebookExecutionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StopNotebookExecution as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::stop_notebook_execution::builders::StopNotebookExecutionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +138,9 @@ impl StopNotebookExecutionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_notebook_execution_id(input);
         self
+    }
+    /// <p>The unique identifier of the notebook execution.</p>
+    pub fn get_notebook_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_notebook_execution_id()
     }
 }

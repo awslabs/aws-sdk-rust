@@ -50,6 +50,12 @@ impl RemoveAttributesOutputBuilder {
         self.attributes_resource = input;
         self
     }
+    /// <p>Provides information about the type and the names of attributes that were removed from all the endpoints that are associated with an application.</p>
+    pub fn get_attributes_resource(
+        &self,
+    ) -> &::std::option::Option<crate::types::AttributesResource> {
+        &self.attributes_resource
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

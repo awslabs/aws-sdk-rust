@@ -75,6 +75,10 @@ impl DescribeIpamResourceDiscoveryAssociationsInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// Appends an item to `ipam_resource_discovery_association_ids`.
     ///
     /// To override the contents of this collection use [`set_ipam_resource_discovery_association_ids`](Self::set_ipam_resource_discovery_association_ids).
@@ -99,6 +103,12 @@ impl DescribeIpamResourceDiscoveryAssociationsInputBuilder {
         self.ipam_resource_discovery_association_ids = input;
         self
     }
+    /// <p>The resource discovery association IDs.</p>
+    pub fn get_ipam_resource_discovery_association_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ipam_resource_discovery_association_ids
+    }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -109,6 +119,10 @@ impl DescribeIpamResourceDiscoveryAssociationsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of resource discovery associations to return in one page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -118,6 +132,10 @@ impl DescribeIpamResourceDiscoveryAssociationsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of resource discovery associations to return in one page of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Appends an item to `filters`.
     ///
@@ -137,6 +155,10 @@ impl DescribeIpamResourceDiscoveryAssociationsInputBuilder {
     ) -> Self {
         self.filters = input;
         self
+    }
+    /// <p>The resource discovery association filters.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
     }
     /// Consumes the builder and constructs a [`DescribeIpamResourceDiscoveryAssociationsInput`](crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociationsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociationsInput, ::aws_smithy_http::operation::error::BuildError>{

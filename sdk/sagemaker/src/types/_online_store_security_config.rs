@@ -112,6 +112,28 @@ impl OnlineStoreSecurityConfigBuilder {
         self.kms_key_id = input;
         self
     }
+    /// <p>The Amazon Web Services Key Management Service (KMS) key ARN that SageMaker Feature Store uses to encrypt the Amazon S3 objects at rest using Amazon S3 server-side encryption.</p>
+    /// <p>The caller (either user or IAM role) of <code>CreateFeatureGroup</code> must have below permissions to the <code>OnlineStore</code> <code>KmsKeyId</code>:</p>
+    /// <ul>
+    /// <li> <p> <code>"kms:Encrypt"</code> </p> </li>
+    /// <li> <p> <code>"kms:Decrypt"</code> </p> </li>
+    /// <li> <p> <code>"kms:DescribeKey"</code> </p> </li>
+    /// <li> <p> <code>"kms:CreateGrant"</code> </p> </li>
+    /// <li> <p> <code>"kms:RetireGrant"</code> </p> </li>
+    /// <li> <p> <code>"kms:ReEncryptFrom"</code> </p> </li>
+    /// <li> <p> <code>"kms:ReEncryptTo"</code> </p> </li>
+    /// <li> <p> <code>"kms:GenerateDataKey"</code> </p> </li>
+    /// <li> <p> <code>"kms:ListAliases"</code> </p> </li>
+    /// <li> <p> <code>"kms:ListGrants"</code> </p> </li>
+    /// <li> <p> <code>"kms:RevokeGrant"</code> </p> </li>
+    /// </ul>
+    /// <p>The caller (either user or IAM role) to all DataPlane operations (<code>PutRecord</code>, <code>GetRecord</code>, <code>DeleteRecord</code>) must have the following permissions to the <code>KmsKeyId</code>:</p>
+    /// <ul>
+    /// <li> <p> <code>"kms:Decrypt"</code> </p> </li>
+    /// </ul>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
+    }
     /// Consumes the builder and constructs a [`OnlineStoreSecurityConfig`](crate::types::OnlineStoreSecurityConfig).
     pub fn build(self) -> crate::types::OnlineStoreSecurityConfig {
         crate::types::OnlineStoreSecurityConfig {

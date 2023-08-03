@@ -65,6 +65,10 @@ impl ImageResponseCardBuilder {
         self.title = input;
         self
     }
+    /// <p>The title to display on the response card. The format of the title is determined by the platform displaying the response card.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
+    }
     /// <p>The subtitle to display on the response card. The format of the subtitle is determined by the platform displaying the response card.</p>
     pub fn subtitle(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subtitle = ::std::option::Option::Some(input.into());
@@ -75,6 +79,10 @@ impl ImageResponseCardBuilder {
         self.subtitle = input;
         self
     }
+    /// <p>The subtitle to display on the response card. The format of the subtitle is determined by the platform displaying the response card.</p>
+    pub fn get_subtitle(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subtitle
+    }
     /// <p>The URL of an image to display on the response card. The image URL must be publicly available so that the platform displaying the response card has access to the image.</p>
     pub fn image_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_url = ::std::option::Option::Some(input.into());
@@ -84,6 +92,10 @@ impl ImageResponseCardBuilder {
     pub fn set_image_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_url = input;
         self
+    }
+    /// <p>The URL of an image to display on the response card. The image URL must be publicly available so that the platform displaying the response card has access to the image.</p>
+    pub fn get_image_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_url
     }
     /// Appends an item to `buttons`.
     ///
@@ -103,6 +115,10 @@ impl ImageResponseCardBuilder {
     ) -> Self {
         self.buttons = input;
         self
+    }
+    /// <p>A list of buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button.</p>
+    pub fn get_buttons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Button>> {
+        &self.buttons
     }
     /// Consumes the builder and constructs a [`ImageResponseCard`](crate::types::ImageResponseCard).
     pub fn build(self) -> crate::types::ImageResponseCard {

@@ -71,6 +71,12 @@ impl RequestOutputItemBuilder {
         self.dash_playlist_settings = input;
         self
     }
+    /// <p>DASH manifest configuration parameters.</p>
+    pub fn get_dash_playlist_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::DashPlaylistSettings> {
+        &self.dash_playlist_settings
+    }
     /// <p>HLS playlist configuration parameters.</p>
     pub fn hls_playlist_settings(mut self, input: crate::types::HlsPlaylistSettings) -> Self {
         self.hls_playlist_settings = ::std::option::Option::Some(input);
@@ -83,6 +89,12 @@ impl RequestOutputItemBuilder {
     ) -> Self {
         self.hls_playlist_settings = input;
         self
+    }
+    /// <p>HLS playlist configuration parameters.</p>
+    pub fn get_hls_playlist_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::HlsPlaylistSettings> {
+        &self.hls_playlist_settings
     }
     /// <p>The name of the manifest for the channel. The name appears in the <code>PlaybackUrl</code>.</p>
     pub fn manifest_name(
@@ -100,6 +112,10 @@ impl RequestOutputItemBuilder {
         self.manifest_name = input;
         self
     }
+    /// <p>The name of the manifest for the channel. The name appears in the <code>PlaybackUrl</code>.</p>
+    pub fn get_manifest_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.manifest_name
+    }
     /// <p>A string used to match which <code>HttpPackageConfiguration</code> is used for each <code>VodSource</code>.</p>
     pub fn source_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_group = ::std::option::Option::Some(input.into());
@@ -109,6 +125,10 @@ impl RequestOutputItemBuilder {
     pub fn set_source_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_group = input;
         self
+    }
+    /// <p>A string used to match which <code>HttpPackageConfiguration</code> is used for each <code>VodSource</code>.</p>
+    pub fn get_source_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_group
     }
     /// Consumes the builder and constructs a [`RequestOutputItem`](crate::types::RequestOutputItem).
     pub fn build(self) -> crate::types::RequestOutputItem {

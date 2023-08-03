@@ -38,6 +38,10 @@ impl CreateKeysAndCertificateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateKeysAndCertificate as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_keys_and_certificate::builders::CreateKeysAndCertificateInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,5 +131,9 @@ impl CreateKeysAndCertificateFluentBuilder {
     pub fn set_set_as_active(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_set_as_active(input);
         self
+    }
+    /// <p>Specifies whether the certificate is active.</p>
+    pub fn get_set_as_active(&self) -> &::std::option::Option<bool> {
+        self.inner.get_set_as_active()
     }
 }

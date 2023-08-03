@@ -38,6 +38,12 @@ impl CancelUpdateStackFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CancelUpdateStack as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::cancel_update_stack::builders::CancelUpdateStackInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +144,15 @@ impl CancelUpdateStackFluentBuilder {
         self.inner = self.inner.set_stack_name(input);
         self
     }
+    /// <note>
+    /// <p>If you don't pass a parameter to <code>StackName</code>, the API returns a response that describes all resources in the account.</p>
+    /// <p>The IAM policy below can be added to IAM policies when you want to limit resource-level permissions and avoid returning a response when no parameter is sent in the request:</p>
+    /// <p> <code>{ "Version": "2012-10-17", "Statement": [{ "Effect": "Deny", "Action": "cloudformation:DescribeStacks", "NotResource": "arn:aws:cloudformation:*:*:stack/*/*" }] }</code> </p>
+    /// </note>
+    /// <p>The name or the unique stack ID that's associated with the stack.</p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stack_name()
+    }
     /// <p>A unique identifier for this <code>CancelUpdateStack</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to cancel an update on a stack with the same name. You might retry <code>CancelUpdateStack</code> requests to ensure that CloudFormation successfully received them.</p>
     pub fn client_request_token(
         mut self,
@@ -153,5 +168,9 @@ impl CancelUpdateStackFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
+    }
+    /// <p>A unique identifier for this <code>CancelUpdateStack</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to cancel an update on a stack with the same name. You might retry <code>CancelUpdateStack</code> requests to ensure that CloudFormation successfully received them.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
     }
 }

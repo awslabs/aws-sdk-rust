@@ -46,6 +46,10 @@ impl VirtualGatewayTlsValidationContextFileTrustBuilder {
         self.certificate_chain = input;
         self
     }
+    /// <p>The certificate trust chain for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
+    pub fn get_certificate_chain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_chain
+    }
     /// Consumes the builder and constructs a [`VirtualGatewayTlsValidationContextFileTrust`](crate::types::VirtualGatewayTlsValidationContextFileTrust).
     pub fn build(self) -> crate::types::VirtualGatewayTlsValidationContextFileTrust {
         crate::types::VirtualGatewayTlsValidationContextFileTrust {

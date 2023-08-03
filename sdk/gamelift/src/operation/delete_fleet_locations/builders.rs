@@ -40,6 +40,12 @@ impl DeleteFleetLocationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteFleetLocations as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_fleet_locations::builders::DeleteFleetLocationsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +136,10 @@ impl DeleteFleetLocationsFluentBuilder {
         self.inner = self.inner.set_fleet_id(input);
         self
     }
+    /// <p>A unique identifier for the fleet to delete locations for. You can use either the fleet ID or ARN value.</p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_fleet_id()
+    }
     /// Appends an item to `Locations`.
     ///
     /// To override the contents of this collection use [`set_locations`](Self::set_locations).
@@ -146,5 +156,9 @@ impl DeleteFleetLocationsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_locations(input);
         self
+    }
+    /// <p>The list of fleet locations to delete. Specify locations in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
+    pub fn get_locations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_locations()
     }
 }

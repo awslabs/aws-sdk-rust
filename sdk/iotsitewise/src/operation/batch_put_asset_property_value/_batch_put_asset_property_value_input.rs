@@ -49,6 +49,12 @@ impl BatchPutAssetPropertyValueInputBuilder {
         self.entries = input;
         self
     }
+    /// <p>The list of asset property value entries for the batch put request. You can specify up to 10 entries per request.</p>
+    pub fn get_entries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PutAssetPropertyValueEntry>> {
+        &self.entries
+    }
     /// Consumes the builder and constructs a [`BatchPutAssetPropertyValueInput`](crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueInput).
     pub fn build(
         self,

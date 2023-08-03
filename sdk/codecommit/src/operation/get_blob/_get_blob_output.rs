@@ -47,6 +47,10 @@ impl GetBlobOutputBuilder {
         self.content = input;
         self
     }
+    /// <p>The content of the blob, usually a file.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.content
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

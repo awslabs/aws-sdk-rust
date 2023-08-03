@@ -43,6 +43,10 @@ impl DataChannelConcatenationConfigurationBuilder {
         self.state = input;
         self
     }
+    /// <p>Enables or disables the configuration object.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ArtifactsConcatenationState> {
+        &self.state
+    }
     /// Consumes the builder and constructs a [`DataChannelConcatenationConfiguration`](crate::types::DataChannelConcatenationConfiguration).
     pub fn build(self) -> crate::types::DataChannelConcatenationConfiguration {
         crate::types::DataChannelConcatenationConfiguration { state: self.state }

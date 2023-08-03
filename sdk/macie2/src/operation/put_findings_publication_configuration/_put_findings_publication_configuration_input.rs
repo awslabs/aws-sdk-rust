@@ -50,6 +50,10 @@ impl PutFindingsPublicationConfigurationInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>The configuration settings that determine which findings to publish to Security Hub.</p>
     pub fn security_hub_configuration(
         mut self,
@@ -65,6 +69,12 @@ impl PutFindingsPublicationConfigurationInputBuilder {
     ) -> Self {
         self.security_hub_configuration = input;
         self
+    }
+    /// <p>The configuration settings that determine which findings to publish to Security Hub.</p>
+    pub fn get_security_hub_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SecurityHubConfiguration> {
+        &self.security_hub_configuration
     }
     /// Consumes the builder and constructs a [`PutFindingsPublicationConfigurationInput`](crate::operation::put_findings_publication_configuration::PutFindingsPublicationConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_findings_publication_configuration::PutFindingsPublicationConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{

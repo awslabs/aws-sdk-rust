@@ -56,6 +56,10 @@ impl BatchStartRecommendationsErrorEntryBuilder {
         self.database_id = input;
         self
     }
+    /// <p>The identifier of the source database.</p>
+    pub fn get_database_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_id
+    }
     /// <p>The information about the error.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl BatchStartRecommendationsErrorEntryBuilder {
         self.message = input;
         self
     }
+    /// <p>The information about the error.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The code of an error that occurred during the analysis of the source database.</p>
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl BatchStartRecommendationsErrorEntryBuilder {
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code = input;
         self
+    }
+    /// <p>The code of an error that occurred during the analysis of the source database.</p>
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
     }
     /// Consumes the builder and constructs a [`BatchStartRecommendationsErrorEntry`](crate::types::BatchStartRecommendationsErrorEntry).
     pub fn build(self) -> crate::types::BatchStartRecommendationsErrorEntry {

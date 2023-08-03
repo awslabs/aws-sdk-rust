@@ -62,6 +62,10 @@ impl AlgorithmValidationProfileBuilder {
         self.profile_name = input;
         self
     }
+    /// <p>The name of the profile for the algorithm. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
+    pub fn get_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_name
+    }
     /// <p>The <code>TrainingJobDefinition</code> object that describes the training job that SageMaker runs to validate your algorithm.</p>
     pub fn training_job_definition(mut self, input: crate::types::TrainingJobDefinition) -> Self {
         self.training_job_definition = ::std::option::Option::Some(input);
@@ -75,6 +79,12 @@ impl AlgorithmValidationProfileBuilder {
         self.training_job_definition = input;
         self
     }
+    /// <p>The <code>TrainingJobDefinition</code> object that describes the training job that SageMaker runs to validate your algorithm.</p>
+    pub fn get_training_job_definition(
+        &self,
+    ) -> &::std::option::Option<crate::types::TrainingJobDefinition> {
+        &self.training_job_definition
+    }
     /// <p>The <code>TransformJobDefinition</code> object that describes the transform job that SageMaker runs to validate your algorithm.</p>
     pub fn transform_job_definition(mut self, input: crate::types::TransformJobDefinition) -> Self {
         self.transform_job_definition = ::std::option::Option::Some(input);
@@ -87,6 +97,12 @@ impl AlgorithmValidationProfileBuilder {
     ) -> Self {
         self.transform_job_definition = input;
         self
+    }
+    /// <p>The <code>TransformJobDefinition</code> object that describes the transform job that SageMaker runs to validate your algorithm.</p>
+    pub fn get_transform_job_definition(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransformJobDefinition> {
+        &self.transform_job_definition
     }
     /// Consumes the builder and constructs a [`AlgorithmValidationProfile`](crate::types::AlgorithmValidationProfile).
     pub fn build(self) -> crate::types::AlgorithmValidationProfile {

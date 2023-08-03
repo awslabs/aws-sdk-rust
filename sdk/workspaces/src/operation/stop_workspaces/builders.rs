@@ -37,6 +37,12 @@ impl StopWorkspacesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StopWorkspaces as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::stop_workspaces::builders::StopWorkspacesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +131,11 @@ impl StopWorkspacesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_stop_workspace_requests(input);
         self
+    }
+    /// <p>The WorkSpaces to stop. You can specify up to 25 WorkSpaces.</p>
+    pub fn get_stop_workspace_requests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StopRequest>> {
+        self.inner.get_stop_workspace_requests()
     }
 }

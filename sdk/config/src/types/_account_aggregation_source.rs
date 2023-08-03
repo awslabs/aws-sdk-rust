@@ -65,6 +65,12 @@ impl AccountAggregationSourceBuilder {
         self.account_ids = input;
         self
     }
+    /// <p>The 12-digit account ID of the account being aggregated. </p>
+    pub fn get_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.account_ids
+    }
     /// <p>If true, aggregate existing Config regions and future regions.</p>
     pub fn all_aws_regions(mut self, input: bool) -> Self {
         self.all_aws_regions = ::std::option::Option::Some(input);
@@ -74,6 +80,10 @@ impl AccountAggregationSourceBuilder {
     pub fn set_all_aws_regions(mut self, input: ::std::option::Option<bool>) -> Self {
         self.all_aws_regions = input;
         self
+    }
+    /// <p>If true, aggregate existing Config regions and future regions.</p>
+    pub fn get_all_aws_regions(&self) -> &::std::option::Option<bool> {
+        &self.all_aws_regions
     }
     /// Appends an item to `aws_regions`.
     ///
@@ -93,6 +103,12 @@ impl AccountAggregationSourceBuilder {
     ) -> Self {
         self.aws_regions = input;
         self
+    }
+    /// <p>The source regions being aggregated.</p>
+    pub fn get_aws_regions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.aws_regions
     }
     /// Consumes the builder and constructs a [`AccountAggregationSource`](crate::types::AccountAggregationSource).
     pub fn build(self) -> crate::types::AccountAggregationSource {

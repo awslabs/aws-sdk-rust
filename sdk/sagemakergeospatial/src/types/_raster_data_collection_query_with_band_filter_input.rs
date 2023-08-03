@@ -76,6 +76,12 @@ impl RasterDataCollectionQueryWithBandFilterInputBuilder {
         self.time_range_filter = input;
         self
     }
+    /// <p>The TimeRange Filter used in the search query.</p>
+    pub fn get_time_range_filter(
+        &self,
+    ) -> &::std::option::Option<crate::types::TimeRangeFilterInput> {
+        &self.time_range_filter
+    }
     /// <p>The Area of interest to be used in the search query.</p>
     pub fn area_of_interest(mut self, input: crate::types::AreaOfInterest) -> Self {
         self.area_of_interest = ::std::option::Option::Some(input);
@@ -89,6 +95,10 @@ impl RasterDataCollectionQueryWithBandFilterInputBuilder {
         self.area_of_interest = input;
         self
     }
+    /// <p>The Area of interest to be used in the search query.</p>
+    pub fn get_area_of_interest(&self) -> &::std::option::Option<crate::types::AreaOfInterest> {
+        &self.area_of_interest
+    }
     /// <p>The Property Filters used in the search query.</p>
     pub fn property_filters(mut self, input: crate::types::PropertyFilters) -> Self {
         self.property_filters = ::std::option::Option::Some(input);
@@ -101,6 +111,10 @@ impl RasterDataCollectionQueryWithBandFilterInputBuilder {
     ) -> Self {
         self.property_filters = input;
         self
+    }
+    /// <p>The Property Filters used in the search query.</p>
+    pub fn get_property_filters(&self) -> &::std::option::Option<crate::types::PropertyFilters> {
+        &self.property_filters
     }
     /// Appends an item to `band_filter`.
     ///
@@ -120,6 +134,12 @@ impl RasterDataCollectionQueryWithBandFilterInputBuilder {
     ) -> Self {
         self.band_filter = input;
         self
+    }
+    /// <p>The list of Bands to be displayed in the result for each item.</p>
+    pub fn get_band_filter(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.band_filter
     }
     /// Consumes the builder and constructs a [`RasterDataCollectionQueryWithBandFilterInput`](crate::types::RasterDataCollectionQueryWithBandFilterInput).
     pub fn build(self) -> crate::types::RasterDataCollectionQueryWithBandFilterInput {

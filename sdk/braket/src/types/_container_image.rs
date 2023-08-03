@@ -40,6 +40,10 @@ impl ContainerImageBuilder {
         self.uri = input;
         self
     }
+    /// <p>The URI locating the container image.</p>
+    pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.uri
+    }
     /// Consumes the builder and constructs a [`ContainerImage`](crate::types::ContainerImage).
     pub fn build(self) -> crate::types::ContainerImage {
         crate::types::ContainerImage { uri: self.uri }

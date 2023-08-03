@@ -72,6 +72,10 @@ impl SdkConfigurationPropertyBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of a an SdkType configuration property.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The user-friendly name of an SdkType configuration property.</p>
     pub fn friendly_name(
         mut self,
@@ -88,6 +92,10 @@ impl SdkConfigurationPropertyBuilder {
         self.friendly_name = input;
         self
     }
+    /// <p>The user-friendly name of an SdkType configuration property.</p>
+    pub fn get_friendly_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.friendly_name
+    }
     /// <p>The description of an SdkType configuration property.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -98,6 +106,10 @@ impl SdkConfigurationPropertyBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of an SdkType configuration property.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>A boolean flag of an SdkType configuration property to indicate if the associated SDK configuration property is required (<code>true</code>) or not (<code>false</code>).</p>
     pub fn required(mut self, input: bool) -> Self {
         self.required = ::std::option::Option::Some(input);
@@ -107,6 +119,10 @@ impl SdkConfigurationPropertyBuilder {
     pub fn set_required(mut self, input: ::std::option::Option<bool>) -> Self {
         self.required = input;
         self
+    }
+    /// <p>A boolean flag of an SdkType configuration property to indicate if the associated SDK configuration property is required (<code>true</code>) or not (<code>false</code>).</p>
+    pub fn get_required(&self) -> &::std::option::Option<bool> {
+        &self.required
     }
     /// <p>The default value of an SdkType configuration property.</p>
     pub fn default_value(
@@ -123,6 +139,10 @@ impl SdkConfigurationPropertyBuilder {
     ) -> Self {
         self.default_value = input;
         self
+    }
+    /// <p>The default value of an SdkType configuration property.</p>
+    pub fn get_default_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_value
     }
     /// Consumes the builder and constructs a [`SdkConfigurationProperty`](crate::types::SdkConfigurationProperty).
     pub fn build(self) -> crate::types::SdkConfigurationProperty {

@@ -36,6 +36,10 @@ impl ModifyTransitGatewayVpcAttachmentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyTransitGatewayVpcAttachment as a reference.
+    pub fn as_input(&self) -> &crate::operation::modify_transit_gateway_vpc_attachment::builders::ModifyTransitGatewayVpcAttachmentInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,12 @@ impl ModifyTransitGatewayVpcAttachmentFluentBuilder {
         self.inner = self.inner.set_transit_gateway_attachment_id(input);
         self
     }
+    /// <p>The ID of the attachment.</p>
+    pub fn get_transit_gateway_attachment_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_transit_gateway_attachment_id()
+    }
     /// Appends an item to `AddSubnetIds`.
     ///
     /// To override the contents of this collection use [`set_add_subnet_ids`](Self::set_add_subnet_ids).
@@ -125,6 +135,12 @@ impl ModifyTransitGatewayVpcAttachmentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_add_subnet_ids(input);
         self
+    }
+    /// <p>The IDs of one or more subnets to add. You can specify at most one subnet per Availability Zone.</p>
+    pub fn get_add_subnet_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_add_subnet_ids()
     }
     /// Appends an item to `RemoveSubnetIds`.
     ///
@@ -146,6 +162,12 @@ impl ModifyTransitGatewayVpcAttachmentFluentBuilder {
         self.inner = self.inner.set_remove_subnet_ids(input);
         self
     }
+    /// <p>The IDs of one or more subnets to remove.</p>
+    pub fn get_remove_subnet_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_remove_subnet_ids()
+    }
     /// <p>The new VPC attachment options.</p>
     pub fn options(
         mut self,
@@ -162,6 +184,12 @@ impl ModifyTransitGatewayVpcAttachmentFluentBuilder {
         self.inner = self.inner.set_options(input);
         self
     }
+    /// <p>The new VPC attachment options.</p>
+    pub fn get_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::ModifyTransitGatewayVpcAttachmentRequestOptions> {
+        self.inner.get_options()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -171,5 +199,9 @@ impl ModifyTransitGatewayVpcAttachmentFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

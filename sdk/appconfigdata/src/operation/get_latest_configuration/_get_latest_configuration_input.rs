@@ -55,6 +55,12 @@ impl GetLatestConfigurationInputBuilder {
         self.configuration_token = input;
         self
     }
+    /// <p>Token describing the current state of the configuration session. To obtain a token, first call the <code>StartConfigurationSession</code> API. Note that every call to <code>GetLatestConfiguration</code> will return a new <code>ConfigurationToken</code> (<code>NextPollConfigurationToken</code> in the response) and <i>must</i> be provided to subsequent <code>GetLatestConfiguration</code> API calls.</p> <important>
+    /// <p>This token should only be used once. To support long poll use cases, the token is valid for up to 24 hours. If a <code>GetLatestConfiguration</code> call uses an expired token, the system returns <code>BadRequestException</code>.</p>
+    /// </important>
+    pub fn get_configuration_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_token
+    }
     /// Consumes the builder and constructs a [`GetLatestConfigurationInput`](crate::operation::get_latest_configuration::GetLatestConfigurationInput).
     pub fn build(
         self,

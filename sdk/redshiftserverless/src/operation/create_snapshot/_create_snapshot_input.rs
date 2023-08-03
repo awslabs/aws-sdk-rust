@@ -69,6 +69,10 @@ impl CreateSnapshotInputBuilder {
         self.namespace_name = input;
         self
     }
+    /// <p>The namespace to create a snapshot for.</p>
+    pub fn get_namespace_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace_name
+    }
     /// <p>The name of the snapshot.</p>
     pub fn snapshot_name(
         mut self,
@@ -85,6 +89,10 @@ impl CreateSnapshotInputBuilder {
         self.snapshot_name = input;
         self
     }
+    /// <p>The name of the snapshot.</p>
+    pub fn get_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_name
+    }
     /// <p>How long to retain the created snapshot.</p>
     pub fn retention_period(mut self, input: i32) -> Self {
         self.retention_period = ::std::option::Option::Some(input);
@@ -94,6 +102,10 @@ impl CreateSnapshotInputBuilder {
     pub fn set_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.retention_period = input;
         self
+    }
+    /// <p>How long to retain the created snapshot.</p>
+    pub fn get_retention_period(&self) -> &::std::option::Option<i32> {
+        &self.retention_period
     }
     /// Appends an item to `tags`.
     ///
@@ -113,6 +125,10 @@ impl CreateSnapshotInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>An array of <a href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag objects</a> to associate with the snapshot.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateSnapshotInput`](crate::operation::create_snapshot::CreateSnapshotInput).
     pub fn build(

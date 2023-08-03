@@ -40,6 +40,10 @@ impl LabelBuilder {
         self.name = input;
         self
     }
+    /// <p>The label string. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`Label`](crate::types::Label).
     pub fn build(self) -> crate::types::Label {
         crate::types::Label { name: self.name }

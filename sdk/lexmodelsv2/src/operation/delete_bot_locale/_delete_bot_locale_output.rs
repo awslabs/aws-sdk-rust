@@ -71,6 +71,10 @@ impl DeleteBotLocaleOutputBuilder {
         self.bot_id = input;
         self
     }
+    /// <p>The identifier of the bot that contained the deleted locale.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
+    }
     /// <p>The version of the bot that contained the deleted locale.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl DeleteBotLocaleOutputBuilder {
         self.bot_version = input;
         self
     }
+    /// <p>The version of the bot that contained the deleted locale.</p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_version
+    }
     /// <p>The language and locale of the deleted locale.</p>
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
@@ -90,6 +98,10 @@ impl DeleteBotLocaleOutputBuilder {
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.locale_id = input;
         self
+    }
+    /// <p>The language and locale of the deleted locale.</p>
+    pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale_id
     }
     /// <p>The status of deleting the bot locale. The locale first enters the <code>Deleting</code> status. Once the locale is deleted it no longer appears in the list of locales for the bot.</p>
     pub fn bot_locale_status(mut self, input: crate::types::BotLocaleStatus) -> Self {
@@ -103,6 +115,10 @@ impl DeleteBotLocaleOutputBuilder {
     ) -> Self {
         self.bot_locale_status = input;
         self
+    }
+    /// <p>The status of deleting the bot locale. The locale first enters the <code>Deleting</code> status. Once the locale is deleted it no longer appears in the list of locales for the bot.</p>
+    pub fn get_bot_locale_status(&self) -> &::std::option::Option<crate::types::BotLocaleStatus> {
+        &self.bot_locale_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

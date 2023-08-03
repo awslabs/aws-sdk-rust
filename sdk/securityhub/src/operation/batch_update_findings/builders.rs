@@ -50,6 +50,12 @@ impl BatchUpdateFindingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchUpdateFindings as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_update_findings::builders::BatchUpdateFindingsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -152,6 +158,13 @@ impl BatchUpdateFindingsFluentBuilder {
         self.inner = self.inner.set_finding_identifiers(input);
         self
     }
+    /// <p>The list of findings to update. <code>BatchUpdateFindings</code> can be used to update up to 100 findings at a time.</p>
+    /// <p>For each finding, the list provides the finding identifier and the ARN of the finding provider.</p>
+    pub fn get_finding_identifiers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsSecurityFindingIdentifier>> {
+        self.inner.get_finding_identifiers()
+    }
     /// <p>The updated note.</p>
     pub fn note(mut self, input: crate::types::NoteUpdate) -> Self {
         self.inner = self.inner.note(input);
@@ -161,6 +174,10 @@ impl BatchUpdateFindingsFluentBuilder {
     pub fn set_note(mut self, input: ::std::option::Option<crate::types::NoteUpdate>) -> Self {
         self.inner = self.inner.set_note(input);
         self
+    }
+    /// <p>The updated note.</p>
+    pub fn get_note(&self) -> &::std::option::Option<crate::types::NoteUpdate> {
+        self.inner.get_note()
     }
     /// <p>Used to update the finding severity.</p>
     pub fn severity(mut self, input: crate::types::SeverityUpdate) -> Self {
@@ -174,6 +191,10 @@ impl BatchUpdateFindingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_severity(input);
         self
+    }
+    /// <p>Used to update the finding severity.</p>
+    pub fn get_severity(&self) -> &::std::option::Option<crate::types::SeverityUpdate> {
+        self.inner.get_severity()
     }
     /// <p>Indicates the veracity of a finding.</p>
     /// <p>The available values for <code>VerificationState</code> are as follows.</p>
@@ -202,6 +223,19 @@ impl BatchUpdateFindingsFluentBuilder {
         self.inner = self.inner.set_verification_state(input);
         self
     }
+    /// <p>Indicates the veracity of a finding.</p>
+    /// <p>The available values for <code>VerificationState</code> are as follows.</p>
+    /// <ul>
+    /// <li> <p> <code>UNKNOWN</code> – The default disposition of a security finding</p> </li>
+    /// <li> <p> <code>TRUE_POSITIVE</code> – The security finding is confirmed</p> </li>
+    /// <li> <p> <code>FALSE_POSITIVE</code> – The security finding was determined to be a false alarm</p> </li>
+    /// <li> <p> <code>BENIGN_POSITIVE</code> – A special case of <code>TRUE_POSITIVE</code> where the finding doesn't pose any threat, is expected, or both</p> </li>
+    /// </ul>
+    pub fn get_verification_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::VerificationState> {
+        self.inner.get_verification_state()
+    }
     /// <p>The updated value for the finding confidence. Confidence is defined as the likelihood that a finding accurately identifies the behavior or issue that it was intended to identify.</p>
     /// <p>Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
     pub fn confidence(mut self, input: i32) -> Self {
@@ -214,6 +248,11 @@ impl BatchUpdateFindingsFluentBuilder {
         self.inner = self.inner.set_confidence(input);
         self
     }
+    /// <p>The updated value for the finding confidence. Confidence is defined as the likelihood that a finding accurately identifies the behavior or issue that it was intended to identify.</p>
+    /// <p>Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
+    pub fn get_confidence(&self) -> &::std::option::Option<i32> {
+        self.inner.get_confidence()
+    }
     /// <p>The updated value for the level of importance assigned to the resources associated with the findings.</p>
     /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most critical resources. </p>
     pub fn criticality(mut self, input: i32) -> Self {
@@ -225,6 +264,11 @@ impl BatchUpdateFindingsFluentBuilder {
     pub fn set_criticality(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_criticality(input);
         self
+    }
+    /// <p>The updated value for the level of importance assigned to the resources associated with the findings.</p>
+    /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most critical resources. </p>
+    pub fn get_criticality(&self) -> &::std::option::Option<i32> {
+        self.inner.get_criticality()
     }
     /// Appends an item to `Types`.
     ///
@@ -259,6 +303,18 @@ impl BatchUpdateFindingsFluentBuilder {
         self.inner = self.inner.set_types(input);
         self
     }
+    /// <p>One or more finding types in the format of namespace/category/classifier that classify a finding.</p>
+    /// <p>Valid namespace values are as follows.</p>
+    /// <ul>
+    /// <li> <p>Software and Configuration Checks</p> </li>
+    /// <li> <p>TTPs</p> </li>
+    /// <li> <p>Effects</p> </li>
+    /// <li> <p>Unusual Behaviors</p> </li>
+    /// <li> <p>Sensitive Data Identifications </p> </li>
+    /// </ul>
+    pub fn get_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_types()
+    }
     /// Adds a key-value pair to `UserDefinedFields`.
     ///
     /// To override the contents of this collection use [`set_user_defined_fields`](Self::set_user_defined_fields).
@@ -282,6 +338,14 @@ impl BatchUpdateFindingsFluentBuilder {
         self.inner = self.inner.set_user_defined_fields(input);
         self
     }
+    /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding.</p>
+    pub fn get_user_defined_fields(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_user_defined_fields()
+    }
     /// <p>Used to update the workflow status of a finding.</p>
     /// <p>The workflow status indicates the progress of the investigation into the finding. </p>
     pub fn workflow(mut self, input: crate::types::WorkflowUpdate) -> Self {
@@ -296,6 +360,11 @@ impl BatchUpdateFindingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_workflow(input);
         self
+    }
+    /// <p>Used to update the workflow status of a finding.</p>
+    /// <p>The workflow status indicates the progress of the investigation into the finding. </p>
+    pub fn get_workflow(&self) -> &::std::option::Option<crate::types::WorkflowUpdate> {
+        self.inner.get_workflow()
     }
     /// Appends an item to `RelatedFindings`.
     ///
@@ -313,5 +382,11 @@ impl BatchUpdateFindingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_related_findings(input);
         self
+    }
+    /// <p>A list of findings that are related to the updated findings.</p>
+    pub fn get_related_findings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RelatedFinding>> {
+        self.inner.get_related_findings()
     }
 }

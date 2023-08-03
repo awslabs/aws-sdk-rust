@@ -46,6 +46,10 @@ impl DeregisterEcsClusterInputBuilder {
         self.ecs_cluster_arn = input;
         self
     }
+    /// <p>The cluster's Amazon Resource Number (ARN).</p>
+    pub fn get_ecs_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ecs_cluster_arn
+    }
     /// Consumes the builder and constructs a [`DeregisterEcsClusterInput`](crate::operation::deregister_ecs_cluster::DeregisterEcsClusterInput).
     pub fn build(
         self,

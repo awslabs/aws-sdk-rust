@@ -70,6 +70,10 @@ impl StandardsControlAssociationUpdateBuilder {
         self.standards_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the standard in which you want to update the control's enablement status.</p>
+    pub fn get_standards_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.standards_arn
+    }
     /// <p>The unique identifier for the security control whose enablement status you want to update.</p>
     pub fn security_control_id(
         mut self,
@@ -86,6 +90,10 @@ impl StandardsControlAssociationUpdateBuilder {
         self.security_control_id = input;
         self
     }
+    /// <p>The unique identifier for the security control whose enablement status you want to update.</p>
+    pub fn get_security_control_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_control_id
+    }
     /// <p>The desired enablement status of the control in the standard.</p>
     pub fn association_status(mut self, input: crate::types::AssociationStatus) -> Self {
         self.association_status = ::std::option::Option::Some(input);
@@ -98,6 +106,12 @@ impl StandardsControlAssociationUpdateBuilder {
     ) -> Self {
         self.association_status = input;
         self
+    }
+    /// <p>The desired enablement status of the control in the standard.</p>
+    pub fn get_association_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::AssociationStatus> {
+        &self.association_status
     }
     /// <p>The reason for updating the control's enablement status in the standard.</p>
     pub fn updated_reason(
@@ -114,6 +128,10 @@ impl StandardsControlAssociationUpdateBuilder {
     ) -> Self {
         self.updated_reason = input;
         self
+    }
+    /// <p>The reason for updating the control's enablement status in the standard.</p>
+    pub fn get_updated_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.updated_reason
     }
     /// Consumes the builder and constructs a [`StandardsControlAssociationUpdate`](crate::types::StandardsControlAssociationUpdate).
     pub fn build(self) -> crate::types::StandardsControlAssociationUpdate {

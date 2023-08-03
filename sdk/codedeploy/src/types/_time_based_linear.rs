@@ -48,6 +48,10 @@ impl TimeBasedLinearBuilder {
         self.linear_percentage = input;
         self
     }
+    /// <p>The percentage of traffic that is shifted at the start of each increment of a <code>TimeBasedLinear</code> deployment.</p>
+    pub fn get_linear_percentage(&self) -> &::std::option::Option<i32> {
+        &self.linear_percentage
+    }
     /// <p>The number of minutes between each incremental traffic shift of a <code>TimeBasedLinear</code> deployment.</p>
     pub fn linear_interval(mut self, input: i32) -> Self {
         self.linear_interval = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl TimeBasedLinearBuilder {
     pub fn set_linear_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.linear_interval = input;
         self
+    }
+    /// <p>The number of minutes between each incremental traffic shift of a <code>TimeBasedLinear</code> deployment.</p>
+    pub fn get_linear_interval(&self) -> &::std::option::Option<i32> {
+        &self.linear_interval
     }
     /// Consumes the builder and constructs a [`TimeBasedLinear`](crate::types::TimeBasedLinear).
     pub fn build(self) -> crate::types::TimeBasedLinear {

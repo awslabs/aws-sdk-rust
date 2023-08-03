@@ -40,6 +40,10 @@ impl InputVideoGeneratorBuilder {
         self.duration = input;
         self
     }
+    /// Specify an integer value for Black video duration from 50 to 86400000 to generate a black video input for that many milliseconds. Required when you include Video generator.
+    pub fn get_duration(&self) -> &::std::option::Option<i32> {
+        &self.duration
+    }
     /// Consumes the builder and constructs a [`InputVideoGenerator`](crate::types::InputVideoGenerator).
     pub fn build(self) -> crate::types::InputVideoGenerator {
         crate::types::InputVideoGenerator {

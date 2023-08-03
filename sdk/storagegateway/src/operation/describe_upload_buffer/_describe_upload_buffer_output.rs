@@ -71,6 +71,10 @@ impl DescribeUploadBufferOutputBuilder {
         self.gateway_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_arn
+    }
     /// Appends an item to `disk_ids`.
     ///
     /// To override the contents of this collection use [`set_disk_ids`](Self::set_disk_ids).
@@ -90,6 +94,10 @@ impl DescribeUploadBufferOutputBuilder {
         self.disk_ids = input;
         self
     }
+    /// <p>An array of the gateway's local disk IDs that are configured as working storage. Each local disk ID is specified as a string (minimum length of 1 and maximum length of 300). If no local disks are configured as working storage, then the DiskIds array is empty.</p>
+    pub fn get_disk_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.disk_ids
+    }
     /// <p>The total number of bytes being used in the gateway's upload buffer.</p>
     pub fn upload_buffer_used_in_bytes(mut self, input: i64) -> Self {
         self.upload_buffer_used_in_bytes = ::std::option::Option::Some(input);
@@ -99,6 +107,10 @@ impl DescribeUploadBufferOutputBuilder {
     pub fn set_upload_buffer_used_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.upload_buffer_used_in_bytes = input;
         self
+    }
+    /// <p>The total number of bytes being used in the gateway's upload buffer.</p>
+    pub fn get_upload_buffer_used_in_bytes(&self) -> &::std::option::Option<i64> {
+        &self.upload_buffer_used_in_bytes
     }
     /// <p>The total number of bytes allocated in the gateway's as upload buffer.</p>
     pub fn upload_buffer_allocated_in_bytes(mut self, input: i64) -> Self {
@@ -112,6 +124,10 @@ impl DescribeUploadBufferOutputBuilder {
     ) -> Self {
         self.upload_buffer_allocated_in_bytes = input;
         self
+    }
+    /// <p>The total number of bytes allocated in the gateway's as upload buffer.</p>
+    pub fn get_upload_buffer_allocated_in_bytes(&self) -> &::std::option::Option<i64> {
+        &self.upload_buffer_allocated_in_bytes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

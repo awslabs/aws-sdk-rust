@@ -53,6 +53,10 @@ impl PutAuthPolicyInputBuilder {
         self.resource_identifier = input;
         self
     }
+    /// <p>The ID or Amazon Resource Name (ARN) of the service network or service for which the policy is created.</p>
+    pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_identifier
+    }
     /// <p>The auth policy. The policy string in JSON must not contain newlines or blank lines.</p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl PutAuthPolicyInputBuilder {
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy = input;
         self
+    }
+    /// <p>The auth policy. The policy string in JSON must not contain newlines or blank lines.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy
     }
     /// Consumes the builder and constructs a [`PutAuthPolicyInput`](crate::operation::put_auth_policy::PutAuthPolicyInput).
     pub fn build(

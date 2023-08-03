@@ -36,6 +36,12 @@ impl DescribeLabelingJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeLabelingJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_labeling_job::builders::DescribeLabelingJobInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl DescribeLabelingJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_labeling_job_name(input);
         self
+    }
+    /// <p>The name of the labeling job to return information for.</p>
+    pub fn get_labeling_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_labeling_job_name()
     }
 }

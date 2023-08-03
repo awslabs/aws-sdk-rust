@@ -101,6 +101,14 @@ impl GetProvisionedProductOutputsInputBuilder {
         self.accept_language = input;
         self
     }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accept_language
+    }
     /// <p>The identifier of the provisioned product that you want the outputs from.</p>
     pub fn provisioned_product_id(
         mut self,
@@ -117,6 +125,10 @@ impl GetProvisionedProductOutputsInputBuilder {
         self.provisioned_product_id = input;
         self
     }
+    /// <p>The identifier of the provisioned product that you want the outputs from.</p>
+    pub fn get_provisioned_product_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provisioned_product_id
+    }
     /// <p>The name of the provisioned product that you want the outputs from.</p>
     pub fn provisioned_product_name(
         mut self,
@@ -132,6 +144,10 @@ impl GetProvisionedProductOutputsInputBuilder {
     ) -> Self {
         self.provisioned_product_name = input;
         self
+    }
+    /// <p>The name of the provisioned product that you want the outputs from.</p>
+    pub fn get_provisioned_product_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provisioned_product_name
     }
     /// Appends an item to `output_keys`.
     ///
@@ -152,6 +168,12 @@ impl GetProvisionedProductOutputsInputBuilder {
         self.output_keys = input;
         self
     }
+    /// <p>The list of keys that the API should return with their values. If none are provided, the API will return all outputs of the provisioned product.</p>
+    pub fn get_output_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.output_keys
+    }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn page_size(mut self, input: i32) -> Self {
         self.page_size = ::std::option::Option::Some(input);
@@ -162,6 +184,10 @@ impl GetProvisionedProductOutputsInputBuilder {
         self.page_size = input;
         self
     }
+    /// <p>The maximum number of items to return with this call.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        &self.page_size
+    }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.page_token = ::std::option::Option::Some(input.into());
@@ -171,6 +197,10 @@ impl GetProvisionedProductOutputsInputBuilder {
     pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.page_token = input;
         self
+    }
+    /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.page_token
     }
     /// Consumes the builder and constructs a [`GetProvisionedProductOutputsInput`](crate::operation::get_provisioned_product_outputs::GetProvisionedProductOutputsInput).
     pub fn build(

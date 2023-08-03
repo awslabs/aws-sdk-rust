@@ -36,6 +36,10 @@ impl UpdateCustomRoutingListenerFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateCustomRoutingListener as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_custom_routing_listener::builders::UpdateCustomRoutingListenerInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl UpdateCustomRoutingListenerFluentBuilder {
         self.inner = self.inner.set_listener_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the listener to update.</p>
+    pub fn get_listener_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_listener_arn()
+    }
     /// Appends an item to `PortRanges`.
     ///
     /// To override the contents of this collection use [`set_port_ranges`](Self::set_port_ranges).
@@ -144,5 +152,12 @@ impl UpdateCustomRoutingListenerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_port_ranges(input);
         self
+    }
+    /// <p>The updated port range to support for connections from clients to your accelerator. If you remove ports that are currently being used by a subnet endpoint, the call fails.</p>
+    /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About endpoints for custom routing accelerators</a>.</p>
+    pub fn get_port_ranges(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PortRange>> {
+        self.inner.get_port_ranges()
     }
 }

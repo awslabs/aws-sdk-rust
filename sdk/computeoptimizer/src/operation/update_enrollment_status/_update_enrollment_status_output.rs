@@ -56,6 +56,10 @@ impl UpdateEnrollmentStatusOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The enrollment status of the account.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.status
+    }
     /// <p>The reason for the enrollment status of the account. For example, an account might show a status of <code>Pending</code> because member accounts of an organization require more time to be enrolled in the service.</p>
     pub fn status_reason(
         mut self,
@@ -71,6 +75,10 @@ impl UpdateEnrollmentStatusOutputBuilder {
     ) -> Self {
         self.status_reason = input;
         self
+    }
+    /// <p>The reason for the enrollment status of the account. For example, an account might show a status of <code>Pending</code> because member accounts of an organization require more time to be enrolled in the service.</p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_reason
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

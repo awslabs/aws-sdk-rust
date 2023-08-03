@@ -51,6 +51,10 @@ impl CurrentMetricBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the metric.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::CurrentMetricName> {
+        &self.name
+    }
     /// <p>The unit for the metric.</p>
     pub fn unit(mut self, input: crate::types::Unit) -> Self {
         self.unit = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl CurrentMetricBuilder {
     pub fn set_unit(mut self, input: ::std::option::Option<crate::types::Unit>) -> Self {
         self.unit = input;
         self
+    }
+    /// <p>The unit for the metric.</p>
+    pub fn get_unit(&self) -> &::std::option::Option<crate::types::Unit> {
+        &self.unit
     }
     /// Consumes the builder and constructs a [`CurrentMetric`](crate::types::CurrentMetric).
     pub fn build(self) -> crate::types::CurrentMetric {

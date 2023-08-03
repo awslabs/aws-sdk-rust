@@ -57,6 +57,12 @@ impl ListReceiptFiltersOutputBuilder {
         self.filters = input;
         self
     }
+    /// <p>A list of IP address filter data structures, which each consist of a name, an IP address range, and whether to allow or block mail from it.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReceiptFilter>> {
+        &self.filters
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

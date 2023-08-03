@@ -36,6 +36,13 @@ impl ProvideAnomalyFeedbackFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ProvideAnomalyFeedback as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::provide_anomaly_feedback::builders::ProvideAnomalyFeedbackInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl ProvideAnomalyFeedbackFluentBuilder {
         self.inner = self.inner.set_anomaly_id(input);
         self
     }
+    /// <p>A cost anomaly ID. </p>
+    pub fn get_anomaly_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_anomaly_id()
+    }
     /// <p>Describes whether the cost anomaly was a planned activity or you considered it an anomaly. </p>
     pub fn feedback(mut self, input: crate::types::AnomalyFeedbackType) -> Self {
         self.inner = self.inner.feedback(input);
@@ -138,5 +149,9 @@ impl ProvideAnomalyFeedbackFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_feedback(input);
         self
+    }
+    /// <p>Describes whether the cost anomaly was a planned activity or you considered it an anomaly. </p>
+    pub fn get_feedback(&self) -> &::std::option::Option<crate::types::AnomalyFeedbackType> {
+        self.inner.get_feedback()
     }
 }

@@ -49,6 +49,10 @@ impl TemplateSourceAnalysisBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Appends an item to `data_set_references`.
     ///
     /// To override the contents of this collection use [`set_data_set_references`](Self::set_data_set_references).
@@ -67,6 +71,12 @@ impl TemplateSourceAnalysisBuilder {
     ) -> Self {
         self.data_set_references = input;
         self
+    }
+    /// <p>A structure containing information about the dataset references used as placeholders in the template.</p>
+    pub fn get_data_set_references(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSetReference>> {
+        &self.data_set_references
     }
     /// Consumes the builder and constructs a [`TemplateSourceAnalysis`](crate::types::TemplateSourceAnalysis).
     pub fn build(self) -> crate::types::TemplateSourceAnalysis {

@@ -84,6 +84,10 @@ impl ProcessDetailsBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the process.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The path to the process executable.</p>
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path = ::std::option::Option::Some(input.into());
@@ -93,6 +97,10 @@ impl ProcessDetailsBuilder {
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path = input;
         self
+    }
+    /// <p>The path to the process executable.</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
     }
     /// <p>The process ID.</p>
     pub fn pid(mut self, input: i32) -> Self {
@@ -104,6 +112,10 @@ impl ProcessDetailsBuilder {
         self.pid = input;
         self
     }
+    /// <p>The process ID.</p>
+    pub fn get_pid(&self) -> &::std::option::Option<i32> {
+        &self.pid
+    }
     /// <p>The parent process ID. This field accepts positive integers between <code>O</code> and <code>2147483647</code>.</p>
     pub fn parent_pid(mut self, input: i32) -> Self {
         self.parent_pid = ::std::option::Option::Some(input);
@@ -113,6 +125,10 @@ impl ProcessDetailsBuilder {
     pub fn set_parent_pid(mut self, input: ::std::option::Option<i32>) -> Self {
         self.parent_pid = input;
         self
+    }
+    /// <p>The parent process ID. This field accepts positive integers between <code>O</code> and <code>2147483647</code>.</p>
+    pub fn get_parent_pid(&self) -> &::std::option::Option<i32> {
+        &self.parent_pid
     }
     /// <p>Indicates when the process was launched.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
@@ -125,6 +141,11 @@ impl ProcessDetailsBuilder {
     pub fn set_launched_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launched_at = input;
         self
+    }
+    /// <p>Indicates when the process was launched.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_launched_at(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launched_at
     }
     /// <p>Indicates when the process was terminated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
@@ -143,6 +164,11 @@ impl ProcessDetailsBuilder {
     ) -> Self {
         self.terminated_at = input;
         self
+    }
+    /// <p>Indicates when the process was terminated.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_terminated_at(&self) -> &::std::option::Option<::std::string::String> {
+        &self.terminated_at
     }
     /// Consumes the builder and constructs a [`ProcessDetails`](crate::types::ProcessDetails).
     pub fn build(self) -> crate::types::ProcessDetails {

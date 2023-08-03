@@ -71,6 +71,14 @@ impl HttpContextBuilder {
         self.headers = input;
         self
     }
+    /// <p>The header keys and values in an HTTP authorization request.</p>
+    pub fn get_headers(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.headers
+    }
     /// <p>The query string keys and values in an HTTP authorization request.</p>
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_string = ::std::option::Option::Some(input.into());
@@ -80,6 +88,10 @@ impl HttpContextBuilder {
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_string = input;
         self
+    }
+    /// <p>The query string keys and values in an HTTP authorization request.</p>
+    pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_string
     }
     /// Consumes the builder and constructs a [`HttpContext`](crate::types::HttpContext).
     pub fn build(self) -> crate::types::HttpContext {

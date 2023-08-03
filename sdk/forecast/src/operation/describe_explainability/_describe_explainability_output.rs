@@ -186,6 +186,10 @@ impl DescribeExplainabilityOutputBuilder {
         self.explainability_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Explainability.</p>
+    pub fn get_explainability_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.explainability_arn
+    }
     /// <p>The name of the Explainability.</p>
     pub fn explainability_name(
         mut self,
@@ -202,6 +206,10 @@ impl DescribeExplainabilityOutputBuilder {
         self.explainability_name = input;
         self
     }
+    /// <p>The name of the Explainability.</p>
+    pub fn get_explainability_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.explainability_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the Explainability resource.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
@@ -211,6 +219,10 @@ impl DescribeExplainabilityOutputBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the Explainability resource.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// <p>The configuration settings that define the granularity of time series and time points for the Explainability.</p>
     pub fn explainability_config(mut self, input: crate::types::ExplainabilityConfig) -> Self {
@@ -225,6 +237,12 @@ impl DescribeExplainabilityOutputBuilder {
         self.explainability_config = input;
         self
     }
+    /// <p>The configuration settings that define the granularity of time series and time points for the Explainability.</p>
+    pub fn get_explainability_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExplainabilityConfig> {
+        &self.explainability_config
+    }
     /// <p>Whether the visualization was enabled for the Explainability resource.</p>
     pub fn enable_visualization(mut self, input: bool) -> Self {
         self.enable_visualization = ::std::option::Option::Some(input);
@@ -234,6 +252,10 @@ impl DescribeExplainabilityOutputBuilder {
     pub fn set_enable_visualization(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_visualization = input;
         self
+    }
+    /// <p>Whether the visualization was enabled for the Explainability resource.</p>
+    pub fn get_enable_visualization(&self) -> &::std::option::Option<bool> {
+        &self.enable_visualization
     }
     /// <p>The source of your data, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an Key Management Service (KMS) key.</p>
     pub fn data_source(mut self, input: crate::types::DataSource) -> Self {
@@ -248,6 +270,10 @@ impl DescribeExplainabilityOutputBuilder {
         self.data_source = input;
         self
     }
+    /// <p>The source of your data, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an Key Management Service (KMS) key.</p>
+    pub fn get_data_source(&self) -> &::std::option::Option<crate::types::DataSource> {
+        &self.data_source
+    }
     /// <p>Defines the fields of a dataset.</p>
     pub fn schema(mut self, input: crate::types::Schema) -> Self {
         self.schema = ::std::option::Option::Some(input);
@@ -257,6 +283,10 @@ impl DescribeExplainabilityOutputBuilder {
     pub fn set_schema(mut self, input: ::std::option::Option<crate::types::Schema>) -> Self {
         self.schema = input;
         self
+    }
+    /// <p>Defines the fields of a dataset.</p>
+    pub fn get_schema(&self) -> &::std::option::Option<crate::types::Schema> {
+        &self.schema
     }
     /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, the first time point in the Explainability.</p>
     pub fn start_date_time(
@@ -274,6 +304,10 @@ impl DescribeExplainabilityOutputBuilder {
         self.start_date_time = input;
         self
     }
+    /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, the first time point in the Explainability.</p>
+    pub fn get_start_date_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_date_time
+    }
     /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, the last time point in the Explainability.</p>
     pub fn end_date_time(
         mut self,
@@ -290,6 +324,10 @@ impl DescribeExplainabilityOutputBuilder {
         self.end_date_time = input;
         self
     }
+    /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, the last time point in the Explainability.</p>
+    pub fn get_end_date_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.end_date_time
+    }
     /// <p>The estimated time remaining in minutes for the <code>CreateExplainability</code> job to complete.</p>
     pub fn estimated_time_remaining_in_minutes(mut self, input: i64) -> Self {
         self.estimated_time_remaining_in_minutes = ::std::option::Option::Some(input);
@@ -303,6 +341,10 @@ impl DescribeExplainabilityOutputBuilder {
         self.estimated_time_remaining_in_minutes = input;
         self
     }
+    /// <p>The estimated time remaining in minutes for the <code>CreateExplainability</code> job to complete.</p>
+    pub fn get_estimated_time_remaining_in_minutes(&self) -> &::std::option::Option<i64> {
+        &self.estimated_time_remaining_in_minutes
+    }
     /// <p>If an error occurred, a message about the error.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -312,6 +354,10 @@ impl DescribeExplainabilityOutputBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>If an error occurred, a message about the error.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// <p>The status of the Explainability resource. States include: </p>
     /// <ul>
@@ -335,6 +381,16 @@ impl DescribeExplainabilityOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the Explainability resource. States include: </p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>When the Explainability resource was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -347,6 +403,10 @@ impl DescribeExplainabilityOutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>When the Explainability resource was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
@@ -374,6 +434,19 @@ impl DescribeExplainabilityOutputBuilder {
     ) -> Self {
         self.last_modification_time = input;
         self
+    }
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
+    /// <ul>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
+    /// </ul>
+    pub fn get_last_modification_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modification_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

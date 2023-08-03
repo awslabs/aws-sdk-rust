@@ -49,6 +49,10 @@ impl ConversationLevelIntentClassificationResultItemBuilder {
         self.intent_name = input;
         self
     }
+    /// <p>The intent name used in the evaluation of intent level success or failure.</p>
+    pub fn get_intent_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.intent_name
+    }
     /// <p>The number of times the specific intent is used in the evaluation of intent level success or failure.</p>
     pub fn match_result(mut self, input: crate::types::TestResultMatchStatus) -> Self {
         self.match_result = ::std::option::Option::Some(input);
@@ -61,6 +65,10 @@ impl ConversationLevelIntentClassificationResultItemBuilder {
     ) -> Self {
         self.match_result = input;
         self
+    }
+    /// <p>The number of times the specific intent is used in the evaluation of intent level success or failure.</p>
+    pub fn get_match_result(&self) -> &::std::option::Option<crate::types::TestResultMatchStatus> {
+        &self.match_result
     }
     /// Consumes the builder and constructs a [`ConversationLevelIntentClassificationResultItem`](crate::types::ConversationLevelIntentClassificationResultItem).
     pub fn build(self) -> crate::types::ConversationLevelIntentClassificationResultItem {

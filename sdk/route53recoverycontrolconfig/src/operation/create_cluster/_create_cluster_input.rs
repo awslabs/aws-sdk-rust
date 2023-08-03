@@ -64,6 +64,10 @@ impl CreateClusterInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>The name of the cluster.</p>
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl CreateClusterInputBuilder {
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_name = input;
         self
+    }
+    /// <p>The name of the cluster.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_name
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -98,6 +106,14 @@ impl CreateClusterInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags associated with the cluster.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
     pub fn build(

@@ -55,6 +55,10 @@ impl PutNotificationChannelInputBuilder {
         self.sns_topic_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the SNS topic that collects notifications from Firewall Manager.</p>
+    pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sns_topic_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record Firewall Manager activity. </p>
     pub fn sns_role_name(
         mut self,
@@ -70,6 +74,10 @@ impl PutNotificationChannelInputBuilder {
     ) -> Self {
         self.sns_role_name = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record Firewall Manager activity. </p>
+    pub fn get_sns_role_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sns_role_name
     }
     /// Consumes the builder and constructs a [`PutNotificationChannelInput`](crate::operation::put_notification_channel::PutNotificationChannelInput).
     pub fn build(

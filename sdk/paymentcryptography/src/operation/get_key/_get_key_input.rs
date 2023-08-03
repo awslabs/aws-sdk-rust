@@ -45,6 +45,10 @@ impl GetKeyInputBuilder {
         self.key_identifier = input;
         self
     }
+    /// <p>The <code>KeyARN</code> of the Amazon Web Services Payment Cryptography key.</p>
+    pub fn get_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_identifier
+    }
     /// Consumes the builder and constructs a [`GetKeyInput`](crate::operation::get_key::GetKeyInput).
     pub fn build(
         self,

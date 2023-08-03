@@ -47,6 +47,10 @@ impl DisassociateAttributeGroupInputBuilder {
         self.application = input;
         self
     }
+    /// <p> The name, ID, or ARN of the application. </p>
+    pub fn get_application(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application
+    }
     /// <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
     pub fn attribute_group(
         mut self,
@@ -62,6 +66,10 @@ impl DisassociateAttributeGroupInputBuilder {
     ) -> Self {
         self.attribute_group = input;
         self
+    }
+    /// <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
+    pub fn get_attribute_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_group
     }
     /// Consumes the builder and constructs a [`DisassociateAttributeGroupInput`](crate::operation::disassociate_attribute_group::DisassociateAttributeGroupInput).
     pub fn build(

@@ -55,6 +55,10 @@ impl AquaConfigurationBuilder {
         self
     }
     /// <p>This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
+    pub fn get_aqua_status(&self) -> &::std::option::Option<crate::types::AquaStatus> {
+        &self.aqua_status
+    }
+    /// <p>This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
     pub fn aqua_configuration_status(
         mut self,
         input: crate::types::AquaConfigurationStatus,
@@ -69,6 +73,12 @@ impl AquaConfigurationBuilder {
     ) -> Self {
         self.aqua_configuration_status = input;
         self
+    }
+    /// <p>This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).</p>
+    pub fn get_aqua_configuration_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::AquaConfigurationStatus> {
+        &self.aqua_configuration_status
     }
     /// Consumes the builder and constructs a [`AquaConfiguration`](crate::types::AquaConfiguration).
     pub fn build(self) -> crate::types::AquaConfiguration {

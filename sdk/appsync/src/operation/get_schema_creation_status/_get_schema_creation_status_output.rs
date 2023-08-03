@@ -56,6 +56,10 @@ impl GetSchemaCreationStatusOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When the schema is in the ACTIVE state, you can add data.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::SchemaStatus> {
+        &self.status
+    }
     /// <p>Detailed information about the status of the schema creation operation.</p>
     pub fn details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.details = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl GetSchemaCreationStatusOutputBuilder {
     pub fn set_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.details = input;
         self
+    }
+    /// <p>Detailed information about the status of the schema creation operation.</p>
+    pub fn get_details(&self) -> &::std::option::Option<::std::string::String> {
+        &self.details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

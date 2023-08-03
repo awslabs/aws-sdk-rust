@@ -71,6 +71,10 @@ impl CreateTokenInputBuilder {
         self.license_arn = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the license. The ARN is mapped to the aud claim of the JWT token.</p>
+    pub fn get_license_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_arn
+    }
     /// Appends an item to `role_arns`.
     ///
     /// To override the contents of this collection use [`set_role_arns`](Self::set_role_arns).
@@ -90,6 +94,10 @@ impl CreateTokenInputBuilder {
         self.role_arns = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the IAM roles to embed in the token. License Manager does not check whether the roles are in use.</p>
+    pub fn get_role_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.role_arns
+    }
     /// <p>Token expiration, in days, counted from token creation. The default is 365 days.</p>
     pub fn expiration_in_days(mut self, input: i32) -> Self {
         self.expiration_in_days = ::std::option::Option::Some(input);
@@ -99,6 +107,10 @@ impl CreateTokenInputBuilder {
     pub fn set_expiration_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.expiration_in_days = input;
         self
+    }
+    /// <p>Token expiration, in days, counted from token creation. The default is 365 days.</p>
+    pub fn get_expiration_in_days(&self) -> &::std::option::Option<i32> {
+        &self.expiration_in_days
     }
     /// Appends an item to `token_properties`.
     ///
@@ -122,6 +134,12 @@ impl CreateTokenInputBuilder {
         self.token_properties = input;
         self
     }
+    /// <p>Data specified by the caller to be included in the JWT token. The data is mapped to the amr claim of the JWT token.</p>
+    pub fn get_token_properties(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.token_properties
+    }
     /// <p>Idempotency token, valid for 10 minutes.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -131,6 +149,10 @@ impl CreateTokenInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>Idempotency token, valid for 10 minutes.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateTokenInput`](crate::operation::create_token::CreateTokenInput).
     pub fn build(

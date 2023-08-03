@@ -95,6 +95,10 @@ impl GetParametersByPathInputBuilder {
         self.path = input;
         self
     }
+    /// <p>The hierarchy for the parameter. Hierarchies start with a forward slash (/). The hierarchy is the parameter name except the last part of the parameter. For the API call to succeed, the last part of the parameter name can't be in the path. A parameter name hierarchy can have a maximum of 15 levels. Here is an example of a hierarchy: <code>/Finance/Prod/IAD/WinServ2016/license33 </code> </p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
+    }
     /// <p>Retrieve all parameters within a hierarchy.</p> <important>
     /// <p>If a user has access to a path, then the user can access all levels of that path. For example, if a user has permission to access path <code>/a</code>, then the user can also access <code>/a/b</code>. Even if a user has explicitly been denied access in IAM for parameter <code>/a/b</code>, they can still call the GetParametersByPath API operation recursively for <code>/a</code> and view <code>/a/b</code>.</p>
     /// </important>
@@ -108,6 +112,12 @@ impl GetParametersByPathInputBuilder {
     pub fn set_recursive(mut self, input: ::std::option::Option<bool>) -> Self {
         self.recursive = input;
         self
+    }
+    /// <p>Retrieve all parameters within a hierarchy.</p> <important>
+    /// <p>If a user has access to a path, then the user can access all levels of that path. For example, if a user has permission to access path <code>/a</code>, then the user can also access <code>/a/b</code>. Even if a user has explicitly been denied access in IAM for parameter <code>/a/b</code>, they can still call the GetParametersByPath API operation recursively for <code>/a</code> and view <code>/a/b</code>.</p>
+    /// </important>
+    pub fn get_recursive(&self) -> &::std::option::Option<bool> {
+        &self.recursive
     }
     /// Appends an item to `parameter_filters`.
     ///
@@ -134,6 +144,15 @@ impl GetParametersByPathInputBuilder {
         self.parameter_filters = input;
         self
     }
+    /// <p>Filters to limit the request results.</p> <note>
+    /// <p>The following <code>Key</code> values are supported for <code>GetParametersByPath</code>: <code>Type</code>, <code>KeyId</code>, and <code>Label</code>.</p>
+    /// <p>The following <code>Key</code> values aren't supported for <code>GetParametersByPath</code>: <code>tag</code>, <code>DataType</code>, <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p>
+    /// </note>
+    pub fn get_parameter_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterStringFilter>> {
+        &self.parameter_filters
+    }
     /// <p>Retrieve all parameters in a hierarchy with their value decrypted.</p>
     pub fn with_decryption(mut self, input: bool) -> Self {
         self.with_decryption = ::std::option::Option::Some(input);
@@ -143,6 +162,10 @@ impl GetParametersByPathInputBuilder {
     pub fn set_with_decryption(mut self, input: ::std::option::Option<bool>) -> Self {
         self.with_decryption = input;
         self
+    }
+    /// <p>Retrieve all parameters in a hierarchy with their value decrypted.</p>
+    pub fn get_with_decryption(&self) -> &::std::option::Option<bool> {
+        &self.with_decryption
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -154,6 +177,10 @@ impl GetParametersByPathInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -163,6 +190,10 @@ impl GetParametersByPathInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token to start the list. Use this token to get the next set of results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`GetParametersByPathInput`](crate::operation::get_parameters_by_path::GetParametersByPathInput).
     pub fn build(

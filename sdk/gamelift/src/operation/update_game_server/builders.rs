@@ -46,6 +46,12 @@ impl UpdateGameServerFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateGameServer as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_game_server::builders::UpdateGameServerInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -142,6 +148,10 @@ impl UpdateGameServerFluentBuilder {
         self.inner = self.inner.set_game_server_group_name(input);
         self
     }
+    /// <p>A unique identifier for the game server group where the game server is running.</p>
+    pub fn get_game_server_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_game_server_group_name()
+    }
     /// <p>A custom string that uniquely identifies the game server to update.</p>
     pub fn game_server_id(
         mut self,
@@ -157,6 +167,10 @@ impl UpdateGameServerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_game_server_id(input);
         self
+    }
+    /// <p>A custom string that uniquely identifies the game server to update.</p>
+    pub fn get_game_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_game_server_id()
     }
     /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers. </p>
     pub fn game_server_data(
@@ -174,6 +188,10 @@ impl UpdateGameServerFluentBuilder {
         self.inner = self.inner.set_game_server_data(input);
         self
     }
+    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers. </p>
+    pub fn get_game_server_data(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_game_server_data()
+    }
     /// <p>Indicates whether the game server is available or is currently hosting gameplay.</p>
     pub fn utilization_status(mut self, input: crate::types::GameServerUtilizationStatus) -> Self {
         self.inner = self.inner.utilization_status(input);
@@ -187,6 +205,12 @@ impl UpdateGameServerFluentBuilder {
         self.inner = self.inner.set_utilization_status(input);
         self
     }
+    /// <p>Indicates whether the game server is available or is currently hosting gameplay.</p>
+    pub fn get_utilization_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::GameServerUtilizationStatus> {
+        self.inner.get_utilization_status()
+    }
     /// <p>Indicates health status of the game server. A request that includes this parameter updates the game server's <i>LastHealthCheckTime</i> timestamp. </p>
     pub fn health_check(mut self, input: crate::types::GameServerHealthCheck) -> Self {
         self.inner = self.inner.health_check(input);
@@ -199,5 +223,9 @@ impl UpdateGameServerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_health_check(input);
         self
+    }
+    /// <p>Indicates health status of the game server. A request that includes this parameter updates the game server's <i>LastHealthCheckTime</i> timestamp. </p>
+    pub fn get_health_check(&self) -> &::std::option::Option<crate::types::GameServerHealthCheck> {
+        self.inner.get_health_check()
     }
 }

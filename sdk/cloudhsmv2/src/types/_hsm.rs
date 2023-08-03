@@ -102,6 +102,10 @@ impl HsmBuilder {
         self.availability_zone = input;
         self
     }
+    /// <p>The Availability Zone that contains the HSM.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p>The identifier (ID) of the cluster that contains the HSM.</p>
     pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_id = ::std::option::Option::Some(input.into());
@@ -111,6 +115,10 @@ impl HsmBuilder {
     pub fn set_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_id = input;
         self
+    }
+    /// <p>The identifier (ID) of the cluster that contains the HSM.</p>
+    pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_id
     }
     /// <p>The subnet that contains the HSM's elastic network interface (ENI).</p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -122,6 +130,10 @@ impl HsmBuilder {
         self.subnet_id = input;
         self
     }
+    /// <p>The subnet that contains the HSM's elastic network interface (ENI).</p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_id
+    }
     /// <p>The identifier (ID) of the HSM's elastic network interface (ENI).</p>
     pub fn eni_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.eni_id = ::std::option::Option::Some(input.into());
@@ -131,6 +143,10 @@ impl HsmBuilder {
     pub fn set_eni_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.eni_id = input;
         self
+    }
+    /// <p>The identifier (ID) of the HSM's elastic network interface (ENI).</p>
+    pub fn get_eni_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.eni_id
     }
     /// <p>The IP address of the HSM's elastic network interface (ENI).</p>
     pub fn eni_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -142,6 +158,10 @@ impl HsmBuilder {
         self.eni_ip = input;
         self
     }
+    /// <p>The IP address of the HSM's elastic network interface (ENI).</p>
+    pub fn get_eni_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.eni_ip
+    }
     /// <p>The HSM's identifier (ID).</p>
     pub fn hsm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hsm_id = ::std::option::Option::Some(input.into());
@@ -152,6 +172,10 @@ impl HsmBuilder {
         self.hsm_id = input;
         self
     }
+    /// <p>The HSM's identifier (ID).</p>
+    pub fn get_hsm_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hsm_id
+    }
     /// <p>The HSM's state.</p>
     pub fn state(mut self, input: crate::types::HsmState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -161,6 +185,10 @@ impl HsmBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::HsmState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The HSM's state.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::HsmState> {
+        &self.state
     }
     /// <p>A description of the HSM's state.</p>
     pub fn state_message(
@@ -177,6 +205,10 @@ impl HsmBuilder {
     ) -> Self {
         self.state_message = input;
         self
+    }
+    /// <p>A description of the HSM's state.</p>
+    pub fn get_state_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_message
     }
     /// Consumes the builder and constructs a [`Hsm`](crate::types::Hsm).
     pub fn build(self) -> crate::types::Hsm {

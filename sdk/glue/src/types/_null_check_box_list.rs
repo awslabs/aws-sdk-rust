@@ -56,6 +56,10 @@ impl NullCheckBoxListBuilder {
         self.is_empty = input;
         self
     }
+    /// <p>Specifies that an empty string is considered as a null value.</p>
+    pub fn get_is_empty(&self) -> &::std::option::Option<bool> {
+        &self.is_empty
+    }
     /// <p>Specifies that a value spelling out the word 'null' is considered as a null value.</p>
     pub fn is_null_string(mut self, input: bool) -> Self {
         self.is_null_string = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl NullCheckBoxListBuilder {
         self.is_null_string = input;
         self
     }
+    /// <p>Specifies that a value spelling out the word 'null' is considered as a null value.</p>
+    pub fn get_is_null_string(&self) -> &::std::option::Option<bool> {
+        &self.is_null_string
+    }
     /// <p>Specifies that an integer value of -1 is considered as a null value.</p>
     pub fn is_neg_one(mut self, input: bool) -> Self {
         self.is_neg_one = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl NullCheckBoxListBuilder {
     pub fn set_is_neg_one(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_neg_one = input;
         self
+    }
+    /// <p>Specifies that an integer value of -1 is considered as a null value.</p>
+    pub fn get_is_neg_one(&self) -> &::std::option::Option<bool> {
+        &self.is_neg_one
     }
     /// Consumes the builder and constructs a [`NullCheckBoxList`](crate::types::NullCheckBoxList).
     pub fn build(self) -> crate::types::NullCheckBoxList {

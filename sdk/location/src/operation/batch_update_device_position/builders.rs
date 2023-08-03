@@ -40,6 +40,10 @@ impl BatchUpdateDevicePositionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchUpdateDevicePosition as a reference.
+    pub fn as_input(&self) -> &crate::operation::batch_update_device_position::builders::BatchUpdateDevicePositionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +134,10 @@ impl BatchUpdateDevicePositionFluentBuilder {
         self.inner = self.inner.set_tracker_name(input);
         self
     }
+    /// <p>The name of the tracker resource to update.</p>
+    pub fn get_tracker_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_tracker_name()
+    }
     /// Appends an item to `Updates`.
     ///
     /// To override the contents of this collection use [`set_updates`](Self::set_updates).
@@ -146,5 +154,11 @@ impl BatchUpdateDevicePositionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_updates(input);
         self
+    }
+    /// <p>Contains the position update details for each device, up to 10 devices.</p>
+    pub fn get_updates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DevicePositionUpdate>> {
+        self.inner.get_updates()
     }
 }

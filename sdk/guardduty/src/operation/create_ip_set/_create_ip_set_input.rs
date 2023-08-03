@@ -97,6 +97,10 @@ impl CreateIpSetInputBuilder {
         self.detector_id = input;
         self
     }
+    /// <p>The unique ID of the detector of the GuardDuty account that you want to create an IPSet for.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
+    }
     /// <p>The user-friendly name to identify the IPSet.</p>
     /// <p> Allowed characters are alphanumeric, whitespace, dash (-), and underscores (_).</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -109,6 +113,11 @@ impl CreateIpSetInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The user-friendly name to identify the IPSet.</p>
+    /// <p> Allowed characters are alphanumeric, whitespace, dash (-), and underscores (_).</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The format of the file that contains the IPSet.</p>
     pub fn format(mut self, input: crate::types::IpSetFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
@@ -118,6 +127,10 @@ impl CreateIpSetInputBuilder {
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::IpSetFormat>) -> Self {
         self.format = input;
         self
+    }
+    /// <p>The format of the file that contains the IPSet.</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::IpSetFormat> {
+        &self.format
     }
     /// <p>The URI of the file that contains the IPSet. </p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -129,6 +142,10 @@ impl CreateIpSetInputBuilder {
         self.location = input;
         self
     }
+    /// <p>The URI of the file that contains the IPSet. </p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
+    }
     /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.</p>
     pub fn activate(mut self, input: bool) -> Self {
         self.activate = ::std::option::Option::Some(input);
@@ -139,6 +156,10 @@ impl CreateIpSetInputBuilder {
         self.activate = input;
         self
     }
+    /// <p>A Boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.</p>
+    pub fn get_activate(&self) -> &::std::option::Option<bool> {
+        &self.activate
+    }
     /// <p>The idempotency token for the create request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -148,6 +169,10 @@ impl CreateIpSetInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>The idempotency token for the create request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -173,6 +198,14 @@ impl CreateIpSetInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags to be added to a new IP set resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateIpSetInput`](crate::operation::create_ip_set::CreateIpSetInput).
     pub fn build(

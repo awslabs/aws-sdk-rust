@@ -61,6 +61,10 @@ impl DeleteIamPolicyAssignmentInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID where you want to delete the IAM policy assignment.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The name of the assignment. </p>
     pub fn assignment_name(
         mut self,
@@ -77,6 +81,10 @@ impl DeleteIamPolicyAssignmentInputBuilder {
         self.assignment_name = input;
         self
     }
+    /// <p>The name of the assignment. </p>
+    pub fn get_assignment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assignment_name
+    }
     /// <p>The namespace that contains the assignment.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
@@ -86,6 +94,10 @@ impl DeleteIamPolicyAssignmentInputBuilder {
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace = input;
         self
+    }
+    /// <p>The namespace that contains the assignment.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
     }
     /// Consumes the builder and constructs a [`DeleteIamPolicyAssignmentInput`](crate::operation::delete_iam_policy_assignment::DeleteIamPolicyAssignmentInput).
     pub fn build(

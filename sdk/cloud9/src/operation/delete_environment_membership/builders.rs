@@ -36,6 +36,10 @@ impl DeleteEnvironmentMembershipFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteEnvironmentMembership as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_environment_membership::builders::DeleteEnvironmentMembershipInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl DeleteEnvironmentMembershipFluentBuilder {
         self.inner = self.inner.set_environment_id(input);
         self
     }
+    /// <p>The ID of the environment to delete the environment member from.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_id()
+    }
     /// <p>The Amazon Resource Name (ARN) of the environment member to delete from the environment.</p>
     pub fn user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_arn(input.into());
@@ -141,5 +149,9 @@ impl DeleteEnvironmentMembershipFluentBuilder {
     pub fn set_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the environment member to delete from the environment.</p>
+    pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_arn()
     }
 }

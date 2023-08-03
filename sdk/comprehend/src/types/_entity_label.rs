@@ -48,6 +48,10 @@ impl EntityLabelBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the label.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::PiiEntityType> {
+        &self.name
+    }
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
     pub fn score(mut self, input: f32) -> Self {
         self.score = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl EntityLabelBuilder {
     pub fn set_score(mut self, input: ::std::option::Option<f32>) -> Self {
         self.score = input;
         self
+    }
+    /// <p>The level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
+    pub fn get_score(&self) -> &::std::option::Option<f32> {
+        &self.score
     }
     /// Consumes the builder and constructs a [`EntityLabel`](crate::types::EntityLabel).
     pub fn build(self) -> crate::types::EntityLabel {

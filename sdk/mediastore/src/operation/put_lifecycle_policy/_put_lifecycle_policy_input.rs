@@ -54,6 +54,10 @@ impl PutLifecyclePolicyInputBuilder {
         self.container_name = input;
         self
     }
+    /// <p>The name of the container that you want to assign the object lifecycle policy to.</p>
+    pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.container_name
+    }
     /// <p>The object lifecycle policy to apply to the container.</p>
     pub fn lifecycle_policy(
         mut self,
@@ -69,6 +73,10 @@ impl PutLifecyclePolicyInputBuilder {
     ) -> Self {
         self.lifecycle_policy = input;
         self
+    }
+    /// <p>The object lifecycle policy to apply to the container.</p>
+    pub fn get_lifecycle_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lifecycle_policy
     }
     /// Consumes the builder and constructs a [`PutLifecyclePolicyInput`](crate::operation::put_lifecycle_policy::PutLifecyclePolicyInput).
     pub fn build(

@@ -37,6 +37,10 @@ impl UpdatePolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdatePolicy as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_policy::builders::UpdatePolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -121,6 +125,11 @@ impl UpdatePolicyFluentBuilder {
         self.inner = self.inner.set_policy_id(input);
         self
     }
+    /// <p>The unique identifier (ID) of the policy that you want to update.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
+    pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_id()
+    }
     /// <p>If provided, the new name for the policy.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -133,6 +142,11 @@ impl UpdatePolicyFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>If provided, the new name for the policy.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>If provided, the new description for the policy.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -143,6 +157,10 @@ impl UpdatePolicyFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>If provided, the new description for the policy.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>If provided, the new content for the policy. The text must be correctly formatted JSON that complies with the syntax for the policy's type. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control Policy Syntax</a> in the <i>Organizations User Guide.</i> </p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.content(input.into());
@@ -152,5 +170,9 @@ impl UpdatePolicyFluentBuilder {
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_content(input);
         self
+    }
+    /// <p>If provided, the new content for the policy. The text must be correctly formatted JSON that complies with the syntax for the policy's type. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control Policy Syntax</a> in the <i>Organizations User Guide.</i> </p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_content()
     }
 }

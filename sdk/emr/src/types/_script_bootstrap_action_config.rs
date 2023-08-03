@@ -48,6 +48,10 @@ impl ScriptBootstrapActionConfigBuilder {
         self.path = input;
         self
     }
+    /// <p>Location in Amazon S3 of the script to run during a bootstrap action.</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
+    }
     /// Appends an item to `args`.
     ///
     /// To override the contents of this collection use [`set_args`](Self::set_args).
@@ -66,6 +70,10 @@ impl ScriptBootstrapActionConfigBuilder {
     ) -> Self {
         self.args = input;
         self
+    }
+    /// <p>A list of command line arguments to pass to the bootstrap action script.</p>
+    pub fn get_args(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.args
     }
     /// Consumes the builder and constructs a [`ScriptBootstrapActionConfig`](crate::types::ScriptBootstrapActionConfig).
     pub fn build(self) -> crate::types::ScriptBootstrapActionConfig {

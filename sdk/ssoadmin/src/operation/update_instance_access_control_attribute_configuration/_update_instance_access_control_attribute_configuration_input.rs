@@ -52,6 +52,10 @@ impl UpdateInstanceAccessControlAttributeConfigurationInputBuilder {
         self.instance_arn = input;
         self
     }
+    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
+    pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_arn
+    }
     /// <p>Updates the attributes for your ABAC configuration.</p>
     pub fn instance_access_control_attribute_configuration(
         mut self,
@@ -67,6 +71,12 @@ impl UpdateInstanceAccessControlAttributeConfigurationInputBuilder {
     ) -> Self {
         self.instance_access_control_attribute_configuration = input;
         self
+    }
+    /// <p>Updates the attributes for your ABAC configuration.</p>
+    pub fn get_instance_access_control_attribute_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceAccessControlAttributeConfiguration> {
+        &self.instance_access_control_attribute_configuration
     }
     /// Consumes the builder and constructs a [`UpdateInstanceAccessControlAttributeConfigurationInput`](crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{

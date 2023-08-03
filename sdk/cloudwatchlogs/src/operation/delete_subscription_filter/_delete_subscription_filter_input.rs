@@ -55,6 +55,10 @@ impl DeleteSubscriptionFilterInputBuilder {
         self.log_group_name = input;
         self
     }
+    /// <p>The name of the log group.</p>
+    pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group_name
+    }
     /// <p>The name of the subscription filter.</p>
     pub fn filter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter_name = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl DeleteSubscriptionFilterInputBuilder {
     pub fn set_filter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.filter_name = input;
         self
+    }
+    /// <p>The name of the subscription filter.</p>
+    pub fn get_filter_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filter_name
     }
     /// Consumes the builder and constructs a [`DeleteSubscriptionFilterInput`](crate::operation::delete_subscription_filter::DeleteSubscriptionFilterInput).
     pub fn build(

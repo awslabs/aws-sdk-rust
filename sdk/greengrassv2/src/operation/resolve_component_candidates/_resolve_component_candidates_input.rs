@@ -54,6 +54,10 @@ impl ResolveComponentCandidatesInputBuilder {
         self.platform = input;
         self
     }
+    /// <p>The platform to use to resolve compatible components.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<crate::types::ComponentPlatform> {
+        &self.platform
+    }
     /// Appends an item to `component_candidates`.
     ///
     /// To override the contents of this collection use [`set_component_candidates`](Self::set_component_candidates).
@@ -72,6 +76,12 @@ impl ResolveComponentCandidatesInputBuilder {
     ) -> Self {
         self.component_candidates = input;
         self
+    }
+    /// <p>The list of components to resolve.</p>
+    pub fn get_component_candidates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentCandidate>> {
+        &self.component_candidates
     }
     /// Consumes the builder and constructs a [`ResolveComponentCandidatesInput`](crate::operation::resolve_component_candidates::ResolveComponentCandidatesInput).
     pub fn build(

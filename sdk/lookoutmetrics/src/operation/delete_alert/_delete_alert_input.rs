@@ -39,6 +39,10 @@ impl DeleteAlertInputBuilder {
         self.alert_arn = input;
         self
     }
+    /// <p>The ARN of the alert to delete.</p>
+    pub fn get_alert_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alert_arn
+    }
     /// Consumes the builder and constructs a [`DeleteAlertInput`](crate::operation::delete_alert::DeleteAlertInput).
     pub fn build(
         self,

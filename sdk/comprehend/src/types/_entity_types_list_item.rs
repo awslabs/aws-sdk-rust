@@ -44,6 +44,11 @@ impl EntityTypesListItemBuilder {
         self.r#type = input;
         self
     }
+    /// <p>An entity type within a labeled training dataset that Amazon Comprehend uses to train a custom entity recognizer.</p>
+    /// <p>Entity types must not contain the following invalid characters: \n (line break), \\n (escaped line break, \r (carriage return), \\r (escaped carriage return), \t (tab), \\t (escaped tab), space, and , (comma).</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// Consumes the builder and constructs a [`EntityTypesListItem`](crate::types::EntityTypesListItem).
     pub fn build(self) -> crate::types::EntityTypesListItem {
         crate::types::EntityTypesListItem {

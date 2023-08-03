@@ -36,6 +36,10 @@ impl SearchAvailablePhoneNumbersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SearchAvailablePhoneNumbers as a reference.
+    pub fn as_input(&self) -> &crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl SearchAvailablePhoneNumbersFluentBuilder {
         self.inner = self.inner.set_area_code(input);
         self
     }
+    /// <p>Confines a search to just the phone numbers associated with the specified area code.</p>
+    pub fn get_area_code(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_area_code()
+    }
     /// <p>Confines a search to just the phone numbers associated with the specified city.</p>
     pub fn city(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.city(input.into());
@@ -141,6 +149,10 @@ impl SearchAvailablePhoneNumbersFluentBuilder {
     pub fn set_city(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_city(input);
         self
+    }
+    /// <p>Confines a search to just the phone numbers associated with the specified city.</p>
+    pub fn get_city(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_city()
     }
     /// <p>Confines a search to just the phone numbers associated with the specified country.</p>
     pub fn country(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -152,6 +164,10 @@ impl SearchAvailablePhoneNumbersFluentBuilder {
         self.inner = self.inner.set_country(input);
         self
     }
+    /// <p>Confines a search to just the phone numbers associated with the specified country.</p>
+    pub fn get_country(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_country()
+    }
     /// <p>Confines a search to just the phone numbers associated with the specified state.</p>
     pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.state(input.into());
@@ -161,6 +177,10 @@ impl SearchAvailablePhoneNumbersFluentBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_state(input);
         self
+    }
+    /// <p>Confines a search to just the phone numbers associated with the specified state.</p>
+    pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_state()
     }
     /// <p>Confines a search to just the phone numbers associated with the specified toll-free prefix.</p>
     pub fn toll_free_prefix(
@@ -178,6 +198,10 @@ impl SearchAvailablePhoneNumbersFluentBuilder {
         self.inner = self.inner.set_toll_free_prefix(input);
         self
     }
+    /// <p>Confines a search to just the phone numbers associated with the specified toll-free prefix.</p>
+    pub fn get_toll_free_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_toll_free_prefix()
+    }
     /// <p>Confines a search to just the phone numbers associated with the specified phone number type, either <b>local</b> or <b>toll-free</b>.</p>
     pub fn phone_number_type(mut self, input: crate::types::PhoneNumberType) -> Self {
         self.inner = self.inner.phone_number_type(input);
@@ -191,6 +215,10 @@ impl SearchAvailablePhoneNumbersFluentBuilder {
         self.inner = self.inner.set_phone_number_type(input);
         self
     }
+    /// <p>Confines a search to just the phone numbers associated with the specified phone number type, either <b>local</b> or <b>toll-free</b>.</p>
+    pub fn get_phone_number_type(&self) -> &::std::option::Option<crate::types::PhoneNumberType> {
+        self.inner.get_phone_number_type()
+    }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -201,6 +229,10 @@ impl SearchAvailablePhoneNumbersFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token used to return the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -210,5 +242,9 @@ impl SearchAvailablePhoneNumbersFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token used to return the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

@@ -84,6 +84,10 @@ impl IdentitySourceItemBuilder {
         self.created_date = input;
         self
     }
+    /// <p>The date and time the identity source was originally created.</p>
+    pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_date
+    }
     /// <p>A structure that contains the details of the associated identity provider (IdP).</p>
     pub fn details(mut self, input: crate::types::IdentitySourceItemDetails) -> Self {
         self.details = ::std::option::Option::Some(input);
@@ -96,6 +100,10 @@ impl IdentitySourceItemBuilder {
     ) -> Self {
         self.details = input;
         self
+    }
+    /// <p>A structure that contains the details of the associated identity provider (IdP).</p>
+    pub fn get_details(&self) -> &::std::option::Option<crate::types::IdentitySourceItemDetails> {
+        &self.details
     }
     /// <p>The unique identifier of the identity source.</p>
     pub fn identity_source_id(
@@ -113,6 +121,10 @@ impl IdentitySourceItemBuilder {
         self.identity_source_id = input;
         self
     }
+    /// <p>The unique identifier of the identity source.</p>
+    pub fn get_identity_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_source_id
+    }
     /// <p>The date and time the identity source was most recently updated.</p>
     pub fn last_updated_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date = ::std::option::Option::Some(input);
@@ -125,6 +137,10 @@ impl IdentitySourceItemBuilder {
     ) -> Self {
         self.last_updated_date = input;
         self
+    }
+    /// <p>The date and time the identity source was most recently updated.</p>
+    pub fn get_last_updated_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date
     }
     /// <p>The identifier of the policy store that contains the identity source.</p>
     pub fn policy_store_id(
@@ -142,6 +158,10 @@ impl IdentitySourceItemBuilder {
         self.policy_store_id = input;
         self
     }
+    /// <p>The identifier of the policy store that contains the identity source.</p>
+    pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_store_id
+    }
     /// <p>The Cedar entity type of the principals returned from the IdP associated with this identity source.</p>
     pub fn principal_entity_type(
         mut self,
@@ -157,6 +177,10 @@ impl IdentitySourceItemBuilder {
     ) -> Self {
         self.principal_entity_type = input;
         self
+    }
+    /// <p>The Cedar entity type of the principals returned from the IdP associated with this identity source.</p>
+    pub fn get_principal_entity_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal_entity_type
     }
     /// Consumes the builder and constructs a [`IdentitySourceItem`](crate::types::IdentitySourceItem).
     pub fn build(self) -> crate::types::IdentitySourceItem {

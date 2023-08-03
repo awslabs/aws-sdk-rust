@@ -61,6 +61,12 @@ impl GridLayoutConfigurationBuilder {
         self.elements = input;
         self
     }
+    /// <p>The elements that are included in a grid layout.</p>
+    pub fn get_elements(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GridLayoutElement>> {
+        &self.elements
+    }
     /// <p>Configuration options for the canvas of a grid layout.</p>
     pub fn canvas_size_options(mut self, input: crate::types::GridLayoutCanvasSizeOptions) -> Self {
         self.canvas_size_options = ::std::option::Option::Some(input);
@@ -73,6 +79,12 @@ impl GridLayoutConfigurationBuilder {
     ) -> Self {
         self.canvas_size_options = input;
         self
+    }
+    /// <p>Configuration options for the canvas of a grid layout.</p>
+    pub fn get_canvas_size_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::GridLayoutCanvasSizeOptions> {
+        &self.canvas_size_options
     }
     /// Consumes the builder and constructs a [`GridLayoutConfiguration`](crate::types::GridLayoutConfiguration).
     pub fn build(self) -> crate::types::GridLayoutConfiguration {

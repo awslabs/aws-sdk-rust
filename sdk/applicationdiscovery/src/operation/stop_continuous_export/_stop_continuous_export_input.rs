@@ -40,6 +40,10 @@ impl StopContinuousExportInputBuilder {
         self.export_id = input;
         self
     }
+    /// <p>The unique ID assigned to this export.</p>
+    pub fn get_export_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.export_id
+    }
     /// Consumes the builder and constructs a [`StopContinuousExportInput`](crate::operation::stop_continuous_export::StopContinuousExportInput).
     pub fn build(
         self,

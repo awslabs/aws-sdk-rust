@@ -55,6 +55,10 @@ impl UpdateReceiptRuleInputBuilder {
         self.rule_set_name = input;
         self
     }
+    /// <p>The name of the receipt rule set that the receipt rule belongs to.</p>
+    pub fn get_rule_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_set_name
+    }
     /// <p>A data structure that contains the updated receipt rule information.</p>
     pub fn rule(mut self, input: crate::types::ReceiptRule) -> Self {
         self.rule = ::std::option::Option::Some(input);
@@ -64,6 +68,10 @@ impl UpdateReceiptRuleInputBuilder {
     pub fn set_rule(mut self, input: ::std::option::Option<crate::types::ReceiptRule>) -> Self {
         self.rule = input;
         self
+    }
+    /// <p>A data structure that contains the updated receipt rule information.</p>
+    pub fn get_rule(&self) -> &::std::option::Option<crate::types::ReceiptRule> {
+        &self.rule
     }
     /// Consumes the builder and constructs a [`UpdateReceiptRuleInput`](crate::operation::update_receipt_rule::UpdateReceiptRuleInput).
     pub fn build(

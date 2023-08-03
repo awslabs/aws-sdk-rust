@@ -54,6 +54,10 @@ impl S3ReferenceDataSourceUpdateBuilder {
         self.bucket_arn_update = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
+    pub fn get_bucket_arn_update(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_arn_update
+    }
     /// <p>The object key name.</p>
     pub fn file_key_update(
         mut self,
@@ -69,6 +73,10 @@ impl S3ReferenceDataSourceUpdateBuilder {
     ) -> Self {
         self.file_key_update = input;
         self
+    }
+    /// <p>The object key name.</p>
+    pub fn get_file_key_update(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_key_update
     }
     /// Consumes the builder and constructs a [`S3ReferenceDataSourceUpdate`](crate::types::S3ReferenceDataSourceUpdate).
     pub fn build(self) -> crate::types::S3ReferenceDataSourceUpdate {

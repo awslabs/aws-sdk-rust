@@ -37,6 +37,13 @@ impl BatchDeleteTableVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchDeleteTableVersion as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_delete_table_version::builders::BatchDeleteTableVersionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl BatchDeleteTableVersionFluentBuilder {
         self.inner = self.inner.set_catalog_id(input);
         self
     }
+    /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_catalog_id()
+    }
     /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
     pub fn database_name(
         mut self,
@@ -143,6 +154,10 @@ impl BatchDeleteTableVersionFluentBuilder {
         self.inner = self.inner.set_database_name(input);
         self
     }
+    /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_database_name()
+    }
     /// <p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.table_name(input.into());
@@ -152,6 +167,10 @@ impl BatchDeleteTableVersionFluentBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_table_name(input);
         self
+    }
+    /// <p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_table_name()
     }
     /// Appends an item to `VersionIds`.
     ///
@@ -169,5 +188,11 @@ impl BatchDeleteTableVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_version_ids(input);
         self
+    }
+    /// <p>A list of the IDs of versions to be deleted. A <code>VersionId</code> is a string representation of an integer. Each version is incremented by 1.</p>
+    pub fn get_version_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_version_ids()
     }
 }

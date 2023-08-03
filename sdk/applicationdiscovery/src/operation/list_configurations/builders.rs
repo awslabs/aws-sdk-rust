@@ -36,6 +36,12 @@ impl ListConfigurationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListConfigurations as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_configurations::builders::ListConfigurationsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,12 @@ impl ListConfigurationsFluentBuilder {
         self.inner = self.inner.set_configuration_type(input);
         self
     }
+    /// <p>A valid configuration identified by Application Discovery Service. </p>
+    pub fn get_configuration_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConfigurationItemType> {
+        self.inner.get_configuration_type()
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -150,6 +162,12 @@ impl ListConfigurationsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>
+    /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
+    /// <p>For a complete list of filter options and guidance about using them with this action, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
+    }
     /// <p>The total number of items to return. The maximum value is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -160,6 +178,10 @@ impl ListConfigurationsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The total number of items to return. The maximum value is 100.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>Token to retrieve the next set of results. For example, if a previous call to ListConfigurations returned 100 items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -169,6 +191,10 @@ impl ListConfigurationsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>Token to retrieve the next set of results. For example, if a previous call to ListConfigurations returned 100 items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// Appends an item to `orderBy`.
     ///
@@ -186,5 +212,11 @@ impl ListConfigurationsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_order_by(input);
         self
+    }
+    /// <p>Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output characteristics for each filter, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>Amazon Web Services Application Discovery Service User Guide</i>.</p>
+    pub fn get_order_by(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OrderByElement>> {
+        self.inner.get_order_by()
     }
 }

@@ -58,6 +58,12 @@ impl RegisteredUserDashboardFeatureConfigurationsBuilder {
         self.state_persistence = input;
         self
     }
+    /// <p>The state persistence settings of an embedded dashboard.</p>
+    pub fn get_state_persistence(
+        &self,
+    ) -> &::std::option::Option<crate::types::StatePersistenceConfigurations> {
+        &self.state_persistence
+    }
     /// <p>The bookmarks configuration for an embedded dashboard in Amazon QuickSight.</p>
     pub fn bookmarks(mut self, input: crate::types::BookmarksConfigurations) -> Self {
         self.bookmarks = ::std::option::Option::Some(input);
@@ -70,6 +76,10 @@ impl RegisteredUserDashboardFeatureConfigurationsBuilder {
     ) -> Self {
         self.bookmarks = input;
         self
+    }
+    /// <p>The bookmarks configuration for an embedded dashboard in Amazon QuickSight.</p>
+    pub fn get_bookmarks(&self) -> &::std::option::Option<crate::types::BookmarksConfigurations> {
+        &self.bookmarks
     }
     /// Consumes the builder and constructs a [`RegisteredUserDashboardFeatureConfigurations`](crate::types::RegisteredUserDashboardFeatureConfigurations).
     pub fn build(self) -> crate::types::RegisteredUserDashboardFeatureConfigurations {

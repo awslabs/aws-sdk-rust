@@ -60,6 +60,11 @@ impl AvailMatchingCriteriaBuilder {
         self.dynamic_variable = input;
         self
     }
+    /// <p>The dynamic variable(s) that MediaTailor should use as avail matching criteria. MediaTailor only places the prefetched ads into the avail if the avail matches the criteria defined by the dynamic variable. For information about dynamic variables, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables.html">Using dynamic ad variables</a> in the <i>MediaTailor User Guide</i>.</p>
+    /// <p>You can include up to 100 dynamic variables.</p>
+    pub fn get_dynamic_variable(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dynamic_variable
+    }
     /// <p>For the <code>DynamicVariable</code> specified in <code>AvailMatchingCriteria</code>, the Operator that is used for the comparison.</p>
     pub fn operator(mut self, input: crate::types::Operator) -> Self {
         self.operator = ::std::option::Option::Some(input);
@@ -69,6 +74,10 @@ impl AvailMatchingCriteriaBuilder {
     pub fn set_operator(mut self, input: ::std::option::Option<crate::types::Operator>) -> Self {
         self.operator = input;
         self
+    }
+    /// <p>For the <code>DynamicVariable</code> specified in <code>AvailMatchingCriteria</code>, the Operator that is used for the comparison.</p>
+    pub fn get_operator(&self) -> &::std::option::Option<crate::types::Operator> {
+        &self.operator
     }
     /// Consumes the builder and constructs a [`AvailMatchingCriteria`](crate::types::AvailMatchingCriteria).
     pub fn build(self) -> crate::types::AvailMatchingCriteria {

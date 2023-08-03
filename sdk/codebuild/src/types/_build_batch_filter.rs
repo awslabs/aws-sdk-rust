@@ -40,6 +40,10 @@ impl BuildBatchFilterBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the batch builds to retrieve. Only batch builds that have this status will be retrieved.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::StatusType> {
+        &self.status
+    }
     /// Consumes the builder and constructs a [`BuildBatchFilter`](crate::types::BuildBatchFilter).
     pub fn build(self) -> crate::types::BuildBatchFilter {
         crate::types::BuildBatchFilter {

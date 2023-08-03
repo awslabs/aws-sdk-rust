@@ -48,6 +48,10 @@ impl ListVpcEndpointsForDomainInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>Name of the ElasticSearch domain whose VPC endpoints are to be listed.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl ListVpcEndpointsForDomainInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListVpcEndpointsForDomainInput`](crate::operation::list_vpc_endpoints_for_domain::ListVpcEndpointsForDomainInput).
     pub fn build(

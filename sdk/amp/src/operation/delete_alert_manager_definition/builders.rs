@@ -36,6 +36,10 @@ impl DeleteAlertManagerDefinitionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteAlertManagerDefinition as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_alert_manager_definition::builders::DeleteAlertManagerDefinitionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl DeleteAlertManagerDefinitionFluentBuilder {
         self.inner = self.inner.set_workspace_id(input);
         self
     }
+    /// The ID of the workspace in which to delete the alert manager definition.
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workspace_id()
+    }
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -135,5 +143,9 @@ impl DeleteAlertManagerDefinitionFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

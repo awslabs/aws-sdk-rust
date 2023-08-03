@@ -86,6 +86,10 @@ impl RuleActionBuilder {
         self.action_type = input;
         self
     }
+    /// <p>The type of action that creates a rule.</p>
+    pub fn get_action_type(&self) -> &::std::option::Option<crate::types::ActionType> {
+        &self.action_type
+    }
     /// <p>Information about the task action. This field is required if <code>TriggerEventSource</code> is one of the following values: <code>OnZendeskTicketCreate</code> | <code>OnZendeskTicketStatusUpdate</code> | <code>OnSalesforceCaseCreate</code> </p>
     pub fn task_action(mut self, input: crate::types::TaskActionDefinition) -> Self {
         self.task_action = ::std::option::Option::Some(input);
@@ -99,6 +103,10 @@ impl RuleActionBuilder {
         self.task_action = input;
         self
     }
+    /// <p>Information about the task action. This field is required if <code>TriggerEventSource</code> is one of the following values: <code>OnZendeskTicketCreate</code> | <code>OnZendeskTicketStatusUpdate</code> | <code>OnSalesforceCaseCreate</code> </p>
+    pub fn get_task_action(&self) -> &::std::option::Option<crate::types::TaskActionDefinition> {
+        &self.task_action
+    }
     /// <p>Information about the EventBridge action.</p>
     pub fn event_bridge_action(mut self, input: crate::types::EventBridgeActionDefinition) -> Self {
         self.event_bridge_action = ::std::option::Option::Some(input);
@@ -111,6 +119,12 @@ impl RuleActionBuilder {
     ) -> Self {
         self.event_bridge_action = input;
         self
+    }
+    /// <p>Information about the EventBridge action.</p>
+    pub fn get_event_bridge_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::EventBridgeActionDefinition> {
+        &self.event_bridge_action
     }
     /// <p>Information about the contact category action.</p>
     pub fn assign_contact_category_action(
@@ -128,6 +142,12 @@ impl RuleActionBuilder {
         self.assign_contact_category_action = input;
         self
     }
+    /// <p>Information about the contact category action.</p>
+    pub fn get_assign_contact_category_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::AssignContactCategoryActionDefinition> {
+        &self.assign_contact_category_action
+    }
     /// <p>Information about the send notification action.</p>
     pub fn send_notification_action(
         mut self,
@@ -143,6 +163,12 @@ impl RuleActionBuilder {
     ) -> Self {
         self.send_notification_action = input;
         self
+    }
+    /// <p>Information about the send notification action.</p>
+    pub fn get_send_notification_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::SendNotificationActionDefinition> {
+        &self.send_notification_action
     }
     /// Consumes the builder and constructs a [`RuleAction`](crate::types::RuleAction).
     pub fn build(self) -> crate::types::RuleAction {

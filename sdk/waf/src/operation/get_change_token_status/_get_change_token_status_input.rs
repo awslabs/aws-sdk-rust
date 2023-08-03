@@ -40,6 +40,10 @@ impl GetChangeTokenStatusInputBuilder {
         self.change_token = input;
         self
     }
+    /// <p>The change token for which you want to get the status. This change token was previously returned in the <code>GetChangeToken</code> response.</p>
+    pub fn get_change_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.change_token
+    }
     /// Consumes the builder and constructs a [`GetChangeTokenStatusInput`](crate::operation::get_change_token_status::GetChangeTokenStatusInput).
     pub fn build(
         self,

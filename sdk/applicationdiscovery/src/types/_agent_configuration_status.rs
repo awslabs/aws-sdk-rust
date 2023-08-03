@@ -56,6 +56,10 @@ impl AgentConfigurationStatusBuilder {
         self.agent_id = input;
         self
     }
+    /// <p>The agent ID.</p>
+    pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_id
+    }
     /// <p>Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code> operations. The system has recorded the data collection operation. The agent receives this command the next time it polls for a new command. </p>
     pub fn operation_succeeded(mut self, input: bool) -> Self {
         self.operation_succeeded = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl AgentConfigurationStatusBuilder {
         self.operation_succeeded = input;
         self
     }
+    /// <p>Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code> operations. The system has recorded the data collection operation. The agent receives this command the next time it polls for a new command. </p>
+    pub fn get_operation_succeeded(&self) -> &::std::option::Option<bool> {
+        &self.operation_succeeded
+    }
     /// <p>A description of the operation performed.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl AgentConfigurationStatusBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the operation performed.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`AgentConfigurationStatus`](crate::types::AgentConfigurationStatus).
     pub fn build(self) -> crate::types::AgentConfigurationStatus {

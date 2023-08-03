@@ -124,6 +124,10 @@ impl ListIntentStageMetricsInputBuilder {
         self.bot_id = input;
         self
     }
+    /// <p>The identifier for the bot for which you want to retrieve intent stage metrics.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
+    }
     /// <p>The date and time that marks the beginning of the range of time for which you want to see intent stage metrics.</p>
     pub fn start_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_date_time = ::std::option::Option::Some(input);
@@ -137,6 +141,10 @@ impl ListIntentStageMetricsInputBuilder {
         self.start_date_time = input;
         self
     }
+    /// <p>The date and time that marks the beginning of the range of time for which you want to see intent stage metrics.</p>
+    pub fn get_start_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_date_time
+    }
     /// <p>The date and time that marks the end of the range of time for which you want to see intent stage metrics.</p>
     pub fn end_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_date_time = ::std::option::Option::Some(input);
@@ -149,6 +157,10 @@ impl ListIntentStageMetricsInputBuilder {
     ) -> Self {
         self.end_date_time = input;
         self
+    }
+    /// <p>The date and time that marks the end of the range of time for which you want to see intent stage metrics.</p>
+    pub fn get_end_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_date_time
     }
     /// Appends an item to `metrics`.
     ///
@@ -169,6 +181,12 @@ impl ListIntentStageMetricsInputBuilder {
         self.metrics = input;
         self
     }
+    /// <p>A list of objects, each of which contains a metric you want to list, the statistic for the metric you want to return, and the method by which to organize the results.</p>
+    pub fn get_metrics(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentStageMetric>> {
+        &self.metrics
+    }
     /// Appends an item to `bin_by`.
     ///
     /// To override the contents of this collection use [`set_bin_by`](Self::set_bin_by).
@@ -187,6 +205,12 @@ impl ListIntentStageMetricsInputBuilder {
     ) -> Self {
         self.bin_by = input;
         self
+    }
+    /// <p>A list of objects, each of which contains specifications for organizing the results by time.</p>
+    pub fn get_bin_by(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsBinBySpecification>> {
+        &self.bin_by
     }
     /// Appends an item to `group_by`.
     ///
@@ -220,6 +244,18 @@ impl ListIntentStageMetricsInputBuilder {
         self.group_by = input;
         self
     }
+    /// <p>A list of objects, each of which specifies how to group the results. You can group by the following criteria:</p>
+    /// <ul>
+    /// <li> <p> <code>IntentStageName</code> – The name of the intent stage.</p> </li>
+    /// <li> <p> <code>SwitchedToIntent</code> – The intent to which the conversation was switched (if any).</p> </li>
+    /// </ul>
+    pub fn get_group_by(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::AnalyticsIntentStageGroupBySpecification>,
+    > {
+        &self.group_by
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -239,6 +275,12 @@ impl ListIntentStageMetricsInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>A list of objects, each of which describes a condition by which you want to filter the results.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentStageFilter>> {
+        &self.filters
+    }
     /// <p>The maximum number of results to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -248,6 +290,10 @@ impl ListIntentStageMetricsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>If the response from the ListIntentStageMetrics operation contains more results than specified in the maxResults parameter, a token is returned in the response.</p>
     /// <p>Use the returned token in the nextToken parameter of a ListIntentStageMetrics request to return the next page of results. For a complete set of results, call the ListIntentStageMetrics operation until the nextToken returned in the response is null.</p>
@@ -260,6 +306,11 @@ impl ListIntentStageMetricsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the response from the ListIntentStageMetrics operation contains more results than specified in the maxResults parameter, a token is returned in the response.</p>
+    /// <p>Use the returned token in the nextToken parameter of a ListIntentStageMetrics request to return the next page of results. For a complete set of results, call the ListIntentStageMetrics operation until the nextToken returned in the response is null.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListIntentStageMetricsInput`](crate::operation::list_intent_stage_metrics::ListIntentStageMetricsInput).
     pub fn build(

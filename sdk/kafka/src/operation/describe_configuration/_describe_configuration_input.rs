@@ -40,6 +40,10 @@ impl DescribeConfigurationInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`DescribeConfigurationInput`](crate::operation::describe_configuration::DescribeConfigurationInput).
     pub fn build(
         self,

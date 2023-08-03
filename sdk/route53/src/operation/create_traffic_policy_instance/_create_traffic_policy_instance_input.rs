@@ -78,6 +78,10 @@ impl CreateTrafficPolicyInstanceInputBuilder {
         self.hosted_zone_id = input;
         self
     }
+    /// <p>The ID of the hosted zone that you want Amazon Route 53 to create resource record sets in by using the configuration in a traffic policy.</p>
+    pub fn get_hosted_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hosted_zone_id
+    }
     /// <p>The domain name (such as example.com) or subdomain name (such as www.example.com) for which Amazon Route 53 responds to DNS queries by using the resource record sets that Route 53 creates for this traffic policy instance.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -88,6 +92,10 @@ impl CreateTrafficPolicyInstanceInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The domain name (such as example.com) or subdomain name (such as www.example.com) for which Amazon Route 53 responds to DNS queries by using the resource record sets that Route 53 creates for this traffic policy instance.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>(Optional) The TTL that you want Amazon Route 53 to assign to all of the resource record sets that it creates in the specified hosted zone.</p>
     pub fn ttl(mut self, input: i64) -> Self {
         self.ttl = ::std::option::Option::Some(input);
@@ -97,6 +105,10 @@ impl CreateTrafficPolicyInstanceInputBuilder {
     pub fn set_ttl(mut self, input: ::std::option::Option<i64>) -> Self {
         self.ttl = input;
         self
+    }
+    /// <p>(Optional) The TTL that you want Amazon Route 53 to assign to all of the resource record sets that it creates in the specified hosted zone.</p>
+    pub fn get_ttl(&self) -> &::std::option::Option<i64> {
+        &self.ttl
     }
     /// <p>The ID of the traffic policy that you want to use to create resource record sets in the specified hosted zone.</p>
     pub fn traffic_policy_id(
@@ -114,6 +126,10 @@ impl CreateTrafficPolicyInstanceInputBuilder {
         self.traffic_policy_id = input;
         self
     }
+    /// <p>The ID of the traffic policy that you want to use to create resource record sets in the specified hosted zone.</p>
+    pub fn get_traffic_policy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.traffic_policy_id
+    }
     /// <p>The version of the traffic policy that you want to use to create resource record sets in the specified hosted zone.</p>
     pub fn traffic_policy_version(mut self, input: i32) -> Self {
         self.traffic_policy_version = ::std::option::Option::Some(input);
@@ -123,6 +139,10 @@ impl CreateTrafficPolicyInstanceInputBuilder {
     pub fn set_traffic_policy_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.traffic_policy_version = input;
         self
+    }
+    /// <p>The version of the traffic policy that you want to use to create resource record sets in the specified hosted zone.</p>
+    pub fn get_traffic_policy_version(&self) -> &::std::option::Option<i32> {
+        &self.traffic_policy_version
     }
     /// Consumes the builder and constructs a [`CreateTrafficPolicyInstanceInput`](crate::operation::create_traffic_policy_instance::CreateTrafficPolicyInstanceInput).
     pub fn build(

@@ -58,6 +58,10 @@ impl GetBucketPolicyStatusOutputBuilder {
         self.policy_status = input;
         self
     }
+    /// <p>The policy status for the specified bucket.</p>
+    pub fn get_policy_status(&self) -> &::std::option::Option<crate::types::PolicyStatus> {
+        &self.policy_status
+    }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
         self._extended_request_id = Some(extended_request_id.into());
         self

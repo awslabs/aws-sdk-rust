@@ -44,6 +44,10 @@ impl DeleteCustomDBEngineVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteCustomDBEngineVersion as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_custom_db_engine_version::builders::DeleteCustomDbEngineVersionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +138,10 @@ impl DeleteCustomDBEngineVersionFluentBuilder {
         self.inner = self.inner.set_engine(input);
         self
     }
+    /// <p>The database engine. The only supported engines are <code>custom-oracle-ee</code> and <code>custom-oracle-ee-cdb</code>.</p>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_engine()
+    }
     /// <p>The custom engine version (CEV) for your DB instance. This option is required for RDS Custom, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Amazon Web Services Region.</p>
     pub fn engine_version(
         mut self,
@@ -149,5 +157,9 @@ impl DeleteCustomDBEngineVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_engine_version(input);
         self
+    }
+    /// <p>The custom engine version (CEV) for your DB instance. This option is required for RDS Custom, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Amazon Web Services Region.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_engine_version()
     }
 }

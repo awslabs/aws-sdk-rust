@@ -97,6 +97,10 @@ impl ProvisionByoipCidrInputBuilder {
         self.cidr = input;
         self
     }
+    /// <p>The public IPv4 or IPv6 address range, in CIDR notation. The most specific IPv4 prefix that you can specify is /24. The most specific IPv6 prefix you can specify is /56. The address range cannot overlap with another address range that you've brought to this or another Region.</p>
+    pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr
+    }
     /// <p>A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP.</p>
     pub fn cidr_authorization_context(
         mut self,
@@ -113,6 +117,12 @@ impl ProvisionByoipCidrInputBuilder {
         self.cidr_authorization_context = input;
         self
     }
+    /// <p>A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP.</p>
+    pub fn get_cidr_authorization_context(
+        &self,
+    ) -> &::std::option::Option<crate::types::CidrAuthorizationContext> {
+        &self.cidr_authorization_context
+    }
     /// <p>(IPv6 only) Indicate whether the address range will be publicly advertised to the internet.</p>
     /// <p>Default: true</p>
     pub fn publicly_advertisable(mut self, input: bool) -> Self {
@@ -125,6 +135,11 @@ impl ProvisionByoipCidrInputBuilder {
         self.publicly_advertisable = input;
         self
     }
+    /// <p>(IPv6 only) Indicate whether the address range will be publicly advertised to the internet.</p>
+    /// <p>Default: true</p>
+    pub fn get_publicly_advertisable(&self) -> &::std::option::Option<bool> {
+        &self.publicly_advertisable
+    }
     /// <p>A description for the address range and the address pool.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -135,6 +150,10 @@ impl ProvisionByoipCidrInputBuilder {
         self.description = input;
         self
     }
+    /// <p>A description for the address range and the address pool.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -144,6 +163,10 @@ impl ProvisionByoipCidrInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Appends an item to `pool_tag_specifications`.
     ///
@@ -164,6 +187,12 @@ impl ProvisionByoipCidrInputBuilder {
         self.pool_tag_specifications = input;
         self
     }
+    /// <p>The tags to apply to the address pool.</p>
+    pub fn get_pool_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        &self.pool_tag_specifications
+    }
     /// <p>Reserved.</p>
     pub fn multi_region(mut self, input: bool) -> Self {
         self.multi_region = ::std::option::Option::Some(input);
@@ -173,6 +202,10 @@ impl ProvisionByoipCidrInputBuilder {
     pub fn set_multi_region(mut self, input: ::std::option::Option<bool>) -> Self {
         self.multi_region = input;
         self
+    }
+    /// <p>Reserved.</p>
+    pub fn get_multi_region(&self) -> &::std::option::Option<bool> {
+        &self.multi_region
     }
     /// Consumes the builder and constructs a [`ProvisionByoipCidrInput`](crate::operation::provision_byoip_cidr::ProvisionByoipCidrInput).
     pub fn build(

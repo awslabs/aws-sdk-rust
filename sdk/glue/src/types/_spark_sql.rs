@@ -76,6 +76,10 @@ impl SparkSqlBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the transform node.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `inputs`.
     ///
     /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
@@ -95,6 +99,10 @@ impl SparkSqlBuilder {
         self.inputs = input;
         self
     }
+    /// <p>The data inputs identified by their node names. You can associate a table name with each input node to use in the SQL query. The name you choose must meet the Spark SQL naming restrictions.</p>
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.inputs
+    }
     /// <p>A SQL query that must use Spark SQL syntax and return a single data set.</p>
     pub fn sql_query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sql_query = ::std::option::Option::Some(input.into());
@@ -104,6 +112,10 @@ impl SparkSqlBuilder {
     pub fn set_sql_query(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sql_query = input;
         self
+    }
+    /// <p>A SQL query that must use Spark SQL syntax and return a single data set.</p>
+    pub fn get_sql_query(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sql_query
     }
     /// Appends an item to `sql_aliases`.
     ///
@@ -128,6 +140,14 @@ impl SparkSqlBuilder {
         self.sql_aliases = input;
         self
     }
+    /// <p>A list of aliases. An alias allows you to specify what name to use in the SQL for a given input. For example, you have a datasource named "MyDataSource". If you specify <code>From</code> as MyDataSource, and <code>Alias</code> as SqlName, then in your SQL you can do:</p>
+    /// <p> <code>select * from SqlName</code> </p>
+    /// <p>and that gets data from MyDataSource.</p>
+    pub fn get_sql_aliases(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SqlAlias>> {
+        &self.sql_aliases
+    }
     /// Appends an item to `output_schemas`.
     ///
     /// To override the contents of this collection use [`set_output_schemas`](Self::set_output_schemas).
@@ -146,6 +166,12 @@ impl SparkSqlBuilder {
     ) -> Self {
         self.output_schemas = input;
         self
+    }
+    /// <p>Specifies the data schema for the SparkSQL transform.</p>
+    pub fn get_output_schemas(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>> {
+        &self.output_schemas
     }
     /// Consumes the builder and constructs a [`SparkSql`](crate::types::SparkSql).
     pub fn build(self) -> crate::types::SparkSql {

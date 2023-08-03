@@ -48,6 +48,10 @@ impl UrlReferenceBuilder {
         self.name = input;
         self
     }
+    /// <p>Identifier of the URL reference.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A valid URL.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl UrlReferenceBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>A valid URL.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`UrlReference`](crate::types::UrlReference).
     pub fn build(self) -> crate::types::UrlReference {

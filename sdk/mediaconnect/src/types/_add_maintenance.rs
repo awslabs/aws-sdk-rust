@@ -51,6 +51,10 @@ impl AddMaintenanceBuilder {
         self.maintenance_day = input;
         self
     }
+    /// A day of a week when the maintenance will happen. Use Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
+    pub fn get_maintenance_day(&self) -> &::std::option::Option<crate::types::MaintenanceDay> {
+        &self.maintenance_day
+    }
     /// UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default value is 02:00.
     pub fn maintenance_start_hour(
         mut self,
@@ -66,6 +70,10 @@ impl AddMaintenanceBuilder {
     ) -> Self {
         self.maintenance_start_hour = input;
         self
+    }
+    /// UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default value is 02:00.
+    pub fn get_maintenance_start_hour(&self) -> &::std::option::Option<::std::string::String> {
+        &self.maintenance_start_hour
     }
     /// Consumes the builder and constructs a [`AddMaintenance`](crate::types::AddMaintenance).
     pub fn build(self) -> crate::types::AddMaintenance {

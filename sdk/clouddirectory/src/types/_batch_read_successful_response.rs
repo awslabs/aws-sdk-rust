@@ -194,6 +194,12 @@ impl BatchReadSuccessfulResponseBuilder {
         self.list_object_attributes = input;
         self
     }
+    /// <p>Lists all attributes that are associated with an object.</p>
+    pub fn get_list_object_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::BatchListObjectAttributesResponse> {
+        &self.list_object_attributes
+    }
     /// <p>Returns a paginated list of child objects that are associated with a given object.</p>
     pub fn list_object_children(
         mut self,
@@ -209,6 +215,12 @@ impl BatchReadSuccessfulResponseBuilder {
     ) -> Self {
         self.list_object_children = input;
         self
+    }
+    /// <p>Returns a paginated list of child objects that are associated with a given object.</p>
+    pub fn get_list_object_children(
+        &self,
+    ) -> &::std::option::Option<crate::types::BatchListObjectChildrenResponse> {
+        &self.list_object_children
     }
     /// <p>Retrieves metadata about an object.</p>
     pub fn get_object_information(
@@ -226,6 +238,12 @@ impl BatchReadSuccessfulResponseBuilder {
         self.get_object_information = input;
         self
     }
+    /// <p>Retrieves metadata about an object.</p>
+    pub fn get_get_object_information(
+        &self,
+    ) -> &::std::option::Option<crate::types::BatchGetObjectInformationResponse> {
+        &self.get_object_information
+    }
     /// <p>Retrieves attributes within a facet that are associated with an object.</p>
     pub fn get_object_attributes(
         mut self,
@@ -241,6 +259,12 @@ impl BatchReadSuccessfulResponseBuilder {
     ) -> Self {
         self.get_object_attributes = input;
         self
+    }
+    /// <p>Retrieves attributes within a facet that are associated with an object.</p>
+    pub fn get_get_object_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::BatchGetObjectAttributesResponse> {
+        &self.get_object_attributes
     }
     /// <p>Lists indices attached to an object.</p>
     pub fn list_attached_indices(
@@ -258,6 +282,12 @@ impl BatchReadSuccessfulResponseBuilder {
         self.list_attached_indices = input;
         self
     }
+    /// <p>Lists indices attached to an object.</p>
+    pub fn get_list_attached_indices(
+        &self,
+    ) -> &::std::option::Option<crate::types::BatchListAttachedIndicesResponse> {
+        &self.list_attached_indices
+    }
     /// <p>Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node objects. For more information about objects, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html">Directory Structure</a>.</p>
     pub fn list_object_parent_paths(
         mut self,
@@ -273,6 +303,12 @@ impl BatchReadSuccessfulResponseBuilder {
     ) -> Self {
         self.list_object_parent_paths = input;
         self
+    }
+    /// <p>Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node objects. For more information about objects, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html">Directory Structure</a>.</p>
+    pub fn get_list_object_parent_paths(
+        &self,
+    ) -> &::std::option::Option<crate::types::BatchListObjectParentPathsResponse> {
+        &self.list_object_parent_paths
     }
     /// <p>Returns policies attached to an object in pagination fashion.</p>
     pub fn list_object_policies(
@@ -290,6 +326,12 @@ impl BatchReadSuccessfulResponseBuilder {
         self.list_object_policies = input;
         self
     }
+    /// <p>Returns policies attached to an object in pagination fashion.</p>
+    pub fn get_list_object_policies(
+        &self,
+    ) -> &::std::option::Option<crate::types::BatchListObjectPoliciesResponse> {
+        &self.list_object_policies
+    }
     /// <p>Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached.</p>
     pub fn list_policy_attachments(
         mut self,
@@ -306,6 +348,12 @@ impl BatchReadSuccessfulResponseBuilder {
         self.list_policy_attachments = input;
         self
     }
+    /// <p>Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached.</p>
+    pub fn get_list_policy_attachments(
+        &self,
+    ) -> &::std::option::Option<crate::types::BatchListPolicyAttachmentsResponse> {
+        &self.list_policy_attachments
+    }
     /// <p>Lists all policies from the root of the <code>Directory</code> to the object specified. If there are no policies present, an empty list is returned. If policies are present, and if some objects don't have the policies attached, it returns the <code>ObjectIdentifier</code> for such objects. If policies are present, it returns <code>ObjectIdentifier</code>, <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the root from the target object are ignored. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
     pub fn lookup_policy(mut self, input: crate::types::BatchLookupPolicyResponse) -> Self {
         self.lookup_policy = ::std::option::Option::Some(input);
@@ -319,6 +367,12 @@ impl BatchReadSuccessfulResponseBuilder {
         self.lookup_policy = input;
         self
     }
+    /// <p>Lists all policies from the root of the <code>Directory</code> to the object specified. If there are no policies present, an empty list is returned. If policies are present, and if some objects don't have the policies attached, it returns the <code>ObjectIdentifier</code> for such objects. If policies are present, it returns <code>ObjectIdentifier</code>, <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the root from the target object are ignored. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
+    pub fn get_lookup_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::BatchLookupPolicyResponse> {
+        &self.lookup_policy
+    }
     /// <p>Lists objects attached to the specified index.</p>
     pub fn list_index(mut self, input: crate::types::BatchListIndexResponse) -> Self {
         self.list_index = ::std::option::Option::Some(input);
@@ -331,6 +385,10 @@ impl BatchReadSuccessfulResponseBuilder {
     ) -> Self {
         self.list_index = input;
         self
+    }
+    /// <p>Lists objects attached to the specified index.</p>
+    pub fn get_list_index(&self) -> &::std::option::Option<crate::types::BatchListIndexResponse> {
+        &self.list_index
     }
     /// <p>Returns a paginated list of all the outgoing <code>TypedLinkSpecifier</code> information for an object. It also supports filtering by typed link facet and identity attributes. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
     pub fn list_outgoing_typed_links(
@@ -348,6 +406,12 @@ impl BatchReadSuccessfulResponseBuilder {
         self.list_outgoing_typed_links = input;
         self
     }
+    /// <p>Returns a paginated list of all the outgoing <code>TypedLinkSpecifier</code> information for an object. It also supports filtering by typed link facet and identity attributes. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    pub fn get_list_outgoing_typed_links(
+        &self,
+    ) -> &::std::option::Option<crate::types::BatchListOutgoingTypedLinksResponse> {
+        &self.list_outgoing_typed_links
+    }
     /// <p>Returns a paginated list of all the incoming <code>TypedLinkSpecifier</code> information for an object. It also supports filtering by typed link facet and identity attributes. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
     pub fn list_incoming_typed_links(
         mut self,
@@ -363,6 +427,12 @@ impl BatchReadSuccessfulResponseBuilder {
     ) -> Self {
         self.list_incoming_typed_links = input;
         self
+    }
+    /// <p>Returns a paginated list of all the incoming <code>TypedLinkSpecifier</code> information for an object. It also supports filtering by typed link facet and identity attributes. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    pub fn get_list_incoming_typed_links(
+        &self,
+    ) -> &::std::option::Option<crate::types::BatchListIncomingTypedLinksResponse> {
+        &self.list_incoming_typed_links
     }
     /// <p>The list of attributes to retrieve from the typed link.</p>
     pub fn get_link_attributes(
@@ -380,6 +450,12 @@ impl BatchReadSuccessfulResponseBuilder {
         self.get_link_attributes = input;
         self
     }
+    /// <p>The list of attributes to retrieve from the typed link.</p>
+    pub fn get_get_link_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::BatchGetLinkAttributesResponse> {
+        &self.get_link_attributes
+    }
     /// <p>The list of parent objects to retrieve.</p>
     pub fn list_object_parents(
         mut self,
@@ -395,6 +471,12 @@ impl BatchReadSuccessfulResponseBuilder {
     ) -> Self {
         self.list_object_parents = input;
         self
+    }
+    /// <p>The list of parent objects to retrieve.</p>
+    pub fn get_list_object_parents(
+        &self,
+    ) -> &::std::option::Option<crate::types::BatchListObjectParentsResponse> {
+        &self.list_object_parents
     }
     /// Consumes the builder and constructs a [`BatchReadSuccessfulResponse`](crate::types::BatchReadSuccessfulResponse).
     pub fn build(self) -> crate::types::BatchReadSuccessfulResponse {

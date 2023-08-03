@@ -73,6 +73,10 @@ impl ListMetricsOutputBuilder {
         self.metrics = input;
         self
     }
+    /// <p>The metrics that match your request. </p>
+    pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Metric>> {
+        &self.metrics
+    }
     /// <p>The token that marks the start of the next batch of returned results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl ListMetricsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token that marks the start of the next batch of returned results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `owning_accounts`.
     ///
@@ -106,6 +114,13 @@ impl ListMetricsOutputBuilder {
     ) -> Self {
         self.owning_accounts = input;
         self
+    }
+    /// <p>If you are using this operation in a monitoring account, this array contains the account IDs of the source accounts where the metrics in the returned data are from.</p>
+    /// <p>This field is a 1:1 mapping between each metric that is returned and the ID of the owning account.</p>
+    pub fn get_owning_accounts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.owning_accounts
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

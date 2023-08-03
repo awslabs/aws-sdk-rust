@@ -66,6 +66,10 @@ impl StopStreamingSessionInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>The streaming session ID for the <code>StopStreamingSessionRequest</code>.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
@@ -76,6 +80,10 @@ impl StopStreamingSessionInputBuilder {
         self.session_id = input;
         self
     }
+    /// <p>The streaming session ID for the <code>StopStreamingSessionRequest</code>.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
+    }
     /// <p>The studioId for the StopStreamingSessionRequest.</p>
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
@@ -85,6 +93,10 @@ impl StopStreamingSessionInputBuilder {
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.studio_id = input;
         self
+    }
+    /// <p>The studioId for the StopStreamingSessionRequest.</p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_id
     }
     /// <p>Adds additional instructions to a streaming session stop action to either retain the EBS volumes or delete the EBS volumes.</p>
     pub fn volume_retention_mode(mut self, input: crate::types::VolumeRetentionMode) -> Self {
@@ -98,6 +110,12 @@ impl StopStreamingSessionInputBuilder {
     ) -> Self {
         self.volume_retention_mode = input;
         self
+    }
+    /// <p>Adds additional instructions to a streaming session stop action to either retain the EBS volumes or delete the EBS volumes.</p>
+    pub fn get_volume_retention_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::VolumeRetentionMode> {
+        &self.volume_retention_mode
     }
     /// Consumes the builder and constructs a [`StopStreamingSessionInput`](crate::operation::stop_streaming_session::StopStreamingSessionInput).
     pub fn build(

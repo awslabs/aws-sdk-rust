@@ -71,6 +71,11 @@ impl XssMatchSetBuilder {
         self.xss_match_set_id = input;
         self
     }
+    /// <p>A unique identifier for an <code>XssMatchSet</code>. You use <code>XssMatchSetId</code> to get information about an <code>XssMatchSet</code> (see <code>GetXssMatchSet</code>), update an <code>XssMatchSet</code> (see <code>UpdateXssMatchSet</code>), insert an <code>XssMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete an <code>XssMatchSet</code> from AWS WAF (see <code>DeleteXssMatchSet</code>).</p>
+    /// <p> <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
+    pub fn get_xss_match_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.xss_match_set_id
+    }
     /// <p>The name, if any, of the <code>XssMatchSet</code>.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -80,6 +85,10 @@ impl XssMatchSetBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name, if any, of the <code>XssMatchSet</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `xss_match_tuples`.
     ///
@@ -99,6 +108,12 @@ impl XssMatchSetBuilder {
     ) -> Self {
         self.xss_match_tuples = input;
         self
+    }
+    /// <p>Specifies the parts of web requests that you want to inspect for cross-site scripting attacks.</p>
+    pub fn get_xss_match_tuples(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::XssMatchTuple>> {
+        &self.xss_match_tuples
     }
     /// Consumes the builder and constructs a [`XssMatchSet`](crate::types::XssMatchSet).
     pub fn build(self) -> crate::types::XssMatchSet {

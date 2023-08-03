@@ -57,6 +57,10 @@ impl ResolutionContactBuilder {
         self.contact_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of a contact in the engagement resolution process. </p>
+    pub fn get_contact_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_arn
+    }
     /// <p>The type of contact for a resolution step.</p>
     pub fn r#type(mut self, input: crate::types::ContactType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -67,6 +71,10 @@ impl ResolutionContactBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of contact for a resolution step.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ContactType> {
+        &self.r#type
+    }
     /// <p>The stage in the escalation plan that resolves to this contact.</p>
     pub fn stage_index(mut self, input: i32) -> Self {
         self.stage_index = ::std::option::Option::Some(input);
@@ -76,6 +84,10 @@ impl ResolutionContactBuilder {
     pub fn set_stage_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.stage_index = input;
         self
+    }
+    /// <p>The stage in the escalation plan that resolves to this contact.</p>
+    pub fn get_stage_index(&self) -> &::std::option::Option<i32> {
+        &self.stage_index
     }
     /// Consumes the builder and constructs a [`ResolutionContact`](crate::types::ResolutionContact).
     pub fn build(self) -> crate::types::ResolutionContact {

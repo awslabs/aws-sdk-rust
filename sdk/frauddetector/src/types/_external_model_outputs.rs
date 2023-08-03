@@ -59,6 +59,10 @@ impl ExternalModelOutputsBuilder {
         self.external_model = input;
         self
     }
+    /// <p>The Amazon SageMaker model.</p>
+    pub fn get_external_model(&self) -> &::std::option::Option<crate::types::ExternalModelSummary> {
+        &self.external_model
+    }
     /// Adds a key-value pair to `outputs`.
     ///
     /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
@@ -83,6 +87,14 @@ impl ExternalModelOutputsBuilder {
     ) -> Self {
         self.outputs = input;
         self
+    }
+    /// <p>The fraud prediction scores from Amazon SageMaker model.</p>
+    pub fn get_outputs(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.outputs
     }
     /// Consumes the builder and constructs a [`ExternalModelOutputs`](crate::types::ExternalModelOutputs).
     pub fn build(self) -> crate::types::ExternalModelOutputs {

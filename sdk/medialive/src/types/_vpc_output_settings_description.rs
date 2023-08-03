@@ -76,6 +76,12 @@ impl VpcOutputSettingsDescriptionBuilder {
         self.availability_zones = input;
         self
     }
+    /// The Availability Zones where the vpc subnets are located. The first Availability Zone applies to the first subnet in the list of subnets. The second Availability Zone applies to the second subnet.
+    pub fn get_availability_zones(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.availability_zones
+    }
     /// Appends an item to `network_interface_ids`.
     ///
     /// To override the contents of this collection use [`set_network_interface_ids`](Self::set_network_interface_ids).
@@ -97,6 +103,12 @@ impl VpcOutputSettingsDescriptionBuilder {
     ) -> Self {
         self.network_interface_ids = input;
         self
+    }
+    /// A list of Elastic Network Interfaces created by MediaLive in the customer's VPC
+    pub fn get_network_interface_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.network_interface_ids
     }
     /// Appends an item to `security_group_ids`.
     ///
@@ -120,6 +132,12 @@ impl VpcOutputSettingsDescriptionBuilder {
         self.security_group_ids = input;
         self
     }
+    /// A list of up EC2 VPC security group IDs attached to the Output VPC network interfaces.
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
+    }
     /// Appends an item to `subnet_ids`.
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
@@ -138,6 +156,10 @@ impl VpcOutputSettingsDescriptionBuilder {
     ) -> Self {
         self.subnet_ids = input;
         self
+    }
+    /// A list of VPC subnet IDs from the same VPC. If STANDARD channel, subnet IDs must be mapped to two unique availability zones (AZ).
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
     }
     /// Consumes the builder and constructs a [`VpcOutputSettingsDescription`](crate::types::VpcOutputSettingsDescription).
     pub fn build(self) -> crate::types::VpcOutputSettingsDescription {

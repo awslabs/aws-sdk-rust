@@ -37,6 +37,12 @@ impl SetDefaultSenderIdFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SetDefaultSenderId as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::set_default_sender_id::builders::SetDefaultSenderIdInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl SetDefaultSenderIdFluentBuilder {
         self.inner = self.inner.set_configuration_set_name(input);
         self
     }
+    /// <p>The configuration set to updated with a new default SenderId. This field can be the ConsigurationSetName or ConfigurationSetArn.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration_set_name()
+    }
     /// <p>The current sender ID for the configuration set. When sending a text message to a destination country which supports SenderIds, the default sender ID on the configuration set specified on <code>SendTextMessage</code> will be used if no dedicated origination phone numbers or registered SenderIds are available in your account, instead of a generic sender ID, such as 'NOTICE'.</p>
     pub fn sender_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sender_id(input.into());
@@ -142,5 +152,9 @@ impl SetDefaultSenderIdFluentBuilder {
     pub fn set_sender_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sender_id(input);
         self
+    }
+    /// <p>The current sender ID for the configuration set. When sending a text message to a destination country which supports SenderIds, the default sender ID on the configuration set specified on <code>SendTextMessage</code> will be used if no dedicated origination phone numbers or registered SenderIds are available in your account, instead of a generic sender ID, such as 'NOTICE'.</p>
+    pub fn get_sender_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sender_id()
     }
 }

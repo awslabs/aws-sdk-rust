@@ -58,6 +58,12 @@ impl AlarmCapabilitiesBuilder {
         self.initialization_configuration = input;
         self
     }
+    /// <p>Specifies the default alarm state. The configuration applies to all alarms that were created based on this alarm model.</p>
+    pub fn get_initialization_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::InitializationConfiguration> {
+        &self.initialization_configuration
+    }
     /// <p>Specifies whether to get notified for alarm state changes.</p>
     pub fn acknowledge_flow(mut self, input: crate::types::AcknowledgeFlow) -> Self {
         self.acknowledge_flow = ::std::option::Option::Some(input);
@@ -70,6 +76,10 @@ impl AlarmCapabilitiesBuilder {
     ) -> Self {
         self.acknowledge_flow = input;
         self
+    }
+    /// <p>Specifies whether to get notified for alarm state changes.</p>
+    pub fn get_acknowledge_flow(&self) -> &::std::option::Option<crate::types::AcknowledgeFlow> {
+        &self.acknowledge_flow
     }
     /// Consumes the builder and constructs a [`AlarmCapabilities`](crate::types::AlarmCapabilities).
     pub fn build(self) -> crate::types::AlarmCapabilities {

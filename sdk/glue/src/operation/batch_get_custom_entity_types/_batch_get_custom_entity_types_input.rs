@@ -48,6 +48,10 @@ impl BatchGetCustomEntityTypesInputBuilder {
         self.names = input;
         self
     }
+    /// <p>A list of names of the custom patterns that you want to retrieve.</p>
+    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.names
+    }
     /// Consumes the builder and constructs a [`BatchGetCustomEntityTypesInput`](crate::operation::batch_get_custom_entity_types::BatchGetCustomEntityTypesInput).
     pub fn build(
         self,

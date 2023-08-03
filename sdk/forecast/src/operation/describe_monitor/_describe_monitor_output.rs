@@ -126,6 +126,10 @@ impl DescribeMonitorOutputBuilder {
         self.monitor_name = input;
         self
     }
+    /// <p>The name of the monitor.</p>
+    pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitor_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the monitor resource described.</p>
     pub fn monitor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitor_arn = ::std::option::Option::Some(input.into());
@@ -135,6 +139,10 @@ impl DescribeMonitorOutputBuilder {
     pub fn set_monitor_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.monitor_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the monitor resource described.</p>
+    pub fn get_monitor_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitor_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the auto predictor being monitored.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -146,6 +154,10 @@ impl DescribeMonitorOutputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the auto predictor being monitored.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// <p>The status of the monitor resource.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -155,6 +167,10 @@ impl DescribeMonitorOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the monitor resource.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>The timestamp of the latest evaluation completed by the monitor.</p>
     pub fn last_evaluation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -168,6 +184,10 @@ impl DescribeMonitorOutputBuilder {
     ) -> Self {
         self.last_evaluation_time = input;
         self
+    }
+    /// <p>The timestamp of the latest evaluation completed by the monitor.</p>
+    pub fn get_last_evaluation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_evaluation_time
     }
     /// <p>The state of the monitor's latest evaluation.</p>
     pub fn last_evaluation_state(
@@ -185,6 +205,10 @@ impl DescribeMonitorOutputBuilder {
         self.last_evaluation_state = input;
         self
     }
+    /// <p>The state of the monitor's latest evaluation.</p>
+    pub fn get_last_evaluation_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_evaluation_state
+    }
     /// <p>Metrics you can use as a baseline for comparison purposes. Use these values you interpret monitoring results for an auto predictor.</p>
     pub fn baseline(mut self, input: crate::types::Baseline) -> Self {
         self.baseline = ::std::option::Option::Some(input);
@@ -195,6 +219,10 @@ impl DescribeMonitorOutputBuilder {
         self.baseline = input;
         self
     }
+    /// <p>Metrics you can use as a baseline for comparison purposes. Use these values you interpret monitoring results for an auto predictor.</p>
+    pub fn get_baseline(&self) -> &::std::option::Option<crate::types::Baseline> {
+        &self.baseline
+    }
     /// <p>An error message, if any, for the monitor.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -204,6 +232,10 @@ impl DescribeMonitorOutputBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>An error message, if any, for the monitor.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// <p>The timestamp for when the monitor resource was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -218,6 +250,10 @@ impl DescribeMonitorOutputBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The timestamp for when the monitor resource was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The timestamp of the latest modification to the monitor.</p>
     pub fn last_modification_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modification_time = ::std::option::Option::Some(input);
@@ -231,6 +267,12 @@ impl DescribeMonitorOutputBuilder {
         self.last_modification_time = input;
         self
     }
+    /// <p>The timestamp of the latest modification to the monitor.</p>
+    pub fn get_last_modification_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modification_time
+    }
     /// <p>The estimated number of minutes remaining before the monitor resource finishes its current evaluation.</p>
     pub fn estimated_evaluation_time_remaining_in_minutes(mut self, input: i64) -> Self {
         self.estimated_evaluation_time_remaining_in_minutes = ::std::option::Option::Some(input);
@@ -243,6 +285,12 @@ impl DescribeMonitorOutputBuilder {
     ) -> Self {
         self.estimated_evaluation_time_remaining_in_minutes = input;
         self
+    }
+    /// <p>The estimated number of minutes remaining before the monitor resource finishes its current evaluation.</p>
+    pub fn get_estimated_evaluation_time_remaining_in_minutes(
+        &self,
+    ) -> &::std::option::Option<i64> {
+        &self.estimated_evaluation_time_remaining_in_minutes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

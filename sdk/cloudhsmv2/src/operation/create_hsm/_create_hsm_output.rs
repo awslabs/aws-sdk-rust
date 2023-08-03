@@ -46,6 +46,10 @@ impl CreateHsmOutputBuilder {
         self.hsm = input;
         self
     }
+    /// <p>Information about the HSM that was created.</p>
+    pub fn get_hsm(&self) -> &::std::option::Option<crate::types::Hsm> {
+        &self.hsm
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

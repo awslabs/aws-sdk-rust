@@ -111,6 +111,10 @@ impl CreateSolutionInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name for the solution.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Whether to perform hyperparameter optimization (HPO) on the specified or selected recipe. The default is <code>false</code>.</p>
     /// <p>When performing AutoML, this parameter is always <code>true</code> and you should not set it to <code>false</code>.</p>
     pub fn perform_hpo(mut self, input: bool) -> Self {
@@ -122,6 +126,11 @@ impl CreateSolutionInputBuilder {
     pub fn set_perform_hpo(mut self, input: ::std::option::Option<bool>) -> Self {
         self.perform_hpo = input;
         self
+    }
+    /// <p>Whether to perform hyperparameter optimization (HPO) on the specified or selected recipe. The default is <code>false</code>.</p>
+    /// <p>When performing AutoML, this parameter is always <code>true</code> and you should not set it to <code>false</code>.</p>
+    pub fn get_perform_hpo(&self) -> &::std::option::Option<bool> {
+        &self.perform_hpo
     }
     /// <important>
     /// <p>We don't recommend enabling automated machine learning. Instead, match your use case to the available Amazon Personalize recipes. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/determining-use-case.html">Determining your use case.</a> </p>
@@ -141,6 +150,14 @@ impl CreateSolutionInputBuilder {
         self.perform_auto_ml = input;
         self
     }
+    /// <important>
+    /// <p>We don't recommend enabling automated machine learning. Instead, match your use case to the available Amazon Personalize recipes. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/determining-use-case.html">Determining your use case.</a> </p>
+    /// </important>
+    /// <p>Whether to perform automated machine learning (AutoML). The default is <code>false</code>. For this case, you must specify <code>recipeArn</code>.</p>
+    /// <p>When set to <code>true</code>, Amazon Personalize analyzes your training data and selects the optimal USER_PERSONALIZATION recipe and hyperparameters. In this case, you must omit <code>recipeArn</code>. Amazon Personalize determines the optimal recipe by running tests with different values for the hyperparameters. AutoML lengthens the training process as compared to selecting a specific recipe.</p>
+    pub fn get_perform_auto_ml(&self) -> &::std::option::Option<bool> {
+        &self.perform_auto_ml
+    }
     /// <p>The ARN of the recipe to use for model training. This is required when <code>performAutoML</code> is false.</p>
     pub fn recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recipe_arn = ::std::option::Option::Some(input.into());
@@ -150,6 +167,10 @@ impl CreateSolutionInputBuilder {
     pub fn set_recipe_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recipe_arn = input;
         self
+    }
+    /// <p>The ARN of the recipe to use for model training. This is required when <code>performAutoML</code> is false.</p>
+    pub fn get_recipe_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recipe_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group that provides the training data.</p>
     pub fn dataset_group_arn(
@@ -167,6 +188,10 @@ impl CreateSolutionInputBuilder {
         self.dataset_group_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the dataset group that provides the training data.</p>
+    pub fn get_dataset_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_group_arn
+    }
     /// <p>When your have multiple event types (using an <code>EVENT_TYPE</code> schema field), this parameter specifies which event type (for example, 'click' or 'like') is used for training the model.</p>
     /// <p>If you do not provide an <code>eventType</code>, Amazon Personalize will use all interactions for training with equal weight regardless of type.</p>
     pub fn event_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -178,6 +203,11 @@ impl CreateSolutionInputBuilder {
     pub fn set_event_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_type = input;
         self
+    }
+    /// <p>When your have multiple event types (using an <code>EVENT_TYPE</code> schema field), this parameter specifies which event type (for example, 'click' or 'like') is used for training the model.</p>
+    /// <p>If you do not provide an <code>eventType</code>, Amazon Personalize will use all interactions for training with equal weight regardless of type.</p>
+    pub fn get_event_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_type
     }
     /// <p>The configuration to use with the solution. When <code>performAutoML</code> is set to true, Amazon Personalize only evaluates the <code>autoMLConfig</code> section of the solution configuration.</p> <note>
     /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.</p>
@@ -195,6 +225,12 @@ impl CreateSolutionInputBuilder {
     ) -> Self {
         self.solution_config = input;
         self
+    }
+    /// <p>The configuration to use with the solution. When <code>performAutoML</code> is set to true, Amazon Personalize only evaluates the <code>autoMLConfig</code> section of the solution configuration.</p> <note>
+    /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.</p>
+    /// </note>
+    pub fn get_solution_config(&self) -> &::std::option::Option<crate::types::SolutionConfig> {
+        &self.solution_config
     }
     /// Appends an item to `tags`.
     ///
@@ -214,6 +250,10 @@ impl CreateSolutionInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the solution.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateSolutionInput`](crate::operation::create_solution::CreateSolutionInput).
     pub fn build(

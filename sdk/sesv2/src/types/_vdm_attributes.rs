@@ -77,6 +77,14 @@ impl VdmAttributesBuilder {
         self.vdm_enabled = input;
         self
     }
+    /// <p>Specifies the status of your VDM configuration. Can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>ENABLED</code> – Amazon SES enables VDM for your account.</p> </li>
+    /// <li> <p> <code>DISABLED</code> – Amazon SES disables VDM for your account.</p> </li>
+    /// </ul>
+    pub fn get_vdm_enabled(&self) -> &::std::option::Option<crate::types::FeatureStatus> {
+        &self.vdm_enabled
+    }
     /// <p>Specifies additional settings for your VDM configuration as applicable to the Dashboard.</p>
     pub fn dashboard_attributes(mut self, input: crate::types::DashboardAttributes) -> Self {
         self.dashboard_attributes = ::std::option::Option::Some(input);
@@ -90,6 +98,12 @@ impl VdmAttributesBuilder {
         self.dashboard_attributes = input;
         self
     }
+    /// <p>Specifies additional settings for your VDM configuration as applicable to the Dashboard.</p>
+    pub fn get_dashboard_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::DashboardAttributes> {
+        &self.dashboard_attributes
+    }
     /// <p>Specifies additional settings for your VDM configuration as applicable to the Guardian.</p>
     pub fn guardian_attributes(mut self, input: crate::types::GuardianAttributes) -> Self {
         self.guardian_attributes = ::std::option::Option::Some(input);
@@ -102,6 +116,12 @@ impl VdmAttributesBuilder {
     ) -> Self {
         self.guardian_attributes = input;
         self
+    }
+    /// <p>Specifies additional settings for your VDM configuration as applicable to the Guardian.</p>
+    pub fn get_guardian_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::GuardianAttributes> {
+        &self.guardian_attributes
     }
     /// Consumes the builder and constructs a [`VdmAttributes`](crate::types::VdmAttributes).
     pub fn build(self) -> crate::types::VdmAttributes {

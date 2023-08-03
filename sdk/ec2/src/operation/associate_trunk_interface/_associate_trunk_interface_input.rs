@@ -87,6 +87,10 @@ impl AssociateTrunkInterfaceInputBuilder {
         self.branch_interface_id = input;
         self
     }
+    /// <p>The ID of the branch network interface.</p>
+    pub fn get_branch_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.branch_interface_id
+    }
     /// <p>The ID of the trunk network interface.</p>
     pub fn trunk_interface_id(
         mut self,
@@ -103,6 +107,10 @@ impl AssociateTrunkInterfaceInputBuilder {
         self.trunk_interface_id = input;
         self
     }
+    /// <p>The ID of the trunk network interface.</p>
+    pub fn get_trunk_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trunk_interface_id
+    }
     /// <p>The ID of the VLAN. This applies to the VLAN protocol.</p>
     pub fn vlan_id(mut self, input: i32) -> Self {
         self.vlan_id = ::std::option::Option::Some(input);
@@ -112,6 +120,10 @@ impl AssociateTrunkInterfaceInputBuilder {
     pub fn set_vlan_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.vlan_id = input;
         self
+    }
+    /// <p>The ID of the VLAN. This applies to the VLAN protocol.</p>
+    pub fn get_vlan_id(&self) -> &::std::option::Option<i32> {
+        &self.vlan_id
     }
     /// <p>The application key. This applies to the GRE protocol.</p>
     pub fn gre_key(mut self, input: i32) -> Self {
@@ -123,6 +135,10 @@ impl AssociateTrunkInterfaceInputBuilder {
         self.gre_key = input;
         self
     }
+    /// <p>The application key. This applies to the GRE protocol.</p>
+    pub fn get_gre_key(&self) -> &::std::option::Option<i32> {
+        &self.gre_key
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -133,6 +149,10 @@ impl AssociateTrunkInterfaceInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -142,6 +162,10 @@ impl AssociateTrunkInterfaceInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`AssociateTrunkInterfaceInput`](crate::operation::associate_trunk_interface::AssociateTrunkInterfaceInput).
     pub fn build(

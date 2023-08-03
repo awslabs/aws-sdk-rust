@@ -73,6 +73,10 @@ impl GetHostReservationPurchasePreviewOutputBuilder {
         self.currency_code = input;
         self
     }
+    /// <p>The currency in which the <code>totalUpfrontPrice</code> and <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is <code>USD</code>.</p>
+    pub fn get_currency_code(&self) -> &::std::option::Option<crate::types::CurrencyCodeValues> {
+        &self.currency_code
+    }
     /// Appends an item to `purchase`.
     ///
     /// To override the contents of this collection use [`set_purchase`](Self::set_purchase).
@@ -92,6 +96,10 @@ impl GetHostReservationPurchasePreviewOutputBuilder {
         self.purchase = input;
         self
     }
+    /// <p>The purchase information of the Dedicated Host reservation and the Dedicated Hosts associated with it.</p>
+    pub fn get_purchase(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Purchase>> {
+        &self.purchase
+    }
     /// <p>The potential total hourly price of the reservation per hour.</p>
     pub fn total_hourly_price(
         mut self,
@@ -108,6 +116,10 @@ impl GetHostReservationPurchasePreviewOutputBuilder {
         self.total_hourly_price = input;
         self
     }
+    /// <p>The potential total hourly price of the reservation per hour.</p>
+    pub fn get_total_hourly_price(&self) -> &::std::option::Option<::std::string::String> {
+        &self.total_hourly_price
+    }
     /// <p>The potential total upfront price. This is billed immediately.</p>
     pub fn total_upfront_price(
         mut self,
@@ -123,6 +135,10 @@ impl GetHostReservationPurchasePreviewOutputBuilder {
     ) -> Self {
         self.total_upfront_price = input;
         self
+    }
+    /// <p>The potential total upfront price. This is billed immediately.</p>
+    pub fn get_total_upfront_price(&self) -> &::std::option::Option<::std::string::String> {
+        &self.total_upfront_price
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

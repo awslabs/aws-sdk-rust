@@ -78,6 +78,10 @@ impl GetSnapshotBlockOutputBuilder {
         self.data_length = input;
         self
     }
+    /// <p>The size of the data in the block.</p>
+    pub fn get_data_length(&self) -> &::std::option::Option<i32> {
+        &self.data_length
+    }
     /// <p>The data content of the block.</p>
     pub fn block_data(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
         self.block_data = ::std::option::Option::Some(input);
@@ -91,6 +95,12 @@ impl GetSnapshotBlockOutputBuilder {
         self.block_data = input;
         self
     }
+    /// <p>The data content of the block.</p>
+    pub fn get_block_data(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+        &self.block_data
+    }
     /// <p>The checksum generated for the block, which is Base64 encoded.</p>
     pub fn checksum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.checksum = ::std::option::Option::Some(input.into());
@@ -100,6 +110,10 @@ impl GetSnapshotBlockOutputBuilder {
     pub fn set_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.checksum = input;
         self
+    }
+    /// <p>The checksum generated for the block, which is Base64 encoded.</p>
+    pub fn get_checksum(&self) -> &::std::option::Option<::std::string::String> {
+        &self.checksum
     }
     /// <p>The algorithm used to generate the checksum for the block, such as SHA256.</p>
     pub fn checksum_algorithm(mut self, input: crate::types::ChecksumAlgorithm) -> Self {
@@ -113,6 +127,12 @@ impl GetSnapshotBlockOutputBuilder {
     ) -> Self {
         self.checksum_algorithm = input;
         self
+    }
+    /// <p>The algorithm used to generate the checksum for the block, such as SHA256.</p>
+    pub fn get_checksum_algorithm(
+        &self,
+    ) -> &::std::option::Option<crate::types::ChecksumAlgorithm> {
+        &self.checksum_algorithm
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

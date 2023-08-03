@@ -36,6 +36,10 @@ impl BatchAssociateProjectAssetsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchAssociateProjectAssets as a reference.
+    pub fn as_input(&self) -> &crate::operation::batch_associate_project_assets::builders::BatchAssociateProjectAssetsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl BatchAssociateProjectAssetsFluentBuilder {
         self.inner = self.inner.set_project_id(input);
         self
     }
+    /// <p>The ID of the project to which to associate the assets.</p>
+    pub fn get_project_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_id()
+    }
     /// Appends an item to `assetIds`.
     ///
     /// To override the contents of this collection use [`set_asset_ids`](Self::set_asset_ids).
@@ -143,6 +151,10 @@ impl BatchAssociateProjectAssetsFluentBuilder {
         self.inner = self.inner.set_asset_ids(input);
         self
     }
+    /// <p>The IDs of the assets to be associated to the project.</p>
+    pub fn get_asset_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_asset_ids()
+    }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -152,5 +164,9 @@ impl BatchAssociateProjectAssetsFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

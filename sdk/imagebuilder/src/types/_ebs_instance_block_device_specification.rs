@@ -96,6 +96,10 @@ impl EbsInstanceBlockDeviceSpecificationBuilder {
         self.encrypted = input;
         self
     }
+    /// <p>Use to configure device encryption.</p>
+    pub fn get_encrypted(&self) -> &::std::option::Option<bool> {
+        &self.encrypted
+    }
     /// <p>Use to configure delete on termination of the associated device.</p>
     pub fn delete_on_termination(mut self, input: bool) -> Self {
         self.delete_on_termination = ::std::option::Option::Some(input);
@@ -105,6 +109,10 @@ impl EbsInstanceBlockDeviceSpecificationBuilder {
     pub fn set_delete_on_termination(mut self, input: ::std::option::Option<bool>) -> Self {
         self.delete_on_termination = input;
         self
+    }
+    /// <p>Use to configure delete on termination of the associated device.</p>
+    pub fn get_delete_on_termination(&self) -> &::std::option::Option<bool> {
+        &self.delete_on_termination
     }
     /// <p>Use to configure device IOPS.</p>
     pub fn iops(mut self, input: i32) -> Self {
@@ -116,6 +124,10 @@ impl EbsInstanceBlockDeviceSpecificationBuilder {
         self.iops = input;
         self
     }
+    /// <p>Use to configure device IOPS.</p>
+    pub fn get_iops(&self) -> &::std::option::Option<i32> {
+        &self.iops
+    }
     /// <p>Use to configure the KMS key to use when encrypting the device.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -125,6 +137,10 @@ impl EbsInstanceBlockDeviceSpecificationBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p>Use to configure the KMS key to use when encrypting the device.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// <p>The snapshot that defines the device contents.</p>
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -136,6 +152,10 @@ impl EbsInstanceBlockDeviceSpecificationBuilder {
         self.snapshot_id = input;
         self
     }
+    /// <p>The snapshot that defines the device contents.</p>
+    pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_id
+    }
     /// <p>Use to override the device's volume size.</p>
     pub fn volume_size(mut self, input: i32) -> Self {
         self.volume_size = ::std::option::Option::Some(input);
@@ -145,6 +165,10 @@ impl EbsInstanceBlockDeviceSpecificationBuilder {
     pub fn set_volume_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.volume_size = input;
         self
+    }
+    /// <p>Use to override the device's volume size.</p>
+    pub fn get_volume_size(&self) -> &::std::option::Option<i32> {
+        &self.volume_size
     }
     /// <p>Use to override the device's volume type.</p>
     pub fn volume_type(mut self, input: crate::types::EbsVolumeType) -> Self {
@@ -159,6 +183,10 @@ impl EbsInstanceBlockDeviceSpecificationBuilder {
         self.volume_type = input;
         self
     }
+    /// <p>Use to override the device's volume type.</p>
+    pub fn get_volume_type(&self) -> &::std::option::Option<crate::types::EbsVolumeType> {
+        &self.volume_type
+    }
     /// <p> <b>For GP3 volumes only</b> – The throughput in MiB/s that the volume supports.</p>
     pub fn throughput(mut self, input: i32) -> Self {
         self.throughput = ::std::option::Option::Some(input);
@@ -168,6 +196,10 @@ impl EbsInstanceBlockDeviceSpecificationBuilder {
     pub fn set_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
         self.throughput = input;
         self
+    }
+    /// <p> <b>For GP3 volumes only</b> – The throughput in MiB/s that the volume supports.</p>
+    pub fn get_throughput(&self) -> &::std::option::Option<i32> {
+        &self.throughput
     }
     /// Consumes the builder and constructs a [`EbsInstanceBlockDeviceSpecification`](crate::types::EbsInstanceBlockDeviceSpecification).
     pub fn build(self) -> crate::types::EbsInstanceBlockDeviceSpecification {

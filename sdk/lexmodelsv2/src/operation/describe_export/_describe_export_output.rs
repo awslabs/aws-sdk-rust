@@ -105,6 +105,10 @@ impl DescribeExportOutputBuilder {
         self.export_id = input;
         self
     }
+    /// <p>The unique identifier of the described export.</p>
+    pub fn get_export_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.export_id
+    }
     /// <p>The bot, bot ID, and optional locale ID of the exported bot or bot locale.</p>
     pub fn resource_specification(
         mut self,
@@ -121,6 +125,12 @@ impl DescribeExportOutputBuilder {
         self.resource_specification = input;
         self
     }
+    /// <p>The bot, bot ID, and optional locale ID of the exported bot or bot locale.</p>
+    pub fn get_resource_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExportResourceSpecification> {
+        &self.resource_specification
+    }
     /// <p>The file format used in the files that describe the resource. </p>
     pub fn file_format(mut self, input: crate::types::ImportExportFileFormat) -> Self {
         self.file_format = ::std::option::Option::Some(input);
@@ -134,6 +144,10 @@ impl DescribeExportOutputBuilder {
         self.file_format = input;
         self
     }
+    /// <p>The file format used in the files that describe the resource. </p>
+    pub fn get_file_format(&self) -> &::std::option::Option<crate::types::ImportExportFileFormat> {
+        &self.file_format
+    }
     /// <p>The status of the export. When the status is <code>Complete</code> the export archive file is available for download.</p>
     pub fn export_status(mut self, input: crate::types::ExportStatus) -> Self {
         self.export_status = ::std::option::Option::Some(input);
@@ -146,6 +160,10 @@ impl DescribeExportOutputBuilder {
     ) -> Self {
         self.export_status = input;
         self
+    }
+    /// <p>The status of the export. When the status is <code>Complete</code> the export archive file is available for download.</p>
+    pub fn get_export_status(&self) -> &::std::option::Option<crate::types::ExportStatus> {
+        &self.export_status
     }
     /// Appends an item to `failure_reasons`.
     ///
@@ -169,6 +187,12 @@ impl DescribeExportOutputBuilder {
         self.failure_reasons = input;
         self
     }
+    /// <p>If the <code>exportStatus</code> is failed, contains one or more reasons why the export could not be completed.</p>
+    pub fn get_failure_reasons(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.failure_reasons
+    }
     /// <p>A pre-signed S3 URL that points to the bot or bot locale archive. The URL is only available for 5 minutes after calling the <code>DescribeExport</code> operation.</p>
     pub fn download_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.download_url = ::std::option::Option::Some(input.into());
@@ -178,6 +202,10 @@ impl DescribeExportOutputBuilder {
     pub fn set_download_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.download_url = input;
         self
+    }
+    /// <p>A pre-signed S3 URL that points to the bot or bot locale archive. The URL is only available for 5 minutes after calling the <code>DescribeExport</code> operation.</p>
+    pub fn get_download_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.download_url
     }
     /// <p>The date and time that the export was created.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -192,6 +220,10 @@ impl DescribeExportOutputBuilder {
         self.creation_date_time = input;
         self
     }
+    /// <p>The date and time that the export was created.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
+    }
     /// <p>The last date and time that the export was updated.</p>
     pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date_time = ::std::option::Option::Some(input);
@@ -204,6 +236,12 @@ impl DescribeExportOutputBuilder {
     ) -> Self {
         self.last_updated_date_time = input;
         self
+    }
+    /// <p>The last date and time that the export was updated.</p>
+    pub fn get_last_updated_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

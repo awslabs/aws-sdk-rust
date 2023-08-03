@@ -56,6 +56,10 @@ impl DescribeJobExecutionInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The unique identifier you assigned to this job when it was created.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>The name of the thing on which the job execution is running.</p>
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_name = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl DescribeJobExecutionInputBuilder {
         self.thing_name = input;
         self
     }
+    /// <p>The name of the thing on which the job execution is running.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_name
+    }
     /// <p>A string (consisting of the digits "0" through "9" which is used to specify a particular job execution on a particular device.</p>
     pub fn execution_number(mut self, input: i64) -> Self {
         self.execution_number = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl DescribeJobExecutionInputBuilder {
     pub fn set_execution_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.execution_number = input;
         self
+    }
+    /// <p>A string (consisting of the digits "0" through "9" which is used to specify a particular job execution on a particular device.</p>
+    pub fn get_execution_number(&self) -> &::std::option::Option<i64> {
+        &self.execution_number
     }
     /// Consumes the builder and constructs a [`DescribeJobExecutionInput`](crate::operation::describe_job_execution::DescribeJobExecutionInput).
     pub fn build(

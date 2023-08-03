@@ -53,6 +53,10 @@ impl CreateFlowTemplateInputBuilder {
         self.definition = input;
         self
     }
+    /// <p>The workflow <code>DefinitionDocument</code>.</p>
+    pub fn get_definition(&self) -> &::std::option::Option<crate::types::DefinitionDocument> {
+        &self.definition
+    }
     /// <p>The namespace version in which the workflow is to be created.</p>
     /// <p>If no value is specified, the latest version is used by default.</p>
     pub fn compatible_namespace_version(mut self, input: i64) -> Self {
@@ -64,6 +68,11 @@ impl CreateFlowTemplateInputBuilder {
     pub fn set_compatible_namespace_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.compatible_namespace_version = input;
         self
+    }
+    /// <p>The namespace version in which the workflow is to be created.</p>
+    /// <p>If no value is specified, the latest version is used by default.</p>
+    pub fn get_compatible_namespace_version(&self) -> &::std::option::Option<i64> {
+        &self.compatible_namespace_version
     }
     /// Consumes the builder and constructs a [`CreateFlowTemplateInput`](crate::operation::create_flow_template::CreateFlowTemplateInput).
     pub fn build(

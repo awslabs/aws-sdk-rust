@@ -128,6 +128,10 @@ impl CreateLoadBalancerInputBuilder {
         self.load_balancer_name = input;
         self
     }
+    /// <p>The name of your load balancer.</p>
+    pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.load_balancer_name
+    }
     /// <p>The instance port where you're creating your load balancer.</p>
     pub fn instance_port(mut self, input: i32) -> Self {
         self.instance_port = ::std::option::Option::Some(input);
@@ -137,6 +141,10 @@ impl CreateLoadBalancerInputBuilder {
     pub fn set_instance_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.instance_port = input;
         self
+    }
+    /// <p>The instance port where you're creating your load balancer.</p>
+    pub fn get_instance_port(&self) -> &::std::option::Option<i32> {
+        &self.instance_port
     }
     /// <p>The path you provided to perform the load balancer health check. If you didn't specify a health check path, Lightsail uses the root path of your website (e.g., <code>"/"</code>).</p>
     /// <p>You may want to specify a custom health check path other than the root of your application if your home page loads slowly or has a lot of media or scripting on it.</p>
@@ -156,6 +164,11 @@ impl CreateLoadBalancerInputBuilder {
         self.health_check_path = input;
         self
     }
+    /// <p>The path you provided to perform the load balancer health check. If you didn't specify a health check path, Lightsail uses the root path of your website (e.g., <code>"/"</code>).</p>
+    /// <p>You may want to specify a custom health check path other than the root of your application if your home page loads slowly or has a lot of media or scripting on it.</p>
+    pub fn get_health_check_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.health_check_path
+    }
     /// <p>The name of the SSL/TLS certificate.</p>
     /// <p>If you specify <code>certificateName</code>, then <code>certificateDomainName</code> is required (and vice-versa).</p>
     pub fn certificate_name(
@@ -174,6 +187,11 @@ impl CreateLoadBalancerInputBuilder {
         self.certificate_name = input;
         self
     }
+    /// <p>The name of the SSL/TLS certificate.</p>
+    /// <p>If you specify <code>certificateName</code>, then <code>certificateDomainName</code> is required (and vice-versa).</p>
+    pub fn get_certificate_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_name
+    }
     /// <p>The domain name with which your certificate is associated (e.g., <code>example.com</code>).</p>
     /// <p>If you specify <code>certificateDomainName</code>, then <code>certificateName</code> is required (and vice-versa).</p>
     pub fn certificate_domain_name(
@@ -191,6 +209,11 @@ impl CreateLoadBalancerInputBuilder {
     ) -> Self {
         self.certificate_domain_name = input;
         self
+    }
+    /// <p>The domain name with which your certificate is associated (e.g., <code>example.com</code>).</p>
+    /// <p>If you specify <code>certificateDomainName</code>, then <code>certificateName</code> is required (and vice-versa).</p>
+    pub fn get_certificate_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_domain_name
     }
     /// Appends an item to `certificate_alternative_names`.
     ///
@@ -214,6 +237,12 @@ impl CreateLoadBalancerInputBuilder {
         self.certificate_alternative_names = input;
         self
     }
+    /// <p>The optional alternative domains and subdomains to use with your SSL/TLS certificate (e.g., <code>www.example.com</code>, <code>example.com</code>, <code>m.example.com</code>, <code>blog.example.com</code>).</p>
+    pub fn get_certificate_alternative_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.certificate_alternative_names
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -235,6 +264,11 @@ impl CreateLoadBalancerInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tag keys and optional values to add to the resource during create.</p>
+    /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The IP address type for the load balancer.</p>
     /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     /// <p>The default value is <code>dualstack</code>.</p>
@@ -251,6 +285,12 @@ impl CreateLoadBalancerInputBuilder {
     ) -> Self {
         self.ip_address_type = input;
         self
+    }
+    /// <p>The IP address type for the load balancer.</p>
+    /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
+    /// <p>The default value is <code>dualstack</code>.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
+        &self.ip_address_type
     }
     /// <p>The name of the TLS policy to apply to the load balancer.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a> action to get a list of TLS policy names that you can specify.</p>
@@ -271,6 +311,12 @@ impl CreateLoadBalancerInputBuilder {
     ) -> Self {
         self.tls_policy_name = input;
         self
+    }
+    /// <p>The name of the TLS policy to apply to the load balancer.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a> action to get a list of TLS policy names that you can specify.</p>
+    /// <p>For more information about load balancer TLS policies, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy">Configuring TLS security policies on your Amazon Lightsail load balancers</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+    pub fn get_tls_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tls_policy_name
     }
     /// Consumes the builder and constructs a [`CreateLoadBalancerInput`](crate::operation::create_load_balancer::CreateLoadBalancerInput).
     pub fn build(

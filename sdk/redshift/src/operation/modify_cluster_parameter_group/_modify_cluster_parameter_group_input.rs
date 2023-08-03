@@ -58,6 +58,10 @@ impl ModifyClusterParameterGroupInputBuilder {
         self.parameter_group_name = input;
         self
     }
+    /// <p>The name of the parameter group to be modified.</p>
+    pub fn get_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_group_name
+    }
     /// Appends an item to `parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
@@ -80,6 +84,14 @@ impl ModifyClusterParameterGroupInputBuilder {
     ) -> Self {
         self.parameters = input;
         self
+    }
+    /// <p>An array of parameters to be modified. A maximum of 20 parameters can be modified in a single request.</p>
+    /// <p>For each parameter to be modified, you must supply at least the parameter name and parameter value; other name-value pairs of the parameter are optional.</p>
+    /// <p>For the workload management (WLM) configuration, you must supply all the name-value pairs in the wlm_json_configuration parameter.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+        &self.parameters
     }
     /// Consumes the builder and constructs a [`ModifyClusterParameterGroupInput`](crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupInput).
     pub fn build(

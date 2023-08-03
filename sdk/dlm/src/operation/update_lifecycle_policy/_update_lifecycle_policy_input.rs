@@ -73,6 +73,10 @@ impl UpdateLifecyclePolicyInputBuilder {
         self.policy_id = input;
         self
     }
+    /// <p>The identifier of the lifecycle policy.</p>
+    pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
     pub fn execution_role_arn(
         mut self,
@@ -89,6 +93,10 @@ impl UpdateLifecyclePolicyInputBuilder {
         self.execution_role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
+    pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_role_arn
+    }
     /// <p>The desired activation state of the lifecycle policy after creation.</p>
     pub fn state(mut self, input: crate::types::SettablePolicyStateValues) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -102,6 +110,10 @@ impl UpdateLifecyclePolicyInputBuilder {
         self.state = input;
         self
     }
+    /// <p>The desired activation state of the lifecycle policy after creation.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::SettablePolicyStateValues> {
+        &self.state
+    }
     /// <p>A description of the lifecycle policy.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -111,6 +123,10 @@ impl UpdateLifecyclePolicyInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the lifecycle policy.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The configuration of the lifecycle policy. You cannot update the policy type or the resource type.</p>
     pub fn policy_details(mut self, input: crate::types::PolicyDetails) -> Self {
@@ -124,6 +140,10 @@ impl UpdateLifecyclePolicyInputBuilder {
     ) -> Self {
         self.policy_details = input;
         self
+    }
+    /// <p>The configuration of the lifecycle policy. You cannot update the policy type or the resource type.</p>
+    pub fn get_policy_details(&self) -> &::std::option::Option<crate::types::PolicyDetails> {
+        &self.policy_details
     }
     /// Consumes the builder and constructs a [`UpdateLifecyclePolicyInput`](crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyInput).
     pub fn build(

@@ -56,6 +56,10 @@ impl UnsubscribeFromEventInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The ARN of the assessment template that is used during the event for which you want to stop receiving SNS notifications.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// <p>The event for which you want to stop receiving SNS notifications.</p>
     pub fn event(mut self, input: crate::types::InspectorEvent) -> Self {
         self.event = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl UnsubscribeFromEventInputBuilder {
         self.event = input;
         self
     }
+    /// <p>The event for which you want to stop receiving SNS notifications.</p>
+    pub fn get_event(&self) -> &::std::option::Option<crate::types::InspectorEvent> {
+        &self.event
+    }
     /// <p>The ARN of the SNS topic to which SNS notifications are sent.</p>
     pub fn topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_arn = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl UnsubscribeFromEventInputBuilder {
     pub fn set_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.topic_arn = input;
         self
+    }
+    /// <p>The ARN of the SNS topic to which SNS notifications are sent.</p>
+    pub fn get_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_arn
     }
     /// Consumes the builder and constructs a [`UnsubscribeFromEventInput`](crate::operation::unsubscribe_from_event::UnsubscribeFromEventInput).
     pub fn build(

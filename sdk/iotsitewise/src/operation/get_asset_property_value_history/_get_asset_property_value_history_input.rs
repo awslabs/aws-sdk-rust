@@ -113,6 +113,10 @@ impl GetAssetPropertyValueHistoryInputBuilder {
         self.asset_id = input;
         self
     }
+    /// <p>The ID of the asset.</p>
+    pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_id
+    }
     /// <p>The ID of the asset property.</p>
     pub fn property_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.property_id = ::std::option::Option::Some(input.into());
@@ -122,6 +126,10 @@ impl GetAssetPropertyValueHistoryInputBuilder {
     pub fn set_property_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.property_id = input;
         self
+    }
+    /// <p>The ID of the asset property.</p>
+    pub fn get_property_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.property_id
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn property_alias(
@@ -139,6 +147,10 @@ impl GetAssetPropertyValueHistoryInputBuilder {
         self.property_alias = input;
         self
     }
+    /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn get_property_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.property_alias
+    }
     /// <p>The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
     pub fn start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_date = ::std::option::Option::Some(input);
@@ -152,6 +164,10 @@ impl GetAssetPropertyValueHistoryInputBuilder {
         self.start_date = input;
         self
     }
+    /// <p>The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
+    pub fn get_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_date
+    }
     /// <p>The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
     pub fn end_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_date = ::std::option::Option::Some(input);
@@ -164,6 +180,10 @@ impl GetAssetPropertyValueHistoryInputBuilder {
     ) -> Self {
         self.end_date = input;
         self
+    }
+    /// <p>The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
+    pub fn get_end_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_date
     }
     /// Appends an item to `qualities`.
     ///
@@ -184,6 +204,10 @@ impl GetAssetPropertyValueHistoryInputBuilder {
         self.qualities = input;
         self
     }
+    /// <p>The quality by which to filter asset data.</p>
+    pub fn get_qualities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Quality>> {
+        &self.qualities
+    }
     /// <p>The chronological sorting order of the requested information.</p>
     /// <p>Default: <code>ASCENDING</code> </p>
     pub fn time_ordering(mut self, input: crate::types::TimeOrdering) -> Self {
@@ -199,6 +223,11 @@ impl GetAssetPropertyValueHistoryInputBuilder {
         self.time_ordering = input;
         self
     }
+    /// <p>The chronological sorting order of the requested information.</p>
+    /// <p>Default: <code>ASCENDING</code> </p>
+    pub fn get_time_ordering(&self) -> &::std::option::Option<crate::types::TimeOrdering> {
+        &self.time_ordering
+    }
     /// <p>The token to be used for the next set of paginated results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -208,6 +237,10 @@ impl GetAssetPropertyValueHistoryInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>
     /// <ul>
@@ -226,6 +259,14 @@ impl GetAssetPropertyValueHistoryInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>
+    /// <ul>
+    /// <li> <p>The size of the result set is equal to 4 MB.</p> </li>
+    /// <li> <p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 20000.</p> </li>
+    /// </ul>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`GetAssetPropertyValueHistoryInput`](crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryInput).
     pub fn build(

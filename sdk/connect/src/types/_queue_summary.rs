@@ -64,6 +64,10 @@ impl QueueSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the queue.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The Amazon Resource Name (ARN) of the queue.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl QueueSummaryBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the queue.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The name of the queue.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,6 +92,10 @@ impl QueueSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the queue.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The type of queue.</p>
     pub fn queue_type(mut self, input: crate::types::QueueType) -> Self {
         self.queue_type = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl QueueSummaryBuilder {
     pub fn set_queue_type(mut self, input: ::std::option::Option<crate::types::QueueType>) -> Self {
         self.queue_type = input;
         self
+    }
+    /// <p>The type of queue.</p>
+    pub fn get_queue_type(&self) -> &::std::option::Option<crate::types::QueueType> {
+        &self.queue_type
     }
     /// Consumes the builder and constructs a [`QueueSummary`](crate::types::QueueSummary).
     pub fn build(self) -> crate::types::QueueSummary {

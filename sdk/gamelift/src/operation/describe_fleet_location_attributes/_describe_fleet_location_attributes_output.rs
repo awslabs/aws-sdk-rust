@@ -80,6 +80,10 @@ impl DescribeFleetLocationAttributesOutputBuilder {
         self.fleet_id = input;
         self
     }
+    /// <p>A unique identifier for the fleet that location attributes were requested for.</p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_id
+    }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
@@ -95,6 +99,13 @@ impl DescribeFleetLocationAttributesOutputBuilder {
     pub fn set_fleet_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+    /// <region>
+    /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
+    /// </region></code>.</p>
+    pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_arn
     }
     /// Appends an item to `location_attributes`.
     ///
@@ -115,6 +126,12 @@ impl DescribeFleetLocationAttributesOutputBuilder {
         self.location_attributes = input;
         self
     }
+    /// <p> Location-specific information on the requested fleet's remote locations.</p>
+    pub fn get_location_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LocationAttributes>> {
+        &self.location_attributes
+    }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -124,6 +141,10 @@ impl DescribeFleetLocationAttributesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

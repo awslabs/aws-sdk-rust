@@ -43,6 +43,10 @@ impl MemberFabricLogPublishingConfigurationBuilder {
         self.ca_logs = input;
         self
     }
+    /// <p>Configuration properties for logging events associated with a member's Certificate Authority (CA). CA logs help you determine when a member in your account joins the network, or when new peers register with a member CA.</p>
+    pub fn get_ca_logs(&self) -> &::std::option::Option<crate::types::LogConfigurations> {
+        &self.ca_logs
+    }
     /// Consumes the builder and constructs a [`MemberFabricLogPublishingConfiguration`](crate::types::MemberFabricLogPublishingConfiguration).
     pub fn build(self) -> crate::types::MemberFabricLogPublishingConfiguration {
         crate::types::MemberFabricLogPublishingConfiguration {

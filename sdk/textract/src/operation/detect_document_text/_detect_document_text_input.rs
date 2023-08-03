@@ -44,6 +44,11 @@ impl DetectDocumentTextInputBuilder {
         self.document = input;
         self
     }
+    /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG or PNG format.</p>
+    /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes that are passed using the <code>Bytes</code> field. </p>
+    pub fn get_document(&self) -> &::std::option::Option<crate::types::Document> {
+        &self.document
+    }
     /// Consumes the builder and constructs a [`DetectDocumentTextInput`](crate::operation::detect_document_text::DetectDocumentTextInput).
     pub fn build(
         self,

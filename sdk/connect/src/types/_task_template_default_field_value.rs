@@ -51,6 +51,10 @@ impl TaskTemplateDefaultFieldValueBuilder {
         self.id = input;
         self
     }
+    /// <p>Identifier of a field. </p>
+    pub fn get_id(&self) -> &::std::option::Option<crate::types::TaskTemplateFieldIdentifier> {
+        &self.id
+    }
     /// <p>Default value for the field.</p>
     pub fn default_value(
         mut self,
@@ -66,6 +70,10 @@ impl TaskTemplateDefaultFieldValueBuilder {
     ) -> Self {
         self.default_value = input;
         self
+    }
+    /// <p>Default value for the field.</p>
+    pub fn get_default_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_value
     }
     /// Consumes the builder and constructs a [`TaskTemplateDefaultFieldValue`](crate::types::TaskTemplateDefaultFieldValue).
     pub fn build(self) -> crate::types::TaskTemplateDefaultFieldValue {

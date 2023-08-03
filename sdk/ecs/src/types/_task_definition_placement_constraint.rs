@@ -55,6 +55,12 @@ impl TaskDefinitionPlacementConstraintBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of constraint. The <code>MemberOf</code> constraint restricts selection to be from a group of valid candidates.</p>
+    pub fn get_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::TaskDefinitionPlacementConstraintType> {
+        &self.r#type
+    }
     /// <p>A cluster query language expression to apply to the constraint. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster query language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression = ::std::option::Option::Some(input.into());
@@ -64,6 +70,10 @@ impl TaskDefinitionPlacementConstraintBuilder {
     pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expression = input;
         self
+    }
+    /// <p>A cluster query language expression to apply to the constraint. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster query language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expression
     }
     /// Consumes the builder and constructs a [`TaskDefinitionPlacementConstraint`](crate::types::TaskDefinitionPlacementConstraint).
     pub fn build(self) -> crate::types::TaskDefinitionPlacementConstraint {

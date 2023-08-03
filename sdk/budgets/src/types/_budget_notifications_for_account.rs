@@ -57,6 +57,12 @@ impl BudgetNotificationsForAccountBuilder {
         self.notifications = input;
         self
     }
+    /// <p> A list of notifications.</p>
+    pub fn get_notifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Notification>> {
+        &self.notifications
+    }
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.budget_name = ::std::option::Option::Some(input.into());
@@ -66,6 +72,10 @@ impl BudgetNotificationsForAccountBuilder {
     pub fn set_budget_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.budget_name = input;
         self
+    }
+    /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    pub fn get_budget_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.budget_name
     }
     /// Consumes the builder and constructs a [`BudgetNotificationsForAccount`](crate::types::BudgetNotificationsForAccount).
     pub fn build(self) -> crate::types::BudgetNotificationsForAccount {

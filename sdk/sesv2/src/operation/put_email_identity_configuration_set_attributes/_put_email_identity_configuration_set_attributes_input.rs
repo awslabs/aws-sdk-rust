@@ -54,6 +54,10 @@ impl PutEmailIdentityConfigurationSetAttributesInputBuilder {
         self.email_identity = input;
         self
     }
+    /// <p>The email address or domain to associate with a configuration set.</p>
+    pub fn get_email_identity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email_identity
+    }
     /// <p>The configuration set to associate with an email identity.</p>
     pub fn configuration_set_name(
         mut self,
@@ -69,6 +73,10 @@ impl PutEmailIdentityConfigurationSetAttributesInputBuilder {
     ) -> Self {
         self.configuration_set_name = input;
         self
+    }
+    /// <p>The configuration set to associate with an email identity.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_set_name
     }
     /// Consumes the builder and constructs a [`PutEmailIdentityConfigurationSetAttributesInput`](crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesInput, ::aws_smithy_http::operation::error::BuildError>{

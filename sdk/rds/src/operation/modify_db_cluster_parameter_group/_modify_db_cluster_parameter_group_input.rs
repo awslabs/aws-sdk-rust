@@ -62,6 +62,12 @@ impl ModifyDbClusterParameterGroupInputBuilder {
         self.db_cluster_parameter_group_name = input;
         self
     }
+    /// <p>The name of the DB cluster parameter group to modify.</p>
+    pub fn get_db_cluster_parameter_group_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_parameter_group_name
+    }
     /// Appends an item to `parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
@@ -88,6 +94,16 @@ impl ModifyDbClusterParameterGroupInputBuilder {
     ) -> Self {
         self.parameters = input;
         self
+    }
+    /// <p>A list of parameters in the DB cluster parameter group to modify.</p>
+    /// <p>Valid Values (for the application method): <code>immediate | pending-reboot</code> </p> <note>
+    /// <p>You can use the <code>immediate</code> value with dynamic parameters only. You can use the <code>pending-reboot</code> value for both dynamic and static parameters.</p>
+    /// <p>When the application method is <code>immediate</code>, changes to dynamic parameters are applied immediately to the DB clusters associated with the parameter group. When the application method is <code>pending-reboot</code>, changes to dynamic and static parameters are applied after a reboot without failover to the DB clusters associated with the parameter group.</p>
+    /// </note>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+        &self.parameters
     }
     /// Consumes the builder and constructs a [`ModifyDbClusterParameterGroupInput`](crate::operation::modify_db_cluster_parameter_group::ModifyDbClusterParameterGroupInput).
     pub fn build(

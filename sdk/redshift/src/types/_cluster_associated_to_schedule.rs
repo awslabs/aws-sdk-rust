@@ -57,6 +57,10 @@ impl ClusterAssociatedToScheduleBuilder {
         self
     }
     /// <p></p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_identifier
+    }
+    /// <p></p>
     pub fn schedule_association_state(mut self, input: crate::types::ScheduleState) -> Self {
         self.schedule_association_state = ::std::option::Option::Some(input);
         self
@@ -68,6 +72,12 @@ impl ClusterAssociatedToScheduleBuilder {
     ) -> Self {
         self.schedule_association_state = input;
         self
+    }
+    /// <p></p>
+    pub fn get_schedule_association_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::ScheduleState> {
+        &self.schedule_association_state
     }
     /// Consumes the builder and constructs a [`ClusterAssociatedToSchedule`](crate::types::ClusterAssociatedToSchedule).
     pub fn build(self) -> crate::types::ClusterAssociatedToSchedule {

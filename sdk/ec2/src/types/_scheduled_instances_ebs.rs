@@ -86,6 +86,10 @@ impl ScheduledInstancesEbsBuilder {
         self.delete_on_termination = input;
         self
     }
+    /// <p>Indicates whether the volume is deleted on instance termination.</p>
+    pub fn get_delete_on_termination(&self) -> &::std::option::Option<bool> {
+        &self.delete_on_termination
+    }
     /// <p>Indicates whether the volume is encrypted. You can attached encrypted volumes only to instances that support them.</p>
     pub fn encrypted(mut self, input: bool) -> Self {
         self.encrypted = ::std::option::Option::Some(input);
@@ -95,6 +99,10 @@ impl ScheduledInstancesEbsBuilder {
     pub fn set_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.encrypted = input;
         self
+    }
+    /// <p>Indicates whether the volume is encrypted. You can attached encrypted volumes only to instances that support them.</p>
+    pub fn get_encrypted(&self) -> &::std::option::Option<bool> {
+        &self.encrypted
     }
     /// <p>The number of I/O operations per second (IOPS) to provision for an <code>io1</code> or <code>io2</code> volume, with a maximum ratio of 50 IOPS/GiB for <code>io1</code>, and 500 IOPS/GiB for <code>io2</code>. Range is 100 to 64,000 IOPS for volumes in most Regions. Maximum IOPS of 64,000 is guaranteed only on <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>This parameter is valid only for Provisioned IOPS SSD (<code>io1</code> and <code>io2</code>) volumes.</p>
@@ -108,6 +116,11 @@ impl ScheduledInstancesEbsBuilder {
         self.iops = input;
         self
     }
+    /// <p>The number of I/O operations per second (IOPS) to provision for an <code>io1</code> or <code>io2</code> volume, with a maximum ratio of 50 IOPS/GiB for <code>io1</code>, and 500 IOPS/GiB for <code>io2</code>. Range is 100 to 64,000 IOPS for volumes in most Regions. Maximum IOPS of 64,000 is guaranteed only on <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>This parameter is valid only for Provisioned IOPS SSD (<code>io1</code> and <code>io2</code>) volumes.</p>
+    pub fn get_iops(&self) -> &::std::option::Option<i32> {
+        &self.iops
+    }
     /// <p>The ID of the snapshot.</p>
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_id = ::std::option::Option::Some(input.into());
@@ -117,6 +130,10 @@ impl ScheduledInstancesEbsBuilder {
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_id = input;
         self
+    }
+    /// <p>The ID of the snapshot.</p>
+    pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_id
     }
     /// <p>The size of the volume, in GiB.</p>
     /// <p>Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the snapshot size.</p>
@@ -130,6 +147,11 @@ impl ScheduledInstancesEbsBuilder {
         self.volume_size = input;
         self
     }
+    /// <p>The size of the volume, in GiB.</p>
+    /// <p>Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the snapshot size.</p>
+    pub fn get_volume_size(&self) -> &::std::option::Option<i32> {
+        &self.volume_size
+    }
     /// <p>The volume type. <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code> io2</code> for Provisioned IOPS SSD, Throughput Optimized HDD for <code>st1</code>, Cold HDD for <code>sc1</code>, or <code>standard</code> for Magnetic.</p>
     /// <p>Default: <code>gp2</code> </p>
     pub fn volume_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -141,6 +163,11 @@ impl ScheduledInstancesEbsBuilder {
     pub fn set_volume_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_type = input;
         self
+    }
+    /// <p>The volume type. <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code> io2</code> for Provisioned IOPS SSD, Throughput Optimized HDD for <code>st1</code>, Cold HDD for <code>sc1</code>, or <code>standard</code> for Magnetic.</p>
+    /// <p>Default: <code>gp2</code> </p>
+    pub fn get_volume_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_type
     }
     /// Consumes the builder and constructs a [`ScheduledInstancesEbs`](crate::types::ScheduledInstancesEbs).
     pub fn build(self) -> crate::types::ScheduledInstancesEbs {

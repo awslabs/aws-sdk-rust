@@ -46,6 +46,10 @@ impl DescribePipelineInputBuilder {
         self.pipeline_name = input;
         self
     }
+    /// <p>The name or Amazon Resource Name (ARN) of the pipeline to describe.</p>
+    pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_name
+    }
     /// Consumes the builder and constructs a [`DescribePipelineInput`](crate::operation::describe_pipeline::DescribePipelineInput).
     pub fn build(
         self,

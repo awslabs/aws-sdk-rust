@@ -41,6 +41,10 @@ impl OutpostBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`Outpost`](crate::types::Outpost).
     pub fn build(self) -> crate::types::Outpost {
         crate::types::Outpost { arn: self.arn }

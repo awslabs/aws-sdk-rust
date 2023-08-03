@@ -52,6 +52,12 @@ impl RemoteSourceCodeAnalysisServerInfoBuilder {
         self.remote_source_code_analysis_server_configuration_timestamp = input;
         self
     }
+    /// <p>The time when the remote source code server was configured.</p>
+    pub fn get_remote_source_code_analysis_server_configuration_timestamp(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.remote_source_code_analysis_server_configuration_timestamp
+    }
     /// Consumes the builder and constructs a [`RemoteSourceCodeAnalysisServerInfo`](crate::types::RemoteSourceCodeAnalysisServerInfo).
     pub fn build(self) -> crate::types::RemoteSourceCodeAnalysisServerInfo {
         crate::types::RemoteSourceCodeAnalysisServerInfo {

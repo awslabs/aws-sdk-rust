@@ -54,6 +54,10 @@ impl CreateMonitorOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the monitor.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The status of a monitor.</p>
     pub fn status(mut self, input: crate::types::MonitorConfigState) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl CreateMonitorOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of a monitor.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::MonitorConfigState> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

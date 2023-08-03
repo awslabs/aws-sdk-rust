@@ -75,6 +75,10 @@ impl CoreNetworkPolicyExceptionBuilder {
         self.message = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Appends an item to `errors`.
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
@@ -93,6 +97,12 @@ impl CoreNetworkPolicyExceptionBuilder {
     ) -> Self {
         self.errors = input;
         self
+    }
+    /// <p>Describes a core network policy exception.</p>
+    pub fn get_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkPolicyError>> {
+        &self.errors
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

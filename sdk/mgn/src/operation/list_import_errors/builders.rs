@@ -36,6 +36,12 @@ impl ListImportErrorsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListImportErrors as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_import_errors::builders::ListImportErrorsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl ListImportErrorsFluentBuilder {
         self.inner = self.inner.set_import_id(input);
         self
     }
+    /// <p>List import errors request import id.</p>
+    pub fn get_import_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_import_id()
+    }
     /// <p>List import errors request max results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -147,6 +157,10 @@ impl ListImportErrorsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>List import errors request max results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>List import errors request next token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -156,5 +170,9 @@ impl ListImportErrorsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>List import errors request next token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

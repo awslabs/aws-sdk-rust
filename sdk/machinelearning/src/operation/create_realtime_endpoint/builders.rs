@@ -36,6 +36,13 @@ impl CreateRealtimeEndpointFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateRealtimeEndpoint as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_realtime_endpoint::builders::CreateRealtimeEndpointInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +132,9 @@ impl CreateRealtimeEndpointFluentBuilder {
     pub fn set_ml_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ml_model_id(input);
         self
+    }
+    /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
+    pub fn get_ml_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ml_model_id()
     }
 }

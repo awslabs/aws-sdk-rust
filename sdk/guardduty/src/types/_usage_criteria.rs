@@ -75,6 +75,12 @@ impl UsageCriteriaBuilder {
         self.account_ids = input;
         self
     }
+    /// <p>The account IDs to aggregate usage statistics from.</p>
+    pub fn get_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.account_ids
+    }
     /// Appends an item to `data_sources`.
     ///
     /// To override the contents of this collection use [`set_data_sources`](Self::set_data_sources).
@@ -96,6 +102,13 @@ impl UsageCriteriaBuilder {
         self.data_sources = input;
         self
     }
+    /// <p>The data sources to aggregate usage statistics from.</p>
+    #[deprecated(note = "This parameter is deprecated, use Features instead")]
+    pub fn get_data_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSource>> {
+        &self.data_sources
+    }
     /// Appends an item to `resources`.
     ///
     /// To override the contents of this collection use [`set_resources`](Self::set_resources).
@@ -115,6 +128,10 @@ impl UsageCriteriaBuilder {
         self.resources = input;
         self
     }
+    /// <p>The resources to aggregate usage statistics from. Only accepts exact resource names.</p>
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resources
+    }
     /// Appends an item to `features`.
     ///
     /// To override the contents of this collection use [`set_features`](Self::set_features).
@@ -133,6 +150,12 @@ impl UsageCriteriaBuilder {
     ) -> Self {
         self.features = input;
         self
+    }
+    /// <p>The features to aggregate usage statistics from.</p>
+    pub fn get_features(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageFeature>> {
+        &self.features
     }
     /// Consumes the builder and constructs a [`UsageCriteria`](crate::types::UsageCriteria).
     pub fn build(self) -> crate::types::UsageCriteria {

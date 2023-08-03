@@ -41,6 +41,10 @@ impl DescribeOfferingInputBuilder {
         self.offering_id = input;
         self
     }
+    /// Unique offering ID, e.g. '87654321'
+    pub fn get_offering_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.offering_id
+    }
     /// Consumes the builder and constructs a [`DescribeOfferingInput`](crate::operation::describe_offering::DescribeOfferingInput).
     pub fn build(
         self,

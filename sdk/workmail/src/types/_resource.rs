@@ -88,6 +88,10 @@ impl ResourceBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the resource.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The email of the resource.</p>
     pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email = ::std::option::Option::Some(input.into());
@@ -97,6 +101,10 @@ impl ResourceBuilder {
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email = input;
         self
+    }
+    /// <p>The email of the resource.</p>
+    pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email
     }
     /// <p>The name of the resource.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -108,6 +116,10 @@ impl ResourceBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the resource.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The type of the resource: equipment or room.</p>
     pub fn r#type(mut self, input: crate::types::ResourceType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -118,6 +130,10 @@ impl ResourceBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of the resource: equipment or room.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.r#type
+    }
     /// <p>The state of the resource, which can be ENABLED, DISABLED, or DELETED.</p>
     pub fn state(mut self, input: crate::types::EntityState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -127,6 +143,10 @@ impl ResourceBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::EntityState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the resource, which can be ENABLED, DISABLED, or DELETED.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::EntityState> {
+        &self.state
     }
     /// <p>The date indicating when the resource was enabled for WorkMail use.</p>
     pub fn enabled_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -141,6 +161,10 @@ impl ResourceBuilder {
         self.enabled_date = input;
         self
     }
+    /// <p>The date indicating when the resource was enabled for WorkMail use.</p>
+    pub fn get_enabled_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.enabled_date
+    }
     /// <p>The date indicating when the resource was disabled from WorkMail use.</p>
     pub fn disabled_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.disabled_date = ::std::option::Option::Some(input);
@@ -153,6 +177,10 @@ impl ResourceBuilder {
     ) -> Self {
         self.disabled_date = input;
         self
+    }
+    /// <p>The date indicating when the resource was disabled from WorkMail use.</p>
+    pub fn get_disabled_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.disabled_date
     }
     /// Consumes the builder and constructs a [`Resource`](crate::types::Resource).
     pub fn build(self) -> crate::types::Resource {

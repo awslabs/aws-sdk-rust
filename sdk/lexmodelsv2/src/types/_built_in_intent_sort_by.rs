@@ -51,6 +51,12 @@ impl BuiltInIntentSortByBuilder {
         self.attribute = input;
         self
     }
+    /// <p>The attribute to use to sort the list of built-in intents.</p>
+    pub fn get_attribute(
+        &self,
+    ) -> &::std::option::Option<crate::types::BuiltInIntentSortAttribute> {
+        &self.attribute
+    }
     /// <p>The order to sort the list. You can specify ascending or descending order.</p>
     pub fn order(mut self, input: crate::types::SortOrder) -> Self {
         self.order = ::std::option::Option::Some(input);
@@ -60,6 +66,10 @@ impl BuiltInIntentSortByBuilder {
     pub fn set_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.order = input;
         self
+    }
+    /// <p>The order to sort the list. You can specify ascending or descending order.</p>
+    pub fn get_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.order
     }
     /// Consumes the builder and constructs a [`BuiltInIntentSortBy`](crate::types::BuiltInIntentSortBy).
     pub fn build(self) -> crate::types::BuiltInIntentSortBy {

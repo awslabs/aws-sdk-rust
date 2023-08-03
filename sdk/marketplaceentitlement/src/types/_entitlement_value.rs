@@ -64,6 +64,10 @@ impl EntitlementValueBuilder {
         self.integer_value = input;
         self
     }
+    /// <p>The IntegerValue field will be populated with an integer value when the entitlement is an integer type. Otherwise, the field will not be set.</p>
+    pub fn get_integer_value(&self) -> &::std::option::Option<i32> {
+        &self.integer_value
+    }
     /// <p>The DoubleValue field will be populated with a double value when the entitlement is a double type. Otherwise, the field will not be set.</p>
     pub fn double_value(mut self, input: f64) -> Self {
         self.double_value = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl EntitlementValueBuilder {
     pub fn set_double_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.double_value = input;
         self
+    }
+    /// <p>The DoubleValue field will be populated with a double value when the entitlement is a double type. Otherwise, the field will not be set.</p>
+    pub fn get_double_value(&self) -> &::std::option::Option<f64> {
+        &self.double_value
     }
     /// <p>The BooleanValue field will be populated with a boolean value when the entitlement is a boolean type. Otherwise, the field will not be set.</p>
     pub fn boolean_value(mut self, input: bool) -> Self {
@@ -84,6 +92,10 @@ impl EntitlementValueBuilder {
         self.boolean_value = input;
         self
     }
+    /// <p>The BooleanValue field will be populated with a boolean value when the entitlement is a boolean type. Otherwise, the field will not be set.</p>
+    pub fn get_boolean_value(&self) -> &::std::option::Option<bool> {
+        &self.boolean_value
+    }
     /// <p>The StringValue field will be populated with a string value when the entitlement is a string type. Otherwise, the field will not be set.</p>
     pub fn string_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.string_value = ::std::option::Option::Some(input.into());
@@ -93,6 +105,10 @@ impl EntitlementValueBuilder {
     pub fn set_string_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.string_value = input;
         self
+    }
+    /// <p>The StringValue field will be populated with a string value when the entitlement is a string type. Otherwise, the field will not be set.</p>
+    pub fn get_string_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.string_value
     }
     /// Consumes the builder and constructs a [`EntitlementValue`](crate::types::EntitlementValue).
     pub fn build(self) -> crate::types::EntitlementValue {

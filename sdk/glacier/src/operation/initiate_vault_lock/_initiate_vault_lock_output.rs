@@ -48,6 +48,10 @@ impl InitiateVaultLockOutputBuilder {
         self.lock_id = input;
         self
     }
+    /// <p>The lock ID, which is used to complete the vault locking process.</p>
+    pub fn get_lock_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lock_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

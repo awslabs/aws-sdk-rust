@@ -36,6 +36,10 @@ impl SearchAssociatedTranscriptsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SearchAssociatedTranscripts as a reference.
+    pub fn as_input(&self) -> &crate::operation::search_associated_transcripts::builders::SearchAssociatedTranscriptsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl SearchAssociatedTranscriptsFluentBuilder {
         self.inner = self.inner.set_bot_id(input);
         self
     }
+    /// <p>The unique identifier of the bot associated with the transcripts that you are searching.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bot_id()
+    }
     /// <p>The version of the bot containing the transcripts that you are searching.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_version(input.into());
@@ -136,6 +144,10 @@ impl SearchAssociatedTranscriptsFluentBuilder {
         self.inner = self.inner.set_bot_version(input);
         self
     }
+    /// <p>The version of the bot containing the transcripts that you are searching.</p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bot_version()
+    }
     /// <p>The identifier of the language and locale of the transcripts to search. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.locale_id(input.into());
@@ -145,6 +157,10 @@ impl SearchAssociatedTranscriptsFluentBuilder {
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_locale_id(input);
         self
+    }
+    /// <p>The identifier of the language and locale of the transcripts to search. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
+    pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_locale_id()
     }
     /// <p>The unique identifier of the bot recommendation associated with the transcripts to search.</p>
     pub fn bot_recommendation_id(
@@ -162,6 +178,10 @@ impl SearchAssociatedTranscriptsFluentBuilder {
         self.inner = self.inner.set_bot_recommendation_id(input);
         self
     }
+    /// <p>The unique identifier of the bot recommendation associated with the transcripts to search.</p>
+    pub fn get_bot_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bot_recommendation_id()
+    }
     /// <p>How SearchResults are ordered. Valid values are Ascending or Descending. The default is Descending.</p>
     pub fn search_order(mut self, input: crate::types::SearchOrder) -> Self {
         self.inner = self.inner.search_order(input);
@@ -174,6 +194,10 @@ impl SearchAssociatedTranscriptsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_search_order(input);
         self
+    }
+    /// <p>How SearchResults are ordered. Valid values are Ascending or Descending. The default is Descending.</p>
+    pub fn get_search_order(&self) -> &::std::option::Option<crate::types::SearchOrder> {
+        self.inner.get_search_order()
     }
     /// Appends an item to `filters`.
     ///
@@ -192,6 +216,12 @@ impl SearchAssociatedTranscriptsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>A list of filter objects.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociatedTranscriptFilter>> {
+        self.inner.get_filters()
+    }
     /// <p>The maximum number of bot recommendations to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -202,6 +232,10 @@ impl SearchAssociatedTranscriptsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of bot recommendations to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>If the response from the SearchAssociatedTranscriptsRequest operation contains more results than specified in the maxResults parameter, an index is returned in the response. Use that index in the nextIndex parameter to return the next page of results.</p>
     pub fn next_index(mut self, input: i32) -> Self {
         self.inner = self.inner.next_index(input);
@@ -211,5 +245,9 @@ impl SearchAssociatedTranscriptsFluentBuilder {
     pub fn set_next_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_next_index(input);
         self
+    }
+    /// <p>If the response from the SearchAssociatedTranscriptsRequest operation contains more results than specified in the maxResults parameter, an index is returned in the response. Use that index in the nextIndex parameter to return the next page of results.</p>
+    pub fn get_next_index(&self) -> &::std::option::Option<i32> {
+        self.inner.get_next_index()
     }
 }

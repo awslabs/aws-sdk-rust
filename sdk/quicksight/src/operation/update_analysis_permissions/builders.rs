@@ -36,6 +36,10 @@ impl UpdateAnalysisPermissionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAnalysisPermissions as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_analysis_permissions::builders::UpdateAnalysisPermissionsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl UpdateAnalysisPermissionsFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The ID of the Amazon Web Services account that contains the analysis whose permissions you're updating. You must be using the Amazon Web Services account that the analysis is in.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>The ID of the analysis whose permissions you're updating. The ID is part of the analysis URL.</p>
     pub fn analysis_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.analysis_id(input.into());
@@ -141,6 +149,10 @@ impl UpdateAnalysisPermissionsFluentBuilder {
     pub fn set_analysis_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_analysis_id(input);
         self
+    }
+    /// <p>The ID of the analysis whose permissions you're updating. The ID is part of the analysis URL.</p>
+    pub fn get_analysis_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_analysis_id()
     }
     /// Appends an item to `GrantPermissions`.
     ///
@@ -159,6 +171,12 @@ impl UpdateAnalysisPermissionsFluentBuilder {
         self.inner = self.inner.set_grant_permissions(input);
         self
     }
+    /// <p>A structure that describes the permissions to add and the principal to add them to.</p>
+    pub fn get_grant_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+        self.inner.get_grant_permissions()
+    }
     /// Appends an item to `RevokePermissions`.
     ///
     /// To override the contents of this collection use [`set_revoke_permissions`](Self::set_revoke_permissions).
@@ -175,5 +193,11 @@ impl UpdateAnalysisPermissionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_revoke_permissions(input);
         self
+    }
+    /// <p>A structure that describes the permissions to remove and the principal to remove them from.</p>
+    pub fn get_revoke_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+        self.inner.get_revoke_permissions()
     }
 }

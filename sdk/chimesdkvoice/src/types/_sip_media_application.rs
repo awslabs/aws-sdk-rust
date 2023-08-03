@@ -96,6 +96,10 @@ impl SipMediaApplicationBuilder {
         self.sip_media_application_id = input;
         self
     }
+    /// <p>A SIP media application's ID.</p>
+    pub fn get_sip_media_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sip_media_application_id
+    }
     /// <p>The AWS Region in which the SIP media application is created.</p>
     pub fn aws_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_region = ::std::option::Option::Some(input.into());
@@ -106,6 +110,10 @@ impl SipMediaApplicationBuilder {
         self.aws_region = input;
         self
     }
+    /// <p>The AWS Region in which the SIP media application is created.</p>
+    pub fn get_aws_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_region
+    }
     /// <p>The SIP media application's name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -115,6 +123,10 @@ impl SipMediaApplicationBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The SIP media application's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `endpoints`.
     ///
@@ -135,6 +147,12 @@ impl SipMediaApplicationBuilder {
         self.endpoints = input;
         self
     }
+    /// <p>List of endpoints for a SIP media application. Currently, only one endpoint per SIP media application is permitted.</p>
+    pub fn get_endpoints(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SipMediaApplicationEndpoint>> {
+        &self.endpoints
+    }
     /// <p>The SIP media application creation timestamp, in ISO 8601 format.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_timestamp = ::std::option::Option::Some(input);
@@ -148,6 +166,10 @@ impl SipMediaApplicationBuilder {
         self.created_timestamp = input;
         self
     }
+    /// <p>The SIP media application creation timestamp, in ISO 8601 format.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
+    }
     /// <p>The time at which the SIP media application was updated.</p>
     pub fn updated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_timestamp = ::std::option::Option::Some(input);
@@ -160,6 +182,10 @@ impl SipMediaApplicationBuilder {
     ) -> Self {
         self.updated_timestamp = input;
         self
+    }
+    /// <p>The time at which the SIP media application was updated.</p>
+    pub fn get_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_timestamp
     }
     /// <p>The ARN of the SIP media application.</p>
     pub fn sip_media_application_arn(
@@ -176,6 +202,10 @@ impl SipMediaApplicationBuilder {
     ) -> Self {
         self.sip_media_application_arn = input;
         self
+    }
+    /// <p>The ARN of the SIP media application.</p>
+    pub fn get_sip_media_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sip_media_application_arn
     }
     /// Consumes the builder and constructs a [`SipMediaApplication`](crate::types::SipMediaApplication).
     pub fn build(self) -> crate::types::SipMediaApplication {

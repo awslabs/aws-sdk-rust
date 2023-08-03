@@ -36,6 +36,13 @@ impl DeleteAnomalyDetectorFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteAnomalyDetector as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_anomaly_detector::builders::DeleteAnomalyDetectorInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +135,11 @@ impl DeleteAnomalyDetectorFluentBuilder {
         self.inner = self.inner.set_namespace(input);
         self
     }
+    /// <p>The namespace associated with the anomaly detection model to delete.</p>
+    #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_namespace()
+    }
     /// <p>The metric name associated with the anomaly detection model to delete.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -139,6 +151,11 @@ impl DeleteAnomalyDetectorFluentBuilder {
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_metric_name(input);
         self
+    }
+    /// <p>The metric name associated with the anomaly detection model to delete.</p>
+    #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_metric_name()
     }
     /// Appends an item to `Dimensions`.
     ///
@@ -159,6 +176,13 @@ impl DeleteAnomalyDetectorFluentBuilder {
         self.inner = self.inner.set_dimensions(input);
         self
     }
+    /// <p>The metric dimensions associated with the anomaly detection model to delete.</p>
+    #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
+    pub fn get_dimensions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Dimension>> {
+        self.inner.get_dimensions()
+    }
     /// <p>The statistic associated with the anomaly detection model to delete.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
     pub fn stat(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -170,6 +194,11 @@ impl DeleteAnomalyDetectorFluentBuilder {
     pub fn set_stat(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stat(input);
         self
+    }
+    /// <p>The statistic associated with the anomaly detection model to delete.</p>
+    #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
+    pub fn get_stat(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stat()
     }
     /// <p>A single metric anomaly detector to be deleted.</p>
     /// <p>When using <code>SingleMetricAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>
@@ -205,6 +234,21 @@ impl DeleteAnomalyDetectorFluentBuilder {
         self.inner = self.inner.set_single_metric_anomaly_detector(input);
         self
     }
+    /// <p>A single metric anomaly detector to be deleted.</p>
+    /// <p>When using <code>SingleMetricAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>
+    /// <ul>
+    /// <li> <p> <code>Dimensions</code>,</p> </li>
+    /// <li> <p> <code>MetricName</code> </p> </li>
+    /// <li> <p> <code>Namespace</code> </p> </li>
+    /// <li> <p> <code>Stat</code> </p> </li>
+    /// <li> <p>the <code>MetricMathAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code> </p> </li>
+    /// </ul>
+    /// <p>Instead, specify the single metric anomaly detector attributes as part of the <code>SingleMetricAnomalyDetector</code> property.</p>
+    pub fn get_single_metric_anomaly_detector(
+        &self,
+    ) -> &::std::option::Option<crate::types::SingleMetricAnomalyDetector> {
+        self.inner.get_single_metric_anomaly_detector()
+    }
     /// <p>The metric math anomaly detector to be deleted.</p>
     /// <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include following parameters in the same operation:</p>
     /// <ul>
@@ -238,5 +282,20 @@ impl DeleteAnomalyDetectorFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_metric_math_anomaly_detector(input);
         self
+    }
+    /// <p>The metric math anomaly detector to be deleted.</p>
+    /// <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include following parameters in the same operation:</p>
+    /// <ul>
+    /// <li> <p> <code>Dimensions</code>,</p> </li>
+    /// <li> <p> <code>MetricName</code> </p> </li>
+    /// <li> <p> <code>Namespace</code> </p> </li>
+    /// <li> <p> <code>Stat</code> </p> </li>
+    /// <li> <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code> </p> </li>
+    /// </ul>
+    /// <p>Instead, specify the metric math anomaly detector attributes as part of the <code>MetricMathAnomalyDetector</code> property.</p>
+    pub fn get_metric_math_anomaly_detector(
+        &self,
+    ) -> &::std::option::Option<crate::types::MetricMathAnomalyDetector> {
+        self.inner.get_metric_math_anomaly_detector()
     }
 }

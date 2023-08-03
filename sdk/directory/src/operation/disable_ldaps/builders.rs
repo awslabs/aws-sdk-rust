@@ -36,6 +36,10 @@ impl DisableLDAPSFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisableLDAPS as a reference.
+    pub fn as_input(&self) -> &crate::operation::disable_ldaps::builders::DisableLdapsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl DisableLDAPSFluentBuilder {
         self.inner = self.inner.set_directory_id(input);
         self
     }
+    /// <p>The identifier of the directory.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_id()
+    }
     /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
     pub fn r#type(mut self, input: crate::types::LdapsType) -> Self {
         self.inner = self.inner.r#type(input);
@@ -127,5 +135,9 @@ impl DisableLDAPSFluentBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::LdapsType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
+    }
+    /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::LdapsType> {
+        self.inner.get_type()
     }
 }

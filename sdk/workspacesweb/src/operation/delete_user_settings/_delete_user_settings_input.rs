@@ -46,6 +46,10 @@ impl DeleteUserSettingsInputBuilder {
         self.user_settings_arn = input;
         self
     }
+    /// <p>The ARN of the user settings.</p>
+    pub fn get_user_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_settings_arn
+    }
     /// Consumes the builder and constructs a [`DeleteUserSettingsInput`](crate::operation::delete_user_settings::DeleteUserSettingsInput).
     pub fn build(
         self,

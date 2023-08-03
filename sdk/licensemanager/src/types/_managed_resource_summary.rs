@@ -51,6 +51,10 @@ impl ManagedResourceSummaryBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>Type of resource associated with a license.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
+    }
     /// <p>Number of resources associated with licenses.</p>
     pub fn association_count(mut self, input: i64) -> Self {
         self.association_count = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl ManagedResourceSummaryBuilder {
     pub fn set_association_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.association_count = input;
         self
+    }
+    /// <p>Number of resources associated with licenses.</p>
+    pub fn get_association_count(&self) -> &::std::option::Option<i64> {
+        &self.association_count
     }
     /// Consumes the builder and constructs a [`ManagedResourceSummary`](crate::types::ManagedResourceSummary).
     pub fn build(self) -> crate::types::ManagedResourceSummary {

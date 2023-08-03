@@ -40,6 +40,10 @@ impl SourceBuilder {
         self.s3 = input;
         self
     }
+    /// <p>The <code>S3Source</code> object.</p>
+    pub fn get_s3(&self) -> &::std::option::Option<crate::types::S3Source> {
+        &self.s3
+    }
     /// Consumes the builder and constructs a [`Source`](crate::types::Source).
     pub fn build(self) -> crate::types::Source {
         crate::types::Source { s3: self.s3 }

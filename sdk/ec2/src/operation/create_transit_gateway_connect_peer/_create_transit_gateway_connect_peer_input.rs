@@ -97,6 +97,12 @@ impl CreateTransitGatewayConnectPeerInputBuilder {
         self.transit_gateway_attachment_id = input;
         self
     }
+    /// <p>The ID of the Connect attachment.</p>
+    pub fn get_transit_gateway_attachment_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_attachment_id
+    }
     /// <p>The peer IP address (GRE outer IP address) on the transit gateway side of the Connect peer, which must be specified from a transit gateway CIDR block. If not specified, Amazon automatically assigns the first available IP address from the transit gateway CIDR block.</p>
     pub fn transit_gateway_address(
         mut self,
@@ -113,6 +119,10 @@ impl CreateTransitGatewayConnectPeerInputBuilder {
         self.transit_gateway_address = input;
         self
     }
+    /// <p>The peer IP address (GRE outer IP address) on the transit gateway side of the Connect peer, which must be specified from a transit gateway CIDR block. If not specified, Amazon automatically assigns the first available IP address from the transit gateway CIDR block.</p>
+    pub fn get_transit_gateway_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_address
+    }
     /// <p>The peer IP address (GRE outer IP address) on the appliance side of the Connect peer.</p>
     pub fn peer_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.peer_address = ::std::option::Option::Some(input.into());
@@ -122,6 +132,10 @@ impl CreateTransitGatewayConnectPeerInputBuilder {
     pub fn set_peer_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.peer_address = input;
         self
+    }
+    /// <p>The peer IP address (GRE outer IP address) on the appliance side of the Connect peer.</p>
+    pub fn get_peer_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.peer_address
     }
     /// <p>The BGP options for the Connect peer.</p>
     pub fn bgp_options(
@@ -138,6 +152,12 @@ impl CreateTransitGatewayConnectPeerInputBuilder {
     ) -> Self {
         self.bgp_options = input;
         self
+    }
+    /// <p>The BGP options for the Connect peer.</p>
+    pub fn get_bgp_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransitGatewayConnectRequestBgpOptions> {
+        &self.bgp_options
     }
     /// Appends an item to `inside_cidr_blocks`.
     ///
@@ -161,6 +181,12 @@ impl CreateTransitGatewayConnectPeerInputBuilder {
         self.inside_cidr_blocks = input;
         self
     }
+    /// <p>The range of inside IP addresses that are used for BGP peering. You must specify a size /29 IPv4 CIDR block from the <code>169.254.0.0/16</code> range. The first address from the range must be configured on the appliance as the BGP IP address. You can also optionally specify a size /125 IPv6 CIDR block from the <code>fd00::/8</code> range.</p>
+    pub fn get_inside_cidr_blocks(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.inside_cidr_blocks
+    }
     /// Appends an item to `tag_specifications`.
     ///
     /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
@@ -180,6 +206,12 @@ impl CreateTransitGatewayConnectPeerInputBuilder {
         self.tag_specifications = input;
         self
     }
+    /// <p>The tags to apply to the Connect peer.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        &self.tag_specifications
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -189,6 +221,10 @@ impl CreateTransitGatewayConnectPeerInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`CreateTransitGatewayConnectPeerInput`](crate::operation::create_transit_gateway_connect_peer::CreateTransitGatewayConnectPeerInput).
     pub fn build(

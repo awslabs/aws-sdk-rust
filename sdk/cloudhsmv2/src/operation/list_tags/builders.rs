@@ -37,6 +37,10 @@ impl ListTagsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListTags as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_tags::builders::ListTagsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,6 +129,10 @@ impl ListTagsFluentBuilder {
         self.inner = self.inner.set_resource_id(input);
         self
     }
+    /// <p>The cluster identifier (ID) for the cluster whose tags you are getting. To find the cluster ID, use <code>DescribeClusters</code>.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_id()
+    }
     /// <p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more tags.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -135,6 +143,10 @@ impl ListTagsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more tags.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of tags to return in the response. When there are more tags than the number you specify, the response contains a <code>NextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -144,5 +156,9 @@ impl ListTagsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of tags to return in the response. When there are more tags than the number you specify, the response contains a <code>NextToken</code> value.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

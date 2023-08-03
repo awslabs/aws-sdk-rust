@@ -60,6 +60,10 @@ impl ListLocalDisksOutputBuilder {
         self.gateway_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_arn
+    }
     /// Appends an item to `disks`.
     ///
     /// To override the contents of this collection use [`set_disks`](Self::set_disks).
@@ -84,6 +88,13 @@ impl ListLocalDisksOutputBuilder {
     ) -> Self {
         self.disks = input;
         self
+    }
+    /// <p>A JSON object containing the following fields:</p>
+    /// <ul>
+    /// <li> <p> <code>ListLocalDisksOutput$Disks</code> </p> </li>
+    /// </ul>
+    pub fn get_disks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Disk>> {
+        &self.disks
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

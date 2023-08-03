@@ -36,6 +36,12 @@ impl ReverseReplicationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ReverseReplication as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::reverse_replication::builders::ReverseReplicationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl ReverseReplicationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_recovery_instance_id(input);
         self
+    }
+    /// <p>The ID of the Recovery Instance that we want to reverse the replication for.</p>
+    pub fn get_recovery_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_recovery_instance_id()
     }
 }

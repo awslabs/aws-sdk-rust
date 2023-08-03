@@ -64,6 +64,10 @@ impl SingleMetricAnomalyDetectorBuilder {
         self.namespace = input;
         self
     }
+    /// <p>The namespace of the metric to create the anomaly detection model for.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
+    }
     /// <p>The name of the metric to create the anomaly detection model for.</p>
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_name = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl SingleMetricAnomalyDetectorBuilder {
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_name = input;
         self
+    }
+    /// <p>The name of the metric to create the anomaly detection model for.</p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_name
     }
     /// Appends an item to `dimensions`.
     ///
@@ -93,6 +101,12 @@ impl SingleMetricAnomalyDetectorBuilder {
         self.dimensions = input;
         self
     }
+    /// <p>The metric dimensions to create the anomaly detection model for.</p>
+    pub fn get_dimensions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Dimension>> {
+        &self.dimensions
+    }
     /// <p>The statistic to use for the metric and anomaly detection model.</p>
     pub fn stat(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stat = ::std::option::Option::Some(input.into());
@@ -102,6 +116,10 @@ impl SingleMetricAnomalyDetectorBuilder {
     pub fn set_stat(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stat = input;
         self
+    }
+    /// <p>The statistic to use for the metric and anomaly detection model.</p>
+    pub fn get_stat(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stat
     }
     /// Consumes the builder and constructs a [`SingleMetricAnomalyDetector`](crate::types::SingleMetricAnomalyDetector).
     pub fn build(self) -> crate::types::SingleMetricAnomalyDetector {

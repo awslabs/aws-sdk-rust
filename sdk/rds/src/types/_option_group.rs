@@ -126,6 +126,10 @@ impl OptionGroupBuilder {
         self.option_group_name = input;
         self
     }
+    /// <p>Specifies the name of the option group.</p>
+    pub fn get_option_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.option_group_name
+    }
     /// <p>Provides a description of the option group.</p>
     pub fn option_group_description(
         mut self,
@@ -142,6 +146,10 @@ impl OptionGroupBuilder {
         self.option_group_description = input;
         self
     }
+    /// <p>Provides a description of the option group.</p>
+    pub fn get_option_group_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.option_group_description
+    }
     /// <p>Indicates the name of the engine that this option group can be applied to.</p>
     pub fn engine_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_name = ::std::option::Option::Some(input.into());
@@ -151,6 +159,10 @@ impl OptionGroupBuilder {
     pub fn set_engine_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_name = input;
         self
+    }
+    /// <p>Indicates the name of the engine that this option group can be applied to.</p>
+    pub fn get_engine_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_name
     }
     /// <p>Indicates the major engine version associated with this option group.</p>
     pub fn major_engine_version(
@@ -167,6 +179,10 @@ impl OptionGroupBuilder {
     ) -> Self {
         self.major_engine_version = input;
         self
+    }
+    /// <p>Indicates the major engine version associated with this option group.</p>
+    pub fn get_major_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.major_engine_version
     }
     /// Appends an item to `options`.
     ///
@@ -187,6 +203,10 @@ impl OptionGroupBuilder {
         self.options = input;
         self
     }
+    /// <p>Indicates what options are available in the option group.</p>
+    pub fn get_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Option>> {
+        &self.options
+    }
     /// <p>Indicates whether this option group can be applied to both VPC and non-VPC instances. The value <code>true</code> indicates the option group can be applied to both VPC and non-VPC instances.</p>
     pub fn allows_vpc_and_non_vpc_instance_memberships(mut self, input: bool) -> Self {
         self.allows_vpc_and_non_vpc_instance_memberships = ::std::option::Option::Some(input);
@@ -200,6 +220,10 @@ impl OptionGroupBuilder {
         self.allows_vpc_and_non_vpc_instance_memberships = input;
         self
     }
+    /// <p>Indicates whether this option group can be applied to both VPC and non-VPC instances. The value <code>true</code> indicates the option group can be applied to both VPC and non-VPC instances.</p>
+    pub fn get_allows_vpc_and_non_vpc_instance_memberships(&self) -> &::std::option::Option<bool> {
+        &self.allows_vpc_and_non_vpc_instance_memberships
+    }
     /// <p>If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>false</code>, this field is blank. If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>true</code> and this field is blank, then this option group can be applied to both VPC and non-VPC instances. If this field contains a value, then this option group can only be applied to instances that are in the VPC indicated by this field.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -209,6 +233,10 @@ impl OptionGroupBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>false</code>, this field is blank. If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>true</code> and this field is blank, then this option group can be applied to both VPC and non-VPC instances. If this field contains a value, then this option group can only be applied to instances that are in the VPC indicated by this field.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// <p>Specifies the Amazon Resource Name (ARN) for the option group.</p>
     pub fn option_group_arn(
@@ -226,6 +254,10 @@ impl OptionGroupBuilder {
         self.option_group_arn = input;
         self
     }
+    /// <p>Specifies the Amazon Resource Name (ARN) for the option group.</p>
+    pub fn get_option_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.option_group_arn
+    }
     /// <p>Specifies the name of the option group from which this option group is copied.</p>
     pub fn source_option_group(
         mut self,
@@ -241,6 +273,10 @@ impl OptionGroupBuilder {
     ) -> Self {
         self.source_option_group = input;
         self
+    }
+    /// <p>Specifies the name of the option group from which this option group is copied.</p>
+    pub fn get_source_option_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_option_group
     }
     /// <p>Specifies the Amazon Web Services account ID for the option group from which this option group is copied.</p>
     pub fn source_account_id(
@@ -258,6 +294,10 @@ impl OptionGroupBuilder {
         self.source_account_id = input;
         self
     }
+    /// <p>Specifies the Amazon Web Services account ID for the option group from which this option group is copied.</p>
+    pub fn get_source_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_account_id
+    }
     /// <p>Indicates when the option group was copied.</p>
     pub fn copy_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.copy_timestamp = ::std::option::Option::Some(input);
@@ -270,6 +310,10 @@ impl OptionGroupBuilder {
     ) -> Self {
         self.copy_timestamp = input;
         self
+    }
+    /// <p>Indicates when the option group was copied.</p>
+    pub fn get_copy_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.copy_timestamp
     }
     /// Consumes the builder and constructs a [`OptionGroup`](crate::types::OptionGroup).
     pub fn build(self) -> crate::types::OptionGroup {

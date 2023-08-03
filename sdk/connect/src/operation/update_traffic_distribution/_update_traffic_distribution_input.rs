@@ -47,6 +47,10 @@ impl UpdateTrafficDistributionInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The distribution of traffic between the instance and its replica(s).</p>
     pub fn telephony_config(mut self, input: crate::types::TelephonyConfig) -> Self {
         self.telephony_config = ::std::option::Option::Some(input);
@@ -59,6 +63,10 @@ impl UpdateTrafficDistributionInputBuilder {
     ) -> Self {
         self.telephony_config = input;
         self
+    }
+    /// <p>The distribution of traffic between the instance and its replica(s).</p>
+    pub fn get_telephony_config(&self) -> &::std::option::Option<crate::types::TelephonyConfig> {
+        &self.telephony_config
     }
     /// Consumes the builder and constructs a [`UpdateTrafficDistributionInput`](crate::operation::update_traffic_distribution::UpdateTrafficDistributionInput).
     pub fn build(

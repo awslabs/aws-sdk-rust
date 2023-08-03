@@ -46,6 +46,10 @@ impl AutoMlResultBuilder {
         self.best_recipe_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the best recipe.</p>
+    pub fn get_best_recipe_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.best_recipe_arn
+    }
     /// Consumes the builder and constructs a [`AutoMlResult`](crate::types::AutoMlResult).
     pub fn build(self) -> crate::types::AutoMlResult {
         crate::types::AutoMlResult {

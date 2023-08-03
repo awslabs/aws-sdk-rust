@@ -56,6 +56,10 @@ impl DeleteVpnConnectionInputBuilder {
         self.vpn_connection_id = input;
         self
     }
+    /// <p>The ID of the VPN connection.</p>
+    pub fn get_vpn_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpn_connection_id
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl DeleteVpnConnectionInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`DeleteVpnConnectionInput`](crate::operation::delete_vpn_connection::DeleteVpnConnectionInput).
     pub fn build(

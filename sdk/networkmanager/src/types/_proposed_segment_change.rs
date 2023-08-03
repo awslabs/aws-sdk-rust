@@ -65,6 +65,10 @@ impl ProposedSegmentChangeBuilder {
         self.tags = input;
         self
     }
+    /// <p>The list of key-value tags that changed for the segment.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The rule number in the policy document that applies to this change.</p>
     pub fn attachment_policy_rule_number(mut self, input: i32) -> Self {
         self.attachment_policy_rule_number = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl ProposedSegmentChangeBuilder {
         self.attachment_policy_rule_number = input;
         self
     }
+    /// <p>The rule number in the policy document that applies to this change.</p>
+    pub fn get_attachment_policy_rule_number(&self) -> &::std::option::Option<i32> {
+        &self.attachment_policy_rule_number
+    }
     /// <p>The name of the segment to change.</p>
     pub fn segment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.segment_name = ::std::option::Option::Some(input.into());
@@ -84,6 +92,10 @@ impl ProposedSegmentChangeBuilder {
     pub fn set_segment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.segment_name = input;
         self
+    }
+    /// <p>The name of the segment to change.</p>
+    pub fn get_segment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.segment_name
     }
     /// Consumes the builder and constructs a [`ProposedSegmentChange`](crate::types::ProposedSegmentChange).
     pub fn build(self) -> crate::types::ProposedSegmentChange {

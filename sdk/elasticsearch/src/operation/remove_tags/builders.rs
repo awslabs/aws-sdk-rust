@@ -36,6 +36,10 @@ impl RemoveTagsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RemoveTags as a reference.
+    pub fn as_input(&self) -> &crate::operation::remove_tags::builders::RemoveTagsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl RemoveTagsFluentBuilder {
         self.inner = self.inner.set_arn(input);
         self
     }
+    /// <p>Specifies the <code>ARN</code> for the Elasticsearch domain from which you want to delete the specified tags.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
+    }
     /// Appends an item to `TagKeys`.
     ///
     /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
@@ -134,5 +142,9 @@ impl RemoveTagsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tag_keys(input);
         self
+    }
+    /// <p>Specifies the <code>TagKey</code> list which you want to remove from the Elasticsearch domain.</p>
+    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_tag_keys()
     }
 }

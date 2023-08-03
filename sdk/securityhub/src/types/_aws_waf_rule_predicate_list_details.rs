@@ -56,6 +56,10 @@ impl AwsWafRulePredicateListDetailsBuilder {
         self.data_id = input;
         self
     }
+    /// <p>A unique identifier for a predicate in a rule, such as <code>ByteMatchSetId</code> or <code>IPSetId</code>. </p>
+    pub fn get_data_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_id
+    }
     /// <p>Specifies if you want WAF to allow, block, or count requests based on the settings in the <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, or <code>SizeConstraintSet</code>. </p>
     pub fn negated(mut self, input: bool) -> Self {
         self.negated = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl AwsWafRulePredicateListDetailsBuilder {
         self.negated = input;
         self
     }
+    /// <p>Specifies if you want WAF to allow, block, or count requests based on the settings in the <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, or <code>SizeConstraintSet</code>. </p>
+    pub fn get_negated(&self) -> &::std::option::Option<bool> {
+        &self.negated
+    }
     /// <p>The type of predicate in a rule, such as <code>ByteMatch</code> or <code>IPSet</code>. </p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl AwsWafRulePredicateListDetailsBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of predicate in a rule, such as <code>ByteMatch</code> or <code>IPSet</code>. </p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`AwsWafRulePredicateListDetails`](crate::types::AwsWafRulePredicateListDetails).
     pub fn build(self) -> crate::types::AwsWafRulePredicateListDetails {

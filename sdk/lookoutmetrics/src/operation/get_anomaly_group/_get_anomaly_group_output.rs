@@ -50,6 +50,10 @@ impl GetAnomalyGroupOutputBuilder {
         self.anomaly_group = input;
         self
     }
+    /// <p>Details about the anomaly group.</p>
+    pub fn get_anomaly_group(&self) -> &::std::option::Option<crate::types::AnomalyGroup> {
+        &self.anomaly_group
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -124,6 +124,12 @@ impl TransitGatewayAttachmentBuilder {
         self.transit_gateway_attachment_id = input;
         self
     }
+    /// <p>The ID of the attachment.</p>
+    pub fn get_transit_gateway_attachment_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_attachment_id
+    }
     /// <p>The ID of the transit gateway.</p>
     pub fn transit_gateway_id(
         mut self,
@@ -139,6 +145,10 @@ impl TransitGatewayAttachmentBuilder {
     ) -> Self {
         self.transit_gateway_id = input;
         self
+    }
+    /// <p>The ID of the transit gateway.</p>
+    pub fn get_transit_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_id
     }
     /// <p>The ID of the Amazon Web Services account that owns the transit gateway.</p>
     pub fn transit_gateway_owner_id(
@@ -156,6 +166,10 @@ impl TransitGatewayAttachmentBuilder {
         self.transit_gateway_owner_id = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services account that owns the transit gateway.</p>
+    pub fn get_transit_gateway_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_owner_id
+    }
     /// <p>The ID of the Amazon Web Services account that owns the resource.</p>
     pub fn resource_owner_id(
         mut self,
@@ -171,6 +185,10 @@ impl TransitGatewayAttachmentBuilder {
     ) -> Self {
         self.resource_owner_id = input;
         self
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the resource.</p>
+    pub fn get_resource_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_owner_id
     }
     /// <p>The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated.</p>
     pub fn resource_type(
@@ -188,6 +206,12 @@ impl TransitGatewayAttachmentBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated.</p>
+    pub fn get_resource_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransitGatewayAttachmentResourceType> {
+        &self.resource_type
+    }
     /// <p>The ID of the resource.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -197,6 +221,10 @@ impl TransitGatewayAttachmentBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>The ID of the resource.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// <p>The attachment state. Note that the <code>initiating</code> state has been deprecated.</p>
     pub fn state(mut self, input: crate::types::TransitGatewayAttachmentState) -> Self {
@@ -211,6 +239,10 @@ impl TransitGatewayAttachmentBuilder {
         self.state = input;
         self
     }
+    /// <p>The attachment state. Note that the <code>initiating</code> state has been deprecated.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::TransitGatewayAttachmentState> {
+        &self.state
+    }
     /// <p>The association.</p>
     pub fn association(mut self, input: crate::types::TransitGatewayAttachmentAssociation) -> Self {
         self.association = ::std::option::Option::Some(input);
@@ -224,6 +256,12 @@ impl TransitGatewayAttachmentBuilder {
         self.association = input;
         self
     }
+    /// <p>The association.</p>
+    pub fn get_association(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransitGatewayAttachmentAssociation> {
+        &self.association
+    }
     /// <p>The creation time.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -236,6 +274,10 @@ impl TransitGatewayAttachmentBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The creation time.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// Appends an item to `tags`.
     ///
@@ -255,6 +297,10 @@ impl TransitGatewayAttachmentBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags for the attachment.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`TransitGatewayAttachment`](crate::types::TransitGatewayAttachment).
     pub fn build(self) -> crate::types::TransitGatewayAttachment {

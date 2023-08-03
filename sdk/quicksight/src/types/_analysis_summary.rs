@@ -80,6 +80,10 @@ impl AnalysisSummaryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the analysis.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The ID of the analysis. This ID displays in the URL.</p>
     pub fn analysis_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analysis_id = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl AnalysisSummaryBuilder {
         self.analysis_id = input;
         self
     }
+    /// <p>The ID of the analysis. This ID displays in the URL.</p>
+    pub fn get_analysis_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.analysis_id
+    }
     /// <p>The name of the analysis. This name is displayed in the Amazon QuickSight console. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -99,6 +107,10 @@ impl AnalysisSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the analysis. This name is displayed in the Amazon QuickSight console. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The last known status for the analysis.</p>
     pub fn status(mut self, input: crate::types::ResourceStatus) -> Self {
@@ -113,6 +125,10 @@ impl AnalysisSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The last known status for the analysis.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ResourceStatus> {
+        &self.status
+    }
     /// <p>The time that the analysis was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
@@ -126,6 +142,10 @@ impl AnalysisSummaryBuilder {
         self.created_time = input;
         self
     }
+    /// <p>The time that the analysis was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
     /// <p>The time that the analysis was last updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
@@ -138,6 +158,10 @@ impl AnalysisSummaryBuilder {
     ) -> Self {
         self.last_updated_time = input;
         self
+    }
+    /// <p>The time that the analysis was last updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
     }
     /// Consumes the builder and constructs a [`AnalysisSummary`](crate::types::AnalysisSummary).
     pub fn build(self) -> crate::types::AnalysisSummary {

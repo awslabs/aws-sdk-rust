@@ -40,6 +40,12 @@ impl StartConnectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartConnection as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_connection::builders::StartConnectionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +142,10 @@ impl StartConnectionFluentBuilder {
         self.inner = self.inner.set_device_serial_number(input);
         self
     }
+    /// <p> The serial number of the dongle. </p>
+    pub fn get_device_serial_number(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_serial_number()
+    }
     /// <p> The ID of the Outpost server. </p>
     pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.asset_id(input.into());
@@ -145,6 +155,10 @@ impl StartConnectionFluentBuilder {
     pub fn set_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_asset_id(input);
         self
+    }
+    /// <p> The ID of the Outpost server. </p>
+    pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_asset_id()
     }
     /// <p> The public key of the client. </p>
     pub fn client_public_key(
@@ -162,6 +176,10 @@ impl StartConnectionFluentBuilder {
         self.inner = self.inner.set_client_public_key(input);
         self
     }
+    /// <p> The public key of the client. </p>
+    pub fn get_client_public_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_public_key()
+    }
     /// <p> The device index of the network interface on the Outpost server. </p>
     pub fn network_interface_device_index(mut self, input: i32) -> Self {
         self.inner = self.inner.network_interface_device_index(input);
@@ -171,5 +189,9 @@ impl StartConnectionFluentBuilder {
     pub fn set_network_interface_device_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_network_interface_device_index(input);
         self
+    }
+    /// <p> The device index of the network interface on the Outpost server. </p>
+    pub fn get_network_interface_device_index(&self) -> &::std::option::Option<i32> {
+        self.inner.get_network_interface_device_index()
     }
 }

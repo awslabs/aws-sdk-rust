@@ -69,6 +69,10 @@ impl DisassociateDiscoveredResourceInputBuilder {
         self.progress_update_stream = input;
         self
     }
+    /// <p>The name of the ProgressUpdateStream.</p>
+    pub fn get_progress_update_stream(&self) -> &::std::option::Option<::std::string::String> {
+        &self.progress_update_stream
+    }
     /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
     pub fn migration_task_name(
         mut self,
@@ -84,6 +88,10 @@ impl DisassociateDiscoveredResourceInputBuilder {
     ) -> Self {
         self.migration_task_name = input;
         self
+    }
+    /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
+    pub fn get_migration_task_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.migration_task_name
     }
     /// <p>ConfigurationId of the Application Discovery Service resource to be disassociated.</p>
     pub fn configuration_id(
@@ -101,6 +109,10 @@ impl DisassociateDiscoveredResourceInputBuilder {
         self.configuration_id = input;
         self
     }
+    /// <p>ConfigurationId of the Application Discovery Service resource to be disassociated.</p>
+    pub fn get_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_id
+    }
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -110,6 +122,10 @@ impl DisassociateDiscoveredResourceInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`DisassociateDiscoveredResourceInput`](crate::operation::disassociate_discovered_resource::DisassociateDiscoveredResourceInput).
     pub fn build(

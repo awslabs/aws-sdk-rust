@@ -47,6 +47,10 @@ impl DeleteNetworkInsightsAnalysisInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>The ID of the network insights analysis.</p>
     pub fn network_insights_analysis_id(
         mut self,
@@ -62,6 +66,12 @@ impl DeleteNetworkInsightsAnalysisInputBuilder {
     ) -> Self {
         self.network_insights_analysis_id = input;
         self
+    }
+    /// <p>The ID of the network insights analysis.</p>
+    pub fn get_network_insights_analysis_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.network_insights_analysis_id
     }
     /// Consumes the builder and constructs a [`DeleteNetworkInsightsAnalysisInput`](crate::operation::delete_network_insights_analysis::DeleteNetworkInsightsAnalysisInput).
     pub fn build(

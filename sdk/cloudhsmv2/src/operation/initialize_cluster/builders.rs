@@ -36,6 +36,12 @@ impl InitializeClusterFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the InitializeCluster as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::initialize_cluster::builders::InitializeClusterInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl InitializeClusterFluentBuilder {
         self.inner = self.inner.set_cluster_id(input);
         self
     }
+    /// <p>The identifier (ID) of the cluster that you are claiming. To find the cluster ID, use <code>DescribeClusters</code>.</p>
+    pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_id()
+    }
     /// <p>The cluster certificate issued (signed) by your issuing certificate authority (CA). The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>
     pub fn signed_cert(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.signed_cert(input.into());
@@ -136,6 +146,10 @@ impl InitializeClusterFluentBuilder {
         self.inner = self.inner.set_signed_cert(input);
         self
     }
+    /// <p>The cluster certificate issued (signed) by your issuing certificate authority (CA). The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>
+    pub fn get_signed_cert(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_signed_cert()
+    }
     /// <p>The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the root certificate. The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>
     pub fn trust_anchor(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.trust_anchor(input.into());
@@ -145,5 +159,9 @@ impl InitializeClusterFluentBuilder {
     pub fn set_trust_anchor(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_trust_anchor(input);
         self
+    }
+    /// <p>The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the root certificate. The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>
+    pub fn get_trust_anchor(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_trust_anchor()
     }
 }

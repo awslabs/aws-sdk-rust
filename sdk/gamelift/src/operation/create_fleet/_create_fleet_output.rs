@@ -57,6 +57,10 @@ impl CreateFleetOutputBuilder {
         self.fleet_attributes = input;
         self
     }
+    /// <p>The properties for the new fleet, including the current status. All fleets are placed in <code>NEW</code> status on creation. </p>
+    pub fn get_fleet_attributes(&self) -> &::std::option::Option<crate::types::FleetAttributes> {
+        &self.fleet_attributes
+    }
     /// Appends an item to `location_states`.
     ///
     /// To override the contents of this collection use [`set_location_states`](Self::set_location_states).
@@ -75,6 +79,12 @@ impl CreateFleetOutputBuilder {
     ) -> Self {
         self.location_states = input;
         self
+    }
+    /// <p>The fleet's locations and life-cycle status of each location. For new fleets, the status of all locations is set to <code>NEW</code>. During fleet creation, Amazon GameLift updates each location status as instances are deployed there and prepared for game hosting. This list includes an entry for the fleet's home Region. For fleets with no remote locations, only one entry, representing the home Region, is returned.</p>
+    pub fn get_location_states(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LocationState>> {
+        &self.location_states
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

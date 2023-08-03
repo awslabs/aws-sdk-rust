@@ -37,6 +37,13 @@ impl ListContactReferencesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListContactReferences as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_contact_references::builders::ListContactReferencesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +145,10 @@ impl ListContactReferencesFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>The identifier of the initial contact.</p>
     pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.contact_id(input.into());
@@ -147,6 +158,10 @@ impl ListContactReferencesFluentBuilder {
     pub fn set_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_contact_id(input);
         self
+    }
+    /// <p>The identifier of the initial contact.</p>
+    pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_contact_id()
     }
     /// Appends an item to `ReferenceTypes`.
     ///
@@ -165,6 +180,12 @@ impl ListContactReferencesFluentBuilder {
         self.inner = self.inner.set_reference_types(input);
         self
     }
+    /// <p>The type of reference.</p>
+    pub fn get_reference_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReferenceType>> {
+        self.inner.get_reference_types()
+    }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p> <important>
     /// <p>This is not expected to be set, because the value returned in the previous response is always null.</p>
     /// </important>
@@ -178,5 +199,11 @@ impl ListContactReferencesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p> <important>
+    /// <p>This is not expected to be set, because the value returned in the previous response is always null.</p>
+    /// </important>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

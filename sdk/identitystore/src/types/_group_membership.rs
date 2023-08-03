@@ -70,6 +70,10 @@ impl GroupMembershipBuilder {
         self.identity_store_id = input;
         self
     }
+    /// <p>The globally unique identifier for the identity store.</p>
+    pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_store_id
+    }
     /// <p>The identifier for a <code>GroupMembership</code> object in an identity store.</p>
     pub fn membership_id(
         mut self,
@@ -86,6 +90,10 @@ impl GroupMembershipBuilder {
         self.membership_id = input;
         self
     }
+    /// <p>The identifier for a <code>GroupMembership</code> object in an identity store.</p>
+    pub fn get_membership_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.membership_id
+    }
     /// <p>The identifier for a group in the identity store.</p>
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
@@ -96,6 +104,10 @@ impl GroupMembershipBuilder {
         self.group_id = input;
         self
     }
+    /// <p>The identifier for a group in the identity store.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
+    }
     /// <p>An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.</p>
     pub fn member_id(mut self, input: crate::types::MemberId) -> Self {
         self.member_id = ::std::option::Option::Some(input);
@@ -105,6 +117,10 @@ impl GroupMembershipBuilder {
     pub fn set_member_id(mut self, input: ::std::option::Option<crate::types::MemberId>) -> Self {
         self.member_id = input;
         self
+    }
+    /// <p>An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.</p>
+    pub fn get_member_id(&self) -> &::std::option::Option<crate::types::MemberId> {
+        &self.member_id
     }
     /// Consumes the builder and constructs a [`GroupMembership`](crate::types::GroupMembership).
     pub fn build(self) -> crate::types::GroupMembership {

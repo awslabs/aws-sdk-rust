@@ -36,6 +36,10 @@ impl ListIndexFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListIndex as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_index::builders::ListIndexInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +134,10 @@ impl ListIndexFluentBuilder {
         self.inner = self.inner.set_directory_arn(input);
         self
     }
+    /// <p>The ARN of the directory that the index exists in.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_arn()
+    }
     /// Appends an item to `RangesOnIndexedValues`.
     ///
     /// To override the contents of this collection use [`set_ranges_on_indexed_values`](Self::set_ranges_on_indexed_values).
@@ -147,6 +155,12 @@ impl ListIndexFluentBuilder {
         self.inner = self.inner.set_ranges_on_indexed_values(input);
         self
     }
+    /// <p>Specifies the ranges of indexed values that you want to query.</p>
+    pub fn get_ranges_on_indexed_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributeRange>> {
+        self.inner.get_ranges_on_indexed_values()
+    }
     /// <p>The reference to the index to list.</p>
     pub fn index_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.inner = self.inner.index_reference(input);
@@ -160,6 +174,10 @@ impl ListIndexFluentBuilder {
         self.inner = self.inner.set_index_reference(input);
         self
     }
+    /// <p>The reference to the index to list.</p>
+    pub fn get_index_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
+        self.inner.get_index_reference()
+    }
     /// <p>The maximum number of objects in a single page to retrieve from the index during a request. For more information, see <a href="http://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Amazon Cloud Directory Limits</a>.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -170,6 +188,10 @@ impl ListIndexFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of objects in a single page to retrieve from the index during a request. For more information, see <a href="http://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Amazon Cloud Directory Limits</a>.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -179,6 +201,10 @@ impl ListIndexFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The consistency level to execute the request at.</p>
     pub fn consistency_level(mut self, input: crate::types::ConsistencyLevel) -> Self {
@@ -192,5 +218,9 @@ impl ListIndexFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_consistency_level(input);
         self
+    }
+    /// <p>The consistency level to execute the request at.</p>
+    pub fn get_consistency_level(&self) -> &::std::option::Option<crate::types::ConsistencyLevel> {
+        self.inner.get_consistency_level()
     }
 }

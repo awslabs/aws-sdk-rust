@@ -36,6 +36,10 @@ impl DescribeInstancePatchStatesForPatchGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeInstancePatchStatesForPatchGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_instance_patch_states_for_patch_group::builders::DescribeInstancePatchStatesForPatchGroupInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl DescribeInstancePatchStatesForPatchGroupFluentBuilder {
         self.inner = self.inner.set_patch_group(input);
         self
     }
+    /// <p>The name of the patch group for which the patch state information should be retrieved.</p>
+    pub fn get_patch_group(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_patch_group()
+    }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -133,6 +141,17 @@ impl DescribeInstancePatchStatesForPatchGroupFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>Each entry in the array is a structure containing:</p>
+    /// <ul>
+    /// <li> <p>Key (string between 1 and 200 characters)</p> </li>
+    /// <li> <p>Values (array containing a single string)</p> </li>
+    /// <li> <p>Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p> </li>
+    /// </ul>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstancePatchStateFilter>> {
+        self.inner.get_filters()
+    }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -143,6 +162,10 @@ impl DescribeInstancePatchStatesForPatchGroupFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of patches to return (per page).</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -152,5 +175,9 @@ impl DescribeInstancePatchStatesForPatchGroupFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of patches to return (per page).</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

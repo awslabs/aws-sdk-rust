@@ -134,6 +134,10 @@ impl DescribeBotOutputBuilder {
         self.bot_id = input;
         self
     }
+    /// <p>The unique identifier of the bot.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
+    }
     /// <p>The name of the bot.</p>
     pub fn bot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_name = ::std::option::Option::Some(input.into());
@@ -143,6 +147,10 @@ impl DescribeBotOutputBuilder {
     pub fn set_bot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_name = input;
         self
+    }
+    /// <p>The name of the bot.</p>
+    pub fn get_bot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_name
     }
     /// <p>The description of the bot. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -154,6 +162,10 @@ impl DescribeBotOutputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the bot. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to access the bot.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -163,6 +175,10 @@ impl DescribeBotOutputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to access the bot.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>Settings for managing data privacy of the bot and its conversations with users.</p>
     pub fn data_privacy(mut self, input: crate::types::DataPrivacy) -> Self {
@@ -177,6 +193,10 @@ impl DescribeBotOutputBuilder {
         self.data_privacy = input;
         self
     }
+    /// <p>Settings for managing data privacy of the bot and its conversations with users.</p>
+    pub fn get_data_privacy(&self) -> &::std::option::Option<crate::types::DataPrivacy> {
+        &self.data_privacy
+    }
     /// <p>The maximum time in seconds that Amazon Lex retains the data gathered in a conversation.</p>
     pub fn idle_session_ttl_in_seconds(mut self, input: i32) -> Self {
         self.idle_session_ttl_in_seconds = ::std::option::Option::Some(input);
@@ -187,6 +207,10 @@ impl DescribeBotOutputBuilder {
         self.idle_session_ttl_in_seconds = input;
         self
     }
+    /// <p>The maximum time in seconds that Amazon Lex retains the data gathered in a conversation.</p>
+    pub fn get_idle_session_ttl_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.idle_session_ttl_in_seconds
+    }
     /// <p>The current status of the bot. When the status is <code>Available</code> the bot is ready to be used in conversations with users.</p>
     pub fn bot_status(mut self, input: crate::types::BotStatus) -> Self {
         self.bot_status = ::std::option::Option::Some(input);
@@ -196,6 +220,10 @@ impl DescribeBotOutputBuilder {
     pub fn set_bot_status(mut self, input: ::std::option::Option<crate::types::BotStatus>) -> Self {
         self.bot_status = input;
         self
+    }
+    /// <p>The current status of the bot. When the status is <code>Available</code> the bot is ready to be used in conversations with users.</p>
+    pub fn get_bot_status(&self) -> &::std::option::Option<crate::types::BotStatus> {
+        &self.bot_status
     }
     /// <p>A timestamp of the date and time that the bot was created.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -210,6 +238,10 @@ impl DescribeBotOutputBuilder {
         self.creation_date_time = input;
         self
     }
+    /// <p>A timestamp of the date and time that the bot was created.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
+    }
     /// <p>A timestamp of the date and time that the bot was last updated.</p>
     pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date_time = ::std::option::Option::Some(input);
@@ -223,6 +255,12 @@ impl DescribeBotOutputBuilder {
         self.last_updated_date_time = input;
         self
     }
+    /// <p>A timestamp of the date and time that the bot was last updated.</p>
+    pub fn get_last_updated_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date_time
+    }
     /// <p>The type of the bot that was described.</p>
     pub fn bot_type(mut self, input: crate::types::BotType) -> Self {
         self.bot_type = ::std::option::Option::Some(input);
@@ -232,6 +270,10 @@ impl DescribeBotOutputBuilder {
     pub fn set_bot_type(mut self, input: ::std::option::Option<crate::types::BotType>) -> Self {
         self.bot_type = input;
         self
+    }
+    /// <p>The type of the bot that was described.</p>
+    pub fn get_bot_type(&self) -> &::std::option::Option<crate::types::BotType> {
+        &self.bot_type
     }
     /// Appends an item to `bot_members`.
     ///
@@ -251,6 +293,12 @@ impl DescribeBotOutputBuilder {
     ) -> Self {
         self.bot_members = input;
         self
+    }
+    /// <p>The list of bots in the network that was described.</p>
+    pub fn get_bot_members(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BotMember>> {
+        &self.bot_members
     }
     /// Appends an item to `failure_reasons`.
     ///
@@ -273,6 +321,12 @@ impl DescribeBotOutputBuilder {
     ) -> Self {
         self.failure_reasons = input;
         self
+    }
+    /// <p>If the <code>botStatus</code> is <code>Failed</code>, this contains a list of reasons that the bot couldn't be built.</p>
+    pub fn get_failure_reasons(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.failure_reasons
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

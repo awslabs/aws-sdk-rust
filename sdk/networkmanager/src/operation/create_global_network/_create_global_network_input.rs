@@ -53,6 +53,11 @@ impl CreateGlobalNetworkInputBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the global network.</p>
+    /// <p>Constraints: Maximum length of 256 characters.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -71,6 +76,10 @@ impl CreateGlobalNetworkInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags to apply to the resource during creation.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateGlobalNetworkInput`](crate::operation::create_global_network::CreateGlobalNetworkInput).
     pub fn build(

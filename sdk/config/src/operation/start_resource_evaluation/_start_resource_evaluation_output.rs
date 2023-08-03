@@ -54,6 +54,10 @@ impl StartResourceEvaluationOutputBuilder {
         self.resource_evaluation_id = input;
         self
     }
+    /// <p>A unique ResourceEvaluationId that is associated with a single execution.</p>
+    pub fn get_resource_evaluation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_evaluation_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

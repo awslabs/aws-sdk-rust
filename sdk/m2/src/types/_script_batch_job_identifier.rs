@@ -40,6 +40,10 @@ impl ScriptBatchJobIdentifierBuilder {
         self.script_name = input;
         self
     }
+    /// <p>The name of the script containing the batch job definition.</p>
+    pub fn get_script_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.script_name
+    }
     /// Consumes the builder and constructs a [`ScriptBatchJobIdentifier`](crate::types::ScriptBatchJobIdentifier).
     pub fn build(self) -> crate::types::ScriptBatchJobIdentifier {
         crate::types::ScriptBatchJobIdentifier {

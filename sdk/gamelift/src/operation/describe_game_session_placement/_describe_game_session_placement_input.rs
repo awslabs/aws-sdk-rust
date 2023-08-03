@@ -39,6 +39,10 @@ impl DescribeGameSessionPlacementInputBuilder {
         self.placement_id = input;
         self
     }
+    /// <p>A unique identifier for a game session placement to retrieve.</p>
+    pub fn get_placement_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.placement_id
+    }
     /// Consumes the builder and constructs a [`DescribeGameSessionPlacementInput`](crate::operation::describe_game_session_placement::DescribeGameSessionPlacementInput).
     pub fn build(
         self,

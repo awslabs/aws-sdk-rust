@@ -87,6 +87,10 @@ impl CreateContextInputBuilder {
         self.context_name = input;
         self
     }
+    /// <p>The name of the context. Must be unique to your account in an Amazon Web Services Region.</p>
+    pub fn get_context_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.context_name
+    }
     /// <p>The source type, ID, and URI.</p>
     pub fn source(mut self, input: crate::types::ContextSource) -> Self {
         self.source = ::std::option::Option::Some(input);
@@ -96,6 +100,10 @@ impl CreateContextInputBuilder {
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::ContextSource>) -> Self {
         self.source = input;
         self
+    }
+    /// <p>The source type, ID, and URI.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::ContextSource> {
+        &self.source
     }
     /// <p>The context type.</p>
     pub fn context_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -107,6 +115,10 @@ impl CreateContextInputBuilder {
         self.context_type = input;
         self
     }
+    /// <p>The context type.</p>
+    pub fn get_context_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.context_type
+    }
     /// <p>The description of the context.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -116,6 +128,10 @@ impl CreateContextInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the context.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Adds a key-value pair to `properties`.
     ///
@@ -142,6 +158,14 @@ impl CreateContextInputBuilder {
         self.properties = input;
         self
     }
+    /// <p>A list of properties to add to the context.</p>
+    pub fn get_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.properties
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -160,6 +184,10 @@ impl CreateContextInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of tags to apply to the context.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateContextInput`](crate::operation::create_context::CreateContextInput).
     pub fn build(

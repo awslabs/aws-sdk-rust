@@ -73,6 +73,10 @@ impl GetFeedbackInputBuilder {
         self.anomaly_detector_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+    pub fn get_anomaly_detector_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.anomaly_detector_arn
+    }
     /// <p>The anomalous metric and group ID.</p>
     pub fn anomaly_group_time_series_feedback(
         mut self,
@@ -89,6 +93,12 @@ impl GetFeedbackInputBuilder {
         self.anomaly_group_time_series_feedback = input;
         self
     }
+    /// <p>The anomalous metric and group ID.</p>
+    pub fn get_anomaly_group_time_series_feedback(
+        &self,
+    ) -> &::std::option::Option<crate::types::AnomalyGroupTimeSeries> {
+        &self.anomaly_group_time_series_feedback
+    }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -99,6 +109,10 @@ impl GetFeedbackInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -108,6 +122,10 @@ impl GetFeedbackInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`GetFeedbackInput`](crate::operation::get_feedback::GetFeedbackInput).
     pub fn build(

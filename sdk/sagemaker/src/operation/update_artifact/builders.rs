@@ -36,6 +36,12 @@ impl UpdateArtifactFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateArtifact as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_artifact::builders::UpdateArtifactInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl UpdateArtifactFluentBuilder {
         self.inner = self.inner.set_artifact_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the artifact to update.</p>
+    pub fn get_artifact_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_artifact_arn()
+    }
     /// <p>The new name for the artifact.</p>
     pub fn artifact_name(
         mut self,
@@ -133,6 +143,10 @@ impl UpdateArtifactFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_artifact_name(input);
         self
+    }
+    /// <p>The new name for the artifact.</p>
+    pub fn get_artifact_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_artifact_name()
     }
     /// Adds a key-value pair to `Properties`.
     ///
@@ -157,6 +171,14 @@ impl UpdateArtifactFluentBuilder {
         self.inner = self.inner.set_properties(input);
         self
     }
+    /// <p>The new list of properties. Overwrites the current property list.</p>
+    pub fn get_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_properties()
+    }
     /// Appends an item to `PropertiesToRemove`.
     ///
     /// To override the contents of this collection use [`set_properties_to_remove`](Self::set_properties_to_remove).
@@ -176,5 +198,11 @@ impl UpdateArtifactFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_properties_to_remove(input);
         self
+    }
+    /// <p>A list of properties to remove.</p>
+    pub fn get_properties_to_remove(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_properties_to_remove()
     }
 }

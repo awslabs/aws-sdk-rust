@@ -58,6 +58,10 @@ impl ListMembershipsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token value retrieved from a previous call to access the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `membership_summaries`.
     ///
     /// To override the contents of this collection use [`set_membership_summaries`](Self::set_membership_summaries).
@@ -76,6 +80,12 @@ impl ListMembershipsOutputBuilder {
     ) -> Self {
         self.membership_summaries = input;
         self
+    }
+    /// <p>The list of memberships returned from the ListMemberships operation.</p>
+    pub fn get_membership_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MembershipSummary>> {
+        &self.membership_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

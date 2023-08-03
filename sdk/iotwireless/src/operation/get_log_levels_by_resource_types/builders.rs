@@ -36,6 +36,10 @@ impl GetLogLevelsByResourceTypesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetLogLevelsByResourceTypes as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_log_levels_by_resource_types::builders::GetLogLevelsByResourceTypesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(

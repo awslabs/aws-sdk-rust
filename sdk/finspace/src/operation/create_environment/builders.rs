@@ -36,6 +36,12 @@ impl CreateEnvironmentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateEnvironment as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_environment::builders::CreateEnvironmentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateEnvironmentFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the FinSpace environment to be created.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The description of the FinSpace environment to be created.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -136,6 +146,10 @@ impl CreateEnvironmentFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>The description of the FinSpace environment to be created.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The KMS key id to encrypt your data in the FinSpace environment.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
@@ -145,6 +159,10 @@ impl CreateEnvironmentFluentBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
         self
+    }
+    /// <p>The KMS key id to encrypt your data in the FinSpace environment.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key_id()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -169,6 +187,14 @@ impl CreateEnvironmentFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>Add tags to your FinSpace environment.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>Authentication mode for the environment.</p>
     /// <ul>
     /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>
@@ -190,6 +216,14 @@ impl CreateEnvironmentFluentBuilder {
         self.inner = self.inner.set_federation_mode(input);
         self
     }
+    /// <p>Authentication mode for the environment.</p>
+    /// <ul>
+    /// <li> <p> <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p> </li>
+    /// <li> <p> <code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p> </li>
+    /// </ul>
+    pub fn get_federation_mode(&self) -> &::std::option::Option<crate::types::FederationMode> {
+        self.inner.get_federation_mode()
+    }
     /// <p>Configuration information when authentication mode is FEDERATED.</p>
     pub fn federation_parameters(mut self, input: crate::types::FederationParameters) -> Self {
         self.inner = self.inner.federation_parameters(input);
@@ -203,6 +237,12 @@ impl CreateEnvironmentFluentBuilder {
         self.inner = self.inner.set_federation_parameters(input);
         self
     }
+    /// <p>Configuration information when authentication mode is FEDERATED.</p>
+    pub fn get_federation_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::FederationParameters> {
+        self.inner.get_federation_parameters()
+    }
     /// <p>Configuration information for the superuser.</p>
     pub fn superuser_parameters(mut self, input: crate::types::SuperuserParameters) -> Self {
         self.inner = self.inner.superuser_parameters(input);
@@ -215,6 +255,12 @@ impl CreateEnvironmentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_superuser_parameters(input);
         self
+    }
+    /// <p>Configuration information for the superuser.</p>
+    pub fn get_superuser_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::SuperuserParameters> {
+        self.inner.get_superuser_parameters()
     }
     /// Appends an item to `dataBundles`.
     ///
@@ -240,5 +286,15 @@ impl CreateEnvironmentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_data_bundles(input);
         self
+    }
+    /// <p>The list of Amazon Resource Names (ARN) of the data bundles to install. Currently supported data bundle ARNs:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> - Contains sample Capital Markets datasets, categories and controlled vocabularies.</p> </li>
+    /// <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains trades and quotes data in addition to sample Capital Markets data.</p> </li>
+    /// </ul>
+    pub fn get_data_bundles(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_data_bundles()
     }
 }

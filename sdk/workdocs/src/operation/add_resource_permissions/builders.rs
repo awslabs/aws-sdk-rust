@@ -36,6 +36,13 @@ impl AddResourcePermissionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AddResourcePermissions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::add_resource_permissions::builders::AddResourcePermissionsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl AddResourcePermissionsFluentBuilder {
         self.inner = self.inner.set_authentication_token(input);
         self
     }
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_authentication_token()
+    }
     /// <p>The ID of the resource.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_id(input.into());
@@ -141,6 +152,10 @@ impl AddResourcePermissionsFluentBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_id(input);
         self
+    }
+    /// <p>The ID of the resource.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_id()
     }
     /// Appends an item to `Principals`.
     ///
@@ -159,6 +174,12 @@ impl AddResourcePermissionsFluentBuilder {
         self.inner = self.inner.set_principals(input);
         self
     }
+    /// <p>The users, groups, or organization being granted permission.</p>
+    pub fn get_principals(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SharePrincipal>> {
+        self.inner.get_principals()
+    }
     /// <p>The notification options.</p>
     pub fn notification_options(mut self, input: crate::types::NotificationOptions) -> Self {
         self.inner = self.inner.notification_options(input);
@@ -171,5 +192,11 @@ impl AddResourcePermissionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_notification_options(input);
         self
+    }
+    /// <p>The notification options.</p>
+    pub fn get_notification_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::NotificationOptions> {
+        self.inner.get_notification_options()
     }
 }

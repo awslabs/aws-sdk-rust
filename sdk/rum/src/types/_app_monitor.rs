@@ -125,6 +125,10 @@ impl AppMonitorBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the app monitor.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The top-level internet domain name for which your application has administrative authority.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
@@ -134,6 +138,10 @@ impl AppMonitorBuilder {
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain = input;
         self
+    }
+    /// <p>The top-level internet domain name for which your application has administrative authority.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
     }
     /// <p>The unique ID of this app monitor.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -145,6 +153,10 @@ impl AppMonitorBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique ID of this app monitor.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The date and time that this app monitor was created.</p>
     pub fn created(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created = ::std::option::Option::Some(input.into());
@@ -154,6 +166,10 @@ impl AppMonitorBuilder {
     pub fn set_created(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created = input;
         self
+    }
+    /// <p>The date and time that this app monitor was created.</p>
+    pub fn get_created(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created
     }
     /// <p>The date and time of the most recent changes to this app monitor's configuration.</p>
     pub fn last_modified(
@@ -170,6 +186,10 @@ impl AppMonitorBuilder {
     ) -> Self {
         self.last_modified = input;
         self
+    }
+    /// <p>The date and time of the most recent changes to this app monitor's configuration.</p>
+    pub fn get_last_modified(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -196,6 +216,14 @@ impl AppMonitorBuilder {
         self.tags = input;
         self
     }
+    /// <p>The list of tag keys and values associated with this app monitor.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The current state of the app monitor.</p>
     pub fn state(mut self, input: crate::types::StateEnum) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -205,6 +233,10 @@ impl AppMonitorBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::StateEnum>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The current state of the app monitor.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::StateEnum> {
+        &self.state
     }
     /// <p>A structure that contains much of the configuration data for the app monitor.</p>
     pub fn app_monitor_configuration(
@@ -222,6 +254,12 @@ impl AppMonitorBuilder {
         self.app_monitor_configuration = input;
         self
     }
+    /// <p>A structure that contains much of the configuration data for the app monitor.</p>
+    pub fn get_app_monitor_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AppMonitorConfiguration> {
+        &self.app_monitor_configuration
+    }
     /// <p>A structure that contains information about whether this app monitor stores a copy of the telemetry data that RUM collects using CloudWatch Logs.</p>
     pub fn data_storage(mut self, input: crate::types::DataStorage) -> Self {
         self.data_storage = ::std::option::Option::Some(input);
@@ -234,6 +272,10 @@ impl AppMonitorBuilder {
     ) -> Self {
         self.data_storage = input;
         self
+    }
+    /// <p>A structure that contains information about whether this app monitor stores a copy of the telemetry data that RUM collects using CloudWatch Logs.</p>
+    pub fn get_data_storage(&self) -> &::std::option::Option<crate::types::DataStorage> {
+        &self.data_storage
     }
     /// <p>Specifies whether this app monitor allows the web client to define and send custom events.</p>
     /// <p>For more information about custom events, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send custom events</a>.</p>
@@ -249,6 +291,11 @@ impl AppMonitorBuilder {
     ) -> Self {
         self.custom_events = input;
         self
+    }
+    /// <p>Specifies whether this app monitor allows the web client to define and send custom events.</p>
+    /// <p>For more information about custom events, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send custom events</a>.</p>
+    pub fn get_custom_events(&self) -> &::std::option::Option<crate::types::CustomEvents> {
+        &self.custom_events
     }
     /// Consumes the builder and constructs a [`AppMonitor`](crate::types::AppMonitor).
     pub fn build(self) -> crate::types::AppMonitor {

@@ -56,6 +56,10 @@ impl ListSharedReportGroupsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `report_groups`.
     ///
     /// To override the contents of this collection use [`set_report_groups`](Self::set_report_groups).
@@ -77,6 +81,12 @@ impl ListSharedReportGroupsOutputBuilder {
     ) -> Self {
         self.report_groups = input;
         self
+    }
+    /// <p> The list of ARNs for the report groups shared with the current Amazon Web Services account or user. </p>
+    pub fn get_report_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.report_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -55,6 +55,12 @@ impl DatasetSourceBuilder {
         self.ground_truth_manifest = input;
         self
     }
+    /// <p>The S3 bucket that contains an Amazon Sagemaker Ground Truth format manifest file. </p>
+    pub fn get_ground_truth_manifest(
+        &self,
+    ) -> &::std::option::Option<crate::types::GroundTruthManifest> {
+        &self.ground_truth_manifest
+    }
     /// <p> The ARN of an Amazon Rekognition Custom Labels dataset that you want to copy. </p>
     pub fn dataset_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_arn = ::std::option::Option::Some(input.into());
@@ -64,6 +70,10 @@ impl DatasetSourceBuilder {
     pub fn set_dataset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_arn = input;
         self
+    }
+    /// <p> The ARN of an Amazon Rekognition Custom Labels dataset that you want to copy. </p>
+    pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_arn
     }
     /// Consumes the builder and constructs a [`DatasetSource`](crate::types::DatasetSource).
     pub fn build(self) -> crate::types::DatasetSource {

@@ -42,6 +42,10 @@ impl DescribeLocationSmbInputBuilder {
         self.location_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the SMB location to describe.</p>
+    pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location_arn
+    }
     /// Consumes the builder and constructs a [`DescribeLocationSmbInput`](crate::operation::describe_location_smb::DescribeLocationSmbInput).
     pub fn build(
         self,

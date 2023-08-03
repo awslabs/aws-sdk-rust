@@ -46,6 +46,12 @@ impl LaunchTemplateInstanceMaintenanceOptionsRequestBuilder {
         self.auto_recovery = input;
         self
     }
+    /// <p>Disables the automatic recovery behavior of your instance or sets it to default. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-recover.html#instance-configuration-recovery">Simplified automatic recovery</a>.</p>
+    pub fn get_auto_recovery(
+        &self,
+    ) -> &::std::option::Option<crate::types::LaunchTemplateAutoRecoveryState> {
+        &self.auto_recovery
+    }
     /// Consumes the builder and constructs a [`LaunchTemplateInstanceMaintenanceOptionsRequest`](crate::types::LaunchTemplateInstanceMaintenanceOptionsRequest).
     pub fn build(self) -> crate::types::LaunchTemplateInstanceMaintenanceOptionsRequest {
         crate::types::LaunchTemplateInstanceMaintenanceOptionsRequest {

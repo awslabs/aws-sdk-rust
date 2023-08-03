@@ -43,6 +43,12 @@ impl AnalysisSourceEntityBuilder {
         self.source_template = input;
         self
     }
+    /// <p>The source template for the source entity of the analysis.</p>
+    pub fn get_source_template(
+        &self,
+    ) -> &::std::option::Option<crate::types::AnalysisSourceTemplate> {
+        &self.source_template
+    }
     /// Consumes the builder and constructs a [`AnalysisSourceEntity`](crate::types::AnalysisSourceEntity).
     pub fn build(self) -> crate::types::AnalysisSourceEntity {
         crate::types::AnalysisSourceEntity {

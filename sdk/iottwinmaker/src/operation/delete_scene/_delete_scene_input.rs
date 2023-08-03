@@ -47,6 +47,10 @@ impl DeleteSceneInputBuilder {
         self.workspace_id = input;
         self
     }
+    /// <p>The ID of the workspace.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
+    }
     /// <p>The ID of the scene to delete.</p>
     pub fn scene_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scene_id = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl DeleteSceneInputBuilder {
     pub fn set_scene_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scene_id = input;
         self
+    }
+    /// <p>The ID of the scene to delete.</p>
+    pub fn get_scene_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scene_id
     }
     /// Consumes the builder and constructs a [`DeleteSceneInput`](crate::operation::delete_scene::DeleteSceneInput).
     pub fn build(

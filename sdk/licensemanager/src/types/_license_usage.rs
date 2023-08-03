@@ -50,6 +50,12 @@ impl LicenseUsageBuilder {
         self.entitlement_usages = input;
         self
     }
+    /// <p>License entitlement usages.</p>
+    pub fn get_entitlement_usages(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EntitlementUsage>> {
+        &self.entitlement_usages
+    }
     /// Consumes the builder and constructs a [`LicenseUsage`](crate::types::LicenseUsage).
     pub fn build(self) -> crate::types::LicenseUsage {
         crate::types::LicenseUsage {

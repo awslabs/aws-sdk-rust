@@ -46,6 +46,10 @@ impl AwsSsoAuthenticationBuilder {
         self.sso_client_id = input;
         self
     }
+    /// <p>The ID of the IAM Identity Center-managed application that is created by Amazon Managed Grafana.</p>
+    pub fn get_sso_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sso_client_id
+    }
     /// Consumes the builder and constructs a [`AwsSsoAuthentication`](crate::types::AwsSsoAuthentication).
     pub fn build(self) -> crate::types::AwsSsoAuthentication {
         crate::types::AwsSsoAuthentication {

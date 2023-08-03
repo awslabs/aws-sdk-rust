@@ -69,6 +69,10 @@ impl ListServiceInstanceOutputsInputBuilder {
         self.service_instance_name = input;
         self
     }
+    /// <p>The name of the service instance whose outputs you want.</p>
+    pub fn get_service_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_instance_name
+    }
     /// <p>The name of the service that <code>serviceInstanceName</code> is associated to.</p>
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl ListServiceInstanceOutputsInputBuilder {
         self.service_name = input;
         self
     }
+    /// <p>The name of the service that <code>serviceInstanceName</code> is associated to.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
+    }
     /// <p>A token that indicates the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -88,6 +96,10 @@ impl ListServiceInstanceOutputsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token that indicates the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The ID of the deployment whose outputs you want.</p>
     pub fn deployment_id(
@@ -104,6 +116,10 @@ impl ListServiceInstanceOutputsInputBuilder {
     ) -> Self {
         self.deployment_id = input;
         self
+    }
+    /// <p>The ID of the deployment whose outputs you want.</p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_id
     }
     /// Consumes the builder and constructs a [`ListServiceInstanceOutputsInput`](crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsInput).
     pub fn build(

@@ -57,6 +57,10 @@ impl DescribeManagedProductsByVendorInputBuilder {
         self.vendor_name = input;
         self
     }
+    /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify a rule group.</p>
+    pub fn get_vendor_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vendor_name
+    }
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance. </p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
     /// <ul>
@@ -76,6 +80,15 @@ impl DescribeManagedProductsByVendorInputBuilder {
     pub fn set_scope(mut self, input: ::std::option::Option<crate::types::Scope>) -> Self {
         self.scope = input;
         self
+    }
+    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance. </p>
+    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+    /// <ul>
+    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+    /// </ul>
+    pub fn get_scope(&self) -> &::std::option::Option<crate::types::Scope> {
+        &self.scope
     }
     /// Consumes the builder and constructs a [`DescribeManagedProductsByVendorInput`](crate::operation::describe_managed_products_by_vendor::DescribeManagedProductsByVendorInput).
     pub fn build(

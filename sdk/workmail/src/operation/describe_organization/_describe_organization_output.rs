@@ -117,6 +117,10 @@ impl DescribeOrganizationOutputBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The identifier of an organization.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p>The alias for an organization.</p>
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias = ::std::option::Option::Some(input.into());
@@ -126,6 +130,10 @@ impl DescribeOrganizationOutputBuilder {
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alias = input;
         self
+    }
+    /// <p>The alias for an organization.</p>
+    pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias
     }
     /// <p>The state of an organization.</p>
     pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -137,6 +145,10 @@ impl DescribeOrganizationOutputBuilder {
         self.state = input;
         self
     }
+    /// <p>The state of an organization.</p>
+    pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state
+    }
     /// <p>The identifier for the directory associated with an WorkMail organization.</p>
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
@@ -146,6 +158,10 @@ impl DescribeOrganizationOutputBuilder {
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.directory_id = input;
         self
+    }
+    /// <p>The identifier for the directory associated with an WorkMail organization.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
     }
     /// <p>The type of directory associated with the WorkMail organization.</p>
     pub fn directory_type(
@@ -163,6 +179,10 @@ impl DescribeOrganizationOutputBuilder {
         self.directory_type = input;
         self
     }
+    /// <p>The type of directory associated with the WorkMail organization.</p>
+    pub fn get_directory_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_type
+    }
     /// <p>The default mail domain associated with the organization.</p>
     pub fn default_mail_domain(
         mut self,
@@ -179,6 +199,10 @@ impl DescribeOrganizationOutputBuilder {
         self.default_mail_domain = input;
         self
     }
+    /// <p>The default mail domain associated with the organization.</p>
+    pub fn get_default_mail_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_mail_domain
+    }
     /// <p>The date at which the organization became usable in the WorkMail context, in UNIX epoch time format.</p>
     pub fn completed_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.completed_date = ::std::option::Option::Some(input);
@@ -191,6 +215,10 @@ impl DescribeOrganizationOutputBuilder {
     ) -> Self {
         self.completed_date = input;
         self
+    }
+    /// <p>The date at which the organization became usable in the WorkMail context, in UNIX epoch time format.</p>
+    pub fn get_completed_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.completed_date
     }
     /// <p>(Optional) The error message indicating if unexpected behavior was encountered with regards to the organization.</p>
     pub fn error_message(
@@ -208,6 +236,10 @@ impl DescribeOrganizationOutputBuilder {
         self.error_message = input;
         self
     }
+    /// <p>(Optional) The error message indicating if unexpected behavior was encountered with regards to the organization.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
+    }
     /// <p>The Amazon Resource Name (ARN) of the organization.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -217,6 +249,10 @@ impl DescribeOrganizationOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the organization.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

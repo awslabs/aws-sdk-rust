@@ -56,6 +56,10 @@ impl TableMemberBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the table. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The type of the table. Possible values include TABLE, VIEW, SYSTEM TABLE, GLOBAL TEMPORARY, LOCAL TEMPORARY, ALIAS, and SYNONYM. </p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl TableMemberBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of the table. Possible values include TABLE, VIEW, SYSTEM TABLE, GLOBAL TEMPORARY, LOCAL TEMPORARY, ALIAS, and SYNONYM. </p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// <p>The schema containing the table. </p>
     pub fn schema(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl TableMemberBuilder {
     pub fn set_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema = input;
         self
+    }
+    /// <p>The schema containing the table. </p>
+    pub fn get_schema(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema
     }
     /// Consumes the builder and constructs a [`TableMember`](crate::types::TableMember).
     pub fn build(self) -> crate::types::TableMember {

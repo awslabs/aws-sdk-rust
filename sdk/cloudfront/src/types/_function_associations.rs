@@ -48,6 +48,10 @@ impl FunctionAssociationsBuilder {
         self.quantity = input;
         self
     }
+    /// <p>The number of CloudFront functions in the list.</p>
+    pub fn get_quantity(&self) -> &::std::option::Option<i32> {
+        &self.quantity
+    }
     /// Appends an item to `items`.
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
@@ -66,6 +70,12 @@ impl FunctionAssociationsBuilder {
     ) -> Self {
         self.items = input;
         self
+    }
+    /// <p>The CloudFront functions that are associated with a cache behavior in a CloudFront distribution. CloudFront functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.</p>
+    pub fn get_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FunctionAssociation>> {
+        &self.items
     }
     /// Consumes the builder and constructs a [`FunctionAssociations`](crate::types::FunctionAssociations).
     pub fn build(self) -> crate::types::FunctionAssociations {

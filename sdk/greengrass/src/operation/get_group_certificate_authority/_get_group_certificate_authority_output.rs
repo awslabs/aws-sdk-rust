@@ -68,6 +68,12 @@ impl GetGroupCertificateAuthorityOutputBuilder {
         self.group_certificate_authority_arn = input;
         self
     }
+    /// The ARN of the certificate authority for the group.
+    pub fn get_group_certificate_authority_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.group_certificate_authority_arn
+    }
     /// The ID of the certificate authority for the group.
     pub fn group_certificate_authority_id(
         mut self,
@@ -84,6 +90,12 @@ impl GetGroupCertificateAuthorityOutputBuilder {
         self.group_certificate_authority_id = input;
         self
     }
+    /// The ID of the certificate authority for the group.
+    pub fn get_group_certificate_authority_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.group_certificate_authority_id
+    }
     /// The PEM encoded certificate for the group.
     pub fn pem_encoded_certificate(
         mut self,
@@ -99,6 +111,10 @@ impl GetGroupCertificateAuthorityOutputBuilder {
     ) -> Self {
         self.pem_encoded_certificate = input;
         self
+    }
+    /// The PEM encoded certificate for the group.
+    pub fn get_pem_encoded_certificate(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pem_encoded_certificate
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

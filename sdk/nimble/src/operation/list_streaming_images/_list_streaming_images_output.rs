@@ -57,6 +57,10 @@ impl ListStreamingImagesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `streaming_images`.
     ///
     /// To override the contents of this collection use [`set_streaming_images`](Self::set_streaming_images).
@@ -75,6 +79,12 @@ impl ListStreamingImagesOutputBuilder {
     ) -> Self {
         self.streaming_images = input;
         self
+    }
+    /// <p>A collection of streaming images.</p>
+    pub fn get_streaming_images(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamingImage>> {
+        &self.streaming_images
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

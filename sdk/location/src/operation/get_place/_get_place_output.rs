@@ -46,6 +46,10 @@ impl GetPlaceOutputBuilder {
         self.place = input;
         self
     }
+    /// <p>Details about the result, such as its address and position.</p>
+    pub fn get_place(&self) -> &::std::option::Option<crate::types::Place> {
+        &self.place
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

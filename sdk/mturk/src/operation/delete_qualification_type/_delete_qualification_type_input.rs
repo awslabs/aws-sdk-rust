@@ -47,6 +47,10 @@ impl DeleteQualificationTypeInputBuilder {
         self.qualification_type_id = input;
         self
     }
+    /// <p>The ID of the QualificationType to dispose.</p>
+    pub fn get_qualification_type_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.qualification_type_id
+    }
     /// Consumes the builder and constructs a [`DeleteQualificationTypeInput`](crate::operation::delete_qualification_type::DeleteQualificationTypeInput).
     pub fn build(
         self,

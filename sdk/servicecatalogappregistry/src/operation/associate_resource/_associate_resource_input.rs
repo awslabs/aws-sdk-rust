@@ -56,6 +56,10 @@ impl AssociateResourceInputBuilder {
         self.application = input;
         self
     }
+    /// <p> The name, ID, or ARN of the application. </p>
+    pub fn get_application(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application
+    }
     /// <p>The type of resource of which the application will be associated.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl AssociateResourceInputBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The type of resource of which the application will be associated.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
+    }
     /// <p>The name or ID of the resource of which the application will be associated.</p>
     pub fn resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource = ::std::option::Option::Some(input.into());
@@ -78,6 +86,10 @@ impl AssociateResourceInputBuilder {
     pub fn set_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource = input;
         self
+    }
+    /// <p>The name or ID of the resource of which the application will be associated.</p>
+    pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource
     }
     /// Consumes the builder and constructs a [`AssociateResourceInput`](crate::operation::associate_resource::AssociateResourceInput).
     pub fn build(

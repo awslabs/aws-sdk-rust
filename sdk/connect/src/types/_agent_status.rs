@@ -110,6 +110,10 @@ impl AgentStatusBuilder {
         self.agent_status_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the agent status.</p>
+    pub fn get_agent_status_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_status_arn
+    }
     /// <p>The identifier of the agent status.</p>
     pub fn agent_status_id(
         mut self,
@@ -126,6 +130,10 @@ impl AgentStatusBuilder {
         self.agent_status_id = input;
         self
     }
+    /// <p>The identifier of the agent status.</p>
+    pub fn get_agent_status_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_status_id
+    }
     /// <p>The name of the agent status.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -135,6 +143,10 @@ impl AgentStatusBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the agent status.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The description of the agent status.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -146,6 +158,10 @@ impl AgentStatusBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the agent status.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The type of agent status.</p>
     pub fn r#type(mut self, input: crate::types::AgentStatusType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -156,6 +172,10 @@ impl AgentStatusBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of agent status.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::AgentStatusType> {
+        &self.r#type
+    }
     /// <p>The display order of the agent status.</p>
     pub fn display_order(mut self, input: i32) -> Self {
         self.display_order = ::std::option::Option::Some(input);
@@ -165,6 +185,10 @@ impl AgentStatusBuilder {
     pub fn set_display_order(mut self, input: ::std::option::Option<i32>) -> Self {
         self.display_order = input;
         self
+    }
+    /// <p>The display order of the agent status.</p>
+    pub fn get_display_order(&self) -> &::std::option::Option<i32> {
+        &self.display_order
     }
     /// <p>The state of the agent status.</p>
     pub fn state(mut self, input: crate::types::AgentStatusState) -> Self {
@@ -178,6 +202,10 @@ impl AgentStatusBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the agent status.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::AgentStatusState> {
+        &self.state
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -203,6 +231,14 @@ impl AgentStatusBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`AgentStatus`](crate::types::AgentStatus).
     pub fn build(self) -> crate::types::AgentStatus {

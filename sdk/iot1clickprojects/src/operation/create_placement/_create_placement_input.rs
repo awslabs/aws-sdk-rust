@@ -69,6 +69,10 @@ impl CreatePlacementInputBuilder {
         self.placement_name = input;
         self
     }
+    /// <p>The name of the placement to be created.</p>
+    pub fn get_placement_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.placement_name
+    }
     /// <p>The name of the project in which to create the placement.</p>
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
@@ -78,6 +82,10 @@ impl CreatePlacementInputBuilder {
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_name = input;
         self
+    }
+    /// <p>The name of the project in which to create the placement.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_name
     }
     /// Adds a key-value pair to `attributes`.
     ///
@@ -103,6 +111,14 @@ impl CreatePlacementInputBuilder {
     ) -> Self {
         self.attributes = input;
         self
+    }
+    /// <p>Optional user-defined key/value pairs providing contextual data (such as location or function) for the placement.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.attributes
     }
     /// Consumes the builder and constructs a [`CreatePlacementInput`](crate::operation::create_placement::CreatePlacementInput).
     pub fn build(

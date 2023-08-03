@@ -53,6 +53,12 @@ impl LastReportGenerationExecutionErrorBuilder {
         self.error_code = input;
         self
     }
+    /// <p>The error code for the error that is returned when a usage report can't be generated.</p>
+    pub fn get_error_code(
+        &self,
+    ) -> &::std::option::Option<crate::types::UsageReportExecutionErrorCode> {
+        &self.error_code
+    }
     /// <p>The error message for the error that is returned when a usage report can't be generated.</p>
     pub fn error_message(
         mut self,
@@ -68,6 +74,10 @@ impl LastReportGenerationExecutionErrorBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>The error message for the error that is returned when a usage report can't be generated.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`LastReportGenerationExecutionError`](crate::types::LastReportGenerationExecutionError).
     pub fn build(self) -> crate::types::LastReportGenerationExecutionError {

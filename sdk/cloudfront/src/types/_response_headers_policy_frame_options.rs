@@ -51,6 +51,10 @@ impl ResponseHeadersPolicyFrameOptionsBuilder {
         self.r#override = input;
         self
     }
+    /// <p>A Boolean that determines whether CloudFront overrides the <code>X-Frame-Options</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
+    pub fn get_override(&self) -> &::std::option::Option<bool> {
+        &self.r#override
+    }
     /// <p>The value of the <code>X-Frame-Options</code> HTTP response header. Valid values are <code>DENY</code> and <code>SAMEORIGIN</code>.</p>
     /// <p>For more information about these values, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a> in the MDN Web Docs.</p>
     pub fn frame_option(mut self, input: crate::types::FrameOptionsList) -> Self {
@@ -65,6 +69,11 @@ impl ResponseHeadersPolicyFrameOptionsBuilder {
     ) -> Self {
         self.frame_option = input;
         self
+    }
+    /// <p>The value of the <code>X-Frame-Options</code> HTTP response header. Valid values are <code>DENY</code> and <code>SAMEORIGIN</code>.</p>
+    /// <p>For more information about these values, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a> in the MDN Web Docs.</p>
+    pub fn get_frame_option(&self) -> &::std::option::Option<crate::types::FrameOptionsList> {
+        &self.frame_option
     }
     /// Consumes the builder and constructs a [`ResponseHeadersPolicyFrameOptions`](crate::types::ResponseHeadersPolicyFrameOptions).
     pub fn build(self) -> crate::types::ResponseHeadersPolicyFrameOptions {

@@ -66,6 +66,10 @@ impl ConditionalSplitActivityBuilder {
         self.condition = input;
         self
     }
+    /// <p>The conditions that define the paths for the activity, and the relationship between the conditions.</p>
+    pub fn get_condition(&self) -> &::std::option::Option<crate::types::Condition> {
+        &self.condition
+    }
     /// <p>The amount of time to wait before determining whether the conditions are met, or the date and time when Amazon Pinpoint determines whether the conditions are met.</p>
     pub fn evaluation_wait_time(mut self, input: crate::types::WaitTime) -> Self {
         self.evaluation_wait_time = ::std::option::Option::Some(input);
@@ -78,6 +82,10 @@ impl ConditionalSplitActivityBuilder {
     ) -> Self {
         self.evaluation_wait_time = input;
         self
+    }
+    /// <p>The amount of time to wait before determining whether the conditions are met, or the date and time when Amazon Pinpoint determines whether the conditions are met.</p>
+    pub fn get_evaluation_wait_time(&self) -> &::std::option::Option<crate::types::WaitTime> {
+        &self.evaluation_wait_time
     }
     /// <p>The unique identifier for the activity to perform if the conditions aren't met.</p>
     pub fn false_activity(
@@ -95,6 +103,10 @@ impl ConditionalSplitActivityBuilder {
         self.false_activity = input;
         self
     }
+    /// <p>The unique identifier for the activity to perform if the conditions aren't met.</p>
+    pub fn get_false_activity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.false_activity
+    }
     /// <p>The unique identifier for the activity to perform if the conditions are met.</p>
     pub fn true_activity(
         mut self,
@@ -110,6 +122,10 @@ impl ConditionalSplitActivityBuilder {
     ) -> Self {
         self.true_activity = input;
         self
+    }
+    /// <p>The unique identifier for the activity to perform if the conditions are met.</p>
+    pub fn get_true_activity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.true_activity
     }
     /// Consumes the builder and constructs a [`ConditionalSplitActivity`](crate::types::ConditionalSplitActivity).
     pub fn build(self) -> crate::types::ConditionalSplitActivity {

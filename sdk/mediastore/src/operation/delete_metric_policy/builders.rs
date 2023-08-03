@@ -36,6 +36,12 @@ impl DeleteMetricPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteMetricPolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_metric_policy::builders::DeleteMetricPolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl DeleteMetricPolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_container_name(input);
         self
+    }
+    /// <p>The name of the container that is associated with the metric policy that you want to delete.</p>
+    pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_container_name()
     }
 }

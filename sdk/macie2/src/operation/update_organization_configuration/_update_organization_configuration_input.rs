@@ -39,6 +39,10 @@ impl UpdateOrganizationConfigurationInputBuilder {
         self.auto_enable = input;
         self
     }
+    /// <p>Specifies whether to enable Amazon Macie automatically for an account when the account is added to the organization in Organizations.</p>
+    pub fn get_auto_enable(&self) -> &::std::option::Option<bool> {
+        &self.auto_enable
+    }
     /// Consumes the builder and constructs a [`UpdateOrganizationConfigurationInput`](crate::operation::update_organization_configuration::UpdateOrganizationConfigurationInput).
     pub fn build(
         self,

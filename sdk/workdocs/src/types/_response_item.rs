@@ -96,6 +96,10 @@ impl ResponseItemBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The type of item being returned.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResponseItemType> {
+        &self.resource_type
+    }
     /// <p>The webUrl of the item being returned.</p>
     pub fn web_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.web_url = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl ResponseItemBuilder {
     pub fn set_web_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.web_url = input;
         self
+    }
+    /// <p>The webUrl of the item being returned.</p>
+    pub fn get_web_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.web_url
     }
     /// <p>The document that matches the query.</p>
     pub fn document_metadata(mut self, input: crate::types::DocumentMetadata) -> Self {
@@ -119,6 +127,10 @@ impl ResponseItemBuilder {
         self.document_metadata = input;
         self
     }
+    /// <p>The document that matches the query.</p>
+    pub fn get_document_metadata(&self) -> &::std::option::Option<crate::types::DocumentMetadata> {
+        &self.document_metadata
+    }
     /// <p>The folder that matches the query.</p>
     pub fn folder_metadata(mut self, input: crate::types::FolderMetadata) -> Self {
         self.folder_metadata = ::std::option::Option::Some(input);
@@ -132,6 +144,10 @@ impl ResponseItemBuilder {
         self.folder_metadata = input;
         self
     }
+    /// <p>The folder that matches the query.</p>
+    pub fn get_folder_metadata(&self) -> &::std::option::Option<crate::types::FolderMetadata> {
+        &self.folder_metadata
+    }
     /// <p>The comment that matches the query.</p>
     pub fn comment_metadata(mut self, input: crate::types::CommentMetadata) -> Self {
         self.comment_metadata = ::std::option::Option::Some(input);
@@ -144,6 +160,10 @@ impl ResponseItemBuilder {
     ) -> Self {
         self.comment_metadata = input;
         self
+    }
+    /// <p>The comment that matches the query.</p>
+    pub fn get_comment_metadata(&self) -> &::std::option::Option<crate::types::CommentMetadata> {
+        &self.comment_metadata
     }
     /// <p>The document version that matches the metadata.</p>
     pub fn document_version_metadata(
@@ -160,6 +180,12 @@ impl ResponseItemBuilder {
     ) -> Self {
         self.document_version_metadata = input;
         self
+    }
+    /// <p>The document version that matches the metadata.</p>
+    pub fn get_document_version_metadata(
+        &self,
+    ) -> &::std::option::Option<crate::types::DocumentVersionMetadata> {
+        &self.document_version_metadata
     }
     /// Consumes the builder and constructs a [`ResponseItem`](crate::types::ResponseItem).
     pub fn build(self) -> crate::types::ResponseItem {

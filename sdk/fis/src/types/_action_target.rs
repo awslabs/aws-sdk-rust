@@ -46,6 +46,10 @@ impl ActionTargetBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The resource type of the target.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
+    }
     /// Consumes the builder and constructs a [`ActionTarget`](crate::types::ActionTarget).
     pub fn build(self) -> crate::types::ActionTarget {
         crate::types::ActionTarget {

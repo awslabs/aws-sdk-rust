@@ -67,6 +67,10 @@ impl CreateMetricAttributionInputBuilder {
         self.name = input;
         self
     }
+    /// <p>A name for the metric attribution.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Name (ARN) of the destination dataset group for the metric attribution.</p>
     pub fn dataset_group_arn(
         mut self,
@@ -82,6 +86,10 @@ impl CreateMetricAttributionInputBuilder {
     ) -> Self {
         self.dataset_group_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the destination dataset group for the metric attribution.</p>
+    pub fn get_dataset_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_group_arn
     }
     /// Appends an item to `metrics`.
     ///
@@ -102,6 +110,12 @@ impl CreateMetricAttributionInputBuilder {
         self.metrics = input;
         self
     }
+    /// <p>A list of metric attributes for the metric attribution. Each metric attribute specifies an event type to track and a function. Available functions are <code>SUM()</code> or <code>SAMPLECOUNT()</code>. For SUM() functions, provide the dataset type (either Interactions or Items) and column to sum as a parameter. For example SUM(Items.PRICE).</p>
+    pub fn get_metrics(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricAttribute>> {
+        &self.metrics
+    }
     /// <p>The output configuration details for the metric attribution.</p>
     pub fn metrics_output_config(mut self, input: crate::types::MetricAttributionOutput) -> Self {
         self.metrics_output_config = ::std::option::Option::Some(input);
@@ -114,6 +128,12 @@ impl CreateMetricAttributionInputBuilder {
     ) -> Self {
         self.metrics_output_config = input;
         self
+    }
+    /// <p>The output configuration details for the metric attribution.</p>
+    pub fn get_metrics_output_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::MetricAttributionOutput> {
+        &self.metrics_output_config
     }
     /// Consumes the builder and constructs a [`CreateMetricAttributionInput`](crate::operation::create_metric_attribution::CreateMetricAttributionInput).
     pub fn build(

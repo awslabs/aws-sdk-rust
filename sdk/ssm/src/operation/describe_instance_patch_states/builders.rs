@@ -36,6 +36,10 @@ impl DescribeInstancePatchStatesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeInstancePatchStates as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_instance_patch_states::builders::DescribeInstancePatchStatesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -139,6 +143,12 @@ impl DescribeInstancePatchStatesFluentBuilder {
         self.inner = self.inner.set_instance_ids(input);
         self
     }
+    /// <p>The ID of the managed node for which patch state information should be retrieved.</p>
+    pub fn get_instance_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_instance_ids()
+    }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -149,6 +159,10 @@ impl DescribeInstancePatchStatesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of managed nodes to return (per page).</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -158,5 +172,9 @@ impl DescribeInstancePatchStatesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of managed nodes to return (per page).</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

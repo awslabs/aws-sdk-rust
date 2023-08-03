@@ -47,6 +47,10 @@ impl DescribeAddonInputBuilder {
         self.cluster_name = input;
         self
     }
+    /// <p>The name of the cluster.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_name
+    }
     /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
     pub fn addon_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.addon_name = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl DescribeAddonInputBuilder {
     pub fn set_addon_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.addon_name = input;
         self
+    }
+    /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
+    pub fn get_addon_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.addon_name
     }
     /// Consumes the builder and constructs a [`DescribeAddonInput`](crate::operation::describe_addon::DescribeAddonInput).
     pub fn build(

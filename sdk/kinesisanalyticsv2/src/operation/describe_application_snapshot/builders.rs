@@ -36,6 +36,10 @@ impl DescribeApplicationSnapshotFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeApplicationSnapshot as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_application_snapshot::builders::DescribeApplicationSnapshotInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl DescribeApplicationSnapshotFluentBuilder {
         self.inner = self.inner.set_application_name(input);
         self
     }
+    /// <p>The name of an existing application.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_name()
+    }
     /// <p>The identifier of an application snapshot. You can retrieve this value using .</p>
     pub fn snapshot_name(
         mut self,
@@ -147,5 +155,9 @@ impl DescribeApplicationSnapshotFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_snapshot_name(input);
         self
+    }
+    /// <p>The identifier of an application snapshot. You can retrieve this value using .</p>
+    pub fn get_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_snapshot_name()
     }
 }

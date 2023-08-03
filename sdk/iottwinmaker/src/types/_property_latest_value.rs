@@ -53,6 +53,12 @@ impl PropertyLatestValueBuilder {
         self.property_reference = input;
         self
     }
+    /// <p>An object that specifies information about a property.</p>
+    pub fn get_property_reference(
+        &self,
+    ) -> &::std::option::Option<crate::types::EntityPropertyReference> {
+        &self.property_reference
+    }
     /// <p>The value of the property.</p>
     pub fn property_value(mut self, input: crate::types::DataValue) -> Self {
         self.property_value = ::std::option::Option::Some(input);
@@ -65,6 +71,10 @@ impl PropertyLatestValueBuilder {
     ) -> Self {
         self.property_value = input;
         self
+    }
+    /// <p>The value of the property.</p>
+    pub fn get_property_value(&self) -> &::std::option::Option<crate::types::DataValue> {
+        &self.property_value
     }
     /// Consumes the builder and constructs a [`PropertyLatestValue`](crate::types::PropertyLatestValue).
     pub fn build(self) -> crate::types::PropertyLatestValue {

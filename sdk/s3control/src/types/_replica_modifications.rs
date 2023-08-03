@@ -46,6 +46,10 @@ impl ReplicaModificationsBuilder {
         self.status = input;
         self
     }
+    /// <p>Specifies whether S3 on Outposts replicates modifications to object metadata on replicas.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ReplicaModificationsStatus> {
+        &self.status
+    }
     /// Consumes the builder and constructs a [`ReplicaModifications`](crate::types::ReplicaModifications).
     pub fn build(self) -> crate::types::ReplicaModifications {
         crate::types::ReplicaModifications {

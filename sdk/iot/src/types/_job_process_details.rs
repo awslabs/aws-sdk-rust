@@ -116,6 +116,12 @@ impl JobProcessDetailsBuilder {
         self.processing_targets = input;
         self
     }
+    /// <p>The target devices to which the job execution is being rolled out. This value will be null after the job execution has finished rolling out to all the target devices.</p>
+    pub fn get_processing_targets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.processing_targets
+    }
     /// <p>The number of things that cancelled the job.</p>
     pub fn number_of_canceled_things(mut self, input: i32) -> Self {
         self.number_of_canceled_things = ::std::option::Option::Some(input);
@@ -125,6 +131,10 @@ impl JobProcessDetailsBuilder {
     pub fn set_number_of_canceled_things(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_canceled_things = input;
         self
+    }
+    /// <p>The number of things that cancelled the job.</p>
+    pub fn get_number_of_canceled_things(&self) -> &::std::option::Option<i32> {
+        &self.number_of_canceled_things
     }
     /// <p>The number of things which successfully completed the job.</p>
     pub fn number_of_succeeded_things(mut self, input: i32) -> Self {
@@ -136,6 +146,10 @@ impl JobProcessDetailsBuilder {
         self.number_of_succeeded_things = input;
         self
     }
+    /// <p>The number of things which successfully completed the job.</p>
+    pub fn get_number_of_succeeded_things(&self) -> &::std::option::Option<i32> {
+        &self.number_of_succeeded_things
+    }
     /// <p>The number of things that failed executing the job.</p>
     pub fn number_of_failed_things(mut self, input: i32) -> Self {
         self.number_of_failed_things = ::std::option::Option::Some(input);
@@ -145,6 +159,10 @@ impl JobProcessDetailsBuilder {
     pub fn set_number_of_failed_things(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_failed_things = input;
         self
+    }
+    /// <p>The number of things that failed executing the job.</p>
+    pub fn get_number_of_failed_things(&self) -> &::std::option::Option<i32> {
+        &self.number_of_failed_things
     }
     /// <p>The number of things that rejected the job.</p>
     pub fn number_of_rejected_things(mut self, input: i32) -> Self {
@@ -156,6 +174,10 @@ impl JobProcessDetailsBuilder {
         self.number_of_rejected_things = input;
         self
     }
+    /// <p>The number of things that rejected the job.</p>
+    pub fn get_number_of_rejected_things(&self) -> &::std::option::Option<i32> {
+        &self.number_of_rejected_things
+    }
     /// <p>The number of things that are awaiting execution of the job.</p>
     pub fn number_of_queued_things(mut self, input: i32) -> Self {
         self.number_of_queued_things = ::std::option::Option::Some(input);
@@ -165,6 +187,10 @@ impl JobProcessDetailsBuilder {
     pub fn set_number_of_queued_things(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_queued_things = input;
         self
+    }
+    /// <p>The number of things that are awaiting execution of the job.</p>
+    pub fn get_number_of_queued_things(&self) -> &::std::option::Option<i32> {
+        &self.number_of_queued_things
     }
     /// <p>The number of things currently executing the job.</p>
     pub fn number_of_in_progress_things(mut self, input: i32) -> Self {
@@ -176,6 +202,10 @@ impl JobProcessDetailsBuilder {
         self.number_of_in_progress_things = input;
         self
     }
+    /// <p>The number of things currently executing the job.</p>
+    pub fn get_number_of_in_progress_things(&self) -> &::std::option::Option<i32> {
+        &self.number_of_in_progress_things
+    }
     /// <p>The number of things that are no longer scheduled to execute the job because they have been deleted or have been removed from the group that was a target of the job.</p>
     pub fn number_of_removed_things(mut self, input: i32) -> Self {
         self.number_of_removed_things = ::std::option::Option::Some(input);
@@ -186,6 +216,10 @@ impl JobProcessDetailsBuilder {
         self.number_of_removed_things = input;
         self
     }
+    /// <p>The number of things that are no longer scheduled to execute the job because they have been deleted or have been removed from the group that was a target of the job.</p>
+    pub fn get_number_of_removed_things(&self) -> &::std::option::Option<i32> {
+        &self.number_of_removed_things
+    }
     /// <p>The number of things whose job execution status is <code>TIMED_OUT</code>.</p>
     pub fn number_of_timed_out_things(mut self, input: i32) -> Self {
         self.number_of_timed_out_things = ::std::option::Option::Some(input);
@@ -195,6 +229,10 @@ impl JobProcessDetailsBuilder {
     pub fn set_number_of_timed_out_things(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_timed_out_things = input;
         self
+    }
+    /// <p>The number of things whose job execution status is <code>TIMED_OUT</code>.</p>
+    pub fn get_number_of_timed_out_things(&self) -> &::std::option::Option<i32> {
+        &self.number_of_timed_out_things
     }
     /// Consumes the builder and constructs a [`JobProcessDetails`](crate::types::JobProcessDetails).
     pub fn build(self) -> crate::types::JobProcessDetails {

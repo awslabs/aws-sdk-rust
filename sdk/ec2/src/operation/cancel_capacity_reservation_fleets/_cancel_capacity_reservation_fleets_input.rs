@@ -51,6 +51,10 @@ impl CancelCapacityReservationFleetsInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// Appends an item to `capacity_reservation_fleet_ids`.
     ///
     /// To override the contents of this collection use [`set_capacity_reservation_fleet_ids`](Self::set_capacity_reservation_fleet_ids).
@@ -72,6 +76,12 @@ impl CancelCapacityReservationFleetsInputBuilder {
     ) -> Self {
         self.capacity_reservation_fleet_ids = input;
         self
+    }
+    /// <p>The IDs of the Capacity Reservation Fleets to cancel.</p>
+    pub fn get_capacity_reservation_fleet_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.capacity_reservation_fleet_ids
     }
     /// Consumes the builder and constructs a [`CancelCapacityReservationFleetsInput`](crate::operation::cancel_capacity_reservation_fleets::CancelCapacityReservationFleetsInput).
     pub fn build(

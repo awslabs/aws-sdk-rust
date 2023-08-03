@@ -36,6 +36,13 @@ impl DeletePrefetchScheduleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeletePrefetchSchedule as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_prefetch_schedule::builders::DeletePrefetchScheduleInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl DeletePrefetchScheduleFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the prefetch schedule. If the action is successful, the service sends back an HTTP 204 response with an empty HTTP body.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The name of the playback configuration for this prefetch schedule.</p>
     pub fn playback_configuration_name(
         mut self,
@@ -141,5 +152,9 @@ impl DeletePrefetchScheduleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_playback_configuration_name(input);
         self
+    }
+    /// <p>The name of the playback configuration for this prefetch schedule.</p>
+    pub fn get_playback_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_playback_configuration_name()
     }
 }

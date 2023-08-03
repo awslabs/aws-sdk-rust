@@ -57,6 +57,10 @@ impl GetBotChannelAssociationInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the association between the bot and the channel. The name is case sensitive. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The name of the Amazon Lex bot.</p>
     pub fn bot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_name = ::std::option::Option::Some(input.into());
@@ -67,6 +71,10 @@ impl GetBotChannelAssociationInputBuilder {
         self.bot_name = input;
         self
     }
+    /// <p>The name of the Amazon Lex bot.</p>
+    pub fn get_bot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_name
+    }
     /// <p>An alias pointing to the specific version of the Amazon Lex bot to which this association is being made.</p>
     pub fn bot_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_alias = ::std::option::Option::Some(input.into());
@@ -76,6 +84,10 @@ impl GetBotChannelAssociationInputBuilder {
     pub fn set_bot_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_alias = input;
         self
+    }
+    /// <p>An alias pointing to the specific version of the Amazon Lex bot to which this association is being made.</p>
+    pub fn get_bot_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_alias
     }
     /// Consumes the builder and constructs a [`GetBotChannelAssociationInput`](crate::operation::get_bot_channel_association::GetBotChannelAssociationInput).
     pub fn build(

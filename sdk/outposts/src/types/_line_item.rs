@@ -108,6 +108,10 @@ impl LineItemBuilder {
         self.catalog_item_id = input;
         self
     }
+    /// <p> The ID of the catalog item. </p>
+    pub fn get_catalog_item_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_item_id
+    }
     /// <p>The ID of the line item.</p>
     pub fn line_item_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.line_item_id = ::std::option::Option::Some(input.into());
@@ -118,6 +122,10 @@ impl LineItemBuilder {
         self.line_item_id = input;
         self
     }
+    /// <p>The ID of the line item.</p>
+    pub fn get_line_item_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.line_item_id
+    }
     /// <p>The quantity of the line item.</p>
     pub fn quantity(mut self, input: i32) -> Self {
         self.quantity = ::std::option::Option::Some(input);
@@ -127,6 +135,10 @@ impl LineItemBuilder {
     pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.quantity = input;
         self
+    }
+    /// <p>The quantity of the line item.</p>
+    pub fn get_quantity(&self) -> &::std::option::Option<i32> {
+        &self.quantity
     }
     /// <p>The status of the line item.</p>
     pub fn status(mut self, input: crate::types::LineItemStatus) -> Self {
@@ -141,6 +153,10 @@ impl LineItemBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the line item.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::LineItemStatus> {
+        &self.status
+    }
     /// <p> Information about a line item shipment. </p>
     pub fn shipment_information(mut self, input: crate::types::ShipmentInformation) -> Self {
         self.shipment_information = ::std::option::Option::Some(input);
@@ -153,6 +169,12 @@ impl LineItemBuilder {
     ) -> Self {
         self.shipment_information = input;
         self
+    }
+    /// <p> Information about a line item shipment. </p>
+    pub fn get_shipment_information(
+        &self,
+    ) -> &::std::option::Option<crate::types::ShipmentInformation> {
+        &self.shipment_information
     }
     /// Appends an item to `asset_information_list`.
     ///
@@ -173,6 +195,12 @@ impl LineItemBuilder {
         self.asset_information_list = input;
         self
     }
+    /// <p> Information about assets. </p>
+    pub fn get_asset_information_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LineItemAssetInformation>> {
+        &self.asset_information_list
+    }
     /// <p>The ID of the previous line item.</p>
     pub fn previous_line_item_id(
         mut self,
@@ -189,6 +217,10 @@ impl LineItemBuilder {
         self.previous_line_item_id = input;
         self
     }
+    /// <p>The ID of the previous line item.</p>
+    pub fn get_previous_line_item_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.previous_line_item_id
+    }
     /// <p>The ID of the previous order item.</p>
     pub fn previous_order_id(
         mut self,
@@ -204,6 +236,10 @@ impl LineItemBuilder {
     ) -> Self {
         self.previous_order_id = input;
         self
+    }
+    /// <p>The ID of the previous order item.</p>
+    pub fn get_previous_order_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.previous_order_id
     }
     /// Consumes the builder and constructs a [`LineItem`](crate::types::LineItem).
     pub fn build(self) -> crate::types::LineItem {

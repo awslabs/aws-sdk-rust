@@ -102,6 +102,10 @@ impl InstanceEventWindowBuilder {
         self.instance_event_window_id = input;
         self
     }
+    /// <p>The ID of the event window.</p>
+    pub fn get_instance_event_window_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_event_window_id
+    }
     /// Appends an item to `time_ranges`.
     ///
     /// To override the contents of this collection use [`set_time_ranges`](Self::set_time_ranges).
@@ -121,6 +125,12 @@ impl InstanceEventWindowBuilder {
         self.time_ranges = input;
         self
     }
+    /// <p>One or more time ranges defined for the event window.</p>
+    pub fn get_time_ranges(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceEventWindowTimeRange>> {
+        &self.time_ranges
+    }
     /// <p>The name of the event window.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -130,6 +140,10 @@ impl InstanceEventWindowBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the event window.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The cron expression defined for the event window.</p>
     pub fn cron_expression(
@@ -147,6 +161,10 @@ impl InstanceEventWindowBuilder {
         self.cron_expression = input;
         self
     }
+    /// <p>The cron expression defined for the event window.</p>
+    pub fn get_cron_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cron_expression
+    }
     /// <p>One or more targets associated with the event window.</p>
     pub fn association_target(
         mut self,
@@ -163,6 +181,12 @@ impl InstanceEventWindowBuilder {
         self.association_target = input;
         self
     }
+    /// <p>One or more targets associated with the event window.</p>
+    pub fn get_association_target(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceEventWindowAssociationTarget> {
+        &self.association_target
+    }
     /// <p>The current state of the event window.</p>
     pub fn state(mut self, input: crate::types::InstanceEventWindowState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -175,6 +199,10 @@ impl InstanceEventWindowBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The current state of the event window.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::InstanceEventWindowState> {
+        &self.state
     }
     /// Appends an item to `tags`.
     ///
@@ -194,6 +222,10 @@ impl InstanceEventWindowBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The instance tags associated with the event window.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`InstanceEventWindow`](crate::types::InstanceEventWindow).
     pub fn build(self) -> crate::types::InstanceEventWindow {

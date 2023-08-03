@@ -162,6 +162,10 @@ impl SubscriberResourceBuilder {
         self.subscriber_id = input;
         self
     }
+    /// <p>The subscriber ID of the Amazon Security Lake subscriber account.</p>
+    pub fn get_subscriber_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subscriber_id
+    }
     /// <p>The subscriber ARN of the Amazon Security Lake subscriber account.</p>
     pub fn subscriber_arn(
         mut self,
@@ -178,6 +182,10 @@ impl SubscriberResourceBuilder {
         self.subscriber_arn = input;
         self
     }
+    /// <p>The subscriber ARN of the Amazon Security Lake subscriber account.</p>
+    pub fn get_subscriber_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subscriber_arn
+    }
     /// <p>The AWS identity used to access your data.</p>
     pub fn subscriber_identity(mut self, input: crate::types::AwsIdentity) -> Self {
         self.subscriber_identity = ::std::option::Option::Some(input);
@@ -190,6 +198,10 @@ impl SubscriberResourceBuilder {
     ) -> Self {
         self.subscriber_identity = input;
         self
+    }
+    /// <p>The AWS identity used to access your data.</p>
+    pub fn get_subscriber_identity(&self) -> &::std::option::Option<crate::types::AwsIdentity> {
+        &self.subscriber_identity
     }
     /// <p>The name of your Amazon Security Lake subscriber account.</p>
     pub fn subscriber_name(
@@ -207,6 +219,10 @@ impl SubscriberResourceBuilder {
         self.subscriber_name = input;
         self
     }
+    /// <p>The name of your Amazon Security Lake subscriber account.</p>
+    pub fn get_subscriber_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subscriber_name
+    }
     /// <p>The subscriber descriptions for a subscriber account. The description for a subscriber includes <code>subscriberName</code>, <code>accountID</code>, <code>externalID</code>, and <code>subscriberId</code>.</p>
     pub fn subscriber_description(
         mut self,
@@ -222,6 +238,10 @@ impl SubscriberResourceBuilder {
     ) -> Self {
         self.subscriber_description = input;
         self
+    }
+    /// <p>The subscriber descriptions for a subscriber account. The description for a subscriber includes <code>subscriberName</code>, <code>accountID</code>, <code>externalID</code>, and <code>subscriberId</code>.</p>
+    pub fn get_subscriber_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subscriber_description
     }
     /// Appends an item to `sources`.
     ///
@@ -241,6 +261,12 @@ impl SubscriberResourceBuilder {
     ) -> Self {
         self.sources = input;
         self
+    }
+    /// <p>Amazon Security Lake supports log and event collection for natively supported Amazon Web Services. For more information, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/source-management.html">Amazon Security Lake User Guide</a>.</p>
+    pub fn get_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>> {
+        &self.sources
     }
     /// Appends an item to `access_types`.
     ///
@@ -263,6 +289,13 @@ impl SubscriberResourceBuilder {
         self.access_types = input;
         self
     }
+    /// <p>You can choose to notify subscribers of new objects with an Amazon Simple Queue Service (Amazon SQS) queue or through messaging to an HTTPS endpoint provided by the subscriber.</p>
+    /// <p> Subscribers can consume data by directly querying Lake Formation tables in your Amazon S3 bucket through services like Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>.</p>
+    pub fn get_access_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessType>> {
+        &self.access_types
+    }
     /// <p>The Amazon Resource Name (ARN) specifying the role of the subscriber.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -272,6 +305,10 @@ impl SubscriberResourceBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) specifying the role of the subscriber.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The ARN for the Amazon S3 bucket.</p>
     pub fn s3_bucket_arn(
@@ -289,6 +326,10 @@ impl SubscriberResourceBuilder {
         self.s3_bucket_arn = input;
         self
     }
+    /// <p>The ARN for the Amazon S3 bucket.</p>
+    pub fn get_s3_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket_arn
+    }
     /// <p>The subscriber endpoint to which exception messages are posted.</p>
     pub fn subscriber_endpoint(
         mut self,
@@ -305,6 +346,10 @@ impl SubscriberResourceBuilder {
         self.subscriber_endpoint = input;
         self
     }
+    /// <p>The subscriber endpoint to which exception messages are posted.</p>
+    pub fn get_subscriber_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subscriber_endpoint
+    }
     /// <p>The subscriber status of the Amazon Security Lake subscriber account.</p>
     pub fn subscriber_status(mut self, input: crate::types::SubscriberStatus) -> Self {
         self.subscriber_status = ::std::option::Option::Some(input);
@@ -317,6 +362,10 @@ impl SubscriberResourceBuilder {
     ) -> Self {
         self.subscriber_status = input;
         self
+    }
+    /// <p>The subscriber status of the Amazon Security Lake subscriber account.</p>
+    pub fn get_subscriber_status(&self) -> &::std::option::Option<crate::types::SubscriberStatus> {
+        &self.subscriber_status
     }
     /// <p>The Amazon Resource Name (ARN) which uniquely defines the AWS RAM resource share. Before accepting the RAM resource share invitation, you can view details related to the RAM resource share.</p>
     /// <p>This field is available only for Lake Formation subscribers created after March 8, 2023.</p>
@@ -336,6 +385,11 @@ impl SubscriberResourceBuilder {
         self.resource_share_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) which uniquely defines the AWS RAM resource share. Before accepting the RAM resource share invitation, you can view details related to the RAM resource share.</p>
+    /// <p>This field is available only for Lake Formation subscribers created after March 8, 2023.</p>
+    pub fn get_resource_share_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_share_arn
+    }
     /// <p>The name of the resource share.</p>
     pub fn resource_share_name(
         mut self,
@@ -352,6 +406,10 @@ impl SubscriberResourceBuilder {
         self.resource_share_name = input;
         self
     }
+    /// <p>The name of the resource share.</p>
+    pub fn get_resource_share_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_share_name
+    }
     /// <p>The date and time when the subscriber was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -365,6 +423,10 @@ impl SubscriberResourceBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The date and time when the subscriber was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The date and time when the subscriber was last updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
@@ -377,6 +439,10 @@ impl SubscriberResourceBuilder {
     ) -> Self {
         self.updated_at = input;
         self
+    }
+    /// <p>The date and time when the subscriber was last updated.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     /// Consumes the builder and constructs a [`SubscriberResource`](crate::types::SubscriberResource).
     pub fn build(self) -> crate::types::SubscriberResource {

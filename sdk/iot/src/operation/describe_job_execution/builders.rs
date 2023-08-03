@@ -37,6 +37,12 @@ impl DescribeJobExecutionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeJobExecution as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_job_execution::builders::DescribeJobExecutionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl DescribeJobExecutionFluentBuilder {
         self.inner = self.inner.set_job_id(input);
         self
     }
+    /// <p>The unique identifier you assigned to this job when it was created.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_id()
+    }
     /// <p>The name of the thing on which the job execution is running.</p>
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.thing_name(input.into());
@@ -137,6 +147,10 @@ impl DescribeJobExecutionFluentBuilder {
         self.inner = self.inner.set_thing_name(input);
         self
     }
+    /// <p>The name of the thing on which the job execution is running.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_thing_name()
+    }
     /// <p>A string (consisting of the digits "0" through "9" which is used to specify a particular job execution on a particular device.</p>
     pub fn execution_number(mut self, input: i64) -> Self {
         self.inner = self.inner.execution_number(input);
@@ -146,5 +160,9 @@ impl DescribeJobExecutionFluentBuilder {
     pub fn set_execution_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_execution_number(input);
         self
+    }
+    /// <p>A string (consisting of the digits "0" through "9" which is used to specify a particular job execution on a particular device.</p>
+    pub fn get_execution_number(&self) -> &::std::option::Option<i64> {
+        self.inner.get_execution_number()
     }
 }

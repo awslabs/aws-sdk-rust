@@ -46,6 +46,10 @@ impl GetContainerPolicyInputBuilder {
         self.container_name = input;
         self
     }
+    /// <p>The name of the container. </p>
+    pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.container_name
+    }
     /// Consumes the builder and constructs a [`GetContainerPolicyInput`](crate::operation::get_container_policy::GetContainerPolicyInput).
     pub fn build(
         self,

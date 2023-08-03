@@ -46,6 +46,10 @@ impl DeleteDatasetGroupInputBuilder {
         self.dataset_group_arn = input;
         self
     }
+    /// <p>The ARN of the dataset group to delete.</p>
+    pub fn get_dataset_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_group_arn
+    }
     /// Consumes the builder and constructs a [`DeleteDatasetGroupInput`](crate::operation::delete_dataset_group::DeleteDatasetGroupInput).
     pub fn build(
         self,

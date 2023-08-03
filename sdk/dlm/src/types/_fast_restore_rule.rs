@@ -66,6 +66,10 @@ impl FastRestoreRuleBuilder {
         self.count = input;
         self
     }
+    /// <p>The number of snapshots to be enabled with fast snapshot restore.</p>
+    pub fn get_count(&self) -> &::std::option::Option<i32> {
+        &self.count
+    }
     /// <p>The amount of time to enable fast snapshot restore. The maximum is 100 years. This is equivalent to 1200 months, 5200 weeks, or 36500 days.</p>
     pub fn interval(mut self, input: i32) -> Self {
         self.interval = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl FastRestoreRuleBuilder {
     pub fn set_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.interval = input;
         self
+    }
+    /// <p>The amount of time to enable fast snapshot restore. The maximum is 100 years. This is equivalent to 1200 months, 5200 weeks, or 36500 days.</p>
+    pub fn get_interval(&self) -> &::std::option::Option<i32> {
+        &self.interval
     }
     /// <p>The unit of time for enabling fast snapshot restore.</p>
     pub fn interval_unit(mut self, input: crate::types::RetentionIntervalUnitValues) -> Self {
@@ -88,6 +96,12 @@ impl FastRestoreRuleBuilder {
     ) -> Self {
         self.interval_unit = input;
         self
+    }
+    /// <p>The unit of time for enabling fast snapshot restore.</p>
+    pub fn get_interval_unit(
+        &self,
+    ) -> &::std::option::Option<crate::types::RetentionIntervalUnitValues> {
+        &self.interval_unit
     }
     /// Appends an item to `availability_zones`.
     ///
@@ -110,6 +124,12 @@ impl FastRestoreRuleBuilder {
     ) -> Self {
         self.availability_zones = input;
         self
+    }
+    /// <p>The Availability Zones in which to enable fast snapshot restore.</p>
+    pub fn get_availability_zones(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.availability_zones
     }
     /// Consumes the builder and constructs a [`FastRestoreRule`](crate::types::FastRestoreRule).
     pub fn build(self) -> crate::types::FastRestoreRule {

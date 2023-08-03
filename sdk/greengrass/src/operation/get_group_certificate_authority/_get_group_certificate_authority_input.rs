@@ -53,6 +53,10 @@ impl GetGroupCertificateAuthorityInputBuilder {
         self.certificate_authority_id = input;
         self
     }
+    /// The ID of the certificate authority.
+    pub fn get_certificate_authority_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_authority_id
+    }
     /// The ID of the Greengrass group.
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl GetGroupCertificateAuthorityInputBuilder {
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_id = input;
         self
+    }
+    /// The ID of the Greengrass group.
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
     }
     /// Consumes the builder and constructs a [`GetGroupCertificateAuthorityInput`](crate::operation::get_group_certificate_authority::GetGroupCertificateAuthorityInput).
     pub fn build(

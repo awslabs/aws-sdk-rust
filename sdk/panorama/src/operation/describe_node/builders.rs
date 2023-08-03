@@ -36,6 +36,10 @@ impl DescribeNodeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeNode as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_node::builders::DescribeNodeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl DescribeNodeFluentBuilder {
         self.inner = self.inner.set_node_id(input);
         self
     }
+    /// <p>The node's ID.</p>
+    pub fn get_node_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_node_id()
+    }
     /// <p>The account ID of the node's owner.</p>
     pub fn owner_account(
         mut self,
@@ -133,5 +141,9 @@ impl DescribeNodeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_owner_account(input);
         self
+    }
+    /// <p>The account ID of the node's owner.</p>
+    pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_owner_account()
     }
 }

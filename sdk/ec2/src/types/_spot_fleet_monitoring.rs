@@ -44,6 +44,11 @@ impl SpotFleetMonitoringBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Enables monitoring for the instance.</p>
+    /// <p>Default: <code>false</code> </p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// Consumes the builder and constructs a [`SpotFleetMonitoring`](crate::types::SpotFleetMonitoring).
     pub fn build(self) -> crate::types::SpotFleetMonitoring {
         crate::types::SpotFleetMonitoring {

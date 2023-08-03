@@ -144,6 +144,10 @@ impl ListAggregatedUtterancesOutputBuilder {
         self.bot_id = input;
         self
     }
+    /// <p>The identifier of the bot that contains the utterances.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
+    }
     /// <p>The identifier of the bot alias that contains the utterances. If you specified the bot version, the bot alias ID isn't returned.</p>
     pub fn bot_alias_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_alias_id = ::std::option::Option::Some(input.into());
@@ -153,6 +157,10 @@ impl ListAggregatedUtterancesOutputBuilder {
     pub fn set_bot_alias_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_alias_id = input;
         self
+    }
+    /// <p>The identifier of the bot alias that contains the utterances. If you specified the bot version, the bot alias ID isn't returned.</p>
+    pub fn get_bot_alias_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_alias_id
     }
     /// <p>The identifier of the bot version that contains the utterances. If you specified the bot alias, the bot version isn't returned.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -164,6 +172,10 @@ impl ListAggregatedUtterancesOutputBuilder {
         self.bot_version = input;
         self
     }
+    /// <p>The identifier of the bot version that contains the utterances. If you specified the bot alias, the bot version isn't returned.</p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_version
+    }
     /// <p>The identifier of the language and locale that the utterances are in.</p>
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
@@ -173,6 +185,10 @@ impl ListAggregatedUtterancesOutputBuilder {
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.locale_id = input;
         self
+    }
+    /// <p>The identifier of the language and locale that the utterances are in.</p>
+    pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale_id
     }
     /// <p>The time period used to aggregate the utterance data.</p>
     pub fn aggregation_duration(
@@ -190,6 +206,12 @@ impl ListAggregatedUtterancesOutputBuilder {
         self.aggregation_duration = input;
         self
     }
+    /// <p>The time period used to aggregate the utterance data.</p>
+    pub fn get_aggregation_duration(
+        &self,
+    ) -> &::std::option::Option<crate::types::UtteranceAggregationDuration> {
+        &self.aggregation_duration
+    }
     /// <p>The date and time that the aggregation window begins. Only data collected after this time is returned in the results.</p>
     pub fn aggregation_window_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.aggregation_window_start_time = ::std::option::Option::Some(input);
@@ -203,6 +225,12 @@ impl ListAggregatedUtterancesOutputBuilder {
         self.aggregation_window_start_time = input;
         self
     }
+    /// <p>The date and time that the aggregation window begins. Only data collected after this time is returned in the results.</p>
+    pub fn get_aggregation_window_start_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.aggregation_window_start_time
+    }
     /// <p>The date and time that the aggregation window ends. Only data collected between the start time and the end time are returned in the results. </p>
     pub fn aggregation_window_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.aggregation_window_end_time = ::std::option::Option::Some(input);
@@ -215,6 +243,12 @@ impl ListAggregatedUtterancesOutputBuilder {
     ) -> Self {
         self.aggregation_window_end_time = input;
         self
+    }
+    /// <p>The date and time that the aggregation window ends. Only data collected between the start time and the end time are returned in the results. </p>
+    pub fn get_aggregation_window_end_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.aggregation_window_end_time
     }
     /// <p>The last date and time that the aggregated data was collected. The time period depends on the length of the aggregation window.</p>
     /// <ul>
@@ -242,6 +276,17 @@ impl ListAggregatedUtterancesOutputBuilder {
         self.aggregation_last_refreshed_date_time = input;
         self
     }
+    /// <p>The last date and time that the aggregated data was collected. The time period depends on the length of the aggregation window.</p>
+    /// <ul>
+    /// <li> <p> <b>Hours</b> - for 1 hour time window, every half hour; otherwise every hour.</p> </li>
+    /// <li> <p> <b>Days</b> - every 6 hours</p> </li>
+    /// <li> <p> <b>Weeks</b> - for a one week time window, every 12 hours; otherwise, every day</p> </li>
+    /// </ul>
+    pub fn get_aggregation_last_refreshed_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.aggregation_last_refreshed_date_time
+    }
     /// Appends an item to `aggregated_utterances_summaries`.
     ///
     /// To override the contents of this collection use [`set_aggregated_utterances_summaries`](Self::set_aggregated_utterances_summaries).
@@ -264,6 +309,12 @@ impl ListAggregatedUtterancesOutputBuilder {
         self.aggregated_utterances_summaries = input;
         self
     }
+    /// <p>Summaries of the aggregated utterance data. Each response contains information about the number of times that the utterance was seen during the time period, whether it was detected or missed, and when it was seen during the time period.</p>
+    pub fn get_aggregated_utterances_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregatedUtterancesSummary>> {
+        &self.aggregated_utterances_summaries
+    }
     /// <p>A token that indicates whether there are more results to return in a response to the <code>ListAggregatedUtterances</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListAggregatedUtterances</code> operation request to get the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -273,6 +324,10 @@ impl ListAggregatedUtterancesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token that indicates whether there are more results to return in a response to the <code>ListAggregatedUtterances</code> operation. If the <code>nextToken</code> field is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListAggregatedUtterances</code> operation request to get the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -69,6 +69,10 @@ impl SqlApplicationConfigurationBuilder {
         self.inputs = input;
         self
     }
+    /// <p>The array of <code>Input</code> objects describing the input streams used by the application.</p>
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Input>> {
+        &self.inputs
+    }
     /// Appends an item to `outputs`.
     ///
     /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
@@ -88,6 +92,10 @@ impl SqlApplicationConfigurationBuilder {
         self.outputs = input;
         self
     }
+    /// <p>The array of <code>Output</code> objects describing the destination streams used by the application.</p>
+    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Output>> {
+        &self.outputs
+    }
     /// Appends an item to `reference_data_sources`.
     ///
     /// To override the contents of this collection use [`set_reference_data_sources`](Self::set_reference_data_sources).
@@ -106,6 +114,12 @@ impl SqlApplicationConfigurationBuilder {
     ) -> Self {
         self.reference_data_sources = input;
         self
+    }
+    /// <p>The array of <code>ReferenceDataSource</code> objects describing the reference data sources used by the application.</p>
+    pub fn get_reference_data_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReferenceDataSource>> {
+        &self.reference_data_sources
     }
     /// Consumes the builder and constructs a [`SqlApplicationConfiguration`](crate::types::SqlApplicationConfiguration).
     pub fn build(self) -> crate::types::SqlApplicationConfiguration {

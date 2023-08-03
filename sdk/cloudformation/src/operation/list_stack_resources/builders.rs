@@ -37,6 +37,12 @@ impl ListStackResourcesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListStackResources as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_stack_resources::builders::ListStackResourcesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -148,6 +154,15 @@ impl ListStackResourcesFluentBuilder {
         self.inner = self.inner.set_stack_name(input);
         self
     }
+    /// <p>The name or the unique stack ID that is associated with the stack, which aren't always interchangeable:</p>
+    /// <ul>
+    /// <li> <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p> </li>
+    /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li>
+    /// </ul>
+    /// <p>Default: There is no default value.</p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stack_name()
+    }
     /// <p>A string that identifies the next page of stack resources that you want to retrieve.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -157,5 +172,9 @@ impl ListStackResourcesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>A string that identifies the next page of stack resources that you want to retrieve.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

@@ -36,6 +36,10 @@ impl DescribeAutoScalingNotificationTypesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeAutoScalingNotificationTypes as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_auto_scaling_notification_types::builders::DescribeAutoScalingNotificationTypesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<

@@ -104,6 +104,13 @@ impl MediaLiveConnectorPipelineBuilder {
         self.sources = input;
         self
     }
+    /// <p>The connector pipeline's data sources.</p>
+    pub fn get_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LiveConnectorSourceConfiguration>>
+    {
+        &self.sources
+    }
     /// Appends an item to `sinks`.
     ///
     /// To override the contents of this collection use [`set_sinks`](Self::set_sinks).
@@ -123,6 +130,12 @@ impl MediaLiveConnectorPipelineBuilder {
         self.sinks = input;
         self
     }
+    /// <p>The connector pipeline's data sinks.</p>
+    pub fn get_sinks(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LiveConnectorSinkConfiguration>> {
+        &self.sinks
+    }
     /// <p>The connector pipeline's ID.</p>
     pub fn media_pipeline_id(
         mut self,
@@ -138,6 +151,10 @@ impl MediaLiveConnectorPipelineBuilder {
     ) -> Self {
         self.media_pipeline_id = input;
         self
+    }
+    /// <p>The connector pipeline's ID.</p>
+    pub fn get_media_pipeline_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.media_pipeline_id
     }
     /// <p>The connector pipeline's ARN.</p>
     pub fn media_pipeline_arn(
@@ -155,6 +172,10 @@ impl MediaLiveConnectorPipelineBuilder {
         self.media_pipeline_arn = input;
         self
     }
+    /// <p>The connector pipeline's ARN.</p>
+    pub fn get_media_pipeline_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.media_pipeline_arn
+    }
     /// <p>The connector pipeline's status.</p>
     pub fn status(mut self, input: crate::types::MediaPipelineStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -167,6 +188,10 @@ impl MediaLiveConnectorPipelineBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The connector pipeline's status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::MediaPipelineStatus> {
+        &self.status
     }
     /// <p>The time at which the connector pipeline was created.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -181,6 +206,10 @@ impl MediaLiveConnectorPipelineBuilder {
         self.created_timestamp = input;
         self
     }
+    /// <p>The time at which the connector pipeline was created.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
+    }
     /// <p>The time at which the connector pipeline was last updated.</p>
     pub fn updated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_timestamp = ::std::option::Option::Some(input);
@@ -193,6 +222,10 @@ impl MediaLiveConnectorPipelineBuilder {
     ) -> Self {
         self.updated_timestamp = input;
         self
+    }
+    /// <p>The time at which the connector pipeline was last updated.</p>
+    pub fn get_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_timestamp
     }
     /// Consumes the builder and constructs a [`MediaLiveConnectorPipeline`](crate::types::MediaLiveConnectorPipeline).
     pub fn build(self) -> crate::types::MediaLiveConnectorPipeline {

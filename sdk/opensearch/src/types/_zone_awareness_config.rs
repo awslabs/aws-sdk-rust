@@ -40,6 +40,10 @@ impl ZoneAwarenessConfigBuilder {
         self.availability_zone_count = input;
         self
     }
+    /// <p>If you enabled multiple Availability Zones, this value is the number of zones that you want the domain to use. Valid values are <code>2</code> and <code>3</code>. If your domain is provisioned within a VPC, this value be equal to number of subnets.</p>
+    pub fn get_availability_zone_count(&self) -> &::std::option::Option<i32> {
+        &self.availability_zone_count
+    }
     /// Consumes the builder and constructs a [`ZoneAwarenessConfig`](crate::types::ZoneAwarenessConfig).
     pub fn build(self) -> crate::types::ZoneAwarenessConfig {
         crate::types::ZoneAwarenessConfig {

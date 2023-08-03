@@ -47,6 +47,10 @@ impl DeleteKxEnvironmentInputBuilder {
         self.environment_id = input;
         self
     }
+    /// <p>A unique identifier for the kdb environment.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
+    }
     /// Consumes the builder and constructs a [`DeleteKxEnvironmentInput`](crate::operation::delete_kx_environment::DeleteKxEnvironmentInput).
     pub fn build(
         self,

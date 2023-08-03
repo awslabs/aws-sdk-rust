@@ -59,6 +59,12 @@ impl EgressConfigurationBuilder {
         self.egress_type = input;
         self
     }
+    /// <p>The type of egress configuration.</p>
+    /// <p>Set to <code>DEFAULT</code> for access to resources hosted on public networks.</p>
+    /// <p>Set to <code>VPC</code> to associate your service to a custom VPC specified by <code>VpcConnectorArn</code>.</p>
+    pub fn get_egress_type(&self) -> &::std::option::Option<crate::types::EgressType> {
+        &self.egress_type
+    }
     /// <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want to associate with your App Runner service. Only valid when <code>EgressType = VPC</code>.</p>
     pub fn vpc_connector_arn(
         mut self,
@@ -74,6 +80,10 @@ impl EgressConfigurationBuilder {
     ) -> Self {
         self.vpc_connector_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want to associate with your App Runner service. Only valid when <code>EgressType = VPC</code>.</p>
+    pub fn get_vpc_connector_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_connector_arn
     }
     /// Consumes the builder and constructs a [`EgressConfiguration`](crate::types::EgressConfiguration).
     pub fn build(self) -> crate::types::EgressConfiguration {

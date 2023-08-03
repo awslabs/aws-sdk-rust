@@ -62,6 +62,10 @@ impl PendingModifiedRelationalDatabaseValuesBuilder {
         self.master_user_password = input;
         self
     }
+    /// <p>The password for the master user of the database.</p>
+    pub fn get_master_user_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.master_user_password
+    }
     /// <p>The database engine version.</p>
     pub fn engine_version(
         mut self,
@@ -78,6 +82,10 @@ impl PendingModifiedRelationalDatabaseValuesBuilder {
         self.engine_version = input;
         self
     }
+    /// <p>The database engine version.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
+    }
     /// <p>A Boolean value indicating whether automated backup retention is enabled.</p>
     pub fn backup_retention_enabled(mut self, input: bool) -> Self {
         self.backup_retention_enabled = ::std::option::Option::Some(input);
@@ -87,6 +95,10 @@ impl PendingModifiedRelationalDatabaseValuesBuilder {
     pub fn set_backup_retention_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.backup_retention_enabled = input;
         self
+    }
+    /// <p>A Boolean value indicating whether automated backup retention is enabled.</p>
+    pub fn get_backup_retention_enabled(&self) -> &::std::option::Option<bool> {
+        &self.backup_retention_enabled
     }
     /// Consumes the builder and constructs a [`PendingModifiedRelationalDatabaseValues`](crate::types::PendingModifiedRelationalDatabaseValues).
     pub fn build(self) -> crate::types::PendingModifiedRelationalDatabaseValues {

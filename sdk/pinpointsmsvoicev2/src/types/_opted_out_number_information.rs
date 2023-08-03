@@ -62,6 +62,10 @@ impl OptedOutNumberInformationBuilder {
         self.opted_out_number = input;
         self
     }
+    /// <p>The phone number that is opted out.</p>
+    pub fn get_opted_out_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.opted_out_number
+    }
     /// <p>The time that the op tout occurred, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn opted_out_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.opted_out_timestamp = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl OptedOutNumberInformationBuilder {
         self.opted_out_timestamp = input;
         self
     }
+    /// <p>The time that the op tout occurred, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+    pub fn get_opted_out_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.opted_out_timestamp
+    }
     /// <p>This is set to true if it was the end recipient that opted out.</p>
     pub fn end_user_opted_out(mut self, input: bool) -> Self {
         self.end_user_opted_out = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl OptedOutNumberInformationBuilder {
     pub fn set_end_user_opted_out(mut self, input: ::std::option::Option<bool>) -> Self {
         self.end_user_opted_out = input;
         self
+    }
+    /// <p>This is set to true if it was the end recipient that opted out.</p>
+    pub fn get_end_user_opted_out(&self) -> &::std::option::Option<bool> {
+        &self.end_user_opted_out
     }
     /// Consumes the builder and constructs a [`OptedOutNumberInformation`](crate::types::OptedOutNumberInformation).
     pub fn build(self) -> crate::types::OptedOutNumberInformation {

@@ -53,6 +53,12 @@ impl BatchGetSecurityControlsInputBuilder {
         self.security_control_ids = input;
         self
     }
+    /// <p> A list of security controls (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters). The security control ID or Amazon Resource Name (ARN) is the same across standards. </p>
+    pub fn get_security_control_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_control_ids
+    }
     /// Consumes the builder and constructs a [`BatchGetSecurityControlsInput`](crate::operation::batch_get_security_controls::BatchGetSecurityControlsInput).
     pub fn build(
         self,

@@ -59,6 +59,12 @@ impl CreateMembersOutputBuilder {
         self.unprocessed_accounts = input;
         self
     }
+    /// <p>A list of objects that include the <code>accountIds</code> of the unprocessed accounts and a result string that explains why each was unprocessed.</p>
+    pub fn get_unprocessed_accounts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>> {
+        &self.unprocessed_accounts
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

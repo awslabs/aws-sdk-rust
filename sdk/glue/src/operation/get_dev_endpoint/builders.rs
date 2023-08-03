@@ -38,6 +38,12 @@ impl GetDevEndpointFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetDevEndpoint as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_dev_endpoint::builders::GetDevEndpointInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,5 +139,9 @@ impl GetDevEndpointFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_endpoint_name(input);
         self
+    }
+    /// <p>Name of the <code>DevEndpoint</code> to retrieve information for.</p>
+    pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_endpoint_name()
     }
 }

@@ -64,6 +64,10 @@ impl BatchFailedResultModelBuilder {
         self.arn = input;
         self
     }
+    /// ARN of the resource
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Error code for the failed operation
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl BatchFailedResultModelBuilder {
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code = input;
         self
+    }
+    /// Error code for the failed operation
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
     }
     /// ID of the resource
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,6 +92,10 @@ impl BatchFailedResultModelBuilder {
         self.id = input;
         self
     }
+    /// ID of the resource
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Error message for the failed operation
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -93,6 +105,10 @@ impl BatchFailedResultModelBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// Error message for the failed operation
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`BatchFailedResultModel`](crate::types::BatchFailedResultModel).
     pub fn build(self) -> crate::types::BatchFailedResultModel {

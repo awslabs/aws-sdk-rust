@@ -55,6 +55,10 @@ impl StartSigningJobOutputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The ID of your signing job.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>The AWS account ID of the signing job owner.</p>
     pub fn job_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_owner = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl StartSigningJobOutputBuilder {
     pub fn set_job_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_owner = input;
         self
+    }
+    /// <p>The AWS account ID of the signing job owner.</p>
+    pub fn get_job_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_owner
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -37,6 +37,10 @@ impl DisassociateFileSystemAliasesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociateFileSystemAliases as a reference.
+    pub fn as_input(&self) -> &crate::operation::disassociate_file_system_aliases::builders::DisassociateFileSystemAliasesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,10 @@ impl DisassociateFileSystemAliasesFluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
+    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
+    }
     /// <p>Specifies the file system from which to disassociate the DNS aliases.</p>
     pub fn file_system_id(
         mut self,
@@ -148,6 +156,10 @@ impl DisassociateFileSystemAliasesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_file_system_id(input);
         self
+    }
+    /// <p>Specifies the file system from which to disassociate the DNS aliases.</p>
+    pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_file_system_id()
     }
     /// Appends an item to `Aliases`.
     ///
@@ -165,5 +177,9 @@ impl DisassociateFileSystemAliasesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_aliases(input);
         self
+    }
+    /// <p>An array of one or more DNS alias names to disassociate, or remove, from the file system.</p>
+    pub fn get_aliases(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_aliases()
     }
 }

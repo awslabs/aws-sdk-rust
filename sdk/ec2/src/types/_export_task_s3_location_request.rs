@@ -48,6 +48,10 @@ impl ExportTaskS3LocationRequestBuilder {
         self.s3_bucket = input;
         self
     }
+    /// <p>The destination Amazon S3 bucket.</p>
+    pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket
+    }
     /// <p>The prefix (logical hierarchy) in the bucket.</p>
     pub fn s3_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_prefix = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl ExportTaskS3LocationRequestBuilder {
     pub fn set_s3_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_prefix = input;
         self
+    }
+    /// <p>The prefix (logical hierarchy) in the bucket.</p>
+    pub fn get_s3_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_prefix
     }
     /// Consumes the builder and constructs a [`ExportTaskS3LocationRequest`](crate::types::ExportTaskS3LocationRequest).
     pub fn build(self) -> crate::types::ExportTaskS3LocationRequest {

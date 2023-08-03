@@ -88,6 +88,11 @@ impl WebAclBuilder {
         self.web_acl_id = input;
         self
     }
+    /// <p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code> to get information about a <code>WebACL</code> (see <code>GetWebACL</code>), update a <code>WebACL</code> (see <code>UpdateWebACL</code>), and delete a <code>WebACL</code> from AWS WAF (see <code>DeleteWebACL</code>).</p>
+    /// <p> <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
+    pub fn get_web_acl_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.web_acl_id
+    }
     /// <p>A friendly name or description of the <code>WebACL</code>. You can't change the name of a <code>WebACL</code> after you create it.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -98,6 +103,10 @@ impl WebAclBuilder {
         self.name = input;
         self
     }
+    /// <p>A friendly name or description of the <code>WebACL</code>. You can't change the name of a <code>WebACL</code> after you create it.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A friendly name or description for the metrics for this <code>WebACL</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change <code>MetricName</code> after you create the <code>WebACL</code>.</p>
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_name = ::std::option::Option::Some(input.into());
@@ -107,6 +116,10 @@ impl WebAclBuilder {
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_name = input;
         self
+    }
+    /// <p>A friendly name or description for the metrics for this <code>WebACL</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change <code>MetricName</code> after you create the <code>WebACL</code>.</p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_name
     }
     /// <p>The action to perform if none of the <code>Rules</code> contained in the <code>WebACL</code> match. The action is specified by the <code>WafAction</code> object.</p>
     pub fn default_action(mut self, input: crate::types::WafAction) -> Self {
@@ -120,6 +133,10 @@ impl WebAclBuilder {
     ) -> Self {
         self.default_action = input;
         self
+    }
+    /// <p>The action to perform if none of the <code>Rules</code> contained in the <code>WebACL</code> match. The action is specified by the <code>WafAction</code> object.</p>
+    pub fn get_default_action(&self) -> &::std::option::Option<crate::types::WafAction> {
+        &self.default_action
     }
     /// Appends an item to `rules`.
     ///
@@ -140,6 +157,12 @@ impl WebAclBuilder {
         self.rules = input;
         self
     }
+    /// <p>An array that contains the action for each <code>Rule</code> in a <code>WebACL</code>, the priority of the <code>Rule</code>, and the ID of the <code>Rule</code>.</p>
+    pub fn get_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ActivatedRule>> {
+        &self.rules
+    }
     /// <p>Tha Amazon Resource Name (ARN) of the web ACL.</p>
     pub fn web_acl_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.web_acl_arn = ::std::option::Option::Some(input.into());
@@ -149,6 +172,10 @@ impl WebAclBuilder {
     pub fn set_web_acl_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.web_acl_arn = input;
         self
+    }
+    /// <p>Tha Amazon Resource Name (ARN) of the web ACL.</p>
+    pub fn get_web_acl_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.web_acl_arn
     }
     /// Consumes the builder and constructs a [`WebAcl`](crate::types::WebAcl).
     pub fn build(self) -> crate::types::WebAcl {

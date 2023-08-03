@@ -72,6 +72,10 @@ impl ExperiencesSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of your Amazon Kendra experience.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The identifier of your Amazon Kendra experience.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl ExperiencesSummaryBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The identifier of your Amazon Kendra experience.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The Unix timestamp when your Amazon Kendra experience was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -95,6 +103,10 @@ impl ExperiencesSummaryBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The Unix timestamp when your Amazon Kendra experience was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The processing status of your Amazon Kendra experience.</p>
     pub fn status(mut self, input: crate::types::ExperienceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -107,6 +119,10 @@ impl ExperiencesSummaryBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The processing status of your Amazon Kendra experience.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ExperienceStatus> {
+        &self.status
     }
     /// Appends an item to `endpoints`.
     ///
@@ -126,6 +142,12 @@ impl ExperiencesSummaryBuilder {
     ) -> Self {
         self.endpoints = input;
         self
+    }
+    /// <p>The endpoint URLs for your Amazon Kendra experiences. The URLs are unique and fully hosted by Amazon Web Services.</p>
+    pub fn get_endpoints(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExperienceEndpoint>> {
+        &self.endpoints
     }
     /// Consumes the builder and constructs a [`ExperiencesSummary`](crate::types::ExperiencesSummary).
     pub fn build(self) -> crate::types::ExperiencesSummary {

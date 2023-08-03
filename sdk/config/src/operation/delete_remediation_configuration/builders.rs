@@ -36,6 +36,10 @@ impl DeleteRemediationConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteRemediationConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_remediation_configuration::builders::DeleteRemediationConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl DeleteRemediationConfigurationFluentBuilder {
         self.inner = self.inner.set_config_rule_name(input);
         self
     }
+    /// <p>The name of the Config rule for which you want to delete remediation configuration.</p>
+    pub fn get_config_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_config_rule_name()
+    }
     /// <p>The type of a resource.</p>
     pub fn resource_type(
         mut self,
@@ -147,5 +155,9 @@ impl DeleteRemediationConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
+    }
+    /// <p>The type of a resource.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_type()
     }
 }

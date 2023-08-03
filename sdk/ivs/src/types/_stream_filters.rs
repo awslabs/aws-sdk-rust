@@ -40,6 +40,10 @@ impl StreamFiltersBuilder {
         self.health = input;
         self
     }
+    /// <p>The stream’s health.</p>
+    pub fn get_health(&self) -> &::std::option::Option<crate::types::StreamHealth> {
+        &self.health
+    }
     /// Consumes the builder and constructs a [`StreamFilters`](crate::types::StreamFilters).
     pub fn build(self) -> crate::types::StreamFilters {
         crate::types::StreamFilters {

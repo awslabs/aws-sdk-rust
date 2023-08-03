@@ -84,6 +84,10 @@ impl CreateGuiSessionAccessDetailsOutputBuilder {
         self.resource_name = input;
         self
     }
+    /// <p>The resource name.</p>
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_name
+    }
     /// <p>The status of the operation.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -94,6 +98,10 @@ impl CreateGuiSessionAccessDetailsOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the operation.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.status
+    }
     /// <p>The percentage of completion for the operation.</p>
     pub fn percentage_complete(mut self, input: i32) -> Self {
         self.percentage_complete = ::std::option::Option::Some(input);
@@ -103,6 +111,10 @@ impl CreateGuiSessionAccessDetailsOutputBuilder {
     pub fn set_percentage_complete(mut self, input: ::std::option::Option<i32>) -> Self {
         self.percentage_complete = input;
         self
+    }
+    /// <p>The percentage of completion for the operation.</p>
+    pub fn get_percentage_complete(&self) -> &::std::option::Option<i32> {
+        &self.percentage_complete
     }
     /// <p>The reason the operation failed.</p>
     pub fn failure_reason(
@@ -119,6 +131,10 @@ impl CreateGuiSessionAccessDetailsOutputBuilder {
     ) -> Self {
         self.failure_reason = input;
         self
+    }
+    /// <p>The reason the operation failed.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
     }
     /// Appends an item to `sessions`.
     ///
@@ -138,6 +154,10 @@ impl CreateGuiSessionAccessDetailsOutputBuilder {
     ) -> Self {
         self.sessions = input;
         self
+    }
+    /// <p>Returns information about the specified NICE DCV GUI session.</p>
+    pub fn get_sessions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Session>> {
+        &self.sessions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

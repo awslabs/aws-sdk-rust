@@ -45,6 +45,10 @@ impl GetWirelessDeviceStatisticsInputBuilder {
         self.wireless_device_id = input;
         self
     }
+    /// <p>The ID of the wireless device for which to get the data.</p>
+    pub fn get_wireless_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.wireless_device_id
+    }
     /// Consumes the builder and constructs a [`GetWirelessDeviceStatisticsInput`](crate::operation::get_wireless_device_statistics::GetWirelessDeviceStatisticsInput).
     pub fn build(
         self,

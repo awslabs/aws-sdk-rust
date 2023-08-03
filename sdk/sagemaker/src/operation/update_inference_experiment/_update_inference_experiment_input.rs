@@ -84,6 +84,10 @@ impl UpdateInferenceExperimentInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the inference experiment to be updated.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p> The duration for which the inference experiment will run. If the status of the inference experiment is <code>Created</code>, then you can update both the start and end dates. If the status of the inference experiment is <code>Running</code>, then you can update only the end date. </p>
     pub fn schedule(mut self, input: crate::types::InferenceExperimentSchedule) -> Self {
         self.schedule = ::std::option::Option::Some(input);
@@ -97,6 +101,12 @@ impl UpdateInferenceExperimentInputBuilder {
         self.schedule = input;
         self
     }
+    /// <p> The duration for which the inference experiment will run. If the status of the inference experiment is <code>Created</code>, then you can update both the start and end dates. If the status of the inference experiment is <code>Running</code>, then you can update only the end date. </p>
+    pub fn get_schedule(
+        &self,
+    ) -> &::std::option::Option<crate::types::InferenceExperimentSchedule> {
+        &self.schedule
+    }
     /// <p>The description of the inference experiment.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -106,6 +116,10 @@ impl UpdateInferenceExperimentInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the inference experiment.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `model_variants`.
     ///
@@ -126,6 +140,12 @@ impl UpdateInferenceExperimentInputBuilder {
         self.model_variants = input;
         self
     }
+    /// <p> An array of <code>ModelVariantConfig</code> objects. There is one for each variant, whose infrastructure configuration you want to update. </p>
+    pub fn get_model_variants(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelVariantConfig>> {
+        &self.model_variants
+    }
     /// <p>The Amazon S3 location and configuration for storing inference request and response data.</p>
     pub fn data_storage_config(
         mut self,
@@ -142,6 +162,12 @@ impl UpdateInferenceExperimentInputBuilder {
         self.data_storage_config = input;
         self
     }
+    /// <p>The Amazon S3 location and configuration for storing inference request and response data.</p>
+    pub fn get_data_storage_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::InferenceExperimentDataStorageConfig> {
+        &self.data_storage_config
+    }
     /// <p> The configuration of <code>ShadowMode</code> inference experiment type. Use this field to specify a production variant which takes all the inference requests, and a shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant also specify the percentage of requests that Amazon SageMaker replicates. </p>
     pub fn shadow_mode_config(mut self, input: crate::types::ShadowModeConfig) -> Self {
         self.shadow_mode_config = ::std::option::Option::Some(input);
@@ -154,6 +180,10 @@ impl UpdateInferenceExperimentInputBuilder {
     ) -> Self {
         self.shadow_mode_config = input;
         self
+    }
+    /// <p> The configuration of <code>ShadowMode</code> inference experiment type. Use this field to specify a production variant which takes all the inference requests, and a shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant also specify the percentage of requests that Amazon SageMaker replicates. </p>
+    pub fn get_shadow_mode_config(&self) -> &::std::option::Option<crate::types::ShadowModeConfig> {
+        &self.shadow_mode_config
     }
     /// Consumes the builder and constructs a [`UpdateInferenceExperimentInput`](crate::operation::update_inference_experiment::UpdateInferenceExperimentInput).
     pub fn build(

@@ -39,6 +39,10 @@ impl SendInvitationInputBuilder {
         self.user_arn = input;
         self
     }
+    /// <p>The ARN of the user to whom to send an invitation. Required.</p>
+    pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_arn
+    }
     /// Consumes the builder and constructs a [`SendInvitationInput`](crate::operation::send_invitation::SendInvitationInput).
     pub fn build(
         self,

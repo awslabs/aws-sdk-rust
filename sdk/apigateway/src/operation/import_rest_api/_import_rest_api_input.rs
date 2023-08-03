@@ -74,6 +74,10 @@ impl ImportRestApiInputBuilder {
         self.fail_on_warnings = input;
         self
     }
+    /// <p>A query parameter to indicate whether to rollback the API creation (<code>true</code>) or not (<code>false</code>) when a warning is encountered. The default value is <code>false</code>.</p>
+    pub fn get_fail_on_warnings(&self) -> &::std::option::Option<bool> {
+        &self.fail_on_warnings
+    }
     /// Adds a key-value pair to `parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
@@ -109,6 +113,19 @@ impl ImportRestApiInputBuilder {
         self.parameters = input;
         self
     }
+    /// <p>A key-value map of context-specific query string parameters specifying the behavior of different API importing operations. The following shows operation-specific parameters and their supported values.</p>
+    /// <p> To exclude DocumentationParts from the import, set <code>parameters</code> as <code>ignore=documentation</code>.</p>
+    /// <p> To configure the endpoint type, set <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>, <code>endpointConfigurationTypes=REGIONAL</code>, or <code>endpointConfigurationTypes=PRIVATE</code>. The default endpoint type is <code>EDGE</code>.</p>
+    /// <p> To handle imported <code>basepath</code>, set <code>parameters</code> as <code>basepath=ignore</code>, <code>basepath=prepend</code> or <code>basepath=split</code>.</p>
+    /// <p>For example, the AWS CLI command to exclude documentation from the imported API is:</p>
+    /// <p>The AWS CLI command to set the regional endpoint on the imported API is:</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.parameters
+    }
     /// <p>The POST request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
     pub fn body(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.body = ::std::option::Option::Some(input);
@@ -118,6 +135,10 @@ impl ImportRestApiInputBuilder {
     pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.body = input;
         self
+    }
+    /// <p>The POST request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
+    pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.body
     }
     /// Consumes the builder and constructs a [`ImportRestApiInput`](crate::operation::import_rest_api::ImportRestApiInput).
     pub fn build(

@@ -36,6 +36,13 @@ impl UpdateImagePermissionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateImagePermissions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_image_permissions::builders::UpdateImagePermissionsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl UpdateImagePermissionsFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the private image.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The 12-digit identifier of the AWS account for which you want add or update image permissions.</p>
     pub fn shared_account_id(
         mut self,
@@ -142,6 +153,10 @@ impl UpdateImagePermissionsFluentBuilder {
         self.inner = self.inner.set_shared_account_id(input);
         self
     }
+    /// <p>The 12-digit identifier of the AWS account for which you want add or update image permissions.</p>
+    pub fn get_shared_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_shared_account_id()
+    }
     /// <p>The permissions for the image.</p>
     pub fn image_permissions(mut self, input: crate::types::ImagePermissions) -> Self {
         self.inner = self.inner.image_permissions(input);
@@ -154,5 +169,9 @@ impl UpdateImagePermissionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_image_permissions(input);
         self
+    }
+    /// <p>The permissions for the image.</p>
+    pub fn get_image_permissions(&self) -> &::std::option::Option<crate::types::ImagePermissions> {
+        self.inner.get_image_permissions()
     }
 }

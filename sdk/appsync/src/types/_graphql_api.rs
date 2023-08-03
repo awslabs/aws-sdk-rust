@@ -219,6 +219,10 @@ impl GraphqlApiBuilder {
         self.name = input;
         self
     }
+    /// <p>The API name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The API ID.</p>
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
@@ -228,6 +232,10 @@ impl GraphqlApiBuilder {
     pub fn set_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_id = input;
         self
+    }
+    /// <p>The API ID.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_id
     }
     /// <p>The authentication type.</p>
     pub fn authentication_type(mut self, input: crate::types::AuthenticationType) -> Self {
@@ -242,6 +250,12 @@ impl GraphqlApiBuilder {
         self.authentication_type = input;
         self
     }
+    /// <p>The authentication type.</p>
+    pub fn get_authentication_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuthenticationType> {
+        &self.authentication_type
+    }
     /// <p>The Amazon CloudWatch Logs configuration.</p>
     pub fn log_config(mut self, input: crate::types::LogConfig) -> Self {
         self.log_config = ::std::option::Option::Some(input);
@@ -251,6 +265,10 @@ impl GraphqlApiBuilder {
     pub fn set_log_config(mut self, input: ::std::option::Option<crate::types::LogConfig>) -> Self {
         self.log_config = input;
         self
+    }
+    /// <p>The Amazon CloudWatch Logs configuration.</p>
+    pub fn get_log_config(&self) -> &::std::option::Option<crate::types::LogConfig> {
+        &self.log_config
     }
     /// <p>The Amazon Cognito user pool configuration.</p>
     pub fn user_pool_config(mut self, input: crate::types::UserPoolConfig) -> Self {
@@ -265,6 +283,10 @@ impl GraphqlApiBuilder {
         self.user_pool_config = input;
         self
     }
+    /// <p>The Amazon Cognito user pool configuration.</p>
+    pub fn get_user_pool_config(&self) -> &::std::option::Option<crate::types::UserPoolConfig> {
+        &self.user_pool_config
+    }
     /// <p>The OpenID Connect configuration.</p>
     pub fn open_id_connect_config(mut self, input: crate::types::OpenIdConnectConfig) -> Self {
         self.open_id_connect_config = ::std::option::Option::Some(input);
@@ -278,6 +300,12 @@ impl GraphqlApiBuilder {
         self.open_id_connect_config = input;
         self
     }
+    /// <p>The OpenID Connect configuration.</p>
+    pub fn get_open_id_connect_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::OpenIdConnectConfig> {
+        &self.open_id_connect_config
+    }
     /// <p>The Amazon Resource Name (ARN).</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -287,6 +315,10 @@ impl GraphqlApiBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN).</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Adds a key-value pair to `uris`.
     ///
@@ -313,6 +345,14 @@ impl GraphqlApiBuilder {
         self.uris = input;
         self
     }
+    /// <p>The URIs.</p>
+    pub fn get_uris(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.uris
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -338,6 +378,14 @@ impl GraphqlApiBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// Appends an item to `additional_authentication_providers`.
     ///
     /// To override the contents of this collection use [`set_additional_authentication_providers`](Self::set_additional_authentication_providers).
@@ -362,6 +410,13 @@ impl GraphqlApiBuilder {
         self.additional_authentication_providers = input;
         self
     }
+    /// <p>A list of additional authentication providers for the <code>GraphqlApi</code> API.</p>
+    pub fn get_additional_authentication_providers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalAuthenticationProvider>>
+    {
+        &self.additional_authentication_providers
+    }
     /// <p>A flag indicating whether to use X-Ray tracing for this <code>GraphqlApi</code>.</p>
     pub fn xray_enabled(mut self, input: bool) -> Self {
         self.xray_enabled = ::std::option::Option::Some(input);
@@ -371,6 +426,10 @@ impl GraphqlApiBuilder {
     pub fn set_xray_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.xray_enabled = input;
         self
+    }
+    /// <p>A flag indicating whether to use X-Ray tracing for this <code>GraphqlApi</code>.</p>
+    pub fn get_xray_enabled(&self) -> &::std::option::Option<bool> {
+        &self.xray_enabled
     }
     /// <p>The ARN of the WAF access control list (ACL) associated with this <code>GraphqlApi</code>, if one exists.</p>
     pub fn waf_web_acl_arn(
@@ -388,6 +447,10 @@ impl GraphqlApiBuilder {
         self.waf_web_acl_arn = input;
         self
     }
+    /// <p>The ARN of the WAF access control list (ACL) associated with this <code>GraphqlApi</code>, if one exists.</p>
+    pub fn get_waf_web_acl_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.waf_web_acl_arn
+    }
     /// <p>Configuration for Lambda function authorization.</p>
     pub fn lambda_authorizer_config(mut self, input: crate::types::LambdaAuthorizerConfig) -> Self {
         self.lambda_authorizer_config = ::std::option::Option::Some(input);
@@ -400,6 +463,12 @@ impl GraphqlApiBuilder {
     ) -> Self {
         self.lambda_authorizer_config = input;
         self
+    }
+    /// <p>Configuration for Lambda function authorization.</p>
+    pub fn get_lambda_authorizer_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::LambdaAuthorizerConfig> {
+        &self.lambda_authorizer_config
     }
     /// Adds a key-value pair to `dns`.
     ///
@@ -426,6 +495,14 @@ impl GraphqlApiBuilder {
         self.dns = input;
         self
     }
+    /// <p>The DNS records for the API.</p>
+    pub fn get_dns(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.dns
+    }
     /// <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no value is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be changed once the API has been created.</p>
     pub fn visibility(mut self, input: crate::types::GraphQlApiVisibility) -> Self {
         self.visibility = ::std::option::Option::Some(input);
@@ -439,6 +516,10 @@ impl GraphqlApiBuilder {
         self.visibility = input;
         self
     }
+    /// <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no value is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be changed once the API has been created.</p>
+    pub fn get_visibility(&self) -> &::std::option::Option<crate::types::GraphQlApiVisibility> {
+        &self.visibility
+    }
     /// <p>The value that indicates whether the GraphQL API is a standard API (<code>GRAPHQL</code>) or merged API (<code>MERGED</code>).</p>
     pub fn api_type(mut self, input: crate::types::GraphQlApiType) -> Self {
         self.api_type = ::std::option::Option::Some(input);
@@ -451,6 +532,10 @@ impl GraphqlApiBuilder {
     ) -> Self {
         self.api_type = input;
         self
+    }
+    /// <p>The value that indicates whether the GraphQL API is a standard API (<code>GRAPHQL</code>) or merged API (<code>MERGED</code>).</p>
+    pub fn get_api_type(&self) -> &::std::option::Option<crate::types::GraphQlApiType> {
+        &self.api_type
     }
     /// <p>The Identity and Access Management service role ARN for a merged API. The AppSync service assumes this role on behalf of the Merged API to validate access to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update the merged API endpoint with the source API changes automatically.</p>
     pub fn merged_api_execution_role_arn(
@@ -468,6 +553,12 @@ impl GraphqlApiBuilder {
         self.merged_api_execution_role_arn = input;
         self
     }
+    /// <p>The Identity and Access Management service role ARN for a merged API. The AppSync service assumes this role on behalf of the Merged API to validate access to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update the merged API endpoint with the source API changes automatically.</p>
+    pub fn get_merged_api_execution_role_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.merged_api_execution_role_arn
+    }
     /// <p>The account owner of the GraphQL API.</p>
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner = ::std::option::Option::Some(input.into());
@@ -477,6 +568,10 @@ impl GraphqlApiBuilder {
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner = input;
         self
+    }
+    /// <p>The account owner of the GraphQL API.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner
     }
     /// <p>The owner contact information for an API resource.</p>
     /// <p>This field accepts any string input with a length of 0 - 256 characters.</p>
@@ -495,6 +590,11 @@ impl GraphqlApiBuilder {
     ) -> Self {
         self.owner_contact = input;
         self
+    }
+    /// <p>The owner contact information for an API resource.</p>
+    /// <p>This field accepts any string input with a length of 0 - 256 characters.</p>
+    pub fn get_owner_contact(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_contact
     }
     /// Consumes the builder and constructs a [`GraphqlApi`](crate::types::GraphqlApi).
     pub fn build(self) -> crate::types::GraphqlApi {

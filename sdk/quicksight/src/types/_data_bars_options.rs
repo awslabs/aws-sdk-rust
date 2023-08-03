@@ -56,6 +56,10 @@ impl DataBarsOptionsBuilder {
         self.field_id = input;
         self
     }
+    /// <p>The field ID for the data bars options.</p>
+    pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_id
+    }
     /// <p>The color of the positive data bar.</p>
     pub fn positive_color(
         mut self,
@@ -72,6 +76,10 @@ impl DataBarsOptionsBuilder {
         self.positive_color = input;
         self
     }
+    /// <p>The color of the positive data bar.</p>
+    pub fn get_positive_color(&self) -> &::std::option::Option<::std::string::String> {
+        &self.positive_color
+    }
     /// <p>The color of the negative data bar.</p>
     pub fn negative_color(
         mut self,
@@ -87,6 +95,10 @@ impl DataBarsOptionsBuilder {
     ) -> Self {
         self.negative_color = input;
         self
+    }
+    /// <p>The color of the negative data bar.</p>
+    pub fn get_negative_color(&self) -> &::std::option::Option<::std::string::String> {
+        &self.negative_color
     }
     /// Consumes the builder and constructs a [`DataBarsOptions`](crate::types::DataBarsOptions).
     pub fn build(self) -> crate::types::DataBarsOptions {

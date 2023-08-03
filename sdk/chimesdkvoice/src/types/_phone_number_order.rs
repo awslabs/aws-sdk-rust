@@ -98,6 +98,10 @@ impl PhoneNumberOrderBuilder {
         self.phone_number_order_id = input;
         self
     }
+    /// <p>The ID of the phone order.</p>
+    pub fn get_phone_number_order_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.phone_number_order_id
+    }
     /// <p>The phone number order product type.</p>
     pub fn product_type(mut self, input: crate::types::PhoneNumberProductType) -> Self {
         self.product_type = ::std::option::Option::Some(input);
@@ -110,6 +114,10 @@ impl PhoneNumberOrderBuilder {
     ) -> Self {
         self.product_type = input;
         self
+    }
+    /// <p>The phone number order product type.</p>
+    pub fn get_product_type(&self) -> &::std::option::Option<crate::types::PhoneNumberProductType> {
+        &self.product_type
     }
     /// <p>The status of the phone number order.</p>
     pub fn status(mut self, input: crate::types::PhoneNumberOrderStatus) -> Self {
@@ -124,6 +132,10 @@ impl PhoneNumberOrderBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the phone number order.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::PhoneNumberOrderStatus> {
+        &self.status
+    }
     /// <p>The type of phone number being ordered, local or toll-free.</p>
     pub fn order_type(mut self, input: crate::types::PhoneNumberOrderType) -> Self {
         self.order_type = ::std::option::Option::Some(input);
@@ -136,6 +148,10 @@ impl PhoneNumberOrderBuilder {
     ) -> Self {
         self.order_type = input;
         self
+    }
+    /// <p>The type of phone number being ordered, local or toll-free.</p>
+    pub fn get_order_type(&self) -> &::std::option::Option<crate::types::PhoneNumberOrderType> {
+        &self.order_type
     }
     /// Appends an item to `ordered_phone_numbers`.
     ///
@@ -156,6 +172,12 @@ impl PhoneNumberOrderBuilder {
         self.ordered_phone_numbers = input;
         self
     }
+    /// <p>The ordered phone number details, such as the phone number in E.164 format and the phone number status.</p>
+    pub fn get_ordered_phone_numbers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OrderedPhoneNumber>> {
+        &self.ordered_phone_numbers
+    }
     /// <p>The phone number order creation time stamp, in ISO 8601 format.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_timestamp = ::std::option::Option::Some(input);
@@ -169,6 +191,10 @@ impl PhoneNumberOrderBuilder {
         self.created_timestamp = input;
         self
     }
+    /// <p>The phone number order creation time stamp, in ISO 8601 format.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
+    }
     /// <p>The updated phone number order time stamp, in ISO 8601 format.</p>
     pub fn updated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_timestamp = ::std::option::Option::Some(input);
@@ -181,6 +207,10 @@ impl PhoneNumberOrderBuilder {
     ) -> Self {
         self.updated_timestamp = input;
         self
+    }
+    /// <p>The updated phone number order time stamp, in ISO 8601 format.</p>
+    pub fn get_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_timestamp
     }
     /// Consumes the builder and constructs a [`PhoneNumberOrder`](crate::types::PhoneNumberOrder).
     pub fn build(self) -> crate::types::PhoneNumberOrder {

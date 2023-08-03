@@ -36,6 +36,10 @@ impl GetSessionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetSession as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_session::builders::GetSessionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl GetSessionFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The ID of the session. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The origin of the request. </p>
     pub fn request_origin(
         mut self,
@@ -133,5 +141,9 @@ impl GetSessionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_request_origin(input);
         self
+    }
+    /// <p>The origin of the request. </p>
+    pub fn get_request_origin(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_request_origin()
     }
 }

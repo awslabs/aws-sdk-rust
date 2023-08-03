@@ -46,6 +46,10 @@ impl GetLensOutputBuilder {
         self.lens = input;
         self
     }
+    /// <p>A lens return object.</p>
+    pub fn get_lens(&self) -> &::std::option::Option<crate::types::Lens> {
+        &self.lens
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

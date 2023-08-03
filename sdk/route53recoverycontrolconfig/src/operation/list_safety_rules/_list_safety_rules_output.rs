@@ -55,6 +55,10 @@ impl ListSafetyRulesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token that identifies which batch of results you want to see.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `safety_rules`.
     ///
     /// To override the contents of this collection use [`set_safety_rules`](Self::set_safety_rules).
@@ -73,6 +77,10 @@ impl ListSafetyRulesOutputBuilder {
     ) -> Self {
         self.safety_rules = input;
         self
+    }
+    /// <p>The list of safety rules in a control panel.</p>
+    pub fn get_safety_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Rule>> {
+        &self.safety_rules
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

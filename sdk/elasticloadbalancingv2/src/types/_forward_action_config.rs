@@ -62,6 +62,12 @@ impl ForwardActionConfigBuilder {
         self.target_groups = input;
         self
     }
+    /// <p>The target groups. For Network Load Balancers, you can specify a single target group.</p>
+    pub fn get_target_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetGroupTuple>> {
+        &self.target_groups
+    }
     /// <p>The target group stickiness for the rule.</p>
     pub fn target_group_stickiness_config(
         mut self,
@@ -77,6 +83,12 @@ impl ForwardActionConfigBuilder {
     ) -> Self {
         self.target_group_stickiness_config = input;
         self
+    }
+    /// <p>The target group stickiness for the rule.</p>
+    pub fn get_target_group_stickiness_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::TargetGroupStickinessConfig> {
+        &self.target_group_stickiness_config
     }
     /// Consumes the builder and constructs a [`ForwardActionConfig`](crate::types::ForwardActionConfig).
     pub fn build(self) -> crate::types::ForwardActionConfig {

@@ -36,6 +36,10 @@ impl ListLoggingConfigurationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListLoggingConfigurations as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_logging_configurations::builders::ListLoggingConfigurationsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +139,10 @@ impl ListLoggingConfigurationsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The first logging configurations to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>Maximum number of logging configurations to return. Default: 50.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -144,5 +152,9 @@ impl ListLoggingConfigurationsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>Maximum number of logging configurations to return. Default: 50.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

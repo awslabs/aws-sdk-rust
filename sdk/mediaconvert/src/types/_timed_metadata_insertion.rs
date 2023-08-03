@@ -49,6 +49,12 @@ impl TimedMetadataInsertionBuilder {
         self.id3_insertions = input;
         self
     }
+    /// Id3Insertions contains the array of Id3Insertion instances.
+    pub fn get_id3_insertions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Id3Insertion>> {
+        &self.id3_insertions
+    }
     /// Consumes the builder and constructs a [`TimedMetadataInsertion`](crate::types::TimedMetadataInsertion).
     pub fn build(self) -> crate::types::TimedMetadataInsertion {
         crate::types::TimedMetadataInsertion {

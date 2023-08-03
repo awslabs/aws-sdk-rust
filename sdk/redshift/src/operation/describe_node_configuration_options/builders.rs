@@ -36,6 +36,10 @@ impl DescribeNodeConfigurationOptionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeNodeConfigurationOptions as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_node_configuration_options::builders::DescribeNodeConfigurationOptionsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -109,6 +113,10 @@ impl DescribeNodeConfigurationOptionsFluentBuilder {
         self.inner = self.inner.set_action_type(input);
         self
     }
+    /// <p>The action type to evaluate for possible node configurations. Specify "restore-cluster" to get configuration combinations based on an existing snapshot. Specify "recommend-node-config" to get configuration recommendations based on an existing cluster or snapshot. Specify "resize-cluster" to get configuration combinations for elastic resize based on an existing cluster. </p>
+    pub fn get_action_type(&self) -> &::std::option::Option<crate::types::ActionType> {
+        self.inner.get_action_type()
+    }
     /// <p>The identifier of the cluster to evaluate for possible node configurations.</p>
     pub fn cluster_identifier(
         mut self,
@@ -124,6 +132,10 @@ impl DescribeNodeConfigurationOptionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
+    }
+    /// <p>The identifier of the cluster to evaluate for possible node configurations.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_identifier()
     }
     /// <p>The identifier of the snapshot to evaluate for possible node configurations.</p>
     pub fn snapshot_identifier(
@@ -141,6 +153,10 @@ impl DescribeNodeConfigurationOptionsFluentBuilder {
         self.inner = self.inner.set_snapshot_identifier(input);
         self
     }
+    /// <p>The identifier of the snapshot to evaluate for possible node configurations.</p>
+    pub fn get_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_snapshot_identifier()
+    }
     /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to describe node configuration.</p>
     pub fn snapshot_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_arn(input.into());
@@ -150,6 +166,10 @@ impl DescribeNodeConfigurationOptionsFluentBuilder {
     pub fn set_snapshot_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to describe node configuration.</p>
+    pub fn get_snapshot_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_snapshot_arn()
     }
     /// <p>The Amazon Web Services account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own, optional if you own the snapshot.</p>
     pub fn owner_account(
@@ -166,6 +186,10 @@ impl DescribeNodeConfigurationOptionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_owner_account(input);
         self
+    }
+    /// <p>The Amazon Web Services account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own, optional if you own the snapshot.</p>
+    pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_owner_account()
     }
     /// Appends an item to `Filters`.
     ///
@@ -184,6 +208,12 @@ impl DescribeNodeConfigurationOptionsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>A set of name, operator, and value items to filter the results.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NodeConfigurationOptionsFilter>> {
+        self.inner.get_filters()
+    }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeNodeConfigurationOptions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -193,6 +223,10 @@ impl DescribeNodeConfigurationOptionsFluentBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
+    }
+    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeNodeConfigurationOptions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
     }
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
     /// <p>Default: <code>500</code> </p>
@@ -207,5 +241,11 @@ impl DescribeNodeConfigurationOptionsFluentBuilder {
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_records(input);
         self
+    }
+    /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
+    /// <p>Default: <code>500</code> </p>
+    /// <p>Constraints: minimum 100, maximum 500.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_records()
     }
 }

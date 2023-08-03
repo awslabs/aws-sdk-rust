@@ -72,6 +72,10 @@ impl SubscribedWorkteamBuilder {
         self.workteam_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the vendor that you have subscribed.</p>
+    pub fn get_workteam_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workteam_arn
+    }
     /// <p>The title of the service provided by the vendor in the Amazon Marketplace.</p>
     pub fn marketplace_title(
         mut self,
@@ -88,6 +92,10 @@ impl SubscribedWorkteamBuilder {
         self.marketplace_title = input;
         self
     }
+    /// <p>The title of the service provided by the vendor in the Amazon Marketplace.</p>
+    pub fn get_marketplace_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marketplace_title
+    }
     /// <p>The name of the vendor in the Amazon Marketplace.</p>
     pub fn seller_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.seller_name = ::std::option::Option::Some(input.into());
@@ -97,6 +105,10 @@ impl SubscribedWorkteamBuilder {
     pub fn set_seller_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.seller_name = input;
         self
+    }
+    /// <p>The name of the vendor in the Amazon Marketplace.</p>
+    pub fn get_seller_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.seller_name
     }
     /// <p>The description of the vendor from the Amazon Marketplace.</p>
     pub fn marketplace_description(
@@ -114,6 +126,10 @@ impl SubscribedWorkteamBuilder {
         self.marketplace_description = input;
         self
     }
+    /// <p>The description of the vendor from the Amazon Marketplace.</p>
+    pub fn get_marketplace_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marketplace_description
+    }
     /// <p>Marketplace product listing ID.</p>
     pub fn listing_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.listing_id = ::std::option::Option::Some(input.into());
@@ -123,6 +139,10 @@ impl SubscribedWorkteamBuilder {
     pub fn set_listing_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.listing_id = input;
         self
+    }
+    /// <p>Marketplace product listing ID.</p>
+    pub fn get_listing_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.listing_id
     }
     /// Consumes the builder and constructs a [`SubscribedWorkteam`](crate::types::SubscribedWorkteam).
     pub fn build(self) -> crate::types::SubscribedWorkteam {

@@ -62,6 +62,10 @@ impl RegisterSlackWorkspaceForOrganizationOutputBuilder {
         self.team_id = input;
         self
     }
+    /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
+    pub fn get_team_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.team_id
+    }
     /// <p>The name of the Slack workspace.</p>
     pub fn team_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.team_name = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl RegisterSlackWorkspaceForOrganizationOutputBuilder {
     pub fn set_team_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.team_name = input;
         self
+    }
+    /// <p>The name of the Slack workspace.</p>
+    pub fn get_team_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.team_name
     }
     /// <p>Whether the Amazon Web Services account is a management or member account that's part of an organization in Organizations.</p>
     pub fn account_type(mut self, input: crate::types::AccountType) -> Self {
@@ -84,6 +92,10 @@ impl RegisterSlackWorkspaceForOrganizationOutputBuilder {
     ) -> Self {
         self.account_type = input;
         self
+    }
+    /// <p>Whether the Amazon Web Services account is a management or member account that's part of an organization in Organizations.</p>
+    pub fn get_account_type(&self) -> &::std::option::Option<crate::types::AccountType> {
+        &self.account_type
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

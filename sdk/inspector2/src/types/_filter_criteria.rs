@@ -414,6 +414,12 @@ impl FilterCriteriaBuilder {
         self.finding_arn = input;
         self
     }
+    /// <p>Details on the finding ARNs used to filter findings.</p>
+    pub fn get_finding_arn(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.finding_arn
+    }
     /// Appends an item to `aws_account_id`.
     ///
     /// To override the contents of this collection use [`set_aws_account_id`](Self::set_aws_account_id).
@@ -432,6 +438,12 @@ impl FilterCriteriaBuilder {
     ) -> Self {
         self.aws_account_id = input;
         self
+    }
+    /// <p>Details of the Amazon Web Services account IDs used to filter findings.</p>
+    pub fn get_aws_account_id(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.aws_account_id
     }
     /// Appends an item to `finding_type`.
     ///
@@ -452,6 +464,12 @@ impl FilterCriteriaBuilder {
         self.finding_type = input;
         self
     }
+    /// <p>Details on the finding types used to filter findings.</p>
+    pub fn get_finding_type(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.finding_type
+    }
     /// Appends an item to `severity`.
     ///
     /// To override the contents of this collection use [`set_severity`](Self::set_severity).
@@ -470,6 +488,12 @@ impl FilterCriteriaBuilder {
     ) -> Self {
         self.severity = input;
         self
+    }
+    /// <p>Details on the severity used to filter findings.</p>
+    pub fn get_severity(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.severity
     }
     /// Appends an item to `first_observed_at`.
     ///
@@ -490,6 +514,12 @@ impl FilterCriteriaBuilder {
         self.first_observed_at = input;
         self
     }
+    /// <p>Details on the date and time a finding was first seen used to filter findings.</p>
+    pub fn get_first_observed_at(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
+        &self.first_observed_at
+    }
     /// Appends an item to `last_observed_at`.
     ///
     /// To override the contents of this collection use [`set_last_observed_at`](Self::set_last_observed_at).
@@ -508,6 +538,12 @@ impl FilterCriteriaBuilder {
     ) -> Self {
         self.last_observed_at = input;
         self
+    }
+    /// <p>Details on the date and time a finding was last seen used to filter findings.</p>
+    pub fn get_last_observed_at(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
+        &self.last_observed_at
     }
     /// Appends an item to `updated_at`.
     ///
@@ -528,6 +564,12 @@ impl FilterCriteriaBuilder {
         self.updated_at = input;
         self
     }
+    /// <p>Details on the date and time a finding was last updated at used to filter findings.</p>
+    pub fn get_updated_at(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
+        &self.updated_at
+    }
     /// Appends an item to `finding_status`.
     ///
     /// To override the contents of this collection use [`set_finding_status`](Self::set_finding_status).
@@ -546,6 +588,12 @@ impl FilterCriteriaBuilder {
     ) -> Self {
         self.finding_status = input;
         self
+    }
+    /// <p>Details on the finding status types used to filter findings.</p>
+    pub fn get_finding_status(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.finding_status
     }
     /// Appends an item to `title`.
     ///
@@ -566,6 +614,10 @@ impl FilterCriteriaBuilder {
         self.title = input;
         self
     }
+    /// <p>Details on the finding title used to filter findings.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.title
+    }
     /// Appends an item to `inspector_score`.
     ///
     /// To override the contents of this collection use [`set_inspector_score`](Self::set_inspector_score).
@@ -584,6 +636,12 @@ impl FilterCriteriaBuilder {
     ) -> Self {
         self.inspector_score = input;
         self
+    }
+    /// <p>The Amazon Inspector score to filter on.</p>
+    pub fn get_inspector_score(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>> {
+        &self.inspector_score
     }
     /// Appends an item to `resource_type`.
     ///
@@ -604,6 +662,12 @@ impl FilterCriteriaBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>Details on the resource types used to filter findings.</p>
+    pub fn get_resource_type(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.resource_type
+    }
     /// Appends an item to `resource_id`.
     ///
     /// To override the contents of this collection use [`set_resource_id`](Self::set_resource_id).
@@ -622,6 +686,12 @@ impl FilterCriteriaBuilder {
     ) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>Details on the resource IDs used to filter findings.</p>
+    pub fn get_resource_id(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.resource_id
     }
     /// Appends an item to `resource_tags`.
     ///
@@ -642,6 +712,12 @@ impl FilterCriteriaBuilder {
         self.resource_tags = input;
         self
     }
+    /// <p>Details on the resource tags used to filter findings.</p>
+    pub fn get_resource_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MapFilter>> {
+        &self.resource_tags
+    }
     /// Appends an item to `ec2_instance_image_id`.
     ///
     /// To override the contents of this collection use [`set_ec2_instance_image_id`](Self::set_ec2_instance_image_id).
@@ -660,6 +736,12 @@ impl FilterCriteriaBuilder {
     ) -> Self {
         self.ec2_instance_image_id = input;
         self
+    }
+    /// <p>Details of the Amazon EC2 instance image IDs used to filter findings.</p>
+    pub fn get_ec2_instance_image_id(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.ec2_instance_image_id
     }
     /// Appends an item to `ec2_instance_vpc_id`.
     ///
@@ -680,6 +762,12 @@ impl FilterCriteriaBuilder {
         self.ec2_instance_vpc_id = input;
         self
     }
+    /// <p>Details of the Amazon EC2 instance VPC IDs used to filter findings.</p>
+    pub fn get_ec2_instance_vpc_id(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.ec2_instance_vpc_id
+    }
     /// Appends an item to `ec2_instance_subnet_id`.
     ///
     /// To override the contents of this collection use [`set_ec2_instance_subnet_id`](Self::set_ec2_instance_subnet_id).
@@ -698,6 +786,12 @@ impl FilterCriteriaBuilder {
     ) -> Self {
         self.ec2_instance_subnet_id = input;
         self
+    }
+    /// <p>Details of the Amazon EC2 instance subnet IDs used to filter findings.</p>
+    pub fn get_ec2_instance_subnet_id(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.ec2_instance_subnet_id
     }
     /// Appends an item to `ecr_image_pushed_at`.
     ///
@@ -718,6 +812,12 @@ impl FilterCriteriaBuilder {
         self.ecr_image_pushed_at = input;
         self
     }
+    /// <p>Details on the Amazon ECR image push date and time used to filter findings.</p>
+    pub fn get_ecr_image_pushed_at(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
+        &self.ecr_image_pushed_at
+    }
     /// Appends an item to `ecr_image_architecture`.
     ///
     /// To override the contents of this collection use [`set_ecr_image_architecture`](Self::set_ecr_image_architecture).
@@ -736,6 +836,12 @@ impl FilterCriteriaBuilder {
     ) -> Self {
         self.ecr_image_architecture = input;
         self
+    }
+    /// <p>Details of the Amazon ECR image architecture types used to filter findings.</p>
+    pub fn get_ecr_image_architecture(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.ecr_image_architecture
     }
     /// Appends an item to `ecr_image_registry`.
     ///
@@ -756,6 +862,12 @@ impl FilterCriteriaBuilder {
         self.ecr_image_registry = input;
         self
     }
+    /// <p>Details on the Amazon ECR registry used to filter findings.</p>
+    pub fn get_ecr_image_registry(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.ecr_image_registry
+    }
     /// Appends an item to `ecr_image_repository_name`.
     ///
     /// To override the contents of this collection use [`set_ecr_image_repository_name`](Self::set_ecr_image_repository_name).
@@ -774,6 +886,12 @@ impl FilterCriteriaBuilder {
     ) -> Self {
         self.ecr_image_repository_name = input;
         self
+    }
+    /// <p>Details on the name of the Amazon ECR repository used to filter findings.</p>
+    pub fn get_ecr_image_repository_name(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.ecr_image_repository_name
     }
     /// Appends an item to `ecr_image_tags`.
     ///
@@ -794,6 +912,12 @@ impl FilterCriteriaBuilder {
         self.ecr_image_tags = input;
         self
     }
+    /// <p>The tags attached to the Amazon ECR container image.</p>
+    pub fn get_ecr_image_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.ecr_image_tags
+    }
     /// Appends an item to `ecr_image_hash`.
     ///
     /// To override the contents of this collection use [`set_ecr_image_hash`](Self::set_ecr_image_hash).
@@ -812,6 +936,12 @@ impl FilterCriteriaBuilder {
     ) -> Self {
         self.ecr_image_hash = input;
         self
+    }
+    /// <p>Details of the Amazon ECR image hashes used to filter findings.</p>
+    pub fn get_ecr_image_hash(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.ecr_image_hash
     }
     /// Appends an item to `port_range`.
     ///
@@ -832,6 +962,12 @@ impl FilterCriteriaBuilder {
         self.port_range = input;
         self
     }
+    /// <p>Details on the port ranges used to filter findings.</p>
+    pub fn get_port_range(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PortRangeFilter>> {
+        &self.port_range
+    }
     /// Appends an item to `network_protocol`.
     ///
     /// To override the contents of this collection use [`set_network_protocol`](Self::set_network_protocol).
@@ -850,6 +986,12 @@ impl FilterCriteriaBuilder {
     ) -> Self {
         self.network_protocol = input;
         self
+    }
+    /// <p>Details on the ingress source addresses used to filter findings.</p>
+    pub fn get_network_protocol(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.network_protocol
     }
     /// Appends an item to `component_id`.
     ///
@@ -870,6 +1012,12 @@ impl FilterCriteriaBuilder {
         self.component_id = input;
         self
     }
+    /// <p>Details of the component IDs used to filter findings.</p>
+    pub fn get_component_id(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.component_id
+    }
     /// Appends an item to `component_type`.
     ///
     /// To override the contents of this collection use [`set_component_type`](Self::set_component_type).
@@ -888,6 +1036,12 @@ impl FilterCriteriaBuilder {
     ) -> Self {
         self.component_type = input;
         self
+    }
+    /// <p>Details of the component types used to filter findings.</p>
+    pub fn get_component_type(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.component_type
     }
     /// Appends an item to `vulnerability_id`.
     ///
@@ -908,6 +1062,12 @@ impl FilterCriteriaBuilder {
         self.vulnerability_id = input;
         self
     }
+    /// <p>Details on the vulnerability ID used to filter findings.</p>
+    pub fn get_vulnerability_id(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.vulnerability_id
+    }
     /// Appends an item to `vulnerability_source`.
     ///
     /// To override the contents of this collection use [`set_vulnerability_source`](Self::set_vulnerability_source).
@@ -926,6 +1086,12 @@ impl FilterCriteriaBuilder {
     ) -> Self {
         self.vulnerability_source = input;
         self
+    }
+    /// <p>Details on the vulnerability type used to filter findings.</p>
+    pub fn get_vulnerability_source(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.vulnerability_source
     }
     /// Appends an item to `vendor_severity`.
     ///
@@ -946,6 +1112,12 @@ impl FilterCriteriaBuilder {
         self.vendor_severity = input;
         self
     }
+    /// <p>Details on the vendor severity used to filter findings.</p>
+    pub fn get_vendor_severity(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.vendor_severity
+    }
     /// Appends an item to `vulnerable_packages`.
     ///
     /// To override the contents of this collection use [`set_vulnerable_packages`](Self::set_vulnerable_packages).
@@ -964,6 +1136,12 @@ impl FilterCriteriaBuilder {
     ) -> Self {
         self.vulnerable_packages = input;
         self
+    }
+    /// <p>Details on the vulnerable packages used to filter findings.</p>
+    pub fn get_vulnerable_packages(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PackageFilter>> {
+        &self.vulnerable_packages
     }
     /// Appends an item to `related_vulnerabilities`.
     ///
@@ -984,6 +1162,12 @@ impl FilterCriteriaBuilder {
         self.related_vulnerabilities = input;
         self
     }
+    /// <p>Details on the related vulnerabilities used to filter findings.</p>
+    pub fn get_related_vulnerabilities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.related_vulnerabilities
+    }
     /// Appends an item to `fix_available`.
     ///
     /// To override the contents of this collection use [`set_fix_available`](Self::set_fix_available).
@@ -1002,6 +1186,12 @@ impl FilterCriteriaBuilder {
     ) -> Self {
         self.fix_available = input;
         self
+    }
+    /// <p>Details on whether a fix is available through a version update. This value can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the packages identified in the finding have fixes available through updated versions.</p>
+    pub fn get_fix_available(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.fix_available
     }
     /// Appends an item to `lambda_function_name`.
     ///
@@ -1022,6 +1212,12 @@ impl FilterCriteriaBuilder {
         self.lambda_function_name = input;
         self
     }
+    /// <p>Filters the list of AWS Lambda functions by the name of the function.</p>
+    pub fn get_lambda_function_name(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.lambda_function_name
+    }
     /// Appends an item to `lambda_function_layers`.
     ///
     /// To override the contents of this collection use [`set_lambda_function_layers`](Self::set_lambda_function_layers).
@@ -1040,6 +1236,12 @@ impl FilterCriteriaBuilder {
     ) -> Self {
         self.lambda_function_layers = input;
         self
+    }
+    /// <p>Filters the list of AWS Lambda functions by the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>. A Lambda function can have up to five layers.</p>
+    pub fn get_lambda_function_layers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.lambda_function_layers
     }
     /// Appends an item to `lambda_function_runtime`.
     ///
@@ -1060,6 +1262,12 @@ impl FilterCriteriaBuilder {
         self.lambda_function_runtime = input;
         self
     }
+    /// <p>Filters the list of AWS Lambda functions by the runtime environment for the Lambda function.</p>
+    pub fn get_lambda_function_runtime(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.lambda_function_runtime
+    }
     /// Appends an item to `lambda_function_last_modified_at`.
     ///
     /// To override the contents of this collection use [`set_lambda_function_last_modified_at`](Self::set_lambda_function_last_modified_at).
@@ -1078,6 +1286,12 @@ impl FilterCriteriaBuilder {
     ) -> Self {
         self.lambda_function_last_modified_at = input;
         self
+    }
+    /// <p>Filters the list of AWS Lambda functions by the date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a> </p>
+    pub fn get_lambda_function_last_modified_at(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
+        &self.lambda_function_last_modified_at
     }
     /// Appends an item to `lambda_function_execution_role_arn`.
     ///
@@ -1098,6 +1312,12 @@ impl FilterCriteriaBuilder {
         self.lambda_function_execution_role_arn = input;
         self
     }
+    /// <p>Filters the list of AWS Lambda functions by execution role.</p>
+    pub fn get_lambda_function_execution_role_arn(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.lambda_function_execution_role_arn
+    }
     /// Appends an item to `exploit_available`.
     ///
     /// To override the contents of this collection use [`set_exploit_available`](Self::set_exploit_available).
@@ -1116,6 +1336,12 @@ impl FilterCriteriaBuilder {
     ) -> Self {
         self.exploit_available = input;
         self
+    }
+    /// <p>Filters the list of AWS Lambda findings by the availability of exploits.</p>
+    pub fn get_exploit_available(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.exploit_available
     }
     /// Appends an item to `code_vulnerability_detector_name`.
     ///
@@ -1136,6 +1362,12 @@ impl FilterCriteriaBuilder {
         self.code_vulnerability_detector_name = input;
         self
     }
+    /// <p>The name of the detector used to identify a code vulnerability in a Lambda function used to filter findings.</p>
+    pub fn get_code_vulnerability_detector_name(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.code_vulnerability_detector_name
+    }
     /// Appends an item to `code_vulnerability_detector_tags`.
     ///
     /// To override the contents of this collection use [`set_code_vulnerability_detector_tags`](Self::set_code_vulnerability_detector_tags).
@@ -1154,6 +1386,12 @@ impl FilterCriteriaBuilder {
     ) -> Self {
         self.code_vulnerability_detector_tags = input;
         self
+    }
+    /// <p>The detector type tag associated with the vulnerability used to filter findings. Detector tags group related vulnerabilities by common themes or tactics. For a list of available tags by programming language, see <a href="https://docs.aws.amazon.com/codeguru/detector-library/java/tags/">Java tags</a>, or <a href="https://docs.aws.amazon.com/codeguru/detector-library/python/tags/">Python tags</a>. </p>
+    pub fn get_code_vulnerability_detector_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.code_vulnerability_detector_tags
     }
     /// Appends an item to `code_vulnerability_file_path`.
     ///
@@ -1174,6 +1412,12 @@ impl FilterCriteriaBuilder {
         self.code_vulnerability_file_path = input;
         self
     }
+    /// <p>The file path to the file in a Lambda function that contains a code vulnerability used to filter findings.</p>
+    pub fn get_code_vulnerability_file_path(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.code_vulnerability_file_path
+    }
     /// Appends an item to `epss_score`.
     ///
     /// To override the contents of this collection use [`set_epss_score`](Self::set_epss_score).
@@ -1192,6 +1436,12 @@ impl FilterCriteriaBuilder {
     ) -> Self {
         self.epss_score = input;
         self
+    }
+    /// <p>The EPSS score used to filter findings.</p>
+    pub fn get_epss_score(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>> {
+        &self.epss_score
     }
     /// Consumes the builder and constructs a [`FilterCriteria`](crate::types::FilterCriteria).
     pub fn build(self) -> crate::types::FilterCriteria {

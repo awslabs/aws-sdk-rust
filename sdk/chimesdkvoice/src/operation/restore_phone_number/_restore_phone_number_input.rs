@@ -51,6 +51,10 @@ impl RestorePhoneNumberInputBuilder {
         self.phone_number_id = input;
         self
     }
+    /// <p>The ID of the phone number being restored.</p>
+    pub fn get_phone_number_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.phone_number_id
+    }
     /// Consumes the builder and constructs a [`RestorePhoneNumberInput`](crate::operation::restore_phone_number::RestorePhoneNumberInput).
     pub fn build(
         self,

@@ -80,6 +80,10 @@ impl AddProfilePermissionInputBuilder {
         self.profile_name = input;
         self
     }
+    /// <p>The human-readable name of the signing profile.</p>
+    pub fn get_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_name
+    }
     /// <p>The version of the signing profile.</p>
     pub fn profile_version(
         mut self,
@@ -96,6 +100,10 @@ impl AddProfilePermissionInputBuilder {
         self.profile_version = input;
         self
     }
+    /// <p>The version of the signing profile.</p>
+    pub fn get_profile_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_version
+    }
     /// <p>The AWS Signer action permitted as part of cross-account permissions.</p>
     pub fn action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action = ::std::option::Option::Some(input.into());
@@ -105,6 +113,10 @@ impl AddProfilePermissionInputBuilder {
     pub fn set_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action = input;
         self
+    }
+    /// <p>The AWS Signer action permitted as part of cross-account permissions.</p>
+    pub fn get_action(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action
     }
     /// <p>The AWS principal receiving cross-account permissions. This may be an IAM role or another AWS account ID.</p>
     pub fn principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -116,6 +128,10 @@ impl AddProfilePermissionInputBuilder {
         self.principal = input;
         self
     }
+    /// <p>The AWS principal receiving cross-account permissions. This may be an IAM role or another AWS account ID.</p>
+    pub fn get_principal(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal
+    }
     /// <p>A unique identifier for the current profile revision.</p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
@@ -126,6 +142,10 @@ impl AddProfilePermissionInputBuilder {
         self.revision_id = input;
         self
     }
+    /// <p>A unique identifier for the current profile revision.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision_id
+    }
     /// <p>A unique identifier for the cross-account permission statement.</p>
     pub fn statement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.statement_id = ::std::option::Option::Some(input.into());
@@ -135,6 +155,10 @@ impl AddProfilePermissionInputBuilder {
     pub fn set_statement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.statement_id = input;
         self
+    }
+    /// <p>A unique identifier for the cross-account permission statement.</p>
+    pub fn get_statement_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.statement_id
     }
     /// Consumes the builder and constructs a [`AddProfilePermissionInput`](crate::operation::add_profile_permission::AddProfilePermissionInput).
     pub fn build(

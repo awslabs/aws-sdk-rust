@@ -67,6 +67,10 @@ impl GetPackageVersionHistoryOutputBuilder {
         self.package_id = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_package_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_id
+    }
     /// Appends an item to `package_version_history_list`.
     ///
     /// To override the contents of this collection use [`set_package_version_history_list`](Self::set_package_version_history_list).
@@ -89,6 +93,12 @@ impl GetPackageVersionHistoryOutputBuilder {
         self.package_version_history_list = input;
         self
     }
+    /// <p>List of <code>PackageVersionHistory</code> objects.</p>
+    pub fn get_package_version_history_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PackageVersionHistory>> {
+        &self.package_version_history_list
+    }
     #[allow(missing_docs)] // documentation missing in model
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -98,6 +108,10 @@ impl GetPackageVersionHistoryOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

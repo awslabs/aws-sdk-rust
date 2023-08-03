@@ -39,6 +39,10 @@ impl DescribeClassificationJobInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The unique identifier for the classification job.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// Consumes the builder and constructs a [`DescribeClassificationJobInput`](crate::operation::describe_classification_job::DescribeClassificationJobInput).
     pub fn build(
         self,

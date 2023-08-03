@@ -36,6 +36,12 @@ impl StartMigrationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartMigration as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_migration::builders::StartMigrationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl StartMigrationFluentBuilder {
         self.inner = self.inner.set_replication_group_id(input);
         self
     }
+    /// <p>The ID of the replication group to which data should be migrated.</p>
+    pub fn get_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_replication_group_id()
+    }
     /// Appends an item to `CustomerNodeEndpointList`.
     ///
     /// To override the contents of this collection use [`set_customer_node_endpoint_list`](Self::set_customer_node_endpoint_list).
@@ -143,5 +153,11 @@ impl StartMigrationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_customer_node_endpoint_list(input);
         self
+    }
+    /// <p>List of endpoints from which data should be migrated. For Redis (cluster mode disabled), list should have only one element.</p>
+    pub fn get_customer_node_endpoint_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomerNodeEndpoint>> {
+        self.inner.get_customer_node_endpoint_list()
     }
 }

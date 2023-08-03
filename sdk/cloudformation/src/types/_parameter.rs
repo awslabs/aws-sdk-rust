@@ -70,6 +70,10 @@ impl ParameterBuilder {
         self.parameter_key = input;
         self
     }
+    /// <p>The key associated with the parameter. If you don't specify a key and value for a particular parameter, CloudFormation uses the default value that's specified in your template.</p>
+    pub fn get_parameter_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_key
+    }
     /// <p>The input value associated with the parameter.</p>
     pub fn parameter_value(
         mut self,
@@ -86,6 +90,10 @@ impl ParameterBuilder {
         self.parameter_value = input;
         self
     }
+    /// <p>The input value associated with the parameter.</p>
+    pub fn get_parameter_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_value
+    }
     /// <p>During a stack update, use the existing parameter value that the stack is using for a given parameter key. If you specify <code>true</code>, do not specify a parameter value.</p>
     pub fn use_previous_value(mut self, input: bool) -> Self {
         self.use_previous_value = ::std::option::Option::Some(input);
@@ -95,6 +103,10 @@ impl ParameterBuilder {
     pub fn set_use_previous_value(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_previous_value = input;
         self
+    }
+    /// <p>During a stack update, use the existing parameter value that the stack is using for a given parameter key. If you specify <code>true</code>, do not specify a parameter value.</p>
+    pub fn get_use_previous_value(&self) -> &::std::option::Option<bool> {
+        &self.use_previous_value
     }
     /// <p>Read-only. The value that corresponds to a SSM parameter key. This field is returned only for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types"> SSM</a> parameter types in the template.</p>
     pub fn resolved_value(
@@ -111,6 +123,10 @@ impl ParameterBuilder {
     ) -> Self {
         self.resolved_value = input;
         self
+    }
+    /// <p>Read-only. The value that corresponds to a SSM parameter key. This field is returned only for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types"> SSM</a> parameter types in the template.</p>
+    pub fn get_resolved_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resolved_value
     }
     /// Consumes the builder and constructs a [`Parameter`](crate::types::Parameter).
     pub fn build(self) -> crate::types::Parameter {

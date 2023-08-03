@@ -36,6 +36,12 @@ impl PutAuthPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutAuthPolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_auth_policy::builders::PutAuthPolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl PutAuthPolicyFluentBuilder {
         self.inner = self.inner.set_resource_identifier(input);
         self
     }
+    /// <p>The ID or Amazon Resource Name (ARN) of the service network or service for which the policy is created.</p>
+    pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_identifier()
+    }
     /// <p>The auth policy. The policy string in JSON must not contain newlines or blank lines.</p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy(input.into());
@@ -133,5 +143,9 @@ impl PutAuthPolicyFluentBuilder {
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy(input);
         self
+    }
+    /// <p>The auth policy. The policy string in JSON must not contain newlines or blank lines.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy()
     }
 }

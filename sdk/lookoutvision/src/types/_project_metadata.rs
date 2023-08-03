@@ -56,6 +56,10 @@ impl ProjectMetadataBuilder {
         self.project_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the project.</p>
+    pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_arn
+    }
     /// <p>The name of the project.</p>
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl ProjectMetadataBuilder {
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_name = input;
         self
+    }
+    /// <p>The name of the project.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_name
     }
     /// <p>The unix timestamp for the date and time that the project was created. </p>
     pub fn creation_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -78,6 +86,10 @@ impl ProjectMetadataBuilder {
     ) -> Self {
         self.creation_timestamp = input;
         self
+    }
+    /// <p>The unix timestamp for the date and time that the project was created. </p>
+    pub fn get_creation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_timestamp
     }
     /// Consumes the builder and constructs a [`ProjectMetadata`](crate::types::ProjectMetadata).
     pub fn build(self) -> crate::types::ProjectMetadata {

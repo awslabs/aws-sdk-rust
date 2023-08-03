@@ -49,6 +49,12 @@ impl EnvironmentPropertiesBuilder {
         self.property_groups = input;
         self
     }
+    /// <p>Describes the execution property groups.</p>
+    pub fn get_property_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PropertyGroup>> {
+        &self.property_groups
+    }
     /// Consumes the builder and constructs a [`EnvironmentProperties`](crate::types::EnvironmentProperties).
     pub fn build(self) -> crate::types::EnvironmentProperties {
         crate::types::EnvironmentProperties {

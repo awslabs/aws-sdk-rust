@@ -60,6 +60,12 @@ impl GetGlobalSettingsOutputBuilder {
         self.business_calling = input;
         self
     }
+    /// <p>The Amazon Chime Business Calling settings.</p>
+    pub fn get_business_calling(
+        &self,
+    ) -> &::std::option::Option<crate::types::BusinessCallingSettings> {
+        &self.business_calling
+    }
     /// <p>The Amazon Chime Voice Connector settings.</p>
     pub fn voice_connector(mut self, input: crate::types::VoiceConnectorSettings) -> Self {
         self.voice_connector = ::std::option::Option::Some(input);
@@ -72,6 +78,12 @@ impl GetGlobalSettingsOutputBuilder {
     ) -> Self {
         self.voice_connector = input;
         self
+    }
+    /// <p>The Amazon Chime Voice Connector settings.</p>
+    pub fn get_voice_connector(
+        &self,
+    ) -> &::std::option::Option<crate::types::VoiceConnectorSettings> {
+        &self.voice_connector
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

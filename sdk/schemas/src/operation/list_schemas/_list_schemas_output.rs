@@ -54,6 +54,10 @@ impl ListSchemasOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `schemas`.
     ///
     /// To override the contents of this collection use [`set_schemas`](Self::set_schemas).
@@ -72,6 +76,12 @@ impl ListSchemasOutputBuilder {
     ) -> Self {
         self.schemas = input;
         self
+    }
+    /// <p>An array of schema summaries.</p>
+    pub fn get_schemas(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaSummary>> {
+        &self.schemas
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

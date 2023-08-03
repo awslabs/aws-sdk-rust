@@ -40,6 +40,10 @@ impl DeleteVolumeInputBuilder {
         self.volume_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes.</p>
+    pub fn get_volume_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_arn
+    }
     /// Consumes the builder and constructs a [`DeleteVolumeInput`](crate::operation::delete_volume::DeleteVolumeInput).
     pub fn build(
         self,

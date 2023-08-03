@@ -66,6 +66,12 @@ impl BatchGetBuildBatchesOutputBuilder {
         self.build_batches = input;
         self
     }
+    /// <p>An array of <code>BuildBatch</code> objects that represent the retrieved batch builds.</p>
+    pub fn get_build_batches(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BuildBatch>> {
+        &self.build_batches
+    }
     /// Appends an item to `build_batches_not_found`.
     ///
     /// To override the contents of this collection use [`set_build_batches_not_found`](Self::set_build_batches_not_found).
@@ -87,6 +93,12 @@ impl BatchGetBuildBatchesOutputBuilder {
     ) -> Self {
         self.build_batches_not_found = input;
         self
+    }
+    /// <p>An array that contains the identifiers of any batch builds that are not found.</p>
+    pub fn get_build_batches_not_found(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.build_batches_not_found
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

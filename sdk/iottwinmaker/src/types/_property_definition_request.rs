@@ -104,6 +104,10 @@ impl PropertyDefinitionRequestBuilder {
         self.data_type = input;
         self
     }
+    /// <p>An object that contains information about the data type.</p>
+    pub fn get_data_type(&self) -> &::std::option::Option<crate::types::DataType> {
+        &self.data_type
+    }
     /// <p>A Boolean value that specifies whether the property is required.</p>
     pub fn is_required_in_entity(mut self, input: bool) -> Self {
         self.is_required_in_entity = ::std::option::Option::Some(input);
@@ -113,6 +117,10 @@ impl PropertyDefinitionRequestBuilder {
     pub fn set_is_required_in_entity(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_required_in_entity = input;
         self
+    }
+    /// <p>A Boolean value that specifies whether the property is required.</p>
+    pub fn get_is_required_in_entity(&self) -> &::std::option::Option<bool> {
+        &self.is_required_in_entity
     }
     /// <p>A Boolean value that specifies whether the property ID comes from an external data store.</p>
     pub fn is_external_id(mut self, input: bool) -> Self {
@@ -124,6 +132,10 @@ impl PropertyDefinitionRequestBuilder {
         self.is_external_id = input;
         self
     }
+    /// <p>A Boolean value that specifies whether the property ID comes from an external data store.</p>
+    pub fn get_is_external_id(&self) -> &::std::option::Option<bool> {
+        &self.is_external_id
+    }
     /// <p>A Boolean value that specifies whether the property is stored externally.</p>
     pub fn is_stored_externally(mut self, input: bool) -> Self {
         self.is_stored_externally = ::std::option::Option::Some(input);
@@ -134,6 +146,10 @@ impl PropertyDefinitionRequestBuilder {
         self.is_stored_externally = input;
         self
     }
+    /// <p>A Boolean value that specifies whether the property is stored externally.</p>
+    pub fn get_is_stored_externally(&self) -> &::std::option::Option<bool> {
+        &self.is_stored_externally
+    }
     /// <p>A Boolean value that specifies whether the property consists of time series data.</p>
     pub fn is_time_series(mut self, input: bool) -> Self {
         self.is_time_series = ::std::option::Option::Some(input);
@@ -143,6 +159,10 @@ impl PropertyDefinitionRequestBuilder {
     pub fn set_is_time_series(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_time_series = input;
         self
+    }
+    /// <p>A Boolean value that specifies whether the property consists of time series data.</p>
+    pub fn get_is_time_series(&self) -> &::std::option::Option<bool> {
+        &self.is_time_series
     }
     /// <p>An object that contains the default value.</p>
     pub fn default_value(mut self, input: crate::types::DataValue) -> Self {
@@ -156,6 +176,10 @@ impl PropertyDefinitionRequestBuilder {
     ) -> Self {
         self.default_value = input;
         self
+    }
+    /// <p>An object that contains the default value.</p>
+    pub fn get_default_value(&self) -> &::std::option::Option<crate::types::DataValue> {
+        &self.default_value
     }
     /// Adds a key-value pair to `configuration`.
     ///
@@ -182,6 +206,14 @@ impl PropertyDefinitionRequestBuilder {
         self.configuration = input;
         self
     }
+    /// <p>A mapping that specifies configuration information about the property. Use this field to specify information that you read from and write to an external source.</p>
+    pub fn get_configuration(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.configuration
+    }
     /// <p>A friendly name for the property.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -191,6 +223,10 @@ impl PropertyDefinitionRequestBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
+    }
+    /// <p>A friendly name for the property.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// Consumes the builder and constructs a [`PropertyDefinitionRequest`](crate::types::PropertyDefinitionRequest).
     pub fn build(self) -> crate::types::PropertyDefinitionRequest {

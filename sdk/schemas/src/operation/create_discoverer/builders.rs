@@ -36,6 +36,12 @@ impl CreateDiscovererFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDiscoverer as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_discoverer::builders::CreateDiscovererInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateDiscovererFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>A description for the discoverer.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The ARN of the event bus.</p>
     pub fn source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_arn(input.into());
@@ -136,6 +146,10 @@ impl CreateDiscovererFluentBuilder {
         self.inner = self.inner.set_source_arn(input);
         self
     }
+    /// <p>The ARN of the event bus.</p>
+    pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_arn()
+    }
     /// <p>Support discovery of schemas in events sent to the bus from another account. (default: true).</p>
     pub fn cross_account(mut self, input: bool) -> Self {
         self.inner = self.inner.cross_account(input);
@@ -145,6 +159,10 @@ impl CreateDiscovererFluentBuilder {
     pub fn set_cross_account(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_cross_account(input);
         self
+    }
+    /// <p>Support discovery of schemas in events sent to the bus from another account. (default: true).</p>
+    pub fn get_cross_account(&self) -> &::std::option::Option<bool> {
+        self.inner.get_cross_account()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -168,5 +186,13 @@ impl CreateDiscovererFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Tags associated with the resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

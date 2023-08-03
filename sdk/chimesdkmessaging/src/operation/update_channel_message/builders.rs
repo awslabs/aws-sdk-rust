@@ -38,6 +38,12 @@ impl UpdateChannelMessageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateChannelMessage as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_channel_message::builders::UpdateChannelMessageInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +134,10 @@ impl UpdateChannelMessageFluentBuilder {
         self.inner = self.inner.set_channel_arn(input);
         self
     }
+    /// <p>The ARN of the channel.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_arn()
+    }
     /// <p>The ID string of the message being updated.</p>
     pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.message_id(input.into());
@@ -137,6 +147,10 @@ impl UpdateChannelMessageFluentBuilder {
     pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_message_id(input);
         self
+    }
+    /// <p>The ID string of the message being updated.</p>
+    pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_message_id()
     }
     /// <p>The content of the channel message. </p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -148,6 +162,10 @@ impl UpdateChannelMessageFluentBuilder {
         self.inner = self.inner.set_content(input);
         self
     }
+    /// <p>The content of the channel message. </p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_content()
+    }
     /// <p>The metadata of the message being updated.</p>
     pub fn metadata(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.metadata(input.into());
@@ -158,6 +176,10 @@ impl UpdateChannelMessageFluentBuilder {
         self.inner = self.inner.set_metadata(input);
         self
     }
+    /// <p>The metadata of the message being updated.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_metadata()
+    }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.chime_bearer(input.into());
@@ -167,6 +189,10 @@ impl UpdateChannelMessageFluentBuilder {
     pub fn set_chime_bearer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_chime_bearer(input);
         self
+    }
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
+    pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_chime_bearer()
     }
     /// <p>The ID of the SubChannel in the request.</p> <note>
     /// <p>Only required when updating messages in a SubChannel that the user belongs to.</p>
@@ -188,6 +214,12 @@ impl UpdateChannelMessageFluentBuilder {
         self.inner = self.inner.set_sub_channel_id(input);
         self
     }
+    /// <p>The ID of the SubChannel in the request.</p> <note>
+    /// <p>Only required when updating messages in a SubChannel that the user belongs to.</p>
+    /// </note>
+    pub fn get_sub_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sub_channel_id()
+    }
     /// <p>The content type of the channel message.</p>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.content_type(input.into());
@@ -197,5 +229,9 @@ impl UpdateChannelMessageFluentBuilder {
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_content_type(input);
         self
+    }
+    /// <p>The content type of the channel message.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_content_type()
     }
 }

@@ -37,6 +37,13 @@ impl DeleteSuiteDefinitionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteSuiteDefinition as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_suite_definition::builders::DeleteSuiteDefinitionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +139,9 @@ impl DeleteSuiteDefinitionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_suite_definition_id(input);
         self
+    }
+    /// <p>Suite definition ID of the test suite to be deleted.</p>
+    pub fn get_suite_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_suite_definition_id()
     }
 }

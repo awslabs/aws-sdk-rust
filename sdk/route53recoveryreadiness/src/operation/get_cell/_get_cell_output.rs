@@ -87,6 +87,10 @@ impl GetCellOutputBuilder {
         self.cell_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the cell.</p>
+    pub fn get_cell_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cell_arn
+    }
     /// <p>The name of the cell.</p>
     pub fn cell_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cell_name = ::std::option::Option::Some(input.into());
@@ -96,6 +100,10 @@ impl GetCellOutputBuilder {
     pub fn set_cell_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cell_name = input;
         self
+    }
+    /// <p>The name of the cell.</p>
+    pub fn get_cell_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cell_name
     }
     /// Appends an item to `cells`.
     ///
@@ -115,6 +123,10 @@ impl GetCellOutputBuilder {
     ) -> Self {
         self.cells = input;
         self
+    }
+    /// <p>A list of cell ARNs.</p>
+    pub fn get_cells(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.cells
     }
     /// Appends an item to `parent_readiness_scopes`.
     ///
@@ -137,6 +149,12 @@ impl GetCellOutputBuilder {
     ) -> Self {
         self.parent_readiness_scopes = input;
         self
+    }
+    /// <p>The readiness scope for the cell, which can be a cell Amazon Resource Name (ARN) or a recovery group ARN. This is a list but currently can have only one element.</p>
+    pub fn get_parent_readiness_scopes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.parent_readiness_scopes
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -162,6 +180,14 @@ impl GetCellOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Tags on the resources.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

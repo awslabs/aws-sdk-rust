@@ -121,6 +121,10 @@ impl AwsAmazonMqBrokerLdapServerMetadataDetailsBuilder {
         self.hosts = input;
         self
     }
+    /// <p> Specifies the location of the LDAP server, such as Amazon Web Services Directory Service for Microsoft Active Directory. </p>
+    pub fn get_hosts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.hosts
+    }
     /// <p> The distinguished name of the node in the directory information tree (DIT) to search for roles or groups. </p>
     pub fn role_base(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_base = ::std::option::Option::Some(input.into());
@@ -131,6 +135,10 @@ impl AwsAmazonMqBrokerLdapServerMetadataDetailsBuilder {
         self.role_base = input;
         self
     }
+    /// <p> The distinguished name of the node in the directory information tree (DIT) to search for roles or groups. </p>
+    pub fn get_role_base(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_base
+    }
     /// <p> The group name attribute in a role entry whose value is the name of that role. </p>
     pub fn role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_name = ::std::option::Option::Some(input.into());
@@ -140,6 +148,10 @@ impl AwsAmazonMqBrokerLdapServerMetadataDetailsBuilder {
     pub fn set_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_name = input;
         self
+    }
+    /// <p> The group name attribute in a role entry whose value is the name of that role. </p>
+    pub fn get_role_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_name
     }
     /// <p> The LDAP search filter used to find roles within the <code>roleBase</code>. </p>
     pub fn role_search_matching(
@@ -157,6 +169,10 @@ impl AwsAmazonMqBrokerLdapServerMetadataDetailsBuilder {
         self.role_search_matching = input;
         self
     }
+    /// <p> The LDAP search filter used to find roles within the <code>roleBase</code>. </p>
+    pub fn get_role_search_matching(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_search_matching
+    }
     /// <p> The directory search scope for the role. If set to <code>true</code>, the scope is to search the entire subtree. </p>
     pub fn role_search_subtree(mut self, input: bool) -> Self {
         self.role_search_subtree = ::std::option::Option::Some(input);
@@ -166,6 +182,10 @@ impl AwsAmazonMqBrokerLdapServerMetadataDetailsBuilder {
     pub fn set_role_search_subtree(mut self, input: ::std::option::Option<bool>) -> Self {
         self.role_search_subtree = input;
         self
+    }
+    /// <p> The directory search scope for the role. If set to <code>true</code>, the scope is to search the entire subtree. </p>
+    pub fn get_role_search_subtree(&self) -> &::std::option::Option<bool> {
+        &self.role_search_subtree
     }
     /// <p> A username for the service account, which is an account in your LDAP server that has access to initiate a connection. </p>
     pub fn service_account_username(
@@ -183,6 +203,10 @@ impl AwsAmazonMqBrokerLdapServerMetadataDetailsBuilder {
         self.service_account_username = input;
         self
     }
+    /// <p> A username for the service account, which is an account in your LDAP server that has access to initiate a connection. </p>
+    pub fn get_service_account_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_account_username
+    }
     /// <p> Selects a particular subtree of the directory information tree (DIT) to search for user entries. </p>
     pub fn user_base(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_base = ::std::option::Option::Some(input.into());
@@ -192,6 +216,10 @@ impl AwsAmazonMqBrokerLdapServerMetadataDetailsBuilder {
     pub fn set_user_base(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_base = input;
         self
+    }
+    /// <p> Selects a particular subtree of the directory information tree (DIT) to search for user entries. </p>
+    pub fn get_user_base(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_base
     }
     /// <p> The name of the LDAP attribute in the user's directory entry for the user's group membership. </p>
     pub fn user_role_name(
@@ -209,6 +237,10 @@ impl AwsAmazonMqBrokerLdapServerMetadataDetailsBuilder {
         self.user_role_name = input;
         self
     }
+    /// <p> The name of the LDAP attribute in the user's directory entry for the user's group membership. </p>
+    pub fn get_user_role_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_role_name
+    }
     /// <p> The LDAP search filter used to find users within the <code>userBase</code>. </p>
     pub fn user_search_matching(
         mut self,
@@ -225,6 +257,10 @@ impl AwsAmazonMqBrokerLdapServerMetadataDetailsBuilder {
         self.user_search_matching = input;
         self
     }
+    /// <p> The LDAP search filter used to find users within the <code>userBase</code>. </p>
+    pub fn get_user_search_matching(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_search_matching
+    }
     /// <p> The directory search scope for the user. If set to true, the scope is to search the entire subtree. </p>
     pub fn user_search_subtree(mut self, input: bool) -> Self {
         self.user_search_subtree = ::std::option::Option::Some(input);
@@ -234,6 +270,10 @@ impl AwsAmazonMqBrokerLdapServerMetadataDetailsBuilder {
     pub fn set_user_search_subtree(mut self, input: ::std::option::Option<bool>) -> Self {
         self.user_search_subtree = input;
         self
+    }
+    /// <p> The directory search scope for the user. If set to true, the scope is to search the entire subtree. </p>
+    pub fn get_user_search_subtree(&self) -> &::std::option::Option<bool> {
+        &self.user_search_subtree
     }
     /// Consumes the builder and constructs a [`AwsAmazonMqBrokerLdapServerMetadataDetails`](crate::types::AwsAmazonMqBrokerLdapServerMetadataDetails).
     pub fn build(self) -> crate::types::AwsAmazonMqBrokerLdapServerMetadataDetails {

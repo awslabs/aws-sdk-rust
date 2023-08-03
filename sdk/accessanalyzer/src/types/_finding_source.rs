@@ -51,6 +51,10 @@ impl FindingSourceBuilder {
         self.r#type = input;
         self
     }
+    /// <p>Indicates the type of access that generated the finding.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::FindingSourceType> {
+        &self.r#type
+    }
     /// <p>Includes details about how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.</p>
     pub fn detail(mut self, input: crate::types::FindingSourceDetail) -> Self {
         self.detail = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl FindingSourceBuilder {
     ) -> Self {
         self.detail = input;
         self
+    }
+    /// <p>Includes details about how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.</p>
+    pub fn get_detail(&self) -> &::std::option::Option<crate::types::FindingSourceDetail> {
+        &self.detail
     }
     /// Consumes the builder and constructs a [`FindingSource`](crate::types::FindingSource).
     pub fn build(self) -> crate::types::FindingSource {

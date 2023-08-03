@@ -36,6 +36,10 @@ impl AssociateAwsAccountWithPartnerAccountFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateAwsAccountWithPartnerAccount as a reference.
+    pub fn as_input(&self) -> &crate::operation::associate_aws_account_with_partner_account::builders::AssociateAwsAccountWithPartnerAccountInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -103,6 +107,10 @@ impl AssociateAwsAccountWithPartnerAccountFluentBuilder {
         self.inner = self.inner.set_sidewalk(input);
         self
     }
+    /// <p>The Sidewalk account credentials.</p>
+    pub fn get_sidewalk(&self) -> &::std::option::Option<crate::types::SidewalkAccountInfo> {
+        self.inner.get_sidewalk()
+    }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
     pub fn client_request_token(
         mut self,
@@ -118,6 +126,10 @@ impl AssociateAwsAccountWithPartnerAccountFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
+    }
+    /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
     }
     /// Appends an item to `Tags`.
     ///
@@ -135,5 +147,9 @@ impl AssociateAwsAccountWithPartnerAccountFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

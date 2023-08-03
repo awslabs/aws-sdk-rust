@@ -47,6 +47,12 @@ impl SearchFacesByImageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SearchFacesByImage as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::search_faces_by_image::builders::SearchFacesByImageInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -143,6 +149,10 @@ impl SearchFacesByImageFluentBuilder {
         self.inner = self.inner.set_collection_id(input);
         self
     }
+    /// <p>ID of the collection to search.</p>
+    pub fn get_collection_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_collection_id()
+    }
     /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
     /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
     pub fn image(mut self, input: crate::types::Image) -> Self {
@@ -155,6 +165,11 @@ impl SearchFacesByImageFluentBuilder {
         self.inner = self.inner.set_image(input);
         self
     }
+    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
+    /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
+    pub fn get_image(&self) -> &::std::option::Option<crate::types::Image> {
+        self.inner.get_image()
+    }
     /// <p>Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence in the match.</p>
     pub fn max_faces(mut self, input: i32) -> Self {
         self.inner = self.inner.max_faces(input);
@@ -165,6 +180,10 @@ impl SearchFacesByImageFluentBuilder {
         self.inner = self.inner.set_max_faces(input);
         self
     }
+    /// <p>Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence in the match.</p>
+    pub fn get_max_faces(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_faces()
+    }
     /// <p>(Optional) Specifies the minimum confidence in the face match to return. For example, don't return any matches where confidence in matches is less than 70%. The default value is 80%.</p>
     pub fn face_match_threshold(mut self, input: f32) -> Self {
         self.inner = self.inner.face_match_threshold(input);
@@ -174,6 +193,10 @@ impl SearchFacesByImageFluentBuilder {
     pub fn set_face_match_threshold(mut self, input: ::std::option::Option<f32>) -> Self {
         self.inner = self.inner.set_face_match_threshold(input);
         self
+    }
+    /// <p>(Optional) Specifies the minimum confidence in the face match to return. For example, don't return any matches where confidence in matches is less than 70%. The default value is 80%.</p>
+    pub fn get_face_match_threshold(&self) -> &::std::option::Option<f32> {
+        self.inner.get_face_match_threshold()
     }
     /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't searched for in the collection. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you specify <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that don’t meet the chosen quality bar. The quality bar is based on a variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify <code>NONE</code>, no filtering is performed. The default value is <code>NONE</code>. </p>
     /// <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
@@ -189,5 +212,10 @@ impl SearchFacesByImageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_quality_filter(input);
         self
+    }
+    /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't searched for in the collection. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you specify <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that don’t meet the chosen quality bar. The quality bar is based on a variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify <code>NONE</code>, no filtering is performed. The default value is <code>NONE</code>. </p>
+    /// <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
+    pub fn get_quality_filter(&self) -> &::std::option::Option<crate::types::QualityFilter> {
+        self.inner.get_quality_filter()
     }
 }

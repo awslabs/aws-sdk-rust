@@ -39,6 +39,10 @@ impl GetCampaignInputBuilder {
         self.name = input;
         self
     }
+    /// <p> The name of the campaign to retrieve information about. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`GetCampaignInput`](crate::operation::get_campaign::GetCampaignInput).
     pub fn build(
         self,

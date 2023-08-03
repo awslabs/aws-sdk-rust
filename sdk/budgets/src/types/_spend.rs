@@ -53,6 +53,10 @@ impl SpendBuilder {
         self.amount = input;
         self
     }
+    /// <p>The cost or usage amount that's associated with a budget forecast, actual spend, or budget threshold.</p>
+    pub fn get_amount(&self) -> &::std::option::Option<::std::string::String> {
+        &self.amount
+    }
     /// <p>The unit of measurement that's used for the budget forecast, actual spend, or budget threshold, such as USD or GBP.</p>
     pub fn unit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.unit = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl SpendBuilder {
     pub fn set_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.unit = input;
         self
+    }
+    /// <p>The unit of measurement that's used for the budget forecast, actual spend, or budget threshold, such as USD or GBP.</p>
+    pub fn get_unit(&self) -> &::std::option::Option<::std::string::String> {
+        &self.unit
     }
     /// Consumes the builder and constructs a [`Spend`](crate::types::Spend).
     pub fn build(self) -> crate::types::Spend {

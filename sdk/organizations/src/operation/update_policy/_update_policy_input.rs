@@ -69,6 +69,11 @@ impl UpdatePolicyInputBuilder {
         self.policy_id = input;
         self
     }
+    /// <p>The unique identifier (ID) of the policy that you want to update.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
+    pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_id
+    }
     /// <p>If provided, the new name for the policy.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -81,6 +86,11 @@ impl UpdatePolicyInputBuilder {
         self.name = input;
         self
     }
+    /// <p>If provided, the new name for the policy.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>If provided, the new description for the policy.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -91,6 +101,10 @@ impl UpdatePolicyInputBuilder {
         self.description = input;
         self
     }
+    /// <p>If provided, the new description for the policy.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>If provided, the new content for the policy. The text must be correctly formatted JSON that complies with the syntax for the policy's type. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control Policy Syntax</a> in the <i>Organizations User Guide.</i> </p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
@@ -100,6 +114,10 @@ impl UpdatePolicyInputBuilder {
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
         self
+    }
+    /// <p>If provided, the new content for the policy. The text must be correctly formatted JSON that complies with the syntax for the policy's type. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control Policy Syntax</a> in the <i>Organizations User Guide.</i> </p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
     }
     /// Consumes the builder and constructs a [`UpdatePolicyInput`](crate::operation::update_policy::UpdatePolicyInput).
     pub fn build(

@@ -45,6 +45,12 @@ impl ConvergenceDetectedBuilder {
         self.complete_on_convergence = input;
         self
     }
+    /// <p>A flag to stop a tuning job once AMT has detected that the job has converged.</p>
+    pub fn get_complete_on_convergence(
+        &self,
+    ) -> &::std::option::Option<crate::types::CompleteOnConvergence> {
+        &self.complete_on_convergence
+    }
     /// Consumes the builder and constructs a [`ConvergenceDetected`](crate::types::ConvergenceDetected).
     pub fn build(self) -> crate::types::ConvergenceDetected {
         crate::types::ConvergenceDetected {

@@ -36,6 +36,13 @@ impl ListCoverageStatisticsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListCoverageStatistics as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_coverage_statistics::builders::ListCoverageStatisticsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -141,6 +148,12 @@ impl ListCoverageStatisticsFluentBuilder {
         self.inner = self.inner.set_filter_criteria(input);
         self
     }
+    /// <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
+    pub fn get_filter_criteria(
+        &self,
+    ) -> &::std::option::Option<crate::types::CoverageFilterCriteria> {
+        self.inner.get_filter_criteria()
+    }
     /// <p>The value to group the results by.</p>
     pub fn group_by(mut self, input: crate::types::GroupKey) -> Self {
         self.inner = self.inner.group_by(input);
@@ -151,6 +164,10 @@ impl ListCoverageStatisticsFluentBuilder {
         self.inner = self.inner.set_group_by(input);
         self
     }
+    /// <p>The value to group the results by.</p>
+    pub fn get_group_by(&self) -> &::std::option::Option<crate::types::GroupKey> {
+        self.inner.get_group_by()
+    }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -160,5 +177,9 @@ impl ListCoverageStatisticsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

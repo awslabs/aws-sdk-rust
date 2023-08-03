@@ -48,6 +48,10 @@ impl EndpointBuilder {
         self.address = input;
         self
     }
+    /// <p>An endpoint address.</p>
+    pub fn get_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.address
+    }
     /// <p>The TTL for the endpoint, in minutes.</p>
     pub fn cache_period_in_minutes(mut self, input: i64) -> Self {
         self.cache_period_in_minutes = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl EndpointBuilder {
     pub fn set_cache_period_in_minutes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.cache_period_in_minutes = input;
         self
+    }
+    /// <p>The TTL for the endpoint, in minutes.</p>
+    pub fn get_cache_period_in_minutes(&self) -> &::std::option::Option<i64> {
+        &self.cache_period_in_minutes
     }
     /// Consumes the builder and constructs a [`Endpoint`](crate::types::Endpoint).
     pub fn build(self) -> crate::types::Endpoint {

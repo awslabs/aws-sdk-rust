@@ -86,6 +86,10 @@ impl GetUsageInputBuilder {
         self.usage_plan_id = input;
         self
     }
+    /// <p>The Id of the usage plan associated with the usage data.</p>
+    pub fn get_usage_plan_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.usage_plan_id
+    }
     /// <p>The Id of the API key associated with the resultant usage data.</p>
     pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_id = ::std::option::Option::Some(input.into());
@@ -95,6 +99,10 @@ impl GetUsageInputBuilder {
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_id = input;
         self
+    }
+    /// <p>The Id of the API key associated with the resultant usage data.</p>
+    pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_id
     }
     /// <p>The starting date (e.g., 2016-01-01) of the usage data.</p>
     pub fn start_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -106,6 +114,10 @@ impl GetUsageInputBuilder {
         self.start_date = input;
         self
     }
+    /// <p>The starting date (e.g., 2016-01-01) of the usage data.</p>
+    pub fn get_start_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_date
+    }
     /// <p>The ending date (e.g., 2016-12-31) of the usage data.</p>
     pub fn end_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.end_date = ::std::option::Option::Some(input.into());
@@ -115,6 +127,10 @@ impl GetUsageInputBuilder {
     pub fn set_end_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.end_date = input;
         self
+    }
+    /// <p>The ending date (e.g., 2016-12-31) of the usage data.</p>
+    pub fn get_end_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.end_date
     }
     /// <p>The current pagination position in the paged result set.</p>
     pub fn position(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -126,6 +142,10 @@ impl GetUsageInputBuilder {
         self.position = input;
         self
     }
+    /// <p>The current pagination position in the paged result set.</p>
+    pub fn get_position(&self) -> &::std::option::Option<::std::string::String> {
+        &self.position
+    }
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -135,6 +155,10 @@ impl GetUsageInputBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
+    }
+    /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// Consumes the builder and constructs a [`GetUsageInput`](crate::operation::get_usage::GetUsageInput).
     pub fn build(

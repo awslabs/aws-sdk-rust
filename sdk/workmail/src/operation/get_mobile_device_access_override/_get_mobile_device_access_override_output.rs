@@ -86,6 +86,10 @@ impl GetMobileDeviceAccessOverrideOutputBuilder {
         self.user_id = input;
         self
     }
+    /// <p>The WorkMail user to which the access override applies.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
+    }
     /// <p>The device to which the access override applies.</p>
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_id = ::std::option::Option::Some(input.into());
@@ -95,6 +99,10 @@ impl GetMobileDeviceAccessOverrideOutputBuilder {
     pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_id = input;
         self
+    }
+    /// <p>The device to which the access override applies.</p>
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_id
     }
     /// <p>The effect of the override, <code>ALLOW</code> or <code>DENY</code>.</p>
     pub fn effect(mut self, input: crate::types::MobileDeviceAccessRuleEffect) -> Self {
@@ -109,6 +117,10 @@ impl GetMobileDeviceAccessOverrideOutputBuilder {
         self.effect = input;
         self
     }
+    /// <p>The effect of the override, <code>ALLOW</code> or <code>DENY</code>.</p>
+    pub fn get_effect(&self) -> &::std::option::Option<crate::types::MobileDeviceAccessRuleEffect> {
+        &self.effect
+    }
     /// <p>A description of the override.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -118,6 +130,10 @@ impl GetMobileDeviceAccessOverrideOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the override.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The date the override was first created.</p>
     pub fn date_created(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -132,6 +148,10 @@ impl GetMobileDeviceAccessOverrideOutputBuilder {
         self.date_created = input;
         self
     }
+    /// <p>The date the override was first created.</p>
+    pub fn get_date_created(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.date_created
+    }
     /// <p>The date the description was last modified.</p>
     pub fn date_modified(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.date_modified = ::std::option::Option::Some(input);
@@ -144,6 +164,10 @@ impl GetMobileDeviceAccessOverrideOutputBuilder {
     ) -> Self {
         self.date_modified = input;
         self
+    }
+    /// <p>The date the description was last modified.</p>
+    pub fn get_date_modified(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.date_modified
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

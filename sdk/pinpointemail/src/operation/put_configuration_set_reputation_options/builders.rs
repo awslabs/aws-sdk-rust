@@ -36,6 +36,10 @@ impl PutConfigurationSetReputationOptionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutConfigurationSetReputationOptions as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_configuration_set_reputation_options::builders::PutConfigurationSetReputationOptionsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl PutConfigurationSetReputationOptionsFluentBuilder {
         self.inner = self.inner.set_configuration_set_name(input);
         self
     }
+    /// <p>The name of the configuration set that you want to enable or disable reputation metric tracking for.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration_set_name()
+    }
     /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration set. If <code>false</code>, tracking of reputation metrics is disabled for the configuration set.</p>
     pub fn reputation_metrics_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.reputation_metrics_enabled(input);
@@ -115,5 +123,9 @@ impl PutConfigurationSetReputationOptionsFluentBuilder {
     pub fn set_reputation_metrics_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_reputation_metrics_enabled(input);
         self
+    }
+    /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration set. If <code>false</code>, tracking of reputation metrics is disabled for the configuration set.</p>
+    pub fn get_reputation_metrics_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_reputation_metrics_enabled()
     }
 }

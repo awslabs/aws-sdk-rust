@@ -48,6 +48,10 @@ impl UpdateErrorBuilder {
         self.error_code = input;
         self
     }
+    /// <p>The error code that corresponds to the error with the last update.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
+    }
     /// <p>The error message that corresponds to the error code.</p>
     pub fn error_message(
         mut self,
@@ -63,6 +67,10 @@ impl UpdateErrorBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>The error message that corresponds to the error code.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`UpdateError`](crate::types::UpdateError).
     pub fn build(self) -> crate::types::UpdateError {

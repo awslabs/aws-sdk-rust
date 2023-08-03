@@ -85,6 +85,10 @@ impl ListAccessPreviewFindingsInputBuilder {
         self.access_preview_id = input;
         self
     }
+    /// <p>The unique ID for the access preview.</p>
+    pub fn get_access_preview_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_preview_id
+    }
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access.</p>
     pub fn analyzer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analyzer_arn = ::std::option::Option::Some(input.into());
@@ -94,6 +98,10 @@ impl ListAccessPreviewFindingsInputBuilder {
     pub fn set_analyzer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.analyzer_arn = input;
         self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access.</p>
+    pub fn get_analyzer_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.analyzer_arn
     }
     /// Adds a key-value pair to `filter`.
     ///
@@ -120,6 +128,14 @@ impl ListAccessPreviewFindingsInputBuilder {
         self.filter = input;
         self
     }
+    /// <p>Criteria to filter the returned findings.</p>
+    pub fn get_filter(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::Criterion>,
+    > {
+        &self.filter
+    }
     /// <p>A token used for pagination of results returned.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -130,6 +146,10 @@ impl ListAccessPreviewFindingsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token used for pagination of results returned.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -139,6 +159,10 @@ impl ListAccessPreviewFindingsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListAccessPreviewFindingsInput`](crate::operation::list_access_preview_findings::ListAccessPreviewFindingsInput).
     pub fn build(

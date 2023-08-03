@@ -63,6 +63,11 @@ impl LaunchTemplateSpecificationBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the launch template.</p>
+    /// <p>You must specify either the launch template name or the launch template ID in the request, but not both.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The version number of the launch template to use. If no version is specified, then the template's default version is used.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -72,6 +77,10 @@ impl LaunchTemplateSpecificationBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The version number of the launch template to use. If no version is specified, then the template's default version is used.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// <p>The ID of the launch template.</p>
     /// <p>You must specify either the launch template ID or the launch template name in the request, but not both.</p>
@@ -84,6 +93,11 @@ impl LaunchTemplateSpecificationBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The ID of the launch template.</p>
+    /// <p>You must specify either the launch template ID or the launch template name in the request, but not both.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`LaunchTemplateSpecification`](crate::types::LaunchTemplateSpecification).
     pub fn build(self) -> crate::types::LaunchTemplateSpecification {

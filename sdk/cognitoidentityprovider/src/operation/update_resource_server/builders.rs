@@ -38,6 +38,12 @@ impl UpdateResourceServerFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateResourceServer as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_resource_server::builders::UpdateResourceServerInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +134,10 @@ impl UpdateResourceServerFluentBuilder {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
+    /// <p>The user pool ID for the user pool.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_pool_id()
+    }
     /// <p>The identifier for the resource server.</p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identifier(input.into());
@@ -138,6 +148,10 @@ impl UpdateResourceServerFluentBuilder {
         self.inner = self.inner.set_identifier(input);
         self
     }
+    /// <p>The identifier for the resource server.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identifier()
+    }
     /// <p>The name of the resource server.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -147,6 +161,10 @@ impl UpdateResourceServerFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the resource server.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// Appends an item to `Scopes`.
     ///
@@ -164,5 +182,11 @@ impl UpdateResourceServerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_scopes(input);
         self
+    }
+    /// <p>The scope values to be set for the resource server.</p>
+    pub fn get_scopes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceServerScopeType>> {
+        self.inner.get_scopes()
     }
 }

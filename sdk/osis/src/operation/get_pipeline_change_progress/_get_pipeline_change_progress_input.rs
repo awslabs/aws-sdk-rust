@@ -45,6 +45,10 @@ impl GetPipelineChangeProgressInputBuilder {
         self.pipeline_name = input;
         self
     }
+    /// <p>The name of the pipeline.</p>
+    pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_name
+    }
     /// Consumes the builder and constructs a [`GetPipelineChangeProgressInput`](crate::operation::get_pipeline_change_progress::GetPipelineChangeProgressInput).
     pub fn build(
         self,

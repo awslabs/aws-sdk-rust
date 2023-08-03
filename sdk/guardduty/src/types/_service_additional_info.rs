@@ -48,6 +48,10 @@ impl ServiceAdditionalInfoBuilder {
         self.value = input;
         self
     }
+    /// <p>This field specifies the value of the additional information.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// <p>Describes the type of the additional information.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl ServiceAdditionalInfoBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>Describes the type of the additional information.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`ServiceAdditionalInfo`](crate::types::ServiceAdditionalInfo).
     pub fn build(self) -> crate::types::ServiceAdditionalInfo {

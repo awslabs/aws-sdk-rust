@@ -57,6 +57,10 @@ impl PurchaseScheduledInstancesInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>Unique, case-sensitive identifier that ensures the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl PurchaseScheduledInstancesInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Appends an item to `purchase_requests`.
     ///
@@ -85,6 +93,12 @@ impl PurchaseScheduledInstancesInputBuilder {
     ) -> Self {
         self.purchase_requests = input;
         self
+    }
+    /// <p>The purchase requests.</p>
+    pub fn get_purchase_requests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PurchaseRequest>> {
+        &self.purchase_requests
     }
     /// Consumes the builder and constructs a [`PurchaseScheduledInstancesInput`](crate::operation::purchase_scheduled_instances::PurchaseScheduledInstancesInput).
     pub fn build(

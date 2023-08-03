@@ -71,6 +71,14 @@ impl StopDeploymentOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the stop deployment operation:</p>
+    /// <ul>
+    /// <li> <p>Pending: The stop operation is pending.</p> </li>
+    /// <li> <p>Succeeded: The stop operation was successful.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::StopStatus> {
+        &self.status
+    }
     /// <p>An accompanying status message.</p>
     pub fn status_message(
         mut self,
@@ -86,6 +94,10 @@ impl StopDeploymentOutputBuilder {
     ) -> Self {
         self.status_message = input;
         self
+    }
+    /// <p>An accompanying status message.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

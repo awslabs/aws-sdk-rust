@@ -42,6 +42,10 @@ impl AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetailsBuilder {
         self.value = input;
         self
     }
+    /// <p>The name of the Availability Zone.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// Consumes the builder and constructs a [`AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails`](crate::types::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails).
     pub fn build(self) -> crate::types::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails {
         crate::types::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails {

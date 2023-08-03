@@ -75,6 +75,10 @@ impl PutAutoScalingPolicyOutputBuilder {
         self.cluster_id = input;
         self
     }
+    /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster.</p>
+    pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_id
+    }
     /// <p>Specifies the ID of the instance group to which the scaling policy is applied.</p>
     pub fn instance_group_id(
         mut self,
@@ -90,6 +94,10 @@ impl PutAutoScalingPolicyOutputBuilder {
     ) -> Self {
         self.instance_group_id = input;
         self
+    }
+    /// <p>Specifies the ID of the instance group to which the scaling policy is applied.</p>
+    pub fn get_instance_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_group_id
     }
     /// <p>The automatic scaling policy definition.</p>
     pub fn auto_scaling_policy(
@@ -107,6 +115,12 @@ impl PutAutoScalingPolicyOutputBuilder {
         self.auto_scaling_policy = input;
         self
     }
+    /// <p>The automatic scaling policy definition.</p>
+    pub fn get_auto_scaling_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoScalingPolicyDescription> {
+        &self.auto_scaling_policy
+    }
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_arn = ::std::option::Option::Some(input.into());
@@ -116,6 +130,10 @@ impl PutAutoScalingPolicyOutputBuilder {
     pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

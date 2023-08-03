@@ -40,6 +40,10 @@ impl ListInsightsOngoingStatusFilterBuilder {
         self.r#type = input;
         self
     }
+    /// <p> Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights. </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::InsightType> {
+        &self.r#type
+    }
     /// Consumes the builder and constructs a [`ListInsightsOngoingStatusFilter`](crate::types::ListInsightsOngoingStatusFilter).
     pub fn build(self) -> crate::types::ListInsightsOngoingStatusFilter {
         crate::types::ListInsightsOngoingStatusFilter {

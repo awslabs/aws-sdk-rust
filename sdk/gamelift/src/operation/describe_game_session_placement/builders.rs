@@ -38,6 +38,10 @@ impl DescribeGameSessionPlacementFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeGameSessionPlacement as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_game_session_placement::builders::DescribeGameSessionPlacementInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,5 +131,9 @@ impl DescribeGameSessionPlacementFluentBuilder {
     pub fn set_placement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_placement_id(input);
         self
+    }
+    /// <p>A unique identifier for a game session placement to retrieve.</p>
+    pub fn get_placement_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_placement_id()
     }
 }

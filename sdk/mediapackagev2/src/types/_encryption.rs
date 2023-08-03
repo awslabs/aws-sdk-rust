@@ -72,6 +72,12 @@ impl EncryptionBuilder {
         self.constant_initialization_vector = input;
         self
     }
+    /// <p>A 128-bit, 16-byte hex value represented by a 32-character string, used in conjunction with the key for encrypting content. If you don't specify a value, then MediaPackage creates the constant initialization vector (IV).</p>
+    pub fn get_constant_initialization_vector(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.constant_initialization_vector
+    }
     /// <p>The encryption method to use.</p>
     pub fn encryption_method(mut self, input: crate::types::EncryptionMethod) -> Self {
         self.encryption_method = ::std::option::Option::Some(input);
@@ -85,6 +91,10 @@ impl EncryptionBuilder {
         self.encryption_method = input;
         self
     }
+    /// <p>The encryption method to use.</p>
+    pub fn get_encryption_method(&self) -> &::std::option::Option<crate::types::EncryptionMethod> {
+        &self.encryption_method
+    }
     /// <p>The frequency (in seconds) of key changes for live workflows, in which content is streamed real time. The service retrieves content keys before the live content begins streaming, and then retrieves them as needed over the lifetime of the workflow. By default, key rotation is set to 300 seconds (5 minutes), the minimum rotation interval, which is equivalent to setting it to 300. If you don't enter an interval, content keys aren't rotated.</p>
     /// <p>The following example setting causes the service to rotate keys every thirty minutes: <code>1800</code> </p>
     pub fn key_rotation_interval_seconds(mut self, input: i32) -> Self {
@@ -96,6 +106,11 @@ impl EncryptionBuilder {
     pub fn set_key_rotation_interval_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.key_rotation_interval_seconds = input;
         self
+    }
+    /// <p>The frequency (in seconds) of key changes for live workflows, in which content is streamed real time. The service retrieves content keys before the live content begins streaming, and then retrieves them as needed over the lifetime of the workflow. By default, key rotation is set to 300 seconds (5 minutes), the minimum rotation interval, which is equivalent to setting it to 300. If you don't enter an interval, content keys aren't rotated.</p>
+    /// <p>The following example setting causes the service to rotate keys every thirty minutes: <code>1800</code> </p>
+    pub fn get_key_rotation_interval_seconds(&self) -> &::std::option::Option<i32> {
+        &self.key_rotation_interval_seconds
     }
     /// <p>The parameters for the SPEKE key provider.</p>
     pub fn speke_key_provider(mut self, input: crate::types::SpekeKeyProvider) -> Self {
@@ -109,6 +124,10 @@ impl EncryptionBuilder {
     ) -> Self {
         self.speke_key_provider = input;
         self
+    }
+    /// <p>The parameters for the SPEKE key provider.</p>
+    pub fn get_speke_key_provider(&self) -> &::std::option::Option<crate::types::SpekeKeyProvider> {
+        &self.speke_key_provider
     }
     /// Consumes the builder and constructs a [`Encryption`](crate::types::Encryption).
     pub fn build(self) -> crate::types::Encryption {

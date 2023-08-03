@@ -79,6 +79,10 @@ impl ListIamPolicyAssignmentsInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services account that contains these IAM policy assignments.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The status of the assignments.</p>
     pub fn assignment_status(mut self, input: crate::types::AssignmentStatus) -> Self {
         self.assignment_status = ::std::option::Option::Some(input);
@@ -92,6 +96,10 @@ impl ListIamPolicyAssignmentsInputBuilder {
         self.assignment_status = input;
         self
     }
+    /// <p>The status of the assignments.</p>
+    pub fn get_assignment_status(&self) -> &::std::option::Option<crate::types::AssignmentStatus> {
+        &self.assignment_status
+    }
     /// <p>The namespace for the assignments.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
@@ -101,6 +109,10 @@ impl ListIamPolicyAssignmentsInputBuilder {
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace = input;
         self
+    }
+    /// <p>The namespace for the assignments.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -112,6 +124,10 @@ impl ListIamPolicyAssignmentsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to be returned per request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -121,6 +137,10 @@ impl ListIamPolicyAssignmentsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to be returned per request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListIamPolicyAssignmentsInput`](crate::operation::list_iam_policy_assignments::ListIamPolicyAssignmentsInput).
     pub fn build(

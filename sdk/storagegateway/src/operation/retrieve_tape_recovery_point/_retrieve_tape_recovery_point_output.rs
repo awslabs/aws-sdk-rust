@@ -47,6 +47,10 @@ impl RetrieveTapeRecoveryPointOutputBuilder {
         self.tape_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the virtual tape for which the recovery point was retrieved.</p>
+    pub fn get_tape_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tape_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

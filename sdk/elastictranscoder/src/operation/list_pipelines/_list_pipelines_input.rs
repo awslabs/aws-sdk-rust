@@ -48,6 +48,10 @@ impl ListPipelinesInputBuilder {
         self.ascending = input;
         self
     }
+    /// <p>To list pipelines in chronological order by the date and time that they were created, enter <code>true</code>. To list pipelines in reverse chronological order, enter <code>false</code>.</p>
+    pub fn get_ascending(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ascending
+    }
     /// <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
     pub fn page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.page_token = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl ListPipelinesInputBuilder {
     pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.page_token = input;
         self
+    }
+    /// <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
+    pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.page_token
     }
     /// Consumes the builder and constructs a [`ListPipelinesInput`](crate::operation::list_pipelines::ListPipelinesInput).
     pub fn build(

@@ -59,6 +59,10 @@ impl DeleteModelInputBuilder {
         self.project_name = input;
         self
     }
+    /// <p>The name of the project that contains the model that you want to delete.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_name
+    }
     /// <p>The version of the model that you want to delete.</p>
     pub fn model_version(
         mut self,
@@ -75,6 +79,10 @@ impl DeleteModelInputBuilder {
         self.model_version = input;
         self
     }
+    /// <p>The version of the model that you want to delete.</p>
+    pub fn get_model_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_version
+    }
     /// <p>ClientToken is an idempotency token that ensures a call to <code>DeleteModel</code> completes only once. You choose the value to pass. For example, an issue might prevent you from getting a response from <code>DeleteModel</code>. In this case, safely retry your call to <code>DeleteModel</code> by using the same <code>ClientToken</code> parameter value.</p>
     /// <p>If you don't supply a value for ClientToken, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple model deletion requests. You'll need to provide your own value for other use cases. </p>
     /// <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>DeleteModel</code>. An idempotency token is active for 8 hours.</p>
@@ -88,6 +96,12 @@ impl DeleteModelInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>ClientToken is an idempotency token that ensures a call to <code>DeleteModel</code> completes only once. You choose the value to pass. For example, an issue might prevent you from getting a response from <code>DeleteModel</code>. In this case, safely retry your call to <code>DeleteModel</code> by using the same <code>ClientToken</code> parameter value.</p>
+    /// <p>If you don't supply a value for ClientToken, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple model deletion requests. You'll need to provide your own value for other use cases. </p>
+    /// <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>DeleteModel</code>. An idempotency token is active for 8 hours.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`DeleteModelInput`](crate::operation::delete_model::DeleteModelInput).
     pub fn build(

@@ -48,6 +48,10 @@ impl StartFailbackLaunchOutputBuilder {
         self.job = input;
         self
     }
+    /// <p>The failback launch Job.</p>
+    pub fn get_job(&self) -> &::std::option::Option<crate::types::Job> {
+        &self.job
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

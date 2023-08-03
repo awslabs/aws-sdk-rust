@@ -64,6 +64,10 @@ impl ListEnvironmentsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A pagination token to control the number of runtime environments displayed in the list.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of runtime environments to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl ListEnvironmentsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of runtime environments to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Appends an item to `names`.
     ///
@@ -93,6 +101,10 @@ impl ListEnvironmentsInputBuilder {
         self.names = input;
         self
     }
+    /// <p>The names of the runtime environments. Must be unique within the account.</p>
+    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.names
+    }
     /// <p>The engine type for the runtime environment.</p>
     pub fn engine_type(mut self, input: crate::types::EngineType) -> Self {
         self.engine_type = ::std::option::Option::Some(input);
@@ -105,6 +117,10 @@ impl ListEnvironmentsInputBuilder {
     ) -> Self {
         self.engine_type = input;
         self
+    }
+    /// <p>The engine type for the runtime environment.</p>
+    pub fn get_engine_type(&self) -> &::std::option::Option<crate::types::EngineType> {
+        &self.engine_type
     }
     /// Consumes the builder and constructs a [`ListEnvironmentsInput`](crate::operation::list_environments::ListEnvironmentsInput).
     pub fn build(

@@ -55,6 +55,10 @@ impl PutInboundDmarcSettingsInputBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The ID of the organization that you are applying the DMARC policy to.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p>Enforces or suspends a policy after it's applied.</p>
     pub fn enforced(mut self, input: bool) -> Self {
         self.enforced = ::std::option::Option::Some(input);
@@ -64,6 +68,10 @@ impl PutInboundDmarcSettingsInputBuilder {
     pub fn set_enforced(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enforced = input;
         self
+    }
+    /// <p>Enforces or suspends a policy after it's applied.</p>
+    pub fn get_enforced(&self) -> &::std::option::Option<bool> {
+        &self.enforced
     }
     /// Consumes the builder and constructs a [`PutInboundDmarcSettingsInput`](crate::operation::put_inbound_dmarc_settings::PutInboundDmarcSettingsInput).
     pub fn build(

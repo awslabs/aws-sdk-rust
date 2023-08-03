@@ -94,6 +94,10 @@ impl PullRequestTargetBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name of the repository that contains the pull request source and destination branches.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>The branch of the repository that contains the changes for the pull request. Also known as the source branch.</p>
     pub fn source_reference(
         mut self,
@@ -109,6 +113,10 @@ impl PullRequestTargetBuilder {
     ) -> Self {
         self.source_reference = input;
         self
+    }
+    /// <p>The branch of the repository that contains the changes for the pull request. Also known as the source branch.</p>
+    pub fn get_source_reference(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_reference
     }
     /// <p>The branch of the repository where the pull request changes are merged. Also known as the destination branch. </p>
     pub fn destination_reference(
@@ -126,6 +134,10 @@ impl PullRequestTargetBuilder {
         self.destination_reference = input;
         self
     }
+    /// <p>The branch of the repository where the pull request changes are merged. Also known as the destination branch. </p>
+    pub fn get_destination_reference(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_reference
+    }
     /// <p>The full commit ID that is the tip of the destination branch. This is the commit where the pull request was or will be merged.</p>
     pub fn destination_commit(
         mut self,
@@ -141,6 +153,10 @@ impl PullRequestTargetBuilder {
     ) -> Self {
         self.destination_commit = input;
         self
+    }
+    /// <p>The full commit ID that is the tip of the destination branch. This is the commit where the pull request was or will be merged.</p>
+    pub fn get_destination_commit(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_commit
     }
     /// <p>The full commit ID of the tip of the source branch used to create the pull request. If the pull request branch is updated by a push while the pull request is open, the commit ID changes to reflect the new tip of the branch.</p>
     pub fn source_commit(
@@ -158,6 +174,10 @@ impl PullRequestTargetBuilder {
         self.source_commit = input;
         self
     }
+    /// <p>The full commit ID of the tip of the source branch used to create the pull request. If the pull request branch is updated by a push while the pull request is open, the commit ID changes to reflect the new tip of the branch.</p>
+    pub fn get_source_commit(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_commit
+    }
     /// <p>The commit ID of the most recent commit that the source branch and the destination branch have in common.</p>
     pub fn merge_base(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.merge_base = ::std::option::Option::Some(input.into());
@@ -167,6 +187,10 @@ impl PullRequestTargetBuilder {
     pub fn set_merge_base(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.merge_base = input;
         self
+    }
+    /// <p>The commit ID of the most recent commit that the source branch and the destination branch have in common.</p>
+    pub fn get_merge_base(&self) -> &::std::option::Option<::std::string::String> {
+        &self.merge_base
     }
     /// <p>Returns metadata about the state of the merge, including whether the merge has been made.</p>
     pub fn merge_metadata(mut self, input: crate::types::MergeMetadata) -> Self {
@@ -180,6 +204,10 @@ impl PullRequestTargetBuilder {
     ) -> Self {
         self.merge_metadata = input;
         self
+    }
+    /// <p>Returns metadata about the state of the merge, including whether the merge has been made.</p>
+    pub fn get_merge_metadata(&self) -> &::std::option::Option<crate::types::MergeMetadata> {
+        &self.merge_metadata
     }
     /// Consumes the builder and constructs a [`PullRequestTarget`](crate::types::PullRequestTarget).
     pub fn build(self) -> crate::types::PullRequestTarget {

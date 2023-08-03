@@ -37,6 +37,10 @@ impl ListCrlsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListCrls as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_crls::builders::ListCrlsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,6 +129,10 @@ impl ListCrlsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The number of resources in the paginated list. </p>
     pub fn page_size(mut self, input: i32) -> Self {
         self.inner = self.inner.page_size(input);
@@ -134,5 +142,9 @@ impl ListCrlsFluentBuilder {
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_page_size(input);
         self
+    }
+    /// <p>The number of resources in the paginated list. </p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        self.inner.get_page_size()
     }
 }

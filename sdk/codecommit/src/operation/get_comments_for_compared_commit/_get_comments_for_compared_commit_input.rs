@@ -77,6 +77,10 @@ impl GetCommentsForComparedCommitInputBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name of the repository where you want to compare commits.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>To establish the directionality of the comparison, the full commit ID of the before commit.</p>
     pub fn before_commit_id(
         mut self,
@@ -92,6 +96,10 @@ impl GetCommentsForComparedCommitInputBuilder {
     ) -> Self {
         self.before_commit_id = input;
         self
+    }
+    /// <p>To establish the directionality of the comparison, the full commit ID of the before commit.</p>
+    pub fn get_before_commit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.before_commit_id
     }
     /// <p>To establish the directionality of the comparison, the full commit ID of the after commit.</p>
     pub fn after_commit_id(
@@ -109,6 +117,10 @@ impl GetCommentsForComparedCommitInputBuilder {
         self.after_commit_id = input;
         self
     }
+    /// <p>To establish the directionality of the comparison, the full commit ID of the after commit.</p>
+    pub fn get_after_commit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.after_commit_id
+    }
     /// <p>An enumeration token that when provided in a request, returns the next batch of the results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -119,6 +131,10 @@ impl GetCommentsForComparedCommitInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>An enumeration token that when provided in a request, returns the next batch of the results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>A non-zero, non-negative integer used to limit the number of returned results. The default is 100 comments, but you can configure up to 500.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -128,6 +144,10 @@ impl GetCommentsForComparedCommitInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>A non-zero, non-negative integer used to limit the number of returned results. The default is 100 comments, but you can configure up to 500.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`GetCommentsForComparedCommitInput`](crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitInput).
     pub fn build(

@@ -37,6 +37,12 @@ impl DeleteTargetGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteTargetGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_target_group::builders::DeleteTargetGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +138,9 @@ impl DeleteTargetGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_target_group_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the target group.</p>
+    pub fn get_target_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_group_arn()
     }
 }

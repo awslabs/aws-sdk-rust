@@ -48,6 +48,10 @@ impl DescribeNodegroupInputBuilder {
         self.cluster_name = input;
         self
     }
+    /// <p>The name of the Amazon EKS cluster associated with the node group.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_name
+    }
     /// <p>The name of the node group to describe.</p>
     pub fn nodegroup_name(
         mut self,
@@ -63,6 +67,10 @@ impl DescribeNodegroupInputBuilder {
     ) -> Self {
         self.nodegroup_name = input;
         self
+    }
+    /// <p>The name of the node group to describe.</p>
+    pub fn get_nodegroup_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nodegroup_name
     }
     /// Consumes the builder and constructs a [`DescribeNodegroupInput`](crate::operation::describe_nodegroup::DescribeNodegroupInput).
     pub fn build(

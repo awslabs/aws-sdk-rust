@@ -36,6 +36,10 @@ impl RotateIngestEndpointCredentialsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RotateIngestEndpointCredentials as a reference.
+    pub fn as_input(&self) -> &crate::operation::rotate_ingest_endpoint_credentials::builders::RotateIngestEndpointCredentialsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl RotateIngestEndpointCredentialsFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// The ID of the channel the IngestEndpoint is on.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// The id of the IngestEndpoint whose credentials should be rotated
     pub fn ingest_endpoint_id(
         mut self,
@@ -115,5 +123,9 @@ impl RotateIngestEndpointCredentialsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ingest_endpoint_id(input);
         self
+    }
+    /// The id of the IngestEndpoint whose credentials should be rotated
+    pub fn get_ingest_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ingest_endpoint_id()
     }
 }

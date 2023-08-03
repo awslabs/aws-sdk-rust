@@ -37,6 +37,13 @@ impl ModifyEventSubscriptionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyEventSubscription as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::modify_event_subscription::builders::ModifyEventSubscriptionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl ModifyEventSubscriptionFluentBuilder {
         self.inner = self.inner.set_subscription_name(input);
         self
     }
+    /// <p>The name of the DMS event notification subscription to be modified.</p>
+    pub fn get_subscription_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_subscription_name()
+    }
     /// <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
     pub fn sns_topic_arn(
         mut self,
@@ -149,6 +160,10 @@ impl ModifyEventSubscriptionFluentBuilder {
         self.inner = self.inner.set_sns_topic_arn(input);
         self
     }
+    /// <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
+    pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sns_topic_arn()
+    }
     /// <p> The type of DMS resource that generates the events you want to subscribe to. </p>
     /// <p>Valid values: replication-instance | replication-task</p>
     pub fn source_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -160,6 +175,11 @@ impl ModifyEventSubscriptionFluentBuilder {
     pub fn set_source_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_type(input);
         self
+    }
+    /// <p> The type of DMS resource that generates the events you want to subscribe to. </p>
+    /// <p>Valid values: replication-instance | replication-task</p>
+    pub fn get_source_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_type()
     }
     /// Appends an item to `EventCategories`.
     ///
@@ -181,6 +201,12 @@ impl ModifyEventSubscriptionFluentBuilder {
         self.inner = self.inner.set_event_categories(input);
         self
     }
+    /// <p> A list of event categories for a source type that you want to subscribe to. Use the <code>DescribeEventCategories</code> action to see a list of event categories. </p>
+    pub fn get_event_categories(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_event_categories()
+    }
     /// <p> A Boolean value; set to <b>true</b> to activate the subscription. </p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.enabled(input);
@@ -190,5 +216,9 @@ impl ModifyEventSubscriptionFluentBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enabled(input);
         self
+    }
+    /// <p> A Boolean value; set to <b>true</b> to activate the subscription. </p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enabled()
     }
 }

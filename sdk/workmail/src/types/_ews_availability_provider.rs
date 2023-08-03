@@ -63,6 +63,10 @@ impl EwsAvailabilityProviderBuilder {
         self.ews_endpoint = input;
         self
     }
+    /// <p>The endpoint of the remote EWS server.</p>
+    pub fn get_ews_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ews_endpoint
+    }
     /// <p>The username used to authenticate the remote EWS server.</p>
     pub fn ews_username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ews_username = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl EwsAvailabilityProviderBuilder {
         self.ews_username = input;
         self
     }
+    /// <p>The username used to authenticate the remote EWS server.</p>
+    pub fn get_ews_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ews_username
+    }
     /// <p>The password used to authenticate the remote EWS server.</p>
     pub fn ews_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ews_password = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl EwsAvailabilityProviderBuilder {
     pub fn set_ews_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ews_password = input;
         self
+    }
+    /// <p>The password used to authenticate the remote EWS server.</p>
+    pub fn get_ews_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ews_password
     }
     /// Consumes the builder and constructs a [`EwsAvailabilityProvider`](crate::types::EwsAvailabilityProvider).
     pub fn build(self) -> crate::types::EwsAvailabilityProvider {

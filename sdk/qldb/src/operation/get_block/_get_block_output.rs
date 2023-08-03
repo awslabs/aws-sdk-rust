@@ -61,6 +61,10 @@ impl GetBlockOutputBuilder {
         self.block = input;
         self
     }
+    /// <p>The block data object in Amazon Ion format.</p>
+    pub fn get_block(&self) -> &::std::option::Option<crate::types::ValueHolder> {
+        &self.block
+    }
     /// <p>The proof object in Amazon Ion format returned by a <code>GetBlock</code> request. A proof contains the list of hash values required to recalculate the specified digest using a Merkle tree, starting with the specified block.</p>
     pub fn proof(mut self, input: crate::types::ValueHolder) -> Self {
         self.proof = ::std::option::Option::Some(input);
@@ -70,6 +74,10 @@ impl GetBlockOutputBuilder {
     pub fn set_proof(mut self, input: ::std::option::Option<crate::types::ValueHolder>) -> Self {
         self.proof = input;
         self
+    }
+    /// <p>The proof object in Amazon Ion format returned by a <code>GetBlock</code> request. A proof contains the list of hash values required to recalculate the specified digest using a Merkle tree, starting with the specified block.</p>
+    pub fn get_proof(&self) -> &::std::option::Option<crate::types::ValueHolder> {
+        &self.proof
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

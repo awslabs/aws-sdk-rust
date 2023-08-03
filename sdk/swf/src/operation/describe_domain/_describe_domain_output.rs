@@ -58,6 +58,10 @@ impl DescribeDomainOutputBuilder {
         self.domain_info = input;
         self
     }
+    /// <p>The basic information about a domain, such as its name, status, and description.</p>
+    pub fn get_domain_info(&self) -> &::std::option::Option<crate::types::DomainInfo> {
+        &self.domain_info
+    }
     /// <p>The domain configuration. Currently, this includes only the domain's retention period.</p>
     pub fn configuration(mut self, input: crate::types::DomainConfiguration) -> Self {
         self.configuration = ::std::option::Option::Some(input);
@@ -70,6 +74,10 @@ impl DescribeDomainOutputBuilder {
     ) -> Self {
         self.configuration = input;
         self
+    }
+    /// <p>The domain configuration. Currently, this includes only the domain's retention period.</p>
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::DomainConfiguration> {
+        &self.configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

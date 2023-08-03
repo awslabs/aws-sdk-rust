@@ -39,6 +39,10 @@ impl GetGatewayInputBuilder {
         self.gateway_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the gateway.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_arn
+    }
     /// Consumes the builder and constructs a [`GetGatewayInput`](crate::operation::get_gateway::GetGatewayInput).
     pub fn build(
         self,

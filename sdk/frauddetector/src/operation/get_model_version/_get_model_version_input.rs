@@ -55,6 +55,10 @@ impl GetModelVersionInputBuilder {
         self.model_id = input;
         self
     }
+    /// <p>The model ID.</p>
+    pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_id
+    }
     /// <p>The model type.</p>
     pub fn model_type(mut self, input: crate::types::ModelTypeEnum) -> Self {
         self.model_type = ::std::option::Option::Some(input);
@@ -67,6 +71,10 @@ impl GetModelVersionInputBuilder {
     ) -> Self {
         self.model_type = input;
         self
+    }
+    /// <p>The model type.</p>
+    pub fn get_model_type(&self) -> &::std::option::Option<crate::types::ModelTypeEnum> {
+        &self.model_type
     }
     /// <p>The model version number.</p>
     pub fn model_version_number(
@@ -83,6 +91,10 @@ impl GetModelVersionInputBuilder {
     ) -> Self {
         self.model_version_number = input;
         self
+    }
+    /// <p>The model version number.</p>
+    pub fn get_model_version_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_version_number
     }
     /// Consumes the builder and constructs a [`GetModelVersionInput`](crate::operation::get_model_version::GetModelVersionInput).
     pub fn build(

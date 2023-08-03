@@ -51,6 +51,12 @@ impl LineItemFieldsBuilder {
         self.line_item_expense_fields = input;
         self
     }
+    /// <p>ExpenseFields used to show information from detected lines on a table.</p>
+    pub fn get_line_item_expense_fields(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExpenseField>> {
+        &self.line_item_expense_fields
+    }
     /// Consumes the builder and constructs a [`LineItemFields`](crate::types::LineItemFields).
     pub fn build(self) -> crate::types::LineItemFields {
         crate::types::LineItemFields {

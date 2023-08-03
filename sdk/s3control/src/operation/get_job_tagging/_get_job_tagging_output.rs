@@ -55,6 +55,10 @@ impl GetJobTaggingOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The set of tags associated with the S3 Batch Operations job.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::S3Tag>> {
+        &self.tags
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

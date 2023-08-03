@@ -37,6 +37,13 @@ impl DescribeInstancesHealthFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeInstancesHealth as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_instances_health::builders::DescribeInstancesHealthInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl DescribeInstancesHealthFluentBuilder {
         self.inner = self.inner.set_environment_name(input);
         self
     }
+    /// <p>Specify the AWS Elastic Beanstalk environment by name.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_name()
+    }
     /// <p>Specify the AWS Elastic Beanstalk environment by ID.</p>
     pub fn environment_id(
         mut self,
@@ -148,6 +159,10 @@ impl DescribeInstancesHealthFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_environment_id(input);
         self
+    }
+    /// <p>Specify the AWS Elastic Beanstalk environment by ID.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_id()
     }
     /// Appends an item to `AttributeNames`.
     ///
@@ -166,6 +181,12 @@ impl DescribeInstancesHealthFluentBuilder {
         self.inner = self.inner.set_attribute_names(input);
         self
     }
+    /// <p>Specifies the response elements you wish to receive. To retrieve all attributes, set to <code>All</code>. If no attribute names are specified, returns a list of instances.</p>
+    pub fn get_attribute_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstancesHealthAttribute>> {
+        self.inner.get_attribute_names()
+    }
     /// <p>Specify the pagination token returned by a previous call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -175,5 +196,9 @@ impl DescribeInstancesHealthFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>Specify the pagination token returned by a previous call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

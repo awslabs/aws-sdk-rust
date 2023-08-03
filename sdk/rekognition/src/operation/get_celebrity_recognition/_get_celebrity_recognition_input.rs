@@ -65,6 +65,10 @@ impl GetCelebrityRecognitionInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>Job identifier for the required celebrity recognition analysis. You can get the job identifer from a call to <code>StartCelebrityRecognition</code>.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl GetCelebrityRecognitionInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>If the previous response was incomplete (because there is more recognized celebrities to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of celebrities. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -84,6 +92,10 @@ impl GetCelebrityRecognitionInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the previous response was incomplete (because there is more recognized celebrities to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of celebrities. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>Sort to use for celebrities returned in <code>Celebrities</code> field. Specify <code>ID</code> to sort by the celebrity identifier, specify <code>TIMESTAMP</code> to sort by the time the celebrity was recognized.</p>
     pub fn sort_by(mut self, input: crate::types::CelebrityRecognitionSortBy) -> Self {
@@ -97,6 +109,10 @@ impl GetCelebrityRecognitionInputBuilder {
     ) -> Self {
         self.sort_by = input;
         self
+    }
+    /// <p>Sort to use for celebrities returned in <code>Celebrities</code> field. Specify <code>ID</code> to sort by the celebrity identifier, specify <code>TIMESTAMP</code> to sort by the time the celebrity was recognized.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::CelebrityRecognitionSortBy> {
+        &self.sort_by
     }
     /// Consumes the builder and constructs a [`GetCelebrityRecognitionInput`](crate::operation::get_celebrity_recognition::GetCelebrityRecognitionInput).
     pub fn build(

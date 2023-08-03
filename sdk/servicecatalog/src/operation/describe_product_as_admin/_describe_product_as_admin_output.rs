@@ -87,6 +87,12 @@ impl DescribeProductAsAdminOutputBuilder {
         self.product_view_detail = input;
         self
     }
+    /// <p>Information about the product view.</p>
+    pub fn get_product_view_detail(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProductViewDetail> {
+        &self.product_view_detail
+    }
     /// Appends an item to `provisioning_artifact_summaries`.
     ///
     /// To override the contents of this collection use [`set_provisioning_artifact_summaries`](Self::set_provisioning_artifact_summaries).
@@ -109,6 +115,12 @@ impl DescribeProductAsAdminOutputBuilder {
         self.provisioning_artifact_summaries = input;
         self
     }
+    /// <p>Information about the provisioning artifacts (also known as versions) for the specified product.</p>
+    pub fn get_provisioning_artifact_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvisioningArtifactSummary>> {
+        &self.provisioning_artifact_summaries
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -127,6 +139,10 @@ impl DescribeProductAsAdminOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Information about the tags associated with the product.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Appends an item to `tag_options`.
     ///
@@ -147,6 +163,12 @@ impl DescribeProductAsAdminOutputBuilder {
         self.tag_options = input;
         self
     }
+    /// <p>Information about the TagOptions associated with the product.</p>
+    pub fn get_tag_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagOptionDetail>> {
+        &self.tag_options
+    }
     /// Appends an item to `budgets`.
     ///
     /// To override the contents of this collection use [`set_budgets`](Self::set_budgets).
@@ -165,6 +187,12 @@ impl DescribeProductAsAdminOutputBuilder {
     ) -> Self {
         self.budgets = input;
         self
+    }
+    /// <p>Information about the associated budgets.</p>
+    pub fn get_budgets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BudgetDetail>> {
+        &self.budgets
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

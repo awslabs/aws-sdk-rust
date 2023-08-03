@@ -67,6 +67,12 @@ impl NetworkInterfacePrivateIpAddressBuilder {
         self.association = input;
         self
     }
+    /// <p>The association information for an Elastic IP address (IPv4) associated with the network interface.</p>
+    pub fn get_association(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkInterfaceAssociation> {
+        &self.association
+    }
     /// <p>Indicates whether this IPv4 address is the primary private IPv4 address of the network interface.</p>
     pub fn primary(mut self, input: bool) -> Self {
         self.primary = ::std::option::Option::Some(input);
@@ -76,6 +82,10 @@ impl NetworkInterfacePrivateIpAddressBuilder {
     pub fn set_primary(mut self, input: ::std::option::Option<bool>) -> Self {
         self.primary = input;
         self
+    }
+    /// <p>Indicates whether this IPv4 address is the primary private IPv4 address of the network interface.</p>
+    pub fn get_primary(&self) -> &::std::option::Option<bool> {
+        &self.primary
     }
     /// <p>The private DNS name.</p>
     pub fn private_dns_name(
@@ -93,6 +103,10 @@ impl NetworkInterfacePrivateIpAddressBuilder {
         self.private_dns_name = input;
         self
     }
+    /// <p>The private DNS name.</p>
+    pub fn get_private_dns_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_dns_name
+    }
     /// <p>The private IPv4 address.</p>
     pub fn private_ip_address(
         mut self,
@@ -108,6 +122,10 @@ impl NetworkInterfacePrivateIpAddressBuilder {
     ) -> Self {
         self.private_ip_address = input;
         self
+    }
+    /// <p>The private IPv4 address.</p>
+    pub fn get_private_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_ip_address
     }
     /// Consumes the builder and constructs a [`NetworkInterfacePrivateIpAddress`](crate::types::NetworkInterfacePrivateIpAddress).
     pub fn build(self) -> crate::types::NetworkInterfacePrivateIpAddress {

@@ -54,6 +54,10 @@ impl InputDestinationVpcBuilder {
         self.availability_zone = input;
         self
     }
+    /// The availability zone of the Input destination.
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// The network interface ID of the Input destination in the VPC.
     pub fn network_interface_id(
         mut self,
@@ -69,6 +73,10 @@ impl InputDestinationVpcBuilder {
     ) -> Self {
         self.network_interface_id = input;
         self
+    }
+    /// The network interface ID of the Input destination in the VPC.
+    pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_interface_id
     }
     /// Consumes the builder and constructs a [`InputDestinationVpc`](crate::types::InputDestinationVpc).
     pub fn build(self) -> crate::types::InputDestinationVpc {

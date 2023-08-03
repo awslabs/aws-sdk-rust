@@ -51,6 +51,10 @@ impl GetAccountConfigurationOutputBuilder {
         self.encryption_config = input;
         self
     }
+    /// <p>An <code>EncryptionConfig</code> object that contains the KMS key ARN to use for encryption. By default, CodeGuru Security uses an AWS-managed key for encryption. To specify your own key, call <code>UpdateAccountConfiguration</code>.</p>
+    pub fn get_encryption_config(&self) -> &::std::option::Option<crate::types::EncryptionConfig> {
+        &self.encryption_config
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

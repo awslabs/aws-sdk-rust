@@ -62,6 +62,10 @@ impl KxDatabaseListEntryBuilder {
         self.database_name = input;
         self
     }
+    /// <p>The name of the kdb database.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>The timestamp at which the database was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_timestamp = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl KxDatabaseListEntryBuilder {
         self.created_timestamp = input;
         self
     }
+    /// <p>The timestamp at which the database was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
+    }
     /// <p>The last time that the database was modified. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn last_modified_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_timestamp = ::std::option::Option::Some(input);
@@ -87,6 +95,12 @@ impl KxDatabaseListEntryBuilder {
     ) -> Self {
         self.last_modified_timestamp = input;
         self
+    }
+    /// <p>The last time that the database was modified. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    pub fn get_last_modified_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_timestamp
     }
     /// Consumes the builder and constructs a [`KxDatabaseListEntry`](crate::types::KxDatabaseListEntry).
     pub fn build(self) -> crate::types::KxDatabaseListEntry {

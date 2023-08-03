@@ -36,6 +36,12 @@ impl ListGroupResourcesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListGroupResources as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_group_resources::builders::ListGroupResourcesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl ListGroupResourcesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>Specify this parameter to limit how many canary ARNs are returned each time you use the <code>ListGroupResources</code> operation. If you omit this parameter, the default of 20 is used.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -146,6 +156,10 @@ impl ListGroupResourcesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>Specify this parameter to limit how many canary ARNs are returned each time you use the <code>ListGroupResources</code> operation. If you omit this parameter, the default of 20 is used.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>Specifies the group to return information for. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
     pub fn group_identifier(
@@ -162,5 +176,9 @@ impl ListGroupResourcesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_group_identifier(input);
         self
+    }
+    /// <p>Specifies the group to return information for. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
+    pub fn get_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group_identifier()
     }
 }

@@ -36,6 +36,10 @@ impl UpdateFlowFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateFlow as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_flow::builders::UpdateFlowInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl UpdateFlowFluentBuilder {
         self.inner = self.inner.set_flow_name(input);
         self
     }
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
+    pub fn get_flow_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_flow_name()
+    }
     /// <p> A description of the flow. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -127,6 +135,10 @@ impl UpdateFlowFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p> A description of the flow. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p> The trigger settings that determine how and when the flow runs. </p>
     pub fn trigger_config(mut self, input: crate::types::TriggerConfig) -> Self {
@@ -141,6 +153,10 @@ impl UpdateFlowFluentBuilder {
         self.inner = self.inner.set_trigger_config(input);
         self
     }
+    /// <p> The trigger settings that determine how and when the flow runs. </p>
+    pub fn get_trigger_config(&self) -> &::std::option::Option<crate::types::TriggerConfig> {
+        self.inner.get_trigger_config()
+    }
     /// <p> Contains information about the configuration of the source connector used in the flow. </p>
     pub fn source_flow_config(mut self, input: crate::types::SourceFlowConfig) -> Self {
         self.inner = self.inner.source_flow_config(input);
@@ -153,6 +169,10 @@ impl UpdateFlowFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_source_flow_config(input);
         self
+    }
+    /// <p> Contains information about the configuration of the source connector used in the flow. </p>
+    pub fn get_source_flow_config(&self) -> &::std::option::Option<crate::types::SourceFlowConfig> {
+        self.inner.get_source_flow_config()
     }
     /// Appends an item to `destinationFlowConfigList`.
     ///
@@ -174,6 +194,12 @@ impl UpdateFlowFluentBuilder {
         self.inner = self.inner.set_destination_flow_config_list(input);
         self
     }
+    /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
+    pub fn get_destination_flow_config_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DestinationFlowConfig>> {
+        self.inner.get_destination_flow_config_list()
+    }
     /// Appends an item to `tasks`.
     ///
     /// To override the contents of this collection use [`set_tasks`](Self::set_tasks).
@@ -191,6 +217,10 @@ impl UpdateFlowFluentBuilder {
         self.inner = self.inner.set_tasks(input);
         self
     }
+    /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
+    pub fn get_tasks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Task>> {
+        self.inner.get_tasks()
+    }
     /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.</p>
     pub fn metadata_catalog_config(mut self, input: crate::types::MetadataCatalogConfig) -> Self {
         self.inner = self.inner.metadata_catalog_config(input);
@@ -203,6 +233,12 @@ impl UpdateFlowFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_metadata_catalog_config(input);
         self
+    }
+    /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.</p>
+    pub fn get_metadata_catalog_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::MetadataCatalogConfig> {
+        self.inner.get_metadata_catalog_config()
     }
     /// <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>UpdateFlow</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p>
     /// <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p>
@@ -217,5 +253,11 @@ impl UpdateFlowFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>UpdateFlow</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p>
+    /// <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p>
+    /// <p>If you specify input parameters that differ from your first request, an error occurs. If you use a different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>UpdateFlow</code>. The token is active for 8 hours.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

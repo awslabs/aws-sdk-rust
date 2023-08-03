@@ -71,6 +71,10 @@ impl DescribeHomeRegionControlsInputBuilder {
         self.control_id = input;
         self
     }
+    /// <p>The <code>ControlID</code> is a unique identifier string of your <code>HomeRegionControl</code> object.</p>
+    pub fn get_control_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control_id
+    }
     /// <p>The name of the home region you'd like to view.</p>
     pub fn home_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.home_region = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl DescribeHomeRegionControlsInputBuilder {
     pub fn set_home_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.home_region = input;
         self
+    }
+    /// <p>The name of the home region you'd like to view.</p>
+    pub fn get_home_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.home_region
     }
     /// <p>The target parameter specifies the identifier to which the home region is applied, which is always of type <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>.</p>
     pub fn target(mut self, input: crate::types::Target) -> Self {
@@ -91,6 +99,10 @@ impl DescribeHomeRegionControlsInputBuilder {
         self.target = input;
         self
     }
+    /// <p>The target parameter specifies the identifier to which the home region is applied, which is always of type <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>.</p>
+    pub fn get_target(&self) -> &::std::option::Option<crate::types::Target> {
+        &self.target
+    }
     /// <p>The maximum number of filtering results to display per page. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -101,6 +113,10 @@ impl DescribeHomeRegionControlsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of filtering results to display per page. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>If a <code>NextToken</code> was returned by a previous call, more results are available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -110,6 +126,10 @@ impl DescribeHomeRegionControlsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If a <code>NextToken</code> was returned by a previous call, more results are available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeHomeRegionControlsInput`](crate::operation::describe_home_region_controls::DescribeHomeRegionControlsInput).
     pub fn build(

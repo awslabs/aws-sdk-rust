@@ -40,6 +40,10 @@ impl AccessPolicyStatsBuilder {
         self.data_policy_count = input;
         self
     }
+    /// <p>The number of data access policies in the current account.</p>
+    pub fn get_data_policy_count(&self) -> &::std::option::Option<i64> {
+        &self.data_policy_count
+    }
     /// Consumes the builder and constructs a [`AccessPolicyStats`](crate::types::AccessPolicyStats).
     pub fn build(self) -> crate::types::AccessPolicyStats {
         crate::types::AccessPolicyStats {

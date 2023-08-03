@@ -55,6 +55,12 @@ impl CodeReviewTypeBuilder {
         self.repository_analysis = input;
         self
     }
+    /// <p>A code review that analyzes all code under a specified branch in an associated repository. The associated repository is specified using its ARN in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">CreateCodeReview</a>.</p>
+    pub fn get_repository_analysis(
+        &self,
+    ) -> &::std::option::Option<crate::types::RepositoryAnalysis> {
+        &self.repository_analysis
+    }
     /// Appends an item to `analysis_types`.
     ///
     /// To override the contents of this collection use [`set_analysis_types`](Self::set_analysis_types).
@@ -73,6 +79,12 @@ impl CodeReviewTypeBuilder {
     ) -> Self {
         self.analysis_types = input;
         self
+    }
+    /// <p>They types of analysis performed during a repository analysis or a pull request review. You can specify either <code>Security</code>, <code>CodeQuality</code>, or both.</p>
+    pub fn get_analysis_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalysisType>> {
+        &self.analysis_types
     }
     /// Consumes the builder and constructs a [`CodeReviewType`](crate::types::CodeReviewType).
     pub fn build(self) -> crate::types::CodeReviewType {

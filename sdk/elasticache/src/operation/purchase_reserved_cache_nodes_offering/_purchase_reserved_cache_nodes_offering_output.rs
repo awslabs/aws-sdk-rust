@@ -49,6 +49,12 @@ impl PurchaseReservedCacheNodesOfferingOutputBuilder {
         self.reserved_cache_node = input;
         self
     }
+    /// <p>Represents the output of a <code>PurchaseReservedCacheNodesOffering</code> operation.</p>
+    pub fn get_reserved_cache_node(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReservedCacheNode> {
+        &self.reserved_cache_node
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

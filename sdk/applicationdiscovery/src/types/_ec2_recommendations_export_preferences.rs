@@ -96,6 +96,10 @@ impl Ec2RecommendationsExportPreferencesBuilder {
         self.enabled = input;
         self
     }
+    /// <p> If set to true, the export <a href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_StartExportTask.html#API_StartExportTask_RequestSyntax">preferences</a> is set to <code>Ec2RecommendationsExportPreferences</code>. </p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// <p> The recommended EC2 instance type that matches the CPU usage metric of server performance data. </p>
     pub fn cpu_performance_metric_basis(mut self, input: crate::types::UsageMetricBasis) -> Self {
         self.cpu_performance_metric_basis = ::std::option::Option::Some(input);
@@ -108,6 +112,12 @@ impl Ec2RecommendationsExportPreferencesBuilder {
     ) -> Self {
         self.cpu_performance_metric_basis = input;
         self
+    }
+    /// <p> The recommended EC2 instance type that matches the CPU usage metric of server performance data. </p>
+    pub fn get_cpu_performance_metric_basis(
+        &self,
+    ) -> &::std::option::Option<crate::types::UsageMetricBasis> {
+        &self.cpu_performance_metric_basis
     }
     /// <p> The recommended EC2 instance type that matches the Memory usage metric of server performance data. </p>
     pub fn ram_performance_metric_basis(mut self, input: crate::types::UsageMetricBasis) -> Self {
@@ -122,6 +132,12 @@ impl Ec2RecommendationsExportPreferencesBuilder {
         self.ram_performance_metric_basis = input;
         self
     }
+    /// <p> The recommended EC2 instance type that matches the Memory usage metric of server performance data. </p>
+    pub fn get_ram_performance_metric_basis(
+        &self,
+    ) -> &::std::option::Option<crate::types::UsageMetricBasis> {
+        &self.ram_performance_metric_basis
+    }
     /// <p> The target tenancy to use for your recommended EC2 instances. </p>
     pub fn tenancy(mut self, input: crate::types::Tenancy) -> Self {
         self.tenancy = ::std::option::Option::Some(input);
@@ -131,6 +147,10 @@ impl Ec2RecommendationsExportPreferencesBuilder {
     pub fn set_tenancy(mut self, input: ::std::option::Option<crate::types::Tenancy>) -> Self {
         self.tenancy = input;
         self
+    }
+    /// <p> The target tenancy to use for your recommended EC2 instances. </p>
+    pub fn get_tenancy(&self) -> &::std::option::Option<crate::types::Tenancy> {
+        &self.tenancy
     }
     /// Appends an item to `excluded_instance_types`.
     ///
@@ -154,6 +174,12 @@ impl Ec2RecommendationsExportPreferencesBuilder {
         self.excluded_instance_types = input;
         self
     }
+    /// <p> An array of instance types to exclude from recommendations. </p>
+    pub fn get_excluded_instance_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.excluded_instance_types
+    }
     /// <p> The target Amazon Web Services Region for the recommendations. You can use any of the Region codes available for the chosen service, as listed in <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Amazon Web Services service endpoints</a> in the <i>Amazon Web Services General Reference</i>. </p>
     pub fn preferred_region(
         mut self,
@@ -170,6 +196,10 @@ impl Ec2RecommendationsExportPreferencesBuilder {
         self.preferred_region = input;
         self
     }
+    /// <p> The target Amazon Web Services Region for the recommendations. You can use any of the Region codes available for the chosen service, as listed in <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Amazon Web Services service endpoints</a> in the <i>Amazon Web Services General Reference</i>. </p>
+    pub fn get_preferred_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.preferred_region
+    }
     /// <p> The contract type for a reserved instance. If blank, we assume an On-Demand instance is preferred. </p>
     pub fn reserved_instance_options(
         mut self,
@@ -185,6 +215,12 @@ impl Ec2RecommendationsExportPreferencesBuilder {
     ) -> Self {
         self.reserved_instance_options = input;
         self
+    }
+    /// <p> The contract type for a reserved instance. If blank, we assume an On-Demand instance is preferred. </p>
+    pub fn get_reserved_instance_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReservedInstanceOptions> {
+        &self.reserved_instance_options
     }
     /// Consumes the builder and constructs a [`Ec2RecommendationsExportPreferences`](crate::types::Ec2RecommendationsExportPreferences).
     pub fn build(self) -> crate::types::Ec2RecommendationsExportPreferences {

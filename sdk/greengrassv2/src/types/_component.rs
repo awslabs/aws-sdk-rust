@@ -56,6 +56,10 @@ impl ComponentBuilder {
         self.arn = input;
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the component.</p>
     pub fn component_name(
         mut self,
@@ -72,6 +76,10 @@ impl ComponentBuilder {
         self.component_name = input;
         self
     }
+    /// <p>The name of the component.</p>
+    pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_name
+    }
     /// <p>The latest version of the component and its details.</p>
     pub fn latest_version(mut self, input: crate::types::ComponentLatestVersion) -> Self {
         self.latest_version = ::std::option::Option::Some(input);
@@ -84,6 +92,12 @@ impl ComponentBuilder {
     ) -> Self {
         self.latest_version = input;
         self
+    }
+    /// <p>The latest version of the component and its details.</p>
+    pub fn get_latest_version(
+        &self,
+    ) -> &::std::option::Option<crate::types::ComponentLatestVersion> {
+        &self.latest_version
     }
     /// Consumes the builder and constructs a [`Component`](crate::types::Component).
     pub fn build(self) -> crate::types::Component {

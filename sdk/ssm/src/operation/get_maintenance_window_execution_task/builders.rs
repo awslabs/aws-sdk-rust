@@ -36,6 +36,10 @@ impl GetMaintenanceWindowExecutionTaskFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetMaintenanceWindowExecutionTask as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_maintenance_window_execution_task::builders::GetMaintenanceWindowExecutionTaskInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl GetMaintenanceWindowExecutionTaskFluentBuilder {
         self.inner = self.inner.set_window_execution_id(input);
         self
     }
+    /// <p>The ID of the maintenance window execution that includes the task.</p>
+    pub fn get_window_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_window_execution_id()
+    }
     /// <p>The ID of the specific task execution in the maintenance window task that should be retrieved.</p>
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.task_id(input.into());
@@ -115,5 +123,9 @@ impl GetMaintenanceWindowExecutionTaskFluentBuilder {
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_task_id(input);
         self
+    }
+    /// <p>The ID of the specific task execution in the maintenance window task that should be retrieved.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_task_id()
     }
 }

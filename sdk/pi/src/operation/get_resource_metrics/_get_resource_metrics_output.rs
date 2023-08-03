@@ -83,6 +83,10 @@ impl GetResourceMetricsOutputBuilder {
         self.aligned_start_time = input;
         self
     }
+    /// <p>The start time for the returned metrics, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedStartTime</code> will be less than or equal to the value of the user-specified <code>StartTime</code>.</p>
+    pub fn get_aligned_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.aligned_start_time
+    }
     /// <p>The end time for the returned metrics, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedEndTime</code> will be greater than or equal to the value of the user-specified <code>Endtime</code>.</p>
     pub fn aligned_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.aligned_end_time = ::std::option::Option::Some(input);
@@ -96,6 +100,10 @@ impl GetResourceMetricsOutputBuilder {
         self.aligned_end_time = input;
         self
     }
+    /// <p>The end time for the returned metrics, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedEndTime</code> will be greater than or equal to the value of the user-specified <code>Endtime</code>.</p>
+    pub fn get_aligned_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.aligned_end_time
+    }
     /// <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. In the console, the identifier is shown as <i>ResourceID</i>. When you call <code>DescribeDBInstances</code>, the identifier is returned as <code>DbiResourceId</code>.</p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
@@ -105,6 +113,10 @@ impl GetResourceMetricsOutputBuilder {
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identifier = input;
         self
+    }
+    /// <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. In the console, the identifier is shown as <i>ResourceID</i>. When you call <code>DescribeDBInstances</code>, the identifier is returned as <code>DbiResourceId</code>.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
     }
     /// Appends an item to `metric_list`.
     ///
@@ -125,6 +137,12 @@ impl GetResourceMetricsOutputBuilder {
         self.metric_list = input;
         self
     }
+    /// <p>An array of metric results, where each array element contains all of the data points for a particular dimension.</p>
+    pub fn get_metric_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricKeyDataPoints>> {
+        &self.metric_list
+    }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -134,6 +152,10 @@ impl GetResourceMetricsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

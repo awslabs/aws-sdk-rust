@@ -66,6 +66,16 @@ impl SuppressionListDestinationBuilder {
         self.suppression_list_import_action = input;
         self
     }
+    /// <p>The type of action to perform on the address. The following are possible values:</p>
+    /// <ul>
+    /// <li> <p>PUT: add the addresses to the suppression list. If the record already exists, it will override it with the new value.</p> </li>
+    /// <li> <p>DELETE: remove the addresses from the suppression list.</p> </li>
+    /// </ul>
+    pub fn get_suppression_list_import_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::SuppressionListImportAction> {
+        &self.suppression_list_import_action
+    }
     /// Consumes the builder and constructs a [`SuppressionListDestination`](crate::types::SuppressionListDestination).
     pub fn build(self) -> crate::types::SuppressionListDestination {
         crate::types::SuppressionListDestination {

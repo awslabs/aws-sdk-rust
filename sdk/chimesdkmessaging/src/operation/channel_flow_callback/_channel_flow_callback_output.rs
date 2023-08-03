@@ -56,6 +56,10 @@ impl ChannelFlowCallbackOutputBuilder {
         self.channel_arn = input;
         self
     }
+    /// <p>The ARN of the channel.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
+    }
     /// <p>The call back ID passed in the request.</p>
     pub fn callback_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.callback_id = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl ChannelFlowCallbackOutputBuilder {
     pub fn set_callback_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.callback_id = input;
         self
+    }
+    /// <p>The call back ID passed in the request.</p>
+    pub fn get_callback_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.callback_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

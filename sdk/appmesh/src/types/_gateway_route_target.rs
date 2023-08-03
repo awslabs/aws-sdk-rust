@@ -53,6 +53,12 @@ impl GatewayRouteTargetBuilder {
         self.virtual_service = input;
         self
     }
+    /// <p>An object that represents a virtual service gateway route target.</p>
+    pub fn get_virtual_service(
+        &self,
+    ) -> &::std::option::Option<crate::types::GatewayRouteVirtualService> {
+        &self.virtual_service
+    }
     /// <p>The port number of the gateway route target.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -62,6 +68,10 @@ impl GatewayRouteTargetBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
+    }
+    /// <p>The port number of the gateway route target.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// Consumes the builder and constructs a [`GatewayRouteTarget`](crate::types::GatewayRouteTarget).
     pub fn build(self) -> crate::types::GatewayRouteTarget {

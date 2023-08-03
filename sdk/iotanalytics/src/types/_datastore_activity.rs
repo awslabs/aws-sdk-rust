@@ -48,6 +48,10 @@ impl DatastoreActivityBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the datastore activity.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The name of the data store where processed messages are stored.</p>
     pub fn datastore_name(
         mut self,
@@ -63,6 +67,10 @@ impl DatastoreActivityBuilder {
     ) -> Self {
         self.datastore_name = input;
         self
+    }
+    /// <p>The name of the data store where processed messages are stored.</p>
+    pub fn get_datastore_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.datastore_name
     }
     /// Consumes the builder and constructs a [`DatastoreActivity`](crate::types::DatastoreActivity).
     pub fn build(self) -> crate::types::DatastoreActivity {

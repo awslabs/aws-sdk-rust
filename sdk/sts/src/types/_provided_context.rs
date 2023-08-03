@@ -49,6 +49,10 @@ impl ProvidedContextBuilder {
         self
     }
     /// <p>Reserved for future use.</p>
+    pub fn get_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provider_arn
+    }
+    /// <p>Reserved for future use.</p>
     pub fn context_assertion(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -63,6 +67,10 @@ impl ProvidedContextBuilder {
     ) -> Self {
         self.context_assertion = input;
         self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn get_context_assertion(&self) -> &::std::option::Option<::std::string::String> {
+        &self.context_assertion
     }
     /// Consumes the builder and constructs a [`ProvidedContext`](crate::types::ProvidedContext).
     pub fn build(self) -> crate::types::ProvidedContext {

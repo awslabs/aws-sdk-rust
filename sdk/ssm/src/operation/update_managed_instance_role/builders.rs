@@ -36,6 +36,10 @@ impl UpdateManagedInstanceRoleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateManagedInstanceRole as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_managed_instance_role::builders::UpdateManagedInstanceRoleInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl UpdateManagedInstanceRoleFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The ID of the managed node where you want to update the role.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>The name of the Identity and Access Management (IAM) role that you want to assign to the managed node. This IAM role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
     /// <p>You can't specify an IAM service-linked role for this parameter. You must create a unique role.</p>
     /// </note>
@@ -139,5 +147,11 @@ impl UpdateManagedInstanceRoleFluentBuilder {
     pub fn set_iam_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_iam_role(input);
         self
+    }
+    /// <p>The name of the Identity and Access Management (IAM) role that you want to assign to the managed node. This IAM role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
+    /// <p>You can't specify an IAM service-linked role for this parameter. You must create a unique role.</p>
+    /// </note>
+    pub fn get_iam_role(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_iam_role()
     }
 }

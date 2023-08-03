@@ -40,6 +40,10 @@ impl ColumnGroupColumnSchemaBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the column group's column schema.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`ColumnGroupColumnSchema`](crate::types::ColumnGroupColumnSchema).
     pub fn build(self) -> crate::types::ColumnGroupColumnSchema {
         crate::types::ColumnGroupColumnSchema { name: self.name }

@@ -37,6 +37,13 @@ impl DeleteSecurityProfileFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteSecurityProfile as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_security_profile::builders::DeleteSecurityProfileInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl DeleteSecurityProfileFluentBuilder {
         self.inner = self.inner.set_security_profile_name(input);
         self
     }
+    /// <p>The name of the security profile to be deleted.</p>
+    pub fn get_security_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_security_profile_name()
+    }
     /// <p>The expected version of the security profile. A new version is generated whenever the security profile is updated. If you specify a value that is different from the actual version, a <code>VersionConflictException</code> is thrown.</p>
     pub fn expected_version(mut self, input: i64) -> Self {
         self.inner = self.inner.expected_version(input);
@@ -142,5 +153,9 @@ impl DeleteSecurityProfileFluentBuilder {
     pub fn set_expected_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_expected_version(input);
         self
+    }
+    /// <p>The expected version of the security profile. A new version is generated whenever the security profile is updated. If you specify a value that is different from the actual version, a <code>VersionConflictException</code> is thrown.</p>
+    pub fn get_expected_version(&self) -> &::std::option::Option<i64> {
+        self.inner.get_expected_version()
     }
 }

@@ -106,6 +106,10 @@ impl MonitorSummaryBuilder {
         self.monitor_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the monitor resource.</p>
+    pub fn get_monitor_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitor_arn
+    }
     /// <p>The name of the monitor resource.</p>
     pub fn monitor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitor_name = ::std::option::Option::Some(input.into());
@@ -116,6 +120,10 @@ impl MonitorSummaryBuilder {
         self.monitor_name = input;
         self
     }
+    /// <p>The name of the monitor resource.</p>
+    pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitor_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the predictor being monitored.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
@@ -125,6 +133,10 @@ impl MonitorSummaryBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the predictor being monitored.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// <p>The status of the monitor. States include:</p>
     /// <ul>
@@ -150,6 +162,17 @@ impl MonitorSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the monitor. States include:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>ACTIVE_STOPPING</code>, <code>ACTIVE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>When the monitor resource was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -162,6 +185,10 @@ impl MonitorSummaryBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>When the monitor resource was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The last time the monitor resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
@@ -187,6 +214,18 @@ impl MonitorSummaryBuilder {
     ) -> Self {
         self.last_modification_time = input;
         self
+    }
+    /// <p>The last time the monitor resource was modified. The timestamp depends on the status of the job:</p>
+    /// <ul>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>STOPPED</code> - When the resource stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the monitor creation finished or failed.</p> </li>
+    /// </ul>
+    pub fn get_last_modification_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modification_time
     }
     /// Consumes the builder and constructs a [`MonitorSummary`](crate::types::MonitorSummary).
     pub fn build(self) -> crate::types::MonitorSummary {

@@ -53,6 +53,12 @@ impl SigningConfigurationOverridesBuilder {
         self.encryption_algorithm = input;
         self
     }
+    /// <p>A specified override of the default encryption algorithm that is used in a code signing job.</p>
+    pub fn get_encryption_algorithm(
+        &self,
+    ) -> &::std::option::Option<crate::types::EncryptionAlgorithm> {
+        &self.encryption_algorithm
+    }
     /// <p>A specified override of the default hash algorithm that is used in a code signing job.</p>
     pub fn hash_algorithm(mut self, input: crate::types::HashAlgorithm) -> Self {
         self.hash_algorithm = ::std::option::Option::Some(input);
@@ -65,6 +71,10 @@ impl SigningConfigurationOverridesBuilder {
     ) -> Self {
         self.hash_algorithm = input;
         self
+    }
+    /// <p>A specified override of the default hash algorithm that is used in a code signing job.</p>
+    pub fn get_hash_algorithm(&self) -> &::std::option::Option<crate::types::HashAlgorithm> {
+        &self.hash_algorithm
     }
     /// Consumes the builder and constructs a [`SigningConfigurationOverrides`](crate::types::SigningConfigurationOverrides).
     pub fn build(self) -> crate::types::SigningConfigurationOverrides {

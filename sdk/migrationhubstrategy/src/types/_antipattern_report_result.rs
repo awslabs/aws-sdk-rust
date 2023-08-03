@@ -70,6 +70,10 @@ impl AntipatternReportResultBuilder {
         self.analyzer_name = input;
         self
     }
+    /// <p>The analyzer name.</p>
+    pub fn get_analyzer_name(&self) -> &::std::option::Option<crate::types::AnalyzerNameUnion> {
+        &self.analyzer_name
+    }
     /// <p> Contains the S3 bucket name and the Amazon S3 key name. </p>
     pub fn anti_pattern_report_s3_object(mut self, input: crate::types::S3Object) -> Self {
         self.anti_pattern_report_s3_object = ::std::option::Option::Some(input);
@@ -82,6 +86,12 @@ impl AntipatternReportResultBuilder {
     ) -> Self {
         self.anti_pattern_report_s3_object = input;
         self
+    }
+    /// <p> Contains the S3 bucket name and the Amazon S3 key name. </p>
+    pub fn get_anti_pattern_report_s3_object(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3Object> {
+        &self.anti_pattern_report_s3_object
     }
     /// <p>The status of the anti-pattern report generation.</p>
     pub fn antipattern_report_status(
@@ -99,6 +109,12 @@ impl AntipatternReportResultBuilder {
         self.antipattern_report_status = input;
         self
     }
+    /// <p>The status of the anti-pattern report generation.</p>
+    pub fn get_antipattern_report_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::AntipatternReportStatus> {
+        &self.antipattern_report_status
+    }
     /// <p>The status message for the anti-pattern.</p>
     pub fn antipattern_report_status_message(
         mut self,
@@ -114,6 +130,12 @@ impl AntipatternReportResultBuilder {
     ) -> Self {
         self.antipattern_report_status_message = input;
         self
+    }
+    /// <p>The status message for the anti-pattern.</p>
+    pub fn get_antipattern_report_status_message(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.antipattern_report_status_message
     }
     /// Consumes the builder and constructs a [`AntipatternReportResult`](crate::types::AntipatternReportResult).
     pub fn build(self) -> crate::types::AntipatternReportResult {

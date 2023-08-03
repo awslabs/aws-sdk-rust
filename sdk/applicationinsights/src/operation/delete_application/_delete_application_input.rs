@@ -46,6 +46,10 @@ impl DeleteApplicationInputBuilder {
         self.resource_group_name = input;
         self
     }
+    /// <p>The name of the resource group.</p>
+    pub fn get_resource_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_group_name
+    }
     /// Consumes the builder and constructs a [`DeleteApplicationInput`](crate::operation::delete_application::DeleteApplicationInput).
     pub fn build(
         self,

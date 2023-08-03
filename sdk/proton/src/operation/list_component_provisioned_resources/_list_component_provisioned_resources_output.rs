@@ -58,6 +58,10 @@ impl ListComponentProvisionedResourcesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token that indicates the location of the next provisioned resource in the array of provisioned resources, after the current requested list of provisioned resources.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `provisioned_resources`.
     ///
     /// To override the contents of this collection use [`set_provisioned_resources`](Self::set_provisioned_resources).
@@ -76,6 +80,12 @@ impl ListComponentProvisionedResourcesOutputBuilder {
     ) -> Self {
         self.provisioned_resources = input;
         self
+    }
+    /// <p>An array of provisioned resources for a component.</p>
+    pub fn get_provisioned_resources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvisionedResource>> {
+        &self.provisioned_resources
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

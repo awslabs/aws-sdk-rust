@@ -59,6 +59,10 @@ impl ReadSetFilesBuilder {
         self.source1 = input;
         self
     }
+    /// <p>The location of the first file in Amazon S3.</p>
+    pub fn get_source1(&self) -> &::std::option::Option<crate::types::FileInformation> {
+        &self.source1
+    }
     /// <p>The location of the second file in Amazon S3.</p>
     pub fn source2(mut self, input: crate::types::FileInformation) -> Self {
         self.source2 = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl ReadSetFilesBuilder {
         self.source2 = input;
         self
     }
+    /// <p>The location of the second file in Amazon S3.</p>
+    pub fn get_source2(&self) -> &::std::option::Option<crate::types::FileInformation> {
+        &self.source2
+    }
     /// <p>The files' index.</p>
     pub fn index(mut self, input: crate::types::FileInformation) -> Self {
         self.index = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl ReadSetFilesBuilder {
     ) -> Self {
         self.index = input;
         self
+    }
+    /// <p>The files' index.</p>
+    pub fn get_index(&self) -> &::std::option::Option<crate::types::FileInformation> {
+        &self.index
     }
     /// Consumes the builder and constructs a [`ReadSetFiles`](crate::types::ReadSetFiles).
     pub fn build(self) -> crate::types::ReadSetFiles {

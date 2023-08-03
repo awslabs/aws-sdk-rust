@@ -48,6 +48,10 @@ impl InvokeAsyncOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status code.</p>
+    pub fn get_status(&self) -> &::std::option::Option<i32> {
+        &self.status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

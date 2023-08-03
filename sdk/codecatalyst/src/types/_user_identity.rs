@@ -64,6 +64,10 @@ impl UserIdentityBuilder {
         self.user_type = input;
         self
     }
+    /// <p>The role assigned to the user in a Amazon CodeCatalyst space or project when the event occurred.</p>
+    pub fn get_user_type(&self) -> &::std::option::Option<crate::types::UserType> {
+        &self.user_type
+    }
     /// <p>The ID of the Amazon CodeCatalyst service principal.</p>
     pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_id = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl UserIdentityBuilder {
         self.principal_id = input;
         self
     }
+    /// <p>The ID of the Amazon CodeCatalyst service principal.</p>
+    pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal_id
+    }
     /// <p>The display name of the user in Amazon CodeCatalyst.</p>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
@@ -83,6 +91,10 @@ impl UserIdentityBuilder {
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_name = input;
         self
+    }
+    /// <p>The display name of the user in Amazon CodeCatalyst.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
     }
     /// <p>The Amazon Web Services account number of the user in Amazon Web Services, if any.</p>
     pub fn aws_account_id(
@@ -99,6 +111,10 @@ impl UserIdentityBuilder {
     ) -> Self {
         self.aws_account_id = input;
         self
+    }
+    /// <p>The Amazon Web Services account number of the user in Amazon Web Services, if any.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
     }
     /// Consumes the builder and constructs a [`UserIdentity`](crate::types::UserIdentity).
     pub fn build(self) -> crate::types::UserIdentity {

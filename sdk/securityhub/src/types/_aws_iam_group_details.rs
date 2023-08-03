@@ -99,6 +99,12 @@ impl AwsIamGroupDetailsBuilder {
         self.attached_managed_policies = input;
         self
     }
+    /// <p>A list of the managed policies that are attached to the IAM group.</p>
+    pub fn get_attached_managed_policies(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsIamAttachedManagedPolicy>> {
+        &self.attached_managed_policies
+    }
     /// <p>Indicates when the IAM group was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn create_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -111,6 +117,11 @@ impl AwsIamGroupDetailsBuilder {
         self.create_date = input;
         self
     }
+    /// <p>Indicates when the IAM group was created.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_create_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.create_date
+    }
     /// <p>The identifier of the IAM group.</p>
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
@@ -121,6 +132,10 @@ impl AwsIamGroupDetailsBuilder {
         self.group_id = input;
         self
     }
+    /// <p>The identifier of the IAM group.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
+    }
     /// <p>The name of the IAM group.</p>
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_name = ::std::option::Option::Some(input.into());
@@ -130,6 +145,10 @@ impl AwsIamGroupDetailsBuilder {
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_name = input;
         self
+    }
+    /// <p>The name of the IAM group.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
     }
     /// Appends an item to `group_policy_list`.
     ///
@@ -150,6 +169,12 @@ impl AwsIamGroupDetailsBuilder {
         self.group_policy_list = input;
         self
     }
+    /// <p>The list of inline policies that are embedded in the group.</p>
+    pub fn get_group_policy_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsIamGroupPolicy>> {
+        &self.group_policy_list
+    }
     /// <p>The path to the group.</p>
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path = ::std::option::Option::Some(input.into());
@@ -159,6 +184,10 @@ impl AwsIamGroupDetailsBuilder {
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path = input;
         self
+    }
+    /// <p>The path to the group.</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
     }
     /// Consumes the builder and constructs a [`AwsIamGroupDetails`](crate::types::AwsIamGroupDetails).
     pub fn build(self) -> crate::types::AwsIamGroupDetails {

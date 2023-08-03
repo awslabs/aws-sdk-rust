@@ -54,6 +54,10 @@ impl PipelineBlueprintBuilder {
         self.blueprint_name = input;
         self
     }
+    /// <p>The name of the blueprint.</p>
+    pub fn get_blueprint_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.blueprint_name
+    }
     /// <p>The YAML configuration of the blueprint.</p>
     pub fn pipeline_configuration_body(
         mut self,
@@ -69,6 +73,10 @@ impl PipelineBlueprintBuilder {
     ) -> Self {
         self.pipeline_configuration_body = input;
         self
+    }
+    /// <p>The YAML configuration of the blueprint.</p>
+    pub fn get_pipeline_configuration_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_configuration_body
     }
     /// Consumes the builder and constructs a [`PipelineBlueprint`](crate::types::PipelineBlueprint).
     pub fn build(self) -> crate::types::PipelineBlueprint {

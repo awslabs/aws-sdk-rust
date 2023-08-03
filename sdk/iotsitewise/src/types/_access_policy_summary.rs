@@ -80,6 +80,10 @@ impl AccessPolicySummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the access policy.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The identity (an IAM Identity Center user, an IAM Identity Center group, or an IAM user).</p>
     pub fn identity(mut self, input: crate::types::Identity) -> Self {
         self.identity = ::std::option::Option::Some(input);
@@ -90,6 +94,10 @@ impl AccessPolicySummaryBuilder {
         self.identity = input;
         self
     }
+    /// <p>The identity (an IAM Identity Center user, an IAM Identity Center group, or an IAM user).</p>
+    pub fn get_identity(&self) -> &::std::option::Option<crate::types::Identity> {
+        &self.identity
+    }
     /// <p>The IoT SiteWise Monitor resource (a portal or project).</p>
     pub fn resource(mut self, input: crate::types::Resource) -> Self {
         self.resource = ::std::option::Option::Some(input);
@@ -99,6 +107,10 @@ impl AccessPolicySummaryBuilder {
     pub fn set_resource(mut self, input: ::std::option::Option<crate::types::Resource>) -> Self {
         self.resource = input;
         self
+    }
+    /// <p>The IoT SiteWise Monitor resource (a portal or project).</p>
+    pub fn get_resource(&self) -> &::std::option::Option<crate::types::Resource> {
+        &self.resource
     }
     /// <p>The permissions for the access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
     pub fn permission(mut self, input: crate::types::Permission) -> Self {
@@ -113,6 +125,10 @@ impl AccessPolicySummaryBuilder {
         self.permission = input;
         self
     }
+    /// <p>The permissions for the access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
+    pub fn get_permission(&self) -> &::std::option::Option<crate::types::Permission> {
+        &self.permission
+    }
     /// <p>The date the access policy was created, in Unix epoch time.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
@@ -126,6 +142,10 @@ impl AccessPolicySummaryBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>The date the access policy was created, in Unix epoch time.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
+    }
     /// <p>The date the access policy was last updated, in Unix epoch time.</p>
     pub fn last_update_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_update_date = ::std::option::Option::Some(input);
@@ -138,6 +158,10 @@ impl AccessPolicySummaryBuilder {
     ) -> Self {
         self.last_update_date = input;
         self
+    }
+    /// <p>The date the access policy was last updated, in Unix epoch time.</p>
+    pub fn get_last_update_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_update_date
     }
     /// Consumes the builder and constructs a [`AccessPolicySummary`](crate::types::AccessPolicySummary).
     pub fn build(self) -> crate::types::AccessPolicySummary {

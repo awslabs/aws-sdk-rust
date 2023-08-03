@@ -56,6 +56,10 @@ impl PipelineDefinitionS3LocationBuilder {
         self.bucket = input;
         self
     }
+    /// <p>Name of the S3 bucket.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p>The object key (or key name) uniquely identifies the object in an S3 bucket. </p>
     pub fn object_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_key = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl PipelineDefinitionS3LocationBuilder {
         self.object_key = input;
         self
     }
+    /// <p>The object key (or key name) uniquely identifies the object in an S3 bucket. </p>
+    pub fn get_object_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_key
+    }
     /// <p>Version Id of the pipeline definition file. If not specified, Amazon SageMaker will retrieve the latest version.</p>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_id = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl PipelineDefinitionS3LocationBuilder {
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_id = input;
         self
+    }
+    /// <p>Version Id of the pipeline definition file. If not specified, Amazon SageMaker will retrieve the latest version.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_id
     }
     /// Consumes the builder and constructs a [`PipelineDefinitionS3Location`](crate::types::PipelineDefinitionS3Location).
     pub fn build(self) -> crate::types::PipelineDefinitionS3Location {

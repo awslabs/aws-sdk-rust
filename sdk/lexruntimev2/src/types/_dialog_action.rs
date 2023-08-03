@@ -105,6 +105,17 @@ impl DialogActionBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The next action that the bot should take in its interaction with the user. The possible values are:</p>
+    /// <ul>
+    /// <li> <p> <code>Close</code> - Indicates that there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p> </li>
+    /// <li> <p> <code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p> </li>
+    /// <li> <p> <code>Delegate</code> - The next action is determined by Amazon Lex V2.</p> </li>
+    /// <li> <p> <code>ElicitIntent</code> - The next action is to elicit an intent from the user.</p> </li>
+    /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::DialogActionType> {
+        &self.r#type
+    }
     /// <p>The name of the slot that should be elicited from the user.</p>
     pub fn slot_to_elicit(
         mut self,
@@ -120,6 +131,10 @@ impl DialogActionBuilder {
     ) -> Self {
         self.slot_to_elicit = input;
         self
+    }
+    /// <p>The name of the slot that should be elicited from the user.</p>
+    pub fn get_slot_to_elicit(&self) -> &::std::option::Option<::std::string::String> {
+        &self.slot_to_elicit
     }
     /// <p>Configures the slot to use spell-by-letter or spell-by-word style. When you use a style on a slot, users can spell out their input to make it clear to your bot.</p>
     /// <ul>
@@ -144,6 +159,15 @@ impl DialogActionBuilder {
         self.slot_elicitation_style = input;
         self
     }
+    /// <p>Configures the slot to use spell-by-letter or spell-by-word style. When you use a style on a slot, users can spell out their input to make it clear to your bot.</p>
+    /// <ul>
+    /// <li> <p>Spell by letter - "b" "o" "b"</p> </li>
+    /// <li> <p>Spell by word - "b as in boy" "o as in oscar" "b as in boy"</p> </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html"> Using spelling to enter slot values </a>.</p>
+    pub fn get_slot_elicitation_style(&self) -> &::std::option::Option<crate::types::StyleType> {
+        &self.slot_elicitation_style
+    }
     /// <p>The name of the constituent sub slot of the composite slot specified in slotToElicit that should be elicited from the user.</p>
     pub fn sub_slot_to_elicit(mut self, input: crate::types::ElicitSubSlot) -> Self {
         self.sub_slot_to_elicit = ::std::option::Option::Some(input);
@@ -156,6 +180,10 @@ impl DialogActionBuilder {
     ) -> Self {
         self.sub_slot_to_elicit = input;
         self
+    }
+    /// <p>The name of the constituent sub slot of the composite slot specified in slotToElicit that should be elicited from the user.</p>
+    pub fn get_sub_slot_to_elicit(&self) -> &::std::option::Option<crate::types::ElicitSubSlot> {
+        &self.sub_slot_to_elicit
     }
     /// Consumes the builder and constructs a [`DialogAction`](crate::types::DialogAction).
     pub fn build(self) -> crate::types::DialogAction {

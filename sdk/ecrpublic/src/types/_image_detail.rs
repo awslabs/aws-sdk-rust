@@ -102,6 +102,10 @@ impl ImageDetailBuilder {
         self.registry_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID that's associated with the public registry where this image belongs.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_id
+    }
     /// <p>The name of the repository where this image belongs.</p>
     pub fn repository_name(
         mut self,
@@ -118,6 +122,10 @@ impl ImageDetailBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name of the repository where this image belongs.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>The <code>sha256</code> digest of the image manifest.</p>
     pub fn image_digest(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_digest = ::std::option::Option::Some(input.into());
@@ -127,6 +135,10 @@ impl ImageDetailBuilder {
     pub fn set_image_digest(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_digest = input;
         self
+    }
+    /// <p>The <code>sha256</code> digest of the image manifest.</p>
+    pub fn get_image_digest(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_digest
     }
     /// Appends an item to `image_tags`.
     ///
@@ -147,6 +159,10 @@ impl ImageDetailBuilder {
         self.image_tags = input;
         self
     }
+    /// <p>The list of tags that's associated with this image.</p>
+    pub fn get_image_tags(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.image_tags
+    }
     /// <p>The size, in bytes, of the image in the repository.</p>
     /// <p>If the image is a manifest list, this is the max size of all manifests in the list.</p> <note>
     /// <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it might return a larger image size than the image sizes that are returned by <code>DescribeImages</code>.</p>
@@ -163,6 +179,13 @@ impl ImageDetailBuilder {
         self.image_size_in_bytes = input;
         self
     }
+    /// <p>The size, in bytes, of the image in the repository.</p>
+    /// <p>If the image is a manifest list, this is the max size of all manifests in the list.</p> <note>
+    /// <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it might return a larger image size than the image sizes that are returned by <code>DescribeImages</code>.</p>
+    /// </note>
+    pub fn get_image_size_in_bytes(&self) -> &::std::option::Option<i64> {
+        &self.image_size_in_bytes
+    }
     /// <p>The date and time, expressed in standard JavaScript date format, that the current image was pushed to the repository at. </p>
     pub fn image_pushed_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.image_pushed_at = ::std::option::Option::Some(input);
@@ -175,6 +198,10 @@ impl ImageDetailBuilder {
     ) -> Self {
         self.image_pushed_at = input;
         self
+    }
+    /// <p>The date and time, expressed in standard JavaScript date format, that the current image was pushed to the repository at. </p>
+    pub fn get_image_pushed_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.image_pushed_at
     }
     /// <p>The media type of the image manifest.</p>
     pub fn image_manifest_media_type(
@@ -192,6 +219,10 @@ impl ImageDetailBuilder {
         self.image_manifest_media_type = input;
         self
     }
+    /// <p>The media type of the image manifest.</p>
+    pub fn get_image_manifest_media_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_manifest_media_type
+    }
     /// <p>The artifact media type of the image.</p>
     pub fn artifact_media_type(
         mut self,
@@ -207,6 +238,10 @@ impl ImageDetailBuilder {
     ) -> Self {
         self.artifact_media_type = input;
         self
+    }
+    /// <p>The artifact media type of the image.</p>
+    pub fn get_artifact_media_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.artifact_media_type
     }
     /// Consumes the builder and constructs a [`ImageDetail`](crate::types::ImageDetail).
     pub fn build(self) -> crate::types::ImageDetail {

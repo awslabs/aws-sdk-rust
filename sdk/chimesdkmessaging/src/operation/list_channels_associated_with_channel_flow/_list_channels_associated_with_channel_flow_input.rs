@@ -68,6 +68,10 @@ impl ListChannelsAssociatedWithChannelFlowInputBuilder {
         self.channel_flow_arn = input;
         self
     }
+    /// <p>The ARN of the channel flow.</p>
+    pub fn get_channel_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_flow_arn
+    }
     /// <p>The maximum number of channels that you want to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -78,6 +82,10 @@ impl ListChannelsAssociatedWithChannelFlowInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of channels that you want to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token passed by previous API calls until all requested channels are returned.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -87,6 +95,10 @@ impl ListChannelsAssociatedWithChannelFlowInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token passed by previous API calls until all requested channels are returned.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListChannelsAssociatedWithChannelFlowInput`](crate::operation::list_channels_associated_with_channel_flow::ListChannelsAssociatedWithChannelFlowInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_channels_associated_with_channel_flow::ListChannelsAssociatedWithChannelFlowInput, ::aws_smithy_http::operation::error::BuildError>{

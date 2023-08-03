@@ -78,6 +78,10 @@ impl PreparedStatementBuilder {
         self.statement_name = input;
         self
     }
+    /// <p>The name of the prepared statement.</p>
+    pub fn get_statement_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.statement_name
+    }
     /// <p>The query string for the prepared statement.</p>
     pub fn query_statement(
         mut self,
@@ -93,6 +97,10 @@ impl PreparedStatementBuilder {
     ) -> Self {
         self.query_statement = input;
         self
+    }
+    /// <p>The query string for the prepared statement.</p>
+    pub fn get_query_statement(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_statement
     }
     /// <p>The name of the workgroup to which the prepared statement belongs.</p>
     pub fn work_group_name(
@@ -110,6 +118,10 @@ impl PreparedStatementBuilder {
         self.work_group_name = input;
         self
     }
+    /// <p>The name of the workgroup to which the prepared statement belongs.</p>
+    pub fn get_work_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.work_group_name
+    }
     /// <p>The description of the prepared statement.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -119,6 +131,10 @@ impl PreparedStatementBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the prepared statement.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The last modified time of the prepared statement.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -132,6 +148,10 @@ impl PreparedStatementBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>The last modified time of the prepared statement.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// Consumes the builder and constructs a [`PreparedStatement`](crate::types::PreparedStatement).
     pub fn build(self) -> crate::types::PreparedStatement {

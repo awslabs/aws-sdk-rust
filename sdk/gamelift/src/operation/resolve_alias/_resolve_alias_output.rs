@@ -54,6 +54,10 @@ impl ResolveAliasOutputBuilder {
         self.fleet_id = input;
         self
     }
+    /// <p>The fleet identifier that the alias is pointing to.</p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_id
+    }
     /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift fleet resource that this alias points to. </p>
     pub fn fleet_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_arn = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl ResolveAliasOutputBuilder {
     pub fn set_fleet_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet_arn = input;
         self
+    }
+    /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift fleet resource that this alias points to. </p>
+    pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

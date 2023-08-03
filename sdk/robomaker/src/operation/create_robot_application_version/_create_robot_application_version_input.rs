@@ -63,6 +63,10 @@ impl CreateRobotApplicationVersionInputBuilder {
         self.application = input;
         self
     }
+    /// <p>The application information for the robot application.</p>
+    pub fn get_application(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application
+    }
     /// <p>The current revision id for the robot application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
     pub fn current_revision_id(
         mut self,
@@ -78,6 +82,10 @@ impl CreateRobotApplicationVersionInputBuilder {
     ) -> Self {
         self.current_revision_id = input;
         self
+    }
+    /// <p>The current revision id for the robot application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
+    pub fn get_current_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.current_revision_id
     }
     /// Appends an item to `s3_etags`.
     ///
@@ -98,6 +106,10 @@ impl CreateRobotApplicationVersionInputBuilder {
         self.s3_etags = input;
         self
     }
+    /// <p>The Amazon S3 identifier for the zip file bundle that you use for your robot application.</p>
+    pub fn get_s3_etags(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.s3_etags
+    }
     /// <p>A SHA256 identifier for the Docker image that you use for your robot application.</p>
     pub fn image_digest(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_digest = ::std::option::Option::Some(input.into());
@@ -107,6 +119,10 @@ impl CreateRobotApplicationVersionInputBuilder {
     pub fn set_image_digest(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_digest = input;
         self
+    }
+    /// <p>A SHA256 identifier for the Docker image that you use for your robot application.</p>
+    pub fn get_image_digest(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_digest
     }
     /// Consumes the builder and constructs a [`CreateRobotApplicationVersionInput`](crate::operation::create_robot_application_version::CreateRobotApplicationVersionInput).
     pub fn build(

@@ -43,6 +43,10 @@ impl BatchInferenceJobOutputBuilder {
         self.s3_data_destination = input;
         self
     }
+    /// <p>Information on the Amazon S3 bucket in which the batch inference job's output is stored.</p>
+    pub fn get_s3_data_destination(&self) -> &::std::option::Option<crate::types::S3DataConfig> {
+        &self.s3_data_destination
+    }
     /// Consumes the builder and constructs a [`BatchInferenceJobOutput`](crate::types::BatchInferenceJobOutput).
     pub fn build(self) -> crate::types::BatchInferenceJobOutput {
         crate::types::BatchInferenceJobOutput {

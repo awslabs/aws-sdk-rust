@@ -40,6 +40,10 @@ impl CreateTemplateInputBuilder {
         self.template = input;
         self
     }
+    /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only part.</p>
+    pub fn get_template(&self) -> &::std::option::Option<crate::types::Template> {
+        &self.template
+    }
     /// Consumes the builder and constructs a [`CreateTemplateInput`](crate::operation::create_template::CreateTemplateInput).
     pub fn build(
         self,

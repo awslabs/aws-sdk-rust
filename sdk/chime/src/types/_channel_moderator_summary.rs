@@ -40,6 +40,10 @@ impl ChannelModeratorSummaryBuilder {
         self.moderator = input;
         self
     }
+    /// <p>The data for a moderator.</p>
+    pub fn get_moderator(&self) -> &::std::option::Option<crate::types::Identity> {
+        &self.moderator
+    }
     /// Consumes the builder and constructs a [`ChannelModeratorSummary`](crate::types::ChannelModeratorSummary).
     pub fn build(self) -> crate::types::ChannelModeratorSummary {
         crate::types::ChannelModeratorSummary {

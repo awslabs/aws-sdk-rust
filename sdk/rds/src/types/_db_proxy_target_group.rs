@@ -107,6 +107,10 @@ impl DbProxyTargetGroupBuilder {
         self.db_proxy_name = input;
         self
     }
+    /// <p>The identifier for the RDS proxy associated with this target group.</p>
+    pub fn get_db_proxy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_proxy_name
+    }
     /// <p>The identifier for the target group. This name must be unique for all target groups owned by your Amazon Web Services account in the specified Amazon Web Services Region.</p>
     pub fn target_group_name(
         mut self,
@@ -122,6 +126,10 @@ impl DbProxyTargetGroupBuilder {
     ) -> Self {
         self.target_group_name = input;
         self
+    }
+    /// <p>The identifier for the target group. This name must be unique for all target groups owned by your Amazon Web Services account in the specified Amazon Web Services Region.</p>
+    pub fn get_target_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_group_name
     }
     /// <p>The Amazon Resource Name (ARN) representing the target group.</p>
     pub fn target_group_arn(
@@ -139,6 +147,10 @@ impl DbProxyTargetGroupBuilder {
         self.target_group_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) representing the target group.</p>
+    pub fn get_target_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_group_arn
+    }
     /// <p>Whether this target group is the first one used for connection requests by the associated proxy. Because each proxy is currently associated with a single target group, currently this setting is always <code>true</code>.</p>
     pub fn is_default(mut self, input: bool) -> Self {
         self.is_default = ::std::option::Option::Some(input);
@@ -149,6 +161,10 @@ impl DbProxyTargetGroupBuilder {
         self.is_default = input;
         self
     }
+    /// <p>Whether this target group is the first one used for connection requests by the associated proxy. Because each proxy is currently associated with a single target group, currently this setting is always <code>true</code>.</p>
+    pub fn get_is_default(&self) -> &::std::option::Option<bool> {
+        &self.is_default
+    }
     /// <p>The current status of this target group. A status of <code>available</code> means the target group is correctly associated with a database. Other values indicate that you must wait for the target group to be ready, or take some action to resolve an issue.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -158,6 +174,10 @@ impl DbProxyTargetGroupBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of this target group. A status of <code>available</code> means the target group is correctly associated with a database. Other values indicate that you must wait for the target group to be ready, or take some action to resolve an issue.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>The settings that determine the size and behavior of the connection pool for the target group.</p>
     pub fn connection_pool_config(
@@ -175,6 +195,12 @@ impl DbProxyTargetGroupBuilder {
         self.connection_pool_config = input;
         self
     }
+    /// <p>The settings that determine the size and behavior of the connection pool for the target group.</p>
+    pub fn get_connection_pool_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConnectionPoolConfigurationInfo> {
+        &self.connection_pool_config
+    }
     /// <p>The date and time when the target group was first created.</p>
     pub fn created_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_date = ::std::option::Option::Some(input);
@@ -188,6 +214,10 @@ impl DbProxyTargetGroupBuilder {
         self.created_date = input;
         self
     }
+    /// <p>The date and time when the target group was first created.</p>
+    pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_date
+    }
     /// <p>The date and time when the target group was last updated.</p>
     pub fn updated_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_date = ::std::option::Option::Some(input);
@@ -200,6 +230,10 @@ impl DbProxyTargetGroupBuilder {
     ) -> Self {
         self.updated_date = input;
         self
+    }
+    /// <p>The date and time when the target group was last updated.</p>
+    pub fn get_updated_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_date
     }
     /// Consumes the builder and constructs a [`DbProxyTargetGroup`](crate::types::DbProxyTargetGroup).
     pub fn build(self) -> crate::types::DbProxyTargetGroup {

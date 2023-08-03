@@ -46,6 +46,10 @@ impl IngressAccessLogsBuilder {
         self.log_group_name = input;
         self
     }
+    /// Customize the log group name.
+    pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group_name
+    }
     /// Consumes the builder and constructs a [`IngressAccessLogs`](crate::types::IngressAccessLogs).
     pub fn build(self) -> crate::types::IngressAccessLogs {
         crate::types::IngressAccessLogs {

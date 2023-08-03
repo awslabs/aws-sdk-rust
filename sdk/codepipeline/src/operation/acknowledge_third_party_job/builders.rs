@@ -36,6 +36,10 @@ impl AcknowledgeThirdPartyJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AcknowledgeThirdPartyJob as a reference.
+    pub fn as_input(&self) -> &crate::operation::acknowledge_third_party_job::builders::AcknowledgeThirdPartyJobInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl AcknowledgeThirdPartyJobFluentBuilder {
         self.inner = self.inner.set_job_id(input);
         self
     }
+    /// <p>The unique system-generated ID of the job.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_id()
+    }
     /// <p>A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response to a <code>GetThirdPartyJobDetails</code> request.</p>
     pub fn nonce(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.nonce(input.into());
@@ -136,6 +144,10 @@ impl AcknowledgeThirdPartyJobFluentBuilder {
         self.inner = self.inner.set_nonce(input);
         self
     }
+    /// <p>A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response to a <code>GetThirdPartyJobDetails</code> request.</p>
+    pub fn get_nonce(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_nonce()
+    }
     /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -145,5 +157,9 @@ impl AcknowledgeThirdPartyJobFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

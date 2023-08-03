@@ -54,6 +54,12 @@ impl PutBucketVersioningFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutBucketVersioning as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_bucket_versioning::builders::PutBucketVersioningInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -144,6 +150,10 @@ impl PutBucketVersioningFluentBuilder {
         self.inner = self.inner.set_account_id(input);
         self
     }
+    /// <p>The Amazon Web Services account ID of the S3 on Outposts bucket.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// <p>The S3 on Outposts bucket to set the versioning state for.</p>
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bucket(input.into());
@@ -154,6 +164,10 @@ impl PutBucketVersioningFluentBuilder {
         self.inner = self.inner.set_bucket(input);
         self
     }
+    /// <p>The S3 on Outposts bucket to set the versioning state for.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bucket()
+    }
     /// <p>The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device.</p>
     pub fn mfa(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.mfa(input.into());
@@ -163,6 +177,10 @@ impl PutBucketVersioningFluentBuilder {
     pub fn set_mfa(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_mfa(input);
         self
+    }
+    /// <p>The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device.</p>
+    pub fn get_mfa(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_mfa()
     }
     /// <p>The root-level tag for the <code>VersioningConfiguration</code> parameters.</p>
     pub fn versioning_configuration(
@@ -179,5 +197,11 @@ impl PutBucketVersioningFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_versioning_configuration(input);
         self
+    }
+    /// <p>The root-level tag for the <code>VersioningConfiguration</code> parameters.</p>
+    pub fn get_versioning_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::VersioningConfiguration> {
+        self.inner.get_versioning_configuration()
     }
 }

@@ -47,6 +47,10 @@ impl DescribeAppInstanceBotInputBuilder {
         self.app_instance_bot_arn = input;
         self
     }
+    /// <p>The ARN of the <code>AppInstanceBot</code>.</p>
+    pub fn get_app_instance_bot_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_instance_bot_arn
+    }
     /// Consumes the builder and constructs a [`DescribeAppInstanceBotInput`](crate::operation::describe_app_instance_bot::DescribeAppInstanceBotInput).
     pub fn build(
         self,

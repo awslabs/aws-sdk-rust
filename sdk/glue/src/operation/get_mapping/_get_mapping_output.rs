@@ -55,6 +55,12 @@ impl GetMappingOutputBuilder {
         self.mapping = input;
         self
     }
+    /// <p>A list of mappings to the specified targets.</p>
+    pub fn get_mapping(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MappingEntry>> {
+        &self.mapping
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

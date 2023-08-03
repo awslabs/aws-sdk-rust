@@ -65,6 +65,10 @@ impl BouncedRecipientInfoBuilder {
         self.recipient = input;
         self
     }
+    /// <p>The email address of the recipient of the bounced email.</p>
+    pub fn get_recipient(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recipient
+    }
     /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to receive email for the recipient of the bounced email. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
     pub fn recipient_arn(
         mut self,
@@ -81,6 +85,10 @@ impl BouncedRecipientInfoBuilder {
         self.recipient_arn = input;
         self
     }
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to receive email for the recipient of the bounced email. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
+    pub fn get_recipient_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recipient_arn
+    }
     /// <p>The reason for the bounce. You must provide either this parameter or <code>RecipientDsnFields</code>.</p>
     pub fn bounce_type(mut self, input: crate::types::BounceType) -> Self {
         self.bounce_type = ::std::option::Option::Some(input);
@@ -94,6 +102,10 @@ impl BouncedRecipientInfoBuilder {
         self.bounce_type = input;
         self
     }
+    /// <p>The reason for the bounce. You must provide either this parameter or <code>RecipientDsnFields</code>.</p>
+    pub fn get_bounce_type(&self) -> &::std::option::Option<crate::types::BounceType> {
+        &self.bounce_type
+    }
     /// <p>Recipient-related DSN fields, most of which would normally be filled in automatically when provided with a <code>BounceType</code>. You must provide either this parameter or <code>BounceType</code>.</p>
     pub fn recipient_dsn_fields(mut self, input: crate::types::RecipientDsnFields) -> Self {
         self.recipient_dsn_fields = ::std::option::Option::Some(input);
@@ -106,6 +118,12 @@ impl BouncedRecipientInfoBuilder {
     ) -> Self {
         self.recipient_dsn_fields = input;
         self
+    }
+    /// <p>Recipient-related DSN fields, most of which would normally be filled in automatically when provided with a <code>BounceType</code>. You must provide either this parameter or <code>BounceType</code>.</p>
+    pub fn get_recipient_dsn_fields(
+        &self,
+    ) -> &::std::option::Option<crate::types::RecipientDsnFields> {
+        &self.recipient_dsn_fields
     }
     /// Consumes the builder and constructs a [`BouncedRecipientInfo`](crate::types::BouncedRecipientInfo).
     pub fn build(self) -> crate::types::BouncedRecipientInfo {

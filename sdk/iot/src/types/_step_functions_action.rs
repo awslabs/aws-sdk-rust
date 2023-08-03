@@ -62,6 +62,10 @@ impl StepFunctionsActionBuilder {
         self.execution_name_prefix = input;
         self
     }
+    /// <p>(Optional) A name will be given to the state machine execution consisting of this prefix followed by a UUID. Step Functions automatically creates a unique name for each state machine execution if one is not provided.</p>
+    pub fn get_execution_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_name_prefix
+    }
     /// <p>The name of the Step Functions state machine whose execution will be started.</p>
     pub fn state_machine_name(
         mut self,
@@ -78,6 +82,10 @@ impl StepFunctionsActionBuilder {
         self.state_machine_name = input;
         self
     }
+    /// <p>The name of the Step Functions state machine whose execution will be started.</p>
+    pub fn get_state_machine_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_machine_name
+    }
     /// <p>The ARN of the role that grants IoT permission to start execution of a state machine ("Action":"states:StartExecution").</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -87,6 +95,10 @@ impl StepFunctionsActionBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The ARN of the role that grants IoT permission to start execution of a state machine ("Action":"states:StartExecution").</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Consumes the builder and constructs a [`StepFunctionsAction`](crate::types::StepFunctionsAction).
     pub fn build(self) -> crate::types::StepFunctionsAction {

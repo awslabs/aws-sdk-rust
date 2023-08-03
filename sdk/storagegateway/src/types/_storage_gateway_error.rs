@@ -56,6 +56,10 @@ impl StorageGatewayErrorBuilder {
         self.error_code = input;
         self
     }
+    /// <p>Additional information about the error.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<crate::types::ErrorCode> {
+        &self.error_code
+    }
     /// Adds a key-value pair to `error_details`.
     ///
     /// To override the contents of this collection use [`set_error_details`](Self::set_error_details).
@@ -80,6 +84,14 @@ impl StorageGatewayErrorBuilder {
     ) -> Self {
         self.error_details = input;
         self
+    }
+    /// <p>Human-readable text that provides detail about the error that occurred.</p>
+    pub fn get_error_details(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.error_details
     }
     /// Consumes the builder and constructs a [`StorageGatewayError`](crate::types::StorageGatewayError).
     pub fn build(self) -> crate::types::StorageGatewayError {

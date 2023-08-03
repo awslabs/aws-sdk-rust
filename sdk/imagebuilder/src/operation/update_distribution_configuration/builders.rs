@@ -36,6 +36,10 @@ impl UpdateDistributionConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDistributionConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_distribution_configuration::builders::UpdateDistributionConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,12 @@ impl UpdateDistributionConfigurationFluentBuilder {
         self.inner = self.inner.set_distribution_configuration_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to update.</p>
+    pub fn get_distribution_configuration_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_distribution_configuration_arn()
+    }
     /// <p>The description of the distribution configuration.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -115,6 +125,10 @@ impl UpdateDistributionConfigurationFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the distribution configuration.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `distributions`.
     ///
@@ -133,6 +147,12 @@ impl UpdateDistributionConfigurationFluentBuilder {
         self.inner = self.inner.set_distributions(input);
         self
     }
+    /// <p>The distributions of the distribution configuration.</p>
+    pub fn get_distributions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Distribution>> {
+        self.inner.get_distributions()
+    }
     /// <p>The idempotency token of the distribution configuration.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -142,5 +162,9 @@ impl UpdateDistributionConfigurationFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>The idempotency token of the distribution configuration.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

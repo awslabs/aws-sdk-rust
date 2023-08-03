@@ -36,6 +36,10 @@ impl AssociateWirelessGatewayWithThingFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateWirelessGatewayWithThing as a reference.
+    pub fn as_input(&self) -> &crate::operation::associate_wireless_gateway_with_thing::builders::AssociateWirelessGatewayWithThingInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl AssociateWirelessGatewayWithThingFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The ID of the resource to update.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The ARN of the thing to associate with the wireless gateway.</p>
     pub fn thing_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.thing_arn(input.into());
@@ -109,5 +117,9 @@ impl AssociateWirelessGatewayWithThingFluentBuilder {
     pub fn set_thing_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_thing_arn(input);
         self
+    }
+    /// <p>The ARN of the thing to associate with the wireless gateway.</p>
+    pub fn get_thing_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_thing_arn()
     }
 }

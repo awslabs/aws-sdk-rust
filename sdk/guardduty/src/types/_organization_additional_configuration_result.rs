@@ -55,6 +55,12 @@ impl OrganizationAdditionalConfigurationResultBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the additional configuration that is configured for the member accounts within the organization.</p>
+    pub fn get_name(
+        &self,
+    ) -> &::std::option::Option<crate::types::OrgFeatureAdditionalConfiguration> {
+        &self.name
+    }
     /// <p>Describes how The status of the additional configuration that are configured for the member accounts within the organization.</p>
     /// <p>If you set <code>AutoEnable</code> to <code>NEW</code>, a feature will be configured for only the new accounts when they join the organization.</p>
     /// <p>If you set <code>AutoEnable</code> to <code>NONE</code>, no feature will be configured for the accounts when they join the organization.</p>
@@ -71,6 +77,12 @@ impl OrganizationAdditionalConfigurationResultBuilder {
     ) -> Self {
         self.auto_enable = input;
         self
+    }
+    /// <p>Describes how The status of the additional configuration that are configured for the member accounts within the organization.</p>
+    /// <p>If you set <code>AutoEnable</code> to <code>NEW</code>, a feature will be configured for only the new accounts when they join the organization.</p>
+    /// <p>If you set <code>AutoEnable</code> to <code>NONE</code>, no feature will be configured for the accounts when they join the organization.</p>
+    pub fn get_auto_enable(&self) -> &::std::option::Option<crate::types::OrgFeatureStatus> {
+        &self.auto_enable
     }
     /// Consumes the builder and constructs a [`OrganizationAdditionalConfigurationResult`](crate::types::OrganizationAdditionalConfigurationResult).
     pub fn build(self) -> crate::types::OrganizationAdditionalConfigurationResult {

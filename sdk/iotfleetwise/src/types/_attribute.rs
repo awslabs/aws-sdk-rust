@@ -128,6 +128,10 @@ impl AttributeBuilder {
         self.fully_qualified_name = input;
         self
     }
+    /// <p>The fully qualified name of the attribute. For example, the fully qualified name of an attribute might be <code>Vehicle.Body.Engine.Type</code>.</p>
+    pub fn get_fully_qualified_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fully_qualified_name
+    }
     /// <p>The specified data type of the attribute. </p>
     pub fn data_type(mut self, input: crate::types::NodeDataType) -> Self {
         self.data_type = ::std::option::Option::Some(input);
@@ -141,6 +145,10 @@ impl AttributeBuilder {
         self.data_type = input;
         self
     }
+    /// <p>The specified data type of the attribute. </p>
+    pub fn get_data_type(&self) -> &::std::option::Option<crate::types::NodeDataType> {
+        &self.data_type
+    }
     /// <p>A brief description of the attribute.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -151,6 +159,10 @@ impl AttributeBuilder {
         self.description = input;
         self
     }
+    /// <p>A brief description of the attribute.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The scientific unit for the attribute.</p>
     pub fn unit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.unit = ::std::option::Option::Some(input.into());
@@ -160,6 +172,10 @@ impl AttributeBuilder {
     pub fn set_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.unit = input;
         self
+    }
+    /// <p>The scientific unit for the attribute.</p>
+    pub fn get_unit(&self) -> &::std::option::Option<::std::string::String> {
+        &self.unit
     }
     /// Appends an item to `allowed_values`.
     ///
@@ -183,6 +199,12 @@ impl AttributeBuilder {
         self.allowed_values = input;
         self
     }
+    /// <p>A list of possible values an attribute can be assigned.</p>
+    pub fn get_allowed_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.allowed_values
+    }
     /// <p>The specified possible minimum value of the attribute.</p>
     pub fn min(mut self, input: f64) -> Self {
         self.min = ::std::option::Option::Some(input);
@@ -193,6 +215,10 @@ impl AttributeBuilder {
         self.min = input;
         self
     }
+    /// <p>The specified possible minimum value of the attribute.</p>
+    pub fn get_min(&self) -> &::std::option::Option<f64> {
+        &self.min
+    }
     /// <p>The specified possible maximum value of the attribute.</p>
     pub fn max(mut self, input: f64) -> Self {
         self.max = ::std::option::Option::Some(input);
@@ -202,6 +228,10 @@ impl AttributeBuilder {
     pub fn set_max(mut self, input: ::std::option::Option<f64>) -> Self {
         self.max = input;
         self
+    }
+    /// <p>The specified possible maximum value of the attribute.</p>
+    pub fn get_max(&self) -> &::std::option::Option<f64> {
+        &self.max
     }
     /// <p>A specified value for the attribute.</p>
     #[deprecated(note = "assignedValue is no longer in use")]
@@ -221,6 +251,11 @@ impl AttributeBuilder {
         self.assigned_value = input;
         self
     }
+    /// <p>A specified value for the attribute.</p>
+    #[deprecated(note = "assignedValue is no longer in use")]
+    pub fn get_assigned_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assigned_value
+    }
     /// <p>The default value of the attribute.</p>
     pub fn default_value(
         mut self,
@@ -236,6 +271,10 @@ impl AttributeBuilder {
     ) -> Self {
         self.default_value = input;
         self
+    }
+    /// <p>The default value of the attribute.</p>
+    pub fn get_default_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_value
     }
     /// <p>The deprecation message for the node or the branch that was moved or deleted.</p>
     pub fn deprecation_message(
@@ -253,6 +292,10 @@ impl AttributeBuilder {
         self.deprecation_message = input;
         self
     }
+    /// <p>The deprecation message for the node or the branch that was moved or deleted.</p>
+    pub fn get_deprecation_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deprecation_message
+    }
     /// <p>A comment in addition to the description.</p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment = ::std::option::Option::Some(input.into());
@@ -262,6 +305,10 @@ impl AttributeBuilder {
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comment = input;
         self
+    }
+    /// <p>A comment in addition to the description.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comment
     }
     /// Consumes the builder and constructs a [`Attribute`](crate::types::Attribute).
     pub fn build(self) -> crate::types::Attribute {

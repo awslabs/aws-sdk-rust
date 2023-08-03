@@ -36,6 +36,13 @@ impl GetAutomationExecutionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetAutomationExecution as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_automation_execution::builders::GetAutomationExecutionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +138,9 @@ impl GetAutomationExecutionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_automation_execution_id(input);
         self
+    }
+    /// <p>The unique identifier for an existing automation execution to examine. The execution ID is returned by StartAutomationExecution when the execution of an Automation runbook is initiated.</p>
+    pub fn get_automation_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_automation_execution_id()
     }
 }

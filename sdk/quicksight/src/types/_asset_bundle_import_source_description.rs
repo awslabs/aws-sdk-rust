@@ -48,6 +48,10 @@ impl AssetBundleImportSourceDescriptionBuilder {
         self.body = input;
         self
     }
+    /// <p>An HTTPS download URL for the provided asset bundle that you optionally provided at the start of the import job. This URL is valid for five minutes after issuance. Call <code>DescribeAssetBundleExportJob</code> again for a fresh URL if needed. The downloaded asset bundle is a <code>.qs</code> zip file.</p>
+    pub fn get_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.body
+    }
     /// <p>The Amazon S3 URI that you provided at the start of the import job.</p>
     pub fn s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_uri = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl AssetBundleImportSourceDescriptionBuilder {
     pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_uri = input;
         self
+    }
+    /// <p>The Amazon S3 URI that you provided at the start of the import job.</p>
+    pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_uri
     }
     /// Consumes the builder and constructs a [`AssetBundleImportSourceDescription`](crate::types::AssetBundleImportSourceDescription).
     pub fn build(self) -> crate::types::AssetBundleImportSourceDescription {

@@ -87,6 +87,10 @@ impl DescribeExecutionOutputBuilder {
         self.task_id = input;
         self
     }
+    /// <p>The ID of the task being executed on the device.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_id
+    }
     /// <p>The ID of the execution.</p>
     pub fn execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_id = ::std::option::Option::Some(input.into());
@@ -96,6 +100,10 @@ impl DescribeExecutionOutputBuilder {
     pub fn set_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_id = input;
         self
+    }
+    /// <p>The ID of the execution.</p>
+    pub fn get_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_id
     }
     /// <p>The ID of the managed device that the task is being executed on.</p>
     pub fn managed_device_id(
@@ -113,6 +121,10 @@ impl DescribeExecutionOutputBuilder {
         self.managed_device_id = input;
         self
     }
+    /// <p>The ID of the managed device that the task is being executed on.</p>
+    pub fn get_managed_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.managed_device_id
+    }
     /// <p>The current state of the execution.</p>
     pub fn state(mut self, input: crate::types::ExecutionState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -122,6 +134,10 @@ impl DescribeExecutionOutputBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ExecutionState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The current state of the execution.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ExecutionState> {
+        &self.state
     }
     /// <p>When the execution began.</p>
     pub fn started_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -136,6 +152,10 @@ impl DescribeExecutionOutputBuilder {
         self.started_at = input;
         self
     }
+    /// <p>When the execution began.</p>
+    pub fn get_started_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.started_at
+    }
     /// <p>When the status of the execution was last updated.</p>
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_at = ::std::option::Option::Some(input);
@@ -148,6 +168,10 @@ impl DescribeExecutionOutputBuilder {
     ) -> Self {
         self.last_updated_at = input;
         self
+    }
+    /// <p>When the status of the execution was last updated.</p>
+    pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

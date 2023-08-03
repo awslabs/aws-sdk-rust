@@ -39,6 +39,13 @@ impl UpdateResourceDataSyncFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateResourceDataSync as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_resource_data_sync::builders::UpdateResourceDataSyncInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +136,10 @@ impl UpdateResourceDataSyncFluentBuilder {
         self.inner = self.inner.set_sync_name(input);
         self
     }
+    /// <p>The name of the resource data sync you want to update.</p>
+    pub fn get_sync_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sync_name()
+    }
     /// <p>The type of resource data sync. The supported <code>SyncType</code> is SyncFromSource.</p>
     pub fn sync_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sync_type(input.into());
@@ -138,6 +149,10 @@ impl UpdateResourceDataSyncFluentBuilder {
     pub fn set_sync_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sync_type(input);
         self
+    }
+    /// <p>The type of resource data sync. The supported <code>SyncType</code> is SyncFromSource.</p>
+    pub fn get_sync_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sync_type()
     }
     /// <p>Specify information about the data sources to synchronize.</p>
     pub fn sync_source(mut self, input: crate::types::ResourceDataSyncSource) -> Self {
@@ -151,5 +166,9 @@ impl UpdateResourceDataSyncFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sync_source(input);
         self
+    }
+    /// <p>Specify information about the data sources to synchronize.</p>
+    pub fn get_sync_source(&self) -> &::std::option::Option<crate::types::ResourceDataSyncSource> {
+        self.inner.get_sync_source()
     }
 }

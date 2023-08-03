@@ -62,6 +62,10 @@ impl AuthorizeCacheSecurityGroupIngressInputBuilder {
         self.cache_security_group_name = input;
         self
     }
+    /// <p>The cache security group that allows network ingress.</p>
+    pub fn get_cache_security_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_security_group_name
+    }
     /// <p>The Amazon EC2 security group to be authorized for ingress to the cache security group.</p>
     pub fn ec2_security_group_name(
         mut self,
@@ -78,6 +82,10 @@ impl AuthorizeCacheSecurityGroupIngressInputBuilder {
         self.ec2_security_group_name = input;
         self
     }
+    /// <p>The Amazon EC2 security group to be authorized for ingress to the cache security group.</p>
+    pub fn get_ec2_security_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ec2_security_group_name
+    }
     /// <p>The Amazon account number of the Amazon EC2 security group owner. Note that this is not the same thing as an Amazon access key ID - you must provide a valid Amazon account number for this parameter.</p>
     pub fn ec2_security_group_owner_id(
         mut self,
@@ -93,6 +101,10 @@ impl AuthorizeCacheSecurityGroupIngressInputBuilder {
     ) -> Self {
         self.ec2_security_group_owner_id = input;
         self
+    }
+    /// <p>The Amazon account number of the Amazon EC2 security group owner. Note that this is not the same thing as an Amazon access key ID - you must provide a valid Amazon account number for this parameter.</p>
+    pub fn get_ec2_security_group_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ec2_security_group_owner_id
     }
     /// Consumes the builder and constructs a [`AuthorizeCacheSecurityGroupIngressInput`](crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressInput, ::aws_smithy_http::operation::error::BuildError>{

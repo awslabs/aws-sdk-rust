@@ -37,6 +37,10 @@ impl DescribeReservedInstancesModificationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeReservedInstancesModifications as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_reserved_instances_modifications::builders::DescribeReservedInstancesModificationsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -142,6 +146,24 @@ impl DescribeReservedInstancesModificationsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>One or more filters.</p>
+    /// <ul>
+    /// <li> <p> <code>client-token</code> - The idempotency token for the modification request.</p> </li>
+    /// <li> <p> <code>create-date</code> - The time when the modification request was created.</p> </li>
+    /// <li> <p> <code>effective-date</code> - The time when the modification becomes effective.</p> </li>
+    /// <li> <p> <code>modification-result.reserved-instances-id</code> - The ID for the Reserved Instances created as part of the modification request. This ID is only available when the status of the modification is <code>fulfilled</code>.</p> </li>
+    /// <li> <p> <code>modification-result.target-configuration.availability-zone</code> - The Availability Zone for the new Reserved Instances.</p> </li>
+    /// <li> <p> <code>modification-result.target-configuration.instance-count </code> - The number of new Reserved Instances.</p> </li>
+    /// <li> <p> <code>modification-result.target-configuration.instance-type</code> - The instance type of the new Reserved Instances.</p> </li>
+    /// <li> <p> <code>reserved-instances-id</code> - The ID of the Reserved Instances modified.</p> </li>
+    /// <li> <p> <code>reserved-instances-modification-id</code> - The ID of the modification request.</p> </li>
+    /// <li> <p> <code>status</code> - The status of the Reserved Instances modification request (<code>processing</code> | <code>fulfilled</code> | <code>failed</code>).</p> </li>
+    /// <li> <p> <code>status-message</code> - The reason for the status.</p> </li>
+    /// <li> <p> <code>update-date</code> - The time when the modification request was last updated.</p> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
+    }
     /// Appends an item to `ReservedInstancesModificationIds`.
     ///
     /// To override the contents of this collection use [`set_reserved_instances_modification_ids`](Self::set_reserved_instances_modification_ids).
@@ -162,6 +184,12 @@ impl DescribeReservedInstancesModificationsFluentBuilder {
         self.inner = self.inner.set_reserved_instances_modification_ids(input);
         self
     }
+    /// <p>IDs for the submitted modification request.</p>
+    pub fn get_reserved_instances_modification_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_reserved_instances_modification_ids()
+    }
     /// <p>The token to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -171,5 +199,9 @@ impl DescribeReservedInstancesModificationsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token to retrieve the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

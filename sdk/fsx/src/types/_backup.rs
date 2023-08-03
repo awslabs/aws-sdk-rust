@@ -181,6 +181,10 @@ impl BackupBuilder {
         self.backup_id = input;
         self
     }
+    /// <p>The ID of the backup.</p>
+    pub fn get_backup_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_id
+    }
     /// <p>The lifecycle status of the backup.</p>
     /// <ul>
     /// <li> <p> <code>AVAILABLE</code> - The backup is fully available.</p> </li>
@@ -212,6 +216,19 @@ impl BackupBuilder {
         self.lifecycle = input;
         self
     }
+    /// <p>The lifecycle status of the backup.</p>
+    /// <ul>
+    /// <li> <p> <code>AVAILABLE</code> - The backup is fully available.</p> </li>
+    /// <li> <p> <code>PENDING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx hasn't started creating the backup.</p> </li>
+    /// <li> <p> <code>CREATING</code> - Amazon FSx is creating the backup.</p> </li>
+    /// <li> <p> <code>TRANSFERRING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx is transferring the backup to Amazon S3.</p> </li>
+    /// <li> <p> <code>COPYING</code> - Amazon FSx is copying the backup.</p> </li>
+    /// <li> <p> <code>DELETED</code> - Amazon FSx deleted the backup and it's no longer available.</p> </li>
+    /// <li> <p> <code>FAILED</code> - Amazon FSx couldn't finish the backup.</p> </li>
+    /// </ul>
+    pub fn get_lifecycle(&self) -> &::std::option::Option<crate::types::BackupLifecycle> {
+        &self.lifecycle
+    }
     /// <p>Details explaining any failures that occurred when creating a backup.</p>
     pub fn failure_details(mut self, input: crate::types::BackupFailureDetails) -> Self {
         self.failure_details = ::std::option::Option::Some(input);
@@ -225,6 +242,12 @@ impl BackupBuilder {
         self.failure_details = input;
         self
     }
+    /// <p>Details explaining any failures that occurred when creating a backup.</p>
+    pub fn get_failure_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::BackupFailureDetails> {
+        &self.failure_details
+    }
     /// <p>The type of the file-system backup.</p>
     pub fn r#type(mut self, input: crate::types::BackupType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -235,6 +258,10 @@ impl BackupBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of the file-system backup.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::BackupType> {
+        &self.r#type
+    }
     /// <p>Displays the current percent of progress of an asynchronous task.</p>
     pub fn progress_percent(mut self, input: i32) -> Self {
         self.progress_percent = ::std::option::Option::Some(input);
@@ -244,6 +271,10 @@ impl BackupBuilder {
     pub fn set_progress_percent(mut self, input: ::std::option::Option<i32>) -> Self {
         self.progress_percent = input;
         self
+    }
+    /// <p>Displays the current percent of progress of an asynchronous task.</p>
+    pub fn get_progress_percent(&self) -> &::std::option::Option<i32> {
+        &self.progress_percent
     }
     /// <p>The time when a particular backup was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -258,6 +289,10 @@ impl BackupBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The time when a particular backup was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The ID of the Key Management Service (KMS) key used to encrypt the backup of the Amazon FSx file system's data at rest. </p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -268,6 +303,10 @@ impl BackupBuilder {
         self.kms_key_id = input;
         self
     }
+    /// <p>The ID of the Key Management Service (KMS) key used to encrypt the backup of the Amazon FSx file system's data at rest. </p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
+    }
     /// <p>The Amazon Resource Name (ARN) for the backup resource.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
@@ -277,6 +316,10 @@ impl BackupBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the backup resource.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// Appends an item to `tags`.
     ///
@@ -297,6 +340,10 @@ impl BackupBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags associated with a particular file system.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The metadata of the file system associated with the backup. This metadata is persisted even if the file system is deleted.</p>
     pub fn file_system(mut self, input: crate::types::FileSystem) -> Self {
         self.file_system = ::std::option::Option::Some(input);
@@ -309,6 +356,10 @@ impl BackupBuilder {
     ) -> Self {
         self.file_system = input;
         self
+    }
+    /// <p>The metadata of the file system associated with the backup. This metadata is persisted even if the file system is deleted.</p>
+    pub fn get_file_system(&self) -> &::std::option::Option<crate::types::FileSystem> {
+        &self.file_system
     }
     /// <p>The configuration of the self-managed Microsoft Active Directory directory to which the Windows File Server instance is joined.</p>
     pub fn directory_information(
@@ -326,6 +377,12 @@ impl BackupBuilder {
         self.directory_information = input;
         self
     }
+    /// <p>The configuration of the self-managed Microsoft Active Directory directory to which the Windows File Server instance is joined.</p>
+    pub fn get_directory_information(
+        &self,
+    ) -> &::std::option::Option<crate::types::ActiveDirectoryBackupAttributes> {
+        &self.directory_information
+    }
     /// <p>An Amazon Web Services account ID. This ID is a 12-digit number that you use to construct Amazon Resource Names (ARNs) for resources.</p>
     pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_id = ::std::option::Option::Some(input.into());
@@ -335,6 +392,10 @@ impl BackupBuilder {
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_id = input;
         self
+    }
+    /// <p>An Amazon Web Services account ID. This ID is a 12-digit number that you use to construct Amazon Resource Names (ARNs) for resources.</p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
     }
     /// <p>The ID of the source backup. Specifies the backup that you are copying.</p>
     pub fn source_backup_id(
@@ -352,6 +413,10 @@ impl BackupBuilder {
         self.source_backup_id = input;
         self
     }
+    /// <p>The ID of the source backup. Specifies the backup that you are copying.</p>
+    pub fn get_source_backup_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_backup_id
+    }
     /// <p>The source Region of the backup. Specifies the Region from where this backup is copied.</p>
     pub fn source_backup_region(
         mut self,
@@ -368,6 +433,10 @@ impl BackupBuilder {
         self.source_backup_region = input;
         self
     }
+    /// <p>The source Region of the backup. Specifies the Region from where this backup is copied.</p>
+    pub fn get_source_backup_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_backup_region
+    }
     /// <p>Specifies the resource type that's backed up.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
@@ -381,6 +450,10 @@ impl BackupBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>Specifies the resource type that's backed up.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
+    }
     /// <p>Describes an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume.</p>
     pub fn volume(mut self, input: crate::types::Volume) -> Self {
         self.volume = ::std::option::Option::Some(input);
@@ -390,6 +463,10 @@ impl BackupBuilder {
     pub fn set_volume(mut self, input: ::std::option::Option<crate::types::Volume>) -> Self {
         self.volume = input;
         self
+    }
+    /// <p>Describes an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume.</p>
+    pub fn get_volume(&self) -> &::std::option::Option<crate::types::Volume> {
+        &self.volume
     }
     /// Consumes the builder and constructs a [`Backup`](crate::types::Backup).
     pub fn build(self) -> crate::types::Backup {

@@ -55,6 +55,10 @@ impl GetDeploymentTargetInputBuilder {
         self.deployment_id = input;
         self
     }
+    /// <p> The unique ID of a deployment. </p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_id
+    }
     /// <p> The unique ID of a deployment target. </p>
     pub fn target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_id = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl GetDeploymentTargetInputBuilder {
     pub fn set_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_id = input;
         self
+    }
+    /// <p> The unique ID of a deployment target. </p>
+    pub fn get_target_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_id
     }
     /// Consumes the builder and constructs a [`GetDeploymentTargetInput`](crate::operation::get_deployment_target::GetDeploymentTargetInput).
     pub fn build(

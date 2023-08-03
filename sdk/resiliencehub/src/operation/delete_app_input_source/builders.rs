@@ -36,6 +36,13 @@ impl DeleteAppInputSourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteAppInputSource as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_app_input_source::builders::DeleteAppInputSourceInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl DeleteAppInputSourceFluentBuilder {
         self.inner = self.inner.set_app_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_arn()
+    }
     /// <p>The Amazon Resource Name (ARN) of the imported resource you want to remove from the Resilience Hub application. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_arn(input.into());
@@ -135,6 +146,10 @@ impl DeleteAppInputSourceFluentBuilder {
     pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the imported resource you want to remove from the Resilience Hub application. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_arn()
     }
     /// <p>The imported Terraform s3 state ﬁle you want to remove from the Resilience Hub application.</p>
     pub fn terraform_source(mut self, input: crate::types::TerraformSource) -> Self {
@@ -149,6 +164,10 @@ impl DeleteAppInputSourceFluentBuilder {
         self.inner = self.inner.set_terraform_source(input);
         self
     }
+    /// <p>The imported Terraform s3 state ﬁle you want to remove from the Resilience Hub application.</p>
+    pub fn get_terraform_source(&self) -> &::std::option::Option<crate::types::TerraformSource> {
+        self.inner.get_terraform_source()
+    }
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -158,6 +177,10 @@ impl DeleteAppInputSourceFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// <p>The namespace on your Amazon Elastic Kubernetes Service cluster that you want to delete from the Resilience Hub application.</p>
     pub fn eks_source_cluster_namespace(
@@ -174,5 +197,11 @@ impl DeleteAppInputSourceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_eks_source_cluster_namespace(input);
         self
+    }
+    /// <p>The namespace on your Amazon Elastic Kubernetes Service cluster that you want to delete from the Resilience Hub application.</p>
+    pub fn get_eks_source_cluster_namespace(
+        &self,
+    ) -> &::std::option::Option<crate::types::EksSourceClusterNamespace> {
+        self.inner.get_eks_source_cluster_namespace()
     }
 }

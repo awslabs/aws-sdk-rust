@@ -53,6 +53,10 @@ impl GetApplicationInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The semantic version of the application to get.</p>
     pub fn semantic_version(
         mut self,
@@ -68,6 +72,10 @@ impl GetApplicationInputBuilder {
     ) -> Self {
         self.semantic_version = input;
         self
+    }
+    /// <p>The semantic version of the application to get.</p>
+    pub fn get_semantic_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.semantic_version
     }
     /// Consumes the builder and constructs a [`GetApplicationInput`](crate::operation::get_application::GetApplicationInput).
     pub fn build(

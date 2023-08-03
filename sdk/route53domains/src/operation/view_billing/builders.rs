@@ -36,6 +36,10 @@ impl ViewBillingFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ViewBilling as a reference.
+    pub fn as_input(&self) -> &crate::operation::view_billing::builders::ViewBillingInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl ViewBillingFluentBuilder {
         self.inner = self.inner.set_start(input);
         self
     }
+    /// <p>The beginning date and time for the time period for which you want a list of billing records. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
+    pub fn get_start(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start()
+    }
     /// <p>The end date and time for the time period for which you want a list of billing records. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
     pub fn end(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end(input);
@@ -136,6 +144,10 @@ impl ViewBillingFluentBuilder {
     pub fn set_end(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end(input);
         self
+    }
+    /// <p>The end date and time for the time period for which you want a list of billing records. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
+    pub fn get_end(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end()
     }
     /// <p>For an initial request for a list of billing records, omit this element. If the number of billing records that are associated with the current Amazon Web Services account during the specified period is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional billing records. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element. </p>
     /// <p>Constraints: The marker must match the value of <code>NextPageMarker</code> that was returned in the previous response.</p>
@@ -149,6 +161,11 @@ impl ViewBillingFluentBuilder {
         self.inner = self.inner.set_marker(input);
         self
     }
+    /// <p>For an initial request for a list of billing records, omit this element. If the number of billing records that are associated with the current Amazon Web Services account during the specified period is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional billing records. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element. </p>
+    /// <p>Constraints: The marker must match the value of <code>NextPageMarker</code> that was returned in the previous response.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
+    }
     /// <p>The number of billing records to be returned.</p>
     /// <p>Default: 20</p>
     pub fn max_items(mut self, input: i32) -> Self {
@@ -160,5 +177,10 @@ impl ViewBillingFluentBuilder {
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_items(input);
         self
+    }
+    /// <p>The number of billing records to be returned.</p>
+    /// <p>Default: 20</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_items()
     }
 }

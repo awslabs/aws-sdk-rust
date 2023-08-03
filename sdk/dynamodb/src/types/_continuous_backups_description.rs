@@ -61,6 +61,12 @@ impl ContinuousBackupsDescriptionBuilder {
         self.continuous_backups_status = input;
         self
     }
+    /// <p> <code>ContinuousBackupsStatus</code> can be one of the following states: ENABLED, DISABLED</p>
+    pub fn get_continuous_backups_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContinuousBackupsStatus> {
+        &self.continuous_backups_status
+    }
     /// <p>The description of the point in time recovery settings applied to the table.</p>
     pub fn point_in_time_recovery_description(
         mut self,
@@ -76,6 +82,12 @@ impl ContinuousBackupsDescriptionBuilder {
     ) -> Self {
         self.point_in_time_recovery_description = input;
         self
+    }
+    /// <p>The description of the point in time recovery settings applied to the table.</p>
+    pub fn get_point_in_time_recovery_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::PointInTimeRecoveryDescription> {
+        &self.point_in_time_recovery_description
     }
     /// Consumes the builder and constructs a [`ContinuousBackupsDescription`](crate::types::ContinuousBackupsDescription).
     pub fn build(self) -> crate::types::ContinuousBackupsDescription {

@@ -41,6 +41,10 @@ impl UndeploySystemInstanceInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the system instance to remove from its target.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`UndeploySystemInstanceInput`](crate::operation::undeploy_system_instance::UndeploySystemInstanceInput).
     pub fn build(
         self,

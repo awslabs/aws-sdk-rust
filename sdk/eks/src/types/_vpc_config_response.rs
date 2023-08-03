@@ -97,6 +97,10 @@ impl VpcConfigResponseBuilder {
         self.subnet_ids = input;
         self
     }
+    /// <p>The subnets associated with your cluster.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
+    }
     /// Appends an item to `security_group_ids`.
     ///
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
@@ -119,6 +123,12 @@ impl VpcConfigResponseBuilder {
         self.security_group_ids = input;
         self
     }
+    /// <p>The security groups associated with the cross-account elastic network interfaces that are used to allow communication between your nodes and the Kubernetes control plane.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
+    }
     /// <p>The cluster security group that was created by Amazon EKS for the cluster. Managed node groups use this security group for control-plane-to-data-plane communication.</p>
     pub fn cluster_security_group_id(
         mut self,
@@ -135,6 +145,10 @@ impl VpcConfigResponseBuilder {
         self.cluster_security_group_id = input;
         self
     }
+    /// <p>The cluster security group that was created by Amazon EKS for the cluster. Managed node groups use this security group for control-plane-to-data-plane communication.</p>
+    pub fn get_cluster_security_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_security_group_id
+    }
     /// <p>The VPC associated with your cluster.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -144,6 +158,10 @@ impl VpcConfigResponseBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The VPC associated with your cluster.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// <p>This parameter indicates whether the Amazon EKS public API server endpoint is enabled. If the Amazon EKS public API server endpoint is disabled, your cluster's Kubernetes API server can only receive requests that originate from within the cluster VPC.</p>
     pub fn endpoint_public_access(mut self, input: bool) -> Self {
@@ -155,6 +173,10 @@ impl VpcConfigResponseBuilder {
         self.endpoint_public_access = input;
         self
     }
+    /// <p>This parameter indicates whether the Amazon EKS public API server endpoint is enabled. If the Amazon EKS public API server endpoint is disabled, your cluster's Kubernetes API server can only receive requests that originate from within the cluster VPC.</p>
+    pub fn get_endpoint_public_access(&self) -> &::std::option::Option<bool> {
+        &self.endpoint_public_access
+    }
     /// <p>This parameter indicates whether the Amazon EKS private API server endpoint is enabled. If the Amazon EKS private API server endpoint is enabled, Kubernetes API requests that originate from within your cluster's VPC use the private VPC endpoint instead of traversing the internet. If this value is disabled and you have nodes or Fargate pods in the cluster, then ensure that <code>publicAccessCidrs</code> includes the necessary CIDR blocks for communication with the nodes or Fargate pods. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
     pub fn endpoint_private_access(mut self, input: bool) -> Self {
         self.endpoint_private_access = ::std::option::Option::Some(input);
@@ -164,6 +186,10 @@ impl VpcConfigResponseBuilder {
     pub fn set_endpoint_private_access(mut self, input: ::std::option::Option<bool>) -> Self {
         self.endpoint_private_access = input;
         self
+    }
+    /// <p>This parameter indicates whether the Amazon EKS private API server endpoint is enabled. If the Amazon EKS private API server endpoint is enabled, Kubernetes API requests that originate from within your cluster's VPC use the private VPC endpoint instead of traversing the internet. If this value is disabled and you have nodes or Fargate pods in the cluster, then ensure that <code>publicAccessCidrs</code> includes the necessary CIDR blocks for communication with the nodes or Fargate pods. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
+    pub fn get_endpoint_private_access(&self) -> &::std::option::Option<bool> {
+        &self.endpoint_private_access
     }
     /// Appends an item to `public_access_cidrs`.
     ///
@@ -186,6 +212,12 @@ impl VpcConfigResponseBuilder {
     ) -> Self {
         self.public_access_cidrs = input;
         self
+    }
+    /// <p>The CIDR blocks that are allowed access to your cluster's public Kubernetes API server endpoint. Communication to the endpoint from addresses outside of the listed CIDR blocks is denied. The default value is <code>0.0.0.0/0</code>. If you've disabled private endpoint access and you have nodes or Fargate pods in the cluster, then ensure that the necessary CIDR blocks are listed. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
+    pub fn get_public_access_cidrs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.public_access_cidrs
     }
     /// Consumes the builder and constructs a [`VpcConfigResponse`](crate::types::VpcConfigResponse).
     pub fn build(self) -> crate::types::VpcConfigResponse {

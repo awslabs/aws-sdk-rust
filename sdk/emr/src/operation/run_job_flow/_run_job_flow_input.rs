@@ -330,6 +330,10 @@ impl RunJobFlowInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the job flow.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The location in Amazon S3 to write the log files of the job flow. If a value is not provided, logs are not created.</p>
     pub fn log_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_uri = ::std::option::Option::Some(input.into());
@@ -339,6 +343,10 @@ impl RunJobFlowInputBuilder {
     pub fn set_log_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_uri = input;
         self
+    }
+    /// <p>The location in Amazon S3 to write the log files of the job flow. If a value is not provided, logs are not created.</p>
+    pub fn get_log_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_uri
     }
     /// <p>The KMS key used for encrypting log files. If a value is not provided, the logs remain encrypted by AES-256. This attribute is only available with Amazon EMR releases 5.30.0 and later, excluding Amazon EMR 6.0.0.</p>
     pub fn log_encryption_kms_key_id(
@@ -356,6 +364,10 @@ impl RunJobFlowInputBuilder {
         self.log_encryption_kms_key_id = input;
         self
     }
+    /// <p>The KMS key used for encrypting log files. If a value is not provided, the logs remain encrypted by AES-256. This attribute is only available with Amazon EMR releases 5.30.0 and later, excluding Amazon EMR 6.0.0.</p>
+    pub fn get_log_encryption_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_encryption_kms_key_id
+    }
     /// <p>A JSON string for selecting additional features.</p>
     pub fn additional_info(
         mut self,
@@ -372,6 +384,10 @@ impl RunJobFlowInputBuilder {
         self.additional_info = input;
         self
     }
+    /// <p>A JSON string for selecting additional features.</p>
+    pub fn get_additional_info(&self) -> &::std::option::Option<::std::string::String> {
+        &self.additional_info
+    }
     /// <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use <code>CustomAmiID</code>.</p>
     pub fn ami_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ami_version = ::std::option::Option::Some(input.into());
@@ -381,6 +397,10 @@ impl RunJobFlowInputBuilder {
     pub fn set_ami_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ami_version = input;
         self
+    }
+    /// <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use <code>CustomAmiID</code>.</p>
+    pub fn get_ami_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ami_version
     }
     /// <p>The Amazon EMR release label, which determines the version of open-source application packages installed on the cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version such as <code>emr-5.14.0</code>. For more information about Amazon EMR release versions and included application versions and features, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR releases version 4.0 and later. Earlier versions use <code>AmiVersion</code>.</p>
     pub fn release_label(
@@ -398,6 +418,10 @@ impl RunJobFlowInputBuilder {
         self.release_label = input;
         self
     }
+    /// <p>The Amazon EMR release label, which determines the version of open-source application packages installed on the cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version such as <code>emr-5.14.0</code>. For more information about Amazon EMR release versions and included application versions and features, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR releases version 4.0 and later. Earlier versions use <code>AmiVersion</code>.</p>
+    pub fn get_release_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.release_label
+    }
     /// <p>A specification of the number and type of Amazon EC2 instances.</p>
     pub fn instances(mut self, input: crate::types::JobFlowInstancesConfig) -> Self {
         self.instances = ::std::option::Option::Some(input);
@@ -410,6 +434,10 @@ impl RunJobFlowInputBuilder {
     ) -> Self {
         self.instances = input;
         self
+    }
+    /// <p>A specification of the number and type of Amazon EC2 instances.</p>
+    pub fn get_instances(&self) -> &::std::option::Option<crate::types::JobFlowInstancesConfig> {
+        &self.instances
     }
     /// Appends an item to `steps`.
     ///
@@ -430,6 +458,10 @@ impl RunJobFlowInputBuilder {
         self.steps = input;
         self
     }
+    /// <p>A list of steps to run.</p>
+    pub fn get_steps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StepConfig>> {
+        &self.steps
+    }
     /// Appends an item to `bootstrap_actions`.
     ///
     /// To override the contents of this collection use [`set_bootstrap_actions`](Self::set_bootstrap_actions).
@@ -448,6 +480,12 @@ impl RunJobFlowInputBuilder {
     ) -> Self {
         self.bootstrap_actions = input;
         self
+    }
+    /// <p>A list of bootstrap actions to run before Hadoop starts on the cluster nodes.</p>
+    pub fn get_bootstrap_actions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BootstrapActionConfig>> {
+        &self.bootstrap_actions
     }
     /// Appends an item to `supported_products`.
     ///
@@ -484,6 +522,19 @@ impl RunJobFlowInputBuilder {
     ) -> Self {
         self.supported_products = input;
         self
+    }
+    /// <note>
+    /// <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use Applications.</p>
+    /// </note>
+    /// <p>A list of strings that indicates third-party software to use. For more information, see the <a href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>. Currently supported values are:</p>
+    /// <ul>
+    /// <li> <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p> </li>
+    /// <li> <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p> </li>
+    /// </ul>
+    pub fn get_supported_products(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.supported_products
     }
     /// Appends an item to `new_supported_products`.
     ///
@@ -530,6 +581,25 @@ impl RunJobFlowInputBuilder {
         self.new_supported_products = input;
         self
     }
+    /// <note>
+    /// <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use Applications.</p>
+    /// </note>
+    /// <p>A list of strings that indicates third-party software to use with the job flow that accepts a user argument list. Amazon EMR accepts and forwards the argument list to the corresponding installation script as bootstrap action arguments. For more information, see "Launch a Job Flow on the MapR Distribution for Hadoop" in the <a href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>. Supported values are:</p>
+    /// <ul>
+    /// <li> <p>"mapr-m3" - launch the cluster using MapR M3 Edition.</p> </li>
+    /// <li> <p>"mapr-m5" - launch the cluster using MapR M5 Edition.</p> </li>
+    /// <li> <p>"mapr" with the user arguments specifying "--edition,m3" or "--edition,m5" - launch the job flow using MapR M3 or M5 Edition respectively.</p> </li>
+    /// <li> <p>"mapr-m7" - launch the cluster using MapR M7 Edition.</p> </li>
+    /// <li> <p>"hunk" - launch the cluster with the Hunk Big Data Analytics Platform.</p> </li>
+    /// <li> <p>"hue"- launch the cluster with Hue installed.</p> </li>
+    /// <li> <p>"spark" - launch the cluster with Apache Spark installed.</p> </li>
+    /// <li> <p>"ganglia" - launch the cluster with the Ganglia Monitoring System installed.</p> </li>
+    /// </ul>
+    pub fn get_new_supported_products(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SupportedProductConfig>> {
+        &self.new_supported_products
+    }
     /// Appends an item to `applications`.
     ///
     /// To override the contents of this collection use [`set_applications`](Self::set_applications).
@@ -548,6 +618,12 @@ impl RunJobFlowInputBuilder {
     ) -> Self {
         self.applications = input;
         self
+    }
+    /// <p>Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of applications for Amazon EMR to install and configure when launching the cluster. For a list of applications available for each Amazon EMR release version, see the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMRRelease Guide</a>.</p>
+    pub fn get_applications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Application>> {
+        &self.applications
     }
     /// Appends an item to `configurations`.
     ///
@@ -568,6 +644,12 @@ impl RunJobFlowInputBuilder {
         self.configurations = input;
         self
     }
+    /// <p>For Amazon EMR releases 4.0 and later. The list of configurations supplied for the Amazon EMR cluster that you are creating.</p>
+    pub fn get_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Configuration>> {
+        &self.configurations
+    }
     /// <important>
     /// <p>The VisibleToAllUsers parameter is no longer supported. By default, the value is set to <code>true</code>. Setting it to <code>false</code> now has no effect.</p>
     /// </important>
@@ -586,6 +668,14 @@ impl RunJobFlowInputBuilder {
         self.visible_to_all_users = input;
         self
     }
+    /// <important>
+    /// <p>The VisibleToAllUsers parameter is no longer supported. By default, the value is set to <code>true</code>. Setting it to <code>false</code> now has no effect.</p>
+    /// </important>
+    /// <p>Set this value to <code>true</code> so that IAM principals in the Amazon Web Services account associated with the cluster can perform Amazon EMR actions on the cluster that their IAM policies allow. This value defaults to <code>true</code> for clusters created using the Amazon EMR API or the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command.</p>
+    /// <p>When set to <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform Amazon EMR actions for the cluster, regardless of the IAM permissions policies attached to other IAM principals. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_IAM_emr-with-IAM.html#security_set_visible_to_all_users">Understanding the Amazon EMR cluster VisibleToAllUsers setting</a> in the <i>Amazon EMR Management Guide</i>.</p>
+    pub fn get_visible_to_all_users(&self) -> &::std::option::Option<bool> {
+        &self.visible_to_all_users
+    }
     /// <p>Also called instance profile and Amazon EC2 role. An IAM role for an Amazon EMR cluster. The Amazon EC2 instances of the cluster assume this role. The default role is <code>EMR_EC2_DefaultRole</code>. In order to use the default role, you must have already created it using the CLI or console.</p>
     pub fn job_flow_role(
         mut self,
@@ -602,6 +692,10 @@ impl RunJobFlowInputBuilder {
         self.job_flow_role = input;
         self
     }
+    /// <p>Also called instance profile and Amazon EC2 role. An IAM role for an Amazon EMR cluster. The Amazon EC2 instances of the cluster assume this role. The default role is <code>EMR_EC2_DefaultRole</code>. In order to use the default role, you must have already created it using the CLI or console.</p>
+    pub fn get_job_flow_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_flow_role
+    }
     /// <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services resources on your behalf. If you've created a custom service role path, you must specify it for the service role when you launch your cluster.</p>
     pub fn service_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_role = ::std::option::Option::Some(input.into());
@@ -611,6 +705,10 @@ impl RunJobFlowInputBuilder {
     pub fn set_service_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_role = input;
         self
+    }
+    /// <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services resources on your behalf. If you've created a custom service role path, you must specify it for the service role when you launch your cluster.</p>
+    pub fn get_service_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_role
     }
     /// Appends an item to `tags`.
     ///
@@ -631,6 +729,10 @@ impl RunJobFlowInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>A list of tags to associate with a cluster and propagate to Amazon EC2 instances.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The name of a security configuration to apply to the cluster.</p>
     pub fn security_configuration(
         mut self,
@@ -646,6 +748,10 @@ impl RunJobFlowInputBuilder {
     ) -> Self {
         self.security_configuration = input;
         self
+    }
+    /// <p>The name of a security configuration to apply to the cluster.</p>
+    pub fn get_security_configuration(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_configuration
     }
     /// <p>An IAM role for automatic scaling policies. The default role is <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides permissions that the automatic scaling feature requires to launch and terminate Amazon EC2 instances in an instance group.</p>
     pub fn auto_scaling_role(
@@ -663,6 +769,10 @@ impl RunJobFlowInputBuilder {
         self.auto_scaling_role = input;
         self
     }
+    /// <p>An IAM role for automatic scaling policies. The default role is <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides permissions that the automatic scaling feature requires to launch and terminate Amazon EC2 instances in an instance group.</p>
+    pub fn get_auto_scaling_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auto_scaling_role
+    }
     /// <p>Specifies the way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available only in Amazon EMR releases 4.1.0 and later, and is the default for releases of Amazon EMR earlier than 5.1.0.</p>
     pub fn scale_down_behavior(mut self, input: crate::types::ScaleDownBehavior) -> Self {
         self.scale_down_behavior = ::std::option::Option::Some(input);
@@ -675,6 +785,12 @@ impl RunJobFlowInputBuilder {
     ) -> Self {
         self.scale_down_behavior = input;
         self
+    }
+    /// <p>Specifies the way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available only in Amazon EMR releases 4.1.0 and later, and is the default for releases of Amazon EMR earlier than 5.1.0.</p>
+    pub fn get_scale_down_behavior(
+        &self,
+    ) -> &::std::option::Option<crate::types::ScaleDownBehavior> {
+        &self.scale_down_behavior
     }
     /// <p>Available only in Amazon EMR releases 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI. If specified, Amazon EMR uses this AMI when it launches cluster Amazon EC2 instances. For more information about custom AMIs in Amazon EMR, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using a Custom AMI</a> in the <i>Amazon EMR Management Guide</i>. If omitted, the cluster uses the base Linux AMI for the <code>ReleaseLabel</code> specified. For Amazon EMR releases 2.x and 3.x, use <code>AmiVersion</code> instead.</p>
     /// <p>For information about creating a custom AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating an Amazon EBS-Backed Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>. For information about finding an AMI ID, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding a Linux AMI</a>. </p>
@@ -694,6 +810,11 @@ impl RunJobFlowInputBuilder {
         self.custom_ami_id = input;
         self
     }
+    /// <p>Available only in Amazon EMR releases 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI. If specified, Amazon EMR uses this AMI when it launches cluster Amazon EC2 instances. For more information about custom AMIs in Amazon EMR, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using a Custom AMI</a> in the <i>Amazon EMR Management Guide</i>. If omitted, the cluster uses the base Linux AMI for the <code>ReleaseLabel</code> specified. For Amazon EMR releases 2.x and 3.x, use <code>AmiVersion</code> instead.</p>
+    /// <p>For information about creating a custom AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating an Amazon EBS-Backed Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>. For information about finding an AMI ID, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding a Linux AMI</a>. </p>
+    pub fn get_custom_ami_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_ami_id
+    }
     /// <p>The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for each Amazon EC2 instance. Available in Amazon EMR releases 4.x and later.</p>
     pub fn ebs_root_volume_size(mut self, input: i32) -> Self {
         self.ebs_root_volume_size = ::std::option::Option::Some(input);
@@ -703,6 +824,10 @@ impl RunJobFlowInputBuilder {
     pub fn set_ebs_root_volume_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.ebs_root_volume_size = input;
         self
+    }
+    /// <p>The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for each Amazon EC2 instance. Available in Amazon EMR releases 4.x and later.</p>
+    pub fn get_ebs_root_volume_size(&self) -> &::std::option::Option<i32> {
+        &self.ebs_root_volume_size
     }
     /// <p>Applies only when <code>CustomAmiID</code> is used. Specifies which updates from the Amazon Linux AMI package repositories to apply automatically when the instance boots using the AMI. If omitted, the default is <code>SECURITY</code>, which indicates that only security updates are applied. If <code>NONE</code> is specified, no updates are applied, and all updates must be applied manually.</p>
     pub fn repo_upgrade_on_boot(mut self, input: crate::types::RepoUpgradeOnBoot) -> Self {
@@ -717,6 +842,12 @@ impl RunJobFlowInputBuilder {
         self.repo_upgrade_on_boot = input;
         self
     }
+    /// <p>Applies only when <code>CustomAmiID</code> is used. Specifies which updates from the Amazon Linux AMI package repositories to apply automatically when the instance boots using the AMI. If omitted, the default is <code>SECURITY</code>, which indicates that only security updates are applied. If <code>NONE</code> is specified, no updates are applied, and all updates must be applied manually.</p>
+    pub fn get_repo_upgrade_on_boot(
+        &self,
+    ) -> &::std::option::Option<crate::types::RepoUpgradeOnBoot> {
+        &self.repo_upgrade_on_boot
+    }
     /// <p>Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos Authentication</a> in the <i>Amazon EMR Management Guide</i>.</p>
     pub fn kerberos_attributes(mut self, input: crate::types::KerberosAttributes) -> Self {
         self.kerberos_attributes = ::std::option::Option::Some(input);
@@ -730,6 +861,12 @@ impl RunJobFlowInputBuilder {
         self.kerberos_attributes = input;
         self
     }
+    /// <p>Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos Authentication</a> in the <i>Amazon EMR Management Guide</i>.</p>
+    pub fn get_kerberos_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::KerberosAttributes> {
+        &self.kerberos_attributes
+    }
     /// <p>Specifies the number of steps that can be executed concurrently. The default value is <code>1</code>. The maximum value is <code>256</code>.</p>
     pub fn step_concurrency_level(mut self, input: i32) -> Self {
         self.step_concurrency_level = ::std::option::Option::Some(input);
@@ -739,6 +876,10 @@ impl RunJobFlowInputBuilder {
     pub fn set_step_concurrency_level(mut self, input: ::std::option::Option<i32>) -> Self {
         self.step_concurrency_level = input;
         self
+    }
+    /// <p>Specifies the number of steps that can be executed concurrently. The default value is <code>1</code>. The maximum value is <code>256</code>.</p>
+    pub fn get_step_concurrency_level(&self) -> &::std::option::Option<i32> {
+        &self.step_concurrency_level
     }
     /// <p> The specified managed scaling policy for an Amazon EMR cluster. </p>
     pub fn managed_scaling_policy(mut self, input: crate::types::ManagedScalingPolicy) -> Self {
@@ -752,6 +893,12 @@ impl RunJobFlowInputBuilder {
     ) -> Self {
         self.managed_scaling_policy = input;
         self
+    }
+    /// <p> The specified managed scaling policy for an Amazon EMR cluster. </p>
+    pub fn get_managed_scaling_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::ManagedScalingPolicy> {
+        &self.managed_scaling_policy
     }
     /// Appends an item to `placement_group_configs`.
     ///
@@ -772,6 +919,12 @@ impl RunJobFlowInputBuilder {
         self.placement_group_configs = input;
         self
     }
+    /// <p>The specified placement group configuration for an Amazon EMR cluster.</p>
+    pub fn get_placement_group_configs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PlacementGroupConfig>> {
+        &self.placement_group_configs
+    }
     /// <p>An auto-termination policy for an Amazon EMR cluster. An auto-termination policy defines the amount of idle time in seconds after which a cluster automatically terminates. For alternative cluster termination options, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control cluster termination</a>.</p>
     pub fn auto_termination_policy(mut self, input: crate::types::AutoTerminationPolicy) -> Self {
         self.auto_termination_policy = ::std::option::Option::Some(input);
@@ -784,6 +937,12 @@ impl RunJobFlowInputBuilder {
     ) -> Self {
         self.auto_termination_policy = input;
         self
+    }
+    /// <p>An auto-termination policy for an Amazon EMR cluster. An auto-termination policy defines the amount of idle time in seconds after which a cluster automatically terminates. For alternative cluster termination options, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control cluster termination</a>.</p>
+    pub fn get_auto_termination_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoTerminationPolicy> {
+        &self.auto_termination_policy
     }
     /// <p>Specifies a particular Amazon Linux release for all nodes in a cluster launch RunJobFlow request. If a release is not specified, Amazon EMR uses the latest validated Amazon Linux release for cluster launch.</p>
     pub fn os_release_label(
@@ -800,6 +959,10 @@ impl RunJobFlowInputBuilder {
     ) -> Self {
         self.os_release_label = input;
         self
+    }
+    /// <p>Specifies a particular Amazon Linux release for all nodes in a cluster launch RunJobFlow request. If a release is not specified, Amazon EMR uses the latest validated Amazon Linux release for cluster launch.</p>
+    pub fn get_os_release_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.os_release_label
     }
     /// Consumes the builder and constructs a [`RunJobFlowInput`](crate::operation::run_job_flow::RunJobFlowInput).
     pub fn build(

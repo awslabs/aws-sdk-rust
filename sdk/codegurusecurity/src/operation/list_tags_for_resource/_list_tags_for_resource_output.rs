@@ -86,6 +86,18 @@ impl ListTagsForResourceOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>An array of key-value pairs used to tag an existing scan. A tag is a custom attribute label with two parts:</p>
+    /// <ul>
+    /// <li> <p>A tag key. For example, <code>CostCenter</code>, <code>Environment</code>, or <code>Secret</code>. Tag keys are case sensitive.</p> </li>
+    /// <li> <p>An optional tag value field. For example, <code>111122223333</code>, <code>Production</code>, or a team name. Omitting the tag value is the same as using an empty string. Tag values are case sensitive.</p> </li>
+    /// </ul>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

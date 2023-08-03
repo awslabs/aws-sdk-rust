@@ -36,6 +36,12 @@ impl RevokeEndpointAccessFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RevokeEndpointAccess as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::revoke_endpoint_access::builders::RevokeEndpointAccessInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl RevokeEndpointAccessFluentBuilder {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
+    /// <p>The cluster to revoke access from.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_identifier()
+    }
     /// <p>The Amazon Web Services account ID whose access is to be revoked.</p>
     pub fn account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account(input.into());
@@ -141,6 +151,10 @@ impl RevokeEndpointAccessFluentBuilder {
     pub fn set_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account(input);
         self
+    }
+    /// <p>The Amazon Web Services account ID whose access is to be revoked.</p>
+    pub fn get_account(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account()
     }
     /// Appends an item to `VpcIds`.
     ///
@@ -159,6 +173,10 @@ impl RevokeEndpointAccessFluentBuilder {
         self.inner = self.inner.set_vpc_ids(input);
         self
     }
+    /// <p>The virtual private cloud (VPC) identifiers for which access is to be revoked.</p>
+    pub fn get_vpc_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_vpc_ids()
+    }
     /// <p>Indicates whether to force the revoke action. If true, the Redshift-managed VPC endpoints associated with the endpoint authorization are also deleted.</p>
     pub fn force(mut self, input: bool) -> Self {
         self.inner = self.inner.force(input);
@@ -168,5 +186,9 @@ impl RevokeEndpointAccessFluentBuilder {
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force(input);
         self
+    }
+    /// <p>Indicates whether to force the revoke action. If true, the Redshift-managed VPC endpoints associated with the endpoint authorization are also deleted.</p>
+    pub fn get_force(&self) -> &::std::option::Option<bool> {
+        self.inner.get_force()
     }
 }

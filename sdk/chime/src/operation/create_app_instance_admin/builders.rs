@@ -48,6 +48,13 @@ impl CreateAppInstanceAdminFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateAppInstanceAdmin as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_app_instance_admin::builders::CreateAppInstanceAdminInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -144,6 +151,10 @@ impl CreateAppInstanceAdminFluentBuilder {
         self.inner = self.inner.set_app_instance_admin_arn(input);
         self
     }
+    /// <p>The ARN of the administrator of the current <code>AppInstance</code>.</p>
+    pub fn get_app_instance_admin_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_instance_admin_arn()
+    }
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     pub fn app_instance_arn(
         mut self,
@@ -159,5 +170,9 @@ impl CreateAppInstanceAdminFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_app_instance_arn(input);
         self
+    }
+    /// <p>The ARN of the <code>AppInstance</code>.</p>
+    pub fn get_app_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_instance_arn()
     }
 }

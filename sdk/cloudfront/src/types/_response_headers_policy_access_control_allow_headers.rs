@@ -50,6 +50,10 @@ impl ResponseHeadersPolicyAccessControlAllowHeadersBuilder {
         self.quantity = input;
         self
     }
+    /// <p>The number of HTTP header names in the list.</p>
+    pub fn get_quantity(&self) -> &::std::option::Option<i32> {
+        &self.quantity
+    }
     /// Appends an item to `items`.
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
@@ -68,6 +72,10 @@ impl ResponseHeadersPolicyAccessControlAllowHeadersBuilder {
     ) -> Self {
         self.items = input;
         self
+    }
+    /// <p>The list of HTTP header names. You can specify <code>*</code> to allow all headers.</p>
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.items
     }
     /// Consumes the builder and constructs a [`ResponseHeadersPolicyAccessControlAllowHeaders`](crate::types::ResponseHeadersPolicyAccessControlAllowHeaders).
     pub fn build(self) -> crate::types::ResponseHeadersPolicyAccessControlAllowHeaders {

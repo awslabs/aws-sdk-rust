@@ -37,6 +37,12 @@ impl CreateDistributionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDistribution as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_distribution::builders::CreateDistributionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl CreateDistributionFluentBuilder {
         self.inner = self.inner.set_distribution_name(input);
         self
     }
+    /// <p>The name for the distribution.</p>
+    pub fn get_distribution_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_distribution_name()
+    }
     /// <p>An object that describes the origin resource for the distribution, such as a Lightsail instance, bucket, or load balancer.</p>
     /// <p>The distribution pulls, caches, and serves content from the origin.</p>
     pub fn origin(mut self, input: crate::types::InputOrigin) -> Self {
@@ -144,6 +154,11 @@ impl CreateDistributionFluentBuilder {
     pub fn set_origin(mut self, input: ::std::option::Option<crate::types::InputOrigin>) -> Self {
         self.inner = self.inner.set_origin(input);
         self
+    }
+    /// <p>An object that describes the origin resource for the distribution, such as a Lightsail instance, bucket, or load balancer.</p>
+    /// <p>The distribution pulls, caches, and serves content from the origin.</p>
+    pub fn get_origin(&self) -> &::std::option::Option<crate::types::InputOrigin> {
+        self.inner.get_origin()
     }
     /// <p>An object that describes the default cache behavior for the distribution.</p>
     pub fn default_cache_behavior(mut self, input: crate::types::CacheBehavior) -> Self {
@@ -158,6 +173,12 @@ impl CreateDistributionFluentBuilder {
         self.inner = self.inner.set_default_cache_behavior(input);
         self
     }
+    /// <p>An object that describes the default cache behavior for the distribution.</p>
+    pub fn get_default_cache_behavior(
+        &self,
+    ) -> &::std::option::Option<crate::types::CacheBehavior> {
+        self.inner.get_default_cache_behavior()
+    }
     /// <p>An object that describes the cache behavior settings for the distribution.</p>
     pub fn cache_behavior_settings(mut self, input: crate::types::CacheSettings) -> Self {
         self.inner = self.inner.cache_behavior_settings(input);
@@ -170,6 +191,12 @@ impl CreateDistributionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_cache_behavior_settings(input);
         self
+    }
+    /// <p>An object that describes the cache behavior settings for the distribution.</p>
+    pub fn get_cache_behavior_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::CacheSettings> {
+        self.inner.get_cache_behavior_settings()
     }
     /// Appends an item to `cacheBehaviors`.
     ///
@@ -188,6 +215,12 @@ impl CreateDistributionFluentBuilder {
         self.inner = self.inner.set_cache_behaviors(input);
         self
     }
+    /// <p>An array of objects that describe the per-path cache behavior for the distribution.</p>
+    pub fn get_cache_behaviors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CacheBehaviorPerPath>> {
+        self.inner.get_cache_behaviors()
+    }
     /// <p>The bundle ID to use for the distribution.</p>
     /// <p>A distribution bundle describes the specifications of your distribution, such as the monthly cost and monthly network transfer quota.</p>
     /// <p>Use the <code>GetDistributionBundles</code> action to get a list of distribution bundle IDs that you can specify.</p>
@@ -201,6 +234,12 @@ impl CreateDistributionFluentBuilder {
     pub fn set_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bundle_id(input);
         self
+    }
+    /// <p>The bundle ID to use for the distribution.</p>
+    /// <p>A distribution bundle describes the specifications of your distribution, such as the monthly cost and monthly network transfer quota.</p>
+    /// <p>Use the <code>GetDistributionBundles</code> action to get a list of distribution bundle IDs that you can specify.</p>
+    pub fn get_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bundle_id()
     }
     /// <p>The IP address type for the distribution.</p>
     /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
@@ -218,6 +257,12 @@ impl CreateDistributionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ip_address_type(input);
         self
+    }
+    /// <p>The IP address type for the distribution.</p>
+    /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
+    /// <p>The default value is <code>dualstack</code>.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
+        self.inner.get_ip_address_type()
     }
     /// Appends an item to `tags`.
     ///
@@ -237,5 +282,10 @@ impl CreateDistributionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tag keys and optional values to add to the distribution during create.</p>
+    /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

@@ -64,6 +64,10 @@ impl FrameworkMetadataBuilder {
         self.name = input;
         self
     }
+    /// <p> The name of the framework. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p> The description of the framework. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl FrameworkMetadataBuilder {
         self.description = input;
         self
     }
+    /// <p> The description of the framework. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p> The logo that's associated with the framework. </p>
     pub fn logo(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.logo = ::std::option::Option::Some(input.into());
@@ -83,6 +91,10 @@ impl FrameworkMetadataBuilder {
     pub fn set_logo(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.logo = input;
         self
+    }
+    /// <p> The logo that's associated with the framework. </p>
+    pub fn get_logo(&self) -> &::std::option::Option<::std::string::String> {
+        &self.logo
     }
     /// <p> The compliance standard that's associated with the framework. For example, this could be PCI DSS or HIPAA. </p>
     pub fn compliance_type(
@@ -99,6 +111,10 @@ impl FrameworkMetadataBuilder {
     ) -> Self {
         self.compliance_type = input;
         self
+    }
+    /// <p> The compliance standard that's associated with the framework. For example, this could be PCI DSS or HIPAA. </p>
+    pub fn get_compliance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.compliance_type
     }
     /// Consumes the builder and constructs a [`FrameworkMetadata`](crate::types::FrameworkMetadata).
     pub fn build(self) -> crate::types::FrameworkMetadata {

@@ -48,6 +48,10 @@ impl StreamingDataPreviewOptionsBuilder {
         self.polling_time = input;
         self
     }
+    /// <p>The polling time in milliseconds.</p>
+    pub fn get_polling_time(&self) -> &::std::option::Option<i64> {
+        &self.polling_time
+    }
     /// <p>The limit to the number of records polled.</p>
     pub fn record_polling_limit(mut self, input: i64) -> Self {
         self.record_polling_limit = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl StreamingDataPreviewOptionsBuilder {
     pub fn set_record_polling_limit(mut self, input: ::std::option::Option<i64>) -> Self {
         self.record_polling_limit = input;
         self
+    }
+    /// <p>The limit to the number of records polled.</p>
+    pub fn get_record_polling_limit(&self) -> &::std::option::Option<i64> {
+        &self.record_polling_limit
     }
     /// Consumes the builder and constructs a [`StreamingDataPreviewOptions`](crate::types::StreamingDataPreviewOptions).
     pub fn build(self) -> crate::types::StreamingDataPreviewOptions {

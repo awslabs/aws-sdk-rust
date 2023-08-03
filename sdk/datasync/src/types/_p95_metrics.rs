@@ -56,6 +56,10 @@ impl P95MetricsBuilder {
         self.iops = input;
         self
     }
+    /// <p>The IOPS peaks for an on-premises storage system resource. Each data point represents the 95th percentile peak value during a 1-hour interval.</p>
+    pub fn get_iops(&self) -> &::std::option::Option<crate::types::Iops> {
+        &self.iops
+    }
     /// <p>The throughput peaks for an on-premises storage system resource. Each data point represents the 95th percentile peak value during a 1-hour interval.</p>
     pub fn throughput(mut self, input: crate::types::Throughput) -> Self {
         self.throughput = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl P95MetricsBuilder {
         self.throughput = input;
         self
     }
+    /// <p>The throughput peaks for an on-premises storage system resource. Each data point represents the 95th percentile peak value during a 1-hour interval.</p>
+    pub fn get_throughput(&self) -> &::std::option::Option<crate::types::Throughput> {
+        &self.throughput
+    }
     /// <p>The latency peaks for an on-premises storage system resource. Each data point represents the 95th percentile peak value during a 1-hour interval.</p>
     pub fn latency(mut self, input: crate::types::Latency) -> Self {
         self.latency = ::std::option::Option::Some(input);
@@ -78,6 +86,10 @@ impl P95MetricsBuilder {
     pub fn set_latency(mut self, input: ::std::option::Option<crate::types::Latency>) -> Self {
         self.latency = input;
         self
+    }
+    /// <p>The latency peaks for an on-premises storage system resource. Each data point represents the 95th percentile peak value during a 1-hour interval.</p>
+    pub fn get_latency(&self) -> &::std::option::Option<crate::types::Latency> {
+        &self.latency
     }
     /// Consumes the builder and constructs a [`P95Metrics`](crate::types::P95Metrics).
     pub fn build(self) -> crate::types::P95Metrics {

@@ -73,6 +73,10 @@ impl CreatePolicyVersionOutputBuilder {
         self.policy_arn = input;
         self
     }
+    /// <p>The policy ARN.</p>
+    pub fn get_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_arn
+    }
     /// <p>The JSON document that describes the policy.</p>
     pub fn policy_document(
         mut self,
@@ -88,6 +92,10 @@ impl CreatePolicyVersionOutputBuilder {
     ) -> Self {
         self.policy_document = input;
         self
+    }
+    /// <p>The JSON document that describes the policy.</p>
+    pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_document
     }
     /// <p>The policy version ID.</p>
     pub fn policy_version_id(
@@ -105,6 +113,10 @@ impl CreatePolicyVersionOutputBuilder {
         self.policy_version_id = input;
         self
     }
+    /// <p>The policy version ID.</p>
+    pub fn get_policy_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_version_id
+    }
     /// <p>Specifies whether the policy version is the default.</p>
     pub fn is_default_version(mut self, input: bool) -> Self {
         self.is_default_version = ::std::option::Option::Some(input);
@@ -114,6 +126,10 @@ impl CreatePolicyVersionOutputBuilder {
     pub fn set_is_default_version(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_default_version = input;
         self
+    }
+    /// <p>Specifies whether the policy version is the default.</p>
+    pub fn get_is_default_version(&self) -> &::std::option::Option<bool> {
+        &self.is_default_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

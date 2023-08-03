@@ -36,6 +36,10 @@ impl CreateReturnShippingLabelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateReturnShippingLabel as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_return_shipping_label::builders::CreateReturnShippingLabelInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl CreateReturnShippingLabelFluentBuilder {
         self.inner = self.inner.set_job_id(input);
         self
     }
+    /// <p>The ID for a job that you want to create the return shipping label for; for example, <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_id()
+    }
     /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon the device is returned to Amazon Web Services. This speed represents how quickly it moves to its destination while in transit. Regional shipping speeds are as follows:</p>
     pub fn shipping_option(mut self, input: crate::types::ShippingOption) -> Self {
         self.inner = self.inner.shipping_option(input);
@@ -138,5 +146,9 @@ impl CreateReturnShippingLabelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_shipping_option(input);
         self
+    }
+    /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon the device is returned to Amazon Web Services. This speed represents how quickly it moves to its destination while in transit. Regional shipping speeds are as follows:</p>
+    pub fn get_shipping_option(&self) -> &::std::option::Option<crate::types::ShippingOption> {
+        self.inner.get_shipping_option()
     }
 }

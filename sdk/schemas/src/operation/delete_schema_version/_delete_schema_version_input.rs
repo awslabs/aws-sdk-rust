@@ -63,6 +63,10 @@ impl DeleteSchemaVersionInputBuilder {
         self.registry_name = input;
         self
     }
+    /// <p>The name of the registry.</p>
+    pub fn get_registry_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_name
+    }
     /// <p>The name of the schema.</p>
     pub fn schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_name = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl DeleteSchemaVersionInputBuilder {
     pub fn set_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_name = input;
         self
+    }
+    /// <p>The name of the schema.</p>
+    pub fn get_schema_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_name
     }
     /// The version number of the schema
     pub fn schema_version(
@@ -88,6 +96,10 @@ impl DeleteSchemaVersionInputBuilder {
     ) -> Self {
         self.schema_version = input;
         self
+    }
+    /// The version number of the schema
+    pub fn get_schema_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_version
     }
     /// Consumes the builder and constructs a [`DeleteSchemaVersionInput`](crate::operation::delete_schema_version::DeleteSchemaVersionInput).
     pub fn build(

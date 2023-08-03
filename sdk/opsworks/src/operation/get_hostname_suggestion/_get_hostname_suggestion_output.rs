@@ -57,6 +57,10 @@ impl GetHostnameSuggestionOutputBuilder {
         self.layer_id = input;
         self
     }
+    /// <p>The layer ID.</p>
+    pub fn get_layer_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.layer_id
+    }
     /// <p>The generated host name.</p>
     pub fn hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hostname = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl GetHostnameSuggestionOutputBuilder {
     pub fn set_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hostname = input;
         self
+    }
+    /// <p>The generated host name.</p>
+    pub fn get_hostname(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hostname
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

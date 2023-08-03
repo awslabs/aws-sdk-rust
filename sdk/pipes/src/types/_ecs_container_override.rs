@@ -111,6 +111,10 @@ impl EcsContainerOverrideBuilder {
         self.command = input;
         self
     }
+    /// <p>The command to send to the container that overrides the default command from the Docker image or the task definition. You must also specify a container name.</p>
+    pub fn get_command(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.command
+    }
     /// <p>The number of <code>cpu</code> units reserved for the container, instead of the default value from the task definition. You must also specify a container name.</p>
     pub fn cpu(mut self, input: i32) -> Self {
         self.cpu = ::std::option::Option::Some(input);
@@ -120,6 +124,10 @@ impl EcsContainerOverrideBuilder {
     pub fn set_cpu(mut self, input: ::std::option::Option<i32>) -> Self {
         self.cpu = input;
         self
+    }
+    /// <p>The number of <code>cpu</code> units reserved for the container, instead of the default value from the task definition. You must also specify a container name.</p>
+    pub fn get_cpu(&self) -> &::std::option::Option<i32> {
+        &self.cpu
     }
     /// Appends an item to `environment`.
     ///
@@ -140,6 +148,12 @@ impl EcsContainerOverrideBuilder {
         self.environment = input;
         self
     }
+    /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the task definition. You must also specify a container name.</p>
+    pub fn get_environment(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EcsEnvironmentVariable>> {
+        &self.environment
+    }
     /// Appends an item to `environment_files`.
     ///
     /// To override the contents of this collection use [`set_environment_files`](Self::set_environment_files).
@@ -159,6 +173,12 @@ impl EcsContainerOverrideBuilder {
         self.environment_files = input;
         self
     }
+    /// <p>A list of files containing the environment variables to pass to a container, instead of the value from the container definition.</p>
+    pub fn get_environment_files(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EcsEnvironmentFile>> {
+        &self.environment_files
+    }
     /// <p>The hard limit (in MiB) of memory to present to the container, instead of the default value from the task definition. If your container attempts to exceed the memory specified here, the container is killed. You must also specify a container name.</p>
     pub fn memory(mut self, input: i32) -> Self {
         self.memory = ::std::option::Option::Some(input);
@@ -168,6 +188,10 @@ impl EcsContainerOverrideBuilder {
     pub fn set_memory(mut self, input: ::std::option::Option<i32>) -> Self {
         self.memory = input;
         self
+    }
+    /// <p>The hard limit (in MiB) of memory to present to the container, instead of the default value from the task definition. If your container attempts to exceed the memory specified here, the container is killed. You must also specify a container name.</p>
+    pub fn get_memory(&self) -> &::std::option::Option<i32> {
+        &self.memory
     }
     /// <p>The soft limit (in MiB) of memory to reserve for the container, instead of the default value from the task definition. You must also specify a container name.</p>
     pub fn memory_reservation(mut self, input: i32) -> Self {
@@ -179,6 +203,10 @@ impl EcsContainerOverrideBuilder {
         self.memory_reservation = input;
         self
     }
+    /// <p>The soft limit (in MiB) of memory to reserve for the container, instead of the default value from the task definition. You must also specify a container name.</p>
+    pub fn get_memory_reservation(&self) -> &::std::option::Option<i32> {
+        &self.memory_reservation
+    }
     /// <p>The name of the container that receives the override. This parameter is required if any override is specified.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -188,6 +216,10 @@ impl EcsContainerOverrideBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the container that receives the override. This parameter is required if any override is specified.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `resource_requirements`.
     ///
@@ -207,6 +239,12 @@ impl EcsContainerOverrideBuilder {
     ) -> Self {
         self.resource_requirements = input;
         self
+    }
+    /// <p>The type and amount of a resource to assign to a container, instead of the default value from the task definition. The only supported resource is a GPU.</p>
+    pub fn get_resource_requirements(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EcsResourceRequirement>> {
+        &self.resource_requirements
     }
     /// Consumes the builder and constructs a [`EcsContainerOverride`](crate::types::EcsContainerOverride).
     pub fn build(self) -> crate::types::EcsContainerOverride {

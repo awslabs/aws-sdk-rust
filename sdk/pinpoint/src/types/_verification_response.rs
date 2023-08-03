@@ -40,6 +40,10 @@ impl VerificationResponseBuilder {
         self.valid = input;
         self
     }
+    /// <p>Specifies whether the OTP is valid or not.</p>
+    pub fn get_valid(&self) -> &::std::option::Option<bool> {
+        &self.valid
+    }
     /// Consumes the builder and constructs a [`VerificationResponse`](crate::types::VerificationResponse).
     pub fn build(self) -> crate::types::VerificationResponse {
         crate::types::VerificationResponse { valid: self.valid }

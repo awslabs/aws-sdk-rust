@@ -69,6 +69,10 @@ impl CreateTransitGatewayPeeringInputBuilder {
         self.core_network_id = input;
         self
     }
+    /// <p>The ID of a core network.</p>
+    pub fn get_core_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.core_network_id
+    }
     /// <p>The ARN of the transit gateway for the peering request.</p>
     pub fn transit_gateway_arn(
         mut self,
@@ -84,6 +88,10 @@ impl CreateTransitGatewayPeeringInputBuilder {
     ) -> Self {
         self.transit_gateway_arn = input;
         self
+    }
+    /// <p>The ARN of the transit gateway for the peering request.</p>
+    pub fn get_transit_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_arn
     }
     /// Appends an item to `tags`.
     ///
@@ -104,6 +112,10 @@ impl CreateTransitGatewayPeeringInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The list of key-value tags associated with the request.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The client token associated with the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -113,6 +125,10 @@ impl CreateTransitGatewayPeeringInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>The client token associated with the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateTransitGatewayPeeringInput`](crate::operation::create_transit_gateway_peering::CreateTransitGatewayPeeringInput).
     pub fn build(

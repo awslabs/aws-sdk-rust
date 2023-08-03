@@ -40,6 +40,10 @@ impl DefaultSegmentDeliveryConfigurationBuilder {
         self.base_url = input;
         self
     }
+    /// <p>The hostname of the server that will be used to serve segments. This string must include the protocol, such as <b>https://</b>.</p>
+    pub fn get_base_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.base_url
+    }
     /// Consumes the builder and constructs a [`DefaultSegmentDeliveryConfiguration`](crate::types::DefaultSegmentDeliveryConfiguration).
     pub fn build(self) -> crate::types::DefaultSegmentDeliveryConfiguration {
         crate::types::DefaultSegmentDeliveryConfiguration {

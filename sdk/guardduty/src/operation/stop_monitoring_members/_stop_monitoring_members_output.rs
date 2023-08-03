@@ -61,6 +61,12 @@ impl StopMonitoringMembersOutputBuilder {
         self.unprocessed_accounts = input;
         self
     }
+    /// <p>A list of objects that contain an accountId for each account that could not be processed, and a result string that indicates why the account was not processed. </p>
+    pub fn get_unprocessed_accounts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedAccount>> {
+        &self.unprocessed_accounts
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

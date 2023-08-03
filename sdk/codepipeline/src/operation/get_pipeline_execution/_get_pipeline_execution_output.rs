@@ -51,6 +51,12 @@ impl GetPipelineExecutionOutputBuilder {
         self.pipeline_execution = input;
         self
     }
+    /// <p>Represents information about the execution of a pipeline.</p>
+    pub fn get_pipeline_execution(
+        &self,
+    ) -> &::std::option::Option<crate::types::PipelineExecution> {
+        &self.pipeline_execution
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

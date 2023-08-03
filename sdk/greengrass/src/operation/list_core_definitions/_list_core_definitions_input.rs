@@ -49,6 +49,10 @@ impl ListCoreDefinitionsInputBuilder {
         self.max_results = input;
         self
     }
+    /// The maximum number of results to be returned per request.
+    pub fn get_max_results(&self) -> &::std::option::Option<::std::string::String> {
+        &self.max_results
+    }
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl ListCoreDefinitionsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// The token for the next set of results, or ''null'' if there are no additional results.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListCoreDefinitionsInput`](crate::operation::list_core_definitions::ListCoreDefinitionsInput).
     pub fn build(

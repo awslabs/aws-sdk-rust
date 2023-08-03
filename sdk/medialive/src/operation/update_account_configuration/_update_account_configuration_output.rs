@@ -52,6 +52,12 @@ impl UpdateAccountConfigurationOutputBuilder {
         self.account_configuration = input;
         self
     }
+    /// Placeholder documentation for AccountConfiguration
+    pub fn get_account_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AccountConfiguration> {
+        &self.account_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

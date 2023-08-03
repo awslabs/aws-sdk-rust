@@ -49,6 +49,10 @@ impl CancelSchemaExtensionInputBuilder {
         self.directory_id = input;
         self
     }
+    /// <p>The identifier of the directory whose schema extension will be canceled.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
+    }
     /// <p>The identifier of the schema extension that will be canceled.</p>
     pub fn schema_extension_id(
         mut self,
@@ -64,6 +68,10 @@ impl CancelSchemaExtensionInputBuilder {
     ) -> Self {
         self.schema_extension_id = input;
         self
+    }
+    /// <p>The identifier of the schema extension that will be canceled.</p>
+    pub fn get_schema_extension_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_extension_id
     }
     /// Consumes the builder and constructs a [`CancelSchemaExtensionInput`](crate::operation::cancel_schema_extension::CancelSchemaExtensionInput).
     pub fn build(

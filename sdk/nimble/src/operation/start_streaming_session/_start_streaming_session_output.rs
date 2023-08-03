@@ -51,6 +51,10 @@ impl StartStreamingSessionOutputBuilder {
         self.session = input;
         self
     }
+    /// <p>A streaming session is a virtual workstation created using a particular launch profile.</p>
+    pub fn get_session(&self) -> &::std::option::Option<crate::types::StreamingSession> {
+        &self.session
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -72,6 +72,10 @@ impl UnsubscribeFromDatasetInputBuilder {
         self.identity_pool_id = input;
         self
     }
+    /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which this identity belongs.</p>
+    pub fn get_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_pool_id
+    }
     /// <p>Unique ID for this identity.</p>
     pub fn identity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_id = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl UnsubscribeFromDatasetInputBuilder {
     pub fn set_identity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_id = input;
         self
+    }
+    /// <p>Unique ID for this identity.</p>
+    pub fn get_identity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_id
     }
     /// <p>The name of the dataset from which to unsubcribe.</p>
     pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -92,6 +100,10 @@ impl UnsubscribeFromDatasetInputBuilder {
         self.dataset_name = input;
         self
     }
+    /// <p>The name of the dataset from which to unsubcribe.</p>
+    pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_name
+    }
     /// <p>The unique ID generated for this device by Cognito.</p>
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_id = ::std::option::Option::Some(input.into());
@@ -101,6 +113,10 @@ impl UnsubscribeFromDatasetInputBuilder {
     pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_id = input;
         self
+    }
+    /// <p>The unique ID generated for this device by Cognito.</p>
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_id
     }
     /// Consumes the builder and constructs a [`UnsubscribeFromDatasetInput`](crate::operation::unsubscribe_from_dataset::UnsubscribeFromDatasetInput).
     pub fn build(

@@ -36,6 +36,13 @@ impl DeleteSubscriptionFilterFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteSubscriptionFilter as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_subscription_filter::builders::DeleteSubscriptionFilterInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl DeleteSubscriptionFilterFluentBuilder {
         self.inner = self.inner.set_log_group_name(input);
         self
     }
+    /// <p>The name of the log group.</p>
+    pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_log_group_name()
+    }
     /// <p>The name of the subscription filter.</p>
     pub fn filter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.filter_name(input.into());
@@ -141,5 +152,9 @@ impl DeleteSubscriptionFilterFluentBuilder {
     pub fn set_filter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_filter_name(input);
         self
+    }
+    /// <p>The name of the subscription filter.</p>
+    pub fn get_filter_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_filter_name()
     }
 }

@@ -36,6 +36,12 @@ impl DeleteAttributesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteAttributes as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_attributes::builders::DeleteAttributesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DeleteAttributesFluentBuilder {
         self.inner = self.inner.set_cluster(input);
         self
     }
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that contains the resource to delete attributes. If you do not specify a cluster, the default cluster is assumed.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster()
+    }
     /// Appends an item to `attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
@@ -142,5 +152,11 @@ impl DeleteAttributesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
+    }
+    /// <p>The attributes to delete from your resource. You can specify up to 10 attributes for each request. For custom attributes, specify the attribute name and target ID, but don't specify the value. If you specify the target ID using the short form, you must also specify the target type.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+        self.inner.get_attributes()
     }
 }

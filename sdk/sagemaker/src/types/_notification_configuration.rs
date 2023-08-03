@@ -46,6 +46,10 @@ impl NotificationConfigurationBuilder {
         self.notification_topic_arn = input;
         self
     }
+    /// <p>The ARN for the Amazon SNS topic to which notifications should be published.</p>
+    pub fn get_notification_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.notification_topic_arn
+    }
     /// Consumes the builder and constructs a [`NotificationConfiguration`](crate::types::NotificationConfiguration).
     pub fn build(self) -> crate::types::NotificationConfiguration {
         crate::types::NotificationConfiguration {

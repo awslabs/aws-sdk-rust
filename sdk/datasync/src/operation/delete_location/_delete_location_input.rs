@@ -40,6 +40,10 @@ impl DeleteLocationInputBuilder {
         self.location_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the location to delete.</p>
+    pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location_arn
+    }
     /// Consumes the builder and constructs a [`DeleteLocationInput`](crate::operation::delete_location::DeleteLocationInput).
     pub fn build(
         self,

@@ -94,6 +94,10 @@ impl GetVocabularyOutputBuilder {
         self.vocabulary_name = input;
         self
     }
+    /// <p>The name of the custom vocabulary you requested information about.</p>
+    pub fn get_vocabulary_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vocabulary_name
+    }
     /// <p>The language code you selected for your custom vocabulary.</p>
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
@@ -107,6 +111,10 @@ impl GetVocabularyOutputBuilder {
         self.language_code = input;
         self
     }
+    /// <p>The language code you selected for your custom vocabulary.</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
+        &self.language_code
+    }
     /// <p>The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the custom vocabulary in a <code>StartTranscriptionJob</code> request.</p>
     pub fn vocabulary_state(mut self, input: crate::types::VocabularyState) -> Self {
         self.vocabulary_state = ::std::option::Option::Some(input);
@@ -119,6 +127,10 @@ impl GetVocabularyOutputBuilder {
     ) -> Self {
         self.vocabulary_state = input;
         self
+    }
+    /// <p>The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the custom vocabulary in a <code>StartTranscriptionJob</code> request.</p>
+    pub fn get_vocabulary_state(&self) -> &::std::option::Option<crate::types::VocabularyState> {
+        &self.vocabulary_state
     }
     /// <p>The date and time the specified custom vocabulary was last modified.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
@@ -134,6 +146,11 @@ impl GetVocabularyOutputBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>The date and time the specified custom vocabulary was last modified.</p>
+    /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// <p>If <code>VocabularyState</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why the custom vocabulary request failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.</p>
     pub fn failure_reason(
@@ -151,6 +168,10 @@ impl GetVocabularyOutputBuilder {
         self.failure_reason = input;
         self
     }
+    /// <p>If <code>VocabularyState</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why the custom vocabulary request failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
+    }
     /// <p>The S3 location where the custom vocabulary is stored; use this URI to view or download the custom vocabulary.</p>
     pub fn download_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.download_uri = ::std::option::Option::Some(input.into());
@@ -160,6 +181,10 @@ impl GetVocabularyOutputBuilder {
     pub fn set_download_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.download_uri = input;
         self
+    }
+    /// <p>The S3 location where the custom vocabulary is stored; use this URI to view or download the custom vocabulary.</p>
+    pub fn get_download_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.download_uri
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -77,6 +77,10 @@ impl AdminUpdateDeviceStatusInputBuilder {
         self.user_pool_id = input;
         self
     }
+    /// <p>The user pool ID.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_pool_id
+    }
     /// <p>The user name.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
@@ -87,6 +91,10 @@ impl AdminUpdateDeviceStatusInputBuilder {
         self.username = input;
         self
     }
+    /// <p>The user name.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
+    }
     /// <p>The device key.</p>
     pub fn device_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_key = ::std::option::Option::Some(input.into());
@@ -96,6 +104,10 @@ impl AdminUpdateDeviceStatusInputBuilder {
     pub fn set_device_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_key = input;
         self
+    }
+    /// <p>The device key.</p>
+    pub fn get_device_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_key
     }
     /// <p>The status indicating whether a device has been remembered or not.</p>
     pub fn device_remembered_status(
@@ -112,6 +124,12 @@ impl AdminUpdateDeviceStatusInputBuilder {
     ) -> Self {
         self.device_remembered_status = input;
         self
+    }
+    /// <p>The status indicating whether a device has been remembered or not.</p>
+    pub fn get_device_remembered_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeviceRememberedStatusType> {
+        &self.device_remembered_status
     }
     /// Consumes the builder and constructs a [`AdminUpdateDeviceStatusInput`](crate::operation::admin_update_device_status::AdminUpdateDeviceStatusInput).
     pub fn build(

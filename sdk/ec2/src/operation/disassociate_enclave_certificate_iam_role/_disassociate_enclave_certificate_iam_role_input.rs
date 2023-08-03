@@ -61,6 +61,10 @@ impl DisassociateEnclaveCertificateIamRoleInputBuilder {
         self.certificate_arn = input;
         self
     }
+    /// <p>The ARN of the ACM certificate from which to disassociate the IAM role.</p>
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_arn
+    }
     /// <p>The ARN of the IAM role to disassociate.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl DisassociateEnclaveCertificateIamRoleInputBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The ARN of the IAM role to disassociate.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -80,6 +88,10 @@ impl DisassociateEnclaveCertificateIamRoleInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`DisassociateEnclaveCertificateIamRoleInput`](crate::operation::disassociate_enclave_certificate_iam_role::DisassociateEnclaveCertificateIamRoleInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_enclave_certificate_iam_role::DisassociateEnclaveCertificateIamRoleInput, ::aws_smithy_http::operation::error::BuildError>{

@@ -63,6 +63,12 @@ impl SearchTransitGatewayRoutesOutputBuilder {
         self.routes = input;
         self
     }
+    /// <p>Information about the routes.</p>
+    pub fn get_routes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRoute>> {
+        &self.routes
+    }
     /// <p>Indicates whether there are additional routes available.</p>
     pub fn additional_routes_available(mut self, input: bool) -> Self {
         self.additional_routes_available = ::std::option::Option::Some(input);
@@ -72,6 +78,10 @@ impl SearchTransitGatewayRoutesOutputBuilder {
     pub fn set_additional_routes_available(mut self, input: ::std::option::Option<bool>) -> Self {
         self.additional_routes_available = input;
         self
+    }
+    /// <p>Indicates whether there are additional routes available.</p>
+    pub fn get_additional_routes_available(&self) -> &::std::option::Option<bool> {
+        &self.additional_routes_available
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -80,6 +80,10 @@ impl EventActionEntryBuilder {
         self.action = input;
         self
     }
+    /// <p>What occurs after a certain event.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::Action> {
+        &self.action
+    }
     /// <p>The Amazon Resource Name (ARN) for the event action.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl EventActionEntryBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the event action.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The date and time that the event action was created, in ISO 8601 format.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -103,6 +111,10 @@ impl EventActionEntryBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The date and time that the event action was created, in ISO 8601 format.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>What occurs to start an action.</p>
     pub fn event(mut self, input: crate::types::Event) -> Self {
         self.event = ::std::option::Option::Some(input);
@@ -113,6 +125,10 @@ impl EventActionEntryBuilder {
         self.event = input;
         self
     }
+    /// <p>What occurs to start an action.</p>
+    pub fn get_event(&self) -> &::std::option::Option<crate::types::Event> {
+        &self.event
+    }
     /// <p>The unique identifier for the event action.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -122,6 +138,10 @@ impl EventActionEntryBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The unique identifier for the event action.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -135,6 +155,10 @@ impl EventActionEntryBuilder {
     ) -> Self {
         self.updated_at = input;
         self
+    }
+    /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     /// Consumes the builder and constructs a [`EventActionEntry`](crate::types::EventActionEntry).
     pub fn build(self) -> crate::types::EventActionEntry {

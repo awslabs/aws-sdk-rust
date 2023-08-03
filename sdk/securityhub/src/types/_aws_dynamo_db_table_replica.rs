@@ -118,6 +118,14 @@ impl AwsDynamoDbTableReplicaBuilder {
         self.global_secondary_indexes = input;
         self
     }
+    /// <p>List of global secondary indexes for the replica.</p>
+    pub fn get_global_secondary_indexes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::AwsDynamoDbTableReplicaGlobalSecondaryIndex>,
+    > {
+        &self.global_secondary_indexes
+    }
     /// <p>The identifier of the KMS key that will be used for KMS encryption for the replica.</p>
     pub fn kms_master_key_id(
         mut self,
@@ -133,6 +141,10 @@ impl AwsDynamoDbTableReplicaBuilder {
     ) -> Self {
         self.kms_master_key_id = input;
         self
+    }
+    /// <p>The identifier of the KMS key that will be used for KMS encryption for the replica.</p>
+    pub fn get_kms_master_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_master_key_id
     }
     /// <p>Replica-specific configuration for the provisioned throughput.</p>
     pub fn provisioned_throughput_override(
@@ -150,6 +162,12 @@ impl AwsDynamoDbTableReplicaBuilder {
         self.provisioned_throughput_override = input;
         self
     }
+    /// <p>Replica-specific configuration for the provisioned throughput.</p>
+    pub fn get_provisioned_throughput_override(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughputOverride> {
+        &self.provisioned_throughput_override
+    }
     /// <p>The name of the Region where the replica is located.</p>
     pub fn region_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region_name = ::std::option::Option::Some(input.into());
@@ -159,6 +177,10 @@ impl AwsDynamoDbTableReplicaBuilder {
     pub fn set_region_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region_name = input;
         self
+    }
+    /// <p>The name of the Region where the replica is located.</p>
+    pub fn get_region_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region_name
     }
     /// <p>The current status of the replica. Valid values are as follows:</p>
     /// <ul>
@@ -190,6 +212,17 @@ impl AwsDynamoDbTableReplicaBuilder {
         self.replica_status = input;
         self
     }
+    /// <p>The current status of the replica. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATING</code> </p> </li>
+    /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
+    /// <li> <p> <code>DELETING</code> </p> </li>
+    /// <li> <p> <code>UPDATING</code> </p> </li>
+    /// </ul>
+    pub fn get_replica_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replica_status
+    }
     /// <p>Detailed information about the replica status.</p>
     pub fn replica_status_description(
         mut self,
@@ -205,6 +238,10 @@ impl AwsDynamoDbTableReplicaBuilder {
     ) -> Self {
         self.replica_status_description = input;
         self
+    }
+    /// <p>Detailed information about the replica status.</p>
+    pub fn get_replica_status_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replica_status_description
     }
     /// Consumes the builder and constructs a [`AwsDynamoDbTableReplica`](crate::types::AwsDynamoDbTableReplica).
     pub fn build(self) -> crate::types::AwsDynamoDbTableReplica {

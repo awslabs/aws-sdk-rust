@@ -49,6 +49,10 @@ impl PartialMatchBuilder {
         self.reference = input;
         self
     }
+    /// <p>The reference rule from the primary security group of the Firewall Manager policy.</p>
+    pub fn get_reference(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reference
+    }
     /// Appends an item to `target_violation_reasons`.
     ///
     /// To override the contents of this collection use [`set_target_violation_reasons`](Self::set_target_violation_reasons).
@@ -70,6 +74,12 @@ impl PartialMatchBuilder {
     ) -> Self {
         self.target_violation_reasons = input;
         self
+    }
+    /// <p>The violation reason.</p>
+    pub fn get_target_violation_reasons(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.target_violation_reasons
     }
     /// Consumes the builder and constructs a [`PartialMatch`](crate::types::PartialMatch).
     pub fn build(self) -> crate::types::PartialMatch {

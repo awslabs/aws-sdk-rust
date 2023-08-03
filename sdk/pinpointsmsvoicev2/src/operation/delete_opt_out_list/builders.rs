@@ -37,6 +37,12 @@ impl DeleteOptOutListFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteOptOutList as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_opt_out_list::builders::DeleteOptOutListInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +138,9 @@ impl DeleteOptOutListFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_opt_out_list_name(input);
         self
+    }
+    /// <p>The OptOutListName or OptOutListArn of the OptOutList to delete. You can use <code>DescribeOptOutLists</code> to find the values for OptOutListName and OptOutListArn.</p>
+    pub fn get_opt_out_list_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_opt_out_list_name()
     }
 }

@@ -80,6 +80,10 @@ impl ReadSetUploadPartListItemBuilder {
         self.part_number = input;
         self
     }
+    /// <p> The number identifying the part in an upload. </p>
+    pub fn get_part_number(&self) -> &::std::option::Option<i32> {
+        &self.part_number
+    }
     /// <p> The size of the the part in an upload. </p>
     pub fn part_size(mut self, input: i64) -> Self {
         self.part_size = ::std::option::Option::Some(input);
@@ -89,6 +93,10 @@ impl ReadSetUploadPartListItemBuilder {
     pub fn set_part_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.part_size = input;
         self
+    }
+    /// <p> The size of the the part in an upload. </p>
+    pub fn get_part_size(&self) -> &::std::option::Option<i64> {
+        &self.part_size
     }
     /// <p> The origin of the part being direct uploaded. </p>
     pub fn part_source(mut self, input: crate::types::ReadSetPartSource) -> Self {
@@ -103,6 +111,10 @@ impl ReadSetUploadPartListItemBuilder {
         self.part_source = input;
         self
     }
+    /// <p> The origin of the part being direct uploaded. </p>
+    pub fn get_part_source(&self) -> &::std::option::Option<crate::types::ReadSetPartSource> {
+        &self.part_source
+    }
     /// <p> A unique identifier used to confirm that parts are being added to the correct upload. </p>
     pub fn checksum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.checksum = ::std::option::Option::Some(input.into());
@@ -112,6 +124,10 @@ impl ReadSetUploadPartListItemBuilder {
     pub fn set_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.checksum = input;
         self
+    }
+    /// <p> A unique identifier used to confirm that parts are being added to the correct upload. </p>
+    pub fn get_checksum(&self) -> &::std::option::Option<::std::string::String> {
+        &self.checksum
     }
     /// <p> The time stamp for when a direct upload was created. </p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -126,6 +142,10 @@ impl ReadSetUploadPartListItemBuilder {
         self.creation_time = input;
         self
     }
+    /// <p> The time stamp for when a direct upload was created. </p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p> The time stamp for the most recent update to an uploaded part. </p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
@@ -138,6 +158,10 @@ impl ReadSetUploadPartListItemBuilder {
     ) -> Self {
         self.last_updated_time = input;
         self
+    }
+    /// <p> The time stamp for the most recent update to an uploaded part. </p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
     }
     /// Consumes the builder and constructs a [`ReadSetUploadPartListItem`](crate::types::ReadSetUploadPartListItem).
     pub fn build(self) -> crate::types::ReadSetUploadPartListItem {

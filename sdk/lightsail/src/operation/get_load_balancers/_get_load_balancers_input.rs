@@ -44,6 +44,11 @@ impl GetLoadBalancersInputBuilder {
         self.page_token = input;
         self
     }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>To get a page token, perform an initial <code>GetLoadBalancers</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.page_token
+    }
     /// Consumes the builder and constructs a [`GetLoadBalancersInput`](crate::operation::get_load_balancers::GetLoadBalancersInput).
     pub fn build(
         self,

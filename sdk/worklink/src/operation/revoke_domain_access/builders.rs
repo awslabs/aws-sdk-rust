@@ -39,6 +39,12 @@ impl RevokeDomainAccessFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RevokeDomainAccess as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::revoke_domain_access::builders::RevokeDomainAccessInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl RevokeDomainAccessFluentBuilder {
         self.inner = self.inner.set_fleet_arn(input);
         self
     }
+    /// <p>The ARN of the fleet.</p>
+    pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_fleet_arn()
+    }
     /// <p>The name of the domain.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_name(input.into());
@@ -138,5 +148,9 @@ impl RevokeDomainAccessFluentBuilder {
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_name(input);
         self
+    }
+    /// <p>The name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
     }
 }

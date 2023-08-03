@@ -36,6 +36,12 @@ impl ResumeWorkflowRunFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ResumeWorkflowRun as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::resume_workflow_run::builders::ResumeWorkflowRunInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl ResumeWorkflowRunFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the workflow to resume.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The ID of the workflow run to resume.</p>
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.run_id(input.into());
@@ -135,6 +145,10 @@ impl ResumeWorkflowRunFluentBuilder {
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_run_id(input);
         self
+    }
+    /// <p>The ID of the workflow run to resume.</p>
+    pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_run_id()
     }
     /// Appends an item to `NodeIds`.
     ///
@@ -152,5 +166,9 @@ impl ResumeWorkflowRunFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_node_ids(input);
         self
+    }
+    /// <p>A list of the node IDs for the nodes you want to restart. The nodes that are to be restarted must have a run attempt in the original run.</p>
+    pub fn get_node_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_node_ids()
     }
 }

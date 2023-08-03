@@ -89,6 +89,10 @@ impl ImportHypervisorConfigurationInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the hypervisor.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
     pub fn host(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host = ::std::option::Option::Some(input.into());
@@ -98,6 +102,10 @@ impl ImportHypervisorConfigurationInputBuilder {
     pub fn set_host(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.host = input;
         self
+    }
+    /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
+    pub fn get_host(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host
     }
     /// <p>The username for the hypervisor.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -109,6 +117,10 @@ impl ImportHypervisorConfigurationInputBuilder {
         self.username = input;
         self
     }
+    /// <p>The username for the hypervisor.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
+    }
     /// <p>The password for the hypervisor.</p>
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
@@ -119,6 +131,10 @@ impl ImportHypervisorConfigurationInputBuilder {
         self.password = input;
         self
     }
+    /// <p>The password for the hypervisor.</p>
+    pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.password
+    }
     /// <p>The Key Management Service for the hypervisor.</p>
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_arn = ::std::option::Option::Some(input.into());
@@ -128,6 +144,10 @@ impl ImportHypervisorConfigurationInputBuilder {
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_arn = input;
         self
+    }
+    /// <p>The Key Management Service for the hypervisor.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
     }
     /// Appends an item to `tags`.
     ///
@@ -147,6 +167,10 @@ impl ImportHypervisorConfigurationInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags of the hypervisor configuration to import.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`ImportHypervisorConfigurationInput`](crate::operation::import_hypervisor_configuration::ImportHypervisorConfigurationInput).
     pub fn build(

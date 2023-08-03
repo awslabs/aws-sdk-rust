@@ -39,6 +39,10 @@ impl DeleteRuleInputBuilder {
         self.identifier = input;
         self
     }
+    /// <p>The unique ID of the retention rule.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
+    }
     /// Consumes the builder and constructs a [`DeleteRuleInput`](crate::operation::delete_rule::DeleteRuleInput).
     pub fn build(
         self,

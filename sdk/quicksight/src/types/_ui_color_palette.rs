@@ -166,6 +166,10 @@ impl UiColorPaletteBuilder {
         self.primary_foreground = input;
         self
     }
+    /// <p>The color of text and other foreground elements that appear over the primary background regions, such as grid lines, borders, table banding, icons, and so on.</p>
+    pub fn get_primary_foreground(&self) -> &::std::option::Option<::std::string::String> {
+        &self.primary_foreground
+    }
     /// <p>The background color that applies to visuals and other high emphasis UI.</p>
     pub fn primary_background(
         mut self,
@@ -181,6 +185,10 @@ impl UiColorPaletteBuilder {
     ) -> Self {
         self.primary_background = input;
         self
+    }
+    /// <p>The background color that applies to visuals and other high emphasis UI.</p>
+    pub fn get_primary_background(&self) -> &::std::option::Option<::std::string::String> {
+        &self.primary_background
     }
     /// <p>The foreground color that applies to any sheet title, sheet control text, or UI that appears over the secondary background.</p>
     pub fn secondary_foreground(
@@ -198,6 +206,10 @@ impl UiColorPaletteBuilder {
         self.secondary_foreground = input;
         self
     }
+    /// <p>The foreground color that applies to any sheet title, sheet control text, or UI that appears over the secondary background.</p>
+    pub fn get_secondary_foreground(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secondary_foreground
+    }
     /// <p>The background color that applies to the sheet background and sheet controls.</p>
     pub fn secondary_background(
         mut self,
@@ -214,6 +226,10 @@ impl UiColorPaletteBuilder {
         self.secondary_background = input;
         self
     }
+    /// <p>The background color that applies to the sheet background and sheet controls.</p>
+    pub fn get_secondary_background(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secondary_background
+    }
     /// <p>This color is that applies to selected states and buttons.</p>
     pub fn accent(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accent = ::std::option::Option::Some(input.into());
@@ -223,6 +239,10 @@ impl UiColorPaletteBuilder {
     pub fn set_accent(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accent = input;
         self
+    }
+    /// <p>This color is that applies to selected states and buttons.</p>
+    pub fn get_accent(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accent
     }
     /// <p>The foreground color that applies to any text or other elements that appear over the accent color.</p>
     pub fn accent_foreground(
@@ -240,6 +260,10 @@ impl UiColorPaletteBuilder {
         self.accent_foreground = input;
         self
     }
+    /// <p>The foreground color that applies to any text or other elements that appear over the accent color.</p>
+    pub fn get_accent_foreground(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accent_foreground
+    }
     /// <p>The color that applies to error messages.</p>
     pub fn danger(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.danger = ::std::option::Option::Some(input.into());
@@ -249,6 +273,10 @@ impl UiColorPaletteBuilder {
     pub fn set_danger(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.danger = input;
         self
+    }
+    /// <p>The color that applies to error messages.</p>
+    pub fn get_danger(&self) -> &::std::option::Option<::std::string::String> {
+        &self.danger
     }
     /// <p>The foreground color that applies to any text or other elements that appear over the error color.</p>
     pub fn danger_foreground(
@@ -266,6 +294,10 @@ impl UiColorPaletteBuilder {
         self.danger_foreground = input;
         self
     }
+    /// <p>The foreground color that applies to any text or other elements that appear over the error color.</p>
+    pub fn get_danger_foreground(&self) -> &::std::option::Option<::std::string::String> {
+        &self.danger_foreground
+    }
     /// <p>This color that applies to warning and informational messages.</p>
     pub fn warning(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.warning = ::std::option::Option::Some(input.into());
@@ -275,6 +307,10 @@ impl UiColorPaletteBuilder {
     pub fn set_warning(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.warning = input;
         self
+    }
+    /// <p>This color that applies to warning and informational messages.</p>
+    pub fn get_warning(&self) -> &::std::option::Option<::std::string::String> {
+        &self.warning
     }
     /// <p>The foreground color that applies to any text or other elements that appear over the warning color.</p>
     pub fn warning_foreground(
@@ -292,6 +328,10 @@ impl UiColorPaletteBuilder {
         self.warning_foreground = input;
         self
     }
+    /// <p>The foreground color that applies to any text or other elements that appear over the warning color.</p>
+    pub fn get_warning_foreground(&self) -> &::std::option::Option<::std::string::String> {
+        &self.warning_foreground
+    }
     /// <p>The color that applies to success messages, for example the check mark for a successful download.</p>
     pub fn success(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.success = ::std::option::Option::Some(input.into());
@@ -301,6 +341,10 @@ impl UiColorPaletteBuilder {
     pub fn set_success(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.success = input;
         self
+    }
+    /// <p>The color that applies to success messages, for example the check mark for a successful download.</p>
+    pub fn get_success(&self) -> &::std::option::Option<::std::string::String> {
+        &self.success
     }
     /// <p>The foreground color that applies to any text or other elements that appear over the success color.</p>
     pub fn success_foreground(
@@ -318,6 +362,10 @@ impl UiColorPaletteBuilder {
         self.success_foreground = input;
         self
     }
+    /// <p>The foreground color that applies to any text or other elements that appear over the success color.</p>
+    pub fn get_success_foreground(&self) -> &::std::option::Option<::std::string::String> {
+        &self.success_foreground
+    }
     /// <p>The color that applies to the names of fields that are identified as dimensions.</p>
     pub fn dimension(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dimension = ::std::option::Option::Some(input.into());
@@ -327,6 +375,10 @@ impl UiColorPaletteBuilder {
     pub fn set_dimension(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dimension = input;
         self
+    }
+    /// <p>The color that applies to the names of fields that are identified as dimensions.</p>
+    pub fn get_dimension(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dimension
     }
     /// <p>The foreground color that applies to any text or other elements that appear over the dimension color.</p>
     pub fn dimension_foreground(
@@ -344,6 +396,10 @@ impl UiColorPaletteBuilder {
         self.dimension_foreground = input;
         self
     }
+    /// <p>The foreground color that applies to any text or other elements that appear over the dimension color.</p>
+    pub fn get_dimension_foreground(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dimension_foreground
+    }
     /// <p>The color that applies to the names of fields that are identified as measures.</p>
     pub fn measure(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.measure = ::std::option::Option::Some(input.into());
@@ -353,6 +409,10 @@ impl UiColorPaletteBuilder {
     pub fn set_measure(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.measure = input;
         self
+    }
+    /// <p>The color that applies to the names of fields that are identified as measures.</p>
+    pub fn get_measure(&self) -> &::std::option::Option<::std::string::String> {
+        &self.measure
     }
     /// <p>The foreground color that applies to any text or other elements that appear over the measure color.</p>
     pub fn measure_foreground(
@@ -369,6 +429,10 @@ impl UiColorPaletteBuilder {
     ) -> Self {
         self.measure_foreground = input;
         self
+    }
+    /// <p>The foreground color that applies to any text or other elements that appear over the measure color.</p>
+    pub fn get_measure_foreground(&self) -> &::std::option::Option<::std::string::String> {
+        &self.measure_foreground
     }
     /// Consumes the builder and constructs a [`UiColorPalette`](crate::types::UiColorPalette).
     pub fn build(self) -> crate::types::UiColorPalette {

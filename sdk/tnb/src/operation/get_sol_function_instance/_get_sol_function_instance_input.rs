@@ -47,6 +47,10 @@ impl GetSolFunctionInstanceInputBuilder {
         self.vnf_instance_id = input;
         self
     }
+    /// <p>ID of the network function.</p>
+    pub fn get_vnf_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vnf_instance_id
+    }
     /// Consumes the builder and constructs a [`GetSolFunctionInstanceInput`](crate::operation::get_sol_function_instance::GetSolFunctionInstanceInput).
     pub fn build(
         self,

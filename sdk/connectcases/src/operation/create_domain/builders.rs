@@ -38,6 +38,10 @@ impl CreateDomainFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDomain as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_domain::builders::CreateDomainInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,5 +123,9 @@ impl CreateDomainFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name for your Cases domain. It must be unique for your Amazon Web Services account.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
 }

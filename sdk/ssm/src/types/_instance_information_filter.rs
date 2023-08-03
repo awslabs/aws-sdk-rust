@@ -52,6 +52,10 @@ impl InstanceInformationFilterBuilder {
         self.key = input;
         self
     }
+    /// <p>The name of the filter. </p>
+    pub fn get_key(&self) -> &::std::option::Option<crate::types::InstanceInformationFilterKey> {
+        &self.key
+    }
     /// Appends an item to `value_set`.
     ///
     /// To override the contents of this collection use [`set_value_set`](Self::set_value_set).
@@ -70,6 +74,10 @@ impl InstanceInformationFilterBuilder {
     ) -> Self {
         self.value_set = input;
         self
+    }
+    /// <p>The filter values.</p>
+    pub fn get_value_set(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.value_set
     }
     /// Consumes the builder and constructs a [`InstanceInformationFilter`](crate::types::InstanceInformationFilter).
     pub fn build(self) -> crate::types::InstanceInformationFilter {

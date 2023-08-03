@@ -108,6 +108,10 @@ impl ActionExecutionInputBuilder {
         self.action_type_id = input;
         self
     }
+    /// <p>Represents information about an action type.</p>
+    pub fn get_action_type_id(&self) -> &::std::option::Option<crate::types::ActionTypeId> {
+        &self.action_type_id
+    }
     /// Adds a key-value pair to `configuration`.
     ///
     /// To override the contents of this collection use [`set_configuration`](Self::set_configuration).
@@ -132,6 +136,14 @@ impl ActionExecutionInputBuilder {
     ) -> Self {
         self.configuration = input;
         self
+    }
+    /// <p>Configuration data for an action execution.</p>
+    pub fn get_configuration(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.configuration
     }
     /// Adds a key-value pair to `resolved_configuration`.
     ///
@@ -158,6 +170,14 @@ impl ActionExecutionInputBuilder {
         self.resolved_configuration = input;
         self
     }
+    /// <p>Configuration data for an action execution with all variable references replaced with their real values for the execution.</p>
+    pub fn get_resolved_configuration(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.resolved_configuration
+    }
     /// <p>The ARN of the IAM service role that performs the declared action. This is assumed through the roleArn for the pipeline. </p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -168,6 +188,10 @@ impl ActionExecutionInputBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The ARN of the IAM service role that performs the declared action. This is assumed through the roleArn for the pipeline. </p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>The Amazon Web Services Region for the action, such as us-east-1.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
@@ -177,6 +201,10 @@ impl ActionExecutionInputBuilder {
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
+    }
+    /// <p>The Amazon Web Services Region for the action, such as us-east-1.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
     }
     /// Appends an item to `input_artifacts`.
     ///
@@ -197,6 +225,12 @@ impl ActionExecutionInputBuilder {
         self.input_artifacts = input;
         self
     }
+    /// <p>Details of input artifacts of the action that correspond to the action execution.</p>
+    pub fn get_input_artifacts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ArtifactDetail>> {
+        &self.input_artifacts
+    }
     /// <p>The variable namespace associated with the action. All variables produced as output by this action fall under this namespace.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
@@ -206,6 +240,10 @@ impl ActionExecutionInputBuilder {
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace = input;
         self
+    }
+    /// <p>The variable namespace associated with the action. All variables produced as output by this action fall under this namespace.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
     }
     /// Consumes the builder and constructs a [`ActionExecutionInput`](crate::types::ActionExecutionInput).
     pub fn build(self) -> crate::types::ActionExecutionInput {

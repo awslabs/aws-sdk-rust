@@ -36,6 +36,10 @@ impl RemoveTagsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RemoveTags as a reference.
+    pub fn as_input(&self) -> &crate::operation::remove_tags::builders::RemoveTagsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,13 @@ impl RemoveTagsFluentBuilder {
         self.inner = self.inner.set_resource_id(input);
         self
     }
+    /// <p>Specifies the ARN of the trail, event data store, or channel from which tags should be removed.</p>
+    /// <p> Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// <p>Example event data store ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code> </p>
+    /// <p>Example channel ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_id()
+    }
     /// Appends an item to `TagsList`.
     ///
     /// To override the contents of this collection use [`set_tags_list`](Self::set_tags_list).
@@ -140,5 +151,9 @@ impl RemoveTagsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags_list(input);
         self
+    }
+    /// <p>Specifies a list of tags to be removed.</p>
+    pub fn get_tags_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags_list()
     }
 }

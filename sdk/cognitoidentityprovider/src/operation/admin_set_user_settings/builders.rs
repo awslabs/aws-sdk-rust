@@ -36,6 +36,13 @@ impl AdminSetUserSettingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AdminSetUserSettings as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::admin_set_user_settings::builders::AdminSetUserSettingsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl AdminSetUserSettingsFluentBuilder {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
+    /// <p>The ID of the user pool that contains the user whose options you're setting.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_pool_id()
+    }
     /// <p>The user name of the user whose options you're setting.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.username(input.into());
@@ -135,6 +146,10 @@ impl AdminSetUserSettingsFluentBuilder {
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_username(input);
         self
+    }
+    /// <p>The user name of the user whose options you're setting.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_username()
     }
     /// Appends an item to `MFAOptions`.
     ///
@@ -152,5 +167,11 @@ impl AdminSetUserSettingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_mfa_options(input);
         self
+    }
+    /// <p>You can use this parameter only to set an SMS configuration that uses SMS for delivery.</p>
+    pub fn get_mfa_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>> {
+        self.inner.get_mfa_options()
     }
 }

@@ -63,6 +63,10 @@ impl ListEnvironmentOutputsInputBuilder {
         self.environment_name = input;
         self
     }
+    /// <p>The environment name.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_name
+    }
     /// <p>A token that indicates the location of the next environment output in the array of environment outputs, after the list of environment outputs that was previously requested.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl ListEnvironmentOutputsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token that indicates the location of the next environment output in the array of environment outputs, after the list of environment outputs that was previously requested.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The ID of the deployment whose outputs you want.</p>
     pub fn deployment_id(
@@ -88,6 +96,10 @@ impl ListEnvironmentOutputsInputBuilder {
     ) -> Self {
         self.deployment_id = input;
         self
+    }
+    /// <p>The ID of the deployment whose outputs you want.</p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_id
     }
     /// Consumes the builder and constructs a [`ListEnvironmentOutputsInput`](crate::operation::list_environment_outputs::ListEnvironmentOutputsInput).
     pub fn build(

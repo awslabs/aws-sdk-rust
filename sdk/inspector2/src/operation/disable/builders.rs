@@ -36,6 +36,10 @@ impl DisableFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the Disable as a reference.
+    pub fn as_input(&self) -> &crate::operation::disable::builders::DisableInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,6 +129,12 @@ impl DisableFluentBuilder {
         self.inner = self.inner.set_account_ids(input);
         self
     }
+    /// <p>An array of account IDs you want to disable Amazon Inspector scans for.</p>
+    pub fn get_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_account_ids()
+    }
     /// Appends an item to `resourceTypes`.
     ///
     /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
@@ -141,5 +151,11 @@ impl DisableFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_types(input);
         self
+    }
+    /// <p>The resource scan types you want to disable.</p>
+    pub fn get_resource_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceScanType>> {
+        self.inner.get_resource_types()
     }
 }

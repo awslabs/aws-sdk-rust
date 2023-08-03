@@ -56,6 +56,10 @@ impl ListApplicationsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next set of application results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of applications that can be listed.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl ListApplicationsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of applications that can be listed.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Appends an item to `states`.
     ///
@@ -84,6 +92,12 @@ impl ListApplicationsInputBuilder {
     ) -> Self {
         self.states = input;
         self
+    }
+    /// <p>An optional filter for application states. Note that if this filter contains multiple states, the resulting list will be grouped by the state.</p>
+    pub fn get_states(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationState>> {
+        &self.states
     }
     /// Consumes the builder and constructs a [`ListApplicationsInput`](crate::operation::list_applications::ListApplicationsInput).
     pub fn build(

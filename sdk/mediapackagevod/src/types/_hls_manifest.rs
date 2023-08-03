@@ -80,6 +80,10 @@ impl HlsManifestBuilder {
         self.ad_markers = input;
         self
     }
+    /// This setting controls how ad markers are included in the packaged OriginEndpoint. "NONE" will omit all SCTE-35 ad markers from the output. "PASSTHROUGH" causes the manifest to contain a copy of the SCTE-35 ad markers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest. "SCTE35_ENHANCED" generates ad markers and blackout tags based on SCTE-35 messages in the input source.
+    pub fn get_ad_markers(&self) -> &::std::option::Option<crate::types::AdMarkers> {
+        &self.ad_markers
+    }
     /// When enabled, an I-Frame only stream will be included in the output.
     pub fn include_iframe_only_stream(mut self, input: bool) -> Self {
         self.include_iframe_only_stream = ::std::option::Option::Some(input);
@@ -89,6 +93,10 @@ impl HlsManifestBuilder {
     pub fn set_include_iframe_only_stream(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_iframe_only_stream = input;
         self
+    }
+    /// When enabled, an I-Frame only stream will be included in the output.
+    pub fn get_include_iframe_only_stream(&self) -> &::std::option::Option<bool> {
+        &self.include_iframe_only_stream
     }
     /// An optional string to include in the name of the manifest.
     pub fn manifest_name(
@@ -106,6 +114,10 @@ impl HlsManifestBuilder {
         self.manifest_name = input;
         self
     }
+    /// An optional string to include in the name of the manifest.
+    pub fn get_manifest_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.manifest_name
+    }
     /// The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag inserted into manifests. Additionally, when an interval is specified ID3Timed Metadata messages will be generated every 5 seconds using the ingest time of the content. If the interval is not specified, or set to 0, then no EXT-X-PROGRAM-DATE-TIME tags will be inserted into manifests and no ID3Timed Metadata messages will be generated. Note that irrespective of this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input, it will be passed through to HLS output.
     pub fn program_date_time_interval_seconds(mut self, input: i32) -> Self {
         self.program_date_time_interval_seconds = ::std::option::Option::Some(input);
@@ -119,6 +131,10 @@ impl HlsManifestBuilder {
         self.program_date_time_interval_seconds = input;
         self
     }
+    /// The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag inserted into manifests. Additionally, when an interval is specified ID3Timed Metadata messages will be generated every 5 seconds using the ingest time of the content. If the interval is not specified, or set to 0, then no EXT-X-PROGRAM-DATE-TIME tags will be inserted into manifests and no ID3Timed Metadata messages will be generated. Note that irrespective of this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input, it will be passed through to HLS output.
+    pub fn get_program_date_time_interval_seconds(&self) -> &::std::option::Option<i32> {
+        &self.program_date_time_interval_seconds
+    }
     /// When enabled, the EXT-X-KEY tag will be repeated in output manifests.
     pub fn repeat_ext_x_key(mut self, input: bool) -> Self {
         self.repeat_ext_x_key = ::std::option::Option::Some(input);
@@ -128,6 +144,10 @@ impl HlsManifestBuilder {
     pub fn set_repeat_ext_x_key(mut self, input: ::std::option::Option<bool>) -> Self {
         self.repeat_ext_x_key = input;
         self
+    }
+    /// When enabled, the EXT-X-KEY tag will be repeated in output manifests.
+    pub fn get_repeat_ext_x_key(&self) -> &::std::option::Option<bool> {
+        &self.repeat_ext_x_key
     }
     /// A StreamSelection configuration.
     pub fn stream_selection(mut self, input: crate::types::StreamSelection) -> Self {
@@ -141,6 +161,10 @@ impl HlsManifestBuilder {
     ) -> Self {
         self.stream_selection = input;
         self
+    }
+    /// A StreamSelection configuration.
+    pub fn get_stream_selection(&self) -> &::std::option::Option<crate::types::StreamSelection> {
+        &self.stream_selection
     }
     /// Consumes the builder and constructs a [`HlsManifest`](crate::types::HlsManifest).
     pub fn build(self) -> crate::types::HlsManifest {

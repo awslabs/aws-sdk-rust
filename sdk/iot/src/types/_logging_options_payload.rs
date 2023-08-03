@@ -48,6 +48,10 @@ impl LoggingOptionsPayloadBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The ARN of the IAM role that grants access.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>The log level.</p>
     pub fn log_level(mut self, input: crate::types::LogLevel) -> Self {
         self.log_level = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl LoggingOptionsPayloadBuilder {
     pub fn set_log_level(mut self, input: ::std::option::Option<crate::types::LogLevel>) -> Self {
         self.log_level = input;
         self
+    }
+    /// <p>The log level.</p>
+    pub fn get_log_level(&self) -> &::std::option::Option<crate::types::LogLevel> {
+        &self.log_level
     }
     /// Consumes the builder and constructs a [`LoggingOptionsPayload`](crate::types::LoggingOptionsPayload).
     pub fn build(self) -> crate::types::LoggingOptionsPayload {

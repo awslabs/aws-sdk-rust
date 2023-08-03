@@ -56,6 +56,10 @@ impl GetInsightEventsInputBuilder {
         self.insight_id = input;
         self
     }
+    /// <p>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.</p>
+    pub fn get_insight_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.insight_id
+    }
     /// <p>Used to retrieve at most the specified value of events.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl GetInsightEventsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>Used to retrieve at most the specified value of events.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>Specify the pagination token returned by a previous request to retrieve the next page of events. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl GetInsightEventsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Specify the pagination token returned by a previous request to retrieve the next page of events. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`GetInsightEventsInput`](crate::operation::get_insight_events::GetInsightEventsInput).
     pub fn build(

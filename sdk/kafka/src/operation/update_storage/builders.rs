@@ -36,6 +36,12 @@ impl UpdateStorageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateStorage as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_storage::builders::UpdateStorageInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl UpdateStorageFluentBuilder {
         self.inner = self.inner.set_cluster_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_arn()
+    }
     /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
     pub fn current_version(
         mut self,
@@ -134,6 +144,10 @@ impl UpdateStorageFluentBuilder {
         self.inner = self.inner.set_current_version(input);
         self
     }
+    /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
+    pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_current_version()
+    }
     /// <p>EBS volume provisioned throughput information.</p>
     pub fn provisioned_throughput(mut self, input: crate::types::ProvisionedThroughput) -> Self {
         self.inner = self.inner.provisioned_throughput(input);
@@ -146,6 +160,12 @@ impl UpdateStorageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_provisioned_throughput(input);
         self
+    }
+    /// <p>EBS volume provisioned throughput information.</p>
+    pub fn get_provisioned_throughput(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProvisionedThroughput> {
+        self.inner.get_provisioned_throughput()
     }
     /// <p>Controls storage mode for supported storage tiers.</p>
     pub fn storage_mode(mut self, input: crate::types::StorageMode) -> Self {
@@ -160,6 +180,10 @@ impl UpdateStorageFluentBuilder {
         self.inner = self.inner.set_storage_mode(input);
         self
     }
+    /// <p>Controls storage mode for supported storage tiers.</p>
+    pub fn get_storage_mode(&self) -> &::std::option::Option<crate::types::StorageMode> {
+        self.inner.get_storage_mode()
+    }
     /// <p>size of the EBS volume to update.</p>
     pub fn volume_size_gb(mut self, input: i32) -> Self {
         self.inner = self.inner.volume_size_gb(input);
@@ -169,5 +193,9 @@ impl UpdateStorageFluentBuilder {
     pub fn set_volume_size_gb(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_volume_size_gb(input);
         self
+    }
+    /// <p>size of the EBS volume to update.</p>
+    pub fn get_volume_size_gb(&self) -> &::std::option::Option<i32> {
+        self.inner.get_volume_size_gb()
     }
 }

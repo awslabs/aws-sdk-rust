@@ -51,6 +51,10 @@ impl OrganizationNodeBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The organization node type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::OrganizationNodeType> {
+        &self.r#type
+    }
     /// <p>The identifier of the organization node.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl OrganizationNodeBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The identifier of the organization node.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`OrganizationNode`](crate::types::OrganizationNode).
     pub fn build(self) -> crate::types::OrganizationNode {

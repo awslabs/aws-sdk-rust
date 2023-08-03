@@ -96,6 +96,10 @@ impl TopicRuleBuilder {
         self.rule_name = input;
         self
     }
+    /// <p>The name of the rule.</p>
+    pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_name
+    }
     /// <p>The SQL statement used to query the topic. When using a SQL query with multiple lines, be sure to escape the newline characters.</p>
     pub fn sql(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sql = ::std::option::Option::Some(input.into());
@@ -106,6 +110,10 @@ impl TopicRuleBuilder {
         self.sql = input;
         self
     }
+    /// <p>The SQL statement used to query the topic. When using a SQL query with multiple lines, be sure to escape the newline characters.</p>
+    pub fn get_sql(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sql
+    }
     /// <p>The description of the rule.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -115,6 +123,10 @@ impl TopicRuleBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the rule.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The date and time the rule was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -128,6 +140,10 @@ impl TopicRuleBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The date and time the rule was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// Appends an item to `actions`.
     ///
@@ -148,6 +164,10 @@ impl TopicRuleBuilder {
         self.actions = input;
         self
     }
+    /// <p>The actions associated with the rule.</p>
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Action>> {
+        &self.actions
+    }
     /// <p>Specifies whether the rule is disabled.</p>
     pub fn rule_disabled(mut self, input: bool) -> Self {
         self.rule_disabled = ::std::option::Option::Some(input);
@@ -157,6 +177,10 @@ impl TopicRuleBuilder {
     pub fn set_rule_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.rule_disabled = input;
         self
+    }
+    /// <p>Specifies whether the rule is disabled.</p>
+    pub fn get_rule_disabled(&self) -> &::std::option::Option<bool> {
+        &self.rule_disabled
     }
     /// <p>The version of the SQL rules engine to use when evaluating the rule.</p>
     pub fn aws_iot_sql_version(
@@ -174,6 +198,10 @@ impl TopicRuleBuilder {
         self.aws_iot_sql_version = input;
         self
     }
+    /// <p>The version of the SQL rules engine to use when evaluating the rule.</p>
+    pub fn get_aws_iot_sql_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_iot_sql_version
+    }
     /// <p>The action to perform when an error occurs.</p>
     pub fn error_action(mut self, input: crate::types::Action) -> Self {
         self.error_action = ::std::option::Option::Some(input);
@@ -183,6 +211,10 @@ impl TopicRuleBuilder {
     pub fn set_error_action(mut self, input: ::std::option::Option<crate::types::Action>) -> Self {
         self.error_action = input;
         self
+    }
+    /// <p>The action to perform when an error occurs.</p>
+    pub fn get_error_action(&self) -> &::std::option::Option<crate::types::Action> {
+        &self.error_action
     }
     /// Consumes the builder and constructs a [`TopicRule`](crate::types::TopicRule).
     pub fn build(self) -> crate::types::TopicRule {

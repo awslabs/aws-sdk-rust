@@ -37,6 +37,12 @@ impl UpdateOriginEndpointFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateOriginEndpoint as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_origin_endpoint::builders::UpdateOriginEndpointInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl UpdateOriginEndpointFluentBuilder {
         self.inner = self.inner.set_channel_group_name(input);
         self
     }
+    /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
+    pub fn get_channel_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_group_name()
+    }
     /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. </p>
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.channel_name(input.into());
@@ -142,6 +152,10 @@ impl UpdateOriginEndpointFluentBuilder {
     pub fn set_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_channel_name(input);
         self
+    }
+    /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. </p>
+    pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_name()
     }
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel. </p>
     pub fn origin_endpoint_name(
@@ -159,6 +173,10 @@ impl UpdateOriginEndpointFluentBuilder {
         self.inner = self.inner.set_origin_endpoint_name(input);
         self
     }
+    /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel. </p>
+    pub fn get_origin_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_origin_endpoint_name()
+    }
     /// <p>The type of container attached to this origin endpoint. A container type is a file format that encapsulates one or more media streams, such as audio and video, into a single file. </p>
     pub fn container_type(mut self, input: crate::types::ContainerType) -> Self {
         self.inner = self.inner.container_type(input);
@@ -172,6 +190,10 @@ impl UpdateOriginEndpointFluentBuilder {
         self.inner = self.inner.set_container_type(input);
         self
     }
+    /// <p>The type of container attached to this origin endpoint. A container type is a file format that encapsulates one or more media streams, such as audio and video, into a single file. </p>
+    pub fn get_container_type(&self) -> &::std::option::Option<crate::types::ContainerType> {
+        self.inner.get_container_type()
+    }
     /// <p>The segment configuration, including the segment name, duration, and other configuration values.</p>
     pub fn segment(mut self, input: crate::types::Segment) -> Self {
         self.inner = self.inner.segment(input);
@@ -181,6 +203,10 @@ impl UpdateOriginEndpointFluentBuilder {
     pub fn set_segment(mut self, input: ::std::option::Option<crate::types::Segment>) -> Self {
         self.inner = self.inner.set_segment(input);
         self
+    }
+    /// <p>The segment configuration, including the segment name, duration, and other configuration values.</p>
+    pub fn get_segment(&self) -> &::std::option::Option<crate::types::Segment> {
+        self.inner.get_segment()
     }
     /// <p>Any descriptive information that you want to add to the origin endpoint for future identification purposes.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -192,6 +218,10 @@ impl UpdateOriginEndpointFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>Any descriptive information that you want to add to the origin endpoint for future identification purposes.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The size of the window (in seconds) to create a window of the live stream that's available for on-demand viewing. Viewers can start-over or catch-up on content that falls within the window. The maximum startover window is 1,209,600 seconds (14 days).</p>
     pub fn startover_window_seconds(mut self, input: i32) -> Self {
         self.inner = self.inner.startover_window_seconds(input);
@@ -201,6 +231,10 @@ impl UpdateOriginEndpointFluentBuilder {
     pub fn set_startover_window_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_startover_window_seconds(input);
         self
+    }
+    /// <p>The size of the window (in seconds) to create a window of the live stream that's available for on-demand viewing. Viewers can start-over or catch-up on content that falls within the window. The maximum startover window is 1,209,600 seconds (14 days).</p>
+    pub fn get_startover_window_seconds(&self) -> &::std::option::Option<i32> {
+        self.inner.get_startover_window_seconds()
     }
     /// Appends an item to `HlsManifests`.
     ///
@@ -218,6 +252,12 @@ impl UpdateOriginEndpointFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_hls_manifests(input);
         self
+    }
+    /// <p>An HTTP live streaming (HLS) manifest configuration.</p>
+    pub fn get_hls_manifests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateHlsManifestConfiguration>> {
+        self.inner.get_hls_manifests()
     }
     /// Appends an item to `LowLatencyHlsManifests`.
     ///
@@ -240,5 +280,13 @@ impl UpdateOriginEndpointFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_low_latency_hls_manifests(input);
         self
+    }
+    /// <p>A low-latency HLS manifest configuration.</p>
+    pub fn get_low_latency_hls_manifests(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::CreateLowLatencyHlsManifestConfiguration>,
+    > {
+        self.inner.get_low_latency_hls_manifests()
     }
 }

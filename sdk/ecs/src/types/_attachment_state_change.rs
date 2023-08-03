@@ -54,6 +54,10 @@ impl AttachmentStateChangeBuilder {
         self.attachment_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the attachment.</p>
+    pub fn get_attachment_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attachment_arn
+    }
     /// <p>The status of the attachment.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl AttachmentStateChangeBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the attachment.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`AttachmentStateChange`](crate::types::AttachmentStateChange).
     pub fn build(self) -> crate::types::AttachmentStateChange {

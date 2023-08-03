@@ -101,6 +101,10 @@ impl UpdateMatchingWorkflowInputBuilder {
         self.workflow_name = input;
         self
     }
+    /// <p>The name of the workflow to be retrieved.</p>
+    pub fn get_workflow_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_name
+    }
     /// <p>A description of the workflow.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -110,6 +114,10 @@ impl UpdateMatchingWorkflowInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the workflow.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `input_source_config`.
     ///
@@ -130,6 +138,12 @@ impl UpdateMatchingWorkflowInputBuilder {
         self.input_source_config = input;
         self
     }
+    /// <p>A list of <code>InputSource</code> objects, which have the fields <code>InputSourceARN</code> and <code>SchemaName</code>.</p>
+    pub fn get_input_source_config(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputSource>> {
+        &self.input_source_config
+    }
     /// Appends an item to `output_source_config`.
     ///
     /// To override the contents of this collection use [`set_output_source_config`](Self::set_output_source_config).
@@ -149,6 +163,12 @@ impl UpdateMatchingWorkflowInputBuilder {
         self.output_source_config = input;
         self
     }
+    /// <p>A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code>, <code>ApplyNormalization</code>, and <code>Output</code>.</p>
+    pub fn get_output_source_config(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputSource>> {
+        &self.output_source_config
+    }
     /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code> </p>
     pub fn resolution_techniques(mut self, input: crate::types::ResolutionTechniques) -> Self {
         self.resolution_techniques = ::std::option::Option::Some(input);
@@ -161,6 +181,12 @@ impl UpdateMatchingWorkflowInputBuilder {
     ) -> Self {
         self.resolution_techniques = input;
         self
+    }
+    /// <p>An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code> </p>
+    pub fn get_resolution_techniques(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResolutionTechniques> {
+        &self.resolution_techniques
     }
     /// <p>An object which defines an incremental run type and has only <code>incrementalRunType</code> as a field.</p>
     pub fn incremental_run_config(mut self, input: crate::types::IncrementalRunConfig) -> Self {
@@ -175,6 +201,12 @@ impl UpdateMatchingWorkflowInputBuilder {
         self.incremental_run_config = input;
         self
     }
+    /// <p>An object which defines an incremental run type and has only <code>incrementalRunType</code> as a field.</p>
+    pub fn get_incremental_run_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::IncrementalRunConfig> {
+        &self.incremental_run_config
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM role. AWS Entity Resolution assumes this role to create resources on your behalf as part of workflow execution.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -184,6 +216,10 @@ impl UpdateMatchingWorkflowInputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role. AWS Entity Resolution assumes this role to create resources on your behalf as part of workflow execution.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Consumes the builder and constructs a [`UpdateMatchingWorkflowInput`](crate::operation::update_matching_workflow::UpdateMatchingWorkflowInput).
     pub fn build(

@@ -52,6 +52,10 @@ impl CsrExtensionsBuilder {
         self.key_usage = input;
         self
     }
+    /// <p>Indicates the purpose of the certificate and of the key contained in the certificate.</p>
+    pub fn get_key_usage(&self) -> &::std::option::Option<crate::types::KeyUsage> {
+        &self.key_usage
+    }
     /// Appends an item to `subject_information_access`.
     ///
     /// To override the contents of this collection use [`set_subject_information_access`](Self::set_subject_information_access).
@@ -70,6 +74,12 @@ impl CsrExtensionsBuilder {
     ) -> Self {
         self.subject_information_access = input;
         self
+    }
+    /// <p>For CA certificates, provides a path to additional information pertaining to the CA, such as revocation and policy. For more information, see <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.2.2">Subject Information Access</a> in RFC 5280.</p>
+    pub fn get_subject_information_access(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessDescription>> {
+        &self.subject_information_access
     }
     /// Consumes the builder and constructs a [`CsrExtensions`](crate::types::CsrExtensions).
     pub fn build(self) -> crate::types::CsrExtensions {

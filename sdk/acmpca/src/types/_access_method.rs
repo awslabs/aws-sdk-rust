@@ -54,6 +54,10 @@ impl AccessMethodBuilder {
         self.custom_object_identifier = input;
         self
     }
+    /// <p>An object identifier (OID) specifying the <code>AccessMethod</code>. The OID must satisfy the regular expression shown below. For more information, see NIST's definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p>
+    pub fn get_custom_object_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_object_identifier
+    }
     /// <p>Specifies the <code>AccessMethod</code>.</p>
     pub fn access_method_type(mut self, input: crate::types::AccessMethodType) -> Self {
         self.access_method_type = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl AccessMethodBuilder {
     ) -> Self {
         self.access_method_type = input;
         self
+    }
+    /// <p>Specifies the <code>AccessMethod</code>.</p>
+    pub fn get_access_method_type(&self) -> &::std::option::Option<crate::types::AccessMethodType> {
+        &self.access_method_type
     }
     /// Consumes the builder and constructs a [`AccessMethod`](crate::types::AccessMethod).
     pub fn build(self) -> crate::types::AccessMethod {

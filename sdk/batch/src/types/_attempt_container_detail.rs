@@ -87,6 +87,10 @@ impl AttemptContainerDetailBuilder {
         self.container_instance_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon ECS container instance that hosts the job attempt.</p>
+    pub fn get_container_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.container_instance_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the Amazon ECS task that's associated with the job attempt. Each container attempt receives a task ARN when they reach the <code>STARTING</code> status.</p>
     pub fn task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_arn = ::std::option::Option::Some(input.into());
@@ -96,6 +100,10 @@ impl AttemptContainerDetailBuilder {
     pub fn set_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon ECS task that's associated with the job attempt. Each container attempt receives a task ARN when they reach the <code>STARTING</code> status.</p>
+    pub fn get_task_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_arn
     }
     /// <p>The exit code for the job attempt. A non-zero exit code is considered failed.</p>
     pub fn exit_code(mut self, input: i32) -> Self {
@@ -107,6 +115,10 @@ impl AttemptContainerDetailBuilder {
         self.exit_code = input;
         self
     }
+    /// <p>The exit code for the job attempt. A non-zero exit code is considered failed.</p>
+    pub fn get_exit_code(&self) -> &::std::option::Option<i32> {
+        &self.exit_code
+    }
     /// <p>A short (255 max characters) human-readable string to provide additional details for a running or stopped container.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
@@ -116,6 +128,10 @@ impl AttemptContainerDetailBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
+    }
+    /// <p>A short (255 max characters) human-readable string to provide additional details for a running or stopped container.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
     }
     /// <p>The name of the CloudWatch Logs log stream that's associated with the container. The log group for Batch jobs is <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the <code>RUNNING</code> status.</p>
     pub fn log_stream_name(
@@ -132,6 +148,10 @@ impl AttemptContainerDetailBuilder {
     ) -> Self {
         self.log_stream_name = input;
         self
+    }
+    /// <p>The name of the CloudWatch Logs log stream that's associated with the container. The log group for Batch jobs is <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the <code>RUNNING</code> status.</p>
+    pub fn get_log_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_stream_name
     }
     /// Appends an item to `network_interfaces`.
     ///
@@ -151,6 +171,12 @@ impl AttemptContainerDetailBuilder {
     ) -> Self {
         self.network_interfaces = input;
         self
+    }
+    /// <p>The network interfaces that are associated with the job attempt.</p>
+    pub fn get_network_interfaces(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>> {
+        &self.network_interfaces
     }
     /// Consumes the builder and constructs a [`AttemptContainerDetail`](crate::types::AttemptContainerDetail).
     pub fn build(self) -> crate::types::AttemptContainerDetail {

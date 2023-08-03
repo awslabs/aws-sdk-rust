@@ -54,6 +54,10 @@ impl PutConfigurationSetDeliveryOptionsInputBuilder {
         self.configuration_set_name = input;
         self
     }
+    /// <p>The name of the configuration set that you want to specify the delivery options for.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_set_name
+    }
     /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS).</p>
     pub fn delivery_options(mut self, input: crate::types::DeliveryOptions) -> Self {
         self.delivery_options = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl PutConfigurationSetDeliveryOptionsInputBuilder {
     ) -> Self {
         self.delivery_options = input;
         self
+    }
+    /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS).</p>
+    pub fn get_delivery_options(&self) -> &::std::option::Option<crate::types::DeliveryOptions> {
+        &self.delivery_options
     }
     /// Consumes the builder and constructs a [`PutConfigurationSetDeliveryOptionsInput`](crate::operation::put_configuration_set_delivery_options::PutConfigurationSetDeliveryOptionsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_configuration_set_delivery_options::PutConfigurationSetDeliveryOptionsInput, ::aws_smithy_http::operation::error::BuildError>{

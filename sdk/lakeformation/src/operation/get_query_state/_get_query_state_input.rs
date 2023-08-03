@@ -39,6 +39,10 @@ impl GetQueryStateInputBuilder {
         self.query_id = input;
         self
     }
+    /// <p>The ID of the plan query operation.</p>
+    pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_id
+    }
     /// Consumes the builder and constructs a [`GetQueryStateInput`](crate::operation::get_query_state::GetQueryStateInput).
     pub fn build(
         self,

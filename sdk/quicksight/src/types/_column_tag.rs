@@ -53,6 +53,12 @@ impl ColumnTagBuilder {
         self.column_geographic_role = input;
         self
     }
+    /// <p>A geospatial role for a column.</p>
+    pub fn get_column_geographic_role(
+        &self,
+    ) -> &::std::option::Option<crate::types::GeoSpatialDataRole> {
+        &self.column_geographic_role
+    }
     /// <p>A description for a column.</p>
     pub fn column_description(mut self, input: crate::types::ColumnDescription) -> Self {
         self.column_description = ::std::option::Option::Some(input);
@@ -65,6 +71,12 @@ impl ColumnTagBuilder {
     ) -> Self {
         self.column_description = input;
         self
+    }
+    /// <p>A description for a column.</p>
+    pub fn get_column_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::ColumnDescription> {
+        &self.column_description
     }
     /// Consumes the builder and constructs a [`ColumnTag`](crate::types::ColumnTag).
     pub fn build(self) -> crate::types::ColumnTag {

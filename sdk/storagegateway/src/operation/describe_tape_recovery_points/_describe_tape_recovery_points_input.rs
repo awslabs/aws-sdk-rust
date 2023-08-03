@@ -56,6 +56,10 @@ impl DescribeTapeRecoveryPointsInputBuilder {
         self.gateway_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_arn
+    }
     /// <p>An opaque string that indicates the position at which to begin describing the virtual tape recovery points.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl DescribeTapeRecoveryPointsInputBuilder {
         self.marker = input;
         self
     }
+    /// <p>An opaque string that indicates the position at which to begin describing the virtual tape recovery points.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// <p>Specifies that the number of virtual tape recovery points that are described be limited to the specified number.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl DescribeTapeRecoveryPointsInputBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
+    }
+    /// <p>Specifies that the number of virtual tape recovery points that are described be limited to the specified number.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// Consumes the builder and constructs a [`DescribeTapeRecoveryPointsInput`](crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPointsInput).
     pub fn build(

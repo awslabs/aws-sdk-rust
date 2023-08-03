@@ -47,6 +47,10 @@ impl DescribeAddonConfigurationInputBuilder {
         self.addon_name = input;
         self
     }
+    /// <p>The name of the add-on. The name must match one of the names that <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a> returns.</p>
+    pub fn get_addon_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.addon_name
+    }
     /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
     pub fn addon_version(
         mut self,
@@ -62,6 +66,10 @@ impl DescribeAddonConfigurationInputBuilder {
     ) -> Self {
         self.addon_version = input;
         self
+    }
+    /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
+    pub fn get_addon_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.addon_version
     }
     /// Consumes the builder and constructs a [`DescribeAddonConfigurationInput`](crate::operation::describe_addon_configuration::DescribeAddonConfigurationInput).
     pub fn build(

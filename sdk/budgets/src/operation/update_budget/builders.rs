@@ -38,6 +38,10 @@ impl UpdateBudgetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateBudget as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_budget::builders::UpdateBudgetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -120,6 +124,10 @@ impl UpdateBudgetFluentBuilder {
         self.inner = self.inner.set_account_id(input);
         self
     }
+    /// <p>The <code>accountId</code> that is associated with the budget that you want to update.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// <p>The budget that you want to update your budget to.</p>
     pub fn new_budget(mut self, input: crate::types::Budget) -> Self {
         self.inner = self.inner.new_budget(input);
@@ -129,5 +137,9 @@ impl UpdateBudgetFluentBuilder {
     pub fn set_new_budget(mut self, input: ::std::option::Option<crate::types::Budget>) -> Self {
         self.inner = self.inner.set_new_budget(input);
         self
+    }
+    /// <p>The budget that you want to update your budget to.</p>
+    pub fn get_new_budget(&self) -> &::std::option::Option<crate::types::Budget> {
+        self.inner.get_new_budget()
     }
 }

@@ -47,6 +47,10 @@ impl ConnectCustomKeyStoreInputBuilder {
         self.custom_key_store_id = input;
         self
     }
+    /// <p>Enter the key store ID of the custom key store that you want to connect. To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
+    pub fn get_custom_key_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_key_store_id
+    }
     /// Consumes the builder and constructs a [`ConnectCustomKeyStoreInput`](crate::operation::connect_custom_key_store::ConnectCustomKeyStoreInput).
     pub fn build(
         self,

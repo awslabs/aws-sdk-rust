@@ -37,6 +37,12 @@ impl CreateDeploymentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDeployment as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_deployment::builders::CreateDeploymentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl CreateDeploymentFluentBuilder {
         self.inner = self.inner.set_stack_id(input);
         self
     }
+    /// <p>The stack ID.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stack_id()
+    }
     /// <p>The app ID. This parameter is required for app deployments, but not for other deployment commands.</p>
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_id(input.into());
@@ -136,6 +146,10 @@ impl CreateDeploymentFluentBuilder {
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_id(input);
         self
+    }
+    /// <p>The app ID. This parameter is required for app deployments, but not for other deployment commands.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_id()
     }
     /// Appends an item to `InstanceIds`.
     ///
@@ -154,6 +168,12 @@ impl CreateDeploymentFluentBuilder {
         self.inner = self.inner.set_instance_ids(input);
         self
     }
+    /// <p>The instance IDs for the deployment targets.</p>
+    pub fn get_instance_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_instance_ids()
+    }
     /// Appends an item to `LayerIds`.
     ///
     /// To override the contents of this collection use [`set_layer_ids`](Self::set_layer_ids).
@@ -171,6 +191,10 @@ impl CreateDeploymentFluentBuilder {
         self.inner = self.inner.set_layer_ids(input);
         self
     }
+    /// <p>The layer IDs for the deployment targets.</p>
+    pub fn get_layer_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_layer_ids()
+    }
     /// <p>A <code>DeploymentCommand</code> object that specifies the deployment command and any associated arguments.</p>
     pub fn command(mut self, input: crate::types::DeploymentCommand) -> Self {
         self.inner = self.inner.command(input);
@@ -184,6 +208,10 @@ impl CreateDeploymentFluentBuilder {
         self.inner = self.inner.set_command(input);
         self
     }
+    /// <p>A <code>DeploymentCommand</code> object that specifies the deployment command and any associated arguments.</p>
+    pub fn get_command(&self) -> &::std::option::Option<crate::types::DeploymentCommand> {
+        self.inner.get_command()
+    }
     /// <p>A user-defined comment.</p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.comment(input.into());
@@ -193,6 +221,10 @@ impl CreateDeploymentFluentBuilder {
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_comment(input);
         self
+    }
+    /// <p>A user-defined comment.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_comment()
     }
     /// <p>A string that contains user-defined, custom JSON. You can use this parameter to override some corresponding default stack configuration JSON values. The string should be in the following format:</p>
     /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
@@ -207,5 +239,11 @@ impl CreateDeploymentFluentBuilder {
     pub fn set_custom_json(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_custom_json(input);
         self
+    }
+    /// <p>A string that contains user-defined, custom JSON. You can use this parameter to override some corresponding default stack configuration JSON values. The string should be in the following format:</p>
+    /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
+    /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">Overriding Attributes With Custom JSON</a>.</p>
+    pub fn get_custom_json(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_custom_json()
     }
 }

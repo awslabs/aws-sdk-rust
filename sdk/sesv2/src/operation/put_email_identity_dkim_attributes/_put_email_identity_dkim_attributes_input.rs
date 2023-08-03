@@ -56,6 +56,10 @@ impl PutEmailIdentityDkimAttributesInputBuilder {
         self.email_identity = input;
         self
     }
+    /// <p>The email identity.</p>
+    pub fn get_email_identity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email_identity
+    }
     /// <p>Sets the DKIM signing configuration for the identity.</p>
     /// <p>When you set this value <code>true</code>, then the messages that are sent from the identity are signed using DKIM. If you set this value to <code>false</code>, your messages are sent without DKIM signing.</p>
     pub fn signing_enabled(mut self, input: bool) -> Self {
@@ -67,6 +71,11 @@ impl PutEmailIdentityDkimAttributesInputBuilder {
     pub fn set_signing_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.signing_enabled = input;
         self
+    }
+    /// <p>Sets the DKIM signing configuration for the identity.</p>
+    /// <p>When you set this value <code>true</code>, then the messages that are sent from the identity are signed using DKIM. If you set this value to <code>false</code>, your messages are sent without DKIM signing.</p>
+    pub fn get_signing_enabled(&self) -> &::std::option::Option<bool> {
+        &self.signing_enabled
     }
     /// Consumes the builder and constructs a [`PutEmailIdentityDkimAttributesInput`](crate::operation::put_email_identity_dkim_attributes::PutEmailIdentityDkimAttributesInput).
     pub fn build(

@@ -61,6 +61,13 @@ impl UnsuccessfulInstanceCreditSpecificationItemErrorBuilder {
         self.code = input;
         self
     }
+    /// <p>The error code.</p>
+    pub fn get_code(
+        &self,
+    ) -> &::std::option::Option<crate::types::UnsuccessfulInstanceCreditSpecificationErrorCode>
+    {
+        &self.code
+    }
     /// <p>The applicable error message.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -70,6 +77,10 @@ impl UnsuccessfulInstanceCreditSpecificationItemErrorBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>The applicable error message.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`UnsuccessfulInstanceCreditSpecificationItemError`](crate::types::UnsuccessfulInstanceCreditSpecificationItemError).
     pub fn build(self) -> crate::types::UnsuccessfulInstanceCreditSpecificationItemError {

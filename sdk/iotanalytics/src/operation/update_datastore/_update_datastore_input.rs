@@ -76,6 +76,10 @@ impl UpdateDatastoreInputBuilder {
         self.datastore_name = input;
         self
     }
+    /// <p>The name of the data store to be updated.</p>
+    pub fn get_datastore_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.datastore_name
+    }
     /// <p>How long, in days, message data is kept for the data store. The retention period can't be updated if the data store's Amazon S3 storage is customer-managed.</p>
     pub fn retention_period(mut self, input: crate::types::RetentionPeriod) -> Self {
         self.retention_period = ::std::option::Option::Some(input);
@@ -89,6 +93,10 @@ impl UpdateDatastoreInputBuilder {
         self.retention_period = input;
         self
     }
+    /// <p>How long, in days, message data is kept for the data store. The retention period can't be updated if the data store's Amazon S3 storage is customer-managed.</p>
+    pub fn get_retention_period(&self) -> &::std::option::Option<crate::types::RetentionPeriod> {
+        &self.retention_period
+    }
     /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created. </p>
     pub fn datastore_storage(mut self, input: crate::types::DatastoreStorage) -> Self {
         self.datastore_storage = ::std::option::Option::Some(input);
@@ -101,6 +109,10 @@ impl UpdateDatastoreInputBuilder {
     ) -> Self {
         self.datastore_storage = input;
         self
+    }
+    /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created. </p>
+    pub fn get_datastore_storage(&self) -> &::std::option::Option<crate::types::DatastoreStorage> {
+        &self.datastore_storage
     }
     /// <p>Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
     /// <p>The default file format is JSON. You can specify only one format.</p>
@@ -121,6 +133,14 @@ impl UpdateDatastoreInputBuilder {
     ) -> Self {
         self.file_format_configuration = input;
         self
+    }
+    /// <p>Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
+    /// <p>The default file format is JSON. You can specify only one format.</p>
+    /// <p>You can't change the file format after you create the data store.</p>
+    pub fn get_file_format_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::FileFormatConfiguration> {
+        &self.file_format_configuration
     }
     /// Consumes the builder and constructs a [`UpdateDatastoreInput`](crate::operation::update_datastore::UpdateDatastoreInput).
     pub fn build(

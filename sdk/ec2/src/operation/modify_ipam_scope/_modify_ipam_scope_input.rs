@@ -55,6 +55,10 @@ impl ModifyIpamScopeInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>The ID of the scope you want to modify.</p>
     pub fn ipam_scope_id(
         mut self,
@@ -71,6 +75,10 @@ impl ModifyIpamScopeInputBuilder {
         self.ipam_scope_id = input;
         self
     }
+    /// <p>The ID of the scope you want to modify.</p>
+    pub fn get_ipam_scope_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipam_scope_id
+    }
     /// <p>The description of the scope you want to modify.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -80,6 +88,10 @@ impl ModifyIpamScopeInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the scope you want to modify.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`ModifyIpamScopeInput`](crate::operation::modify_ipam_scope::ModifyIpamScopeInput).
     pub fn build(

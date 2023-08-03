@@ -56,6 +56,10 @@ impl PutClusterPolicyInputBuilder {
         self.cluster_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_arn
+    }
     /// <p>The policy version.</p>
     pub fn current_version(
         mut self,
@@ -72,6 +76,10 @@ impl PutClusterPolicyInputBuilder {
         self.current_version = input;
         self
     }
+    /// <p>The policy version.</p>
+    pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.current_version
+    }
     /// <p>The policy.</p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl PutClusterPolicyInputBuilder {
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy = input;
         self
+    }
+    /// <p>The policy.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy
     }
     /// Consumes the builder and constructs a [`PutClusterPolicyInput`](crate::operation::put_cluster_policy::PutClusterPolicyInput).
     pub fn build(

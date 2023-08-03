@@ -37,6 +37,10 @@ impl DeleteTagsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteTags as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_tags::builders::DeleteTagsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl DeleteTagsFluentBuilder {
         self.inner = self.inner.set_tag_keys(input);
         self
     }
+    /// <p>One or more tags to delete.</p>
+    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_tag_keys()
+    }
     /// <p>The ID of the tagged ML object. For example, <code>exampleModelId</code>.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_id(input.into());
@@ -135,6 +143,10 @@ impl DeleteTagsFluentBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_id(input);
         self
+    }
+    /// <p>The ID of the tagged ML object. For example, <code>exampleModelId</code>.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_id()
     }
     /// <p>The type of the tagged ML object.</p>
     pub fn resource_type(mut self, input: crate::types::TaggableResourceType) -> Self {
@@ -148,5 +160,9 @@ impl DeleteTagsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
+    }
+    /// <p>The type of the tagged ML object.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::TaggableResourceType> {
+        self.inner.get_resource_type()
     }
 }

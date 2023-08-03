@@ -49,6 +49,10 @@ impl CreateKeyOutputBuilder {
         self.key_metadata = input;
         self
     }
+    /// <p>Metadata associated with the KMS key.</p>
+    pub fn get_key_metadata(&self) -> &::std::option::Option<crate::types::KeyMetadata> {
+        &self.key_metadata
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

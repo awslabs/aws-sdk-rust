@@ -67,6 +67,10 @@ impl MessageBuilder {
         self.plain_text_message = input;
         self
     }
+    /// <p>A message in plain text format.</p>
+    pub fn get_plain_text_message(&self) -> &::std::option::Option<crate::types::PlainTextMessage> {
+        &self.plain_text_message
+    }
     /// <p>A message in a custom format defined by the client application.</p>
     pub fn custom_payload(mut self, input: crate::types::CustomPayload) -> Self {
         self.custom_payload = ::std::option::Option::Some(input);
@@ -79,6 +83,10 @@ impl MessageBuilder {
     ) -> Self {
         self.custom_payload = input;
         self
+    }
+    /// <p>A message in a custom format defined by the client application.</p>
+    pub fn get_custom_payload(&self) -> &::std::option::Option<crate::types::CustomPayload> {
+        &self.custom_payload
     }
     /// <p>A message in Speech Synthesis Markup Language (SSML).</p>
     pub fn ssml_message(mut self, input: crate::types::SsmlMessage) -> Self {
@@ -93,6 +101,10 @@ impl MessageBuilder {
         self.ssml_message = input;
         self
     }
+    /// <p>A message in Speech Synthesis Markup Language (SSML).</p>
+    pub fn get_ssml_message(&self) -> &::std::option::Option<crate::types::SsmlMessage> {
+        &self.ssml_message
+    }
     /// <p>A message that defines a response card that the client application can show to the user.</p>
     pub fn image_response_card(mut self, input: crate::types::ImageResponseCard) -> Self {
         self.image_response_card = ::std::option::Option::Some(input);
@@ -105,6 +117,12 @@ impl MessageBuilder {
     ) -> Self {
         self.image_response_card = input;
         self
+    }
+    /// <p>A message that defines a response card that the client application can show to the user.</p>
+    pub fn get_image_response_card(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImageResponseCard> {
+        &self.image_response_card
     }
     /// Consumes the builder and constructs a [`Message`](crate::types::Message).
     pub fn build(self) -> crate::types::Message {

@@ -53,6 +53,10 @@ impl UpdateUserProfileOutputBuilder {
         self.user_profile_arn = input;
         self
     }
+    /// <p>The user profile Amazon Resource Name (ARN).</p>
+    pub fn get_user_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_profile_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

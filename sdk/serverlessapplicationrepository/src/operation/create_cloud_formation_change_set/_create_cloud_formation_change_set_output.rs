@@ -82,6 +82,10 @@ impl CreateCloudFormationChangeSetOutputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The application Amazon Resource Name (ARN).</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the change set.</p>
     /// <p>Length constraints: Minimum length of 1.</p>
     /// <p>Pattern: ARN:[-a-zA-Z0-9:/]*</p>
@@ -102,6 +106,12 @@ impl CreateCloudFormationChangeSetOutputBuilder {
         self.change_set_id = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the change set.</p>
+    /// <p>Length constraints: Minimum length of 1.</p>
+    /// <p>Pattern: ARN:[-a-zA-Z0-9:/]*</p>
+    pub fn get_change_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.change_set_id
+    }
     /// <p>The semantic version of the application:</p>
     /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
     pub fn semantic_version(
@@ -120,6 +130,11 @@ impl CreateCloudFormationChangeSetOutputBuilder {
         self.semantic_version = input;
         self
     }
+    /// <p>The semantic version of the application:</p>
+    /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
+    pub fn get_semantic_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.semantic_version
+    }
     /// <p>The unique ID of the stack.</p>
     pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_id = ::std::option::Option::Some(input.into());
@@ -129,6 +144,10 @@ impl CreateCloudFormationChangeSetOutputBuilder {
     pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_id = input;
         self
+    }
+    /// <p>The unique ID of the stack.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

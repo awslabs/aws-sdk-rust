@@ -36,6 +36,13 @@ impl DeleteScheduledActionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteScheduledAction as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_scheduled_action::builders::DeleteScheduledActionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl DeleteScheduledActionFluentBuilder {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_auto_scaling_group_name()
+    }
     /// <p>The name of the action to delete.</p>
     pub fn scheduled_action_name(
         mut self,
@@ -147,5 +158,9 @@ impl DeleteScheduledActionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_scheduled_action_name(input);
         self
+    }
+    /// <p>The name of the action to delete.</p>
+    pub fn get_scheduled_action_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_scheduled_action_name()
     }
 }

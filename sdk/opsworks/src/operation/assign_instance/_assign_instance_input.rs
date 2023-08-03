@@ -47,6 +47,10 @@ impl AssignInstanceInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The instance ID.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// Appends an item to `layer_ids`.
     ///
     /// To override the contents of this collection use [`set_layer_ids`](Self::set_layer_ids).
@@ -65,6 +69,10 @@ impl AssignInstanceInputBuilder {
     ) -> Self {
         self.layer_ids = input;
         self
+    }
+    /// <p>The layer ID, which must correspond to a custom layer. You cannot assign a registered instance to a built-in layer.</p>
+    pub fn get_layer_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.layer_ids
     }
     /// Consumes the builder and constructs a [`AssignInstanceInput`](crate::operation::assign_instance::AssignInstanceInput).
     pub fn build(

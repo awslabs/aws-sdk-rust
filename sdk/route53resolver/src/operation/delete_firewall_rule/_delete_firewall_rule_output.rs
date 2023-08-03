@@ -50,6 +50,10 @@ impl DeleteFirewallRuleOutputBuilder {
         self.firewall_rule = input;
         self
     }
+    /// <p>The specification for the firewall rule that you just deleted.</p>
+    pub fn get_firewall_rule(&self) -> &::std::option::Option<crate::types::FirewallRule> {
+        &self.firewall_rule
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

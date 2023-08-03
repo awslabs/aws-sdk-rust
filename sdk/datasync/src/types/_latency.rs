@@ -56,6 +56,10 @@ impl LatencyBuilder {
         self.read = input;
         self
     }
+    /// <p>Peak latency for read operations.</p>
+    pub fn get_read(&self) -> &::std::option::Option<f64> {
+        &self.read
+    }
     /// <p>Peak latency for write operations.</p>
     pub fn write(mut self, input: f64) -> Self {
         self.write = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl LatencyBuilder {
         self.write = input;
         self
     }
+    /// <p>Peak latency for write operations.</p>
+    pub fn get_write(&self) -> &::std::option::Option<f64> {
+        &self.write
+    }
     /// <p>Peak latency for operations unrelated to read and write operations.</p>
     pub fn other(mut self, input: f64) -> Self {
         self.other = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl LatencyBuilder {
     pub fn set_other(mut self, input: ::std::option::Option<f64>) -> Self {
         self.other = input;
         self
+    }
+    /// <p>Peak latency for operations unrelated to read and write operations.</p>
+    pub fn get_other(&self) -> &::std::option::Option<f64> {
+        &self.other
     }
     /// Consumes the builder and constructs a [`Latency`](crate::types::Latency).
     pub fn build(self) -> crate::types::Latency {

@@ -88,6 +88,10 @@ impl DataSourceSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the data source.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The identifier for the data source.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -98,6 +102,10 @@ impl DataSourceSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier for the data source.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The type of the data source.</p>
     pub fn r#type(mut self, input: crate::types::DataSourceType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -107,6 +115,10 @@ impl DataSourceSummaryBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DataSourceType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of the data source.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::DataSourceType> {
+        &self.r#type
     }
     /// <p>The Unix timestamp when the data source connector was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -121,6 +133,10 @@ impl DataSourceSummaryBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The Unix timestamp when the data source connector was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The Unix timestamp when the data source connector was last updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
@@ -134,6 +150,10 @@ impl DataSourceSummaryBuilder {
         self.updated_at = input;
         self
     }
+    /// <p>The Unix timestamp when the data source connector was last updated.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
+    }
     /// <p>The status of the data source. When the status is <code>ACTIVE</code> the data source is ready to use.</p>
     pub fn status(mut self, input: crate::types::DataSourceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -146,6 +166,10 @@ impl DataSourceSummaryBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the data source. When the status is <code>ACTIVE</code> the data source is ready to use.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DataSourceStatus> {
+        &self.status
     }
     /// <p>The code for a language. This shows a supported language for all documents in the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
     pub fn language_code(
@@ -162,6 +186,10 @@ impl DataSourceSummaryBuilder {
     ) -> Self {
         self.language_code = input;
         self
+    }
+    /// <p>The code for a language. This shows a supported language for all documents in the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.language_code
     }
     /// Consumes the builder and constructs a [`DataSourceSummary`](crate::types::DataSourceSummary).
     pub fn build(self) -> crate::types::DataSourceSummary {

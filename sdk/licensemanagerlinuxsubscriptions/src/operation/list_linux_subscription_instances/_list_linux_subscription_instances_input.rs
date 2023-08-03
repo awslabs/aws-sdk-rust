@@ -133,6 +133,27 @@ impl ListLinuxSubscriptionInstancesInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify. For example, you can filter by the name of <code>AmiID</code> with an optional operator to see subscriptions that match, partially match, or don't match a certain Amazon Machine Image (AMI) ID.</p>
+    /// <p>The valid names for this filter are:</p>
+    /// <ul>
+    /// <li> <p> <code>AmiID</code> </p> </li>
+    /// <li> <p> <code>InstanceID</code> </p> </li>
+    /// <li> <p> <code>AccountID</code> </p> </li>
+    /// <li> <p> <code>Status</code> </p> </li>
+    /// <li> <p> <code>Region</code> </p> </li>
+    /// <li> <p> <code>UsageOperation</code> </p> </li>
+    /// <li> <p> <code>ProductCode</code> </p> </li>
+    /// <li> <p> <code>InstanceType</code> </p> </li>
+    /// </ul>
+    /// <p>The valid Operators for this filter are:</p>
+    /// <ul>
+    /// <li> <p> <code>contains</code> </p> </li>
+    /// <li> <p> <code>equals</code> </p> </li>
+    /// <li> <p> <code>Notequal</code> </p> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
+    }
     /// <p>Maximum number of results to return in a single call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -143,6 +164,10 @@ impl ListLinuxSubscriptionInstancesInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>Maximum number of results to return in a single call.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>Token for the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -152,6 +177,10 @@ impl ListLinuxSubscriptionInstancesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListLinuxSubscriptionInstancesInput`](crate::operation::list_linux_subscription_instances::ListLinuxSubscriptionInstancesInput).
     pub fn build(

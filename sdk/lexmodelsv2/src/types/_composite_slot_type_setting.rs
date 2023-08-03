@@ -50,6 +50,12 @@ impl CompositeSlotTypeSettingBuilder {
         self.sub_slots = input;
         self
     }
+    /// <p>Subslots in the composite slot.</p>
+    pub fn get_sub_slots(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SubSlotTypeComposition>> {
+        &self.sub_slots
+    }
     /// Consumes the builder and constructs a [`CompositeSlotTypeSetting`](crate::types::CompositeSlotTypeSetting).
     pub fn build(self) -> crate::types::CompositeSlotTypeSetting {
         crate::types::CompositeSlotTypeSetting {

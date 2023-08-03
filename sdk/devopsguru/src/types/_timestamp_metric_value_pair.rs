@@ -51,6 +51,10 @@ impl TimestampMetricValuePairBuilder {
         self.timestamp = input;
         self
     }
+    /// <p>A <code>Timestamp</code> that specifies the time the event occurred. </p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.timestamp
+    }
     /// <p>Value of the anomalous metric data point at respective Timestamp.</p>
     pub fn metric_value(mut self, input: f64) -> Self {
         self.metric_value = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl TimestampMetricValuePairBuilder {
     pub fn set_metric_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.metric_value = input;
         self
+    }
+    /// <p>Value of the anomalous metric data point at respective Timestamp.</p>
+    pub fn get_metric_value(&self) -> &::std::option::Option<f64> {
+        &self.metric_value
     }
     /// Consumes the builder and constructs a [`TimestampMetricValuePair`](crate::types::TimestampMetricValuePair).
     pub fn build(self) -> crate::types::TimestampMetricValuePair {

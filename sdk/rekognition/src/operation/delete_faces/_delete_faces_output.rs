@@ -70,6 +70,12 @@ impl DeleteFacesOutputBuilder {
         self.deleted_faces = input;
         self
     }
+    /// <p>An array of strings (face IDs) of the faces that were deleted.</p>
+    pub fn get_deleted_faces(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.deleted_faces
+    }
     /// Appends an item to `unsuccessful_face_deletions`.
     ///
     /// To override the contents of this collection use [`set_unsuccessful_face_deletions`](Self::set_unsuccessful_face_deletions).
@@ -91,6 +97,12 @@ impl DeleteFacesOutputBuilder {
     ) -> Self {
         self.unsuccessful_face_deletions = input;
         self
+    }
+    /// <p>An array of any faces that weren't deleted.</p>
+    pub fn get_unsuccessful_face_deletions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceDeletion>> {
+        &self.unsuccessful_face_deletions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

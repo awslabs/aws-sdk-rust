@@ -108,6 +108,10 @@ impl DomainBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the domain.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Name (ARN) of the domain recordset (e.g., <code>arn:aws:lightsail:global:123456789101:Domain/824cede0-abc7-4f84-8dbc-12345EXAMPLE</code>).</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -118,6 +122,10 @@ impl DomainBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the domain recordset (e.g., <code>arn:aws:lightsail:global:123456789101:Domain/824cede0-abc7-4f84-8dbc-12345EXAMPLE</code>).</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The support code. Include this code in your email to support when you have questions about an instance or another resource in Lightsail. This code enables our support team to look up your Lightsail information more easily.</p>
     pub fn support_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.support_code = ::std::option::Option::Some(input.into());
@@ -127,6 +135,10 @@ impl DomainBuilder {
     pub fn set_support_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.support_code = input;
         self
+    }
+    /// <p>The support code. Include this code in your email to support when you have questions about an instance or another resource in Lightsail. This code enables our support team to look up your Lightsail information more easily.</p>
+    pub fn get_support_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.support_code
     }
     /// <p>The date when the domain recordset was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -141,6 +153,10 @@ impl DomainBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The date when the domain recordset was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The AWS Region and Availability Zones where the domain recordset was created.</p>
     pub fn location(mut self, input: crate::types::ResourceLocation) -> Self {
         self.location = ::std::option::Option::Some(input);
@@ -154,6 +170,10 @@ impl DomainBuilder {
         self.location = input;
         self
     }
+    /// <p>The AWS Region and Availability Zones where the domain recordset was created.</p>
+    pub fn get_location(&self) -> &::std::option::Option<crate::types::ResourceLocation> {
+        &self.location
+    }
     /// <p>The resource type. </p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
@@ -166,6 +186,10 @@ impl DomainBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>The resource type. </p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
     }
     /// Appends an item to `tags`.
     ///
@@ -186,6 +210,10 @@ impl DomainBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Appends an item to `domain_entries`.
     ///
     /// To override the contents of this collection use [`set_domain_entries`](Self::set_domain_entries).
@@ -205,6 +233,12 @@ impl DomainBuilder {
         self.domain_entries = input;
         self
     }
+    /// <p>An array of key-value pairs containing information about the domain entries.</p>
+    pub fn get_domain_entries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainEntry>> {
+        &self.domain_entries
+    }
     /// <p>An object that describes the state of the Route&nbsp;53 domain delegation to a Lightsail DNS zone.</p>
     pub fn registered_domain_delegation_info(
         mut self,
@@ -220,6 +254,12 @@ impl DomainBuilder {
     ) -> Self {
         self.registered_domain_delegation_info = input;
         self
+    }
+    /// <p>An object that describes the state of the Route&nbsp;53 domain delegation to a Lightsail DNS zone.</p>
+    pub fn get_registered_domain_delegation_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::RegisteredDomainDelegationInfo> {
+        &self.registered_domain_delegation_info
     }
     /// Consumes the builder and constructs a [`Domain`](crate::types::Domain).
     pub fn build(self) -> crate::types::Domain {

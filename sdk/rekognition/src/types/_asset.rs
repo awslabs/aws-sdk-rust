@@ -45,6 +45,12 @@ impl AssetBuilder {
         self.ground_truth_manifest = input;
         self
     }
+    /// <p>The S3 bucket that contains an Amazon Sagemaker Ground Truth format manifest file. </p>
+    pub fn get_ground_truth_manifest(
+        &self,
+    ) -> &::std::option::Option<crate::types::GroundTruthManifest> {
+        &self.ground_truth_manifest
+    }
     /// Consumes the builder and constructs a [`Asset`](crate::types::Asset).
     pub fn build(self) -> crate::types::Asset {
         crate::types::Asset {

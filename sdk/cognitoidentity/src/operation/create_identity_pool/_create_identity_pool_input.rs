@@ -137,6 +137,10 @@ impl CreateIdentityPoolInputBuilder {
         self.identity_pool_name = input;
         self
     }
+    /// <p>A string that you provide.</p>
+    pub fn get_identity_pool_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_pool_name
+    }
     /// <p>TRUE if the identity pool supports unauthenticated logins.</p>
     pub fn allow_unauthenticated_identities(mut self, input: bool) -> Self {
         self.allow_unauthenticated_identities = ::std::option::Option::Some(input);
@@ -150,6 +154,10 @@ impl CreateIdentityPoolInputBuilder {
         self.allow_unauthenticated_identities = input;
         self
     }
+    /// <p>TRUE if the identity pool supports unauthenticated logins.</p>
+    pub fn get_allow_unauthenticated_identities(&self) -> &::std::option::Option<bool> {
+        &self.allow_unauthenticated_identities
+    }
     /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
     pub fn allow_classic_flow(mut self, input: bool) -> Self {
         self.allow_classic_flow = ::std::option::Option::Some(input);
@@ -159,6 +167,10 @@ impl CreateIdentityPoolInputBuilder {
     pub fn set_allow_classic_flow(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_classic_flow = input;
         self
+    }
+    /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
+    pub fn get_allow_classic_flow(&self) -> &::std::option::Option<bool> {
+        &self.allow_classic_flow
     }
     /// Adds a key-value pair to `supported_login_providers`.
     ///
@@ -185,6 +197,14 @@ impl CreateIdentityPoolInputBuilder {
         self.supported_login_providers = input;
         self
     }
+    /// <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
+    pub fn get_supported_login_providers(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.supported_login_providers
+    }
     /// <p>The "domain" by which Cognito will refer to your users. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (<code>.</code>), underscore (<code>_</code>), and dash (<code>-</code>).</p>
     /// <p>Once you have set a developer provider name, you cannot change it. Please take care in setting this parameter.</p>
     pub fn developer_provider_name(
@@ -202,6 +222,11 @@ impl CreateIdentityPoolInputBuilder {
     ) -> Self {
         self.developer_provider_name = input;
         self
+    }
+    /// <p>The "domain" by which Cognito will refer to your users. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (<code>.</code>), underscore (<code>_</code>), and dash (<code>-</code>).</p>
+    /// <p>Once you have set a developer provider name, you cannot change it. Please take care in setting this parameter.</p>
+    pub fn get_developer_provider_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.developer_provider_name
     }
     /// Appends an item to `open_id_connect_provider_ar_ns`.
     ///
@@ -225,6 +250,12 @@ impl CreateIdentityPoolInputBuilder {
         self.open_id_connect_provider_ar_ns = input;
         self
     }
+    /// <p>The Amazon Resource Names (ARN) of the OpenID Connect providers.</p>
+    pub fn get_open_id_connect_provider_ar_ns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.open_id_connect_provider_ar_ns
+    }
     /// Appends an item to `cognito_identity_providers`.
     ///
     /// To override the contents of this collection use [`set_cognito_identity_providers`](Self::set_cognito_identity_providers).
@@ -247,6 +278,12 @@ impl CreateIdentityPoolInputBuilder {
         self.cognito_identity_providers = input;
         self
     }
+    /// <p>An array of Amazon Cognito user pools and their client IDs.</p>
+    pub fn get_cognito_identity_providers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CognitoIdentityProvider>> {
+        &self.cognito_identity_providers
+    }
     /// Appends an item to `saml_provider_ar_ns`.
     ///
     /// To override the contents of this collection use [`set_saml_provider_ar_ns`](Self::set_saml_provider_ar_ns).
@@ -268,6 +305,12 @@ impl CreateIdentityPoolInputBuilder {
     ) -> Self {
         self.saml_provider_ar_ns = input;
         self
+    }
+    /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
+    pub fn get_saml_provider_ar_ns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.saml_provider_ar_ns
     }
     /// Adds a key-value pair to `identity_pool_tags`.
     ///
@@ -293,6 +336,14 @@ impl CreateIdentityPoolInputBuilder {
     ) -> Self {
         self.identity_pool_tags = input;
         self
+    }
+    /// <p>Tags to assign to the identity pool. A tag is a label that you can apply to identity pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p>
+    pub fn get_identity_pool_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.identity_pool_tags
     }
     /// Consumes the builder and constructs a [`CreateIdentityPoolInput`](crate::operation::create_identity_pool::CreateIdentityPoolInput).
     pub fn build(

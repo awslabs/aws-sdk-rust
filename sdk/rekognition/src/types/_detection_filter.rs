@@ -56,6 +56,10 @@ impl DetectionFilterBuilder {
         self.min_confidence = input;
         self
     }
+    /// <p>Sets the confidence of word detection. Words with detection confidence below this will be excluded from the result. Values should be between 0 and 100. The default MinConfidence is 80.</p>
+    pub fn get_min_confidence(&self) -> &::std::option::Option<f32> {
+        &self.min_confidence
+    }
     /// <p>Sets the minimum height of the word bounding box. Words with bounding box heights lesser than this value will be excluded from the result. Value is relative to the video frame height.</p>
     pub fn min_bounding_box_height(mut self, input: f32) -> Self {
         self.min_bounding_box_height = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl DetectionFilterBuilder {
         self.min_bounding_box_height = input;
         self
     }
+    /// <p>Sets the minimum height of the word bounding box. Words with bounding box heights lesser than this value will be excluded from the result. Value is relative to the video frame height.</p>
+    pub fn get_min_bounding_box_height(&self) -> &::std::option::Option<f32> {
+        &self.min_bounding_box_height
+    }
     /// <p>Sets the minimum width of the word bounding box. Words with bounding boxes widths lesser than this value will be excluded from the result. Value is relative to the video frame width.</p>
     pub fn min_bounding_box_width(mut self, input: f32) -> Self {
         self.min_bounding_box_width = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl DetectionFilterBuilder {
     pub fn set_min_bounding_box_width(mut self, input: ::std::option::Option<f32>) -> Self {
         self.min_bounding_box_width = input;
         self
+    }
+    /// <p>Sets the minimum width of the word bounding box. Words with bounding boxes widths lesser than this value will be excluded from the result. Value is relative to the video frame width.</p>
+    pub fn get_min_bounding_box_width(&self) -> &::std::option::Option<f32> {
+        &self.min_bounding_box_width
     }
     /// Consumes the builder and constructs a [`DetectionFilter`](crate::types::DetectionFilter).
     pub fn build(self) -> crate::types::DetectionFilter {

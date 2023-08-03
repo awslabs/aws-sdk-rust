@@ -39,6 +39,10 @@ impl DescribeClusterInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the cluster to describe.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DescribeClusterInput`](crate::operation::describe_cluster::DescribeClusterInput).
     pub fn build(
         self,

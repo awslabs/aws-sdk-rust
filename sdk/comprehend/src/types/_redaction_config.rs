@@ -66,6 +66,12 @@ impl RedactionConfigBuilder {
         self.pii_entity_types = input;
         self
     }
+    /// <p>An array of the types of PII entities that Amazon Comprehend detects in the input text for your request.</p>
+    pub fn get_pii_entity_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PiiEntityType>> {
+        &self.pii_entity_types
+    }
     /// <p>Specifies whether the PII entity is redacted with the mask character or the entity type.</p>
     pub fn mask_mode(mut self, input: crate::types::PiiEntitiesDetectionMaskMode) -> Self {
         self.mask_mode = ::std::option::Option::Some(input);
@@ -78,6 +84,12 @@ impl RedactionConfigBuilder {
     ) -> Self {
         self.mask_mode = input;
         self
+    }
+    /// <p>Specifies whether the PII entity is redacted with the mask character or the entity type.</p>
+    pub fn get_mask_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::PiiEntitiesDetectionMaskMode> {
+        &self.mask_mode
     }
     /// <p>A character that replaces each character in the redacted PII entity.</p>
     pub fn mask_character(
@@ -94,6 +106,10 @@ impl RedactionConfigBuilder {
     ) -> Self {
         self.mask_character = input;
         self
+    }
+    /// <p>A character that replaces each character in the redacted PII entity.</p>
+    pub fn get_mask_character(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mask_character
     }
     /// Consumes the builder and constructs a [`RedactionConfig`](crate::types::RedactionConfig).
     pub fn build(self) -> crate::types::RedactionConfig {

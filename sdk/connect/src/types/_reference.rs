@@ -48,6 +48,10 @@ impl ReferenceBuilder {
         self.value = input;
         self
     }
+    /// <p>A valid value for the reference. For example, for a URL reference, a formatted URL that is displayed to an agent in the Contact Control Panel (CCP).</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// <p>The type of the reference. <code>DATE</code> must be of type Epoch timestamp. </p>
     pub fn r#type(mut self, input: crate::types::ReferenceType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ReferenceBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ReferenceType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of the reference. <code>DATE</code> must be of type Epoch timestamp. </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ReferenceType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`Reference`](crate::types::Reference).
     pub fn build(self) -> crate::types::Reference {

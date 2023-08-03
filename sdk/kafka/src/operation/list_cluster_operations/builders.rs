@@ -36,6 +36,13 @@ impl ListClusterOperationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListClusterOperations as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_cluster_operations::builders::ListClusterOperationsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +144,10 @@ impl ListClusterOperationsFluentBuilder {
         self.inner = self.inner.set_cluster_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_arn()
+    }
     /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -147,6 +158,10 @@ impl ListClusterOperationsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -156,5 +171,9 @@ impl ListClusterOperationsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

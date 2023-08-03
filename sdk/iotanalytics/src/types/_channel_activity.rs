@@ -56,6 +56,10 @@ impl ChannelActivityBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the channel activity.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The name of the channel from which the messages are processed.</p>
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_name = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl ChannelActivityBuilder {
         self.channel_name = input;
         self
     }
+    /// <p>The name of the channel from which the messages are processed.</p>
+    pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_name
+    }
     /// <p>The next activity in the pipeline.</p>
     pub fn next(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl ChannelActivityBuilder {
     pub fn set_next(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next = input;
         self
+    }
+    /// <p>The next activity in the pipeline.</p>
+    pub fn get_next(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next
     }
     /// Consumes the builder and constructs a [`ChannelActivity`](crate::types::ChannelActivity).
     pub fn build(self) -> crate::types::ChannelActivity {

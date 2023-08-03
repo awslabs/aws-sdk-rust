@@ -57,6 +57,12 @@ impl BatchUpdatePhoneNumberInputBuilder {
         self.update_phone_number_request_items = input;
         self
     }
+    /// <p>Lists the phone numbers in the update request.</p>
+    pub fn get_update_phone_number_request_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdatePhoneNumberRequestItem>> {
+        &self.update_phone_number_request_items
+    }
     /// Consumes the builder and constructs a [`BatchUpdatePhoneNumberInput`](crate::operation::batch_update_phone_number::BatchUpdatePhoneNumberInput).
     pub fn build(
         self,

@@ -48,6 +48,10 @@ impl GetPipelineInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the pipeline for which you want to get information. Pipeline names must be unique in an Amazon Web Services account.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The version number of the pipeline. If you do not specify a version, defaults to the current version.</p>
     pub fn version(mut self, input: i32) -> Self {
         self.version = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl GetPipelineInputBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The version number of the pipeline. If you do not specify a version, defaults to the current version.</p>
+    pub fn get_version(&self) -> &::std::option::Option<i32> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`GetPipelineInput`](crate::operation::get_pipeline::GetPipelineInput).
     pub fn build(

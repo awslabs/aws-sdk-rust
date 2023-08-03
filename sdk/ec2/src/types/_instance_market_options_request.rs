@@ -51,6 +51,10 @@ impl InstanceMarketOptionsRequestBuilder {
         self.market_type = input;
         self
     }
+    /// <p>The market type.</p>
+    pub fn get_market_type(&self) -> &::std::option::Option<crate::types::MarketType> {
+        &self.market_type
+    }
     /// <p>The options for Spot Instances.</p>
     pub fn spot_options(mut self, input: crate::types::SpotMarketOptions) -> Self {
         self.spot_options = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl InstanceMarketOptionsRequestBuilder {
     ) -> Self {
         self.spot_options = input;
         self
+    }
+    /// <p>The options for Spot Instances.</p>
+    pub fn get_spot_options(&self) -> &::std::option::Option<crate::types::SpotMarketOptions> {
+        &self.spot_options
     }
     /// Consumes the builder and constructs a [`InstanceMarketOptionsRequest`](crate::types::InstanceMarketOptionsRequest).
     pub fn build(self) -> crate::types::InstanceMarketOptionsRequest {

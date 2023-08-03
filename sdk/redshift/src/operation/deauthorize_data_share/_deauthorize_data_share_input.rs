@@ -54,6 +54,10 @@ impl DeauthorizeDataShareInputBuilder {
         self.data_share_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the datashare to remove authorization from.</p>
+    pub fn get_data_share_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_share_arn
+    }
     /// <p>The identifier of the data consumer that is to have authorization removed from the datashare. This identifier is an Amazon Web Services account ID or a keyword, such as ADX.</p>
     pub fn consumer_identifier(
         mut self,
@@ -69,6 +73,10 @@ impl DeauthorizeDataShareInputBuilder {
     ) -> Self {
         self.consumer_identifier = input;
         self
+    }
+    /// <p>The identifier of the data consumer that is to have authorization removed from the datashare. This identifier is an Amazon Web Services account ID or a keyword, such as ADX.</p>
+    pub fn get_consumer_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.consumer_identifier
     }
     /// Consumes the builder and constructs a [`DeauthorizeDataShareInput`](crate::operation::deauthorize_data_share::DeauthorizeDataShareInput).
     pub fn build(

@@ -49,6 +49,10 @@ impl GetExtensionOutputBuilder {
         self.extension = input;
         self
     }
+    /// <p>Details about the extension.</p>
+    pub fn get_extension(&self) -> &::std::option::Option<crate::types::ExtensionDetails> {
+        &self.extension
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

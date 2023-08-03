@@ -38,6 +38,12 @@ impl DeleteApplicationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteApplication as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_application::builders::DeleteApplicationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +140,10 @@ impl DeleteApplicationFluentBuilder {
         self.inner = self.inner.set_application_name(input);
         self
     }
+    /// <p>The name of the application to delete.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_name()
+    }
     /// <p>When set to true, running environments will be terminated before deleting the application.</p>
     pub fn terminate_env_by_force(mut self, input: bool) -> Self {
         self.inner = self.inner.terminate_env_by_force(input);
@@ -143,5 +153,9 @@ impl DeleteApplicationFluentBuilder {
     pub fn set_terminate_env_by_force(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_terminate_env_by_force(input);
         self
+    }
+    /// <p>When set to true, running environments will be terminated before deleting the application.</p>
+    pub fn get_terminate_env_by_force(&self) -> &::std::option::Option<bool> {
+        self.inner.get_terminate_env_by_force()
     }
 }

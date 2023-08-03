@@ -43,6 +43,10 @@ impl PutLoggingOptionsInputBuilder {
         self.logging_options = input;
         self
     }
+    /// <p>The new values of the IoT Analytics logging options.</p>
+    pub fn get_logging_options(&self) -> &::std::option::Option<crate::types::LoggingOptions> {
+        &self.logging_options
+    }
     /// Consumes the builder and constructs a [`PutLoggingOptionsInput`](crate::operation::put_logging_options::PutLoggingOptionsInput).
     pub fn build(
         self,

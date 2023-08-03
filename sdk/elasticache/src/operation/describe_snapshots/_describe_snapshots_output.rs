@@ -56,6 +56,10 @@ impl DescribeSnapshotsOutputBuilder {
         self.marker = input;
         self
     }
+    /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// Appends an item to `snapshots`.
     ///
     /// To override the contents of this collection use [`set_snapshots`](Self::set_snapshots).
@@ -74,6 +78,10 @@ impl DescribeSnapshotsOutputBuilder {
     ) -> Self {
         self.snapshots = input;
         self
+    }
+    /// <p>A list of snapshots. Each item in the list contains detailed information about one snapshot.</p>
+    pub fn get_snapshots(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Snapshot>> {
+        &self.snapshots
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

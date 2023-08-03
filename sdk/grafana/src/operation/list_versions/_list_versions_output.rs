@@ -54,6 +54,10 @@ impl ListVersionsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to use in a subsequent <code>ListVersions</code> operation to return the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `grafana_versions`.
     ///
     /// To override the contents of this collection use [`set_grafana_versions`](Self::set_grafana_versions).
@@ -75,6 +79,12 @@ impl ListVersionsOutputBuilder {
     ) -> Self {
         self.grafana_versions = input;
         self
+    }
+    /// <p>The Grafana versions available to create. If a workspace ID is included in the request, the Grafana versions to which this workspace can be upgraded.</p>
+    pub fn get_grafana_versions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.grafana_versions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

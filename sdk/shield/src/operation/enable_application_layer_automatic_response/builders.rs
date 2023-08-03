@@ -42,6 +42,10 @@ impl EnableApplicationLayerAutomaticResponseFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the EnableApplicationLayerAutomaticResponse as a reference.
+    pub fn as_input(&self) -> &crate::operation::enable_application_layer_automatic_response::builders::EnableApplicationLayerAutomaticResponseInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl EnableApplicationLayerAutomaticResponseFluentBuilder {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
+    /// <p>The ARN (Amazon Resource Name) of the protected resource.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
+    }
     /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature, when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
     pub fn action(mut self, input: crate::types::ResponseAction) -> Self {
         self.inner = self.inner.action(input);
@@ -118,5 +126,9 @@ impl EnableApplicationLayerAutomaticResponseFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_action(input);
         self
+    }
+    /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature, when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::ResponseAction> {
+        self.inner.get_action()
     }
 }

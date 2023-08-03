@@ -103,6 +103,10 @@ impl GetDomainOutputBuilder {
         self.domain_id = input;
         self
     }
+    /// <p>The unique identifier of the Cases domain. </p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_id
+    }
     /// <p>The Amazon Resource Name (ARN) for the Cases domain.</p>
     pub fn domain_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_arn = ::std::option::Option::Some(input.into());
@@ -113,6 +117,10 @@ impl GetDomainOutputBuilder {
         self.domain_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the Cases domain.</p>
+    pub fn get_domain_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_arn
+    }
     /// <p>The name of the Cases domain.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -122,6 +130,10 @@ impl GetDomainOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the Cases domain.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The timestamp when the Cases domain was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -136,6 +148,10 @@ impl GetDomainOutputBuilder {
         self.created_time = input;
         self
     }
+    /// <p>The timestamp when the Cases domain was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
     /// <p>The status of the Cases domain.</p>
     pub fn domain_status(mut self, input: crate::types::DomainStatus) -> Self {
         self.domain_status = ::std::option::Option::Some(input);
@@ -148,6 +164,10 @@ impl GetDomainOutputBuilder {
     ) -> Self {
         self.domain_status = input;
         self
+    }
+    /// <p>The status of the Cases domain.</p>
+    pub fn get_domain_status(&self) -> &::std::option::Option<crate::types::DomainStatus> {
+        &self.domain_status
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -176,6 +196,17 @@ impl GetDomainOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            ::std::option::Option<::std::string::String>,
+        >,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

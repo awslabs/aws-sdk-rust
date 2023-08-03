@@ -43,6 +43,12 @@ impl SuggestionQueryBuilder {
         self.property_name_query = input;
         self
     }
+    /// <p>Defines a property name hint. Only property names that begin with the specified hint are included in the response.</p>
+    pub fn get_property_name_query(
+        &self,
+    ) -> &::std::option::Option<crate::types::PropertyNameQuery> {
+        &self.property_name_query
+    }
     /// Consumes the builder and constructs a [`SuggestionQuery`](crate::types::SuggestionQuery).
     pub fn build(self) -> crate::types::SuggestionQuery {
         crate::types::SuggestionQuery {

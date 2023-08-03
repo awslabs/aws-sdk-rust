@@ -75,6 +75,10 @@ impl InstantiateSolNetworkInstanceOutputBuilder {
         self.ns_lcm_op_occ_id = input;
         self
     }
+    /// <p>The identifier of the network operation.</p>
+    pub fn get_ns_lcm_op_occ_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ns_lcm_op_occ_id
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -99,6 +103,14 @@ impl InstantiateSolNetworkInstanceOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. When you use this API, the tags are transferred to the network operation that is created. Use tags to search and filter your resources or track your Amazon Web Services costs.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

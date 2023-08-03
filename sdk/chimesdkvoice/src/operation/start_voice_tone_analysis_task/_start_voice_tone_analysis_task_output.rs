@@ -51,6 +51,12 @@ impl StartVoiceToneAnalysisTaskOutputBuilder {
         self.voice_tone_analysis_task = input;
         self
     }
+    /// <p>The details of the voice tone analysis task.</p>
+    pub fn get_voice_tone_analysis_task(
+        &self,
+    ) -> &::std::option::Option<crate::types::VoiceToneAnalysisTask> {
+        &self.voice_tone_analysis_task
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

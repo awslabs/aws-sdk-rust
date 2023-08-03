@@ -64,6 +64,10 @@ impl CidrSummaryBuilder {
         self.available_cidr_count = input;
         self
     }
+    /// <p>The number of CIDR blocks available for use by the IP set references in a firewall.</p>
+    pub fn get_available_cidr_count(&self) -> &::std::option::Option<i32> {
+        &self.available_cidr_count
+    }
     /// <p>The number of CIDR blocks used by the IP set references in a firewall.</p>
     pub fn utilized_cidr_count(mut self, input: i32) -> Self {
         self.utilized_cidr_count = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl CidrSummaryBuilder {
     pub fn set_utilized_cidr_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.utilized_cidr_count = input;
         self
+    }
+    /// <p>The number of CIDR blocks used by the IP set references in a firewall.</p>
+    pub fn get_utilized_cidr_count(&self) -> &::std::option::Option<i32> {
+        &self.utilized_cidr_count
     }
     /// Adds a key-value pair to `ip_set_references`.
     ///
@@ -98,6 +106,14 @@ impl CidrSummaryBuilder {
     ) -> Self {
         self.ip_set_references = input;
         self
+    }
+    /// <p>The list of the IP set references used by a firewall.</p>
+    pub fn get_ip_set_references(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::IpSetMetadata>,
+    > {
+        &self.ip_set_references
     }
     /// Consumes the builder and constructs a [`CidrSummary`](crate::types::CidrSummary).
     pub fn build(self) -> crate::types::CidrSummary {

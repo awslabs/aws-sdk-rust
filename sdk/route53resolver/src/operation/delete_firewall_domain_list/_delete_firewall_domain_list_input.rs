@@ -47,6 +47,10 @@ impl DeleteFirewallDomainListInputBuilder {
         self.firewall_domain_list_id = input;
         self
     }
+    /// <p>The ID of the domain list that you want to delete. </p>
+    pub fn get_firewall_domain_list_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.firewall_domain_list_id
+    }
     /// Consumes the builder and constructs a [`DeleteFirewallDomainListInput`](crate::operation::delete_firewall_domain_list::DeleteFirewallDomainListInput).
     pub fn build(
         self,

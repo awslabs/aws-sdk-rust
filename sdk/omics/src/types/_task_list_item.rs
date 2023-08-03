@@ -104,6 +104,10 @@ impl TaskListItemBuilder {
         self.task_id = input;
         self
     }
+    /// <p>The task's ID.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_id
+    }
     /// <p>The task's status.</p>
     pub fn status(mut self, input: crate::types::TaskStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -113,6 +117,10 @@ impl TaskListItemBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TaskStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The task's status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TaskStatus> {
+        &self.status
     }
     /// <p>The task's name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -124,6 +132,10 @@ impl TaskListItemBuilder {
         self.name = input;
         self
     }
+    /// <p>The task's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The task's CPU count.</p>
     pub fn cpus(mut self, input: i32) -> Self {
         self.cpus = ::std::option::Option::Some(input);
@@ -134,6 +146,10 @@ impl TaskListItemBuilder {
         self.cpus = input;
         self
     }
+    /// <p>The task's CPU count.</p>
+    pub fn get_cpus(&self) -> &::std::option::Option<i32> {
+        &self.cpus
+    }
     /// <p>The task's memory use in gigabyes.</p>
     pub fn memory(mut self, input: i32) -> Self {
         self.memory = ::std::option::Option::Some(input);
@@ -143,6 +159,10 @@ impl TaskListItemBuilder {
     pub fn set_memory(mut self, input: ::std::option::Option<i32>) -> Self {
         self.memory = input;
         self
+    }
+    /// <p>The task's memory use in gigabyes.</p>
+    pub fn get_memory(&self) -> &::std::option::Option<i32> {
+        &self.memory
     }
     /// <p>When the task was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -157,6 +177,10 @@ impl TaskListItemBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>When the task was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>When the task started.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -169,6 +193,10 @@ impl TaskListItemBuilder {
     ) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>When the task started.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p>When the task stopped.</p>
     pub fn stop_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -183,6 +211,10 @@ impl TaskListItemBuilder {
         self.stop_time = input;
         self
     }
+    /// <p>When the task stopped.</p>
+    pub fn get_stop_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.stop_time
+    }
     /// <p> The number of Graphics Processing Units (GPU) specified for the task. </p>
     pub fn gpus(mut self, input: i32) -> Self {
         self.gpus = ::std::option::Option::Some(input);
@@ -192,6 +224,10 @@ impl TaskListItemBuilder {
     pub fn set_gpus(mut self, input: ::std::option::Option<i32>) -> Self {
         self.gpus = input;
         self
+    }
+    /// <p> The number of Graphics Processing Units (GPU) specified for the task. </p>
+    pub fn get_gpus(&self) -> &::std::option::Option<i32> {
+        &self.gpus
     }
     /// Consumes the builder and constructs a [`TaskListItem`](crate::types::TaskListItem).
     pub fn build(self) -> crate::types::TaskListItem {

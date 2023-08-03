@@ -46,6 +46,10 @@ impl DescribeInboundDmarcSettingsOutputBuilder {
         self.enforced = input;
         self
     }
+    /// <p>Lists the enforcement setting of the applied policy.</p>
+    pub fn get_enforced(&self) -> &::std::option::Option<bool> {
+        &self.enforced
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

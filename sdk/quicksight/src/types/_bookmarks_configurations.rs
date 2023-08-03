@@ -40,6 +40,10 @@ impl BookmarksConfigurationsBuilder {
         self.enabled = input;
         self
     }
+    /// <p>A Boolean value that determines whether a user can bookmark an embedded dashboard.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// Consumes the builder and constructs a [`BookmarksConfigurations`](crate::types::BookmarksConfigurations).
     pub fn build(self) -> crate::types::BookmarksConfigurations {
         crate::types::BookmarksConfigurations {

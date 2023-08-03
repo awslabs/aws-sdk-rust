@@ -36,6 +36,12 @@ impl GetSiteAddressFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetSiteAddress as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_site_address::builders::GetSiteAddressInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl GetSiteAddressFluentBuilder {
         self.inner = self.inner.set_site_id(input);
         self
     }
+    /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
+    pub fn get_site_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_site_id()
+    }
     /// <p>The type of the address you request. </p>
     pub fn address_type(mut self, input: crate::types::AddressType) -> Self {
         self.inner = self.inner.address_type(input);
@@ -138,5 +148,9 @@ impl GetSiteAddressFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_address_type(input);
         self
+    }
+    /// <p>The type of the address you request. </p>
+    pub fn get_address_type(&self) -> &::std::option::Option<crate::types::AddressType> {
+        self.inner.get_address_type()
     }
 }

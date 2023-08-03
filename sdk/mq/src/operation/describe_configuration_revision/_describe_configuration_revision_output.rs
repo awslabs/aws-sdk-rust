@@ -76,6 +76,10 @@ impl DescribeConfigurationRevisionOutputBuilder {
         self.configuration_id = input;
         self
     }
+    /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
+    pub fn get_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_id
+    }
     /// <p>Required. The date and time of the configuration.</p>
     pub fn created(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created = ::std::option::Option::Some(input);
@@ -89,6 +93,10 @@ impl DescribeConfigurationRevisionOutputBuilder {
         self.created = input;
         self
     }
+    /// <p>Required. The date and time of the configuration.</p>
+    pub fn get_created(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created
+    }
     /// <p>Amazon MQ for ActiveMQ: the base64-encoded XML configuration. Amazon MQ for RabbitMQ: base64-encoded Cuttlefish.</p>
     pub fn data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data = ::std::option::Option::Some(input.into());
@@ -99,6 +107,10 @@ impl DescribeConfigurationRevisionOutputBuilder {
         self.data = input;
         self
     }
+    /// <p>Amazon MQ for ActiveMQ: the base64-encoded XML configuration. Amazon MQ for RabbitMQ: base64-encoded Cuttlefish.</p>
+    pub fn get_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data
+    }
     /// <p>The description of the configuration.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -108,6 +120,10 @@ impl DescribeConfigurationRevisionOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the configuration.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

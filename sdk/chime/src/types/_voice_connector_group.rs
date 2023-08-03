@@ -90,6 +90,10 @@ impl VoiceConnectorGroupBuilder {
         self.voice_connector_group_id = input;
         self
     }
+    /// <p>The Amazon Chime Voice Connector group ID.</p>
+    pub fn get_voice_connector_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_connector_group_id
+    }
     /// <p>The name of the Amazon Chime Voice Connector group.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -99,6 +103,10 @@ impl VoiceConnectorGroupBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the Amazon Chime Voice Connector group.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `voice_connector_items`.
     ///
@@ -119,6 +127,12 @@ impl VoiceConnectorGroupBuilder {
         self.voice_connector_items = input;
         self
     }
+    /// <p>The Amazon Chime Voice Connectors to which to route inbound calls.</p>
+    pub fn get_voice_connector_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorItem>> {
+        &self.voice_connector_items
+    }
     /// <p>The Amazon Chime Voice Connector group creation time stamp, in ISO 8601 format.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_timestamp = ::std::option::Option::Some(input);
@@ -132,6 +146,10 @@ impl VoiceConnectorGroupBuilder {
         self.created_timestamp = input;
         self
     }
+    /// <p>The Amazon Chime Voice Connector group creation time stamp, in ISO 8601 format.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
+    }
     /// <p>The updated Amazon Chime Voice Connector group time stamp, in ISO 8601 format.</p>
     pub fn updated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_timestamp = ::std::option::Option::Some(input);
@@ -144,6 +162,10 @@ impl VoiceConnectorGroupBuilder {
     ) -> Self {
         self.updated_timestamp = input;
         self
+    }
+    /// <p>The updated Amazon Chime Voice Connector group time stamp, in ISO 8601 format.</p>
+    pub fn get_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_timestamp
     }
     /// <p>The ARN of the specified Amazon Chime Voice Connector group.</p>
     pub fn voice_connector_group_arn(
@@ -160,6 +182,10 @@ impl VoiceConnectorGroupBuilder {
     ) -> Self {
         self.voice_connector_group_arn = input;
         self
+    }
+    /// <p>The ARN of the specified Amazon Chime Voice Connector group.</p>
+    pub fn get_voice_connector_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_connector_group_arn
     }
     /// Consumes the builder and constructs a [`VoiceConnectorGroup`](crate::types::VoiceConnectorGroup).
     pub fn build(self) -> crate::types::VoiceConnectorGroup {

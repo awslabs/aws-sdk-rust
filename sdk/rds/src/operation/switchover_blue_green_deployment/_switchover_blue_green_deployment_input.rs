@@ -73,6 +73,16 @@ impl SwitchoverBlueGreenDeploymentInputBuilder {
         self.blue_green_deployment_identifier = input;
         self
     }
+    /// <p>The unique identifier of the blue/green deployment.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
+    /// </ul>
+    pub fn get_blue_green_deployment_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.blue_green_deployment_identifier
+    }
     /// <p>The amount of time, in seconds, for the switchover to complete.</p>
     /// <p>Default: 300</p>
     /// <p>If the switchover takes longer than the specified duration, then any changes are rolled back, and no changes are made to the environments.</p>
@@ -86,6 +96,12 @@ impl SwitchoverBlueGreenDeploymentInputBuilder {
     pub fn set_switchover_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.switchover_timeout = input;
         self
+    }
+    /// <p>The amount of time, in seconds, for the switchover to complete.</p>
+    /// <p>Default: 300</p>
+    /// <p>If the switchover takes longer than the specified duration, then any changes are rolled back, and no changes are made to the environments.</p>
+    pub fn get_switchover_timeout(&self) -> &::std::option::Option<i32> {
+        &self.switchover_timeout
     }
     /// Consumes the builder and constructs a [`SwitchoverBlueGreenDeploymentInput`](crate::operation::switchover_blue_green_deployment::SwitchoverBlueGreenDeploymentInput).
     pub fn build(

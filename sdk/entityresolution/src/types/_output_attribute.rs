@@ -48,6 +48,10 @@ impl OutputAttributeBuilder {
         self.name = input;
         self
     }
+    /// <p>A name of a column to be written to the output. This must be an <code>InputField</code> name in the schema mapping.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Enables the ability to hash the column values in the output.</p>
     pub fn hashed(mut self, input: bool) -> Self {
         self.hashed = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl OutputAttributeBuilder {
     pub fn set_hashed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.hashed = input;
         self
+    }
+    /// <p>Enables the ability to hash the column values in the output.</p>
+    pub fn get_hashed(&self) -> &::std::option::Option<bool> {
+        &self.hashed
     }
     /// Consumes the builder and constructs a [`OutputAttribute`](crate::types::OutputAttribute).
     pub fn build(self) -> crate::types::OutputAttribute {

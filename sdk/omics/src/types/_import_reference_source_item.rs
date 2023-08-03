@@ -88,6 +88,10 @@ impl ImportReferenceSourceItemBuilder {
         self.source_file = input;
         self
     }
+    /// <p>The source file's location in Amazon S3.</p>
+    pub fn get_source_file(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_file
+    }
     /// <p>The source's status.</p>
     pub fn status(mut self, input: crate::types::ReferenceImportJobItemStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -100,6 +104,10 @@ impl ImportReferenceSourceItemBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The source's status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ReferenceImportJobItemStatus> {
+        &self.status
     }
     /// <p>The source's status message.</p>
     pub fn status_message(
@@ -117,6 +125,10 @@ impl ImportReferenceSourceItemBuilder {
         self.status_message = input;
         self
     }
+    /// <p>The source's status message.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>The source's name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -127,6 +139,10 @@ impl ImportReferenceSourceItemBuilder {
         self.name = input;
         self
     }
+    /// <p>The source's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The source's description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -136,6 +152,10 @@ impl ImportReferenceSourceItemBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The source's description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -161,6 +181,14 @@ impl ImportReferenceSourceItemBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The source's tags.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`ImportReferenceSourceItem`](crate::types::ImportReferenceSourceItem).
     pub fn build(self) -> crate::types::ImportReferenceSourceItem {

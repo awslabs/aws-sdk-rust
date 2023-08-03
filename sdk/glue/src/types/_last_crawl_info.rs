@@ -83,6 +83,10 @@ impl LastCrawlInfoBuilder {
         self.status = input;
         self
     }
+    /// <p>Status of the last crawl.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::LastCrawlStatus> {
+        &self.status
+    }
     /// <p>If an error occurred, the error information about the last crawl.</p>
     pub fn error_message(
         mut self,
@@ -99,6 +103,10 @@ impl LastCrawlInfoBuilder {
         self.error_message = input;
         self
     }
+    /// <p>If an error occurred, the error information about the last crawl.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
+    }
     /// <p>The log group for the last crawl.</p>
     pub fn log_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group = ::std::option::Option::Some(input.into());
@@ -109,6 +117,10 @@ impl LastCrawlInfoBuilder {
         self.log_group = input;
         self
     }
+    /// <p>The log group for the last crawl.</p>
+    pub fn get_log_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group
+    }
     /// <p>The log stream for the last crawl.</p>
     pub fn log_stream(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_stream = ::std::option::Option::Some(input.into());
@@ -118,6 +130,10 @@ impl LastCrawlInfoBuilder {
     pub fn set_log_stream(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_stream = input;
         self
+    }
+    /// <p>The log stream for the last crawl.</p>
+    pub fn get_log_stream(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_stream
     }
     /// <p>The prefix for a message about this crawl.</p>
     pub fn message_prefix(
@@ -135,6 +151,10 @@ impl LastCrawlInfoBuilder {
         self.message_prefix = input;
         self
     }
+    /// <p>The prefix for a message about this crawl.</p>
+    pub fn get_message_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message_prefix
+    }
     /// <p>The time at which the crawl started.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -147,6 +167,10 @@ impl LastCrawlInfoBuilder {
     ) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>The time at which the crawl started.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// Consumes the builder and constructs a [`LastCrawlInfo`](crate::types::LastCrawlInfo).
     pub fn build(self) -> crate::types::LastCrawlInfo {

@@ -37,6 +37,13 @@ impl DeleteEventDestinationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteEventDestination as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_event_destination::builders::DeleteEventDestinationInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl DeleteEventDestinationFluentBuilder {
         self.inner = self.inner.set_configuration_set_name(input);
         self
     }
+    /// <p>The name of the configuration set or the configuration set's Amazon Resource Name (ARN) to remove the event destination from. The ConfigurateSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration_set_name()
+    }
     /// <p>The name of the event destination to delete.</p>
     pub fn event_destination_name(
         mut self,
@@ -148,5 +159,9 @@ impl DeleteEventDestinationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_event_destination_name(input);
         self
+    }
+    /// <p>The name of the event destination to delete.</p>
+    pub fn get_event_destination_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_event_destination_name()
     }
 }

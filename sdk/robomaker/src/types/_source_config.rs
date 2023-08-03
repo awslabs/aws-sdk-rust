@@ -56,6 +56,10 @@ impl SourceConfigBuilder {
         self.s3_bucket = input;
         self
     }
+    /// <p>The Amazon S3 bucket name.</p>
+    pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket
+    }
     /// <p>The s3 object key.</p>
     pub fn s3_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_key = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl SourceConfigBuilder {
     pub fn set_s3_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_key = input;
         self
+    }
+    /// <p>The s3 object key.</p>
+    pub fn get_s3_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_key
     }
     /// <p>The target processor architecture for the application.</p>
     pub fn architecture(mut self, input: crate::types::Architecture) -> Self {
@@ -78,6 +86,10 @@ impl SourceConfigBuilder {
     ) -> Self {
         self.architecture = input;
         self
+    }
+    /// <p>The target processor architecture for the application.</p>
+    pub fn get_architecture(&self) -> &::std::option::Option<crate::types::Architecture> {
+        &self.architecture
     }
     /// Consumes the builder and constructs a [`SourceConfig`](crate::types::SourceConfig).
     pub fn build(self) -> crate::types::SourceConfig {

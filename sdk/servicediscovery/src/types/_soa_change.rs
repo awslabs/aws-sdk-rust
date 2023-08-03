@@ -40,6 +40,10 @@ impl SoaChangeBuilder {
         self.ttl = input;
         self
     }
+    /// <p>The updated time to live (TTL) for purposes of negative caching.</p>
+    pub fn get_ttl(&self) -> &::std::option::Option<i64> {
+        &self.ttl
+    }
     /// Consumes the builder and constructs a [`SoaChange`](crate::types::SoaChange).
     pub fn build(self) -> crate::types::SoaChange {
         crate::types::SoaChange { ttl: self.ttl }

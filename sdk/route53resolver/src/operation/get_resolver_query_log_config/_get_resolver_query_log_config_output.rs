@@ -55,6 +55,12 @@ impl GetResolverQueryLogConfigOutputBuilder {
         self.resolver_query_log_config = input;
         self
     }
+    /// <p>Information about the Resolver query logging configuration that you specified in a <code>GetQueryLogConfig</code> request.</p>
+    pub fn get_resolver_query_log_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResolverQueryLogConfig> {
+        &self.resolver_query_log_config
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

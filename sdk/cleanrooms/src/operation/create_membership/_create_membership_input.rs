@@ -72,6 +72,10 @@ impl CreateMembershipInputBuilder {
         self.collaboration_identifier = input;
         self
     }
+    /// <p>The unique ID for the associated collaboration.</p>
+    pub fn get_collaboration_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collaboration_identifier
+    }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
     pub fn query_log_status(mut self, input: crate::types::MembershipQueryLogStatus) -> Self {
         self.query_log_status = ::std::option::Option::Some(input);
@@ -84,6 +88,12 @@ impl CreateMembershipInputBuilder {
     ) -> Self {
         self.query_log_status = input;
         self
+    }
+    /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
+    pub fn get_query_log_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::MembershipQueryLogStatus> {
+        &self.query_log_status
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -109,6 +119,14 @@ impl CreateMembershipInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateMembershipInput`](crate::operation::create_membership::CreateMembershipInput).
     pub fn build(

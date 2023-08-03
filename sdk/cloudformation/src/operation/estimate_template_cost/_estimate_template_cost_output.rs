@@ -48,6 +48,10 @@ impl EstimateTemplateCostOutputBuilder {
         self.url = input;
         self
     }
+    /// <p>An Amazon Web Services Simple Monthly Calculator URL with a query string that describes the resources required to run the template.</p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

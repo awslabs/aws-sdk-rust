@@ -38,6 +38,13 @@ impl GetDefaultPatchBaselineFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetDefaultPatchBaseline as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_default_patch_baseline::builders::GetDefaultPatchBaselineInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,5 +137,9 @@ impl GetDefaultPatchBaselineFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_operating_system(input);
         self
+    }
+    /// <p>Returns the default patch baseline for the specified operating system.</p>
+    pub fn get_operating_system(&self) -> &::std::option::Option<crate::types::OperatingSystem> {
+        self.inner.get_operating_system()
     }
 }

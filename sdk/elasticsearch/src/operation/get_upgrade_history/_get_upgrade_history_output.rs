@@ -66,6 +66,12 @@ impl GetUpgradeHistoryOutputBuilder {
         self.upgrade_histories = input;
         self
     }
+    /// <p> A list of <code> <code>UpgradeHistory</code> </code> objects corresponding to each Upgrade or Upgrade Eligibility Check performed on a domain returned as part of <code> <code>GetUpgradeHistoryResponse</code> </code> object. </p>
+    pub fn get_upgrade_histories(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpgradeHistory>> {
+        &self.upgrade_histories
+    }
     /// <p>Pagination token that needs to be supplied to the next call to get the next page of results</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -75,6 +81,10 @@ impl GetUpgradeHistoryOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Pagination token that needs to be supplied to the next call to get the next page of results</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

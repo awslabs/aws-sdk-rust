@@ -64,6 +64,10 @@ impl ConnectPeerBgpConfigurationBuilder {
         self.core_network_asn = input;
         self
     }
+    /// <p>The ASN of the Coret Network.</p>
+    pub fn get_core_network_asn(&self) -> &::std::option::Option<i64> {
+        &self.core_network_asn
+    }
     /// <p>The ASN of the Connect peer.</p>
     pub fn peer_asn(mut self, input: i64) -> Self {
         self.peer_asn = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl ConnectPeerBgpConfigurationBuilder {
     pub fn set_peer_asn(mut self, input: ::std::option::Option<i64>) -> Self {
         self.peer_asn = input;
         self
+    }
+    /// <p>The ASN of the Connect peer.</p>
+    pub fn get_peer_asn(&self) -> &::std::option::Option<i64> {
+        &self.peer_asn
     }
     /// <p>The address of a core network.</p>
     pub fn core_network_address(
@@ -90,6 +98,10 @@ impl ConnectPeerBgpConfigurationBuilder {
         self.core_network_address = input;
         self
     }
+    /// <p>The address of a core network.</p>
+    pub fn get_core_network_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.core_network_address
+    }
     /// <p>The address of a core network Connect peer.</p>
     pub fn peer_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.peer_address = ::std::option::Option::Some(input.into());
@@ -99,6 +111,10 @@ impl ConnectPeerBgpConfigurationBuilder {
     pub fn set_peer_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.peer_address = input;
         self
+    }
+    /// <p>The address of a core network Connect peer.</p>
+    pub fn get_peer_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.peer_address
     }
     /// Consumes the builder and constructs a [`ConnectPeerBgpConfiguration`](crate::types::ConnectPeerBgpConfiguration).
     pub fn build(self) -> crate::types::ConnectPeerBgpConfiguration {

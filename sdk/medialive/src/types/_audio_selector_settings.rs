@@ -79,6 +79,12 @@ impl AudioSelectorSettingsBuilder {
         self.audio_hls_rendition_selection = input;
         self
     }
+    /// Audio Hls Rendition Selection
+    pub fn get_audio_hls_rendition_selection(
+        &self,
+    ) -> &::std::option::Option<crate::types::AudioHlsRenditionSelection> {
+        &self.audio_hls_rendition_selection
+    }
     /// Audio Language Selection
     pub fn audio_language_selection(mut self, input: crate::types::AudioLanguageSelection) -> Self {
         self.audio_language_selection = ::std::option::Option::Some(input);
@@ -91,6 +97,12 @@ impl AudioSelectorSettingsBuilder {
     ) -> Self {
         self.audio_language_selection = input;
         self
+    }
+    /// Audio Language Selection
+    pub fn get_audio_language_selection(
+        &self,
+    ) -> &::std::option::Option<crate::types::AudioLanguageSelection> {
+        &self.audio_language_selection
     }
     /// Audio Pid Selection
     pub fn audio_pid_selection(mut self, input: crate::types::AudioPidSelection) -> Self {
@@ -105,6 +117,12 @@ impl AudioSelectorSettingsBuilder {
         self.audio_pid_selection = input;
         self
     }
+    /// Audio Pid Selection
+    pub fn get_audio_pid_selection(
+        &self,
+    ) -> &::std::option::Option<crate::types::AudioPidSelection> {
+        &self.audio_pid_selection
+    }
     /// Audio Track Selection
     pub fn audio_track_selection(mut self, input: crate::types::AudioTrackSelection) -> Self {
         self.audio_track_selection = ::std::option::Option::Some(input);
@@ -117,6 +135,12 @@ impl AudioSelectorSettingsBuilder {
     ) -> Self {
         self.audio_track_selection = input;
         self
+    }
+    /// Audio Track Selection
+    pub fn get_audio_track_selection(
+        &self,
+    ) -> &::std::option::Option<crate::types::AudioTrackSelection> {
+        &self.audio_track_selection
     }
     /// Consumes the builder and constructs a [`AudioSelectorSettings`](crate::types::AudioSelectorSettings).
     pub fn build(self) -> crate::types::AudioSelectorSettings {

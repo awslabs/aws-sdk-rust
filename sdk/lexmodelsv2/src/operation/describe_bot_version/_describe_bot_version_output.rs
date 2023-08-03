@@ -144,6 +144,10 @@ impl DescribeBotVersionOutputBuilder {
         self.bot_id = input;
         self
     }
+    /// <p>The identifier of the bot that contains the version.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
+    }
     /// <p>The name of the bot that contains the version.</p>
     pub fn bot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_name = ::std::option::Option::Some(input.into());
@@ -153,6 +157,10 @@ impl DescribeBotVersionOutputBuilder {
     pub fn set_bot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_name = input;
         self
+    }
+    /// <p>The name of the bot that contains the version.</p>
+    pub fn get_bot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_name
     }
     /// <p>The version of the bot that was described.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -164,6 +172,10 @@ impl DescribeBotVersionOutputBuilder {
         self.bot_version = input;
         self
     }
+    /// <p>The version of the bot that was described.</p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_version
+    }
     /// <p>The description specified for the bot.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -174,6 +186,10 @@ impl DescribeBotVersionOutputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description specified for the bot.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to access the bot version.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -183,6 +199,10 @@ impl DescribeBotVersionOutputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to access the bot version.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>Data privacy settings for the bot version.</p>
     pub fn data_privacy(mut self, input: crate::types::DataPrivacy) -> Self {
@@ -197,6 +217,10 @@ impl DescribeBotVersionOutputBuilder {
         self.data_privacy = input;
         self
     }
+    /// <p>Data privacy settings for the bot version.</p>
+    pub fn get_data_privacy(&self) -> &::std::option::Option<crate::types::DataPrivacy> {
+        &self.data_privacy
+    }
     /// <p>The number of seconds that a session with the bot remains active before it is discarded by Amazon Lex.</p>
     pub fn idle_session_ttl_in_seconds(mut self, input: i32) -> Self {
         self.idle_session_ttl_in_seconds = ::std::option::Option::Some(input);
@@ -207,6 +231,10 @@ impl DescribeBotVersionOutputBuilder {
         self.idle_session_ttl_in_seconds = input;
         self
     }
+    /// <p>The number of seconds that a session with the bot remains active before it is discarded by Amazon Lex.</p>
+    pub fn get_idle_session_ttl_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.idle_session_ttl_in_seconds
+    }
     /// <p>The current status of the bot. When the status is <code>Available</code>, the bot version is ready for use.</p>
     pub fn bot_status(mut self, input: crate::types::BotStatus) -> Self {
         self.bot_status = ::std::option::Option::Some(input);
@@ -216,6 +244,10 @@ impl DescribeBotVersionOutputBuilder {
     pub fn set_bot_status(mut self, input: ::std::option::Option<crate::types::BotStatus>) -> Self {
         self.bot_status = input;
         self
+    }
+    /// <p>The current status of the bot. When the status is <code>Available</code>, the bot version is ready for use.</p>
+    pub fn get_bot_status(&self) -> &::std::option::Option<crate::types::BotStatus> {
+        &self.bot_status
     }
     /// Appends an item to `failure_reasons`.
     ///
@@ -239,6 +271,12 @@ impl DescribeBotVersionOutputBuilder {
         self.failure_reasons = input;
         self
     }
+    /// <p>If the <code>botStatus</code> is <code>Failed</code>, this contains a list of reasons that the version couldn't be built.</p>
+    pub fn get_failure_reasons(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.failure_reasons
+    }
     /// <p>A timestamp of the date and time that the bot version was created.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
@@ -251,6 +289,10 @@ impl DescribeBotVersionOutputBuilder {
     ) -> Self {
         self.creation_date_time = input;
         self
+    }
+    /// <p>A timestamp of the date and time that the bot version was created.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
     }
     /// Appends an item to `parent_bot_networks`.
     ///
@@ -271,6 +313,12 @@ impl DescribeBotVersionOutputBuilder {
         self.parent_bot_networks = input;
         self
     }
+    /// <p>A list of the networks to which the bot version you described belongs.</p>
+    pub fn get_parent_bot_networks(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParentBotNetwork>> {
+        &self.parent_bot_networks
+    }
     /// <p>The type of the bot in the version that was described.</p>
     pub fn bot_type(mut self, input: crate::types::BotType) -> Self {
         self.bot_type = ::std::option::Option::Some(input);
@@ -280,6 +328,10 @@ impl DescribeBotVersionOutputBuilder {
     pub fn set_bot_type(mut self, input: ::std::option::Option<crate::types::BotType>) -> Self {
         self.bot_type = input;
         self
+    }
+    /// <p>The type of the bot in the version that was described.</p>
+    pub fn get_bot_type(&self) -> &::std::option::Option<crate::types::BotType> {
+        &self.bot_type
     }
     /// Appends an item to `bot_members`.
     ///
@@ -299,6 +351,12 @@ impl DescribeBotVersionOutputBuilder {
     ) -> Self {
         self.bot_members = input;
         self
+    }
+    /// <p>The members of bot network in the version that was described.</p>
+    pub fn get_bot_members(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BotMember>> {
+        &self.bot_members
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

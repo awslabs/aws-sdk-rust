@@ -48,6 +48,10 @@ impl AssetModelHierarchyDefinitionBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the asset model hierarchy definition (as specified in the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation).</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The ID of an asset model for this hierarchy.</p>
     pub fn child_asset_model_id(
         mut self,
@@ -63,6 +67,10 @@ impl AssetModelHierarchyDefinitionBuilder {
     ) -> Self {
         self.child_asset_model_id = input;
         self
+    }
+    /// <p>The ID of an asset model for this hierarchy.</p>
+    pub fn get_child_asset_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.child_asset_model_id
     }
     /// Consumes the builder and constructs a [`AssetModelHierarchyDefinition`](crate::types::AssetModelHierarchyDefinition).
     pub fn build(self) -> crate::types::AssetModelHierarchyDefinition {

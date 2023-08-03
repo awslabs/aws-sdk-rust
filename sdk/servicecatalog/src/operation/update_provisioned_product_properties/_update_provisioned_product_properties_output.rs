@@ -84,6 +84,10 @@ impl UpdateProvisionedProductPropertiesOutputBuilder {
         self.provisioned_product_id = input;
         self
     }
+    /// <p>The provisioned product identifier.</p>
+    pub fn get_provisioned_product_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provisioned_product_id
+    }
     /// Adds a key-value pair to `provisioned_product_properties`.
     ///
     /// To override the contents of this collection use [`set_provisioned_product_properties`](Self::set_provisioned_product_properties).
@@ -109,6 +113,14 @@ impl UpdateProvisionedProductPropertiesOutputBuilder {
         self.provisioned_product_properties = input;
         self
     }
+    /// <p>A map that contains the properties updated.</p>
+    pub fn get_provisioned_product_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<crate::types::PropertyKey, ::std::string::String>,
+    > {
+        &self.provisioned_product_properties
+    }
     /// <p>The identifier of the record.</p>
     pub fn record_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.record_id = ::std::option::Option::Some(input.into());
@@ -119,6 +131,10 @@ impl UpdateProvisionedProductPropertiesOutputBuilder {
         self.record_id = input;
         self
     }
+    /// <p>The identifier of the record.</p>
+    pub fn get_record_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.record_id
+    }
     /// <p>The status of the request.</p>
     pub fn status(mut self, input: crate::types::RecordStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -128,6 +144,10 @@ impl UpdateProvisionedProductPropertiesOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::RecordStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::RecordStatus> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

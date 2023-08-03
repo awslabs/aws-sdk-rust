@@ -50,6 +50,12 @@ impl CreateAwsLogSourceInputBuilder {
         self.sources = input;
         self
     }
+    /// <p>Specify the natively-supported Amazon Web Services service to add as a source in Security Lake.</p>
+    pub fn get_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsLogSourceConfiguration>> {
+        &self.sources
+    }
     /// Consumes the builder and constructs a [`CreateAwsLogSourceInput`](crate::operation::create_aws_log_source::CreateAwsLogSourceInput).
     pub fn build(
         self,

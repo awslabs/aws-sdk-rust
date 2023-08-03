@@ -40,6 +40,10 @@ impl BorderStyleBuilder {
         self.show = input;
         self
     }
+    /// <p>The option to enable display of borders for visuals.</p>
+    pub fn get_show(&self) -> &::std::option::Option<bool> {
+        &self.show
+    }
     /// Consumes the builder and constructs a [`BorderStyle`](crate::types::BorderStyle).
     pub fn build(self) -> crate::types::BorderStyle {
         crate::types::BorderStyle { show: self.show }

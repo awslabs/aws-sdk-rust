@@ -48,6 +48,10 @@ impl DateTimeRangeBuilder {
         self.from = input;
         self
     }
+    /// <p>The starting date and time of a time range.</p>
+    pub fn get_from(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.from
+    }
     /// <p>The ending date and time of a time range.</p>
     pub fn to(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.to = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl DateTimeRangeBuilder {
     pub fn set_to(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.to = input;
         self
+    }
+    /// <p>The ending date and time of a time range.</p>
+    pub fn get_to(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.to
     }
     /// Consumes the builder and constructs a [`DateTimeRange`](crate::types::DateTimeRange).
     pub fn build(self) -> crate::types::DateTimeRange {

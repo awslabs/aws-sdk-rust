@@ -36,6 +36,12 @@ impl RevokePermissionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RevokePermissions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::revoke_permissions::builders::RevokePermissionsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl RevokePermissionsFluentBuilder {
         self.inner = self.inner.set_catalog_id(input);
         self
     }
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_catalog_id()
+    }
     /// <p>The principal to be revoked permissions on the resource.</p>
     pub fn principal(mut self, input: crate::types::DataLakePrincipal) -> Self {
         self.inner = self.inner.principal(input);
@@ -139,6 +149,10 @@ impl RevokePermissionsFluentBuilder {
         self.inner = self.inner.set_principal(input);
         self
     }
+    /// <p>The principal to be revoked permissions on the resource.</p>
+    pub fn get_principal(&self) -> &::std::option::Option<crate::types::DataLakePrincipal> {
+        self.inner.get_principal()
+    }
     /// <p>The resource to which permissions are to be revoked.</p>
     pub fn resource(mut self, input: crate::types::Resource) -> Self {
         self.inner = self.inner.resource(input);
@@ -148,6 +162,10 @@ impl RevokePermissionsFluentBuilder {
     pub fn set_resource(mut self, input: ::std::option::Option<crate::types::Resource>) -> Self {
         self.inner = self.inner.set_resource(input);
         self
+    }
+    /// <p>The resource to which permissions are to be revoked.</p>
+    pub fn get_resource(&self) -> &::std::option::Option<crate::types::Resource> {
+        self.inner.get_resource()
     }
     /// Appends an item to `Permissions`.
     ///
@@ -166,6 +184,12 @@ impl RevokePermissionsFluentBuilder {
         self.inner = self.inner.set_permissions(input);
         self
     }
+    /// <p>The permissions revoked to the principal on the resource. For information about permissions, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control to Metadata and Data</a>.</p>
+    pub fn get_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
+        self.inner.get_permissions()
+    }
     /// Appends an item to `PermissionsWithGrantOption`.
     ///
     /// To override the contents of this collection use [`set_permissions_with_grant_option`](Self::set_permissions_with_grant_option).
@@ -182,5 +206,11 @@ impl RevokePermissionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_permissions_with_grant_option(input);
         self
+    }
+    /// <p>Indicates a list of permissions for which to revoke the grant option allowing the principal to pass permissions to other principals.</p>
+    pub fn get_permissions_with_grant_option(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
+        self.inner.get_permissions_with_grant_option()
     }
 }

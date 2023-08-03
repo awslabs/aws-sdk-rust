@@ -41,6 +41,10 @@ impl DeleteRobotFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteRobot as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_robot::builders::DeleteRobotInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -122,5 +126,9 @@ impl DeleteRobotFluentBuilder {
     pub fn set_robot(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_robot(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the robot.</p>
+    pub fn get_robot(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_robot()
     }
 }

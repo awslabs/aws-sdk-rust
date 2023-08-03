@@ -66,6 +66,10 @@ impl ResolveRoomOutputBuilder {
         self.room_arn = input;
         self
     }
+    /// <p>The ARN of the room from which the skill request was invoked.</p>
+    pub fn get_room_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.room_arn
+    }
     /// <p>The name of the room from which the skill request was invoked.</p>
     pub fn room_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.room_name = ::std::option::Option::Some(input.into());
@@ -75,6 +79,10 @@ impl ResolveRoomOutputBuilder {
     pub fn set_room_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.room_name = input;
         self
+    }
+    /// <p>The name of the room from which the skill request was invoked.</p>
+    pub fn get_room_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.room_name
     }
     /// Appends an item to `room_skill_parameters`.
     ///
@@ -94,6 +102,12 @@ impl ResolveRoomOutputBuilder {
     ) -> Self {
         self.room_skill_parameters = input;
         self
+    }
+    /// <p>Response to get the room profile request. Required.</p>
+    pub fn get_room_skill_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RoomSkillParameter>> {
+        &self.room_skill_parameters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -36,6 +36,12 @@ impl DescribePatchGroupsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribePatchGroups as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_patch_groups::builders::DescribePatchGroupsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl DescribePatchGroupsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of patch groups to return (per page).</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -164,6 +174,17 @@ impl DescribePatchGroupsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>Each element in the array is a structure containing a key-value pair.</p>
+    /// <p>Supported keys for <code>DescribePatchGroups</code> include the following:</p>
+    /// <ul>
+    /// <li> <p> <b> <code>NAME_PREFIX</code> </b> </p> <p>Sample values: <code>AWS-</code> | <code>My-</code>.</p> </li>
+    /// <li> <p> <b> <code>OPERATING_SYSTEM</code> </b> </p> <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code> </p> </li>
+    /// </ul>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>> {
+        self.inner.get_filters()
+    }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -173,5 +194,9 @@ impl DescribePatchGroupsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

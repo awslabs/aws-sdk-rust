@@ -36,6 +36,10 @@ impl StartImportFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartImport as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_import::builders::StartImportInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl StartImportFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>Start import request client token.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>Start import request s3 bucket source.</p>
     pub fn s3_bucket_source(mut self, input: crate::types::S3BucketSource) -> Self {
         self.inner = self.inner.s3_bucket_source(input);
@@ -130,5 +138,9 @@ impl StartImportFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_s3_bucket_source(input);
         self
+    }
+    /// <p>Start import request s3 bucket source.</p>
+    pub fn get_s3_bucket_source(&self) -> &::std::option::Option<crate::types::S3BucketSource> {
+        self.inner.get_s3_bucket_source()
     }
 }

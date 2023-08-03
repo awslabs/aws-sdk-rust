@@ -50,6 +50,10 @@ impl GetDocumentationPartInputBuilder {
         self
     }
     /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rest_api_id
+    }
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn documentation_part_id(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -64,6 +68,10 @@ impl GetDocumentationPartInputBuilder {
     ) -> Self {
         self.documentation_part_id = input;
         self
+    }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_documentation_part_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.documentation_part_id
     }
     /// Consumes the builder and constructs a [`GetDocumentationPartInput`](crate::operation::get_documentation_part::GetDocumentationPartInput).
     pub fn build(

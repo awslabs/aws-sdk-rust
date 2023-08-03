@@ -51,6 +51,10 @@ impl DatapointBuilder {
         self.timestamp = input;
         self
     }
+    /// <p>The time stamp for the data point in UTC format.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.timestamp
+    }
     /// <p>The value of the data point.</p>
     pub fn value(mut self, input: f64) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl DatapointBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value of the data point.</p>
+    pub fn get_value(&self) -> &::std::option::Option<f64> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`Datapoint`](crate::types::Datapoint).
     pub fn build(self) -> crate::types::Datapoint {

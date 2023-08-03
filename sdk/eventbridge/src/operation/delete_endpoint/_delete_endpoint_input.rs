@@ -39,6 +39,10 @@ impl DeleteEndpointInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the endpoint you want to delete. For example, <code>"Name":"us-east-2-custom_bus_A-endpoint"</code>..</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DeleteEndpointInput`](crate::operation::delete_endpoint::DeleteEndpointInput).
     pub fn build(
         self,

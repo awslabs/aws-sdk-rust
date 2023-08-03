@@ -54,6 +54,10 @@ impl ResourceTagBuilder {
         self.resource_tag_key = input;
         self
     }
+    /// <p>The tag key.</p>
+    pub fn get_resource_tag_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_tag_key
+    }
     /// <p>The tag value.</p>
     pub fn resource_tag_value(
         mut self,
@@ -69,6 +73,10 @@ impl ResourceTagBuilder {
     ) -> Self {
         self.resource_tag_value = input;
         self
+    }
+    /// <p>The tag value.</p>
+    pub fn get_resource_tag_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_tag_value
     }
     /// Consumes the builder and constructs a [`ResourceTag`](crate::types::ResourceTag).
     pub fn build(self) -> crate::types::ResourceTag {

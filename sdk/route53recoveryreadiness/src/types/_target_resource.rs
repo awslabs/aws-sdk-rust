@@ -51,6 +51,10 @@ impl TargetResourceBuilder {
         self.nlb_resource = input;
         self
     }
+    /// <p>The Network Load Balancer Resource.</p>
+    pub fn get_nlb_resource(&self) -> &::std::option::Option<crate::types::NlbResource> {
+        &self.nlb_resource
+    }
     /// <p>The Route 53 resource.</p>
     pub fn r53_resource(mut self, input: crate::types::R53ResourceRecord) -> Self {
         self.r53_resource = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl TargetResourceBuilder {
     ) -> Self {
         self.r53_resource = input;
         self
+    }
+    /// <p>The Route 53 resource.</p>
+    pub fn get_r53_resource(&self) -> &::std::option::Option<crate::types::R53ResourceRecord> {
+        &self.r53_resource
     }
     /// Consumes the builder and constructs a [`TargetResource`](crate::types::TargetResource).
     pub fn build(self) -> crate::types::TargetResource {

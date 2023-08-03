@@ -94,6 +94,10 @@ impl GetRotationOverrideOutputBuilder {
         self.rotation_override_id = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the override to an on-call rotation.</p>
+    pub fn get_rotation_override_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rotation_override_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the on-call rotation that was overridden.</p>
     pub fn rotation_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rotation_arn = ::std::option::Option::Some(input.into());
@@ -103,6 +107,10 @@ impl GetRotationOverrideOutputBuilder {
     pub fn set_rotation_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rotation_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the on-call rotation that was overridden.</p>
+    pub fn get_rotation_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rotation_arn
     }
     /// Appends an item to `new_contact_ids`.
     ///
@@ -126,6 +134,12 @@ impl GetRotationOverrideOutputBuilder {
         self.new_contact_ids = input;
         self
     }
+    /// <p>The Amazon Resource Names (ARNs) of the contacts assigned to the override of the on-call rotation.</p>
+    pub fn get_new_contact_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.new_contact_ids
+    }
     /// <p>The date and time when the override goes into effect.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -138,6 +152,10 @@ impl GetRotationOverrideOutputBuilder {
     ) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>The date and time when the override goes into effect.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p>The date and time when the override ends.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -152,6 +170,10 @@ impl GetRotationOverrideOutputBuilder {
         self.end_time = input;
         self
     }
+    /// <p>The date and time when the override ends.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>The date and time when the override was created.</p>
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
@@ -164,6 +186,10 @@ impl GetRotationOverrideOutputBuilder {
     ) -> Self {
         self.create_time = input;
         self
+    }
+    /// <p>The date and time when the override was created.</p>
+    pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

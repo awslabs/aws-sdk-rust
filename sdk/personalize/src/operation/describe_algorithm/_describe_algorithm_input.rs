@@ -46,6 +46,10 @@ impl DescribeAlgorithmInputBuilder {
         self.algorithm_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the algorithm to describe.</p>
+    pub fn get_algorithm_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.algorithm_arn
+    }
     /// Consumes the builder and constructs a [`DescribeAlgorithmInput`](crate::operation::describe_algorithm::DescribeAlgorithmInput).
     pub fn build(
         self,

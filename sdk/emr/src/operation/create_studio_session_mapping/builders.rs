@@ -36,6 +36,10 @@ impl CreateStudioSessionMappingFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateStudioSessionMapping as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_studio_session_mapping::builders::CreateStudioSessionMappingInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl CreateStudioSessionMappingFluentBuilder {
         self.inner = self.inner.set_studio_id(input);
         self
     }
+    /// <p>The ID of the Amazon EMR Studio to which the user or group will be mapped.</p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_studio_id()
+    }
     /// <p>The globally unique identifier (GUID) of the user or group from the IAM Identity Center Identity Store. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
     pub fn identity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_id(input.into());
@@ -135,6 +143,10 @@ impl CreateStudioSessionMappingFluentBuilder {
     pub fn set_identity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_id(input);
         self
+    }
+    /// <p>The globally unique identifier (GUID) of the user or group from the IAM Identity Center Identity Store. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
+    pub fn get_identity_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_id()
     }
     /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
     pub fn identity_name(
@@ -152,6 +164,10 @@ impl CreateStudioSessionMappingFluentBuilder {
         self.inner = self.inner.set_identity_name(input);
         self
     }
+    /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
+    pub fn get_identity_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_name()
+    }
     /// <p>Specifies whether the identity to map to the Amazon EMR Studio is a user or a group.</p>
     pub fn identity_type(mut self, input: crate::types::IdentityType) -> Self {
         self.inner = self.inner.identity_type(input);
@@ -164,6 +180,10 @@ impl CreateStudioSessionMappingFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_identity_type(input);
         self
+    }
+    /// <p>Specifies whether the identity to map to the Amazon EMR Studio is a user or a group.</p>
+    pub fn get_identity_type(&self) -> &::std::option::Option<crate::types::IdentityType> {
+        self.inner.get_identity_type()
     }
     /// <p>The Amazon Resource Name (ARN) for the session policy that will be applied to the user or group. You should specify the ARN for the session policy that you want to apply, not the ARN of your user role. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an Amazon EMR Studio User Role with Session Policies</a>.</p>
     pub fn session_policy_arn(
@@ -180,5 +200,9 @@ impl CreateStudioSessionMappingFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_session_policy_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the session policy that will be applied to the user or group. You should specify the ARN for the session policy that you want to apply, not the ARN of your user role. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an Amazon EMR Studio User Role with Session Policies</a>.</p>
+    pub fn get_session_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_session_policy_arn()
     }
 }

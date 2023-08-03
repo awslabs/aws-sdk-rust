@@ -39,6 +39,10 @@ impl CancelClusterInputBuilder {
         self.cluster_id = input;
         self
     }
+    /// <p>The 39-character ID for the cluster that you want to cancel, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_id
+    }
     /// Consumes the builder and constructs a [`CancelClusterInput`](crate::operation::cancel_cluster::CancelClusterInput).
     pub fn build(
         self,

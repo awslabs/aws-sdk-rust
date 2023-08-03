@@ -36,6 +36,10 @@ impl DisassociateDelegateFromResourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociateDelegateFromResource as a reference.
+    pub fn as_input(&self) -> &crate::operation::disassociate_delegate_from_resource::builders::DisassociateDelegateFromResourceInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl DisassociateDelegateFromResourceFluentBuilder {
         self.inner = self.inner.set_organization_id(input);
         self
     }
+    /// <p>The identifier for the organization under which the resource exists.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organization_id()
+    }
     /// <p>The identifier of the resource from which delegates' set members are removed. </p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_id(input.into());
@@ -116,6 +124,10 @@ impl DisassociateDelegateFromResourceFluentBuilder {
         self.inner = self.inner.set_resource_id(input);
         self
     }
+    /// <p>The identifier of the resource from which delegates' set members are removed. </p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_id()
+    }
     /// <p>The identifier for the member (user, group) to be removed from the resource's delegates.</p>
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.entity_id(input.into());
@@ -125,5 +137,9 @@ impl DisassociateDelegateFromResourceFluentBuilder {
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_entity_id(input);
         self
+    }
+    /// <p>The identifier for the member (user, group) to be removed from the resource's delegates.</p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_entity_id()
     }
 }

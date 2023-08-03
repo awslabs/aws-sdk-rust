@@ -63,6 +63,10 @@ impl ListEngagementsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The pagination token to continue to the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of engagements per page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl ListEngagementsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of engagements per page of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The Amazon Resource Name (ARN) of the incident you're listing engagements for.</p>
     pub fn incident_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.incident_id = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl ListEngagementsInputBuilder {
     pub fn set_incident_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.incident_id = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the incident you're listing engagements for.</p>
+    pub fn get_incident_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.incident_id
     }
     /// <p>The time range to lists engagements for an incident.</p>
     pub fn time_range_value(mut self, input: crate::types::TimeRange) -> Self {
@@ -95,6 +107,10 @@ impl ListEngagementsInputBuilder {
     ) -> Self {
         self.time_range_value = input;
         self
+    }
+    /// <p>The time range to lists engagements for an incident.</p>
+    pub fn get_time_range_value(&self) -> &::std::option::Option<crate::types::TimeRange> {
+        &self.time_range_value
     }
     /// Consumes the builder and constructs a [`ListEngagementsInput`](crate::operation::list_engagements::ListEngagementsInput).
     pub fn build(

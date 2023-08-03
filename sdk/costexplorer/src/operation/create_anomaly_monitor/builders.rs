@@ -36,6 +36,12 @@ impl CreateAnomalyMonitorFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateAnomalyMonitor as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_anomaly_monitor::builders::CreateAnomalyMonitorInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl CreateAnomalyMonitorFluentBuilder {
         self.inner = self.inner.set_anomaly_monitor(input);
         self
     }
+    /// <p>The cost anomaly detection monitor object that you want to create.</p>
+    pub fn get_anomaly_monitor(&self) -> &::std::option::Option<crate::types::AnomalyMonitor> {
+        self.inner.get_anomaly_monitor()
+    }
     /// Appends an item to `ResourceTags`.
     ///
     /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
@@ -165,5 +175,21 @@ impl CreateAnomalyMonitorFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_tags(input);
         self
+    }
+    /// <p>An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalyMonitor.html"> <code>AnomalyMonitor</code> </a>. You can use resource tags to control access to your <code>monitor</code> using IAM policies.</p>
+    /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p>
+    /// <ul>
+    /// <li> <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p> </li>
+    /// <li> <p>The maximum length of a key is 128 characters</p> </li>
+    /// <li> <p>The maximum length of a value is 256 characters</p> </li>
+    /// <li> <p>Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code> </p> </li>
+    /// <li> <p>Keys and values are case sensitive</p> </li>
+    /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
+    /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
+    /// </ul>
+    pub fn get_resource_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>> {
+        self.inner.get_resource_tags()
     }
 }

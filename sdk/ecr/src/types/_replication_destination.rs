@@ -48,6 +48,10 @@ impl ReplicationDestinationBuilder {
         self.region = input;
         self
     }
+    /// <p>The Region to replicate to.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
+    }
     /// <p>The Amazon Web Services account ID of the Amazon ECR private registry to replicate to. When configuring cross-Region replication within your own registry, specify your own account ID.</p>
     pub fn registry_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl ReplicationDestinationBuilder {
     pub fn set_registry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registry_id = input;
         self
+    }
+    /// <p>The Amazon Web Services account ID of the Amazon ECR private registry to replicate to. When configuring cross-Region replication within your own registry, specify your own account ID.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_id
     }
     /// Consumes the builder and constructs a [`ReplicationDestination`](crate::types::ReplicationDestination).
     pub fn build(self) -> crate::types::ReplicationDestination {

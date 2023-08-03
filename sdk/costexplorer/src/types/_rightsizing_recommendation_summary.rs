@@ -70,6 +70,10 @@ impl RightsizingRecommendationSummaryBuilder {
         self.total_recommendation_count = input;
         self
     }
+    /// <p>The total number of instance recommendations.</p>
+    pub fn get_total_recommendation_count(&self) -> &::std::option::Option<::std::string::String> {
+        &self.total_recommendation_count
+    }
     /// <p>The estimated total savings resulting from modifications, on a monthly basis.</p>
     pub fn estimated_total_monthly_savings_amount(
         mut self,
@@ -85,6 +89,12 @@ impl RightsizingRecommendationSummaryBuilder {
     ) -> Self {
         self.estimated_total_monthly_savings_amount = input;
         self
+    }
+    /// <p>The estimated total savings resulting from modifications, on a monthly basis.</p>
+    pub fn get_estimated_total_monthly_savings_amount(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.estimated_total_monthly_savings_amount
     }
     /// <p>The currency code that Amazon Web Services used to calculate the savings.</p>
     pub fn savings_currency_code(
@@ -102,6 +112,10 @@ impl RightsizingRecommendationSummaryBuilder {
         self.savings_currency_code = input;
         self
     }
+    /// <p>The currency code that Amazon Web Services used to calculate the savings.</p>
+    pub fn get_savings_currency_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.savings_currency_code
+    }
     /// <p> The savings percentage based on the recommended modifications. It's relative to the total On-Demand costs that are associated with these instances.</p>
     pub fn savings_percentage(
         mut self,
@@ -117,6 +131,10 @@ impl RightsizingRecommendationSummaryBuilder {
     ) -> Self {
         self.savings_percentage = input;
         self
+    }
+    /// <p> The savings percentage based on the recommended modifications. It's relative to the total On-Demand costs that are associated with these instances.</p>
+    pub fn get_savings_percentage(&self) -> &::std::option::Option<::std::string::String> {
+        &self.savings_percentage
     }
     /// Consumes the builder and constructs a [`RightsizingRecommendationSummary`](crate::types::RightsizingRecommendationSummary).
     pub fn build(self) -> crate::types::RightsizingRecommendationSummary {

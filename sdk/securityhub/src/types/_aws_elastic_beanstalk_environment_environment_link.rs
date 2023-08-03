@@ -55,6 +55,10 @@ impl AwsElasticBeanstalkEnvironmentEnvironmentLinkBuilder {
         self.environment_name = input;
         self
     }
+    /// <p>The name of the linked environment.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_name
+    }
     /// <p>The name of the environment link.</p>
     pub fn link_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.link_name = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl AwsElasticBeanstalkEnvironmentEnvironmentLinkBuilder {
     pub fn set_link_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.link_name = input;
         self
+    }
+    /// <p>The name of the environment link.</p>
+    pub fn get_link_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.link_name
     }
     /// Consumes the builder and constructs a [`AwsElasticBeanstalkEnvironmentEnvironmentLink`](crate::types::AwsElasticBeanstalkEnvironmentEnvironmentLink).
     pub fn build(self) -> crate::types::AwsElasticBeanstalkEnvironmentEnvironmentLink {

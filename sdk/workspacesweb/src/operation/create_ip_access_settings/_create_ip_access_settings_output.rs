@@ -54,6 +54,10 @@ impl CreateIpAccessSettingsOutputBuilder {
         self.ip_access_settings_arn = input;
         self
     }
+    /// <p>The ARN of the IP access settings resource.</p>
+    pub fn get_ip_access_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_access_settings_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

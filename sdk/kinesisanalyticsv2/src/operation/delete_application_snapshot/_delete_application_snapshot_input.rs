@@ -63,6 +63,10 @@ impl DeleteApplicationSnapshotInputBuilder {
         self.application_name = input;
         self
     }
+    /// <p>The name of an existing application.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// <p>The identifier for the snapshot delete.</p>
     pub fn snapshot_name(
         mut self,
@@ -79,6 +83,10 @@ impl DeleteApplicationSnapshotInputBuilder {
         self.snapshot_name = input;
         self
     }
+    /// <p>The identifier for the snapshot delete.</p>
+    pub fn get_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_name
+    }
     /// <p>The creation timestamp of the application snapshot to delete. You can retrieve this value using or .</p>
     pub fn snapshot_creation_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.snapshot_creation_timestamp = ::std::option::Option::Some(input);
@@ -91,6 +99,12 @@ impl DeleteApplicationSnapshotInputBuilder {
     ) -> Self {
         self.snapshot_creation_timestamp = input;
         self
+    }
+    /// <p>The creation timestamp of the application snapshot to delete. You can retrieve this value using or .</p>
+    pub fn get_snapshot_creation_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.snapshot_creation_timestamp
     }
     /// Consumes the builder and constructs a [`DeleteApplicationSnapshotInput`](crate::operation::delete_application_snapshot::DeleteApplicationSnapshotInput).
     pub fn build(

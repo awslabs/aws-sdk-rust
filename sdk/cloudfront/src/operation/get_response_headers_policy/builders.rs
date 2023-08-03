@@ -37,6 +37,10 @@ impl GetResponseHeadersPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetResponseHeadersPolicy as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_response_headers_policy::builders::GetResponseHeadersPolicyInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,5 +132,10 @@ impl GetResponseHeadersPolicyFluentBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
+    }
+    /// <p>The identifier for the response headers policy.</p>
+    /// <p>If the response headers policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
     }
 }

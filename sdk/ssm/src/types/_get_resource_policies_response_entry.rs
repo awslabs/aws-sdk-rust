@@ -56,6 +56,10 @@ impl GetResourcePoliciesResponseEntryBuilder {
         self.policy_id = input;
         self
     }
+    /// <p>A policy ID.</p>
+    pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_id
+    }
     /// <p>ID of the current policy version. The hash helps to prevent a situation where multiple users attempt to overwrite a policy. You must provide this hash when updating or deleting a policy.</p>
     pub fn policy_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_hash = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl GetResourcePoliciesResponseEntryBuilder {
         self.policy_hash = input;
         self
     }
+    /// <p>ID of the current policy version. The hash helps to prevent a situation where multiple users attempt to overwrite a policy. You must provide this hash when updating or deleting a policy.</p>
+    pub fn get_policy_hash(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_hash
+    }
     /// <p>A resource policy helps you to define the IAM entity (for example, an Amazon Web Services account) that can manage your Systems Manager resources. Currently, <code>OpsItemGroup</code> is the only resource that supports Systems Manager resource policies. The resource policy for <code>OpsItemGroup</code> enables Amazon Web Services accounts to view and interact with OpsCenter operational work items (OpsItems).</p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl GetResourcePoliciesResponseEntryBuilder {
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy = input;
         self
+    }
+    /// <p>A resource policy helps you to define the IAM entity (for example, an Amazon Web Services account) that can manage your Systems Manager resources. Currently, <code>OpsItemGroup</code> is the only resource that supports Systems Manager resource policies. The resource policy for <code>OpsItemGroup</code> enables Amazon Web Services accounts to view and interact with OpsCenter operational work items (OpsItems).</p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy
     }
     /// Consumes the builder and constructs a [`GetResourcePoliciesResponseEntry`](crate::types::GetResourcePoliciesResponseEntry).
     pub fn build(self) -> crate::types::GetResourcePoliciesResponseEntry {

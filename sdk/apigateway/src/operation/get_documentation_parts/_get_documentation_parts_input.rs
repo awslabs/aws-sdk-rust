@@ -90,6 +90,10 @@ impl GetDocumentationPartsInputBuilder {
         self.rest_api_id = input;
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rest_api_id
+    }
     /// <p>The type of API entities of the to-be-retrieved documentation parts. </p>
     pub fn r#type(mut self, input: crate::types::DocumentationPartType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -103,6 +107,10 @@ impl GetDocumentationPartsInputBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of API entities of the to-be-retrieved documentation parts. </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::DocumentationPartType> {
+        &self.r#type
+    }
     /// <p>The name of API entities of the to-be-retrieved documentation parts.</p>
     pub fn name_query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name_query = ::std::option::Option::Some(input.into());
@@ -112,6 +120,10 @@ impl GetDocumentationPartsInputBuilder {
     pub fn set_name_query(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name_query = input;
         self
+    }
+    /// <p>The name of API entities of the to-be-retrieved documentation parts.</p>
+    pub fn get_name_query(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name_query
     }
     /// <p>The path of API entities of the to-be-retrieved documentation parts.</p>
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -123,6 +135,10 @@ impl GetDocumentationPartsInputBuilder {
         self.path = input;
         self
     }
+    /// <p>The path of API entities of the to-be-retrieved documentation parts.</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
+    }
     /// <p>The current pagination position in the paged result set.</p>
     pub fn position(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.position = ::std::option::Option::Some(input.into());
@@ -133,6 +149,10 @@ impl GetDocumentationPartsInputBuilder {
         self.position = input;
         self
     }
+    /// <p>The current pagination position in the paged result set.</p>
+    pub fn get_position(&self) -> &::std::option::Option<::std::string::String> {
+        &self.position
+    }
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -142,6 +162,10 @@ impl GetDocumentationPartsInputBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
+    }
+    /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// <p>The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for retrieving DocumentationPart resources with content and <code>UNDOCUMENTED</code> for DocumentationPart resources without content.</p>
     pub fn location_status(mut self, input: crate::types::LocationStatusType) -> Self {
@@ -155,6 +179,10 @@ impl GetDocumentationPartsInputBuilder {
     ) -> Self {
         self.location_status = input;
         self
+    }
+    /// <p>The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for retrieving DocumentationPart resources with content and <code>UNDOCUMENTED</code> for DocumentationPart resources without content.</p>
+    pub fn get_location_status(&self) -> &::std::option::Option<crate::types::LocationStatusType> {
+        &self.location_status
     }
     /// Consumes the builder and constructs a [`GetDocumentationPartsInput`](crate::operation::get_documentation_parts::GetDocumentationPartsInput).
     pub fn build(

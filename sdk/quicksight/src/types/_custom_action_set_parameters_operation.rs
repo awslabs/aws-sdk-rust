@@ -56,6 +56,12 @@ impl CustomActionSetParametersOperationBuilder {
         self.parameter_value_configurations = input;
         self
     }
+    /// <p>The parameter that determines the value configuration.</p>
+    pub fn get_parameter_value_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SetParameterValueConfiguration>> {
+        &self.parameter_value_configurations
+    }
     /// Consumes the builder and constructs a [`CustomActionSetParametersOperation`](crate::types::CustomActionSetParametersOperation).
     pub fn build(self) -> crate::types::CustomActionSetParametersOperation {
         crate::types::CustomActionSetParametersOperation {

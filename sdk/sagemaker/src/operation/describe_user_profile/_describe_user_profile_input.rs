@@ -49,6 +49,10 @@ impl DescribeUserProfileInputBuilder {
         self.domain_id = input;
         self
     }
+    /// <p>The domain ID.</p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_id
+    }
     /// <p>The user profile name. This value is not case sensitive.</p>
     pub fn user_profile_name(
         mut self,
@@ -64,6 +68,10 @@ impl DescribeUserProfileInputBuilder {
     ) -> Self {
         self.user_profile_name = input;
         self
+    }
+    /// <p>The user profile name. This value is not case sensitive.</p>
+    pub fn get_user_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_profile_name
     }
     /// Consumes the builder and constructs a [`DescribeUserProfileInput`](crate::operation::describe_user_profile::DescribeUserProfileInput).
     pub fn build(

@@ -112,6 +112,10 @@ impl LteObjBuilder {
         self.mcc = input;
         self
     }
+    /// <p>Mobile Country Code.</p>
+    pub fn get_mcc(&self) -> &::std::option::Option<i32> {
+        &self.mcc
+    }
     /// <p>Mobile Network Code.</p>
     pub fn mnc(mut self, input: i32) -> Self {
         self.mnc = ::std::option::Option::Some(input);
@@ -121,6 +125,10 @@ impl LteObjBuilder {
     pub fn set_mnc(mut self, input: ::std::option::Option<i32>) -> Self {
         self.mnc = input;
         self
+    }
+    /// <p>Mobile Network Code.</p>
+    pub fn get_mnc(&self) -> &::std::option::Option<i32> {
+        &self.mnc
     }
     /// <p>E-UTRAN (Evolved Universal Terrestrial Radio Access Network) Cell Global Identifier.</p>
     pub fn eutran_cid(mut self, input: i32) -> Self {
@@ -132,6 +140,10 @@ impl LteObjBuilder {
         self.eutran_cid = input;
         self
     }
+    /// <p>E-UTRAN (Evolved Universal Terrestrial Radio Access Network) Cell Global Identifier.</p>
+    pub fn get_eutran_cid(&self) -> &::std::option::Option<i32> {
+        &self.eutran_cid
+    }
     /// <p>LTE tracking area code.</p>
     pub fn tac(mut self, input: i32) -> Self {
         self.tac = ::std::option::Option::Some(input);
@@ -141,6 +153,10 @@ impl LteObjBuilder {
     pub fn set_tac(mut self, input: ::std::option::Option<i32>) -> Self {
         self.tac = input;
         self
+    }
+    /// <p>LTE tracking area code.</p>
+    pub fn get_tac(&self) -> &::std::option::Option<i32> {
+        &self.tac
     }
     /// <p>LTE local identification (local ID) information.</p>
     pub fn lte_local_id(mut self, input: crate::types::LteLocalId) -> Self {
@@ -155,6 +171,10 @@ impl LteObjBuilder {
         self.lte_local_id = input;
         self
     }
+    /// <p>LTE local identification (local ID) information.</p>
+    pub fn get_lte_local_id(&self) -> &::std::option::Option<crate::types::LteLocalId> {
+        &self.lte_local_id
+    }
     /// <p>LTE timing advance.</p>
     pub fn lte_timing_advance(mut self, input: i32) -> Self {
         self.lte_timing_advance = ::std::option::Option::Some(input);
@@ -164,6 +184,10 @@ impl LteObjBuilder {
     pub fn set_lte_timing_advance(mut self, input: ::std::option::Option<i32>) -> Self {
         self.lte_timing_advance = input;
         self
+    }
+    /// <p>LTE timing advance.</p>
+    pub fn get_lte_timing_advance(&self) -> &::std::option::Option<i32> {
+        &self.lte_timing_advance
     }
     /// <p>Signal power of the reference signal received, measured in dBm (decibel-milliwatts).</p>
     pub fn rsrp(mut self, input: i32) -> Self {
@@ -175,6 +199,10 @@ impl LteObjBuilder {
         self.rsrp = input;
         self
     }
+    /// <p>Signal power of the reference signal received, measured in dBm (decibel-milliwatts).</p>
+    pub fn get_rsrp(&self) -> &::std::option::Option<i32> {
+        &self.rsrp
+    }
     /// <p>Signal quality of the reference Signal received, measured in decibels (dB).</p>
     pub fn rsrq(mut self, input: f32) -> Self {
         self.rsrq = ::std::option::Option::Some(input);
@@ -185,6 +213,10 @@ impl LteObjBuilder {
         self.rsrq = input;
         self
     }
+    /// <p>Signal quality of the reference Signal received, measured in decibels (dB).</p>
+    pub fn get_rsrq(&self) -> &::std::option::Option<f32> {
+        &self.rsrq
+    }
     /// <p>Parameter that determines whether the LTE object is capable of supporting NR (new radio).</p>
     pub fn nr_capable(mut self, input: bool) -> Self {
         self.nr_capable = ::std::option::Option::Some(input);
@@ -194,6 +226,10 @@ impl LteObjBuilder {
     pub fn set_nr_capable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.nr_capable = input;
         self
+    }
+    /// <p>Parameter that determines whether the LTE object is capable of supporting NR (new radio).</p>
+    pub fn get_nr_capable(&self) -> &::std::option::Option<bool> {
+        &self.nr_capable
     }
     /// Appends an item to `lte_nmr`.
     ///
@@ -213,6 +249,10 @@ impl LteObjBuilder {
     ) -> Self {
         self.lte_nmr = input;
         self
+    }
+    /// <p>LTE object for network measurement reports.</p>
+    pub fn get_lte_nmr(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LteNmrObj>> {
+        &self.lte_nmr
     }
     /// Consumes the builder and constructs a [`LteObj`](crate::types::LteObj).
     pub fn build(self) -> crate::types::LteObj {

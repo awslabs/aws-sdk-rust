@@ -162,6 +162,10 @@ impl Ec2InstanceConnectEndpointBuilder {
         self.owner_id = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services account that created the EC2 Instance Connect Endpoint.</p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
+    }
     /// <p>The ID of the EC2 Instance Connect Endpoint.</p>
     pub fn instance_connect_endpoint_id(
         mut self,
@@ -177,6 +181,12 @@ impl Ec2InstanceConnectEndpointBuilder {
     ) -> Self {
         self.instance_connect_endpoint_id = input;
         self
+    }
+    /// <p>The ID of the EC2 Instance Connect Endpoint.</p>
+    pub fn get_instance_connect_endpoint_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.instance_connect_endpoint_id
     }
     /// <p>The Amazon Resource Name (ARN) of the EC2 Instance Connect Endpoint.</p>
     pub fn instance_connect_endpoint_arn(
@@ -194,6 +204,12 @@ impl Ec2InstanceConnectEndpointBuilder {
         self.instance_connect_endpoint_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the EC2 Instance Connect Endpoint.</p>
+    pub fn get_instance_connect_endpoint_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.instance_connect_endpoint_arn
+    }
     /// <p>The current state of the EC2 Instance Connect Endpoint.</p>
     pub fn state(mut self, input: crate::types::Ec2InstanceConnectEndpointState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -206,6 +222,12 @@ impl Ec2InstanceConnectEndpointBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The current state of the EC2 Instance Connect Endpoint.</p>
+    pub fn get_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::Ec2InstanceConnectEndpointState> {
+        &self.state
     }
     /// <p>The message for the current state of the EC2 Instance Connect Endpoint. Can include a failure message.</p>
     pub fn state_message(
@@ -223,6 +245,10 @@ impl Ec2InstanceConnectEndpointBuilder {
         self.state_message = input;
         self
     }
+    /// <p>The message for the current state of the EC2 Instance Connect Endpoint. Can include a failure message.</p>
+    pub fn get_state_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_message
+    }
     /// <p>The DNS name of the EC2 Instance Connect Endpoint.</p>
     pub fn dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dns_name = ::std::option::Option::Some(input.into());
@@ -232,6 +258,10 @@ impl Ec2InstanceConnectEndpointBuilder {
     pub fn set_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dns_name = input;
         self
+    }
+    /// <p>The DNS name of the EC2 Instance Connect Endpoint.</p>
+    pub fn get_dns_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dns_name
     }
     /// <p></p>
     pub fn fips_dns_name(
@@ -248,6 +278,10 @@ impl Ec2InstanceConnectEndpointBuilder {
     ) -> Self {
         self.fips_dns_name = input;
         self
+    }
+    /// <p></p>
+    pub fn get_fips_dns_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fips_dns_name
     }
     /// Appends an item to `network_interface_ids`.
     ///
@@ -271,6 +305,12 @@ impl Ec2InstanceConnectEndpointBuilder {
         self.network_interface_ids = input;
         self
     }
+    /// <p>The ID of the elastic network interface that Amazon EC2 automatically created when creating the EC2 Instance Connect Endpoint.</p>
+    pub fn get_network_interface_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.network_interface_ids
+    }
     /// <p>The ID of the VPC in which the EC2 Instance Connect Endpoint was created.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -280,6 +320,10 @@ impl Ec2InstanceConnectEndpointBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The ID of the VPC in which the EC2 Instance Connect Endpoint was created.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// <p>The Availability Zone of the EC2 Instance Connect Endpoint.</p>
     pub fn availability_zone(
@@ -297,6 +341,10 @@ impl Ec2InstanceConnectEndpointBuilder {
         self.availability_zone = input;
         self
     }
+    /// <p>The Availability Zone of the EC2 Instance Connect Endpoint.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p>The date and time that the EC2 Instance Connect Endpoint was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -310,6 +358,10 @@ impl Ec2InstanceConnectEndpointBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The date and time that the EC2 Instance Connect Endpoint was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The ID of the subnet in which the EC2 Instance Connect Endpoint was created.</p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
@@ -319,6 +371,10 @@ impl Ec2InstanceConnectEndpointBuilder {
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_id = input;
         self
+    }
+    /// <p>The ID of the subnet in which the EC2 Instance Connect Endpoint was created.</p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_id
     }
     /// <p>Indicates whether your client's IP address is preserved as the source. The value is <code>true</code> or <code>false</code>.</p>
     /// <ul>
@@ -339,6 +395,15 @@ impl Ec2InstanceConnectEndpointBuilder {
     pub fn set_preserve_client_ip(mut self, input: ::std::option::Option<bool>) -> Self {
         self.preserve_client_ip = input;
         self
+    }
+    /// <p>Indicates whether your client's IP address is preserved as the source. The value is <code>true</code> or <code>false</code>.</p>
+    /// <ul>
+    /// <li> <p>If <code>true</code>, your client's IP address is used when you connect to a resource.</p> </li>
+    /// <li> <p>If <code>false</code>, the elastic network interface IP address is used when you connect to a resource.</p> </li>
+    /// </ul>
+    /// <p>Default: <code>true</code> </p>
+    pub fn get_preserve_client_ip(&self) -> &::std::option::Option<bool> {
+        &self.preserve_client_ip
     }
     /// Appends an item to `security_group_ids`.
     ///
@@ -362,6 +427,12 @@ impl Ec2InstanceConnectEndpointBuilder {
         self.security_group_ids = input;
         self
     }
+    /// <p>The security groups associated with the endpoint. If you didn't specify a security group, the default security group for your VPC is associated with the endpoint.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -380,6 +451,10 @@ impl Ec2InstanceConnectEndpointBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags assigned to the EC2 Instance Connect Endpoint.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`Ec2InstanceConnectEndpoint`](crate::types::Ec2InstanceConnectEndpoint).
     pub fn build(self) -> crate::types::Ec2InstanceConnectEndpoint {

@@ -48,6 +48,10 @@ impl ExpressionVariableBuilder {
         self.name = input;
         self
     }
+    /// <p>The friendly name of the variable to be used in the expression.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The variable that identifies an asset property from which to use values.</p>
     pub fn value(mut self, input: crate::types::VariableValue) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ExpressionVariableBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::VariableValue>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The variable that identifies an asset property from which to use values.</p>
+    pub fn get_value(&self) -> &::std::option::Option<crate::types::VariableValue> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`ExpressionVariable`](crate::types::ExpressionVariable).
     pub fn build(self) -> crate::types::ExpressionVariable {

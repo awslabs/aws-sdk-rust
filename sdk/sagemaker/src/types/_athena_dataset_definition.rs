@@ -98,6 +98,10 @@ impl AthenaDatasetDefinitionBuilder {
         self.catalog = input;
         self
     }
+    /// <p>The name of the data catalog used in Athena query execution.</p>
+    pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog
+    }
     /// <p>The name of the database used in the Athena query execution.</p>
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database = ::std::option::Option::Some(input.into());
@@ -107,6 +111,10 @@ impl AthenaDatasetDefinitionBuilder {
     pub fn set_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database = input;
         self
+    }
+    /// <p>The name of the database used in the Athena query execution.</p>
+    pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database
     }
     /// <p>The SQL query statements, to be executed.</p>
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -118,6 +126,10 @@ impl AthenaDatasetDefinitionBuilder {
         self.query_string = input;
         self
     }
+    /// <p>The SQL query statements, to be executed.</p>
+    pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_string
+    }
     /// <p>The name of the workgroup in which the Athena query is being started.</p>
     pub fn work_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.work_group = ::std::option::Option::Some(input.into());
@@ -127,6 +139,10 @@ impl AthenaDatasetDefinitionBuilder {
     pub fn set_work_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.work_group = input;
         self
+    }
+    /// <p>The name of the workgroup in which the Athena query is being started.</p>
+    pub fn get_work_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.work_group
     }
     /// <p>The location in Amazon S3 where Athena query results are stored.</p>
     pub fn output_s3_uri(
@@ -144,6 +160,10 @@ impl AthenaDatasetDefinitionBuilder {
         self.output_s3_uri = input;
         self
     }
+    /// <p>The location in Amazon S3 where Athena query results are stored.</p>
+    pub fn get_output_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_s3_uri
+    }
     /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data generated from an Athena query execution.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -153,6 +173,10 @@ impl AthenaDatasetDefinitionBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data generated from an Athena query execution.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// <p>The data storage format for Athena query results.</p>
     pub fn output_format(mut self, input: crate::types::AthenaResultFormat) -> Self {
@@ -167,6 +191,10 @@ impl AthenaDatasetDefinitionBuilder {
         self.output_format = input;
         self
     }
+    /// <p>The data storage format for Athena query results.</p>
+    pub fn get_output_format(&self) -> &::std::option::Option<crate::types::AthenaResultFormat> {
+        &self.output_format
+    }
     /// <p>The compression used for Athena query results.</p>
     pub fn output_compression(mut self, input: crate::types::AthenaResultCompressionType) -> Self {
         self.output_compression = ::std::option::Option::Some(input);
@@ -179,6 +207,12 @@ impl AthenaDatasetDefinitionBuilder {
     ) -> Self {
         self.output_compression = input;
         self
+    }
+    /// <p>The compression used for Athena query results.</p>
+    pub fn get_output_compression(
+        &self,
+    ) -> &::std::option::Option<crate::types::AthenaResultCompressionType> {
+        &self.output_compression
     }
     /// Consumes the builder and constructs a [`AthenaDatasetDefinition`](crate::types::AthenaDatasetDefinition).
     pub fn build(self) -> crate::types::AthenaDatasetDefinition {

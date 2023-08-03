@@ -61,6 +61,11 @@ impl MeasureValueBuilder {
         self.name = input;
         self
     }
+    /// <p> The name of the MeasureValue. </p>
+    /// <p> For constraints on MeasureValue names, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.naming"> Naming Constraints</a> in the Amazon Timestream Developer Guide.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p> The value for the MeasureValue. For information, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/writes.html#writes.data-types">Data types</a>.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -70,6 +75,10 @@ impl MeasureValueBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p> The value for the MeasureValue. For information, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/writes.html#writes.data-types">Data types</a>.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// <p>Contains the data type of the MeasureValue for the time-series data point.</p>
     pub fn r#type(mut self, input: crate::types::MeasureValueType) -> Self {
@@ -83,6 +92,10 @@ impl MeasureValueBuilder {
     ) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>Contains the data type of the MeasureValue for the time-series data point.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::MeasureValueType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`MeasureValue`](crate::types::MeasureValue).
     pub fn build(self) -> crate::types::MeasureValue {

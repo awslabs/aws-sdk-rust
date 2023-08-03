@@ -86,6 +86,10 @@ impl DescribeResourcePermissionsInputBuilder {
         self.authentication_token = input;
         self
     }
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authentication_token
+    }
     /// <p>The ID of the resource.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -95,6 +99,10 @@ impl DescribeResourcePermissionsInputBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>The ID of the resource.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// <p>The ID of the principal to filter permissions by.</p>
     pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -106,6 +114,10 @@ impl DescribeResourcePermissionsInputBuilder {
         self.principal_id = input;
         self
     }
+    /// <p>The ID of the principal to filter permissions by.</p>
+    pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal_id
+    }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -116,6 +128,10 @@ impl DescribeResourcePermissionsInputBuilder {
         self.limit = input;
         self
     }
+    /// <p>The maximum number of items to return with this call.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
+    }
     /// <p>The marker for the next set of results. (You received this marker from a previous call)</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -125,6 +141,10 @@ impl DescribeResourcePermissionsInputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>The marker for the next set of results. (You received this marker from a previous call)</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// Consumes the builder and constructs a [`DescribeResourcePermissionsInput`](crate::operation::describe_resource_permissions::DescribeResourcePermissionsInput).
     pub fn build(

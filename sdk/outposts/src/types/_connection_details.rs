@@ -86,6 +86,10 @@ impl ConnectionDetailsBuilder {
         self.client_public_key = input;
         self
     }
+    /// <p> The public key of the client. </p>
+    pub fn get_client_public_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_public_key
+    }
     /// <p> The public key of the server. </p>
     pub fn server_public_key(
         mut self,
@@ -101,6 +105,10 @@ impl ConnectionDetailsBuilder {
     ) -> Self {
         self.server_public_key = input;
         self
+    }
+    /// <p> The public key of the server. </p>
+    pub fn get_server_public_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_public_key
     }
     /// <p> The endpoint for the server. </p>
     pub fn server_endpoint(
@@ -118,6 +126,10 @@ impl ConnectionDetailsBuilder {
         self.server_endpoint = input;
         self
     }
+    /// <p> The endpoint for the server. </p>
+    pub fn get_server_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_endpoint
+    }
     /// <p> The client tunnel address. </p>
     pub fn client_tunnel_address(
         mut self,
@@ -134,6 +146,10 @@ impl ConnectionDetailsBuilder {
         self.client_tunnel_address = input;
         self
     }
+    /// <p> The client tunnel address. </p>
+    pub fn get_client_tunnel_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_tunnel_address
+    }
     /// <p> The server tunnel address. </p>
     pub fn server_tunnel_address(
         mut self,
@@ -149,6 +165,10 @@ impl ConnectionDetailsBuilder {
     ) -> Self {
         self.server_tunnel_address = input;
         self
+    }
+    /// <p> The server tunnel address. </p>
+    pub fn get_server_tunnel_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_tunnel_address
     }
     /// Appends an item to `allowed_ips`.
     ///
@@ -168,6 +188,12 @@ impl ConnectionDetailsBuilder {
     ) -> Self {
         self.allowed_ips = input;
         self
+    }
+    /// <p> The allowed IP addresses. </p>
+    pub fn get_allowed_ips(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.allowed_ips
     }
     /// Consumes the builder and constructs a [`ConnectionDetails`](crate::types::ConnectionDetails).
     pub fn build(self) -> crate::types::ConnectionDetails {

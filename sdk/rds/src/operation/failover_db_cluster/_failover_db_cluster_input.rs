@@ -75,6 +75,14 @@ impl FailoverDbClusterInputBuilder {
         self.db_cluster_identifier = input;
         self
     }
+    /// <p>A DB cluster identifier to force a failover for. This parameter isn't case-sensitive.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
+    /// </ul>
+    pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_identifier
+    }
     /// <p>The name of the DB instance to promote to the primary DB instance.</p>
     /// <p>Specify the DB instance identifier for an Aurora Replica or a Multi-AZ readable standby in the DB cluster, for example <code>mydbcluster-replica1</code>.</p>
     /// <p>This setting isn't supported for RDS for MySQL Multi-AZ DB clusters.</p>
@@ -94,6 +102,14 @@ impl FailoverDbClusterInputBuilder {
     ) -> Self {
         self.target_db_instance_identifier = input;
         self
+    }
+    /// <p>The name of the DB instance to promote to the primary DB instance.</p>
+    /// <p>Specify the DB instance identifier for an Aurora Replica or a Multi-AZ readable standby in the DB cluster, for example <code>mydbcluster-replica1</code>.</p>
+    /// <p>This setting isn't supported for RDS for MySQL Multi-AZ DB clusters.</p>
+    pub fn get_target_db_instance_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.target_db_instance_identifier
     }
     /// Consumes the builder and constructs a [`FailoverDbClusterInput`](crate::operation::failover_db_cluster::FailoverDbClusterInput).
     pub fn build(

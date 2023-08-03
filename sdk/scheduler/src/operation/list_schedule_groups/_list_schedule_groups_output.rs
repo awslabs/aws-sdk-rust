@@ -56,6 +56,10 @@ impl ListScheduleGroupsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Indicates whether there are additional results to retrieve. If the value is null, there are no more results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `schedule_groups`.
     ///
     /// To override the contents of this collection use [`set_schedule_groups`](Self::set_schedule_groups).
@@ -74,6 +78,12 @@ impl ListScheduleGroupsOutputBuilder {
     ) -> Self {
         self.schedule_groups = input;
         self
+    }
+    /// <p>The schedule groups that match the specified criteria.</p>
+    pub fn get_schedule_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduleGroupSummary>> {
+        &self.schedule_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

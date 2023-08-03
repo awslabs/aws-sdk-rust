@@ -85,6 +85,10 @@ impl AsyncOperationBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The time that the request was sent to the service.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The specific operation for the asynchronous request.</p>
     pub fn operation(mut self, input: crate::types::AsyncOperationName) -> Self {
         self.operation = ::std::option::Option::Some(input);
@@ -97,6 +101,10 @@ impl AsyncOperationBuilder {
     ) -> Self {
         self.operation = input;
         self
+    }
+    /// <p>The specific operation for the asynchronous request.</p>
+    pub fn get_operation(&self) -> &::std::option::Option<crate::types::AsyncOperationName> {
+        &self.operation
     }
     /// <p>The request token associated with the request.</p>
     pub fn request_token_arn(
@@ -114,6 +122,10 @@ impl AsyncOperationBuilder {
         self.request_token_arn = input;
         self
     }
+    /// <p>The request token associated with the request.</p>
+    pub fn get_request_token_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_token_arn
+    }
     /// <p>The parameters associated with the request.</p>
     pub fn request_parameters(mut self, input: crate::types::AsyncRequestParameters) -> Self {
         self.request_parameters = ::std::option::Option::Some(input);
@@ -126,6 +138,12 @@ impl AsyncOperationBuilder {
     ) -> Self {
         self.request_parameters = input;
         self
+    }
+    /// <p>The parameters associated with the request.</p>
+    pub fn get_request_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::AsyncRequestParameters> {
+        &self.request_parameters
     }
     /// <p>The current status of the request.</p>
     pub fn request_status(
@@ -143,6 +161,10 @@ impl AsyncOperationBuilder {
         self.request_status = input;
         self
     }
+    /// <p>The current status of the request.</p>
+    pub fn get_request_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_status
+    }
     /// <p>The details of the response.</p>
     pub fn response_details(mut self, input: crate::types::AsyncResponseDetails) -> Self {
         self.response_details = ::std::option::Option::Some(input);
@@ -155,6 +177,12 @@ impl AsyncOperationBuilder {
     ) -> Self {
         self.response_details = input;
         self
+    }
+    /// <p>The details of the response.</p>
+    pub fn get_response_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::AsyncResponseDetails> {
+        &self.response_details
     }
     /// Consumes the builder and constructs a [`AsyncOperation`](crate::types::AsyncOperation).
     pub fn build(self) -> crate::types::AsyncOperation {

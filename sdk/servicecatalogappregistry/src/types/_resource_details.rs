@@ -40,6 +40,10 @@ impl ResourceDetailsBuilder {
         self.tag_value = input;
         self
     }
+    /// <p>The value of the tag.</p>
+    pub fn get_tag_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tag_value
+    }
     /// Consumes the builder and constructs a [`ResourceDetails`](crate::types::ResourceDetails).
     pub fn build(self) -> crate::types::ResourceDetails {
         crate::types::ResourceDetails {

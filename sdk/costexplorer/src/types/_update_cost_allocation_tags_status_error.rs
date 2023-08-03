@@ -56,6 +56,10 @@ impl UpdateCostAllocationTagsStatusErrorBuilder {
         self.tag_key = input;
         self
     }
+    /// <p>The key for the cost allocation tag. </p>
+    pub fn get_tag_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tag_key
+    }
     /// <p>An error code representing why the action failed on this entry. </p>
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl UpdateCostAllocationTagsStatusErrorBuilder {
         self.code = input;
         self
     }
+    /// <p>An error code representing why the action failed on this entry. </p>
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
+    }
     /// <p>A message explaining why the action failed on this entry. </p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl UpdateCostAllocationTagsStatusErrorBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>A message explaining why the action failed on this entry. </p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`UpdateCostAllocationTagsStatusError`](crate::types::UpdateCostAllocationTagsStatusError).
     pub fn build(self) -> crate::types::UpdateCostAllocationTagsStatusError {

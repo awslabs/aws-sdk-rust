@@ -77,6 +77,12 @@ impl AggregatedVariablesImpactExplanationBuilder {
         self.event_variable_names = input;
         self
     }
+    /// <p> The names of all the event variables that were used to derive the aggregated variables. </p>
+    pub fn get_event_variable_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.event_variable_names
+    }
     /// <p> The relative impact of the aggregated variables in terms of magnitude on the prediction scores. </p>
     pub fn relative_impact(
         mut self,
@@ -92,6 +98,10 @@ impl AggregatedVariablesImpactExplanationBuilder {
     ) -> Self {
         self.relative_impact = input;
         self
+    }
+    /// <p> The relative impact of the aggregated variables in terms of magnitude on the prediction scores. </p>
+    pub fn get_relative_impact(&self) -> &::std::option::Option<::std::string::String> {
+        &self.relative_impact
     }
     /// <p> The raw, uninterpreted value represented as log-odds of the fraud. These values are usually between -10 to +10, but range from -infinity to +infinity.</p>
     /// <ul>
@@ -110,6 +120,14 @@ impl AggregatedVariablesImpactExplanationBuilder {
     pub fn set_log_odds_impact(mut self, input: ::std::option::Option<f32>) -> Self {
         self.log_odds_impact = input;
         self
+    }
+    /// <p> The raw, uninterpreted value represented as log-odds of the fraud. These values are usually between -10 to +10, but range from -infinity to +infinity.</p>
+    /// <ul>
+    /// <li> <p>A positive value indicates that the variables drove the risk score up.</p> </li>
+    /// <li> <p>A negative value indicates that the variables drove the risk score down.</p> </li>
+    /// </ul>
+    pub fn get_log_odds_impact(&self) -> &::std::option::Option<f32> {
+        &self.log_odds_impact
     }
     /// Consumes the builder and constructs a [`AggregatedVariablesImpactExplanation`](crate::types::AggregatedVariablesImpactExplanation).
     pub fn build(self) -> crate::types::AggregatedVariablesImpactExplanation {

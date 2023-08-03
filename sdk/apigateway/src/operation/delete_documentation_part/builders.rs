@@ -37,6 +37,13 @@ impl DeleteDocumentationPartFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteDocumentationPart as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_documentation_part::builders::DeleteDocumentationPartInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl DeleteDocumentationPartFluentBuilder {
         self.inner = self.inner.set_rest_api_id(input);
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rest_api_id()
+    }
     /// <p>The identifier of the to-be-deleted documentation part.</p>
     pub fn documentation_part_id(
         mut self,
@@ -142,5 +153,9 @@ impl DeleteDocumentationPartFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_documentation_part_id(input);
         self
+    }
+    /// <p>The identifier of the to-be-deleted documentation part.</p>
+    pub fn get_documentation_part_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_documentation_part_id()
     }
 }

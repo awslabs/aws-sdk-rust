@@ -40,6 +40,10 @@ impl AwsServiceBuilder {
         self.invoked_by = input;
         self
     }
+    /// <p>The name of the Amazon Web Service that performed the action.</p>
+    pub fn get_invoked_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.invoked_by
+    }
     /// Consumes the builder and constructs a [`AwsService`](crate::types::AwsService).
     pub fn build(self) -> crate::types::AwsService {
         crate::types::AwsService {

@@ -47,6 +47,10 @@ impl PushDomainInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p> Name of the domain. </p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p> New IPS tag for the domain. </p>
     pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl PushDomainInputBuilder {
     pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target = input;
         self
+    }
+    /// <p> New IPS tag for the domain. </p>
+    pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target
     }
     /// Consumes the builder and constructs a [`PushDomainInput`](crate::operation::push_domain::PushDomainInput).
     pub fn build(

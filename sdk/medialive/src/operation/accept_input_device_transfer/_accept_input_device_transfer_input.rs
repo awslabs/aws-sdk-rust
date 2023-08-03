@@ -46,6 +46,10 @@ impl AcceptInputDeviceTransferInputBuilder {
         self.input_device_id = input;
         self
     }
+    /// The unique ID of the input device to accept. For example, hd-123456789abcdef.
+    pub fn get_input_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_device_id
+    }
     /// Consumes the builder and constructs a [`AcceptInputDeviceTransferInput`](crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferInput).
     pub fn build(
         self,

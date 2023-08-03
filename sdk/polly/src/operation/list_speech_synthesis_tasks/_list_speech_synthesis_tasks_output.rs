@@ -54,6 +54,10 @@ impl ListSpeechSynthesisTasksOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>An opaque pagination token returned from the previous List operation in this request. If present, this indicates where to continue the listing.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `synthesis_tasks`.
     ///
     /// To override the contents of this collection use [`set_synthesis_tasks`](Self::set_synthesis_tasks).
@@ -72,6 +76,12 @@ impl ListSpeechSynthesisTasksOutputBuilder {
     ) -> Self {
         self.synthesis_tasks = input;
         self
+    }
+    /// <p>List of SynthesisTask objects that provides information from the specified task in the list request, including output format, creation time, task status, and so on.</p>
+    pub fn get_synthesis_tasks(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SynthesisTask>> {
+        &self.synthesis_tasks
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

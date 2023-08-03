@@ -49,6 +49,12 @@ impl OutputGroupDetailBuilder {
         self.output_details = input;
         self
     }
+    /// Details about the output
+    pub fn get_output_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputDetail>> {
+        &self.output_details
+    }
     /// Consumes the builder and constructs a [`OutputGroupDetail`](crate::types::OutputGroupDetail).
     pub fn build(self) -> crate::types::OutputGroupDetail {
         crate::types::OutputGroupDetail {

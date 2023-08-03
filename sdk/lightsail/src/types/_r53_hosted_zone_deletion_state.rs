@@ -79,6 +79,17 @@ impl R53HostedZoneDeletionStateBuilder {
         self.code = input;
         self
     }
+    /// <p>The status code for the deletion state.</p>
+    /// <p>Following are the possible values:</p>
+    /// <ul>
+    /// <li> <p> <code>SUCCEEDED</code> - The hosted zone was successfully deleted.</p> </li>
+    /// <li> <p> <code>PENDING</code> - The hosted zone deletion is in progress.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The hosted zone deletion failed.</p> </li>
+    /// <li> <p> <code>STARTED</code> - The hosted zone deletion started.</p> </li>
+    /// </ul>
+    pub fn get_code(&self) -> &::std::option::Option<crate::types::R53HostedZoneDeletionStateCode> {
+        &self.code
+    }
     /// <p>The message that describes the reason for the status code.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -88,6 +99,10 @@ impl R53HostedZoneDeletionStateBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>The message that describes the reason for the status code.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`R53HostedZoneDeletionState`](crate::types::R53HostedZoneDeletionState).
     pub fn build(self) -> crate::types::R53HostedZoneDeletionState {

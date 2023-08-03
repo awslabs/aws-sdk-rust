@@ -109,6 +109,14 @@ impl DescribeProvisioningArtifactInputBuilder {
         self.accept_language = input;
         self
     }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accept_language
+    }
     /// <p>The identifier of the provisioning artifact.</p>
     pub fn provisioning_artifact_id(
         mut self,
@@ -125,6 +133,10 @@ impl DescribeProvisioningArtifactInputBuilder {
         self.provisioning_artifact_id = input;
         self
     }
+    /// <p>The identifier of the provisioning artifact.</p>
+    pub fn get_provisioning_artifact_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provisioning_artifact_id
+    }
     /// <p>The product identifier.</p>
     pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_id = ::std::option::Option::Some(input.into());
@@ -134,6 +146,10 @@ impl DescribeProvisioningArtifactInputBuilder {
     pub fn set_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product_id = input;
         self
+    }
+    /// <p>The product identifier.</p>
+    pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product_id
     }
     /// <p>The provisioning artifact name.</p>
     pub fn provisioning_artifact_name(
@@ -151,6 +167,10 @@ impl DescribeProvisioningArtifactInputBuilder {
         self.provisioning_artifact_name = input;
         self
     }
+    /// <p>The provisioning artifact name.</p>
+    pub fn get_provisioning_artifact_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provisioning_artifact_name
+    }
     /// <p>The product name.</p>
     pub fn product_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_name = ::std::option::Option::Some(input.into());
@@ -161,6 +181,10 @@ impl DescribeProvisioningArtifactInputBuilder {
         self.product_name = input;
         self
     }
+    /// <p>The product name.</p>
+    pub fn get_product_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product_name
+    }
     /// <p>Indicates whether a verbose level of detail is enabled.</p>
     pub fn verbose(mut self, input: bool) -> Self {
         self.verbose = ::std::option::Option::Some(input);
@@ -170,6 +194,10 @@ impl DescribeProvisioningArtifactInputBuilder {
     pub fn set_verbose(mut self, input: ::std::option::Option<bool>) -> Self {
         self.verbose = input;
         self
+    }
+    /// <p>Indicates whether a verbose level of detail is enabled.</p>
+    pub fn get_verbose(&self) -> &::std::option::Option<bool> {
+        &self.verbose
     }
     /// <p>Indicates if the API call response does or does not include additional details about the provisioning parameters. </p>
     pub fn include_provisioning_artifact_parameters(mut self, input: bool) -> Self {
@@ -183,6 +211,10 @@ impl DescribeProvisioningArtifactInputBuilder {
     ) -> Self {
         self.include_provisioning_artifact_parameters = input;
         self
+    }
+    /// <p>Indicates if the API call response does or does not include additional details about the provisioning parameters. </p>
+    pub fn get_include_provisioning_artifact_parameters(&self) -> &::std::option::Option<bool> {
+        &self.include_provisioning_artifact_parameters
     }
     /// Consumes the builder and constructs a [`DescribeProvisioningArtifactInput`](crate::operation::describe_provisioning_artifact::DescribeProvisioningArtifactInput).
     pub fn build(

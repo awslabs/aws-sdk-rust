@@ -142,6 +142,10 @@ impl ReplicationRunBuilder {
         self.replication_run_id = input;
         self
     }
+    /// <p>The ID of the replication run.</p>
+    pub fn get_replication_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_run_id
+    }
     /// <p>The state of the replication run.</p>
     pub fn state(mut self, input: crate::types::ReplicationRunState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -154,6 +158,10 @@ impl ReplicationRunBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the replication run.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ReplicationRunState> {
+        &self.state
     }
     /// <p>The type of replication run.</p>
     pub fn r#type(mut self, input: crate::types::ReplicationRunType) -> Self {
@@ -168,6 +176,10 @@ impl ReplicationRunBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of replication run.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ReplicationRunType> {
+        &self.r#type
+    }
     /// <p>Details about the current stage of the replication run.</p>
     pub fn stage_details(mut self, input: crate::types::ReplicationRunStageDetails) -> Self {
         self.stage_details = ::std::option::Option::Some(input);
@@ -180,6 +192,12 @@ impl ReplicationRunBuilder {
     ) -> Self {
         self.stage_details = input;
         self
+    }
+    /// <p>Details about the current stage of the replication run.</p>
+    pub fn get_stage_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReplicationRunStageDetails> {
+        &self.stage_details
     }
     /// <p>The description of the current status of the replication job.</p>
     pub fn status_message(
@@ -197,6 +215,10 @@ impl ReplicationRunBuilder {
         self.status_message = input;
         self
     }
+    /// <p>The description of the current status of the replication job.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>The ID of the Amazon Machine Image (AMI) from the replication run.</p>
     pub fn ami_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ami_id = ::std::option::Option::Some(input.into());
@@ -206,6 +228,10 @@ impl ReplicationRunBuilder {
     pub fn set_ami_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ami_id = input;
         self
+    }
+    /// <p>The ID of the Amazon Machine Image (AMI) from the replication run.</p>
+    pub fn get_ami_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ami_id
     }
     /// <p>The start time of the next replication run.</p>
     pub fn scheduled_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -220,6 +246,10 @@ impl ReplicationRunBuilder {
         self.scheduled_start_time = input;
         self
     }
+    /// <p>The start time of the next replication run.</p>
+    pub fn get_scheduled_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.scheduled_start_time
+    }
     /// <p>The completion time of the last replication run.</p>
     pub fn completed_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.completed_time = ::std::option::Option::Some(input);
@@ -233,6 +263,10 @@ impl ReplicationRunBuilder {
         self.completed_time = input;
         self
     }
+    /// <p>The completion time of the last replication run.</p>
+    pub fn get_completed_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.completed_time
+    }
     /// <p>The description of the replication run.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -243,6 +277,10 @@ impl ReplicationRunBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the replication run.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>Indicates whether the replication run should produce an encrypted AMI.</p>
     pub fn encrypted(mut self, input: bool) -> Self {
         self.encrypted = ::std::option::Option::Some(input);
@@ -252,6 +290,10 @@ impl ReplicationRunBuilder {
     pub fn set_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.encrypted = input;
         self
+    }
+    /// <p>Indicates whether the replication run should produce an encrypted AMI.</p>
+    pub fn get_encrypted(&self) -> &::std::option::Option<bool> {
+        &self.encrypted
     }
     /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
     /// <ul>
@@ -276,6 +318,17 @@ impl ReplicationRunBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
+    /// <ul>
+    /// <li> <p>KMS key ID</p> </li>
+    /// <li> <p>KMS key alias</p> </li>
+    /// <li> <p>ARN referring to the KMS key ID</p> </li>
+    /// <li> <p>ARN referring to the KMS key alias</p> </li>
+    /// </ul>
+    /// <p> If encrypted is <i>true</i> but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used. </p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// Consumes the builder and constructs a [`ReplicationRun`](crate::types::ReplicationRun).
     pub fn build(self) -> crate::types::ReplicationRun {

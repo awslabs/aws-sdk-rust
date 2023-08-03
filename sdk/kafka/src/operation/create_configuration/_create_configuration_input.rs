@@ -72,6 +72,10 @@ impl CreateConfigurationInputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the configuration.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// Appends an item to `kafka_versions`.
     ///
     /// To override the contents of this collection use [`set_kafka_versions`](Self::set_kafka_versions).
@@ -94,6 +98,12 @@ impl CreateConfigurationInputBuilder {
         self.kafka_versions = input;
         self
     }
+    /// <p>The versions of Apache Kafka with which you can use this MSK configuration.</p>
+    pub fn get_kafka_versions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.kafka_versions
+    }
     /// <p>The name of the configuration.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -103,6 +113,10 @@ impl CreateConfigurationInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Contents of the <filename>
     /// server.properties
@@ -124,6 +138,14 @@ impl CreateConfigurationInputBuilder {
     ) -> Self {
         self.server_properties = input;
         self
+    }
+    /// <p>Contents of the <filename>
+    /// server.properties
+    /// </filename> file. When using the API, you must ensure that the contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>
+    /// server.properties
+    /// </filename> can be in plaintext.</p>
+    pub fn get_server_properties(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.server_properties
     }
     /// Consumes the builder and constructs a [`CreateConfigurationInput`](crate::operation::create_configuration::CreateConfigurationInput).
     pub fn build(

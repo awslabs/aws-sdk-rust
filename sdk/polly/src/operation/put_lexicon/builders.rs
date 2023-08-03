@@ -37,6 +37,10 @@ impl PutLexiconFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutLexicon as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_lexicon::builders::PutLexiconInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl PutLexiconFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>Name of the lexicon. The name must follow the regular express format [0-9A-Za-z]{1,20}. That is, the name is a case-sensitive alphanumeric string up to 20 characters long. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>Content of the PLS lexicon as string data.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.content(input.into());
@@ -128,5 +136,9 @@ impl PutLexiconFluentBuilder {
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_content(input);
         self
+    }
+    /// <p>Content of the PLS lexicon as string data.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_content()
     }
 }

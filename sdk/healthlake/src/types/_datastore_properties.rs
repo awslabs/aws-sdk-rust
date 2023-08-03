@@ -116,6 +116,10 @@ impl DatastorePropertiesBuilder {
         self.datastore_id = input;
         self
     }
+    /// <p>The AWS-generated ID number for the data store.</p>
+    pub fn get_datastore_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.datastore_id
+    }
     /// <p>The Amazon Resource Name used in the creation of the data store.</p>
     pub fn datastore_arn(
         mut self,
@@ -131,6 +135,10 @@ impl DatastorePropertiesBuilder {
     ) -> Self {
         self.datastore_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name used in the creation of the data store.</p>
+    pub fn get_datastore_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.datastore_arn
     }
     /// <p>The user-generated name for the data store.</p>
     pub fn datastore_name(
@@ -148,6 +156,10 @@ impl DatastorePropertiesBuilder {
         self.datastore_name = input;
         self
     }
+    /// <p>The user-generated name for the data store.</p>
+    pub fn get_datastore_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.datastore_name
+    }
     /// <p>The status of the data store.</p>
     pub fn datastore_status(mut self, input: crate::types::DatastoreStatus) -> Self {
         self.datastore_status = ::std::option::Option::Some(input);
@@ -160,6 +172,10 @@ impl DatastorePropertiesBuilder {
     ) -> Self {
         self.datastore_status = input;
         self
+    }
+    /// <p>The status of the data store.</p>
+    pub fn get_datastore_status(&self) -> &::std::option::Option<crate::types::DatastoreStatus> {
+        &self.datastore_status
     }
     /// <p>The time that a data store was created. </p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -174,6 +190,10 @@ impl DatastorePropertiesBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The time that a data store was created. </p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The FHIR version. Only R4 version data is supported.</p>
     pub fn datastore_type_version(mut self, input: crate::types::FhirVersion) -> Self {
         self.datastore_type_version = ::std::option::Option::Some(input);
@@ -186,6 +206,10 @@ impl DatastorePropertiesBuilder {
     ) -> Self {
         self.datastore_type_version = input;
         self
+    }
+    /// <p>The FHIR version. Only R4 version data is supported.</p>
+    pub fn get_datastore_type_version(&self) -> &::std::option::Option<crate::types::FhirVersion> {
+        &self.datastore_type_version
     }
     /// <p>The AWS endpoint for the data store. Each data store will have it's own endpoint with data store ID in the endpoint URL.</p>
     pub fn datastore_endpoint(
@@ -203,6 +227,10 @@ impl DatastorePropertiesBuilder {
         self.datastore_endpoint = input;
         self
     }
+    /// <p>The AWS endpoint for the data store. Each data store will have it's own endpoint with data store ID in the endpoint URL.</p>
+    pub fn get_datastore_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.datastore_endpoint
+    }
     /// <p> The server-side encryption key configuration for a customer provided encryption key (CMK). </p>
     pub fn sse_configuration(mut self, input: crate::types::SseConfiguration) -> Self {
         self.sse_configuration = ::std::option::Option::Some(input);
@@ -216,6 +244,10 @@ impl DatastorePropertiesBuilder {
         self.sse_configuration = input;
         self
     }
+    /// <p> The server-side encryption key configuration for a customer provided encryption key (CMK). </p>
+    pub fn get_sse_configuration(&self) -> &::std::option::Option<crate::types::SseConfiguration> {
+        &self.sse_configuration
+    }
     /// <p>The preloaded data configuration for the data store. Only data preloaded from Synthea is supported.</p>
     pub fn preload_data_config(mut self, input: crate::types::PreloadDataConfig) -> Self {
         self.preload_data_config = ::std::option::Option::Some(input);
@@ -228,6 +260,12 @@ impl DatastorePropertiesBuilder {
     ) -> Self {
         self.preload_data_config = input;
         self
+    }
+    /// <p>The preloaded data configuration for the data store. Only data preloaded from Synthea is supported.</p>
+    pub fn get_preload_data_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::PreloadDataConfig> {
+        &self.preload_data_config
     }
     /// <p>The identity provider that you selected when you created the data store.</p>
     pub fn identity_provider_configuration(
@@ -244,6 +282,12 @@ impl DatastorePropertiesBuilder {
     ) -> Self {
         self.identity_provider_configuration = input;
         self
+    }
+    /// <p>The identity provider that you selected when you created the data store.</p>
+    pub fn get_identity_provider_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::IdentityProviderConfiguration> {
+        &self.identity_provider_configuration
     }
     /// Consumes the builder and constructs a [`DatastoreProperties`](crate::types::DatastoreProperties).
     pub fn build(self) -> crate::types::DatastoreProperties {

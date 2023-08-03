@@ -67,6 +67,11 @@ impl StopActivityStreamOutputBuilder {
         self.kms_key_id = input;
         self
     }
+    /// <p>The Amazon Web Services KMS key identifier used for encrypting messages in the database activity stream.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
+    }
     /// <p>The name of the Amazon Kinesis data stream used for the database activity stream.</p>
     pub fn kinesis_stream_name(
         mut self,
@@ -83,6 +88,10 @@ impl StopActivityStreamOutputBuilder {
         self.kinesis_stream_name = input;
         self
     }
+    /// <p>The name of the Amazon Kinesis data stream used for the database activity stream.</p>
+    pub fn get_kinesis_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kinesis_stream_name
+    }
     /// <p>The status of the database activity stream.</p>
     pub fn status(mut self, input: crate::types::ActivityStreamStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -95,6 +104,10 @@ impl StopActivityStreamOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the database activity stream.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ActivityStreamStatus> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -98,6 +98,10 @@ impl CreateRuleInputBuilder {
         self.rule_id = input;
         self
     }
+    /// <p>The rule ID.</p>
+    pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_id
+    }
     /// <p>The detector ID for the rule's parent detector.</p>
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
@@ -107,6 +111,10 @@ impl CreateRuleInputBuilder {
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detector_id = input;
         self
+    }
+    /// <p>The detector ID for the rule's parent detector.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
     }
     /// <p>The rule description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -118,6 +126,10 @@ impl CreateRuleInputBuilder {
         self.description = input;
         self
     }
+    /// <p>The rule description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The rule expression.</p>
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression = ::std::option::Option::Some(input.into());
@@ -128,6 +140,10 @@ impl CreateRuleInputBuilder {
         self.expression = input;
         self
     }
+    /// <p>The rule expression.</p>
+    pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expression
+    }
     /// <p>The language of the rule.</p>
     pub fn language(mut self, input: crate::types::Language) -> Self {
         self.language = ::std::option::Option::Some(input);
@@ -137,6 +153,10 @@ impl CreateRuleInputBuilder {
     pub fn set_language(mut self, input: ::std::option::Option<crate::types::Language>) -> Self {
         self.language = input;
         self
+    }
+    /// <p>The language of the rule.</p>
+    pub fn get_language(&self) -> &::std::option::Option<crate::types::Language> {
+        &self.language
     }
     /// Appends an item to `outcomes`.
     ///
@@ -157,6 +177,10 @@ impl CreateRuleInputBuilder {
         self.outcomes = input;
         self
     }
+    /// <p>The outcome or outcomes returned when the rule expression matches.</p>
+    pub fn get_outcomes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.outcomes
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -175,6 +199,10 @@ impl CreateRuleInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A collection of key and value pairs.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateRuleInput`](crate::operation::create_rule::CreateRuleInput).
     pub fn build(

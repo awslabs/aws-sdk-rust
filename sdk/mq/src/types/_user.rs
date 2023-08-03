@@ -84,6 +84,10 @@ impl UserBuilder {
         self.console_access = input;
         self
     }
+    /// <p>Enables access to the ActiveMQ Web Console for the ActiveMQ user. Does not apply to RabbitMQ brokers.</p>
+    pub fn get_console_access(&self) -> &::std::option::Option<bool> {
+        &self.console_access
+    }
     /// Appends an item to `groups`.
     ///
     /// To override the contents of this collection use [`set_groups`](Self::set_groups).
@@ -103,6 +107,10 @@ impl UserBuilder {
         self.groups = input;
         self
     }
+    /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long. Does not apply to RabbitMQ brokers.</p>
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.groups
+    }
     /// <p>Required. The password of the user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas, colons, or equal signs (,:=).</p>
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
@@ -112,6 +120,10 @@ impl UserBuilder {
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.password = input;
         self
+    }
+    /// <p>Required. The password of the user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas, colons, or equal signs (,:=).</p>
+    pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.password
     }
     /// <p>The username of the broker user. The following restrictions apply to broker usernames:</p>
     /// <ul>
@@ -135,6 +147,16 @@ impl UserBuilder {
         self.username = input;
         self
     }
+    /// <p>The username of the broker user. The following restrictions apply to broker usernames:</p>
+    /// <ul>
+    /// <li><p>For Amazon MQ for ActiveMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p></li>
+    /// <li><p>para&gt;For Amazon MQ for RabbitMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores (- . _). This value must not contain a tilde (~) character. Amazon MQ prohibts using guest as a valid usename. This value must be 2-100 characters long.</p></li>
+    /// </ul> <important>
+    /// <p>Do not add personally identifiable information (PII) or other confidential or sensitive information in broker usernames. Broker usernames are accessible to other Amazon Web Services services, including CloudWatch Logs. Broker usernames are not intended to be used for private or sensitive data.</p>
+    /// </important>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
+    }
     /// <p>Defines if this user is intended for CRDR replication purposes.</p>
     pub fn replication_user(mut self, input: bool) -> Self {
         self.replication_user = ::std::option::Option::Some(input);
@@ -144,6 +166,10 @@ impl UserBuilder {
     pub fn set_replication_user(mut self, input: ::std::option::Option<bool>) -> Self {
         self.replication_user = input;
         self
+    }
+    /// <p>Defines if this user is intended for CRDR replication purposes.</p>
+    pub fn get_replication_user(&self) -> &::std::option::Option<bool> {
+        &self.replication_user
     }
     /// Consumes the builder and constructs a [`User`](crate::types::User).
     pub fn build(self) -> crate::types::User {

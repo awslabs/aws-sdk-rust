@@ -65,6 +65,12 @@ impl NotifyWorkersFailureStatusBuilder {
         self.notify_workers_failure_code = input;
         self
     }
+    /// <p> Encoded value for the failure type. </p>
+    pub fn get_notify_workers_failure_code(
+        &self,
+    ) -> &::std::option::Option<crate::types::NotifyWorkersFailureCode> {
+        &self.notify_workers_failure_code
+    }
     /// <p> A message detailing the reason the Worker could not be notified. </p>
     pub fn notify_workers_failure_message(
         mut self,
@@ -81,6 +87,12 @@ impl NotifyWorkersFailureStatusBuilder {
         self.notify_workers_failure_message = input;
         self
     }
+    /// <p> A message detailing the reason the Worker could not be notified. </p>
+    pub fn get_notify_workers_failure_message(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.notify_workers_failure_message
+    }
     /// <p> The ID of the Worker.</p>
     pub fn worker_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.worker_id = ::std::option::Option::Some(input.into());
@@ -90,6 +102,10 @@ impl NotifyWorkersFailureStatusBuilder {
     pub fn set_worker_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.worker_id = input;
         self
+    }
+    /// <p> The ID of the Worker.</p>
+    pub fn get_worker_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.worker_id
     }
     /// Consumes the builder and constructs a [`NotifyWorkersFailureStatus`](crate::types::NotifyWorkersFailureStatus).
     pub fn build(self) -> crate::types::NotifyWorkersFailureStatus {

@@ -45,6 +45,10 @@ impl DescribeDeviceInputBuilder {
         self.managed_device_id = input;
         self
     }
+    /// <p>The ID of the device that you are checking the information of.</p>
+    pub fn get_managed_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.managed_device_id
+    }
     /// Consumes the builder and constructs a [`DescribeDeviceInput`](crate::operation::describe_device::DescribeDeviceInput).
     pub fn build(
         self,

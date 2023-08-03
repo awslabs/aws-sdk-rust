@@ -86,6 +86,10 @@ impl PartnerIntegrationInfoBuilder {
         self.database_name = input;
         self
     }
+    /// <p>The name of the database that receives data from a partner.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>The name of the partner.</p>
     pub fn partner_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.partner_name = ::std::option::Option::Some(input.into());
@@ -95,6 +99,10 @@ impl PartnerIntegrationInfoBuilder {
     pub fn set_partner_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.partner_name = input;
         self
+    }
+    /// <p>The name of the partner.</p>
+    pub fn get_partner_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.partner_name
     }
     /// <p>The partner integration status.</p>
     pub fn status(mut self, input: crate::types::PartnerIntegrationStatus) -> Self {
@@ -108,6 +116,10 @@ impl PartnerIntegrationInfoBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The partner integration status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::PartnerIntegrationStatus> {
+        &self.status
     }
     /// <p>The status message provided by the partner.</p>
     pub fn status_message(
@@ -125,6 +137,10 @@ impl PartnerIntegrationInfoBuilder {
         self.status_message = input;
         self
     }
+    /// <p>The status message provided by the partner.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>The date (UTC) that the partner integration was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -138,6 +154,10 @@ impl PartnerIntegrationInfoBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The date (UTC) that the partner integration was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The date (UTC) that the partner integration status was last updated by the partner.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
@@ -150,6 +170,10 @@ impl PartnerIntegrationInfoBuilder {
     ) -> Self {
         self.updated_at = input;
         self
+    }
+    /// <p>The date (UTC) that the partner integration status was last updated by the partner.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     /// Consumes the builder and constructs a [`PartnerIntegrationInfo`](crate::types::PartnerIntegrationInfo).
     pub fn build(self) -> crate::types::PartnerIntegrationInfo {

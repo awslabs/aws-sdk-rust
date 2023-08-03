@@ -40,6 +40,10 @@ impl DeleteCidrCollectionInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The UUID of the collection to delete.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`DeleteCidrCollectionInput`](crate::operation::delete_cidr_collection::DeleteCidrCollectionInput).
     pub fn build(
         self,

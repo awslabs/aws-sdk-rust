@@ -50,6 +50,10 @@ impl DescribeProtectionOutputBuilder {
         self.protection = input;
         self
     }
+    /// <p>The <code>Protection</code> that you requested. </p>
+    pub fn get_protection(&self) -> &::std::option::Option<crate::types::Protection> {
+        &self.protection
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

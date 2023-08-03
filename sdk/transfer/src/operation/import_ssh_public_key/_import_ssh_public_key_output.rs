@@ -65,6 +65,10 @@ impl ImportSshPublicKeyOutputBuilder {
         self.server_id = input;
         self
     }
+    /// <p>A system-assigned unique identifier for a server.</p>
+    pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_id
+    }
     /// <p>The name given to a public key by the system that was imported.</p>
     pub fn ssh_public_key_id(
         mut self,
@@ -81,6 +85,10 @@ impl ImportSshPublicKeyOutputBuilder {
         self.ssh_public_key_id = input;
         self
     }
+    /// <p>The name given to a public key by the system that was imported.</p>
+    pub fn get_ssh_public_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ssh_public_key_id
+    }
     /// <p>A user name assigned to the <code>ServerID</code> value that you specified.</p>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
@@ -90,6 +98,10 @@ impl ImportSshPublicKeyOutputBuilder {
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_name = input;
         self
+    }
+    /// <p>A user name assigned to the <code>ServerID</code> value that you specified.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -56,6 +56,10 @@ impl ConnectionHealthBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The connection type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ConnectionType> {
+        &self.r#type
+    }
     /// <p>The connection status.</p>
     pub fn status(mut self, input: crate::types::ConnectionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl ConnectionHealthBuilder {
         self.status = input;
         self
     }
+    /// <p>The connection status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ConnectionStatus> {
+        &self.status
+    }
     /// <p>The time the status was last updated.</p>
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl ConnectionHealthBuilder {
     ) -> Self {
         self.timestamp = input;
         self
+    }
+    /// <p>The time the status was last updated.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.timestamp
     }
     /// Consumes the builder and constructs a [`ConnectionHealth`](crate::types::ConnectionHealth).
     pub fn build(self) -> crate::types::ConnectionHealth {

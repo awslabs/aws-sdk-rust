@@ -51,6 +51,10 @@ impl FileLocationBuilder {
         self.s3_file_location = input;
         self
     }
+    /// <p>Specifies the S3 details for the file being used, such as bucket, ETag, and so forth.</p>
+    pub fn get_s3_file_location(&self) -> &::std::option::Option<crate::types::S3FileLocation> {
+        &self.s3_file_location
+    }
     /// <p>Specifies the Amazon EFS identifier and the path for the file being used.</p>
     pub fn efs_file_location(mut self, input: crate::types::EfsFileLocation) -> Self {
         self.efs_file_location = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl FileLocationBuilder {
     ) -> Self {
         self.efs_file_location = input;
         self
+    }
+    /// <p>Specifies the Amazon EFS identifier and the path for the file being used.</p>
+    pub fn get_efs_file_location(&self) -> &::std::option::Option<crate::types::EfsFileLocation> {
+        &self.efs_file_location
     }
     /// Consumes the builder and constructs a [`FileLocation`](crate::types::FileLocation).
     pub fn build(self) -> crate::types::FileLocation {

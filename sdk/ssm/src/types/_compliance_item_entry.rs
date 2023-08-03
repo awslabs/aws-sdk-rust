@@ -80,6 +80,10 @@ impl ComplianceItemEntryBuilder {
         self.id = input;
         self
     }
+    /// <p>The compliance item ID. For example, if the compliance item is a Windows patch, the ID could be the number of the KB article.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The title of the compliance item. For example, if the compliance item is a Windows patch, the title could be the title of the KB article for the patch; for example: Security Update for Active Directory Federation Services. </p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl ComplianceItemEntryBuilder {
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
+    }
+    /// <p>The title of the compliance item. For example, if the compliance item is a Windows patch, the title could be the title of the KB article for the patch; for example: Security Update for Active Directory Federation Services. </p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
     }
     /// <p>The severity of the compliance status. Severity can be one of the following: Critical, High, Medium, Low, Informational, Unspecified.</p>
     pub fn severity(mut self, input: crate::types::ComplianceSeverity) -> Self {
@@ -103,6 +111,10 @@ impl ComplianceItemEntryBuilder {
         self.severity = input;
         self
     }
+    /// <p>The severity of the compliance status. Severity can be one of the following: Critical, High, Medium, Low, Informational, Unspecified.</p>
+    pub fn get_severity(&self) -> &::std::option::Option<crate::types::ComplianceSeverity> {
+        &self.severity
+    }
     /// <p>The status of the compliance item. An item is either COMPLIANT or NON_COMPLIANT.</p>
     pub fn status(mut self, input: crate::types::ComplianceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -115,6 +127,10 @@ impl ComplianceItemEntryBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the compliance item. An item is either COMPLIANT or NON_COMPLIANT.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ComplianceStatus> {
+        &self.status
     }
     /// Adds a key-value pair to `details`.
     ///
@@ -140,6 +156,14 @@ impl ComplianceItemEntryBuilder {
     ) -> Self {
         self.details = input;
         self
+    }
+    /// <p>A "Key": "Value" tag combination for the compliance item.</p>
+    pub fn get_details(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.details
     }
     /// Consumes the builder and constructs a [`ComplianceItemEntry`](crate::types::ComplianceItemEntry).
     pub fn build(self) -> crate::types::ComplianceItemEntry {

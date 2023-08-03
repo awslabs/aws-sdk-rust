@@ -104,6 +104,10 @@ impl TestInvokeMethodOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The HTTP status code.</p>
+    pub fn get_status(&self) -> &::std::option::Option<i32> {
+        &self.status
+    }
     /// <p>The body of the HTTP response.</p>
     pub fn body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.body = ::std::option::Option::Some(input.into());
@@ -113,6 +117,10 @@ impl TestInvokeMethodOutputBuilder {
     pub fn set_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.body = input;
         self
+    }
+    /// <p>The body of the HTTP response.</p>
+    pub fn get_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.body
     }
     /// Adds a key-value pair to `headers`.
     ///
@@ -138,6 +146,14 @@ impl TestInvokeMethodOutputBuilder {
     ) -> Self {
         self.headers = input;
         self
+    }
+    /// <p>The headers of the HTTP response.</p>
+    pub fn get_headers(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.headers
     }
     /// Adds a key-value pair to `multi_value_headers`.
     ///
@@ -167,6 +183,14 @@ impl TestInvokeMethodOutputBuilder {
         self.multi_value_headers = input;
         self
     }
+    /// <p>The headers of the HTTP response as a map from string to list of values.</p>
+    pub fn get_multi_value_headers(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
+    > {
+        &self.multi_value_headers
+    }
     /// <p>The API Gateway execution log for the test invoke request.</p>
     pub fn log(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log = ::std::option::Option::Some(input.into());
@@ -177,6 +201,10 @@ impl TestInvokeMethodOutputBuilder {
         self.log = input;
         self
     }
+    /// <p>The API Gateway execution log for the test invoke request.</p>
+    pub fn get_log(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log
+    }
     /// <p>The execution latency of the test invoke request.</p>
     pub fn latency(mut self, input: i64) -> Self {
         self.latency = ::std::option::Option::Some(input);
@@ -186,6 +214,10 @@ impl TestInvokeMethodOutputBuilder {
     pub fn set_latency(mut self, input: ::std::option::Option<i64>) -> Self {
         self.latency = input;
         self
+    }
+    /// <p>The execution latency of the test invoke request.</p>
+    pub fn get_latency(&self) -> &::std::option::Option<i64> {
+        &self.latency
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

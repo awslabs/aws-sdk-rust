@@ -66,6 +66,10 @@ impl IncompatibilityMessageBuilder {
         self.message = input;
         self
     }
+    /// <p>A message about the incompatibility.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The type of incompatibility.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
@@ -93,6 +97,19 @@ impl IncompatibilityMessageBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DeviceAttribute>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of incompatibility.</p>
+    /// <p>Allowed values include:</p>
+    /// <ul>
+    /// <li> <p>ARN</p> </li>
+    /// <li> <p>FORM_FACTOR (for example, phone or tablet)</p> </li>
+    /// <li> <p>MANUFACTURER</p> </li>
+    /// <li> <p>PLATFORM (for example, Android or iOS)</p> </li>
+    /// <li> <p>REMOTE_ACCESS_ENABLED</p> </li>
+    /// <li> <p>APPIUM_VERSION</p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::DeviceAttribute> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`IncompatibilityMessage`](crate::types::IncompatibilityMessage).
     pub fn build(self) -> crate::types::IncompatibilityMessage {

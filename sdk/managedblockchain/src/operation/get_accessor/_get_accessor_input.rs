@@ -39,6 +39,10 @@ impl GetAccessorInputBuilder {
         self.accessor_id = input;
         self
     }
+    /// <p>The unique identifier of the accessor.</p>
+    pub fn get_accessor_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accessor_id
+    }
     /// Consumes the builder and constructs a [`GetAccessorInput`](crate::operation::get_accessor::GetAccessorInput).
     pub fn build(
         self,

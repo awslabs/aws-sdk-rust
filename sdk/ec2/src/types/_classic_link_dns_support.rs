@@ -51,6 +51,10 @@ impl ClassicLinkDnsSupportBuilder {
         self.classic_link_dns_supported = input;
         self
     }
+    /// <p>Indicates whether ClassicLink DNS support is enabled for the VPC.</p>
+    pub fn get_classic_link_dns_supported(&self) -> &::std::option::Option<bool> {
+        &self.classic_link_dns_supported
+    }
     /// <p>The ID of the VPC.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl ClassicLinkDnsSupportBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The ID of the VPC.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// Consumes the builder and constructs a [`ClassicLinkDnsSupport`](crate::types::ClassicLinkDnsSupport).
     pub fn build(self) -> crate::types::ClassicLinkDnsSupport {

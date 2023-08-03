@@ -36,6 +36,10 @@ impl GetPlatformApplicationAttributesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetPlatformApplicationAttributes as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_platform_application_attributes::builders::GetPlatformApplicationAttributesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -105,5 +109,9 @@ impl GetPlatformApplicationAttributesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_platform_application_arn(input);
         self
+    }
+    /// <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
+    pub fn get_platform_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_platform_application_arn()
     }
 }

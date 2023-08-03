@@ -51,6 +51,10 @@ impl SchemaChangePolicyBuilder {
         self.update_behavior = input;
         self
     }
+    /// <p>The update behavior when the crawler finds a changed schema.</p>
+    pub fn get_update_behavior(&self) -> &::std::option::Option<crate::types::UpdateBehavior> {
+        &self.update_behavior
+    }
     /// <p>The deletion behavior when the crawler finds a deleted object.</p>
     pub fn delete_behavior(mut self, input: crate::types::DeleteBehavior) -> Self {
         self.delete_behavior = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl SchemaChangePolicyBuilder {
     ) -> Self {
         self.delete_behavior = input;
         self
+    }
+    /// <p>The deletion behavior when the crawler finds a deleted object.</p>
+    pub fn get_delete_behavior(&self) -> &::std::option::Option<crate::types::DeleteBehavior> {
+        &self.delete_behavior
     }
     /// Consumes the builder and constructs a [`SchemaChangePolicy`](crate::types::SchemaChangePolicy).
     pub fn build(self) -> crate::types::SchemaChangePolicy {

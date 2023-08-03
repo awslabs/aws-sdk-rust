@@ -48,6 +48,10 @@ impl AggregateComplianceCountBuilder {
         self.group_name = input;
         self
     }
+    /// <p>The 12-digit account ID or region based on the GroupByKey value.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
+    }
     /// <p>The number of compliant and noncompliant Config rules.</p>
     pub fn compliance_summary(mut self, input: crate::types::ComplianceSummary) -> Self {
         self.compliance_summary = ::std::option::Option::Some(input);
@@ -60,6 +64,12 @@ impl AggregateComplianceCountBuilder {
     ) -> Self {
         self.compliance_summary = input;
         self
+    }
+    /// <p>The number of compliant and noncompliant Config rules.</p>
+    pub fn get_compliance_summary(
+        &self,
+    ) -> &::std::option::Option<crate::types::ComplianceSummary> {
+        &self.compliance_summary
     }
     /// Consumes the builder and constructs a [`AggregateComplianceCount`](crate::types::AggregateComplianceCount).
     pub fn build(self) -> crate::types::AggregateComplianceCount {

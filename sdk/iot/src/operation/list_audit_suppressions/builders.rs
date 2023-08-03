@@ -37,6 +37,13 @@ impl ListAuditSuppressionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListAuditSuppressions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_audit_suppressions::builders::ListAuditSuppressionsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +145,10 @@ impl ListAuditSuppressionsFluentBuilder {
         self.inner = self.inner.set_check_name(input);
         self
     }
+    /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
+    pub fn get_check_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_check_name()
+    }
     /// <p>Information that identifies the noncompliant resource.</p>
     pub fn resource_identifier(mut self, input: crate::types::ResourceIdentifier) -> Self {
         self.inner = self.inner.resource_identifier(input);
@@ -151,6 +162,12 @@ impl ListAuditSuppressionsFluentBuilder {
         self.inner = self.inner.set_resource_identifier(input);
         self
     }
+    /// <p>Information that identifies the noncompliant resource.</p>
+    pub fn get_resource_identifier(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceIdentifier> {
+        self.inner.get_resource_identifier()
+    }
     /// <p> Determines whether suppressions are listed in ascending order by expiration date or not. If parameter isn't provided, <code>ascendingOrder=true</code>. </p>
     pub fn ascending_order(mut self, input: bool) -> Self {
         self.inner = self.inner.ascending_order(input);
@@ -160,6 +177,10 @@ impl ListAuditSuppressionsFluentBuilder {
     pub fn set_ascending_order(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_ascending_order(input);
         self
+    }
+    /// <p> Determines whether suppressions are listed in ascending order by expiration date or not. If parameter isn't provided, <code>ascendingOrder=true</code>. </p>
+    pub fn get_ascending_order(&self) -> &::std::option::Option<bool> {
+        self.inner.get_ascending_order()
     }
     /// <p> The token for the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -171,6 +192,10 @@ impl ListAuditSuppressionsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p> The token for the next set of results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p> The maximum number of results to return at one time. The default is 25. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -180,5 +205,9 @@ impl ListAuditSuppressionsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p> The maximum number of results to return at one time. The default is 25. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

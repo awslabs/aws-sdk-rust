@@ -64,6 +64,10 @@ impl UpdateLoggingConfigurationOutputBuilder {
         self.firewall_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
+    pub fn get_firewall_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.firewall_arn
+    }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     pub fn firewall_name(
         mut self,
@@ -80,6 +84,10 @@ impl UpdateLoggingConfigurationOutputBuilder {
         self.firewall_name = input;
         self
     }
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
+    pub fn get_firewall_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.firewall_name
+    }
     /// <p>Defines how Network Firewall performs logging for a <code>Firewall</code>. </p>
     pub fn logging_configuration(mut self, input: crate::types::LoggingConfiguration) -> Self {
         self.logging_configuration = ::std::option::Option::Some(input);
@@ -92,6 +100,12 @@ impl UpdateLoggingConfigurationOutputBuilder {
     ) -> Self {
         self.logging_configuration = input;
         self
+    }
+    /// <p>Defines how Network Firewall performs logging for a <code>Firewall</code>. </p>
+    pub fn get_logging_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::LoggingConfiguration> {
+        &self.logging_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

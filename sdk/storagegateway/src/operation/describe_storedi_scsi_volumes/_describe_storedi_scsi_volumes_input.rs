@@ -49,6 +49,12 @@ impl DescribeStorediScsiVolumesInputBuilder {
         self.volume_ar_ns = input;
         self
     }
+    /// <p>An array of strings where each string represents the Amazon Resource Name (ARN) of a stored volume. All of the specified stored volumes must be from the same gateway. Use <code>ListVolumes</code> to get volume ARNs for a gateway.</p>
+    pub fn get_volume_ar_ns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.volume_ar_ns
+    }
     /// Consumes the builder and constructs a [`DescribeStorediScsiVolumesInput`](crate::operation::describe_storedi_scsi_volumes::DescribeStorediScsiVolumesInput).
     pub fn build(
         self,

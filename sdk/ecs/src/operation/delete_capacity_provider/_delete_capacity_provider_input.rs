@@ -47,6 +47,10 @@ impl DeleteCapacityProviderInputBuilder {
         self.capacity_provider = input;
         self
     }
+    /// <p>The short name or full Amazon Resource Name (ARN) of the capacity provider to delete.</p>
+    pub fn get_capacity_provider(&self) -> &::std::option::Option<::std::string::String> {
+        &self.capacity_provider
+    }
     /// Consumes the builder and constructs a [`DeleteCapacityProviderInput`](crate::operation::delete_capacity_provider::DeleteCapacityProviderInput).
     pub fn build(
         self,

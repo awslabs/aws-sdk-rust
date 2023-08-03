@@ -71,6 +71,12 @@ impl ShareRuleBuilder {
         self.target_accounts = input;
         self
     }
+    /// <p>The IDs of the Amazon Web Services accounts with which to share the snapshots.</p>
+    pub fn get_target_accounts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.target_accounts
+    }
     /// <p>The period after which snapshots that are shared with other Amazon Web Services accounts are automatically unshared.</p>
     pub fn unshare_interval(mut self, input: i32) -> Self {
         self.unshare_interval = ::std::option::Option::Some(input);
@@ -80,6 +86,10 @@ impl ShareRuleBuilder {
     pub fn set_unshare_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.unshare_interval = input;
         self
+    }
+    /// <p>The period after which snapshots that are shared with other Amazon Web Services accounts are automatically unshared.</p>
+    pub fn get_unshare_interval(&self) -> &::std::option::Option<i32> {
+        &self.unshare_interval
     }
     /// <p>The unit of time for the automatic unsharing interval.</p>
     pub fn unshare_interval_unit(
@@ -96,6 +106,12 @@ impl ShareRuleBuilder {
     ) -> Self {
         self.unshare_interval_unit = input;
         self
+    }
+    /// <p>The unit of time for the automatic unsharing interval.</p>
+    pub fn get_unshare_interval_unit(
+        &self,
+    ) -> &::std::option::Option<crate::types::RetentionIntervalUnitValues> {
+        &self.unshare_interval_unit
     }
     /// Consumes the builder and constructs a [`ShareRule`](crate::types::ShareRule).
     pub fn build(self) -> crate::types::ShareRule {

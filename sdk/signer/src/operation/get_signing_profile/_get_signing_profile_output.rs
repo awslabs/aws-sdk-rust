@@ -173,6 +173,10 @@ impl GetSigningProfileOutputBuilder {
         self.profile_name = input;
         self
     }
+    /// <p>The name of the target signing profile.</p>
+    pub fn get_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_name
+    }
     /// <p>The current version of the signing profile.</p>
     pub fn profile_version(
         mut self,
@@ -188,6 +192,10 @@ impl GetSigningProfileOutputBuilder {
     ) -> Self {
         self.profile_version = input;
         self
+    }
+    /// <p>The current version of the signing profile.</p>
+    pub fn get_profile_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_version
     }
     /// <p>The signing profile ARN, including the profile version.</p>
     pub fn profile_version_arn(
@@ -205,6 +213,10 @@ impl GetSigningProfileOutputBuilder {
         self.profile_version_arn = input;
         self
     }
+    /// <p>The signing profile ARN, including the profile version.</p>
+    pub fn get_profile_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_version_arn
+    }
     /// <p>Revocation information for a signing profile.</p>
     pub fn revocation_record(
         mut self,
@@ -221,6 +233,12 @@ impl GetSigningProfileOutputBuilder {
         self.revocation_record = input;
         self
     }
+    /// <p>Revocation information for a signing profile.</p>
+    pub fn get_revocation_record(
+        &self,
+    ) -> &::std::option::Option<crate::types::SigningProfileRevocationRecord> {
+        &self.revocation_record
+    }
     /// <p>The ARN of the certificate that the target profile uses for signing operations.</p>
     pub fn signing_material(mut self, input: crate::types::SigningMaterial) -> Self {
         self.signing_material = ::std::option::Option::Some(input);
@@ -234,6 +252,10 @@ impl GetSigningProfileOutputBuilder {
         self.signing_material = input;
         self
     }
+    /// <p>The ARN of the certificate that the target profile uses for signing operations.</p>
+    pub fn get_signing_material(&self) -> &::std::option::Option<crate::types::SigningMaterial> {
+        &self.signing_material
+    }
     /// <p>The ID of the platform that is used by the target signing profile.</p>
     pub fn platform_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform_id = ::std::option::Option::Some(input.into());
@@ -243,6 +265,10 @@ impl GetSigningProfileOutputBuilder {
     pub fn set_platform_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform_id = input;
         self
+    }
+    /// <p>The ID of the platform that is used by the target signing profile.</p>
+    pub fn get_platform_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform_id
     }
     /// <p>A human-readable name for the signing platform associated with the signing profile.</p>
     pub fn platform_display_name(
@@ -260,6 +286,10 @@ impl GetSigningProfileOutputBuilder {
         self.platform_display_name = input;
         self
     }
+    /// <p>A human-readable name for the signing platform associated with the signing profile.</p>
+    pub fn get_platform_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform_display_name
+    }
     /// <p>The validity period for a signing job.</p>
     pub fn signature_validity_period(
         mut self,
@@ -276,6 +306,12 @@ impl GetSigningProfileOutputBuilder {
         self.signature_validity_period = input;
         self
     }
+    /// <p>The validity period for a signing job.</p>
+    pub fn get_signature_validity_period(
+        &self,
+    ) -> &::std::option::Option<crate::types::SignatureValidityPeriod> {
+        &self.signature_validity_period
+    }
     /// <p>A list of overrides applied by the target signing profile for signing operations.</p>
     pub fn overrides(mut self, input: crate::types::SigningPlatformOverrides) -> Self {
         self.overrides = ::std::option::Option::Some(input);
@@ -288,6 +324,10 @@ impl GetSigningProfileOutputBuilder {
     ) -> Self {
         self.overrides = input;
         self
+    }
+    /// <p>A list of overrides applied by the target signing profile for signing operations.</p>
+    pub fn get_overrides(&self) -> &::std::option::Option<crate::types::SigningPlatformOverrides> {
+        &self.overrides
     }
     /// Adds a key-value pair to `signing_parameters`.
     ///
@@ -314,6 +354,14 @@ impl GetSigningProfileOutputBuilder {
         self.signing_parameters = input;
         self
     }
+    /// <p>A map of key-value pairs for signing operations that is attached to the target signing profile.</p>
+    pub fn get_signing_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.signing_parameters
+    }
     /// <p>The status of the target signing profile.</p>
     pub fn status(mut self, input: crate::types::SigningProfileStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -326,6 +374,10 @@ impl GetSigningProfileOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the target signing profile.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::SigningProfileStatus> {
+        &self.status
     }
     /// <p>Reason for the status of the target signing profile.</p>
     pub fn status_reason(
@@ -343,6 +395,10 @@ impl GetSigningProfileOutputBuilder {
         self.status_reason = input;
         self
     }
+    /// <p>Reason for the status of the target signing profile.</p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_reason
+    }
     /// <p>The Amazon Resource Name (ARN) for the signing profile.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -352,6 +408,10 @@ impl GetSigningProfileOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the signing profile.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -377,6 +437,14 @@ impl GetSigningProfileOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of tags associated with the signing profile.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

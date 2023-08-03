@@ -56,6 +56,10 @@ impl BooleanColumnStatisticsDataBuilder {
         self.number_of_trues = input;
         self
     }
+    /// <p>The number of true values in the column.</p>
+    pub fn get_number_of_trues(&self) -> &::std::option::Option<i64> {
+        &self.number_of_trues
+    }
     /// <p>The number of false values in the column.</p>
     pub fn number_of_falses(mut self, input: i64) -> Self {
         self.number_of_falses = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl BooleanColumnStatisticsDataBuilder {
         self.number_of_falses = input;
         self
     }
+    /// <p>The number of false values in the column.</p>
+    pub fn get_number_of_falses(&self) -> &::std::option::Option<i64> {
+        &self.number_of_falses
+    }
     /// <p>The number of null values in the column.</p>
     pub fn number_of_nulls(mut self, input: i64) -> Self {
         self.number_of_nulls = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl BooleanColumnStatisticsDataBuilder {
     pub fn set_number_of_nulls(mut self, input: ::std::option::Option<i64>) -> Self {
         self.number_of_nulls = input;
         self
+    }
+    /// <p>The number of null values in the column.</p>
+    pub fn get_number_of_nulls(&self) -> &::std::option::Option<i64> {
+        &self.number_of_nulls
     }
     /// Consumes the builder and constructs a [`BooleanColumnStatisticsData`](crate::types::BooleanColumnStatisticsData).
     pub fn build(self) -> crate::types::BooleanColumnStatisticsData {

@@ -36,6 +36,12 @@ impl UpdateFirewallPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateFirewallPolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_firewall_policy::builders::UpdateFirewallPolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +134,11 @@ impl UpdateFirewallPolicyFluentBuilder {
         self.inner = self.inner.set_update_token(input);
         self
     }
+    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the firewall policy. The token marks the state of the policy resource at the time of the request. </p>
+    /// <p>To make changes to the policy, you provide the token in your request. Network Firewall uses the token to ensure that the policy hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall policy again to get a current copy of it with current token. Reapply your changes as needed, then try the operation again using the new token. </p>
+    pub fn get_update_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_update_token()
+    }
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn firewall_policy_arn(
@@ -145,6 +156,11 @@ impl UpdateFirewallPolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_firewall_policy_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn get_firewall_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_firewall_policy_arn()
     }
     /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
@@ -164,6 +180,11 @@ impl UpdateFirewallPolicyFluentBuilder {
         self.inner = self.inner.set_firewall_policy_name(input);
         self
     }
+    /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn get_firewall_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_firewall_policy_name()
+    }
     /// <p>The updated firewall policy to use for the firewall. </p>
     pub fn firewall_policy(mut self, input: crate::types::FirewallPolicy) -> Self {
         self.inner = self.inner.firewall_policy(input);
@@ -177,6 +198,10 @@ impl UpdateFirewallPolicyFluentBuilder {
         self.inner = self.inner.set_firewall_policy(input);
         self
     }
+    /// <p>The updated firewall policy to use for the firewall. </p>
+    pub fn get_firewall_policy(&self) -> &::std::option::Option<crate::types::FirewallPolicy> {
+        self.inner.get_firewall_policy()
+    }
     /// <p>A description of the firewall policy.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -186,6 +211,10 @@ impl UpdateFirewallPolicyFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of the firewall policy.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
     /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
@@ -200,6 +229,12 @@ impl UpdateFirewallPolicyFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
+    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
+    /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
     /// <p>A complex type that contains settings for encryption of your firewall policy resources.</p>
     pub fn encryption_configuration(
@@ -216,5 +251,11 @@ impl UpdateFirewallPolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_encryption_configuration(input);
         self
+    }
+    /// <p>A complex type that contains settings for encryption of your firewall policy resources.</p>
+    pub fn get_encryption_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+        self.inner.get_encryption_configuration()
     }
 }

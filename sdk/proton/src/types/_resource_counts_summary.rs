@@ -72,6 +72,10 @@ impl ResourceCountsSummaryBuilder {
         self.total = input;
         self
     }
+    /// <p>The total number of resources of this type in the Amazon Web Services account.</p>
+    pub fn get_total(&self) -> &::std::option::Option<i32> {
+        &self.total
+    }
     /// <p>The number of resources of this type in the Amazon Web Services account that failed to deploy.</p>
     pub fn failed(mut self, input: i32) -> Self {
         self.failed = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl ResourceCountsSummaryBuilder {
     pub fn set_failed(mut self, input: ::std::option::Option<i32>) -> Self {
         self.failed = input;
         self
+    }
+    /// <p>The number of resources of this type in the Amazon Web Services account that failed to deploy.</p>
+    pub fn get_failed(&self) -> &::std::option::Option<i32> {
+        &self.failed
     }
     /// <p>The number of resources of this type in the Amazon Web Services account that are up-to-date with their template.</p>
     pub fn up_to_date(mut self, input: i32) -> Self {
@@ -92,6 +100,10 @@ impl ResourceCountsSummaryBuilder {
         self.up_to_date = input;
         self
     }
+    /// <p>The number of resources of this type in the Amazon Web Services account that are up-to-date with their template.</p>
+    pub fn get_up_to_date(&self) -> &::std::option::Option<i32> {
+        &self.up_to_date
+    }
     /// <p>The number of resources of this type in the Amazon Web Services account that need a major template version update.</p>
     pub fn behind_major(mut self, input: i32) -> Self {
         self.behind_major = ::std::option::Option::Some(input);
@@ -102,6 +114,10 @@ impl ResourceCountsSummaryBuilder {
         self.behind_major = input;
         self
     }
+    /// <p>The number of resources of this type in the Amazon Web Services account that need a major template version update.</p>
+    pub fn get_behind_major(&self) -> &::std::option::Option<i32> {
+        &self.behind_major
+    }
     /// <p>The number of resources of this type in the Amazon Web Services account that need a minor template version update.</p>
     pub fn behind_minor(mut self, input: i32) -> Self {
         self.behind_minor = ::std::option::Option::Some(input);
@@ -111,6 +127,10 @@ impl ResourceCountsSummaryBuilder {
     pub fn set_behind_minor(mut self, input: ::std::option::Option<i32>) -> Self {
         self.behind_minor = input;
         self
+    }
+    /// <p>The number of resources of this type in the Amazon Web Services account that need a minor template version update.</p>
+    pub fn get_behind_minor(&self) -> &::std::option::Option<i32> {
+        &self.behind_minor
     }
     /// Consumes the builder and constructs a [`ResourceCountsSummary`](crate::types::ResourceCountsSummary).
     pub fn build(self) -> crate::types::ResourceCountsSummary {

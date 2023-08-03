@@ -52,6 +52,11 @@ impl RevealConfigurationBuilder {
         self.kms_key_id = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN), ID, or alias of the KMS key to use to encrypt sensitive data that's retrieved. The key must be an existing, customer managed, symmetric encryption key that's in the same Amazon Web Services Region as the Amazon Macie account.</p>
+    /// <p>If this value specifies an alias, it must include the following prefix: alias/. If this value specifies a key that's owned by another Amazon Web Services account, it must specify the ARN of the key or the ARN of the key's alias.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
+    }
     /// <p>The status of the configuration for the Amazon Macie account. In a request, valid values are: ENABLED, enable the configuration for the account; and, DISABLED, disable the configuration for the account. In a response, possible values are: ENABLED, the configuration is currently enabled for the account; and, DISABLED, the configuration is currently disabled for the account.</p>
     pub fn status(mut self, input: crate::types::RevealStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -61,6 +66,10 @@ impl RevealConfigurationBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::RevealStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the configuration for the Amazon Macie account. In a request, valid values are: ENABLED, enable the configuration for the account; and, DISABLED, disable the configuration for the account. In a response, possible values are: ENABLED, the configuration is currently enabled for the account; and, DISABLED, the configuration is currently disabled for the account.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::RevealStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`RevealConfiguration`](crate::types::RevealConfiguration).
     pub fn build(self) -> crate::types::RevealConfiguration {

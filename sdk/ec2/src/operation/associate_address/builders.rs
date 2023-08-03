@@ -41,6 +41,12 @@ impl AssociateAddressFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateAddress as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::associate_address::builders::AssociateAddressInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl AssociateAddressFluentBuilder {
         self.inner = self.inner.set_allocation_id(input);
         self
     }
+    /// <p>The allocation ID. This is required.</p>
+    pub fn get_allocation_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_allocation_id()
+    }
     /// <p>The ID of the instance. The instance must have exactly one attached network interface. You can specify either the instance ID or the network interface ID, but not both.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
@@ -146,6 +156,10 @@ impl AssociateAddressFluentBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
+    }
+    /// <p>The ID of the instance. The instance must have exactly one attached network interface. You can specify either the instance ID or the network interface ID, but not both.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
     }
     /// <p>Deprecated.</p>
     pub fn public_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -157,6 +171,10 @@ impl AssociateAddressFluentBuilder {
         self.inner = self.inner.set_public_ip(input);
         self
     }
+    /// <p>Deprecated.</p>
+    pub fn get_public_ip(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_public_ip()
+    }
     /// <p>Reassociation is automatic, but you can specify false to ensure the operation fails if the Elastic IP address is already associated with another resource.</p>
     pub fn allow_reassociation(mut self, input: bool) -> Self {
         self.inner = self.inner.allow_reassociation(input);
@@ -167,6 +185,10 @@ impl AssociateAddressFluentBuilder {
         self.inner = self.inner.set_allow_reassociation(input);
         self
     }
+    /// <p>Reassociation is automatic, but you can specify false to ensure the operation fails if the Elastic IP address is already associated with another resource.</p>
+    pub fn get_allow_reassociation(&self) -> &::std::option::Option<bool> {
+        self.inner.get_allow_reassociation()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -176,6 +198,10 @@ impl AssociateAddressFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
     /// <p>The ID of the network interface. If the instance has more than one network interface, you must specify a network interface ID.</p>
     /// <p>You can specify either the instance ID or the network interface ID, but not both. </p>
@@ -195,6 +221,11 @@ impl AssociateAddressFluentBuilder {
         self.inner = self.inner.set_network_interface_id(input);
         self
     }
+    /// <p>The ID of the network interface. If the instance has more than one network interface, you must specify a network interface ID.</p>
+    /// <p>You can specify either the instance ID or the network interface ID, but not both. </p>
+    pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_network_interface_id()
+    }
     /// <p>The primary or secondary private IP address to associate with the Elastic IP address. If no private IP address is specified, the Elastic IP address is associated with the primary private IP address.</p>
     pub fn private_ip_address(
         mut self,
@@ -210,5 +241,9 @@ impl AssociateAddressFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_private_ip_address(input);
         self
+    }
+    /// <p>The primary or secondary private IP address to associate with the Elastic IP address. If no private IP address is specified, the Elastic IP address is associated with the primary private IP address.</p>
+    pub fn get_private_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_private_ip_address()
     }
 }

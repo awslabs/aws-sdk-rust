@@ -46,6 +46,10 @@ impl CreateNodeOutputBuilder {
         self.node_id = input;
         self
     }
+    /// <p>The unique identifier of the node.</p>
+    pub fn get_node_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

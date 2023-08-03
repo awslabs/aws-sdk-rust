@@ -72,6 +72,10 @@ impl ColumnBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the <code>Column</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The data type of the <code>Column</code>.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl ColumnBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The data type of the <code>Column</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// <p>A free-form text comment.</p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl ColumnBuilder {
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comment = input;
         self
+    }
+    /// <p>A free-form text comment.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comment
     }
     /// Adds a key-value pair to `parameters`.
     ///
@@ -116,6 +128,14 @@ impl ColumnBuilder {
     ) -> Self {
         self.parameters = input;
         self
+    }
+    /// <p>These key-value pairs define properties associated with the column.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.parameters
     }
     /// Consumes the builder and constructs a [`Column`](crate::types::Column).
     pub fn build(self) -> crate::types::Column {

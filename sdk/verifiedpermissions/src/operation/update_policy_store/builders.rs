@@ -36,6 +36,12 @@ impl UpdatePolicyStoreFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdatePolicyStore as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_policy_store::builders::UpdatePolicyStoreInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdatePolicyStoreFluentBuilder {
         self.inner = self.inner.set_policy_store_id(input);
         self
     }
+    /// <p>Specifies the ID of the policy store that you want to update</p>
+    pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_store_id()
+    }
     /// <p>A structure that defines the validation settings that want to enable for the policy store.</p>
     pub fn validation_settings(mut self, input: crate::types::ValidationSettings) -> Self {
         self.inner = self.inner.validation_settings(input);
@@ -144,5 +154,11 @@ impl UpdatePolicyStoreFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_validation_settings(input);
         self
+    }
+    /// <p>A structure that defines the validation settings that want to enable for the policy store.</p>
+    pub fn get_validation_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::ValidationSettings> {
+        self.inner.get_validation_settings()
     }
 }

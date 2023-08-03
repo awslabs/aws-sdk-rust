@@ -36,6 +36,10 @@ impl DeleteNotificationSubscriptionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteNotificationSubscription as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_notification_subscription::builders::DeleteNotificationSubscriptionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl DeleteNotificationSubscriptionFluentBuilder {
         self.inner = self.inner.set_subscription_id(input);
         self
     }
+    /// <p>The ID of the subscription.</p>
+    pub fn get_subscription_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_subscription_id()
+    }
     /// <p>The ID of the organization.</p>
     pub fn organization_id(
         mut self,
@@ -147,5 +155,9 @@ impl DeleteNotificationSubscriptionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_organization_id(input);
         self
+    }
+    /// <p>The ID of the organization.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organization_id()
     }
 }

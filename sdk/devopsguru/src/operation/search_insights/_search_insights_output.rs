@@ -79,6 +79,12 @@ impl SearchInsightsOutputBuilder {
         self.proactive_insights = input;
         self
     }
+    /// <p> The returned proactive insights. </p>
+    pub fn get_proactive_insights(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProactiveInsightSummary>> {
+        &self.proactive_insights
+    }
     /// Appends an item to `reactive_insights`.
     ///
     /// To override the contents of this collection use [`set_reactive_insights`](Self::set_reactive_insights).
@@ -98,6 +104,12 @@ impl SearchInsightsOutputBuilder {
         self.reactive_insights = input;
         self
     }
+    /// <p> The returned reactive insights. </p>
+    pub fn get_reactive_insights(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReactiveInsightSummary>> {
+        &self.reactive_insights
+    }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -107,6 +119,10 @@ impl SearchInsightsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

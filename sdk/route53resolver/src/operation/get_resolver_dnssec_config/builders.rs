@@ -37,6 +37,13 @@ impl GetResolverDnssecConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetResolverDnssecConfig as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_resolver_dnssec_config::builders::GetResolverDnssecConfigInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,5 +133,9 @@ impl GetResolverDnssecConfigFluentBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_id(input);
         self
+    }
+    /// <p>The ID of the virtual private cloud (VPC) for the DNSSEC validation status.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_id()
     }
 }

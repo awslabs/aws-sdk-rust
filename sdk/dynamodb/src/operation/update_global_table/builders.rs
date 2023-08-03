@@ -47,6 +47,12 @@ impl UpdateGlobalTableFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateGlobalTable as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_global_table::builders::UpdateGlobalTableInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -143,6 +149,10 @@ impl UpdateGlobalTableFluentBuilder {
         self.inner = self.inner.set_global_table_name(input);
         self
     }
+    /// <p>The global table name.</p>
+    pub fn get_global_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_global_table_name()
+    }
     /// Appends an item to `ReplicaUpdates`.
     ///
     /// To override the contents of this collection use [`set_replica_updates`](Self::set_replica_updates).
@@ -159,5 +169,11 @@ impl UpdateGlobalTableFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_replica_updates(input);
         self
+    }
+    /// <p>A list of Regions that should be added or removed from the global table.</p>
+    pub fn get_replica_updates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicaUpdate>> {
+        self.inner.get_replica_updates()
     }
 }

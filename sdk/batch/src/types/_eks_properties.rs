@@ -43,6 +43,10 @@ impl EksPropertiesBuilder {
         self.pod_properties = input;
         self
     }
+    /// <p>The properties for the Kubernetes pod resources of a job.</p>
+    pub fn get_pod_properties(&self) -> &::std::option::Option<crate::types::EksPodProperties> {
+        &self.pod_properties
+    }
     /// Consumes the builder and constructs a [`EksProperties`](crate::types::EksProperties).
     pub fn build(self) -> crate::types::EksProperties {
         crate::types::EksProperties {

@@ -37,6 +37,12 @@ impl TestInvokeAuthorizerFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the TestInvokeAuthorizer as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::test_invoke_authorizer::builders::TestInvokeAuthorizerInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl TestInvokeAuthorizerFluentBuilder {
         self.inner = self.inner.set_authorizer_name(input);
         self
     }
+    /// <p>The custom authorizer name.</p>
+    pub fn get_authorizer_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_authorizer_name()
+    }
     /// <p>The token returned by your custom authentication service.</p>
     pub fn token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.token(input.into());
@@ -142,6 +152,10 @@ impl TestInvokeAuthorizerFluentBuilder {
     pub fn set_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_token(input);
         self
+    }
+    /// <p>The token returned by your custom authentication service.</p>
+    pub fn get_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_token()
     }
     /// <p>The signature made with the token and your custom authentication service's private key. This value must be Base-64-encoded.</p>
     pub fn token_signature(
@@ -159,6 +173,10 @@ impl TestInvokeAuthorizerFluentBuilder {
         self.inner = self.inner.set_token_signature(input);
         self
     }
+    /// <p>The signature made with the token and your custom authentication service's private key. This value must be Base-64-encoded.</p>
+    pub fn get_token_signature(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_token_signature()
+    }
     /// <p>Specifies a test HTTP authorization request.</p>
     pub fn http_context(mut self, input: crate::types::HttpContext) -> Self {
         self.inner = self.inner.http_context(input);
@@ -171,6 +189,10 @@ impl TestInvokeAuthorizerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_http_context(input);
         self
+    }
+    /// <p>Specifies a test HTTP authorization request.</p>
+    pub fn get_http_context(&self) -> &::std::option::Option<crate::types::HttpContext> {
+        self.inner.get_http_context()
     }
     /// <p>Specifies a test MQTT authorization request.</p>
     pub fn mqtt_context(mut self, input: crate::types::MqttContext) -> Self {
@@ -185,6 +207,10 @@ impl TestInvokeAuthorizerFluentBuilder {
         self.inner = self.inner.set_mqtt_context(input);
         self
     }
+    /// <p>Specifies a test MQTT authorization request.</p>
+    pub fn get_mqtt_context(&self) -> &::std::option::Option<crate::types::MqttContext> {
+        self.inner.get_mqtt_context()
+    }
     /// <p>Specifies a test TLS authorization request.</p>
     pub fn tls_context(mut self, input: crate::types::TlsContext) -> Self {
         self.inner = self.inner.tls_context(input);
@@ -197,5 +223,9 @@ impl TestInvokeAuthorizerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tls_context(input);
         self
+    }
+    /// <p>Specifies a test TLS authorization request.</p>
+    pub fn get_tls_context(&self) -> &::std::option::Option<crate::types::TlsContext> {
+        self.inner.get_tls_context()
     }
 }

@@ -65,6 +65,10 @@ impl MultiMeasureAttributeMappingBuilder {
         self
     }
     /// <p></p>
+    pub fn get_source_column(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_column
+    }
+    /// <p></p>
     pub fn target_multi_measure_attribute_name(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -81,6 +85,12 @@ impl MultiMeasureAttributeMappingBuilder {
         self
     }
     /// <p></p>
+    pub fn get_target_multi_measure_attribute_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.target_multi_measure_attribute_name
+    }
+    /// <p></p>
     pub fn measure_value_type(mut self, input: crate::types::ScalarMeasureValueType) -> Self {
         self.measure_value_type = ::std::option::Option::Some(input);
         self
@@ -92,6 +102,12 @@ impl MultiMeasureAttributeMappingBuilder {
     ) -> Self {
         self.measure_value_type = input;
         self
+    }
+    /// <p></p>
+    pub fn get_measure_value_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ScalarMeasureValueType> {
+        &self.measure_value_type
     }
     /// Consumes the builder and constructs a [`MultiMeasureAttributeMapping`](crate::types::MultiMeasureAttributeMapping).
     pub fn build(self) -> crate::types::MultiMeasureAttributeMapping {

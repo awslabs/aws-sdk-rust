@@ -70,6 +70,12 @@ impl ListDataQualityJobDefinitionsOutputBuilder {
         self.job_definition_summaries = input;
         self
     }
+    /// <p>A list of data quality monitoring job definitions.</p>
+    pub fn get_job_definition_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MonitoringJobDefinitionSummary>> {
+        &self.job_definition_summaries
+    }
     /// <p>If the result of the previous <code>ListDataQualityJobDefinitions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of data quality monitoring job definitions, use the token in the next request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -79,6 +85,10 @@ impl ListDataQualityJobDefinitionsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the result of the previous <code>ListDataQualityJobDefinitions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of data quality monitoring job definitions, use the token in the next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

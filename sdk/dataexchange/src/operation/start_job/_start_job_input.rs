@@ -39,6 +39,10 @@ impl StartJobInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The unique identifier for a job.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// Consumes the builder and constructs a [`StartJobInput`](crate::operation::start_job::StartJobInput).
     pub fn build(
         self,

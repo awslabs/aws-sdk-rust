@@ -57,6 +57,12 @@ impl ListAccessControlRulesOutputBuilder {
         self.rules = input;
         self
     }
+    /// <p>The access control rules.</p>
+    pub fn get_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessControlRule>> {
+        &self.rules
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

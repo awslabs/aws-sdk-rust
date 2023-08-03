@@ -72,6 +72,10 @@ impl EventTopicBuilder {
         self.directory_id = input;
         self
     }
+    /// <p>The Directory ID of an Directory Service directory that will publish status messages to an Amazon SNS topic.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
+    }
     /// <p>The name of an Amazon SNS topic the receives status messages from the directory.</p>
     pub fn topic_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_name = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl EventTopicBuilder {
         self.topic_name = input;
         self
     }
+    /// <p>The name of an Amazon SNS topic the receives status messages from the directory.</p>
+    pub fn get_topic_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_name
+    }
     /// <p>The Amazon SNS topic ARN (Amazon Resource Name).</p>
     pub fn topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_arn = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl EventTopicBuilder {
     pub fn set_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.topic_arn = input;
         self
+    }
+    /// <p>The Amazon SNS topic ARN (Amazon Resource Name).</p>
+    pub fn get_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_arn
     }
     /// <p>The date and time of when you associated your directory with the Amazon SNS topic.</p>
     pub fn created_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -105,6 +117,10 @@ impl EventTopicBuilder {
         self.created_date_time = input;
         self
     }
+    /// <p>The date and time of when you associated your directory with the Amazon SNS topic.</p>
+    pub fn get_created_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_date_time
+    }
     /// <p>The topic registration status.</p>
     pub fn status(mut self, input: crate::types::TopicStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -114,6 +130,10 @@ impl EventTopicBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TopicStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The topic registration status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TopicStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`EventTopic`](crate::types::EventTopic).
     pub fn build(self) -> crate::types::EventTopic {

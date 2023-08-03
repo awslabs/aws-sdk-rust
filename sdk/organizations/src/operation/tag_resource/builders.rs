@@ -44,6 +44,10 @@ impl TagResourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the TagResource as a reference.
+    pub fn as_input(&self) -> &crate::operation::tag_resource::builders::TagResourceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +144,17 @@ impl TagResourceFluentBuilder {
         self.inner = self.inner.set_resource_id(input);
         self
     }
+    /// <p>The ID of the resource to add a tag to.</p>
+    /// <p>You can specify any of the following taggable resources.</p>
+    /// <ul>
+    /// <li> <p>Amazon Web Services account – specify the account ID number.</p> </li>
+    /// <li> <p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code> </p> </li>
+    /// <li> <p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code> </p> </li>
+    /// <li> <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code> </p> </li>
+    /// </ul>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_id()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -162,5 +177,12 @@ impl TagResourceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of tags to add to the specified resource.</p>
+    /// <p>For each tag in the list, you must specify both a tag key and a value. The value can be an empty string, but you can't set it to <code>null</code>.</p> <note>
+    /// <p>If any one of the tags is not valid or if you exceed the maximum allowed number of tags for a resource, then the entire request fails.</p>
+    /// </note>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

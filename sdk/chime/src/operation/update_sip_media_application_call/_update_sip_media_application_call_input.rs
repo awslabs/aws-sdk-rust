@@ -69,6 +69,10 @@ impl UpdateSipMediaApplicationCallInputBuilder {
         self.sip_media_application_id = input;
         self
     }
+    /// <p>The ID of the SIP media application handling the call.</p>
+    pub fn get_sip_media_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sip_media_application_id
+    }
     /// <p>The ID of the call transaction.</p>
     pub fn transaction_id(
         mut self,
@@ -84,6 +88,10 @@ impl UpdateSipMediaApplicationCallInputBuilder {
     ) -> Self {
         self.transaction_id = input;
         self
+    }
+    /// <p>The ID of the call transaction.</p>
+    pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transaction_id
     }
     /// Adds a key-value pair to `arguments`.
     ///
@@ -109,6 +117,14 @@ impl UpdateSipMediaApplicationCallInputBuilder {
     ) -> Self {
         self.arguments = input;
         self
+    }
+    /// <p>Arguments made available to the Lambda function as part of the <code>CALL_UPDATE_REQUESTED</code> event. Can contain 0-20 key-value pairs.</p>
+    pub fn get_arguments(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.arguments
     }
     /// Consumes the builder and constructs a [`UpdateSipMediaApplicationCallInput`](crate::operation::update_sip_media_application_call::UpdateSipMediaApplicationCallInput).
     pub fn build(

@@ -56,6 +56,12 @@ impl OpenZfsNfsExportBuilder {
         self.client_configurations = input;
         self
     }
+    /// <p>A list of configuration objects that contain the client and options for mounting the OpenZFS file system. </p>
+    pub fn get_client_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OpenZfsClientConfiguration>> {
+        &self.client_configurations
+    }
     /// Consumes the builder and constructs a [`OpenZfsNfsExport`](crate::types::OpenZfsNfsExport).
     pub fn build(self) -> crate::types::OpenZfsNfsExport {
         crate::types::OpenZfsNfsExport {

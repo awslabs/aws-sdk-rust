@@ -48,6 +48,10 @@ impl MeetingSettingBuilder {
         self.require_pin = input;
         self
     }
+    /// <p>The values that indicate whether the pin is always required.</p>
+    pub fn get_require_pin(&self) -> &::std::option::Option<crate::types::RequirePin> {
+        &self.require_pin
+    }
     /// Consumes the builder and constructs a [`MeetingSetting`](crate::types::MeetingSetting).
     pub fn build(self) -> crate::types::MeetingSetting {
         crate::types::MeetingSetting {

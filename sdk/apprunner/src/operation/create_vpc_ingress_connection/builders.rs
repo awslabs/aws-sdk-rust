@@ -36,6 +36,10 @@ impl CreateVpcIngressConnectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateVpcIngressConnection as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_vpc_ingress_connection::builders::CreateVpcIngressConnectionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl CreateVpcIngressConnectionFluentBuilder {
         self.inner = self.inner.set_service_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for this App Runner service that is used to create the VPC Ingress Connection resource.</p>
+    pub fn get_service_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_arn()
+    }
     /// <p>A name for the VPC Ingress Connection resource. It must be unique across all the active VPC Ingress Connections in your Amazon Web Services account in the Amazon Web Services Region. </p>
     pub fn vpc_ingress_connection_name(
         mut self,
@@ -141,6 +149,10 @@ impl CreateVpcIngressConnectionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_vpc_ingress_connection_name(input);
         self
+    }
+    /// <p>A name for the VPC Ingress Connection resource. It must be unique across all the active VPC Ingress Connections in your Amazon Web Services account in the Amazon Web Services Region. </p>
+    pub fn get_vpc_ingress_connection_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpc_ingress_connection_name()
     }
     /// <p>Specifications for the customer’s Amazon VPC and the related Amazon Web Services PrivateLink VPC endpoint that are used to create the VPC Ingress Connection resource.</p>
     pub fn ingress_vpc_configuration(
@@ -158,6 +170,12 @@ impl CreateVpcIngressConnectionFluentBuilder {
         self.inner = self.inner.set_ingress_vpc_configuration(input);
         self
     }
+    /// <p>Specifications for the customer’s Amazon VPC and the related Amazon Web Services PrivateLink VPC endpoint that are used to create the VPC Ingress Connection resource.</p>
+    pub fn get_ingress_vpc_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::IngressVpcConfiguration> {
+        self.inner.get_ingress_vpc_configuration()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -174,5 +192,9 @@ impl CreateVpcIngressConnectionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>An optional list of metadata items that you can associate with the VPC Ingress Connection resource. A tag is a key-value pair.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

@@ -62,6 +62,10 @@ impl FindingHistoryUpdateBuilder {
         self.updated_field = input;
         self
     }
+    /// <p> The ASFF field that changed during the finding change event. </p>
+    pub fn get_updated_field(&self) -> &::std::option::Option<::std::string::String> {
+        &self.updated_field
+    }
     /// <p> The value of the ASFF field before the finding change event. </p>
     pub fn old_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.old_value = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl FindingHistoryUpdateBuilder {
         self.old_value = input;
         self
     }
+    /// <p> The value of the ASFF field before the finding change event. </p>
+    pub fn get_old_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.old_value
+    }
     /// <p> The value of the ASFF field after the finding change event. To preserve storage and readability, Security Hub omits this value if <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_FindingHistoryRecord.html"> <code>FindingHistoryRecord</code> </a> exceeds database limits. </p>
     pub fn new_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.new_value = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl FindingHistoryUpdateBuilder {
     pub fn set_new_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.new_value = input;
         self
+    }
+    /// <p> The value of the ASFF field after the finding change event. To preserve storage and readability, Security Hub omits this value if <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_FindingHistoryRecord.html"> <code>FindingHistoryRecord</code> </a> exceeds database limits. </p>
+    pub fn get_new_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.new_value
     }
     /// Consumes the builder and constructs a [`FindingHistoryUpdate`](crate::types::FindingHistoryUpdate).
     pub fn build(self) -> crate::types::FindingHistoryUpdate {

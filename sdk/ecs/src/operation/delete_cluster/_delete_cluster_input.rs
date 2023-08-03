@@ -39,6 +39,10 @@ impl DeleteClusterInputBuilder {
         self.cluster = input;
         self
     }
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to delete.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster
+    }
     /// Consumes the builder and constructs a [`DeleteClusterInput`](crate::operation::delete_cluster::DeleteClusterInput).
     pub fn build(
         self,

@@ -74,6 +74,12 @@ impl DescribeFleetInstancesOutputBuilder {
         self.active_instances = input;
         self
     }
+    /// <p>The running instances. This list is refreshed periodically and might be out of date.</p>
+    pub fn get_active_instances(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ActiveInstance>> {
+        &self.active_instances
+    }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -84,6 +90,10 @@ impl DescribeFleetInstancesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The ID of the EC2 Fleet.</p>
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
@@ -93,6 +103,10 @@ impl DescribeFleetInstancesOutputBuilder {
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet_id = input;
         self
+    }
+    /// <p>The ID of the EC2 Fleet.</p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

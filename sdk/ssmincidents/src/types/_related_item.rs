@@ -63,6 +63,10 @@ impl RelatedItemBuilder {
         self.identifier = input;
         self
     }
+    /// <p>Details about the related item.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<crate::types::ItemIdentifier> {
+        &self.identifier
+    }
     /// <p>The title of the related item.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl RelatedItemBuilder {
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
+    }
+    /// <p>The title of the related item.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
     }
     /// <p>A unique ID for a <code>RelatedItem</code>.</p> <important>
     /// <p>Don't specify this parameter when you add a <code>RelatedItem</code> by using the <code>UpdateRelatedItems</code> API action.</p>
@@ -86,6 +94,12 @@ impl RelatedItemBuilder {
     pub fn set_generated_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.generated_id = input;
         self
+    }
+    /// <p>A unique ID for a <code>RelatedItem</code>.</p> <important>
+    /// <p>Don't specify this parameter when you add a <code>RelatedItem</code> by using the <code>UpdateRelatedItems</code> API action.</p>
+    /// </important>
+    pub fn get_generated_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.generated_id
     }
     /// Consumes the builder and constructs a [`RelatedItem`](crate::types::RelatedItem).
     pub fn build(self) -> crate::types::RelatedItem {

@@ -51,6 +51,10 @@ impl BatchRemoveFacetFromObjectBuilder {
         self.schema_facet = input;
         self
     }
+    /// <p>The facet to remove from the object.</p>
+    pub fn get_schema_facet(&self) -> &::std::option::Option<crate::types::SchemaFacet> {
+        &self.schema_facet
+    }
     /// <p>A reference to the object whose facet will be removed.</p>
     pub fn object_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.object_reference = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl BatchRemoveFacetFromObjectBuilder {
     ) -> Self {
         self.object_reference = input;
         self
+    }
+    /// <p>A reference to the object whose facet will be removed.</p>
+    pub fn get_object_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
+        &self.object_reference
     }
     /// Consumes the builder and constructs a [`BatchRemoveFacetFromObject`](crate::types::BatchRemoveFacetFromObject).
     pub fn build(self) -> crate::types::BatchRemoveFacetFromObject {

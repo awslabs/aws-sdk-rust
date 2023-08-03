@@ -86,6 +86,10 @@ impl CreateEnvironmentInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The application ID.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>A name for the environment.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -96,6 +100,10 @@ impl CreateEnvironmentInputBuilder {
         self.name = input;
         self
     }
+    /// <p>A name for the environment.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A description of the environment.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -105,6 +113,10 @@ impl CreateEnvironmentInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the environment.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `monitors`.
     ///
@@ -124,6 +136,10 @@ impl CreateEnvironmentInputBuilder {
     ) -> Self {
         self.monitors = input;
         self
+    }
+    /// <p>Amazon CloudWatch alarms to monitor during the deployment process.</p>
+    pub fn get_monitors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Monitor>> {
+        &self.monitors
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -149,6 +165,14 @@ impl CreateEnvironmentInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Metadata to assign to the environment. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateEnvironmentInput`](crate::operation::create_environment::CreateEnvironmentInput).
     pub fn build(

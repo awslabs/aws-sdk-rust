@@ -75,6 +75,10 @@ impl CreateTapePoolInputBuilder {
         self.pool_name = input;
         self
     }
+    /// <p>The name of the new custom tape pool.</p>
+    pub fn get_pool_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pool_name
+    }
     /// <p>The storage class that is associated with the new custom pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
     pub fn storage_class(mut self, input: crate::types::TapeStorageClass) -> Self {
         self.storage_class = ::std::option::Option::Some(input);
@@ -87,6 +91,10 @@ impl CreateTapePoolInputBuilder {
     ) -> Self {
         self.storage_class = input;
         self
+    }
+    /// <p>The storage class that is associated with the new custom pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
+    pub fn get_storage_class(&self) -> &::std::option::Option<crate::types::TapeStorageClass> {
+        &self.storage_class
     }
     /// <p>Tape retention lock can be configured in two modes. When configured in governance mode, Amazon Web Services accounts with specific IAM permissions are authorized to remove the tape retention lock from archived virtual tapes. When configured in compliance mode, the tape retention lock cannot be removed by any user, including the root Amazon Web Services account.</p>
     pub fn retention_lock_type(mut self, input: crate::types::RetentionLockType) -> Self {
@@ -101,6 +109,12 @@ impl CreateTapePoolInputBuilder {
         self.retention_lock_type = input;
         self
     }
+    /// <p>Tape retention lock can be configured in two modes. When configured in governance mode, Amazon Web Services accounts with specific IAM permissions are authorized to remove the tape retention lock from archived virtual tapes. When configured in compliance mode, the tape retention lock cannot be removed by any user, including the root Amazon Web Services account.</p>
+    pub fn get_retention_lock_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::RetentionLockType> {
+        &self.retention_lock_type
+    }
     /// <p>Tape retention lock time is set in days. Tape retention lock can be enabled for up to 100 years (36,500 days).</p>
     pub fn retention_lock_time_in_days(mut self, input: i32) -> Self {
         self.retention_lock_time_in_days = ::std::option::Option::Some(input);
@@ -110,6 +124,10 @@ impl CreateTapePoolInputBuilder {
     pub fn set_retention_lock_time_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.retention_lock_time_in_days = input;
         self
+    }
+    /// <p>Tape retention lock time is set in days. Tape retention lock can be enabled for up to 100 years (36,500 days).</p>
+    pub fn get_retention_lock_time_in_days(&self) -> &::std::option::Option<i32> {
+        &self.retention_lock_time_in_days
     }
     /// Appends an item to `tags`.
     ///
@@ -133,6 +151,12 @@ impl CreateTapePoolInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of up to 50 tags that can be assigned to tape pool. Each tag is a key-value pair.</p> <note>
+    /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>
+    /// </note>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateTapePoolInput`](crate::operation::create_tape_pool::CreateTapePoolInput).
     pub fn build(

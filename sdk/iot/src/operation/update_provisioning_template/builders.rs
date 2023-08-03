@@ -37,6 +37,10 @@ impl UpdateProvisioningTemplateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateProvisioningTemplate as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_provisioning_template::builders::UpdateProvisioningTemplateInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,10 @@ impl UpdateProvisioningTemplateFluentBuilder {
         self.inner = self.inner.set_template_name(input);
         self
     }
+    /// <p>The name of the provisioning template.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_name()
+    }
     /// <p>The description of the provisioning template.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -142,6 +150,10 @@ impl UpdateProvisioningTemplateFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the provisioning template.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>True to enable the provisioning template, otherwise false.</p>
     pub fn enabled(mut self, input: bool) -> Self {
@@ -153,6 +165,10 @@ impl UpdateProvisioningTemplateFluentBuilder {
         self.inner = self.inner.set_enabled(input);
         self
     }
+    /// <p>True to enable the provisioning template, otherwise false.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enabled()
+    }
     /// <p>The ID of the default provisioning template version.</p>
     pub fn default_version_id(mut self, input: i32) -> Self {
         self.inner = self.inner.default_version_id(input);
@@ -162,6 +178,10 @@ impl UpdateProvisioningTemplateFluentBuilder {
     pub fn set_default_version_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_default_version_id(input);
         self
+    }
+    /// <p>The ID of the default provisioning template version.</p>
+    pub fn get_default_version_id(&self) -> &::std::option::Option<i32> {
+        self.inner.get_default_version_id()
     }
     /// <p>The ARN of the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
     pub fn provisioning_role_arn(
@@ -179,6 +199,10 @@ impl UpdateProvisioningTemplateFluentBuilder {
         self.inner = self.inner.set_provisioning_role_arn(input);
         self
     }
+    /// <p>The ARN of the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
+    pub fn get_provisioning_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_provisioning_role_arn()
+    }
     /// <p>Updates the pre-provisioning hook template. Only supports template of type <code>FLEET_PROVISIONING</code>. For more information about provisioning template types, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html#iot-CreateProvisioningTemplate-request-type">type</a>.</p>
     pub fn pre_provisioning_hook(mut self, input: crate::types::ProvisioningHook) -> Self {
         self.inner = self.inner.pre_provisioning_hook(input);
@@ -192,6 +216,12 @@ impl UpdateProvisioningTemplateFluentBuilder {
         self.inner = self.inner.set_pre_provisioning_hook(input);
         self
     }
+    /// <p>Updates the pre-provisioning hook template. Only supports template of type <code>FLEET_PROVISIONING</code>. For more information about provisioning template types, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html#iot-CreateProvisioningTemplate-request-type">type</a>.</p>
+    pub fn get_pre_provisioning_hook(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProvisioningHook> {
+        self.inner.get_pre_provisioning_hook()
+    }
     /// <p>Removes pre-provisioning hook template.</p>
     pub fn remove_pre_provisioning_hook(mut self, input: bool) -> Self {
         self.inner = self.inner.remove_pre_provisioning_hook(input);
@@ -201,5 +231,9 @@ impl UpdateProvisioningTemplateFluentBuilder {
     pub fn set_remove_pre_provisioning_hook(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_remove_pre_provisioning_hook(input);
         self
+    }
+    /// <p>Removes pre-provisioning hook template.</p>
+    pub fn get_remove_pre_provisioning_hook(&self) -> &::std::option::Option<bool> {
+        self.inner.get_remove_pre_provisioning_hook()
     }
 }

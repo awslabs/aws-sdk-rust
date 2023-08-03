@@ -55,6 +55,12 @@ impl DetachInstancesOutputBuilder {
         self.activities = input;
         self
     }
+    /// <p>The activities related to detaching the instances from the Auto Scaling group.</p>
+    pub fn get_activities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Activity>> {
+        &self.activities
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

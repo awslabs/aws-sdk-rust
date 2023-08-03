@@ -36,6 +36,10 @@ impl UpdateNetworkAnalyzerConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateNetworkAnalyzerConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_network_analyzer_configuration::builders::UpdateNetworkAnalyzerConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl UpdateNetworkAnalyzerConfigurationFluentBuilder {
         self.inner = self.inner.set_configuration_name(input);
         self
     }
+    /// <p>Name of the network analyzer configuration.</p>
+    pub fn get_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration_name()
+    }
     /// <p>Trace content for your wireless gateway and wireless device resources.</p>
     pub fn trace_content(mut self, input: crate::types::TraceContent) -> Self {
         self.inner = self.inner.trace_content(input);
@@ -118,6 +126,10 @@ impl UpdateNetworkAnalyzerConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_trace_content(input);
         self
+    }
+    /// <p>Trace content for your wireless gateway and wireless device resources.</p>
+    pub fn get_trace_content(&self) -> &::std::option::Option<crate::types::TraceContent> {
+        self.inner.get_trace_content()
     }
     /// Appends an item to `WirelessDevicesToAdd`.
     ///
@@ -139,6 +151,12 @@ impl UpdateNetworkAnalyzerConfigurationFluentBuilder {
         self.inner = self.inner.set_wireless_devices_to_add(input);
         self
     }
+    /// <p>Wireless device resources to add to the network analyzer configuration. Provide the <code>WirelessDeviceId</code> of the resource to add in the input array.</p>
+    pub fn get_wireless_devices_to_add(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_wireless_devices_to_add()
+    }
     /// Appends an item to `WirelessDevicesToRemove`.
     ///
     /// To override the contents of this collection use [`set_wireless_devices_to_remove`](Self::set_wireless_devices_to_remove).
@@ -158,6 +176,12 @@ impl UpdateNetworkAnalyzerConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_wireless_devices_to_remove(input);
         self
+    }
+    /// <p>Wireless device resources to remove from the network analyzer configuration. Provide the <code>WirelessDeviceId</code> of the resources to remove in the input array.</p>
+    pub fn get_wireless_devices_to_remove(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_wireless_devices_to_remove()
     }
     /// Appends an item to `WirelessGatewaysToAdd`.
     ///
@@ -179,6 +203,12 @@ impl UpdateNetworkAnalyzerConfigurationFluentBuilder {
         self.inner = self.inner.set_wireless_gateways_to_add(input);
         self
     }
+    /// <p>Wireless gateway resources to add to the network analyzer configuration. Provide the <code>WirelessGatewayId</code> of the resource to add in the input array.</p>
+    pub fn get_wireless_gateways_to_add(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_wireless_gateways_to_add()
+    }
     /// Appends an item to `WirelessGatewaysToRemove`.
     ///
     /// To override the contents of this collection use [`set_wireless_gateways_to_remove`](Self::set_wireless_gateways_to_remove).
@@ -199,6 +229,12 @@ impl UpdateNetworkAnalyzerConfigurationFluentBuilder {
         self.inner = self.inner.set_wireless_gateways_to_remove(input);
         self
     }
+    /// <p>Wireless gateway resources to remove from the network analyzer configuration. Provide the <code>WirelessGatewayId</code> of the resources to remove in the input array.</p>
+    pub fn get_wireless_gateways_to_remove(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_wireless_gateways_to_remove()
+    }
     /// <p>The description of the new resource.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -208,6 +244,10 @@ impl UpdateNetworkAnalyzerConfigurationFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the new resource.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `MulticastGroupsToAdd`.
     ///
@@ -229,6 +269,12 @@ impl UpdateNetworkAnalyzerConfigurationFluentBuilder {
         self.inner = self.inner.set_multicast_groups_to_add(input);
         self
     }
+    /// <p>Multicast group resources to add to the network analyzer configuration. Provide the <code>MulticastGroupId</code> of the resource to add in the input array.</p>
+    pub fn get_multicast_groups_to_add(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_multicast_groups_to_add()
+    }
     /// Appends an item to `MulticastGroupsToRemove`.
     ///
     /// To override the contents of this collection use [`set_multicast_groups_to_remove`](Self::set_multicast_groups_to_remove).
@@ -248,5 +294,11 @@ impl UpdateNetworkAnalyzerConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_multicast_groups_to_remove(input);
         self
+    }
+    /// <p>Multicast group resources to remove from the network analyzer configuration. Provide the <code>MulticastGroupId</code> of the resource to remove in the input array.</p>
+    pub fn get_multicast_groups_to_remove(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_multicast_groups_to_remove()
     }
 }

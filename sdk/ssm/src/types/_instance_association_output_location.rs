@@ -44,6 +44,10 @@ impl InstanceAssociationOutputLocationBuilder {
         self.s3_location = input;
         self
     }
+    /// <p>An S3 bucket where you want to store the results of this request.</p>
+    pub fn get_s3_location(&self) -> &::std::option::Option<crate::types::S3OutputLocation> {
+        &self.s3_location
+    }
     /// Consumes the builder and constructs a [`InstanceAssociationOutputLocation`](crate::types::InstanceAssociationOutputLocation).
     pub fn build(self) -> crate::types::InstanceAssociationOutputLocation {
         crate::types::InstanceAssociationOutputLocation {

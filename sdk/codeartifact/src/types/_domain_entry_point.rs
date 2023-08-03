@@ -54,6 +54,10 @@ impl DomainEntryPointBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name of the repository that a package was originally published to.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>The name of the external connection that a package was ingested from.</p>
     pub fn external_connection_name(
         mut self,
@@ -69,6 +73,10 @@ impl DomainEntryPointBuilder {
     ) -> Self {
         self.external_connection_name = input;
         self
+    }
+    /// <p>The name of the external connection that a package was ingested from.</p>
+    pub fn get_external_connection_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.external_connection_name
     }
     /// Consumes the builder and constructs a [`DomainEntryPoint`](crate::types::DomainEntryPoint).
     pub fn build(self) -> crate::types::DomainEntryPoint {

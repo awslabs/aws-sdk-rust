@@ -51,6 +51,12 @@ impl BatchDeleteAutomationRulesInputBuilder {
         self.automation_rules_arns = input;
         self
     }
+    /// <p> A list of Amazon Resource Names (ARNs) for the rules that are to be deleted. </p>
+    pub fn get_automation_rules_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.automation_rules_arns
+    }
     /// Consumes the builder and constructs a [`BatchDeleteAutomationRulesInput`](crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRulesInput).
     pub fn build(
         self,

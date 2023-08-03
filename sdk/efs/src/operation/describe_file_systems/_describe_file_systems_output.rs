@@ -65,6 +65,10 @@ impl DescribeFileSystemsOutputBuilder {
         self.marker = input;
         self
     }
+    /// <p>Present if provided by caller in the request (String).</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// Appends an item to `file_systems`.
     ///
     /// To override the contents of this collection use [`set_file_systems`](Self::set_file_systems).
@@ -84,6 +88,12 @@ impl DescribeFileSystemsOutputBuilder {
         self.file_systems = input;
         self
     }
+    /// <p>An array of file system descriptions.</p>
+    pub fn get_file_systems(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FileSystemDescription>> {
+        &self.file_systems
+    }
     /// <p>Present if there are more file systems than returned in the response (String). You can use the <code>NextMarker</code> in the subsequent request to fetch the descriptions.</p>
     pub fn next_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_marker = ::std::option::Option::Some(input.into());
@@ -93,6 +103,10 @@ impl DescribeFileSystemsOutputBuilder {
     pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_marker = input;
         self
+    }
+    /// <p>Present if there are more file systems than returned in the response (String). You can use the <code>NextMarker</code> in the subsequent request to fetch the descriptions.</p>
+    pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

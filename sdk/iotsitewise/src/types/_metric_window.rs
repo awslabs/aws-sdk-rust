@@ -43,6 +43,10 @@ impl MetricWindowBuilder {
         self.tumbling = input;
         self
     }
+    /// <p>The tumbling time interval window.</p>
+    pub fn get_tumbling(&self) -> &::std::option::Option<crate::types::TumblingWindow> {
+        &self.tumbling
+    }
     /// Consumes the builder and constructs a [`MetricWindow`](crate::types::MetricWindow).
     pub fn build(self) -> crate::types::MetricWindow {
         crate::types::MetricWindow {

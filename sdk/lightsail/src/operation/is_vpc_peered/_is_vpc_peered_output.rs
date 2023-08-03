@@ -46,6 +46,10 @@ impl IsVpcPeeredOutputBuilder {
         self.is_peered = input;
         self
     }
+    /// <p>Returns <code>true</code> if the Lightsail VPC is peered; otherwise, <code>false</code>.</p>
+    pub fn get_is_peered(&self) -> &::std::option::Option<bool> {
+        &self.is_peered
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

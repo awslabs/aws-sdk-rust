@@ -57,6 +57,10 @@ impl UpdateHttpNamespaceInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the namespace that you want to update.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>A unique string that identifies the request and that allows failed <code>UpdateHttpNamespace</code> requests to be retried without the risk of running the operation twice. <code>UpdaterRequestId</code> can be any unique string (for example, a date/timestamp).</p>
     pub fn updater_request_id(
         mut self,
@@ -73,6 +77,10 @@ impl UpdateHttpNamespaceInputBuilder {
         self.updater_request_id = input;
         self
     }
+    /// <p>A unique string that identifies the request and that allows failed <code>UpdateHttpNamespace</code> requests to be retried without the risk of running the operation twice. <code>UpdaterRequestId</code> can be any unique string (for example, a date/timestamp).</p>
+    pub fn get_updater_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.updater_request_id
+    }
     /// <p>Updated properties for the the HTTP namespace.</p>
     pub fn namespace(mut self, input: crate::types::HttpNamespaceChange) -> Self {
         self.namespace = ::std::option::Option::Some(input);
@@ -85,6 +93,10 @@ impl UpdateHttpNamespaceInputBuilder {
     ) -> Self {
         self.namespace = input;
         self
+    }
+    /// <p>Updated properties for the the HTTP namespace.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<crate::types::HttpNamespaceChange> {
+        &self.namespace
     }
     /// Consumes the builder and constructs a [`UpdateHttpNamespaceInput`](crate::operation::update_http_namespace::UpdateHttpNamespaceInput).
     pub fn build(

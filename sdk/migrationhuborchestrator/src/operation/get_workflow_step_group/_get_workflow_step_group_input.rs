@@ -48,6 +48,10 @@ impl GetWorkflowStepGroupInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the step group.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The ID of the migration workflow.</p>
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl GetWorkflowStepGroupInputBuilder {
     pub fn set_workflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_id = input;
         self
+    }
+    /// <p>The ID of the migration workflow.</p>
+    pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_id
     }
     /// Consumes the builder and constructs a [`GetWorkflowStepGroupInput`](crate::operation::get_workflow_step_group::GetWorkflowStepGroupInput).
     pub fn build(

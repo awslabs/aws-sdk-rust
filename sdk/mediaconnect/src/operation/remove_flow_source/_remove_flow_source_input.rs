@@ -48,6 +48,10 @@ impl RemoveFlowSourceInputBuilder {
         self.flow_arn = input;
         self
     }
+    /// The flow that you want to remove a source from.
+    pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_arn
+    }
     /// The ARN of the source that you want to remove.
     pub fn source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_arn = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl RemoveFlowSourceInputBuilder {
     pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_arn = input;
         self
+    }
+    /// The ARN of the source that you want to remove.
+    pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_arn
     }
     /// Consumes the builder and constructs a [`RemoveFlowSourceInput`](crate::operation::remove_flow_source::RemoveFlowSourceInput).
     pub fn build(

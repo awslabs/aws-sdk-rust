@@ -54,6 +54,10 @@ impl RawMessageContentBuilder {
         self.s3_reference = input;
         self
     }
+    /// <p>The S3 reference of an email message.</p>
+    pub fn get_s3_reference(&self) -> &::std::option::Option<crate::types::S3Reference> {
+        &self.s3_reference
+    }
     /// Consumes the builder and constructs a [`RawMessageContent`](crate::types::RawMessageContent).
     pub fn build(self) -> crate::types::RawMessageContent {
         crate::types::RawMessageContent {

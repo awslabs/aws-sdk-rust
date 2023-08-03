@@ -67,6 +67,12 @@ impl ConnectionAliasAssociationBuilder {
         self.association_status = input;
         self
     }
+    /// <p>The association status of the connection alias.</p>
+    pub fn get_association_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::AssociationStatus> {
+        &self.association_status
+    }
     /// <p>The identifier of the Amazon Web Services account that associated the connection alias with a directory.</p>
     pub fn associated_account_id(
         mut self,
@@ -83,6 +89,10 @@ impl ConnectionAliasAssociationBuilder {
         self.associated_account_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Web Services account that associated the connection alias with a directory.</p>
+    pub fn get_associated_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.associated_account_id
+    }
     /// <p>The identifier of the directory associated with a connection alias.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -92,6 +102,10 @@ impl ConnectionAliasAssociationBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>The identifier of the directory associated with a connection alias.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// <p>The identifier of the connection alias association. You use the connection identifier in the DNS TXT record when you're configuring your DNS routing policies.</p>
     pub fn connection_identifier(
@@ -108,6 +122,10 @@ impl ConnectionAliasAssociationBuilder {
     ) -> Self {
         self.connection_identifier = input;
         self
+    }
+    /// <p>The identifier of the connection alias association. You use the connection identifier in the DNS TXT record when you're configuring your DNS routing policies.</p>
+    pub fn get_connection_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_identifier
     }
     /// Consumes the builder and constructs a [`ConnectionAliasAssociation`](crate::types::ConnectionAliasAssociation).
     pub fn build(self) -> crate::types::ConnectionAliasAssociation {

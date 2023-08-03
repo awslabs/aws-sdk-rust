@@ -48,6 +48,10 @@ impl MediaStreamAttributesRequestBuilder {
         self.fmtp = input;
         self
     }
+    /// The settings that you want to use to define the media stream.
+    pub fn get_fmtp(&self) -> &::std::option::Option<crate::types::FmtpRequest> {
+        &self.fmtp
+    }
     /// The audio language, in a format that is recognized by the receiver.
     pub fn lang(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lang = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl MediaStreamAttributesRequestBuilder {
     pub fn set_lang(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lang = input;
         self
+    }
+    /// The audio language, in a format that is recognized by the receiver.
+    pub fn get_lang(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lang
     }
     /// Consumes the builder and constructs a [`MediaStreamAttributesRequest`](crate::types::MediaStreamAttributesRequest).
     pub fn build(self) -> crate::types::MediaStreamAttributesRequest {

@@ -51,6 +51,10 @@ impl DescribeSecurityProfileOutputBuilder {
         self.security_profile = input;
         self
     }
+    /// <p>The security profile.</p>
+    pub fn get_security_profile(&self) -> &::std::option::Option<crate::types::SecurityProfile> {
+        &self.security_profile
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

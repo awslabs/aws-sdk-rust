@@ -57,6 +57,10 @@ impl ListOriginationNumbersOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A <code>NextToken</code> string is returned when you call the <code>ListOriginationNumbers</code> operation if additional pages of records are available.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `phone_numbers`.
     ///
     /// To override the contents of this collection use [`set_phone_numbers`](Self::set_phone_numbers).
@@ -75,6 +79,12 @@ impl ListOriginationNumbersOutputBuilder {
     ) -> Self {
         self.phone_numbers = input;
         self
+    }
+    /// <p>A list of the calling account's verified and pending origination numbers.</p>
+    pub fn get_phone_numbers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberInformation>> {
+        &self.phone_numbers
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

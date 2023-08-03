@@ -36,6 +36,12 @@ impl StartCodegenJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartCodegenJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_codegen_job::builders::StartCodegenJobInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl StartCodegenJobFluentBuilder {
         self.inner = self.inner.set_app_id(input);
         self
     }
+    /// <p>The unique ID for the Amplify app.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_id()
+    }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
     pub fn environment_name(
         mut self,
@@ -142,6 +152,10 @@ impl StartCodegenJobFluentBuilder {
         self.inner = self.inner.set_environment_name(input);
         self
     }
+    /// <p>The name of the backend environment that is a part of the Amplify app.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_name()
+    }
     /// <p>The idempotency token used to ensure that the code generation job request completes only once.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -151,6 +165,10 @@ impl StartCodegenJobFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>The idempotency token used to ensure that the code generation job request completes only once.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// <p>The code generation job resource configuration.</p>
     pub fn codegen_job_to_create(mut self, input: crate::types::StartCodegenJobData) -> Self {
@@ -164,5 +182,11 @@ impl StartCodegenJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_codegen_job_to_create(input);
         self
+    }
+    /// <p>The code generation job resource configuration.</p>
+    pub fn get_codegen_job_to_create(
+        &self,
+    ) -> &::std::option::Option<crate::types::StartCodegenJobData> {
+        self.inner.get_codegen_job_to_create()
     }
 }

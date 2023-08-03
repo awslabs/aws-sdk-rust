@@ -65,6 +65,10 @@ impl ListUtteranceAnalyticsDataOutputBuilder {
         self.bot_id = input;
         self
     }
+    /// <p>The unique identifier of the bot that the utterances belong to.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
+    }
     /// <p>If the response from the ListUtteranceAnalyticsData operation contains more results than specified in the maxResults parameter, a token is returned in the response.</p>
     /// <p>Use the returned token in the nextToken parameter of a ListUtteranceAnalyticsData request to return the next page of results. For a complete set of results, call the ListUtteranceAnalyticsData operation until the nextToken returned in the response is null.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -76,6 +80,11 @@ impl ListUtteranceAnalyticsDataOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the response from the ListUtteranceAnalyticsData operation contains more results than specified in the maxResults parameter, a token is returned in the response.</p>
+    /// <p>Use the returned token in the nextToken parameter of a ListUtteranceAnalyticsData request to return the next page of results. For a complete set of results, call the ListUtteranceAnalyticsData operation until the nextToken returned in the response is null.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `utterances`.
     ///
@@ -95,6 +104,12 @@ impl ListUtteranceAnalyticsDataOutputBuilder {
     ) -> Self {
         self.utterances = input;
         self
+    }
+    /// <p>A list of objects, each of which contains information about an utterance in a user session with your bot.</p>
+    pub fn get_utterances(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UtteranceSpecification>> {
+        &self.utterances
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

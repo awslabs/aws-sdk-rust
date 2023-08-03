@@ -36,6 +36,10 @@ impl DeleteTopicRefreshScheduleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteTopicRefreshSchedule as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_topic_refresh_schedule::builders::DeleteTopicRefreshScheduleInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl DeleteTopicRefreshScheduleFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn topic_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.topic_id(input.into());
@@ -142,6 +150,10 @@ impl DeleteTopicRefreshScheduleFluentBuilder {
         self.inner = self.inner.set_topic_id(input);
         self
     }
+    /// <p>The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    pub fn get_topic_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_topic_id()
+    }
     /// <p>The ID of the dataset.</p>
     pub fn dataset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dataset_id(input.into());
@@ -151,5 +163,9 @@ impl DeleteTopicRefreshScheduleFluentBuilder {
     pub fn set_dataset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dataset_id(input);
         self
+    }
+    /// <p>The ID of the dataset.</p>
+    pub fn get_dataset_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dataset_id()
     }
 }

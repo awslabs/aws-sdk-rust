@@ -82,6 +82,10 @@ impl RetrieveResultItemBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the relevant passage result.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The identifier of the document.</p>
     pub fn document_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_id = ::std::option::Option::Some(input.into());
@@ -91,6 +95,10 @@ impl RetrieveResultItemBuilder {
     pub fn set_document_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_id = input;
         self
+    }
+    /// <p>The identifier of the document.</p>
+    pub fn get_document_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_id
     }
     /// <p>The title of the document.</p>
     pub fn document_title(
@@ -108,6 +116,10 @@ impl RetrieveResultItemBuilder {
         self.document_title = input;
         self
     }
+    /// <p>The title of the document.</p>
+    pub fn get_document_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_title
+    }
     /// <p>The contents of the relevant passage.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
@@ -118,6 +130,10 @@ impl RetrieveResultItemBuilder {
         self.content = input;
         self
     }
+    /// <p>The contents of the relevant passage.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
+    }
     /// <p>The URI of the original location of the document.</p>
     pub fn document_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_uri = ::std::option::Option::Some(input.into());
@@ -127,6 +143,10 @@ impl RetrieveResultItemBuilder {
     pub fn set_document_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_uri = input;
         self
+    }
+    /// <p>The URI of the original location of the document.</p>
+    pub fn get_document_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_uri
     }
     /// Appends an item to `document_attributes`.
     ///
@@ -146,6 +166,12 @@ impl RetrieveResultItemBuilder {
     ) -> Self {
         self.document_attributes = input;
         self
+    }
+    /// <p>An array of document fields/attributes assigned to a document in the search results. For example, the document author (<code>_author</code>) or the source URI (<code>_source_uri</code>) of the document.</p>
+    pub fn get_document_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>> {
+        &self.document_attributes
     }
     /// Consumes the builder and constructs a [`RetrieveResultItem`](crate::types::RetrieveResultItem).
     pub fn build(self) -> crate::types::RetrieveResultItem {

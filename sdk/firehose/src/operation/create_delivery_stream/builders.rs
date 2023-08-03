@@ -50,6 +50,12 @@ impl CreateDeliveryStreamFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDeliveryStream as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_delivery_stream::builders::CreateDeliveryStreamInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -146,6 +152,10 @@ impl CreateDeliveryStreamFluentBuilder {
         self.inner = self.inner.set_delivery_stream_name(input);
         self
     }
+    /// <p>The name of the delivery stream. This name must be unique per Amazon Web Services account in the same Amazon Web Services Region. If the delivery streams are in different accounts or different Regions, you can have multiple delivery streams with the same name.</p>
+    pub fn get_delivery_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_delivery_stream_name()
+    }
     /// <p>The delivery stream type. This parameter can be one of the following values:</p>
     /// <ul>
     /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li>
@@ -167,6 +177,16 @@ impl CreateDeliveryStreamFluentBuilder {
         self.inner = self.inner.set_delivery_stream_type(input);
         self
     }
+    /// <p>The delivery stream type. This parameter can be one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li>
+    /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li>
+    /// </ul>
+    pub fn get_delivery_stream_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeliveryStreamType> {
+        self.inner.get_delivery_stream_type()
+    }
     /// <p>When a Kinesis data stream is used as the source for the delivery stream, a <code>KinesisStreamSourceConfiguration</code> containing the Kinesis data stream Amazon Resource Name (ARN) and the role ARN for the source stream.</p>
     pub fn kinesis_stream_source_configuration(
         mut self,
@@ -182,6 +202,12 @@ impl CreateDeliveryStreamFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_kinesis_stream_source_configuration(input);
         self
+    }
+    /// <p>When a Kinesis data stream is used as the source for the delivery stream, a <code>KinesisStreamSourceConfiguration</code> containing the Kinesis data stream Amazon Resource Name (ARN) and the role ARN for the source stream.</p>
+    pub fn get_kinesis_stream_source_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::KinesisStreamSourceConfiguration> {
+        self.inner.get_kinesis_stream_source_configuration()
     }
     /// <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption (SSE).</p>
     pub fn delivery_stream_encryption_configuration_input(
@@ -203,6 +229,13 @@ impl CreateDeliveryStreamFluentBuilder {
             .set_delivery_stream_encryption_configuration_input(input);
         self
     }
+    /// <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption (SSE).</p>
+    pub fn get_delivery_stream_encryption_configuration_input(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeliveryStreamEncryptionConfigurationInput> {
+        self.inner
+            .get_delivery_stream_encryption_configuration_input()
+    }
     /// <p>[Deprecated] The destination in Amazon S3. You can specify only one destination.</p>
     #[deprecated]
     pub fn s3_destination_configuration(
@@ -221,6 +254,13 @@ impl CreateDeliveryStreamFluentBuilder {
         self.inner = self.inner.set_s3_destination_configuration(input);
         self
     }
+    /// <p>[Deprecated] The destination in Amazon S3. You can specify only one destination.</p>
+    #[deprecated]
+    pub fn get_s3_destination_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3DestinationConfiguration> {
+        self.inner.get_s3_destination_configuration()
+    }
     /// <p>The destination in Amazon S3. You can specify only one destination.</p>
     pub fn extended_s3_destination_configuration(
         mut self,
@@ -237,6 +277,12 @@ impl CreateDeliveryStreamFluentBuilder {
         self.inner = self.inner.set_extended_s3_destination_configuration(input);
         self
     }
+    /// <p>The destination in Amazon S3. You can specify only one destination.</p>
+    pub fn get_extended_s3_destination_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExtendedS3DestinationConfiguration> {
+        self.inner.get_extended_s3_destination_configuration()
+    }
     /// <p>The destination in Amazon Redshift. You can specify only one destination.</p>
     pub fn redshift_destination_configuration(
         mut self,
@@ -252,6 +298,12 @@ impl CreateDeliveryStreamFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_redshift_destination_configuration(input);
         self
+    }
+    /// <p>The destination in Amazon Redshift. You can specify only one destination.</p>
+    pub fn get_redshift_destination_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::RedshiftDestinationConfiguration> {
+        self.inner.get_redshift_destination_configuration()
     }
     /// <p>The destination in Amazon ES. You can specify only one destination.</p>
     pub fn elasticsearch_destination_configuration(
@@ -270,6 +322,12 @@ impl CreateDeliveryStreamFluentBuilder {
             .inner
             .set_elasticsearch_destination_configuration(input);
         self
+    }
+    /// <p>The destination in Amazon ES. You can specify only one destination.</p>
+    pub fn get_elasticsearch_destination_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ElasticsearchDestinationConfiguration> {
+        self.inner.get_elasticsearch_destination_configuration()
     }
     /// <p>The destination in Amazon OpenSearch Service. You can specify only one destination.</p>
     pub fn amazonopensearchservice_destination_configuration(
@@ -291,6 +349,13 @@ impl CreateDeliveryStreamFluentBuilder {
             .set_amazonopensearchservice_destination_configuration(input);
         self
     }
+    /// <p>The destination in Amazon OpenSearch Service. You can specify only one destination.</p>
+    pub fn get_amazonopensearchservice_destination_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AmazonopensearchserviceDestinationConfiguration> {
+        self.inner
+            .get_amazonopensearchservice_destination_configuration()
+    }
     /// <p>The destination in Splunk. You can specify only one destination.</p>
     pub fn splunk_destination_configuration(
         mut self,
@@ -306,6 +371,12 @@ impl CreateDeliveryStreamFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_splunk_destination_configuration(input);
         self
+    }
+    /// <p>The destination in Splunk. You can specify only one destination.</p>
+    pub fn get_splunk_destination_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SplunkDestinationConfiguration> {
+        self.inner.get_splunk_destination_configuration()
     }
     /// <p>Enables configuring Kinesis Firehose to deliver data to any HTTP endpoint destination. You can specify only one destination.</p>
     pub fn http_endpoint_destination_configuration(
@@ -325,6 +396,12 @@ impl CreateDeliveryStreamFluentBuilder {
             .set_http_endpoint_destination_configuration(input);
         self
     }
+    /// <p>Enables configuring Kinesis Firehose to deliver data to any HTTP endpoint destination. You can specify only one destination.</p>
+    pub fn get_http_endpoint_destination_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::HttpEndpointDestinationConfiguration> {
+        self.inner.get_http_endpoint_destination_configuration()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -343,6 +420,11 @@ impl CreateDeliveryStreamFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign to Amazon Web Services resources. Tags are metadata. For example, you can add friendly names and descriptions or other types of information that can help you distinguish the delivery stream. For more information about tags, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the Amazon Web Services Billing and Cost Management User Guide.</p>
+    /// <p>You can specify up to 50 tags when creating a delivery stream.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
     /// <p>The destination in the Serverless offering for Amazon OpenSearch Service. You can specify only one destination.</p>
     pub fn amazon_open_search_serverless_destination_configuration(
@@ -365,5 +447,13 @@ impl CreateDeliveryStreamFluentBuilder {
             .inner
             .set_amazon_open_search_serverless_destination_configuration(input);
         self
+    }
+    /// <p>The destination in the Serverless offering for Amazon OpenSearch Service. You can specify only one destination.</p>
+    pub fn get_amazon_open_search_serverless_destination_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AmazonOpenSearchServerlessDestinationConfiguration>
+    {
+        self.inner
+            .get_amazon_open_search_serverless_destination_configuration()
     }
 }

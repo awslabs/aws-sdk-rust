@@ -45,6 +45,10 @@ impl GetDevEndpointInputBuilder {
         self.endpoint_name = input;
         self
     }
+    /// <p>Name of the <code>DevEndpoint</code> to retrieve information for.</p>
+    pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_name
+    }
     /// Consumes the builder and constructs a [`GetDevEndpointInput`](crate::operation::get_dev_endpoint::GetDevEndpointInput).
     pub fn build(
         self,

@@ -122,6 +122,10 @@ impl CreateUserInputBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The ID of the organization.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p>The login name of the user.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
@@ -131,6 +135,10 @@ impl CreateUserInputBuilder {
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
+    }
+    /// <p>The login name of the user.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
     }
     /// <p>The email address of the user.</p>
     pub fn email_address(
@@ -148,6 +156,10 @@ impl CreateUserInputBuilder {
         self.email_address = input;
         self
     }
+    /// <p>The email address of the user.</p>
+    pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email_address
+    }
     /// <p>The given name of the user.</p>
     pub fn given_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.given_name = ::std::option::Option::Some(input.into());
@@ -157,6 +169,10 @@ impl CreateUserInputBuilder {
     pub fn set_given_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.given_name = input;
         self
+    }
+    /// <p>The given name of the user.</p>
+    pub fn get_given_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.given_name
     }
     /// <p>The surname of the user.</p>
     pub fn surname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -168,6 +184,10 @@ impl CreateUserInputBuilder {
         self.surname = input;
         self
     }
+    /// <p>The surname of the user.</p>
+    pub fn get_surname(&self) -> &::std::option::Option<::std::string::String> {
+        &self.surname
+    }
     /// <p>The password of the user.</p>
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
@@ -178,6 +198,10 @@ impl CreateUserInputBuilder {
         self.password = input;
         self
     }
+    /// <p>The password of the user.</p>
+    pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.password
+    }
     /// <p>The time zone ID of the user.</p>
     pub fn time_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.time_zone_id = ::std::option::Option::Some(input.into());
@@ -187,6 +211,10 @@ impl CreateUserInputBuilder {
     pub fn set_time_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.time_zone_id = input;
         self
+    }
+    /// <p>The time zone ID of the user.</p>
+    pub fn get_time_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.time_zone_id
     }
     /// <p>The amount of storage for the user.</p>
     pub fn storage_rule(mut self, input: crate::types::StorageRuleType) -> Self {
@@ -200,6 +228,10 @@ impl CreateUserInputBuilder {
     ) -> Self {
         self.storage_rule = input;
         self
+    }
+    /// <p>The amount of storage for the user.</p>
+    pub fn get_storage_rule(&self) -> &::std::option::Option<crate::types::StorageRuleType> {
+        &self.storage_rule
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn authentication_token(
@@ -216,6 +248,10 @@ impl CreateUserInputBuilder {
     ) -> Self {
         self.authentication_token = input;
         self
+    }
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authentication_token
     }
     /// Consumes the builder and constructs a [`CreateUserInput`](crate::operation::create_user::CreateUserInput).
     pub fn build(

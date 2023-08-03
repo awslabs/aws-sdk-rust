@@ -36,6 +36,10 @@ impl ListDevicesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListDevices as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_devices::builders::ListDevicesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl ListDevicesFluentBuilder {
         self.inner = self.inner.set_access_token(input);
         self
     }
+    /// <p>A valid access token that Amazon Cognito issued to the user whose list of devices you want to view.</p>
+    pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_access_token()
+    }
     /// <p>The limit of the device request.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -127,6 +135,10 @@ impl ListDevicesFluentBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
+    }
+    /// <p>The limit of the device request.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
     }
     /// <p>The pagination token for the list request.</p>
     pub fn pagination_token(
@@ -143,5 +155,9 @@ impl ListDevicesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_pagination_token(input);
         self
+    }
+    /// <p>The pagination token for the list request.</p>
+    pub fn get_pagination_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pagination_token()
     }
 }

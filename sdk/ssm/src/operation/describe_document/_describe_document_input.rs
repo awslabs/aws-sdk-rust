@@ -56,6 +56,10 @@ impl DescribeDocumentInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the SSM document.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The document version for which you want information. Can be a specific version or the default version.</p>
     pub fn document_version(
         mut self,
@@ -72,6 +76,10 @@ impl DescribeDocumentInputBuilder {
         self.document_version = input;
         self
     }
+    /// <p>The document version for which you want information. Can be a specific version or the default version.</p>
+    pub fn get_document_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_version
+    }
     /// <p>An optional field specifying the version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
     pub fn version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_name = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl DescribeDocumentInputBuilder {
     pub fn set_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_name = input;
         self
+    }
+    /// <p>An optional field specifying the version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
+    pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_name
     }
     /// Consumes the builder and constructs a [`DescribeDocumentInput`](crate::operation::describe_document::DescribeDocumentInput).
     pub fn build(

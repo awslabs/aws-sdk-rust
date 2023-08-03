@@ -78,6 +78,10 @@ impl DataShareAssociationBuilder {
         self.consumer_identifier = input;
         self
     }
+    /// <p>The name of the consumer accounts that have an association with a producer datashare.</p>
+    pub fn get_consumer_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.consumer_identifier
+    }
     /// <p>The status of the datashare that is associated.</p>
     pub fn status(mut self, input: crate::types::DataShareStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -90,6 +94,10 @@ impl DataShareAssociationBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the datashare that is associated.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DataShareStatus> {
+        &self.status
     }
     /// <p>The Amazon Web Services Region of the consumer accounts that have an association with a producer datashare.</p>
     pub fn consumer_region(
@@ -107,6 +115,10 @@ impl DataShareAssociationBuilder {
         self.consumer_region = input;
         self
     }
+    /// <p>The Amazon Web Services Region of the consumer accounts that have an association with a producer datashare.</p>
+    pub fn get_consumer_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.consumer_region
+    }
     /// <p>The creation date of the datashare that is associated.</p>
     pub fn created_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_date = ::std::option::Option::Some(input);
@@ -120,6 +132,10 @@ impl DataShareAssociationBuilder {
         self.created_date = input;
         self
     }
+    /// <p>The creation date of the datashare that is associated.</p>
+    pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_date
+    }
     /// <p>The status change data of the datashare that is associated.</p>
     pub fn status_change_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.status_change_date = ::std::option::Option::Some(input);
@@ -132,6 +148,10 @@ impl DataShareAssociationBuilder {
     ) -> Self {
         self.status_change_date = input;
         self
+    }
+    /// <p>The status change data of the datashare that is associated.</p>
+    pub fn get_status_change_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.status_change_date
     }
     /// Consumes the builder and constructs a [`DataShareAssociation`](crate::types::DataShareAssociation).
     pub fn build(self) -> crate::types::DataShareAssociation {

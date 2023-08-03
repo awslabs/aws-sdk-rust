@@ -70,6 +70,10 @@ impl CodeStarParametersBuilder {
         self.connection_arn = input;
         self
     }
+    /// <p>The CodeStar ARN, which is the connection between Service Catalog and the external repository.</p>
+    pub fn get_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_arn
+    }
     /// <p>The specific repository where the product’s artifact-to-be-synced resides, formatted as "Account/Repo." </p>
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl CodeStarParametersBuilder {
         self.repository = input;
         self
     }
+    /// <p>The specific repository where the product’s artifact-to-be-synced resides, formatted as "Account/Repo." </p>
+    pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository
+    }
     /// <p>The specific branch where the artifact resides. </p>
     pub fn branch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch = ::std::option::Option::Some(input.into());
@@ -89,6 +97,10 @@ impl CodeStarParametersBuilder {
     pub fn set_branch(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.branch = input;
         self
+    }
+    /// <p>The specific branch where the artifact resides. </p>
+    pub fn get_branch(&self) -> &::std::option::Option<::std::string::String> {
+        &self.branch
     }
     /// <p>The absolute path wehre the artifact resides within the repo and branch, formatted as "folder/file.json." </p>
     pub fn artifact_path(
@@ -105,6 +117,10 @@ impl CodeStarParametersBuilder {
     ) -> Self {
         self.artifact_path = input;
         self
+    }
+    /// <p>The absolute path wehre the artifact resides within the repo and branch, formatted as "folder/file.json." </p>
+    pub fn get_artifact_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.artifact_path
     }
     /// Consumes the builder and constructs a [`CodeStarParameters`](crate::types::CodeStarParameters).
     pub fn build(self) -> crate::types::CodeStarParameters {

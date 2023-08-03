@@ -47,6 +47,10 @@ impl DisassociateContactFromAddressBookInputBuilder {
         self.contact_arn = input;
         self
     }
+    /// <p>The ARN of the contact to disassociate from an address book.</p>
+    pub fn get_contact_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_arn
+    }
     /// <p>The ARN of the address from which to disassociate the contact.</p>
     pub fn address_book_arn(
         mut self,
@@ -62,6 +66,10 @@ impl DisassociateContactFromAddressBookInputBuilder {
     ) -> Self {
         self.address_book_arn = input;
         self
+    }
+    /// <p>The ARN of the address from which to disassociate the contact.</p>
+    pub fn get_address_book_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.address_book_arn
     }
     /// Consumes the builder and constructs a [`DisassociateContactFromAddressBookInput`](crate::operation::disassociate_contact_from_address_book::DisassociateContactFromAddressBookInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_contact_from_address_book::DisassociateContactFromAddressBookInput, ::aws_smithy_http::operation::error::BuildError>{

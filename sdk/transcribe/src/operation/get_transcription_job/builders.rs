@@ -39,6 +39,12 @@ impl GetTranscriptionJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetTranscriptionJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_transcription_job::builders::GetTranscriptionJobInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,5 +140,9 @@ impl GetTranscriptionJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_transcription_job_name(input);
         self
+    }
+    /// <p>The name of the transcription job you want information about. Job names are case sensitive.</p>
+    pub fn get_transcription_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_transcription_job_name()
     }
 }

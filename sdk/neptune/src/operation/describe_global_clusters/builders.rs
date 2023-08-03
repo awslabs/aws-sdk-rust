@@ -36,6 +36,13 @@ impl DescribeGlobalClustersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeGlobalClusters as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_global_clusters::builders::DescribeGlobalClustersInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -146,6 +153,11 @@ impl DescribeGlobalClustersFluentBuilder {
         self.inner = self.inner.set_global_cluster_identifier(input);
         self
     }
+    /// <p>The user-supplied DB cluster identifier. If this parameter is specified, only information about the specified DB cluster is returned. This parameter is not case-sensitive.</p>
+    /// <p>Constraints: If supplied, must match an existing DB cluster identifier.</p>
+    pub fn get_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_global_cluster_identifier()
+    }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination marker token is included in the response that you can use to retrieve the remaining results.</p>
     /// <p>Default: <code>100</code> </p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
@@ -160,6 +172,12 @@ impl DescribeGlobalClustersFluentBuilder {
         self.inner = self.inner.set_max_records(input);
         self
     }
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination marker token is included in the response that you can use to retrieve the remaining results.</p>
+    /// <p>Default: <code>100</code> </p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_records()
+    }
     /// <p>(<i>Optional</i>) A pagination token returned by a previous call to <code>DescribeGlobalClusters</code>. If this parameter is specified, the response will only include records beyond the marker, up to the number specified by <code>MaxRecords</code>.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -169,5 +187,9 @@ impl DescribeGlobalClustersFluentBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
+    }
+    /// <p>(<i>Optional</i>) A pagination token returned by a previous call to <code>DescribeGlobalClusters</code>. If this parameter is specified, the response will only include records beyond the marker, up to the number specified by <code>MaxRecords</code>.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
     }
 }

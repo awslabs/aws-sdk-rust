@@ -53,6 +53,10 @@ impl GetBackupPlanInputBuilder {
         self.backup_plan_id = input;
         self
     }
+    /// <p>Uniquely identifies a backup plan.</p>
+    pub fn get_backup_plan_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_plan_id
+    }
     /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs cannot be edited.</p>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_id = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl GetBackupPlanInputBuilder {
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_id = input;
         self
+    }
+    /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs cannot be edited.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_id
     }
     /// Consumes the builder and constructs a [`GetBackupPlanInput`](crate::operation::get_backup_plan::GetBackupPlanInput).
     pub fn build(

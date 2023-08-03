@@ -56,6 +56,12 @@ impl CreateDirectConnectGatewayAssociationProposalOutputBuilder {
         self.direct_connect_gateway_association_proposal = input;
         self
     }
+    /// <p>Information about the Direct Connect gateway proposal.</p>
+    pub fn get_direct_connect_gateway_association_proposal(
+        &self,
+    ) -> &::std::option::Option<crate::types::DirectConnectGatewayAssociationProposal> {
+        &self.direct_connect_gateway_association_proposal
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

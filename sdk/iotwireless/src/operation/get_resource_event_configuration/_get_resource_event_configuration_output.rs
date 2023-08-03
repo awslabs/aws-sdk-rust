@@ -95,6 +95,12 @@ impl GetResourceEventConfigurationOutputBuilder {
         self.device_registration_state = input;
         self
     }
+    /// <p>Event configuration for the device registration state event.</p>
+    pub fn get_device_registration_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeviceRegistrationStateEventConfiguration> {
+        &self.device_registration_state
+    }
     /// <p>Event configuration for the proximity event.</p>
     pub fn proximity(mut self, input: crate::types::ProximityEventConfiguration) -> Self {
         self.proximity = ::std::option::Option::Some(input);
@@ -108,6 +114,12 @@ impl GetResourceEventConfigurationOutputBuilder {
         self.proximity = input;
         self
     }
+    /// <p>Event configuration for the proximity event.</p>
+    pub fn get_proximity(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProximityEventConfiguration> {
+        &self.proximity
+    }
     /// <p>Event configuration for the join event.</p>
     pub fn join(mut self, input: crate::types::JoinEventConfiguration) -> Self {
         self.join = ::std::option::Option::Some(input);
@@ -120,6 +132,10 @@ impl GetResourceEventConfigurationOutputBuilder {
     ) -> Self {
         self.join = input;
         self
+    }
+    /// <p>Event configuration for the join event.</p>
+    pub fn get_join(&self) -> &::std::option::Option<crate::types::JoinEventConfiguration> {
+        &self.join
     }
     /// <p>Event configuration for the connection status event.</p>
     pub fn connection_status(
@@ -137,6 +153,12 @@ impl GetResourceEventConfigurationOutputBuilder {
         self.connection_status = input;
         self
     }
+    /// <p>Event configuration for the connection status event.</p>
+    pub fn get_connection_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConnectionStatusEventConfiguration> {
+        &self.connection_status
+    }
     /// <p>Event configuration for the message delivery status event.</p>
     pub fn message_delivery_status(
         mut self,
@@ -152,6 +174,12 @@ impl GetResourceEventConfigurationOutputBuilder {
     ) -> Self {
         self.message_delivery_status = input;
         self
+    }
+    /// <p>Event configuration for the message delivery status event.</p>
+    pub fn get_message_delivery_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::MessageDeliveryStatusEventConfiguration> {
+        &self.message_delivery_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

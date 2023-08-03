@@ -40,6 +40,10 @@ impl DescribeAuditTaskInputBuilder {
         self.task_id = input;
         self
     }
+    /// <p>The ID of the audit whose information you want to get.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_id
+    }
     /// Consumes the builder and constructs a [`DescribeAuditTaskInput`](crate::operation::describe_audit_task::DescribeAuditTaskInput).
     pub fn build(
         self,

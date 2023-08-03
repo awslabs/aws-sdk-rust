@@ -54,6 +54,10 @@ impl DataSetReferenceBuilder {
         self.data_set_placeholder = input;
         self
     }
+    /// <p>Dataset placeholder.</p>
+    pub fn get_data_set_placeholder(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_set_placeholder
+    }
     /// <p>Dataset Amazon Resource Name (ARN).</p>
     pub fn data_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_arn = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl DataSetReferenceBuilder {
     pub fn set_data_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_set_arn = input;
         self
+    }
+    /// <p>Dataset Amazon Resource Name (ARN).</p>
+    pub fn get_data_set_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_set_arn
     }
     /// Consumes the builder and constructs a [`DataSetReference`](crate::types::DataSetReference).
     pub fn build(self) -> crate::types::DataSetReference {

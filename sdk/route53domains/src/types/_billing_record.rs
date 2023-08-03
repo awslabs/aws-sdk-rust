@@ -74,6 +74,10 @@ impl BillingRecordBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The name of the domain that the billing record applies to. If the domain name contains characters other than a-z, 0-9, and - (hyphen), such as an internationalized domain name, then this value is in Punycode. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The operation that you were charged for.</p>
     pub fn operation(mut self, input: crate::types::OperationType) -> Self {
         self.operation = ::std::option::Option::Some(input);
@@ -87,6 +91,10 @@ impl BillingRecordBuilder {
         self.operation = input;
         self
     }
+    /// <p>The operation that you were charged for.</p>
+    pub fn get_operation(&self) -> &::std::option::Option<crate::types::OperationType> {
+        &self.operation
+    }
     /// <p>The ID of the invoice that is associated with the billing record.</p>
     pub fn invoice_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.invoice_id = ::std::option::Option::Some(input.into());
@@ -96,6 +104,10 @@ impl BillingRecordBuilder {
     pub fn set_invoice_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.invoice_id = input;
         self
+    }
+    /// <p>The ID of the invoice that is associated with the billing record.</p>
+    pub fn get_invoice_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.invoice_id
     }
     /// <p>The date that the operation was billed, in Unix format.</p>
     pub fn bill_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -110,6 +122,10 @@ impl BillingRecordBuilder {
         self.bill_date = input;
         self
     }
+    /// <p>The date that the operation was billed, in Unix format.</p>
+    pub fn get_bill_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.bill_date
+    }
     /// <p>The price that you were charged for the operation, in US dollars.</p>
     /// <p>Example value: 12.0</p>
     pub fn price(mut self, input: f64) -> Self {
@@ -121,6 +137,11 @@ impl BillingRecordBuilder {
     pub fn set_price(mut self, input: ::std::option::Option<f64>) -> Self {
         self.price = input;
         self
+    }
+    /// <p>The price that you were charged for the operation, in US dollars.</p>
+    /// <p>Example value: 12.0</p>
+    pub fn get_price(&self) -> &::std::option::Option<f64> {
+        &self.price
     }
     /// Consumes the builder and constructs a [`BillingRecord`](crate::types::BillingRecord).
     pub fn build(self) -> crate::types::BillingRecord {

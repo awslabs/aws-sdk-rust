@@ -120,6 +120,10 @@ impl ReplicationGroupPendingModifiedValuesBuilder {
         self.primary_cluster_id = input;
         self
     }
+    /// <p>The primary cluster ID that is applied immediately (if <code>--apply-immediately</code> was specified), or during the next maintenance window.</p>
+    pub fn get_primary_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.primary_cluster_id
+    }
     /// <p>Indicates the status of automatic failover for this Redis replication group.</p>
     pub fn automatic_failover_status(
         mut self,
@@ -136,6 +140,12 @@ impl ReplicationGroupPendingModifiedValuesBuilder {
         self.automatic_failover_status = input;
         self
     }
+    /// <p>Indicates the status of automatic failover for this Redis replication group.</p>
+    pub fn get_automatic_failover_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::PendingAutomaticFailoverStatus> {
+        &self.automatic_failover_status
+    }
     /// <p>The status of an online resharding operation.</p>
     pub fn resharding(mut self, input: crate::types::ReshardingStatus) -> Self {
         self.resharding = ::std::option::Option::Some(input);
@@ -148,6 +158,10 @@ impl ReplicationGroupPendingModifiedValuesBuilder {
     ) -> Self {
         self.resharding = input;
         self
+    }
+    /// <p>The status of an online resharding operation.</p>
+    pub fn get_resharding(&self) -> &::std::option::Option<crate::types::ReshardingStatus> {
+        &self.resharding
     }
     /// <p>The auth token status</p>
     pub fn auth_token_status(mut self, input: crate::types::AuthTokenUpdateStatus) -> Self {
@@ -162,6 +176,12 @@ impl ReplicationGroupPendingModifiedValuesBuilder {
         self.auth_token_status = input;
         self
     }
+    /// <p>The auth token status</p>
+    pub fn get_auth_token_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuthTokenUpdateStatus> {
+        &self.auth_token_status
+    }
     /// <p>The user group being modified.</p>
     pub fn user_groups(mut self, input: crate::types::UserGroupsUpdateStatus) -> Self {
         self.user_groups = ::std::option::Option::Some(input);
@@ -174,6 +194,10 @@ impl ReplicationGroupPendingModifiedValuesBuilder {
     ) -> Self {
         self.user_groups = input;
         self
+    }
+    /// <p>The user group being modified.</p>
+    pub fn get_user_groups(&self) -> &::std::option::Option<crate::types::UserGroupsUpdateStatus> {
+        &self.user_groups
     }
     /// Appends an item to `log_delivery_configurations`.
     ///
@@ -199,6 +223,13 @@ impl ReplicationGroupPendingModifiedValuesBuilder {
         self.log_delivery_configurations = input;
         self
     }
+    /// <p>The log delivery configurations being modified </p>
+    pub fn get_log_delivery_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PendingLogDeliveryConfiguration>>
+    {
+        &self.log_delivery_configurations
+    }
     /// <p>A flag that enables in-transit encryption when set to true.</p>
     pub fn transit_encryption_enabled(mut self, input: bool) -> Self {
         self.transit_encryption_enabled = ::std::option::Option::Some(input);
@@ -208,6 +239,10 @@ impl ReplicationGroupPendingModifiedValuesBuilder {
     pub fn set_transit_encryption_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.transit_encryption_enabled = input;
         self
+    }
+    /// <p>A flag that enables in-transit encryption when set to true.</p>
+    pub fn get_transit_encryption_enabled(&self) -> &::std::option::Option<bool> {
+        &self.transit_encryption_enabled
     }
     /// <p>A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.</p>
     pub fn transit_encryption_mode(mut self, input: crate::types::TransitEncryptionMode) -> Self {
@@ -222,6 +257,12 @@ impl ReplicationGroupPendingModifiedValuesBuilder {
         self.transit_encryption_mode = input;
         self
     }
+    /// <p>A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.</p>
+    pub fn get_transit_encryption_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransitEncryptionMode> {
+        &self.transit_encryption_mode
+    }
     /// <p>Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode configuration and set the cluster mode to Enabled.</p>
     pub fn cluster_mode(mut self, input: crate::types::ClusterMode) -> Self {
         self.cluster_mode = ::std::option::Option::Some(input);
@@ -234,6 +275,10 @@ impl ReplicationGroupPendingModifiedValuesBuilder {
     ) -> Self {
         self.cluster_mode = input;
         self
+    }
+    /// <p>Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode configuration and set the cluster mode to Enabled.</p>
+    pub fn get_cluster_mode(&self) -> &::std::option::Option<crate::types::ClusterMode> {
+        &self.cluster_mode
     }
     /// Consumes the builder and constructs a [`ReplicationGroupPendingModifiedValues`](crate::types::ReplicationGroupPendingModifiedValues).
     pub fn build(self) -> crate::types::ReplicationGroupPendingModifiedValues {

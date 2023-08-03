@@ -36,6 +36,12 @@ impl GetResourceLogLevelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetResourceLogLevel as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_resource_log_level::builders::GetResourceLogLevelInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl GetResourceLogLevelFluentBuilder {
         self.inner = self.inner.set_resource_identifier(input);
         self
     }
+    /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
+    pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_identifier()
+    }
     /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
     pub fn resource_type(
         mut self,
@@ -147,5 +157,9 @@ impl GetResourceLogLevelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
+    }
+    /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_type()
     }
 }

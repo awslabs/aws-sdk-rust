@@ -115,6 +115,10 @@ impl CreateNetworkAclEntryInputBuilder {
         self.cidr_block = input;
         self
     }
+    /// <p>The IPv4 network range to allow or deny, in CIDR notation (for example <code>172.16.0.0/24</code>). We modify the specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>.</p>
+    pub fn get_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr_block
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -125,6 +129,10 @@ impl CreateNetworkAclEntryInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>Indicates whether this is an egress rule (rule is applied to traffic leaving the subnet).</p>
     pub fn egress(mut self, input: bool) -> Self {
         self.egress = ::std::option::Option::Some(input);
@@ -134,6 +142,10 @@ impl CreateNetworkAclEntryInputBuilder {
     pub fn set_egress(mut self, input: ::std::option::Option<bool>) -> Self {
         self.egress = input;
         self
+    }
+    /// <p>Indicates whether this is an egress rule (rule is applied to traffic leaving the subnet).</p>
+    pub fn get_egress(&self) -> &::std::option::Option<bool> {
+        &self.egress
     }
     /// <p>ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying protocol 1 (ICMP) or protocol 58 (ICMPv6) with an IPv6 CIDR block.</p>
     pub fn icmp_type_code(mut self, input: crate::types::IcmpTypeCode) -> Self {
@@ -147,6 +159,10 @@ impl CreateNetworkAclEntryInputBuilder {
     ) -> Self {
         self.icmp_type_code = input;
         self
+    }
+    /// <p>ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying protocol 1 (ICMP) or protocol 58 (ICMPv6) with an IPv6 CIDR block.</p>
+    pub fn get_icmp_type_code(&self) -> &::std::option::Option<crate::types::IcmpTypeCode> {
+        &self.icmp_type_code
     }
     /// <p>The IPv6 network range to allow or deny, in CIDR notation (for example <code>2001:db8:1234:1a00::/64</code>).</p>
     pub fn ipv6_cidr_block(
@@ -164,6 +180,10 @@ impl CreateNetworkAclEntryInputBuilder {
         self.ipv6_cidr_block = input;
         self
     }
+    /// <p>The IPv6 network range to allow or deny, in CIDR notation (for example <code>2001:db8:1234:1a00::/64</code>).</p>
+    pub fn get_ipv6_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv6_cidr_block
+    }
     /// <p>The ID of the network ACL.</p>
     pub fn network_acl_id(
         mut self,
@@ -180,6 +200,10 @@ impl CreateNetworkAclEntryInputBuilder {
         self.network_acl_id = input;
         self
     }
+    /// <p>The ID of the network ACL.</p>
+    pub fn get_network_acl_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_acl_id
+    }
     /// <p>TCP or UDP protocols: The range of ports the rule applies to. Required if specifying protocol 6 (TCP) or 17 (UDP).</p>
     pub fn port_range(mut self, input: crate::types::PortRange) -> Self {
         self.port_range = ::std::option::Option::Some(input);
@@ -190,6 +214,10 @@ impl CreateNetworkAclEntryInputBuilder {
         self.port_range = input;
         self
     }
+    /// <p>TCP or UDP protocols: The range of ports the rule applies to. Required if specifying protocol 6 (TCP) or 17 (UDP).</p>
+    pub fn get_port_range(&self) -> &::std::option::Option<crate::types::PortRange> {
+        &self.port_range
+    }
     /// <p>The protocol number. A value of "-1" means all protocols. If you specify "-1" or a protocol number other than "6" (TCP), "17" (UDP), or "1" (ICMP), traffic on all ports is allowed, regardless of any ports or ICMP types or codes that you specify. If you specify protocol "58" (ICMPv6) and specify an IPv4 CIDR block, traffic for all ICMP types and codes allowed, regardless of any that you specify. If you specify protocol "58" (ICMPv6) and specify an IPv6 CIDR block, you must specify an ICMP type and code.</p>
     pub fn protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.protocol = ::std::option::Option::Some(input.into());
@@ -199,6 +227,10 @@ impl CreateNetworkAclEntryInputBuilder {
     pub fn set_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.protocol = input;
         self
+    }
+    /// <p>The protocol number. A value of "-1" means all protocols. If you specify "-1" or a protocol number other than "6" (TCP), "17" (UDP), or "1" (ICMP), traffic on all ports is allowed, regardless of any ports or ICMP types or codes that you specify. If you specify protocol "58" (ICMPv6) and specify an IPv4 CIDR block, traffic for all ICMP types and codes allowed, regardless of any that you specify. If you specify protocol "58" (ICMPv6) and specify an IPv6 CIDR block, you must specify an ICMP type and code.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<::std::string::String> {
+        &self.protocol
     }
     /// <p>Indicates whether to allow or deny the traffic that matches the rule.</p>
     pub fn rule_action(mut self, input: crate::types::RuleAction) -> Self {
@@ -213,6 +245,10 @@ impl CreateNetworkAclEntryInputBuilder {
         self.rule_action = input;
         self
     }
+    /// <p>Indicates whether to allow or deny the traffic that matches the rule.</p>
+    pub fn get_rule_action(&self) -> &::std::option::Option<crate::types::RuleAction> {
+        &self.rule_action
+    }
     /// <p>The rule number for the entry (for example, 100). ACL entries are processed in ascending order by rule number.</p>
     /// <p>Constraints: Positive integer from 1 to 32766. The range 32767 to 65535 is reserved for internal use.</p>
     pub fn rule_number(mut self, input: i32) -> Self {
@@ -224,6 +260,11 @@ impl CreateNetworkAclEntryInputBuilder {
     pub fn set_rule_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.rule_number = input;
         self
+    }
+    /// <p>The rule number for the entry (for example, 100). ACL entries are processed in ascending order by rule number.</p>
+    /// <p>Constraints: Positive integer from 1 to 32766. The range 32767 to 65535 is reserved for internal use.</p>
+    pub fn get_rule_number(&self) -> &::std::option::Option<i32> {
+        &self.rule_number
     }
     /// Consumes the builder and constructs a [`CreateNetworkAclEntryInput`](crate::operation::create_network_acl_entry::CreateNetworkAclEntryInput).
     pub fn build(

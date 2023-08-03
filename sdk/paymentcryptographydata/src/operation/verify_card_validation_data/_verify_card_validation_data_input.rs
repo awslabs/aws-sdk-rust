@@ -82,6 +82,10 @@ impl VerifyCardValidationDataInputBuilder {
         self.key_identifier = input;
         self
     }
+    /// <p>The <code>keyARN</code> of the CVK encryption key that Amazon Web Services Payment Cryptography uses to verify card data.</p>
+    pub fn get_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_identifier
+    }
     /// <p>The Primary Account Number (PAN), a unique identifier for a payment credit or debit card that associates the card with a specific account holder.</p>
     pub fn primary_account_number(
         mut self,
@@ -97,6 +101,10 @@ impl VerifyCardValidationDataInputBuilder {
     ) -> Self {
         self.primary_account_number = input;
         self
+    }
+    /// <p>The Primary Account Number (PAN), a unique identifier for a payment credit or debit card that associates the card with a specific account holder.</p>
+    pub fn get_primary_account_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.primary_account_number
     }
     /// <p>The algorithm to use for verification of card data within Amazon Web Services Payment Cryptography.</p>
     pub fn verification_attributes(
@@ -114,6 +122,12 @@ impl VerifyCardValidationDataInputBuilder {
         self.verification_attributes = input;
         self
     }
+    /// <p>The algorithm to use for verification of card data within Amazon Web Services Payment Cryptography.</p>
+    pub fn get_verification_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::CardVerificationAttributes> {
+        &self.verification_attributes
+    }
     /// <p>The CVV or CSC value for use for card data verification within Amazon Web Services Payment Cryptography.</p>
     pub fn validation_data(
         mut self,
@@ -129,6 +143,10 @@ impl VerifyCardValidationDataInputBuilder {
     ) -> Self {
         self.validation_data = input;
         self
+    }
+    /// <p>The CVV or CSC value for use for card data verification within Amazon Web Services Payment Cryptography.</p>
+    pub fn get_validation_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.validation_data
     }
     /// Consumes the builder and constructs a [`VerifyCardValidationDataInput`](crate::operation::verify_card_validation_data::VerifyCardValidationDataInput).
     pub fn build(

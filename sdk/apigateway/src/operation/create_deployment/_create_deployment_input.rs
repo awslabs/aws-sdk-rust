@@ -115,6 +115,10 @@ impl CreateDeploymentInputBuilder {
         self.rest_api_id = input;
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rest_api_id
+    }
     /// <p>The name of the Stage resource for the Deployment resource to create.</p>
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_name = ::std::option::Option::Some(input.into());
@@ -124,6 +128,10 @@ impl CreateDeploymentInputBuilder {
     pub fn set_stage_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stage_name = input;
         self
+    }
+    /// <p>The name of the Stage resource for the Deployment resource to create.</p>
+    pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stage_name
     }
     /// <p>The description of the Stage resource for the Deployment resource to create.</p>
     pub fn stage_description(
@@ -141,6 +149,10 @@ impl CreateDeploymentInputBuilder {
         self.stage_description = input;
         self
     }
+    /// <p>The description of the Stage resource for the Deployment resource to create.</p>
+    pub fn get_stage_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stage_description
+    }
     /// <p>The description for the Deployment resource to create.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -151,6 +163,10 @@ impl CreateDeploymentInputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description for the Deployment resource to create.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>Enables a cache cluster for the Stage resource specified in the input.</p>
     pub fn cache_cluster_enabled(mut self, input: bool) -> Self {
         self.cache_cluster_enabled = ::std::option::Option::Some(input);
@@ -160,6 +176,10 @@ impl CreateDeploymentInputBuilder {
     pub fn set_cache_cluster_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.cache_cluster_enabled = input;
         self
+    }
+    /// <p>Enables a cache cluster for the Stage resource specified in the input.</p>
+    pub fn get_cache_cluster_enabled(&self) -> &::std::option::Option<bool> {
+        &self.cache_cluster_enabled
     }
     /// <p>The stage's cache capacity in GB. For more information about choosing a cache size, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API caching to enhance responsiveness</a>.</p>
     pub fn cache_cluster_size(mut self, input: crate::types::CacheClusterSize) -> Self {
@@ -173,6 +193,10 @@ impl CreateDeploymentInputBuilder {
     ) -> Self {
         self.cache_cluster_size = input;
         self
+    }
+    /// <p>The stage's cache capacity in GB. For more information about choosing a cache size, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API caching to enhance responsiveness</a>.</p>
+    pub fn get_cache_cluster_size(&self) -> &::std::option::Option<crate::types::CacheClusterSize> {
+        &self.cache_cluster_size
     }
     /// Adds a key-value pair to `variables`.
     ///
@@ -199,6 +223,14 @@ impl CreateDeploymentInputBuilder {
         self.variables = input;
         self
     }
+    /// <p>A map that defines the stage variables for the Stage resource that is associated with the new deployment. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
+    pub fn get_variables(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.variables
+    }
     /// <p>The input configuration for the canary deployment when the deployment is a canary release deployment. </p>
     pub fn canary_settings(mut self, input: crate::types::DeploymentCanarySettings) -> Self {
         self.canary_settings = ::std::option::Option::Some(input);
@@ -212,6 +244,12 @@ impl CreateDeploymentInputBuilder {
         self.canary_settings = input;
         self
     }
+    /// <p>The input configuration for the canary deployment when the deployment is a canary release deployment. </p>
+    pub fn get_canary_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeploymentCanarySettings> {
+        &self.canary_settings
+    }
     /// <p>Specifies whether active tracing with X-ray is enabled for the Stage.</p>
     pub fn tracing_enabled(mut self, input: bool) -> Self {
         self.tracing_enabled = ::std::option::Option::Some(input);
@@ -221,6 +259,10 @@ impl CreateDeploymentInputBuilder {
     pub fn set_tracing_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.tracing_enabled = input;
         self
+    }
+    /// <p>Specifies whether active tracing with X-ray is enabled for the Stage.</p>
+    pub fn get_tracing_enabled(&self) -> &::std::option::Option<bool> {
+        &self.tracing_enabled
     }
     /// Consumes the builder and constructs a [`CreateDeploymentInput`](crate::operation::create_deployment::CreateDeploymentInput).
     pub fn build(

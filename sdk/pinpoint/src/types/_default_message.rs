@@ -56,6 +56,10 @@ impl DefaultMessageBuilder {
         self.body = input;
         self
     }
+    /// <p>The default body of the message.</p>
+    pub fn get_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.body
+    }
     /// Adds a key-value pair to `substitutions`.
     ///
     /// To override the contents of this collection use [`set_substitutions`](Self::set_substitutions).
@@ -83,6 +87,14 @@ impl DefaultMessageBuilder {
     ) -> Self {
         self.substitutions = input;
         self
+    }
+    /// <p>The default message variables to use in the message. You can override these default variables with individual address variables.</p>
+    pub fn get_substitutions(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
+    > {
+        &self.substitutions
     }
     /// Consumes the builder and constructs a [`DefaultMessage`](crate::types::DefaultMessage).
     pub fn build(self) -> crate::types::DefaultMessage {

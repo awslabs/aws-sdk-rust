@@ -64,6 +64,10 @@ impl DataEncryptionMetadataBuilder {
         self.allow_cleartext = input;
         self
     }
+    /// <p>Indicates whether encrypted tables can contain cleartext data (true) or are to cryptographically process every column (false).</p>
+    pub fn get_allow_cleartext(&self) -> &::std::option::Option<bool> {
+        &self.allow_cleartext
+    }
     /// <p>Indicates whether Fingerprint columns can contain duplicate entries (true) or are to contain only non-repeated values (false).</p>
     pub fn allow_duplicates(mut self, input: bool) -> Self {
         self.allow_duplicates = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl DataEncryptionMetadataBuilder {
     pub fn set_allow_duplicates(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_duplicates = input;
         self
+    }
+    /// <p>Indicates whether Fingerprint columns can contain duplicate entries (true) or are to contain only non-repeated values (false).</p>
+    pub fn get_allow_duplicates(&self) -> &::std::option::Option<bool> {
+        &self.allow_duplicates
     }
     /// <p>Indicates whether Fingerprint columns can be joined on any other Fingerprint column with a different name (true) or can only be joined on Fingerprint columns of the same name (false).</p>
     pub fn allow_joins_on_columns_with_different_names(mut self, input: bool) -> Self {
@@ -87,6 +95,10 @@ impl DataEncryptionMetadataBuilder {
         self.allow_joins_on_columns_with_different_names = input;
         self
     }
+    /// <p>Indicates whether Fingerprint columns can be joined on any other Fingerprint column with a different name (true) or can only be joined on Fingerprint columns of the same name (false).</p>
+    pub fn get_allow_joins_on_columns_with_different_names(&self) -> &::std::option::Option<bool> {
+        &self.allow_joins_on_columns_with_different_names
+    }
     /// <p>Indicates whether NULL values are to be copied as NULL to encrypted tables (true) or cryptographically processed (false).</p>
     pub fn preserve_nulls(mut self, input: bool) -> Self {
         self.preserve_nulls = ::std::option::Option::Some(input);
@@ -96,6 +108,10 @@ impl DataEncryptionMetadataBuilder {
     pub fn set_preserve_nulls(mut self, input: ::std::option::Option<bool>) -> Self {
         self.preserve_nulls = input;
         self
+    }
+    /// <p>Indicates whether NULL values are to be copied as NULL to encrypted tables (true) or cryptographically processed (false).</p>
+    pub fn get_preserve_nulls(&self) -> &::std::option::Option<bool> {
+        &self.preserve_nulls
     }
     /// Consumes the builder and constructs a [`DataEncryptionMetadata`](crate::types::DataEncryptionMetadata).
     pub fn build(self) -> crate::types::DataEncryptionMetadata {

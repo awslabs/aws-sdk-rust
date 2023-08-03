@@ -62,6 +62,10 @@ impl FailureInfoBuilder {
         self.status_code = input;
         self
     }
+    /// <p>The HTTP status code of the common error.</p>
+    pub fn get_status_code(&self) -> &::std::option::Option<i32> {
+        &self.status_code
+    }
     /// <p>The code of the common error. Valid values include <code>InternalServiceException</code>, <code>InvalidParameterException</code>, and any valid error code returned by the Amazon Web Services service that hosts the resource that you want to tag.</p>
     pub fn error_code(mut self, input: crate::types::ErrorCode) -> Self {
         self.error_code = ::std::option::Option::Some(input);
@@ -71,6 +75,10 @@ impl FailureInfoBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::ErrorCode>) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>The code of the common error. Valid values include <code>InternalServiceException</code>, <code>InvalidParameterException</code>, and any valid error code returned by the Amazon Web Services service that hosts the resource that you want to tag.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<crate::types::ErrorCode> {
+        &self.error_code
     }
     /// <p>The message of the common error.</p>
     pub fn error_message(
@@ -87,6 +95,10 @@ impl FailureInfoBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>The message of the common error.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`FailureInfo`](crate::types::FailureInfo).
     pub fn build(self) -> crate::types::FailureInfo {

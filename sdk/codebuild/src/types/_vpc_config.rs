@@ -56,6 +56,10 @@ impl VpcConfigBuilder {
         self.vpc_id = input;
         self
     }
+    /// <p>The ID of the Amazon VPC.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
+    }
     /// Appends an item to `subnets`.
     ///
     /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
@@ -74,6 +78,10 @@ impl VpcConfigBuilder {
     ) -> Self {
         self.subnets = input;
         self
+    }
+    /// <p>A list of one or more subnet IDs in your Amazon VPC.</p>
+    pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnets
     }
     /// Appends an item to `security_group_ids`.
     ///
@@ -96,6 +104,12 @@ impl VpcConfigBuilder {
     ) -> Self {
         self.security_group_ids = input;
         self
+    }
+    /// <p>A list of one or more security groups IDs in your Amazon VPC.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
     }
     /// Consumes the builder and constructs a [`VpcConfig`](crate::types::VpcConfig).
     pub fn build(self) -> crate::types::VpcConfig {

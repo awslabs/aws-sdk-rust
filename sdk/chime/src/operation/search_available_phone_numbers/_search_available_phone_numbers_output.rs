@@ -66,6 +66,12 @@ impl SearchAvailablePhoneNumbersOutputBuilder {
         self.e164_phone_numbers = input;
         self
     }
+    /// <p>List of phone numbers, in E.164 format.</p>
+    pub fn get_e164_phone_numbers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.e164_phone_numbers
+    }
     /// <p>The token used to retrieve the next page of search results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -75,6 +81,10 @@ impl SearchAvailablePhoneNumbersOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token used to retrieve the next page of search results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

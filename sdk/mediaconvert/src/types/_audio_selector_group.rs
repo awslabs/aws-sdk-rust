@@ -52,6 +52,12 @@ impl AudioSelectorGroupBuilder {
         self.audio_selector_names = input;
         self
     }
+    /// Name of an Audio Selector within the same input to include in the group. Audio selector names are standardized, based on their order within the input (e.g., "Audio Selector 1"). The audio selector name parameter can be repeated to add any number of audio selectors to the group.
+    pub fn get_audio_selector_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.audio_selector_names
+    }
     /// Consumes the builder and constructs a [`AudioSelectorGroup`](crate::types::AudioSelectorGroup).
     pub fn build(self) -> crate::types::AudioSelectorGroup {
         crate::types::AudioSelectorGroup {

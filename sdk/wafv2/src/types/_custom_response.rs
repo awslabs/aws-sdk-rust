@@ -64,6 +64,11 @@ impl CustomResponseBuilder {
         self.response_code = input;
         self
     }
+    /// <p>The HTTP status code to return to the client. </p>
+    /// <p>For a list of status codes that you can use in your custom responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html">Supported status codes for custom response</a> in the <i>WAF Developer Guide</i>. </p>
+    pub fn get_response_code(&self) -> &::std::option::Option<i32> {
+        &self.response_code
+    }
     /// <p>References the response body that you want WAF to return to the web request client. You can define a custom response for a rule action or a default web ACL action that is set to block. To do this, you first define the response body key and value in the <code>CustomResponseBodies</code> setting for the <code>WebACL</code> or <code>RuleGroup</code> where you want to use it. Then, in the rule action or web ACL default action <code>BlockAction</code> setting, you reference the response body using this key. </p>
     pub fn custom_response_body_key(
         mut self,
@@ -79,6 +84,10 @@ impl CustomResponseBuilder {
     ) -> Self {
         self.custom_response_body_key = input;
         self
+    }
+    /// <p>References the response body that you want WAF to return to the web request client. You can define a custom response for a rule action or a default web ACL action that is set to block. To do this, you first define the response body key and value in the <code>CustomResponseBodies</code> setting for the <code>WebACL</code> or <code>RuleGroup</code> where you want to use it. Then, in the rule action or web ACL default action <code>BlockAction</code> setting, you reference the response body using this key. </p>
+    pub fn get_custom_response_body_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_response_body_key
     }
     /// Appends an item to `response_headers`.
     ///
@@ -100,6 +109,13 @@ impl CustomResponseBuilder {
     ) -> Self {
         self.response_headers = input;
         self
+    }
+    /// <p>The HTTP headers to use in the response. Duplicate header names are not allowed. </p>
+    /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
+    pub fn get_response_headers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomHttpHeader>> {
+        &self.response_headers
     }
     /// Consumes the builder and constructs a [`CustomResponse`](crate::types::CustomResponse).
     pub fn build(self) -> crate::types::CustomResponse {

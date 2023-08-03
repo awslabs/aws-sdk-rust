@@ -40,6 +40,10 @@ impl TaskListBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the task list.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`TaskList`](crate::types::TaskList).
     pub fn build(self) -> crate::types::TaskList {
         crate::types::TaskList { name: self.name }

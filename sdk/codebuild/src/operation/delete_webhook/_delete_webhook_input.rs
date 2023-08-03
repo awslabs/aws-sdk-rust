@@ -39,6 +39,10 @@ impl DeleteWebhookInputBuilder {
         self.project_name = input;
         self
     }
+    /// <p>The name of the CodeBuild project.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_name
+    }
     /// Consumes the builder and constructs a [`DeleteWebhookInput`](crate::operation::delete_webhook::DeleteWebhookInput).
     pub fn build(
         self,

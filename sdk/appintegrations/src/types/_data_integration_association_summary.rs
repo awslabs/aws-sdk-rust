@@ -62,6 +62,12 @@ impl DataIntegrationAssociationSummaryBuilder {
         self.data_integration_association_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the DataIntegration association.</p>
+    pub fn get_data_integration_association_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.data_integration_association_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the DataIntegration.</p>
     pub fn data_integration_arn(
         mut self,
@@ -78,6 +84,10 @@ impl DataIntegrationAssociationSummaryBuilder {
         self.data_integration_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the DataIntegration.</p>
+    pub fn get_data_integration_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_integration_arn
+    }
     /// <p>The identifier for the client that is associated with the DataIntegration association.</p>
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
@@ -87,6 +97,10 @@ impl DataIntegrationAssociationSummaryBuilder {
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_id = input;
         self
+    }
+    /// <p>The identifier for the client that is associated with the DataIntegration association.</p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_id
     }
     /// Consumes the builder and constructs a [`DataIntegrationAssociationSummary`](crate::types::DataIntegrationAssociationSummary).
     pub fn build(self) -> crate::types::DataIntegrationAssociationSummary {

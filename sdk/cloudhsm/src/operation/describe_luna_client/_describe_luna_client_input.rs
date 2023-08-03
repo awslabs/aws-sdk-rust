@@ -48,6 +48,10 @@ impl DescribeLunaClientInputBuilder {
         self.client_arn = input;
         self
     }
+    /// <p>The ARN of the client.</p>
+    pub fn get_client_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_arn
+    }
     /// <p>The certificate fingerprint.</p>
     pub fn certificate_fingerprint(
         mut self,
@@ -63,6 +67,10 @@ impl DescribeLunaClientInputBuilder {
     ) -> Self {
         self.certificate_fingerprint = input;
         self
+    }
+    /// <p>The certificate fingerprint.</p>
+    pub fn get_certificate_fingerprint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_fingerprint
     }
     /// Consumes the builder and constructs a [`DescribeLunaClientInput`](crate::operation::describe_luna_client::DescribeLunaClientInput).
     pub fn build(

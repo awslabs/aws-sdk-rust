@@ -37,6 +37,10 @@ impl AssociateInstanceEventWindowFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateInstanceEventWindow as a reference.
+    pub fn as_input(&self) -> &crate::operation::associate_instance_event_window::builders::AssociateInstanceEventWindowInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl AssociateInstanceEventWindowFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>The ID of the event window.</p>
     pub fn instance_event_window_id(
         mut self,
@@ -143,6 +151,10 @@ impl AssociateInstanceEventWindowFluentBuilder {
         self.inner = self.inner.set_instance_event_window_id(input);
         self
     }
+    /// <p>The ID of the event window.</p>
+    pub fn get_instance_event_window_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_event_window_id()
+    }
     /// <p>One or more targets associated with the specified event window.</p>
     pub fn association_target(
         mut self,
@@ -158,5 +170,11 @@ impl AssociateInstanceEventWindowFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_association_target(input);
         self
+    }
+    /// <p>One or more targets associated with the specified event window.</p>
+    pub fn get_association_target(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceEventWindowAssociationRequest> {
+        self.inner.get_association_target()
     }
 }

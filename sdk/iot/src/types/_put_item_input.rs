@@ -40,6 +40,10 @@ impl PutItemInputBuilder {
         self.table_name = input;
         self
     }
+    /// <p>The table where the message data will be written.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
+    }
     /// Consumes the builder and constructs a [`PutItemInput`](crate::types::PutItemInput).
     pub fn build(self) -> crate::types::PutItemInput {
         crate::types::PutItemInput {

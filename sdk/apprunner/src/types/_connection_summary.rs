@@ -78,6 +78,10 @@ impl ConnectionSummaryBuilder {
         self.connection_name = input;
         self
     }
+    /// <p>The customer-provided connection name.</p>
+    pub fn get_connection_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_name
+    }
     /// <p>The Amazon Resource Name (ARN) of this connection.</p>
     pub fn connection_arn(
         mut self,
@@ -94,6 +98,10 @@ impl ConnectionSummaryBuilder {
         self.connection_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of this connection.</p>
+    pub fn get_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_arn
+    }
     /// <p>The source repository provider.</p>
     pub fn provider_type(mut self, input: crate::types::ProviderType) -> Self {
         self.provider_type = ::std::option::Option::Some(input);
@@ -106,6 +114,10 @@ impl ConnectionSummaryBuilder {
     ) -> Self {
         self.provider_type = input;
         self
+    }
+    /// <p>The source repository provider.</p>
+    pub fn get_provider_type(&self) -> &::std::option::Option<crate::types::ProviderType> {
+        &self.provider_type
     }
     /// <p>The current state of the App Runner connection. When the state is <code>AVAILABLE</code>, you can use the connection to create an App Runner service.</p>
     pub fn status(mut self, input: crate::types::ConnectionStatus) -> Self {
@@ -120,6 +132,10 @@ impl ConnectionSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The current state of the App Runner connection. When the state is <code>AVAILABLE</code>, you can use the connection to create an App Runner service.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ConnectionStatus> {
+        &self.status
+    }
     /// <p>The App Runner connection creation time, expressed as a Unix time stamp.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -132,6 +148,10 @@ impl ConnectionSummaryBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The App Runner connection creation time, expressed as a Unix time stamp.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// Consumes the builder and constructs a [`ConnectionSummary`](crate::types::ConnectionSummary).
     pub fn build(self) -> crate::types::ConnectionSummary {

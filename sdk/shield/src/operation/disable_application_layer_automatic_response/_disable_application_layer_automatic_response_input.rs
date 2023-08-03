@@ -39,6 +39,10 @@ impl DisableApplicationLayerAutomaticResponseInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The ARN (Amazon Resource Name) of the protected resource.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// Consumes the builder and constructs a [`DisableApplicationLayerAutomaticResponseInput`](crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

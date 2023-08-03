@@ -120,6 +120,10 @@ impl UpdateBotRecommendationOutputBuilder {
         self.bot_id = input;
         self
     }
+    /// <p>The unique identifier of the bot containing the bot recommendation that has been updated.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
+    }
     /// <p>The version of the bot containing the bot recommendation that has been updated.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
@@ -130,6 +134,10 @@ impl UpdateBotRecommendationOutputBuilder {
         self.bot_version = input;
         self
     }
+    /// <p>The version of the bot containing the bot recommendation that has been updated.</p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_version
+    }
     /// <p>The identifier of the language and locale of the bot recommendation to update. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
@@ -139,6 +147,10 @@ impl UpdateBotRecommendationOutputBuilder {
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.locale_id = input;
         self
+    }
+    /// <p>The identifier of the language and locale of the bot recommendation to update. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
+    pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale_id
     }
     /// <p>The status of the bot recommendation.</p>
     /// <p>If the status is Failed, then the reasons for the failure are listed in the failureReasons field. </p>
@@ -158,6 +170,13 @@ impl UpdateBotRecommendationOutputBuilder {
         self.bot_recommendation_status = input;
         self
     }
+    /// <p>The status of the bot recommendation.</p>
+    /// <p>If the status is Failed, then the reasons for the failure are listed in the failureReasons field. </p>
+    pub fn get_bot_recommendation_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::BotRecommendationStatus> {
+        &self.bot_recommendation_status
+    }
     /// <p>The unique identifier of the bot recommendation to be updated.</p>
     pub fn bot_recommendation_id(
         mut self,
@@ -174,6 +193,10 @@ impl UpdateBotRecommendationOutputBuilder {
         self.bot_recommendation_id = input;
         self
     }
+    /// <p>The unique identifier of the bot recommendation to be updated.</p>
+    pub fn get_bot_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_recommendation_id
+    }
     /// <p>A timestamp of the date and time that the bot recommendation was created.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
@@ -187,6 +210,10 @@ impl UpdateBotRecommendationOutputBuilder {
         self.creation_date_time = input;
         self
     }
+    /// <p>A timestamp of the date and time that the bot recommendation was created.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
+    }
     /// <p>A timestamp of the date and time that the bot recommendation was last updated.</p>
     pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date_time = ::std::option::Option::Some(input);
@@ -199,6 +226,12 @@ impl UpdateBotRecommendationOutputBuilder {
     ) -> Self {
         self.last_updated_date_time = input;
         self
+    }
+    /// <p>A timestamp of the date and time that the bot recommendation was last updated.</p>
+    pub fn get_last_updated_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date_time
     }
     /// <p>The object representing the Amazon S3 bucket containing the transcript, as well as the associated metadata.</p>
     pub fn transcript_source_setting(
@@ -216,6 +249,12 @@ impl UpdateBotRecommendationOutputBuilder {
         self.transcript_source_setting = input;
         self
     }
+    /// <p>The object representing the Amazon S3 bucket containing the transcript, as well as the associated metadata.</p>
+    pub fn get_transcript_source_setting(
+        &self,
+    ) -> &::std::option::Option<crate::types::TranscriptSourceSetting> {
+        &self.transcript_source_setting
+    }
     /// <p>The object representing the passwords that were used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
     pub fn encryption_setting(mut self, input: crate::types::EncryptionSetting) -> Self {
         self.encryption_setting = ::std::option::Option::Some(input);
@@ -228,6 +267,12 @@ impl UpdateBotRecommendationOutputBuilder {
     ) -> Self {
         self.encryption_setting = input;
         self
+    }
+    /// <p>The object representing the passwords that were used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
+    pub fn get_encryption_setting(
+        &self,
+    ) -> &::std::option::Option<crate::types::EncryptionSetting> {
+        &self.encryption_setting
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -56,6 +56,12 @@ impl GetDeviceMethodsOutputBuilder {
         self.device_methods = input;
         self
     }
+    /// <p>List of available device APIs.</p>
+    pub fn get_device_methods(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceMethod>> {
+        &self.device_methods
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -37,6 +37,13 @@ impl DeleteObjectsOnCancelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteObjectsOnCancel as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_objects_on_cancel::builders::DeleteObjectsOnCancelInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl DeleteObjectsOnCancelFluentBuilder {
         self.inner = self.inner.set_catalog_id(input);
         self
     }
+    /// <p>The Glue data catalog that contains the governed table. Defaults to the current account ID.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_catalog_id()
+    }
     /// <p>The database that contains the governed table.</p>
     pub fn database_name(
         mut self,
@@ -143,6 +154,10 @@ impl DeleteObjectsOnCancelFluentBuilder {
         self.inner = self.inner.set_database_name(input);
         self
     }
+    /// <p>The database that contains the governed table.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_database_name()
+    }
     /// <p>The name of the governed table.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.table_name(input.into());
@@ -152,6 +167,10 @@ impl DeleteObjectsOnCancelFluentBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_table_name(input);
         self
+    }
+    /// <p>The name of the governed table.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_table_name()
     }
     /// <p>ID of the transaction that the writes occur in.</p>
     pub fn transaction_id(
@@ -169,6 +188,10 @@ impl DeleteObjectsOnCancelFluentBuilder {
         self.inner = self.inner.set_transaction_id(input);
         self
     }
+    /// <p>ID of the transaction that the writes occur in.</p>
+    pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_transaction_id()
+    }
     /// Appends an item to `Objects`.
     ///
     /// To override the contents of this collection use [`set_objects`](Self::set_objects).
@@ -185,5 +208,11 @@ impl DeleteObjectsOnCancelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_objects(input);
         self
+    }
+    /// <p>A list of VirtualObject structures, which indicates the Amazon S3 objects to be deleted if the transaction cancels.</p>
+    pub fn get_objects(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VirtualObject>> {
+        self.inner.get_objects()
     }
 }

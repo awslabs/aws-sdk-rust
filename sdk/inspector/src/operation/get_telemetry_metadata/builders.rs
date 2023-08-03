@@ -36,6 +36,12 @@ impl GetTelemetryMetadataFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetTelemetryMetadata as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_telemetry_metadata::builders::GetTelemetryMetadataInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl GetTelemetryMetadataFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_assessment_run_arn(input);
         self
+    }
+    /// <p>The ARN that specifies the assessment run that has the telemetry data that you want to obtain.</p>
+    pub fn get_assessment_run_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_assessment_run_arn()
     }
 }

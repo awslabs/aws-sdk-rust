@@ -64,6 +64,10 @@ impl SentimentScoreBuilder {
         self.positive = input;
         self
     }
+    /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>POSITIVE</code> sentiment.</p>
+    pub fn get_positive(&self) -> &::std::option::Option<f32> {
+        &self.positive
+    }
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>NEGATIVE</code> sentiment.</p>
     pub fn negative(mut self, input: f32) -> Self {
         self.negative = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl SentimentScoreBuilder {
     pub fn set_negative(mut self, input: ::std::option::Option<f32>) -> Self {
         self.negative = input;
         self
+    }
+    /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>NEGATIVE</code> sentiment.</p>
+    pub fn get_negative(&self) -> &::std::option::Option<f32> {
+        &self.negative
     }
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>NEUTRAL</code> sentiment.</p>
     pub fn neutral(mut self, input: f32) -> Self {
@@ -84,6 +92,10 @@ impl SentimentScoreBuilder {
         self.neutral = input;
         self
     }
+    /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>NEUTRAL</code> sentiment.</p>
+    pub fn get_neutral(&self) -> &::std::option::Option<f32> {
+        &self.neutral
+    }
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>MIXED</code> sentiment.</p>
     pub fn mixed(mut self, input: f32) -> Self {
         self.mixed = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl SentimentScoreBuilder {
     pub fn set_mixed(mut self, input: ::std::option::Option<f32>) -> Self {
         self.mixed = input;
         self
+    }
+    /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>MIXED</code> sentiment.</p>
+    pub fn get_mixed(&self) -> &::std::option::Option<f32> {
+        &self.mixed
     }
     /// Consumes the builder and constructs a [`SentimentScore`](crate::types::SentimentScore).
     pub fn build(self) -> crate::types::SentimentScore {

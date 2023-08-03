@@ -36,6 +36,13 @@ impl ListDomainsForPackageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListDomainsForPackage as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_domains_for_package::builders::ListDomainsForPackageInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +144,10 @@ impl ListDomainsForPackageFluentBuilder {
         self.inner = self.inner.set_package_id(input);
         self
     }
+    /// <p>The package for which to list domains.</p>
+    pub fn get_package_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_package_id()
+    }
     /// <p>Limits results to a maximum number of domains.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -147,6 +158,10 @@ impl ListDomainsForPackageFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>Limits results to a maximum number of domains.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -156,5 +171,9 @@ impl ListDomainsForPackageFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

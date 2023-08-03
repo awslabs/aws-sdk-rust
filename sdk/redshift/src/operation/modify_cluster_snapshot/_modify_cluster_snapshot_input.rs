@@ -67,6 +67,10 @@ impl ModifyClusterSnapshotInputBuilder {
         self.snapshot_identifier = input;
         self
     }
+    /// <p>The identifier of the snapshot whose setting you want to modify.</p>
+    pub fn get_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_identifier
+    }
     /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.</p>
     /// <p>If the manual snapshot falls outside of the new retention period, you can specify the force option to immediately delete the snapshot.</p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
@@ -84,6 +88,12 @@ impl ModifyClusterSnapshotInputBuilder {
         self.manual_snapshot_retention_period = input;
         self
     }
+    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.</p>
+    /// <p>If the manual snapshot falls outside of the new retention period, you can specify the force option to immediately delete the snapshot.</p>
+    /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
+    pub fn get_manual_snapshot_retention_period(&self) -> &::std::option::Option<i32> {
+        &self.manual_snapshot_retention_period
+    }
     /// <p>A Boolean option to override an exception if the retention period has already passed.</p>
     pub fn force(mut self, input: bool) -> Self {
         self.force = ::std::option::Option::Some(input);
@@ -93,6 +103,10 @@ impl ModifyClusterSnapshotInputBuilder {
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force = input;
         self
+    }
+    /// <p>A Boolean option to override an exception if the retention period has already passed.</p>
+    pub fn get_force(&self) -> &::std::option::Option<bool> {
+        &self.force
     }
     /// Consumes the builder and constructs a [`ModifyClusterSnapshotInput`](crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotInput).
     pub fn build(

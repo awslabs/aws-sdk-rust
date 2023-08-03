@@ -81,6 +81,10 @@ impl ThrottlingExceptionBuilder {
         self.exception_message = input;
         self
     }
+    /// <p>Request was denied due to request throttling.</p>
+    pub fn get_exception_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.exception_message
+    }
     #[allow(missing_docs)] // documentation missing in model
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl ThrottlingExceptionBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

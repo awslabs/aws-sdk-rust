@@ -36,6 +36,12 @@ impl EvaluateSessionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the EvaluateSession as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::evaluate_session::builders::EvaluateSessionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl EvaluateSessionFluentBuilder {
         self.inner = self.inner.set_domain_id(input);
         self
     }
+    /// <p>The identifier of the domain where the session started.</p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_id()
+    }
     /// <p>The session identifier, or name of the session, that you want to evaluate. In Voice ID integration, this is the Contact-Id.</p>
     pub fn session_name_or_id(
         mut self,
@@ -141,5 +151,9 @@ impl EvaluateSessionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_session_name_or_id(input);
         self
+    }
+    /// <p>The session identifier, or name of the session, that you want to evaluate. In Voice ID integration, this is the Contact-Id.</p>
+    pub fn get_session_name_or_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_session_name_or_id()
     }
 }

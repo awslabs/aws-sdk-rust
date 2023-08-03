@@ -66,6 +66,10 @@ impl StatusBuilder {
         self.document_id = input;
         self
     }
+    /// <p>The identifier of the document.</p>
+    pub fn get_document_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_id
+    }
     /// <p>The current status of a document.</p>
     /// <p>If the document was submitted for deletion, the status is <code>NOT_FOUND</code> after the document is deleted.</p>
     pub fn document_status(mut self, input: crate::types::DocumentStatus) -> Self {
@@ -81,6 +85,11 @@ impl StatusBuilder {
         self.document_status = input;
         self
     }
+    /// <p>The current status of a document.</p>
+    /// <p>If the document was submitted for deletion, the status is <code>NOT_FOUND</code> after the document is deleted.</p>
+    pub fn get_document_status(&self) -> &::std::option::Option<crate::types::DocumentStatus> {
+        &self.document_status
+    }
     /// <p>Indicates the source of the error.</p>
     pub fn failure_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_code = ::std::option::Option::Some(input.into());
@@ -90,6 +99,10 @@ impl StatusBuilder {
     pub fn set_failure_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_code = input;
         self
+    }
+    /// <p>Indicates the source of the error.</p>
+    pub fn get_failure_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_code
     }
     /// <p>Provides detailed information about why the document couldn't be indexed. Use this information to correct the error before you resubmit the document for indexing.</p>
     pub fn failure_reason(
@@ -106,6 +119,10 @@ impl StatusBuilder {
     ) -> Self {
         self.failure_reason = input;
         self
+    }
+    /// <p>Provides detailed information about why the document couldn't be indexed. Use this information to correct the error before you resubmit the document for indexing.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
     }
     /// Consumes the builder and constructs a [`Status`](crate::types::Status).
     pub fn build(self) -> crate::types::Status {

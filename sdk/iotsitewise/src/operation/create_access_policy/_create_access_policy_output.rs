@@ -63,6 +63,10 @@ impl CreateAccessPolicyOutputBuilder {
         self.access_policy_id = input;
         self
     }
+    /// <p>The ID of the access policy.</p>
+    pub fn get_access_policy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_policy_id
+    }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code> </p>
     pub fn access_policy_arn(
@@ -80,6 +84,11 @@ impl CreateAccessPolicyOutputBuilder {
     ) -> Self {
         self.access_policy_arn = input;
         self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code> </p>
+    pub fn get_access_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_policy_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

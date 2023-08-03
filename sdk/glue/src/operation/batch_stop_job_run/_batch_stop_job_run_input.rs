@@ -48,6 +48,10 @@ impl BatchStopJobRunInputBuilder {
         self.job_name = input;
         self
     }
+    /// <p>The name of the job definition for which to stop job runs.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
+    }
     /// Appends an item to `job_run_ids`.
     ///
     /// To override the contents of this collection use [`set_job_run_ids`](Self::set_job_run_ids).
@@ -66,6 +70,12 @@ impl BatchStopJobRunInputBuilder {
     ) -> Self {
         self.job_run_ids = input;
         self
+    }
+    /// <p>A list of the <code>JobRunIds</code> that should be stopped for that job definition.</p>
+    pub fn get_job_run_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.job_run_ids
     }
     /// Consumes the builder and constructs a [`BatchStopJobRunInput`](crate::operation::batch_stop_job_run::BatchStopJobRunInput).
     pub fn build(

@@ -64,6 +64,10 @@ impl FilterBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the transform node.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `inputs`.
     ///
     /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
@@ -83,6 +87,10 @@ impl FilterBuilder {
         self.inputs = input;
         self
     }
+    /// <p>The data inputs identified by their node names.</p>
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.inputs
+    }
     /// <p>The operator used to filter rows by comparing the key value to a specified value.</p>
     pub fn logical_operator(mut self, input: crate::types::FilterLogicalOperator) -> Self {
         self.logical_operator = ::std::option::Option::Some(input);
@@ -95,6 +103,12 @@ impl FilterBuilder {
     ) -> Self {
         self.logical_operator = input;
         self
+    }
+    /// <p>The operator used to filter rows by comparing the key value to a specified value.</p>
+    pub fn get_logical_operator(
+        &self,
+    ) -> &::std::option::Option<crate::types::FilterLogicalOperator> {
+        &self.logical_operator
     }
     /// Appends an item to `filters`.
     ///
@@ -114,6 +128,12 @@ impl FilterBuilder {
     ) -> Self {
         self.filters = input;
         self
+    }
+    /// <p>Specifies a filter expression.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterExpression>> {
+        &self.filters
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
     pub fn build(self) -> crate::types::Filter {

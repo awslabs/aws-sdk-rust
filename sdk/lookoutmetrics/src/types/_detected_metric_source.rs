@@ -43,6 +43,12 @@ impl DetectedMetricSourceBuilder {
         self.s3_source_config = input;
         self
     }
+    /// <p>The data source's source configuration.</p>
+    pub fn get_s3_source_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::DetectedS3SourceConfig> {
+        &self.s3_source_config
+    }
     /// Consumes the builder and constructs a [`DetectedMetricSource`](crate::types::DetectedMetricSource).
     pub fn build(self) -> crate::types::DetectedMetricSource {
         crate::types::DetectedMetricSource {

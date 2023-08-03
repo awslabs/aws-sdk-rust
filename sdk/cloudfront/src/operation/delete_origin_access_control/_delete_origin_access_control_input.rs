@@ -47,6 +47,10 @@ impl DeleteOriginAccessControlInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier of the origin access control that you are deleting.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The current version (<code>ETag</code> value) of the origin access control that you are deleting.</p>
     pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.if_match = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl DeleteOriginAccessControlInputBuilder {
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.if_match = input;
         self
+    }
+    /// <p>The current version (<code>ETag</code> value) of the origin access control that you are deleting.</p>
+    pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
+        &self.if_match
     }
     /// Consumes the builder and constructs a [`DeleteOriginAccessControlInput`](crate::operation::delete_origin_access_control::DeleteOriginAccessControlInput).
     pub fn build(

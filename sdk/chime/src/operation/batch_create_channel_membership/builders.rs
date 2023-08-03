@@ -42,6 +42,10 @@ impl BatchCreateChannelMembershipFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchCreateChannelMembership as a reference.
+    pub fn as_input(&self) -> &crate::operation::batch_create_channel_membership::builders::BatchCreateChannelMembershipInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl BatchCreateChannelMembershipFluentBuilder {
         self.inner = self.inner.set_channel_arn(input);
         self
     }
+    /// <p>The ARN of the channel to which you're adding users.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_arn()
+    }
     /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
     pub fn r#type(mut self, input: crate::types::ChannelMembershipType) -> Self {
         self.inner = self.inner.r#type(input);
@@ -144,6 +152,10 @@ impl BatchCreateChannelMembershipFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_type(input);
         self
+    }
+    /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ChannelMembershipType> {
+        self.inner.get_type()
     }
     /// Appends an item to `MemberArns`.
     ///
@@ -162,6 +174,12 @@ impl BatchCreateChannelMembershipFluentBuilder {
         self.inner = self.inner.set_member_arns(input);
         self
     }
+    /// <p>The ARNs of the members you want to add to the channel.</p>
+    pub fn get_member_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_member_arns()
+    }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.chime_bearer(input.into());
@@ -171,5 +189,9 @@ impl BatchCreateChannelMembershipFluentBuilder {
     pub fn set_chime_bearer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_chime_bearer(input);
         self
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_chime_bearer()
     }
 }

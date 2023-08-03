@@ -96,6 +96,10 @@ impl StreamInfoBuilder {
         self.stream_id = input;
         self
     }
+    /// <p>The stream ID.</p>
+    pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_id
+    }
     /// <p>The stream ARN.</p>
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_arn = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl StreamInfoBuilder {
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_arn = input;
         self
+    }
+    /// <p>The stream ARN.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_arn
     }
     /// <p>The stream version.</p>
     pub fn stream_version(mut self, input: i32) -> Self {
@@ -116,6 +124,10 @@ impl StreamInfoBuilder {
         self.stream_version = input;
         self
     }
+    /// <p>The stream version.</p>
+    pub fn get_stream_version(&self) -> &::std::option::Option<i32> {
+        &self.stream_version
+    }
     /// <p>The description of the stream.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -125,6 +137,10 @@ impl StreamInfoBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the stream.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `files`.
     ///
@@ -145,6 +161,10 @@ impl StreamInfoBuilder {
         self.files = input;
         self
     }
+    /// <p>The files to stream.</p>
+    pub fn get_files(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamFile>> {
+        &self.files
+    }
     /// <p>The date when the stream was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -157,6 +177,10 @@ impl StreamInfoBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The date when the stream was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// <p>The date when the stream was last updated.</p>
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -171,6 +195,10 @@ impl StreamInfoBuilder {
         self.last_updated_at = input;
         self
     }
+    /// <p>The date when the stream was last updated.</p>
+    pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_at
+    }
     /// <p>An IAM role IoT assumes to access your S3 files.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -180,6 +208,10 @@ impl StreamInfoBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>An IAM role IoT assumes to access your S3 files.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Consumes the builder and constructs a [`StreamInfo`](crate::types::StreamInfo).
     pub fn build(self) -> crate::types::StreamInfo {

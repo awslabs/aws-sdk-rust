@@ -55,6 +55,10 @@ impl ModifyInstanceMaintenanceOptionsInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The ID of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>Disables the automatic recovery behavior of your instance or sets it to default.</p>
     pub fn auto_recovery(mut self, input: crate::types::InstanceAutoRecoveryState) -> Self {
         self.auto_recovery = ::std::option::Option::Some(input);
@@ -68,6 +72,12 @@ impl ModifyInstanceMaintenanceOptionsInputBuilder {
         self.auto_recovery = input;
         self
     }
+    /// <p>Disables the automatic recovery behavior of your instance or sets it to default.</p>
+    pub fn get_auto_recovery(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceAutoRecoveryState> {
+        &self.auto_recovery
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -77,6 +87,10 @@ impl ModifyInstanceMaintenanceOptionsInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`ModifyInstanceMaintenanceOptionsInput`](crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsInput, ::aws_smithy_http::operation::error::BuildError>{

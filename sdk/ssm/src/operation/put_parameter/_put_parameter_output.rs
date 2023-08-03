@@ -54,6 +54,10 @@ impl PutParameterOutputBuilder {
         self.version = input;
         self
     }
+    /// <p>The new version number of a parameter. If you edit a parameter value, Parameter Store automatically creates a new version and assigns this new version a unique ID. You can reference a parameter version ID in API operations or in Systems Manager documents (SSM documents). By default, if you don't specify a specific version, the system returns the latest parameter value when a parameter is called.</p>
+    pub fn get_version(&self) -> &::std::option::Option<i64> {
+        &self.version
+    }
     /// <p>The tier assigned to the parameter.</p>
     pub fn tier(mut self, input: crate::types::ParameterTier) -> Self {
         self.tier = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl PutParameterOutputBuilder {
     pub fn set_tier(mut self, input: ::std::option::Option<crate::types::ParameterTier>) -> Self {
         self.tier = input;
         self
+    }
+    /// <p>The tier assigned to the parameter.</p>
+    pub fn get_tier(&self) -> &::std::option::Option<crate::types::ParameterTier> {
+        &self.tier
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

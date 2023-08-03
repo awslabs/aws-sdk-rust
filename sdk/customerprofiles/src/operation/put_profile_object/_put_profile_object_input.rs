@@ -62,6 +62,10 @@ impl PutProfileObjectInputBuilder {
         self.object_type_name = input;
         self
     }
+    /// <p>The name of the profile object type.</p>
+    pub fn get_object_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_type_name
+    }
     /// <p>A string that is serialized from a JSON object.</p>
     pub fn object(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl PutProfileObjectInputBuilder {
         self.object = input;
         self
     }
+    /// <p>A string that is serialized from a JSON object.</p>
+    pub fn get_object(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object
+    }
     /// <p>The unique name of the domain.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl PutProfileObjectInputBuilder {
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
+    }
+    /// <p>The unique name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
     }
     /// Consumes the builder and constructs a [`PutProfileObjectInput`](crate::operation::put_profile_object::PutProfileObjectInput).
     pub fn build(

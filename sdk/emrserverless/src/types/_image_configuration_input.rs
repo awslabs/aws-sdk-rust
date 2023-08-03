@@ -40,6 +40,10 @@ impl ImageConfigurationInputBuilder {
         self.image_uri = input;
         self
     }
+    /// <p>The URI of an image in the Amazon ECR registry. This field is required when you create a new application. If you leave this field blank in an update, Amazon EMR will remove the image configuration.</p>
+    pub fn get_image_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_uri
+    }
     /// Consumes the builder and constructs a [`ImageConfigurationInput`](crate::types::ImageConfigurationInput).
     pub fn build(self) -> crate::types::ImageConfigurationInput {
         crate::types::ImageConfigurationInput {

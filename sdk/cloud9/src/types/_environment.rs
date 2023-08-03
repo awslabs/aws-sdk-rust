@@ -155,6 +155,10 @@ impl EnvironmentBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the environment.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the environment.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -165,6 +169,10 @@ impl EnvironmentBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the environment.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description for the environment.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -174,6 +182,10 @@ impl EnvironmentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description for the environment.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The type of environment. Valid values include the following:</p>
     /// <ul>
@@ -193,6 +205,14 @@ impl EnvironmentBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of environment. Valid values include the following:</p>
+    /// <ul>
+    /// <li> <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p> </li>
+    /// <li> <p> <code>ssh</code>: Your own server connects to the environment.</p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::EnvironmentType> {
+        &self.r#type
+    }
     /// <p>The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code> is selected by default.</p>
     pub fn connection_type(mut self, input: crate::types::ConnectionType) -> Self {
         self.connection_type = ::std::option::Option::Some(input);
@@ -206,6 +226,10 @@ impl EnvironmentBuilder {
         self.connection_type = input;
         self
     }
+    /// <p>The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code> is selected by default.</p>
+    pub fn get_connection_type(&self) -> &::std::option::Option<crate::types::ConnectionType> {
+        &self.connection_type
+    }
     /// <p>The Amazon Resource Name (ARN) of the environment.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -216,6 +240,10 @@ impl EnvironmentBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the environment.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the environment owner.</p>
     pub fn owner_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_arn = ::std::option::Option::Some(input.into());
@@ -225,6 +253,10 @@ impl EnvironmentBuilder {
     pub fn set_owner_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the environment owner.</p>
+    pub fn get_owner_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_arn
     }
     /// <p>The state of the environment in its creation or deletion lifecycle.</p>
     pub fn lifecycle(mut self, input: crate::types::EnvironmentLifecycle) -> Self {
@@ -238,6 +270,10 @@ impl EnvironmentBuilder {
     ) -> Self {
         self.lifecycle = input;
         self
+    }
+    /// <p>The state of the environment in its creation or deletion lifecycle.</p>
+    pub fn get_lifecycle(&self) -> &::std::option::Option<crate::types::EnvironmentLifecycle> {
+        &self.lifecycle
     }
     /// <p>Describes the status of Amazon Web Services managed temporary credentials for the Cloud9 environment. Available values are:</p>
     /// <ul>
@@ -278,6 +314,24 @@ impl EnvironmentBuilder {
     ) -> Self {
         self.managed_credentials_status = input;
         self
+    }
+    /// <p>Describes the status of Amazon Web Services managed temporary credentials for the Cloud9 environment. Available values are:</p>
+    /// <ul>
+    /// <li> <p> <code>ENABLED_ON_CREATE</code> </p> </li>
+    /// <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li>
+    /// <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li>
+    /// <li> <p> <code>DISABLED_BY_OWNER</code> </p> </li>
+    /// <li> <p> <code>DISABLED_BY_COLLABORATOR</code> </p> </li>
+    /// <li> <p> <code>PENDING_REMOVAL_BY_COLLABORATOR</code> </p> </li>
+    /// <li> <p> <code>PENDING_REMOVAL_BY_OWNER</code> </p> </li>
+    /// <li> <p> <code>FAILED_REMOVAL_BY_COLLABORATOR</code> </p> </li>
+    /// <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li>
+    /// <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li>
+    /// </ul>
+    pub fn get_managed_credentials_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ManagedCredentialsStatus> {
+        &self.managed_credentials_status
     }
     /// Consumes the builder and constructs a [`Environment`](crate::types::Environment).
     pub fn build(self) -> crate::types::Environment {

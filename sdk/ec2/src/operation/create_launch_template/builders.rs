@@ -38,6 +38,12 @@ impl CreateLaunchTemplateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateLaunchTemplate as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_launch_template::builders::CreateLaunchTemplateInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +134,10 @@ impl CreateLaunchTemplateFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     /// <p>Constraint: Maximum 128 ASCII characters.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -139,6 +149,11 @@ impl CreateLaunchTemplateFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
+    /// <p>Constraint: Maximum 128 ASCII characters.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// <p>A name for the launch template.</p>
     pub fn launch_template_name(
@@ -156,6 +171,10 @@ impl CreateLaunchTemplateFluentBuilder {
         self.inner = self.inner.set_launch_template_name(input);
         self
     }
+    /// <p>A name for the launch template.</p>
+    pub fn get_launch_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_launch_template_name()
+    }
     /// <p>A description for the first version of the launch template.</p>
     pub fn version_description(
         mut self,
@@ -172,6 +191,10 @@ impl CreateLaunchTemplateFluentBuilder {
         self.inner = self.inner.set_version_description(input);
         self
     }
+    /// <p>A description for the first version of the launch template.</p>
+    pub fn get_version_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_version_description()
+    }
     /// <p>The information for the launch template.</p>
     pub fn launch_template_data(mut self, input: crate::types::RequestLaunchTemplateData) -> Self {
         self.inner = self.inner.launch_template_data(input);
@@ -184,6 +207,12 @@ impl CreateLaunchTemplateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_launch_template_data(input);
         self
+    }
+    /// <p>The information for the launch template.</p>
+    pub fn get_launch_template_data(
+        &self,
+    ) -> &::std::option::Option<crate::types::RequestLaunchTemplateData> {
+        self.inner.get_launch_template_data()
     }
     /// Appends an item to `TagSpecifications`.
     ///
@@ -205,5 +234,13 @@ impl CreateLaunchTemplateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
+    }
+    /// <p>The tags to apply to the launch template on creation. To tag the launch template, the resource type must be <code>launch-template</code>.</p> <note>
+    /// <p>To specify the tags for the resources that are created when an instance is launched, you must use the <code>TagSpecifications</code> parameter in the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestLaunchTemplateData.html">launch template data</a> structure.</p>
+    /// </note>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        self.inner.get_tag_specifications()
     }
 }

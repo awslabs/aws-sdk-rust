@@ -51,6 +51,10 @@ impl AuthInfoBuilder {
         self.action_type = input;
         self
     }
+    /// <p>The type of action for which the principal is being authorized.</p>
+    pub fn get_action_type(&self) -> &::std::option::Option<crate::types::ActionType> {
+        &self.action_type
+    }
     /// Appends an item to `resources`.
     ///
     /// To override the contents of this collection use [`set_resources`](Self::set_resources).
@@ -69,6 +73,10 @@ impl AuthInfoBuilder {
     ) -> Self {
         self.resources = input;
         self
+    }
+    /// <p>The resources for which the principal is being authorized to perform the specified action.</p>
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resources
     }
     /// Consumes the builder and constructs a [`AuthInfo`](crate::types::AuthInfo).
     pub fn build(self) -> crate::types::AuthInfo {

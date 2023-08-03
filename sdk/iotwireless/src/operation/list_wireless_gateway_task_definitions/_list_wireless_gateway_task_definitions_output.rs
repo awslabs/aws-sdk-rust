@@ -58,6 +58,10 @@ impl ListWirelessGatewayTaskDefinitionsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `task_definitions`.
     ///
     /// To override the contents of this collection use [`set_task_definitions`](Self::set_task_definitions).
@@ -76,6 +80,12 @@ impl ListWirelessGatewayTaskDefinitionsOutputBuilder {
     ) -> Self {
         self.task_definitions = input;
         self
+    }
+    /// <p>The list of task definitions.</p>
+    pub fn get_task_definitions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateWirelessGatewayTaskEntry>> {
+        &self.task_definitions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

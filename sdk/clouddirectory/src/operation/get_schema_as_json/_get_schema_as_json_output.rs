@@ -55,6 +55,10 @@ impl GetSchemaAsJsonOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the retrieved schema.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The JSON representation of the schema document.</p>
     pub fn document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl GetSchemaAsJsonOutputBuilder {
     pub fn set_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document = input;
         self
+    }
+    /// <p>The JSON representation of the schema document.</p>
+    pub fn get_document(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

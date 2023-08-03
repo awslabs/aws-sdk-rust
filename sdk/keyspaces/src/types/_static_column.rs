@@ -40,6 +40,10 @@ impl StaticColumnBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the static column.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`StaticColumn`](crate::types::StaticColumn).
     pub fn build(self) -> crate::types::StaticColumn {
         crate::types::StaticColumn { name: self.name }

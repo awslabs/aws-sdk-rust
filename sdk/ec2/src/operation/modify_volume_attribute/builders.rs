@@ -38,6 +38,13 @@ impl ModifyVolumeAttributeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyVolumeAttribute as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::modify_volume_attribute::builders::ModifyVolumeAttributeInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +138,12 @@ impl ModifyVolumeAttributeFluentBuilder {
         self.inner = self.inner.set_auto_enable_io(input);
         self
     }
+    /// <p>Indicates whether the volume should be auto-enabled for I/O operations.</p>
+    pub fn get_auto_enable_io(
+        &self,
+    ) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
+        self.inner.get_auto_enable_io()
+    }
     /// <p>The ID of the volume.</p>
     pub fn volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.volume_id(input.into());
@@ -141,6 +154,10 @@ impl ModifyVolumeAttributeFluentBuilder {
         self.inner = self.inner.set_volume_id(input);
         self
     }
+    /// <p>The ID of the volume.</p>
+    pub fn get_volume_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_volume_id()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -150,5 +167,9 @@ impl ModifyVolumeAttributeFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

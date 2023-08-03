@@ -88,6 +88,10 @@ impl CoreNetworkChangeValuesBuilder {
         self.segment_name = input;
         self
     }
+    /// <p>The names of the segments in a core network.</p>
+    pub fn get_segment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.segment_name
+    }
     /// Appends an item to `edge_locations`.
     ///
     /// To override the contents of this collection use [`set_edge_locations`](Self::set_edge_locations).
@@ -110,6 +114,12 @@ impl CoreNetworkChangeValuesBuilder {
         self.edge_locations = input;
         self
     }
+    /// <p>The Regions where edges are located in a core network. </p>
+    pub fn get_edge_locations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.edge_locations
+    }
     /// <p>The ASN of a core network.</p>
     pub fn asn(mut self, input: i64) -> Self {
         self.asn = ::std::option::Option::Some(input);
@@ -120,6 +130,10 @@ impl CoreNetworkChangeValuesBuilder {
         self.asn = input;
         self
     }
+    /// <p>The ASN of a core network.</p>
+    pub fn get_asn(&self) -> &::std::option::Option<i64> {
+        &self.asn
+    }
     /// <p>The IP addresses used for a core network.</p>
     pub fn cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cidr = ::std::option::Option::Some(input.into());
@@ -129,6 +143,10 @@ impl CoreNetworkChangeValuesBuilder {
     pub fn set_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cidr = input;
         self
+    }
+    /// <p>The IP addresses used for a core network.</p>
+    pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr
     }
     /// <p>The ID of the destination.</p>
     pub fn destination_identifier(
@@ -145,6 +163,10 @@ impl CoreNetworkChangeValuesBuilder {
     ) -> Self {
         self.destination_identifier = input;
         self
+    }
+    /// <p>The ID of the destination.</p>
+    pub fn get_destination_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_identifier
     }
     /// Appends an item to `inside_cidr_blocks`.
     ///
@@ -168,6 +190,12 @@ impl CoreNetworkChangeValuesBuilder {
         self.inside_cidr_blocks = input;
         self
     }
+    /// <p>The inside IP addresses used for core network change values.</p>
+    pub fn get_inside_cidr_blocks(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.inside_cidr_blocks
+    }
     /// Appends an item to `shared_segments`.
     ///
     /// To override the contents of this collection use [`set_shared_segments`](Self::set_shared_segments).
@@ -189,6 +217,12 @@ impl CoreNetworkChangeValuesBuilder {
     ) -> Self {
         self.shared_segments = input;
         self
+    }
+    /// <p>The shared segments for a core network change value. </p>
+    pub fn get_shared_segments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.shared_segments
     }
     /// Consumes the builder and constructs a [`CoreNetworkChangeValues`](crate::types::CoreNetworkChangeValues).
     pub fn build(self) -> crate::types::CoreNetworkChangeValues {

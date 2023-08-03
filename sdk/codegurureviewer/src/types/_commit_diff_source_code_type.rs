@@ -62,6 +62,10 @@ impl CommitDiffSourceCodeTypeBuilder {
         self.source_commit = input;
         self
     }
+    /// <p>The SHA of the source commit used to generate a commit diff. This field is required for a pull request code review.</p>
+    pub fn get_source_commit(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_commit
+    }
     /// <p>The SHA of the destination commit used to generate a commit diff. This field is required for a pull request code review.</p>
     pub fn destination_commit(
         mut self,
@@ -78,6 +82,10 @@ impl CommitDiffSourceCodeTypeBuilder {
         self.destination_commit = input;
         self
     }
+    /// <p>The SHA of the destination commit used to generate a commit diff. This field is required for a pull request code review.</p>
+    pub fn get_destination_commit(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_commit
+    }
     /// <p>The SHA of the merge base of a commit.</p>
     pub fn merge_base_commit(
         mut self,
@@ -93,6 +101,10 @@ impl CommitDiffSourceCodeTypeBuilder {
     ) -> Self {
         self.merge_base_commit = input;
         self
+    }
+    /// <p>The SHA of the merge base of a commit.</p>
+    pub fn get_merge_base_commit(&self) -> &::std::option::Option<::std::string::String> {
+        &self.merge_base_commit
     }
     /// Consumes the builder and constructs a [`CommitDiffSourceCodeType`](crate::types::CommitDiffSourceCodeType).
     pub fn build(self) -> crate::types::CommitDiffSourceCodeType {

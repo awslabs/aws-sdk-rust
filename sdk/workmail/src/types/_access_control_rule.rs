@@ -138,6 +138,10 @@ impl AccessControlRuleBuilder {
         self.name = input;
         self
     }
+    /// <p>The rule name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The rule effect.</p>
     pub fn effect(mut self, input: crate::types::AccessControlRuleEffect) -> Self {
         self.effect = ::std::option::Option::Some(input);
@@ -151,6 +155,10 @@ impl AccessControlRuleBuilder {
         self.effect = input;
         self
     }
+    /// <p>The rule effect.</p>
+    pub fn get_effect(&self) -> &::std::option::Option<crate::types::AccessControlRuleEffect> {
+        &self.effect
+    }
     /// <p>The rule description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -160,6 +168,10 @@ impl AccessControlRuleBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The rule description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `ip_ranges`.
     ///
@@ -179,6 +191,10 @@ impl AccessControlRuleBuilder {
     ) -> Self {
         self.ip_ranges = input;
         self
+    }
+    /// <p>IPv4 CIDR ranges to include in the rule.</p>
+    pub fn get_ip_ranges(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ip_ranges
     }
     /// Appends an item to `not_ip_ranges`.
     ///
@@ -202,6 +218,12 @@ impl AccessControlRuleBuilder {
         self.not_ip_ranges = input;
         self
     }
+    /// <p>IPv4 CIDR ranges to exclude from the rule.</p>
+    pub fn get_not_ip_ranges(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.not_ip_ranges
+    }
     /// Appends an item to `actions`.
     ///
     /// To override the contents of this collection use [`set_actions`](Self::set_actions).
@@ -220,6 +242,10 @@ impl AccessControlRuleBuilder {
     ) -> Self {
         self.actions = input;
         self
+    }
+    /// <p>Access protocol actions to include in the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.actions
     }
     /// Appends an item to `not_actions`.
     ///
@@ -240,6 +266,12 @@ impl AccessControlRuleBuilder {
         self.not_actions = input;
         self
     }
+    /// <p>Access protocol actions to exclude from the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+    pub fn get_not_actions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.not_actions
+    }
     /// Appends an item to `user_ids`.
     ///
     /// To override the contents of this collection use [`set_user_ids`](Self::set_user_ids).
@@ -258,6 +290,10 @@ impl AccessControlRuleBuilder {
     ) -> Self {
         self.user_ids = input;
         self
+    }
+    /// <p>User IDs to include in the rule.</p>
+    pub fn get_user_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.user_ids
     }
     /// Appends an item to `not_user_ids`.
     ///
@@ -278,6 +314,12 @@ impl AccessControlRuleBuilder {
         self.not_user_ids = input;
         self
     }
+    /// <p>User IDs to exclude from the rule.</p>
+    pub fn get_not_user_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.not_user_ids
+    }
     /// <p>The date that the rule was created.</p>
     pub fn date_created(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.date_created = ::std::option::Option::Some(input);
@@ -291,6 +333,10 @@ impl AccessControlRuleBuilder {
         self.date_created = input;
         self
     }
+    /// <p>The date that the rule was created.</p>
+    pub fn get_date_created(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.date_created
+    }
     /// <p>The date that the rule was modified.</p>
     pub fn date_modified(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.date_modified = ::std::option::Option::Some(input);
@@ -303,6 +349,10 @@ impl AccessControlRuleBuilder {
     ) -> Self {
         self.date_modified = input;
         self
+    }
+    /// <p>The date that the rule was modified.</p>
+    pub fn get_date_modified(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.date_modified
     }
     /// Appends an item to `impersonation_role_ids`.
     ///
@@ -326,6 +376,12 @@ impl AccessControlRuleBuilder {
         self.impersonation_role_ids = input;
         self
     }
+    /// <p>Impersonation role IDs to include in the rule.</p>
+    pub fn get_impersonation_role_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.impersonation_role_ids
+    }
     /// Appends an item to `not_impersonation_role_ids`.
     ///
     /// To override the contents of this collection use [`set_not_impersonation_role_ids`](Self::set_not_impersonation_role_ids).
@@ -347,6 +403,12 @@ impl AccessControlRuleBuilder {
     ) -> Self {
         self.not_impersonation_role_ids = input;
         self
+    }
+    /// <p>Impersonation role IDs to exclude from the rule.</p>
+    pub fn get_not_impersonation_role_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.not_impersonation_role_ids
     }
     /// Consumes the builder and constructs a [`AccessControlRule`](crate::types::AccessControlRule).
     pub fn build(self) -> crate::types::AccessControlRule {

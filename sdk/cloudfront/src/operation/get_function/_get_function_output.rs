@@ -73,6 +73,10 @@ impl GetFunctionOutputBuilder {
         self.function_code = input;
         self
     }
+    /// <p>The function code of a CloudFront function.</p>
+    pub fn get_function_code(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.function_code
+    }
     /// <p>The version identifier for the current version of the CloudFront function.</p>
     pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.e_tag = ::std::option::Option::Some(input.into());
@@ -83,6 +87,10 @@ impl GetFunctionOutputBuilder {
         self.e_tag = input;
         self
     }
+    /// <p>The version identifier for the current version of the CloudFront function.</p>
+    pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.e_tag
+    }
     /// <p>The content type (media type) of the response.</p>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
@@ -92,6 +100,10 @@ impl GetFunctionOutputBuilder {
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
         self
+    }
+    /// <p>The content type (media type) of the response.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_type
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

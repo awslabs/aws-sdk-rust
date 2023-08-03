@@ -44,6 +44,11 @@ impl CacheAttributesBuilder {
         self.cache_stale_timeout_in_seconds = input;
         self
     }
+    /// <p>Refreshes a file share's cache by using Time To Live (TTL). TTL is the length of time since the last refresh after which access to the directory would cause the file gateway to first refresh that directory's contents from the Amazon S3 bucket or Amazon FSx file system. The TTL duration is in seconds.</p>
+    /// <p>Valid Values:0, 300 to 2,592,000 seconds (5 minutes to 30 days)</p>
+    pub fn get_cache_stale_timeout_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.cache_stale_timeout_in_seconds
+    }
     /// Consumes the builder and constructs a [`CacheAttributes`](crate::types::CacheAttributes).
     pub fn build(self) -> crate::types::CacheAttributes {
         crate::types::CacheAttributes {

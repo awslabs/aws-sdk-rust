@@ -47,6 +47,10 @@ impl DescribeProcessingJobInputBuilder {
         self.processing_job_name = input;
         self
     }
+    /// <p>The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
+    pub fn get_processing_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.processing_job_name
+    }
     /// Consumes the builder and constructs a [`DescribeProcessingJobInput`](crate::operation::describe_processing_job::DescribeProcessingJobInput).
     pub fn build(
         self,

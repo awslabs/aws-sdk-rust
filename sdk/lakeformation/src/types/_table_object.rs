@@ -56,6 +56,10 @@ impl TableObjectBuilder {
         self.uri = input;
         self
     }
+    /// <p>The Amazon S3 location of the object.</p>
+    pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.uri
+    }
     /// <p>The Amazon S3 ETag of the object. Returned by <code>GetTableObjects</code> for validation and used to identify changes to the underlying data.</p>
     pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.e_tag = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl TableObjectBuilder {
         self.e_tag = input;
         self
     }
+    /// <p>The Amazon S3 ETag of the object. Returned by <code>GetTableObjects</code> for validation and used to identify changes to the underlying data.</p>
+    pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.e_tag
+    }
     /// <p>The size of the Amazon S3 object in bytes.</p>
     pub fn size(mut self, input: i64) -> Self {
         self.size = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl TableObjectBuilder {
     pub fn set_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.size = input;
         self
+    }
+    /// <p>The size of the Amazon S3 object in bytes.</p>
+    pub fn get_size(&self) -> &::std::option::Option<i64> {
+        &self.size
     }
     /// Consumes the builder and constructs a [`TableObject`](crate::types::TableObject).
     pub fn build(self) -> crate::types::TableObject {

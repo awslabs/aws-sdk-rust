@@ -36,6 +36,13 @@ impl DeleteHsmConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteHsmConfiguration as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_hsm_configuration::builders::DeleteHsmConfigurationInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +138,11 @@ impl DeleteHsmConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_hsm_configuration_identifier(input);
         self
+    }
+    /// <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
+    pub fn get_hsm_configuration_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_hsm_configuration_identifier()
     }
 }

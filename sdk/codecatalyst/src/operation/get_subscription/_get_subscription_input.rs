@@ -39,6 +39,10 @@ impl GetSubscriptionInputBuilder {
         self.space_name = input;
         self
     }
+    /// <p>The name of the space.</p>
+    pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.space_name
+    }
     /// Consumes the builder and constructs a [`GetSubscriptionInput`](crate::operation::get_subscription::GetSubscriptionInput).
     pub fn build(
         self,

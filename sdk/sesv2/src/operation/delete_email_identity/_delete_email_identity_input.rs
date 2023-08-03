@@ -48,6 +48,10 @@ impl DeleteEmailIdentityInputBuilder {
         self.email_identity = input;
         self
     }
+    /// <p>The identity (that is, the email address or domain) to delete.</p>
+    pub fn get_email_identity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email_identity
+    }
     /// Consumes the builder and constructs a [`DeleteEmailIdentityInput`](crate::operation::delete_email_identity::DeleteEmailIdentityInput).
     pub fn build(
         self,

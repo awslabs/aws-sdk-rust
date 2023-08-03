@@ -58,6 +58,10 @@ impl ListTlsInspectionConfigurationsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `tls_inspection_configurations`.
     ///
     /// To override the contents of this collection use [`set_tls_inspection_configurations`](Self::set_tls_inspection_configurations).
@@ -81,6 +85,13 @@ impl ListTlsInspectionConfigurationsOutputBuilder {
     ) -> Self {
         self.tls_inspection_configurations = input;
         self
+    }
+    /// <p>The TLS inspection configuration metadata objects that you've defined. Depending on your setting for max results and the number of TLS inspection configurations, this might not be the full list.</p>
+    pub fn get_tls_inspection_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TlsInspectionConfigurationMetadata>>
+    {
+        &self.tls_inspection_configurations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

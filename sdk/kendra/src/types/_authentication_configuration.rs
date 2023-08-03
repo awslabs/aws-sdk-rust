@@ -62,6 +62,14 @@ impl AuthenticationConfigurationBuilder {
         self.basic_authentication = input;
         self
     }
+    /// <p>The list of configuration information that's required to connect to and crawl a website host using basic authentication credentials.</p>
+    /// <p>The list includes the name and port number of the website host.</p>
+    pub fn get_basic_authentication(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BasicAuthenticationConfiguration>>
+    {
+        &self.basic_authentication
+    }
     /// Consumes the builder and constructs a [`AuthenticationConfiguration`](crate::types::AuthenticationConfiguration).
     pub fn build(self) -> crate::types::AuthenticationConfiguration {
         crate::types::AuthenticationConfiguration {

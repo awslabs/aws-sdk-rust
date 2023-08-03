@@ -104,6 +104,10 @@ impl AssociationSummaryBuilder {
         self.source_arn = input;
         self
     }
+    /// <p>The ARN of the source.</p>
+    pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
     pub fn destination_arn(
         mut self,
@@ -120,6 +124,10 @@ impl AssociationSummaryBuilder {
         self.destination_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the destination.</p>
+    pub fn get_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_arn
+    }
     /// <p>The source type.</p>
     pub fn source_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_type = ::std::option::Option::Some(input.into());
@@ -129,6 +137,10 @@ impl AssociationSummaryBuilder {
     pub fn set_source_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_type = input;
         self
+    }
+    /// <p>The source type.</p>
+    pub fn get_source_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_type
     }
     /// <p>The destination type.</p>
     pub fn destination_type(
@@ -146,6 +158,10 @@ impl AssociationSummaryBuilder {
         self.destination_type = input;
         self
     }
+    /// <p>The destination type.</p>
+    pub fn get_destination_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_type
+    }
     /// <p>The type of the association.</p>
     pub fn association_type(mut self, input: crate::types::AssociationEdgeType) -> Self {
         self.association_type = ::std::option::Option::Some(input);
@@ -159,6 +175,12 @@ impl AssociationSummaryBuilder {
         self.association_type = input;
         self
     }
+    /// <p>The type of the association.</p>
+    pub fn get_association_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::AssociationEdgeType> {
+        &self.association_type
+    }
     /// <p>The name of the source.</p>
     pub fn source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_name = ::std::option::Option::Some(input.into());
@@ -168,6 +190,10 @@ impl AssociationSummaryBuilder {
     pub fn set_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_name = input;
         self
+    }
+    /// <p>The name of the source.</p>
+    pub fn get_source_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_name
     }
     /// <p>The name of the destination.</p>
     pub fn destination_name(
@@ -185,6 +211,10 @@ impl AssociationSummaryBuilder {
         self.destination_name = input;
         self
     }
+    /// <p>The name of the destination.</p>
+    pub fn get_destination_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_name
+    }
     /// <p>When the association was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -198,6 +228,10 @@ impl AssociationSummaryBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>When the association was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn created_by(mut self, input: crate::types::UserContext) -> Self {
         self.created_by = ::std::option::Option::Some(input);
@@ -210,6 +244,10 @@ impl AssociationSummaryBuilder {
     ) -> Self {
         self.created_by = input;
         self
+    }
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<crate::types::UserContext> {
+        &self.created_by
     }
     /// Consumes the builder and constructs a [`AssociationSummary`](crate::types::AssociationSummary).
     pub fn build(self) -> crate::types::AssociationSummary {

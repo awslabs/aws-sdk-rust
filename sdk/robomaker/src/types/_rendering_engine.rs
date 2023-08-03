@@ -51,6 +51,10 @@ impl RenderingEngineBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the rendering engine.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::RenderingEngineType> {
+        &self.name
+    }
     /// <p>The version of the rendering engine.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl RenderingEngineBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The version of the rendering engine.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`RenderingEngine`](crate::types::RenderingEngine).
     pub fn build(self) -> crate::types::RenderingEngine {

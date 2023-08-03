@@ -46,6 +46,10 @@ impl DescribeComputeOutputBuilder {
         self.compute = input;
         self
     }
+    /// <p>The details of the compute resource you registered to the specified fleet.</p>
+    pub fn get_compute(&self) -> &::std::option::Option<crate::types::Compute> {
+        &self.compute
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

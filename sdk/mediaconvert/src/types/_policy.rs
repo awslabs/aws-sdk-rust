@@ -59,6 +59,10 @@ impl PolicyBuilder {
         self.http_inputs = input;
         self
     }
+    /// Allow or disallow jobs that specify HTTP inputs.
+    pub fn get_http_inputs(&self) -> &::std::option::Option<crate::types::InputPolicy> {
+        &self.http_inputs
+    }
     /// Allow or disallow jobs that specify HTTPS inputs.
     pub fn https_inputs(mut self, input: crate::types::InputPolicy) -> Self {
         self.https_inputs = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl PolicyBuilder {
         self.https_inputs = input;
         self
     }
+    /// Allow or disallow jobs that specify HTTPS inputs.
+    pub fn get_https_inputs(&self) -> &::std::option::Option<crate::types::InputPolicy> {
+        &self.https_inputs
+    }
     /// Allow or disallow jobs that specify Amazon S3 inputs.
     pub fn s3_inputs(mut self, input: crate::types::InputPolicy) -> Self {
         self.s3_inputs = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl PolicyBuilder {
     ) -> Self {
         self.s3_inputs = input;
         self
+    }
+    /// Allow or disallow jobs that specify Amazon S3 inputs.
+    pub fn get_s3_inputs(&self) -> &::std::option::Option<crate::types::InputPolicy> {
+        &self.s3_inputs
     }
     /// Consumes the builder and constructs a [`Policy`](crate::types::Policy).
     pub fn build(self) -> crate::types::Policy {

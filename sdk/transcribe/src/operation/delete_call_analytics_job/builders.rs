@@ -37,6 +37,13 @@ impl DeleteCallAnalyticsJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteCallAnalyticsJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_call_analytics_job::builders::DeleteCallAnalyticsJobInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +139,9 @@ impl DeleteCallAnalyticsJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_call_analytics_job_name(input);
         self
+    }
+    /// <p>The name of the Call Analytics job you want to delete. Job names are case sensitive.</p>
+    pub fn get_call_analytics_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_call_analytics_job_name()
     }
 }

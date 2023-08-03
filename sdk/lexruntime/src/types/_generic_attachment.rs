@@ -72,6 +72,10 @@ impl GenericAttachmentBuilder {
         self.title = input;
         self
     }
+    /// <p>The title of the option.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
+    }
     /// <p>The subtitle shown below the title.</p>
     pub fn sub_title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sub_title = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl GenericAttachmentBuilder {
     pub fn set_sub_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sub_title = input;
         self
+    }
+    /// <p>The subtitle shown below the title.</p>
+    pub fn get_sub_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sub_title
     }
     /// <p>The URL of an attachment to the response card.</p>
     pub fn attachment_link_url(
@@ -98,6 +106,10 @@ impl GenericAttachmentBuilder {
         self.attachment_link_url = input;
         self
     }
+    /// <p>The URL of an attachment to the response card.</p>
+    pub fn get_attachment_link_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attachment_link_url
+    }
     /// <p>The URL of an image that is displayed to the user.</p>
     pub fn image_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_url = ::std::option::Option::Some(input.into());
@@ -107,6 +119,10 @@ impl GenericAttachmentBuilder {
     pub fn set_image_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_url = input;
         self
+    }
+    /// <p>The URL of an image that is displayed to the user.</p>
+    pub fn get_image_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_url
     }
     /// Appends an item to `buttons`.
     ///
@@ -126,6 +142,10 @@ impl GenericAttachmentBuilder {
     ) -> Self {
         self.buttons = input;
         self
+    }
+    /// <p>The list of options to show to the user.</p>
+    pub fn get_buttons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Button>> {
+        &self.buttons
     }
     /// Consumes the builder and constructs a [`GenericAttachment`](crate::types::GenericAttachment).
     pub fn build(self) -> crate::types::GenericAttachment {

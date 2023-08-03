@@ -40,6 +40,10 @@ impl JourneyCustomMessageBuilder {
         self.data = input;
         self
     }
+    /// <p>The message content that's passed to an AWS Lambda function or to a web hook.</p>
+    pub fn get_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data
+    }
     /// Consumes the builder and constructs a [`JourneyCustomMessage`](crate::types::JourneyCustomMessage).
     pub fn build(self) -> crate::types::JourneyCustomMessage {
         crate::types::JourneyCustomMessage { data: self.data }

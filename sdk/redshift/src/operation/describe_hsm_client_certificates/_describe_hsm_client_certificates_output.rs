@@ -59,6 +59,10 @@ impl DescribeHsmClientCertificatesOutputBuilder {
         self.marker = input;
         self
     }
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// Appends an item to `hsm_client_certificates`.
     ///
     /// To override the contents of this collection use [`set_hsm_client_certificates`](Self::set_hsm_client_certificates).
@@ -77,6 +81,12 @@ impl DescribeHsmClientCertificatesOutputBuilder {
     ) -> Self {
         self.hsm_client_certificates = input;
         self
+    }
+    /// <p>A list of the identifiers for one or more HSM client certificates used by Amazon Redshift clusters to store and retrieve database encryption keys in an HSM.</p>
+    pub fn get_hsm_client_certificates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HsmClientCertificate>> {
+        &self.hsm_client_certificates
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

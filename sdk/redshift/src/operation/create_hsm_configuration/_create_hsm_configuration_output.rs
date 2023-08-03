@@ -51,6 +51,10 @@ impl CreateHsmConfigurationOutputBuilder {
         self.hsm_configuration = input;
         self
     }
+    /// <p>Returns information about an HSM configuration, which is an object that describes to Amazon Redshift clusters the information they require to connect to an HSM where they can store database encryption keys.</p>
+    pub fn get_hsm_configuration(&self) -> &::std::option::Option<crate::types::HsmConfiguration> {
+        &self.hsm_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

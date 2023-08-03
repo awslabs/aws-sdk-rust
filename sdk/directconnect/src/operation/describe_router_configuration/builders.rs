@@ -36,6 +36,10 @@ impl DescribeRouterConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeRouterConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_router_configuration::builders::DescribeRouterConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl DescribeRouterConfigurationFluentBuilder {
         self.inner = self.inner.set_virtual_interface_id(input);
         self
     }
+    /// <p>The ID of the virtual interface.</p>
+    pub fn get_virtual_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_virtual_interface_id()
+    }
     /// <p>Identifies the router by a combination of vendor, platform, and software version. For example, <code>CiscoSystemsInc-2900SeriesRouters-IOS124</code>.</p>
     pub fn router_type_identifier(
         mut self,
@@ -147,5 +155,9 @@ impl DescribeRouterConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_router_type_identifier(input);
         self
+    }
+    /// <p>Identifies the router by a combination of vendor, platform, and software version. For example, <code>CiscoSystemsInc-2900SeriesRouters-IOS124</code>.</p>
+    pub fn get_router_type_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_router_type_identifier()
     }
 }

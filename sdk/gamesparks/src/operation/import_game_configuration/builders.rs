@@ -38,6 +38,13 @@ impl ImportGameConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ImportGameConfiguration as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::import_game_configuration::builders::ImportGameConfigurationInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +135,10 @@ impl ImportGameConfigurationFluentBuilder {
         self.inner = self.inner.set_game_name(input);
         self
     }
+    /// <p>The name of the game.</p>
+    pub fn get_game_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_game_name()
+    }
     /// <p>The source used to import configuration sections.</p>
     pub fn import_source(mut self, input: crate::types::ImportGameConfigurationSource) -> Self {
         self.inner = self.inner.import_source(input);
@@ -140,5 +151,11 @@ impl ImportGameConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_import_source(input);
         self
+    }
+    /// <p>The source used to import configuration sections.</p>
+    pub fn get_import_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImportGameConfigurationSource> {
+        self.inner.get_import_source()
     }
 }

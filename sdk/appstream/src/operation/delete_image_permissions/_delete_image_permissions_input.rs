@@ -49,6 +49,10 @@ impl DeleteImagePermissionsInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the private image.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The 12-digit identifier of the AWS account for which to delete image permissions.</p>
     pub fn shared_account_id(
         mut self,
@@ -64,6 +68,10 @@ impl DeleteImagePermissionsInputBuilder {
     ) -> Self {
         self.shared_account_id = input;
         self
+    }
+    /// <p>The 12-digit identifier of the AWS account for which to delete image permissions.</p>
+    pub fn get_shared_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.shared_account_id
     }
     /// Consumes the builder and constructs a [`DeleteImagePermissionsInput`](crate::operation::delete_image_permissions::DeleteImagePermissionsInput).
     pub fn build(

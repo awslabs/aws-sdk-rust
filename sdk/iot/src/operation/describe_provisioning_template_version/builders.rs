@@ -37,6 +37,10 @@ impl DescribeProvisioningTemplateVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeProvisioningTemplateVersion as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_provisioning_template_version::builders::DescribeProvisioningTemplateVersionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -107,6 +111,10 @@ impl DescribeProvisioningTemplateVersionFluentBuilder {
         self.inner = self.inner.set_template_name(input);
         self
     }
+    /// <p>The template name.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_name()
+    }
     /// <p>The provisioning template version ID.</p>
     pub fn version_id(mut self, input: i32) -> Self {
         self.inner = self.inner.version_id(input);
@@ -116,5 +124,9 @@ impl DescribeProvisioningTemplateVersionFluentBuilder {
     pub fn set_version_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_version_id(input);
         self
+    }
+    /// <p>The provisioning template version ID.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<i32> {
+        self.inner.get_version_id()
     }
 }

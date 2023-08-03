@@ -47,6 +47,10 @@ impl DescribeTestExecutionInputBuilder {
         self.test_execution_id = input;
         self
     }
+    /// <p>The execution Id of the test set execution.</p>
+    pub fn get_test_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.test_execution_id
+    }
     /// Consumes the builder and constructs a [`DescribeTestExecutionInput`](crate::operation::describe_test_execution::DescribeTestExecutionInput).
     pub fn build(
         self,

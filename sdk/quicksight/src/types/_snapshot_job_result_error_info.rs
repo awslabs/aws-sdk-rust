@@ -54,6 +54,10 @@ impl SnapshotJobResultErrorInfoBuilder {
         self.error_message = input;
         self
     }
+    /// <p>The error message.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
+    }
     /// <p>The error type.</p>
     pub fn error_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_type = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl SnapshotJobResultErrorInfoBuilder {
     pub fn set_error_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_type = input;
         self
+    }
+    /// <p>The error type.</p>
+    pub fn get_error_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_type
     }
     /// Consumes the builder and constructs a [`SnapshotJobResultErrorInfo`](crate::types::SnapshotJobResultErrorInfo).
     pub fn build(self) -> crate::types::SnapshotJobResultErrorInfo {

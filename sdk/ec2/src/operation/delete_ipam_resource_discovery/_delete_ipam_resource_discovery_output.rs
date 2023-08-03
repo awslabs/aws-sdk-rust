@@ -51,6 +51,12 @@ impl DeleteIpamResourceDiscoveryOutputBuilder {
         self.ipam_resource_discovery = input;
         self
     }
+    /// <p>The IPAM resource discovery.</p>
+    pub fn get_ipam_resource_discovery(
+        &self,
+    ) -> &::std::option::Option<crate::types::IpamResourceDiscovery> {
+        &self.ipam_resource_discovery
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -64,6 +64,10 @@ impl LoadBasedAutoScalingConfigurationBuilder {
         self.layer_id = input;
         self
     }
+    /// <p>The layer ID.</p>
+    pub fn get_layer_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.layer_id
+    }
     /// <p>Whether load-based auto scaling is enabled for the layer.</p>
     pub fn enable(mut self, input: bool) -> Self {
         self.enable = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl LoadBasedAutoScalingConfigurationBuilder {
     pub fn set_enable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable = input;
         self
+    }
+    /// <p>Whether load-based auto scaling is enabled for the layer.</p>
+    pub fn get_enable(&self) -> &::std::option::Option<bool> {
+        &self.enable
     }
     /// <p>An <code>AutoScalingThresholds</code> object that describes the upscaling configuration, which defines how and when AWS OpsWorks Stacks increases the number of instances.</p>
     pub fn up_scaling(mut self, input: crate::types::AutoScalingThresholds) -> Self {
@@ -87,6 +95,10 @@ impl LoadBasedAutoScalingConfigurationBuilder {
         self.up_scaling = input;
         self
     }
+    /// <p>An <code>AutoScalingThresholds</code> object that describes the upscaling configuration, which defines how and when AWS OpsWorks Stacks increases the number of instances.</p>
+    pub fn get_up_scaling(&self) -> &::std::option::Option<crate::types::AutoScalingThresholds> {
+        &self.up_scaling
+    }
     /// <p>An <code>AutoScalingThresholds</code> object that describes the downscaling configuration, which defines how and when AWS OpsWorks Stacks reduces the number of instances.</p>
     pub fn down_scaling(mut self, input: crate::types::AutoScalingThresholds) -> Self {
         self.down_scaling = ::std::option::Option::Some(input);
@@ -99,6 +111,10 @@ impl LoadBasedAutoScalingConfigurationBuilder {
     ) -> Self {
         self.down_scaling = input;
         self
+    }
+    /// <p>An <code>AutoScalingThresholds</code> object that describes the downscaling configuration, which defines how and when AWS OpsWorks Stacks reduces the number of instances.</p>
+    pub fn get_down_scaling(&self) -> &::std::option::Option<crate::types::AutoScalingThresholds> {
+        &self.down_scaling
     }
     /// Consumes the builder and constructs a [`LoadBasedAutoScalingConfiguration`](crate::types::LoadBasedAutoScalingConfiguration).
     pub fn build(self) -> crate::types::LoadBasedAutoScalingConfiguration {

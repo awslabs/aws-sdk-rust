@@ -51,6 +51,10 @@ impl SystemInstanceFilterBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the search filter field.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::SystemInstanceFilterName> {
+        &self.name
+    }
     /// Appends an item to `value`.
     ///
     /// To override the contents of this collection use [`set_value`](Self::set_value).
@@ -69,6 +73,10 @@ impl SystemInstanceFilterBuilder {
     ) -> Self {
         self.value = input;
         self
+    }
+    /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search. </p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`SystemInstanceFilter`](crate::types::SystemInstanceFilter).
     pub fn build(self) -> crate::types::SystemInstanceFilter {

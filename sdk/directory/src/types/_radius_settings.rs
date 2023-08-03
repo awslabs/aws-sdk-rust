@@ -123,6 +123,12 @@ impl RadiusSettingsBuilder {
         self.radius_servers = input;
         self
     }
+    /// <p>An array of strings that contains the fully qualified domain name (FQDN) or IP addresses of the RADIUS server endpoints, or the FQDN or IP addresses of your RADIUS server load balancer.</p>
+    pub fn get_radius_servers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.radius_servers
+    }
     /// <p>The port that your RADIUS server is using for communications. Your self-managed network must allow inbound traffic over this port from the Directory Service servers.</p>
     pub fn radius_port(mut self, input: i32) -> Self {
         self.radius_port = ::std::option::Option::Some(input);
@@ -132,6 +138,10 @@ impl RadiusSettingsBuilder {
     pub fn set_radius_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.radius_port = input;
         self
+    }
+    /// <p>The port that your RADIUS server is using for communications. Your self-managed network must allow inbound traffic over this port from the Directory Service servers.</p>
+    pub fn get_radius_port(&self) -> &::std::option::Option<i32> {
+        &self.radius_port
     }
     /// <p>The amount of time, in seconds, to wait for the RADIUS server to respond.</p>
     pub fn radius_timeout(mut self, input: i32) -> Self {
@@ -143,6 +153,10 @@ impl RadiusSettingsBuilder {
         self.radius_timeout = input;
         self
     }
+    /// <p>The amount of time, in seconds, to wait for the RADIUS server to respond.</p>
+    pub fn get_radius_timeout(&self) -> &::std::option::Option<i32> {
+        &self.radius_timeout
+    }
     /// <p>The maximum number of times that communication with the RADIUS server is attempted.</p>
     pub fn radius_retries(mut self, input: i32) -> Self {
         self.radius_retries = ::std::option::Option::Some(input);
@@ -152,6 +166,10 @@ impl RadiusSettingsBuilder {
     pub fn set_radius_retries(mut self, input: ::std::option::Option<i32>) -> Self {
         self.radius_retries = input;
         self
+    }
+    /// <p>The maximum number of times that communication with the RADIUS server is attempted.</p>
+    pub fn get_radius_retries(&self) -> &::std::option::Option<i32> {
+        &self.radius_retries
     }
     /// <p>Required for enabling RADIUS on the directory.</p>
     pub fn shared_secret(
@@ -169,6 +187,10 @@ impl RadiusSettingsBuilder {
         self.shared_secret = input;
         self
     }
+    /// <p>Required for enabling RADIUS on the directory.</p>
+    pub fn get_shared_secret(&self) -> &::std::option::Option<::std::string::String> {
+        &self.shared_secret
+    }
     /// <p>The protocol specified for your RADIUS endpoints.</p>
     pub fn authentication_protocol(
         mut self,
@@ -184,6 +206,12 @@ impl RadiusSettingsBuilder {
     ) -> Self {
         self.authentication_protocol = input;
         self
+    }
+    /// <p>The protocol specified for your RADIUS endpoints.</p>
+    pub fn get_authentication_protocol(
+        &self,
+    ) -> &::std::option::Option<crate::types::RadiusAuthenticationProtocol> {
+        &self.authentication_protocol
     }
     /// <p>Not currently used.</p>
     pub fn display_label(
@@ -202,6 +230,10 @@ impl RadiusSettingsBuilder {
         self
     }
     /// <p>Not currently used.</p>
+    pub fn get_display_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_label
+    }
+    /// <p>Not currently used.</p>
     pub fn use_same_username(mut self, input: bool) -> Self {
         self.use_same_username = ::std::option::Option::Some(input);
         self
@@ -210,6 +242,10 @@ impl RadiusSettingsBuilder {
     pub fn set_use_same_username(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_same_username = input;
         self
+    }
+    /// <p>Not currently used.</p>
+    pub fn get_use_same_username(&self) -> &::std::option::Option<bool> {
+        &self.use_same_username
     }
     /// Consumes the builder and constructs a [`RadiusSettings`](crate::types::RadiusSettings).
     pub fn build(self) -> crate::types::RadiusSettings {

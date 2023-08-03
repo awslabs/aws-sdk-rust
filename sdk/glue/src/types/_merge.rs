@@ -66,6 +66,10 @@ impl MergeBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the transform node.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `inputs`.
     ///
     /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
@@ -85,6 +89,10 @@ impl MergeBuilder {
         self.inputs = input;
         self
     }
+    /// <p>The data inputs identified by their node names.</p>
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.inputs
+    }
     /// <p>The source <code>DynamicFrame</code> that will be merged with a staging <code>DynamicFrame</code>.</p>
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source = ::std::option::Option::Some(input.into());
@@ -94,6 +102,10 @@ impl MergeBuilder {
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source = input;
         self
+    }
+    /// <p>The source <code>DynamicFrame</code> that will be merged with a staging <code>DynamicFrame</code>.</p>
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source
     }
     /// Appends an item to `primary_keys`.
     ///
@@ -113,6 +125,12 @@ impl MergeBuilder {
     ) -> Self {
         self.primary_keys = input;
         self
+    }
+    /// <p>The list of primary key fields to match records from the source and staging dynamic frames.</p>
+    pub fn get_primary_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>> {
+        &self.primary_keys
     }
     /// Consumes the builder and constructs a [`Merge`](crate::types::Merge).
     pub fn build(self) -> crate::types::Merge {

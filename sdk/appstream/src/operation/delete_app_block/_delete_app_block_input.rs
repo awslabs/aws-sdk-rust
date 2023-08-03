@@ -39,6 +39,10 @@ impl DeleteAppBlockInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the app block.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DeleteAppBlockInput`](crate::operation::delete_app_block::DeleteAppBlockInput).
     pub fn build(
         self,

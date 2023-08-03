@@ -51,6 +51,10 @@ impl GetSchemaAnalysisRuleOutputBuilder {
         self.analysis_rule = input;
         self
     }
+    /// <p>A specification about how data from the configured table can be used.</p>
+    pub fn get_analysis_rule(&self) -> &::std::option::Option<crate::types::AnalysisRule> {
+        &self.analysis_rule
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -47,6 +47,12 @@ impl UploadMultipartPartFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UploadMultipartPart as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::upload_multipart_part::builders::UploadMultipartPartInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl UploadMultipartPartFluentBuilder {
         self.inner = self.inner.set_account_id(input);
         self
     }
+    /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// <p>The name of the vault.</p>
     pub fn vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vault_name(input.into());
@@ -146,6 +156,10 @@ impl UploadMultipartPartFluentBuilder {
     pub fn set_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vault_name(input);
         self
+    }
+    /// <p>The name of the vault.</p>
+    pub fn get_vault_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vault_name()
     }
     /// <p>The upload ID of the multipart upload.</p>
     pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -157,6 +171,10 @@ impl UploadMultipartPartFluentBuilder {
         self.inner = self.inner.set_upload_id(input);
         self
     }
+    /// <p>The upload ID of the multipart upload.</p>
+    pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_upload_id()
+    }
     /// <p>The SHA256 tree hash of the data being uploaded.</p>
     pub fn checksum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.checksum(input.into());
@@ -167,6 +185,10 @@ impl UploadMultipartPartFluentBuilder {
         self.inner = self.inner.set_checksum(input);
         self
     }
+    /// <p>The SHA256 tree hash of the data being uploaded.</p>
+    pub fn get_checksum(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_checksum()
+    }
     /// <p>Identifies the range of bytes in the assembled archive that will be uploaded in this part. Amazon S3 Glacier uses this information to assemble the archive in the proper sequence. The format of this header follows RFC 2616. An example header is Content-Range:bytes 0-4194303/*.</p>
     pub fn range(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.range(input.into());
@@ -176,6 +198,10 @@ impl UploadMultipartPartFluentBuilder {
     pub fn set_range(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_range(input);
         self
+    }
+    /// <p>Identifies the range of bytes in the assembled archive that will be uploaded in this part. Amazon S3 Glacier uses this information to assemble the archive in the proper sequence. The format of this header follows RFC 2616. An example header is Content-Range:bytes 0-4194303/*.</p>
+    pub fn get_range(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_range()
     }
     /// <p>The data to upload.</p>
     pub fn body(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
@@ -189,5 +215,9 @@ impl UploadMultipartPartFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_body(input);
         self
+    }
+    /// <p>The data to upload.</p>
+    pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+        self.inner.get_body()
     }
 }

@@ -53,6 +53,10 @@ impl TableFieldLinkConfigurationBuilder {
         self.target = input;
         self
     }
+    /// <p>The URL target (new tab, new window, same tab) for the table link configuration.</p>
+    pub fn get_target(&self) -> &::std::option::Option<crate::types::UrlTargetConfiguration> {
+        &self.target
+    }
     /// <p>The URL content (text, icon) for the table link configuration.</p>
     pub fn content(mut self, input: crate::types::TableFieldLinkContentConfiguration) -> Self {
         self.content = ::std::option::Option::Some(input);
@@ -65,6 +69,12 @@ impl TableFieldLinkConfigurationBuilder {
     ) -> Self {
         self.content = input;
         self
+    }
+    /// <p>The URL content (text, icon) for the table link configuration.</p>
+    pub fn get_content(
+        &self,
+    ) -> &::std::option::Option<crate::types::TableFieldLinkContentConfiguration> {
+        &self.content
     }
     /// Consumes the builder and constructs a [`TableFieldLinkConfiguration`](crate::types::TableFieldLinkConfiguration).
     pub fn build(self) -> crate::types::TableFieldLinkConfiguration {

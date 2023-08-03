@@ -39,6 +39,10 @@ impl CreateDomainInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name for your Cases domain. It must be unique for your Amazon Web Services account.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`CreateDomainInput`](crate::operation::create_domain::CreateDomainInput).
     pub fn build(
         self,

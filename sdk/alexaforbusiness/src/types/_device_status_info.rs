@@ -71,6 +71,12 @@ impl DeviceStatusInfoBuilder {
         self.device_status_details = input;
         self
     }
+    /// <p>One or more device status detail descriptions.</p>
+    pub fn get_device_status_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceStatusDetail>> {
+        &self.device_status_details
+    }
     /// <p>The latest available information about the connection status of a device. </p>
     pub fn connection_status(mut self, input: crate::types::ConnectionStatus) -> Self {
         self.connection_status = ::std::option::Option::Some(input);
@@ -84,6 +90,10 @@ impl DeviceStatusInfoBuilder {
         self.connection_status = input;
         self
     }
+    /// <p>The latest available information about the connection status of a device. </p>
+    pub fn get_connection_status(&self) -> &::std::option::Option<crate::types::ConnectionStatus> {
+        &self.connection_status
+    }
     /// <p>The time (in epoch) when the device connection status changed.</p>
     pub fn connection_status_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.connection_status_updated_time = ::std::option::Option::Some(input);
@@ -96,6 +106,12 @@ impl DeviceStatusInfoBuilder {
     ) -> Self {
         self.connection_status_updated_time = input;
         self
+    }
+    /// <p>The time (in epoch) when the device connection status changed.</p>
+    pub fn get_connection_status_updated_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.connection_status_updated_time
     }
     /// Consumes the builder and constructs a [`DeviceStatusInfo`](crate::types::DeviceStatusInfo).
     pub fn build(self) -> crate::types::DeviceStatusInfo {

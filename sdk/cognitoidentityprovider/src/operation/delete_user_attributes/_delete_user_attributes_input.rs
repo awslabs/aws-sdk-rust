@@ -71,6 +71,13 @@ impl DeleteUserAttributesInputBuilder {
         self.user_attribute_names = input;
         self
     }
+    /// <p>An array of strings representing the user attribute names you want to delete.</p>
+    /// <p>For custom attributes, you must prependattach the <code>custom:</code> prefix to the front of the attribute name.</p>
+    pub fn get_user_attribute_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.user_attribute_names
+    }
     /// <p>A valid access token that Amazon Cognito issued to the user whose attributes you want to delete.</p>
     pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_token = ::std::option::Option::Some(input.into());
@@ -80,6 +87,10 @@ impl DeleteUserAttributesInputBuilder {
     pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_token = input;
         self
+    }
+    /// <p>A valid access token that Amazon Cognito issued to the user whose attributes you want to delete.</p>
+    pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_token
     }
     /// Consumes the builder and constructs a [`DeleteUserAttributesInput`](crate::operation::delete_user_attributes::DeleteUserAttributesInput).
     pub fn build(

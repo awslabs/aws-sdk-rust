@@ -36,6 +36,10 @@ impl CreateFieldFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateField as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_field::builders::CreateFieldInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl CreateFieldFluentBuilder {
         self.inner = self.inner.set_domain_id(input);
         self
     }
+    /// <p>The unique identifier of the Cases domain. </p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_id()
+    }
     /// <p>The name of the field.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -127,6 +135,10 @@ impl CreateFieldFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the field.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>Defines the data type, some system constraints, and default display of the field.</p>
     pub fn r#type(mut self, input: crate::types::FieldType) -> Self {
@@ -138,6 +150,10 @@ impl CreateFieldFluentBuilder {
         self.inner = self.inner.set_type(input);
         self
     }
+    /// <p>Defines the data type, some system constraints, and default display of the field.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::FieldType> {
+        self.inner.get_type()
+    }
     /// <p>The description of the field.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -147,5 +163,9 @@ impl CreateFieldFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the field.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
 }

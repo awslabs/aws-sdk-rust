@@ -63,6 +63,10 @@ impl DeleteDocumentInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the document.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The version of the document that you want to delete. If not provided, all versions of the document are deleted.</p>
     pub fn document_version(
         mut self,
@@ -79,6 +83,10 @@ impl DeleteDocumentInputBuilder {
         self.document_version = input;
         self
     }
+    /// <p>The version of the document that you want to delete. If not provided, all versions of the document are deleted.</p>
+    pub fn get_document_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_version
+    }
     /// <p>The version name of the document that you want to delete. If not provided, all versions of the document are deleted.</p>
     pub fn version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_name = ::std::option::Option::Some(input.into());
@@ -89,6 +97,10 @@ impl DeleteDocumentInputBuilder {
         self.version_name = input;
         self
     }
+    /// <p>The version name of the document that you want to delete. If not provided, all versions of the document are deleted.</p>
+    pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_name
+    }
     /// <p>Some SSM document types require that you specify a <code>Force</code> flag before you can delete the document. For example, you must specify a <code>Force</code> flag to delete a document of type <code>ApplicationConfigurationSchema</code>. You can restrict access to the <code>Force</code> flag in an Identity and Access Management (IAM) policy.</p>
     pub fn force(mut self, input: bool) -> Self {
         self.force = ::std::option::Option::Some(input);
@@ -98,6 +110,10 @@ impl DeleteDocumentInputBuilder {
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force = input;
         self
+    }
+    /// <p>Some SSM document types require that you specify a <code>Force</code> flag before you can delete the document. For example, you must specify a <code>Force</code> flag to delete a document of type <code>ApplicationConfigurationSchema</code>. You can restrict access to the <code>Force</code> flag in an Identity and Access Management (IAM) policy.</p>
+    pub fn get_force(&self) -> &::std::option::Option<bool> {
+        &self.force
     }
     /// Consumes the builder and constructs a [`DeleteDocumentInput`](crate::operation::delete_document::DeleteDocumentInput).
     pub fn build(

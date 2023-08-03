@@ -51,6 +51,10 @@ impl PutAutoTerminationPolicyInputBuilder {
         self.cluster_id = input;
         self
     }
+    /// <p>Specifies the ID of the Amazon EMR cluster to which the auto-termination policy will be attached.</p>
+    pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_id
+    }
     /// <p>Specifies the auto-termination policy to attach to the cluster.</p>
     pub fn auto_termination_policy(mut self, input: crate::types::AutoTerminationPolicy) -> Self {
         self.auto_termination_policy = ::std::option::Option::Some(input);
@@ -63,6 +67,12 @@ impl PutAutoTerminationPolicyInputBuilder {
     ) -> Self {
         self.auto_termination_policy = input;
         self
+    }
+    /// <p>Specifies the auto-termination policy to attach to the cluster.</p>
+    pub fn get_auto_termination_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoTerminationPolicy> {
+        &self.auto_termination_policy
     }
     /// Consumes the builder and constructs a [`PutAutoTerminationPolicyInput`](crate::operation::put_auto_termination_policy::PutAutoTerminationPolicyInput).
     pub fn build(

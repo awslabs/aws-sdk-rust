@@ -75,6 +75,13 @@ impl DocumentAttributeTargetBuilder {
         self.target_document_attribute_key = input;
         self
     }
+    /// <p>The identifier of the target document attribute or metadata field.</p>
+    /// <p>For example, 'Department' could be an identifier for the target attribute or metadata field that includes the department names associated with the documents.</p>
+    pub fn get_target_document_attribute_key(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.target_document_attribute_key
+    }
     /// <p> <code>TRUE</code> to delete the existing target value for your specified target attribute key. You cannot create a target value and set this to <code>TRUE</code>. To create a target value (<code>TargetDocumentAttributeValue</code>), set this to <code>FALSE</code>.</p>
     pub fn target_document_attribute_value_deletion(mut self, input: bool) -> Self {
         self.target_document_attribute_value_deletion = ::std::option::Option::Some(input);
@@ -87,6 +94,10 @@ impl DocumentAttributeTargetBuilder {
     ) -> Self {
         self.target_document_attribute_value_deletion = input;
         self
+    }
+    /// <p> <code>TRUE</code> to delete the existing target value for your specified target attribute key. You cannot create a target value and set this to <code>TRUE</code>. To create a target value (<code>TargetDocumentAttributeValue</code>), set this to <code>FALSE</code>.</p>
+    pub fn get_target_document_attribute_value_deletion(&self) -> &::std::option::Option<bool> {
+        &self.target_document_attribute_value_deletion
     }
     /// <p>The target value you want to create for the target attribute.</p>
     /// <p>For example, 'Finance' could be the target value for the target attribute key 'Department'.</p>
@@ -105,6 +116,13 @@ impl DocumentAttributeTargetBuilder {
     ) -> Self {
         self.target_document_attribute_value = input;
         self
+    }
+    /// <p>The target value you want to create for the target attribute.</p>
+    /// <p>For example, 'Finance' could be the target value for the target attribute key 'Department'.</p>
+    pub fn get_target_document_attribute_value(
+        &self,
+    ) -> &::std::option::Option<crate::types::DocumentAttributeValue> {
+        &self.target_document_attribute_value
     }
     /// Consumes the builder and constructs a [`DocumentAttributeTarget`](crate::types::DocumentAttributeTarget).
     pub fn build(self) -> crate::types::DocumentAttributeTarget {

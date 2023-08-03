@@ -42,6 +42,10 @@ impl ListTagsForResourceInputBuilder {
         self.resource = input;
         self
     }
+    /// <p>An ARN of a CloudFront resource.</p>
+    pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource
+    }
     /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::operation::list_tags_for_resource::ListTagsForResourceInput).
     pub fn build(
         self,

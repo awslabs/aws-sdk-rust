@@ -37,6 +37,12 @@ impl DescribeClustersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeClusters as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_clusters::builders::DescribeClustersInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -160,6 +166,17 @@ impl DescribeClustersFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>One or more filters to limit the items returned in the response.</p>
+    /// <p>Use the <code>clusterIds</code> filter to return only the specified clusters. Specify clusters by their cluster identifier (ID).</p>
+    /// <p>Use the <code>vpcIds</code> filter to return only the clusters in the specified virtual private clouds (VPCs). Specify VPCs by their VPC identifier (ID).</p>
+    /// <p>Use the <code>states</code> filter to return only clusters that match the specified state.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
+    > {
+        self.inner.get_filters()
+    }
     /// <p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more clusters.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -170,6 +187,10 @@ impl DescribeClustersFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more clusters.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of clusters to return in the response. When there are more clusters than the number you specify, the response contains a <code>NextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -179,5 +200,9 @@ impl DescribeClustersFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of clusters to return in the response. When there are more clusters than the number you specify, the response contains a <code>NextToken</code> value.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

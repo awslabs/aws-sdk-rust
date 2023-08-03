@@ -51,6 +51,10 @@ impl FreeFormLayoutElementBorderStyleBuilder {
         self.visibility = input;
         self
     }
+    /// <p>The border visibility of a free-form layout element.</p>
+    pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.visibility
+    }
     /// <p>The border color of a free-form layout element.</p>
     pub fn color(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.color = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl FreeFormLayoutElementBorderStyleBuilder {
     pub fn set_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.color = input;
         self
+    }
+    /// <p>The border color of a free-form layout element.</p>
+    pub fn get_color(&self) -> &::std::option::Option<::std::string::String> {
+        &self.color
     }
     /// Consumes the builder and constructs a [`FreeFormLayoutElementBorderStyle`](crate::types::FreeFormLayoutElementBorderStyle).
     pub fn build(self) -> crate::types::FreeFormLayoutElementBorderStyle {

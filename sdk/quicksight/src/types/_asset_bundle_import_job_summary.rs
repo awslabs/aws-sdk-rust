@@ -77,6 +77,12 @@ impl AssetBundleImportJobSummaryBuilder {
         self.job_status = input;
         self
     }
+    /// <p>The current status of the import job.</p>
+    pub fn get_job_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::AssetBundleImportJobStatus> {
+        &self.job_status
+    }
     /// <p>The ARN of the import job.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -86,6 +92,10 @@ impl AssetBundleImportJobSummaryBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The ARN of the import job.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The time that the import job was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -99,6 +109,10 @@ impl AssetBundleImportJobSummaryBuilder {
     ) -> Self {
         self.created_time = input;
         self
+    }
+    /// <p>The time that the import job was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
     }
     /// <p>The ID of the job. This ID is unique while the job is running. After the job is completed, you can reuse this ID for another job.</p>
     pub fn asset_bundle_import_job_id(
@@ -116,6 +130,10 @@ impl AssetBundleImportJobSummaryBuilder {
         self.asset_bundle_import_job_id = input;
         self
     }
+    /// <p>The ID of the job. This ID is unique while the job is running. After the job is completed, you can reuse this ID for another job.</p>
+    pub fn get_asset_bundle_import_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_bundle_import_job_id
+    }
     /// <p>The failure action for the import job.</p>
     pub fn failure_action(mut self, input: crate::types::AssetBundleImportFailureAction) -> Self {
         self.failure_action = ::std::option::Option::Some(input);
@@ -128,6 +146,12 @@ impl AssetBundleImportJobSummaryBuilder {
     ) -> Self {
         self.failure_action = input;
         self
+    }
+    /// <p>The failure action for the import job.</p>
+    pub fn get_failure_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::AssetBundleImportFailureAction> {
+        &self.failure_action
     }
     /// Consumes the builder and constructs a [`AssetBundleImportJobSummary`](crate::types::AssetBundleImportJobSummary).
     pub fn build(self) -> crate::types::AssetBundleImportJobSummary {

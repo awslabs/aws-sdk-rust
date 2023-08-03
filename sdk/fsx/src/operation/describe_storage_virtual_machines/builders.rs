@@ -36,6 +36,10 @@ impl DescribeStorageVirtualMachinesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeStorageVirtualMachines as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_storage_virtual_machines::builders::DescribeStorageVirtualMachinesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -116,6 +120,12 @@ impl DescribeStorageVirtualMachinesFluentBuilder {
         self.inner = self.inner.set_storage_virtual_machine_ids(input);
         self
     }
+    /// <p>Enter the ID of one or more SVMs that you want to view.</p>
+    pub fn get_storage_virtual_machine_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_storage_virtual_machine_ids()
+    }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -133,6 +143,12 @@ impl DescribeStorageVirtualMachinesFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>Enter a filter name:value pair to view a select set of SVMs.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StorageVirtualMachineFilter>> {
+        self.inner.get_filters()
+    }
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -143,6 +159,10 @@ impl DescribeStorageVirtualMachinesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -152,5 +172,9 @@ impl DescribeStorageVirtualMachinesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

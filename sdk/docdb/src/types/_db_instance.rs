@@ -265,6 +265,10 @@ impl DbInstanceBuilder {
         self.db_instance_identifier = input;
         self
     }
+    /// <p>Contains a user-provided database identifier. This identifier is the unique key that identifies an instance.</p>
+    pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_instance_identifier
+    }
     /// <p>Contains the name of the compute and memory capacity class of the instance.</p>
     pub fn db_instance_class(
         mut self,
@@ -281,6 +285,10 @@ impl DbInstanceBuilder {
         self.db_instance_class = input;
         self
     }
+    /// <p>Contains the name of the compute and memory capacity class of the instance.</p>
+    pub fn get_db_instance_class(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_instance_class
+    }
     /// <p>Provides the name of the database engine to be used for this instance.</p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
@@ -290,6 +298,10 @@ impl DbInstanceBuilder {
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
         self
+    }
+    /// <p>Provides the name of the database engine to be used for this instance.</p>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine
     }
     /// <p>Specifies the current state of this database.</p>
     pub fn db_instance_status(
@@ -307,6 +319,10 @@ impl DbInstanceBuilder {
         self.db_instance_status = input;
         self
     }
+    /// <p>Specifies the current state of this database.</p>
+    pub fn get_db_instance_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_instance_status
+    }
     /// <p>Specifies the connection endpoint.</p>
     pub fn endpoint(mut self, input: crate::types::Endpoint) -> Self {
         self.endpoint = ::std::option::Option::Some(input);
@@ -316,6 +332,10 @@ impl DbInstanceBuilder {
     pub fn set_endpoint(mut self, input: ::std::option::Option<crate::types::Endpoint>) -> Self {
         self.endpoint = input;
         self
+    }
+    /// <p>Specifies the connection endpoint.</p>
+    pub fn get_endpoint(&self) -> &::std::option::Option<crate::types::Endpoint> {
+        &self.endpoint
     }
     /// <p>Provides the date and time that the instance was created.</p>
     pub fn instance_create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -329,6 +349,10 @@ impl DbInstanceBuilder {
     ) -> Self {
         self.instance_create_time = input;
         self
+    }
+    /// <p>Provides the date and time that the instance was created.</p>
+    pub fn get_instance_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.instance_create_time
     }
     /// <p> Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>. </p>
     pub fn preferred_backup_window(
@@ -346,6 +370,10 @@ impl DbInstanceBuilder {
         self.preferred_backup_window = input;
         self
     }
+    /// <p> Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>. </p>
+    pub fn get_preferred_backup_window(&self) -> &::std::option::Option<::std::string::String> {
+        &self.preferred_backup_window
+    }
     /// <p>Specifies the number of days for which automatic snapshots are retained.</p>
     pub fn backup_retention_period(mut self, input: i32) -> Self {
         self.backup_retention_period = ::std::option::Option::Some(input);
@@ -355,6 +383,10 @@ impl DbInstanceBuilder {
     pub fn set_backup_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.backup_retention_period = input;
         self
+    }
+    /// <p>Specifies the number of days for which automatic snapshots are retained.</p>
+    pub fn get_backup_retention_period(&self) -> &::std::option::Option<i32> {
+        &self.backup_retention_period
     }
     /// Appends an item to `vpc_security_groups`.
     ///
@@ -375,6 +407,12 @@ impl DbInstanceBuilder {
         self.vpc_security_groups = input;
         self
     }
+    /// <p>Provides a list of VPC security group elements that the instance belongs to.</p>
+    pub fn get_vpc_security_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>> {
+        &self.vpc_security_groups
+    }
     /// <p>Specifies the name of the Availability Zone that the instance is located in.</p>
     pub fn availability_zone(
         mut self,
@@ -391,6 +429,10 @@ impl DbInstanceBuilder {
         self.availability_zone = input;
         self
     }
+    /// <p>Specifies the name of the Availability Zone that the instance is located in.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p>Specifies information on the subnet group that is associated with the instance, including the name, description, and subnets in the subnet group.</p>
     pub fn db_subnet_group(mut self, input: crate::types::DbSubnetGroup) -> Self {
         self.db_subnet_group = ::std::option::Option::Some(input);
@@ -403,6 +445,10 @@ impl DbInstanceBuilder {
     ) -> Self {
         self.db_subnet_group = input;
         self
+    }
+    /// <p>Specifies information on the subnet group that is associated with the instance, including the name, description, and subnets in the subnet group.</p>
+    pub fn get_db_subnet_group(&self) -> &::std::option::Option<crate::types::DbSubnetGroup> {
+        &self.db_subnet_group
     }
     /// <p>Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     pub fn preferred_maintenance_window(
@@ -420,6 +466,12 @@ impl DbInstanceBuilder {
         self.preferred_maintenance_window = input;
         self
     }
+    /// <p>Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
+    pub fn get_preferred_maintenance_window(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.preferred_maintenance_window
+    }
     /// <p>Specifies that changes to the instance are pending. This element is included only when changes are pending. Specific changes are identified by subelements.</p>
     pub fn pending_modified_values(mut self, input: crate::types::PendingModifiedValues) -> Self {
         self.pending_modified_values = ::std::option::Option::Some(input);
@@ -433,6 +485,12 @@ impl DbInstanceBuilder {
         self.pending_modified_values = input;
         self
     }
+    /// <p>Specifies that changes to the instance are pending. This element is included only when changes are pending. Specific changes are identified by subelements.</p>
+    pub fn get_pending_modified_values(
+        &self,
+    ) -> &::std::option::Option<crate::types::PendingModifiedValues> {
+        &self.pending_modified_values
+    }
     /// <p>Specifies the latest time to which a database can be restored with point-in-time restore.</p>
     pub fn latest_restorable_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.latest_restorable_time = ::std::option::Option::Some(input);
@@ -445,6 +503,12 @@ impl DbInstanceBuilder {
     ) -> Self {
         self.latest_restorable_time = input;
         self
+    }
+    /// <p>Specifies the latest time to which a database can be restored with point-in-time restore.</p>
+    pub fn get_latest_restorable_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.latest_restorable_time
     }
     /// <p>Indicates the database engine version.</p>
     pub fn engine_version(
@@ -462,6 +526,10 @@ impl DbInstanceBuilder {
         self.engine_version = input;
         self
     }
+    /// <p>Indicates the database engine version.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
+    }
     /// <p>Does not apply. This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform minor version upgrades regardless of the value set.</p>
     pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
         self.auto_minor_version_upgrade = ::std::option::Option::Some(input);
@@ -472,6 +540,10 @@ impl DbInstanceBuilder {
         self.auto_minor_version_upgrade = input;
         self
     }
+    /// <p>Does not apply. This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform minor version upgrades regardless of the value set.</p>
+    pub fn get_auto_minor_version_upgrade(&self) -> &::std::option::Option<bool> {
+        &self.auto_minor_version_upgrade
+    }
     /// <p>Not supported. Amazon DocumentDB does not currently support public endpoints. The value of <code>PubliclyAccessible</code> is always <code>false</code>.</p>
     pub fn publicly_accessible(mut self, input: bool) -> Self {
         self.publicly_accessible = ::std::option::Option::Some(input);
@@ -481,6 +553,10 @@ impl DbInstanceBuilder {
     pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
         self.publicly_accessible = input;
         self
+    }
+    /// <p>Not supported. Amazon DocumentDB does not currently support public endpoints. The value of <code>PubliclyAccessible</code> is always <code>false</code>.</p>
+    pub fn get_publicly_accessible(&self) -> &::std::option::Option<bool> {
+        &self.publicly_accessible
     }
     /// Appends an item to `status_infos`.
     ///
@@ -501,6 +577,12 @@ impl DbInstanceBuilder {
         self.status_infos = input;
         self
     }
+    /// <p>The status of a read replica. If the instance is not a read replica, this is blank.</p>
+    pub fn get_status_infos(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DbInstanceStatusInfo>> {
+        &self.status_infos
+    }
     /// <p>Contains the name of the cluster that the instance is a member of if the instance is a member of a cluster.</p>
     pub fn db_cluster_identifier(
         mut self,
@@ -517,6 +599,10 @@ impl DbInstanceBuilder {
         self.db_cluster_identifier = input;
         self
     }
+    /// <p>Contains the name of the cluster that the instance is a member of if the instance is a member of a cluster.</p>
+    pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_identifier
+    }
     /// <p>Specifies whether or not the instance is encrypted.</p>
     pub fn storage_encrypted(mut self, input: bool) -> Self {
         self.storage_encrypted = ::std::option::Option::Some(input);
@@ -527,6 +613,10 @@ impl DbInstanceBuilder {
         self.storage_encrypted = input;
         self
     }
+    /// <p>Specifies whether or not the instance is encrypted.</p>
+    pub fn get_storage_encrypted(&self) -> &::std::option::Option<bool> {
+        &self.storage_encrypted
+    }
     /// <p> If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for the encrypted instance. </p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -536,6 +626,10 @@ impl DbInstanceBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p> If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for the encrypted instance. </p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// <p>The Amazon Web Services Region-unique, immutable identifier for the instance. This identifier is found in CloudTrail log entries whenever the KMS key for the instance is accessed.</p>
     pub fn dbi_resource_id(
@@ -553,6 +647,10 @@ impl DbInstanceBuilder {
         self.dbi_resource_id = input;
         self
     }
+    /// <p>The Amazon Web Services Region-unique, immutable identifier for the instance. This identifier is found in CloudTrail log entries whenever the KMS key for the instance is accessed.</p>
+    pub fn get_dbi_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dbi_resource_id
+    }
     /// <p>The identifier of the CA certificate for this DB instance.</p>
     pub fn ca_certificate_identifier(
         mut self,
@@ -569,6 +667,10 @@ impl DbInstanceBuilder {
         self.ca_certificate_identifier = input;
         self
     }
+    /// <p>The identifier of the CA certificate for this DB instance.</p>
+    pub fn get_ca_certificate_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ca_certificate_identifier
+    }
     /// <p>A value that indicates whether to copy tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
     pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
         self.copy_tags_to_snapshot = ::std::option::Option::Some(input);
@@ -579,6 +681,10 @@ impl DbInstanceBuilder {
         self.copy_tags_to_snapshot = input;
         self
     }
+    /// <p>A value that indicates whether to copy tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
+    pub fn get_copy_tags_to_snapshot(&self) -> &::std::option::Option<bool> {
+        &self.copy_tags_to_snapshot
+    }
     /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after a failure of the existing primary instance.</p>
     pub fn promotion_tier(mut self, input: i32) -> Self {
         self.promotion_tier = ::std::option::Option::Some(input);
@@ -588,6 +694,10 @@ impl DbInstanceBuilder {
     pub fn set_promotion_tier(mut self, input: ::std::option::Option<i32>) -> Self {
         self.promotion_tier = input;
         self
+    }
+    /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after a failure of the existing primary instance.</p>
+    pub fn get_promotion_tier(&self) -> &::std::option::Option<i32> {
+        &self.promotion_tier
     }
     /// <p>The Amazon Resource Name (ARN) for the instance.</p>
     pub fn db_instance_arn(
@@ -604,6 +714,10 @@ impl DbInstanceBuilder {
     ) -> Self {
         self.db_instance_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the instance.</p>
+    pub fn get_db_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_instance_arn
     }
     /// Appends an item to `enabled_cloudwatch_logs_exports`.
     ///
@@ -626,6 +740,12 @@ impl DbInstanceBuilder {
     ) -> Self {
         self.enabled_cloudwatch_logs_exports = input;
         self
+    }
+    /// <p>A list of log types that this instance is configured to export to CloudWatch Logs.</p>
+    pub fn get_enabled_cloudwatch_logs_exports(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.enabled_cloudwatch_logs_exports
     }
     /// Consumes the builder and constructs a [`DbInstance`](crate::types::DbInstance).
     pub fn build(self) -> crate::types::DbInstance {

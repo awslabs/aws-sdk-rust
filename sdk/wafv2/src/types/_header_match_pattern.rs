@@ -58,6 +58,10 @@ impl HeaderMatchPatternBuilder {
         self.all = input;
         self
     }
+    /// <p>Inspect all headers. </p>
+    pub fn get_all(&self) -> &::std::option::Option<crate::types::All> {
+        &self.all
+    }
     /// Appends an item to `included_headers`.
     ///
     /// To override the contents of this collection use [`set_included_headers`](Self::set_included_headers).
@@ -80,6 +84,12 @@ impl HeaderMatchPatternBuilder {
         self.included_headers = input;
         self
     }
+    /// <p>Inspect only the headers that have a key that matches one of the strings specified here. </p>
+    pub fn get_included_headers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.included_headers
+    }
     /// Appends an item to `excluded_headers`.
     ///
     /// To override the contents of this collection use [`set_excluded_headers`](Self::set_excluded_headers).
@@ -101,6 +111,12 @@ impl HeaderMatchPatternBuilder {
     ) -> Self {
         self.excluded_headers = input;
         self
+    }
+    /// <p>Inspect only the headers whose keys don't match any of the strings specified here. </p>
+    pub fn get_excluded_headers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.excluded_headers
     }
     /// Consumes the builder and constructs a [`HeaderMatchPattern`](crate::types::HeaderMatchPattern).
     pub fn build(self) -> crate::types::HeaderMatchPattern {

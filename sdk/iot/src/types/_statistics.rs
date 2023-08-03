@@ -96,6 +96,10 @@ impl StatisticsBuilder {
         self.count = input;
         self
     }
+    /// <p>The count of things that match the query string criteria and contain a valid aggregation field value.</p>
+    pub fn get_count(&self) -> &::std::option::Option<i32> {
+        &self.count
+    }
     /// <p>The average of the aggregated field values.</p>
     pub fn average(mut self, input: f64) -> Self {
         self.average = ::std::option::Option::Some(input);
@@ -105,6 +109,10 @@ impl StatisticsBuilder {
     pub fn set_average(mut self, input: ::std::option::Option<f64>) -> Self {
         self.average = input;
         self
+    }
+    /// <p>The average of the aggregated field values.</p>
+    pub fn get_average(&self) -> &::std::option::Option<f64> {
+        &self.average
     }
     /// <p>The sum of the aggregated field values.</p>
     pub fn sum(mut self, input: f64) -> Self {
@@ -116,6 +124,10 @@ impl StatisticsBuilder {
         self.sum = input;
         self
     }
+    /// <p>The sum of the aggregated field values.</p>
+    pub fn get_sum(&self) -> &::std::option::Option<f64> {
+        &self.sum
+    }
     /// <p>The minimum aggregated field value.</p>
     pub fn minimum(mut self, input: f64) -> Self {
         self.minimum = ::std::option::Option::Some(input);
@@ -125,6 +137,10 @@ impl StatisticsBuilder {
     pub fn set_minimum(mut self, input: ::std::option::Option<f64>) -> Self {
         self.minimum = input;
         self
+    }
+    /// <p>The minimum aggregated field value.</p>
+    pub fn get_minimum(&self) -> &::std::option::Option<f64> {
+        &self.minimum
     }
     /// <p>The maximum aggregated field value.</p>
     pub fn maximum(mut self, input: f64) -> Self {
@@ -136,6 +152,10 @@ impl StatisticsBuilder {
         self.maximum = input;
         self
     }
+    /// <p>The maximum aggregated field value.</p>
+    pub fn get_maximum(&self) -> &::std::option::Option<f64> {
+        &self.maximum
+    }
     /// <p>The sum of the squares of the aggregated field values.</p>
     pub fn sum_of_squares(mut self, input: f64) -> Self {
         self.sum_of_squares = ::std::option::Option::Some(input);
@@ -145,6 +165,10 @@ impl StatisticsBuilder {
     pub fn set_sum_of_squares(mut self, input: ::std::option::Option<f64>) -> Self {
         self.sum_of_squares = input;
         self
+    }
+    /// <p>The sum of the squares of the aggregated field values.</p>
+    pub fn get_sum_of_squares(&self) -> &::std::option::Option<f64> {
+        &self.sum_of_squares
     }
     /// <p>The variance of the aggregated field values.</p>
     pub fn variance(mut self, input: f64) -> Self {
@@ -156,6 +180,10 @@ impl StatisticsBuilder {
         self.variance = input;
         self
     }
+    /// <p>The variance of the aggregated field values.</p>
+    pub fn get_variance(&self) -> &::std::option::Option<f64> {
+        &self.variance
+    }
     /// <p>The standard deviation of the aggregated field values.</p>
     pub fn std_deviation(mut self, input: f64) -> Self {
         self.std_deviation = ::std::option::Option::Some(input);
@@ -165,6 +193,10 @@ impl StatisticsBuilder {
     pub fn set_std_deviation(mut self, input: ::std::option::Option<f64>) -> Self {
         self.std_deviation = input;
         self
+    }
+    /// <p>The standard deviation of the aggregated field values.</p>
+    pub fn get_std_deviation(&self) -> &::std::option::Option<f64> {
+        &self.std_deviation
     }
     /// Consumes the builder and constructs a [`Statistics`](crate::types::Statistics).
     pub fn build(self) -> crate::types::Statistics {

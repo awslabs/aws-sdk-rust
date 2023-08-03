@@ -56,6 +56,10 @@ impl KendraConfigurationBuilder {
         self.kendra_index = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Kendra index that you want the <code>AMAZON.KendraSearchIntent</code> intent to search. The index must be in the same account and Region as the Amazon Lex bot.</p>
+    pub fn get_kendra_index(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kendra_index
+    }
     /// <p>Determines whether the <code>AMAZON.KendraSearchIntent</code> intent uses a custom query string to query the Amazon Kendra index.</p>
     pub fn query_filter_string_enabled(mut self, input: bool) -> Self {
         self.query_filter_string_enabled = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl KendraConfigurationBuilder {
     pub fn set_query_filter_string_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.query_filter_string_enabled = input;
         self
+    }
+    /// <p>Determines whether the <code>AMAZON.KendraSearchIntent</code> intent uses a custom query string to query the Amazon Kendra index.</p>
+    pub fn get_query_filter_string_enabled(&self) -> &::std::option::Option<bool> {
+        &self.query_filter_string_enabled
     }
     /// <p>A query filter that Amazon Lex sends to Amazon Kendra to filter the response from a query. The filter is in the format defined by Amazon Kendra. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/filtering.html">Filtering queries</a>.</p>
     pub fn query_filter_string(
@@ -81,6 +89,10 @@ impl KendraConfigurationBuilder {
     ) -> Self {
         self.query_filter_string = input;
         self
+    }
+    /// <p>A query filter that Amazon Lex sends to Amazon Kendra to filter the response from a query. The filter is in the format defined by Amazon Kendra. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/filtering.html">Filtering queries</a>.</p>
+    pub fn get_query_filter_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_filter_string
     }
     /// Consumes the builder and constructs a [`KendraConfiguration`](crate::types::KendraConfiguration).
     pub fn build(self) -> crate::types::KendraConfiguration {

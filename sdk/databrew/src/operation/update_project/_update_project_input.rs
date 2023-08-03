@@ -55,6 +55,10 @@ impl UpdateProjectInputBuilder {
         self.sample = input;
         self
     }
+    /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data analysis.</p>
+    pub fn get_sample(&self) -> &::std::option::Option<crate::types::Sample> {
+        &self.sample
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed for this request.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl UpdateProjectInputBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to be assumed for this request.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>The name of the project to be updated.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -74,6 +82,10 @@ impl UpdateProjectInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the project to be updated.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`UpdateProjectInput`](crate::operation::update_project::UpdateProjectInput).
     pub fn build(

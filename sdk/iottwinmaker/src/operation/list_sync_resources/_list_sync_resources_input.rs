@@ -90,6 +90,10 @@ impl ListSyncResourcesInputBuilder {
         self.workspace_id = input;
         self
     }
+    /// <p>The ID of the workspace that contains the sync job.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
+    }
     /// <p>The sync source.</p> <note>
     /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
     /// </note>
@@ -103,6 +107,12 @@ impl ListSyncResourcesInputBuilder {
     pub fn set_sync_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sync_source = input;
         self
+    }
+    /// <p>The sync source.</p> <note>
+    /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
+    /// </note>
+    pub fn get_sync_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sync_source
     }
     /// Appends an item to `filters`.
     ///
@@ -135,6 +145,18 @@ impl ListSyncResourcesInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>A list of objects that filter the request.</p>
+    /// <p>The following filter combinations are supported:</p>
+    /// <ul>
+    /// <li> <p>Filter with state</p> </li>
+    /// <li> <p>Filter with ResourceType and ResourceId</p> </li>
+    /// <li> <p>Filter with ResourceType and ExternalId</p> </li>
+    /// </ul>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SyncResourceFilter>> {
+        &self.filters
+    }
     /// <p>The maximum number of results to return at one time. The default is 50.</p>
     /// <p>Valid Range: Minimum value of 0. Maximum value of 200.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -147,6 +169,11 @@ impl ListSyncResourcesInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to return at one time. The default is 50.</p>
+    /// <p>Valid Range: Minimum value of 0. Maximum value of 200.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The string that specifies the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -156,6 +183,10 @@ impl ListSyncResourcesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The string that specifies the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListSyncResourcesInput`](crate::operation::list_sync_resources::ListSyncResourcesInput).
     pub fn build(

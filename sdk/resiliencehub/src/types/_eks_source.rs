@@ -54,6 +54,10 @@ impl EksSourceBuilder {
         self.eks_cluster_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Elastic Kubernetes Service cluster. The format for this ARN is: arn:<code>aws</code>:eks:<code>region</code>:<code>account-id</code>:cluster/<code>cluster-name</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    pub fn get_eks_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.eks_cluster_arn
+    }
     /// Appends an item to `namespaces`.
     ///
     /// To override the contents of this collection use [`set_namespaces`](Self::set_namespaces).
@@ -72,6 +76,10 @@ impl EksSourceBuilder {
     ) -> Self {
         self.namespaces = input;
         self
+    }
+    /// <p>The list of namespaces located on your Amazon Elastic Kubernetes Service cluster.</p>
+    pub fn get_namespaces(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.namespaces
     }
     /// Consumes the builder and constructs a [`EksSource`](crate::types::EksSource).
     pub fn build(self) -> crate::types::EksSource {

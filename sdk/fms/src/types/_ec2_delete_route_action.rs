@@ -72,6 +72,10 @@ impl Ec2DeleteRouteActionBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the DeleteRoute action.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>Information about the IPv4 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
     pub fn destination_cidr_block(
         mut self,
@@ -87,6 +91,10 @@ impl Ec2DeleteRouteActionBuilder {
     ) -> Self {
         self.destination_cidr_block = input;
         self
+    }
+    /// <p>Information about the IPv4 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
+    pub fn get_destination_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_cidr_block
     }
     /// <p>Information about the ID of the prefix list for the route.</p>
     pub fn destination_prefix_list_id(
@@ -104,6 +112,10 @@ impl Ec2DeleteRouteActionBuilder {
         self.destination_prefix_list_id = input;
         self
     }
+    /// <p>Information about the ID of the prefix list for the route.</p>
+    pub fn get_destination_prefix_list_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_prefix_list_id
+    }
     /// <p>Information about the IPv6 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
     pub fn destination_ipv6_cidr_block(
         mut self,
@@ -120,6 +132,10 @@ impl Ec2DeleteRouteActionBuilder {
         self.destination_ipv6_cidr_block = input;
         self
     }
+    /// <p>Information about the IPv6 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
+    pub fn get_destination_ipv6_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_ipv6_cidr_block
+    }
     /// <p>Information about the ID of the route table.</p>
     pub fn route_table_id(mut self, input: crate::types::ActionTarget) -> Self {
         self.route_table_id = ::std::option::Option::Some(input);
@@ -132,6 +148,10 @@ impl Ec2DeleteRouteActionBuilder {
     ) -> Self {
         self.route_table_id = input;
         self
+    }
+    /// <p>Information about the ID of the route table.</p>
+    pub fn get_route_table_id(&self) -> &::std::option::Option<crate::types::ActionTarget> {
+        &self.route_table_id
     }
     /// Consumes the builder and constructs a [`Ec2DeleteRouteAction`](crate::types::Ec2DeleteRouteAction).
     pub fn build(self) -> crate::types::Ec2DeleteRouteAction {

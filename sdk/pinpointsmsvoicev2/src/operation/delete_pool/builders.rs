@@ -38,6 +38,10 @@ impl DeletePoolFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeletePool as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_pool::builders::DeletePoolInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,5 +123,9 @@ impl DeletePoolFluentBuilder {
     pub fn set_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pool_id(input);
         self
+    }
+    /// <p>The PoolId or PoolArn of the pool to delete. You can use <code>DescribePools</code> to find the values for PoolId and PoolArn .</p>
+    pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pool_id()
     }
 }

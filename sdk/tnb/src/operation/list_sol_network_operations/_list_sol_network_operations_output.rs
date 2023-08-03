@@ -58,6 +58,10 @@ impl ListSolNetworkOperationsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `network_operations`.
     ///
     /// To override the contents of this collection use [`set_network_operations`](Self::set_network_operations).
@@ -76,6 +80,12 @@ impl ListSolNetworkOperationsOutputBuilder {
     ) -> Self {
         self.network_operations = input;
         self
+    }
+    /// <p>Lists network operation occurrences. Lifecycle management operations are deploy, update, or delete operations.</p>
+    pub fn get_network_operations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListSolNetworkOperationsInfo>> {
+        &self.network_operations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

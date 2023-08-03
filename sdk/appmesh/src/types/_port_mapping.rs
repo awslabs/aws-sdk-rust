@@ -48,6 +48,10 @@ impl PortMappingBuilder {
         self.port = input;
         self
     }
+    /// <p>The port used for the port mapping.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
+    }
     /// <p>The protocol used for the port mapping. Specify one protocol.</p>
     pub fn protocol(mut self, input: crate::types::PortProtocol) -> Self {
         self.protocol = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl PortMappingBuilder {
     ) -> Self {
         self.protocol = input;
         self
+    }
+    /// <p>The protocol used for the port mapping. Specify one protocol.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<crate::types::PortProtocol> {
+        &self.protocol
     }
     /// Consumes the builder and constructs a [`PortMapping`](crate::types::PortMapping).
     pub fn build(self) -> crate::types::PortMapping {

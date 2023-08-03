@@ -36,6 +36,12 @@ impl CancelLegalHoldFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CancelLegalHold as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::cancel_legal_hold::builders::CancelLegalHoldInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl CancelLegalHoldFluentBuilder {
         self.inner = self.inner.set_legal_hold_id(input);
         self
     }
+    /// <p>Legal hold ID required to remove the specified legal hold on a recovery point.</p>
+    pub fn get_legal_hold_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_legal_hold_id()
+    }
     /// <p>String describing the reason for removing the legal hold.</p>
     pub fn cancel_description(
         mut self,
@@ -148,6 +158,10 @@ impl CancelLegalHoldFluentBuilder {
         self.inner = self.inner.set_cancel_description(input);
         self
     }
+    /// <p>String describing the reason for removing the legal hold.</p>
+    pub fn get_cancel_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cancel_description()
+    }
     /// <p>The integer amount in days specifying amount of days after this API operation to remove legal hold.</p>
     pub fn retain_record_in_days(mut self, input: i64) -> Self {
         self.inner = self.inner.retain_record_in_days(input);
@@ -157,5 +171,9 @@ impl CancelLegalHoldFluentBuilder {
     pub fn set_retain_record_in_days(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_retain_record_in_days(input);
         self
+    }
+    /// <p>The integer amount in days specifying amount of days after this API operation to remove legal hold.</p>
+    pub fn get_retain_record_in_days(&self) -> &::std::option::Option<i64> {
+        self.inner.get_retain_record_in_days()
     }
 }

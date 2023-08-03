@@ -64,6 +64,10 @@ impl ProtocolsListDataSummaryBuilder {
         self.list_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the specified protocols list.</p>
+    pub fn get_list_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.list_arn
+    }
     /// <p>The ID of the specified protocols list.</p>
     pub fn list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.list_id = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl ProtocolsListDataSummaryBuilder {
         self.list_id = input;
         self
     }
+    /// <p>The ID of the specified protocols list.</p>
+    pub fn get_list_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.list_id
+    }
     /// <p>The name of the specified protocols list.</p>
     pub fn list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.list_name = ::std::option::Option::Some(input.into());
@@ -83,6 +91,10 @@ impl ProtocolsListDataSummaryBuilder {
     pub fn set_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.list_name = input;
         self
+    }
+    /// <p>The name of the specified protocols list.</p>
+    pub fn get_list_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.list_name
     }
     /// Appends an item to `protocols_list`.
     ///
@@ -105,6 +117,12 @@ impl ProtocolsListDataSummaryBuilder {
     ) -> Self {
         self.protocols_list = input;
         self
+    }
+    /// <p>An array of protocols in the Firewall Manager protocols list.</p>
+    pub fn get_protocols_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.protocols_list
     }
     /// Consumes the builder and constructs a [`ProtocolsListDataSummary`](crate::types::ProtocolsListDataSummary).
     pub fn build(self) -> crate::types::ProtocolsListDataSummary {

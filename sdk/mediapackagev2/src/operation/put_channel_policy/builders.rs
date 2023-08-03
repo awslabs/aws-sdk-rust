@@ -36,6 +36,12 @@ impl PutChannelPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutChannelPolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_channel_policy::builders::PutChannelPolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl PutChannelPolicyFluentBuilder {
         self.inner = self.inner.set_channel_group_name(input);
         self
     }
+    /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
+    pub fn get_channel_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_group_name()
+    }
     /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. </p>
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.channel_name(input.into());
@@ -142,6 +152,10 @@ impl PutChannelPolicyFluentBuilder {
         self.inner = self.inner.set_channel_name(input);
         self
     }
+    /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. </p>
+    pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_name()
+    }
     /// <p>The policy to attach to the specified channel.</p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy(input.into());
@@ -151,5 +165,9 @@ impl PutChannelPolicyFluentBuilder {
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy(input);
         self
+    }
+    /// <p>The policy to attach to the specified channel.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy()
     }
 }

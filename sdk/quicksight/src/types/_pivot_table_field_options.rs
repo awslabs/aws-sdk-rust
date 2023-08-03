@@ -77,6 +77,12 @@ impl PivotTableFieldOptionsBuilder {
         self.selected_field_options = input;
         self
     }
+    /// <p>The selected field options for the pivot table field options.</p>
+    pub fn get_selected_field_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PivotTableFieldOption>> {
+        &self.selected_field_options
+    }
     /// Appends an item to `data_path_options`.
     ///
     /// To override the contents of this collection use [`set_data_path_options`](Self::set_data_path_options).
@@ -95,6 +101,12 @@ impl PivotTableFieldOptionsBuilder {
     ) -> Self {
         self.data_path_options = input;
         self
+    }
+    /// <p>The data path options for the pivot table field options.</p>
+    pub fn get_data_path_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PivotTableDataPathOption>> {
+        &self.data_path_options
     }
     /// Appends an item to `collapse_state_options`.
     ///
@@ -119,6 +131,13 @@ impl PivotTableFieldOptionsBuilder {
     ) -> Self {
         self.collapse_state_options = input;
         self
+    }
+    /// <p>The collapse state options for the pivot table field options.</p>
+    pub fn get_collapse_state_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PivotTableFieldCollapseStateOption>>
+    {
+        &self.collapse_state_options
     }
     /// Consumes the builder and constructs a [`PivotTableFieldOptions`](crate::types::PivotTableFieldOptions).
     pub fn build(self) -> crate::types::PivotTableFieldOptions {

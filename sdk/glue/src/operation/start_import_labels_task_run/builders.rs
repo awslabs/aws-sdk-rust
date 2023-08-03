@@ -39,6 +39,10 @@ impl StartImportLabelsTaskRunFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartImportLabelsTaskRun as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_import_labels_task_run::builders::StartImportLabelsTaskRunInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +133,10 @@ impl StartImportLabelsTaskRunFluentBuilder {
         self.inner = self.inner.set_transform_id(input);
         self
     }
+    /// <p>The unique identifier of the machine learning transform.</p>
+    pub fn get_transform_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_transform_id()
+    }
     /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you import the labels.</p>
     pub fn input_s3_path(
         mut self,
@@ -145,6 +153,10 @@ impl StartImportLabelsTaskRunFluentBuilder {
         self.inner = self.inner.set_input_s3_path(input);
         self
     }
+    /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you import the labels.</p>
+    pub fn get_input_s3_path(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_input_s3_path()
+    }
     /// <p>Indicates whether to overwrite your existing labels.</p>
     pub fn replace_all_labels(mut self, input: bool) -> Self {
         self.inner = self.inner.replace_all_labels(input);
@@ -154,5 +166,9 @@ impl StartImportLabelsTaskRunFluentBuilder {
     pub fn set_replace_all_labels(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_replace_all_labels(input);
         self
+    }
+    /// <p>Indicates whether to overwrite your existing labels.</p>
+    pub fn get_replace_all_labels(&self) -> &::std::option::Option<bool> {
+        self.inner.get_replace_all_labels()
     }
 }

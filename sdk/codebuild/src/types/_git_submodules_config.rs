@@ -40,6 +40,10 @@ impl GitSubmodulesConfigBuilder {
         self.fetch_submodules = input;
         self
     }
+    /// <p> Set to true to fetch Git submodules for your CodeBuild build project. </p>
+    pub fn get_fetch_submodules(&self) -> &::std::option::Option<bool> {
+        &self.fetch_submodules
+    }
     /// Consumes the builder and constructs a [`GitSubmodulesConfig`](crate::types::GitSubmodulesConfig).
     pub fn build(self) -> crate::types::GitSubmodulesConfig {
         crate::types::GitSubmodulesConfig {

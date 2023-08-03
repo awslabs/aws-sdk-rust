@@ -46,6 +46,10 @@ impl PurchaseProvisionedCapacityOutputBuilder {
         self.capacity_id = input;
         self
     }
+    /// <p>The ID that identifies the provisioned capacity unit.</p>
+    pub fn get_capacity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.capacity_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

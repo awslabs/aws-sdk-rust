@@ -988,6 +988,12 @@ impl ResourceDetailsBuilder {
         self.aws_auto_scaling_auto_scaling_group = input;
         self
     }
+    /// <p>Details for an autoscaling group.</p>
+    pub fn get_aws_auto_scaling_auto_scaling_group(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsAutoScalingAutoScalingGroupDetails> {
+        &self.aws_auto_scaling_auto_scaling_group
+    }
     /// <p>Details for an CodeBuild project.</p>
     pub fn aws_code_build_project(
         mut self,
@@ -1003,6 +1009,12 @@ impl ResourceDetailsBuilder {
     ) -> Self {
         self.aws_code_build_project = input;
         self
+    }
+    /// <p>Details for an CodeBuild project.</p>
+    pub fn get_aws_code_build_project(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsCodeBuildProjectDetails> {
+        &self.aws_code_build_project
     }
     /// <p>Details about a CloudFront distribution.</p>
     pub fn aws_cloud_front_distribution(
@@ -1020,6 +1032,12 @@ impl ResourceDetailsBuilder {
         self.aws_cloud_front_distribution = input;
         self
     }
+    /// <p>Details about a CloudFront distribution.</p>
+    pub fn get_aws_cloud_front_distribution(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsCloudFrontDistributionDetails> {
+        &self.aws_cloud_front_distribution
+    }
     /// <p>Details about an EC2 instance related to a finding.</p>
     pub fn aws_ec2_instance(mut self, input: crate::types::AwsEc2InstanceDetails) -> Self {
         self.aws_ec2_instance = ::std::option::Option::Some(input);
@@ -1032,6 +1050,12 @@ impl ResourceDetailsBuilder {
     ) -> Self {
         self.aws_ec2_instance = input;
         self
+    }
+    /// <p>Details about an EC2 instance related to a finding.</p>
+    pub fn get_aws_ec2_instance(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsEc2InstanceDetails> {
+        &self.aws_ec2_instance
     }
     /// <p>Details for an EC2 network interface.</p>
     pub fn aws_ec2_network_interface(
@@ -1049,6 +1073,12 @@ impl ResourceDetailsBuilder {
         self.aws_ec2_network_interface = input;
         self
     }
+    /// <p>Details for an EC2 network interface.</p>
+    pub fn get_aws_ec2_network_interface(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsEc2NetworkInterfaceDetails> {
+        &self.aws_ec2_network_interface
+    }
     /// <p>Details for an EC2 security group.</p>
     pub fn aws_ec2_security_group(
         mut self,
@@ -1065,6 +1095,12 @@ impl ResourceDetailsBuilder {
         self.aws_ec2_security_group = input;
         self
     }
+    /// <p>Details for an EC2 security group.</p>
+    pub fn get_aws_ec2_security_group(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsEc2SecurityGroupDetails> {
+        &self.aws_ec2_security_group
+    }
     /// <p>Details for an Amazon EC2 volume.</p>
     pub fn aws_ec2_volume(mut self, input: crate::types::AwsEc2VolumeDetails) -> Self {
         self.aws_ec2_volume = ::std::option::Option::Some(input);
@@ -1077,6 +1113,10 @@ impl ResourceDetailsBuilder {
     ) -> Self {
         self.aws_ec2_volume = input;
         self
+    }
+    /// <p>Details for an Amazon EC2 volume.</p>
+    pub fn get_aws_ec2_volume(&self) -> &::std::option::Option<crate::types::AwsEc2VolumeDetails> {
+        &self.aws_ec2_volume
     }
     /// <p>Details for an Amazon EC2 VPC.</p>
     pub fn aws_ec2_vpc(mut self, input: crate::types::AwsEc2VpcDetails) -> Self {
@@ -1091,6 +1131,10 @@ impl ResourceDetailsBuilder {
         self.aws_ec2_vpc = input;
         self
     }
+    /// <p>Details for an Amazon EC2 VPC.</p>
+    pub fn get_aws_ec2_vpc(&self) -> &::std::option::Option<crate::types::AwsEc2VpcDetails> {
+        &self.aws_ec2_vpc
+    }
     /// <p>Details about an Elastic IP address.</p>
     pub fn aws_ec2_eip(mut self, input: crate::types::AwsEc2EipDetails) -> Self {
         self.aws_ec2_eip = ::std::option::Option::Some(input);
@@ -1103,6 +1147,10 @@ impl ResourceDetailsBuilder {
     ) -> Self {
         self.aws_ec2_eip = input;
         self
+    }
+    /// <p>Details about an Elastic IP address.</p>
+    pub fn get_aws_ec2_eip(&self) -> &::std::option::Option<crate::types::AwsEc2EipDetails> {
+        &self.aws_ec2_eip
     }
     /// <p>Details about a subnet in Amazon EC2.</p>
     pub fn aws_ec2_subnet(mut self, input: crate::types::AwsEc2SubnetDetails) -> Self {
@@ -1117,6 +1165,10 @@ impl ResourceDetailsBuilder {
         self.aws_ec2_subnet = input;
         self
     }
+    /// <p>Details about a subnet in Amazon EC2.</p>
+    pub fn get_aws_ec2_subnet(&self) -> &::std::option::Option<crate::types::AwsEc2SubnetDetails> {
+        &self.aws_ec2_subnet
+    }
     /// <p>Details about an EC2 network access control list (ACL).</p>
     pub fn aws_ec2_network_acl(mut self, input: crate::types::AwsEc2NetworkAclDetails) -> Self {
         self.aws_ec2_network_acl = ::std::option::Option::Some(input);
@@ -1129,6 +1181,12 @@ impl ResourceDetailsBuilder {
     ) -> Self {
         self.aws_ec2_network_acl = input;
         self
+    }
+    /// <p>Details about an EC2 network access control list (ACL).</p>
+    pub fn get_aws_ec2_network_acl(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsEc2NetworkAclDetails> {
+        &self.aws_ec2_network_acl
     }
     /// <p>Details about a load balancer.</p>
     pub fn aws_elbv2_load_balancer(
@@ -1146,6 +1204,12 @@ impl ResourceDetailsBuilder {
         self.aws_elbv2_load_balancer = input;
         self
     }
+    /// <p>Details about a load balancer.</p>
+    pub fn get_aws_elbv2_load_balancer(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsElbv2LoadBalancerDetails> {
+        &self.aws_elbv2_load_balancer
+    }
     /// <p>Details about an Elastic Beanstalk environment.</p>
     pub fn aws_elastic_beanstalk_environment(
         mut self,
@@ -1161,6 +1225,12 @@ impl ResourceDetailsBuilder {
     ) -> Self {
         self.aws_elastic_beanstalk_environment = input;
         self
+    }
+    /// <p>Details about an Elastic Beanstalk environment.</p>
+    pub fn get_aws_elastic_beanstalk_environment(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsElasticBeanstalkEnvironmentDetails> {
+        &self.aws_elastic_beanstalk_environment
     }
     /// <p>Details for an Elasticsearch domain.</p>
     pub fn aws_elasticsearch_domain(
@@ -1178,6 +1248,12 @@ impl ResourceDetailsBuilder {
         self.aws_elasticsearch_domain = input;
         self
     }
+    /// <p>Details for an Elasticsearch domain.</p>
+    pub fn get_aws_elasticsearch_domain(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsElasticsearchDomainDetails> {
+        &self.aws_elasticsearch_domain
+    }
     /// <p>Details about an S3 bucket related to a finding.</p>
     pub fn aws_s3_bucket(mut self, input: crate::types::AwsS3BucketDetails) -> Self {
         self.aws_s3_bucket = ::std::option::Option::Some(input);
@@ -1190,6 +1266,10 @@ impl ResourceDetailsBuilder {
     ) -> Self {
         self.aws_s3_bucket = input;
         self
+    }
+    /// <p>Details about an S3 bucket related to a finding.</p>
+    pub fn get_aws_s3_bucket(&self) -> &::std::option::Option<crate::types::AwsS3BucketDetails> {
+        &self.aws_s3_bucket
     }
     /// <p>Details about the Amazon S3 Public Access Block configuration for an account.</p>
     pub fn aws_s3_account_public_access_block(
@@ -1207,6 +1287,12 @@ impl ResourceDetailsBuilder {
         self.aws_s3_account_public_access_block = input;
         self
     }
+    /// <p>Details about the Amazon S3 Public Access Block configuration for an account.</p>
+    pub fn get_aws_s3_account_public_access_block(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsS3AccountPublicAccessBlockDetails> {
+        &self.aws_s3_account_public_access_block
+    }
     /// <p>Details about an S3 object related to a finding.</p>
     pub fn aws_s3_object(mut self, input: crate::types::AwsS3ObjectDetails) -> Self {
         self.aws_s3_object = ::std::option::Option::Some(input);
@@ -1219,6 +1305,10 @@ impl ResourceDetailsBuilder {
     ) -> Self {
         self.aws_s3_object = input;
         self
+    }
+    /// <p>Details about an S3 object related to a finding.</p>
+    pub fn get_aws_s3_object(&self) -> &::std::option::Option<crate::types::AwsS3ObjectDetails> {
+        &self.aws_s3_object
     }
     /// <p>Details about a Secrets Manager secret.</p>
     pub fn aws_secrets_manager_secret(
@@ -1236,6 +1326,12 @@ impl ResourceDetailsBuilder {
         self.aws_secrets_manager_secret = input;
         self
     }
+    /// <p>Details about a Secrets Manager secret.</p>
+    pub fn get_aws_secrets_manager_secret(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsSecretsManagerSecretDetails> {
+        &self.aws_secrets_manager_secret
+    }
     /// <p>Details about an IAM access key related to a finding.</p>
     pub fn aws_iam_access_key(mut self, input: crate::types::AwsIamAccessKeyDetails) -> Self {
         self.aws_iam_access_key = ::std::option::Option::Some(input);
@@ -1248,6 +1344,12 @@ impl ResourceDetailsBuilder {
     ) -> Self {
         self.aws_iam_access_key = input;
         self
+    }
+    /// <p>Details about an IAM access key related to a finding.</p>
+    pub fn get_aws_iam_access_key(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsIamAccessKeyDetails> {
+        &self.aws_iam_access_key
     }
     /// <p>Details about an IAM user.</p>
     pub fn aws_iam_user(mut self, input: crate::types::AwsIamUserDetails) -> Self {
@@ -1262,6 +1364,10 @@ impl ResourceDetailsBuilder {
         self.aws_iam_user = input;
         self
     }
+    /// <p>Details about an IAM user.</p>
+    pub fn get_aws_iam_user(&self) -> &::std::option::Option<crate::types::AwsIamUserDetails> {
+        &self.aws_iam_user
+    }
     /// <p>Details about an IAM permissions policy.</p>
     pub fn aws_iam_policy(mut self, input: crate::types::AwsIamPolicyDetails) -> Self {
         self.aws_iam_policy = ::std::option::Option::Some(input);
@@ -1274,6 +1380,10 @@ impl ResourceDetailsBuilder {
     ) -> Self {
         self.aws_iam_policy = input;
         self
+    }
+    /// <p>Details about an IAM permissions policy.</p>
+    pub fn get_aws_iam_policy(&self) -> &::std::option::Option<crate::types::AwsIamPolicyDetails> {
+        &self.aws_iam_policy
     }
     /// <p>Provides information about a version 2 stage for Amazon API Gateway.</p>
     pub fn aws_api_gateway_v2_stage(
@@ -1291,6 +1401,12 @@ impl ResourceDetailsBuilder {
         self.aws_api_gateway_v2_stage = input;
         self
     }
+    /// <p>Provides information about a version 2 stage for Amazon API Gateway.</p>
+    pub fn get_aws_api_gateway_v2_stage(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsApiGatewayV2StageDetails> {
+        &self.aws_api_gateway_v2_stage
+    }
     /// <p>Provides information about a version 2 API in Amazon API Gateway.</p>
     pub fn aws_api_gateway_v2_api(
         mut self,
@@ -1307,6 +1423,12 @@ impl ResourceDetailsBuilder {
         self.aws_api_gateway_v2_api = input;
         self
     }
+    /// <p>Provides information about a version 2 API in Amazon API Gateway.</p>
+    pub fn get_aws_api_gateway_v2_api(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsApiGatewayV2ApiDetails> {
+        &self.aws_api_gateway_v2_api
+    }
     /// <p>Details about a DynamoDB table.</p>
     pub fn aws_dynamo_db_table(mut self, input: crate::types::AwsDynamoDbTableDetails) -> Self {
         self.aws_dynamo_db_table = ::std::option::Option::Some(input);
@@ -1320,6 +1442,12 @@ impl ResourceDetailsBuilder {
         self.aws_dynamo_db_table = input;
         self
     }
+    /// <p>Details about a DynamoDB table.</p>
+    pub fn get_aws_dynamo_db_table(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsDynamoDbTableDetails> {
+        &self.aws_dynamo_db_table
+    }
     /// <p>Provides information about a version 1 Amazon API Gateway stage.</p>
     pub fn aws_api_gateway_stage(mut self, input: crate::types::AwsApiGatewayStageDetails) -> Self {
         self.aws_api_gateway_stage = ::std::option::Option::Some(input);
@@ -1332,6 +1460,12 @@ impl ResourceDetailsBuilder {
     ) -> Self {
         self.aws_api_gateway_stage = input;
         self
+    }
+    /// <p>Provides information about a version 1 Amazon API Gateway stage.</p>
+    pub fn get_aws_api_gateway_stage(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsApiGatewayStageDetails> {
+        &self.aws_api_gateway_stage
     }
     /// <p>Provides information about a REST API in version 1 of Amazon API Gateway.</p>
     pub fn aws_api_gateway_rest_api(
@@ -1349,6 +1483,12 @@ impl ResourceDetailsBuilder {
         self.aws_api_gateway_rest_api = input;
         self
     }
+    /// <p>Provides information about a REST API in version 1 of Amazon API Gateway.</p>
+    pub fn get_aws_api_gateway_rest_api(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsApiGatewayRestApiDetails> {
+        &self.aws_api_gateway_rest_api
+    }
     /// <p>Provides details about a CloudTrail trail.</p>
     pub fn aws_cloud_trail_trail(mut self, input: crate::types::AwsCloudTrailTrailDetails) -> Self {
         self.aws_cloud_trail_trail = ::std::option::Option::Some(input);
@@ -1361,6 +1501,12 @@ impl ResourceDetailsBuilder {
     ) -> Self {
         self.aws_cloud_trail_trail = input;
         self
+    }
+    /// <p>Provides details about a CloudTrail trail.</p>
+    pub fn get_aws_cloud_trail_trail(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsCloudTrailTrailDetails> {
+        &self.aws_cloud_trail_trail
     }
     /// <p>Provides information about the state of a patch on an instance based on the patch baseline that was used to patch the instance.</p>
     pub fn aws_ssm_patch_compliance(
@@ -1378,6 +1524,12 @@ impl ResourceDetailsBuilder {
         self.aws_ssm_patch_compliance = input;
         self
     }
+    /// <p>Provides information about the state of a patch on an instance based on the patch baseline that was used to patch the instance.</p>
+    pub fn get_aws_ssm_patch_compliance(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsSsmPatchComplianceDetails> {
+        &self.aws_ssm_patch_compliance
+    }
     /// <p>Provides details about an Certificate Manager certificate.</p>
     pub fn aws_certificate_manager_certificate(
         mut self,
@@ -1394,6 +1546,12 @@ impl ResourceDetailsBuilder {
         self.aws_certificate_manager_certificate = input;
         self
     }
+    /// <p>Provides details about an Certificate Manager certificate.</p>
+    pub fn get_aws_certificate_manager_certificate(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsCertificateManagerCertificateDetails> {
+        &self.aws_certificate_manager_certificate
+    }
     /// <p>Contains details about an Amazon Redshift cluster.</p>
     pub fn aws_redshift_cluster(mut self, input: crate::types::AwsRedshiftClusterDetails) -> Self {
         self.aws_redshift_cluster = ::std::option::Option::Some(input);
@@ -1406,6 +1564,12 @@ impl ResourceDetailsBuilder {
     ) -> Self {
         self.aws_redshift_cluster = input;
         self
+    }
+    /// <p>Contains details about an Amazon Redshift cluster.</p>
+    pub fn get_aws_redshift_cluster(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsRedshiftClusterDetails> {
+        &self.aws_redshift_cluster
     }
     /// <p>Contains details about a Classic Load Balancer.</p>
     pub fn aws_elb_load_balancer(mut self, input: crate::types::AwsElbLoadBalancerDetails) -> Self {
@@ -1420,6 +1584,12 @@ impl ResourceDetailsBuilder {
         self.aws_elb_load_balancer = input;
         self
     }
+    /// <p>Contains details about a Classic Load Balancer.</p>
+    pub fn get_aws_elb_load_balancer(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsElbLoadBalancerDetails> {
+        &self.aws_elb_load_balancer
+    }
     /// <p>Contains details about an IAM group.</p>
     pub fn aws_iam_group(mut self, input: crate::types::AwsIamGroupDetails) -> Self {
         self.aws_iam_group = ::std::option::Option::Some(input);
@@ -1432,6 +1602,10 @@ impl ResourceDetailsBuilder {
     ) -> Self {
         self.aws_iam_group = input;
         self
+    }
+    /// <p>Contains details about an IAM group.</p>
+    pub fn get_aws_iam_group(&self) -> &::std::option::Option<crate::types::AwsIamGroupDetails> {
+        &self.aws_iam_group
     }
     /// <p>Details about an IAM role.</p>
     pub fn aws_iam_role(mut self, input: crate::types::AwsIamRoleDetails) -> Self {
@@ -1446,6 +1620,10 @@ impl ResourceDetailsBuilder {
         self.aws_iam_role = input;
         self
     }
+    /// <p>Details about an IAM role.</p>
+    pub fn get_aws_iam_role(&self) -> &::std::option::Option<crate::types::AwsIamRoleDetails> {
+        &self.aws_iam_role
+    }
     /// <p>Details about an KMS key.</p>
     pub fn aws_kms_key(mut self, input: crate::types::AwsKmsKeyDetails) -> Self {
         self.aws_kms_key = ::std::option::Option::Some(input);
@@ -1459,6 +1637,10 @@ impl ResourceDetailsBuilder {
         self.aws_kms_key = input;
         self
     }
+    /// <p>Details about an KMS key.</p>
+    pub fn get_aws_kms_key(&self) -> &::std::option::Option<crate::types::AwsKmsKeyDetails> {
+        &self.aws_kms_key
+    }
     /// <p>Details about a Lambda function.</p>
     pub fn aws_lambda_function(mut self, input: crate::types::AwsLambdaFunctionDetails) -> Self {
         self.aws_lambda_function = ::std::option::Option::Some(input);
@@ -1471,6 +1653,12 @@ impl ResourceDetailsBuilder {
     ) -> Self {
         self.aws_lambda_function = input;
         self
+    }
+    /// <p>Details about a Lambda function.</p>
+    pub fn get_aws_lambda_function(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsLambdaFunctionDetails> {
+        &self.aws_lambda_function
     }
     /// <p>Details for a Lambda layer version.</p>
     pub fn aws_lambda_layer_version(
@@ -1488,6 +1676,12 @@ impl ResourceDetailsBuilder {
         self.aws_lambda_layer_version = input;
         self
     }
+    /// <p>Details for a Lambda layer version.</p>
+    pub fn get_aws_lambda_layer_version(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsLambdaLayerVersionDetails> {
+        &self.aws_lambda_layer_version
+    }
     /// <p>Details about an Amazon RDS database instance.</p>
     pub fn aws_rds_db_instance(mut self, input: crate::types::AwsRdsDbInstanceDetails) -> Self {
         self.aws_rds_db_instance = ::std::option::Option::Some(input);
@@ -1500,6 +1694,12 @@ impl ResourceDetailsBuilder {
     ) -> Self {
         self.aws_rds_db_instance = input;
         self
+    }
+    /// <p>Details about an Amazon RDS database instance.</p>
+    pub fn get_aws_rds_db_instance(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsRdsDbInstanceDetails> {
+        &self.aws_rds_db_instance
     }
     /// <p>Details about an SNS topic.</p>
     pub fn aws_sns_topic(mut self, input: crate::types::AwsSnsTopicDetails) -> Self {
@@ -1514,6 +1714,10 @@ impl ResourceDetailsBuilder {
         self.aws_sns_topic = input;
         self
     }
+    /// <p>Details about an SNS topic.</p>
+    pub fn get_aws_sns_topic(&self) -> &::std::option::Option<crate::types::AwsSnsTopicDetails> {
+        &self.aws_sns_topic
+    }
     /// <p>Details about an SQS queue.</p>
     pub fn aws_sqs_queue(mut self, input: crate::types::AwsSqsQueueDetails) -> Self {
         self.aws_sqs_queue = ::std::option::Option::Some(input);
@@ -1526,6 +1730,10 @@ impl ResourceDetailsBuilder {
     ) -> Self {
         self.aws_sqs_queue = input;
         self
+    }
+    /// <p>Details about an SQS queue.</p>
+    pub fn get_aws_sqs_queue(&self) -> &::std::option::Option<crate::types::AwsSqsQueueDetails> {
+        &self.aws_sqs_queue
     }
     /// <p>Details for an WAF web ACL.</p>
     pub fn aws_waf_web_acl(mut self, input: crate::types::AwsWafWebAclDetails) -> Self {
@@ -1540,6 +1748,10 @@ impl ResourceDetailsBuilder {
         self.aws_waf_web_acl = input;
         self
     }
+    /// <p>Details for an WAF web ACL.</p>
+    pub fn get_aws_waf_web_acl(&self) -> &::std::option::Option<crate::types::AwsWafWebAclDetails> {
+        &self.aws_waf_web_acl
+    }
     /// <p>Details about an Amazon RDS database snapshot.</p>
     pub fn aws_rds_db_snapshot(mut self, input: crate::types::AwsRdsDbSnapshotDetails) -> Self {
         self.aws_rds_db_snapshot = ::std::option::Option::Some(input);
@@ -1552,6 +1764,12 @@ impl ResourceDetailsBuilder {
     ) -> Self {
         self.aws_rds_db_snapshot = input;
         self
+    }
+    /// <p>Details about an Amazon RDS database snapshot.</p>
+    pub fn get_aws_rds_db_snapshot(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsRdsDbSnapshotDetails> {
+        &self.aws_rds_db_snapshot
     }
     /// <p>Details about an Amazon RDS database cluster snapshot.</p>
     pub fn aws_rds_db_cluster_snapshot(
@@ -1569,6 +1787,12 @@ impl ResourceDetailsBuilder {
         self.aws_rds_db_cluster_snapshot = input;
         self
     }
+    /// <p>Details about an Amazon RDS database cluster snapshot.</p>
+    pub fn get_aws_rds_db_cluster_snapshot(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsRdsDbClusterSnapshotDetails> {
+        &self.aws_rds_db_cluster_snapshot
+    }
     /// <p>Details about an Amazon RDS database cluster.</p>
     pub fn aws_rds_db_cluster(mut self, input: crate::types::AwsRdsDbClusterDetails) -> Self {
         self.aws_rds_db_cluster = ::std::option::Option::Some(input);
@@ -1581,6 +1805,12 @@ impl ResourceDetailsBuilder {
     ) -> Self {
         self.aws_rds_db_cluster = input;
         self
+    }
+    /// <p>Details about an Amazon RDS database cluster.</p>
+    pub fn get_aws_rds_db_cluster(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsRdsDbClusterDetails> {
+        &self.aws_rds_db_cluster
     }
     /// <p>Details about an Amazon ECS cluster.</p>
     pub fn aws_ecs_cluster(mut self, input: crate::types::AwsEcsClusterDetails) -> Self {
@@ -1595,6 +1825,12 @@ impl ResourceDetailsBuilder {
         self.aws_ecs_cluster = input;
         self
     }
+    /// <p>Details about an Amazon ECS cluster.</p>
+    pub fn get_aws_ecs_cluster(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsEcsClusterDetails> {
+        &self.aws_ecs_cluster
+    }
     /// <p>Provides information about a Docker container that's part of a task. </p>
     pub fn aws_ecs_container(mut self, input: crate::types::AwsEcsContainerDetails) -> Self {
         self.aws_ecs_container = ::std::option::Option::Some(input);
@@ -1607,6 +1843,12 @@ impl ResourceDetailsBuilder {
     ) -> Self {
         self.aws_ecs_container = input;
         self
+    }
+    /// <p>Provides information about a Docker container that's part of a task. </p>
+    pub fn get_aws_ecs_container(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsEcsContainerDetails> {
+        &self.aws_ecs_container
     }
     /// <p>Details about a task definition. A task definition describes the container and volume definitions of an Amazon Elastic Container Service task.</p>
     pub fn aws_ecs_task_definition(
@@ -1624,6 +1866,12 @@ impl ResourceDetailsBuilder {
         self.aws_ecs_task_definition = input;
         self
     }
+    /// <p>Details about a task definition. A task definition describes the container and volume definitions of an Amazon Elastic Container Service task.</p>
+    pub fn get_aws_ecs_task_definition(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsEcsTaskDefinitionDetails> {
+        &self.aws_ecs_task_definition
+    }
     /// <p>Details about a container resource related to a finding.</p>
     pub fn container(mut self, input: crate::types::ContainerDetails) -> Self {
         self.container = ::std::option::Option::Some(input);
@@ -1636,6 +1884,10 @@ impl ResourceDetailsBuilder {
     ) -> Self {
         self.container = input;
         self
+    }
+    /// <p>Details about a container resource related to a finding.</p>
+    pub fn get_container(&self) -> &::std::option::Option<crate::types::ContainerDetails> {
+        &self.container
     }
     /// Adds a key-value pair to `other`.
     ///
@@ -1670,6 +1922,18 @@ impl ResourceDetailsBuilder {
         self.other = input;
         self
     }
+    /// <p>Details about a resource that are not available in a type-specific details object. Use the <code>Other</code> object in the following cases.</p>
+    /// <ul>
+    /// <li> <p>The type-specific object does not contain all of the fields that you want to populate. In this case, first use the type-specific object to populate those fields. Use the <code>Other</code> object to populate the fields that are missing from the type-specific object.</p> </li>
+    /// <li> <p>The resource type does not have a corresponding object. This includes resources for which the type is <code>Other</code>. </p> </li>
+    /// </ul>
+    pub fn get_other(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.other
+    }
     /// <p>Details about an RDS event notification subscription.</p>
     pub fn aws_rds_event_subscription(
         mut self,
@@ -1686,6 +1950,12 @@ impl ResourceDetailsBuilder {
         self.aws_rds_event_subscription = input;
         self
     }
+    /// <p>Details about an RDS event notification subscription.</p>
+    pub fn get_aws_rds_event_subscription(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsRdsEventSubscriptionDetails> {
+        &self.aws_rds_event_subscription
+    }
     /// <p>Details about a service within an ECS cluster.</p>
     pub fn aws_ecs_service(mut self, input: crate::types::AwsEcsServiceDetails) -> Self {
         self.aws_ecs_service = ::std::option::Option::Some(input);
@@ -1698,6 +1968,12 @@ impl ResourceDetailsBuilder {
     ) -> Self {
         self.aws_ecs_service = input;
         self
+    }
+    /// <p>Details about a service within an ECS cluster.</p>
+    pub fn get_aws_ecs_service(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsEcsServiceDetails> {
+        &self.aws_ecs_service
     }
     /// <p>Provides details about a launch configuration.</p>
     pub fn aws_auto_scaling_launch_configuration(
@@ -1715,6 +1991,12 @@ impl ResourceDetailsBuilder {
         self.aws_auto_scaling_launch_configuration = input;
         self
     }
+    /// <p>Provides details about a launch configuration.</p>
+    pub fn get_aws_auto_scaling_launch_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsAutoScalingLaunchConfigurationDetails> {
+        &self.aws_auto_scaling_launch_configuration
+    }
     /// <p>Details about an Amazon EC2 VPN connection.</p>
     pub fn aws_ec2_vpn_connection(
         mut self,
@@ -1730,6 +2012,12 @@ impl ResourceDetailsBuilder {
     ) -> Self {
         self.aws_ec2_vpn_connection = input;
         self
+    }
+    /// <p>Details about an Amazon EC2 VPN connection.</p>
+    pub fn get_aws_ec2_vpn_connection(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsEc2VpnConnectionDetails> {
+        &self.aws_ec2_vpn_connection
     }
     /// <p>Information about an Amazon ECR image.</p>
     pub fn aws_ecr_container_image(
@@ -1747,6 +2035,12 @@ impl ResourceDetailsBuilder {
         self.aws_ecr_container_image = input;
         self
     }
+    /// <p>Information about an Amazon ECR image.</p>
+    pub fn get_aws_ecr_container_image(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsEcrContainerImageDetails> {
+        &self.aws_ecr_container_image
+    }
     /// <p>Details about an Amazon OpenSearch Service domain.</p>
     pub fn aws_open_search_service_domain(
         mut self,
@@ -1762,6 +2056,12 @@ impl ResourceDetailsBuilder {
     ) -> Self {
         self.aws_open_search_service_domain = input;
         self
+    }
+    /// <p>Details about an Amazon OpenSearch Service domain.</p>
+    pub fn get_aws_open_search_service_domain(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsOpenSearchServiceDomainDetails> {
+        &self.aws_open_search_service_domain
     }
     /// <p>Details about the service configuration for a VPC endpoint service.</p>
     pub fn aws_ec2_vpc_endpoint_service(
@@ -1779,6 +2079,12 @@ impl ResourceDetailsBuilder {
         self.aws_ec2_vpc_endpoint_service = input;
         self
     }
+    /// <p>Details about the service configuration for a VPC endpoint service.</p>
+    pub fn get_aws_ec2_vpc_endpoint_service(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsEc2VpcEndpointServiceDetails> {
+        &self.aws_ec2_vpc_endpoint_service
+    }
     /// <p>Information about the encryption configuration for X-Ray.</p>
     pub fn aws_xray_encryption_config(
         mut self,
@@ -1794,6 +2100,12 @@ impl ResourceDetailsBuilder {
     ) -> Self {
         self.aws_xray_encryption_config = input;
         self
+    }
+    /// <p>Information about the encryption configuration for X-Ray.</p>
+    pub fn get_aws_xray_encryption_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsXrayEncryptionConfigDetails> {
+        &self.aws_xray_encryption_config
     }
     /// <p>Details about a rate-based rule for global resources.</p>
     pub fn aws_waf_rate_based_rule(
@@ -1811,6 +2123,12 @@ impl ResourceDetailsBuilder {
         self.aws_waf_rate_based_rule = input;
         self
     }
+    /// <p>Details about a rate-based rule for global resources.</p>
+    pub fn get_aws_waf_rate_based_rule(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsWafRateBasedRuleDetails> {
+        &self.aws_waf_rate_based_rule
+    }
     /// <p>Details about a rate-based rule for Regional resources.</p>
     pub fn aws_waf_regional_rate_based_rule(
         mut self,
@@ -1827,6 +2145,12 @@ impl ResourceDetailsBuilder {
         self.aws_waf_regional_rate_based_rule = input;
         self
     }
+    /// <p>Details about a rate-based rule for Regional resources.</p>
+    pub fn get_aws_waf_regional_rate_based_rule(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsWafRegionalRateBasedRuleDetails> {
+        &self.aws_waf_regional_rate_based_rule
+    }
     /// <p>Information about an Amazon Elastic Container Registry repository.</p>
     pub fn aws_ecr_repository(mut self, input: crate::types::AwsEcrRepositoryDetails) -> Self {
         self.aws_ecr_repository = ::std::option::Option::Some(input);
@@ -1840,6 +2164,12 @@ impl ResourceDetailsBuilder {
         self.aws_ecr_repository = input;
         self
     }
+    /// <p>Information about an Amazon Elastic Container Registry repository.</p>
+    pub fn get_aws_ecr_repository(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsEcrRepositoryDetails> {
+        &self.aws_ecr_repository
+    }
     /// <p>Details about an Amazon EKS cluster.</p>
     pub fn aws_eks_cluster(mut self, input: crate::types::AwsEksClusterDetails) -> Self {
         self.aws_eks_cluster = ::std::option::Option::Some(input);
@@ -1852,6 +2182,12 @@ impl ResourceDetailsBuilder {
     ) -> Self {
         self.aws_eks_cluster = input;
         self
+    }
+    /// <p>Details about an Amazon EKS cluster.</p>
+    pub fn get_aws_eks_cluster(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsEksClusterDetails> {
+        &self.aws_eks_cluster
     }
     /// <p>Details about an Network Firewall firewall policy.</p>
     pub fn aws_network_firewall_firewall_policy(
@@ -1869,6 +2205,12 @@ impl ResourceDetailsBuilder {
         self.aws_network_firewall_firewall_policy = input;
         self
     }
+    /// <p>Details about an Network Firewall firewall policy.</p>
+    pub fn get_aws_network_firewall_firewall_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsNetworkFirewallFirewallPolicyDetails> {
+        &self.aws_network_firewall_firewall_policy
+    }
     /// <p>Details about an Network Firewall firewall.</p>
     pub fn aws_network_firewall_firewall(
         mut self,
@@ -1884,6 +2226,12 @@ impl ResourceDetailsBuilder {
     ) -> Self {
         self.aws_network_firewall_firewall = input;
         self
+    }
+    /// <p>Details about an Network Firewall firewall.</p>
+    pub fn get_aws_network_firewall_firewall(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsNetworkFirewallFirewallDetails> {
+        &self.aws_network_firewall_firewall
     }
     /// <p>Details about an Network Firewall rule group.</p>
     pub fn aws_network_firewall_rule_group(
@@ -1901,6 +2249,12 @@ impl ResourceDetailsBuilder {
         self.aws_network_firewall_rule_group = input;
         self
     }
+    /// <p>Details about an Network Firewall rule group.</p>
+    pub fn get_aws_network_firewall_rule_group(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsNetworkFirewallRuleGroupDetails> {
+        &self.aws_network_firewall_rule_group
+    }
     /// <p>Details about an Amazon RDS DB security group.</p>
     pub fn aws_rds_db_security_group(
         mut self,
@@ -1917,6 +2271,12 @@ impl ResourceDetailsBuilder {
         self.aws_rds_db_security_group = input;
         self
     }
+    /// <p>Details about an Amazon RDS DB security group.</p>
+    pub fn get_aws_rds_db_security_group(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsRdsDbSecurityGroupDetails> {
+        &self.aws_rds_db_security_group
+    }
     /// <p>Details about an Amazon Kinesis data stream.</p>
     pub fn aws_kinesis_stream(mut self, input: crate::types::AwsKinesisStreamDetails) -> Self {
         self.aws_kinesis_stream = ::std::option::Option::Some(input);
@@ -1929,6 +2289,12 @@ impl ResourceDetailsBuilder {
     ) -> Self {
         self.aws_kinesis_stream = input;
         self
+    }
+    /// <p>Details about an Amazon Kinesis data stream.</p>
+    pub fn get_aws_kinesis_stream(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsKinesisStreamDetails> {
+        &self.aws_kinesis_stream
     }
     /// <p>Details about an Amazon EC2 transit gateway that interconnects your virtual private clouds (VPC) and on-premises networks.</p>
     pub fn aws_ec2_transit_gateway(
@@ -1946,6 +2312,12 @@ impl ResourceDetailsBuilder {
         self.aws_ec2_transit_gateway = input;
         self
     }
+    /// <p>Details about an Amazon EC2 transit gateway that interconnects your virtual private clouds (VPC) and on-premises networks.</p>
+    pub fn get_aws_ec2_transit_gateway(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsEc2TransitGatewayDetails> {
+        &self.aws_ec2_transit_gateway
+    }
     /// <p>Details about an Amazon EFS access point. An access point is an application-specific view into an EFS file system that applies an operating system user and group, and a file system path, to any file system request made through the access point. </p>
     pub fn aws_efs_access_point(mut self, input: crate::types::AwsEfsAccessPointDetails) -> Self {
         self.aws_efs_access_point = ::std::option::Option::Some(input);
@@ -1958,6 +2330,12 @@ impl ResourceDetailsBuilder {
     ) -> Self {
         self.aws_efs_access_point = input;
         self
+    }
+    /// <p>Details about an Amazon EFS access point. An access point is an application-specific view into an EFS file system that applies an operating system user and group, and a file system path, to any file system request made through the access point. </p>
+    pub fn get_aws_efs_access_point(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsEfsAccessPointDetails> {
+        &self.aws_efs_access_point
     }
     /// <p>Details about an CloudFormation stack. A stack is a collection of Amazon Web Services resources that you can manage as a single unit.</p>
     pub fn aws_cloud_formation_stack(
@@ -1975,6 +2353,12 @@ impl ResourceDetailsBuilder {
         self.aws_cloud_formation_stack = input;
         self
     }
+    /// <p>Details about an CloudFormation stack. A stack is a collection of Amazon Web Services resources that you can manage as a single unit.</p>
+    pub fn get_aws_cloud_formation_stack(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsCloudFormationStackDetails> {
+        &self.aws_cloud_formation_stack
+    }
     /// <p>Details about an Amazon CloudWatch alarm. An alarm allows you to monitor and receive alerts about your Amazon Web Services resources and applications across multiple Regions.</p>
     pub fn aws_cloud_watch_alarm(mut self, input: crate::types::AwsCloudWatchAlarmDetails) -> Self {
         self.aws_cloud_watch_alarm = ::std::option::Option::Some(input);
@@ -1987,6 +2371,12 @@ impl ResourceDetailsBuilder {
     ) -> Self {
         self.aws_cloud_watch_alarm = input;
         self
+    }
+    /// <p>Details about an Amazon CloudWatch alarm. An alarm allows you to monitor and receive alerts about your Amazon Web Services resources and applications across multiple Regions.</p>
+    pub fn get_aws_cloud_watch_alarm(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsCloudWatchAlarmDetails> {
+        &self.aws_cloud_watch_alarm
     }
     /// <p>Details about an Amazon EC2 VPC peering connection. A VPC peering connection is a networking connection between two VPCs that enables you to route traffic between them privately. </p>
     pub fn aws_ec2_vpc_peering_connection(
@@ -2004,6 +2394,12 @@ impl ResourceDetailsBuilder {
         self.aws_ec2_vpc_peering_connection = input;
         self
     }
+    /// <p>Details about an Amazon EC2 VPC peering connection. A VPC peering connection is a networking connection between two VPCs that enables you to route traffic between them privately. </p>
+    pub fn get_aws_ec2_vpc_peering_connection(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsEc2VpcPeeringConnectionDetails> {
+        &self.aws_ec2_vpc_peering_connection
+    }
     /// <p>Details about an WAF rule group for Regional resources. </p>
     pub fn aws_waf_regional_rule_group(
         mut self,
@@ -2020,6 +2416,12 @@ impl ResourceDetailsBuilder {
         self.aws_waf_regional_rule_group = input;
         self
     }
+    /// <p>Details about an WAF rule group for Regional resources. </p>
+    pub fn get_aws_waf_regional_rule_group(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsWafRegionalRuleGroupDetails> {
+        &self.aws_waf_regional_rule_group
+    }
     /// <p>Details about an WAF rule for Regional resources. </p>
     pub fn aws_waf_regional_rule(mut self, input: crate::types::AwsWafRegionalRuleDetails) -> Self {
         self.aws_waf_regional_rule = ::std::option::Option::Some(input);
@@ -2032,6 +2434,12 @@ impl ResourceDetailsBuilder {
     ) -> Self {
         self.aws_waf_regional_rule = input;
         self
+    }
+    /// <p>Details about an WAF rule for Regional resources. </p>
+    pub fn get_aws_waf_regional_rule(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsWafRegionalRuleDetails> {
+        &self.aws_waf_regional_rule
     }
     /// <p>Details about an WAF web access control list (web ACL) for Regional resources. </p>
     pub fn aws_waf_regional_web_acl(
@@ -2049,6 +2457,12 @@ impl ResourceDetailsBuilder {
         self.aws_waf_regional_web_acl = input;
         self
     }
+    /// <p>Details about an WAF web access control list (web ACL) for Regional resources. </p>
+    pub fn get_aws_waf_regional_web_acl(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsWafRegionalWebAclDetails> {
+        &self.aws_waf_regional_web_acl
+    }
     /// <p>Details about an WAF rule for global resources. </p>
     pub fn aws_waf_rule(mut self, input: crate::types::AwsWafRuleDetails) -> Self {
         self.aws_waf_rule = ::std::option::Option::Some(input);
@@ -2061,6 +2475,10 @@ impl ResourceDetailsBuilder {
     ) -> Self {
         self.aws_waf_rule = input;
         self
+    }
+    /// <p>Details about an WAF rule for global resources. </p>
+    pub fn get_aws_waf_rule(&self) -> &::std::option::Option<crate::types::AwsWafRuleDetails> {
+        &self.aws_waf_rule
     }
     /// <p>Details about an WAF rule group for global resources. </p>
     pub fn aws_waf_rule_group(mut self, input: crate::types::AwsWafRuleGroupDetails) -> Self {
@@ -2075,6 +2493,12 @@ impl ResourceDetailsBuilder {
         self.aws_waf_rule_group = input;
         self
     }
+    /// <p>Details about an WAF rule group for global resources. </p>
+    pub fn get_aws_waf_rule_group(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsWafRuleGroupDetails> {
+        &self.aws_waf_rule_group
+    }
     /// <p>Details about a task in a cluster. </p>
     pub fn aws_ecs_task(mut self, input: crate::types::AwsEcsTaskDetails) -> Self {
         self.aws_ecs_task = ::std::option::Option::Some(input);
@@ -2087,6 +2511,10 @@ impl ResourceDetailsBuilder {
     ) -> Self {
         self.aws_ecs_task = input;
         self
+    }
+    /// <p>Details about a task in a cluster. </p>
+    pub fn get_aws_ecs_task(&self) -> &::std::option::Option<crate::types::AwsEcsTaskDetails> {
+        &self.aws_ecs_task
     }
     /// <p>Provides details about an Backup backup vault. </p>
     pub fn aws_backup_backup_vault(
@@ -2104,6 +2532,12 @@ impl ResourceDetailsBuilder {
         self.aws_backup_backup_vault = input;
         self
     }
+    /// <p>Provides details about an Backup backup vault. </p>
+    pub fn get_aws_backup_backup_vault(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsBackupBackupVaultDetails> {
+        &self.aws_backup_backup_vault
+    }
     /// <p>Provides details about an Backup backup plan. </p>
     pub fn aws_backup_backup_plan(
         mut self,
@@ -2119,6 +2553,12 @@ impl ResourceDetailsBuilder {
     ) -> Self {
         self.aws_backup_backup_plan = input;
         self
+    }
+    /// <p>Provides details about an Backup backup plan. </p>
+    pub fn get_aws_backup_backup_plan(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsBackupBackupPlanDetails> {
+        &self.aws_backup_backup_plan
     }
     /// <p>Provides details about an Backup backup, or recovery point. </p>
     pub fn aws_backup_recovery_point(
@@ -2136,6 +2576,12 @@ impl ResourceDetailsBuilder {
         self.aws_backup_recovery_point = input;
         self
     }
+    /// <p>Provides details about an Backup backup, or recovery point. </p>
+    pub fn get_aws_backup_recovery_point(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsBackupRecoveryPointDetails> {
+        &self.aws_backup_recovery_point
+    }
     /// <p> Specifies the properties for creating an Amazon Elastic Compute Cloud (Amazon EC2) launch template. </p>
     pub fn aws_ec2_launch_template(
         mut self,
@@ -2151,6 +2597,12 @@ impl ResourceDetailsBuilder {
     ) -> Self {
         self.aws_ec2_launch_template = input;
         self
+    }
+    /// <p> Specifies the properties for creating an Amazon Elastic Compute Cloud (Amazon EC2) launch template. </p>
+    pub fn get_aws_ec2_launch_template(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDetails> {
+        &self.aws_ec2_launch_template
     }
     /// <p> Provides details about an Amazon SageMaker notebook instance. </p>
     pub fn aws_sage_maker_notebook_instance(
@@ -2168,6 +2620,12 @@ impl ResourceDetailsBuilder {
         self.aws_sage_maker_notebook_instance = input;
         self
     }
+    /// <p> Provides details about an Amazon SageMaker notebook instance. </p>
+    pub fn get_aws_sage_maker_notebook_instance(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsSageMakerNotebookInstanceDetails> {
+        &self.aws_sage_maker_notebook_instance
+    }
     /// <p> Details about an WAFv2 web Access Control List (ACL). </p>
     pub fn aws_wafv2_web_acl(mut self, input: crate::types::AwsWafv2WebAclDetails) -> Self {
         self.aws_wafv2_web_acl = ::std::option::Option::Some(input);
@@ -2180,6 +2638,12 @@ impl ResourceDetailsBuilder {
     ) -> Self {
         self.aws_wafv2_web_acl = input;
         self
+    }
+    /// <p> Details about an WAFv2 web Access Control List (ACL). </p>
+    pub fn get_aws_wafv2_web_acl(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsWafv2WebAclDetails> {
+        &self.aws_wafv2_web_acl
     }
     /// <p> Details about an WAFv2 rule group. </p>
     pub fn aws_wafv2_rule_group(mut self, input: crate::types::AwsWafv2RuleGroupDetails) -> Self {
@@ -2194,6 +2658,12 @@ impl ResourceDetailsBuilder {
         self.aws_wafv2_rule_group = input;
         self
     }
+    /// <p> Details about an WAFv2 rule group. </p>
+    pub fn get_aws_wafv2_rule_group(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsWafv2RuleGroupDetails> {
+        &self.aws_wafv2_rule_group
+    }
     /// <p> Provides details about a route table. A route table contains a set of rules, called routes, that determine where to direct network traffic from your subnet or gateway. </p>
     pub fn aws_ec2_route_table(mut self, input: crate::types::AwsEc2RouteTableDetails) -> Self {
         self.aws_ec2_route_table = ::std::option::Option::Some(input);
@@ -2207,6 +2677,12 @@ impl ResourceDetailsBuilder {
         self.aws_ec2_route_table = input;
         self
     }
+    /// <p> Provides details about a route table. A route table contains a set of rules, called routes, that determine where to direct network traffic from your subnet or gateway. </p>
+    pub fn get_aws_ec2_route_table(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsEc2RouteTableDetails> {
+        &self.aws_ec2_route_table
+    }
     /// <p> Provides details about AppSync message broker. A message broker allows software applications and components to communicate using various programming languages, operating systems, and formal messaging protocols. </p>
     pub fn aws_amazon_mq_broker(mut self, input: crate::types::AwsAmazonMqBrokerDetails) -> Self {
         self.aws_amazon_mq_broker = ::std::option::Option::Some(input);
@@ -2219,6 +2695,12 @@ impl ResourceDetailsBuilder {
     ) -> Self {
         self.aws_amazon_mq_broker = input;
         self
+    }
+    /// <p> Provides details about AppSync message broker. A message broker allows software applications and components to communicate using various programming languages, operating systems, and formal messaging protocols. </p>
+    pub fn get_aws_amazon_mq_broker(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsAmazonMqBrokerDetails> {
+        &self.aws_amazon_mq_broker
     }
     /// <p> Provides details about an AppSync Graph QL API, which lets you query multiple databases, microservices, and APIs from a single GraphQL endpoint. </p>
     pub fn aws_app_sync_graph_ql_api(
@@ -2236,6 +2718,12 @@ impl ResourceDetailsBuilder {
         self.aws_app_sync_graph_ql_api = input;
         self
     }
+    /// <p> Provides details about an AppSync Graph QL API, which lets you query multiple databases, microservices, and APIs from a single GraphQL endpoint. </p>
+    pub fn get_aws_app_sync_graph_ql_api(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsAppSyncGraphQlApiDetails> {
+        &self.aws_app_sync_graph_ql_api
+    }
     /// <p> A schema defines the structure of events that are sent to Amazon EventBridge. Schema registries are containers for schemas. They collect and organize schemas so that your schemas are in logical groups. </p>
     pub fn aws_event_schemas_registry(
         mut self,
@@ -2251,6 +2739,12 @@ impl ResourceDetailsBuilder {
     ) -> Self {
         self.aws_event_schemas_registry = input;
         self
+    }
+    /// <p> A schema defines the structure of events that are sent to Amazon EventBridge. Schema registries are containers for schemas. They collect and organize schemas so that your schemas are in logical groups. </p>
+    pub fn get_aws_event_schemas_registry(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsEventSchemasRegistryDetails> {
+        &self.aws_event_schemas_registry
     }
     /// <p> Provides details about an Amazon GuardDuty detector. A detector is an object that represents the GuardDuty service. A detector is required for GuardDuty to become operational. </p>
     pub fn aws_guard_duty_detector(
@@ -2268,6 +2762,12 @@ impl ResourceDetailsBuilder {
         self.aws_guard_duty_detector = input;
         self
     }
+    /// <p> Provides details about an Amazon GuardDuty detector. A detector is an object that represents the GuardDuty service. A detector is required for GuardDuty to become operational. </p>
+    pub fn get_aws_guard_duty_detector(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsGuardDutyDetectorDetails> {
+        &self.aws_guard_duty_detector
+    }
     /// <p> Provides details about an Step Functions state machine, which is a workflow consisting of a series of event-driven steps. </p>
     pub fn aws_step_function_state_machine(
         mut self,
@@ -2284,6 +2784,12 @@ impl ResourceDetailsBuilder {
         self.aws_step_function_state_machine = input;
         self
     }
+    /// <p> Provides details about an Step Functions state machine, which is a workflow consisting of a series of event-driven steps. </p>
+    pub fn get_aws_step_function_state_machine(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsStepFunctionStateMachineDetails> {
+        &self.aws_step_function_state_machine
+    }
     /// <p> Provides information about an Amazon Athena workgroup. A workgroup helps you separate users, teams, applications, or workloads. It also helps you set limits on data processing and track costs. </p>
     pub fn aws_athena_work_group(mut self, input: crate::types::AwsAthenaWorkGroupDetails) -> Self {
         self.aws_athena_work_group = ::std::option::Option::Some(input);
@@ -2296,6 +2802,12 @@ impl ResourceDetailsBuilder {
     ) -> Self {
         self.aws_athena_work_group = input;
         self
+    }
+    /// <p> Provides information about an Amazon Athena workgroup. A workgroup helps you separate users, teams, applications, or workloads. It also helps you set limits on data processing and track costs. </p>
+    pub fn get_aws_athena_work_group(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsAthenaWorkGroupDetails> {
+        &self.aws_athena_work_group
     }
     /// Consumes the builder and constructs a [`ResourceDetails`](crate::types::ResourceDetails).
     pub fn build(self) -> crate::types::ResourceDetails {

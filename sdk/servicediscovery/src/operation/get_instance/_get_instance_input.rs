@@ -47,6 +47,10 @@ impl GetInstanceInputBuilder {
         self.service_id = input;
         self
     }
+    /// <p>The ID of the service that the instance is associated with.</p>
+    pub fn get_service_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_id
+    }
     /// <p>The ID of the instance that you want to get information about.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl GetInstanceInputBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
+    }
+    /// <p>The ID of the instance that you want to get information about.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// Consumes the builder and constructs a [`GetInstanceInput`](crate::operation::get_instance::GetInstanceInput).
     pub fn build(

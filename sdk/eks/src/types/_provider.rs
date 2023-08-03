@@ -40,6 +40,10 @@ impl ProviderBuilder {
         self.key_arn = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be symmetric, created in the same region as the cluster, and if the KMS key was created in a different account, the user must have access to the KMS key. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html">Allowing Users in Other Accounts to Use a KMS key</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn get_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_arn
+    }
     /// Consumes the builder and constructs a [`Provider`](crate::types::Provider).
     pub fn build(self) -> crate::types::Provider {
         crate::types::Provider {

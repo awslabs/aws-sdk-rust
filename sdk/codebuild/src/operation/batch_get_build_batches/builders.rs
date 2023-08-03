@@ -36,6 +36,13 @@ impl BatchGetBuildBatchesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchGetBuildBatches as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_get_build_batches::builders::BatchGetBuildBatchesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +139,9 @@ impl BatchGetBuildBatchesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ids(input);
         self
+    }
+    /// <p>An array that contains the batch build identifiers to retrieve.</p>
+    pub fn get_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_ids()
     }
 }

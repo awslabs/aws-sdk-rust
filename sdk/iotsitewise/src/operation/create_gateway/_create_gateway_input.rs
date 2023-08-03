@@ -63,6 +63,10 @@ impl CreateGatewayInputBuilder {
         self.gateway_name = input;
         self
     }
+    /// <p>A unique, friendly name for the gateway.</p>
+    pub fn get_gateway_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_name
+    }
     /// <p>The gateway's platform. You can only specify one platform in a gateway.</p>
     pub fn gateway_platform(mut self, input: crate::types::GatewayPlatform) -> Self {
         self.gateway_platform = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl CreateGatewayInputBuilder {
     ) -> Self {
         self.gateway_platform = input;
         self
+    }
+    /// <p>The gateway's platform. You can only specify one platform in a gateway.</p>
+    pub fn get_gateway_platform(&self) -> &::std::option::Option<crate::types::GatewayPlatform> {
+        &self.gateway_platform
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -100,6 +108,14 @@ impl CreateGatewayInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of key-value pairs that contain metadata for the gateway. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateGatewayInput`](crate::operation::create_gateway::CreateGatewayInput).
     pub fn build(

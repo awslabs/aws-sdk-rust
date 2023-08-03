@@ -36,6 +36,10 @@ impl EnableMacieFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the EnableMacie as a reference.
+    pub fn as_input(&self) -> &crate::operation::enable_macie::builders::EnableMacieInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl EnableMacieFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).</p>
     pub fn finding_publishing_frequency(
         mut self,
@@ -134,6 +142,12 @@ impl EnableMacieFluentBuilder {
         self.inner = self.inner.set_finding_publishing_frequency(input);
         self
     }
+    /// <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events).</p>
+    pub fn get_finding_publishing_frequency(
+        &self,
+    ) -> &::std::option::Option<crate::types::FindingPublishingFrequency> {
+        self.inner.get_finding_publishing_frequency()
+    }
     /// <p>Specifies the new status for the account. To enable Amazon Macie and start all Macie activities for the account, set this value to ENABLED.</p>
     pub fn status(mut self, input: crate::types::MacieStatus) -> Self {
         self.inner = self.inner.status(input);
@@ -143,5 +157,9 @@ impl EnableMacieFluentBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::MacieStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
+    }
+    /// <p>Specifies the new status for the account. To enable Amazon Macie and start all Macie activities for the account, set this value to ENABLED.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::MacieStatus> {
+        self.inner.get_status()
     }
 }

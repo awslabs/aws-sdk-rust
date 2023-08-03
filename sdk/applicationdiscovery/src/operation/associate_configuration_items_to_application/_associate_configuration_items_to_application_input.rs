@@ -53,6 +53,12 @@ impl AssociateConfigurationItemsToApplicationInputBuilder {
         self.application_configuration_id = input;
         self
     }
+    /// <p>The configuration ID of an application with which items are to be associated.</p>
+    pub fn get_application_configuration_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.application_configuration_id
+    }
     /// Appends an item to `configuration_ids`.
     ///
     /// To override the contents of this collection use [`set_configuration_ids`](Self::set_configuration_ids).
@@ -74,6 +80,12 @@ impl AssociateConfigurationItemsToApplicationInputBuilder {
     ) -> Self {
         self.configuration_ids = input;
         self
+    }
+    /// <p>The ID of each configuration item to be associated with an application.</p>
+    pub fn get_configuration_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.configuration_ids
     }
     /// Consumes the builder and constructs a [`AssociateConfigurationItemsToApplicationInput`](crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationInput, ::aws_smithy_http::operation::error::BuildError>{

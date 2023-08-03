@@ -82,6 +82,12 @@ impl GetInventoryInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>One or more filters. Use a filter to return a more specific list of results.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryFilter>> {
+        &self.filters
+    }
     /// Appends an item to `aggregators`.
     ///
     /// To override the contents of this collection use [`set_aggregators`](Self::set_aggregators).
@@ -100,6 +106,12 @@ impl GetInventoryInputBuilder {
     ) -> Self {
         self.aggregators = input;
         self
+    }
+    /// <p>Returns counts of inventory types based on one or more expressions. For example, if you aggregate by using an expression that uses the <code>AWS:InstanceInformation.PlatformType</code> type, you can see a count of how many Windows and Linux managed nodes exist in your inventoried fleet.</p>
+    pub fn get_aggregators(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryAggregator>> {
+        &self.aggregators
     }
     /// Appends an item to `result_attributes`.
     ///
@@ -120,6 +132,12 @@ impl GetInventoryInputBuilder {
         self.result_attributes = input;
         self
     }
+    /// <p>The list of inventory item types to return.</p>
+    pub fn get_result_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResultAttribute>> {
+        &self.result_attributes
+    }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -130,6 +148,10 @@ impl GetInventoryInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -139,6 +161,10 @@ impl GetInventoryInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`GetInventoryInput`](crate::operation::get_inventory::GetInventoryInput).
     pub fn build(

@@ -54,6 +54,10 @@ impl GetResolverRulePolicyOutputBuilder {
         self.resolver_rule_policy = input;
         self
     }
+    /// <p>The Resolver rule policy for the rule that you specified in a <code>GetResolverRulePolicy</code> request.</p>
+    pub fn get_resolver_rule_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resolver_rule_policy
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

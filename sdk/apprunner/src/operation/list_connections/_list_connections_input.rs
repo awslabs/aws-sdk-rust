@@ -65,6 +65,10 @@ impl ListConnectionsInputBuilder {
         self.connection_name = input;
         self
     }
+    /// <p>If specified, only this connection is returned. If not specified, the result isn't filtered by name.</p>
+    pub fn get_connection_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_name
+    }
     /// <p>The maximum number of results to include in each response (result page). Used for a paginated request.</p>
     /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -77,6 +81,11 @@ impl ListConnectionsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to include in each response (result page). Used for a paginated request.</p>
+    /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>A token from a previous result page. Used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones specified in the initial request.</p>
     /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -88,6 +97,11 @@ impl ListConnectionsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token from a previous result page. Used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones specified in the initial request.</p>
+    /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListConnectionsInput`](crate::operation::list_connections::ListConnectionsInput).
     pub fn build(

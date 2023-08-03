@@ -80,6 +80,10 @@ impl TrafficPolicyBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID that Amazon Route 53 assigned to a traffic policy when you created it.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The version number that Amazon Route 53 assigns to a traffic policy. For a new traffic policy, the value of <code>Version</code> is always 1.</p>
     pub fn version(mut self, input: i32) -> Self {
         self.version = ::std::option::Option::Some(input);
@@ -89,6 +93,10 @@ impl TrafficPolicyBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The version number that Amazon Route 53 assigns to a traffic policy. For a new traffic policy, the value of <code>Version</code> is always 1.</p>
+    pub fn get_version(&self) -> &::std::option::Option<i32> {
+        &self.version
     }
     /// <p>The name that you specified when you created the traffic policy.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -100,6 +108,10 @@ impl TrafficPolicyBuilder {
         self.name = input;
         self
     }
+    /// <p>The name that you specified when you created the traffic policy.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy to create a traffic policy instance.</p>
     pub fn r#type(mut self, input: crate::types::RrType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -109,6 +121,10 @@ impl TrafficPolicyBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::RrType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy to create a traffic policy instance.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::RrType> {
+        &self.r#type
     }
     /// <p>The definition of a traffic policy in JSON format. You specify the JSON document to use for a new traffic policy in the <code>CreateTrafficPolicy</code> request. For more information about the JSON format, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic Policy Document Format</a>.</p>
     pub fn document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -120,6 +136,10 @@ impl TrafficPolicyBuilder {
         self.document = input;
         self
     }
+    /// <p>The definition of a traffic policy in JSON format. You specify the JSON document to use for a new traffic policy in the <code>CreateTrafficPolicy</code> request. For more information about the JSON format, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic Policy Document Format</a>.</p>
+    pub fn get_document(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document
+    }
     /// <p>The comment that you specify in the <code>CreateTrafficPolicy</code> request, if any.</p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment = ::std::option::Option::Some(input.into());
@@ -129,6 +149,10 @@ impl TrafficPolicyBuilder {
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comment = input;
         self
+    }
+    /// <p>The comment that you specify in the <code>CreateTrafficPolicy</code> request, if any.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comment
     }
     /// Consumes the builder and constructs a [`TrafficPolicy`](crate::types::TrafficPolicy).
     pub fn build(self) -> crate::types::TrafficPolicy {

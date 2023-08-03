@@ -40,6 +40,10 @@ impl S3DestinationConfigurationBuilder {
         self.bucket_name = input;
         self
     }
+    /// <p>Name of the Amazon S3 bucket where chat activity will be logged.</p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_name
+    }
     /// Consumes the builder and constructs a [`S3DestinationConfiguration`](crate::types::S3DestinationConfiguration).
     pub fn build(self) -> crate::types::S3DestinationConfiguration {
         crate::types::S3DestinationConfiguration {

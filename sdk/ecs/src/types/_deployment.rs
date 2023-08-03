@@ -246,6 +246,10 @@ impl DeploymentBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the deployment.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The status of the deployment. The following describes each state.</p>
     /// <dl>
     /// <dt>
@@ -296,6 +300,30 @@ impl DeploymentBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the deployment. The following describes each state.</p>
+    /// <dl>
+    /// <dt>
+    /// PRIMARY
+    /// </dt>
+    /// <dd>
+    /// <p>The most recent deployment of a service.</p>
+    /// </dd>
+    /// <dt>
+    /// ACTIVE
+    /// </dt>
+    /// <dd>
+    /// <p>A service deployment that still has running tasks, but are in the process of being replaced with a new <code>PRIMARY</code> deployment.</p>
+    /// </dd>
+    /// <dt>
+    /// INACTIVE
+    /// </dt>
+    /// <dd>
+    /// <p>A deployment that has been completely replaced.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>The most recent task definition that was specified for the tasks in the service to use.</p>
     pub fn task_definition(
         mut self,
@@ -312,6 +340,10 @@ impl DeploymentBuilder {
         self.task_definition = input;
         self
     }
+    /// <p>The most recent task definition that was specified for the tasks in the service to use.</p>
+    pub fn get_task_definition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_definition
+    }
     /// <p>The most recent desired count of tasks that was specified for the service to deploy or maintain.</p>
     pub fn desired_count(mut self, input: i32) -> Self {
         self.desired_count = ::std::option::Option::Some(input);
@@ -321,6 +353,10 @@ impl DeploymentBuilder {
     pub fn set_desired_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.desired_count = input;
         self
+    }
+    /// <p>The most recent desired count of tasks that was specified for the service to deploy or maintain.</p>
+    pub fn get_desired_count(&self) -> &::std::option::Option<i32> {
+        &self.desired_count
     }
     /// <p>The number of tasks in the deployment that are in the <code>PENDING</code> status.</p>
     pub fn pending_count(mut self, input: i32) -> Self {
@@ -332,6 +368,10 @@ impl DeploymentBuilder {
         self.pending_count = input;
         self
     }
+    /// <p>The number of tasks in the deployment that are in the <code>PENDING</code> status.</p>
+    pub fn get_pending_count(&self) -> &::std::option::Option<i32> {
+        &self.pending_count
+    }
     /// <p>The number of tasks in the deployment that are in the <code>RUNNING</code> status.</p>
     pub fn running_count(mut self, input: i32) -> Self {
         self.running_count = ::std::option::Option::Some(input);
@@ -341,6 +381,10 @@ impl DeploymentBuilder {
     pub fn set_running_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.running_count = input;
         self
+    }
+    /// <p>The number of tasks in the deployment that are in the <code>RUNNING</code> status.</p>
+    pub fn get_running_count(&self) -> &::std::option::Option<i32> {
+        &self.running_count
     }
     /// <p>The number of consecutively failed tasks in the deployment. A task is considered a failure if the service scheduler can't launch the task, the task doesn't transition to a <code>RUNNING</code> state, or if it fails any of its defined health checks and is stopped.</p> <note>
     /// <p>Once a service deployment has one or more successfully running tasks, the failed task count resets to zero and stops being evaluated.</p>
@@ -356,6 +400,12 @@ impl DeploymentBuilder {
         self.failed_tasks = input;
         self
     }
+    /// <p>The number of consecutively failed tasks in the deployment. A task is considered a failure if the service scheduler can't launch the task, the task doesn't transition to a <code>RUNNING</code> state, or if it fails any of its defined health checks and is stopped.</p> <note>
+    /// <p>Once a service deployment has one or more successfully running tasks, the failed task count resets to zero and stops being evaluated.</p>
+    /// </note>
+    pub fn get_failed_tasks(&self) -> &::std::option::Option<i32> {
+        &self.failed_tasks
+    }
     /// <p>The Unix timestamp for the time when the service deployment was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -369,6 +419,10 @@ impl DeploymentBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The Unix timestamp for the time when the service deployment was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The Unix timestamp for the time when the service deployment was last updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
@@ -381,6 +435,10 @@ impl DeploymentBuilder {
     ) -> Self {
         self.updated_at = input;
         self
+    }
+    /// <p>The Unix timestamp for the time when the service deployment was last updated.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     /// Appends an item to `capacity_provider_strategy`.
     ///
@@ -404,6 +462,12 @@ impl DeploymentBuilder {
         self.capacity_provider_strategy = input;
         self
     }
+    /// <p>The capacity provider strategy that the deployment is using.</p>
+    pub fn get_capacity_provider_strategy(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>> {
+        &self.capacity_provider_strategy
+    }
     /// <p>The launch type the tasks in the service are using. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn launch_type(mut self, input: crate::types::LaunchType) -> Self {
         self.launch_type = ::std::option::Option::Some(input);
@@ -416,6 +480,10 @@ impl DeploymentBuilder {
     ) -> Self {
         self.launch_type = input;
         self
+    }
+    /// <p>The launch type the tasks in the service are using. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn get_launch_type(&self) -> &::std::option::Option<crate::types::LaunchType> {
+        &self.launch_type
     }
     /// <p>The platform version that your tasks in the service run on. A platform version is only specified for tasks using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn platform_version(
@@ -432,6 +500,10 @@ impl DeploymentBuilder {
     ) -> Self {
         self.platform_version = input;
         self
+    }
+    /// <p>The platform version that your tasks in the service run on. A platform version is only specified for tasks using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn get_platform_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform_version
     }
     /// <p>The operating system that your tasks in the service, or tasks are running on. A platform family is specified only for tasks using the Fargate launch type. </p>
     /// <p> All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service, for example, <code> LINUX.</code>.</p>
@@ -451,6 +523,11 @@ impl DeploymentBuilder {
         self.platform_family = input;
         self
     }
+    /// <p>The operating system that your tasks in the service, or tasks are running on. A platform family is specified only for tasks using the Fargate launch type. </p>
+    /// <p> All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service, for example, <code> LINUX.</code>.</p>
+    pub fn get_platform_family(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform_family
+    }
     /// <p>The VPC subnet and security group configuration for tasks that receive their own elastic network interface by using the <code>awsvpc</code> networking mode.</p>
     pub fn network_configuration(mut self, input: crate::types::NetworkConfiguration) -> Self {
         self.network_configuration = ::std::option::Option::Some(input);
@@ -463,6 +540,12 @@ impl DeploymentBuilder {
     ) -> Self {
         self.network_configuration = input;
         self
+    }
+    /// <p>The VPC subnet and security group configuration for tasks that receive their own elastic network interface by using the <code>awsvpc</code> networking mode.</p>
+    pub fn get_network_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkConfiguration> {
+        &self.network_configuration
     }
     /// <note>
     /// <p>The <code>rolloutState</code> of a service is only returned for services that use the rolling update (<code>ECS</code>) deployment type that aren't behind a Classic Load Balancer.</p>
@@ -483,6 +566,15 @@ impl DeploymentBuilder {
         self.rollout_state = input;
         self
     }
+    /// <note>
+    /// <p>The <code>rolloutState</code> of a service is only returned for services that use the rolling update (<code>ECS</code>) deployment type that aren't behind a Classic Load Balancer.</p>
+    /// </note>
+    /// <p>The rollout state of the deployment. When a service deployment is started, it begins in an <code>IN_PROGRESS</code> state. When the service reaches a steady state, the deployment transitions to a <code>COMPLETED</code> state. If the service fails to reach a steady state and circuit breaker is turned on, the deployment transitions to a <code>FAILED</code> state. A deployment in <code>FAILED</code> state doesn't launch any new tasks. For more information, see <code>DeploymentCircuitBreaker</code>.</p>
+    pub fn get_rollout_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeploymentRolloutState> {
+        &self.rollout_state
+    }
     /// <p>A description of the rollout state of a deployment.</p>
     pub fn rollout_state_reason(
         mut self,
@@ -498,6 +590,10 @@ impl DeploymentBuilder {
     ) -> Self {
         self.rollout_state_reason = input;
         self
+    }
+    /// <p>A description of the rollout state of a deployment.</p>
+    pub fn get_rollout_state_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rollout_state_reason
     }
     /// <p>The details of the Service Connect configuration that's used by this deployment. Compare the configuration between multiple deployments when troubleshooting issues with new deployments.</p>
     /// <p>The configuration for this service to discover and connect to services, and be discovered by, and connected from, other services within a namespace.</p>
@@ -518,6 +614,14 @@ impl DeploymentBuilder {
     ) -> Self {
         self.service_connect_configuration = input;
         self
+    }
+    /// <p>The details of the Service Connect configuration that's used by this deployment. Compare the configuration between multiple deployments when troubleshooting issues with new deployments.</p>
+    /// <p>The configuration for this service to discover and connect to services, and be discovered by, and connected from, other services within a namespace.</p>
+    /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn get_service_connect_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServiceConnectConfiguration> {
+        &self.service_connect_configuration
     }
     /// Appends an item to `service_connect_resources`.
     ///
@@ -540,6 +644,12 @@ impl DeploymentBuilder {
     ) -> Self {
         self.service_connect_resources = input;
         self
+    }
+    /// <p>The list of Service Connect resources that are associated with this deployment. Each list entry maps a discovery name to a Cloud Map service name.</p>
+    pub fn get_service_connect_resources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceConnectServiceResource>> {
+        &self.service_connect_resources
     }
     /// Consumes the builder and constructs a [`Deployment`](crate::types::Deployment).
     pub fn build(self) -> crate::types::Deployment {

@@ -52,6 +52,10 @@ impl RecommendationRelatedEventBuilder {
         self.name = input;
         self
     }
+    /// <p> The name of the event. This corresponds to the <code>Name</code> field in an <code>Event</code> object. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `resources`.
     ///
     /// To override the contents of this collection use [`set_resources`](Self::set_resources).
@@ -72,6 +76,13 @@ impl RecommendationRelatedEventBuilder {
     ) -> Self {
         self.resources = input;
         self
+    }
+    /// <p> A <code>ResourceCollection</code> object that contains arrays of the names of Amazon Web Services CloudFormation stacks. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    pub fn get_resources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedEventResource>>
+    {
+        &self.resources
     }
     /// Consumes the builder and constructs a [`RecommendationRelatedEvent`](crate::types::RecommendationRelatedEvent).
     pub fn build(self) -> crate::types::RecommendationRelatedEvent {

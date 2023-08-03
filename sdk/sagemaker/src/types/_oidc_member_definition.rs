@@ -49,6 +49,10 @@ impl OidcMemberDefinitionBuilder {
         self.groups = input;
         self
     }
+    /// <p>A list of comma seperated strings that identifies user groups in your OIDC IdP. Each user group is made up of a group of private workers.</p>
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.groups
+    }
     /// Consumes the builder and constructs a [`OidcMemberDefinition`](crate::types::OidcMemberDefinition).
     pub fn build(self) -> crate::types::OidcMemberDefinition {
         crate::types::OidcMemberDefinition {

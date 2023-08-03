@@ -84,6 +84,13 @@ impl ActiveDirectoryConfigurationBuilder {
         self.computer_attributes = input;
         self
     }
+    /// <p>A collection of custom attributes for an Active Directory computer.</p>
+    pub fn get_computer_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ActiveDirectoryComputerAttribute>>
+    {
+        &self.computer_attributes
+    }
     /// <p>The directory ID of the Directory Service for Microsoft Active Directory to access using this studio component.</p>
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
@@ -93,6 +100,10 @@ impl ActiveDirectoryConfigurationBuilder {
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.directory_id = input;
         self
+    }
+    /// <p>The directory ID of the Directory Service for Microsoft Active Directory to access using this studio component.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
     }
     /// <p>The distinguished name (DN) and organizational unit (OU) of an Active Directory computer.</p>
     pub fn organizational_unit_distinguished_name(
@@ -109,6 +120,12 @@ impl ActiveDirectoryConfigurationBuilder {
     ) -> Self {
         self.organizational_unit_distinguished_name = input;
         self
+    }
+    /// <p>The distinguished name (DN) and organizational unit (OU) of an Active Directory computer.</p>
+    pub fn get_organizational_unit_distinguished_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.organizational_unit_distinguished_name
     }
     /// Consumes the builder and constructs a [`ActiveDirectoryConfiguration`](crate::types::ActiveDirectoryConfiguration).
     pub fn build(self) -> crate::types::ActiveDirectoryConfiguration {

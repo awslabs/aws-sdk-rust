@@ -62,6 +62,10 @@ impl EncryptionEntityBuilder {
         self.public_key_id = input;
         self
     }
+    /// <p>The public key associated with a set of field-level encryption patterns, to be used when encrypting the fields that match the patterns.</p>
+    pub fn get_public_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_key_id
+    }
     /// <p>The provider associated with the public key being used for encryption. This value must also be provided with the private key for applications to be able to decrypt data.</p>
     pub fn provider_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider_id = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl EncryptionEntityBuilder {
     pub fn set_provider_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provider_id = input;
         self
+    }
+    /// <p>The provider associated with the public key being used for encryption. This value must also be provided with the private key for applications to be able to decrypt data.</p>
+    pub fn get_provider_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provider_id
     }
     /// <p>Field patterns in a field-level encryption content type profile specify the fields that you want to be encrypted. You can provide the full field name, or any beginning characters followed by a wildcard (*). You can't overlap field patterns. For example, you can't have both ABC* and AB*. Note that field patterns are case-sensitive.</p>
     pub fn field_patterns(mut self, input: crate::types::FieldPatterns) -> Self {
@@ -84,6 +92,10 @@ impl EncryptionEntityBuilder {
     ) -> Self {
         self.field_patterns = input;
         self
+    }
+    /// <p>Field patterns in a field-level encryption content type profile specify the fields that you want to be encrypted. You can provide the full field name, or any beginning characters followed by a wildcard (*). You can't overlap field patterns. For example, you can't have both ABC* and AB*. Note that field patterns are case-sensitive.</p>
+    pub fn get_field_patterns(&self) -> &::std::option::Option<crate::types::FieldPatterns> {
+        &self.field_patterns
     }
     /// Consumes the builder and constructs a [`EncryptionEntity`](crate::types::EncryptionEntity).
     pub fn build(self) -> crate::types::EncryptionEntity {

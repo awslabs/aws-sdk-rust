@@ -45,6 +45,12 @@ impl ClusterMarkerBuilder {
         self.simple_cluster_marker = input;
         self
     }
+    /// <p>The simple cluster marker of the cluster marker.</p>
+    pub fn get_simple_cluster_marker(
+        &self,
+    ) -> &::std::option::Option<crate::types::SimpleClusterMarker> {
+        &self.simple_cluster_marker
+    }
     /// Consumes the builder and constructs a [`ClusterMarker`](crate::types::ClusterMarker).
     pub fn build(self) -> crate::types::ClusterMarker {
         crate::types::ClusterMarker {

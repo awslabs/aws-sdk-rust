@@ -55,6 +55,10 @@ impl DeleteSessionInputBuilder {
         self.bot_name = input;
         self
     }
+    /// <p>The name of the bot that contains the session data.</p>
+    pub fn get_bot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_name
+    }
     /// <p>The alias in use for the bot that contains the session data.</p>
     pub fn bot_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_alias = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl DeleteSessionInputBuilder {
         self.bot_alias = input;
         self
     }
+    /// <p>The alias in use for the bot that contains the session data.</p>
+    pub fn get_bot_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_alias
+    }
     /// <p>The identifier of the user associated with the session data.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
@@ -74,6 +82,10 @@ impl DeleteSessionInputBuilder {
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
+    }
+    /// <p>The identifier of the user associated with the session data.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
     }
     /// Consumes the builder and constructs a [`DeleteSessionInput`](crate::operation::delete_session::DeleteSessionInput).
     pub fn build(

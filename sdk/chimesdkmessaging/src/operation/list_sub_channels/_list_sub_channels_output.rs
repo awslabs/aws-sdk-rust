@@ -72,6 +72,10 @@ impl ListSubChannelsOutputBuilder {
         self.channel_arn = input;
         self
     }
+    /// <p>The ARN of elastic channel.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
+    }
     /// Appends an item to `sub_channels`.
     ///
     /// To override the contents of this collection use [`set_sub_channels`](Self::set_sub_channels).
@@ -91,6 +95,12 @@ impl ListSubChannelsOutputBuilder {
         self.sub_channels = input;
         self
     }
+    /// <p>The information about each sub-channel.</p>
+    pub fn get_sub_channels(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SubChannelSummary>> {
+        &self.sub_channels
+    }
     /// <p>The token passed by previous API calls until all requested sub-channels are returned.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -100,6 +110,10 @@ impl ListSubChannelsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token passed by previous API calls until all requested sub-channels are returned.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

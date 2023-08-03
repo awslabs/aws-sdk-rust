@@ -54,6 +54,12 @@ impl DetectLabelsSettingsBuilder {
         self.general_labels = input;
         self
     }
+    /// <p>Contains the specified filters for GENERAL_LABELS.</p>
+    pub fn get_general_labels(
+        &self,
+    ) -> &::std::option::Option<crate::types::GeneralLabelsSettings> {
+        &self.general_labels
+    }
     /// <p>Contains the chosen number of maximum dominant colors in an image.</p>
     pub fn image_properties(
         mut self,
@@ -69,6 +75,12 @@ impl DetectLabelsSettingsBuilder {
     ) -> Self {
         self.image_properties = input;
         self
+    }
+    /// <p>Contains the chosen number of maximum dominant colors in an image.</p>
+    pub fn get_image_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::DetectLabelsImagePropertiesSettings> {
+        &self.image_properties
     }
     /// Consumes the builder and constructs a [`DetectLabelsSettings`](crate::types::DetectLabelsSettings).
     pub fn build(self) -> crate::types::DetectLabelsSettings {

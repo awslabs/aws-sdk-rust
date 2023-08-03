@@ -46,6 +46,10 @@ impl RecommendationBuilder {
         self.recommendation_text = input;
         self
     }
+    /// <p>Text of the recommendations that are provided to make an application more recovery resilient.</p>
+    pub fn get_recommendation_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommendation_text
+    }
     /// Consumes the builder and constructs a [`Recommendation`](crate::types::Recommendation).
     pub fn build(self) -> crate::types::Recommendation {
         crate::types::Recommendation {

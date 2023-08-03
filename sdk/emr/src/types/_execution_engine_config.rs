@@ -64,6 +64,10 @@ impl ExecutionEngineConfigBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier of the execution engine. For an Amazon EMR cluster, this is the cluster ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The type of execution engine. A value of <code>EMR</code> specifies an Amazon EMR cluster.</p>
     pub fn r#type(mut self, input: crate::types::ExecutionEngineType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl ExecutionEngineConfigBuilder {
     ) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of execution engine. A value of <code>EMR</code> specifies an Amazon EMR cluster.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ExecutionEngineType> {
+        &self.r#type
     }
     /// <p>An optional unique ID of an Amazon EC2 security group to associate with the master instance of the Amazon EMR cluster for this notebook execution. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-security-groups.html">Specifying Amazon EC2 Security Groups for Amazon EMR Notebooks</a> in the <i>EMR Management Guide</i>.</p>
     pub fn master_instance_security_group_id(
@@ -93,6 +101,12 @@ impl ExecutionEngineConfigBuilder {
         self.master_instance_security_group_id = input;
         self
     }
+    /// <p>An optional unique ID of an Amazon EC2 security group to associate with the master instance of the Amazon EMR cluster for this notebook execution. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-security-groups.html">Specifying Amazon EC2 Security Groups for Amazon EMR Notebooks</a> in the <i>EMR Management Guide</i>.</p>
+    pub fn get_master_instance_security_group_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.master_instance_security_group_id
+    }
     /// <p>The execution role ARN required for the notebook execution.</p>
     pub fn execution_role_arn(
         mut self,
@@ -108,6 +122,10 @@ impl ExecutionEngineConfigBuilder {
     ) -> Self {
         self.execution_role_arn = input;
         self
+    }
+    /// <p>The execution role ARN required for the notebook execution.</p>
+    pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_role_arn
     }
     /// Consumes the builder and constructs a [`ExecutionEngineConfig`](crate::types::ExecutionEngineConfig).
     pub fn build(self) -> crate::types::ExecutionEngineConfig {

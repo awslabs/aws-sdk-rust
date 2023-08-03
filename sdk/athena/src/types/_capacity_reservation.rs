@@ -90,6 +90,10 @@ impl CapacityReservationBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the capacity reservation.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The status of the capacity reservation.</p>
     pub fn status(mut self, input: crate::types::CapacityReservationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -103,6 +107,10 @@ impl CapacityReservationBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the capacity reservation.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::CapacityReservationStatus> {
+        &self.status
+    }
     /// <p>The number of data processing units requested.</p>
     pub fn target_dpus(mut self, input: i32) -> Self {
         self.target_dpus = ::std::option::Option::Some(input);
@@ -113,6 +121,10 @@ impl CapacityReservationBuilder {
         self.target_dpus = input;
         self
     }
+    /// <p>The number of data processing units requested.</p>
+    pub fn get_target_dpus(&self) -> &::std::option::Option<i32> {
+        &self.target_dpus
+    }
     /// <p>The number of data processing units currently allocated.</p>
     pub fn allocated_dpus(mut self, input: i32) -> Self {
         self.allocated_dpus = ::std::option::Option::Some(input);
@@ -122,6 +134,10 @@ impl CapacityReservationBuilder {
     pub fn set_allocated_dpus(mut self, input: ::std::option::Option<i32>) -> Self {
         self.allocated_dpus = input;
         self
+    }
+    /// <p>The number of data processing units currently allocated.</p>
+    pub fn get_allocated_dpus(&self) -> &::std::option::Option<i32> {
+        &self.allocated_dpus
     }
     /// <p>Contains the submission time of a single allocation request for a capacity reservation and the most recent status of the attempted allocation.</p>
     pub fn last_allocation(mut self, input: crate::types::CapacityAllocation) -> Self {
@@ -136,6 +152,10 @@ impl CapacityReservationBuilder {
         self.last_allocation = input;
         self
     }
+    /// <p>Contains the submission time of a single allocation request for a capacity reservation and the most recent status of the attempted allocation.</p>
+    pub fn get_last_allocation(&self) -> &::std::option::Option<crate::types::CapacityAllocation> {
+        &self.last_allocation
+    }
     /// <p>The time of the most recent capacity allocation that succeeded.</p>
     pub fn last_successful_allocation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_successful_allocation_time = ::std::option::Option::Some(input);
@@ -149,6 +169,12 @@ impl CapacityReservationBuilder {
         self.last_successful_allocation_time = input;
         self
     }
+    /// <p>The time of the most recent capacity allocation that succeeded.</p>
+    pub fn get_last_successful_allocation_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_successful_allocation_time
+    }
     /// <p>The time in UTC epoch millis when the capacity reservation was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -161,6 +187,10 @@ impl CapacityReservationBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The time in UTC epoch millis when the capacity reservation was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// Consumes the builder and constructs a [`CapacityReservation`](crate::types::CapacityReservation).
     pub fn build(self) -> crate::types::CapacityReservation {

@@ -66,6 +66,12 @@ impl ModelConfigurationBuilder {
         self.inference_specification_name = input;
         self
     }
+    /// <p>The inference specification name in the model package version.</p>
+    pub fn get_inference_specification_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.inference_specification_name
+    }
     /// Appends an item to `environment_parameters`.
     ///
     /// To override the contents of this collection use [`set_environment_parameters`](Self::set_environment_parameters).
@@ -85,6 +91,12 @@ impl ModelConfigurationBuilder {
         self.environment_parameters = input;
         self
     }
+    /// <p>Defines the environment parameters that includes key, value types, and values.</p>
+    pub fn get_environment_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentParameter>> {
+        &self.environment_parameters
+    }
     /// <p>The name of the compilation job used to create the recommended model artifacts.</p>
     pub fn compilation_job_name(
         mut self,
@@ -100,6 +112,10 @@ impl ModelConfigurationBuilder {
     ) -> Self {
         self.compilation_job_name = input;
         self
+    }
+    /// <p>The name of the compilation job used to create the recommended model artifacts.</p>
+    pub fn get_compilation_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.compilation_job_name
     }
     /// Consumes the builder and constructs a [`ModelConfiguration`](crate::types::ModelConfiguration).
     pub fn build(self) -> crate::types::ModelConfiguration {

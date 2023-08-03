@@ -79,6 +79,10 @@ impl UpdateActionInputBuilder {
         self.action_name = input;
         self
     }
+    /// <p>The name of the action to update.</p>
+    pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_name
+    }
     /// <p>The new description for the action.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl UpdateActionInputBuilder {
         self.description = input;
         self
     }
+    /// <p>The new description for the action.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The new status for the action.</p>
     pub fn status(mut self, input: crate::types::ActionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -98,6 +106,10 @@ impl UpdateActionInputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ActionStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The new status for the action.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ActionStatus> {
+        &self.status
     }
     /// Adds a key-value pair to `properties`.
     ///
@@ -124,6 +136,14 @@ impl UpdateActionInputBuilder {
         self.properties = input;
         self
     }
+    /// <p>The new list of properties. Overwrites the current property list.</p>
+    pub fn get_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.properties
+    }
     /// Appends an item to `properties_to_remove`.
     ///
     /// To override the contents of this collection use [`set_properties_to_remove`](Self::set_properties_to_remove).
@@ -145,6 +165,12 @@ impl UpdateActionInputBuilder {
     ) -> Self {
         self.properties_to_remove = input;
         self
+    }
+    /// <p>A list of properties to remove.</p>
+    pub fn get_properties_to_remove(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.properties_to_remove
     }
     /// Consumes the builder and constructs a [`UpdateActionInput`](crate::operation::update_action::UpdateActionInput).
     pub fn build(

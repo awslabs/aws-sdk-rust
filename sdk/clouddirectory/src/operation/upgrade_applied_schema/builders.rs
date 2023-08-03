@@ -36,6 +36,12 @@ impl UpgradeAppliedSchemaFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpgradeAppliedSchema as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::upgrade_applied_schema::builders::UpgradeAppliedSchemaInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpgradeAppliedSchemaFluentBuilder {
         self.inner = self.inner.set_published_schema_arn(input);
         self
     }
+    /// <p>The revision of the published schema to upgrade the directory to.</p>
+    pub fn get_published_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_published_schema_arn()
+    }
     /// <p>The ARN for the directory to which the upgraded schema will be applied.</p>
     pub fn directory_arn(
         mut self,
@@ -148,6 +158,10 @@ impl UpgradeAppliedSchemaFluentBuilder {
         self.inner = self.inner.set_directory_arn(input);
         self
     }
+    /// <p>The ARN for the directory to which the upgraded schema will be applied.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_arn()
+    }
     /// <p>Used for testing whether the major version schemas are backward compatible or not. If schema compatibility fails, an exception would be thrown else the call would succeed but no changes will be saved. This parameter is optional.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -157,5 +171,9 @@ impl UpgradeAppliedSchemaFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Used for testing whether the major version schemas are backward compatible or not. If schema compatibility fails, an exception would be thrown else the call would succeed but no changes will be saved. This parameter is optional.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

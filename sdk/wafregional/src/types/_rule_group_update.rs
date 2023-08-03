@@ -52,6 +52,10 @@ impl RuleGroupUpdateBuilder {
         self.action = input;
         self
     }
+    /// <p>Specify <code>INSERT</code> to add an <code>ActivatedRule</code> to a <code>RuleGroup</code>. Use <code>DELETE</code> to remove an <code>ActivatedRule</code> from a <code>RuleGroup</code>.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::ChangeAction> {
+        &self.action
+    }
     /// <p>The <code>ActivatedRule</code> object specifies a <code>Rule</code> that you want to insert or delete, the priority of the <code>Rule</code> in the <code>WebACL</code>, and the action that you want AWS WAF to take when a web request matches the <code>Rule</code> (<code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>).</p>
     pub fn activated_rule(mut self, input: crate::types::ActivatedRule) -> Self {
         self.activated_rule = ::std::option::Option::Some(input);
@@ -64,6 +68,10 @@ impl RuleGroupUpdateBuilder {
     ) -> Self {
         self.activated_rule = input;
         self
+    }
+    /// <p>The <code>ActivatedRule</code> object specifies a <code>Rule</code> that you want to insert or delete, the priority of the <code>Rule</code> in the <code>WebACL</code>, and the action that you want AWS WAF to take when a web request matches the <code>Rule</code> (<code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>).</p>
+    pub fn get_activated_rule(&self) -> &::std::option::Option<crate::types::ActivatedRule> {
+        &self.activated_rule
     }
     /// Consumes the builder and constructs a [`RuleGroupUpdate`](crate::types::RuleGroupUpdate).
     pub fn build(self) -> crate::types::RuleGroupUpdate {

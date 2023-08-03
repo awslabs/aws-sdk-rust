@@ -44,6 +44,11 @@ impl DeploymentConfigurationValidationPolicyBuilder {
         self.timeout_in_seconds = input;
         self
     }
+    /// <p>The amount of time in seconds that a component can validate its configuration updates. If the validation time exceeds this timeout, then the deployment proceeds for the device.</p>
+    /// <p>Default: <code>30</code> </p>
+    pub fn get_timeout_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.timeout_in_seconds
+    }
     /// Consumes the builder and constructs a [`DeploymentConfigurationValidationPolicy`](crate::types::DeploymentConfigurationValidationPolicy).
     pub fn build(self) -> crate::types::DeploymentConfigurationValidationPolicy {
         crate::types::DeploymentConfigurationValidationPolicy {

@@ -45,6 +45,12 @@ impl PivotTableConditionalFormattingScopeBuilder {
         self.role = input;
         self
     }
+    /// <p>The role (field, field total, grand total) of the cell for conditional formatting.</p>
+    pub fn get_role(
+        &self,
+    ) -> &::std::option::Option<crate::types::PivotTableConditionalFormattingScopeRole> {
+        &self.role
+    }
     /// Consumes the builder and constructs a [`PivotTableConditionalFormattingScope`](crate::types::PivotTableConditionalFormattingScope).
     pub fn build(self) -> crate::types::PivotTableConditionalFormattingScope {
         crate::types::PivotTableConditionalFormattingScope { role: self.role }

@@ -36,6 +36,10 @@ impl DescribeFlywheelIterationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeFlywheelIteration as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_flywheel_iteration::builders::DescribeFlywheelIterationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl DescribeFlywheelIterationFluentBuilder {
         self
     }
     /// <p></p>
+    pub fn get_flywheel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_flywheel_arn()
+    }
+    /// <p></p>
     pub fn flywheel_iteration_id(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -141,5 +149,9 @@ impl DescribeFlywheelIterationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_flywheel_iteration_id(input);
         self
+    }
+    /// <p></p>
+    pub fn get_flywheel_iteration_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_flywheel_iteration_id()
     }
 }

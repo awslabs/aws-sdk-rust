@@ -49,6 +49,10 @@ impl StartFlywheelIterationInputBuilder {
         self.flywheel_arn = input;
         self
     }
+    /// <p>The ARN of the flywheel.</p>
+    pub fn get_flywheel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flywheel_arn
+    }
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
     pub fn client_request_token(
         mut self,
@@ -64,6 +68,10 @@ impl StartFlywheelIterationInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Consumes the builder and constructs a [`StartFlywheelIterationInput`](crate::operation::start_flywheel_iteration::StartFlywheelIterationInput).
     pub fn build(

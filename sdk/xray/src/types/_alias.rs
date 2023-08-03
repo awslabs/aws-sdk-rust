@@ -56,6 +56,10 @@ impl AliasBuilder {
         self.name = input;
         self
     }
+    /// <p>The canonical name of the alias.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `names`.
     ///
     /// To override the contents of this collection use [`set_names`](Self::set_names).
@@ -75,6 +79,10 @@ impl AliasBuilder {
         self.names = input;
         self
     }
+    /// <p>A list of names for the alias, including the canonical name.</p>
+    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.names
+    }
     /// <p>The type of the alias.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -84,6 +92,10 @@ impl AliasBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of the alias.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`Alias`](crate::types::Alias).
     pub fn build(self) -> crate::types::Alias {

@@ -68,6 +68,10 @@ impl UpdateBackendAuthInputBuilder {
         self.app_id = input;
         self
     }
+    /// <p>The app ID.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// <p>The name of the backend environment.</p>
     pub fn backend_environment_name(
         mut self,
@@ -84,6 +88,10 @@ impl UpdateBackendAuthInputBuilder {
         self.backend_environment_name = input;
         self
     }
+    /// <p>The name of the backend environment.</p>
+    pub fn get_backend_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backend_environment_name
+    }
     /// <p>The resource configuration for this request object.</p>
     pub fn resource_config(mut self, input: crate::types::UpdateBackendAuthResourceConfig) -> Self {
         self.resource_config = ::std::option::Option::Some(input);
@@ -96,6 +104,12 @@ impl UpdateBackendAuthInputBuilder {
     ) -> Self {
         self.resource_config = input;
         self
+    }
+    /// <p>The resource configuration for this request object.</p>
+    pub fn get_resource_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateBackendAuthResourceConfig> {
+        &self.resource_config
     }
     /// <p>The name of this resource.</p>
     pub fn resource_name(
@@ -112,6 +126,10 @@ impl UpdateBackendAuthInputBuilder {
     ) -> Self {
         self.resource_name = input;
         self
+    }
+    /// <p>The name of this resource.</p>
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_name
     }
     /// Consumes the builder and constructs a [`UpdateBackendAuthInput`](crate::operation::update_backend_auth::UpdateBackendAuthInput).
     pub fn build(

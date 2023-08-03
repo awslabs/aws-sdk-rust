@@ -59,6 +59,10 @@ impl JobResourceTagsBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The job's type.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::JobResourceType> {
+        &self.resource_type
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -83,6 +87,14 @@ impl JobResourceTagsBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The job's tags.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`JobResourceTags`](crate::types::JobResourceTags).
     pub fn build(self) -> crate::types::JobResourceTags {

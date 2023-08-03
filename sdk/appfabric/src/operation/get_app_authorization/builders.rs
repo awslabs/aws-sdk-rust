@@ -36,6 +36,12 @@ impl GetAppAuthorizationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetAppAuthorization as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_app_authorization::builders::GetAppAuthorizationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl GetAppAuthorizationFluentBuilder {
         self.inner = self.inner.set_app_bundle_identifier(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.</p>
+    pub fn get_app_bundle_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_bundle_identifier()
+    }
     /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.</p>
     pub fn app_authorization_identifier(
         mut self,
@@ -147,5 +157,11 @@ impl GetAppAuthorizationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_app_authorization_identifier(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.</p>
+    pub fn get_app_authorization_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_authorization_identifier()
     }
 }

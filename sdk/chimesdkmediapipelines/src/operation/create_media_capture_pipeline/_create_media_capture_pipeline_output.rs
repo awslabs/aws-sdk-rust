@@ -51,6 +51,12 @@ impl CreateMediaCapturePipelineOutputBuilder {
         self.media_capture_pipeline = input;
         self
     }
+    /// <p>A media pipeline object, the ID, source type, source ARN, sink type, and sink ARN of a media pipeline object.</p>
+    pub fn get_media_capture_pipeline(
+        &self,
+    ) -> &::std::option::Option<crate::types::MediaCapturePipeline> {
+        &self.media_capture_pipeline
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

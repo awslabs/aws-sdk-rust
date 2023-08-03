@@ -37,6 +37,13 @@ impl ListResourcesForWebACLFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListResourcesForWebACL as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_resources_for_web_acl::builders::ListResourcesForWebAclInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl ListResourcesForWebACLFluentBuilder {
         self.inner = self.inner.set_web_acl_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the web ACL.</p>
+    pub fn get_web_acl_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_web_acl_arn()
+    }
     /// <p>Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance. </p> <note>
     /// <p>If you don't provide a resource type, the call uses the resource type <code>APPLICATION_LOAD_BALANCER</code>. </p>
     /// </note>
@@ -145,5 +156,12 @@ impl ListResourcesForWebACLFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
+    }
+    /// <p>Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance. </p> <note>
+    /// <p>If you don't provide a resource type, the call uses the resource type <code>APPLICATION_LOAD_BALANCER</code>. </p>
+    /// </note>
+    /// <p>Default: <code>APPLICATION_LOAD_BALANCER</code> </p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        self.inner.get_resource_type()
     }
 }

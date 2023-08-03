@@ -55,6 +55,10 @@ impl ListScenesInputBuilder {
         self.workspace_id = input;
         self
     }
+    /// <p>The ID of the workspace that contains the scenes.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
+    }
     /// <p>Specifies the maximum number of results to display.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl ListScenesInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>Specifies the maximum number of results to display.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The string that specifies the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -74,6 +82,10 @@ impl ListScenesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The string that specifies the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListScenesInput`](crate::operation::list_scenes::ListScenesInput).
     pub fn build(

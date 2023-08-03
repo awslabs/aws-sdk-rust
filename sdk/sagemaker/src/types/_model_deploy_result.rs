@@ -54,6 +54,12 @@ impl ModelDeployResultBuilder {
         self.endpoint_name = input;
         self
     }
+    /// <p>The name of the endpoint to which the model has been deployed.</p> <note>
+    /// <p>If model deployment fails, this field is omitted from the response.</p>
+    /// </note>
+    pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_name
+    }
     /// Consumes the builder and constructs a [`ModelDeployResult`](crate::types::ModelDeployResult).
     pub fn build(self) -> crate::types::ModelDeployResult {
         crate::types::ModelDeployResult {

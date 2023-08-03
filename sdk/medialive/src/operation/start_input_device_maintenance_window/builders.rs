@@ -36,6 +36,10 @@ impl StartInputDeviceMaintenanceWindowFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartInputDeviceMaintenanceWindow as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_input_device_maintenance_window::builders::StartInputDeviceMaintenanceWindowInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -105,5 +109,9 @@ impl StartInputDeviceMaintenanceWindowFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_input_device_id(input);
         self
+    }
+    /// The unique ID of the input device to start a maintenance window for. For example, hd-123456789abcdef.
+    pub fn get_input_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_input_device_id()
     }
 }

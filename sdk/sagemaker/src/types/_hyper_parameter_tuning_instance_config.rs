@@ -59,6 +59,10 @@ impl HyperParameterTuningInstanceConfigBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The instance type used for processing of hyperparameter optimization jobs. Choose from general purpose (no GPUs) instance types: ml.m5.xlarge, ml.m5.2xlarge, and ml.m5.4xlarge or compute optimized (no GPUs) instance types: ml.c5.xlarge and ml.c5.2xlarge. For more information about instance types, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebooks-available-instance-types.html">instance type descriptions</a>.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::TrainingInstanceType> {
+        &self.instance_type
+    }
     /// <p>The number of instances of the type specified by <code>InstanceType</code>. Choose an instance count larger than 1 for distributed training algorithms. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/data-parallel-use-api.html">Step 2: Launch a SageMaker Distributed Training Job Using the SageMaker Python SDK</a> for more information.</p>
     pub fn instance_count(mut self, input: i32) -> Self {
         self.instance_count = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl HyperParameterTuningInstanceConfigBuilder {
         self.instance_count = input;
         self
     }
+    /// <p>The number of instances of the type specified by <code>InstanceType</code>. Choose an instance count larger than 1 for distributed training algorithms. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/data-parallel-use-api.html">Step 2: Launch a SageMaker Distributed Training Job Using the SageMaker Python SDK</a> for more information.</p>
+    pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
+        &self.instance_count
+    }
     /// <p>The volume size in GB of the data to be processed for hyperparameter optimization (optional).</p>
     pub fn volume_size_in_gb(mut self, input: i32) -> Self {
         self.volume_size_in_gb = ::std::option::Option::Some(input);
@@ -78,6 +86,10 @@ impl HyperParameterTuningInstanceConfigBuilder {
     pub fn set_volume_size_in_gb(mut self, input: ::std::option::Option<i32>) -> Self {
         self.volume_size_in_gb = input;
         self
+    }
+    /// <p>The volume size in GB of the data to be processed for hyperparameter optimization (optional).</p>
+    pub fn get_volume_size_in_gb(&self) -> &::std::option::Option<i32> {
+        &self.volume_size_in_gb
     }
     /// Consumes the builder and constructs a [`HyperParameterTuningInstanceConfig`](crate::types::HyperParameterTuningInstanceConfig).
     pub fn build(self) -> crate::types::HyperParameterTuningInstanceConfig {

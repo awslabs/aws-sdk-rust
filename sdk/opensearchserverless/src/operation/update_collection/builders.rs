@@ -36,6 +36,12 @@ impl UpdateCollectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateCollection as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_collection::builders::UpdateCollectionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateCollectionFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The unique identifier of the collection.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>A description of the collection.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -136,6 +146,10 @@ impl UpdateCollectionFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>A description of the collection.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -145,5 +159,9 @@ impl UpdateCollectionFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

@@ -56,6 +56,12 @@ impl LineChartSeriesSettingsBuilder {
         self.line_style_settings = input;
         self
     }
+    /// <p>Line styles options for a line series in <code>LineChartVisual</code>.</p>
+    pub fn get_line_style_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::LineChartLineStyleSettings> {
+        &self.line_style_settings
+    }
     /// <p>Marker styles options for a line series in <code>LineChartVisual</code>.</p>
     pub fn marker_style_settings(
         mut self,
@@ -71,6 +77,12 @@ impl LineChartSeriesSettingsBuilder {
     ) -> Self {
         self.marker_style_settings = input;
         self
+    }
+    /// <p>Marker styles options for a line series in <code>LineChartVisual</code>.</p>
+    pub fn get_marker_style_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::LineChartMarkerStyleSettings> {
+        &self.marker_style_settings
     }
     /// Consumes the builder and constructs a [`LineChartSeriesSettings`](crate::types::LineChartSeriesSettings).
     pub fn build(self) -> crate::types::LineChartSeriesSettings {

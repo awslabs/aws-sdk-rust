@@ -75,6 +75,11 @@ impl CreateInstanceProfileInputBuilder {
         self.instance_profile_name = input;
         self
     }
+    /// <p>The name of the instance profile to create.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn get_instance_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_profile_name
+    }
     /// <p> The path to the instance profile. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
     /// <p>This parameter is optional. If it is not included, it defaults to a slash (/).</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including most punctuation characters, digits, and upper and lowercased letters.</p>
@@ -88,6 +93,12 @@ impl CreateInstanceProfileInputBuilder {
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path = input;
         self
+    }
+    /// <p> The path to the instance profile. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
+    /// <p>This parameter is optional. If it is not included, it defaults to a slash (/).</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including most punctuation characters, digits, and upper and lowercased letters.</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
     }
     /// Appends an item to `tags`.
     ///
@@ -111,6 +122,12 @@ impl CreateInstanceProfileInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of tags that you want to attach to the newly created IAM instance profile. Each tag consists of a key name and an associated value. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p> <note>
+    /// <p>If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request fails and the resource is not created.</p>
+    /// </note>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateInstanceProfileInput`](crate::operation::create_instance_profile::CreateInstanceProfileInput).
     pub fn build(

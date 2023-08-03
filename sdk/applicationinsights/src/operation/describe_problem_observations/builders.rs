@@ -36,6 +36,10 @@ impl DescribeProblemObservationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeProblemObservations as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_problem_observations::builders::DescribeProblemObservationsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +129,9 @@ impl DescribeProblemObservationsFluentBuilder {
     pub fn set_problem_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_problem_id(input);
         self
+    }
+    /// <p>The ID of the problem.</p>
+    pub fn get_problem_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_problem_id()
     }
 }

@@ -51,6 +51,12 @@ impl CreateHomeRegionControlOutputBuilder {
         self.home_region_control = input;
         self
     }
+    /// <p>This object is the <code>HomeRegionControl</code> object that's returned by a successful call to <code>CreateHomeRegionControl</code>.</p>
+    pub fn get_home_region_control(
+        &self,
+    ) -> &::std::option::Option<crate::types::HomeRegionControl> {
+        &self.home_region_control
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -48,6 +48,10 @@ impl RowAlternateColorOptionsBuilder {
         self.status = input;
         self
     }
+    /// <p>Determines the widget status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::WidgetStatus> {
+        &self.status
+    }
     /// Appends an item to `row_alternate_colors`.
     ///
     /// To override the contents of this collection use [`set_row_alternate_colors`](Self::set_row_alternate_colors).
@@ -69,6 +73,12 @@ impl RowAlternateColorOptionsBuilder {
     ) -> Self {
         self.row_alternate_colors = input;
         self
+    }
+    /// <p>Determines the list of row alternate colors.</p>
+    pub fn get_row_alternate_colors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.row_alternate_colors
     }
     /// Consumes the builder and constructs a [`RowAlternateColorOptions`](crate::types::RowAlternateColorOptions).
     pub fn build(self) -> crate::types::RowAlternateColorOptions {

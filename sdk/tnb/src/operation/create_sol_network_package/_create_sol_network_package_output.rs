@@ -109,6 +109,10 @@ impl CreateSolNetworkPackageOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>ID of the network package.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>Network package ARN.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -118,6 +122,10 @@ impl CreateSolNetworkPackageOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>Network package ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>Onboarding state of the network service descriptor in the network package.</p>
     pub fn nsd_onboarding_state(mut self, input: crate::types::NsdOnboardingState) -> Self {
@@ -132,6 +140,12 @@ impl CreateSolNetworkPackageOutputBuilder {
         self.nsd_onboarding_state = input;
         self
     }
+    /// <p>Onboarding state of the network service descriptor in the network package.</p>
+    pub fn get_nsd_onboarding_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::NsdOnboardingState> {
+        &self.nsd_onboarding_state
+    }
     /// <p>Operational state of the network service descriptor in the network package.</p>
     pub fn nsd_operational_state(mut self, input: crate::types::NsdOperationalState) -> Self {
         self.nsd_operational_state = ::std::option::Option::Some(input);
@@ -145,6 +159,12 @@ impl CreateSolNetworkPackageOutputBuilder {
         self.nsd_operational_state = input;
         self
     }
+    /// <p>Operational state of the network service descriptor in the network package.</p>
+    pub fn get_nsd_operational_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::NsdOperationalState> {
+        &self.nsd_operational_state
+    }
     /// <p>Usage state of the network service descriptor in the network package.</p>
     pub fn nsd_usage_state(mut self, input: crate::types::NsdUsageState) -> Self {
         self.nsd_usage_state = ::std::option::Option::Some(input);
@@ -157,6 +177,10 @@ impl CreateSolNetworkPackageOutputBuilder {
     ) -> Self {
         self.nsd_usage_state = input;
         self
+    }
+    /// <p>Usage state of the network service descriptor in the network package.</p>
+    pub fn get_nsd_usage_state(&self) -> &::std::option::Option<crate::types::NsdUsageState> {
+        &self.nsd_usage_state
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -182,6 +206,14 @@ impl CreateSolNetworkPackageOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

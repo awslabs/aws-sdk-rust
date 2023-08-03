@@ -65,6 +65,10 @@ impl PutChannelMembershipPreferencesInputBuilder {
         self.channel_arn = input;
         self
     }
+    /// <p>The ARN of the channel.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
+    }
     /// <p>The ARN of the member setting the preferences.</p>
     pub fn member_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_arn = ::std::option::Option::Some(input.into());
@@ -75,6 +79,10 @@ impl PutChannelMembershipPreferencesInputBuilder {
         self.member_arn = input;
         self
     }
+    /// <p>The ARN of the member setting the preferences.</p>
+    pub fn get_member_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.member_arn
+    }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.chime_bearer = ::std::option::Option::Some(input.into());
@@ -84,6 +92,10 @@ impl PutChannelMembershipPreferencesInputBuilder {
     pub fn set_chime_bearer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.chime_bearer = input;
         self
+    }
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
+    pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
+        &self.chime_bearer
     }
     /// <p>The channel membership preferences of an <code>AppInstanceUser</code> .</p>
     pub fn preferences(mut self, input: crate::types::ChannelMembershipPreferences) -> Self {
@@ -97,6 +109,12 @@ impl PutChannelMembershipPreferencesInputBuilder {
     ) -> Self {
         self.preferences = input;
         self
+    }
+    /// <p>The channel membership preferences of an <code>AppInstanceUser</code> .</p>
+    pub fn get_preferences(
+        &self,
+    ) -> &::std::option::Option<crate::types::ChannelMembershipPreferences> {
+        &self.preferences
     }
     /// Consumes the builder and constructs a [`PutChannelMembershipPreferencesInput`](crate::operation::put_channel_membership_preferences::PutChannelMembershipPreferencesInput).
     pub fn build(

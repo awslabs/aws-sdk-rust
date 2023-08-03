@@ -57,6 +57,10 @@ impl SplitFieldsBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the transform node.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `inputs`.
     ///
     /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
@@ -76,6 +80,10 @@ impl SplitFieldsBuilder {
         self.inputs = input;
         self
     }
+    /// <p>The data inputs identified by their node names.</p>
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.inputs
+    }
     /// Appends an item to `paths`.
     ///
     /// To override the contents of this collection use [`set_paths`](Self::set_paths).
@@ -94,6 +102,12 @@ impl SplitFieldsBuilder {
     ) -> Self {
         self.paths = input;
         self
+    }
+    /// <p>A JSON path to a variable in the data structure.</p>
+    pub fn get_paths(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>> {
+        &self.paths
     }
     /// Consumes the builder and constructs a [`SplitFields`](crate::types::SplitFields).
     pub fn build(self) -> crate::types::SplitFields {

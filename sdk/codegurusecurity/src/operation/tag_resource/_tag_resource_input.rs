@@ -63,6 +63,10 @@ impl TagResourceInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The ARN of the <code>ScanName</code> object. You can retrieve this ARN by calling <code>ListScans</code> or <code>GetScan</code>.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -95,6 +99,18 @@ impl TagResourceInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>An array of key-value pairs used to tag an existing scan. A tag is a custom attribute label with two parts:</p>
+    /// <ul>
+    /// <li> <p>A tag key. For example, <code>CostCenter</code>, <code>Environment</code>, or <code>Secret</code>. Tag keys are case sensitive.</p> </li>
+    /// <li> <p>An optional tag value field. For example, <code>111122223333</code>, <code>Production</code>, or a team name. Omitting the tag value is the same as using an empty string. Tag values are case sensitive.</p> </li>
+    /// </ul>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`TagResourceInput`](crate::operation::tag_resource::TagResourceInput).
     pub fn build(

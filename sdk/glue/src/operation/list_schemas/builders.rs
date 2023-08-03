@@ -37,6 +37,10 @@ impl ListSchemasFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListSchemas as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_schemas::builders::ListSchemasInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +135,10 @@ impl ListSchemasFluentBuilder {
         self.inner = self.inner.set_registry_id(input);
         self
     }
+    /// <p>A wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<crate::types::RegistryId> {
+        self.inner.get_registry_id()
+    }
     /// <p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -141,6 +149,10 @@ impl ListSchemasFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>A continuation token, if this is a continuation call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -150,5 +162,9 @@ impl ListSchemasFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>A continuation token, if this is a continuation call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

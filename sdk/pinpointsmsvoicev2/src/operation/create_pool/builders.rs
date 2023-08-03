@@ -38,6 +38,10 @@ impl CreatePoolFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreatePool as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_pool::builders::CreatePoolInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl CreatePoolFluentBuilder {
         self.inner = self.inner.set_origination_identity(input);
         self
     }
+    /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
+    pub fn get_origination_identity(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_origination_identity()
+    }
     /// <p>The new two-character code, in ISO 3166-1 alpha-2 format, for the country or region of the new pool.</p>
     pub fn iso_country_code(
         mut self,
@@ -142,6 +150,10 @@ impl CreatePoolFluentBuilder {
         self.inner = self.inner.set_iso_country_code(input);
         self
     }
+    /// <p>The new two-character code, in ISO 3166-1 alpha-2 format, for the country or region of the new pool.</p>
+    pub fn get_iso_country_code(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_iso_country_code()
+    }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
     pub fn message_type(mut self, input: crate::types::MessageType) -> Self {
         self.inner = self.inner.message_type(input);
@@ -155,6 +167,10 @@ impl CreatePoolFluentBuilder {
         self.inner = self.inner.set_message_type(input);
         self
     }
+    /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
+    pub fn get_message_type(&self) -> &::std::option::Option<crate::types::MessageType> {
+        self.inner.get_message_type()
+    }
     /// <p>By default this is set to false. When set to true the pool can't be deleted. You can change this value using the <code>UpdatePool</code> action.</p>
     pub fn deletion_protection_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.deletion_protection_enabled(input);
@@ -164,6 +180,10 @@ impl CreatePoolFluentBuilder {
     pub fn set_deletion_protection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_deletion_protection_enabled(input);
         self
+    }
+    /// <p>By default this is set to false. When set to true the pool can't be deleted. You can change this value using the <code>UpdatePool</code> action.</p>
+    pub fn get_deletion_protection_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_deletion_protection_enabled()
     }
     /// Appends an item to `Tags`.
     ///
@@ -182,6 +202,10 @@ impl CreatePoolFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>An array of tags (key and value pairs) associated with the pool.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -191,5 +215,9 @@ impl CreatePoolFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

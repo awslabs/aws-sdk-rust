@@ -46,6 +46,10 @@ impl GetEventDataStoreInputBuilder {
         self.event_data_store = input;
         self
     }
+    /// <p>The ARN (or ID suffix of the ARN) of the event data store about which you want information.</p>
+    pub fn get_event_data_store(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_data_store
+    }
     /// Consumes the builder and constructs a [`GetEventDataStoreInput`](crate::operation::get_event_data_store::GetEventDataStoreInput).
     pub fn build(
         self,

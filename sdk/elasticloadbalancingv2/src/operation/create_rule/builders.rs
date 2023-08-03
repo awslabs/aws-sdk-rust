@@ -37,6 +37,10 @@ impl CreateRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateRule as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_rule::builders::CreateRuleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl CreateRuleFluentBuilder {
         self.inner = self.inner.set_listener_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the listener.</p>
+    pub fn get_listener_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_listener_arn()
+    }
     /// Appends an item to `Conditions`.
     ///
     /// To override the contents of this collection use [`set_conditions`](Self::set_conditions).
@@ -136,6 +144,12 @@ impl CreateRuleFluentBuilder {
         self.inner = self.inner.set_conditions(input);
         self
     }
+    /// <p>The conditions.</p>
+    pub fn get_conditions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleCondition>> {
+        self.inner.get_conditions()
+    }
     /// <p>The rule priority. A listener can't have multiple rules with the same priority.</p>
     pub fn priority(mut self, input: i32) -> Self {
         self.inner = self.inner.priority(input);
@@ -145,6 +159,10 @@ impl CreateRuleFluentBuilder {
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_priority(input);
         self
+    }
+    /// <p>The rule priority. A listener can't have multiple rules with the same priority.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        self.inner.get_priority()
     }
     /// Appends an item to `Actions`.
     ///
@@ -163,6 +181,10 @@ impl CreateRuleFluentBuilder {
         self.inner = self.inner.set_actions(input);
         self
     }
+    /// <p>The actions.</p>
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Action>> {
+        self.inner.get_actions()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -179,5 +201,9 @@ impl CreateRuleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags to assign to the rule.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

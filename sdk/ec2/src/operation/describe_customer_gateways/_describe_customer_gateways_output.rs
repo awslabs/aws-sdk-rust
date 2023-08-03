@@ -59,6 +59,12 @@ impl DescribeCustomerGatewaysOutputBuilder {
         self.customer_gateways = input;
         self
     }
+    /// <p>Information about one or more customer gateways.</p>
+    pub fn get_customer_gateways(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomerGateway>> {
+        &self.customer_gateways
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

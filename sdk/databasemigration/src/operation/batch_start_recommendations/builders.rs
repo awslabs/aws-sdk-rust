@@ -37,6 +37,10 @@ impl BatchStartRecommendationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchStartRecommendations as a reference.
+    pub fn as_input(&self) -> &crate::operation::batch_start_recommendations::builders::BatchStartRecommendationsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,5 +139,12 @@ impl BatchStartRecommendationsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_data(input);
         self
+    }
+    /// <p>Provides information about source databases to analyze. After this analysis, Fleet Advisor recommends target engines for each source database.</p>
+    pub fn get_data(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StartRecommendationsRequestEntry>>
+    {
+        self.inner.get_data()
     }
 }

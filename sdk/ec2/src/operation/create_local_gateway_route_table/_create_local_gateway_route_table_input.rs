@@ -70,6 +70,10 @@ impl CreateLocalGatewayRouteTableInputBuilder {
         self.local_gateway_id = input;
         self
     }
+    /// <p> The ID of the local gateway. </p>
+    pub fn get_local_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.local_gateway_id
+    }
     /// <p> The mode of the local gateway route table. </p>
     pub fn mode(mut self, input: crate::types::LocalGatewayRouteTableMode) -> Self {
         self.mode = ::std::option::Option::Some(input);
@@ -82,6 +86,10 @@ impl CreateLocalGatewayRouteTableInputBuilder {
     ) -> Self {
         self.mode = input;
         self
+    }
+    /// <p> The mode of the local gateway route table. </p>
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::LocalGatewayRouteTableMode> {
+        &self.mode
     }
     /// Appends an item to `tag_specifications`.
     ///
@@ -102,6 +110,12 @@ impl CreateLocalGatewayRouteTableInputBuilder {
         self.tag_specifications = input;
         self
     }
+    /// <p> The tags assigned to the local gateway route table. </p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        &self.tag_specifications
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -111,6 +125,10 @@ impl CreateLocalGatewayRouteTableInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`CreateLocalGatewayRouteTableInput`](crate::operation::create_local_gateway_route_table::CreateLocalGatewayRouteTableInput).
     pub fn build(

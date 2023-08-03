@@ -36,6 +36,10 @@ impl DeleteGrantFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteGrant as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_grant::builders::DeleteGrantInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl DeleteGrantFluentBuilder {
         self.inner = self.inner.set_grant_arn(input);
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the grant.</p>
+    pub fn get_grant_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_grant_arn()
+    }
     /// <p>The Status reason for the delete request.</p>
     pub fn status_reason(
         mut self,
@@ -134,6 +142,10 @@ impl DeleteGrantFluentBuilder {
         self.inner = self.inner.set_status_reason(input);
         self
     }
+    /// <p>The Status reason for the delete request.</p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_status_reason()
+    }
     /// <p>Current version of the grant.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version(input.into());
@@ -143,5 +155,9 @@ impl DeleteGrantFluentBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version(input);
         self
+    }
+    /// <p>Current version of the grant.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_version()
     }
 }

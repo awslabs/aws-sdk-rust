@@ -36,6 +36,12 @@ impl ListTagsForResourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListTagsForResource as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_tags_for_resource::builders::ListTagsForResourceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl ListTagsForResourceFluentBuilder {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the resource for which you want to list tags.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
+    }
     /// <p>An opaque string that indicates the position at which to begin returning the list of tags.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -147,6 +157,10 @@ impl ListTagsForResourceFluentBuilder {
         self.inner = self.inner.set_marker(input);
         self
     }
+    /// <p>An opaque string that indicates the position at which to begin returning the list of tags.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
+    }
     /// <p>Specifies that the list of tags returned be limited to the specified number of items.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -156,5 +170,9 @@ impl ListTagsForResourceFluentBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
+    }
+    /// <p>Specifies that the list of tags returned be limited to the specified number of items.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
     }
 }

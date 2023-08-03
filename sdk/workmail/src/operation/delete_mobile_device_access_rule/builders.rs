@@ -38,6 +38,10 @@ impl DeleteMobileDeviceAccessRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteMobileDeviceAccessRule as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_mobile_device_access_rule::builders::DeleteMobileDeviceAccessRuleInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +138,10 @@ impl DeleteMobileDeviceAccessRuleFluentBuilder {
         self.inner = self.inner.set_organization_id(input);
         self
     }
+    /// <p>The WorkMail organization under which the rule will be deleted.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organization_id()
+    }
     /// <p>The identifier of the rule to be deleted.</p>
     pub fn mobile_device_access_rule_id(
         mut self,
@@ -149,5 +157,11 @@ impl DeleteMobileDeviceAccessRuleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_mobile_device_access_rule_id(input);
         self
+    }
+    /// <p>The identifier of the rule to be deleted.</p>
+    pub fn get_mobile_device_access_rule_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_mobile_device_access_rule_id()
     }
 }

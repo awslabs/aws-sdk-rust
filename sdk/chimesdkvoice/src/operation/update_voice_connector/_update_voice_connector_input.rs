@@ -62,6 +62,10 @@ impl UpdateVoiceConnectorInputBuilder {
         self.voice_connector_id = input;
         self
     }
+    /// <p>The Voice Connector ID.</p>
+    pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_connector_id
+    }
     /// <p>The name of the Voice Connector.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl UpdateVoiceConnectorInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the Voice Connector.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>When enabled, requires encryption for the Voice Connector.</p>
     pub fn require_encryption(mut self, input: bool) -> Self {
         self.require_encryption = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl UpdateVoiceConnectorInputBuilder {
     pub fn set_require_encryption(mut self, input: ::std::option::Option<bool>) -> Self {
         self.require_encryption = input;
         self
+    }
+    /// <p>When enabled, requires encryption for the Voice Connector.</p>
+    pub fn get_require_encryption(&self) -> &::std::option::Option<bool> {
+        &self.require_encryption
     }
     /// Consumes the builder and constructs a [`UpdateVoiceConnectorInput`](crate::operation::update_voice_connector::UpdateVoiceConnectorInput).
     pub fn build(

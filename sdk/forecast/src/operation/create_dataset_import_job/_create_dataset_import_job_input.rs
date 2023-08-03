@@ -161,6 +161,10 @@ impl CreateDatasetImportJobInputBuilder {
         self.dataset_import_job_name = input;
         self
     }
+    /// <p>The name for the dataset import job. We recommend including the current timestamp in the name, for example, <code>20190721DatasetImport</code>. This can help you avoid getting a <code>ResourceAlreadyExistsException</code> exception.</p>
+    pub fn get_dataset_import_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_import_job_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Forecast dataset that you want to import data to.</p>
     pub fn dataset_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_arn = ::std::option::Option::Some(input.into());
@@ -170,6 +174,10 @@ impl CreateDatasetImportJobInputBuilder {
     pub fn set_dataset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Forecast dataset that you want to import data to.</p>
+    pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_arn
     }
     /// <p>The location of the training data to import and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>
     /// <p>If encryption is used, <code>DataSource</code> must include an Key Management Service (KMS) key and the IAM role must allow Amazon Forecast permission to access the key. The KMS key and IAM role must match those specified in the <code>EncryptionConfig</code> parameter of the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a> operation.</p>
@@ -185,6 +193,11 @@ impl CreateDatasetImportJobInputBuilder {
     ) -> Self {
         self.data_source = input;
         self
+    }
+    /// <p>The location of the training data to import and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>
+    /// <p>If encryption is used, <code>DataSource</code> must include an Key Management Service (KMS) key and the IAM role must allow Amazon Forecast permission to access the key. The KMS key and IAM role must match those specified in the <code>EncryptionConfig</code> parameter of the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a> operation.</p>
+    pub fn get_data_source(&self) -> &::std::option::Option<crate::types::DataSource> {
+        &self.data_source
     }
     /// <p>The format of timestamps in the dataset. The format that you specify depends on the <code>DataFrequency</code> specified when the dataset was created. The following formats are supported</p>
     /// <ul>
@@ -212,6 +225,15 @@ impl CreateDatasetImportJobInputBuilder {
         self.timestamp_format = input;
         self
     }
+    /// <p>The format of timestamps in the dataset. The format that you specify depends on the <code>DataFrequency</code> specified when the dataset was created. The following formats are supported</p>
+    /// <ul>
+    /// <li> <p>"yyyy-MM-dd"</p> <p>For the following data frequencies: Y, M, W, and D</p> </li>
+    /// <li> <p>"yyyy-MM-dd HH:mm:ss"</p> <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D</p> </li>
+    /// </ul>
+    /// <p>If the format isn't specified, Amazon Forecast expects the format to be "yyyy-MM-dd HH:mm:ss".</p>
+    pub fn get_timestamp_format(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timestamp_format
+    }
     /// <p>A single time zone for every item in your dataset. This option is ideal for datasets with all timestamps within a single time zone, or if all timestamps are normalized to a single time zone. </p>
     /// <p>Refer to the <a href="http://joda-time.sourceforge.net/timezones.html">Joda-Time API</a> for a complete list of valid time zone names.</p>
     pub fn time_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -224,6 +246,11 @@ impl CreateDatasetImportJobInputBuilder {
         self.time_zone = input;
         self
     }
+    /// <p>A single time zone for every item in your dataset. This option is ideal for datasets with all timestamps within a single time zone, or if all timestamps are normalized to a single time zone. </p>
+    /// <p>Refer to the <a href="http://joda-time.sourceforge.net/timezones.html">Joda-Time API</a> for a complete list of valid time zone names.</p>
+    pub fn get_time_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.time_zone
+    }
     /// <p>Automatically derive time zone information from the geolocation attribute. This option is ideal for datasets that contain timestamps in multiple time zones and those timestamps are expressed in local time.</p>
     pub fn use_geolocation_for_time_zone(mut self, input: bool) -> Self {
         self.use_geolocation_for_time_zone = ::std::option::Option::Some(input);
@@ -233,6 +260,10 @@ impl CreateDatasetImportJobInputBuilder {
     pub fn set_use_geolocation_for_time_zone(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_geolocation_for_time_zone = input;
         self
+    }
+    /// <p>Automatically derive time zone information from the geolocation attribute. This option is ideal for datasets that contain timestamps in multiple time zones and those timestamps are expressed in local time.</p>
+    pub fn get_use_geolocation_for_time_zone(&self) -> &::std::option::Option<bool> {
+        &self.use_geolocation_for_time_zone
     }
     /// <p>The format of the geolocation attribute. The geolocation attribute can be formatted in one of two ways:</p>
     /// <ul>
@@ -257,6 +288,14 @@ impl CreateDatasetImportJobInputBuilder {
     ) -> Self {
         self.geolocation_format = input;
         self
+    }
+    /// <p>The format of the geolocation attribute. The geolocation attribute can be formatted in one of two ways:</p>
+    /// <ul>
+    /// <li> <p> <code>LAT_LONG</code> - the latitude and longitude in decimal format (Example: 47.61_-122.33).</p> </li>
+    /// <li> <p> <code>CC_POSTALCODE</code> (US Only) - the country code (US), followed by the 5-digit ZIP code (Example: US_98121).</p> </li>
+    /// </ul>
+    pub fn get_geolocation_format(&self) -> &::std::option::Option<::std::string::String> {
+        &self.geolocation_format
     }
     /// Appends an item to `tags`.
     ///
@@ -297,6 +336,20 @@ impl CreateDatasetImportJobInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The optional metadata that you apply to the dataset import job to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
+    /// <p>The following basic restrictions apply to tags:</p>
+    /// <ul>
+    /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
+    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+    /// <li> <p>Tag keys and values are case sensitive.</p> </li>
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
+    /// </ul>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The format of the imported data, CSV or PARQUET. The default value is CSV.</p>
     pub fn format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.format = ::std::option::Option::Some(input.into());
@@ -306,6 +359,10 @@ impl CreateDatasetImportJobInputBuilder {
     pub fn set_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.format = input;
         self
+    }
+    /// <p>The format of the imported data, CSV or PARQUET. The default value is CSV.</p>
+    pub fn get_format(&self) -> &::std::option::Option<::std::string::String> {
+        &self.format
     }
     /// <p>Specifies whether the dataset import job is a <code>FULL</code> or <code>INCREMENTAL</code> import. A <code>FULL</code> dataset import replaces all of the existing data with the newly imported data. An <code>INCREMENTAL</code> import appends the imported data to the existing data.</p>
     pub fn import_mode(mut self, input: crate::types::ImportMode) -> Self {
@@ -319,6 +376,10 @@ impl CreateDatasetImportJobInputBuilder {
     ) -> Self {
         self.import_mode = input;
         self
+    }
+    /// <p>Specifies whether the dataset import job is a <code>FULL</code> or <code>INCREMENTAL</code> import. A <code>FULL</code> dataset import replaces all of the existing data with the newly imported data. An <code>INCREMENTAL</code> import appends the imported data to the existing data.</p>
+    pub fn get_import_mode(&self) -> &::std::option::Option<crate::types::ImportMode> {
+        &self.import_mode
     }
     /// Consumes the builder and constructs a [`CreateDatasetImportJobInput`](crate::operation::create_dataset_import_job::CreateDatasetImportJobInput).
     pub fn build(

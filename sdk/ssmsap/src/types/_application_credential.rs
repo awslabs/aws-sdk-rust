@@ -69,6 +69,10 @@ impl ApplicationCredentialBuilder {
         self.database_name = input;
         self
     }
+    /// <p>The name of the SAP HANA database.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>The type of the application credentials. </p>
     pub fn credential_type(mut self, input: crate::types::CredentialType) -> Self {
         self.credential_type = ::std::option::Option::Some(input);
@@ -82,6 +86,10 @@ impl ApplicationCredentialBuilder {
         self.credential_type = input;
         self
     }
+    /// <p>The type of the application credentials. </p>
+    pub fn get_credential_type(&self) -> &::std::option::Option<crate::types::CredentialType> {
+        &self.credential_type
+    }
     /// <p>The secret ID created in AWS Secrets Manager to store the credentials of the SAP application. </p>
     pub fn secret_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_id = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl ApplicationCredentialBuilder {
     pub fn set_secret_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_id = input;
         self
+    }
+    /// <p>The secret ID created in AWS Secrets Manager to store the credentials of the SAP application. </p>
+    pub fn get_secret_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_id
     }
     /// Consumes the builder and constructs a [`ApplicationCredential`](crate::types::ApplicationCredential).
     pub fn build(self) -> crate::types::ApplicationCredential {

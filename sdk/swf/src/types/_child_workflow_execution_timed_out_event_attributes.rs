@@ -78,6 +78,12 @@ impl ChildWorkflowExecutionTimedOutEventAttributesBuilder {
         self.workflow_execution = input;
         self
     }
+    /// <p>The child workflow execution that timed out.</p>
+    pub fn get_workflow_execution(
+        &self,
+    ) -> &::std::option::Option<crate::types::WorkflowExecution> {
+        &self.workflow_execution
+    }
     /// <p>The type of the child workflow execution.</p>
     pub fn workflow_type(mut self, input: crate::types::WorkflowType) -> Self {
         self.workflow_type = ::std::option::Option::Some(input);
@@ -90,6 +96,10 @@ impl ChildWorkflowExecutionTimedOutEventAttributesBuilder {
     ) -> Self {
         self.workflow_type = input;
         self
+    }
+    /// <p>The type of the child workflow execution.</p>
+    pub fn get_workflow_type(&self) -> &::std::option::Option<crate::types::WorkflowType> {
+        &self.workflow_type
     }
     /// <p>The type of the timeout that caused the child workflow execution to time out.</p>
     pub fn timeout_type(mut self, input: crate::types::WorkflowExecutionTimeoutType) -> Self {
@@ -104,6 +114,12 @@ impl ChildWorkflowExecutionTimedOutEventAttributesBuilder {
         self.timeout_type = input;
         self
     }
+    /// <p>The type of the timeout that caused the child workflow execution to time out.</p>
+    pub fn get_timeout_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::WorkflowExecutionTimeoutType> {
+        &self.timeout_type
+    }
     /// <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the <code>StartChildWorkflowExecution</code> <code>Decision</code> to start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn initiated_event_id(mut self, input: i64) -> Self {
         self.initiated_event_id = ::std::option::Option::Some(input);
@@ -114,6 +130,10 @@ impl ChildWorkflowExecutionTimedOutEventAttributesBuilder {
         self.initiated_event_id = input;
         self
     }
+    /// <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the <code>StartChildWorkflowExecution</code> <code>Decision</code> to start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    pub fn get_initiated_event_id(&self) -> &::std::option::Option<i64> {
+        &self.initiated_event_id
+    }
     /// <p>The ID of the <code>ChildWorkflowExecutionStarted</code> event recorded when this child workflow execution was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn started_event_id(mut self, input: i64) -> Self {
         self.started_event_id = ::std::option::Option::Some(input);
@@ -123,6 +143,10 @@ impl ChildWorkflowExecutionTimedOutEventAttributesBuilder {
     pub fn set_started_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.started_event_id = input;
         self
+    }
+    /// <p>The ID of the <code>ChildWorkflowExecutionStarted</code> event recorded when this child workflow execution was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    pub fn get_started_event_id(&self) -> &::std::option::Option<i64> {
+        &self.started_event_id
     }
     /// Consumes the builder and constructs a [`ChildWorkflowExecutionTimedOutEventAttributes`](crate::types::ChildWorkflowExecutionTimedOutEventAttributes).
     pub fn build(self) -> crate::types::ChildWorkflowExecutionTimedOutEventAttributes {

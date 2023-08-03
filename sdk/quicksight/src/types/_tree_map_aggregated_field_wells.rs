@@ -65,6 +65,12 @@ impl TreeMapAggregatedFieldWellsBuilder {
         self.groups = input;
         self
     }
+    /// <p>The group by field well of a tree map. Values are grouped based on group by fields.</p>
+    pub fn get_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
+        &self.groups
+    }
     /// Appends an item to `sizes`.
     ///
     /// To override the contents of this collection use [`set_sizes`](Self::set_sizes).
@@ -84,6 +90,10 @@ impl TreeMapAggregatedFieldWellsBuilder {
         self.sizes = input;
         self
     }
+    /// <p>The size field well of a tree map. Values are aggregated based on group by fields.</p>
+    pub fn get_sizes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
+        &self.sizes
+    }
     /// Appends an item to `colors`.
     ///
     /// To override the contents of this collection use [`set_colors`](Self::set_colors).
@@ -102,6 +112,12 @@ impl TreeMapAggregatedFieldWellsBuilder {
     ) -> Self {
         self.colors = input;
         self
+    }
+    /// <p>The color field well of a tree map. Values are grouped by aggregations based on group by fields.</p>
+    pub fn get_colors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
+        &self.colors
     }
     /// Consumes the builder and constructs a [`TreeMapAggregatedFieldWells`](crate::types::TreeMapAggregatedFieldWells).
     pub fn build(self) -> crate::types::TreeMapAggregatedFieldWells {

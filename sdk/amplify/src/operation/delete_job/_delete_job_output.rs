@@ -50,6 +50,10 @@ impl DeleteJobOutputBuilder {
         self.job_summary = input;
         self
     }
+    /// <p> Describes the summary for an execution job for an Amplify app. </p>
+    pub fn get_job_summary(&self) -> &::std::option::Option<crate::types::JobSummary> {
+        &self.job_summary
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -102,6 +102,10 @@ impl DatasetSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the dataset.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     pub fn dataset_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_arn = ::std::option::Option::Some(input.into());
@@ -111,6 +115,10 @@ impl DatasetSummaryBuilder {
     pub fn set_dataset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
+    pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_arn
     }
     /// <p>The dataset type. One of the following values:</p>
     /// <ul>
@@ -134,6 +142,16 @@ impl DatasetSummaryBuilder {
         self.dataset_type = input;
         self
     }
+    /// <p>The dataset type. One of the following values:</p>
+    /// <ul>
+    /// <li> <p>Interactions</p> </li>
+    /// <li> <p>Items</p> </li>
+    /// <li> <p>Users</p> </li>
+    /// <li> <p>Event-Interactions</p> </li>
+    /// </ul>
+    pub fn get_dataset_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_type
+    }
     /// <p>The status of the dataset.</p>
     /// <p>A dataset can be in one of the following states:</p>
     /// <ul>
@@ -154,6 +172,15 @@ impl DatasetSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the dataset.</p>
+    /// <p>A dataset can be in one of the following states:</p>
+    /// <ul>
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>The date and time (in Unix time) that the dataset was created.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
@@ -167,6 +194,10 @@ impl DatasetSummaryBuilder {
         self.creation_date_time = input;
         self
     }
+    /// <p>The date and time (in Unix time) that the dataset was created.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
+    }
     /// <p>The date and time (in Unix time) that the dataset was last updated.</p>
     pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date_time = ::std::option::Option::Some(input);
@@ -179,6 +210,12 @@ impl DatasetSummaryBuilder {
     ) -> Self {
         self.last_updated_date_time = input;
         self
+    }
+    /// <p>The date and time (in Unix time) that the dataset was last updated.</p>
+    pub fn get_last_updated_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date_time
     }
     /// Consumes the builder and constructs a [`DatasetSummary`](crate::types::DatasetSummary).
     pub fn build(self) -> crate::types::DatasetSummary {

@@ -52,6 +52,12 @@ impl PutClassificationExportConfigurationOutputBuilder {
         self.configuration = input;
         self
     }
+    /// <p>The location where the data classification results are stored, and the encryption settings that are used when storing results in that location.</p>
+    pub fn get_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ClassificationExportConfiguration> {
+        &self.configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

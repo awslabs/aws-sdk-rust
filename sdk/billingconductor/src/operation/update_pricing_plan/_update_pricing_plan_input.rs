@@ -63,6 +63,10 @@ impl UpdatePricingPlanInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the pricing plan that you're updating. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the pricing plan. The name must be unique to each pricing plan. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl UpdatePricingPlanInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the pricing plan. The name must be unique to each pricing plan. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the pricing plan. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl UpdatePricingPlanInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the pricing plan. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`UpdatePricingPlanInput`](crate::operation::update_pricing_plan::UpdatePricingPlanInput).
     pub fn build(

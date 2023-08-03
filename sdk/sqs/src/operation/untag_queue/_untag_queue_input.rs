@@ -47,6 +47,10 @@ impl UntagQueueInputBuilder {
         self.queue_url = input;
         self
     }
+    /// <p>The URL of the queue.</p>
+    pub fn get_queue_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.queue_url
+    }
     /// Appends an item to `tag_keys`.
     ///
     /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
@@ -65,6 +69,10 @@ impl UntagQueueInputBuilder {
     ) -> Self {
         self.tag_keys = input;
         self
+    }
+    /// <p>The list of tags to be removed from the specified queue.</p>
+    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tag_keys
     }
     /// Consumes the builder and constructs a [`UntagQueueInput`](crate::operation::untag_queue::UntagQueueInput).
     pub fn build(

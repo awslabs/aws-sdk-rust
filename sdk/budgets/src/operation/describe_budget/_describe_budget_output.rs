@@ -47,6 +47,10 @@ impl DescribeBudgetOutputBuilder {
         self.budget = input;
         self
     }
+    /// <p>The description of the budget.</p>
+    pub fn get_budget(&self) -> &::std::option::Option<crate::types::Budget> {
+        &self.budget
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

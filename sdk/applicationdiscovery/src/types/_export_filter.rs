@@ -56,6 +56,10 @@ impl ExportFilterBuilder {
         self.name = input;
         self
     }
+    /// <p>A single <code>ExportFilter</code> name. Supported filters: <code>agentIds</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -75,6 +79,10 @@ impl ExportFilterBuilder {
         self.values = input;
         self
     }
+    /// <p>A single agent ID for a Discovery Agent. An agent ID can be found using the <a href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeAgents.html">DescribeAgents</a> action. Typically an ADS agent ID is in the form <code>o-0123456789abcdef0</code>.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
+    }
     /// <p>Supported condition: <code>EQUALS</code> </p>
     pub fn condition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.condition = ::std::option::Option::Some(input.into());
@@ -84,6 +92,10 @@ impl ExportFilterBuilder {
     pub fn set_condition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.condition = input;
         self
+    }
+    /// <p>Supported condition: <code>EQUALS</code> </p>
+    pub fn get_condition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.condition
     }
     /// Consumes the builder and constructs a [`ExportFilter`](crate::types::ExportFilter).
     pub fn build(self) -> crate::types::ExportFilter {

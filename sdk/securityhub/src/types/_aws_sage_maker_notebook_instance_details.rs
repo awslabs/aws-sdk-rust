@@ -214,6 +214,12 @@ impl AwsSageMakerNotebookInstanceDetailsBuilder {
         self.accelerator_types = input;
         self
     }
+    /// <p> A list of Amazon Elastic Inference instance types to associate with the notebook instance. Currently, only one instance type can be associated with a notebook instance. </p>
+    pub fn get_accelerator_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.accelerator_types
+    }
     /// Appends an item to `additional_code_repositories`.
     ///
     /// To override the contents of this collection use [`set_additional_code_repositories`](Self::set_additional_code_repositories).
@@ -236,6 +242,12 @@ impl AwsSageMakerNotebookInstanceDetailsBuilder {
         self.additional_code_repositories = input;
         self
     }
+    /// <p> An array of up to three Git repositories associated with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git repositories with SageMaker notebook instances</a> in the <i>Amazon SageMaker Developer Guide</i>. </p>
+    pub fn get_additional_code_repositories(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.additional_code_repositories
+    }
     /// <p> The Git repository associated with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git repositories with SageMaker notebook instances</a> in the <i>Amazon SageMaker Developer Guide</i>. </p>
     pub fn default_code_repository(
         mut self,
@@ -251,6 +263,10 @@ impl AwsSageMakerNotebookInstanceDetailsBuilder {
     ) -> Self {
         self.default_code_repository = input;
         self
+    }
+    /// <p> The Git repository associated with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git repositories with SageMaker notebook instances</a> in the <i>Amazon SageMaker Developer Guide</i>. </p>
+    pub fn get_default_code_repository(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_code_repository
     }
     /// <p> Sets whether SageMaker provides internet access to the notebook instance. If you set this to <code>Disabled</code>, this notebook instance is able to access resources only in your VPC, and is not be able to connect to SageMaker training and endpoint services unless you configure a Network Address Translation (NAT) Gateway in your VPC. </p>
     pub fn direct_internet_access(
@@ -268,6 +284,10 @@ impl AwsSageMakerNotebookInstanceDetailsBuilder {
         self.direct_internet_access = input;
         self
     }
+    /// <p> Sets whether SageMaker provides internet access to the notebook instance. If you set this to <code>Disabled</code>, this notebook instance is able to access resources only in your VPC, and is not be able to connect to SageMaker training and endpoint services unless you configure a Network Address Translation (NAT) Gateway in your VPC. </p>
+    pub fn get_direct_internet_access(&self) -> &::std::option::Option<::std::string::String> {
+        &self.direct_internet_access
+    }
     /// <p> If status of the instance is <code>Failed</code>, the reason it failed. </p>
     pub fn failure_reason(
         mut self,
@@ -283,6 +303,10 @@ impl AwsSageMakerNotebookInstanceDetailsBuilder {
     ) -> Self {
         self.failure_reason = input;
         self
+    }
+    /// <p> If status of the instance is <code>Failed</code>, the reason it failed. </p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
     }
     /// <p> Information on the IMDS configuration of the notebook instance. </p>
     pub fn instance_metadata_service_configuration(
@@ -302,6 +326,14 @@ impl AwsSageMakerNotebookInstanceDetailsBuilder {
         self.instance_metadata_service_configuration = input;
         self
     }
+    /// <p> Information on the IMDS configuration of the notebook instance. </p>
+    pub fn get_instance_metadata_service_configuration(
+        &self,
+    ) -> &::std::option::Option<
+        crate::types::AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails,
+    > {
+        &self.instance_metadata_service_configuration
+    }
     /// <p> The type of machine learning (ML) compute instance to launch for the notebook instance. </p>
     pub fn instance_type(
         mut self,
@@ -318,6 +350,10 @@ impl AwsSageMakerNotebookInstanceDetailsBuilder {
         self.instance_type = input;
         self
     }
+    /// <p> The type of machine learning (ML) compute instance to launch for the notebook instance. </p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_type
+    }
     /// <p> The Amazon Resource Name (ARN) of an Key Management Service (KMS) key that SageMaker uses to encrypt data on the storage volume attached to your notebook instance. The KMS key you provide must be enabled. For information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and disabling keys</a> in the <i>Key Management Service Developer Guide</i>. </p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -327,6 +363,10 @@ impl AwsSageMakerNotebookInstanceDetailsBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p> The Amazon Resource Name (ARN) of an Key Management Service (KMS) key that SageMaker uses to encrypt data on the storage volume attached to your notebook instance. The KMS key you provide must be enabled. For information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and disabling keys</a> in the <i>Key Management Service Developer Guide</i>. </p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// <p> The network interface ID that SageMaker created when the instance was created. </p>
     pub fn network_interface_id(
@@ -344,6 +384,10 @@ impl AwsSageMakerNotebookInstanceDetailsBuilder {
         self.network_interface_id = input;
         self
     }
+    /// <p> The network interface ID that SageMaker created when the instance was created. </p>
+    pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_interface_id
+    }
     /// <p> The Amazon Resource Name (ARN) of the notebook instance. </p>
     pub fn notebook_instance_arn(
         mut self,
@@ -359,6 +403,10 @@ impl AwsSageMakerNotebookInstanceDetailsBuilder {
     ) -> Self {
         self.notebook_instance_arn = input;
         self
+    }
+    /// <p> The Amazon Resource Name (ARN) of the notebook instance. </p>
+    pub fn get_notebook_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.notebook_instance_arn
     }
     /// <p> The name of a notebook instance lifecycle configuration. </p>
     pub fn notebook_instance_lifecycle_config_name(
@@ -376,6 +424,12 @@ impl AwsSageMakerNotebookInstanceDetailsBuilder {
         self.notebook_instance_lifecycle_config_name = input;
         self
     }
+    /// <p> The name of a notebook instance lifecycle configuration. </p>
+    pub fn get_notebook_instance_lifecycle_config_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.notebook_instance_lifecycle_config_name
+    }
     /// <p> The name of the new notebook instance. </p>
     pub fn notebook_instance_name(
         mut self,
@@ -391,6 +445,10 @@ impl AwsSageMakerNotebookInstanceDetailsBuilder {
     ) -> Self {
         self.notebook_instance_name = input;
         self
+    }
+    /// <p> The name of the new notebook instance. </p>
+    pub fn get_notebook_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.notebook_instance_name
     }
     /// <p> The status of the notebook instance. </p>
     pub fn notebook_instance_status(
@@ -408,6 +466,10 @@ impl AwsSageMakerNotebookInstanceDetailsBuilder {
         self.notebook_instance_status = input;
         self
     }
+    /// <p> The status of the notebook instance. </p>
+    pub fn get_notebook_instance_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.notebook_instance_status
+    }
     /// <p> The platform identifier of the notebook instance runtime environment. </p>
     pub fn platform_identifier(
         mut self,
@@ -424,6 +486,10 @@ impl AwsSageMakerNotebookInstanceDetailsBuilder {
         self.platform_identifier = input;
         self
     }
+    /// <p> The platform identifier of the notebook instance runtime environment. </p>
+    pub fn get_platform_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform_identifier
+    }
     /// <p> The Amazon Resource Name (ARN) of the IAM role associated with the instance. </p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -434,6 +500,10 @@ impl AwsSageMakerNotebookInstanceDetailsBuilder {
         self.role_arn = input;
         self
     }
+    /// <p> The Amazon Resource Name (ARN) of the IAM role associated with the instance. </p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p> Whether root access is enabled or disabled for users of the notebook instance. </p>
     pub fn root_access(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.root_access = ::std::option::Option::Some(input.into());
@@ -443,6 +513,10 @@ impl AwsSageMakerNotebookInstanceDetailsBuilder {
     pub fn set_root_access(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.root_access = input;
         self
+    }
+    /// <p> Whether root access is enabled or disabled for users of the notebook instance. </p>
+    pub fn get_root_access(&self) -> &::std::option::Option<::std::string::String> {
+        &self.root_access
     }
     /// Appends an item to `security_groups`.
     ///
@@ -466,6 +540,12 @@ impl AwsSageMakerNotebookInstanceDetailsBuilder {
         self.security_groups = input;
         self
     }
+    /// <p> The VPC security group IDs. </p>
+    pub fn get_security_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_groups
+    }
     /// <p> The ID of the VPC subnet to which you have a connectivity from your ML compute instance. </p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
@@ -475,6 +555,10 @@ impl AwsSageMakerNotebookInstanceDetailsBuilder {
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_id = input;
         self
+    }
+    /// <p> The ID of the VPC subnet to which you have a connectivity from your ML compute instance. </p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_id
     }
     /// <p> The URL that you use to connect to the Jupyter notebook that is running in your notebook instance. </p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -486,6 +570,10 @@ impl AwsSageMakerNotebookInstanceDetailsBuilder {
         self.url = input;
         self
     }
+    /// <p> The URL that you use to connect to the Jupyter notebook that is running in your notebook instance. </p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
+    }
     /// <p> The size, in GB, of the ML storage volume to attach to the notebook instance. </p>
     pub fn volume_size_in_gb(mut self, input: i32) -> Self {
         self.volume_size_in_gb = ::std::option::Option::Some(input);
@@ -495,6 +583,10 @@ impl AwsSageMakerNotebookInstanceDetailsBuilder {
     pub fn set_volume_size_in_gb(mut self, input: ::std::option::Option<i32>) -> Self {
         self.volume_size_in_gb = input;
         self
+    }
+    /// <p> The size, in GB, of the ML storage volume to attach to the notebook instance. </p>
+    pub fn get_volume_size_in_gb(&self) -> &::std::option::Option<i32> {
+        &self.volume_size_in_gb
     }
     /// Consumes the builder and constructs a [`AwsSageMakerNotebookInstanceDetails`](crate::types::AwsSageMakerNotebookInstanceDetails).
     pub fn build(self) -> crate::types::AwsSageMakerNotebookInstanceDetails {

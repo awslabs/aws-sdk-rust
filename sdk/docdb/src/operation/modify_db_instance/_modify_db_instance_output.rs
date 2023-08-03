@@ -50,6 +50,10 @@ impl ModifyDbInstanceOutputBuilder {
         self.db_instance = input;
         self
     }
+    /// <p>Detailed information about an instance. </p>
+    pub fn get_db_instance(&self) -> &::std::option::Option<crate::types::DbInstance> {
+        &self.db_instance
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

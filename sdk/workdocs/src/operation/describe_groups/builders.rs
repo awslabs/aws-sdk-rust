@@ -36,6 +36,12 @@ impl DescribeGroupsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeGroups as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_groups::builders::DescribeGroupsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +141,10 @@ impl DescribeGroupsFluentBuilder {
         self.inner = self.inner.set_authentication_token(input);
         self
     }
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_authentication_token()
+    }
     /// <p>A query to describe groups by group name.</p>
     pub fn search_query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.search_query(input.into());
@@ -144,6 +154,10 @@ impl DescribeGroupsFluentBuilder {
     pub fn set_search_query(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_search_query(input);
         self
+    }
+    /// <p>A query to describe groups by group name.</p>
+    pub fn get_search_query(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_search_query()
     }
     /// <p>The ID of the organization.</p>
     pub fn organization_id(
@@ -161,6 +175,10 @@ impl DescribeGroupsFluentBuilder {
         self.inner = self.inner.set_organization_id(input);
         self
     }
+    /// <p>The ID of the organization.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organization_id()
+    }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -171,6 +189,10 @@ impl DescribeGroupsFluentBuilder {
         self.inner = self.inner.set_marker(input);
         self
     }
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
+    }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -180,5 +202,9 @@ impl DescribeGroupsFluentBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
+    }
+    /// <p>The maximum number of items to return with this call.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
     }
 }

@@ -56,6 +56,12 @@ impl BatchDisableAlarmInputBuilder {
         self.disable_action_requests = input;
         self
     }
+    /// <p>The list of disable action requests. You can specify up to 10 requests per operation.</p>
+    pub fn get_disable_action_requests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DisableAlarmActionRequest>> {
+        &self.disable_action_requests
+    }
     /// Consumes the builder and constructs a [`BatchDisableAlarmInput`](crate::operation::batch_disable_alarm::BatchDisableAlarmInput).
     pub fn build(
         self,

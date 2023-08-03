@@ -78,6 +78,10 @@ impl UpdateRegistryOutputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the registry.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The ARN of the registry.</p>
     pub fn registry_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_arn = ::std::option::Option::Some(input.into());
@@ -87,6 +91,10 @@ impl UpdateRegistryOutputBuilder {
     pub fn set_registry_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registry_arn = input;
         self
+    }
+    /// <p>The ARN of the registry.</p>
+    pub fn get_registry_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_arn
     }
     /// <p>The name of the registry.</p>
     pub fn registry_name(
@@ -103,6 +111,10 @@ impl UpdateRegistryOutputBuilder {
     ) -> Self {
         self.registry_name = input;
         self
+    }
+    /// <p>The name of the registry.</p>
+    pub fn get_registry_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_name
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -128,6 +140,14 @@ impl UpdateRegistryOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Tags associated with the registry.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

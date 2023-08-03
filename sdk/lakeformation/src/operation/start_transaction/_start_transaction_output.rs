@@ -53,6 +53,10 @@ impl StartTransactionOutputBuilder {
         self.transaction_id = input;
         self
     }
+    /// <p>An opaque identifier for the transaction.</p>
+    pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transaction_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

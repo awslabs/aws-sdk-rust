@@ -68,6 +68,12 @@ impl ListQueryExecutionsOutputBuilder {
         self.query_execution_ids = input;
         self
     }
+    /// <p>The unique IDs of each query execution as an array of strings.</p>
+    pub fn get_query_execution_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.query_execution_ids
+    }
     /// <p>A token to be used by the next request if this request is truncated.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -77,6 +83,10 @@ impl ListQueryExecutionsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token to be used by the next request if this request is truncated.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -79,6 +79,12 @@ impl CreateDbSubnetGroupInputBuilder {
         self.db_subnet_group_name = input;
         self
     }
+    /// <p>The name for the DB subnet group. This value is stored as a lowercase string.</p>
+    /// <p>Constraints: Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens. Must not be default.</p>
+    /// <p>Example: <code>mySubnetgroup</code> </p>
+    pub fn get_db_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_subnet_group_name
+    }
     /// <p>The description for the DB subnet group.</p>
     pub fn db_subnet_group_description(
         mut self,
@@ -94,6 +100,10 @@ impl CreateDbSubnetGroupInputBuilder {
     ) -> Self {
         self.db_subnet_group_description = input;
         self
+    }
+    /// <p>The description for the DB subnet group.</p>
+    pub fn get_db_subnet_group_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_subnet_group_description
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -114,6 +124,10 @@ impl CreateDbSubnetGroupInputBuilder {
         self.subnet_ids = input;
         self
     }
+    /// <p>The EC2 Subnet IDs for the DB subnet group.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -132,6 +146,10 @@ impl CreateDbSubnetGroupInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags to be assigned to the new DB subnet group.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateDbSubnetGroupInput`](crate::operation::create_db_subnet_group::CreateDbSubnetGroupInput).
     pub fn build(

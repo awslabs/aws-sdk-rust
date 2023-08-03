@@ -56,6 +56,12 @@ impl ChatParticipantRoleConfigBuilder {
         self.participant_timer_config_list = input;
         self
     }
+    /// <p>A list of participant timers. You can specify any unique combination of role and timer type. Duplicate entries error out the request with a 400.</p>
+    pub fn get_participant_timer_config_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParticipantTimerConfiguration>> {
+        &self.participant_timer_config_list
+    }
     /// Consumes the builder and constructs a [`ChatParticipantRoleConfig`](crate::types::ChatParticipantRoleConfig).
     pub fn build(self) -> crate::types::ChatParticipantRoleConfig {
         crate::types::ChatParticipantRoleConfig {

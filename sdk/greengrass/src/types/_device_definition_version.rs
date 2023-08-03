@@ -49,6 +49,10 @@ impl DeviceDefinitionVersionBuilder {
         self.devices = input;
         self
     }
+    /// A list of devices in the definition version.
+    pub fn get_devices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Device>> {
+        &self.devices
+    }
     /// Consumes the builder and constructs a [`DeviceDefinitionVersion`](crate::types::DeviceDefinitionVersion).
     pub fn build(self) -> crate::types::DeviceDefinitionVersion {
         crate::types::DeviceDefinitionVersion {

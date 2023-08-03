@@ -40,6 +40,10 @@ impl DeleteBatchImportJobInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The ID of the batch import job to delete. </p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// Consumes the builder and constructs a [`DeleteBatchImportJobInput`](crate::operation::delete_batch_import_job::DeleteBatchImportJobInput).
     pub fn build(
         self,

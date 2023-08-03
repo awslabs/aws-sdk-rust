@@ -47,6 +47,10 @@ impl DescribeWhatIfForecastInputBuilder {
         self.what_if_forecast_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the what-if forecast that you are interested in.</p>
+    pub fn get_what_if_forecast_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.what_if_forecast_arn
+    }
     /// Consumes the builder and constructs a [`DescribeWhatIfForecastInput`](crate::operation::describe_what_if_forecast::DescribeWhatIfForecastInput).
     pub fn build(
         self,

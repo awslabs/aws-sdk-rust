@@ -113,6 +113,10 @@ impl ModelPackageGroupBuilder {
         self.model_package_group_name = input;
         self
     }
+    /// <p>The name of the model group.</p>
+    pub fn get_model_package_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_package_group_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the model group.</p>
     pub fn model_package_group_arn(
         mut self,
@@ -128,6 +132,10 @@ impl ModelPackageGroupBuilder {
     ) -> Self {
         self.model_package_group_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the model group.</p>
+    pub fn get_model_package_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_package_group_arn
     }
     /// <p>The description for the model group.</p>
     pub fn model_package_group_description(
@@ -145,6 +153,12 @@ impl ModelPackageGroupBuilder {
         self.model_package_group_description = input;
         self
     }
+    /// <p>The description for the model group.</p>
+    pub fn get_model_package_group_description(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.model_package_group_description
+    }
     /// <p>The time that the model group was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -158,6 +172,10 @@ impl ModelPackageGroupBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The time that the model group was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn created_by(mut self, input: crate::types::UserContext) -> Self {
         self.created_by = ::std::option::Option::Some(input);
@@ -170,6 +188,10 @@ impl ModelPackageGroupBuilder {
     ) -> Self {
         self.created_by = input;
         self
+    }
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<crate::types::UserContext> {
+        &self.created_by
     }
     /// <p>The status of the model group. This can be one of the following values.</p>
     /// <ul>
@@ -203,6 +225,20 @@ impl ModelPackageGroupBuilder {
         self.model_package_group_status = input;
         self
     }
+    /// <p>The status of the model group. This can be one of the following values.</p>
+    /// <ul>
+    /// <li> <p> <code>PENDING</code> - The model group is pending being created.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> - The model group is in the process of being created.</p> </li>
+    /// <li> <p> <code>COMPLETED</code> - The model group was successfully created.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The model group failed.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The model group is in the process of being deleted.</p> </li>
+    /// <li> <p> <code>DELETE_FAILED</code> - SageMaker failed to delete the model group.</p> </li>
+    /// </ul>
+    pub fn get_model_package_group_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ModelPackageGroupStatus> {
+        &self.model_package_group_status
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -221,6 +257,10 @@ impl ModelPackageGroupBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of the tags associated with the model group. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`ModelPackageGroup`](crate::types::ModelPackageGroup).
     pub fn build(self) -> crate::types::ModelPackageGroup {

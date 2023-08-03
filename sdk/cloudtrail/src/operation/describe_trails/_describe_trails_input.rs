@@ -92,6 +92,20 @@ impl DescribeTrailsInputBuilder {
         self.trail_name_list = input;
         self
     }
+    /// <p>Specifies a list of trail names, trail ARNs, or both, of the trails to describe. The format of a trail ARN is:</p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// <p>If an empty list is specified, information for the trail in the current Region is returned.</p>
+    /// <ul>
+    /// <li> <p>If an empty list is specified and <code>IncludeShadowTrails</code> is false, then information for all trails in the current Region is returned.</p> </li>
+    /// <li> <p>If an empty list is specified and IncludeShadowTrails is null or true, then information for all trails in the current Region and any associated shadow trails in other Regions is returned.</p> </li>
+    /// </ul> <note>
+    /// <p>If one or more trail names are specified, information is returned only if the names match the names of trails belonging only to the current Region and current account. To return information about a trail in another Region, you must specify its trail ARN.</p>
+    /// </note>
+    pub fn get_trail_name_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.trail_name_list
+    }
     /// <p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a Region of a trail that was created in a different Region, or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account and Region replication trails will not be returned. The default is true.</p>
     pub fn include_shadow_trails(mut self, input: bool) -> Self {
         self.include_shadow_trails = ::std::option::Option::Some(input);
@@ -101,6 +115,10 @@ impl DescribeTrailsInputBuilder {
     pub fn set_include_shadow_trails(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_shadow_trails = input;
         self
+    }
+    /// <p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a Region of a trail that was created in a different Region, or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account and Region replication trails will not be returned. The default is true.</p>
+    pub fn get_include_shadow_trails(&self) -> &::std::option::Option<bool> {
+        &self.include_shadow_trails
     }
     /// Consumes the builder and constructs a [`DescribeTrailsInput`](crate::operation::describe_trails::DescribeTrailsInput).
     pub fn build(

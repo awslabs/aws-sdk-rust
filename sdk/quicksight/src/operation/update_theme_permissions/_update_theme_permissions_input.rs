@@ -74,6 +74,10 @@ impl UpdateThemePermissionsInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services account that contains the theme.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The ID for the theme.</p>
     pub fn theme_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.theme_id = ::std::option::Option::Some(input.into());
@@ -83,6 +87,10 @@ impl UpdateThemePermissionsInputBuilder {
     pub fn set_theme_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.theme_id = input;
         self
+    }
+    /// <p>The ID for the theme.</p>
+    pub fn get_theme_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.theme_id
     }
     /// Appends an item to `grant_permissions`.
     ///
@@ -103,6 +111,12 @@ impl UpdateThemePermissionsInputBuilder {
         self.grant_permissions = input;
         self
     }
+    /// <p>A list of resource permissions to be granted for the theme.</p>
+    pub fn get_grant_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+        &self.grant_permissions
+    }
     /// Appends an item to `revoke_permissions`.
     ///
     /// To override the contents of this collection use [`set_revoke_permissions`](Self::set_revoke_permissions).
@@ -121,6 +135,12 @@ impl UpdateThemePermissionsInputBuilder {
     ) -> Self {
         self.revoke_permissions = input;
         self
+    }
+    /// <p>A list of resource permissions to be revoked from the theme.</p>
+    pub fn get_revoke_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+        &self.revoke_permissions
     }
     /// Consumes the builder and constructs a [`UpdateThemePermissionsInput`](crate::operation::update_theme_permissions::UpdateThemePermissionsInput).
     pub fn build(

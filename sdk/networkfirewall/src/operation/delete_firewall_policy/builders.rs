@@ -36,6 +36,12 @@ impl DeleteFirewallPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteFirewallPolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_firewall_policy::builders::DeleteFirewallPolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +140,11 @@ impl DeleteFirewallPolicyFluentBuilder {
         self.inner = self.inner.set_firewall_policy_name(input);
         self
     }
+    /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn get_firewall_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_firewall_policy_name()
+    }
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn firewall_policy_arn(
@@ -151,5 +162,10 @@ impl DeleteFirewallPolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_firewall_policy_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn get_firewall_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_firewall_policy_arn()
     }
 }

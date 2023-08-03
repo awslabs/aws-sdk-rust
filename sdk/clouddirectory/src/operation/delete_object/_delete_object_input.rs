@@ -53,6 +53,10 @@ impl DeleteObjectInputBuilder {
         self.directory_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_arn
+    }
     /// <p>A reference that identifies the object.</p>
     pub fn object_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.object_reference = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl DeleteObjectInputBuilder {
     ) -> Self {
         self.object_reference = input;
         self
+    }
+    /// <p>A reference that identifies the object.</p>
+    pub fn get_object_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
+        &self.object_reference
     }
     /// Consumes the builder and constructs a [`DeleteObjectInput`](crate::operation::delete_object::DeleteObjectInput).
     pub fn build(

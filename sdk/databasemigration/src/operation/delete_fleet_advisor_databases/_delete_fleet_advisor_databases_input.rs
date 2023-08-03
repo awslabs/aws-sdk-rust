@@ -48,6 +48,12 @@ impl DeleteFleetAdvisorDatabasesInputBuilder {
         self.database_ids = input;
         self
     }
+    /// <p>The IDs of the Fleet Advisor collector databases to delete.</p>
+    pub fn get_database_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.database_ids
+    }
     /// Consumes the builder and constructs a [`DeleteFleetAdvisorDatabasesInput`](crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabasesInput).
     pub fn build(
         self,

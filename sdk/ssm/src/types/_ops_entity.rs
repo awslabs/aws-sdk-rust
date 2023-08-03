@@ -56,6 +56,10 @@ impl OpsEntityBuilder {
         self.id = input;
         self
     }
+    /// <p>The query ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Adds a key-value pair to `data`.
     ///
     /// To override the contents of this collection use [`set_data`](Self::set_data).
@@ -80,6 +84,14 @@ impl OpsEntityBuilder {
     ) -> Self {
         self.data = input;
         self
+    }
+    /// <p>The data returned by the query.</p>
+    pub fn get_data(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::OpsEntityItem>,
+    > {
+        &self.data
     }
     /// Consumes the builder and constructs a [`OpsEntity`](crate::types::OpsEntity).
     pub fn build(self) -> crate::types::OpsEntity {

@@ -105,6 +105,15 @@ impl InstanceMetadataOptionsBuilder {
         self.state = input;
         self
     }
+    /// <p>The state of the metadata option changes.</p>
+    /// <p>The following states are possible:</p>
+    /// <ul>
+    /// <li> <p> <code>pending</code> - The metadata options are being updated. The instance is not yet ready to process metadata traffic with the new selection.</p> </li>
+    /// <li> <p> <code>applied</code> - The metadata options have been successfully applied to the instance.</p> </li>
+    /// </ul>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::InstanceMetadataState> {
+        &self.state
+    }
     /// <p>The state of token usage for your instance metadata requests.</p>
     /// <p>If the state is <code>optional</code>, you can choose whether to retrieve instance metadata with a signed token header on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role credentials are returned. If you retrieve the IAM role credentials by using a valid signed token, the version 2.0 role credentials are returned.</p>
     /// <p>If the state is <code>required</code>, you must send a signed token header with all instance metadata retrieval requests. In this state, retrieving the IAM role credential always returns the version 2.0 credentials. The version 1.0 credentials are not available.</p> <important>
@@ -126,6 +135,14 @@ impl InstanceMetadataOptionsBuilder {
         self.http_tokens = input;
         self
     }
+    /// <p>The state of token usage for your instance metadata requests.</p>
+    /// <p>If the state is <code>optional</code>, you can choose whether to retrieve instance metadata with a signed token header on your request. If you retrieve the IAM role credentials without a token, the version 1.0 role credentials are returned. If you retrieve the IAM role credentials by using a valid signed token, the version 2.0 role credentials are returned.</p>
+    /// <p>If the state is <code>required</code>, you must send a signed token header with all instance metadata retrieval requests. In this state, retrieving the IAM role credential always returns the version 2.0 credentials. The version 1.0 credentials are not available.</p> <important>
+    /// <p>Not all instance blueprints in Lightsail support version 2.0 credentials. Use the <code>MetadataNoToken</code> instance metric to track the number of calls to the instance metadata service that are using version 1.0 credentials. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-viewing-instance-health-metrics">Viewing instance metrics in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+    /// </important>
+    pub fn get_http_tokens(&self) -> &::std::option::Option<crate::types::HttpTokens> {
+        &self.http_tokens
+    }
     /// <p>Indicates whether the HTTP metadata endpoint on your instances is enabled or disabled.</p>
     /// <p>If the value is <code>disabled</code>, you cannot access your instance metadata.</p>
     pub fn http_endpoint(mut self, input: crate::types::HttpEndpoint) -> Self {
@@ -141,6 +158,11 @@ impl InstanceMetadataOptionsBuilder {
         self.http_endpoint = input;
         self
     }
+    /// <p>Indicates whether the HTTP metadata endpoint on your instances is enabled or disabled.</p>
+    /// <p>If the value is <code>disabled</code>, you cannot access your instance metadata.</p>
+    pub fn get_http_endpoint(&self) -> &::std::option::Option<crate::types::HttpEndpoint> {
+        &self.http_endpoint
+    }
     /// <p>The desired HTTP PUT response hop limit for instance metadata requests. A larger number means that the instance metadata requests can travel farther.</p>
     pub fn http_put_response_hop_limit(mut self, input: i32) -> Self {
         self.http_put_response_hop_limit = ::std::option::Option::Some(input);
@@ -150,6 +172,10 @@ impl InstanceMetadataOptionsBuilder {
     pub fn set_http_put_response_hop_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.http_put_response_hop_limit = input;
         self
+    }
+    /// <p>The desired HTTP PUT response hop limit for instance metadata requests. A larger number means that the instance metadata requests can travel farther.</p>
+    pub fn get_http_put_response_hop_limit(&self) -> &::std::option::Option<i32> {
+        &self.http_put_response_hop_limit
     }
     /// <p>Indicates whether the IPv6 endpoint for the instance metadata service is enabled or disabled.</p>
     pub fn http_protocol_ipv6(mut self, input: crate::types::HttpProtocolIpv6) -> Self {
@@ -163,6 +189,10 @@ impl InstanceMetadataOptionsBuilder {
     ) -> Self {
         self.http_protocol_ipv6 = input;
         self
+    }
+    /// <p>Indicates whether the IPv6 endpoint for the instance metadata service is enabled or disabled.</p>
+    pub fn get_http_protocol_ipv6(&self) -> &::std::option::Option<crate::types::HttpProtocolIpv6> {
+        &self.http_protocol_ipv6
     }
     /// Consumes the builder and constructs a [`InstanceMetadataOptions`](crate::types::InstanceMetadataOptions).
     pub fn build(self) -> crate::types::InstanceMetadataOptions {

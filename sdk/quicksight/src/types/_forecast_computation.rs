@@ -136,6 +136,10 @@ impl ForecastComputationBuilder {
         self.computation_id = input;
         self
     }
+    /// <p>The ID for a computation.</p>
+    pub fn get_computation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.computation_id
+    }
     /// <p>The name of a computation.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -145,6 +149,10 @@ impl ForecastComputationBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of a computation.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The time field that is used in a computation.</p>
     pub fn time(mut self, input: crate::types::DimensionField) -> Self {
@@ -156,6 +164,10 @@ impl ForecastComputationBuilder {
         self.time = input;
         self
     }
+    /// <p>The time field that is used in a computation.</p>
+    pub fn get_time(&self) -> &::std::option::Option<crate::types::DimensionField> {
+        &self.time
+    }
     /// <p>The value field that is used in a computation.</p>
     pub fn value(mut self, input: crate::types::MeasureField) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -165,6 +177,10 @@ impl ForecastComputationBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::MeasureField>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value field that is used in a computation.</p>
+    pub fn get_value(&self) -> &::std::option::Option<crate::types::MeasureField> {
+        &self.value
     }
     /// <p>The periods forward setup of a forecast computation.</p>
     pub fn periods_forward(mut self, input: i32) -> Self {
@@ -176,6 +192,10 @@ impl ForecastComputationBuilder {
         self.periods_forward = input;
         self
     }
+    /// <p>The periods forward setup of a forecast computation.</p>
+    pub fn get_periods_forward(&self) -> &::std::option::Option<i32> {
+        &self.periods_forward
+    }
     /// <p>The periods backward setup of a forecast computation.</p>
     pub fn periods_backward(mut self, input: i32) -> Self {
         self.periods_backward = ::std::option::Option::Some(input);
@@ -185,6 +205,10 @@ impl ForecastComputationBuilder {
     pub fn set_periods_backward(mut self, input: ::std::option::Option<i32>) -> Self {
         self.periods_backward = input;
         self
+    }
+    /// <p>The periods backward setup of a forecast computation.</p>
+    pub fn get_periods_backward(&self) -> &::std::option::Option<i32> {
+        &self.periods_backward
     }
     /// <p>The upper boundary setup of a forecast computation.</p>
     pub fn upper_boundary(mut self, input: f64) -> Self {
@@ -196,6 +220,10 @@ impl ForecastComputationBuilder {
         self.upper_boundary = input;
         self
     }
+    /// <p>The upper boundary setup of a forecast computation.</p>
+    pub fn get_upper_boundary(&self) -> &::std::option::Option<f64> {
+        &self.upper_boundary
+    }
     /// <p>The lower boundary setup of a forecast computation.</p>
     pub fn lower_boundary(mut self, input: f64) -> Self {
         self.lower_boundary = ::std::option::Option::Some(input);
@@ -206,6 +234,10 @@ impl ForecastComputationBuilder {
         self.lower_boundary = input;
         self
     }
+    /// <p>The lower boundary setup of a forecast computation.</p>
+    pub fn get_lower_boundary(&self) -> &::std::option::Option<f64> {
+        &self.lower_boundary
+    }
     /// <p>The prediction interval setup of a forecast computation.</p>
     pub fn prediction_interval(mut self, input: i32) -> Self {
         self.prediction_interval = ::std::option::Option::Some(input);
@@ -215,6 +247,10 @@ impl ForecastComputationBuilder {
     pub fn set_prediction_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.prediction_interval = input;
         self
+    }
+    /// <p>The prediction interval setup of a forecast computation.</p>
+    pub fn get_prediction_interval(&self) -> &::std::option::Option<i32> {
+        &self.prediction_interval
     }
     /// <p>The seasonality setup of a forecast computation. Choose one of the following options:</p>
     /// <ul>
@@ -237,6 +273,16 @@ impl ForecastComputationBuilder {
         self.seasonality = input;
         self
     }
+    /// <p>The seasonality setup of a forecast computation. Choose one of the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>AUTOMATIC</code> </p> </li>
+    /// <li> <p> <code>CUSTOM</code>: Checks the custom seasonality value.</p> </li>
+    /// </ul>
+    pub fn get_seasonality(
+        &self,
+    ) -> &::std::option::Option<crate::types::ForecastComputationSeasonality> {
+        &self.seasonality
+    }
     /// <p>The custom seasonality value setup of a forecast computation.</p>
     pub fn custom_seasonality_value(mut self, input: i32) -> Self {
         self.custom_seasonality_value = ::std::option::Option::Some(input);
@@ -246,6 +292,10 @@ impl ForecastComputationBuilder {
     pub fn set_custom_seasonality_value(mut self, input: ::std::option::Option<i32>) -> Self {
         self.custom_seasonality_value = input;
         self
+    }
+    /// <p>The custom seasonality value setup of a forecast computation.</p>
+    pub fn get_custom_seasonality_value(&self) -> &::std::option::Option<i32> {
+        &self.custom_seasonality_value
     }
     /// Consumes the builder and constructs a [`ForecastComputation`](crate::types::ForecastComputation).
     pub fn build(self) -> crate::types::ForecastComputation {

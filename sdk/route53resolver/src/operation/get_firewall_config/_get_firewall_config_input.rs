@@ -40,6 +40,10 @@ impl GetFirewallConfigInputBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The ID of the VPC from Amazon VPC that the configuration is for.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// Consumes the builder and constructs a [`GetFirewallConfigInput`](crate::operation::get_firewall_config::GetFirewallConfigInput).
     pub fn build(
         self,

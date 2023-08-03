@@ -88,6 +88,10 @@ impl AssetBundleImportJobVpcConnectionOverrideParametersBuilder {
         self.vpc_connection_id = input;
         self
     }
+    /// <p>The ID of the VPC Connection to apply overrides to.</p>
+    pub fn get_vpc_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_connection_id
+    }
     /// <p>A new name for the VPC connection.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -97,6 +101,10 @@ impl AssetBundleImportJobVpcConnectionOverrideParametersBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A new name for the VPC connection.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -116,6 +124,10 @@ impl AssetBundleImportJobVpcConnectionOverrideParametersBuilder {
     ) -> Self {
         self.subnet_ids = input;
         self
+    }
+    /// <p>A list of new subnet IDs for the VPC connection you are importing. This field is required if you are importing the VPC connection from another Amazon Web Services account or Region.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
     }
     /// Appends an item to `security_group_ids`.
     ///
@@ -139,6 +151,12 @@ impl AssetBundleImportJobVpcConnectionOverrideParametersBuilder {
         self.security_group_ids = input;
         self
     }
+    /// <p>A new security group ID for the VPC connection you are importing. This field is required if you are importing the VPC connection from another Amazon Web Services account or Region.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
+    }
     /// Appends an item to `dns_resolvers`.
     ///
     /// To override the contents of this collection use [`set_dns_resolvers`](Self::set_dns_resolvers).
@@ -161,6 +179,12 @@ impl AssetBundleImportJobVpcConnectionOverrideParametersBuilder {
         self.dns_resolvers = input;
         self
     }
+    /// <p>An optional override of DNS resolvers to be used by the VPC connection.</p>
+    pub fn get_dns_resolvers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.dns_resolvers
+    }
     /// <p>An optional override of the role ARN to be used by the VPC connection.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -170,6 +194,10 @@ impl AssetBundleImportJobVpcConnectionOverrideParametersBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>An optional override of the role ARN to be used by the VPC connection.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Consumes the builder and constructs a [`AssetBundleImportJobVpcConnectionOverrideParameters`](crate::types::AssetBundleImportJobVpcConnectionOverrideParameters).
     pub fn build(self) -> crate::types::AssetBundleImportJobVpcConnectionOverrideParameters {

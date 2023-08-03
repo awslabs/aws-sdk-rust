@@ -92,6 +92,10 @@ impl OperatingSystemBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the operating system, such as <code>Amazon Linux 2018.03</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The ID of a supported operating system, such as <code>Amazon Linux 2018.03</code>.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -102,6 +106,10 @@ impl OperatingSystemBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of a supported operating system, such as <code>Amazon Linux 2018.03</code>.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The type of a supported operating system, either <code>Linux</code> or <code>Windows</code>.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -111,6 +119,10 @@ impl OperatingSystemBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of a supported operating system, either <code>Linux</code> or <code>Windows</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// Appends an item to `configuration_managers`.
     ///
@@ -136,6 +148,13 @@ impl OperatingSystemBuilder {
         self.configuration_managers = input;
         self
     }
+    /// <p>Supported configuration manager name and versions for an AWS OpsWorks Stacks operating system.</p>
+    pub fn get_configuration_managers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OperatingSystemConfigurationManager>>
+    {
+        &self.configuration_managers
+    }
     /// <p>A short name for the operating system manufacturer.</p>
     pub fn reported_name(
         mut self,
@@ -151,6 +170,10 @@ impl OperatingSystemBuilder {
     ) -> Self {
         self.reported_name = input;
         self
+    }
+    /// <p>A short name for the operating system manufacturer.</p>
+    pub fn get_reported_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reported_name
     }
     /// <p>The version of the operating system, including the release and edition, if applicable.</p>
     pub fn reported_version(
@@ -168,6 +191,10 @@ impl OperatingSystemBuilder {
         self.reported_version = input;
         self
     }
+    /// <p>The version of the operating system, including the release and edition, if applicable.</p>
+    pub fn get_reported_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reported_version
+    }
     /// <p>Indicates that an operating system is not supported for new instances.</p>
     pub fn supported(mut self, input: bool) -> Self {
         self.supported = ::std::option::Option::Some(input);
@@ -177,6 +204,10 @@ impl OperatingSystemBuilder {
     pub fn set_supported(mut self, input: ::std::option::Option<bool>) -> Self {
         self.supported = input;
         self
+    }
+    /// <p>Indicates that an operating system is not supported for new instances.</p>
+    pub fn get_supported(&self) -> &::std::option::Option<bool> {
+        &self.supported
     }
     /// Consumes the builder and constructs a [`OperatingSystem`](crate::types::OperatingSystem).
     pub fn build(self) -> crate::types::OperatingSystem {

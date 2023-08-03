@@ -63,6 +63,10 @@ impl AdminAddUserToGroupInputBuilder {
         self.user_pool_id = input;
         self
     }
+    /// <p>The user pool ID for the user pool.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_pool_id
+    }
     /// <p>The username for the user.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl AdminAddUserToGroupInputBuilder {
         self.username = input;
         self
     }
+    /// <p>The username for the user.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
+    }
     /// <p>The group name.</p>
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_name = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl AdminAddUserToGroupInputBuilder {
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_name = input;
         self
+    }
+    /// <p>The group name.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
     }
     /// Consumes the builder and constructs a [`AdminAddUserToGroupInput`](crate::operation::admin_add_user_to_group::AdminAddUserToGroupInput).
     pub fn build(

@@ -72,6 +72,10 @@ impl CreateWorkspaceApiKeyOutputBuilder {
         self.key_name = input;
         self
     }
+    /// <p>The name of the key that was created.</p>
+    pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_name
+    }
     /// <p>The key token. Use this value as a bearer token to authenticate HTTP requests to the workspace.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl CreateWorkspaceApiKeyOutputBuilder {
         self.key = input;
         self
     }
+    /// <p>The key token. Use this value as a bearer token to authenticate HTTP requests to the workspace.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>The ID of the workspace that the key is valid for.</p>
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl CreateWorkspaceApiKeyOutputBuilder {
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workspace_id = input;
         self
+    }
+    /// <p>The ID of the workspace that the key is valid for.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

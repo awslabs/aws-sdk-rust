@@ -57,6 +57,12 @@ impl LoadPermissionModificationsBuilder {
         self.add = input;
         self
     }
+    /// <p>The load permissions to add.</p>
+    pub fn get_add(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadPermissionRequest>> {
+        &self.add
+    }
     /// Appends an item to `remove`.
     ///
     /// To override the contents of this collection use [`set_remove`](Self::set_remove).
@@ -75,6 +81,12 @@ impl LoadPermissionModificationsBuilder {
     ) -> Self {
         self.remove = input;
         self
+    }
+    /// <p>The load permissions to remove.</p>
+    pub fn get_remove(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadPermissionRequest>> {
+        &self.remove
     }
     /// Consumes the builder and constructs a [`LoadPermissionModifications`](crate::types::LoadPermissionModifications).
     pub fn build(self) -> crate::types::LoadPermissionModifications {

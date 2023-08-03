@@ -49,6 +49,10 @@ impl DescribeAssetPropertyInputBuilder {
         self.asset_id = input;
         self
     }
+    /// <p>The ID of the asset.</p>
+    pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_id
+    }
     /// <p>The ID of the asset property.</p>
     pub fn property_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.property_id = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl DescribeAssetPropertyInputBuilder {
     pub fn set_property_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.property_id = input;
         self
+    }
+    /// <p>The ID of the asset property.</p>
+    pub fn get_property_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.property_id
     }
     /// Consumes the builder and constructs a [`DescribeAssetPropertyInput`](crate::operation::describe_asset_property::DescribeAssetPropertyInput).
     pub fn build(

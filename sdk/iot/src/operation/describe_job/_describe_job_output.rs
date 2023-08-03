@@ -60,6 +60,10 @@ impl DescribeJobOutputBuilder {
         self.document_source = input;
         self
     }
+    /// <p>An S3 link to the job document.</p>
+    pub fn get_document_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_source
+    }
     /// <p>Information about the job.</p>
     pub fn job(mut self, input: crate::types::Job) -> Self {
         self.job = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl DescribeJobOutputBuilder {
     pub fn set_job(mut self, input: ::std::option::Option<crate::types::Job>) -> Self {
         self.job = input;
         self
+    }
+    /// <p>Information about the job.</p>
+    pub fn get_job(&self) -> &::std::option::Option<crate::types::Job> {
+        &self.job
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

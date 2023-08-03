@@ -65,6 +65,10 @@ impl IntelligentTieringConfigurationBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID used to identify the S3 Intelligent-Tiering configuration.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>Specifies a bucket filter. The configuration only includes objects that meet the filter's criteria.</p>
     pub fn filter(mut self, input: crate::types::IntelligentTieringFilter) -> Self {
         self.filter = ::std::option::Option::Some(input);
@@ -78,6 +82,10 @@ impl IntelligentTieringConfigurationBuilder {
         self.filter = input;
         self
     }
+    /// <p>Specifies a bucket filter. The configuration only includes objects that meet the filter's criteria.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::IntelligentTieringFilter> {
+        &self.filter
+    }
     /// <p>Specifies the status of the configuration.</p>
     pub fn status(mut self, input: crate::types::IntelligentTieringStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -90,6 +98,10 @@ impl IntelligentTieringConfigurationBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Specifies the status of the configuration.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::IntelligentTieringStatus> {
+        &self.status
     }
     /// Appends an item to `tierings`.
     ///
@@ -109,6 +121,10 @@ impl IntelligentTieringConfigurationBuilder {
     ) -> Self {
         self.tierings = input;
         self
+    }
+    /// <p>Specifies the S3 Intelligent-Tiering storage class tier of the configuration.</p>
+    pub fn get_tierings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tiering>> {
+        &self.tierings
     }
     /// Consumes the builder and constructs a [`IntelligentTieringConfiguration`](crate::types::IntelligentTieringConfiguration).
     pub fn build(self) -> crate::types::IntelligentTieringConfiguration {

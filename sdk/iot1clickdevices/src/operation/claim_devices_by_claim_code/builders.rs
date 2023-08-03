@@ -36,6 +36,13 @@ impl ClaimDevicesByClaimCodeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ClaimDevicesByClaimCode as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::claim_devices_by_claim_code::builders::ClaimDevicesByClaimCodeInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +132,9 @@ impl ClaimDevicesByClaimCodeFluentBuilder {
     pub fn set_claim_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_claim_code(input);
         self
+    }
+    /// <p>The claim code, starting with "C-", as provided by the device manufacturer.</p>
+    pub fn get_claim_code(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_claim_code()
     }
 }

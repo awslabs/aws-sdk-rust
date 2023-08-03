@@ -63,6 +63,12 @@ impl GetCanaryRunsOutputBuilder {
         self.canary_runs = input;
         self
     }
+    /// <p>An array of structures. Each structure contains the details of one of the retrieved canary runs.</p>
+    pub fn get_canary_runs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CanaryRun>> {
+        &self.canary_runs
+    }
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>GetCanaryRuns</code> operation to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -72,6 +78,10 @@ impl GetCanaryRunsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>GetCanaryRuns</code> operation to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

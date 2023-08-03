@@ -47,6 +47,10 @@ impl GetDeploymentStrategyInputBuilder {
         self.deployment_strategy_id = input;
         self
     }
+    /// <p>The ID of the deployment strategy to get.</p>
+    pub fn get_deployment_strategy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_strategy_id
+    }
     /// Consumes the builder and constructs a [`GetDeploymentStrategyInput`](crate::operation::get_deployment_strategy::GetDeploymentStrategyInput).
     pub fn build(
         self,

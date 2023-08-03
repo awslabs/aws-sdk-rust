@@ -54,6 +54,10 @@ impl CalculatedMeasureFieldBuilder {
         self.field_id = input;
         self
     }
+    /// <p>The custom field ID.</p>
+    pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_id
+    }
     /// <p>The expression in the table calculation.</p>
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl CalculatedMeasureFieldBuilder {
     pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expression = input;
         self
+    }
+    /// <p>The expression in the table calculation.</p>
+    pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expression
     }
     /// Consumes the builder and constructs a [`CalculatedMeasureField`](crate::types::CalculatedMeasureField).
     pub fn build(self) -> crate::types::CalculatedMeasureField {

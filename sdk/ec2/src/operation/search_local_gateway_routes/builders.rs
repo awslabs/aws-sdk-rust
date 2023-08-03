@@ -36,6 +36,10 @@ impl SearchLocalGatewayRoutesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SearchLocalGatewayRoutes as a reference.
+    pub fn as_input(&self) -> &crate::operation::search_local_gateway_routes::builders::SearchLocalGatewayRoutesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -141,6 +145,12 @@ impl SearchLocalGatewayRoutesFluentBuilder {
         self.inner = self.inner.set_local_gateway_route_table_id(input);
         self
     }
+    /// <p>The ID of the local gateway route table.</p>
+    pub fn get_local_gateway_route_table_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_local_gateway_route_table_id()
+    }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -176,6 +186,19 @@ impl SearchLocalGatewayRoutesFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>One or more filters.</p>
+    /// <ul>
+    /// <li> <p> <code>prefix-list-id</code> - The ID of the prefix list.</p> </li>
+    /// <li> <p> <code>route-search.exact-match</code> - The exact match of the specified filter.</p> </li>
+    /// <li> <p> <code>route-search.longest-prefix-match</code> - The longest prefix that matches the route.</p> </li>
+    /// <li> <p> <code>route-search.subnet-of-match</code> - The routes with a subnet that match the specified CIDR filter.</p> </li>
+    /// <li> <p> <code>route-search.supernet-of-match</code> - The routes with a CIDR that encompass the CIDR filter. For example, if you have 10.0.1.0/29 and 10.0.1.0/31 routes in your route table and you specify <code>supernet-of-match</code> as 10.0.1.0/30, then the result returns 10.0.1.0/29.</p> </li>
+    /// <li> <p> <code>state</code> - The state of the route.</p> </li>
+    /// <li> <p> <code>type</code> - The route type.</p> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
+    }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -185,6 +208,10 @@ impl SearchLocalGatewayRoutesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -196,6 +223,10 @@ impl SearchLocalGatewayRoutesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token for the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -205,5 +236,9 @@ impl SearchLocalGatewayRoutesFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

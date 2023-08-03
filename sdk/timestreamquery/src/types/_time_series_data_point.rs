@@ -48,6 +48,10 @@ impl TimeSeriesDataPointBuilder {
         self.time = input;
         self
     }
+    /// <p>The timestamp when the measure value was collected.</p>
+    pub fn get_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.time
+    }
     /// <p>The measure value for the data point.</p>
     pub fn value(mut self, input: crate::types::Datum) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl TimeSeriesDataPointBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::Datum>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The measure value for the data point.</p>
+    pub fn get_value(&self) -> &::std::option::Option<crate::types::Datum> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`TimeSeriesDataPoint`](crate::types::TimeSeriesDataPoint).
     pub fn build(self) -> crate::types::TimeSeriesDataPoint {

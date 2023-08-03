@@ -69,6 +69,12 @@ impl PutEvaluationsInputBuilder {
         self.evaluations = input;
         self
     }
+    /// <p>The assessments that the Lambda function performs. Each evaluation identifies an Amazon Web Services resource and indicates whether it complies with the Config rule that invokes the Lambda function.</p>
+    pub fn get_evaluations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Evaluation>> {
+        &self.evaluations
+    }
     /// <p>An encrypted token that associates an evaluation with an Config rule. Identifies the rule and the event that triggered the evaluation.</p>
     pub fn result_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.result_token = ::std::option::Option::Some(input.into());
@@ -78,6 +84,10 @@ impl PutEvaluationsInputBuilder {
     pub fn set_result_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.result_token = input;
         self
+    }
+    /// <p>An encrypted token that associates an evaluation with an Config rule. Identifies the rule and the event that triggered the evaluation.</p>
+    pub fn get_result_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.result_token
     }
     /// <p>Use this parameter to specify a test run for <code>PutEvaluations</code>. You can verify whether your Lambda function will deliver evaluation results to Config. No updates occur to your existing evaluations, and evaluation results are not sent to Config.</p> <note>
     /// <p>When <code>TestMode</code> is <code>true</code>, <code>PutEvaluations</code> doesn't require a valid value for the <code>ResultToken</code> parameter, but the value cannot be null.</p>
@@ -92,6 +102,12 @@ impl PutEvaluationsInputBuilder {
     pub fn set_test_mode(mut self, input: ::std::option::Option<bool>) -> Self {
         self.test_mode = input;
         self
+    }
+    /// <p>Use this parameter to specify a test run for <code>PutEvaluations</code>. You can verify whether your Lambda function will deliver evaluation results to Config. No updates occur to your existing evaluations, and evaluation results are not sent to Config.</p> <note>
+    /// <p>When <code>TestMode</code> is <code>true</code>, <code>PutEvaluations</code> doesn't require a valid value for the <code>ResultToken</code> parameter, but the value cannot be null.</p>
+    /// </note>
+    pub fn get_test_mode(&self) -> &::std::option::Option<bool> {
+        &self.test_mode
     }
     /// Consumes the builder and constructs a [`PutEvaluationsInput`](crate::operation::put_evaluations::PutEvaluationsInput).
     pub fn build(

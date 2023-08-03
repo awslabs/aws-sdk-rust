@@ -46,6 +46,12 @@ impl DetectStackSetDriftFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DetectStackSetDrift as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::detect_stack_set_drift::builders::DetectStackSetDriftInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -142,6 +148,10 @@ impl DetectStackSetDriftFluentBuilder {
         self.inner = self.inner.set_stack_set_name(input);
         self
     }
+    /// <p>The name of the stack set on which to perform the drift detection operation.</p>
+    pub fn get_stack_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stack_set_name()
+    }
     /// <p>The user-specified preferences for how CloudFormation performs a stack set operation.</p>
     /// <p>For more information about maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
     pub fn operation_preferences(
@@ -160,6 +170,13 @@ impl DetectStackSetDriftFluentBuilder {
         self.inner = self.inner.set_operation_preferences(input);
         self
     }
+    /// <p>The user-specified preferences for how CloudFormation performs a stack set operation.</p>
+    /// <p>For more information about maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
+    pub fn get_operation_preferences(
+        &self,
+    ) -> &::std::option::Option<crate::types::StackSetOperationPreferences> {
+        self.inner.get_operation_preferences()
+    }
     /// <p> <i>The ID of the stack set operation.</i> </p>
     pub fn operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.operation_id(input.into());
@@ -169,6 +186,10 @@ impl DetectStackSetDriftFluentBuilder {
     pub fn set_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_operation_id(input);
         self
+    }
+    /// <p> <i>The ID of the stack set operation.</i> </p>
+    pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_operation_id()
     }
     /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
     /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
@@ -189,5 +210,14 @@ impl DetectStackSetDriftFluentBuilder {
     pub fn set_call_as(mut self, input: ::std::option::Option<crate::types::CallAs>) -> Self {
         self.inner = self.inner.set_call_as(input);
         self
+    }
+    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <ul>
+    /// <li> <p>If you are signed in to the management account, specify <code>SELF</code>.</p> </li>
+    /// <li> <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon Web Services account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
+    /// </ul>
+    pub fn get_call_as(&self) -> &::std::option::Option<crate::types::CallAs> {
+        self.inner.get_call_as()
     }
 }

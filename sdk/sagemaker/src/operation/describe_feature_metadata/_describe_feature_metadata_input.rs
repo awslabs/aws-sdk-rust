@@ -55,6 +55,10 @@ impl DescribeFeatureMetadataInputBuilder {
         self.feature_group_name = input;
         self
     }
+    /// <p>The name or Amazon Resource Name (ARN) of the feature group containing the feature.</p>
+    pub fn get_feature_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.feature_group_name
+    }
     /// <p>The name of the feature.</p>
     pub fn feature_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_name = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl DescribeFeatureMetadataInputBuilder {
     pub fn set_feature_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feature_name = input;
         self
+    }
+    /// <p>The name of the feature.</p>
+    pub fn get_feature_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.feature_name
     }
     /// Consumes the builder and constructs a [`DescribeFeatureMetadataInput`](crate::operation::describe_feature_metadata::DescribeFeatureMetadataInput).
     pub fn build(

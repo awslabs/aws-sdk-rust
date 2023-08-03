@@ -104,6 +104,10 @@ impl CreateHostedConfigurationVersionInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The application ID.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The configuration profile ID.</p>
     pub fn configuration_profile_id(
         mut self,
@@ -120,6 +124,10 @@ impl CreateHostedConfigurationVersionInputBuilder {
         self.configuration_profile_id = input;
         self
     }
+    /// <p>The configuration profile ID.</p>
+    pub fn get_configuration_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_profile_id
+    }
     /// <p>A description of the configuration.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -129,6 +137,10 @@ impl CreateHostedConfigurationVersionInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the configuration.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The content of the configuration or the configuration data.</p>
     pub fn content(mut self, input: ::aws_smithy_types::Blob) -> Self {
@@ -140,6 +152,10 @@ impl CreateHostedConfigurationVersionInputBuilder {
         self.content = input;
         self
     }
+    /// <p>The content of the configuration or the configuration data.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.content
+    }
     /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
@@ -150,6 +166,10 @@ impl CreateHostedConfigurationVersionInputBuilder {
         self.content_type = input;
         self
     }
+    /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_type
+    }
     /// <p>An optional locking token used to prevent race conditions from overwriting configuration updates when creating a new version. To ensure your data is not overwritten when creating multiple hosted configuration versions in rapid succession, specify the version number of the latest hosted configuration version.</p>
     pub fn latest_version_number(mut self, input: i32) -> Self {
         self.latest_version_number = ::std::option::Option::Some(input);
@@ -159,6 +179,10 @@ impl CreateHostedConfigurationVersionInputBuilder {
     pub fn set_latest_version_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.latest_version_number = input;
         self
+    }
+    /// <p>An optional locking token used to prevent race conditions from overwriting configuration updates when creating a new version. To ensure your data is not overwritten when creating multiple hosted configuration versions in rapid succession, specify the version number of the latest hosted configuration version.</p>
+    pub fn get_latest_version_number(&self) -> &::std::option::Option<i32> {
+        &self.latest_version_number
     }
     /// <p>An optional, user-defined label for the AppConfig hosted configuration version. This value must contain at least one non-numeric character. For example, "v2.2.0".</p>
     pub fn version_label(
@@ -175,6 +199,10 @@ impl CreateHostedConfigurationVersionInputBuilder {
     ) -> Self {
         self.version_label = input;
         self
+    }
+    /// <p>An optional, user-defined label for the AppConfig hosted configuration version. This value must contain at least one non-numeric character. For example, "v2.2.0".</p>
+    pub fn get_version_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_label
     }
     /// Consumes the builder and constructs a [`CreateHostedConfigurationVersionInput`](crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionInput, ::aws_smithy_http::operation::error::BuildError>{

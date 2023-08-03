@@ -56,6 +56,10 @@ impl MqttContextBuilder {
         self.username = input;
         self
     }
+    /// <p>The value of the <code>username</code> key in an MQTT authorization request.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
+    }
     /// <p>The value of the <code>password</code> key in an MQTT authorization request.</p>
     pub fn password(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.password = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl MqttContextBuilder {
         self.password = input;
         self
     }
+    /// <p>The value of the <code>password</code> key in an MQTT authorization request.</p>
+    pub fn get_password(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.password
+    }
     /// <p>The value of the <code>clientId</code> key in an MQTT authorization request.</p>
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl MqttContextBuilder {
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_id = input;
         self
+    }
+    /// <p>The value of the <code>clientId</code> key in an MQTT authorization request.</p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_id
     }
     /// Consumes the builder and constructs a [`MqttContext`](crate::types::MqttContext).
     pub fn build(self) -> crate::types::MqttContext {

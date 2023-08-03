@@ -36,6 +36,10 @@ impl ListMonitorsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListMonitors as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_monitors::builders::ListMonitorsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +133,10 @@ impl ListMonitorsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token for the next set of results. You receive this token from a previous call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The number of monitor objects that you want to return with this call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -138,6 +146,10 @@ impl ListMonitorsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The number of monitor objects that you want to return with this call.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>The status of a monitor. This includes the status of the data processing for the monitor and the status of the monitor itself.</p>
     /// <p>For information about the statuses for a monitor, see <a href="https://docs.aws.amazon.com/internet-monitor/latest/api/API_Monitor.html"> Monitor</a>.</p>
@@ -156,5 +168,10 @@ impl ListMonitorsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_monitor_status(input);
         self
+    }
+    /// <p>The status of a monitor. This includes the status of the data processing for the monitor and the status of the monitor itself.</p>
+    /// <p>For information about the statuses for a monitor, see <a href="https://docs.aws.amazon.com/internet-monitor/latest/api/API_Monitor.html"> Monitor</a>.</p>
+    pub fn get_monitor_status(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_monitor_status()
     }
 }

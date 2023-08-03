@@ -104,6 +104,10 @@ impl TdscdmaObjBuilder {
         self.mcc = input;
         self
     }
+    /// <p>Mobile Country Code.</p>
+    pub fn get_mcc(&self) -> &::std::option::Option<i32> {
+        &self.mcc
+    }
     /// <p>Mobile Network Code.</p>
     pub fn mnc(mut self, input: i32) -> Self {
         self.mnc = ::std::option::Option::Some(input);
@@ -113,6 +117,10 @@ impl TdscdmaObjBuilder {
     pub fn set_mnc(mut self, input: ::std::option::Option<i32>) -> Self {
         self.mnc = input;
         self
+    }
+    /// <p>Mobile Network Code.</p>
+    pub fn get_mnc(&self) -> &::std::option::Option<i32> {
+        &self.mnc
     }
     /// <p>Location Area Code.</p>
     pub fn lac(mut self, input: i32) -> Self {
@@ -124,6 +132,10 @@ impl TdscdmaObjBuilder {
         self.lac = input;
         self
     }
+    /// <p>Location Area Code.</p>
+    pub fn get_lac(&self) -> &::std::option::Option<i32> {
+        &self.lac
+    }
     /// <p>UTRAN (UMTS Terrestrial Radio Access Network) Cell Global Identifier.</p>
     pub fn utran_cid(mut self, input: i32) -> Self {
         self.utran_cid = ::std::option::Option::Some(input);
@@ -133,6 +145,10 @@ impl TdscdmaObjBuilder {
     pub fn set_utran_cid(mut self, input: ::std::option::Option<i32>) -> Self {
         self.utran_cid = input;
         self
+    }
+    /// <p>UTRAN (UMTS Terrestrial Radio Access Network) Cell Global Identifier.</p>
+    pub fn get_utran_cid(&self) -> &::std::option::Option<i32> {
+        &self.utran_cid
     }
     /// <p>TD-SCDMA local identification (local ID) information.</p>
     pub fn tdscdma_local_id(mut self, input: crate::types::TdscdmaLocalId) -> Self {
@@ -147,6 +163,10 @@ impl TdscdmaObjBuilder {
         self.tdscdma_local_id = input;
         self
     }
+    /// <p>TD-SCDMA local identification (local ID) information.</p>
+    pub fn get_tdscdma_local_id(&self) -> &::std::option::Option<crate::types::TdscdmaLocalId> {
+        &self.tdscdma_local_id
+    }
     /// <p>TD-SCDMA Timing advance.</p>
     pub fn tdscdma_timing_advance(mut self, input: i32) -> Self {
         self.tdscdma_timing_advance = ::std::option::Option::Some(input);
@@ -156,6 +176,10 @@ impl TdscdmaObjBuilder {
     pub fn set_tdscdma_timing_advance(mut self, input: ::std::option::Option<i32>) -> Self {
         self.tdscdma_timing_advance = input;
         self
+    }
+    /// <p>TD-SCDMA Timing advance.</p>
+    pub fn get_tdscdma_timing_advance(&self) -> &::std::option::Option<i32> {
+        &self.tdscdma_timing_advance
     }
     /// <p>Signal power of the received signal (Received Signal Code Power), measured in decibel-milliwatts (dBm).</p>
     pub fn rscp(mut self, input: i32) -> Self {
@@ -167,6 +191,10 @@ impl TdscdmaObjBuilder {
         self.rscp = input;
         self
     }
+    /// <p>Signal power of the received signal (Received Signal Code Power), measured in decibel-milliwatts (dBm).</p>
+    pub fn get_rscp(&self) -> &::std::option::Option<i32> {
+        &self.rscp
+    }
     /// <p>Path loss, or path attenuation, is the reduction in power density of an electromagnetic wave as it propagates through space.</p>
     pub fn path_loss(mut self, input: i32) -> Self {
         self.path_loss = ::std::option::Option::Some(input);
@@ -176,6 +204,10 @@ impl TdscdmaObjBuilder {
     pub fn set_path_loss(mut self, input: ::std::option::Option<i32>) -> Self {
         self.path_loss = input;
         self
+    }
+    /// <p>Path loss, or path attenuation, is the reduction in power density of an electromagnetic wave as it propagates through space.</p>
+    pub fn get_path_loss(&self) -> &::std::option::Option<i32> {
+        &self.path_loss
     }
     /// Appends an item to `tdscdma_nmr`.
     ///
@@ -195,6 +227,12 @@ impl TdscdmaObjBuilder {
     ) -> Self {
         self.tdscdma_nmr = input;
         self
+    }
+    /// <p>TD-SCDMA object for network measurement reports.</p>
+    pub fn get_tdscdma_nmr(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TdscdmaNmrObj>> {
+        &self.tdscdma_nmr
     }
     /// Consumes the builder and constructs a [`TdscdmaObj`](crate::types::TdscdmaObj).
     pub fn build(self) -> crate::types::TdscdmaObj {

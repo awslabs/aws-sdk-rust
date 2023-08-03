@@ -48,6 +48,10 @@ impl CanaryLastRunBuilder {
         self.canary_name = input;
         self
     }
+    /// <p>The name of the canary.</p>
+    pub fn get_canary_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.canary_name
+    }
     /// <p>The results from this canary's most recent run.</p>
     pub fn last_run(mut self, input: crate::types::CanaryRun) -> Self {
         self.last_run = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl CanaryLastRunBuilder {
     pub fn set_last_run(mut self, input: ::std::option::Option<crate::types::CanaryRun>) -> Self {
         self.last_run = input;
         self
+    }
+    /// <p>The results from this canary's most recent run.</p>
+    pub fn get_last_run(&self) -> &::std::option::Option<crate::types::CanaryRun> {
+        &self.last_run
     }
     /// Consumes the builder and constructs a [`CanaryLastRun`](crate::types::CanaryLastRun).
     pub fn build(self) -> crate::types::CanaryLastRun {

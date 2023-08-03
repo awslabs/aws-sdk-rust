@@ -120,6 +120,10 @@ impl ListRecordsOutputBuilder {
         self.records = input;
         self
     }
+    /// A list of all records.
+    pub fn get_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Record>> {
+        &self.records
+    }
     /// A pagination token for obtaining the next page of results.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -129,6 +133,10 @@ impl ListRecordsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// A pagination token for obtaining the next page of results.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Total number of records.
     pub fn count(mut self, input: i32) -> Self {
@@ -140,6 +148,10 @@ impl ListRecordsOutputBuilder {
         self.count = input;
         self
     }
+    /// Total number of records.
+    pub fn get_count(&self) -> &::std::option::Option<i32> {
+        &self.count
+    }
     /// Server sync count for this dataset.
     pub fn dataset_sync_count(mut self, input: i64) -> Self {
         self.dataset_sync_count = ::std::option::Option::Some(input);
@@ -149,6 +161,10 @@ impl ListRecordsOutputBuilder {
     pub fn set_dataset_sync_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.dataset_sync_count = input;
         self
+    }
+    /// Server sync count for this dataset.
+    pub fn get_dataset_sync_count(&self) -> &::std::option::Option<i64> {
+        &self.dataset_sync_count
     }
     /// The user/device that made the last change to this record.
     pub fn last_modified_by(
@@ -165,6 +181,10 @@ impl ListRecordsOutputBuilder {
     ) -> Self {
         self.last_modified_by = input;
         self
+    }
+    /// The user/device that made the last change to this record.
+    pub fn get_last_modified_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_by
     }
     /// Appends an item to `merged_dataset_names`.
     ///
@@ -188,6 +208,12 @@ impl ListRecordsOutputBuilder {
         self.merged_dataset_names = input;
         self
     }
+    /// Names of merged datasets.
+    pub fn get_merged_dataset_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.merged_dataset_names
+    }
     /// Indicates whether the dataset exists.
     pub fn dataset_exists(mut self, input: bool) -> Self {
         self.dataset_exists = ::std::option::Option::Some(input);
@@ -197,6 +223,10 @@ impl ListRecordsOutputBuilder {
     pub fn set_dataset_exists(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dataset_exists = input;
         self
+    }
+    /// Indicates whether the dataset exists.
+    pub fn get_dataset_exists(&self) -> &::std::option::Option<bool> {
+        &self.dataset_exists
     }
     /// A boolean value specifying whether to delete the dataset locally.
     pub fn dataset_deleted_after_requested_sync_count(mut self, input: bool) -> Self {
@@ -210,6 +240,10 @@ impl ListRecordsOutputBuilder {
     ) -> Self {
         self.dataset_deleted_after_requested_sync_count = input;
         self
+    }
+    /// A boolean value specifying whether to delete the dataset locally.
+    pub fn get_dataset_deleted_after_requested_sync_count(&self) -> &::std::option::Option<bool> {
+        &self.dataset_deleted_after_requested_sync_count
     }
     /// A token containing a session ID, identity ID, and expiration.
     pub fn sync_session_token(
@@ -226,6 +260,10 @@ impl ListRecordsOutputBuilder {
     ) -> Self {
         self.sync_session_token = input;
         self
+    }
+    /// A token containing a session ID, identity ID, and expiration.
+    pub fn get_sync_session_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sync_session_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

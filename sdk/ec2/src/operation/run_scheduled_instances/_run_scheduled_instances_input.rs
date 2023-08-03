@@ -89,6 +89,10 @@ impl RunScheduledInstancesInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>Unique, case-sensitive identifier that ensures the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -98,6 +102,10 @@ impl RunScheduledInstancesInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// <p>The number of instances.</p>
     /// <p>Default: 1</p>
@@ -110,6 +118,11 @@ impl RunScheduledInstancesInputBuilder {
     pub fn set_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.instance_count = input;
         self
+    }
+    /// <p>The number of instances.</p>
+    /// <p>Default: 1</p>
+    pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
+        &self.instance_count
     }
     /// <p>The launch specification. You must match the instance type, Availability Zone, network, and platform of the schedule that you purchased.</p>
     pub fn launch_specification(
@@ -127,6 +140,12 @@ impl RunScheduledInstancesInputBuilder {
         self.launch_specification = input;
         self
     }
+    /// <p>The launch specification. You must match the instance type, Availability Zone, network, and platform of the schedule that you purchased.</p>
+    pub fn get_launch_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::ScheduledInstancesLaunchSpecification> {
+        &self.launch_specification
+    }
     /// <p>The Scheduled Instance ID.</p>
     pub fn scheduled_instance_id(
         mut self,
@@ -142,6 +161,10 @@ impl RunScheduledInstancesInputBuilder {
     ) -> Self {
         self.scheduled_instance_id = input;
         self
+    }
+    /// <p>The Scheduled Instance ID.</p>
+    pub fn get_scheduled_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scheduled_instance_id
     }
     /// Consumes the builder and constructs a [`RunScheduledInstancesInput`](crate::operation::run_scheduled_instances::RunScheduledInstancesInput).
     pub fn build(

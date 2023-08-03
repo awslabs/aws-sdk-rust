@@ -40,6 +40,10 @@ impl CancelServiceSoftwareUpdateInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>Name of the OpenSearch Service domain that you want to cancel the service software update on.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// Consumes the builder and constructs a [`CancelServiceSoftwareUpdateInput`](crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateInput).
     pub fn build(
         self,

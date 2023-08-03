@@ -36,6 +36,12 @@ impl GetCommentReactionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetCommentReactions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_comment_reactions::builders::GetCommentReactionsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl GetCommentReactionsFluentBuilder {
         self.inner = self.inner.set_comment_id(input);
         self
     }
+    /// <p>The ID of the comment for which you want to get reactions information.</p>
+    pub fn get_comment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_comment_id()
+    }
     /// <p>Optional. The Amazon Resource Name (ARN) of the user or identity for which you want to get reaction information.</p>
     pub fn reaction_user_arn(
         mut self,
@@ -153,6 +163,10 @@ impl GetCommentReactionsFluentBuilder {
         self.inner = self.inner.set_reaction_user_arn(input);
         self
     }
+    /// <p>Optional. The Amazon Resource Name (ARN) of the user or identity for which you want to get reaction information.</p>
+    pub fn get_reaction_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reaction_user_arn()
+    }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -163,6 +177,10 @@ impl GetCommentReactionsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>An enumeration token that, when provided in a request, returns the next batch of the results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>A non-zero, non-negative integer used to limit the number of returned results. The default is the same as the allowed maximum, 1,000.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -172,5 +190,9 @@ impl GetCommentReactionsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>A non-zero, non-negative integer used to limit the number of returned results. The default is the same as the allowed maximum, 1,000.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

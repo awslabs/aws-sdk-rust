@@ -37,6 +37,13 @@ impl DeleteConformancePackFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteConformancePack as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_conformance_pack::builders::DeleteConformancePackInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +139,9 @@ impl DeleteConformancePackFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_conformance_pack_name(input);
         self
+    }
+    /// <p>Name of the conformance pack you want to delete.</p>
+    pub fn get_conformance_pack_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_conformance_pack_name()
     }
 }

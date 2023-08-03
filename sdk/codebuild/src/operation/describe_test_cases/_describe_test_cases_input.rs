@@ -64,6 +64,10 @@ impl DescribeTestCasesInputBuilder {
         self.report_arn = input;
         self
     }
+    /// <p> The ARN of the report for which test cases are returned. </p>
+    pub fn get_report_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.report_arn
+    }
     /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl DescribeTestCasesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p> The maximum number of paginated test cases returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>TestCase</code> objects. The default value is 100. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -83,6 +91,10 @@ impl DescribeTestCasesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p> The maximum number of paginated test cases returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>TestCase</code> objects. The default value is 100. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p> A <code>TestCaseFilter</code> object used to filter the returned reports. </p>
     pub fn filter(mut self, input: crate::types::TestCaseFilter) -> Self {
@@ -96,6 +108,10 @@ impl DescribeTestCasesInputBuilder {
     ) -> Self {
         self.filter = input;
         self
+    }
+    /// <p> A <code>TestCaseFilter</code> object used to filter the returned reports. </p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::TestCaseFilter> {
+        &self.filter
     }
     /// Consumes the builder and constructs a [`DescribeTestCasesInput`](crate::operation::describe_test_cases::DescribeTestCasesInput).
     pub fn build(

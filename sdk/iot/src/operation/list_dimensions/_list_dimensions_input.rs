@@ -47,6 +47,10 @@ impl ListDimensionsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to retrieve at one time.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -56,6 +60,10 @@ impl ListDimensionsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to retrieve at one time.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListDimensionsInput`](crate::operation::list_dimensions::ListDimensionsInput).
     pub fn build(

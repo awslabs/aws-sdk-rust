@@ -56,6 +56,12 @@ impl GetDataCatalogEncryptionSettingsOutputBuilder {
         self.data_catalog_encryption_settings = input;
         self
     }
+    /// <p>The requested security configuration.</p>
+    pub fn get_data_catalog_encryption_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataCatalogEncryptionSettings> {
+        &self.data_catalog_encryption_settings
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

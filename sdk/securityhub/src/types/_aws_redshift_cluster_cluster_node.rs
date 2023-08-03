@@ -56,6 +56,10 @@ impl AwsRedshiftClusterClusterNodeBuilder {
         self.node_role = input;
         self
     }
+    /// <p>The role of the node. A node might be a leader node or a compute node.</p>
+    pub fn get_node_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_role
+    }
     /// <p>The private IP address of the node.</p>
     pub fn private_ip_address(
         mut self,
@@ -72,6 +76,10 @@ impl AwsRedshiftClusterClusterNodeBuilder {
         self.private_ip_address = input;
         self
     }
+    /// <p>The private IP address of the node.</p>
+    pub fn get_private_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_ip_address
+    }
     /// <p>The public IP address of the node.</p>
     pub fn public_ip_address(
         mut self,
@@ -87,6 +95,10 @@ impl AwsRedshiftClusterClusterNodeBuilder {
     ) -> Self {
         self.public_ip_address = input;
         self
+    }
+    /// <p>The public IP address of the node.</p>
+    pub fn get_public_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_ip_address
     }
     /// Consumes the builder and constructs a [`AwsRedshiftClusterClusterNode`](crate::types::AwsRedshiftClusterClusterNode).
     pub fn build(self) -> crate::types::AwsRedshiftClusterClusterNode {

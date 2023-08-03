@@ -37,6 +37,13 @@ impl ListBatchJobDefinitionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListBatchJobDefinitions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_batch_job_definitions::builders::ListBatchJobDefinitionsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +143,10 @@ impl ListBatchJobDefinitionsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of batch job definitions to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -145,6 +156,10 @@ impl ListBatchJobDefinitionsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of batch job definitions to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>The identifier of the application.</p>
     pub fn application_id(
@@ -162,6 +177,10 @@ impl ListBatchJobDefinitionsFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The identifier of the application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>If the batch job definition is a FileBatchJobDefinition, the prefix allows you to search on the file names of FileBatchJobDefinitions.</p>
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.prefix(input.into());
@@ -171,5 +190,9 @@ impl ListBatchJobDefinitionsFluentBuilder {
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_prefix(input);
         self
+    }
+    /// <p>If the batch job definition is a FileBatchJobDefinition, the prefix allows you to search on the file names of FileBatchJobDefinitions.</p>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_prefix()
     }
 }

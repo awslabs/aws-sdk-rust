@@ -60,6 +60,10 @@ impl CircleBuilder {
         self.center = input;
         self
     }
+    /// <p>A single point geometry, specifying the center of the circle, using <a href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a> coordinates, in the form <code>[longitude, latitude]</code>.</p>
+    pub fn get_center(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+        &self.center
+    }
     /// <p>The radius of the circle in meters. Must be greater than zero and no larger than 100,000 (100 kilometers).</p>
     pub fn radius(mut self, input: f64) -> Self {
         self.radius = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl CircleBuilder {
     pub fn set_radius(mut self, input: ::std::option::Option<f64>) -> Self {
         self.radius = input;
         self
+    }
+    /// <p>The radius of the circle in meters. Must be greater than zero and no larger than 100,000 (100 kilometers).</p>
+    pub fn get_radius(&self) -> &::std::option::Option<f64> {
+        &self.radius
     }
     /// Consumes the builder and constructs a [`Circle`](crate::types::Circle).
     pub fn build(self) -> crate::types::Circle {

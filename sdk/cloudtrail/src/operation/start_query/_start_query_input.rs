@@ -69,6 +69,10 @@ impl StartQueryInputBuilder {
         self.query_statement = input;
         self
     }
+    /// <p>The SQL code of your query.</p>
+    pub fn get_query_statement(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_statement
+    }
     /// <p> The URI for the S3 bucket where CloudTrail delivers the query results. </p>
     pub fn delivery_s3_uri(
         mut self,
@@ -85,6 +89,10 @@ impl StartQueryInputBuilder {
         self.delivery_s3_uri = input;
         self
     }
+    /// <p> The URI for the S3 bucket where CloudTrail delivers the query results. </p>
+    pub fn get_delivery_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delivery_s3_uri
+    }
     /// <p> The alias that identifies a query template. </p>
     pub fn query_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_alias = ::std::option::Option::Some(input.into());
@@ -94,6 +102,10 @@ impl StartQueryInputBuilder {
     pub fn set_query_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_alias = input;
         self
+    }
+    /// <p> The alias that identifies a query template. </p>
+    pub fn get_query_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_alias
     }
     /// Appends an item to `query_parameters`.
     ///
@@ -116,6 +128,12 @@ impl StartQueryInputBuilder {
     ) -> Self {
         self.query_parameters = input;
         self
+    }
+    /// <p> The query parameters for the specified <code>QueryAlias</code>. </p>
+    pub fn get_query_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.query_parameters
     }
     /// Consumes the builder and constructs a [`StartQueryInput`](crate::operation::start_query::StartQueryInput).
     pub fn build(

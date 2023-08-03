@@ -56,6 +56,10 @@ impl DeviceTemplateBuilder {
         self.device_type = input;
         self
     }
+    /// <p>The device type, which currently must be <code>"button"</code>.</p>
+    pub fn get_device_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_type
+    }
     /// Adds a key-value pair to `callback_overrides`.
     ///
     /// To override the contents of this collection use [`set_callback_overrides`](Self::set_callback_overrides).
@@ -80,6 +84,14 @@ impl DeviceTemplateBuilder {
     ) -> Self {
         self.callback_overrides = input;
         self
+    }
+    /// <p>An optional Lambda function to invoke instead of the default Lambda function provided by the placement template.</p>
+    pub fn get_callback_overrides(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.callback_overrides
     }
     /// Consumes the builder and constructs a [`DeviceTemplate`](crate::types::DeviceTemplate).
     pub fn build(self) -> crate::types::DeviceTemplate {

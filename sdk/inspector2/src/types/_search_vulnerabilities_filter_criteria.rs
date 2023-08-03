@@ -52,6 +52,12 @@ impl SearchVulnerabilitiesFilterCriteriaBuilder {
         self.vulnerability_ids = input;
         self
     }
+    /// <p>The IDs for specific vulnerabilities.</p>
+    pub fn get_vulnerability_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.vulnerability_ids
+    }
     /// Consumes the builder and constructs a [`SearchVulnerabilitiesFilterCriteria`](crate::types::SearchVulnerabilitiesFilterCriteria).
     pub fn build(self) -> crate::types::SearchVulnerabilitiesFilterCriteria {
         crate::types::SearchVulnerabilitiesFilterCriteria {

@@ -36,6 +36,12 @@ impl UpdateDiscovererFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDiscoverer as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_discoverer::builders::UpdateDiscovererInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateDiscovererFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>The description of the discoverer to update.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The ID of the discoverer.</p>
     pub fn discoverer_id(
         mut self,
@@ -142,6 +152,10 @@ impl UpdateDiscovererFluentBuilder {
         self.inner = self.inner.set_discoverer_id(input);
         self
     }
+    /// <p>The ID of the discoverer.</p>
+    pub fn get_discoverer_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_discoverer_id()
+    }
     /// <p>Support discovery of schemas in events sent to the bus from another account. (default: true)</p>
     pub fn cross_account(mut self, input: bool) -> Self {
         self.inner = self.inner.cross_account(input);
@@ -151,5 +165,9 @@ impl UpdateDiscovererFluentBuilder {
     pub fn set_cross_account(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_cross_account(input);
         self
+    }
+    /// <p>Support discovery of schemas in events sent to the bus from another account. (default: true)</p>
+    pub fn get_cross_account(&self) -> &::std::option::Option<bool> {
+        self.inner.get_cross_account()
     }
 }

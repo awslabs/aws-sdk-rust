@@ -39,6 +39,10 @@ impl StartSmartHomeApplianceDiscoveryInputBuilder {
         self.room_arn = input;
         self
     }
+    /// <p>The room where smart home appliance discovery was initiated.</p>
+    pub fn get_room_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.room_arn
+    }
     /// Consumes the builder and constructs a [`StartSmartHomeApplianceDiscoveryInput`](crate::operation::start_smart_home_appliance_discovery::StartSmartHomeApplianceDiscoveryInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::start_smart_home_appliance_discovery::StartSmartHomeApplianceDiscoveryInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

@@ -54,6 +54,10 @@ impl BackupPlanTemplatesListMemberBuilder {
         self.backup_plan_template_id = input;
         self
     }
+    /// <p>Uniquely identifies a stored backup plan template.</p>
+    pub fn get_backup_plan_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_plan_template_id
+    }
     /// <p>The optional display name of a backup plan template.</p>
     pub fn backup_plan_template_name(
         mut self,
@@ -69,6 +73,10 @@ impl BackupPlanTemplatesListMemberBuilder {
     ) -> Self {
         self.backup_plan_template_name = input;
         self
+    }
+    /// <p>The optional display name of a backup plan template.</p>
+    pub fn get_backup_plan_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_plan_template_name
     }
     /// Consumes the builder and constructs a [`BackupPlanTemplatesListMember`](crate::types::BackupPlanTemplatesListMember).
     pub fn build(self) -> crate::types::BackupPlanTemplatesListMember {

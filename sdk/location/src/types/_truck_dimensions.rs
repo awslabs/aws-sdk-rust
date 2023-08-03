@@ -106,6 +106,15 @@ impl TruckDimensionsBuilder {
         self.length = input;
         self
     }
+    /// <p>The length of the truck.</p>
+    /// <ul>
+    /// <li> <p>For example, <code>15.5</code>.</p> </li>
+    /// </ul> <note>
+    /// <p> For routes calculated with a HERE resource, this value must be between 0 and 300 meters. </p>
+    /// </note>
+    pub fn get_length(&self) -> &::std::option::Option<f64> {
+        &self.length
+    }
     /// <p>The height of the truck.</p>
     /// <ul>
     /// <li> <p>For example, <code>4.5</code>.</p> </li>
@@ -125,6 +134,15 @@ impl TruckDimensionsBuilder {
     pub fn set_height(mut self, input: ::std::option::Option<f64>) -> Self {
         self.height = input;
         self
+    }
+    /// <p>The height of the truck.</p>
+    /// <ul>
+    /// <li> <p>For example, <code>4.5</code>.</p> </li>
+    /// </ul> <note>
+    /// <p> For routes calculated with a HERE resource, this value must be between 0 and 50 meters. </p>
+    /// </note>
+    pub fn get_height(&self) -> &::std::option::Option<f64> {
+        &self.height
     }
     /// <p>The width of the truck.</p>
     /// <ul>
@@ -146,6 +164,15 @@ impl TruckDimensionsBuilder {
         self.width = input;
         self
     }
+    /// <p>The width of the truck.</p>
+    /// <ul>
+    /// <li> <p>For example, <code>4.5</code>.</p> </li>
+    /// </ul> <note>
+    /// <p> For routes calculated with a HERE resource, this value must be between 0 and 50 meters. </p>
+    /// </note>
+    pub fn get_width(&self) -> &::std::option::Option<f64> {
+        &self.width
+    }
     /// <p> Specifies the unit of measurement for the truck dimensions.</p>
     /// <p>Default Value: <code>Meters</code> </p>
     pub fn unit(mut self, input: crate::types::DimensionUnit) -> Self {
@@ -157,6 +184,11 @@ impl TruckDimensionsBuilder {
     pub fn set_unit(mut self, input: ::std::option::Option<crate::types::DimensionUnit>) -> Self {
         self.unit = input;
         self
+    }
+    /// <p> Specifies the unit of measurement for the truck dimensions.</p>
+    /// <p>Default Value: <code>Meters</code> </p>
+    pub fn get_unit(&self) -> &::std::option::Option<crate::types::DimensionUnit> {
+        &self.unit
     }
     /// Consumes the builder and constructs a [`TruckDimensions`](crate::types::TruckDimensions).
     pub fn build(self) -> crate::types::TruckDimensions {

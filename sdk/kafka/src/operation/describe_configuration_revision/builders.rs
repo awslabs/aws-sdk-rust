@@ -36,6 +36,10 @@ impl DescribeConfigurationRevisionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeConfigurationRevision as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_configuration_revision::builders::DescribeConfigurationRevisionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl DescribeConfigurationRevisionFluentBuilder {
         self.inner = self.inner.set_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
+    }
     /// <p>A string that uniquely identifies a revision of an MSK configuration.</p>
     pub fn revision(mut self, input: i64) -> Self {
         self.inner = self.inner.revision(input);
@@ -135,5 +143,9 @@ impl DescribeConfigurationRevisionFluentBuilder {
     pub fn set_revision(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_revision(input);
         self
+    }
+    /// <p>A string that uniquely identifies a revision of an MSK configuration.</p>
+    pub fn get_revision(&self) -> &::std::option::Option<i64> {
+        self.inner.get_revision()
     }
 }

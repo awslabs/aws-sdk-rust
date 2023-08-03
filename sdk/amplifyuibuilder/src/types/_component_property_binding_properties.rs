@@ -48,6 +48,10 @@ impl ComponentPropertyBindingPropertiesBuilder {
         self.property = input;
         self
     }
+    /// <p>The component property to bind to the data field.</p>
+    pub fn get_property(&self) -> &::std::option::Option<::std::string::String> {
+        &self.property
+    }
     /// <p>The data field to bind the property to.</p>
     pub fn field(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.field = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl ComponentPropertyBindingPropertiesBuilder {
     pub fn set_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.field = input;
         self
+    }
+    /// <p>The data field to bind the property to.</p>
+    pub fn get_field(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field
     }
     /// Consumes the builder and constructs a [`ComponentPropertyBindingProperties`](crate::types::ComponentPropertyBindingProperties).
     pub fn build(self) -> crate::types::ComponentPropertyBindingProperties {

@@ -143,6 +143,10 @@ impl UserBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the user.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The user's user name. This value is required if you are registering a user that will be managed in Amazon QuickSight. In the output, the value for <code>UserName</code> is <code>N/A</code> when the value for <code>IdentityType</code> is <code>IAM</code> and the corresponding IAM user is deleted.</p>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
@@ -153,6 +157,10 @@ impl UserBuilder {
         self.user_name = input;
         self
     }
+    /// <p>The user's user name. This value is required if you are registering a user that will be managed in Amazon QuickSight. In the output, the value for <code>UserName</code> is <code>N/A</code> when the value for <code>IdentityType</code> is <code>IAM</code> and the corresponding IAM user is deleted.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
+    }
     /// <p>The user's email address.</p>
     pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email = ::std::option::Option::Some(input.into());
@@ -162,6 +170,10 @@ impl UserBuilder {
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email = input;
         self
+    }
+    /// <p>The user's email address.</p>
+    pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email
     }
     /// <p>The Amazon QuickSight role for the user. The user role can be one of the following:.</p>
     /// <ul>
@@ -187,6 +199,17 @@ impl UserBuilder {
         self.role = input;
         self
     }
+    /// <p>The Amazon QuickSight role for the user. The user role can be one of the following:.</p>
+    /// <ul>
+    /// <li> <p> <code>READER</code>: A user who has read-only access to dashboards.</p> </li>
+    /// <li> <p> <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.</p> </li>
+    /// <li> <p> <code>ADMIN</code>: A user who is an author, who can also manage Amazon Amazon QuickSight settings.</p> </li>
+    /// <li> <p> <code>RESTRICTED_READER</code>: This role isn't currently available for use.</p> </li>
+    /// <li> <p> <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p> </li>
+    /// </ul>
+    pub fn get_role(&self) -> &::std::option::Option<crate::types::UserRole> {
+        &self.role
+    }
     /// <p>The type of identity authentication used by the user.</p>
     pub fn identity_type(mut self, input: crate::types::IdentityType) -> Self {
         self.identity_type = ::std::option::Option::Some(input);
@@ -200,6 +223,10 @@ impl UserBuilder {
         self.identity_type = input;
         self
     }
+    /// <p>The type of identity authentication used by the user.</p>
+    pub fn get_identity_type(&self) -> &::std::option::Option<crate::types::IdentityType> {
+        &self.identity_type
+    }
     /// <p>The active status of user. When you create an Amazon QuickSight user that's not an IAM user or an Active Directory user, that user is inactive until they sign in and provide a password.</p>
     pub fn active(mut self, input: bool) -> Self {
         self.active = ::std::option::Option::Some(input);
@@ -210,6 +237,10 @@ impl UserBuilder {
         self.active = input;
         self
     }
+    /// <p>The active status of user. When you create an Amazon QuickSight user that's not an IAM user or an Active Directory user, that user is inactive until they sign in and provide a password.</p>
+    pub fn get_active(&self) -> &::std::option::Option<bool> {
+        &self.active
+    }
     /// <p>The principal ID of the user.</p>
     pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_id = ::std::option::Option::Some(input.into());
@@ -219,6 +250,10 @@ impl UserBuilder {
     pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal_id = input;
         self
+    }
+    /// <p>The principal ID of the user.</p>
+    pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal_id
     }
     /// <p>The custom permissions profile associated with this user.</p>
     pub fn custom_permissions_name(
@@ -235,6 +270,10 @@ impl UserBuilder {
     ) -> Self {
         self.custom_permissions_name = input;
         self
+    }
+    /// <p>The custom permissions profile associated with this user.</p>
+    pub fn get_custom_permissions_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_permissions_name
     }
     /// <p>The type of supported external login provider that provides identity to let the user federate into Amazon QuickSight with an associated IAM role. The type can be one of the following.</p>
     /// <ul>
@@ -260,6 +299,16 @@ impl UserBuilder {
         self.external_login_federation_provider_type = input;
         self
     }
+    /// <p>The type of supported external login provider that provides identity to let the user federate into Amazon QuickSight with an associated IAM role. The type can be one of the following.</p>
+    /// <ul>
+    /// <li> <p> <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com.</p> </li>
+    /// <li> <p> <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.</p> </li>
+    /// </ul>
+    pub fn get_external_login_federation_provider_type(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.external_login_federation_provider_type
+    }
     /// <p>The URL of the external login provider.</p>
     pub fn external_login_federation_provider_url(
         mut self,
@@ -276,6 +325,12 @@ impl UserBuilder {
         self.external_login_federation_provider_url = input;
         self
     }
+    /// <p>The URL of the external login provider.</p>
+    pub fn get_external_login_federation_provider_url(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.external_login_federation_provider_url
+    }
     /// <p>The identity ID for the user in the external login provider.</p>
     pub fn external_login_id(
         mut self,
@@ -291,6 +346,10 @@ impl UserBuilder {
     ) -> Self {
         self.external_login_id = input;
         self
+    }
+    /// <p>The identity ID for the user in the external login provider.</p>
+    pub fn get_external_login_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.external_login_id
     }
     /// Consumes the builder and constructs a [`User`](crate::types::User).
     pub fn build(self) -> crate::types::User {

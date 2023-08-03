@@ -64,6 +64,12 @@ impl FleetLaunchTemplateConfigRequestBuilder {
         self.launch_template_specification = input;
         self
     }
+    /// <p>The launch template to use. You must specify either the launch template ID or launch template name in the request. </p>
+    pub fn get_launch_template_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::FleetLaunchTemplateSpecificationRequest> {
+        &self.launch_template_specification
+    }
     /// Appends an item to `overrides`.
     ///
     /// To override the contents of this collection use [`set_overrides`](Self::set_overrides).
@@ -86,6 +92,14 @@ impl FleetLaunchTemplateConfigRequestBuilder {
     ) -> Self {
         self.overrides = input;
         self
+    }
+    /// <p>Any parameters that you specify override the same parameters in the launch template.</p>
+    /// <p>For fleets of type <code>request</code> and <code>maintain</code>, a maximum of 300 items is allowed across all launch templates.</p>
+    pub fn get_overrides(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetLaunchTemplateOverridesRequest>>
+    {
+        &self.overrides
     }
     /// Consumes the builder and constructs a [`FleetLaunchTemplateConfigRequest`](crate::types::FleetLaunchTemplateConfigRequest).
     pub fn build(self) -> crate::types::FleetLaunchTemplateConfigRequest {

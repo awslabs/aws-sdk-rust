@@ -88,6 +88,10 @@ impl GetLifecyclePoliciesInputBuilder {
         self.policy_ids = input;
         self
     }
+    /// <p>The identifiers of the data lifecycle policies.</p>
+    pub fn get_policy_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.policy_ids
+    }
     /// <p>The activation state.</p>
     pub fn state(mut self, input: crate::types::GettablePolicyStateValues) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -100,6 +104,10 @@ impl GetLifecyclePoliciesInputBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The activation state.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::GettablePolicyStateValues> {
+        &self.state
     }
     /// Appends an item to `resource_types`.
     ///
@@ -119,6 +127,12 @@ impl GetLifecyclePoliciesInputBuilder {
     ) -> Self {
         self.resource_types = input;
         self
+    }
+    /// <p>The resource type.</p>
+    pub fn get_resource_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTypeValues>> {
+        &self.resource_types
     }
     /// Appends an item to `target_tags`.
     ///
@@ -140,6 +154,13 @@ impl GetLifecyclePoliciesInputBuilder {
     ) -> Self {
         self.target_tags = input;
         self
+    }
+    /// <p>The target tag for a policy.</p>
+    /// <p>Tags are strings in the format <code>key=value</code>.</p>
+    pub fn get_target_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.target_tags
     }
     /// Appends an item to `tags_to_add`.
     ///
@@ -163,6 +184,14 @@ impl GetLifecyclePoliciesInputBuilder {
     ) -> Self {
         self.tags_to_add = input;
         self
+    }
+    /// <p>The tags to add to objects created by the policy.</p>
+    /// <p>Tags are strings in the format <code>key=value</code>.</p>
+    /// <p>These user-defined tags are added in addition to the Amazon Web Services-added lifecycle tags.</p>
+    pub fn get_tags_to_add(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tags_to_add
     }
     /// Consumes the builder and constructs a [`GetLifecyclePoliciesInput`](crate::operation::get_lifecycle_policies::GetLifecyclePoliciesInput).
     pub fn build(

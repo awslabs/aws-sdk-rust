@@ -39,6 +39,10 @@ impl GetWorkflowInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the migration workflow.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`GetWorkflowInput`](crate::operation::get_workflow::GetWorkflowInput).
     pub fn build(
         self,

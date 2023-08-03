@@ -62,6 +62,10 @@ impl PullRequestMergedStateChangedEventMetadataBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name of the repository where the pull request was created.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>The name of the branch that the pull request is merged into.</p>
     pub fn destination_reference(
         mut self,
@@ -78,6 +82,10 @@ impl PullRequestMergedStateChangedEventMetadataBuilder {
         self.destination_reference = input;
         self
     }
+    /// <p>The name of the branch that the pull request is merged into.</p>
+    pub fn get_destination_reference(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_reference
+    }
     /// <p>Information about the merge state change event.</p>
     pub fn merge_metadata(mut self, input: crate::types::MergeMetadata) -> Self {
         self.merge_metadata = ::std::option::Option::Some(input);
@@ -90,6 +98,10 @@ impl PullRequestMergedStateChangedEventMetadataBuilder {
     ) -> Self {
         self.merge_metadata = input;
         self
+    }
+    /// <p>Information about the merge state change event.</p>
+    pub fn get_merge_metadata(&self) -> &::std::option::Option<crate::types::MergeMetadata> {
+        &self.merge_metadata
     }
     /// Consumes the builder and constructs a [`PullRequestMergedStateChangedEventMetadata`](crate::types::PullRequestMergedStateChangedEventMetadata).
     pub fn build(self) -> crate::types::PullRequestMergedStateChangedEventMetadata {

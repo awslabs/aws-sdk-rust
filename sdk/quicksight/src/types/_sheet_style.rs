@@ -48,6 +48,10 @@ impl SheetStyleBuilder {
         self.tile = input;
         self
     }
+    /// <p>The display options for tiles.</p>
+    pub fn get_tile(&self) -> &::std::option::Option<crate::types::TileStyle> {
+        &self.tile
+    }
     /// <p>The layout options for tiles.</p>
     pub fn tile_layout(mut self, input: crate::types::TileLayoutStyle) -> Self {
         self.tile_layout = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl SheetStyleBuilder {
     ) -> Self {
         self.tile_layout = input;
         self
+    }
+    /// <p>The layout options for tiles.</p>
+    pub fn get_tile_layout(&self) -> &::std::option::Option<crate::types::TileLayoutStyle> {
+        &self.tile_layout
     }
     /// Consumes the builder and constructs a [`SheetStyle`](crate::types::SheetStyle).
     pub fn build(self) -> crate::types::SheetStyle {

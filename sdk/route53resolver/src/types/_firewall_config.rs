@@ -76,6 +76,10 @@ impl FirewallConfigBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the firewall configuration.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The ID of the VPC that this firewall configuration applies to.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -86,6 +90,10 @@ impl FirewallConfigBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The ID of the VPC that this firewall configuration applies to.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// <p>The Amazon Web Services account ID of the owner of the VPC that this firewall configuration applies to.</p>
     pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_id = ::std::option::Option::Some(input.into());
@@ -95,6 +103,10 @@ impl FirewallConfigBuilder {
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_id = input;
         self
+    }
+    /// <p>The Amazon Web Services account ID of the owner of the VPC that this firewall configuration applies to.</p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
     }
     /// <p>Determines how DNS Firewall operates during failures, for example when all traffic that is sent to DNS Firewall fails to receive a reply. </p>
     /// <ul>
@@ -118,6 +130,17 @@ impl FirewallConfigBuilder {
     ) -> Self {
         self.firewall_fail_open = input;
         self
+    }
+    /// <p>Determines how DNS Firewall operates during failures, for example when all traffic that is sent to DNS Firewall fails to receive a reply. </p>
+    /// <ul>
+    /// <li> <p>By default, fail open is disabled, which means the failure mode is closed. This approach favors security over availability. DNS Firewall returns a failure error when it is unable to properly evaluate a query. </p> </li>
+    /// <li> <p>If you enable this option, the failure mode is open. This approach favors availability over security. DNS Firewall allows queries to proceed if it is unable to properly evaluate them. </p> </li>
+    /// </ul>
+    /// <p>This behavior is only enforced for VPCs that have at least one DNS Firewall rule group association. </p>
+    pub fn get_firewall_fail_open(
+        &self,
+    ) -> &::std::option::Option<crate::types::FirewallFailOpenStatus> {
+        &self.firewall_fail_open
     }
     /// Consumes the builder and constructs a [`FirewallConfig`](crate::types::FirewallConfig).
     pub fn build(self) -> crate::types::FirewallConfig {

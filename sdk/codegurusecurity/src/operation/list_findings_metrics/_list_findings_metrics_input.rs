@@ -65,6 +65,10 @@ impl ListFindingsMetricsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return in the response. Use this parameter when paginating results. If additional results exist beyond the number you specify, the <code>nextToken</code> element is returned in the response. Use <code>nextToken</code> in a subsequent request to retrieve additional results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl ListFindingsMetricsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return in the response. Use this parameter when paginating results. If additional results exist beyond the number you specify, the <code>nextToken</code> element is returned in the response. Use <code>nextToken</code> in a subsequent request to retrieve additional results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The start date of the interval which you want to retrieve metrics from.</p>
     pub fn start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -88,6 +96,10 @@ impl ListFindingsMetricsInputBuilder {
         self.start_date = input;
         self
     }
+    /// <p>The start date of the interval which you want to retrieve metrics from.</p>
+    pub fn get_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_date
+    }
     /// <p>The end date of the interval which you want to retrieve metrics from.</p>
     pub fn end_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_date = ::std::option::Option::Some(input);
@@ -100,6 +112,10 @@ impl ListFindingsMetricsInputBuilder {
     ) -> Self {
         self.end_date = input;
         self
+    }
+    /// <p>The end date of the interval which you want to retrieve metrics from.</p>
+    pub fn get_end_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_date
     }
     /// Consumes the builder and constructs a [`ListFindingsMetricsInput`](crate::operation::list_findings_metrics::ListFindingsMetricsInput).
     pub fn build(

@@ -51,6 +51,10 @@ impl RSessionAppSettingsBuilder {
         self.default_resource_spec = input;
         self
     }
+    /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
+    pub fn get_default_resource_spec(&self) -> &::std::option::Option<crate::types::ResourceSpec> {
+        &self.default_resource_spec
+    }
     /// Appends an item to `custom_images`.
     ///
     /// To override the contents of this collection use [`set_custom_images`](Self::set_custom_images).
@@ -69,6 +73,12 @@ impl RSessionAppSettingsBuilder {
     ) -> Self {
         self.custom_images = input;
         self
+    }
+    /// <p>A list of custom SageMaker images that are configured to run as a RSession app.</p>
+    pub fn get_custom_images(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomImage>> {
+        &self.custom_images
     }
     /// Consumes the builder and constructs a [`RSessionAppSettings`](crate::types::RSessionAppSettings).
     pub fn build(self) -> crate::types::RSessionAppSettings {

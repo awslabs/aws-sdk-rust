@@ -45,6 +45,12 @@ impl DescribePredictorBacktestExportJobInputBuilder {
         self.predictor_backtest_export_job_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job.</p>
+    pub fn get_predictor_backtest_export_job_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.predictor_backtest_export_job_arn
+    }
     /// Consumes the builder and constructs a [`DescribePredictorBacktestExportJobInput`](crate::operation::describe_predictor_backtest_export_job::DescribePredictorBacktestExportJobInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_predictor_backtest_export_job::DescribePredictorBacktestExportJobInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

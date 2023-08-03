@@ -64,6 +64,10 @@ impl DataQualityRuleRecommendationRunDescriptionBuilder {
         self.run_id = input;
         self
     }
+    /// <p>The unique run identifier associated with this run.</p>
+    pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.run_id
+    }
     /// <p>The status for this run.</p>
     pub fn status(mut self, input: crate::types::TaskStatusType) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl DataQualityRuleRecommendationRunDescriptionBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status for this run.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TaskStatusType> {
+        &self.status
     }
     /// <p>The date and time when this run started.</p>
     pub fn started_on(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -90,6 +98,10 @@ impl DataQualityRuleRecommendationRunDescriptionBuilder {
         self.started_on = input;
         self
     }
+    /// <p>The date and time when this run started.</p>
+    pub fn get_started_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.started_on
+    }
     /// <p>The data source (Glue table) associated with the recommendation run.</p>
     pub fn data_source(mut self, input: crate::types::DataSource) -> Self {
         self.data_source = ::std::option::Option::Some(input);
@@ -102,6 +114,10 @@ impl DataQualityRuleRecommendationRunDescriptionBuilder {
     ) -> Self {
         self.data_source = input;
         self
+    }
+    /// <p>The data source (Glue table) associated with the recommendation run.</p>
+    pub fn get_data_source(&self) -> &::std::option::Option<crate::types::DataSource> {
+        &self.data_source
     }
     /// Consumes the builder and constructs a [`DataQualityRuleRecommendationRunDescription`](crate::types::DataQualityRuleRecommendationRunDescription).
     pub fn build(self) -> crate::types::DataQualityRuleRecommendationRunDescription {

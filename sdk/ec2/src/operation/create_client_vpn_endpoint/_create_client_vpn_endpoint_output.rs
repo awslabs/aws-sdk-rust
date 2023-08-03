@@ -70,6 +70,10 @@ impl CreateClientVpnEndpointOutputBuilder {
         self.client_vpn_endpoint_id = input;
         self
     }
+    /// <p>The ID of the Client VPN endpoint.</p>
+    pub fn get_client_vpn_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_vpn_endpoint_id
+    }
     /// <p>The current state of the Client VPN endpoint.</p>
     pub fn status(mut self, input: crate::types::ClientVpnEndpointStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -83,6 +87,10 @@ impl CreateClientVpnEndpointOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The current state of the Client VPN endpoint.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ClientVpnEndpointStatus> {
+        &self.status
+    }
     /// <p>The DNS name to be used by clients when establishing their VPN session.</p>
     pub fn dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dns_name = ::std::option::Option::Some(input.into());
@@ -92,6 +100,10 @@ impl CreateClientVpnEndpointOutputBuilder {
     pub fn set_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dns_name = input;
         self
+    }
+    /// <p>The DNS name to be used by clients when establishing their VPN session.</p>
+    pub fn get_dns_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dns_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

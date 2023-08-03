@@ -36,6 +36,10 @@ impl AssociateThirdPartyFirewallFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateThirdPartyFirewall as a reference.
+    pub fn as_input(&self) -> &crate::operation::associate_third_party_firewall::builders::AssociateThirdPartyFirewallInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,5 +132,11 @@ impl AssociateThirdPartyFirewallFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_third_party_firewall(input);
         self
+    }
+    /// <p>The name of the third-party firewall vendor.</p>
+    pub fn get_third_party_firewall(
+        &self,
+    ) -> &::std::option::Option<crate::types::ThirdPartyFirewall> {
+        self.inner.get_third_party_firewall()
     }
 }

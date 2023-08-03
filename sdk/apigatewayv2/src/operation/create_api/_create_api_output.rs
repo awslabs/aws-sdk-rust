@@ -174,6 +174,10 @@ impl CreateApiOutputBuilder {
         self.api_endpoint = input;
         self
     }
+    /// <p>The URI of the API, of the form {api-id}.execute-api.{region}.amazonaws.com. The stage name is typically appended to this URI to form a complete path to a deployed API stage.</p>
+    pub fn get_api_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_endpoint
+    }
     /// <p>Specifies whether an API is managed by API Gateway. You can't update or delete a managed API by using API Gateway. A managed API can be deleted only through the tooling or service that created it.</p>
     pub fn api_gateway_managed(mut self, input: bool) -> Self {
         self.api_gateway_managed = ::std::option::Option::Some(input);
@@ -184,6 +188,10 @@ impl CreateApiOutputBuilder {
         self.api_gateway_managed = input;
         self
     }
+    /// <p>Specifies whether an API is managed by API Gateway. You can't update or delete a managed API by using API Gateway. A managed API can be deleted only through the tooling or service that created it.</p>
+    pub fn get_api_gateway_managed(&self) -> &::std::option::Option<bool> {
+        &self.api_gateway_managed
+    }
     /// <p>The API ID.</p>
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
@@ -193,6 +201,10 @@ impl CreateApiOutputBuilder {
     pub fn set_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_id = input;
         self
+    }
+    /// <p>The API ID.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_id
     }
     /// <p>An API key selection expression. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API Key Selection Expressions</a>.</p>
     pub fn api_key_selection_expression(
@@ -210,6 +222,12 @@ impl CreateApiOutputBuilder {
         self.api_key_selection_expression = input;
         self
     }
+    /// <p>An API key selection expression. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API Key Selection Expressions</a>.</p>
+    pub fn get_api_key_selection_expression(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.api_key_selection_expression
+    }
     /// <p>A CORS configuration. Supported only for HTTP APIs.</p>
     pub fn cors_configuration(mut self, input: crate::types::Cors) -> Self {
         self.cors_configuration = ::std::option::Option::Some(input);
@@ -222,6 +240,10 @@ impl CreateApiOutputBuilder {
     ) -> Self {
         self.cors_configuration = input;
         self
+    }
+    /// <p>A CORS configuration. Supported only for HTTP APIs.</p>
+    pub fn get_cors_configuration(&self) -> &::std::option::Option<crate::types::Cors> {
+        &self.cors_configuration
     }
     /// <p>The timestamp when the API was created.</p>
     pub fn created_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -236,6 +258,10 @@ impl CreateApiOutputBuilder {
         self.created_date = input;
         self
     }
+    /// <p>The timestamp when the API was created.</p>
+    pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_date
+    }
     /// <p>The description of the API.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -245,6 +271,10 @@ impl CreateApiOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the API.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Avoid validating models when creating a deployment. Supported only for WebSocket APIs.</p>
     pub fn disable_schema_validation(mut self, input: bool) -> Self {
@@ -256,6 +286,10 @@ impl CreateApiOutputBuilder {
         self.disable_schema_validation = input;
         self
     }
+    /// <p>Avoid validating models when creating a deployment. Supported only for WebSocket APIs.</p>
+    pub fn get_disable_schema_validation(&self) -> &::std::option::Option<bool> {
+        &self.disable_schema_validation
+    }
     /// <p>Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
     pub fn disable_execute_api_endpoint(mut self, input: bool) -> Self {
         self.disable_execute_api_endpoint = ::std::option::Option::Some(input);
@@ -265,6 +299,10 @@ impl CreateApiOutputBuilder {
     pub fn set_disable_execute_api_endpoint(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disable_execute_api_endpoint = input;
         self
+    }
+    /// <p>Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
+    pub fn get_disable_execute_api_endpoint(&self) -> &::std::option::Option<bool> {
+        &self.disable_execute_api_endpoint
     }
     /// Appends an item to `import_info`.
     ///
@@ -285,6 +323,12 @@ impl CreateApiOutputBuilder {
         self.import_info = input;
         self
     }
+    /// <p>The validation information during API import. This may include particular properties of your OpenAPI definition which are ignored during import. Supported only for HTTP APIs.</p>
+    pub fn get_import_info(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.import_info
+    }
     /// <p>The name of the API.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -294,6 +338,10 @@ impl CreateApiOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the API.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The API protocol.</p>
     pub fn protocol_type(mut self, input: crate::types::ProtocolType) -> Self {
@@ -307,6 +355,10 @@ impl CreateApiOutputBuilder {
     ) -> Self {
         self.protocol_type = input;
         self
+    }
+    /// <p>The API protocol.</p>
+    pub fn get_protocol_type(&self) -> &::std::option::Option<crate::types::ProtocolType> {
+        &self.protocol_type
     }
     /// <p>The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method} ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket APIs.</p>
     pub fn route_selection_expression(
@@ -323,6 +375,10 @@ impl CreateApiOutputBuilder {
     ) -> Self {
         self.route_selection_expression = input;
         self
+    }
+    /// <p>The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method} ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket APIs.</p>
+    pub fn get_route_selection_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.route_selection_expression
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -349,6 +405,14 @@ impl CreateApiOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>A collection of tags associated with the API.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>A version identifier for the API.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -358,6 +422,10 @@ impl CreateApiOutputBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>A version identifier for the API.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Appends an item to `warnings`.
     ///
@@ -377,6 +445,10 @@ impl CreateApiOutputBuilder {
     ) -> Self {
         self.warnings = input;
         self
+    }
+    /// <p>The warning messages reported when failonwarnings is turned on during API import.</p>
+    pub fn get_warnings(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.warnings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

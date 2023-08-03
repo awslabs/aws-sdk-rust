@@ -40,6 +40,10 @@ impl OwnerIdentifierBuilder {
         self.address = input;
         self
     }
+    /// <p>The contract or wallet address for the owner.</p>
+    pub fn get_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.address
+    }
     /// Consumes the builder and constructs a [`OwnerIdentifier`](crate::types::OwnerIdentifier).
     pub fn build(self) -> crate::types::OwnerIdentifier {
         crate::types::OwnerIdentifier {

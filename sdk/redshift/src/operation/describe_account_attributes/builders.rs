@@ -36,6 +36,10 @@ impl DescribeAccountAttributesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeAccountAttributes as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_account_attributes::builders::DescribeAccountAttributesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,5 +139,11 @@ impl DescribeAccountAttributesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_attribute_names(input);
         self
+    }
+    /// <p>A list of attribute names.</p>
+    pub fn get_attribute_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_attribute_names()
     }
 }

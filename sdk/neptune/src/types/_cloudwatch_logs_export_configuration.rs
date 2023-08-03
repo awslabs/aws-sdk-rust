@@ -61,6 +61,12 @@ impl CloudwatchLogsExportConfigurationBuilder {
         self.enable_log_types = input;
         self
     }
+    /// <p>The list of log types to enable.</p>
+    pub fn get_enable_log_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.enable_log_types
+    }
     /// Appends an item to `disable_log_types`.
     ///
     /// To override the contents of this collection use [`set_disable_log_types`](Self::set_disable_log_types).
@@ -82,6 +88,12 @@ impl CloudwatchLogsExportConfigurationBuilder {
     ) -> Self {
         self.disable_log_types = input;
         self
+    }
+    /// <p>The list of log types to disable.</p>
+    pub fn get_disable_log_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.disable_log_types
     }
     /// Consumes the builder and constructs a [`CloudwatchLogsExportConfiguration`](crate::types::CloudwatchLogsExportConfiguration).
     pub fn build(self) -> crate::types::CloudwatchLogsExportConfiguration {

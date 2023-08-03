@@ -64,6 +64,10 @@ impl SubscriberBuilder {
         self.subscription_type = input;
         self
     }
+    /// <p>The type of notification that Amazon Web Services sends to a subscriber.</p>
+    pub fn get_subscription_type(&self) -> &::std::option::Option<crate::types::SubscriptionType> {
+        &self.subscription_type
+    }
     /// <p>The address that Amazon Web Services sends budget notifications to, either an SNS topic or an email.</p>
     /// <p>When you create a subscriber, the value of <code>Address</code> can't contain line breaks.</p>
     pub fn address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -75,6 +79,11 @@ impl SubscriberBuilder {
     pub fn set_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.address = input;
         self
+    }
+    /// <p>The address that Amazon Web Services sends budget notifications to, either an SNS topic or an email.</p>
+    /// <p>When you create a subscriber, the value of <code>Address</code> can't contain line breaks.</p>
+    pub fn get_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.address
     }
     /// Consumes the builder and constructs a [`Subscriber`](crate::types::Subscriber).
     pub fn build(self) -> crate::types::Subscriber {

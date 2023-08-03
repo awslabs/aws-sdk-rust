@@ -38,6 +38,10 @@ impl GetOpenIdTokenForDeveloperIdentityFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetOpenIdTokenForDeveloperIdentity as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_open_id_token_for_developer_identity::builders::GetOpenIdTokenForDeveloperIdentityInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -108,6 +112,10 @@ impl GetOpenIdTokenForDeveloperIdentityFluentBuilder {
         self.inner = self.inner.set_identity_pool_id(input);
         self
     }
+    /// <p>An identity pool ID in the format REGION:GUID.</p>
+    pub fn get_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_pool_id()
+    }
     /// <p>A unique identifier in the format REGION:GUID.</p>
     pub fn identity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_id(input.into());
@@ -117,6 +125,10 @@ impl GetOpenIdTokenForDeveloperIdentityFluentBuilder {
     pub fn set_identity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_id(input);
         self
+    }
+    /// <p>A unique identifier in the format REGION:GUID.</p>
+    pub fn get_identity_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_id()
     }
     /// Adds a key-value pair to `Logins`.
     ///
@@ -141,6 +153,14 @@ impl GetOpenIdTokenForDeveloperIdentityFluentBuilder {
         self.inner = self.inner.set_logins(input);
         self
     }
+    /// <p>A set of optional name-value pairs that map provider names to provider tokens. Each name-value pair represents a user from a public provider or developer provider. If the user is from a developer provider, the name-value pair will follow the syntax <code>"developer_provider_name": "developer_user_identifier"</code>. The developer provider is the "domain" by which Cognito will refer to your users; you provided this domain while creating/updating the identity pool. The developer user identifier is an identifier from your backend that uniquely identifies a user. When you create an identity pool, you can specify the supported logins.</p>
+    pub fn get_logins(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_logins()
+    }
     /// Adds a key-value pair to `PrincipalTags`.
     ///
     /// To override the contents of this collection use [`set_principal_tags`](Self::set_principal_tags).
@@ -164,6 +184,14 @@ impl GetOpenIdTokenForDeveloperIdentityFluentBuilder {
         self.inner = self.inner.set_principal_tags(input);
         self
     }
+    /// <p>Use this operation to configure attribute mappings for custom providers. </p>
+    pub fn get_principal_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_principal_tags()
+    }
     /// <p>The expiration time of the token, in seconds. You can specify a custom expiration time for the token so that you can cache it. If you don't provide an expiration time, the token is valid for 15 minutes. You can exchange the token with Amazon STS for temporary AWS credentials, which are valid for a maximum of one hour. The maximum token duration you can set is 24 hours. You should take care in setting the expiration time for a token, as there are significant security implications: an attacker could use a leaked token to access your AWS resources for the token's duration.</p> <note>
     /// <p>Please provide for a small grace period, usually no more than 5 minutes, to account for clock skew.</p>
     /// </note>
@@ -177,5 +205,11 @@ impl GetOpenIdTokenForDeveloperIdentityFluentBuilder {
     pub fn set_token_duration(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_token_duration(input);
         self
+    }
+    /// <p>The expiration time of the token, in seconds. You can specify a custom expiration time for the token so that you can cache it. If you don't provide an expiration time, the token is valid for 15 minutes. You can exchange the token with Amazon STS for temporary AWS credentials, which are valid for a maximum of one hour. The maximum token duration you can set is 24 hours. You should take care in setting the expiration time for a token, as there are significant security implications: an attacker could use a leaked token to access your AWS resources for the token's duration.</p> <note>
+    /// <p>Please provide for a small grace period, usually no more than 5 minutes, to account for clock skew.</p>
+    /// </note>
+    pub fn get_token_duration(&self) -> &::std::option::Option<i64> {
+        self.inner.get_token_duration()
     }
 }

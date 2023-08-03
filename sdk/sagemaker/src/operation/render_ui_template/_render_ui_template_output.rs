@@ -61,6 +61,10 @@ impl RenderUiTemplateOutputBuilder {
         self.rendered_content = input;
         self
     }
+    /// <p>A Liquid template that renders the HTML for the worker UI.</p>
+    pub fn get_rendered_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rendered_content
+    }
     /// Appends an item to `errors`.
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
@@ -79,6 +83,12 @@ impl RenderUiTemplateOutputBuilder {
     ) -> Self {
         self.errors = input;
         self
+    }
+    /// <p>A list of one or more <code>RenderingError</code> objects if any were encountered while rendering the template. If there were no errors, the list is empty.</p>
+    pub fn get_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RenderingError>> {
+        &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

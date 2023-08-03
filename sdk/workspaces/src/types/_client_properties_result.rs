@@ -48,6 +48,10 @@ impl ClientPropertiesResultBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The resource identifier, in the form of a directory ID.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// <p>Information about the Amazon WorkSpaces client.</p>
     pub fn client_properties(mut self, input: crate::types::ClientProperties) -> Self {
         self.client_properties = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl ClientPropertiesResultBuilder {
     ) -> Self {
         self.client_properties = input;
         self
+    }
+    /// <p>Information about the Amazon WorkSpaces client.</p>
+    pub fn get_client_properties(&self) -> &::std::option::Option<crate::types::ClientProperties> {
+        &self.client_properties
     }
     /// Consumes the builder and constructs a [`ClientPropertiesResult`](crate::types::ClientPropertiesResult).
     pub fn build(self) -> crate::types::ClientPropertiesResult {

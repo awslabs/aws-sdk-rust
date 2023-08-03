@@ -37,6 +37,10 @@ impl GetEffectiveRecommendationPreferencesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetEffectiveRecommendationPreferences as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_effective_recommendation_preferences::builders::GetEffectiveRecommendationPreferencesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,5 +104,9 @@ impl GetEffectiveRecommendationPreferencesFluentBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource for which to confirm effective recommendation preferences. Only EC2 instance and Auto Scaling group ARNs are currently supported.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
     }
 }

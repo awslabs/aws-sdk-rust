@@ -77,6 +77,10 @@ impl DescribeKeywordsOutputBuilder {
         self.origination_identity_arn = input;
         self
     }
+    /// <p>The PhoneNumberArn or PoolArn that is associated with the OriginationIdentity. </p>
+    pub fn get_origination_identity_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.origination_identity_arn
+    }
     /// <p>The PhoneNumberId or PoolId that is associated with the OriginationIdentity.</p>
     pub fn origination_identity(
         mut self,
@@ -92,6 +96,10 @@ impl DescribeKeywordsOutputBuilder {
     ) -> Self {
         self.origination_identity = input;
         self
+    }
+    /// <p>The PhoneNumberId or PoolId that is associated with the OriginationIdentity.</p>
+    pub fn get_origination_identity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.origination_identity
     }
     /// Appends an item to `keywords`.
     ///
@@ -112,6 +120,12 @@ impl DescribeKeywordsOutputBuilder {
         self.keywords = input;
         self
     }
+    /// <p>An array of KeywordInformation objects that contain the results.</p>
+    pub fn get_keywords(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KeywordInformation>> {
+        &self.keywords
+    }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -121,6 +135,10 @@ impl DescribeKeywordsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

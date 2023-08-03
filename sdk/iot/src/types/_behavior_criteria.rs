@@ -120,6 +120,18 @@ impl BehaviorCriteriaBuilder {
         self.comparison_operator = input;
         self
     }
+    /// <p>The operator that relates the thing measured (<code>metric</code>) to the criteria (containing a <code>value</code> or <code>statisticalThreshold</code>). Valid operators include:</p>
+    /// <ul>
+    /// <li> <p> <code>string-list</code>: <code>in-set</code> and <code>not-in-set</code> </p> </li>
+    /// <li> <p> <code>number-list</code>: <code>in-set</code> and <code>not-in-set</code> </p> </li>
+    /// <li> <p> <code>ip-address-list</code>: <code>in-cidr-set</code> and <code>not-in-cidr-set</code> </p> </li>
+    /// <li> <p> <code>number</code>: <code>less-than</code>, <code>less-than-equals</code>, <code>greater-than</code>, and <code>greater-than-equals</code> </p> </li>
+    /// </ul>
+    pub fn get_comparison_operator(
+        &self,
+    ) -> &::std::option::Option<crate::types::ComparisonOperator> {
+        &self.comparison_operator
+    }
     /// <p>The value to be compared with the <code>metric</code>.</p>
     pub fn value(mut self, input: crate::types::MetricValue) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -130,6 +142,10 @@ impl BehaviorCriteriaBuilder {
         self.value = input;
         self
     }
+    /// <p>The value to be compared with the <code>metric</code>.</p>
+    pub fn get_value(&self) -> &::std::option::Option<crate::types::MetricValue> {
+        &self.value
+    }
     /// <p>Use this to specify the time duration over which the behavior is evaluated, for those criteria that have a time dimension (for example, <code>NUM_MESSAGES_SENT</code>). For a <code>statisticalThreshhold</code> metric comparison, measurements from all devices are accumulated over this time duration before being used to calculate percentiles, and later, measurements from an individual device are also accumulated over this time duration before being given a percentile rank. Cannot be used with list-based metric datatypes.</p>
     pub fn duration_seconds(mut self, input: i32) -> Self {
         self.duration_seconds = ::std::option::Option::Some(input);
@@ -139,6 +155,10 @@ impl BehaviorCriteriaBuilder {
     pub fn set_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.duration_seconds = input;
         self
+    }
+    /// <p>Use this to specify the time duration over which the behavior is evaluated, for those criteria that have a time dimension (for example, <code>NUM_MESSAGES_SENT</code>). For a <code>statisticalThreshhold</code> metric comparison, measurements from all devices are accumulated over this time duration before being used to calculate percentiles, and later, measurements from an individual device are also accumulated over this time duration before being given a percentile rank. Cannot be used with list-based metric datatypes.</p>
+    pub fn get_duration_seconds(&self) -> &::std::option::Option<i32> {
+        &self.duration_seconds
     }
     /// <p>If a device is in violation of the behavior for the specified number of consecutive datapoints, an alarm occurs. If not specified, the default is 1.</p>
     pub fn consecutive_datapoints_to_alarm(mut self, input: i32) -> Self {
@@ -153,6 +173,10 @@ impl BehaviorCriteriaBuilder {
         self.consecutive_datapoints_to_alarm = input;
         self
     }
+    /// <p>If a device is in violation of the behavior for the specified number of consecutive datapoints, an alarm occurs. If not specified, the default is 1.</p>
+    pub fn get_consecutive_datapoints_to_alarm(&self) -> &::std::option::Option<i32> {
+        &self.consecutive_datapoints_to_alarm
+    }
     /// <p>If an alarm has occurred and the offending device is no longer in violation of the behavior for the specified number of consecutive datapoints, the alarm is cleared. If not specified, the default is 1.</p>
     pub fn consecutive_datapoints_to_clear(mut self, input: i32) -> Self {
         self.consecutive_datapoints_to_clear = ::std::option::Option::Some(input);
@@ -166,6 +190,10 @@ impl BehaviorCriteriaBuilder {
         self.consecutive_datapoints_to_clear = input;
         self
     }
+    /// <p>If an alarm has occurred and the offending device is no longer in violation of the behavior for the specified number of consecutive datapoints, the alarm is cleared. If not specified, the default is 1.</p>
+    pub fn get_consecutive_datapoints_to_clear(&self) -> &::std::option::Option<i32> {
+        &self.consecutive_datapoints_to_clear
+    }
     /// <p>A statistical ranking (percentile)that indicates a threshold value by which a behavior is determined to be in compliance or in violation of the behavior.</p>
     pub fn statistical_threshold(mut self, input: crate::types::StatisticalThreshold) -> Self {
         self.statistical_threshold = ::std::option::Option::Some(input);
@@ -178,6 +206,12 @@ impl BehaviorCriteriaBuilder {
     ) -> Self {
         self.statistical_threshold = input;
         self
+    }
+    /// <p>A statistical ranking (percentile)that indicates a threshold value by which a behavior is determined to be in compliance or in violation of the behavior.</p>
+    pub fn get_statistical_threshold(
+        &self,
+    ) -> &::std::option::Option<crate::types::StatisticalThreshold> {
+        &self.statistical_threshold
     }
     /// <p> The configuration of an ML Detect </p>
     pub fn ml_detection_config(
@@ -194,6 +228,12 @@ impl BehaviorCriteriaBuilder {
     ) -> Self {
         self.ml_detection_config = input;
         self
+    }
+    /// <p> The configuration of an ML Detect </p>
+    pub fn get_ml_detection_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::MachineLearningDetectionConfig> {
+        &self.ml_detection_config
     }
     /// Consumes the builder and constructs a [`BehaviorCriteria`](crate::types::BehaviorCriteria).
     pub fn build(self) -> crate::types::BehaviorCriteria {

@@ -83,6 +83,10 @@ impl ServiceAlreadyExistsBuilder {
         self.message = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The <code>CreatorRequestId</code> that was used to create the service.</p>
     pub fn creator_request_id(
         mut self,
@@ -99,6 +103,10 @@ impl ServiceAlreadyExistsBuilder {
         self.creator_request_id = input;
         self
     }
+    /// <p>The <code>CreatorRequestId</code> that was used to create the service.</p>
+    pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creator_request_id
+    }
     /// <p>The ID of the existing service.</p>
     pub fn service_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_id = ::std::option::Option::Some(input.into());
@@ -108,6 +116,10 @@ impl ServiceAlreadyExistsBuilder {
     pub fn set_service_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_id = input;
         self
+    }
+    /// <p>The ID of the existing service.</p>
+    pub fn get_service_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_id
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

@@ -48,6 +48,12 @@ impl UpdateFleetCapacityFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateFleetCapacity as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_fleet_capacity::builders::UpdateFleetCapacityInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +144,10 @@ impl UpdateFleetCapacityFluentBuilder {
         self.inner = self.inner.set_fleet_id(input);
         self
     }
+    /// <p>A unique identifier for the fleet to update capacity settings for. You can use either the fleet ID or ARN value.</p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_fleet_id()
+    }
     /// <p>The number of Amazon EC2 instances you want to maintain in the specified fleet location. This value must fall between the minimum and maximum size limits.</p>
     pub fn desired_instances(mut self, input: i32) -> Self {
         self.inner = self.inner.desired_instances(input);
@@ -147,6 +157,10 @@ impl UpdateFleetCapacityFluentBuilder {
     pub fn set_desired_instances(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_desired_instances(input);
         self
+    }
+    /// <p>The number of Amazon EC2 instances you want to maintain in the specified fleet location. This value must fall between the minimum and maximum size limits.</p>
+    pub fn get_desired_instances(&self) -> &::std::option::Option<i32> {
+        self.inner.get_desired_instances()
     }
     /// <p>The minimum number of instances that are allowed in the specified fleet location. If this parameter is not set, the default is 0.</p>
     pub fn min_size(mut self, input: i32) -> Self {
@@ -158,6 +172,10 @@ impl UpdateFleetCapacityFluentBuilder {
         self.inner = self.inner.set_min_size(input);
         self
     }
+    /// <p>The minimum number of instances that are allowed in the specified fleet location. If this parameter is not set, the default is 0.</p>
+    pub fn get_min_size(&self) -> &::std::option::Option<i32> {
+        self.inner.get_min_size()
+    }
     /// <p>The maximum number of instances that are allowed in the specified fleet location. If this parameter is not set, the default is 1.</p>
     pub fn max_size(mut self, input: i32) -> Self {
         self.inner = self.inner.max_size(input);
@@ -168,6 +186,10 @@ impl UpdateFleetCapacityFluentBuilder {
         self.inner = self.inner.set_max_size(input);
         self
     }
+    /// <p>The maximum number of instances that are allowed in the specified fleet location. If this parameter is not set, the default is 1.</p>
+    pub fn get_max_size(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_size()
+    }
     /// <p>The name of a remote location to update fleet capacity settings for, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.location(input.into());
@@ -177,5 +199,9 @@ impl UpdateFleetCapacityFluentBuilder {
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_location(input);
         self
+    }
+    /// <p>The name of a remote location to update fleet capacity settings for, in the form of an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_location()
     }
 }

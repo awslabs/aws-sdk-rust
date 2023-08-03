@@ -37,6 +37,13 @@ impl StreamJournalToKinesisFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StreamJournalToKinesis as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::stream_journal_to_kinesis::builders::StreamJournalToKinesisInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl StreamJournalToKinesisFluentBuilder {
         self.inner = self.inner.set_ledger_name(input);
         self
     }
+    /// <p>The name of the ledger.</p>
+    pub fn get_ledger_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ledger_name()
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal stream to write data records to a Kinesis Data Streams resource.</p>
     /// <p>To pass a role to QLDB when requesting a journal stream, you must have permissions to perform the <code>iam:PassRole</code> action on the IAM role resource. This is required for all journal stream requests.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -138,6 +149,11 @@ impl StreamJournalToKinesisFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal stream to write data records to a Kinesis Data Streams resource.</p>
+    /// <p>To pass a role to QLDB when requesting a journal stream, you must have permissions to perform the <code>iam:PassRole</code> action on the IAM role resource. This is required for all journal stream requests.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -165,6 +181,17 @@ impl StreamJournalToKinesisFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The key-value pairs to add as tags to the stream that you want to create. Tag keys are case sensitive. Tag values are case sensitive and can be null.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            ::std::option::Option<::std::string::String>,
+        >,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>The inclusive start date and time from which to start streaming journal data. This parameter must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
     /// <p>The <code>InclusiveStartTime</code> cannot be in the future and must be before <code>ExclusiveEndTime</code>.</p>
     /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's <code>CreationDateTime</code>, QLDB effectively defaults it to the ledger's <code>CreationDateTime</code>.</p>
@@ -182,6 +209,12 @@ impl StreamJournalToKinesisFluentBuilder {
         self.inner = self.inner.set_inclusive_start_time(input);
         self
     }
+    /// <p>The inclusive start date and time from which to start streaming journal data. This parameter must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
+    /// <p>The <code>InclusiveStartTime</code> cannot be in the future and must be before <code>ExclusiveEndTime</code>.</p>
+    /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's <code>CreationDateTime</code>, QLDB effectively defaults it to the ledger's <code>CreationDateTime</code>.</p>
+    pub fn get_inclusive_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_inclusive_start_time()
+    }
     /// <p>The exclusive date and time that specifies when the stream ends. If you don't define this parameter, the stream runs indefinitely until you cancel it.</p>
     /// <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
     pub fn exclusive_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -197,6 +230,11 @@ impl StreamJournalToKinesisFluentBuilder {
         self.inner = self.inner.set_exclusive_end_time(input);
         self
     }
+    /// <p>The exclusive date and time that specifies when the stream ends. If you don't define this parameter, the stream runs indefinitely until you cancel it.</p>
+    /// <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
+    pub fn get_exclusive_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_exclusive_end_time()
+    }
     /// <p>The configuration settings of the Kinesis Data Streams destination for your stream request.</p>
     pub fn kinesis_configuration(mut self, input: crate::types::KinesisConfiguration) -> Self {
         self.inner = self.inner.kinesis_configuration(input);
@@ -210,6 +248,12 @@ impl StreamJournalToKinesisFluentBuilder {
         self.inner = self.inner.set_kinesis_configuration(input);
         self
     }
+    /// <p>The configuration settings of the Kinesis Data Streams destination for your stream request.</p>
+    pub fn get_kinesis_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::KinesisConfiguration> {
+        self.inner.get_kinesis_configuration()
+    }
     /// <p>The name that you want to assign to the QLDB journal stream. User-defined names can help identify and indicate the purpose of a stream.</p>
     /// <p>Your stream name must be unique among other <i>active</i> streams for a given ledger. Stream names have the same naming constraints as ledger names, as defined in <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
     pub fn stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -221,5 +265,10 @@ impl StreamJournalToKinesisFluentBuilder {
     pub fn set_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stream_name(input);
         self
+    }
+    /// <p>The name that you want to assign to the QLDB journal stream. User-defined names can help identify and indicate the purpose of a stream.</p>
+    /// <p>Your stream name must be unique among other <i>active</i> streams for a given ledger. Stream names have the same naming constraints as ledger names, as defined in <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
+    pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_name()
     }
 }

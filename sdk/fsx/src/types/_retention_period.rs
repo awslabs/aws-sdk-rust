@@ -68,6 +68,10 @@ impl RetentionPeriodBuilder {
         self.r#type = input;
         self
     }
+    /// <p>Defines the type of time for the retention period of an FSx for ONTAP SnapLock volume. Set it to one of the valid types. If you set it to <code>INFINITE</code>, the files are retained forever. If you set it to <code>UNSPECIFIED</code>, the files are retained until you set an explicit retention period. </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::RetentionPeriodType> {
+        &self.r#type
+    }
     /// <p>Defines the amount of time for the retention period of an FSx for ONTAP SnapLock volume. You can't set a value for <code>INFINITE</code> or <code>UNSPECIFIED</code>. For all other options, the following ranges are valid: </p>
     /// <ul>
     /// <li> <p> <code>Seconds</code>: 0 - 65,535</p> </li>
@@ -93,6 +97,18 @@ impl RetentionPeriodBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<i32>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>Defines the amount of time for the retention period of an FSx for ONTAP SnapLock volume. You can't set a value for <code>INFINITE</code> or <code>UNSPECIFIED</code>. For all other options, the following ranges are valid: </p>
+    /// <ul>
+    /// <li> <p> <code>Seconds</code>: 0 - 65,535</p> </li>
+    /// <li> <p> <code>Minutes</code>: 0 - 65,535</p> </li>
+    /// <li> <p> <code>Hours</code>: 0 - 24</p> </li>
+    /// <li> <p> <code>Days</code>: 0 - 365</p> </li>
+    /// <li> <p> <code>Months</code>: 0 - 12</p> </li>
+    /// <li> <p> <code>Years</code>: 0 - 100</p> </li>
+    /// </ul>
+    pub fn get_value(&self) -> &::std::option::Option<i32> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`RetentionPeriod`](crate::types::RetentionPeriod).
     pub fn build(self) -> crate::types::RetentionPeriod {

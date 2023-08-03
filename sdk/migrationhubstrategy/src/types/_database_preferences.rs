@@ -62,6 +62,12 @@ impl DatabasePreferencesBuilder {
         self.database_management_preference = input;
         self
     }
+    /// <p> Specifies whether you're interested in self-managed databases or databases managed by AWS. </p>
+    pub fn get_database_management_preference(
+        &self,
+    ) -> &::std::option::Option<crate::types::DatabaseManagementPreference> {
+        &self.database_management_preference
+    }
     /// <p> Specifies your preferred migration path. </p>
     pub fn database_migration_preference(
         mut self,
@@ -77,6 +83,12 @@ impl DatabasePreferencesBuilder {
     ) -> Self {
         self.database_migration_preference = input;
         self
+    }
+    /// <p> Specifies your preferred migration path. </p>
+    pub fn get_database_migration_preference(
+        &self,
+    ) -> &::std::option::Option<crate::types::DatabaseMigrationPreference> {
+        &self.database_migration_preference
     }
     /// Consumes the builder and constructs a [`DatabasePreferences`](crate::types::DatabasePreferences).
     pub fn build(self) -> crate::types::DatabasePreferences {

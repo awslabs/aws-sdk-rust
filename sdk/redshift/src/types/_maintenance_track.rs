@@ -62,6 +62,10 @@ impl MaintenanceTrackBuilder {
         self.maintenance_track_name = input;
         self
     }
+    /// <p>The name of the maintenance track. Possible values are <code>current</code> and <code>trailing</code>.</p>
+    pub fn get_maintenance_track_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.maintenance_track_name
+    }
     /// <p>The version number for the cluster release.</p>
     pub fn database_version(
         mut self,
@@ -77,6 +81,10 @@ impl MaintenanceTrackBuilder {
     ) -> Self {
         self.database_version = input;
         self
+    }
+    /// <p>The version number for the cluster release.</p>
+    pub fn get_database_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_version
     }
     /// Appends an item to `update_targets`.
     ///
@@ -96,6 +104,12 @@ impl MaintenanceTrackBuilder {
     ) -> Self {
         self.update_targets = input;
         self
+    }
+    /// <p>An array of <code>UpdateTarget</code> objects to update with the maintenance track. </p>
+    pub fn get_update_targets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateTarget>> {
+        &self.update_targets
     }
     /// Consumes the builder and constructs a [`MaintenanceTrack`](crate::types::MaintenanceTrack).
     pub fn build(self) -> crate::types::MaintenanceTrack {

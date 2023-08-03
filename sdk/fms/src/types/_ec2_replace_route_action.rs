@@ -80,6 +80,10 @@ impl Ec2ReplaceRouteActionBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the ReplaceRoute action in Amazon EC2.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>Information about the IPv4 CIDR address block used for the destination match. The value that you provide must match the CIDR of an existing route in the table.</p>
     pub fn destination_cidr_block(
         mut self,
@@ -95,6 +99,10 @@ impl Ec2ReplaceRouteActionBuilder {
     ) -> Self {
         self.destination_cidr_block = input;
         self
+    }
+    /// <p>Information about the IPv4 CIDR address block used for the destination match. The value that you provide must match the CIDR of an existing route in the table.</p>
+    pub fn get_destination_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_cidr_block
     }
     /// <p>Information about the ID of the prefix list for the route.</p>
     pub fn destination_prefix_list_id(
@@ -112,6 +120,10 @@ impl Ec2ReplaceRouteActionBuilder {
         self.destination_prefix_list_id = input;
         self
     }
+    /// <p>Information about the ID of the prefix list for the route.</p>
+    pub fn get_destination_prefix_list_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_prefix_list_id
+    }
     /// <p>Information about the IPv6 CIDR address block used for the destination match. The value that you provide must match the CIDR of an existing route in the table.</p>
     pub fn destination_ipv6_cidr_block(
         mut self,
@@ -128,6 +140,10 @@ impl Ec2ReplaceRouteActionBuilder {
         self.destination_ipv6_cidr_block = input;
         self
     }
+    /// <p>Information about the IPv6 CIDR address block used for the destination match. The value that you provide must match the CIDR of an existing route in the table.</p>
+    pub fn get_destination_ipv6_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_ipv6_cidr_block
+    }
     /// <p>Information about the ID of an internet gateway or virtual private gateway.</p>
     pub fn gateway_id(mut self, input: crate::types::ActionTarget) -> Self {
         self.gateway_id = ::std::option::Option::Some(input);
@@ -141,6 +157,10 @@ impl Ec2ReplaceRouteActionBuilder {
         self.gateway_id = input;
         self
     }
+    /// <p>Information about the ID of an internet gateway or virtual private gateway.</p>
+    pub fn get_gateway_id(&self) -> &::std::option::Option<crate::types::ActionTarget> {
+        &self.gateway_id
+    }
     /// <p>Information about the ID of the route table.</p>
     pub fn route_table_id(mut self, input: crate::types::ActionTarget) -> Self {
         self.route_table_id = ::std::option::Option::Some(input);
@@ -153,6 +173,10 @@ impl Ec2ReplaceRouteActionBuilder {
     ) -> Self {
         self.route_table_id = input;
         self
+    }
+    /// <p>Information about the ID of the route table.</p>
+    pub fn get_route_table_id(&self) -> &::std::option::Option<crate::types::ActionTarget> {
+        &self.route_table_id
     }
     /// Consumes the builder and constructs a [`Ec2ReplaceRouteAction`](crate::types::Ec2ReplaceRouteAction).
     pub fn build(self) -> crate::types::Ec2ReplaceRouteAction {

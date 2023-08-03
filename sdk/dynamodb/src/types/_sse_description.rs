@@ -89,6 +89,14 @@ impl SseDescriptionBuilder {
         self.status = input;
         self
     }
+    /// <p>Represents the current state of server-side encryption. The only supported values are:</p>
+    /// <ul>
+    /// <li> <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - Server-side encryption is being updated.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::SseStatus> {
+        &self.status
+    }
     /// <p>Server-side encryption type. The only supported value is:</p>
     /// <ul>
     /// <li> <p> <code>KMS</code> - Server-side encryption that uses Key Management Service. The key is stored in your account and is managed by KMS (KMS charges apply).</p> </li>
@@ -104,6 +112,13 @@ impl SseDescriptionBuilder {
     pub fn set_sse_type(mut self, input: ::std::option::Option<crate::types::SseType>) -> Self {
         self.sse_type = input;
         self
+    }
+    /// <p>Server-side encryption type. The only supported value is:</p>
+    /// <ul>
+    /// <li> <p> <code>KMS</code> - Server-side encryption that uses Key Management Service. The key is stored in your account and is managed by KMS (KMS charges apply).</p> </li>
+    /// </ul>
+    pub fn get_sse_type(&self) -> &::std::option::Option<crate::types::SseType> {
+        &self.sse_type
     }
     /// <p>The KMS key ARN used for the KMS encryption.</p>
     pub fn kms_master_key_arn(
@@ -121,6 +136,10 @@ impl SseDescriptionBuilder {
         self.kms_master_key_arn = input;
         self
     }
+    /// <p>The KMS key ARN used for the KMS encryption.</p>
+    pub fn get_kms_master_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_master_key_arn
+    }
     /// <p>Indicates the time, in UNIX epoch date format, when DynamoDB detected that the table's KMS key was inaccessible. This attribute will automatically be cleared when DynamoDB detects that the table's KMS key is accessible again. DynamoDB will initiate the table archival process when table's KMS key remains inaccessible for more than seven days from this date.</p>
     pub fn inaccessible_encryption_date_time(
         mut self,
@@ -136,6 +155,12 @@ impl SseDescriptionBuilder {
     ) -> Self {
         self.inaccessible_encryption_date_time = input;
         self
+    }
+    /// <p>Indicates the time, in UNIX epoch date format, when DynamoDB detected that the table's KMS key was inaccessible. This attribute will automatically be cleared when DynamoDB detects that the table's KMS key is accessible again. DynamoDB will initiate the table archival process when table's KMS key remains inaccessible for more than seven days from this date.</p>
+    pub fn get_inaccessible_encryption_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.inaccessible_encryption_date_time
     }
     /// Consumes the builder and constructs a [`SseDescription`](crate::types::SseDescription).
     pub fn build(self) -> crate::types::SseDescription {

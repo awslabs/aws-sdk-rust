@@ -52,6 +52,10 @@ impl CreateAssessmentFrameworkControlSetBuilder {
         self.name = input;
         self
     }
+    /// <p> The name of the control set. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `controls`.
     ///
     /// To override the contents of this collection use [`set_controls`](Self::set_controls).
@@ -72,6 +76,13 @@ impl CreateAssessmentFrameworkControlSetBuilder {
     ) -> Self {
         self.controls = input;
         self
+    }
+    /// <p> The list of controls within the control set. This doesn't contain the control set ID. </p>
+    pub fn get_controls(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateAssessmentFrameworkControl>>
+    {
+        &self.controls
     }
     /// Consumes the builder and constructs a [`CreateAssessmentFrameworkControlSet`](crate::types::CreateAssessmentFrameworkControlSet).
     pub fn build(self) -> crate::types::CreateAssessmentFrameworkControlSet {

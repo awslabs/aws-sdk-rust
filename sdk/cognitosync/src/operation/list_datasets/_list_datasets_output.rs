@@ -72,6 +72,10 @@ impl ListDatasetsOutputBuilder {
         self.datasets = input;
         self
     }
+    /// A set of datasets.
+    pub fn get_datasets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Dataset>> {
+        &self.datasets
+    }
     /// Number of datasets returned.
     pub fn count(mut self, input: i32) -> Self {
         self.count = ::std::option::Option::Some(input);
@@ -82,6 +86,10 @@ impl ListDatasetsOutputBuilder {
         self.count = input;
         self
     }
+    /// Number of datasets returned.
+    pub fn get_count(&self) -> &::std::option::Option<i32> {
+        &self.count
+    }
     /// A pagination token for obtaining the next page of results.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl ListDatasetsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// A pagination token for obtaining the next page of results.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

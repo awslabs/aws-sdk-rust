@@ -51,6 +51,10 @@ impl StreamingImageEncryptionConfigurationBuilder {
         self.key_arn = input;
         self
     }
+    /// <p>The ARN for a KMS key that is used to encrypt studio data.</p>
+    pub fn get_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_arn
+    }
     /// <p>The type of KMS key that is used to encrypt studio data.</p>
     pub fn key_type(
         mut self,
@@ -66,6 +70,12 @@ impl StreamingImageEncryptionConfigurationBuilder {
     ) -> Self {
         self.key_type = input;
         self
+    }
+    /// <p>The type of KMS key that is used to encrypt studio data.</p>
+    pub fn get_key_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::StreamingImageEncryptionConfigurationKeyType> {
+        &self.key_type
     }
     /// Consumes the builder and constructs a [`StreamingImageEncryptionConfiguration`](crate::types::StreamingImageEncryptionConfiguration).
     pub fn build(self) -> crate::types::StreamingImageEncryptionConfiguration {

@@ -110,6 +110,10 @@ impl GetDeviceFleetReportOutputBuilder {
         self.device_fleet_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the device.</p>
+    pub fn get_device_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_fleet_arn
+    }
     /// <p>The name of the fleet.</p>
     pub fn device_fleet_name(
         mut self,
@@ -126,6 +130,10 @@ impl GetDeviceFleetReportOutputBuilder {
         self.device_fleet_name = input;
         self
     }
+    /// <p>The name of the fleet.</p>
+    pub fn get_device_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_fleet_name
+    }
     /// <p>The output configuration for storing sample data collected by the fleet.</p>
     pub fn output_config(mut self, input: crate::types::EdgeOutputConfig) -> Self {
         self.output_config = ::std::option::Option::Some(input);
@@ -139,6 +147,10 @@ impl GetDeviceFleetReportOutputBuilder {
         self.output_config = input;
         self
     }
+    /// <p>The output configuration for storing sample data collected by the fleet.</p>
+    pub fn get_output_config(&self) -> &::std::option::Option<crate::types::EdgeOutputConfig> {
+        &self.output_config
+    }
     /// <p>Description of the fleet.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -148,6 +160,10 @@ impl GetDeviceFleetReportOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>Description of the fleet.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Timestamp of when the report was generated.</p>
     pub fn report_generated(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -162,6 +178,10 @@ impl GetDeviceFleetReportOutputBuilder {
         self.report_generated = input;
         self
     }
+    /// <p>Timestamp of when the report was generated.</p>
+    pub fn get_report_generated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.report_generated
+    }
     /// <p>Status of devices.</p>
     pub fn device_stats(mut self, input: crate::types::DeviceStats) -> Self {
         self.device_stats = ::std::option::Option::Some(input);
@@ -174,6 +194,10 @@ impl GetDeviceFleetReportOutputBuilder {
     ) -> Self {
         self.device_stats = input;
         self
+    }
+    /// <p>Status of devices.</p>
+    pub fn get_device_stats(&self) -> &::std::option::Option<crate::types::DeviceStats> {
+        &self.device_stats
     }
     /// Appends an item to `agent_versions`.
     ///
@@ -194,6 +218,12 @@ impl GetDeviceFleetReportOutputBuilder {
         self.agent_versions = input;
         self
     }
+    /// <p>The versions of Edge Manager agent deployed on the fleet.</p>
+    pub fn get_agent_versions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AgentVersion>> {
+        &self.agent_versions
+    }
     /// Appends an item to `model_stats`.
     ///
     /// To override the contents of this collection use [`set_model_stats`](Self::set_model_stats).
@@ -212,6 +242,12 @@ impl GetDeviceFleetReportOutputBuilder {
     ) -> Self {
         self.model_stats = input;
         self
+    }
+    /// <p>Status of model on device.</p>
+    pub fn get_model_stats(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EdgeModelStat>> {
+        &self.model_stats
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

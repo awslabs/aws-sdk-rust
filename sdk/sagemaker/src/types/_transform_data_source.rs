@@ -43,6 +43,12 @@ impl TransformDataSourceBuilder {
         self.s3_data_source = input;
         self
     }
+    /// <p>The S3 location of the data source that is associated with a channel.</p>
+    pub fn get_s3_data_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransformS3DataSource> {
+        &self.s3_data_source
+    }
     /// Consumes the builder and constructs a [`TransformDataSource`](crate::types::TransformDataSource).
     pub fn build(self) -> crate::types::TransformDataSource {
         crate::types::TransformDataSource {

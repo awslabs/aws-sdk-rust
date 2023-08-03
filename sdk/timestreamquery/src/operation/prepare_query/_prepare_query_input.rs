@@ -53,6 +53,10 @@ impl PrepareQueryInputBuilder {
         self.query_string = input;
         self
     }
+    /// <p>The Timestream query string that you want to use as a prepared statement. Parameter names can be specified in the query string <code>@</code> character followed by an identifier. </p>
+    pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_string
+    }
     /// <p>By setting this value to <code>true</code>, Timestream will only validate that the query string is a valid Timestream query, and not store the prepared query for later use.</p>
     pub fn validate_only(mut self, input: bool) -> Self {
         self.validate_only = ::std::option::Option::Some(input);
@@ -62,6 +66,10 @@ impl PrepareQueryInputBuilder {
     pub fn set_validate_only(mut self, input: ::std::option::Option<bool>) -> Self {
         self.validate_only = input;
         self
+    }
+    /// <p>By setting this value to <code>true</code>, Timestream will only validate that the query string is a valid Timestream query, and not store the prepared query for later use.</p>
+    pub fn get_validate_only(&self) -> &::std::option::Option<bool> {
+        &self.validate_only
     }
     /// Consumes the builder and constructs a [`PrepareQueryInput`](crate::operation::prepare_query::PrepareQueryInput).
     pub fn build(

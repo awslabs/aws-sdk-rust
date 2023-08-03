@@ -51,6 +51,10 @@ impl BotRecommendationResultStatisticsBuilder {
         self.intents = input;
         self
     }
+    /// <p>Statistical information about about the intents associated with the bot recommendation results.</p>
+    pub fn get_intents(&self) -> &::std::option::Option<crate::types::IntentStatistics> {
+        &self.intents
+    }
     /// <p>Statistical information about the slot types associated with the bot recommendation results.</p>
     pub fn slot_types(mut self, input: crate::types::SlotTypeStatistics) -> Self {
         self.slot_types = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl BotRecommendationResultStatisticsBuilder {
     ) -> Self {
         self.slot_types = input;
         self
+    }
+    /// <p>Statistical information about the slot types associated with the bot recommendation results.</p>
+    pub fn get_slot_types(&self) -> &::std::option::Option<crate::types::SlotTypeStatistics> {
+        &self.slot_types
     }
     /// Consumes the builder and constructs a [`BotRecommendationResultStatistics`](crate::types::BotRecommendationResultStatistics).
     pub fn build(self) -> crate::types::BotRecommendationResultStatistics {

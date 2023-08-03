@@ -49,6 +49,10 @@ impl AddHeaderActionBuilder {
         self.header_name = input;
         self
     }
+    /// <p>The name of the header to add. Must be between 1 and 50 characters, inclusive, and consist of alphanumeric (a-z, A-Z, 0-9) characters and dashes only.</p>
+    pub fn get_header_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.header_name
+    }
     /// <p>Must be less than 2048 characters, and must not contain newline characters ("\r" or "\n").</p>
     pub fn header_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.header_value = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl AddHeaderActionBuilder {
     pub fn set_header_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.header_value = input;
         self
+    }
+    /// <p>Must be less than 2048 characters, and must not contain newline characters ("\r" or "\n").</p>
+    pub fn get_header_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.header_value
     }
     /// Consumes the builder and constructs a [`AddHeaderAction`](crate::types::AddHeaderAction).
     pub fn build(self) -> crate::types::AddHeaderAction {

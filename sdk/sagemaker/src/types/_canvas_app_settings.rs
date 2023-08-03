@@ -68,6 +68,12 @@ impl CanvasAppSettingsBuilder {
         self.time_series_forecasting_settings = input;
         self
     }
+    /// <p>Time series forecast settings for the Canvas application.</p>
+    pub fn get_time_series_forecasting_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::TimeSeriesForecastingSettings> {
+        &self.time_series_forecasting_settings
+    }
     /// <p>The model registry settings for the SageMaker Canvas application.</p>
     pub fn model_register_settings(mut self, input: crate::types::ModelRegisterSettings) -> Self {
         self.model_register_settings = ::std::option::Option::Some(input);
@@ -81,6 +87,12 @@ impl CanvasAppSettingsBuilder {
         self.model_register_settings = input;
         self
     }
+    /// <p>The model registry settings for the SageMaker Canvas application.</p>
+    pub fn get_model_register_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::ModelRegisterSettings> {
+        &self.model_register_settings
+    }
     /// <p>The workspace settings for the SageMaker Canvas application.</p>
     pub fn workspace_settings(mut self, input: crate::types::WorkspaceSettings) -> Self {
         self.workspace_settings = ::std::option::Option::Some(input);
@@ -93,6 +105,12 @@ impl CanvasAppSettingsBuilder {
     ) -> Self {
         self.workspace_settings = input;
         self
+    }
+    /// <p>The workspace settings for the SageMaker Canvas application.</p>
+    pub fn get_workspace_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::WorkspaceSettings> {
+        &self.workspace_settings
     }
     /// Consumes the builder and constructs a [`CanvasAppSettings`](crate::types::CanvasAppSettings).
     pub fn build(self) -> crate::types::CanvasAppSettings {

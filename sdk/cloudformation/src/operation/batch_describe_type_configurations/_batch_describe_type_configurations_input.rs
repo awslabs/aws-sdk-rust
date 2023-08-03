@@ -55,6 +55,12 @@ impl BatchDescribeTypeConfigurationsInputBuilder {
         self.type_configuration_identifiers = input;
         self
     }
+    /// <p>The list of identifiers for the desired extension configurations.</p>
+    pub fn get_type_configuration_identifiers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TypeConfigurationIdentifier>> {
+        &self.type_configuration_identifiers
+    }
     /// Consumes the builder and constructs a [`BatchDescribeTypeConfigurationsInput`](crate::operation::batch_describe_type_configurations::BatchDescribeTypeConfigurationsInput).
     pub fn build(
         self,

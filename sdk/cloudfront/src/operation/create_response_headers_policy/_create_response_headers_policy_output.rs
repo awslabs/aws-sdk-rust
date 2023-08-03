@@ -67,6 +67,12 @@ impl CreateResponseHeadersPolicyOutputBuilder {
         self.response_headers_policy = input;
         self
     }
+    /// <p>Contains a response headers policy.</p>
+    pub fn get_response_headers_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResponseHeadersPolicy> {
+        &self.response_headers_policy
+    }
     /// <p>The URL of the response headers policy.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
@@ -77,6 +83,10 @@ impl CreateResponseHeadersPolicyOutputBuilder {
         self.location = input;
         self
     }
+    /// <p>The URL of the response headers policy.</p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
+    }
     /// <p>The version identifier for the current version of the response headers policy.</p>
     pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.e_tag = ::std::option::Option::Some(input.into());
@@ -86,6 +96,10 @@ impl CreateResponseHeadersPolicyOutputBuilder {
     pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.e_tag = input;
         self
+    }
+    /// <p>The version identifier for the current version of the response headers policy.</p>
+    pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.e_tag
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -55,6 +55,10 @@ impl UpdateChannelMessageOutputBuilder {
         self.channel_arn = input;
         self
     }
+    /// <p>The ARN of the channel.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
+    }
     /// <p>The ID string of the message being updated.</p>
     pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_id = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl UpdateChannelMessageOutputBuilder {
     pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message_id = input;
         self
+    }
+    /// <p>The ID string of the message being updated.</p>
+    pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

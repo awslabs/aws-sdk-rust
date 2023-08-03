@@ -48,6 +48,10 @@ impl SortCriteriaBuilder {
         self.field = input;
         self
     }
+    /// <p>The finding detail field by which results are sorted.</p>
+    pub fn get_field(&self) -> &::std::option::Option<crate::types::SortField> {
+        &self.field
+    }
     /// <p>The order by which findings are sorted.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl SortCriteriaBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.sort_order = input;
         self
+    }
+    /// <p>The order by which findings are sorted.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.sort_order
     }
     /// Consumes the builder and constructs a [`SortCriteria`](crate::types::SortCriteria).
     pub fn build(self) -> crate::types::SortCriteria {

@@ -71,6 +71,10 @@ impl UpdateDirectConnectGatewayAssociationInputBuilder {
         self.association_id = input;
         self
     }
+    /// <p>The ID of the Direct Connect gateway association.</p>
+    pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_id
+    }
     /// Appends an item to `add_allowed_prefixes_to_direct_connect_gateway`.
     ///
     /// To override the contents of this collection use [`set_add_allowed_prefixes_to_direct_connect_gateway`](Self::set_add_allowed_prefixes_to_direct_connect_gateway).
@@ -95,6 +99,12 @@ impl UpdateDirectConnectGatewayAssociationInputBuilder {
         self.add_allowed_prefixes_to_direct_connect_gateway = input;
         self
     }
+    /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway.</p>
+    pub fn get_add_allowed_prefixes_to_direct_connect_gateway(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>> {
+        &self.add_allowed_prefixes_to_direct_connect_gateway
+    }
     /// Appends an item to `remove_allowed_prefixes_to_direct_connect_gateway`.
     ///
     /// To override the contents of this collection use [`set_remove_allowed_prefixes_to_direct_connect_gateway`](Self::set_remove_allowed_prefixes_to_direct_connect_gateway).
@@ -118,6 +128,12 @@ impl UpdateDirectConnectGatewayAssociationInputBuilder {
     ) -> Self {
         self.remove_allowed_prefixes_to_direct_connect_gateway = input;
         self
+    }
+    /// <p>The Amazon VPC prefixes to no longer advertise to the Direct Connect gateway.</p>
+    pub fn get_remove_allowed_prefixes_to_direct_connect_gateway(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>> {
+        &self.remove_allowed_prefixes_to_direct_connect_gateway
     }
     /// Consumes the builder and constructs a [`UpdateDirectConnectGatewayAssociationInput`](crate::operation::update_direct_connect_gateway_association::UpdateDirectConnectGatewayAssociationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_direct_connect_gateway_association::UpdateDirectConnectGatewayAssociationInput, ::aws_smithy_http::operation::error::BuildError>{

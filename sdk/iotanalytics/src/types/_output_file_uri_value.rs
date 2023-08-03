@@ -40,6 +40,10 @@ impl OutputFileUriValueBuilder {
         self.file_name = input;
         self
     }
+    /// <p>The URI of the location where dataset contents are stored, usually the URI of a file in an S3 bucket.</p>
+    pub fn get_file_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_name
+    }
     /// Consumes the builder and constructs a [`OutputFileUriValue`](crate::types::OutputFileUriValue).
     pub fn build(self) -> crate::types::OutputFileUriValue {
         crate::types::OutputFileUriValue {

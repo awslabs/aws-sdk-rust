@@ -52,6 +52,10 @@ impl ListGatewaysInputBuilder {
         self.marker = input;
         self
     }
+    /// <p>An opaque string that indicates the position at which to begin the returned list of gateways.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// <p>Specifies that the list of gateways returned be limited to the specified number of items.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -61,6 +65,10 @@ impl ListGatewaysInputBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
+    }
+    /// <p>Specifies that the list of gateways returned be limited to the specified number of items.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// Consumes the builder and constructs a [`ListGatewaysInput`](crate::operation::list_gateways::ListGatewaysInput).
     pub fn build(

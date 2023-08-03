@@ -62,6 +62,12 @@ impl SourceAlgorithmBuilder {
         self.model_data_url = input;
         self
     }
+    /// <p>The Amazon S3 path where the model artifacts, which result from model training, are stored. This path must point to a single <code>gzip</code> compressed tar archive (<code>.tar.gz</code> suffix).</p> <note>
+    /// <p>The model artifacts must be in an S3 bucket that is in the same Amazon Web Services region as the algorithm.</p>
+    /// </note>
+    pub fn get_model_data_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_data_url
+    }
     /// <p>The name of an algorithm that was used to create the model package. The algorithm must be either an algorithm resource in your SageMaker account or an algorithm in Amazon Web Services Marketplace that you are subscribed to.</p>
     pub fn algorithm_name(
         mut self,
@@ -77,6 +83,10 @@ impl SourceAlgorithmBuilder {
     ) -> Self {
         self.algorithm_name = input;
         self
+    }
+    /// <p>The name of an algorithm that was used to create the model package. The algorithm must be either an algorithm resource in your SageMaker account or an algorithm in Amazon Web Services Marketplace that you are subscribed to.</p>
+    pub fn get_algorithm_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.algorithm_name
     }
     /// Consumes the builder and constructs a [`SourceAlgorithm`](crate::types::SourceAlgorithm).
     pub fn build(self) -> crate::types::SourceAlgorithm {

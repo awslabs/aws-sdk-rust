@@ -56,6 +56,10 @@ impl ListResourceSetsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token that identifies which batch of results you want to see.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `resource_sets`.
     ///
     /// To override the contents of this collection use [`set_resource_sets`](Self::set_resource_sets).
@@ -74,6 +78,12 @@ impl ListResourceSetsOutputBuilder {
     ) -> Self {
         self.resource_sets = input;
         self
+    }
+    /// <p>A list of resource sets associated with the account.</p>
+    pub fn get_resource_sets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceSetOutput>> {
+        &self.resource_sets
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

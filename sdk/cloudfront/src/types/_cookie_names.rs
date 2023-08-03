@@ -48,6 +48,10 @@ impl CookieNamesBuilder {
         self.quantity = input;
         self
     }
+    /// <p>The number of cookie names in the <code>Items</code> list.</p>
+    pub fn get_quantity(&self) -> &::std::option::Option<i32> {
+        &self.quantity
+    }
     /// Appends an item to `items`.
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
@@ -66,6 +70,10 @@ impl CookieNamesBuilder {
     ) -> Self {
         self.items = input;
         self
+    }
+    /// <p>A list of cookie names.</p>
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.items
     }
     /// Consumes the builder and constructs a [`CookieNames`](crate::types::CookieNames).
     pub fn build(self) -> crate::types::CookieNames {

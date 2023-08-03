@@ -48,6 +48,10 @@ impl InstanceBlockDeviceMappingBuilder {
         self.device_name = input;
         self
     }
+    /// <p>The block device name.</p>
+    pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_name
+    }
     /// <p>The parameters used to automatically set up Amazon Elastic Block Store (Amazon EBS) volumes when the instance is launched. </p>
     pub fn ebs(mut self, input: crate::types::EbsInstanceBlockDevice) -> Self {
         self.ebs = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl InstanceBlockDeviceMappingBuilder {
     ) -> Self {
         self.ebs = input;
         self
+    }
+    /// <p>The parameters used to automatically set up Amazon Elastic Block Store (Amazon EBS) volumes when the instance is launched. </p>
+    pub fn get_ebs(&self) -> &::std::option::Option<crate::types::EbsInstanceBlockDevice> {
+        &self.ebs
     }
     /// Consumes the builder and constructs a [`InstanceBlockDeviceMapping`](crate::types::InstanceBlockDeviceMapping).
     pub fn build(self) -> crate::types::InstanceBlockDeviceMapping {

@@ -69,6 +69,10 @@ impl DescribeCustomDomainAssociationsInputBuilder {
         self.custom_domain_name = input;
         self
     }
+    /// <p>The custom domain name for the custom domain association.</p>
+    pub fn get_custom_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_domain_name
+    }
     /// <p>The certificate Amazon Resource Name (ARN) for the custom domain association.</p>
     pub fn custom_domain_certificate_arn(
         mut self,
@@ -85,6 +89,12 @@ impl DescribeCustomDomainAssociationsInputBuilder {
         self.custom_domain_certificate_arn = input;
         self
     }
+    /// <p>The certificate Amazon Resource Name (ARN) for the custom domain association.</p>
+    pub fn get_custom_domain_certificate_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.custom_domain_certificate_arn
+    }
     /// <p>The maximum records setting for the associated custom domain.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.max_records = ::std::option::Option::Some(input);
@@ -95,6 +105,10 @@ impl DescribeCustomDomainAssociationsInputBuilder {
         self.max_records = input;
         self
     }
+    /// <p>The maximum records setting for the associated custom domain.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        &self.max_records
+    }
     /// <p>The marker for the custom domain association.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -104,6 +118,10 @@ impl DescribeCustomDomainAssociationsInputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>The marker for the custom domain association.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// Consumes the builder and constructs a [`DescribeCustomDomainAssociationsInput`](crate::operation::describe_custom_domain_associations::DescribeCustomDomainAssociationsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_custom_domain_associations::DescribeCustomDomainAssociationsInput, ::aws_smithy_http::operation::error::BuildError>{

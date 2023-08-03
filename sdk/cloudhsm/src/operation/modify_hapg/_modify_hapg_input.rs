@@ -55,6 +55,10 @@ impl ModifyHapgInputBuilder {
         self.hapg_arn = input;
         self
     }
+    /// <p>The ARN of the high-availability partition group to modify.</p>
+    pub fn get_hapg_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hapg_arn
+    }
     /// <p>The new label for the high-availability partition group.</p>
     pub fn label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl ModifyHapgInputBuilder {
     pub fn set_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label = input;
         self
+    }
+    /// <p>The new label for the high-availability partition group.</p>
+    pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label
     }
     /// Appends an item to `partition_serial_list`.
     ///
@@ -86,6 +94,12 @@ impl ModifyHapgInputBuilder {
     ) -> Self {
         self.partition_serial_list = input;
         self
+    }
+    /// <p>The list of partition serial numbers to make members of the high-availability partition group.</p>
+    pub fn get_partition_serial_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.partition_serial_list
     }
     /// Consumes the builder and constructs a [`ModifyHapgInput`](crate::operation::modify_hapg::ModifyHapgInput).
     pub fn build(

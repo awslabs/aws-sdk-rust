@@ -60,6 +60,10 @@ impl MeetingNotificationConfigurationBuilder {
         self.sns_topic_arn = input;
         self
     }
+    /// <p>The SNS topic ARN.</p>
+    pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sns_topic_arn
+    }
     /// <p>The SQS queue ARN.</p>
     pub fn sqs_queue_arn(
         mut self,
@@ -75,6 +79,10 @@ impl MeetingNotificationConfigurationBuilder {
     ) -> Self {
         self.sqs_queue_arn = input;
         self
+    }
+    /// <p>The SQS queue ARN.</p>
+    pub fn get_sqs_queue_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sqs_queue_arn
     }
     /// Consumes the builder and constructs a [`MeetingNotificationConfiguration`](crate::types::MeetingNotificationConfiguration).
     pub fn build(self) -> crate::types::MeetingNotificationConfiguration {

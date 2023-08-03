@@ -37,6 +37,10 @@ impl CreateLicenseConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateLicenseConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_license_configuration::builders::CreateLicenseConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl CreateLicenseConfigurationFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>Name of the license configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>Description of the license configuration.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -136,6 +144,10 @@ impl CreateLicenseConfigurationFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>Description of the license configuration.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>Dimension used to track the license inventory.</p>
     pub fn license_counting_type(mut self, input: crate::types::LicenseCountingType) -> Self {
@@ -150,6 +162,12 @@ impl CreateLicenseConfigurationFluentBuilder {
         self.inner = self.inner.set_license_counting_type(input);
         self
     }
+    /// <p>Dimension used to track the license inventory.</p>
+    pub fn get_license_counting_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::LicenseCountingType> {
+        self.inner.get_license_counting_type()
+    }
     /// <p>Number of licenses managed by the license configuration.</p>
     pub fn license_count(mut self, input: i64) -> Self {
         self.inner = self.inner.license_count(input);
@@ -160,6 +178,10 @@ impl CreateLicenseConfigurationFluentBuilder {
         self.inner = self.inner.set_license_count(input);
         self
     }
+    /// <p>Number of licenses managed by the license configuration.</p>
+    pub fn get_license_count(&self) -> &::std::option::Option<i64> {
+        self.inner.get_license_count()
+    }
     /// <p>Indicates whether hard or soft license enforcement is used. Exceeding a hard limit blocks the launch of new instances.</p>
     pub fn license_count_hard_limit(mut self, input: bool) -> Self {
         self.inner = self.inner.license_count_hard_limit(input);
@@ -169,6 +191,10 @@ impl CreateLicenseConfigurationFluentBuilder {
     pub fn set_license_count_hard_limit(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_license_count_hard_limit(input);
         self
+    }
+    /// <p>Indicates whether hard or soft license enforcement is used. Exceeding a hard limit blocks the launch of new instances.</p>
+    pub fn get_license_count_hard_limit(&self) -> &::std::option::Option<bool> {
+        self.inner.get_license_count_hard_limit()
     }
     /// Appends an item to `LicenseRules`.
     ///
@@ -204,6 +230,19 @@ impl CreateLicenseConfigurationFluentBuilder {
         self.inner = self.inner.set_license_rules(input);
         self
     }
+    /// <p>License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). The available rules vary by dimension, as follows.</p>
+    /// <ul>
+    /// <li> <p> <code>Cores</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> | <code>maximumCores</code> | <code>minimumCores</code> </p> </li>
+    /// <li> <p> <code>Instances</code> dimension: <code>allowedTenancy</code> | <code>maximumCores</code> | <code>minimumCores</code> | <code>maximumSockets</code> | <code>minimumSockets</code> | <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li>
+    /// <li> <p> <code>Sockets</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> | <code>maximumSockets</code> | <code>minimumSockets</code> </p> </li>
+    /// <li> <p> <code>vCPUs</code> dimension: <code>allowedTenancy</code> | <code>honorVcpuOptimization</code> | <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li>
+    /// </ul>
+    /// <p>The unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180. The possible values for <code>allowedTenancy</code> are <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and <code>EC2-DedicatedInstance</code>. The possible values for <code>honorVcpuOptimization</code> are <code>True</code> and <code>False</code>.</p>
+    pub fn get_license_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_license_rules()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -221,6 +260,10 @@ impl CreateLicenseConfigurationFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>Tags to add to the license configuration.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>When true, disassociates a resource when software is uninstalled.</p>
     pub fn disassociate_when_not_found(mut self, input: bool) -> Self {
         self.inner = self.inner.disassociate_when_not_found(input);
@@ -230,6 +273,10 @@ impl CreateLicenseConfigurationFluentBuilder {
     pub fn set_disassociate_when_not_found(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_disassociate_when_not_found(input);
         self
+    }
+    /// <p>When true, disassociates a resource when software is uninstalled.</p>
+    pub fn get_disassociate_when_not_found(&self) -> &::std::option::Option<bool> {
+        self.inner.get_disassociate_when_not_found()
     }
     /// Appends an item to `ProductInformationList`.
     ///
@@ -247,5 +294,11 @@ impl CreateLicenseConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_product_information_list(input);
         self
+    }
+    /// <p>Product information.</p>
+    pub fn get_product_information_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductInformation>> {
+        self.inner.get_product_information_list()
     }
 }

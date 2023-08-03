@@ -50,6 +50,12 @@ impl DeleteRuleGroupOutputBuilder {
         self.rule_group_response = input;
         self
     }
+    /// <p>The high-level properties of a rule group. This, along with the <code>RuleGroup</code>, define the rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
+    pub fn get_rule_group_response(
+        &self,
+    ) -> &::std::option::Option<crate::types::RuleGroupResponse> {
+        &self.rule_group_response
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

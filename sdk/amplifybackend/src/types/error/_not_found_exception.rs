@@ -75,6 +75,10 @@ impl NotFoundExceptionBuilder {
         self.message = input;
         self
     }
+    /// <p>An error message to inform that the request has failed.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The type of resource that is not found.</p>
     pub fn resource_type(
         mut self,
@@ -90,6 +94,10 @@ impl NotFoundExceptionBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>The type of resource that is not found.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

@@ -70,6 +70,10 @@ impl AcceptAddressTransferInputBuilder {
         self.address = input;
         self
     }
+    /// <p>The Elastic IP address you are accepting for transfer.</p>
+    pub fn get_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.address
+    }
     /// Appends an item to `tag_specifications`.
     ///
     /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
@@ -101,6 +105,18 @@ impl AcceptAddressTransferInputBuilder {
         self.tag_specifications = input;
         self
     }
+    /// <p> <code>tag</code>:<key>
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
+    /// <code>Owner</code> and the value
+    /// <code>TeamA</code>, specify
+    /// <code>tag:Owner</code> for the filter name and
+    /// <code>TeamA</code> for the filter value.
+    /// </key></p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        &self.tag_specifications
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -110,6 +126,10 @@ impl AcceptAddressTransferInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`AcceptAddressTransferInput`](crate::operation::accept_address_transfer::AcceptAddressTransferInput).
     pub fn build(

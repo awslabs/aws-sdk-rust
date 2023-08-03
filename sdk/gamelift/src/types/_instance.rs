@@ -157,6 +157,10 @@ impl InstanceBuilder {
         self.fleet_id = input;
         self
     }
+    /// <p>A unique identifier for the fleet that the instance is in.</p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_id
+    }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
@@ -173,6 +177,13 @@ impl InstanceBuilder {
         self.fleet_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+    /// <region>
+    /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
+    /// </region></code>.</p>
+    pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_arn
+    }
     /// <p>A unique identifier for the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -183,6 +194,10 @@ impl InstanceBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>A unique identifier for the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>IP address that is assigned to the instance.</p>
     pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_address = ::std::option::Option::Some(input.into());
@@ -192,6 +207,10 @@ impl InstanceBuilder {
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_address = input;
         self
+    }
+    /// <p>IP address that is assigned to the instance.</p>
+    pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_address
     }
     /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
     /// <ul>
@@ -231,6 +250,24 @@ impl InstanceBuilder {
         self.dns_name = input;
         self
     }
+    /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
+    /// <ul>
+    /// <li> <p>TLS-enabled fleets: <code>
+    /// <unique identifier>
+    /// .
+    /// <region identifier>
+    /// .amazongamelift.com
+    /// </region>
+    /// </unique></code>.</p> </li>
+    /// <li> <p>Non-TLS-enabled fleets: <code>ec2-
+    /// <unique identifier>
+    /// .compute.amazonaws.com
+    /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p> </li>
+    /// </ul>
+    /// <p>When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP address.</p>
+    pub fn get_dns_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dns_name
+    }
     /// <p>Operating system that is running on this instance. </p>
     pub fn operating_system(mut self, input: crate::types::OperatingSystem) -> Self {
         self.operating_system = ::std::option::Option::Some(input);
@@ -244,6 +281,10 @@ impl InstanceBuilder {
         self.operating_system = input;
         self
     }
+    /// <p>Operating system that is running on this instance. </p>
+    pub fn get_operating_system(&self) -> &::std::option::Option<crate::types::OperatingSystem> {
+        &self.operating_system
+    }
     /// <p>Amazon EC2 instance type that defines the computing resources of this instance. </p>
     pub fn r#type(mut self, input: crate::types::Ec2InstanceType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -253,6 +294,10 @@ impl InstanceBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::Ec2InstanceType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>Amazon EC2 instance type that defines the computing resources of this instance. </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::Ec2InstanceType> {
+        &self.r#type
     }
     /// <p>Current status of the instance. Possible statuses include the following:</p>
     /// <ul>
@@ -277,6 +322,15 @@ impl InstanceBuilder {
         self.status = input;
         self
     }
+    /// <p>Current status of the instance. Possible statuses include the following:</p>
+    /// <ul>
+    /// <li> <p> <b>PENDING</b> -- The instance is in the process of being created and launching server processes as defined in the fleet's run-time configuration. </p> </li>
+    /// <li> <p> <b>ACTIVE</b> -- The instance has been successfully created and at least one server process has successfully launched and reported back to Amazon GameLift that it is ready to host a game session. The instance is now considered ready to host game sessions. </p> </li>
+    /// <li> <p> <b>TERMINATING</b> -- The instance is in the process of shutting down. This may happen to reduce capacity during a scaling down event or to recycle resources in the event of a problem.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::InstanceStatus> {
+        &self.status
+    }
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -290,6 +344,10 @@ impl InstanceBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The fleet location of the instance, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
@@ -299,6 +357,10 @@ impl InstanceBuilder {
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
+    }
+    /// <p>The fleet location of the instance, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
     }
     /// Consumes the builder and constructs a [`Instance`](crate::types::Instance).
     pub fn build(self) -> crate::types::Instance {

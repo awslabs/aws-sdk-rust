@@ -36,6 +36,10 @@ impl UpdateSlotFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateSlot as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_slot::builders::UpdateSlotInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl UpdateSlotFluentBuilder {
         self.inner = self.inner.set_slot_id(input);
         self
     }
+    /// <p>The unique identifier for the slot to update.</p>
+    pub fn get_slot_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_slot_id()
+    }
     /// <p>The new name for the slot.</p>
     pub fn slot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.slot_name(input.into());
@@ -127,6 +135,10 @@ impl UpdateSlotFluentBuilder {
     pub fn set_slot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_slot_name(input);
         self
+    }
+    /// <p>The new name for the slot.</p>
+    pub fn get_slot_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_slot_name()
     }
     /// <p>The new description for the slot.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -138,6 +150,10 @@ impl UpdateSlotFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>The new description for the slot.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The unique identifier of the new slot type to associate with this slot. </p>
     pub fn slot_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.slot_type_id(input.into());
@@ -147,6 +163,10 @@ impl UpdateSlotFluentBuilder {
     pub fn set_slot_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_slot_type_id(input);
         self
+    }
+    /// <p>The unique identifier of the new slot type to associate with this slot. </p>
+    pub fn get_slot_type_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_slot_type_id()
     }
     /// <p>A new set of prompts that Amazon Lex sends to the user to elicit a response the provides a value for the slot.</p>
     pub fn value_elicitation_setting(
@@ -164,6 +184,12 @@ impl UpdateSlotFluentBuilder {
         self.inner = self.inner.set_value_elicitation_setting(input);
         self
     }
+    /// <p>A new set of prompts that Amazon Lex sends to the user to elicit a response the provides a value for the slot.</p>
+    pub fn get_value_elicitation_setting(
+        &self,
+    ) -> &::std::option::Option<crate::types::SlotValueElicitationSetting> {
+        self.inner.get_value_elicitation_setting()
+    }
     /// <p>New settings that determine how slot values are formatted in Amazon CloudWatch logs. </p>
     pub fn obfuscation_setting(mut self, input: crate::types::ObfuscationSetting) -> Self {
         self.inner = self.inner.obfuscation_setting(input);
@@ -177,6 +203,12 @@ impl UpdateSlotFluentBuilder {
         self.inner = self.inner.set_obfuscation_setting(input);
         self
     }
+    /// <p>New settings that determine how slot values are formatted in Amazon CloudWatch logs. </p>
+    pub fn get_obfuscation_setting(
+        &self,
+    ) -> &::std::option::Option<crate::types::ObfuscationSetting> {
+        self.inner.get_obfuscation_setting()
+    }
     /// <p>The unique identifier of the bot that contains the slot.</p>
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_id(input.into());
@@ -186,6 +218,10 @@ impl UpdateSlotFluentBuilder {
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bot_id(input);
         self
+    }
+    /// <p>The unique identifier of the bot that contains the slot.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bot_id()
     }
     /// <p>The version of the bot that contains the slot. Must always be <code>DRAFT</code>.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -197,6 +233,10 @@ impl UpdateSlotFluentBuilder {
         self.inner = self.inner.set_bot_version(input);
         self
     }
+    /// <p>The version of the bot that contains the slot. Must always be <code>DRAFT</code>.</p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bot_version()
+    }
     /// <p>The identifier of the language and locale that contains the slot. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.locale_id(input.into());
@@ -207,6 +247,10 @@ impl UpdateSlotFluentBuilder {
         self.inner = self.inner.set_locale_id(input);
         self
     }
+    /// <p>The identifier of the language and locale that contains the slot. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
+    pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_locale_id()
+    }
     /// <p>The identifier of the intent that contains the slot.</p>
     pub fn intent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.intent_id(input.into());
@@ -216,6 +260,10 @@ impl UpdateSlotFluentBuilder {
     pub fn set_intent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_intent_id(input);
         self
+    }
+    /// <p>The identifier of the intent that contains the slot.</p>
+    pub fn get_intent_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_intent_id()
     }
     /// <p>Determines whether the slot accepts multiple values in one response. Multiple value slots are only available in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>.</p>
     /// <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
@@ -232,6 +280,13 @@ impl UpdateSlotFluentBuilder {
         self.inner = self.inner.set_multiple_values_setting(input);
         self
     }
+    /// <p>Determines whether the slot accepts multiple values in one response. Multiple value slots are only available in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>.</p>
+    /// <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
+    pub fn get_multiple_values_setting(
+        &self,
+    ) -> &::std::option::Option<crate::types::MultipleValuesSetting> {
+        self.inner.get_multiple_values_setting()
+    }
     /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
     pub fn sub_slot_setting(mut self, input: crate::types::SubSlotSetting) -> Self {
         self.inner = self.inner.sub_slot_setting(input);
@@ -244,5 +299,9 @@ impl UpdateSlotFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sub_slot_setting(input);
         self
+    }
+    /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
+    pub fn get_sub_slot_setting(&self) -> &::std::option::Option<crate::types::SubSlotSetting> {
+        self.inner.get_sub_slot_setting()
     }
 }

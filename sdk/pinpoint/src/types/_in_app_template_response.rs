@@ -136,6 +136,10 @@ impl InAppTemplateResponseBuilder {
         self.arn = input;
         self
     }
+    /// <p>The resource arn of the template.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Appends an item to `content`.
     ///
     /// To override the contents of this collection use [`set_content`](Self::set_content).
@@ -155,6 +159,12 @@ impl InAppTemplateResponseBuilder {
         self.content = input;
         self
     }
+    /// <p>The content of the message, can include up to 5 modals. Each modal must contain a message, a header, and background color. ImageUrl and buttons are optional.</p>
+    pub fn get_content(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InAppMessageContent>> {
+        &self.content
+    }
     /// <p>The creation date of the template.</p>
     pub fn creation_date(
         mut self,
@@ -170,6 +180,10 @@ impl InAppTemplateResponseBuilder {
     ) -> Self {
         self.creation_date = input;
         self
+    }
+    /// <p>The creation date of the template.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_date
     }
     /// Adds a key-value pair to `custom_config`.
     ///
@@ -196,6 +210,14 @@ impl InAppTemplateResponseBuilder {
         self.custom_config = input;
         self
     }
+    /// <p>Custom config to be sent to client.</p>
+    pub fn get_custom_config(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.custom_config
+    }
     /// <p>The last modified date of the template.</p>
     pub fn last_modified_date(
         mut self,
@@ -212,6 +234,10 @@ impl InAppTemplateResponseBuilder {
         self.last_modified_date = input;
         self
     }
+    /// <p>The last modified date of the template.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_date
+    }
     /// <p>The layout of the message.</p>
     pub fn layout(mut self, input: crate::types::Layout) -> Self {
         self.layout = ::std::option::Option::Some(input);
@@ -221,6 +247,10 @@ impl InAppTemplateResponseBuilder {
     pub fn set_layout(mut self, input: ::std::option::Option<crate::types::Layout>) -> Self {
         self.layout = input;
         self
+    }
+    /// <p>The layout of the message.</p>
+    pub fn get_layout(&self) -> &::std::option::Option<crate::types::Layout> {
+        &self.layout
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -247,6 +277,14 @@ impl InAppTemplateResponseBuilder {
         self.tags = input;
         self
     }
+    /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The description of the template.</p>
     pub fn template_description(
         mut self,
@@ -262,6 +300,10 @@ impl InAppTemplateResponseBuilder {
     ) -> Self {
         self.template_description = input;
         self
+    }
+    /// <p>The description of the template.</p>
+    pub fn get_template_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_description
     }
     /// <p>The name of the template.</p>
     pub fn template_name(
@@ -279,6 +321,10 @@ impl InAppTemplateResponseBuilder {
         self.template_name = input;
         self
     }
+    /// <p>The name of the template.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
     /// <p>The type of the template.</p>
     pub fn template_type(mut self, input: crate::types::TemplateType) -> Self {
         self.template_type = ::std::option::Option::Some(input);
@@ -292,6 +338,10 @@ impl InAppTemplateResponseBuilder {
         self.template_type = input;
         self
     }
+    /// <p>The type of the template.</p>
+    pub fn get_template_type(&self) -> &::std::option::Option<crate::types::TemplateType> {
+        &self.template_type
+    }
     /// <p>The version id of the template.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -301,6 +351,10 @@ impl InAppTemplateResponseBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The version id of the template.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`InAppTemplateResponse`](crate::types::InAppTemplateResponse).
     pub fn build(self) -> crate::types::InAppTemplateResponse {

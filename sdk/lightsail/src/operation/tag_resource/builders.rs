@@ -37,6 +37,10 @@ impl TagResourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the TagResource as a reference.
+    pub fn as_input(&self) -> &crate::operation::tag_resource::builders::TagResourceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,6 +129,10 @@ impl TagResourceFluentBuilder {
         self.inner = self.inner.set_resource_name(input);
         self
     }
+    /// <p>The name of the resource to which you are adding tags.</p>
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_name()
+    }
     /// <p>The Amazon Resource Name (ARN) of the resource to which you want to add a tag.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
@@ -134,6 +142,10 @@ impl TagResourceFluentBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource to which you want to add a tag.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
     }
     /// Appends an item to `tags`.
     ///
@@ -151,5 +163,9 @@ impl TagResourceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tag key and optional value.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

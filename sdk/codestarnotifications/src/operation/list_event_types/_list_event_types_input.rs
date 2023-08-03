@@ -64,6 +64,12 @@ impl ListEventTypesInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>The filters to use to return information by service or resource type.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListEventTypesFilter>> {
+        &self.filters
+    }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -74,6 +80,10 @@ impl ListEventTypesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>A non-negative integer used to limit the number of returned results. The default number is 50. The maximum number of results that can be returned is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -83,6 +93,10 @@ impl ListEventTypesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>A non-negative integer used to limit the number of returned results. The default number is 50. The maximum number of results that can be returned is 100.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListEventTypesInput`](crate::operation::list_event_types::ListEventTypesInput).
     pub fn build(

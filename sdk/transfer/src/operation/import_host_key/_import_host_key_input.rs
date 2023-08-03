@@ -73,6 +73,10 @@ impl ImportHostKeyInputBuilder {
         self.server_id = input;
         self
     }
+    /// <p>The identifier of the server that contains the host key that you are importing.</p>
+    pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_id
+    }
     /// <p>The private key portion of an SSH key pair.</p>
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
     pub fn host_key_body(
@@ -91,6 +95,11 @@ impl ImportHostKeyInputBuilder {
         self.host_key_body = input;
         self
     }
+    /// <p>The private key portion of an SSH key pair.</p>
+    /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
+    pub fn get_host_key_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host_key_body
+    }
     /// <p>The text description that identifies this host key.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -100,6 +109,10 @@ impl ImportHostKeyInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The text description that identifies this host key.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `tags`.
     ///
@@ -119,6 +132,10 @@ impl ImportHostKeyInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Key-value pairs that can be used to group and search for host keys.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`ImportHostKeyInput`](crate::operation::import_host_key::ImportHostKeyInput).
     pub fn build(

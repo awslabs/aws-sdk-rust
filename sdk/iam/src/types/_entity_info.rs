@@ -77,6 +77,11 @@ impl EntityInfoBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
+    /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the entity (user or role).</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -86,6 +91,10 @@ impl EntityInfoBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the entity (user or role).</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The type of entity (user or role).</p>
     pub fn r#type(mut self, input: crate::types::PolicyOwnerEntityType) -> Self {
@@ -100,6 +109,10 @@ impl EntityInfoBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of entity (user or role).</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::PolicyOwnerEntityType> {
+        &self.r#type
+    }
     /// <p>The identifier of the entity (user or role).</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -110,6 +123,10 @@ impl EntityInfoBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the entity (user or role).</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The path to the entity (user or role). For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path = ::std::option::Option::Some(input.into());
@@ -119,6 +136,10 @@ impl EntityInfoBuilder {
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path = input;
         self
+    }
+    /// <p>The path to the entity (user or role). For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
     }
     /// Consumes the builder and constructs a [`EntityInfo`](crate::types::EntityInfo).
     pub fn build(self) -> crate::types::EntityInfo {

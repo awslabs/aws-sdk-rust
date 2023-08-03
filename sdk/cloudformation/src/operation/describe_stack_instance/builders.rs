@@ -37,6 +37,13 @@ impl DescribeStackInstanceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeStackInstance as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_stack_instance::builders::DescribeStackInstanceInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl DescribeStackInstanceFluentBuilder {
         self.inner = self.inner.set_stack_set_name(input);
         self
     }
+    /// <p>The name or the unique stack ID of the stack set that you want to get stack instance information for.</p>
+    pub fn get_stack_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stack_set_name()
+    }
     /// <p>The ID of an Amazon Web Services account that's associated with this stack instance.</p>
     pub fn stack_instance_account(
         mut self,
@@ -149,6 +160,10 @@ impl DescribeStackInstanceFluentBuilder {
         self.inner = self.inner.set_stack_instance_account(input);
         self
     }
+    /// <p>The ID of an Amazon Web Services account that's associated with this stack instance.</p>
+    pub fn get_stack_instance_account(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stack_instance_account()
+    }
     /// <p>The name of a Region that's associated with this stack instance.</p>
     pub fn stack_instance_region(
         mut self,
@@ -164,6 +179,10 @@ impl DescribeStackInstanceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_stack_instance_region(input);
         self
+    }
+    /// <p>The name of a Region that's associated with this stack instance.</p>
+    pub fn get_stack_instance_region(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stack_instance_region()
     }
     /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
     /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
@@ -184,5 +203,14 @@ impl DescribeStackInstanceFluentBuilder {
     pub fn set_call_as(mut self, input: ::std::option::Option<crate::types::CallAs>) -> Self {
         self.inner = self.inner.set_call_as(input);
         self
+    }
+    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <ul>
+    /// <li> <p>If you are signed in to the management account, specify <code>SELF</code>.</p> </li>
+    /// <li> <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon Web Services account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
+    /// </ul>
+    pub fn get_call_as(&self) -> &::std::option::Option<crate::types::CallAs> {
+        self.inner.get_call_as()
     }
 }

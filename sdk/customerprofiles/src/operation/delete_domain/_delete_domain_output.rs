@@ -46,6 +46,10 @@ impl DeleteDomainOutputBuilder {
         self.message = input;
         self
     }
+    /// <p>A message that indicates the delete request is done.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

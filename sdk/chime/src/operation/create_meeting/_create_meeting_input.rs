@@ -104,6 +104,10 @@ impl CreateMeetingInputBuilder {
         self.client_request_token = input;
         self
     }
+    /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
+    }
     /// <p>The external meeting ID.</p>
     pub fn external_meeting_id(
         mut self,
@@ -119,6 +123,10 @@ impl CreateMeetingInputBuilder {
     ) -> Self {
         self.external_meeting_id = input;
         self
+    }
+    /// <p>The external meeting ID.</p>
+    pub fn get_external_meeting_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.external_meeting_id
     }
     /// <p>Reserved.</p>
     pub fn meeting_host_id(
@@ -136,6 +144,10 @@ impl CreateMeetingInputBuilder {
         self.meeting_host_id = input;
         self
     }
+    /// <p>Reserved.</p>
+    pub fn get_meeting_host_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.meeting_host_id
+    }
     /// <p> The Region in which to create the meeting. Default: <code>us-east-1</code>. </p>
     /// <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>
     pub fn media_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -147,6 +159,11 @@ impl CreateMeetingInputBuilder {
     pub fn set_media_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.media_region = input;
         self
+    }
+    /// <p> The Region in which to create the meeting. Default: <code>us-east-1</code>. </p>
+    /// <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>
+    pub fn get_media_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.media_region
     }
     /// Appends an item to `tags`.
     ///
@@ -167,6 +184,10 @@ impl CreateMeetingInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tag key-value pairs.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
     pub fn notifications_configuration(
         mut self,
@@ -182,6 +203,12 @@ impl CreateMeetingInputBuilder {
     ) -> Self {
         self.notifications_configuration = input;
         self
+    }
+    /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
+    pub fn get_notifications_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::MeetingNotificationConfiguration> {
+        &self.notifications_configuration
     }
     /// Consumes the builder and constructs a [`CreateMeetingInput`](crate::operation::create_meeting::CreateMeetingInput).
     pub fn build(

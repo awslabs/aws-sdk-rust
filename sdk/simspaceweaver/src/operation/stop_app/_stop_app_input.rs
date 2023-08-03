@@ -55,6 +55,10 @@ impl StopAppInputBuilder {
         self.simulation = input;
         self
     }
+    /// <p>The name of the simulation of the app.</p>
+    pub fn get_simulation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.simulation
+    }
     /// <p>The name of the domain of the app.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl StopAppInputBuilder {
         self.domain = input;
         self
     }
+    /// <p>The name of the domain of the app.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
+    }
     /// <p>The name of the app.</p>
     pub fn app(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app = ::std::option::Option::Some(input.into());
@@ -74,6 +82,10 @@ impl StopAppInputBuilder {
     pub fn set_app(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app = input;
         self
+    }
+    /// <p>The name of the app.</p>
+    pub fn get_app(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app
     }
     /// Consumes the builder and constructs a [`StopAppInput`](crate::operation::stop_app::StopAppInput).
     pub fn build(

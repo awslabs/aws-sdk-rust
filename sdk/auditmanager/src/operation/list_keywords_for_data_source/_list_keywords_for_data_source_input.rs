@@ -55,6 +55,10 @@ impl ListKeywordsForDataSourceInputBuilder {
         self.source = input;
         self
     }
+    /// <p> The control mapping data source that the keywords apply to. </p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::SourceType> {
+        &self.source
+    }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl ListKeywordsForDataSourceInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p> The pagination token that's used to fetch the next set of results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p> Represents the maximum number of results on a page or for an API request call. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -74,6 +82,10 @@ impl ListKeywordsForDataSourceInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p> Represents the maximum number of results on a page or for an API request call. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListKeywordsForDataSourceInput`](crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceInput).
     pub fn build(

@@ -55,6 +55,10 @@ impl DeleteEventInputBuilder {
         self.event_id = input;
         self
     }
+    /// <p>The ID of the event to delete.</p>
+    pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_id
+    }
     /// <p>The name of the event type.</p>
     pub fn event_type_name(
         mut self,
@@ -71,6 +75,10 @@ impl DeleteEventInputBuilder {
         self.event_type_name = input;
         self
     }
+    /// <p>The name of the event type.</p>
+    pub fn get_event_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_type_name
+    }
     /// <p>Specifies whether or not to delete any predictions associated with the event. If set to <code>True</code>, </p>
     pub fn delete_audit_history(mut self, input: bool) -> Self {
         self.delete_audit_history = ::std::option::Option::Some(input);
@@ -80,6 +88,10 @@ impl DeleteEventInputBuilder {
     pub fn set_delete_audit_history(mut self, input: ::std::option::Option<bool>) -> Self {
         self.delete_audit_history = input;
         self
+    }
+    /// <p>Specifies whether or not to delete any predictions associated with the event. If set to <code>True</code>, </p>
+    pub fn get_delete_audit_history(&self) -> &::std::option::Option<bool> {
+        &self.delete_audit_history
     }
     /// Consumes the builder and constructs a [`DeleteEventInput`](crate::operation::delete_event::DeleteEventInput).
     pub fn build(

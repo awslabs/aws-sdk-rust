@@ -94,6 +94,10 @@ impl ListedHostKeyBuilder {
         self.arn = input;
         self
     }
+    /// <p>The unique Amazon Resource Name (ARN) of the host key.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>A unique identifier for the host key.</p>
     pub fn host_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host_key_id = ::std::option::Option::Some(input.into());
@@ -103,6 +107,10 @@ impl ListedHostKeyBuilder {
     pub fn set_host_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.host_key_id = input;
         self
+    }
+    /// <p>A unique identifier for the host key.</p>
+    pub fn get_host_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host_key_id
     }
     /// <p>The public key fingerprint, which is a short sequence of bytes used to identify the longer public key.</p>
     pub fn fingerprint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -114,6 +122,10 @@ impl ListedHostKeyBuilder {
         self.fingerprint = input;
         self
     }
+    /// <p>The public key fingerprint, which is a short sequence of bytes used to identify the longer public key.</p>
+    pub fn get_fingerprint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fingerprint
+    }
     /// <p>The current description for the host key. You can change it by calling the <code>UpdateHostKey</code> operation and providing a new description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -123,6 +135,10 @@ impl ListedHostKeyBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The current description for the host key. You can change it by calling the <code>UpdateHostKey</code> operation and providing a new description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The encryption algorithm that is used for the host key. The <code>Type</code> parameter is specified by using one of the following values:</p>
     /// <ul>
@@ -148,6 +164,17 @@ impl ListedHostKeyBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The encryption algorithm that is used for the host key. The <code>Type</code> parameter is specified by using one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>ssh-rsa</code> </p> </li>
+    /// <li> <p> <code>ssh-ed25519</code> </p> </li>
+    /// <li> <p> <code>ecdsa-sha2-nistp256</code> </p> </li>
+    /// <li> <p> <code>ecdsa-sha2-nistp384</code> </p> </li>
+    /// <li> <p> <code>ecdsa-sha2-nistp521</code> </p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// <p>The date on which the host key was added to the server.</p>
     pub fn date_imported(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.date_imported = ::std::option::Option::Some(input);
@@ -160,6 +187,10 @@ impl ListedHostKeyBuilder {
     ) -> Self {
         self.date_imported = input;
         self
+    }
+    /// <p>The date on which the host key was added to the server.</p>
+    pub fn get_date_imported(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.date_imported
     }
     /// Consumes the builder and constructs a [`ListedHostKey`](crate::types::ListedHostKey).
     pub fn build(self) -> crate::types::ListedHostKey {

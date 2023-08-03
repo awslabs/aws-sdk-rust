@@ -122,6 +122,10 @@ impl CreateDomainOutputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The unique name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The default number of days until the data within the domain expires.</p>
     pub fn default_expiration_days(mut self, input: i32) -> Self {
         self.default_expiration_days = ::std::option::Option::Some(input);
@@ -131,6 +135,10 @@ impl CreateDomainOutputBuilder {
     pub fn set_default_expiration_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.default_expiration_days = input;
         self
+    }
+    /// <p>The default number of days until the data within the domain expires.</p>
+    pub fn get_default_expiration_days(&self) -> &::std::option::Option<i32> {
+        &self.default_expiration_days
     }
     /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.</p>
     pub fn default_encryption_key(
@@ -148,6 +156,10 @@ impl CreateDomainOutputBuilder {
         self.default_encryption_key = input;
         self
     }
+    /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.</p>
+    pub fn get_default_encryption_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_encryption_key
+    }
     /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications.</p>
     pub fn dead_letter_queue_url(
         mut self,
@@ -164,6 +176,10 @@ impl CreateDomainOutputBuilder {
         self.dead_letter_queue_url = input;
         self
     }
+    /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications.</p>
+    pub fn get_dead_letter_queue_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dead_letter_queue_url
+    }
     /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
     /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
     pub fn matching(mut self, input: crate::types::MatchingResponse) -> Self {
@@ -179,6 +195,11 @@ impl CreateDomainOutputBuilder {
         self.matching = input;
         self
     }
+    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+    /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
+    pub fn get_matching(&self) -> &::std::option::Option<crate::types::MatchingResponse> {
+        &self.matching
+    }
     /// <p>The process of matching duplicate profiles using the Rule-Based matching. If <code>RuleBasedMatching</code> = true, Amazon Connect Customer Profiles will start to match and merge your profiles according to your configuration in the <code>RuleBasedMatchingRequest</code>. You can use the <code>ListRuleBasedMatches</code> and <code>GetSimilarProfiles</code> API to return and review the results. Also, if you have configured <code>ExportingConfig</code> in the <code>RuleBasedMatchingRequest</code>, you can download the results from S3.</p>
     pub fn rule_based_matching(mut self, input: crate::types::RuleBasedMatchingResponse) -> Self {
         self.rule_based_matching = ::std::option::Option::Some(input);
@@ -191,6 +212,12 @@ impl CreateDomainOutputBuilder {
     ) -> Self {
         self.rule_based_matching = input;
         self
+    }
+    /// <p>The process of matching duplicate profiles using the Rule-Based matching. If <code>RuleBasedMatching</code> = true, Amazon Connect Customer Profiles will start to match and merge your profiles according to your configuration in the <code>RuleBasedMatchingRequest</code>. You can use the <code>ListRuleBasedMatches</code> and <code>GetSimilarProfiles</code> API to return and review the results. Also, if you have configured <code>ExportingConfig</code> in the <code>RuleBasedMatchingRequest</code>, you can download the results from S3.</p>
+    pub fn get_rule_based_matching(
+        &self,
+    ) -> &::std::option::Option<crate::types::RuleBasedMatchingResponse> {
+        &self.rule_based_matching
     }
     /// <p>The timestamp of when the domain was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -205,6 +232,10 @@ impl CreateDomainOutputBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The timestamp of when the domain was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The timestamp of when the domain was most recently edited.</p>
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_at = ::std::option::Option::Some(input);
@@ -217,6 +248,10 @@ impl CreateDomainOutputBuilder {
     ) -> Self {
         self.last_updated_at = input;
         self
+    }
+    /// <p>The timestamp of when the domain was most recently edited.</p>
+    pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_at
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -242,6 +277,14 @@ impl CreateDomainOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

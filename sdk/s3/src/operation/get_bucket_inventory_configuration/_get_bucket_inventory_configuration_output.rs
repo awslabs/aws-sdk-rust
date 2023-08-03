@@ -58,6 +58,12 @@ impl GetBucketInventoryConfigurationOutputBuilder {
         self.inventory_configuration = input;
         self
     }
+    /// <p>Specifies the inventory configuration.</p>
+    pub fn get_inventory_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::InventoryConfiguration> {
+        &self.inventory_configuration
+    }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
         self._extended_request_id = Some(extended_request_id.into());
         self

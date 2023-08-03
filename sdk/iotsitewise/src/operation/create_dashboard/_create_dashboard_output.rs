@@ -56,6 +56,10 @@ impl CreateDashboardOutputBuilder {
         self.dashboard_id = input;
         self
     }
+    /// <p>The ID of the dashboard.</p>
+    pub fn get_dashboard_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dashboard_id
+    }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the dashboard, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code> </p>
     pub fn dashboard_arn(
@@ -73,6 +77,11 @@ impl CreateDashboardOutputBuilder {
     ) -> Self {
         self.dashboard_arn = input;
         self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the dashboard, which has the following format.</p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code> </p>
+    pub fn get_dashboard_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dashboard_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

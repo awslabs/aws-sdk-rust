@@ -104,6 +104,10 @@ impl ContainerRecipeSummaryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the container recipe.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>Specifies the type of container, such as "Docker".</p>
     pub fn container_type(mut self, input: crate::types::ContainerType) -> Self {
         self.container_type = ::std::option::Option::Some(input);
@@ -117,6 +121,10 @@ impl ContainerRecipeSummaryBuilder {
         self.container_type = input;
         self
     }
+    /// <p>Specifies the type of container, such as "Docker".</p>
+    pub fn get_container_type(&self) -> &::std::option::Option<crate::types::ContainerType> {
+        &self.container_type
+    }
     /// <p>The name of the container recipe.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -126,6 +134,10 @@ impl ContainerRecipeSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the container recipe.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The system platform for the container, such as Windows or Linux.</p>
     pub fn platform(mut self, input: crate::types::Platform) -> Self {
@@ -137,6 +149,10 @@ impl ContainerRecipeSummaryBuilder {
         self.platform = input;
         self
     }
+    /// <p>The system platform for the container, such as Windows or Linux.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<crate::types::Platform> {
+        &self.platform
+    }
     /// <p>The owner of the container recipe.</p>
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner = ::std::option::Option::Some(input.into());
@@ -146,6 +162,10 @@ impl ContainerRecipeSummaryBuilder {
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner = input;
         self
+    }
+    /// <p>The owner of the container recipe.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner
     }
     /// <p>The base image for the container recipe.</p>
     pub fn parent_image(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -157,6 +177,10 @@ impl ContainerRecipeSummaryBuilder {
         self.parent_image = input;
         self
     }
+    /// <p>The base image for the container recipe.</p>
+    pub fn get_parent_image(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent_image
+    }
     /// <p>The date when this container recipe was created.</p>
     pub fn date_created(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.date_created = ::std::option::Option::Some(input.into());
@@ -166,6 +190,10 @@ impl ContainerRecipeSummaryBuilder {
     pub fn set_date_created(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.date_created = input;
         self
+    }
+    /// <p>The date when this container recipe was created.</p>
+    pub fn get_date_created(&self) -> &::std::option::Option<::std::string::String> {
+        &self.date_created
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -191,6 +219,14 @@ impl ContainerRecipeSummaryBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Tags that are attached to the container recipe.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`ContainerRecipeSummary`](crate::types::ContainerRecipeSummary).
     pub fn build(self) -> crate::types::ContainerRecipeSummary {

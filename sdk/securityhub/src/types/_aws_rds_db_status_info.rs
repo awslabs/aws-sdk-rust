@@ -64,6 +64,10 @@ impl AwsRdsDbStatusInfoBuilder {
         self.status_type = input;
         self
     }
+    /// <p>The type of status. For a read replica, the status type is read replication.</p>
+    pub fn get_status_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_type
+    }
     /// <p>Whether the read replica instance is operating normally.</p>
     pub fn normal(mut self, input: bool) -> Self {
         self.normal = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl AwsRdsDbStatusInfoBuilder {
     pub fn set_normal(mut self, input: ::std::option::Option<bool>) -> Self {
         self.normal = input;
         self
+    }
+    /// <p>Whether the read replica instance is operating normally.</p>
+    pub fn get_normal(&self) -> &::std::option::Option<bool> {
+        &self.normal
     }
     /// <p>The status of the read replica instance.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,6 +92,10 @@ impl AwsRdsDbStatusInfoBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the read replica instance.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>If the read replica is currently in an error state, provides the error details.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -93,6 +105,10 @@ impl AwsRdsDbStatusInfoBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>If the read replica is currently in an error state, provides the error details.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`AwsRdsDbStatusInfo`](crate::types::AwsRdsDbStatusInfo).
     pub fn build(self) -> crate::types::AwsRdsDbStatusInfo {

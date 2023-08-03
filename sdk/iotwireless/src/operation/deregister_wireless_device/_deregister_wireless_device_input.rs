@@ -49,6 +49,10 @@ impl DeregisterWirelessDeviceInputBuilder {
         self.identifier = input;
         self
     }
+    /// <p>The identifier of the wireless device to deregister from AWS IoT Wireless.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
+    }
     /// <p>The type of wireless device to deregister from AWS IoT Wireless, which can be <code>LoRaWAN</code> or <code>Sidewalk</code>.</p>
     pub fn wireless_device_type(mut self, input: crate::types::WirelessDeviceType) -> Self {
         self.wireless_device_type = ::std::option::Option::Some(input);
@@ -61,6 +65,12 @@ impl DeregisterWirelessDeviceInputBuilder {
     ) -> Self {
         self.wireless_device_type = input;
         self
+    }
+    /// <p>The type of wireless device to deregister from AWS IoT Wireless, which can be <code>LoRaWAN</code> or <code>Sidewalk</code>.</p>
+    pub fn get_wireless_device_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::WirelessDeviceType> {
+        &self.wireless_device_type
     }
     /// Consumes the builder and constructs a [`DeregisterWirelessDeviceInput`](crate::operation::deregister_wireless_device::DeregisterWirelessDeviceInput).
     pub fn build(

@@ -61,6 +61,10 @@ impl XksProxyAuthenticationCredentialTypeBuilder {
         self.access_key_id = input;
         self
     }
+    /// <p>A unique identifier for the raw secret access key.</p>
+    pub fn get_access_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_key_id
+    }
     /// <p>A secret string of 43-64 characters. Valid characters are a-z, A-Z, 0-9, /, +, and =.</p>
     pub fn raw_secret_access_key(
         mut self,
@@ -76,6 +80,10 @@ impl XksProxyAuthenticationCredentialTypeBuilder {
     ) -> Self {
         self.raw_secret_access_key = input;
         self
+    }
+    /// <p>A secret string of 43-64 characters. Valid characters are a-z, A-Z, 0-9, /, +, and =.</p>
+    pub fn get_raw_secret_access_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.raw_secret_access_key
     }
     /// Consumes the builder and constructs a [`XksProxyAuthenticationCredentialType`](crate::types::XksProxyAuthenticationCredentialType).
     pub fn build(self) -> crate::types::XksProxyAuthenticationCredentialType {

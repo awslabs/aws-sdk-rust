@@ -72,6 +72,10 @@ impl ImportFailureListItemBuilder {
         self.location = input;
         self
     }
+    /// <p> The location of the failure in the S3 bucket. </p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
+    }
     /// <p> The status of the import. </p>
     pub fn status(mut self, input: crate::types::ImportFailureStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -85,6 +89,10 @@ impl ImportFailureListItemBuilder {
         self.status = input;
         self
     }
+    /// <p> The status of the import. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ImportFailureStatus> {
+        &self.status
+    }
     /// <p> The type of import error. </p>
     pub fn error_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_type = ::std::option::Option::Some(input.into());
@@ -94,6 +102,10 @@ impl ImportFailureListItemBuilder {
     pub fn set_error_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_type = input;
         self
+    }
+    /// <p> The type of import error. </p>
+    pub fn get_error_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_type
     }
     /// <p> Provides the reason the import failed. </p>
     pub fn error_message(
@@ -111,6 +123,10 @@ impl ImportFailureListItemBuilder {
         self.error_message = input;
         self
     }
+    /// <p> Provides the reason the import failed. </p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
+    }
     /// <p> When the import was last updated. </p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
@@ -123,6 +139,10 @@ impl ImportFailureListItemBuilder {
     ) -> Self {
         self.last_updated_time = input;
         self
+    }
+    /// <p> When the import was last updated. </p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
     }
     /// Consumes the builder and constructs a [`ImportFailureListItem`](crate::types::ImportFailureListItem).
     pub fn build(self) -> crate::types::ImportFailureListItem {

@@ -37,6 +37,10 @@ impl SetSubnetsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SetSubnets as a reference.
+    pub fn as_input(&self) -> &crate::operation::set_subnets::builders::SetSubnetsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,6 +129,10 @@ impl SetSubnetsFluentBuilder {
         self.inner = self.inner.set_load_balancer_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
+    pub fn get_load_balancer_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_load_balancer_arn()
+    }
     /// Appends an item to `Subnets`.
     ///
     /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
@@ -149,6 +157,14 @@ impl SetSubnetsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_subnets(input);
         self
+    }
+    /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
+    /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones.</p>
+    /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
+    /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
+    /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones.</p>
+    pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_subnets()
     }
     /// Appends an item to `SubnetMappings`.
     ///
@@ -175,6 +191,16 @@ impl SetSubnetsFluentBuilder {
         self.inner = self.inner.set_subnet_mappings(input);
         self
     }
+    /// <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
+    /// <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
+    /// <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>
+    /// <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>
+    /// <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
+    pub fn get_subnet_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SubnetMapping>> {
+        self.inner.get_subnet_mappings()
+    }
     /// <p>[Network Load Balancers] The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener. .</p>
     pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
         self.inner = self.inner.ip_address_type(input);
@@ -187,5 +213,9 @@ impl SetSubnetsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ip_address_type(input);
         self
+    }
+    /// <p>[Network Load Balancers] The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener. .</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
+        self.inner.get_ip_address_type()
     }
 }

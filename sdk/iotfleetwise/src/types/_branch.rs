@@ -70,6 +70,10 @@ impl BranchBuilder {
         self.fully_qualified_name = input;
         self
     }
+    /// <p>The fully qualified name of the branch. For example, the fully qualified name of a branch might be <code>Vehicle.Body.Engine</code>.</p>
+    pub fn get_fully_qualified_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fully_qualified_name
+    }
     /// <p>A brief description of the branch.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl BranchBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A brief description of the branch.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The deprecation message for the node or the branch that was moved or deleted.</p>
     pub fn deprecation_message(
@@ -96,6 +104,10 @@ impl BranchBuilder {
         self.deprecation_message = input;
         self
     }
+    /// <p>The deprecation message for the node or the branch that was moved or deleted.</p>
+    pub fn get_deprecation_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deprecation_message
+    }
     /// <p>A comment in addition to the description.</p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment = ::std::option::Option::Some(input.into());
@@ -105,6 +117,10 @@ impl BranchBuilder {
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comment = input;
         self
+    }
+    /// <p>A comment in addition to the description.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comment
     }
     /// Consumes the builder and constructs a [`Branch`](crate::types::Branch).
     pub fn build(self) -> crate::types::Branch {

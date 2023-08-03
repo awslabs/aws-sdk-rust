@@ -143,6 +143,10 @@ impl GetWorkflowExecutionOutputBuilder {
         self.request_id = input;
         self
     }
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the build version for the Image Builder workflow resource that defines the specified runtime instance of the workflow.</p>
     pub fn workflow_build_version_arn(
         mut self,
@@ -158,6 +162,10 @@ impl GetWorkflowExecutionOutputBuilder {
     ) -> Self {
         self.workflow_build_version_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the build version for the Image Builder workflow resource that defines the specified runtime instance of the workflow.</p>
+    pub fn get_workflow_build_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_build_version_arn
     }
     /// <p>The unique identifier that Image Builder assigned to keep track of runtime details when it ran the workflow.</p>
     pub fn workflow_execution_id(
@@ -175,6 +183,10 @@ impl GetWorkflowExecutionOutputBuilder {
         self.workflow_execution_id = input;
         self
     }
+    /// <p>The unique identifier that Image Builder assigned to keep track of runtime details when it ran the workflow.</p>
+    pub fn get_workflow_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_execution_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the image resource build version that the specified runtime instance of the workflow created.</p>
     pub fn image_build_version_arn(
         mut self,
@@ -191,6 +203,10 @@ impl GetWorkflowExecutionOutputBuilder {
         self.image_build_version_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the image resource build version that the specified runtime instance of the workflow created.</p>
+    pub fn get_image_build_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_build_version_arn
+    }
     /// <p>The type of workflow that Image Builder ran for the specified runtime instance of the workflow.</p>
     pub fn r#type(mut self, input: crate::types::WorkflowType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -200,6 +216,10 @@ impl GetWorkflowExecutionOutputBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::WorkflowType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of workflow that Image Builder ran for the specified runtime instance of the workflow.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::WorkflowType> {
+        &self.r#type
     }
     /// <p>The current runtime status for the specified runtime instance of the workflow.</p>
     pub fn status(mut self, input: crate::types::WorkflowExecutionStatus) -> Self {
@@ -214,6 +234,10 @@ impl GetWorkflowExecutionOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The current runtime status for the specified runtime instance of the workflow.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::WorkflowExecutionStatus> {
+        &self.status
+    }
     /// <p>The output message from the specified runtime instance of the workflow, if applicable.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -223,6 +247,10 @@ impl GetWorkflowExecutionOutputBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>The output message from the specified runtime instance of the workflow, if applicable.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// <p>The total number of steps in the specified runtime instance of the workflow that ran. This number should equal the sum of the step counts for steps that succeeded, were skipped, and failed.</p>
     pub fn total_step_count(mut self, input: i32) -> Self {
@@ -234,6 +262,10 @@ impl GetWorkflowExecutionOutputBuilder {
         self.total_step_count = input;
         self
     }
+    /// <p>The total number of steps in the specified runtime instance of the workflow that ran. This number should equal the sum of the step counts for steps that succeeded, were skipped, and failed.</p>
+    pub fn get_total_step_count(&self) -> &::std::option::Option<i32> {
+        &self.total_step_count
+    }
     /// <p>A runtime count for the number of steps that ran successfully in the specified runtime instance of the workflow.</p>
     pub fn total_steps_succeeded(mut self, input: i32) -> Self {
         self.total_steps_succeeded = ::std::option::Option::Some(input);
@@ -243,6 +275,10 @@ impl GetWorkflowExecutionOutputBuilder {
     pub fn set_total_steps_succeeded(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_steps_succeeded = input;
         self
+    }
+    /// <p>A runtime count for the number of steps that ran successfully in the specified runtime instance of the workflow.</p>
+    pub fn get_total_steps_succeeded(&self) -> &::std::option::Option<i32> {
+        &self.total_steps_succeeded
     }
     /// <p>A runtime count for the number of steps that failed in the specified runtime instance of the workflow.</p>
     pub fn total_steps_failed(mut self, input: i32) -> Self {
@@ -254,6 +290,10 @@ impl GetWorkflowExecutionOutputBuilder {
         self.total_steps_failed = input;
         self
     }
+    /// <p>A runtime count for the number of steps that failed in the specified runtime instance of the workflow.</p>
+    pub fn get_total_steps_failed(&self) -> &::std::option::Option<i32> {
+        &self.total_steps_failed
+    }
     /// <p>A runtime count for the number of steps that were skipped in the specified runtime instance of the workflow.</p>
     pub fn total_steps_skipped(mut self, input: i32) -> Self {
         self.total_steps_skipped = ::std::option::Option::Some(input);
@@ -263,6 +303,10 @@ impl GetWorkflowExecutionOutputBuilder {
     pub fn set_total_steps_skipped(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_steps_skipped = input;
         self
+    }
+    /// <p>A runtime count for the number of steps that were skipped in the specified runtime instance of the workflow.</p>
+    pub fn get_total_steps_skipped(&self) -> &::std::option::Option<i32> {
+        &self.total_steps_skipped
     }
     /// <p>The timestamp when the specified runtime instance of the workflow started.</p>
     pub fn start_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -274,6 +318,10 @@ impl GetWorkflowExecutionOutputBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The timestamp when the specified runtime instance of the workflow started.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_time
+    }
     /// <p>The timestamp when the specified runtime instance of the workflow finished.</p>
     pub fn end_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.end_time = ::std::option::Option::Some(input.into());
@@ -283,6 +331,10 @@ impl GetWorkflowExecutionOutputBuilder {
     pub fn set_end_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>The timestamp when the specified runtime instance of the workflow finished.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.end_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

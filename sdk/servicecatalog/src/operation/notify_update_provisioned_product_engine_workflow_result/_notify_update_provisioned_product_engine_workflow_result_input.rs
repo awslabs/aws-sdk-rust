@@ -85,6 +85,10 @@ impl NotifyUpdateProvisionedProductEngineWorkflowResultInputBuilder {
         self.workflow_token = input;
         self
     }
+    /// <p> The encrypted contents of the update engine execution payload that Service Catalog sends after the Terraform product update workflow starts. </p>
+    pub fn get_workflow_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_token
+    }
     /// <p> The identifier of the record. </p>
     pub fn record_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.record_id = ::std::option::Option::Some(input.into());
@@ -94,6 +98,10 @@ impl NotifyUpdateProvisionedProductEngineWorkflowResultInputBuilder {
     pub fn set_record_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.record_id = input;
         self
+    }
+    /// <p> The identifier of the record. </p>
+    pub fn get_record_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.record_id
     }
     /// <p> The status of the update engine execution. </p>
     pub fn status(mut self, input: crate::types::EngineWorkflowStatus) -> Self {
@@ -107,6 +115,10 @@ impl NotifyUpdateProvisionedProductEngineWorkflowResultInputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p> The status of the update engine execution. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::EngineWorkflowStatus> {
+        &self.status
     }
     /// <p> The reason why the update engine execution failed. </p>
     pub fn failure_reason(
@@ -123,6 +135,10 @@ impl NotifyUpdateProvisionedProductEngineWorkflowResultInputBuilder {
     ) -> Self {
         self.failure_reason = input;
         self
+    }
+    /// <p> The reason why the update engine execution failed. </p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
     }
     /// Appends an item to `outputs`.
     ///
@@ -143,6 +159,12 @@ impl NotifyUpdateProvisionedProductEngineWorkflowResultInputBuilder {
         self.outputs = input;
         self
     }
+    /// <p> The output of the update engine execution. </p>
+    pub fn get_outputs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecordOutput>> {
+        &self.outputs
+    }
     /// <p> The idempotency token that identifies the update engine execution. </p>
     pub fn idempotency_token(
         mut self,
@@ -158,6 +180,10 @@ impl NotifyUpdateProvisionedProductEngineWorkflowResultInputBuilder {
     ) -> Self {
         self.idempotency_token = input;
         self
+    }
+    /// <p> The idempotency token that identifies the update engine execution. </p>
+    pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.idempotency_token
     }
     /// Consumes the builder and constructs a [`NotifyUpdateProvisionedProductEngineWorkflowResultInput`](crate::operation::notify_update_provisioned_product_engine_workflow_result::NotifyUpdateProvisionedProductEngineWorkflowResultInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::notify_update_provisioned_product_engine_workflow_result::NotifyUpdateProvisionedProductEngineWorkflowResultInput, ::aws_smithy_http::operation::error::BuildError>{

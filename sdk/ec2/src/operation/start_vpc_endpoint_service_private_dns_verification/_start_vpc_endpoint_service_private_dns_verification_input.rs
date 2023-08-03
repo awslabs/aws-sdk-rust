@@ -47,6 +47,10 @@ impl StartVpcEndpointServicePrivateDnsVerificationInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>The ID of the endpoint service.</p>
     pub fn service_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_id = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl StartVpcEndpointServicePrivateDnsVerificationInputBuilder {
     pub fn set_service_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_id = input;
         self
+    }
+    /// <p>The ID of the endpoint service.</p>
+    pub fn get_service_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_id
     }
     /// Consumes the builder and constructs a [`StartVpcEndpointServicePrivateDnsVerificationInput`](crate::operation::start_vpc_endpoint_service_private_dns_verification::StartVpcEndpointServicePrivateDnsVerificationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::start_vpc_endpoint_service_private_dns_verification::StartVpcEndpointServicePrivateDnsVerificationInput, ::aws_smithy_http::operation::error::BuildError>{

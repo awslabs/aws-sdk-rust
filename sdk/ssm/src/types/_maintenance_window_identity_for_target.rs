@@ -48,6 +48,10 @@ impl MaintenanceWindowIdentityForTargetBuilder {
         self.window_id = input;
         self
     }
+    /// <p>The ID of the maintenance window.</p>
+    pub fn get_window_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.window_id
+    }
     /// <p>The name of the maintenance window.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl MaintenanceWindowIdentityForTargetBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the maintenance window.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`MaintenanceWindowIdentityForTarget`](crate::types::MaintenanceWindowIdentityForTarget).
     pub fn build(self) -> crate::types::MaintenanceWindowIdentityForTarget {

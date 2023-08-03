@@ -62,6 +62,10 @@ impl CreateChannelOutputBuilder {
         self.channel_name = input;
         self
     }
+    /// <p>The name of the channel.</p>
+    pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_name
+    }
     /// <p>The ARN of the channel.</p>
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl CreateChannelOutputBuilder {
     pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_arn = input;
         self
+    }
+    /// <p>The ARN of the channel.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
     }
     /// <p>How long, in days, message data is kept for the channel.</p>
     pub fn retention_period(mut self, input: crate::types::RetentionPeriod) -> Self {
@@ -84,6 +92,10 @@ impl CreateChannelOutputBuilder {
     ) -> Self {
         self.retention_period = input;
         self
+    }
+    /// <p>How long, in days, message data is kept for the channel.</p>
+    pub fn get_retention_period(&self) -> &::std::option::Option<crate::types::RetentionPeriod> {
+        &self.retention_period
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

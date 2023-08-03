@@ -36,6 +36,12 @@ impl StartSchemaExtensionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartSchemaExtension as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_schema_extension::builders::StartSchemaExtensionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl StartSchemaExtensionFluentBuilder {
         self.inner = self.inner.set_directory_id(input);
         self
     }
+    /// <p>The identifier of the directory for which the schema extension will be applied to.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_id()
+    }
     /// <p>If true, creates a snapshot of the directory before applying the schema extension.</p>
     pub fn create_snapshot_before_schema_extension(mut self, input: bool) -> Self {
         self.inner = self.inner.create_snapshot_before_schema_extension(input);
@@ -141,6 +151,10 @@ impl StartSchemaExtensionFluentBuilder {
             .set_create_snapshot_before_schema_extension(input);
         self
     }
+    /// <p>If true, creates a snapshot of the directory before applying the schema extension.</p>
+    pub fn get_create_snapshot_before_schema_extension(&self) -> &::std::option::Option<bool> {
+        self.inner.get_create_snapshot_before_schema_extension()
+    }
     /// <p>The LDIF file represented as a string. To construct the LdifContent string, precede each line as it would be formatted in an ldif file with \n. See the example request below for more details. The file size can be no larger than 1MB.</p>
     pub fn ldif_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ldif_content(input.into());
@@ -151,6 +165,10 @@ impl StartSchemaExtensionFluentBuilder {
         self.inner = self.inner.set_ldif_content(input);
         self
     }
+    /// <p>The LDIF file represented as a string. To construct the LdifContent string, precede each line as it would be formatted in an ldif file with \n. See the example request below for more details. The file size can be no larger than 1MB.</p>
+    pub fn get_ldif_content(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ldif_content()
+    }
     /// <p>A description of the schema extension.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -160,5 +178,9 @@ impl StartSchemaExtensionFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of the schema extension.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
 }

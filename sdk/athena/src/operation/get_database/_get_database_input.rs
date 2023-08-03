@@ -47,6 +47,10 @@ impl GetDatabaseInputBuilder {
         self.catalog_name = input;
         self
     }
+    /// <p>The name of the data catalog that contains the database to return.</p>
+    pub fn get_catalog_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_name
+    }
     /// <p>The name of the database to return.</p>
     pub fn database_name(
         mut self,
@@ -62,6 +66,10 @@ impl GetDatabaseInputBuilder {
     ) -> Self {
         self.database_name = input;
         self
+    }
+    /// <p>The name of the database to return.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
     }
     /// Consumes the builder and constructs a [`GetDatabaseInput`](crate::operation::get_database::GetDatabaseInput).
     pub fn build(

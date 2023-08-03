@@ -61,6 +61,10 @@ impl MigrateWorkspaceOutputBuilder {
         self.source_workspace_id = input;
         self
     }
+    /// <p>The original identifier of the WorkSpace that is being migrated.</p>
+    pub fn get_source_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_workspace_id
+    }
     /// <p>The new identifier of the WorkSpace that is being migrated. If the migration does not succeed, the target WorkSpace ID will not be used, and the WorkSpace will still have the original WorkSpace ID.</p>
     pub fn target_workspace_id(
         mut self,
@@ -76,6 +80,10 @@ impl MigrateWorkspaceOutputBuilder {
     ) -> Self {
         self.target_workspace_id = input;
         self
+    }
+    /// <p>The new identifier of the WorkSpace that is being migrated. If the migration does not succeed, the target WorkSpace ID will not be used, and the WorkSpace will still have the original WorkSpace ID.</p>
+    pub fn get_target_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_workspace_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

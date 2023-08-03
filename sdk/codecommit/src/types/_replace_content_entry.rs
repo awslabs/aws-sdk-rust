@@ -64,6 +64,10 @@ impl ReplaceContentEntryBuilder {
         self.file_path = input;
         self
     }
+    /// <p>The path of the conflicting file.</p>
+    pub fn get_file_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_path
+    }
     /// <p>The replacement type to use when determining how to resolve the conflict.</p>
     pub fn replacement_type(mut self, input: crate::types::ReplacementTypeEnum) -> Self {
         self.replacement_type = ::std::option::Option::Some(input);
@@ -77,6 +81,12 @@ impl ReplaceContentEntryBuilder {
         self.replacement_type = input;
         self
     }
+    /// <p>The replacement type to use when determining how to resolve the conflict.</p>
+    pub fn get_replacement_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReplacementTypeEnum> {
+        &self.replacement_type
+    }
     /// <p>The base-64 encoded content to use when the replacement type is USE_NEW_CONTENT.</p>
     pub fn content(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.content = ::std::option::Option::Some(input);
@@ -86,6 +96,10 @@ impl ReplaceContentEntryBuilder {
     pub fn set_content(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.content = input;
         self
+    }
+    /// <p>The base-64 encoded content to use when the replacement type is USE_NEW_CONTENT.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.content
     }
     /// <p>The file mode to apply during conflict resoltion.</p>
     pub fn file_mode(mut self, input: crate::types::FileModeTypeEnum) -> Self {
@@ -99,6 +113,10 @@ impl ReplaceContentEntryBuilder {
     ) -> Self {
         self.file_mode = input;
         self
+    }
+    /// <p>The file mode to apply during conflict resoltion.</p>
+    pub fn get_file_mode(&self) -> &::std::option::Option<crate::types::FileModeTypeEnum> {
+        &self.file_mode
     }
     /// Consumes the builder and constructs a [`ReplaceContentEntry`](crate::types::ReplaceContentEntry).
     pub fn build(self) -> crate::types::ReplaceContentEntry {

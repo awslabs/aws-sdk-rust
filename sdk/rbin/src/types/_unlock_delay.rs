@@ -48,6 +48,10 @@ impl UnlockDelayBuilder {
         self.unlock_delay_value = input;
         self
     }
+    /// <p>The unlock delay period, measured in the unit specified for <b> UnlockDelayUnit</b>.</p>
+    pub fn get_unlock_delay_value(&self) -> &::std::option::Option<i32> {
+        &self.unlock_delay_value
+    }
     /// <p>The unit of time in which to measure the unlock delay. Currently, the unlock delay can be measure only in days.</p>
     pub fn unlock_delay_unit(mut self, input: crate::types::UnlockDelayUnit) -> Self {
         self.unlock_delay_unit = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl UnlockDelayBuilder {
     ) -> Self {
         self.unlock_delay_unit = input;
         self
+    }
+    /// <p>The unit of time in which to measure the unlock delay. Currently, the unlock delay can be measure only in days.</p>
+    pub fn get_unlock_delay_unit(&self) -> &::std::option::Option<crate::types::UnlockDelayUnit> {
+        &self.unlock_delay_unit
     }
     /// Consumes the builder and constructs a [`UnlockDelay`](crate::types::UnlockDelay).
     pub fn build(self) -> crate::types::UnlockDelay {

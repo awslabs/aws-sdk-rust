@@ -37,6 +37,10 @@ impl CreateTrustFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateTrust as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_trust::builders::CreateTrustInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl CreateTrustFluentBuilder {
         self.inner = self.inner.set_directory_id(input);
         self
     }
+    /// <p>The Directory ID of the Managed Microsoft AD directory for which to establish the trust relationship.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_id()
+    }
     /// <p>The Fully Qualified Domain Name (FQDN) of the external domain for which to create the trust relationship.</p>
     pub fn remote_domain_name(
         mut self,
@@ -134,6 +142,10 @@ impl CreateTrustFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_remote_domain_name(input);
         self
+    }
+    /// <p>The Fully Qualified Domain Name (FQDN) of the external domain for which to create the trust relationship.</p>
+    pub fn get_remote_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_remote_domain_name()
     }
     /// <p>The trust password. The must be the same password that was used when creating the trust relationship on the external domain.</p>
     pub fn trust_password(
@@ -151,6 +163,10 @@ impl CreateTrustFluentBuilder {
         self.inner = self.inner.set_trust_password(input);
         self
     }
+    /// <p>The trust password. The must be the same password that was used when creating the trust relationship on the external domain.</p>
+    pub fn get_trust_password(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_trust_password()
+    }
     /// <p>The direction of the trust relationship.</p>
     pub fn trust_direction(mut self, input: crate::types::TrustDirection) -> Self {
         self.inner = self.inner.trust_direction(input);
@@ -164,6 +180,10 @@ impl CreateTrustFluentBuilder {
         self.inner = self.inner.set_trust_direction(input);
         self
     }
+    /// <p>The direction of the trust relationship.</p>
+    pub fn get_trust_direction(&self) -> &::std::option::Option<crate::types::TrustDirection> {
+        self.inner.get_trust_direction()
+    }
     /// <p>The trust relationship type. <code>Forest</code> is the default.</p>
     pub fn trust_type(mut self, input: crate::types::TrustType) -> Self {
         self.inner = self.inner.trust_type(input);
@@ -173,6 +193,10 @@ impl CreateTrustFluentBuilder {
     pub fn set_trust_type(mut self, input: ::std::option::Option<crate::types::TrustType>) -> Self {
         self.inner = self.inner.set_trust_type(input);
         self
+    }
+    /// <p>The trust relationship type. <code>Forest</code> is the default.</p>
+    pub fn get_trust_type(&self) -> &::std::option::Option<crate::types::TrustType> {
+        self.inner.get_trust_type()
     }
     /// Appends an item to `ConditionalForwarderIpAddrs`.
     ///
@@ -194,6 +218,12 @@ impl CreateTrustFluentBuilder {
         self.inner = self.inner.set_conditional_forwarder_ip_addrs(input);
         self
     }
+    /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName.</p>
+    pub fn get_conditional_forwarder_ip_addrs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_conditional_forwarder_ip_addrs()
+    }
     /// <p>Optional parameter to enable selective authentication for the trust.</p>
     pub fn selective_auth(mut self, input: crate::types::SelectiveAuth) -> Self {
         self.inner = self.inner.selective_auth(input);
@@ -206,5 +236,9 @@ impl CreateTrustFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_selective_auth(input);
         self
+    }
+    /// <p>Optional parameter to enable selective authentication for the trust.</p>
+    pub fn get_selective_auth(&self) -> &::std::option::Option<crate::types::SelectiveAuth> {
+        self.inner.get_selective_auth()
     }
 }

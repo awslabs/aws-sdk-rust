@@ -48,6 +48,10 @@ impl OrderByElementBuilder {
         self.field_name = input;
         self
     }
+    /// <p>The field on which to order.</p>
+    pub fn get_field_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_name
+    }
     /// <p>Ordering direction.</p>
     pub fn sort_order(mut self, input: crate::types::OrderString) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl OrderByElementBuilder {
     ) -> Self {
         self.sort_order = input;
         self
+    }
+    /// <p>Ordering direction.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::OrderString> {
+        &self.sort_order
     }
     /// Consumes the builder and constructs a [`OrderByElement`](crate::types::OrderByElement).
     pub fn build(self) -> crate::types::OrderByElement {

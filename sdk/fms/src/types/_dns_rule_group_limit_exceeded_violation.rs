@@ -62,6 +62,10 @@ impl DnsRuleGroupLimitExceededViolationBuilder {
         self.violation_target = input;
         self
     }
+    /// <p>Information about the VPC ID. </p>
+    pub fn get_violation_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.violation_target
+    }
     /// <p>A description of the violation that specifies the rule group and VPC.</p>
     pub fn violation_target_description(
         mut self,
@@ -78,6 +82,12 @@ impl DnsRuleGroupLimitExceededViolationBuilder {
         self.violation_target_description = input;
         self
     }
+    /// <p>A description of the violation that specifies the rule group and VPC.</p>
+    pub fn get_violation_target_description(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.violation_target_description
+    }
     /// <p>The number of rule groups currently associated with the VPC. </p>
     pub fn number_of_rule_groups_already_associated(mut self, input: i32) -> Self {
         self.number_of_rule_groups_already_associated = ::std::option::Option::Some(input);
@@ -90,6 +100,10 @@ impl DnsRuleGroupLimitExceededViolationBuilder {
     ) -> Self {
         self.number_of_rule_groups_already_associated = input;
         self
+    }
+    /// <p>The number of rule groups currently associated with the VPC. </p>
+    pub fn get_number_of_rule_groups_already_associated(&self) -> &::std::option::Option<i32> {
+        &self.number_of_rule_groups_already_associated
     }
     /// Consumes the builder and constructs a [`DnsRuleGroupLimitExceededViolation`](crate::types::DnsRuleGroupLimitExceededViolation).
     pub fn build(self) -> crate::types::DnsRuleGroupLimitExceededViolation {

@@ -43,6 +43,10 @@ impl ObjectLockLegalHoldBuilder {
         self.status = input;
         self
     }
+    /// <p>Indicates whether the specified object has a legal hold in place.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ObjectLockLegalHoldStatus> {
+        &self.status
+    }
     /// Consumes the builder and constructs a [`ObjectLockLegalHold`](crate::types::ObjectLockLegalHold).
     pub fn build(self) -> crate::types::ObjectLockLegalHold {
         crate::types::ObjectLockLegalHold {

@@ -36,6 +36,12 @@ impl UpdateIpRestrictionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateIpRestriction as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_ip_restriction::builders::UpdateIpRestrictionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateIpRestrictionFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// Adds a key-value pair to `IpRestrictionRuleMap`.
     ///
     /// To override the contents of this collection use [`set_ip_restriction_rule_map`](Self::set_ip_restriction_rule_map).
@@ -155,6 +165,14 @@ impl UpdateIpRestrictionFluentBuilder {
         self.inner = self.inner.set_ip_restriction_rule_map(input);
         self
     }
+    /// <p>A map that describes the updated IP rules with CIDR ranges and descriptions.</p>
+    pub fn get_ip_restriction_rule_map(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_ip_restriction_rule_map()
+    }
     /// <p>A value that specifies whether IP rules are turned on.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.enabled(input);
@@ -164,5 +182,9 @@ impl UpdateIpRestrictionFluentBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enabled(input);
         self
+    }
+    /// <p>A value that specifies whether IP rules are turned on.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enabled()
     }
 }

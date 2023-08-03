@@ -62,6 +62,10 @@ impl CancelConversionTaskInputBuilder {
         self.conversion_task_id = input;
         self
     }
+    /// <p>The ID of the conversion task.</p>
+    pub fn get_conversion_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.conversion_task_id
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -71,6 +75,10 @@ impl CancelConversionTaskInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// <p>The reason for canceling the conversion task.</p>
     pub fn reason_message(
@@ -87,6 +95,10 @@ impl CancelConversionTaskInputBuilder {
     ) -> Self {
         self.reason_message = input;
         self
+    }
+    /// <p>The reason for canceling the conversion task.</p>
+    pub fn get_reason_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason_message
     }
     /// Consumes the builder and constructs a [`CancelConversionTaskInput`](crate::operation::cancel_conversion_task::CancelConversionTaskInput).
     pub fn build(

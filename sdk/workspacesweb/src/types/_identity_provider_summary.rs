@@ -71,6 +71,10 @@ impl IdentityProviderSummaryBuilder {
         self.identity_provider_arn = input;
         self
     }
+    /// <p>The ARN of the identity provider.</p>
+    pub fn get_identity_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_provider_arn
+    }
     /// <p>The identity provider name.</p>
     pub fn identity_provider_name(
         mut self,
@@ -87,6 +91,10 @@ impl IdentityProviderSummaryBuilder {
         self.identity_provider_name = input;
         self
     }
+    /// <p>The identity provider name.</p>
+    pub fn get_identity_provider_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_provider_name
+    }
     /// <p>The identity provider type.</p>
     pub fn identity_provider_type(mut self, input: crate::types::IdentityProviderType) -> Self {
         self.identity_provider_type = ::std::option::Option::Some(input);
@@ -99,6 +107,12 @@ impl IdentityProviderSummaryBuilder {
     ) -> Self {
         self.identity_provider_type = input;
         self
+    }
+    /// <p>The identity provider type.</p>
+    pub fn get_identity_provider_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::IdentityProviderType> {
+        &self.identity_provider_type
     }
     /// Consumes the builder and constructs a [`IdentityProviderSummary`](crate::types::IdentityProviderSummary).
     pub fn build(self) -> crate::types::IdentityProviderSummary {

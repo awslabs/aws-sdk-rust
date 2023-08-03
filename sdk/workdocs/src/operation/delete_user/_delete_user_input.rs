@@ -59,6 +59,10 @@ impl DeleteUserInputBuilder {
         self.authentication_token = input;
         self
     }
+    /// <p>Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API using Amazon Web Services credentials.</p>
+    pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authentication_token
+    }
     /// <p>The ID of the user.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
@@ -68,6 +72,10 @@ impl DeleteUserInputBuilder {
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
+    }
+    /// <p>The ID of the user.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
     }
     /// Consumes the builder and constructs a [`DeleteUserInput`](crate::operation::delete_user::DeleteUserInput).
     pub fn build(

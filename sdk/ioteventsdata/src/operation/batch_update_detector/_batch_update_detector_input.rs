@@ -51,6 +51,12 @@ impl BatchUpdateDetectorInputBuilder {
         self.detectors = input;
         self
     }
+    /// <p>The list of detectors (instances) to update, along with the values to update.</p>
+    pub fn get_detectors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateDetectorRequest>> {
+        &self.detectors
+    }
     /// Consumes the builder and constructs a [`BatchUpdateDetectorInput`](crate::operation::batch_update_detector::BatchUpdateDetectorInput).
     pub fn build(
         self,

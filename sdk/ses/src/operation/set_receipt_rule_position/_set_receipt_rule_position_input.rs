@@ -64,6 +64,10 @@ impl SetReceiptRulePositionInputBuilder {
         self.rule_set_name = input;
         self
     }
+    /// <p>The name of the receipt rule set that contains the receipt rule to reposition.</p>
+    pub fn get_rule_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_set_name
+    }
     /// <p>The name of the receipt rule to reposition.</p>
     pub fn rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_name = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl SetReceiptRulePositionInputBuilder {
         self.rule_name = input;
         self
     }
+    /// <p>The name of the receipt rule to reposition.</p>
+    pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_name
+    }
     /// <p>The name of the receipt rule after which to place the specified receipt rule.</p>
     pub fn after(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.after = ::std::option::Option::Some(input.into());
@@ -83,6 +91,10 @@ impl SetReceiptRulePositionInputBuilder {
     pub fn set_after(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.after = input;
         self
+    }
+    /// <p>The name of the receipt rule after which to place the specified receipt rule.</p>
+    pub fn get_after(&self) -> &::std::option::Option<::std::string::String> {
+        &self.after
     }
     /// Consumes the builder and constructs a [`SetReceiptRulePositionInput`](crate::operation::set_receipt_rule_position::SetReceiptRulePositionInput).
     pub fn build(

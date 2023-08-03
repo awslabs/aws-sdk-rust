@@ -79,6 +79,10 @@ impl TestInvokeAuthorizerOutputBuilder {
         self.is_authenticated = input;
         self
     }
+    /// <p>True if the token is authenticated, otherwise false.</p>
+    pub fn get_is_authenticated(&self) -> &::std::option::Option<bool> {
+        &self.is_authenticated
+    }
     /// <p>The principal ID.</p>
     pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_id = ::std::option::Option::Some(input.into());
@@ -88,6 +92,10 @@ impl TestInvokeAuthorizerOutputBuilder {
     pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal_id = input;
         self
+    }
+    /// <p>The principal ID.</p>
+    pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal_id
     }
     /// Appends an item to `policy_documents`.
     ///
@@ -111,6 +119,12 @@ impl TestInvokeAuthorizerOutputBuilder {
         self.policy_documents = input;
         self
     }
+    /// <p>IAM policy documents.</p>
+    pub fn get_policy_documents(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.policy_documents
+    }
     /// <p>The number of seconds after which the temporary credentials are refreshed.</p>
     pub fn refresh_after_in_seconds(mut self, input: i32) -> Self {
         self.refresh_after_in_seconds = ::std::option::Option::Some(input);
@@ -121,6 +135,10 @@ impl TestInvokeAuthorizerOutputBuilder {
         self.refresh_after_in_seconds = input;
         self
     }
+    /// <p>The number of seconds after which the temporary credentials are refreshed.</p>
+    pub fn get_refresh_after_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.refresh_after_in_seconds
+    }
     /// <p>The number of seconds after which the connection is terminated.</p>
     pub fn disconnect_after_in_seconds(mut self, input: i32) -> Self {
         self.disconnect_after_in_seconds = ::std::option::Option::Some(input);
@@ -130,6 +148,10 @@ impl TestInvokeAuthorizerOutputBuilder {
     pub fn set_disconnect_after_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.disconnect_after_in_seconds = input;
         self
+    }
+    /// <p>The number of seconds after which the connection is terminated.</p>
+    pub fn get_disconnect_after_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.disconnect_after_in_seconds
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

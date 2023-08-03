@@ -82,6 +82,12 @@ impl TargetTrackingConfigurationBuilder {
         self.predefined_metric_specification = input;
         self
     }
+    /// <p>A predefined metric. You must specify either a predefined metric or a customized metric.</p>
+    pub fn get_predefined_metric_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::PredefinedMetricSpecification> {
+        &self.predefined_metric_specification
+    }
     /// <p>A customized metric. You must specify either a predefined metric or a customized metric.</p>
     pub fn customized_metric_specification(
         mut self,
@@ -98,6 +104,12 @@ impl TargetTrackingConfigurationBuilder {
         self.customized_metric_specification = input;
         self
     }
+    /// <p>A customized metric. You must specify either a predefined metric or a customized metric.</p>
+    pub fn get_customized_metric_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomizedMetricSpecification> {
+        &self.customized_metric_specification
+    }
     /// <p>The target value for the metric.</p> <note>
     /// <p>Some metrics are based on a count instead of a percentage, such as the request count for an Application Load Balancer or the number of messages in an SQS queue. If the scaling policy specifies one of these metrics, specify the target utilization as the optimal average request or message count per instance during any one-minute interval. </p>
     /// </note>
@@ -112,6 +124,12 @@ impl TargetTrackingConfigurationBuilder {
         self.target_value = input;
         self
     }
+    /// <p>The target value for the metric.</p> <note>
+    /// <p>Some metrics are based on a count instead of a percentage, such as the request count for an Application Load Balancer or the number of messages in an SQS queue. If the scaling policy specifies one of these metrics, specify the target utilization as the optimal average request or message count per instance during any one-minute interval. </p>
+    /// </note>
+    pub fn get_target_value(&self) -> &::std::option::Option<f64> {
+        &self.target_value
+    }
     /// <p>Indicates whether scaling in by the target tracking scaling policy is disabled. If scaling in is disabled, the target tracking scaling policy doesn't remove instances from the Auto Scaling group. Otherwise, the target tracking scaling policy can remove instances from the Auto Scaling group. The default is <code>false</code>.</p>
     pub fn disable_scale_in(mut self, input: bool) -> Self {
         self.disable_scale_in = ::std::option::Option::Some(input);
@@ -121,6 +139,10 @@ impl TargetTrackingConfigurationBuilder {
     pub fn set_disable_scale_in(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disable_scale_in = input;
         self
+    }
+    /// <p>Indicates whether scaling in by the target tracking scaling policy is disabled. If scaling in is disabled, the target tracking scaling policy doesn't remove instances from the Auto Scaling group. Otherwise, the target tracking scaling policy can remove instances from the Auto Scaling group. The default is <code>false</code>.</p>
+    pub fn get_disable_scale_in(&self) -> &::std::option::Option<bool> {
+        &self.disable_scale_in
     }
     /// Consumes the builder and constructs a [`TargetTrackingConfiguration`](crate::types::TargetTrackingConfiguration).
     pub fn build(self) -> crate::types::TargetTrackingConfiguration {

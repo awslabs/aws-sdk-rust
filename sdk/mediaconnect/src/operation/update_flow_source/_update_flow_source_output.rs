@@ -55,6 +55,10 @@ impl UpdateFlowSourceOutputBuilder {
         self.flow_arn = input;
         self
     }
+    /// The ARN of the flow that you want to update.
+    pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_arn
+    }
     /// The settings for the source of the flow.
     pub fn source(mut self, input: crate::types::Source) -> Self {
         self.source = ::std::option::Option::Some(input);
@@ -64,6 +68,10 @@ impl UpdateFlowSourceOutputBuilder {
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::Source>) -> Self {
         self.source = input;
         self
+    }
+    /// The settings for the source of the flow.
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::Source> {
+        &self.source
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

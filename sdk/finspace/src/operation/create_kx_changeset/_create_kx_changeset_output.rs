@@ -115,6 +115,10 @@ impl CreateKxChangesetOutputBuilder {
         self.changeset_id = input;
         self
     }
+    /// <p>A unique identifier for the changeset.</p>
+    pub fn get_changeset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.changeset_id
+    }
     /// <p>The name of the kdb database.</p>
     pub fn database_name(
         mut self,
@@ -131,6 +135,10 @@ impl CreateKxChangesetOutputBuilder {
         self.database_name = input;
         self
     }
+    /// <p>The name of the kdb database.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>A unique identifier for the kdb environment.</p>
     pub fn environment_id(
         mut self,
@@ -146,6 +154,10 @@ impl CreateKxChangesetOutputBuilder {
     ) -> Self {
         self.environment_id = input;
         self
+    }
+    /// <p>A unique identifier for the kdb environment.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
     }
     /// Appends an item to `change_requests`.
     ///
@@ -166,6 +178,12 @@ impl CreateKxChangesetOutputBuilder {
         self.change_requests = input;
         self
     }
+    /// <p>A list of change requests.</p>
+    pub fn get_change_requests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChangeRequest>> {
+        &self.change_requests
+    }
     /// <p>The timestamp at which the changeset was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_timestamp = ::std::option::Option::Some(input);
@@ -179,6 +197,10 @@ impl CreateKxChangesetOutputBuilder {
         self.created_timestamp = input;
         self
     }
+    /// <p>The timestamp at which the changeset was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
+    }
     /// <p>The timestamp at which the changeset was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn last_modified_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_timestamp = ::std::option::Option::Some(input);
@@ -191,6 +213,12 @@ impl CreateKxChangesetOutputBuilder {
     ) -> Self {
         self.last_modified_timestamp = input;
         self
+    }
+    /// <p>The timestamp at which the changeset was updated in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    pub fn get_last_modified_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_timestamp
     }
     /// <p>Status of the changeset creation process.</p>
     /// <ul>
@@ -217,6 +245,16 @@ impl CreateKxChangesetOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>Status of the changeset creation process.</p>
+    /// <ul>
+    /// <li> <p>Pending – Changeset creation is pending.</p> </li>
+    /// <li> <p>Processing – Changeset creation is running.</p> </li>
+    /// <li> <p>Failed – Changeset creation has failed.</p> </li>
+    /// <li> <p>Complete – Changeset creation has succeeded.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ChangesetStatus> {
+        &self.status
+    }
     /// <p>The details of the error that you receive when creating a changeset. It consists of the type of error and the error message.</p>
     pub fn error_info(mut self, input: crate::types::ErrorInfo) -> Self {
         self.error_info = ::std::option::Option::Some(input);
@@ -226,6 +264,10 @@ impl CreateKxChangesetOutputBuilder {
     pub fn set_error_info(mut self, input: ::std::option::Option<crate::types::ErrorInfo>) -> Self {
         self.error_info = input;
         self
+    }
+    /// <p>The details of the error that you receive when creating a changeset. It consists of the type of error and the error message.</p>
+    pub fn get_error_info(&self) -> &::std::option::Option<crate::types::ErrorInfo> {
+        &self.error_info
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

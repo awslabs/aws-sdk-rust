@@ -38,6 +38,10 @@ impl DeleteSpaceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteSpace as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_space::builders::DeleteSpaceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,5 +123,9 @@ impl DeleteSpaceFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the space. To retrieve a list of space names, use <code>ListSpaces</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
 }

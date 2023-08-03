@@ -49,6 +49,10 @@ impl DescribeFraudsterRegistrationJobOutputBuilder {
         self.job = input;
         self
     }
+    /// <p>Contains details about the specified fraudster registration job.</p>
+    pub fn get_job(&self) -> &::std::option::Option<crate::types::FraudsterRegistrationJob> {
+        &self.job
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

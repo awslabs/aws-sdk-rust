@@ -72,6 +72,10 @@ impl DeploymentBuilder {
         self.created_at = input;
         self
     }
+    /// The time, in milliseconds since the epoch, when the deployment was created.
+    pub fn get_created_at(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_at
+    }
     /// The ARN of the deployment.
     pub fn deployment_arn(
         mut self,
@@ -87,6 +91,10 @@ impl DeploymentBuilder {
     ) -> Self {
         self.deployment_arn = input;
         self
+    }
+    /// The ARN of the deployment.
+    pub fn get_deployment_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_arn
     }
     /// The ID of the deployment.
     pub fn deployment_id(
@@ -104,6 +112,10 @@ impl DeploymentBuilder {
         self.deployment_id = input;
         self
     }
+    /// The ID of the deployment.
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_id
+    }
     /// The type of the deployment.
     pub fn deployment_type(mut self, input: crate::types::DeploymentType) -> Self {
         self.deployment_type = ::std::option::Option::Some(input);
@@ -117,6 +129,10 @@ impl DeploymentBuilder {
         self.deployment_type = input;
         self
     }
+    /// The type of the deployment.
+    pub fn get_deployment_type(&self) -> &::std::option::Option<crate::types::DeploymentType> {
+        &self.deployment_type
+    }
     /// The ARN of the group for this deployment.
     pub fn group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_arn = ::std::option::Option::Some(input.into());
@@ -126,6 +142,10 @@ impl DeploymentBuilder {
     pub fn set_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_arn = input;
         self
+    }
+    /// The ARN of the group for this deployment.
+    pub fn get_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_arn
     }
     /// Consumes the builder and constructs a [`Deployment`](crate::types::Deployment).
     pub fn build(self) -> crate::types::Deployment {

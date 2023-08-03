@@ -56,6 +56,10 @@ impl InvokeDeviceMethodInputBuilder {
         self.device_id = input;
         self
     }
+    /// <p>The unique identifier of the device.</p>
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_id
+    }
     /// <p>The device method to invoke.</p>
     pub fn device_method(mut self, input: crate::types::DeviceMethod) -> Self {
         self.device_method = ::std::option::Option::Some(input);
@@ -68,6 +72,10 @@ impl InvokeDeviceMethodInputBuilder {
     ) -> Self {
         self.device_method = input;
         self
+    }
+    /// <p>The device method to invoke.</p>
+    pub fn get_device_method(&self) -> &::std::option::Option<crate::types::DeviceMethod> {
+        &self.device_method
     }
     /// <p>A JSON encoded string containing the device method request parameters.</p>
     pub fn device_method_parameters(
@@ -84,6 +92,10 @@ impl InvokeDeviceMethodInputBuilder {
     ) -> Self {
         self.device_method_parameters = input;
         self
+    }
+    /// <p>A JSON encoded string containing the device method request parameters.</p>
+    pub fn get_device_method_parameters(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_method_parameters
     }
     /// Consumes the builder and constructs a [`InvokeDeviceMethodInput`](crate::operation::invoke_device_method::InvokeDeviceMethodInput).
     pub fn build(

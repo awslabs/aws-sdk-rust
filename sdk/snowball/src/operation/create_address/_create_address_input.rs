@@ -39,6 +39,10 @@ impl CreateAddressInputBuilder {
         self.address = input;
         self
     }
+    /// <p>The address that you want the Snow device shipped to.</p>
+    pub fn get_address(&self) -> &::std::option::Option<crate::types::Address> {
+        &self.address
+    }
     /// Consumes the builder and constructs a [`CreateAddressInput`](crate::operation::create_address::CreateAddressInput).
     pub fn build(
         self,

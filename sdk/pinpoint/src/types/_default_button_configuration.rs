@@ -86,6 +86,10 @@ impl DefaultButtonConfigurationBuilder {
         self.background_color = input;
         self
     }
+    /// <p>The background color of the button.</p>
+    pub fn get_background_color(&self) -> &::std::option::Option<::std::string::String> {
+        &self.background_color
+    }
     /// <p>The border radius of the button.</p>
     pub fn border_radius(mut self, input: i32) -> Self {
         self.border_radius = ::std::option::Option::Some(input);
@@ -95,6 +99,10 @@ impl DefaultButtonConfigurationBuilder {
     pub fn set_border_radius(mut self, input: ::std::option::Option<i32>) -> Self {
         self.border_radius = input;
         self
+    }
+    /// <p>The border radius of the button.</p>
+    pub fn get_border_radius(&self) -> &::std::option::Option<i32> {
+        &self.border_radius
     }
     /// <p>Action triggered by the button.</p>
     pub fn button_action(mut self, input: crate::types::ButtonAction) -> Self {
@@ -109,6 +117,10 @@ impl DefaultButtonConfigurationBuilder {
         self.button_action = input;
         self
     }
+    /// <p>Action triggered by the button.</p>
+    pub fn get_button_action(&self) -> &::std::option::Option<crate::types::ButtonAction> {
+        &self.button_action
+    }
     /// <p>Button destination.</p>
     pub fn link(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.link = ::std::option::Option::Some(input.into());
@@ -118,6 +130,10 @@ impl DefaultButtonConfigurationBuilder {
     pub fn set_link(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.link = input;
         self
+    }
+    /// <p>Button destination.</p>
+    pub fn get_link(&self) -> &::std::option::Option<::std::string::String> {
+        &self.link
     }
     /// <p>Button text.</p>
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -129,6 +145,10 @@ impl DefaultButtonConfigurationBuilder {
         self.text = input;
         self
     }
+    /// <p>Button text.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
+    }
     /// <p>The text color of the button.</p>
     pub fn text_color(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text_color = ::std::option::Option::Some(input.into());
@@ -138,6 +158,10 @@ impl DefaultButtonConfigurationBuilder {
     pub fn set_text_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.text_color = input;
         self
+    }
+    /// <p>The text color of the button.</p>
+    pub fn get_text_color(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text_color
     }
     /// Consumes the builder and constructs a [`DefaultButtonConfiguration`](crate::types::DefaultButtonConfiguration).
     pub fn build(self) -> crate::types::DefaultButtonConfiguration {

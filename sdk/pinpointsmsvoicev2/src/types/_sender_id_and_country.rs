@@ -48,6 +48,10 @@ impl SenderIdAndCountryBuilder {
         self.sender_id = input;
         self
     }
+    /// <p>The unique identifier of the sender.</p>
+    pub fn get_sender_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sender_id
+    }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
     pub fn iso_country_code(
         mut self,
@@ -63,6 +67,10 @@ impl SenderIdAndCountryBuilder {
     ) -> Self {
         self.iso_country_code = input;
         self
+    }
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
+    pub fn get_iso_country_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iso_country_code
     }
     /// Consumes the builder and constructs a [`SenderIdAndCountry`](crate::types::SenderIdAndCountry).
     pub fn build(self) -> crate::types::SenderIdAndCountry {

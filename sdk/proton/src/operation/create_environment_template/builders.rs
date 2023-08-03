@@ -41,6 +41,10 @@ impl CreateEnvironmentTemplateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateEnvironmentTemplate as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_environment_template::builders::CreateEnvironmentTemplateInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +135,10 @@ impl CreateEnvironmentTemplateFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the environment template.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The environment template name as displayed in the developer interface.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.display_name(input.into());
@@ -141,6 +149,10 @@ impl CreateEnvironmentTemplateFluentBuilder {
         self.inner = self.inner.set_display_name(input);
         self
     }
+    /// <p>The environment template name as displayed in the developer interface.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_display_name()
+    }
     /// <p>A description of the environment template.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -150,6 +162,10 @@ impl CreateEnvironmentTemplateFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of the environment template.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>A customer provided encryption key that Proton uses to encrypt data.</p>
     pub fn encryption_key(
@@ -167,6 +183,10 @@ impl CreateEnvironmentTemplateFluentBuilder {
         self.inner = self.inner.set_encryption_key(input);
         self
     }
+    /// <p>A customer provided encryption key that Proton uses to encrypt data.</p>
+    pub fn get_encryption_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_encryption_key()
+    }
     /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
     pub fn provisioning(mut self, input: crate::types::Provisioning) -> Self {
         self.inner = self.inner.provisioning(input);
@@ -179,6 +199,10 @@ impl CreateEnvironmentTemplateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_provisioning(input);
         self
+    }
+    /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
+    pub fn get_provisioning(&self) -> &::std::option::Option<crate::types::Provisioning> {
+        self.inner.get_provisioning()
     }
     /// Appends an item to `tags`.
     ///
@@ -198,5 +222,10 @@ impl CreateEnvironmentTemplateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>An optional list of metadata items that you can associate with the Proton environment template. A tag is a key-value pair.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

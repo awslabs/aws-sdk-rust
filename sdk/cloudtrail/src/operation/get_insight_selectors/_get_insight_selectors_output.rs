@@ -57,6 +57,10 @@ impl GetInsightSelectorsOutputBuilder {
         self.trail_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of a trail for which you want to get Insights selectors.</p>
+    pub fn get_trail_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trail_arn
+    }
     /// Appends an item to `insight_selectors`.
     ///
     /// To override the contents of this collection use [`set_insight_selectors`](Self::set_insight_selectors).
@@ -75,6 +79,12 @@ impl GetInsightSelectorsOutputBuilder {
     ) -> Self {
         self.insight_selectors = input;
         self
+    }
+    /// <p>A JSON string that contains the insight types you want to log on a trail. In this release, <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code> are supported as insight types.</p>
+    pub fn get_insight_selectors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightSelector>> {
+        &self.insight_selectors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

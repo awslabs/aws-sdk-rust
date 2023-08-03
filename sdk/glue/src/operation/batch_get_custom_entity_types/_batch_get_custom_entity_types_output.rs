@@ -66,6 +66,12 @@ impl BatchGetCustomEntityTypesOutputBuilder {
         self.custom_entity_types = input;
         self
     }
+    /// <p>A list of <code>CustomEntityType</code> objects representing the custom patterns that have been created.</p>
+    pub fn get_custom_entity_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomEntityType>> {
+        &self.custom_entity_types
+    }
     /// Appends an item to `custom_entity_types_not_found`.
     ///
     /// To override the contents of this collection use [`set_custom_entity_types_not_found`](Self::set_custom_entity_types_not_found).
@@ -87,6 +93,12 @@ impl BatchGetCustomEntityTypesOutputBuilder {
     ) -> Self {
         self.custom_entity_types_not_found = input;
         self
+    }
+    /// <p>A list of the names of custom patterns that were not found.</p>
+    pub fn get_custom_entity_types_not_found(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.custom_entity_types_not_found
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

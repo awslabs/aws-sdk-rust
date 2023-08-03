@@ -65,6 +65,10 @@ impl IndexBuilder {
         self.region = input;
         self
     }
+    /// <p>The Amazon Web Services Region in which the index exists.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
+    }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl IndexBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The type of index. It can be one of the following values:</p>
     /// <ul>
@@ -92,6 +100,14 @@ impl IndexBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::IndexType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of index. It can be one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <b>LOCAL</b> – The index contains information about resources from only the same Amazon Web Services Region.</p> </li>
+    /// <li> <p> <b>AGGREGATOR</b> – Resource Explorer replicates copies of the indexed information about resources in all other Amazon Web Services Regions to the aggregator index. This lets search results in the Region with the aggregator index to include resources from all Regions in the account where Resource Explorer is turned on.</p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::IndexType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`Index`](crate::types::Index).
     pub fn build(self) -> crate::types::Index {

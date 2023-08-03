@@ -88,6 +88,10 @@ impl LegalHoldBuilder {
         self.title = input;
         self
     }
+    /// <p>This is the title of a legal hold.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
+    }
     /// <p>This is the status of the legal hold. Statuses can be <code>ACTIVE</code>, <code>CREATING</code>, <code>CANCELED</code>, and <code>CANCELING</code>.</p>
     pub fn status(mut self, input: crate::types::LegalHoldStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -101,6 +105,10 @@ impl LegalHoldBuilder {
         self.status = input;
         self
     }
+    /// <p>This is the status of the legal hold. Statuses can be <code>ACTIVE</code>, <code>CREATING</code>, <code>CANCELED</code>, and <code>CANCELING</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::LegalHoldStatus> {
+        &self.status
+    }
     /// <p>This is the description of a legal hold.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -110,6 +118,10 @@ impl LegalHoldBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>This is the description of a legal hold.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>ID of specific legal hold on one or more recovery points.</p>
     pub fn legal_hold_id(
@@ -127,6 +139,10 @@ impl LegalHoldBuilder {
         self.legal_hold_id = input;
         self
     }
+    /// <p>ID of specific legal hold on one or more recovery points.</p>
+    pub fn get_legal_hold_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.legal_hold_id
+    }
     /// <p>This is an Amazon Resource Number (ARN) that uniquely identifies the legal hold; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     pub fn legal_hold_arn(
         mut self,
@@ -143,6 +159,10 @@ impl LegalHoldBuilder {
         self.legal_hold_arn = input;
         self
     }
+    /// <p>This is an Amazon Resource Number (ARN) that uniquely identifies the legal hold; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+    pub fn get_legal_hold_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.legal_hold_arn
+    }
     /// <p>This is the time in number format when legal hold was created.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
@@ -156,6 +176,10 @@ impl LegalHoldBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>This is the time in number format when legal hold was created.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
+    }
     /// <p>This is the time in number format when legal hold was cancelled.</p>
     pub fn cancellation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.cancellation_date = ::std::option::Option::Some(input);
@@ -168,6 +192,10 @@ impl LegalHoldBuilder {
     ) -> Self {
         self.cancellation_date = input;
         self
+    }
+    /// <p>This is the time in number format when legal hold was cancelled.</p>
+    pub fn get_cancellation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.cancellation_date
     }
     /// Consumes the builder and constructs a [`LegalHold`](crate::types::LegalHold).
     pub fn build(self) -> crate::types::LegalHold {

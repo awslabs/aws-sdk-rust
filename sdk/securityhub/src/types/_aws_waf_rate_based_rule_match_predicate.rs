@@ -76,6 +76,10 @@ impl AwsWafRateBasedRuleMatchPredicateBuilder {
         self.data_id = input;
         self
     }
+    /// <p>The unique identifier for the predicate.</p>
+    pub fn get_data_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_id
+    }
     /// <p>If set to <code>true</code>, then the rule actions are performed on requests that match the predicate settings.</p>
     /// <p>If set to <code>false</code>, then the rule actions are performed on all requests except those that match the predicate settings. </p>
     pub fn negated(mut self, input: bool) -> Self {
@@ -87,6 +91,11 @@ impl AwsWafRateBasedRuleMatchPredicateBuilder {
     pub fn set_negated(mut self, input: ::std::option::Option<bool>) -> Self {
         self.negated = input;
         self
+    }
+    /// <p>If set to <code>true</code>, then the rule actions are performed on requests that match the predicate settings.</p>
+    /// <p>If set to <code>false</code>, then the rule actions are performed on all requests except those that match the predicate settings. </p>
+    pub fn get_negated(&self) -> &::std::option::Option<bool> {
+        &self.negated
     }
     /// <p>The type of predicate. Valid values are as follows:</p>
     /// <ul>
@@ -115,6 +124,19 @@ impl AwsWafRateBasedRuleMatchPredicateBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of predicate. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>ByteMatch</code> </p> </li>
+    /// <li> <p> <code>GeoMatch</code> </p> </li>
+    /// <li> <p> <code>IPMatch</code> </p> </li>
+    /// <li> <p> <code>RegexMatch</code> </p> </li>
+    /// <li> <p> <code>SizeConstraint</code> </p> </li>
+    /// <li> <p> <code>SqlInjectionMatch</code> </p> </li>
+    /// <li> <p> <code>XssMatch</code> </p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`AwsWafRateBasedRuleMatchPredicate`](crate::types::AwsWafRateBasedRuleMatchPredicate).
     pub fn build(self) -> crate::types::AwsWafRateBasedRuleMatchPredicate {

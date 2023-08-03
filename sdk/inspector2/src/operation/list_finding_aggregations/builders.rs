@@ -37,6 +37,13 @@ impl ListFindingAggregationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListFindingAggregations as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_finding_aggregations::builders::ListFindingAggregationsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -139,6 +146,10 @@ impl ListFindingAggregationsFluentBuilder {
         self.inner = self.inner.set_aggregation_type(input);
         self
     }
+    /// <p>The type of the aggregation request.</p>
+    pub fn get_aggregation_type(&self) -> &::std::option::Option<crate::types::AggregationType> {
+        self.inner.get_aggregation_type()
+    }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -149,6 +160,10 @@ impl ListFindingAggregationsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -158,6 +173,10 @@ impl ListFindingAggregationsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// Appends an item to `accountIds`.
     ///
@@ -176,6 +195,12 @@ impl ListFindingAggregationsFluentBuilder {
         self.inner = self.inner.set_account_ids(input);
         self
     }
+    /// <p>The Amazon Web Services account IDs to retrieve finding aggregation data for.</p>
+    pub fn get_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        self.inner.get_account_ids()
+    }
     /// <p>Details of the aggregation request that is used to filter your aggregation results.</p>
     pub fn aggregation_request(mut self, input: crate::types::AggregationRequest) -> Self {
         self.inner = self.inner.aggregation_request(input);
@@ -188,5 +213,11 @@ impl ListFindingAggregationsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_aggregation_request(input);
         self
+    }
+    /// <p>Details of the aggregation request that is used to filter your aggregation results.</p>
+    pub fn get_aggregation_request(
+        &self,
+    ) -> &::std::option::Option<crate::types::AggregationRequest> {
+        self.inner.get_aggregation_request()
     }
 }

@@ -36,6 +36,10 @@ impl DeregisterOrganizationDelegatedAdminFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeregisterOrganizationDelegatedAdmin as a reference.
+    pub fn as_input(&self) -> &crate::operation::deregister_organization_delegated_admin::builders::DeregisterOrganizationDelegatedAdminInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -105,5 +109,9 @@ impl DeregisterOrganizationDelegatedAdminFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_delegated_admin_account_id(input);
         self
+    }
+    /// <p>A delegated administrator account ID. This is a member account in an organization that is currently designated as a delegated administrator.</p>
+    pub fn get_delegated_admin_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_delegated_admin_account_id()
     }
 }

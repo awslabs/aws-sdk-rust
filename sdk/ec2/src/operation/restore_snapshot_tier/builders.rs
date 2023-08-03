@@ -37,6 +37,12 @@ impl RestoreSnapshotTierFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RestoreSnapshotTier as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::restore_snapshot_tier::builders::RestoreSnapshotTierInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl RestoreSnapshotTierFluentBuilder {
         self.inner = self.inner.set_snapshot_id(input);
         self
     }
+    /// <p>The ID of the snapshot to restore.</p>
+    pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_snapshot_id()
+    }
     /// <p>Specifies the number of days for which to temporarily restore an archived snapshot. Required for temporary restores only. The snapshot will be automatically re-archived after this period.</p>
     /// <p>To temporarily restore an archived snapshot, specify the number of days and omit the <b>PermanentRestore</b> parameter or set it to <code>false</code>.</p>
     pub fn temporary_restore_days(mut self, input: i32) -> Self {
@@ -139,6 +149,11 @@ impl RestoreSnapshotTierFluentBuilder {
         self.inner = self.inner.set_temporary_restore_days(input);
         self
     }
+    /// <p>Specifies the number of days for which to temporarily restore an archived snapshot. Required for temporary restores only. The snapshot will be automatically re-archived after this period.</p>
+    /// <p>To temporarily restore an archived snapshot, specify the number of days and omit the <b>PermanentRestore</b> parameter or set it to <code>false</code>.</p>
+    pub fn get_temporary_restore_days(&self) -> &::std::option::Option<i32> {
+        self.inner.get_temporary_restore_days()
+    }
     /// <p>Indicates whether to permanently restore an archived snapshot. To permanently restore an archived snapshot, specify <code>true</code> and omit the <b>RestoreSnapshotTierRequest$TemporaryRestoreDays</b> parameter.</p>
     pub fn permanent_restore(mut self, input: bool) -> Self {
         self.inner = self.inner.permanent_restore(input);
@@ -149,6 +164,10 @@ impl RestoreSnapshotTierFluentBuilder {
         self.inner = self.inner.set_permanent_restore(input);
         self
     }
+    /// <p>Indicates whether to permanently restore an archived snapshot. To permanently restore an archived snapshot, specify <code>true</code> and omit the <b>RestoreSnapshotTierRequest$TemporaryRestoreDays</b> parameter.</p>
+    pub fn get_permanent_restore(&self) -> &::std::option::Option<bool> {
+        self.inner.get_permanent_restore()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -158,5 +177,9 @@ impl RestoreSnapshotTierFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

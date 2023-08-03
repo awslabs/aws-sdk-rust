@@ -149,6 +149,10 @@ impl CreateDomainInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>A name for the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The mode of authentication that members use to access the domain.</p>
     pub fn auth_mode(mut self, input: crate::types::AuthMode) -> Self {
         self.auth_mode = ::std::option::Option::Some(input);
@@ -158,6 +162,10 @@ impl CreateDomainInputBuilder {
     pub fn set_auth_mode(mut self, input: ::std::option::Option<crate::types::AuthMode>) -> Self {
         self.auth_mode = input;
         self
+    }
+    /// <p>The mode of authentication that members use to access the domain.</p>
+    pub fn get_auth_mode(&self) -> &::std::option::Option<crate::types::AuthMode> {
+        &self.auth_mode
     }
     /// <p>The default settings to use to create a user profile when <code>UserSettings</code> isn't specified in the call to the <code>CreateUserProfile</code> API.</p>
     /// <p> <code>SecurityGroups</code> is aggregated when specified in both calls. For all other settings in <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code> take precedence over those specified in <code>CreateDomain</code>.</p>
@@ -173,6 +181,11 @@ impl CreateDomainInputBuilder {
     ) -> Self {
         self.default_user_settings = input;
         self
+    }
+    /// <p>The default settings to use to create a user profile when <code>UserSettings</code> isn't specified in the call to the <code>CreateUserProfile</code> API.</p>
+    /// <p> <code>SecurityGroups</code> is aggregated when specified in both calls. For all other settings in <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code> take precedence over those specified in <code>CreateDomain</code>.</p>
+    pub fn get_default_user_settings(&self) -> &::std::option::Option<crate::types::UserSettings> {
+        &self.default_user_settings
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -193,6 +206,10 @@ impl CreateDomainInputBuilder {
         self.subnet_ids = input;
         self
     }
+    /// <p>The VPC subnets that Studio uses for communication.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
+    }
     /// <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -202,6 +219,10 @@ impl CreateDomainInputBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// Appends an item to `tags`.
     ///
@@ -224,6 +245,11 @@ impl CreateDomainInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Tags to associated with the Domain. Each tag consists of a key and an optional value. Tag keys must be unique per resource. Tags are searchable using the <code>Search</code> API.</p>
+    /// <p>Tags that you specify for the Domain are also added to all Apps that the Domain launches.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
     /// <ul>
     /// <li> <p> <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p> </li>
@@ -245,6 +271,16 @@ impl CreateDomainInputBuilder {
         self.app_network_access_type = input;
         self
     }
+    /// <p>Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
+    /// <ul>
+    /// <li> <p> <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p> </li>
+    /// <li> <p> <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets</p> </li>
+    /// </ul>
+    pub fn get_app_network_access_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::AppNetworkAccessType> {
+        &self.app_network_access_type
+    }
     /// <p>Use <code>KmsKeyId</code>.</p>
     #[deprecated(note = "This property is deprecated, use KmsKeyId instead.")]
     pub fn home_efs_file_system_kms_key_id(
@@ -263,6 +299,13 @@ impl CreateDomainInputBuilder {
         self.home_efs_file_system_kms_key_id = input;
         self
     }
+    /// <p>Use <code>KmsKeyId</code>.</p>
+    #[deprecated(note = "This property is deprecated, use KmsKeyId instead.")]
+    pub fn get_home_efs_file_system_kms_key_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.home_efs_file_system_kms_key_id
+    }
     /// <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to the domain with an Amazon Web Services managed key by default. For more control, specify a customer managed key.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -272,6 +315,10 @@ impl CreateDomainInputBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to the domain with an Amazon Web Services managed key by default. For more control, specify a customer managed key.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided. If setting up the domain for use with RStudio, this value must be set to <code>Service</code>.</p>
     pub fn app_security_group_management(
@@ -289,6 +336,12 @@ impl CreateDomainInputBuilder {
         self.app_security_group_management = input;
         self
     }
+    /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided. If setting up the domain for use with RStudio, this value must be set to <code>Service</code>.</p>
+    pub fn get_app_security_group_management(
+        &self,
+    ) -> &::std::option::Option<crate::types::AppSecurityGroupManagement> {
+        &self.app_security_group_management
+    }
     /// <p>A collection of <code>Domain</code> settings.</p>
     pub fn domain_settings(mut self, input: crate::types::DomainSettings) -> Self {
         self.domain_settings = ::std::option::Option::Some(input);
@@ -302,6 +355,10 @@ impl CreateDomainInputBuilder {
         self.domain_settings = input;
         self
     }
+    /// <p>A collection of <code>Domain</code> settings.</p>
+    pub fn get_domain_settings(&self) -> &::std::option::Option<crate::types::DomainSettings> {
+        &self.domain_settings
+    }
     /// <p>The default settings used to create a space.</p>
     pub fn default_space_settings(mut self, input: crate::types::DefaultSpaceSettings) -> Self {
         self.default_space_settings = ::std::option::Option::Some(input);
@@ -314,6 +371,12 @@ impl CreateDomainInputBuilder {
     ) -> Self {
         self.default_space_settings = input;
         self
+    }
+    /// <p>The default settings used to create a space.</p>
+    pub fn get_default_space_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::DefaultSpaceSettings> {
+        &self.default_space_settings
     }
     /// Consumes the builder and constructs a [`CreateDomainInput`](crate::operation::create_domain::CreateDomainInput).
     pub fn build(

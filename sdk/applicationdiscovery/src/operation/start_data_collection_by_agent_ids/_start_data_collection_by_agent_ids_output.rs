@@ -62,6 +62,12 @@ impl StartDataCollectionByAgentIdsOutputBuilder {
         self.agents_configuration_status = input;
         self
     }
+    /// <p>Information about agents that were instructed to start collecting data. Information includes the agent ID, a description of the operation performed, and whether the agent configuration was updated.</p>
+    pub fn get_agents_configuration_status(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AgentConfigurationStatus>> {
+        &self.agents_configuration_status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

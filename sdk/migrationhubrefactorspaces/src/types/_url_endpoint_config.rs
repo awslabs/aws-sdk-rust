@@ -48,6 +48,10 @@ impl UrlEndpointConfigBuilder {
         self.url = input;
         self
     }
+    /// <p>The HTTP URL endpoint. </p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
+    }
     /// <p>The health check URL of the URL endpoint type. </p>
     pub fn health_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.health_url = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl UrlEndpointConfigBuilder {
     pub fn set_health_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.health_url = input;
         self
+    }
+    /// <p>The health check URL of the URL endpoint type. </p>
+    pub fn get_health_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.health_url
     }
     /// Consumes the builder and constructs a [`UrlEndpointConfig`](crate::types::UrlEndpointConfig).
     pub fn build(self) -> crate::types::UrlEndpointConfig {

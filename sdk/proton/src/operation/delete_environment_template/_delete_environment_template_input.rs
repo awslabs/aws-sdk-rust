@@ -39,6 +39,10 @@ impl DeleteEnvironmentTemplateInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the environment template to delete.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DeleteEnvironmentTemplateInput`](crate::operation::delete_environment_template::DeleteEnvironmentTemplateInput).
     pub fn build(
         self,

@@ -112,6 +112,10 @@ impl InstanceSummaryBuilder {
         self.deployment_id = input;
         self
     }
+    /// <p> The unique ID of a deployment. </p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_id
+    }
     /// <p>The instance ID.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -121,6 +125,10 @@ impl InstanceSummaryBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
+    }
+    /// <p>The instance ID.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// <p>The deployment status for this instance:</p>
     /// <ul>
@@ -151,6 +159,18 @@ impl InstanceSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The deployment status for this instance:</p>
+    /// <ul>
+    /// <li> <p> <code>Pending</code>: The deployment is pending for this instance.</p> </li>
+    /// <li> <p> <code>In Progress</code>: The deployment is in progress for this instance.</p> </li>
+    /// <li> <p> <code>Succeeded</code>: The deployment has succeeded for this instance.</p> </li>
+    /// <li> <p> <code>Failed</code>: The deployment has failed for this instance.</p> </li>
+    /// <li> <p> <code>Skipped</code>: The deployment has been skipped for this instance.</p> </li>
+    /// <li> <p> <code>Unknown</code>: The deployment status is unknown for this instance.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::InstanceStatus> {
+        &self.status
+    }
     /// <p>A timestamp that indicates when the instance information was last updated.</p>
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_at = ::std::option::Option::Some(input);
@@ -163,6 +183,10 @@ impl InstanceSummaryBuilder {
     ) -> Self {
         self.last_updated_at = input;
         self
+    }
+    /// <p>A timestamp that indicates when the instance information was last updated.</p>
+    pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_at
     }
     /// Appends an item to `lifecycle_events`.
     ///
@@ -182,6 +206,12 @@ impl InstanceSummaryBuilder {
     ) -> Self {
         self.lifecycle_events = input;
         self
+    }
+    /// <p>A list of lifecycle events for this instance.</p>
+    pub fn get_lifecycle_events(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecycleEvent>> {
+        &self.lifecycle_events
     }
     /// <p>Information about which environment an instance belongs to in a blue/green deployment.</p>
     /// <ul>
@@ -203,6 +233,14 @@ impl InstanceSummaryBuilder {
     ) -> Self {
         self.instance_type = input;
         self
+    }
+    /// <p>Information about which environment an instance belongs to in a blue/green deployment.</p>
+    /// <ul>
+    /// <li> <p>BLUE: The instance is part of the original environment.</p> </li>
+    /// <li> <p>GREEN: The instance is part of the replacement environment.</p> </li>
+    /// </ul>
+    pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::InstanceType> {
+        &self.instance_type
     }
     /// Consumes the builder and constructs a [`InstanceSummary`](crate::types::InstanceSummary).
     pub fn build(self) -> crate::types::InstanceSummary {

@@ -52,6 +52,12 @@ impl GetInAppMessagesOutputBuilder {
         self.in_app_messages_response = input;
         self
     }
+    /// <p>Get in-app messages response object.</p>
+    pub fn get_in_app_messages_response(
+        &self,
+    ) -> &::std::option::Option<crate::types::InAppMessagesResponse> {
+        &self.in_app_messages_response
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

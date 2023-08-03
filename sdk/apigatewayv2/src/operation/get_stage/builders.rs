@@ -36,6 +36,10 @@ impl GetStageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetStage as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_stage::builders::GetStageInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl GetStageFluentBuilder {
         self.inner = self.inner.set_api_id(input);
         self
     }
+    /// <p>The API identifier.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_api_id()
+    }
     /// <p>The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stage_name(input.into());
@@ -127,5 +135,9 @@ impl GetStageFluentBuilder {
     pub fn set_stage_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stage_name(input);
         self
+    }
+    /// <p>The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
+    pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stage_name()
     }
 }

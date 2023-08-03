@@ -44,6 +44,10 @@ impl ImportApplicationUsageInputBuilder {
         self.source_s3_location = input;
         self
     }
+    /// <p>Amazon S3 location to import application usage data from.</p>
+    pub fn get_source_s3_location(&self) -> &::std::option::Option<crate::types::SourceS3Location> {
+        &self.source_s3_location
+    }
     /// Consumes the builder and constructs a [`ImportApplicationUsageInput`](crate::operation::import_application_usage::ImportApplicationUsageInput).
     pub fn build(
         self,

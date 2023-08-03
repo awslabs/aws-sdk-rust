@@ -37,6 +37,10 @@ impl AssociateBotFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateBot as a reference.
+    pub fn as_input(&self) -> &crate::operation::associate_bot::builders::AssociateBotInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl AssociateBotFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>Configuration information of an Amazon Lex bot.</p>
     pub fn lex_bot(mut self, input: crate::types::LexBot) -> Self {
         self.inner = self.inner.lex_bot(input);
@@ -129,6 +137,10 @@ impl AssociateBotFluentBuilder {
         self.inner = self.inner.set_lex_bot(input);
         self
     }
+    /// <p>Configuration information of an Amazon Lex bot.</p>
+    pub fn get_lex_bot(&self) -> &::std::option::Option<crate::types::LexBot> {
+        self.inner.get_lex_bot()
+    }
     /// <p>The Amazon Lex V2 bot to associate with the instance.</p>
     pub fn lex_v2_bot(mut self, input: crate::types::LexV2Bot) -> Self {
         self.inner = self.inner.lex_v2_bot(input);
@@ -138,5 +150,9 @@ impl AssociateBotFluentBuilder {
     pub fn set_lex_v2_bot(mut self, input: ::std::option::Option<crate::types::LexV2Bot>) -> Self {
         self.inner = self.inner.set_lex_v2_bot(input);
         self
+    }
+    /// <p>The Amazon Lex V2 bot to associate with the instance.</p>
+    pub fn get_lex_v2_bot(&self) -> &::std::option::Option<crate::types::LexV2Bot> {
+        self.inner.get_lex_v2_bot()
     }
 }

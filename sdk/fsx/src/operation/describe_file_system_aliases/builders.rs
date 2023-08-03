@@ -36,6 +36,10 @@ impl DescribeFileSystemAliasesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeFileSystemAliases as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_file_system_aliases::builders::DescribeFileSystemAliasesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl DescribeFileSystemAliasesFluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
+    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
+    }
     /// <p>The ID of the file system to return the associated DNS aliases for (String).</p>
     pub fn file_system_id(
         mut self,
@@ -148,6 +156,10 @@ impl DescribeFileSystemAliasesFluentBuilder {
         self.inner = self.inner.set_file_system_id(input);
         self
     }
+    /// <p>The ID of the file system to return the associated DNS aliases for (String).</p>
+    pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_file_system_id()
+    }
     /// <p>Maximum number of DNS aliases to return in the response (integer). This parameter value must be greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the request and the service's internal maximum number of items per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -158,6 +170,10 @@ impl DescribeFileSystemAliasesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>Maximum number of DNS aliases to return in the response (integer). This parameter value must be greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the request and the service's internal maximum number of items per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>Opaque pagination token returned from a previous <code>DescribeFileSystemAliases</code> operation (String). If a token is included in the request, the action continues the list from where the previous returning call left off.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -167,5 +183,9 @@ impl DescribeFileSystemAliasesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>Opaque pagination token returned from a previous <code>DescribeFileSystemAliases</code> operation (String). If a token is included in the request, the action continues the list from where the previous returning call left off.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

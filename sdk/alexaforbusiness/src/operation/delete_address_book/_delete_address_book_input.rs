@@ -46,6 +46,10 @@ impl DeleteAddressBookInputBuilder {
         self.address_book_arn = input;
         self
     }
+    /// <p>The ARN of the address book to delete.</p>
+    pub fn get_address_book_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.address_book_arn
+    }
     /// Consumes the builder and constructs a [`DeleteAddressBookInput`](crate::operation::delete_address_book::DeleteAddressBookInput).
     pub fn build(
         self,

@@ -36,6 +36,10 @@ impl GetConfiguredTableAnalysisRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetConfiguredTableAnalysisRule as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_configured_table_analysis_rule::builders::GetConfiguredTableAnalysisRuleInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl GetConfiguredTableAnalysisRuleFluentBuilder {
         self.inner = self.inner.set_configured_table_identifier(input);
         self
     }
+    /// <p>The unique identifier for the configured table to retrieve. Currently accepts the configured table ID.</p>
+    pub fn get_configured_table_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configured_table_identifier()
+    }
     /// <p>The analysis rule to be retrieved. Configured table analysis rules are uniquely identified by their configured table identifier and analysis rule type.</p>
     pub fn analysis_rule_type(
         mut self,
@@ -121,5 +129,11 @@ impl GetConfiguredTableAnalysisRuleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_analysis_rule_type(input);
         self
+    }
+    /// <p>The analysis rule to be retrieved. Configured table analysis rules are uniquely identified by their configured table identifier and analysis rule type.</p>
+    pub fn get_analysis_rule_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConfiguredTableAnalysisRuleType> {
+        self.inner.get_analysis_rule_type()
     }
 }

@@ -65,6 +65,10 @@ impl JobProgressSummaryBuilder {
         self
     }
     /// <p></p>
+    pub fn get_total_number_of_tasks(&self) -> &::std::option::Option<i64> {
+        &self.total_number_of_tasks
+    }
+    /// <p></p>
     pub fn number_of_tasks_succeeded(mut self, input: i64) -> Self {
         self.number_of_tasks_succeeded = ::std::option::Option::Some(input);
         self
@@ -73,6 +77,10 @@ impl JobProgressSummaryBuilder {
     pub fn set_number_of_tasks_succeeded(mut self, input: ::std::option::Option<i64>) -> Self {
         self.number_of_tasks_succeeded = input;
         self
+    }
+    /// <p></p>
+    pub fn get_number_of_tasks_succeeded(&self) -> &::std::option::Option<i64> {
+        &self.number_of_tasks_succeeded
     }
     /// <p></p>
     pub fn number_of_tasks_failed(mut self, input: i64) -> Self {
@@ -84,6 +92,10 @@ impl JobProgressSummaryBuilder {
         self.number_of_tasks_failed = input;
         self
     }
+    /// <p></p>
+    pub fn get_number_of_tasks_failed(&self) -> &::std::option::Option<i64> {
+        &self.number_of_tasks_failed
+    }
     /// <p>The JobTimers attribute of a job's progress summary.</p>
     pub fn timers(mut self, input: crate::types::JobTimers) -> Self {
         self.timers = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl JobProgressSummaryBuilder {
     pub fn set_timers(mut self, input: ::std::option::Option<crate::types::JobTimers>) -> Self {
         self.timers = input;
         self
+    }
+    /// <p>The JobTimers attribute of a job's progress summary.</p>
+    pub fn get_timers(&self) -> &::std::option::Option<crate::types::JobTimers> {
+        &self.timers
     }
     /// Consumes the builder and constructs a [`JobProgressSummary`](crate::types::JobProgressSummary).
     pub fn build(self) -> crate::types::JobProgressSummary {

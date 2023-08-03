@@ -36,6 +36,10 @@ impl UpdateApprovalRuleTemplateNameFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateApprovalRuleTemplateName as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_approval_rule_template_name::builders::UpdateApprovalRuleTemplateNameInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,12 @@ impl UpdateApprovalRuleTemplateNameFluentBuilder {
         self.inner = self.inner.set_old_approval_rule_template_name(input);
         self
     }
+    /// <p>The current name of the approval rule template.</p>
+    pub fn get_old_approval_rule_template_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_old_approval_rule_template_name()
+    }
     /// <p>The new name you want to apply to the approval rule template.</p>
     pub fn new_approval_rule_template_name(
         mut self,
@@ -121,5 +131,11 @@ impl UpdateApprovalRuleTemplateNameFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_new_approval_rule_template_name(input);
         self
+    }
+    /// <p>The new name you want to apply to the approval rule template.</p>
+    pub fn get_new_approval_rule_template_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_new_approval_rule_template_name()
     }
 }

@@ -98,6 +98,10 @@ impl PollForDecisionTaskOutputBuilder {
         self.task_token = input;
         self
     }
+    /// <p>The opaque string used as a handle on the task. This token is used by workers to communicate progress and response information back to the system about the task.</p>
+    pub fn get_task_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_token
+    }
     /// <p>The ID of the <code>DecisionTaskStarted</code> event recorded in the history.</p>
     pub fn started_event_id(mut self, input: i64) -> Self {
         self.started_event_id = ::std::option::Option::Some(input);
@@ -107,6 +111,10 @@ impl PollForDecisionTaskOutputBuilder {
     pub fn set_started_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.started_event_id = input;
         self
+    }
+    /// <p>The ID of the <code>DecisionTaskStarted</code> event recorded in the history.</p>
+    pub fn get_started_event_id(&self) -> &::std::option::Option<i64> {
+        &self.started_event_id
     }
     /// <p>The workflow execution for which this decision task was created.</p>
     pub fn workflow_execution(mut self, input: crate::types::WorkflowExecution) -> Self {
@@ -121,6 +129,12 @@ impl PollForDecisionTaskOutputBuilder {
         self.workflow_execution = input;
         self
     }
+    /// <p>The workflow execution for which this decision task was created.</p>
+    pub fn get_workflow_execution(
+        &self,
+    ) -> &::std::option::Option<crate::types::WorkflowExecution> {
+        &self.workflow_execution
+    }
     /// <p>The type of the workflow execution for which this decision task was created.</p>
     pub fn workflow_type(mut self, input: crate::types::WorkflowType) -> Self {
         self.workflow_type = ::std::option::Option::Some(input);
@@ -133,6 +147,10 @@ impl PollForDecisionTaskOutputBuilder {
     ) -> Self {
         self.workflow_type = input;
         self
+    }
+    /// <p>The type of the workflow execution for which this decision task was created.</p>
+    pub fn get_workflow_type(&self) -> &::std::option::Option<crate::types::WorkflowType> {
+        &self.workflow_type
     }
     /// Appends an item to `events`.
     ///
@@ -153,6 +171,12 @@ impl PollForDecisionTaskOutputBuilder {
         self.events = input;
         self
     }
+    /// <p>A paginated list of history events of the workflow execution. The decider uses this during the processing of the decision task.</p>
+    pub fn get_events(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HistoryEvent>> {
+        &self.events
+    }
     /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
     pub fn next_page_token(
@@ -171,6 +195,11 @@ impl PollForDecisionTaskOutputBuilder {
         self.next_page_token = input;
         self
     }
+    /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
+    /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
+    pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_page_token
+    }
     /// <p>The ID of the DecisionTaskStarted event of the previous decision task of this workflow execution that was processed by the decider. This can be used to determine the events in the history new since the last decision task received by the decider.</p>
     pub fn previous_started_event_id(mut self, input: i64) -> Self {
         self.previous_started_event_id = ::std::option::Option::Some(input);
@@ -180,6 +209,10 @@ impl PollForDecisionTaskOutputBuilder {
     pub fn set_previous_started_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.previous_started_event_id = input;
         self
+    }
+    /// <p>The ID of the DecisionTaskStarted event of the previous decision task of this workflow execution that was processed by the decider. This can be used to determine the events in the history new since the last decision task received by the decider.</p>
+    pub fn get_previous_started_event_id(&self) -> &::std::option::Option<i64> {
+        &self.previous_started_event_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

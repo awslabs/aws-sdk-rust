@@ -109,6 +109,12 @@ impl CaptionSelectorSettingsBuilder {
         self.ancillary_source_settings = input;
         self
     }
+    /// Ancillary Source Settings
+    pub fn get_ancillary_source_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::AncillarySourceSettings> {
+        &self.ancillary_source_settings
+    }
     /// Arib Source Settings
     pub fn arib_source_settings(mut self, input: crate::types::AribSourceSettings) -> Self {
         self.arib_source_settings = ::std::option::Option::Some(input);
@@ -121,6 +127,12 @@ impl CaptionSelectorSettingsBuilder {
     ) -> Self {
         self.arib_source_settings = input;
         self
+    }
+    /// Arib Source Settings
+    pub fn get_arib_source_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::AribSourceSettings> {
+        &self.arib_source_settings
     }
     /// Dvb Sub Source Settings
     pub fn dvb_sub_source_settings(mut self, input: crate::types::DvbSubSourceSettings) -> Self {
@@ -135,6 +147,12 @@ impl CaptionSelectorSettingsBuilder {
         self.dvb_sub_source_settings = input;
         self
     }
+    /// Dvb Sub Source Settings
+    pub fn get_dvb_sub_source_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::DvbSubSourceSettings> {
+        &self.dvb_sub_source_settings
+    }
     /// Embedded Source Settings
     pub fn embedded_source_settings(mut self, input: crate::types::EmbeddedSourceSettings) -> Self {
         self.embedded_source_settings = ::std::option::Option::Some(input);
@@ -147,6 +165,12 @@ impl CaptionSelectorSettingsBuilder {
     ) -> Self {
         self.embedded_source_settings = input;
         self
+    }
+    /// Embedded Source Settings
+    pub fn get_embedded_source_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::EmbeddedSourceSettings> {
+        &self.embedded_source_settings
     }
     /// Scte20 Source Settings
     pub fn scte20_source_settings(mut self, input: crate::types::Scte20SourceSettings) -> Self {
@@ -161,6 +185,12 @@ impl CaptionSelectorSettingsBuilder {
         self.scte20_source_settings = input;
         self
     }
+    /// Scte20 Source Settings
+    pub fn get_scte20_source_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::Scte20SourceSettings> {
+        &self.scte20_source_settings
+    }
     /// Scte27 Source Settings
     pub fn scte27_source_settings(mut self, input: crate::types::Scte27SourceSettings) -> Self {
         self.scte27_source_settings = ::std::option::Option::Some(input);
@@ -174,6 +204,12 @@ impl CaptionSelectorSettingsBuilder {
         self.scte27_source_settings = input;
         self
     }
+    /// Scte27 Source Settings
+    pub fn get_scte27_source_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::Scte27SourceSettings> {
+        &self.scte27_source_settings
+    }
     /// Teletext Source Settings
     pub fn teletext_source_settings(mut self, input: crate::types::TeletextSourceSettings) -> Self {
         self.teletext_source_settings = ::std::option::Option::Some(input);
@@ -186,6 +222,12 @@ impl CaptionSelectorSettingsBuilder {
     ) -> Self {
         self.teletext_source_settings = input;
         self
+    }
+    /// Teletext Source Settings
+    pub fn get_teletext_source_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::TeletextSourceSettings> {
+        &self.teletext_source_settings
     }
     /// Consumes the builder and constructs a [`CaptionSelectorSettings`](crate::types::CaptionSelectorSettings).
     pub fn build(self) -> crate::types::CaptionSelectorSettings {

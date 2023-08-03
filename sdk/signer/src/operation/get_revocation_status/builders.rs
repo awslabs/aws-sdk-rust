@@ -36,6 +36,12 @@ impl GetRevocationStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetRevocationStatus as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_revocation_status::builders::GetRevocationStatusInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl GetRevocationStatusFluentBuilder {
         self.inner = self.inner.set_signature_timestamp(input);
         self
     }
+    /// <p>The timestamp of the signature that validates the profile or job.</p>
+    pub fn get_signature_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_signature_timestamp()
+    }
     /// <p>The ID of a signing platform. </p>
     pub fn platform_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.platform_id(input.into());
@@ -138,6 +148,10 @@ impl GetRevocationStatusFluentBuilder {
     pub fn set_platform_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_platform_id(input);
         self
+    }
+    /// <p>The ID of a signing platform. </p>
+    pub fn get_platform_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_platform_id()
     }
     /// <p>The version of a signing profile.</p>
     pub fn profile_version_arn(
@@ -155,6 +169,10 @@ impl GetRevocationStatusFluentBuilder {
         self.inner = self.inner.set_profile_version_arn(input);
         self
     }
+    /// <p>The version of a signing profile.</p>
+    pub fn get_profile_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_profile_version_arn()
+    }
     /// <p>The ARN of a signing job.</p>
     pub fn job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_arn(input.into());
@@ -164,6 +182,10 @@ impl GetRevocationStatusFluentBuilder {
     pub fn set_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_arn(input);
         self
+    }
+    /// <p>The ARN of a signing job.</p>
+    pub fn get_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_arn()
     }
     /// Appends an item to `certificateHashes`.
     ///
@@ -186,5 +208,12 @@ impl GetRevocationStatusFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_certificate_hashes(input);
         self
+    }
+    /// <p>A list of composite signed hashes that identify certificates.</p>
+    /// <p>A certificate identifier consists of a subject certificate TBS hash (signed by the parent CA) combined with a parent CA TBS hash (signed by the parent CA’s CA). Root certificates are defined as their own CA.</p>
+    pub fn get_certificate_hashes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_certificate_hashes()
     }
 }

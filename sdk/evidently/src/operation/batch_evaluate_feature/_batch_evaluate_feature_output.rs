@@ -56,6 +56,12 @@ impl BatchEvaluateFeatureOutputBuilder {
         self.results = input;
         self
     }
+    /// <p>An array of structures, where each structure displays the results of one feature evaluation assignment to one user session.</p>
+    pub fn get_results(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationResult>> {
+        &self.results
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

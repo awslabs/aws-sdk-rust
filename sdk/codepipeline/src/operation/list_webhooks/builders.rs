@@ -36,6 +36,10 @@ impl ListWebhooksFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListWebhooks as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_webhooks::builders::ListWebhooksInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +133,10 @@ impl ListWebhooksFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token that was returned from the previous ListWebhooks call, which can be used to return the next set of webhooks in the list.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -138,5 +146,9 @@ impl ListWebhooksFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

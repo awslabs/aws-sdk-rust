@@ -39,6 +39,10 @@ impl DescribeReturnShippingLabelInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// Consumes the builder and constructs a [`DescribeReturnShippingLabelInput`](crate::operation::describe_return_shipping_label::DescribeReturnShippingLabelInput).
     pub fn build(
         self,

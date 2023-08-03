@@ -105,6 +105,16 @@ impl ActionBuilder {
         self.action_type = input;
         self
     }
+    /// <p>The type of action that was detected. The possible action types are:</p>
+    /// <ul>
+    /// <li> <p> <code>NETWORK_CONNECTION</code> </p> </li>
+    /// <li> <p> <code>AWS_API_CALL</code> </p> </li>
+    /// <li> <p> <code>DNS_REQUEST</code> </p> </li>
+    /// <li> <p> <code>PORT_PROBE</code> </p> </li>
+    /// </ul>
+    pub fn get_action_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_type
+    }
     /// <p>Included if <code>ActionType</code> is <code>NETWORK_CONNECTION</code>. Provides details about the network connection that was detected.</p>
     pub fn network_connection_action(
         mut self,
@@ -121,6 +131,12 @@ impl ActionBuilder {
         self.network_connection_action = input;
         self
     }
+    /// <p>Included if <code>ActionType</code> is <code>NETWORK_CONNECTION</code>. Provides details about the network connection that was detected.</p>
+    pub fn get_network_connection_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkConnectionAction> {
+        &self.network_connection_action
+    }
     /// <p>Included if <code>ActionType</code> is <code>AWS_API_CALL</code>. Provides details about the API call that was detected. </p>
     pub fn aws_api_call_action(mut self, input: crate::types::AwsApiCallAction) -> Self {
         self.aws_api_call_action = ::std::option::Option::Some(input);
@@ -133,6 +149,12 @@ impl ActionBuilder {
     ) -> Self {
         self.aws_api_call_action = input;
         self
+    }
+    /// <p>Included if <code>ActionType</code> is <code>AWS_API_CALL</code>. Provides details about the API call that was detected. </p>
+    pub fn get_aws_api_call_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsApiCallAction> {
+        &self.aws_api_call_action
     }
     /// <p>Included if <code>ActionType</code> is <code>DNS_REQUEST</code>. Provides details about the DNS request that was detected. </p>
     pub fn dns_request_action(mut self, input: crate::types::DnsRequestAction) -> Self {
@@ -147,6 +169,10 @@ impl ActionBuilder {
         self.dns_request_action = input;
         self
     }
+    /// <p>Included if <code>ActionType</code> is <code>DNS_REQUEST</code>. Provides details about the DNS request that was detected. </p>
+    pub fn get_dns_request_action(&self) -> &::std::option::Option<crate::types::DnsRequestAction> {
+        &self.dns_request_action
+    }
     /// <p>Included if <code>ActionType</code> is <code>PORT_PROBE</code>. Provides details about the port probe that was detected. </p>
     pub fn port_probe_action(mut self, input: crate::types::PortProbeAction) -> Self {
         self.port_probe_action = ::std::option::Option::Some(input);
@@ -159,6 +185,10 @@ impl ActionBuilder {
     ) -> Self {
         self.port_probe_action = input;
         self
+    }
+    /// <p>Included if <code>ActionType</code> is <code>PORT_PROBE</code>. Provides details about the port probe that was detected. </p>
+    pub fn get_port_probe_action(&self) -> &::std::option::Option<crate::types::PortProbeAction> {
+        &self.port_probe_action
     }
     /// Consumes the builder and constructs a [`Action`](crate::types::Action).
     pub fn build(self) -> crate::types::Action {

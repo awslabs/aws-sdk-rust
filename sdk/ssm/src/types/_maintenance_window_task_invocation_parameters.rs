@@ -82,6 +82,12 @@ impl MaintenanceWindowTaskInvocationParametersBuilder {
         self.run_command = input;
         self
     }
+    /// <p>The parameters for a <code>RUN_COMMAND</code> task type.</p>
+    pub fn get_run_command(
+        &self,
+    ) -> &::std::option::Option<crate::types::MaintenanceWindowRunCommandParameters> {
+        &self.run_command
+    }
     /// <p>The parameters for an <code>AUTOMATION</code> task type.</p>
     pub fn automation(
         mut self,
@@ -97,6 +103,12 @@ impl MaintenanceWindowTaskInvocationParametersBuilder {
     ) -> Self {
         self.automation = input;
         self
+    }
+    /// <p>The parameters for an <code>AUTOMATION</code> task type.</p>
+    pub fn get_automation(
+        &self,
+    ) -> &::std::option::Option<crate::types::MaintenanceWindowAutomationParameters> {
+        &self.automation
     }
     /// <p>The parameters for a <code>STEP_FUNCTIONS</code> task type.</p>
     pub fn step_functions(
@@ -114,6 +126,12 @@ impl MaintenanceWindowTaskInvocationParametersBuilder {
         self.step_functions = input;
         self
     }
+    /// <p>The parameters for a <code>STEP_FUNCTIONS</code> task type.</p>
+    pub fn get_step_functions(
+        &self,
+    ) -> &::std::option::Option<crate::types::MaintenanceWindowStepFunctionsParameters> {
+        &self.step_functions
+    }
     /// <p>The parameters for a <code>LAMBDA</code> task type.</p>
     pub fn lambda(mut self, input: crate::types::MaintenanceWindowLambdaParameters) -> Self {
         self.lambda = ::std::option::Option::Some(input);
@@ -126,6 +144,12 @@ impl MaintenanceWindowTaskInvocationParametersBuilder {
     ) -> Self {
         self.lambda = input;
         self
+    }
+    /// <p>The parameters for a <code>LAMBDA</code> task type.</p>
+    pub fn get_lambda(
+        &self,
+    ) -> &::std::option::Option<crate::types::MaintenanceWindowLambdaParameters> {
+        &self.lambda
     }
     /// Consumes the builder and constructs a [`MaintenanceWindowTaskInvocationParameters`](crate::types::MaintenanceWindowTaskInvocationParameters).
     pub fn build(self) -> crate::types::MaintenanceWindowTaskInvocationParameters {

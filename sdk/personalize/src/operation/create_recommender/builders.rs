@@ -59,6 +59,12 @@ impl CreateRecommenderFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateRecommender as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_recommender::builders::CreateRecommenderInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -149,6 +155,10 @@ impl CreateRecommenderFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the recommender.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The Amazon Resource Name (ARN) of the destination domain dataset group for the recommender.</p>
     pub fn dataset_group_arn(
         mut self,
@@ -165,6 +175,10 @@ impl CreateRecommenderFluentBuilder {
         self.inner = self.inner.set_dataset_group_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the destination domain dataset group for the recommender.</p>
+    pub fn get_dataset_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dataset_group_arn()
+    }
     /// <p>The Amazon Resource Name (ARN) of the recipe that the recommender will use. For a recommender, a recipe is a Domain dataset group use case. Only Domain dataset group use cases can be used to create a recommender. For information about use cases see <a href="https://docs.aws.amazon.com/personalize/latest/dg/domain-use-cases.html">Choosing recommender use cases</a>. </p>
     pub fn recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.recipe_arn(input.into());
@@ -174,6 +188,10 @@ impl CreateRecommenderFluentBuilder {
     pub fn set_recipe_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_recipe_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the recipe that the recommender will use. For a recommender, a recipe is a Domain dataset group use case. Only Domain dataset group use cases can be used to create a recommender. For information about use cases see <a href="https://docs.aws.amazon.com/personalize/latest/dg/domain-use-cases.html">Choosing recommender use cases</a>. </p>
+    pub fn get_recipe_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_recipe_arn()
     }
     /// <p>The configuration details of the recommender.</p>
     pub fn recommender_config(mut self, input: crate::types::RecommenderConfig) -> Self {
@@ -187,6 +205,12 @@ impl CreateRecommenderFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_recommender_config(input);
         self
+    }
+    /// <p>The configuration details of the recommender.</p>
+    pub fn get_recommender_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::RecommenderConfig> {
+        self.inner.get_recommender_config()
     }
     /// Appends an item to `tags`.
     ///
@@ -204,5 +228,9 @@ impl CreateRecommenderFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the recommender.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

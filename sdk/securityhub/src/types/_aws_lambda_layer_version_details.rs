@@ -60,6 +60,10 @@ impl AwsLambdaLayerVersionDetailsBuilder {
         self.version = input;
         self
     }
+    /// <p>The version number.</p>
+    pub fn get_version(&self) -> &::std::option::Option<i64> {
+        &self.version
+    }
     /// Appends an item to `compatible_runtimes`.
     ///
     /// To override the contents of this collection use [`set_compatible_runtimes`](Self::set_compatible_runtimes).
@@ -84,6 +88,13 @@ impl AwsLambdaLayerVersionDetailsBuilder {
         self.compatible_runtimes = input;
         self
     }
+    /// <p>The layer's compatible runtimes. Maximum number of five items.</p>
+    /// <p>Valid values: <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> | <code>java11</code> | <code>python2.7</code> | <code>python3.6</code> | <code>python3.7</code> | <code>python3.8</code> | <code>dotnetcore1.0</code> | <code>dotnetcore2.1</code> | <code>go1.x</code> | <code>ruby2.5</code> | <code>provided</code> </p>
+    pub fn get_compatible_runtimes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.compatible_runtimes
+    }
     /// <p>Indicates when the version was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn created_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -95,6 +106,11 @@ impl AwsLambdaLayerVersionDetailsBuilder {
     pub fn set_created_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_date = input;
         self
+    }
+    /// <p>Indicates when the version was created.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_created_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_date
     }
     /// Consumes the builder and constructs a [`AwsLambdaLayerVersionDetails`](crate::types::AwsLambdaLayerVersionDetails).
     pub fn build(self) -> crate::types::AwsLambdaLayerVersionDetails {

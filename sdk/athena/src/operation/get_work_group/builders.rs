@@ -36,6 +36,12 @@ impl GetWorkGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetWorkGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_work_group::builders::GetWorkGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -117,5 +123,9 @@ impl GetWorkGroupFluentBuilder {
     pub fn set_work_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_work_group(input);
         self
+    }
+    /// <p>The name of the workgroup.</p>
+    pub fn get_work_group(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_work_group()
     }
 }

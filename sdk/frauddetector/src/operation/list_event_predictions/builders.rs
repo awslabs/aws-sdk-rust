@@ -38,6 +38,12 @@ impl ListEventPredictionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListEventPredictions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_event_predictions::builders::ListEventPredictionsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -142,6 +148,10 @@ impl ListEventPredictionsFluentBuilder {
         self.inner = self.inner.set_event_id(input);
         self
     }
+    /// <p> The event ID. </p>
+    pub fn get_event_id(&self) -> &::std::option::Option<crate::types::FilterCondition> {
+        self.inner.get_event_id()
+    }
     /// <p> The event type associated with the detector. </p>
     pub fn event_type(mut self, input: crate::types::FilterCondition) -> Self {
         self.inner = self.inner.event_type(input);
@@ -154,6 +164,10 @@ impl ListEventPredictionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_event_type(input);
         self
+    }
+    /// <p> The event type associated with the detector. </p>
+    pub fn get_event_type(&self) -> &::std::option::Option<crate::types::FilterCondition> {
+        self.inner.get_event_type()
     }
     /// <p> The detector ID. </p>
     pub fn detector_id(mut self, input: crate::types::FilterCondition) -> Self {
@@ -168,6 +182,10 @@ impl ListEventPredictionsFluentBuilder {
         self.inner = self.inner.set_detector_id(input);
         self
     }
+    /// <p> The detector ID. </p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<crate::types::FilterCondition> {
+        self.inner.get_detector_id()
+    }
     /// <p> The detector version ID. </p>
     pub fn detector_version_id(mut self, input: crate::types::FilterCondition) -> Self {
         self.inner = self.inner.detector_version_id(input);
@@ -180,6 +198,10 @@ impl ListEventPredictionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_detector_version_id(input);
         self
+    }
+    /// <p> The detector version ID. </p>
+    pub fn get_detector_version_id(&self) -> &::std::option::Option<crate::types::FilterCondition> {
+        self.inner.get_detector_version_id()
     }
     /// <p> The time period for when the predictions were generated. </p>
     pub fn prediction_time_range(mut self, input: crate::types::PredictionTimeRange) -> Self {
@@ -194,6 +216,12 @@ impl ListEventPredictionsFluentBuilder {
         self.inner = self.inner.set_prediction_time_range(input);
         self
     }
+    /// <p> The time period for when the predictions were generated. </p>
+    pub fn get_prediction_time_range(
+        &self,
+    ) -> &::std::option::Option<crate::types::PredictionTimeRange> {
+        self.inner.get_prediction_time_range()
+    }
     /// <p> Identifies the next page of results to return. Use the token to make the call again to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -204,6 +232,10 @@ impl ListEventPredictionsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p> Identifies the next page of results to return. Use the token to make the call again to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p> The maximum number of predictions to return for the request. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -213,5 +245,9 @@ impl ListEventPredictionsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p> The maximum number of predictions to return for the request. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

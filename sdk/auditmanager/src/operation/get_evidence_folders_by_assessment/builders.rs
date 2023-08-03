@@ -36,6 +36,10 @@ impl GetEvidenceFoldersByAssessmentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetEvidenceFoldersByAssessment as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_evidence_folders_by_assessment::builders::GetEvidenceFoldersByAssessmentInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -112,6 +116,10 @@ impl GetEvidenceFoldersByAssessmentFluentBuilder {
         self.inner = self.inner.set_assessment_id(input);
         self
     }
+    /// <p> The unique identifier for the assessment. </p>
+    pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_assessment_id()
+    }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -122,6 +130,10 @@ impl GetEvidenceFoldersByAssessmentFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p> The pagination token that's used to fetch the next set of results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p> Represents the maximum number of results on a page or for an API request call. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -131,5 +143,9 @@ impl GetEvidenceFoldersByAssessmentFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p> Represents the maximum number of results on a page or for an API request call. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

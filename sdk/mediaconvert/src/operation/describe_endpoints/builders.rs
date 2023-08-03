@@ -36,6 +36,12 @@ impl DescribeEndpointsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeEndpoints as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_endpoints::builders::DescribeEndpointsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl DescribeEndpointsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// Optional. Max number of endpoints, up to twenty, that will be returned at one time.
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// Optional field, defaults to DEFAULT. Specify DEFAULT for this operation to return your endpoints if any exist, or to create an endpoint for you and return it if one doesn't already exist. Specify GET_ONLY to return your endpoints if any exist, or an empty list if none exist.
     pub fn mode(mut self, input: crate::types::DescribeEndpointsMode) -> Self {
         self.inner = self.inner.mode(input);
@@ -150,6 +160,10 @@ impl DescribeEndpointsFluentBuilder {
         self.inner = self.inner.set_mode(input);
         self
     }
+    /// Optional field, defaults to DEFAULT. Specify DEFAULT for this operation to return your endpoints if any exist, or to create an endpoint for you and return it if one doesn't already exist. Specify GET_ONLY to return your endpoints if any exist, or an empty list if none exist.
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::DescribeEndpointsMode> {
+        self.inner.get_mode()
+    }
     /// Use this string, provided with the response to a previous request, to request the next batch of endpoints.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -159,5 +173,9 @@ impl DescribeEndpointsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// Use this string, provided with the response to a previous request, to request the next batch of endpoints.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

@@ -36,6 +36,12 @@ impl ModifySnapshotTierFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifySnapshotTier as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::modify_snapshot_tier::builders::ModifySnapshotTierInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl ModifySnapshotTierFluentBuilder {
         self.inner = self.inner.set_snapshot_id(input);
         self
     }
+    /// <p>The ID of the snapshot.</p>
+    pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_snapshot_id()
+    }
     /// <p>The name of the storage tier. You must specify <code>archive</code>.</p>
     pub fn storage_tier(mut self, input: crate::types::TargetStorageTier) -> Self {
         self.inner = self.inner.storage_tier(input);
@@ -139,6 +149,10 @@ impl ModifySnapshotTierFluentBuilder {
         self.inner = self.inner.set_storage_tier(input);
         self
     }
+    /// <p>The name of the storage tier. You must specify <code>archive</code>.</p>
+    pub fn get_storage_tier(&self) -> &::std::option::Option<crate::types::TargetStorageTier> {
+        self.inner.get_storage_tier()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -148,5 +162,9 @@ impl ModifySnapshotTierFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

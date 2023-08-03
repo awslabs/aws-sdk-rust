@@ -71,6 +71,15 @@ impl CreateApiKeyInputBuilder {
         self.scope = input;
         self
     }
+    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance. </p>
+    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+    /// <ul>
+    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+    /// </ul>
+    pub fn get_scope(&self) -> &::std::option::Option<crate::types::Scope> {
+        &self.scope
+    }
     /// Appends an item to `token_domains`.
     ///
     /// To override the contents of this collection use [`set_token_domains`](Self::set_token_domains).
@@ -96,6 +105,14 @@ impl CreateApiKeyInputBuilder {
     ) -> Self {
         self.token_domains = input;
         self
+    }
+    /// <p>The client application domains that you want to use this API key for. </p>
+    /// <p>Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code> </p>
+    /// <p>Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
+    pub fn get_token_domains(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.token_domains
     }
     /// Consumes the builder and constructs a [`CreateApiKeyInput`](crate::operation::create_api_key::CreateApiKeyInput).
     pub fn build(

@@ -48,6 +48,10 @@ impl DependencyRevisionBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the workflow or system.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The revision number of the workflow or system.</p>
     pub fn revision_number(mut self, input: i64) -> Self {
         self.revision_number = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl DependencyRevisionBuilder {
     pub fn set_revision_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.revision_number = input;
         self
+    }
+    /// <p>The revision number of the workflow or system.</p>
+    pub fn get_revision_number(&self) -> &::std::option::Option<i64> {
+        &self.revision_number
     }
     /// Consumes the builder and constructs a [`DependencyRevision`](crate::types::DependencyRevision).
     pub fn build(self) -> crate::types::DependencyRevision {

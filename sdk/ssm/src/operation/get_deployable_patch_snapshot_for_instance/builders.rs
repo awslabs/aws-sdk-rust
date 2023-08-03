@@ -38,6 +38,10 @@ impl GetDeployablePatchSnapshotForInstanceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetDeployablePatchSnapshotForInstance as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_deployable_patch_snapshot_for_instance::builders::GetDeployablePatchSnapshotForInstanceInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -102,6 +106,10 @@ impl GetDeployablePatchSnapshotForInstanceFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The ID of the managed node for which the appropriate patch snapshot should be retrieved.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>The snapshot ID provided by the user when running <code>AWS-RunPatchBaseline</code>.</p>
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_id(input.into());
@@ -111,6 +119,10 @@ impl GetDeployablePatchSnapshotForInstanceFluentBuilder {
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_id(input);
         self
+    }
+    /// <p>The snapshot ID provided by the user when running <code>AWS-RunPatchBaseline</code>.</p>
+    pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_snapshot_id()
     }
     /// <p>Defines the basic information about a patch baseline override.</p>
     pub fn baseline_override(mut self, input: crate::types::BaselineOverride) -> Self {
@@ -124,5 +136,9 @@ impl GetDeployablePatchSnapshotForInstanceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_baseline_override(input);
         self
+    }
+    /// <p>Defines the basic information about a patch baseline override.</p>
+    pub fn get_baseline_override(&self) -> &::std::option::Option<crate::types::BaselineOverride> {
+        self.inner.get_baseline_override()
     }
 }

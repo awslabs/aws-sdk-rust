@@ -39,6 +39,10 @@ impl InferRxNormInputBuilder {
         self.text = input;
         self
     }
+    /// <p>The input text used for analysis.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
+    }
     /// Consumes the builder and constructs a [`InferRxNormInput`](crate::operation::infer_rx_norm::InferRxNormInput).
     pub fn build(
         self,

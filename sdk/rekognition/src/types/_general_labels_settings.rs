@@ -86,6 +86,12 @@ impl GeneralLabelsSettingsBuilder {
         self.label_inclusion_filters = input;
         self
     }
+    /// <p>The labels that should be included in the return from DetectLabels.</p>
+    pub fn get_label_inclusion_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.label_inclusion_filters
+    }
     /// Appends an item to `label_exclusion_filters`.
     ///
     /// To override the contents of this collection use [`set_label_exclusion_filters`](Self::set_label_exclusion_filters).
@@ -107,6 +113,12 @@ impl GeneralLabelsSettingsBuilder {
     ) -> Self {
         self.label_exclusion_filters = input;
         self
+    }
+    /// <p>The labels that should be excluded from the return from DetectLabels.</p>
+    pub fn get_label_exclusion_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.label_exclusion_filters
     }
     /// Appends an item to `label_category_inclusion_filters`.
     ///
@@ -130,6 +142,12 @@ impl GeneralLabelsSettingsBuilder {
         self.label_category_inclusion_filters = input;
         self
     }
+    /// <p>The label categories that should be included in the return from DetectLabels.</p>
+    pub fn get_label_category_inclusion_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.label_category_inclusion_filters
+    }
     /// Appends an item to `label_category_exclusion_filters`.
     ///
     /// To override the contents of this collection use [`set_label_category_exclusion_filters`](Self::set_label_category_exclusion_filters).
@@ -151,6 +169,12 @@ impl GeneralLabelsSettingsBuilder {
     ) -> Self {
         self.label_category_exclusion_filters = input;
         self
+    }
+    /// <p>The label categories that should be excluded from the return from DetectLabels.</p>
+    pub fn get_label_category_exclusion_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.label_category_exclusion_filters
     }
     /// Consumes the builder and constructs a [`GeneralLabelsSettings`](crate::types::GeneralLabelsSettings).
     pub fn build(self) -> crate::types::GeneralLabelsSettings {

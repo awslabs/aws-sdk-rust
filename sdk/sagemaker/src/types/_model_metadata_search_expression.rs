@@ -49,6 +49,12 @@ impl ModelMetadataSearchExpressionBuilder {
         self.filters = input;
         self
     }
+    /// <p>A list of filter objects.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelMetadataFilter>> {
+        &self.filters
+    }
     /// Consumes the builder and constructs a [`ModelMetadataSearchExpression`](crate::types::ModelMetadataSearchExpression).
     pub fn build(self) -> crate::types::ModelMetadataSearchExpression {
         crate::types::ModelMetadataSearchExpression {

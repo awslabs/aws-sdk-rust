@@ -51,6 +51,12 @@ impl ValueMappingBuilder {
         self.display_value = input;
         self
     }
+    /// <p>The value to display for the complex object.</p>
+    pub fn get_display_value(
+        &self,
+    ) -> &::std::option::Option<crate::types::FormInputValueProperty> {
+        &self.display_value
+    }
     /// <p>The complex object.</p>
     pub fn value(mut self, input: crate::types::FormInputValueProperty) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -63,6 +69,10 @@ impl ValueMappingBuilder {
     ) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The complex object.</p>
+    pub fn get_value(&self) -> &::std::option::Option<crate::types::FormInputValueProperty> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`ValueMapping`](crate::types::ValueMapping).
     pub fn build(self) -> crate::types::ValueMapping {

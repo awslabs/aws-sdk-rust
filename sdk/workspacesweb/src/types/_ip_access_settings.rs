@@ -97,6 +97,10 @@ impl IpAccessSettingsBuilder {
         self.ip_access_settings_arn = input;
         self
     }
+    /// <p>The ARN of the IP access settings resource.</p>
+    pub fn get_ip_access_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_access_settings_arn
+    }
     /// Appends an item to `associated_portal_arns`.
     ///
     /// To override the contents of this collection use [`set_associated_portal_arns`](Self::set_associated_portal_arns).
@@ -119,6 +123,12 @@ impl IpAccessSettingsBuilder {
         self.associated_portal_arns = input;
         self
     }
+    /// <p>A list of web portal ARNs that this IP access settings resource is associated with.</p>
+    pub fn get_associated_portal_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.associated_portal_arns
+    }
     /// Appends an item to `ip_rules`.
     ///
     /// To override the contents of this collection use [`set_ip_rules`](Self::set_ip_rules).
@@ -138,6 +148,10 @@ impl IpAccessSettingsBuilder {
         self.ip_rules = input;
         self
     }
+    /// <p>The IP rules of the IP access settings.</p>
+    pub fn get_ip_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpRule>> {
+        &self.ip_rules
+    }
     /// <p> The display name of the IP access settings.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -148,6 +162,10 @@ impl IpAccessSettingsBuilder {
         self.display_name = input;
         self
     }
+    /// <p> The display name of the IP access settings.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
+    }
     /// <p>The description of the IP access settings.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -157,6 +175,10 @@ impl IpAccessSettingsBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the IP access settings.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The creation date timestamp of the IP access settings.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -170,6 +192,10 @@ impl IpAccessSettingsBuilder {
     ) -> Self {
         self.creation_date = input;
         self
+    }
+    /// <p>The creation date timestamp of the IP access settings.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
     }
     /// Consumes the builder and constructs a [`IpAccessSettings`](crate::types::IpAccessSettings).
     pub fn build(self) -> crate::types::IpAccessSettings {

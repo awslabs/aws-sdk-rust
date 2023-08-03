@@ -64,6 +64,10 @@ impl ListedProfileBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the specified profile.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>A unique identifier for the local or partner AS2 profile.</p>
     pub fn profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_id = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl ListedProfileBuilder {
         self.profile_id = input;
         self
     }
+    /// <p>A unique identifier for the local or partner AS2 profile.</p>
+    pub fn get_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_id
+    }
     /// <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the <a href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound transfers, this is the <code>AS2-From</code> header for the AS2 messages sent from the partner. For outbound connectors, this is the <code>AS2-To</code> header for the AS2 messages sent to the partner using the <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
     pub fn as2_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.as2_id = ::std::option::Option::Some(input.into());
@@ -83,6 +91,10 @@ impl ListedProfileBuilder {
     pub fn set_as2_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.as2_id = input;
         self
+    }
+    /// <p>The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the <a href="https://datatracker.ietf.org/doc/html/rfc4130">RFC 4130</a>. For inbound transfers, this is the <code>AS2-From</code> header for the AS2 messages sent from the partner. For outbound connectors, this is the <code>AS2-To</code> header for the AS2 messages sent to the partner using the <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
+    pub fn get_as2_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.as2_id
     }
     /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
     pub fn profile_type(mut self, input: crate::types::ProfileType) -> Self {
@@ -96,6 +108,10 @@ impl ListedProfileBuilder {
     ) -> Self {
         self.profile_type = input;
         self
+    }
+    /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
+    pub fn get_profile_type(&self) -> &::std::option::Option<crate::types::ProfileType> {
+        &self.profile_type
     }
     /// Consumes the builder and constructs a [`ListedProfile`](crate::types::ListedProfile).
     pub fn build(self) -> crate::types::ListedProfile {

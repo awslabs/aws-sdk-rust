@@ -44,6 +44,12 @@ impl RequestSpotFleetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RequestSpotFleet as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::request_spot_fleet::builders::RequestSpotFleetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +140,10 @@ impl RequestSpotFleetFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>The configuration for the Spot Fleet request.</p>
     pub fn spot_fleet_request_config(
         mut self,
@@ -149,5 +159,11 @@ impl RequestSpotFleetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_spot_fleet_request_config(input);
         self
+    }
+    /// <p>The configuration for the Spot Fleet request.</p>
+    pub fn get_spot_fleet_request_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::SpotFleetRequestConfigData> {
+        self.inner.get_spot_fleet_request_config()
     }
 }

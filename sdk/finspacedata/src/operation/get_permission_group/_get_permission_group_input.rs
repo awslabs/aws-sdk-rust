@@ -46,6 +46,10 @@ impl GetPermissionGroupInputBuilder {
         self.permission_group_id = input;
         self
     }
+    /// <p>The unique identifier for the permission group.</p>
+    pub fn get_permission_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.permission_group_id
+    }
     /// Consumes the builder and constructs a [`GetPermissionGroupInput`](crate::operation::get_permission_group::GetPermissionGroupInput).
     pub fn build(
         self,

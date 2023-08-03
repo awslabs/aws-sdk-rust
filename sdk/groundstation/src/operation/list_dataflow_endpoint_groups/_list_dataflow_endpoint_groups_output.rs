@@ -59,6 +59,10 @@ impl ListDataflowEndpointGroupsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Next token returned in the response of a previous <code>ListDataflowEndpointGroups</code> call. Used to get the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `dataflow_endpoint_group_list`.
     ///
     /// To override the contents of this collection use [`set_dataflow_endpoint_group_list`](Self::set_dataflow_endpoint_group_list).
@@ -80,6 +84,12 @@ impl ListDataflowEndpointGroupsOutputBuilder {
     ) -> Self {
         self.dataflow_endpoint_group_list = input;
         self
+    }
+    /// <p>A list of dataflow endpoint groups.</p>
+    pub fn get_dataflow_endpoint_group_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataflowEndpointListItem>> {
+        &self.dataflow_endpoint_group_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -51,6 +51,10 @@ impl PipelineInfoBuilder {
         self.pipeline_type = input;
         self
     }
+    /// <p>The type of pipeline.</p>
+    pub fn get_pipeline_type(&self) -> &::std::option::Option<crate::types::PipelineType> {
+        &self.pipeline_type
+    }
     /// <p>The time when the pipeline info was configured.</p>
     pub fn pipeline_configuration_time_stamp(
         mut self,
@@ -66,6 +70,12 @@ impl PipelineInfoBuilder {
     ) -> Self {
         self.pipeline_configuration_time_stamp = input;
         self
+    }
+    /// <p>The time when the pipeline info was configured.</p>
+    pub fn get_pipeline_configuration_time_stamp(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_configuration_time_stamp
     }
     /// Consumes the builder and constructs a [`PipelineInfo`](crate::types::PipelineInfo).
     pub fn build(self) -> crate::types::PipelineInfo {

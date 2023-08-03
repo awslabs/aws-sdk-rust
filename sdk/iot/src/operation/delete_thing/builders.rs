@@ -37,6 +37,10 @@ impl DeleteThingFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteThing as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_thing::builders::DeleteThingInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl DeleteThingFluentBuilder {
         self.inner = self.inner.set_thing_name(input);
         self
     }
+    /// <p>The name of the thing to delete.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_thing_name()
+    }
     /// <p>The expected version of the thing record in the registry. If the version of the record in the registry does not match the expected version specified in the request, the <code>DeleteThing</code> request is rejected with a <code>VersionConflictException</code>.</p>
     pub fn expected_version(mut self, input: i64) -> Self {
         self.inner = self.inner.expected_version(input);
@@ -128,5 +136,9 @@ impl DeleteThingFluentBuilder {
     pub fn set_expected_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_expected_version(input);
         self
+    }
+    /// <p>The expected version of the thing record in the registry. If the version of the record in the registry does not match the expected version specified in the request, the <code>DeleteThing</code> request is rejected with a <code>VersionConflictException</code>.</p>
+    pub fn get_expected_version(&self) -> &::std::option::Option<i64> {
+        self.inner.get_expected_version()
     }
 }

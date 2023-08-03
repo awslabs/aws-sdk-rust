@@ -57,6 +57,10 @@ impl ListRecipesInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to return in this request. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl ListRecipesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>Return only those recipes with a version identifier of <code>LATEST_WORKING</code> or <code>LATEST_PUBLISHED</code>. If <code>RecipeVersion</code> is omitted, <code>ListRecipes</code> returns all of the <code>LATEST_PUBLISHED</code> recipe versions.</p>
     /// <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code> </p>
@@ -84,6 +92,11 @@ impl ListRecipesInputBuilder {
     ) -> Self {
         self.recipe_version = input;
         self
+    }
+    /// <p>Return only those recipes with a version identifier of <code>LATEST_WORKING</code> or <code>LATEST_PUBLISHED</code>. If <code>RecipeVersion</code> is omitted, <code>ListRecipes</code> returns all of the <code>LATEST_PUBLISHED</code> recipe versions.</p>
+    /// <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code> </p>
+    pub fn get_recipe_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recipe_version
     }
     /// Consumes the builder and constructs a [`ListRecipesInput`](crate::operation::list_recipes::ListRecipesInput).
     pub fn build(

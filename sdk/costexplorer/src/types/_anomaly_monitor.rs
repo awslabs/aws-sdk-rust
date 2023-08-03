@@ -176,6 +176,10 @@ impl AnomalyMonitorBuilder {
         self.monitor_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) value. </p>
+    pub fn get_monitor_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitor_arn
+    }
     /// <p>The name of the monitor. </p>
     pub fn monitor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.monitor_name = ::std::option::Option::Some(input.into());
@@ -185,6 +189,10 @@ impl AnomalyMonitorBuilder {
     pub fn set_monitor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.monitor_name = input;
         self
+    }
+    /// <p>The name of the monitor. </p>
+    pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitor_name
     }
     /// <p>The date when the monitor was created. </p>
     pub fn creation_date(
@@ -202,6 +210,10 @@ impl AnomalyMonitorBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>The date when the monitor was created. </p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_date
+    }
     /// <p>The date when the monitor was last updated. </p>
     pub fn last_updated_date(
         mut self,
@@ -217,6 +229,10 @@ impl AnomalyMonitorBuilder {
     ) -> Self {
         self.last_updated_date = input;
         self
+    }
+    /// <p>The date when the monitor was last updated. </p>
+    pub fn get_last_updated_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_updated_date
     }
     /// <p>The date when the monitor last evaluated for anomalies. </p>
     pub fn last_evaluated_date(
@@ -234,6 +250,10 @@ impl AnomalyMonitorBuilder {
         self.last_evaluated_date = input;
         self
     }
+    /// <p>The date when the monitor last evaluated for anomalies. </p>
+    pub fn get_last_evaluated_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_evaluated_date
+    }
     /// <p>The possible type values. </p>
     pub fn monitor_type(mut self, input: crate::types::MonitorType) -> Self {
         self.monitor_type = ::std::option::Option::Some(input);
@@ -247,6 +267,10 @@ impl AnomalyMonitorBuilder {
         self.monitor_type = input;
         self
     }
+    /// <p>The possible type values. </p>
+    pub fn get_monitor_type(&self) -> &::std::option::Option<crate::types::MonitorType> {
+        &self.monitor_type
+    }
     /// <p>The dimensions to evaluate. </p>
     pub fn monitor_dimension(mut self, input: crate::types::MonitorDimension) -> Self {
         self.monitor_dimension = ::std::option::Option::Some(input);
@@ -259,6 +283,10 @@ impl AnomalyMonitorBuilder {
     ) -> Self {
         self.monitor_dimension = input;
         self
+    }
+    /// <p>The dimensions to evaluate. </p>
+    pub fn get_monitor_dimension(&self) -> &::std::option::Option<crate::types::MonitorDimension> {
+        &self.monitor_dimension
     }
     /// <p>Use <code>Expression</code> to filter in various Cost Explorer APIs.</p>
     /// <p>Not all <code>Expression</code> types are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
@@ -345,6 +373,46 @@ impl AnomalyMonitorBuilder {
         self.monitor_specification = input;
         self
     }
+    /// <p>Use <code>Expression</code> to filter in various Cost Explorer APIs.</p>
+    /// <p>Not all <code>Expression</code> types are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
+    /// <p>There are two patterns:</p>
+    /// <ul>
+    /// <li> <p>Simple dimension values.</p>
+    /// <ul>
+    /// <li> <p>There are three types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, and <code>Dimensions</code>.</p>
+    /// <ul>
+    /// <li> <p>Specify the <code>CostCategories</code> field to define a filter that acts on Cost Categories.</p> </li>
+    /// <li> <p>Specify the <code>Tags</code> field to define a filter that acts on Cost Allocation Tags.</p> </li>
+    /// <li> <p>Specify the <code>Dimensions</code> field to define a filter that acts on the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html"> <code>DimensionValues</code> </a>.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p>
+    /// <ul>
+    /// <li> <p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p> </li>
+    /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] } }</code> </p> </li>
+    /// <li> <p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>You can also set different match options to further control how the filter behaves. Not all APIs support match options. Refer to the documentation for each specific API to see what is supported.</p>
+    /// <ul>
+    /// <li> <p>For example, you can filter for linked account names that start with "a".</p> </li>
+    /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }</code> </p> </li>
+    /// </ul> </li>
+    /// </ul> </li>
+    /// <li> <p>Compound <code>Expression</code> types with logical operations.</p>
+    /// <ul>
+    /// <li> <p>You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter by more advanced options.</p> </li>
+    /// <li> <p>For example, you can filter by <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>.</p> </li>
+    /// <li> <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> </li>
+    /// </ul> <note>
+    /// <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error: <code> { "And": [ ... ], "Dimensions": { "Key": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p>
+    /// <p>The following is an example of the corresponding error message: <code>"Expression has more than one roots. Only one root operator is allowed for each expression: And, Or, Not, Dimensions, Tags, CostCategories"</code> </p>
+    /// </note> </li>
+    /// </ul> <note>
+    /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p>
+    /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
+    /// </note>
+    pub fn get_monitor_specification(&self) -> &::std::option::Option<crate::types::Expression> {
+        &self.monitor_specification
+    }
     /// <p>The value for evaluated dimensions. </p>
     pub fn dimensional_value_count(mut self, input: i32) -> Self {
         self.dimensional_value_count = ::std::option::Option::Some(input);
@@ -354,6 +422,10 @@ impl AnomalyMonitorBuilder {
     pub fn set_dimensional_value_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.dimensional_value_count = input;
         self
+    }
+    /// <p>The value for evaluated dimensions. </p>
+    pub fn get_dimensional_value_count(&self) -> &::std::option::Option<i32> {
+        &self.dimensional_value_count
     }
     /// Consumes the builder and constructs a [`AnomalyMonitor`](crate::types::AnomalyMonitor).
     pub fn build(self) -> crate::types::AnomalyMonitor {

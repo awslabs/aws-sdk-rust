@@ -36,6 +36,13 @@ impl ListMonitoredResourcesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListMonitoredResources as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_monitored_resources::builders::ListMonitoredResourcesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -141,6 +148,12 @@ impl ListMonitoredResourcesFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p> Filters to determine which monitored resources you want to retrieve. You can filter by resource type or resource permission status. </p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<crate::types::ListMonitoredResourcesFilters> {
+        self.inner.get_filters()
+    }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -151,6 +164,10 @@ impl ListMonitoredResourcesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -160,5 +177,9 @@ impl ListMonitoredResourcesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

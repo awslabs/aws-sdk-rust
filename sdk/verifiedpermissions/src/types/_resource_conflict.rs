@@ -48,6 +48,10 @@ impl ResourceConflictBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The unique identifier of the resource involved in a conflict.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// <p>The type of the resource involved in a conflict.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl ResourceConflictBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>The type of the resource involved in a conflict.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
     }
     /// Consumes the builder and constructs a [`ResourceConflict`](crate::types::ResourceConflict).
     pub fn build(self) -> crate::types::ResourceConflict {

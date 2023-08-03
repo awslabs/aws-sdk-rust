@@ -55,6 +55,10 @@ impl CreateCampaignInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>Specifies the configuration and other settings for a campaign.</p>
     pub fn write_campaign_request(mut self, input: crate::types::WriteCampaignRequest) -> Self {
         self.write_campaign_request = ::std::option::Option::Some(input);
@@ -67,6 +71,12 @@ impl CreateCampaignInputBuilder {
     ) -> Self {
         self.write_campaign_request = input;
         self
+    }
+    /// <p>Specifies the configuration and other settings for a campaign.</p>
+    pub fn get_write_campaign_request(
+        &self,
+    ) -> &::std::option::Option<crate::types::WriteCampaignRequest> {
+        &self.write_campaign_request
     }
     /// Consumes the builder and constructs a [`CreateCampaignInput`](crate::operation::create_campaign::CreateCampaignInput).
     pub fn build(

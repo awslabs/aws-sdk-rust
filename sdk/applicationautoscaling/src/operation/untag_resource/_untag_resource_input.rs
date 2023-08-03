@@ -55,6 +55,12 @@ impl UntagResourceInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>Identifies the Application Auto Scaling scalable target from which to remove tags.</p>
+    /// <p>For example: <code>arn:aws:application-autoscaling:us-east-1:123456789012:scalable-target/1234abcd56ab78cd901ef1234567890ab123</code> </p>
+    /// <p>To get the ARN for a scalable target, use <code>DescribeScalableTargets</code>.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// Appends an item to `tag_keys`.
     ///
     /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
@@ -73,6 +79,10 @@ impl UntagResourceInputBuilder {
     ) -> Self {
         self.tag_keys = input;
         self
+    }
+    /// <p>One or more tag keys. Specify only the tag keys, not the tag values.</p>
+    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tag_keys
     }
     /// Consumes the builder and constructs a [`UntagResourceInput`](crate::operation::untag_resource::UntagResourceInput).
     pub fn build(

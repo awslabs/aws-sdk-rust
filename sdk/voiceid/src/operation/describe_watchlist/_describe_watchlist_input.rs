@@ -48,6 +48,10 @@ impl DescribeWatchlistInputBuilder {
         self.domain_id = input;
         self
     }
+    /// <p>The identifier of the domain that contains the watchlist.</p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_id
+    }
     /// <p>The identifier of the watchlist that you are describing.</p>
     pub fn watchlist_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.watchlist_id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl DescribeWatchlistInputBuilder {
     pub fn set_watchlist_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.watchlist_id = input;
         self
+    }
+    /// <p>The identifier of the watchlist that you are describing.</p>
+    pub fn get_watchlist_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.watchlist_id
     }
     /// Consumes the builder and constructs a [`DescribeWatchlistInput`](crate::operation::describe_watchlist::DescribeWatchlistInput).
     pub fn build(

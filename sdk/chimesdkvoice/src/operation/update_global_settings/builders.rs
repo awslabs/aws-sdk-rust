@@ -36,6 +36,12 @@ impl UpdateGlobalSettingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateGlobalSettings as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_global_settings::builders::UpdateGlobalSettingsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,5 +134,11 @@ impl UpdateGlobalSettingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_voice_connector(input);
         self
+    }
+    /// <p>The Voice Connector settings.</p>
+    pub fn get_voice_connector(
+        &self,
+    ) -> &::std::option::Option<crate::types::VoiceConnectorSettings> {
+        self.inner.get_voice_connector()
     }
 }

@@ -72,6 +72,10 @@ impl LastActiveDefinitionBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the blueprint.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The date and time the blueprint was last modified.</p>
     pub fn last_modified_on(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_on = ::std::option::Option::Some(input);
@@ -84,6 +88,10 @@ impl LastActiveDefinitionBuilder {
     ) -> Self {
         self.last_modified_on = input;
         self
+    }
+    /// <p>The date and time the blueprint was last modified.</p>
+    pub fn get_last_modified_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_on
     }
     /// <p>A JSON string specifying the parameters for the blueprint.</p>
     pub fn parameter_spec(
@@ -101,6 +109,10 @@ impl LastActiveDefinitionBuilder {
         self.parameter_spec = input;
         self
     }
+    /// <p>A JSON string specifying the parameters for the blueprint.</p>
+    pub fn get_parameter_spec(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_spec
+    }
     /// <p>Specifies a path in Amazon S3 where the blueprint is published by the Glue developer.</p>
     pub fn blueprint_location(
         mut self,
@@ -117,6 +129,10 @@ impl LastActiveDefinitionBuilder {
         self.blueprint_location = input;
         self
     }
+    /// <p>Specifies a path in Amazon S3 where the blueprint is published by the Glue developer.</p>
+    pub fn get_blueprint_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.blueprint_location
+    }
     /// <p>Specifies a path in Amazon S3 where the blueprint is copied when you create or update the blueprint.</p>
     pub fn blueprint_service_location(
         mut self,
@@ -132,6 +148,10 @@ impl LastActiveDefinitionBuilder {
     ) -> Self {
         self.blueprint_service_location = input;
         self
+    }
+    /// <p>Specifies a path in Amazon S3 where the blueprint is copied when you create or update the blueprint.</p>
+    pub fn get_blueprint_service_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.blueprint_service_location
     }
     /// Consumes the builder and constructs a [`LastActiveDefinition`](crate::types::LastActiveDefinition).
     pub fn build(self) -> crate::types::LastActiveDefinition {

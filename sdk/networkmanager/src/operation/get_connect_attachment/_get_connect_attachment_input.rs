@@ -46,6 +46,10 @@ impl GetConnectAttachmentInputBuilder {
         self.attachment_id = input;
         self
     }
+    /// <p>The ID of the attachment.</p>
+    pub fn get_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attachment_id
+    }
     /// Consumes the builder and constructs a [`GetConnectAttachmentInput`](crate::operation::get_connect_attachment::GetConnectAttachmentInput).
     pub fn build(
         self,

@@ -60,6 +60,12 @@ impl ServerlessBuilder {
         self.vpc_configs = input;
         self
     }
+    /// <p>The configuration of the Amazon VPCs for the cluster.</p>
+    pub fn get_vpc_configs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcConfig>> {
+        &self.vpc_configs
+    }
     /// <p>Includes all client authentication information.</p>
     pub fn client_authentication(
         mut self,
@@ -75,6 +81,12 @@ impl ServerlessBuilder {
     ) -> Self {
         self.client_authentication = input;
         self
+    }
+    /// <p>Includes all client authentication information.</p>
+    pub fn get_client_authentication(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServerlessClientAuthentication> {
+        &self.client_authentication
     }
     /// Consumes the builder and constructs a [`Serverless`](crate::types::Serverless).
     pub fn build(self) -> crate::types::Serverless {

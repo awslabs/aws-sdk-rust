@@ -51,6 +51,12 @@ impl GetPermissionOutputBuilder {
         self.permission = input;
         self
     }
+    /// <p>An object with details about the permission.</p>
+    pub fn get_permission(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceSharePermissionDetail> {
+        &self.permission
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

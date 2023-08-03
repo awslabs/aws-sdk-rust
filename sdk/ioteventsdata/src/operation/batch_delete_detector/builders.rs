@@ -36,6 +36,12 @@ impl BatchDeleteDetectorFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchDeleteDetector as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_delete_detector::builders::BatchDeleteDetectorInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +138,11 @@ impl BatchDeleteDetectorFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_detectors(input);
         self
+    }
+    /// <p>The list of one or more detectors to be deleted.</p>
+    pub fn get_detectors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeleteDetectorRequest>> {
+        self.inner.get_detectors()
     }
 }

@@ -49,6 +49,10 @@ impl GetSubjectOutputBuilder {
         self.subject = input;
         self
     }
+    /// <p>The state of the subject after a read or write operation.</p>
+    pub fn get_subject(&self) -> &::std::option::Option<crate::types::SubjectDetail> {
+        &self.subject
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

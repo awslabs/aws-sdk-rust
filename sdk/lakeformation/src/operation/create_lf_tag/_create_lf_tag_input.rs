@@ -55,6 +55,10 @@ impl CreateLfTagInputBuilder {
         self.catalog_id = input;
         self
     }
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// <p>The key-name for the LF-tag.</p>
     pub fn tag_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tag_key = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl CreateLfTagInputBuilder {
     pub fn set_tag_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tag_key = input;
         self
+    }
+    /// <p>The key-name for the LF-tag.</p>
+    pub fn get_tag_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tag_key
     }
     /// Appends an item to `tag_values`.
     ///
@@ -83,6 +91,10 @@ impl CreateLfTagInputBuilder {
     ) -> Self {
         self.tag_values = input;
         self
+    }
+    /// <p>A list of possible values an attribute can take.</p>
+    pub fn get_tag_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tag_values
     }
     /// Consumes the builder and constructs a [`CreateLfTagInput`](crate::operation::create_lf_tag::CreateLfTagInput).
     pub fn build(

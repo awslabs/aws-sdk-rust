@@ -36,6 +36,12 @@ impl VerifyOTPMessageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the VerifyOTPMessage as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::verify_otp_message::builders::VerifyOtpMessageInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl VerifyOTPMessageFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The unique ID of your Amazon Pinpoint application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>Verify OTP message request.</p>
     pub fn verify_otp_message_request_parameters(
         mut self,
@@ -147,5 +157,11 @@ impl VerifyOTPMessageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_verify_otp_message_request_parameters(input);
         self
+    }
+    /// <p>Verify OTP message request.</p>
+    pub fn get_verify_otp_message_request_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::VerifyOtpMessageRequestParameters> {
+        self.inner.get_verify_otp_message_request_parameters()
     }
 }

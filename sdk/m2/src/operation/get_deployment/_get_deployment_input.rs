@@ -53,6 +53,10 @@ impl GetDeploymentInputBuilder {
         self.deployment_id = input;
         self
     }
+    /// <p>The unique identifier for the deployment.</p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_id
+    }
     /// <p>The unique identifier of the application.</p>
     pub fn application_id(
         mut self,
@@ -68,6 +72,10 @@ impl GetDeploymentInputBuilder {
     ) -> Self {
         self.application_id = input;
         self
+    }
+    /// <p>The unique identifier of the application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
     }
     /// Consumes the builder and constructs a [`GetDeploymentInput`](crate::operation::get_deployment::GetDeploymentInput).
     pub fn build(

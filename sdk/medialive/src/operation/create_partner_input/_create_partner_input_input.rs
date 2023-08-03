@@ -65,6 +65,10 @@ impl CreatePartnerInputInputBuilder {
         self.input_id = input;
         self
     }
+    /// Unique ID of the input.
+    pub fn get_input_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_id
+    }
     /// Unique identifier of the request to ensure the request is handled exactly once in case of retries.
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_id = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl CreatePartnerInputInputBuilder {
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_id = input;
         self
+    }
+    /// Unique identifier of the request to ensure the request is handled exactly once in case of retries.
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -99,6 +107,14 @@ impl CreatePartnerInputInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// A collection of key-value pairs.
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreatePartnerInputInput`](crate::operation::create_partner_input::CreatePartnerInputInput).
     pub fn build(

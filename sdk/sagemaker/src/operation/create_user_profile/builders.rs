@@ -36,6 +36,12 @@ impl CreateUserProfileFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateUserProfile as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_user_profile::builders::CreateUserProfileInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateUserProfileFluentBuilder {
         self.inner = self.inner.set_domain_id(input);
         self
     }
+    /// <p>The ID of the associated Domain.</p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_id()
+    }
     /// <p>A name for the UserProfile. This value is not case sensitive.</p>
     pub fn user_profile_name(
         mut self,
@@ -141,6 +151,10 @@ impl CreateUserProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_user_profile_name(input);
         self
+    }
+    /// <p>A name for the UserProfile. This value is not case sensitive.</p>
+    pub fn get_user_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_profile_name()
     }
     /// <p>A specifier for the type of value specified in SingleSignOnUserValue. Currently, the only supported value is "UserName". If the Domain's AuthMode is IAM Identity Center, this field is required. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified. </p>
     pub fn single_sign_on_user_identifier(
@@ -158,6 +172,12 @@ impl CreateUserProfileFluentBuilder {
         self.inner = self.inner.set_single_sign_on_user_identifier(input);
         self
     }
+    /// <p>A specifier for the type of value specified in SingleSignOnUserValue. Currently, the only supported value is "UserName". If the Domain's AuthMode is IAM Identity Center, this field is required. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified. </p>
+    pub fn get_single_sign_on_user_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_single_sign_on_user_identifier()
+    }
     /// <p>The username of the associated Amazon Web Services Single Sign-On User for this UserProfile. If the Domain's AuthMode is IAM Identity Center, this field is required, and must match a valid username of a user in your directory. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified. </p>
     pub fn single_sign_on_user_value(
         mut self,
@@ -173,6 +193,10 @@ impl CreateUserProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_single_sign_on_user_value(input);
         self
+    }
+    /// <p>The username of the associated Amazon Web Services Single Sign-On User for this UserProfile. If the Domain's AuthMode is IAM Identity Center, this field is required, and must match a valid username of a user in your directory. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified. </p>
+    pub fn get_single_sign_on_user_value(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_single_sign_on_user_value()
     }
     /// Appends an item to `Tags`.
     ///
@@ -193,6 +217,11 @@ impl CreateUserProfileFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>Each tag consists of a key and an optional value. Tag keys must be unique per resource.</p>
+    /// <p>Tags that you specify for the User Profile are also added to all Apps that the User Profile launches.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>A collection of settings.</p>
     pub fn user_settings(mut self, input: crate::types::UserSettings) -> Self {
         self.inner = self.inner.user_settings(input);
@@ -205,5 +234,9 @@ impl CreateUserProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_user_settings(input);
         self
+    }
+    /// <p>A collection of settings.</p>
+    pub fn get_user_settings(&self) -> &::std::option::Option<crate::types::UserSettings> {
+        self.inner.get_user_settings()
     }
 }

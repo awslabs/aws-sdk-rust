@@ -43,6 +43,10 @@ impl LogConfigurationsBuilder {
         self.cloudwatch = input;
         self
     }
+    /// <p>Parameters for publishing logs to Amazon CloudWatch Logs.</p>
+    pub fn get_cloudwatch(&self) -> &::std::option::Option<crate::types::LogConfiguration> {
+        &self.cloudwatch
+    }
     /// Consumes the builder and constructs a [`LogConfigurations`](crate::types::LogConfigurations).
     pub fn build(self) -> crate::types::LogConfigurations {
         crate::types::LogConfigurations {

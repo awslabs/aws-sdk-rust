@@ -40,6 +40,10 @@ impl DatabaseConfigDetailBuilder {
         self.secret_name = input;
         self
     }
+    /// <p> AWS Secrets Manager key that holds the credentials that you use to connect to a database. </p>
+    pub fn get_secret_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_name
+    }
     /// Consumes the builder and constructs a [`DatabaseConfigDetail`](crate::types::DatabaseConfigDetail).
     pub fn build(self) -> crate::types::DatabaseConfigDetail {
         crate::types::DatabaseConfigDetail {

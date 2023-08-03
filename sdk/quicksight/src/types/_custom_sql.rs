@@ -70,6 +70,10 @@ impl CustomSqlBuilder {
         self.data_source_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the data source.</p>
+    pub fn get_data_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source_arn
+    }
     /// <p>A display name for the SQL query result.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl CustomSqlBuilder {
         self.name = input;
         self
     }
+    /// <p>A display name for the SQL query result.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The SQL query.</p>
     pub fn sql_query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sql_query = ::std::option::Option::Some(input.into());
@@ -89,6 +97,10 @@ impl CustomSqlBuilder {
     pub fn set_sql_query(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sql_query = input;
         self
+    }
+    /// <p>The SQL query.</p>
+    pub fn get_sql_query(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sql_query
     }
     /// Appends an item to `columns`.
     ///
@@ -108,6 +120,12 @@ impl CustomSqlBuilder {
     ) -> Self {
         self.columns = input;
         self
+    }
+    /// <p>The column schema from the SQL query result set.</p>
+    pub fn get_columns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputColumn>> {
+        &self.columns
     }
     /// Consumes the builder and constructs a [`CustomSql`](crate::types::CustomSql).
     pub fn build(self) -> crate::types::CustomSql {

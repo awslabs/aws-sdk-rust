@@ -36,6 +36,12 @@ impl ModifyTransitGatewayFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyTransitGateway as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::modify_transit_gateway::builders::ModifyTransitGatewayInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl ModifyTransitGatewayFluentBuilder {
         self.inner = self.inner.set_transit_gateway_id(input);
         self
     }
+    /// <p>The ID of the transit gateway.</p>
+    pub fn get_transit_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_transit_gateway_id()
+    }
     /// <p>The description for the transit gateway.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -141,6 +151,10 @@ impl ModifyTransitGatewayFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description for the transit gateway.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The options to modify.</p>
     pub fn options(mut self, input: crate::types::ModifyTransitGatewayOptions) -> Self {
@@ -155,6 +169,10 @@ impl ModifyTransitGatewayFluentBuilder {
         self.inner = self.inner.set_options(input);
         self
     }
+    /// <p>The options to modify.</p>
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::ModifyTransitGatewayOptions> {
+        self.inner.get_options()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -164,5 +182,9 @@ impl ModifyTransitGatewayFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

@@ -36,6 +36,10 @@ impl PutConfigurationSetTrackingOptionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutConfigurationSetTrackingOptions as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_configuration_set_tracking_options::builders::PutConfigurationSetTrackingOptionsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl PutConfigurationSetTrackingOptionsFluentBuilder {
         self.inner = self.inner.set_configuration_set_name(input);
         self
     }
+    /// <p>The name of the configuration set that you want to add a custom tracking domain to.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration_set_name()
+    }
     /// <p>The domain that you want to use to track open and click events.</p>
     pub fn custom_redirect_domain(
         mut self,
@@ -121,5 +129,9 @@ impl PutConfigurationSetTrackingOptionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_custom_redirect_domain(input);
         self
+    }
+    /// <p>The domain that you want to use to track open and click events.</p>
+    pub fn get_custom_redirect_domain(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_custom_redirect_domain()
     }
 }

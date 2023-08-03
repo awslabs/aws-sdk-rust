@@ -91,6 +91,12 @@ impl UploadPartCopyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UploadPartCopy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::upload_part_copy::builders::UploadPartCopyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -185,6 +191,12 @@ impl UploadPartCopyFluentBuilder {
         self.inner = self.inner.set_bucket(input);
         self
     }
+    /// <p>The bucket name.</p>
+    /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bucket()
+    }
     /// <p>Specifies the source object for the copy operation. You specify the value in one of two formats, depending on whether you want to access the source object through an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access point</a>:</p>
     /// <ul>
     /// <li> <p>For objects not accessed through an access point, specify the name of the source bucket and key of the source object, separated by a slash (/). For example, to copy the object <code>reports/january.pdf</code> from the bucket <code>awsexamplebucket</code>, use <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL-encoded.</p> </li>
@@ -251,6 +263,38 @@ impl UploadPartCopyFluentBuilder {
         self.inner = self.inner.set_copy_source(input);
         self
     }
+    /// <p>Specifies the source object for the copy operation. You specify the value in one of two formats, depending on whether you want to access the source object through an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access point</a>:</p>
+    /// <ul>
+    /// <li> <p>For objects not accessed through an access point, specify the name of the source bucket and key of the source object, separated by a slash (/). For example, to copy the object <code>reports/january.pdf</code> from the bucket <code>awsexamplebucket</code>, use <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL-encoded.</p> </li>
+    /// <li> <p>For objects accessed through access points, specify the Amazon Resource Name (ARN) of the object as accessed through the access point, in the format <code>arn:aws:s3:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :accesspoint/
+    /// <access-point-name>
+    /// /object/
+    /// <key></key>
+    /// </access-point-name>
+    /// </account-id>
+    /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through access point <code>my-access-point</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>. The value must be URL encoded.</p> <note>
+    /// <p>Amazon S3 supports copy operations using access points only when the source and destination buckets are in the same Amazon Web Services Region.</p>
+    /// </note> <p>Alternatively, for objects accessed through Amazon S3 on Outposts, specify the ARN of the object as accessed in the format <code>arn:aws:s3-outposts:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :outpost/
+    /// <outpost-id>
+    /// /object/
+    /// <key></key>
+    /// </outpost-id>
+    /// </account-id>
+    /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>. The value must be URL-encoded. </p> </li>
+    /// </ul>
+    /// <p>To copy a specific version of an object, append <code>?versionId=
+    /// <version-id></version-id></code> to the value (for example, <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>). If you don't specify a version ID, Amazon S3 copies the latest version of the source object.</p>
+    pub fn get_copy_source(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_copy_source()
+    }
     /// <p>Copies the object if its entity tag (ETag) matches the specified tag.</p>
     pub fn copy_source_if_match(
         mut self,
@@ -267,6 +311,10 @@ impl UploadPartCopyFluentBuilder {
         self.inner = self.inner.set_copy_source_if_match(input);
         self
     }
+    /// <p>Copies the object if its entity tag (ETag) matches the specified tag.</p>
+    pub fn get_copy_source_if_match(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_copy_source_if_match()
+    }
     /// <p>Copies the object if it has been modified since the specified time.</p>
     pub fn copy_source_if_modified_since(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.copy_source_if_modified_since(input);
@@ -279,6 +327,12 @@ impl UploadPartCopyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_copy_source_if_modified_since(input);
         self
+    }
+    /// <p>Copies the object if it has been modified since the specified time.</p>
+    pub fn get_copy_source_if_modified_since(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_copy_source_if_modified_since()
     }
     /// <p>Copies the object if its entity tag (ETag) is different than the specified ETag.</p>
     pub fn copy_source_if_none_match(
@@ -296,6 +350,10 @@ impl UploadPartCopyFluentBuilder {
         self.inner = self.inner.set_copy_source_if_none_match(input);
         self
     }
+    /// <p>Copies the object if its entity tag (ETag) is different than the specified ETag.</p>
+    pub fn get_copy_source_if_none_match(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_copy_source_if_none_match()
+    }
     /// <p>Copies the object if it hasn't been modified since the specified time.</p>
     pub fn copy_source_if_unmodified_since(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.copy_source_if_unmodified_since(input);
@@ -308,6 +366,12 @@ impl UploadPartCopyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_copy_source_if_unmodified_since(input);
         self
+    }
+    /// <p>Copies the object if it hasn't been modified since the specified time.</p>
+    pub fn get_copy_source_if_unmodified_since(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_copy_source_if_unmodified_since()
     }
     /// <p>The range of bytes to copy from the source object. The range value must use the form bytes=first-last, where the first and last are the zero-based byte offsets to copy. For example, bytes=0-9 indicates that you want to copy the first 10 bytes of the source. You can copy a range only if the source object is greater than 5 MB.</p>
     pub fn copy_source_range(
@@ -325,6 +389,10 @@ impl UploadPartCopyFluentBuilder {
         self.inner = self.inner.set_copy_source_range(input);
         self
     }
+    /// <p>The range of bytes to copy from the source object. The range value must use the form bytes=first-last, where the first and last are the zero-based byte offsets to copy. For example, bytes=0-9 indicates that you want to copy the first 10 bytes of the source. You can copy a range only if the source object is greater than 5 MB.</p>
+    pub fn get_copy_source_range(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_copy_source_range()
+    }
     /// <p>Object key for which the multipart upload was initiated.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key(input.into());
@@ -334,6 +402,10 @@ impl UploadPartCopyFluentBuilder {
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key(input);
         self
+    }
+    /// <p>Object key for which the multipart upload was initiated.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_key()
     }
     /// <p>Part number of part being copied. This is a positive integer between 1 and 10,000.</p>
     pub fn part_number(mut self, input: i32) -> Self {
@@ -345,6 +417,10 @@ impl UploadPartCopyFluentBuilder {
         self.inner = self.inner.set_part_number(input);
         self
     }
+    /// <p>Part number of part being copied. This is a positive integer between 1 and 10,000.</p>
+    pub fn get_part_number(&self) -> &::std::option::Option<i32> {
+        self.inner.get_part_number()
+    }
     /// <p>Upload ID identifying the multipart upload whose part is being copied.</p>
     pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.upload_id(input.into());
@@ -354,6 +430,10 @@ impl UploadPartCopyFluentBuilder {
     pub fn set_upload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_upload_id(input);
         self
+    }
+    /// <p>Upload ID identifying the multipart upload whose part is being copied.</p>
+    pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_upload_id()
     }
     /// <p>Specifies the algorithm to use to when encrypting the object (for example, AES256).</p>
     pub fn sse_customer_algorithm(
@@ -371,6 +451,10 @@ impl UploadPartCopyFluentBuilder {
         self.inner = self.inner.set_sse_customer_algorithm(input);
         self
     }
+    /// <p>Specifies the algorithm to use to when encrypting the object (for example, AES256).</p>
+    pub fn get_sse_customer_algorithm(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sse_customer_algorithm()
+    }
     /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon S3 does not store the encryption key. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header. This must be the same encryption key specified in the initiate multipart upload request.</p>
     pub fn sse_customer_key(
         mut self,
@@ -386,6 +470,10 @@ impl UploadPartCopyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sse_customer_key(input);
         self
+    }
+    /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon S3 does not store the encryption key. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header. This must be the same encryption key specified in the initiate multipart upload request.</p>
+    pub fn get_sse_customer_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sse_customer_key()
     }
     /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
     pub fn sse_customer_key_md5(
@@ -403,6 +491,10 @@ impl UploadPartCopyFluentBuilder {
         self.inner = self.inner.set_sse_customer_key_md5(input);
         self
     }
+    /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
+    pub fn get_sse_customer_key_md5(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sse_customer_key_md5()
+    }
     /// <p>Specifies the algorithm to use when decrypting the source object (for example, AES256).</p>
     pub fn copy_source_sse_customer_algorithm(
         mut self,
@@ -418,6 +510,12 @@ impl UploadPartCopyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_copy_source_sse_customer_algorithm(input);
         self
+    }
+    /// <p>Specifies the algorithm to use when decrypting the source object (for example, AES256).</p>
+    pub fn get_copy_source_sse_customer_algorithm(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_copy_source_sse_customer_algorithm()
     }
     /// <p>Specifies the customer-provided encryption key for Amazon S3 to use to decrypt the source object. The encryption key provided in this header must be one that was used when the source object was created.</p>
     pub fn copy_source_sse_customer_key(
@@ -435,6 +533,12 @@ impl UploadPartCopyFluentBuilder {
         self.inner = self.inner.set_copy_source_sse_customer_key(input);
         self
     }
+    /// <p>Specifies the customer-provided encryption key for Amazon S3 to use to decrypt the source object. The encryption key provided in this header must be one that was used when the source object was created.</p>
+    pub fn get_copy_source_sse_customer_key(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_copy_source_sse_customer_key()
+    }
     /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
     pub fn copy_source_sse_customer_key_md5(
         mut self,
@@ -451,6 +555,12 @@ impl UploadPartCopyFluentBuilder {
         self.inner = self.inner.set_copy_source_sse_customer_key_md5(input);
         self
     }
+    /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
+    pub fn get_copy_source_sse_customer_key_md5(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_copy_source_sse_customer_key_md5()
+    }
     /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(mut self, input: crate::types::RequestPayer) -> Self {
         self.inner = self.inner.request_payer(input);
@@ -463,6 +573,10 @@ impl UploadPartCopyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_request_payer(input);
         self
+    }
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn get_request_payer(&self) -> &::std::option::Option<crate::types::RequestPayer> {
+        self.inner.get_request_payer()
     }
     /// <p>The account ID of the expected destination bucket owner. If the destination bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(
@@ -480,6 +594,10 @@ impl UploadPartCopyFluentBuilder {
         self.inner = self.inner.set_expected_bucket_owner(input);
         self
     }
+    /// <p>The account ID of the expected destination bucket owner. If the destination bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
+    pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_expected_bucket_owner()
+    }
     /// <p>The account ID of the expected source bucket owner. If the source bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_source_bucket_owner(
         mut self,
@@ -495,5 +613,11 @@ impl UploadPartCopyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_expected_source_bucket_owner(input);
         self
+    }
+    /// <p>The account ID of the expected source bucket owner. If the source bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
+    pub fn get_expected_source_bucket_owner(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_expected_source_bucket_owner()
     }
 }

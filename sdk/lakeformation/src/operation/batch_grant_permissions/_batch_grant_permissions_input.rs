@@ -50,6 +50,10 @@ impl BatchGrantPermissionsInputBuilder {
         self.catalog_id = input;
         self
     }
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// Appends an item to `entries`.
     ///
     /// To override the contents of this collection use [`set_entries`](Self::set_entries).
@@ -68,6 +72,12 @@ impl BatchGrantPermissionsInputBuilder {
     ) -> Self {
         self.entries = input;
         self
+    }
+    /// <p>A list of up to 20 entries for resource permissions to be granted by batch operation to the principal.</p>
+    pub fn get_entries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchPermissionsRequestEntry>> {
+        &self.entries
     }
     /// Consumes the builder and constructs a [`BatchGrantPermissionsInput`](crate::operation::batch_grant_permissions::BatchGrantPermissionsInput).
     pub fn build(

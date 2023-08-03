@@ -36,6 +36,10 @@ impl GetVehicleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetVehicle as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_vehicle::builders::GetVehicleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -117,5 +121,9 @@ impl GetVehicleFluentBuilder {
     pub fn set_vehicle_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vehicle_name(input);
         self
+    }
+    /// <p> The ID of the vehicle to retrieve information about. </p>
+    pub fn get_vehicle_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vehicle_name()
     }
 }

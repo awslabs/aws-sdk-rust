@@ -64,6 +64,10 @@ impl AutoMergingBuilder {
         self.enabled = input;
         self
     }
+    /// <p>The flag that enables the auto-merging of duplicate profiles.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// <p>A list of matching attributes that represent matching criteria. If two profiles meet at least one of the requirements in the matching attributes list, they will be merged.</p>
     pub fn consolidation(mut self, input: crate::types::Consolidation) -> Self {
         self.consolidation = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl AutoMergingBuilder {
     ) -> Self {
         self.consolidation = input;
         self
+    }
+    /// <p>A list of matching attributes that represent matching criteria. If two profiles meet at least one of the requirements in the matching attributes list, they will be merged.</p>
+    pub fn get_consolidation(&self) -> &::std::option::Option<crate::types::Consolidation> {
+        &self.consolidation
     }
     /// <p>How the auto-merging process should resolve conflicts between different profiles. For example, if Profile A and Profile B have the same <code>FirstName</code> and <code>LastName</code> (and that is the matching criteria), which <code>EmailAddress</code> should be used? </p>
     pub fn conflict_resolution(mut self, input: crate::types::ConflictResolution) -> Self {
@@ -90,6 +98,12 @@ impl AutoMergingBuilder {
         self.conflict_resolution = input;
         self
     }
+    /// <p>How the auto-merging process should resolve conflicts between different profiles. For example, if Profile A and Profile B have the same <code>FirstName</code> and <code>LastName</code> (and that is the matching criteria), which <code>EmailAddress</code> should be used? </p>
+    pub fn get_conflict_resolution(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConflictResolution> {
+        &self.conflict_resolution
+    }
     /// <p>A number between 0 and 1 that represents the minimum confidence score required for profiles within a matching group to be merged during the auto-merge process. A higher score means higher similarity required to merge profiles. </p>
     pub fn min_allowed_confidence_score_for_merging(mut self, input: f64) -> Self {
         self.min_allowed_confidence_score_for_merging = ::std::option::Option::Some(input);
@@ -102,6 +116,10 @@ impl AutoMergingBuilder {
     ) -> Self {
         self.min_allowed_confidence_score_for_merging = input;
         self
+    }
+    /// <p>A number between 0 and 1 that represents the minimum confidence score required for profiles within a matching group to be merged during the auto-merge process. A higher score means higher similarity required to merge profiles. </p>
+    pub fn get_min_allowed_confidence_score_for_merging(&self) -> &::std::option::Option<f64> {
+        &self.min_allowed_confidence_score_for_merging
     }
     /// Consumes the builder and constructs a [`AutoMerging`](crate::types::AutoMerging).
     pub fn build(self) -> crate::types::AutoMerging {

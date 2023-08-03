@@ -66,6 +66,10 @@ impl AutomaticInputFailoverSettingsBuilder {
         self.error_clear_time_msec = input;
         self
     }
+    /// This clear time defines the requirement a recovered input must meet to be considered healthy. The input must have no failover conditions for this length of time. Enter a time in milliseconds. This value is particularly important if the input_preference for the failover pair is set to PRIMARY_INPUT_PREFERRED, because after this time, MediaLive will switch back to the primary input.
+    pub fn get_error_clear_time_msec(&self) -> &::std::option::Option<i32> {
+        &self.error_clear_time_msec
+    }
     /// Appends an item to `failover_conditions`.
     ///
     /// To override the contents of this collection use [`set_failover_conditions`](Self::set_failover_conditions).
@@ -85,6 +89,12 @@ impl AutomaticInputFailoverSettingsBuilder {
         self.failover_conditions = input;
         self
     }
+    /// A list of failover conditions. If any of these conditions occur, MediaLive will perform a failover to the other input.
+    pub fn get_failover_conditions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FailoverCondition>> {
+        &self.failover_conditions
+    }
     /// Input preference when deciding which input to make active when a previously failed input has recovered.
     pub fn input_preference(mut self, input: crate::types::InputPreference) -> Self {
         self.input_preference = ::std::option::Option::Some(input);
@@ -97,6 +107,10 @@ impl AutomaticInputFailoverSettingsBuilder {
     ) -> Self {
         self.input_preference = input;
         self
+    }
+    /// Input preference when deciding which input to make active when a previously failed input has recovered.
+    pub fn get_input_preference(&self) -> &::std::option::Option<crate::types::InputPreference> {
+        &self.input_preference
     }
     /// The input ID of the secondary input in the automatic input failover pair.
     pub fn secondary_input_id(
@@ -113,6 +127,10 @@ impl AutomaticInputFailoverSettingsBuilder {
     ) -> Self {
         self.secondary_input_id = input;
         self
+    }
+    /// The input ID of the secondary input in the automatic input failover pair.
+    pub fn get_secondary_input_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secondary_input_id
     }
     /// Consumes the builder and constructs a [`AutomaticInputFailoverSettings`](crate::types::AutomaticInputFailoverSettings).
     pub fn build(self) -> crate::types::AutomaticInputFailoverSettings {

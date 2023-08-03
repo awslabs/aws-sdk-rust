@@ -40,6 +40,10 @@ impl ListVpcEndpointsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If your initial <code>ListVpcEndpoints</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListVpcEndpoints</code> operations, which returns results in the next page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Consumes the builder and constructs a [`ListVpcEndpointsInput`](crate::operation::list_vpc_endpoints::ListVpcEndpointsInput).
     pub fn build(
         self,

@@ -40,6 +40,10 @@ impl DocumentMetadataBuilder {
         self.pages = input;
         self
     }
+    /// <p>The number of pages that are detected in the document.</p>
+    pub fn get_pages(&self) -> &::std::option::Option<i32> {
+        &self.pages
+    }
     /// Consumes the builder and constructs a [`DocumentMetadata`](crate::types::DocumentMetadata).
     pub fn build(self) -> crate::types::DocumentMetadata {
         crate::types::DocumentMetadata { pages: self.pages }

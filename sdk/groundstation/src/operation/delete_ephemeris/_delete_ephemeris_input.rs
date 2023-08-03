@@ -39,6 +39,10 @@ impl DeleteEphemerisInputBuilder {
         self.ephemeris_id = input;
         self
     }
+    /// <p>The AWS Ground Station ephemeris ID.</p>
+    pub fn get_ephemeris_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ephemeris_id
+    }
     /// Consumes the builder and constructs a [`DeleteEphemerisInput`](crate::operation::delete_ephemeris::DeleteEphemerisInput).
     pub fn build(
         self,

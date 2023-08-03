@@ -48,6 +48,10 @@ impl KinesisFirehoseDestinationBuilder {
         self.iam_role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that Amazon Pinpoint uses when sending email events to the Amazon Kinesis Data Firehose stream.</p>
+    pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iam_role_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose stream that Amazon Pinpoint sends email events to.</p>
     pub fn delivery_stream_arn(
         mut self,
@@ -63,6 +67,10 @@ impl KinesisFirehoseDestinationBuilder {
     ) -> Self {
         self.delivery_stream_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose stream that Amazon Pinpoint sends email events to.</p>
+    pub fn get_delivery_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delivery_stream_arn
     }
     /// Consumes the builder and constructs a [`KinesisFirehoseDestination`](crate::types::KinesisFirehoseDestination).
     pub fn build(self) -> crate::types::KinesisFirehoseDestination {

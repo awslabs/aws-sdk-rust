@@ -59,6 +59,10 @@ impl DynamicDefaultValueBuilder {
         self.user_name_column = input;
         self
     }
+    /// <p>The column that contains the username.</p>
+    pub fn get_user_name_column(&self) -> &::std::option::Option<crate::types::ColumnIdentifier> {
+        &self.user_name_column
+    }
     /// <p>The column that contains the group name.</p>
     pub fn group_name_column(mut self, input: crate::types::ColumnIdentifier) -> Self {
         self.group_name_column = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl DynamicDefaultValueBuilder {
         self.group_name_column = input;
         self
     }
+    /// <p>The column that contains the group name.</p>
+    pub fn get_group_name_column(&self) -> &::std::option::Option<crate::types::ColumnIdentifier> {
+        &self.group_name_column
+    }
     /// <p>The column that contains the default value of each user or group.</p>
     pub fn default_value_column(mut self, input: crate::types::ColumnIdentifier) -> Self {
         self.default_value_column = ::std::option::Option::Some(input);
@@ -84,6 +92,12 @@ impl DynamicDefaultValueBuilder {
     ) -> Self {
         self.default_value_column = input;
         self
+    }
+    /// <p>The column that contains the default value of each user or group.</p>
+    pub fn get_default_value_column(
+        &self,
+    ) -> &::std::option::Option<crate::types::ColumnIdentifier> {
+        &self.default_value_column
     }
     /// Consumes the builder and constructs a [`DynamicDefaultValue`](crate::types::DynamicDefaultValue).
     pub fn build(self) -> crate::types::DynamicDefaultValue {

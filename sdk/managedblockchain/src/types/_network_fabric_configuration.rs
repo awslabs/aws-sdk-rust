@@ -40,6 +40,10 @@ impl NetworkFabricConfigurationBuilder {
         self.edition = input;
         self
     }
+    /// <p>The edition of Amazon Managed Blockchain that the network uses. For more information, see <a href="http://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain Pricing</a>.</p>
+    pub fn get_edition(&self) -> &::std::option::Option<crate::types::Edition> {
+        &self.edition
+    }
     /// Consumes the builder and constructs a [`NetworkFabricConfiguration`](crate::types::NetworkFabricConfiguration).
     pub fn build(self) -> crate::types::NetworkFabricConfiguration {
         crate::types::NetworkFabricConfiguration {

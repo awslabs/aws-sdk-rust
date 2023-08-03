@@ -46,6 +46,10 @@ impl VpcConnectionPropertiesBuilder {
         self.vpc_connection_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the VPC connection.</p>
+    pub fn get_vpc_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_connection_arn
+    }
     /// Consumes the builder and constructs a [`VpcConnectionProperties`](crate::types::VpcConnectionProperties).
     pub fn build(self) -> crate::types::VpcConnectionProperties {
         crate::types::VpcConnectionProperties {

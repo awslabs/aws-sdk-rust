@@ -40,6 +40,10 @@ impl ParentBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the parent label.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`Parent`](crate::types::Parent).
     pub fn build(self) -> crate::types::Parent {
         crate::types::Parent { name: self.name }

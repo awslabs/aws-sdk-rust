@@ -37,6 +37,10 @@ impl GetMapTileFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetMapTile as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_map_tile::builders::GetMapTileInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl GetMapTileFluentBuilder {
         self.inner = self.inner.set_map_name(input);
         self
     }
+    /// <p>The map resource to retrieve the map tiles from.</p>
+    pub fn get_map_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_map_name()
+    }
     /// <p>The zoom value for the map tile.</p>
     pub fn z(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.z(input.into());
@@ -128,6 +136,10 @@ impl GetMapTileFluentBuilder {
     pub fn set_z(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_z(input);
         self
+    }
+    /// <p>The zoom value for the map tile.</p>
+    pub fn get_z(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_z()
     }
     /// <p>The X axis value for the map tile.</p>
     pub fn x(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -139,6 +151,10 @@ impl GetMapTileFluentBuilder {
         self.inner = self.inner.set_x(input);
         self
     }
+    /// <p>The X axis value for the map tile.</p>
+    pub fn get_x(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_x()
+    }
     /// <p>The Y axis value for the map tile. </p>
     pub fn y(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.y(input.into());
@@ -149,6 +165,10 @@ impl GetMapTileFluentBuilder {
         self.inner = self.inner.set_y(input);
         self
     }
+    /// <p>The Y axis value for the map tile. </p>
+    pub fn get_y(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_y()
+    }
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key(input.into());
@@ -158,5 +178,9 @@ impl GetMapTileFluentBuilder {
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key(input);
         self
+    }
+    /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_key()
     }
 }

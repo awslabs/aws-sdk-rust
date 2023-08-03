@@ -52,6 +52,10 @@ impl ResetServiceSettingOutputBuilder {
         self.service_setting = input;
         self
     }
+    /// <p>The current, effective service setting after calling the ResetServiceSetting API operation.</p>
+    pub fn get_service_setting(&self) -> &::std::option::Option<crate::types::ServiceSetting> {
+        &self.service_setting
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

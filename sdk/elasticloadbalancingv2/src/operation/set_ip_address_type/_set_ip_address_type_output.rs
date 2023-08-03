@@ -50,6 +50,10 @@ impl SetIpAddressTypeOutputBuilder {
         self.ip_address_type = input;
         self
     }
+    /// <p>The IP address type.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
+        &self.ip_address_type
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

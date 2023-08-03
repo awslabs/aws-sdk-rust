@@ -36,6 +36,12 @@ impl UpdateRelatedItemsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateRelatedItems as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_related_items::builders::UpdateRelatedItemsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateRelatedItemsFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>A token that ensures that a client calls the operation only once with the specified details.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>The Amazon Resource Name (ARN) of the incident record that contains the related items that you update.</p>
     pub fn incident_record_arn(
         mut self,
@@ -142,6 +152,10 @@ impl UpdateRelatedItemsFluentBuilder {
         self.inner = self.inner.set_incident_record_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the incident record that contains the related items that you update.</p>
+    pub fn get_incident_record_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_incident_record_arn()
+    }
     /// <p>Details about the item that you are add to, or delete from, an incident.</p>
     pub fn related_items_update(mut self, input: crate::types::RelatedItemsUpdate) -> Self {
         self.inner = self.inner.related_items_update(input);
@@ -154,5 +168,11 @@ impl UpdateRelatedItemsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_related_items_update(input);
         self
+    }
+    /// <p>Details about the item that you are add to, or delete from, an incident.</p>
+    pub fn get_related_items_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::RelatedItemsUpdate> {
+        self.inner.get_related_items_update()
     }
 }

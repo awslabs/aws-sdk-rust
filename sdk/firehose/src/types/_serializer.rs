@@ -51,6 +51,10 @@ impl SerializerBuilder {
         self.parquet_ser_de = input;
         self
     }
+    /// <p>A serializer to use for converting data to the Parquet format before storing it in Amazon S3. For more information, see <a href="https://parquet.apache.org/documentation/latest/">Apache Parquet</a>.</p>
+    pub fn get_parquet_ser_de(&self) -> &::std::option::Option<crate::types::ParquetSerDe> {
+        &self.parquet_ser_de
+    }
     /// <p>A serializer to use for converting data to the ORC format before storing it in Amazon S3. For more information, see <a href="https://orc.apache.org/docs/">Apache ORC</a>.</p>
     pub fn orc_ser_de(mut self, input: crate::types::OrcSerDe) -> Self {
         self.orc_ser_de = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl SerializerBuilder {
     pub fn set_orc_ser_de(mut self, input: ::std::option::Option<crate::types::OrcSerDe>) -> Self {
         self.orc_ser_de = input;
         self
+    }
+    /// <p>A serializer to use for converting data to the ORC format before storing it in Amazon S3. For more information, see <a href="https://orc.apache.org/docs/">Apache ORC</a>.</p>
+    pub fn get_orc_ser_de(&self) -> &::std::option::Option<crate::types::OrcSerDe> {
+        &self.orc_ser_de
     }
     /// Consumes the builder and constructs a [`Serializer`](crate::types::Serializer).
     pub fn build(self) -> crate::types::Serializer {

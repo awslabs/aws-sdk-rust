@@ -47,6 +47,10 @@ impl DescribeRouteCalculatorInputBuilder {
         self.calculator_name = input;
         self
     }
+    /// <p>The name of the route calculator resource.</p>
+    pub fn get_calculator_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.calculator_name
+    }
     /// Consumes the builder and constructs a [`DescribeRouteCalculatorInput`](crate::operation::describe_route_calculator::DescribeRouteCalculatorInput).
     pub fn build(
         self,

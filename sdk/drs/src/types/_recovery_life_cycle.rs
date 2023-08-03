@@ -59,6 +59,10 @@ impl RecoveryLifeCycleBuilder {
         self.api_call_date_time = input;
         self
     }
+    /// <p>The date and time the last Source Network recovery was initiated.</p>
+    pub fn get_api_call_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.api_call_date_time
+    }
     /// <p>The ID of the Job that was used to last recover the Source Network.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
@@ -68,6 +72,10 @@ impl RecoveryLifeCycleBuilder {
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_id = input;
         self
+    }
+    /// <p>The ID of the Job that was used to last recover the Source Network.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
     }
     /// <p>The status of the last recovery status of this Source Network.</p>
     pub fn last_recovery_result(mut self, input: crate::types::RecoveryResult) -> Self {
@@ -81,6 +89,10 @@ impl RecoveryLifeCycleBuilder {
     ) -> Self {
         self.last_recovery_result = input;
         self
+    }
+    /// <p>The status of the last recovery status of this Source Network.</p>
+    pub fn get_last_recovery_result(&self) -> &::std::option::Option<crate::types::RecoveryResult> {
+        &self.last_recovery_result
     }
     /// Consumes the builder and constructs a [`RecoveryLifeCycle`](crate::types::RecoveryLifeCycle).
     pub fn build(self) -> crate::types::RecoveryLifeCycle {

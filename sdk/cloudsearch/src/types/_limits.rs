@@ -48,6 +48,10 @@ impl LimitsBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
+    pub fn get_maximum_replication_count(&self) -> &::std::option::Option<i32> {
+        &self.maximum_replication_count
+    }
+    #[allow(missing_docs)] // documentation missing in model
     pub fn maximum_partition_count(mut self, input: i32) -> Self {
         self.maximum_partition_count = ::std::option::Option::Some(input);
         self
@@ -56,6 +60,10 @@ impl LimitsBuilder {
     pub fn set_maximum_partition_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum_partition_count = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_maximum_partition_count(&self) -> &::std::option::Option<i32> {
+        &self.maximum_partition_count
     }
     /// Consumes the builder and constructs a [`Limits`](crate::types::Limits).
     pub fn build(self) -> crate::types::Limits {

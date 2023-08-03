@@ -47,6 +47,10 @@ impl GetClientCertificateInputBuilder {
         self.client_certificate_id = input;
         self
     }
+    /// <p>The identifier of the ClientCertificate resource to be described.</p>
+    pub fn get_client_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_certificate_id
+    }
     /// Consumes the builder and constructs a [`GetClientCertificateInput`](crate::operation::get_client_certificate::GetClientCertificateInput).
     pub fn build(
         self,

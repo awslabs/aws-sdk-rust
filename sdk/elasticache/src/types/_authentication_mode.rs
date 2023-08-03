@@ -51,6 +51,10 @@ impl AuthenticationModeBuilder {
         self.r#type = input;
         self
     }
+    /// <p>Specifies the authentication type. Possible options are IAM authentication, password and no password.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::InputAuthenticationType> {
+        &self.r#type
+    }
     /// Appends an item to `passwords`.
     ///
     /// To override the contents of this collection use [`set_passwords`](Self::set_passwords).
@@ -69,6 +73,10 @@ impl AuthenticationModeBuilder {
     ) -> Self {
         self.passwords = input;
         self
+    }
+    /// <p>Specifies the passwords to use for authentication if <code>Type</code> is set to <code>password</code>.</p>
+    pub fn get_passwords(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.passwords
     }
     /// Consumes the builder and constructs a [`AuthenticationMode`](crate::types::AuthenticationMode).
     pub fn build(self) -> crate::types::AuthenticationMode {

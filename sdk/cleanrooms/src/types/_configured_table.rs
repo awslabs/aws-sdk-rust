@@ -116,6 +116,10 @@ impl ConfiguredTableBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique ID for the configured table.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The unique ARN for the configured table.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -125,6 +129,10 @@ impl ConfiguredTableBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The unique ARN for the configured table.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>A name for the configured table.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -136,6 +144,10 @@ impl ConfiguredTableBuilder {
         self.name = input;
         self
     }
+    /// <p>A name for the configured table.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A description for the configured table.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -145,6 +157,10 @@ impl ConfiguredTableBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description for the configured table.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The Glue table that this configured table represents.</p>
     pub fn table_reference(mut self, input: crate::types::TableReference) -> Self {
@@ -159,6 +175,10 @@ impl ConfiguredTableBuilder {
         self.table_reference = input;
         self
     }
+    /// <p>The Glue table that this configured table represents.</p>
+    pub fn get_table_reference(&self) -> &::std::option::Option<crate::types::TableReference> {
+        &self.table_reference
+    }
     /// <p>The time the configured table was created.</p>
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
@@ -172,6 +192,10 @@ impl ConfiguredTableBuilder {
         self.create_time = input;
         self
     }
+    /// <p>The time the configured table was created.</p>
+    pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_time
+    }
     /// <p>The time the configured table was last updated</p>
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
@@ -184,6 +208,10 @@ impl ConfiguredTableBuilder {
     ) -> Self {
         self.update_time = input;
         self
+    }
+    /// <p>The time the configured table was last updated</p>
+    pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_time
     }
     /// Appends an item to `analysis_rule_types`.
     ///
@@ -209,6 +237,13 @@ impl ConfiguredTableBuilder {
         self.analysis_rule_types = input;
         self
     }
+    /// <p>The types of analysis rules associated with this configured table. Valid values are `AGGREGATION` and `LIST`. Currently, only one analysis rule may be associated with a configured table.</p>
+    pub fn get_analysis_rule_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableAnalysisRuleType>>
+    {
+        &self.analysis_rule_types
+    }
     /// <p>The analysis method for the configured table. The only valid value is currently `DIRECT_QUERY`.</p>
     pub fn analysis_method(mut self, input: crate::types::AnalysisMethod) -> Self {
         self.analysis_method = ::std::option::Option::Some(input);
@@ -221,6 +256,10 @@ impl ConfiguredTableBuilder {
     ) -> Self {
         self.analysis_method = input;
         self
+    }
+    /// <p>The analysis method for the configured table. The only valid value is currently `DIRECT_QUERY`.</p>
+    pub fn get_analysis_method(&self) -> &::std::option::Option<crate::types::AnalysisMethod> {
+        &self.analysis_method
     }
     /// Appends an item to `allowed_columns`.
     ///
@@ -243,6 +282,12 @@ impl ConfiguredTableBuilder {
     ) -> Self {
         self.allowed_columns = input;
         self
+    }
+    /// <p>The columns within the underlying Glue table that can be utilized within collaborations.</p>
+    pub fn get_allowed_columns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.allowed_columns
     }
     /// Consumes the builder and constructs a [`ConfiguredTable`](crate::types::ConfiguredTable).
     pub fn build(self) -> crate::types::ConfiguredTable {

@@ -36,6 +36,12 @@ impl CreateWebhookFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateWebhook as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_webhook::builders::CreateWebhookInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl CreateWebhookFluentBuilder {
         self.inner = self.inner.set_app_id(input);
         self
     }
+    /// <p> The unique ID for an Amplify app. </p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_id()
+    }
     /// <p> The name for a branch that is part of an Amplify app. </p>
     pub fn branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.branch_name(input.into());
@@ -128,6 +138,10 @@ impl CreateWebhookFluentBuilder {
         self.inner = self.inner.set_branch_name(input);
         self
     }
+    /// <p> The name for a branch that is part of an Amplify app. </p>
+    pub fn get_branch_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_branch_name()
+    }
     /// <p> The description for a webhook. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -137,5 +151,9 @@ impl CreateWebhookFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p> The description for a webhook. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
 }

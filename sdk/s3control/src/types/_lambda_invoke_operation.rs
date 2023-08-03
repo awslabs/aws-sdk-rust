@@ -40,6 +40,10 @@ impl LambdaInvokeOperationBuilder {
         self.function_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the Lambda function that the specified job will invoke on every object in the manifest.</p>
+    pub fn get_function_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.function_arn
+    }
     /// Consumes the builder and constructs a [`LambdaInvokeOperation`](crate::types::LambdaInvokeOperation).
     pub fn build(self) -> crate::types::LambdaInvokeOperation {
         crate::types::LambdaInvokeOperation {

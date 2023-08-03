@@ -36,6 +36,12 @@ impl UpdateContextFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateContext as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_context::builders::UpdateContextInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl UpdateContextFluentBuilder {
         self.inner = self.inner.set_context_name(input);
         self
     }
+    /// <p>The name of the context to update.</p>
+    pub fn get_context_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_context_name()
+    }
     /// <p>The new description for the context.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -127,6 +137,10 @@ impl UpdateContextFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The new description for the context.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Adds a key-value pair to `Properties`.
     ///
@@ -151,6 +165,14 @@ impl UpdateContextFluentBuilder {
         self.inner = self.inner.set_properties(input);
         self
     }
+    /// <p>The new list of properties. Overwrites the current property list.</p>
+    pub fn get_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_properties()
+    }
     /// Appends an item to `PropertiesToRemove`.
     ///
     /// To override the contents of this collection use [`set_properties_to_remove`](Self::set_properties_to_remove).
@@ -170,5 +192,11 @@ impl UpdateContextFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_properties_to_remove(input);
         self
+    }
+    /// <p>A list of properties to remove.</p>
+    pub fn get_properties_to_remove(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_properties_to_remove()
     }
 }

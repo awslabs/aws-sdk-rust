@@ -36,6 +36,12 @@ impl ListCodeReviewsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListCodeReviews as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_code_reviews::builders::ListCodeReviewsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -144,6 +150,12 @@ impl ListCodeReviewsFluentBuilder {
         self.inner = self.inner.set_provider_types(input);
         self
     }
+    /// <p>List of provider types for filtering that needs to be applied before displaying the result. For example, <code>providerTypes=[GitHub]</code> lists code reviews from GitHub.</p>
+    pub fn get_provider_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProviderType>> {
+        self.inner.get_provider_types()
+    }
     /// Appends an item to `States`.
     ///
     /// To override the contents of this collection use [`set_states`](Self::set_states).
@@ -175,6 +187,17 @@ impl ListCodeReviewsFluentBuilder {
         self.inner = self.inner.set_states(input);
         self
     }
+    /// <p>List of states for filtering that needs to be applied before displaying the result. For example, <code>states=[Pending]</code> lists code reviews in the Pending state.</p>
+    /// <p>The valid code review states are:</p>
+    /// <ul>
+    /// <li> <p> <code>Completed</code>: The code review is complete.</p> </li>
+    /// <li> <p> <code>Pending</code>: The code review started and has not completed or failed.</p> </li>
+    /// <li> <p> <code>Failed</code>: The code review failed.</p> </li>
+    /// <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li>
+    /// </ul>
+    pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobState>> {
+        self.inner.get_states()
+    }
     /// Appends an item to `RepositoryNames`.
     ///
     /// To override the contents of this collection use [`set_repository_names`](Self::set_repository_names).
@@ -195,6 +218,12 @@ impl ListCodeReviewsFluentBuilder {
         self.inner = self.inner.set_repository_names(input);
         self
     }
+    /// <p>List of repository names for filtering that needs to be applied before displaying the result.</p>
+    pub fn get_repository_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_repository_names()
+    }
     /// <p>The type of code reviews to list in the response.</p>
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
         self.inner = self.inner.r#type(input);
@@ -204,6 +233,10 @@ impl ListCodeReviewsFluentBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::Type>) -> Self {
         self.inner = self.inner.set_type(input);
         self
+    }
+    /// <p>The type of code reviews to list in the response.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::Type> {
+        self.inner.get_type()
     }
     /// <p>The maximum number of results that are returned per call. The default is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -215,6 +248,10 @@ impl ListCodeReviewsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results that are returned per call. The default is 100.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -224,5 +261,9 @@ impl ListCodeReviewsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

@@ -41,6 +41,12 @@ impl RemoveEndpointsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RemoveEndpoints as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::remove_endpoints::builders::RemoveEndpointsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +144,12 @@ impl RemoveEndpointsFluentBuilder {
         self.inner = self.inner.set_endpoint_identifiers(input);
         self
     }
+    /// <p>The identifiers of the endpoints that you want to remove.</p>
+    pub fn get_endpoint_identifiers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointIdentifier>> {
+        self.inner.get_endpoint_identifiers()
+    }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
     pub fn endpoint_group_arn(
         mut self,
@@ -153,5 +165,9 @@ impl RemoveEndpointsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_endpoint_group_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
+    pub fn get_endpoint_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_endpoint_group_arn()
     }
 }

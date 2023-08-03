@@ -59,6 +59,10 @@ impl ConfigureLogsInputBuilder {
         self.egress_access_logs = input;
         self
     }
+    /// Configure egress access logging.
+    pub fn get_egress_access_logs(&self) -> &::std::option::Option<crate::types::EgressAccessLogs> {
+        &self.egress_access_logs
+    }
     /// The ID of the channel to log subscription.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -68,6 +72,10 @@ impl ConfigureLogsInputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// The ID of the channel to log subscription.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Configure ingress access logging.
     pub fn ingress_access_logs(mut self, input: crate::types::IngressAccessLogs) -> Self {
@@ -81,6 +89,12 @@ impl ConfigureLogsInputBuilder {
     ) -> Self {
         self.ingress_access_logs = input;
         self
+    }
+    /// Configure ingress access logging.
+    pub fn get_ingress_access_logs(
+        &self,
+    ) -> &::std::option::Option<crate::types::IngressAccessLogs> {
+        &self.ingress_access_logs
     }
     /// Consumes the builder and constructs a [`ConfigureLogsInput`](crate::operation::configure_logs::ConfigureLogsInput).
     pub fn build(

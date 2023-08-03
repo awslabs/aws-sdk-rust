@@ -56,6 +56,10 @@ impl PtrUpdateStatusBuilder {
         self.value = input;
         self
     }
+    /// <p>The value for the PTR record update.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// <p>The status of the PTR record update.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl PtrUpdateStatusBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the PTR record update.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>The reason for the PTR record update.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl PtrUpdateStatusBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
+    }
+    /// <p>The reason for the PTR record update.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
     }
     /// Consumes the builder and constructs a [`PtrUpdateStatus`](crate::types::PtrUpdateStatus).
     pub fn build(self) -> crate::types::PtrUpdateStatus {

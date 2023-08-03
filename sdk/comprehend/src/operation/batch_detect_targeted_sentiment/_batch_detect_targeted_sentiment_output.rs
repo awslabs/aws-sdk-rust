@@ -81,6 +81,13 @@ impl BatchDetectTargetedSentimentOutputBuilder {
         self.result_list = input;
         self
     }
+    /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
+    pub fn get_result_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchDetectTargetedSentimentItemResult>>
+    {
+        &self.result_list
+    }
     /// Appends an item to `error_list`.
     ///
     /// To override the contents of this collection use [`set_error_list`](Self::set_error_list).
@@ -99,6 +106,12 @@ impl BatchDetectTargetedSentimentOutputBuilder {
     ) -> Self {
         self.error_list = input;
         self
+    }
+    /// <p>List of errors that the operation can return.</p>
+    pub fn get_error_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchItemError>> {
+        &self.error_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

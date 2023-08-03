@@ -57,6 +57,10 @@ impl ListBatchLoadTasksOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token to specify where to start paginating. Provide the next ListBatchLoadTasksRequest.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `batch_load_tasks`.
     ///
     /// To override the contents of this collection use [`set_batch_load_tasks`](Self::set_batch_load_tasks).
@@ -75,6 +79,12 @@ impl ListBatchLoadTasksOutputBuilder {
     ) -> Self {
         self.batch_load_tasks = input;
         self
+    }
+    /// <p>A list of batch load task details.</p>
+    pub fn get_batch_load_tasks(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchLoadTask>> {
+        &self.batch_load_tasks
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

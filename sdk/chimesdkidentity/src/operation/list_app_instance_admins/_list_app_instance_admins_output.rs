@@ -82,6 +82,10 @@ impl ListAppInstanceAdminsOutputBuilder {
         self.app_instance_arn = input;
         self
     }
+    /// <p>The ARN of the <code>AppInstance</code>.</p>
+    pub fn get_app_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_instance_arn
+    }
     /// Appends an item to `app_instance_admins`.
     ///
     /// To override the contents of this collection use [`set_app_instance_admins`](Self::set_app_instance_admins).
@@ -101,6 +105,12 @@ impl ListAppInstanceAdminsOutputBuilder {
         self.app_instance_admins = input;
         self
     }
+    /// <p>The information for each administrator.</p>
+    pub fn get_app_instance_admins(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AppInstanceAdminSummary>> {
+        &self.app_instance_admins
+    }
     /// <p>The token returned from previous API requests until the number of administrators is reached.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -110,6 +120,10 @@ impl ListAppInstanceAdminsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token returned from previous API requests until the number of administrators is reached.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

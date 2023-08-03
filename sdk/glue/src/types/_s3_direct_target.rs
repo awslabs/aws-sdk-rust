@@ -94,6 +94,10 @@ impl S3DirectTargetBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the data target.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `inputs`.
     ///
     /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
@@ -112,6 +116,10 @@ impl S3DirectTargetBuilder {
     ) -> Self {
         self.inputs = input;
         self
+    }
+    /// <p>The nodes that are inputs to the data target.</p>
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.inputs
     }
     /// Appends an item to `partition_keys`.
     ///
@@ -132,6 +140,12 @@ impl S3DirectTargetBuilder {
         self.partition_keys = input;
         self
     }
+    /// <p>Specifies native partitioning using a sequence of keys.</p>
+    pub fn get_partition_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>> {
+        &self.partition_keys
+    }
     /// <p>A single Amazon S3 path to write to.</p>
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path = ::std::option::Option::Some(input.into());
@@ -141,6 +155,10 @@ impl S3DirectTargetBuilder {
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path = input;
         self
+    }
+    /// <p>A single Amazon S3 path to write to.</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
     }
     /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
     pub fn compression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -152,6 +170,10 @@ impl S3DirectTargetBuilder {
         self.compression = input;
         self
     }
+    /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
+    pub fn get_compression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.compression
+    }
     /// <p>Specifies the data output format for the target.</p>
     pub fn format(mut self, input: crate::types::TargetFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
@@ -161,6 +183,10 @@ impl S3DirectTargetBuilder {
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::TargetFormat>) -> Self {
         self.format = input;
         self
+    }
+    /// <p>Specifies the data output format for the target.</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::TargetFormat> {
+        &self.format
     }
     /// <p>A policy that specifies update behavior for the crawler.</p>
     pub fn schema_change_policy(mut self, input: crate::types::DirectSchemaChangePolicy) -> Self {
@@ -174,6 +200,12 @@ impl S3DirectTargetBuilder {
     ) -> Self {
         self.schema_change_policy = input;
         self
+    }
+    /// <p>A policy that specifies update behavior for the crawler.</p>
+    pub fn get_schema_change_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::DirectSchemaChangePolicy> {
+        &self.schema_change_policy
     }
     /// Consumes the builder and constructs a [`S3DirectTarget`](crate::types::S3DirectTarget).
     pub fn build(self) -> crate::types::S3DirectTarget {

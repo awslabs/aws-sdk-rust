@@ -69,6 +69,10 @@ impl ListSuiteRunsInputBuilder {
         self.suite_definition_id = input;
         self
     }
+    /// <p>Lists the test suite runs of the specified test suite based on suite definition ID.</p>
+    pub fn get_suite_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.suite_definition_id
+    }
     /// <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of the specified test suite based on suite definition version.</p>
     pub fn suite_definition_version(
         mut self,
@@ -85,6 +89,10 @@ impl ListSuiteRunsInputBuilder {
         self.suite_definition_version = input;
         self
     }
+    /// <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of the specified test suite based on suite definition version.</p>
+    pub fn get_suite_definition_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.suite_definition_version
+    }
     /// <p>The maximum number of results to return at once.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -95,6 +103,10 @@ impl ListSuiteRunsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to return at once.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>A token to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -104,6 +116,10 @@ impl ListSuiteRunsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListSuiteRunsInput`](crate::operation::list_suite_runs::ListSuiteRunsInput).
     pub fn build(

@@ -63,6 +63,14 @@ impl JobExecutionStatusDetailsBuilder {
         self.details_map = input;
         self
     }
+    /// <p>The job execution status.</p>
+    pub fn get_details_map(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.details_map
+    }
     /// Consumes the builder and constructs a [`JobExecutionStatusDetails`](crate::types::JobExecutionStatusDetails).
     pub fn build(self) -> crate::types::JobExecutionStatusDetails {
         crate::types::JobExecutionStatusDetails {

@@ -69,6 +69,11 @@ impl CreateCertificateAuthorityAuditReportInputBuilder {
         self.certificate_authority_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the CA to be audited. This is of the form:</p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.</p>
+    pub fn get_certificate_authority_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_authority_arn
+    }
     /// <p>The name of the S3 bucket that will contain the audit report.</p>
     pub fn s3_bucket_name(
         mut self,
@@ -85,6 +90,10 @@ impl CreateCertificateAuthorityAuditReportInputBuilder {
         self.s3_bucket_name = input;
         self
     }
+    /// <p>The name of the S3 bucket that will contain the audit report.</p>
+    pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket_name
+    }
     /// <p>The format in which to create the report. This can be either <b>JSON</b> or <b>CSV</b>.</p>
     pub fn audit_report_response_format(
         mut self,
@@ -100,6 +109,12 @@ impl CreateCertificateAuthorityAuditReportInputBuilder {
     ) -> Self {
         self.audit_report_response_format = input;
         self
+    }
+    /// <p>The format in which to create the report. This can be either <b>JSON</b> or <b>CSV</b>.</p>
+    pub fn get_audit_report_response_format(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuditReportResponseFormat> {
+        &self.audit_report_response_format
     }
     /// Consumes the builder and constructs a [`CreateCertificateAuthorityAuditReportInput`](crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportInput, ::aws_smithy_http::operation::error::BuildError>{

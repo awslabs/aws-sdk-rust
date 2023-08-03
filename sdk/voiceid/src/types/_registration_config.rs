@@ -66,6 +66,12 @@ impl RegistrationConfigBuilder {
         self.duplicate_registration_action = input;
         self
     }
+    /// <p>The action to take when a fraudster is identified as a duplicate. The default action is <code>SKIP</code>, which skips registering the duplicate fraudster. Setting the value to <code>REGISTER_AS_NEW</code> always registers a new fraudster into the specified domain.</p>
+    pub fn get_duplicate_registration_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::DuplicateRegistrationAction> {
+        &self.duplicate_registration_action
+    }
     /// <p>The minimum similarity score between the new and old fraudsters in order to consider the new fraudster a duplicate.</p>
     pub fn fraudster_similarity_threshold(mut self, input: i32) -> Self {
         self.fraudster_similarity_threshold = ::std::option::Option::Some(input);
@@ -75,6 +81,10 @@ impl RegistrationConfigBuilder {
     pub fn set_fraudster_similarity_threshold(mut self, input: ::std::option::Option<i32>) -> Self {
         self.fraudster_similarity_threshold = input;
         self
+    }
+    /// <p>The minimum similarity score between the new and old fraudsters in order to consider the new fraudster a duplicate.</p>
+    pub fn get_fraudster_similarity_threshold(&self) -> &::std::option::Option<i32> {
+        &self.fraudster_similarity_threshold
     }
     /// Appends an item to `watchlist_ids`.
     ///
@@ -97,6 +107,12 @@ impl RegistrationConfigBuilder {
     ) -> Self {
         self.watchlist_ids = input;
         self
+    }
+    /// <p>The identifiers of watchlists that a fraudster is registered to. If a watchlist isn't provided, the fraudsters are registered to the default watchlist. </p>
+    pub fn get_watchlist_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.watchlist_ids
     }
     /// Consumes the builder and constructs a [`RegistrationConfig`](crate::types::RegistrationConfig).
     pub fn build(self) -> crate::types::RegistrationConfig {

@@ -98,6 +98,12 @@ impl FeaturizationMethodBuilder {
         self.featurization_method_name = input;
         self
     }
+    /// <p>The name of the method. The "filling" method is the only supported method.</p>
+    pub fn get_featurization_method_name(
+        &self,
+    ) -> &::std::option::Option<crate::types::FeaturizationMethodName> {
+        &self.featurization_method_name
+    }
     /// Adds a key-value pair to `featurization_method_parameters`.
     ///
     /// To override the contents of this collection use [`set_featurization_method_parameters`](Self::set_featurization_method_parameters).
@@ -150,6 +156,28 @@ impl FeaturizationMethodBuilder {
     ) -> Self {
         self.featurization_method_parameters = input;
         self
+    }
+    /// <p>The method parameters (key-value pairs), which are a map of override parameters. Specify these parameters to override the default values. Related Time Series attributes do not accept aggregation parameters.</p>
+    /// <p>The following list shows the parameters and their valid values for the "filling" featurization method for a <b>Target Time Series</b> dataset. Bold signifies the default value.</p>
+    /// <ul>
+    /// <li> <p> <code>aggregation</code>: <b>sum</b>, <code>avg</code>, <code>first</code>, <code>min</code>, <code>max</code> </p> </li>
+    /// <li> <p> <code>frontfill</code>: <b>none</b> </p> </li>
+    /// <li> <p> <code>middlefill</code>: <b>zero</b>, <code>nan</code> (not a number), <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
+    /// <li> <p> <code>backfill</code>: <b>zero</b>, <code>nan</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
+    /// </ul>
+    /// <p>The following list shows the parameters and their valid values for a <b>Related Time Series</b> featurization method (there are no defaults):</p>
+    /// <ul>
+    /// <li> <p> <code>middlefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
+    /// <li> <p> <code>backfill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
+    /// <li> <p> <code>futurefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> </p> </li>
+    /// </ul>
+    /// <p>To set a filling method to a specific value, set the fill parameter to <code>value</code> and define the value in a corresponding <code>_value</code> parameter. For example, to set backfilling to a value of 2, include the following: <code>"backfill": "value"</code> and <code>"backfill_value":"2"</code>. </p>
+    pub fn get_featurization_method_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.featurization_method_parameters
     }
     /// Consumes the builder and constructs a [`FeaturizationMethod`](crate::types::FeaturizationMethod).
     pub fn build(self) -> crate::types::FeaturizationMethod {

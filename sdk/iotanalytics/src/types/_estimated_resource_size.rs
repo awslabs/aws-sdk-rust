@@ -48,6 +48,10 @@ impl EstimatedResourceSizeBuilder {
         self.estimated_size_in_bytes = input;
         self
     }
+    /// <p>The estimated size of the resource, in bytes.</p>
+    pub fn get_estimated_size_in_bytes(&self) -> &::std::option::Option<f64> {
+        &self.estimated_size_in_bytes
+    }
     /// <p>The time when the estimate of the size of the resource was made.</p>
     pub fn estimated_on(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.estimated_on = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl EstimatedResourceSizeBuilder {
     ) -> Self {
         self.estimated_on = input;
         self
+    }
+    /// <p>The time when the estimate of the size of the resource was made.</p>
+    pub fn get_estimated_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.estimated_on
     }
     /// Consumes the builder and constructs a [`EstimatedResourceSize`](crate::types::EstimatedResourceSize).
     pub fn build(self) -> crate::types::EstimatedResourceSize {

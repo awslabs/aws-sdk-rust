@@ -56,6 +56,10 @@ impl GrpcRouteMetadataBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the route.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Specify <code>True</code> to match anything except the match criteria. The default value is <code>False</code>.</p>
     pub fn invert(mut self, input: bool) -> Self {
         self.invert = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl GrpcRouteMetadataBuilder {
     pub fn set_invert(mut self, input: ::std::option::Option<bool>) -> Self {
         self.invert = input;
         self
+    }
+    /// <p>Specify <code>True</code> to match anything except the match criteria. The default value is <code>False</code>.</p>
+    pub fn get_invert(&self) -> &::std::option::Option<bool> {
+        &self.invert
     }
     /// <p>An object that represents the data to match from the request.</p>
     pub fn r#match(mut self, input: crate::types::GrpcRouteMetadataMatchMethod) -> Self {
@@ -78,6 +86,10 @@ impl GrpcRouteMetadataBuilder {
     ) -> Self {
         self.r#match = input;
         self
+    }
+    /// <p>An object that represents the data to match from the request.</p>
+    pub fn get_match(&self) -> &::std::option::Option<crate::types::GrpcRouteMetadataMatchMethod> {
+        &self.r#match
     }
     /// Consumes the builder and constructs a [`GrpcRouteMetadata`](crate::types::GrpcRouteMetadata).
     pub fn build(self) -> crate::types::GrpcRouteMetadata {

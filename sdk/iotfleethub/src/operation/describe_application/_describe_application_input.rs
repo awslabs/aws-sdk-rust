@@ -46,6 +46,10 @@ impl DescribeApplicationInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The unique Id of the web application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// Consumes the builder and constructs a [`DescribeApplicationInput`](crate::operation::describe_application::DescribeApplicationInput).
     pub fn build(
         self,

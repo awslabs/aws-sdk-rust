@@ -66,6 +66,12 @@ impl GetGatewayResponsesOutputBuilder {
         self.items = input;
         self
     }
+    /// <p>Returns the entire collection, because of no pagination support.</p>
+    pub fn get_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GatewayResponse>> {
+        &self.items
+    }
     /// <p>The current pagination position in the paged result set. The GatewayResponse collection does not support pagination and the position does not apply here.</p>
     pub fn position(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.position = ::std::option::Option::Some(input.into());
@@ -75,6 +81,10 @@ impl GetGatewayResponsesOutputBuilder {
     pub fn set_position(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.position = input;
         self
+    }
+    /// <p>The current pagination position in the paged result set. The GatewayResponse collection does not support pagination and the position does not apply here.</p>
+    pub fn get_position(&self) -> &::std::option::Option<::std::string::String> {
+        &self.position
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

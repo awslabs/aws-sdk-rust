@@ -56,6 +56,10 @@ impl FaultRootCauseEntityBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the entity.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `exceptions`.
     ///
     /// To override the contents of this collection use [`set_exceptions`](Self::set_exceptions).
@@ -75,6 +79,12 @@ impl FaultRootCauseEntityBuilder {
         self.exceptions = input;
         self
     }
+    /// <p>The types and messages of the exceptions.</p>
+    pub fn get_exceptions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RootCauseException>> {
+        &self.exceptions
+    }
     /// <p>A flag that denotes a remote subsegment.</p>
     pub fn remote(mut self, input: bool) -> Self {
         self.remote = ::std::option::Option::Some(input);
@@ -84,6 +94,10 @@ impl FaultRootCauseEntityBuilder {
     pub fn set_remote(mut self, input: ::std::option::Option<bool>) -> Self {
         self.remote = input;
         self
+    }
+    /// <p>A flag that denotes a remote subsegment.</p>
+    pub fn get_remote(&self) -> &::std::option::Option<bool> {
+        &self.remote
     }
     /// Consumes the builder and constructs a [`FaultRootCauseEntity`](crate::types::FaultRootCauseEntity).
     pub fn build(self) -> crate::types::FaultRootCauseEntity {

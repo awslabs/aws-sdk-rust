@@ -47,6 +47,10 @@ impl DescribeReservationInputBuilder {
         self.reservation_id = input;
         self
     }
+    /// Unique reservation ID, e.g. '1234567'
+    pub fn get_reservation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reservation_id
+    }
     /// Consumes the builder and constructs a [`DescribeReservationInput`](crate::operation::describe_reservation::DescribeReservationInput).
     pub fn build(
         self,

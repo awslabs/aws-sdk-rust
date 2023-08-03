@@ -40,6 +40,10 @@ impl CreatePresignedNotebookInstanceUrlFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreatePresignedNotebookInstanceUrl as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_presigned_notebook_instance_url::builders::CreatePresignedNotebookInstanceUrlInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -110,6 +114,10 @@ impl CreatePresignedNotebookInstanceUrlFluentBuilder {
         self.inner = self.inner.set_notebook_instance_name(input);
         self
     }
+    /// <p>The name of the notebook instance.</p>
+    pub fn get_notebook_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_notebook_instance_name()
+    }
     /// <p>The duration of the session, in seconds. The default is 12 hours.</p>
     pub fn session_expiration_duration_in_seconds(mut self, input: i32) -> Self {
         self.inner = self.inner.session_expiration_duration_in_seconds(input);
@@ -122,5 +130,9 @@ impl CreatePresignedNotebookInstanceUrlFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_session_expiration_duration_in_seconds(input);
         self
+    }
+    /// <p>The duration of the session, in seconds. The default is 12 hours.</p>
+    pub fn get_session_expiration_duration_in_seconds(&self) -> &::std::option::Option<i32> {
+        self.inner.get_session_expiration_duration_in_seconds()
     }
 }

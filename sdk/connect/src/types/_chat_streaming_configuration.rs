@@ -46,6 +46,10 @@ impl ChatStreamingConfigurationBuilder {
         self.streaming_endpoint_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the standard Amazon SNS topic. The Amazon Resource Name (ARN) of the streaming endpoint that is used to publish real-time message streaming for chat conversations.</p>
+    pub fn get_streaming_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.streaming_endpoint_arn
+    }
     /// Consumes the builder and constructs a [`ChatStreamingConfiguration`](crate::types::ChatStreamingConfiguration).
     pub fn build(self) -> crate::types::ChatStreamingConfiguration {
         crate::types::ChatStreamingConfiguration {

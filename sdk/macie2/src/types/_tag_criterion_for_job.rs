@@ -52,6 +52,10 @@ impl TagCriterionForJobBuilder {
         self.comparator = input;
         self
     }
+    /// <p>The operator to use in the condition. Valid values are EQ (equals) and NE (not equals).</p>
+    pub fn get_comparator(&self) -> &::std::option::Option<crate::types::JobComparator> {
+        &self.comparator
+    }
     /// Appends an item to `tag_values`.
     ///
     /// To override the contents of this collection use [`set_tag_values`](Self::set_tag_values).
@@ -70,6 +74,12 @@ impl TagCriterionForJobBuilder {
     ) -> Self {
         self.tag_values = input;
         self
+    }
+    /// <p>The tag keys, tag values, or tag key and value pairs to use in the condition.</p>
+    pub fn get_tag_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagCriterionPairForJob>> {
+        &self.tag_values
     }
     /// Consumes the builder and constructs a [`TagCriterionForJob`](crate::types::TagCriterionForJob).
     pub fn build(self) -> crate::types::TagCriterionForJob {

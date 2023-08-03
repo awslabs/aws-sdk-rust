@@ -48,6 +48,10 @@ impl ValidationErrorBuilder {
         self.element_path = input;
         self
     }
+    /// Path to the source of the error.
+    pub fn get_element_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.element_path
+    }
     /// The error message.
     pub fn error_message(
         mut self,
@@ -63,6 +67,10 @@ impl ValidationErrorBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// The error message.
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`ValidationError`](crate::types::ValidationError).
     pub fn build(self) -> crate::types::ValidationError {

@@ -36,6 +36,13 @@ impl GetDeviceRegistrationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetDeviceRegistration as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_device_registration::builders::GetDeviceRegistrationInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl GetDeviceRegistrationFluentBuilder {
         self.inner = self.inner.set_device_name(input);
         self
     }
+    /// <p>The unique name of the device you want to get the registration status from.</p>
+    pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_name()
+    }
     /// <p>The name of the fleet that the device belongs to.</p>
     pub fn device_fleet_name(
         mut self,
@@ -141,5 +152,9 @@ impl GetDeviceRegistrationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_device_fleet_name(input);
         self
+    }
+    /// <p>The name of the fleet that the device belongs to.</p>
+    pub fn get_device_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_fleet_name()
     }
 }

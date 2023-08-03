@@ -48,6 +48,10 @@ impl StatusBuilder {
         self.state = input;
         self
     }
+    /// <p>The current state of the entity, component, component type, or workspace.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::State> {
+        &self.state
+    }
     /// <p>The error message.</p>
     pub fn error(mut self, input: crate::types::ErrorDetails) -> Self {
         self.error = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl StatusBuilder {
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::ErrorDetails>) -> Self {
         self.error = input;
         self
+    }
+    /// <p>The error message.</p>
+    pub fn get_error(&self) -> &::std::option::Option<crate::types::ErrorDetails> {
+        &self.error
     }
     /// Consumes the builder and constructs a [`Status`](crate::types::Status).
     pub fn build(self) -> crate::types::Status {

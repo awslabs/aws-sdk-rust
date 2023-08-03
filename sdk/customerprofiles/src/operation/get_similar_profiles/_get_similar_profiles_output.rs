@@ -96,6 +96,12 @@ impl GetSimilarProfilesOutputBuilder {
         self.profile_ids = input;
         self
     }
+    /// <p>Set of <code>profileId</code>s that belong to the same matching group.</p>
+    pub fn get_profile_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.profile_ids
+    }
     /// <p>The string <code>matchId</code> that the similar profiles belong to.</p>
     pub fn match_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.match_id = ::std::option::Option::Some(input.into());
@@ -105,6 +111,10 @@ impl GetSimilarProfilesOutputBuilder {
     pub fn set_match_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.match_id = input;
         self
+    }
+    /// <p>The string <code>matchId</code> that the similar profiles belong to.</p>
+    pub fn get_match_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.match_id
     }
     /// <p>Specify the type of matching to get similar profiles for.</p>
     pub fn match_type(mut self, input: crate::types::MatchType) -> Self {
@@ -116,6 +126,10 @@ impl GetSimilarProfilesOutputBuilder {
         self.match_type = input;
         self
     }
+    /// <p>Specify the type of matching to get similar profiles for.</p>
+    pub fn get_match_type(&self) -> &::std::option::Option<crate::types::MatchType> {
+        &self.match_type
+    }
     /// <p>The integer rule level that the profiles matched on.</p>
     pub fn rule_level(mut self, input: i32) -> Self {
         self.rule_level = ::std::option::Option::Some(input);
@@ -125,6 +139,10 @@ impl GetSimilarProfilesOutputBuilder {
     pub fn set_rule_level(mut self, input: ::std::option::Option<i32>) -> Self {
         self.rule_level = input;
         self
+    }
+    /// <p>The integer rule level that the profiles matched on.</p>
+    pub fn get_rule_level(&self) -> &::std::option::Option<i32> {
+        &self.rule_level
     }
     /// <p>It only has value when the <code>MatchType</code> is <code>ML_BASED_MATCHING</code>.A number between 0 and 1, where a higher score means higher similarity. Examining match confidence scores lets you distinguish between groups of similar records in which the system is highly confident (which you may decide to merge), groups of similar records about which the system is uncertain (which you may decide to have reviewed by a human), and groups of similar records that the system deems to be unlikely (which you may decide to reject). Given confidence scores vary as per the data input, it should not be used as an absolute measure of matching quality.</p>
     pub fn confidence_score(mut self, input: f64) -> Self {
@@ -136,6 +154,10 @@ impl GetSimilarProfilesOutputBuilder {
         self.confidence_score = input;
         self
     }
+    /// <p>It only has value when the <code>MatchType</code> is <code>ML_BASED_MATCHING</code>.A number between 0 and 1, where a higher score means higher similarity. Examining match confidence scores lets you distinguish between groups of similar records in which the system is highly confident (which you may decide to merge), groups of similar records about which the system is uncertain (which you may decide to have reviewed by a human), and groups of similar records that the system deems to be unlikely (which you may decide to reject). Given confidence scores vary as per the data input, it should not be used as an absolute measure of matching quality.</p>
+    pub fn get_confidence_score(&self) -> &::std::option::Option<f64> {
+        &self.confidence_score
+    }
     /// <p>The pagination token from the previous <code>GetSimilarProfiles</code> API call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -145,6 +167,10 @@ impl GetSimilarProfilesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The pagination token from the previous <code>GetSimilarProfiles</code> API call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

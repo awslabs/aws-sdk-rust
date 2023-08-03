@@ -48,6 +48,10 @@ impl CompleteWorkflowExecutionDecisionAttributesBuilder {
         self.result = input;
         self
     }
+    /// <p>The result of the workflow execution. The form of the result is implementation defined.</p>
+    pub fn get_result(&self) -> &::std::option::Option<::std::string::String> {
+        &self.result
+    }
     /// Consumes the builder and constructs a [`CompleteWorkflowExecutionDecisionAttributes`](crate::types::CompleteWorkflowExecutionDecisionAttributes).
     pub fn build(self) -> crate::types::CompleteWorkflowExecutionDecisionAttributes {
         crate::types::CompleteWorkflowExecutionDecisionAttributes {

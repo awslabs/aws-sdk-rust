@@ -36,6 +36,10 @@ impl DeleteRumMetricsDestinationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteRumMetricsDestination as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_rum_metrics_destination::builders::DeleteRumMetricsDestinationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl DeleteRumMetricsDestinationFluentBuilder {
         self.inner = self.inner.set_app_monitor_name(input);
         self
     }
+    /// <p>The name of the app monitor that is sending metrics to the destination that you want to delete.</p>
+    pub fn get_app_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_monitor_name()
+    }
     /// <p>The type of destination to delete. Valid values are <code>CloudWatch</code> and <code>Evidently</code>.</p>
     pub fn destination(mut self, input: crate::types::MetricDestination) -> Self {
         self.inner = self.inner.destination(input);
@@ -144,6 +152,10 @@ impl DeleteRumMetricsDestinationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_destination(input);
         self
+    }
+    /// <p>The type of destination to delete. Valid values are <code>CloudWatch</code> and <code>Evidently</code>.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<crate::types::MetricDestination> {
+        self.inner.get_destination()
     }
     /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter. This parameter specifies the ARN of the Evidently experiment that corresponds to the destination to delete.</p>
     pub fn destination_arn(
@@ -160,5 +172,9 @@ impl DeleteRumMetricsDestinationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_destination_arn(input);
         self
+    }
+    /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter. This parameter specifies the ARN of the Evidently experiment that corresponds to the destination to delete.</p>
+    pub fn get_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_arn()
     }
 }

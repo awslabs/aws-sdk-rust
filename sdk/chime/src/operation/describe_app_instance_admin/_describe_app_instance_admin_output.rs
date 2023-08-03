@@ -49,6 +49,10 @@ impl DescribeAppInstanceAdminOutputBuilder {
         self.app_instance_admin = input;
         self
     }
+    /// <p>The ARN and name of the <code>AppInstanceUser</code>, the ARN of the <code>AppInstance</code>, and the created and last-updated timestamps. All timestamps use epoch milliseconds.</p>
+    pub fn get_app_instance_admin(&self) -> &::std::option::Option<crate::types::AppInstanceAdmin> {
+        &self.app_instance_admin
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

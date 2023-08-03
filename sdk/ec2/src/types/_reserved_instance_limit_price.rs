@@ -48,6 +48,10 @@ impl ReservedInstanceLimitPriceBuilder {
         self.amount = input;
         self
     }
+    /// <p>Used for Reserved Instance Marketplace offerings. Specifies the limit price on the total order (instanceCount * price).</p>
+    pub fn get_amount(&self) -> &::std::option::Option<f64> {
+        &self.amount
+    }
     /// <p>The currency in which the <code>limitPrice</code> amount is specified. At this time, the only supported currency is <code>USD</code>.</p>
     pub fn currency_code(mut self, input: crate::types::CurrencyCodeValues) -> Self {
         self.currency_code = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl ReservedInstanceLimitPriceBuilder {
     ) -> Self {
         self.currency_code = input;
         self
+    }
+    /// <p>The currency in which the <code>limitPrice</code> amount is specified. At this time, the only supported currency is <code>USD</code>.</p>
+    pub fn get_currency_code(&self) -> &::std::option::Option<crate::types::CurrencyCodeValues> {
+        &self.currency_code
     }
     /// Consumes the builder and constructs a [`ReservedInstanceLimitPrice`](crate::types::ReservedInstanceLimitPrice).
     pub fn build(self) -> crate::types::ReservedInstanceLimitPrice {

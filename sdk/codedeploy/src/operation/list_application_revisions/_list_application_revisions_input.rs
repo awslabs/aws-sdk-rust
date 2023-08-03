@@ -132,6 +132,10 @@ impl ListApplicationRevisionsInputBuilder {
         self.application_name = input;
         self
     }
+    /// <p> The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account. </p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// <p>The column name to use to sort the list results:</p>
     /// <ul>
     /// <li> <p> <code>registerTime</code>: Sort by the time the revisions were registered with CodeDeploy.</p> </li>
@@ -157,6 +161,16 @@ impl ListApplicationRevisionsInputBuilder {
         self.sort_by = input;
         self
     }
+    /// <p>The column name to use to sort the list results:</p>
+    /// <ul>
+    /// <li> <p> <code>registerTime</code>: Sort by the time the revisions were registered with CodeDeploy.</p> </li>
+    /// <li> <p> <code>firstUsedTime</code>: Sort by the time the revisions were first used in a deployment.</p> </li>
+    /// <li> <p> <code>lastUsedTime</code>: Sort by the time the revisions were last used in a deployment.</p> </li>
+    /// </ul>
+    /// <p> If not specified or set to null, the results are returned in an arbitrary order. </p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ApplicationRevisionSortBy> {
+        &self.sort_by
+    }
     /// <p> The order in which to sort the list results: </p>
     /// <ul>
     /// <li> <p> <code>ascending</code>: ascending order.</p> </li>
@@ -179,6 +193,16 @@ impl ListApplicationRevisionsInputBuilder {
         self.sort_order = input;
         self
     }
+    /// <p> The order in which to sort the list results: </p>
+    /// <ul>
+    /// <li> <p> <code>ascending</code>: ascending order.</p> </li>
+    /// <li> <p> <code>descending</code>: descending order.</p> </li>
+    /// </ul>
+    /// <p>If not specified, the results are sorted in ascending order.</p>
+    /// <p>If set to null, the results are sorted in an arbitrary order.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.sort_order
+    }
     /// <p> An Amazon S3 bucket name to limit the search for revisions. </p>
     /// <p> If set to null, all of the user's buckets are searched. </p>
     pub fn s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -190,6 +214,11 @@ impl ListApplicationRevisionsInputBuilder {
     pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket = input;
         self
+    }
+    /// <p> An Amazon S3 bucket name to limit the search for revisions. </p>
+    /// <p> If set to null, all of the user's buckets are searched. </p>
+    pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket
     }
     /// <p> A key prefix for the set of Amazon S3 objects to limit the search for revisions. </p>
     pub fn s3_key_prefix(
@@ -206,6 +235,10 @@ impl ListApplicationRevisionsInputBuilder {
     ) -> Self {
         self.s3_key_prefix = input;
         self
+    }
+    /// <p> A key prefix for the set of Amazon S3 objects to limit the search for revisions. </p>
+    pub fn get_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_key_prefix
     }
     /// <p> Whether to list revisions based on whether the revision is the target revision of a deployment group: </p>
     /// <ul>
@@ -230,6 +263,15 @@ impl ListApplicationRevisionsInputBuilder {
         self.deployed = input;
         self
     }
+    /// <p> Whether to list revisions based on whether the revision is the target revision of a deployment group: </p>
+    /// <ul>
+    /// <li> <p> <code>include</code>: List revisions that are target revisions of a deployment group.</p> </li>
+    /// <li> <p> <code>exclude</code>: Do not list revisions that are target revisions of a deployment group.</p> </li>
+    /// <li> <p> <code>ignore</code>: List all revisions.</p> </li>
+    /// </ul>
+    pub fn get_deployed(&self) -> &::std::option::Option<crate::types::ListStateFilterAction> {
+        &self.deployed
+    }
     /// <p>An identifier returned from the previous <code>ListApplicationRevisions</code> call. It can be used to return the next set of applications in the list.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -239,6 +281,10 @@ impl ListApplicationRevisionsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>An identifier returned from the previous <code>ListApplicationRevisions</code> call. It can be used to return the next set of applications in the list.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListApplicationRevisionsInput`](crate::operation::list_application_revisions::ListApplicationRevisionsInput).
     pub fn build(

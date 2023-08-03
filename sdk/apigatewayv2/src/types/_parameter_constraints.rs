@@ -40,6 +40,10 @@ impl ParameterConstraintsBuilder {
         self.required = input;
         self
     }
+    /// <p>Whether or not the parameter is required.</p>
+    pub fn get_required(&self) -> &::std::option::Option<bool> {
+        &self.required
+    }
     /// Consumes the builder and constructs a [`ParameterConstraints`](crate::types::ParameterConstraints).
     pub fn build(self) -> crate::types::ParameterConstraints {
         crate::types::ParameterConstraints {

@@ -48,6 +48,10 @@ impl BatchGetCustomDataIdentifiersInputBuilder {
         self.ids = input;
         self
     }
+    /// <p>An array of custom data identifier IDs, one for each custom data identifier to retrieve information about.</p>
+    pub fn get_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ids
+    }
     /// Consumes the builder and constructs a [`BatchGetCustomDataIdentifiersInput`](crate::operation::batch_get_custom_data_identifiers::BatchGetCustomDataIdentifiersInput).
     pub fn build(
         self,

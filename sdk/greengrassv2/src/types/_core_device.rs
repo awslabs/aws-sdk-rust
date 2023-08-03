@@ -72,6 +72,10 @@ impl CoreDeviceBuilder {
         self.core_device_thing_name = input;
         self
     }
+    /// <p>The name of the core device. This is also the name of the IoT thing.</p>
+    pub fn get_core_device_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.core_device_thing_name
+    }
     /// <p>The status of the core device. Core devices can have the following statuses:</p>
     /// <ul>
     /// <li> <p> <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p> </li>
@@ -93,6 +97,14 @@ impl CoreDeviceBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the core device. Core devices can have the following statuses:</p>
+    /// <ul>
+    /// <li> <p> <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p> </li>
+    /// <li> <p> <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state on the core device.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::CoreDeviceStatus> {
+        &self.status
+    }
     /// <p>The time at which the core device's status last updated, expressed in ISO 8601 format.</p>
     pub fn last_status_update_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_status_update_timestamp = ::std::option::Option::Some(input);
@@ -105,6 +117,12 @@ impl CoreDeviceBuilder {
     ) -> Self {
         self.last_status_update_timestamp = input;
         self
+    }
+    /// <p>The time at which the core device's status last updated, expressed in ISO 8601 format.</p>
+    pub fn get_last_status_update_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_status_update_timestamp
     }
     /// Consumes the builder and constructs a [`CoreDevice`](crate::types::CoreDevice).
     pub fn build(self) -> crate::types::CoreDevice {

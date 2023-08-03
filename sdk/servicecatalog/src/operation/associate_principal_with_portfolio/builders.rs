@@ -41,6 +41,10 @@ impl AssociatePrincipalWithPortfolioFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociatePrincipalWithPortfolio as a reference.
+    pub fn as_input(&self) -> &crate::operation::associate_principal_with_portfolio::builders::AssociatePrincipalWithPortfolioInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -119,6 +123,14 @@ impl AssociatePrincipalWithPortfolioFluentBuilder {
         self.inner = self.inner.set_accept_language(input);
         self
     }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_accept_language()
+    }
     /// <p>The portfolio identifier.</p>
     pub fn portfolio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.portfolio_id(input.into());
@@ -128,6 +140,10 @@ impl AssociatePrincipalWithPortfolioFluentBuilder {
     pub fn set_portfolio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_portfolio_id(input);
         self
+    }
+    /// <p>The portfolio identifier.</p>
+    pub fn get_portfolio_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_portfolio_id()
     }
     /// <p>The ARN of the principal (user, role, or group). If the <code>PrincipalType</code> is <code>IAM</code>, the supported value is a fully defined <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM Amazon Resource Name (ARN)</a>. If the <code>PrincipalType</code> is <code>IAM_PATTERN</code>, the supported value is an <code>IAM</code> ARN <i>without an AccountID</i> in the following format:</p>
     /// <p> <i>arn:partition:iam:::resource-type/resource-id</i> </p>
@@ -183,6 +199,29 @@ impl AssociatePrincipalWithPortfolioFluentBuilder {
         self.inner = self.inner.set_principal_arn(input);
         self
     }
+    /// <p>The ARN of the principal (user, role, or group). If the <code>PrincipalType</code> is <code>IAM</code>, the supported value is a fully defined <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM Amazon Resource Name (ARN)</a>. If the <code>PrincipalType</code> is <code>IAM_PATTERN</code>, the supported value is an <code>IAM</code> ARN <i>without an AccountID</i> in the following format:</p>
+    /// <p> <i>arn:partition:iam:::resource-type/resource-id</i> </p>
+    /// <p>The ARN resource-id can be either:</p>
+    /// <ul>
+    /// <li> <p>A fully formed resource-id. For example, <i>arn:aws:iam:::role/resource-name</i> or <i>arn:aws:iam:::role/resource-path/resource-name</i> </p> </li>
+    /// <li> <p>A wildcard ARN. The wildcard ARN accepts <code>IAM_PATTERN</code> values with a "*" or "?" in the resource-id segment of the ARN. For example <i>arn:partition:service:::resource-type/resource-path/resource-name</i>. The new symbols are exclusive to the <b>resource-path</b> and <b>resource-name</b> and cannot replace the <b>resource-type</b> or other ARN values. </p> <p>The ARN path and principal name allow unlimited wildcard characters.</p> </li>
+    /// </ul>
+    /// <p>Examples of an <b>acceptable</b> wildcard ARN:</p>
+    /// <ul>
+    /// <li> <p>arn:aws:iam:::role/ResourceName_*</p> </li>
+    /// <li> <p>arn:aws:iam:::role/*/ResourceName_?</p> </li>
+    /// </ul>
+    /// <p>Examples of an <b>unacceptable</b> wildcard ARN:</p>
+    /// <ul>
+    /// <li> <p>arn:aws:iam:::*/ResourceName</p> </li>
+    /// </ul>
+    /// <p>You can associate multiple <code>IAM_PATTERN</code>s even if the account has no principal with that name. </p>
+    /// <p>The "?" wildcard character matches zero or one of any character. This is similar to ".?" in regular regex context. The "*" wildcard character matches any number of any characters. This is similar to ".*" in regular regex context.</p>
+    /// <p>In the IAM Principal ARN format (<i>arn:partition:iam:::resource-type/resource-path/resource-name</i>), valid resource-type values include <b>user/</b>, <b>group/</b>, or <b>role/</b>. The "?" and "*" characters are allowed only after the resource-type in the resource-id segment. You can use special characters anywhere within the resource-id. </p>
+    /// <p>The "*" character also matches the "/" character, allowing paths to be formed <i>within</i> the resource-id. For example, <i>arn:aws:iam:::role/<b>*</b>/ResourceName_?</i> matches both <i>arn:aws:iam:::role/pathA/pathB/ResourceName_1</i> and <i>arn:aws:iam:::role/pathA/ResourceName_1</i>. </p>
+    pub fn get_principal_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_principal_arn()
+    }
     /// <p>The principal type. The supported value is <code>IAM</code> if you use a fully defined Amazon Resource Name (ARN), or <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>, with or without wildcard characters. </p>
     pub fn principal_type(mut self, input: crate::types::PrincipalType) -> Self {
         self.inner = self.inner.principal_type(input);
@@ -195,5 +234,9 @@ impl AssociatePrincipalWithPortfolioFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_principal_type(input);
         self
+    }
+    /// <p>The principal type. The supported value is <code>IAM</code> if you use a fully defined Amazon Resource Name (ARN), or <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>, with or without wildcard characters. </p>
+    pub fn get_principal_type(&self) -> &::std::option::Option<crate::types::PrincipalType> {
+        self.inner.get_principal_type()
     }
 }

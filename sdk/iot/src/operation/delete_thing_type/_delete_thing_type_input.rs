@@ -46,6 +46,10 @@ impl DeleteThingTypeInputBuilder {
         self.thing_type_name = input;
         self
     }
+    /// <p>The name of the thing type.</p>
+    pub fn get_thing_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_type_name
+    }
     /// Consumes the builder and constructs a [`DeleteThingTypeInput`](crate::operation::delete_thing_type::DeleteThingTypeInput).
     pub fn build(
         self,

@@ -51,6 +51,10 @@ impl AssessmentRunStateChangeBuilder {
         self.state_changed_at = input;
         self
     }
+    /// <p>The last time the assessment run state changed.</p>
+    pub fn get_state_changed_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.state_changed_at
+    }
     /// <p>The assessment run state.</p>
     pub fn state(mut self, input: crate::types::AssessmentRunState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl AssessmentRunStateChangeBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The assessment run state.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::AssessmentRunState> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`AssessmentRunStateChange`](crate::types::AssessmentRunStateChange).
     pub fn build(self) -> crate::types::AssessmentRunStateChange {

@@ -62,6 +62,10 @@ impl PutChunkOutputBuilder {
         self.chunk_checksum = input;
         self
     }
+    /// Chunk checksum
+    pub fn get_chunk_checksum(&self) -> &::std::option::Option<::std::string::String> {
+        &self.chunk_checksum
+    }
     /// Checksum algorithm
     pub fn chunk_checksum_algorithm(mut self, input: crate::types::DataChecksumAlgorithm) -> Self {
         self.chunk_checksum_algorithm = ::std::option::Option::Some(input);
@@ -74,6 +78,12 @@ impl PutChunkOutputBuilder {
     ) -> Self {
         self.chunk_checksum_algorithm = input;
         self
+    }
+    /// Checksum algorithm
+    pub fn get_chunk_checksum_algorithm(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataChecksumAlgorithm> {
+        &self.chunk_checksum_algorithm
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

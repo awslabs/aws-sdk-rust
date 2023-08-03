@@ -72,6 +72,10 @@ impl AccountLimitBuilder {
         self.total_code_size = input;
         self
     }
+    /// <p>The amount of storage space that you can use for all deployment packages and layer archives.</p>
+    pub fn get_total_code_size(&self) -> &::std::option::Option<i64> {
+        &self.total_code_size
+    }
     /// <p>The maximum size of a function's deployment package and layers when they're extracted.</p>
     pub fn code_size_unzipped(mut self, input: i64) -> Self {
         self.code_size_unzipped = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl AccountLimitBuilder {
     pub fn set_code_size_unzipped(mut self, input: ::std::option::Option<i64>) -> Self {
         self.code_size_unzipped = input;
         self
+    }
+    /// <p>The maximum size of a function's deployment package and layers when they're extracted.</p>
+    pub fn get_code_size_unzipped(&self) -> &::std::option::Option<i64> {
+        &self.code_size_unzipped
     }
     /// <p>The maximum size of a deployment package when it's uploaded directly to Lambda. Use Amazon S3 for larger files.</p>
     pub fn code_size_zipped(mut self, input: i64) -> Self {
@@ -92,6 +100,10 @@ impl AccountLimitBuilder {
         self.code_size_zipped = input;
         self
     }
+    /// <p>The maximum size of a deployment package when it's uploaded directly to Lambda. Use Amazon S3 for larger files.</p>
+    pub fn get_code_size_zipped(&self) -> &::std::option::Option<i64> {
+        &self.code_size_zipped
+    }
     /// <p>The maximum number of simultaneous function executions.</p>
     pub fn concurrent_executions(mut self, input: i32) -> Self {
         self.concurrent_executions = ::std::option::Option::Some(input);
@@ -101,6 +113,10 @@ impl AccountLimitBuilder {
     pub fn set_concurrent_executions(mut self, input: ::std::option::Option<i32>) -> Self {
         self.concurrent_executions = input;
         self
+    }
+    /// <p>The maximum number of simultaneous function executions.</p>
+    pub fn get_concurrent_executions(&self) -> &::std::option::Option<i32> {
+        &self.concurrent_executions
     }
     /// <p>The maximum number of simultaneous function executions, minus the capacity that's reserved for individual functions with <code>PutFunctionConcurrency</code>.</p>
     pub fn unreserved_concurrent_executions(mut self, input: i32) -> Self {
@@ -114,6 +130,10 @@ impl AccountLimitBuilder {
     ) -> Self {
         self.unreserved_concurrent_executions = input;
         self
+    }
+    /// <p>The maximum number of simultaneous function executions, minus the capacity that's reserved for individual functions with <code>PutFunctionConcurrency</code>.</p>
+    pub fn get_unreserved_concurrent_executions(&self) -> &::std::option::Option<i32> {
+        &self.unreserved_concurrent_executions
     }
     /// Consumes the builder and constructs a [`AccountLimit`](crate::types::AccountLimit).
     pub fn build(self) -> crate::types::AccountLimit {

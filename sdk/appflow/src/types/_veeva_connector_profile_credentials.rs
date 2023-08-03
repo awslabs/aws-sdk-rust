@@ -54,6 +54,10 @@ impl VeevaConnectorProfileCredentialsBuilder {
         self.username = input;
         self
     }
+    /// <p> The name of the user. </p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
+    }
     /// <p> The password that corresponds to the user name. </p>
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl VeevaConnectorProfileCredentialsBuilder {
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.password = input;
         self
+    }
+    /// <p> The password that corresponds to the user name. </p>
+    pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.password
     }
     /// Consumes the builder and constructs a [`VeevaConnectorProfileCredentials`](crate::types::VeevaConnectorProfileCredentials).
     pub fn build(self) -> crate::types::VeevaConnectorProfileCredentials {

@@ -36,6 +36,12 @@ impl StopMetricStreamsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StopMetricStreams as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::stop_metric_streams::builders::StopMetricStreamsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,5 +140,10 @@ impl StopMetricStreamsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_names(input);
         self
+    }
+    /// <p>The array of the names of metric streams to stop streaming.</p>
+    /// <p>This is an "all or nothing" operation. If you do not have permission to access all of the metric streams that you list here, then none of the streams that you list in the operation will stop streaming.</p>
+    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_names()
     }
 }

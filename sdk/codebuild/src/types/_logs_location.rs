@@ -96,6 +96,10 @@ impl LogsLocationBuilder {
         self.group_name = input;
         self
     }
+    /// <p>The name of the CloudWatch Logs group for the build logs.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
+    }
     /// <p>The name of the CloudWatch Logs stream for the build logs.</p>
     pub fn stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_name = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl LogsLocationBuilder {
     pub fn set_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_name = input;
         self
+    }
+    /// <p>The name of the CloudWatch Logs stream for the build logs.</p>
+    pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_name
     }
     /// <p>The URL to an individual build log in CloudWatch Logs.</p>
     pub fn deep_link(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -116,6 +124,10 @@ impl LogsLocationBuilder {
         self.deep_link = input;
         self
     }
+    /// <p>The URL to an individual build log in CloudWatch Logs.</p>
+    pub fn get_deep_link(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deep_link
+    }
     /// <p> The URL to a build log in an S3 bucket. </p>
     pub fn s3_deep_link(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_deep_link = ::std::option::Option::Some(input.into());
@@ -125,6 +137,10 @@ impl LogsLocationBuilder {
     pub fn set_s3_deep_link(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_deep_link = input;
         self
+    }
+    /// <p> The URL to a build log in an S3 bucket. </p>
+    pub fn get_s3_deep_link(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_deep_link
     }
     /// <p> The ARN of CloudWatch Logs for a build project. Its format is <code>arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-resources-for-iam-policies">Resources Defined by CloudWatch Logs</a>. </p>
     pub fn cloud_watch_logs_arn(
@@ -142,6 +158,10 @@ impl LogsLocationBuilder {
         self.cloud_watch_logs_arn = input;
         self
     }
+    /// <p> The ARN of CloudWatch Logs for a build project. Its format is <code>arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-resources-for-iam-policies">Resources Defined by CloudWatch Logs</a>. </p>
+    pub fn get_cloud_watch_logs_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cloud_watch_logs_arn
+    }
     /// <p> The ARN of S3 logs for a build project. Its format is <code>arn:${Partition}:s3:::${BucketName}/${ObjectName}</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html#amazons3-resources-for-iam-policies">Resources Defined by Amazon S3</a>. </p>
     pub fn s3_logs_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_logs_arn = ::std::option::Option::Some(input.into());
@@ -151,6 +171,10 @@ impl LogsLocationBuilder {
     pub fn set_s3_logs_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_logs_arn = input;
         self
+    }
+    /// <p> The ARN of S3 logs for a build project. Its format is <code>arn:${Partition}:s3:::${BucketName}/${ObjectName}</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html#amazons3-resources-for-iam-policies">Resources Defined by Amazon S3</a>. </p>
+    pub fn get_s3_logs_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_logs_arn
     }
     /// <p> Information about CloudWatch Logs for a build project. </p>
     pub fn cloud_watch_logs(mut self, input: crate::types::CloudWatchLogsConfig) -> Self {
@@ -165,6 +189,12 @@ impl LogsLocationBuilder {
         self.cloud_watch_logs = input;
         self
     }
+    /// <p> Information about CloudWatch Logs for a build project. </p>
+    pub fn get_cloud_watch_logs(
+        &self,
+    ) -> &::std::option::Option<crate::types::CloudWatchLogsConfig> {
+        &self.cloud_watch_logs
+    }
     /// <p> Information about S3 logs for a build project. </p>
     pub fn s3_logs(mut self, input: crate::types::S3LogsConfig) -> Self {
         self.s3_logs = ::std::option::Option::Some(input);
@@ -174,6 +204,10 @@ impl LogsLocationBuilder {
     pub fn set_s3_logs(mut self, input: ::std::option::Option<crate::types::S3LogsConfig>) -> Self {
         self.s3_logs = input;
         self
+    }
+    /// <p> Information about S3 logs for a build project. </p>
+    pub fn get_s3_logs(&self) -> &::std::option::Option<crate::types::S3LogsConfig> {
+        &self.s3_logs
     }
     /// Consumes the builder and constructs a [`LogsLocation`](crate::types::LogsLocation).
     pub fn build(self) -> crate::types::LogsLocation {

@@ -59,6 +59,10 @@ impl AutoTuneMaintenanceScheduleBuilder {
         self.start_at = input;
         self
     }
+    /// <p>Specifies timestamp at which Auto-Tune maintenance schedule start. </p>
+    pub fn get_start_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_at
+    }
     /// <p>Specifies maintenance schedule duration: duration value and duration unit. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information.</p>
     pub fn duration(mut self, input: crate::types::Duration) -> Self {
         self.duration = ::std::option::Option::Some(input);
@@ -68,6 +72,10 @@ impl AutoTuneMaintenanceScheduleBuilder {
     pub fn set_duration(mut self, input: ::std::option::Option<crate::types::Duration>) -> Self {
         self.duration = input;
         self
+    }
+    /// <p>Specifies maintenance schedule duration: duration value and duration unit. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information.</p>
+    pub fn get_duration(&self) -> &::std::option::Option<crate::types::Duration> {
+        &self.duration
     }
     /// <p>Specifies cron expression for a recurring maintenance schedule. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information.</p>
     pub fn cron_expression_for_recurrence(
@@ -84,6 +92,12 @@ impl AutoTuneMaintenanceScheduleBuilder {
     ) -> Self {
         self.cron_expression_for_recurrence = input;
         self
+    }
+    /// <p>Specifies cron expression for a recurring maintenance schedule. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information.</p>
+    pub fn get_cron_expression_for_recurrence(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.cron_expression_for_recurrence
     }
     /// Consumes the builder and constructs a [`AutoTuneMaintenanceSchedule`](crate::types::AutoTuneMaintenanceSchedule).
     pub fn build(self) -> crate::types::AutoTuneMaintenanceSchedule {

@@ -36,6 +36,12 @@ impl UpdateSecurityFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateSecurity as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_security::builders::UpdateSecurityInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -121,6 +127,12 @@ impl UpdateSecurityFluentBuilder {
         self.inner = self.inner.set_client_authentication(input);
         self
     }
+    /// <p>Includes all client authentication related information.</p>
+    pub fn get_client_authentication(
+        &self,
+    ) -> &::std::option::Option<crate::types::ClientAuthentication> {
+        self.inner.get_client_authentication()
+    }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_arn(input.into());
@@ -130,6 +142,10 @@ impl UpdateSecurityFluentBuilder {
     pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_arn()
     }
     /// <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
     pub fn current_version(
@@ -147,6 +163,10 @@ impl UpdateSecurityFluentBuilder {
         self.inner = self.inner.set_current_version(input);
         self
     }
+    /// <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
+    pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_current_version()
+    }
     /// <p>Includes all encryption-related information.</p>
     pub fn encryption_info(mut self, input: crate::types::EncryptionInfo) -> Self {
         self.inner = self.inner.encryption_info(input);
@@ -159,5 +179,9 @@ impl UpdateSecurityFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_encryption_info(input);
         self
+    }
+    /// <p>Includes all encryption-related information.</p>
+    pub fn get_encryption_info(&self) -> &::std::option::Option<crate::types::EncryptionInfo> {
+        self.inner.get_encryption_info()
     }
 }

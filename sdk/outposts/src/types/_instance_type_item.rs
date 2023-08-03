@@ -46,6 +46,10 @@ impl InstanceTypeItemBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The instance type.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_type
+    }
     /// Consumes the builder and constructs a [`InstanceTypeItem`](crate::types::InstanceTypeItem).
     pub fn build(self) -> crate::types::InstanceTypeItem {
         crate::types::InstanceTypeItem {

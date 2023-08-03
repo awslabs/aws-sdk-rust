@@ -38,6 +38,10 @@ impl CreateBudgetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateBudget as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_budget::builders::CreateBudgetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -120,6 +124,10 @@ impl CreateBudgetFluentBuilder {
         self.inner = self.inner.set_account_id(input);
         self
     }
+    /// <p>The <code>accountId</code> that is associated with the budget.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// <p>The budget object that you want to create.</p>
     pub fn budget(mut self, input: crate::types::Budget) -> Self {
         self.inner = self.inner.budget(input);
@@ -129,6 +137,10 @@ impl CreateBudgetFluentBuilder {
     pub fn set_budget(mut self, input: ::std::option::Option<crate::types::Budget>) -> Self {
         self.inner = self.inner.set_budget(input);
         self
+    }
+    /// <p>The budget object that you want to create.</p>
+    pub fn get_budget(&self) -> &::std::option::Option<crate::types::Budget> {
+        self.inner.get_budget()
     }
     /// Appends an item to `NotificationsWithSubscribers`.
     ///
@@ -149,5 +161,11 @@ impl CreateBudgetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_notifications_with_subscribers(input);
         self
+    }
+    /// <p>A notification that you want to associate with a budget. A budget can have up to five notifications, and each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and subscribers in your <code>CreateBudget</code> call, Amazon Web Services creates the notifications and subscribers for you.</p>
+    pub fn get_notifications_with_subscribers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationWithSubscribers>> {
+        self.inner.get_notifications_with_subscribers()
     }
 }

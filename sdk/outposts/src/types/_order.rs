@@ -122,6 +122,10 @@ impl OrderBuilder {
         self.outpost_id = input;
         self
     }
+    /// <p> The ID of the Outpost in the order. </p>
+    pub fn get_outpost_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.outpost_id
+    }
     /// <p>The ID of the order.</p>
     pub fn order_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.order_id = ::std::option::Option::Some(input.into());
@@ -131,6 +135,10 @@ impl OrderBuilder {
     pub fn set_order_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.order_id = input;
         self
+    }
+    /// <p>The ID of the order.</p>
+    pub fn get_order_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.order_id
     }
     /// <p>The status of the order.</p>
     /// <ul>
@@ -160,6 +168,19 @@ impl OrderBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the order.</p>
+    /// <ul>
+    /// <li> <p> <code>PREPARING</code> - Order is received and being prepared.</p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the line item status.</p> </li>
+    /// <li> <p> <code>COMPLETED</code> - Order is complete.</p> </li>
+    /// <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li>
+    /// <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
+    /// </ul> <note>
+    /// <p>The following status are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p>
+    /// </note>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::OrderStatus> {
+        &self.status
+    }
     /// Appends an item to `line_items`.
     ///
     /// To override the contents of this collection use [`set_line_items`](Self::set_line_items).
@@ -179,6 +200,12 @@ impl OrderBuilder {
         self.line_items = input;
         self
     }
+    /// <p>The line items for the order</p>
+    pub fn get_line_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LineItem>> {
+        &self.line_items
+    }
     /// <p>The payment option for the order.</p>
     pub fn payment_option(mut self, input: crate::types::PaymentOption) -> Self {
         self.payment_option = ::std::option::Option::Some(input);
@@ -191,6 +218,10 @@ impl OrderBuilder {
     ) -> Self {
         self.payment_option = input;
         self
+    }
+    /// <p>The payment option for the order.</p>
+    pub fn get_payment_option(&self) -> &::std::option::Option<crate::types::PaymentOption> {
+        &self.payment_option
     }
     /// <p>The submission date for the order.</p>
     pub fn order_submission_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -205,6 +236,12 @@ impl OrderBuilder {
         self.order_submission_date = input;
         self
     }
+    /// <p>The submission date for the order.</p>
+    pub fn get_order_submission_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.order_submission_date
+    }
     /// <p>The fulfillment date of the order.</p>
     pub fn order_fulfilled_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.order_fulfilled_date = ::std::option::Option::Some(input);
@@ -217,6 +254,10 @@ impl OrderBuilder {
     ) -> Self {
         self.order_fulfilled_date = input;
         self
+    }
+    /// <p>The fulfillment date of the order.</p>
+    pub fn get_order_fulfilled_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.order_fulfilled_date
     }
     /// <p>The payment term.</p>
     pub fn payment_term(mut self, input: crate::types::PaymentTerm) -> Self {
@@ -231,6 +272,10 @@ impl OrderBuilder {
         self.payment_term = input;
         self
     }
+    /// <p>The payment term.</p>
+    pub fn get_payment_term(&self) -> &::std::option::Option<crate::types::PaymentTerm> {
+        &self.payment_term
+    }
     /// <p>Type of order.</p>
     pub fn order_type(mut self, input: crate::types::OrderType) -> Self {
         self.order_type = ::std::option::Option::Some(input);
@@ -240,6 +285,10 @@ impl OrderBuilder {
     pub fn set_order_type(mut self, input: ::std::option::Option<crate::types::OrderType>) -> Self {
         self.order_type = input;
         self
+    }
+    /// <p>Type of order.</p>
+    pub fn get_order_type(&self) -> &::std::option::Option<crate::types::OrderType> {
+        &self.order_type
     }
     /// Consumes the builder and constructs a [`Order`](crate::types::Order).
     pub fn build(self) -> crate::types::Order {

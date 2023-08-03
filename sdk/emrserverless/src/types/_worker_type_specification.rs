@@ -43,6 +43,12 @@ impl WorkerTypeSpecificationBuilder {
         self.image_configuration = input;
         self
     }
+    /// <p>The image configuration for a worker type.</p>
+    pub fn get_image_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImageConfiguration> {
+        &self.image_configuration
+    }
     /// Consumes the builder and constructs a [`WorkerTypeSpecification`](crate::types::WorkerTypeSpecification).
     pub fn build(self) -> crate::types::WorkerTypeSpecification {
         crate::types::WorkerTypeSpecification {

@@ -71,6 +71,12 @@ impl VirtualGatewayListenerBuilder {
         self.health_check = input;
         self
     }
+    /// <p>The health check information for the listener.</p>
+    pub fn get_health_check(
+        &self,
+    ) -> &::std::option::Option<crate::types::VirtualGatewayHealthCheckPolicy> {
+        &self.health_check
+    }
     /// <p>The port mapping information for the listener.</p>
     pub fn port_mapping(mut self, input: crate::types::VirtualGatewayPortMapping) -> Self {
         self.port_mapping = ::std::option::Option::Some(input);
@@ -83,6 +89,12 @@ impl VirtualGatewayListenerBuilder {
     ) -> Self {
         self.port_mapping = input;
         self
+    }
+    /// <p>The port mapping information for the listener.</p>
+    pub fn get_port_mapping(
+        &self,
+    ) -> &::std::option::Option<crate::types::VirtualGatewayPortMapping> {
+        &self.port_mapping
     }
     /// <p>A reference to an object that represents the Transport Layer Security (TLS) properties for the listener.</p>
     pub fn tls(mut self, input: crate::types::VirtualGatewayListenerTls) -> Self {
@@ -97,6 +109,10 @@ impl VirtualGatewayListenerBuilder {
         self.tls = input;
         self
     }
+    /// <p>A reference to an object that represents the Transport Layer Security (TLS) properties for the listener.</p>
+    pub fn get_tls(&self) -> &::std::option::Option<crate::types::VirtualGatewayListenerTls> {
+        &self.tls
+    }
     /// <p>The connection pool information for the virtual gateway listener.</p>
     pub fn connection_pool(mut self, input: crate::types::VirtualGatewayConnectionPool) -> Self {
         self.connection_pool = ::std::option::Option::Some(input);
@@ -109,6 +125,12 @@ impl VirtualGatewayListenerBuilder {
     ) -> Self {
         self.connection_pool = input;
         self
+    }
+    /// <p>The connection pool information for the virtual gateway listener.</p>
+    pub fn get_connection_pool(
+        &self,
+    ) -> &::std::option::Option<crate::types::VirtualGatewayConnectionPool> {
+        &self.connection_pool
     }
     /// Consumes the builder and constructs a [`VirtualGatewayListener`](crate::types::VirtualGatewayListener).
     pub fn build(self) -> crate::types::VirtualGatewayListener {

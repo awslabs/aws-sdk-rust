@@ -59,6 +59,10 @@ impl VpcClassicLinkBuilder {
         self.classic_link_enabled = input;
         self
     }
+    /// <p>Indicates whether the VPC is enabled for ClassicLink.</p>
+    pub fn get_classic_link_enabled(&self) -> &::std::option::Option<bool> {
+        &self.classic_link_enabled
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -78,6 +82,10 @@ impl VpcClassicLinkBuilder {
         self.tags = input;
         self
     }
+    /// <p>Any tags assigned to the VPC.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The ID of the VPC.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -87,6 +95,10 @@ impl VpcClassicLinkBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The ID of the VPC.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// Consumes the builder and constructs a [`VpcClassicLink`](crate::types::VpcClassicLink).
     pub fn build(self) -> crate::types::VpcClassicLink {

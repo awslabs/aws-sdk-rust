@@ -64,6 +64,10 @@ impl CampaignSummaryBuilder {
         self.id = input;
         self
     }
+    /// Identifier representing a Campaign
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// The resource name of an Amazon Connect campaign.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl CampaignSummaryBuilder {
         self.arn = input;
         self
     }
+    /// The resource name of an Amazon Connect campaign.
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// The name of an Amazon Connect Campaign name.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -83,6 +91,10 @@ impl CampaignSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// The name of an Amazon Connect Campaign name.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Amazon Connect Instance Id
     pub fn connect_instance_id(
@@ -99,6 +111,10 @@ impl CampaignSummaryBuilder {
     ) -> Self {
         self.connect_instance_id = input;
         self
+    }
+    /// Amazon Connect Instance Id
+    pub fn get_connect_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connect_instance_id
     }
     /// Consumes the builder and constructs a [`CampaignSummary`](crate::types::CampaignSummary).
     pub fn build(self) -> crate::types::CampaignSummary {

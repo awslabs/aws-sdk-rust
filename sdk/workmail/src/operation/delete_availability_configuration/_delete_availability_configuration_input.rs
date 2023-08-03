@@ -53,6 +53,10 @@ impl DeleteAvailabilityConfigurationInputBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p>The domain for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl DeleteAvailabilityConfigurationInputBuilder {
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
+    }
+    /// <p>The domain for which the <code>AvailabilityConfiguration</code> will be deleted.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
     }
     /// Consumes the builder and constructs a [`DeleteAvailabilityConfigurationInput`](crate::operation::delete_availability_configuration::DeleteAvailabilityConfigurationInput).
     pub fn build(

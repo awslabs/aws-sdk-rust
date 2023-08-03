@@ -67,6 +67,14 @@ impl HostedZoneLimitBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The limit that you requested. Valid values include the following:</p>
+    /// <ul>
+    /// <li> <p> <b>MAX_RRSETS_BY_ZONE</b>: The maximum number of records that you can create in the specified hosted zone.</p> </li>
+    /// <li> <p> <b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you can associate with the specified private hosted zone.</p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::HostedZoneLimitType> {
+        &self.r#type
+    }
     /// <p>The current value for the limit that is specified by <code>Type</code>.</p>
     pub fn value(mut self, input: i64) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -76,6 +84,10 @@ impl HostedZoneLimitBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<i64>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The current value for the limit that is specified by <code>Type</code>.</p>
+    pub fn get_value(&self) -> &::std::option::Option<i64> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`HostedZoneLimit`](crate::types::HostedZoneLimit).
     pub fn build(self) -> crate::types::HostedZoneLimit {

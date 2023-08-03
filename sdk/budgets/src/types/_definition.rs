@@ -65,6 +65,12 @@ impl DefinitionBuilder {
         self.iam_action_definition = input;
         self
     }
+    /// <p>The Identity and Access Management (IAM) action definition details. </p>
+    pub fn get_iam_action_definition(
+        &self,
+    ) -> &::std::option::Option<crate::types::IamActionDefinition> {
+        &self.iam_action_definition
+    }
     /// <p>The service control policies (SCPs) action definition details. </p>
     pub fn scp_action_definition(mut self, input: crate::types::ScpActionDefinition) -> Self {
         self.scp_action_definition = ::std::option::Option::Some(input);
@@ -78,6 +84,12 @@ impl DefinitionBuilder {
         self.scp_action_definition = input;
         self
     }
+    /// <p>The service control policies (SCPs) action definition details. </p>
+    pub fn get_scp_action_definition(
+        &self,
+    ) -> &::std::option::Option<crate::types::ScpActionDefinition> {
+        &self.scp_action_definition
+    }
     /// <p>The Amazon Web Services Systems Manager (SSM) action definition details. </p>
     pub fn ssm_action_definition(mut self, input: crate::types::SsmActionDefinition) -> Self {
         self.ssm_action_definition = ::std::option::Option::Some(input);
@@ -90,6 +102,12 @@ impl DefinitionBuilder {
     ) -> Self {
         self.ssm_action_definition = input;
         self
+    }
+    /// <p>The Amazon Web Services Systems Manager (SSM) action definition details. </p>
+    pub fn get_ssm_action_definition(
+        &self,
+    ) -> &::std::option::Option<crate::types::SsmActionDefinition> {
+        &self.ssm_action_definition
     }
     /// Consumes the builder and constructs a [`Definition`](crate::types::Definition).
     pub fn build(self) -> crate::types::Definition {

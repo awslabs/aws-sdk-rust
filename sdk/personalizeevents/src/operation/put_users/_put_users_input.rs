@@ -47,6 +47,10 @@ impl PutUsersInputBuilder {
         self.dataset_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Users dataset you are adding the user or users to.</p>
+    pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_arn
+    }
     /// Appends an item to `users`.
     ///
     /// To override the contents of this collection use [`set_users`](Self::set_users).
@@ -65,6 +69,10 @@ impl PutUsersInputBuilder {
     ) -> Self {
         self.users = input;
         self
+    }
+    /// <p>A list of user data.</p>
+    pub fn get_users(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::User>> {
+        &self.users
     }
     /// Consumes the builder and constructs a [`PutUsersInput`](crate::operation::put_users::PutUsersInput).
     pub fn build(

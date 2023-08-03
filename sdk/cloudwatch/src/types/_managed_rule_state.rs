@@ -48,6 +48,10 @@ impl ManagedRuleStateBuilder {
         self.rule_name = input;
         self
     }
+    /// <p> The name of the Contributor Insights rule that contains data for the specified Amazon Web Services resource. </p>
+    pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_name
+    }
     /// <p> Indicates whether the rule is enabled or disabled. </p>
     pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl ManagedRuleStateBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state = input;
         self
+    }
+    /// <p> Indicates whether the rule is enabled or disabled. </p>
+    pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`ManagedRuleState`](crate::types::ManagedRuleState).
     pub fn build(self) -> crate::types::ManagedRuleState {

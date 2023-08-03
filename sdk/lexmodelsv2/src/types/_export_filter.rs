@@ -59,6 +59,10 @@ impl ExportFilterBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the field to use for filtering.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::ExportFilterName> {
+        &self.name
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -78,6 +82,10 @@ impl ExportFilterBuilder {
         self.values = input;
         self
     }
+    /// <p>The values to use to filter the response. The values must be <code>Bot</code>, <code>BotLocale</code>, or <code>CustomVocabulary</code>.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
+    }
     /// <p>The operator to use for the filter. Specify EQ when the <code>ListExports</code> operation should return only resource types that equal the specified value. Specify CO when the <code>ListExports</code> operation should return resource types that contain the specified value.</p>
     pub fn operator(mut self, input: crate::types::ExportFilterOperator) -> Self {
         self.operator = ::std::option::Option::Some(input);
@@ -90,6 +98,10 @@ impl ExportFilterBuilder {
     ) -> Self {
         self.operator = input;
         self
+    }
+    /// <p>The operator to use for the filter. Specify EQ when the <code>ListExports</code> operation should return only resource types that equal the specified value. Specify CO when the <code>ListExports</code> operation should return resource types that contain the specified value.</p>
+    pub fn get_operator(&self) -> &::std::option::Option<crate::types::ExportFilterOperator> {
+        &self.operator
     }
     /// Consumes the builder and constructs a [`ExportFilter`](crate::types::ExportFilter).
     pub fn build(self) -> crate::types::ExportFilter {

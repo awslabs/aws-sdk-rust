@@ -40,6 +40,10 @@ impl LoRaWanMulticastMetadataBuilder {
         self.f_port = input;
         self
     }
+    /// <p>The Fport value.</p>
+    pub fn get_f_port(&self) -> &::std::option::Option<i32> {
+        &self.f_port
+    }
     /// Consumes the builder and constructs a [`LoRaWanMulticastMetadata`](crate::types::LoRaWanMulticastMetadata).
     pub fn build(self) -> crate::types::LoRaWanMulticastMetadata {
         crate::types::LoRaWanMulticastMetadata {

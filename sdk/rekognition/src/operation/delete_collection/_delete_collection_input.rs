@@ -46,6 +46,10 @@ impl DeleteCollectionInputBuilder {
         self.collection_id = input;
         self
     }
+    /// <p>ID of the collection to delete.</p>
+    pub fn get_collection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collection_id
+    }
     /// Consumes the builder and constructs a [`DeleteCollectionInput`](crate::operation::delete_collection::DeleteCollectionInput).
     pub fn build(
         self,

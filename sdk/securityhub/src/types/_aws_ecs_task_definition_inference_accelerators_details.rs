@@ -49,6 +49,10 @@ impl AwsEcsTaskDefinitionInferenceAcceleratorsDetailsBuilder {
         self.device_name = input;
         self
     }
+    /// <p>The Elastic Inference accelerator device name.</p>
+    pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_name
+    }
     /// <p>The Elastic Inference accelerator type to use.</p>
     pub fn device_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_type = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl AwsEcsTaskDefinitionInferenceAcceleratorsDetailsBuilder {
     pub fn set_device_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_type = input;
         self
+    }
+    /// <p>The Elastic Inference accelerator type to use.</p>
+    pub fn get_device_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_type
     }
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionInferenceAcceleratorsDetails`](crate::types::AwsEcsTaskDefinitionInferenceAcceleratorsDetails).
     pub fn build(self) -> crate::types::AwsEcsTaskDefinitionInferenceAcceleratorsDetails {

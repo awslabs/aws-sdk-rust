@@ -64,6 +64,10 @@ impl TableIdentifierBuilder {
         self.catalog_id = input;
         self
     }
+    /// <p>The ID of the Data Catalog in which the table resides.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// <p>The name of the catalog database that contains the target table.</p>
     pub fn database_name(
         mut self,
@@ -80,6 +84,10 @@ impl TableIdentifierBuilder {
         self.database_name = input;
         self
     }
+    /// <p>The name of the catalog database that contains the target table.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>The name of the target table.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -90,6 +98,10 @@ impl TableIdentifierBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the target table.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Region of the target table.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
@@ -99,6 +111,10 @@ impl TableIdentifierBuilder {
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
+    }
+    /// <p>Region of the target table.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
     }
     /// Consumes the builder and constructs a [`TableIdentifier`](crate::types::TableIdentifier).
     pub fn build(self) -> crate::types::TableIdentifier {

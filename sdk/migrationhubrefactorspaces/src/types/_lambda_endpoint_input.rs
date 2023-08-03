@@ -40,6 +40,10 @@ impl LambdaEndpointInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Lambda function or alias.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`LambdaEndpointInput`](crate::types::LambdaEndpointInput).
     pub fn build(self) -> crate::types::LambdaEndpointInput {
         crate::types::LambdaEndpointInput { arn: self.arn }

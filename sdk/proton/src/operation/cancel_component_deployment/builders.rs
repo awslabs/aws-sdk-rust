@@ -37,6 +37,10 @@ impl CancelComponentDeploymentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CancelComponentDeployment as a reference.
+    pub fn as_input(&self) -> &crate::operation::cancel_component_deployment::builders::CancelComponentDeploymentInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +136,9 @@ impl CancelComponentDeploymentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_component_name(input);
         self
+    }
+    /// <p>The name of the component with the deployment to cancel.</p>
+    pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_component_name()
     }
 }

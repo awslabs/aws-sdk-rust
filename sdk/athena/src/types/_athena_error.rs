@@ -76,6 +76,13 @@ impl AthenaErrorBuilder {
         self.error_category = input;
         self
     }
+    /// <p>An integer value that specifies the category of a query failure error. The following list shows the category for each integer value.</p>
+    /// <p> <b>1</b> - System</p>
+    /// <p> <b>2</b> - User</p>
+    /// <p> <b>3</b> - Other</p>
+    pub fn get_error_category(&self) -> &::std::option::Option<i32> {
+        &self.error_category
+    }
     /// <p>An integer value that provides specific information about an Athena query error. For the meaning of specific values, see the <a href="https://docs.aws.amazon.com/athena/latest/ug/error-reference.html#error-reference-error-type-reference">Error Type Reference</a> in the <i>Amazon Athena User Guide</i>.</p>
     pub fn error_type(mut self, input: i32) -> Self {
         self.error_type = ::std::option::Option::Some(input);
@@ -86,6 +93,10 @@ impl AthenaErrorBuilder {
         self.error_type = input;
         self
     }
+    /// <p>An integer value that provides specific information about an Athena query error. For the meaning of specific values, see the <a href="https://docs.aws.amazon.com/athena/latest/ug/error-reference.html#error-reference-error-type-reference">Error Type Reference</a> in the <i>Amazon Athena User Guide</i>.</p>
+    pub fn get_error_type(&self) -> &::std::option::Option<i32> {
+        &self.error_type
+    }
     /// <p>True if the query might succeed if resubmitted.</p>
     pub fn retryable(mut self, input: bool) -> Self {
         self.retryable = ::std::option::Option::Some(input);
@@ -95,6 +106,10 @@ impl AthenaErrorBuilder {
     pub fn set_retryable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.retryable = input;
         self
+    }
+    /// <p>True if the query might succeed if resubmitted.</p>
+    pub fn get_retryable(&self) -> &::std::option::Option<bool> {
+        &self.retryable
     }
     /// <p>Contains a short description of the error that occurred.</p>
     pub fn error_message(
@@ -111,6 +126,10 @@ impl AthenaErrorBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>Contains a short description of the error that occurred.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`AthenaError`](crate::types::AthenaError).
     pub fn build(self) -> crate::types::AthenaError {

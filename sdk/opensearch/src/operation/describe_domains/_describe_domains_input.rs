@@ -49,6 +49,12 @@ impl DescribeDomainsInputBuilder {
         self.domain_names = input;
         self
     }
+    /// <p>Array of OpenSearch Service domain names that you want information about. If you don't specify any domains, OpenSearch Service returns information about all domains owned by the account.</p>
+    pub fn get_domain_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.domain_names
+    }
     /// Consumes the builder and constructs a [`DescribeDomainsInput`](crate::operation::describe_domains::DescribeDomainsInput).
     pub fn build(
         self,

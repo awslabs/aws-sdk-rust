@@ -104,6 +104,10 @@ impl GetVehicleOutputBuilder {
         self.vehicle_name = input;
         self
     }
+    /// <p>The ID of the vehicle.</p>
+    pub fn get_vehicle_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vehicle_name
+    }
     /// <p> The Amazon Resource Name (ARN) of the vehicle to retrieve information about. </p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -113,6 +117,10 @@ impl GetVehicleOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p> The Amazon Resource Name (ARN) of the vehicle to retrieve information about. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p> The ARN of a vehicle model (model manifest) associated with the vehicle. </p>
     pub fn model_manifest_arn(
@@ -130,6 +138,10 @@ impl GetVehicleOutputBuilder {
         self.model_manifest_arn = input;
         self
     }
+    /// <p> The ARN of a vehicle model (model manifest) associated with the vehicle. </p>
+    pub fn get_model_manifest_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_manifest_arn
+    }
     /// <p> The ARN of a decoder manifest associated with the vehicle. </p>
     pub fn decoder_manifest_arn(
         mut self,
@@ -145,6 +157,10 @@ impl GetVehicleOutputBuilder {
     ) -> Self {
         self.decoder_manifest_arn = input;
         self
+    }
+    /// <p> The ARN of a decoder manifest associated with the vehicle. </p>
+    pub fn get_decoder_manifest_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.decoder_manifest_arn
     }
     /// Adds a key-value pair to `attributes`.
     ///
@@ -173,6 +189,15 @@ impl GetVehicleOutputBuilder {
         self.attributes = input;
         self
     }
+    /// <p>Static information about a vehicle in a key-value pair. For example:</p>
+    /// <p> <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.attributes
+    }
     /// <p> The time the vehicle was created in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -186,6 +211,10 @@ impl GetVehicleOutputBuilder {
         self.creation_time = input;
         self
     }
+    /// <p> The time the vehicle was created in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p> The time the vehicle was last updated in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     pub fn last_modification_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modification_time = ::std::option::Option::Some(input);
@@ -198,6 +227,12 @@ impl GetVehicleOutputBuilder {
     ) -> Self {
         self.last_modification_time = input;
         self
+    }
+    /// <p> The time the vehicle was last updated in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
+    pub fn get_last_modification_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modification_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

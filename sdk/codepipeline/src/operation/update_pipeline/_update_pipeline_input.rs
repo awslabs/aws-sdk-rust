@@ -43,6 +43,10 @@ impl UpdatePipelineInputBuilder {
         self.pipeline = input;
         self
     }
+    /// <p>The name of the pipeline to be updated.</p>
+    pub fn get_pipeline(&self) -> &::std::option::Option<crate::types::PipelineDeclaration> {
+        &self.pipeline
+    }
     /// Consumes the builder and constructs a [`UpdatePipelineInput`](crate::operation::update_pipeline::UpdatePipelineInput).
     pub fn build(
         self,

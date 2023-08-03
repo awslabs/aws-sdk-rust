@@ -48,6 +48,10 @@ impl FileCacheNfsConfigurationBuilder {
         self.version = input;
         self
     }
+    /// <p>The version of the NFS (Network File System) protocol of the NFS data repository. The only supported value is <code>NFS3</code>, which indicates that the data repository must support the NFSv3 protocol.</p>
+    pub fn get_version(&self) -> &::std::option::Option<crate::types::NfsVersion> {
+        &self.version
+    }
     /// Appends an item to `dns_ips`.
     ///
     /// To override the contents of this collection use [`set_dns_ips`](Self::set_dns_ips).
@@ -66,6 +70,10 @@ impl FileCacheNfsConfigurationBuilder {
     ) -> Self {
         self.dns_ips = input;
         self
+    }
+    /// <p>A list of up to 2 IP addresses of DNS servers used to resolve the NFS file system domain name. The provided IP addresses can either be the IP addresses of a DNS forwarder or resolver that the customer manages and runs inside the customer VPC, or the IP addresses of the on-premises DNS servers.</p>
+    pub fn get_dns_ips(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.dns_ips
     }
     /// Consumes the builder and constructs a [`FileCacheNfsConfiguration`](crate::types::FileCacheNfsConfiguration).
     pub fn build(self) -> crate::types::FileCacheNfsConfiguration {

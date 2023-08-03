@@ -62,6 +62,10 @@ impl LabelMatchStatementBuilder {
         self.scope = input;
         self
     }
+    /// <p>Specify whether you want to match using the label name or just the namespace. </p>
+    pub fn get_scope(&self) -> &::std::option::Option<crate::types::LabelMatchScope> {
+        &self.scope
+    }
     /// <p>The string to match against. The setting you provide for this depends on the match statement's <code>Scope</code> setting: </p>
     /// <ul>
     /// <li> <p>If the <code>Scope</code> indicates <code>LABEL</code>, then this specification must include the name and can include any number of preceding namespace specifications and prefix up to providing the fully qualified label name. </p> </li>
@@ -81,6 +85,15 @@ impl LabelMatchStatementBuilder {
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
+    }
+    /// <p>The string to match against. The setting you provide for this depends on the match statement's <code>Scope</code> setting: </p>
+    /// <ul>
+    /// <li> <p>If the <code>Scope</code> indicates <code>LABEL</code>, then this specification must include the name and can include any number of preceding namespace specifications and prefix up to providing the fully qualified label name. </p> </li>
+    /// <li> <p>If the <code>Scope</code> indicates <code>NAMESPACE</code>, then this specification can include any number of contiguous namespace strings, and can include the entire label namespace prefix from the rule group or web ACL where the label originates.</p> </li>
+    /// </ul>
+    /// <p>Labels are case sensitive and components of a label must be separated by colon, for example <code>NS1:NS2:name</code>.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
     }
     /// Consumes the builder and constructs a [`LabelMatchStatement`](crate::types::LabelMatchStatement).
     pub fn build(self) -> crate::types::LabelMatchStatement {

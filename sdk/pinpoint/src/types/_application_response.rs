@@ -80,6 +80,10 @@ impl ApplicationResponseBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl ApplicationResponseBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The display name of the application. This name is displayed as the <b>Project name</b> on the Amazon Pinpoint console.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -99,6 +107,10 @@ impl ApplicationResponseBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The display name of the application. This name is displayed as the <b>Project name</b> on the Amazon Pinpoint console.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -125,6 +137,14 @@ impl ApplicationResponseBuilder {
         self.tags = input;
         self
     }
+    /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the application. Each tag consists of a required tag key and an associated tag value.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The date and time when the Application was created.</p>
     pub fn creation_date(
         mut self,
@@ -140,6 +160,10 @@ impl ApplicationResponseBuilder {
     ) -> Self {
         self.creation_date = input;
         self
+    }
+    /// <p>The date and time when the Application was created.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_date
     }
     /// Consumes the builder and constructs a [`ApplicationResponse`](crate::types::ApplicationResponse).
     pub fn build(self) -> crate::types::ApplicationResponse {

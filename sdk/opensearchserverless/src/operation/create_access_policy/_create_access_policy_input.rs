@@ -75,6 +75,10 @@ impl CreateAccessPolicyInputBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of policy.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::AccessPolicyType> {
+        &self.r#type
+    }
     /// <p>The name of the policy.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -84,6 +88,10 @@ impl CreateAccessPolicyInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the policy.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>A description of the policy. Typically used to store information about the permissions defined in the policy.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -95,6 +103,10 @@ impl CreateAccessPolicyInputBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the policy. Typically used to store information about the permissions defined in the policy.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The JSON policy document to use as the content for the policy.</p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
@@ -105,6 +117,10 @@ impl CreateAccessPolicyInputBuilder {
         self.policy = input;
         self
     }
+    /// <p>The JSON policy document to use as the content for the policy.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy
+    }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -114,6 +130,10 @@ impl CreateAccessPolicyInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateAccessPolicyInput`](crate::operation::create_access_policy::CreateAccessPolicyInput).
     pub fn build(

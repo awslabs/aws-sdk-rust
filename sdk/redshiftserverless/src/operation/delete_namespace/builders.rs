@@ -36,6 +36,12 @@ impl DeleteNamespaceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteNamespace as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_namespace::builders::DeleteNamespaceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl DeleteNamespaceFluentBuilder {
         self.inner = self.inner.set_namespace_name(input);
         self
     }
+    /// <p>The name of the namespace to delete.</p>
+    pub fn get_namespace_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_namespace_name()
+    }
     /// <p>The name of the snapshot to be created before the namespace is deleted.</p>
     pub fn final_snapshot_name(
         mut self,
@@ -148,6 +158,10 @@ impl DeleteNamespaceFluentBuilder {
         self.inner = self.inner.set_final_snapshot_name(input);
         self
     }
+    /// <p>The name of the snapshot to be created before the namespace is deleted.</p>
+    pub fn get_final_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_final_snapshot_name()
+    }
     /// <p>How long to retain the final snapshot.</p>
     pub fn final_snapshot_retention_period(mut self, input: i32) -> Self {
         self.inner = self.inner.final_snapshot_retention_period(input);
@@ -160,5 +174,9 @@ impl DeleteNamespaceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_final_snapshot_retention_period(input);
         self
+    }
+    /// <p>How long to retain the final snapshot.</p>
+    pub fn get_final_snapshot_retention_period(&self) -> &::std::option::Option<i32> {
+        self.inner.get_final_snapshot_retention_period()
     }
 }

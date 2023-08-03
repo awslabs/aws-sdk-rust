@@ -38,6 +38,12 @@ impl SearchUsersByImageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SearchUsersByImage as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::search_users_by_image::builders::SearchUsersByImageInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +140,10 @@ impl SearchUsersByImageFluentBuilder {
         self.inner = self.inner.set_collection_id(input);
         self
     }
+    /// <p>The ID of an existing collection containing the UserID.</p>
+    pub fn get_collection_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_collection_id()
+    }
     /// <p>Provides the input image either as bytes or an S3 object.</p>
     /// <p>You pass image bytes to an Amazon Rekognition API operation by using the <code>Bytes</code> property. For example, you would use the <code>Bytes</code> property to pass an image loaded from a local file system. Image bytes passed by using the <code>Bytes</code> property must be base64-encoded. Your code may not need to encode image bytes if you are using an AWS SDK to call Amazon Rekognition API operations. </p>
     /// <p>For more information, see Analyzing an Image Loaded from a Local File System in the Amazon Rekognition Developer Guide.</p>
@@ -156,6 +166,16 @@ impl SearchUsersByImageFluentBuilder {
         self.inner = self.inner.set_image(input);
         self
     }
+    /// <p>Provides the input image either as bytes or an S3 object.</p>
+    /// <p>You pass image bytes to an Amazon Rekognition API operation by using the <code>Bytes</code> property. For example, you would use the <code>Bytes</code> property to pass an image loaded from a local file system. Image bytes passed by using the <code>Bytes</code> property must be base64-encoded. Your code may not need to encode image bytes if you are using an AWS SDK to call Amazon Rekognition API operations. </p>
+    /// <p>For more information, see Analyzing an Image Loaded from a Local File System in the Amazon Rekognition Developer Guide.</p>
+    /// <p> You pass images stored in an S3 bucket to an Amazon Rekognition API operation by using the <code>S3Object</code> property. Images stored in an S3 bucket do not need to be base64-encoded.</p>
+    /// <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p>
+    /// <p>If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes using the Bytes property is not supported. You must first upload the image to an Amazon S3 bucket and then call the operation using the S3Object property.</p>
+    /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see How Amazon Rekognition works with IAM in the Amazon Rekognition Developer Guide. </p>
+    pub fn get_image(&self) -> &::std::option::Option<crate::types::Image> {
+        self.inner.get_image()
+    }
     /// <p>Specifies the minimum confidence in the UserID match to return. Default value is 80.</p>
     pub fn user_match_threshold(mut self, input: f32) -> Self {
         self.inner = self.inner.user_match_threshold(input);
@@ -166,6 +186,10 @@ impl SearchUsersByImageFluentBuilder {
         self.inner = self.inner.set_user_match_threshold(input);
         self
     }
+    /// <p>Specifies the minimum confidence in the UserID match to return. Default value is 80.</p>
+    pub fn get_user_match_threshold(&self) -> &::std::option::Option<f32> {
+        self.inner.get_user_match_threshold()
+    }
     /// <p>Maximum number of UserIDs to return.</p>
     pub fn max_users(mut self, input: i32) -> Self {
         self.inner = self.inner.max_users(input);
@@ -175,6 +199,10 @@ impl SearchUsersByImageFluentBuilder {
     pub fn set_max_users(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_users(input);
         self
+    }
+    /// <p>Maximum number of UserIDs to return.</p>
+    pub fn get_max_users(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_users()
     }
     /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't searched for in the collection. The default value is NONE.</p>
     pub fn quality_filter(mut self, input: crate::types::QualityFilter) -> Self {
@@ -188,5 +216,9 @@ impl SearchUsersByImageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_quality_filter(input);
         self
+    }
+    /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't searched for in the collection. The default value is NONE.</p>
+    pub fn get_quality_filter(&self) -> &::std::option::Option<crate::types::QualityFilter> {
+        self.inner.get_quality_filter()
     }
 }

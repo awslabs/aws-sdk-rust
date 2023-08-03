@@ -50,6 +50,11 @@ impl ExportSnapshotOutputBuilder {
         self.s3_url = input;
         self
     }
+    /// <p>The presigned URL for the snapshot data.</p>
+    /// <p> This URL will be available for 10 minutes, and can be used to download the snapshot content. If the URL expires, a new one can be requested using the same operation. </p>
+    pub fn get_s3_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_url
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

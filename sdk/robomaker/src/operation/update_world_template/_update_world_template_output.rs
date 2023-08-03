@@ -72,6 +72,10 @@ impl UpdateWorldTemplateOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (arn) of the world template.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the world template.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl UpdateWorldTemplateOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the world template.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The time, in milliseconds since the epoch, when the world template was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -95,6 +103,10 @@ impl UpdateWorldTemplateOutputBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The time, in milliseconds since the epoch, when the world template was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The time, in milliseconds since the epoch, when the world template was last updated.</p>
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_at = ::std::option::Option::Some(input);
@@ -107,6 +119,10 @@ impl UpdateWorldTemplateOutputBuilder {
     ) -> Self {
         self.last_updated_at = input;
         self
+    }
+    /// <p>The time, in milliseconds since the epoch, when the world template was last updated.</p>
+    pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

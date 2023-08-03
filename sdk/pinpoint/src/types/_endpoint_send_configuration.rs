@@ -96,6 +96,10 @@ impl EndpointSendConfigurationBuilder {
         self.body_override = input;
         self
     }
+    /// <p>The body of the message. If specified, this value overrides the default message body.</p>
+    pub fn get_body_override(&self) -> &::std::option::Option<::std::string::String> {
+        &self.body_override
+    }
     /// Adds a key-value pair to `context`.
     ///
     /// To override the contents of this collection use [`set_context`](Self::set_context).
@@ -123,6 +127,15 @@ impl EndpointSendConfigurationBuilder {
         self.context = input;
         self
     }
+    /// <p>A map of custom attributes to attach to the message for the address. Attribute names are case sensitive.</p>
+    /// <p>For a push notification, this payload is added to the data.pinpoint object. For an email or text message, this payload is added to email/SMS delivery receipt event attributes.</p>
+    pub fn get_context(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.context
+    }
     /// <p>The raw, JSON-formatted string to use as the payload for the message. If specified, this value overrides all other values for the message.</p>
     pub fn raw_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.raw_content = ::std::option::Option::Some(input.into());
@@ -132,6 +145,10 @@ impl EndpointSendConfigurationBuilder {
     pub fn set_raw_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.raw_content = input;
         self
+    }
+    /// <p>The raw, JSON-formatted string to use as the payload for the message. If specified, this value overrides all other values for the message.</p>
+    pub fn get_raw_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.raw_content
     }
     /// Adds a key-value pair to `substitutions`.
     ///
@@ -161,6 +178,14 @@ impl EndpointSendConfigurationBuilder {
         self.substitutions = input;
         self
     }
+    /// <p>A map of the message variables to merge with the variables specified for the default message (DefaultMessage.Substitutions). The variables specified in this map take precedence over all other variables.</p>
+    pub fn get_substitutions(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
+    > {
+        &self.substitutions
+    }
     /// <p>The title or subject line of the message. If specified, this value overrides the default message title or subject line.</p>
     pub fn title_override(
         mut self,
@@ -176,6 +201,10 @@ impl EndpointSendConfigurationBuilder {
     ) -> Self {
         self.title_override = input;
         self
+    }
+    /// <p>The title or subject line of the message. If specified, this value overrides the default message title or subject line.</p>
+    pub fn get_title_override(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title_override
     }
     /// Consumes the builder and constructs a [`EndpointSendConfiguration`](crate::types::EndpointSendConfiguration).
     pub fn build(self) -> crate::types::EndpointSendConfiguration {

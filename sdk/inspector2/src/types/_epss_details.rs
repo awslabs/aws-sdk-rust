@@ -40,6 +40,10 @@ impl EpssDetailsBuilder {
         self.score = input;
         self
     }
+    /// <p>The EPSS score.</p>
+    pub fn get_score(&self) -> &::std::option::Option<f64> {
+        &self.score
+    }
     /// Consumes the builder and constructs a [`EpssDetails`](crate::types::EpssDetails).
     pub fn build(self) -> crate::types::EpssDetails {
         crate::types::EpssDetails {

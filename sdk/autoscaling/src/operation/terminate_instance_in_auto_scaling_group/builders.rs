@@ -39,6 +39,10 @@ impl TerminateInstanceInAutoScalingGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the TerminateInstanceInAutoScalingGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::terminate_instance_in_auto_scaling_group::builders::TerminateInstanceInAutoScalingGroupInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -103,6 +107,10 @@ impl TerminateInstanceInAutoScalingGroupFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The ID of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>Indicates whether terminating the instance also decrements the size of the Auto Scaling group.</p>
     pub fn should_decrement_desired_capacity(mut self, input: bool) -> Self {
         self.inner = self.inner.should_decrement_desired_capacity(input);
@@ -115,5 +123,9 @@ impl TerminateInstanceInAutoScalingGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_should_decrement_desired_capacity(input);
         self
+    }
+    /// <p>Indicates whether terminating the instance also decrements the size of the Auto Scaling group.</p>
+    pub fn get_should_decrement_desired_capacity(&self) -> &::std::option::Option<bool> {
+        self.inner.get_should_decrement_desired_capacity()
     }
 }

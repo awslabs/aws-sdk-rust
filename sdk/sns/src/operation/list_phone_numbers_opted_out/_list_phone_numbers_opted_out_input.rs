@@ -40,6 +40,10 @@ impl ListPhoneNumbersOptedOutInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A <code>NextToken</code> string is used when you call the <code>ListPhoneNumbersOptedOut</code> action to retrieve additional records that are available after the first page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Consumes the builder and constructs a [`ListPhoneNumbersOptedOutInput`](crate::operation::list_phone_numbers_opted_out::ListPhoneNumbersOptedOutInput).
     pub fn build(
         self,

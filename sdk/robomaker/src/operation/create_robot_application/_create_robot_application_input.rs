@@ -81,6 +81,10 @@ impl CreateRobotApplicationInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the robot application.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `sources`.
     ///
     /// To override the contents of this collection use [`set_sources`](Self::set_sources).
@@ -100,6 +104,12 @@ impl CreateRobotApplicationInputBuilder {
         self.sources = input;
         self
     }
+    /// <p>The sources of the robot application.</p>
+    pub fn get_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceConfig>> {
+        &self.sources
+    }
     /// <p>The robot software suite (ROS distribuition) used by the robot application.</p>
     pub fn robot_software_suite(mut self, input: crate::types::RobotSoftwareSuite) -> Self {
         self.robot_software_suite = ::std::option::Option::Some(input);
@@ -112,6 +122,12 @@ impl CreateRobotApplicationInputBuilder {
     ) -> Self {
         self.robot_software_suite = input;
         self
+    }
+    /// <p>The robot software suite (ROS distribuition) used by the robot application.</p>
+    pub fn get_robot_software_suite(
+        &self,
+    ) -> &::std::option::Option<crate::types::RobotSoftwareSuite> {
+        &self.robot_software_suite
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -138,6 +154,14 @@ impl CreateRobotApplicationInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>A map that contains tag keys and tag values that are attached to the robot application.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The object that contains that URI of the Docker image that you use for your robot application.</p>
     pub fn environment(mut self, input: crate::types::Environment) -> Self {
         self.environment = ::std::option::Option::Some(input);
@@ -150,6 +174,10 @@ impl CreateRobotApplicationInputBuilder {
     ) -> Self {
         self.environment = input;
         self
+    }
+    /// <p>The object that contains that URI of the Docker image that you use for your robot application.</p>
+    pub fn get_environment(&self) -> &::std::option::Option<crate::types::Environment> {
+        &self.environment
     }
     /// Consumes the builder and constructs a [`CreateRobotApplicationInput`](crate::operation::create_robot_application::CreateRobotApplicationInput).
     pub fn build(

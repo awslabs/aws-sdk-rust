@@ -71,6 +71,10 @@ impl CreateWorkflowStepOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the step.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The ID of the step group.</p>
     pub fn step_group_id(
         mut self,
@@ -87,6 +91,10 @@ impl CreateWorkflowStepOutputBuilder {
         self.step_group_id = input;
         self
     }
+    /// <p>The ID of the step group.</p>
+    pub fn get_step_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.step_group_id
+    }
     /// <p>The ID of the migration workflow.</p>
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_id = ::std::option::Option::Some(input.into());
@@ -97,6 +105,10 @@ impl CreateWorkflowStepOutputBuilder {
         self.workflow_id = input;
         self
     }
+    /// <p>The ID of the migration workflow.</p>
+    pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_id
+    }
     /// <p>The name of the step.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -106,6 +118,10 @@ impl CreateWorkflowStepOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the step.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

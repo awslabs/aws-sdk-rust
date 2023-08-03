@@ -62,6 +62,10 @@ impl StartAttachmentUploadOutputBuilder {
         self.attachment_id = input;
         self
     }
+    /// <p>A unique identifier for the attachment.</p>
+    pub fn get_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attachment_id
+    }
     /// <p>Fields to be used while uploading the attachment.</p>
     pub fn upload_metadata(mut self, input: crate::types::UploadMetadata) -> Self {
         self.upload_metadata = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl StartAttachmentUploadOutputBuilder {
     ) -> Self {
         self.upload_metadata = input;
         self
+    }
+    /// <p>Fields to be used while uploading the attachment.</p>
+    pub fn get_upload_metadata(&self) -> &::std::option::Option<crate::types::UploadMetadata> {
+        &self.upload_metadata
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

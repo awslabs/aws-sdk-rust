@@ -49,6 +49,12 @@ impl RandomSplitActivityBuilder {
         self.branches = input;
         self
     }
+    /// <p>The paths for the activity, including the percentage of participants to enter each path and the activity to perform for each path.</p>
+    pub fn get_branches(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RandomSplitEntry>> {
+        &self.branches
+    }
     /// Consumes the builder and constructs a [`RandomSplitActivity`](crate::types::RandomSplitActivity).
     pub fn build(self) -> crate::types::RandomSplitActivity {
         crate::types::RandomSplitActivity {

@@ -50,6 +50,12 @@ impl ClusterConfigurationBuilder {
         self.execute_command_configuration = input;
         self
     }
+    /// <p>The details of the execute command configuration.</p>
+    pub fn get_execute_command_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExecuteCommandConfiguration> {
+        &self.execute_command_configuration
+    }
     /// Consumes the builder and constructs a [`ClusterConfiguration`](crate::types::ClusterConfiguration).
     pub fn build(self) -> crate::types::ClusterConfiguration {
         crate::types::ClusterConfiguration {

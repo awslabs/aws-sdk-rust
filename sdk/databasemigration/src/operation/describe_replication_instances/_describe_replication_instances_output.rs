@@ -59,6 +59,10 @@ impl DescribeReplicationInstancesOutputBuilder {
         self.marker = input;
         self
     }
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// Appends an item to `replication_instances`.
     ///
     /// To override the contents of this collection use [`set_replication_instances`](Self::set_replication_instances).
@@ -77,6 +81,12 @@ impl DescribeReplicationInstancesOutputBuilder {
     ) -> Self {
         self.replication_instances = input;
         self
+    }
+    /// <p>The replication instances described.</p>
+    pub fn get_replication_instances(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationInstance>> {
+        &self.replication_instances
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

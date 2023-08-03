@@ -84,6 +84,12 @@ impl ConnectionAuthResponseParametersBuilder {
         self.basic_auth_parameters = input;
         self
     }
+    /// <p>The authorization parameters for Basic authorization.</p>
+    pub fn get_basic_auth_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConnectionBasicAuthResponseParameters> {
+        &self.basic_auth_parameters
+    }
     /// <p>The OAuth parameters to use for authorization.</p>
     pub fn o_auth_parameters(
         mut self,
@@ -99,6 +105,12 @@ impl ConnectionAuthResponseParametersBuilder {
     ) -> Self {
         self.o_auth_parameters = input;
         self
+    }
+    /// <p>The OAuth parameters to use for authorization.</p>
+    pub fn get_o_auth_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConnectionOAuthResponseParameters> {
+        &self.o_auth_parameters
     }
     /// <p>The API Key parameters to use for authorization.</p>
     pub fn api_key_auth_parameters(
@@ -116,6 +128,12 @@ impl ConnectionAuthResponseParametersBuilder {
         self.api_key_auth_parameters = input;
         self
     }
+    /// <p>The API Key parameters to use for authorization.</p>
+    pub fn get_api_key_auth_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConnectionApiKeyAuthResponseParameters> {
+        &self.api_key_auth_parameters
+    }
     /// <p>Additional parameters for the connection that are passed through with every invocation to the HTTP endpoint.</p>
     pub fn invocation_http_parameters(
         mut self,
@@ -131,6 +149,12 @@ impl ConnectionAuthResponseParametersBuilder {
     ) -> Self {
         self.invocation_http_parameters = input;
         self
+    }
+    /// <p>Additional parameters for the connection that are passed through with every invocation to the HTTP endpoint.</p>
+    pub fn get_invocation_http_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConnectionHttpParameters> {
+        &self.invocation_http_parameters
     }
     /// Consumes the builder and constructs a [`ConnectionAuthResponseParameters`](crate::types::ConnectionAuthResponseParameters).
     pub fn build(self) -> crate::types::ConnectionAuthResponseParameters {

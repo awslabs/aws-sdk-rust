@@ -49,6 +49,10 @@ impl GetWorkflowRunPropertiesInputBuilder {
         self.name = input;
         self
     }
+    /// <p>Name of the workflow which was run.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The ID of the workflow run whose run properties should be returned.</p>
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.run_id = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl GetWorkflowRunPropertiesInputBuilder {
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.run_id = input;
         self
+    }
+    /// <p>The ID of the workflow run whose run properties should be returned.</p>
+    pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.run_id
     }
     /// Consumes the builder and constructs a [`GetWorkflowRunPropertiesInput`](crate::operation::get_workflow_run_properties::GetWorkflowRunPropertiesInput).
     pub fn build(

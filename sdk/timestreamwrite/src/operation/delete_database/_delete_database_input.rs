@@ -45,6 +45,10 @@ impl DeleteDatabaseInputBuilder {
         self.database_name = input;
         self
     }
+    /// <p>The name of the Timestream database to be deleted.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// Consumes the builder and constructs a [`DeleteDatabaseInput`](crate::operation::delete_database::DeleteDatabaseInput).
     pub fn build(
         self,

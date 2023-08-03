@@ -54,6 +54,11 @@ impl CachingConfigBuilder {
         self.ttl = input;
         self
     }
+    /// <p>The TTL in seconds for a resolver that has caching activated.</p>
+    /// <p>Valid values are 1–3,600 seconds.</p>
+    pub fn get_ttl(&self) -> &::std::option::Option<i64> {
+        &self.ttl
+    }
     /// Appends an item to `caching_keys`.
     ///
     /// To override the contents of this collection use [`set_caching_keys`](Self::set_caching_keys).
@@ -74,6 +79,13 @@ impl CachingConfigBuilder {
     ) -> Self {
         self.caching_keys = input;
         self
+    }
+    /// <p>The caching keys for a resolver that has caching activated.</p>
+    /// <p>Valid values are entries from the <code>$context.arguments</code>, <code>$context.source</code>, and <code>$context.identity</code> maps.</p>
+    pub fn get_caching_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.caching_keys
     }
     /// Consumes the builder and constructs a [`CachingConfig`](crate::types::CachingConfig).
     pub fn build(self) -> crate::types::CachingConfig {

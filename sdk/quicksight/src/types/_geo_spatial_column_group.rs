@@ -56,6 +56,10 @@ impl GeoSpatialColumnGroupBuilder {
         self.name = input;
         self
     }
+    /// <p>A display name for the hierarchy.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Country code.</p>
     pub fn country_code(mut self, input: crate::types::GeoSpatialCountryCode) -> Self {
         self.country_code = ::std::option::Option::Some(input);
@@ -68,6 +72,10 @@ impl GeoSpatialColumnGroupBuilder {
     ) -> Self {
         self.country_code = input;
         self
+    }
+    /// <p>Country code.</p>
+    pub fn get_country_code(&self) -> &::std::option::Option<crate::types::GeoSpatialCountryCode> {
+        &self.country_code
     }
     /// Appends an item to `columns`.
     ///
@@ -87,6 +95,10 @@ impl GeoSpatialColumnGroupBuilder {
     ) -> Self {
         self.columns = input;
         self
+    }
+    /// <p>Columns in this hierarchy.</p>
+    pub fn get_columns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.columns
     }
     /// Consumes the builder and constructs a [`GeoSpatialColumnGroup`](crate::types::GeoSpatialColumnGroup).
     pub fn build(self) -> crate::types::GeoSpatialColumnGroup {

@@ -60,6 +60,12 @@ impl MultiRegionAccessPointPolicyDocumentBuilder {
         self.established = input;
         self
     }
+    /// <p>The last established policy for the Multi-Region Access Point.</p>
+    pub fn get_established(
+        &self,
+    ) -> &::std::option::Option<crate::types::EstablishedMultiRegionAccessPointPolicy> {
+        &self.established
+    }
     /// <p>The proposed policy for the Multi-Region Access Point.</p>
     pub fn proposed(mut self, input: crate::types::ProposedMultiRegionAccessPointPolicy) -> Self {
         self.proposed = ::std::option::Option::Some(input);
@@ -72,6 +78,12 @@ impl MultiRegionAccessPointPolicyDocumentBuilder {
     ) -> Self {
         self.proposed = input;
         self
+    }
+    /// <p>The proposed policy for the Multi-Region Access Point.</p>
+    pub fn get_proposed(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProposedMultiRegionAccessPointPolicy> {
+        &self.proposed
     }
     /// Consumes the builder and constructs a [`MultiRegionAccessPointPolicyDocument`](crate::types::MultiRegionAccessPointPolicyDocument).
     pub fn build(self) -> crate::types::MultiRegionAccessPointPolicyDocument {

@@ -50,6 +50,10 @@ impl NotificationChannelBuilder {
         self.id = input;
         self
     }
+    /// <p> The ID of a notification channel. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p> A <code>NotificationChannelConfig</code> object that contains information about configured notification channels. </p>
     pub fn config(mut self, input: crate::types::NotificationChannelConfig) -> Self {
         self.config = ::std::option::Option::Some(input);
@@ -62,6 +66,10 @@ impl NotificationChannelBuilder {
     ) -> Self {
         self.config = input;
         self
+    }
+    /// <p> A <code>NotificationChannelConfig</code> object that contains information about configured notification channels. </p>
+    pub fn get_config(&self) -> &::std::option::Option<crate::types::NotificationChannelConfig> {
+        &self.config
     }
     /// Consumes the builder and constructs a [`NotificationChannel`](crate::types::NotificationChannel).
     pub fn build(self) -> crate::types::NotificationChannel {

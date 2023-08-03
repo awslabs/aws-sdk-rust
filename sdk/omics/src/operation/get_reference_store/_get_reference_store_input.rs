@@ -40,6 +40,10 @@ impl GetReferenceStoreInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The store's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`GetReferenceStoreInput`](crate::operation::get_reference_store::GetReferenceStoreInput).
     pub fn build(
         self,

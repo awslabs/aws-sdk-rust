@@ -223,6 +223,10 @@ impl GameSessionPlacementBuilder {
         self.placement_id = input;
         self
     }
+    /// <p>A unique identifier for a game session placement.</p>
+    pub fn get_placement_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.placement_id
+    }
     /// <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region.</p>
     pub fn game_session_queue_name(
         mut self,
@@ -238,6 +242,10 @@ impl GameSessionPlacementBuilder {
     ) -> Self {
         self.game_session_queue_name = input;
         self
+    }
+    /// <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region.</p>
+    pub fn get_game_session_queue_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.game_session_queue_name
     }
     /// <p>Current status of the game session placement request.</p>
     /// <ul>
@@ -266,6 +274,17 @@ impl GameSessionPlacementBuilder {
         self.status = input;
         self
     }
+    /// <p>Current status of the game session placement request.</p>
+    /// <ul>
+    /// <li> <p> <b>PENDING</b> -- The placement request is currently in the queue waiting to be processed.</p> </li>
+    /// <li> <p> <b>FULFILLED</b> -- A new game session and player sessions (if requested) have been successfully created. Values for <i>GameSessionArn</i> and <i>GameSessionRegion</i> are available. </p> </li>
+    /// <li> <p> <b>CANCELLED</b> -- The placement request was canceled.</p> </li>
+    /// <li> <p> <b>TIMED_OUT</b> -- A new game session was not successfully created before the time limit expired. You can resubmit the placement request as needed.</p> </li>
+    /// <li> <p> <b>FAILED</b> -- Amazon GameLift is not able to complete the process of placing the game session. Common reasons are the game session terminated before the placement process was completed, or an unexpected internal error.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::GameSessionPlacementState> {
+        &self.status
+    }
     /// Appends an item to `game_properties`.
     ///
     /// To override the contents of this collection use [`set_game_properties`](Self::set_game_properties).
@@ -285,6 +304,12 @@ impl GameSessionPlacementBuilder {
         self.game_properties = input;
         self
     }
+    /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
+    pub fn get_game_properties(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GameProperty>> {
+        &self.game_properties
+    }
     /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
     pub fn maximum_player_session_count(mut self, input: i32) -> Self {
         self.maximum_player_session_count = ::std::option::Option::Some(input);
@@ -294,6 +319,10 @@ impl GameSessionPlacementBuilder {
     pub fn set_maximum_player_session_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum_player_session_count = input;
         self
+    }
+    /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
+    pub fn get_maximum_player_session_count(&self) -> &::std::option::Option<i32> {
+        &self.maximum_player_session_count
     }
     /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
     pub fn game_session_name(
@@ -311,6 +340,10 @@ impl GameSessionPlacementBuilder {
         self.game_session_name = input;
         self
     }
+    /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
+    pub fn get_game_session_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.game_session_name
+    }
     /// <p>A unique identifier for the game session. This value is set once the new game session is placed (placement status is <code>FULFILLED</code>).</p>
     pub fn game_session_id(
         mut self,
@@ -326,6 +359,10 @@ impl GameSessionPlacementBuilder {
     ) -> Self {
         self.game_session_id = input;
         self
+    }
+    /// <p>A unique identifier for the game session. This value is set once the new game session is placed (placement status is <code>FULFILLED</code>).</p>
+    pub fn get_game_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.game_session_id
     }
     /// <p>Identifier for the game session created by this placement request. This value is set once the new game session is placed (placement status is <code>FULFILLED</code>). This identifier is unique across all Regions. You can use this value as a <code>GameSessionId</code> value as needed.</p>
     pub fn game_session_arn(
@@ -343,6 +380,10 @@ impl GameSessionPlacementBuilder {
         self.game_session_arn = input;
         self
     }
+    /// <p>Identifier for the game session created by this placement request. This value is set once the new game session is placed (placement status is <code>FULFILLED</code>). This identifier is unique across all Regions. You can use this value as a <code>GameSessionId</code> value as needed.</p>
+    pub fn get_game_session_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.game_session_arn
+    }
     /// <p>Name of the Region where the game session created by this placement request is running. This value is set once the new game session is placed (placement status is <code>FULFILLED</code>).</p>
     pub fn game_session_region(
         mut self,
@@ -358,6 +399,10 @@ impl GameSessionPlacementBuilder {
     ) -> Self {
         self.game_session_region = input;
         self
+    }
+    /// <p>Name of the Region where the game session created by this placement request is running. This value is set once the new game session is placed (placement status is <code>FULFILLED</code>).</p>
+    pub fn get_game_session_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.game_session_region
     }
     /// Appends an item to `player_latencies`.
     ///
@@ -378,6 +423,12 @@ impl GameSessionPlacementBuilder {
         self.player_latencies = input;
         self
     }
+    /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to Amazon Web Services Regions.</p>
+    pub fn get_player_latencies(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PlayerLatency>> {
+        &self.player_latencies
+    }
     /// <p>Time stamp indicating when this request was placed in the queue. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -390,6 +441,10 @@ impl GameSessionPlacementBuilder {
     ) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>Time stamp indicating when this request was placed in the queue. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p>Time stamp indicating when this request was completed, canceled, or timed out.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -404,6 +459,10 @@ impl GameSessionPlacementBuilder {
         self.end_time = input;
         self
     }
+    /// <p>Time stamp indicating when this request was completed, canceled, or timed out.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>The IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and port number. This value is set once the new game session is placed (placement status is <code>FULFILLED</code>). </p>
     pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_address = ::std::option::Option::Some(input.into());
@@ -413,6 +472,10 @@ impl GameSessionPlacementBuilder {
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_address = input;
         self
+    }
+    /// <p>The IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and port number. This value is set once the new game session is placed (placement status is <code>FULFILLED</code>). </p>
+    pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_address
     }
     /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
     /// <ul>
@@ -452,6 +515,24 @@ impl GameSessionPlacementBuilder {
         self.dns_name = input;
         self
     }
+    /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
+    /// <ul>
+    /// <li> <p>TLS-enabled fleets: <code>
+    /// <unique identifier>
+    /// .
+    /// <region identifier>
+    /// .amazongamelift.com
+    /// </region>
+    /// </unique></code>.</p> </li>
+    /// <li> <p>Non-TLS-enabled fleets: <code>ec2-
+    /// <unique identifier>
+    /// .compute.amazonaws.com
+    /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p> </li>
+    /// </ul>
+    /// <p>When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP address.</p>
+    pub fn get_dns_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dns_name
+    }
     /// <p>The port number for the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and port number. This value is set once the new game session is placed (placement status is <code>FULFILLED</code>).</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -461,6 +542,10 @@ impl GameSessionPlacementBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
+    }
+    /// <p>The port number for the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and port number. This value is set once the new game session is placed (placement status is <code>FULFILLED</code>).</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// Appends an item to `placed_player_sessions`.
     ///
@@ -481,6 +566,12 @@ impl GameSessionPlacementBuilder {
         self.placed_player_sessions = input;
         self
     }
+    /// <p>A collection of information on player sessions created in response to the game session placement request. These player sessions are created only once a new game session is successfully placed (placement status is <code>FULFILLED</code>). This information includes the player ID (as provided in the placement request) and the corresponding player session ID.</p>
+    pub fn get_placed_player_sessions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PlacedPlayerSession>> {
+        &self.placed_player_sessions
+    }
     /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
     pub fn game_session_data(
         mut self,
@@ -497,6 +588,10 @@ impl GameSessionPlacementBuilder {
         self.game_session_data = input;
         self
     }
+    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
+    pub fn get_game_session_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.game_session_data
+    }
     /// <p>Information on the matchmaking process for this game. Data is in JSON syntax, formatted as a string. It identifies the matchmaking configuration used to create the match, and contains data on all players assigned to the match, including player attributes and team assignments. For more details on matchmaker data, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match Data</a>.</p>
     pub fn matchmaker_data(
         mut self,
@@ -512,6 +607,10 @@ impl GameSessionPlacementBuilder {
     ) -> Self {
         self.matchmaker_data = input;
         self
+    }
+    /// <p>Information on the matchmaking process for this game. Data is in JSON syntax, formatted as a string. It identifies the matchmaking configuration used to create the match, and contains data on all players assigned to the match, including player attributes and team assignments. For more details on matchmaker data, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match Data</a>.</p>
+    pub fn get_matchmaker_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.matchmaker_data
     }
     /// Consumes the builder and constructs a [`GameSessionPlacement`](crate::types::GameSessionPlacement).
     pub fn build(self) -> crate::types::GameSessionPlacement {

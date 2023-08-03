@@ -72,6 +72,12 @@ impl ListDomainConfigurationsOutputBuilder {
         self.domain_configurations = input;
         self
     }
+    /// <p>A list of objects that contain summary information about the user's domain configurations.</p>
+    pub fn get_domain_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainConfigurationSummary>> {
+        &self.domain_configurations
+    }
     /// <p>The marker for the next set of results.</p>
     pub fn next_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_marker = ::std::option::Option::Some(input.into());
@@ -81,6 +87,10 @@ impl ListDomainConfigurationsOutputBuilder {
     pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_marker = input;
         self
+    }
+    /// <p>The marker for the next set of results.</p>
+    pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

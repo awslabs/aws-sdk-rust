@@ -40,6 +40,10 @@ impl MeetingFeaturesConfigurationBuilder {
         self.audio = input;
         self
     }
+    /// <p>The configuration settings for the audio features available to a meeting.</p>
+    pub fn get_audio(&self) -> &::std::option::Option<crate::types::AudioFeatures> {
+        &self.audio
+    }
     /// Consumes the builder and constructs a [`MeetingFeaturesConfiguration`](crate::types::MeetingFeaturesConfiguration).
     pub fn build(self) -> crate::types::MeetingFeaturesConfiguration {
         crate::types::MeetingFeaturesConfiguration { audio: self.audio }

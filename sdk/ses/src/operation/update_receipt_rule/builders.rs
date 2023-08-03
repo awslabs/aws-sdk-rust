@@ -38,6 +38,12 @@ impl UpdateReceiptRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateReceiptRule as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_receipt_rule::builders::UpdateReceiptRuleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +140,10 @@ impl UpdateReceiptRuleFluentBuilder {
         self.inner = self.inner.set_rule_set_name(input);
         self
     }
+    /// <p>The name of the receipt rule set that the receipt rule belongs to.</p>
+    pub fn get_rule_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rule_set_name()
+    }
     /// <p>A data structure that contains the updated receipt rule information.</p>
     pub fn rule(mut self, input: crate::types::ReceiptRule) -> Self {
         self.inner = self.inner.rule(input);
@@ -143,5 +153,9 @@ impl UpdateReceiptRuleFluentBuilder {
     pub fn set_rule(mut self, input: ::std::option::Option<crate::types::ReceiptRule>) -> Self {
         self.inner = self.inner.set_rule(input);
         self
+    }
+    /// <p>A data structure that contains the updated receipt rule information.</p>
+    pub fn get_rule(&self) -> &::std::option::Option<crate::types::ReceiptRule> {
+        self.inner.get_rule()
     }
 }

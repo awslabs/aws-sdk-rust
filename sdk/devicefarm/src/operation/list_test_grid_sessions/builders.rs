@@ -36,6 +36,13 @@ impl ListTestGridSessionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListTestGridSessions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_test_grid_sessions::builders::ListTestGridSessionsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +144,10 @@ impl ListTestGridSessionsFluentBuilder {
         self.inner = self.inner.set_project_arn(input);
         self
     }
+    /// <p>ARN of a <code>TestGridProject</code>.</p>
+    pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_arn()
+    }
     /// <p>Return only sessions in this state.</p>
     pub fn status(mut self, input: crate::types::TestGridSessionStatus) -> Self {
         self.inner = self.inner.status(input);
@@ -149,6 +160,10 @@ impl ListTestGridSessionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_status(input);
         self
+    }
+    /// <p>Return only sessions in this state.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TestGridSessionStatus> {
+        self.inner.get_status()
     }
     /// <p>Return only sessions created after this time.</p>
     pub fn creation_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -163,6 +178,10 @@ impl ListTestGridSessionsFluentBuilder {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
+    /// <p>Return only sessions created after this time.</p>
+    pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_creation_time_after()
+    }
     /// <p>Return only sessions created before this time.</p>
     pub fn creation_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.creation_time_before(input);
@@ -175,6 +194,10 @@ impl ListTestGridSessionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
+    }
+    /// <p>Return only sessions created before this time.</p>
+    pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_creation_time_before()
     }
     /// <p>Return only sessions that ended after this time.</p>
     pub fn end_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -189,6 +212,10 @@ impl ListTestGridSessionsFluentBuilder {
         self.inner = self.inner.set_end_time_after(input);
         self
     }
+    /// <p>Return only sessions that ended after this time.</p>
+    pub fn get_end_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_time_after()
+    }
     /// <p>Return only sessions that ended before this time.</p>
     pub fn end_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_time_before(input);
@@ -202,6 +229,10 @@ impl ListTestGridSessionsFluentBuilder {
         self.inner = self.inner.set_end_time_before(input);
         self
     }
+    /// <p>Return only sessions that ended before this time.</p>
+    pub fn get_end_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_time_before()
+    }
     /// <p>Return only this many results at a time.</p>
     pub fn max_result(mut self, input: i32) -> Self {
         self.inner = self.inner.max_result(input);
@@ -212,6 +243,10 @@ impl ListTestGridSessionsFluentBuilder {
         self.inner = self.inner.set_max_result(input);
         self
     }
+    /// <p>Return only this many results at a time.</p>
+    pub fn get_max_result(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_result()
+    }
     /// <p>Pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -221,5 +256,9 @@ impl ListTestGridSessionsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>Pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

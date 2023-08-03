@@ -36,6 +36,10 @@ impl DisassociateOpsItemRelatedItemFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociateOpsItemRelatedItem as a reference.
+    pub fn as_input(&self) -> &crate::operation::disassociate_ops_item_related_item::builders::DisassociateOpsItemRelatedItemInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl DisassociateOpsItemRelatedItemFluentBuilder {
         self.inner = self.inner.set_ops_item_id(input);
         self
     }
+    /// <p>The ID of the OpsItem for which you want to delete an association between the OpsItem and a related item.</p>
+    pub fn get_ops_item_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ops_item_id()
+    }
     /// <p>The ID of the association for which you want to delete an association between the OpsItem and a related item.</p>
     pub fn association_id(
         mut self,
@@ -115,5 +123,9 @@ impl DisassociateOpsItemRelatedItemFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_association_id(input);
         self
+    }
+    /// <p>The ID of the association for which you want to delete an association between the OpsItem and a related item.</p>
+    pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_association_id()
     }
 }

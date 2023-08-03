@@ -39,6 +39,10 @@ impl DescribeArchiveInputBuilder {
         self.archive_name = input;
         self
     }
+    /// <p>The name of the archive to retrieve.</p>
+    pub fn get_archive_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.archive_name
+    }
     /// Consumes the builder and constructs a [`DescribeArchiveInput`](crate::operation::describe_archive::DescribeArchiveInput).
     pub fn build(
         self,

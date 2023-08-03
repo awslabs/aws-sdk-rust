@@ -40,6 +40,10 @@ impl DeleteTopicRuleInputBuilder {
         self.rule_name = input;
         self
     }
+    /// <p>The name of the rule.</p>
+    pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_name
+    }
     /// Consumes the builder and constructs a [`DeleteTopicRuleInput`](crate::operation::delete_topic_rule::DeleteTopicRuleInput).
     pub fn build(
         self,

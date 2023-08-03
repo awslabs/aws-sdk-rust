@@ -81,6 +81,10 @@ impl SearchExpressionBuilder {
         self.filters = input;
         self
     }
+    /// <p>A list of filter objects.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
+    }
     /// Appends an item to `nested_filters`.
     ///
     /// To override the contents of this collection use [`set_nested_filters`](Self::set_nested_filters).
@@ -99,6 +103,12 @@ impl SearchExpressionBuilder {
     ) -> Self {
         self.nested_filters = input;
         self
+    }
+    /// <p>A list of nested filter objects.</p>
+    pub fn get_nested_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NestedFilters>> {
+        &self.nested_filters
     }
     /// Appends an item to `sub_expressions`.
     ///
@@ -119,6 +129,12 @@ impl SearchExpressionBuilder {
         self.sub_expressions = input;
         self
     }
+    /// <p>A list of search expression objects.</p>
+    pub fn get_sub_expressions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchExpression>> {
+        &self.sub_expressions
+    }
     /// <p>A Boolean operator used to evaluate the search expression. If you want every conditional statement in all lists to be satisfied for the entire search expression to be true, specify <code>And</code>. If only a single conditional statement needs to be true for the entire search expression to be true, specify <code>Or</code>. The default value is <code>And</code>.</p>
     pub fn operator(mut self, input: crate::types::BooleanOperator) -> Self {
         self.operator = ::std::option::Option::Some(input);
@@ -131,6 +147,10 @@ impl SearchExpressionBuilder {
     ) -> Self {
         self.operator = input;
         self
+    }
+    /// <p>A Boolean operator used to evaluate the search expression. If you want every conditional statement in all lists to be satisfied for the entire search expression to be true, specify <code>And</code>. If only a single conditional statement needs to be true for the entire search expression to be true, specify <code>Or</code>. The default value is <code>And</code>.</p>
+    pub fn get_operator(&self) -> &::std::option::Option<crate::types::BooleanOperator> {
+        &self.operator
     }
     /// Consumes the builder and constructs a [`SearchExpression`](crate::types::SearchExpression).
     pub fn build(self) -> crate::types::SearchExpression {

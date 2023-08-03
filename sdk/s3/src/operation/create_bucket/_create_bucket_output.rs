@@ -53,6 +53,10 @@ impl CreateBucketOutputBuilder {
         self.location = input;
         self
     }
+    /// <p>A forward slash followed by the name of the bucket.</p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
+    }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
         self._extended_request_id = Some(extended_request_id.into());
         self

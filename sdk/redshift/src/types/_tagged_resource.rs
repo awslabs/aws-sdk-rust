@@ -80,6 +80,10 @@ impl TaggedResourceBuilder {
         self.tag = input;
         self
     }
+    /// <p>The tag for the resource.</p>
+    pub fn get_tag(&self) -> &::std::option::Option<crate::types::Tag> {
+        &self.tag
+    }
     /// <p>The Amazon Resource Name (ARN) with which the tag is associated, for example: <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>.</p>
     pub fn resource_name(
         mut self,
@@ -95,6 +99,10 @@ impl TaggedResourceBuilder {
     ) -> Self {
         self.resource_name = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) with which the tag is associated, for example: <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>.</p>
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_name
     }
     /// <p>The type of resource with which the tag is associated. Valid resource types are: </p>
     /// <ul>
@@ -135,6 +143,22 @@ impl TaggedResourceBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>The type of resource with which the tag is associated. Valid resource types are: </p>
+    /// <ul>
+    /// <li> <p>Cluster</p> </li>
+    /// <li> <p>CIDR/IP</p> </li>
+    /// <li> <p>EC2 security group</p> </li>
+    /// <li> <p>Snapshot</p> </li>
+    /// <li> <p>Cluster security group</p> </li>
+    /// <li> <p>Subnet group</p> </li>
+    /// <li> <p>HSM connection</p> </li>
+    /// <li> <p>HSM certificate</p> </li>
+    /// <li> <p>Parameter group</p> </li>
+    /// </ul>
+    /// <p>For more information about Amazon Redshift resource types and constructing ARNs, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Constructing an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster Management Guide. </p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
     }
     /// Consumes the builder and constructs a [`TaggedResource`](crate::types::TaggedResource).
     pub fn build(self) -> crate::types::TaggedResource {

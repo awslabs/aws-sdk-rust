@@ -37,6 +37,10 @@ impl ModifyVpcEndpointServiceConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyVpcEndpointServiceConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::modify_vpc_endpoint_service_configuration::builders::ModifyVpcEndpointServiceConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -101,6 +105,10 @@ impl ModifyVpcEndpointServiceConfigurationFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>The ID of the service.</p>
     pub fn service_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_id(input.into());
@@ -110,6 +118,10 @@ impl ModifyVpcEndpointServiceConfigurationFluentBuilder {
     pub fn set_service_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_id(input);
         self
+    }
+    /// <p>The ID of the service.</p>
+    pub fn get_service_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_id()
     }
     /// <p>(Interface endpoint configuration) The private DNS name to assign to the endpoint service.</p>
     pub fn private_dns_name(
@@ -127,6 +139,10 @@ impl ModifyVpcEndpointServiceConfigurationFluentBuilder {
         self.inner = self.inner.set_private_dns_name(input);
         self
     }
+    /// <p>(Interface endpoint configuration) The private DNS name to assign to the endpoint service.</p>
+    pub fn get_private_dns_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_private_dns_name()
+    }
     /// <p>(Interface endpoint configuration) Removes the private DNS name of the endpoint service.</p>
     pub fn remove_private_dns_name(mut self, input: bool) -> Self {
         self.inner = self.inner.remove_private_dns_name(input);
@@ -137,6 +153,10 @@ impl ModifyVpcEndpointServiceConfigurationFluentBuilder {
         self.inner = self.inner.set_remove_private_dns_name(input);
         self
     }
+    /// <p>(Interface endpoint configuration) Removes the private DNS name of the endpoint service.</p>
+    pub fn get_remove_private_dns_name(&self) -> &::std::option::Option<bool> {
+        self.inner.get_remove_private_dns_name()
+    }
     /// <p>Indicates whether requests to create an endpoint to your service must be accepted.</p>
     pub fn acceptance_required(mut self, input: bool) -> Self {
         self.inner = self.inner.acceptance_required(input);
@@ -146,6 +166,10 @@ impl ModifyVpcEndpointServiceConfigurationFluentBuilder {
     pub fn set_acceptance_required(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_acceptance_required(input);
         self
+    }
+    /// <p>Indicates whether requests to create an endpoint to your service must be accepted.</p>
+    pub fn get_acceptance_required(&self) -> &::std::option::Option<bool> {
+        self.inner.get_acceptance_required()
     }
     /// Appends an item to `AddNetworkLoadBalancerArns`.
     ///
@@ -167,6 +191,12 @@ impl ModifyVpcEndpointServiceConfigurationFluentBuilder {
         self.inner = self.inner.set_add_network_load_balancer_arns(input);
         self
     }
+    /// <p>The Amazon Resource Names (ARNs) of Network Load Balancers to add to your service configuration.</p>
+    pub fn get_add_network_load_balancer_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_add_network_load_balancer_arns()
+    }
     /// Appends an item to `RemoveNetworkLoadBalancerArns`.
     ///
     /// To override the contents of this collection use [`set_remove_network_load_balancer_arns`](Self::set_remove_network_load_balancer_arns).
@@ -186,6 +216,12 @@ impl ModifyVpcEndpointServiceConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_remove_network_load_balancer_arns(input);
         self
+    }
+    /// <p>The Amazon Resource Names (ARNs) of Network Load Balancers to remove from your service configuration.</p>
+    pub fn get_remove_network_load_balancer_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_remove_network_load_balancer_arns()
     }
     /// Appends an item to `AddGatewayLoadBalancerArns`.
     ///
@@ -207,6 +243,12 @@ impl ModifyVpcEndpointServiceConfigurationFluentBuilder {
         self.inner = self.inner.set_add_gateway_load_balancer_arns(input);
         self
     }
+    /// <p>The Amazon Resource Names (ARNs) of Gateway Load Balancers to add to your service configuration.</p>
+    pub fn get_add_gateway_load_balancer_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_add_gateway_load_balancer_arns()
+    }
     /// Appends an item to `RemoveGatewayLoadBalancerArns`.
     ///
     /// To override the contents of this collection use [`set_remove_gateway_load_balancer_arns`](Self::set_remove_gateway_load_balancer_arns).
@@ -226,6 +268,12 @@ impl ModifyVpcEndpointServiceConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_remove_gateway_load_balancer_arns(input);
         self
+    }
+    /// <p>The Amazon Resource Names (ARNs) of Gateway Load Balancers to remove from your service configuration.</p>
+    pub fn get_remove_gateway_load_balancer_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_remove_gateway_load_balancer_arns()
     }
     /// Appends an item to `AddSupportedIpAddressTypes`.
     ///
@@ -247,6 +295,12 @@ impl ModifyVpcEndpointServiceConfigurationFluentBuilder {
         self.inner = self.inner.set_add_supported_ip_address_types(input);
         self
     }
+    /// <p>The IP address types to add to your service configuration.</p>
+    pub fn get_add_supported_ip_address_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_add_supported_ip_address_types()
+    }
     /// Appends an item to `RemoveSupportedIpAddressTypes`.
     ///
     /// To override the contents of this collection use [`set_remove_supported_ip_address_types`](Self::set_remove_supported_ip_address_types).
@@ -266,5 +320,11 @@ impl ModifyVpcEndpointServiceConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_remove_supported_ip_address_types(input);
         self
+    }
+    /// <p>The IP address types to remove from your service configuration.</p>
+    pub fn get_remove_supported_ip_address_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_remove_supported_ip_address_types()
     }
 }

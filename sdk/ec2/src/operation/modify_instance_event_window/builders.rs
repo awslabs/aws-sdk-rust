@@ -40,6 +40,10 @@ impl ModifyInstanceEventWindowFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyInstanceEventWindow as a reference.
+    pub fn as_input(&self) -> &crate::operation::modify_instance_event_window::builders::ModifyInstanceEventWindowInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +134,10 @@ impl ModifyInstanceEventWindowFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>The name of the event window.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -139,6 +147,10 @@ impl ModifyInstanceEventWindowFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the event window.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The ID of the event window.</p>
     pub fn instance_event_window_id(
@@ -155,6 +167,10 @@ impl ModifyInstanceEventWindowFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_instance_event_window_id(input);
         self
+    }
+    /// <p>The ID of the event window.</p>
+    pub fn get_instance_event_window_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_event_window_id()
     }
     /// Appends an item to `TimeRanges`.
     ///
@@ -174,6 +190,13 @@ impl ModifyInstanceEventWindowFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_time_ranges(input);
         self
+    }
+    /// <p>The time ranges of the event window.</p>
+    pub fn get_time_ranges(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceEventWindowTimeRangeRequest>>
+    {
+        self.inner.get_time_ranges()
     }
     /// <p>The cron expression of the event window, for example, <code>* 0-4,20-23 * * 1,5</code>.</p>
     /// <p>Constraints:</p>
@@ -210,5 +233,19 @@ impl ModifyInstanceEventWindowFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_cron_expression(input);
         self
+    }
+    /// <p>The cron expression of the event window, for example, <code>* 0-4,20-23 * * 1,5</code>.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Only hour and day of the week values are supported.</p> </li>
+    /// <li> <p>For day of the week values, you can specify either integers <code>0</code> through <code>6</code>, or alternative single values <code>SUN</code> through <code>SAT</code>.</p> </li>
+    /// <li> <p>The minute, month, and year must be specified by <code>*</code>.</p> </li>
+    /// <li> <p>The hour value must be one or a multiple range, for example, <code>0-4</code> or <code>0-4,20-23</code>.</p> </li>
+    /// <li> <p>Each hour range must be &gt;= 2 hours, for example, <code>0-2</code> or <code>20-23</code>.</p> </li>
+    /// <li> <p>The event window must be &gt;= 4 hours. The combined total time ranges in the event window must be &gt;= 4 hours.</p> </li>
+    /// </ul>
+    /// <p>For more information about cron expressions, see <a href="https://en.wikipedia.org/wiki/Cron">cron</a> on the <i>Wikipedia website</i>.</p>
+    pub fn get_cron_expression(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cron_expression()
     }
 }

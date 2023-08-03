@@ -65,6 +65,10 @@ impl CreateResourceServerInputBuilder {
         self.user_pool_id = input;
         self
     }
+    /// <p>The user pool ID for the user pool.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_pool_id
+    }
     /// <p>A unique resource server identifier for the resource server. This could be an HTTPS endpoint where the resource server is located, such as <code>https://my-weather-api.example.com</code>.</p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
@@ -75,6 +79,10 @@ impl CreateResourceServerInputBuilder {
         self.identifier = input;
         self
     }
+    /// <p>A unique resource server identifier for the resource server. This could be an HTTPS endpoint where the resource server is located, such as <code>https://my-weather-api.example.com</code>.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
+    }
     /// <p>A friendly name for the resource server.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -84,6 +92,10 @@ impl CreateResourceServerInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A friendly name for the resource server.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `scopes`.
     ///
@@ -103,6 +115,12 @@ impl CreateResourceServerInputBuilder {
     ) -> Self {
         self.scopes = input;
         self
+    }
+    /// <p>A list of scopes. Each scope is a key-value map with the keys <code>name</code> and <code>description</code>.</p>
+    pub fn get_scopes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceServerScopeType>> {
+        &self.scopes
     }
     /// Consumes the builder and constructs a [`CreateResourceServerInput`](crate::operation::create_resource_server::CreateResourceServerInput).
     pub fn build(

@@ -95,6 +95,10 @@ impl LambdaTargetBuilder {
         self.deployment_id = input;
         self
     }
+    /// <p> The unique ID of a deployment. </p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_id
+    }
     /// <p> The unique ID of a deployment target that has a type of <code>lambdaTarget</code>. </p>
     pub fn target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_id = ::std::option::Option::Some(input.into());
@@ -104,6 +108,10 @@ impl LambdaTargetBuilder {
     pub fn set_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_id = input;
         self
+    }
+    /// <p> The unique ID of a deployment target that has a type of <code>lambdaTarget</code>. </p>
+    pub fn get_target_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_id
     }
     /// <p> The Amazon Resource Name (ARN) of the target. </p>
     pub fn target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -115,6 +123,10 @@ impl LambdaTargetBuilder {
         self.target_arn = input;
         self
     }
+    /// <p> The Amazon Resource Name (ARN) of the target. </p>
+    pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_arn
+    }
     /// <p> The status an Lambda deployment's target Lambda function. </p>
     pub fn status(mut self, input: crate::types::TargetStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -124,6 +136,10 @@ impl LambdaTargetBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TargetStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p> The status an Lambda deployment's target Lambda function. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TargetStatus> {
+        &self.status
     }
     /// <p> The date and time when the target Lambda function was updated by a deployment. </p>
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -137,6 +153,10 @@ impl LambdaTargetBuilder {
     ) -> Self {
         self.last_updated_at = input;
         self
+    }
+    /// <p> The date and time when the target Lambda function was updated by a deployment. </p>
+    pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_at
     }
     /// Appends an item to `lifecycle_events`.
     ///
@@ -157,6 +177,12 @@ impl LambdaTargetBuilder {
         self.lifecycle_events = input;
         self
     }
+    /// <p> The lifecycle events of the deployment to this target Lambda function. </p>
+    pub fn get_lifecycle_events(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecycleEvent>> {
+        &self.lifecycle_events
+    }
     /// <p> A <code>LambdaFunctionInfo</code> object that describes a target Lambda function. </p>
     pub fn lambda_function_info(mut self, input: crate::types::LambdaFunctionInfo) -> Self {
         self.lambda_function_info = ::std::option::Option::Some(input);
@@ -169,6 +195,12 @@ impl LambdaTargetBuilder {
     ) -> Self {
         self.lambda_function_info = input;
         self
+    }
+    /// <p> A <code>LambdaFunctionInfo</code> object that describes a target Lambda function. </p>
+    pub fn get_lambda_function_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::LambdaFunctionInfo> {
+        &self.lambda_function_info
     }
     /// Consumes the builder and constructs a [`LambdaTarget`](crate::types::LambdaTarget).
     pub fn build(self) -> crate::types::LambdaTarget {

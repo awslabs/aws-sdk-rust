@@ -40,6 +40,10 @@ impl DeleteApiCacheInputBuilder {
         self.api_id = input;
         self
     }
+    /// <p>The API ID.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_id
+    }
     /// Consumes the builder and constructs a [`DeleteApiCacheInput`](crate::operation::delete_api_cache::DeleteApiCacheInput).
     pub fn build(
         self,

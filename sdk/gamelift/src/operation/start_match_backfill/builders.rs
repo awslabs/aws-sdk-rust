@@ -44,6 +44,12 @@ impl StartMatchBackfillFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartMatchBackfill as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_match_backfill::builders::StartMatchBackfillInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +140,10 @@ impl StartMatchBackfillFluentBuilder {
         self.inner = self.inner.set_ticket_id(input);
         self
     }
+    /// <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of a UUID. Use this identifier to track the match backfill ticket status and retrieve match results.</p>
+    pub fn get_ticket_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ticket_id()
+    }
     /// <p>Name of the matchmaker to use for this request. You can use either the configuration name or ARN value. The ARN of the matchmaker that was used with the original game session is listed in the <code>GameSession</code> object, <code>MatchmakerData</code> property.</p>
     pub fn configuration_name(
         mut self,
@@ -150,6 +160,10 @@ impl StartMatchBackfillFluentBuilder {
         self.inner = self.inner.set_configuration_name(input);
         self
     }
+    /// <p>Name of the matchmaker to use for this request. You can use either the configuration name or ARN value. The ARN of the matchmaker that was used with the original game session is listed in the <code>GameSession</code> object, <code>MatchmakerData</code> property.</p>
+    pub fn get_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration_name()
+    }
     /// <p>A unique identifier for the game session. Use the game session ID. When using FlexMatch as a standalone matchmaking solution, this parameter is not needed. </p>
     pub fn game_session_arn(
         mut self,
@@ -165,6 +179,10 @@ impl StartMatchBackfillFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_game_session_arn(input);
         self
+    }
+    /// <p>A unique identifier for the game session. Use the game session ID. When using FlexMatch as a standalone matchmaking solution, this parameter is not needed. </p>
+    pub fn get_game_session_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_game_session_arn()
     }
     /// Appends an item to `Players`.
     ///
@@ -192,5 +210,14 @@ impl StartMatchBackfillFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_players(input);
         self
+    }
+    /// <p>Match information on all players that are currently assigned to the game session. This information is used by the matchmaker to find new players and add them to the existing game.</p>
+    /// <p>You can include up to 199 <code>Players</code> in a <code>StartMatchBackfill</code> request.</p>
+    /// <ul>
+    /// <li> <p>PlayerID, PlayerAttributes, Team -- This information is maintained in the <code>GameSession</code> object, <code>MatchmakerData</code> property, for all players who are currently assigned to the game session. The matchmaker data is in JSON syntax, formatted as a string. For more details, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data"> Match Data</a>. </p> <p>The backfill request must specify the team membership for every player. Do not specify team if you are not using backfill.</p> </li>
+    /// <li> <p>LatencyInMs -- If the matchmaker uses player latency, include a latency value, in milliseconds, for the Region that the game session is currently in. Do not include latency values for any other Region.</p> </li>
+    /// </ul>
+    pub fn get_players(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Player>> {
+        self.inner.get_players()
     }
 }

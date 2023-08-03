@@ -41,6 +41,12 @@ impl ListApplicationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListApplications as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_applications::builders::ListApplicationsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +137,10 @@ impl ListApplicationsFluentBuilder {
         self.inner = self.inner.set_limit(input);
         self
     }
+    /// <p>Maximum number of applications to list.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
+    }
     /// <p>Name of the application to start the list with. When using pagination to retrieve the list, you don't need to specify this parameter in the first request. However, in subsequent requests, you add the last application name from the previous response to get the next page of applications.</p>
     pub fn exclusive_start_application_name(
         mut self,
@@ -146,5 +156,11 @@ impl ListApplicationsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_exclusive_start_application_name(input);
         self
+    }
+    /// <p>Name of the application to start the list with. When using pagination to retrieve the list, you don't need to specify this parameter in the first request. However, in subsequent requests, you add the last application name from the previous response to get the next page of applications.</p>
+    pub fn get_exclusive_start_application_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_exclusive_start_application_name()
     }
 }

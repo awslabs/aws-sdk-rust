@@ -48,6 +48,10 @@ impl ContributorBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the contributor. The type of name that you'll find here depends on the <code>AttackPropertyIdentifier</code> setting in the <code>AttackProperty</code> where this contributor is defined. For example, if the <code>AttackPropertyIdentifier</code> is <code>SOURCE_COUNTRY</code>, the <code>Name</code> could be <code>United States</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The contribution of this contributor expressed in <code>Protection</code> units. For example <code>10,000</code>.</p>
     pub fn value(mut self, input: i64) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ContributorBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<i64>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The contribution of this contributor expressed in <code>Protection</code> units. For example <code>10,000</code>.</p>
+    pub fn get_value(&self) -> &::std::option::Option<i64> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`Contributor`](crate::types::Contributor).
     pub fn build(self) -> crate::types::Contributor {

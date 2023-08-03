@@ -36,6 +36,12 @@ impl StopApplicationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StopApplication as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::stop_application::builders::StopApplicationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl StopApplicationFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The unique identifier of the application you want to stop.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>Stopping an application process can take a long time. Setting this parameter to true lets you force stop the application so you don't need to wait until the process finishes to apply another action on the application. The default value is false.</p>
     pub fn force_stop(mut self, input: bool) -> Self {
         self.inner = self.inner.force_stop(input);
@@ -141,5 +151,9 @@ impl StopApplicationFluentBuilder {
     pub fn set_force_stop(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force_stop(input);
         self
+    }
+    /// <p>Stopping an application process can take a long time. Setting this parameter to true lets you force stop the application so you don't need to wait until the process finishes to apply another action on the application. The default value is false.</p>
+    pub fn get_force_stop(&self) -> &::std::option::Option<bool> {
+        self.inner.get_force_stop()
     }
 }

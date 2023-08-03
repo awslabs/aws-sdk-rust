@@ -56,6 +56,10 @@ impl VpcEndpointErrorDetailBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier of the VPC endpoint.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>An error message describing the reason for the failure.</p>
     pub fn error_message(
         mut self,
@@ -72,6 +76,10 @@ impl VpcEndpointErrorDetailBuilder {
         self.error_message = input;
         self
     }
+    /// <p>An error message describing the reason for the failure.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
+    }
     /// <p>The error code for the failed request.</p>
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl VpcEndpointErrorDetailBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>The error code for the failed request.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
     }
     /// Consumes the builder and constructs a [`VpcEndpointErrorDetail`](crate::types::VpcEndpointErrorDetail).
     pub fn build(self) -> crate::types::VpcEndpointErrorDetail {

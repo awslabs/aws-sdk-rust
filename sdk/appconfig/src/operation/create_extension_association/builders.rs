@@ -36,6 +36,10 @@ impl CreateExtensionAssociationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateExtensionAssociation as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_extension_association::builders::CreateExtensionAssociationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl CreateExtensionAssociationFluentBuilder {
         self.inner = self.inner.set_extension_identifier(input);
         self
     }
+    /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
+    pub fn get_extension_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_extension_identifier()
+    }
     /// <p>The version number of the extension. If not specified, AppConfig uses the maximum version of the extension.</p>
     pub fn extension_version_number(mut self, input: i32) -> Self {
         self.inner = self.inner.extension_version_number(input);
@@ -141,6 +149,10 @@ impl CreateExtensionAssociationFluentBuilder {
     pub fn set_extension_version_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_extension_version_number(input);
         self
+    }
+    /// <p>The version number of the extension. If not specified, AppConfig uses the maximum version of the extension.</p>
+    pub fn get_extension_version_number(&self) -> &::std::option::Option<i32> {
+        self.inner.get_extension_version_number()
     }
     /// <p>The ARN of an application, configuration profile, or environment.</p>
     pub fn resource_identifier(
@@ -157,6 +169,10 @@ impl CreateExtensionAssociationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_identifier(input);
         self
+    }
+    /// <p>The ARN of an application, configuration profile, or environment.</p>
+    pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_identifier()
     }
     /// Adds a key-value pair to `Parameters`.
     ///
@@ -181,6 +197,14 @@ impl CreateExtensionAssociationFluentBuilder {
         self.inner = self.inner.set_parameters(input);
         self
     }
+    /// <p>The parameter names and values defined in the extensions. Extension parameters marked <code>Required</code> must be entered for this field.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_parameters()
+    }
     /// Adds a key-value pair to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -203,5 +227,13 @@ impl CreateExtensionAssociationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Adds one or more tags for the specified extension association. Tags are metadata that help you categorize resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you define. </p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

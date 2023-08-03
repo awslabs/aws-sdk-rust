@@ -77,6 +77,17 @@ impl BucketPublicAccessBuilder {
         self.effective_permission = input;
         self
     }
+    /// <p>Specifies whether the bucket is publicly accessible due to the combination of permissions settings that apply to the bucket. Possible values are:</p>
+    /// <ul>
+    /// <li><p>NOT_PUBLIC - The bucket isn't publicly accessible.</p></li>
+    /// <li><p>PUBLIC - The bucket is publicly accessible.</p></li>
+    /// <li><p>UNKNOWN - Amazon Macie can't determine whether the bucket is publicly accessible.</p></li>
+    /// </ul>
+    pub fn get_effective_permission(
+        &self,
+    ) -> &::std::option::Option<crate::types::EffectivePermission> {
+        &self.effective_permission
+    }
     /// <p>The account-level and bucket-level permissions settings for the bucket.</p>
     pub fn permission_configuration(
         mut self,
@@ -92,6 +103,12 @@ impl BucketPublicAccessBuilder {
     ) -> Self {
         self.permission_configuration = input;
         self
+    }
+    /// <p>The account-level and bucket-level permissions settings for the bucket.</p>
+    pub fn get_permission_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::BucketPermissionConfiguration> {
+        &self.permission_configuration
     }
     /// Consumes the builder and constructs a [`BucketPublicAccess`](crate::types::BucketPublicAccess).
     pub fn build(self) -> crate::types::BucketPublicAccess {

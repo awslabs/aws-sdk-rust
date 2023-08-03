@@ -135,6 +135,10 @@ impl CreateWorkflowInputBuilder {
         self.name = input;
         self
     }
+    /// <p>A name for the workflow.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A description for the workflow.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -144,6 +148,10 @@ impl CreateWorkflowInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description for the workflow.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>An engine for the workflow.</p>
     pub fn engine(mut self, input: crate::types::WorkflowEngine) -> Self {
@@ -158,6 +166,10 @@ impl CreateWorkflowInputBuilder {
         self.engine = input;
         self
     }
+    /// <p>An engine for the workflow.</p>
+    pub fn get_engine(&self) -> &::std::option::Option<crate::types::WorkflowEngine> {
+        &self.engine
+    }
     /// <p>A ZIP archive for the workflow.</p>
     pub fn definition_zip(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.definition_zip = ::std::option::Option::Some(input);
@@ -170,6 +182,10 @@ impl CreateWorkflowInputBuilder {
     ) -> Self {
         self.definition_zip = input;
         self
+    }
+    /// <p>A ZIP archive for the workflow.</p>
+    pub fn get_definition_zip(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.definition_zip
     }
     /// <p>The URI of a definition for the workflow.</p>
     pub fn definition_uri(
@@ -187,6 +203,10 @@ impl CreateWorkflowInputBuilder {
         self.definition_uri = input;
         self
     }
+    /// <p>The URI of a definition for the workflow.</p>
+    pub fn get_definition_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.definition_uri
+    }
     /// <p>The path of the main definition file for the workflow.</p>
     pub fn main(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.main = ::std::option::Option::Some(input.into());
@@ -196,6 +216,10 @@ impl CreateWorkflowInputBuilder {
     pub fn set_main(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.main = input;
         self
+    }
+    /// <p>The path of the main definition file for the workflow.</p>
+    pub fn get_main(&self) -> &::std::option::Option<::std::string::String> {
+        &self.main
     }
     /// Adds a key-value pair to `parameter_template`.
     ///
@@ -222,6 +246,14 @@ impl CreateWorkflowInputBuilder {
         self.parameter_template = input;
         self
     }
+    /// <p>A parameter template for the workflow.</p>
+    pub fn get_parameter_template(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::WorkflowParameter>,
+    > {
+        &self.parameter_template
+    }
     /// <p>A storage capacity for the workflow in gigabytes.</p>
     pub fn storage_capacity(mut self, input: i32) -> Self {
         self.storage_capacity = ::std::option::Option::Some(input);
@@ -231,6 +263,10 @@ impl CreateWorkflowInputBuilder {
     pub fn set_storage_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.storage_capacity = input;
         self
+    }
+    /// <p>A storage capacity for the workflow in gigabytes.</p>
+    pub fn get_storage_capacity(&self) -> &::std::option::Option<i32> {
+        &self.storage_capacity
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -257,6 +293,14 @@ impl CreateWorkflowInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Tags for the workflow.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_id = ::std::option::Option::Some(input.into());
@@ -266,6 +310,10 @@ impl CreateWorkflowInputBuilder {
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_id = input;
         self
+    }
+    /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
     }
     /// <p> The computational accelerator specified to run the workflow. </p>
     pub fn accelerators(mut self, input: crate::types::Accelerators) -> Self {
@@ -279,6 +327,10 @@ impl CreateWorkflowInputBuilder {
     ) -> Self {
         self.accelerators = input;
         self
+    }
+    /// <p> The computational accelerator specified to run the workflow. </p>
+    pub fn get_accelerators(&self) -> &::std::option::Option<crate::types::Accelerators> {
+        &self.accelerators
     }
     /// Consumes the builder and constructs a [`CreateWorkflowInput`](crate::operation::create_workflow::CreateWorkflowInput).
     pub fn build(

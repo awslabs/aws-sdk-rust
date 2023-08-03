@@ -36,6 +36,13 @@ impl DisassociateMacSecKeyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociateMacSecKey as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::disassociate_mac_sec_key::builders::DisassociateMacSecKeyInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +141,11 @@ impl DisassociateMacSecKeyFluentBuilder {
         self.inner = self.inner.set_connection_id(input);
         self
     }
+    /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
+    /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve connection ID.</p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connection_id()
+    }
     /// <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key.</p>
     /// <p>You can use <code>DescribeConnections</code> to retrieve the ARN of the MAC Security (MACsec) secret key.</p>
     pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -145,5 +157,10 @@ impl DisassociateMacSecKeyFluentBuilder {
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_secret_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key.</p>
+    /// <p>You can use <code>DescribeConnections</code> to retrieve the ARN of the MAC Security (MACsec) secret key.</p>
+    pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_secret_arn()
     }
 }

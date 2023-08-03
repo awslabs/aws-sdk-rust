@@ -55,6 +55,10 @@ impl AssociateWebsiteCertificateAuthorityInputBuilder {
         self.fleet_arn = input;
         self
     }
+    /// <p>The ARN of the fleet.</p>
+    pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_arn
+    }
     /// <p>The root certificate of the CA.</p>
     pub fn certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl AssociateWebsiteCertificateAuthorityInputBuilder {
         self.certificate = input;
         self
     }
+    /// <p>The root certificate of the CA.</p>
+    pub fn get_certificate(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate
+    }
     /// <p>The certificate name to display.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -74,6 +82,10 @@ impl AssociateWebsiteCertificateAuthorityInputBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
+    }
+    /// <p>The certificate name to display.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// Consumes the builder and constructs a [`AssociateWebsiteCertificateAuthorityInput`](crate::operation::associate_website_certificate_authority::AssociateWebsiteCertificateAuthorityInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::associate_website_certificate_authority::AssociateWebsiteCertificateAuthorityInput, ::aws_smithy_http::operation::error::BuildError>{

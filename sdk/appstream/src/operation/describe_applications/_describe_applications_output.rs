@@ -64,6 +64,12 @@ impl DescribeApplicationsOutputBuilder {
         self.applications = input;
         self
     }
+    /// <p>The applications in the list.</p>
+    pub fn get_applications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Application>> {
+        &self.applications
+    }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -73,6 +79,10 @@ impl DescribeApplicationsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

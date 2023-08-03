@@ -40,6 +40,10 @@ impl SampleUtteranceBuilder {
         self.utterance = input;
         self
     }
+    /// <p>The sample utterance that Amazon Lex uses to build its machine-learning model to recognize intents.</p>
+    pub fn get_utterance(&self) -> &::std::option::Option<::std::string::String> {
+        &self.utterance
+    }
     /// Consumes the builder and constructs a [`SampleUtterance`](crate::types::SampleUtterance).
     pub fn build(self) -> crate::types::SampleUtterance {
         crate::types::SampleUtterance {

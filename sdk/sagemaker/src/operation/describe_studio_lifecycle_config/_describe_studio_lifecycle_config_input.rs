@@ -45,6 +45,12 @@ impl DescribeStudioLifecycleConfigInputBuilder {
         self.studio_lifecycle_config_name = input;
         self
     }
+    /// <p>The name of the Studio Lifecycle Configuration to describe.</p>
+    pub fn get_studio_lifecycle_config_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.studio_lifecycle_config_name
+    }
     /// Consumes the builder and constructs a [`DescribeStudioLifecycleConfigInput`](crate::operation::describe_studio_lifecycle_config::DescribeStudioLifecycleConfigInput).
     pub fn build(
         self,

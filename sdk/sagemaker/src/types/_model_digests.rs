@@ -46,6 +46,10 @@ impl ModelDigestsBuilder {
         self.artifact_digest = input;
         self
     }
+    /// <p>Provides a hash value that uniquely identifies the stored model artifacts.</p>
+    pub fn get_artifact_digest(&self) -> &::std::option::Option<::std::string::String> {
+        &self.artifact_digest
+    }
     /// Consumes the builder and constructs a [`ModelDigests`](crate::types::ModelDigests).
     pub fn build(self) -> crate::types::ModelDigests {
         crate::types::ModelDigests {

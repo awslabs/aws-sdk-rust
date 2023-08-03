@@ -64,6 +64,10 @@ impl TrustedAdvisorResourcesSummaryBuilder {
         self.resources_processed = input;
         self
     }
+    /// <p>The number of Amazon Web Services resources that were analyzed by the Trusted Advisor check.</p>
+    pub fn get_resources_processed(&self) -> &::std::option::Option<i64> {
+        &self.resources_processed
+    }
     /// <p>The number of Amazon Web Services resources that were flagged (listed) by the Trusted Advisor check.</p>
     pub fn resources_flagged(mut self, input: i64) -> Self {
         self.resources_flagged = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl TrustedAdvisorResourcesSummaryBuilder {
     pub fn set_resources_flagged(mut self, input: ::std::option::Option<i64>) -> Self {
         self.resources_flagged = input;
         self
+    }
+    /// <p>The number of Amazon Web Services resources that were flagged (listed) by the Trusted Advisor check.</p>
+    pub fn get_resources_flagged(&self) -> &::std::option::Option<i64> {
+        &self.resources_flagged
     }
     /// <p>The number of Amazon Web Services resources ignored by Trusted Advisor because information was unavailable.</p>
     pub fn resources_ignored(mut self, input: i64) -> Self {
@@ -84,6 +92,10 @@ impl TrustedAdvisorResourcesSummaryBuilder {
         self.resources_ignored = input;
         self
     }
+    /// <p>The number of Amazon Web Services resources ignored by Trusted Advisor because information was unavailable.</p>
+    pub fn get_resources_ignored(&self) -> &::std::option::Option<i64> {
+        &self.resources_ignored
+    }
     /// <p>The number of Amazon Web Services resources ignored by Trusted Advisor because they were marked as suppressed by the user.</p>
     pub fn resources_suppressed(mut self, input: i64) -> Self {
         self.resources_suppressed = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl TrustedAdvisorResourcesSummaryBuilder {
     pub fn set_resources_suppressed(mut self, input: ::std::option::Option<i64>) -> Self {
         self.resources_suppressed = input;
         self
+    }
+    /// <p>The number of Amazon Web Services resources ignored by Trusted Advisor because they were marked as suppressed by the user.</p>
+    pub fn get_resources_suppressed(&self) -> &::std::option::Option<i64> {
+        &self.resources_suppressed
     }
     /// Consumes the builder and constructs a [`TrustedAdvisorResourcesSummary`](crate::types::TrustedAdvisorResourcesSummary).
     pub fn build(self) -> crate::types::TrustedAdvisorResourcesSummary {

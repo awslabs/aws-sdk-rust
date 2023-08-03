@@ -65,6 +65,10 @@ impl DescribeSnapshotsInputBuilder {
         self.directory_id = input;
         self
     }
+    /// <p>The identifier of the directory for which to retrieve snapshot information.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
+    }
     /// Appends an item to `snapshot_ids`.
     ///
     /// To override the contents of this collection use [`set_snapshot_ids`](Self::set_snapshot_ids).
@@ -84,6 +88,12 @@ impl DescribeSnapshotsInputBuilder {
         self.snapshot_ids = input;
         self
     }
+    /// <p>A list of identifiers of the snapshots to obtain the information for. If this member is null or empty, all snapshots are returned using the <i>Limit</i> and <i>NextToken</i> members.</p>
+    pub fn get_snapshot_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.snapshot_ids
+    }
     /// <p>The <i>DescribeSnapshotsResult.NextToken</i> value from a previous call to <code>DescribeSnapshots</code>. Pass null if this is the first call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -94,6 +104,10 @@ impl DescribeSnapshotsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The <i>DescribeSnapshotsResult.NextToken</i> value from a previous call to <code>DescribeSnapshots</code>. Pass null if this is the first call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of objects to return.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -103,6 +117,10 @@ impl DescribeSnapshotsInputBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
+    }
+    /// <p>The maximum number of objects to return.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// Consumes the builder and constructs a [`DescribeSnapshotsInput`](crate::operation::describe_snapshots::DescribeSnapshotsInput).
     pub fn build(

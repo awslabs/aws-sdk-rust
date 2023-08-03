@@ -38,6 +38,10 @@ impl GetConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetConfig as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_config::builders::GetConfigInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -120,6 +124,10 @@ impl GetConfigFluentBuilder {
         self.inner = self.inner.set_client_arn(input);
         self
     }
+    /// <p>The ARN of the client.</p>
+    pub fn get_client_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_arn()
+    }
     /// <p>The client version.</p>
     pub fn client_version(mut self, input: crate::types::ClientVersion) -> Self {
         self.inner = self.inner.client_version(input);
@@ -132,6 +140,10 @@ impl GetConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_version(input);
         self
+    }
+    /// <p>The client version.</p>
+    pub fn get_client_version(&self) -> &::std::option::Option<crate::types::ClientVersion> {
+        self.inner.get_client_version()
     }
     /// Appends an item to `HapgList`.
     ///
@@ -149,5 +161,9 @@ impl GetConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_hapg_list(input);
         self
+    }
+    /// <p>A list of ARNs that identify the high-availability partition groups that are associated with the client.</p>
+    pub fn get_hapg_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_hapg_list()
     }
 }

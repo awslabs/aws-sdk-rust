@@ -44,6 +44,11 @@ impl IoTJobTimeoutConfigBuilder {
         self.in_progress_timeout_in_minutes = input;
         self
     }
+    /// <p>The amount of time, in minutes, that devices have to complete the job. The timer starts when the job status is set to <code>IN_PROGRESS</code>. If the job status doesn't change to a terminal state before the time expires, then the job status is set to <code>TIMED_OUT</code>.</p>
+    /// <p>The timeout interval must be between 1 minute and 7 days (10080 minutes).</p>
+    pub fn get_in_progress_timeout_in_minutes(&self) -> &::std::option::Option<i64> {
+        &self.in_progress_timeout_in_minutes
+    }
     /// Consumes the builder and constructs a [`IoTJobTimeoutConfig`](crate::types::IoTJobTimeoutConfig).
     pub fn build(self) -> crate::types::IoTJobTimeoutConfig {
         crate::types::IoTJobTimeoutConfig {

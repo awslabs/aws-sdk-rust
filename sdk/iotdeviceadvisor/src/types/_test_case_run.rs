@@ -139,6 +139,10 @@ impl TestCaseRunBuilder {
         self.test_case_run_id = input;
         self
     }
+    /// <p>Provides the test case run ID.</p>
+    pub fn get_test_case_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.test_case_run_id
+    }
     /// <p>Provides the test case run definition ID.</p>
     pub fn test_case_definition_id(
         mut self,
@@ -155,6 +159,10 @@ impl TestCaseRunBuilder {
         self.test_case_definition_id = input;
         self
     }
+    /// <p>Provides the test case run definition ID.</p>
+    pub fn get_test_case_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.test_case_definition_id
+    }
     /// <p>Provides the test case run definition name.</p>
     pub fn test_case_definition_name(
         mut self,
@@ -170,6 +178,10 @@ impl TestCaseRunBuilder {
     ) -> Self {
         self.test_case_definition_name = input;
         self
+    }
+    /// <p>Provides the test case run definition name.</p>
+    pub fn get_test_case_definition_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.test_case_definition_name
     }
     /// <p>Provides the test case run status. Status is one of the following:</p>
     /// <ul>
@@ -201,6 +213,20 @@ impl TestCaseRunBuilder {
         self.status = input;
         self
     }
+    /// <p>Provides the test case run status. Status is one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>PASS</code>: Test passed.</p> </li>
+    /// <li> <p> <code>FAIL</code>: Test failed.</p> </li>
+    /// <li> <p> <code>PENDING</code>: Test has not started running but is scheduled.</p> </li>
+    /// <li> <p> <code>RUNNING</code>: Test is running.</p> </li>
+    /// <li> <p> <code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p> </li>
+    /// <li> <p> <code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p> </li>
+    /// <li> <p> <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p> </li>
+    /// <li> <p> <code>ERORR</code>: Test faced an error when running due to an internal issue.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.status
+    }
     /// <p>Provides test case run start time.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -213,6 +239,10 @@ impl TestCaseRunBuilder {
     ) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>Provides test case run start time.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p>Provides test case run end time.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -227,6 +257,10 @@ impl TestCaseRunBuilder {
         self.end_time = input;
         self
     }
+    /// <p>Provides test case run end time.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>Provides test case run log URL.</p>
     pub fn log_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_url = ::std::option::Option::Some(input.into());
@@ -236,6 +270,10 @@ impl TestCaseRunBuilder {
     pub fn set_log_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_url = input;
         self
+    }
+    /// <p>Provides test case run log URL.</p>
+    pub fn get_log_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_url
     }
     /// <p>Provides test case run warnings.</p>
     pub fn warnings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -247,6 +285,10 @@ impl TestCaseRunBuilder {
         self.warnings = input;
         self
     }
+    /// <p>Provides test case run warnings.</p>
+    pub fn get_warnings(&self) -> &::std::option::Option<::std::string::String> {
+        &self.warnings
+    }
     /// <p>Provides test case run failure result.</p>
     pub fn failure(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure = ::std::option::Option::Some(input.into());
@@ -256,6 +298,10 @@ impl TestCaseRunBuilder {
     pub fn set_failure(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure = input;
         self
+    }
+    /// <p>Provides test case run failure result.</p>
+    pub fn get_failure(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure
     }
     /// Appends an item to `test_scenarios`.
     ///
@@ -275,6 +321,12 @@ impl TestCaseRunBuilder {
     ) -> Self {
         self.test_scenarios = input;
         self
+    }
+    /// <p> Provides the test scenarios for the test case run. </p>
+    pub fn get_test_scenarios(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TestCaseScenario>> {
+        &self.test_scenarios
     }
     /// Consumes the builder and constructs a [`TestCaseRun`](crate::types::TestCaseRun).
     pub fn build(self) -> crate::types::TestCaseRun {

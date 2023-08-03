@@ -218,6 +218,10 @@ impl UploadBuilder {
         self.arn = input;
         self
     }
+    /// <p>The upload's ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The upload's file name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -227,6 +231,10 @@ impl UploadBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The upload's file name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>When the upload was created.</p>
     pub fn created(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -240,6 +248,10 @@ impl UploadBuilder {
     ) -> Self {
         self.created = input;
         self
+    }
+    /// <p>When the upload was created.</p>
+    pub fn get_created(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created
     }
     /// <p>The upload's type.</p>
     /// <p>Must be one of the following values:</p>
@@ -321,6 +333,45 @@ impl UploadBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The upload's type.</p>
+    /// <p>Must be one of the following values:</p>
+    /// <ul>
+    /// <li> <p>ANDROID_APP</p> </li>
+    /// <li> <p>IOS_APP</p> </li>
+    /// <li> <p>WEB_APP</p> </li>
+    /// <li> <p>EXTERNAL_DATA</p> </li>
+    /// <li> <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_PYTHON_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_NODE_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_RUBY_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_WEB_NODE_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p> </li>
+    /// <li> <p>CALABASH_TEST_PACKAGE</p> </li>
+    /// <li> <p>INSTRUMENTATION_TEST_PACKAGE</p> </li>
+    /// <li> <p>UIAUTOMATION_TEST_PACKAGE</p> </li>
+    /// <li> <p>UIAUTOMATOR_TEST_PACKAGE</p> </li>
+    /// <li> <p>XCTEST_TEST_PACKAGE</p> </li>
+    /// <li> <p>XCTEST_UI_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_PYTHON_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_NODE_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_RUBY_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_WEB_PYTHON_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_WEB_NODE_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_WEB_RUBY_TEST_SPEC</p> </li>
+    /// <li> <p>INSTRUMENTATION_TEST_SPEC</p> </li>
+    /// <li> <p>XCTEST_UI_TEST_SPEC</p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::UploadType> {
+        &self.r#type
+    }
     /// <p>The upload's status.</p>
     /// <p>Must be one of the following values:</p>
     /// <ul>
@@ -345,6 +396,17 @@ impl UploadBuilder {
         self.status = input;
         self
     }
+    /// <p>The upload's status.</p>
+    /// <p>Must be one of the following values:</p>
+    /// <ul>
+    /// <li> <p>FAILED</p> </li>
+    /// <li> <p>INITIALIZED</p> </li>
+    /// <li> <p>PROCESSING</p> </li>
+    /// <li> <p>SUCCEEDED</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::UploadStatus> {
+        &self.status
+    }
     /// <p>The presigned Amazon S3 URL that was used to store a file using a PUT request.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
@@ -354,6 +416,10 @@ impl UploadBuilder {
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
+    }
+    /// <p>The presigned Amazon S3 URL that was used to store a file using a PUT request.</p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
     }
     /// <p>The upload's metadata. For example, for Android, this contains information that is parsed from the manifest and is displayed in the AWS Device Farm console after the associated app is uploaded.</p>
     pub fn metadata(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -365,6 +431,10 @@ impl UploadBuilder {
         self.metadata = input;
         self
     }
+    /// <p>The upload's metadata. For example, for Android, this contains information that is parsed from the manifest and is displayed in the AWS Device Farm console after the associated app is uploaded.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metadata
+    }
     /// <p>The upload's content type (for example, <code>application/octet-stream</code>).</p>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
@@ -375,6 +445,10 @@ impl UploadBuilder {
         self.content_type = input;
         self
     }
+    /// <p>The upload's content type (for example, <code>application/octet-stream</code>).</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_type
+    }
     /// <p>A message about the upload's result.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -384,6 +458,10 @@ impl UploadBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>A message about the upload's result.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// <p>The upload's category. Allowed values include:</p>
     /// <ul>
@@ -405,6 +483,14 @@ impl UploadBuilder {
     ) -> Self {
         self.category = input;
         self
+    }
+    /// <p>The upload's category. Allowed values include:</p>
+    /// <ul>
+    /// <li> <p>CURATED: An upload managed by AWS Device Farm.</p> </li>
+    /// <li> <p>PRIVATE: An upload managed by the AWS Device Farm customer.</p> </li>
+    /// </ul>
+    pub fn get_category(&self) -> &::std::option::Option<crate::types::UploadCategory> {
+        &self.category
     }
     /// Consumes the builder and constructs a [`Upload`](crate::types::Upload).
     pub fn build(self) -> crate::types::Upload {

@@ -65,6 +65,10 @@ impl ContactListDestinationBuilder {
         self.contact_list_name = input;
         self
     }
+    /// <p>The name of the contact list.</p>
+    pub fn get_contact_list_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_list_name
+    }
     /// <p>&gt;The type of action to perform on the addresses. The following are the possible values:</p>
     /// <ul>
     /// <li> <p>PUT: add the addresses to the contact list. If the record already exists, it will override it with the new value.</p> </li>
@@ -88,6 +92,16 @@ impl ContactListDestinationBuilder {
     ) -> Self {
         self.contact_list_import_action = input;
         self
+    }
+    /// <p>&gt;The type of action to perform on the addresses. The following are the possible values:</p>
+    /// <ul>
+    /// <li> <p>PUT: add the addresses to the contact list. If the record already exists, it will override it with the new value.</p> </li>
+    /// <li> <p>DELETE: remove the addresses from the contact list.</p> </li>
+    /// </ul>
+    pub fn get_contact_list_import_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContactListImportAction> {
+        &self.contact_list_import_action
     }
     /// Consumes the builder and constructs a [`ContactListDestination`](crate::types::ContactListDestination).
     pub fn build(self) -> crate::types::ContactListDestination {

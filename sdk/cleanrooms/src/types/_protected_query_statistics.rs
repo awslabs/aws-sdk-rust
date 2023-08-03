@@ -40,6 +40,10 @@ impl ProtectedQueryStatisticsBuilder {
         self.total_duration_in_millis = input;
         self
     }
+    /// <p>The duration of the Protected Query, from creation until query completion.</p>
+    pub fn get_total_duration_in_millis(&self) -> &::std::option::Option<i64> {
+        &self.total_duration_in_millis
+    }
     /// Consumes the builder and constructs a [`ProtectedQueryStatistics`](crate::types::ProtectedQueryStatistics).
     pub fn build(self) -> crate::types::ProtectedQueryStatistics {
         crate::types::ProtectedQueryStatistics {

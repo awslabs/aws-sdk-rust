@@ -64,6 +64,10 @@ impl UpdateWirelessGatewayTaskCreateBuilder {
         self.update_data_source = input;
         self
     }
+    /// <p>The link to the S3 bucket.</p>
+    pub fn get_update_data_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.update_data_source
+    }
     /// <p>The IAM role used to read data from the S3 bucket.</p>
     pub fn update_data_role(
         mut self,
@@ -80,6 +84,10 @@ impl UpdateWirelessGatewayTaskCreateBuilder {
         self.update_data_role = input;
         self
     }
+    /// <p>The IAM role used to read data from the S3 bucket.</p>
+    pub fn get_update_data_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.update_data_role
+    }
     /// <p>The properties that relate to the LoRaWAN wireless gateway.</p>
     pub fn lo_ra_wan(mut self, input: crate::types::LoRaWanUpdateGatewayTaskCreate) -> Self {
         self.lo_ra_wan = ::std::option::Option::Some(input);
@@ -92,6 +100,12 @@ impl UpdateWirelessGatewayTaskCreateBuilder {
     ) -> Self {
         self.lo_ra_wan = input;
         self
+    }
+    /// <p>The properties that relate to the LoRaWAN wireless gateway.</p>
+    pub fn get_lo_ra_wan(
+        &self,
+    ) -> &::std::option::Option<crate::types::LoRaWanUpdateGatewayTaskCreate> {
+        &self.lo_ra_wan
     }
     /// Consumes the builder and constructs a [`UpdateWirelessGatewayTaskCreate`](crate::types::UpdateWirelessGatewayTaskCreate).
     pub fn build(self) -> crate::types::UpdateWirelessGatewayTaskCreate {

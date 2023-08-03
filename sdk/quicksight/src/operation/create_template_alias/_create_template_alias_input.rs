@@ -71,6 +71,10 @@ impl CreateTemplateAliasInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services account that contains the template that you creating an alias for.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>An ID for the template.</p>
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_id = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl CreateTemplateAliasInputBuilder {
     pub fn set_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_id = input;
         self
+    }
+    /// <p>An ID for the template.</p>
+    pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_id
     }
     /// <p>The name that you want to give to the template alias that you're creating. Don't start the alias name with the <code>$</code> character. Alias names that start with <code>$</code> are reserved by Amazon QuickSight. </p>
     pub fn alias_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -91,6 +99,10 @@ impl CreateTemplateAliasInputBuilder {
         self.alias_name = input;
         self
     }
+    /// <p>The name that you want to give to the template alias that you're creating. Don't start the alias name with the <code>$</code> character. Alias names that start with <code>$</code> are reserved by Amazon QuickSight. </p>
+    pub fn get_alias_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias_name
+    }
     /// <p>The version number of the template.</p>
     pub fn template_version_number(mut self, input: i64) -> Self {
         self.template_version_number = ::std::option::Option::Some(input);
@@ -100,6 +112,10 @@ impl CreateTemplateAliasInputBuilder {
     pub fn set_template_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.template_version_number = input;
         self
+    }
+    /// <p>The version number of the template.</p>
+    pub fn get_template_version_number(&self) -> &::std::option::Option<i64> {
+        &self.template_version_number
     }
     /// Consumes the builder and constructs a [`CreateTemplateAliasInput`](crate::operation::create_template_alias::CreateTemplateAliasInput).
     pub fn build(

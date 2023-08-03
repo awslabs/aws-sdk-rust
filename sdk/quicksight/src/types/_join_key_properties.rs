@@ -40,6 +40,10 @@ impl JoinKeyPropertiesBuilder {
         self.unique_key = input;
         self
     }
+    /// <p>A value that indicates that a row in a table is uniquely identified by the columns in a join key. This is used by Amazon QuickSight to optimize query performance.</p>
+    pub fn get_unique_key(&self) -> &::std::option::Option<bool> {
+        &self.unique_key
+    }
     /// Consumes the builder and constructs a [`JoinKeyProperties`](crate::types::JoinKeyProperties).
     pub fn build(self) -> crate::types::JoinKeyProperties {
         crate::types::JoinKeyProperties {

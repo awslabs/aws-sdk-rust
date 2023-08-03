@@ -56,6 +56,10 @@ impl FilterBuilder {
         self.attribute = input;
         self
     }
+    /// <p>The name of an attribute to use as a filter.</p>
+    pub fn get_attribute(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute
+    }
     /// <p>The type of search (For example, eq, geq, leq)</p>
     pub fn operation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operation = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl FilterBuilder {
         self.operation = input;
         self
     }
+    /// <p>The type of search (For example, eq, geq, leq)</p>
+    pub fn get_operation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operation
+    }
     /// <p>Value of the filter.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl FilterBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>Value of the filter.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
     pub fn build(self) -> crate::types::Filter {

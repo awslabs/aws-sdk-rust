@@ -46,6 +46,10 @@ impl DescribeOrganizationConfigurationOutputBuilder {
         self.auto_enable = input;
         self
     }
+    /// <p>Indicates whether to automatically enable new organization accounts as member accounts in the organization behavior graph.</p>
+    pub fn get_auto_enable(&self) -> &::std::option::Option<bool> {
+        &self.auto_enable
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

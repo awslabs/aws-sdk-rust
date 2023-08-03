@@ -55,6 +55,10 @@ impl DisassociatePersonasFromEntitiesInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of your Amazon Kendra experience.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_id = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl DisassociatePersonasFromEntitiesInputBuilder {
     pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.index_id = input;
         self
+    }
+    /// <p>The identifier of the index for your Amazon Kendra experience.</p>
+    pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_id
     }
     /// Appends an item to `entity_ids`.
     ///
@@ -83,6 +91,10 @@ impl DisassociatePersonasFromEntitiesInputBuilder {
     ) -> Self {
         self.entity_ids = input;
         self
+    }
+    /// <p>The identifiers of users or groups in your IAM Identity Center identity source. For example, user IDs could be user emails.</p>
+    pub fn get_entity_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.entity_ids
     }
     /// Consumes the builder and constructs a [`DisassociatePersonasFromEntitiesInput`](crate::operation::disassociate_personas_from_entities::DisassociatePersonasFromEntitiesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_personas_from_entities::DisassociatePersonasFromEntitiesInput, ::aws_smithy_http::operation::error::BuildError>{

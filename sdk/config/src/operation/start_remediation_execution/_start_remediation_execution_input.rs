@@ -53,6 +53,10 @@ impl StartRemediationExecutionInputBuilder {
         self.config_rule_name = input;
         self
     }
+    /// <p>The list of names of Config rules that you want to run remediation execution for.</p>
+    pub fn get_config_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.config_rule_name
+    }
     /// Appends an item to `resource_keys`.
     ///
     /// To override the contents of this collection use [`set_resource_keys`](Self::set_resource_keys).
@@ -71,6 +75,12 @@ impl StartRemediationExecutionInputBuilder {
     ) -> Self {
         self.resource_keys = input;
         self
+    }
+    /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID. </p>
+    pub fn get_resource_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>> {
+        &self.resource_keys
     }
     /// Consumes the builder and constructs a [`StartRemediationExecutionInput`](crate::operation::start_remediation_execution::StartRemediationExecutionInput).
     pub fn build(

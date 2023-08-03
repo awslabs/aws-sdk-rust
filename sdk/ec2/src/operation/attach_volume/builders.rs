@@ -46,6 +46,10 @@ impl AttachVolumeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AttachVolume as a reference.
+    pub fn as_input(&self) -> &crate::operation::attach_volume::builders::AttachVolumeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +132,10 @@ impl AttachVolumeFluentBuilder {
         self.inner = self.inner.set_device(input);
         self
     }
+    /// <p>The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>
+    pub fn get_device(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device()
+    }
     /// <p>The ID of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
@@ -137,6 +145,10 @@ impl AttachVolumeFluentBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
+    }
+    /// <p>The ID of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
     }
     /// <p>The ID of the EBS volume. The volume and instance must be within the same Availability Zone.</p>
     pub fn volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -148,6 +160,10 @@ impl AttachVolumeFluentBuilder {
         self.inner = self.inner.set_volume_id(input);
         self
     }
+    /// <p>The ID of the EBS volume. The volume and instance must be within the same Availability Zone.</p>
+    pub fn get_volume_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_volume_id()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -157,5 +173,9 @@ impl AttachVolumeFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

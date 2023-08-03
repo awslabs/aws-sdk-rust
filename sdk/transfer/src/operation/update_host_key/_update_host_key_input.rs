@@ -55,6 +55,10 @@ impl UpdateHostKeyInputBuilder {
         self.server_id = input;
         self
     }
+    /// <p>The identifier of the server that contains the host key that you are updating.</p>
+    pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_id
+    }
     /// <p>The identifier of the host key that you are updating.</p>
     pub fn host_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host_key_id = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl UpdateHostKeyInputBuilder {
         self.host_key_id = input;
         self
     }
+    /// <p>The identifier of the host key that you are updating.</p>
+    pub fn get_host_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host_key_id
+    }
     /// <p>An updated description for the host key.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -74,6 +82,10 @@ impl UpdateHostKeyInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>An updated description for the host key.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`UpdateHostKeyInput`](crate::operation::update_host_key::UpdateHostKeyInput).
     pub fn build(

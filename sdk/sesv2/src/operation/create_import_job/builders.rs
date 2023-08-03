@@ -36,6 +36,12 @@ impl CreateImportJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateImportJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_import_job::builders::CreateImportJobInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,12 @@ impl CreateImportJobFluentBuilder {
         self.inner = self.inner.set_import_destination(input);
         self
     }
+    /// <p>The destination for the import job.</p>
+    pub fn get_import_destination(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImportDestination> {
+        self.inner.get_import_destination()
+    }
     /// <p>The data source for the import job.</p>
     pub fn import_data_source(mut self, input: crate::types::ImportDataSource) -> Self {
         self.inner = self.inner.import_data_source(input);
@@ -141,5 +153,9 @@ impl CreateImportJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_import_data_source(input);
         self
+    }
+    /// <p>The data source for the import job.</p>
+    pub fn get_import_data_source(&self) -> &::std::option::Option<crate::types::ImportDataSource> {
+        self.inner.get_import_data_source()
     }
 }

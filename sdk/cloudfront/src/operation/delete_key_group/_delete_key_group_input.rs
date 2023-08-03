@@ -47,6 +47,10 @@ impl DeleteKeyGroupInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the key group that you are deleting. To get the identifier, use <code>ListKeyGroups</code>.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The version of the key group that you are deleting. The version is the key group's <code>ETag</code> value. To get the <code>ETag</code>, use <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.</p>
     pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.if_match = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl DeleteKeyGroupInputBuilder {
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.if_match = input;
         self
+    }
+    /// <p>The version of the key group that you are deleting. The version is the key group's <code>ETag</code> value. To get the <code>ETag</code>, use <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.</p>
+    pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
+        &self.if_match
     }
     /// Consumes the builder and constructs a [`DeleteKeyGroupInput`](crate::operation::delete_key_group::DeleteKeyGroupInput).
     pub fn build(

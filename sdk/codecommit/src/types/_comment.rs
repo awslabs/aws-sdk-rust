@@ -116,6 +116,10 @@ impl CommentBuilder {
         self.comment_id = input;
         self
     }
+    /// <p>The system-generated comment ID.</p>
+    pub fn get_comment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comment_id
+    }
     /// <p>The content of the comment.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
@@ -126,6 +130,10 @@ impl CommentBuilder {
         self.content = input;
         self
     }
+    /// <p>The content of the comment.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
+    }
     /// <p>The ID of the comment for which this comment is a reply, if any.</p>
     pub fn in_reply_to(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.in_reply_to = ::std::option::Option::Some(input.into());
@@ -135,6 +143,10 @@ impl CommentBuilder {
     pub fn set_in_reply_to(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.in_reply_to = input;
         self
+    }
+    /// <p>The ID of the comment for which this comment is a reply, if any.</p>
+    pub fn get_in_reply_to(&self) -> &::std::option::Option<::std::string::String> {
+        &self.in_reply_to
     }
     /// <p>The date and time the comment was created, in timestamp format.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -149,6 +161,10 @@ impl CommentBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>The date and time the comment was created, in timestamp format.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
+    }
     /// <p>The date and time the comment was most recently modified, in timestamp format.</p>
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input);
@@ -162,6 +178,10 @@ impl CommentBuilder {
         self.last_modified_date = input;
         self
     }
+    /// <p>The date and time the comment was most recently modified, in timestamp format.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_date
+    }
     /// <p>The Amazon Resource Name (ARN) of the person who posted the comment.</p>
     pub fn author_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.author_arn = ::std::option::Option::Some(input.into());
@@ -172,6 +192,10 @@ impl CommentBuilder {
         self.author_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the person who posted the comment.</p>
+    pub fn get_author_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.author_arn
+    }
     /// <p>A Boolean value indicating whether the comment has been deleted.</p>
     pub fn deleted(mut self, input: bool) -> Self {
         self.deleted = ::std::option::Option::Some(input);
@@ -181,6 +205,10 @@ impl CommentBuilder {
     pub fn set_deleted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.deleted = input;
         self
+    }
+    /// <p>A Boolean value indicating whether the comment has been deleted.</p>
+    pub fn get_deleted(&self) -> &::std::option::Option<bool> {
+        &self.deleted
     }
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
     pub fn client_request_token(
@@ -197,6 +225,10 @@ impl CommentBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Appends an item to `caller_reactions`.
     ///
@@ -220,6 +252,12 @@ impl CommentBuilder {
         self.caller_reactions = input;
         self
     }
+    /// <p>The emoji reactions to a comment, if any, submitted by the user whose credentials are associated with the call to the API.</p>
+    pub fn get_caller_reactions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.caller_reactions
+    }
     /// Adds a key-value pair to `reaction_counts`.
     ///
     /// To override the contents of this collection use [`set_reaction_counts`](Self::set_reaction_counts).
@@ -242,6 +280,12 @@ impl CommentBuilder {
     ) -> Self {
         self.reaction_counts = input;
         self
+    }
+    /// <p>A string to integer map that represents the number of individual users who have responded to a comment with the specified reactions.</p>
+    pub fn get_reaction_counts(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, i32>> {
+        &self.reaction_counts
     }
     /// Consumes the builder and constructs a [`Comment`](crate::types::Comment).
     pub fn build(self) -> crate::types::Comment {

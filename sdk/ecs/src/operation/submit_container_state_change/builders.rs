@@ -39,6 +39,10 @@ impl SubmitContainerStateChangeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SubmitContainerStateChange as a reference.
+    pub fn as_input(&self) -> &crate::operation::submit_container_state_change::builders::SubmitContainerStateChangeInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +133,10 @@ impl SubmitContainerStateChangeFluentBuilder {
         self.inner = self.inner.set_cluster(input);
         self
     }
+    /// <p>The short name or full ARN of the cluster that hosts the container.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster()
+    }
     /// <p>The task ID or full Amazon Resource Name (ARN) of the task that hosts the container.</p>
     pub fn task(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.task(input.into());
@@ -138,6 +146,10 @@ impl SubmitContainerStateChangeFluentBuilder {
     pub fn set_task(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_task(input);
         self
+    }
+    /// <p>The task ID or full Amazon Resource Name (ARN) of the task that hosts the container.</p>
+    pub fn get_task(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_task()
     }
     /// <p>The name of the container.</p>
     pub fn container_name(
@@ -155,6 +167,10 @@ impl SubmitContainerStateChangeFluentBuilder {
         self.inner = self.inner.set_container_name(input);
         self
     }
+    /// <p>The name of the container.</p>
+    pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_container_name()
+    }
     /// <p>The ID of the Docker container.</p>
     pub fn runtime_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.runtime_id(input.into());
@@ -164,6 +180,10 @@ impl SubmitContainerStateChangeFluentBuilder {
     pub fn set_runtime_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_runtime_id(input);
         self
+    }
+    /// <p>The ID of the Docker container.</p>
+    pub fn get_runtime_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_runtime_id()
     }
     /// <p>The status of the state change request.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -175,6 +195,10 @@ impl SubmitContainerStateChangeFluentBuilder {
         self.inner = self.inner.set_status(input);
         self
     }
+    /// <p>The status of the state change request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_status()
+    }
     /// <p>The exit code that's returned for the state change request.</p>
     pub fn exit_code(mut self, input: i32) -> Self {
         self.inner = self.inner.exit_code(input);
@@ -185,6 +209,10 @@ impl SubmitContainerStateChangeFluentBuilder {
         self.inner = self.inner.set_exit_code(input);
         self
     }
+    /// <p>The exit code that's returned for the state change request.</p>
+    pub fn get_exit_code(&self) -> &::std::option::Option<i32> {
+        self.inner.get_exit_code()
+    }
     /// <p>The reason for the state change request.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reason(input.into());
@@ -194,6 +222,10 @@ impl SubmitContainerStateChangeFluentBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reason(input);
         self
+    }
+    /// <p>The reason for the state change request.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reason()
     }
     /// Appends an item to `networkBindings`.
     ///
@@ -211,5 +243,11 @@ impl SubmitContainerStateChangeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_network_bindings(input);
         self
+    }
+    /// <p>The network bindings of the container.</p>
+    pub fn get_network_bindings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkBinding>> {
+        self.inner.get_network_bindings()
     }
 }

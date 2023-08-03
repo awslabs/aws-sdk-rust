@@ -98,6 +98,10 @@ impl ItemBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The start time, in milliseconds, of the transcribed item.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<f64> {
+        &self.start_time
+    }
     /// <p>The end time, in milliseconds, of the transcribed item.</p>
     pub fn end_time(mut self, input: f64) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -107,6 +111,10 @@ impl ItemBuilder {
     pub fn set_end_time(mut self, input: ::std::option::Option<f64>) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>The end time, in milliseconds, of the transcribed item.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<f64> {
+        &self.end_time
     }
     /// <p>The type of item identified. Options are: <code>PRONUNCIATION</code> (spoken words) and <code>PUNCTUATION</code>.</p>
     pub fn r#type(mut self, input: crate::types::ItemType) -> Self {
@@ -118,6 +126,10 @@ impl ItemBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of item identified. Options are: <code>PRONUNCIATION</code> (spoken words) and <code>PUNCTUATION</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ItemType> {
+        &self.r#type
+    }
     /// <p>The word or punctuation that was transcribed.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
@@ -127,6 +139,10 @@ impl ItemBuilder {
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
         self
+    }
+    /// <p>The word or punctuation that was transcribed.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
     }
     /// <p>Indicates whether the specified item matches a word in the vocabulary filter included in your request. If <code>true</code>, there is a vocabulary filter match.</p>
     pub fn vocabulary_filter_match(mut self, input: bool) -> Self {
@@ -138,6 +154,10 @@ impl ItemBuilder {
         self.vocabulary_filter_match = input;
         self
     }
+    /// <p>Indicates whether the specified item matches a word in the vocabulary filter included in your request. If <code>true</code>, there is a vocabulary filter match.</p>
+    pub fn get_vocabulary_filter_match(&self) -> &::std::option::Option<bool> {
+        &self.vocabulary_filter_match
+    }
     /// <p>If speaker partitioning is enabled, <code>Speaker</code> labels the speaker of the specified item.</p>
     pub fn speaker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.speaker = ::std::option::Option::Some(input.into());
@@ -147,6 +167,10 @@ impl ItemBuilder {
     pub fn set_speaker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.speaker = input;
         self
+    }
+    /// <p>If speaker partitioning is enabled, <code>Speaker</code> labels the speaker of the specified item.</p>
+    pub fn get_speaker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.speaker
     }
     /// <p>The confidence score associated with a word or phrase in your transcript.</p>
     /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified item correctly matches the item spoken in your media.</p>
@@ -160,6 +184,11 @@ impl ItemBuilder {
         self.confidence = input;
         self
     }
+    /// <p>The confidence score associated with a word or phrase in your transcript.</p>
+    /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified item correctly matches the item spoken in your media.</p>
+    pub fn get_confidence(&self) -> &::std::option::Option<f64> {
+        &self.confidence
+    }
     /// <p>If partial result stabilization is enabled, <code>Stable</code> indicates whether the specified item is stable (<code>true</code>) or if it may change when the segment is complete (<code>false</code>).</p>
     pub fn stable(mut self, input: bool) -> Self {
         self.stable = ::std::option::Option::Some(input);
@@ -169,6 +198,10 @@ impl ItemBuilder {
     pub fn set_stable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.stable = input;
         self
+    }
+    /// <p>If partial result stabilization is enabled, <code>Stable</code> indicates whether the specified item is stable (<code>true</code>) or if it may change when the segment is complete (<code>false</code>).</p>
+    pub fn get_stable(&self) -> &::std::option::Option<bool> {
+        &self.stable
     }
     /// Consumes the builder and constructs a [`Item`](crate::types::Item).
     pub fn build(self) -> crate::types::Item {

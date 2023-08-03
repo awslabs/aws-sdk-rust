@@ -48,6 +48,10 @@ impl FormBindingElementBuilder {
         self.element = input;
         self
     }
+    /// <p>The name of the component to retrieve a value from.</p>
+    pub fn get_element(&self) -> &::std::option::Option<::std::string::String> {
+        &self.element
+    }
     /// <p>The property to retrieve a value from.</p>
     pub fn property(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.property = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl FormBindingElementBuilder {
     pub fn set_property(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.property = input;
         self
+    }
+    /// <p>The property to retrieve a value from.</p>
+    pub fn get_property(&self) -> &::std::option::Option<::std::string::String> {
+        &self.property
     }
     /// Consumes the builder and constructs a [`FormBindingElement`](crate::types::FormBindingElement).
     pub fn build(self) -> crate::types::FormBindingElement {

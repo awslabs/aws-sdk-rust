@@ -69,6 +69,14 @@ impl TagResourcesOutputBuilder {
         self.failed_resources_map = input;
         self
     }
+    /// <p>A map containing a key-value pair for each failed item that couldn't be tagged. The key is the ARN of the failed resource. The value is a <code>FailureInfo</code> object that contains an error code, a status code, and an error message. If there are no errors, the <code>FailedResourcesMap</code> is empty.</p>
+    pub fn get_failed_resources_map(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::FailureInfo>,
+    > {
+        &self.failed_resources_map
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

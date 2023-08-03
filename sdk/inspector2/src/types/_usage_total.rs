@@ -48,6 +48,10 @@ impl UsageTotalBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The account ID of the account that usage data was retrieved for.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// Appends an item to `usage`.
     ///
     /// To override the contents of this collection use [`set_usage`](Self::set_usage).
@@ -66,6 +70,10 @@ impl UsageTotalBuilder {
     ) -> Self {
         self.usage = input;
         self
+    }
+    /// <p>An object representing the total usage for an account.</p>
+    pub fn get_usage(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Usage>> {
+        &self.usage
     }
     /// Consumes the builder and constructs a [`UsageTotal`](crate::types::UsageTotal).
     pub fn build(self) -> crate::types::UsageTotal {

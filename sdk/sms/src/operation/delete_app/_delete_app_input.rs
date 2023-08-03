@@ -55,6 +55,10 @@ impl DeleteAppInputBuilder {
         self.app_id = input;
         self
     }
+    /// <p>The ID of the application.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// <p>Indicates whether to stop all replication jobs corresponding to the servers in the application while deleting the application.</p>
     pub fn force_stop_app_replication(mut self, input: bool) -> Self {
         self.force_stop_app_replication = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl DeleteAppInputBuilder {
         self.force_stop_app_replication = input;
         self
     }
+    /// <p>Indicates whether to stop all replication jobs corresponding to the servers in the application while deleting the application.</p>
+    pub fn get_force_stop_app_replication(&self) -> &::std::option::Option<bool> {
+        &self.force_stop_app_replication
+    }
     /// <p>Indicates whether to terminate the stack corresponding to the application while deleting the application.</p>
     pub fn force_terminate_app(mut self, input: bool) -> Self {
         self.force_terminate_app = ::std::option::Option::Some(input);
@@ -74,6 +82,10 @@ impl DeleteAppInputBuilder {
     pub fn set_force_terminate_app(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force_terminate_app = input;
         self
+    }
+    /// <p>Indicates whether to terminate the stack corresponding to the application while deleting the application.</p>
+    pub fn get_force_terminate_app(&self) -> &::std::option::Option<bool> {
+        &self.force_terminate_app
     }
     /// Consumes the builder and constructs a [`DeleteAppInput`](crate::operation::delete_app::DeleteAppInput).
     pub fn build(

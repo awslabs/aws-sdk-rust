@@ -82,6 +82,18 @@ impl DescribeChapCredentialsOutputBuilder {
         self.chap_credentials = input;
         self
     }
+    /// <p>An array of <code>ChapInfo</code> objects that represent CHAP credentials. Each object in the array contains CHAP credential information for one target-initiator pair. If no CHAP credentials are set, an empty array is returned. CHAP credential information is provided in a JSON object with the following fields:</p>
+    /// <ul>
+    /// <li> <p> <b>InitiatorName</b>: The iSCSI initiator that connects to the target.</p> </li>
+    /// <li> <p> <b>SecretToAuthenticateInitiator</b>: The secret key that the initiator (for example, the Windows client) must provide to participate in mutual CHAP with the target.</p> </li>
+    /// <li> <p> <b>SecretToAuthenticateTarget</b>: The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g. Windows client).</p> </li>
+    /// <li> <p> <b>TargetARN</b>: The Amazon Resource Name (ARN) of the storage volume.</p> </li>
+    /// </ul>
+    pub fn get_chap_credentials(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChapInfo>> {
+        &self.chap_credentials
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

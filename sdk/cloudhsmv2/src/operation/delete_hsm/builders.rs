@@ -36,6 +36,10 @@ impl DeleteHsmFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteHsm as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_hsm::builders::DeleteHsmInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl DeleteHsmFluentBuilder {
         self.inner = self.inner.set_cluster_id(input);
         self
     }
+    /// <p>The identifier (ID) of the cluster that contains the HSM that you are deleting.</p>
+    pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_id()
+    }
     /// <p>The identifier (ID) of the HSM that you are deleting.</p>
     pub fn hsm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hsm_id(input.into());
@@ -127,6 +135,10 @@ impl DeleteHsmFluentBuilder {
     pub fn set_hsm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hsm_id(input);
         self
+    }
+    /// <p>The identifier (ID) of the HSM that you are deleting.</p>
+    pub fn get_hsm_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_hsm_id()
     }
     /// <p>The identifier (ID) of the elastic network interface (ENI) of the HSM that you are deleting.</p>
     pub fn eni_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -138,6 +150,10 @@ impl DeleteHsmFluentBuilder {
         self.inner = self.inner.set_eni_id(input);
         self
     }
+    /// <p>The identifier (ID) of the elastic network interface (ENI) of the HSM that you are deleting.</p>
+    pub fn get_eni_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_eni_id()
+    }
     /// <p>The IP address of the elastic network interface (ENI) of the HSM that you are deleting.</p>
     pub fn eni_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.eni_ip(input.into());
@@ -147,5 +163,9 @@ impl DeleteHsmFluentBuilder {
     pub fn set_eni_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_eni_ip(input);
         self
+    }
+    /// <p>The IP address of the elastic network interface (ENI) of the HSM that you are deleting.</p>
+    pub fn get_eni_ip(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_eni_ip()
     }
 }

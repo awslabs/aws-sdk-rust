@@ -59,6 +59,10 @@ impl OpenZfsUserOrGroupQuotaBuilder {
         self.r#type = input;
         self
     }
+    /// <p>A value that specifies whether the quota applies to a user or group.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::OpenZfsQuotaType> {
+        &self.r#type
+    }
     /// <p>The ID of the user or group.</p>
     pub fn id(mut self, input: i32) -> Self {
         self.id = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl OpenZfsUserOrGroupQuotaBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the user or group.</p>
+    pub fn get_id(&self) -> &::std::option::Option<i32> {
+        &self.id
+    }
     /// <p>The amount of storage that the user or group can use in gibibytes (GiB).</p>
     pub fn storage_capacity_quota_gi_b(mut self, input: i32) -> Self {
         self.storage_capacity_quota_gi_b = ::std::option::Option::Some(input);
@@ -78,6 +86,10 @@ impl OpenZfsUserOrGroupQuotaBuilder {
     pub fn set_storage_capacity_quota_gi_b(mut self, input: ::std::option::Option<i32>) -> Self {
         self.storage_capacity_quota_gi_b = input;
         self
+    }
+    /// <p>The amount of storage that the user or group can use in gibibytes (GiB).</p>
+    pub fn get_storage_capacity_quota_gi_b(&self) -> &::std::option::Option<i32> {
+        &self.storage_capacity_quota_gi_b
     }
     /// Consumes the builder and constructs a [`OpenZfsUserOrGroupQuota`](crate::types::OpenZfsUserOrGroupQuota).
     pub fn build(self) -> crate::types::OpenZfsUserOrGroupQuota {

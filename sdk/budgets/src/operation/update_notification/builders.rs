@@ -36,6 +36,12 @@ impl UpdateNotificationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateNotification as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_notification::builders::UpdateNotificationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateNotificationFluentBuilder {
         self.inner = self.inner.set_account_id(input);
         self
     }
+    /// <p>The <code>accountId</code> that is associated with the budget whose notification you want to update.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// <p>The name of the budget whose notification you want to update.</p>
     pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.budget_name(input.into());
@@ -135,6 +145,10 @@ impl UpdateNotificationFluentBuilder {
     pub fn set_budget_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_budget_name(input);
         self
+    }
+    /// <p>The name of the budget whose notification you want to update.</p>
+    pub fn get_budget_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_budget_name()
     }
     /// <p>The previous notification that is associated with a budget.</p>
     pub fn old_notification(mut self, input: crate::types::Notification) -> Self {
@@ -149,6 +163,10 @@ impl UpdateNotificationFluentBuilder {
         self.inner = self.inner.set_old_notification(input);
         self
     }
+    /// <p>The previous notification that is associated with a budget.</p>
+    pub fn get_old_notification(&self) -> &::std::option::Option<crate::types::Notification> {
+        self.inner.get_old_notification()
+    }
     /// <p>The updated notification to be associated with a budget.</p>
     pub fn new_notification(mut self, input: crate::types::Notification) -> Self {
         self.inner = self.inner.new_notification(input);
@@ -161,5 +179,9 @@ impl UpdateNotificationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_new_notification(input);
         self
+    }
+    /// <p>The updated notification to be associated with a budget.</p>
+    pub fn get_new_notification(&self) -> &::std::option::Option<crate::types::Notification> {
+        self.inner.get_new_notification()
     }
 }

@@ -40,6 +40,10 @@ impl KinesisStreamConfigBuilder {
         self.stream_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the data stream.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_arn
+    }
     /// Consumes the builder and constructs a [`KinesisStreamConfig`](crate::types::KinesisStreamConfig).
     pub fn build(self) -> crate::types::KinesisStreamConfig {
         crate::types::KinesisStreamConfig {

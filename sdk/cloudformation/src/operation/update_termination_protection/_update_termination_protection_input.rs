@@ -47,6 +47,10 @@ impl UpdateTerminationProtectionInputBuilder {
         self.enable_termination_protection = input;
         self
     }
+    /// <p>Whether to enable termination protection on the specified stack.</p>
+    pub fn get_enable_termination_protection(&self) -> &::std::option::Option<bool> {
+        &self.enable_termination_protection
+    }
     /// <p>The name or unique ID of the stack for which you want to set termination protection.</p>
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_name = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl UpdateTerminationProtectionInputBuilder {
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_name = input;
         self
+    }
+    /// <p>The name or unique ID of the stack for which you want to set termination protection.</p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_name
     }
     /// Consumes the builder and constructs a [`UpdateTerminationProtectionInput`](crate::operation::update_termination_protection::UpdateTerminationProtectionInput).
     pub fn build(

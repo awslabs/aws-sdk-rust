@@ -49,6 +49,12 @@ impl UpdateFlywheelOutputBuilder {
         self.flywheel_properties = input;
         self
     }
+    /// <p>The flywheel properties.</p>
+    pub fn get_flywheel_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::FlywheelProperties> {
+        &self.flywheel_properties
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

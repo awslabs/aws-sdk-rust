@@ -59,6 +59,12 @@ impl ListSupportedPhoneNumberCountriesOutputBuilder {
         self.phone_number_countries = input;
         self
     }
+    /// <p>The supported phone number countries.</p>
+    pub fn get_phone_number_countries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberCountry>> {
+        &self.phone_number_countries
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

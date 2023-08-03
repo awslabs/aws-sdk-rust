@@ -36,6 +36,12 @@ impl ListProtectedQueriesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListProtectedQueries as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_protected_queries::builders::ListProtectedQueriesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -143,6 +149,10 @@ impl ListProtectedQueriesFluentBuilder {
         self.inner = self.inner.set_membership_identifier(input);
         self
     }
+    /// <p>The identifier for the membership in the collaboration.</p>
+    pub fn get_membership_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_membership_identifier()
+    }
     /// <p>A filter on the status of the protected query.</p>
     pub fn status(mut self, input: crate::types::ProtectedQueryStatus) -> Self {
         self.inner = self.inner.status(input);
@@ -156,6 +166,10 @@ impl ListProtectedQueriesFluentBuilder {
         self.inner = self.inner.set_status(input);
         self
     }
+    /// <p>A filter on the status of the protected query.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ProtectedQueryStatus> {
+        self.inner.get_status()
+    }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -166,6 +180,10 @@ impl ListProtectedQueriesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token value retrieved from a previous call to access the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum size of the results that is returned per call. Service chooses a default if it has not been set. Service can return a nextToken even if the maximum results has not been met. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -175,5 +193,9 @@ impl ListProtectedQueriesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum size of the results that is returned per call. Service chooses a default if it has not been set. Service can return a nextToken even if the maximum results has not been met. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

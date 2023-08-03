@@ -45,6 +45,10 @@ impl GetGeoMatchSetInputBuilder {
         self.geo_match_set_id = input;
         self
     }
+    /// <p>The <code>GeoMatchSetId</code> of the <code>GeoMatchSet</code> that you want to get. <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
+    pub fn get_geo_match_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.geo_match_set_id
+    }
     /// Consumes the builder and constructs a [`GetGeoMatchSetInput`](crate::operation::get_geo_match_set::GetGeoMatchSetInput).
     pub fn build(
         self,

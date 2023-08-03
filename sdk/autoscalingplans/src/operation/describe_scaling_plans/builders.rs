@@ -36,6 +36,12 @@ impl DescribeScalingPlansFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeScalingPlans as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_scaling_plans::builders::DescribeScalingPlansInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +142,12 @@ impl DescribeScalingPlansFluentBuilder {
         self.inner = self.inner.set_scaling_plan_names(input);
         self
     }
+    /// <p>The names of the scaling plans (up to 10). If you specify application sources, you cannot specify scaling plan names.</p>
+    pub fn get_scaling_plan_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_scaling_plan_names()
+    }
     /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p> <note>
     /// <p>If you specify a scaling plan version, you must also specify a scaling plan name.</p>
     /// </note>
@@ -149,6 +161,12 @@ impl DescribeScalingPlansFluentBuilder {
     pub fn set_scaling_plan_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_scaling_plan_version(input);
         self
+    }
+    /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p> <note>
+    /// <p>If you specify a scaling plan version, you must also specify a scaling plan name.</p>
+    /// </note>
+    pub fn get_scaling_plan_version(&self) -> &::std::option::Option<i64> {
+        self.inner.get_scaling_plan_version()
     }
     /// Appends an item to `ApplicationSources`.
     ///
@@ -167,6 +185,12 @@ impl DescribeScalingPlansFluentBuilder {
         self.inner = self.inner.set_application_sources(input);
         self
     }
+    /// <p>The sources for the applications (up to 10). If you specify scaling plan names, you cannot specify application sources.</p>
+    pub fn get_application_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationSource>> {
+        self.inner.get_application_sources()
+    }
     /// <p>The maximum number of scalable resources to return. This value can be between 1 and 50. The default value is 50.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -177,6 +201,10 @@ impl DescribeScalingPlansFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of scalable resources to return. This value can be between 1 and 50. The default value is 50.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token for the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -186,5 +214,9 @@ impl DescribeScalingPlansFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

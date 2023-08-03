@@ -36,6 +36,13 @@ impl AssociateResolverRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateResolverRule as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::associate_resolver_rule::builders::AssociateResolverRuleInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl AssociateResolverRuleFluentBuilder {
         self.inner = self.inner.set_resolver_rule_id(input);
         self
     }
+    /// <p>The ID of the Resolver rule that you want to associate with the VPC. To list the existing Resolver rules, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">ListResolverRules</a>.</p>
+    pub fn get_resolver_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resolver_rule_id()
+    }
     /// <p>A name for the association that you're creating between a Resolver rule and a VPC.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -142,6 +153,10 @@ impl AssociateResolverRuleFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>A name for the association that you're creating between a Resolver rule and a VPC.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The ID of the VPC that you want to associate the Resolver rule with.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_id(input.into());
@@ -151,5 +166,9 @@ impl AssociateResolverRuleFluentBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpc_id(input);
         self
+    }
+    /// <p>The ID of the VPC that you want to associate the Resolver rule with.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpc_id()
     }
 }

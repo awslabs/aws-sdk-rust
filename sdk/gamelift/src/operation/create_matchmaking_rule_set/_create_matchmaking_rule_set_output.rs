@@ -49,6 +49,10 @@ impl CreateMatchmakingRuleSetOutputBuilder {
         self.rule_set = input;
         self
     }
+    /// <p>The newly created matchmaking rule set.</p>
+    pub fn get_rule_set(&self) -> &::std::option::Option<crate::types::MatchmakingRuleSet> {
+        &self.rule_set
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

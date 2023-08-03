@@ -57,6 +57,12 @@ impl DescribeElasticIpsOutputBuilder {
         self.elastic_ips = input;
         self
     }
+    /// <p>An <code>ElasticIps</code> object that describes the specified Elastic IP addresses.</p>
+    pub fn get_elastic_ips(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ElasticIp>> {
+        &self.elastic_ips
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

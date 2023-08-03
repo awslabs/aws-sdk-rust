@@ -40,6 +40,10 @@ impl GetIPSetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetIPSet as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_ip_set::builders::GetIpSetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -121,5 +125,9 @@ impl GetIPSetFluentBuilder {
     pub fn set_ip_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ip_set_id(input);
         self
+    }
+    /// <p>The <code>IPSetId</code> of the <code>IPSet</code> that you want to get. <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
+    pub fn get_ip_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ip_set_id()
     }
 }

@@ -61,6 +61,10 @@ impl CreateCoreDefinitionVersionInputBuilder {
         self.amzn_client_token = input;
         self
     }
+    /// A client token used to correlate requests and responses.
+    pub fn get_amzn_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.amzn_client_token
+    }
     /// The ID of the core definition.
     pub fn core_definition_id(
         mut self,
@@ -76,6 +80,10 @@ impl CreateCoreDefinitionVersionInputBuilder {
     ) -> Self {
         self.core_definition_id = input;
         self
+    }
+    /// The ID of the core definition.
+    pub fn get_core_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.core_definition_id
     }
     /// Appends an item to `cores`.
     ///
@@ -95,6 +103,10 @@ impl CreateCoreDefinitionVersionInputBuilder {
     ) -> Self {
         self.cores = input;
         self
+    }
+    /// A list of cores in the core definition version.
+    pub fn get_cores(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Core>> {
+        &self.cores
     }
     /// Consumes the builder and constructs a [`CreateCoreDefinitionVersionInput`](crate::operation::create_core_definition_version::CreateCoreDefinitionVersionInput).
     pub fn build(

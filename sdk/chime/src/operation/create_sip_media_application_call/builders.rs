@@ -42,6 +42,10 @@ impl CreateSipMediaApplicationCallFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateSipMediaApplicationCall as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_sip_media_application_call::builders::CreateSipMediaApplicationCallInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +142,10 @@ impl CreateSipMediaApplicationCallFluentBuilder {
         self.inner = self.inner.set_from_phone_number(input);
         self
     }
+    /// <p>The phone number that a user calls from. This is a phone number in your Amazon Chime phone number inventory.</p>
+    pub fn get_from_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_from_phone_number()
+    }
     /// <p>The phone number that the service should call.</p>
     pub fn to_phone_number(
         mut self,
@@ -154,6 +162,10 @@ impl CreateSipMediaApplicationCallFluentBuilder {
         self.inner = self.inner.set_to_phone_number(input);
         self
     }
+    /// <p>The phone number that the service should call.</p>
+    pub fn get_to_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_to_phone_number()
+    }
     /// <p>The ID of the SIP media application.</p>
     pub fn sip_media_application_id(
         mut self,
@@ -169,6 +181,10 @@ impl CreateSipMediaApplicationCallFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sip_media_application_id(input);
         self
+    }
+    /// <p>The ID of the SIP media application.</p>
+    pub fn get_sip_media_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sip_media_application_id()
     }
     /// Adds a key-value pair to `SipHeaders`.
     ///
@@ -192,5 +208,13 @@ impl CreateSipMediaApplicationCallFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sip_headers(input);
         self
+    }
+    /// <p>The SIP headers added to an outbound call leg.</p>
+    pub fn get_sip_headers(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_sip_headers()
     }
 }

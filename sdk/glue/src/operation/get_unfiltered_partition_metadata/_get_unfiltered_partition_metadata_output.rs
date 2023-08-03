@@ -62,6 +62,10 @@ impl GetUnfilteredPartitionMetadataOutputBuilder {
         self.partition = input;
         self
     }
+    /// <p>A Partition object containing the partition metadata.</p>
+    pub fn get_partition(&self) -> &::std::option::Option<crate::types::Partition> {
+        &self.partition
+    }
     /// Appends an item to `authorized_columns`.
     ///
     /// To override the contents of this collection use [`set_authorized_columns`](Self::set_authorized_columns).
@@ -84,6 +88,12 @@ impl GetUnfilteredPartitionMetadataOutputBuilder {
         self.authorized_columns = input;
         self
     }
+    /// <p>A list of column names that the user has been granted access to.</p>
+    pub fn get_authorized_columns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.authorized_columns
+    }
     /// <p>A Boolean value that indicates whether the partition location is registered with Lake Formation.</p>
     pub fn is_registered_with_lake_formation(mut self, input: bool) -> Self {
         self.is_registered_with_lake_formation = ::std::option::Option::Some(input);
@@ -96,6 +106,10 @@ impl GetUnfilteredPartitionMetadataOutputBuilder {
     ) -> Self {
         self.is_registered_with_lake_formation = input;
         self
+    }
+    /// <p>A Boolean value that indicates whether the partition location is registered with Lake Formation.</p>
+    pub fn get_is_registered_with_lake_formation(&self) -> &::std::option::Option<bool> {
+        &self.is_registered_with_lake_formation
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

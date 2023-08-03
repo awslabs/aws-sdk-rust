@@ -38,6 +38,10 @@ impl ListDataIntegrationAssociationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListDataIntegrationAssociations as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_data_integration_associations::builders::ListDataIntegrationAssociationsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -108,6 +112,10 @@ impl ListDataIntegrationAssociationsFluentBuilder {
         self.inner = self.inner.set_data_integration_identifier(input);
         self
     }
+    /// <p>A unique identifier for the DataIntegration.</p>
+    pub fn get_data_integration_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_data_integration_identifier()
+    }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -118,6 +126,10 @@ impl ListDataIntegrationAssociationsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -127,5 +139,9 @@ impl ListDataIntegrationAssociationsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

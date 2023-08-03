@@ -81,6 +81,12 @@ impl GetExperimentResultsOutputBuilder {
         self.results_data = input;
         self
     }
+    /// <p>An array of structures that include experiment results including metric names and values. </p>
+    pub fn get_results_data(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExperimentResultsData>> {
+        &self.results_data
+    }
     /// Appends an item to `reports`.
     ///
     /// To override the contents of this collection use [`set_reports`](Self::set_reports).
@@ -99,6 +105,12 @@ impl GetExperimentResultsOutputBuilder {
     ) -> Self {
         self.reports = input;
         self
+    }
+    /// <p>An array of structures that include the reports that you requested.</p>
+    pub fn get_reports(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExperimentReport>> {
+        &self.reports
     }
     /// Appends an item to `timestamps`.
     ///
@@ -119,6 +131,12 @@ impl GetExperimentResultsOutputBuilder {
         self.timestamps = input;
         self
     }
+    /// <p>The timestamps of each result returned.</p>
+    pub fn get_timestamps(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>> {
+        &self.timestamps
+    }
     /// <p>If the experiment doesn't yet have enough events to provide valid results, this field is returned with the message <code>Not enough events to generate results</code>. If there are enough events to provide valid results, this field is not returned.</p>
     pub fn details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.details = ::std::option::Option::Some(input.into());
@@ -128,6 +146,10 @@ impl GetExperimentResultsOutputBuilder {
     pub fn set_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.details = input;
         self
+    }
+    /// <p>If the experiment doesn't yet have enough events to provide valid results, this field is returned with the message <code>Not enough events to generate results</code>. If there are enough events to provide valid results, this field is not returned.</p>
+    pub fn get_details(&self) -> &::std::option::Option<::std::string::String> {
+        &self.details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

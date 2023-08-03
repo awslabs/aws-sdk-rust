@@ -36,6 +36,12 @@ impl UpdateDatasetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDataset as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_dataset::builders::UpdateDatasetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl UpdateDatasetFluentBuilder {
         self.inner = self.inner.set_dataset_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the dataset that you want to update.</p>
+    pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dataset_arn()
+    }
     /// <p>The Amazon Resource Name (ARN) of the new schema you want use.</p>
     pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schema_arn(input.into());
@@ -127,5 +137,9 @@ impl UpdateDatasetFluentBuilder {
     pub fn set_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_schema_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the new schema you want use.</p>
+    pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_schema_arn()
     }
 }

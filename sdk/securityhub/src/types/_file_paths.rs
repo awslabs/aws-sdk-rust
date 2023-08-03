@@ -64,6 +64,10 @@ impl FilePathsBuilder {
         self.file_path = input;
         self
     }
+    /// <p>Path to the infected or suspicious file on the resource it was detected on. </p>
+    pub fn get_file_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_path
+    }
     /// <p>The name of the infected or suspicious file corresponding to the hash. </p>
     pub fn file_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_name = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl FilePathsBuilder {
     pub fn set_file_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_name = input;
         self
+    }
+    /// <p>The name of the infected or suspicious file corresponding to the hash. </p>
+    pub fn get_file_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_name
     }
     /// <p>The Amazon Resource Name (ARN) of the resource on which the threat was detected. </p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,6 +92,10 @@ impl FilePathsBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the resource on which the threat was detected. </p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// <p>The hash value for the infected or suspicious file. </p>
     pub fn hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hash = ::std::option::Option::Some(input.into());
@@ -93,6 +105,10 @@ impl FilePathsBuilder {
     pub fn set_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hash = input;
         self
+    }
+    /// <p>The hash value for the infected or suspicious file. </p>
+    pub fn get_hash(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hash
     }
     /// Consumes the builder and constructs a [`FilePaths`](crate::types::FilePaths).
     pub fn build(self) -> crate::types::FilePaths {

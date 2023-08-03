@@ -46,6 +46,10 @@ impl GetCertificateAuthorityCsrOutputBuilder {
         self.csr = input;
         self
     }
+    /// <p>The base64 PEM-encoded certificate signing request (CSR) for your private CA certificate.</p>
+    pub fn get_csr(&self) -> &::std::option::Option<::std::string::String> {
+        &self.csr
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

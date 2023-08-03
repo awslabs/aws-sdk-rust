@@ -50,6 +50,12 @@ impl LinkSharingConfigurationBuilder {
         self.permissions = input;
         self
     }
+    /// <p>A structure that contains the permissions of a shareable link.</p>
+    pub fn get_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+        &self.permissions
+    }
     /// Consumes the builder and constructs a [`LinkSharingConfiguration`](crate::types::LinkSharingConfiguration).
     pub fn build(self) -> crate::types::LinkSharingConfiguration {
         crate::types::LinkSharingConfiguration {

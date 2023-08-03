@@ -104,6 +104,10 @@ impl PresetBuilder {
         self.id = input;
         self
     }
+    /// <p>Identifier for the new preset. You use this value to get settings for the preset or to delete it.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The Amazon Resource Name (ARN) for the preset.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -113,6 +117,10 @@ impl PresetBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the preset.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The name of the preset.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -124,6 +132,10 @@ impl PresetBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the preset.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A description of the preset.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -134,6 +146,10 @@ impl PresetBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the preset.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The container type for the output file. Valid values include <code>flac</code>, <code>flv</code>, <code>fmp4</code>, <code>gif</code>, <code>mp3</code>, <code>mp4</code>, <code>mpg</code>, <code>mxf</code>, <code>oga</code>, <code>ogg</code>, <code>ts</code>, and <code>webm</code>.</p>
     pub fn container(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container = ::std::option::Option::Some(input.into());
@@ -143,6 +159,10 @@ impl PresetBuilder {
     pub fn set_container(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container = input;
         self
+    }
+    /// <p>The container type for the output file. Valid values include <code>flac</code>, <code>flv</code>, <code>fmp4</code>, <code>gif</code>, <code>mp3</code>, <code>mp4</code>, <code>mpg</code>, <code>mxf</code>, <code>oga</code>, <code>ogg</code>, <code>ts</code>, and <code>webm</code>.</p>
+    pub fn get_container(&self) -> &::std::option::Option<::std::string::String> {
+        &self.container
     }
     /// <p>A section of the response body that provides information about the audio preset values.</p>
     pub fn audio(mut self, input: crate::types::AudioParameters) -> Self {
@@ -157,6 +177,10 @@ impl PresetBuilder {
         self.audio = input;
         self
     }
+    /// <p>A section of the response body that provides information about the audio preset values.</p>
+    pub fn get_audio(&self) -> &::std::option::Option<crate::types::AudioParameters> {
+        &self.audio
+    }
     /// <p>A section of the response body that provides information about the video preset values.</p>
     pub fn video(mut self, input: crate::types::VideoParameters) -> Self {
         self.video = ::std::option::Option::Some(input);
@@ -169,6 +193,10 @@ impl PresetBuilder {
     ) -> Self {
         self.video = input;
         self
+    }
+    /// <p>A section of the response body that provides information about the video preset values.</p>
+    pub fn get_video(&self) -> &::std::option::Option<crate::types::VideoParameters> {
+        &self.video
     }
     /// <p>A section of the response body that provides information about the thumbnail preset values, if any.</p>
     pub fn thumbnails(mut self, input: crate::types::Thumbnails) -> Self {
@@ -183,6 +211,10 @@ impl PresetBuilder {
         self.thumbnails = input;
         self
     }
+    /// <p>A section of the response body that provides information about the thumbnail preset values, if any.</p>
+    pub fn get_thumbnails(&self) -> &::std::option::Option<crate::types::Thumbnails> {
+        &self.thumbnails
+    }
     /// <p>Whether the preset is a default preset provided by Elastic Transcoder (<code>System</code>) or a preset that you have defined (<code>Custom</code>).</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -192,6 +224,10 @@ impl PresetBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>Whether the preset is a default preset provided by Elastic Transcoder (<code>System</code>) or a preset that you have defined (<code>Custom</code>).</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`Preset`](crate::types::Preset).
     pub fn build(self) -> crate::types::Preset {

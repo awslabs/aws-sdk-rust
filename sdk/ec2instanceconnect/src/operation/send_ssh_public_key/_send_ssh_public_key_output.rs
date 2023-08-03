@@ -55,6 +55,10 @@ impl SendSshPublicKeyOutputBuilder {
         self.request_id = input;
         self
     }
+    /// <p>The ID of the request. Please provide this ID when contacting AWS Support for assistance.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
+    }
     /// <p>Is true if the request succeeds and an error otherwise.</p>
     pub fn success(mut self, input: bool) -> Self {
         self.success = ::std::option::Option::Some(input);
@@ -64,6 +68,10 @@ impl SendSshPublicKeyOutputBuilder {
     pub fn set_success(mut self, input: ::std::option::Option<bool>) -> Self {
         self.success = input;
         self
+    }
+    /// <p>Is true if the request succeeds and an error otherwise.</p>
+    pub fn get_success(&self) -> &::std::option::Option<bool> {
+        &self.success
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

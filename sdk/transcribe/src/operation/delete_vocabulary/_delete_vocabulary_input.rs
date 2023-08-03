@@ -46,6 +46,10 @@ impl DeleteVocabularyInputBuilder {
         self.vocabulary_name = input;
         self
     }
+    /// <p>The name of the custom vocabulary you want to delete. Custom vocabulary names are case sensitive.</p>
+    pub fn get_vocabulary_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vocabulary_name
+    }
     /// Consumes the builder and constructs a [`DeleteVocabularyInput`](crate::operation::delete_vocabulary::DeleteVocabularyInput).
     pub fn build(
         self,

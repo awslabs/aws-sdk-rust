@@ -57,6 +57,10 @@ impl WorkflowGraphBuilder {
         self.nodes = input;
         self
     }
+    /// <p>A list of the the Glue components belong to the workflow represented as nodes.</p>
+    pub fn get_nodes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Node>> {
+        &self.nodes
+    }
     /// Appends an item to `edges`.
     ///
     /// To override the contents of this collection use [`set_edges`](Self::set_edges).
@@ -75,6 +79,10 @@ impl WorkflowGraphBuilder {
     ) -> Self {
         self.edges = input;
         self
+    }
+    /// <p>A list of all the directed connections between the nodes belonging to the workflow.</p>
+    pub fn get_edges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Edge>> {
+        &self.edges
     }
     /// Consumes the builder and constructs a [`WorkflowGraph`](crate::types::WorkflowGraph).
     pub fn build(self) -> crate::types::WorkflowGraph {

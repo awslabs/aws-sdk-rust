@@ -64,6 +64,10 @@ impl EksVolumeBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the volume. The name must be allowed as a DNS subdomain name. For more information, see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#dns-subdomain-names">DNS subdomain names</a> in the <i>Kubernetes documentation</i>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Specifies the configuration of a Kubernetes <code>hostPath</code> volume. For more information, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/#hostpath">hostPath</a> in the <i>Kubernetes documentation</i>.</p>
     pub fn host_path(mut self, input: crate::types::EksHostPath) -> Self {
         self.host_path = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl EksVolumeBuilder {
     ) -> Self {
         self.host_path = input;
         self
+    }
+    /// <p>Specifies the configuration of a Kubernetes <code>hostPath</code> volume. For more information, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/#hostpath">hostPath</a> in the <i>Kubernetes documentation</i>.</p>
+    pub fn get_host_path(&self) -> &::std::option::Option<crate::types::EksHostPath> {
+        &self.host_path
     }
     /// <p>Specifies the configuration of a Kubernetes <code>emptyDir</code> volume. For more information, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/#emptydir">emptyDir</a> in the <i>Kubernetes documentation</i>.</p>
     pub fn empty_dir(mut self, input: crate::types::EksEmptyDir) -> Self {
@@ -90,6 +98,10 @@ impl EksVolumeBuilder {
         self.empty_dir = input;
         self
     }
+    /// <p>Specifies the configuration of a Kubernetes <code>emptyDir</code> volume. For more information, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/#emptydir">emptyDir</a> in the <i>Kubernetes documentation</i>.</p>
+    pub fn get_empty_dir(&self) -> &::std::option::Option<crate::types::EksEmptyDir> {
+        &self.empty_dir
+    }
     /// <p>Specifies the configuration of a Kubernetes <code>secret</code> volume. For more information, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/#secret">secret</a> in the <i>Kubernetes documentation</i>.</p>
     pub fn secret(mut self, input: crate::types::EksSecret) -> Self {
         self.secret = ::std::option::Option::Some(input);
@@ -99,6 +111,10 @@ impl EksVolumeBuilder {
     pub fn set_secret(mut self, input: ::std::option::Option<crate::types::EksSecret>) -> Self {
         self.secret = input;
         self
+    }
+    /// <p>Specifies the configuration of a Kubernetes <code>secret</code> volume. For more information, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/#secret">secret</a> in the <i>Kubernetes documentation</i>.</p>
+    pub fn get_secret(&self) -> &::std::option::Option<crate::types::EksSecret> {
+        &self.secret
     }
     /// Consumes the builder and constructs a [`EksVolume`](crate::types::EksVolume).
     pub fn build(self) -> crate::types::EksVolume {

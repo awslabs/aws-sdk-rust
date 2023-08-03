@@ -80,6 +80,10 @@ impl AddApplicationInputProcessingConfigurationOutputBuilder {
         self.application_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_arn
+    }
     /// <p>Provides the current application version. </p>
     pub fn application_version_id(mut self, input: i64) -> Self {
         self.application_version_id = ::std::option::Option::Some(input);
@@ -90,6 +94,10 @@ impl AddApplicationInputProcessingConfigurationOutputBuilder {
         self.application_version_id = input;
         self
     }
+    /// <p>Provides the current application version. </p>
+    pub fn get_application_version_id(&self) -> &::std::option::Option<i64> {
+        &self.application_version_id
+    }
     /// <p>The input ID that is associated with the application input. This is the ID that Kinesis Data Analytics assigns to each input configuration that you add to your application.</p>
     pub fn input_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_id = ::std::option::Option::Some(input.into());
@@ -99,6 +107,10 @@ impl AddApplicationInputProcessingConfigurationOutputBuilder {
     pub fn set_input_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_id = input;
         self
+    }
+    /// <p>The input ID that is associated with the application input. This is the ID that Kinesis Data Analytics assigns to each input configuration that you add to your application.</p>
+    pub fn get_input_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_id
     }
     /// <p>The description of the preprocessor that executes on records in this input before the application's code is run.</p>
     pub fn input_processing_configuration_description(
@@ -115,6 +127,12 @@ impl AddApplicationInputProcessingConfigurationOutputBuilder {
     ) -> Self {
         self.input_processing_configuration_description = input;
         self
+    }
+    /// <p>The description of the preprocessor that executes on records in this input before the application's code is run.</p>
+    pub fn get_input_processing_configuration_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::InputProcessingConfigurationDescription> {
+        &self.input_processing_configuration_description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -43,6 +43,10 @@ impl AlarmRuleBuilder {
         self.simple_rule = input;
         self
     }
+    /// <p>A rule that compares an input property value to a threshold value with a comparison operator.</p>
+    pub fn get_simple_rule(&self) -> &::std::option::Option<crate::types::SimpleRule> {
+        &self.simple_rule
+    }
     /// Consumes the builder and constructs a [`AlarmRule`](crate::types::AlarmRule).
     pub fn build(self) -> crate::types::AlarmRule {
         crate::types::AlarmRule {

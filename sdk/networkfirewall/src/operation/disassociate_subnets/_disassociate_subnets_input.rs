@@ -76,6 +76,12 @@ impl DisassociateSubnetsInputBuilder {
         self.update_token = input;
         self
     }
+    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
+    /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
+    pub fn get_update_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.update_token
+    }
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn firewall_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -87,6 +93,11 @@ impl DisassociateSubnetsInputBuilder {
     pub fn set_firewall_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn get_firewall_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.firewall_arn
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
@@ -106,6 +117,11 @@ impl DisassociateSubnetsInputBuilder {
         self.firewall_name = input;
         self
     }
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn get_firewall_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.firewall_name
+    }
     /// Appends an item to `subnet_ids`.
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
@@ -124,6 +140,10 @@ impl DisassociateSubnetsInputBuilder {
     ) -> Self {
         self.subnet_ids = input;
         self
+    }
+    /// <p>The unique identifiers for the subnets that you want to disassociate. </p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
     }
     /// Consumes the builder and constructs a [`DisassociateSubnetsInput`](crate::operation::disassociate_subnets::DisassociateSubnetsInput).
     pub fn build(

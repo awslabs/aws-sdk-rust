@@ -58,6 +58,10 @@ impl DescribeInstanceTypeLimitsInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The name of the domain. Only specify if you need the limits for an existing domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The OpenSearch Service instance type for which you need limit information.</p>
     pub fn instance_type(mut self, input: crate::types::OpenSearchPartitionInstanceType) -> Self {
         self.instance_type = ::std::option::Option::Some(input);
@@ -70,6 +74,12 @@ impl DescribeInstanceTypeLimitsInputBuilder {
     ) -> Self {
         self.instance_type = input;
         self
+    }
+    /// <p>The OpenSearch Service instance type for which you need limit information.</p>
+    pub fn get_instance_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::OpenSearchPartitionInstanceType> {
+        &self.instance_type
     }
     /// <p>Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>
     pub fn engine_version(
@@ -86,6 +96,10 @@ impl DescribeInstanceTypeLimitsInputBuilder {
     ) -> Self {
         self.engine_version = input;
         self
+    }
+    /// <p>Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
     }
     /// Consumes the builder and constructs a [`DescribeInstanceTypeLimitsInput`](crate::operation::describe_instance_type_limits::DescribeInstanceTypeLimitsInput).
     pub fn build(

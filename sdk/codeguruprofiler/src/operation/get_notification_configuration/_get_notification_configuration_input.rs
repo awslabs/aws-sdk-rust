@@ -46,6 +46,10 @@ impl GetNotificationConfigurationInputBuilder {
         self.profiling_group_name = input;
         self
     }
+    /// <p>The name of the profiling group we want to get the notification configuration for.</p>
+    pub fn get_profiling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profiling_group_name
+    }
     /// Consumes the builder and constructs a [`GetNotificationConfigurationInput`](crate::operation::get_notification_configuration::GetNotificationConfigurationInput).
     pub fn build(
         self,

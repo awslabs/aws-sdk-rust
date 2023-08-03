@@ -57,6 +57,12 @@ impl UpdateTaintsPayloadBuilder {
         self.add_or_update_taints = input;
         self
     }
+    /// <p>Kubernetes taints to be added or updated.</p>
+    pub fn get_add_or_update_taints(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Taint>> {
+        &self.add_or_update_taints
+    }
     /// Appends an item to `remove_taints`.
     ///
     /// To override the contents of this collection use [`set_remove_taints`](Self::set_remove_taints).
@@ -75,6 +81,12 @@ impl UpdateTaintsPayloadBuilder {
     ) -> Self {
         self.remove_taints = input;
         self
+    }
+    /// <p>Kubernetes taints to remove.</p>
+    pub fn get_remove_taints(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Taint>> {
+        &self.remove_taints
     }
     /// Consumes the builder and constructs a [`UpdateTaintsPayload`](crate::types::UpdateTaintsPayload).
     pub fn build(self) -> crate::types::UpdateTaintsPayload {

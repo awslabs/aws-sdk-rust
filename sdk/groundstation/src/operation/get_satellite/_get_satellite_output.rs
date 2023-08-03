@@ -79,6 +79,10 @@ impl GetSatelliteOutputBuilder {
         self.satellite_id = input;
         self
     }
+    /// <p>UUID of a satellite.</p>
+    pub fn get_satellite_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.satellite_id
+    }
     /// <p>ARN of a satellite.</p>
     pub fn satellite_arn(
         mut self,
@@ -95,6 +99,10 @@ impl GetSatelliteOutputBuilder {
         self.satellite_arn = input;
         self
     }
+    /// <p>ARN of a satellite.</p>
+    pub fn get_satellite_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.satellite_arn
+    }
     /// <p>NORAD satellite ID number.</p>
     pub fn norad_satellite_id(mut self, input: i32) -> Self {
         self.norad_satellite_id = ::std::option::Option::Some(input);
@@ -104,6 +112,10 @@ impl GetSatelliteOutputBuilder {
     pub fn set_norad_satellite_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.norad_satellite_id = input;
         self
+    }
+    /// <p>NORAD satellite ID number.</p>
+    pub fn get_norad_satellite_id(&self) -> &::std::option::Option<i32> {
+        &self.norad_satellite_id
     }
     /// Appends an item to `ground_stations`.
     ///
@@ -127,6 +139,12 @@ impl GetSatelliteOutputBuilder {
         self.ground_stations = input;
         self
     }
+    /// <p>A list of ground stations to which the satellite is on-boarded.</p>
+    pub fn get_ground_stations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ground_stations
+    }
     /// <p>The current ephemeris being used to compute the trajectory of the satellite.</p>
     pub fn current_ephemeris(mut self, input: crate::types::EphemerisMetaData) -> Self {
         self.current_ephemeris = ::std::option::Option::Some(input);
@@ -139,6 +157,10 @@ impl GetSatelliteOutputBuilder {
     ) -> Self {
         self.current_ephemeris = input;
         self
+    }
+    /// <p>The current ephemeris being used to compute the trajectory of the satellite.</p>
+    pub fn get_current_ephemeris(&self) -> &::std::option::Option<crate::types::EphemerisMetaData> {
+        &self.current_ephemeris
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

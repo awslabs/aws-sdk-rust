@@ -40,6 +40,10 @@ impl ModifyHsmFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyHsm as a reference.
+    pub fn as_input(&self) -> &crate::operation::modify_hsm::builders::ModifyHsmInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -122,6 +126,10 @@ impl ModifyHsmFluentBuilder {
         self.inner = self.inner.set_hsm_arn(input);
         self
     }
+    /// <p>The ARN of the HSM to modify.</p>
+    pub fn get_hsm_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_hsm_arn()
+    }
     /// <p>The new identifier of the subnet that the HSM is in. The new subnet must be in the same Availability Zone as the current subnet.</p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subnet_id(input.into());
@@ -131,6 +139,10 @@ impl ModifyHsmFluentBuilder {
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subnet_id(input);
         self
+    }
+    /// <p>The new identifier of the subnet that the HSM is in. The new subnet must be in the same Availability Zone as the current subnet.</p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_subnet_id()
     }
     /// <p>The new IP address for the elastic network interface (ENI) attached to the HSM.</p>
     /// <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the new subnet.</p>
@@ -144,6 +156,11 @@ impl ModifyHsmFluentBuilder {
         self.inner = self.inner.set_eni_ip(input);
         self
     }
+    /// <p>The new IP address for the elastic network interface (ENI) attached to the HSM.</p>
+    /// <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the new subnet.</p>
+    pub fn get_eni_ip(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_eni_ip()
+    }
     /// <p>The new IAM role ARN.</p>
     pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.iam_role_arn(input.into());
@@ -153,6 +170,10 @@ impl ModifyHsmFluentBuilder {
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_iam_role_arn(input);
         self
+    }
+    /// <p>The new IAM role ARN.</p>
+    pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_iam_role_arn()
     }
     /// <p>The new external ID.</p>
     pub fn external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -164,6 +185,10 @@ impl ModifyHsmFluentBuilder {
         self.inner = self.inner.set_external_id(input);
         self
     }
+    /// <p>The new external ID.</p>
+    pub fn get_external_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_external_id()
+    }
     /// <p>The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>
     pub fn syslog_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.syslog_ip(input.into());
@@ -173,5 +198,9 @@ impl ModifyHsmFluentBuilder {
     pub fn set_syslog_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_syslog_ip(input);
         self
+    }
+    /// <p>The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>
+    pub fn get_syslog_ip(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_syslog_ip()
     }
 }

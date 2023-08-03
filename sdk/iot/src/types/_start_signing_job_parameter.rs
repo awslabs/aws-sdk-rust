@@ -65,6 +65,12 @@ impl StartSigningJobParameterBuilder {
         self.signing_profile_parameter = input;
         self
     }
+    /// <p>Describes the code-signing profile.</p>
+    pub fn get_signing_profile_parameter(
+        &self,
+    ) -> &::std::option::Option<crate::types::SigningProfileParameter> {
+        &self.signing_profile_parameter
+    }
     /// <p>The code-signing profile name.</p>
     pub fn signing_profile_name(
         mut self,
@@ -81,6 +87,10 @@ impl StartSigningJobParameterBuilder {
         self.signing_profile_name = input;
         self
     }
+    /// <p>The code-signing profile name.</p>
+    pub fn get_signing_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.signing_profile_name
+    }
     /// <p>The location to write the code-signed file.</p>
     pub fn destination(mut self, input: crate::types::Destination) -> Self {
         self.destination = ::std::option::Option::Some(input);
@@ -93,6 +103,10 @@ impl StartSigningJobParameterBuilder {
     ) -> Self {
         self.destination = input;
         self
+    }
+    /// <p>The location to write the code-signed file.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<crate::types::Destination> {
+        &self.destination
     }
     /// Consumes the builder and constructs a [`StartSigningJobParameter`](crate::types::StartSigningJobParameter).
     pub fn build(self) -> crate::types::StartSigningJobParameter {

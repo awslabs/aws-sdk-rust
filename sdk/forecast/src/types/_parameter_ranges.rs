@@ -80,6 +80,12 @@ impl ParameterRangesBuilder {
         self.categorical_parameter_ranges = input;
         self
     }
+    /// <p>Specifies the tunable range for each categorical hyperparameter.</p>
+    pub fn get_categorical_parameter_ranges(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CategoricalParameterRange>> {
+        &self.categorical_parameter_ranges
+    }
     /// Appends an item to `continuous_parameter_ranges`.
     ///
     /// To override the contents of this collection use [`set_continuous_parameter_ranges`](Self::set_continuous_parameter_ranges).
@@ -102,6 +108,12 @@ impl ParameterRangesBuilder {
         self.continuous_parameter_ranges = input;
         self
     }
+    /// <p>Specifies the tunable range for each continuous hyperparameter.</p>
+    pub fn get_continuous_parameter_ranges(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContinuousParameterRange>> {
+        &self.continuous_parameter_ranges
+    }
     /// Appends an item to `integer_parameter_ranges`.
     ///
     /// To override the contents of this collection use [`set_integer_parameter_ranges`](Self::set_integer_parameter_ranges).
@@ -120,6 +132,12 @@ impl ParameterRangesBuilder {
     ) -> Self {
         self.integer_parameter_ranges = input;
         self
+    }
+    /// <p>Specifies the tunable range for each integer hyperparameter.</p>
+    pub fn get_integer_parameter_ranges(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IntegerParameterRange>> {
+        &self.integer_parameter_ranges
     }
     /// Consumes the builder and constructs a [`ParameterRanges`](crate::types::ParameterRanges).
     pub fn build(self) -> crate::types::ParameterRanges {

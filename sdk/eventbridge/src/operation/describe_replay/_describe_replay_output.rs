@@ -134,6 +134,10 @@ impl DescribeReplayOutputBuilder {
         self.replay_name = input;
         self
     }
+    /// <p>The name of the replay.</p>
+    pub fn get_replay_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replay_name
+    }
     /// <p>The ARN of the replay.</p>
     pub fn replay_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replay_arn = ::std::option::Option::Some(input.into());
@@ -143,6 +147,10 @@ impl DescribeReplayOutputBuilder {
     pub fn set_replay_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replay_arn = input;
         self
+    }
+    /// <p>The ARN of the replay.</p>
+    pub fn get_replay_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replay_arn
     }
     /// <p>The description of the replay.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -154,6 +162,10 @@ impl DescribeReplayOutputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the replay.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The current state of the replay.</p>
     pub fn state(mut self, input: crate::types::ReplayState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -164,6 +176,10 @@ impl DescribeReplayOutputBuilder {
         self.state = input;
         self
     }
+    /// <p>The current state of the replay.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ReplayState> {
+        &self.state
+    }
     /// <p>The reason that the replay is in the current state.</p>
     pub fn state_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_reason = ::std::option::Option::Some(input.into());
@@ -173,6 +189,10 @@ impl DescribeReplayOutputBuilder {
     pub fn set_state_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_reason = input;
         self
+    }
+    /// <p>The reason that the replay is in the current state.</p>
+    pub fn get_state_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_reason
     }
     /// <p>The ARN of the archive events were replayed from.</p>
     pub fn event_source_arn(
@@ -190,6 +210,10 @@ impl DescribeReplayOutputBuilder {
         self.event_source_arn = input;
         self
     }
+    /// <p>The ARN of the archive events were replayed from.</p>
+    pub fn get_event_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_source_arn
+    }
     /// <p>A <code>ReplayDestination</code> object that contains details about the replay.</p>
     pub fn destination(mut self, input: crate::types::ReplayDestination) -> Self {
         self.destination = ::std::option::Option::Some(input);
@@ -202,6 +226,10 @@ impl DescribeReplayOutputBuilder {
     ) -> Self {
         self.destination = input;
         self
+    }
+    /// <p>A <code>ReplayDestination</code> object that contains details about the replay.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<crate::types::ReplayDestination> {
+        &self.destination
     }
     /// <p>The time stamp of the first event that was last replayed from the archive.</p>
     pub fn event_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -216,6 +244,10 @@ impl DescribeReplayOutputBuilder {
         self.event_start_time = input;
         self
     }
+    /// <p>The time stamp of the first event that was last replayed from the archive.</p>
+    pub fn get_event_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.event_start_time
+    }
     /// <p>The time stamp for the last event that was replayed from the archive.</p>
     pub fn event_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.event_end_time = ::std::option::Option::Some(input);
@@ -228,6 +260,10 @@ impl DescribeReplayOutputBuilder {
     ) -> Self {
         self.event_end_time = input;
         self
+    }
+    /// <p>The time stamp for the last event that was replayed from the archive.</p>
+    pub fn get_event_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.event_end_time
     }
     /// <p>The time that the event was last replayed.</p>
     pub fn event_last_replayed_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -242,6 +278,12 @@ impl DescribeReplayOutputBuilder {
         self.event_last_replayed_time = input;
         self
     }
+    /// <p>The time that the event was last replayed.</p>
+    pub fn get_event_last_replayed_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.event_last_replayed_time
+    }
     /// <p>A time stamp for the time that the replay started.</p>
     pub fn replay_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.replay_start_time = ::std::option::Option::Some(input);
@@ -255,6 +297,10 @@ impl DescribeReplayOutputBuilder {
         self.replay_start_time = input;
         self
     }
+    /// <p>A time stamp for the time that the replay started.</p>
+    pub fn get_replay_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.replay_start_time
+    }
     /// <p>A time stamp for the time that the replay stopped.</p>
     pub fn replay_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.replay_end_time = ::std::option::Option::Some(input);
@@ -267,6 +313,10 @@ impl DescribeReplayOutputBuilder {
     ) -> Self {
         self.replay_end_time = input;
         self
+    }
+    /// <p>A time stamp for the time that the replay stopped.</p>
+    pub fn get_replay_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.replay_end_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

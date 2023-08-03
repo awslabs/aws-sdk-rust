@@ -38,6 +38,12 @@ impl CancelHandshakeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CancelHandshake as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::cancel_handshake::builders::CancelHandshakeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,5 +135,10 @@ impl CancelHandshakeFluentBuilder {
     pub fn set_handshake_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_handshake_id(input);
         self
+    }
+    /// <p>The unique identifier (ID) of the handshake that you want to cancel. You can get the ID from the <code>ListHandshakesForOrganization</code> operation.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
+    pub fn get_handshake_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_handshake_id()
     }
 }

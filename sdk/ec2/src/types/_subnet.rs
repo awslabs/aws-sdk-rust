@@ -214,6 +214,10 @@ impl SubnetBuilder {
         self.availability_zone = input;
         self
     }
+    /// <p>The Availability Zone of the subnet.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p>The AZ ID of the subnet.</p>
     pub fn availability_zone_id(
         mut self,
@@ -230,6 +234,10 @@ impl SubnetBuilder {
         self.availability_zone_id = input;
         self
     }
+    /// <p>The AZ ID of the subnet.</p>
+    pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone_id
+    }
     /// <p>The number of unused private IPv4 addresses in the subnet. The IPv4 addresses for any stopped instances are considered unavailable.</p>
     pub fn available_ip_address_count(mut self, input: i32) -> Self {
         self.available_ip_address_count = ::std::option::Option::Some(input);
@@ -239,6 +247,10 @@ impl SubnetBuilder {
     pub fn set_available_ip_address_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.available_ip_address_count = input;
         self
+    }
+    /// <p>The number of unused private IPv4 addresses in the subnet. The IPv4 addresses for any stopped instances are considered unavailable.</p>
+    pub fn get_available_ip_address_count(&self) -> &::std::option::Option<i32> {
+        &self.available_ip_address_count
     }
     /// <p>The IPv4 CIDR block assigned to the subnet.</p>
     pub fn cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -250,6 +262,10 @@ impl SubnetBuilder {
         self.cidr_block = input;
         self
     }
+    /// <p>The IPv4 CIDR block assigned to the subnet.</p>
+    pub fn get_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr_block
+    }
     /// <p>Indicates whether this is the default subnet for the Availability Zone.</p>
     pub fn default_for_az(mut self, input: bool) -> Self {
         self.default_for_az = ::std::option::Option::Some(input);
@@ -259,6 +275,10 @@ impl SubnetBuilder {
     pub fn set_default_for_az(mut self, input: ::std::option::Option<bool>) -> Self {
         self.default_for_az = input;
         self
+    }
+    /// <p>Indicates whether this is the default subnet for the Availability Zone.</p>
+    pub fn get_default_for_az(&self) -> &::std::option::Option<bool> {
+        &self.default_for_az
     }
     /// <p> Indicates the device position for local network interfaces in this subnet. For example, <code>1</code> indicates local network interfaces in this subnet are the secondary network interface (eth1). </p>
     pub fn enable_lni_at_device_index(mut self, input: i32) -> Self {
@@ -270,6 +290,10 @@ impl SubnetBuilder {
         self.enable_lni_at_device_index = input;
         self
     }
+    /// <p> Indicates the device position for local network interfaces in this subnet. For example, <code>1</code> indicates local network interfaces in this subnet are the secondary network interface (eth1). </p>
+    pub fn get_enable_lni_at_device_index(&self) -> &::std::option::Option<i32> {
+        &self.enable_lni_at_device_index
+    }
     /// <p>Indicates whether instances launched in this subnet receive a public IPv4 address.</p>
     pub fn map_public_ip_on_launch(mut self, input: bool) -> Self {
         self.map_public_ip_on_launch = ::std::option::Option::Some(input);
@@ -279,6 +303,10 @@ impl SubnetBuilder {
     pub fn set_map_public_ip_on_launch(mut self, input: ::std::option::Option<bool>) -> Self {
         self.map_public_ip_on_launch = input;
         self
+    }
+    /// <p>Indicates whether instances launched in this subnet receive a public IPv4 address.</p>
+    pub fn get_map_public_ip_on_launch(&self) -> &::std::option::Option<bool> {
+        &self.map_public_ip_on_launch
     }
     /// <p>Indicates whether a network interface created in this subnet (including a network interface created by <code>RunInstances</code>) receives a customer-owned IPv4 address.</p>
     pub fn map_customer_owned_ip_on_launch(mut self, input: bool) -> Self {
@@ -292,6 +320,10 @@ impl SubnetBuilder {
     ) -> Self {
         self.map_customer_owned_ip_on_launch = input;
         self
+    }
+    /// <p>Indicates whether a network interface created in this subnet (including a network interface created by <code>RunInstances</code>) receives a customer-owned IPv4 address.</p>
+    pub fn get_map_customer_owned_ip_on_launch(&self) -> &::std::option::Option<bool> {
+        &self.map_customer_owned_ip_on_launch
     }
     /// <p>The customer-owned IPv4 address pool associated with the subnet.</p>
     pub fn customer_owned_ipv4_pool(
@@ -309,6 +341,10 @@ impl SubnetBuilder {
         self.customer_owned_ipv4_pool = input;
         self
     }
+    /// <p>The customer-owned IPv4 address pool associated with the subnet.</p>
+    pub fn get_customer_owned_ipv4_pool(&self) -> &::std::option::Option<::std::string::String> {
+        &self.customer_owned_ipv4_pool
+    }
     /// <p>The current state of the subnet.</p>
     pub fn state(mut self, input: crate::types::SubnetState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -318,6 +354,10 @@ impl SubnetBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::SubnetState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The current state of the subnet.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::SubnetState> {
+        &self.state
     }
     /// <p>The ID of the subnet.</p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -329,6 +369,10 @@ impl SubnetBuilder {
         self.subnet_id = input;
         self
     }
+    /// <p>The ID of the subnet.</p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_id
+    }
     /// <p>The ID of the VPC the subnet is in.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -339,6 +383,10 @@ impl SubnetBuilder {
         self.vpc_id = input;
         self
     }
+    /// <p>The ID of the VPC the subnet is in.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
+    }
     /// <p>The ID of the Amazon Web Services account that owns the subnet.</p>
     pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_id = ::std::option::Option::Some(input.into());
@@ -348,6 +396,10 @@ impl SubnetBuilder {
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_id = input;
         self
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the subnet.</p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
     }
     /// <p>Indicates whether a network interface created in this subnet (including a network interface created by <code>RunInstances</code>) receives an IPv6 address.</p>
     pub fn assign_ipv6_address_on_creation(mut self, input: bool) -> Self {
@@ -361,6 +413,10 @@ impl SubnetBuilder {
     ) -> Self {
         self.assign_ipv6_address_on_creation = input;
         self
+    }
+    /// <p>Indicates whether a network interface created in this subnet (including a network interface created by <code>RunInstances</code>) receives an IPv6 address.</p>
+    pub fn get_assign_ipv6_address_on_creation(&self) -> &::std::option::Option<bool> {
+        &self.assign_ipv6_address_on_creation
     }
     /// Appends an item to `ipv6_cidr_block_association_set`.
     ///
@@ -384,6 +440,12 @@ impl SubnetBuilder {
         self.ipv6_cidr_block_association_set = input;
         self
     }
+    /// <p>Information about the IPv6 CIDR blocks associated with the subnet.</p>
+    pub fn get_ipv6_cidr_block_association_set(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SubnetIpv6CidrBlockAssociation>> {
+        &self.ipv6_cidr_block_association_set
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -403,6 +465,10 @@ impl SubnetBuilder {
         self.tags = input;
         self
     }
+    /// <p>Any tags assigned to the subnet.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The Amazon Resource Name (ARN) of the subnet.</p>
     pub fn subnet_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_arn = ::std::option::Option::Some(input.into());
@@ -412,6 +478,10 @@ impl SubnetBuilder {
     pub fn set_subnet_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the subnet.</p>
+    pub fn get_subnet_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     pub fn outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -423,6 +493,10 @@ impl SubnetBuilder {
         self.outpost_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
+    pub fn get_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.outpost_arn
+    }
     /// <p>Indicates whether DNS queries made to the Amazon-provided DNS Resolver in this subnet should return synthetic IPv6 addresses for IPv4-only destinations.</p>
     pub fn enable_dns64(mut self, input: bool) -> Self {
         self.enable_dns64 = ::std::option::Option::Some(input);
@@ -433,6 +507,10 @@ impl SubnetBuilder {
         self.enable_dns64 = input;
         self
     }
+    /// <p>Indicates whether DNS queries made to the Amazon-provided DNS Resolver in this subnet should return synthetic IPv6 addresses for IPv4-only destinations.</p>
+    pub fn get_enable_dns64(&self) -> &::std::option::Option<bool> {
+        &self.enable_dns64
+    }
     /// <p>Indicates whether this is an IPv6 only subnet.</p>
     pub fn ipv6_native(mut self, input: bool) -> Self {
         self.ipv6_native = ::std::option::Option::Some(input);
@@ -442,6 +520,10 @@ impl SubnetBuilder {
     pub fn set_ipv6_native(mut self, input: ::std::option::Option<bool>) -> Self {
         self.ipv6_native = input;
         self
+    }
+    /// <p>Indicates whether this is an IPv6 only subnet.</p>
+    pub fn get_ipv6_native(&self) -> &::std::option::Option<bool> {
+        &self.ipv6_native
     }
     /// <p>The type of hostnames to assign to instances in the subnet at launch. An instance hostname is based on the IPv4 address or ID of the instance.</p>
     pub fn private_dns_name_options_on_launch(
@@ -458,6 +540,12 @@ impl SubnetBuilder {
     ) -> Self {
         self.private_dns_name_options_on_launch = input;
         self
+    }
+    /// <p>The type of hostnames to assign to instances in the subnet at launch. An instance hostname is based on the IPv4 address or ID of the instance.</p>
+    pub fn get_private_dns_name_options_on_launch(
+        &self,
+    ) -> &::std::option::Option<crate::types::PrivateDnsNameOptionsOnLaunch> {
+        &self.private_dns_name_options_on_launch
     }
     /// Consumes the builder and constructs a [`Subnet`](crate::types::Subnet).
     pub fn build(self) -> crate::types::Subnet {

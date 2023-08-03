@@ -39,6 +39,10 @@ impl GetWorkspaceInputBuilder {
         self.workspace_id = input;
         self
     }
+    /// <p>The ID of the workspace.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
+    }
     /// Consumes the builder and constructs a [`GetWorkspaceInput`](crate::operation::get_workspace::GetWorkspaceInput).
     pub fn build(
         self,

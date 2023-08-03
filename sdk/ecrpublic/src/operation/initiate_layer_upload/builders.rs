@@ -39,6 +39,12 @@ impl InitiateLayerUploadFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the InitiateLayerUpload as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::initiate_layer_upload::builders::InitiateLayerUploadInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl InitiateLayerUploadFluentBuilder {
         self.inner = self.inner.set_registry_id(input);
         self
     }
+    /// <p>The Amazon Web Services account ID, or registry alias, that's associated with the registry to which you intend to upload layers. If you do not specify a registry, the default public registry is assumed.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_registry_id()
+    }
     /// <p>The name of the repository that you want to upload layers to.</p>
     pub fn repository_name(
         mut self,
@@ -144,5 +154,9 @@ impl InitiateLayerUploadFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
+    }
+    /// <p>The name of the repository that you want to upload layers to.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_repository_name()
     }
 }

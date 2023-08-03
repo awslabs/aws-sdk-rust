@@ -64,6 +64,10 @@ impl AddInstanceGroupsOutputBuilder {
         self.job_flow_id = input;
         self
     }
+    /// <p>The job flow ID in which the instance groups are added.</p>
+    pub fn get_job_flow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_flow_id
+    }
     /// Appends an item to `instance_group_ids`.
     ///
     /// To override the contents of this collection use [`set_instance_group_ids`](Self::set_instance_group_ids).
@@ -86,6 +90,12 @@ impl AddInstanceGroupsOutputBuilder {
         self.instance_group_ids = input;
         self
     }
+    /// <p>Instance group IDs of the newly created instance groups.</p>
+    pub fn get_instance_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.instance_group_ids
+    }
     /// <p>The Amazon Resource Name of the cluster.</p>
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_arn = ::std::option::Option::Some(input.into());
@@ -95,6 +105,10 @@ impl AddInstanceGroupsOutputBuilder {
     pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name of the cluster.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

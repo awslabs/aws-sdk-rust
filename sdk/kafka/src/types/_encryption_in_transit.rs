@@ -69,6 +69,14 @@ impl EncryptionInTransitBuilder {
         self.client_broker = input;
         self
     }
+    /// <p>Indicates the encryption setting for data in transit between clients and brokers. The following are the possible values.</p>
+    /// <p> TLS means that client-broker communication is enabled with TLS only.</p>
+    /// <p> TLS_PLAINTEXT means that client-broker communication is enabled for both TLS-encrypted, as well as plaintext data.</p>
+    /// <p> PLAINTEXT means that client-broker communication is enabled in plaintext only.</p>
+    /// <p>The default value is TLS_PLAINTEXT.</p>
+    pub fn get_client_broker(&self) -> &::std::option::Option<crate::types::ClientBroker> {
+        &self.client_broker
+    }
     /// <p>When set to true, it indicates that data communication among the broker nodes of the cluster is encrypted. When set to false, the communication happens in plaintext.</p>
     /// <p>The default value is true.</p>
     pub fn in_cluster(mut self, input: bool) -> Self {
@@ -80,6 +88,11 @@ impl EncryptionInTransitBuilder {
     pub fn set_in_cluster(mut self, input: ::std::option::Option<bool>) -> Self {
         self.in_cluster = input;
         self
+    }
+    /// <p>When set to true, it indicates that data communication among the broker nodes of the cluster is encrypted. When set to false, the communication happens in plaintext.</p>
+    /// <p>The default value is true.</p>
+    pub fn get_in_cluster(&self) -> &::std::option::Option<bool> {
+        &self.in_cluster
     }
     /// Consumes the builder and constructs a [`EncryptionInTransit`](crate::types::EncryptionInTransit).
     pub fn build(self) -> crate::types::EncryptionInTransit {

@@ -48,6 +48,10 @@ impl AccessPoliciesStatusBuilder {
         self.options = input;
         self
     }
+    /// <p>The access policy configured for the domain. Access policies can be resource-based, IP-based, or IAM-based. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-access-policies">Configuring access policies</a>.</p>
+    pub fn get_options(&self) -> &::std::option::Option<::std::string::String> {
+        &self.options
+    }
     /// <p>The status of the access policy for the domain.</p>
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl AccessPoliciesStatusBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OptionStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the access policy for the domain.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::OptionStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`AccessPoliciesStatus`](crate::types::AccessPoliciesStatus).
     pub fn build(self) -> crate::types::AccessPoliciesStatus {

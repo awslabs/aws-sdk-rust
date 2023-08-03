@@ -36,6 +36,10 @@ impl UpdateRescoreExecutionPlanFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateRescoreExecutionPlan as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_rescore_execution_plan::builders::UpdateRescoreExecutionPlanInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl UpdateRescoreExecutionPlanFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The identifier of the rescore execution plan that you want to update.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>A new name for the rescore execution plan.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -136,6 +144,10 @@ impl UpdateRescoreExecutionPlanFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>A new name for the rescore execution plan.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>A new description for the rescore execution plan.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -145,6 +157,10 @@ impl UpdateRescoreExecutionPlanFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A new description for the rescore execution plan.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>You can set additional capacity units to meet the needs of your rescore execution plan. You are given a single capacity unit by default. If you want to use the default capacity, you don't set additional capacity units. For more information on the default capacity and additional capacity units, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
     pub fn capacity_units(mut self, input: crate::types::CapacityUnitsConfiguration) -> Self {
@@ -158,5 +174,11 @@ impl UpdateRescoreExecutionPlanFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_capacity_units(input);
         self
+    }
+    /// <p>You can set additional capacity units to meet the needs of your rescore execution plan. You are given a single capacity unit by default. If you want to use the default capacity, you don't set additional capacity units. For more information on the default capacity and additional capacity units, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
+    pub fn get_capacity_units(
+        &self,
+    ) -> &::std::option::Option<crate::types::CapacityUnitsConfiguration> {
+        self.inner.get_capacity_units()
     }
 }

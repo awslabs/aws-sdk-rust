@@ -56,6 +56,10 @@ impl EncryptionConfigBuilder {
         self.key_id = input;
         self
     }
+    /// <p>The ID of the KMS key used for encryption, if applicable.</p>
+    pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_id
+    }
     /// <p>The encryption status. While the status is <code>UPDATING</code>, X-Ray may encrypt data with a combination of the new and old settings.</p>
     pub fn status(mut self, input: crate::types::EncryptionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl EncryptionConfigBuilder {
         self.status = input;
         self
     }
+    /// <p>The encryption status. While the status is <code>UPDATING</code>, X-Ray may encrypt data with a combination of the new and old settings.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::EncryptionStatus> {
+        &self.status
+    }
     /// <p>The type of encryption. Set to <code>KMS</code> for encryption with KMS keys. Set to <code>NONE</code> for default encryption.</p>
     pub fn r#type(mut self, input: crate::types::EncryptionType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -78,6 +86,10 @@ impl EncryptionConfigBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::EncryptionType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of encryption. Set to <code>KMS</code> for encryption with KMS keys. Set to <code>NONE</code> for default encryption.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::EncryptionType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`EncryptionConfig`](crate::types::EncryptionConfig).
     pub fn build(self) -> crate::types::EncryptionConfig {

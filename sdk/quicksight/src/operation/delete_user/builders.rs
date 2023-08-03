@@ -36,6 +36,10 @@ impl DeleteUserFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteUser as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_user::builders::DeleteUserInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl DeleteUserFluentBuilder {
         self.inner = self.inner.set_user_name(input);
         self
     }
+    /// <p>The name of the user that you want to delete.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_name()
+    }
     /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub fn aws_account_id(
         mut self,
@@ -134,6 +142,10 @@ impl DeleteUserFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace(input.into());
@@ -143,5 +155,9 @@ impl DeleteUserFluentBuilder {
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace(input);
         self
+    }
+    /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_namespace()
     }
 }

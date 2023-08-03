@@ -90,6 +90,10 @@ impl CoverageResourceBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The unique ID of the resource.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// <p>The unique ID of the GuardDuty detector associated with the resource.</p>
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detector_id = ::std::option::Option::Some(input.into());
@@ -100,6 +104,10 @@ impl CoverageResourceBuilder {
         self.detector_id = input;
         self
     }
+    /// <p>The unique ID of the GuardDuty detector associated with the resource.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
+    }
     /// <p>The unique ID of the Amazon Web Services account.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -109,6 +117,10 @@ impl CoverageResourceBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>The unique ID of the Amazon Web Services account.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// <p>Information about the resource for which the coverage statistics are retrieved.</p>
     pub fn resource_details(mut self, input: crate::types::CoverageResourceDetails) -> Self {
@@ -123,6 +135,12 @@ impl CoverageResourceBuilder {
         self.resource_details = input;
         self
     }
+    /// <p>Information about the resource for which the coverage statistics are retrieved.</p>
+    pub fn get_resource_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::CoverageResourceDetails> {
+        &self.resource_details
+    }
     /// <p>Represents the status of the EKS cluster coverage.</p>
     pub fn coverage_status(mut self, input: crate::types::CoverageStatus) -> Self {
         self.coverage_status = ::std::option::Option::Some(input);
@@ -136,6 +154,10 @@ impl CoverageResourceBuilder {
         self.coverage_status = input;
         self
     }
+    /// <p>Represents the status of the EKS cluster coverage.</p>
+    pub fn get_coverage_status(&self) -> &::std::option::Option<crate::types::CoverageStatus> {
+        &self.coverage_status
+    }
     /// <p>Represents the reason why a coverage status was <code>UNHEALTHY</code> for the EKS cluster.</p>
     pub fn issue(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.issue = ::std::option::Option::Some(input.into());
@@ -145,6 +167,10 @@ impl CoverageResourceBuilder {
     pub fn set_issue(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.issue = input;
         self
+    }
+    /// <p>Represents the reason why a coverage status was <code>UNHEALTHY</code> for the EKS cluster.</p>
+    pub fn get_issue(&self) -> &::std::option::Option<::std::string::String> {
+        &self.issue
     }
     /// <p>The timestamp at which the coverage details for the resource were last updated. This is in UTC format.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -158,6 +184,10 @@ impl CoverageResourceBuilder {
     ) -> Self {
         self.updated_at = input;
         self
+    }
+    /// <p>The timestamp at which the coverage details for the resource were last updated. This is in UTC format.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     /// Consumes the builder and constructs a [`CoverageResource`](crate::types::CoverageResource).
     pub fn build(self) -> crate::types::CoverageResource {

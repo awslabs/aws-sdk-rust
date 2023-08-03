@@ -36,6 +36,12 @@ impl StartBuildBatchFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartBuildBatch as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_build_batch::builders::StartBuildBatchInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl StartBuildBatchFluentBuilder {
         self.inner = self.inner.set_project_name(input);
         self
     }
+    /// <p>The name of the project.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_name()
+    }
     /// Appends an item to `secondarySourcesOverride`.
     ///
     /// To override the contents of this collection use [`set_secondary_sources_override`](Self::set_secondary_sources_override).
@@ -142,6 +152,12 @@ impl StartBuildBatchFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_secondary_sources_override(input);
         self
+    }
+    /// <p>An array of <code>ProjectSource</code> objects that override the secondary sources defined in the batch build project.</p>
+    pub fn get_secondary_sources_override(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectSource>> {
+        self.inner.get_secondary_sources_override()
     }
     /// Appends an item to `secondarySourcesVersionOverride`.
     ///
@@ -162,6 +178,12 @@ impl StartBuildBatchFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_secondary_sources_version_override(input);
         self
+    }
+    /// <p>An array of <code>ProjectSourceVersion</code> objects that override the secondary source versions in the batch build project.</p>
+    pub fn get_secondary_sources_version_override(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectSourceVersion>> {
+        self.inner.get_secondary_sources_version_override()
     }
     /// <p>The version of the batch build input to be built, for this build only. If not specified, the latest version is used. If specified, the contents depends on the source provider:</p>
     /// <dl>
@@ -235,6 +257,38 @@ impl StartBuildBatchFluentBuilder {
         self.inner = self.inner.set_source_version(input);
         self
     }
+    /// <p>The version of the batch build input to be built, for this build only. If not specified, the latest version is used. If specified, the contents depends on the source provider:</p>
+    /// <dl>
+    /// <dt>
+    /// CodeCommit
+    /// </dt>
+    /// <dd>
+    /// <p>The commit ID, branch, or Git tag to use.</p>
+    /// </dd>
+    /// <dt>
+    /// GitHub
+    /// </dt>
+    /// <dd>
+    /// <p>The commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p>
+    /// </dd>
+    /// <dt>
+    /// Bitbucket
+    /// </dt>
+    /// <dd>
+    /// <p>The commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p>
+    /// </dd>
+    /// <dt>
+    /// Amazon S3
+    /// </dt>
+    /// <dd>
+    /// <p>The version ID of the object that represents the build input ZIP file to use.</p>
+    /// </dd>
+    /// </dl>
+    /// <p>If <code>sourceVersion</code> is specified at the project level, then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
+    pub fn get_source_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_version()
+    }
     /// <p>An array of <code>ProjectArtifacts</code> objects that contains information about the build output artifact overrides for the build project.</p>
     pub fn artifacts_override(mut self, input: crate::types::ProjectArtifacts) -> Self {
         self.inner = self.inner.artifacts_override(input);
@@ -247,6 +301,10 @@ impl StartBuildBatchFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_artifacts_override(input);
         self
+    }
+    /// <p>An array of <code>ProjectArtifacts</code> objects that contains information about the build output artifact overrides for the build project.</p>
+    pub fn get_artifacts_override(&self) -> &::std::option::Option<crate::types::ProjectArtifacts> {
+        self.inner.get_artifacts_override()
     }
     /// Appends an item to `secondaryArtifactsOverride`.
     ///
@@ -264,6 +322,12 @@ impl StartBuildBatchFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_secondary_artifacts_override(input);
         self
+    }
+    /// <p>An array of <code>ProjectArtifacts</code> objects that override the secondary artifacts defined in the batch build project.</p>
+    pub fn get_secondary_artifacts_override(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectArtifacts>> {
+        self.inner.get_secondary_artifacts_override()
     }
     /// Appends an item to `environmentVariablesOverride`.
     ///
@@ -285,6 +349,12 @@ impl StartBuildBatchFluentBuilder {
         self.inner = self.inner.set_environment_variables_override(input);
         self
     }
+    /// <p>An array of <code>EnvironmentVariable</code> objects that override, or add to, the environment variables defined in the batch build project.</p>
+    pub fn get_environment_variables_override(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>> {
+        self.inner.get_environment_variables_override()
+    }
     /// <p>The source input type that overrides the source input defined in the batch build project.</p>
     pub fn source_type_override(mut self, input: crate::types::SourceType) -> Self {
         self.inner = self.inner.source_type_override(input);
@@ -297,6 +367,10 @@ impl StartBuildBatchFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_source_type_override(input);
         self
+    }
+    /// <p>The source input type that overrides the source input defined in the batch build project.</p>
+    pub fn get_source_type_override(&self) -> &::std::option::Option<crate::types::SourceType> {
+        self.inner.get_source_type_override()
     }
     /// <p>A location that overrides, for this batch build, the source location defined in the batch build project.</p>
     pub fn source_location_override(
@@ -314,6 +388,10 @@ impl StartBuildBatchFluentBuilder {
         self.inner = self.inner.set_source_location_override(input);
         self
     }
+    /// <p>A location that overrides, for this batch build, the source location defined in the batch build project.</p>
+    pub fn get_source_location_override(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_location_override()
+    }
     /// <p>A <code>SourceAuth</code> object that overrides the one defined in the batch build project. This override applies only if the build project's source is BitBucket or GitHub.</p>
     pub fn source_auth_override(mut self, input: crate::types::SourceAuth) -> Self {
         self.inner = self.inner.source_auth_override(input);
@@ -327,6 +405,10 @@ impl StartBuildBatchFluentBuilder {
         self.inner = self.inner.set_source_auth_override(input);
         self
     }
+    /// <p>A <code>SourceAuth</code> object that overrides the one defined in the batch build project. This override applies only if the build project's source is BitBucket or GitHub.</p>
+    pub fn get_source_auth_override(&self) -> &::std::option::Option<crate::types::SourceAuth> {
+        self.inner.get_source_auth_override()
+    }
     /// <p>The user-defined depth of history, with a minimum value of 0, that overrides, for this batch build only, any previous depth of history defined in the batch build project.</p>
     pub fn git_clone_depth_override(mut self, input: i32) -> Self {
         self.inner = self.inner.git_clone_depth_override(input);
@@ -336,6 +418,10 @@ impl StartBuildBatchFluentBuilder {
     pub fn set_git_clone_depth_override(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_git_clone_depth_override(input);
         self
+    }
+    /// <p>The user-defined depth of history, with a minimum value of 0, that overrides, for this batch build only, any previous depth of history defined in the batch build project.</p>
+    pub fn get_git_clone_depth_override(&self) -> &::std::option::Option<i32> {
+        self.inner.get_git_clone_depth_override()
     }
     /// <p>A <code>GitSubmodulesConfig</code> object that overrides the Git submodules configuration for this batch build.</p>
     pub fn git_submodules_config_override(
@@ -352,6 +438,12 @@ impl StartBuildBatchFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_git_submodules_config_override(input);
         self
+    }
+    /// <p>A <code>GitSubmodulesConfig</code> object that overrides the Git submodules configuration for this batch build.</p>
+    pub fn get_git_submodules_config_override(
+        &self,
+    ) -> &::std::option::Option<crate::types::GitSubmodulesConfig> {
+        self.inner.get_git_submodules_config_override()
     }
     /// <p>A buildspec file declaration that overrides, for this build only, the latest one already defined in the build project.</p>
     /// <p>If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an S3 bucket. The bucket must be in the same Amazon Web Services Region as the build project. Specify the buildspec file using its ARN (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not provided or is set to an empty string, the source code must contain a buildspec file in its root directory. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec File Name and Storage Location</a>. </p>
@@ -371,6 +463,11 @@ impl StartBuildBatchFluentBuilder {
         self.inner = self.inner.set_buildspec_override(input);
         self
     }
+    /// <p>A buildspec file declaration that overrides, for this build only, the latest one already defined in the build project.</p>
+    /// <p>If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an S3 bucket. The bucket must be in the same Amazon Web Services Region as the build project. Specify the buildspec file using its ARN (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not provided or is set to an empty string, the source code must contain a buildspec file in its root directory. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec File Name and Storage Location</a>. </p>
+    pub fn get_buildspec_override(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_buildspec_override()
+    }
     /// <p>Enable this flag to override the insecure SSL setting that is specified in the batch build project. The insecure SSL setting determines whether to ignore SSL warnings while connecting to the project source code. This override applies only if the build's source is GitHub Enterprise.</p>
     pub fn insecure_ssl_override(mut self, input: bool) -> Self {
         self.inner = self.inner.insecure_ssl_override(input);
@@ -380,6 +477,10 @@ impl StartBuildBatchFluentBuilder {
     pub fn set_insecure_ssl_override(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_insecure_ssl_override(input);
         self
+    }
+    /// <p>Enable this flag to override the insecure SSL setting that is specified in the batch build project. The insecure SSL setting determines whether to ignore SSL warnings while connecting to the project source code. This override applies only if the build's source is GitHub Enterprise.</p>
+    pub fn get_insecure_ssl_override(&self) -> &::std::option::Option<bool> {
+        self.inner.get_insecure_ssl_override()
     }
     /// <p>Set to <code>true</code> to report to your source provider the status of a batch build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown. </p> <note>
     /// <p>The status of a build triggered by a webhook is always reported to your source provider. </p>
@@ -398,6 +499,12 @@ impl StartBuildBatchFluentBuilder {
         self.inner = self.inner.set_report_build_batch_status_override(input);
         self
     }
+    /// <p>Set to <code>true</code> to report to your source provider the status of a batch build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown. </p> <note>
+    /// <p>The status of a build triggered by a webhook is always reported to your source provider. </p>
+    /// </note>
+    pub fn get_report_build_batch_status_override(&self) -> &::std::option::Option<bool> {
+        self.inner.get_report_build_batch_status_override()
+    }
     /// <p>A container type for this batch build that overrides the one specified in the batch build project.</p>
     pub fn environment_type_override(mut self, input: crate::types::EnvironmentType) -> Self {
         self.inner = self.inner.environment_type_override(input);
@@ -410,6 +517,12 @@ impl StartBuildBatchFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_environment_type_override(input);
         self
+    }
+    /// <p>A container type for this batch build that overrides the one specified in the batch build project.</p>
+    pub fn get_environment_type_override(
+        &self,
+    ) -> &::std::option::Option<crate::types::EnvironmentType> {
+        self.inner.get_environment_type_override()
     }
     /// <p>The name of an image for this batch build that overrides the one specified in the batch build project.</p>
     pub fn image_override(
@@ -427,6 +540,10 @@ impl StartBuildBatchFluentBuilder {
         self.inner = self.inner.set_image_override(input);
         self
     }
+    /// <p>The name of an image for this batch build that overrides the one specified in the batch build project.</p>
+    pub fn get_image_override(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_image_override()
+    }
     /// <p>The name of a compute type for this batch build that overrides the one specified in the batch build project.</p>
     pub fn compute_type_override(mut self, input: crate::types::ComputeType) -> Self {
         self.inner = self.inner.compute_type_override(input);
@@ -439,6 +556,10 @@ impl StartBuildBatchFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_compute_type_override(input);
         self
+    }
+    /// <p>The name of a compute type for this batch build that overrides the one specified in the batch build project.</p>
+    pub fn get_compute_type_override(&self) -> &::std::option::Option<crate::types::ComputeType> {
+        self.inner.get_compute_type_override()
     }
     /// <p>The name of a certificate for this batch build that overrides the one specified in the batch build project.</p>
     pub fn certificate_override(
@@ -456,6 +577,10 @@ impl StartBuildBatchFluentBuilder {
         self.inner = self.inner.set_certificate_override(input);
         self
     }
+    /// <p>The name of a certificate for this batch build that overrides the one specified in the batch build project.</p>
+    pub fn get_certificate_override(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_certificate_override()
+    }
     /// <p>A <code>ProjectCache</code> object that specifies cache overrides.</p>
     pub fn cache_override(mut self, input: crate::types::ProjectCache) -> Self {
         self.inner = self.inner.cache_override(input);
@@ -468,6 +593,10 @@ impl StartBuildBatchFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_cache_override(input);
         self
+    }
+    /// <p>A <code>ProjectCache</code> object that specifies cache overrides.</p>
+    pub fn get_cache_override(&self) -> &::std::option::Option<crate::types::ProjectCache> {
+        self.inner.get_cache_override()
     }
     /// <p>The name of a service role for this batch build that overrides the one specified in the batch build project.</p>
     pub fn service_role_override(
@@ -485,6 +614,10 @@ impl StartBuildBatchFluentBuilder {
         self.inner = self.inner.set_service_role_override(input);
         self
     }
+    /// <p>The name of a service role for this batch build that overrides the one specified in the batch build project.</p>
+    pub fn get_service_role_override(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_role_override()
+    }
     /// <p>Enable this flag to override privileged mode in the batch build project.</p>
     pub fn privileged_mode_override(mut self, input: bool) -> Self {
         self.inner = self.inner.privileged_mode_override(input);
@@ -494,6 +627,10 @@ impl StartBuildBatchFluentBuilder {
     pub fn set_privileged_mode_override(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_privileged_mode_override(input);
         self
+    }
+    /// <p>Enable this flag to override privileged mode in the batch build project.</p>
+    pub fn get_privileged_mode_override(&self) -> &::std::option::Option<bool> {
+        self.inner.get_privileged_mode_override()
     }
     /// <p>Overrides the build timeout specified in the batch build project.</p>
     pub fn build_timeout_in_minutes_override(mut self, input: i32) -> Self {
@@ -508,6 +645,10 @@ impl StartBuildBatchFluentBuilder {
         self.inner = self.inner.set_build_timeout_in_minutes_override(input);
         self
     }
+    /// <p>Overrides the build timeout specified in the batch build project.</p>
+    pub fn get_build_timeout_in_minutes_override(&self) -> &::std::option::Option<i32> {
+        self.inner.get_build_timeout_in_minutes_override()
+    }
     /// <p>The number of minutes a batch build is allowed to be queued before it times out.</p>
     pub fn queued_timeout_in_minutes_override(mut self, input: i32) -> Self {
         self.inner = self.inner.queued_timeout_in_minutes_override(input);
@@ -520,6 +661,10 @@ impl StartBuildBatchFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_queued_timeout_in_minutes_override(input);
         self
+    }
+    /// <p>The number of minutes a batch build is allowed to be queued before it times out.</p>
+    pub fn get_queued_timeout_in_minutes_override(&self) -> &::std::option::Option<i32> {
+        self.inner.get_queued_timeout_in_minutes_override()
     }
     /// <p>The Key Management Service customer master key (CMK) that overrides the one specified in the batch build project. The CMK key encrypts the build output artifacts.</p> <note>
     /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>
@@ -545,6 +690,14 @@ impl StartBuildBatchFluentBuilder {
         self.inner = self.inner.set_encryption_key_override(input);
         self
     }
+    /// <p>The Key Management Service customer master key (CMK) that overrides the one specified in the batch build project. The CMK key encrypts the build output artifacts.</p> <note>
+    /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>
+    /// </note>
+    /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
+    /// <alias-name></alias-name></code>).</p>
+    pub fn get_encryption_key_override(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_encryption_key_override()
+    }
     /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the <code>StartBuildBatch</code> request. The token is included in the <code>StartBuildBatch</code> request and is valid for five minutes. If you repeat the <code>StartBuildBatch</code> request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error.</p>
     pub fn idempotency_token(
         mut self,
@@ -561,6 +714,10 @@ impl StartBuildBatchFluentBuilder {
         self.inner = self.inner.set_idempotency_token(input);
         self
     }
+    /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the <code>StartBuildBatch</code> request. The token is included in the <code>StartBuildBatch</code> request and is valid for five minutes. If you repeat the <code>StartBuildBatch</code> request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error.</p>
+    pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_idempotency_token()
+    }
     /// <p>A <code>LogsConfig</code> object that override the log settings defined in the batch build project.</p>
     pub fn logs_config_override(mut self, input: crate::types::LogsConfig) -> Self {
         self.inner = self.inner.logs_config_override(input);
@@ -574,6 +731,10 @@ impl StartBuildBatchFluentBuilder {
         self.inner = self.inner.set_logs_config_override(input);
         self
     }
+    /// <p>A <code>LogsConfig</code> object that override the log settings defined in the batch build project.</p>
+    pub fn get_logs_config_override(&self) -> &::std::option::Option<crate::types::LogsConfig> {
+        self.inner.get_logs_config_override()
+    }
     /// <p>A <code>RegistryCredential</code> object that overrides credentials for access to a private registry.</p>
     pub fn registry_credential_override(mut self, input: crate::types::RegistryCredential) -> Self {
         self.inner = self.inner.registry_credential_override(input);
@@ -586,6 +747,12 @@ impl StartBuildBatchFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_registry_credential_override(input);
         self
+    }
+    /// <p>A <code>RegistryCredential</code> object that overrides credentials for access to a private registry.</p>
+    pub fn get_registry_credential_override(
+        &self,
+    ) -> &::std::option::Option<crate::types::RegistryCredential> {
+        self.inner.get_registry_credential_override()
     }
     /// <p>The type of credentials CodeBuild uses to pull images in your batch build. There are two valid values: </p>
     /// <dl>
@@ -633,6 +800,27 @@ impl StartBuildBatchFluentBuilder {
         self.inner = self.inner.set_image_pull_credentials_type_override(input);
         self
     }
+    /// <p>The type of credentials CodeBuild uses to pull images in your batch build. There are two valid values: </p>
+    /// <dl>
+    /// <dt>
+    /// CODEBUILD
+    /// </dt>
+    /// <dd>
+    /// <p>Specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust CodeBuild's service principal.</p>
+    /// </dd>
+    /// <dt>
+    /// SERVICE_ROLE
+    /// </dt>
+    /// <dd>
+    /// <p>Specifies that CodeBuild uses your build project's service role. </p>
+    /// </dd>
+    /// </dl>
+    /// <p>When using a cross-account or private registry image, you must use <code>SERVICE_ROLE</code> credentials. When using an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials. </p>
+    pub fn get_image_pull_credentials_type_override(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImagePullCredentialsType> {
+        self.inner.get_image_pull_credentials_type_override()
+    }
     /// <p>A <code>BuildBatchConfigOverride</code> object that contains batch build configuration overrides.</p>
     pub fn build_batch_config_override(
         mut self,
@@ -649,6 +837,12 @@ impl StartBuildBatchFluentBuilder {
         self.inner = self.inner.set_build_batch_config_override(input);
         self
     }
+    /// <p>A <code>BuildBatchConfigOverride</code> object that contains batch build configuration overrides.</p>
+    pub fn get_build_batch_config_override(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProjectBuildBatchConfig> {
+        self.inner.get_build_batch_config_override()
+    }
     /// <p>Specifies if session debugging is enabled for this batch build. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in Session Manager</a>. Batch session debugging is not supported for matrix batch builds.</p>
     pub fn debug_session_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.debug_session_enabled(input);
@@ -658,5 +852,9 @@ impl StartBuildBatchFluentBuilder {
     pub fn set_debug_session_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_debug_session_enabled(input);
         self
+    }
+    /// <p>Specifies if session debugging is enabled for this batch build. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in Session Manager</a>. Batch session debugging is not supported for matrix batch builds.</p>
+    pub fn get_debug_session_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_debug_session_enabled()
     }
 }

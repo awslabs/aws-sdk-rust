@@ -64,6 +64,10 @@ impl ChannelModeratorBuilder {
         self.moderator = input;
         self
     }
+    /// <p>The moderator's data.</p>
+    pub fn get_moderator(&self) -> &::std::option::Option<crate::types::Identity> {
+        &self.moderator
+    }
     /// <p>The ARN of the moderator's channel.</p>
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl ChannelModeratorBuilder {
     pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_arn = input;
         self
+    }
+    /// <p>The ARN of the moderator's channel.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
     }
     /// <p>The time at which the moderator was created.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -87,6 +95,10 @@ impl ChannelModeratorBuilder {
         self.created_timestamp = input;
         self
     }
+    /// <p>The time at which the moderator was created.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
+    }
     /// <p>The <code>AppInstanceUser</code> who created the moderator.</p>
     pub fn created_by(mut self, input: crate::types::Identity) -> Self {
         self.created_by = ::std::option::Option::Some(input);
@@ -96,6 +108,10 @@ impl ChannelModeratorBuilder {
     pub fn set_created_by(mut self, input: ::std::option::Option<crate::types::Identity>) -> Self {
         self.created_by = input;
         self
+    }
+    /// <p>The <code>AppInstanceUser</code> who created the moderator.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<crate::types::Identity> {
+        &self.created_by
     }
     /// Consumes the builder and constructs a [`ChannelModerator`](crate::types::ChannelModerator).
     pub fn build(self) -> crate::types::ChannelModerator {

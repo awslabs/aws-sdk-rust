@@ -213,6 +213,10 @@ impl UpdateMaintenanceWindowTaskOutputBuilder {
         self.window_id = input;
         self
     }
+    /// <p>The ID of the maintenance window that was updated.</p>
+    pub fn get_window_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.window_id
+    }
     /// <p>The task ID of the maintenance window that was updated.</p>
     pub fn window_task_id(
         mut self,
@@ -228,6 +232,10 @@ impl UpdateMaintenanceWindowTaskOutputBuilder {
     ) -> Self {
         self.window_task_id = input;
         self
+    }
+    /// <p>The task ID of the maintenance window that was updated.</p>
+    pub fn get_window_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.window_task_id
     }
     /// Appends an item to `targets`.
     ///
@@ -248,6 +256,10 @@ impl UpdateMaintenanceWindowTaskOutputBuilder {
         self.targets = input;
         self
     }
+    /// <p>The updated target values.</p>
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Target>> {
+        &self.targets
+    }
     /// <p>The updated task ARN value.</p>
     pub fn task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_arn = ::std::option::Option::Some(input.into());
@@ -257,6 +269,10 @@ impl UpdateMaintenanceWindowTaskOutputBuilder {
     pub fn set_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_arn = input;
         self
+    }
+    /// <p>The updated task ARN value.</p>
+    pub fn get_task_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
     pub fn service_role_arn(
@@ -273,6 +289,10 @@ impl UpdateMaintenanceWindowTaskOutputBuilder {
     ) -> Self {
         self.service_role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+    pub fn get_service_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_role_arn
     }
     /// Adds a key-value pair to `task_parameters`.
     ///
@@ -306,6 +326,19 @@ impl UpdateMaintenanceWindowTaskOutputBuilder {
         self.task_parameters = input;
         self
     }
+    /// <p>The updated parameter values.</p> <note>
+    /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+    /// </note>
+    pub fn get_task_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::MaintenanceWindowTaskParameterValueExpression,
+        >,
+    > {
+        &self.task_parameters
+    }
     /// <p>The updated parameter values.</p>
     pub fn task_invocation_parameters(
         mut self,
@@ -322,6 +355,12 @@ impl UpdateMaintenanceWindowTaskOutputBuilder {
         self.task_invocation_parameters = input;
         self
     }
+    /// <p>The updated parameter values.</p>
+    pub fn get_task_invocation_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::MaintenanceWindowTaskInvocationParameters> {
+        &self.task_invocation_parameters
+    }
     /// <p>The updated priority value.</p>
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
@@ -331,6 +370,10 @@ impl UpdateMaintenanceWindowTaskOutputBuilder {
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
+    }
+    /// <p>The updated priority value.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
     }
     /// <p>The updated <code>MaxConcurrency</code> value.</p>
     pub fn max_concurrency(
@@ -348,6 +391,10 @@ impl UpdateMaintenanceWindowTaskOutputBuilder {
         self.max_concurrency = input;
         self
     }
+    /// <p>The updated <code>MaxConcurrency</code> value.</p>
+    pub fn get_max_concurrency(&self) -> &::std::option::Option<::std::string::String> {
+        &self.max_concurrency
+    }
     /// <p>The updated <code>MaxErrors</code> value.</p>
     pub fn max_errors(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.max_errors = ::std::option::Option::Some(input.into());
@@ -357,6 +404,10 @@ impl UpdateMaintenanceWindowTaskOutputBuilder {
     pub fn set_max_errors(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_errors = input;
         self
+    }
+    /// <p>The updated <code>MaxErrors</code> value.</p>
+    pub fn get_max_errors(&self) -> &::std::option::Option<::std::string::String> {
+        &self.max_errors
     }
     /// <p>The updated logging information in Amazon S3.</p> <note>
     /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
@@ -375,6 +426,12 @@ impl UpdateMaintenanceWindowTaskOutputBuilder {
         self.logging_info = input;
         self
     }
+    /// <p>The updated logging information in Amazon S3.</p> <note>
+    /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+    /// </note>
+    pub fn get_logging_info(&self) -> &::std::option::Option<crate::types::LoggingInfo> {
+        &self.logging_info
+    }
     /// <p>The updated task name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -385,6 +442,10 @@ impl UpdateMaintenanceWindowTaskOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The updated task name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The updated task description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -394,6 +455,10 @@ impl UpdateMaintenanceWindowTaskOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The updated task description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The specification for whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached. </p>
     pub fn cutoff_behavior(
@@ -411,6 +476,12 @@ impl UpdateMaintenanceWindowTaskOutputBuilder {
         self.cutoff_behavior = input;
         self
     }
+    /// <p>The specification for whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached. </p>
+    pub fn get_cutoff_behavior(
+        &self,
+    ) -> &::std::option::Option<crate::types::MaintenanceWindowTaskCutoffBehavior> {
+        &self.cutoff_behavior
+    }
     /// <p>The details for the CloudWatch alarm you applied to your maintenance window task.</p>
     pub fn alarm_configuration(mut self, input: crate::types::AlarmConfiguration) -> Self {
         self.alarm_configuration = ::std::option::Option::Some(input);
@@ -423,6 +494,12 @@ impl UpdateMaintenanceWindowTaskOutputBuilder {
     ) -> Self {
         self.alarm_configuration = input;
         self
+    }
+    /// <p>The details for the CloudWatch alarm you applied to your maintenance window task.</p>
+    pub fn get_alarm_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AlarmConfiguration> {
+        &self.alarm_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

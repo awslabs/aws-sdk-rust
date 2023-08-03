@@ -55,6 +55,10 @@ impl DescribeIpamScopesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `ipam_scopes`.
     ///
     /// To override the contents of this collection use [`set_ipam_scopes`](Self::set_ipam_scopes).
@@ -73,6 +77,12 @@ impl DescribeIpamScopesOutputBuilder {
     ) -> Self {
         self.ipam_scopes = input;
         self
+    }
+    /// <p>The scopes you want information on.</p>
+    pub fn get_ipam_scopes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpamScope>> {
+        &self.ipam_scopes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

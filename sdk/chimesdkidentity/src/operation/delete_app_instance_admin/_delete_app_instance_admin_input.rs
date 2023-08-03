@@ -55,6 +55,10 @@ impl DeleteAppInstanceAdminInputBuilder {
         self.app_instance_admin_arn = input;
         self
     }
+    /// <p>The ARN of the <code>AppInstance</code>'s administrator.</p>
+    pub fn get_app_instance_admin_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_instance_admin_arn
+    }
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     pub fn app_instance_arn(
         mut self,
@@ -70,6 +74,10 @@ impl DeleteAppInstanceAdminInputBuilder {
     ) -> Self {
         self.app_instance_arn = input;
         self
+    }
+    /// <p>The ARN of the <code>AppInstance</code>.</p>
+    pub fn get_app_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_instance_arn
     }
     /// Consumes the builder and constructs a [`DeleteAppInstanceAdminInput`](crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminInput).
     pub fn build(

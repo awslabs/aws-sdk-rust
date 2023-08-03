@@ -40,6 +40,10 @@ impl GetChangeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetChange as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_change::builders::GetChangeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -121,5 +125,9 @@ impl GetChangeFluentBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
+    }
+    /// <p>The ID of the change batch request. The value that you specify here is the value that <code>ChangeResourceRecordSets</code> returned in the <code>Id</code> element when you submitted the request.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
     }
 }

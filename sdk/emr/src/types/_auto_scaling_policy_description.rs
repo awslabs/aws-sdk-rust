@@ -59,6 +59,10 @@ impl AutoScalingPolicyDescriptionBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of an automatic scaling policy. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AutoScalingPolicyStatus> {
+        &self.status
+    }
     /// <p>The upper and lower Amazon EC2 instance limits for an automatic scaling policy. Automatic scaling activity will not cause an instance group to grow above or below these limits.</p>
     pub fn constraints(mut self, input: crate::types::ScalingConstraints) -> Self {
         self.constraints = ::std::option::Option::Some(input);
@@ -71,6 +75,10 @@ impl AutoScalingPolicyDescriptionBuilder {
     ) -> Self {
         self.constraints = input;
         self
+    }
+    /// <p>The upper and lower Amazon EC2 instance limits for an automatic scaling policy. Automatic scaling activity will not cause an instance group to grow above or below these limits.</p>
+    pub fn get_constraints(&self) -> &::std::option::Option<crate::types::ScalingConstraints> {
+        &self.constraints
     }
     /// Appends an item to `rules`.
     ///
@@ -90,6 +98,10 @@ impl AutoScalingPolicyDescriptionBuilder {
     ) -> Self {
         self.rules = input;
         self
+    }
+    /// <p>The scale-in and scale-out rules that comprise the automatic scaling policy.</p>
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScalingRule>> {
+        &self.rules
     }
     /// Consumes the builder and constructs a [`AutoScalingPolicyDescription`](crate::types::AutoScalingPolicyDescription).
     pub fn build(self) -> crate::types::AutoScalingPolicyDescription {

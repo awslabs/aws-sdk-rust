@@ -54,6 +54,10 @@ impl EntityBuilder {
         self.entity_type = input;
         self
     }
+    /// <p>The entity type.</p>
+    pub fn get_entity_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_type
+    }
     /// <p>The entity ID. If you do not know the <code>entityId</code>, you can pass <code>unknown</code>, which is areserved string literal.</p>
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl EntityBuilder {
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entity_id = input;
         self
+    }
+    /// <p>The entity ID. If you do not know the <code>entityId</code>, you can pass <code>unknown</code>, which is areserved string literal.</p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_id
     }
     /// Consumes the builder and constructs a [`Entity`](crate::types::Entity).
     pub fn build(self) -> crate::types::Entity {

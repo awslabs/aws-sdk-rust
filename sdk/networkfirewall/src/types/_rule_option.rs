@@ -48,6 +48,10 @@ impl RuleOptionBuilder {
         self.keyword = input;
         self
     }
+    /// <p></p>
+    pub fn get_keyword(&self) -> &::std::option::Option<::std::string::String> {
+        &self.keyword
+    }
     /// Appends an item to `settings`.
     ///
     /// To override the contents of this collection use [`set_settings`](Self::set_settings).
@@ -66,6 +70,10 @@ impl RuleOptionBuilder {
     ) -> Self {
         self.settings = input;
         self
+    }
+    /// <p></p>
+    pub fn get_settings(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.settings
     }
     /// Consumes the builder and constructs a [`RuleOption`](crate::types::RuleOption).
     pub fn build(self) -> crate::types::RuleOption {

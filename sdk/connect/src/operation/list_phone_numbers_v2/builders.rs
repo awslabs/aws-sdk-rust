@@ -37,6 +37,12 @@ impl ListPhoneNumbersV2FluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListPhoneNumbersV2 as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_phone_numbers_v2::builders::ListPhoneNumbersV2InputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +144,10 @@ impl ListPhoneNumbersV2FluentBuilder {
         self.inner = self.inner.set_target_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are claimed to. If <code>TargetArn</code> input is not provided, this API lists numbers claimed to all the Amazon Connect instances belonging to your account in the same Amazon Web Services Region as the request.</p>
+    pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_arn()
+    }
     /// <p>The maximum number of results to return per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -148,6 +158,10 @@ impl ListPhoneNumbersV2FluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -157,6 +171,10 @@ impl ListPhoneNumbersV2FluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// Appends an item to `PhoneNumberCountryCodes`.
     ///
@@ -178,6 +196,12 @@ impl ListPhoneNumbersV2FluentBuilder {
         self.inner = self.inner.set_phone_number_country_codes(input);
         self
     }
+    /// <p>The ISO country code.</p>
+    pub fn get_phone_number_country_codes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberCountryCode>> {
+        self.inner.get_phone_number_country_codes()
+    }
     /// Appends an item to `PhoneNumberTypes`.
     ///
     /// To override the contents of this collection use [`set_phone_number_types`](Self::set_phone_number_types).
@@ -195,6 +219,12 @@ impl ListPhoneNumbersV2FluentBuilder {
         self.inner = self.inner.set_phone_number_types(input);
         self
     }
+    /// <p>The type of phone number.</p>
+    pub fn get_phone_number_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberType>> {
+        self.inner.get_phone_number_types()
+    }
     /// <p>The prefix of the phone number. If provided, it must contain <code>+</code> as part of the country code.</p>
     pub fn phone_number_prefix(
         mut self,
@@ -210,5 +240,9 @@ impl ListPhoneNumbersV2FluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_phone_number_prefix(input);
         self
+    }
+    /// <p>The prefix of the phone number. If provided, it must contain <code>+</code> as part of the country code.</p>
+    pub fn get_phone_number_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_phone_number_prefix()
     }
 }

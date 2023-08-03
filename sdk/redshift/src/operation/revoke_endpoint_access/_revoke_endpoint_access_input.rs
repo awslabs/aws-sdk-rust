@@ -70,6 +70,10 @@ impl RevokeEndpointAccessInputBuilder {
         self.cluster_identifier = input;
         self
     }
+    /// <p>The cluster to revoke access from.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_identifier
+    }
     /// <p>The Amazon Web Services account ID whose access is to be revoked.</p>
     pub fn account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl RevokeEndpointAccessInputBuilder {
     pub fn set_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account = input;
         self
+    }
+    /// <p>The Amazon Web Services account ID whose access is to be revoked.</p>
+    pub fn get_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account
     }
     /// Appends an item to `vpc_ids`.
     ///
@@ -99,6 +107,10 @@ impl RevokeEndpointAccessInputBuilder {
         self.vpc_ids = input;
         self
     }
+    /// <p>The virtual private cloud (VPC) identifiers for which access is to be revoked.</p>
+    pub fn get_vpc_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.vpc_ids
+    }
     /// <p>Indicates whether to force the revoke action. If true, the Redshift-managed VPC endpoints associated with the endpoint authorization are also deleted.</p>
     pub fn force(mut self, input: bool) -> Self {
         self.force = ::std::option::Option::Some(input);
@@ -108,6 +120,10 @@ impl RevokeEndpointAccessInputBuilder {
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force = input;
         self
+    }
+    /// <p>Indicates whether to force the revoke action. If true, the Redshift-managed VPC endpoints associated with the endpoint authorization are also deleted.</p>
+    pub fn get_force(&self) -> &::std::option::Option<bool> {
+        &self.force
     }
     /// Consumes the builder and constructs a [`RevokeEndpointAccessInput`](crate::operation::revoke_endpoint_access::RevokeEndpointAccessInput).
     pub fn build(

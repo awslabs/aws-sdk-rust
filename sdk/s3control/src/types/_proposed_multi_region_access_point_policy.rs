@@ -41,6 +41,10 @@ impl ProposedMultiRegionAccessPointPolicyBuilder {
         self.policy = input;
         self
     }
+    /// <p>The details of the proposed policy.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy
+    }
     /// Consumes the builder and constructs a [`ProposedMultiRegionAccessPointPolicy`](crate::types::ProposedMultiRegionAccessPointPolicy).
     pub fn build(self) -> crate::types::ProposedMultiRegionAccessPointPolicy {
         crate::types::ProposedMultiRegionAccessPointPolicy {

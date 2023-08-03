@@ -56,6 +56,10 @@ impl ListTagsForProjectInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the project to get tags for.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>Reserved for future use.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -67,6 +71,10 @@ impl ListTagsForProjectInputBuilder {
         self
     }
     /// <p>Reserved for future use.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
+    /// <p>Reserved for future use.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
@@ -75,6 +83,10 @@ impl ListTagsForProjectInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListTagsForProjectInput`](crate::operation::list_tags_for_project::ListTagsForProjectInput).
     pub fn build(

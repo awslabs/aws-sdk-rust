@@ -64,6 +64,10 @@ impl PermissionBuilder {
         self.action = input;
         self
     }
+    /// <p>An AWS Signer action permitted as part of cross-account permissions.</p>
+    pub fn get_action(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action
+    }
     /// <p>The AWS principal that has been granted a cross-account permission.</p>
     pub fn principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl PermissionBuilder {
         self.principal = input;
         self
     }
+    /// <p>The AWS principal that has been granted a cross-account permission.</p>
+    pub fn get_principal(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal
+    }
     /// <p>A unique identifier for a cross-account permission statement.</p>
     pub fn statement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.statement_id = ::std::option::Option::Some(input.into());
@@ -83,6 +91,10 @@ impl PermissionBuilder {
     pub fn set_statement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.statement_id = input;
         self
+    }
+    /// <p>A unique identifier for a cross-account permission statement.</p>
+    pub fn get_statement_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.statement_id
     }
     /// <p>The signing profile version that a permission applies to.</p>
     pub fn profile_version(
@@ -99,6 +111,10 @@ impl PermissionBuilder {
     ) -> Self {
         self.profile_version = input;
         self
+    }
+    /// <p>The signing profile version that a permission applies to.</p>
+    pub fn get_profile_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_version
     }
     /// Consumes the builder and constructs a [`Permission`](crate::types::Permission).
     pub fn build(self) -> crate::types::Permission {

@@ -48,6 +48,10 @@ impl DeleteResourcePolicyInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the resource you're deleting the policy from.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// <p>The ID of the resource policy you're deleting.</p>
     pub fn policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl DeleteResourcePolicyInputBuilder {
     pub fn set_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_id = input;
         self
+    }
+    /// <p>The ID of the resource policy you're deleting.</p>
+    pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_id
     }
     /// Consumes the builder and constructs a [`DeleteResourcePolicyInput`](crate::operation::delete_resource_policy::DeleteResourcePolicyInput).
     pub fn build(

@@ -56,6 +56,10 @@ impl DeleteManagedEndpointOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>The output displays the ID of the managed endpoint.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The output displays the ID of the endpoint's virtual cluster.</p>
     pub fn virtual_cluster_id(
         mut self,
@@ -71,6 +75,10 @@ impl DeleteManagedEndpointOutputBuilder {
     ) -> Self {
         self.virtual_cluster_id = input;
         self
+    }
+    /// <p>The output displays the ID of the endpoint's virtual cluster.</p>
+    pub fn get_virtual_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_cluster_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -62,6 +62,12 @@ impl NetworkInsightsAccessScopeContentBuilder {
         self.network_insights_access_scope_id = input;
         self
     }
+    /// <p>The ID of the Network Access Scope.</p>
+    pub fn get_network_insights_access_scope_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.network_insights_access_scope_id
+    }
     /// Appends an item to `match_paths`.
     ///
     /// To override the contents of this collection use [`set_match_paths`](Self::set_match_paths).
@@ -81,6 +87,12 @@ impl NetworkInsightsAccessScopeContentBuilder {
         self.match_paths = input;
         self
     }
+    /// <p>The paths to match.</p>
+    pub fn get_match_paths(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessScopePath>> {
+        &self.match_paths
+    }
     /// Appends an item to `exclude_paths`.
     ///
     /// To override the contents of this collection use [`set_exclude_paths`](Self::set_exclude_paths).
@@ -99,6 +111,12 @@ impl NetworkInsightsAccessScopeContentBuilder {
     ) -> Self {
         self.exclude_paths = input;
         self
+    }
+    /// <p>The paths to exclude.</p>
+    pub fn get_exclude_paths(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessScopePath>> {
+        &self.exclude_paths
     }
     /// Consumes the builder and constructs a [`NetworkInsightsAccessScopeContent`](crate::types::NetworkInsightsAccessScopeContent).
     pub fn build(self) -> crate::types::NetworkInsightsAccessScopeContent {

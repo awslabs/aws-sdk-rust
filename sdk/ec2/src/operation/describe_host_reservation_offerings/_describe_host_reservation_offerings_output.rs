@@ -54,6 +54,10 @@ impl DescribeHostReservationOfferingsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `offering_set`.
     ///
     /// To override the contents of this collection use [`set_offering_set`](Self::set_offering_set).
@@ -72,6 +76,12 @@ impl DescribeHostReservationOfferingsOutputBuilder {
     ) -> Self {
         self.offering_set = input;
         self
+    }
+    /// <p>Information about the offerings.</p>
+    pub fn get_offering_set(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HostOffering>> {
+        &self.offering_set
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

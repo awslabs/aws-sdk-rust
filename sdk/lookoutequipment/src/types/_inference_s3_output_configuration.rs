@@ -48,6 +48,10 @@ impl InferenceS3OutputConfigurationBuilder {
         self.bucket = input;
         self
     }
+    /// <p> The bucket containing the output results from the inference </p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p> The prefix for the S3 bucket used for the output results from the inference. </p>
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl InferenceS3OutputConfigurationBuilder {
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix = input;
         self
+    }
+    /// <p> The prefix for the S3 bucket used for the output results from the inference. </p>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
     }
     /// Consumes the builder and constructs a [`InferenceS3OutputConfiguration`](crate::types::InferenceS3OutputConfiguration).
     pub fn build(self) -> crate::types::InferenceS3OutputConfiguration {

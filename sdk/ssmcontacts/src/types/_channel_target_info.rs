@@ -54,6 +54,10 @@ impl ChannelTargetInfoBuilder {
         self.contact_channel_id = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
+    pub fn get_contact_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_channel_id
+    }
     /// <p>The number of minutes to wait to retry sending engagement in the case the engagement initially fails.</p>
     pub fn retry_interval_in_minutes(mut self, input: i32) -> Self {
         self.retry_interval_in_minutes = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl ChannelTargetInfoBuilder {
     pub fn set_retry_interval_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.retry_interval_in_minutes = input;
         self
+    }
+    /// <p>The number of minutes to wait to retry sending engagement in the case the engagement initially fails.</p>
+    pub fn get_retry_interval_in_minutes(&self) -> &::std::option::Option<i32> {
+        &self.retry_interval_in_minutes
     }
     /// Consumes the builder and constructs a [`ChannelTargetInfo`](crate::types::ChannelTargetInfo).
     pub fn build(self) -> crate::types::ChannelTargetInfo {

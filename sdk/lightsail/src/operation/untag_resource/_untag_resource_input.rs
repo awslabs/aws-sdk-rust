@@ -61,6 +61,10 @@ impl UntagResourceInputBuilder {
         self.resource_name = input;
         self
     }
+    /// <p>The name of the resource from which you are removing a tag.</p>
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the resource from which you want to remove a tag.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
@@ -70,6 +74,10 @@ impl UntagResourceInputBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource from which you want to remove a tag.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// Appends an item to `tag_keys`.
     ///
@@ -89,6 +97,10 @@ impl UntagResourceInputBuilder {
     ) -> Self {
         self.tag_keys = input;
         self
+    }
+    /// <p>The tag keys to delete from the specified resource.</p>
+    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tag_keys
     }
     /// Consumes the builder and constructs a [`UntagResourceInput`](crate::operation::untag_resource::UntagResourceInput).
     pub fn build(

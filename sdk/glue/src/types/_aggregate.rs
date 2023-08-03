@@ -65,6 +65,10 @@ impl AggregateBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the transform node.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `inputs`.
     ///
     /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
@@ -83,6 +87,10 @@ impl AggregateBuilder {
     ) -> Self {
         self.inputs = input;
         self
+    }
+    /// <p>Specifies the fields and rows to use as inputs for the aggregate transform.</p>
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.inputs
     }
     /// Appends an item to `groups`.
     ///
@@ -103,6 +111,12 @@ impl AggregateBuilder {
         self.groups = input;
         self
     }
+    /// <p>Specifies the fields to group by.</p>
+    pub fn get_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>> {
+        &self.groups
+    }
     /// Appends an item to `aggs`.
     ///
     /// To override the contents of this collection use [`set_aggs`](Self::set_aggs).
@@ -121,6 +135,12 @@ impl AggregateBuilder {
     ) -> Self {
         self.aggs = input;
         self
+    }
+    /// <p>Specifies the aggregate functions to be performed on specified fields. </p>
+    pub fn get_aggs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregateOperation>> {
+        &self.aggs
     }
     /// Consumes the builder and constructs a [`Aggregate`](crate::types::Aggregate).
     pub fn build(self) -> crate::types::Aggregate {

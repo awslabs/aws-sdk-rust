@@ -50,6 +50,12 @@ impl PutPartnerEventsInputBuilder {
         self.entries = input;
         self
     }
+    /// <p>The list of events to write to the event bus.</p>
+    pub fn get_entries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PutPartnerEventsRequestEntry>> {
+        &self.entries
+    }
     /// Consumes the builder and constructs a [`PutPartnerEventsInput`](crate::operation::put_partner_events::PutPartnerEventsInput).
     pub fn build(
         self,

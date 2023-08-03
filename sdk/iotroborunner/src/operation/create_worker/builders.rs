@@ -36,6 +36,10 @@ impl CreateWorkerFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateWorker as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_worker::builders::CreateWorkerInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl CreateWorkerFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// Token used for detecting replayed requests. Replayed requests will not be performed multiple times.
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// Human friendly name of the resource.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -128,6 +136,10 @@ impl CreateWorkerFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// Human friendly name of the resource.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// Full ARN of the worker fleet.
     pub fn fleet(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fleet(input.into());
@@ -137,6 +149,10 @@ impl CreateWorkerFluentBuilder {
     pub fn set_fleet(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fleet(input);
         self
+    }
+    /// Full ARN of the worker fleet.
+    pub fn get_fleet(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_fleet()
     }
     /// JSON blob containing unstructured worker properties that are transient and may change during regular operation.
     pub fn additional_transient_properties(
@@ -154,6 +170,12 @@ impl CreateWorkerFluentBuilder {
         self.inner = self.inner.set_additional_transient_properties(input);
         self
     }
+    /// JSON blob containing unstructured worker properties that are transient and may change during regular operation.
+    pub fn get_additional_transient_properties(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_additional_transient_properties()
+    }
     /// JSON blob containing unstructured worker properties that are fixed and won't change during regular operation.
     pub fn additional_fixed_properties(
         mut self,
@@ -170,6 +192,10 @@ impl CreateWorkerFluentBuilder {
         self.inner = self.inner.set_additional_fixed_properties(input);
         self
     }
+    /// JSON blob containing unstructured worker properties that are fixed and won't change during regular operation.
+    pub fn get_additional_fixed_properties(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_additional_fixed_properties()
+    }
     /// Properties of the worker that are provided by the vendor FMS.
     pub fn vendor_properties(mut self, input: crate::types::VendorProperties) -> Self {
         self.inner = self.inner.vendor_properties(input);
@@ -182,6 +208,10 @@ impl CreateWorkerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_vendor_properties(input);
         self
+    }
+    /// Properties of the worker that are provided by the vendor FMS.
+    pub fn get_vendor_properties(&self) -> &::std::option::Option<crate::types::VendorProperties> {
+        self.inner.get_vendor_properties()
     }
     /// Supported coordinates for worker position.
     pub fn position(mut self, input: crate::types::PositionCoordinates) -> Self {
@@ -196,6 +226,10 @@ impl CreateWorkerFluentBuilder {
         self.inner = self.inner.set_position(input);
         self
     }
+    /// Supported coordinates for worker position.
+    pub fn get_position(&self) -> &::std::option::Option<crate::types::PositionCoordinates> {
+        self.inner.get_position()
+    }
     /// Worker orientation measured in units clockwise from north.
     pub fn orientation(mut self, input: crate::types::Orientation) -> Self {
         self.inner = self.inner.orientation(input);
@@ -208,5 +242,9 @@ impl CreateWorkerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_orientation(input);
         self
+    }
+    /// Worker orientation measured in units clockwise from north.
+    pub fn get_orientation(&self) -> &::std::option::Option<crate::types::Orientation> {
+        self.inner.get_orientation()
     }
 }

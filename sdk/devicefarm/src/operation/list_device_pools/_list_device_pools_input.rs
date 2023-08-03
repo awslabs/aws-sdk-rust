@@ -66,6 +66,10 @@ impl ListDevicePoolsInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The project ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The device pools' type.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
@@ -86,6 +90,15 @@ impl ListDevicePoolsInputBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The device pools' type.</p>
+    /// <p>Allowed values include:</p>
+    /// <ul>
+    /// <li> <p>CURATED: A device pool that is created and managed by AWS Device Farm.</p> </li>
+    /// <li> <p>PRIVATE: A device pool that is created and managed by the device pool developer.</p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::DevicePoolType> {
+        &self.r#type
+    }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -95,6 +108,10 @@ impl ListDevicePoolsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListDevicePoolsInput`](crate::operation::list_device_pools::ListDevicePoolsInput).
     pub fn build(

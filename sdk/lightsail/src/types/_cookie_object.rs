@@ -49,6 +49,10 @@ impl CookieObjectBuilder {
         self.option = input;
         self
     }
+    /// <p>Specifies which cookies to forward to the distribution's origin for a cache behavior: <code>all</code>, <code>none</code>, or <code>allow-list</code> to forward only the cookies specified in the <code>cookiesAllowList</code> parameter.</p>
+    pub fn get_option(&self) -> &::std::option::Option<crate::types::ForwardValues> {
+        &self.option
+    }
     /// Appends an item to `cookies_allow_list`.
     ///
     /// To override the contents of this collection use [`set_cookies_allow_list`](Self::set_cookies_allow_list).
@@ -70,6 +74,12 @@ impl CookieObjectBuilder {
     ) -> Self {
         self.cookies_allow_list = input;
         self
+    }
+    /// <p>The specific cookies to forward to your distribution's origin.</p>
+    pub fn get_cookies_allow_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.cookies_allow_list
     }
     /// Consumes the builder and constructs a [`CookieObject`](crate::types::CookieObject).
     pub fn build(self) -> crate::types::CookieObject {

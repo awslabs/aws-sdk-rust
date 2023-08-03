@@ -80,6 +80,10 @@ impl CreateAccessTokenOutputBuilder {
         self.secret = input;
         self
     }
+    /// <p>The secret value of the personal access token.</p>
+    pub fn get_secret(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret
+    }
     /// <p>The friendly name of the personal access token.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl CreateAccessTokenOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The friendly name of the personal access token.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The date and time the personal access token expires, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>. If not specified, the default is one year from creation.</p>
     pub fn expires_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -102,6 +110,10 @@ impl CreateAccessTokenOutputBuilder {
     ) -> Self {
         self.expires_time = input;
         self
+    }
+    /// <p>The date and time the personal access token expires, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>. If not specified, the default is one year from creation.</p>
+    pub fn get_expires_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expires_time
     }
     /// <p>The system-generated unique ID of the access token.</p>
     pub fn access_token_id(
@@ -118,6 +130,10 @@ impl CreateAccessTokenOutputBuilder {
     ) -> Self {
         self.access_token_id = input;
         self
+    }
+    /// <p>The system-generated unique ID of the access token.</p>
+    pub fn get_access_token_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_token_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

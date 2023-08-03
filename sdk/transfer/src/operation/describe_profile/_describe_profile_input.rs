@@ -39,6 +39,10 @@ impl DescribeProfileInputBuilder {
         self.profile_id = input;
         self
     }
+    /// <p>The identifier of the profile that you want described.</p>
+    pub fn get_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_id
+    }
     /// Consumes the builder and constructs a [`DescribeProfileInput`](crate::operation::describe_profile::DescribeProfileInput).
     pub fn build(
         self,

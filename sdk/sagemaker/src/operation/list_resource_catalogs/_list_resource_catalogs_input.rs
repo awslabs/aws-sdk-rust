@@ -94,6 +94,10 @@ impl ListResourceCatalogsInputBuilder {
         self.name_contains = input;
         self
     }
+    /// <p> A string that partially matches one or more <code>ResourceCatalog</code>s names. Filters <code>ResourceCatalog</code> by name. </p>
+    pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name_contains
+    }
     /// <p> Use this parameter to search for <code>ResourceCatalog</code>s created after a specific date and time. </p>
     pub fn creation_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time_after = ::std::option::Option::Some(input);
@@ -106,6 +110,10 @@ impl ListResourceCatalogsInputBuilder {
     ) -> Self {
         self.creation_time_after = input;
         self
+    }
+    /// <p> Use this parameter to search for <code>ResourceCatalog</code>s created after a specific date and time. </p>
+    pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time_after
     }
     /// <p> Use this parameter to search for <code>ResourceCatalog</code>s created before a specific date and time. </p>
     pub fn creation_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -120,6 +128,10 @@ impl ListResourceCatalogsInputBuilder {
         self.creation_time_before = input;
         self
     }
+    /// <p> Use this parameter to search for <code>ResourceCatalog</code>s created before a specific date and time. </p>
+    pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time_before
+    }
     /// <p> The order in which the resource catalogs are listed. </p>
     pub fn sort_order(mut self, input: crate::types::ResourceCatalogSortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -132,6 +144,10 @@ impl ListResourceCatalogsInputBuilder {
     ) -> Self {
         self.sort_order = input;
         self
+    }
+    /// <p> The order in which the resource catalogs are listed. </p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::ResourceCatalogSortOrder> {
+        &self.sort_order
     }
     /// <p> The value on which the resource catalog list is sorted. </p>
     pub fn sort_by(mut self, input: crate::types::ResourceCatalogSortBy) -> Self {
@@ -146,6 +162,10 @@ impl ListResourceCatalogsInputBuilder {
         self.sort_by = input;
         self
     }
+    /// <p> The value on which the resource catalog list is sorted. </p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ResourceCatalogSortBy> {
+        &self.sort_by
+    }
     /// <p> The maximum number of results returned by <code>ListResourceCatalogs</code>. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -156,6 +176,10 @@ impl ListResourceCatalogsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p> The maximum number of results returned by <code>ListResourceCatalogs</code>. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p> A token to resume pagination of <code>ListResourceCatalogs</code> results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -165,6 +189,10 @@ impl ListResourceCatalogsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p> A token to resume pagination of <code>ListResourceCatalogs</code> results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListResourceCatalogsInput`](crate::operation::list_resource_catalogs::ListResourceCatalogsInput).
     pub fn build(

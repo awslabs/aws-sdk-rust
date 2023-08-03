@@ -36,6 +36,10 @@ impl DescribeAnalysisPermissionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeAnalysisPermissions as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_analysis_permissions::builders::DescribeAnalysisPermissionsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl DescribeAnalysisPermissionsFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The ID of the Amazon Web Services account that contains the analysis whose permissions you're describing. You must be using the Amazon Web Services account that the analysis is in.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>The ID of the analysis whose permissions you're describing. The ID is part of the analysis URL.</p>
     pub fn analysis_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.analysis_id(input.into());
@@ -141,5 +149,9 @@ impl DescribeAnalysisPermissionsFluentBuilder {
     pub fn set_analysis_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_analysis_id(input);
         self
+    }
+    /// <p>The ID of the analysis whose permissions you're describing. The ID is part of the analysis URL.</p>
+    pub fn get_analysis_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_analysis_id()
     }
 }

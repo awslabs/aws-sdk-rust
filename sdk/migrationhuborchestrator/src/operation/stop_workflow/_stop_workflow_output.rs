@@ -78,6 +78,10 @@ impl StopWorkflowOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the migration workflow.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The Amazon Resource Name (ARN) of the migration workflow.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -87,6 +91,10 @@ impl StopWorkflowOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the migration workflow.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The status of the migration workflow.</p>
     pub fn status(mut self, input: crate::types::MigrationWorkflowStatusEnum) -> Self {
@@ -100,6 +108,10 @@ impl StopWorkflowOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the migration workflow.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::MigrationWorkflowStatusEnum> {
+        &self.status
     }
     /// <p>The status message of the migration workflow.</p>
     pub fn status_message(
@@ -117,6 +129,10 @@ impl StopWorkflowOutputBuilder {
         self.status_message = input;
         self
     }
+    /// <p>The status message of the migration workflow.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>The time at which the migration workflow was stopped.</p>
     pub fn last_stop_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_stop_time = ::std::option::Option::Some(input);
@@ -129,6 +145,10 @@ impl StopWorkflowOutputBuilder {
     ) -> Self {
         self.last_stop_time = input;
         self
+    }
+    /// <p>The time at which the migration workflow was stopped.</p>
+    pub fn get_last_stop_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_stop_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -70,6 +70,10 @@ impl SetDefaultSenderIdOutputBuilder {
         self.configuration_set_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the updated configuration set.</p>
+    pub fn get_configuration_set_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_set_arn
+    }
     /// <p>The name of the configuration set that was updated.</p>
     pub fn configuration_set_name(
         mut self,
@@ -86,6 +90,10 @@ impl SetDefaultSenderIdOutputBuilder {
         self.configuration_set_name = input;
         self
     }
+    /// <p>The name of the configuration set that was updated.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_set_name
+    }
     /// <p>The default sender ID to set for the ConfigurationSet.</p>
     pub fn sender_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sender_id = ::std::option::Option::Some(input.into());
@@ -95,6 +103,10 @@ impl SetDefaultSenderIdOutputBuilder {
     pub fn set_sender_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sender_id = input;
         self
+    }
+    /// <p>The default sender ID to set for the ConfigurationSet.</p>
+    pub fn get_sender_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sender_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -187,6 +187,10 @@ impl StartAutomationExecutionInputBuilder {
         self.document_name = input;
         self
     }
+    /// <p>The name of the SSM document to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document ARN. For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    pub fn get_document_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_name
+    }
     /// <p>The version of the Automation runbook to use for this execution.</p>
     pub fn document_version(
         mut self,
@@ -202,6 +206,10 @@ impl StartAutomationExecutionInputBuilder {
     ) -> Self {
         self.document_version = input;
         self
+    }
+    /// <p>The version of the Automation runbook to use for this execution.</p>
+    pub fn get_document_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_version
     }
     /// Adds a key-value pair to `parameters`.
     ///
@@ -231,6 +239,14 @@ impl StartAutomationExecutionInputBuilder {
         self.parameters = input;
         self
     }
+    /// <p>A key-value map of execution parameters, which match the declared parameters in the Automation runbook.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
+    > {
+        &self.parameters
+    }
     /// <p>User-provided idempotency token. The token must be unique, is case insensitive, enforces the UUID format, and can't be reused.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -241,6 +257,10 @@ impl StartAutomationExecutionInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>User-provided idempotency token. The token must be unique, is case insensitive, enforces the UUID format, and can't be reused.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>The execution mode of the automation. Valid modes include the following: Auto and Interactive. The default mode is Auto.</p>
     pub fn mode(mut self, input: crate::types::ExecutionMode) -> Self {
         self.mode = ::std::option::Option::Some(input);
@@ -250,6 +270,10 @@ impl StartAutomationExecutionInputBuilder {
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::ExecutionMode>) -> Self {
         self.mode = input;
         self
+    }
+    /// <p>The execution mode of the automation. Valid modes include the following: Auto and Interactive. The default mode is Auto.</p>
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::ExecutionMode> {
+        &self.mode
     }
     /// <p>The name of the parameter used as the target resource for the rate-controlled execution. Required if you specify targets.</p>
     pub fn target_parameter_name(
@@ -266,6 +290,10 @@ impl StartAutomationExecutionInputBuilder {
     ) -> Self {
         self.target_parameter_name = input;
         self
+    }
+    /// <p>The name of the parameter used as the target resource for the rate-controlled execution. Required if you specify targets.</p>
+    pub fn get_target_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_parameter_name
     }
     /// Appends an item to `targets`.
     ///
@@ -285,6 +313,10 @@ impl StartAutomationExecutionInputBuilder {
     ) -> Self {
         self.targets = input;
         self
+    }
+    /// <p>A key-value mapping to target resources. Required if you specify TargetParameterName.</p>
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Target>> {
+        &self.targets
     }
     /// Appends an item to `target_maps`.
     ///
@@ -318,6 +350,19 @@ impl StartAutomationExecutionInputBuilder {
         self.target_maps = input;
         self
     }
+    /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
+    pub fn get_target_maps(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<
+            ::std::collections::HashMap<
+                ::std::string::String,
+                ::std::vec::Vec<::std::string::String>,
+            >,
+        >,
+    > {
+        &self.target_maps
+    }
     /// <p>The maximum number of targets allowed to run this task in parallel. You can specify a number, such as 10, or a percentage, such as 10%. The default value is <code>10</code>.</p>
     pub fn max_concurrency(
         mut self,
@@ -334,6 +379,10 @@ impl StartAutomationExecutionInputBuilder {
         self.max_concurrency = input;
         self
     }
+    /// <p>The maximum number of targets allowed to run this task in parallel. You can specify a number, such as 10, or a percentage, such as 10%. The default value is <code>10</code>.</p>
+    pub fn get_max_concurrency(&self) -> &::std::option::Option<::std::string::String> {
+        &self.max_concurrency
+    }
     /// <p>The number of errors that are allowed before the system stops running the automation on additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the target set, for example 10%. If you specify 3, for example, the system stops running the automation when the fourth error is received. If you specify 0, then the system stops running the automation on additional targets after the first error result is returned. If you run an automation on 50 resources and set max-errors to 10%, then the system stops running the automation on additional targets when the sixth error is received.</p>
     /// <p>Executions that are already running an automation when max-errors is reached are allowed to complete, but some of these executions may fail as well. If you need to ensure that there won't be more than max-errors failed executions, set max-concurrency to 1 so the executions proceed one at a time.</p>
     pub fn max_errors(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -345,6 +394,11 @@ impl StartAutomationExecutionInputBuilder {
     pub fn set_max_errors(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_errors = input;
         self
+    }
+    /// <p>The number of errors that are allowed before the system stops running the automation on additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the target set, for example 10%. If you specify 3, for example, the system stops running the automation when the fourth error is received. If you specify 0, then the system stops running the automation on additional targets after the first error result is returned. If you run an automation on 50 resources and set max-errors to 10%, then the system stops running the automation on additional targets when the sixth error is received.</p>
+    /// <p>Executions that are already running an automation when max-errors is reached are allowed to complete, but some of these executions may fail as well. If you need to ensure that there won't be more than max-errors failed executions, set max-concurrency to 1 so the executions proceed one at a time.</p>
+    pub fn get_max_errors(&self) -> &::std::option::Option<::std::string::String> {
+        &self.max_errors
     }
     /// Appends an item to `target_locations`.
     ///
@@ -364,6 +418,12 @@ impl StartAutomationExecutionInputBuilder {
     ) -> Self {
         self.target_locations = input;
         self
+    }
+    /// <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web Services accounts where you want to run the automation. Use this operation to start an automation in multiple Amazon Web Services Regions and multiple Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and Amazon Web Services accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
+    pub fn get_target_locations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>> {
+        &self.target_locations
     }
     /// Appends an item to `tags`.
     ///
@@ -396,6 +456,16 @@ impl StartAutomationExecutionInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for an automation. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an automation to identify an environment or operating system. In this case, you could specify the following key-value pairs:</p>
+    /// <ul>
+    /// <li> <p> <code>Key=environment,Value=test</code> </p> </li>
+    /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
+    /// </ul> <note>
+    /// <p>To add tags to an existing automation, use the <code>AddTagsToResource</code> operation.</p>
+    /// </note>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The CloudWatch alarm you want to apply to your automation.</p>
     pub fn alarm_configuration(mut self, input: crate::types::AlarmConfiguration) -> Self {
         self.alarm_configuration = ::std::option::Option::Some(input);
@@ -408,6 +478,12 @@ impl StartAutomationExecutionInputBuilder {
     ) -> Self {
         self.alarm_configuration = input;
         self
+    }
+    /// <p>The CloudWatch alarm you want to apply to your automation.</p>
+    pub fn get_alarm_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AlarmConfiguration> {
+        &self.alarm_configuration
     }
     /// Consumes the builder and constructs a [`StartAutomationExecutionInput`](crate::operation::start_automation_execution::StartAutomationExecutionInput).
     pub fn build(

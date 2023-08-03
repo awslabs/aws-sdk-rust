@@ -36,6 +36,10 @@ impl BatchStartViewerSessionRevocationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchStartViewerSessionRevocation as a reference.
+    pub fn as_input(&self) -> &crate::operation::batch_start_viewer_session_revocation::builders::BatchStartViewerSessionRevocationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -111,5 +115,13 @@ impl BatchStartViewerSessionRevocationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_viewer_sessions(input);
         self
+    }
+    /// <p>Array of viewer sessions, one per channel-ARN and viewer-ID pair.</p>
+    pub fn get_viewer_sessions(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::BatchStartViewerSessionRevocationViewerSession>,
+    > {
+        self.inner.get_viewer_sessions()
     }
 }

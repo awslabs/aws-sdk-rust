@@ -37,6 +37,12 @@ impl CreateCustomMetricFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateCustomMetric as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_custom_metric::builders::CreateCustomMetricInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl CreateCustomMetricFluentBuilder {
         self.inner = self.inner.set_metric_name(input);
         self
     }
+    /// <p> The name of the custom metric. This will be used in the metric report submitted from the device/thing. The name can't begin with <code>aws:</code>. You can't change the name after you define it.</p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_metric_name()
+    }
     /// <p> The friendly name in the console for the custom metric. This name doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. You can update the friendly name after you define it.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.display_name(input.into());
@@ -136,6 +146,10 @@ impl CreateCustomMetricFluentBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_display_name(input);
         self
+    }
+    /// <p> The friendly name in the console for the custom metric. This name doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. You can update the friendly name after you define it.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_display_name()
     }
     /// <p> The type of the custom metric. </p> <important>
     /// <p>The type <code>number</code> only takes a single metric value as an input, but when you submit the metrics value in the DeviceMetrics report, you must pass it as an array with a single value.</p>
@@ -154,6 +168,12 @@ impl CreateCustomMetricFluentBuilder {
         self.inner = self.inner.set_metric_type(input);
         self
     }
+    /// <p> The type of the custom metric. </p> <important>
+    /// <p>The type <code>number</code> only takes a single metric value as an input, but when you submit the metrics value in the DeviceMetrics report, you must pass it as an array with a single value.</p>
+    /// </important>
+    pub fn get_metric_type(&self) -> &::std::option::Option<crate::types::CustomMetricType> {
+        self.inner.get_metric_type()
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -171,6 +191,10 @@ impl CreateCustomMetricFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p> Metadata that can be used to manage the custom metric. </p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>Each custom metric must have a unique client request token. If you try to create a new custom metric that already exists with a different token, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
     pub fn client_request_token(
         mut self,
@@ -186,5 +210,9 @@ impl CreateCustomMetricFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
+    }
+    /// <p>Each custom metric must have a unique client request token. If you try to create a new custom metric that already exists with a different token, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. </p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
     }
 }

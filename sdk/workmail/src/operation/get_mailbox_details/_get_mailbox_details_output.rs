@@ -55,6 +55,10 @@ impl GetMailboxDetailsOutputBuilder {
         self.mailbox_quota = input;
         self
     }
+    /// <p>The maximum allowed mailbox size, in MB, for the specified user.</p>
+    pub fn get_mailbox_quota(&self) -> &::std::option::Option<i32> {
+        &self.mailbox_quota
+    }
     /// <p>The current mailbox size, in MB, for the specified user.</p>
     pub fn mailbox_size(mut self, input: f64) -> Self {
         self.mailbox_size = ::std::option::Option::Some(input);
@@ -64,6 +68,10 @@ impl GetMailboxDetailsOutputBuilder {
     pub fn set_mailbox_size(mut self, input: ::std::option::Option<f64>) -> Self {
         self.mailbox_size = input;
         self
+    }
+    /// <p>The current mailbox size, in MB, for the specified user.</p>
+    pub fn get_mailbox_size(&self) -> &::std::option::Option<f64> {
+        &self.mailbox_size
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

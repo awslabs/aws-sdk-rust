@@ -49,6 +49,12 @@ impl ScheduleKeyDeletionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ScheduleKeyDeletion as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::schedule_key_deletion::builders::ScheduleKeyDeletionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -153,6 +159,17 @@ impl ScheduleKeyDeletionFluentBuilder {
         self.inner = self.inner.set_key_id(input);
         self
     }
+    /// <p>The unique identifier of the KMS key to delete.</p>
+    /// <p>Specify the key ID or key ARN of the KMS key.</p>
+    /// <p>For example:</p>
+    /// <ul>
+    /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+    /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+    /// </ul>
+    /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
+    pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_key_id()
+    }
     /// <p>The waiting period, specified in number of days. After the waiting period ends, KMS deletes the KMS key.</p>
     /// <p>If the KMS key is a multi-Region primary key with replica keys, the waiting period begins when the last of its replica keys is deleted. Otherwise, the waiting period begins immediately.</p>
     /// <p>This value is optional. If you include a value, it must be between 7 and 30, inclusive. If you do not include a value, it defaults to 30. You can use the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-schedule-key-deletion-pending-window-in-days"> <code>kms:ScheduleKeyDeletionPendingWindowInDays</code> </a> condition key to further constrain the values that principals can specify in the <code>PendingWindowInDays</code> parameter.</p>
@@ -166,5 +183,11 @@ impl ScheduleKeyDeletionFluentBuilder {
     pub fn set_pending_window_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_pending_window_in_days(input);
         self
+    }
+    /// <p>The waiting period, specified in number of days. After the waiting period ends, KMS deletes the KMS key.</p>
+    /// <p>If the KMS key is a multi-Region primary key with replica keys, the waiting period begins when the last of its replica keys is deleted. Otherwise, the waiting period begins immediately.</p>
+    /// <p>This value is optional. If you include a value, it must be between 7 and 30, inclusive. If you do not include a value, it defaults to 30. You can use the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-schedule-key-deletion-pending-window-in-days"> <code>kms:ScheduleKeyDeletionPendingWindowInDays</code> </a> condition key to further constrain the values that principals can specify in the <code>PendingWindowInDays</code> parameter.</p>
+    pub fn get_pending_window_in_days(&self) -> &::std::option::Option<i32> {
+        self.inner.get_pending_window_in_days()
     }
 }

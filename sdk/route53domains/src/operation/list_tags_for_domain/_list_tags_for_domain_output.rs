@@ -57,6 +57,10 @@ impl ListTagsForDomainOutputBuilder {
         self.tag_list = input;
         self
     }
+    /// <p>A list of the tags that are associated with the specified domain.</p>
+    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tag_list
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

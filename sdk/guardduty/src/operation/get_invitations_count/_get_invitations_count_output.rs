@@ -48,6 +48,10 @@ impl GetInvitationsCountOutputBuilder {
         self.invitations_count = input;
         self
     }
+    /// <p>The number of received invitations.</p>
+    pub fn get_invitations_count(&self) -> &::std::option::Option<i32> {
+        &self.invitations_count
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

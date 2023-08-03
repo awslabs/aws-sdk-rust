@@ -65,6 +65,10 @@ impl RuleGroupSourceStatefulRulesDetailsBuilder {
         self.action = input;
         self
     }
+    /// <p>Defines what Network Firewall should do with the packets in a traffic flow when the flow matches the stateful rule criteria.</p>
+    pub fn get_action(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action
+    }
     /// <p>The stateful inspection criteria for the rule.</p>
     pub fn header(
         mut self,
@@ -80,6 +84,12 @@ impl RuleGroupSourceStatefulRulesDetailsBuilder {
     ) -> Self {
         self.header = input;
         self
+    }
+    /// <p>The stateful inspection criteria for the rule.</p>
+    pub fn get_header(
+        &self,
+    ) -> &::std::option::Option<crate::types::RuleGroupSourceStatefulRulesHeaderDetails> {
+        &self.header
     }
     /// Appends an item to `rule_options`.
     ///
@@ -104,6 +114,14 @@ impl RuleGroupSourceStatefulRulesDetailsBuilder {
     ) -> Self {
         self.rule_options = input;
         self
+    }
+    /// <p>Additional options for the rule.</p>
+    pub fn get_rule_options(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::RuleGroupSourceStatefulRulesOptionsDetails>,
+    > {
+        &self.rule_options
     }
     /// Consumes the builder and constructs a [`RuleGroupSourceStatefulRulesDetails`](crate::types::RuleGroupSourceStatefulRulesDetails).
     pub fn build(self) -> crate::types::RuleGroupSourceStatefulRulesDetails {

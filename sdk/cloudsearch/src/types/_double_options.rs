@@ -80,6 +80,10 @@ impl DoubleOptionsBuilder {
         self.default_value = input;
         self
     }
+    /// <p>A value to use for the field if the field isn't specified for a document. This can be important if you are using the field in an expression and that field is not present in every document.</p>
+    pub fn get_default_value(&self) -> &::std::option::Option<f64> {
+        &self.default_value
+    }
     /// <p>The name of the source field to map to the field. </p>
     pub fn source_field(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_field = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl DoubleOptionsBuilder {
     pub fn set_source_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_field = input;
         self
+    }
+    /// <p>The name of the source field to map to the field. </p>
+    pub fn get_source_field(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_field
     }
     /// <p>Whether facet information can be returned for the field.</p>
     pub fn facet_enabled(mut self, input: bool) -> Self {
@@ -100,6 +108,10 @@ impl DoubleOptionsBuilder {
         self.facet_enabled = input;
         self
     }
+    /// <p>Whether facet information can be returned for the field.</p>
+    pub fn get_facet_enabled(&self) -> &::std::option::Option<bool> {
+        &self.facet_enabled
+    }
     /// <p>Whether the contents of the field are searchable.</p>
     pub fn search_enabled(mut self, input: bool) -> Self {
         self.search_enabled = ::std::option::Option::Some(input);
@@ -109,6 +121,10 @@ impl DoubleOptionsBuilder {
     pub fn set_search_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.search_enabled = input;
         self
+    }
+    /// <p>Whether the contents of the field are searchable.</p>
+    pub fn get_search_enabled(&self) -> &::std::option::Option<bool> {
+        &self.search_enabled
     }
     /// <p>Whether the contents of the field can be returned in the search results.</p>
     pub fn return_enabled(mut self, input: bool) -> Self {
@@ -120,6 +136,10 @@ impl DoubleOptionsBuilder {
         self.return_enabled = input;
         self
     }
+    /// <p>Whether the contents of the field can be returned in the search results.</p>
+    pub fn get_return_enabled(&self) -> &::std::option::Option<bool> {
+        &self.return_enabled
+    }
     /// <p>Whether the field can be used to sort the search results.</p>
     pub fn sort_enabled(mut self, input: bool) -> Self {
         self.sort_enabled = ::std::option::Option::Some(input);
@@ -129,6 +149,10 @@ impl DoubleOptionsBuilder {
     pub fn set_sort_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.sort_enabled = input;
         self
+    }
+    /// <p>Whether the field can be used to sort the search results.</p>
+    pub fn get_sort_enabled(&self) -> &::std::option::Option<bool> {
+        &self.sort_enabled
     }
     /// Consumes the builder and constructs a [`DoubleOptions`](crate::types::DoubleOptions).
     pub fn build(self) -> crate::types::DoubleOptions {

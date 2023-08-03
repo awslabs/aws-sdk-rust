@@ -46,6 +46,10 @@ impl UpstreamRepositoryInfoBuilder {
         self.repository_name = input;
         self
     }
+    /// <p> The name of an upstream repository. </p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// Consumes the builder and constructs a [`UpstreamRepositoryInfo`](crate::types::UpstreamRepositoryInfo).
     pub fn build(self) -> crate::types::UpstreamRepositoryInfo {
         crate::types::UpstreamRepositoryInfo {

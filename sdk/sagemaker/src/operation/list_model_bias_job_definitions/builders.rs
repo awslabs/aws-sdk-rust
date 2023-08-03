@@ -36,6 +36,10 @@ impl ListModelBiasJobDefinitionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListModelBiasJobDefinitions as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_model_bias_job_definitions::builders::ListModelBiasJobDefinitionsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +142,10 @@ impl ListModelBiasJobDefinitionsFluentBuilder {
         self.inner = self.inner.set_endpoint_name(input);
         self
     }
+    /// <p>Name of the endpoint to monitor for model bias.</p>
+    pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_endpoint_name()
+    }
     /// <p>Whether to sort results by the <code>Name</code> or <code>CreationTime</code> field. The default is <code>CreationTime</code>.</p>
     pub fn sort_by(mut self, input: crate::types::MonitoringJobDefinitionSortKey) -> Self {
         self.inner = self.inner.sort_by(input);
@@ -151,6 +159,12 @@ impl ListModelBiasJobDefinitionsFluentBuilder {
         self.inner = self.inner.set_sort_by(input);
         self
     }
+    /// <p>Whether to sort results by the <code>Name</code> or <code>CreationTime</code> field. The default is <code>CreationTime</code>.</p>
+    pub fn get_sort_by(
+        &self,
+    ) -> &::std::option::Option<crate::types::MonitoringJobDefinitionSortKey> {
+        self.inner.get_sort_by()
+    }
     /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is <code>Descending</code>.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.inner = self.inner.sort_order(input);
@@ -160,6 +174,10 @@ impl ListModelBiasJobDefinitionsFluentBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
+    }
+    /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is <code>Descending</code>.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        self.inner.get_sort_order()
     }
     /// <p>The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -171,6 +189,10 @@ impl ListModelBiasJobDefinitionsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of model bias jobs to return in the response. The default value is 10.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -180,6 +202,10 @@ impl ListModelBiasJobDefinitionsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of model bias jobs to return in the response. The default value is 10.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>Filter for model bias jobs whose name contains a specified string.</p>
     pub fn name_contains(
@@ -197,6 +223,10 @@ impl ListModelBiasJobDefinitionsFluentBuilder {
         self.inner = self.inner.set_name_contains(input);
         self
     }
+    /// <p>Filter for model bias jobs whose name contains a specified string.</p>
+    pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name_contains()
+    }
     /// <p>A filter that returns only model bias jobs created before a specified time.</p>
     pub fn creation_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.creation_time_before(input);
@@ -210,6 +240,10 @@ impl ListModelBiasJobDefinitionsFluentBuilder {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }
+    /// <p>A filter that returns only model bias jobs created before a specified time.</p>
+    pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_creation_time_before()
+    }
     /// <p>A filter that returns only model bias jobs created after a specified time.</p>
     pub fn creation_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.creation_time_after(input);
@@ -222,5 +256,9 @@ impl ListModelBiasJobDefinitionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
+    }
+    /// <p>A filter that returns only model bias jobs created after a specified time.</p>
+    pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_creation_time_after()
     }
 }

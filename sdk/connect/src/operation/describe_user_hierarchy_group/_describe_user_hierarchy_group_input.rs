@@ -53,6 +53,10 @@ impl DescribeUserHierarchyGroupInputBuilder {
         self.hierarchy_group_id = input;
         self
     }
+    /// <p>The identifier of the hierarchy group.</p>
+    pub fn get_hierarchy_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hierarchy_group_id
+    }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl DescribeUserHierarchyGroupInputBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
+    }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// Consumes the builder and constructs a [`DescribeUserHierarchyGroupInput`](crate::operation::describe_user_hierarchy_group::DescribeUserHierarchyGroupInput).
     pub fn build(

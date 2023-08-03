@@ -64,6 +64,12 @@ impl WorkloadDiscoveryConfigBuilder {
         self.trusted_advisor_integration_status = input;
         self
     }
+    /// <p>Discovery integration status in respect to Trusted Advisor for the workload.</p>
+    pub fn get_trusted_advisor_integration_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::TrustedAdvisorIntegrationStatus> {
+        &self.trusted_advisor_integration_status
+    }
     /// Appends an item to `workload_resource_definition`.
     ///
     /// To override the contents of this collection use [`set_workload_resource_definition`](Self::set_workload_resource_definition).
@@ -84,6 +90,13 @@ impl WorkloadDiscoveryConfigBuilder {
     ) -> Self {
         self.workload_resource_definition = input;
         self
+    }
+    /// <p>The mode to use for identifying resources associated with the workload.</p>
+    /// <p>You can specify <code>WORKLOAD_METADATA</code>, <code>APP_REGISTRY</code>, or both.</p>
+    pub fn get_workload_resource_definition(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DefinitionType>> {
+        &self.workload_resource_definition
     }
     /// Consumes the builder and constructs a [`WorkloadDiscoveryConfig`](crate::types::WorkloadDiscoveryConfig).
     pub fn build(self) -> crate::types::WorkloadDiscoveryConfig {

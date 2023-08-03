@@ -53,6 +53,10 @@ impl DeleteStorageVirtualMachineInputBuilder {
         self.client_request_token = input;
         self
     }
+    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
+    }
     /// <p>The ID of the SVM that you want to delete.</p>
     pub fn storage_virtual_machine_id(
         mut self,
@@ -68,6 +72,10 @@ impl DeleteStorageVirtualMachineInputBuilder {
     ) -> Self {
         self.storage_virtual_machine_id = input;
         self
+    }
+    /// <p>The ID of the SVM that you want to delete.</p>
+    pub fn get_storage_virtual_machine_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_virtual_machine_id
     }
     /// Consumes the builder and constructs a [`DeleteStorageVirtualMachineInput`](crate::operation::delete_storage_virtual_machine::DeleteStorageVirtualMachineInput).
     pub fn build(

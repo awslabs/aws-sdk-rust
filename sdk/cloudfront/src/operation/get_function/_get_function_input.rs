@@ -47,6 +47,10 @@ impl GetFunctionInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the function whose code you are getting.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
     pub fn stage(mut self, input: crate::types::FunctionStage) -> Self {
         self.stage = ::std::option::Option::Some(input);
@@ -56,6 +60,10 @@ impl GetFunctionInputBuilder {
     pub fn set_stage(mut self, input: ::std::option::Option<crate::types::FunctionStage>) -> Self {
         self.stage = input;
         self
+    }
+    /// <p>The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
+    pub fn get_stage(&self) -> &::std::option::Option<crate::types::FunctionStage> {
+        &self.stage
     }
     /// Consumes the builder and constructs a [`GetFunctionInput`](crate::operation::get_function::GetFunctionInput).
     pub fn build(

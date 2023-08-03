@@ -71,6 +71,15 @@ impl AccessLevelFilterBuilder {
         self.key = input;
         self
     }
+    /// <p>The access level.</p>
+    /// <ul>
+    /// <li> <p> <code>Account</code> - Filter results based on the account.</p> </li>
+    /// <li> <p> <code>Role</code> - Filter results based on the federated role of the specified user.</p> </li>
+    /// <li> <p> <code>User</code> - Filter results based on the specified user.</p> </li>
+    /// </ul>
+    pub fn get_key(&self) -> &::std::option::Option<crate::types::AccessLevelFilterKey> {
+        &self.key
+    }
     /// <p>The user to which the access level applies. The only supported value is <code>Self</code>.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -80,6 +89,10 @@ impl AccessLevelFilterBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The user to which the access level applies. The only supported value is <code>Self</code>.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`AccessLevelFilter`](crate::types::AccessLevelFilter).
     pub fn build(self) -> crate::types::AccessLevelFilter {

@@ -106,6 +106,10 @@ impl ValidateE911AddressInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The AWS account ID.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The address street number, such as <code>200</code> or <code>2121</code>.</p>
     pub fn street_number(
         mut self,
@@ -122,6 +126,10 @@ impl ValidateE911AddressInputBuilder {
         self.street_number = input;
         self
     }
+    /// <p>The address street number, such as <code>200</code> or <code>2121</code>.</p>
+    pub fn get_street_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.street_number
+    }
     /// <p>The address street information, such as <code>8th Avenue</code>.</p>
     pub fn street_info(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.street_info = ::std::option::Option::Some(input.into());
@@ -131,6 +139,10 @@ impl ValidateE911AddressInputBuilder {
     pub fn set_street_info(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.street_info = input;
         self
+    }
+    /// <p>The address street information, such as <code>8th Avenue</code>.</p>
+    pub fn get_street_info(&self) -> &::std::option::Option<::std::string::String> {
+        &self.street_info
     }
     /// <p>The address city, such as <code>Portland</code>.</p>
     pub fn city(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -142,6 +154,10 @@ impl ValidateE911AddressInputBuilder {
         self.city = input;
         self
     }
+    /// <p>The address city, such as <code>Portland</code>.</p>
+    pub fn get_city(&self) -> &::std::option::Option<::std::string::String> {
+        &self.city
+    }
     /// <p>The address state, such as <code>ME</code>.</p>
     pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state = ::std::option::Option::Some(input.into());
@@ -151,6 +167,10 @@ impl ValidateE911AddressInputBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The address state, such as <code>ME</code>.</p>
+    pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state
     }
     /// <p>The country in the address being validated.</p>
     pub fn country(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -162,6 +182,10 @@ impl ValidateE911AddressInputBuilder {
         self.country = input;
         self
     }
+    /// <p>The country in the address being validated.</p>
+    pub fn get_country(&self) -> &::std::option::Option<::std::string::String> {
+        &self.country
+    }
     /// <p>The dress postal code, such <code>04352</code>.</p>
     pub fn postal_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.postal_code = ::std::option::Option::Some(input.into());
@@ -171,6 +195,10 @@ impl ValidateE911AddressInputBuilder {
     pub fn set_postal_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.postal_code = input;
         self
+    }
+    /// <p>The dress postal code, such <code>04352</code>.</p>
+    pub fn get_postal_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.postal_code
     }
     /// Consumes the builder and constructs a [`ValidateE911AddressInput`](crate::operation::validate_e911_address::ValidateE911AddressInput).
     pub fn build(

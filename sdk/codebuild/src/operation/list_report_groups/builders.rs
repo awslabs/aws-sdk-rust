@@ -36,6 +36,12 @@ impl ListReportGroupsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListReportGroups as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_report_groups::builders::ListReportGroupsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +146,10 @@ impl ListReportGroupsFluentBuilder {
         self.inner = self.inner.set_sort_order(input);
         self
     }
+    /// <p> Used to specify the order to sort the list of returned report groups. Valid values are <code>ASCENDING</code> and <code>DESCENDING</code>. </p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrderType> {
+        self.inner.get_sort_order()
+    }
     /// <p> The criterion to be used to list build report groups. Valid values include: </p>
     /// <ul>
     /// <li> <p> <code>CREATED_TIME</code>: List based on when each report group was created.</p> </li>
@@ -163,6 +173,15 @@ impl ListReportGroupsFluentBuilder {
         self.inner = self.inner.set_sort_by(input);
         self
     }
+    /// <p> The criterion to be used to list build report groups. Valid values include: </p>
+    /// <ul>
+    /// <li> <p> <code>CREATED_TIME</code>: List based on when each report group was created.</p> </li>
+    /// <li> <p> <code>LAST_MODIFIED_TIME</code>: List based on when each report group was last changed.</p> </li>
+    /// <li> <p> <code>NAME</code>: List based on each report group's name.</p> </li>
+    /// </ul>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ReportGroupSortByType> {
+        self.inner.get_sort_by()
+    }
     /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -173,6 +192,10 @@ impl ListReportGroupsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p> The maximum number of paginated report groups returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>ReportGroup</code> objects. The default value is 100. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -182,5 +205,9 @@ impl ListReportGroupsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p> The maximum number of paginated report groups returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>ReportGroup</code> objects. The default value is 100. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

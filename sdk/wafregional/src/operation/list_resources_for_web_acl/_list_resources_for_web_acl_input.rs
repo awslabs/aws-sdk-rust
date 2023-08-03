@@ -49,6 +49,10 @@ impl ListResourcesForWebAclInputBuilder {
         self.web_acl_id = input;
         self
     }
+    /// <p>The unique identifier (ID) of the web ACL for which to list the associated resources.</p>
+    pub fn get_web_acl_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.web_acl_id
+    }
     /// <p>The type of resource to list, either an application load balancer or Amazon API Gateway.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
@@ -61,6 +65,10 @@ impl ListResourcesForWebAclInputBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>The type of resource to list, either an application load balancer or Amazon API Gateway.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
     }
     /// Consumes the builder and constructs a [`ListResourcesForWebAclInput`](crate::operation::list_resources_for_web_acl::ListResourcesForWebAclInput).
     pub fn build(

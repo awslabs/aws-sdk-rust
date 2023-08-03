@@ -67,6 +67,10 @@ impl RedactChannelMessageOutputBuilder {
         self.channel_arn = input;
         self
     }
+    /// <p>The ARN of the channel containing the messages that you want to redact.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
+    }
     /// <p>The ID of the message being redacted.</p>
     pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_id = ::std::option::Option::Some(input.into());
@@ -76,6 +80,10 @@ impl RedactChannelMessageOutputBuilder {
     pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message_id = input;
         self
+    }
+    /// <p>The ID of the message being redacted.</p>
+    pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message_id
     }
     /// <p>The ID of the SubChannel in the response.</p> <note>
     /// <p>Only required when redacting messages in a SubChannel that the user belongs to.</p>
@@ -96,6 +104,12 @@ impl RedactChannelMessageOutputBuilder {
     ) -> Self {
         self.sub_channel_id = input;
         self
+    }
+    /// <p>The ID of the SubChannel in the response.</p> <note>
+    /// <p>Only required when redacting messages in a SubChannel that the user belongs to.</p>
+    /// </note>
+    pub fn get_sub_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sub_channel_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

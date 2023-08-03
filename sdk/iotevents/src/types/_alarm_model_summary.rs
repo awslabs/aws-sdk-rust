@@ -59,6 +59,10 @@ impl AlarmModelSummaryBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The time the alarm model was created, in the Unix epoch format.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The description of the alarm model.</p>
     pub fn alarm_model_description(
         mut self,
@@ -75,6 +79,10 @@ impl AlarmModelSummaryBuilder {
         self.alarm_model_description = input;
         self
     }
+    /// <p>The description of the alarm model.</p>
+    pub fn get_alarm_model_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alarm_model_description
+    }
     /// <p>The name of the alarm model.</p>
     pub fn alarm_model_name(
         mut self,
@@ -90,6 +98,10 @@ impl AlarmModelSummaryBuilder {
     ) -> Self {
         self.alarm_model_name = input;
         self
+    }
+    /// <p>The name of the alarm model.</p>
+    pub fn get_alarm_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alarm_model_name
     }
     /// Consumes the builder and constructs a [`AlarmModelSummary`](crate::types::AlarmModelSummary).
     pub fn build(self) -> crate::types::AlarmModelSummary {

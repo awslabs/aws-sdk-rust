@@ -57,6 +57,12 @@ impl DescribeAlarmsForMetricOutputBuilder {
         self.metric_alarms = input;
         self
     }
+    /// <p>The information for each alarm with the specified metric.</p>
+    pub fn get_metric_alarms(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricAlarm>> {
+        &self.metric_alarms
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

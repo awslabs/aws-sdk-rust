@@ -88,6 +88,12 @@ impl AwsEc2VpcPeeringConnectionDetailsBuilder {
         self.accepter_vpc_info = input;
         self
     }
+    /// <p>Information about the accepter VPC. </p>
+    pub fn get_accepter_vpc_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsEc2VpcPeeringConnectionVpcInfoDetails> {
+        &self.accepter_vpc_info
+    }
     /// <p>The time at which an unaccepted VPC peering connection will expire. </p>
     pub fn expiration_time(
         mut self,
@@ -103,6 +109,10 @@ impl AwsEc2VpcPeeringConnectionDetailsBuilder {
     ) -> Self {
         self.expiration_time = input;
         self
+    }
+    /// <p>The time at which an unaccepted VPC peering connection will expire. </p>
+    pub fn get_expiration_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expiration_time
     }
     /// <p>Information about the requester VPC. </p>
     pub fn requester_vpc_info(
@@ -120,6 +130,12 @@ impl AwsEc2VpcPeeringConnectionDetailsBuilder {
         self.requester_vpc_info = input;
         self
     }
+    /// <p>Information about the requester VPC. </p>
+    pub fn get_requester_vpc_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsEc2VpcPeeringConnectionVpcInfoDetails> {
+        &self.requester_vpc_info
+    }
     /// <p>The status of the VPC peering connection. </p>
     pub fn status(mut self, input: crate::types::AwsEc2VpcPeeringConnectionStatusDetails) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -132,6 +148,12 @@ impl AwsEc2VpcPeeringConnectionDetailsBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the VPC peering connection. </p>
+    pub fn get_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsEc2VpcPeeringConnectionStatusDetails> {
+        &self.status
     }
     /// <p>The ID of the VPC peering connection. </p>
     pub fn vpc_peering_connection_id(
@@ -148,6 +170,10 @@ impl AwsEc2VpcPeeringConnectionDetailsBuilder {
     ) -> Self {
         self.vpc_peering_connection_id = input;
         self
+    }
+    /// <p>The ID of the VPC peering connection. </p>
+    pub fn get_vpc_peering_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_peering_connection_id
     }
     /// Consumes the builder and constructs a [`AwsEc2VpcPeeringConnectionDetails`](crate::types::AwsEc2VpcPeeringConnectionDetails).
     pub fn build(self) -> crate::types::AwsEc2VpcPeeringConnectionDetails {

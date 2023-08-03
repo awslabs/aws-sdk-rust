@@ -53,6 +53,12 @@ impl GetUserDefinedFunctionOutputBuilder {
         self.user_defined_function = input;
         self
     }
+    /// <p>The requested function definition.</p>
+    pub fn get_user_defined_function(
+        &self,
+    ) -> &::std::option::Option<crate::types::UserDefinedFunction> {
+        &self.user_defined_function
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

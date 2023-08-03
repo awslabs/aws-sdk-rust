@@ -56,6 +56,10 @@ impl CreateProjectOutputBuilder {
         self.project_id = input;
         self
     }
+    /// <p>The ID of the project.</p>
+    pub fn get_project_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_id
+    }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code> </p>
     pub fn project_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -67,6 +71,11 @@ impl CreateProjectOutputBuilder {
     pub fn set_project_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_arn = input;
         self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the project, which has the following format.</p>
+    /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code> </p>
+    pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

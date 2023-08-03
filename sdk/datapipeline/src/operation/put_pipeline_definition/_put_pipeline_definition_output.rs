@@ -77,6 +77,12 @@ impl PutPipelineDefinitionOutputBuilder {
         self.validation_errors = input;
         self
     }
+    /// <p>The validation errors that are associated with the objects defined in <code>pipelineObjects</code>.</p>
+    pub fn get_validation_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationError>> {
+        &self.validation_errors
+    }
     /// Appends an item to `validation_warnings`.
     ///
     /// To override the contents of this collection use [`set_validation_warnings`](Self::set_validation_warnings).
@@ -96,6 +102,12 @@ impl PutPipelineDefinitionOutputBuilder {
         self.validation_warnings = input;
         self
     }
+    /// <p>The validation warnings that are associated with the objects defined in <code>pipelineObjects</code>.</p>
+    pub fn get_validation_warnings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationWarning>> {
+        &self.validation_warnings
+    }
     /// <p>Indicates whether there were validation errors, and the pipeline definition is stored but cannot be activated until you correct the pipeline and call <code>PutPipelineDefinition</code> to commit the corrected pipeline.</p>
     pub fn errored(mut self, input: bool) -> Self {
         self.errored = ::std::option::Option::Some(input);
@@ -105,6 +117,10 @@ impl PutPipelineDefinitionOutputBuilder {
     pub fn set_errored(mut self, input: ::std::option::Option<bool>) -> Self {
         self.errored = input;
         self
+    }
+    /// <p>Indicates whether there were validation errors, and the pipeline definition is stored but cannot be activated until you correct the pipeline and call <code>PutPipelineDefinition</code> to commit the corrected pipeline.</p>
+    pub fn get_errored(&self) -> &::std::option::Option<bool> {
+        &self.errored
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

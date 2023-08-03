@@ -39,6 +39,12 @@ impl DescribeExecutionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeExecution as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_execution::builders::DescribeExecutionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl DescribeExecutionFluentBuilder {
         self.inner = self.inner.set_execution_id(input);
         self
     }
+    /// <p>A unique identifier for the execution of a workflow.</p>
+    pub fn get_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_execution_id()
+    }
     /// <p>A unique identifier for the workflow.</p>
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workflow_id(input.into());
@@ -138,5 +148,9 @@ impl DescribeExecutionFluentBuilder {
     pub fn set_workflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workflow_id(input);
         self
+    }
+    /// <p>A unique identifier for the workflow.</p>
+    pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workflow_id()
     }
 }

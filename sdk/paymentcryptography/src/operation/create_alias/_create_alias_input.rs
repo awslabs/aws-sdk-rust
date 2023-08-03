@@ -55,6 +55,12 @@ impl CreateAliasInputBuilder {
         self.alias_name = input;
         self
     }
+    /// <p>A friendly name that you can use to refer a key. An alias must begin with <code>alias/</code> followed by a name, for example <code>alias/ExampleAlias</code>. It can contain only alphanumeric characters, forward slashes (/), underscores (_), and dashes (-).</p> <important>
+    /// <p>Don't include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
+    /// </important>
+    pub fn get_alias_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias_name
+    }
     /// <p>The <code>KeyARN</code> of the key to associate with the alias.</p>
     pub fn key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_arn = ::std::option::Option::Some(input.into());
@@ -64,6 +70,10 @@ impl CreateAliasInputBuilder {
     pub fn set_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_arn = input;
         self
+    }
+    /// <p>The <code>KeyARN</code> of the key to associate with the alias.</p>
+    pub fn get_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_arn
     }
     /// Consumes the builder and constructs a [`CreateAliasInput`](crate::operation::create_alias::CreateAliasInput).
     pub fn build(

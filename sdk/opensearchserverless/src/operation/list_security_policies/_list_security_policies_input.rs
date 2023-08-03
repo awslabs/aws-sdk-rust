@@ -67,6 +67,10 @@ impl ListSecurityPoliciesInputBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of policy.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::SecurityPolicyType> {
+        &self.r#type
+    }
     /// Appends an item to `resource`.
     ///
     /// To override the contents of this collection use [`set_resource`](Self::set_resource).
@@ -86,6 +90,10 @@ impl ListSecurityPoliciesInputBuilder {
         self.resource = input;
         self
     }
+    /// <p>Resource filters (can be collection or indexes) that policies can apply to. </p>
+    pub fn get_resource(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resource
+    }
     /// <p>If your initial <code>ListSecurityPolicies</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListSecurityPolicies</code> operations, which returns results in the next page. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -96,6 +104,10 @@ impl ListSecurityPoliciesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If your initial <code>ListSecurityPolicies</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListSecurityPolicies</code> operations, which returns results in the next page. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results. The default is 20.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -105,6 +117,10 @@ impl ListSecurityPoliciesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results. The default is 20.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListSecurityPoliciesInput`](crate::operation::list_security_policies::ListSecurityPoliciesInput).
     pub fn build(

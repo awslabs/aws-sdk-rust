@@ -72,6 +72,10 @@ impl UnprocessedPreparedStatementNameBuilder {
         self.statement_name = input;
         self
     }
+    /// <p>The name of a prepared statement that could not be returned due to an error.</p>
+    pub fn get_statement_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.statement_name
+    }
     /// <p>The error code returned when the request for the prepared statement failed.</p>
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl UnprocessedPreparedStatementNameBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>The error code returned when the request for the prepared statement failed.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
     }
     /// <p>The error message containing the reason why the prepared statement could not be returned. The following error messages are possible:</p>
     /// <ul>
@@ -107,6 +115,15 @@ impl UnprocessedPreparedStatementNameBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>The error message containing the reason why the prepared statement could not be returned. The following error messages are possible:</p>
+    /// <ul>
+    /// <li> <p> <code>INVALID_INPUT</code> - The name of the prepared statement that was provided is not valid (for example, the name is too long).</p> </li>
+    /// <li> <p> <code>STATEMENT_NOT_FOUND</code> - A prepared statement with the name provided could not be found.</p> </li>
+    /// <li> <p> <code>UNAUTHORIZED</code> - The requester does not have permission to access the workgroup that contains the prepared statement.</p> </li>
+    /// </ul>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`UnprocessedPreparedStatementName`](crate::types::UnprocessedPreparedStatementName).
     pub fn build(self) -> crate::types::UnprocessedPreparedStatementName {

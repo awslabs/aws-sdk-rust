@@ -36,6 +36,12 @@ impl RegisterEventTopicFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RegisterEventTopic as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::register_event_topic::builders::RegisterEventTopicInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl RegisterEventTopicFluentBuilder {
         self.inner = self.inner.set_directory_id(input);
         self
     }
+    /// <p>The Directory ID that will publish status messages to the Amazon SNS topic.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_id()
+    }
     /// <p>The Amazon SNS topic name to which the directory will publish status messages. This Amazon SNS topic must be in the same region as the specified Directory ID.</p>
     pub fn topic_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.topic_name(input.into());
@@ -135,5 +145,9 @@ impl RegisterEventTopicFluentBuilder {
     pub fn set_topic_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_topic_name(input);
         self
+    }
+    /// <p>The Amazon SNS topic name to which the directory will publish status messages. This Amazon SNS topic must be in the same region as the specified Directory ID.</p>
+    pub fn get_topic_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_topic_name()
     }
 }

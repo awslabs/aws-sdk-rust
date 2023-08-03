@@ -49,6 +49,10 @@ impl SendMessagesOutputBuilder {
         self.message_response = input;
         self
     }
+    /// <p>Provides information about the results of a request to send a message to an endpoint address.</p>
+    pub fn get_message_response(&self) -> &::std::option::Option<crate::types::MessageResponse> {
+        &self.message_response
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

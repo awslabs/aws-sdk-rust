@@ -56,6 +56,10 @@ impl SelectFromCollectionBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the transform node.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `inputs`.
     ///
     /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
@@ -75,6 +79,10 @@ impl SelectFromCollectionBuilder {
         self.inputs = input;
         self
     }
+    /// <p>The data inputs identified by their node names.</p>
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.inputs
+    }
     /// <p>The index for the DynamicFrame to be selected.</p>
     pub fn index(mut self, input: i32) -> Self {
         self.index = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl SelectFromCollectionBuilder {
     pub fn set_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.index = input;
         self
+    }
+    /// <p>The index for the DynamicFrame to be selected.</p>
+    pub fn get_index(&self) -> &::std::option::Option<i32> {
+        &self.index
     }
     /// Consumes the builder and constructs a [`SelectFromCollection`](crate::types::SelectFromCollection).
     pub fn build(self) -> crate::types::SelectFromCollection {

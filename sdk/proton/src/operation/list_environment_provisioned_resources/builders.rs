@@ -36,6 +36,10 @@ impl ListEnvironmentProvisionedResourcesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListEnvironmentProvisionedResources as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_environment_provisioned_resources::builders::ListEnvironmentProvisionedResourcesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -112,6 +116,10 @@ impl ListEnvironmentProvisionedResourcesFluentBuilder {
         self.inner = self.inner.set_environment_name(input);
         self
     }
+    /// <p>The environment name.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_name()
+    }
     /// <p>A token that indicates the location of the next environment provisioned resource in the array of environment provisioned resources, after the list of environment provisioned resources that was previously requested.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -121,5 +129,9 @@ impl ListEnvironmentProvisionedResourcesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>A token that indicates the location of the next environment provisioned resource in the array of environment provisioned resources, after the list of environment provisioned resources that was previously requested.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

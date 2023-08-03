@@ -47,6 +47,10 @@ impl DeleteUserInputBuilder {
         self.user_arn = input;
         self
     }
+    /// <p>The ARN of the user to delete in the organization. Required.</p>
+    pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_arn
+    }
     /// <p>The ARN of the user's enrollment in the organization. Required.</p>
     pub fn enrollment_id(
         mut self,
@@ -62,6 +66,10 @@ impl DeleteUserInputBuilder {
     ) -> Self {
         self.enrollment_id = input;
         self
+    }
+    /// <p>The ARN of the user's enrollment in the organization. Required.</p>
+    pub fn get_enrollment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.enrollment_id
     }
     /// Consumes the builder and constructs a [`DeleteUserInput`](crate::operation::delete_user::DeleteUserInput).
     pub fn build(

@@ -68,6 +68,10 @@ impl UpdateAgentStatusInputBuilder {
         self.agent_id = input;
         self
     }
+    /// <p>UUID of agent to update.</p>
+    pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_id
+    }
     /// <p>GUID of agent task.</p>
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_id = ::std::option::Option::Some(input.into());
@@ -77,6 +81,10 @@ impl UpdateAgentStatusInputBuilder {
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_id = input;
         self
+    }
+    /// <p>GUID of agent task.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_id
     }
     /// <p>Aggregate status for agent.</p>
     pub fn aggregate_status(mut self, input: crate::types::AggregateStatus) -> Self {
@@ -90,6 +98,10 @@ impl UpdateAgentStatusInputBuilder {
     ) -> Self {
         self.aggregate_status = input;
         self
+    }
+    /// <p>Aggregate status for agent.</p>
+    pub fn get_aggregate_status(&self) -> &::std::option::Option<crate::types::AggregateStatus> {
+        &self.aggregate_status
     }
     /// Appends an item to `component_statuses`.
     ///
@@ -109,6 +121,12 @@ impl UpdateAgentStatusInputBuilder {
     ) -> Self {
         self.component_statuses = input;
         self
+    }
+    /// <p>List of component statuses for agent.</p>
+    pub fn get_component_statuses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentStatusData>> {
+        &self.component_statuses
     }
     /// Consumes the builder and constructs a [`UpdateAgentStatusInput`](crate::operation::update_agent_status::UpdateAgentStatusInput).
     pub fn build(

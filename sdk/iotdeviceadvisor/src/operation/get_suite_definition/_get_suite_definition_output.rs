@@ -121,6 +121,10 @@ impl GetSuiteDefinitionOutputBuilder {
         self.suite_definition_id = input;
         self
     }
+    /// <p>Suite definition ID of the suite definition.</p>
+    pub fn get_suite_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.suite_definition_id
+    }
     /// <p>The ARN of the suite definition.</p>
     pub fn suite_definition_arn(
         mut self,
@@ -136,6 +140,10 @@ impl GetSuiteDefinitionOutputBuilder {
     ) -> Self {
         self.suite_definition_arn = input;
         self
+    }
+    /// <p>The ARN of the suite definition.</p>
+    pub fn get_suite_definition_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.suite_definition_arn
     }
     /// <p>Suite definition version of the suite definition.</p>
     pub fn suite_definition_version(
@@ -153,6 +161,10 @@ impl GetSuiteDefinitionOutputBuilder {
         self.suite_definition_version = input;
         self
     }
+    /// <p>Suite definition version of the suite definition.</p>
+    pub fn get_suite_definition_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.suite_definition_version
+    }
     /// <p>Latest suite definition version of the suite definition.</p>
     pub fn latest_version(
         mut self,
@@ -168,6 +180,10 @@ impl GetSuiteDefinitionOutputBuilder {
     ) -> Self {
         self.latest_version = input;
         self
+    }
+    /// <p>Latest suite definition version of the suite definition.</p>
+    pub fn get_latest_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.latest_version
     }
     /// <p>Suite configuration of the suite definition.</p>
     pub fn suite_definition_configuration(
@@ -185,6 +201,12 @@ impl GetSuiteDefinitionOutputBuilder {
         self.suite_definition_configuration = input;
         self
     }
+    /// <p>Suite configuration of the suite definition.</p>
+    pub fn get_suite_definition_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SuiteDefinitionConfiguration> {
+        &self.suite_definition_configuration
+    }
     /// <p>Date (in Unix epoch time) when the suite definition was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -198,6 +220,10 @@ impl GetSuiteDefinitionOutputBuilder {
         self.created_at = input;
         self
     }
+    /// <p>Date (in Unix epoch time) when the suite definition was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>Date (in Unix epoch time) when the suite definition was last modified.</p>
     pub fn last_modified_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_at = ::std::option::Option::Some(input);
@@ -210,6 +236,10 @@ impl GetSuiteDefinitionOutputBuilder {
     ) -> Self {
         self.last_modified_at = input;
         self
+    }
+    /// <p>Date (in Unix epoch time) when the suite definition was last modified.</p>
+    pub fn get_last_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_at
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -235,6 +265,14 @@ impl GetSuiteDefinitionOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Tags attached to the suite definition.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

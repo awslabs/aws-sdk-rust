@@ -51,6 +51,10 @@ impl PlacementStrategyBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of placement strategy. The random placement strategy randomly places tasks on available candidates. The spread placement strategy spreads placement across available candidates evenly based on the field parameter. The binpack strategy places tasks on available candidates that have the least available amount of the resource that is specified with the field parameter. For example, if you binpack on memory, a task is placed on the instance with the least amount of remaining memory (but still enough to run the task).</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::PlacementStrategyType> {
+        &self.r#type
+    }
     /// <p>The field to apply the placement strategy against. For the spread placement strategy, valid values are <code>instanceId</code> (or <code>instanceId</code>, which has the same effect), or any platform or custom attribute that is applied to a container instance, such as <code>attribute:ecs.availability-zone</code>. For the binpack placement strategy, valid values are <code>cpu</code> and <code>memory</code>. For the random placement strategy, this field is not used.</p>
     pub fn field(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.field = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl PlacementStrategyBuilder {
     pub fn set_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.field = input;
         self
+    }
+    /// <p>The field to apply the placement strategy against. For the spread placement strategy, valid values are <code>instanceId</code> (or <code>instanceId</code>, which has the same effect), or any platform or custom attribute that is applied to a container instance, such as <code>attribute:ecs.availability-zone</code>. For the binpack placement strategy, valid values are <code>cpu</code> and <code>memory</code>. For the random placement strategy, this field is not used.</p>
+    pub fn get_field(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field
     }
     /// Consumes the builder and constructs a [`PlacementStrategy`](crate::types::PlacementStrategy).
     pub fn build(self) -> crate::types::PlacementStrategy {

@@ -50,6 +50,10 @@ impl PutDefaultEncryptionConfigurationInputBuilder {
         self.encryption_type = input;
         self
     }
+    /// <p>The type of encryption used for the encryption configuration.</p>
+    pub fn get_encryption_type(&self) -> &::std::option::Option<crate::types::EncryptionType> {
+        &self.encryption_type
+    }
     /// <p>The Key ID of the customer managed key used for KMS encryption. This is required if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -59,6 +63,10 @@ impl PutDefaultEncryptionConfigurationInputBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p>The Key ID of the customer managed key used for KMS encryption. This is required if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// Consumes the builder and constructs a [`PutDefaultEncryptionConfigurationInput`](crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{

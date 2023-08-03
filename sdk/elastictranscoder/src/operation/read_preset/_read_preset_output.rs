@@ -47,6 +47,10 @@ impl ReadPresetOutputBuilder {
         self.preset = input;
         self
     }
+    /// <p>A section of the response body that provides information about the preset.</p>
+    pub fn get_preset(&self) -> &::std::option::Option<crate::types::Preset> {
+        &self.preset
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

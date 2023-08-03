@@ -39,6 +39,12 @@ impl DescribeDirectoriesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeDirectories as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_directories::builders::DescribeDirectoriesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -152,6 +158,13 @@ impl DescribeDirectoriesFluentBuilder {
         self.inner = self.inner.set_directory_ids(input);
         self
     }
+    /// <p>A list of identifiers of the directories for which to obtain the information. If this member is null, all directories that belong to the current account are returned.</p>
+    /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
+    pub fn get_directory_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_directory_ids()
+    }
     /// <p>The <code>DescribeDirectoriesResult.NextToken</code> value from a previous call to <code>DescribeDirectories</code>. Pass null if this is the first call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -162,6 +175,10 @@ impl DescribeDirectoriesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The <code>DescribeDirectoriesResult.NextToken</code> value from a previous call to <code>DescribeDirectories</code>. Pass null if this is the first call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -171,5 +188,9 @@ impl DescribeDirectoriesFluentBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
+    }
+    /// <p>The maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
     }
 }

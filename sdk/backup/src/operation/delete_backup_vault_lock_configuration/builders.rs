@@ -37,6 +37,10 @@ impl DeleteBackupVaultLockConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteBackupVaultLockConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_backup_vault_lock_configuration::builders::DeleteBackupVaultLockConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,5 +110,9 @@ impl DeleteBackupVaultLockConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_backup_vault_name(input);
         self
+    }
+    /// <p>The name of the backup vault from which to delete Backup Vault Lock.</p>
+    pub fn get_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_backup_vault_name()
     }
 }

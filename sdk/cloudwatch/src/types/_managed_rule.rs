@@ -62,6 +62,10 @@ impl ManagedRuleBuilder {
         self.template_name = input;
         self
     }
+    /// <p> The template name for the managed Contributor Insights rule, as returned by <code>ListManagedInsightRules</code>. </p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
     /// <p> The ARN of an Amazon Web Services resource that has managed Contributor Insights rules. </p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl ManagedRuleBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
+    }
+    /// <p> The ARN of an Amazon Web Services resource that has managed Contributor Insights rules. </p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// Appends an item to `tags`.
     ///
@@ -90,6 +98,10 @@ impl ManagedRuleBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p> A list of key-value pairs that you can associate with a managed Contributor Insights rule. You can associate as many as 50 tags with a rule. Tags can help you organize and categorize your resources. You also can use them to scope user permissions by granting a user permission to access or change only the resources that have certain tag values. To associate tags with a rule, you must have the <code>cloudwatch:TagResource</code> permission in addition to the <code>cloudwatch:PutInsightRule</code> permission. If you are using this operation to update an existing Contributor Insights rule, any tags that you specify in this parameter are ignored. To change the tags of an existing rule, use <code>TagResource</code>. </p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`ManagedRule`](crate::types::ManagedRule).
     pub fn build(self) -> crate::types::ManagedRule {

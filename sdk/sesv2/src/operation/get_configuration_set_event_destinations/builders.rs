@@ -37,6 +37,10 @@ impl GetConfigurationSetEventDestinationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetConfigurationSetEventDestinations as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_configuration_set_event_destinations::builders::GetConfigurationSetEventDestinationsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,5 +110,9 @@ impl GetConfigurationSetEventDestinationsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_configuration_set_name(input);
         self
+    }
+    /// <p>The name of the configuration set that contains the event destination.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration_set_name()
     }
 }

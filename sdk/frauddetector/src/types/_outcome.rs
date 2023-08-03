@@ -72,6 +72,10 @@ impl OutcomeBuilder {
         self.name = input;
         self
     }
+    /// <p>The outcome name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The outcome description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl OutcomeBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The outcome description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The timestamp when the outcome was last updated.</p>
     pub fn last_updated_time(
@@ -98,6 +106,10 @@ impl OutcomeBuilder {
         self.last_updated_time = input;
         self
     }
+    /// <p>The timestamp when the outcome was last updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_updated_time
+    }
     /// <p>The timestamp when the outcome was created.</p>
     pub fn created_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_time = ::std::option::Option::Some(input.into());
@@ -108,6 +120,10 @@ impl OutcomeBuilder {
         self.created_time = input;
         self
     }
+    /// <p>The timestamp when the outcome was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_time
+    }
     /// <p>The outcome ARN.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -117,6 +133,10 @@ impl OutcomeBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The outcome ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`Outcome`](crate::types::Outcome).
     pub fn build(self) -> crate::types::Outcome {

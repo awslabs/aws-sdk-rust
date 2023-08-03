@@ -47,6 +47,10 @@ impl StartMulticastGroupSessionInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the multicast group.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The LoRaWAN information used with the multicast session.</p>
     pub fn lo_ra_wan(mut self, input: crate::types::LoRaWanMulticastSession) -> Self {
         self.lo_ra_wan = ::std::option::Option::Some(input);
@@ -59,6 +63,10 @@ impl StartMulticastGroupSessionInputBuilder {
     ) -> Self {
         self.lo_ra_wan = input;
         self
+    }
+    /// <p>The LoRaWAN information used with the multicast session.</p>
+    pub fn get_lo_ra_wan(&self) -> &::std::option::Option<crate::types::LoRaWanMulticastSession> {
+        &self.lo_ra_wan
     }
     /// Consumes the builder and constructs a [`StartMulticastGroupSessionInput`](crate::operation::start_multicast_group_session::StartMulticastGroupSessionInput).
     pub fn build(

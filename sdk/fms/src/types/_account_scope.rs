@@ -65,6 +65,10 @@ impl AccountScopeBuilder {
         self.accounts = input;
         self
     }
+    /// <p>The list of accounts within the organization that the specified Firewall Manager administrator either can or cannot apply policies to, based on the value of <code>ExcludeSpecifiedAccounts</code>. If <code>ExcludeSpecifiedAccounts</code> is set to <code>true</code>, then the Firewall Manager administrator can apply policies to all members of the organization except for the accounts in this list. If <code>ExcludeSpecifiedAccounts</code> is set to <code>false</code>, then the Firewall Manager administrator can only apply policies to the accounts in this list.</p>
+    pub fn get_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.accounts
+    }
     /// <p>A boolean value that indicates if the administrator can apply policies to all accounts within an organization. If true, the administrator can apply policies to all accounts within the organization. You can either enable management of all accounts through this operation, or you can specify a list of accounts to manage in <code>AccountScope$Accounts</code>. You cannot specify both.</p>
     pub fn all_accounts_enabled(mut self, input: bool) -> Self {
         self.all_accounts_enabled = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl AccountScopeBuilder {
         self.all_accounts_enabled = input;
         self
     }
+    /// <p>A boolean value that indicates if the administrator can apply policies to all accounts within an organization. If true, the administrator can apply policies to all accounts within the organization. You can either enable management of all accounts through this operation, or you can specify a list of accounts to manage in <code>AccountScope$Accounts</code>. You cannot specify both.</p>
+    pub fn get_all_accounts_enabled(&self) -> &::std::option::Option<bool> {
+        &self.all_accounts_enabled
+    }
     /// <p>A boolean value that excludes the accounts in <code>AccountScope$Accounts</code> from the administrator's scope. If true, the Firewall Manager administrator can apply policies to all members of the organization except for the accounts listed in <code>AccountScope$Accounts</code>. You can either specify a list of accounts to exclude by <code>AccountScope$Accounts</code>, or you can enable management of all accounts by <code>AccountScope$AllAccountsEnabled</code>. You cannot specify both.</p>
     pub fn exclude_specified_accounts(mut self, input: bool) -> Self {
         self.exclude_specified_accounts = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl AccountScopeBuilder {
     pub fn set_exclude_specified_accounts(mut self, input: ::std::option::Option<bool>) -> Self {
         self.exclude_specified_accounts = input;
         self
+    }
+    /// <p>A boolean value that excludes the accounts in <code>AccountScope$Accounts</code> from the administrator's scope. If true, the Firewall Manager administrator can apply policies to all members of the organization except for the accounts listed in <code>AccountScope$Accounts</code>. You can either specify a list of accounts to exclude by <code>AccountScope$Accounts</code>, or you can enable management of all accounts by <code>AccountScope$AllAccountsEnabled</code>. You cannot specify both.</p>
+    pub fn get_exclude_specified_accounts(&self) -> &::std::option::Option<bool> {
+        &self.exclude_specified_accounts
     }
     /// Consumes the builder and constructs a [`AccountScope`](crate::types::AccountScope).
     pub fn build(self) -> crate::types::AccountScope {

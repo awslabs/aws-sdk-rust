@@ -48,6 +48,10 @@ impl CloudWatchLogsBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
+    #[allow(missing_docs)] // documentation missing in model
     pub fn log_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group = ::std::option::Option::Some(input.into());
         self
@@ -56,6 +60,10 @@ impl CloudWatchLogsBuilder {
     pub fn set_log_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_group = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_log_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group
     }
     /// Consumes the builder and constructs a [`CloudWatchLogs`](crate::types::CloudWatchLogs).
     pub fn build(self) -> crate::types::CloudWatchLogs {

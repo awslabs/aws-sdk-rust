@@ -46,6 +46,10 @@ impl ExportTr31KeyBlockBuilder {
         self.wrapping_key_identifier = input;
         self
     }
+    /// <p>The <code>KeyARN</code> of the the wrapping key. This key encrypts or wraps the key under export for TR-31 key block generation.</p>
+    pub fn get_wrapping_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.wrapping_key_identifier
+    }
     /// Consumes the builder and constructs a [`ExportTr31KeyBlock`](crate::types::ExportTr31KeyBlock).
     pub fn build(self) -> crate::types::ExportTr31KeyBlock {
         crate::types::ExportTr31KeyBlock {

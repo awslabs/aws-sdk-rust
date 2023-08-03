@@ -51,6 +51,10 @@ impl TimestampRangeBuilder {
         self.begin_date = input;
         self
     }
+    /// <p>The minimum value of the timestamp range.</p>
+    pub fn get_begin_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.begin_date
+    }
     /// <p>The maximum value of the timestamp range.</p>
     pub fn end_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_date = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl TimestampRangeBuilder {
     ) -> Self {
         self.end_date = input;
         self
+    }
+    /// <p>The maximum value of the timestamp range.</p>
+    pub fn get_end_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_date
     }
     /// Consumes the builder and constructs a [`TimestampRange`](crate::types::TimestampRange).
     pub fn build(self) -> crate::types::TimestampRange {

@@ -70,6 +70,10 @@ impl EndpointMetadataBuilder {
         self.endpoint_name = input;
         self
     }
+    /// <p>The name of the endpoint.</p>
+    pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_name
+    }
     /// <p>The name of the endpoint configuration.</p>
     pub fn endpoint_config_name(
         mut self,
@@ -86,6 +90,10 @@ impl EndpointMetadataBuilder {
         self.endpoint_config_name = input;
         self
     }
+    /// <p>The name of the endpoint configuration.</p>
+    pub fn get_endpoint_config_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_config_name
+    }
     /// <p> The status of the endpoint. For possible values of the status of an endpoint, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_EndpointSummary.html">EndpointSummary</a>. </p>
     pub fn endpoint_status(mut self, input: crate::types::EndpointStatus) -> Self {
         self.endpoint_status = ::std::option::Option::Some(input);
@@ -98,6 +106,10 @@ impl EndpointMetadataBuilder {
     ) -> Self {
         self.endpoint_status = input;
         self
+    }
+    /// <p> The status of the endpoint. For possible values of the status of an endpoint, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_EndpointSummary.html">EndpointSummary</a>. </p>
+    pub fn get_endpoint_status(&self) -> &::std::option::Option<crate::types::EndpointStatus> {
+        &self.endpoint_status
     }
     /// <p> If the status of the endpoint is <code>Failed</code>, or the status is <code>InService</code> but update operation fails, this provides the reason why it failed. </p>
     pub fn failure_reason(
@@ -114,6 +126,10 @@ impl EndpointMetadataBuilder {
     ) -> Self {
         self.failure_reason = input;
         self
+    }
+    /// <p> If the status of the endpoint is <code>Failed</code>, or the status is <code>InService</code> but update operation fails, this provides the reason why it failed. </p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
     }
     /// Consumes the builder and constructs a [`EndpointMetadata`](crate::types::EndpointMetadata).
     pub fn build(self) -> crate::types::EndpointMetadata {

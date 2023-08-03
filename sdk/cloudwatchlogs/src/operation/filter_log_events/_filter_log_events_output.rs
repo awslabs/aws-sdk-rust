@@ -78,6 +78,12 @@ impl FilterLogEventsOutputBuilder {
         self.events = input;
         self
     }
+    /// <p>The matched events.</p>
+    pub fn get_events(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FilteredLogEvent>> {
+        &self.events
+    }
     /// Appends an item to `searched_log_streams`.
     ///
     /// To override the contents of this collection use [`set_searched_log_streams`](Self::set_searched_log_streams).
@@ -99,6 +105,13 @@ impl FilterLogEventsOutputBuilder {
         self.searched_log_streams = input;
         self
     }
+    /// <p> <b>Important</b> As of May 15, 2020, this parameter is no longer supported. This parameter returns an empty list.</p>
+    /// <p>Indicates which log streams have been searched and whether each has been searched completely.</p>
+    pub fn get_searched_log_streams(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchedLogStream>> {
+        &self.searched_log_streams
+    }
     /// <p>The token to use when requesting the next set of items. The token expires after 24 hours.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -108,6 +121,10 @@ impl FilterLogEventsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token to use when requesting the next set of items. The token expires after 24 hours.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

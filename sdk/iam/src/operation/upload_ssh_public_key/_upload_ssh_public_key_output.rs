@@ -52,6 +52,10 @@ impl UploadSshPublicKeyOutputBuilder {
         self.ssh_public_key = input;
         self
     }
+    /// <p>Contains information about the SSH public key.</p>
+    pub fn get_ssh_public_key(&self) -> &::std::option::Option<crate::types::SshPublicKey> {
+        &self.ssh_public_key
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

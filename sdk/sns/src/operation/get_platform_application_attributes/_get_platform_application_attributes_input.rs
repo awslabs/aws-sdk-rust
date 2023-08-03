@@ -46,6 +46,10 @@ impl GetPlatformApplicationAttributesInputBuilder {
         self.platform_application_arn = input;
         self
     }
+    /// <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
+    pub fn get_platform_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform_application_arn
+    }
     /// Consumes the builder and constructs a [`GetPlatformApplicationAttributesInput`](crate::operation::get_platform_application_attributes::GetPlatformApplicationAttributesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_platform_application_attributes::GetPlatformApplicationAttributesInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

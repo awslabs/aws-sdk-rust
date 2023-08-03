@@ -36,6 +36,12 @@ impl ListCollectorsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListCollectors as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_collectors::builders::ListCollectorsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl ListCollectorsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p> The maximum number of items to include in the response. The maximum value is 100. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -138,5 +148,9 @@ impl ListCollectorsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p> The maximum number of items to include in the response. The maximum value is 100. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

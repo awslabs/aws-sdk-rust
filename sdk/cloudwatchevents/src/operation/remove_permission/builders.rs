@@ -36,6 +36,12 @@ impl RemovePermissionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RemovePermission as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::remove_permission::builders::RemovePermissionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl RemovePermissionFluentBuilder {
         self.inner = self.inner.set_statement_id(input);
         self
     }
+    /// <p>The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.</p>
+    pub fn get_statement_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_statement_id()
+    }
     /// <p>Specifies whether to remove all permissions.</p>
     pub fn remove_all_permissions(mut self, input: bool) -> Self {
         self.inner = self.inner.remove_all_permissions(input);
@@ -135,6 +145,10 @@ impl RemovePermissionFluentBuilder {
     pub fn set_remove_all_permissions(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_remove_all_permissions(input);
         self
+    }
+    /// <p>Specifies whether to remove all permissions.</p>
+    pub fn get_remove_all_permissions(&self) -> &::std::option::Option<bool> {
+        self.inner.get_remove_all_permissions()
     }
     /// <p>The name of the event bus to revoke permissions for. If you omit this, the default event bus is used.</p>
     pub fn event_bus_name(
@@ -151,5 +165,9 @@ impl RemovePermissionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_event_bus_name(input);
         self
+    }
+    /// <p>The name of the event bus to revoke permissions for. If you omit this, the default event bus is used.</p>
+    pub fn get_event_bus_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_event_bus_name()
     }
 }

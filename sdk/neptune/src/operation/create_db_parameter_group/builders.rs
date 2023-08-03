@@ -40,6 +40,13 @@ impl CreateDBParameterGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDBParameterGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_db_parameter_group::builders::CreateDbParameterGroupInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -152,6 +159,18 @@ impl CreateDBParameterGroupFluentBuilder {
         self.inner = self.inner.set_db_parameter_group_name(input);
         self
     }
+    /// <p>The name of the DB parameter group.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// </ul> <note>
+    /// <p>This value is stored as a lowercase string.</p>
+    /// </note>
+    pub fn get_db_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_parameter_group_name()
+    }
     /// <p>The DB parameter group family name. A DB parameter group can be associated with one and only one DB parameter group family, and can be applied only to a DB instance running a database engine and engine version compatible with that DB parameter group family.</p>
     pub fn db_parameter_group_family(
         mut self,
@@ -168,6 +187,10 @@ impl CreateDBParameterGroupFluentBuilder {
         self.inner = self.inner.set_db_parameter_group_family(input);
         self
     }
+    /// <p>The DB parameter group family name. A DB parameter group can be associated with one and only one DB parameter group family, and can be applied only to a DB instance running a database engine and engine version compatible with that DB parameter group family.</p>
+    pub fn get_db_parameter_group_family(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_parameter_group_family()
+    }
     /// <p>The description for the DB parameter group.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -177,6 +200,10 @@ impl CreateDBParameterGroupFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description for the DB parameter group.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `Tags`.
     ///
@@ -194,5 +221,9 @@ impl CreateDBParameterGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags to be assigned to the new DB parameter group.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

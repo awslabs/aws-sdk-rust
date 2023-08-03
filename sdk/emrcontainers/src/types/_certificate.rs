@@ -54,6 +54,10 @@ impl CertificateBuilder {
         self.certificate_arn = input;
         self
     }
+    /// <p>The ARN of the certificate generated for managed endpoint.</p>
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_arn
+    }
     /// <p>The base64 encoded PEM certificate data generated for managed endpoint.</p>
     pub fn certificate_data(
         mut self,
@@ -69,6 +73,10 @@ impl CertificateBuilder {
     ) -> Self {
         self.certificate_data = input;
         self
+    }
+    /// <p>The base64 encoded PEM certificate data generated for managed endpoint.</p>
+    pub fn get_certificate_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_data
     }
     /// Consumes the builder and constructs a [`Certificate`](crate::types::Certificate).
     pub fn build(self) -> crate::types::Certificate {

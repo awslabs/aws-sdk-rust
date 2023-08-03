@@ -36,6 +36,10 @@ impl DeleteAssistantAssociationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteAssistantAssociation as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_assistant_association::builders::DeleteAssistantAssociationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl DeleteAssistantAssociationFluentBuilder {
         self.inner = self.inner.set_assistant_association_id(input);
         self
     }
+    /// <p>The identifier of the assistant association. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn get_assistant_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_assistant_association_id()
+    }
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn assistant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.assistant_id(input.into());
@@ -141,5 +149,9 @@ impl DeleteAssistantAssociationFluentBuilder {
     pub fn set_assistant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_assistant_id(input);
         self
+    }
+    /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn get_assistant_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_assistant_id()
     }
 }

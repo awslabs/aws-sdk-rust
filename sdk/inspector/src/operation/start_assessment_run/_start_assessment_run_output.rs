@@ -53,6 +53,10 @@ impl StartAssessmentRunOutputBuilder {
         self.assessment_run_arn = input;
         self
     }
+    /// <p>The ARN of the assessment run that has been started.</p>
+    pub fn get_assessment_run_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assessment_run_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

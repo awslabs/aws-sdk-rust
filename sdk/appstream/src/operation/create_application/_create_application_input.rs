@@ -128,6 +128,10 @@ impl CreateApplicationInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the application. This name is visible to users when display name is not specified.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The display name of the application. This name is visible to users in the application catalog.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -138,6 +142,10 @@ impl CreateApplicationInputBuilder {
         self.display_name = input;
         self
     }
+    /// <p>The display name of the application. This name is visible to users in the application catalog.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
+    }
     /// <p>The description of the application.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -147,6 +155,10 @@ impl CreateApplicationInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the application.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The location in S3 of the application icon.</p>
     pub fn icon_s3_location(mut self, input: crate::types::S3Location) -> Self {
@@ -161,6 +173,10 @@ impl CreateApplicationInputBuilder {
         self.icon_s3_location = input;
         self
     }
+    /// <p>The location in S3 of the application icon.</p>
+    pub fn get_icon_s3_location(&self) -> &::std::option::Option<crate::types::S3Location> {
+        &self.icon_s3_location
+    }
     /// <p>The launch path of the application.</p>
     pub fn launch_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_path = ::std::option::Option::Some(input.into());
@@ -170,6 +186,10 @@ impl CreateApplicationInputBuilder {
     pub fn set_launch_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launch_path = input;
         self
+    }
+    /// <p>The launch path of the application.</p>
+    pub fn get_launch_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch_path
     }
     /// <p>The working directory of the application.</p>
     pub fn working_directory(
@@ -187,6 +207,10 @@ impl CreateApplicationInputBuilder {
         self.working_directory = input;
         self
     }
+    /// <p>The working directory of the application.</p>
+    pub fn get_working_directory(&self) -> &::std::option::Option<::std::string::String> {
+        &self.working_directory
+    }
     /// <p>The launch parameters of the application.</p>
     pub fn launch_parameters(
         mut self,
@@ -202,6 +226,10 @@ impl CreateApplicationInputBuilder {
     ) -> Self {
         self.launch_parameters = input;
         self
+    }
+    /// <p>The launch parameters of the application.</p>
+    pub fn get_launch_parameters(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch_parameters
     }
     /// Appends an item to `platforms`.
     ///
@@ -221,6 +249,12 @@ impl CreateApplicationInputBuilder {
     ) -> Self {
         self.platforms = input;
         self
+    }
+    /// <p>The platforms the application supports. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets.</p>
+    pub fn get_platforms(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PlatformType>> {
+        &self.platforms
     }
     /// Appends an item to `instance_families`.
     ///
@@ -244,6 +278,12 @@ impl CreateApplicationInputBuilder {
         self.instance_families = input;
         self
     }
+    /// <p>The instance families the application supports. Valid values are GENERAL_PURPOSE and GRAPHICS_G4.</p>
+    pub fn get_instance_families(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.instance_families
+    }
     /// <p>The app block ARN to which the application should be associated</p>
     pub fn app_block_arn(
         mut self,
@@ -259,6 +299,10 @@ impl CreateApplicationInputBuilder {
     ) -> Self {
         self.app_block_arn = input;
         self
+    }
+    /// <p>The app block ARN to which the application should be associated</p>
+    pub fn get_app_block_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_block_arn
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -284,6 +328,14 @@ impl CreateApplicationInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags assigned to the application.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
     pub fn build(

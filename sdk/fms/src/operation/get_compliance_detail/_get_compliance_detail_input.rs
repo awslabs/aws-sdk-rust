@@ -49,6 +49,10 @@ impl GetComplianceDetailInputBuilder {
         self.policy_id = input;
         self
     }
+    /// <p>The ID of the policy that you want to get the details for. <code>PolicyId</code> is returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.</p>
+    pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_id
+    }
     /// <p>The Amazon Web Services account that owns the resources that you want to get the details for.</p>
     pub fn member_account(
         mut self,
@@ -64,6 +68,10 @@ impl GetComplianceDetailInputBuilder {
     ) -> Self {
         self.member_account = input;
         self
+    }
+    /// <p>The Amazon Web Services account that owns the resources that you want to get the details for.</p>
+    pub fn get_member_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.member_account
     }
     /// Consumes the builder and constructs a [`GetComplianceDetailInput`](crate::operation::get_compliance_detail::GetComplianceDetailInput).
     pub fn build(

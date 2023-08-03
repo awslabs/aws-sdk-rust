@@ -48,6 +48,10 @@ impl UpdateEventActionInputBuilder {
         self.action = input;
         self
     }
+    /// <p>What occurs after a certain event.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::Action> {
+        &self.action
+    }
     /// <p>The unique identifier for the event action.</p>
     pub fn event_action_id(
         mut self,
@@ -63,6 +67,10 @@ impl UpdateEventActionInputBuilder {
     ) -> Self {
         self.event_action_id = input;
         self
+    }
+    /// <p>The unique identifier for the event action.</p>
+    pub fn get_event_action_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_action_id
     }
     /// Consumes the builder and constructs a [`UpdateEventActionInput`](crate::operation::update_event_action::UpdateEventActionInput).
     pub fn build(

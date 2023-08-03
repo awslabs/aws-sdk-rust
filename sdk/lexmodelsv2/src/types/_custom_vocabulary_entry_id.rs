@@ -40,6 +40,10 @@ impl CustomVocabularyEntryIdBuilder {
         self.item_id = input;
         self
     }
+    /// <p>The unique item identifier for the custom vocabulary items.</p>
+    pub fn get_item_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.item_id
+    }
     /// Consumes the builder and constructs a [`CustomVocabularyEntryId`](crate::types::CustomVocabularyEntryId).
     pub fn build(self) -> crate::types::CustomVocabularyEntryId {
         crate::types::CustomVocabularyEntryId {

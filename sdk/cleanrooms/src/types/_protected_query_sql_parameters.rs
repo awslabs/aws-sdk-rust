@@ -45,6 +45,10 @@ impl ProtectedQuerySqlParametersBuilder {
         self.query_string = input;
         self
     }
+    /// <p>The query string to be submitted.</p>
+    pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_string
+    }
     /// Consumes the builder and constructs a [`ProtectedQuerySqlParameters`](crate::types::ProtectedQuerySqlParameters).
     pub fn build(self) -> crate::types::ProtectedQuerySqlParameters {
         crate::types::ProtectedQuerySqlParameters {

@@ -51,6 +51,10 @@ impl ConfigurationStatusBuilder {
         self.state = input;
         self
     }
+    /// <p>The current state of the configuration.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ConfigurationState> {
+        &self.state
+    }
     /// <p>Contains associated error information, if any.</p>
     pub fn error(mut self, input: crate::types::ConfigurationErrorDetails) -> Self {
         self.error = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl ConfigurationStatusBuilder {
     ) -> Self {
         self.error = input;
         self
+    }
+    /// <p>Contains associated error information, if any.</p>
+    pub fn get_error(&self) -> &::std::option::Option<crate::types::ConfigurationErrorDetails> {
+        &self.error
     }
     /// Consumes the builder and constructs a [`ConfigurationStatus`](crate::types::ConfigurationStatus).
     pub fn build(self) -> crate::types::ConfigurationStatus {

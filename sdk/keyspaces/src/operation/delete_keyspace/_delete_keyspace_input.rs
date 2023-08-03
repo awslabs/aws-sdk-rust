@@ -45,6 +45,10 @@ impl DeleteKeyspaceInputBuilder {
         self.keyspace_name = input;
         self
     }
+    /// <p>The name of the keyspace to be deleted.</p>
+    pub fn get_keyspace_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.keyspace_name
+    }
     /// Consumes the builder and constructs a [`DeleteKeyspaceInput`](crate::operation::delete_keyspace::DeleteKeyspaceInput).
     pub fn build(
         self,

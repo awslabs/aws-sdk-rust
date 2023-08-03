@@ -56,6 +56,10 @@ impl BatchPutPropertyErrorBuilder {
         self.error_code = input;
         self
     }
+    /// <p>The error code.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
+    }
     /// <p>The error message.</p>
     pub fn error_message(
         mut self,
@@ -72,6 +76,10 @@ impl BatchPutPropertyErrorBuilder {
         self.error_message = input;
         self
     }
+    /// <p>The error message.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
+    }
     /// <p>An object that contains information about errors returned by the <code>BatchPutProperty</code> action.</p>
     pub fn entry(mut self, input: crate::types::PropertyValueEntry) -> Self {
         self.entry = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl BatchPutPropertyErrorBuilder {
     ) -> Self {
         self.entry = input;
         self
+    }
+    /// <p>An object that contains information about errors returned by the <code>BatchPutProperty</code> action.</p>
+    pub fn get_entry(&self) -> &::std::option::Option<crate::types::PropertyValueEntry> {
+        &self.entry
     }
     /// Consumes the builder and constructs a [`BatchPutPropertyError`](crate::types::BatchPutPropertyError).
     pub fn build(self) -> crate::types::BatchPutPropertyError {

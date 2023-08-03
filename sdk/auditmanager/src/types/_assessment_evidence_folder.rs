@@ -176,6 +176,10 @@ impl AssessmentEvidenceFolderBuilder {
         self.name = input;
         self
     }
+    /// <p> The name of the evidence folder. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p> The date when the first evidence was added to the evidence folder. </p>
     pub fn date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.date = ::std::option::Option::Some(input);
@@ -185,6 +189,10 @@ impl AssessmentEvidenceFolderBuilder {
     pub fn set_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.date = input;
         self
+    }
+    /// <p> The date when the first evidence was added to the evidence folder. </p>
+    pub fn get_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.date
     }
     /// <p> The identifier for the assessment. </p>
     pub fn assessment_id(
@@ -202,6 +210,10 @@ impl AssessmentEvidenceFolderBuilder {
         self.assessment_id = input;
         self
     }
+    /// <p> The identifier for the assessment. </p>
+    pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assessment_id
+    }
     /// <p> The identifier for the control set. </p>
     pub fn control_set_id(
         mut self,
@@ -218,6 +230,10 @@ impl AssessmentEvidenceFolderBuilder {
         self.control_set_id = input;
         self
     }
+    /// <p> The identifier for the control set. </p>
+    pub fn get_control_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control_set_id
+    }
     /// <p> The unique identifier for the control. </p>
     pub fn control_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_id = ::std::option::Option::Some(input.into());
@@ -227,6 +243,10 @@ impl AssessmentEvidenceFolderBuilder {
     pub fn set_control_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.control_id = input;
         self
+    }
+    /// <p> The unique identifier for the control. </p>
+    pub fn get_control_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control_id
     }
     /// <p> The identifier for the folder that the evidence is stored in. </p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -238,6 +258,10 @@ impl AssessmentEvidenceFolderBuilder {
         self.id = input;
         self
     }
+    /// <p> The identifier for the folder that the evidence is stored in. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p> The Amazon Web Service that the evidence was collected from. </p>
     pub fn data_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source = ::std::option::Option::Some(input.into());
@@ -247,6 +271,10 @@ impl AssessmentEvidenceFolderBuilder {
     pub fn set_data_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source = input;
         self
+    }
+    /// <p> The Amazon Web Service that the evidence was collected from. </p>
+    pub fn get_data_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source
     }
     /// <p> The name of the user who created the evidence folder. </p>
     pub fn author(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -258,6 +286,10 @@ impl AssessmentEvidenceFolderBuilder {
         self.author = input;
         self
     }
+    /// <p> The name of the user who created the evidence folder. </p>
+    pub fn get_author(&self) -> &::std::option::Option<::std::string::String> {
+        &self.author
+    }
     /// <p> The total amount of evidence in the evidence folder. </p>
     pub fn total_evidence(mut self, input: i32) -> Self {
         self.total_evidence = ::std::option::Option::Some(input);
@@ -267,6 +299,10 @@ impl AssessmentEvidenceFolderBuilder {
     pub fn set_total_evidence(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_evidence = input;
         self
+    }
+    /// <p> The total amount of evidence in the evidence folder. </p>
+    pub fn get_total_evidence(&self) -> &::std::option::Option<i32> {
+        &self.total_evidence
     }
     /// <p> The total count of evidence that's included in the assessment report. </p>
     pub fn assessment_report_selection_count(mut self, input: i32) -> Self {
@@ -281,6 +317,10 @@ impl AssessmentEvidenceFolderBuilder {
         self.assessment_report_selection_count = input;
         self
     }
+    /// <p> The total count of evidence that's included in the assessment report. </p>
+    pub fn get_assessment_report_selection_count(&self) -> &::std::option::Option<i32> {
+        &self.assessment_report_selection_count
+    }
     /// <p> The name of the control. </p>
     pub fn control_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_name = ::std::option::Option::Some(input.into());
@@ -290,6 +330,10 @@ impl AssessmentEvidenceFolderBuilder {
     pub fn set_control_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.control_name = input;
         self
+    }
+    /// <p> The name of the control. </p>
+    pub fn get_control_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control_name
     }
     /// <p> The amount of evidence that's included in the evidence folder. </p>
     pub fn evidence_resources_included_count(mut self, input: i32) -> Self {
@@ -304,6 +348,10 @@ impl AssessmentEvidenceFolderBuilder {
         self.evidence_resources_included_count = input;
         self
     }
+    /// <p> The amount of evidence that's included in the evidence folder. </p>
+    pub fn get_evidence_resources_included_count(&self) -> &::std::option::Option<i32> {
+        &self.evidence_resources_included_count
+    }
     /// <p> The number of evidence that falls under the configuration data category. This evidence is collected from configuration snapshots of other Amazon Web Services such as Amazon EC2, Amazon S3, or IAM. </p>
     pub fn evidence_by_type_configuration_data_count(mut self, input: i32) -> Self {
         self.evidence_by_type_configuration_data_count = ::std::option::Option::Some(input);
@@ -317,6 +365,10 @@ impl AssessmentEvidenceFolderBuilder {
         self.evidence_by_type_configuration_data_count = input;
         self
     }
+    /// <p> The number of evidence that falls under the configuration data category. This evidence is collected from configuration snapshots of other Amazon Web Services such as Amazon EC2, Amazon S3, or IAM. </p>
+    pub fn get_evidence_by_type_configuration_data_count(&self) -> &::std::option::Option<i32> {
+        &self.evidence_by_type_configuration_data_count
+    }
     /// <p> The number of evidence that falls under the manual category. This evidence is imported manually. </p>
     pub fn evidence_by_type_manual_count(mut self, input: i32) -> Self {
         self.evidence_by_type_manual_count = ::std::option::Option::Some(input);
@@ -326,6 +378,10 @@ impl AssessmentEvidenceFolderBuilder {
     pub fn set_evidence_by_type_manual_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.evidence_by_type_manual_count = input;
         self
+    }
+    /// <p> The number of evidence that falls under the manual category. This evidence is imported manually. </p>
+    pub fn get_evidence_by_type_manual_count(&self) -> &::std::option::Option<i32> {
+        &self.evidence_by_type_manual_count
     }
     /// <p> The number of evidence that falls under the compliance check category. This evidence is collected from Config or Security Hub. </p>
     pub fn evidence_by_type_compliance_check_count(mut self, input: i32) -> Self {
@@ -340,6 +396,10 @@ impl AssessmentEvidenceFolderBuilder {
         self.evidence_by_type_compliance_check_count = input;
         self
     }
+    /// <p> The number of evidence that falls under the compliance check category. This evidence is collected from Config or Security Hub. </p>
+    pub fn get_evidence_by_type_compliance_check_count(&self) -> &::std::option::Option<i32> {
+        &self.evidence_by_type_compliance_check_count
+    }
     /// <p> The total number of issues that were reported directly from Security Hub, Config, or both. </p>
     pub fn evidence_by_type_compliance_check_issues_count(mut self, input: i32) -> Self {
         self.evidence_by_type_compliance_check_issues_count = ::std::option::Option::Some(input);
@@ -352,6 +412,12 @@ impl AssessmentEvidenceFolderBuilder {
     ) -> Self {
         self.evidence_by_type_compliance_check_issues_count = input;
         self
+    }
+    /// <p> The total number of issues that were reported directly from Security Hub, Config, or both. </p>
+    pub fn get_evidence_by_type_compliance_check_issues_count(
+        &self,
+    ) -> &::std::option::Option<i32> {
+        &self.evidence_by_type_compliance_check_issues_count
     }
     /// <p> The number of evidence that falls under the user activity category. This evidence is collected from CloudTrail logs. </p>
     pub fn evidence_by_type_user_activity_count(mut self, input: i32) -> Self {
@@ -366,6 +432,10 @@ impl AssessmentEvidenceFolderBuilder {
         self.evidence_by_type_user_activity_count = input;
         self
     }
+    /// <p> The number of evidence that falls under the user activity category. This evidence is collected from CloudTrail logs. </p>
+    pub fn get_evidence_by_type_user_activity_count(&self) -> &::std::option::Option<i32> {
+        &self.evidence_by_type_user_activity_count
+    }
     /// <p> The total number of Amazon Web Services resources that were assessed to generate the evidence. </p>
     pub fn evidence_aws_service_source_count(mut self, input: i32) -> Self {
         self.evidence_aws_service_source_count = ::std::option::Option::Some(input);
@@ -378,6 +448,10 @@ impl AssessmentEvidenceFolderBuilder {
     ) -> Self {
         self.evidence_aws_service_source_count = input;
         self
+    }
+    /// <p> The total number of Amazon Web Services resources that were assessed to generate the evidence. </p>
+    pub fn get_evidence_aws_service_source_count(&self) -> &::std::option::Option<i32> {
+        &self.evidence_aws_service_source_count
     }
     /// Consumes the builder and constructs a [`AssessmentEvidenceFolder`](crate::types::AssessmentEvidenceFolder).
     pub fn build(self) -> crate::types::AssessmentEvidenceFolder {

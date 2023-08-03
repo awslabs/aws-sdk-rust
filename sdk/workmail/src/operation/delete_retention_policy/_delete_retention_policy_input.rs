@@ -55,6 +55,10 @@ impl DeleteRetentionPolicyInputBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The organization ID.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p>The retention policy ID.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl DeleteRetentionPolicyInputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The retention policy ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`DeleteRetentionPolicyInput`](crate::operation::delete_retention_policy::DeleteRetentionPolicyInput).
     pub fn build(

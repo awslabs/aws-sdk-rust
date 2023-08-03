@@ -36,6 +36,12 @@ impl ListMetricValuesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListMetricValues as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_metric_values::builders::ListMetricValuesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl ListMetricValuesFluentBuilder {
         self.inner = self.inner.set_thing_name(input);
         self
     }
+    /// <p>The name of the thing for which security profile metric values are returned.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_thing_name()
+    }
     /// <p>The name of the security profile metric for which values are returned.</p>
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.metric_name(input.into());
@@ -146,6 +156,10 @@ impl ListMetricValuesFluentBuilder {
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_metric_name(input);
         self
+    }
+    /// <p>The name of the security profile metric for which values are returned.</p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_metric_name()
     }
     /// <p>The dimension name.</p>
     pub fn dimension_name(
@@ -163,6 +177,10 @@ impl ListMetricValuesFluentBuilder {
         self.inner = self.inner.set_dimension_name(input);
         self
     }
+    /// <p>The dimension name.</p>
+    pub fn get_dimension_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dimension_name()
+    }
     /// <p>The dimension value operator.</p>
     pub fn dimension_value_operator(mut self, input: crate::types::DimensionValueOperator) -> Self {
         self.inner = self.inner.dimension_value_operator(input);
@@ -175,6 +193,12 @@ impl ListMetricValuesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_dimension_value_operator(input);
         self
+    }
+    /// <p>The dimension value operator.</p>
+    pub fn get_dimension_value_operator(
+        &self,
+    ) -> &::std::option::Option<crate::types::DimensionValueOperator> {
+        self.inner.get_dimension_value_operator()
     }
     /// <p>The start of the time period for which metric values are returned.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -189,6 +213,10 @@ impl ListMetricValuesFluentBuilder {
         self.inner = self.inner.set_start_time(input);
         self
     }
+    /// <p>The start of the time period for which metric values are returned.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_time()
+    }
     /// <p>The end of the time period for which metric values are returned.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_time(input);
@@ -202,6 +230,10 @@ impl ListMetricValuesFluentBuilder {
         self.inner = self.inner.set_end_time(input);
         self
     }
+    /// <p>The end of the time period for which metric values are returned.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_time()
+    }
     /// <p>The maximum number of results to return at one time.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -212,6 +244,10 @@ impl ListMetricValuesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return at one time.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token for the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -221,5 +257,9 @@ impl ListMetricValuesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

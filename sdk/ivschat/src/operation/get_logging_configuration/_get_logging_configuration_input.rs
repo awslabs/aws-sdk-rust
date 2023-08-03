@@ -41,6 +41,10 @@ impl GetLoggingConfigurationInputBuilder {
         self.identifier = input;
         self
     }
+    /// <p>Identifier of the logging configuration to be retrieved.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
+    }
     /// Consumes the builder and constructs a [`GetLoggingConfigurationInput`](crate::operation::get_logging_configuration::GetLoggingConfigurationInput).
     pub fn build(
         self,

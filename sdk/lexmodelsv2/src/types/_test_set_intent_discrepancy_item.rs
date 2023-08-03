@@ -48,6 +48,10 @@ impl TestSetIntentDiscrepancyItemBuilder {
         self.intent_name = input;
         self
     }
+    /// <p>The name of the intent in the discrepancy report.</p>
+    pub fn get_intent_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.intent_name
+    }
     /// <p>The error message for a discrepancy for an intent between the test set and the bot.</p>
     pub fn error_message(
         mut self,
@@ -63,6 +67,10 @@ impl TestSetIntentDiscrepancyItemBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>The error message for a discrepancy for an intent between the test set and the bot.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`TestSetIntentDiscrepancyItem`](crate::types::TestSetIntentDiscrepancyItem).
     pub fn build(self) -> crate::types::TestSetIntentDiscrepancyItem {

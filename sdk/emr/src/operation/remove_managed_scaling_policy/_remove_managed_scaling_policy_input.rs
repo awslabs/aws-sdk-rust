@@ -39,6 +39,10 @@ impl RemoveManagedScalingPolicyInputBuilder {
         self.cluster_id = input;
         self
     }
+    /// <p> Specifies the ID of the cluster from which the managed scaling policy will be removed. </p>
+    pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_id
+    }
     /// Consumes the builder and constructs a [`RemoveManagedScalingPolicyInput`](crate::operation::remove_managed_scaling_policy::RemoveManagedScalingPolicyInput).
     pub fn build(
         self,

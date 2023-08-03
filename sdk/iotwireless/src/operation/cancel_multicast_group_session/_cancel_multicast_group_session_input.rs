@@ -39,6 +39,10 @@ impl CancelMulticastGroupSessionInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the multicast group.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`CancelMulticastGroupSessionInput`](crate::operation::cancel_multicast_group_session::CancelMulticastGroupSessionInput).
     pub fn build(
         self,

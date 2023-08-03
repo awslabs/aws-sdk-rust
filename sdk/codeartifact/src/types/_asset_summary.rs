@@ -64,6 +64,10 @@ impl AssetSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p> The name of the asset. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p> The size of the asset. </p>
     pub fn size(mut self, input: i64) -> Self {
         self.size = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl AssetSummaryBuilder {
     pub fn set_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.size = input;
         self
+    }
+    /// <p> The size of the asset. </p>
+    pub fn get_size(&self) -> &::std::option::Option<i64> {
+        &self.size
     }
     /// Adds a key-value pair to `hashes`.
     ///
@@ -98,6 +106,14 @@ impl AssetSummaryBuilder {
     ) -> Self {
         self.hashes = input;
         self
+    }
+    /// <p> The hashes of the asset. </p>
+    pub fn get_hashes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<crate::types::HashAlgorithm, ::std::string::String>,
+    > {
+        &self.hashes
     }
     /// Consumes the builder and constructs a [`AssetSummary`](crate::types::AssetSummary).
     pub fn build(self) -> crate::types::AssetSummary {

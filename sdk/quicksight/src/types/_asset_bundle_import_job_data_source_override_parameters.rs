@@ -95,6 +95,10 @@ impl AssetBundleImportJobDataSourceOverrideParametersBuilder {
         self.data_source_id = input;
         self
     }
+    /// <p>The ID of the data source to apply overrides to.</p>
+    pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source_id
+    }
     /// <p>A new name for the data source.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -104,6 +108,10 @@ impl AssetBundleImportJobDataSourceOverrideParametersBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A new name for the data source.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The parameters that Amazon QuickSight uses to connect to your underlying data source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
     pub fn data_source_parameters(mut self, input: crate::types::DataSourceParameters) -> Self {
@@ -117,6 +125,12 @@ impl AssetBundleImportJobDataSourceOverrideParametersBuilder {
     ) -> Self {
         self.data_source_parameters = input;
         self
+    }
+    /// <p>The parameters that Amazon QuickSight uses to connect to your underlying data source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
+    pub fn get_data_source_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataSourceParameters> {
+        &self.data_source_parameters
     }
     /// <p>VPC connection properties.</p>
     pub fn vpc_connection_properties(
@@ -134,6 +148,12 @@ impl AssetBundleImportJobDataSourceOverrideParametersBuilder {
         self.vpc_connection_properties = input;
         self
     }
+    /// <p>VPC connection properties.</p>
+    pub fn get_vpc_connection_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::VpcConnectionProperties> {
+        &self.vpc_connection_properties
+    }
     /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying data source.</p>
     pub fn ssl_properties(mut self, input: crate::types::SslProperties) -> Self {
         self.ssl_properties = ::std::option::Option::Some(input);
@@ -146,6 +166,10 @@ impl AssetBundleImportJobDataSourceOverrideParametersBuilder {
     ) -> Self {
         self.ssl_properties = input;
         self
+    }
+    /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying data source.</p>
+    pub fn get_ssl_properties(&self) -> &::std::option::Option<crate::types::SslProperties> {
+        &self.ssl_properties
     }
     /// <p>An optional structure that provides the credentials to be used to create the imported data source.</p>
     pub fn credentials(
@@ -162,6 +186,12 @@ impl AssetBundleImportJobDataSourceOverrideParametersBuilder {
     ) -> Self {
         self.credentials = input;
         self
+    }
+    /// <p>An optional structure that provides the credentials to be used to create the imported data source.</p>
+    pub fn get_credentials(
+        &self,
+    ) -> &::std::option::Option<crate::types::AssetBundleImportJobDataSourceCredentials> {
+        &self.credentials
     }
     /// Consumes the builder and constructs a [`AssetBundleImportJobDataSourceOverrideParameters`](crate::types::AssetBundleImportJobDataSourceOverrideParameters).
     pub fn build(self) -> crate::types::AssetBundleImportJobDataSourceOverrideParameters {

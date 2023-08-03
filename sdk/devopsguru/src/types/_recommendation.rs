@@ -96,6 +96,10 @@ impl RecommendationBuilder {
         self.description = input;
         self
     }
+    /// <p> A description of the problem. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p> A hyperlink to information to help you address the problem. </p>
     pub fn link(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.link = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl RecommendationBuilder {
     pub fn set_link(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.link = input;
         self
+    }
+    /// <p> A hyperlink to information to help you address the problem. </p>
+    pub fn get_link(&self) -> &::std::option::Option<::std::string::String> {
+        &self.link
     }
     /// <p> The name of the recommendation. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -116,6 +124,10 @@ impl RecommendationBuilder {
         self.name = input;
         self
     }
+    /// <p> The name of the recommendation. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p> The reason DevOps Guru flagged the anomalous behavior as a problem. </p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
@@ -125,6 +137,10 @@ impl RecommendationBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
+    }
+    /// <p> The reason DevOps Guru flagged the anomalous behavior as a problem. </p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
     }
     /// Appends an item to `related_events`.
     ///
@@ -145,6 +161,12 @@ impl RecommendationBuilder {
         self.related_events = input;
         self
     }
+    /// <p> Events that are related to the problem. Use these events to learn more about what's happening and to help address the issue. </p>
+    pub fn get_related_events(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedEvent>> {
+        &self.related_events
+    }
     /// Appends an item to `related_anomalies`.
     ///
     /// To override the contents of this collection use [`set_related_anomalies`](Self::set_related_anomalies).
@@ -164,6 +186,12 @@ impl RecommendationBuilder {
         self.related_anomalies = input;
         self
     }
+    /// <p> Anomalies that are related to the problem. Use these Anomalies to learn more about what's happening and to help address the issue. </p>
+    pub fn get_related_anomalies(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedAnomaly>> {
+        &self.related_anomalies
+    }
     /// <p>The category type of the recommendation.</p>
     pub fn category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.category = ::std::option::Option::Some(input.into());
@@ -173,6 +201,10 @@ impl RecommendationBuilder {
     pub fn set_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.category = input;
         self
+    }
+    /// <p>The category type of the recommendation.</p>
+    pub fn get_category(&self) -> &::std::option::Option<::std::string::String> {
+        &self.category
     }
     /// Consumes the builder and constructs a [`Recommendation`](crate::types::Recommendation).
     pub fn build(self) -> crate::types::Recommendation {

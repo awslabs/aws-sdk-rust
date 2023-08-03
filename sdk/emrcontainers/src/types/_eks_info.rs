@@ -40,6 +40,10 @@ impl EksInfoBuilder {
         self.namespace = input;
         self
     }
+    /// <p>The namespaces of the Amazon EKS cluster.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
+    }
     /// Consumes the builder and constructs a [`EksInfo`](crate::types::EksInfo).
     pub fn build(self) -> crate::types::EksInfo {
         crate::types::EksInfo {

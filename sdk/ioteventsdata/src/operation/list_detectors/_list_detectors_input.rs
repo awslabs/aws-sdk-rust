@@ -69,6 +69,10 @@ impl ListDetectorsInputBuilder {
         self.detector_model_name = input;
         self
     }
+    /// <p>The name of the detector model whose detectors (instances) are listed.</p>
+    pub fn get_detector_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_model_name
+    }
     /// <p>A filter that limits results to those detectors (instances) in the given state.</p>
     pub fn state_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_name = ::std::option::Option::Some(input.into());
@@ -78,6 +82,10 @@ impl ListDetectorsInputBuilder {
     pub fn set_state_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_name = input;
         self
+    }
+    /// <p>A filter that limits results to those detectors (instances) in the given state.</p>
+    pub fn get_state_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_name
     }
     /// <p>The token that you can use to return the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -89,6 +97,10 @@ impl ListDetectorsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token that you can use to return the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to be returned per request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -98,6 +110,10 @@ impl ListDetectorsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to be returned per request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListDetectorsInput`](crate::operation::list_detectors::ListDetectorsInput).
     pub fn build(

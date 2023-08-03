@@ -77,6 +77,12 @@ impl ConfigurationTagBuilder {
         self.configuration_type = input;
         self
     }
+    /// <p>A type of IT asset to tag.</p>
+    pub fn get_configuration_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConfigurationItemType> {
+        &self.configuration_type
+    }
     /// <p>The configuration ID for the item to tag. You can specify a list of keys and values.</p>
     pub fn configuration_id(
         mut self,
@@ -93,6 +99,10 @@ impl ConfigurationTagBuilder {
         self.configuration_id = input;
         self
     }
+    /// <p>The configuration ID for the item to tag. You can specify a list of keys and values.</p>
+    pub fn get_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_id
+    }
     /// <p>A type of tag on which to filter. For example, <i>serverType</i>.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
@@ -103,6 +113,10 @@ impl ConfigurationTagBuilder {
         self.key = input;
         self
     }
+    /// <p>A type of tag on which to filter. For example, <i>serverType</i>.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>A value on which to filter. For example <i>key = serverType</i> and <i>value = web server</i>.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -112,6 +126,10 @@ impl ConfigurationTagBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>A value on which to filter. For example <i>key = serverType</i> and <i>value = web server</i>.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// <p>The time the configuration tag was created in Coordinated Universal Time (UTC).</p>
     pub fn time_of_creation(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -125,6 +143,10 @@ impl ConfigurationTagBuilder {
     ) -> Self {
         self.time_of_creation = input;
         self
+    }
+    /// <p>The time the configuration tag was created in Coordinated Universal Time (UTC).</p>
+    pub fn get_time_of_creation(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.time_of_creation
     }
     /// Consumes the builder and constructs a [`ConfigurationTag`](crate::types::ConfigurationTag).
     pub fn build(self) -> crate::types::ConfigurationTag {

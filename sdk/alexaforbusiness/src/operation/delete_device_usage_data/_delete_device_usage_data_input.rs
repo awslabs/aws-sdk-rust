@@ -49,6 +49,10 @@ impl DeleteDeviceUsageDataInputBuilder {
         self.device_arn = input;
         self
     }
+    /// <p>The ARN of the device.</p>
+    pub fn get_device_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_arn
+    }
     /// <p>The type of usage data to delete.</p>
     pub fn device_usage_type(mut self, input: crate::types::DeviceUsageType) -> Self {
         self.device_usage_type = ::std::option::Option::Some(input);
@@ -61,6 +65,10 @@ impl DeleteDeviceUsageDataInputBuilder {
     ) -> Self {
         self.device_usage_type = input;
         self
+    }
+    /// <p>The type of usage data to delete.</p>
+    pub fn get_device_usage_type(&self) -> &::std::option::Option<crate::types::DeviceUsageType> {
+        &self.device_usage_type
     }
     /// Consumes the builder and constructs a [`DeleteDeviceUsageDataInput`](crate::operation::delete_device_usage_data::DeleteDeviceUsageDataInput).
     pub fn build(

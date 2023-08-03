@@ -56,6 +56,10 @@ impl S3RecordingConfigBuilder {
         self.bucket_arn = input;
         self
     }
+    /// <p>ARN of the bucket to record to.</p>
+    pub fn get_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_arn
+    }
     /// <p>ARN of the role Ground Station assumes to write data to the bucket.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl S3RecordingConfigBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>ARN of the role Ground Station assumes to write data to the bucket.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>S3 Key prefix to prefice data files.</p>
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl S3RecordingConfigBuilder {
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix = input;
         self
+    }
+    /// <p>S3 Key prefix to prefice data files.</p>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
     }
     /// Consumes the builder and constructs a [`S3RecordingConfig`](crate::types::S3RecordingConfig).
     pub fn build(self) -> crate::types::S3RecordingConfig {

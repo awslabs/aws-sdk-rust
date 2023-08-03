@@ -57,6 +57,12 @@ impl DescribeLifecycleHooksOutputBuilder {
         self.lifecycle_hooks = input;
         self
     }
+    /// <p>The lifecycle hooks for the specified group.</p>
+    pub fn get_lifecycle_hooks(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecycleHook>> {
+        &self.lifecycle_hooks
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

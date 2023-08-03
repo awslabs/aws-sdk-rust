@@ -39,6 +39,12 @@ impl ListPolicyPrincipalsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListPolicyPrincipals as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_policy_principals::builders::ListPolicyPrincipalsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +146,10 @@ impl ListPolicyPrincipalsFluentBuilder {
         self.inner = self.inner.set_policy_name(input);
         self
     }
+    /// <p>The policy name.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_name()
+    }
     /// <p>The marker for the next set of results.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -149,6 +159,10 @@ impl ListPolicyPrincipalsFluentBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
+    }
+    /// <p>The marker for the next set of results.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
     }
     /// <p>The result page size.</p>
     pub fn page_size(mut self, input: i32) -> Self {
@@ -160,6 +174,10 @@ impl ListPolicyPrincipalsFluentBuilder {
         self.inner = self.inner.set_page_size(input);
         self
     }
+    /// <p>The result page size.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        self.inner.get_page_size()
+    }
     /// <p>Specifies the order for results. If true, the results are returned in ascending creation order.</p>
     pub fn ascending_order(mut self, input: bool) -> Self {
         self.inner = self.inner.ascending_order(input);
@@ -169,5 +187,9 @@ impl ListPolicyPrincipalsFluentBuilder {
     pub fn set_ascending_order(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_ascending_order(input);
         self
+    }
+    /// <p>Specifies the order for results. If true, the results are returned in ascending creation order.</p>
+    pub fn get_ascending_order(&self) -> &::std::option::Option<bool> {
+        self.inner.get_ascending_order()
     }
 }

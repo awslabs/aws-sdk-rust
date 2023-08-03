@@ -42,6 +42,12 @@ impl CancelFlowExecutionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CancelFlowExecutions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::cancel_flow_executions::builders::CancelFlowExecutionsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl CancelFlowExecutionsFluentBuilder {
         self.inner = self.inner.set_flow_name(input);
         self
     }
+    /// <p>The name of a flow with active runs that you want to cancel.</p>
+    pub fn get_flow_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_flow_name()
+    }
     /// Appends an item to `executionIds`.
     ///
     /// To override the contents of this collection use [`set_execution_ids`](Self::set_execution_ids).
@@ -153,5 +163,12 @@ impl CancelFlowExecutionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_execution_ids(input);
         self
+    }
+    /// <p>The ID of each active run to cancel. These runs must belong to the flow you specify in your request.</p>
+    /// <p>If you omit this parameter, your request ends all active runs that belong to the flow.</p>
+    pub fn get_execution_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_execution_ids()
     }
 }

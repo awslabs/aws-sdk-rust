@@ -40,6 +40,10 @@ impl Ipv4PrefixSpecificationResponseBuilder {
         self.ipv4_prefix = input;
         self
     }
+    /// <p>The IPv4 delegated prefixes assigned to the network interface.</p>
+    pub fn get_ipv4_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv4_prefix
+    }
     /// Consumes the builder and constructs a [`Ipv4PrefixSpecificationResponse`](crate::types::Ipv4PrefixSpecificationResponse).
     pub fn build(self) -> crate::types::Ipv4PrefixSpecificationResponse {
         crate::types::Ipv4PrefixSpecificationResponse {

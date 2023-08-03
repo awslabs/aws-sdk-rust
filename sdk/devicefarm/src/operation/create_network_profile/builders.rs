@@ -36,6 +36,12 @@ impl CreateNetworkProfileFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateNetworkProfile as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_network_profile::builders::CreateNetworkProfileInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateNetworkProfileFluentBuilder {
         self.inner = self.inner.set_project_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a network profile.</p>
+    pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_arn()
+    }
     /// <p>The name for the new network profile.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -136,6 +146,10 @@ impl CreateNetworkProfileFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name for the new network profile.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The description of the network profile.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -145,6 +159,10 @@ impl CreateNetworkProfileFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the network profile.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The type of network profile to create. Valid values are listed here.</p>
     pub fn r#type(mut self, input: crate::types::NetworkProfileType) -> Self {
@@ -159,6 +177,10 @@ impl CreateNetworkProfileFluentBuilder {
         self.inner = self.inner.set_type(input);
         self
     }
+    /// <p>The type of network profile to create. Valid values are listed here.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::NetworkProfileType> {
+        self.inner.get_type()
+    }
     /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
     pub fn uplink_bandwidth_bits(mut self, input: i64) -> Self {
         self.inner = self.inner.uplink_bandwidth_bits(input);
@@ -170,6 +192,10 @@ impl CreateNetworkProfileFluentBuilder {
         self
     }
     /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
+    pub fn get_uplink_bandwidth_bits(&self) -> &::std::option::Option<i64> {
+        self.inner.get_uplink_bandwidth_bits()
+    }
+    /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
     pub fn downlink_bandwidth_bits(mut self, input: i64) -> Self {
         self.inner = self.inner.downlink_bandwidth_bits(input);
         self
@@ -178,6 +204,10 @@ impl CreateNetworkProfileFluentBuilder {
     pub fn set_downlink_bandwidth_bits(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_downlink_bandwidth_bits(input);
         self
+    }
+    /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
+    pub fn get_downlink_bandwidth_bits(&self) -> &::std::option::Option<i64> {
+        self.inner.get_downlink_bandwidth_bits()
     }
     /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
     pub fn uplink_delay_ms(mut self, input: i64) -> Self {
@@ -190,6 +220,10 @@ impl CreateNetworkProfileFluentBuilder {
         self
     }
     /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
+    pub fn get_uplink_delay_ms(&self) -> &::std::option::Option<i64> {
+        self.inner.get_uplink_delay_ms()
+    }
+    /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
     pub fn downlink_delay_ms(mut self, input: i64) -> Self {
         self.inner = self.inner.downlink_delay_ms(input);
         self
@@ -198,6 +232,10 @@ impl CreateNetworkProfileFluentBuilder {
     pub fn set_downlink_delay_ms(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_downlink_delay_ms(input);
         self
+    }
+    /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
+    pub fn get_downlink_delay_ms(&self) -> &::std::option::Option<i64> {
+        self.inner.get_downlink_delay_ms()
     }
     /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
     pub fn uplink_jitter_ms(mut self, input: i64) -> Self {
@@ -210,6 +248,10 @@ impl CreateNetworkProfileFluentBuilder {
         self
     }
     /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
+    pub fn get_uplink_jitter_ms(&self) -> &::std::option::Option<i64> {
+        self.inner.get_uplink_jitter_ms()
+    }
+    /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
     pub fn downlink_jitter_ms(mut self, input: i64) -> Self {
         self.inner = self.inner.downlink_jitter_ms(input);
         self
@@ -218,6 +260,10 @@ impl CreateNetworkProfileFluentBuilder {
     pub fn set_downlink_jitter_ms(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_downlink_jitter_ms(input);
         self
+    }
+    /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
+    pub fn get_downlink_jitter_ms(&self) -> &::std::option::Option<i64> {
+        self.inner.get_downlink_jitter_ms()
     }
     /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100 percent.</p>
     pub fn uplink_loss_percent(mut self, input: i32) -> Self {
@@ -229,6 +275,10 @@ impl CreateNetworkProfileFluentBuilder {
         self.inner = self.inner.set_uplink_loss_percent(input);
         self
     }
+    /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100 percent.</p>
+    pub fn get_uplink_loss_percent(&self) -> &::std::option::Option<i32> {
+        self.inner.get_uplink_loss_percent()
+    }
     /// <p>Proportion of received packets that fail to arrive from 0 to 100 percent.</p>
     pub fn downlink_loss_percent(mut self, input: i32) -> Self {
         self.inner = self.inner.downlink_loss_percent(input);
@@ -238,5 +288,9 @@ impl CreateNetworkProfileFluentBuilder {
     pub fn set_downlink_loss_percent(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_downlink_loss_percent(input);
         self
+    }
+    /// <p>Proportion of received packets that fail to arrive from 0 to 100 percent.</p>
+    pub fn get_downlink_loss_percent(&self) -> &::std::option::Option<i32> {
+        self.inner.get_downlink_loss_percent()
     }
 }

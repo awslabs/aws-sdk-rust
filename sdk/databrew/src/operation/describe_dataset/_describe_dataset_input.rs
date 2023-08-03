@@ -39,6 +39,10 @@ impl DescribeDatasetInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the dataset to be described.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DescribeDatasetInput`](crate::operation::describe_dataset::DescribeDatasetInput).
     pub fn build(
         self,

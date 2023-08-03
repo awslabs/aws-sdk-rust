@@ -106,6 +106,10 @@ impl CreateJobInputBuilder {
         self.pipeline_id = input;
         self
     }
+    /// <p>The <code>Id</code> of the pipeline that you want Elastic Transcoder to use for transcoding. The pipeline determines several settings, including the Amazon S3 bucket from which Elastic Transcoder gets the files to transcode and the bucket into which Elastic Transcoder puts the transcoded files.</p>
+    pub fn get_pipeline_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_id
+    }
     /// <p>A section of the request body that provides information about the file that is being transcoded.</p>
     pub fn input(mut self, input: crate::types::JobInput) -> Self {
         self.input = ::std::option::Option::Some(input);
@@ -115,6 +119,10 @@ impl CreateJobInputBuilder {
     pub fn set_input(mut self, input: ::std::option::Option<crate::types::JobInput>) -> Self {
         self.input = input;
         self
+    }
+    /// <p>A section of the request body that provides information about the file that is being transcoded.</p>
+    pub fn get_input(&self) -> &::std::option::Option<crate::types::JobInput> {
+        &self.input
     }
     /// Appends an item to `inputs`.
     ///
@@ -135,6 +143,10 @@ impl CreateJobInputBuilder {
         self.inputs = input;
         self
     }
+    /// <p>A section of the request body that provides information about the files that are being transcoded.</p>
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobInput>> {
+        &self.inputs
+    }
     /// <p> A section of the request body that provides information about the transcoded (target) file. We strongly recommend that you use the <code>Outputs</code> syntax instead of the <code>Output</code> syntax. </p>
     pub fn output(mut self, input: crate::types::CreateJobOutput) -> Self {
         self.output = ::std::option::Option::Some(input);
@@ -147,6 +159,10 @@ impl CreateJobInputBuilder {
     ) -> Self {
         self.output = input;
         self
+    }
+    /// <p> A section of the request body that provides information about the transcoded (target) file. We strongly recommend that you use the <code>Outputs</code> syntax instead of the <code>Output</code> syntax. </p>
+    pub fn get_output(&self) -> &::std::option::Option<crate::types::CreateJobOutput> {
+        &self.output
     }
     /// Appends an item to `outputs`.
     ///
@@ -167,6 +183,12 @@ impl CreateJobInputBuilder {
         self.outputs = input;
         self
     }
+    /// <p> A section of the request body that provides information about the transcoded (target) files. We recommend that you use the <code>Outputs</code> syntax instead of the <code>Output</code> syntax. </p>
+    pub fn get_outputs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateJobOutput>> {
+        &self.outputs
+    }
     /// <p>The value, if any, that you want Elastic Transcoder to prepend to the names of all files that this job creates, including output files, thumbnails, and playlists.</p>
     pub fn output_key_prefix(
         mut self,
@@ -182,6 +204,10 @@ impl CreateJobInputBuilder {
     ) -> Self {
         self.output_key_prefix = input;
         self
+    }
+    /// <p>The value, if any, that you want Elastic Transcoder to prepend to the names of all files that this job creates, including output files, thumbnails, and playlists.</p>
+    pub fn get_output_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_key_prefix
     }
     /// Appends an item to `playlists`.
     ///
@@ -203,6 +229,13 @@ impl CreateJobInputBuilder {
     ) -> Self {
         self.playlists = input;
         self
+    }
+    /// <p>If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS), Playlists contains information about the master playlists that you want Elastic Transcoder to create.</p>
+    /// <p>The maximum number of master playlists in a job is 30.</p>
+    pub fn get_playlists(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateJobPlaylist>> {
+        &self.playlists
     }
     /// Adds a key-value pair to `user_metadata`.
     ///
@@ -228,6 +261,14 @@ impl CreateJobInputBuilder {
     ) -> Self {
         self.user_metadata = input;
         self
+    }
+    /// <p>User-defined metadata that you want to associate with an Elastic Transcoder job. You specify metadata in <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code> pairs per job. Elastic Transcoder does not guarantee that <code>key/value</code> pairs are returned in the same order in which you specify them.</p>
+    pub fn get_user_metadata(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.user_metadata
     }
     /// Consumes the builder and constructs a [`CreateJobInput`](crate::operation::create_job::CreateJobInput).
     pub fn build(

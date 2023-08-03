@@ -53,6 +53,10 @@ impl DeleteWarmPoolInputBuilder {
         self.auto_scaling_group_name = input;
         self
     }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auto_scaling_group_name
+    }
     /// <p>Specifies that the warm pool is to be deleted along with all of its associated instances, without waiting for all instances to be terminated. This parameter also deletes any outstanding lifecycle actions associated with the warm pool instances.</p>
     pub fn force_delete(mut self, input: bool) -> Self {
         self.force_delete = ::std::option::Option::Some(input);
@@ -62,6 +66,10 @@ impl DeleteWarmPoolInputBuilder {
     pub fn set_force_delete(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force_delete = input;
         self
+    }
+    /// <p>Specifies that the warm pool is to be deleted along with all of its associated instances, without waiting for all instances to be terminated. This parameter also deletes any outstanding lifecycle actions associated with the warm pool instances.</p>
+    pub fn get_force_delete(&self) -> &::std::option::Option<bool> {
+        &self.force_delete
     }
     /// Consumes the builder and constructs a [`DeleteWarmPoolInput`](crate::operation::delete_warm_pool::DeleteWarmPoolInput).
     pub fn build(

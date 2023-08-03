@@ -37,6 +37,12 @@ impl ListIdentitiesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListIdentities as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_identities::builders::ListIdentitiesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,6 +131,10 @@ impl ListIdentitiesFluentBuilder {
         self.inner = self.inner.set_identity_pool_id(input);
         self
     }
+    /// <p>An identity pool ID in the format REGION:GUID.</p>
+    pub fn get_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_pool_id()
+    }
     /// <p>The maximum number of identities to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -134,6 +144,10 @@ impl ListIdentitiesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of identities to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>A pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -145,6 +159,10 @@ impl ListIdentitiesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>An optional boolean parameter that allows you to hide disabled identities. If omitted, the ListIdentities API will include disabled identities in the response.</p>
     pub fn hide_disabled(mut self, input: bool) -> Self {
         self.inner = self.inner.hide_disabled(input);
@@ -154,5 +172,9 @@ impl ListIdentitiesFluentBuilder {
     pub fn set_hide_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_hide_disabled(input);
         self
+    }
+    /// <p>An optional boolean parameter that allows you to hide disabled identities. If omitted, the ListIdentities API will include disabled identities in the response.</p>
+    pub fn get_hide_disabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_hide_disabled()
     }
 }

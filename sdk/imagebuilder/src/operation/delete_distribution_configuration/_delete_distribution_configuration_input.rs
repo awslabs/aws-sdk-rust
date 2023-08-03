@@ -45,6 +45,12 @@ impl DeleteDistributionConfigurationInputBuilder {
         self.distribution_configuration_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the distribution configuration to delete.</p>
+    pub fn get_distribution_configuration_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.distribution_configuration_arn
+    }
     /// Consumes the builder and constructs a [`DeleteDistributionConfigurationInput`](crate::operation::delete_distribution_configuration::DeleteDistributionConfigurationInput).
     pub fn build(
         self,

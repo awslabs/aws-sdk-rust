@@ -188,6 +188,11 @@ impl DescribeStateMachineOutputBuilder {
         self.state_machine_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
+    /// <p>If you specified a state machine version ARN in your request, the API returns the version ARN. The version ARN is a combination of state machine ARN and the version number separated by a colon (:). For example, <code>stateMachineARN:1</code>.</p>
+    pub fn get_state_machine_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_machine_arn
+    }
     /// <p>The name of the state machine.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
@@ -216,6 +221,19 @@ impl DescribeStateMachineOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the state machine.</p>
+    /// <p>A name must <i>not</i> contain:</p>
+    /// <ul>
+    /// <li> <p>white space</p> </li>
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
+    /// </ul>
+    /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The current status of the state machine.</p>
     pub fn status(mut self, input: crate::types::StateMachineStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -229,6 +247,10 @@ impl DescribeStateMachineOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The current status of the state machine.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::StateMachineStatus> {
+        &self.status
+    }
     /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
     pub fn definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.definition = ::std::option::Option::Some(input.into());
@@ -239,6 +261,10 @@ impl DescribeStateMachineOutputBuilder {
         self.definition = input;
         self
     }
+    /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
+    pub fn get_definition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.definition
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used when creating this state machine. (The IAM role maintains security by granting Step Functions access to Amazon Web Services resources.)</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -248,6 +274,10 @@ impl DescribeStateMachineOutputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role used when creating this state machine. (The IAM role maintains security by granting Step Functions access to Amazon Web Services resources.)</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The <code>type</code> of the state machine (<code>STANDARD</code> or <code>EXPRESS</code>).</p>
     pub fn r#type(mut self, input: crate::types::StateMachineType) -> Self {
@@ -261,6 +291,10 @@ impl DescribeStateMachineOutputBuilder {
     ) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The <code>type</code> of the state machine (<code>STANDARD</code> or <code>EXPRESS</code>).</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::StateMachineType> {
+        &self.r#type
     }
     /// <p>The date the state machine is created.</p>
     /// <p>For a state machine version, <code>creationDate</code> is the date the version was created.</p>
@@ -277,6 +311,11 @@ impl DescribeStateMachineOutputBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>The date the state machine is created.</p>
+    /// <p>For a state machine version, <code>creationDate</code> is the date the version was created.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
+    }
     /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
     pub fn logging_configuration(mut self, input: crate::types::LoggingConfiguration) -> Self {
         self.logging_configuration = ::std::option::Option::Some(input);
@@ -289,6 +328,12 @@ impl DescribeStateMachineOutputBuilder {
     ) -> Self {
         self.logging_configuration = input;
         self
+    }
+    /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
+    pub fn get_logging_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::LoggingConfiguration> {
+        &self.logging_configuration
     }
     /// <p>Selects whether X-Ray tracing is enabled.</p>
     pub fn tracing_configuration(mut self, input: crate::types::TracingConfiguration) -> Self {
@@ -303,6 +348,12 @@ impl DescribeStateMachineOutputBuilder {
         self.tracing_configuration = input;
         self
     }
+    /// <p>Selects whether X-Ray tracing is enabled.</p>
+    pub fn get_tracing_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::TracingConfiguration> {
+        &self.tracing_configuration
+    }
     /// <p>A user-defined or an auto-generated string that identifies a <code>Map</code> state. This parameter is present only if the <code>stateMachineArn</code> specified in input is a qualified state machine ARN.</p>
     pub fn label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label = ::std::option::Option::Some(input.into());
@@ -312,6 +363,10 @@ impl DescribeStateMachineOutputBuilder {
     pub fn set_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label = input;
         self
+    }
+    /// <p>A user-defined or an auto-generated string that identifies a <code>Map</code> state. This parameter is present only if the <code>stateMachineArn</code> specified in input is a qualified state machine ARN.</p>
+    pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label
     }
     /// <p>The revision identifier for the state machine.</p>
     /// <p>Use the <code>revisionId</code> parameter to compare between versions of a state machine configuration used for executions without performing a diff of the properties, such as <code>definition</code> and <code>roleArn</code>.</p>
@@ -325,6 +380,11 @@ impl DescribeStateMachineOutputBuilder {
         self.revision_id = input;
         self
     }
+    /// <p>The revision identifier for the state machine.</p>
+    /// <p>Use the <code>revisionId</code> parameter to compare between versions of a state machine configuration used for executions without performing a diff of the properties, such as <code>definition</code> and <code>roleArn</code>.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision_id
+    }
     /// <p>The description of the state machine version.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -334,6 +394,10 @@ impl DescribeStateMachineOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the state machine version.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

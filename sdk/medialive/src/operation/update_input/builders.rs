@@ -36,6 +36,10 @@ impl UpdateInputFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateInput as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_input::builders::UpdateInputInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,6 +129,12 @@ impl UpdateInputFluentBuilder {
         self.inner = self.inner.set_destinations(input);
         self
     }
+    /// Destination settings for PUSH type inputs.
+    pub fn get_destinations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputDestinationRequest>> {
+        self.inner.get_destinations()
+    }
     /// Appends an item to `InputDevices`.
     ///
     /// To override the contents of this collection use [`set_input_devices`](Self::set_input_devices).
@@ -142,6 +152,12 @@ impl UpdateInputFluentBuilder {
         self.inner = self.inner.set_input_devices(input);
         self
     }
+    /// Settings for the devices.
+    pub fn get_input_devices(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputDeviceRequest>> {
+        self.inner.get_input_devices()
+    }
     /// Unique ID of the input.
     pub fn input_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.input_id(input.into());
@@ -151,6 +167,10 @@ impl UpdateInputFluentBuilder {
     pub fn set_input_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_input_id(input);
         self
+    }
+    /// Unique ID of the input.
+    pub fn get_input_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_input_id()
     }
     /// Appends an item to `InputSecurityGroups`.
     ///
@@ -172,6 +192,12 @@ impl UpdateInputFluentBuilder {
         self.inner = self.inner.set_input_security_groups(input);
         self
     }
+    /// A list of security groups referenced by IDs to attach to the input.
+    pub fn get_input_security_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_input_security_groups()
+    }
     /// Appends an item to `MediaConnectFlows`.
     ///
     /// To override the contents of this collection use [`set_media_connect_flows`](Self::set_media_connect_flows).
@@ -189,6 +215,12 @@ impl UpdateInputFluentBuilder {
         self.inner = self.inner.set_media_connect_flows(input);
         self
     }
+    /// A list of the MediaConnect Flow ARNs that you want to use as the source of the input. You can specify as few as one Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a separate Availability Zone as this ensures your EML input is redundant to AZ issues.
+    pub fn get_media_connect_flows(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaConnectFlowRequest>> {
+        self.inner.get_media_connect_flows()
+    }
     /// Name of the input.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -199,6 +231,10 @@ impl UpdateInputFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// Name of the input.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -208,6 +244,10 @@ impl UpdateInputFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
     /// Appends an item to `Sources`.
     ///
@@ -225,5 +265,11 @@ impl UpdateInputFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sources(input);
         self
+    }
+    /// The source URLs for a PULL-type input. Every PULL type input needs exactly two source URLs for redundancy. Only specify sources for PULL type Inputs. Leave Destinations empty.
+    pub fn get_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputSourceRequest>> {
+        self.inner.get_sources()
     }
 }

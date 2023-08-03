@@ -48,6 +48,12 @@ impl CreateGameSessionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateGameSession as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_game_session::builders::CreateGameSessionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +144,10 @@ impl CreateGameSessionFluentBuilder {
         self.inner = self.inner.set_fleet_id(input);
         self
     }
+    /// <p>A unique identifier for the fleet to create a game session in. You can use either the fleet ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.</p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_fleet_id()
+    }
     /// <p>A unique identifier for the alias associated with the fleet to create a game session in. You can use either the alias ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.</p>
     pub fn alias_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.alias_id(input.into());
@@ -147,6 +157,10 @@ impl CreateGameSessionFluentBuilder {
     pub fn set_alias_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_alias_id(input);
         self
+    }
+    /// <p>A unique identifier for the alias associated with the fleet to create a game session in. You can use either the alias ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.</p>
+    pub fn get_alias_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_alias_id()
     }
     /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
     pub fn maximum_player_session_count(mut self, input: i32) -> Self {
@@ -158,6 +172,10 @@ impl CreateGameSessionFluentBuilder {
         self.inner = self.inner.set_maximum_player_session_count(input);
         self
     }
+    /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
+    pub fn get_maximum_player_session_count(&self) -> &::std::option::Option<i32> {
+        self.inner.get_maximum_player_session_count()
+    }
     /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -167,6 +185,10 @@ impl CreateGameSessionFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// Appends an item to `GameProperties`.
     ///
@@ -185,6 +207,12 @@ impl CreateGameSessionFluentBuilder {
         self.inner = self.inner.set_game_properties(input);
         self
     }
+    /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
+    pub fn get_game_properties(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GameProperty>> {
+        self.inner.get_game_properties()
+    }
     /// <p>A unique identifier for a player or entity creating the game session. </p>
     /// <p>If you add a resource creation limit policy to a fleet, the <code>CreateGameSession</code> operation requires a <code>CreatorId</code>. Amazon GameLift limits the number of game session creation requests with the same <code>CreatorId</code> in a specified time period.</p>
     /// <p>If you your fleet doesn't have a resource creation limit policy and you provide a <code>CreatorId</code> in your <code>CreateGameSession</code> requests, Amazon GameLift limits requests to one request per <code>CreatorId</code> per second.</p>
@@ -200,6 +228,13 @@ impl CreateGameSessionFluentBuilder {
     pub fn set_creator_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_creator_id(input);
         self
+    }
+    /// <p>A unique identifier for a player or entity creating the game session. </p>
+    /// <p>If you add a resource creation limit policy to a fleet, the <code>CreateGameSession</code> operation requires a <code>CreatorId</code>. Amazon GameLift limits the number of game session creation requests with the same <code>CreatorId</code> in a specified time period.</p>
+    /// <p>If you your fleet doesn't have a resource creation limit policy and you provide a <code>CreatorId</code> in your <code>CreateGameSession</code> requests, Amazon GameLift limits requests to one request per <code>CreatorId</code> per second.</p>
+    /// <p>To not limit <code>CreateGameSession</code> requests with the same <code>CreatorId</code>, don't provide a <code>CreatorId</code> in your <code>CreateGameSession</code> request.</p>
+    pub fn get_creator_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_creator_id()
     }
     /// <p> <i>This parameter is deprecated. Use <code>IdempotencyToken</code> instead.</i> </p>
     /// <p>Custom string that uniquely identifies a request for a new game session. Maximum token length is 48 characters. If provided, this string is included in the new game session's ID.</p>
@@ -218,6 +253,11 @@ impl CreateGameSessionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_game_session_id(input);
         self
+    }
+    /// <p> <i>This parameter is deprecated. Use <code>IdempotencyToken</code> instead.</i> </p>
+    /// <p>Custom string that uniquely identifies a request for a new game session. Maximum token length is 48 characters. If provided, this string is included in the new game session's ID.</p>
+    pub fn get_game_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_game_session_id()
     }
     /// <p>Custom string that uniquely identifies the new game session request. This is useful for ensuring that game session requests with the same idempotency token are processed only once. Subsequent requests with the same string return the original <code>GameSession</code> object, with an updated status. Maximum token length is 48 characters. If provided, this string is included in the new game session's ID. A game session ARN has the following format: <code>arn:aws:gamelift:
     /// <region>
@@ -249,6 +289,17 @@ impl CreateGameSessionFluentBuilder {
         self.inner = self.inner.set_idempotency_token(input);
         self
     }
+    /// <p>Custom string that uniquely identifies the new game session request. This is useful for ensuring that game session requests with the same idempotency token are processed only once. Subsequent requests with the same string return the original <code>GameSession</code> object, with an updated status. Maximum token length is 48 characters. If provided, this string is included in the new game session's ID. A game session ARN has the following format: <code>arn:aws:gamelift:
+    /// <region>
+    /// ::gamesession/
+    /// <fleet id>
+    /// /
+    /// <custom id string or idempotency token></custom>
+    /// </fleet>
+    /// </region></code>. Idempotency tokens remain in use for 30 days after a game session has ended; game session objects are retained for this time period and then deleted.</p>
+    pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_idempotency_token()
+    }
     /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
     pub fn game_session_data(
         mut self,
@@ -265,6 +316,10 @@ impl CreateGameSessionFluentBuilder {
         self.inner = self.inner.set_game_session_data(input);
         self
     }
+    /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
+    pub fn get_game_session_data(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_game_session_data()
+    }
     /// <p>A fleet's remote location to place the new game session in. If this parameter is not set, the new game session is placed in the fleet's home Region. Specify a remote location with an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.location(input.into());
@@ -274,5 +329,9 @@ impl CreateGameSessionFluentBuilder {
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_location(input);
         self
+    }
+    /// <p>A fleet's remote location to place the new game session in. If this parameter is not set, the new game session is placed in the fleet's home Region. Specify a remote location with an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_location()
     }
 }

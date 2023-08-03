@@ -50,6 +50,12 @@ impl PackageImportJobInputConfigBuilder {
         self.package_version_input_config = input;
         self
     }
+    /// <p>The package version's input configuration.</p>
+    pub fn get_package_version_input_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::PackageVersionInputConfig> {
+        &self.package_version_input_config
+    }
     /// Consumes the builder and constructs a [`PackageImportJobInputConfig`](crate::types::PackageImportJobInputConfig).
     pub fn build(self) -> crate::types::PackageImportJobInputConfig {
         crate::types::PackageImportJobInputConfig {

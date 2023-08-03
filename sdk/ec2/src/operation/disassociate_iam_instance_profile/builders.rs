@@ -37,6 +37,10 @@ impl DisassociateIamInstanceProfileFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociateIamInstanceProfile as a reference.
+    pub fn as_input(&self) -> &crate::operation::disassociate_iam_instance_profile::builders::DisassociateIamInstanceProfileInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,5 +110,9 @@ impl DisassociateIamInstanceProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_association_id(input);
         self
+    }
+    /// <p>The ID of the IAM instance profile association.</p>
+    pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_association_id()
     }
 }

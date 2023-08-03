@@ -43,6 +43,10 @@ impl UpdateActionTypeInputBuilder {
         self.action_type = input;
         self
     }
+    /// <p>The action type definition for the action type to be updated.</p>
+    pub fn get_action_type(&self) -> &::std::option::Option<crate::types::ActionTypeDeclaration> {
+        &self.action_type
+    }
     /// Consumes the builder and constructs a [`UpdateActionTypeInput`](crate::operation::update_action_type::UpdateActionTypeInput).
     pub fn build(
         self,

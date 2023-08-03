@@ -36,6 +36,12 @@ impl StartBlueprintRunFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartBlueprintRun as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_blueprint_run::builders::StartBlueprintRunInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl StartBlueprintRunFluentBuilder {
         self.inner = self.inner.set_blueprint_name(input);
         self
     }
+    /// <p>The name of the blueprint.</p>
+    pub fn get_blueprint_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_blueprint_name()
+    }
     /// <p>Specifies the parameters as a <code>BlueprintParameters</code> object.</p>
     pub fn parameters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.parameters(input.into());
@@ -142,6 +152,10 @@ impl StartBlueprintRunFluentBuilder {
         self.inner = self.inner.set_parameters(input);
         self
     }
+    /// <p>Specifies the parameters as a <code>BlueprintParameters</code> object.</p>
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_parameters()
+    }
     /// <p>Specifies the IAM role used to create the workflow.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -151,5 +165,9 @@ impl StartBlueprintRunFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p>Specifies the IAM role used to create the workflow.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
 }

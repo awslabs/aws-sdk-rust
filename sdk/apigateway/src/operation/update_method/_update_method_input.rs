@@ -65,6 +65,10 @@ impl UpdateMethodInputBuilder {
         self.rest_api_id = input;
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rest_api_id
+    }
     /// <p>The Resource identifier for the Method resource.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -75,6 +79,10 @@ impl UpdateMethodInputBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The Resource identifier for the Method resource.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// <p>The HTTP verb of the Method resource.</p>
     pub fn http_method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.http_method = ::std::option::Option::Some(input.into());
@@ -84,6 +92,10 @@ impl UpdateMethodInputBuilder {
     pub fn set_http_method(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.http_method = input;
         self
+    }
+    /// <p>The HTTP verb of the Method resource.</p>
+    pub fn get_http_method(&self) -> &::std::option::Option<::std::string::String> {
+        &self.http_method
     }
     /// Appends an item to `patch_operations`.
     ///
@@ -103,6 +115,12 @@ impl UpdateMethodInputBuilder {
     ) -> Self {
         self.patch_operations = input;
         self
+    }
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
+    pub fn get_patch_operations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
+        &self.patch_operations
     }
     /// Consumes the builder and constructs a [`UpdateMethodInput`](crate::operation::update_method::UpdateMethodInput).
     pub fn build(

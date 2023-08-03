@@ -43,6 +43,12 @@ impl InstanceMaintenanceOptionsBuilder {
         self.auto_recovery = input;
         self
     }
+    /// <p>Provides information on the current automatic recovery behavior of your instance.</p>
+    pub fn get_auto_recovery(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceAutoRecoveryState> {
+        &self.auto_recovery
+    }
     /// Consumes the builder and constructs a [`InstanceMaintenanceOptions`](crate::types::InstanceMaintenanceOptions).
     pub fn build(self) -> crate::types::InstanceMaintenanceOptions {
         crate::types::InstanceMaintenanceOptions {

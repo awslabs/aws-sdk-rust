@@ -61,6 +61,10 @@ impl UpgradeAppliedSchemaOutputBuilder {
         self.upgraded_schema_arn = input;
         self
     }
+    /// <p>The ARN of the upgraded schema that is returned as part of the response.</p>
+    pub fn get_upgraded_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.upgraded_schema_arn
+    }
     /// <p>The ARN of the directory that is returned as part of the response.</p>
     pub fn directory_arn(
         mut self,
@@ -76,6 +80,10 @@ impl UpgradeAppliedSchemaOutputBuilder {
     ) -> Self {
         self.directory_arn = input;
         self
+    }
+    /// <p>The ARN of the directory that is returned as part of the response.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

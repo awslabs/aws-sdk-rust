@@ -69,6 +69,10 @@ impl CreateRegistryInputBuilder {
         self.registry_name = input;
         self
     }
+    /// <p>Name of the registry to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark. No whitespace.</p>
+    pub fn get_registry_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_name
+    }
     /// <p>A description of the registry. If description is not provided, there will not be any default value for this.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -78,6 +82,10 @@ impl CreateRegistryInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the registry. If description is not provided, there will not be any default value for this.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -103,6 +111,14 @@ impl CreateRegistryInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Amazon Web Services tags that contain a key value pair and may be searched by console, command line, or API.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateRegistryInput`](crate::operation::create_registry::CreateRegistryInput).
     pub fn build(

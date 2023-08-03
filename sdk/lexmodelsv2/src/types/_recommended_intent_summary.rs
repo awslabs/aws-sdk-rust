@@ -56,6 +56,10 @@ impl RecommendedIntentSummaryBuilder {
         self.intent_id = input;
         self
     }
+    /// <p>The unique identifier of a recommended intent associated with the bot recommendation.</p>
+    pub fn get_intent_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.intent_id
+    }
     /// <p>The name of a recommended intent associated with the bot recommendation.</p>
     pub fn intent_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.intent_name = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl RecommendedIntentSummaryBuilder {
         self.intent_name = input;
         self
     }
+    /// <p>The name of a recommended intent associated with the bot recommendation.</p>
+    pub fn get_intent_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.intent_name
+    }
     /// <p>The count of sample utterances of a recommended intent that is associated with a bot recommendation.</p>
     pub fn sample_utterances_count(mut self, input: i32) -> Self {
         self.sample_utterances_count = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl RecommendedIntentSummaryBuilder {
     pub fn set_sample_utterances_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.sample_utterances_count = input;
         self
+    }
+    /// <p>The count of sample utterances of a recommended intent that is associated with a bot recommendation.</p>
+    pub fn get_sample_utterances_count(&self) -> &::std::option::Option<i32> {
+        &self.sample_utterances_count
     }
     /// Consumes the builder and constructs a [`RecommendedIntentSummary`](crate::types::RecommendedIntentSummary).
     pub fn build(self) -> crate::types::RecommendedIntentSummary {

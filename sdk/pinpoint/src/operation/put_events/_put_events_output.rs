@@ -49,6 +49,10 @@ impl PutEventsOutputBuilder {
         self.events_response = input;
         self
     }
+    /// <p>Provides information about endpoints and the events that they're associated with.</p>
+    pub fn get_events_response(&self) -> &::std::option::Option<crate::types::EventsResponse> {
+        &self.events_response
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

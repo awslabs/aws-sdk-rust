@@ -81,6 +81,10 @@ impl CreateSourceNetworkInputBuilder {
         self.vpc_id = input;
         self
     }
+    /// <p>Which VPC ID to protect.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
+    }
     /// <p>Account containing the VPC to protect.</p>
     pub fn origin_account_id(
         mut self,
@@ -97,6 +101,10 @@ impl CreateSourceNetworkInputBuilder {
         self.origin_account_id = input;
         self
     }
+    /// <p>Account containing the VPC to protect.</p>
+    pub fn get_origin_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.origin_account_id
+    }
     /// <p>Region containing the VPC to protect.</p>
     pub fn origin_region(
         mut self,
@@ -112,6 +120,10 @@ impl CreateSourceNetworkInputBuilder {
     ) -> Self {
         self.origin_region = input;
         self
+    }
+    /// <p>Region containing the VPC to protect.</p>
+    pub fn get_origin_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.origin_region
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -137,6 +149,14 @@ impl CreateSourceNetworkInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A set of tags to be associated with the Source Network resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateSourceNetworkInput`](crate::operation::create_source_network::CreateSourceNetworkInput).
     pub fn build(

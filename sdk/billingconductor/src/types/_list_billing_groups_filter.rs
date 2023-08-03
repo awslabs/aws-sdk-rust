@@ -73,6 +73,10 @@ impl ListBillingGroupsFilterBuilder {
         self.arns = input;
         self
     }
+    /// <p>The list of billing group Amazon Resource Names (ARNs) to retrieve information.</p>
+    pub fn get_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.arns
+    }
     /// <p>The pricing plan Amazon Resource Names (ARNs) to retrieve information.</p>
     pub fn pricing_plan(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pricing_plan = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl ListBillingGroupsFilterBuilder {
     pub fn set_pricing_plan(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pricing_plan = input;
         self
+    }
+    /// <p>The pricing plan Amazon Resource Names (ARNs) to retrieve information.</p>
+    pub fn get_pricing_plan(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pricing_plan
     }
     /// Appends an item to `statuses`.
     ///
@@ -102,6 +110,12 @@ impl ListBillingGroupsFilterBuilder {
         self.statuses = input;
         self
     }
+    /// <p> A list of billing groups to retrieve their current status for a specific time range </p>
+    pub fn get_statuses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BillingGroupStatus>> {
+        &self.statuses
+    }
     /// <p>Specifies if this billing group will automatically associate newly added Amazon Web Services accounts that join your consolidated billing family.</p>
     pub fn auto_associate(mut self, input: bool) -> Self {
         self.auto_associate = ::std::option::Option::Some(input);
@@ -111,6 +125,10 @@ impl ListBillingGroupsFilterBuilder {
     pub fn set_auto_associate(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_associate = input;
         self
+    }
+    /// <p>Specifies if this billing group will automatically associate newly added Amazon Web Services accounts that join your consolidated billing family.</p>
+    pub fn get_auto_associate(&self) -> &::std::option::Option<bool> {
+        &self.auto_associate
     }
     /// Consumes the builder and constructs a [`ListBillingGroupsFilter`](crate::types::ListBillingGroupsFilter).
     pub fn build(self) -> crate::types::ListBillingGroupsFilter {

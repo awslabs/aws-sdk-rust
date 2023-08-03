@@ -58,6 +58,14 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesFilterDetailsBuilder {
         self.predicate = input;
         self
     }
+    /// <p>The configuration for the filter.</p>
+    pub fn get_predicate(
+        &self,
+    ) -> &::std::option::Option<
+        crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails,
+    > {
+        &self.predicate
+    }
     /// Consumes the builder and constructs a [`AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails`](crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails).
     pub fn build(self) -> crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails {
         crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails {

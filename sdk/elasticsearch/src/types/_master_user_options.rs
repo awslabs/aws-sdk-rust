@@ -69,6 +69,10 @@ impl MasterUserOptionsBuilder {
         self.master_user_arn = input;
         self
     }
+    /// <p>ARN for the master user (if IAM is enabled).</p>
+    pub fn get_master_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.master_user_arn
+    }
     /// <p>The master user's username, which is stored in the Amazon Elasticsearch Service domain's internal database.</p>
     pub fn master_user_name(
         mut self,
@@ -85,6 +89,10 @@ impl MasterUserOptionsBuilder {
         self.master_user_name = input;
         self
     }
+    /// <p>The master user's username, which is stored in the Amazon Elasticsearch Service domain's internal database.</p>
+    pub fn get_master_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.master_user_name
+    }
     /// <p>The master user's password, which is stored in the Amazon Elasticsearch Service domain's internal database.</p>
     pub fn master_user_password(
         mut self,
@@ -100,6 +108,10 @@ impl MasterUserOptionsBuilder {
     ) -> Self {
         self.master_user_password = input;
         self
+    }
+    /// <p>The master user's password, which is stored in the Amazon Elasticsearch Service domain's internal database.</p>
+    pub fn get_master_user_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.master_user_password
     }
     /// Consumes the builder and constructs a [`MasterUserOptions`](crate::types::MasterUserOptions).
     pub fn build(self) -> crate::types::MasterUserOptions {

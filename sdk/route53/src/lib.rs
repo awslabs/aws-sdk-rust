@@ -201,7 +201,7 @@ pub mod middleware;
 mod no_credentials;
 
 ///
-mod route53_resource_id_preprocessor;
+mod route53_resource_id_preprocessor_middleware;
 
 mod lens;
 

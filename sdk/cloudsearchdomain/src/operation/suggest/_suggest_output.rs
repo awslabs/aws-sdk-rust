@@ -55,6 +55,10 @@ impl SuggestOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of a <code>SuggestRequest</code>. Contains the resource ID (<code>rid</code>) and how long it took to process the request (<code>timems</code>).</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::SuggestStatus> {
+        &self.status
+    }
     /// <p>Container for the matching search suggestion information.</p>
     pub fn suggest(mut self, input: crate::types::SuggestModel) -> Self {
         self.suggest = ::std::option::Option::Some(input);
@@ -64,6 +68,10 @@ impl SuggestOutputBuilder {
     pub fn set_suggest(mut self, input: ::std::option::Option<crate::types::SuggestModel>) -> Self {
         self.suggest = input;
         self
+    }
+    /// <p>Container for the matching search suggestion information.</p>
+    pub fn get_suggest(&self) -> &::std::option::Option<crate::types::SuggestModel> {
+        &self.suggest
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

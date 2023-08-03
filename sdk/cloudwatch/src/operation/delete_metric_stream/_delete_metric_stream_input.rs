@@ -40,6 +40,10 @@ impl DeleteMetricStreamInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the metric stream to delete.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DeleteMetricStreamInput`](crate::operation::delete_metric_stream::DeleteMetricStreamInput).
     pub fn build(
         self,

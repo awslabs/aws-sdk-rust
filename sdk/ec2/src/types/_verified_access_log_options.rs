@@ -89,6 +89,12 @@ impl VerifiedAccessLogOptionsBuilder {
         self.s3 = input;
         self
     }
+    /// <p>Sends Verified Access logs to Amazon S3.</p>
+    pub fn get_s3(
+        &self,
+    ) -> &::std::option::Option<crate::types::VerifiedAccessLogS3DestinationOptions> {
+        &self.s3
+    }
     /// <p>Sends Verified Access logs to CloudWatch Logs.</p>
     pub fn cloud_watch_logs(
         mut self,
@@ -106,6 +112,13 @@ impl VerifiedAccessLogOptionsBuilder {
     ) -> Self {
         self.cloud_watch_logs = input;
         self
+    }
+    /// <p>Sends Verified Access logs to CloudWatch Logs.</p>
+    pub fn get_cloud_watch_logs(
+        &self,
+    ) -> &::std::option::Option<crate::types::VerifiedAccessLogCloudWatchLogsDestinationOptions>
+    {
+        &self.cloud_watch_logs
     }
     /// <p>Sends Verified Access logs to Kinesis.</p>
     pub fn kinesis_data_firehose(
@@ -125,6 +138,13 @@ impl VerifiedAccessLogOptionsBuilder {
         self.kinesis_data_firehose = input;
         self
     }
+    /// <p>Sends Verified Access logs to Kinesis.</p>
+    pub fn get_kinesis_data_firehose(
+        &self,
+    ) -> &::std::option::Option<crate::types::VerifiedAccessLogKinesisDataFirehoseDestinationOptions>
+    {
+        &self.kinesis_data_firehose
+    }
     /// <p> The logging version to use. </p>
     /// <p>Valid values: <code>ocsf-0.1</code> | <code>ocsf-1.0.0-rc.2</code> </p>
     pub fn log_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -137,6 +157,11 @@ impl VerifiedAccessLogOptionsBuilder {
         self.log_version = input;
         self
     }
+    /// <p> The logging version to use. </p>
+    /// <p>Valid values: <code>ocsf-0.1</code> | <code>ocsf-1.0.0-rc.2</code> </p>
+    pub fn get_log_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_version
+    }
     /// <p> Include trust data sent by trust providers into the logs. </p>
     pub fn include_trust_context(mut self, input: bool) -> Self {
         self.include_trust_context = ::std::option::Option::Some(input);
@@ -146,6 +171,10 @@ impl VerifiedAccessLogOptionsBuilder {
     pub fn set_include_trust_context(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_trust_context = input;
         self
+    }
+    /// <p> Include trust data sent by trust providers into the logs. </p>
+    pub fn get_include_trust_context(&self) -> &::std::option::Option<bool> {
+        &self.include_trust_context
     }
     /// Consumes the builder and constructs a [`VerifiedAccessLogOptions`](crate::types::VerifiedAccessLogOptions).
     pub fn build(self) -> crate::types::VerifiedAccessLogOptions {

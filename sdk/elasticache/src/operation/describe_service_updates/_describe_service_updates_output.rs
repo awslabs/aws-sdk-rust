@@ -56,6 +56,10 @@ impl DescribeServiceUpdatesOutputBuilder {
         self.marker = input;
         self
     }
+    /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// Appends an item to `service_updates`.
     ///
     /// To override the contents of this collection use [`set_service_updates`](Self::set_service_updates).
@@ -74,6 +78,12 @@ impl DescribeServiceUpdatesOutputBuilder {
     ) -> Self {
         self.service_updates = input;
         self
+    }
+    /// <p>A list of service updates</p>
+    pub fn get_service_updates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceUpdate>> {
+        &self.service_updates
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

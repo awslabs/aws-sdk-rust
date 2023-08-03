@@ -96,6 +96,12 @@ impl CreateHsmConfigurationInputBuilder {
         self.hsm_configuration_identifier = input;
         self
     }
+    /// <p>The identifier to be assigned to the new Amazon Redshift HSM configuration.</p>
+    pub fn get_hsm_configuration_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.hsm_configuration_identifier
+    }
     /// <p>A text description of the HSM configuration to be created.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -105,6 +111,10 @@ impl CreateHsmConfigurationInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A text description of the HSM configuration to be created.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The IP address that the Amazon Redshift cluster must use to access the HSM.</p>
     pub fn hsm_ip_address(
@@ -122,6 +132,10 @@ impl CreateHsmConfigurationInputBuilder {
         self.hsm_ip_address = input;
         self
     }
+    /// <p>The IP address that the Amazon Redshift cluster must use to access the HSM.</p>
+    pub fn get_hsm_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hsm_ip_address
+    }
     /// <p>The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption keys.</p>
     pub fn hsm_partition_name(
         mut self,
@@ -137,6 +151,10 @@ impl CreateHsmConfigurationInputBuilder {
     ) -> Self {
         self.hsm_partition_name = input;
         self
+    }
+    /// <p>The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption keys.</p>
+    pub fn get_hsm_partition_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hsm_partition_name
     }
     /// <p>The password required to access the HSM partition.</p>
     pub fn hsm_partition_password(
@@ -154,6 +172,10 @@ impl CreateHsmConfigurationInputBuilder {
         self.hsm_partition_password = input;
         self
     }
+    /// <p>The password required to access the HSM partition.</p>
+    pub fn get_hsm_partition_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hsm_partition_password
+    }
     /// <p>The HSMs public certificate file. When using Cloud HSM, the file name is server.pem.</p>
     pub fn hsm_server_public_certificate(
         mut self,
@@ -169,6 +191,12 @@ impl CreateHsmConfigurationInputBuilder {
     ) -> Self {
         self.hsm_server_public_certificate = input;
         self
+    }
+    /// <p>The HSMs public certificate file. When using Cloud HSM, the file name is server.pem.</p>
+    pub fn get_hsm_server_public_certificate(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.hsm_server_public_certificate
     }
     /// Appends an item to `tags`.
     ///
@@ -188,6 +216,10 @@ impl CreateHsmConfigurationInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of tag instances.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateHsmConfigurationInput`](crate::operation::create_hsm_configuration::CreateHsmConfigurationInput).
     pub fn build(

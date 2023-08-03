@@ -73,6 +73,10 @@ impl SizeConstraintStatementBuilder {
         self.field_to_match = input;
         self
     }
+    /// <p>The part of the web request that you want WAF to inspect. </p>
+    pub fn get_field_to_match(&self) -> &::std::option::Option<crate::types::FieldToMatch> {
+        &self.field_to_match
+    }
     /// <p>The operator to use to compare the request part to the size setting. </p>
     pub fn comparison_operator(mut self, input: crate::types::ComparisonOperator) -> Self {
         self.comparison_operator = ::std::option::Option::Some(input);
@@ -86,6 +90,12 @@ impl SizeConstraintStatementBuilder {
         self.comparison_operator = input;
         self
     }
+    /// <p>The operator to use to compare the request part to the size setting. </p>
+    pub fn get_comparison_operator(
+        &self,
+    ) -> &::std::option::Option<crate::types::ComparisonOperator> {
+        &self.comparison_operator
+    }
     /// <p>The size, in byte, to compare to the request part, after any transformations.</p>
     pub fn size(mut self, input: i64) -> Self {
         self.size = ::std::option::Option::Some(input);
@@ -95,6 +105,10 @@ impl SizeConstraintStatementBuilder {
     pub fn set_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.size = input;
         self
+    }
+    /// <p>The size, in byte, to compare to the request part, after any transformations.</p>
+    pub fn get_size(&self) -> &::std::option::Option<i64> {
+        &self.size
     }
     /// Appends an item to `text_transformations`.
     ///
@@ -114,6 +128,12 @@ impl SizeConstraintStatementBuilder {
     ) -> Self {
         self.text_transformations = input;
         self
+    }
+    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the component contents. </p>
+    pub fn get_text_transformations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TextTransformation>> {
+        &self.text_transformations
     }
     /// Consumes the builder and constructs a [`SizeConstraintStatement`](crate::types::SizeConstraintStatement).
     pub fn build(self) -> crate::types::SizeConstraintStatement {

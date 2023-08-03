@@ -70,6 +70,16 @@ impl LabelingJobS3DataSourceBuilder {
         self.manifest_s3_uri = input;
         self
     }
+    /// <p>The Amazon S3 location of the manifest file that describes the input data objects. </p>
+    /// <p>The input manifest file referenced in <code>ManifestS3Uri</code> must contain one of the following keys: <code>source-ref</code> or <code>source</code>. The value of the keys are interpreted as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>source-ref</code>: The source of the object is the Amazon S3 object specified in the value. Use this value when the object is a binary object, such as an image.</p> </li>
+    /// <li> <p> <code>source</code>: The source of the object is the value. Use this value when the object is a text value.</p> </li>
+    /// </ul>
+    /// <p>If you are a new user of Ground Truth, it is recommended you review <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-input-data-input-manifest.html">Use an Input Manifest File </a> in the Amazon SageMaker Developer Guide to learn how to create an input manifest file.</p>
+    pub fn get_manifest_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.manifest_s3_uri
+    }
     /// Consumes the builder and constructs a [`LabelingJobS3DataSource`](crate::types::LabelingJobS3DataSource).
     pub fn build(self) -> crate::types::LabelingJobS3DataSource {
         crate::types::LabelingJobS3DataSource {

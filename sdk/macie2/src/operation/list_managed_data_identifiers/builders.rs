@@ -36,6 +36,10 @@ impl ListManagedDataIdentifiersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListManagedDataIdentifiers as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_managed_data_identifiers::builders::ListManagedDataIdentifiersInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +135,9 @@ impl ListManagedDataIdentifiersFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

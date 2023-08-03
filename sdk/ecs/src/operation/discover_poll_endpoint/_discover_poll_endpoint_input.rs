@@ -54,6 +54,10 @@ impl DiscoverPollEndpointInputBuilder {
         self.container_instance = input;
         self
     }
+    /// <p>The container instance ID or full ARN of the container instance. For more information about the ARN format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
+    pub fn get_container_instance(&self) -> &::std::option::Option<::std::string::String> {
+        &self.container_instance
+    }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that the container instance belongs to.</p>
     pub fn cluster(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl DiscoverPollEndpointInputBuilder {
     pub fn set_cluster(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster = input;
         self
+    }
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that the container instance belongs to.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster
     }
     /// Consumes the builder and constructs a [`DiscoverPollEndpointInput`](crate::operation::discover_poll_endpoint::DiscoverPollEndpointInput).
     pub fn build(

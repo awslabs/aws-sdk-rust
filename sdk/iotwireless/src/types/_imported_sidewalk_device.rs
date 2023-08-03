@@ -70,6 +70,10 @@ impl ImportedSidewalkDeviceBuilder {
         self.sidewalk_manufacturing_sn = input;
         self
     }
+    /// <p>The Sidewalk manufacturing serial number (SMSN) of the Sidewalk device.</p>
+    pub fn get_sidewalk_manufacturing_sn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sidewalk_manufacturing_sn
+    }
     /// <p>The onboarding status of the Sidewalk device in the import task.</p>
     pub fn onboarding_status(mut self, input: crate::types::OnboardStatus) -> Self {
         self.onboarding_status = ::std::option::Option::Some(input);
@@ -82,6 +86,10 @@ impl ImportedSidewalkDeviceBuilder {
     ) -> Self {
         self.onboarding_status = input;
         self
+    }
+    /// <p>The onboarding status of the Sidewalk device in the import task.</p>
+    pub fn get_onboarding_status(&self) -> &::std::option::Option<crate::types::OnboardStatus> {
+        &self.onboarding_status
     }
     /// <p>The reason for the onboarding status information for the Sidewalk device.</p>
     pub fn onboarding_status_reason(
@@ -99,6 +107,10 @@ impl ImportedSidewalkDeviceBuilder {
         self.onboarding_status_reason = input;
         self
     }
+    /// <p>The reason for the onboarding status information for the Sidewalk device.</p>
+    pub fn get_onboarding_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.onboarding_status_reason
+    }
     /// <p>The time at which the status information was last updated.</p>
     pub fn last_update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_update_time = ::std::option::Option::Some(input);
@@ -111,6 +123,10 @@ impl ImportedSidewalkDeviceBuilder {
     ) -> Self {
         self.last_update_time = input;
         self
+    }
+    /// <p>The time at which the status information was last updated.</p>
+    pub fn get_last_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_update_time
     }
     /// Consumes the builder and constructs a [`ImportedSidewalkDevice`](crate::types::ImportedSidewalkDevice).
     pub fn build(self) -> crate::types::ImportedSidewalkDevice {

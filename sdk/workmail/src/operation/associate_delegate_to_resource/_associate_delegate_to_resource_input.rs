@@ -61,6 +61,10 @@ impl AssociateDelegateToResourceInputBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The organization under which the resource exists.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p>The resource for which members (users or groups) are associated.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl AssociateDelegateToResourceInputBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The resource for which members (users or groups) are associated.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// <p>The member (user or group) to associate to the resource.</p>
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
@@ -80,6 +88,10 @@ impl AssociateDelegateToResourceInputBuilder {
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entity_id = input;
         self
+    }
+    /// <p>The member (user or group) to associate to the resource.</p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_id
     }
     /// Consumes the builder and constructs a [`AssociateDelegateToResourceInput`](crate::operation::associate_delegate_to_resource::AssociateDelegateToResourceInput).
     pub fn build(

@@ -58,6 +58,12 @@ impl InputConfigOutputBuilder {
         self.previous_earth_observation_job_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the previous Earth Observation job.</p>
+    pub fn get_previous_earth_observation_job_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.previous_earth_observation_job_arn
+    }
     /// <p>The structure representing the RasterDataCollection Query consisting of the Area of Interest, RasterDataCollectionArn, RasterDataCollectionName, TimeRange, and Property Filters.</p>
     pub fn raster_data_collection_query(
         mut self,
@@ -73,6 +79,12 @@ impl InputConfigOutputBuilder {
     ) -> Self {
         self.raster_data_collection_query = input;
         self
+    }
+    /// <p>The structure representing the RasterDataCollection Query consisting of the Area of Interest, RasterDataCollectionArn, RasterDataCollectionName, TimeRange, and Property Filters.</p>
+    pub fn get_raster_data_collection_query(
+        &self,
+    ) -> &::std::option::Option<crate::types::RasterDataCollectionQueryOutput> {
+        &self.raster_data_collection_query
     }
     /// Consumes the builder and constructs a [`InputConfigOutput`](crate::types::InputConfigOutput).
     pub fn build(self) -> crate::types::InputConfigOutput {

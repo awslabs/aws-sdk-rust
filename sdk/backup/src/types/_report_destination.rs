@@ -54,6 +54,10 @@ impl ReportDestinationBuilder {
         self.s3_bucket_name = input;
         self
     }
+    /// <p>The unique name of the Amazon S3 bucket that receives your reports.</p>
+    pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket_name
+    }
     /// Appends an item to `s3_keys`.
     ///
     /// To override the contents of this collection use [`set_s3_keys`](Self::set_s3_keys).
@@ -72,6 +76,10 @@ impl ReportDestinationBuilder {
     ) -> Self {
         self.s3_keys = input;
         self
+    }
+    /// <p>The object key that uniquely identifies your reports in your S3 bucket.</p>
+    pub fn get_s3_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.s3_keys
     }
     /// Consumes the builder and constructs a [`ReportDestination`](crate::types::ReportDestination).
     pub fn build(self) -> crate::types::ReportDestination {

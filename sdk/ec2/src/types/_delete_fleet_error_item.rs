@@ -51,6 +51,10 @@ impl DeleteFleetErrorItemBuilder {
         self.error = input;
         self
     }
+    /// <p>The error.</p>
+    pub fn get_error(&self) -> &::std::option::Option<crate::types::DeleteFleetError> {
+        &self.error
+    }
     /// <p>The ID of the EC2 Fleet.</p>
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl DeleteFleetErrorItemBuilder {
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet_id = input;
         self
+    }
+    /// <p>The ID of the EC2 Fleet.</p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_id
     }
     /// Consumes the builder and constructs a [`DeleteFleetErrorItem`](crate::types::DeleteFleetErrorItem).
     pub fn build(self) -> crate::types::DeleteFleetErrorItem {

@@ -70,6 +70,12 @@ impl DescribeDbLogFilesOutputBuilder {
         self.describe_db_log_files = input;
         self
     }
+    /// <p>The DB log files returned.</p>
+    pub fn get_describe_db_log_files(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DescribeDbLogFilesDetails>> {
+        &self.describe_db_log_files
+    }
     /// <p>A pagination token that can be used in a later <code>DescribeDBLogFiles</code> request.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -79,6 +85,10 @@ impl DescribeDbLogFilesOutputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>A pagination token that can be used in a later <code>DescribeDBLogFiles</code> request.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

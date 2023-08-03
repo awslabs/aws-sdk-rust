@@ -59,6 +59,12 @@ impl DescribeAuthenticationProfilesOutputBuilder {
         self.authentication_profiles = input;
         self
     }
+    /// <p>The list of authentication profiles.</p>
+    pub fn get_authentication_profiles(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProfile>> {
+        &self.authentication_profiles
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

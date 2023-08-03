@@ -49,6 +49,12 @@ impl AppInstanceRetentionSettingsBuilder {
         self.channel_retention_settings = input;
         self
     }
+    /// <p>The length of time in days to retain the messages in a channel.</p>
+    pub fn get_channel_retention_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::ChannelRetentionSettings> {
+        &self.channel_retention_settings
+    }
     /// Consumes the builder and constructs a [`AppInstanceRetentionSettings`](crate::types::AppInstanceRetentionSettings).
     pub fn build(self) -> crate::types::AppInstanceRetentionSettings {
         crate::types::AppInstanceRetentionSettings {

@@ -39,6 +39,10 @@ impl DisassociateApiInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The domain name.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// Consumes the builder and constructs a [`DisassociateApiInput`](crate::operation::disassociate_api::DisassociateApiInput).
     pub fn build(
         self,

@@ -57,6 +57,10 @@ impl DescribeDryRunProgressInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The unique identifier of the dry run.</p>
     pub fn dry_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dry_run_id = ::std::option::Option::Some(input.into());
@@ -67,6 +71,10 @@ impl DescribeDryRunProgressInputBuilder {
         self.dry_run_id = input;
         self
     }
+    /// <p>The unique identifier of the dry run.</p>
+    pub fn get_dry_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dry_run_id
+    }
     /// <p>Whether to include the configuration of the dry run in the response. The configuration specifies the updates that you're planning to make on the domain.</p>
     pub fn load_dry_run_config(mut self, input: bool) -> Self {
         self.load_dry_run_config = ::std::option::Option::Some(input);
@@ -76,6 +84,10 @@ impl DescribeDryRunProgressInputBuilder {
     pub fn set_load_dry_run_config(mut self, input: ::std::option::Option<bool>) -> Self {
         self.load_dry_run_config = input;
         self
+    }
+    /// <p>Whether to include the configuration of the dry run in the response. The configuration specifies the updates that you're planning to make on the domain.</p>
+    pub fn get_load_dry_run_config(&self) -> &::std::option::Option<bool> {
+        &self.load_dry_run_config
     }
     /// Consumes the builder and constructs a [`DescribeDryRunProgressInput`](crate::operation::describe_dry_run_progress::DescribeDryRunProgressInput).
     pub fn build(

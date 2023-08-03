@@ -37,6 +37,13 @@ impl ListAccountAssociationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListAccountAssociations as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_account_associations::builders::ListAccountAssociationsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -142,6 +149,10 @@ impl ListAccountAssociationsFluentBuilder {
         self.inner = self.inner.set_billing_period(input);
         self
     }
+    /// <p> The preferred billing period to get account associations. </p>
+    pub fn get_billing_period(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_billing_period()
+    }
     /// <p>The filter on the account ID of the linked account, or any of the following:</p>
     /// <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p>
     /// <p> <code>UNMONITORED</code>: linked accounts that aren't associated to billing groups.</p>
@@ -161,6 +172,15 @@ impl ListAccountAssociationsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>The filter on the account ID of the linked account, or any of the following:</p>
+    /// <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p>
+    /// <p> <code>UNMONITORED</code>: linked accounts that aren't associated to billing groups.</p>
+    /// <p> <code>Billing Group Arn</code>: linked accounts that are associated to the provided billing group Arn. </p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<crate::types::ListAccountAssociationsFilter> {
+        self.inner.get_filters()
+    }
     /// <p> The pagination token that's used on subsequent calls to retrieve accounts. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -170,5 +190,9 @@ impl ListAccountAssociationsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p> The pagination token that's used on subsequent calls to retrieve accounts. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

@@ -63,6 +63,12 @@ impl DescribeStorageSystemResourceMetricsOutputBuilder {
         self.metrics = input;
         self
     }
+    /// <p>The details that your discovery job collected about your storage system resource.</p>
+    pub fn get_metrics(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceMetrics>> {
+        &self.metrics
+    }
     /// <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -72,6 +78,10 @@ impl DescribeStorageSystemResourceMetricsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

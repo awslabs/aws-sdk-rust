@@ -54,6 +54,10 @@ impl AttributeNameAndValueBuilder {
         self.attribute_name = input;
         self
     }
+    /// <p>The attribute name of the typed link.</p>
+    pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_name
+    }
     /// <p>The value for the typed link.</p>
     pub fn value(mut self, input: crate::types::TypedAttributeValue) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl AttributeNameAndValueBuilder {
     ) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value for the typed link.</p>
+    pub fn get_value(&self) -> &::std::option::Option<crate::types::TypedAttributeValue> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`AttributeNameAndValue`](crate::types::AttributeNameAndValue).
     pub fn build(self) -> crate::types::AttributeNameAndValue {

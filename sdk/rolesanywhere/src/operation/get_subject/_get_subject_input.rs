@@ -39,6 +39,10 @@ impl GetSubjectInputBuilder {
         self.subject_id = input;
         self
     }
+    /// <p>The unique identifier of the subject. </p>
+    pub fn get_subject_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subject_id
+    }
     /// Consumes the builder and constructs a [`GetSubjectInput`](crate::operation::get_subject::GetSubjectInput).
     pub fn build(
         self,

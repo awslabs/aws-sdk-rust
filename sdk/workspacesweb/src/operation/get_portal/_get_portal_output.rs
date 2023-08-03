@@ -46,6 +46,10 @@ impl GetPortalOutputBuilder {
         self.portal = input;
         self
     }
+    /// <p>The web portal.</p>
+    pub fn get_portal(&self) -> &::std::option::Option<crate::types::Portal> {
+        &self.portal
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

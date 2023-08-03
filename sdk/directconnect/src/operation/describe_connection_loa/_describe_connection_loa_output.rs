@@ -48,6 +48,10 @@ impl DescribeConnectionLoaOutputBuilder {
         self.loa = input;
         self
     }
+    /// <p>The Letter of Authorization - Connecting Facility Assignment (LOA-CFA).</p>
+    pub fn get_loa(&self) -> &::std::option::Option<crate::types::Loa> {
+        &self.loa
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

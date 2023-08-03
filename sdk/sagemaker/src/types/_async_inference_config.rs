@@ -55,6 +55,12 @@ impl AsyncInferenceConfigBuilder {
         self.client_config = input;
         self
     }
+    /// <p>Configures the behavior of the client used by SageMaker to interact with the model container during asynchronous inference.</p>
+    pub fn get_client_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::AsyncInferenceClientConfig> {
+        &self.client_config
+    }
     /// <p>Specifies the configuration for asynchronous inference invocation outputs.</p>
     pub fn output_config(mut self, input: crate::types::AsyncInferenceOutputConfig) -> Self {
         self.output_config = ::std::option::Option::Some(input);
@@ -67,6 +73,12 @@ impl AsyncInferenceConfigBuilder {
     ) -> Self {
         self.output_config = input;
         self
+    }
+    /// <p>Specifies the configuration for asynchronous inference invocation outputs.</p>
+    pub fn get_output_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::AsyncInferenceOutputConfig> {
+        &self.output_config
     }
     /// Consumes the builder and constructs a [`AsyncInferenceConfig`](crate::types::AsyncInferenceConfig).
     pub fn build(self) -> crate::types::AsyncInferenceConfig {

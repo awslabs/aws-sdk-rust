@@ -96,6 +96,10 @@ impl ReactiveInsightBuilder {
         self.id = input;
         self
     }
+    /// <p> The ID of a reactive insight. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p> The name of a reactive insight. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl ReactiveInsightBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p> The name of a reactive insight. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The severity of the insight. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
     pub fn severity(mut self, input: crate::types::InsightSeverity) -> Self {
@@ -119,6 +127,10 @@ impl ReactiveInsightBuilder {
         self.severity = input;
         self
     }
+    /// <p>The severity of the insight. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
+    pub fn get_severity(&self) -> &::std::option::Option<crate::types::InsightSeverity> {
+        &self.severity
+    }
     /// <p> The status of a reactive insight. </p>
     pub fn status(mut self, input: crate::types::InsightStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -128,6 +140,10 @@ impl ReactiveInsightBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::InsightStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p> The status of a reactive insight. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::InsightStatus> {
+        &self.status
     }
     /// <p> A time ranged that specifies when the observed behavior in an insight started and ended. </p>
     pub fn insight_time_range(mut self, input: crate::types::InsightTimeRange) -> Self {
@@ -142,6 +158,10 @@ impl ReactiveInsightBuilder {
         self.insight_time_range = input;
         self
     }
+    /// <p> A time ranged that specifies when the observed behavior in an insight started and ended. </p>
+    pub fn get_insight_time_range(&self) -> &::std::option::Option<crate::types::InsightTimeRange> {
+        &self.insight_time_range
+    }
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     pub fn resource_collection(mut self, input: crate::types::ResourceCollection) -> Self {
         self.resource_collection = ::std::option::Option::Some(input);
@@ -154,6 +174,12 @@ impl ReactiveInsightBuilder {
     ) -> Self {
         self.resource_collection = input;
         self
+    }
+    /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    pub fn get_resource_collection(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceCollection> {
+        &self.resource_collection
     }
     /// <p> The ID of the Amazon Web Services System Manager OpsItem created for this insight. You must enable the creation of OpstItems insights before they are created for each insight. </p>
     pub fn ssm_ops_item_id(
@@ -171,6 +197,10 @@ impl ReactiveInsightBuilder {
         self.ssm_ops_item_id = input;
         self
     }
+    /// <p> The ID of the Amazon Web Services System Manager OpsItem created for this insight. You must enable the creation of OpstItems insights before they are created for each insight. </p>
+    pub fn get_ssm_ops_item_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ssm_ops_item_id
+    }
     /// <p>Describes the reactive insight.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -180,6 +210,10 @@ impl ReactiveInsightBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>Describes the reactive insight.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`ReactiveInsight`](crate::types::ReactiveInsight).
     pub fn build(self) -> crate::types::ReactiveInsight {

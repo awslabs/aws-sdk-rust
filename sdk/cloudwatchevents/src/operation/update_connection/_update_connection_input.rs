@@ -69,6 +69,10 @@ impl UpdateConnectionInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the connection to update.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A description for the connection.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -78,6 +82,10 @@ impl UpdateConnectionInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description for the connection.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The type of authorization to use for the connection.</p>
     pub fn authorization_type(mut self, input: crate::types::ConnectionAuthorizationType) -> Self {
@@ -91,6 +99,12 @@ impl UpdateConnectionInputBuilder {
     ) -> Self {
         self.authorization_type = input;
         self
+    }
+    /// <p>The type of authorization to use for the connection.</p>
+    pub fn get_authorization_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConnectionAuthorizationType> {
+        &self.authorization_type
     }
     /// <p>The authorization parameters to use for the connection.</p>
     pub fn auth_parameters(
@@ -107,6 +121,12 @@ impl UpdateConnectionInputBuilder {
     ) -> Self {
         self.auth_parameters = input;
         self
+    }
+    /// <p>The authorization parameters to use for the connection.</p>
+    pub fn get_auth_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateConnectionAuthRequestParameters> {
+        &self.auth_parameters
     }
     /// Consumes the builder and constructs a [`UpdateConnectionInput`](crate::operation::update_connection::UpdateConnectionInput).
     pub fn build(

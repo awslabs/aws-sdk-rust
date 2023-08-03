@@ -73,6 +73,10 @@ impl UpdateTableObjectsInputBuilder {
         self.catalog_id = input;
         self
     }
+    /// <p>The catalog containing the governed table to update. Defaults to the caller’s account ID.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// <p>The database containing the governed table to update.</p>
     pub fn database_name(
         mut self,
@@ -89,6 +93,10 @@ impl UpdateTableObjectsInputBuilder {
         self.database_name = input;
         self
     }
+    /// <p>The database containing the governed table to update.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>The governed table to update.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
@@ -98,6 +106,10 @@ impl UpdateTableObjectsInputBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
+    }
+    /// <p>The governed table to update.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
     }
     /// <p>The transaction at which to do the write.</p>
     pub fn transaction_id(
@@ -114,6 +126,10 @@ impl UpdateTableObjectsInputBuilder {
     ) -> Self {
         self.transaction_id = input;
         self
+    }
+    /// <p>The transaction at which to do the write.</p>
+    pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transaction_id
     }
     /// Appends an item to `write_operations`.
     ///
@@ -133,6 +149,12 @@ impl UpdateTableObjectsInputBuilder {
     ) -> Self {
         self.write_operations = input;
         self
+    }
+    /// <p>A list of <code>WriteOperation</code> objects that define an object to add to or delete from the manifest for a governed table.</p>
+    pub fn get_write_operations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WriteOperation>> {
+        &self.write_operations
     }
     /// Consumes the builder and constructs a [`UpdateTableObjectsInput`](crate::operation::update_table_objects::UpdateTableObjectsInput).
     pub fn build(

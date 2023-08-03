@@ -75,6 +75,10 @@ impl TotalOptionsBuilder {
         self.totals_visibility = input;
         self
     }
+    /// <p>The visibility configuration for the total cells.</p>
+    pub fn get_totals_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.totals_visibility
+    }
     /// <p>The placement (start, end) for the total cells.</p>
     pub fn placement(mut self, input: crate::types::TableTotalsPlacement) -> Self {
         self.placement = ::std::option::Option::Some(input);
@@ -87,6 +91,10 @@ impl TotalOptionsBuilder {
     ) -> Self {
         self.placement = input;
         self
+    }
+    /// <p>The placement (start, end) for the total cells.</p>
+    pub fn get_placement(&self) -> &::std::option::Option<crate::types::TableTotalsPlacement> {
+        &self.placement
     }
     /// <p>The scroll status (pinned, scrolled) for the total cells.</p>
     pub fn scroll_status(mut self, input: crate::types::TableTotalsScrollStatus) -> Self {
@@ -101,6 +109,12 @@ impl TotalOptionsBuilder {
         self.scroll_status = input;
         self
     }
+    /// <p>The scroll status (pinned, scrolled) for the total cells.</p>
+    pub fn get_scroll_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::TableTotalsScrollStatus> {
+        &self.scroll_status
+    }
     /// <p>The custom label string for the total cells.</p>
     pub fn custom_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_label = ::std::option::Option::Some(input.into());
@@ -110,6 +124,10 @@ impl TotalOptionsBuilder {
     pub fn set_custom_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_label = input;
         self
+    }
+    /// <p>The custom label string for the total cells.</p>
+    pub fn get_custom_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_label
     }
     /// <p>Cell styling options for the total cells.</p>
     pub fn total_cell_style(mut self, input: crate::types::TableCellStyle) -> Self {
@@ -123,6 +141,10 @@ impl TotalOptionsBuilder {
     ) -> Self {
         self.total_cell_style = input;
         self
+    }
+    /// <p>Cell styling options for the total cells.</p>
+    pub fn get_total_cell_style(&self) -> &::std::option::Option<crate::types::TableCellStyle> {
+        &self.total_cell_style
     }
     /// Consumes the builder and constructs a [`TotalOptions`](crate::types::TotalOptions).
     pub fn build(self) -> crate::types::TotalOptions {

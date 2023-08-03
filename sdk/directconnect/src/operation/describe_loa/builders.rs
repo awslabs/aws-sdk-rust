@@ -37,6 +37,10 @@ impl DescribeLoaFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeLoa as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_loa::builders::DescribeLoaInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,6 +129,10 @@ impl DescribeLoaFluentBuilder {
         self.inner = self.inner.set_connection_id(input);
         self
     }
+    /// <p>The ID of a connection, LAG, or interconnect.</p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connection_id()
+    }
     /// <p>The name of the service provider who establishes connectivity on your behalf. If you specify this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p>
     pub fn provider_name(
         mut self,
@@ -141,6 +149,10 @@ impl DescribeLoaFluentBuilder {
         self.inner = self.inner.set_provider_name(input);
         self
     }
+    /// <p>The name of the service provider who establishes connectivity on your behalf. If you specify this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p>
+    pub fn get_provider_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_provider_name()
+    }
     /// <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
     pub fn loa_content_type(mut self, input: crate::types::LoaContentType) -> Self {
         self.inner = self.inner.loa_content_type(input);
@@ -153,5 +165,9 @@ impl DescribeLoaFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_loa_content_type(input);
         self
+    }
+    /// <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
+    pub fn get_loa_content_type(&self) -> &::std::option::Option<crate::types::LoaContentType> {
+        self.inner.get_loa_content_type()
     }
 }

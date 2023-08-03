@@ -69,6 +69,10 @@ impl RemoveThingFromThingGroupInputBuilder {
         self.thing_group_name = input;
         self
     }
+    /// <p>The group name.</p>
+    pub fn get_thing_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_group_name
+    }
     /// <p>The group ARN.</p>
     pub fn thing_group_arn(
         mut self,
@@ -85,6 +89,10 @@ impl RemoveThingFromThingGroupInputBuilder {
         self.thing_group_arn = input;
         self
     }
+    /// <p>The group ARN.</p>
+    pub fn get_thing_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_group_arn
+    }
     /// <p>The name of the thing to remove from the group.</p>
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_name = ::std::option::Option::Some(input.into());
@@ -95,6 +103,10 @@ impl RemoveThingFromThingGroupInputBuilder {
         self.thing_name = input;
         self
     }
+    /// <p>The name of the thing to remove from the group.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_name
+    }
     /// <p>The ARN of the thing to remove from the group.</p>
     pub fn thing_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_arn = ::std::option::Option::Some(input.into());
@@ -104,6 +116,10 @@ impl RemoveThingFromThingGroupInputBuilder {
     pub fn set_thing_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_arn = input;
         self
+    }
+    /// <p>The ARN of the thing to remove from the group.</p>
+    pub fn get_thing_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_arn
     }
     /// Consumes the builder and constructs a [`RemoveThingFromThingGroupInput`](crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroupInput).
     pub fn build(

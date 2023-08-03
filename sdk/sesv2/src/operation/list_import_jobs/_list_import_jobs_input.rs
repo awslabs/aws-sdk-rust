@@ -61,6 +61,12 @@ impl ListImportJobsInputBuilder {
         self.import_destination_type = input;
         self
     }
+    /// <p>The destination of the import job, which can be used to list import jobs that have a certain <code>ImportDestinationType</code>.</p>
+    pub fn get_import_destination_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImportDestinationType> {
+        &self.import_destination_type
+    }
     /// <p>A string token indicating that there might be additional import jobs available to be listed. Copy this token to a subsequent call to <code>ListImportJobs</code> with the same parameters to retrieve the next page of import jobs.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -71,6 +77,10 @@ impl ListImportJobsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A string token indicating that there might be additional import jobs available to be listed. Copy this token to a subsequent call to <code>ListImportJobs</code> with the same parameters to retrieve the next page of import jobs.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>Maximum number of import jobs to return at once. Use this parameter to paginate results. If additional import jobs exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent requests to retrieve additional addresses.</p>
     pub fn page_size(mut self, input: i32) -> Self {
         self.page_size = ::std::option::Option::Some(input);
@@ -80,6 +90,10 @@ impl ListImportJobsInputBuilder {
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.page_size = input;
         self
+    }
+    /// <p>Maximum number of import jobs to return at once. Use this parameter to paginate results. If additional import jobs exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent requests to retrieve additional addresses.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        &self.page_size
     }
     /// Consumes the builder and constructs a [`ListImportJobsInput`](crate::operation::list_import_jobs::ListImportJobsInput).
     pub fn build(

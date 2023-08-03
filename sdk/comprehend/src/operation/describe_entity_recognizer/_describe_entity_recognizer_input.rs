@@ -47,6 +47,10 @@ impl DescribeEntityRecognizerInputBuilder {
         self.entity_recognizer_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
+    pub fn get_entity_recognizer_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_recognizer_arn
+    }
     /// Consumes the builder and constructs a [`DescribeEntityRecognizerInput`](crate::operation::describe_entity_recognizer::DescribeEntityRecognizerInput).
     pub fn build(
         self,

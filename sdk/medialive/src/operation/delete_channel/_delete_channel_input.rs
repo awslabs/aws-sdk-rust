@@ -40,6 +40,10 @@ impl DeleteChannelInputBuilder {
         self.channel_id = input;
         self
     }
+    /// Unique ID of the channel.
+    pub fn get_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_id
+    }
     /// Consumes the builder and constructs a [`DeleteChannelInput`](crate::operation::delete_channel::DeleteChannelInput).
     pub fn build(
         self,

@@ -54,6 +54,10 @@ impl DescribeModelCardInputBuilder {
         self.model_card_name = input;
         self
     }
+    /// <p>The name of the model card to describe.</p>
+    pub fn get_model_card_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_card_name
+    }
     /// <p>The version of the model card to describe. If a version is not provided, then the latest version of the model card is described.</p>
     pub fn model_card_version(mut self, input: i32) -> Self {
         self.model_card_version = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl DescribeModelCardInputBuilder {
     pub fn set_model_card_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.model_card_version = input;
         self
+    }
+    /// <p>The version of the model card to describe. If a version is not provided, then the latest version of the model card is described.</p>
+    pub fn get_model_card_version(&self) -> &::std::option::Option<i32> {
+        &self.model_card_version
     }
     /// Consumes the builder and constructs a [`DescribeModelCardInput`](crate::operation::describe_model_card::DescribeModelCardInput).
     pub fn build(

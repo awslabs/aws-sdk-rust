@@ -64,6 +64,10 @@ impl ApiCallDetailsBuilder {
         self.api = input;
         self
     }
+    /// <p>The name of the operation that was invoked most recently and produced the finding.</p>
+    pub fn get_api(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api
+    }
     /// <p>The URL of the Amazon Web Service that provides the operation, for example: s3.amazonaws.com.</p>
     pub fn api_service_name(
         mut self,
@@ -80,6 +84,10 @@ impl ApiCallDetailsBuilder {
         self.api_service_name = input;
         self
     }
+    /// <p>The URL of the Amazon Web Service that provides the operation, for example: s3.amazonaws.com.</p>
+    pub fn get_api_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_service_name
+    }
     /// <p>The first date and time, in UTC and extended ISO 8601 format, when any operation was invoked and produced the finding.</p>
     pub fn first_seen(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.first_seen = ::std::option::Option::Some(input);
@@ -93,6 +101,10 @@ impl ApiCallDetailsBuilder {
         self.first_seen = input;
         self
     }
+    /// <p>The first date and time, in UTC and extended ISO 8601 format, when any operation was invoked and produced the finding.</p>
+    pub fn get_first_seen(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.first_seen
+    }
     /// <p>The most recent date and time, in UTC and extended ISO 8601 format, when the specified operation (api) was invoked and produced the finding.</p>
     pub fn last_seen(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_seen = ::std::option::Option::Some(input);
@@ -105,6 +117,10 @@ impl ApiCallDetailsBuilder {
     ) -> Self {
         self.last_seen = input;
         self
+    }
+    /// <p>The most recent date and time, in UTC and extended ISO 8601 format, when the specified operation (api) was invoked and produced the finding.</p>
+    pub fn get_last_seen(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_seen
     }
     /// Consumes the builder and constructs a [`ApiCallDetails`](crate::types::ApiCallDetails).
     pub fn build(self) -> crate::types::ApiCallDetails {

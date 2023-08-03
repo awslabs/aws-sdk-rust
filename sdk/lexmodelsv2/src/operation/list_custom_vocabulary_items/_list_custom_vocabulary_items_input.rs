@@ -71,6 +71,10 @@ impl ListCustomVocabularyItemsInputBuilder {
         self.bot_id = input;
         self
     }
+    /// <p>The identifier of the version of the bot associated with this custom vocabulary.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
+    }
     /// <p>The bot version of the bot to the list custom vocabulary request.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl ListCustomVocabularyItemsInputBuilder {
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_version = input;
         self
+    }
+    /// <p>The bot version of the bot to the list custom vocabulary request.</p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_version
     }
     /// <p>The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see Supported languages (https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).</p>
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -91,6 +99,10 @@ impl ListCustomVocabularyItemsInputBuilder {
         self.locale_id = input;
         self
     }
+    /// <p>The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see Supported languages (https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).</p>
+    pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale_id
+    }
     /// <p>The maximum number of items returned by the list operation.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -101,6 +113,10 @@ impl ListCustomVocabularyItemsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of items returned by the list operation.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The nextToken identifier to the list custom vocabulary request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -110,6 +126,10 @@ impl ListCustomVocabularyItemsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The nextToken identifier to the list custom vocabulary request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListCustomVocabularyItemsInput`](crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsInput).
     pub fn build(

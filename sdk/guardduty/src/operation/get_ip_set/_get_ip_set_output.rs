@@ -86,6 +86,10 @@ impl GetIpSetOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The user-friendly name for the IPSet.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The format of the file that contains the IPSet.</p>
     pub fn format(mut self, input: crate::types::IpSetFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
@@ -95,6 +99,10 @@ impl GetIpSetOutputBuilder {
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::IpSetFormat>) -> Self {
         self.format = input;
         self
+    }
+    /// <p>The format of the file that contains the IPSet.</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::IpSetFormat> {
+        &self.format
     }
     /// <p>The URI of the file that contains the IPSet.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -106,6 +114,10 @@ impl GetIpSetOutputBuilder {
         self.location = input;
         self
     }
+    /// <p>The URI of the file that contains the IPSet.</p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
+    }
     /// <p>The status of IPSet file that was uploaded.</p>
     pub fn status(mut self, input: crate::types::IpSetStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -115,6 +127,10 @@ impl GetIpSetOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::IpSetStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of IPSet file that was uploaded.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::IpSetStatus> {
+        &self.status
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -140,6 +156,14 @@ impl GetIpSetOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags of the IPSet resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

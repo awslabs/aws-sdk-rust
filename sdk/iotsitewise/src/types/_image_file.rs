@@ -48,6 +48,10 @@ impl ImageFileBuilder {
         self.data = input;
         self
     }
+    /// <p>The image file contents, represented as a base64-encoded string. The file size must be less than 1 MB.</p>
+    pub fn get_data(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.data
+    }
     /// <p>The file type of the image.</p>
     pub fn r#type(mut self, input: crate::types::ImageFileType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ImageFileBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ImageFileType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The file type of the image.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ImageFileType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`ImageFile`](crate::types::ImageFile).
     pub fn build(self) -> crate::types::ImageFile {

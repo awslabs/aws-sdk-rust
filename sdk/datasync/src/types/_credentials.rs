@@ -55,6 +55,10 @@ impl CredentialsBuilder {
         self.username = input;
         self
     }
+    /// <p>Specifies the user name for your storage system's management interface.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
+    }
     /// <p>Specifies the password for your storage system's management interface.</p>
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl CredentialsBuilder {
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.password = input;
         self
+    }
+    /// <p>Specifies the password for your storage system's management interface.</p>
+    pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.password
     }
     /// Consumes the builder and constructs a [`Credentials`](crate::types::Credentials).
     pub fn build(self) -> crate::types::Credentials {

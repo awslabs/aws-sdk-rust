@@ -55,6 +55,10 @@ impl UpdateServerEngineAttributesInputBuilder {
         self.server_name = input;
         self
     }
+    /// <p>The name of the server to update. </p>
+    pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_name
+    }
     /// <p>The name of the engine attribute to update. </p>
     pub fn attribute_name(
         mut self,
@@ -71,6 +75,10 @@ impl UpdateServerEngineAttributesInputBuilder {
         self.attribute_name = input;
         self
     }
+    /// <p>The name of the engine attribute to update. </p>
+    pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_name
+    }
     /// <p>The value to set for the attribute. </p>
     pub fn attribute_value(
         mut self,
@@ -86,6 +94,10 @@ impl UpdateServerEngineAttributesInputBuilder {
     ) -> Self {
         self.attribute_value = input;
         self
+    }
+    /// <p>The value to set for the attribute. </p>
+    pub fn get_attribute_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_value
     }
     /// Consumes the builder and constructs a [`UpdateServerEngineAttributesInput`](crate::operation::update_server_engine_attributes::UpdateServerEngineAttributesInput).
     pub fn build(

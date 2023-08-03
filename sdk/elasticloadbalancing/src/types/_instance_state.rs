@@ -96,6 +96,10 @@ impl InstanceStateBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The ID of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The current state of the instance.</p>
     /// <p>Valid values: <code>InService</code> | <code>OutOfService</code> | <code>Unknown</code> </p>
     pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -108,6 +112,11 @@ impl InstanceStateBuilder {
         self.state = input;
         self
     }
+    /// <p>The current state of the instance.</p>
+    /// <p>Valid values: <code>InService</code> | <code>OutOfService</code> | <code>Unknown</code> </p>
+    pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state
+    }
     /// <p>Information about the cause of <code>OutOfService</code> instances. Specifically, whether the cause is Elastic Load Balancing or the instance.</p>
     /// <p>Valid values: <code>ELB</code> | <code>Instance</code> | <code>N/A</code> </p>
     pub fn reason_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -119,6 +128,11 @@ impl InstanceStateBuilder {
     pub fn set_reason_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason_code = input;
         self
+    }
+    /// <p>Information about the cause of <code>OutOfService</code> instances. Specifically, whether the cause is Elastic Load Balancing or the instance.</p>
+    /// <p>Valid values: <code>ELB</code> | <code>Instance</code> | <code>N/A</code> </p>
+    pub fn get_reason_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason_code
     }
     /// <p>A description of the instance state. This string can contain one or more of the following messages.</p>
     /// <ul>
@@ -157,6 +171,24 @@ impl InstanceStateBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the instance state. This string can contain one or more of the following messages.</p>
+    /// <ul>
+    /// <li> <p> <code>N/A</code> </p> </li>
+    /// <li> <p> <code>A transient error occurred. Please try again later.</code> </p> </li>
+    /// <li> <p> <code>Instance has failed at least the UnhealthyThreshold number of health checks consecutively.</code> </p> </li>
+    /// <li> <p> <code>Instance has not passed the configured HealthyThreshold number of health checks consecutively.</code> </p> </li>
+    /// <li> <p> <code>Instance registration is still in progress.</code> </p> </li>
+    /// <li> <p> <code>Instance is in the EC2 Availability Zone for which LoadBalancer is not configured to route traffic to.</code> </p> </li>
+    /// <li> <p> <code>Instance is not currently registered with the LoadBalancer.</code> </p> </li>
+    /// <li> <p> <code>Instance deregistration currently in progress.</code> </p> </li>
+    /// <li> <p> <code>Disable Availability Zone is currently in progress.</code> </p> </li>
+    /// <li> <p> <code>Instance is in pending state.</code> </p> </li>
+    /// <li> <p> <code>Instance is in stopped state.</code> </p> </li>
+    /// <li> <p> <code>Instance is in terminated state.</code> </p> </li>
+    /// </ul>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`InstanceState`](crate::types::InstanceState).
     pub fn build(self) -> crate::types::InstanceState {

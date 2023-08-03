@@ -36,6 +36,10 @@ impl PutChunkFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutChunk as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_chunk::builders::PutChunkInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl PutChunkFluentBuilder {
         self.inner = self.inner.set_backup_job_id(input);
         self
     }
+    /// Backup job Id for the in-progress backup.
+    pub fn get_backup_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_backup_job_id()
+    }
     /// Upload Id for the in-progress upload.
     pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.upload_id(input.into());
@@ -134,6 +142,10 @@ impl PutChunkFluentBuilder {
         self.inner = self.inner.set_upload_id(input);
         self
     }
+    /// Upload Id for the in-progress upload.
+    pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_upload_id()
+    }
     /// Describes this chunk's position relative to the other chunks
     pub fn chunk_index(mut self, input: i64) -> Self {
         self.inner = self.inner.chunk_index(input);
@@ -143,6 +155,10 @@ impl PutChunkFluentBuilder {
     pub fn set_chunk_index(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_chunk_index(input);
         self
+    }
+    /// Describes this chunk's position relative to the other chunks
+    pub fn get_chunk_index(&self) -> &::std::option::Option<i64> {
+        self.inner.get_chunk_index()
     }
     /// Data to be uploaded
     pub fn data(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
@@ -157,6 +173,10 @@ impl PutChunkFluentBuilder {
         self.inner = self.inner.set_data(input);
         self
     }
+    /// Data to be uploaded
+    pub fn get_data(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+        self.inner.get_data()
+    }
     /// Data length
     pub fn length(mut self, input: i64) -> Self {
         self.inner = self.inner.length(input);
@@ -167,6 +187,10 @@ impl PutChunkFluentBuilder {
         self.inner = self.inner.set_length(input);
         self
     }
+    /// Data length
+    pub fn get_length(&self) -> &::std::option::Option<i64> {
+        self.inner.get_length()
+    }
     /// Data checksum
     pub fn checksum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.checksum(input.into());
@@ -176,6 +200,10 @@ impl PutChunkFluentBuilder {
     pub fn set_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_checksum(input);
         self
+    }
+    /// Data checksum
+    pub fn get_checksum(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_checksum()
     }
     /// Checksum algorithm
     pub fn checksum_algorithm(mut self, input: crate::types::DataChecksumAlgorithm) -> Self {
@@ -189,5 +217,11 @@ impl PutChunkFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_checksum_algorithm(input);
         self
+    }
+    /// Checksum algorithm
+    pub fn get_checksum_algorithm(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataChecksumAlgorithm> {
+        self.inner.get_checksum_algorithm()
     }
 }

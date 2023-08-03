@@ -62,6 +62,10 @@ impl InputSourceRequestBuilder {
         self.password_param = input;
         self
     }
+    /// The key used to extract the password from EC2 Parameter store.
+    pub fn get_password_param(&self) -> &::std::option::Option<::std::string::String> {
+        &self.password_param
+    }
     /// This represents the customer's source URL where stream is pulled from.
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl InputSourceRequestBuilder {
         self.url = input;
         self
     }
+    /// This represents the customer's source URL where stream is pulled from.
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
+    }
     /// The username for the input source.
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl InputSourceRequestBuilder {
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
+    }
+    /// The username for the input source.
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
     }
     /// Consumes the builder and constructs a [`InputSourceRequest`](crate::types::InputSourceRequest).
     pub fn build(self) -> crate::types::InputSourceRequest {

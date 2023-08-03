@@ -93,6 +93,10 @@ impl SearchInputBuilder {
         self.resource = input;
         self
     }
+    /// <p>The name of the SageMaker resource to search for.</p>
+    pub fn get_resource(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource
+    }
     /// <p>A Boolean conditional statement. Resources must satisfy this condition to be included in search results. You must provide at least one subexpression, filter, or nested filter. The maximum number of recursive <code>SubExpressions</code>, <code>NestedFilters</code>, and <code>Filters</code> that can be included in a <code>SearchExpression</code> object is 50.</p>
     pub fn search_expression(mut self, input: crate::types::SearchExpression) -> Self {
         self.search_expression = ::std::option::Option::Some(input);
@@ -106,6 +110,10 @@ impl SearchInputBuilder {
         self.search_expression = input;
         self
     }
+    /// <p>A Boolean conditional statement. Resources must satisfy this condition to be included in search results. You must provide at least one subexpression, filter, or nested filter. The maximum number of recursive <code>SubExpressions</code>, <code>NestedFilters</code>, and <code>Filters</code> that can be included in a <code>SearchExpression</code> object is 50.</p>
+    pub fn get_search_expression(&self) -> &::std::option::Option<crate::types::SearchExpression> {
+        &self.search_expression
+    }
     /// <p>The name of the resource property used to sort the <code>SearchResults</code>. The default is <code>LastModifiedTime</code>.</p>
     pub fn sort_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sort_by = ::std::option::Option::Some(input.into());
@@ -115,6 +123,10 @@ impl SearchInputBuilder {
     pub fn set_sort_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sort_by = input;
         self
+    }
+    /// <p>The name of the resource property used to sort the <code>SearchResults</code>. The default is <code>LastModifiedTime</code>.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sort_by
     }
     /// <p>How <code>SearchResults</code> are ordered. Valid values are <code>Ascending</code> or <code>Descending</code>. The default is <code>Descending</code>.</p>
     pub fn sort_order(mut self, input: crate::types::SearchSortOrder) -> Self {
@@ -129,6 +141,10 @@ impl SearchInputBuilder {
         self.sort_order = input;
         self
     }
+    /// <p>How <code>SearchResults</code> are ordered. Valid values are <code>Ascending</code> or <code>Descending</code>. The default is <code>Descending</code>.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SearchSortOrder> {
+        &self.sort_order
+    }
     /// <p>If more than <code>MaxResults</code> resources match the specified <code>SearchExpression</code>, the response includes a <code>NextToken</code>. The <code>NextToken</code> can be passed to the next <code>SearchRequest</code> to continue retrieving results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -139,6 +155,10 @@ impl SearchInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If more than <code>MaxResults</code> resources match the specified <code>SearchExpression</code>, the response includes a <code>NextToken</code>. The <code>NextToken</code> can be passed to the next <code>SearchRequest</code> to continue retrieving results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -148,6 +168,10 @@ impl SearchInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p> A cross account filter option. When the value is <code>"CrossAccount"</code> the search results will only include resources made discoverable to you from other accounts. When the value is <code>"SameAccount"</code> or <code>null</code> the search results will only include resources from your account. Default is <code>null</code>. For more information on searching for resources made discoverable to your account, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store-cross-account-discoverability-use.html"> Search discoverable resources</a> in the SageMaker Developer Guide. The maximum number of <code>ResourceCatalog</code>s viewable is 1000. </p>
     pub fn cross_account_filter_option(
@@ -164,6 +188,12 @@ impl SearchInputBuilder {
     ) -> Self {
         self.cross_account_filter_option = input;
         self
+    }
+    /// <p> A cross account filter option. When the value is <code>"CrossAccount"</code> the search results will only include resources made discoverable to you from other accounts. When the value is <code>"SameAccount"</code> or <code>null</code> the search results will only include resources from your account. Default is <code>null</code>. For more information on searching for resources made discoverable to your account, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store-cross-account-discoverability-use.html"> Search discoverable resources</a> in the SageMaker Developer Guide. The maximum number of <code>ResourceCatalog</code>s viewable is 1000. </p>
+    pub fn get_cross_account_filter_option(
+        &self,
+    ) -> &::std::option::Option<crate::types::CrossAccountFilterOption> {
+        &self.cross_account_filter_option
     }
     /// Consumes the builder and constructs a [`SearchInput`](crate::operation::search::SearchInput).
     pub fn build(

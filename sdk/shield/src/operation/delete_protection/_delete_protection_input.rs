@@ -46,6 +46,10 @@ impl DeleteProtectionInputBuilder {
         self.protection_id = input;
         self
     }
+    /// <p>The unique identifier (ID) for the <code>Protection</code> object to be deleted.</p>
+    pub fn get_protection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.protection_id
+    }
     /// Consumes the builder and constructs a [`DeleteProtectionInput`](crate::operation::delete_protection::DeleteProtectionInput).
     pub fn build(
         self,

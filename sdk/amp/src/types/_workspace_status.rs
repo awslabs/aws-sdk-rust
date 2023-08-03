@@ -43,6 +43,10 @@ impl WorkspaceStatusBuilder {
         self.status_code = input;
         self
     }
+    /// Status code of this workspace.
+    pub fn get_status_code(&self) -> &::std::option::Option<crate::types::WorkspaceStatusCode> {
+        &self.status_code
+    }
     /// Consumes the builder and constructs a [`WorkspaceStatus`](crate::types::WorkspaceStatus).
     pub fn build(self) -> crate::types::WorkspaceStatus {
         crate::types::WorkspaceStatus {

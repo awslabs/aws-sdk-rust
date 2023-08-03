@@ -38,6 +38,13 @@ impl AssociateSkillWithUsersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateSkillWithUsers as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::associate_skill_with_users::builders::AssociateSkillWithUsersInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,5 +134,9 @@ impl AssociateSkillWithUsersFluentBuilder {
     pub fn set_skill_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_skill_id(input);
         self
+    }
+    /// <p>The private skill ID you want to make available to enrolled users.</p>
+    pub fn get_skill_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_skill_id()
     }
 }

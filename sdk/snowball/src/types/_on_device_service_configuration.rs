@@ -82,6 +82,12 @@ impl OnDeviceServiceConfigurationBuilder {
         self.nfs_on_device_service = input;
         self
     }
+    /// <p>Represents the NFS (Network File System) service on a Snow Family device.</p>
+    pub fn get_nfs_on_device_service(
+        &self,
+    ) -> &::std::option::Option<crate::types::NfsOnDeviceServiceConfiguration> {
+        &self.nfs_on_device_service
+    }
     /// <p>Represents the Storage Gateway service Tape Gateway type on a Snow Family device.</p>
     pub fn tgw_on_device_service(
         mut self,
@@ -97,6 +103,12 @@ impl OnDeviceServiceConfigurationBuilder {
     ) -> Self {
         self.tgw_on_device_service = input;
         self
+    }
+    /// <p>Represents the Storage Gateway service Tape Gateway type on a Snow Family device.</p>
+    pub fn get_tgw_on_device_service(
+        &self,
+    ) -> &::std::option::Option<crate::types::TgwOnDeviceServiceConfiguration> {
+        &self.tgw_on_device_service
     }
     /// <p>The configuration of EKS Anywhere on the Snow Family device.</p>
     pub fn eks_on_device_service(
@@ -114,6 +126,12 @@ impl OnDeviceServiceConfigurationBuilder {
         self.eks_on_device_service = input;
         self
     }
+    /// <p>The configuration of EKS Anywhere on the Snow Family device.</p>
+    pub fn get_eks_on_device_service(
+        &self,
+    ) -> &::std::option::Option<crate::types::EksOnDeviceServiceConfiguration> {
+        &self.eks_on_device_service
+    }
     /// <p>Configuration for Amazon S3 compatible storage on Snow family devices.</p>
     pub fn s3_on_device_service(
         mut self,
@@ -129,6 +147,12 @@ impl OnDeviceServiceConfigurationBuilder {
     ) -> Self {
         self.s3_on_device_service = input;
         self
+    }
+    /// <p>Configuration for Amazon S3 compatible storage on Snow family devices.</p>
+    pub fn get_s3_on_device_service(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3OnDeviceServiceConfiguration> {
+        &self.s3_on_device_service
     }
     /// Consumes the builder and constructs a [`OnDeviceServiceConfiguration`](crate::types::OnDeviceServiceConfiguration).
     pub fn build(self) -> crate::types::OnDeviceServiceConfiguration {

@@ -63,6 +63,10 @@ impl DescribeDeliveryStreamInputBuilder {
         self.delivery_stream_name = input;
         self
     }
+    /// <p>The name of the delivery stream.</p>
+    pub fn get_delivery_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delivery_stream_name
+    }
     /// <p>The limit on the number of destinations to return. You can have one destination per delivery stream.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl DescribeDeliveryStreamInputBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
+    }
+    /// <p>The limit on the number of destinations to return. You can have one destination per delivery stream.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// <p>The ID of the destination to start returning the destination information. Kinesis Data Firehose supports one destination per delivery stream.</p>
     pub fn exclusive_start_destination_id(
@@ -88,6 +96,12 @@ impl DescribeDeliveryStreamInputBuilder {
     ) -> Self {
         self.exclusive_start_destination_id = input;
         self
+    }
+    /// <p>The ID of the destination to start returning the destination information. Kinesis Data Firehose supports one destination per delivery stream.</p>
+    pub fn get_exclusive_start_destination_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.exclusive_start_destination_id
     }
     /// Consumes the builder and constructs a [`DescribeDeliveryStreamInput`](crate::operation::describe_delivery_stream::DescribeDeliveryStreamInput).
     pub fn build(

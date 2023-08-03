@@ -36,6 +36,12 @@ impl AssociateFleetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateFleet as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::associate_fleet::builders::AssociateFleetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl AssociateFleetFluentBuilder {
         self.inner = self.inner.set_fleet_name(input);
         self
     }
+    /// <p>The name of the fleet. </p>
+    pub fn get_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_fleet_name()
+    }
     /// <p>The name of the stack.</p>
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_name(input.into());
@@ -127,5 +137,9 @@ impl AssociateFleetFluentBuilder {
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_name(input);
         self
+    }
+    /// <p>The name of the stack.</p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stack_name()
     }
 }

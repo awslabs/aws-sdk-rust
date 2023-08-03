@@ -80,6 +80,10 @@ impl RelationalDatabaseBlueprintBuilder {
         self.blueprint_id = input;
         self
     }
+    /// <p>The ID for the database blueprint.</p>
+    pub fn get_blueprint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.blueprint_id
+    }
     /// <p>The database software of the database blueprint (for example, <code>MySQL</code>).</p>
     pub fn engine(mut self, input: crate::types::RelationalDatabaseEngine) -> Self {
         self.engine = ::std::option::Option::Some(input);
@@ -92,6 +96,10 @@ impl RelationalDatabaseBlueprintBuilder {
     ) -> Self {
         self.engine = input;
         self
+    }
+    /// <p>The database software of the database blueprint (for example, <code>MySQL</code>).</p>
+    pub fn get_engine(&self) -> &::std::option::Option<crate::types::RelationalDatabaseEngine> {
+        &self.engine
     }
     /// <p>The database engine version for the database blueprint (for example, <code>5.7.23</code>).</p>
     pub fn engine_version(
@@ -109,6 +117,10 @@ impl RelationalDatabaseBlueprintBuilder {
         self.engine_version = input;
         self
     }
+    /// <p>The database engine version for the database blueprint (for example, <code>5.7.23</code>).</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
+    }
     /// <p>The description of the database engine for the database blueprint.</p>
     pub fn engine_description(
         mut self,
@@ -124,6 +136,10 @@ impl RelationalDatabaseBlueprintBuilder {
     ) -> Self {
         self.engine_description = input;
         self
+    }
+    /// <p>The description of the database engine for the database blueprint.</p>
+    pub fn get_engine_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_description
     }
     /// <p>The description of the database engine version for the database blueprint.</p>
     pub fn engine_version_description(
@@ -141,6 +157,10 @@ impl RelationalDatabaseBlueprintBuilder {
         self.engine_version_description = input;
         self
     }
+    /// <p>The description of the database engine version for the database blueprint.</p>
+    pub fn get_engine_version_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version_description
+    }
     /// <p>A Boolean value indicating whether the engine version is the default for the database blueprint.</p>
     pub fn is_engine_default(mut self, input: bool) -> Self {
         self.is_engine_default = ::std::option::Option::Some(input);
@@ -150,6 +170,10 @@ impl RelationalDatabaseBlueprintBuilder {
     pub fn set_is_engine_default(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_engine_default = input;
         self
+    }
+    /// <p>A Boolean value indicating whether the engine version is the default for the database blueprint.</p>
+    pub fn get_is_engine_default(&self) -> &::std::option::Option<bool> {
+        &self.is_engine_default
     }
     /// Consumes the builder and constructs a [`RelationalDatabaseBlueprint`](crate::types::RelationalDatabaseBlueprint).
     pub fn build(self) -> crate::types::RelationalDatabaseBlueprint {

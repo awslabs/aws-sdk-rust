@@ -40,6 +40,10 @@ impl PercentileAggregationBuilder {
         self.percentile_value = input;
         self
     }
+    /// <p>The percentile value. This value can be any numeric constant 0–100. A percentile value of 50 computes the median value of the measure.</p>
+    pub fn get_percentile_value(&self) -> &::std::option::Option<f64> {
+        &self.percentile_value
+    }
     /// Consumes the builder and constructs a [`PercentileAggregation`](crate::types::PercentileAggregation).
     pub fn build(self) -> crate::types::PercentileAggregation {
         crate::types::PercentileAggregation {

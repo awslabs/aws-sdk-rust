@@ -57,6 +57,10 @@ impl DescribeClusterSnapshotsOutputBuilder {
         self.marker = input;
         self
     }
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// Appends an item to `snapshots`.
     ///
     /// To override the contents of this collection use [`set_snapshots`](Self::set_snapshots).
@@ -75,6 +79,10 @@ impl DescribeClusterSnapshotsOutputBuilder {
     ) -> Self {
         self.snapshots = input;
         self
+    }
+    /// <p>A list of <code>Snapshot</code> instances. </p>
+    pub fn get_snapshots(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Snapshot>> {
+        &self.snapshots
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

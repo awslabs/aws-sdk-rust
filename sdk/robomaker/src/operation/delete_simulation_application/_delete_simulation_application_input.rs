@@ -47,6 +47,10 @@ impl DeleteSimulationApplicationInputBuilder {
         self.application = input;
         self
     }
+    /// <p>The application information for the simulation application to delete.</p>
+    pub fn get_application(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application
+    }
     /// <p>The version of the simulation application to delete.</p>
     pub fn application_version(
         mut self,
@@ -62,6 +66,10 @@ impl DeleteSimulationApplicationInputBuilder {
     ) -> Self {
         self.application_version = input;
         self
+    }
+    /// <p>The version of the simulation application to delete.</p>
+    pub fn get_application_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_version
     }
     /// Consumes the builder and constructs a [`DeleteSimulationApplicationInput`](crate::operation::delete_simulation_application::DeleteSimulationApplicationInput).
     pub fn build(

@@ -55,6 +55,10 @@ impl ReshardingConfigurationBuilder {
         self.node_group_id = input;
         self
     }
+    /// <p>Either the ElastiCache for Redis supplied 4-digit id or a user supplied id for the node group these configuration values apply to.</p>
+    pub fn get_node_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_group_id
+    }
     /// Appends an item to `preferred_availability_zones`.
     ///
     /// To override the contents of this collection use [`set_preferred_availability_zones`](Self::set_preferred_availability_zones).
@@ -76,6 +80,12 @@ impl ReshardingConfigurationBuilder {
     ) -> Self {
         self.preferred_availability_zones = input;
         self
+    }
+    /// <p>A list of preferred availability zones for the nodes in this cluster.</p>
+    pub fn get_preferred_availability_zones(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.preferred_availability_zones
     }
     /// Consumes the builder and constructs a [`ReshardingConfiguration`](crate::types::ReshardingConfiguration).
     pub fn build(self) -> crate::types::ReshardingConfiguration {

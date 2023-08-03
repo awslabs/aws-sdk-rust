@@ -37,6 +37,12 @@ impl AssociateRouteTableFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateRouteTable as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::associate_route_table::builders::AssociateRouteTableInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl AssociateRouteTableFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>The ID of the route table.</p>
     pub fn route_table_id(
         mut self,
@@ -143,6 +153,10 @@ impl AssociateRouteTableFluentBuilder {
         self.inner = self.inner.set_route_table_id(input);
         self
     }
+    /// <p>The ID of the route table.</p>
+    pub fn get_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_route_table_id()
+    }
     /// <p>The ID of the subnet.</p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subnet_id(input.into());
@@ -153,6 +167,10 @@ impl AssociateRouteTableFluentBuilder {
         self.inner = self.inner.set_subnet_id(input);
         self
     }
+    /// <p>The ID of the subnet.</p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_subnet_id()
+    }
     /// <p>The ID of the internet gateway or virtual private gateway.</p>
     pub fn gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.gateway_id(input.into());
@@ -162,5 +180,9 @@ impl AssociateRouteTableFluentBuilder {
     pub fn set_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_gateway_id(input);
         self
+    }
+    /// <p>The ID of the internet gateway or virtual private gateway.</p>
+    pub fn get_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_gateway_id()
     }
 }

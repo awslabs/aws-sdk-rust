@@ -70,6 +70,12 @@ impl DescribeConformancePacksInputBuilder {
         self.conformance_pack_names = input;
         self
     }
+    /// <p>Comma-separated list of conformance pack names for which you want details. If you do not specify any names, Config returns details for all your conformance packs. </p>
+    pub fn get_conformance_pack_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.conformance_pack_names
+    }
     /// <p>The maximum number of conformance packs returned on each page.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -80,6 +86,10 @@ impl DescribeConformancePacksInputBuilder {
         self.limit = input;
         self
     }
+    /// <p>The maximum number of conformance packs returned on each page.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
+    }
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -89,6 +99,10 @@ impl DescribeConformancePacksInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeConformancePacksInput`](crate::operation::describe_conformance_packs::DescribeConformancePacksInput).
     pub fn build(

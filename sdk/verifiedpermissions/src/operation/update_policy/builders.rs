@@ -38,6 +38,10 @@ impl UpdatePolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdatePolicy as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_policy::builders::UpdatePolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl UpdatePolicyFluentBuilder {
         self.inner = self.inner.set_policy_store_id(input);
         self
     }
+    /// <p>Specifies the ID of the policy store that contains the policy that you want to update.</p>
+    pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_store_id()
+    }
     /// <p>Specifies the ID of the policy that you want to update. To find this value, you can use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicies.html">ListPolicies</a>.</p>
     pub fn policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_id(input.into());
@@ -135,6 +143,10 @@ impl UpdatePolicyFluentBuilder {
     pub fn set_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_id(input);
         self
+    }
+    /// <p>Specifies the ID of the policy that you want to update. To find this value, you can use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicies.html">ListPolicies</a>.</p>
+    pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_id()
     }
     /// <p>Specifies the updated policy content that you want to replace on the specified policy. The content must be valid Cedar policy language text.</p>
     /// <p>You can change only the following elements from the policy definition:</p>
@@ -172,5 +184,21 @@ impl UpdatePolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_definition(input);
         self
+    }
+    /// <p>Specifies the updated policy content that you want to replace on the specified policy. The content must be valid Cedar policy language text.</p>
+    /// <p>You can change only the following elements from the policy definition:</p>
+    /// <ul>
+    /// <li> <p>The <code>action</code> referenced by the policy.</p> </li>
+    /// <li> <p>Any conditional clauses, such as <code>when</code> or <code>unless</code> clauses.</p> </li>
+    /// </ul>
+    /// <p>You <b>can't</b> change the following elements:</p>
+    /// <ul>
+    /// <li> <p>Changing from <code>static</code> to <code>templateLinked</code>.</p> </li>
+    /// <li> <p>Changing the effect of the policy from <code>permit</code> or <code>forbid</code>.</p> </li>
+    /// <li> <p>The <code>principal</code> referenced by the policy.</p> </li>
+    /// <li> <p>The <code>resource</code> referenced by the policy.</p> </li>
+    /// </ul>
+    pub fn get_definition(&self) -> &::std::option::Option<crate::types::UpdatePolicyDefinition> {
+        self.inner.get_definition()
     }
 }

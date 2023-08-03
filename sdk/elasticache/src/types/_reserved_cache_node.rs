@@ -201,6 +201,10 @@ impl ReservedCacheNodeBuilder {
         self.reserved_cache_node_id = input;
         self
     }
+    /// <p>The unique identifier for the reservation.</p>
+    pub fn get_reserved_cache_node_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reserved_cache_node_id
+    }
     /// <p>The offering identifier.</p>
     pub fn reserved_cache_nodes_offering_id(
         mut self,
@@ -216,6 +220,12 @@ impl ReservedCacheNodeBuilder {
     ) -> Self {
         self.reserved_cache_nodes_offering_id = input;
         self
+    }
+    /// <p>The offering identifier.</p>
+    pub fn get_reserved_cache_nodes_offering_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.reserved_cache_nodes_offering_id
     }
     /// <p>The cache node type for the reserved cache nodes.</p>
     /// <p>The following node types are supported by ElastiCache. Generally speaking, the current generation types provide more memory and computational power at lower cost when compared to their equivalent previous generation counterparts.</p>
@@ -289,6 +299,38 @@ impl ReservedCacheNodeBuilder {
         self.cache_node_type = input;
         self
     }
+    /// <p>The cache node type for the reserved cache nodes.</p>
+    /// <p>The following node types are supported by ElastiCache. Generally speaking, the current generation types provide more memory and computational power at lower cost when compared to their equivalent previous generation counterparts.</p>
+    /// <ul>
+    /// <li> <p>General purpose:</p>
+    /// <ul>
+    /// <li> <p>Current generation: </p> <p> <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward): <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>, <code>cache.m6g.16xlarge</code> </p> <note>
+    /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a> </p>
+    /// </note> <p> <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code> </p> <p> <b>M4 node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>, <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code> </p> <p> <b>T4g node types</b> (available only for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16 onward): <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>, <code>cache.t4g.medium</code> </p> <p> <b>T3 node types:</b> <code>cache.t3.micro</code>, <code>cache.t3.small</code>, <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b> <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code> </p> </li>
+    /// <li> <p>Previous generation: (not recommended. Existing clusters are still supported but creation of new clusters is not supported for these types.)</p> <p> <b>T1 node types:</b> <code>cache.t1.micro</code> </p> <p> <b>M1 node types:</b> <code>cache.m1.small</code>, <code>cache.m1.medium</code>, <code>cache.m1.large</code>, <code>cache.m1.xlarge</code> </p> <p> <b>M3 node types:</b> <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>Compute optimized:</p>
+    /// <ul>
+    /// <li> <p>Previous generation: (not recommended. Existing clusters are still supported but creation of new clusters is not supported for these types.)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>Memory optimized:</p>
+    /// <ul>
+    /// <li> <p>Current generation: </p> <p> <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p> <p> <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>, <code>cache.r6g.16xlarge</code> </p> <note>
+    /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a> </p>
+    /// </note> <p> <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code> </p> <p> <b>R4 node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>, <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>, <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li>
+    /// <li> <p>Previous generation: (not recommended. Existing clusters are still supported but creation of new clusters is not supported for these types.)</p> <p> <b>M2 node types:</b> <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code> </p> <p> <b>R3 node types:</b> <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> </li>
+    /// </ul> </li>
+    /// </ul>
+    /// <p> <b>Additional node type info</b> </p>
+    /// <ul>
+    /// <li> <p>All current generation instance types are created in Amazon VPC by default.</p> </li>
+    /// <li> <p>Redis append-only files (AOF) are not supported for T1 or T2 instances.</p> </li>
+    /// <li> <p>Redis Multi-AZ with automatic failover is not supported on T1 instances.</p> </li>
+    /// <li> <p>Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p> </li>
+    /// </ul>
+    pub fn get_cache_node_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_node_type
+    }
     /// <p>The time the reservation started.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -302,6 +344,10 @@ impl ReservedCacheNodeBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The time the reservation started.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The duration of the reservation in seconds.</p>
     pub fn duration(mut self, input: i32) -> Self {
         self.duration = ::std::option::Option::Some(input);
@@ -311,6 +357,10 @@ impl ReservedCacheNodeBuilder {
     pub fn set_duration(mut self, input: ::std::option::Option<i32>) -> Self {
         self.duration = input;
         self
+    }
+    /// <p>The duration of the reservation in seconds.</p>
+    pub fn get_duration(&self) -> &::std::option::Option<i32> {
+        &self.duration
     }
     /// <p>The fixed price charged for this reserved cache node.</p>
     pub fn fixed_price(mut self, input: f64) -> Self {
@@ -322,6 +372,10 @@ impl ReservedCacheNodeBuilder {
         self.fixed_price = input;
         self
     }
+    /// <p>The fixed price charged for this reserved cache node.</p>
+    pub fn get_fixed_price(&self) -> &::std::option::Option<f64> {
+        &self.fixed_price
+    }
     /// <p>The hourly price charged for this reserved cache node.</p>
     pub fn usage_price(mut self, input: f64) -> Self {
         self.usage_price = ::std::option::Option::Some(input);
@@ -332,6 +386,10 @@ impl ReservedCacheNodeBuilder {
         self.usage_price = input;
         self
     }
+    /// <p>The hourly price charged for this reserved cache node.</p>
+    pub fn get_usage_price(&self) -> &::std::option::Option<f64> {
+        &self.usage_price
+    }
     /// <p>The number of cache nodes that have been reserved.</p>
     pub fn cache_node_count(mut self, input: i32) -> Self {
         self.cache_node_count = ::std::option::Option::Some(input);
@@ -341,6 +399,10 @@ impl ReservedCacheNodeBuilder {
     pub fn set_cache_node_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.cache_node_count = input;
         self
+    }
+    /// <p>The number of cache nodes that have been reserved.</p>
+    pub fn get_cache_node_count(&self) -> &::std::option::Option<i32> {
+        &self.cache_node_count
     }
     /// <p>The description of the reserved cache node.</p>
     pub fn product_description(
@@ -358,6 +420,10 @@ impl ReservedCacheNodeBuilder {
         self.product_description = input;
         self
     }
+    /// <p>The description of the reserved cache node.</p>
+    pub fn get_product_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product_description
+    }
     /// <p>The offering type of this reserved cache node.</p>
     pub fn offering_type(
         mut self,
@@ -374,6 +440,10 @@ impl ReservedCacheNodeBuilder {
         self.offering_type = input;
         self
     }
+    /// <p>The offering type of this reserved cache node.</p>
+    pub fn get_offering_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.offering_type
+    }
     /// <p>The state of the reserved cache node.</p>
     pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state = ::std::option::Option::Some(input.into());
@@ -383,6 +453,10 @@ impl ReservedCacheNodeBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the reserved cache node.</p>
+    pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state
     }
     /// Appends an item to `recurring_charges`.
     ///
@@ -403,6 +477,12 @@ impl ReservedCacheNodeBuilder {
         self.recurring_charges = input;
         self
     }
+    /// <p>The recurring price charged to run this reserved cache node.</p>
+    pub fn get_recurring_charges(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>> {
+        &self.recurring_charges
+    }
     /// <p>The Amazon Resource Name (ARN) of the reserved cache node.</p>
     /// <p>Example: <code>arn:aws:elasticache:us-east-1:123456789012:reserved-instance:ri-2017-03-27-08-33-25-582</code> </p>
     pub fn reservation_arn(
@@ -420,6 +500,11 @@ impl ReservedCacheNodeBuilder {
     ) -> Self {
         self.reservation_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the reserved cache node.</p>
+    /// <p>Example: <code>arn:aws:elasticache:us-east-1:123456789012:reserved-instance:ri-2017-03-27-08-33-25-582</code> </p>
+    pub fn get_reservation_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reservation_arn
     }
     /// Consumes the builder and constructs a [`ReservedCacheNode`](crate::types::ReservedCacheNode).
     pub fn build(self) -> crate::types::ReservedCacheNode {

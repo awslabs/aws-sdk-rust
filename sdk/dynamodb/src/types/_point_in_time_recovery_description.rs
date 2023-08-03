@@ -86,6 +86,16 @@ impl PointInTimeRecoveryDescriptionBuilder {
         self.point_in_time_recovery_status = input;
         self
     }
+    /// <p>The current state of point in time recovery:</p>
+    /// <ul>
+    /// <li> <p> <code>ENABLED</code> - Point in time recovery is enabled.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - Point in time recovery is disabled.</p> </li>
+    /// </ul>
+    pub fn get_point_in_time_recovery_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::PointInTimeRecoveryStatus> {
+        &self.point_in_time_recovery_status
+    }
     /// <p>Specifies the earliest point in time you can restore your table to. You can restore your table to any point in time during the last 35 days. </p>
     pub fn earliest_restorable_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.earliest_restorable_date_time = ::std::option::Option::Some(input);
@@ -99,6 +109,12 @@ impl PointInTimeRecoveryDescriptionBuilder {
         self.earliest_restorable_date_time = input;
         self
     }
+    /// <p>Specifies the earliest point in time you can restore your table to. You can restore your table to any point in time during the last 35 days. </p>
+    pub fn get_earliest_restorable_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.earliest_restorable_date_time
+    }
     /// <p> <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time. </p>
     pub fn latest_restorable_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.latest_restorable_date_time = ::std::option::Option::Some(input);
@@ -111,6 +127,12 @@ impl PointInTimeRecoveryDescriptionBuilder {
     ) -> Self {
         self.latest_restorable_date_time = input;
         self
+    }
+    /// <p> <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time. </p>
+    pub fn get_latest_restorable_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.latest_restorable_date_time
     }
     /// Consumes the builder and constructs a [`PointInTimeRecoveryDescription`](crate::types::PointInTimeRecoveryDescription).
     pub fn build(self) -> crate::types::PointInTimeRecoveryDescription {

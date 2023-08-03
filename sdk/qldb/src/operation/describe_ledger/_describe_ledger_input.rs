@@ -39,6 +39,10 @@ impl DescribeLedgerInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the ledger that you want to describe.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DescribeLedgerInput`](crate::operation::describe_ledger::DescribeLedgerInput).
     pub fn build(
         self,

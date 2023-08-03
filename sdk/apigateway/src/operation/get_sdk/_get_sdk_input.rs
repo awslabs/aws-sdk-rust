@@ -72,6 +72,10 @@ impl GetSdkInputBuilder {
         self.rest_api_id = input;
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rest_api_id
+    }
     /// <p>The name of the Stage that the SDK will use.</p>
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_name = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl GetSdkInputBuilder {
         self.stage_name = input;
         self
     }
+    /// <p>The name of the Stage that the SDK will use.</p>
+    pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stage_name
+    }
     /// <p>The language for the generated SDK. Currently <code>java</code>, <code>javascript</code>, <code>android</code>, <code>objectivec</code> (for iOS), <code>swift</code> (for iOS), and <code>ruby</code> are supported.</p>
     pub fn sdk_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sdk_type = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl GetSdkInputBuilder {
     pub fn set_sdk_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sdk_type = input;
         self
+    }
+    /// <p>The language for the generated SDK. Currently <code>java</code>, <code>javascript</code>, <code>android</code>, <code>objectivec</code> (for iOS), <code>swift</code> (for iOS), and <code>ruby</code> are supported.</p>
+    pub fn get_sdk_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sdk_type
     }
     /// Adds a key-value pair to `parameters`.
     ///
@@ -116,6 +128,14 @@ impl GetSdkInputBuilder {
     ) -> Self {
         self.parameters = input;
         self
+    }
+    /// <p>A string-to-string key-value map of query parameters <code>sdkType</code>-dependent properties of the SDK. For <code>sdkType</code> of <code>objectivec</code> or <code>swift</code>, a parameter named <code>classPrefix</code> is required. For <code>sdkType</code> of <code>android</code>, parameters named <code>groupId</code>, <code>artifactId</code>, <code>artifactVersion</code>, and <code>invokerPackage</code> are required. For <code>sdkType</code> of <code>java</code>, parameters named <code>serviceName</code> and <code>javaPackageName</code> are required. </p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.parameters
     }
     /// Consumes the builder and constructs a [`GetSdkInput`](crate::operation::get_sdk::GetSdkInput).
     pub fn build(

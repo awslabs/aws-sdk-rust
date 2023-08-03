@@ -94,6 +94,10 @@ impl VpnGatewayBuilder {
         self.availability_zone = input;
         self
     }
+    /// <p>The Availability Zone where the virtual private gateway was created, if applicable. This field may be empty or not returned.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p>The current state of the virtual private gateway.</p>
     pub fn state(mut self, input: crate::types::VpnState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -104,6 +108,10 @@ impl VpnGatewayBuilder {
         self.state = input;
         self
     }
+    /// <p>The current state of the virtual private gateway.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::VpnState> {
+        &self.state
+    }
     /// <p>The type of VPN connection the virtual private gateway supports.</p>
     pub fn r#type(mut self, input: crate::types::GatewayType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -113,6 +121,10 @@ impl VpnGatewayBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::GatewayType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of VPN connection the virtual private gateway supports.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::GatewayType> {
+        &self.r#type
     }
     /// Appends an item to `vpc_attachments`.
     ///
@@ -133,6 +145,12 @@ impl VpnGatewayBuilder {
         self.vpc_attachments = input;
         self
     }
+    /// <p>Any VPCs attached to the virtual private gateway.</p>
+    pub fn get_vpc_attachments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcAttachment>> {
+        &self.vpc_attachments
+    }
     /// <p>The ID of the virtual private gateway.</p>
     pub fn vpn_gateway_id(
         mut self,
@@ -149,6 +167,10 @@ impl VpnGatewayBuilder {
         self.vpn_gateway_id = input;
         self
     }
+    /// <p>The ID of the virtual private gateway.</p>
+    pub fn get_vpn_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpn_gateway_id
+    }
     /// <p>The private Autonomous System Number (ASN) for the Amazon side of a BGP session.</p>
     pub fn amazon_side_asn(mut self, input: i64) -> Self {
         self.amazon_side_asn = ::std::option::Option::Some(input);
@@ -158,6 +180,10 @@ impl VpnGatewayBuilder {
     pub fn set_amazon_side_asn(mut self, input: ::std::option::Option<i64>) -> Self {
         self.amazon_side_asn = input;
         self
+    }
+    /// <p>The private Autonomous System Number (ASN) for the Amazon side of a BGP session.</p>
+    pub fn get_amazon_side_asn(&self) -> &::std::option::Option<i64> {
+        &self.amazon_side_asn
     }
     /// Appends an item to `tags`.
     ///
@@ -177,6 +203,10 @@ impl VpnGatewayBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Any tags assigned to the virtual private gateway.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`VpnGateway`](crate::types::VpnGateway).
     pub fn build(self) -> crate::types::VpnGateway {

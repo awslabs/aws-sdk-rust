@@ -66,6 +66,12 @@ impl ProductInformationFilterBuilder {
         self.product_information_filter_name = input;
         self
     }
+    /// <p>Filter name.</p>
+    pub fn get_product_information_filter_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.product_information_filter_name
+    }
     /// Appends an item to `product_information_filter_value`.
     ///
     /// To override the contents of this collection use [`set_product_information_filter_value`](Self::set_product_information_filter_value).
@@ -88,6 +94,12 @@ impl ProductInformationFilterBuilder {
         self.product_information_filter_value = input;
         self
     }
+    /// <p>Filter value.</p>
+    pub fn get_product_information_filter_value(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.product_information_filter_value
+    }
     /// <p>Logical operator.</p>
     pub fn product_information_filter_comparator(
         mut self,
@@ -103,6 +115,12 @@ impl ProductInformationFilterBuilder {
     ) -> Self {
         self.product_information_filter_comparator = input;
         self
+    }
+    /// <p>Logical operator.</p>
+    pub fn get_product_information_filter_comparator(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.product_information_filter_comparator
     }
     /// Consumes the builder and constructs a [`ProductInformationFilter`](crate::types::ProductInformationFilter).
     pub fn build(self) -> crate::types::ProductInformationFilter {

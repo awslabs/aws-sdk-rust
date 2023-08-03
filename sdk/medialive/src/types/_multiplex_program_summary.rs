@@ -48,6 +48,10 @@ impl MultiplexProgramSummaryBuilder {
         self.channel_id = input;
         self
     }
+    /// The MediaLive Channel associated with the program.
+    pub fn get_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_id
+    }
     /// The name of the multiplex program.
     pub fn program_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.program_name = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl MultiplexProgramSummaryBuilder {
     pub fn set_program_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.program_name = input;
         self
+    }
+    /// The name of the multiplex program.
+    pub fn get_program_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.program_name
     }
     /// Consumes the builder and constructs a [`MultiplexProgramSummary`](crate::types::MultiplexProgramSummary).
     pub fn build(self) -> crate::types::MultiplexProgramSummary {

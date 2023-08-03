@@ -54,6 +54,10 @@ impl CascadingControlSourceBuilder {
         self.source_sheet_control_id = input;
         self
     }
+    /// <p>The source sheet control ID of a <code>CascadingControlSource</code>.</p>
+    pub fn get_source_sheet_control_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_sheet_control_id
+    }
     /// <p>The column identifier that determines which column to look up for the source sheet control.</p>
     pub fn column_to_match(mut self, input: crate::types::ColumnIdentifier) -> Self {
         self.column_to_match = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl CascadingControlSourceBuilder {
     ) -> Self {
         self.column_to_match = input;
         self
+    }
+    /// <p>The column identifier that determines which column to look up for the source sheet control.</p>
+    pub fn get_column_to_match(&self) -> &::std::option::Option<crate::types::ColumnIdentifier> {
+        &self.column_to_match
     }
     /// Consumes the builder and constructs a [`CascadingControlSource`](crate::types::CascadingControlSource).
     pub fn build(self) -> crate::types::CascadingControlSource {

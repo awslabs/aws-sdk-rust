@@ -79,6 +79,10 @@ impl PolicyGrantingServiceAccessBuilder {
         self.policy_name = input;
         self
     }
+    /// <p>The policy name.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_name
+    }
     /// <p>The policy type. For more information about these policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed policies and inline policies</a> in the <i>IAM User Guide</i>.</p>
     pub fn policy_type(mut self, input: crate::types::PolicyType) -> Self {
         self.policy_type = ::std::option::Option::Some(input);
@@ -92,6 +96,10 @@ impl PolicyGrantingServiceAccessBuilder {
         self.policy_type = input;
         self
     }
+    /// <p>The policy type. For more information about these policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed policies and inline policies</a> in the <i>IAM User Guide</i>.</p>
+    pub fn get_policy_type(&self) -> &::std::option::Option<crate::types::PolicyType> {
+        &self.policy_type
+    }
     /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
     /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. </p>
     pub fn policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -103,6 +111,11 @@ impl PolicyGrantingServiceAccessBuilder {
     pub fn set_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
+    /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. </p>
+    pub fn get_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_arn
     }
     /// <p>The type of entity (user or role) that used the policy to access the service to which the inline policy is attached.</p>
     /// <p>This field is null for managed policies. For more information about these policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed policies and inline policies</a> in the <i>IAM User Guide</i>.</p>
@@ -119,6 +132,11 @@ impl PolicyGrantingServiceAccessBuilder {
         self.entity_type = input;
         self
     }
+    /// <p>The type of entity (user or role) that used the policy to access the service to which the inline policy is attached.</p>
+    /// <p>This field is null for managed policies. For more information about these policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed policies and inline policies</a> in the <i>IAM User Guide</i>.</p>
+    pub fn get_entity_type(&self) -> &::std::option::Option<crate::types::PolicyOwnerEntityType> {
+        &self.entity_type
+    }
     /// <p>The name of the entity (user or role) to which the inline policy is attached.</p>
     /// <p>This field is null for managed policies. For more information about these policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed policies and inline policies</a> in the <i>IAM User Guide</i>.</p>
     pub fn entity_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -130,6 +148,11 @@ impl PolicyGrantingServiceAccessBuilder {
     pub fn set_entity_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entity_name = input;
         self
+    }
+    /// <p>The name of the entity (user or role) to which the inline policy is attached.</p>
+    /// <p>This field is null for managed policies. For more information about these policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed policies and inline policies</a> in the <i>IAM User Guide</i>.</p>
+    pub fn get_entity_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_name
     }
     /// Consumes the builder and constructs a [`PolicyGrantingServiceAccess`](crate::types::PolicyGrantingServiceAccess).
     pub fn build(self) -> crate::types::PolicyGrantingServiceAccess {

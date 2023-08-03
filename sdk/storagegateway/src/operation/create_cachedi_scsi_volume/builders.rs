@@ -41,6 +41,13 @@ impl CreateCachediSCSIVolumeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateCachediSCSIVolume as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_cachedi_scsi_volume::builders::CreateCachediScsiVolumeInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +138,10 @@ impl CreateCachediSCSIVolumeFluentBuilder {
         self.inner = self.inner.set_gateway_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_gateway_arn()
+    }
     /// <p>The size of the volume in bytes.</p>
     pub fn volume_size_in_bytes(mut self, input: i64) -> Self {
         self.inner = self.inner.volume_size_in_bytes(input);
@@ -141,6 +152,10 @@ impl CreateCachediSCSIVolumeFluentBuilder {
         self.inner = self.inner.set_volume_size_in_bytes(input);
         self
     }
+    /// <p>The size of the volume in bytes.</p>
+    pub fn get_volume_size_in_bytes(&self) -> &::std::option::Option<i64> {
+        self.inner.get_volume_size_in_bytes()
+    }
     /// <p>The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new cached volume. Specify this field if you want to create the iSCSI storage volume from a snapshot; otherwise, do not include this field. To list snapshots for your account use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p>
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_id(input.into());
@@ -150,6 +165,10 @@ impl CreateCachediSCSIVolumeFluentBuilder {
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_id(input);
         self
+    }
+    /// <p>The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new cached volume. Specify this field if you want to create the iSCSI storage volume from a snapshot; otherwise, do not include this field. To list snapshots for your account use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p>
+    pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_snapshot_id()
     }
     /// <p>The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>. The target name must be unique across all volumes on a gateway.</p>
     /// <p>If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as the new target name.</p>
@@ -162,6 +181,11 @@ impl CreateCachediSCSIVolumeFluentBuilder {
     pub fn set_target_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_name(input);
         self
+    }
+    /// <p>The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>. The target name must be unique across all volumes on a gateway.</p>
+    /// <p>If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as the new target name.</p>
+    pub fn get_target_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_name()
     }
     /// <p>The ARN for an existing volume. Specifying this ARN makes the new volume into an exact copy of the specified existing volume's latest recovery point. The <code>VolumeSizeInBytes</code> value for this new volume must be equal to or larger than the size of the existing volume, in bytes.</p>
     pub fn source_volume_arn(
@@ -178,6 +202,10 @@ impl CreateCachediSCSIVolumeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_source_volume_arn(input);
         self
+    }
+    /// <p>The ARN for an existing volume. Specifying this ARN makes the new volume into an exact copy of the specified existing volume's latest recovery point. The <code>VolumeSizeInBytes</code> value for this new volume must be equal to or larger than the size of the existing volume, in bytes.</p>
+    pub fn get_source_volume_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_volume_arn()
     }
     /// <p>The network interface of the gateway on which to expose the iSCSI target. Only IPv4 addresses are accepted. Use <code>DescribeGatewayInformation</code> to get a list of the network interfaces available on a gateway.</p>
     /// <p>Valid Values: A valid IP address.</p>
@@ -197,6 +225,11 @@ impl CreateCachediSCSIVolumeFluentBuilder {
         self.inner = self.inner.set_network_interface_id(input);
         self
     }
+    /// <p>The network interface of the gateway on which to expose the iSCSI target. Only IPv4 addresses are accepted. Use <code>DescribeGatewayInformation</code> to get a list of the network interfaces available on a gateway.</p>
+    /// <p>Valid Values: A valid IP address.</p>
+    pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_network_interface_id()
+    }
     /// <p>A unique identifier that you use to retry a request. If you retry a request, use the same <code>ClientToken</code> you specified in the initial request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -206,6 +239,10 @@ impl CreateCachediSCSIVolumeFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A unique identifier that you use to retry a request. If you retry a request, use the same <code>ClientToken</code> you specified in the initial request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
@@ -219,6 +256,11 @@ impl CreateCachediSCSIVolumeFluentBuilder {
         self.inner = self.inner.set_kms_encrypted(input);
         self
     }
+    /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
+    /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    pub fn get_kms_encrypted(&self) -> &::std::option::Option<bool> {
+        self.inner.get_kms_encrypted()
+    }
     /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
     pub fn kms_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key(input.into());
@@ -228,6 +270,10 @@ impl CreateCachediSCSIVolumeFluentBuilder {
     pub fn set_kms_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
+    pub fn get_kms_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key()
     }
     /// Appends an item to `Tags`.
     ///
@@ -249,5 +295,11 @@ impl CreateCachediSCSIVolumeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of up to 50 tags that you can assign to a cached volume. Each tag is a key-value pair.</p> <note>
+    /// <p>Valid characters for key and value are letters, spaces, and numbers that you can represent in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256 characters.</p>
+    /// </note>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

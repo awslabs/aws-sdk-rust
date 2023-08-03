@@ -36,6 +36,10 @@ impl CreateReplicationConfigurationTemplateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateReplicationConfigurationTemplate as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_replication_configuration_template::builders::CreateReplicationConfigurationTemplateInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl CreateReplicationConfigurationTemplateFluentBuilder {
         self.inner = self.inner.set_staging_area_subnet_id(input);
         self
     }
+    /// <p>Request to configure the Staging Area subnet ID during Replication Settings template creation.</p>
+    pub fn get_staging_area_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_staging_area_subnet_id()
+    }
     /// <p>Request to associate the default Application Migration Service Security group with the Replication Settings template.</p>
     pub fn associate_default_security_group(mut self, input: bool) -> Self {
         self.inner = self.inner.associate_default_security_group(input);
@@ -118,6 +126,10 @@ impl CreateReplicationConfigurationTemplateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_associate_default_security_group(input);
         self
+    }
+    /// <p>Request to associate the default Application Migration Service Security group with the Replication Settings template.</p>
+    pub fn get_associate_default_security_group(&self) -> &::std::option::Option<bool> {
+        self.inner.get_associate_default_security_group()
     }
     /// Appends an item to `replicationServersSecurityGroupsIDs`.
     ///
@@ -143,6 +155,12 @@ impl CreateReplicationConfigurationTemplateFluentBuilder {
             .set_replication_servers_security_groups_i_ds(input);
         self
     }
+    /// <p>Request to configure the Replication Server Security group ID during Replication Settings template creation.</p>
+    pub fn get_replication_servers_security_groups_i_ds(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_replication_servers_security_groups_i_ds()
+    }
     /// <p>Request to configure the Replication Server instance type during Replication Settings template creation.</p>
     pub fn replication_server_instance_type(
         mut self,
@@ -159,6 +177,12 @@ impl CreateReplicationConfigurationTemplateFluentBuilder {
         self.inner = self.inner.set_replication_server_instance_type(input);
         self
     }
+    /// <p>Request to configure the Replication Server instance type during Replication Settings template creation.</p>
+    pub fn get_replication_server_instance_type(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_replication_server_instance_type()
+    }
     /// <p>Request to use Dedicated Replication Servers during Replication Settings template creation.</p>
     pub fn use_dedicated_replication_server(mut self, input: bool) -> Self {
         self.inner = self.inner.use_dedicated_replication_server(input);
@@ -171,6 +195,10 @@ impl CreateReplicationConfigurationTemplateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_use_dedicated_replication_server(input);
         self
+    }
+    /// <p>Request to use Dedicated Replication Servers during Replication Settings template creation.</p>
+    pub fn get_use_dedicated_replication_server(&self) -> &::std::option::Option<bool> {
+        self.inner.get_use_dedicated_replication_server()
     }
     /// <p>Request to configure the default large staging disk EBS volume type during Replication Settings template creation.</p>
     pub fn default_large_staging_disk_type(
@@ -190,6 +218,13 @@ impl CreateReplicationConfigurationTemplateFluentBuilder {
         self.inner = self.inner.set_default_large_staging_disk_type(input);
         self
     }
+    /// <p>Request to configure the default large staging disk EBS volume type during Replication Settings template creation.</p>
+    pub fn get_default_large_staging_disk_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReplicationConfigurationDefaultLargeStagingDiskType>
+    {
+        self.inner.get_default_large_staging_disk_type()
+    }
     /// <p>Request to configure EBS encryption during Replication Settings template creation.</p>
     pub fn ebs_encryption(
         mut self,
@@ -205,6 +240,12 @@ impl CreateReplicationConfigurationTemplateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ebs_encryption(input);
         self
+    }
+    /// <p>Request to configure EBS encryption during Replication Settings template creation.</p>
+    pub fn get_ebs_encryption(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReplicationConfigurationEbsEncryption> {
+        self.inner.get_ebs_encryption()
     }
     /// <p>Request to configure an EBS encryption key during Replication Settings template creation.</p>
     pub fn ebs_encryption_key_arn(
@@ -222,6 +263,10 @@ impl CreateReplicationConfigurationTemplateFluentBuilder {
         self.inner = self.inner.set_ebs_encryption_key_arn(input);
         self
     }
+    /// <p>Request to configure an EBS encryption key during Replication Settings template creation.</p>
+    pub fn get_ebs_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ebs_encryption_key_arn()
+    }
     /// <p>Request to configure bandwidth throttling during Replication Settings template creation.</p>
     pub fn bandwidth_throttling(mut self, input: i64) -> Self {
         self.inner = self.inner.bandwidth_throttling(input);
@@ -231,6 +276,10 @@ impl CreateReplicationConfigurationTemplateFluentBuilder {
     pub fn set_bandwidth_throttling(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_bandwidth_throttling(input);
         self
+    }
+    /// <p>Request to configure bandwidth throttling during Replication Settings template creation.</p>
+    pub fn get_bandwidth_throttling(&self) -> &::std::option::Option<i64> {
+        self.inner.get_bandwidth_throttling()
     }
     /// <p>Request to configure data plane routing during Replication Settings template creation.</p>
     pub fn data_plane_routing(
@@ -248,6 +297,12 @@ impl CreateReplicationConfigurationTemplateFluentBuilder {
         self.inner = self.inner.set_data_plane_routing(input);
         self
     }
+    /// <p>Request to configure data plane routing during Replication Settings template creation.</p>
+    pub fn get_data_plane_routing(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReplicationConfigurationDataPlaneRouting> {
+        self.inner.get_data_plane_routing()
+    }
     /// <p>Request to create Public IP during Replication Settings template creation.</p>
     pub fn create_public_ip(mut self, input: bool) -> Self {
         self.inner = self.inner.create_public_ip(input);
@@ -257,6 +312,10 @@ impl CreateReplicationConfigurationTemplateFluentBuilder {
     pub fn set_create_public_ip(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_create_public_ip(input);
         self
+    }
+    /// <p>Request to create Public IP during Replication Settings template creation.</p>
+    pub fn get_create_public_ip(&self) -> &::std::option::Option<bool> {
+        self.inner.get_create_public_ip()
     }
     /// Adds a key-value pair to `stagingAreaTags`.
     ///
@@ -281,6 +340,14 @@ impl CreateReplicationConfigurationTemplateFluentBuilder {
         self.inner = self.inner.set_staging_area_tags(input);
         self
     }
+    /// <p>Request to configure Staging Area tags during Replication Settings template creation.</p>
+    pub fn get_staging_area_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_staging_area_tags()
+    }
     /// <p>Request to use Fips Endpoint during Replication Settings template creation.</p>
     pub fn use_fips_endpoint(mut self, input: bool) -> Self {
         self.inner = self.inner.use_fips_endpoint(input);
@@ -290,6 +357,10 @@ impl CreateReplicationConfigurationTemplateFluentBuilder {
     pub fn set_use_fips_endpoint(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_use_fips_endpoint(input);
         self
+    }
+    /// <p>Request to use Fips Endpoint during Replication Settings template creation.</p>
+    pub fn get_use_fips_endpoint(&self) -> &::std::option::Option<bool> {
+        self.inner.get_use_fips_endpoint()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -313,5 +384,13 @@ impl CreateReplicationConfigurationTemplateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Request to configure tags during Replication Settings template creation.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

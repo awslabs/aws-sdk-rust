@@ -65,6 +65,10 @@ impl AllocatePublicVirtualInterfaceInputBuilder {
         self.connection_id = input;
         self
     }
+    /// <p>The ID of the connection on which the public virtual interface is provisioned.</p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_id
+    }
     /// <p>The ID of the Amazon Web Services account that owns the public virtual interface.</p>
     pub fn owner_account(
         mut self,
@@ -81,6 +85,10 @@ impl AllocatePublicVirtualInterfaceInputBuilder {
         self.owner_account = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services account that owns the public virtual interface.</p>
+    pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_account
+    }
     /// <p>Information about the public virtual interface.</p>
     pub fn new_public_virtual_interface_allocation(
         mut self,
@@ -96,6 +104,12 @@ impl AllocatePublicVirtualInterfaceInputBuilder {
     ) -> Self {
         self.new_public_virtual_interface_allocation = input;
         self
+    }
+    /// <p>Information about the public virtual interface.</p>
+    pub fn get_new_public_virtual_interface_allocation(
+        &self,
+    ) -> &::std::option::Option<crate::types::NewPublicVirtualInterfaceAllocation> {
+        &self.new_public_virtual_interface_allocation
     }
     /// Consumes the builder and constructs a [`AllocatePublicVirtualInterfaceInput`](crate::operation::allocate_public_virtual_interface::AllocatePublicVirtualInterfaceInput).
     pub fn build(

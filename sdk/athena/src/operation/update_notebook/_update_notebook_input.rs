@@ -75,6 +75,10 @@ impl UpdateNotebookInputBuilder {
         self.notebook_id = input;
         self
     }
+    /// <p>The ID of the notebook to update.</p>
+    pub fn get_notebook_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.notebook_id
+    }
     /// <p>The updated content for the notebook.</p>
     pub fn payload(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.payload = ::std::option::Option::Some(input.into());
@@ -84,6 +88,10 @@ impl UpdateNotebookInputBuilder {
     pub fn set_payload(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.payload = input;
         self
+    }
+    /// <p>The updated content for the notebook.</p>
+    pub fn get_payload(&self) -> &::std::option::Option<::std::string::String> {
+        &self.payload
     }
     /// <p>The notebook content type. Currently, the only valid type is <code>IPYNB</code>.</p>
     pub fn r#type(mut self, input: crate::types::NotebookType) -> Self {
@@ -95,6 +103,10 @@ impl UpdateNotebookInputBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The notebook content type. Currently, the only valid type is <code>IPYNB</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::NotebookType> {
+        &self.r#type
+    }
     /// <p>The active notebook session ID. Required if the notebook has an active session.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
@@ -104,6 +116,10 @@ impl UpdateNotebookInputBuilder {
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_id = input;
         self
+    }
+    /// <p>The active notebook session ID. Required if the notebook has an active session.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
     }
     /// <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p> <important>
     /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
@@ -124,6 +140,12 @@ impl UpdateNotebookInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p> <important>
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+    /// </important>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Consumes the builder and constructs a [`UpdateNotebookInput`](crate::operation::update_notebook::UpdateNotebookInput).
     pub fn build(

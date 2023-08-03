@@ -37,6 +37,10 @@ impl StartConfigurationRecorderFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartConfigurationRecorder as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_configuration_recorder::builders::StartConfigurationRecorderInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +136,9 @@ impl StartConfigurationRecorderFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_configuration_recorder_name(input);
         self
+    }
+    /// <p>The name of the recorder object that records each configuration change made to the resources.</p>
+    pub fn get_configuration_recorder_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration_recorder_name()
     }
 }

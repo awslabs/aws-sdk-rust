@@ -48,6 +48,10 @@ impl PutRawMessageContentInputBuilder {
         self.message_id = input;
         self
     }
+    /// <p>The identifier of the email message being updated.</p>
+    pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message_id
+    }
     /// <p>Describes the raw message content of the updated email message.</p>
     pub fn content(mut self, input: crate::types::RawMessageContent) -> Self {
         self.content = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl PutRawMessageContentInputBuilder {
     ) -> Self {
         self.content = input;
         self
+    }
+    /// <p>Describes the raw message content of the updated email message.</p>
+    pub fn get_content(&self) -> &::std::option::Option<crate::types::RawMessageContent> {
+        &self.content
     }
     /// Consumes the builder and constructs a [`PutRawMessageContentInput`](crate::operation::put_raw_message_content::PutRawMessageContentInput).
     pub fn build(

@@ -40,6 +40,10 @@ impl DeleteCustomMetricInputBuilder {
         self.metric_name = input;
         self
     }
+    /// <p> The name of the custom metric. </p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_name
+    }
     /// Consumes the builder and constructs a [`DeleteCustomMetricInput`](crate::operation::delete_custom_metric::DeleteCustomMetricInput).
     pub fn build(
         self,

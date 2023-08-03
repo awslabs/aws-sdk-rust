@@ -56,6 +56,10 @@ impl LoRaWanGatewayMetadataBuilder {
         self.gateway_eui = input;
         self
     }
+    /// <p>The gateway's EUI value.</p>
+    pub fn get_gateway_eui(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_eui
+    }
     /// <p>The SNR value.</p>
     pub fn snr(mut self, input: f64) -> Self {
         self.snr = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl LoRaWanGatewayMetadataBuilder {
         self.snr = input;
         self
     }
+    /// <p>The SNR value.</p>
+    pub fn get_snr(&self) -> &::std::option::Option<f64> {
+        &self.snr
+    }
     /// <p>The RSSI value.</p>
     pub fn rssi(mut self, input: f64) -> Self {
         self.rssi = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl LoRaWanGatewayMetadataBuilder {
     pub fn set_rssi(mut self, input: ::std::option::Option<f64>) -> Self {
         self.rssi = input;
         self
+    }
+    /// <p>The RSSI value.</p>
+    pub fn get_rssi(&self) -> &::std::option::Option<f64> {
+        &self.rssi
     }
     /// Consumes the builder and constructs a [`LoRaWanGatewayMetadata`](crate::types::LoRaWanGatewayMetadata).
     pub fn build(self) -> crate::types::LoRaWanGatewayMetadata {

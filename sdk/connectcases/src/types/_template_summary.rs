@@ -64,6 +64,10 @@ impl TemplateSummaryBuilder {
         self.template_id = input;
         self
     }
+    /// <p>The unique identifier for the template.</p>
+    pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
     pub fn template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_arn = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl TemplateSummaryBuilder {
         self.template_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the template.</p>
+    pub fn get_template_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_arn
+    }
     /// <p>The template name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -83,6 +91,10 @@ impl TemplateSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The template name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The status of the template.</p>
     pub fn status(mut self, input: crate::types::TemplateStatus) -> Self {
@@ -96,6 +108,10 @@ impl TemplateSummaryBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the template.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TemplateStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`TemplateSummary`](crate::types::TemplateSummary).
     pub fn build(self) -> crate::types::TemplateSummary {

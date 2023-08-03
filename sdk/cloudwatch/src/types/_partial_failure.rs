@@ -70,6 +70,10 @@ impl PartialFailureBuilder {
         self.failure_resource = input;
         self
     }
+    /// <p>The specified rule that could not be deleted.</p>
+    pub fn get_failure_resource(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_resource
+    }
     /// <p>The type of error.</p>
     pub fn exception_type(
         mut self,
@@ -86,6 +90,10 @@ impl PartialFailureBuilder {
         self.exception_type = input;
         self
     }
+    /// <p>The type of error.</p>
+    pub fn get_exception_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.exception_type
+    }
     /// <p>The code of the error.</p>
     pub fn failure_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_code = ::std::option::Option::Some(input.into());
@@ -95,6 +103,10 @@ impl PartialFailureBuilder {
     pub fn set_failure_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_code = input;
         self
+    }
+    /// <p>The code of the error.</p>
+    pub fn get_failure_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_code
     }
     /// <p>A description of the error.</p>
     pub fn failure_description(
@@ -111,6 +123,10 @@ impl PartialFailureBuilder {
     ) -> Self {
         self.failure_description = input;
         self
+    }
+    /// <p>A description of the error.</p>
+    pub fn get_failure_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_description
     }
     /// Consumes the builder and constructs a [`PartialFailure`](crate::types::PartialFailure).
     pub fn build(self) -> crate::types::PartialFailure {

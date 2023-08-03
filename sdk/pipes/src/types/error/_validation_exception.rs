@@ -76,6 +76,10 @@ impl ValidationExceptionBuilder {
         self.message = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Appends an item to `field_list`.
     ///
     /// To override the contents of this collection use [`set_field_list`](Self::set_field_list).
@@ -94,6 +98,12 @@ impl ValidationExceptionBuilder {
     ) -> Self {
         self.field_list = input;
         self
+    }
+    /// <p>The list of fields for which validation failed and the corresponding failure messages.</p>
+    pub fn get_field_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionField>> {
+        &self.field_list
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

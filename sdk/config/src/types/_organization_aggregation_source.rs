@@ -56,6 +56,10 @@ impl OrganizationAggregationSourceBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>ARN of the IAM role used to retrieve Amazon Web Services Organization details associated with the aggregator account.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// Appends an item to `aws_regions`.
     ///
     /// To override the contents of this collection use [`set_aws_regions`](Self::set_aws_regions).
@@ -75,6 +79,12 @@ impl OrganizationAggregationSourceBuilder {
         self.aws_regions = input;
         self
     }
+    /// <p>The source regions being aggregated.</p>
+    pub fn get_aws_regions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.aws_regions
+    }
     /// <p>If true, aggregate existing Config regions and future regions.</p>
     pub fn all_aws_regions(mut self, input: bool) -> Self {
         self.all_aws_regions = ::std::option::Option::Some(input);
@@ -84,6 +94,10 @@ impl OrganizationAggregationSourceBuilder {
     pub fn set_all_aws_regions(mut self, input: ::std::option::Option<bool>) -> Self {
         self.all_aws_regions = input;
         self
+    }
+    /// <p>If true, aggregate existing Config regions and future regions.</p>
+    pub fn get_all_aws_regions(&self) -> &::std::option::Option<bool> {
+        &self.all_aws_regions
     }
     /// Consumes the builder and constructs a [`OrganizationAggregationSource`](crate::types::OrganizationAggregationSource).
     pub fn build(self) -> crate::types::OrganizationAggregationSource {

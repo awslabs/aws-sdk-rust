@@ -161,6 +161,10 @@ impl ImageRecipeBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the image recipe.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>Specifies which type of image is created by the recipe - an AMI or a container image.</p>
     pub fn r#type(mut self, input: crate::types::ImageType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -170,6 +174,10 @@ impl ImageRecipeBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ImageType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>Specifies which type of image is created by the recipe - an AMI or a container image.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ImageType> {
+        &self.r#type
     }
     /// <p>The name of the image recipe.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -181,6 +189,10 @@ impl ImageRecipeBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the image recipe.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the image recipe.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -190,6 +202,10 @@ impl ImageRecipeBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the image recipe.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The platform of the image recipe.</p>
     pub fn platform(mut self, input: crate::types::Platform) -> Self {
@@ -201,6 +217,10 @@ impl ImageRecipeBuilder {
         self.platform = input;
         self
     }
+    /// <p>The platform of the image recipe.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<crate::types::Platform> {
+        &self.platform
+    }
     /// <p>The owner of the image recipe.</p>
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner = ::std::option::Option::Some(input.into());
@@ -211,6 +231,10 @@ impl ImageRecipeBuilder {
         self.owner = input;
         self
     }
+    /// <p>The owner of the image recipe.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner
+    }
     /// <p>The version of the image recipe.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -220,6 +244,10 @@ impl ImageRecipeBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The version of the image recipe.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Appends an item to `components`.
     ///
@@ -240,6 +268,12 @@ impl ImageRecipeBuilder {
         self.components = input;
         self
     }
+    /// <p>The components that are included in the image recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
+    pub fn get_components(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>> {
+        &self.components
+    }
     /// <p>The base image of the image recipe.</p>
     pub fn parent_image(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_image = ::std::option::Option::Some(input.into());
@@ -249,6 +283,10 @@ impl ImageRecipeBuilder {
     pub fn set_parent_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parent_image = input;
         self
+    }
+    /// <p>The base image of the image recipe.</p>
+    pub fn get_parent_image(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent_image
     }
     /// Appends an item to `block_device_mappings`.
     ///
@@ -272,6 +310,12 @@ impl ImageRecipeBuilder {
         self.block_device_mappings = input;
         self
     }
+    /// <p>The block device mappings to apply when creating images from this recipe.</p>
+    pub fn get_block_device_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>> {
+        &self.block_device_mappings
+    }
     /// <p>The date on which this image recipe was created.</p>
     pub fn date_created(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.date_created = ::std::option::Option::Some(input.into());
@@ -281,6 +325,10 @@ impl ImageRecipeBuilder {
     pub fn set_date_created(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.date_created = input;
         self
+    }
+    /// <p>The date on which this image recipe was created.</p>
+    pub fn get_date_created(&self) -> &::std::option::Option<::std::string::String> {
+        &self.date_created
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -307,6 +355,14 @@ impl ImageRecipeBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags of the image recipe.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The working directory to be used during build and test workflows.</p>
     pub fn working_directory(
         mut self,
@@ -323,6 +379,10 @@ impl ImageRecipeBuilder {
         self.working_directory = input;
         self
     }
+    /// <p>The working directory to be used during build and test workflows.</p>
+    pub fn get_working_directory(&self) -> &::std::option::Option<::std::string::String> {
+        &self.working_directory
+    }
     /// <p>Before you create a new AMI, Image Builder launches temporary Amazon EC2 instances to build and test your image configuration. Instance configuration adds a layer of control over those instances. You can define settings and add scripts to run when an instance is launched from your AMI.</p>
     pub fn additional_instance_configuration(
         mut self,
@@ -338,6 +398,12 @@ impl ImageRecipeBuilder {
     ) -> Self {
         self.additional_instance_configuration = input;
         self
+    }
+    /// <p>Before you create a new AMI, Image Builder launches temporary Amazon EC2 instances to build and test your image configuration. Instance configuration adds a layer of control over those instances. You can define settings and add scripts to run when an instance is launched from your AMI.</p>
+    pub fn get_additional_instance_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AdditionalInstanceConfiguration> {
+        &self.additional_instance_configuration
     }
     /// Consumes the builder and constructs a [`ImageRecipe`](crate::types::ImageRecipe).
     pub fn build(self) -> crate::types::ImageRecipe {

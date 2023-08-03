@@ -64,6 +64,12 @@ impl PublishBatchOutputBuilder {
         self.successful = input;
         self
     }
+    /// <p>A list of successful <code>PublishBatch</code> responses.</p>
+    pub fn get_successful(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PublishBatchResultEntry>> {
+        &self.successful
+    }
     /// Appends an item to `failed`.
     ///
     /// To override the contents of this collection use [`set_failed`](Self::set_failed).
@@ -82,6 +88,12 @@ impl PublishBatchOutputBuilder {
     ) -> Self {
         self.failed = input;
         self
+    }
+    /// <p>A list of failed <code>PublishBatch</code> responses. </p>
+    pub fn get_failed(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchResultErrorEntry>> {
+        &self.failed
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

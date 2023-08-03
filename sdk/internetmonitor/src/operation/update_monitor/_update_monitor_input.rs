@@ -113,6 +113,10 @@ impl UpdateMonitorInputBuilder {
         self.monitor_name = input;
         self
     }
+    /// <p>The name of the monitor. </p>
+    pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitor_name
+    }
     /// Appends an item to `resources_to_add`.
     ///
     /// To override the contents of this collection use [`set_resources_to_add`](Self::set_resources_to_add).
@@ -141,6 +145,15 @@ impl UpdateMonitorInputBuilder {
         self.resources_to_add = input;
         self
     }
+    /// <p>The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs).</p>
+    /// <p>You can add a combination of Amazon Virtual Private Clouds (VPCs) and Amazon CloudFront distributions, or you can add Amazon WorkSpaces directories. You can't add all three types of resources.</p> <note>
+    /// <p>If you add only VPC resources, at least one VPC must have an Internet Gateway attached to it, to make sure that it has internet connectivity.</p>
+    /// </note>
+    pub fn get_resources_to_add(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resources_to_add
+    }
     /// Appends an item to `resources_to_remove`.
     ///
     /// To override the contents of this collection use [`set_resources_to_remove`](Self::set_resources_to_remove).
@@ -163,6 +176,12 @@ impl UpdateMonitorInputBuilder {
         self.resources_to_remove = input;
         self
     }
+    /// <p>The resources to remove from a monitor, which you provide as a set of Amazon Resource Names (ARNs).</p>
+    pub fn get_resources_to_remove(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resources_to_remove
+    }
     /// <p>The status for a monitor. The accepted values for <code>Status</code> with the <code>UpdateMonitor</code> API call are the following: <code>ACTIVE</code> and <code>INACTIVE</code>. The following values are <i>not</i> accepted: <code>PENDING</code>, and <code>ERROR</code>.</p>
     pub fn status(mut self, input: crate::types::MonitorConfigState) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -176,6 +195,10 @@ impl UpdateMonitorInputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status for a monitor. The accepted values for <code>Status</code> with the <code>UpdateMonitor</code> API call are the following: <code>ACTIVE</code> and <code>INACTIVE</code>. The following values are <i>not</i> accepted: <code>PENDING</code>, and <code>ERROR</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::MonitorConfigState> {
+        &self.status
+    }
     /// <p>A unique, case-sensitive string of up to 64 ASCII characters that you specify to make an idempotent API request. You should not reuse the same client token for other API requests.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -186,6 +209,10 @@ impl UpdateMonitorInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>A unique, case-sensitive string of up to 64 ASCII characters that you specify to make an idempotent API request. You should not reuse the same client token for other API requests.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where clients access your application resources from and the network or ASN, such as an internet service provider, that clients access the resources through.</p>
     pub fn max_city_networks_to_monitor(mut self, input: i32) -> Self {
         self.max_city_networks_to_monitor = ::std::option::Option::Some(input);
@@ -195,6 +222,10 @@ impl UpdateMonitorInputBuilder {
     pub fn set_max_city_networks_to_monitor(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_city_networks_to_monitor = input;
         self
+    }
+    /// <p>The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where clients access your application resources from and the network or ASN, such as an internet service provider, that clients access the resources through.</p>
+    pub fn get_max_city_networks_to_monitor(&self) -> &::std::option::Option<i32> {
+        &self.max_city_networks_to_monitor
     }
     /// <p>Publish internet measurements for Internet Monitor to another location, such as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch Logs.</p>
     pub fn internet_measurements_log_delivery(
@@ -212,6 +243,12 @@ impl UpdateMonitorInputBuilder {
         self.internet_measurements_log_delivery = input;
         self
     }
+    /// <p>Publish internet measurements for Internet Monitor to another location, such as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch Logs.</p>
+    pub fn get_internet_measurements_log_delivery(
+        &self,
+    ) -> &::std::option::Option<crate::types::InternetMeasurementsLogDelivery> {
+        &self.internet_measurements_log_delivery
+    }
     /// <p>The percentage of the internet-facing traffic for your application that you want to monitor with this monitor.</p>
     pub fn traffic_percentage_to_monitor(mut self, input: i32) -> Self {
         self.traffic_percentage_to_monitor = ::std::option::Option::Some(input);
@@ -221,6 +258,10 @@ impl UpdateMonitorInputBuilder {
     pub fn set_traffic_percentage_to_monitor(mut self, input: ::std::option::Option<i32>) -> Self {
         self.traffic_percentage_to_monitor = input;
         self
+    }
+    /// <p>The percentage of the internet-facing traffic for your application that you want to monitor with this monitor.</p>
+    pub fn get_traffic_percentage_to_monitor(&self) -> &::std::option::Option<i32> {
+        &self.traffic_percentage_to_monitor
     }
     /// <p>The list of health event thresholds. A health event threshold percentage, for performance and availability, determines when Internet Monitor creates a health event when there's an internet issue that affects your application end users.</p>
     pub fn health_events_config(mut self, input: crate::types::HealthEventsConfig) -> Self {
@@ -234,6 +275,12 @@ impl UpdateMonitorInputBuilder {
     ) -> Self {
         self.health_events_config = input;
         self
+    }
+    /// <p>The list of health event thresholds. A health event threshold percentage, for performance and availability, determines when Internet Monitor creates a health event when there's an internet issue that affects your application end users.</p>
+    pub fn get_health_events_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::HealthEventsConfig> {
+        &self.health_events_config
     }
     /// Consumes the builder and constructs a [`UpdateMonitorInput`](crate::operation::update_monitor::UpdateMonitorInput).
     pub fn build(

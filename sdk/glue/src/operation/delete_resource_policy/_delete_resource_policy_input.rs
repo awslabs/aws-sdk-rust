@@ -54,6 +54,10 @@ impl DeleteResourcePolicyInputBuilder {
         self.policy_hash_condition = input;
         self
     }
+    /// <p>The hash value returned when this policy was set.</p>
+    pub fn get_policy_hash_condition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_hash_condition
+    }
     /// <p>The ARN of the Glue resource for the resource policy to be deleted.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl DeleteResourcePolicyInputBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
+    }
+    /// <p>The ARN of the Glue resource for the resource policy to be deleted.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// Consumes the builder and constructs a [`DeleteResourcePolicyInput`](crate::operation::delete_resource_policy::DeleteResourcePolicyInput).
     pub fn build(

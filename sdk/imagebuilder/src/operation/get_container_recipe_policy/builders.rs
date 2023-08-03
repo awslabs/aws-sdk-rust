@@ -36,6 +36,10 @@ impl GetContainerRecipePolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetContainerRecipePolicy as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_container_recipe_policy::builders::GetContainerRecipePolicyInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +135,9 @@ impl GetContainerRecipePolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_container_recipe_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the container recipe for the policy being requested.</p>
+    pub fn get_container_recipe_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_container_recipe_arn()
     }
 }

@@ -123,6 +123,10 @@ impl EventDestinationBuilder {
         self.name = input;
         self
     }
+    /// <p>A name that identifies the event destination.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>If <code>true</code>, the event destination is enabled. When the event destination is enabled, the specified event types are sent to the destinations in this <code>EventDestinationDefinition</code>.</p>
     /// <p>If <code>false</code>, the event destination is disabled. When the event destination is disabled, events aren't sent to the specified destinations.</p>
     pub fn enabled(mut self, input: bool) -> Self {
@@ -134,6 +138,11 @@ impl EventDestinationBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    /// <p>If <code>true</code>, the event destination is enabled. When the event destination is enabled, the specified event types are sent to the destinations in this <code>EventDestinationDefinition</code>.</p>
+    /// <p>If <code>false</code>, the event destination is disabled. When the event destination is disabled, events aren't sent to the specified destinations.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// Appends an item to `matching_event_types`.
     ///
@@ -178,6 +187,24 @@ impl EventDestinationBuilder {
         self.matching_event_types = input;
         self
     }
+    /// <p>The types of events that Amazon SES sends to the specified event destinations.</p>
+    /// <ul>
+    /// <li> <p> <code>SEND</code> - The send request was successful and SES will attempt to deliver the message to the recipient’s mail server. (If account-level or global suppression is being used, SES will still count it as a send, but delivery is suppressed.)</p> </li>
+    /// <li> <p> <code>REJECT</code> - SES accepted the email, but determined that it contained a virus and didn’t attempt to deliver it to the recipient’s mail server.</p> </li>
+    /// <li> <p> <code>BOUNCE</code> - (<i>Hard bounce</i>) The recipient's mail server permanently rejected the email. (<i>Soft bounces</i> are only included when SES fails to deliver the email after retrying for a period of time.)</p> </li>
+    /// <li> <p> <code>COMPLAINT</code> - The email was successfully delivered to the recipient’s mail server, but the recipient marked it as spam.</p> </li>
+    /// <li> <p> <code>DELIVERY</code> - SES successfully delivered the email to the recipient's mail server.</p> </li>
+    /// <li> <p> <code>OPEN</code> - The recipient received the message and opened it in their email client.</p> </li>
+    /// <li> <p> <code>CLICK</code> - The recipient clicked one or more links in the email.</p> </li>
+    /// <li> <p> <code>RENDERING_FAILURE</code> - The email wasn't sent because of a template rendering issue. This event type can occur when template data is missing, or when there is a mismatch between template parameters and data. (This event type only occurs when you send email using the <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html"> <code>SendTemplatedEmail</code> </a> or <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html"> <code>SendBulkTemplatedEmail</code> </a> API operations.) </p> </li>
+    /// <li> <p> <code>DELIVERY_DELAY</code> - The email couldn't be delivered to the recipient’s mail server because a temporary issue occurred. Delivery delays can occur, for example, when the recipient's inbox is full, or when the receiving email server experiences a transient issue.</p> </li>
+    /// <li> <p> <code>SUBSCRIPTION</code> - The email was successfully delivered, but the recipient updated their subscription preferences by clicking on an <i>unsubscribe</i> link as part of your <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-email-subscription-management.html">subscription management</a>.</p> </li>
+    /// </ul>
+    pub fn get_matching_event_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventType>> {
+        &self.matching_event_types
+    }
     /// <p>An object that defines an Amazon Kinesis Data Firehose destination for email events. You can use Amazon Kinesis Data Firehose to stream data to other services, such as Amazon S3 and Amazon Redshift.</p>
     pub fn kinesis_firehose_destination(
         mut self,
@@ -194,6 +221,12 @@ impl EventDestinationBuilder {
         self.kinesis_firehose_destination = input;
         self
     }
+    /// <p>An object that defines an Amazon Kinesis Data Firehose destination for email events. You can use Amazon Kinesis Data Firehose to stream data to other services, such as Amazon S3 and Amazon Redshift.</p>
+    pub fn get_kinesis_firehose_destination(
+        &self,
+    ) -> &::std::option::Option<crate::types::KinesisFirehoseDestination> {
+        &self.kinesis_firehose_destination
+    }
     /// <p>An object that defines an Amazon CloudWatch destination for email events. You can use Amazon CloudWatch to monitor and gain insights on your email sending metrics.</p>
     pub fn cloud_watch_destination(mut self, input: crate::types::CloudWatchDestination) -> Self {
         self.cloud_watch_destination = ::std::option::Option::Some(input);
@@ -206,6 +239,12 @@ impl EventDestinationBuilder {
     ) -> Self {
         self.cloud_watch_destination = input;
         self
+    }
+    /// <p>An object that defines an Amazon CloudWatch destination for email events. You can use Amazon CloudWatch to monitor and gain insights on your email sending metrics.</p>
+    pub fn get_cloud_watch_destination(
+        &self,
+    ) -> &::std::option::Option<crate::types::CloudWatchDestination> {
+        &self.cloud_watch_destination
     }
     /// <p>An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to send notification when certain email events occur.</p>
     pub fn sns_destination(mut self, input: crate::types::SnsDestination) -> Self {
@@ -220,6 +259,10 @@ impl EventDestinationBuilder {
         self.sns_destination = input;
         self
     }
+    /// <p>An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to send notification when certain email events occur.</p>
+    pub fn get_sns_destination(&self) -> &::std::option::Option<crate::types::SnsDestination> {
+        &self.sns_destination
+    }
     /// <p>An object that defines an Amazon Pinpoint project destination for email events. You can send email event data to a Amazon Pinpoint project to view metrics using the Transactional Messaging dashboards that are built in to Amazon Pinpoint. For more information, see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/analytics-transactional-messages.html">Transactional Messaging Charts</a> in the <i>Amazon Pinpoint User Guide</i>.</p>
     pub fn pinpoint_destination(mut self, input: crate::types::PinpointDestination) -> Self {
         self.pinpoint_destination = ::std::option::Option::Some(input);
@@ -232,6 +275,12 @@ impl EventDestinationBuilder {
     ) -> Self {
         self.pinpoint_destination = input;
         self
+    }
+    /// <p>An object that defines an Amazon Pinpoint project destination for email events. You can send email event data to a Amazon Pinpoint project to view metrics using the Transactional Messaging dashboards that are built in to Amazon Pinpoint. For more information, see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/analytics-transactional-messages.html">Transactional Messaging Charts</a> in the <i>Amazon Pinpoint User Guide</i>.</p>
+    pub fn get_pinpoint_destination(
+        &self,
+    ) -> &::std::option::Option<crate::types::PinpointDestination> {
+        &self.pinpoint_destination
     }
     /// Consumes the builder and constructs a [`EventDestination`](crate::types::EventDestination).
     pub fn build(self) -> crate::types::EventDestination {

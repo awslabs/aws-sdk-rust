@@ -54,6 +54,10 @@ impl ListProfilesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `profiles`.
     ///
     /// To override the contents of this collection use [`set_profiles`](Self::set_profiles).
@@ -72,6 +76,12 @@ impl ListProfilesOutputBuilder {
     ) -> Self {
         self.profiles = input;
         self
+    }
+    /// <p>A list of profiles.</p>
+    pub fn get_profiles(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProfileDetail>> {
+        &self.profiles
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

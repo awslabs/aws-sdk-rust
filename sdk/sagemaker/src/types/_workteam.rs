@@ -124,6 +124,10 @@ impl WorkteamBuilder {
         self.workteam_name = input;
         self
     }
+    /// <p>The name of the work team.</p>
+    pub fn get_workteam_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workteam_name
+    }
     /// Appends an item to `member_definitions`.
     ///
     /// To override the contents of this collection use [`set_member_definitions`](Self::set_member_definitions).
@@ -145,6 +149,13 @@ impl WorkteamBuilder {
         self.member_definitions = input;
         self
     }
+    /// <p>A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make up the work team. </p>
+    /// <p>Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private workforces created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC identity provider (IdP) use <code>OidcMemberDefinition</code>.</p>
+    pub fn get_member_definitions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberDefinition>> {
+        &self.member_definitions
+    }
     /// <p>The Amazon Resource Name (ARN) that identifies the work team.</p>
     pub fn workteam_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workteam_arn = ::std::option::Option::Some(input.into());
@@ -154,6 +165,10 @@ impl WorkteamBuilder {
     pub fn set_workteam_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workteam_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) that identifies the work team.</p>
+    pub fn get_workteam_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workteam_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the workforce.</p>
     pub fn workforce_arn(
@@ -170,6 +185,10 @@ impl WorkteamBuilder {
     ) -> Self {
         self.workforce_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the workforce.</p>
+    pub fn get_workforce_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workforce_arn
     }
     /// Appends an item to `product_listing_ids`.
     ///
@@ -193,6 +212,12 @@ impl WorkteamBuilder {
         self.product_listing_ids = input;
         self
     }
+    /// <p>The Amazon Marketplace identifier for a vendor's work team.</p>
+    pub fn get_product_listing_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.product_listing_ids
+    }
     /// <p>A description of the work team.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -203,6 +228,10 @@ impl WorkteamBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the work team.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The URI of the labeling job's user interface. Workers open this URI to start labeling your data objects.</p>
     pub fn sub_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sub_domain = ::std::option::Option::Some(input.into());
@@ -212,6 +241,10 @@ impl WorkteamBuilder {
     pub fn set_sub_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sub_domain = input;
         self
+    }
+    /// <p>The URI of the labeling job's user interface. Workers open this URI to start labeling your data objects.</p>
+    pub fn get_sub_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sub_domain
     }
     /// <p>The date and time that the work team was created (timestamp).</p>
     pub fn create_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -226,6 +259,10 @@ impl WorkteamBuilder {
         self.create_date = input;
         self
     }
+    /// <p>The date and time that the work team was created (timestamp).</p>
+    pub fn get_create_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_date
+    }
     /// <p>The date and time that the work team was last updated (timestamp).</p>
     pub fn last_updated_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date = ::std::option::Option::Some(input);
@@ -238,6 +275,10 @@ impl WorkteamBuilder {
     ) -> Self {
         self.last_updated_date = input;
         self
+    }
+    /// <p>The date and time that the work team was last updated (timestamp).</p>
+    pub fn get_last_updated_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date
     }
     /// <p>Configures SNS notifications of available or expiring work items for work teams.</p>
     pub fn notification_configuration(
@@ -254,6 +295,12 @@ impl WorkteamBuilder {
     ) -> Self {
         self.notification_configuration = input;
         self
+    }
+    /// <p>Configures SNS notifications of available or expiring work items for work teams.</p>
+    pub fn get_notification_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::NotificationConfiguration> {
+        &self.notification_configuration
     }
     /// Consumes the builder and constructs a [`Workteam`](crate::types::Workteam).
     pub fn build(self) -> crate::types::Workteam {

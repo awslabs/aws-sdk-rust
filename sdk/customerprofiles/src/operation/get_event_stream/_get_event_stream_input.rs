@@ -47,6 +47,10 @@ impl GetEventStreamInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The unique name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The name of the event stream provided during create operations.</p>
     pub fn event_stream_name(
         mut self,
@@ -62,6 +66,10 @@ impl GetEventStreamInputBuilder {
     ) -> Self {
         self.event_stream_name = input;
         self
+    }
+    /// <p>The name of the event stream provided during create operations.</p>
+    pub fn get_event_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_stream_name
     }
     /// Consumes the builder and constructs a [`GetEventStreamInput`](crate::operation::get_event_stream::GetEventStreamInput).
     pub fn build(

@@ -49,6 +49,12 @@ impl DeleteInvitationsInputBuilder {
         self.account_ids = input;
         self
     }
+    /// <p>A list of account IDs of the Amazon Web Services accounts that sent invitations to the current member account that you want to delete invitations from.</p>
+    pub fn get_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.account_ids
+    }
     /// Consumes the builder and constructs a [`DeleteInvitationsInput`](crate::operation::delete_invitations::DeleteInvitationsInput).
     pub fn build(
         self,

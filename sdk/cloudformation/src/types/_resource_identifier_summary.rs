@@ -62,6 +62,10 @@ impl ResourceIdentifierSummaryBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The template resource type of the target resources, such as <code>AWS::S3::Bucket</code>.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
+    }
     /// Appends an item to `logical_resource_ids`.
     ///
     /// To override the contents of this collection use [`set_logical_resource_ids`](Self::set_logical_resource_ids).
@@ -84,6 +88,12 @@ impl ResourceIdentifierSummaryBuilder {
         self.logical_resource_ids = input;
         self
     }
+    /// <p>The logical IDs of the target resources of the specified <code>ResourceType</code>, as defined in the import template.</p>
+    pub fn get_logical_resource_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.logical_resource_ids
+    }
     /// Appends an item to `resource_identifiers`.
     ///
     /// To override the contents of this collection use [`set_resource_identifiers`](Self::set_resource_identifiers).
@@ -105,6 +115,12 @@ impl ResourceIdentifierSummaryBuilder {
     ) -> Self {
         self.resource_identifiers = input;
         self
+    }
+    /// <p>The resource properties you can provide during the import to identify your target resources. For example, <code>BucketName</code> is a possible identifier property for <code>AWS::S3::Bucket</code> resources.</p>
+    pub fn get_resource_identifiers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resource_identifiers
     }
     /// Consumes the builder and constructs a [`ResourceIdentifierSummary`](crate::types::ResourceIdentifierSummary).
     pub fn build(self) -> crate::types::ResourceIdentifierSummary {

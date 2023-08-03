@@ -47,6 +47,10 @@ impl GetMultiRegionAccessPointPolicyInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>Specifies the Multi-Region Access Point. The name of the Multi-Region Access Point is different from the alias. For more information about the distinction between the name and the alias of an Multi-Region Access Point, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl GetMultiRegionAccessPointPolicyInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>Specifies the Multi-Region Access Point. The name of the Multi-Region Access Point is different from the alias. For more information about the distinction between the name and the alias of an Multi-Region Access Point, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`GetMultiRegionAccessPointPolicyInput`](crate::operation::get_multi_region_access_point_policy::GetMultiRegionAccessPointPolicyInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_multi_region_access_point_policy::GetMultiRegionAccessPointPolicyInput, ::aws_smithy_http::operation::error::BuildError>{

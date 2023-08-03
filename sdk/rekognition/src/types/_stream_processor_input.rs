@@ -43,6 +43,12 @@ impl StreamProcessorInputBuilder {
         self.kinesis_video_stream = input;
         self
     }
+    /// <p>The Kinesis video stream input stream for the source streaming video.</p>
+    pub fn get_kinesis_video_stream(
+        &self,
+    ) -> &::std::option::Option<crate::types::KinesisVideoStream> {
+        &self.kinesis_video_stream
+    }
     /// Consumes the builder and constructs a [`StreamProcessorInput`](crate::types::StreamProcessorInput).
     pub fn build(self) -> crate::types::StreamProcessorInput {
         crate::types::StreamProcessorInput {

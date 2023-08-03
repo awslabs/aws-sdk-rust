@@ -56,6 +56,12 @@ impl InstanceAccessControlAttributeConfigurationBuilder {
         self.access_control_attributes = input;
         self
     }
+    /// <p>Lists the attributes that are configured for ABAC in the specified IAM Identity Center instance.</p>
+    pub fn get_access_control_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessControlAttribute>> {
+        &self.access_control_attributes
+    }
     /// Consumes the builder and constructs a [`InstanceAccessControlAttributeConfiguration`](crate::types::InstanceAccessControlAttributeConfiguration).
     pub fn build(self) -> crate::types::InstanceAccessControlAttributeConfiguration {
         crate::types::InstanceAccessControlAttributeConfiguration {

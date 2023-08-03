@@ -36,6 +36,13 @@ impl StartPipelineExecutionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartPipelineExecution as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_pipeline_execution::builders::StartPipelineExecutionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl StartPipelineExecutionFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the pipeline to start.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The system-generated unique ID used to identify a unique execution request.</p>
     pub fn client_request_token(
         mut self,
@@ -141,5 +152,9 @@ impl StartPipelineExecutionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
+    }
+    /// <p>The system-generated unique ID used to identify a unique execution request.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
     }
 }

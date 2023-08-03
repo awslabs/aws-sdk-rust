@@ -58,6 +58,10 @@ impl HpoObjectiveBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of the metric. Valid values are <code>Maximize</code> and <code>Minimize</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// <p>The name of the metric.</p>
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_name = ::std::option::Option::Some(input.into());
@@ -68,6 +72,10 @@ impl HpoObjectiveBuilder {
         self.metric_name = input;
         self
     }
+    /// <p>The name of the metric.</p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_name
+    }
     /// <p>A regular expression for finding the metric in the training job logs.</p>
     pub fn metric_regex(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_regex = ::std::option::Option::Some(input.into());
@@ -77,6 +85,10 @@ impl HpoObjectiveBuilder {
     pub fn set_metric_regex(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_regex = input;
         self
+    }
+    /// <p>A regular expression for finding the metric in the training job logs.</p>
+    pub fn get_metric_regex(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_regex
     }
     /// Consumes the builder and constructs a [`HpoObjective`](crate::types::HpoObjective).
     pub fn build(self) -> crate::types::HpoObjective {

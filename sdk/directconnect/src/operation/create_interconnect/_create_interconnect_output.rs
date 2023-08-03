@@ -186,6 +186,10 @@ impl CreateInterconnectOutputBuilder {
         self.interconnect_id = input;
         self
     }
+    /// <p>The ID of the interconnect.</p>
+    pub fn get_interconnect_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.interconnect_id
+    }
     /// <p>The name of the interconnect.</p>
     pub fn interconnect_name(
         mut self,
@@ -201,6 +205,10 @@ impl CreateInterconnectOutputBuilder {
     ) -> Self {
         self.interconnect_name = input;
         self
+    }
+    /// <p>The name of the interconnect.</p>
+    pub fn get_interconnect_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.interconnect_name
     }
     /// <p>The state of the interconnect. The following are the possible values:</p>
     /// <ul>
@@ -233,6 +241,21 @@ impl CreateInterconnectOutputBuilder {
         self.interconnect_state = input;
         self
     }
+    /// <p>The state of the interconnect. The following are the possible values:</p>
+    /// <ul>
+    /// <li> <p> <code>requested</code>: The initial state of an interconnect. The interconnect stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+    /// <li> <p> <code>pending</code>: The interconnect is approved, and is being initialized.</p> </li>
+    /// <li> <p> <code>available</code>: The network link is up, and the interconnect is ready for use.</p> </li>
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+    /// <li> <p> <code>deleting</code>: The interconnect is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the interconnect is not available.</p> </li>
+    /// </ul>
+    pub fn get_interconnect_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::InterconnectState> {
+        &self.interconnect_state
+    }
     /// <p>The Amazon Web Services Region where the connection is located.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
@@ -242,6 +265,10 @@ impl CreateInterconnectOutputBuilder {
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
+    }
+    /// <p>The Amazon Web Services Region where the connection is located.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
     }
     /// <p>The location of the connection.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -253,6 +280,10 @@ impl CreateInterconnectOutputBuilder {
         self.location = input;
         self
     }
+    /// <p>The location of the connection.</p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
+    }
     /// <p>The bandwidth of the connection.</p>
     pub fn bandwidth(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bandwidth = ::std::option::Option::Some(input.into());
@@ -262,6 +293,10 @@ impl CreateInterconnectOutputBuilder {
     pub fn set_bandwidth(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bandwidth = input;
         self
+    }
+    /// <p>The bandwidth of the connection.</p>
+    pub fn get_bandwidth(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bandwidth
     }
     /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
     pub fn loa_issue_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -276,6 +311,10 @@ impl CreateInterconnectOutputBuilder {
         self.loa_issue_time = input;
         self
     }
+    /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
+    pub fn get_loa_issue_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.loa_issue_time
+    }
     /// <p>The ID of the LAG.</p>
     pub fn lag_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lag_id = ::std::option::Option::Some(input.into());
@@ -285,6 +324,10 @@ impl CreateInterconnectOutputBuilder {
     pub fn set_lag_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lag_id = input;
         self
+    }
+    /// <p>The ID of the LAG.</p>
+    pub fn get_lag_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lag_id
     }
     /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
     pub fn aws_device(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -296,6 +339,10 @@ impl CreateInterconnectOutputBuilder {
         self.aws_device = input;
         self
     }
+    /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+    pub fn get_aws_device(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_device
+    }
     /// <p>Indicates whether jumbo frames are supported.</p>
     pub fn jumbo_frame_capable(mut self, input: bool) -> Self {
         self.jumbo_frame_capable = ::std::option::Option::Some(input);
@@ -305,6 +352,10 @@ impl CreateInterconnectOutputBuilder {
     pub fn set_jumbo_frame_capable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.jumbo_frame_capable = input;
         self
+    }
+    /// <p>Indicates whether jumbo frames are supported.</p>
+    pub fn get_jumbo_frame_capable(&self) -> &::std::option::Option<bool> {
+        &self.jumbo_frame_capable
     }
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     pub fn aws_device_v2(
@@ -322,6 +373,10 @@ impl CreateInterconnectOutputBuilder {
         self.aws_device_v2 = input;
         self
     }
+    /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
+    pub fn get_aws_device_v2(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_device_v2
+    }
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub fn aws_logical_device_id(
         mut self,
@@ -338,6 +393,10 @@ impl CreateInterconnectOutputBuilder {
         self.aws_logical_device_id = input;
         self
     }
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
+    pub fn get_aws_logical_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_logical_device_id
+    }
     /// <p>Indicates whether the interconnect supports a secondary BGP in the same address family (IPv4/IPv6).</p>
     pub fn has_logical_redundancy(mut self, input: crate::types::HasLogicalRedundancy) -> Self {
         self.has_logical_redundancy = ::std::option::Option::Some(input);
@@ -350,6 +409,12 @@ impl CreateInterconnectOutputBuilder {
     ) -> Self {
         self.has_logical_redundancy = input;
         self
+    }
+    /// <p>Indicates whether the interconnect supports a secondary BGP in the same address family (IPv4/IPv6).</p>
+    pub fn get_has_logical_redundancy(
+        &self,
+    ) -> &::std::option::Option<crate::types::HasLogicalRedundancy> {
+        &self.has_logical_redundancy
     }
     /// Appends an item to `tags`.
     ///
@@ -370,6 +435,10 @@ impl CreateInterconnectOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags associated with the interconnect.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The name of the service provider associated with the interconnect.</p>
     pub fn provider_name(
         mut self,
@@ -385,6 +454,10 @@ impl CreateInterconnectOutputBuilder {
     ) -> Self {
         self.provider_name = input;
         self
+    }
+    /// <p>The name of the service provider associated with the interconnect.</p>
+    pub fn get_provider_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provider_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

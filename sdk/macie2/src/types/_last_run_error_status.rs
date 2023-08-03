@@ -59,6 +59,14 @@ impl LastRunErrorStatusBuilder {
         self.code = input;
         self
     }
+    /// <p>Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring job, this value indicates the error status of the job's most recent run. Possible values are:</p>
+    /// <ul>
+    /// <li><p>ERROR - One or more errors occurred. Amazon Macie didn't process all the data specified for the job.</p></li>
+    /// <li><p>NONE - No errors occurred. Macie processed all the data specified for the job.</p></li>
+    /// </ul>
+    pub fn get_code(&self) -> &::std::option::Option<crate::types::LastRunErrorStatusCode> {
+        &self.code
+    }
     /// Consumes the builder and constructs a [`LastRunErrorStatus`](crate::types::LastRunErrorStatus).
     pub fn build(self) -> crate::types::LastRunErrorStatus {
         crate::types::LastRunErrorStatus { code: self.code }

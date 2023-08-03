@@ -71,6 +71,10 @@ impl UpdateAccountSettingsInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight settings that you want to list.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The default namespace for this Amazon Web Services account. Currently, the default is <code>default</code>. IAM users that register for the first time with Amazon QuickSight provide an email address that becomes associated with the default namespace. </p>
     pub fn default_namespace(
         mut self,
@@ -86,6 +90,10 @@ impl UpdateAccountSettingsInputBuilder {
     ) -> Self {
         self.default_namespace = input;
         self
+    }
+    /// <p>The default namespace for this Amazon Web Services account. Currently, the default is <code>default</code>. IAM users that register for the first time with Amazon QuickSight provide an email address that becomes associated with the default namespace. </p>
+    pub fn get_default_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_namespace
     }
     /// <p>The email address that you want Amazon QuickSight to send notifications to regarding your Amazon Web Services account or Amazon QuickSight subscription.</p>
     pub fn notification_email(
@@ -103,6 +111,10 @@ impl UpdateAccountSettingsInputBuilder {
         self.notification_email = input;
         self
     }
+    /// <p>The email address that you want Amazon QuickSight to send notifications to regarding your Amazon Web Services account or Amazon QuickSight subscription.</p>
+    pub fn get_notification_email(&self) -> &::std::option::Option<::std::string::String> {
+        &self.notification_email
+    }
     /// <p>A boolean value that determines whether or not an Amazon QuickSight account can be deleted. A <code>True</code> value doesn't allow the account to be deleted and results in an error message if a user tries to make a <code>DeleteAccountSubscription</code> request. A <code>False</code> value will allow the account to be deleted.</p>
     pub fn termination_protection_enabled(mut self, input: bool) -> Self {
         self.termination_protection_enabled = ::std::option::Option::Some(input);
@@ -115,6 +127,10 @@ impl UpdateAccountSettingsInputBuilder {
     ) -> Self {
         self.termination_protection_enabled = input;
         self
+    }
+    /// <p>A boolean value that determines whether or not an Amazon QuickSight account can be deleted. A <code>True</code> value doesn't allow the account to be deleted and results in an error message if a user tries to make a <code>DeleteAccountSubscription</code> request. A <code>False</code> value will allow the account to be deleted.</p>
+    pub fn get_termination_protection_enabled(&self) -> &::std::option::Option<bool> {
+        &self.termination_protection_enabled
     }
     /// Consumes the builder and constructs a [`UpdateAccountSettingsInput`](crate::operation::update_account_settings::UpdateAccountSettingsInput).
     pub fn build(

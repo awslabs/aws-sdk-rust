@@ -56,6 +56,10 @@ impl DeleteEmailIdentityPolicyInputBuilder {
         self.email_identity = input;
         self
     }
+    /// <p>The email identity.</p>
+    pub fn get_email_identity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email_identity
+    }
     /// <p>The name of the policy.</p>
     /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -67,6 +71,11 @@ impl DeleteEmailIdentityPolicyInputBuilder {
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_name = input;
         self
+    }
+    /// <p>The name of the policy.</p>
+    /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_name
     }
     /// Consumes the builder and constructs a [`DeleteEmailIdentityPolicyInput`](crate::operation::delete_email_identity_policy::DeleteEmailIdentityPolicyInput).
     pub fn build(

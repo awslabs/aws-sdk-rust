@@ -38,6 +38,10 @@ impl DescribeModelPackagingJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeModelPackagingJob as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_model_packaging_job::builders::DescribeModelPackagingJobInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +132,10 @@ impl DescribeModelPackagingJobFluentBuilder {
         self.inner = self.inner.set_project_name(input);
         self
     }
+    /// <p>The name of the project that contains the model packaging job that you want to describe. </p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_name()
+    }
     /// <p>The job name for the model packaging job. </p>
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_name(input.into());
@@ -137,5 +145,9 @@ impl DescribeModelPackagingJobFluentBuilder {
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_name(input);
         self
+    }
+    /// <p>The job name for the model packaging job. </p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_name()
     }
 }

@@ -47,6 +47,10 @@ impl UpdateChannelOutputBuilder {
         self.channel = input;
         self
     }
+    /// Placeholder documentation for Channel
+    pub fn get_channel(&self) -> &::std::option::Option<crate::types::Channel> {
+        &self.channel
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

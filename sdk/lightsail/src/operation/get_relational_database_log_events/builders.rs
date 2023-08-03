@@ -36,6 +36,10 @@ impl GetRelationalDatabaseLogEventsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetRelationalDatabaseLogEvents as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_relational_database_log_events::builders::GetRelationalDatabaseLogEventsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl GetRelationalDatabaseLogEventsFluentBuilder {
         self.inner = self.inner.set_relational_database_name(input);
         self
     }
+    /// <p>The name of your database for which to get log events.</p>
+    pub fn get_relational_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_relational_database_name()
+    }
     /// <p>The name of the log stream.</p>
     /// <p>Use the <code>get relational database log streams</code> operation to get a list of available log streams.</p>
     pub fn log_stream_name(
@@ -123,6 +131,11 @@ impl GetRelationalDatabaseLogEventsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_log_stream_name(input);
         self
+    }
+    /// <p>The name of the log stream.</p>
+    /// <p>Use the <code>get relational database log streams</code> operation to get a list of available log streams.</p>
+    pub fn get_log_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_log_stream_name()
     }
     /// <p>The start of the time interval from which to get log events.</p>
     /// <p>Constraints:</p>
@@ -147,6 +160,15 @@ impl GetRelationalDatabaseLogEventsFluentBuilder {
         self.inner = self.inner.set_start_time(input);
         self
     }
+    /// <p>The start of the time interval from which to get log events.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
+    /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the start time.</p> </li>
+    /// </ul>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_time()
+    }
     /// <p>The end of the time interval from which to get log events.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -170,6 +192,15 @@ impl GetRelationalDatabaseLogEventsFluentBuilder {
         self.inner = self.inner.set_end_time(input);
         self
     }
+    /// <p>The end of the time interval from which to get log events.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
+    /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the end time.</p> </li>
+    /// </ul>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_time()
+    }
     /// <p>Parameter to specify if the log should start from head or tail. If <code>true</code> is specified, the log event starts from the head of the log. If <code>false</code> is specified, the log event starts from the tail of the log.</p> <note>
     /// <p>For PostgreSQL, the default value of <code>false</code> is the only option available.</p>
     /// </note>
@@ -184,6 +215,12 @@ impl GetRelationalDatabaseLogEventsFluentBuilder {
         self.inner = self.inner.set_start_from_head(input);
         self
     }
+    /// <p>Parameter to specify if the log should start from head or tail. If <code>true</code> is specified, the log event starts from the head of the log. If <code>false</code> is specified, the log event starts from the tail of the log.</p> <note>
+    /// <p>For PostgreSQL, the default value of <code>false</code> is the only option available.</p>
+    /// </note>
+    pub fn get_start_from_head(&self) -> &::std::option::Option<bool> {
+        self.inner.get_start_from_head()
+    }
     /// <p>The token to advance to the next or previous page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseLogEvents</code> request. If your results are paginated, the response will return a next forward token and/or next backward token that you can specify as the page token in a subsequent request.</p>
     pub fn page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -195,5 +232,10 @@ impl GetRelationalDatabaseLogEventsFluentBuilder {
     pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_page_token(input);
         self
+    }
+    /// <p>The token to advance to the next or previous page of results from your request.</p>
+    /// <p>To get a page token, perform an initial <code>GetRelationalDatabaseLogEvents</code> request. If your results are paginated, the response will return a next forward token and/or next backward token that you can specify as the page token in a subsequent request.</p>
+    pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_page_token()
     }
 }

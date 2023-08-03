@@ -64,6 +64,10 @@ impl AwsEcsContainerDetailsBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the container. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The image used for the container. </p>
     pub fn image(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl AwsEcsContainerDetailsBuilder {
     pub fn set_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image = input;
         self
+    }
+    /// <p>The image used for the container. </p>
+    pub fn get_image(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image
     }
     /// Appends an item to `mount_points`.
     ///
@@ -93,6 +101,12 @@ impl AwsEcsContainerDetailsBuilder {
         self.mount_points = input;
         self
     }
+    /// <p>The mount points for data volumes in your container. </p>
+    pub fn get_mount_points(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsMountPoint>> {
+        &self.mount_points
+    }
     /// <p>When this parameter is true, the container is given elevated privileges on the host container instance (similar to the root user). </p>
     pub fn privileged(mut self, input: bool) -> Self {
         self.privileged = ::std::option::Option::Some(input);
@@ -102,6 +116,10 @@ impl AwsEcsContainerDetailsBuilder {
     pub fn set_privileged(mut self, input: ::std::option::Option<bool>) -> Self {
         self.privileged = input;
         self
+    }
+    /// <p>When this parameter is true, the container is given elevated privileges on the host container instance (similar to the root user). </p>
+    pub fn get_privileged(&self) -> &::std::option::Option<bool> {
+        &self.privileged
     }
     /// Consumes the builder and constructs a [`AwsEcsContainerDetails`](crate::types::AwsEcsContainerDetails).
     pub fn build(self) -> crate::types::AwsEcsContainerDetails {

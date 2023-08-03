@@ -37,6 +37,12 @@ impl DeleteOTAUpdateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteOTAUpdate as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_ota_update::builders::DeleteOtaUpdateInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl DeleteOTAUpdateFluentBuilder {
         self.inner = self.inner.set_ota_update_id(input);
         self
     }
+    /// <p>The ID of the OTA update to delete.</p>
+    pub fn get_ota_update_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ota_update_id()
+    }
     /// <p>When true, the stream created by the OTAUpdate process is deleted when the OTA update is deleted. Ignored if the stream specified in the OTAUpdate is supplied by the user.</p>
     pub fn delete_stream(mut self, input: bool) -> Self {
         self.inner = self.inner.delete_stream(input);
@@ -143,6 +153,10 @@ impl DeleteOTAUpdateFluentBuilder {
         self.inner = self.inner.set_delete_stream(input);
         self
     }
+    /// <p>When true, the stream created by the OTAUpdate process is deleted when the OTA update is deleted. Ignored if the stream specified in the OTAUpdate is supplied by the user.</p>
+    pub fn get_delete_stream(&self) -> &::std::option::Option<bool> {
+        self.inner.get_delete_stream()
+    }
     /// <p>When true, deletes the IoT job created by the OTAUpdate process even if it is "IN_PROGRESS". Otherwise, if the job is not in a terminal state ("COMPLETED" or "CANCELED") an exception will occur. The default is false.</p>
     pub fn force_delete_aws_job(mut self, input: bool) -> Self {
         self.inner = self.inner.force_delete_aws_job(input);
@@ -152,5 +166,9 @@ impl DeleteOTAUpdateFluentBuilder {
     pub fn set_force_delete_aws_job(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force_delete_aws_job(input);
         self
+    }
+    /// <p>When true, deletes the IoT job created by the OTAUpdate process even if it is "IN_PROGRESS". Otherwise, if the job is not in a terminal state ("COMPLETED" or "CANCELED") an exception will occur. The default is false.</p>
+    pub fn get_force_delete_aws_job(&self) -> &::std::option::Option<bool> {
+        self.inner.get_force_delete_aws_job()
     }
 }

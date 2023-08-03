@@ -49,6 +49,10 @@ impl ImportInstanceOutputBuilder {
         self.conversion_task = input;
         self
     }
+    /// <p>Information about the conversion task.</p>
+    pub fn get_conversion_task(&self) -> &::std::option::Option<crate::types::ConversionTask> {
+        &self.conversion_task
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

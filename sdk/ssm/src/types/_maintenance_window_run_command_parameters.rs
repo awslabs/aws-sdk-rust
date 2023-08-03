@@ -157,6 +157,10 @@ impl MaintenanceWindowRunCommandParametersBuilder {
         self.comment = input;
         self
     }
+    /// <p>Information about the commands to run.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comment
+    }
     /// <p>Configuration options for sending command output to Amazon CloudWatch Logs.</p>
     pub fn cloud_watch_output_config(
         mut self,
@@ -172,6 +176,12 @@ impl MaintenanceWindowRunCommandParametersBuilder {
     ) -> Self {
         self.cloud_watch_output_config = input;
         self
+    }
+    /// <p>Configuration options for sending command output to Amazon CloudWatch Logs.</p>
+    pub fn get_cloud_watch_output_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::CloudWatchOutputConfig> {
+        &self.cloud_watch_output_config
     }
     /// <p>The SHA-256 or SHA-1 hash created by the system when the document was created. SHA-1 hashes have been deprecated.</p>
     pub fn document_hash(
@@ -189,6 +199,10 @@ impl MaintenanceWindowRunCommandParametersBuilder {
         self.document_hash = input;
         self
     }
+    /// <p>The SHA-256 or SHA-1 hash created by the system when the document was created. SHA-1 hashes have been deprecated.</p>
+    pub fn get_document_hash(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_hash
+    }
     /// <p>SHA-256 or SHA-1. SHA-1 hashes have been deprecated.</p>
     pub fn document_hash_type(mut self, input: crate::types::DocumentHashType) -> Self {
         self.document_hash_type = ::std::option::Option::Some(input);
@@ -201,6 +215,10 @@ impl MaintenanceWindowRunCommandParametersBuilder {
     ) -> Self {
         self.document_hash_type = input;
         self
+    }
+    /// <p>SHA-256 or SHA-1. SHA-1 hashes have been deprecated.</p>
+    pub fn get_document_hash_type(&self) -> &::std::option::Option<crate::types::DocumentHashType> {
+        &self.document_hash_type
     }
     /// <p>The Amazon Web Services Systems Manager document (SSM document) version to use in the request. You can specify <code>$DEFAULT</code>, <code>$LATEST</code>, or a specific version number. If you run commands by using the Amazon Web Services CLI, then you must escape the first two options by using a backslash. If you specify a version number, then you don't need to use the backslash. For example:</p>
     /// <p> <code>--document-version "\$DEFAULT"</code> </p>
@@ -224,6 +242,13 @@ impl MaintenanceWindowRunCommandParametersBuilder {
         self.document_version = input;
         self
     }
+    /// <p>The Amazon Web Services Systems Manager document (SSM document) version to use in the request. You can specify <code>$DEFAULT</code>, <code>$LATEST</code>, or a specific version number. If you run commands by using the Amazon Web Services CLI, then you must escape the first two options by using a backslash. If you specify a version number, then you don't need to use the backslash. For example:</p>
+    /// <p> <code>--document-version "\$DEFAULT"</code> </p>
+    /// <p> <code>--document-version "\$LATEST"</code> </p>
+    /// <p> <code>--document-version "3"</code> </p>
+    pub fn get_document_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_version
+    }
     /// <p>Configurations for sending notifications about command status changes on a per-managed node basis.</p>
     pub fn notification_config(mut self, input: crate::types::NotificationConfig) -> Self {
         self.notification_config = ::std::option::Option::Some(input);
@@ -236,6 +261,12 @@ impl MaintenanceWindowRunCommandParametersBuilder {
     ) -> Self {
         self.notification_config = input;
         self
+    }
+    /// <p>Configurations for sending notifications about command status changes on a per-managed node basis.</p>
+    pub fn get_notification_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::NotificationConfig> {
+        &self.notification_config
     }
     /// <p>The name of the Amazon Simple Storage Service (Amazon S3) bucket.</p>
     pub fn output_s3_bucket_name(
@@ -253,6 +284,10 @@ impl MaintenanceWindowRunCommandParametersBuilder {
         self.output_s3_bucket_name = input;
         self
     }
+    /// <p>The name of the Amazon Simple Storage Service (Amazon S3) bucket.</p>
+    pub fn get_output_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_s3_bucket_name
+    }
     /// <p>The S3 bucket subfolder.</p>
     pub fn output_s3_key_prefix(
         mut self,
@@ -268,6 +303,10 @@ impl MaintenanceWindowRunCommandParametersBuilder {
     ) -> Self {
         self.output_s3_key_prefix = input;
         self
+    }
+    /// <p>The S3 bucket subfolder.</p>
+    pub fn get_output_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_s3_key_prefix
     }
     /// Adds a key-value pair to `parameters`.
     ///
@@ -297,6 +336,14 @@ impl MaintenanceWindowRunCommandParametersBuilder {
         self.parameters = input;
         self
     }
+    /// <p>The parameters for the <code>RUN_COMMAND</code> task execution.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
+    > {
+        &self.parameters
+    }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
     pub fn service_role_arn(
         mut self,
@@ -313,6 +360,10 @@ impl MaintenanceWindowRunCommandParametersBuilder {
         self.service_role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+    pub fn get_service_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_role_arn
+    }
     /// <p>If this time is reached and the command hasn't already started running, it doesn't run.</p>
     pub fn timeout_seconds(mut self, input: i32) -> Self {
         self.timeout_seconds = ::std::option::Option::Some(input);
@@ -322,6 +373,10 @@ impl MaintenanceWindowRunCommandParametersBuilder {
     pub fn set_timeout_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.timeout_seconds = input;
         self
+    }
+    /// <p>If this time is reached and the command hasn't already started running, it doesn't run.</p>
+    pub fn get_timeout_seconds(&self) -> &::std::option::Option<i32> {
+        &self.timeout_seconds
     }
     /// Consumes the builder and constructs a [`MaintenanceWindowRunCommandParameters`](crate::types::MaintenanceWindowRunCommandParameters).
     pub fn build(self) -> crate::types::MaintenanceWindowRunCommandParameters {

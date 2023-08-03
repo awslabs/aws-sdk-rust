@@ -67,6 +67,12 @@ impl DescribeBlueGreenDeploymentsOutputBuilder {
         self.blue_green_deployments = input;
         self
     }
+    /// <p>A list of blue/green deployments in the current account and Amazon Web Services Region.</p>
+    pub fn get_blue_green_deployments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BlueGreenDeployment>> {
+        &self.blue_green_deployments
+    }
     /// <p>A pagination token that can be used in a later <code>DescribeBlueGreenDeployments</code> request.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -76,6 +82,10 @@ impl DescribeBlueGreenDeploymentsOutputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>A pagination token that can be used in a later <code>DescribeBlueGreenDeployments</code> request.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

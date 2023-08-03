@@ -58,6 +58,12 @@ impl DescribeServiceErrorsOutputBuilder {
         self.service_errors = input;
         self
     }
+    /// <p>An array of <code>ServiceError</code> objects that describe the specified service errors.</p>
+    pub fn get_service_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceError>> {
+        &self.service_errors
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -38,6 +38,13 @@ impl PollForThirdPartyJobsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PollForThirdPartyJobs as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::poll_for_third_party_jobs::builders::PollForThirdPartyJobsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +138,10 @@ impl PollForThirdPartyJobsFluentBuilder {
         self.inner = self.inner.set_action_type_id(input);
         self
     }
+    /// <p>Represents information about an action type.</p>
+    pub fn get_action_type_id(&self) -> &::std::option::Option<crate::types::ActionTypeId> {
+        self.inner.get_action_type_id()
+    }
     /// <p>The maximum number of jobs to return in a poll for jobs call.</p>
     pub fn max_batch_size(mut self, input: i32) -> Self {
         self.inner = self.inner.max_batch_size(input);
@@ -140,5 +151,9 @@ impl PollForThirdPartyJobsFluentBuilder {
     pub fn set_max_batch_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_batch_size(input);
         self
+    }
+    /// <p>The maximum number of jobs to return in a poll for jobs call.</p>
+    pub fn get_max_batch_size(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_batch_size()
     }
 }

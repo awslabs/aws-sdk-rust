@@ -47,6 +47,10 @@ impl GetWorkflowInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the workflow to retrieve.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Specifies whether to include a graph when returning the workflow resource metadata.</p>
     pub fn include_graph(mut self, input: bool) -> Self {
         self.include_graph = ::std::option::Option::Some(input);
@@ -56,6 +60,10 @@ impl GetWorkflowInputBuilder {
     pub fn set_include_graph(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_graph = input;
         self
+    }
+    /// <p>Specifies whether to include a graph when returning the workflow resource metadata.</p>
+    pub fn get_include_graph(&self) -> &::std::option::Option<bool> {
+        &self.include_graph
     }
     /// Consumes the builder and constructs a [`GetWorkflowInput`](crate::operation::get_workflow::GetWorkflowInput).
     pub fn build(

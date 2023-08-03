@@ -108,6 +108,10 @@ impl ProblemBuilder {
         self.run = input;
         self
     }
+    /// <p>Information about the associated run.</p>
+    pub fn get_run(&self) -> &::std::option::Option<crate::types::ProblemDetail> {
+        &self.run
+    }
     /// <p>Information about the associated job.</p>
     pub fn job(mut self, input: crate::types::ProblemDetail) -> Self {
         self.job = ::std::option::Option::Some(input);
@@ -117,6 +121,10 @@ impl ProblemBuilder {
     pub fn set_job(mut self, input: ::std::option::Option<crate::types::ProblemDetail>) -> Self {
         self.job = input;
         self
+    }
+    /// <p>Information about the associated job.</p>
+    pub fn get_job(&self) -> &::std::option::Option<crate::types::ProblemDetail> {
+        &self.job
     }
     /// <p>Information about the associated suite.</p>
     pub fn suite(mut self, input: crate::types::ProblemDetail) -> Self {
@@ -128,6 +136,10 @@ impl ProblemBuilder {
         self.suite = input;
         self
     }
+    /// <p>Information about the associated suite.</p>
+    pub fn get_suite(&self) -> &::std::option::Option<crate::types::ProblemDetail> {
+        &self.suite
+    }
     /// <p>Information about the associated test.</p>
     pub fn test(mut self, input: crate::types::ProblemDetail) -> Self {
         self.test = ::std::option::Option::Some(input);
@@ -138,6 +150,10 @@ impl ProblemBuilder {
         self.test = input;
         self
     }
+    /// <p>Information about the associated test.</p>
+    pub fn get_test(&self) -> &::std::option::Option<crate::types::ProblemDetail> {
+        &self.test
+    }
     /// <p>Information about the associated device.</p>
     pub fn device(mut self, input: crate::types::Device) -> Self {
         self.device = ::std::option::Option::Some(input);
@@ -147,6 +163,10 @@ impl ProblemBuilder {
     pub fn set_device(mut self, input: ::std::option::Option<crate::types::Device>) -> Self {
         self.device = input;
         self
+    }
+    /// <p>Information about the associated device.</p>
+    pub fn get_device(&self) -> &::std::option::Option<crate::types::Device> {
+        &self.device
     }
     /// <p>The problem's result.</p>
     /// <p>Allowed values include:</p>
@@ -181,6 +201,20 @@ impl ProblemBuilder {
         self.result = input;
         self
     }
+    /// <p>The problem's result.</p>
+    /// <p>Allowed values include:</p>
+    /// <ul>
+    /// <li> <p>PENDING</p> </li>
+    /// <li> <p>PASSED</p> </li>
+    /// <li> <p>WARNED</p> </li>
+    /// <li> <p>FAILED</p> </li>
+    /// <li> <p>SKIPPED</p> </li>
+    /// <li> <p>ERRORED</p> </li>
+    /// <li> <p>STOPPED</p> </li>
+    /// </ul>
+    pub fn get_result(&self) -> &::std::option::Option<crate::types::ExecutionResult> {
+        &self.result
+    }
     /// <p>A message about the problem's result.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -190,6 +224,10 @@ impl ProblemBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>A message about the problem's result.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`Problem`](crate::types::Problem).
     pub fn build(self) -> crate::types::Problem {

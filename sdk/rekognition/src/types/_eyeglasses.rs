@@ -48,6 +48,10 @@ impl EyeglassesBuilder {
         self.value = input;
         self
     }
+    /// <p>Boolean value that indicates whether the face is wearing eye glasses or not.</p>
+    pub fn get_value(&self) -> &::std::option::Option<bool> {
+        &self.value
+    }
     /// <p>Level of confidence in the determination.</p>
     pub fn confidence(mut self, input: f32) -> Self {
         self.confidence = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl EyeglassesBuilder {
     pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
         self.confidence = input;
         self
+    }
+    /// <p>Level of confidence in the determination.</p>
+    pub fn get_confidence(&self) -> &::std::option::Option<f32> {
+        &self.confidence
     }
     /// Consumes the builder and constructs a [`Eyeglasses`](crate::types::Eyeglasses).
     pub fn build(self) -> crate::types::Eyeglasses {

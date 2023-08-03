@@ -80,6 +80,10 @@ impl ExclusionBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN that specifies the exclusion.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the exclusion.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl ExclusionBuilder {
         self.title = input;
         self
     }
+    /// <p>The name of the exclusion.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
+    }
     /// <p>The description of the exclusion.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -99,6 +107,10 @@ impl ExclusionBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the exclusion.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The recommendation for the exclusion.</p>
     pub fn recommendation(
@@ -115,6 +127,10 @@ impl ExclusionBuilder {
     ) -> Self {
         self.recommendation = input;
         self
+    }
+    /// <p>The recommendation for the exclusion.</p>
+    pub fn get_recommendation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommendation
     }
     /// Appends an item to `scopes`.
     ///
@@ -135,6 +151,10 @@ impl ExclusionBuilder {
         self.scopes = input;
         self
     }
+    /// <p>The AWS resources for which the exclusion pertains.</p>
+    pub fn get_scopes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Scope>> {
+        &self.scopes
+    }
     /// Appends an item to `attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
@@ -153,6 +173,12 @@ impl ExclusionBuilder {
     ) -> Self {
         self.attributes = input;
         self
+    }
+    /// <p>The system-defined attributes for the exclusion.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+        &self.attributes
     }
     /// Consumes the builder and constructs a [`Exclusion`](crate::types::Exclusion).
     pub fn build(self) -> crate::types::Exclusion {

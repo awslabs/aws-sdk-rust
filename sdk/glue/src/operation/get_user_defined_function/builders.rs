@@ -37,6 +37,13 @@ impl GetUserDefinedFunctionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetUserDefinedFunction as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_user_defined_function::builders::GetUserDefinedFunctionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl GetUserDefinedFunctionFluentBuilder {
         self.inner = self.inner.set_catalog_id(input);
         self
     }
+    /// <p>The ID of the Data Catalog where the function to be retrieved is located. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_catalog_id()
+    }
     /// <p>The name of the catalog database where the function is located.</p>
     pub fn database_name(
         mut self,
@@ -143,6 +154,10 @@ impl GetUserDefinedFunctionFluentBuilder {
         self.inner = self.inner.set_database_name(input);
         self
     }
+    /// <p>The name of the catalog database where the function is located.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_database_name()
+    }
     /// <p>The name of the function.</p>
     pub fn function_name(
         mut self,
@@ -158,5 +173,9 @@ impl GetUserDefinedFunctionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_function_name(input);
         self
+    }
+    /// <p>The name of the function.</p>
+    pub fn get_function_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_function_name()
     }
 }

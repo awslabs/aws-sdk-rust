@@ -57,6 +57,10 @@ impl ResetNotificationSettingsInputBuilder {
         self.trust_anchor_id = input;
         self
     }
+    /// <p>The unique identifier of the trust anchor.</p>
+    pub fn get_trust_anchor_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trust_anchor_id
+    }
     /// Appends an item to `notification_setting_keys`.
     ///
     /// To override the contents of this collection use [`set_notification_setting_keys`](Self::set_notification_setting_keys).
@@ -78,6 +82,12 @@ impl ResetNotificationSettingsInputBuilder {
     ) -> Self {
         self.notification_setting_keys = input;
         self
+    }
+    /// <p>A list of notification setting keys to reset. A notification setting key includes the event and the channel. </p>
+    pub fn get_notification_setting_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationSettingKey>> {
+        &self.notification_setting_keys
     }
     /// Consumes the builder and constructs a [`ResetNotificationSettingsInput`](crate::operation::reset_notification_settings::ResetNotificationSettingsInput).
     pub fn build(

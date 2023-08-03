@@ -64,6 +64,11 @@ impl CreateUsageReportSubscriptionOutputBuilder {
         self.s3_bucket_name = input;
         self
     }
+    /// <p>The Amazon S3 bucket where generated reports are stored.</p>
+    /// <p>If you enabled on-instance session scripts and Amazon S3 logging for your session script configuration, AppStream 2.0 created an S3 bucket to store the script output. The bucket is unique to your account and Region. When you enable usage reporting in this case, AppStream 2.0 uses the same bucket to store your usage reports. If you haven't already enabled on-instance session scripts, when you enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
+    pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket_name
+    }
     /// <p>The schedule for generating usage reports.</p>
     pub fn schedule(mut self, input: crate::types::UsageReportSchedule) -> Self {
         self.schedule = ::std::option::Option::Some(input);
@@ -76,6 +81,10 @@ impl CreateUsageReportSubscriptionOutputBuilder {
     ) -> Self {
         self.schedule = input;
         self
+    }
+    /// <p>The schedule for generating usage reports.</p>
+    pub fn get_schedule(&self) -> &::std::option::Option<crate::types::UsageReportSchedule> {
+        &self.schedule
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

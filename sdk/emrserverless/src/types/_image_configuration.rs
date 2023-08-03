@@ -48,6 +48,10 @@ impl ImageConfigurationBuilder {
         self.image_uri = input;
         self
     }
+    /// <p>The image URI.</p>
+    pub fn get_image_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_uri
+    }
     /// <p>The SHA256 digest of the image URI. This indicates which specific image the application is configured for. The image digest doesn't exist until an application has started.</p>
     pub fn resolved_image_digest(
         mut self,
@@ -63,6 +67,10 @@ impl ImageConfigurationBuilder {
     ) -> Self {
         self.resolved_image_digest = input;
         self
+    }
+    /// <p>The SHA256 digest of the image URI. This indicates which specific image the application is configured for. The image digest doesn't exist until an application has started.</p>
+    pub fn get_resolved_image_digest(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resolved_image_digest
     }
     /// Consumes the builder and constructs a [`ImageConfiguration`](crate::types::ImageConfiguration).
     pub fn build(self) -> crate::types::ImageConfiguration {

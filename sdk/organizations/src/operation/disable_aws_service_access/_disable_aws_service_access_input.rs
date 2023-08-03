@@ -47,6 +47,10 @@ impl DisableAwsServiceAccessInputBuilder {
         self.service_principal = input;
         self
     }
+    /// <p>The service principal name of the Amazon Web Services service for which you want to disable integration with your organization. This is typically in the form of a URL, such as <code> <i>service-abbreviation</i>.amazonaws.com</code>.</p>
+    pub fn get_service_principal(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_principal
+    }
     /// Consumes the builder and constructs a [`DisableAwsServiceAccessInput`](crate::operation::disable_aws_service_access::DisableAwsServiceAccessInput).
     pub fn build(
         self,

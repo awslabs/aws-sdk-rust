@@ -36,6 +36,12 @@ impl GetLicenseUsageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetLicenseUsage as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_license_usage::builders::GetLicenseUsageInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +131,9 @@ impl GetLicenseUsageFluentBuilder {
     pub fn set_license_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_license_arn(input);
         self
+    }
+    /// <p>Amazon Resource Name (ARN) of the license.</p>
+    pub fn get_license_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_license_arn()
     }
 }

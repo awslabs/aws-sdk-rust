@@ -36,6 +36,10 @@ impl BatchGetDeploymentGroupsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchGetDeploymentGroups as a reference.
+    pub fn as_input(&self) -> &crate::operation::batch_get_deployment_groups::builders::BatchGetDeploymentGroupsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl BatchGetDeploymentGroupsFluentBuilder {
         self.inner = self.inner.set_application_name(input);
         self
     }
+    /// <p>The name of an CodeDeploy application associated with the applicable IAM or Amazon Web Services account.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_name()
+    }
     /// Appends an item to `deploymentGroupNames`.
     ///
     /// To override the contents of this collection use [`set_deployment_group_names`](Self::set_deployment_group_names).
@@ -151,5 +159,11 @@ impl BatchGetDeploymentGroupsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_deployment_group_names(input);
         self
+    }
+    /// <p>The names of the deployment groups.</p>
+    pub fn get_deployment_group_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_deployment_group_names()
     }
 }

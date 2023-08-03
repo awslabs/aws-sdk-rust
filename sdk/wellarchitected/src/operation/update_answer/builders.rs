@@ -36,6 +36,10 @@ impl UpdateAnswerFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAnswer as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_answer::builders::UpdateAnswerInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl UpdateAnswerFluentBuilder {
         self.inner = self.inner.set_workload_id(input);
         self
     }
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workload_id()
+    }
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
@@ -134,6 +142,13 @@ impl UpdateAnswerFluentBuilder {
         self.inner = self.inner.set_lens_alias(input);
         self
     }
+    /// <p>The alias of the lens.</p>
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    pub fn get_lens_alias(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_lens_alias()
+    }
     /// <p>The ID of the question.</p>
     pub fn question_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.question_id(input.into());
@@ -143,6 +158,10 @@ impl UpdateAnswerFluentBuilder {
     pub fn set_question_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_question_id(input);
         self
+    }
+    /// <p>The ID of the question.</p>
+    pub fn get_question_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_question_id()
     }
     /// Appends an item to `SelectedChoices`.
     ///
@@ -165,6 +184,13 @@ impl UpdateAnswerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_selected_choices(input);
         self
+    }
+    /// <p>List of selected choice IDs in a question answer.</p>
+    /// <p>The values entered replace the previously selected choices.</p>
+    pub fn get_selected_choices(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_selected_choices()
     }
     /// Adds a key-value pair to `ChoiceUpdates`.
     ///
@@ -189,6 +215,14 @@ impl UpdateAnswerFluentBuilder {
         self.inner = self.inner.set_choice_updates(input);
         self
     }
+    /// <p>A list of choices to update on a question in your workload. The String key corresponds to the choice ID to be updated.</p>
+    pub fn get_choice_updates(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::ChoiceUpdate>,
+    > {
+        self.inner.get_choice_updates()
+    }
     /// <p>The notes associated with the workload.</p>
     pub fn notes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.notes(input.into());
@@ -198,6 +232,10 @@ impl UpdateAnswerFluentBuilder {
     pub fn set_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_notes(input);
         self
+    }
+    /// <p>The notes associated with the workload.</p>
+    pub fn get_notes(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_notes()
     }
     /// <p>Defines whether this question is applicable to a lens review.</p>
     pub fn is_applicable(mut self, input: bool) -> Self {
@@ -209,6 +247,10 @@ impl UpdateAnswerFluentBuilder {
         self.inner = self.inner.set_is_applicable(input);
         self
     }
+    /// <p>Defines whether this question is applicable to a lens review.</p>
+    pub fn get_is_applicable(&self) -> &::std::option::Option<bool> {
+        self.inner.get_is_applicable()
+    }
     /// <p>The reason why a question is not applicable to your workload.</p>
     pub fn reason(mut self, input: crate::types::AnswerReason) -> Self {
         self.inner = self.inner.reason(input);
@@ -218,5 +260,9 @@ impl UpdateAnswerFluentBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<crate::types::AnswerReason>) -> Self {
         self.inner = self.inner.set_reason(input);
         self
+    }
+    /// <p>The reason why a question is not applicable to your workload.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<crate::types::AnswerReason> {
+        self.inner.get_reason()
     }
 }

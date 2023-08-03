@@ -38,6 +38,10 @@ impl UpdateHubFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateHub as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_hub::builders::UpdateHubInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -120,6 +124,10 @@ impl UpdateHubFluentBuilder {
         self.inner = self.inner.set_hub_name(input);
         self
     }
+    /// <p>The name of the hub to update.</p>
+    pub fn get_hub_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_hub_name()
+    }
     /// <p>A description of the updated hub.</p>
     pub fn hub_description(
         mut self,
@@ -136,6 +144,10 @@ impl UpdateHubFluentBuilder {
         self.inner = self.inner.set_hub_description(input);
         self
     }
+    /// <p>A description of the updated hub.</p>
+    pub fn get_hub_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_hub_description()
+    }
     /// <p>The display name of the hub.</p>
     pub fn hub_display_name(
         mut self,
@@ -151,6 +163,10 @@ impl UpdateHubFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_hub_display_name(input);
         self
+    }
+    /// <p>The display name of the hub.</p>
+    pub fn get_hub_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_hub_display_name()
     }
     /// Appends an item to `HubSearchKeywords`.
     ///
@@ -171,5 +187,11 @@ impl UpdateHubFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_hub_search_keywords(input);
         self
+    }
+    /// <p>The searchable keywords for the hub.</p>
+    pub fn get_hub_search_keywords(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_hub_search_keywords()
     }
 }

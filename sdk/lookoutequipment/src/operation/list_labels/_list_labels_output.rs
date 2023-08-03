@@ -54,6 +54,10 @@ impl ListLabelsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p> An opaque pagination token indicating where to continue the listing of datasets. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `label_summaries`.
     ///
     /// To override the contents of this collection use [`set_label_summaries`](Self::set_label_summaries).
@@ -72,6 +76,12 @@ impl ListLabelsOutputBuilder {
     ) -> Self {
         self.label_summaries = input;
         self
+    }
+    /// <p> A summary of the items in the label group. </p>
+    pub fn get_label_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>> {
+        &self.label_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

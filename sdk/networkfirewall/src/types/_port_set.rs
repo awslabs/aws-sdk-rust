@@ -49,6 +49,10 @@ impl PortSetBuilder {
         self.definition = input;
         self
     }
+    /// <p>The set of port ranges. </p>
+    pub fn get_definition(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.definition
+    }
     /// Consumes the builder and constructs a [`PortSet`](crate::types::PortSet).
     pub fn build(self) -> crate::types::PortSet {
         crate::types::PortSet {

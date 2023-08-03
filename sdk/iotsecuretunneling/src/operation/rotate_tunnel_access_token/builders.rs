@@ -40,6 +40,13 @@ impl RotateTunnelAccessTokenFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RotateTunnelAccessToken as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::rotate_tunnel_access_token::builders::RotateTunnelAccessTokenInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +137,10 @@ impl RotateTunnelAccessTokenFluentBuilder {
         self.inner = self.inner.set_tunnel_id(input);
         self
     }
+    /// <p>The tunnel for which you want to rotate the access tokens.</p>
+    pub fn get_tunnel_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_tunnel_id()
+    }
     /// <p>The mode of the client that will use the client token, which can be either the source or destination, or both source and destination.</p>
     pub fn client_mode(mut self, input: crate::types::ClientMode) -> Self {
         self.inner = self.inner.client_mode(input);
@@ -143,6 +154,10 @@ impl RotateTunnelAccessTokenFluentBuilder {
         self.inner = self.inner.set_client_mode(input);
         self
     }
+    /// <p>The mode of the client that will use the client token, which can be either the source or destination, or both source and destination.</p>
+    pub fn get_client_mode(&self) -> &::std::option::Option<crate::types::ClientMode> {
+        self.inner.get_client_mode()
+    }
     /// <p>The destination configuration.</p>
     pub fn destination_config(mut self, input: crate::types::DestinationConfig) -> Self {
         self.inner = self.inner.destination_config(input);
@@ -155,5 +170,11 @@ impl RotateTunnelAccessTokenFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_destination_config(input);
         self
+    }
+    /// <p>The destination configuration.</p>
+    pub fn get_destination_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::DestinationConfig> {
+        self.inner.get_destination_config()
     }
 }

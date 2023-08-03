@@ -36,6 +36,13 @@ impl GetTemplateSyncConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetTemplateSyncConfig as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_template_sync_config::builders::GetTemplateSyncConfigInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl GetTemplateSyncConfigFluentBuilder {
         self.inner = self.inner.set_template_name(input);
         self
     }
+    /// <p>The template name.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_name()
+    }
     /// <p>The template type.</p>
     pub fn template_type(mut self, input: crate::types::TemplateType) -> Self {
         self.inner = self.inner.template_type(input);
@@ -144,5 +155,9 @@ impl GetTemplateSyncConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_template_type(input);
         self
+    }
+    /// <p>The template type.</p>
+    pub fn get_template_type(&self) -> &::std::option::Option<crate::types::TemplateType> {
+        self.inner.get_template_type()
     }
 }

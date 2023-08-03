@@ -71,6 +71,10 @@ impl CreateUseCaseInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The identifier for the integration association.</p>
     pub fn integration_association_id(
         mut self,
@@ -87,6 +91,10 @@ impl CreateUseCaseInputBuilder {
         self.integration_association_id = input;
         self
     }
+    /// <p>The identifier for the integration association.</p>
+    pub fn get_integration_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.integration_association_id
+    }
     /// <p>The type of use case to associate to the integration association. Each integration association can have only one of each use case type.</p>
     pub fn use_case_type(mut self, input: crate::types::UseCaseType) -> Self {
         self.use_case_type = ::std::option::Option::Some(input);
@@ -99,6 +107,10 @@ impl CreateUseCaseInputBuilder {
     ) -> Self {
         self.use_case_type = input;
         self
+    }
+    /// <p>The type of use case to associate to the integration association. Each integration association can have only one of each use case type.</p>
+    pub fn get_use_case_type(&self) -> &::std::option::Option<crate::types::UseCaseType> {
+        &self.use_case_type
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -124,6 +136,14 @@ impl CreateUseCaseInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateUseCaseInput`](crate::operation::create_use_case::CreateUseCaseInput).
     pub fn build(

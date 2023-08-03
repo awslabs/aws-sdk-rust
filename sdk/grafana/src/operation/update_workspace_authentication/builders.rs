@@ -38,6 +38,10 @@ impl UpdateWorkspaceAuthenticationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateWorkspaceAuthentication as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_workspace_authentication::builders::UpdateWorkspaceAuthenticationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +132,10 @@ impl UpdateWorkspaceAuthenticationFluentBuilder {
         self.inner = self.inner.set_workspace_id(input);
         self
     }
+    /// <p>The ID of the workspace to update the authentication for.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workspace_id()
+    }
     /// Appends an item to `authenticationProviders`.
     ///
     /// To override the contents of this collection use [`set_authentication_providers`](Self::set_authentication_providers).
@@ -148,6 +156,12 @@ impl UpdateWorkspaceAuthenticationFluentBuilder {
         self.inner = self.inner.set_authentication_providers(input);
         self
     }
+    /// <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
+    pub fn get_authentication_providers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProviderTypes>> {
+        self.inner.get_authentication_providers()
+    }
     /// <p>If the workspace uses SAML, use this structure to map SAML assertion attributes to workspace user information and define which groups in the assertion attribute are to have the <code>Admin</code> and <code>Editor</code> roles in the workspace.</p>
     pub fn saml_configuration(mut self, input: crate::types::SamlConfiguration) -> Self {
         self.inner = self.inner.saml_configuration(input);
@@ -160,5 +174,11 @@ impl UpdateWorkspaceAuthenticationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_saml_configuration(input);
         self
+    }
+    /// <p>If the workspace uses SAML, use this structure to map SAML assertion attributes to workspace user information and define which groups in the assertion attribute are to have the <code>Admin</code> and <code>Editor</code> roles in the workspace.</p>
+    pub fn get_saml_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SamlConfiguration> {
+        self.inner.get_saml_configuration()
     }
 }

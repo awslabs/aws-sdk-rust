@@ -88,6 +88,17 @@ impl ListAliasesInputBuilder {
         self.routing_strategy_type = input;
         self
     }
+    /// <p>The routing type to filter results on. Use this parameter to retrieve only aliases with a certain routing type. To retrieve all aliases, leave this parameter empty.</p>
+    /// <p>Possible routing types include the following:</p>
+    /// <ul>
+    /// <li> <p> <b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when routing to active fleets.</p> </li>
+    /// <li> <p> <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RoutingStrategy.html">RoutingStrategy</a> message embedded.</p> </li>
+    /// </ul>
+    pub fn get_routing_strategy_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::RoutingStrategyType> {
+        &self.routing_strategy_type
+    }
     /// <p>A descriptive label that is associated with an alias. Alias names do not need to be unique.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -97,6 +108,10 @@ impl ListAliasesInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A descriptive label that is associated with an alias. Alias names do not need to be unique.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -108,6 +123,10 @@ impl ListAliasesInputBuilder {
         self.limit = input;
         self
     }
+    /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
+    }
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -117,6 +136,10 @@ impl ListAliasesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListAliasesInput`](crate::operation::list_aliases::ListAliasesInput).
     pub fn build(

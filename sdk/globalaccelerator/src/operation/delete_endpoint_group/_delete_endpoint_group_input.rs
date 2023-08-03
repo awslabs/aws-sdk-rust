@@ -47,6 +47,10 @@ impl DeleteEndpointGroupInputBuilder {
         self.endpoint_group_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the endpoint group to delete.</p>
+    pub fn get_endpoint_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_group_arn
+    }
     /// Consumes the builder and constructs a [`DeleteEndpointGroupInput`](crate::operation::delete_endpoint_group::DeleteEndpointGroupInput).
     pub fn build(
         self,

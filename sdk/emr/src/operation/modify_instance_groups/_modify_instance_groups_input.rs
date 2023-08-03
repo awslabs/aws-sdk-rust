@@ -53,6 +53,10 @@ impl ModifyInstanceGroupsInputBuilder {
         self.cluster_id = input;
         self
     }
+    /// <p>The ID of the cluster to which the instance group belongs.</p>
+    pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_id
+    }
     /// Appends an item to `instance_groups`.
     ///
     /// To override the contents of this collection use [`set_instance_groups`](Self::set_instance_groups).
@@ -71,6 +75,12 @@ impl ModifyInstanceGroupsInputBuilder {
     ) -> Self {
         self.instance_groups = input;
         self
+    }
+    /// <p>Instance groups to change.</p>
+    pub fn get_instance_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupModifyConfig>> {
+        &self.instance_groups
     }
     /// Consumes the builder and constructs a [`ModifyInstanceGroupsInput`](crate::operation::modify_instance_groups::ModifyInstanceGroupsInput).
     pub fn build(

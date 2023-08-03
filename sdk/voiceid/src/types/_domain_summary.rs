@@ -140,6 +140,10 @@ impl DomainSummaryBuilder {
         self.domain_id = input;
         self
     }
+    /// <p>The identifier of the domain.</p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_id
+    }
     /// <p>The Amazon Resource Name (ARN) for the domain.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -149,6 +153,10 @@ impl DomainSummaryBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the domain.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The client-provided name for the domain.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -160,6 +168,10 @@ impl DomainSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The client-provided name for the domain.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the domain.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -169,6 +181,10 @@ impl DomainSummaryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the domain.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The current status of the domain.</p>
     pub fn domain_status(mut self, input: crate::types::DomainStatus) -> Self {
@@ -182,6 +198,10 @@ impl DomainSummaryBuilder {
     ) -> Self {
         self.domain_status = input;
         self
+    }
+    /// <p>The current status of the domain.</p>
+    pub fn get_domain_status(&self) -> &::std::option::Option<crate::types::DomainStatus> {
+        &self.domain_status
     }
     /// <p>The server-side encryption configuration containing the KMS key identifier you want Voice ID to use to encrypt your data.</p>
     pub fn server_side_encryption_configuration(
@@ -199,6 +219,12 @@ impl DomainSummaryBuilder {
         self.server_side_encryption_configuration = input;
         self
     }
+    /// <p>The server-side encryption configuration containing the KMS key identifier you want Voice ID to use to encrypt your data.</p>
+    pub fn get_server_side_encryption_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServerSideEncryptionConfiguration> {
+        &self.server_side_encryption_configuration
+    }
     /// <p>The timestamp of when the domain was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -212,6 +238,10 @@ impl DomainSummaryBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The timestamp of when the domain was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The timestamp of when the domain was last updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
@@ -224,6 +254,10 @@ impl DomainSummaryBuilder {
     ) -> Self {
         self.updated_at = input;
         self
+    }
+    /// <p>The timestamp of when the domain was last updated.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     /// <p>Details about the most recent server-side encryption configuration update. When the server-side encryption configuration is changed, dependency on the old KMS key is removed through an asynchronous process. When this update is complete, the domain's data can only be accessed using the new KMS key.</p>
     pub fn server_side_encryption_update_details(
@@ -241,6 +275,12 @@ impl DomainSummaryBuilder {
         self.server_side_encryption_update_details = input;
         self
     }
+    /// <p>Details about the most recent server-side encryption configuration update. When the server-side encryption configuration is changed, dependency on the old KMS key is removed through an asynchronous process. When this update is complete, the domain's data can only be accessed using the new KMS key.</p>
+    pub fn get_server_side_encryption_update_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServerSideEncryptionUpdateDetails> {
+        &self.server_side_encryption_update_details
+    }
     /// <p>Provides information about <code>watchlistDetails</code> and <code>DefaultWatchlistID</code>. </p>
     pub fn watchlist_details(mut self, input: crate::types::WatchlistDetails) -> Self {
         self.watchlist_details = ::std::option::Option::Some(input);
@@ -253,6 +293,10 @@ impl DomainSummaryBuilder {
     ) -> Self {
         self.watchlist_details = input;
         self
+    }
+    /// <p>Provides information about <code>watchlistDetails</code> and <code>DefaultWatchlistID</code>. </p>
+    pub fn get_watchlist_details(&self) -> &::std::option::Option<crate::types::WatchlistDetails> {
+        &self.watchlist_details
     }
     /// Consumes the builder and constructs a [`DomainSummary`](crate::types::DomainSummary).
     pub fn build(self) -> crate::types::DomainSummary {

@@ -47,6 +47,10 @@ impl DeleteDetectorModelInputBuilder {
         self.detector_model_name = input;
         self
     }
+    /// <p>The name of the detector model to be deleted.</p>
+    pub fn get_detector_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_model_name
+    }
     /// Consumes the builder and constructs a [`DeleteDetectorModelInput`](crate::operation::delete_detector_model::DeleteDetectorModelInput).
     pub fn build(
         self,

@@ -47,6 +47,10 @@ impl ExperimentTemplateCloudWatchLogsLogConfigurationInputBuilder {
         self.log_group_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the destination Amazon CloudWatch Logs log group.</p>
+    pub fn get_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group_arn
+    }
     /// Consumes the builder and constructs a [`ExperimentTemplateCloudWatchLogsLogConfigurationInput`](crate::types::ExperimentTemplateCloudWatchLogsLogConfigurationInput).
     pub fn build(self) -> crate::types::ExperimentTemplateCloudWatchLogsLogConfigurationInput {
         crate::types::ExperimentTemplateCloudWatchLogsLogConfigurationInput {

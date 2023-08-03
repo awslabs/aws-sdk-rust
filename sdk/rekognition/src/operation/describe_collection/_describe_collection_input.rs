@@ -46,6 +46,10 @@ impl DescribeCollectionInputBuilder {
         self.collection_id = input;
         self
     }
+    /// <p>The ID of the collection to describe.</p>
+    pub fn get_collection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collection_id
+    }
     /// Consumes the builder and constructs a [`DescribeCollectionInput`](crate::operation::describe_collection::DescribeCollectionInput).
     pub fn build(
         self,

@@ -56,6 +56,10 @@ impl CodeDeliveryDetailsTypeBuilder {
         self.destination = input;
         self
     }
+    /// <p>The email address or phone number destination where Amazon Cognito sent the code.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination
+    }
     /// <p>The method that Amazon Cognito used to send the code.</p>
     pub fn delivery_medium(mut self, input: crate::types::DeliveryMediumType) -> Self {
         self.delivery_medium = ::std::option::Option::Some(input);
@@ -68,6 +72,10 @@ impl CodeDeliveryDetailsTypeBuilder {
     ) -> Self {
         self.delivery_medium = input;
         self
+    }
+    /// <p>The method that Amazon Cognito used to send the code.</p>
+    pub fn get_delivery_medium(&self) -> &::std::option::Option<crate::types::DeliveryMediumType> {
+        &self.delivery_medium
     }
     /// <p>The name of the attribute that Amazon Cognito verifies with the code.</p>
     pub fn attribute_name(
@@ -84,6 +92,10 @@ impl CodeDeliveryDetailsTypeBuilder {
     ) -> Self {
         self.attribute_name = input;
         self
+    }
+    /// <p>The name of the attribute that Amazon Cognito verifies with the code.</p>
+    pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_name
     }
     /// Consumes the builder and constructs a [`CodeDeliveryDetailsType`](crate::types::CodeDeliveryDetailsType).
     pub fn build(self) -> crate::types::CodeDeliveryDetailsType {

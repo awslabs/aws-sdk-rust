@@ -119,6 +119,10 @@ impl SuiteRunInformationBuilder {
         self.suite_definition_id = input;
         self
     }
+    /// <p>Suite definition ID of the suite run.</p>
+    pub fn get_suite_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.suite_definition_id
+    }
     /// <p>Suite definition version of the suite run.</p>
     pub fn suite_definition_version(
         mut self,
@@ -134,6 +138,10 @@ impl SuiteRunInformationBuilder {
     ) -> Self {
         self.suite_definition_version = input;
         self
+    }
+    /// <p>Suite definition version of the suite run.</p>
+    pub fn get_suite_definition_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.suite_definition_version
     }
     /// <p>Suite definition name of the suite run.</p>
     pub fn suite_definition_name(
@@ -151,6 +159,10 @@ impl SuiteRunInformationBuilder {
         self.suite_definition_name = input;
         self
     }
+    /// <p>Suite definition name of the suite run.</p>
+    pub fn get_suite_definition_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.suite_definition_name
+    }
     /// <p>Suite run ID of the suite run.</p>
     pub fn suite_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suite_run_id = ::std::option::Option::Some(input.into());
@@ -160,6 +172,10 @@ impl SuiteRunInformationBuilder {
     pub fn set_suite_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.suite_run_id = input;
         self
+    }
+    /// <p>Suite run ID of the suite run.</p>
+    pub fn get_suite_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.suite_run_id
     }
     /// <p>Date (in Unix epoch time) when the suite run was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -174,6 +190,10 @@ impl SuiteRunInformationBuilder {
         self.created_at = input;
         self
     }
+    /// <p>Date (in Unix epoch time) when the suite run was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>Date (in Unix epoch time) when the suite run was started.</p>
     pub fn started_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.started_at = ::std::option::Option::Some(input);
@@ -186,6 +206,10 @@ impl SuiteRunInformationBuilder {
     ) -> Self {
         self.started_at = input;
         self
+    }
+    /// <p>Date (in Unix epoch time) when the suite run was started.</p>
+    pub fn get_started_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.started_at
     }
     /// <p>Date (in Unix epoch time) when the suite run ended.</p>
     pub fn end_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -200,6 +224,10 @@ impl SuiteRunInformationBuilder {
         self.end_at = input;
         self
     }
+    /// <p>Date (in Unix epoch time) when the suite run ended.</p>
+    pub fn get_end_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_at
+    }
     /// <p>Status of the suite run.</p>
     pub fn status(mut self, input: crate::types::SuiteRunStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -213,6 +241,10 @@ impl SuiteRunInformationBuilder {
         self.status = input;
         self
     }
+    /// <p>Status of the suite run.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::SuiteRunStatus> {
+        &self.status
+    }
     /// <p>Number of test cases that passed in the suite run.</p>
     pub fn passed(mut self, input: i32) -> Self {
         self.passed = ::std::option::Option::Some(input);
@@ -223,6 +255,10 @@ impl SuiteRunInformationBuilder {
         self.passed = input;
         self
     }
+    /// <p>Number of test cases that passed in the suite run.</p>
+    pub fn get_passed(&self) -> &::std::option::Option<i32> {
+        &self.passed
+    }
     /// <p>Number of test cases that failed in the suite run.</p>
     pub fn failed(mut self, input: i32) -> Self {
         self.failed = ::std::option::Option::Some(input);
@@ -232,6 +268,10 @@ impl SuiteRunInformationBuilder {
     pub fn set_failed(mut self, input: ::std::option::Option<i32>) -> Self {
         self.failed = input;
         self
+    }
+    /// <p>Number of test cases that failed in the suite run.</p>
+    pub fn get_failed(&self) -> &::std::option::Option<i32> {
+        &self.failed
     }
     /// Consumes the builder and constructs a [`SuiteRunInformation`](crate::types::SuiteRunInformation).
     pub fn build(self) -> crate::types::SuiteRunInformation {

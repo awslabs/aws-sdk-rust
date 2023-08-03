@@ -36,6 +36,10 @@ impl DescribeGatewayCapabilityConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeGatewayCapabilityConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_gateway_capability_configuration::builders::DescribeGatewayCapabilityConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl DescribeGatewayCapabilityConfigurationFluentBuilder {
         self.inner = self.inner.set_gateway_id(input);
         self
     }
+    /// <p>The ID of the gateway that defines the capability configuration.</p>
+    pub fn get_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_gateway_id()
+    }
     /// <p>The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
     pub fn capability_namespace(
         mut self,
@@ -115,5 +123,9 @@ impl DescribeGatewayCapabilityConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_capability_namespace(input);
         self
+    }
+    /// <p>The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
+    pub fn get_capability_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_capability_namespace()
     }
 }

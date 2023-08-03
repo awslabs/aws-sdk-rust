@@ -81,6 +81,10 @@ impl ForbiddenExceptionBuilder {
         self.error_attribute = input;
         self
     }
+    /// <p>The attribute which caused the error.</p>
+    pub fn get_error_attribute(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_attribute
+    }
     /// <p>The explanation of the error.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl ForbiddenExceptionBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>The explanation of the error.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

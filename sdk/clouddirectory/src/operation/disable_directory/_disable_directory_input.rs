@@ -46,6 +46,10 @@ impl DisableDirectoryInputBuilder {
         self.directory_arn = input;
         self
     }
+    /// <p>The ARN of the directory to disable.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_arn
+    }
     /// Consumes the builder and constructs a [`DisableDirectoryInput`](crate::operation::disable_directory::DisableDirectoryInput).
     pub fn build(
         self,

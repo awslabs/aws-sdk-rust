@@ -119,6 +119,10 @@ impl NetworkInterfaceBuilder {
         self.network_interface_id = input;
         self
     }
+    /// <p>The ID of the network interface.</p>
+    pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_interface_id
+    }
     /// <p>The ID of a subnet associated with the network interface.</p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
@@ -129,6 +133,10 @@ impl NetworkInterfaceBuilder {
         self.subnet_id = input;
         self
     }
+    /// <p>The ID of a subnet associated with the network interface.</p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_id
+    }
     /// <p>The ID of a VPC associated with the network interface.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -138,6 +146,10 @@ impl NetworkInterfaceBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The ID of a VPC associated with the network interface.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// <p>The name of a private DNS associated with the network interface.</p>
     pub fn private_dns_name(
@@ -155,6 +167,10 @@ impl NetworkInterfaceBuilder {
         self.private_dns_name = input;
         self
     }
+    /// <p>The name of a private DNS associated with the network interface.</p>
+    pub fn get_private_dns_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_dns_name
+    }
     /// <p>The private IP address associated with the network interface.</p>
     pub fn private_ip_address(
         mut self,
@@ -170,6 +186,10 @@ impl NetworkInterfaceBuilder {
     ) -> Self {
         self.private_ip_address = input;
         self
+    }
+    /// <p>The private IP address associated with the network interface.</p>
+    pub fn get_private_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_ip_address
     }
     /// Appends an item to `private_ip_addresses`.
     ///
@@ -190,6 +210,12 @@ impl NetworkInterfaceBuilder {
         self.private_ip_addresses = input;
         self
     }
+    /// <p>A list of the private IP addresses associated with the network interface. Includes the privateDnsName and privateIpAddress.</p>
+    pub fn get_private_ip_addresses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PrivateIp>> {
+        &self.private_ip_addresses
+    }
     /// <p>The name of a public DNS associated with the network interface.</p>
     pub fn public_dns_name(
         mut self,
@@ -206,6 +232,10 @@ impl NetworkInterfaceBuilder {
         self.public_dns_name = input;
         self
     }
+    /// <p>The name of a public DNS associated with the network interface.</p>
+    pub fn get_public_dns_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_dns_name
+    }
     /// <p>The public IP address from which the network interface is reachable.</p>
     pub fn public_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_ip = ::std::option::Option::Some(input.into());
@@ -215,6 +245,10 @@ impl NetworkInterfaceBuilder {
     pub fn set_public_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_ip = input;
         self
+    }
+    /// <p>The public IP address from which the network interface is reachable.</p>
+    pub fn get_public_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_ip
     }
     /// Appends an item to `ipv6_addresses`.
     ///
@@ -238,6 +272,12 @@ impl NetworkInterfaceBuilder {
         self.ipv6_addresses = input;
         self
     }
+    /// <p>The IP addresses associated with the network interface.</p>
+    pub fn get_ipv6_addresses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ipv6_addresses
+    }
     /// Appends an item to `security_groups`.
     ///
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
@@ -256,6 +296,12 @@ impl NetworkInterfaceBuilder {
     ) -> Self {
         self.security_groups = input;
         self
+    }
+    /// <p>A list of the security groups associated with the network interface. Includes the groupId and groupName.</p>
+    pub fn get_security_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityGroup>> {
+        &self.security_groups
     }
     /// Consumes the builder and constructs a [`NetworkInterface`](crate::types::NetworkInterface).
     pub fn build(self) -> crate::types::NetworkInterface {

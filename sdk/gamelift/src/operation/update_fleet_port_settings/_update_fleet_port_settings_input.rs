@@ -65,6 +65,10 @@ impl UpdateFleetPortSettingsInputBuilder {
         self.fleet_id = input;
         self
     }
+    /// <p>A unique identifier for the fleet to update port settings for. You can use either the fleet ID or ARN value.</p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_id
+    }
     /// Appends an item to `inbound_permission_authorizations`.
     ///
     /// To override the contents of this collection use [`set_inbound_permission_authorizations`](Self::set_inbound_permission_authorizations).
@@ -84,6 +88,12 @@ impl UpdateFleetPortSettingsInputBuilder {
         self.inbound_permission_authorizations = input;
         self
     }
+    /// <p>A collection of port settings to be added to the fleet resource.</p>
+    pub fn get_inbound_permission_authorizations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpPermission>> {
+        &self.inbound_permission_authorizations
+    }
     /// Appends an item to `inbound_permission_revocations`.
     ///
     /// To override the contents of this collection use [`set_inbound_permission_revocations`](Self::set_inbound_permission_revocations).
@@ -102,6 +112,12 @@ impl UpdateFleetPortSettingsInputBuilder {
     ) -> Self {
         self.inbound_permission_revocations = input;
         self
+    }
+    /// <p>A collection of port settings to be removed from the fleet resource.</p>
+    pub fn get_inbound_permission_revocations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpPermission>> {
+        &self.inbound_permission_revocations
     }
     /// Consumes the builder and constructs a [`UpdateFleetPortSettingsInput`](crate::operation::update_fleet_port_settings::UpdateFleetPortSettingsInput).
     pub fn build(

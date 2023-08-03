@@ -62,6 +62,10 @@ impl ProviderUserIdentifierTypeBuilder {
         self.provider_name = input;
         self
     }
+    /// <p>The name of the provider, such as Facebook, Google, or Login with Amazon.</p>
+    pub fn get_provider_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provider_name
+    }
     /// <p>The name of the provider attribute to link to, such as <code>NameID</code>.</p>
     pub fn provider_attribute_name(
         mut self,
@@ -78,6 +82,10 @@ impl ProviderUserIdentifierTypeBuilder {
         self.provider_attribute_name = input;
         self
     }
+    /// <p>The name of the provider attribute to link to, such as <code>NameID</code>.</p>
+    pub fn get_provider_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provider_attribute_name
+    }
     /// <p>The value of the provider attribute to link to, such as <code>xxxxx_account</code>.</p>
     pub fn provider_attribute_value(
         mut self,
@@ -93,6 +101,10 @@ impl ProviderUserIdentifierTypeBuilder {
     ) -> Self {
         self.provider_attribute_value = input;
         self
+    }
+    /// <p>The value of the provider attribute to link to, such as <code>xxxxx_account</code>.</p>
+    pub fn get_provider_attribute_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provider_attribute_value
     }
     /// Consumes the builder and constructs a [`ProviderUserIdentifierType`](crate::types::ProviderUserIdentifierType).
     pub fn build(self) -> crate::types::ProviderUserIdentifierType {

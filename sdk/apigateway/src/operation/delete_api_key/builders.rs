@@ -36,6 +36,12 @@ impl DeleteApiKeyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteApiKey as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_api_key::builders::DeleteApiKeyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -117,5 +123,9 @@ impl DeleteApiKeyFluentBuilder {
     pub fn set_api_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_api_key(input);
         self
+    }
+    /// <p>The identifier of the ApiKey resource to be deleted.</p>
+    pub fn get_api_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_api_key()
     }
 }

@@ -66,6 +66,10 @@ impl CreateBasePathMappingInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The domain name of the BasePathMapping resource to create.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The base path name that callers of the API must provide as part of the URL after the domain name. This value must be unique for all of the mappings across a single API. Specify '(none)' if you do not want callers to specify a base path name after the domain name.</p>
     pub fn base_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.base_path = ::std::option::Option::Some(input.into());
@@ -75,6 +79,10 @@ impl CreateBasePathMappingInputBuilder {
     pub fn set_base_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.base_path = input;
         self
+    }
+    /// <p>The base path name that callers of the API must provide as part of the URL after the domain name. This value must be unique for all of the mappings across a single API. Specify '(none)' if you do not want callers to specify a base path name after the domain name.</p>
+    pub fn get_base_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.base_path
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -86,6 +94,10 @@ impl CreateBasePathMappingInputBuilder {
         self.rest_api_id = input;
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rest_api_id
+    }
     /// <p>The name of the API's stage that you want to use for this mapping. Specify '(none)' if you want callers to explicitly specify the stage name after any base path name.</p>
     pub fn stage(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage = ::std::option::Option::Some(input.into());
@@ -95,6 +107,10 @@ impl CreateBasePathMappingInputBuilder {
     pub fn set_stage(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stage = input;
         self
+    }
+    /// <p>The name of the API's stage that you want to use for this mapping. Specify '(none)' if you want callers to explicitly specify the stage name after any base path name.</p>
+    pub fn get_stage(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stage
     }
     /// Consumes the builder and constructs a [`CreateBasePathMappingInput`](crate::operation::create_base_path_mapping::CreateBasePathMappingInput).
     pub fn build(

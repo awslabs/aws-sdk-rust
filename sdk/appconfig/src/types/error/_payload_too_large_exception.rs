@@ -92,6 +92,10 @@ impl PayloadTooLargeExceptionBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
+    #[allow(missing_docs)] // documentation missing in model
     pub fn measure(mut self, input: crate::types::BytesMeasure) -> Self {
         self.measure = ::std::option::Option::Some(input);
         self
@@ -100,6 +104,10 @@ impl PayloadTooLargeExceptionBuilder {
     pub fn set_measure(mut self, input: ::std::option::Option<crate::types::BytesMeasure>) -> Self {
         self.measure = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_measure(&self) -> &::std::option::Option<crate::types::BytesMeasure> {
+        &self.measure
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn limit(mut self, input: f32) -> Self {
@@ -112,6 +120,10 @@ impl PayloadTooLargeExceptionBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
+    pub fn get_limit(&self) -> &::std::option::Option<f32> {
+        &self.limit
+    }
+    #[allow(missing_docs)] // documentation missing in model
     pub fn size(mut self, input: f32) -> Self {
         self.size = ::std::option::Option::Some(input);
         self
@@ -120,6 +132,10 @@ impl PayloadTooLargeExceptionBuilder {
     pub fn set_size(mut self, input: ::std::option::Option<f32>) -> Self {
         self.size = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_size(&self) -> &::std::option::Option<f32> {
+        &self.size
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

@@ -70,6 +70,10 @@ impl LastRecorderStatusBuilder {
         self.job_status_details = input;
         self
     }
+    /// <p>A description of a recorder job’s latest status.</p>
+    pub fn get_job_status_details(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_status_details
+    }
     /// <p>The timestamp at which the recorder job was last executed and media stored to local disk.</p>
     pub fn last_collected_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_collected_time = ::std::option::Option::Some(input);
@@ -82,6 +86,10 @@ impl LastRecorderStatusBuilder {
     ) -> Self {
         self.last_collected_time = input;
         self
+    }
+    /// <p>The timestamp at which the recorder job was last executed and media stored to local disk.</p>
+    pub fn get_last_collected_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_collected_time
     }
     /// <p>The timestamp at which the recorder status was last updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -96,6 +104,10 @@ impl LastRecorderStatusBuilder {
         self.last_updated_time = input;
         self
     }
+    /// <p>The timestamp at which the recorder status was last updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
+    }
     /// <p>The status of the latest recorder job.</p>
     pub fn recorder_status(mut self, input: crate::types::RecorderStatus) -> Self {
         self.recorder_status = ::std::option::Option::Some(input);
@@ -108,6 +120,10 @@ impl LastRecorderStatusBuilder {
     ) -> Self {
         self.recorder_status = input;
         self
+    }
+    /// <p>The status of the latest recorder job.</p>
+    pub fn get_recorder_status(&self) -> &::std::option::Option<crate::types::RecorderStatus> {
+        &self.recorder_status
     }
     /// Consumes the builder and constructs a [`LastRecorderStatus`](crate::types::LastRecorderStatus).
     pub fn build(self) -> crate::types::LastRecorderStatus {

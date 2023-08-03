@@ -61,6 +61,12 @@ impl StartUserAccessTasksOutputBuilder {
         self.user_access_tasks_list = input;
         self
     }
+    /// <p>Contains a list of user access task information.</p>
+    pub fn get_user_access_tasks_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UserAccessTaskItem>> {
+        &self.user_access_tasks_list
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

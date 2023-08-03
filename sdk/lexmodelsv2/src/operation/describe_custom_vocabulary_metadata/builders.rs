@@ -36,6 +36,10 @@ impl DescribeCustomVocabularyMetadataFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeCustomVocabularyMetadata as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_custom_vocabulary_metadata::builders::DescribeCustomVocabularyMetadataInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl DescribeCustomVocabularyMetadataFluentBuilder {
         self.inner = self.inner.set_bot_id(input);
         self
     }
+    /// <p>The unique identifier of the bot that contains the custom vocabulary.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bot_id()
+    }
     /// <p>The bot version of the bot to return metadata for.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_version(input.into());
@@ -110,6 +118,10 @@ impl DescribeCustomVocabularyMetadataFluentBuilder {
         self.inner = self.inner.set_bot_version(input);
         self
     }
+    /// <p>The bot version of the bot to return metadata for.</p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bot_version()
+    }
     /// <p>The locale to return the custom vocabulary information for. The locale must be <code>en_GB</code>.</p>
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.locale_id(input.into());
@@ -119,5 +131,9 @@ impl DescribeCustomVocabularyMetadataFluentBuilder {
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_locale_id(input);
         self
+    }
+    /// <p>The locale to return the custom vocabulary information for. The locale must be <code>en_GB</code>.</p>
+    pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_locale_id()
     }
 }

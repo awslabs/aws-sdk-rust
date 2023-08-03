@@ -37,6 +37,10 @@ impl UpdateDistributionWithStagingConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDistributionWithStagingConfig as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_distribution_with_staging_config::builders::UpdateDistributionWithStagingConfigInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -101,6 +105,10 @@ impl UpdateDistributionWithStagingConfigFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The identifier of the primary distribution to which you are copying a staging distribution's configuration.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The identifier of the staging distribution whose configuration you are copying to the primary distribution.</p>
     pub fn staging_distribution_id(
         mut self,
@@ -116,6 +124,10 @@ impl UpdateDistributionWithStagingConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_staging_distribution_id(input);
         self
+    }
+    /// <p>The identifier of the staging distribution whose configuration you are copying to the primary distribution.</p>
+    pub fn get_staging_distribution_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_staging_distribution_id()
     }
     /// <p>The current versions (<code>ETag</code> values) of both primary and staging distributions. Provide these in the following format:</p>
     /// <p> <code>
@@ -136,5 +148,14 @@ impl UpdateDistributionWithStagingConfigFluentBuilder {
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_if_match(input);
         self
+    }
+    /// <p>The current versions (<code>ETag</code> values) of both primary and staging distributions. Provide these in the following format:</p>
+    /// <p> <code>
+    /// <primary etag>
+    /// ,
+    /// <staging etag></staging>
+    /// </primary></code> </p>
+    pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_if_match()
     }
 }

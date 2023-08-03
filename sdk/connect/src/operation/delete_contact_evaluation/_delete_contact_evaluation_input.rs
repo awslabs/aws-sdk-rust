@@ -49,6 +49,10 @@ impl DeleteContactEvaluationInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>A unique identifier for the contact evaluation.</p>
     pub fn evaluation_id(
         mut self,
@@ -64,6 +68,10 @@ impl DeleteContactEvaluationInputBuilder {
     ) -> Self {
         self.evaluation_id = input;
         self
+    }
+    /// <p>A unique identifier for the contact evaluation.</p>
+    pub fn get_evaluation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evaluation_id
     }
     /// Consumes the builder and constructs a [`DeleteContactEvaluationInput`](crate::operation::delete_contact_evaluation::DeleteContactEvaluationInput).
     pub fn build(

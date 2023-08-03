@@ -120,6 +120,10 @@ impl DescribeStackDriftDetectionStatusOutputBuilder {
         self.stack_id = input;
         self
     }
+    /// <p>The ID of the stack.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_id
+    }
     /// <p>The ID of the drift detection results of this operation.</p>
     /// <p>CloudFormation generates new results, with a new drift detection ID, each time this operation is run. However, the number of reports CloudFormation retains for any given stack, and for how long, may vary.</p>
     pub fn stack_drift_detection_id(
@@ -137,6 +141,11 @@ impl DescribeStackDriftDetectionStatusOutputBuilder {
     ) -> Self {
         self.stack_drift_detection_id = input;
         self
+    }
+    /// <p>The ID of the drift detection results of this operation.</p>
+    /// <p>CloudFormation generates new results, with a new drift detection ID, each time this operation is run. However, the number of reports CloudFormation retains for any given stack, and for how long, may vary.</p>
+    pub fn get_stack_drift_detection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_drift_detection_id
     }
     /// <p>Status of the stack's actual configuration compared to its expected configuration.</p>
     /// <ul>
@@ -163,6 +172,16 @@ impl DescribeStackDriftDetectionStatusOutputBuilder {
         self.stack_drift_status = input;
         self
     }
+    /// <p>Status of the stack's actual configuration compared to its expected configuration.</p>
+    /// <ul>
+    /// <li> <p> <code>DRIFTED</code>: The stack differs from its expected template configuration. A stack is considered to have drifted if one or more of its resources have drifted.</p> </li>
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack differs from its expected template configuration.</p> </li>
+    /// <li> <p> <code>IN_SYNC</code>: The stack's actual configuration matches its expected template configuration.</p> </li>
+    /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
+    /// </ul>
+    pub fn get_stack_drift_status(&self) -> &::std::option::Option<crate::types::StackDriftStatus> {
+        &self.stack_drift_status
+    }
     /// <p>The status of the stack drift detection operation.</p>
     /// <ul>
     /// <li> <p> <code>DETECTION_COMPLETE</code>: The stack drift detection operation has successfully completed for all resources in the stack that support drift detection. (Resources that don't currently support stack detection remain unchecked.)</p> <p>If you specified logical resource IDs for CloudFormation to use as a filter for the stack drift detection operation, only the resources with those logical IDs are checked for drift.</p> </li>
@@ -186,6 +205,17 @@ impl DescribeStackDriftDetectionStatusOutputBuilder {
         self.detection_status = input;
         self
     }
+    /// <p>The status of the stack drift detection operation.</p>
+    /// <ul>
+    /// <li> <p> <code>DETECTION_COMPLETE</code>: The stack drift detection operation has successfully completed for all resources in the stack that support drift detection. (Resources that don't currently support stack detection remain unchecked.)</p> <p>If you specified logical resource IDs for CloudFormation to use as a filter for the stack drift detection operation, only the resources with those logical IDs are checked for drift.</p> </li>
+    /// <li> <p> <code>DETECTION_FAILED</code>: The stack drift detection operation has failed for at least one resource in the stack. Results will be available for resources on which CloudFormation successfully completed drift detection.</p> </li>
+    /// <li> <p> <code>DETECTION_IN_PROGRESS</code>: The stack drift detection operation is currently in progress.</p> </li>
+    /// </ul>
+    pub fn get_detection_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::StackDriftDetectionStatus> {
+        &self.detection_status
+    }
     /// <p>The reason the stack drift detection operation has its current status.</p>
     pub fn detection_status_reason(
         mut self,
@@ -202,6 +232,10 @@ impl DescribeStackDriftDetectionStatusOutputBuilder {
         self.detection_status_reason = input;
         self
     }
+    /// <p>The reason the stack drift detection operation has its current status.</p>
+    pub fn get_detection_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detection_status_reason
+    }
     /// <p>Total number of stack resources that have drifted. This is NULL until the drift detection operation reaches a status of <code>DETECTION_COMPLETE</code>. This value will be 0 for stacks whose drift status is <code>IN_SYNC</code>.</p>
     pub fn drifted_stack_resource_count(mut self, input: i32) -> Self {
         self.drifted_stack_resource_count = ::std::option::Option::Some(input);
@@ -211,6 +245,10 @@ impl DescribeStackDriftDetectionStatusOutputBuilder {
     pub fn set_drifted_stack_resource_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.drifted_stack_resource_count = input;
         self
+    }
+    /// <p>Total number of stack resources that have drifted. This is NULL until the drift detection operation reaches a status of <code>DETECTION_COMPLETE</code>. This value will be 0 for stacks whose drift status is <code>IN_SYNC</code>.</p>
+    pub fn get_drifted_stack_resource_count(&self) -> &::std::option::Option<i32> {
+        &self.drifted_stack_resource_count
     }
     /// <p>Time at which the stack drift detection operation was initiated.</p>
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -224,6 +262,10 @@ impl DescribeStackDriftDetectionStatusOutputBuilder {
     ) -> Self {
         self.timestamp = input;
         self
+    }
+    /// <p>Time at which the stack drift detection operation was initiated.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

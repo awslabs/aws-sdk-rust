@@ -39,6 +39,10 @@ impl PutImageScanningConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutImageScanningConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_image_scanning_configuration::builders::PutImageScanningConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +133,10 @@ impl PutImageScanningConfigurationFluentBuilder {
         self.inner = self.inner.set_registry_id(input);
         self
     }
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to update the image scanning configuration setting. If you do not specify a registry, the default registry is assumed.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_registry_id()
+    }
     /// <p>The name of the repository in which to update the image scanning configuration setting.</p>
     pub fn repository_name(
         mut self,
@@ -145,6 +153,10 @@ impl PutImageScanningConfigurationFluentBuilder {
         self.inner = self.inner.set_repository_name(input);
         self
     }
+    /// <p>The name of the repository in which to update the image scanning configuration setting.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_repository_name()
+    }
     /// <p>The image scanning configuration for the repository. This setting determines whether images are scanned for known vulnerabilities after being pushed to the repository.</p>
     pub fn image_scanning_configuration(
         mut self,
@@ -160,5 +172,11 @@ impl PutImageScanningConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_image_scanning_configuration(input);
         self
+    }
+    /// <p>The image scanning configuration for the repository. This setting determines whether images are scanned for known vulnerabilities after being pushed to the repository.</p>
+    pub fn get_image_scanning_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImageScanningConfiguration> {
+        self.inner.get_image_scanning_configuration()
     }
 }

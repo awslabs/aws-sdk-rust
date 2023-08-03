@@ -73,6 +73,12 @@ impl SearchInsightsFiltersBuilder {
         self.severities = input;
         self
     }
+    /// <p> An array of severity values used to search for insights. </p>
+    pub fn get_severities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightSeverity>> {
+        &self.severities
+    }
     /// Appends an item to `statuses`.
     ///
     /// To override the contents of this collection use [`set_statuses`](Self::set_statuses).
@@ -92,6 +98,12 @@ impl SearchInsightsFiltersBuilder {
         self.statuses = input;
         self
     }
+    /// <p> An array of status values used to search for insights. </p>
+    pub fn get_statuses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightStatus>> {
+        &self.statuses
+    }
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     pub fn resource_collection(mut self, input: crate::types::ResourceCollection) -> Self {
         self.resource_collection = ::std::option::Option::Some(input);
@@ -105,6 +117,12 @@ impl SearchInsightsFiltersBuilder {
         self.resource_collection = input;
         self
     }
+    /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    pub fn get_resource_collection(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceCollection> {
+        &self.resource_collection
+    }
     /// <p>A collection of the names of Amazon Web Services services.</p>
     pub fn service_collection(mut self, input: crate::types::ServiceCollection) -> Self {
         self.service_collection = ::std::option::Option::Some(input);
@@ -117,6 +135,12 @@ impl SearchInsightsFiltersBuilder {
     ) -> Self {
         self.service_collection = input;
         self
+    }
+    /// <p>A collection of the names of Amazon Web Services services.</p>
+    pub fn get_service_collection(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServiceCollection> {
+        &self.service_collection
     }
     /// Consumes the builder and constructs a [`SearchInsightsFilters`](crate::types::SearchInsightsFilters).
     pub fn build(self) -> crate::types::SearchInsightsFilters {

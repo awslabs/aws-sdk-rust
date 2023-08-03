@@ -40,6 +40,10 @@ impl PolicyStatusBuilder {
         self.is_public = input;
         self
     }
+    /// <p></p>
+    pub fn get_is_public(&self) -> &::std::option::Option<bool> {
+        &self.is_public
+    }
     /// Consumes the builder and constructs a [`PolicyStatus`](crate::types::PolicyStatus).
     pub fn build(self) -> crate::types::PolicyStatus {
         crate::types::PolicyStatus {

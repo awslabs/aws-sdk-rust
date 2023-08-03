@@ -37,6 +37,10 @@ impl CreateDomainFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDomain as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_domain::builders::CreateDomainInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl CreateDomainFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p>The domain name to manage (e.g., <code>example.com</code>).</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -137,5 +145,10 @@ impl CreateDomainFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tag keys and optional values to add to the resource during create.</p>
+    /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

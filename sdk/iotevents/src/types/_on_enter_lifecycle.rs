@@ -49,6 +49,10 @@ impl OnEnterLifecycleBuilder {
         self.events = input;
         self
     }
+    /// <p>Specifies the actions that are performed when the state is entered and the <code>condition</code> is <code>TRUE</code>.</p>
+    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Event>> {
+        &self.events
+    }
     /// Consumes the builder and constructs a [`OnEnterLifecycle`](crate::types::OnEnterLifecycle).
     pub fn build(self) -> crate::types::OnEnterLifecycle {
         crate::types::OnEnterLifecycle {

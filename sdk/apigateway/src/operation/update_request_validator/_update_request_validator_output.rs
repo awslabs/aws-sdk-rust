@@ -73,6 +73,10 @@ impl UpdateRequestValidatorOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of this RequestValidator.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of this RequestValidator</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl UpdateRequestValidatorOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of this RequestValidator</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>A Boolean flag to indicate whether to validate a request body according to the configured Model schema.</p>
     pub fn validate_request_body(mut self, input: bool) -> Self {
@@ -93,6 +101,10 @@ impl UpdateRequestValidatorOutputBuilder {
         self.validate_request_body = input;
         self
     }
+    /// <p>A Boolean flag to indicate whether to validate a request body according to the configured Model schema.</p>
+    pub fn get_validate_request_body(&self) -> &::std::option::Option<bool> {
+        &self.validate_request_body
+    }
     /// <p>A Boolean flag to indicate whether to validate request parameters (<code>true</code>) or not (<code>false</code>).</p>
     pub fn validate_request_parameters(mut self, input: bool) -> Self {
         self.validate_request_parameters = ::std::option::Option::Some(input);
@@ -102,6 +114,10 @@ impl UpdateRequestValidatorOutputBuilder {
     pub fn set_validate_request_parameters(mut self, input: ::std::option::Option<bool>) -> Self {
         self.validate_request_parameters = input;
         self
+    }
+    /// <p>A Boolean flag to indicate whether to validate request parameters (<code>true</code>) or not (<code>false</code>).</p>
+    pub fn get_validate_request_parameters(&self) -> &::std::option::Option<bool> {
+        &self.validate_request_parameters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

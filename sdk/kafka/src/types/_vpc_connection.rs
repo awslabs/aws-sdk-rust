@@ -86,6 +86,10 @@ impl VpcConnectionBuilder {
         self.vpc_connection_arn = input;
         self
     }
+    /// <p>The ARN that identifies the Vpc Connection.</p>
+    pub fn get_vpc_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_connection_arn
+    }
     /// <p>The ARN that identifies the Cluster which the Vpc Connection belongs to.</p>
     pub fn target_cluster_arn(
         mut self,
@@ -102,6 +106,10 @@ impl VpcConnectionBuilder {
         self.target_cluster_arn = input;
         self
     }
+    /// <p>The ARN that identifies the Cluster which the Vpc Connection belongs to.</p>
+    pub fn get_target_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_cluster_arn
+    }
     /// <p>Creation time of the Vpc Connection.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -114,6 +122,10 @@ impl VpcConnectionBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>Creation time of the Vpc Connection.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>Information about the auth scheme of Vpc Connection.</p>
     pub fn authentication(
@@ -131,6 +143,10 @@ impl VpcConnectionBuilder {
         self.authentication = input;
         self
     }
+    /// <p>Information about the auth scheme of Vpc Connection.</p>
+    pub fn get_authentication(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authentication
+    }
     /// <p>The vpcId that belongs to the Vpc Connection.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -140,6 +156,10 @@ impl VpcConnectionBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The vpcId that belongs to the Vpc Connection.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// <p>State of the Vpc Connection.</p>
     pub fn state(mut self, input: crate::types::VpcConnectionState) -> Self {
@@ -153,6 +173,10 @@ impl VpcConnectionBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>State of the Vpc Connection.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::VpcConnectionState> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`VpcConnection`](crate::types::VpcConnection).
     pub fn build(self) -> crate::types::VpcConnection {

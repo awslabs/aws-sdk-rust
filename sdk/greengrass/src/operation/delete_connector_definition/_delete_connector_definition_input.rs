@@ -45,6 +45,10 @@ impl DeleteConnectorDefinitionInputBuilder {
         self.connector_definition_id = input;
         self
     }
+    /// The ID of the connector definition.
+    pub fn get_connector_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connector_definition_id
+    }
     /// Consumes the builder and constructs a [`DeleteConnectorDefinitionInput`](crate::operation::delete_connector_definition::DeleteConnectorDefinitionInput).
     pub fn build(
         self,

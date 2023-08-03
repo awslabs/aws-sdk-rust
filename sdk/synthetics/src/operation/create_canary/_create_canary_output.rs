@@ -46,6 +46,10 @@ impl CreateCanaryOutputBuilder {
         self.canary = input;
         self
     }
+    /// <p>The full details about the canary you have created.</p>
+    pub fn get_canary(&self) -> &::std::option::Option<crate::types::Canary> {
+        &self.canary
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

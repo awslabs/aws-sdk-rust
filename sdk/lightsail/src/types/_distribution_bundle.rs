@@ -72,6 +72,10 @@ impl DistributionBundleBuilder {
         self.bundle_id = input;
         self
     }
+    /// <p>The ID of the bundle.</p>
+    pub fn get_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bundle_id
+    }
     /// <p>The name of the distribution bundle.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl DistributionBundleBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the distribution bundle.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The monthly price, in US dollars, of the bundle.</p>
     pub fn price(mut self, input: f32) -> Self {
@@ -92,6 +100,10 @@ impl DistributionBundleBuilder {
         self.price = input;
         self
     }
+    /// <p>The monthly price, in US dollars, of the bundle.</p>
+    pub fn get_price(&self) -> &::std::option::Option<f32> {
+        &self.price
+    }
     /// <p>The monthly network transfer quota of the bundle.</p>
     pub fn transfer_per_month_in_gb(mut self, input: i32) -> Self {
         self.transfer_per_month_in_gb = ::std::option::Option::Some(input);
@@ -102,6 +114,10 @@ impl DistributionBundleBuilder {
         self.transfer_per_month_in_gb = input;
         self
     }
+    /// <p>The monthly network transfer quota of the bundle.</p>
+    pub fn get_transfer_per_month_in_gb(&self) -> &::std::option::Option<i32> {
+        &self.transfer_per_month_in_gb
+    }
     /// <p>Indicates whether the bundle is active, and can be specified for a new or existing distribution.</p>
     pub fn is_active(mut self, input: bool) -> Self {
         self.is_active = ::std::option::Option::Some(input);
@@ -111,6 +127,10 @@ impl DistributionBundleBuilder {
     pub fn set_is_active(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_active = input;
         self
+    }
+    /// <p>Indicates whether the bundle is active, and can be specified for a new or existing distribution.</p>
+    pub fn get_is_active(&self) -> &::std::option::Option<bool> {
+        &self.is_active
     }
     /// Consumes the builder and constructs a [`DistributionBundle`](crate::types::DistributionBundle).
     pub fn build(self) -> crate::types::DistributionBundle {

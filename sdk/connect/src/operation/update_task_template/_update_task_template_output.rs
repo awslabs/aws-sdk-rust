@@ -135,6 +135,10 @@ impl UpdateTaskTemplateOutputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The identifier of the task template resource.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -144,6 +148,10 @@ impl UpdateTaskTemplateOutputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The identifier of the task template resource.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The Amazon Resource Name (ARN) for the task template resource.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -155,6 +163,10 @@ impl UpdateTaskTemplateOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the task template resource.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the task template.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -165,6 +177,10 @@ impl UpdateTaskTemplateOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the task template.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the task template.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -174,6 +190,10 @@ impl UpdateTaskTemplateOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the task template.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The identifier of the flow that runs by default when a task is created by referencing this template.</p>
     pub fn contact_flow_id(
@@ -191,6 +211,10 @@ impl UpdateTaskTemplateOutputBuilder {
         self.contact_flow_id = input;
         self
     }
+    /// <p>The identifier of the flow that runs by default when a task is created by referencing this template.</p>
+    pub fn get_contact_flow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_flow_id
+    }
     /// <p>Constraints that are applicable to the fields listed.</p>
     pub fn constraints(mut self, input: crate::types::TaskTemplateConstraints) -> Self {
         self.constraints = ::std::option::Option::Some(input);
@@ -204,6 +228,10 @@ impl UpdateTaskTemplateOutputBuilder {
         self.constraints = input;
         self
     }
+    /// <p>Constraints that are applicable to the fields listed.</p>
+    pub fn get_constraints(&self) -> &::std::option::Option<crate::types::TaskTemplateConstraints> {
+        &self.constraints
+    }
     /// <p>The default values for fields when a task is created by referencing this template.</p>
     pub fn defaults(mut self, input: crate::types::TaskTemplateDefaults) -> Self {
         self.defaults = ::std::option::Option::Some(input);
@@ -216,6 +244,10 @@ impl UpdateTaskTemplateOutputBuilder {
     ) -> Self {
         self.defaults = input;
         self
+    }
+    /// <p>The default values for fields when a task is created by referencing this template.</p>
+    pub fn get_defaults(&self) -> &::std::option::Option<crate::types::TaskTemplateDefaults> {
+        &self.defaults
     }
     /// Appends an item to `fields`.
     ///
@@ -236,6 +268,12 @@ impl UpdateTaskTemplateOutputBuilder {
         self.fields = input;
         self
     }
+    /// <p>Fields that are part of the template.</p>
+    pub fn get_fields(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskTemplateField>> {
+        &self.fields
+    }
     /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.</p>
     pub fn status(mut self, input: crate::types::TaskTemplateStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -248,6 +286,10 @@ impl UpdateTaskTemplateOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TaskTemplateStatus> {
+        &self.status
     }
     /// <p>The timestamp when the task template was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -262,6 +304,10 @@ impl UpdateTaskTemplateOutputBuilder {
         self.last_modified_time = input;
         self
     }
+    /// <p>The timestamp when the task template was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
     /// <p>The timestamp when the task template was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
@@ -274,6 +320,10 @@ impl UpdateTaskTemplateOutputBuilder {
     ) -> Self {
         self.created_time = input;
         self
+    }
+    /// <p>The timestamp when the task template was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

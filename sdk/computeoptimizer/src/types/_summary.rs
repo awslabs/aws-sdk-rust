@@ -60,6 +60,10 @@ impl SummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The finding classification of the recommendation.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::Finding> {
+        &self.name
+    }
     /// <p>The value of the recommendation summary.</p>
     pub fn value(mut self, input: f64) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl SummaryBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value of the recommendation summary.</p>
+    pub fn get_value(&self) -> &::std::option::Option<f64> {
+        &self.value
     }
     /// Appends an item to `reason_code_summaries`.
     ///
@@ -88,6 +96,12 @@ impl SummaryBuilder {
     ) -> Self {
         self.reason_code_summaries = input;
         self
+    }
+    /// <p>An array of objects that summarize a finding reason code.</p>
+    pub fn get_reason_code_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReasonCodeSummary>> {
+        &self.reason_code_summaries
     }
     /// Consumes the builder and constructs a [`Summary`](crate::types::Summary).
     pub fn build(self) -> crate::types::Summary {

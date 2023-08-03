@@ -45,6 +45,10 @@ impl DescribeCustomRoutingAcceleratorAttributesInputBuilder {
         self.accelerator_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator to describe the attributes for.</p>
+    pub fn get_accelerator_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accelerator_arn
+    }
     /// Consumes the builder and constructs a [`DescribeCustomRoutingAcceleratorAttributesInput`](crate::operation::describe_custom_routing_accelerator_attributes::DescribeCustomRoutingAcceleratorAttributesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_custom_routing_accelerator_attributes::DescribeCustomRoutingAcceleratorAttributesInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

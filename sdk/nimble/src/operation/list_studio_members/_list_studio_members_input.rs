@@ -56,6 +56,10 @@ impl ListStudioMembersInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The max number of results to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl ListStudioMembersInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The studio ID. </p>
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl ListStudioMembersInputBuilder {
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.studio_id = input;
         self
+    }
+    /// <p>The studio ID. </p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_id
     }
     /// Consumes the builder and constructs a [`ListStudioMembersInput`](crate::operation::list_studio_members::ListStudioMembersInput).
     pub fn build(

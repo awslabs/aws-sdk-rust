@@ -90,6 +90,18 @@ impl AwsBackupBackupPlanAdvancedBackupSettingsDetailsBuilder {
         self.backup_options = input;
         self
     }
+    /// <p>Specifies the backup option for a selected resource. This option is only available for Windows Volume Shadow Copy Service (VSS) backup jobs. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p>Set to <code>WindowsVSS: enabled</code> to enable the WindowsVSS backup option and create a Windows VSS backup.</p> </li>
+    /// <li> <p>Set to <code>WindowsVSS: disabled</code> to create a regular backup. The <code>WindowsVSS</code> option is not enabled by default.</p> </li>
+    /// </ul>
+    pub fn get_backup_options(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.backup_options
+    }
     /// <p>The name of a resource type. The only supported resource type is Amazon EC2 instances with Windows VSS.</p>
     /// <p>The only valid value is <code>EC2</code>.</p>
     pub fn resource_type(
@@ -107,6 +119,11 @@ impl AwsBackupBackupPlanAdvancedBackupSettingsDetailsBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>The name of a resource type. The only supported resource type is Amazon EC2 instances with Windows VSS.</p>
+    /// <p>The only valid value is <code>EC2</code>.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
     }
     /// Consumes the builder and constructs a [`AwsBackupBackupPlanAdvancedBackupSettingsDetails`](crate::types::AwsBackupBackupPlanAdvancedBackupSettingsDetails).
     pub fn build(self) -> crate::types::AwsBackupBackupPlanAdvancedBackupSettingsDetails {

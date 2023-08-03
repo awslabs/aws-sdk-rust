@@ -112,6 +112,10 @@ impl DataValueBuilder {
         self.boolean_value = input;
         self
     }
+    /// <p>A Boolean value.</p>
+    pub fn get_boolean_value(&self) -> &::std::option::Option<bool> {
+        &self.boolean_value
+    }
     /// <p>A double value.</p>
     pub fn double_value(mut self, input: f64) -> Self {
         self.double_value = ::std::option::Option::Some(input);
@@ -121,6 +125,10 @@ impl DataValueBuilder {
     pub fn set_double_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.double_value = input;
         self
+    }
+    /// <p>A double value.</p>
+    pub fn get_double_value(&self) -> &::std::option::Option<f64> {
+        &self.double_value
     }
     /// <p>An integer value.</p>
     pub fn integer_value(mut self, input: i32) -> Self {
@@ -132,6 +140,10 @@ impl DataValueBuilder {
         self.integer_value = input;
         self
     }
+    /// <p>An integer value.</p>
+    pub fn get_integer_value(&self) -> &::std::option::Option<i32> {
+        &self.integer_value
+    }
     /// <p>A long value.</p>
     pub fn long_value(mut self, input: i64) -> Self {
         self.long_value = ::std::option::Option::Some(input);
@@ -142,6 +154,10 @@ impl DataValueBuilder {
         self.long_value = input;
         self
     }
+    /// <p>A long value.</p>
+    pub fn get_long_value(&self) -> &::std::option::Option<i64> {
+        &self.long_value
+    }
     /// <p>A string value.</p>
     pub fn string_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.string_value = ::std::option::Option::Some(input.into());
@@ -151,6 +167,10 @@ impl DataValueBuilder {
     pub fn set_string_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.string_value = input;
         self
+    }
+    /// <p>A string value.</p>
+    pub fn get_string_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.string_value
     }
     /// Appends an item to `list_value`.
     ///
@@ -170,6 +190,12 @@ impl DataValueBuilder {
     ) -> Self {
         self.list_value = input;
         self
+    }
+    /// <p>A list of multiple values.</p>
+    pub fn get_list_value(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataValue>> {
+        &self.list_value
     }
     /// Adds a key-value pair to `map_value`.
     ///
@@ -196,6 +222,14 @@ impl DataValueBuilder {
         self.map_value = input;
         self
     }
+    /// <p>An object that maps strings to multiple <code>DataValue</code> objects.</p>
+    pub fn get_map_value(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::DataValue>,
+    > {
+        &self.map_value
+    }
     /// <p>A value that relates a component to another component.</p>
     pub fn relationship_value(mut self, input: crate::types::RelationshipValue) -> Self {
         self.relationship_value = ::std::option::Option::Some(input);
@@ -209,6 +243,12 @@ impl DataValueBuilder {
         self.relationship_value = input;
         self
     }
+    /// <p>A value that relates a component to another component.</p>
+    pub fn get_relationship_value(
+        &self,
+    ) -> &::std::option::Option<crate::types::RelationshipValue> {
+        &self.relationship_value
+    }
     /// <p>An expression that produces the value.</p>
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression = ::std::option::Option::Some(input.into());
@@ -218,6 +258,10 @@ impl DataValueBuilder {
     pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expression = input;
         self
+    }
+    /// <p>An expression that produces the value.</p>
+    pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expression
     }
     /// Consumes the builder and constructs a [`DataValue`](crate::types::DataValue).
     pub fn build(self) -> crate::types::DataValue {

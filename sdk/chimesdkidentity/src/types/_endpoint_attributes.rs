@@ -54,6 +54,10 @@ impl EndpointAttributesBuilder {
         self.device_token = input;
         self
     }
+    /// <p>The device token for the GCM, APNS, and APNS_SANDBOX endpoint types.</p>
+    pub fn get_device_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_token
+    }
     /// <p>The VOIP device token for the APNS and APNS_SANDBOX endpoint types.</p>
     pub fn voip_device_token(
         mut self,
@@ -69,6 +73,10 @@ impl EndpointAttributesBuilder {
     ) -> Self {
         self.voip_device_token = input;
         self
+    }
+    /// <p>The VOIP device token for the APNS and APNS_SANDBOX endpoint types.</p>
+    pub fn get_voip_device_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voip_device_token
     }
     /// Consumes the builder and constructs a [`EndpointAttributes`](crate::types::EndpointAttributes).
     pub fn build(self) -> crate::types::EndpointAttributes {

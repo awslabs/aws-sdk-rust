@@ -49,6 +49,10 @@ impl GetResourceRequestStatusOutputBuilder {
         self.progress_event = input;
         self
     }
+    /// <p>Represents the current status of the resource operation request.</p>
+    pub fn get_progress_event(&self) -> &::std::option::Option<crate::types::ProgressEvent> {
+        &self.progress_event
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

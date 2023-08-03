@@ -48,6 +48,10 @@ impl DeleteSnapshotCopyGrantInputBuilder {
         self.snapshot_copy_grant_name = input;
         self
     }
+    /// <p>The name of the snapshot copy grant to delete.</p>
+    pub fn get_snapshot_copy_grant_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_copy_grant_name
+    }
     /// Consumes the builder and constructs a [`DeleteSnapshotCopyGrantInput`](crate::operation::delete_snapshot_copy_grant::DeleteSnapshotCopyGrantInput).
     pub fn build(
         self,

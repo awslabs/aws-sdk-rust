@@ -36,6 +36,12 @@ impl ListIncidentRecordsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListIncidentRecords as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_incident_records::builders::ListIncidentRecordsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -168,6 +174,22 @@ impl ListIncidentRecordsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>Filters the list of incident records you want to search through. You can filter on the following keys:</p>
+    /// <ul>
+    /// <li> <p> <code>creationTime</code> </p> </li>
+    /// <li> <p> <code>impact</code> </p> </li>
+    /// <li> <p> <code>status</code> </p> </li>
+    /// <li> <p> <code>createdBy</code> </p> </li>
+    /// </ul>
+    /// <p>Note the following when when you use Filters:</p>
+    /// <ul>
+    /// <li> <p>If you don't specify a Filter, the response includes all incident records.</p> </li>
+    /// <li> <p>If you specify more than one filter in a single request, the response returns incident records that match all filters.</p> </li>
+    /// <li> <p>If you specify a filter with more than one value, the response returns incident records that match any of the values provided.</p> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
+    }
     /// <p>The maximum number of results per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -178,6 +200,10 @@ impl ListIncidentRecordsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The pagination token to continue to the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -187,5 +213,9 @@ impl ListIncidentRecordsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The pagination token to continue to the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

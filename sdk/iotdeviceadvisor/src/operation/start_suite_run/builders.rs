@@ -37,6 +37,12 @@ impl StartSuiteRunFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartSuiteRun as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_suite_run::builders::StartSuiteRunInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,6 +131,10 @@ impl StartSuiteRunFluentBuilder {
         self.inner = self.inner.set_suite_definition_id(input);
         self
     }
+    /// <p>Suite definition ID of the test suite.</p>
+    pub fn get_suite_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_suite_definition_id()
+    }
     /// <p>Suite definition version of the test suite.</p>
     pub fn suite_definition_version(
         mut self,
@@ -141,6 +151,10 @@ impl StartSuiteRunFluentBuilder {
         self.inner = self.inner.set_suite_definition_version(input);
         self
     }
+    /// <p>Suite definition version of the test suite.</p>
+    pub fn get_suite_definition_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_suite_definition_version()
+    }
     /// <p>Suite run configuration.</p>
     pub fn suite_run_configuration(mut self, input: crate::types::SuiteRunConfiguration) -> Self {
         self.inner = self.inner.suite_run_configuration(input);
@@ -153,6 +167,12 @@ impl StartSuiteRunFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_suite_run_configuration(input);
         self
+    }
+    /// <p>Suite run configuration.</p>
+    pub fn get_suite_run_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SuiteRunConfiguration> {
+        self.inner.get_suite_run_configuration()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -176,5 +196,13 @@ impl StartSuiteRunFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags to be attached to the suite run.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

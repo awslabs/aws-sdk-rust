@@ -66,6 +66,12 @@ impl DeferredMaintenanceWindowBuilder {
         self.defer_maintenance_identifier = input;
         self
     }
+    /// <p>A unique identifier for the maintenance window.</p>
+    pub fn get_defer_maintenance_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.defer_maintenance_identifier
+    }
     /// <p> A timestamp for the beginning of the time period when we defer maintenance.</p>
     pub fn defer_maintenance_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.defer_maintenance_start_time = ::std::option::Option::Some(input);
@@ -79,6 +85,12 @@ impl DeferredMaintenanceWindowBuilder {
         self.defer_maintenance_start_time = input;
         self
     }
+    /// <p> A timestamp for the beginning of the time period when we defer maintenance.</p>
+    pub fn get_defer_maintenance_start_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.defer_maintenance_start_time
+    }
     /// <p> A timestamp for the end of the time period when we defer maintenance.</p>
     pub fn defer_maintenance_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.defer_maintenance_end_time = ::std::option::Option::Some(input);
@@ -91,6 +103,12 @@ impl DeferredMaintenanceWindowBuilder {
     ) -> Self {
         self.defer_maintenance_end_time = input;
         self
+    }
+    /// <p> A timestamp for the end of the time period when we defer maintenance.</p>
+    pub fn get_defer_maintenance_end_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.defer_maintenance_end_time
     }
     /// Consumes the builder and constructs a [`DeferredMaintenanceWindow`](crate::types::DeferredMaintenanceWindow).
     pub fn build(self) -> crate::types::DeferredMaintenanceWindow {

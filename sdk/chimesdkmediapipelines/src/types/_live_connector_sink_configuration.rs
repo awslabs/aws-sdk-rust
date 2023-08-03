@@ -54,6 +54,10 @@ impl LiveConnectorSinkConfigurationBuilder {
         self.sink_type = input;
         self
     }
+    /// <p>The sink configuration's sink type.</p>
+    pub fn get_sink_type(&self) -> &::std::option::Option<crate::types::LiveConnectorSinkType> {
+        &self.sink_type
+    }
     /// <p>The sink configuration's RTMP configuration settings.</p>
     pub fn rtmp_configuration(
         mut self,
@@ -69,6 +73,12 @@ impl LiveConnectorSinkConfigurationBuilder {
     ) -> Self {
         self.rtmp_configuration = input;
         self
+    }
+    /// <p>The sink configuration's RTMP configuration settings.</p>
+    pub fn get_rtmp_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::LiveConnectorRtmpConfiguration> {
+        &self.rtmp_configuration
     }
     /// Consumes the builder and constructs a [`LiveConnectorSinkConfiguration`](crate::types::LiveConnectorSinkConfiguration).
     pub fn build(self) -> crate::types::LiveConnectorSinkConfiguration {

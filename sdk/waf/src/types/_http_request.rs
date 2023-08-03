@@ -100,6 +100,14 @@ impl HttpRequestBuilder {
         self.client_ip = input;
         self
     }
+    /// <p>The IP address that the request originated from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p>
+    /// <ul>
+    /// <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li>
+    /// <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li>
+    /// </ul>
+    pub fn get_client_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_ip
+    }
     /// <p>The two-letter country code for the country that the request originated from. For a current list of country codes, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2</a>.</p>
     pub fn country(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.country = ::std::option::Option::Some(input.into());
@@ -109,6 +117,10 @@ impl HttpRequestBuilder {
     pub fn set_country(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.country = input;
         self
+    }
+    /// <p>The two-letter country code for the country that the request originated from. For a current list of country codes, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2</a>.</p>
+    pub fn get_country(&self) -> &::std::option::Option<::std::string::String> {
+        &self.country
     }
     /// <p>The part of a web request that identifies the resource, for example, <code>/images/daily-ad.jpg</code>.</p>
     pub fn uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -120,6 +132,10 @@ impl HttpRequestBuilder {
         self.uri = input;
         self
     }
+    /// <p>The part of a web request that identifies the resource, for example, <code>/images/daily-ad.jpg</code>.</p>
+    pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.uri
+    }
     /// <p>The HTTP method specified in the sampled web request. CloudFront supports the following methods: <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>. </p>
     pub fn method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.method = ::std::option::Option::Some(input.into());
@@ -130,6 +146,10 @@ impl HttpRequestBuilder {
         self.method = input;
         self
     }
+    /// <p>The HTTP method specified in the sampled web request. CloudFront supports the following methods: <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>. </p>
+    pub fn get_method(&self) -> &::std::option::Option<::std::string::String> {
+        &self.method
+    }
     /// <p>The HTTP version specified in the sampled web request, for example, <code>HTTP/1.1</code>.</p>
     pub fn http_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.http_version = ::std::option::Option::Some(input.into());
@@ -139,6 +159,10 @@ impl HttpRequestBuilder {
     pub fn set_http_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.http_version = input;
         self
+    }
+    /// <p>The HTTP version specified in the sampled web request, for example, <code>HTTP/1.1</code>.</p>
+    pub fn get_http_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.http_version
     }
     /// Appends an item to `headers`.
     ///
@@ -158,6 +182,10 @@ impl HttpRequestBuilder {
     ) -> Self {
         self.headers = input;
         self
+    }
+    /// <p>A complex type that contains two values for each header in the sampled web request: the name of the header and the value of the header.</p>
+    pub fn get_headers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HttpHeader>> {
+        &self.headers
     }
     /// Consumes the builder and constructs a [`HttpRequest`](crate::types::HttpRequest).
     pub fn build(self) -> crate::types::HttpRequest {

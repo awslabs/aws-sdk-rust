@@ -36,6 +36,12 @@ impl UpdateDataSetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDataSet as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_data_set::builders::UpdateDataSetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl UpdateDataSetFluentBuilder {
         self.inner = self.inner.set_data_set_id(input);
         self
     }
+    /// <p>The unique identifier for a data set.</p>
+    pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_data_set_id()
+    }
     /// <p>The description for the data set.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -128,6 +138,10 @@ impl UpdateDataSetFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>The description for the data set.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The name of the data set.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -137,5 +151,9 @@ impl UpdateDataSetFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the data set.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
 }

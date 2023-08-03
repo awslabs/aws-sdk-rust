@@ -47,6 +47,10 @@ impl GetStageInputBuilder {
         self.game_name = input;
         self
     }
+    /// <p>The name of the game.</p>
+    pub fn get_game_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.game_name
+    }
     /// <p>The name of the stage.</p>
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_name = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl GetStageInputBuilder {
     pub fn set_stage_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stage_name = input;
         self
+    }
+    /// <p>The name of the stage.</p>
+    pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stage_name
     }
     /// Consumes the builder and constructs a [`GetStageInput`](crate::operation::get_stage::GetStageInput).
     pub fn build(

@@ -48,6 +48,10 @@ impl SegmentReferenceBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier for the segment.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The version number of the segment.</p>
     pub fn version(mut self, input: i32) -> Self {
         self.version = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl SegmentReferenceBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The version number of the segment.</p>
+    pub fn get_version(&self) -> &::std::option::Option<i32> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`SegmentReference`](crate::types::SegmentReference).
     pub fn build(self) -> crate::types::SegmentReference {

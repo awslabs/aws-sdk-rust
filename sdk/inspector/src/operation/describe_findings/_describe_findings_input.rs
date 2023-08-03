@@ -57,6 +57,12 @@ impl DescribeFindingsInputBuilder {
         self.finding_arns = input;
         self
     }
+    /// <p>The ARN that specifies the finding that you want to describe.</p>
+    pub fn get_finding_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.finding_arns
+    }
     /// <p>The locale into which you want to translate a finding description, recommendation, and the short description that identifies the finding.</p>
     pub fn locale(mut self, input: crate::types::Locale) -> Self {
         self.locale = ::std::option::Option::Some(input);
@@ -66,6 +72,10 @@ impl DescribeFindingsInputBuilder {
     pub fn set_locale(mut self, input: ::std::option::Option<crate::types::Locale>) -> Self {
         self.locale = input;
         self
+    }
+    /// <p>The locale into which you want to translate a finding description, recommendation, and the short description that identifies the finding.</p>
+    pub fn get_locale(&self) -> &::std::option::Option<crate::types::Locale> {
+        &self.locale
     }
     /// Consumes the builder and constructs a [`DescribeFindingsInput`](crate::operation::describe_findings::DescribeFindingsInput).
     pub fn build(

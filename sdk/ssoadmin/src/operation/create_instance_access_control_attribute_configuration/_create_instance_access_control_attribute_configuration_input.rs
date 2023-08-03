@@ -52,6 +52,10 @@ impl CreateInstanceAccessControlAttributeConfigurationInputBuilder {
         self.instance_arn = input;
         self
     }
+    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
+    pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_arn
+    }
     /// <p>Specifies the IAM Identity Center identity store attributes to add to your ABAC configuration. When using an external identity provider as an identity source, you can pass attributes through the SAML assertion. Doing so provides an alternative to configuring attributes from the IAM Identity Center identity store. If a SAML assertion passes any of these attributes, IAM Identity Center will replace the attribute value with the value from the IAM Identity Center identity store.</p>
     pub fn instance_access_control_attribute_configuration(
         mut self,
@@ -67,6 +71,12 @@ impl CreateInstanceAccessControlAttributeConfigurationInputBuilder {
     ) -> Self {
         self.instance_access_control_attribute_configuration = input;
         self
+    }
+    /// <p>Specifies the IAM Identity Center identity store attributes to add to your ABAC configuration. When using an external identity provider as an identity source, you can pass attributes through the SAML assertion. Doing so provides an alternative to configuring attributes from the IAM Identity Center identity store. If a SAML assertion passes any of these attributes, IAM Identity Center will replace the attribute value with the value from the IAM Identity Center identity store.</p>
+    pub fn get_instance_access_control_attribute_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceAccessControlAttributeConfiguration> {
+        &self.instance_access_control_attribute_configuration
     }
     /// Consumes the builder and constructs a [`CreateInstanceAccessControlAttributeConfigurationInput`](crate::operation::create_instance_access_control_attribute_configuration::CreateInstanceAccessControlAttributeConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_instance_access_control_attribute_configuration::CreateInstanceAccessControlAttributeConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{

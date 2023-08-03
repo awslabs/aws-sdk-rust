@@ -56,6 +56,10 @@ impl GetConsoleScreenshotInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>The ID of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl GetConsoleScreenshotInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The ID of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>When set to <code>true</code>, acts as keystroke input and wakes up an instance that's in standby or "sleep" mode.</p>
     pub fn wake_up(mut self, input: bool) -> Self {
         self.wake_up = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl GetConsoleScreenshotInputBuilder {
     pub fn set_wake_up(mut self, input: ::std::option::Option<bool>) -> Self {
         self.wake_up = input;
         self
+    }
+    /// <p>When set to <code>true</code>, acts as keystroke input and wakes up an instance that's in standby or "sleep" mode.</p>
+    pub fn get_wake_up(&self) -> &::std::option::Option<bool> {
+        &self.wake_up
     }
     /// Consumes the builder and constructs a [`GetConsoleScreenshotInput`](crate::operation::get_console_screenshot::GetConsoleScreenshotInput).
     pub fn build(

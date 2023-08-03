@@ -53,6 +53,10 @@ impl CreateHumanTaskUiOutputBuilder {
         self.human_task_ui_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the human review workflow user interface you create.</p>
+    pub fn get_human_task_ui_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.human_task_ui_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

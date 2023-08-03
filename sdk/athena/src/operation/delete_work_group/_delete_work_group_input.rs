@@ -47,6 +47,10 @@ impl DeleteWorkGroupInputBuilder {
         self.work_group = input;
         self
     }
+    /// <p>The unique name of the workgroup to delete.</p>
+    pub fn get_work_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.work_group
+    }
     /// <p>The option to delete the workgroup and its contents even if the workgroup contains any named queries, query executions, or notebooks.</p>
     pub fn recursive_delete_option(mut self, input: bool) -> Self {
         self.recursive_delete_option = ::std::option::Option::Some(input);
@@ -56,6 +60,10 @@ impl DeleteWorkGroupInputBuilder {
     pub fn set_recursive_delete_option(mut self, input: ::std::option::Option<bool>) -> Self {
         self.recursive_delete_option = input;
         self
+    }
+    /// <p>The option to delete the workgroup and its contents even if the workgroup contains any named queries, query executions, or notebooks.</p>
+    pub fn get_recursive_delete_option(&self) -> &::std::option::Option<bool> {
+        &self.recursive_delete_option
     }
     /// Consumes the builder and constructs a [`DeleteWorkGroupInput`](crate::operation::delete_work_group::DeleteWorkGroupInput).
     pub fn build(

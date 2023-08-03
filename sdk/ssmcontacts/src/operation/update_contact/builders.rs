@@ -36,6 +36,12 @@ impl UpdateContactFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateContact as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_contact::builders::UpdateContactInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl UpdateContactFluentBuilder {
         self.inner = self.inner.set_contact_id(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan you're updating.</p>
+    pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_contact_id()
+    }
     /// <p>The full name of the contact or escalation plan.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.display_name(input.into());
@@ -128,6 +138,10 @@ impl UpdateContactFluentBuilder {
         self.inner = self.inner.set_display_name(input);
         self
     }
+    /// <p>The full name of the contact or escalation plan.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_display_name()
+    }
     /// <p>A list of stages. A contact has an engagement plan with stages for specified contact channels. An escalation plan uses these stages to contact specified contacts.</p>
     pub fn plan(mut self, input: crate::types::Plan) -> Self {
         self.inner = self.inner.plan(input);
@@ -137,5 +151,9 @@ impl UpdateContactFluentBuilder {
     pub fn set_plan(mut self, input: ::std::option::Option<crate::types::Plan>) -> Self {
         self.inner = self.inner.set_plan(input);
         self
+    }
+    /// <p>A list of stages. A contact has an engagement plan with stages for specified contact channels. An escalation plan uses these stages to contact specified contacts.</p>
+    pub fn get_plan(&self) -> &::std::option::Option<crate::types::Plan> {
+        self.inner.get_plan()
     }
 }

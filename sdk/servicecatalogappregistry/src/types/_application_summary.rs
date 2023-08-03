@@ -80,6 +80,10 @@ impl ApplicationSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the application.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The Amazon resource name (ARN) that specifies the application across services.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl ApplicationSummaryBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon resource name (ARN) that specifies the application across services.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The name of the application. The name must be unique in the region in which you are creating the application.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -100,6 +108,10 @@ impl ApplicationSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the application. The name must be unique in the region in which you are creating the application.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the application.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -109,6 +121,10 @@ impl ApplicationSummaryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the application.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -123,6 +139,10 @@ impl ApplicationSummaryBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p> The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
     pub fn last_update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_update_time = ::std::option::Option::Some(input);
@@ -135,6 +155,10 @@ impl ApplicationSummaryBuilder {
     ) -> Self {
         self.last_update_time = input;
         self
+    }
+    /// <p> The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
+    pub fn get_last_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_update_time
     }
     /// Consumes the builder and constructs a [`ApplicationSummary`](crate::types::ApplicationSummary).
     pub fn build(self) -> crate::types::ApplicationSummary {

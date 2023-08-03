@@ -176,6 +176,10 @@ impl StartChildWorkflowExecutionDecisionAttributesBuilder {
         self.workflow_type = input;
         self
     }
+    /// <p> The type of the workflow execution to be started.</p>
+    pub fn get_workflow_type(&self) -> &::std::option::Option<crate::types::WorkflowType> {
+        &self.workflow_type
+    }
     /// <p> The <code>workflowId</code> of the workflow execution.</p>
     /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -188,6 +192,11 @@ impl StartChildWorkflowExecutionDecisionAttributesBuilder {
         self.workflow_id = input;
         self
     }
+    /// <p> The <code>workflowId</code> of the workflow execution.</p>
+    /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
+    pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_id
+    }
     /// <p>The data attached to the event that can be used by the decider in subsequent workflow tasks. This data isn't sent to the child workflow execution.</p>
     pub fn control(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control = ::std::option::Option::Some(input.into());
@@ -198,6 +207,10 @@ impl StartChildWorkflowExecutionDecisionAttributesBuilder {
         self.control = input;
         self
     }
+    /// <p>The data attached to the event that can be used by the decider in subsequent workflow tasks. This data isn't sent to the child workflow execution.</p>
+    pub fn get_control(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control
+    }
     /// <p>The input to be provided to the workflow execution.</p>
     pub fn input(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input = ::std::option::Option::Some(input.into());
@@ -207,6 +220,10 @@ impl StartChildWorkflowExecutionDecisionAttributesBuilder {
     pub fn set_input(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input = input;
         self
+    }
+    /// <p>The input to be provided to the workflow execution.</p>
+    pub fn get_input(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input
     }
     /// <p>The total duration for this workflow execution. This overrides the defaultExecutionStartToCloseTimeout specified when registering the workflow type.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
@@ -230,6 +247,15 @@ impl StartChildWorkflowExecutionDecisionAttributesBuilder {
         self.execution_start_to_close_timeout = input;
         self
     }
+    /// <p>The total duration for this workflow execution. This overrides the defaultExecutionStartToCloseTimeout specified when registering the workflow type.</p>
+    /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
+    /// <p>An execution start-to-close timeout for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default execution start-to-close timeout was specified at registration time then a fault is returned.</p>
+    /// </note>
+    pub fn get_execution_start_to_close_timeout(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.execution_start_to_close_timeout
+    }
     /// <p>The name of the task list to be used for decision tasks of the child workflow execution.</p> <note>
     /// <p>A task list for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task list was specified at registration time then a fault is returned.</p>
     /// </note>
@@ -245,6 +271,13 @@ impl StartChildWorkflowExecutionDecisionAttributesBuilder {
     pub fn set_task_list(mut self, input: ::std::option::Option<crate::types::TaskList>) -> Self {
         self.task_list = input;
         self
+    }
+    /// <p>The name of the task list to be used for decision tasks of the child workflow execution.</p> <note>
+    /// <p>A task list for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task list was specified at registration time then a fault is returned.</p>
+    /// </note>
+    /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
+    pub fn get_task_list(&self) -> &::std::option::Option<crate::types::TaskList> {
+        &self.task_list
     }
     /// <p> A task priority that, if set, specifies the priority for a decision task of this workflow execution. This overrides the defaultTaskPriority specified when registering the workflow type. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
@@ -263,6 +296,11 @@ impl StartChildWorkflowExecutionDecisionAttributesBuilder {
     ) -> Self {
         self.task_priority = input;
         self
+    }
+    /// <p> A task priority that, if set, specifies the priority for a decision task of this workflow execution. This overrides the defaultTaskPriority specified when registering the workflow type. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+    /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    pub fn get_task_priority(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_priority
     }
     /// <p>Specifies the maximum duration of decision tasks for this workflow execution. This parameter overrides the <code>defaultTaskStartToCloseTimout</code> specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
@@ -285,6 +323,13 @@ impl StartChildWorkflowExecutionDecisionAttributesBuilder {
     ) -> Self {
         self.task_start_to_close_timeout = input;
         self
+    }
+    /// <p>Specifies the maximum duration of decision tasks for this workflow execution. This parameter overrides the <code>defaultTaskStartToCloseTimout</code> specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
+    /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
+    /// <p>A task start-to-close timeout for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task start-to-close timeout was specified at registration time then a fault is returned.</p>
+    /// </note>
+    pub fn get_task_start_to_close_timeout(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_start_to_close_timeout
     }
     /// <p> If set, specifies the policy to use for the child workflow executions if the workflow execution being started is terminated by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This policy overrides the default child policy specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
     /// <p>The supported child policies are:</p>
@@ -315,6 +360,18 @@ impl StartChildWorkflowExecutionDecisionAttributesBuilder {
         self.child_policy = input;
         self
     }
+    /// <p> If set, specifies the policy to use for the child workflow executions if the workflow execution being started is terminated by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This policy overrides the default child policy specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
+    /// <p>The supported child policies are:</p>
+    /// <ul>
+    /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
+    /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
+    /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
+    /// </ul> <note>
+    /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
+    /// </note>
+    pub fn get_child_policy(&self) -> &::std::option::Option<crate::types::ChildPolicy> {
+        &self.child_policy
+    }
     /// Appends an item to `tag_list`.
     ///
     /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
@@ -334,6 +391,10 @@ impl StartChildWorkflowExecutionDecisionAttributesBuilder {
         self.tag_list = input;
         self
     }
+    /// <p>The list of tags to associate with the child workflow execution. A maximum of 5 tags can be specified. You can list workflow executions with a specific tag by calling <code>ListOpenWorkflowExecutions</code> or <code>ListClosedWorkflowExecutions</code> and specifying a <code>TagFilter</code>.</p>
+    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tag_list
+    }
     /// <p>The IAM role attached to the child workflow execution.</p>
     pub fn lambda_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lambda_role = ::std::option::Option::Some(input.into());
@@ -343,6 +404,10 @@ impl StartChildWorkflowExecutionDecisionAttributesBuilder {
     pub fn set_lambda_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lambda_role = input;
         self
+    }
+    /// <p>The IAM role attached to the child workflow execution.</p>
+    pub fn get_lambda_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lambda_role
     }
     /// Consumes the builder and constructs a [`StartChildWorkflowExecutionDecisionAttributes`](crate::types::StartChildWorkflowExecutionDecisionAttributes).
     pub fn build(self) -> crate::types::StartChildWorkflowExecutionDecisionAttributes {

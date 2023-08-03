@@ -94,6 +94,17 @@ impl ListRecommendationsInputBuilder {
         self.filter = input;
         self
     }
+    /// <p>Filters applied when retrieving recommendations. Can eiter be an individual filter, or combinations of <code>STATUS</code> and <code>IMPACT</code> or <code>STATUS</code> and <code>TYPE</code> </p>
+    pub fn get_filter(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::ListRecommendationsFilterKey,
+            ::std::string::String,
+        >,
+    > {
+        &self.filter
+    }
     /// <p>A token returned from a previous call to <code>ListRecommendations</code> to indicate the position in the list of recommendations.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -103,6 +114,10 @@ impl ListRecommendationsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token returned from a previous call to <code>ListRecommendations</code> to indicate the position in the list of recommendations.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The number of results to show in a single call to <code>ListRecommendations</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     /// <p>The value you specify has to be at least 1, and can be no more than 100.</p>
@@ -115,6 +130,11 @@ impl ListRecommendationsInputBuilder {
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.page_size = input;
         self
+    }
+    /// <p>The number of results to show in a single call to <code>ListRecommendations</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
+    /// <p>The value you specify has to be at least 1, and can be no more than 100.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        &self.page_size
     }
     /// Consumes the builder and constructs a [`ListRecommendationsInput`](crate::operation::list_recommendations::ListRecommendationsInput).
     pub fn build(

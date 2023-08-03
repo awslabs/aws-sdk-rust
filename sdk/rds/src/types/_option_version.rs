@@ -48,6 +48,10 @@ impl OptionVersionBuilder {
         self.version = input;
         self
     }
+    /// <p>The version of the option.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
+    }
     /// <p>True if the version is the default version of the option, and otherwise false.</p>
     pub fn is_default(mut self, input: bool) -> Self {
         self.is_default = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl OptionVersionBuilder {
     pub fn set_is_default(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_default = input;
         self
+    }
+    /// <p>True if the version is the default version of the option, and otherwise false.</p>
+    pub fn get_is_default(&self) -> &::std::option::Option<bool> {
+        &self.is_default
     }
     /// Consumes the builder and constructs a [`OptionVersion`](crate::types::OptionVersion).
     pub fn build(self) -> crate::types::OptionVersion {

@@ -114,6 +114,10 @@ impl ApiGatewayApiAssetBuilder {
         self.api_description = input;
         self
     }
+    /// <p>The API description of the API asset.</p>
+    pub fn get_api_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_description
+    }
     /// <p>The API endpoint of the API asset.</p>
     pub fn api_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_endpoint = ::std::option::Option::Some(input.into());
@@ -123,6 +127,10 @@ impl ApiGatewayApiAssetBuilder {
     pub fn set_api_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_endpoint = input;
         self
+    }
+    /// <p>The API endpoint of the API asset.</p>
+    pub fn get_api_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_endpoint
     }
     /// <p>The unique identifier of the API asset.</p>
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -134,6 +142,10 @@ impl ApiGatewayApiAssetBuilder {
         self.api_id = input;
         self
     }
+    /// <p>The unique identifier of the API asset.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_id
+    }
     /// <p>The API key of the API asset.</p>
     pub fn api_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_key = ::std::option::Option::Some(input.into());
@@ -144,6 +156,10 @@ impl ApiGatewayApiAssetBuilder {
         self.api_key = input;
         self
     }
+    /// <p>The API key of the API asset.</p>
+    pub fn get_api_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_key
+    }
     /// <p>The API name of the API asset.</p>
     pub fn api_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_name = ::std::option::Option::Some(input.into());
@@ -153,6 +169,10 @@ impl ApiGatewayApiAssetBuilder {
     pub fn set_api_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_name = input;
         self
+    }
+    /// <p>The API name of the API asset.</p>
+    pub fn get_api_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_name
     }
     /// <p>The download URL of the API specification of the API asset.</p>
     pub fn api_specification_download_url(
@@ -170,6 +190,12 @@ impl ApiGatewayApiAssetBuilder {
         self.api_specification_download_url = input;
         self
     }
+    /// <p>The download URL of the API specification of the API asset.</p>
+    pub fn get_api_specification_download_url(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.api_specification_download_url
+    }
     /// <p>The date and time that the upload URL expires, in ISO 8601 format.</p>
     pub fn api_specification_download_url_expires_at(
         mut self,
@@ -186,6 +212,12 @@ impl ApiGatewayApiAssetBuilder {
         self.api_specification_download_url_expires_at = input;
         self
     }
+    /// <p>The date and time that the upload URL expires, in ISO 8601 format.</p>
+    pub fn get_api_specification_download_url_expires_at(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.api_specification_download_url_expires_at
+    }
     /// <p>The protocol type of the API asset.</p>
     pub fn protocol_type(mut self, input: crate::types::ProtocolType) -> Self {
         self.protocol_type = ::std::option::Option::Some(input);
@@ -199,6 +231,10 @@ impl ApiGatewayApiAssetBuilder {
         self.protocol_type = input;
         self
     }
+    /// <p>The protocol type of the API asset.</p>
+    pub fn get_protocol_type(&self) -> &::std::option::Option<crate::types::ProtocolType> {
+        &self.protocol_type
+    }
     /// <p>The stage of the API asset.</p>
     pub fn stage(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage = ::std::option::Option::Some(input.into());
@@ -208,6 +244,10 @@ impl ApiGatewayApiAssetBuilder {
     pub fn set_stage(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stage = input;
         self
+    }
+    /// <p>The stage of the API asset.</p>
+    pub fn get_stage(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stage
     }
     /// Consumes the builder and constructs a [`ApiGatewayApiAsset`](crate::types::ApiGatewayApiAsset).
     pub fn build(self) -> crate::types::ApiGatewayApiAsset {

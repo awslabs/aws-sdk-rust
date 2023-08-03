@@ -51,6 +51,10 @@ impl SnapshotOptionsStatusBuilder {
         self.options = input;
         self
     }
+    /// <p>The daily snapshot options specified for the domain.</p>
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::SnapshotOptions> {
+        &self.options
+    }
     /// <p>The status of a daily automated snapshot.</p>
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl SnapshotOptionsStatusBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OptionStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of a daily automated snapshot.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::OptionStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`SnapshotOptionsStatus`](crate::types::SnapshotOptionsStatus).
     pub fn build(self) -> crate::types::SnapshotOptionsStatus {

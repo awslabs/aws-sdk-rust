@@ -72,6 +72,10 @@ impl AttachmentContentBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of an attachment.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The size of an attachment in bytes.</p>
     pub fn size(mut self, input: i64) -> Self {
         self.size = ::std::option::Option::Some(input);
@@ -82,6 +86,10 @@ impl AttachmentContentBuilder {
         self.size = input;
         self
     }
+    /// <p>The size of an attachment in bytes.</p>
+    pub fn get_size(&self) -> &::std::option::Option<i64> {
+        &self.size
+    }
     /// <p>The cryptographic hash value of the document content.</p>
     pub fn hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hash = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl AttachmentContentBuilder {
     pub fn set_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hash = input;
         self
+    }
+    /// <p>The cryptographic hash value of the document content.</p>
+    pub fn get_hash(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hash
     }
     /// <p>The hash algorithm used to calculate the hash value.</p>
     pub fn hash_type(mut self, input: crate::types::AttachmentHashType) -> Self {
@@ -105,6 +117,10 @@ impl AttachmentContentBuilder {
         self.hash_type = input;
         self
     }
+    /// <p>The hash algorithm used to calculate the hash value.</p>
+    pub fn get_hash_type(&self) -> &::std::option::Option<crate::types::AttachmentHashType> {
+        &self.hash_type
+    }
     /// <p>The URL location of the attachment content.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
@@ -114,6 +130,10 @@ impl AttachmentContentBuilder {
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
+    }
+    /// <p>The URL location of the attachment content.</p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
     }
     /// Consumes the builder and constructs a [`AttachmentContent`](crate::types::AttachmentContent).
     pub fn build(self) -> crate::types::AttachmentContent {

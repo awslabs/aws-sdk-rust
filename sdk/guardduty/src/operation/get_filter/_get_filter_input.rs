@@ -47,6 +47,10 @@ impl GetFilterInputBuilder {
         self.detector_id = input;
         self
     }
+    /// <p>The unique ID of the detector that the filter is associated with.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
+    }
     /// <p>The name of the filter you want to get.</p>
     pub fn filter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter_name = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl GetFilterInputBuilder {
     pub fn set_filter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.filter_name = input;
         self
+    }
+    /// <p>The name of the filter you want to get.</p>
+    pub fn get_filter_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filter_name
     }
     /// Consumes the builder and constructs a [`GetFilterInput`](crate::operation::get_filter::GetFilterInput).
     pub fn build(

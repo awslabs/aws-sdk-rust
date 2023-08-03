@@ -48,6 +48,10 @@ impl GroupNameAndArnBuilder {
         self.group_name = input;
         self
     }
+    /// <p>The group name.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
+    }
     /// <p>The group ARN.</p>
     pub fn group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_arn = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl GroupNameAndArnBuilder {
     pub fn set_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_arn = input;
         self
+    }
+    /// <p>The group ARN.</p>
+    pub fn get_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_arn
     }
     /// Consumes the builder and constructs a [`GroupNameAndArn`](crate::types::GroupNameAndArn).
     pub fn build(self) -> crate::types::GroupNameAndArn {

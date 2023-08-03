@@ -40,6 +40,10 @@ impl GetSatelliteInputBuilder {
         self.satellite_id = input;
         self
     }
+    /// <p>UUID of a satellite.</p>
+    pub fn get_satellite_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.satellite_id
+    }
     /// Consumes the builder and constructs a [`GetSatelliteInput`](crate::operation::get_satellite::GetSatelliteInput).
     pub fn build(
         self,

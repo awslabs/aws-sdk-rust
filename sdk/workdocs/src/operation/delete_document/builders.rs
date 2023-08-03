@@ -36,6 +36,12 @@ impl DeleteDocumentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteDocument as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_document::builders::DeleteDocumentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl DeleteDocumentFluentBuilder {
         self.inner = self.inner.set_authentication_token(input);
         self
     }
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_authentication_token()
+    }
     /// <p>The ID of the document.</p>
     pub fn document_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.document_id(input.into());
@@ -133,5 +143,9 @@ impl DeleteDocumentFluentBuilder {
     pub fn set_document_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_document_id(input);
         self
+    }
+    /// <p>The ID of the document.</p>
+    pub fn get_document_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_document_id()
     }
 }

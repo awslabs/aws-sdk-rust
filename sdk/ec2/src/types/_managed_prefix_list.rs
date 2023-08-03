@@ -118,6 +118,10 @@ impl ManagedPrefixListBuilder {
         self.prefix_list_id = input;
         self
     }
+    /// <p>The ID of the prefix list.</p>
+    pub fn get_prefix_list_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix_list_id
+    }
     /// <p>The IP address version.</p>
     pub fn address_family(
         mut self,
@@ -134,6 +138,10 @@ impl ManagedPrefixListBuilder {
         self.address_family = input;
         self
     }
+    /// <p>The IP address version.</p>
+    pub fn get_address_family(&self) -> &::std::option::Option<::std::string::String> {
+        &self.address_family
+    }
     /// <p>The current state of the prefix list.</p>
     pub fn state(mut self, input: crate::types::PrefixListState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -146,6 +154,10 @@ impl ManagedPrefixListBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The current state of the prefix list.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::PrefixListState> {
+        &self.state
     }
     /// <p>The state message.</p>
     pub fn state_message(
@@ -163,6 +175,10 @@ impl ManagedPrefixListBuilder {
         self.state_message = input;
         self
     }
+    /// <p>The state message.</p>
+    pub fn get_state_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_message
+    }
     /// <p>The Amazon Resource Name (ARN) for the prefix list.</p>
     pub fn prefix_list_arn(
         mut self,
@@ -178,6 +194,10 @@ impl ManagedPrefixListBuilder {
     ) -> Self {
         self.prefix_list_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the prefix list.</p>
+    pub fn get_prefix_list_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix_list_arn
     }
     /// <p>The name of the prefix list.</p>
     pub fn prefix_list_name(
@@ -195,6 +215,10 @@ impl ManagedPrefixListBuilder {
         self.prefix_list_name = input;
         self
     }
+    /// <p>The name of the prefix list.</p>
+    pub fn get_prefix_list_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix_list_name
+    }
     /// <p>The maximum number of entries for the prefix list.</p>
     pub fn max_entries(mut self, input: i32) -> Self {
         self.max_entries = ::std::option::Option::Some(input);
@@ -205,6 +229,10 @@ impl ManagedPrefixListBuilder {
         self.max_entries = input;
         self
     }
+    /// <p>The maximum number of entries for the prefix list.</p>
+    pub fn get_max_entries(&self) -> &::std::option::Option<i32> {
+        &self.max_entries
+    }
     /// <p>The version of the prefix list.</p>
     pub fn version(mut self, input: i64) -> Self {
         self.version = ::std::option::Option::Some(input);
@@ -214,6 +242,10 @@ impl ManagedPrefixListBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The version of the prefix list.</p>
+    pub fn get_version(&self) -> &::std::option::Option<i64> {
+        &self.version
     }
     /// Appends an item to `tags`.
     ///
@@ -234,6 +266,10 @@ impl ManagedPrefixListBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags for the prefix list.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The ID of the owner of the prefix list.</p>
     pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_id = ::std::option::Option::Some(input.into());
@@ -243,6 +279,10 @@ impl ManagedPrefixListBuilder {
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_id = input;
         self
+    }
+    /// <p>The ID of the owner of the prefix list.</p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
     }
     /// Consumes the builder and constructs a [`ManagedPrefixList`](crate::types::ManagedPrefixList).
     pub fn build(self) -> crate::types::ManagedPrefixList {

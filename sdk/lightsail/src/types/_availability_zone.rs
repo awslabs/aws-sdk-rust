@@ -48,6 +48,10 @@ impl AvailabilityZoneBuilder {
         self.zone_name = input;
         self
     }
+    /// <p>The name of the Availability Zone. The format is <code>us-east-2a</code> (case-sensitive).</p>
+    pub fn get_zone_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.zone_name
+    }
     /// <p>The state of the Availability Zone.</p>
     pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl AvailabilityZoneBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the Availability Zone.</p>
+    pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`AvailabilityZone`](crate::types::AvailabilityZone).
     pub fn build(self) -> crate::types::AvailabilityZone {

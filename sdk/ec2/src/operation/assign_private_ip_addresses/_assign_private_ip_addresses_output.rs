@@ -76,6 +76,10 @@ impl AssignPrivateIpAddressesOutputBuilder {
         self.network_interface_id = input;
         self
     }
+    /// <p>The ID of the network interface.</p>
+    pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_interface_id
+    }
     /// Appends an item to `assigned_private_ip_addresses`.
     ///
     /// To override the contents of this collection use [`set_assigned_private_ip_addresses`](Self::set_assigned_private_ip_addresses).
@@ -98,6 +102,12 @@ impl AssignPrivateIpAddressesOutputBuilder {
         self.assigned_private_ip_addresses = input;
         self
     }
+    /// <p>The private IP addresses assigned to the network interface.</p>
+    pub fn get_assigned_private_ip_addresses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssignedPrivateIpAddress>> {
+        &self.assigned_private_ip_addresses
+    }
     /// Appends an item to `assigned_ipv4_prefixes`.
     ///
     /// To override the contents of this collection use [`set_assigned_ipv4_prefixes`](Self::set_assigned_ipv4_prefixes).
@@ -116,6 +126,12 @@ impl AssignPrivateIpAddressesOutputBuilder {
     ) -> Self {
         self.assigned_ipv4_prefixes = input;
         self
+    }
+    /// <p>The IPv4 prefixes that are assigned to the network interface.</p>
+    pub fn get_assigned_ipv4_prefixes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Ipv4PrefixSpecification>> {
+        &self.assigned_ipv4_prefixes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

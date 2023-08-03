@@ -36,6 +36,10 @@ impl UpdateMediaInsightsPipelineConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateMediaInsightsPipelineConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_media_insights_pipeline_configuration::builders::UpdateMediaInsightsPipelineConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl UpdateMediaInsightsPipelineConfigurationFluentBuilder {
         self.inner = self.inner.set_identifier(input);
         self
     }
+    /// <p>The unique identifier for the resource to be updated. Valid values include the name and ARN of the media insights pipeline configuration.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identifier()
+    }
     /// <p>The ARN of the role used by the service to access Amazon Web Services resources.</p>
     pub fn resource_access_role_arn(
         mut self,
@@ -116,6 +124,10 @@ impl UpdateMediaInsightsPipelineConfigurationFluentBuilder {
         self.inner = self.inner.set_resource_access_role_arn(input);
         self
     }
+    /// <p>The ARN of the role used by the service to access Amazon Web Services resources.</p>
+    pub fn get_resource_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_access_role_arn()
+    }
     /// <p>The configuration settings for real-time alerts for the media insights pipeline.</p>
     pub fn real_time_alert_configuration(
         mut self,
@@ -131,6 +143,12 @@ impl UpdateMediaInsightsPipelineConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_real_time_alert_configuration(input);
         self
+    }
+    /// <p>The configuration settings for real-time alerts for the media insights pipeline.</p>
+    pub fn get_real_time_alert_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::RealTimeAlertConfiguration> {
+        self.inner.get_real_time_alert_configuration()
     }
     /// Appends an item to `Elements`.
     ///
@@ -153,5 +171,13 @@ impl UpdateMediaInsightsPipelineConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_elements(input);
         self
+    }
+    /// <p>The elements in the request, such as a processor for Amazon Transcribe or a sink for a Kinesis Data Stream..</p>
+    pub fn get_elements(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::MediaInsightsPipelineConfigurationElement>,
+    > {
+        self.inner.get_elements()
     }
 }

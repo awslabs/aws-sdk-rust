@@ -54,6 +54,10 @@ impl PutComponentPolicyInputBuilder {
         self.component_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the component that this policy should be applied to.</p>
+    pub fn get_component_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_arn
+    }
     /// <p>The policy to apply.</p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl PutComponentPolicyInputBuilder {
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy = input;
         self
+    }
+    /// <p>The policy to apply.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy
     }
     /// Consumes the builder and constructs a [`PutComponentPolicyInput`](crate::operation::put_component_policy::PutComponentPolicyInput).
     pub fn build(

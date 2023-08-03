@@ -40,6 +40,10 @@ impl InstanceIpv4PrefixBuilder {
         self.ipv4_prefix = input;
         self
     }
+    /// <p>One or more IPv4 prefixes assigned to the network interface.</p>
+    pub fn get_ipv4_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv4_prefix
+    }
     /// Consumes the builder and constructs a [`InstanceIpv4Prefix`](crate::types::InstanceIpv4Prefix).
     pub fn build(self) -> crate::types::InstanceIpv4Prefix {
         crate::types::InstanceIpv4Prefix {

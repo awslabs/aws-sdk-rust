@@ -71,6 +71,12 @@ impl ListSuppressedDestinationsOutputBuilder {
         self.suppressed_destination_summaries = input;
         self
     }
+    /// <p>A list of summaries, each containing a summary for a suppressed email destination.</p>
+    pub fn get_suppressed_destination_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SuppressedDestinationSummary>> {
+        &self.suppressed_destination_summaries
+    }
     /// <p>A token that indicates that there are additional email addresses on the suppression list for your account. To view additional suppressed addresses, issue another request to <code>ListSuppressedDestinations</code>, and pass this token in the <code>NextToken</code> parameter.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -80,6 +86,10 @@ impl ListSuppressedDestinationsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token that indicates that there are additional email addresses on the suppression list for your account. To view additional suppressed addresses, issue another request to <code>ListSuppressedDestinations</code>, and pass this token in the <code>NextToken</code> parameter.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

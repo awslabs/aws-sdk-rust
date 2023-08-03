@@ -39,6 +39,12 @@ impl CreateNatGatewayFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateNatGateway as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_nat_gateway::builders::CreateNatGatewayInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +141,10 @@ impl CreateNatGatewayFluentBuilder {
         self.inner = self.inner.set_allocation_id(input);
         self
     }
+    /// <p>[Public NAT gateways only] The allocation ID of an Elastic IP address to associate with the NAT gateway. You cannot specify an Elastic IP address with a private NAT gateway. If the Elastic IP address is associated with another resource, you must first disassociate it.</p>
+    pub fn get_allocation_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_allocation_id()
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     /// <p>Constraint: Maximum 64 ASCII characters.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -147,6 +157,11 @@ impl CreateNatGatewayFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
+    /// <p>Constraint: Maximum 64 ASCII characters.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -157,6 +172,10 @@ impl CreateNatGatewayFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>The ID of the subnet in which to create the NAT gateway.</p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subnet_id(input.into());
@@ -166,6 +185,10 @@ impl CreateNatGatewayFluentBuilder {
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subnet_id(input);
         self
+    }
+    /// <p>The ID of the subnet in which to create the NAT gateway.</p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_subnet_id()
     }
     /// Appends an item to `TagSpecifications`.
     ///
@@ -184,6 +207,12 @@ impl CreateNatGatewayFluentBuilder {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
+    /// <p>The tags to assign to the NAT gateway.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        self.inner.get_tag_specifications()
+    }
     /// <p>Indicates whether the NAT gateway supports public or private connectivity. The default is public connectivity.</p>
     pub fn connectivity_type(mut self, input: crate::types::ConnectivityType) -> Self {
         self.inner = self.inner.connectivity_type(input);
@@ -196,6 +225,10 @@ impl CreateNatGatewayFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_connectivity_type(input);
         self
+    }
+    /// <p>Indicates whether the NAT gateway supports public or private connectivity. The default is public connectivity.</p>
+    pub fn get_connectivity_type(&self) -> &::std::option::Option<crate::types::ConnectivityType> {
+        self.inner.get_connectivity_type()
     }
     /// <p>The private IPv4 address to assign to the NAT gateway. If you don't provide an address, a private IPv4 address will be automatically assigned.</p>
     pub fn private_ip_address(
@@ -212,6 +245,10 @@ impl CreateNatGatewayFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_private_ip_address(input);
         self
+    }
+    /// <p>The private IPv4 address to assign to the NAT gateway. If you don't provide an address, a private IPv4 address will be automatically assigned.</p>
+    pub fn get_private_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_private_ip_address()
     }
     /// Appends an item to `SecondaryAllocationIds`.
     ///
@@ -233,6 +270,12 @@ impl CreateNatGatewayFluentBuilder {
         self.inner = self.inner.set_secondary_allocation_ids(input);
         self
     }
+    /// <p>Secondary EIP allocation IDs. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
+    pub fn get_secondary_allocation_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_secondary_allocation_ids()
+    }
     /// Appends an item to `SecondaryPrivateIpAddresses`.
     ///
     /// To override the contents of this collection use [`set_secondary_private_ip_addresses`](Self::set_secondary_private_ip_addresses).
@@ -253,6 +296,12 @@ impl CreateNatGatewayFluentBuilder {
         self.inner = self.inner.set_secondary_private_ip_addresses(input);
         self
     }
+    /// <p>Secondary private IPv4 addresses. For more information about secondary addresses, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
+    pub fn get_secondary_private_ip_addresses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_secondary_private_ip_addresses()
+    }
     /// <p>[Private NAT gateway only] The number of secondary private IPv4 addresses you want to assign to the NAT gateway. For more information about secondary addresses, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
     pub fn secondary_private_ip_address_count(mut self, input: i32) -> Self {
         self.inner = self.inner.secondary_private_ip_address_count(input);
@@ -265,5 +314,9 @@ impl CreateNatGatewayFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_secondary_private_ip_address_count(input);
         self
+    }
+    /// <p>[Private NAT gateway only] The number of secondary private IPv4 addresses you want to assign to the NAT gateway. For more information about secondary addresses, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
+    pub fn get_secondary_private_ip_address_count(&self) -> &::std::option::Option<i32> {
+        self.inner.get_secondary_private_ip_address_count()
     }
 }

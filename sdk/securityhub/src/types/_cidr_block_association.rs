@@ -62,6 +62,10 @@ impl CidrBlockAssociationBuilder {
         self.association_id = input;
         self
     }
+    /// <p>The association ID for the IPv4 CIDR block.</p>
+    pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_id
+    }
     /// <p>The IPv4 CIDR block.</p>
     pub fn cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cidr_block = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl CidrBlockAssociationBuilder {
     pub fn set_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cidr_block = input;
         self
+    }
+    /// <p>The IPv4 CIDR block.</p>
+    pub fn get_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr_block
     }
     /// <p>Information about the state of the IPv4 CIDR block.</p>
     pub fn cidr_block_state(
@@ -87,6 +95,10 @@ impl CidrBlockAssociationBuilder {
     ) -> Self {
         self.cidr_block_state = input;
         self
+    }
+    /// <p>Information about the state of the IPv4 CIDR block.</p>
+    pub fn get_cidr_block_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr_block_state
     }
     /// Consumes the builder and constructs a [`CidrBlockAssociation`](crate::types::CidrBlockAssociation).
     pub fn build(self) -> crate::types::CidrBlockAssociation {

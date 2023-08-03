@@ -50,6 +50,10 @@ impl StreamChannelDefinitionBuilder {
         self.number_of_channels = input;
         self
     }
+    /// <p>The number of channels in a streaming channel.</p>
+    pub fn get_number_of_channels(&self) -> &::std::option::Option<i32> {
+        &self.number_of_channels
+    }
     /// Appends an item to `channel_definitions`.
     ///
     /// To override the contents of this collection use [`set_channel_definitions`](Self::set_channel_definitions).
@@ -68,6 +72,12 @@ impl StreamChannelDefinitionBuilder {
     ) -> Self {
         self.channel_definitions = input;
         self
+    }
+    /// <p>The definitions of the channels in a streaming channel.</p>
+    pub fn get_channel_definitions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>> {
+        &self.channel_definitions
     }
     /// Consumes the builder and constructs a [`StreamChannelDefinition`](crate::types::StreamChannelDefinition).
     pub fn build(self) -> crate::types::StreamChannelDefinition {

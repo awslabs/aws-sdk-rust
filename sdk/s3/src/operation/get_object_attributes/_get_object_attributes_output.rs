@@ -121,6 +121,10 @@ impl GetObjectAttributesOutputBuilder {
         self.delete_marker = input;
         self
     }
+    /// <p>Specifies whether the object retrieved was (<code>true</code>) or was not (<code>false</code>) a delete marker. If <code>false</code>, this response header does not appear in the response.</p>
+    pub fn get_delete_marker(&self) -> &::std::option::Option<bool> {
+        &self.delete_marker
+    }
     /// <p>The creation date of the object.</p>
     pub fn last_modified(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified = ::std::option::Option::Some(input);
@@ -134,6 +138,10 @@ impl GetObjectAttributesOutputBuilder {
         self.last_modified = input;
         self
     }
+    /// <p>The creation date of the object.</p>
+    pub fn get_last_modified(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified
+    }
     /// <p>The version ID of the object.</p>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_id = ::std::option::Option::Some(input.into());
@@ -143,6 +151,10 @@ impl GetObjectAttributesOutputBuilder {
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_id = input;
         self
+    }
+    /// <p>The version ID of the object.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_id
     }
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub fn request_charged(mut self, input: crate::types::RequestCharged) -> Self {
@@ -157,6 +169,10 @@ impl GetObjectAttributesOutputBuilder {
         self.request_charged = input;
         self
     }
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
+    pub fn get_request_charged(&self) -> &::std::option::Option<crate::types::RequestCharged> {
+        &self.request_charged
+    }
     /// <p>An ETag is an opaque identifier assigned by a web server to a specific version of a resource found at a URL.</p>
     pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.e_tag = ::std::option::Option::Some(input.into());
@@ -167,6 +183,10 @@ impl GetObjectAttributesOutputBuilder {
         self.e_tag = input;
         self
     }
+    /// <p>An ETag is an opaque identifier assigned by a web server to a specific version of a resource found at a URL.</p>
+    pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.e_tag
+    }
     /// <p>The checksum or digest of the object.</p>
     pub fn checksum(mut self, input: crate::types::Checksum) -> Self {
         self.checksum = ::std::option::Option::Some(input);
@@ -176,6 +196,10 @@ impl GetObjectAttributesOutputBuilder {
     pub fn set_checksum(mut self, input: ::std::option::Option<crate::types::Checksum>) -> Self {
         self.checksum = input;
         self
+    }
+    /// <p>The checksum or digest of the object.</p>
+    pub fn get_checksum(&self) -> &::std::option::Option<crate::types::Checksum> {
+        &self.checksum
     }
     /// <p>A collection of parts associated with a multipart upload.</p>
     pub fn object_parts(mut self, input: crate::types::GetObjectAttributesParts) -> Self {
@@ -189,6 +213,12 @@ impl GetObjectAttributesOutputBuilder {
     ) -> Self {
         self.object_parts = input;
         self
+    }
+    /// <p>A collection of parts associated with a multipart upload.</p>
+    pub fn get_object_parts(
+        &self,
+    ) -> &::std::option::Option<crate::types::GetObjectAttributesParts> {
+        &self.object_parts
     }
     /// <p>Provides the storage class information of the object. Amazon S3 returns this header for all objects except for S3 Standard storage class objects.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a>.</p>
@@ -205,6 +235,11 @@ impl GetObjectAttributesOutputBuilder {
         self.storage_class = input;
         self
     }
+    /// <p>Provides the storage class information of the object. Amazon S3 returns this header for all objects except for S3 Standard storage class objects.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a>.</p>
+    pub fn get_storage_class(&self) -> &::std::option::Option<crate::types::StorageClass> {
+        &self.storage_class
+    }
     /// <p>The size of the object in bytes.</p>
     pub fn object_size(mut self, input: i64) -> Self {
         self.object_size = ::std::option::Option::Some(input);
@@ -214,6 +249,10 @@ impl GetObjectAttributesOutputBuilder {
     pub fn set_object_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.object_size = input;
         self
+    }
+    /// <p>The size of the object in bytes.</p>
+    pub fn get_object_size(&self) -> &::std::option::Option<i64> {
+        &self.object_size
     }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
         self._extended_request_id = Some(extended_request_id.into());

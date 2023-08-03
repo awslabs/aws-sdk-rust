@@ -54,6 +54,10 @@ impl StartContentUploadInputBuilder {
         self.knowledge_base_id = input;
         self
     }
+    /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.knowledge_base_id
+    }
     /// <p>The type of content to upload.</p>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl StartContentUploadInputBuilder {
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
         self
+    }
+    /// <p>The type of content to upload.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_type
     }
     /// Consumes the builder and constructs a [`StartContentUploadInput`](crate::operation::start_content_upload::StartContentUploadInput).
     pub fn build(

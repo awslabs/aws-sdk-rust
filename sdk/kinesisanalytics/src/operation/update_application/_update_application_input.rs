@@ -62,6 +62,10 @@ impl UpdateApplicationInputBuilder {
         self.application_name = input;
         self
     }
+    /// <p>Name of the Amazon Kinesis Analytics application to update.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// <p>The current application version ID. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get this value.</p>
     pub fn current_application_version_id(mut self, input: i64) -> Self {
         self.current_application_version_id = ::std::option::Option::Some(input);
@@ -71,6 +75,10 @@ impl UpdateApplicationInputBuilder {
     pub fn set_current_application_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.current_application_version_id = input;
         self
+    }
+    /// <p>The current application version ID. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get this value.</p>
+    pub fn get_current_application_version_id(&self) -> &::std::option::Option<i64> {
+        &self.current_application_version_id
     }
     /// <p>Describes application updates.</p>
     pub fn application_update(mut self, input: crate::types::ApplicationUpdate) -> Self {
@@ -84,6 +92,12 @@ impl UpdateApplicationInputBuilder {
     ) -> Self {
         self.application_update = input;
         self
+    }
+    /// <p>Describes application updates.</p>
+    pub fn get_application_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationUpdate> {
+        &self.application_update
     }
     /// Consumes the builder and constructs a [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
     pub fn build(

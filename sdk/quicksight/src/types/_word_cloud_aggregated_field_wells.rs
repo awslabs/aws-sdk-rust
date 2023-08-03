@@ -57,6 +57,12 @@ impl WordCloudAggregatedFieldWellsBuilder {
         self.group_by = input;
         self
     }
+    /// <p>The group by field well of a word cloud. Values are grouped by group by fields.</p>
+    pub fn get_group_by(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
+        &self.group_by
+    }
     /// Appends an item to `size`.
     ///
     /// To override the contents of this collection use [`set_size`](Self::set_size).
@@ -75,6 +81,10 @@ impl WordCloudAggregatedFieldWellsBuilder {
     ) -> Self {
         self.size = input;
         self
+    }
+    /// <p>The size field well of a word cloud. Values are aggregated based on group by fields.</p>
+    pub fn get_size(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
+        &self.size
     }
     /// Consumes the builder and constructs a [`WordCloudAggregatedFieldWells`](crate::types::WordCloudAggregatedFieldWells).
     pub fn build(self) -> crate::types::WordCloudAggregatedFieldWells {

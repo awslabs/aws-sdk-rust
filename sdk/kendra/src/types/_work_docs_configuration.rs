@@ -97,6 +97,11 @@ impl WorkDocsConfigurationBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The identifier of the directory corresponding to your Amazon WorkDocs site repository.</p>
+    /// <p>You can find the organization ID in the <a href="https://console.aws.amazon.com/directoryservicev2/">Directory Service</a> by going to <b>Active Directory</b>, then <b>Directories</b>. Your Amazon WorkDocs site directory has an ID, which is the organization ID. You can also set up a new Amazon WorkDocs directory in the Directory Service console and enable a Amazon WorkDocs site for the directory in the Amazon WorkDocs console.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p> <code>TRUE</code> to include comments on documents in your index. Including comments in your index means each comment is a document that can be searched on.</p>
     /// <p>The default is set to <code>FALSE</code>.</p>
     pub fn crawl_comments(mut self, input: bool) -> Self {
@@ -109,6 +114,11 @@ impl WorkDocsConfigurationBuilder {
         self.crawl_comments = input;
         self
     }
+    /// <p> <code>TRUE</code> to include comments on documents in your index. Including comments in your index means each comment is a document that can be searched on.</p>
+    /// <p>The default is set to <code>FALSE</code>.</p>
+    pub fn get_crawl_comments(&self) -> &::std::option::Option<bool> {
+        &self.crawl_comments
+    }
     /// <p> <code>TRUE</code> to use the Amazon WorkDocs change log to determine which documents require updating in the index. Depending on the change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in Amazon WorkDocs.</p>
     pub fn use_change_log(mut self, input: bool) -> Self {
         self.use_change_log = ::std::option::Option::Some(input);
@@ -118,6 +128,10 @@ impl WorkDocsConfigurationBuilder {
     pub fn set_use_change_log(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_change_log = input;
         self
+    }
+    /// <p> <code>TRUE</code> to use the Amazon WorkDocs change log to determine which documents require updating in the index. Depending on the change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in Amazon WorkDocs.</p>
+    pub fn get_use_change_log(&self) -> &::std::option::Option<bool> {
+        &self.use_change_log
     }
     /// Appends an item to `inclusion_patterns`.
     ///
@@ -141,6 +155,12 @@ impl WorkDocsConfigurationBuilder {
         self.inclusion_patterns = input;
         self
     }
+    /// <p>A list of regular expression patterns to include certain files in your Amazon WorkDocs site repository. Files that match the patterns are included in the index. Files that don't match the patterns are excluded from the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+    pub fn get_inclusion_patterns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.inclusion_patterns
+    }
     /// Appends an item to `exclusion_patterns`.
     ///
     /// To override the contents of this collection use [`set_exclusion_patterns`](Self::set_exclusion_patterns).
@@ -163,6 +183,12 @@ impl WorkDocsConfigurationBuilder {
         self.exclusion_patterns = input;
         self
     }
+    /// <p>A list of regular expression patterns to exclude certain files in your Amazon WorkDocs site repository. Files that match the patterns are excluded from the index. Files that don’t match the patterns are included in the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+    pub fn get_exclusion_patterns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.exclusion_patterns
+    }
     /// Appends an item to `field_mappings`.
     ///
     /// To override the contents of this collection use [`set_field_mappings`](Self::set_field_mappings).
@@ -181,6 +207,12 @@ impl WorkDocsConfigurationBuilder {
     ) -> Self {
         self.field_mappings = input;
         self
+    }
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Amazon WorkDocs data source attributes or field names to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Amazon WorkDocs fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Amazon WorkDocs data source field names must exist in your Amazon WorkDocs custom metadata.</p>
+    pub fn get_field_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>> {
+        &self.field_mappings
     }
     /// Consumes the builder and constructs a [`WorkDocsConfiguration`](crate::types::WorkDocsConfiguration).
     pub fn build(self) -> crate::types::WorkDocsConfiguration {

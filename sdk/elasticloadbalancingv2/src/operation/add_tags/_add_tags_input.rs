@@ -59,6 +59,12 @@ impl AddTagsInputBuilder {
         self.resource_arns = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn get_resource_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resource_arns
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -77,6 +83,10 @@ impl AddTagsInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`AddTagsInput`](crate::operation::add_tags::AddTagsInput).
     pub fn build(

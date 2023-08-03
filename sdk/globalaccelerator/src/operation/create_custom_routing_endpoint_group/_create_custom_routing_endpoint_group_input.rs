@@ -67,6 +67,10 @@ impl CreateCustomRoutingEndpointGroupInputBuilder {
         self.listener_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the listener for a custom routing endpoint.</p>
+    pub fn get_listener_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.listener_arn
+    }
     /// <p>The Amazon Web Services Region where the endpoint group is located. A listener can have only one endpoint group in a specific Region.</p>
     pub fn endpoint_group_region(
         mut self,
@@ -82,6 +86,10 @@ impl CreateCustomRoutingEndpointGroupInputBuilder {
     ) -> Self {
         self.endpoint_group_region = input;
         self
+    }
+    /// <p>The Amazon Web Services Region where the endpoint group is located. A listener can have only one endpoint group in a specific Region.</p>
+    pub fn get_endpoint_group_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_group_region
     }
     /// Appends an item to `destination_configurations`.
     ///
@@ -107,6 +115,13 @@ impl CreateCustomRoutingEndpointGroupInputBuilder {
         self.destination_configurations = input;
         self
     }
+    /// <p>Sets the port range and protocol for all endpoints (virtual private cloud subnets) in a custom routing endpoint group to accept client traffic on.</p>
+    pub fn get_destination_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingDestinationConfiguration>>
+    {
+        &self.destination_configurations
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
     pub fn idempotency_token(
         mut self,
@@ -122,6 +137,10 @@ impl CreateCustomRoutingEndpointGroupInputBuilder {
     ) -> Self {
         self.idempotency_token = input;
         self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
+    pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.idempotency_token
     }
     /// Consumes the builder and constructs a [`CreateCustomRoutingEndpointGroupInput`](crate::operation::create_custom_routing_endpoint_group::CreateCustomRoutingEndpointGroupInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_custom_routing_endpoint_group::CreateCustomRoutingEndpointGroupInput, ::aws_smithy_http::operation::error::BuildError>{

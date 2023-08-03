@@ -48,6 +48,10 @@ impl DescribeActivityTypeInputBuilder {
         self.domain = input;
         self
     }
+    /// <p>The name of the domain in which the activity type is registered.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
+    }
     /// <p>The activity type to get information about. Activity types are identified by the <code>name</code> and <code>version</code> that were supplied when the activity was registered.</p>
     pub fn activity_type(mut self, input: crate::types::ActivityType) -> Self {
         self.activity_type = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl DescribeActivityTypeInputBuilder {
     ) -> Self {
         self.activity_type = input;
         self
+    }
+    /// <p>The activity type to get information about. Activity types are identified by the <code>name</code> and <code>version</code> that were supplied when the activity was registered.</p>
+    pub fn get_activity_type(&self) -> &::std::option::Option<crate::types::ActivityType> {
+        &self.activity_type
     }
     /// Consumes the builder and constructs a [`DescribeActivityTypeInput`](crate::operation::describe_activity_type::DescribeActivityTypeInput).
     pub fn build(

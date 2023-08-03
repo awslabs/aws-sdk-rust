@@ -59,6 +59,10 @@ impl FlowTemplateDescriptionBuilder {
         self.summary = input;
         self
     }
+    /// <p>An object that contains summary information about a workflow.</p>
+    pub fn get_summary(&self) -> &::std::option::Option<crate::types::FlowTemplateSummary> {
+        &self.summary
+    }
     /// <p>A workflow's definition document.</p>
     pub fn definition(mut self, input: crate::types::DefinitionDocument) -> Self {
         self.definition = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl FlowTemplateDescriptionBuilder {
         self.definition = input;
         self
     }
+    /// <p>A workflow's definition document.</p>
+    pub fn get_definition(&self) -> &::std::option::Option<crate::types::DefinitionDocument> {
+        &self.definition
+    }
     /// <p>The version of the user's namespace against which the workflow was validated. Use this value in your system instance.</p>
     pub fn validated_namespace_version(mut self, input: i64) -> Self {
         self.validated_namespace_version = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl FlowTemplateDescriptionBuilder {
     pub fn set_validated_namespace_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.validated_namespace_version = input;
         self
+    }
+    /// <p>The version of the user's namespace against which the workflow was validated. Use this value in your system instance.</p>
+    pub fn get_validated_namespace_version(&self) -> &::std::option::Option<i64> {
+        &self.validated_namespace_version
     }
     /// Consumes the builder and constructs a [`FlowTemplateDescription`](crate::types::FlowTemplateDescription).
     pub fn build(self) -> crate::types::FlowTemplateDescription {

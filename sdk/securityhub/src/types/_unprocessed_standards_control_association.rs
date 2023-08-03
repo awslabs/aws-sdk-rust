@@ -66,6 +66,12 @@ impl UnprocessedStandardsControlAssociationBuilder {
         self.standards_control_association_id = input;
         self
     }
+    /// <p> An array with one or more objects that includes a security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) and the Amazon Resource Name (ARN) of a standard. This parameter shows the specific controls for which the enablement status couldn't be retrieved in specified standards when calling <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateStandardsControlAssociations.html">BatchUpdateStandardsControlAssociations</a>. </p>
+    pub fn get_standards_control_association_id(
+        &self,
+    ) -> &::std::option::Option<crate::types::StandardsControlAssociationId> {
+        &self.standards_control_association_id
+    }
     /// <p>The error code for the unprocessed standard and control association. </p>
     pub fn error_code(mut self, input: crate::types::UnprocessedErrorCode) -> Self {
         self.error_code = ::std::option::Option::Some(input);
@@ -79,6 +85,10 @@ impl UnprocessedStandardsControlAssociationBuilder {
         self.error_code = input;
         self
     }
+    /// <p>The error code for the unprocessed standard and control association. </p>
+    pub fn get_error_code(&self) -> &::std::option::Option<crate::types::UnprocessedErrorCode> {
+        &self.error_code
+    }
     /// <p>The reason why the standard and control association was unprocessed. </p>
     pub fn error_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_reason = ::std::option::Option::Some(input.into());
@@ -88,6 +98,10 @@ impl UnprocessedStandardsControlAssociationBuilder {
     pub fn set_error_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_reason = input;
         self
+    }
+    /// <p>The reason why the standard and control association was unprocessed. </p>
+    pub fn get_error_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_reason
     }
     /// Consumes the builder and constructs a [`UnprocessedStandardsControlAssociation`](crate::types::UnprocessedStandardsControlAssociation).
     pub fn build(self) -> crate::types::UnprocessedStandardsControlAssociation {

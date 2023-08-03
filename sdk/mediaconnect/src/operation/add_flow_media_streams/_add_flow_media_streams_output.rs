@@ -55,6 +55,10 @@ impl AddFlowMediaStreamsOutputBuilder {
         self.flow_arn = input;
         self
     }
+    /// The ARN of the flow that you added media streams to.
+    pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_arn
+    }
     /// Appends an item to `media_streams`.
     ///
     /// To override the contents of this collection use [`set_media_streams`](Self::set_media_streams).
@@ -73,6 +77,12 @@ impl AddFlowMediaStreamsOutputBuilder {
     ) -> Self {
         self.media_streams = input;
         self
+    }
+    /// The media streams that you added to the flow.
+    pub fn get_media_streams(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaStream>> {
+        &self.media_streams
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

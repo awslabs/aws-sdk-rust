@@ -65,6 +65,12 @@ impl ListResourceCatalogsOutputBuilder {
         self.resource_catalogs = input;
         self
     }
+    /// <p> A list of the requested <code>ResourceCatalog</code>s. </p>
+    pub fn get_resource_catalogs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceCatalog>> {
+        &self.resource_catalogs
+    }
     /// <p> A token to resume pagination of <code>ListResourceCatalogs</code> results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -74,6 +80,10 @@ impl ListResourceCatalogsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p> A token to resume pagination of <code>ListResourceCatalogs</code> results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

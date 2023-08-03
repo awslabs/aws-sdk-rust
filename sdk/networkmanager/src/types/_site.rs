@@ -108,6 +108,10 @@ impl SiteBuilder {
         self.site_id = input;
         self
     }
+    /// <p>The ID of the site.</p>
+    pub fn get_site_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.site_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the site.</p>
     pub fn site_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.site_arn = ::std::option::Option::Some(input.into());
@@ -117,6 +121,10 @@ impl SiteBuilder {
     pub fn set_site_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.site_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the site.</p>
+    pub fn get_site_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.site_arn
     }
     /// <p>The ID of the global network.</p>
     pub fn global_network_id(
@@ -134,6 +142,10 @@ impl SiteBuilder {
         self.global_network_id = input;
         self
     }
+    /// <p>The ID of the global network.</p>
+    pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_network_id
+    }
     /// <p>The description of the site.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -144,6 +156,10 @@ impl SiteBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the site.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The location of the site.</p>
     pub fn location(mut self, input: crate::types::Location) -> Self {
         self.location = ::std::option::Option::Some(input);
@@ -153,6 +169,10 @@ impl SiteBuilder {
     pub fn set_location(mut self, input: ::std::option::Option<crate::types::Location>) -> Self {
         self.location = input;
         self
+    }
+    /// <p>The location of the site.</p>
+    pub fn get_location(&self) -> &::std::option::Option<crate::types::Location> {
+        &self.location
     }
     /// <p>The date and time that the site was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -167,6 +187,10 @@ impl SiteBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The date and time that the site was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The state of the site.</p>
     pub fn state(mut self, input: crate::types::SiteState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -176,6 +200,10 @@ impl SiteBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::SiteState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the site.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::SiteState> {
+        &self.state
     }
     /// Appends an item to `tags`.
     ///
@@ -195,6 +223,10 @@ impl SiteBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags for the site.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`Site`](crate::types::Site).
     pub fn build(self) -> crate::types::Site {

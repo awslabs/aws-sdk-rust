@@ -66,6 +66,14 @@ impl BatchAssociateClientDeviceWithCoreDeviceOutputBuilder {
         self.error_entries = input;
         self
     }
+    /// <p>The list of any errors for the entries in the request. Each error entry contains the name of the IoT thing that failed to associate.</p>
+    pub fn get_error_entries(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::AssociateClientDeviceWithCoreDeviceErrorEntry>,
+    > {
+        &self.error_entries
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -72,6 +72,10 @@ impl PipelineDescriptionBuilder {
         self.pipeline_id = input;
         self
     }
+    /// <p>The pipeline identifier that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
+    pub fn get_pipeline_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_id
+    }
     /// <p>The name of the pipeline.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl PipelineDescriptionBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the pipeline.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `fields`.
     ///
@@ -101,6 +109,10 @@ impl PipelineDescriptionBuilder {
         self.fields = input;
         self
     }
+    /// <p>A list of read-only fields that contain metadata about the pipeline: @userId, @accountId, and @pipelineState.</p>
+    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Field>> {
+        &self.fields
+    }
     /// <p>Description of the pipeline.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -110,6 +122,10 @@ impl PipelineDescriptionBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>Description of the pipeline.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `tags`.
     ///
@@ -129,6 +145,10 @@ impl PipelineDescriptionBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of tags to associated with a pipeline. Tags let you control access to pipelines. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`PipelineDescription`](crate::types::PipelineDescription).
     pub fn build(self) -> crate::types::PipelineDescription {

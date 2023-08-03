@@ -62,6 +62,12 @@ impl ResolveComponentCandidatesOutputBuilder {
         self.resolved_component_versions = input;
         self
     }
+    /// <p>A list of components that meet the requirements that you specify in the request. This list includes each component's recipe that you can use to install the component.</p>
+    pub fn get_resolved_component_versions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResolvedComponentVersion>> {
+        &self.resolved_component_versions
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

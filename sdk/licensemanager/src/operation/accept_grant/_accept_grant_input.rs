@@ -39,6 +39,10 @@ impl AcceptGrantInputBuilder {
         self.grant_arn = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the grant.</p>
+    pub fn get_grant_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grant_arn
+    }
     /// Consumes the builder and constructs a [`AcceptGrantInput`](crate::operation::accept_grant::AcceptGrantInput).
     pub fn build(
         self,

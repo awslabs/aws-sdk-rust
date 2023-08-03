@@ -40,6 +40,10 @@ impl ReplicaBuilder {
         self.region_name = input;
         self
     }
+    /// <p>The Region where the replica needs to be created.</p>
+    pub fn get_region_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region_name
+    }
     /// Consumes the builder and constructs a [`Replica`](crate::types::Replica).
     pub fn build(self) -> crate::types::Replica {
         crate::types::Replica {

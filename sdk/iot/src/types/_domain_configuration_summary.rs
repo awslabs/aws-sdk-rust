@@ -67,6 +67,10 @@ impl DomainConfigurationSummaryBuilder {
         self.domain_configuration_name = input;
         self
     }
+    /// <p>The name of the domain configuration. This value must be unique to a region.</p>
+    pub fn get_domain_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_configuration_name
+    }
     /// <p>The ARN of the domain configuration.</p>
     pub fn domain_configuration_arn(
         mut self,
@@ -83,6 +87,10 @@ impl DomainConfigurationSummaryBuilder {
         self.domain_configuration_arn = input;
         self
     }
+    /// <p>The ARN of the domain configuration.</p>
+    pub fn get_domain_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_configuration_arn
+    }
     /// <p>The type of service delivered by the endpoint.</p>
     pub fn service_type(mut self, input: crate::types::ServiceType) -> Self {
         self.service_type = ::std::option::Option::Some(input);
@@ -95,6 +103,10 @@ impl DomainConfigurationSummaryBuilder {
     ) -> Self {
         self.service_type = input;
         self
+    }
+    /// <p>The type of service delivered by the endpoint.</p>
+    pub fn get_service_type(&self) -> &::std::option::Option<crate::types::ServiceType> {
+        &self.service_type
     }
     /// Consumes the builder and constructs a [`DomainConfigurationSummary`](crate::types::DomainConfigurationSummary).
     pub fn build(self) -> crate::types::DomainConfigurationSummary {

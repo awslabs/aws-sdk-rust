@@ -60,6 +60,10 @@ impl OrderedPhoneNumberBuilder {
         self.e164_phone_number = input;
         self
     }
+    /// <p>The phone number, in E.164 format.</p>
+    pub fn get_e164_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.e164_phone_number
+    }
     /// <p>The phone number status.</p>
     pub fn status(mut self, input: crate::types::OrderedPhoneNumberStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl OrderedPhoneNumberBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The phone number status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::OrderedPhoneNumberStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`OrderedPhoneNumber`](crate::types::OrderedPhoneNumber).
     pub fn build(self) -> crate::types::OrderedPhoneNumber {

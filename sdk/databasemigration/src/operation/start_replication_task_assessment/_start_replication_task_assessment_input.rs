@@ -46,6 +46,10 @@ impl StartReplicationTaskAssessmentInputBuilder {
         self.replication_task_arn = input;
         self
     }
+    /// <p> The Amazon Resource Name (ARN) of the replication task. </p>
+    pub fn get_replication_task_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_task_arn
+    }
     /// Consumes the builder and constructs a [`StartReplicationTaskAssessmentInput`](crate::operation::start_replication_task_assessment::StartReplicationTaskAssessmentInput).
     pub fn build(
         self,

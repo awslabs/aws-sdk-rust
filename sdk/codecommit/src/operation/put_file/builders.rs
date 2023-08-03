@@ -36,6 +36,10 @@ impl PutFileFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutFile as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_file::builders::PutFileInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl PutFileFluentBuilder {
         self.inner = self.inner.set_repository_name(input);
         self
     }
+    /// <p>The name of the repository where you want to add or update the file.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_repository_name()
+    }
     /// <p>The name of the branch where you want to add or update the file. If this is an empty repository, this branch is created.</p>
     pub fn branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.branch_name(input.into());
@@ -133,6 +141,10 @@ impl PutFileFluentBuilder {
     pub fn set_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_branch_name(input);
         self
+    }
+    /// <p>The name of the branch where you want to add or update the file. If this is an empty repository, this branch is created.</p>
+    pub fn get_branch_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_branch_name()
     }
     /// <p>The content of the file, in binary object format. </p>
     pub fn file_content(mut self, input: ::aws_smithy_types::Blob) -> Self {
@@ -146,6 +158,10 @@ impl PutFileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_file_content(input);
         self
+    }
+    /// <p>The content of the file, in binary object format. </p>
+    pub fn get_file_content(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        self.inner.get_file_content()
     }
     /// <p>The name of the file you want to add or update, including the relative path to the file in the repository.</p> <note>
     /// <p>If the path does not currently exist in the repository, the path is created as part of adding the file.</p>
@@ -161,6 +177,12 @@ impl PutFileFluentBuilder {
         self.inner = self.inner.set_file_path(input);
         self
     }
+    /// <p>The name of the file you want to add or update, including the relative path to the file in the repository.</p> <note>
+    /// <p>If the path does not currently exist in the repository, the path is created as part of adding the file.</p>
+    /// </note>
+    pub fn get_file_path(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_file_path()
+    }
     /// <p>The file mode permissions of the blob. Valid file mode permissions are listed here.</p>
     pub fn file_mode(mut self, input: crate::types::FileModeTypeEnum) -> Self {
         self.inner = self.inner.file_mode(input);
@@ -173,6 +195,10 @@ impl PutFileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_file_mode(input);
         self
+    }
+    /// <p>The file mode permissions of the blob. Valid file mode permissions are listed here.</p>
+    pub fn get_file_mode(&self) -> &::std::option::Option<crate::types::FileModeTypeEnum> {
+        self.inner.get_file_mode()
     }
     /// <p>The full commit ID of the head commit in the branch where you want to add or update the file. If this is an empty repository, no commit ID is required. If this is not an empty repository, a commit ID is required. </p>
     /// <p>The commit ID must match the ID of the head commit at the time of the operation. Otherwise, an error occurs, and the file is not added or updated.</p>
@@ -192,6 +218,11 @@ impl PutFileFluentBuilder {
         self.inner = self.inner.set_parent_commit_id(input);
         self
     }
+    /// <p>The full commit ID of the head commit in the branch where you want to add or update the file. If this is an empty repository, no commit ID is required. If this is not an empty repository, a commit ID is required. </p>
+    /// <p>The commit ID must match the ID of the head commit at the time of the operation. Otherwise, an error occurs, and the file is not added or updated.</p>
+    pub fn get_parent_commit_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_parent_commit_id()
+    }
     /// <p>A message about why this file was added or updated. Although it is optional, a message makes the commit history for your repository more useful.</p>
     pub fn commit_message(
         mut self,
@@ -208,6 +239,10 @@ impl PutFileFluentBuilder {
         self.inner = self.inner.set_commit_message(input);
         self
     }
+    /// <p>A message about why this file was added or updated. Although it is optional, a message makes the commit history for your repository more useful.</p>
+    pub fn get_commit_message(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_commit_message()
+    }
     /// <p>The name of the person adding or updating the file. Although it is optional, a name makes the commit history for your repository more useful.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -218,6 +253,10 @@ impl PutFileFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the person adding or updating the file. Although it is optional, a name makes the commit history for your repository more useful.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>An email address for the person adding or updating the file.</p>
     pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.email(input.into());
@@ -227,5 +266,9 @@ impl PutFileFluentBuilder {
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_email(input);
         self
+    }
+    /// <p>An email address for the person adding or updating the file.</p>
+    pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_email()
     }
 }

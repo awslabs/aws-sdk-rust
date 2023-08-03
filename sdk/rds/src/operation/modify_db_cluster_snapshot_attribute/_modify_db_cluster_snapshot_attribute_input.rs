@@ -80,6 +80,12 @@ impl ModifyDbClusterSnapshotAttributeInputBuilder {
         self.db_cluster_snapshot_identifier = input;
         self
     }
+    /// <p>The identifier for the DB cluster snapshot to modify the attributes for.</p>
+    pub fn get_db_cluster_snapshot_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_snapshot_identifier
+    }
     /// <p>The name of the DB cluster snapshot attribute to modify.</p>
     /// <p>To manage authorization for other Amazon Web Services accounts to copy or restore a manual DB cluster snapshot, set this value to <code>restore</code>.</p> <note>
     /// <p>To view the list of attributes available to modify, use the <code>DescribeDBClusterSnapshotAttributes</code> API operation.</p>
@@ -101,6 +107,13 @@ impl ModifyDbClusterSnapshotAttributeInputBuilder {
     ) -> Self {
         self.attribute_name = input;
         self
+    }
+    /// <p>The name of the DB cluster snapshot attribute to modify.</p>
+    /// <p>To manage authorization for other Amazon Web Services accounts to copy or restore a manual DB cluster snapshot, set this value to <code>restore</code>.</p> <note>
+    /// <p>To view the list of attributes available to modify, use the <code>DescribeDBClusterSnapshotAttributes</code> API operation.</p>
+    /// </note>
+    pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_name
     }
     /// Appends an item to `values_to_add`.
     ///
@@ -126,6 +139,13 @@ impl ModifyDbClusterSnapshotAttributeInputBuilder {
         self.values_to_add = input;
         self
     }
+    /// <p>A list of DB cluster snapshot attributes to add to the attribute specified by <code>AttributeName</code>.</p>
+    /// <p>To authorize other Amazon Web Services accounts to copy or restore a manual DB cluster snapshot, set this list to include one or more Amazon Web Services account IDs, or <code>all</code> to make the manual DB cluster snapshot restorable by any Amazon Web Services account. Do not add the <code>all</code> value for any manual DB cluster snapshots that contain private information that you don't want available to all Amazon Web Services accounts.</p>
+    pub fn get_values_to_add(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values_to_add
+    }
     /// Appends an item to `values_to_remove`.
     ///
     /// To override the contents of this collection use [`set_values_to_remove`](Self::set_values_to_remove).
@@ -149,6 +169,13 @@ impl ModifyDbClusterSnapshotAttributeInputBuilder {
     ) -> Self {
         self.values_to_remove = input;
         self
+    }
+    /// <p>A list of DB cluster snapshot attributes to remove from the attribute specified by <code>AttributeName</code>.</p>
+    /// <p>To remove authorization for other Amazon Web Services accounts to copy or restore a manual DB cluster snapshot, set this list to include one or more Amazon Web Services account identifiers, or <code>all</code> to remove authorization for any Amazon Web Services account to copy or restore the DB cluster snapshot. If you specify <code>all</code>, an Amazon Web Services account whose account ID is explicitly added to the <code>restore</code> attribute can still copy or restore a manual DB cluster snapshot.</p>
+    pub fn get_values_to_remove(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values_to_remove
     }
     /// Consumes the builder and constructs a [`ModifyDbClusterSnapshotAttributeInput`](crate::operation::modify_db_cluster_snapshot_attribute::ModifyDbClusterSnapshotAttributeInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::modify_db_cluster_snapshot_attribute::ModifyDbClusterSnapshotAttributeInput, ::aws_smithy_http::operation::error::BuildError>{

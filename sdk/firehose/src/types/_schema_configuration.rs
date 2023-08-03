@@ -96,6 +96,12 @@ impl SchemaConfigurationBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The role that Kinesis Data Firehose can use to access Amazon Web Services Glue. This role must be in the same account you use for Kinesis Data Firehose. Cross-account roles aren't allowed.</p> <important>
+    /// <p>If the <code>SchemaConfiguration</code> request parameter is used as part of invoking the <code>CreateDeliveryStream</code> API, then the <code>RoleARN</code> property is required and its value must be specified.</p>
+    /// </important>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>The ID of the Amazon Web Services Glue Data Catalog. If you don't supply this, the Amazon Web Services account ID is used by default.</p>
     pub fn catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog_id = ::std::option::Option::Some(input.into());
@@ -105,6 +111,10 @@ impl SchemaConfigurationBuilder {
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.catalog_id = input;
         self
+    }
+    /// <p>The ID of the Amazon Web Services Glue Data Catalog. If you don't supply this, the Amazon Web Services account ID is used by default.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
     }
     /// <p>Specifies the name of the Amazon Web Services Glue database that contains the schema for the output data.</p> <important>
     /// <p>If the <code>SchemaConfiguration</code> request parameter is used as part of invoking the <code>CreateDeliveryStream</code> API, then the <code>DatabaseName</code> property is required and its value must be specified.</p>
@@ -126,6 +136,12 @@ impl SchemaConfigurationBuilder {
         self.database_name = input;
         self
     }
+    /// <p>Specifies the name of the Amazon Web Services Glue database that contains the schema for the output data.</p> <important>
+    /// <p>If the <code>SchemaConfiguration</code> request parameter is used as part of invoking the <code>CreateDeliveryStream</code> API, then the <code>DatabaseName</code> property is required and its value must be specified.</p>
+    /// </important>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>Specifies the Amazon Web Services Glue table that contains the column information that constitutes your data schema.</p> <important>
     /// <p>If the <code>SchemaConfiguration</code> request parameter is used as part of invoking the <code>CreateDeliveryStream</code> API, then the <code>TableName</code> property is required and its value must be specified.</p>
     /// </important>
@@ -140,6 +156,12 @@ impl SchemaConfigurationBuilder {
         self.table_name = input;
         self
     }
+    /// <p>Specifies the Amazon Web Services Glue table that contains the column information that constitutes your data schema.</p> <important>
+    /// <p>If the <code>SchemaConfiguration</code> request parameter is used as part of invoking the <code>CreateDeliveryStream</code> API, then the <code>TableName</code> property is required and its value must be specified.</p>
+    /// </important>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
+    }
     /// <p>If you don't specify an Amazon Web Services Region, the default is the current Region.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
@@ -150,6 +172,10 @@ impl SchemaConfigurationBuilder {
         self.region = input;
         self
     }
+    /// <p>If you don't specify an Amazon Web Services Region, the default is the current Region.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
+    }
     /// <p>Specifies the table version for the output data schema. If you don't specify this version ID, or if you set it to <code>LATEST</code>, Kinesis Data Firehose uses the most recent version. This means that any updates to the table are automatically picked up.</p>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_id = ::std::option::Option::Some(input.into());
@@ -159,6 +185,10 @@ impl SchemaConfigurationBuilder {
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_id = input;
         self
+    }
+    /// <p>Specifies the table version for the output data schema. If you don't specify this version ID, or if you set it to <code>LATEST</code>, Kinesis Data Firehose uses the most recent version. This means that any updates to the table are automatically picked up.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_id
     }
     /// Consumes the builder and constructs a [`SchemaConfiguration`](crate::types::SchemaConfiguration).
     pub fn build(self) -> crate::types::SchemaConfiguration {

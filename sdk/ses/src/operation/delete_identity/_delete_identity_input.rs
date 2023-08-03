@@ -40,6 +40,10 @@ impl DeleteIdentityInputBuilder {
         self.identity = input;
         self
     }
+    /// <p>The identity to be removed from the list of identities for the AWS Account.</p>
+    pub fn get_identity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity
+    }
     /// Consumes the builder and constructs a [`DeleteIdentityInput`](crate::operation::delete_identity::DeleteIdentityInput).
     pub fn build(
         self,

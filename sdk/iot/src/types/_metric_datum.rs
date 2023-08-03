@@ -51,6 +51,10 @@ impl MetricDatumBuilder {
         self.timestamp = input;
         self
     }
+    /// <p>The time the metric value was reported.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.timestamp
+    }
     /// <p>The value reported for the metric.</p>
     pub fn value(mut self, input: crate::types::MetricValue) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl MetricDatumBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::MetricValue>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value reported for the metric.</p>
+    pub fn get_value(&self) -> &::std::option::Option<crate::types::MetricValue> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`MetricDatum`](crate::types::MetricDatum).
     pub fn build(self) -> crate::types::MetricDatum {

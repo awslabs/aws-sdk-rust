@@ -49,6 +49,10 @@ impl UpdateFlowOutputBuilder {
         self.flow_status = input;
         self
     }
+    /// <p>Indicates the current status of the flow. </p>
+    pub fn get_flow_status(&self) -> &::std::option::Option<crate::types::FlowStatus> {
+        &self.flow_status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

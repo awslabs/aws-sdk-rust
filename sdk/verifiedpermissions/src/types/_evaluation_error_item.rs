@@ -47,6 +47,10 @@ impl EvaluationErrorItemBuilder {
         self.error_description = input;
         self
     }
+    /// <p>The error description.</p>
+    pub fn get_error_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_description
+    }
     /// Consumes the builder and constructs a [`EvaluationErrorItem`](crate::types::EvaluationErrorItem).
     pub fn build(self) -> crate::types::EvaluationErrorItem {
         crate::types::EvaluationErrorItem {

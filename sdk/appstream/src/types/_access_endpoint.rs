@@ -51,6 +51,10 @@ impl AccessEndpointBuilder {
         self.endpoint_type = input;
         self
     }
+    /// <p>The type of interface endpoint.</p>
+    pub fn get_endpoint_type(&self) -> &::std::option::Option<crate::types::AccessEndpointType> {
+        &self.endpoint_type
+    }
     /// <p>The identifier (ID) of the VPC in which the interface endpoint is used.</p>
     pub fn vpce_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpce_id = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl AccessEndpointBuilder {
     pub fn set_vpce_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpce_id = input;
         self
+    }
+    /// <p>The identifier (ID) of the VPC in which the interface endpoint is used.</p>
+    pub fn get_vpce_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpce_id
     }
     /// Consumes the builder and constructs a [`AccessEndpoint`](crate::types::AccessEndpoint).
     pub fn build(self) -> crate::types::AccessEndpoint {

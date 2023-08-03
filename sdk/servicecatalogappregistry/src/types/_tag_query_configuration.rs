@@ -40,6 +40,10 @@ impl TagQueryConfigurationBuilder {
         self.tag_key = input;
         self
     }
+    /// <p> Condition in the IAM policy that associates resources to an application. </p>
+    pub fn get_tag_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tag_key
+    }
     /// Consumes the builder and constructs a [`TagQueryConfiguration`](crate::types::TagQueryConfiguration).
     pub fn build(self) -> crate::types::TagQueryConfiguration {
         crate::types::TagQueryConfiguration {

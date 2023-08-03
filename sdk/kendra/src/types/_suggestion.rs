@@ -59,6 +59,10 @@ impl SuggestionBuilder {
         self.id = input;
         self
     }
+    /// <p>The UUID (universally unique identifier) of a single query suggestion.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The value for the UUID (universally unique identifier) of a single query suggestion.</p>
     /// <p>The value is the text string of a suggestion.</p>
     pub fn value(mut self, input: crate::types::SuggestionValue) -> Self {
@@ -73,6 +77,11 @@ impl SuggestionBuilder {
     ) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value for the UUID (universally unique identifier) of a single query suggestion.</p>
+    /// <p>The value is the text string of a suggestion.</p>
+    pub fn get_value(&self) -> &::std::option::Option<crate::types::SuggestionValue> {
+        &self.value
     }
     /// Appends an item to `source_documents`.
     ///
@@ -92,6 +101,12 @@ impl SuggestionBuilder {
     ) -> Self {
         self.source_documents = input;
         self
+    }
+    /// <p>The list of document IDs and their fields/attributes that are used for a single query suggestion, if document fields set to use for query suggestions.</p>
+    pub fn get_source_documents(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceDocument>> {
+        &self.source_documents
     }
     /// Consumes the builder and constructs a [`Suggestion`](crate::types::Suggestion).
     pub fn build(self) -> crate::types::Suggestion {

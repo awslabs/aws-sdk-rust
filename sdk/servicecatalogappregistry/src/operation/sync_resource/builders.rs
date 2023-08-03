@@ -37,6 +37,10 @@ impl SyncResourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SyncResource as a reference.
+    pub fn as_input(&self) -> &crate::operation::sync_resource::builders::SyncResourceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -122,6 +126,10 @@ impl SyncResourceFluentBuilder {
         self.inner = self.inner.set_resource_type(input);
         self
     }
+    /// <p>The type of resource of which the application will be associated.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        self.inner.get_resource_type()
+    }
     /// <p>An entity you can work with and specify with a name or ID. Examples include an Amazon EC2 instance, an Amazon Web Services CloudFormation stack, or an Amazon S3 bucket.</p>
     pub fn resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource(input.into());
@@ -131,5 +139,9 @@ impl SyncResourceFluentBuilder {
     pub fn set_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource(input);
         self
+    }
+    /// <p>An entity you can work with and specify with a name or ID. Examples include an Amazon EC2 instance, an Amazon Web Services CloudFormation stack, or an Amazon S3 bucket.</p>
+    pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource()
     }
 }

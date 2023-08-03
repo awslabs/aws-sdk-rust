@@ -64,6 +64,10 @@ impl DisassociateNatGatewayAddressOutputBuilder {
         self.nat_gateway_id = input;
         self
     }
+    /// <p>The ID of the NAT gateway.</p>
+    pub fn get_nat_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nat_gateway_id
+    }
     /// Appends an item to `nat_gateway_addresses`.
     ///
     /// To override the contents of this collection use [`set_nat_gateway_addresses`](Self::set_nat_gateway_addresses).
@@ -82,6 +86,12 @@ impl DisassociateNatGatewayAddressOutputBuilder {
     ) -> Self {
         self.nat_gateway_addresses = input;
         self
+    }
+    /// <p>Information about the NAT gateway IP addresses.</p>
+    pub fn get_nat_gateway_addresses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAddress>> {
+        &self.nat_gateway_addresses
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

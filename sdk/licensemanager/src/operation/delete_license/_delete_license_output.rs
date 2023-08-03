@@ -57,6 +57,10 @@ impl DeleteLicenseOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>License status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::LicenseDeletionStatus> {
+        &self.status
+    }
     /// <p>Date when the license is deleted.</p>
     pub fn deletion_date(
         mut self,
@@ -72,6 +76,10 @@ impl DeleteLicenseOutputBuilder {
     ) -> Self {
         self.deletion_date = input;
         self
+    }
+    /// <p>Date when the license is deleted.</p>
+    pub fn get_deletion_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deletion_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

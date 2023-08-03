@@ -64,6 +64,10 @@ impl S3DirectSourceAdditionalOptionsBuilder {
         self.bounded_size = input;
         self
     }
+    /// <p>Sets the upper limit for the target size of the dataset in bytes that will be processed.</p>
+    pub fn get_bounded_size(&self) -> &::std::option::Option<i64> {
+        &self.bounded_size
+    }
     /// <p>Sets the upper limit for the target number of files that will be processed.</p>
     pub fn bounded_files(mut self, input: i64) -> Self {
         self.bounded_files = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl S3DirectSourceAdditionalOptionsBuilder {
     pub fn set_bounded_files(mut self, input: ::std::option::Option<i64>) -> Self {
         self.bounded_files = input;
         self
+    }
+    /// <p>Sets the upper limit for the target number of files that will be processed.</p>
+    pub fn get_bounded_files(&self) -> &::std::option::Option<i64> {
+        &self.bounded_files
     }
     /// <p>Sets option to enable a sample path.</p>
     pub fn enable_sample_path(mut self, input: bool) -> Self {
@@ -84,6 +92,10 @@ impl S3DirectSourceAdditionalOptionsBuilder {
         self.enable_sample_path = input;
         self
     }
+    /// <p>Sets option to enable a sample path.</p>
+    pub fn get_enable_sample_path(&self) -> &::std::option::Option<bool> {
+        &self.enable_sample_path
+    }
     /// <p>If enabled, specifies the sample path.</p>
     pub fn sample_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sample_path = ::std::option::Option::Some(input.into());
@@ -93,6 +105,10 @@ impl S3DirectSourceAdditionalOptionsBuilder {
     pub fn set_sample_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sample_path = input;
         self
+    }
+    /// <p>If enabled, specifies the sample path.</p>
+    pub fn get_sample_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sample_path
     }
     /// Consumes the builder and constructs a [`S3DirectSourceAdditionalOptions`](crate::types::S3DirectSourceAdditionalOptions).
     pub fn build(self) -> crate::types::S3DirectSourceAdditionalOptions {

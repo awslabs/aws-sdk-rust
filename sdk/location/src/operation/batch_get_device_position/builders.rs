@@ -37,6 +37,13 @@ impl BatchGetDevicePositionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchGetDevicePosition as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_get_device_position::builders::BatchGetDevicePositionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl BatchGetDevicePositionFluentBuilder {
         self.inner = self.inner.set_tracker_name(input);
         self
     }
+    /// <p>The tracker resource retrieving the device position.</p>
+    pub fn get_tracker_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_tracker_name()
+    }
     /// Appends an item to `DeviceIds`.
     ///
     /// To override the contents of this collection use [`set_device_ids`](Self::set_device_ids).
@@ -149,5 +160,12 @@ impl BatchGetDevicePositionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_device_ids(input);
         self
+    }
+    /// <p>Devices whose position you want to retrieve.</p>
+    /// <ul>
+    /// <li> <p>For example, for two devices: <code>device-ids=DeviceId1&amp;device-ids=DeviceId2</code> </p> </li>
+    /// </ul>
+    pub fn get_device_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_device_ids()
     }
 }

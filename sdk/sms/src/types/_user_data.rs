@@ -43,6 +43,10 @@ impl UserDataBuilder {
         self.s3_location = input;
         self
     }
+    /// <p>Amazon S3 location of the user-data script.</p>
+    pub fn get_s3_location(&self) -> &::std::option::Option<crate::types::S3Location> {
+        &self.s3_location
+    }
     /// Consumes the builder and constructs a [`UserData`](crate::types::UserData).
     pub fn build(self) -> crate::types::UserData {
         crate::types::UserData {

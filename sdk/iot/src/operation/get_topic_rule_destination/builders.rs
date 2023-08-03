@@ -38,6 +38,13 @@ impl GetTopicRuleDestinationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetTopicRuleDestination as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_topic_rule_destination::builders::GetTopicRuleDestinationInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,5 +134,9 @@ impl GetTopicRuleDestinationFluentBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_arn(input);
         self
+    }
+    /// <p>The ARN of the topic rule destination.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
     }
 }

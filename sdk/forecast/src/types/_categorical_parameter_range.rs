@@ -48,6 +48,10 @@ impl CategoricalParameterRangeBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the categorical hyperparameter to tune.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -66,6 +70,10 @@ impl CategoricalParameterRangeBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>A list of the tunable categories for the hyperparameter.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`CategoricalParameterRange`](crate::types::CategoricalParameterRange).
     pub fn build(self) -> crate::types::CategoricalParameterRange {

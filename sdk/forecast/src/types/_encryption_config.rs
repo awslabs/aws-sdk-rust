@@ -52,6 +52,11 @@ impl EncryptionConfigBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The ARN of the IAM role that Amazon Forecast can assume to access the KMS key.</p>
+    /// <p>Passing a role across Amazon Web Services accounts is not allowed. If you pass a role that isn't in your account, you get an <code>InvalidInputException</code> error.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the KMS key.</p>
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_arn = ::std::option::Option::Some(input.into());
@@ -61,6 +66,10 @@ impl EncryptionConfigBuilder {
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the KMS key.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
     }
     /// Consumes the builder and constructs a [`EncryptionConfig`](crate::types::EncryptionConfig).
     pub fn build(self) -> crate::types::EncryptionConfig {

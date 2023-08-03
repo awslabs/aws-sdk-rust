@@ -36,6 +36,13 @@ impl UpdateFindingsFeedbackFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateFindingsFeedback as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_findings_feedback::builders::UpdateFindingsFeedbackInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl UpdateFindingsFeedbackFluentBuilder {
         self.inner = self.inner.set_detector_id(input);
         self
     }
+    /// <p>The ID of the detector associated with the findings to update feedback for.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_detector_id()
+    }
     /// Appends an item to `FindingIds`.
     ///
     /// To override the contents of this collection use [`set_finding_ids`](Self::set_finding_ids).
@@ -143,6 +154,12 @@ impl UpdateFindingsFeedbackFluentBuilder {
         self.inner = self.inner.set_finding_ids(input);
         self
     }
+    /// <p>The IDs of the findings that you want to mark as useful or not useful.</p>
+    pub fn get_finding_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_finding_ids()
+    }
     /// <p>The feedback for the finding.</p>
     pub fn feedback(mut self, input: crate::types::Feedback) -> Self {
         self.inner = self.inner.feedback(input);
@@ -153,6 +170,10 @@ impl UpdateFindingsFeedbackFluentBuilder {
         self.inner = self.inner.set_feedback(input);
         self
     }
+    /// <p>The feedback for the finding.</p>
+    pub fn get_feedback(&self) -> &::std::option::Option<crate::types::Feedback> {
+        self.inner.get_feedback()
+    }
     /// <p>Additional feedback about the GuardDuty findings.</p>
     pub fn comments(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.comments(input.into());
@@ -162,5 +183,9 @@ impl UpdateFindingsFeedbackFluentBuilder {
     pub fn set_comments(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_comments(input);
         self
+    }
+    /// <p>Additional feedback about the GuardDuty findings.</p>
+    pub fn get_comments(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_comments()
     }
 }

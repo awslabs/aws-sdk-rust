@@ -40,6 +40,10 @@ impl TargetSummaryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the target.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`TargetSummary`](crate::types::TargetSummary).
     pub fn build(self) -> crate::types::TargetSummary {
         crate::types::TargetSummary { arn: self.arn }

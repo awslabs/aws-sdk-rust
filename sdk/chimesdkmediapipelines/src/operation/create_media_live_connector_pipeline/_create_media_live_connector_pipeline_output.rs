@@ -56,6 +56,12 @@ impl CreateMediaLiveConnectorPipelineOutputBuilder {
         self.media_live_connector_pipeline = input;
         self
     }
+    /// <p>The new media live connector pipeline.</p>
+    pub fn get_media_live_connector_pipeline(
+        &self,
+    ) -> &::std::option::Option<crate::types::MediaLiveConnectorPipeline> {
+        &self.media_live_connector_pipeline
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

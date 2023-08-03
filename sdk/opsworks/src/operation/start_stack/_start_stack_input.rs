@@ -39,6 +39,10 @@ impl StartStackInputBuilder {
         self.stack_id = input;
         self
     }
+    /// <p>The stack ID.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_id
+    }
     /// Consumes the builder and constructs a [`StartStackInput`](crate::operation::start_stack::StartStackInput).
     pub fn build(
         self,

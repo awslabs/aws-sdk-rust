@@ -37,6 +37,12 @@ impl GetStatisticsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetStatistics as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_statistics::builders::GetStatisticsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +125,10 @@ impl GetStatisticsFluentBuilder {
         self.inner = self.inner.set_index_name(input);
         self
     }
+    /// <p>The name of the index to search. The default value is <code>AWS_Things</code>.</p>
+    pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_index_name()
+    }
     /// <p>The query used to search. You can specify "*" for the query string to get the count of all indexed things in your Amazon Web Services account.</p>
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_string(input.into());
@@ -128,6 +138,10 @@ impl GetStatisticsFluentBuilder {
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query_string(input);
         self
+    }
+    /// <p>The query used to search. You can specify "*" for the query string to get the count of all indexed things in your Amazon Web Services account.</p>
+    pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_query_string()
     }
     /// <p>The aggregation field name.</p>
     pub fn aggregation_field(
@@ -145,6 +159,10 @@ impl GetStatisticsFluentBuilder {
         self.inner = self.inner.set_aggregation_field(input);
         self
     }
+    /// <p>The aggregation field name.</p>
+    pub fn get_aggregation_field(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aggregation_field()
+    }
     /// <p>The version of the query used to search.</p>
     pub fn query_version(
         mut self,
@@ -160,5 +178,9 @@ impl GetStatisticsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_query_version(input);
         self
+    }
+    /// <p>The version of the query used to search.</p>
+    pub fn get_query_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_query_version()
     }
 }

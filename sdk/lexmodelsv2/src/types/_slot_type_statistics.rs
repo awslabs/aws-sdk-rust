@@ -40,6 +40,10 @@ impl SlotTypeStatisticsBuilder {
         self.discovered_slot_type_count = input;
         self
     }
+    /// <p>The number of recommended slot types associated with the bot recommendation.</p>
+    pub fn get_discovered_slot_type_count(&self) -> &::std::option::Option<i32> {
+        &self.discovered_slot_type_count
+    }
     /// Consumes the builder and constructs a [`SlotTypeStatistics`](crate::types::SlotTypeStatistics).
     pub fn build(self) -> crate::types::SlotTypeStatistics {
         crate::types::SlotTypeStatistics {

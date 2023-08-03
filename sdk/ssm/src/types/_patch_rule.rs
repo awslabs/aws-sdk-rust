@@ -77,6 +77,10 @@ impl PatchRuleBuilder {
         self.patch_filter_group = input;
         self
     }
+    /// <p>The patch filter group that defines the criteria for the rule.</p>
+    pub fn get_patch_filter_group(&self) -> &::std::option::Option<crate::types::PatchFilterGroup> {
+        &self.patch_filter_group
+    }
     /// <p>A compliance severity level for all approved patches in a patch baseline.</p>
     pub fn compliance_level(mut self, input: crate::types::PatchComplianceLevel) -> Self {
         self.compliance_level = ::std::option::Option::Some(input);
@@ -90,6 +94,12 @@ impl PatchRuleBuilder {
         self.compliance_level = input;
         self
     }
+    /// <p>A compliance severity level for all approved patches in a patch baseline.</p>
+    pub fn get_compliance_level(
+        &self,
+    ) -> &::std::option::Option<crate::types::PatchComplianceLevel> {
+        &self.compliance_level
+    }
     /// <p>The number of days after the release date of each patch matched by the rule that the patch is marked as approved in the patch baseline. For example, a value of <code>7</code> means that patches are approved seven days after they are released. Not supported on Debian Server or Ubuntu Server.</p>
     pub fn approve_after_days(mut self, input: i32) -> Self {
         self.approve_after_days = ::std::option::Option::Some(input);
@@ -99,6 +109,10 @@ impl PatchRuleBuilder {
     pub fn set_approve_after_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.approve_after_days = input;
         self
+    }
+    /// <p>The number of days after the release date of each patch matched by the rule that the patch is marked as approved in the patch baseline. For example, a value of <code>7</code> means that patches are approved seven days after they are released. Not supported on Debian Server or Ubuntu Server.</p>
+    pub fn get_approve_after_days(&self) -> &::std::option::Option<i32> {
+        &self.approve_after_days
     }
     /// <p>The cutoff date for auto approval of released patches. Any patches released on or before this date are installed automatically. Not supported on Debian Server or Ubuntu Server.</p>
     /// <p>Enter dates in the format <code>YYYY-MM-DD</code>. For example, <code>2021-12-31</code>.</p>
@@ -118,6 +132,11 @@ impl PatchRuleBuilder {
         self.approve_until_date = input;
         self
     }
+    /// <p>The cutoff date for auto approval of released patches. Any patches released on or before this date are installed automatically. Not supported on Debian Server or Ubuntu Server.</p>
+    /// <p>Enter dates in the format <code>YYYY-MM-DD</code>. For example, <code>2021-12-31</code>.</p>
+    pub fn get_approve_until_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.approve_until_date
+    }
     /// <p>For managed nodes identified by the approval rule filters, enables a patch baseline to apply non-security updates available in the specified repository. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
     pub fn enable_non_security(mut self, input: bool) -> Self {
         self.enable_non_security = ::std::option::Option::Some(input);
@@ -127,6 +146,10 @@ impl PatchRuleBuilder {
     pub fn set_enable_non_security(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_non_security = input;
         self
+    }
+    /// <p>For managed nodes identified by the approval rule filters, enables a patch baseline to apply non-security updates available in the specified repository. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
+    pub fn get_enable_non_security(&self) -> &::std::option::Option<bool> {
+        &self.enable_non_security
     }
     /// Consumes the builder and constructs a [`PatchRule`](crate::types::PatchRule).
     pub fn build(self) -> crate::types::PatchRule {

@@ -45,6 +45,10 @@ impl StopReplicationInputBuilder {
         self.source_server_id = input;
         self
     }
+    /// <p>The ID of the Source Server to stop replication for.</p>
+    pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_server_id
+    }
     /// Consumes the builder and constructs a [`StopReplicationInput`](crate::operation::stop_replication::StopReplicationInput).
     pub fn build(
         self,

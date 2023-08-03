@@ -61,6 +61,10 @@ impl CreateStreamingUrlOutputBuilder {
         self.streaming_url = input;
         self
     }
+    /// <p>The URL to start the AppStream 2.0 streaming session.</p>
+    pub fn get_streaming_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.streaming_url
+    }
     /// <p>The elapsed time, in seconds after the Unix epoch, when this URL expires.</p>
     pub fn expires(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.expires = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl CreateStreamingUrlOutputBuilder {
     ) -> Self {
         self.expires = input;
         self
+    }
+    /// <p>The elapsed time, in seconds after the Unix epoch, when this URL expires.</p>
+    pub fn get_expires(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expires
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

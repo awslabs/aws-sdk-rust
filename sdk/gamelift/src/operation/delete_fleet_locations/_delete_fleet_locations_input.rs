@@ -48,6 +48,10 @@ impl DeleteFleetLocationsInputBuilder {
         self.fleet_id = input;
         self
     }
+    /// <p>A unique identifier for the fleet to delete locations for. You can use either the fleet ID or ARN value.</p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_id
+    }
     /// Appends an item to `locations`.
     ///
     /// To override the contents of this collection use [`set_locations`](Self::set_locations).
@@ -66,6 +70,10 @@ impl DeleteFleetLocationsInputBuilder {
     ) -> Self {
         self.locations = input;
         self
+    }
+    /// <p>The list of fleet locations to delete. Specify locations in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
+    pub fn get_locations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.locations
     }
     /// Consumes the builder and constructs a [`DeleteFleetLocationsInput`](crate::operation::delete_fleet_locations::DeleteFleetLocationsInput).
     pub fn build(

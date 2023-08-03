@@ -60,6 +60,12 @@ impl UnmonitorInstancesOutputBuilder {
         self.instance_monitorings = input;
         self
     }
+    /// <p>The monitoring information.</p>
+    pub fn get_instance_monitorings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceMonitoring>> {
+        &self.instance_monitorings
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -49,6 +49,13 @@ impl ListHostedZonesByVPCFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListHostedZonesByVPC as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_hosted_zones_by_vpc::builders::ListHostedZonesByVpcInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -139,6 +146,10 @@ impl ListHostedZonesByVPCFluentBuilder {
         self.inner = self.inner.set_vpc_id(input);
         self
     }
+    /// <p>The ID of the Amazon VPC that you want to list hosted zones for.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpc_id()
+    }
     /// <p>For the Amazon VPC that you specified for <code>VPCId</code>, the Amazon Web Services Region that you created the VPC in. </p>
     pub fn vpc_region(mut self, input: crate::types::VpcRegion) -> Self {
         self.inner = self.inner.vpc_region(input);
@@ -149,6 +160,10 @@ impl ListHostedZonesByVPCFluentBuilder {
         self.inner = self.inner.set_vpc_region(input);
         self
     }
+    /// <p>For the Amazon VPC that you specified for <code>VPCId</code>, the Amazon Web Services Region that you created the VPC in. </p>
+    pub fn get_vpc_region(&self) -> &::std::option::Option<crate::types::VpcRegion> {
+        self.inner.get_vpc_region()
+    }
     /// <p>(Optional) The maximum number of hosted zones that you want Amazon Route 53 to return. If the specified VPC is associated with more than <code>MaxItems</code> hosted zones, the response includes a <code>NextToken</code> element. <code>NextToken</code> contains an encrypted token that identifies the first hosted zone that Route 53 will return if you submit another request.</p>
     pub fn max_items(mut self, input: i32) -> Self {
         self.inner = self.inner.max_items(input);
@@ -158,6 +173,10 @@ impl ListHostedZonesByVPCFluentBuilder {
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_items(input);
         self
+    }
+    /// <p>(Optional) The maximum number of hosted zones that you want Amazon Route 53 to return. If the specified VPC is associated with more than <code>MaxItems</code> hosted zones, the response includes a <code>NextToken</code> element. <code>NextToken</code> contains an encrypted token that identifies the first hosted zone that Route 53 will return if you submit another request.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_items()
     }
     /// <p>If the previous response included a <code>NextToken</code> element, the specified VPC is associated with more hosted zones. To get more hosted zones, submit another <code>ListHostedZonesByVPC</code> request. </p>
     /// <p>For the value of <code>NextToken</code>, specify the value of <code>NextToken</code> from the previous response.</p>
@@ -172,5 +191,11 @@ impl ListHostedZonesByVPCFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>If the previous response included a <code>NextToken</code> element, the specified VPC is associated with more hosted zones. To get more hosted zones, submit another <code>ListHostedZonesByVPC</code> request. </p>
+    /// <p>For the value of <code>NextToken</code>, specify the value of <code>NextToken</code> from the previous response.</p>
+    /// <p>If the previous response didn't include a <code>NextToken</code> element, there are no more hosted zones to get.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

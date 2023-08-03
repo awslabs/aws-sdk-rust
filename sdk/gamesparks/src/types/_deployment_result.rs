@@ -51,6 +51,10 @@ impl DeploymentResultBuilder {
         self.result_code = input;
         self
     }
+    /// <p>The type of deployment result.</p>
+    pub fn get_result_code(&self) -> &::std::option::Option<crate::types::ResultCode> {
+        &self.result_code
+    }
     /// <p>Details about the deployment result.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl DeploymentResultBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>Details about the deployment result.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`DeploymentResult`](crate::types::DeploymentResult).
     pub fn build(self) -> crate::types::DeploymentResult {

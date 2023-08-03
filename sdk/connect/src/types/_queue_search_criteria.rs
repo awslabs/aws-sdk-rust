@@ -83,6 +83,12 @@ impl QueueSearchCriteriaBuilder {
         self.or_conditions = input;
         self
     }
+    /// <p>A list of conditions which would be applied together with an OR condition.</p>
+    pub fn get_or_conditions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::QueueSearchCriteria>> {
+        &self.or_conditions
+    }
     /// Appends an item to `and_conditions`.
     ///
     /// To override the contents of this collection use [`set_and_conditions`](Self::set_and_conditions).
@@ -102,6 +108,12 @@ impl QueueSearchCriteriaBuilder {
         self.and_conditions = input;
         self
     }
+    /// <p>A list of conditions which would be applied together with an AND condition.</p>
+    pub fn get_and_conditions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::QueueSearchCriteria>> {
+        &self.and_conditions
+    }
     /// <p>A leaf node condition which can be used to specify a string condition.</p> <note>
     /// <p>The currently supported values for <code>FieldName</code> are <code>name</code>, <code>description</code>, and <code>resourceID</code>.</p>
     /// </note>
@@ -119,6 +131,12 @@ impl QueueSearchCriteriaBuilder {
         self.string_condition = input;
         self
     }
+    /// <p>A leaf node condition which can be used to specify a string condition.</p> <note>
+    /// <p>The currently supported values for <code>FieldName</code> are <code>name</code>, <code>description</code>, and <code>resourceID</code>.</p>
+    /// </note>
+    pub fn get_string_condition(&self) -> &::std::option::Option<crate::types::StringCondition> {
+        &self.string_condition
+    }
     /// <p>The type of queue.</p>
     pub fn queue_type_condition(mut self, input: crate::types::SearchableQueueType) -> Self {
         self.queue_type_condition = ::std::option::Option::Some(input);
@@ -131,6 +149,12 @@ impl QueueSearchCriteriaBuilder {
     ) -> Self {
         self.queue_type_condition = input;
         self
+    }
+    /// <p>The type of queue.</p>
+    pub fn get_queue_type_condition(
+        &self,
+    ) -> &::std::option::Option<crate::types::SearchableQueueType> {
+        &self.queue_type_condition
     }
     /// Consumes the builder and constructs a [`QueueSearchCriteria`](crate::types::QueueSearchCriteria).
     pub fn build(self) -> crate::types::QueueSearchCriteria {

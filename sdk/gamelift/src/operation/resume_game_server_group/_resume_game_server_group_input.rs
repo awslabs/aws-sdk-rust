@@ -56,6 +56,10 @@ impl ResumeGameServerGroupInputBuilder {
         self.game_server_group_name = input;
         self
     }
+    /// <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
+    pub fn get_game_server_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.game_server_group_name
+    }
     /// Appends an item to `resume_actions`.
     ///
     /// To override the contents of this collection use [`set_resume_actions`](Self::set_resume_actions).
@@ -74,6 +78,12 @@ impl ResumeGameServerGroupInputBuilder {
     ) -> Self {
         self.resume_actions = input;
         self
+    }
+    /// <p>The activity to resume for this game server group.</p>
+    pub fn get_resume_actions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GameServerGroupAction>> {
+        &self.resume_actions
     }
     /// Consumes the builder and constructs a [`ResumeGameServerGroupInput`](crate::operation::resume_game_server_group::ResumeGameServerGroupInput).
     pub fn build(

@@ -36,6 +36,12 @@ impl ResetImageAttributeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ResetImageAttribute as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::reset_image_attribute::builders::ResetImageAttributeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl ResetImageAttributeFluentBuilder {
         self.inner = self.inner.set_attribute(input);
         self
     }
+    /// <p>The attribute to reset (currently you can only reset the launch permission attribute).</p>
+    pub fn get_attribute(&self) -> &::std::option::Option<crate::types::ResetImageAttributeName> {
+        self.inner.get_attribute()
+    }
     /// <p>The ID of the AMI.</p>
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.image_id(input.into());
@@ -139,6 +149,10 @@ impl ResetImageAttributeFluentBuilder {
         self.inner = self.inner.set_image_id(input);
         self
     }
+    /// <p>The ID of the AMI.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_image_id()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -148,5 +162,9 @@ impl ResetImageAttributeFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

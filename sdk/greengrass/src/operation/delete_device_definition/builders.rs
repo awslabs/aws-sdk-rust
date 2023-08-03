@@ -36,6 +36,13 @@ impl DeleteDeviceDefinitionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteDeviceDefinition as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_device_definition::builders::DeleteDeviceDefinitionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +138,9 @@ impl DeleteDeviceDefinitionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_device_definition_id(input);
         self
+    }
+    /// The ID of the device definition.
+    pub fn get_device_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_definition_id()
     }
 }

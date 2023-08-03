@@ -55,6 +55,10 @@ impl RetryBuildBatchInputBuilder {
         self.id = input;
         self
     }
+    /// <p>Specifies the identifier of the batch build to restart.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the <code>RetryBuildBatch</code> request. The token is included in the <code>RetryBuildBatch</code> request and is valid for five minutes. If you repeat the <code>RetryBuildBatch</code> request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error.</p>
     pub fn idempotency_token(
         mut self,
@@ -71,6 +75,10 @@ impl RetryBuildBatchInputBuilder {
         self.idempotency_token = input;
         self
     }
+    /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the <code>RetryBuildBatch</code> request. The token is included in the <code>RetryBuildBatch</code> request and is valid for five minutes. If you repeat the <code>RetryBuildBatch</code> request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error.</p>
+    pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.idempotency_token
+    }
     /// <p>Specifies the type of retry to perform.</p>
     pub fn retry_type(mut self, input: crate::types::RetryBuildBatchType) -> Self {
         self.retry_type = ::std::option::Option::Some(input);
@@ -83,6 +91,10 @@ impl RetryBuildBatchInputBuilder {
     ) -> Self {
         self.retry_type = input;
         self
+    }
+    /// <p>Specifies the type of retry to perform.</p>
+    pub fn get_retry_type(&self) -> &::std::option::Option<crate::types::RetryBuildBatchType> {
+        &self.retry_type
     }
     /// Consumes the builder and constructs a [`RetryBuildBatchInput`](crate::operation::retry_build_batch::RetryBuildBatchInput).
     pub fn build(

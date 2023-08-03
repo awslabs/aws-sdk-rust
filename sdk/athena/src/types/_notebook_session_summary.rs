@@ -48,6 +48,10 @@ impl NotebookSessionSummaryBuilder {
         self.session_id = input;
         self
     }
+    /// <p>The notebook session ID.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
+    }
     /// <p>The time when the notebook session was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl NotebookSessionSummaryBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The time when the notebook session was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// Consumes the builder and constructs a [`NotebookSessionSummary`](crate::types::NotebookSessionSummary).
     pub fn build(self) -> crate::types::NotebookSessionSummary {

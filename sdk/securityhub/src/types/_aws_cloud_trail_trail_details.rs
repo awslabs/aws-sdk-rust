@@ -158,6 +158,12 @@ impl AwsCloudTrailTrailDetailsBuilder {
         self.cloud_watch_logs_log_group_arn = input;
         self
     }
+    /// <p>The ARN of the log group that CloudTrail logs are delivered to.</p>
+    pub fn get_cloud_watch_logs_log_group_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.cloud_watch_logs_log_group_arn
+    }
     /// <p>The ARN of the role that the CloudWatch Events endpoint assumes when it writes to the log group.</p>
     pub fn cloud_watch_logs_role_arn(
         mut self,
@@ -174,6 +180,10 @@ impl AwsCloudTrailTrailDetailsBuilder {
         self.cloud_watch_logs_role_arn = input;
         self
     }
+    /// <p>The ARN of the role that the CloudWatch Events endpoint assumes when it writes to the log group.</p>
+    pub fn get_cloud_watch_logs_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cloud_watch_logs_role_arn
+    }
     /// <p>Indicates whether the trail has custom event selectors.</p>
     pub fn has_custom_event_selectors(mut self, input: bool) -> Self {
         self.has_custom_event_selectors = ::std::option::Option::Some(input);
@@ -183,6 +193,10 @@ impl AwsCloudTrailTrailDetailsBuilder {
     pub fn set_has_custom_event_selectors(mut self, input: ::std::option::Option<bool>) -> Self {
         self.has_custom_event_selectors = input;
         self
+    }
+    /// <p>Indicates whether the trail has custom event selectors.</p>
+    pub fn get_has_custom_event_selectors(&self) -> &::std::option::Option<bool> {
+        &self.has_custom_event_selectors
     }
     /// <p>The Region where the trail was created.</p>
     pub fn home_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -194,6 +208,10 @@ impl AwsCloudTrailTrailDetailsBuilder {
         self.home_region = input;
         self
     }
+    /// <p>The Region where the trail was created.</p>
+    pub fn get_home_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.home_region
+    }
     /// <p>Indicates whether the trail publishes events from global services such as IAM to the log files.</p>
     pub fn include_global_service_events(mut self, input: bool) -> Self {
         self.include_global_service_events = ::std::option::Option::Some(input);
@@ -203,6 +221,10 @@ impl AwsCloudTrailTrailDetailsBuilder {
     pub fn set_include_global_service_events(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_global_service_events = input;
         self
+    }
+    /// <p>Indicates whether the trail publishes events from global services such as IAM to the log files.</p>
+    pub fn get_include_global_service_events(&self) -> &::std::option::Option<bool> {
+        &self.include_global_service_events
     }
     /// <p>Indicates whether the trail applies only to the current Region or to all Regions.</p>
     pub fn is_multi_region_trail(mut self, input: bool) -> Self {
@@ -214,6 +236,10 @@ impl AwsCloudTrailTrailDetailsBuilder {
         self.is_multi_region_trail = input;
         self
     }
+    /// <p>Indicates whether the trail applies only to the current Region or to all Regions.</p>
+    pub fn get_is_multi_region_trail(&self) -> &::std::option::Option<bool> {
+        &self.is_multi_region_trail
+    }
     /// <p>Whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account.</p>
     pub fn is_organization_trail(mut self, input: bool) -> Self {
         self.is_organization_trail = ::std::option::Option::Some(input);
@@ -223,6 +249,10 @@ impl AwsCloudTrailTrailDetailsBuilder {
     pub fn set_is_organization_trail(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_organization_trail = input;
         self
+    }
+    /// <p>Whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account.</p>
+    pub fn get_is_organization_trail(&self) -> &::std::option::Option<bool> {
+        &self.is_organization_trail
     }
     /// <p>The KMS key ID to use to encrypt the logs.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -234,6 +264,10 @@ impl AwsCloudTrailTrailDetailsBuilder {
         self.kms_key_id = input;
         self
     }
+    /// <p>The KMS key ID to use to encrypt the logs.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
+    }
     /// <p>Indicates whether CloudTrail log file validation is enabled.</p>
     pub fn log_file_validation_enabled(mut self, input: bool) -> Self {
         self.log_file_validation_enabled = ::std::option::Option::Some(input);
@@ -244,6 +278,10 @@ impl AwsCloudTrailTrailDetailsBuilder {
         self.log_file_validation_enabled = input;
         self
     }
+    /// <p>Indicates whether CloudTrail log file validation is enabled.</p>
+    pub fn get_log_file_validation_enabled(&self) -> &::std::option::Option<bool> {
+        &self.log_file_validation_enabled
+    }
     /// <p>The name of the trail.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -253,6 +291,10 @@ impl AwsCloudTrailTrailDetailsBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the trail.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The name of the S3 bucket where the log files are published.</p>
     pub fn s3_bucket_name(
@@ -270,6 +312,10 @@ impl AwsCloudTrailTrailDetailsBuilder {
         self.s3_bucket_name = input;
         self
     }
+    /// <p>The name of the S3 bucket where the log files are published.</p>
+    pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket_name
+    }
     /// <p>The S3 key prefix. The key prefix is added after the name of the S3 bucket where the log files are published.</p>
     pub fn s3_key_prefix(
         mut self,
@@ -285,6 +331,10 @@ impl AwsCloudTrailTrailDetailsBuilder {
     ) -> Self {
         self.s3_key_prefix = input;
         self
+    }
+    /// <p>The S3 key prefix. The key prefix is added after the name of the S3 bucket where the log files are published.</p>
+    pub fn get_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_key_prefix
     }
     /// <p>The ARN of the SNS topic that is used for notifications of log file delivery.</p>
     pub fn sns_topic_arn(
@@ -302,6 +352,10 @@ impl AwsCloudTrailTrailDetailsBuilder {
         self.sns_topic_arn = input;
         self
     }
+    /// <p>The ARN of the SNS topic that is used for notifications of log file delivery.</p>
+    pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sns_topic_arn
+    }
     /// <p>The name of the SNS topic that is used for notifications of log file delivery.</p>
     pub fn sns_topic_name(
         mut self,
@@ -318,6 +372,10 @@ impl AwsCloudTrailTrailDetailsBuilder {
         self.sns_topic_name = input;
         self
     }
+    /// <p>The name of the SNS topic that is used for notifications of log file delivery.</p>
+    pub fn get_sns_topic_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sns_topic_name
+    }
     /// <p>The ARN of the trail.</p>
     pub fn trail_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trail_arn = ::std::option::Option::Some(input.into());
@@ -327,6 +385,10 @@ impl AwsCloudTrailTrailDetailsBuilder {
     pub fn set_trail_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trail_arn = input;
         self
+    }
+    /// <p>The ARN of the trail.</p>
+    pub fn get_trail_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trail_arn
     }
     /// Consumes the builder and constructs a [`AwsCloudTrailTrailDetails`](crate::types::AwsCloudTrailTrailDetails).
     pub fn build(self) -> crate::types::AwsCloudTrailTrailDetails {

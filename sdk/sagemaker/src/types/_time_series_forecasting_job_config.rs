@@ -149,6 +149,19 @@ impl TimeSeriesForecastingJobConfigBuilder {
         self.feature_specification_s3_uri = input;
         self
     }
+    /// <p>A URL to the Amazon S3 data source containing additional selected features that complement the target, itemID, timestamp, and grouped columns set in <code>TimeSeriesConfig</code>. When not provided, the AutoML job V2 includes all the columns from the original dataset that are not already declared in <code>TimeSeriesConfig</code>. If provided, the AutoML job V2 only considers these additional columns as a complement to the ones declared in <code>TimeSeriesConfig</code>.</p>
+    /// <p>You can input <code>FeatureAttributeNames</code> (optional) in JSON format as shown below: </p>
+    /// <p> <code>{ "FeatureAttributeNames":["col1", "col2", ...] }</code>.</p>
+    /// <p>You can also specify the data type of the feature (optional) in the format shown below:</p>
+    /// <p> <code>{ "FeatureDataTypes":{"col1":"numeric", "col2":"categorical" ... } }</code> </p>
+    /// <p>Autopilot supports the following data types: <code>numeric</code>, <code>categorical</code>, <code>text</code>, and <code>datetime</code>.</p> <note>
+    /// <p>These column keys must not include any column set in <code>TimeSeriesConfig</code>.</p>
+    /// </note>
+    pub fn get_feature_specification_s3_uri(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.feature_specification_s3_uri
+    }
     /// <p>How long a job is allowed to run, or how many candidates a job is allowed to generate.</p>
     pub fn completion_criteria(mut self, input: crate::types::AutoMlJobCompletionCriteria) -> Self {
         self.completion_criteria = ::std::option::Option::Some(input);
@@ -161,6 +174,12 @@ impl TimeSeriesForecastingJobConfigBuilder {
     ) -> Self {
         self.completion_criteria = input;
         self
+    }
+    /// <p>How long a job is allowed to run, or how many candidates a job is allowed to generate.</p>
+    pub fn get_completion_criteria(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoMlJobCompletionCriteria> {
+        &self.completion_criteria
     }
     /// <p>The frequency of predictions in a forecast.</p>
     /// <p>Valid intervals are an integer followed by Y (Year), M (Month), W (Week), D (Day), H (Hour), and min (Minute). For example, <code>1D</code> indicates every day and <code>15min</code> indicates every 15 minutes. The value of a frequency must not overlap with the next larger frequency. For example, you must use a frequency of <code>1H</code> instead of <code>60min</code>.</p>
@@ -198,6 +217,20 @@ impl TimeSeriesForecastingJobConfigBuilder {
         self.forecast_frequency = input;
         self
     }
+    /// <p>The frequency of predictions in a forecast.</p>
+    /// <p>Valid intervals are an integer followed by Y (Year), M (Month), W (Week), D (Day), H (Hour), and min (Minute). For example, <code>1D</code> indicates every day and <code>15min</code> indicates every 15 minutes. The value of a frequency must not overlap with the next larger frequency. For example, you must use a frequency of <code>1H</code> instead of <code>60min</code>.</p>
+    /// <p>The valid values for each frequency are the following:</p>
+    /// <ul>
+    /// <li> <p>Minute - 1-59</p> </li>
+    /// <li> <p>Hour - 1-23</p> </li>
+    /// <li> <p>Day - 1-6</p> </li>
+    /// <li> <p>Week - 1-4</p> </li>
+    /// <li> <p>Month - 1-11</p> </li>
+    /// <li> <p>Year - 1</p> </li>
+    /// </ul>
+    pub fn get_forecast_frequency(&self) -> &::std::option::Option<::std::string::String> {
+        &self.forecast_frequency
+    }
     /// <p>The number of time-steps that the model predicts. The forecast horizon is also called the prediction length. The maximum forecast horizon is the lesser of 500 time-steps or 1/4 of the time-steps in the dataset.</p>
     pub fn forecast_horizon(mut self, input: i32) -> Self {
         self.forecast_horizon = ::std::option::Option::Some(input);
@@ -207,6 +240,10 @@ impl TimeSeriesForecastingJobConfigBuilder {
     pub fn set_forecast_horizon(mut self, input: ::std::option::Option<i32>) -> Self {
         self.forecast_horizon = input;
         self
+    }
+    /// <p>The number of time-steps that the model predicts. The forecast horizon is also called the prediction length. The maximum forecast horizon is the lesser of 500 time-steps or 1/4 of the time-steps in the dataset.</p>
+    pub fn get_forecast_horizon(&self) -> &::std::option::Option<i32> {
+        &self.forecast_horizon
     }
     /// Appends an item to `forecast_quantiles`.
     ///
@@ -230,6 +267,12 @@ impl TimeSeriesForecastingJobConfigBuilder {
         self.forecast_quantiles = input;
         self
     }
+    /// <p>The quantiles used to train the model for forecasts at a specified quantile. You can specify quantiles from <code>0.01</code> (p1) to <code>0.99</code> (p99), by increments of 0.01 or higher. Up to five forecast quantiles can be specified. When <code>ForecastQuantiles</code> is not provided, the AutoML job uses the quantiles p10, p50, and p90 as default.</p>
+    pub fn get_forecast_quantiles(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.forecast_quantiles
+    }
     /// <p>The transformations modifying specific attributes of the time-series, such as filling strategies for missing values.</p>
     pub fn transformations(mut self, input: crate::types::TimeSeriesTransformations) -> Self {
         self.transformations = ::std::option::Option::Some(input);
@@ -243,6 +286,12 @@ impl TimeSeriesForecastingJobConfigBuilder {
         self.transformations = input;
         self
     }
+    /// <p>The transformations modifying specific attributes of the time-series, such as filling strategies for missing values.</p>
+    pub fn get_transformations(
+        &self,
+    ) -> &::std::option::Option<crate::types::TimeSeriesTransformations> {
+        &self.transformations
+    }
     /// <p>The collection of components that defines the time-series.</p>
     pub fn time_series_config(mut self, input: crate::types::TimeSeriesConfig) -> Self {
         self.time_series_config = ::std::option::Option::Some(input);
@@ -255,6 +304,10 @@ impl TimeSeriesForecastingJobConfigBuilder {
     ) -> Self {
         self.time_series_config = input;
         self
+    }
+    /// <p>The collection of components that defines the time-series.</p>
+    pub fn get_time_series_config(&self) -> &::std::option::Option<crate::types::TimeSeriesConfig> {
+        &self.time_series_config
     }
     /// Consumes the builder and constructs a [`TimeSeriesForecastingJobConfig`](crate::types::TimeSeriesForecastingJobConfig).
     pub fn build(self) -> crate::types::TimeSeriesForecastingJobConfig {

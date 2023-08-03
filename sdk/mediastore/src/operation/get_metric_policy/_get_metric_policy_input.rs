@@ -45,6 +45,10 @@ impl GetMetricPolicyInputBuilder {
         self.container_name = input;
         self
     }
+    /// <p>The name of the container that is associated with the metric policy.</p>
+    pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.container_name
+    }
     /// Consumes the builder and constructs a [`GetMetricPolicyInput`](crate::operation::get_metric_policy::GetMetricPolicyInput).
     pub fn build(
         self,

@@ -36,6 +36,13 @@ impl DeleteBasePathMappingFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteBasePathMapping as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_base_path_mapping::builders::DeleteBasePathMappingInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl DeleteBasePathMappingFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p>The domain name of the BasePathMapping resource to delete.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
     /// <p>The base path name of the BasePathMapping resource to delete.</p>
     /// <p>To specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
     pub fn base_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -137,5 +148,10 @@ impl DeleteBasePathMappingFluentBuilder {
     pub fn set_base_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_base_path(input);
         self
+    }
+    /// <p>The base path name of the BasePathMapping resource to delete.</p>
+    /// <p>To specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
+    pub fn get_base_path(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_base_path()
     }
 }

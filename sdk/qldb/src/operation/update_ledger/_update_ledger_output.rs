@@ -91,6 +91,10 @@ impl UpdateLedgerOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the ledger.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Name (ARN) for the ledger.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -101,6 +105,10 @@ impl UpdateLedgerOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the ledger.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The current status of the ledger.</p>
     pub fn state(mut self, input: crate::types::LedgerState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -110,6 +118,10 @@ impl UpdateLedgerOutputBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::LedgerState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The current status of the ledger.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::LedgerState> {
+        &self.state
     }
     /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -124,6 +136,10 @@ impl UpdateLedgerOutputBuilder {
         self.creation_date_time = input;
         self
     }
+    /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
+    }
     /// <p>Specifies whether the ledger is protected from being deleted by any user. If not defined during ledger creation, this feature is enabled (<code>true</code>) by default.</p>
     /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set this parameter to <code>false</code>.</p>
     pub fn deletion_protection(mut self, input: bool) -> Self {
@@ -135,6 +151,11 @@ impl UpdateLedgerOutputBuilder {
     pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.deletion_protection = input;
         self
+    }
+    /// <p>Specifies whether the ledger is protected from being deleted by any user. If not defined during ledger creation, this feature is enabled (<code>true</code>) by default.</p>
+    /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set this parameter to <code>false</code>.</p>
+    pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
+        &self.deletion_protection
     }
     /// <p>Information about the encryption of data at rest in the ledger. This includes the current status, the KMS key, and when the key became inaccessible (in the case of an error).</p>
     pub fn encryption_description(
@@ -151,6 +172,12 @@ impl UpdateLedgerOutputBuilder {
     ) -> Self {
         self.encryption_description = input;
         self
+    }
+    /// <p>Information about the encryption of data at rest in the ledger. This includes the current status, the KMS key, and when the key became inaccessible (in the case of an error).</p>
+    pub fn get_encryption_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::LedgerEncryptionDescription> {
+        &self.encryption_description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

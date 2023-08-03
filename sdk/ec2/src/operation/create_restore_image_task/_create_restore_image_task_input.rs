@@ -82,6 +82,10 @@ impl CreateRestoreImageTaskInputBuilder {
         self.bucket = input;
         self
     }
+    /// <p>The name of the Amazon S3 bucket that contains the stored AMI object.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p>The name of the stored AMI object in the bucket.</p>
     pub fn object_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_key = ::std::option::Option::Some(input.into());
@@ -92,6 +96,10 @@ impl CreateRestoreImageTaskInputBuilder {
         self.object_key = input;
         self
     }
+    /// <p>The name of the stored AMI object in the bucket.</p>
+    pub fn get_object_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_key
+    }
     /// <p>The name for the restored AMI. The name must be unique for AMIs in the Region for this account. If you do not provide a name, the new AMI gets the same name as the original AMI.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -101,6 +109,10 @@ impl CreateRestoreImageTaskInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name for the restored AMI. The name must be unique for AMIs in the Region for this account. If you do not provide a name, the new AMI gets the same name as the original AMI.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `tag_specifications`.
     ///
@@ -129,6 +141,16 @@ impl CreateRestoreImageTaskInputBuilder {
         self.tag_specifications = input;
         self
     }
+    /// <p>The tags to apply to the AMI and snapshots on restoration. You can tag the AMI, the snapshots, or both.</p>
+    /// <ul>
+    /// <li> <p>To tag the AMI, the value for <code>ResourceType</code> must be <code>image</code>.</p> </li>
+    /// <li> <p>To tag the snapshots, the value for <code>ResourceType</code> must be <code>snapshot</code>. The same tag is applied to all of the snapshots that are created.</p> </li>
+    /// </ul>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        &self.tag_specifications
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -138,6 +160,10 @@ impl CreateRestoreImageTaskInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`CreateRestoreImageTaskInput`](crate::operation::create_restore_image_task::CreateRestoreImageTaskInput).
     pub fn build(

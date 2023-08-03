@@ -56,6 +56,10 @@ impl ResourceRecordBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the record.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The DNS record type.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl ResourceRecordBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The DNS record type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// <p>The value for the DNS record.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl ResourceRecordBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value for the DNS record.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`ResourceRecord`](crate::types::ResourceRecord).
     pub fn build(self) -> crate::types::ResourceRecord {

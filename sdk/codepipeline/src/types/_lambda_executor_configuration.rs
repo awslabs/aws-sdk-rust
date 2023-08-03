@@ -46,6 +46,10 @@ impl LambdaExecutorConfigurationBuilder {
         self.lambda_function_arn = input;
         self
     }
+    /// <p>The ARN of the Lambda function used by the action engine.</p>
+    pub fn get_lambda_function_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lambda_function_arn
+    }
     /// Consumes the builder and constructs a [`LambdaExecutorConfiguration`](crate::types::LambdaExecutorConfiguration).
     pub fn build(self) -> crate::types::LambdaExecutorConfiguration {
         crate::types::LambdaExecutorConfiguration {

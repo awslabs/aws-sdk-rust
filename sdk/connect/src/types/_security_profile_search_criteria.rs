@@ -75,6 +75,12 @@ impl SecurityProfileSearchCriteriaBuilder {
         self.or_conditions = input;
         self
     }
+    /// <p>A list of conditions which would be applied together with an OR condition.</p>
+    pub fn get_or_conditions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityProfileSearchCriteria>> {
+        &self.or_conditions
+    }
     /// Appends an item to `and_conditions`.
     ///
     /// To override the contents of this collection use [`set_and_conditions`](Self::set_and_conditions).
@@ -94,6 +100,12 @@ impl SecurityProfileSearchCriteriaBuilder {
         self.and_conditions = input;
         self
     }
+    /// <p>A list of conditions which would be applied together with an AND condition.</p>
+    pub fn get_and_conditions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityProfileSearchCriteria>> {
+        &self.and_conditions
+    }
     /// <p>A leaf node condition which can be used to specify a string condition. </p>
     pub fn string_condition(mut self, input: crate::types::StringCondition) -> Self {
         self.string_condition = ::std::option::Option::Some(input);
@@ -106,6 +118,10 @@ impl SecurityProfileSearchCriteriaBuilder {
     ) -> Self {
         self.string_condition = input;
         self
+    }
+    /// <p>A leaf node condition which can be used to specify a string condition. </p>
+    pub fn get_string_condition(&self) -> &::std::option::Option<crate::types::StringCondition> {
+        &self.string_condition
     }
     /// Consumes the builder and constructs a [`SecurityProfileSearchCriteria`](crate::types::SecurityProfileSearchCriteria).
     pub fn build(self) -> crate::types::SecurityProfileSearchCriteria {

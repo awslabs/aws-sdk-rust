@@ -39,6 +39,10 @@ impl ListSlackChannelConfigurationsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If the results of a search are large, the API only returns a portion of the results and includes a <code>nextToken</code> pagination token in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When the API returns the last set of results, the response doesn't include a pagination token value.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Consumes the builder and constructs a [`ListSlackChannelConfigurationsInput`](crate::operation::list_slack_channel_configurations::ListSlackChannelConfigurationsInput).
     pub fn build(
         self,

@@ -48,6 +48,10 @@ impl VaultNotificationConfigBuilder {
         self.sns_topic = input;
         self
     }
+    /// <p>The Amazon Simple Notification Service (Amazon SNS) topic Amazon Resource Name (ARN).</p>
+    pub fn get_sns_topic(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sns_topic
+    }
     /// Appends an item to `events`.
     ///
     /// To override the contents of this collection use [`set_events`](Self::set_events).
@@ -66,6 +70,10 @@ impl VaultNotificationConfigBuilder {
     ) -> Self {
         self.events = input;
         self
+    }
+    /// <p>A list of one or more events for which Amazon S3 Glacier will send a notification to the specified Amazon SNS topic.</p>
+    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.events
     }
     /// Consumes the builder and constructs a [`VaultNotificationConfig`](crate::types::VaultNotificationConfig).
     pub fn build(self) -> crate::types::VaultNotificationConfig {

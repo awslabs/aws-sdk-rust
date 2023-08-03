@@ -36,6 +36,12 @@ impl RemoveAllBackendsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RemoveAllBackends as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::remove_all_backends::builders::RemoveAllBackendsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl RemoveAllBackendsFluentBuilder {
         self.inner = self.inner.set_app_id(input);
         self
     }
+    /// <p>The app ID.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_id()
+    }
     /// <p>Cleans up the Amplify Console app if this value is set to true.</p>
     pub fn clean_amplify_app(mut self, input: bool) -> Self {
         self.inner = self.inner.clean_amplify_app(input);
@@ -135,5 +145,9 @@ impl RemoveAllBackendsFluentBuilder {
     pub fn set_clean_amplify_app(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_clean_amplify_app(input);
         self
+    }
+    /// <p>Cleans up the Amplify Console app if this value is set to true.</p>
+    pub fn get_clean_amplify_app(&self) -> &::std::option::Option<bool> {
+        self.inner.get_clean_amplify_app()
     }
 }

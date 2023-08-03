@@ -47,6 +47,10 @@ impl BatchUpdateDevicePositionInputBuilder {
         self.tracker_name = input;
         self
     }
+    /// <p>The name of the tracker resource to update.</p>
+    pub fn get_tracker_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tracker_name
+    }
     /// Appends an item to `updates`.
     ///
     /// To override the contents of this collection use [`set_updates`](Self::set_updates).
@@ -65,6 +69,12 @@ impl BatchUpdateDevicePositionInputBuilder {
     ) -> Self {
         self.updates = input;
         self
+    }
+    /// <p>Contains the position update details for each device, up to 10 devices.</p>
+    pub fn get_updates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DevicePositionUpdate>> {
+        &self.updates
     }
     /// Consumes the builder and constructs a [`BatchUpdateDevicePositionInput`](crate::operation::batch_update_device_position::BatchUpdateDevicePositionInput).
     pub fn build(

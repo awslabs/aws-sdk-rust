@@ -47,6 +47,10 @@ impl GetLicenseConversionTaskInputBuilder {
         self.license_conversion_task_id = input;
         self
     }
+    /// <p>ID of the license type conversion task to retrieve information on.</p>
+    pub fn get_license_conversion_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_conversion_task_id
+    }
     /// Consumes the builder and constructs a [`GetLicenseConversionTaskInput`](crate::operation::get_license_conversion_task::GetLicenseConversionTaskInput).
     pub fn build(
         self,

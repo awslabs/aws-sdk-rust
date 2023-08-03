@@ -72,6 +72,10 @@ impl ResourceDetailBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the resource.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The ARN of the resource.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl ResourceDetailBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The ARN of the resource.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The name of the resource.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -92,6 +100,10 @@ impl ResourceDetailBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the resource.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the resource.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -101,6 +113,10 @@ impl ResourceDetailBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the resource.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The creation time of the resource.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -114,6 +130,10 @@ impl ResourceDetailBuilder {
     ) -> Self {
         self.created_time = input;
         self
+    }
+    /// <p>The creation time of the resource.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
     }
     /// Consumes the builder and constructs a [`ResourceDetail`](crate::types::ResourceDetail).
     pub fn build(self) -> crate::types::ResourceDetail {

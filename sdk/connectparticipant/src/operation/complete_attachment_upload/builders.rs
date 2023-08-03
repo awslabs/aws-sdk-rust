@@ -39,6 +39,13 @@ impl CompleteAttachmentUploadFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CompleteAttachmentUpload as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::complete_attachment_upload::builders::CompleteAttachmentUploadInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -139,6 +146,12 @@ impl CompleteAttachmentUploadFluentBuilder {
         self.inner = self.inner.set_attachment_ids(input);
         self
     }
+    /// <p>A list of unique identifiers for the attachments.</p>
+    pub fn get_attachment_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_attachment_ids()
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -148,6 +161,10 @@ impl CompleteAttachmentUploadFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// <p>The authentication token associated with the participant's connection.</p>
     pub fn connection_token(
@@ -164,5 +181,9 @@ impl CompleteAttachmentUploadFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_connection_token(input);
         self
+    }
+    /// <p>The authentication token associated with the participant's connection.</p>
+    pub fn get_connection_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connection_token()
     }
 }

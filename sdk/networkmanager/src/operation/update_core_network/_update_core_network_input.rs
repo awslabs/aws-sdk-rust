@@ -54,6 +54,10 @@ impl UpdateCoreNetworkInputBuilder {
         self.core_network_id = input;
         self
     }
+    /// <p>The ID of a core network.</p>
+    pub fn get_core_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.core_network_id
+    }
     /// <p>The description of the update.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl UpdateCoreNetworkInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the update.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`UpdateCoreNetworkInput`](crate::operation::update_core_network::UpdateCoreNetworkInput).
     pub fn build(

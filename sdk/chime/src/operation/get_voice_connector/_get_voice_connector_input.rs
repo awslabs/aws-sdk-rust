@@ -46,6 +46,10 @@ impl GetVoiceConnectorInputBuilder {
         self.voice_connector_id = input;
         self
     }
+    /// <p>The Amazon Chime Voice Connector ID.</p>
+    pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_connector_id
+    }
     /// Consumes the builder and constructs a [`GetVoiceConnectorInput`](crate::operation::get_voice_connector::GetVoiceConnectorInput).
     pub fn build(
         self,

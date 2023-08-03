@@ -53,6 +53,12 @@ impl InAppMessagesResponseBuilder {
         self.in_app_message_campaigns = input;
         self
     }
+    /// <p>List of targeted in-app message campaigns.</p>
+    pub fn get_in_app_message_campaigns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InAppMessageCampaign>> {
+        &self.in_app_message_campaigns
+    }
     /// Consumes the builder and constructs a [`InAppMessagesResponse`](crate::types::InAppMessagesResponse).
     pub fn build(self) -> crate::types::InAppMessagesResponse {
         crate::types::InAppMessagesResponse {

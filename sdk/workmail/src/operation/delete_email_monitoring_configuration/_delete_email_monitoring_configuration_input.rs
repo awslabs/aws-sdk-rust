@@ -45,6 +45,10 @@ impl DeleteEmailMonitoringConfigurationInputBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The ID of the organization from which the email monitoring configuration is deleted.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// Consumes the builder and constructs a [`DeleteEmailMonitoringConfigurationInput`](crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

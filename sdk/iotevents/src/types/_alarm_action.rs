@@ -171,6 +171,10 @@ impl AlarmActionBuilder {
         self.sns = input;
         self
     }
+    /// <p>Information required to publish the Amazon SNS message.</p>
+    pub fn get_sns(&self) -> &::std::option::Option<crate::types::SnsTopicPublishAction> {
+        &self.sns
+    }
     /// <p>Information required to publish the MQTT message through the AWS IoT message broker.</p>
     pub fn iot_topic_publish(mut self, input: crate::types::IotTopicPublishAction) -> Self {
         self.iot_topic_publish = ::std::option::Option::Some(input);
@@ -184,6 +188,12 @@ impl AlarmActionBuilder {
         self.iot_topic_publish = input;
         self
     }
+    /// <p>Information required to publish the MQTT message through the AWS IoT message broker.</p>
+    pub fn get_iot_topic_publish(
+        &self,
+    ) -> &::std::option::Option<crate::types::IotTopicPublishAction> {
+        &self.iot_topic_publish
+    }
     /// <p>Calls a Lambda function, passing in information about the detector model instance and the event that triggered the action.</p>
     pub fn lambda(mut self, input: crate::types::LambdaAction) -> Self {
         self.lambda = ::std::option::Option::Some(input);
@@ -193,6 +203,10 @@ impl AlarmActionBuilder {
     pub fn set_lambda(mut self, input: ::std::option::Option<crate::types::LambdaAction>) -> Self {
         self.lambda = input;
         self
+    }
+    /// <p>Calls a Lambda function, passing in information about the detector model instance and the event that triggered the action.</p>
+    pub fn get_lambda(&self) -> &::std::option::Option<crate::types::LambdaAction> {
+        &self.lambda
     }
     /// <p>Sends an AWS IoT Events input, passing in information about the detector model instance and the event that triggered the action.</p>
     pub fn iot_events(mut self, input: crate::types::IotEventsAction) -> Self {
@@ -207,6 +221,10 @@ impl AlarmActionBuilder {
         self.iot_events = input;
         self
     }
+    /// <p>Sends an AWS IoT Events input, passing in information about the detector model instance and the event that triggered the action.</p>
+    pub fn get_iot_events(&self) -> &::std::option::Option<crate::types::IotEventsAction> {
+        &self.iot_events
+    }
     /// <p>Sends information about the detector model instance and the event that triggered the action to an Amazon SQS queue.</p>
     pub fn sqs(mut self, input: crate::types::SqsAction) -> Self {
         self.sqs = ::std::option::Option::Some(input);
@@ -216,6 +234,10 @@ impl AlarmActionBuilder {
     pub fn set_sqs(mut self, input: ::std::option::Option<crate::types::SqsAction>) -> Self {
         self.sqs = input;
         self
+    }
+    /// <p>Sends information about the detector model instance and the event that triggered the action to an Amazon SQS queue.</p>
+    pub fn get_sqs(&self) -> &::std::option::Option<crate::types::SqsAction> {
+        &self.sqs
     }
     /// <p>Sends information about the detector model instance and the event that triggered the action to an Amazon Kinesis Data Firehose delivery stream.</p>
     pub fn firehose(mut self, input: crate::types::FirehoseAction) -> Self {
@@ -229,6 +251,10 @@ impl AlarmActionBuilder {
     ) -> Self {
         self.firehose = input;
         self
+    }
+    /// <p>Sends information about the detector model instance and the event that triggered the action to an Amazon Kinesis Data Firehose delivery stream.</p>
+    pub fn get_firehose(&self) -> &::std::option::Option<crate::types::FirehoseAction> {
+        &self.firehose
     }
     /// <p>Defines an action to write to the Amazon DynamoDB table that you created. The standard action payload contains all the information about the detector model instance and the event that triggered the action. You can customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. One column of the DynamoDB table receives all attribute-value pairs in the payload that you specify.</p>
     /// <p>You must use expressions for all parameters in <code>DynamoDBAction</code>. The expressions accept literals, operators, functions, references, and substitution templates.</p>
@@ -269,6 +295,23 @@ impl AlarmActionBuilder {
         self.dynamo_db = input;
         self
     }
+    /// <p>Defines an action to write to the Amazon DynamoDB table that you created. The standard action payload contains all the information about the detector model instance and the event that triggered the action. You can customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. One column of the DynamoDB table receives all attribute-value pairs in the payload that you specify.</p>
+    /// <p>You must use expressions for all parameters in <code>DynamoDBAction</code>. The expressions accept literals, operators, functions, references, and substitution templates.</p>
+    /// <p class="title"> <b>Examples</b> </p>
+    /// <ul>
+    /// <li> <p>For literal values, the expressions must contain single quotes. For example, the value for the <code>hashKeyType</code> parameter can be <code>'STRING'</code>.</p> </li>
+    /// <li> <p>For references, you must specify either variables or input values. For example, the value for the <code>hashKeyField</code> parameter can be <code>$input.GreenhouseInput.name</code>.</p> </li>
+    /// <li> <p>For a substitution template, you must use <code>${}</code>, and the template must be in single quotes. A substitution template can also contain a combination of literals, operators, functions, references, and substitution templates.</p> <p>In the following example, the value for the <code>hashKeyValue</code> parameter uses a substitution template. </p> <p> <code>'${$input.GreenhouseInput.temperature * 6 / 5 + 32} in Fahrenheit'</code> </p> </li>
+    /// <li> <p>For a string concatenation, you must use <code>+</code>. A string concatenation can also contain a combination of literals, operators, functions, references, and substitution templates.</p> <p>In the following example, the value for the <code>tableName</code> parameter uses a string concatenation. </p> <p> <code>'GreenhouseTemperatureTable ' + $input.GreenhouseInput.date</code> </p> </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
+    /// <p>If the defined payload type is a string, <code>DynamoDBAction</code> writes non-JSON data to the DynamoDB table as binary data. The DynamoDB console displays the data as Base64-encoded text. The value for the <code>payloadField</code> parameter is <code>
+    /// <payload-field>
+    /// _raw
+    /// </payload-field></code>.</p>
+    pub fn get_dynamo_db(&self) -> &::std::option::Option<crate::types::DynamoDbAction> {
+        &self.dynamo_db
+    }
     /// <p>Defines an action to write to the Amazon DynamoDB table that you created. The default action payload contains all the information about the detector model instance and the event that triggered the action. You can customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. A separate column of the DynamoDB table receives one attribute-value pair in the payload that you specify.</p>
     /// <p>You must use expressions for all parameters in <code>DynamoDBv2Action</code>. The expressions accept literals, operators, functions, references, and substitution templates.</p>
     /// <p class="title"> <b>Examples</b> </p>
@@ -302,6 +345,20 @@ impl AlarmActionBuilder {
         self.dynamo_d_bv2 = input;
         self
     }
+    /// <p>Defines an action to write to the Amazon DynamoDB table that you created. The default action payload contains all the information about the detector model instance and the event that triggered the action. You can customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. A separate column of the DynamoDB table receives one attribute-value pair in the payload that you specify.</p>
+    /// <p>You must use expressions for all parameters in <code>DynamoDBv2Action</code>. The expressions accept literals, operators, functions, references, and substitution templates.</p>
+    /// <p class="title"> <b>Examples</b> </p>
+    /// <ul>
+    /// <li> <p>For literal values, the expressions must contain single quotes. For example, the value for the <code>tableName</code> parameter can be <code>'GreenhouseTemperatureTable'</code>.</p> </li>
+    /// <li> <p>For references, you must specify either variables or input values. For example, the value for the <code>tableName</code> parameter can be <code>$variable.ddbtableName</code>.</p> </li>
+    /// <li> <p>For a substitution template, you must use <code>${}</code>, and the template must be in single quotes. A substitution template can also contain a combination of literals, operators, functions, references, and substitution templates.</p> <p>In the following example, the value for the <code>contentExpression</code> parameter in <code>Payload</code> uses a substitution template. </p> <p> <code>'{\"sensorID\": \"${$input.GreenhouseInput.sensor_id}\", \"temperature\": \"${$input.GreenhouseInput.temperature * 9 / 5 + 32}\"}'</code> </p> </li>
+    /// <li> <p>For a string concatenation, you must use <code>+</code>. A string concatenation can also contain a combination of literals, operators, functions, references, and substitution templates.</p> <p>In the following example, the value for the <code>tableName</code> parameter uses a string concatenation. </p> <p> <code>'GreenhouseTemperatureTable ' + $input.GreenhouseInput.date</code> </p> </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
+    /// <p>The value for the <code>type</code> parameter in <code>Payload</code> must be <code>JSON</code>.</p>
+    pub fn get_dynamo_d_bv2(&self) -> &::std::option::Option<crate::types::DynamoDBv2Action> {
+        &self.dynamo_d_bv2
+    }
     /// <p>Sends information about the detector model instance and the event that triggered the action to a specified asset property in AWS IoT SiteWise.</p>
     /// <p>You must use expressions for all parameters in <code>IotSiteWiseAction</code>. The expressions accept literals, operators, functions, references, and substitutions templates.</p>
     /// <p class="title"> <b>Examples</b> </p>
@@ -332,6 +389,19 @@ impl AlarmActionBuilder {
     ) -> Self {
         self.iot_site_wise = input;
         self
+    }
+    /// <p>Sends information about the detector model instance and the event that triggered the action to a specified asset property in AWS IoT SiteWise.</p>
+    /// <p>You must use expressions for all parameters in <code>IotSiteWiseAction</code>. The expressions accept literals, operators, functions, references, and substitutions templates.</p>
+    /// <p class="title"> <b>Examples</b> </p>
+    /// <ul>
+    /// <li> <p>For literal values, the expressions must contain single quotes. For example, the value for the <code>propertyAlias</code> parameter can be <code>'/company/windfarm/3/turbine/7/temperature'</code>.</p> </li>
+    /// <li> <p>For references, you must specify either variables or input values. For example, the value for the <code>assetId</code> parameter can be <code>$input.TurbineInput.assetId1</code>.</p> </li>
+    /// <li> <p>For a substitution template, you must use <code>${}</code>, and the template must be in single quotes. A substitution template can also contain a combination of literals, operators, functions, references, and substitution templates.</p> <p>In the following example, the value for the <code>propertyAlias</code> parameter uses a substitution template. </p> <p> <code>'company/windfarm/${$input.TemperatureInput.sensorData.windfarmID}/turbine/ ${$input.TemperatureInput.sensorData.turbineID}/temperature'</code> </p> </li>
+    /// </ul>
+    /// <p>You must specify either <code>propertyAlias</code> or both <code>assetId</code> and <code>propertyId</code> to identify the target asset property in AWS IoT SiteWise.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
+    pub fn get_iot_site_wise(&self) -> &::std::option::Option<crate::types::IotSiteWiseAction> {
+        &self.iot_site_wise
     }
     /// Consumes the builder and constructs a [`AlarmAction`](crate::types::AlarmAction).
     pub fn build(self) -> crate::types::AlarmAction {

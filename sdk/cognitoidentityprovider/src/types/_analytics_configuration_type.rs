@@ -80,6 +80,10 @@ impl AnalyticsConfigurationTypeBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The application ID for an Amazon Pinpoint application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the Amazon Pinpoint project to integrate with the chosen user pool Client. Amazon Cognito publishes events to the Amazon Pinpoint project that the app ARN declares.</p>
     pub fn application_arn(
         mut self,
@@ -96,6 +100,10 @@ impl AnalyticsConfigurationTypeBuilder {
         self.application_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the Amazon Pinpoint project to integrate with the chosen user pool Client. Amazon Cognito publishes events to the Amazon Pinpoint project that the app ARN declares.</p>
+    pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_arn
+    }
     /// <p>The ARN of an Identity and Access Management role that authorizes Amazon Cognito to publish events to Amazon Pinpoint analytics.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -105,6 +113,10 @@ impl AnalyticsConfigurationTypeBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The ARN of an Identity and Access Management role that authorizes Amazon Cognito to publish events to Amazon Pinpoint analytics.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The external ID.</p>
     pub fn external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -116,6 +128,10 @@ impl AnalyticsConfigurationTypeBuilder {
         self.external_id = input;
         self
     }
+    /// <p>The external ID.</p>
+    pub fn get_external_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.external_id
+    }
     /// <p>If <code>UserDataShared</code> is <code>true</code>, Amazon Cognito includes user data in the events that it publishes to Amazon Pinpoint analytics.</p>
     pub fn user_data_shared(mut self, input: bool) -> Self {
         self.user_data_shared = ::std::option::Option::Some(input);
@@ -125,6 +141,10 @@ impl AnalyticsConfigurationTypeBuilder {
     pub fn set_user_data_shared(mut self, input: ::std::option::Option<bool>) -> Self {
         self.user_data_shared = input;
         self
+    }
+    /// <p>If <code>UserDataShared</code> is <code>true</code>, Amazon Cognito includes user data in the events that it publishes to Amazon Pinpoint analytics.</p>
+    pub fn get_user_data_shared(&self) -> &::std::option::Option<bool> {
+        &self.user_data_shared
     }
     /// Consumes the builder and constructs a [`AnalyticsConfigurationType`](crate::types::AnalyticsConfigurationType).
     pub fn build(self) -> crate::types::AnalyticsConfigurationType {

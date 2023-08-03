@@ -58,6 +58,10 @@ impl ListEntitiesDetectionJobsInputBuilder {
         self.filter = input;
         self
     }
+    /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::EntitiesDetectionJobFilter> {
+        &self.filter
+    }
     /// <p>Identifies the next page of results to return.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -68,6 +72,10 @@ impl ListEntitiesDetectionJobsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Identifies the next page of results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return in each page. The default is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -77,6 +85,10 @@ impl ListEntitiesDetectionJobsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return in each page. The default is 100.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListEntitiesDetectionJobsInput`](crate::operation::list_entities_detection_jobs::ListEntitiesDetectionJobsInput).
     pub fn build(

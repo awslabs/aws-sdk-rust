@@ -68,6 +68,13 @@ impl GetDataQualityMetricsOutputBuilder {
         self.anomaly_detector_data_quality_metric_list = input;
         self
     }
+    /// <p>A list of the data quality metrics for the <code>AnomalyDetectorArn</code> that you requested.</p>
+    pub fn get_anomaly_detector_data_quality_metric_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnomalyDetectorDataQualityMetric>>
+    {
+        &self.anomaly_detector_data_quality_metric_list
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

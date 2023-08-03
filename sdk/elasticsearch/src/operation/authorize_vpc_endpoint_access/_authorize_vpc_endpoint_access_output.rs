@@ -52,6 +52,12 @@ impl AuthorizeVpcEndpointAccessOutputBuilder {
         self.authorized_principal = input;
         self
     }
+    /// <p>Information about the account or service that was provided access to the domain.</p>
+    pub fn get_authorized_principal(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuthorizedPrincipal> {
+        &self.authorized_principal
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

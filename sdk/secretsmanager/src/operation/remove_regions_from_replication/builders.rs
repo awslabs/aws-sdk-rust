@@ -38,6 +38,10 @@ impl RemoveRegionsFromReplicationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RemoveRegionsFromReplication as a reference.
+    pub fn as_input(&self) -> &crate::operation::remove_regions_from_replication::builders::RemoveRegionsFromReplicationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +132,10 @@ impl RemoveRegionsFromReplicationFluentBuilder {
         self.inner = self.inner.set_secret_id(input);
         self
     }
+    /// <p>The ARN or name of the secret.</p>
+    pub fn get_secret_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_secret_id()
+    }
     /// Appends an item to `RemoveReplicaRegions`.
     ///
     /// To override the contents of this collection use [`set_remove_replica_regions`](Self::set_remove_replica_regions).
@@ -147,5 +155,11 @@ impl RemoveRegionsFromReplicationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_remove_replica_regions(input);
         self
+    }
+    /// <p>The Regions of the replicas to remove.</p>
+    pub fn get_remove_replica_regions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_remove_replica_regions()
     }
 }

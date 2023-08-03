@@ -83,6 +83,10 @@ impl UpdateSecurityPolicyInputBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of access policy.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::SecurityPolicyType> {
+        &self.r#type
+    }
     /// <p>The name of the policy.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -92,6 +96,10 @@ impl UpdateSecurityPolicyInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the policy.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The version of the policy being updated.</p>
     pub fn policy_version(
@@ -109,6 +117,10 @@ impl UpdateSecurityPolicyInputBuilder {
         self.policy_version = input;
         self
     }
+    /// <p>The version of the policy being updated.</p>
+    pub fn get_policy_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_version
+    }
     /// <p>A description of the policy. Typically used to store information about the permissions defined in the policy.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -118,6 +130,10 @@ impl UpdateSecurityPolicyInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the policy. Typically used to store information about the permissions defined in the policy.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The JSON policy document to use as the content for the new policy.</p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -129,6 +145,10 @@ impl UpdateSecurityPolicyInputBuilder {
         self.policy = input;
         self
     }
+    /// <p>The JSON policy document to use as the content for the new policy.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy
+    }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -138,6 +158,10 @@ impl UpdateSecurityPolicyInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateSecurityPolicyInput`](crate::operation::update_security_policy::UpdateSecurityPolicyInput).
     pub fn build(

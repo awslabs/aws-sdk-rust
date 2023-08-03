@@ -54,6 +54,10 @@ impl ModifyInstanceMaintenanceOptionsOutputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The ID of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>Provides information on the current automatic recovery behavior of your instance.</p>
     pub fn auto_recovery(mut self, input: crate::types::InstanceAutoRecoveryState) -> Self {
         self.auto_recovery = ::std::option::Option::Some(input);
@@ -66,6 +70,12 @@ impl ModifyInstanceMaintenanceOptionsOutputBuilder {
     ) -> Self {
         self.auto_recovery = input;
         self
+    }
+    /// <p>Provides information on the current automatic recovery behavior of your instance.</p>
+    pub fn get_auto_recovery(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceAutoRecoveryState> {
+        &self.auto_recovery
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

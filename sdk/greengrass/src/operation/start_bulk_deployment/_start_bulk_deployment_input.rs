@@ -79,6 +79,10 @@ impl StartBulkDeploymentInputBuilder {
         self.amzn_client_token = input;
         self
     }
+    /// A client token used to correlate requests and responses.
+    pub fn get_amzn_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.amzn_client_token
+    }
     /// The ARN of the execution role to associate with the bulk deployment operation. This IAM role must allow the ''greengrass:CreateDeployment'' action for all group versions that are listed in the input file. This IAM role must have access to the S3 bucket containing the input file.
     pub fn execution_role_arn(
         mut self,
@@ -95,6 +99,10 @@ impl StartBulkDeploymentInputBuilder {
         self.execution_role_arn = input;
         self
     }
+    /// The ARN of the execution role to associate with the bulk deployment operation. This IAM role must allow the ''greengrass:CreateDeployment'' action for all group versions that are listed in the input file. This IAM role must have access to the S3 bucket containing the input file.
+    pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_role_arn
+    }
     /// The URI of the input file contained in the S3 bucket. The execution role must have ''getObject'' permissions on this bucket to access the input file. The input file is a JSON-serialized, line delimited file with UTF-8 encoding that provides a list of group and version IDs and the deployment type. This file must be less than 100 MB. Currently, AWS IoT Greengrass supports only ''NewDeployment'' deployment types.
     pub fn input_file_uri(
         mut self,
@@ -110,6 +118,10 @@ impl StartBulkDeploymentInputBuilder {
     ) -> Self {
         self.input_file_uri = input;
         self
+    }
+    /// The URI of the input file contained in the S3 bucket. The execution role must have ''getObject'' permissions on this bucket to access the input file. The input file is a JSON-serialized, line delimited file with UTF-8 encoding that provides a list of group and version IDs and the deployment type. This file must be less than 100 MB. Currently, AWS IoT Greengrass supports only ''NewDeployment'' deployment types.
+    pub fn get_input_file_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_file_uri
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -135,6 +147,14 @@ impl StartBulkDeploymentInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// Tag(s) to add to the new resource.
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`StartBulkDeploymentInput`](crate::operation::start_bulk_deployment::StartBulkDeploymentInput).
     pub fn build(

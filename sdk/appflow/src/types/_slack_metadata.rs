@@ -52,6 +52,12 @@ impl SlackMetadataBuilder {
         self.o_auth_scopes = input;
         self
     }
+    /// <p> The desired authorization scope for the Slack account. </p>
+    pub fn get_o_auth_scopes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.o_auth_scopes
+    }
     /// Consumes the builder and constructs a [`SlackMetadata`](crate::types::SlackMetadata).
     pub fn build(self) -> crate::types::SlackMetadata {
         crate::types::SlackMetadata {

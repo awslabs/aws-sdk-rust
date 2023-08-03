@@ -38,6 +38,13 @@ impl GetPersonalizedRankingFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetPersonalizedRanking as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_personalized_ranking::builders::GetPersonalizedRankingInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +135,10 @@ impl GetPersonalizedRankingFluentBuilder {
         self.inner = self.inner.set_campaign_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the campaign to use for generating the personalized ranking.</p>
+    pub fn get_campaign_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_campaign_arn()
+    }
     /// Appends an item to `inputList`.
     ///
     /// To override the contents of this collection use [`set_input_list`](Self::set_input_list).
@@ -145,6 +156,10 @@ impl GetPersonalizedRankingFluentBuilder {
         self.inner = self.inner.set_input_list(input);
         self
     }
+    /// <p>A list of items (by <code>itemId</code>) to rank. If an item was not included in the training dataset, the item is appended to the end of the reranked list. The maximum is 500.</p>
+    pub fn get_input_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_input_list()
+    }
     /// <p>The user for which you want the campaign to provide a personalized ranking.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
@@ -154,6 +169,10 @@ impl GetPersonalizedRankingFluentBuilder {
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_id(input);
         self
+    }
+    /// <p>The user for which you want the campaign to provide a personalized ranking.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_id()
     }
     /// Adds a key-value pair to `context`.
     ///
@@ -178,6 +197,14 @@ impl GetPersonalizedRankingFluentBuilder {
         self.inner = self.inner.set_context(input);
         self
     }
+    /// <p>The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction information that might be relevant when getting a user's recommendations, such as the user's current location or device type.</p>
+    pub fn get_context(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_context()
+    }
     /// <p>The Amazon Resource Name (ARN) of a filter you created to include items or exclude items from recommendations for a given user. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering Recommendations</a>.</p>
     pub fn filter_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.filter_arn(input.into());
@@ -187,6 +214,10 @@ impl GetPersonalizedRankingFluentBuilder {
     pub fn set_filter_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_filter_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a filter you created to include items or exclude items from recommendations for a given user. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering Recommendations</a>.</p>
+    pub fn get_filter_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_filter_arn()
     }
     /// Adds a key-value pair to `filterValues`.
     ///
@@ -214,5 +245,15 @@ impl GetPersonalizedRankingFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_filter_values(input);
         self
+    }
+    /// <p>The values to use when filtering recommendations. For each placeholder parameter in your filter expression, provide the parameter name (in matching case) as a key and the filter value(s) as the corresponding value. Separate multiple values for one parameter with a comma. </p>
+    /// <p>For filter expressions that use an <code>INCLUDE</code> element to include items, you must provide values for all parameters that are defined in the expression. For filters with expressions that use an <code>EXCLUDE</code> element to exclude items, you can omit the <code>filter-values</code>.In this case, Amazon Personalize doesn't use that portion of the expression to filter recommendations.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering Recommendations</a>.</p>
+    pub fn get_filter_values(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_filter_values()
     }
 }

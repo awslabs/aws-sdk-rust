@@ -53,6 +53,10 @@ impl StartRestoreJobOutputBuilder {
         self.restore_job_id = input;
         self
     }
+    /// <p>Uniquely identifies the job that restores a recovery point.</p>
+    pub fn get_restore_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.restore_job_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

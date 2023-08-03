@@ -74,6 +74,10 @@ impl AssociateNodeInputBuilder {
         self.server_name = input;
         self
     }
+    /// <p>The name of the server with which to associate the node. </p>
+    pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_name
+    }
     /// <p>The name of the node. </p>
     pub fn node_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_name = ::std::option::Option::Some(input.into());
@@ -83,6 +87,10 @@ impl AssociateNodeInputBuilder {
     pub fn set_node_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_name = input;
         self
+    }
+    /// <p>The name of the node. </p>
+    pub fn get_node_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_name
     }
     /// Appends an item to `engine_attributes`.
     ///
@@ -120,6 +128,21 @@ impl AssociateNodeInputBuilder {
     ) -> Self {
         self.engine_attributes = input;
         self
+    }
+    /// <p>Engine attributes used for associating the node. </p>
+    /// <p class="title"> <b>Attributes accepted in a AssociateNode request for Chef</b> </p>
+    /// <ul>
+    /// <li> <p> <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is associated. By default only one organization named <code>default</code> can exist. </p> </li>
+    /// <li> <p> <code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the <code>chef-client</code> agent to access the Chef API. </p> </li>
+    /// </ul>
+    /// <p class="title"> <b>Attributes accepted in a AssociateNode request for Puppet</b> </p>
+    /// <ul>
+    /// <li> <p> <code>PUPPET_NODE_CSR</code>: A PEM-formatted certificate-signing request (CSR) that is created by the node. </p> </li>
+    /// </ul>
+    pub fn get_engine_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>> {
+        &self.engine_attributes
     }
     /// Consumes the builder and constructs a [`AssociateNodeInput`](crate::operation::associate_node::AssociateNodeInput).
     pub fn build(

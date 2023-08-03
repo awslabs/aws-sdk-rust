@@ -85,6 +85,10 @@ impl ExecutePolicyInputBuilder {
         self.auto_scaling_group_name = input;
         self
     }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auto_scaling_group_name
+    }
     /// <p>The name or ARN of the policy.</p>
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
@@ -94,6 +98,10 @@ impl ExecutePolicyInputBuilder {
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_name = input;
         self
+    }
+    /// <p>The name or ARN of the policy.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_name
     }
     /// <p>Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before executing the policy.</p>
     /// <p>Valid only if the policy type is <code>SimpleScaling</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -106,6 +114,11 @@ impl ExecutePolicyInputBuilder {
     pub fn set_honor_cooldown(mut self, input: ::std::option::Option<bool>) -> Self {
         self.honor_cooldown = input;
         self
+    }
+    /// <p>Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before executing the policy.</p>
+    /// <p>Valid only if the policy type is <code>SimpleScaling</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    pub fn get_honor_cooldown(&self) -> &::std::option::Option<bool> {
+        &self.honor_cooldown
     }
     /// <p>The metric value to compare to <code>BreachThreshold</code>. This enables you to execute a policy of type <code>StepScaling</code> and determine which step adjustment to use. For example, if the breach threshold is 50 and you want to use a step adjustment with a lower bound of 0 and an upper bound of 10, you can set the metric value to 59.</p>
     /// <p>If you specify a metric value that doesn't correspond to a step adjustment for the policy, the call returns an error.</p>
@@ -121,6 +134,12 @@ impl ExecutePolicyInputBuilder {
         self.metric_value = input;
         self
     }
+    /// <p>The metric value to compare to <code>BreachThreshold</code>. This enables you to execute a policy of type <code>StepScaling</code> and determine which step adjustment to use. For example, if the breach threshold is 50 and you want to use a step adjustment with a lower bound of 0 and an upper bound of 10, you can set the metric value to 59.</p>
+    /// <p>If you specify a metric value that doesn't correspond to a step adjustment for the policy, the call returns an error.</p>
+    /// <p>Required if the policy type is <code>StepScaling</code> and not supported otherwise.</p>
+    pub fn get_metric_value(&self) -> &::std::option::Option<f64> {
+        &self.metric_value
+    }
     /// <p>The breach threshold for the alarm.</p>
     /// <p>Required if the policy type is <code>StepScaling</code> and not supported otherwise.</p>
     pub fn breach_threshold(mut self, input: f64) -> Self {
@@ -132,6 +151,11 @@ impl ExecutePolicyInputBuilder {
     pub fn set_breach_threshold(mut self, input: ::std::option::Option<f64>) -> Self {
         self.breach_threshold = input;
         self
+    }
+    /// <p>The breach threshold for the alarm.</p>
+    /// <p>Required if the policy type is <code>StepScaling</code> and not supported otherwise.</p>
+    pub fn get_breach_threshold(&self) -> &::std::option::Option<f64> {
+        &self.breach_threshold
     }
     /// Consumes the builder and constructs a [`ExecutePolicyInput`](crate::operation::execute_policy::ExecutePolicyInput).
     pub fn build(

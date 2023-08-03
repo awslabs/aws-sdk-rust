@@ -57,6 +57,10 @@ impl UpdateQuickConnectConfigInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The identifier for the quick connect.</p>
     pub fn quick_connect_id(
         mut self,
@@ -73,6 +77,10 @@ impl UpdateQuickConnectConfigInputBuilder {
         self.quick_connect_id = input;
         self
     }
+    /// <p>The identifier for the quick connect.</p>
+    pub fn get_quick_connect_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.quick_connect_id
+    }
     /// <p>Information about the configuration settings for the quick connect.</p>
     pub fn quick_connect_config(mut self, input: crate::types::QuickConnectConfig) -> Self {
         self.quick_connect_config = ::std::option::Option::Some(input);
@@ -85,6 +93,12 @@ impl UpdateQuickConnectConfigInputBuilder {
     ) -> Self {
         self.quick_connect_config = input;
         self
+    }
+    /// <p>Information about the configuration settings for the quick connect.</p>
+    pub fn get_quick_connect_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::QuickConnectConfig> {
+        &self.quick_connect_config
     }
     /// Consumes the builder and constructs a [`UpdateQuickConnectConfigInput`](crate::operation::update_quick_connect_config::UpdateQuickConnectConfigInput).
     pub fn build(

@@ -48,6 +48,10 @@ impl ImportTaskSummaryWavesBuilder {
         self.created_count = input;
         self
     }
+    /// <p>Import task summery waves created count.</p>
+    pub fn get_created_count(&self) -> &::std::option::Option<i64> {
+        &self.created_count
+    }
     /// <p>Import task summery waves modified count.</p>
     pub fn modified_count(mut self, input: i64) -> Self {
         self.modified_count = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ImportTaskSummaryWavesBuilder {
     pub fn set_modified_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.modified_count = input;
         self
+    }
+    /// <p>Import task summery waves modified count.</p>
+    pub fn get_modified_count(&self) -> &::std::option::Option<i64> {
+        &self.modified_count
     }
     /// Consumes the builder and constructs a [`ImportTaskSummaryWaves`](crate::types::ImportTaskSummaryWaves).
     pub fn build(self) -> crate::types::ImportTaskSummaryWaves {

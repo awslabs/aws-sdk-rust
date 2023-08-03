@@ -36,6 +36,13 @@ impl AssociateBrowserSettingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateBrowserSettings as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::associate_browser_settings::builders::AssociateBrowserSettingsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl AssociateBrowserSettingsFluentBuilder {
         self.inner = self.inner.set_portal_arn(input);
         self
     }
+    /// <p>The ARN of the web portal.</p>
+    pub fn get_portal_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_portal_arn()
+    }
     /// <p>The ARN of the browser settings.</p>
     pub fn browser_settings_arn(
         mut self,
@@ -141,5 +152,9 @@ impl AssociateBrowserSettingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_browser_settings_arn(input);
         self
+    }
+    /// <p>The ARN of the browser settings.</p>
+    pub fn get_browser_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_browser_settings_arn()
     }
 }

@@ -65,6 +65,14 @@ impl GetSchemaByDefinitionInputBuilder {
         self.schema_id = input;
         self
     }
+    /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
+    /// <ul>
+    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
+    /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
+    /// </ul>
+    pub fn get_schema_id(&self) -> &::std::option::Option<crate::types::SchemaId> {
+        &self.schema_id
+    }
     /// <p>The definition of the schema for which schema details are required.</p>
     pub fn schema_definition(
         mut self,
@@ -80,6 +88,10 @@ impl GetSchemaByDefinitionInputBuilder {
     ) -> Self {
         self.schema_definition = input;
         self
+    }
+    /// <p>The definition of the schema for which schema details are required.</p>
+    pub fn get_schema_definition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_definition
     }
     /// Consumes the builder and constructs a [`GetSchemaByDefinitionInput`](crate::operation::get_schema_by_definition::GetSchemaByDefinitionInput).
     pub fn build(

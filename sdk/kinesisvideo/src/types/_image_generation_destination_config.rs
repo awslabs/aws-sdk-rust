@@ -48,6 +48,10 @@ impl ImageGenerationDestinationConfigBuilder {
         self.uri = input;
         self
     }
+    /// <p>The Uniform Resource Identifier (URI) that identifies where the images will be delivered.</p>
+    pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.uri
+    }
     /// <p>The Amazon Web Services Region of the S3 bucket where images will be delivered. This <code>DestinationRegion</code> must match the Region where the stream is located.</p>
     pub fn destination_region(
         mut self,
@@ -63,6 +67,10 @@ impl ImageGenerationDestinationConfigBuilder {
     ) -> Self {
         self.destination_region = input;
         self
+    }
+    /// <p>The Amazon Web Services Region of the S3 bucket where images will be delivered. This <code>DestinationRegion</code> must match the Region where the stream is located.</p>
+    pub fn get_destination_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_region
     }
     /// Consumes the builder and constructs a [`ImageGenerationDestinationConfig`](crate::types::ImageGenerationDestinationConfig).
     pub fn build(self) -> crate::types::ImageGenerationDestinationConfig {

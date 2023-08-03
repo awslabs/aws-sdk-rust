@@ -38,6 +38,10 @@ impl UpdateSchemaFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateSchema as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_schema::builders::UpdateSchemaInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl UpdateSchemaFluentBuilder {
         self.inner = self.inner.set_client_token_id(input);
         self
     }
+    /// <p>The ID of the client token.</p>
+    pub fn get_client_token_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token_id()
+    }
     /// <p>The source of the schema definition.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.content(input.into());
@@ -136,6 +144,10 @@ impl UpdateSchemaFluentBuilder {
         self.inner = self.inner.set_content(input);
         self
     }
+    /// <p>The source of the schema definition.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_content()
+    }
     /// <p>The description of the schema.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -145,6 +157,10 @@ impl UpdateSchemaFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the schema.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The name of the registry.</p>
     pub fn registry_name(
@@ -162,6 +178,10 @@ impl UpdateSchemaFluentBuilder {
         self.inner = self.inner.set_registry_name(input);
         self
     }
+    /// <p>The name of the registry.</p>
+    pub fn get_registry_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_registry_name()
+    }
     /// <p>The name of the schema.</p>
     pub fn schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schema_name(input.into());
@@ -172,6 +192,10 @@ impl UpdateSchemaFluentBuilder {
         self.inner = self.inner.set_schema_name(input);
         self
     }
+    /// <p>The name of the schema.</p>
+    pub fn get_schema_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_schema_name()
+    }
     /// <p>The schema type for the events schema.</p>
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
         self.inner = self.inner.r#type(input);
@@ -181,5 +205,9 @@ impl UpdateSchemaFluentBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::Type>) -> Self {
         self.inner = self.inner.set_type(input);
         self
+    }
+    /// <p>The schema type for the events schema.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::Type> {
+        self.inner.get_type()
     }
 }

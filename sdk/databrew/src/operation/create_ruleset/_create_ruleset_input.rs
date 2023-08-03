@@ -79,6 +79,10 @@ impl CreateRulesetInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the ruleset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the ruleset.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl CreateRulesetInputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the ruleset.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is associated with.</p>
     pub fn target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_arn = ::std::option::Option::Some(input.into());
@@ -98,6 +106,10 @@ impl CreateRulesetInputBuilder {
     pub fn set_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is associated with.</p>
+    pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_arn
     }
     /// Appends an item to `rules`.
     ///
@@ -117,6 +129,10 @@ impl CreateRulesetInputBuilder {
     ) -> Self {
         self.rules = input;
         self
+    }
+    /// <p>A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.</p>
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Rule>> {
+        &self.rules
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -142,6 +158,14 @@ impl CreateRulesetInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Metadata tags to apply to the ruleset.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateRulesetInput`](crate::operation::create_ruleset::CreateRulesetInput).
     pub fn build(

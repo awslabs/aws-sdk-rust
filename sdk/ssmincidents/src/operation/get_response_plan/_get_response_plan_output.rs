@@ -103,6 +103,10 @@ impl GetResponsePlanOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the response plan.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The short format name of the response plan. The name can't contain spaces.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -113,6 +117,10 @@ impl GetResponsePlanOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The short format name of the response plan. The name can't contain spaces.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The long format name of the response plan. Can contain spaces.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -122,6 +130,10 @@ impl GetResponsePlanOutputBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
+    }
+    /// <p>The long format name of the response plan. Can contain spaces.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// <p>Details used to create the incident when using this response plan.</p>
     pub fn incident_template(mut self, input: crate::types::IncidentTemplate) -> Self {
@@ -136,6 +148,10 @@ impl GetResponsePlanOutputBuilder {
         self.incident_template = input;
         self
     }
+    /// <p>Details used to create the incident when using this response plan.</p>
+    pub fn get_incident_template(&self) -> &::std::option::Option<crate::types::IncidentTemplate> {
+        &self.incident_template
+    }
     /// <p>The Chatbot chat channel used for collaboration during an incident.</p>
     pub fn chat_channel(mut self, input: crate::types::ChatChannel) -> Self {
         self.chat_channel = ::std::option::Option::Some(input);
@@ -148,6 +164,10 @@ impl GetResponsePlanOutputBuilder {
     ) -> Self {
         self.chat_channel = input;
         self
+    }
+    /// <p>The Chatbot chat channel used for collaboration during an incident.</p>
+    pub fn get_chat_channel(&self) -> &::std::option::Option<crate::types::ChatChannel> {
+        &self.chat_channel
     }
     /// Appends an item to `engagements`.
     ///
@@ -168,6 +188,12 @@ impl GetResponsePlanOutputBuilder {
         self.engagements = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an incident.</p>
+    pub fn get_engagements(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.engagements
+    }
     /// Appends an item to `actions`.
     ///
     /// To override the contents of this collection use [`set_actions`](Self::set_actions).
@@ -187,6 +213,10 @@ impl GetResponsePlanOutputBuilder {
         self.actions = input;
         self
     }
+    /// <p>The actions that this response plan takes at the beginning of the incident.</p>
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Action>> {
+        &self.actions
+    }
     /// Appends an item to `integrations`.
     ///
     /// To override the contents of this collection use [`set_integrations`](Self::set_integrations).
@@ -205,6 +235,12 @@ impl GetResponsePlanOutputBuilder {
     ) -> Self {
         self.integrations = input;
         self
+    }
+    /// <p>Information about third-party services integrated into the Incident Manager response plan.</p>
+    pub fn get_integrations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Integration>> {
+        &self.integrations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

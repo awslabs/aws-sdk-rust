@@ -65,6 +65,10 @@ impl GroupBuilder {
         self.keys = input;
         self
     }
+    /// <p>The keys that are included in this group.</p>
+    pub fn get_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.keys
+    }
     /// Adds a key-value pair to `metrics`.
     ///
     /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
@@ -89,6 +93,14 @@ impl GroupBuilder {
     ) -> Self {
         self.metrics = input;
         self
+    }
+    /// <p>The metrics that are included in this group.</p>
+    pub fn get_metrics(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::MetricValue>,
+    > {
+        &self.metrics
     }
     /// Consumes the builder and constructs a [`Group`](crate::types::Group).
     pub fn build(self) -> crate::types::Group {

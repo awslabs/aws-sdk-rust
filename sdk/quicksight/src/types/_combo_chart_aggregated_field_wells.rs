@@ -73,6 +73,12 @@ impl ComboChartAggregatedFieldWellsBuilder {
         self.category = input;
         self
     }
+    /// <p>The aggregated category field wells of a combo chart.</p>
+    pub fn get_category(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
+        &self.category
+    }
     /// Appends an item to `bar_values`.
     ///
     /// To override the contents of this collection use [`set_bar_values`](Self::set_bar_values).
@@ -91,6 +97,12 @@ impl ComboChartAggregatedFieldWellsBuilder {
     ) -> Self {
         self.bar_values = input;
         self
+    }
+    /// <p>The aggregated <code>BarValues</code> field well of a combo chart.</p>
+    pub fn get_bar_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
+        &self.bar_values
     }
     /// Appends an item to `colors`.
     ///
@@ -111,6 +123,12 @@ impl ComboChartAggregatedFieldWellsBuilder {
         self.colors = input;
         self
     }
+    /// <p>The aggregated colors field well of a combo chart.</p>
+    pub fn get_colors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
+        &self.colors
+    }
     /// Appends an item to `line_values`.
     ///
     /// To override the contents of this collection use [`set_line_values`](Self::set_line_values).
@@ -129,6 +147,12 @@ impl ComboChartAggregatedFieldWellsBuilder {
     ) -> Self {
         self.line_values = input;
         self
+    }
+    /// <p>The aggregated <code>LineValues</code> field well of a combo chart.</p>
+    pub fn get_line_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
+        &self.line_values
     }
     /// Consumes the builder and constructs a [`ComboChartAggregatedFieldWells`](crate::types::ComboChartAggregatedFieldWells).
     pub fn build(self) -> crate::types::ComboChartAggregatedFieldWells {

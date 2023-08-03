@@ -36,6 +36,10 @@ impl CreateGameFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateGame as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_game::builders::CreateGameInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl CreateGameFluentBuilder {
         self.inner = self.inner.set_game_name(input);
         self
     }
+    /// <p>The name of the game.</p>
+    pub fn get_game_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_game_name()
+    }
     /// <p>The description of the game.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -128,6 +136,10 @@ impl CreateGameFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>The description of the game.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p> A client-defined token. With an active client token in the request, this action is idempotent. </p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -137,6 +149,10 @@ impl CreateGameFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p> A client-defined token. With an active client token in the request, this action is idempotent. </p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -160,5 +176,13 @@ impl CreateGameFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The list of tags to apply to the game.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

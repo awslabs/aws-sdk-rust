@@ -37,6 +37,12 @@ impl DeleteIdentityFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteIdentity as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_identity::builders::DeleteIdentityInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,5 +124,9 @@ impl DeleteIdentityFluentBuilder {
     pub fn set_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity(input);
         self
+    }
+    /// <p>The identity to be removed from the list of identities for the AWS Account.</p>
+    pub fn get_identity(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity()
     }
 }

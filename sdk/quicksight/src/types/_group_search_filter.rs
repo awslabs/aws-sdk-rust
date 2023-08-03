@@ -59,6 +59,10 @@ impl GroupSearchFilterBuilder {
         self.operator = input;
         self
     }
+    /// <p>The comparison operator that you want to use as a filter, for example <code>"Operator": "StartsWith"</code>. Currently, the only supported operator is <code>StartsWith</code>.</p>
+    pub fn get_operator(&self) -> &::std::option::Option<crate::types::GroupFilterOperator> {
+        &self.operator
+    }
     /// <p>The name of the value that you want to use as a filter, for example <code>"Name": "GROUP_NAME"</code>. Currently, the only supported name is <code>GROUP_NAME</code>.</p>
     pub fn name(mut self, input: crate::types::GroupFilterAttribute) -> Self {
         self.name = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl GroupSearchFilterBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the value that you want to use as a filter, for example <code>"Name": "GROUP_NAME"</code>. Currently, the only supported name is <code>GROUP_NAME</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::GroupFilterAttribute> {
+        &self.name
+    }
     /// <p>The value of the named item, in this case <code>GROUP_NAME</code>, that you want to use as a filter.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl GroupSearchFilterBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value of the named item, in this case <code>GROUP_NAME</code>, that you want to use as a filter.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`GroupSearchFilter`](crate::types::GroupSearchFilter).
     pub fn build(self) -> crate::types::GroupSearchFilter {

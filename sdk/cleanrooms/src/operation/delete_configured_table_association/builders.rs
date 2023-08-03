@@ -36,6 +36,10 @@ impl DeleteConfiguredTableAssociationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteConfiguredTableAssociation as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_configured_table_association::builders::DeleteConfiguredTableAssociationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -110,6 +114,12 @@ impl DeleteConfiguredTableAssociationFluentBuilder {
             .set_configured_table_association_identifier(input);
         self
     }
+    /// <p>The unique ID for the configured table association to be deleted. Currently accepts the configured table ID.</p>
+    pub fn get_configured_table_association_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configured_table_association_identifier()
+    }
     /// <p>A unique identifier for the membership that the configured table association belongs to. Currently accepts the membership ID.</p>
     pub fn membership_identifier(
         mut self,
@@ -125,5 +135,9 @@ impl DeleteConfiguredTableAssociationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_membership_identifier(input);
         self
+    }
+    /// <p>A unique identifier for the membership that the configured table association belongs to. Currently accepts the membership ID.</p>
+    pub fn get_membership_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_membership_identifier()
     }
 }

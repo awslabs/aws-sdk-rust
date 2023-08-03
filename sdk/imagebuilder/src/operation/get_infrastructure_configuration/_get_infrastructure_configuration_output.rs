@@ -59,6 +59,10 @@ impl GetInfrastructureConfigurationOutputBuilder {
         self.request_id = input;
         self
     }
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
+    }
     /// <p>The infrastructure configuration object.</p>
     pub fn infrastructure_configuration(
         mut self,
@@ -74,6 +78,12 @@ impl GetInfrastructureConfigurationOutputBuilder {
     ) -> Self {
         self.infrastructure_configuration = input;
         self
+    }
+    /// <p>The infrastructure configuration object.</p>
+    pub fn get_infrastructure_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::InfrastructureConfiguration> {
+        &self.infrastructure_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -129,6 +129,11 @@ impl UpdateUserInputBuilder {
         self.home_directory = input;
         self
     }
+    /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
+    /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
+    pub fn get_home_directory(&self) -> &::std::option::Option<::std::string::String> {
+        &self.home_directory
+    }
     /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p>
     pub fn home_directory_type(mut self, input: crate::types::HomeDirectoryType) -> Self {
         self.home_directory_type = ::std::option::Option::Some(input);
@@ -141,6 +146,12 @@ impl UpdateUserInputBuilder {
     ) -> Self {
         self.home_directory_type = input;
         self
+    }
+    /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p>
+    pub fn get_home_directory_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::HomeDirectoryType> {
+        &self.home_directory_type
     }
     /// Appends an item to `home_directory_mappings`.
     ///
@@ -171,6 +182,17 @@ impl UpdateUserInputBuilder {
         self.home_directory_mappings = input;
         self
     }
+    /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can be set only when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>
+    /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
+    /// <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+    /// <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory parameter value.</p>
+    /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
+    /// <p> <code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+    pub fn get_home_directory_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HomeDirectoryMapEntry>> {
+        &self.home_directory_mappings
+    }
     /// <p>A session policy for your user so that you can use the same Identity and Access Management (IAM) role across multiple users. This policy scopes down a user's access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
     /// <p>This policy applies only when the domain of <code>ServerId</code> is Amazon S3. Amazon EFS does not use session policies.</p>
     /// <p>For session policies, Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
@@ -191,6 +213,15 @@ impl UpdateUserInputBuilder {
         self.policy = input;
         self
     }
+    /// <p>A session policy for your user so that you can use the same Identity and Access Management (IAM) role across multiple users. This policy scopes down a user's access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
+    /// <p>This policy applies only when the domain of <code>ServerId</code> is Amazon S3. Amazon EFS does not use session policies.</p>
+    /// <p>For session policies, Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
+    /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy">Creating a session policy</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services Security Token Service API Reference</i>.</p>
+    /// </note>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy
+    }
     /// <p>Specifies the full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon Elastic File Systems (Amazon EFS). The POSIX permissions that are set on files and directories in your file system determines the level of access your users get when transferring files into and out of your Amazon EFS file systems.</p>
     pub fn posix_profile(mut self, input: crate::types::PosixProfile) -> Self {
         self.posix_profile = ::std::option::Option::Some(input);
@@ -204,6 +235,10 @@ impl UpdateUserInputBuilder {
         self.posix_profile = input;
         self
     }
+    /// <p>Specifies the full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon Elastic File Systems (Amazon EFS). The POSIX permissions that are set on files and directories in your file system determines the level of access your users get when transferring files into and out of your Amazon EFS file systems.</p>
+    pub fn get_posix_profile(&self) -> &::std::option::Option<crate::types::PosixProfile> {
+        &self.posix_profile
+    }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
     pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role = ::std::option::Option::Some(input.into());
@@ -213,6 +248,10 @@ impl UpdateUserInputBuilder {
     pub fn set_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
+    pub fn get_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role
     }
     /// <p>A system-assigned unique identifier for a Transfer Family server instance that the user is assigned to.</p>
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -224,6 +263,10 @@ impl UpdateUserInputBuilder {
         self.server_id = input;
         self
     }
+    /// <p>A system-assigned unique identifier for a Transfer Family server instance that the user is assigned to.</p>
+    pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_id
+    }
     /// <p>A unique string that identifies a user and is associated with a server as specified by the <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period '.', and at sign '@'. The user name can't start with a hyphen, period, or at sign.</p>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
@@ -233,6 +276,10 @@ impl UpdateUserInputBuilder {
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_name = input;
         self
+    }
+    /// <p>A unique string that identifies a user and is associated with a server as specified by the <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period '.', and at sign '@'. The user name can't start with a hyphen, period, or at sign.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
     }
     /// Consumes the builder and constructs a [`UpdateUserInput`](crate::operation::update_user::UpdateUserInput).
     pub fn build(

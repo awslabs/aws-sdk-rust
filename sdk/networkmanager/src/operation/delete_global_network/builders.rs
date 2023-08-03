@@ -36,6 +36,12 @@ impl DeleteGlobalNetworkFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteGlobalNetwork as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_global_network::builders::DeleteGlobalNetworkInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl DeleteGlobalNetworkFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_global_network_id(input);
         self
+    }
+    /// <p>The ID of the global network.</p>
+    pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_global_network_id()
     }
 }

@@ -36,6 +36,10 @@ impl CreateStageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateStage as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_stage::builders::CreateStageInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl CreateStageFluentBuilder {
         self.inner = self.inner.set_rest_api_id(input);
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rest_api_id()
+    }
     /// <p>The name for the Stage resource. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stage_name(input.into());
@@ -127,6 +135,10 @@ impl CreateStageFluentBuilder {
     pub fn set_stage_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stage_name(input);
         self
+    }
+    /// <p>The name for the Stage resource. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
+    pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stage_name()
     }
     /// <p>The identifier of the Deployment resource for the Stage resource.</p>
     pub fn deployment_id(
@@ -144,6 +156,10 @@ impl CreateStageFluentBuilder {
         self.inner = self.inner.set_deployment_id(input);
         self
     }
+    /// <p>The identifier of the Deployment resource for the Stage resource.</p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_deployment_id()
+    }
     /// <p>The description of the Stage resource.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -154,6 +170,10 @@ impl CreateStageFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>The description of the Stage resource.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>Whether cache clustering is enabled for the stage.</p>
     pub fn cache_cluster_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.cache_cluster_enabled(input);
@@ -163,6 +183,10 @@ impl CreateStageFluentBuilder {
     pub fn set_cache_cluster_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_cache_cluster_enabled(input);
         self
+    }
+    /// <p>Whether cache clustering is enabled for the stage.</p>
+    pub fn get_cache_cluster_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_cache_cluster_enabled()
     }
     /// <p>The stage's cache capacity in GB. For more information about choosing a cache size, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API caching to enhance responsiveness</a>.</p>
     pub fn cache_cluster_size(mut self, input: crate::types::CacheClusterSize) -> Self {
@@ -176,6 +200,10 @@ impl CreateStageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_cache_cluster_size(input);
         self
+    }
+    /// <p>The stage's cache capacity in GB. For more information about choosing a cache size, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API caching to enhance responsiveness</a>.</p>
+    pub fn get_cache_cluster_size(&self) -> &::std::option::Option<crate::types::CacheClusterSize> {
+        self.inner.get_cache_cluster_size()
     }
     /// Adds a key-value pair to `variables`.
     ///
@@ -200,6 +228,14 @@ impl CreateStageFluentBuilder {
         self.inner = self.inner.set_variables(input);
         self
     }
+    /// <p>A map that defines the stage variables for the new Stage resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
+    pub fn get_variables(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_variables()
+    }
     /// <p>The version of the associated API documentation.</p>
     pub fn documentation_version(
         mut self,
@@ -216,6 +252,10 @@ impl CreateStageFluentBuilder {
         self.inner = self.inner.set_documentation_version(input);
         self
     }
+    /// <p>The version of the associated API documentation.</p>
+    pub fn get_documentation_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_documentation_version()
+    }
     /// <p>The canary deployment settings of this stage.</p>
     pub fn canary_settings(mut self, input: crate::types::CanarySettings) -> Self {
         self.inner = self.inner.canary_settings(input);
@@ -229,6 +269,10 @@ impl CreateStageFluentBuilder {
         self.inner = self.inner.set_canary_settings(input);
         self
     }
+    /// <p>The canary deployment settings of this stage.</p>
+    pub fn get_canary_settings(&self) -> &::std::option::Option<crate::types::CanarySettings> {
+        self.inner.get_canary_settings()
+    }
     /// <p>Specifies whether active tracing with X-ray is enabled for the Stage.</p>
     pub fn tracing_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.tracing_enabled(input);
@@ -238,6 +282,10 @@ impl CreateStageFluentBuilder {
     pub fn set_tracing_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_tracing_enabled(input);
         self
+    }
+    /// <p>Specifies whether active tracing with X-ray is enabled for the Stage.</p>
+    pub fn get_tracing_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_tracing_enabled()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -261,5 +309,13 @@ impl CreateStageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

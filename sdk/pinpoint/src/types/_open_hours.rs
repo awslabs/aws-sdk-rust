@@ -175,6 +175,17 @@ impl OpenHoursBuilder {
         self.email = input;
         self
     }
+    /// <p>Specifies the schedule settings for the email channel.</p>
+    pub fn get_email(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::DayOfWeek,
+            ::std::vec::Vec<crate::types::OpenHoursRule>,
+        >,
+    > {
+        &self.email
+    }
     /// Adds a key-value pair to `sms`.
     ///
     /// To override the contents of this collection use [`set_sms`](Self::set_sms).
@@ -202,6 +213,17 @@ impl OpenHoursBuilder {
     ) -> Self {
         self.sms = input;
         self
+    }
+    /// <p>Specifies the schedule settings for the SMS channel.</p>
+    pub fn get_sms(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::DayOfWeek,
+            ::std::vec::Vec<crate::types::OpenHoursRule>,
+        >,
+    > {
+        &self.sms
     }
     /// Adds a key-value pair to `push`.
     ///
@@ -231,6 +253,17 @@ impl OpenHoursBuilder {
         self.push = input;
         self
     }
+    /// <p>Specifies the schedule settings for the push channel.</p>
+    pub fn get_push(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::DayOfWeek,
+            ::std::vec::Vec<crate::types::OpenHoursRule>,
+        >,
+    > {
+        &self.push
+    }
     /// Adds a key-value pair to `voice`.
     ///
     /// To override the contents of this collection use [`set_voice`](Self::set_voice).
@@ -259,6 +292,17 @@ impl OpenHoursBuilder {
         self.voice = input;
         self
     }
+    /// <p>Specifies the schedule settings for the voice channel.</p>
+    pub fn get_voice(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::DayOfWeek,
+            ::std::vec::Vec<crate::types::OpenHoursRule>,
+        >,
+    > {
+        &self.voice
+    }
     /// Adds a key-value pair to `custom`.
     ///
     /// To override the contents of this collection use [`set_custom`](Self::set_custom).
@@ -286,6 +330,17 @@ impl OpenHoursBuilder {
     ) -> Self {
         self.custom = input;
         self
+    }
+    /// <p>Specifies the schedule settings for the custom channel.</p>
+    pub fn get_custom(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::DayOfWeek,
+            ::std::vec::Vec<crate::types::OpenHoursRule>,
+        >,
+    > {
+        &self.custom
     }
     /// Consumes the builder and constructs a [`OpenHours`](crate::types::OpenHours).
     pub fn build(self) -> crate::types::OpenHours {

@@ -56,6 +56,12 @@ impl UpdateDirectConnectGatewayAssociationOutputBuilder {
         self.direct_connect_gateway_association = input;
         self
     }
+    /// <p>Information about an association between a Direct Connect gateway and a virtual private gateway or transit gateway.</p>
+    pub fn get_direct_connect_gateway_association(
+        &self,
+    ) -> &::std::option::Option<crate::types::DirectConnectGatewayAssociation> {
+        &self.direct_connect_gateway_association
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

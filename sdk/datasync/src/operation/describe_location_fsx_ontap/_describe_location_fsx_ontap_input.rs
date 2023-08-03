@@ -41,6 +41,10 @@ impl DescribeLocationFsxOntapInputBuilder {
         self.location_arn = input;
         self
     }
+    /// <p>Specifies the Amazon Resource Name (ARN) of the FSx for ONTAP file system location that you want information about.</p>
+    pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location_arn
+    }
     /// Consumes the builder and constructs a [`DescribeLocationFsxOntapInput`](crate::operation::describe_location_fsx_ontap::DescribeLocationFsxOntapInput).
     pub fn build(
         self,

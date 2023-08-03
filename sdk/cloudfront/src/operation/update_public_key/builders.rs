@@ -36,6 +36,12 @@ impl UpdatePublicKeyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdatePublicKey as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_public_key::builders::UpdatePublicKeyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl UpdatePublicKeyFluentBuilder {
         self.inner = self.inner.set_public_key_config(input);
         self
     }
+    /// <p>A public key configuration.</p>
+    pub fn get_public_key_config(&self) -> &::std::option::Option<crate::types::PublicKeyConfig> {
+        self.inner.get_public_key_config()
+    }
     /// <p>The identifier of the public key that you are updating.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
@@ -139,6 +149,10 @@ impl UpdatePublicKeyFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The identifier of the public key that you are updating.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the public key to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.if_match(input.into());
@@ -148,5 +162,9 @@ impl UpdatePublicKeyFluentBuilder {
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_if_match(input);
         self
+    }
+    /// <p>The value of the <code>ETag</code> header that you received when retrieving the public key to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_if_match()
     }
 }

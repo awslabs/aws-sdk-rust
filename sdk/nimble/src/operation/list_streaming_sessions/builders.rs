@@ -36,6 +36,13 @@ impl ListStreamingSessionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListStreamingSessions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_streaming_sessions::builders::ListStreamingSessionsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +144,10 @@ impl ListStreamingSessionsFluentBuilder {
         self.inner = self.inner.set_created_by(input);
         self
     }
+    /// <p>Filters the request to streaming sessions created by the given user.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_created_by()
+    }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -146,6 +157,10 @@ impl ListStreamingSessionsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>Filters the request to streaming session owned by the given user</p>
     pub fn owned_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -157,6 +172,10 @@ impl ListStreamingSessionsFluentBuilder {
         self.inner = self.inner.set_owned_by(input);
         self
     }
+    /// <p>Filters the request to streaming session owned by the given user</p>
+    pub fn get_owned_by(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_owned_by()
+    }
     /// <p>Filters the request to only the provided session IDs.</p>
     pub fn session_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.session_ids(input.into());
@@ -167,6 +186,10 @@ impl ListStreamingSessionsFluentBuilder {
         self.inner = self.inner.set_session_ids(input);
         self
     }
+    /// <p>Filters the request to only the provided session IDs.</p>
+    pub fn get_session_ids(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_session_ids()
+    }
     /// <p>The studio ID. </p>
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.studio_id(input.into());
@@ -176,5 +199,9 @@ impl ListStreamingSessionsFluentBuilder {
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_studio_id(input);
         self
+    }
+    /// <p>The studio ID. </p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_studio_id()
     }
 }

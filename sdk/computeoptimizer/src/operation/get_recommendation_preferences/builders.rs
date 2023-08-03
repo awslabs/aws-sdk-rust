@@ -38,6 +38,10 @@ impl GetRecommendationPreferencesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetRecommendationPreferences as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_recommendation_preferences::builders::GetRecommendationPreferencesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -143,6 +147,13 @@ impl GetRecommendationPreferencesFluentBuilder {
         self.inner = self.inner.set_resource_type(input);
         self
     }
+    /// <p>The target resource type of the recommendation preference for which to return preferences.</p>
+    /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p> <note>
+    /// <p>The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p>
+    /// </note>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        self.inner.get_resource_type()
+    }
     /// <p>An object that describes the scope of the recommendation preference to return.</p>
     /// <p>You can return recommendation preferences that are created at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
     pub fn scope(mut self, input: crate::types::Scope) -> Self {
@@ -155,6 +166,11 @@ impl GetRecommendationPreferencesFluentBuilder {
         self.inner = self.inner.set_scope(input);
         self
     }
+    /// <p>An object that describes the scope of the recommendation preference to return.</p>
+    /// <p>You can return recommendation preferences that are created at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    pub fn get_scope(&self) -> &::std::option::Option<crate::types::Scope> {
+        self.inner.get_scope()
+    }
     /// <p>The token to advance to the next page of recommendation preferences.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -164,6 +180,10 @@ impl GetRecommendationPreferencesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token to advance to the next page of recommendation preferences.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The maximum number of recommendation preferences to return with a single request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
@@ -176,5 +196,10 @@ impl GetRecommendationPreferencesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of recommendation preferences to return with a single request.</p>
+    /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

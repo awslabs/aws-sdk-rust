@@ -36,6 +36,12 @@ impl ModifyAccountFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyAccount as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::modify_account::builders::ModifyAccountInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,12 @@ impl ModifyAccountFluentBuilder {
         self.inner = self.inner.set_dedicated_tenancy_support(input);
         self
     }
+    /// <p>The status of BYOL.</p>
+    pub fn get_dedicated_tenancy_support(
+        &self,
+    ) -> &::std::option::Option<crate::types::DedicatedTenancySupportEnum> {
+        self.inner.get_dedicated_tenancy_support()
+    }
     /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network interface. Specify an IP address range that is compatible with your network and in CIDR notation (that is, specify the range as an IPv4 CIDR block). The CIDR block size must be /16 (for example, 203.0.113.25/16). It must also be specified as available by the <code>ListAvailableManagementCidrRanges</code> operation.</p>
     pub fn dedicated_tenancy_management_cidr_range(
         mut self,
@@ -143,5 +155,11 @@ impl ModifyAccountFluentBuilder {
             .inner
             .set_dedicated_tenancy_management_cidr_range(input);
         self
+    }
+    /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network interface. Specify an IP address range that is compatible with your network and in CIDR notation (that is, specify the range as an IPv4 CIDR block). The CIDR block size must be /16 (for example, 203.0.113.25/16). It must also be specified as available by the <code>ListAvailableManagementCidrRanges</code> operation.</p>
+    pub fn get_dedicated_tenancy_management_cidr_range(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dedicated_tenancy_management_cidr_range()
     }
 }

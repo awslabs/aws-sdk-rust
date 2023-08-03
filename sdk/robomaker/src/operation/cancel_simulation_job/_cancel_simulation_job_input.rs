@@ -41,6 +41,10 @@ impl CancelSimulationJobInputBuilder {
         self.job = input;
         self
     }
+    /// <p>The simulation job ARN to cancel.</p>
+    pub fn get_job(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job
+    }
     /// Consumes the builder and constructs a [`CancelSimulationJobInput`](crate::operation::cancel_simulation_job::CancelSimulationJobInput).
     pub fn build(
         self,

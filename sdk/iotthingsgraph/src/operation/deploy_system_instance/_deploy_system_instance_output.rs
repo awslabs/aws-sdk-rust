@@ -58,6 +58,10 @@ impl DeploySystemInstanceOutputBuilder {
         self.summary = input;
         self
     }
+    /// <p>An object that contains summary information about a system instance that was deployed. </p>
+    pub fn get_summary(&self) -> &::std::option::Option<crate::types::SystemInstanceSummary> {
+        &self.summary
+    }
     /// <p>The ID of the Greengrass deployment used to deploy the system instance.</p>
     pub fn greengrass_deployment_id(
         mut self,
@@ -73,6 +77,10 @@ impl DeploySystemInstanceOutputBuilder {
     ) -> Self {
         self.greengrass_deployment_id = input;
         self
+    }
+    /// <p>The ID of the Greengrass deployment used to deploy the system instance.</p>
+    pub fn get_greengrass_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.greengrass_deployment_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

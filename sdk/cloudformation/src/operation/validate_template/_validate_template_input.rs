@@ -61,6 +61,11 @@ impl ValidateTemplateInputBuilder {
         self.template_body = input;
         self
     }
+    /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the CloudFormation User Guide.</p>
+    /// <p>Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only <code>TemplateBody</code> is used.</p>
+    pub fn get_template_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_body
+    }
     /// <p>Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes) that is located in an Amazon S3 bucket or a Systems Manager document. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the CloudFormation User Guide.</p>
     /// <p>Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only <code>TemplateBody</code> is used.</p>
     pub fn template_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -72,6 +77,11 @@ impl ValidateTemplateInputBuilder {
     pub fn set_template_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_url = input;
         self
+    }
+    /// <p>Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes) that is located in an Amazon S3 bucket or a Systems Manager document. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the CloudFormation User Guide.</p>
+    /// <p>Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed, only <code>TemplateBody</code> is used.</p>
+    pub fn get_template_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_url
     }
     /// Consumes the builder and constructs a [`ValidateTemplateInput`](crate::operation::validate_template::ValidateTemplateInput).
     pub fn build(

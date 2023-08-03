@@ -40,6 +40,10 @@ impl DetectedDataDetailsBuilder {
         self.value = input;
         self
     }
+    /// <p>An occurrence of the specified type of sensitive data. Each occurrence can contain 1-128 characters.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// Consumes the builder and constructs a [`DetectedDataDetails`](crate::types::DetectedDataDetails).
     pub fn build(self) -> crate::types::DetectedDataDetails {
         crate::types::DetectedDataDetails { value: self.value }

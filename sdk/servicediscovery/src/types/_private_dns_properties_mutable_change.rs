@@ -40,6 +40,10 @@ impl PrivateDnsPropertiesMutableChangeBuilder {
         self.soa = input;
         self
     }
+    /// <p>Updated fields for the Start of Authority (SOA) record for the hosted zone for the private DNS namespace.</p>
+    pub fn get_soa(&self) -> &::std::option::Option<crate::types::SoaChange> {
+        &self.soa
+    }
     /// Consumes the builder and constructs a [`PrivateDnsPropertiesMutableChange`](crate::types::PrivateDnsPropertiesMutableChange).
     pub fn build(self) -> crate::types::PrivateDnsPropertiesMutableChange {
         crate::types::PrivateDnsPropertiesMutableChange { soa: self.soa }

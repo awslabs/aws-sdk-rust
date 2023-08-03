@@ -59,6 +59,10 @@ impl DescribeCacheParameterGroupsOutputBuilder {
         self.marker = input;
         self
     }
+    /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// Appends an item to `cache_parameter_groups`.
     ///
     /// To override the contents of this collection use [`set_cache_parameter_groups`](Self::set_cache_parameter_groups).
@@ -77,6 +81,12 @@ impl DescribeCacheParameterGroupsOutputBuilder {
     ) -> Self {
         self.cache_parameter_groups = input;
         self
+    }
+    /// <p>A list of cache parameter groups. Each element in the list contains detailed information about one cache parameter group.</p>
+    pub fn get_cache_parameter_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CacheParameterGroup>> {
+        &self.cache_parameter_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

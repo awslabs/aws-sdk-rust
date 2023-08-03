@@ -40,6 +40,10 @@ impl AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetailsB
         self.availability_zone_count = input;
         self
     }
+    /// <p>he number of Availability Zones that the domain uses. Valid values are 2 and 3. The default is 2.</p>
+    pub fn get_availability_zone_count(&self) -> &::std::option::Option<i32> {
+        &self.availability_zone_count
+    }
     /// Consumes the builder and constructs a [`AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails`](crate::types::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails).
     pub fn build(
         self,

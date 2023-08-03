@@ -79,6 +79,15 @@ impl FailoverStateBuilder {
         self.status = input;
         self
     }
+    /// <p>The current status of the Aurora global database (<code>GlobalCluster</code>). Possible values are as follows:</p>
+    /// <ul>
+    /// <li> <p>pending  A request to fail over the Aurora global database (<code>GlobalCluster</code>) has been received by the service. The <code>GlobalCluster</code>'s primary DB cluster and the specified secondary DB cluster are being verified before the failover process can start.</p> </li>
+    /// <li> <p>failing-over  This status covers the range of Aurora internal operations that take place during the failover process, such as demoting the primary Aurora DB cluster, promoting the secondary Aurora DB, and synchronizing replicas.</p> </li>
+    /// <li> <p>cancelling  The request to fail over the Aurora global database (<code>GlobalCluster</code>) was cancelled and the primary Aurora DB cluster and the selected secondary Aurora DB cluster are returning to their previous states.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::FailoverStatus> {
+        &self.status
+    }
     /// <p>The Amazon Resource Name (ARN) of the Aurora DB cluster that is currently being demoted, and which is associated with this state.</p>
     pub fn from_db_cluster_arn(
         mut self,
@@ -95,6 +104,10 @@ impl FailoverStateBuilder {
         self.from_db_cluster_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Aurora DB cluster that is currently being demoted, and which is associated with this state.</p>
+    pub fn get_from_db_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.from_db_cluster_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the Aurora DB cluster that is currently being promoted, and which is associated with this state.</p>
     pub fn to_db_cluster_arn(
         mut self,
@@ -110,6 +123,10 @@ impl FailoverStateBuilder {
     ) -> Self {
         self.to_db_cluster_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Aurora DB cluster that is currently being promoted, and which is associated with this state.</p>
+    pub fn get_to_db_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.to_db_cluster_arn
     }
     /// Consumes the builder and constructs a [`FailoverState`](crate::types::FailoverState).
     pub fn build(self) -> crate::types::FailoverState {

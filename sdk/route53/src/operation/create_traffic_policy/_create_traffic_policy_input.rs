@@ -58,6 +58,10 @@ impl CreateTrafficPolicyInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the traffic policy.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The definition of this traffic policy in JSON format. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic Policy Document Format</a>.</p>
     pub fn document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document = ::std::option::Option::Some(input.into());
@@ -68,6 +72,10 @@ impl CreateTrafficPolicyInputBuilder {
         self.document = input;
         self
     }
+    /// <p>The definition of this traffic policy in JSON format. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic Policy Document Format</a>.</p>
+    pub fn get_document(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document
+    }
     /// <p>(Optional) Any comments that you want to include about the traffic policy.</p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment = ::std::option::Option::Some(input.into());
@@ -77,6 +85,10 @@ impl CreateTrafficPolicyInputBuilder {
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comment = input;
         self
+    }
+    /// <p>(Optional) Any comments that you want to include about the traffic policy.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comment
     }
     /// Consumes the builder and constructs a [`CreateTrafficPolicyInput`](crate::operation::create_traffic_policy::CreateTrafficPolicyInput).
     pub fn build(

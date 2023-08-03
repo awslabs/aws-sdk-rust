@@ -40,6 +40,10 @@ impl ColumnDescriptionBuilder {
         self.text = input;
         self
     }
+    /// <p>The text of a description for a column.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
+    }
     /// Consumes the builder and constructs a [`ColumnDescription`](crate::types::ColumnDescription).
     pub fn build(self) -> crate::types::ColumnDescription {
         crate::types::ColumnDescription { text: self.text }

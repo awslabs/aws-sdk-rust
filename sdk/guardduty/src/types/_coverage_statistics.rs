@@ -66,6 +66,12 @@ impl CoverageStatisticsBuilder {
         self.count_by_resource_type = input;
         self
     }
+    /// <p>Represents coverage statistics for EKS clusters aggregated by resource type.</p>
+    pub fn get_count_by_resource_type(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::ResourceType, i64>> {
+        &self.count_by_resource_type
+    }
     /// Adds a key-value pair to `count_by_coverage_status`.
     ///
     /// To override the contents of this collection use [`set_count_by_coverage_status`](Self::set_count_by_coverage_status).
@@ -86,6 +92,13 @@ impl CoverageStatisticsBuilder {
     ) -> Self {
         self.count_by_coverage_status = input;
         self
+    }
+    /// <p>Represents coverage statistics for EKS clusters aggregated by coverage status.</p>
+    pub fn get_count_by_coverage_status(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::CoverageStatus, i64>>
+    {
+        &self.count_by_coverage_status
     }
     /// Consumes the builder and constructs a [`CoverageStatistics`](crate::types::CoverageStatistics).
     pub fn build(self) -> crate::types::CoverageStatistics {

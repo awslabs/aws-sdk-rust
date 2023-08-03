@@ -49,6 +49,12 @@ impl ResourceDetailsBuilder {
         self.aws_ecr_container_image = input;
         self
     }
+    /// <p>An object that contains details about the Amazon ECR container image involved in the finding.</p>
+    pub fn get_aws_ecr_container_image(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsEcrContainerImageDetails> {
+        &self.aws_ecr_container_image
+    }
     /// Consumes the builder and constructs a [`ResourceDetails`](crate::types::ResourceDetails).
     pub fn build(self) -> crate::types::ResourceDetails {
         crate::types::ResourceDetails {

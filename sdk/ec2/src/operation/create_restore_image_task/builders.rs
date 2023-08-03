@@ -39,6 +39,13 @@ impl CreateRestoreImageTaskFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateRestoreImageTask as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_restore_image_task::builders::CreateRestoreImageTaskInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +136,10 @@ impl CreateRestoreImageTaskFluentBuilder {
         self.inner = self.inner.set_bucket(input);
         self
     }
+    /// <p>The name of the Amazon S3 bucket that contains the stored AMI object.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bucket()
+    }
     /// <p>The name of the stored AMI object in the bucket.</p>
     pub fn object_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.object_key(input.into());
@@ -139,6 +150,10 @@ impl CreateRestoreImageTaskFluentBuilder {
         self.inner = self.inner.set_object_key(input);
         self
     }
+    /// <p>The name of the stored AMI object in the bucket.</p>
+    pub fn get_object_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_object_key()
+    }
     /// <p>The name for the restored AMI. The name must be unique for AMIs in the Region for this account. If you do not provide a name, the new AMI gets the same name as the original AMI.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -148,6 +163,10 @@ impl CreateRestoreImageTaskFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name for the restored AMI. The name must be unique for AMIs in the Region for this account. If you do not provide a name, the new AMI gets the same name as the original AMI.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// Appends an item to `TagSpecifications`.
     ///
@@ -174,6 +193,16 @@ impl CreateRestoreImageTaskFluentBuilder {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
+    /// <p>The tags to apply to the AMI and snapshots on restoration. You can tag the AMI, the snapshots, or both.</p>
+    /// <ul>
+    /// <li> <p>To tag the AMI, the value for <code>ResourceType</code> must be <code>image</code>.</p> </li>
+    /// <li> <p>To tag the snapshots, the value for <code>ResourceType</code> must be <code>snapshot</code>. The same tag is applied to all of the snapshots that are created.</p> </li>
+    /// </ul>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        self.inner.get_tag_specifications()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -183,5 +212,9 @@ impl CreateRestoreImageTaskFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

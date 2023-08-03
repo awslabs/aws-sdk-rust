@@ -64,6 +64,10 @@ impl ErrorDetailBuilder {
         self.error_code = input;
         self
     }
+    /// <p>The name or code associated with the error.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
+    }
     /// Appends an item to `error_data`.
     ///
     /// To override the contents of this collection use [`set_error_data`](Self::set_error_data).
@@ -90,6 +94,14 @@ impl ErrorDetailBuilder {
         self.error_data = input;
         self
     }
+    /// <p>A list of key value pairs that provides contextual information about why an error occured.</p>
+    pub fn get_error_data(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    > {
+        &self.error_data
+    }
     /// <p>A message that describes the error.</p>
     pub fn error_message(
         mut self,
@@ -105,6 +117,10 @@ impl ErrorDetailBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>A message that describes the error.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`ErrorDetail`](crate::types::ErrorDetail).
     pub fn build(self) -> crate::types::ErrorDetail {

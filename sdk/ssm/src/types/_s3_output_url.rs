@@ -40,6 +40,10 @@ impl S3OutputUrlBuilder {
         self.output_url = input;
         self
     }
+    /// <p>A URL for an S3 bucket where you want to store the results of this request.</p>
+    pub fn get_output_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_url
+    }
     /// Consumes the builder and constructs a [`S3OutputUrl`](crate::types::S3OutputUrl).
     pub fn build(self) -> crate::types::S3OutputUrl {
         crate::types::S3OutputUrl {

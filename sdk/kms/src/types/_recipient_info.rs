@@ -55,6 +55,12 @@ impl RecipientInfoBuilder {
         self.key_encryption_algorithm = input;
         self
     }
+    /// <p>The encryption algorithm that KMS should use with the public key for an Amazon Web Services Nitro Enclave to encrypt plaintext values for the response. The only valid value is <code>RSAES_OAEP_SHA_256</code>.</p>
+    pub fn get_key_encryption_algorithm(
+        &self,
+    ) -> &::std::option::Option<crate::types::KeyEncryptionMechanism> {
+        &self.key_encryption_algorithm
+    }
     /// <p>The attestation document for an Amazon Web Services Nitro Enclave. This document includes the enclave's public key.</p>
     pub fn attestation_document(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.attestation_document = ::std::option::Option::Some(input);
@@ -67,6 +73,10 @@ impl RecipientInfoBuilder {
     ) -> Self {
         self.attestation_document = input;
         self
+    }
+    /// <p>The attestation document for an Amazon Web Services Nitro Enclave. This document includes the enclave's public key.</p>
+    pub fn get_attestation_document(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.attestation_document
     }
     /// Consumes the builder and constructs a [`RecipientInfo`](crate::types::RecipientInfo).
     pub fn build(self) -> crate::types::RecipientInfo {

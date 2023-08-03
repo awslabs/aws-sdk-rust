@@ -54,6 +54,10 @@ impl FilterBuilder {
         self.formula = input;
         self
     }
+    /// <p> A formula representing a filter function that returns zero or more matching rows from a table. Valid formulas in this field return a list of rows from a table. The most common ways of writing a formula to return a list of rows are to use the FindRow() or Filter() functions. Any other formula that returns zero or more rows is also acceptable. For example, you can use a formula that points to a cell that contains a filter function. </p>
+    pub fn get_formula(&self) -> &::std::option::Option<::std::string::String> {
+        &self.formula
+    }
     /// <p> The optional contextRowId attribute can be used to specify the row id of the context row if the filter formula contains unqualified references to table columns and needs a context row to evaluate them successfully. </p>
     pub fn context_row_id(
         mut self,
@@ -69,6 +73,10 @@ impl FilterBuilder {
     ) -> Self {
         self.context_row_id = input;
         self
+    }
+    /// <p> The optional contextRowId attribute can be used to specify the row id of the context row if the filter formula contains unqualified references to table columns and needs a context row to evaluate them successfully. </p>
+    pub fn get_context_row_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.context_row_id
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
     pub fn build(self) -> crate::types::Filter {

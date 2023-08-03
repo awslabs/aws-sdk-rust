@@ -58,6 +58,11 @@ impl DestinationPropertiesBuilder {
         self.destination_arn = input;
         self
     }
+    /// <p>The ARN of the resource to publish to.</p>
+    /// <p>To specify an S3 bucket folder use the following format: <code>arn:aws:s3:::DOC-EXAMPLE-BUCKET/myFolder/</code> </p>
+    pub fn get_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_arn
+    }
     /// <p>The ARN of the KMS key to use for encryption.</p>
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_arn = ::std::option::Option::Some(input.into());
@@ -67,6 +72,10 @@ impl DestinationPropertiesBuilder {
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_arn = input;
         self
+    }
+    /// <p>The ARN of the KMS key to use for encryption.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
     }
     /// Consumes the builder and constructs a [`DestinationProperties`](crate::types::DestinationProperties).
     pub fn build(self) -> crate::types::DestinationProperties {

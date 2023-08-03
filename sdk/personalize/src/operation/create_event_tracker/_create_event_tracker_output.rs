@@ -61,6 +61,10 @@ impl CreateEventTrackerOutputBuilder {
         self.event_tracker_arn = input;
         self
     }
+    /// <p>The ARN of the event tracker.</p>
+    pub fn get_event_tracker_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_tracker_arn
+    }
     /// <p>The ID of the event tracker. Include this ID in requests to the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a> API.</p>
     pub fn tracking_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tracking_id = ::std::option::Option::Some(input.into());
@@ -70,6 +74,10 @@ impl CreateEventTrackerOutputBuilder {
     pub fn set_tracking_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tracking_id = input;
         self
+    }
+    /// <p>The ID of the event tracker. Include this ID in requests to the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a> API.</p>
+    pub fn get_tracking_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tracking_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

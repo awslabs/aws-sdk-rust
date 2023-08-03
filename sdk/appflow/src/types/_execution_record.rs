@@ -100,6 +100,10 @@ impl ExecutionRecordBuilder {
         self.execution_id = input;
         self
     }
+    /// <p> Specifies the identifier of the given flow run. </p>
+    pub fn get_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_id
+    }
     /// <p> Specifies the flow run status and whether it is in progress, has completed successfully, or has failed. </p>
     pub fn execution_status(mut self, input: crate::types::ExecutionStatus) -> Self {
         self.execution_status = ::std::option::Option::Some(input);
@@ -112,6 +116,10 @@ impl ExecutionRecordBuilder {
     ) -> Self {
         self.execution_status = input;
         self
+    }
+    /// <p> Specifies the flow run status and whether it is in progress, has completed successfully, or has failed. </p>
+    pub fn get_execution_status(&self) -> &::std::option::Option<crate::types::ExecutionStatus> {
+        &self.execution_status
     }
     /// <p> Describes the result of the given flow run. </p>
     pub fn execution_result(mut self, input: crate::types::ExecutionResult) -> Self {
@@ -126,6 +134,10 @@ impl ExecutionRecordBuilder {
         self.execution_result = input;
         self
     }
+    /// <p> Describes the result of the given flow run. </p>
+    pub fn get_execution_result(&self) -> &::std::option::Option<crate::types::ExecutionResult> {
+        &self.execution_result
+    }
     /// <p> Specifies the start time of the flow run. </p>
     pub fn started_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.started_at = ::std::option::Option::Some(input);
@@ -138,6 +150,10 @@ impl ExecutionRecordBuilder {
     ) -> Self {
         self.started_at = input;
         self
+    }
+    /// <p> Specifies the start time of the flow run. </p>
+    pub fn get_started_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.started_at
     }
     /// <p> Specifies the time of the most recent update. </p>
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -152,6 +168,10 @@ impl ExecutionRecordBuilder {
         self.last_updated_at = input;
         self
     }
+    /// <p> Specifies the time of the most recent update. </p>
+    pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_at
+    }
     /// <p> The timestamp that determines the first new or updated record to be transferred in the flow run. </p>
     pub fn data_pull_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.data_pull_start_time = ::std::option::Option::Some(input);
@@ -165,6 +185,10 @@ impl ExecutionRecordBuilder {
         self.data_pull_start_time = input;
         self
     }
+    /// <p> The timestamp that determines the first new or updated record to be transferred in the flow run. </p>
+    pub fn get_data_pull_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.data_pull_start_time
+    }
     /// <p> The timestamp that indicates the last new or updated record to be transferred in the flow run. </p>
     pub fn data_pull_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.data_pull_end_time = ::std::option::Option::Some(input);
@@ -177,6 +201,10 @@ impl ExecutionRecordBuilder {
     ) -> Self {
         self.data_pull_end_time = input;
         self
+    }
+    /// <p> The timestamp that indicates the last new or updated record to be transferred in the flow run. </p>
+    pub fn get_data_pull_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.data_pull_end_time
     }
     /// Appends an item to `metadata_catalog_details`.
     ///
@@ -196,6 +224,12 @@ impl ExecutionRecordBuilder {
     ) -> Self {
         self.metadata_catalog_details = input;
         self
+    }
+    /// <p>Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the associated flow run.</p>
+    pub fn get_metadata_catalog_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetadataCatalogDetail>> {
+        &self.metadata_catalog_details
     }
     /// Consumes the builder and constructs a [`ExecutionRecord`](crate::types::ExecutionRecord).
     pub fn build(self) -> crate::types::ExecutionRecord {

@@ -55,6 +55,10 @@ impl GetDeployablePatchSnapshotForInstanceInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The ID of the managed node for which the appropriate patch snapshot should be retrieved.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The snapshot ID provided by the user when running <code>AWS-RunPatchBaseline</code>.</p>
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_id = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl GetDeployablePatchSnapshotForInstanceInputBuilder {
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_id = input;
         self
+    }
+    /// <p>The snapshot ID provided by the user when running <code>AWS-RunPatchBaseline</code>.</p>
+    pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_id
     }
     /// <p>Defines the basic information about a patch baseline override.</p>
     pub fn baseline_override(mut self, input: crate::types::BaselineOverride) -> Self {
@@ -77,6 +85,10 @@ impl GetDeployablePatchSnapshotForInstanceInputBuilder {
     ) -> Self {
         self.baseline_override = input;
         self
+    }
+    /// <p>Defines the basic information about a patch baseline override.</p>
+    pub fn get_baseline_override(&self) -> &::std::option::Option<crate::types::BaselineOverride> {
+        &self.baseline_override
     }
     /// Consumes the builder and constructs a [`GetDeployablePatchSnapshotForInstanceInput`](crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceInput, ::aws_smithy_http::operation::error::BuildError>{

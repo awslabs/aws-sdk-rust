@@ -36,6 +36,12 @@ impl CreateSampleFindingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateSampleFindings as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_sample_findings::builders::CreateSampleFindingsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateSampleFindingsFluentBuilder {
         self.inner = self.inner.set_detector_id(input);
         self
     }
+    /// <p>The ID of the detector to create sample findings for.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_detector_id()
+    }
     /// Appends an item to `FindingTypes`.
     ///
     /// To override the contents of this collection use [`set_finding_types`](Self::set_finding_types).
@@ -145,5 +155,11 @@ impl CreateSampleFindingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_finding_types(input);
         self
+    }
+    /// <p>The types of sample findings to generate.</p>
+    pub fn get_finding_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_finding_types()
     }
 }

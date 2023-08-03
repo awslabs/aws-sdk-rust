@@ -43,6 +43,10 @@ impl IncrementalRefreshBuilder {
         self.lookback_window = input;
         self
     }
+    /// <p>The lookback window setup for an incremental refresh configuration.</p>
+    pub fn get_lookback_window(&self) -> &::std::option::Option<crate::types::LookbackWindow> {
+        &self.lookback_window
+    }
     /// Consumes the builder and constructs a [`IncrementalRefresh`](crate::types::IncrementalRefresh).
     pub fn build(self) -> crate::types::IncrementalRefresh {
         crate::types::IncrementalRefresh {

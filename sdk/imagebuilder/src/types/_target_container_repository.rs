@@ -51,6 +51,10 @@ impl TargetContainerRepositoryBuilder {
         self.service = input;
         self
     }
+    /// <p>Specifies the service in which this image was registered.</p>
+    pub fn get_service(&self) -> &::std::option::Option<crate::types::ContainerRepositoryService> {
+        &self.service
+    }
     /// <p>The name of the container repository where the output container image is stored. This name is prefixed by the repository location.</p>
     pub fn repository_name(
         mut self,
@@ -66,6 +70,10 @@ impl TargetContainerRepositoryBuilder {
     ) -> Self {
         self.repository_name = input;
         self
+    }
+    /// <p>The name of the container repository where the output container image is stored. This name is prefixed by the repository location.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
     }
     /// Consumes the builder and constructs a [`TargetContainerRepository`](crate::types::TargetContainerRepository).
     pub fn build(self) -> crate::types::TargetContainerRepository {

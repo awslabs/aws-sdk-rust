@@ -36,6 +36,12 @@ impl CreateAccessTokenFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateAccessToken as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_access_token::builders::CreateAccessTokenInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateAccessTokenFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The friendly name of the personal access token.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The date and time the personal access token expires, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
     pub fn expires_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.expires_time(input);
@@ -138,5 +148,9 @@ impl CreateAccessTokenFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_expires_time(input);
         self
+    }
+    /// <p>The date and time the personal access token expires, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
+    pub fn get_expires_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_expires_time()
     }
 }

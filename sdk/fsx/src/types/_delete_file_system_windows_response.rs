@@ -54,6 +54,10 @@ impl DeleteFileSystemWindowsResponseBuilder {
         self.final_backup_id = input;
         self
     }
+    /// <p>The ID of the final backup for this file system.</p>
+    pub fn get_final_backup_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.final_backup_id
+    }
     /// Appends an item to `final_backup_tags`.
     ///
     /// To override the contents of this collection use [`set_final_backup_tags`](Self::set_final_backup_tags).
@@ -72,6 +76,12 @@ impl DeleteFileSystemWindowsResponseBuilder {
     ) -> Self {
         self.final_backup_tags = input;
         self
+    }
+    /// <p>The set of tags applied to the final backup.</p>
+    pub fn get_final_backup_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.final_backup_tags
     }
     /// Consumes the builder and constructs a [`DeleteFileSystemWindowsResponse`](crate::types::DeleteFileSystemWindowsResponse).
     pub fn build(self) -> crate::types::DeleteFileSystemWindowsResponse {

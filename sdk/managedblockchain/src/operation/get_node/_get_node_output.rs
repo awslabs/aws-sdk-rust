@@ -46,6 +46,10 @@ impl GetNodeOutputBuilder {
         self.node = input;
         self
     }
+    /// <p>Properties of the node configuration.</p>
+    pub fn get_node(&self) -> &::std::option::Option<crate::types::Node> {
+        &self.node
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

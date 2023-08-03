@@ -36,6 +36,12 @@ impl DescribeRecipeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeRecipe as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_recipe::builders::DescribeRecipeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl DescribeRecipeFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the recipe to be described.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The recipe version identifier. If this parameter isn't specified, then the latest published version is returned.</p>
     pub fn recipe_version(
         mut self,
@@ -133,5 +143,9 @@ impl DescribeRecipeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_recipe_version(input);
         self
+    }
+    /// <p>The recipe version identifier. If this parameter isn't specified, then the latest published version is returned.</p>
+    pub fn get_recipe_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_recipe_version()
     }
 }

@@ -41,6 +41,10 @@ impl DescribeLocationS3InputBuilder {
         self.location_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket location to describe.</p>
+    pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location_arn
+    }
     /// Consumes the builder and constructs a [`DescribeLocationS3Input`](crate::operation::describe_location_s3::DescribeLocationS3Input).
     pub fn build(
         self,

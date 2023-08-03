@@ -90,6 +90,10 @@ impl GetPipelineStateOutputBuilder {
         self.pipeline_name = input;
         self
     }
+    /// <p>The name of the pipeline for which you want to get the state.</p>
+    pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_name
+    }
     /// <p>The version number of the pipeline.</p> <note>
     /// <p>A newly created pipeline is always assigned a version number of <code>1</code>.</p>
     /// </note>
@@ -103,6 +107,12 @@ impl GetPipelineStateOutputBuilder {
     pub fn set_pipeline_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.pipeline_version = input;
         self
+    }
+    /// <p>The version number of the pipeline.</p> <note>
+    /// <p>A newly created pipeline is always assigned a version number of <code>1</code>.</p>
+    /// </note>
+    pub fn get_pipeline_version(&self) -> &::std::option::Option<i32> {
+        &self.pipeline_version
     }
     /// Appends an item to `stage_states`.
     ///
@@ -123,6 +133,12 @@ impl GetPipelineStateOutputBuilder {
         self.stage_states = input;
         self
     }
+    /// <p>A list of the pipeline stage output information, including stage name, state, most recent run details, whether the stage is disabled, and other data.</p>
+    pub fn get_stage_states(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StageState>> {
+        &self.stage_states
+    }
     /// <p>The date and time the pipeline was created, in timestamp format.</p>
     pub fn created(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created = ::std::option::Option::Some(input);
@@ -136,6 +152,10 @@ impl GetPipelineStateOutputBuilder {
         self.created = input;
         self
     }
+    /// <p>The date and time the pipeline was created, in timestamp format.</p>
+    pub fn get_created(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created
+    }
     /// <p>The date and time the pipeline was last updated, in timestamp format.</p>
     pub fn updated(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated = ::std::option::Option::Some(input);
@@ -148,6 +168,10 @@ impl GetPipelineStateOutputBuilder {
     ) -> Self {
         self.updated = input;
         self
+    }
+    /// <p>The date and time the pipeline was last updated, in timestamp format.</p>
+    pub fn get_updated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -47,6 +47,10 @@ impl StartRelationalDatabaseInputBuilder {
         self.relational_database_name = input;
         self
     }
+    /// <p>The name of your database to start.</p>
+    pub fn get_relational_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.relational_database_name
+    }
     /// Consumes the builder and constructs a [`StartRelationalDatabaseInput`](crate::operation::start_relational_database::StartRelationalDatabaseInput).
     pub fn build(
         self,

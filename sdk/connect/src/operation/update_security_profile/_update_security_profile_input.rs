@@ -90,6 +90,10 @@ impl UpdateSecurityProfileInputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the security profile.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// Appends an item to `permissions`.
     ///
     /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
@@ -109,6 +113,12 @@ impl UpdateSecurityProfileInputBuilder {
         self.permissions = input;
         self
     }
+    /// <p>The permissions granted to a security profile. For a list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>.</p>
+    pub fn get_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.permissions
+    }
     /// <p>The identifier for the security profle.</p>
     pub fn security_profile_id(
         mut self,
@@ -125,6 +135,10 @@ impl UpdateSecurityProfileInputBuilder {
         self.security_profile_id = input;
         self
     }
+    /// <p>The identifier for the security profle.</p>
+    pub fn get_security_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_profile_id
+    }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -134,6 +148,10 @@ impl UpdateSecurityProfileInputBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
+    }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// Adds a key-value pair to `allowed_access_control_tags`.
     ///
@@ -160,6 +178,14 @@ impl UpdateSecurityProfileInputBuilder {
         self.allowed_access_control_tags = input;
         self
     }
+    /// <p>The list of tags that a security profile uses to restrict access to resources in Amazon Connect.</p>
+    pub fn get_allowed_access_control_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.allowed_access_control_tags
+    }
     /// Appends an item to `tag_restricted_resources`.
     ///
     /// To override the contents of this collection use [`set_tag_restricted_resources`](Self::set_tag_restricted_resources).
@@ -181,6 +207,12 @@ impl UpdateSecurityProfileInputBuilder {
     ) -> Self {
         self.tag_restricted_resources = input;
         self
+    }
+    /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect.</p>
+    pub fn get_tag_restricted_resources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tag_restricted_resources
     }
     /// Consumes the builder and constructs a [`UpdateSecurityProfileInput`](crate::operation::update_security_profile::UpdateSecurityProfileInput).
     pub fn build(

@@ -56,6 +56,10 @@ impl ClientAuthenticationBuilder {
         self.sasl = input;
         self
     }
+    /// <p>Details for ClientAuthentication using SASL.</p>
+    pub fn get_sasl(&self) -> &::std::option::Option<crate::types::Sasl> {
+        &self.sasl
+    }
     /// <p>Details for ClientAuthentication using TLS.</p>
     pub fn tls(mut self, input: crate::types::Tls) -> Self {
         self.tls = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl ClientAuthenticationBuilder {
     pub fn set_tls(mut self, input: ::std::option::Option<crate::types::Tls>) -> Self {
         self.tls = input;
         self
+    }
+    /// <p>Details for ClientAuthentication using TLS.</p>
+    pub fn get_tls(&self) -> &::std::option::Option<crate::types::Tls> {
+        &self.tls
     }
     /// <p>Contains information about unauthenticated traffic to the cluster.</p>
     pub fn unauthenticated(mut self, input: crate::types::Unauthenticated) -> Self {
@@ -78,6 +86,10 @@ impl ClientAuthenticationBuilder {
     ) -> Self {
         self.unauthenticated = input;
         self
+    }
+    /// <p>Contains information about unauthenticated traffic to the cluster.</p>
+    pub fn get_unauthenticated(&self) -> &::std::option::Option<crate::types::Unauthenticated> {
+        &self.unauthenticated
     }
     /// Consumes the builder and constructs a [`ClientAuthentication`](crate::types::ClientAuthentication).
     pub fn build(self) -> crate::types::ClientAuthentication {

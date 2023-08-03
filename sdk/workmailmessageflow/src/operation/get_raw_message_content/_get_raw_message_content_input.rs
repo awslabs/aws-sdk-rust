@@ -40,6 +40,10 @@ impl GetRawMessageContentInputBuilder {
         self.message_id = input;
         self
     }
+    /// <p>The identifier of the email message to retrieve.</p>
+    pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message_id
+    }
     /// Consumes the builder and constructs a [`GetRawMessageContentInput`](crate::operation::get_raw_message_content::GetRawMessageContentInput).
     pub fn build(
         self,

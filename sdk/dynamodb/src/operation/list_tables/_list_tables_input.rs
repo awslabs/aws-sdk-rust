@@ -54,6 +54,10 @@ impl ListTablesInputBuilder {
         self.exclusive_start_table_name = input;
         self
     }
+    /// <p>The first table name that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedTableName</code> in a previous operation, so that you can obtain the next page of results.</p>
+    pub fn get_exclusive_start_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.exclusive_start_table_name
+    }
     /// <p>A maximum number of table names to return. If this parameter is not specified, the limit is 100.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl ListTablesInputBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
+    }
+    /// <p>A maximum number of table names to return. If this parameter is not specified, the limit is 100.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// Consumes the builder and constructs a [`ListTablesInput`](crate::operation::list_tables::ListTablesInput).
     pub fn build(

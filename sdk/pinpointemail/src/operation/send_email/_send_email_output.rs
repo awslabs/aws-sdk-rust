@@ -55,6 +55,12 @@ impl SendEmailOutputBuilder {
         self.message_id = input;
         self
     }
+    /// <p>A unique identifier for the message that is generated when Amazon Pinpoint accepts the message.</p> <note>
+    /// <p>It is possible for Amazon Pinpoint to accept a message without sending it. This can happen when the message you're trying to send has an attachment doesn't pass a virus check, or when you send a templated email that contains invalid personalization content, for example.</p>
+    /// </note>
+    pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

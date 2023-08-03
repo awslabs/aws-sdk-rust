@@ -38,6 +38,10 @@ impl DescribeLifecycleConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeLifecycleConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_lifecycle_configuration::builders::DescribeLifecycleConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,5 +137,9 @@ impl DescribeLifecycleConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_file_system_id(input);
         self
+    }
+    /// <p>The ID of the file system whose <code>LifecycleConfiguration</code> object you want to retrieve (String).</p>
+    pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_file_system_id()
     }
 }

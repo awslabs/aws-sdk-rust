@@ -46,6 +46,10 @@ impl GetImagePipelineInputBuilder {
         self.image_pipeline_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to retrieve.</p>
+    pub fn get_image_pipeline_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_pipeline_arn
+    }
     /// Consumes the builder and constructs a [`GetImagePipelineInput`](crate::operation::get_image_pipeline::GetImagePipelineInput).
     pub fn build(
         self,

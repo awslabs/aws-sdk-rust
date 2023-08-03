@@ -59,6 +59,10 @@ impl ListedEntitlementBuilder {
         self.data_transfer_subscriber_fee_percent = input;
         self
     }
+    /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+    pub fn get_data_transfer_subscriber_fee_percent(&self) -> &::std::option::Option<i32> {
+        &self.data_transfer_subscriber_fee_percent
+    }
     /// The ARN of the entitlement.
     pub fn entitlement_arn(
         mut self,
@@ -75,6 +79,10 @@ impl ListedEntitlementBuilder {
         self.entitlement_arn = input;
         self
     }
+    /// The ARN of the entitlement.
+    pub fn get_entitlement_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entitlement_arn
+    }
     /// The name of the entitlement.
     pub fn entitlement_name(
         mut self,
@@ -90,6 +98,10 @@ impl ListedEntitlementBuilder {
     ) -> Self {
         self.entitlement_name = input;
         self
+    }
+    /// The name of the entitlement.
+    pub fn get_entitlement_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entitlement_name
     }
     /// Consumes the builder and constructs a [`ListedEntitlement`](crate::types::ListedEntitlement).
     pub fn build(self) -> crate::types::ListedEntitlement {

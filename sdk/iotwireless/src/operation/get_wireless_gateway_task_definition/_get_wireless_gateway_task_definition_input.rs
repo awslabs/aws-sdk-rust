@@ -39,6 +39,10 @@ impl GetWirelessGatewayTaskDefinitionInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the resource to get.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`GetWirelessGatewayTaskDefinitionInput`](crate::operation::get_wireless_gateway_task_definition::GetWirelessGatewayTaskDefinitionInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_wireless_gateway_task_definition::GetWirelessGatewayTaskDefinitionInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

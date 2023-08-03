@@ -48,6 +48,10 @@ impl CacheBehaviorsBuilder {
         self.quantity = input;
         self
     }
+    /// <p>The number of cache behaviors for this distribution.</p>
+    pub fn get_quantity(&self) -> &::std::option::Option<i32> {
+        &self.quantity
+    }
     /// Appends an item to `items`.
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
@@ -66,6 +70,12 @@ impl CacheBehaviorsBuilder {
     ) -> Self {
         self.items = input;
         self
+    }
+    /// <p>Optional: A complex type that contains cache behaviors for this distribution. If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
+    pub fn get_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CacheBehavior>> {
+        &self.items
     }
     /// Consumes the builder and constructs a [`CacheBehaviors`](crate::types::CacheBehaviors).
     pub fn build(self) -> crate::types::CacheBehaviors {

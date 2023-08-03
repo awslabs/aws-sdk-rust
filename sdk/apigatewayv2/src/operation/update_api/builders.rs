@@ -36,6 +36,10 @@ impl UpdateApiFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateApi as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_api::builders::UpdateApiInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl UpdateApiFluentBuilder {
         self.inner = self.inner.set_api_id(input);
         self
     }
+    /// <p>The API identifier.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_api_id()
+    }
     /// <p>An API key selection expression. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API Key Selection Expressions</a>.</p>
     pub fn api_key_selection_expression(
         mut self,
@@ -134,6 +142,12 @@ impl UpdateApiFluentBuilder {
         self.inner = self.inner.set_api_key_selection_expression(input);
         self
     }
+    /// <p>An API key selection expression. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API Key Selection Expressions</a>.</p>
+    pub fn get_api_key_selection_expression(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_api_key_selection_expression()
+    }
     /// <p>A CORS configuration. Supported only for HTTP APIs.</p>
     pub fn cors_configuration(mut self, input: crate::types::Cors) -> Self {
         self.inner = self.inner.cors_configuration(input);
@@ -146,6 +160,10 @@ impl UpdateApiFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_cors_configuration(input);
         self
+    }
+    /// <p>A CORS configuration. Supported only for HTTP APIs.</p>
+    pub fn get_cors_configuration(&self) -> &::std::option::Option<crate::types::Cors> {
+        self.inner.get_cors_configuration()
     }
     /// <p>This property is part of quick create. It specifies the credentials required for the integration, if any. For a Lambda integration, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, don't specify this parameter. Currently, this property is not used for HTTP integrations. If provided, this value replaces the credentials associated with the quick create integration. Supported only for HTTP APIs.</p>
     pub fn credentials_arn(
@@ -163,6 +181,10 @@ impl UpdateApiFluentBuilder {
         self.inner = self.inner.set_credentials_arn(input);
         self
     }
+    /// <p>This property is part of quick create. It specifies the credentials required for the integration, if any. For a Lambda integration, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, don't specify this parameter. Currently, this property is not used for HTTP integrations. If provided, this value replaces the credentials associated with the quick create integration. Supported only for HTTP APIs.</p>
+    pub fn get_credentials_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_credentials_arn()
+    }
     /// <p>The description of the API.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -172,6 +194,10 @@ impl UpdateApiFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the API.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>Avoid validating models when creating a deployment. Supported only for WebSocket APIs.</p>
     pub fn disable_schema_validation(mut self, input: bool) -> Self {
@@ -183,6 +209,10 @@ impl UpdateApiFluentBuilder {
         self.inner = self.inner.set_disable_schema_validation(input);
         self
     }
+    /// <p>Avoid validating models when creating a deployment. Supported only for WebSocket APIs.</p>
+    pub fn get_disable_schema_validation(&self) -> &::std::option::Option<bool> {
+        self.inner.get_disable_schema_validation()
+    }
     /// <p>Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
     pub fn disable_execute_api_endpoint(mut self, input: bool) -> Self {
         self.inner = self.inner.disable_execute_api_endpoint(input);
@@ -192,6 +222,10 @@ impl UpdateApiFluentBuilder {
     pub fn set_disable_execute_api_endpoint(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_disable_execute_api_endpoint(input);
         self
+    }
+    /// <p>Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
+    pub fn get_disable_execute_api_endpoint(&self) -> &::std::option::Option<bool> {
+        self.inner.get_disable_execute_api_endpoint()
     }
     /// <p>The name of the API.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -203,6 +237,10 @@ impl UpdateApiFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the API.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>This property is part of quick create. If not specified, the route created using quick create is kept. Otherwise, this value replaces the route key of the quick create route. Additional routes may still be added after the API is updated. Supported only for HTTP APIs.</p>
     pub fn route_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.route_key(input.into());
@@ -212,6 +250,10 @@ impl UpdateApiFluentBuilder {
     pub fn set_route_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_route_key(input);
         self
+    }
+    /// <p>This property is part of quick create. If not specified, the route created using quick create is kept. Otherwise, this value replaces the route key of the quick create route. Additional routes may still be added after the API is updated. Supported only for HTTP APIs.</p>
+    pub fn get_route_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_route_key()
     }
     /// <p>The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method} ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket APIs.</p>
     pub fn route_selection_expression(
@@ -229,6 +271,10 @@ impl UpdateApiFluentBuilder {
         self.inner = self.inner.set_route_selection_expression(input);
         self
     }
+    /// <p>The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method} ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket APIs.</p>
+    pub fn get_route_selection_expression(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_route_selection_expression()
+    }
     /// <p>This property is part of quick create. For HTTP integrations, specify a fully qualified URL. For Lambda integrations, specify a function ARN. The type of the integration will be HTTP_PROXY or AWS_PROXY, respectively. The value provided updates the integration URI and integration type. You can update a quick-created target, but you can't remove it from an API. Supported only for HTTP APIs.</p>
     pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target(input.into());
@@ -239,6 +285,10 @@ impl UpdateApiFluentBuilder {
         self.inner = self.inner.set_target(input);
         self
     }
+    /// <p>This property is part of quick create. For HTTP integrations, specify a fully qualified URL. For Lambda integrations, specify a function ARN. The type of the integration will be HTTP_PROXY or AWS_PROXY, respectively. The value provided updates the integration URI and integration type. You can update a quick-created target, but you can't remove it from an API. Supported only for HTTP APIs.</p>
+    pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target()
+    }
     /// <p>A version identifier for the API.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version(input.into());
@@ -248,5 +298,9 @@ impl UpdateApiFluentBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version(input);
         self
+    }
+    /// <p>A version identifier for the API.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_version()
     }
 }

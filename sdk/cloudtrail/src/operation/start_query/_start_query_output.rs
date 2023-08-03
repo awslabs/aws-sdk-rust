@@ -46,6 +46,10 @@ impl StartQueryOutputBuilder {
         self.query_id = input;
         self
     }
+    /// <p>The ID of the started query.</p>
+    pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

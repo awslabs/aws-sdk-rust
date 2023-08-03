@@ -47,6 +47,10 @@ impl DescribeSecurityGroupReferencesInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// Appends an item to `group_id`.
     ///
     /// To override the contents of this collection use [`set_group_id`](Self::set_group_id).
@@ -65,6 +69,10 @@ impl DescribeSecurityGroupReferencesInputBuilder {
     ) -> Self {
         self.group_id = input;
         self
+    }
+    /// <p>The IDs of the security groups in your account.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.group_id
     }
     /// Consumes the builder and constructs a [`DescribeSecurityGroupReferencesInput`](crate::operation::describe_security_group_references::DescribeSecurityGroupReferencesInput).
     pub fn build(

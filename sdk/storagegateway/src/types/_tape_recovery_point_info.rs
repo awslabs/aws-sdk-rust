@@ -66,6 +66,10 @@ impl TapeRecoveryPointInfoBuilder {
         self.tape_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the virtual tape.</p>
+    pub fn get_tape_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tape_arn
+    }
     /// <p>The time when the point-in-time view of the virtual tape was replicated for later recovery.</p>
     /// <p>The default timestamp format of the tape recovery point time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
     pub fn tape_recovery_point_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -81,6 +85,13 @@ impl TapeRecoveryPointInfoBuilder {
         self.tape_recovery_point_time = input;
         self
     }
+    /// <p>The time when the point-in-time view of the virtual tape was replicated for later recovery.</p>
+    /// <p>The default timestamp format of the tape recovery point time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
+    pub fn get_tape_recovery_point_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.tape_recovery_point_time
+    }
     /// <p>The size, in bytes, of the virtual tapes to recover.</p>
     pub fn tape_size_in_bytes(mut self, input: i64) -> Self {
         self.tape_size_in_bytes = ::std::option::Option::Some(input);
@@ -91,6 +102,10 @@ impl TapeRecoveryPointInfoBuilder {
         self.tape_size_in_bytes = input;
         self
     }
+    /// <p>The size, in bytes, of the virtual tapes to recover.</p>
+    pub fn get_tape_size_in_bytes(&self) -> &::std::option::Option<i64> {
+        &self.tape_size_in_bytes
+    }
     /// <p>The status of the virtual tapes.</p>
     pub fn tape_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tape_status = ::std::option::Option::Some(input.into());
@@ -100,6 +115,10 @@ impl TapeRecoveryPointInfoBuilder {
     pub fn set_tape_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tape_status = input;
         self
+    }
+    /// <p>The status of the virtual tapes.</p>
+    pub fn get_tape_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tape_status
     }
     /// Consumes the builder and constructs a [`TapeRecoveryPointInfo`](crate::types::TapeRecoveryPointInfo).
     pub fn build(self) -> crate::types::TapeRecoveryPointInfo {

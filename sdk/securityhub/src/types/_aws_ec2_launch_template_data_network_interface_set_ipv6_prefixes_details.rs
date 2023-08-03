@@ -42,6 +42,10 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetailsBuilder {
         self.ipv6_prefix = input;
         self
     }
+    /// <p> The IPv6 prefix. </p>
+    pub fn get_ipv6_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv6_prefix
+    }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails`](crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails).
     pub fn build(
         self,

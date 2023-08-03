@@ -36,6 +36,12 @@ impl ModifyEndpointAccessFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyEndpointAccess as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::modify_endpoint_access::builders::ModifyEndpointAccessInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl ModifyEndpointAccessFluentBuilder {
         self.inner = self.inner.set_endpoint_name(input);
         self
     }
+    /// <p>The endpoint to be modified.</p>
+    pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_endpoint_name()
+    }
     /// Appends an item to `VpcSecurityGroupIds`.
     ///
     /// To override the contents of this collection use [`set_vpc_security_group_ids`](Self::set_vpc_security_group_ids).
@@ -151,5 +161,11 @@ impl ModifyEndpointAccessFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_vpc_security_group_ids(input);
         self
+    }
+    /// <p>The complete list of VPC security groups associated with the endpoint after the endpoint is modified.</p>
+    pub fn get_vpc_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_vpc_security_group_ids()
     }
 }

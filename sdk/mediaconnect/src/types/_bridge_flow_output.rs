@@ -56,6 +56,10 @@ impl BridgeFlowOutputBuilder {
         self.flow_arn = input;
         self
     }
+    /// The Amazon Resource Number (ARN) of the cloud flow.
+    pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_arn
+    }
     /// The Amazon Resource Number (ARN) of the flow source.
     pub fn flow_source_arn(
         mut self,
@@ -72,6 +76,10 @@ impl BridgeFlowOutputBuilder {
         self.flow_source_arn = input;
         self
     }
+    /// The Amazon Resource Number (ARN) of the flow source.
+    pub fn get_flow_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_source_arn
+    }
     /// The name of the bridge's output.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl BridgeFlowOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// The name of the bridge's output.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`BridgeFlowOutput`](crate::types::BridgeFlowOutput).
     pub fn build(self) -> crate::types::BridgeFlowOutput {

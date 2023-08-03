@@ -43,6 +43,10 @@ impl BoxPlotStyleOptionsBuilder {
         self.fill_style = input;
         self
     }
+    /// <p>The fill styles (solid, transparent) of the box plot.</p>
+    pub fn get_fill_style(&self) -> &::std::option::Option<crate::types::BoxPlotFillStyle> {
+        &self.fill_style
+    }
     /// Consumes the builder and constructs a [`BoxPlotStyleOptions`](crate::types::BoxPlotStyleOptions).
     pub fn build(self) -> crate::types::BoxPlotStyleOptions {
         crate::types::BoxPlotStyleOptions {

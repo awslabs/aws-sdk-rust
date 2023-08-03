@@ -85,6 +85,10 @@ impl UpdateConfigurationProfileInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The application ID.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The ID of the configuration profile.</p>
     pub fn configuration_profile_id(
         mut self,
@@ -101,6 +105,10 @@ impl UpdateConfigurationProfileInputBuilder {
         self.configuration_profile_id = input;
         self
     }
+    /// <p>The ID of the configuration profile.</p>
+    pub fn get_configuration_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_profile_id
+    }
     /// <p>The name of the configuration profile.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -111,6 +119,10 @@ impl UpdateConfigurationProfileInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the configuration profile.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A description of the configuration profile.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -120,6 +132,10 @@ impl UpdateConfigurationProfileInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the configuration profile.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
     pub fn retrieval_role_arn(
@@ -136,6 +152,10 @@ impl UpdateConfigurationProfileInputBuilder {
     ) -> Self {
         self.retrieval_role_arn = input;
         self
+    }
+    /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
+    pub fn get_retrieval_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.retrieval_role_arn
     }
     /// Appends an item to `validators`.
     ///
@@ -155,6 +175,12 @@ impl UpdateConfigurationProfileInputBuilder {
     ) -> Self {
         self.validators = input;
         self
+    }
+    /// <p>A list of methods for validating the configuration.</p>
+    pub fn get_validators(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Validator>> {
+        &self.validators
     }
     /// Consumes the builder and constructs a [`UpdateConfigurationProfileInput`](crate::operation::update_configuration_profile::UpdateConfigurationProfileInput).
     pub fn build(

@@ -45,6 +45,10 @@ impl GetReplicationConfigurationInputBuilder {
         self.source_server_id = input;
         self
     }
+    /// <p>The ID of the Source Serve for this Replication Configuration.r</p>
+    pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_server_id
+    }
     /// Consumes the builder and constructs a [`GetReplicationConfigurationInput`](crate::operation::get_replication_configuration::GetReplicationConfigurationInput).
     pub fn build(
         self,

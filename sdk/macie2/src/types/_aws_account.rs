@@ -48,6 +48,10 @@ impl AwsAccountBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The unique identifier for the Amazon Web Services account.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The unique identifier for the entity that performed the action.</p>
     pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl AwsAccountBuilder {
     pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal_id = input;
         self
+    }
+    /// <p>The unique identifier for the entity that performed the action.</p>
+    pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal_id
     }
     /// Consumes the builder and constructs a [`AwsAccount`](crate::types::AwsAccount).
     pub fn build(self) -> crate::types::AwsAccount {

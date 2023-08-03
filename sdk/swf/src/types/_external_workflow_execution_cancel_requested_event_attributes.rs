@@ -53,6 +53,12 @@ impl ExternalWorkflowExecutionCancelRequestedEventAttributesBuilder {
         self.workflow_execution = input;
         self
     }
+    /// <p>The external workflow execution to which the cancellation request was delivered.</p>
+    pub fn get_workflow_execution(
+        &self,
+    ) -> &::std::option::Option<crate::types::WorkflowExecution> {
+        &self.workflow_execution
+    }
     /// <p>The ID of the <code>RequestCancelExternalWorkflowExecutionInitiated</code> event corresponding to the <code>RequestCancelExternalWorkflowExecution</code> decision to cancel this external workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn initiated_event_id(mut self, input: i64) -> Self {
         self.initiated_event_id = ::std::option::Option::Some(input);
@@ -62,6 +68,10 @@ impl ExternalWorkflowExecutionCancelRequestedEventAttributesBuilder {
     pub fn set_initiated_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.initiated_event_id = input;
         self
+    }
+    /// <p>The ID of the <code>RequestCancelExternalWorkflowExecutionInitiated</code> event corresponding to the <code>RequestCancelExternalWorkflowExecution</code> decision to cancel this external workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    pub fn get_initiated_event_id(&self) -> &::std::option::Option<i64> {
+        &self.initiated_event_id
     }
     /// Consumes the builder and constructs a [`ExternalWorkflowExecutionCancelRequestedEventAttributes`](crate::types::ExternalWorkflowExecutionCancelRequestedEventAttributes).
     pub fn build(self) -> crate::types::ExternalWorkflowExecutionCancelRequestedEventAttributes {

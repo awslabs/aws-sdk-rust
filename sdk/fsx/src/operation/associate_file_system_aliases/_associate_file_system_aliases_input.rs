@@ -76,6 +76,10 @@ impl AssociateFileSystemAliasesInputBuilder {
         self.client_request_token = input;
         self
     }
+    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
+    }
     /// <p>Specifies the file system with which you want to associate one or more DNS aliases.</p>
     pub fn file_system_id(
         mut self,
@@ -91,6 +95,10 @@ impl AssociateFileSystemAliasesInputBuilder {
     ) -> Self {
         self.file_system_id = input;
         self
+    }
+    /// <p>Specifies the file system with which you want to associate one or more DNS aliases.</p>
+    pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_system_id
     }
     /// Appends an item to `aliases`.
     ///
@@ -124,6 +132,17 @@ impl AssociateFileSystemAliasesInputBuilder {
     ) -> Self {
         self.aliases = input;
         self
+    }
+    /// <p>An array of one or more DNS alias names to associate with the file system. The alias name has to comply with the following formatting requirements:</p>
+    /// <ul>
+    /// <li> <p>Formatted as a fully-qualified domain name (FQDN), <i> <code>hostname.domain</code> </i>, for example, <code>accounting.corp.example.com</code>.</p> </li>
+    /// <li> <p>Can contain alphanumeric characters and the hyphen (-).</p> </li>
+    /// <li> <p>Cannot start or end with a hyphen.</p> </li>
+    /// <li> <p>Can start with a numeric.</p> </li>
+    /// </ul>
+    /// <p>For DNS alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how you specify them: as uppercase letters, lowercase letters, or the corresponding letters in escape codes.</p>
+    pub fn get_aliases(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.aliases
     }
     /// Consumes the builder and constructs a [`AssociateFileSystemAliasesInput`](crate::operation::associate_file_system_aliases::AssociateFileSystemAliasesInput).
     pub fn build(

@@ -50,6 +50,10 @@ impl DescribeSubscriptionOutputBuilder {
         self.subscription = input;
         self
     }
+    /// <p>The Shield Advanced subscription details for an account.</p>
+    pub fn get_subscription(&self) -> &::std::option::Option<crate::types::Subscription> {
+        &self.subscription
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

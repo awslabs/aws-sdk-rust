@@ -77,6 +77,10 @@ impl GetDevicesInputBuilder {
         self.global_network_id = input;
         self
     }
+    /// <p>The ID of the global network.</p>
+    pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_network_id
+    }
     /// Appends an item to `device_ids`.
     ///
     /// To override the contents of this collection use [`set_device_ids`](Self::set_device_ids).
@@ -96,6 +100,10 @@ impl GetDevicesInputBuilder {
         self.device_ids = input;
         self
     }
+    /// <p>One or more device IDs. The maximum is 10.</p>
+    pub fn get_device_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.device_ids
+    }
     /// <p>The ID of the site.</p>
     pub fn site_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.site_id = ::std::option::Option::Some(input.into());
@@ -105,6 +113,10 @@ impl GetDevicesInputBuilder {
     pub fn set_site_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.site_id = input;
         self
+    }
+    /// <p>The ID of the site.</p>
+    pub fn get_site_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.site_id
     }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -116,6 +128,10 @@ impl GetDevicesInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -125,6 +141,10 @@ impl GetDevicesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`GetDevicesInput`](crate::operation::get_devices::GetDevicesInput).
     pub fn build(

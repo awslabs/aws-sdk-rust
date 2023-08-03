@@ -62,6 +62,10 @@ impl PutGeofenceOutputBuilder {
         self.geofence_id = input;
         self
     }
+    /// <p>The geofence identifier entered in the request.</p>
+    pub fn get_geofence_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.geofence_id
+    }
     /// <p>The timestamp for when the geofence was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl PutGeofenceOutputBuilder {
         self.create_time = input;
         self
     }
+    /// <p>The timestamp for when the geofence was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
+    pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_time
+    }
     /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
@@ -87,6 +95,10 @@ impl PutGeofenceOutputBuilder {
     ) -> Self {
         self.update_time = input;
         self
+    }
+    /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
+    pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

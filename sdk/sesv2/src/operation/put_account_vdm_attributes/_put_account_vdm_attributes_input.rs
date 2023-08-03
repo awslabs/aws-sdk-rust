@@ -45,6 +45,10 @@ impl PutAccountVdmAttributesInputBuilder {
         self.vdm_attributes = input;
         self
     }
+    /// <p>The VDM attributes that you wish to apply to your Amazon SES account.</p>
+    pub fn get_vdm_attributes(&self) -> &::std::option::Option<crate::types::VdmAttributes> {
+        &self.vdm_attributes
+    }
     /// Consumes the builder and constructs a [`PutAccountVdmAttributesInput`](crate::operation::put_account_vdm_attributes::PutAccountVdmAttributesInput).
     pub fn build(
         self,

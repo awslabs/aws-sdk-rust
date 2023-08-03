@@ -46,6 +46,10 @@ impl ResolveCustomerInputBuilder {
         self.registration_token = input;
         self
     }
+    /// <p>When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a <code>CustomerIdentifier</code> along with the <code>CustomerAWSAccountId</code> and <code>ProductCode</code>.</p>
+    pub fn get_registration_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registration_token
+    }
     /// Consumes the builder and constructs a [`ResolveCustomerInput`](crate::operation::resolve_customer::ResolveCustomerInput).
     pub fn build(
         self,

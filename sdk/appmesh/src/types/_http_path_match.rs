@@ -48,6 +48,10 @@ impl HttpPathMatchBuilder {
         self.exact = input;
         self
     }
+    /// <p>The exact path to match on.</p>
+    pub fn get_exact(&self) -> &::std::option::Option<::std::string::String> {
+        &self.exact
+    }
     /// <p>The regex used to match the path.</p>
     pub fn regex(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.regex = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl HttpPathMatchBuilder {
     pub fn set_regex(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.regex = input;
         self
+    }
+    /// <p>The regex used to match the path.</p>
+    pub fn get_regex(&self) -> &::std::option::Option<::std::string::String> {
+        &self.regex
     }
     /// Consumes the builder and constructs a [`HttpPathMatch`](crate::types::HttpPathMatch).
     pub fn build(self) -> crate::types::HttpPathMatch {

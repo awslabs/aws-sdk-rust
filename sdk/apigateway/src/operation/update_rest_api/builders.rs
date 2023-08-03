@@ -36,6 +36,12 @@ impl UpdateRestApiFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateRestApi as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_rest_api::builders::UpdateRestApiInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl UpdateRestApiFluentBuilder {
         self.inner = self.inner.set_rest_api_id(input);
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rest_api_id()
+    }
     /// Appends an item to `patchOperations`.
     ///
     /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
@@ -134,5 +144,11 @@ impl UpdateRestApiFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_patch_operations(input);
         self
+    }
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
+    pub fn get_patch_operations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
+        self.inner.get_patch_operations()
     }
 }

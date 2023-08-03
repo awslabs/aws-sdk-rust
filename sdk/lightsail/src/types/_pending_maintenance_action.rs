@@ -56,6 +56,10 @@ impl PendingMaintenanceActionBuilder {
         self.action = input;
         self
     }
+    /// <p>The type of pending database maintenance action.</p>
+    pub fn get_action(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action
+    }
     /// <p>Additional detail about the pending database maintenance action.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl PendingMaintenanceActionBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>Additional detail about the pending database maintenance action.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The effective date of the pending database maintenance action.</p>
     pub fn current_apply_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -78,6 +86,10 @@ impl PendingMaintenanceActionBuilder {
     ) -> Self {
         self.current_apply_date = input;
         self
+    }
+    /// <p>The effective date of the pending database maintenance action.</p>
+    pub fn get_current_apply_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.current_apply_date
     }
     /// Consumes the builder and constructs a [`PendingMaintenanceAction`](crate::types::PendingMaintenanceAction).
     pub fn build(self) -> crate::types::PendingMaintenanceAction {

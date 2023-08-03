@@ -65,6 +65,10 @@ impl DescribeJobsRequestFiltersBuilder {
         self.job_i_ds = input;
         self
     }
+    /// <p>Request to describe Job log filters by job ID.</p>
+    pub fn get_job_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.job_i_ds
+    }
     /// <p>Request to describe Job log filters by date.</p>
     pub fn from_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.from_date = ::std::option::Option::Some(input.into());
@@ -75,6 +79,10 @@ impl DescribeJobsRequestFiltersBuilder {
         self.from_date = input;
         self
     }
+    /// <p>Request to describe Job log filters by date.</p>
+    pub fn get_from_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.from_date
+    }
     /// <p>Request to describe job log items by last date.</p>
     pub fn to_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.to_date = ::std::option::Option::Some(input.into());
@@ -84,6 +92,10 @@ impl DescribeJobsRequestFiltersBuilder {
     pub fn set_to_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.to_date = input;
         self
+    }
+    /// <p>Request to describe job log items by last date.</p>
+    pub fn get_to_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.to_date
     }
     /// Consumes the builder and constructs a [`DescribeJobsRequestFilters`](crate::types::DescribeJobsRequestFilters).
     pub fn build(self) -> crate::types::DescribeJobsRequestFilters {

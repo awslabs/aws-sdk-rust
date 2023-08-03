@@ -56,6 +56,10 @@ impl MemberErrorBuilder {
         self.member_id = input;
         self
     }
+    /// <p>The member ID.</p>
+    pub fn get_member_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.member_id
+    }
     /// <p>The error code.</p>
     pub fn error_code(mut self, input: crate::types::ErrorCode) -> Self {
         self.error_code = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl MemberErrorBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::ErrorCode>) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>The error code.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<crate::types::ErrorCode> {
+        &self.error_code
     }
     /// <p>The error message.</p>
     pub fn error_message(
@@ -81,6 +89,10 @@ impl MemberErrorBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>The error message.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`MemberError`](crate::types::MemberError).
     pub fn build(self) -> crate::types::MemberError {

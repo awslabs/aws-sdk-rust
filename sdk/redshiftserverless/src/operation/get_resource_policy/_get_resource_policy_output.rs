@@ -50,6 +50,10 @@ impl GetResourcePolicyOutputBuilder {
         self.resource_policy = input;
         self
     }
+    /// <p>The returned resource policy.</p>
+    pub fn get_resource_policy(&self) -> &::std::option::Option<crate::types::ResourcePolicy> {
+        &self.resource_policy
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

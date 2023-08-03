@@ -48,6 +48,10 @@ impl DiskBuilder {
         self.device_name = input;
         self
     }
+    /// <p>The disk or device name.</p>
+    pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_name
+    }
     /// <p>The amount of storage on the disk in bytes.</p>
     pub fn bytes(mut self, input: i64) -> Self {
         self.bytes = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl DiskBuilder {
     pub fn set_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.bytes = input;
         self
+    }
+    /// <p>The amount of storage on the disk in bytes.</p>
+    pub fn get_bytes(&self) -> &::std::option::Option<i64> {
+        &self.bytes
     }
     /// Consumes the builder and constructs a [`Disk`](crate::types::Disk).
     pub fn build(self) -> crate::types::Disk {

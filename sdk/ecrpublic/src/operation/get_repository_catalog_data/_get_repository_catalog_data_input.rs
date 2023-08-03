@@ -49,6 +49,10 @@ impl GetRepositoryCatalogDataInputBuilder {
         self.registry_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID that's associated with the registry that contains the repositories to be described. If you do not specify a registry, the default public registry is assumed.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_id
+    }
     /// <p>The name of the repository to retrieve the catalog metadata for.</p>
     pub fn repository_name(
         mut self,
@@ -64,6 +68,10 @@ impl GetRepositoryCatalogDataInputBuilder {
     ) -> Self {
         self.repository_name = input;
         self
+    }
+    /// <p>The name of the repository to retrieve the catalog metadata for.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
     }
     /// Consumes the builder and constructs a [`GetRepositoryCatalogDataInput`](crate::operation::get_repository_catalog_data::GetRepositoryCatalogDataInput).
     pub fn build(

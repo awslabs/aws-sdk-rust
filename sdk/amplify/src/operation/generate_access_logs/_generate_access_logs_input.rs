@@ -68,6 +68,10 @@ impl GenerateAccessLogsInputBuilder {
         self.start_time = input;
         self
     }
+    /// <p> The time at which the logs should start. The time range specified is inclusive of the start time. </p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p> The time at which the logs should end. The time range specified is inclusive of the end time. </p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl GenerateAccessLogsInputBuilder {
         self.end_time = input;
         self
     }
+    /// <p> The time at which the logs should end. The time range specified is inclusive of the end time. </p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p> The name of the domain. </p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl GenerateAccessLogsInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p> The name of the domain. </p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p> The unique ID for an Amplify app. </p>
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
@@ -100,6 +112,10 @@ impl GenerateAccessLogsInputBuilder {
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_id = input;
         self
+    }
+    /// <p> The unique ID for an Amplify app. </p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
     }
     /// Consumes the builder and constructs a [`GenerateAccessLogsInput`](crate::operation::generate_access_logs::GenerateAccessLogsInput).
     pub fn build(

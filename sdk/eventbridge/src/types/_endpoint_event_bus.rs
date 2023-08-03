@@ -46,6 +46,10 @@ impl EndpointEventBusBuilder {
         self.event_bus_arn = input;
         self
     }
+    /// <p>The ARN of the event bus the endpoint is associated with.</p>
+    pub fn get_event_bus_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_bus_arn
+    }
     /// Consumes the builder and constructs a [`EndpointEventBus`](crate::types::EndpointEventBus).
     pub fn build(self) -> crate::types::EndpointEventBus {
         crate::types::EndpointEventBus {

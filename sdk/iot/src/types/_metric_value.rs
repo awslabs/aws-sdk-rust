@@ -80,6 +80,10 @@ impl MetricValueBuilder {
         self.count = input;
         self
     }
+    /// <p>If the <code>comparisonOperator</code> calls for a numeric value, use this to specify that numeric value to be compared with the <code>metric</code>.</p>
+    pub fn get_count(&self) -> &::std::option::Option<i64> {
+        &self.count
+    }
     /// Appends an item to `cidrs`.
     ///
     /// To override the contents of this collection use [`set_cidrs`](Self::set_cidrs).
@@ -99,6 +103,10 @@ impl MetricValueBuilder {
         self.cidrs = input;
         self
     }
+    /// <p>If the <code>comparisonOperator</code> calls for a set of CIDRs, use this to specify that set to be compared with the <code>metric</code>.</p>
+    pub fn get_cidrs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.cidrs
+    }
     /// Appends an item to `ports`.
     ///
     /// To override the contents of this collection use [`set_ports`](Self::set_ports).
@@ -115,6 +123,10 @@ impl MetricValueBuilder {
         self.ports = input;
         self
     }
+    /// <p>If the <code>comparisonOperator</code> calls for a set of ports, use this to specify that set to be compared with the <code>metric</code>.</p>
+    pub fn get_ports(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        &self.ports
+    }
     /// <p> The numeral value of a metric. </p>
     pub fn number(mut self, input: f64) -> Self {
         self.number = ::std::option::Option::Some(input);
@@ -124,6 +136,10 @@ impl MetricValueBuilder {
     pub fn set_number(mut self, input: ::std::option::Option<f64>) -> Self {
         self.number = input;
         self
+    }
+    /// <p> The numeral value of a metric. </p>
+    pub fn get_number(&self) -> &::std::option::Option<f64> {
+        &self.number
     }
     /// Appends an item to `numbers`.
     ///
@@ -140,6 +156,10 @@ impl MetricValueBuilder {
     pub fn set_numbers(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.numbers = input;
         self
+    }
+    /// <p> The numeral values of a metric. </p>
+    pub fn get_numbers(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+        &self.numbers
     }
     /// Appends an item to `strings`.
     ///
@@ -159,6 +179,10 @@ impl MetricValueBuilder {
     ) -> Self {
         self.strings = input;
         self
+    }
+    /// <p> The string values of a metric. </p>
+    pub fn get_strings(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.strings
     }
     /// Consumes the builder and constructs a [`MetricValue`](crate::types::MetricValue).
     pub fn build(self) -> crate::types::MetricValue {

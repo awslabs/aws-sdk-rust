@@ -53,6 +53,10 @@ impl StopApplicationInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The unique identifier of the application you want to stop.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>Stopping an application process can take a long time. Setting this parameter to true lets you force stop the application so you don't need to wait until the process finishes to apply another action on the application. The default value is false.</p>
     pub fn force_stop(mut self, input: bool) -> Self {
         self.force_stop = ::std::option::Option::Some(input);
@@ -62,6 +66,10 @@ impl StopApplicationInputBuilder {
     pub fn set_force_stop(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force_stop = input;
         self
+    }
+    /// <p>Stopping an application process can take a long time. Setting this parameter to true lets you force stop the application so you don't need to wait until the process finishes to apply another action on the application. The default value is false.</p>
+    pub fn get_force_stop(&self) -> &::std::option::Option<bool> {
+        &self.force_stop
     }
     /// Consumes the builder and constructs a [`StopApplicationInput`](crate::operation::stop_application::StopApplicationInput).
     pub fn build(

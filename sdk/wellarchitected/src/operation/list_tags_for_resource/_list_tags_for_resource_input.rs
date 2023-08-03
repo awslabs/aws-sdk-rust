@@ -41,6 +41,10 @@ impl ListTagsForResourceInputBuilder {
         self.workload_arn = input;
         self
     }
+    /// <p>The ARN for the workload.</p>
+    pub fn get_workload_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workload_arn
+    }
     /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::operation::list_tags_for_resource::ListTagsForResourceInput).
     pub fn build(
         self,

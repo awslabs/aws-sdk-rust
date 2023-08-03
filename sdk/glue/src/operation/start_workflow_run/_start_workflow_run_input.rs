@@ -56,6 +56,10 @@ impl StartWorkflowRunInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the workflow to start.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Adds a key-value pair to `run_properties`.
     ///
     /// To override the contents of this collection use [`set_run_properties`](Self::set_run_properties).
@@ -80,6 +84,14 @@ impl StartWorkflowRunInputBuilder {
     ) -> Self {
         self.run_properties = input;
         self
+    }
+    /// <p>The workflow run properties for the new workflow run.</p>
+    pub fn get_run_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.run_properties
     }
     /// Consumes the builder and constructs a [`StartWorkflowRunInput`](crate::operation::start_workflow_run::StartWorkflowRunInput).
     pub fn build(

@@ -323,6 +323,10 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
         self.engine = input;
         self
     }
+    /// <p>The name of the database engine.</p>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine
+    }
     /// <p>The version number of the database engine.</p>
     pub fn engine_version(
         mut self,
@@ -338,6 +342,10 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
     ) -> Self {
         self.engine_version = input;
         self
+    }
+    /// <p>The version number of the database engine.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
     }
     /// <p>The name of the DB parameter group family for the database engine.</p>
     pub fn db_parameter_group_family(
@@ -355,6 +363,10 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
         self.db_parameter_group_family = input;
         self
     }
+    /// <p>The name of the DB parameter group family for the database engine.</p>
+    pub fn get_db_parameter_group_family(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_parameter_group_family
+    }
     /// <p>The description of the database engine.</p>
     pub fn db_engine_description(
         mut self,
@@ -370,6 +382,10 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
     ) -> Self {
         self.db_engine_description = input;
         self
+    }
+    /// <p>The description of the database engine.</p>
+    pub fn get_db_engine_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_engine_description
     }
     /// <p>The description of the database engine version.</p>
     pub fn db_engine_version_description(
@@ -387,6 +403,12 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
         self.db_engine_version_description = input;
         self
     }
+    /// <p>The description of the database engine version.</p>
+    pub fn get_db_engine_version_description(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.db_engine_version_description
+    }
     /// <p>The default character set for new instances of this engine version, if the <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't specified.</p>
     pub fn default_character_set(mut self, input: crate::types::CharacterSet) -> Self {
         self.default_character_set = ::std::option::Option::Some(input);
@@ -400,6 +422,10 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
         self.default_character_set = input;
         self
     }
+    /// <p>The default character set for new instances of this engine version, if the <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't specified.</p>
+    pub fn get_default_character_set(&self) -> &::std::option::Option<crate::types::CharacterSet> {
+        &self.default_character_set
+    }
     /// <p>The EC2 image</p>
     pub fn image(mut self, input: crate::types::CustomDbEngineVersionAmi) -> Self {
         self.image = ::std::option::Option::Some(input);
@@ -412,6 +438,10 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
     ) -> Self {
         self.image = input;
         self
+    }
+    /// <p>The EC2 image</p>
+    pub fn get_image(&self) -> &::std::option::Option<crate::types::CustomDbEngineVersionAmi> {
+        &self.image
     }
     /// <p>A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS Custom for SQL Server.</p>
     pub fn db_engine_media_type(
@@ -428,6 +458,10 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
     ) -> Self {
         self.db_engine_media_type = input;
         self
+    }
+    /// <p>A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS Custom for SQL Server.</p>
+    pub fn get_db_engine_media_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_engine_media_type
     }
     /// Appends an item to `supported_character_sets`.
     ///
@@ -448,6 +482,12 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
         self.supported_character_sets = input;
         self
     }
+    /// <p>A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
+    pub fn get_supported_character_sets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CharacterSet>> {
+        &self.supported_character_sets
+    }
     /// Appends an item to `supported_nchar_character_sets`.
     ///
     /// To override the contents of this collection use [`set_supported_nchar_character_sets`](Self::set_supported_nchar_character_sets).
@@ -466,6 +506,12 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
     ) -> Self {
         self.supported_nchar_character_sets = input;
         self
+    }
+    /// <p>A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
+    pub fn get_supported_nchar_character_sets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CharacterSet>> {
+        &self.supported_nchar_character_sets
     }
     /// Appends an item to `valid_upgrade_target`.
     ///
@@ -486,6 +532,12 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
         self.valid_upgrade_target = input;
         self
     }
+    /// <p>A list of engine versions that this database engine version can be upgraded to.</p>
+    pub fn get_valid_upgrade_target(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpgradeTarget>> {
+        &self.valid_upgrade_target
+    }
     /// Appends an item to `supported_timezones`.
     ///
     /// To override the contents of this collection use [`set_supported_timezones`](Self::set_supported_timezones).
@@ -504,6 +556,12 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
     ) -> Self {
         self.supported_timezones = input;
         self
+    }
+    /// <p>A list of the time zones supported by this engine for the <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.</p>
+    pub fn get_supported_timezones(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Timezone>> {
+        &self.supported_timezones
     }
     /// Appends an item to `exportable_log_types`.
     ///
@@ -527,6 +585,12 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
         self.exportable_log_types = input;
         self
     }
+    /// <p>The types of logs that the database engine has available for export to CloudWatch Logs.</p>
+    pub fn get_exportable_log_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.exportable_log_types
+    }
     /// <p>A value that indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to CloudWatch Logs.</p>
     pub fn supports_log_exports_to_cloudwatch_logs(mut self, input: bool) -> Self {
         self.supports_log_exports_to_cloudwatch_logs = ::std::option::Option::Some(input);
@@ -540,6 +604,10 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
         self.supports_log_exports_to_cloudwatch_logs = input;
         self
     }
+    /// <p>A value that indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to CloudWatch Logs.</p>
+    pub fn get_supports_log_exports_to_cloudwatch_logs(&self) -> &::std::option::Option<bool> {
+        &self.supports_log_exports_to_cloudwatch_logs
+    }
     /// <p>Indicates whether the database engine version supports read replicas.</p>
     pub fn supports_read_replica(mut self, input: bool) -> Self {
         self.supports_read_replica = ::std::option::Option::Some(input);
@@ -549,6 +617,10 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
     pub fn set_supports_read_replica(mut self, input: ::std::option::Option<bool>) -> Self {
         self.supports_read_replica = input;
         self
+    }
+    /// <p>Indicates whether the database engine version supports read replicas.</p>
+    pub fn get_supports_read_replica(&self) -> &::std::option::Option<bool> {
+        &self.supports_read_replica
     }
     /// Appends an item to `supported_engine_modes`.
     ///
@@ -571,6 +643,12 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
     ) -> Self {
         self.supported_engine_modes = input;
         self
+    }
+    /// <p>A list of the supported DB engine modes.</p>
+    pub fn get_supported_engine_modes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.supported_engine_modes
     }
     /// Appends an item to `supported_feature_names`.
     ///
@@ -614,6 +692,22 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
         self.supported_feature_names = input;
         self
     }
+    /// <p>A list of features supported by the DB engine.</p>
+    /// <p>The supported features vary by DB engine and DB engine version.</p>
+    /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p>
+    /// <p> <code>aws rds describe-db-engine-versions --engine
+    /// <engine_name>
+    /// --engine-version
+    /// <engine_version></engine_version>
+    /// </engine_name></code> </p>
+    /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI, use the following command:</p>
+    /// <p> <code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p>
+    /// <p>The supported features are listed under <code>SupportedFeatureNames</code> in the output.</p>
+    pub fn get_supported_feature_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.supported_feature_names
+    }
     /// <p>The status of the DB engine version, either <code>available</code> or <code>deprecated</code>.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -623,6 +717,10 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the DB engine version, either <code>available</code> or <code>deprecated</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>A value that indicates whether you can use Aurora parallel query with a specific DB engine version.</p>
     pub fn supports_parallel_query(mut self, input: bool) -> Self {
@@ -634,6 +732,10 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
         self.supports_parallel_query = input;
         self
     }
+    /// <p>A value that indicates whether you can use Aurora parallel query with a specific DB engine version.</p>
+    pub fn get_supports_parallel_query(&self) -> &::std::option::Option<bool> {
+        &self.supports_parallel_query
+    }
     /// <p>A value that indicates whether you can use Aurora global databases with a specific DB engine version.</p>
     pub fn supports_global_databases(mut self, input: bool) -> Self {
         self.supports_global_databases = ::std::option::Option::Some(input);
@@ -643,6 +745,10 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
     pub fn set_supports_global_databases(mut self, input: ::std::option::Option<bool>) -> Self {
         self.supports_global_databases = input;
         self
+    }
+    /// <p>A value that indicates whether you can use Aurora global databases with a specific DB engine version.</p>
+    pub fn get_supports_global_databases(&self) -> &::std::option::Option<bool> {
+        &self.supports_global_databases
     }
     /// <p>The major engine version of the CEV.</p>
     pub fn major_engine_version(
@@ -660,6 +766,10 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
         self.major_engine_version = input;
         self
     }
+    /// <p>The major engine version of the CEV.</p>
+    pub fn get_major_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.major_engine_version
+    }
     /// <p>The name of the Amazon S3 bucket that contains your database installation files.</p>
     pub fn database_installation_files_s3_bucket_name(
         mut self,
@@ -675,6 +785,12 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
     ) -> Self {
         self.database_installation_files_s3_bucket_name = input;
         self
+    }
+    /// <p>The name of the Amazon S3 bucket that contains your database installation files.</p>
+    pub fn get_database_installation_files_s3_bucket_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.database_installation_files_s3_bucket_name
     }
     /// <p>The Amazon S3 directory that contains the database installation files. If not specified, then no prefix is assumed.</p>
     pub fn database_installation_files_s3_prefix(
@@ -692,6 +808,12 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
         self.database_installation_files_s3_prefix = input;
         self
     }
+    /// <p>The Amazon S3 directory that contains the database installation files. If not specified, then no prefix is assumed.</p>
+    pub fn get_database_installation_files_s3_prefix(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.database_installation_files_s3_prefix
+    }
     /// <p>The ARN of the custom engine version.</p>
     pub fn db_engine_version_arn(
         mut self,
@@ -708,6 +830,10 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
         self.db_engine_version_arn = input;
         self
     }
+    /// <p>The ARN of the custom engine version.</p>
+    pub fn get_db_engine_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_engine_version_arn
+    }
     /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. This parameter is required for RDS Custom, but optional for Amazon RDS.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -717,6 +843,10 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. This parameter is required for RDS Custom, but optional for Amazon RDS.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// <p>The creation time of the DB engine version.</p>
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -730,6 +860,10 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
     ) -> Self {
         self.create_time = input;
         self
+    }
+    /// <p>The creation time of the DB engine version.</p>
+    pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_time
     }
     /// Appends an item to `tag_list`.
     ///
@@ -750,6 +884,10 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
         self.tag_list = input;
         self
     }
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tag_list
+    }
     /// <p>A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
     pub fn supports_babelfish(mut self, input: bool) -> Self {
         self.supports_babelfish = ::std::option::Option::Some(input);
@@ -759,6 +897,10 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
     pub fn set_supports_babelfish(mut self, input: ::std::option::Option<bool>) -> Self {
         self.supports_babelfish = input;
         self
+    }
+    /// <p>A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
+    pub fn get_supports_babelfish(&self) -> &::std::option::Option<bool> {
+        &self.supports_babelfish
     }
     /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
     pub fn custom_db_engine_version_manifest(
@@ -776,6 +918,12 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
         self.custom_db_engine_version_manifest = input;
         self
     }
+    /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
+    pub fn get_custom_db_engine_version_manifest(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.custom_db_engine_version_manifest
+    }
     /// <p>A value that indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
     pub fn supports_certificate_rotation_without_restart(mut self, input: bool) -> Self {
         self.supports_certificate_rotation_without_restart = ::std::option::Option::Some(input);
@@ -788,6 +936,12 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
     ) -> Self {
         self.supports_certificate_rotation_without_restart = input;
         self
+    }
+    /// <p>A value that indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
+    pub fn get_supports_certificate_rotation_without_restart(
+        &self,
+    ) -> &::std::option::Option<bool> {
+        &self.supports_certificate_rotation_without_restart
     }
     /// Appends an item to `supported_ca_certificate_identifiers`.
     ///
@@ -814,6 +968,13 @@ impl DeleteCustomDbEngineVersionOutputBuilder {
     ) -> Self {
         self.supported_ca_certificate_identifiers = input;
         self
+    }
+    /// <p>A list of the supported CA certificate identifiers.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn get_supported_ca_certificate_identifiers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.supported_ca_certificate_identifiers
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

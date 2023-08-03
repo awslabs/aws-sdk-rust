@@ -56,6 +56,10 @@ impl AccessTokenSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The system-generated ID of the personal access token.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The friendly name of the personal access token.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl AccessTokenSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The friendly name of the personal access token.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The date and time when the personal access token will expire, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
     pub fn expires_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -78,6 +86,10 @@ impl AccessTokenSummaryBuilder {
     ) -> Self {
         self.expires_time = input;
         self
+    }
+    /// <p>The date and time when the personal access token will expire, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
+    pub fn get_expires_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expires_time
     }
     /// Consumes the builder and constructs a [`AccessTokenSummary`](crate::types::AccessTokenSummary).
     pub fn build(self) -> crate::types::AccessTokenSummary {

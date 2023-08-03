@@ -40,6 +40,10 @@ impl CreateModelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateModel as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_model::builders::CreateModelInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -122,6 +126,10 @@ impl CreateModelFluentBuilder {
         self.inner = self.inner.set_project_name(input);
         self
     }
+    /// <p>The name of the project in which you want to create a model version.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_name()
+    }
     /// <p>A description for the version of the model.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -131,6 +139,10 @@ impl CreateModelFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description for the version of the model.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>ClientToken is an idempotency token that ensures a call to <code>CreateModel</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>CreateModel</code>. In this case, safely retry your call to <code>CreateModel</code> by using the same <code>ClientToken</code> parameter value. </p>
     /// <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from starting multiple training jobs. You'll need to provide your own value for other use cases. </p>
@@ -146,6 +158,12 @@ impl CreateModelFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>ClientToken is an idempotency token that ensures a call to <code>CreateModel</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>CreateModel</code>. In this case, safely retry your call to <code>CreateModel</code> by using the same <code>ClientToken</code> parameter value. </p>
+    /// <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from starting multiple training jobs. You'll need to provide your own value for other use cases. </p>
+    /// <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>CreateModel</code>. An idempotency token is active for 8 hours.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>The location where Amazon Lookout for Vision saves the training results.</p>
     pub fn output_config(mut self, input: crate::types::OutputConfig) -> Self {
         self.inner = self.inner.output_config(input);
@@ -159,6 +177,10 @@ impl CreateModelFluentBuilder {
         self.inner = self.inner.set_output_config(input);
         self
     }
+    /// <p>The location where Amazon Lookout for Vision saves the training results.</p>
+    pub fn get_output_config(&self) -> &::std::option::Option<crate::types::OutputConfig> {
+        self.inner.get_output_config()
+    }
     /// <p>The identifier for your AWS KMS key. The key is used to encrypt training and test images copied into the service for model training. Your source images are unaffected. If this parameter is not specified, the copied images are encrypted by a key that AWS owns and manages.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
@@ -168,6 +190,10 @@ impl CreateModelFluentBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
         self
+    }
+    /// <p>The identifier for your AWS KMS key. The key is used to encrypt training and test images copied into the service for model training. Your source images are unaffected. If this parameter is not specified, the copied images are encrypted by a key that AWS owns and manages.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key_id()
     }
     /// Appends an item to `Tags`.
     ///
@@ -185,5 +211,9 @@ impl CreateModelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A set of tags (key-value pairs) that you want to attach to the model.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

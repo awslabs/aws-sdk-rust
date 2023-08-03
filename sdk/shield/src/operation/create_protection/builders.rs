@@ -37,6 +37,12 @@ impl CreateProtectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateProtection as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_protection::builders::CreateProtectionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl CreateProtectionFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>Friendly name for the <code>Protection</code> you are creating.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The ARN (Amazon Resource Name) of the resource to be protected.</p>
     /// <p>The ARN should be in one of the following formats:</p>
     /// <ul>
@@ -155,6 +165,19 @@ impl CreateProtectionFluentBuilder {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
+    /// <p>The ARN (Amazon Resource Name) of the resource to be protected.</p>
+    /// <p>The ARN should be in one of the following formats:</p>
+    /// <ul>
+    /// <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li>
+    /// <li> <p>For an Elastic Load Balancer (Classic Load Balancer): <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i> </code> </p> </li>
+    /// <li> <p>For an Amazon CloudFront distribution: <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i> </code> </p> </li>
+    /// <li> <p>For an Global Accelerator standard accelerator: <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i> </code> </p> </li>
+    /// <li> <p>For Amazon Route&nbsp;53: <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li>
+    /// <li> <p>For an Elastic IP address: <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i> </code> </p> </li>
+    /// </ul>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -171,5 +194,9 @@ impl CreateProtectionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>One or more tag key-value pairs for the <code>Protection</code> object that is created.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

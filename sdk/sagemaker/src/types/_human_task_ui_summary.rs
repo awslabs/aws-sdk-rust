@@ -62,6 +62,10 @@ impl HumanTaskUiSummaryBuilder {
         self.human_task_ui_name = input;
         self
     }
+    /// <p>The name of the human task user interface.</p>
+    pub fn get_human_task_ui_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.human_task_ui_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the human task user interface.</p>
     pub fn human_task_ui_arn(
         mut self,
@@ -78,6 +82,10 @@ impl HumanTaskUiSummaryBuilder {
         self.human_task_ui_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the human task user interface.</p>
+    pub fn get_human_task_ui_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.human_task_ui_arn
+    }
     /// <p>A timestamp when SageMaker created the human task user interface.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -90,6 +98,10 @@ impl HumanTaskUiSummaryBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>A timestamp when SageMaker created the human task user interface.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// Consumes the builder and constructs a [`HumanTaskUiSummary`](crate::types::HumanTaskUiSummary).
     pub fn build(self) -> crate::types::HumanTaskUiSummary {

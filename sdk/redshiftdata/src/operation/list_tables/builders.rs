@@ -46,6 +46,10 @@ impl ListTablesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListTables as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_tables::builders::ListTablesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +144,10 @@ impl ListTablesFluentBuilder {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
+    /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_identifier()
+    }
     /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
     pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.secret_arn(input.into());
@@ -149,6 +157,10 @@ impl ListTablesFluentBuilder {
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_secret_arn(input);
         self
+    }
+    /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
+    pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_secret_arn()
     }
     /// <p>The database user name. This parameter is required when connecting to a cluster as a database user and authenticating using temporary credentials. </p>
     pub fn db_user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -160,6 +172,10 @@ impl ListTablesFluentBuilder {
         self.inner = self.inner.set_db_user(input);
         self
     }
+    /// <p>The database user name. This parameter is required when connecting to a cluster as a database user and authenticating using temporary credentials. </p>
+    pub fn get_db_user(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_user()
+    }
     /// <p>The name of the database that contains the tables to list. If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.database(input.into());
@@ -169,6 +185,10 @@ impl ListTablesFluentBuilder {
     pub fn set_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_database(input);
         self
+    }
+    /// <p>The name of the database that contains the tables to list. If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
+    pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_database()
     }
     /// <p>A database name. The connected database is specified when you connect with your authentication credentials. </p>
     pub fn connected_database(
@@ -186,6 +206,10 @@ impl ListTablesFluentBuilder {
         self.inner = self.inner.set_connected_database(input);
         self
     }
+    /// <p>A database name. The connected database is specified when you connect with your authentication credentials. </p>
+    pub fn get_connected_database(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connected_database()
+    }
     /// <p>A pattern to filter results by schema name. Within a schema pattern, "%" means match any substring of 0 or more characters and "_" means match any one character. Only schema name entries matching the search pattern are returned. If <code>SchemaPattern</code> is not specified, then all tables that match <code>TablePattern</code> are returned. If neither <code>SchemaPattern</code> or <code>TablePattern</code> are specified, then all tables are returned. </p>
     pub fn schema_pattern(
         mut self,
@@ -201,6 +225,10 @@ impl ListTablesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_schema_pattern(input);
         self
+    }
+    /// <p>A pattern to filter results by schema name. Within a schema pattern, "%" means match any substring of 0 or more characters and "_" means match any one character. Only schema name entries matching the search pattern are returned. If <code>SchemaPattern</code> is not specified, then all tables that match <code>TablePattern</code> are returned. If neither <code>SchemaPattern</code> or <code>TablePattern</code> are specified, then all tables are returned. </p>
+    pub fn get_schema_pattern(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_schema_pattern()
     }
     /// <p>A pattern to filter results by table name. Within a table pattern, "%" means match any substring of 0 or more characters and "_" means match any one character. Only table name entries matching the search pattern are returned. If <code>TablePattern</code> is not specified, then all tables that match <code>SchemaPattern</code>are returned. If neither <code>SchemaPattern</code> or <code>TablePattern</code> are specified, then all tables are returned. </p>
     pub fn table_pattern(
@@ -218,6 +246,10 @@ impl ListTablesFluentBuilder {
         self.inner = self.inner.set_table_pattern(input);
         self
     }
+    /// <p>A pattern to filter results by table name. Within a table pattern, "%" means match any substring of 0 or more characters and "_" means match any one character. Only table name entries matching the search pattern are returned. If <code>TablePattern</code> is not specified, then all tables that match <code>SchemaPattern</code>are returned. If neither <code>SchemaPattern</code> or <code>TablePattern</code> are specified, then all tables are returned. </p>
+    pub fn get_table_pattern(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_table_pattern()
+    }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -228,6 +260,10 @@ impl ListTablesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of tables to return in the response. If more tables exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -237,6 +273,10 @@ impl ListTablesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of tables to return in the response. If more tables exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
     pub fn workgroup_name(
@@ -253,5 +293,9 @@ impl ListTablesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_workgroup_name(input);
         self
+    }
+    /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
+    pub fn get_workgroup_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workgroup_name()
     }
 }

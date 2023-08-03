@@ -45,6 +45,12 @@ impl DeleteOrganizationConfigRuleInputBuilder {
         self.organization_config_rule_name = input;
         self
     }
+    /// <p>The name of organization Config rule that you want to delete.</p>
+    pub fn get_organization_config_rule_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.organization_config_rule_name
+    }
     /// Consumes the builder and constructs a [`DeleteOrganizationConfigRuleInput`](crate::operation::delete_organization_config_rule::DeleteOrganizationConfigRuleInput).
     pub fn build(
         self,

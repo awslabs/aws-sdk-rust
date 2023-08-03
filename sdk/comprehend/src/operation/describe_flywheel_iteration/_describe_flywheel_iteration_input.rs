@@ -48,6 +48,10 @@ impl DescribeFlywheelIterationInputBuilder {
         self
     }
     /// <p></p>
+    pub fn get_flywheel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flywheel_arn
+    }
+    /// <p></p>
     pub fn flywheel_iteration_id(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -62,6 +66,10 @@ impl DescribeFlywheelIterationInputBuilder {
     ) -> Self {
         self.flywheel_iteration_id = input;
         self
+    }
+    /// <p></p>
+    pub fn get_flywheel_iteration_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flywheel_iteration_id
     }
     /// Consumes the builder and constructs a [`DescribeFlywheelIterationInput`](crate::operation::describe_flywheel_iteration::DescribeFlywheelIterationInput).
     pub fn build(

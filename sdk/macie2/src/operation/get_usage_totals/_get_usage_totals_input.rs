@@ -39,6 +39,10 @@ impl GetUsageTotalsInputBuilder {
         self.time_range = input;
         self
     }
+    /// <p>The inclusive time period to retrieve the data for. Valid values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value for this parameter, Amazon Macie provides aggregated usage data for the preceding 30 days.</p>
+    pub fn get_time_range(&self) -> &::std::option::Option<::std::string::String> {
+        &self.time_range
+    }
     /// Consumes the builder and constructs a [`GetUsageTotalsInput`](crate::operation::get_usage_totals::GetUsageTotalsInput).
     pub fn build(
         self,

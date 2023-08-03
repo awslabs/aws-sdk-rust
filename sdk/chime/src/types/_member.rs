@@ -81,6 +81,10 @@ impl MemberBuilder {
         self.member_id = input;
         self
     }
+    /// <p>The member ID (user ID or bot ID).</p>
+    pub fn get_member_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.member_id
+    }
     /// <p>The member type.</p>
     pub fn member_type(mut self, input: crate::types::MemberType) -> Self {
         self.member_type = ::std::option::Option::Some(input);
@@ -94,6 +98,10 @@ impl MemberBuilder {
         self.member_type = input;
         self
     }
+    /// <p>The member type.</p>
+    pub fn get_member_type(&self) -> &::std::option::Option<crate::types::MemberType> {
+        &self.member_type
+    }
     /// <p>The member email address.</p>
     pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email = ::std::option::Option::Some(input.into());
@@ -103,6 +111,10 @@ impl MemberBuilder {
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email = input;
         self
+    }
+    /// <p>The member email address.</p>
+    pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email
     }
     /// <p>The member name.</p>
     pub fn full_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -114,6 +126,10 @@ impl MemberBuilder {
         self.full_name = input;
         self
     }
+    /// <p>The member name.</p>
+    pub fn get_full_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.full_name
+    }
     /// <p>The Amazon Chime account ID.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -123,6 +139,10 @@ impl MemberBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// Consumes the builder and constructs a [`Member`](crate::types::Member).
     pub fn build(self) -> crate::types::Member {

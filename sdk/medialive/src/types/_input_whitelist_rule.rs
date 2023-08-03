@@ -40,6 +40,10 @@ impl InputWhitelistRuleBuilder {
         self.cidr = input;
         self
     }
+    /// The IPv4 CIDR that's whitelisted.
+    pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr
+    }
     /// Consumes the builder and constructs a [`InputWhitelistRule`](crate::types::InputWhitelistRule).
     pub fn build(self) -> crate::types::InputWhitelistRule {
         crate::types::InputWhitelistRule { cidr: self.cidr }

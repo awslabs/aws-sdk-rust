@@ -36,6 +36,10 @@ impl SendTestEventNotificationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SendTestEventNotification as a reference.
+    pub fn as_input(&self) -> &crate::operation::send_test_event_notification::builders::SendTestEventNotificationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +133,12 @@ impl SendTestEventNotificationFluentBuilder {
         self.inner = self.inner.set_notification(input);
         self
     }
+    /// <p> The notification specification to test. This value is identical to the value you would provide to the UpdateNotificationSettings operation when you establish the notification specification for a HIT type. </p>
+    pub fn get_notification(
+        &self,
+    ) -> &::std::option::Option<crate::types::NotificationSpecification> {
+        self.inner.get_notification()
+    }
     /// <p> The event to simulate to test the notification specification. This event is included in the test message even if the notification specification does not include the event type. The notification specification does not filter out the test event. </p>
     pub fn test_event_type(mut self, input: crate::types::EventType) -> Self {
         self.inner = self.inner.test_event_type(input);
@@ -141,5 +151,9 @@ impl SendTestEventNotificationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_test_event_type(input);
         self
+    }
+    /// <p> The event to simulate to test the notification specification. This event is included in the test message even if the notification specification does not include the event type. The notification specification does not filter out the test event. </p>
+    pub fn get_test_event_type(&self) -> &::std::option::Option<crate::types::EventType> {
+        self.inner.get_test_event_type()
     }
 }

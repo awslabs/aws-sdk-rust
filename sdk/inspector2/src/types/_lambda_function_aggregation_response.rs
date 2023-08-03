@@ -96,6 +96,10 @@ impl LambdaFunctionAggregationResponseBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The resource IDs included in the aggregation results.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// <p>The AWS Lambda function names included in the aggregation results.</p>
     pub fn function_name(
         mut self,
@@ -112,6 +116,10 @@ impl LambdaFunctionAggregationResponseBuilder {
         self.function_name = input;
         self
     }
+    /// <p>The AWS Lambda function names included in the aggregation results.</p>
+    pub fn get_function_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.function_name
+    }
     /// <p>The runtimes included in the aggregation results.</p>
     pub fn runtime(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.runtime = ::std::option::Option::Some(input.into());
@@ -121,6 +129,10 @@ impl LambdaFunctionAggregationResponseBuilder {
     pub fn set_runtime(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.runtime = input;
         self
+    }
+    /// <p>The runtimes included in the aggregation results.</p>
+    pub fn get_runtime(&self) -> &::std::option::Option<::std::string::String> {
+        &self.runtime
     }
     /// Adds a key-value pair to `lambda_tags`.
     ///
@@ -147,6 +159,14 @@ impl LambdaFunctionAggregationResponseBuilder {
         self.lambda_tags = input;
         self
     }
+    /// <p>The tags included in the aggregation results.</p>
+    pub fn get_lambda_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.lambda_tags
+    }
     /// <p>The ID of the AWS account that owns the AWS Lambda function. </p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -156,6 +176,10 @@ impl LambdaFunctionAggregationResponseBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>The ID of the AWS account that owns the AWS Lambda function. </p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// <p>An object that contains the counts of aggregated finding per severity.</p>
     pub fn severity_counts(mut self, input: crate::types::SeverityCounts) -> Self {
@@ -170,6 +194,10 @@ impl LambdaFunctionAggregationResponseBuilder {
         self.severity_counts = input;
         self
     }
+    /// <p>An object that contains the counts of aggregated finding per severity.</p>
+    pub fn get_severity_counts(&self) -> &::std::option::Option<crate::types::SeverityCounts> {
+        &self.severity_counts
+    }
     /// <p>The date that the AWS Lambda function included in the aggregation results was last changed.</p>
     pub fn last_modified_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_at = ::std::option::Option::Some(input);
@@ -182,6 +210,10 @@ impl LambdaFunctionAggregationResponseBuilder {
     ) -> Self {
         self.last_modified_at = input;
         self
+    }
+    /// <p>The date that the AWS Lambda function included in the aggregation results was last changed.</p>
+    pub fn get_last_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_at
     }
     /// Consumes the builder and constructs a [`LambdaFunctionAggregationResponse`](crate::types::LambdaFunctionAggregationResponse).
     pub fn build(self) -> crate::types::LambdaFunctionAggregationResponse {

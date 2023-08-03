@@ -62,6 +62,10 @@ impl CoreNetworkEdgeBuilder {
         self.edge_location = input;
         self
     }
+    /// <p>The Region where a core network edge is located.</p>
+    pub fn get_edge_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.edge_location
+    }
     /// <p>The ASN of a core network edge.</p>
     pub fn asn(mut self, input: i64) -> Self {
         self.asn = ::std::option::Option::Some(input);
@@ -71,6 +75,10 @@ impl CoreNetworkEdgeBuilder {
     pub fn set_asn(mut self, input: ::std::option::Option<i64>) -> Self {
         self.asn = input;
         self
+    }
+    /// <p>The ASN of a core network edge.</p>
+    pub fn get_asn(&self) -> &::std::option::Option<i64> {
+        &self.asn
     }
     /// Appends an item to `inside_cidr_blocks`.
     ///
@@ -93,6 +101,12 @@ impl CoreNetworkEdgeBuilder {
     ) -> Self {
         self.inside_cidr_blocks = input;
         self
+    }
+    /// <p>The inside IP addresses used for core network edges.</p>
+    pub fn get_inside_cidr_blocks(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.inside_cidr_blocks
     }
     /// Consumes the builder and constructs a [`CoreNetworkEdge`](crate::types::CoreNetworkEdge).
     pub fn build(self) -> crate::types::CoreNetworkEdge {

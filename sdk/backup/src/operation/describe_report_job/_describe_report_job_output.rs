@@ -47,6 +47,10 @@ impl DescribeReportJobOutputBuilder {
         self.report_job = input;
         self
     }
+    /// <p>A list of information about a report job, including its completion and creation times, report destination, unique report job ID, Amazon Resource Name (ARN), report template, status, and status message.</p>
+    pub fn get_report_job(&self) -> &::std::option::Option<crate::types::ReportJob> {
+        &self.report_job
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

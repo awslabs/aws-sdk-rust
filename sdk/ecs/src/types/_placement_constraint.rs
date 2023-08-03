@@ -53,6 +53,10 @@ impl PlacementConstraintBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of constraint. Use <code>distinctInstance</code> to ensure that each task in a particular group is running on a different container instance. Use <code>memberOf</code> to restrict the selection to a group of valid candidates.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::PlacementConstraintType> {
+        &self.r#type
+    }
     /// <p>A cluster query language expression to apply to the constraint. The expression can have a maximum length of 2000 characters. You can't specify an expression if the constraint type is <code>distinctInstance</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster query language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl PlacementConstraintBuilder {
     pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expression = input;
         self
+    }
+    /// <p>A cluster query language expression to apply to the constraint. The expression can have a maximum length of 2000 characters. You can't specify an expression if the constraint type is <code>distinctInstance</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster query language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expression
     }
     /// Consumes the builder and constructs a [`PlacementConstraint`](crate::types::PlacementConstraint).
     pub fn build(self) -> crate::types::PlacementConstraint {

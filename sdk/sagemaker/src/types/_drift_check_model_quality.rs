@@ -51,6 +51,10 @@ impl DriftCheckModelQualityBuilder {
         self.statistics = input;
         self
     }
+    /// <p>The drift check model quality statistics.</p>
+    pub fn get_statistics(&self) -> &::std::option::Option<crate::types::MetricsSource> {
+        &self.statistics
+    }
     /// <p>The drift check model quality constraints.</p>
     pub fn constraints(mut self, input: crate::types::MetricsSource) -> Self {
         self.constraints = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl DriftCheckModelQualityBuilder {
     ) -> Self {
         self.constraints = input;
         self
+    }
+    /// <p>The drift check model quality constraints.</p>
+    pub fn get_constraints(&self) -> &::std::option::Option<crate::types::MetricsSource> {
+        &self.constraints
     }
     /// Consumes the builder and constructs a [`DriftCheckModelQuality`](crate::types::DriftCheckModelQuality).
     pub fn build(self) -> crate::types::DriftCheckModelQuality {

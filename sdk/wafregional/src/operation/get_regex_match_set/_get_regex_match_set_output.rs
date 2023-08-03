@@ -50,6 +50,10 @@ impl GetRegexMatchSetOutputBuilder {
         self.regex_match_set = input;
         self
     }
+    /// <p>Information about the <code>RegexMatchSet</code> that you specified in the <code>GetRegexMatchSet</code> request. For more information, see <code>RegexMatchTuple</code>.</p>
+    pub fn get_regex_match_set(&self) -> &::std::option::Option<crate::types::RegexMatchSet> {
+        &self.regex_match_set
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

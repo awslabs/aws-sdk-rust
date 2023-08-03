@@ -56,6 +56,10 @@ impl StringConditionBuilder {
         self.field_name = input;
         self
     }
+    /// <p>The name of the field in the string condition.</p>
+    pub fn get_field_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_name
+    }
     /// <p>The value of the string.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl StringConditionBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value of the string.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// <p>The type of comparison to be made when evaluating the string condition.</p>
     pub fn comparison_type(mut self, input: crate::types::StringComparisonType) -> Self {
@@ -78,6 +86,12 @@ impl StringConditionBuilder {
     ) -> Self {
         self.comparison_type = input;
         self
+    }
+    /// <p>The type of comparison to be made when evaluating the string condition.</p>
+    pub fn get_comparison_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::StringComparisonType> {
+        &self.comparison_type
     }
     /// Consumes the builder and constructs a [`StringCondition`](crate::types::StringCondition).
     pub fn build(self) -> crate::types::StringCondition {

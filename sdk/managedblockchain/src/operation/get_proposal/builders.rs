@@ -37,6 +37,10 @@ impl GetProposalFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetProposal as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_proposal::builders::GetProposalInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl GetProposalFluentBuilder {
         self.inner = self.inner.set_network_id(input);
         self
     }
+    /// <p>The unique identifier of the network for which the proposal is made.</p>
+    pub fn get_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_network_id()
+    }
     /// <p>The unique identifier of the proposal.</p>
     pub fn proposal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.proposal_id(input.into());
@@ -128,5 +136,9 @@ impl GetProposalFluentBuilder {
     pub fn set_proposal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_proposal_id(input);
         self
+    }
+    /// <p>The unique identifier of the proposal.</p>
+    pub fn get_proposal_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_proposal_id()
     }
 }

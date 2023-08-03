@@ -70,6 +70,10 @@ impl CapacityProviderStrategyItemBuilder {
         self.capacity_provider = input;
         self
     }
+    /// <p>The short name of the capacity provider.</p>
+    pub fn get_capacity_provider(&self) -> &::std::option::Option<::std::string::String> {
+        &self.capacity_provider
+    }
     /// <p>The <i>weight</i> value designates the relative percentage of the total number of tasks launched that should use the specified capacity provider. The <code>weight</code> value is taken into consideration after the <code>base</code> value, if defined, is satisfied.</p>
     /// <p>If no <code>weight</code> value is specified, the default value of <code>0</code> is used. When multiple capacity providers are specified within a capacity provider strategy, at least one of the capacity providers must have a weight value greater than zero and any capacity providers with a weight of <code>0</code> can't be used to place tasks. If you specify multiple capacity providers in a strategy that all have a weight of <code>0</code>, any <code>RunTask</code> or <code>CreateService</code> actions using the capacity provider strategy will fail.</p>
     /// <p>An example scenario for using weights is defining a strategy that contains two capacity providers and both have a weight of <code>1</code>, then when the <code>base</code> is satisfied, the tasks will be split evenly across the two capacity providers. Using that same logic, if you specify a weight of <code>1</code> for <i>capacityProviderA</i> and a weight of <code>4</code> for <i>capacityProviderB</i>, then for every one task that's run using <i>capacityProviderA</i>, four tasks would use <i>capacityProviderB</i>.</p>
@@ -84,6 +88,12 @@ impl CapacityProviderStrategyItemBuilder {
         self.weight = input;
         self
     }
+    /// <p>The <i>weight</i> value designates the relative percentage of the total number of tasks launched that should use the specified capacity provider. The <code>weight</code> value is taken into consideration after the <code>base</code> value, if defined, is satisfied.</p>
+    /// <p>If no <code>weight</code> value is specified, the default value of <code>0</code> is used. When multiple capacity providers are specified within a capacity provider strategy, at least one of the capacity providers must have a weight value greater than zero and any capacity providers with a weight of <code>0</code> can't be used to place tasks. If you specify multiple capacity providers in a strategy that all have a weight of <code>0</code>, any <code>RunTask</code> or <code>CreateService</code> actions using the capacity provider strategy will fail.</p>
+    /// <p>An example scenario for using weights is defining a strategy that contains two capacity providers and both have a weight of <code>1</code>, then when the <code>base</code> is satisfied, the tasks will be split evenly across the two capacity providers. Using that same logic, if you specify a weight of <code>1</code> for <i>capacityProviderA</i> and a weight of <code>4</code> for <i>capacityProviderB</i>, then for every one task that's run using <i>capacityProviderA</i>, four tasks would use <i>capacityProviderB</i>.</p>
+    pub fn get_weight(&self) -> &::std::option::Option<i32> {
+        &self.weight
+    }
     /// <p>The <i>base</i> value designates how many tasks, at a minimum, to run on the specified capacity provider. Only one capacity provider in a capacity provider strategy can have a <i>base</i> defined. If no value is specified, the default value of <code>0</code> is used.</p>
     pub fn base(mut self, input: i32) -> Self {
         self.base = ::std::option::Option::Some(input);
@@ -93,6 +103,10 @@ impl CapacityProviderStrategyItemBuilder {
     pub fn set_base(mut self, input: ::std::option::Option<i32>) -> Self {
         self.base = input;
         self
+    }
+    /// <p>The <i>base</i> value designates how many tasks, at a minimum, to run on the specified capacity provider. Only one capacity provider in a capacity provider strategy can have a <i>base</i> defined. If no value is specified, the default value of <code>0</code> is used.</p>
+    pub fn get_base(&self) -> &::std::option::Option<i32> {
+        &self.base
     }
     /// Consumes the builder and constructs a [`CapacityProviderStrategyItem`](crate::types::CapacityProviderStrategyItem).
     pub fn build(self) -> crate::types::CapacityProviderStrategyItem {

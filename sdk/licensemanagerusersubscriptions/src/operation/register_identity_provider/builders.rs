@@ -36,6 +36,13 @@ impl RegisterIdentityProviderFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RegisterIdentityProvider as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::register_identity_provider::builders::RegisterIdentityProviderInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +136,10 @@ impl RegisterIdentityProviderFluentBuilder {
         self.inner = self.inner.set_identity_provider(input);
         self
     }
+    /// <p>An object that specifies details for the identity provider.</p>
+    pub fn get_identity_provider(&self) -> &::std::option::Option<crate::types::IdentityProvider> {
+        self.inner.get_identity_provider()
+    }
     /// <p>The name of the user-based subscription product.</p>
     pub fn product(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.product(input.into());
@@ -139,6 +150,10 @@ impl RegisterIdentityProviderFluentBuilder {
         self.inner = self.inner.set_product(input);
         self
     }
+    /// <p>The name of the user-based subscription product.</p>
+    pub fn get_product(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_product()
+    }
     /// <p>The registered identity provider’s product related configuration settings such as the subnets to provision VPC endpoints.</p>
     pub fn settings(mut self, input: crate::types::Settings) -> Self {
         self.inner = self.inner.settings(input);
@@ -148,5 +163,9 @@ impl RegisterIdentityProviderFluentBuilder {
     pub fn set_settings(mut self, input: ::std::option::Option<crate::types::Settings>) -> Self {
         self.inner = self.inner.set_settings(input);
         self
+    }
+    /// <p>The registered identity provider’s product related configuration settings such as the subnets to provision VPC endpoints.</p>
+    pub fn get_settings(&self) -> &::std::option::Option<crate::types::Settings> {
+        self.inner.get_settings()
     }
 }

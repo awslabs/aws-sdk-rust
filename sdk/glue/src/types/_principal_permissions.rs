@@ -51,6 +51,10 @@ impl PrincipalPermissionsBuilder {
         self.principal = input;
         self
     }
+    /// <p>The principal who is granted permissions.</p>
+    pub fn get_principal(&self) -> &::std::option::Option<crate::types::DataLakePrincipal> {
+        &self.principal
+    }
     /// Appends an item to `permissions`.
     ///
     /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
@@ -69,6 +73,12 @@ impl PrincipalPermissionsBuilder {
     ) -> Self {
         self.permissions = input;
         self
+    }
+    /// <p>The permissions that are granted to the principal.</p>
+    pub fn get_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
+        &self.permissions
     }
     /// Consumes the builder and constructs a [`PrincipalPermissions`](crate::types::PrincipalPermissions).
     pub fn build(self) -> crate::types::PrincipalPermissions {

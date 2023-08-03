@@ -36,6 +36,12 @@ impl BatchDetectSentimentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchDetectSentiment as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_detect_sentiment::builders::BatchDetectSentimentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl BatchDetectSentimentFluentBuilder {
         self.inner = self.inner.set_text_list(input);
         self
     }
+    /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB. </p>
+    pub fn get_text_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_text_list()
+    }
     /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.inner = self.inner.language_code(input);
@@ -145,5 +155,9 @@ impl BatchDetectSentimentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_language_code(input);
         self
+    }
+    /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
+        self.inner.get_language_code()
     }
 }

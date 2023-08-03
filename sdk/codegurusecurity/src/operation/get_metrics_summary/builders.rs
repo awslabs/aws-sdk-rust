@@ -36,6 +36,12 @@ impl GetMetricsSummaryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetMetricsSummary as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_metrics_summary::builders::GetMetricsSummaryInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +131,9 @@ impl GetMetricsSummaryFluentBuilder {
     pub fn set_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_date(input);
         self
+    }
+    /// <p>The date you want to retrieve summary metrics from, rounded to the nearest day. The date must be within the past two years since metrics data is only stored for two years. If a date outside of this range is passed, the response will be empty.</p>
+    pub fn get_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_date()
     }
 }

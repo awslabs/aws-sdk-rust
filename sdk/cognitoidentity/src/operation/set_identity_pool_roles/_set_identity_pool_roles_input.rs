@@ -81,6 +81,10 @@ impl SetIdentityPoolRolesInputBuilder {
         self.identity_pool_id = input;
         self
     }
+    /// <p>An identity pool ID in the format REGION:GUID.</p>
+    pub fn get_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_pool_id
+    }
     /// Adds a key-value pair to `roles`.
     ///
     /// To override the contents of this collection use [`set_roles`](Self::set_roles).
@@ -105,6 +109,14 @@ impl SetIdentityPoolRolesInputBuilder {
     ) -> Self {
         self.roles = input;
         self
+    }
+    /// <p>The map of roles associated with this pool. For a given role, the key will be either "authenticated" or "unauthenticated" and the value will be the Role ARN.</p>
+    pub fn get_roles(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.roles
     }
     /// Adds a key-value pair to `role_mappings`.
     ///
@@ -132,6 +144,15 @@ impl SetIdentityPoolRolesInputBuilder {
     ) -> Self {
         self.role_mappings = input;
         self
+    }
+    /// <p>How users for a specific identity provider are to mapped to roles. This is a string to <code>RoleMapping</code> object map. The string identifies the identity provider, for example, "graph.facebook.com" or "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
+    /// <p>Up to 25 rules can be specified per identity provider.</p>
+    pub fn get_role_mappings(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::RoleMapping>,
+    > {
+        &self.role_mappings
     }
     /// Consumes the builder and constructs a [`SetIdentityPoolRolesInput`](crate::operation::set_identity_pool_roles::SetIdentityPoolRolesInput).
     pub fn build(

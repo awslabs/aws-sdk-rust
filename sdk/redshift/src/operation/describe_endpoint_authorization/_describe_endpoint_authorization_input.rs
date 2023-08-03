@@ -77,6 +77,10 @@ impl DescribeEndpointAuthorizationInputBuilder {
         self.cluster_identifier = input;
         self
     }
+    /// <p>The cluster identifier of the cluster to access.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_identifier
+    }
     /// <p>The Amazon Web Services account ID of either the cluster owner (grantor) or grantee. If <code>Grantee</code> parameter is true, then the <code>Account</code> value is of the grantor.</p>
     pub fn account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account = ::std::option::Option::Some(input.into());
@@ -86,6 +90,10 @@ impl DescribeEndpointAuthorizationInputBuilder {
     pub fn set_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account = input;
         self
+    }
+    /// <p>The Amazon Web Services account ID of either the cluster owner (grantor) or grantee. If <code>Grantee</code> parameter is true, then the <code>Account</code> value is of the grantor.</p>
+    pub fn get_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account
     }
     /// <p>Indicates whether to check authorization from a grantor or grantee point of view. If true, Amazon Redshift returns endpoint authorizations that you've been granted. If false (default), checks authorization from a grantor point of view.</p>
     pub fn grantee(mut self, input: bool) -> Self {
@@ -97,6 +105,10 @@ impl DescribeEndpointAuthorizationInputBuilder {
         self.grantee = input;
         self
     }
+    /// <p>Indicates whether to check authorization from a grantor or grantee point of view. If true, Amazon Redshift returns endpoint authorizations that you've been granted. If false (default), checks authorization from a grantor point of view.</p>
+    pub fn get_grantee(&self) -> &::std::option::Option<bool> {
+        &self.grantee
+    }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a <code>Marker</code> is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.max_records = ::std::option::Option::Some(input);
@@ -107,6 +119,10 @@ impl DescribeEndpointAuthorizationInputBuilder {
         self.max_records = input;
         self
     }
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a <code>Marker</code> is included in the response so that the remaining results can be retrieved.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        &self.max_records
+    }
     /// <p>An optional pagination token provided by a previous <code>DescribeEndpointAuthorization</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -116,6 +132,10 @@ impl DescribeEndpointAuthorizationInputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>An optional pagination token provided by a previous <code>DescribeEndpointAuthorization</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// Consumes the builder and constructs a [`DescribeEndpointAuthorizationInput`](crate::operation::describe_endpoint_authorization::DescribeEndpointAuthorizationInput).
     pub fn build(

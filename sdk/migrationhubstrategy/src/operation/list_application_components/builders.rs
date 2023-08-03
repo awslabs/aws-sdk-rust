@@ -36,6 +36,10 @@ impl ListApplicationComponentsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListApplicationComponents as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_application_components::builders::ListApplicationComponentsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -141,6 +145,12 @@ impl ListApplicationComponentsFluentBuilder {
         self.inner = self.inner.set_application_component_criteria(input);
         self
     }
+    /// <p> Criteria for filtering the list of application components. </p>
+    pub fn get_application_component_criteria(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationComponentCriteria> {
+        self.inner.get_application_component_criteria()
+    }
     /// <p> Specify the value based on the application component criteria type. For example, if <code>applicationComponentCriteria</code> is set to <code>SERVER_ID</code> and <code>filterValue</code> is set to <code>server1</code>, then <code>ListApplicationComponents</code> returns all the application components running on server1. </p>
     pub fn filter_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.filter_value(input.into());
@@ -151,6 +161,10 @@ impl ListApplicationComponentsFluentBuilder {
         self.inner = self.inner.set_filter_value(input);
         self
     }
+    /// <p> Specify the value based on the application component criteria type. For example, if <code>applicationComponentCriteria</code> is set to <code>SERVER_ID</code> and <code>filterValue</code> is set to <code>server1</code>, then <code>ListApplicationComponents</code> returns all the application components running on server1. </p>
+    pub fn get_filter_value(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_filter_value()
+    }
     /// <p> Specifies whether to sort by ascending (<code>ASC</code>) or descending (<code>DESC</code>) order. </p>
     pub fn sort(mut self, input: crate::types::SortOrder) -> Self {
         self.inner = self.inner.sort(input);
@@ -160,6 +174,10 @@ impl ListApplicationComponentsFluentBuilder {
     pub fn set_sort(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.inner = self.inner.set_sort(input);
         self
+    }
+    /// <p> Specifies whether to sort by ascending (<code>ASC</code>) or descending (<code>DESC</code>) order. </p>
+    pub fn get_sort(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        self.inner.get_sort()
     }
     /// Appends an item to `groupIdFilter`.
     ///
@@ -178,6 +196,12 @@ impl ListApplicationComponentsFluentBuilder {
         self.inner = self.inner.set_group_id_filter(input);
         self
     }
+    /// <p> The group ID specified in to filter on. </p>
+    pub fn get_group_id_filter(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Group>> {
+        self.inner.get_group_id_filter()
+    }
     /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -188,6 +212,10 @@ impl ListApplicationComponentsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p> The maximum number of items to include in the response. The maximum value is 100. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -197,5 +225,9 @@ impl ListApplicationComponentsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p> The maximum number of items to include in the response. The maximum value is 100. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

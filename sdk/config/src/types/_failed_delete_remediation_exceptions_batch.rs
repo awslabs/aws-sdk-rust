@@ -58,6 +58,10 @@ impl FailedDeleteRemediationExceptionsBatchBuilder {
         self.failure_message = input;
         self
     }
+    /// <p>Returns a failure message for delete remediation exception. For example, Config creates an exception due to an internal error.</p>
+    pub fn get_failure_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_message
+    }
     /// Appends an item to `failed_items`.
     ///
     /// To override the contents of this collection use [`set_failed_items`](Self::set_failed_items).
@@ -78,6 +82,13 @@ impl FailedDeleteRemediationExceptionsBatchBuilder {
     ) -> Self {
         self.failed_items = input;
         self
+    }
+    /// <p>Returns remediation exception resource key object of the failed items.</p>
+    pub fn get_failed_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RemediationExceptionResourceKey>>
+    {
+        &self.failed_items
     }
     /// Consumes the builder and constructs a [`FailedDeleteRemediationExceptionsBatch`](crate::types::FailedDeleteRemediationExceptionsBatch).
     pub fn build(self) -> crate::types::FailedDeleteRemediationExceptionsBatch {

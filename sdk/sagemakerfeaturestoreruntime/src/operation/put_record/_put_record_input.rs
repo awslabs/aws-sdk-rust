@@ -79,6 +79,10 @@ impl PutRecordInputBuilder {
         self.feature_group_name = input;
         self
     }
+    /// <p>The name or Amazon Resource Name (ARN) of the feature group that you want to insert the record into.</p>
+    pub fn get_feature_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.feature_group_name
+    }
     /// Appends an item to `record`.
     ///
     /// To override the contents of this collection use [`set_record`](Self::set_record).
@@ -108,6 +112,17 @@ impl PutRecordInputBuilder {
         self.record = input;
         self
     }
+    /// <p>List of FeatureValues to be inserted. This will be a full over-write. If you only want to update few of the feature values, do the following:</p>
+    /// <ul>
+    /// <li> <p>Use <code>GetRecord</code> to retrieve the latest record.</p> </li>
+    /// <li> <p>Update the record returned from <code>GetRecord</code>. </p> </li>
+    /// <li> <p>Use <code>PutRecord</code> to update feature values.</p> </li>
+    /// </ul>
+    pub fn get_record(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureValue>> {
+        &self.record
+    }
     /// Appends an item to `target_stores`.
     ///
     /// To override the contents of this collection use [`set_target_stores`](Self::set_target_stores).
@@ -127,6 +142,12 @@ impl PutRecordInputBuilder {
         self.target_stores = input;
         self
     }
+    /// <p>A list of stores to which you're adding the record. By default, Feature Store adds the record to all of the stores that you're using for the <code>FeatureGroup</code>.</p>
+    pub fn get_target_stores(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetStore>> {
+        &self.target_stores
+    }
     /// <p>Time to live duration, where the record is hard deleted after the expiration time is reached; <code>ExpiresAt</code> = <code>EventTime</code> + <code>TtlDuration</code>. For information on HardDelete, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_DeleteRecord.html">DeleteRecord</a> API in the Amazon SageMaker API Reference guide.</p>
     pub fn ttl_duration(mut self, input: crate::types::TtlDuration) -> Self {
         self.ttl_duration = ::std::option::Option::Some(input);
@@ -139,6 +160,10 @@ impl PutRecordInputBuilder {
     ) -> Self {
         self.ttl_duration = input;
         self
+    }
+    /// <p>Time to live duration, where the record is hard deleted after the expiration time is reached; <code>ExpiresAt</code> = <code>EventTime</code> + <code>TtlDuration</code>. For information on HardDelete, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_DeleteRecord.html">DeleteRecord</a> API in the Amazon SageMaker API Reference guide.</p>
+    pub fn get_ttl_duration(&self) -> &::std::option::Option<crate::types::TtlDuration> {
+        &self.ttl_duration
     }
     /// Consumes the builder and constructs a [`PutRecordInput`](crate::operation::put_record::PutRecordInput).
     pub fn build(

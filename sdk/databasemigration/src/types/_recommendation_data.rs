@@ -43,6 +43,10 @@ impl RecommendationDataBuilder {
         self.rds_engine = input;
         self
     }
+    /// <p>The recommendation of a target Amazon RDS database engine.</p>
+    pub fn get_rds_engine(&self) -> &::std::option::Option<crate::types::RdsRecommendation> {
+        &self.rds_engine
+    }
     /// Consumes the builder and constructs a [`RecommendationData`](crate::types::RecommendationData).
     pub fn build(self) -> crate::types::RecommendationData {
         crate::types::RecommendationData {

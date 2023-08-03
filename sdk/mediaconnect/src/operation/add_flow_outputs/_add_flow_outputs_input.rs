@@ -48,6 +48,10 @@ impl AddFlowOutputsInputBuilder {
         self.flow_arn = input;
         self
     }
+    /// The flow that you want to add outputs to.
+    pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_arn
+    }
     /// Appends an item to `outputs`.
     ///
     /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
@@ -66,6 +70,12 @@ impl AddFlowOutputsInputBuilder {
     ) -> Self {
         self.outputs = input;
         self
+    }
+    /// A list of outputs that you want to add.
+    pub fn get_outputs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AddOutputRequest>> {
+        &self.outputs
     }
     /// Consumes the builder and constructs a [`AddFlowOutputsInput`](crate::operation::add_flow_outputs::AddFlowOutputsInput).
     pub fn build(

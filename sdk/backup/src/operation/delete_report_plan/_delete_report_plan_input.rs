@@ -46,6 +46,10 @@ impl DeleteReportPlanInputBuilder {
         self.report_plan_name = input;
         self
     }
+    /// <p>The unique name of a report plan.</p>
+    pub fn get_report_plan_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.report_plan_name
+    }
     /// Consumes the builder and constructs a [`DeleteReportPlanInput`](crate::operation::delete_report_plan::DeleteReportPlanInput).
     pub fn build(
         self,

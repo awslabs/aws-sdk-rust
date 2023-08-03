@@ -88,6 +88,10 @@ impl HitBuilder {
         self.id = input;
         self
     }
+    /// <p>The document ID of a document that matches the search request.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Adds a key-value pair to `fields`.
     ///
     /// To override the contents of this collection use [`set_fields`](Self::set_fields).
@@ -116,6 +120,14 @@ impl HitBuilder {
         self.fields = input;
         self
     }
+    /// <p>The fields returned from a document that matches the search request.</p>
+    pub fn get_fields(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
+    > {
+        &self.fields
+    }
     /// Adds a key-value pair to `exprs`.
     ///
     /// To override the contents of this collection use [`set_exprs`](Self::set_exprs).
@@ -141,6 +153,14 @@ impl HitBuilder {
         self.exprs = input;
         self
     }
+    /// <p>The expressions returned from a document that matches the search request.</p>
+    pub fn get_exprs(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.exprs
+    }
     /// Adds a key-value pair to `highlights`.
     ///
     /// To override the contents of this collection use [`set_highlights`](Self::set_highlights).
@@ -165,6 +185,14 @@ impl HitBuilder {
     ) -> Self {
         self.highlights = input;
         self
+    }
+    /// <p>The highlights returned from a document that matches the search request.</p>
+    pub fn get_highlights(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.highlights
     }
     /// Consumes the builder and constructs a [`Hit`](crate::types::Hit).
     pub fn build(self) -> crate::types::Hit {

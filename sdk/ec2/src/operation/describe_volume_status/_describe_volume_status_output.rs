@@ -56,6 +56,10 @@ impl DescribeVolumeStatusOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `volume_statuses`.
     ///
     /// To override the contents of this collection use [`set_volume_statuses`](Self::set_volume_statuses).
@@ -74,6 +78,12 @@ impl DescribeVolumeStatusOutputBuilder {
     ) -> Self {
         self.volume_statuses = input;
         self
+    }
+    /// <p>Information about the status of the volumes.</p>
+    pub fn get_volume_statuses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusItem>> {
+        &self.volume_statuses
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

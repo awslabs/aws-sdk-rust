@@ -50,6 +50,10 @@ impl DeletePackageOutputBuilder {
         self.package_details = input;
         self
     }
+    /// <p> Information about the deleted package.</p>
+    pub fn get_package_details(&self) -> &::std::option::Option<crate::types::PackageDetails> {
+        &self.package_details
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

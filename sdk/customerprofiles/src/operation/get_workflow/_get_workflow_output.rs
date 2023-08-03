@@ -102,6 +102,10 @@ impl GetWorkflowOutputBuilder {
         self.workflow_id = input;
         self
     }
+    /// <p>Unique identifier for the workflow.</p>
+    pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_id
+    }
     /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
     pub fn workflow_type(mut self, input: crate::types::WorkflowType) -> Self {
         self.workflow_type = ::std::option::Option::Some(input);
@@ -115,6 +119,10 @@ impl GetWorkflowOutputBuilder {
         self.workflow_type = input;
         self
     }
+    /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
+    pub fn get_workflow_type(&self) -> &::std::option::Option<crate::types::WorkflowType> {
+        &self.workflow_type
+    }
     /// <p>Status of workflow execution.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -124,6 +132,10 @@ impl GetWorkflowOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Status of workflow execution.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.status
     }
     /// <p>Workflow error messages during execution (if any).</p>
     pub fn error_description(
@@ -141,6 +153,10 @@ impl GetWorkflowOutputBuilder {
         self.error_description = input;
         self
     }
+    /// <p>Workflow error messages during execution (if any).</p>
+    pub fn get_error_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_description
+    }
     /// <p>The timestamp that represents when workflow execution started.</p>
     pub fn start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_date = ::std::option::Option::Some(input);
@@ -153,6 +169,10 @@ impl GetWorkflowOutputBuilder {
     ) -> Self {
         self.start_date = input;
         self
+    }
+    /// <p>The timestamp that represents when workflow execution started.</p>
+    pub fn get_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_date
     }
     /// <p>The timestamp that represents when workflow execution last updated.</p>
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -167,6 +187,10 @@ impl GetWorkflowOutputBuilder {
         self.last_updated_at = input;
         self
     }
+    /// <p>The timestamp that represents when workflow execution last updated.</p>
+    pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_at
+    }
     /// <p>Attributes provided for workflow execution.</p>
     pub fn attributes(mut self, input: crate::types::WorkflowAttributes) -> Self {
         self.attributes = ::std::option::Option::Some(input);
@@ -180,6 +204,10 @@ impl GetWorkflowOutputBuilder {
         self.attributes = input;
         self
     }
+    /// <p>Attributes provided for workflow execution.</p>
+    pub fn get_attributes(&self) -> &::std::option::Option<crate::types::WorkflowAttributes> {
+        &self.attributes
+    }
     /// <p>Workflow specific execution metrics.</p>
     pub fn metrics(mut self, input: crate::types::WorkflowMetrics) -> Self {
         self.metrics = ::std::option::Option::Some(input);
@@ -192,6 +220,10 @@ impl GetWorkflowOutputBuilder {
     ) -> Self {
         self.metrics = input;
         self
+    }
+    /// <p>Workflow specific execution metrics.</p>
+    pub fn get_metrics(&self) -> &::std::option::Option<crate::types::WorkflowMetrics> {
+        &self.metrics
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

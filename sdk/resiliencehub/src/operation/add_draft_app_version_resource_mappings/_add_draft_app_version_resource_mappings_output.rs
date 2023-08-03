@@ -63,6 +63,10 @@ impl AddDraftAppVersionResourceMappingsOutputBuilder {
         self.app_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_arn
+    }
     /// <p>The version of the application.</p>
     pub fn app_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_version = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl AddDraftAppVersionResourceMappingsOutputBuilder {
     pub fn set_app_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_version = input;
         self
+    }
+    /// <p>The version of the application.</p>
+    pub fn get_app_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_version
     }
     /// Appends an item to `resource_mappings`.
     ///
@@ -91,6 +99,12 @@ impl AddDraftAppVersionResourceMappingsOutputBuilder {
     ) -> Self {
         self.resource_mappings = input;
         self
+    }
+    /// <p>Mappings used to map logical resources from the template to physical resources. You can use the mapping type <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map individual resources by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if the application is backed by a CloudFormation stack.</p>
+    pub fn get_resource_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceMapping>> {
+        &self.resource_mappings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

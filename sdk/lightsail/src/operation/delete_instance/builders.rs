@@ -37,6 +37,12 @@ impl DeleteInstanceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteInstance as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_instance::builders::DeleteInstanceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,6 +131,10 @@ impl DeleteInstanceFluentBuilder {
         self.inner = self.inner.set_instance_name(input);
         self
     }
+    /// <p>The name of the instance to delete.</p>
+    pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_name()
+    }
     /// <p>A Boolean value to indicate whether to delete all add-ons for the instance.</p>
     pub fn force_delete_add_ons(mut self, input: bool) -> Self {
         self.inner = self.inner.force_delete_add_ons(input);
@@ -134,5 +144,9 @@ impl DeleteInstanceFluentBuilder {
     pub fn set_force_delete_add_ons(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force_delete_add_ons(input);
         self
+    }
+    /// <p>A Boolean value to indicate whether to delete all add-ons for the instance.</p>
+    pub fn get_force_delete_add_ons(&self) -> &::std::option::Option<bool> {
+        self.inner.get_force_delete_add_ons()
     }
 }

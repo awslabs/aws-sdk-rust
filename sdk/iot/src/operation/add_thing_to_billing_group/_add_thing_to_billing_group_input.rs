@@ -79,6 +79,12 @@ impl AddThingToBillingGroupInputBuilder {
         self.billing_group_name = input;
         self
     }
+    /// <p>The name of the billing group.</p> <note>
+    /// <p>This call is asynchronous. It might take several seconds for the detachment to propagate.</p>
+    /// </note>
+    pub fn get_billing_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.billing_group_name
+    }
     /// <p>The ARN of the billing group.</p>
     pub fn billing_group_arn(
         mut self,
@@ -95,6 +101,10 @@ impl AddThingToBillingGroupInputBuilder {
         self.billing_group_arn = input;
         self
     }
+    /// <p>The ARN of the billing group.</p>
+    pub fn get_billing_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.billing_group_arn
+    }
     /// <p>The name of the thing to be added to the billing group.</p>
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_name = ::std::option::Option::Some(input.into());
@@ -105,6 +115,10 @@ impl AddThingToBillingGroupInputBuilder {
         self.thing_name = input;
         self
     }
+    /// <p>The name of the thing to be added to the billing group.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_name
+    }
     /// <p>The ARN of the thing to be added to the billing group.</p>
     pub fn thing_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_arn = ::std::option::Option::Some(input.into());
@@ -114,6 +128,10 @@ impl AddThingToBillingGroupInputBuilder {
     pub fn set_thing_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_arn = input;
         self
+    }
+    /// <p>The ARN of the thing to be added to the billing group.</p>
+    pub fn get_thing_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_arn
     }
     /// Consumes the builder and constructs a [`AddThingToBillingGroupInput`](crate::operation::add_thing_to_billing_group::AddThingToBillingGroupInput).
     pub fn build(

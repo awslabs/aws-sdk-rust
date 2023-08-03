@@ -49,6 +49,11 @@ impl GetSamlProviderInputBuilder {
         self.saml_provider_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the SAML provider resource object in IAM to get information about.</p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn get_saml_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.saml_provider_arn
+    }
     /// Consumes the builder and constructs a [`GetSamlProviderInput`](crate::operation::get_saml_provider::GetSamlProviderInput).
     pub fn build(
         self,

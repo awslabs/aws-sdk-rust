@@ -48,6 +48,10 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetailsBui
         self.max = input;
         self
     }
+    /// <p> The maximum number of network interfaces. </p>
+    pub fn get_max(&self) -> &::std::option::Option<i32> {
+        &self.max
+    }
     /// <p> The minimum number of network interfaces. </p>
     pub fn min(mut self, input: i32) -> Self {
         self.min = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetailsBui
     pub fn set_min(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min = input;
         self
+    }
+    /// <p> The minimum number of network interfaces. </p>
+    pub fn get_min(&self) -> &::std::option::Option<i32> {
+        &self.min
     }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails).
     pub fn build(

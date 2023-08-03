@@ -48,6 +48,10 @@ impl DimensionMappingBuilder {
         self.name = input;
         self
     }
+    /// <p>Column name from query result.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Type for the dimension. </p>
     pub fn dimension_value_type(mut self, input: crate::types::DimensionValueType) -> Self {
         self.dimension_value_type = ::std::option::Option::Some(input);
@@ -60,6 +64,12 @@ impl DimensionMappingBuilder {
     ) -> Self {
         self.dimension_value_type = input;
         self
+    }
+    /// <p>Type for the dimension. </p>
+    pub fn get_dimension_value_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::DimensionValueType> {
+        &self.dimension_value_type
     }
     /// Consumes the builder and constructs a [`DimensionMapping`](crate::types::DimensionMapping).
     pub fn build(self) -> crate::types::DimensionMapping {

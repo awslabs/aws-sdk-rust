@@ -64,6 +64,10 @@ impl SubscriptionBuilder {
         self.id = input;
         self
     }
+    /// A descriptive or arbitrary ID for the subscription. This value must be unique within the subscription definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// The source of the subscription. Can be a thing ARN, a Lambda function ARN, a connector ARN, 'cloud' (which represents the AWS IoT cloud), or 'GGShadowService'.
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl SubscriptionBuilder {
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source = input;
         self
+    }
+    /// The source of the subscription. Can be a thing ARN, a Lambda function ARN, a connector ARN, 'cloud' (which represents the AWS IoT cloud), or 'GGShadowService'.
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source
     }
     /// The MQTT topic used to route the message.
     pub fn subject(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,6 +92,10 @@ impl SubscriptionBuilder {
         self.subject = input;
         self
     }
+    /// The MQTT topic used to route the message.
+    pub fn get_subject(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subject
+    }
     /// Where the message is sent to. Can be a thing ARN, a Lambda function ARN, a connector ARN, 'cloud' (which represents the AWS IoT cloud), or 'GGShadowService'.
     pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target = ::std::option::Option::Some(input.into());
@@ -93,6 +105,10 @@ impl SubscriptionBuilder {
     pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target = input;
         self
+    }
+    /// Where the message is sent to. Can be a thing ARN, a Lambda function ARN, a connector ARN, 'cloud' (which represents the AWS IoT cloud), or 'GGShadowService'.
+    pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target
     }
     /// Consumes the builder and constructs a [`Subscription`](crate::types::Subscription).
     pub fn build(self) -> crate::types::Subscription {

@@ -77,6 +77,10 @@ impl CopySnapshotInputBuilder {
         self.source_snapshot_name = input;
         self
     }
+    /// <p>The name of an existing snapshot from which to make a copy.</p>
+    pub fn get_source_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_snapshot_name
+    }
     /// <p>A name for the snapshot copy. MemoryDB does not permit overwriting a snapshot, therefore this name must be unique within its context - MemoryDB or an Amazon S3 bucket if exporting.</p>
     pub fn target_snapshot_name(
         mut self,
@@ -92,6 +96,10 @@ impl CopySnapshotInputBuilder {
     ) -> Self {
         self.target_snapshot_name = input;
         self
+    }
+    /// <p>A name for the snapshot copy. MemoryDB does not permit overwriting a snapshot, therefore this name must be unique within its context - MemoryDB or an Amazon S3 bucket if exporting.</p>
+    pub fn get_target_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_snapshot_name
     }
     /// <p>The Amazon S3 bucket to which the snapshot is exported. This parameter is used only when exporting a snapshot for external access. When using this parameter to export a snapshot, be sure MemoryDB has the needed permissions to this S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/snapshots-exporting.html">Step 2: Grant MemoryDB Access to Your Amazon S3 Bucket</a>. </p>
     pub fn target_bucket(
@@ -109,6 +117,10 @@ impl CopySnapshotInputBuilder {
         self.target_bucket = input;
         self
     }
+    /// <p>The Amazon S3 bucket to which the snapshot is exported. This parameter is used only when exporting a snapshot for external access. When using this parameter to export a snapshot, be sure MemoryDB has the needed permissions to this S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/snapshots-exporting.html">Step 2: Grant MemoryDB Access to Your Amazon S3 Bucket</a>. </p>
+    pub fn get_target_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_bucket
+    }
     /// <p>The ID of the KMS key used to encrypt the target snapshot.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -118,6 +130,10 @@ impl CopySnapshotInputBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p>The ID of the KMS key used to encrypt the target snapshot.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// Appends an item to `tags`.
     ///
@@ -137,6 +153,10 @@ impl CopySnapshotInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CopySnapshotInput`](crate::operation::copy_snapshot::CopySnapshotInput).
     pub fn build(

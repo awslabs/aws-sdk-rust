@@ -36,6 +36,12 @@ impl GetDocumentationPartFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetDocumentationPart as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_documentation_part::builders::GetDocumentationPartInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl GetDocumentationPartFluentBuilder {
         self
     }
     /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rest_api_id()
+    }
+    /// <p>The string identifier of the associated RestApi.</p>
     pub fn documentation_part_id(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -141,5 +151,9 @@ impl GetDocumentationPartFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_documentation_part_id(input);
         self
+    }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_documentation_part_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_documentation_part_id()
     }
 }

@@ -70,6 +70,12 @@ impl GetVpnConnectionDeviceTypesOutputBuilder {
         self.vpn_connection_device_types = input;
         self
     }
+    /// <p>List of customer gateway devices that have a sample configuration file available for use.</p>
+    pub fn get_vpn_connection_device_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpnConnectionDeviceType>> {
+        &self.vpn_connection_device_types
+    }
     /// <p>The <code>NextToken</code> value to include in a future <code>GetVpnConnectionDeviceTypes</code> request. When the results of a <code>GetVpnConnectionDeviceTypes</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -79,6 +85,10 @@ impl GetVpnConnectionDeviceTypesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The <code>NextToken</code> value to include in a future <code>GetVpnConnectionDeviceTypes</code> request. When the results of a <code>GetVpnConnectionDeviceTypes</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

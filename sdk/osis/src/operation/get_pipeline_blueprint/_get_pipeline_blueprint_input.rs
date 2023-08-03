@@ -46,6 +46,10 @@ impl GetPipelineBlueprintInputBuilder {
         self.blueprint_name = input;
         self
     }
+    /// <p>The name of the blueprint to retrieve.</p>
+    pub fn get_blueprint_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.blueprint_name
+    }
     /// Consumes the builder and constructs a [`GetPipelineBlueprintInput`](crate::operation::get_pipeline_blueprint::GetPipelineBlueprintInput).
     pub fn build(
         self,

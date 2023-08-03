@@ -79,6 +79,10 @@ impl UpdateRunGroupInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The group's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>A name for the group.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -88,6 +92,10 @@ impl UpdateRunGroupInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A name for the group.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The maximum number of CPUs to use.</p>
     pub fn max_cpus(mut self, input: i32) -> Self {
@@ -99,6 +107,10 @@ impl UpdateRunGroupInputBuilder {
         self.max_cpus = input;
         self
     }
+    /// <p>The maximum number of CPUs to use.</p>
+    pub fn get_max_cpus(&self) -> &::std::option::Option<i32> {
+        &self.max_cpus
+    }
     /// <p>The maximum number of concurrent runs for the group.</p>
     pub fn max_runs(mut self, input: i32) -> Self {
         self.max_runs = ::std::option::Option::Some(input);
@@ -108,6 +120,10 @@ impl UpdateRunGroupInputBuilder {
     pub fn set_max_runs(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_runs = input;
         self
+    }
+    /// <p>The maximum number of concurrent runs for the group.</p>
+    pub fn get_max_runs(&self) -> &::std::option::Option<i32> {
+        &self.max_runs
     }
     /// <p>A maximum run time for the group in minutes.</p>
     pub fn max_duration(mut self, input: i32) -> Self {
@@ -119,6 +135,10 @@ impl UpdateRunGroupInputBuilder {
         self.max_duration = input;
         self
     }
+    /// <p>A maximum run time for the group in minutes.</p>
+    pub fn get_max_duration(&self) -> &::std::option::Option<i32> {
+        &self.max_duration
+    }
     /// <p> The maximum GPUs that can be used by a run group. </p>
     pub fn max_gpus(mut self, input: i32) -> Self {
         self.max_gpus = ::std::option::Option::Some(input);
@@ -128,6 +148,10 @@ impl UpdateRunGroupInputBuilder {
     pub fn set_max_gpus(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_gpus = input;
         self
+    }
+    /// <p> The maximum GPUs that can be used by a run group. </p>
+    pub fn get_max_gpus(&self) -> &::std::option::Option<i32> {
+        &self.max_gpus
     }
     /// Consumes the builder and constructs a [`UpdateRunGroupInput`](crate::operation::update_run_group::UpdateRunGroupInput).
     pub fn build(

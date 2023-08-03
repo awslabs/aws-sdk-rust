@@ -36,6 +36,10 @@ impl PutConfigurationSetSendingOptionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutConfigurationSetSendingOptions as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_configuration_set_sending_options::builders::PutConfigurationSetSendingOptionsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl PutConfigurationSetSendingOptionsFluentBuilder {
         self.inner = self.inner.set_configuration_set_name(input);
         self
     }
+    /// <p>The name of the configuration set to enable or disable email sending for.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration_set_name()
+    }
     /// <p>If <code>true</code>, email sending is enabled for the configuration set. If <code>false</code>, email sending is disabled for the configuration set.</p>
     pub fn sending_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.sending_enabled(input);
@@ -115,5 +123,9 @@ impl PutConfigurationSetSendingOptionsFluentBuilder {
     pub fn set_sending_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_sending_enabled(input);
         self
+    }
+    /// <p>If <code>true</code>, email sending is enabled for the configuration set. If <code>false</code>, email sending is disabled for the configuration set.</p>
+    pub fn get_sending_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_sending_enabled()
     }
 }

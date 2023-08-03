@@ -54,6 +54,10 @@ impl DiskMapBuilder {
         self.original_disk_path = input;
         self
     }
+    /// <p>The original disk path exposed to the instance (for example, <code>/dev/sdh</code>).</p>
+    pub fn get_original_disk_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.original_disk_path
+    }
     /// <p>The new disk name (e.g., <code>my-new-disk</code>).</p>
     pub fn new_disk_name(
         mut self,
@@ -69,6 +73,10 @@ impl DiskMapBuilder {
     ) -> Self {
         self.new_disk_name = input;
         self
+    }
+    /// <p>The new disk name (e.g., <code>my-new-disk</code>).</p>
+    pub fn get_new_disk_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.new_disk_name
     }
     /// Consumes the builder and constructs a [`DiskMap`](crate::types::DiskMap).
     pub fn build(self) -> crate::types::DiskMap {

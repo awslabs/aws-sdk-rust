@@ -63,6 +63,10 @@ impl SearchIndexOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `things`.
     ///
     /// To override the contents of this collection use [`set_things`](Self::set_things).
@@ -82,6 +86,12 @@ impl SearchIndexOutputBuilder {
         self.things = input;
         self
     }
+    /// <p>The things that match the search query.</p>
+    pub fn get_things(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ThingDocument>> {
+        &self.things
+    }
     /// Appends an item to `thing_groups`.
     ///
     /// To override the contents of this collection use [`set_thing_groups`](Self::set_thing_groups).
@@ -100,6 +110,12 @@ impl SearchIndexOutputBuilder {
     ) -> Self {
         self.thing_groups = input;
         self
+    }
+    /// <p>The thing groups that match the search query.</p>
+    pub fn get_thing_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ThingGroupDocument>> {
+        &self.thing_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

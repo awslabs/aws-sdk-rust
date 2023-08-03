@@ -136,6 +136,10 @@ impl PipeSourceSelfManagedKafkaParametersBuilder {
         self.topic_name = input;
         self
     }
+    /// <p>The name of the topic that the pipe will read from.</p>
+    pub fn get_topic_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_name
+    }
     /// <p>(Streams only) The position in a stream from which to start reading.</p>
     pub fn starting_position(mut self, input: crate::types::SelfManagedKafkaStartPosition) -> Self {
         self.starting_position = ::std::option::Option::Some(input);
@@ -148,6 +152,12 @@ impl PipeSourceSelfManagedKafkaParametersBuilder {
     ) -> Self {
         self.starting_position = input;
         self
+    }
+    /// <p>(Streams only) The position in a stream from which to start reading.</p>
+    pub fn get_starting_position(
+        &self,
+    ) -> &::std::option::Option<crate::types::SelfManagedKafkaStartPosition> {
+        &self.starting_position
     }
     /// Appends an item to `additional_bootstrap_servers`.
     ///
@@ -171,6 +181,12 @@ impl PipeSourceSelfManagedKafkaParametersBuilder {
         self.additional_bootstrap_servers = input;
         self
     }
+    /// <p>An array of server URLs.</p>
+    pub fn get_additional_bootstrap_servers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.additional_bootstrap_servers
+    }
     /// <p>The maximum number of records to include in each batch.</p>
     pub fn batch_size(mut self, input: i32) -> Self {
         self.batch_size = ::std::option::Option::Some(input);
@@ -180,6 +196,10 @@ impl PipeSourceSelfManagedKafkaParametersBuilder {
     pub fn set_batch_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.batch_size = input;
         self
+    }
+    /// <p>The maximum number of records to include in each batch.</p>
+    pub fn get_batch_size(&self) -> &::std::option::Option<i32> {
+        &self.batch_size
     }
     /// <p>The maximum length of a time to wait for events.</p>
     pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
@@ -193,6 +213,10 @@ impl PipeSourceSelfManagedKafkaParametersBuilder {
     ) -> Self {
         self.maximum_batching_window_in_seconds = input;
         self
+    }
+    /// <p>The maximum length of a time to wait for events.</p>
+    pub fn get_maximum_batching_window_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.maximum_batching_window_in_seconds
     }
     /// <p>The name of the destination queue to consume.</p>
     pub fn consumer_group_id(
@@ -210,6 +234,10 @@ impl PipeSourceSelfManagedKafkaParametersBuilder {
         self.consumer_group_id = input;
         self
     }
+    /// <p>The name of the destination queue to consume.</p>
+    pub fn get_consumer_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.consumer_group_id
+    }
     /// <p>The credentials needed to access the resource.</p>
     pub fn credentials(
         mut self,
@@ -225,6 +253,12 @@ impl PipeSourceSelfManagedKafkaParametersBuilder {
     ) -> Self {
         self.credentials = input;
         self
+    }
+    /// <p>The credentials needed to access the resource.</p>
+    pub fn get_credentials(
+        &self,
+    ) -> &::std::option::Option<crate::types::SelfManagedKafkaAccessConfigurationCredentials> {
+        &self.credentials
     }
     /// <p>The ARN of the Secrets Manager secret used for certification.</p>
     pub fn server_root_ca_certificate(
@@ -242,6 +276,10 @@ impl PipeSourceSelfManagedKafkaParametersBuilder {
         self.server_root_ca_certificate = input;
         self
     }
+    /// <p>The ARN of the Secrets Manager secret used for certification.</p>
+    pub fn get_server_root_ca_certificate(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_root_ca_certificate
+    }
     /// <p>This structure specifies the VPC subnets and security groups for the stream, and whether a public IP address is to be used.</p>
     pub fn vpc(mut self, input: crate::types::SelfManagedKafkaAccessConfigurationVpc) -> Self {
         self.vpc = ::std::option::Option::Some(input);
@@ -254,6 +292,12 @@ impl PipeSourceSelfManagedKafkaParametersBuilder {
     ) -> Self {
         self.vpc = input;
         self
+    }
+    /// <p>This structure specifies the VPC subnets and security groups for the stream, and whether a public IP address is to be used.</p>
+    pub fn get_vpc(
+        &self,
+    ) -> &::std::option::Option<crate::types::SelfManagedKafkaAccessConfigurationVpc> {
+        &self.vpc
     }
     /// Consumes the builder and constructs a [`PipeSourceSelfManagedKafkaParameters`](crate::types::PipeSourceSelfManagedKafkaParameters).
     pub fn build(self) -> crate::types::PipeSourceSelfManagedKafkaParameters {

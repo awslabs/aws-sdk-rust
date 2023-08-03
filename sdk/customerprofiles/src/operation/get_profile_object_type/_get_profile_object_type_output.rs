@@ -175,6 +175,10 @@ impl GetProfileObjectTypeOutputBuilder {
         self.object_type_name = input;
         self
     }
+    /// <p>The name of the profile object type.</p>
+    pub fn get_object_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_type_name
+    }
     /// <p>The description of the profile object type.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -184,6 +188,10 @@ impl GetProfileObjectTypeOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the profile object type.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>A unique identifier for the object template.</p>
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -195,6 +203,10 @@ impl GetProfileObjectTypeOutputBuilder {
         self.template_id = input;
         self
     }
+    /// <p>A unique identifier for the object template.</p>
+    pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_id
+    }
     /// <p>The number of days until the data in the object expires.</p>
     pub fn expiration_days(mut self, input: i32) -> Self {
         self.expiration_days = ::std::option::Option::Some(input);
@@ -204,6 +216,10 @@ impl GetProfileObjectTypeOutputBuilder {
     pub fn set_expiration_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.expiration_days = input;
         self
+    }
+    /// <p>The number of days until the data in the object expires.</p>
+    pub fn get_expiration_days(&self) -> &::std::option::Option<i32> {
+        &self.expiration_days
     }
     /// <p>The customer-provided key to encrypt the profile object that will be created in this profile object type.</p>
     pub fn encryption_key(
@@ -221,6 +237,10 @@ impl GetProfileObjectTypeOutputBuilder {
         self.encryption_key = input;
         self
     }
+    /// <p>The customer-provided key to encrypt the profile object that will be created in this profile object type.</p>
+    pub fn get_encryption_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encryption_key
+    }
     /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
     pub fn allow_profile_creation(mut self, input: bool) -> Self {
         self.allow_profile_creation = ::std::option::Option::Some(input);
@@ -230,6 +250,10 @@ impl GetProfileObjectTypeOutputBuilder {
     pub fn set_allow_profile_creation(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_profile_creation = input;
         self
+    }
+    /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
+    pub fn get_allow_profile_creation(&self) -> &::std::option::Option<bool> {
+        &self.allow_profile_creation
     }
     /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.</p>
     pub fn source_last_updated_timestamp_format(
@@ -246,6 +270,12 @@ impl GetProfileObjectTypeOutputBuilder {
     ) -> Self {
         self.source_last_updated_timestamp_format = input;
         self
+    }
+    /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.</p>
+    pub fn get_source_last_updated_timestamp_format(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.source_last_updated_timestamp_format
     }
     /// Adds a key-value pair to `fields`.
     ///
@@ -271,6 +301,14 @@ impl GetProfileObjectTypeOutputBuilder {
     ) -> Self {
         self.fields = input;
         self
+    }
+    /// <p>A map of the name and ObjectType field.</p>
+    pub fn get_fields(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::ObjectTypeField>,
+    > {
+        &self.fields
     }
     /// Adds a key-value pair to `keys`.
     ///
@@ -300,6 +338,17 @@ impl GetProfileObjectTypeOutputBuilder {
         self.keys = input;
         self
     }
+    /// <p>A list of unique keys that can be used to map data to the profile.</p>
+    pub fn get_keys(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            ::std::vec::Vec<crate::types::ObjectTypeKey>,
+        >,
+    > {
+        &self.keys
+    }
     /// <p>The timestamp of when the domain was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -313,6 +362,10 @@ impl GetProfileObjectTypeOutputBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The timestamp of when the domain was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The timestamp of when the domain was most recently edited.</p>
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_at = ::std::option::Option::Some(input);
@@ -325,6 +378,10 @@ impl GetProfileObjectTypeOutputBuilder {
     ) -> Self {
         self.last_updated_at = input;
         self
+    }
+    /// <p>The timestamp of when the domain was most recently edited.</p>
+    pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_at
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -350,6 +407,14 @@ impl GetProfileObjectTypeOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

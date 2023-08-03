@@ -72,6 +72,14 @@ impl GetIdentityPoliciesOutputBuilder {
         self.policies = input;
         self
     }
+    /// <p>A map of policy names to policies.</p>
+    pub fn get_policies(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.policies
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -36,6 +36,10 @@ impl AddTagsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AddTags as a reference.
+    pub fn as_input(&self) -> &crate::operation::add_tags::builders::AddTagsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,6 +129,10 @@ impl AddTagsFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The key-value pairs to use to create tags. If you specify a key without specifying a value, Amazon ML creates a tag with the specified key and a value of null.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>The ID of the ML object to tag. For example, <code>exampleModelId</code>.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_id(input.into());
@@ -134,6 +142,10 @@ impl AddTagsFluentBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_id(input);
         self
+    }
+    /// <p>The ID of the ML object to tag. For example, <code>exampleModelId</code>.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_id()
     }
     /// <p>The type of the ML object to tag.</p>
     pub fn resource_type(mut self, input: crate::types::TaggableResourceType) -> Self {
@@ -147,5 +159,9 @@ impl AddTagsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
+    }
+    /// <p>The type of the ML object to tag.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::TaggableResourceType> {
+        self.inner.get_resource_type()
     }
 }

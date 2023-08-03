@@ -42,6 +42,13 @@ impl DeleteAutoScalingGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteAutoScalingGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_auto_scaling_group::builders::DeleteAutoScalingGroupInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +145,10 @@ impl DeleteAutoScalingGroupFluentBuilder {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_auto_scaling_group_name()
+    }
     /// <p>Specifies that the group is to be deleted along with all instances associated with the group, without waiting for all instances to be terminated. This action also deletes any outstanding lifecycle actions associated with the group.</p>
     pub fn force_delete(mut self, input: bool) -> Self {
         self.inner = self.inner.force_delete(input);
@@ -147,5 +158,9 @@ impl DeleteAutoScalingGroupFluentBuilder {
     pub fn set_force_delete(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force_delete(input);
         self
+    }
+    /// <p>Specifies that the group is to be deleted along with all instances associated with the group, without waiting for all instances to be terminated. This action also deletes any outstanding lifecycle actions associated with the group.</p>
+    pub fn get_force_delete(&self) -> &::std::option::Option<bool> {
+        self.inner.get_force_delete()
     }
 }

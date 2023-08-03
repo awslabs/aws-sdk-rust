@@ -56,6 +56,10 @@ impl S3RecordingSinkRuntimeConfigurationBuilder {
         self.destination = input;
         self
     }
+    /// <p>The URI of the S3 bucket used as the sink.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination
+    }
     /// <p>The file format for the media files sent to the Amazon S3 bucket.</p>
     pub fn recording_file_format(mut self, input: crate::types::RecordingFileFormat) -> Self {
         self.recording_file_format = ::std::option::Option::Some(input);
@@ -68,6 +72,12 @@ impl S3RecordingSinkRuntimeConfigurationBuilder {
     ) -> Self {
         self.recording_file_format = input;
         self
+    }
+    /// <p>The file format for the media files sent to the Amazon S3 bucket.</p>
+    pub fn get_recording_file_format(
+        &self,
+    ) -> &::std::option::Option<crate::types::RecordingFileFormat> {
+        &self.recording_file_format
     }
     /// Consumes the builder and constructs a [`S3RecordingSinkRuntimeConfiguration`](crate::types::S3RecordingSinkRuntimeConfiguration).
     pub fn build(self) -> crate::types::S3RecordingSinkRuntimeConfiguration {

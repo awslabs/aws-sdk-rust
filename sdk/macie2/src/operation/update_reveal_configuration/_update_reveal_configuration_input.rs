@@ -42,6 +42,10 @@ impl UpdateRevealConfigurationInputBuilder {
         self.configuration = input;
         self
     }
+    /// <p>The new configuration settings and the status of the configuration for the account.</p>
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::RevealConfiguration> {
+        &self.configuration
+    }
     /// Consumes the builder and constructs a [`UpdateRevealConfigurationInput`](crate::operation::update_reveal_configuration::UpdateRevealConfigurationInput).
     pub fn build(
         self,

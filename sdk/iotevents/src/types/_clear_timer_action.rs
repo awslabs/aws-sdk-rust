@@ -40,6 +40,10 @@ impl ClearTimerActionBuilder {
         self.timer_name = input;
         self
     }
+    /// <p>The name of the timer to clear.</p>
+    pub fn get_timer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timer_name
+    }
     /// Consumes the builder and constructs a [`ClearTimerAction`](crate::types::ClearTimerAction).
     pub fn build(self) -> crate::types::ClearTimerAction {
         crate::types::ClearTimerAction {

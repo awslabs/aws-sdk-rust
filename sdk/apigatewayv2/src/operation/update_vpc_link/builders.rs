@@ -36,6 +36,12 @@ impl UpdateVpcLinkFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateVpcLink as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_vpc_link::builders::UpdateVpcLinkInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl UpdateVpcLinkFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the VPC link.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The ID of the VPC link.</p>
     pub fn vpc_link_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_link_id(input.into());
@@ -127,5 +137,9 @@ impl UpdateVpcLinkFluentBuilder {
     pub fn set_vpc_link_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpc_link_id(input);
         self
+    }
+    /// <p>The ID of the VPC link.</p>
+    pub fn get_vpc_link_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpc_link_id()
     }
 }

@@ -50,6 +50,12 @@ impl Scte35TimeSignalScheduleActionSettingsBuilder {
         self.scte35_descriptors = input;
         self
     }
+    /// The list of SCTE-35 descriptors accompanying the SCTE-35 time_signal.
+    pub fn get_scte35_descriptors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Scte35Descriptor>> {
+        &self.scte35_descriptors
+    }
     /// Consumes the builder and constructs a [`Scte35TimeSignalScheduleActionSettings`](crate::types::Scte35TimeSignalScheduleActionSettings).
     pub fn build(self) -> crate::types::Scte35TimeSignalScheduleActionSettings {
         crate::types::Scte35TimeSignalScheduleActionSettings {

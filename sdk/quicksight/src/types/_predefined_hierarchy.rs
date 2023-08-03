@@ -57,6 +57,10 @@ impl PredefinedHierarchyBuilder {
         self.hierarchy_id = input;
         self
     }
+    /// <p>The hierarchy ID of the predefined hierarchy.</p>
+    pub fn get_hierarchy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hierarchy_id
+    }
     /// Appends an item to `columns`.
     ///
     /// To override the contents of this collection use [`set_columns`](Self::set_columns).
@@ -76,6 +80,12 @@ impl PredefinedHierarchyBuilder {
         self.columns = input;
         self
     }
+    /// <p>The list of columns that define the predefined hierarchy.</p>
+    pub fn get_columns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnIdentifier>> {
+        &self.columns
+    }
     /// Appends an item to `drill_down_filters`.
     ///
     /// To override the contents of this collection use [`set_drill_down_filters`](Self::set_drill_down_filters).
@@ -94,6 +104,12 @@ impl PredefinedHierarchyBuilder {
     ) -> Self {
         self.drill_down_filters = input;
         self
+    }
+    /// <p>The option that determines the drill down filters for the predefined hierarchy.</p>
+    pub fn get_drill_down_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DrillDownFilter>> {
+        &self.drill_down_filters
     }
     /// Consumes the builder and constructs a [`PredefinedHierarchy`](crate::types::PredefinedHierarchy).
     pub fn build(self) -> crate::types::PredefinedHierarchy {

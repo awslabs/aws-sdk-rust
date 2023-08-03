@@ -48,6 +48,10 @@ impl GetReadSetImportJobInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The job's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The job's sequence store ID.</p>
     pub fn sequence_store_id(
         mut self,
@@ -63,6 +67,10 @@ impl GetReadSetImportJobInputBuilder {
     ) -> Self {
         self.sequence_store_id = input;
         self
+    }
+    /// <p>The job's sequence store ID.</p>
+    pub fn get_sequence_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sequence_store_id
     }
     /// Consumes the builder and constructs a [`GetReadSetImportJobInput`](crate::operation::get_read_set_import_job::GetReadSetImportJobInput).
     pub fn build(

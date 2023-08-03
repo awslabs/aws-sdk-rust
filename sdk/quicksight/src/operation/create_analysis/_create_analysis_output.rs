@@ -78,6 +78,10 @@ impl CreateAnalysisOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN for the analysis.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The ID of the analysis.</p>
     pub fn analysis_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analysis_id = ::std::option::Option::Some(input.into());
@@ -87,6 +91,10 @@ impl CreateAnalysisOutputBuilder {
     pub fn set_analysis_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.analysis_id = input;
         self
+    }
+    /// <p>The ID of the analysis.</p>
+    pub fn get_analysis_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.analysis_id
     }
     /// <p>The status of the creation of the analysis. </p>
     pub fn creation_status(mut self, input: crate::types::ResourceStatus) -> Self {
@@ -101,6 +109,10 @@ impl CreateAnalysisOutputBuilder {
         self.creation_status = input;
         self
     }
+    /// <p>The status of the creation of the analysis. </p>
+    pub fn get_creation_status(&self) -> &::std::option::Option<crate::types::ResourceStatus> {
+        &self.creation_status
+    }
     /// <p>The HTTP status of the request.</p>
     pub fn status(mut self, input: i32) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -111,6 +123,10 @@ impl CreateAnalysisOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The HTTP status of the request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<i32> {
+        &self.status
+    }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_id = ::std::option::Option::Some(input.into());
@@ -120,6 +136,10 @@ impl CreateAnalysisOutputBuilder {
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_id = input;
         self
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

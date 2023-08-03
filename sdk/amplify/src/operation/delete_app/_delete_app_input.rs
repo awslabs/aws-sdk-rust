@@ -40,6 +40,10 @@ impl DeleteAppInputBuilder {
         self.app_id = input;
         self
     }
+    /// <p> The unique ID for an Amplify app. </p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// Consumes the builder and constructs a [`DeleteAppInput`](crate::operation::delete_app::DeleteAppInput).
     pub fn build(
         self,

@@ -36,6 +36,10 @@ impl DescribeResourceCollectionHealthFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeResourceCollectionHealth as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_resource_collection_health::builders::DescribeResourceCollectionHealthInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -109,6 +113,12 @@ impl DescribeResourceCollectionHealthFluentBuilder {
         self.inner = self.inner.set_resource_collection_type(input);
         self
     }
+    /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    pub fn get_resource_collection_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceCollectionType> {
+        self.inner.get_resource_collection_type()
+    }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -118,5 +128,9 @@ impl DescribeResourceCollectionHealthFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

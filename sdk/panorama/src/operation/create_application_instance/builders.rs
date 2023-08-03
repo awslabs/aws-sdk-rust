@@ -36,6 +36,10 @@ impl CreateApplicationInstanceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateApplicationInstance as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_application_instance::builders::CreateApplicationInstanceInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl CreateApplicationInstanceFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>A name for the application instance.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>A description for the application instance.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -135,6 +143,10 @@ impl CreateApplicationInstanceFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description for the application instance.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The application's manifest document.</p>
     pub fn manifest_payload(mut self, input: crate::types::ManifestPayload) -> Self {
@@ -148,6 +160,10 @@ impl CreateApplicationInstanceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_manifest_payload(input);
         self
+    }
+    /// <p>The application's manifest document.</p>
+    pub fn get_manifest_payload(&self) -> &::std::option::Option<crate::types::ManifestPayload> {
+        self.inner.get_manifest_payload()
     }
     /// <p>Setting overrides for the application manifest.</p>
     pub fn manifest_overrides_payload(
@@ -165,6 +181,12 @@ impl CreateApplicationInstanceFluentBuilder {
         self.inner = self.inner.set_manifest_overrides_payload(input);
         self
     }
+    /// <p>Setting overrides for the application manifest.</p>
+    pub fn get_manifest_overrides_payload(
+        &self,
+    ) -> &::std::option::Option<crate::types::ManifestOverridesPayload> {
+        self.inner.get_manifest_overrides_payload()
+    }
     /// <p>The ID of an application instance to replace with the new instance.</p>
     pub fn application_instance_id_to_replace(
         mut self,
@@ -180,6 +202,12 @@ impl CreateApplicationInstanceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_application_instance_id_to_replace(input);
         self
+    }
+    /// <p>The ID of an application instance to replace with the new instance.</p>
+    pub fn get_application_instance_id_to_replace(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_instance_id_to_replace()
     }
     /// <p>The ARN of a runtime role for the application instance.</p>
     pub fn runtime_role_arn(
@@ -197,6 +225,10 @@ impl CreateApplicationInstanceFluentBuilder {
         self.inner = self.inner.set_runtime_role_arn(input);
         self
     }
+    /// <p>The ARN of a runtime role for the application instance.</p>
+    pub fn get_runtime_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_runtime_role_arn()
+    }
     /// <p>A device's ID.</p>
     pub fn default_runtime_context_device(
         mut self,
@@ -212,6 +244,12 @@ impl CreateApplicationInstanceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_default_runtime_context_device(input);
         self
+    }
+    /// <p>A device's ID.</p>
+    pub fn get_default_runtime_context_device(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_default_runtime_context_device()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -235,5 +273,13 @@ impl CreateApplicationInstanceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Tags for the application instance.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

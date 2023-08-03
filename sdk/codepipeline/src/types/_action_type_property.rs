@@ -80,6 +80,10 @@ impl ActionTypePropertyBuilder {
         self.name = input;
         self
     }
+    /// <p>The property name that is displayed to users.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Whether the configuration property is an optional value.</p>
     pub fn optional(mut self, input: bool) -> Self {
         self.optional = ::std::option::Option::Some(input);
@@ -89,6 +93,10 @@ impl ActionTypePropertyBuilder {
     pub fn set_optional(mut self, input: ::std::option::Option<bool>) -> Self {
         self.optional = input;
         self
+    }
+    /// <p>Whether the configuration property is an optional value.</p>
+    pub fn get_optional(&self) -> &::std::option::Option<bool> {
+        &self.optional
     }
     /// <p>Whether the configuration property is a key.</p>
     pub fn key(mut self, input: bool) -> Self {
@@ -100,6 +108,10 @@ impl ActionTypePropertyBuilder {
         self.key = input;
         self
     }
+    /// <p>Whether the configuration property is a key.</p>
+    pub fn get_key(&self) -> &::std::option::Option<bool> {
+        &self.key
+    }
     /// <p>Whether to omit the field value entered by the customer in the log. If <code>true</code>, the value is not saved in CloudTrail logs for the action execution.</p>
     pub fn no_echo(mut self, input: bool) -> Self {
         self.no_echo = ::std::option::Option::Some(input);
@@ -109,6 +121,10 @@ impl ActionTypePropertyBuilder {
     pub fn set_no_echo(mut self, input: ::std::option::Option<bool>) -> Self {
         self.no_echo = input;
         self
+    }
+    /// <p>Whether to omit the field value entered by the customer in the log. If <code>true</code>, the value is not saved in CloudTrail logs for the action execution.</p>
+    pub fn get_no_echo(&self) -> &::std::option::Option<bool> {
+        &self.no_echo
     }
     /// <p>Indicates that the property is used with polling. An action type can have up to one queryable property. If it has one, that property must be both required and not secret.</p>
     pub fn queryable(mut self, input: bool) -> Self {
@@ -120,6 +136,10 @@ impl ActionTypePropertyBuilder {
         self.queryable = input;
         self
     }
+    /// <p>Indicates that the property is used with polling. An action type can have up to one queryable property. If it has one, that property must be both required and not secret.</p>
+    pub fn get_queryable(&self) -> &::std::option::Option<bool> {
+        &self.queryable
+    }
     /// <p>The description of the property that is displayed to users.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -129,6 +149,10 @@ impl ActionTypePropertyBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the property that is displayed to users.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`ActionTypeProperty`](crate::types::ActionTypeProperty).
     pub fn build(self) -> crate::types::ActionTypeProperty {

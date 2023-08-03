@@ -45,6 +45,12 @@ impl ActivatePipelineFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ActivatePipeline as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::activate_pipeline::builders::ActivatePipelineInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +141,10 @@ impl ActivatePipelineFluentBuilder {
         self.inner = self.inner.set_pipeline_id(input);
         self
     }
+    /// <p>The ID of the pipeline.</p>
+    pub fn get_pipeline_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pipeline_id()
+    }
     /// Appends an item to `parameterValues`.
     ///
     /// To override the contents of this collection use [`set_parameter_values`](Self::set_parameter_values).
@@ -152,6 +162,12 @@ impl ActivatePipelineFluentBuilder {
         self.inner = self.inner.set_parameter_values(input);
         self
     }
+    /// <p>A list of parameter values to pass to the pipeline at activation.</p>
+    pub fn get_parameter_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>> {
+        self.inner.get_parameter_values()
+    }
     /// <p>The date and time to resume the pipeline. By default, the pipeline resumes from the last completed execution.</p>
     pub fn start_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_timestamp(input);
@@ -164,5 +180,9 @@ impl ActivatePipelineFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_start_timestamp(input);
         self
+    }
+    /// <p>The date and time to resume the pipeline. By default, the pipeline resumes from the last completed execution.</p>
+    pub fn get_start_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_timestamp()
     }
 }

@@ -78,6 +78,16 @@ impl LaunchTemplateCapacityReservationSpecificationRequestBuilder {
         self.capacity_reservation_preference = input;
         self
     }
+    /// <p>Indicates the instance's Capacity Reservation preferences. Possible preferences include:</p>
+    /// <ul>
+    /// <li> <p> <code>open</code> - The instance can run in any <code>open</code> Capacity Reservation that has matching attributes (instance type, platform, Availability Zone).</p> </li>
+    /// <li> <p> <code>none</code> - The instance avoids running in a Capacity Reservation even if one is available. The instance runs in On-Demand capacity.</p> </li>
+    /// </ul>
+    pub fn get_capacity_reservation_preference(
+        &self,
+    ) -> &::std::option::Option<crate::types::CapacityReservationPreference> {
+        &self.capacity_reservation_preference
+    }
     /// <p>Information about the target Capacity Reservation or Capacity Reservation group.</p>
     pub fn capacity_reservation_target(
         mut self,
@@ -93,6 +103,12 @@ impl LaunchTemplateCapacityReservationSpecificationRequestBuilder {
     ) -> Self {
         self.capacity_reservation_target = input;
         self
+    }
+    /// <p>Information about the target Capacity Reservation or Capacity Reservation group.</p>
+    pub fn get_capacity_reservation_target(
+        &self,
+    ) -> &::std::option::Option<crate::types::CapacityReservationTarget> {
+        &self.capacity_reservation_target
     }
     /// Consumes the builder and constructs a [`LaunchTemplateCapacityReservationSpecificationRequest`](crate::types::LaunchTemplateCapacityReservationSpecificationRequest).
     pub fn build(self) -> crate::types::LaunchTemplateCapacityReservationSpecificationRequest {

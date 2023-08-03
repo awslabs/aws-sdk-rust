@@ -59,6 +59,12 @@ impl TfiTrainingMetricsValueBuilder {
         self.metric_data_points = input;
         self
     }
+    /// <p> The model's performance metrics data points. </p>
+    pub fn get_metric_data_points(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TfiMetricDataPoint>> {
+        &self.metric_data_points
+    }
     /// <p> The model performance score. </p>
     pub fn model_performance(mut self, input: crate::types::TfiModelPerformance) -> Self {
         self.model_performance = ::std::option::Option::Some(input);
@@ -71,6 +77,12 @@ impl TfiTrainingMetricsValueBuilder {
     ) -> Self {
         self.model_performance = input;
         self
+    }
+    /// <p> The model performance score. </p>
+    pub fn get_model_performance(
+        &self,
+    ) -> &::std::option::Option<crate::types::TfiModelPerformance> {
+        &self.model_performance
     }
     /// Consumes the builder and constructs a [`TfiTrainingMetricsValue`](crate::types::TfiTrainingMetricsValue).
     pub fn build(self) -> crate::types::TfiTrainingMetricsValue {

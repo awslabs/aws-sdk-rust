@@ -71,6 +71,10 @@ impl ImportCrlInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the certificate revocation list (CRL).</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The x509 v3 specified certificate revocation list (CRL).</p>
     pub fn crl_data(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.crl_data = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl ImportCrlInputBuilder {
         self.crl_data = input;
         self
     }
+    /// <p>The x509 v3 specified certificate revocation list (CRL).</p>
+    pub fn get_crl_data(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.crl_data
+    }
     /// <p>Specifies whether the certificate revocation list (CRL) is enabled.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -90,6 +98,10 @@ impl ImportCrlInputBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    /// <p>Specifies whether the certificate revocation list (CRL) is enabled.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// Appends an item to `tags`.
     ///
@@ -110,6 +122,10 @@ impl ImportCrlInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>A list of tags to attach to the certificate revocation list (CRL).</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The ARN of the TrustAnchor the certificate revocation list (CRL) will provide revocation for.</p>
     pub fn trust_anchor_arn(
         mut self,
@@ -125,6 +141,10 @@ impl ImportCrlInputBuilder {
     ) -> Self {
         self.trust_anchor_arn = input;
         self
+    }
+    /// <p>The ARN of the TrustAnchor the certificate revocation list (CRL) will provide revocation for.</p>
+    pub fn get_trust_anchor_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trust_anchor_arn
     }
     /// Consumes the builder and constructs a [`ImportCrlInput`](crate::operation::import_crl::ImportCrlInput).
     pub fn build(

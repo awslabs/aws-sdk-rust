@@ -72,6 +72,11 @@ impl PillarDifferenceBuilder {
         self.pillar_id = input;
         self
     }
+    /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
+    /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
+    pub fn get_pillar_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pillar_id
+    }
     /// <p>The name of the pillar.</p>
     pub fn pillar_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pillar_name = ::std::option::Option::Some(input.into());
@@ -81,6 +86,10 @@ impl PillarDifferenceBuilder {
     pub fn set_pillar_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pillar_name = input;
         self
+    }
+    /// <p>The name of the pillar.</p>
+    pub fn get_pillar_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pillar_name
     }
     /// <p>Indicates the type of change to the pillar.</p>
     pub fn difference_status(mut self, input: crate::types::DifferenceStatus) -> Self {
@@ -94,6 +103,10 @@ impl PillarDifferenceBuilder {
     ) -> Self {
         self.difference_status = input;
         self
+    }
+    /// <p>Indicates the type of change to the pillar.</p>
+    pub fn get_difference_status(&self) -> &::std::option::Option<crate::types::DifferenceStatus> {
+        &self.difference_status
     }
     /// Appends an item to `question_differences`.
     ///
@@ -113,6 +126,12 @@ impl PillarDifferenceBuilder {
     ) -> Self {
         self.question_differences = input;
         self
+    }
+    /// <p>List of question differences.</p>
+    pub fn get_question_differences(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::QuestionDifference>> {
+        &self.question_differences
     }
     /// Consumes the builder and constructs a [`PillarDifference`](crate::types::PillarDifference).
     pub fn build(self) -> crate::types::PillarDifference {

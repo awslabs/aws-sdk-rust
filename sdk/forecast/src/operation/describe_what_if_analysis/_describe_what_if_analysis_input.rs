@@ -47,6 +47,10 @@ impl DescribeWhatIfAnalysisInputBuilder {
         self.what_if_analysis_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the what-if analysis that you are interested in.</p>
+    pub fn get_what_if_analysis_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.what_if_analysis_arn
+    }
     /// Consumes the builder and constructs a [`DescribeWhatIfAnalysisInput`](crate::operation::describe_what_if_analysis::DescribeWhatIfAnalysisInput).
     pub fn build(
         self,

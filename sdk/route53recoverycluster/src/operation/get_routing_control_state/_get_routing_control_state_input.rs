@@ -47,6 +47,10 @@ impl GetRoutingControlStateInputBuilder {
         self.routing_control_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the routing control that you want to get the state for.</p>
+    pub fn get_routing_control_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.routing_control_arn
+    }
     /// Consumes the builder and constructs a [`GetRoutingControlStateInput`](crate::operation::get_routing_control_state::GetRoutingControlStateInput).
     pub fn build(
         self,

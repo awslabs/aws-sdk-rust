@@ -45,6 +45,10 @@ impl DisableDelegatedAdminAccountInputBuilder {
         self.delegated_admin_account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID of the current Amazon Inspector delegated administrator.</p>
+    pub fn get_delegated_admin_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delegated_admin_account_id
+    }
     /// Consumes the builder and constructs a [`DisableDelegatedAdminAccountInput`](crate::operation::disable_delegated_admin_account::DisableDelegatedAdminAccountInput).
     pub fn build(
         self,

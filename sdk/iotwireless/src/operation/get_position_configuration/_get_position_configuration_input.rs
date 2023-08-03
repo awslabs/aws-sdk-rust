@@ -56,6 +56,10 @@ impl GetPositionConfigurationInputBuilder {
         self.resource_identifier = input;
         self
     }
+    /// <p>Resource identifier used in a position configuration.</p>
+    pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_identifier
+    }
     /// <p>Resource type of the resource for which position configuration is retrieved.</p>
     pub fn resource_type(mut self, input: crate::types::PositionResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
@@ -68,6 +72,10 @@ impl GetPositionConfigurationInputBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>Resource type of the resource for which position configuration is retrieved.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::PositionResourceType> {
+        &self.resource_type
     }
     /// Consumes the builder and constructs a [`GetPositionConfigurationInput`](crate::operation::get_position_configuration::GetPositionConfigurationInput).
     pub fn build(

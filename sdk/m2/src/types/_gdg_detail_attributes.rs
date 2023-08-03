@@ -48,6 +48,10 @@ impl GdgDetailAttributesBuilder {
         self.limit = input;
         self
     }
+    /// <p>The maximum number of generation data sets, up to 255, in a GDG.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
+    }
     /// <p>The disposition of the data set in the catalog.</p>
     pub fn roll_disposition(
         mut self,
@@ -63,6 +67,10 @@ impl GdgDetailAttributesBuilder {
     ) -> Self {
         self.roll_disposition = input;
         self
+    }
+    /// <p>The disposition of the data set in the catalog.</p>
+    pub fn get_roll_disposition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.roll_disposition
     }
     /// Consumes the builder and constructs a [`GdgDetailAttributes`](crate::types::GdgDetailAttributes).
     pub fn build(self) -> crate::types::GdgDetailAttributes {

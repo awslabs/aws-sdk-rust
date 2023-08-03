@@ -68,6 +68,12 @@ impl DocumentAttributeValueCountPairBuilder {
         self.document_attribute_value = input;
         self
     }
+    /// <p>The value of the attribute. For example, "HR".</p>
+    pub fn get_document_attribute_value(
+        &self,
+    ) -> &::std::option::Option<crate::types::DocumentAttributeValue> {
+        &self.document_attribute_value
+    }
     /// <p>The number of documents in the response that have the attribute value for the key.</p>
     pub fn count(mut self, input: i32) -> Self {
         self.count = ::std::option::Option::Some(input);
@@ -77,6 +83,10 @@ impl DocumentAttributeValueCountPairBuilder {
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count = input;
         self
+    }
+    /// <p>The number of documents in the response that have the attribute value for the key.</p>
+    pub fn get_count(&self) -> &::std::option::Option<i32> {
+        &self.count
     }
     /// Appends an item to `facet_results`.
     ///
@@ -102,6 +112,15 @@ impl DocumentAttributeValueCountPairBuilder {
     ) -> Self {
         self.facet_results = input;
         self
+    }
+    /// <p>Contains the results of a document attribute that is a nested facet. A <code>FacetResult</code> contains the counts for each facet nested within a facet.</p>
+    /// <p>For example, the document attribute or facet "Department" includes a value called "Engineering". In addition, the document attribute or facet "SubDepartment" includes the values "Frontend" and "Backend" for documents assigned to "Engineering". You can display nested facets in the search results so that documents can be searched not only by department but also by a sub department within a department. The counts for documents that belong to "Frontend" and "Backend" within "Engineering" are returned for a query.</p>
+    /// <p></p>
+    /// <p></p>
+    pub fn get_facet_results(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FacetResult>> {
+        &self.facet_results
     }
     /// Consumes the builder and constructs a [`DocumentAttributeValueCountPair`](crate::types::DocumentAttributeValueCountPair).
     pub fn build(self) -> crate::types::DocumentAttributeValueCountPair {

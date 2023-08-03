@@ -89,6 +89,10 @@ impl DeauthorizeDataShareOutputBuilder {
         self.data_share_arn = input;
         self
     }
+    /// <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
+    pub fn get_data_share_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_share_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the producer.</p>
     pub fn producer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.producer_arn = ::std::option::Option::Some(input.into());
@@ -98,6 +102,10 @@ impl DeauthorizeDataShareOutputBuilder {
     pub fn set_producer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.producer_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the producer.</p>
+    pub fn get_producer_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.producer_arn
     }
     /// <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
     pub fn allow_publicly_accessible_consumers(mut self, input: bool) -> Self {
@@ -111,6 +119,10 @@ impl DeauthorizeDataShareOutputBuilder {
     ) -> Self {
         self.allow_publicly_accessible_consumers = input;
         self
+    }
+    /// <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
+    pub fn get_allow_publicly_accessible_consumers(&self) -> &::std::option::Option<bool> {
+        &self.allow_publicly_accessible_consumers
     }
     /// Appends an item to `data_share_associations`.
     ///
@@ -131,6 +143,12 @@ impl DeauthorizeDataShareOutputBuilder {
         self.data_share_associations = input;
         self
     }
+    /// <p>A value that specifies when the datashare has an association between producer and data consumers.</p>
+    pub fn get_data_share_associations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataShareAssociation>> {
+        &self.data_share_associations
+    }
     /// <p>The identifier of a datashare to show its managing entity.</p>
     pub fn managed_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.managed_by = ::std::option::Option::Some(input.into());
@@ -140,6 +158,10 @@ impl DeauthorizeDataShareOutputBuilder {
     pub fn set_managed_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.managed_by = input;
         self
+    }
+    /// <p>The identifier of a datashare to show its managing entity.</p>
+    pub fn get_managed_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.managed_by
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -37,6 +37,13 @@ impl UpdateFolderPermissionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateFolderPermissions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_folder_permissions::builders::UpdateFolderPermissionsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl UpdateFolderPermissionsFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The ID for the Amazon Web Services account that contains the folder to update.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>The ID of the folder.</p>
     pub fn folder_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.folder_id(input.into());
@@ -142,6 +153,10 @@ impl UpdateFolderPermissionsFluentBuilder {
     pub fn set_folder_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_folder_id(input);
         self
+    }
+    /// <p>The ID of the folder.</p>
+    pub fn get_folder_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_folder_id()
     }
     /// Appends an item to `GrantPermissions`.
     ///
@@ -160,6 +175,12 @@ impl UpdateFolderPermissionsFluentBuilder {
         self.inner = self.inner.set_grant_permissions(input);
         self
     }
+    /// <p>The permissions that you want to grant on a resource.</p>
+    pub fn get_grant_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+        self.inner.get_grant_permissions()
+    }
     /// Appends an item to `RevokePermissions`.
     ///
     /// To override the contents of this collection use [`set_revoke_permissions`](Self::set_revoke_permissions).
@@ -176,5 +197,11 @@ impl UpdateFolderPermissionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_revoke_permissions(input);
         self
+    }
+    /// <p>The permissions that you want to revoke from a resource.</p>
+    pub fn get_revoke_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+        self.inner.get_revoke_permissions()
     }
 }

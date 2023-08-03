@@ -74,6 +74,10 @@ impl UserIdentityInfoBuilder {
         self.first_name = input;
         self
     }
+    /// <p>The first name. This is required if you are using Amazon Connect or SAML for identity management.</p>
+    pub fn get_first_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.first_name
+    }
     /// <p>The last name. This is required if you are using Amazon Connect or SAML for identity management.</p>
     pub fn last_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_name = ::std::option::Option::Some(input.into());
@@ -84,6 +88,10 @@ impl UserIdentityInfoBuilder {
         self.last_name = input;
         self
     }
+    /// <p>The last name. This is required if you are using Amazon Connect or SAML for identity management.</p>
+    pub fn get_last_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_name
+    }
     /// <p>The email address. If you are using SAML for identity management and include this parameter, an error is returned.</p>
     pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email = ::std::option::Option::Some(input.into());
@@ -93,6 +101,10 @@ impl UserIdentityInfoBuilder {
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email = input;
         self
+    }
+    /// <p>The email address. If you are using SAML for identity management and include this parameter, an error is returned.</p>
+    pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email
     }
     /// <p>The user's secondary email address. If you provide a secondary email, the user receives email notifications - other than password reset notifications - to this email address instead of to their primary email address.</p>
     /// <p>Pattern: <code>(?=^.{0,265}$)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}</code> </p>
@@ -112,6 +124,11 @@ impl UserIdentityInfoBuilder {
         self.secondary_email = input;
         self
     }
+    /// <p>The user's secondary email address. If you provide a secondary email, the user receives email notifications - other than password reset notifications - to this email address instead of to their primary email address.</p>
+    /// <p>Pattern: <code>(?=^.{0,265}$)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}</code> </p>
+    pub fn get_secondary_email(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secondary_email
+    }
     /// <p>The user's mobile number.</p>
     pub fn mobile(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mobile = ::std::option::Option::Some(input.into());
@@ -121,6 +138,10 @@ impl UserIdentityInfoBuilder {
     pub fn set_mobile(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mobile = input;
         self
+    }
+    /// <p>The user's mobile number.</p>
+    pub fn get_mobile(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mobile
     }
     /// Consumes the builder and constructs a [`UserIdentityInfo`](crate::types::UserIdentityInfo).
     pub fn build(self) -> crate::types::UserIdentityInfo {

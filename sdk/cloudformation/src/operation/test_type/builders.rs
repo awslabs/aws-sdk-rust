@@ -45,6 +45,10 @@ impl TestTypeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the TestType as a reference.
+    pub fn as_input(&self) -> &crate::operation::test_type::builders::TestTypeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +133,11 @@ impl TestTypeFluentBuilder {
         self.inner = self.inner.set_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the extension.</p>
+    /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
+    }
     /// <p>The type of the extension to test.</p>
     /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
     pub fn r#type(mut self, input: crate::types::ThirdPartyType) -> Self {
@@ -141,6 +150,11 @@ impl TestTypeFluentBuilder {
         self.inner = self.inner.set_type(input);
         self
     }
+    /// <p>The type of the extension to test.</p>
+    /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ThirdPartyType> {
+        self.inner.get_type()
+    }
     /// <p>The name of the extension to test.</p>
     /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
     pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -152,6 +166,11 @@ impl TestTypeFluentBuilder {
     pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_type_name(input);
         self
+    }
+    /// <p>The name of the extension to test.</p>
+    /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
+    pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_type_name()
     }
     /// <p>The version of the extension to test.</p>
     /// <p>You can specify the version id with either <code>Arn</code>, or with <code>TypeName</code> and <code>Type</code>.</p>
@@ -166,6 +185,12 @@ impl TestTypeFluentBuilder {
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version_id(input);
         self
+    }
+    /// <p>The version of the extension to test.</p>
+    /// <p>You can specify the version id with either <code>Arn</code>, or with <code>TypeName</code> and <code>Type</code>.</p>
+    /// <p>If you don't specify a version, CloudFormation uses the default version of the extension in this account and Region for testing.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_version_id()
     }
     /// <p>The S3 bucket to which CloudFormation delivers the contract test execution logs.</p>
     /// <p>CloudFormation delivers the logs by the time contract testing has completed and the extension has been assigned a test type status of <code>PASSED</code> or <code>FAILED</code>.</p>
@@ -196,5 +221,16 @@ impl TestTypeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_log_delivery_bucket(input);
         self
+    }
+    /// <p>The S3 bucket to which CloudFormation delivers the contract test execution logs.</p>
+    /// <p>CloudFormation delivers the logs by the time contract testing has completed and the extension has been assigned a test type status of <code>PASSED</code> or <code>FAILED</code>.</p>
+    /// <p>The user calling <code>TestType</code> must be able to access items in the specified S3 bucket. Specifically, the user needs the following permissions:</p>
+    /// <ul>
+    /// <li> <p> <code>GetObject</code> </p> </li>
+    /// <li> <p> <code>PutObject</code> </p> </li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html">Actions, Resources, and Condition Keys for Amazon S3</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
+    pub fn get_log_delivery_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_log_delivery_bucket()
     }
 }

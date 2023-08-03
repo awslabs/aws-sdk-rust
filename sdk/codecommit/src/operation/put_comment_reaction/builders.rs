@@ -36,6 +36,12 @@ impl PutCommentReactionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutCommentReaction as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_comment_reaction::builders::PutCommentReactionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl PutCommentReactionFluentBuilder {
         self.inner = self.inner.set_comment_id(input);
         self
     }
+    /// <p>The ID of the comment to which you want to add or update a reaction.</p>
+    pub fn get_comment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_comment_id()
+    }
     /// <p>The emoji reaction you want to add or update. To remove a reaction, provide a value of blank or null. You can also provide the value of none. For information about emoji reaction values supported in AWS CodeCommit, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">AWS CodeCommit User Guide</a>.</p>
     pub fn reaction_value(
         mut self,
@@ -141,5 +151,9 @@ impl PutCommentReactionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_reaction_value(input);
         self
+    }
+    /// <p>The emoji reaction you want to add or update. To remove a reaction, provide a value of blank or null. You can also provide the value of none. For information about emoji reaction values supported in AWS CodeCommit, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">AWS CodeCommit User Guide</a>.</p>
+    pub fn get_reaction_value(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reaction_value()
     }
 }

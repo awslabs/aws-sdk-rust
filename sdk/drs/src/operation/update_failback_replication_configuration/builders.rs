@@ -36,6 +36,10 @@ impl UpdateFailbackReplicationConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateFailbackReplicationConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_failback_replication_configuration::builders::UpdateFailbackReplicationConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl UpdateFailbackReplicationConfigurationFluentBuilder {
         self.inner = self.inner.set_recovery_instance_id(input);
         self
     }
+    /// <p>The ID of the Recovery Instance.</p>
+    pub fn get_recovery_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_recovery_instance_id()
+    }
     /// <p>The name of the Failback Replication Configuration.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -115,6 +123,10 @@ impl UpdateFailbackReplicationConfigurationFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the Failback Replication Configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Recovery Instance in Mbps.</p>
     pub fn bandwidth_throttling(mut self, input: i64) -> Self {
@@ -126,6 +138,10 @@ impl UpdateFailbackReplicationConfigurationFluentBuilder {
         self.inner = self.inner.set_bandwidth_throttling(input);
         self
     }
+    /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Recovery Instance in Mbps.</p>
+    pub fn get_bandwidth_throttling(&self) -> &::std::option::Option<i64> {
+        self.inner.get_bandwidth_throttling()
+    }
     /// <p>Whether to use Private IP for the failback replication of the Recovery Instance.</p>
     pub fn use_private_ip(mut self, input: bool) -> Self {
         self.inner = self.inner.use_private_ip(input);
@@ -135,5 +151,9 @@ impl UpdateFailbackReplicationConfigurationFluentBuilder {
     pub fn set_use_private_ip(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_use_private_ip(input);
         self
+    }
+    /// <p>Whether to use Private IP for the failback replication of the Recovery Instance.</p>
+    pub fn get_use_private_ip(&self) -> &::std::option::Option<bool> {
+        self.inner.get_use_private_ip()
     }
 }

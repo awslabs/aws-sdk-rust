@@ -48,6 +48,10 @@ impl RelationalDatabaseEndpointBuilder {
         self.port = input;
         self
     }
+    /// <p>Specifies the port that the database is listening on.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
+    }
     /// <p>Specifies the DNS address of the database.</p>
     pub fn address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.address = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl RelationalDatabaseEndpointBuilder {
     pub fn set_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.address = input;
         self
+    }
+    /// <p>Specifies the DNS address of the database.</p>
+    pub fn get_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.address
     }
     /// Consumes the builder and constructs a [`RelationalDatabaseEndpoint`](crate::types::RelationalDatabaseEndpoint).
     pub fn build(self) -> crate::types::RelationalDatabaseEndpoint {

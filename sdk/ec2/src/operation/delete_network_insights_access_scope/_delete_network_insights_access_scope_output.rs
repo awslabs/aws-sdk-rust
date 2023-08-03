@@ -52,6 +52,12 @@ impl DeleteNetworkInsightsAccessScopeOutputBuilder {
         self.network_insights_access_scope_id = input;
         self
     }
+    /// <p>The ID of the Network Access Scope.</p>
+    pub fn get_network_insights_access_scope_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.network_insights_access_scope_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

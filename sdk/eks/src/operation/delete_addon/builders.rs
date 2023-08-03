@@ -37,6 +37,10 @@ impl DeleteAddonFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteAddon as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_addon::builders::DeleteAddonInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl DeleteAddonFluentBuilder {
         self.inner = self.inner.set_cluster_name(input);
         self
     }
+    /// <p>The name of the cluster to delete the add-on from.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_name()
+    }
     /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
     pub fn addon_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.addon_name(input.into());
@@ -129,6 +137,10 @@ impl DeleteAddonFluentBuilder {
         self.inner = self.inner.set_addon_name(input);
         self
     }
+    /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
+    pub fn get_addon_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_addon_name()
+    }
     /// <p>Specifying this option preserves the add-on software on your cluster but Amazon EKS stops managing any settings for the add-on. If an IAM account is associated with the add-on, it isn't removed.</p>
     pub fn preserve(mut self, input: bool) -> Self {
         self.inner = self.inner.preserve(input);
@@ -138,5 +150,9 @@ impl DeleteAddonFluentBuilder {
     pub fn set_preserve(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_preserve(input);
         self
+    }
+    /// <p>Specifying this option preserves the add-on software on your cluster but Amazon EKS stops managing any settings for the add-on. If an IAM account is associated with the add-on, it isn't removed.</p>
+    pub fn get_preserve(&self) -> &::std::option::Option<bool> {
+        self.inner.get_preserve()
     }
 }

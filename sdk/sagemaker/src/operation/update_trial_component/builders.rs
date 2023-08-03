@@ -36,6 +36,12 @@ impl UpdateTrialComponentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateTrialComponent as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_trial_component::builders::UpdateTrialComponentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateTrialComponentFluentBuilder {
         self.inner = self.inner.set_trial_component_name(input);
         self
     }
+    /// <p>The name of the component to update.</p>
+    pub fn get_trial_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_trial_component_name()
+    }
     /// <p>The name of the component as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>TrialComponentName</code> is displayed.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.display_name(input.into());
@@ -141,6 +151,10 @@ impl UpdateTrialComponentFluentBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_display_name(input);
         self
+    }
+    /// <p>The name of the component as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>TrialComponentName</code> is displayed.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_display_name()
     }
     /// <p>The new status of the component.</p>
     pub fn status(mut self, input: crate::types::TrialComponentStatus) -> Self {
@@ -155,6 +169,10 @@ impl UpdateTrialComponentFluentBuilder {
         self.inner = self.inner.set_status(input);
         self
     }
+    /// <p>The new status of the component.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TrialComponentStatus> {
+        self.inner.get_status()
+    }
     /// <p>When the component started.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
@@ -168,6 +186,10 @@ impl UpdateTrialComponentFluentBuilder {
         self.inner = self.inner.set_start_time(input);
         self
     }
+    /// <p>When the component started.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_time()
+    }
     /// <p>When the component ended.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_time(input);
@@ -180,6 +202,10 @@ impl UpdateTrialComponentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
+    }
+    /// <p>When the component ended.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_time()
     }
     /// Adds a key-value pair to `Parameters`.
     ///
@@ -207,6 +233,17 @@ impl UpdateTrialComponentFluentBuilder {
         self.inner = self.inner.set_parameters(input);
         self
     }
+    /// <p>Replaces all of the component's hyperparameters with the specified hyperparameters or add new hyperparameters. Existing hyperparameters are replaced if the trial component is updated with an identical hyperparameter key.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::TrialComponentParameterValue,
+        >,
+    > {
+        self.inner.get_parameters()
+    }
     /// Appends an item to `ParametersToRemove`.
     ///
     /// To override the contents of this collection use [`set_parameters_to_remove`](Self::set_parameters_to_remove).
@@ -226,6 +263,12 @@ impl UpdateTrialComponentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_parameters_to_remove(input);
         self
+    }
+    /// <p>The hyperparameters to remove from the component.</p>
+    pub fn get_parameters_to_remove(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_parameters_to_remove()
     }
     /// Adds a key-value pair to `InputArtifacts`.
     ///
@@ -253,6 +296,14 @@ impl UpdateTrialComponentFluentBuilder {
         self.inner = self.inner.set_input_artifacts(input);
         self
     }
+    /// <p>Replaces all of the component's input artifacts with the specified artifacts or adds new input artifacts. Existing input artifacts are replaced if the trial component is updated with an identical input artifact key.</p>
+    pub fn get_input_artifacts(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::TrialComponentArtifact>,
+    > {
+        self.inner.get_input_artifacts()
+    }
     /// Appends an item to `InputArtifactsToRemove`.
     ///
     /// To override the contents of this collection use [`set_input_artifacts_to_remove`](Self::set_input_artifacts_to_remove).
@@ -272,6 +323,12 @@ impl UpdateTrialComponentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_input_artifacts_to_remove(input);
         self
+    }
+    /// <p>The input artifacts to remove from the component.</p>
+    pub fn get_input_artifacts_to_remove(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_input_artifacts_to_remove()
     }
     /// Adds a key-value pair to `OutputArtifacts`.
     ///
@@ -299,6 +356,14 @@ impl UpdateTrialComponentFluentBuilder {
         self.inner = self.inner.set_output_artifacts(input);
         self
     }
+    /// <p>Replaces all of the component's output artifacts with the specified artifacts or adds new output artifacts. Existing output artifacts are replaced if the trial component is updated with an identical output artifact key.</p>
+    pub fn get_output_artifacts(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::TrialComponentArtifact>,
+    > {
+        self.inner.get_output_artifacts()
+    }
     /// Appends an item to `OutputArtifactsToRemove`.
     ///
     /// To override the contents of this collection use [`set_output_artifacts_to_remove`](Self::set_output_artifacts_to_remove).
@@ -318,5 +383,11 @@ impl UpdateTrialComponentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_output_artifacts_to_remove(input);
         self
+    }
+    /// <p>The output artifacts to remove from the component.</p>
+    pub fn get_output_artifacts_to_remove(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_output_artifacts_to_remove()
     }
 }

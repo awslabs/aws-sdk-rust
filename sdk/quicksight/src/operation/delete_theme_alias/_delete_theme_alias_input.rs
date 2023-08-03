@@ -62,6 +62,10 @@ impl DeleteThemeAliasInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services account that contains the theme alias to delete.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The ID for the theme that the specified alias is for.</p>
     pub fn theme_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.theme_id = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl DeleteThemeAliasInputBuilder {
         self.theme_id = input;
         self
     }
+    /// <p>The ID for the theme that the specified alias is for.</p>
+    pub fn get_theme_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.theme_id
+    }
     /// <p>The unique name for the theme alias to delete.</p>
     pub fn alias_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias_name = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl DeleteThemeAliasInputBuilder {
     pub fn set_alias_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alias_name = input;
         self
+    }
+    /// <p>The unique name for the theme alias to delete.</p>
+    pub fn get_alias_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias_name
     }
     /// Consumes the builder and constructs a [`DeleteThemeAliasInput`](crate::operation::delete_theme_alias::DeleteThemeAliasInput).
     pub fn build(

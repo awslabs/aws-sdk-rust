@@ -36,6 +36,13 @@ impl DeleteSignalingChannelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteSignalingChannel as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_signaling_channel::builders::DeleteSignalingChannelInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl DeleteSignalingChannelFluentBuilder {
         self.inner = self.inner.set_channel_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the signaling channel that you want to delete.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_arn()
+    }
     /// <p>The current version of the signaling channel that you want to delete. You can obtain the current version by invoking the <code>DescribeSignalingChannel</code> or <code>ListSignalingChannels</code> API operations.</p>
     pub fn current_version(
         mut self,
@@ -141,5 +152,9 @@ impl DeleteSignalingChannelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_current_version(input);
         self
+    }
+    /// <p>The current version of the signaling channel that you want to delete. You can obtain the current version by invoking the <code>DescribeSignalingChannel</code> or <code>ListSignalingChannels</code> API operations.</p>
+    pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_current_version()
     }
 }

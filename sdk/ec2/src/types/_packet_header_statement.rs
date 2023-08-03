@@ -101,6 +101,12 @@ impl PacketHeaderStatementBuilder {
         self.source_addresses = input;
         self
     }
+    /// <p>The source addresses.</p>
+    pub fn get_source_addresses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.source_addresses
+    }
     /// Appends an item to `destination_addresses`.
     ///
     /// To override the contents of this collection use [`set_destination_addresses`](Self::set_destination_addresses).
@@ -123,6 +129,12 @@ impl PacketHeaderStatementBuilder {
         self.destination_addresses = input;
         self
     }
+    /// <p>The destination addresses.</p>
+    pub fn get_destination_addresses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.destination_addresses
+    }
     /// Appends an item to `source_ports`.
     ///
     /// To override the contents of this collection use [`set_source_ports`](Self::set_source_ports).
@@ -141,6 +153,12 @@ impl PacketHeaderStatementBuilder {
     ) -> Self {
         self.source_ports = input;
         self
+    }
+    /// <p>The source ports.</p>
+    pub fn get_source_ports(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.source_ports
     }
     /// Appends an item to `destination_ports`.
     ///
@@ -164,6 +182,12 @@ impl PacketHeaderStatementBuilder {
         self.destination_ports = input;
         self
     }
+    /// <p>The destination ports.</p>
+    pub fn get_destination_ports(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.destination_ports
+    }
     /// Appends an item to `source_prefix_lists`.
     ///
     /// To override the contents of this collection use [`set_source_prefix_lists`](Self::set_source_prefix_lists).
@@ -185,6 +209,12 @@ impl PacketHeaderStatementBuilder {
     ) -> Self {
         self.source_prefix_lists = input;
         self
+    }
+    /// <p>The source prefix lists.</p>
+    pub fn get_source_prefix_lists(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.source_prefix_lists
     }
     /// Appends an item to `destination_prefix_lists`.
     ///
@@ -208,6 +238,12 @@ impl PacketHeaderStatementBuilder {
         self.destination_prefix_lists = input;
         self
     }
+    /// <p>The destination prefix lists.</p>
+    pub fn get_destination_prefix_lists(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.destination_prefix_lists
+    }
     /// Appends an item to `protocols`.
     ///
     /// To override the contents of this collection use [`set_protocols`](Self::set_protocols).
@@ -226,6 +262,10 @@ impl PacketHeaderStatementBuilder {
     ) -> Self {
         self.protocols = input;
         self
+    }
+    /// <p>The protocols.</p>
+    pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Protocol>> {
+        &self.protocols
     }
     /// Consumes the builder and constructs a [`PacketHeaderStatement`](crate::types::PacketHeaderStatement).
     pub fn build(self) -> crate::types::PacketHeaderStatement {

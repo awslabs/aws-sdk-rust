@@ -57,6 +57,10 @@ impl GetSolFunctionPackageContentOutputBuilder {
         self.content_type = input;
         self
     }
+    /// <p>Indicates the media type of the resource.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<crate::types::PackageContentType> {
+        &self.content_type
+    }
     /// <p>Contents of the function package.</p>
     pub fn package_content(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.package_content = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl GetSolFunctionPackageContentOutputBuilder {
     ) -> Self {
         self.package_content = input;
         self
+    }
+    /// <p>Contents of the function package.</p>
+    pub fn get_package_content(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.package_content
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

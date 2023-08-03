@@ -54,6 +54,10 @@ impl ListQueuesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// Use this string to request the next batch of queues.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `queues`.
     ///
     /// To override the contents of this collection use [`set_queues`](Self::set_queues).
@@ -72,6 +76,10 @@ impl ListQueuesOutputBuilder {
     ) -> Self {
         self.queues = input;
         self
+    }
+    /// List of queues.
+    pub fn get_queues(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Queue>> {
+        &self.queues
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

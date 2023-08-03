@@ -79,6 +79,10 @@ impl CreateArchiveRuleInputBuilder {
         self.analyzer_name = input;
         self
     }
+    /// <p>The name of the created analyzer.</p>
+    pub fn get_analyzer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.analyzer_name
+    }
     /// <p>The name of the rule to create.</p>
     pub fn rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_name = ::std::option::Option::Some(input.into());
@@ -88,6 +92,10 @@ impl CreateArchiveRuleInputBuilder {
     pub fn set_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_name = input;
         self
+    }
+    /// <p>The name of the rule to create.</p>
+    pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_name
     }
     /// Adds a key-value pair to `filter`.
     ///
@@ -114,6 +122,14 @@ impl CreateArchiveRuleInputBuilder {
         self.filter = input;
         self
     }
+    /// <p>The criteria for the rule.</p>
+    pub fn get_filter(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::Criterion>,
+    > {
+        &self.filter
+    }
     /// <p>A client token.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -123,6 +139,10 @@ impl CreateArchiveRuleInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A client token.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateArchiveRuleInput`](crate::operation::create_archive_rule::CreateArchiveRuleInput).
     pub fn build(

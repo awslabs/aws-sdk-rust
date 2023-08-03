@@ -73,6 +73,10 @@ impl GetUserDefinedFunctionsInputBuilder {
         self.catalog_id = input;
         self
     }
+    /// <p>The ID of the Data Catalog where the functions to be retrieved are located. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// <p>The name of the catalog database where the functions are located. If none is provided, functions from all the databases across the catalog will be returned.</p>
     pub fn database_name(
         mut self,
@@ -89,6 +93,10 @@ impl GetUserDefinedFunctionsInputBuilder {
         self.database_name = input;
         self
     }
+    /// <p>The name of the catalog database where the functions are located. If none is provided, functions from all the databases across the catalog will be returned.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>An optional function-name pattern string that filters the function definitions returned.</p>
     pub fn pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pattern = ::std::option::Option::Some(input.into());
@@ -98,6 +106,10 @@ impl GetUserDefinedFunctionsInputBuilder {
     pub fn set_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pattern = input;
         self
+    }
+    /// <p>An optional function-name pattern string that filters the function definitions returned.</p>
+    pub fn get_pattern(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pattern
     }
     /// <p>A continuation token, if this is a continuation call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -109,6 +121,10 @@ impl GetUserDefinedFunctionsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A continuation token, if this is a continuation call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of functions to return in one response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -118,6 +134,10 @@ impl GetUserDefinedFunctionsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of functions to return in one response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`GetUserDefinedFunctionsInput`](crate::operation::get_user_defined_functions::GetUserDefinedFunctionsInput).
     pub fn build(

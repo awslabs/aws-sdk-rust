@@ -93,6 +93,10 @@ impl ListCandidatesForAutoMlJobInputBuilder {
         self.auto_ml_job_name = input;
         self
     }
+    /// <p>List the candidates created for the job by providing the job's name.</p>
+    pub fn get_auto_ml_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auto_ml_job_name
+    }
     /// <p>List the candidates for the job and filter by status.</p>
     pub fn status_equals(mut self, input: crate::types::CandidateStatus) -> Self {
         self.status_equals = ::std::option::Option::Some(input);
@@ -105,6 +109,10 @@ impl ListCandidatesForAutoMlJobInputBuilder {
     ) -> Self {
         self.status_equals = input;
         self
+    }
+    /// <p>List the candidates for the job and filter by status.</p>
+    pub fn get_status_equals(&self) -> &::std::option::Option<crate::types::CandidateStatus> {
+        &self.status_equals
     }
     /// <p>List the candidates for the job and filter by candidate name.</p>
     pub fn candidate_name_equals(
@@ -122,6 +130,10 @@ impl ListCandidatesForAutoMlJobInputBuilder {
         self.candidate_name_equals = input;
         self
     }
+    /// <p>List the candidates for the job and filter by candidate name.</p>
+    pub fn get_candidate_name_equals(&self) -> &::std::option::Option<::std::string::String> {
+        &self.candidate_name_equals
+    }
     /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
     pub fn sort_order(mut self, input: crate::types::AutoMlSortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -134,6 +146,10 @@ impl ListCandidatesForAutoMlJobInputBuilder {
     ) -> Self {
         self.sort_order = input;
         self
+    }
+    /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::AutoMlSortOrder> {
+        &self.sort_order
     }
     /// <p>The parameter by which to sort the results. The default is <code>Descending</code>.</p>
     pub fn sort_by(mut self, input: crate::types::CandidateSortBy) -> Self {
@@ -148,6 +164,10 @@ impl ListCandidatesForAutoMlJobInputBuilder {
         self.sort_by = input;
         self
     }
+    /// <p>The parameter by which to sort the results. The default is <code>Descending</code>.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::CandidateSortBy> {
+        &self.sort_by
+    }
     /// <p>List the job's candidates up to a specified limit.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -158,6 +178,10 @@ impl ListCandidatesForAutoMlJobInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>List the job's candidates up to a specified limit.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -167,6 +191,10 @@ impl ListCandidatesForAutoMlJobInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListCandidatesForAutoMlJobInput`](crate::operation::list_candidates_for_auto_ml_job::ListCandidatesForAutoMlJobInput).
     pub fn build(

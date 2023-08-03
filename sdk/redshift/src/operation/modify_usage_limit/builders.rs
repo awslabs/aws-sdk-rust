@@ -36,6 +36,12 @@ impl ModifyUsageLimitFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyUsageLimit as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::modify_usage_limit::builders::ModifyUsageLimitInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl ModifyUsageLimitFluentBuilder {
         self.inner = self.inner.set_usage_limit_id(input);
         self
     }
+    /// <p>The identifier of the usage limit to modify.</p>
+    pub fn get_usage_limit_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_usage_limit_id()
+    }
     /// <p>The new limit amount. For more information about this parameter, see <code>UsageLimit</code>. </p>
     pub fn amount(mut self, input: i64) -> Self {
         self.inner = self.inner.amount(input);
@@ -141,6 +151,10 @@ impl ModifyUsageLimitFluentBuilder {
     pub fn set_amount(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_amount(input);
         self
+    }
+    /// <p>The new limit amount. For more information about this parameter, see <code>UsageLimit</code>. </p>
+    pub fn get_amount(&self) -> &::std::option::Option<i64> {
+        self.inner.get_amount()
     }
     /// <p>The new action that Amazon Redshift takes when the limit is reached. For more information about this parameter, see <code>UsageLimit</code>. </p>
     pub fn breach_action(mut self, input: crate::types::UsageLimitBreachAction) -> Self {
@@ -154,5 +168,11 @@ impl ModifyUsageLimitFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_breach_action(input);
         self
+    }
+    /// <p>The new action that Amazon Redshift takes when the limit is reached. For more information about this parameter, see <code>UsageLimit</code>. </p>
+    pub fn get_breach_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::UsageLimitBreachAction> {
+        self.inner.get_breach_action()
     }
 }

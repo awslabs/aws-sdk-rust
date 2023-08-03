@@ -55,6 +55,10 @@ impl DisassociateQualificationFromWorkerInputBuilder {
         self.worker_id = input;
         self
     }
+    /// <p>The ID of the Worker who possesses the Qualification to be revoked.</p>
+    pub fn get_worker_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.worker_id
+    }
     /// <p>The ID of the Qualification type of the Qualification to be revoked.</p>
     pub fn qualification_type_id(
         mut self,
@@ -71,6 +75,10 @@ impl DisassociateQualificationFromWorkerInputBuilder {
         self.qualification_type_id = input;
         self
     }
+    /// <p>The ID of the Qualification type of the Qualification to be revoked.</p>
+    pub fn get_qualification_type_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.qualification_type_id
+    }
     /// <p>A text message that explains why the Qualification was revoked. The user who had the Qualification sees this message.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
@@ -80,6 +88,10 @@ impl DisassociateQualificationFromWorkerInputBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
+    }
+    /// <p>A text message that explains why the Qualification was revoked. The user who had the Qualification sees this message.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
     }
     /// Consumes the builder and constructs a [`DisassociateQualificationFromWorkerInput`](crate::operation::disassociate_qualification_from_worker::DisassociateQualificationFromWorkerInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_qualification_from_worker::DisassociateQualificationFromWorkerInput, ::aws_smithy_http::operation::error::BuildError>{

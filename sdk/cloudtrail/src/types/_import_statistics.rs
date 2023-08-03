@@ -72,6 +72,10 @@ impl ImportStatisticsBuilder {
         self.prefixes_found = input;
         self
     }
+    /// <p> The number of S3 prefixes found for the import. </p>
+    pub fn get_prefixes_found(&self) -> &::std::option::Option<i64> {
+        &self.prefixes_found
+    }
     /// <p> The number of S3 prefixes that completed import. </p>
     pub fn prefixes_completed(mut self, input: i64) -> Self {
         self.prefixes_completed = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl ImportStatisticsBuilder {
     pub fn set_prefixes_completed(mut self, input: ::std::option::Option<i64>) -> Self {
         self.prefixes_completed = input;
         self
+    }
+    /// <p> The number of S3 prefixes that completed import. </p>
+    pub fn get_prefixes_completed(&self) -> &::std::option::Option<i64> {
+        &self.prefixes_completed
     }
     /// <p>The number of log files that completed import.</p>
     pub fn files_completed(mut self, input: i64) -> Self {
@@ -92,6 +100,10 @@ impl ImportStatisticsBuilder {
         self.files_completed = input;
         self
     }
+    /// <p>The number of log files that completed import.</p>
+    pub fn get_files_completed(&self) -> &::std::option::Option<i64> {
+        &self.files_completed
+    }
     /// <p> The number of trail events imported into the event data store. </p>
     pub fn events_completed(mut self, input: i64) -> Self {
         self.events_completed = ::std::option::Option::Some(input);
@@ -102,6 +114,10 @@ impl ImportStatisticsBuilder {
         self.events_completed = input;
         self
     }
+    /// <p> The number of trail events imported into the event data store. </p>
+    pub fn get_events_completed(&self) -> &::std::option::Option<i64> {
+        &self.events_completed
+    }
     /// <p> The number of failed entries. </p>
     pub fn failed_entries(mut self, input: i64) -> Self {
         self.failed_entries = ::std::option::Option::Some(input);
@@ -111,6 +127,10 @@ impl ImportStatisticsBuilder {
     pub fn set_failed_entries(mut self, input: ::std::option::Option<i64>) -> Self {
         self.failed_entries = input;
         self
+    }
+    /// <p> The number of failed entries. </p>
+    pub fn get_failed_entries(&self) -> &::std::option::Option<i64> {
+        &self.failed_entries
     }
     /// Consumes the builder and constructs a [`ImportStatistics`](crate::types::ImportStatistics).
     pub fn build(self) -> crate::types::ImportStatistics {

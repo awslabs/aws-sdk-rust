@@ -39,6 +39,10 @@ impl GetContactInputBuilder {
         self.contact_arn = input;
         self
     }
+    /// <p>The ARN of the contact for which to request details.</p>
+    pub fn get_contact_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_arn
+    }
     /// Consumes the builder and constructs a [`GetContactInput`](crate::operation::get_contact::GetContactInput).
     pub fn build(
         self,

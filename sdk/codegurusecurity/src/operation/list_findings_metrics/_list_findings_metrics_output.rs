@@ -69,6 +69,12 @@ impl ListFindingsMetricsOutputBuilder {
         self.findings_metrics = input;
         self
     }
+    /// <p>A list of <code>AccountFindingsMetric</code> objects retrieved from the specified time interval.</p>
+    pub fn get_findings_metrics(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountFindingsMetric>> {
+        &self.findings_metrics
+    }
     /// <p>A pagination token. You can use this in future calls to <code>ListFindingMetrics</code> to continue listing results after the current page. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -78,6 +84,10 @@ impl ListFindingsMetricsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A pagination token. You can use this in future calls to <code>ListFindingMetrics</code> to continue listing results after the current page. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

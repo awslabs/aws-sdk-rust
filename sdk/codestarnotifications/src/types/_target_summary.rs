@@ -77,6 +77,10 @@ impl TargetSummaryBuilder {
         self.target_address = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.</p>
+    pub fn get_target_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_address
+    }
     /// <p>The type of the target (for example, <code>SNS</code>).</p>
     /// <ul>
     /// <li> <p>Chatbot topics are specified as <code>SNS</code>.</p> </li>
@@ -95,6 +99,14 @@ impl TargetSummaryBuilder {
         self.target_type = input;
         self
     }
+    /// <p>The type of the target (for example, <code>SNS</code>).</p>
+    /// <ul>
+    /// <li> <p>Chatbot topics are specified as <code>SNS</code>.</p> </li>
+    /// <li> <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p> </li>
+    /// </ul>
+    pub fn get_target_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_type
+    }
     /// <p>The status of the target.</p>
     pub fn target_status(mut self, input: crate::types::TargetStatus) -> Self {
         self.target_status = ::std::option::Option::Some(input);
@@ -107,6 +119,10 @@ impl TargetSummaryBuilder {
     ) -> Self {
         self.target_status = input;
         self
+    }
+    /// <p>The status of the target.</p>
+    pub fn get_target_status(&self) -> &::std::option::Option<crate::types::TargetStatus> {
+        &self.target_status
     }
     /// Consumes the builder and constructs a [`TargetSummary`](crate::types::TargetSummary).
     pub fn build(self) -> crate::types::TargetSummary {

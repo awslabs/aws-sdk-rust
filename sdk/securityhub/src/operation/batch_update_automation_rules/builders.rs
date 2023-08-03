@@ -36,6 +36,10 @@ impl BatchUpdateAutomationRulesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchUpdateAutomationRules as a reference.
+    pub fn as_input(&self) -> &crate::operation::batch_update_automation_rules::builders::BatchUpdateAutomationRulesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,5 +141,12 @@ impl BatchUpdateAutomationRulesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_update_automation_rules_request_items(input);
         self
+    }
+    /// <p> An array of ARNs for the rules that are to be updated. Optionally, you can also include <code>RuleStatus</code> and <code>RuleOrder</code>. </p>
+    pub fn get_update_automation_rules_request_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateAutomationRulesRequestItem>>
+    {
+        self.inner.get_update_automation_rules_request_items()
     }
 }

@@ -37,6 +37,10 @@ impl NotifyTerminateProvisionedProductEngineWorkflowResultFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the NotifyTerminateProvisionedProductEngineWorkflowResult as a reference.
+    pub fn as_input(&self) -> &crate::operation::notify_terminate_provisioned_product_engine_workflow_result::builders::NotifyTerminateProvisionedProductEngineWorkflowResultInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -107,6 +111,10 @@ impl NotifyTerminateProvisionedProductEngineWorkflowResultFluentBuilder {
         self.inner = self.inner.set_workflow_token(input);
         self
     }
+    /// <p> The encrypted contents of the terminate engine execution payload that Service Catalog sends after the Terraform product terminate workflow starts. </p>
+    pub fn get_workflow_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workflow_token()
+    }
     /// <p> The identifier of the record. </p>
     pub fn record_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.record_id(input.into());
@@ -116,6 +124,10 @@ impl NotifyTerminateProvisionedProductEngineWorkflowResultFluentBuilder {
     pub fn set_record_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_record_id(input);
         self
+    }
+    /// <p> The identifier of the record. </p>
+    pub fn get_record_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_record_id()
     }
     /// <p> The status of the terminate engine execution. </p>
     pub fn status(mut self, input: crate::types::EngineWorkflowStatus) -> Self {
@@ -129,6 +141,10 @@ impl NotifyTerminateProvisionedProductEngineWorkflowResultFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_status(input);
         self
+    }
+    /// <p> The status of the terminate engine execution. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::EngineWorkflowStatus> {
+        self.inner.get_status()
     }
     /// <p> The reason why the terminate engine execution failed. </p>
     pub fn failure_reason(
@@ -146,6 +162,10 @@ impl NotifyTerminateProvisionedProductEngineWorkflowResultFluentBuilder {
         self.inner = self.inner.set_failure_reason(input);
         self
     }
+    /// <p> The reason why the terminate engine execution failed. </p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_failure_reason()
+    }
     /// <p> The idempotency token that identifies the terminate engine execution. </p>
     pub fn idempotency_token(
         mut self,
@@ -161,5 +181,9 @@ impl NotifyTerminateProvisionedProductEngineWorkflowResultFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self
+    }
+    /// <p> The idempotency token that identifies the terminate engine execution. </p>
+    pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_idempotency_token()
     }
 }

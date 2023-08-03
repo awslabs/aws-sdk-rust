@@ -51,6 +51,12 @@ impl FilterScopeConfigurationBuilder {
         self.selected_sheets = input;
         self
     }
+    /// <p>The configuration for applying a filter to specific sheets.</p>
+    pub fn get_selected_sheets(
+        &self,
+    ) -> &::std::option::Option<crate::types::SelectedSheetsFilterScopeConfiguration> {
+        &self.selected_sheets
+    }
     /// Consumes the builder and constructs a [`FilterScopeConfiguration`](crate::types::FilterScopeConfiguration).
     pub fn build(self) -> crate::types::FilterScopeConfiguration {
         crate::types::FilterScopeConfiguration {

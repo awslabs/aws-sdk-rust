@@ -40,6 +40,10 @@ impl SingleMasterConfigurationBuilder {
         self.message_ttl_seconds = input;
         self
     }
+    /// <p>The period of time a signaling channel retains undelivered messages before they are discarded.</p>
+    pub fn get_message_ttl_seconds(&self) -> &::std::option::Option<i32> {
+        &self.message_ttl_seconds
+    }
     /// Consumes the builder and constructs a [`SingleMasterConfiguration`](crate::types::SingleMasterConfiguration).
     pub fn build(self) -> crate::types::SingleMasterConfiguration {
         crate::types::SingleMasterConfiguration {

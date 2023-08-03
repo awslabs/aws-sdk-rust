@@ -69,6 +69,10 @@ impl DownloadDbLogFilePortionOutputBuilder {
         self.log_file_data = input;
         self
     }
+    /// <p>Entries from the specified log file.</p>
+    pub fn get_log_file_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_file_data
+    }
     /// <p>A pagination token that can be used in a later <code>DownloadDBLogFilePortion</code> request.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl DownloadDbLogFilePortionOutputBuilder {
         self.marker = input;
         self
     }
+    /// <p>A pagination token that can be used in a later <code>DownloadDBLogFilePortion</code> request.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// <p>Boolean value that if true, indicates there is more data to be downloaded.</p>
     pub fn additional_data_pending(mut self, input: bool) -> Self {
         self.additional_data_pending = ::std::option::Option::Some(input);
@@ -88,6 +96,10 @@ impl DownloadDbLogFilePortionOutputBuilder {
     pub fn set_additional_data_pending(mut self, input: ::std::option::Option<bool>) -> Self {
         self.additional_data_pending = input;
         self
+    }
+    /// <p>Boolean value that if true, indicates there is more data to be downloaded.</p>
+    pub fn get_additional_data_pending(&self) -> &::std::option::Option<bool> {
+        &self.additional_data_pending
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

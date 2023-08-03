@@ -37,6 +37,12 @@ impl PutInsightSelectorsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutInsightSelectors as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_insight_selectors::builders::PutInsightSelectorsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl PutInsightSelectorsFluentBuilder {
         self.inner = self.inner.set_trail_name(input);
         self
     }
+    /// <p>The name of the CloudTrail trail for which you want to change or add Insights selectors.</p>
+    pub fn get_trail_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_trail_name()
+    }
     /// Appends an item to `InsightSelectors`.
     ///
     /// To override the contents of this collection use [`set_insight_selectors`](Self::set_insight_selectors).
@@ -147,5 +157,13 @@ impl PutInsightSelectorsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_insight_selectors(input);
         self
+    }
+    /// <p>A JSON string that contains the insight types you want to log on a trail. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid Insight types.</p>
+    /// <p>The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are aggregated per minute against a baseline API call volume.</p>
+    /// <p>The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error codes. The error is shown if the API call is unsuccessful.</p>
+    pub fn get_insight_selectors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightSelector>> {
+        self.inner.get_insight_selectors()
     }
 }

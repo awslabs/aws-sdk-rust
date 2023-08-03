@@ -51,6 +51,12 @@ impl GeoMosaicConfigInputBuilder {
         self.algorithm_name = input;
         self
     }
+    /// <p>The name of the algorithm being used for geomosaic.</p>
+    pub fn get_algorithm_name(
+        &self,
+    ) -> &::std::option::Option<crate::types::AlgorithmNameGeoMosaic> {
+        &self.algorithm_name
+    }
     /// Appends an item to `target_bands`.
     ///
     /// To override the contents of this collection use [`set_target_bands`](Self::set_target_bands).
@@ -69,6 +75,12 @@ impl GeoMosaicConfigInputBuilder {
     ) -> Self {
         self.target_bands = input;
         self
+    }
+    /// <p>The target bands for geomosaic.</p>
+    pub fn get_target_bands(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.target_bands
     }
     /// Consumes the builder and constructs a [`GeoMosaicConfigInput`](crate::types::GeoMosaicConfigInput).
     pub fn build(self) -> crate::types::GeoMosaicConfigInput {

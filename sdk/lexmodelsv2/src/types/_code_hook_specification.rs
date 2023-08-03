@@ -43,6 +43,10 @@ impl CodeHookSpecificationBuilder {
         self.lambda_code_hook = input;
         self
     }
+    /// <p>Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot.</p>
+    pub fn get_lambda_code_hook(&self) -> &::std::option::Option<crate::types::LambdaCodeHook> {
+        &self.lambda_code_hook
+    }
     /// Consumes the builder and constructs a [`CodeHookSpecification`](crate::types::CodeHookSpecification).
     pub fn build(self) -> crate::types::CodeHookSpecification {
         crate::types::CodeHookSpecification {

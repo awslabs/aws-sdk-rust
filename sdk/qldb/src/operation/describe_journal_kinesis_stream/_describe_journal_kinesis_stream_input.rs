@@ -47,6 +47,10 @@ impl DescribeJournalKinesisStreamInputBuilder {
         self.ledger_name = input;
         self
     }
+    /// <p>The name of the ledger.</p>
+    pub fn get_ledger_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ledger_name
+    }
     /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to describe.</p>
     pub fn stream_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_id = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl DescribeJournalKinesisStreamInputBuilder {
     pub fn set_stream_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_id = input;
         self
+    }
+    /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to describe.</p>
+    pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_id
     }
     /// Consumes the builder and constructs a [`DescribeJournalKinesisStreamInput`](crate::operation::describe_journal_kinesis_stream::DescribeJournalKinesisStreamInput).
     pub fn build(

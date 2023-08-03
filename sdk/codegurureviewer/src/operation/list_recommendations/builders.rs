@@ -36,6 +36,12 @@ impl ListRecommendationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListRecommendations as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_recommendations::builders::ListRecommendationsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl ListRecommendationsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>Pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results that are returned per call. The default is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -146,6 +156,10 @@ impl ListRecommendationsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results that are returned per call. The default is 100.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
     pub fn code_review_arn(
@@ -162,5 +176,9 @@ impl ListRecommendationsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_code_review_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
+    pub fn get_code_review_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_code_review_arn()
     }
 }

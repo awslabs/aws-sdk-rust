@@ -36,6 +36,12 @@ impl GetDeploymentConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetDeploymentConfig as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_deployment_config::builders::GetDeploymentConfigInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl GetDeploymentConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_deployment_config_name(input);
         self
+    }
+    /// <p>The name of a deployment configuration associated with the IAM user or Amazon Web Services account.</p>
+    pub fn get_deployment_config_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_deployment_config_name()
     }
 }

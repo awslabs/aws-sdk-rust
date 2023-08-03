@@ -123,6 +123,10 @@ impl FeatureSummaryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the feature.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the feature.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -132,6 +136,10 @@ impl FeatureSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the feature.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The name or ARN of the project that contains the feature.</p>
     pub fn project(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -143,6 +151,10 @@ impl FeatureSummaryBuilder {
         self.project = input;
         self
     }
+    /// <p>The name or ARN of the project that contains the feature.</p>
+    pub fn get_project(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project
+    }
     /// <p>The current state of the feature.</p>
     pub fn status(mut self, input: crate::types::FeatureStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -152,6 +164,10 @@ impl FeatureSummaryBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::FeatureStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current state of the feature.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::FeatureStatus> {
+        &self.status
     }
     /// <p>The date and time that the feature is created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -166,6 +182,10 @@ impl FeatureSummaryBuilder {
         self.created_time = input;
         self
     }
+    /// <p>The date and time that the feature is created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
     /// <p>The date and time that the feature was most recently updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
@@ -179,6 +199,10 @@ impl FeatureSummaryBuilder {
         self.last_updated_time = input;
         self
     }
+    /// <p>The date and time that the feature was most recently updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
+    }
     /// <p>If this value is <code>ALL_RULES</code>, the traffic allocation specified by any ongoing launches or experiments is being used. If this is <code>DEFAULT_VARIATION</code>, the default variation is being served to all users.</p>
     pub fn evaluation_strategy(mut self, input: crate::types::FeatureEvaluationStrategy) -> Self {
         self.evaluation_strategy = ::std::option::Option::Some(input);
@@ -191,6 +215,12 @@ impl FeatureSummaryBuilder {
     ) -> Self {
         self.evaluation_strategy = input;
         self
+    }
+    /// <p>If this value is <code>ALL_RULES</code>, the traffic allocation specified by any ongoing launches or experiments is being used. If this is <code>DEFAULT_VARIATION</code>, the default variation is being served to all users.</p>
+    pub fn get_evaluation_strategy(
+        &self,
+    ) -> &::std::option::Option<crate::types::FeatureEvaluationStrategy> {
+        &self.evaluation_strategy
     }
     /// Appends an item to `evaluation_rules`.
     ///
@@ -211,6 +241,12 @@ impl FeatureSummaryBuilder {
         self.evaluation_rules = input;
         self
     }
+    /// <p>An array of structures that define</p>
+    pub fn get_evaluation_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationRule>> {
+        &self.evaluation_rules
+    }
     /// <p>The name of the variation that is used as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
     pub fn default_variation(
         mut self,
@@ -226,6 +262,10 @@ impl FeatureSummaryBuilder {
     ) -> Self {
         self.default_variation = input;
         self
+    }
+    /// <p>The name of the variation that is used as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
+    pub fn get_default_variation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_variation
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -251,6 +291,14 @@ impl FeatureSummaryBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The list of tag keys and values associated with this feature.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`FeatureSummary`](crate::types::FeatureSummary).
     pub fn build(self) -> crate::types::FeatureSummary {

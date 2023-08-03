@@ -41,6 +41,10 @@ impl DeleteDecoderManifestInputBuilder {
         self.name = input;
         self
     }
+    /// <p> The name of the decoder manifest to delete. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DeleteDecoderManifestInput`](crate::operation::delete_decoder_manifest::DeleteDecoderManifestInput).
     pub fn build(
         self,

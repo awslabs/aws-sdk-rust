@@ -80,6 +80,10 @@ impl CreatePackageImportJobInputBuilder {
         self.job_type = input;
         self
     }
+    /// <p>A job type for the package import job.</p>
+    pub fn get_job_type(&self) -> &::std::option::Option<crate::types::PackageImportJobType> {
+        &self.job_type
+    }
     /// <p>An input config for the package import job.</p>
     pub fn input_config(mut self, input: crate::types::PackageImportJobInputConfig) -> Self {
         self.input_config = ::std::option::Option::Some(input);
@@ -92,6 +96,12 @@ impl CreatePackageImportJobInputBuilder {
     ) -> Self {
         self.input_config = input;
         self
+    }
+    /// <p>An input config for the package import job.</p>
+    pub fn get_input_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::PackageImportJobInputConfig> {
+        &self.input_config
     }
     /// <p>An output config for the package import job.</p>
     pub fn output_config(mut self, input: crate::types::PackageImportJobOutputConfig) -> Self {
@@ -106,6 +116,12 @@ impl CreatePackageImportJobInputBuilder {
         self.output_config = input;
         self
     }
+    /// <p>An output config for the package import job.</p>
+    pub fn get_output_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::PackageImportJobOutputConfig> {
+        &self.output_config
+    }
     /// <p>A client token for the package import job.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -115,6 +131,10 @@ impl CreatePackageImportJobInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A client token for the package import job.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Appends an item to `job_tags`.
     ///
@@ -134,6 +154,12 @@ impl CreatePackageImportJobInputBuilder {
     ) -> Self {
         self.job_tags = input;
         self
+    }
+    /// <p>Tags for the package import job.</p>
+    pub fn get_job_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobResourceTags>> {
+        &self.job_tags
     }
     /// Consumes the builder and constructs a [`CreatePackageImportJobInput`](crate::operation::create_package_import_job::CreatePackageImportJobInput).
     pub fn build(

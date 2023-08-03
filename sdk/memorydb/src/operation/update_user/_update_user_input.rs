@@ -55,6 +55,10 @@ impl UpdateUserInputBuilder {
         self.user_name = input;
         self
     }
+    /// <p>The name of the user</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
+    }
     /// <p>Denotes the user's authentication properties, such as whether it requires a password to authenticate.</p>
     pub fn authentication_mode(mut self, input: crate::types::AuthenticationMode) -> Self {
         self.authentication_mode = ::std::option::Option::Some(input);
@@ -67,6 +71,12 @@ impl UpdateUserInputBuilder {
     ) -> Self {
         self.authentication_mode = input;
         self
+    }
+    /// <p>Denotes the user's authentication properties, such as whether it requires a password to authenticate.</p>
+    pub fn get_authentication_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuthenticationMode> {
+        &self.authentication_mode
     }
     /// <p>Access permissions string used for this user.</p>
     pub fn access_string(
@@ -83,6 +93,10 @@ impl UpdateUserInputBuilder {
     ) -> Self {
         self.access_string = input;
         self
+    }
+    /// <p>Access permissions string used for this user.</p>
+    pub fn get_access_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_string
     }
     /// Consumes the builder and constructs a [`UpdateUserInput`](crate::operation::update_user::UpdateUserInput).
     pub fn build(

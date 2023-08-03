@@ -105,6 +105,10 @@ impl QueryFiltersBuilder {
         self.types = input;
         self
     }
+    /// <p>Filter the lineage entities connected to the <code>StartArn</code> by type. For example: <code>DataSet</code>, <code>Model</code>, <code>Endpoint</code>, or <code>ModelDeployment</code>.</p>
+    pub fn get_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.types
+    }
     /// Appends an item to `lineage_types`.
     ///
     /// To override the contents of this collection use [`set_lineage_types`](Self::set_lineage_types).
@@ -124,6 +128,12 @@ impl QueryFiltersBuilder {
         self.lineage_types = input;
         self
     }
+    /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by the type of the lineage entity.</p>
+    pub fn get_lineage_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LineageType>> {
+        &self.lineage_types
+    }
     /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by created date.</p>
     pub fn created_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_before = ::std::option::Option::Some(input);
@@ -136,6 +146,10 @@ impl QueryFiltersBuilder {
     ) -> Self {
         self.created_before = input;
         self
+    }
+    /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by created date.</p>
+    pub fn get_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_before
     }
     /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) after the create date.</p>
     pub fn created_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -150,6 +164,10 @@ impl QueryFiltersBuilder {
         self.created_after = input;
         self
     }
+    /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) after the create date.</p>
+    pub fn get_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_after
+    }
     /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) before the last modified date.</p>
     pub fn modified_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.modified_before = ::std::option::Option::Some(input);
@@ -163,6 +181,10 @@ impl QueryFiltersBuilder {
         self.modified_before = input;
         self
     }
+    /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) before the last modified date.</p>
+    pub fn get_modified_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.modified_before
+    }
     /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) after the last modified date.</p>
     pub fn modified_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.modified_after = ::std::option::Option::Some(input);
@@ -175,6 +197,10 @@ impl QueryFiltersBuilder {
     ) -> Self {
         self.modified_after = input;
         self
+    }
+    /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) after the last modified date.</p>
+    pub fn get_modified_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.modified_after
     }
     /// Adds a key-value pair to `properties`.
     ///
@@ -200,6 +226,14 @@ impl QueryFiltersBuilder {
     ) -> Self {
         self.properties = input;
         self
+    }
+    /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by a set if property key value pairs. If multiple pairs are provided, an entity is included in the results if it matches any of the provided pairs.</p>
+    pub fn get_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.properties
     }
     /// Consumes the builder and constructs a [`QueryFilters`](crate::types::QueryFilters).
     pub fn build(self) -> crate::types::QueryFilters {

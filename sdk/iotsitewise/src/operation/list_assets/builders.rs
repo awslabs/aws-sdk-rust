@@ -42,6 +42,10 @@ impl ListAssetsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListAssets as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_assets::builders::ListAssetsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +134,10 @@ impl ListAssetsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return for each paginated request.</p>
     /// <p>Default: 50</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -141,6 +149,11 @@ impl ListAssetsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return for each paginated request.</p>
+    /// <p>Default: 50</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>The ID of the asset model by which to filter the list of assets. This parameter is required if you choose <code>ALL</code> for <code>filter</code>.</p>
     pub fn asset_model_id(
@@ -157,6 +170,10 @@ impl ListAssetsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_asset_model_id(input);
         self
+    }
+    /// <p>The ID of the asset model by which to filter the list of assets. This parameter is required if you choose <code>ALL</code> for <code>filter</code>.</p>
+    pub fn get_asset_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_asset_model_id()
     }
     /// <p>The filter for the requested list of assets. Choose one of the following options:</p>
     /// <ul>
@@ -180,5 +197,14 @@ impl ListAssetsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_filter(input);
         self
+    }
+    /// <p>The filter for the requested list of assets. Choose one of the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>ALL</code> – The list includes all assets for a given asset model ID. The <code>assetModelId</code> parameter is required if you filter by <code>ALL</code>.</p> </li>
+    /// <li> <p> <code>TOP_LEVEL</code> – The list includes only top-level assets in the asset hierarchy tree.</p> </li>
+    /// </ul>
+    /// <p>Default: <code>ALL</code> </p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::ListAssetsFilter> {
+        self.inner.get_filter()
     }
 }

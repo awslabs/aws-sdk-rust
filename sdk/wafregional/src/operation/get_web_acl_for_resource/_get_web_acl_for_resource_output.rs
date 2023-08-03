@@ -51,6 +51,10 @@ impl GetWebAclForResourceOutputBuilder {
         self.web_acl_summary = input;
         self
     }
+    /// <p>Information about the web ACL that you specified in the <code>GetWebACLForResource</code> request. If there is no associated resource, a null WebACLSummary is returned.</p>
+    pub fn get_web_acl_summary(&self) -> &::std::option::Option<crate::types::WebAclSummary> {
+        &self.web_acl_summary
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

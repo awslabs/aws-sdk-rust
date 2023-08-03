@@ -54,6 +54,10 @@ impl ListModelsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p> An opaque pagination token indicating where to continue the listing of ML models. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `model_summaries`.
     ///
     /// To override the contents of this collection use [`set_model_summaries`](Self::set_model_summaries).
@@ -72,6 +76,12 @@ impl ListModelsOutputBuilder {
     ) -> Self {
         self.model_summaries = input;
         self
+    }
+    /// <p>Provides information on the specified model, including created time, model and dataset ARNs, and status. </p>
+    pub fn get_model_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelSummary>> {
+        &self.model_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

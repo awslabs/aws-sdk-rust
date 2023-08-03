@@ -79,6 +79,10 @@ impl GetAccessControlEffectInputBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The identifier for the organization.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p>The IPv4 address.</p>
     pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_address = ::std::option::Option::Some(input.into());
@@ -88,6 +92,10 @@ impl GetAccessControlEffectInputBuilder {
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_address = input;
         self
+    }
+    /// <p>The IPv4 address.</p>
+    pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_address
     }
     /// <p>The access protocol action. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
     pub fn action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -99,6 +107,10 @@ impl GetAccessControlEffectInputBuilder {
         self.action = input;
         self
     }
+    /// <p>The access protocol action. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+    pub fn get_action(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action
+    }
     /// <p>The user ID.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
@@ -108,6 +120,10 @@ impl GetAccessControlEffectInputBuilder {
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
+    }
+    /// <p>The user ID.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
     }
     /// <p>The impersonation role ID.</p>
     pub fn impersonation_role_id(
@@ -124,6 +140,10 @@ impl GetAccessControlEffectInputBuilder {
     ) -> Self {
         self.impersonation_role_id = input;
         self
+    }
+    /// <p>The impersonation role ID.</p>
+    pub fn get_impersonation_role_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.impersonation_role_id
     }
     /// Consumes the builder and constructs a [`GetAccessControlEffectInput`](crate::operation::get_access_control_effect::GetAccessControlEffectInput).
     pub fn build(

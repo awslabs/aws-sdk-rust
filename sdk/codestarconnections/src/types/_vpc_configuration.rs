@@ -64,6 +64,10 @@ impl VpcConfigurationBuilder {
         self.vpc_id = input;
         self
     }
+    /// <p>The ID of the Amazon VPC connected to the infrastructure where your provider type is installed.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
+    }
     /// Appends an item to `subnet_ids`.
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
@@ -82,6 +86,10 @@ impl VpcConfigurationBuilder {
     ) -> Self {
         self.subnet_ids = input;
         self
+    }
+    /// <p>The ID of the subnet or subnets associated with the Amazon VPC connected to the infrastructure where your provider type is installed.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
     }
     /// Appends an item to `security_group_ids`.
     ///
@@ -105,6 +113,12 @@ impl VpcConfigurationBuilder {
         self.security_group_ids = input;
         self
     }
+    /// <p>The ID of the security group or security groups associated with the Amazon VPC connected to the infrastructure where your provider type is installed.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
+    }
     /// <p>The value of the Transport Layer Security (TLS) certificate associated with the infrastructure where your provider type is installed.</p>
     pub fn tls_certificate(
         mut self,
@@ -120,6 +134,10 @@ impl VpcConfigurationBuilder {
     ) -> Self {
         self.tls_certificate = input;
         self
+    }
+    /// <p>The value of the Transport Layer Security (TLS) certificate associated with the infrastructure where your provider type is installed.</p>
+    pub fn get_tls_certificate(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tls_certificate
     }
     /// Consumes the builder and constructs a [`VpcConfiguration`](crate::types::VpcConfiguration).
     pub fn build(self) -> crate::types::VpcConfiguration {

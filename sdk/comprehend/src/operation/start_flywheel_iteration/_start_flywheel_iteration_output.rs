@@ -57,6 +57,10 @@ impl StartFlywheelIterationOutputBuilder {
         self
     }
     /// <p></p>
+    pub fn get_flywheel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flywheel_arn
+    }
+    /// <p></p>
     pub fn flywheel_iteration_id(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -71,6 +75,10 @@ impl StartFlywheelIterationOutputBuilder {
     ) -> Self {
         self.flywheel_iteration_id = input;
         self
+    }
+    /// <p></p>
+    pub fn get_flywheel_iteration_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flywheel_iteration_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

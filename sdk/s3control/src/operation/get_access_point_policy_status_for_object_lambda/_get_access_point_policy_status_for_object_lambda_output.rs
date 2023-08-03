@@ -49,6 +49,10 @@ impl GetAccessPointPolicyStatusForObjectLambdaOutputBuilder {
         self.policy_status = input;
         self
     }
+    /// <p>Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>. </p>
+    pub fn get_policy_status(&self) -> &::std::option::Option<crate::types::PolicyStatus> {
+        &self.policy_status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

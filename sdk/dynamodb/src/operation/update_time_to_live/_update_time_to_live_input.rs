@@ -52,6 +52,10 @@ impl UpdateTimeToLiveInputBuilder {
         self.table_name = input;
         self
     }
+    /// <p>The name of the table to be configured.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
+    }
     /// <p>Represents the settings used to enable or disable Time to Live for the specified table.</p>
     pub fn time_to_live_specification(
         mut self,
@@ -67,6 +71,12 @@ impl UpdateTimeToLiveInputBuilder {
     ) -> Self {
         self.time_to_live_specification = input;
         self
+    }
+    /// <p>Represents the settings used to enable or disable Time to Live for the specified table.</p>
+    pub fn get_time_to_live_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::TimeToLiveSpecification> {
+        &self.time_to_live_specification
     }
     /// Consumes the builder and constructs a [`UpdateTimeToLiveInput`](crate::operation::update_time_to_live::UpdateTimeToLiveInput).
     pub fn build(

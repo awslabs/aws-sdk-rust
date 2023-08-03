@@ -57,6 +57,12 @@ impl RetentionSettingsBuilder {
         self.room_retention_settings = input;
         self
     }
+    /// <p>The chat room retention settings.</p>
+    pub fn get_room_retention_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::RoomRetentionSettings> {
+        &self.room_retention_settings
+    }
     /// <p>The chat conversation retention settings.</p>
     pub fn conversation_retention_settings(
         mut self,
@@ -72,6 +78,12 @@ impl RetentionSettingsBuilder {
     ) -> Self {
         self.conversation_retention_settings = input;
         self
+    }
+    /// <p>The chat conversation retention settings.</p>
+    pub fn get_conversation_retention_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConversationRetentionSettings> {
+        &self.conversation_retention_settings
     }
     /// Consumes the builder and constructs a [`RetentionSettings`](crate::types::RetentionSettings).
     pub fn build(self) -> crate::types::RetentionSettings {

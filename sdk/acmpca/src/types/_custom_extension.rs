@@ -73,6 +73,11 @@ impl CustomExtensionBuilder {
         self
     }
     /// <p></p>
+    /// <p>Specifies the object identifier (OID) of the X.509 extension. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a> </p>
+    pub fn get_object_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_identifier
+    }
+    /// <p></p>
     /// <p>Specifies the base64-encoded value of the X.509 extension.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -85,6 +90,11 @@ impl CustomExtensionBuilder {
         self
     }
     /// <p></p>
+    /// <p>Specifies the base64-encoded value of the X.509 extension.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
+    /// <p></p>
     /// <p>Specifies the critical flag of the X.509 extension.</p>
     pub fn critical(mut self, input: bool) -> Self {
         self.critical = ::std::option::Option::Some(input);
@@ -95,6 +105,11 @@ impl CustomExtensionBuilder {
     pub fn set_critical(mut self, input: ::std::option::Option<bool>) -> Self {
         self.critical = input;
         self
+    }
+    /// <p></p>
+    /// <p>Specifies the critical flag of the X.509 extension.</p>
+    pub fn get_critical(&self) -> &::std::option::Option<bool> {
+        &self.critical
     }
     /// Consumes the builder and constructs a [`CustomExtension`](crate::types::CustomExtension).
     pub fn build(self) -> crate::types::CustomExtension {

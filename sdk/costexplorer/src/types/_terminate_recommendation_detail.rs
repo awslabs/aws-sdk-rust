@@ -54,6 +54,10 @@ impl TerminateRecommendationDetailBuilder {
         self.estimated_monthly_savings = input;
         self
     }
+    /// <p>The estimated savings that result from modification, on a monthly basis.</p>
+    pub fn get_estimated_monthly_savings(&self) -> &::std::option::Option<::std::string::String> {
+        &self.estimated_monthly_savings
+    }
     /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
     pub fn currency_code(
         mut self,
@@ -69,6 +73,10 @@ impl TerminateRecommendationDetailBuilder {
     ) -> Self {
         self.currency_code = input;
         self
+    }
+    /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
+    pub fn get_currency_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.currency_code
     }
     /// Consumes the builder and constructs a [`TerminateRecommendationDetail`](crate::types::TerminateRecommendationDetail).
     pub fn build(self) -> crate::types::TerminateRecommendationDetail {

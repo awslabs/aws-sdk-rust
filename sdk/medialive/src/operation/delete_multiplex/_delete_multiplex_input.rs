@@ -40,6 +40,10 @@ impl DeleteMultiplexInputBuilder {
         self.multiplex_id = input;
         self
     }
+    /// The ID of the multiplex.
+    pub fn get_multiplex_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.multiplex_id
+    }
     /// Consumes the builder and constructs a [`DeleteMultiplexInput`](crate::operation::delete_multiplex::DeleteMultiplexInput).
     pub fn build(
         self,

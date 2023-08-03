@@ -36,6 +36,12 @@ impl DeleteLogStreamFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteLogStream as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_log_stream::builders::DeleteLogStreamInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl DeleteLogStreamFluentBuilder {
         self.inner = self.inner.set_log_group_name(input);
         self
     }
+    /// <p>The name of the log group.</p>
+    pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_log_group_name()
+    }
     /// <p>The name of the log stream.</p>
     pub fn log_stream_name(
         mut self,
@@ -147,5 +157,9 @@ impl DeleteLogStreamFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_log_stream_name(input);
         self
+    }
+    /// <p>The name of the log stream.</p>
+    pub fn get_log_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_log_stream_name()
     }
 }

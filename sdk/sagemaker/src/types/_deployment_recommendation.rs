@@ -57,6 +57,12 @@ impl DeploymentRecommendationBuilder {
         self.recommendation_status = input;
         self
     }
+    /// <p>Status of the deployment recommendation. The status <code>NOT_APPLICABLE</code> means that SageMaker is unable to provide a default recommendation for the model using the information provided. If the deployment status is <code>IN_PROGRESS</code>, retry your API call after a few seconds to get a <code>COMPLETED</code> deployment recommendation.</p>
+    pub fn get_recommendation_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::RecommendationStatus> {
+        &self.recommendation_status
+    }
     /// Appends an item to `real_time_inference_recommendations`.
     ///
     /// To override the contents of this collection use [`set_real_time_inference_recommendations`](Self::set_real_time_inference_recommendations).
@@ -80,6 +86,13 @@ impl DeploymentRecommendationBuilder {
     ) -> Self {
         self.real_time_inference_recommendations = input;
         self
+    }
+    /// <p>A list of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_RealTimeInferenceRecommendation.html">RealTimeInferenceRecommendation</a> items.</p>
+    pub fn get_real_time_inference_recommendations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RealTimeInferenceRecommendation>>
+    {
+        &self.real_time_inference_recommendations
     }
     /// Consumes the builder and constructs a [`DeploymentRecommendation`](crate::types::DeploymentRecommendation).
     pub fn build(self) -> crate::types::DeploymentRecommendation {

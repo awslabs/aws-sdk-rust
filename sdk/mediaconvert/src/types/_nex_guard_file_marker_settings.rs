@@ -64,6 +64,10 @@ impl NexGuardFileMarkerSettingsBuilder {
         self.license = input;
         self
     }
+    /// Use the base64 license string that Nagra provides you. Enter it directly in your JSON job specification or in the console. Required when you include Nagra NexGuard File Marker watermarking in your job.
+    pub fn get_license(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license
+    }
     /// Specify the payload ID that you want associated with this output. Valid values vary depending on your Nagra NexGuard forensic watermarking workflow. Required when you include Nagra NexGuard File Marker watermarking in your job. For PreRelease Content (NGPR/G2), specify an integer from 1 through 4,194,303. You must generate a unique ID for each asset you watermark, and keep a record of which ID you have assigned to each asset. Neither Nagra nor MediaConvert keep track of the relationship between output files and your IDs. For OTT Streaming, create two adaptive bitrate (ABR) stacks for each asset. Do this by setting up two output groups. For one output group, set the value of Payload ID to 0 in every output. For the other output group, set Payload ID to 1 in every output.
     pub fn payload(mut self, input: i32) -> Self {
         self.payload = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl NexGuardFileMarkerSettingsBuilder {
         self.payload = input;
         self
     }
+    /// Specify the payload ID that you want associated with this output. Valid values vary depending on your Nagra NexGuard forensic watermarking workflow. Required when you include Nagra NexGuard File Marker watermarking in your job. For PreRelease Content (NGPR/G2), specify an integer from 1 through 4,194,303. You must generate a unique ID for each asset you watermark, and keep a record of which ID you have assigned to each asset. Neither Nagra nor MediaConvert keep track of the relationship between output files and your IDs. For OTT Streaming, create two adaptive bitrate (ABR) stacks for each asset. Do this by setting up two output groups. For one output group, set the value of Payload ID to 0 in every output. For the other output group, set Payload ID to 1 in every output.
+    pub fn get_payload(&self) -> &::std::option::Option<i32> {
+        &self.payload
+    }
     /// Enter one of the watermarking preset strings that Nagra provides you. Required when you include Nagra NexGuard File Marker watermarking in your job.
     pub fn preset(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preset = ::std::option::Option::Some(input.into());
@@ -83,6 +91,10 @@ impl NexGuardFileMarkerSettingsBuilder {
     pub fn set_preset(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preset = input;
         self
+    }
+    /// Enter one of the watermarking preset strings that Nagra provides you. Required when you include Nagra NexGuard File Marker watermarking in your job.
+    pub fn get_preset(&self) -> &::std::option::Option<::std::string::String> {
+        &self.preset
     }
     /// Optional. Ignore this setting unless Nagra support directs you to specify a value. When you don't specify a value here, the Nagra NexGuard library uses its default value.
     pub fn strength(mut self, input: crate::types::WatermarkingStrength) -> Self {
@@ -96,6 +108,10 @@ impl NexGuardFileMarkerSettingsBuilder {
     ) -> Self {
         self.strength = input;
         self
+    }
+    /// Optional. Ignore this setting unless Nagra support directs you to specify a value. When you don't specify a value here, the Nagra NexGuard library uses its default value.
+    pub fn get_strength(&self) -> &::std::option::Option<crate::types::WatermarkingStrength> {
+        &self.strength
     }
     /// Consumes the builder and constructs a [`NexGuardFileMarkerSettings`](crate::types::NexGuardFileMarkerSettings).
     pub fn build(self) -> crate::types::NexGuardFileMarkerSettings {

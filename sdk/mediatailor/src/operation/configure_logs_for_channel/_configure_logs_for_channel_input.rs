@@ -49,6 +49,10 @@ impl ConfigureLogsForChannelInputBuilder {
         self.channel_name = input;
         self
     }
+    /// <p>The name of the channel.</p>
+    pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_name
+    }
     /// Appends an item to `log_types`.
     ///
     /// To override the contents of this collection use [`set_log_types`](Self::set_log_types).
@@ -67,6 +71,10 @@ impl ConfigureLogsForChannelInputBuilder {
     ) -> Self {
         self.log_types = input;
         self
+    }
+    /// <p>The types of logs to collect.</p>
+    pub fn get_log_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogType>> {
+        &self.log_types
     }
     /// Consumes the builder and constructs a [`ConfigureLogsForChannelInput`](crate::operation::configure_logs_for_channel::ConfigureLogsForChannelInput).
     pub fn build(

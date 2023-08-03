@@ -57,6 +57,10 @@ impl ListPageResolutionsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `page_resolutions`.
     ///
     /// To override the contents of this collection use [`set_page_resolutions`](Self::set_page_resolutions).
@@ -75,6 +79,12 @@ impl ListPageResolutionsOutputBuilder {
     ) -> Self {
         self.page_resolutions = input;
         self
+    }
+    /// <p>Information about the resolution for an engagement.</p>
+    pub fn get_page_resolutions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResolutionContact>> {
+        &self.page_resolutions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

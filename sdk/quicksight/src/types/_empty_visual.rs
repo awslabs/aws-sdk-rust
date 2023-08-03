@@ -57,6 +57,10 @@ impl EmptyVisualBuilder {
         self.visual_id = input;
         self
     }
+    /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers.</p>
+    pub fn get_visual_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.visual_id
+    }
     /// <p>The data set that is used in the empty visual. Every visual requires a dataset to render.</p>
     pub fn data_set_identifier(
         mut self,
@@ -72,6 +76,10 @@ impl EmptyVisualBuilder {
     ) -> Self {
         self.data_set_identifier = input;
         self
+    }
+    /// <p>The data set that is used in the empty visual. Every visual requires a dataset to render.</p>
+    pub fn get_data_set_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_set_identifier
     }
     /// Appends an item to `actions`.
     ///
@@ -91,6 +99,12 @@ impl EmptyVisualBuilder {
     ) -> Self {
         self.actions = input;
         self
+    }
+    /// <p>The list of custom actions that are configured for a visual.</p>
+    pub fn get_actions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>> {
+        &self.actions
     }
     /// Consumes the builder and constructs a [`EmptyVisual`](crate::types::EmptyVisual).
     pub fn build(self) -> crate::types::EmptyVisual {

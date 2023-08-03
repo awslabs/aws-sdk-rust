@@ -36,6 +36,12 @@ impl PutApprovalResultFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutApprovalResult as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_approval_result::builders::PutApprovalResultInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl PutApprovalResultFluentBuilder {
         self.inner = self.inner.set_pipeline_name(input);
         self
     }
+    /// <p>The name of the pipeline that contains the action. </p>
+    pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pipeline_name()
+    }
     /// <p>The name of the stage that contains the action.</p>
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stage_name(input.into());
@@ -142,6 +152,10 @@ impl PutApprovalResultFluentBuilder {
         self.inner = self.inner.set_stage_name(input);
         self
     }
+    /// <p>The name of the stage that contains the action.</p>
+    pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stage_name()
+    }
     /// <p>The name of the action for which approval is requested.</p>
     pub fn action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.action_name(input.into());
@@ -151,6 +165,10 @@ impl PutApprovalResultFluentBuilder {
     pub fn set_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_action_name(input);
         self
+    }
+    /// <p>The name of the action for which approval is requested.</p>
+    pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_action_name()
     }
     /// <p>Represents information about the result of the approval request.</p>
     pub fn result(mut self, input: crate::types::ApprovalResult) -> Self {
@@ -165,6 +183,10 @@ impl PutApprovalResultFluentBuilder {
         self.inner = self.inner.set_result(input);
         self
     }
+    /// <p>Represents information about the result of the approval request.</p>
+    pub fn get_result(&self) -> &::std::option::Option<crate::types::ApprovalResult> {
+        self.inner.get_result()
+    }
     /// <p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <code>GetPipelineState</code> action. It is used to validate that the approval request corresponding to this token is still valid.</p>
     pub fn token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.token(input.into());
@@ -174,5 +196,9 @@ impl PutApprovalResultFluentBuilder {
     pub fn set_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_token(input);
         self
+    }
+    /// <p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <code>GetPipelineState</code> action. It is used to validate that the approval request corresponding to this token is still valid.</p>
+    pub fn get_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_token()
     }
 }

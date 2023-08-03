@@ -58,6 +58,10 @@ impl GetDomainStatisticsReportOutputBuilder {
         self.overall_volume = input;
         self
     }
+    /// <p>An object that contains deliverability metrics for the domain that you specified. The data in this object is a summary of all of the data that was collected from the <code>StartDate</code> to the <code>EndDate</code>.</p>
+    pub fn get_overall_volume(&self) -> &::std::option::Option<crate::types::OverallVolume> {
+        &self.overall_volume
+    }
     /// Appends an item to `daily_volumes`.
     ///
     /// To override the contents of this collection use [`set_daily_volumes`](Self::set_daily_volumes).
@@ -76,6 +80,12 @@ impl GetDomainStatisticsReportOutputBuilder {
     ) -> Self {
         self.daily_volumes = input;
         self
+    }
+    /// <p>An object that contains deliverability metrics for the domain that you specified. This object contains data for each day, starting on the <code>StartDate</code> and ending on the <code>EndDate</code>.</p>
+    pub fn get_daily_volumes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DailyVolume>> {
+        &self.daily_volumes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

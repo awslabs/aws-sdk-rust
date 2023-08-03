@@ -56,6 +56,12 @@ impl GetAssociationForServiceQuotaTemplateOutputBuilder {
         self.service_quota_template_association_status = input;
         self
     }
+    /// <p>The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the template are automatically applied to new accounts in your organization.</p>
+    pub fn get_service_quota_template_association_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServiceQuotaTemplateAssociationStatus> {
+        &self.service_quota_template_association_status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

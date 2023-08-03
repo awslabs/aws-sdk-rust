@@ -47,6 +47,10 @@ impl GetSceneInputBuilder {
         self.workspace_id = input;
         self
     }
+    /// <p>The ID of the workspace that contains the scene.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
+    }
     /// <p>The ID of the scene.</p>
     pub fn scene_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scene_id = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl GetSceneInputBuilder {
     pub fn set_scene_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scene_id = input;
         self
+    }
+    /// <p>The ID of the scene.</p>
+    pub fn get_scene_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scene_id
     }
     /// Consumes the builder and constructs a [`GetSceneInput`](crate::operation::get_scene::GetSceneInput).
     pub fn build(

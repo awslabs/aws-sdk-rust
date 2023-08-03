@@ -70,6 +70,10 @@ impl DeleteClientVpnRouteInputBuilder {
         self.client_vpn_endpoint_id = input;
         self
     }
+    /// <p>The ID of the Client VPN endpoint from which the route is to be deleted.</p>
+    pub fn get_client_vpn_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_vpn_endpoint_id
+    }
     /// <p>The ID of the target subnet used by the route.</p>
     pub fn target_vpc_subnet_id(
         mut self,
@@ -85,6 +89,10 @@ impl DeleteClientVpnRouteInputBuilder {
     ) -> Self {
         self.target_vpc_subnet_id = input;
         self
+    }
+    /// <p>The ID of the target subnet used by the route.</p>
+    pub fn get_target_vpc_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_vpc_subnet_id
     }
     /// <p>The IPv4 address range, in CIDR notation, of the route to be deleted.</p>
     pub fn destination_cidr_block(
@@ -102,6 +110,10 @@ impl DeleteClientVpnRouteInputBuilder {
         self.destination_cidr_block = input;
         self
     }
+    /// <p>The IPv4 address range, in CIDR notation, of the route to be deleted.</p>
+    pub fn get_destination_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_cidr_block
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -111,6 +123,10 @@ impl DeleteClientVpnRouteInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`DeleteClientVpnRouteInput`](crate::operation::delete_client_vpn_route::DeleteClientVpnRouteInput).
     pub fn build(

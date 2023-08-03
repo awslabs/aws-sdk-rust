@@ -63,6 +63,10 @@ impl UpdateCampaignInputBuilder {
         self.campaign_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
+    pub fn get_campaign_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.campaign_arn
+    }
     /// <p>The ARN of a new solution version to deploy.</p>
     pub fn solution_version_arn(
         mut self,
@@ -79,6 +83,10 @@ impl UpdateCampaignInputBuilder {
         self.solution_version_arn = input;
         self
     }
+    /// <p>The ARN of a new solution version to deploy.</p>
+    pub fn get_solution_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.solution_version_arn
+    }
     /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support. A high <code>minProvisionedTPS</code> will increase your bill. We recommend starting with 1 for <code>minProvisionedTPS</code> (the default). Track your usage using Amazon CloudWatch metrics, and increase the <code>minProvisionedTPS</code> as necessary.</p>
     pub fn min_provisioned_tps(mut self, input: i32) -> Self {
         self.min_provisioned_tps = ::std::option::Option::Some(input);
@@ -88,6 +96,10 @@ impl UpdateCampaignInputBuilder {
     pub fn set_min_provisioned_tps(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_provisioned_tps = input;
         self
+    }
+    /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support. A high <code>minProvisionedTPS</code> will increase your bill. We recommend starting with 1 for <code>minProvisionedTPS</code> (the default). Track your usage using Amazon CloudWatch metrics, and increase the <code>minProvisionedTPS</code> as necessary.</p>
+    pub fn get_min_provisioned_tps(&self) -> &::std::option::Option<i32> {
+        &self.min_provisioned_tps
     }
     /// <p>The configuration details of a campaign.</p>
     pub fn campaign_config(mut self, input: crate::types::CampaignConfig) -> Self {
@@ -101,6 +113,10 @@ impl UpdateCampaignInputBuilder {
     ) -> Self {
         self.campaign_config = input;
         self
+    }
+    /// <p>The configuration details of a campaign.</p>
+    pub fn get_campaign_config(&self) -> &::std::option::Option<crate::types::CampaignConfig> {
+        &self.campaign_config
     }
     /// Consumes the builder and constructs a [`UpdateCampaignInput`](crate::operation::update_campaign::UpdateCampaignInput).
     pub fn build(

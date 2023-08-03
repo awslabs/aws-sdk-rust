@@ -40,6 +40,10 @@ impl SnsDestinationBuilder {
         self.topic_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to publish events to.</p>
+    pub fn get_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_arn
+    }
     /// Consumes the builder and constructs a [`SnsDestination`](crate::types::SnsDestination).
     pub fn build(self) -> crate::types::SnsDestination {
         crate::types::SnsDestination {

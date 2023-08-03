@@ -50,6 +50,10 @@ impl AwsCloudMapInstanceAttributeBuilder {
         self.key = input;
         self
     }
+    /// <p>The name of an Cloud Map service instance attribute key. Any Cloud Map service instance that contains the specified key and value is returned.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>The value of an Cloud Map service instance attribute key. Any Cloud Map service instance that contains the specified key and value is returned.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -59,6 +63,10 @@ impl AwsCloudMapInstanceAttributeBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value of an Cloud Map service instance attribute key. Any Cloud Map service instance that contains the specified key and value is returned.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`AwsCloudMapInstanceAttribute`](crate::types::AwsCloudMapInstanceAttribute).
     pub fn build(self) -> crate::types::AwsCloudMapInstanceAttribute {

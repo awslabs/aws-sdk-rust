@@ -61,6 +61,10 @@ impl UpdateChannelClassInputBuilder {
         self.channel_class = input;
         self
     }
+    /// The channel class that you wish to update this channel to use.
+    pub fn get_channel_class(&self) -> &::std::option::Option<crate::types::ChannelClass> {
+        &self.channel_class
+    }
     /// Channel Id of the channel whose class should be updated.
     pub fn channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_id = ::std::option::Option::Some(input.into());
@@ -70,6 +74,10 @@ impl UpdateChannelClassInputBuilder {
     pub fn set_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_id = input;
         self
+    }
+    /// Channel Id of the channel whose class should be updated.
+    pub fn get_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_id
     }
     /// Appends an item to `destinations`.
     ///
@@ -89,6 +97,12 @@ impl UpdateChannelClassInputBuilder {
     ) -> Self {
         self.destinations = input;
         self
+    }
+    /// A list of output destinations for this channel.
+    pub fn get_destinations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputDestination>> {
+        &self.destinations
     }
     /// Consumes the builder and constructs a [`UpdateChannelClassInput`](crate::operation::update_channel_class::UpdateChannelClassInput).
     pub fn build(

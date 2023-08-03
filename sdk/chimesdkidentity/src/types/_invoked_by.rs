@@ -83,6 +83,16 @@ impl InvokedByBuilder {
         self.standard_messages = input;
         self
     }
+    /// <p>Sets standard messages as the bot trigger. For standard messages:</p>
+    /// <ul>
+    /// <li> <p> <code>ALL</code>: The bot processes all standard messages.</p> </li>
+    /// <li> <p> <code>AUTO</code>: The bot responds to ALL messages when the channel has one other non-hidden member, and responds to MENTIONS when the channel has more than one other non-hidden member.</p> </li>
+    /// <li> <p> <code>MENTIONS</code>: The bot processes all standard messages that have a message attribute with <code>CHIME.mentions</code> and a value of the bot ARN.</p> </li>
+    /// <li> <p> <code>NONE</code>: The bot processes no standard messages.</p> </li>
+    /// </ul>
+    pub fn get_standard_messages(&self) -> &::std::option::Option<crate::types::StandardMessages> {
+        &self.standard_messages
+    }
     /// <p>Sets targeted messages as the bot trigger. For targeted messages:</p>
     /// <ul>
     /// <li> <p> <code>ALL</code>: The bot processes all <code>TargetedMessages</code> sent to it. The bot then responds with a targeted message back to the sender. </p> </li>
@@ -103,6 +113,14 @@ impl InvokedByBuilder {
     ) -> Self {
         self.targeted_messages = input;
         self
+    }
+    /// <p>Sets targeted messages as the bot trigger. For targeted messages:</p>
+    /// <ul>
+    /// <li> <p> <code>ALL</code>: The bot processes all <code>TargetedMessages</code> sent to it. The bot then responds with a targeted message back to the sender. </p> </li>
+    /// <li> <p> <code>NONE</code>: The bot processes no targeted messages.</p> </li>
+    /// </ul>
+    pub fn get_targeted_messages(&self) -> &::std::option::Option<crate::types::TargetedMessages> {
+        &self.targeted_messages
     }
     /// Consumes the builder and constructs a [`InvokedBy`](crate::types::InvokedBy).
     pub fn build(self) -> crate::types::InvokedBy {

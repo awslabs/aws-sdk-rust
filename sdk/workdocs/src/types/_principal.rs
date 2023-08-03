@@ -56,6 +56,10 @@ impl PrincipalBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the resource.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The type of resource.</p>
     pub fn r#type(mut self, input: crate::types::PrincipalType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl PrincipalBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::PrincipalType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of resource.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::PrincipalType> {
+        &self.r#type
     }
     /// Appends an item to `roles`.
     ///
@@ -84,6 +92,12 @@ impl PrincipalBuilder {
     ) -> Self {
         self.roles = input;
         self
+    }
+    /// <p>The permission information for the resource.</p>
+    pub fn get_roles(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionInfo>> {
+        &self.roles
     }
     /// Consumes the builder and constructs a [`Principal`](crate::types::Principal).
     pub fn build(self) -> crate::types::Principal {

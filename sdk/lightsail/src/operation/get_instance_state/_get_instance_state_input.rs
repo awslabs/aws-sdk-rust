@@ -46,6 +46,10 @@ impl GetInstanceStateInputBuilder {
         self.instance_name = input;
         self
     }
+    /// <p>The name of the instance to get state information about.</p>
+    pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_name
+    }
     /// Consumes the builder and constructs a [`GetInstanceStateInput`](crate::operation::get_instance_state::GetInstanceStateInput).
     pub fn build(
         self,

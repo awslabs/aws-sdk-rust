@@ -61,6 +61,10 @@ impl DeleteFileCacheOutputBuilder {
         self.file_cache_id = input;
         self
     }
+    /// <p>The ID of the cache that's being deleted.</p>
+    pub fn get_file_cache_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_cache_id
+    }
     /// <p>The cache lifecycle for the deletion request. If the <code>DeleteFileCache</code> operation is successful, this status is <code>DELETING</code>.</p>
     pub fn lifecycle(mut self, input: crate::types::FileCacheLifecycle) -> Self {
         self.lifecycle = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl DeleteFileCacheOutputBuilder {
     ) -> Self {
         self.lifecycle = input;
         self
+    }
+    /// <p>The cache lifecycle for the deletion request. If the <code>DeleteFileCache</code> operation is successful, this status is <code>DELETING</code>.</p>
+    pub fn get_lifecycle(&self) -> &::std::option::Option<crate::types::FileCacheLifecycle> {
+        &self.lifecycle
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

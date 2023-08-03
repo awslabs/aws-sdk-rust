@@ -36,6 +36,12 @@ impl StopDeploymentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StopDeployment as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::stop_deployment::builders::StopDeploymentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl StopDeploymentFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The application ID.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>The environment ID.</p>
     pub fn environment_id(
         mut self,
@@ -140,6 +150,10 @@ impl StopDeploymentFluentBuilder {
         self.inner = self.inner.set_environment_id(input);
         self
     }
+    /// <p>The environment ID.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_id()
+    }
     /// <p>The sequence number of the deployment.</p>
     pub fn deployment_number(mut self, input: i32) -> Self {
         self.inner = self.inner.deployment_number(input);
@@ -149,5 +163,9 @@ impl StopDeploymentFluentBuilder {
     pub fn set_deployment_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_deployment_number(input);
         self
+    }
+    /// <p>The sequence number of the deployment.</p>
+    pub fn get_deployment_number(&self) -> &::std::option::Option<i32> {
+        self.inner.get_deployment_number()
     }
 }

@@ -40,6 +40,10 @@ impl VirtualNodeTcpConnectionPoolBuilder {
         self.max_connections = input;
         self
     }
+    /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster.</p>
+    pub fn get_max_connections(&self) -> &::std::option::Option<i32> {
+        &self.max_connections
+    }
     /// Consumes the builder and constructs a [`VirtualNodeTcpConnectionPool`](crate::types::VirtualNodeTcpConnectionPool).
     pub fn build(self) -> crate::types::VirtualNodeTcpConnectionPool {
         crate::types::VirtualNodeTcpConnectionPool {

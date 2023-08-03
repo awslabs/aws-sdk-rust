@@ -39,6 +39,10 @@ impl DeleteMemberInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`DeleteMemberInput`](crate::operation::delete_member::DeleteMemberInput).
     pub fn build(
         self,

@@ -70,6 +70,10 @@ impl TlsCertificateDataBuilder {
         self.certificate_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_arn
+    }
     /// <p>The serial number of the certificate.</p>
     pub fn certificate_serial(
         mut self,
@@ -86,6 +90,10 @@ impl TlsCertificateDataBuilder {
         self.certificate_serial = input;
         self
     }
+    /// <p>The serial number of the certificate.</p>
+    pub fn get_certificate_serial(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_serial
+    }
     /// <p>The status of the certificate.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -95,6 +103,10 @@ impl TlsCertificateDataBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the certificate.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>Contains details about the certificate status, including information about certificate errors.</p>
     pub fn status_message(
@@ -111,6 +123,10 @@ impl TlsCertificateDataBuilder {
     ) -> Self {
         self.status_message = input;
         self
+    }
+    /// <p>Contains details about the certificate status, including information about certificate errors.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     /// Consumes the builder and constructs a [`TlsCertificateData`](crate::types::TlsCertificateData).
     pub fn build(self) -> crate::types::TlsCertificateData {

@@ -77,6 +77,10 @@ impl AssociateFacesInputBuilder {
         self.collection_id = input;
         self
     }
+    /// <p>The ID of an existing collection containing the UserID.</p>
+    pub fn get_collection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collection_id
+    }
     /// <p>The ID for the existing UserID.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
@@ -86,6 +90,10 @@ impl AssociateFacesInputBuilder {
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
+    }
+    /// <p>The ID for the existing UserID.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
     }
     /// Appends an item to `face_ids`.
     ///
@@ -106,6 +114,10 @@ impl AssociateFacesInputBuilder {
         self.face_ids = input;
         self
     }
+    /// <p>An array of FaceIDs to associate with the UserID.</p>
+    pub fn get_face_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.face_ids
+    }
     /// <p>An optional value specifying the minimum confidence in the UserID match to return. The default value is 75.</p>
     pub fn user_match_threshold(mut self, input: f32) -> Self {
         self.user_match_threshold = ::std::option::Option::Some(input);
@@ -115,6 +127,10 @@ impl AssociateFacesInputBuilder {
     pub fn set_user_match_threshold(mut self, input: ::std::option::Option<f32>) -> Self {
         self.user_match_threshold = input;
         self
+    }
+    /// <p>An optional value specifying the minimum confidence in the UserID match to return. The default value is 75.</p>
+    pub fn get_user_match_threshold(&self) -> &::std::option::Option<f32> {
+        &self.user_match_threshold
     }
     /// <p>Idempotent token used to identify the request to <code>AssociateFaces</code>. If you use the same token with multiple <code>AssociateFaces</code> requests, the same response is returned. Use ClientRequestToken to prevent the same request from being processed more than once.</p>
     pub fn client_request_token(
@@ -131,6 +147,10 @@ impl AssociateFacesInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>Idempotent token used to identify the request to <code>AssociateFaces</code>. If you use the same token with multiple <code>AssociateFaces</code> requests, the same response is returned. Use ClientRequestToken to prevent the same request from being processed more than once.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Consumes the builder and constructs a [`AssociateFacesInput`](crate::operation::associate_faces::AssociateFacesInput).
     pub fn build(

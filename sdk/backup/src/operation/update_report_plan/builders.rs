@@ -36,6 +36,12 @@ impl UpdateReportPlanFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateReportPlan as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_report_plan::builders::UpdateReportPlanInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateReportPlanFluentBuilder {
         self.inner = self.inner.set_report_plan_name(input);
         self
     }
+    /// <p>The unique name of the report plan. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
+    pub fn get_report_plan_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_report_plan_name()
+    }
     /// <p>An optional description of the report plan with a maximum 1,024 characters.</p>
     pub fn report_plan_description(
         mut self,
@@ -148,6 +158,10 @@ impl UpdateReportPlanFluentBuilder {
         self.inner = self.inner.set_report_plan_description(input);
         self
     }
+    /// <p>An optional description of the report plan with a maximum 1,024 characters.</p>
+    pub fn get_report_plan_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_report_plan_description()
+    }
     /// <p>A structure that contains information about where to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
     pub fn report_delivery_channel(mut self, input: crate::types::ReportDeliveryChannel) -> Self {
         self.inner = self.inner.report_delivery_channel(input);
@@ -160,6 +174,12 @@ impl UpdateReportPlanFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_report_delivery_channel(input);
         self
+    }
+    /// <p>A structure that contains information about where to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
+    pub fn get_report_delivery_channel(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReportDeliveryChannel> {
+        self.inner.get_report_delivery_channel()
     }
     /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
     /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
@@ -178,6 +198,12 @@ impl UpdateReportPlanFluentBuilder {
         self.inner = self.inner.set_report_setting(input);
         self
     }
+    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
+    /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
+    /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report coverage by Amazon Web Services Regions and frameworks.</p>
+    pub fn get_report_setting(&self) -> &::std::option::Option<crate::types::ReportSetting> {
+        self.inner.get_report_setting()
+    }
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>UpdateReportPlanInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
     pub fn idempotency_token(
         mut self,
@@ -193,5 +219,9 @@ impl UpdateReportPlanFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self
+    }
+    /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>UpdateReportPlanInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
+    pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_idempotency_token()
     }
 }

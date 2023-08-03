@@ -114,6 +114,10 @@ impl UpdateUserInputBuilder {
         self.user_id = input;
         self
     }
+    /// <p>The unique identifier for the user account to update.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
+    }
     /// <p>The option to indicate the type of user.</p>
     /// <ul>
     /// <li> <p> <code>SUPER_USER</code>– A user with permission to all the functionality and data in FinSpace.</p> </li>
@@ -132,6 +136,14 @@ impl UpdateUserInputBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The option to indicate the type of user.</p>
+    /// <ul>
+    /// <li> <p> <code>SUPER_USER</code>– A user with permission to all the functionality and data in FinSpace.</p> </li>
+    /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::UserType> {
+        &self.r#type
+    }
     /// <p>The first name of the user.</p>
     pub fn first_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.first_name = ::std::option::Option::Some(input.into());
@@ -142,6 +154,10 @@ impl UpdateUserInputBuilder {
         self.first_name = input;
         self
     }
+    /// <p>The first name of the user.</p>
+    pub fn get_first_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.first_name
+    }
     /// <p>The last name of the user.</p>
     pub fn last_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_name = ::std::option::Option::Some(input.into());
@@ -151,6 +167,10 @@ impl UpdateUserInputBuilder {
     pub fn set_last_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_name = input;
         self
+    }
+    /// <p>The last name of the user.</p>
+    pub fn get_last_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_name
     }
     /// <p>The option to indicate whether the user can use the <code>GetProgrammaticAccessCredentials</code> API to obtain credentials that can then be used to access other FinSpace Data API operations.</p>
     /// <ul>
@@ -170,6 +190,14 @@ impl UpdateUserInputBuilder {
         self.api_access = input;
         self
     }
+    /// <p>The option to indicate whether the user can use the <code>GetProgrammaticAccessCredentials</code> API to obtain credentials that can then be used to access other FinSpace Data API operations.</p>
+    /// <ul>
+    /// <li> <p> <code>ENABLED</code> – The user has permissions to use the APIs.</p> </li>
+    /// <li> <p> <code>DISABLED</code> – The user does not have permissions to use any APIs.</p> </li>
+    /// </ul>
+    pub fn get_api_access(&self) -> &::std::option::Option<crate::types::ApiAccess> {
+        &self.api_access
+    }
     /// <p>The ARN identifier of an AWS user or role that is allowed to call the <code>GetProgrammaticAccessCredentials</code> API to obtain a credentials token for a specific FinSpace user. This must be an IAM role within your FinSpace account.</p>
     pub fn api_access_principal_arn(
         mut self,
@@ -186,6 +214,10 @@ impl UpdateUserInputBuilder {
         self.api_access_principal_arn = input;
         self
     }
+    /// <p>The ARN identifier of an AWS user or role that is allowed to call the <code>GetProgrammaticAccessCredentials</code> API to obtain a credentials token for a specific FinSpace user. This must be an IAM role within your FinSpace account.</p>
+    pub fn get_api_access_principal_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_access_principal_arn
+    }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -195,6 +227,10 @@ impl UpdateUserInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateUserInput`](crate::operation::update_user::UpdateUserInput).
     pub fn build(

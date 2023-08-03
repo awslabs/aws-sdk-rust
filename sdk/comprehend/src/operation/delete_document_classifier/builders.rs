@@ -38,6 +38,13 @@ impl DeleteDocumentClassifierFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteDocumentClassifier as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_document_classifier::builders::DeleteDocumentClassifierInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,5 +140,9 @@ impl DeleteDocumentClassifierFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_document_classifier_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. </p>
+    pub fn get_document_classifier_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_document_classifier_arn()
     }
 }

@@ -431,6 +431,78 @@ impl BuildPhaseBuilder {
         self.phase_type = input;
         self
     }
+    /// <p>The name of the build phase. Valid values include:</p>
+    /// <dl>
+    /// <dt>
+    /// BUILD
+    /// </dt>
+    /// <dd>
+    /// <p>Core build activities typically occur in this build phase.</p>
+    /// </dd>
+    /// <dt>
+    /// COMPLETED
+    /// </dt>
+    /// <dd>
+    /// <p>The build has been completed.</p>
+    /// </dd>
+    /// <dt>
+    /// DOWNLOAD_SOURCE
+    /// </dt>
+    /// <dd>
+    /// <p>Source code is being downloaded in this build phase.</p>
+    /// </dd>
+    /// <dt>
+    /// FINALIZING
+    /// </dt>
+    /// <dd>
+    /// <p>The build process is completing in this build phase.</p>
+    /// </dd>
+    /// <dt>
+    /// INSTALL
+    /// </dt>
+    /// <dd>
+    /// <p>Installation activities typically occur in this build phase.</p>
+    /// </dd>
+    /// <dt>
+    /// POST_BUILD
+    /// </dt>
+    /// <dd>
+    /// <p>Post-build activities typically occur in this build phase.</p>
+    /// </dd>
+    /// <dt>
+    /// PRE_BUILD
+    /// </dt>
+    /// <dd>
+    /// <p>Pre-build activities typically occur in this build phase.</p>
+    /// </dd>
+    /// <dt>
+    /// PROVISIONING
+    /// </dt>
+    /// <dd>
+    /// <p>The build environment is being set up.</p>
+    /// </dd>
+    /// <dt>
+    /// QUEUED
+    /// </dt>
+    /// <dd>
+    /// <p>The build has been submitted and is queued behind other submitted builds.</p>
+    /// </dd>
+    /// <dt>
+    /// SUBMITTED
+    /// </dt>
+    /// <dd>
+    /// <p>The build has been submitted.</p>
+    /// </dd>
+    /// <dt>
+    /// UPLOAD_ARTIFACTS
+    /// </dt>
+    /// <dd>
+    /// <p>Build output artifacts are being uploaded to the output location.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_phase_type(&self) -> &::std::option::Option<crate::types::BuildPhaseType> {
+        &self.phase_type
+    }
     /// <p>The current status of the build phase. Valid values include:</p>
     /// <dl>
     /// <dt>
@@ -520,6 +592,48 @@ impl BuildPhaseBuilder {
         self.phase_status = input;
         self
     }
+    /// <p>The current status of the build phase. Valid values include:</p>
+    /// <dl>
+    /// <dt>
+    /// FAILED
+    /// </dt>
+    /// <dd>
+    /// <p>The build phase failed.</p>
+    /// </dd>
+    /// <dt>
+    /// FAULT
+    /// </dt>
+    /// <dd>
+    /// <p>The build phase faulted.</p>
+    /// </dd>
+    /// <dt>
+    /// IN_PROGRESS
+    /// </dt>
+    /// <dd>
+    /// <p>The build phase is still in progress.</p>
+    /// </dd>
+    /// <dt>
+    /// STOPPED
+    /// </dt>
+    /// <dd>
+    /// <p>The build phase stopped.</p>
+    /// </dd>
+    /// <dt>
+    /// SUCCEEDED
+    /// </dt>
+    /// <dd>
+    /// <p>The build phase succeeded.</p>
+    /// </dd>
+    /// <dt>
+    /// TIMED_OUT
+    /// </dt>
+    /// <dd>
+    /// <p>The build phase timed out.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_phase_status(&self) -> &::std::option::Option<crate::types::StatusType> {
+        &self.phase_status
+    }
     /// <p>When the build phase started, expressed in Unix time format.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -532,6 +646,10 @@ impl BuildPhaseBuilder {
     ) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>When the build phase started, expressed in Unix time format.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p>When the build phase ended, expressed in Unix time format.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -546,6 +664,10 @@ impl BuildPhaseBuilder {
         self.end_time = input;
         self
     }
+    /// <p>When the build phase ended, expressed in Unix time format.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>How long, in seconds, between the starting and ending times of the build's phase.</p>
     pub fn duration_in_seconds(mut self, input: i64) -> Self {
         self.duration_in_seconds = ::std::option::Option::Some(input);
@@ -555,6 +677,10 @@ impl BuildPhaseBuilder {
     pub fn set_duration_in_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
         self.duration_in_seconds = input;
         self
+    }
+    /// <p>How long, in seconds, between the starting and ending times of the build's phase.</p>
+    pub fn get_duration_in_seconds(&self) -> &::std::option::Option<i64> {
+        &self.duration_in_seconds
     }
     /// Appends an item to `contexts`.
     ///
@@ -574,6 +700,12 @@ impl BuildPhaseBuilder {
     ) -> Self {
         self.contexts = input;
         self
+    }
+    /// <p>Additional information about a build phase, especially to help troubleshoot a failed build.</p>
+    pub fn get_contexts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PhaseContext>> {
+        &self.contexts
     }
     /// Consumes the builder and constructs a [`BuildPhase`](crate::types::BuildPhase).
     pub fn build(self) -> crate::types::BuildPhase {

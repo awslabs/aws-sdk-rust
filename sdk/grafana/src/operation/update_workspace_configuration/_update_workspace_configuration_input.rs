@@ -65,6 +65,10 @@ impl UpdateWorkspaceConfigurationInputBuilder {
         self.configuration = input;
         self
     }
+    /// <p>The new configuration string for the workspace. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
+    pub fn get_configuration(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration
+    }
     /// <p>The ID of the workspace to update.</p>
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl UpdateWorkspaceConfigurationInputBuilder {
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workspace_id = input;
         self
+    }
+    /// <p>The ID of the workspace to update.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
     }
     /// <p>Specifies the version of Grafana to support in the new workspace.</p>
     /// <p>Can only be used to upgrade (for example, from 8.4 to 9.4), not downgrade (for example, from 9.4 to 8.4).</p>
@@ -94,6 +102,12 @@ impl UpdateWorkspaceConfigurationInputBuilder {
     ) -> Self {
         self.grafana_version = input;
         self
+    }
+    /// <p>Specifies the version of Grafana to support in the new workspace.</p>
+    /// <p>Can only be used to upgrade (for example, from 8.4 to 9.4), not downgrade (for example, from 9.4 to 8.4).</p>
+    /// <p>To know what versions are available to upgrade to for a specific workspace, see the <code>ListVersions</code> operation.</p>
+    pub fn get_grafana_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grafana_version
     }
     /// Consumes the builder and constructs a [`UpdateWorkspaceConfigurationInput`](crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationInput).
     pub fn build(

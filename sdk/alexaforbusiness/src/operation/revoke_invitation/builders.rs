@@ -37,6 +37,12 @@ impl RevokeInvitationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RevokeInvitation as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::revoke_invitation::builders::RevokeInvitationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl RevokeInvitationFluentBuilder {
         self.inner = self.inner.set_user_arn(input);
         self
     }
+    /// <p>The ARN of the user for whom to revoke an enrollment invitation. Required.</p>
+    pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_arn()
+    }
     /// <p>The ARN of the enrollment invitation to revoke. Required.</p>
     pub fn enrollment_id(
         mut self,
@@ -142,5 +152,9 @@ impl RevokeInvitationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_enrollment_id(input);
         self
+    }
+    /// <p>The ARN of the enrollment invitation to revoke. Required.</p>
+    pub fn get_enrollment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_enrollment_id()
     }
 }

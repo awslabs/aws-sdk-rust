@@ -36,6 +36,10 @@ impl ListDomainsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListDomains as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_domains::builders::ListDomainsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +138,12 @@ impl ListDomainsFluentBuilder {
         self.inner = self.inner.set_filter_conditions(input);
         self
     }
+    /// <p>A complex type that contains information about the filters applied during the <code>ListDomains</code> request. The filter conditions can include domain name and domain expiration.</p>
+    pub fn get_filter_conditions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterCondition>> {
+        self.inner.get_filter_conditions()
+    }
     /// <p>A complex type that contains information about the requested ordering of domains in the returned list.</p>
     pub fn sort_condition(mut self, input: crate::types::SortCondition) -> Self {
         self.inner = self.inner.sort_condition(input);
@@ -147,6 +157,10 @@ impl ListDomainsFluentBuilder {
         self.inner = self.inner.set_sort_condition(input);
         self
     }
+    /// <p>A complex type that contains information about the requested ordering of domains in the returned list.</p>
+    pub fn get_sort_condition(&self) -> &::std::option::Option<crate::types::SortCondition> {
+        self.inner.get_sort_condition()
+    }
     /// <p>For an initial request for a list of domains, omit this element. If the number of domains that are associated with the current Amazon Web Services account is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional domains. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
     /// <p>Constraints: The marker must match the value specified in the previous request.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -159,6 +173,11 @@ impl ListDomainsFluentBuilder {
         self.inner = self.inner.set_marker(input);
         self
     }
+    /// <p>For an initial request for a list of domains, omit this element. If the number of domains that are associated with the current Amazon Web Services account is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional domains. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
+    /// <p>Constraints: The marker must match the value specified in the previous request.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
+    }
     /// <p>Number of domains to be returned.</p>
     /// <p>Default: 20</p>
     pub fn max_items(mut self, input: i32) -> Self {
@@ -170,5 +189,10 @@ impl ListDomainsFluentBuilder {
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_items(input);
         self
+    }
+    /// <p>Number of domains to be returned.</p>
+    /// <p>Default: 20</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_items()
     }
 }

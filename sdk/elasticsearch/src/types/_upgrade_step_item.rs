@@ -105,6 +105,16 @@ impl UpgradeStepItemBuilder {
         self.upgrade_step = input;
         self
     }
+    /// <p> Represents one of 3 steps that an Upgrade or Upgrade Eligibility Check does through: </p>
+    /// <ul>
+    /// <li>PreUpgradeCheck</li>
+    /// <li>Snapshot</li>
+    /// <li>Upgrade</li>
+    /// </ul>
+    /// <p></p>
+    pub fn get_upgrade_step(&self) -> &::std::option::Option<crate::types::UpgradeStep> {
+        &self.upgrade_step
+    }
     /// <p> The status of a particular step during an upgrade. The status can take one of the following values: </p>
     /// <ul>
     /// <li>In Progress</li>
@@ -132,6 +142,17 @@ impl UpgradeStepItemBuilder {
         self.upgrade_step_status = input;
         self
     }
+    /// <p> The status of a particular step during an upgrade. The status can take one of the following values: </p>
+    /// <ul>
+    /// <li>In Progress</li>
+    /// <li>Succeeded</li>
+    /// <li>Succeeded with Issues</li>
+    /// <li>Failed</li>
+    /// </ul>
+    /// <p></p>
+    pub fn get_upgrade_step_status(&self) -> &::std::option::Option<crate::types::UpgradeStatus> {
+        &self.upgrade_step_status
+    }
     /// Appends an item to `issues`.
     ///
     /// To override the contents of this collection use [`set_issues`](Self::set_issues).
@@ -151,6 +172,10 @@ impl UpgradeStepItemBuilder {
         self.issues = input;
         self
     }
+    /// <p>A list of strings containing detailed information about the errors encountered in a particular step.</p>
+    pub fn get_issues(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.issues
+    }
     /// <p>The Floating point value representing progress percentage of a particular step.</p>
     pub fn progress_percent(mut self, input: f64) -> Self {
         self.progress_percent = ::std::option::Option::Some(input);
@@ -160,6 +185,10 @@ impl UpgradeStepItemBuilder {
     pub fn set_progress_percent(mut self, input: ::std::option::Option<f64>) -> Self {
         self.progress_percent = input;
         self
+    }
+    /// <p>The Floating point value representing progress percentage of a particular step.</p>
+    pub fn get_progress_percent(&self) -> &::std::option::Option<f64> {
+        &self.progress_percent
     }
     /// Consumes the builder and constructs a [`UpgradeStepItem`](crate::types::UpgradeStepItem).
     pub fn build(self) -> crate::types::UpgradeStepItem {

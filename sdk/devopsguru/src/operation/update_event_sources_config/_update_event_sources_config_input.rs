@@ -44,6 +44,10 @@ impl UpdateEventSourcesConfigInputBuilder {
         self.event_sources = input;
         self
     }
+    /// <p>Configuration information about the integration of DevOps Guru as the Consumer via EventBridge with another AWS Service.</p>
+    pub fn get_event_sources(&self) -> &::std::option::Option<crate::types::EventSourcesConfig> {
+        &self.event_sources
+    }
     /// Consumes the builder and constructs a [`UpdateEventSourcesConfigInput`](crate::operation::update_event_sources_config::UpdateEventSourcesConfigInput).
     pub fn build(
         self,

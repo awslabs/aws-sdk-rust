@@ -99,6 +99,10 @@ impl CreateDynamicThingGroupInputBuilder {
         self.thing_group_name = input;
         self
     }
+    /// <p>The dynamic thing group name to create.</p>
+    pub fn get_thing_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_group_name
+    }
     /// <p>The dynamic thing group properties.</p>
     pub fn thing_group_properties(mut self, input: crate::types::ThingGroupProperties) -> Self {
         self.thing_group_properties = ::std::option::Option::Some(input);
@@ -111,6 +115,12 @@ impl CreateDynamicThingGroupInputBuilder {
     ) -> Self {
         self.thing_group_properties = input;
         self
+    }
+    /// <p>The dynamic thing group properties.</p>
+    pub fn get_thing_group_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::ThingGroupProperties> {
+        &self.thing_group_properties
     }
     /// <p>The dynamic thing group index name.</p> <note>
     /// <p>Currently one index is supported: <code>AWS_Things</code>.</p>
@@ -126,6 +136,12 @@ impl CreateDynamicThingGroupInputBuilder {
         self.index_name = input;
         self
     }
+    /// <p>The dynamic thing group index name.</p> <note>
+    /// <p>Currently one index is supported: <code>AWS_Things</code>.</p>
+    /// </note>
+    pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_name
+    }
     /// <p>The dynamic thing group search query string.</p>
     /// <p>See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query Syntax</a> for information about query string syntax.</p>
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -137,6 +153,11 @@ impl CreateDynamicThingGroupInputBuilder {
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_string = input;
         self
+    }
+    /// <p>The dynamic thing group search query string.</p>
+    /// <p>See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query Syntax</a> for information about query string syntax.</p>
+    pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_string
     }
     /// <p>The dynamic thing group query version.</p> <note>
     /// <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p>
@@ -158,6 +179,12 @@ impl CreateDynamicThingGroupInputBuilder {
         self.query_version = input;
         self
     }
+    /// <p>The dynamic thing group query version.</p> <note>
+    /// <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p>
+    /// </note>
+    pub fn get_query_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_version
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -176,6 +203,10 @@ impl CreateDynamicThingGroupInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Metadata which can be used to manage the dynamic thing group.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateDynamicThingGroupInput`](crate::operation::create_dynamic_thing_group::CreateDynamicThingGroupInput).
     pub fn build(

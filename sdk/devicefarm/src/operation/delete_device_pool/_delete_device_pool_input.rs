@@ -41,6 +41,10 @@ impl DeleteDevicePoolInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm device pool to delete.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`DeleteDevicePoolInput`](crate::operation::delete_device_pool::DeleteDevicePoolInput).
     pub fn build(
         self,

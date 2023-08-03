@@ -85,6 +85,12 @@ impl AwsGuardDutyDetectorDetailsBuilder {
         self.data_sources = input;
         self
     }
+    /// <p> Describes which data sources are activated for the detector. </p>
+    pub fn get_data_sources(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsGuardDutyDetectorDataSourcesDetails> {
+        &self.data_sources
+    }
     /// Appends an item to `features`.
     ///
     /// To override the contents of this collection use [`set_features`](Self::set_features).
@@ -106,6 +112,13 @@ impl AwsGuardDutyDetectorDetailsBuilder {
         self.features = input;
         self
     }
+    /// <p> Describes which features are activated for the detector. </p>
+    pub fn get_features(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsGuardDutyDetectorFeaturesDetails>>
+    {
+        &self.features
+    }
     /// <p> The publishing frequency of the finding. </p>
     pub fn finding_publishing_frequency(
         mut self,
@@ -122,6 +135,12 @@ impl AwsGuardDutyDetectorDetailsBuilder {
         self.finding_publishing_frequency = input;
         self
     }
+    /// <p> The publishing frequency of the finding. </p>
+    pub fn get_finding_publishing_frequency(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.finding_publishing_frequency
+    }
     /// <p> The GuardDuty service role. </p>
     pub fn service_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_role = ::std::option::Option::Some(input.into());
@@ -132,6 +151,10 @@ impl AwsGuardDutyDetectorDetailsBuilder {
         self.service_role = input;
         self
     }
+    /// <p> The GuardDuty service role. </p>
+    pub fn get_service_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_role
+    }
     /// <p> The activation status of the detector. </p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -141,6 +164,10 @@ impl AwsGuardDutyDetectorDetailsBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p> The activation status of the detector. </p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`AwsGuardDutyDetectorDetails`](crate::types::AwsGuardDutyDetectorDetails).
     pub fn build(self) -> crate::types::AwsGuardDutyDetectorDetails {

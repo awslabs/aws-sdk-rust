@@ -37,6 +37,13 @@ impl GetUserDefinedFunctionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetUserDefinedFunctions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_user_defined_functions::builders::GetUserDefinedFunctionsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +143,10 @@ impl GetUserDefinedFunctionsFluentBuilder {
         self.inner = self.inner.set_catalog_id(input);
         self
     }
+    /// <p>The ID of the Data Catalog where the functions to be retrieved are located. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_catalog_id()
+    }
     /// <p>The name of the catalog database where the functions are located. If none is provided, functions from all the databases across the catalog will be returned.</p>
     pub fn database_name(
         mut self,
@@ -152,6 +163,10 @@ impl GetUserDefinedFunctionsFluentBuilder {
         self.inner = self.inner.set_database_name(input);
         self
     }
+    /// <p>The name of the catalog database where the functions are located. If none is provided, functions from all the databases across the catalog will be returned.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_database_name()
+    }
     /// <p>An optional function-name pattern string that filters the function definitions returned.</p>
     pub fn pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pattern(input.into());
@@ -161,6 +176,10 @@ impl GetUserDefinedFunctionsFluentBuilder {
     pub fn set_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pattern(input);
         self
+    }
+    /// <p>An optional function-name pattern string that filters the function definitions returned.</p>
+    pub fn get_pattern(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pattern()
     }
     /// <p>A continuation token, if this is a continuation call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -172,6 +191,10 @@ impl GetUserDefinedFunctionsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A continuation token, if this is a continuation call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of functions to return in one response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -181,5 +204,9 @@ impl GetUserDefinedFunctionsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of functions to return in one response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

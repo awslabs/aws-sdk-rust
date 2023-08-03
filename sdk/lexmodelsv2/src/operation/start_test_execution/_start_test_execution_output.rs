@@ -95,6 +95,10 @@ impl StartTestExecutionOutputBuilder {
         self.test_execution_id = input;
         self
     }
+    /// <p>The unique identifier of the test set execution.</p>
+    pub fn get_test_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.test_execution_id
+    }
     /// <p>The creation date and time for the test set execution.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
@@ -108,6 +112,10 @@ impl StartTestExecutionOutputBuilder {
         self.creation_date_time = input;
         self
     }
+    /// <p>The creation date and time for the test set execution.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
+    }
     /// <p>The test set Id for the test set execution.</p>
     pub fn test_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.test_set_id = ::std::option::Option::Some(input.into());
@@ -117,6 +125,10 @@ impl StartTestExecutionOutputBuilder {
     pub fn set_test_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.test_set_id = input;
         self
+    }
+    /// <p>The test set Id for the test set execution.</p>
+    pub fn get_test_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.test_set_id
     }
     /// <p>The target bot for the test set execution.</p>
     pub fn target(mut self, input: crate::types::TestExecutionTarget) -> Self {
@@ -131,6 +143,10 @@ impl StartTestExecutionOutputBuilder {
         self.target = input;
         self
     }
+    /// <p>The target bot for the test set execution.</p>
+    pub fn get_target(&self) -> &::std::option::Option<crate::types::TestExecutionTarget> {
+        &self.target
+    }
     /// <p>Indicates whether we use streaming or non-streaming APIs for the test set execution. For streaming, StartConversation Amazon Lex Runtime API is used. Whereas for non-streaming, RecognizeUtterance and RecognizeText Amazon Lex Runtime API are used.</p>
     pub fn api_mode(mut self, input: crate::types::TestExecutionApiMode) -> Self {
         self.api_mode = ::std::option::Option::Some(input);
@@ -144,6 +160,10 @@ impl StartTestExecutionOutputBuilder {
         self.api_mode = input;
         self
     }
+    /// <p>Indicates whether we use streaming or non-streaming APIs for the test set execution. For streaming, StartConversation Amazon Lex Runtime API is used. Whereas for non-streaming, RecognizeUtterance and RecognizeText Amazon Lex Runtime API are used.</p>
+    pub fn get_api_mode(&self) -> &::std::option::Option<crate::types::TestExecutionApiMode> {
+        &self.api_mode
+    }
     /// <p>Indicates whether audio or text is used.</p>
     pub fn test_execution_modality(mut self, input: crate::types::TestExecutionModality) -> Self {
         self.test_execution_modality = ::std::option::Option::Some(input);
@@ -156,6 +176,12 @@ impl StartTestExecutionOutputBuilder {
     ) -> Self {
         self.test_execution_modality = input;
         self
+    }
+    /// <p>Indicates whether audio or text is used.</p>
+    pub fn get_test_execution_modality(
+        &self,
+    ) -> &::std::option::Option<crate::types::TestExecutionModality> {
+        &self.test_execution_modality
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

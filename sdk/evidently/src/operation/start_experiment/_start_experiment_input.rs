@@ -55,6 +55,10 @@ impl StartExperimentInputBuilder {
         self.project = input;
         self
     }
+    /// <p>The name or ARN of the project that contains the experiment to start.</p>
+    pub fn get_project(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project
+    }
     /// <p>The name of the experiment to start.</p>
     pub fn experiment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.experiment = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl StartExperimentInputBuilder {
     pub fn set_experiment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.experiment = input;
         self
+    }
+    /// <p>The name of the experiment to start.</p>
+    pub fn get_experiment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.experiment
     }
     /// <p>The date and time to end the experiment. This must be no more than 30 days after the experiment starts.</p>
     pub fn analysis_complete_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -77,6 +85,12 @@ impl StartExperimentInputBuilder {
     ) -> Self {
         self.analysis_complete_time = input;
         self
+    }
+    /// <p>The date and time to end the experiment. This must be no more than 30 days after the experiment starts.</p>
+    pub fn get_analysis_complete_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.analysis_complete_time
     }
     /// Consumes the builder and constructs a [`StartExperimentInput`](crate::operation::start_experiment::StartExperimentInput).
     pub fn build(

@@ -47,6 +47,10 @@ impl GetGrantInputBuilder {
         self.grant_arn = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the grant.</p>
+    pub fn get_grant_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grant_arn
+    }
     /// <p>Grant version.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl GetGrantInputBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>Grant version.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`GetGrantInput`](crate::operation::get_grant::GetGrantInput).
     pub fn build(

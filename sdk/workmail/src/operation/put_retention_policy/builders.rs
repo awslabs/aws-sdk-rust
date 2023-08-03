@@ -36,6 +36,12 @@ impl PutRetentionPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutRetentionPolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_retention_policy::builders::PutRetentionPolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl PutRetentionPolicyFluentBuilder {
         self.inner = self.inner.set_organization_id(input);
         self
     }
+    /// <p>The organization ID.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organization_id()
+    }
     /// <p>The retention policy ID.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
@@ -141,6 +151,10 @@ impl PutRetentionPolicyFluentBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
+    }
+    /// <p>The retention policy ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
     }
     /// <p>The retention policy name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -152,6 +166,10 @@ impl PutRetentionPolicyFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The retention policy name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The retention policy description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -161,6 +179,10 @@ impl PutRetentionPolicyFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The retention policy description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `FolderConfigurations`.
     ///
@@ -178,5 +200,11 @@ impl PutRetentionPolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_folder_configurations(input);
         self
+    }
+    /// <p>The retention policy folder configurations.</p>
+    pub fn get_folder_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FolderConfiguration>> {
+        self.inner.get_folder_configurations()
     }
 }

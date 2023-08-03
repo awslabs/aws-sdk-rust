@@ -40,6 +40,10 @@ impl ConfigurationBuilder {
         self.enabled = input;
         self
     }
+    /// <p>True to enable the configuration.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// Consumes the builder and constructs a [`Configuration`](crate::types::Configuration).
     pub fn build(self) -> crate::types::Configuration {
         crate::types::Configuration {

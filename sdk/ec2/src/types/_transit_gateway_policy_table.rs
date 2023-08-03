@@ -78,6 +78,12 @@ impl TransitGatewayPolicyTableBuilder {
         self.transit_gateway_policy_table_id = input;
         self
     }
+    /// <p>The ID of the transit gateway policy table.</p>
+    pub fn get_transit_gateway_policy_table_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_policy_table_id
+    }
     /// <p>The ID of the transit gateway.</p>
     pub fn transit_gateway_id(
         mut self,
@@ -94,6 +100,10 @@ impl TransitGatewayPolicyTableBuilder {
         self.transit_gateway_id = input;
         self
     }
+    /// <p>The ID of the transit gateway.</p>
+    pub fn get_transit_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_id
+    }
     /// <p>The state of the transit gateway policy table</p>
     pub fn state(mut self, input: crate::types::TransitGatewayPolicyTableState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -107,6 +117,12 @@ impl TransitGatewayPolicyTableBuilder {
         self.state = input;
         self
     }
+    /// <p>The state of the transit gateway policy table</p>
+    pub fn get_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransitGatewayPolicyTableState> {
+        &self.state
+    }
     /// <p>The timestamp when the transit gateway policy table was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -119,6 +135,10 @@ impl TransitGatewayPolicyTableBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The timestamp when the transit gateway policy table was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// Appends an item to `tags`.
     ///
@@ -138,6 +158,10 @@ impl TransitGatewayPolicyTableBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>he key-value pairs associated with the transit gateway policy table.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`TransitGatewayPolicyTable`](crate::types::TransitGatewayPolicyTable).
     pub fn build(self) -> crate::types::TransitGatewayPolicyTable {

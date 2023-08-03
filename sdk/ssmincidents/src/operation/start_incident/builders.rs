@@ -36,6 +36,12 @@ impl StartIncidentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartIncident as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_incident::builders::StartIncidentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl StartIncidentFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat channels, Amazon SNS topics, runbooks, title, and impact of the incident. </p>
     pub fn response_plan_arn(
         mut self,
@@ -134,6 +144,10 @@ impl StartIncidentFluentBuilder {
         self.inner = self.inner.set_response_plan_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat channels, Amazon SNS topics, runbooks, title, and impact of the incident. </p>
+    pub fn get_response_plan_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_response_plan_arn()
+    }
     /// <p>Provide a title for the incident. Providing a title overwrites the title provided by the response plan. </p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.title(input.into());
@@ -143,6 +157,10 @@ impl StartIncidentFluentBuilder {
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_title(input);
         self
+    }
+    /// <p>Provide a title for the incident. Providing a title overwrites the title provided by the response plan. </p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_title()
     }
     /// <p>Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.</p>
     /// <p class="title"> <b>Possible impacts:</b> </p>
@@ -170,6 +188,18 @@ impl StartIncidentFluentBuilder {
         self.inner = self.inner.set_impact(input);
         self
     }
+    /// <p>Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.</p>
+    /// <p class="title"> <b>Possible impacts:</b> </p>
+    /// <ul>
+    /// <li> <p> <code>1</code> - Critical impact, this typically relates to full application failure that impacts many to all customers. </p> </li>
+    /// <li> <p> <code>2</code> - High impact, partial application failure with impact to many customers.</p> </li>
+    /// <li> <p> <code>3</code> - Medium impact, the application is providing reduced service to customers.</p> </li>
+    /// <li> <p> <code>4</code> - Low impact, customer might aren't impacted by the problem yet.</p> </li>
+    /// <li> <p> <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid impact.</p> </li>
+    /// </ul>
+    pub fn get_impact(&self) -> &::std::option::Option<i32> {
+        self.inner.get_impact()
+    }
     /// <p>Details of what created the incident record in Incident Manager.</p>
     pub fn trigger_details(mut self, input: crate::types::TriggerDetails) -> Self {
         self.inner = self.inner.trigger_details(input);
@@ -182,6 +212,10 @@ impl StartIncidentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_trigger_details(input);
         self
+    }
+    /// <p>Details of what created the incident record in Incident Manager.</p>
+    pub fn get_trigger_details(&self) -> &::std::option::Option<crate::types::TriggerDetails> {
+        self.inner.get_trigger_details()
     }
     /// Appends an item to `relatedItems`.
     ///
@@ -199,5 +233,11 @@ impl StartIncidentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_related_items(input);
         self
+    }
+    /// <p>Add related items to the incident for other responders to use. Related items are Amazon Web Services resources, external links, or files uploaded to an Amazon S3 bucket. </p>
+    pub fn get_related_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RelatedItem>> {
+        self.inner.get_related_items()
     }
 }

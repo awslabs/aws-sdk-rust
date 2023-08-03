@@ -72,6 +72,10 @@ impl FieldLevelEncryptionProfileSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>ID for the field-level encryption profile summary.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The time when the the field-level encryption profile summary was last updated.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -85,6 +89,10 @@ impl FieldLevelEncryptionProfileSummaryBuilder {
         self.last_modified_time = input;
         self
     }
+    /// <p>The time when the the field-level encryption profile summary was last updated.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
     /// <p>Name for the field-level encryption profile summary.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -94,6 +102,10 @@ impl FieldLevelEncryptionProfileSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>Name for the field-level encryption profile summary.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>A complex data type of encryption entities for the field-level encryption profile that include the public key ID, provider, and field patterns for specifying which fields to encrypt with this key.</p>
     pub fn encryption_entities(mut self, input: crate::types::EncryptionEntities) -> Self {
@@ -108,6 +120,12 @@ impl FieldLevelEncryptionProfileSummaryBuilder {
         self.encryption_entities = input;
         self
     }
+    /// <p>A complex data type of encryption entities for the field-level encryption profile that include the public key ID, provider, and field patterns for specifying which fields to encrypt with this key.</p>
+    pub fn get_encryption_entities(
+        &self,
+    ) -> &::std::option::Option<crate::types::EncryptionEntities> {
+        &self.encryption_entities
+    }
     /// <p>An optional comment for the field-level encryption profile summary. The comment cannot be longer than 128 characters.</p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment = ::std::option::Option::Some(input.into());
@@ -117,6 +135,10 @@ impl FieldLevelEncryptionProfileSummaryBuilder {
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comment = input;
         self
+    }
+    /// <p>An optional comment for the field-level encryption profile summary. The comment cannot be longer than 128 characters.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comment
     }
     /// Consumes the builder and constructs a [`FieldLevelEncryptionProfileSummary`](crate::types::FieldLevelEncryptionProfileSummary).
     pub fn build(self) -> crate::types::FieldLevelEncryptionProfileSummary {

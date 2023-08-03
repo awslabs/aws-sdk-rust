@@ -59,6 +59,12 @@ impl OverrideActionBuilder {
         self.count = input;
         self
     }
+    /// <p>Override the rule group evaluation result to count only. </p> <note>
+    /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count matches, do not use this and instead use the rule action override option, with <code>Count</code> action, in your rule group reference statement settings. </p>
+    /// </note>
+    pub fn get_count(&self) -> &::std::option::Option<crate::types::CountAction> {
+        &self.count
+    }
     /// <p>Don't override the rule group evaluation result. This is the most common setting.</p>
     pub fn none(mut self, input: crate::types::NoneAction) -> Self {
         self.none = ::std::option::Option::Some(input);
@@ -68,6 +74,10 @@ impl OverrideActionBuilder {
     pub fn set_none(mut self, input: ::std::option::Option<crate::types::NoneAction>) -> Self {
         self.none = input;
         self
+    }
+    /// <p>Don't override the rule group evaluation result. This is the most common setting.</p>
+    pub fn get_none(&self) -> &::std::option::Option<crate::types::NoneAction> {
+        &self.none
     }
     /// Consumes the builder and constructs a [`OverrideAction`](crate::types::OverrideAction).
     pub fn build(self) -> crate::types::OverrideAction {

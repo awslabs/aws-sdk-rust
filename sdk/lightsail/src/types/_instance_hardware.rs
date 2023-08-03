@@ -56,6 +56,10 @@ impl InstanceHardwareBuilder {
         self.cpu_count = input;
         self
     }
+    /// <p>The number of vCPUs the instance has.</p>
+    pub fn get_cpu_count(&self) -> &::std::option::Option<i32> {
+        &self.cpu_count
+    }
     /// Appends an item to `disks`.
     ///
     /// To override the contents of this collection use [`set_disks`](Self::set_disks).
@@ -75,6 +79,10 @@ impl InstanceHardwareBuilder {
         self.disks = input;
         self
     }
+    /// <p>The disks attached to the instance.</p>
+    pub fn get_disks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Disk>> {
+        &self.disks
+    }
     /// <p>The amount of RAM in GB on the instance (e.g., <code>1.0</code>).</p>
     pub fn ram_size_in_gb(mut self, input: f32) -> Self {
         self.ram_size_in_gb = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl InstanceHardwareBuilder {
     pub fn set_ram_size_in_gb(mut self, input: ::std::option::Option<f32>) -> Self {
         self.ram_size_in_gb = input;
         self
+    }
+    /// <p>The amount of RAM in GB on the instance (e.g., <code>1.0</code>).</p>
+    pub fn get_ram_size_in_gb(&self) -> &::std::option::Option<f32> {
+        &self.ram_size_in_gb
     }
     /// Consumes the builder and constructs a [`InstanceHardware`](crate::types::InstanceHardware).
     pub fn build(self) -> crate::types::InstanceHardware {

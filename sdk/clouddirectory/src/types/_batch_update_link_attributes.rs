@@ -53,6 +53,12 @@ impl BatchUpdateLinkAttributesBuilder {
         self.typed_link_specifier = input;
         self
     }
+    /// <p>Allows a typed link specifier to be accepted as input.</p>
+    pub fn get_typed_link_specifier(
+        &self,
+    ) -> &::std::option::Option<crate::types::TypedLinkSpecifier> {
+        &self.typed_link_specifier
+    }
     /// Appends an item to `attribute_updates`.
     ///
     /// To override the contents of this collection use [`set_attribute_updates`](Self::set_attribute_updates).
@@ -71,6 +77,12 @@ impl BatchUpdateLinkAttributesBuilder {
     ) -> Self {
         self.attribute_updates = input;
         self
+    }
+    /// <p>The attributes update structure.</p>
+    pub fn get_attribute_updates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LinkAttributeUpdate>> {
+        &self.attribute_updates
     }
     /// Consumes the builder and constructs a [`BatchUpdateLinkAttributes`](crate::types::BatchUpdateLinkAttributes).
     pub fn build(self) -> crate::types::BatchUpdateLinkAttributes {

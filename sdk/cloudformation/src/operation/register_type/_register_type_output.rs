@@ -56,6 +56,11 @@ impl RegisterTypeOutputBuilder {
         self.registration_token = input;
         self
     }
+    /// <p>The identifier for this registration request.</p>
+    /// <p>Use this registration token when calling <code>DescribeTypeRegistration</code>, which returns information about the status and IDs of the extension registration.</p>
+    pub fn get_registration_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registration_token
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

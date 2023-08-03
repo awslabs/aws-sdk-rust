@@ -36,6 +36,12 @@ impl DefineAnalysisSchemeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DefineAnalysisScheme as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::define_analysis_scheme::builders::DefineAnalysisSchemeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DefineAnalysisSchemeFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
     /// <p>Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: <code>Synonyms</code>, <code>Stopwords</code>, <code>StemmingDictionary</code>, <code>JapaneseTokenizationDictionary</code> and <code>AlgorithmicStemming</code>.</p>
     pub fn analysis_scheme(mut self, input: crate::types::AnalysisScheme) -> Self {
         self.inner = self.inner.analysis_scheme(input);
@@ -138,5 +148,9 @@ impl DefineAnalysisSchemeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_analysis_scheme(input);
         self
+    }
+    /// <p>Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: <code>Synonyms</code>, <code>Stopwords</code>, <code>StemmingDictionary</code>, <code>JapaneseTokenizationDictionary</code> and <code>AlgorithmicStemming</code>.</p>
+    pub fn get_analysis_scheme(&self) -> &::std::option::Option<crate::types::AnalysisScheme> {
+        self.inner.get_analysis_scheme()
     }
 }

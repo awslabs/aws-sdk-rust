@@ -36,6 +36,12 @@ impl ListRunGroupsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListRunGroups as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_run_groups::builders::ListRunGroupsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl ListRunGroupsFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The run groups' name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn starting_token(
         mut self,
@@ -145,6 +155,10 @@ impl ListRunGroupsFluentBuilder {
         self.inner = self.inner.set_starting_token(input);
         self
     }
+    /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    pub fn get_starting_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_starting_token()
+    }
     /// <p>The maximum number of run groups to return in one page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -154,5 +168,9 @@ impl ListRunGroupsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of run groups to return in one page of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

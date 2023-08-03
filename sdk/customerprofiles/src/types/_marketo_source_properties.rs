@@ -40,6 +40,10 @@ impl MarketoSourcePropertiesBuilder {
         self.object = input;
         self
     }
+    /// <p>The object specified in the Marketo flow source.</p>
+    pub fn get_object(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object
+    }
     /// Consumes the builder and constructs a [`MarketoSourceProperties`](crate::types::MarketoSourceProperties).
     pub fn build(self) -> crate::types::MarketoSourceProperties {
         crate::types::MarketoSourceProperties {

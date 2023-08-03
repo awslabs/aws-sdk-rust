@@ -55,6 +55,10 @@ impl NotifyWorkersInputBuilder {
         self.subject = input;
         self
     }
+    /// <p>The subject line of the email message to send. Can include up to 200 characters.</p>
+    pub fn get_subject(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subject
+    }
     /// <p>The text of the email message to send. Can include up to 4,096 characters</p>
     pub fn message_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_text = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl NotifyWorkersInputBuilder {
     pub fn set_message_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message_text = input;
         self
+    }
+    /// <p>The text of the email message to send. Can include up to 4,096 characters</p>
+    pub fn get_message_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message_text
     }
     /// Appends an item to `worker_ids`.
     ///
@@ -83,6 +91,10 @@ impl NotifyWorkersInputBuilder {
     ) -> Self {
         self.worker_ids = input;
         self
+    }
+    /// <p>A list of Worker IDs you wish to notify. You can notify upto 100 Workers at a time.</p>
+    pub fn get_worker_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.worker_ids
     }
     /// Consumes the builder and constructs a [`NotifyWorkersInput`](crate::operation::notify_workers::NotifyWorkersInput).
     pub fn build(

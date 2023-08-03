@@ -106,6 +106,10 @@ impl SavingsPlansPurchaseRecommendationBuilder {
         self.account_scope = input;
         self
     }
+    /// <p>The account scope that you want your recommendations for. Amazon Web Services calculates recommendations that include the management account and member accounts if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>, recommendations are calculated for individual member accounts only.</p>
+    pub fn get_account_scope(&self) -> &::std::option::Option<crate::types::AccountScope> {
+        &self.account_scope
+    }
     /// <p>The requested Savings Plans recommendation type.</p>
     pub fn savings_plans_type(mut self, input: crate::types::SupportedSavingsPlansType) -> Self {
         self.savings_plans_type = ::std::option::Option::Some(input);
@@ -118,6 +122,12 @@ impl SavingsPlansPurchaseRecommendationBuilder {
     ) -> Self {
         self.savings_plans_type = input;
         self
+    }
+    /// <p>The requested Savings Plans recommendation type.</p>
+    pub fn get_savings_plans_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::SupportedSavingsPlansType> {
+        &self.savings_plans_type
     }
     /// <p>The Savings Plans recommendation term in years. It's used to generate the recommendation.</p>
     pub fn term_in_years(mut self, input: crate::types::TermInYears) -> Self {
@@ -132,6 +142,10 @@ impl SavingsPlansPurchaseRecommendationBuilder {
         self.term_in_years = input;
         self
     }
+    /// <p>The Savings Plans recommendation term in years. It's used to generate the recommendation.</p>
+    pub fn get_term_in_years(&self) -> &::std::option::Option<crate::types::TermInYears> {
+        &self.term_in_years
+    }
     /// <p>The payment option that's used to generate the recommendation.</p>
     pub fn payment_option(mut self, input: crate::types::PaymentOption) -> Self {
         self.payment_option = ::std::option::Option::Some(input);
@@ -145,6 +159,10 @@ impl SavingsPlansPurchaseRecommendationBuilder {
         self.payment_option = input;
         self
     }
+    /// <p>The payment option that's used to generate the recommendation.</p>
+    pub fn get_payment_option(&self) -> &::std::option::Option<crate::types::PaymentOption> {
+        &self.payment_option
+    }
     /// <p>The lookback period in days that's used to generate the recommendation.</p>
     pub fn lookback_period_in_days(mut self, input: crate::types::LookbackPeriodInDays) -> Self {
         self.lookback_period_in_days = ::std::option::Option::Some(input);
@@ -157,6 +175,12 @@ impl SavingsPlansPurchaseRecommendationBuilder {
     ) -> Self {
         self.lookback_period_in_days = input;
         self
+    }
+    /// <p>The lookback period in days that's used to generate the recommendation.</p>
+    pub fn get_lookback_period_in_days(
+        &self,
+    ) -> &::std::option::Option<crate::types::LookbackPeriodInDays> {
+        &self.lookback_period_in_days
     }
     /// Appends an item to `savings_plans_purchase_recommendation_details`.
     ///
@@ -184,6 +208,14 @@ impl SavingsPlansPurchaseRecommendationBuilder {
         self.savings_plans_purchase_recommendation_details = input;
         self
     }
+    /// <p>Details for the Savings Plans that we recommend that you purchase to cover existing Savings Plans eligible workloads.</p>
+    pub fn get_savings_plans_purchase_recommendation_details(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::SavingsPlansPurchaseRecommendationDetail>,
+    > {
+        &self.savings_plans_purchase_recommendation_details
+    }
     /// <p>Summary metrics for your Savings Plans Recommendations. </p>
     pub fn savings_plans_purchase_recommendation_summary(
         mut self,
@@ -199,6 +231,12 @@ impl SavingsPlansPurchaseRecommendationBuilder {
     ) -> Self {
         self.savings_plans_purchase_recommendation_summary = input;
         self
+    }
+    /// <p>Summary metrics for your Savings Plans Recommendations. </p>
+    pub fn get_savings_plans_purchase_recommendation_summary(
+        &self,
+    ) -> &::std::option::Option<crate::types::SavingsPlansPurchaseRecommendationSummary> {
+        &self.savings_plans_purchase_recommendation_summary
     }
     /// Consumes the builder and constructs a [`SavingsPlansPurchaseRecommendation`](crate::types::SavingsPlansPurchaseRecommendation).
     pub fn build(self) -> crate::types::SavingsPlansPurchaseRecommendation {

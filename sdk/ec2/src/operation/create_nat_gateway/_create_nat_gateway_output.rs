@@ -55,6 +55,10 @@ impl CreateNatGatewayOutputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>Unique, case-sensitive identifier to ensure the idempotency of the request. Only returned if a client token was provided in the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>Information about the NAT gateway.</p>
     pub fn nat_gateway(mut self, input: crate::types::NatGateway) -> Self {
         self.nat_gateway = ::std::option::Option::Some(input);
@@ -67,6 +71,10 @@ impl CreateNatGatewayOutputBuilder {
     ) -> Self {
         self.nat_gateway = input;
         self
+    }
+    /// <p>Information about the NAT gateway.</p>
+    pub fn get_nat_gateway(&self) -> &::std::option::Option<crate::types::NatGateway> {
+        &self.nat_gateway
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

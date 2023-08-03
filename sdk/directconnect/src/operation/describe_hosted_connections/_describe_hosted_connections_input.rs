@@ -45,6 +45,10 @@ impl DescribeHostedConnectionsInputBuilder {
         self.connection_id = input;
         self
     }
+    /// <p>The ID of the interconnect or LAG.</p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_id
+    }
     /// Consumes the builder and constructs a [`DescribeHostedConnectionsInput`](crate::operation::describe_hosted_connections::DescribeHostedConnectionsInput).
     pub fn build(
         self,

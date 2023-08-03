@@ -48,6 +48,10 @@ impl ApprovalResultBuilder {
         self.summary = input;
         self
     }
+    /// <p>The summary of the current status of the approval request.</p>
+    pub fn get_summary(&self) -> &::std::option::Option<::std::string::String> {
+        &self.summary
+    }
     /// <p>The response submitted by a reviewer assigned to an approval action request.</p>
     pub fn status(mut self, input: crate::types::ApprovalStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl ApprovalResultBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The response submitted by a reviewer assigned to an approval action request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ApprovalStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`ApprovalResult`](crate::types::ApprovalResult).
     pub fn build(self) -> crate::types::ApprovalResult {

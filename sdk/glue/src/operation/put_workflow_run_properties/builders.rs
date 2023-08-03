@@ -36,6 +36,10 @@ impl PutWorkflowRunPropertiesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutWorkflowRunProperties as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_workflow_run_properties::builders::PutWorkflowRunPropertiesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl PutWorkflowRunPropertiesFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>Name of the workflow which was run.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The ID of the workflow run for which the run properties should be updated.</p>
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.run_id(input.into());
@@ -135,6 +143,10 @@ impl PutWorkflowRunPropertiesFluentBuilder {
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_run_id(input);
         self
+    }
+    /// <p>The ID of the workflow run for which the run properties should be updated.</p>
+    pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_run_id()
     }
     /// Adds a key-value pair to `RunProperties`.
     ///
@@ -158,5 +170,13 @@ impl PutWorkflowRunPropertiesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_run_properties(input);
         self
+    }
+    /// <p>The properties to put for the specified run.</p>
+    pub fn get_run_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_run_properties()
     }
 }

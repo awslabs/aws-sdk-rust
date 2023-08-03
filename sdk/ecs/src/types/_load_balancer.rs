@@ -95,6 +95,15 @@ impl LoadBalancerBuilder {
         self.target_group_arn = input;
         self
     }
+    /// <p>The full Amazon Resource Name (ARN) of the Elastic Load Balancing target group or groups associated with a service or task set.</p>
+    /// <p>A target group ARN is only specified when using an Application Load Balancer or Network Load Balancer. If you're using a Classic Load Balancer, omit the target group ARN.</p>
+    /// <p>For services using the <code>ECS</code> deployment controller, you can specify one or multiple target groups. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/register-multiple-targetgroups.html">Registering multiple target groups with a service</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>For services using the <code>CODE_DEPLOY</code> deployment controller, you're required to define two target groups for the load balancer. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-bluegreen.html">Blue/green deployment with CodeDeploy</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <important>
+    /// <p>If your service's task definition uses the <code>awsvpc</code> network mode, you must choose <code>ip</code> as the target type, not <code>instance</code>. Do this when creating your target groups because tasks that use the <code>awsvpc</code> network mode are associated with an elastic network interface, not an Amazon EC2 instance. This network mode is required for the Fargate launch type.</p>
+    /// </important>
+    pub fn get_target_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_group_arn
+    }
     /// <p>The name of the load balancer to associate with the Amazon ECS service or task set.</p>
     /// <p>A load balancer name is only specified when using a Classic Load Balancer. If you are using an Application Load Balancer or a Network Load Balancer the load balancer name parameter should be omitted.</p>
     pub fn load_balancer_name(
@@ -113,6 +122,11 @@ impl LoadBalancerBuilder {
         self.load_balancer_name = input;
         self
     }
+    /// <p>The name of the load balancer to associate with the Amazon ECS service or task set.</p>
+    /// <p>A load balancer name is only specified when using a Classic Load Balancer. If you are using an Application Load Balancer or a Network Load Balancer the load balancer name parameter should be omitted.</p>
+    pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.load_balancer_name
+    }
     /// <p>The name of the container (as it appears in a container definition) to associate with the load balancer.</p>
     pub fn container_name(
         mut self,
@@ -129,6 +143,10 @@ impl LoadBalancerBuilder {
         self.container_name = input;
         self
     }
+    /// <p>The name of the container (as it appears in a container definition) to associate with the load balancer.</p>
+    pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.container_name
+    }
     /// <p>The port on the container to associate with the load balancer. This port must correspond to a <code>containerPort</code> in the task definition the tasks in the service are using. For tasks that use the EC2 launch type, the container instance they're launched on must allow ingress traffic on the <code>hostPort</code> of the port mapping.</p>
     pub fn container_port(mut self, input: i32) -> Self {
         self.container_port = ::std::option::Option::Some(input);
@@ -138,6 +156,10 @@ impl LoadBalancerBuilder {
     pub fn set_container_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.container_port = input;
         self
+    }
+    /// <p>The port on the container to associate with the load balancer. This port must correspond to a <code>containerPort</code> in the task definition the tasks in the service are using. For tasks that use the EC2 launch type, the container instance they're launched on must allow ingress traffic on the <code>hostPort</code> of the port mapping.</p>
+    pub fn get_container_port(&self) -> &::std::option::Option<i32> {
+        &self.container_port
     }
     /// Consumes the builder and constructs a [`LoadBalancer`](crate::types::LoadBalancer).
     pub fn build(self) -> crate::types::LoadBalancer {

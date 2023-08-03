@@ -36,6 +36,12 @@ impl TestInvokeMethodFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the TestInvokeMethod as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::test_invoke_method::builders::TestInvokeMethodInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl TestInvokeMethodFluentBuilder {
         self.inner = self.inner.set_rest_api_id(input);
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rest_api_id()
+    }
     /// <p>Specifies a test invoke method request's resource ID.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_id(input.into());
@@ -136,6 +146,10 @@ impl TestInvokeMethodFluentBuilder {
         self.inner = self.inner.set_resource_id(input);
         self
     }
+    /// <p>Specifies a test invoke method request's resource ID.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_id()
+    }
     /// <p>Specifies a test invoke method request's HTTP method.</p>
     pub fn http_method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.http_method(input.into());
@@ -145,6 +159,10 @@ impl TestInvokeMethodFluentBuilder {
     pub fn set_http_method(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_http_method(input);
         self
+    }
+    /// <p>Specifies a test invoke method request's HTTP method.</p>
+    pub fn get_http_method(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_http_method()
     }
     /// <p>The URI path, including query string, of the simulated invocation request. Use this to specify path parameters and query string parameters.</p>
     pub fn path_with_query_string(
@@ -162,6 +180,10 @@ impl TestInvokeMethodFluentBuilder {
         self.inner = self.inner.set_path_with_query_string(input);
         self
     }
+    /// <p>The URI path, including query string, of the simulated invocation request. Use this to specify path parameters and query string parameters.</p>
+    pub fn get_path_with_query_string(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_path_with_query_string()
+    }
     /// <p>The simulated request body of an incoming invocation request.</p>
     pub fn body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.body(input.into());
@@ -171,6 +193,10 @@ impl TestInvokeMethodFluentBuilder {
     pub fn set_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_body(input);
         self
+    }
+    /// <p>The simulated request body of an incoming invocation request.</p>
+    pub fn get_body(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_body()
     }
     /// Adds a key-value pair to `headers`.
     ///
@@ -194,6 +220,14 @@ impl TestInvokeMethodFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_headers(input);
         self
+    }
+    /// <p>A key-value map of headers to simulate an incoming invocation request.</p>
+    pub fn get_headers(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_headers()
     }
     /// Adds a key-value pair to `multiValueHeaders`.
     ///
@@ -221,6 +255,14 @@ impl TestInvokeMethodFluentBuilder {
         self.inner = self.inner.set_multi_value_headers(input);
         self
     }
+    /// <p>The headers as a map from string to list of values to simulate an incoming invocation request.</p>
+    pub fn get_multi_value_headers(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
+    > {
+        self.inner.get_multi_value_headers()
+    }
     /// <p>A ClientCertificate identifier to use in the test invocation. API Gateway will use the certificate when making the HTTPS request to the defined back-end endpoint.</p>
     pub fn client_certificate_id(
         mut self,
@@ -236,6 +278,10 @@ impl TestInvokeMethodFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_certificate_id(input);
         self
+    }
+    /// <p>A ClientCertificate identifier to use in the test invocation. API Gateway will use the certificate when making the HTTPS request to the defined back-end endpoint.</p>
+    pub fn get_client_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_certificate_id()
     }
     /// Adds a key-value pair to `stageVariables`.
     ///
@@ -259,5 +305,13 @@ impl TestInvokeMethodFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_stage_variables(input);
         self
+    }
+    /// <p>A key-value map of stage variables to simulate an invocation on a deployed Stage.</p>
+    pub fn get_stage_variables(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_stage_variables()
     }
 }

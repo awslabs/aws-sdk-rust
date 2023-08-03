@@ -64,6 +64,10 @@ impl ListQueuedMessagesInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of a given wireless device which the downlink message packets are being sent.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl ListQueuedMessagesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return in this operation.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -83,6 +91,10 @@ impl ListQueuedMessagesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return in this operation.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The wireless device type, whic can be either Sidewalk or LoRaWAN.</p>
     pub fn wireless_device_type(mut self, input: crate::types::WirelessDeviceType) -> Self {
@@ -96,6 +108,12 @@ impl ListQueuedMessagesInputBuilder {
     ) -> Self {
         self.wireless_device_type = input;
         self
+    }
+    /// <p>The wireless device type, whic can be either Sidewalk or LoRaWAN.</p>
+    pub fn get_wireless_device_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::WirelessDeviceType> {
+        &self.wireless_device_type
     }
     /// Consumes the builder and constructs a [`ListQueuedMessagesInput`](crate::operation::list_queued_messages::ListQueuedMessagesInput).
     pub fn build(

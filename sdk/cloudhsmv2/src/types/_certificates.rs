@@ -72,6 +72,10 @@ impl CertificatesBuilder {
         self.cluster_csr = input;
         self
     }
+    /// <p>The cluster's certificate signing request (CSR). The CSR exists only when the cluster's state is <code>UNINITIALIZED</code>.</p>
+    pub fn get_cluster_csr(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_csr
+    }
     /// <p>The HSM certificate issued (signed) by the HSM hardware.</p>
     pub fn hsm_certificate(
         mut self,
@@ -87,6 +91,10 @@ impl CertificatesBuilder {
     ) -> Self {
         self.hsm_certificate = input;
         self
+    }
+    /// <p>The HSM certificate issued (signed) by the HSM hardware.</p>
+    pub fn get_hsm_certificate(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hsm_certificate
     }
     /// <p>The HSM hardware certificate issued (signed) by AWS CloudHSM.</p>
     pub fn aws_hardware_certificate(
@@ -104,6 +112,10 @@ impl CertificatesBuilder {
         self.aws_hardware_certificate = input;
         self
     }
+    /// <p>The HSM hardware certificate issued (signed) by AWS CloudHSM.</p>
+    pub fn get_aws_hardware_certificate(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_hardware_certificate
+    }
     /// <p>The HSM hardware certificate issued (signed) by the hardware manufacturer.</p>
     pub fn manufacturer_hardware_certificate(
         mut self,
@@ -120,6 +132,12 @@ impl CertificatesBuilder {
         self.manufacturer_hardware_certificate = input;
         self
     }
+    /// <p>The HSM hardware certificate issued (signed) by the hardware manufacturer.</p>
+    pub fn get_manufacturer_hardware_certificate(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.manufacturer_hardware_certificate
+    }
     /// <p>The cluster certificate issued (signed) by the issuing certificate authority (CA) of the cluster's owner.</p>
     pub fn cluster_certificate(
         mut self,
@@ -135,6 +153,10 @@ impl CertificatesBuilder {
     ) -> Self {
         self.cluster_certificate = input;
         self
+    }
+    /// <p>The cluster certificate issued (signed) by the issuing certificate authority (CA) of the cluster's owner.</p>
+    pub fn get_cluster_certificate(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_certificate
     }
     /// Consumes the builder and constructs a [`Certificates`](crate::types::Certificates).
     pub fn build(self) -> crate::types::Certificates {

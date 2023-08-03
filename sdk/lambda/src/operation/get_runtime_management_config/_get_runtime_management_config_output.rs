@@ -65,6 +65,10 @@ impl GetRuntimeManagementConfigOutputBuilder {
         self.update_runtime_on = input;
         self
     }
+    /// <p>The current runtime update mode of the function.</p>
+    pub fn get_update_runtime_on(&self) -> &::std::option::Option<crate::types::UpdateRuntimeOn> {
+        &self.update_runtime_on
+    }
     /// <p>The ARN of the runtime the function is configured to use. If the runtime update mode is <b>Manual</b>, the ARN is returned, otherwise <code>null</code> is returned.</p>
     pub fn runtime_version_arn(
         mut self,
@@ -81,6 +85,10 @@ impl GetRuntimeManagementConfigOutputBuilder {
         self.runtime_version_arn = input;
         self
     }
+    /// <p>The ARN of the runtime the function is configured to use. If the runtime update mode is <b>Manual</b>, the ARN is returned, otherwise <code>null</code> is returned.</p>
+    pub fn get_runtime_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.runtime_version_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of your function.</p>
     pub fn function_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_arn = ::std::option::Option::Some(input.into());
@@ -90,6 +98,10 @@ impl GetRuntimeManagementConfigOutputBuilder {
     pub fn set_function_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.function_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of your function.</p>
+    pub fn get_function_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.function_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

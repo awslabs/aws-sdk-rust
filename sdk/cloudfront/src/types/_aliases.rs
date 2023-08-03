@@ -48,6 +48,10 @@ impl AliasesBuilder {
         self.quantity = input;
         self
     }
+    /// <p>The number of CNAME aliases, if any, that you want to associate with this distribution.</p>
+    pub fn get_quantity(&self) -> &::std::option::Option<i32> {
+        &self.quantity
+    }
     /// Appends an item to `items`.
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
@@ -66,6 +70,10 @@ impl AliasesBuilder {
     ) -> Self {
         self.items = input;
         self
+    }
+    /// <p>A complex type that contains the CNAME aliases, if any, that you want to associate with this distribution.</p>
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.items
     }
     /// Consumes the builder and constructs a [`Aliases`](crate::types::Aliases).
     pub fn build(self) -> crate::types::Aliases {

@@ -51,6 +51,10 @@ impl UpdateResourceProfileDetectionsInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// Appends an item to `suppress_data_identifiers`.
     ///
     /// To override the contents of this collection use [`set_suppress_data_identifiers`](Self::set_suppress_data_identifiers).
@@ -72,6 +76,12 @@ impl UpdateResourceProfileDetectionsInputBuilder {
     ) -> Self {
         self.suppress_data_identifiers = input;
         self
+    }
+    /// <p>An array of objects, one for each custom data identifier or managed data identifier that detected the type of sensitive data to start excluding or including in the bucket's score. To start including all sensitive data types in the score, don't specify any values for this array.</p>
+    pub fn get_suppress_data_identifiers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SuppressDataIdentifier>> {
+        &self.suppress_data_identifiers
     }
     /// Consumes the builder and constructs a [`UpdateResourceProfileDetectionsInput`](crate::operation::update_resource_profile_detections::UpdateResourceProfileDetectionsInput).
     pub fn build(

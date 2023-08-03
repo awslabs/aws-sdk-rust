@@ -60,6 +60,10 @@ impl CredentialPairBuilder {
         self.username = input;
         self
     }
+    /// <p>User name.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
+    }
     /// <p>Password.</p>
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
@@ -69,6 +73,10 @@ impl CredentialPairBuilder {
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.password = input;
         self
+    }
+    /// <p>Password.</p>
+    pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.password
     }
     /// Appends an item to `alternate_data_source_parameters`.
     ///
@@ -91,6 +99,12 @@ impl CredentialPairBuilder {
     ) -> Self {
         self.alternate_data_source_parameters = input;
         self
+    }
+    /// <p>A set of alternate data source parameters that you want to share for these credentials. The credentials are applied in tandem with the data source parameters when you copy a data source by using a create or update request. The API operation compares the <code>DataSourceParameters</code> structure that's in the request with the structures in the <code>AlternateDataSourceParameters</code> allow list. If the structures are an exact match, the request is allowed to use the new data source with the existing credentials. If the <code>AlternateDataSourceParameters</code> list is null, the <code>DataSourceParameters</code> originally used with these <code>Credentials</code> is automatically allowed.</p>
+    pub fn get_alternate_data_source_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceParameters>> {
+        &self.alternate_data_source_parameters
     }
     /// Consumes the builder and constructs a [`CredentialPair`](crate::types::CredentialPair).
     pub fn build(self) -> crate::types::CredentialPair {

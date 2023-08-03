@@ -105,6 +105,10 @@ impl ReservationResourceSpecificationBuilder {
         self.channel_class = input;
         self
     }
+    /// Channel class, e.g. 'STANDARD'
+    pub fn get_channel_class(&self) -> &::std::option::Option<crate::types::ChannelClass> {
+        &self.channel_class
+    }
     /// Codec, e.g. 'AVC'
     pub fn codec(mut self, input: crate::types::ReservationCodec) -> Self {
         self.codec = ::std::option::Option::Some(input);
@@ -117,6 +121,10 @@ impl ReservationResourceSpecificationBuilder {
     ) -> Self {
         self.codec = input;
         self
+    }
+    /// Codec, e.g. 'AVC'
+    pub fn get_codec(&self) -> &::std::option::Option<crate::types::ReservationCodec> {
+        &self.codec
     }
     /// Maximum bitrate, e.g. 'MAX_20_MBPS'
     pub fn maximum_bitrate(mut self, input: crate::types::ReservationMaximumBitrate) -> Self {
@@ -131,6 +139,12 @@ impl ReservationResourceSpecificationBuilder {
         self.maximum_bitrate = input;
         self
     }
+    /// Maximum bitrate, e.g. 'MAX_20_MBPS'
+    pub fn get_maximum_bitrate(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReservationMaximumBitrate> {
+        &self.maximum_bitrate
+    }
     /// Maximum framerate, e.g. 'MAX_30_FPS' (Outputs only)
     pub fn maximum_framerate(mut self, input: crate::types::ReservationMaximumFramerate) -> Self {
         self.maximum_framerate = ::std::option::Option::Some(input);
@@ -143,6 +157,12 @@ impl ReservationResourceSpecificationBuilder {
     ) -> Self {
         self.maximum_framerate = input;
         self
+    }
+    /// Maximum framerate, e.g. 'MAX_30_FPS' (Outputs only)
+    pub fn get_maximum_framerate(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReservationMaximumFramerate> {
+        &self.maximum_framerate
     }
     /// Resolution, e.g. 'HD'
     pub fn resolution(mut self, input: crate::types::ReservationResolution) -> Self {
@@ -157,6 +177,10 @@ impl ReservationResourceSpecificationBuilder {
         self.resolution = input;
         self
     }
+    /// Resolution, e.g. 'HD'
+    pub fn get_resolution(&self) -> &::std::option::Option<crate::types::ReservationResolution> {
+        &self.resolution
+    }
     /// Resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
     pub fn resource_type(mut self, input: crate::types::ReservationResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
@@ -169,6 +193,12 @@ impl ReservationResourceSpecificationBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// Resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
+    pub fn get_resource_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReservationResourceType> {
+        &self.resource_type
     }
     /// Special feature, e.g. 'AUDIO_NORMALIZATION' (Channels only)
     pub fn special_feature(mut self, input: crate::types::ReservationSpecialFeature) -> Self {
@@ -183,6 +213,12 @@ impl ReservationResourceSpecificationBuilder {
         self.special_feature = input;
         self
     }
+    /// Special feature, e.g. 'AUDIO_NORMALIZATION' (Channels only)
+    pub fn get_special_feature(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReservationSpecialFeature> {
+        &self.special_feature
+    }
     /// Video quality, e.g. 'STANDARD' (Outputs only)
     pub fn video_quality(mut self, input: crate::types::ReservationVideoQuality) -> Self {
         self.video_quality = ::std::option::Option::Some(input);
@@ -195,6 +231,12 @@ impl ReservationResourceSpecificationBuilder {
     ) -> Self {
         self.video_quality = input;
         self
+    }
+    /// Video quality, e.g. 'STANDARD' (Outputs only)
+    pub fn get_video_quality(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReservationVideoQuality> {
+        &self.video_quality
     }
     /// Consumes the builder and constructs a [`ReservationResourceSpecification`](crate::types::ReservationResourceSpecification).
     pub fn build(self) -> crate::types::ReservationResourceSpecification {

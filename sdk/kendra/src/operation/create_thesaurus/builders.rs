@@ -37,6 +37,12 @@ impl CreateThesaurusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateThesaurus as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_thesaurus::builders::CreateThesaurusInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl CreateThesaurusFluentBuilder {
         self.inner = self.inner.set_index_id(input);
         self
     }
+    /// <p>The identifier of the index for the thesaurus.</p>
+    pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_index_id()
+    }
     /// <p>A name for the thesaurus.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -136,6 +146,10 @@ impl CreateThesaurusFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>A name for the thesaurus.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>A description for the thesaurus.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -147,6 +161,10 @@ impl CreateThesaurusFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>A description for the thesaurus.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket that contains the thesaurus file. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -156,6 +174,10 @@ impl CreateThesaurusFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket that contains the thesaurus file. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
     /// Appends an item to `Tags`.
     ///
@@ -174,6 +196,10 @@ impl CreateThesaurusFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>A list of key-value pairs that identify or categorize the thesaurus. You can also use tags to help control access to the thesaurus. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>The path to the thesaurus file in S3.</p>
     pub fn source_s3_path(mut self, input: crate::types::S3Path) -> Self {
         self.inner = self.inner.source_s3_path(input);
@@ -187,6 +213,10 @@ impl CreateThesaurusFluentBuilder {
         self.inner = self.inner.set_source_s3_path(input);
         self
     }
+    /// <p>The path to the thesaurus file in S3.</p>
+    pub fn get_source_s3_path(&self) -> &::std::option::Option<crate::types::S3Path> {
+        self.inner.get_source_s3_path()
+    }
     /// <p>A token that you provide to identify the request to create a thesaurus. Multiple calls to the <code>CreateThesaurus</code> API with the same client token will create only one thesaurus. </p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -196,5 +226,9 @@ impl CreateThesaurusFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A token that you provide to identify the request to create a thesaurus. Multiple calls to the <code>CreateThesaurus</code> API with the same client token will create only one thesaurus. </p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

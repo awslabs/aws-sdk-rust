@@ -63,6 +63,10 @@ impl UpdateTypeInputBuilder {
         self.api_id = input;
         self
     }
+    /// <p>The API ID.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_id
+    }
     /// <p>The new type name.</p>
     pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_name = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl UpdateTypeInputBuilder {
         self.type_name = input;
         self
     }
+    /// <p>The new type name.</p>
+    pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.type_name
+    }
     /// <p>The new definition.</p>
     pub fn definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.definition = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl UpdateTypeInputBuilder {
     pub fn set_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.definition = input;
         self
+    }
+    /// <p>The new definition.</p>
+    pub fn get_definition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.definition
     }
     /// <p>The new type format: SDL or JSON.</p>
     pub fn format(mut self, input: crate::types::TypeDefinitionFormat) -> Self {
@@ -95,6 +107,10 @@ impl UpdateTypeInputBuilder {
     ) -> Self {
         self.format = input;
         self
+    }
+    /// <p>The new type format: SDL or JSON.</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::TypeDefinitionFormat> {
+        &self.format
     }
     /// Consumes the builder and constructs a [`UpdateTypeInput`](crate::operation::update_type::UpdateTypeInput).
     pub fn build(

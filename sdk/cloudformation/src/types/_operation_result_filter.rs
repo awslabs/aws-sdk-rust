@@ -51,6 +51,10 @@ impl OperationResultFilterBuilder {
         self.name = input;
         self
     }
+    /// <p>The type of filter to apply.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::OperationResultFilterName> {
+        &self.name
+    }
     /// <p>The value to filter by.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.values = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl OperationResultFilterBuilder {
     pub fn set_values(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.values = input;
         self
+    }
+    /// <p>The value to filter by.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::string::String> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`OperationResultFilter`](crate::types::OperationResultFilter).
     pub fn build(self) -> crate::types::OperationResultFilter {

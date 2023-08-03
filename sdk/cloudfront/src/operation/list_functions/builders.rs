@@ -38,6 +38,12 @@ impl ListFunctionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListFunctions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_functions::builders::ListFunctionsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -120,6 +126,10 @@ impl ListFunctionsFluentBuilder {
         self.inner = self.inner.set_marker(input);
         self
     }
+    /// <p>Use this field when paginating results to indicate where to begin in your list of functions. The response includes functions in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
+    }
     /// <p>The maximum number of functions that you want in the response.</p>
     pub fn max_items(mut self, input: i32) -> Self {
         self.inner = self.inner.max_items(input);
@@ -130,6 +140,10 @@ impl ListFunctionsFluentBuilder {
         self.inner = self.inner.set_max_items(input);
         self
     }
+    /// <p>The maximum number of functions that you want in the response.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_items()
+    }
     /// <p>An optional filter to return only the functions that are in the specified stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
     pub fn stage(mut self, input: crate::types::FunctionStage) -> Self {
         self.inner = self.inner.stage(input);
@@ -139,5 +153,9 @@ impl ListFunctionsFluentBuilder {
     pub fn set_stage(mut self, input: ::std::option::Option<crate::types::FunctionStage>) -> Self {
         self.inner = self.inner.set_stage(input);
         self
+    }
+    /// <p>An optional filter to return only the functions that are in the specified stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
+    pub fn get_stage(&self) -> &::std::option::Option<crate::types::FunctionStage> {
+        self.inner.get_stage()
     }
 }

@@ -63,6 +63,10 @@ impl CreateChannelInputBuilder {
         self.channel_name = input;
         self
     }
+    /// <p>The name of the channel.</p>
+    pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_name
+    }
     /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't change this storage option after the channel is created.</p>
     pub fn channel_storage(mut self, input: crate::types::ChannelStorage) -> Self {
         self.channel_storage = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl CreateChannelInputBuilder {
         self.channel_storage = input;
         self
     }
+    /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't change this storage option after the channel is created.</p>
+    pub fn get_channel_storage(&self) -> &::std::option::Option<crate::types::ChannelStorage> {
+        &self.channel_storage
+    }
     /// <p>How long, in days, message data is kept for the channel. When <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
     pub fn retention_period(mut self, input: crate::types::RetentionPeriod) -> Self {
         self.retention_period = ::std::option::Option::Some(input);
@@ -88,6 +96,10 @@ impl CreateChannelInputBuilder {
     ) -> Self {
         self.retention_period = input;
         self
+    }
+    /// <p>How long, in days, message data is kept for the channel. When <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
+    pub fn get_retention_period(&self) -> &::std::option::Option<crate::types::RetentionPeriod> {
+        &self.retention_period
     }
     /// Appends an item to `tags`.
     ///
@@ -107,6 +119,10 @@ impl CreateChannelInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Metadata which can be used to manage the channel.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateChannelInput`](crate::operation::create_channel::CreateChannelInput).
     pub fn build(

@@ -46,6 +46,12 @@ impl RepositoryAuthConfigBuilder {
         self.repository_credentials_provider_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services Lambda function that provides credentials to authenticate to the private Docker registry where your model image is hosted. For information about how to create an Amazon Web Services Lambda function, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/getting-started-create-function.html">Create a Lambda function with the console</a> in the <i>Amazon Web Services Lambda Developer Guide</i>.</p>
+    pub fn get_repository_credentials_provider_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.repository_credentials_provider_arn
+    }
     /// Consumes the builder and constructs a [`RepositoryAuthConfig`](crate::types::RepositoryAuthConfig).
     pub fn build(self) -> crate::types::RepositoryAuthConfig {
         crate::types::RepositoryAuthConfig {

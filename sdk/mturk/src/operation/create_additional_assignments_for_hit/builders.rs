@@ -42,6 +42,10 @@ impl CreateAdditionalAssignmentsForHITFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateAdditionalAssignmentsForHIT as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_additional_assignments_for_hit::builders::CreateAdditionalAssignmentsForHitInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl CreateAdditionalAssignmentsForHITFluentBuilder {
         self.inner = self.inner.set_hit_id(input);
         self
     }
+    /// <p>The ID of the HIT to extend.</p>
+    pub fn get_hit_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_hit_id()
+    }
     /// <p>The number of additional assignments to request for this HIT.</p>
     pub fn number_of_additional_assignments(mut self, input: i32) -> Self {
         self.inner = self.inner.number_of_additional_assignments(input);
@@ -118,6 +126,10 @@ impl CreateAdditionalAssignmentsForHITFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_number_of_additional_assignments(input);
         self
+    }
+    /// <p>The number of additional assignments to request for this HIT.</p>
+    pub fn get_number_of_additional_assignments(&self) -> &::std::option::Option<i32> {
+        self.inner.get_number_of_additional_assignments()
     }
     /// <p> A unique identifier for this request, which allows you to retry the call on error without extending the HIT multiple times. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the extend HIT already exists in the system from a previous call using the same <code>UniqueRequestToken</code>, subsequent calls will return an error with a message containing the request ID. </p>
     pub fn unique_request_token(
@@ -134,5 +146,9 @@ impl CreateAdditionalAssignmentsForHITFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_unique_request_token(input);
         self
+    }
+    /// <p> A unique identifier for this request, which allows you to retry the call on error without extending the HIT multiple times. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the extend HIT already exists in the system from a previous call using the same <code>UniqueRequestToken</code>, subsequent calls will return an error with a message containing the request ID. </p>
+    pub fn get_unique_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_unique_request_token()
     }
 }

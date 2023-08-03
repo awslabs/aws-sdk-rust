@@ -65,6 +65,10 @@ impl GetConnectionOutputBuilder {
         self.connected_at = input;
         self
     }
+    /// <p>The time in ISO 8601 format for when the connection was established.</p>
+    pub fn get_connected_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.connected_at
+    }
     #[allow(missing_docs)] // documentation missing in model
     pub fn identity(mut self, input: crate::types::Identity) -> Self {
         self.identity = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl GetConnectionOutputBuilder {
     pub fn set_identity(mut self, input: ::std::option::Option<crate::types::Identity>) -> Self {
         self.identity = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_identity(&self) -> &::std::option::Option<crate::types::Identity> {
+        &self.identity
     }
     /// <p>The time in ISO 8601 format for when the connection was last active.</p>
     pub fn last_active_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -87,6 +95,10 @@ impl GetConnectionOutputBuilder {
     ) -> Self {
         self.last_active_at = input;
         self
+    }
+    /// <p>The time in ISO 8601 format for when the connection was last active.</p>
+    pub fn get_last_active_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_active_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

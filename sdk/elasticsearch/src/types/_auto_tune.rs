@@ -51,6 +51,10 @@ impl AutoTuneBuilder {
         self.auto_tune_type = input;
         self
     }
+    /// <p>Specifies Auto-Tune type. Valid value is SCHEDULED_ACTION. </p>
+    pub fn get_auto_tune_type(&self) -> &::std::option::Option<crate::types::AutoTuneType> {
+        &self.auto_tune_type
+    }
     /// <p>Specifies details of the Auto-Tune action. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information. </p>
     pub fn auto_tune_details(mut self, input: crate::types::AutoTuneDetails) -> Self {
         self.auto_tune_details = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl AutoTuneBuilder {
     ) -> Self {
         self.auto_tune_details = input;
         self
+    }
+    /// <p>Specifies details of the Auto-Tune action. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information. </p>
+    pub fn get_auto_tune_details(&self) -> &::std::option::Option<crate::types::AutoTuneDetails> {
+        &self.auto_tune_details
     }
     /// Consumes the builder and constructs a [`AutoTune`](crate::types::AutoTune).
     pub fn build(self) -> crate::types::AutoTune {

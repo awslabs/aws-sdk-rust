@@ -77,6 +77,10 @@ impl RetryWorkflowStepOutputBuilder {
         self.step_group_id = input;
         self
     }
+    /// <p>The ID of the step group.</p>
+    pub fn get_step_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.step_group_id
+    }
     /// <p>The ID of the migration workflow.</p>
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_id = ::std::option::Option::Some(input.into());
@@ -86,6 +90,10 @@ impl RetryWorkflowStepOutputBuilder {
     pub fn set_workflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_id = input;
         self
+    }
+    /// <p>The ID of the migration workflow.</p>
+    pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_id
     }
     /// <p>The ID of the step.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -97,6 +105,10 @@ impl RetryWorkflowStepOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the step.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The status of the step.</p>
     pub fn status(mut self, input: crate::types::StepStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -106,6 +118,10 @@ impl RetryWorkflowStepOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::StepStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the step.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::StepStatus> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

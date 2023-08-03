@@ -84,6 +84,10 @@ impl ListAnomalyGroupTimeSeriesOutputBuilder {
         self.anomaly_group_id = input;
         self
     }
+    /// <p>The ID of the anomaly group.</p>
+    pub fn get_anomaly_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.anomaly_group_id
+    }
     /// <p>The name of the measure field.</p>
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_name = ::std::option::Option::Some(input.into());
@@ -93,6 +97,10 @@ impl ListAnomalyGroupTimeSeriesOutputBuilder {
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_name = input;
         self
+    }
+    /// <p>The name of the measure field.</p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_name
     }
     /// Appends an item to `timestamp_list`.
     ///
@@ -116,6 +124,12 @@ impl ListAnomalyGroupTimeSeriesOutputBuilder {
         self.timestamp_list = input;
         self
     }
+    /// <p>Timestamps for the anomalous metrics.</p>
+    pub fn get_timestamp_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.timestamp_list
+    }
     /// <p>The pagination token that's included if more results are available.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -125,6 +139,10 @@ impl ListAnomalyGroupTimeSeriesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The pagination token that's included if more results are available.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `time_series_list`.
     ///
@@ -144,6 +162,12 @@ impl ListAnomalyGroupTimeSeriesOutputBuilder {
     ) -> Self {
         self.time_series_list = input;
         self
+    }
+    /// <p>A list of anomalous metrics.</p>
+    pub fn get_time_series_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TimeSeries>> {
+        &self.time_series_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

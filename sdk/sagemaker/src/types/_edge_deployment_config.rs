@@ -45,6 +45,12 @@ impl EdgeDeploymentConfigBuilder {
         self.failure_handling_policy = input;
         self
     }
+    /// <p>Toggle that determines whether to rollback to previous configuration if the current deployment fails. By default this is turned on. You may turn this off if you want to investigate the errors yourself.</p>
+    pub fn get_failure_handling_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::FailureHandlingPolicy> {
+        &self.failure_handling_policy
+    }
     /// Consumes the builder and constructs a [`EdgeDeploymentConfig`](crate::types::EdgeDeploymentConfig).
     pub fn build(self) -> crate::types::EdgeDeploymentConfig {
         crate::types::EdgeDeploymentConfig {

@@ -83,6 +83,10 @@ impl ListLineageGroupsInputBuilder {
         self.created_after = input;
         self
     }
+    /// <p>A timestamp to filter against lineage groups created after a certain point in time.</p>
+    pub fn get_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_after
+    }
     /// <p>A timestamp to filter against lineage groups created before a certain point in time.</p>
     pub fn created_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_before = ::std::option::Option::Some(input);
@@ -95,6 +99,10 @@ impl ListLineageGroupsInputBuilder {
     ) -> Self {
         self.created_before = input;
         self
+    }
+    /// <p>A timestamp to filter against lineage groups created before a certain point in time.</p>
+    pub fn get_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_before
     }
     /// <p>The parameter by which to sort the results. The default is <code>CreationTime</code>.</p>
     pub fn sort_by(mut self, input: crate::types::SortLineageGroupsBy) -> Self {
@@ -109,6 +117,10 @@ impl ListLineageGroupsInputBuilder {
         self.sort_by = input;
         self
     }
+    /// <p>The parameter by which to sort the results. The default is <code>CreationTime</code>.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::SortLineageGroupsBy> {
+        &self.sort_by
+    }
     /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -118,6 +130,10 @@ impl ListLineageGroupsInputBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.sort_order = input;
         self
+    }
+    /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.sort_order
     }
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of algorithms, use it in the subsequent request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -129,6 +145,10 @@ impl ListLineageGroupsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of algorithms, use it in the subsequent request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of endpoints to return in the response. This value defaults to 10.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -138,6 +158,10 @@ impl ListLineageGroupsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of endpoints to return in the response. This value defaults to 10.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListLineageGroupsInput`](crate::operation::list_lineage_groups::ListLineageGroupsInput).
     pub fn build(

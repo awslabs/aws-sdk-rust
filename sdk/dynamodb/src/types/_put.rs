@@ -123,6 +123,14 @@ impl PutBuilder {
         self.item = input;
         self
     }
+    /// <p>A map of attribute name to attribute values, representing the primary key of the item to be written by <code>PutItem</code>. All of the table's primary key attributes must be specified, and their data types must match those of the table's key schema. If any attributes are present in the item that are part of an index key schema for the table, their types must match the index key schema. </p>
+    pub fn get_item(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
+    > {
+        &self.item
+    }
     /// <p>Name of the table in which to write the item.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
@@ -132,6 +140,10 @@ impl PutBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
+    }
+    /// <p>Name of the table in which to write the item.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
     }
     /// <p>A condition that must be satisfied in order for a conditional update to succeed.</p>
     pub fn condition_expression(
@@ -148,6 +160,10 @@ impl PutBuilder {
     ) -> Self {
         self.condition_expression = input;
         self
+    }
+    /// <p>A condition that must be satisfied in order for a conditional update to succeed.</p>
+    pub fn get_condition_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.condition_expression
     }
     /// Adds a key-value pair to `expression_attribute_names`.
     ///
@@ -174,6 +190,14 @@ impl PutBuilder {
         self.expression_attribute_names = input;
         self
     }
+    /// <p>One or more substitution tokens for attribute names in an expression.</p>
+    pub fn get_expression_attribute_names(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.expression_attribute_names
+    }
     /// Adds a key-value pair to `expression_attribute_values`.
     ///
     /// To override the contents of this collection use [`set_expression_attribute_values`](Self::set_expression_attribute_values).
@@ -199,6 +223,14 @@ impl PutBuilder {
         self.expression_attribute_values = input;
         self
     }
+    /// <p>One or more values that can be substituted in an expression.</p>
+    pub fn get_expression_attribute_values(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
+    > {
+        &self.expression_attribute_values
+    }
     /// <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item attributes if the <code>Put</code> condition fails. For <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE and ALL_OLD.</p>
     pub fn return_values_on_condition_check_failure(
         mut self,
@@ -214,6 +246,12 @@ impl PutBuilder {
     ) -> Self {
         self.return_values_on_condition_check_failure = input;
         self
+    }
+    /// <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item attributes if the <code>Put</code> condition fails. For <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE and ALL_OLD.</p>
+    pub fn get_return_values_on_condition_check_failure(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReturnValuesOnConditionCheckFailure> {
+        &self.return_values_on_condition_check_failure
     }
     /// Consumes the builder and constructs a [`Put`](crate::types::Put).
     pub fn build(self) -> crate::types::Put {

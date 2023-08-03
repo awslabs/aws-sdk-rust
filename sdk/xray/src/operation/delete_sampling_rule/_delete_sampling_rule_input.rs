@@ -48,6 +48,10 @@ impl DeleteSamplingRuleInputBuilder {
         self.rule_name = input;
         self
     }
+    /// <p>The name of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
+    pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_name
+    }
     /// <p>The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
     pub fn rule_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_arn = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl DeleteSamplingRuleInputBuilder {
     pub fn set_rule_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_arn = input;
         self
+    }
+    /// <p>The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
+    pub fn get_rule_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_arn
     }
     /// Consumes the builder and constructs a [`DeleteSamplingRuleInput`](crate::operation::delete_sampling_rule::DeleteSamplingRuleInput).
     pub fn build(

@@ -80,6 +80,10 @@ impl AggregatesBuilder {
         self.average = input;
         self
     }
+    /// <p>The average (mean) value of the time series over a time interval window.</p>
+    pub fn get_average(&self) -> &::std::option::Option<f64> {
+        &self.average
+    }
     /// <p>The count of data points in the time series over a time interval window.</p>
     pub fn count(mut self, input: f64) -> Self {
         self.count = ::std::option::Option::Some(input);
@@ -89,6 +93,10 @@ impl AggregatesBuilder {
     pub fn set_count(mut self, input: ::std::option::Option<f64>) -> Self {
         self.count = input;
         self
+    }
+    /// <p>The count of data points in the time series over a time interval window.</p>
+    pub fn get_count(&self) -> &::std::option::Option<f64> {
+        &self.count
     }
     /// <p>The maximum value of the time series over a time interval window.</p>
     pub fn maximum(mut self, input: f64) -> Self {
@@ -100,6 +108,10 @@ impl AggregatesBuilder {
         self.maximum = input;
         self
     }
+    /// <p>The maximum value of the time series over a time interval window.</p>
+    pub fn get_maximum(&self) -> &::std::option::Option<f64> {
+        &self.maximum
+    }
     /// <p>The minimum value of the time series over a time interval window.</p>
     pub fn minimum(mut self, input: f64) -> Self {
         self.minimum = ::std::option::Option::Some(input);
@@ -109,6 +121,10 @@ impl AggregatesBuilder {
     pub fn set_minimum(mut self, input: ::std::option::Option<f64>) -> Self {
         self.minimum = input;
         self
+    }
+    /// <p>The minimum value of the time series over a time interval window.</p>
+    pub fn get_minimum(&self) -> &::std::option::Option<f64> {
+        &self.minimum
     }
     /// <p>The sum of the time series over a time interval window.</p>
     pub fn sum(mut self, input: f64) -> Self {
@@ -120,6 +136,10 @@ impl AggregatesBuilder {
         self.sum = input;
         self
     }
+    /// <p>The sum of the time series over a time interval window.</p>
+    pub fn get_sum(&self) -> &::std::option::Option<f64> {
+        &self.sum
+    }
     /// <p>The standard deviation of the time series over a time interval window.</p>
     pub fn standard_deviation(mut self, input: f64) -> Self {
         self.standard_deviation = ::std::option::Option::Some(input);
@@ -129,6 +149,10 @@ impl AggregatesBuilder {
     pub fn set_standard_deviation(mut self, input: ::std::option::Option<f64>) -> Self {
         self.standard_deviation = input;
         self
+    }
+    /// <p>The standard deviation of the time series over a time interval window.</p>
+    pub fn get_standard_deviation(&self) -> &::std::option::Option<f64> {
+        &self.standard_deviation
     }
     /// Consumes the builder and constructs a [`Aggregates`](crate::types::Aggregates).
     pub fn build(self) -> crate::types::Aggregates {

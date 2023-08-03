@@ -90,6 +90,10 @@ impl UpdateGameSessionInputBuilder {
         self.game_session_id = input;
         self
     }
+    /// <p>A unique identifier for the game session to update. </p>
+    pub fn get_game_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.game_session_id
+    }
     /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
     pub fn maximum_player_session_count(mut self, input: i32) -> Self {
         self.maximum_player_session_count = ::std::option::Option::Some(input);
@@ -100,6 +104,10 @@ impl UpdateGameSessionInputBuilder {
         self.maximum_player_session_count = input;
         self
     }
+    /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
+    pub fn get_maximum_player_session_count(&self) -> &::std::option::Option<i32> {
+        &self.maximum_player_session_count
+    }
     /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -109,6 +117,10 @@ impl UpdateGameSessionInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>A policy that determines whether the game session is accepting new players.</p>
     pub fn player_session_creation_policy(
@@ -125,6 +137,12 @@ impl UpdateGameSessionInputBuilder {
     ) -> Self {
         self.player_session_creation_policy = input;
         self
+    }
+    /// <p>A policy that determines whether the game session is accepting new players.</p>
+    pub fn get_player_session_creation_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::PlayerSessionCreationPolicy> {
+        &self.player_session_creation_policy
     }
     /// <p>Game session protection policy to apply to this game session only.</p>
     /// <ul>
@@ -146,6 +164,14 @@ impl UpdateGameSessionInputBuilder {
     ) -> Self {
         self.protection_policy = input;
         self
+    }
+    /// <p>Game session protection policy to apply to this game session only.</p>
+    /// <ul>
+    /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
+    /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
+    /// </ul>
+    pub fn get_protection_policy(&self) -> &::std::option::Option<crate::types::ProtectionPolicy> {
+        &self.protection_policy
     }
     /// Consumes the builder and constructs a [`UpdateGameSessionInput`](crate::operation::update_game_session::UpdateGameSessionInput).
     pub fn build(

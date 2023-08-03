@@ -53,6 +53,10 @@ impl TestFailoverInputBuilder {
         self.replication_group_id = input;
         self
     }
+    /// <p>The name of the replication group (console: cluster) whose automatic failover is being tested by this operation.</p>
+    pub fn get_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_group_id
+    }
     /// <p>The name of the node group (called shard in the console) in this replication group on which automatic failover is to be tested. You may test automatic failover on up to 5 node groups in any rolling 24-hour period.</p>
     pub fn node_group_id(
         mut self,
@@ -68,6 +72,10 @@ impl TestFailoverInputBuilder {
     ) -> Self {
         self.node_group_id = input;
         self
+    }
+    /// <p>The name of the node group (called shard in the console) in this replication group on which automatic failover is to be tested. You may test automatic failover on up to 5 node groups in any rolling 24-hour period.</p>
+    pub fn get_node_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_group_id
     }
     /// Consumes the builder and constructs a [`TestFailoverInput`](crate::operation::test_failover::TestFailoverInput).
     pub fn build(

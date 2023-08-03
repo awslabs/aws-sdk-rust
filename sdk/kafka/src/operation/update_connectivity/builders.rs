@@ -36,6 +36,12 @@ impl UpdateConnectivityFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateConnectivity as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_connectivity::builders::UpdateConnectivityInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateConnectivityFluentBuilder {
         self.inner = self.inner.set_cluster_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_arn()
+    }
     /// <p>Information about the broker access configuration.</p>
     pub fn connectivity_info(mut self, input: crate::types::ConnectivityInfo) -> Self {
         self.inner = self.inner.connectivity_info(input);
@@ -138,6 +148,10 @@ impl UpdateConnectivityFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_connectivity_info(input);
         self
+    }
+    /// <p>Information about the broker access configuration.</p>
+    pub fn get_connectivity_info(&self) -> &::std::option::Option<crate::types::ConnectivityInfo> {
+        self.inner.get_connectivity_info()
     }
     /// <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
     pub fn current_version(
@@ -154,5 +168,9 @@ impl UpdateConnectivityFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_current_version(input);
         self
+    }
+    /// <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
+    pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_current_version()
     }
 }

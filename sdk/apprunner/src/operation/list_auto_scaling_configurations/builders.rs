@@ -37,6 +37,10 @@ impl ListAutoScalingConfigurationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListAutoScalingConfigurations as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_auto_scaling_configurations::builders::ListAutoScalingConfigurationsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -139,6 +143,12 @@ impl ListAutoScalingConfigurationsFluentBuilder {
         self.inner = self.inner.set_auto_scaling_configuration_name(input);
         self
     }
+    /// <p>The name of the App Runner auto scaling configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all active configurations.</p>
+    pub fn get_auto_scaling_configuration_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_auto_scaling_configuration_name()
+    }
     /// <p>Set to <code>true</code> to list only the latest revision for each requested configuration name.</p>
     /// <p>Set to <code>false</code> to list all revisions for each requested configuration name.</p>
     /// <p>Default: <code>true</code> </p>
@@ -153,6 +163,12 @@ impl ListAutoScalingConfigurationsFluentBuilder {
         self.inner = self.inner.set_latest_only(input);
         self
     }
+    /// <p>Set to <code>true</code> to list only the latest revision for each requested configuration name.</p>
+    /// <p>Set to <code>false</code> to list all revisions for each requested configuration name.</p>
+    /// <p>Default: <code>true</code> </p>
+    pub fn get_latest_only(&self) -> &::std::option::Option<bool> {
+        self.inner.get_latest_only()
+    }
     /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
     /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -165,6 +181,11 @@ impl ListAutoScalingConfigurationsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
+    /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones that are specified in the initial request.</p>
     /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -176,5 +197,10 @@ impl ListAutoScalingConfigurationsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones that are specified in the initial request.</p>
+    /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

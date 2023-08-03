@@ -40,6 +40,10 @@ impl StageContextBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the stage.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`StageContext`](crate::types::StageContext).
     pub fn build(self) -> crate::types::StageContext {
         crate::types::StageContext { name: self.name }

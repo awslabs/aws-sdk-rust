@@ -38,6 +38,10 @@ impl CreateContainerServiceDeploymentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateContainerServiceDeployment as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_container_service_deployment::builders::CreateContainerServiceDeploymentInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -102,6 +106,10 @@ impl CreateContainerServiceDeploymentFluentBuilder {
         self.inner = self.inner.set_service_name(input);
         self
     }
+    /// <p>The name of the container service for which to create the deployment.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_name()
+    }
     /// Adds a key-value pair to `containers`.
     ///
     /// To override the contents of this collection use [`set_containers`](Self::set_containers).
@@ -125,6 +133,14 @@ impl CreateContainerServiceDeploymentFluentBuilder {
         self.inner = self.inner.set_containers(input);
         self
     }
+    /// <p>An object that describes the settings of the containers that will be launched on the container service.</p>
+    pub fn get_containers(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::Container>,
+    > {
+        self.inner.get_containers()
+    }
     /// <p>An object that describes the settings of the public endpoint for the container service.</p>
     pub fn public_endpoint(mut self, input: crate::types::EndpointRequest) -> Self {
         self.inner = self.inner.public_endpoint(input);
@@ -137,5 +153,9 @@ impl CreateContainerServiceDeploymentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_public_endpoint(input);
         self
+    }
+    /// <p>An object that describes the settings of the public endpoint for the container service.</p>
+    pub fn get_public_endpoint(&self) -> &::std::option::Option<crate::types::EndpointRequest> {
+        self.inner.get_public_endpoint()
     }
 }

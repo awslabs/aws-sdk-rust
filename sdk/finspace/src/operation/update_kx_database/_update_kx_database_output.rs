@@ -77,6 +77,10 @@ impl UpdateKxDatabaseOutputBuilder {
         self.database_name = input;
         self
     }
+    /// <p>The name of the kdb database.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>A unique identifier for the kdb environment.</p>
     pub fn environment_id(
         mut self,
@@ -93,6 +97,10 @@ impl UpdateKxDatabaseOutputBuilder {
         self.environment_id = input;
         self
     }
+    /// <p>A unique identifier for the kdb environment.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
+    }
     /// <p>A description of the database.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -102,6 +110,10 @@ impl UpdateKxDatabaseOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the database.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The last time that the database was modified. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn last_modified_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -115,6 +127,12 @@ impl UpdateKxDatabaseOutputBuilder {
     ) -> Self {
         self.last_modified_timestamp = input;
         self
+    }
+    /// <p>The last time that the database was modified. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+    pub fn get_last_modified_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -56,6 +56,10 @@ impl ProfileTemplateChoiceBuilder {
         self.choice_id = input;
         self
     }
+    /// <p>The ID of a choice.</p>
+    pub fn get_choice_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.choice_id
+    }
     /// <p>The title of a choice.</p>
     pub fn choice_title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.choice_title = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl ProfileTemplateChoiceBuilder {
     pub fn set_choice_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.choice_title = input;
         self
+    }
+    /// <p>The title of a choice.</p>
+    pub fn get_choice_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.choice_title
     }
     /// <p>The description of a choice.</p>
     pub fn choice_description(
@@ -81,6 +89,10 @@ impl ProfileTemplateChoiceBuilder {
     ) -> Self {
         self.choice_description = input;
         self
+    }
+    /// <p>The description of a choice.</p>
+    pub fn get_choice_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.choice_description
     }
     /// Consumes the builder and constructs a [`ProfileTemplateChoice`](crate::types::ProfileTemplateChoice).
     pub fn build(self) -> crate::types::ProfileTemplateChoice {

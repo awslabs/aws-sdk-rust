@@ -74,6 +74,13 @@ impl ListAuditMitigationActionsExecutionsOutputBuilder {
         self.actions_executions = input;
         self
     }
+    /// <p>A set of task execution results based on the input parameters. Details include the mitigation action applied, start time, and task status.</p>
+    pub fn get_actions_executions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AuditMitigationActionExecutionMetadata>>
+    {
+        &self.actions_executions
+    }
     /// <p>The token for the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -83,6 +90,10 @@ impl ListAuditMitigationActionsExecutionsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

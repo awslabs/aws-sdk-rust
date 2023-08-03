@@ -56,6 +56,10 @@ impl AttributeKeyBuilder {
         self.schema_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the schema that contains the facet and attribute.</p>
+    pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_arn
+    }
     /// <p>The name of the facet that the attribute exists within.</p>
     pub fn facet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.facet_name = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl AttributeKeyBuilder {
         self.facet_name = input;
         self
     }
+    /// <p>The name of the facet that the attribute exists within.</p>
+    pub fn get_facet_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.facet_name
+    }
     /// <p>The name of the attribute.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl AttributeKeyBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the attribute.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`AttributeKey`](crate::types::AttributeKey).
     pub fn build(self) -> crate::types::AttributeKey {

@@ -66,6 +66,12 @@ impl ListMultipartUploadsOutputBuilder {
         self.uploads_list = input;
         self
     }
+    /// <p>A list of in-progress multipart uploads.</p>
+    pub fn get_uploads_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UploadListElement>> {
+        &self.uploads_list
+    }
     /// <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Multipart Uploads request to obtain more uploads in the list. If there are no more uploads, this value is <code>null</code>.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -75,6 +81,10 @@ impl ListMultipartUploadsOutputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Multipart Uploads request to obtain more uploads in the list. If there are no more uploads, this value is <code>null</code>.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

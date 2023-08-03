@@ -55,6 +55,10 @@ impl DeleteCacheClusterInputBuilder {
         self.cache_cluster_id = input;
         self
     }
+    /// <p>The cluster identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
+    pub fn get_cache_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_cluster_id
+    }
     /// <p>The user-supplied name of a final cluster snapshot. This is the unique name that identifies the snapshot. ElastiCache creates the snapshot, and then deletes the cluster immediately afterward.</p>
     pub fn final_snapshot_identifier(
         mut self,
@@ -70,6 +74,10 @@ impl DeleteCacheClusterInputBuilder {
     ) -> Self {
         self.final_snapshot_identifier = input;
         self
+    }
+    /// <p>The user-supplied name of a final cluster snapshot. This is the unique name that identifies the snapshot. ElastiCache creates the snapshot, and then deletes the cluster immediately afterward.</p>
+    pub fn get_final_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.final_snapshot_identifier
     }
     /// Consumes the builder and constructs a [`DeleteCacheClusterInput`](crate::operation::delete_cache_cluster::DeleteCacheClusterInput).
     pub fn build(

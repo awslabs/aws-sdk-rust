@@ -40,6 +40,10 @@ impl ResourceArnDetailBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of a corresponding resource.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`ResourceArnDetail`](crate::types::ResourceArnDetail).
     pub fn build(self) -> crate::types::ResourceArnDetail {
         crate::types::ResourceArnDetail { arn: self.arn }

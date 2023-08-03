@@ -36,6 +36,10 @@ impl ModifySecurityGroupRulesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifySecurityGroupRules as a reference.
+    pub fn as_input(&self) -> &crate::operation::modify_security_group_rules::builders::ModifySecurityGroupRulesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl ModifySecurityGroupRulesFluentBuilder {
         self.inner = self.inner.set_group_id(input);
         self
     }
+    /// <p>The ID of the security group.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group_id()
+    }
     /// Appends an item to `SecurityGroupRules`.
     ///
     /// To override the contents of this collection use [`set_security_group_rules`](Self::set_security_group_rules).
@@ -143,6 +151,12 @@ impl ModifySecurityGroupRulesFluentBuilder {
         self.inner = self.inner.set_security_group_rules(input);
         self
     }
+    /// <p>Information about the security group properties to update.</p>
+    pub fn get_security_group_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupRuleUpdate>> {
+        self.inner.get_security_group_rules()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -152,5 +166,9 @@ impl ModifySecurityGroupRulesFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

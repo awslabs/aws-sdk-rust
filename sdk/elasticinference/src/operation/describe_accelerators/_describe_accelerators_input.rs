@@ -77,6 +77,12 @@ impl DescribeAcceleratorsInputBuilder {
         self.accelerator_ids = input;
         self
     }
+    /// <p> The IDs of the accelerators to describe. </p>
+    pub fn get_accelerator_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.accelerator_ids
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -96,6 +102,10 @@ impl DescribeAcceleratorsInputBuilder {
         self.filters = input;
         self
     }
+    /// <p> One or more filters. Filter names and values are case-sensitive. Valid filter names are: accelerator-types: can provide a list of accelerator type names to filter for. instance-id: can provide a list of EC2 instance ids to filter for. </p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
+    }
     /// <p> The total number of items to return in the command's output. If the total number of items available is more than the value specified, a NextToken is provided in the command's output. To resume pagination, provide the NextToken value in the starting-token argument of a subsequent command. Do not use the NextToken response element directly outside of the AWS CLI. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -106,6 +116,10 @@ impl DescribeAcceleratorsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p> The total number of items to return in the command's output. If the total number of items available is more than the value specified, a NextToken is provided in the command's output. To resume pagination, provide the NextToken value in the starting-token argument of a subsequent command. Do not use the NextToken response element directly outside of the AWS CLI. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p> A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -115,6 +129,10 @@ impl DescribeAcceleratorsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p> A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeAcceleratorsInput`](crate::operation::describe_accelerators::DescribeAcceleratorsInput).
     pub fn build(

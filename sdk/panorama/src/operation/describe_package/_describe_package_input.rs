@@ -39,6 +39,10 @@ impl DescribePackageInputBuilder {
         self.package_id = input;
         self
     }
+    /// <p>The package's ID.</p>
+    pub fn get_package_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_id
+    }
     /// Consumes the builder and constructs a [`DescribePackageInput`](crate::operation::describe_package::DescribePackageInput).
     pub fn build(
         self,

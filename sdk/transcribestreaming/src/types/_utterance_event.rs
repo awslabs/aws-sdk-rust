@@ -112,6 +112,10 @@ impl UtteranceEventBuilder {
         self.utterance_id = input;
         self
     }
+    /// <p>The unique identifier that is associated with the specified <code>UtteranceEvent</code>.</p>
+    pub fn get_utterance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.utterance_id
+    }
     /// <p>Indicates whether the segment in the <code>UtteranceEvent</code> is complete (<code>FALSE</code>) or partial (<code>TRUE</code>).</p>
     pub fn is_partial(mut self, input: bool) -> Self {
         self.is_partial = ::std::option::Option::Some(input);
@@ -121,6 +125,10 @@ impl UtteranceEventBuilder {
     pub fn set_is_partial(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_partial = input;
         self
+    }
+    /// <p>Indicates whether the segment in the <code>UtteranceEvent</code> is complete (<code>FALSE</code>) or partial (<code>TRUE</code>).</p>
+    pub fn get_is_partial(&self) -> &::std::option::Option<bool> {
+        &self.is_partial
     }
     /// <p>Provides the role of the speaker for each audio channel, either <code>CUSTOMER</code> or <code>AGENT</code>.</p>
     pub fn participant_role(mut self, input: crate::types::ParticipantRole) -> Self {
@@ -135,6 +143,10 @@ impl UtteranceEventBuilder {
         self.participant_role = input;
         self
     }
+    /// <p>Provides the role of the speaker for each audio channel, either <code>CUSTOMER</code> or <code>AGENT</code>.</p>
+    pub fn get_participant_role(&self) -> &::std::option::Option<crate::types::ParticipantRole> {
+        &self.participant_role
+    }
     /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the <code>UtteranceEvent</code>.</p>
     pub fn begin_offset_millis(mut self, input: i64) -> Self {
         self.begin_offset_millis = ::std::option::Option::Some(input);
@@ -146,6 +158,10 @@ impl UtteranceEventBuilder {
         self
     }
     /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the <code>UtteranceEvent</code>.</p>
+    pub fn get_begin_offset_millis(&self) -> &::std::option::Option<i64> {
+        &self.begin_offset_millis
+    }
+    /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the <code>UtteranceEvent</code>.</p>
     pub fn end_offset_millis(mut self, input: i64) -> Self {
         self.end_offset_millis = ::std::option::Option::Some(input);
         self
@@ -154,6 +170,10 @@ impl UtteranceEventBuilder {
     pub fn set_end_offset_millis(mut self, input: ::std::option::Option<i64>) -> Self {
         self.end_offset_millis = input;
         self
+    }
+    /// <p>The time, in milliseconds, from the beginning of the audio stream to the start of the <code>UtteranceEvent</code>.</p>
+    pub fn get_end_offset_millis(&self) -> &::std::option::Option<i64> {
+        &self.end_offset_millis
     }
     /// <p>Contains transcribed text.</p>
     pub fn transcript(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -164,6 +184,10 @@ impl UtteranceEventBuilder {
     pub fn set_transcript(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transcript = input;
         self
+    }
+    /// <p>Contains transcribed text.</p>
+    pub fn get_transcript(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transcript
     }
     /// Appends an item to `items`.
     ///
@@ -184,6 +208,12 @@ impl UtteranceEventBuilder {
         self.items = input;
         self
     }
+    /// <p>Contains words, phrases, or punctuation marks that are associated with the specified <code>UtteranceEvent</code>.</p>
+    pub fn get_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CallAnalyticsItem>> {
+        &self.items
+    }
     /// Appends an item to `entities`.
     ///
     /// To override the contents of this collection use [`set_entities`](Self::set_entities).
@@ -203,6 +233,12 @@ impl UtteranceEventBuilder {
         self.entities = input;
         self
     }
+    /// <p>Contains entities identified as personally identifiable information (PII) in your transcription output.</p>
+    pub fn get_entities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CallAnalyticsEntity>> {
+        &self.entities
+    }
     /// <p>Provides the sentiment that was detected in the specified segment.</p>
     pub fn sentiment(mut self, input: crate::types::Sentiment) -> Self {
         self.sentiment = ::std::option::Option::Some(input);
@@ -212,6 +248,10 @@ impl UtteranceEventBuilder {
     pub fn set_sentiment(mut self, input: ::std::option::Option<crate::types::Sentiment>) -> Self {
         self.sentiment = input;
         self
+    }
+    /// <p>Provides the sentiment that was detected in the specified segment.</p>
+    pub fn get_sentiment(&self) -> &::std::option::Option<crate::types::Sentiment> {
+        &self.sentiment
     }
     /// Appends an item to `issues_detected`.
     ///
@@ -231,6 +271,12 @@ impl UtteranceEventBuilder {
     ) -> Self {
         self.issues_detected = input;
         self
+    }
+    /// <p>Provides the issue that was detected in the specified segment.</p>
+    pub fn get_issues_detected(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IssueDetected>> {
+        &self.issues_detected
     }
     /// Consumes the builder and constructs a [`UtteranceEvent`](crate::types::UtteranceEvent).
     pub fn build(self) -> crate::types::UtteranceEvent {

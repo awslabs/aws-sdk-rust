@@ -104,6 +104,10 @@ impl RdsInstanceDetailsBuilder {
         self.family = input;
         self
     }
+    /// <p>The instance family of the recommended reservation.</p>
+    pub fn get_family(&self) -> &::std::option::Option<::std::string::String> {
+        &self.family
+    }
     /// <p>The type of instance that Amazon Web Services recommends.</p>
     pub fn instance_type(
         mut self,
@@ -120,6 +124,10 @@ impl RdsInstanceDetailsBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The type of instance that Amazon Web Services recommends.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_type
+    }
     /// <p>The Amazon Web Services Region of the recommended reservation.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
@@ -129,6 +137,10 @@ impl RdsInstanceDetailsBuilder {
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
+    }
+    /// <p>The Amazon Web Services Region of the recommended reservation.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
     }
     /// <p>The database engine that the recommended reservation supports.</p>
     pub fn database_engine(
@@ -146,6 +158,10 @@ impl RdsInstanceDetailsBuilder {
         self.database_engine = input;
         self
     }
+    /// <p>The database engine that the recommended reservation supports.</p>
+    pub fn get_database_engine(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_engine
+    }
     /// <p>The database edition that the recommended reservation supports.</p>
     pub fn database_edition(
         mut self,
@@ -161,6 +177,10 @@ impl RdsInstanceDetailsBuilder {
     ) -> Self {
         self.database_edition = input;
         self
+    }
+    /// <p>The database edition that the recommended reservation supports.</p>
+    pub fn get_database_edition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_edition
     }
     /// <p>Determines whether the recommendation is for a reservation in a single Availability Zone or a reservation with a backup in a second Availability Zone.</p>
     pub fn deployment_option(
@@ -178,6 +198,10 @@ impl RdsInstanceDetailsBuilder {
         self.deployment_option = input;
         self
     }
+    /// <p>Determines whether the recommendation is for a reservation in a single Availability Zone or a reservation with a backup in a second Availability Zone.</p>
+    pub fn get_deployment_option(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_option
+    }
     /// <p>The license model that the recommended reservation supports.</p>
     pub fn license_model(
         mut self,
@@ -194,6 +218,10 @@ impl RdsInstanceDetailsBuilder {
         self.license_model = input;
         self
     }
+    /// <p>The license model that the recommended reservation supports.</p>
+    pub fn get_license_model(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_model
+    }
     /// <p>Determines whether the recommendation is for a current-generation instance. </p>
     pub fn current_generation(mut self, input: bool) -> Self {
         self.current_generation = ::std::option::Option::Some(input);
@@ -204,6 +232,10 @@ impl RdsInstanceDetailsBuilder {
         self.current_generation = input;
         self
     }
+    /// <p>Determines whether the recommendation is for a current-generation instance. </p>
+    pub fn get_current_generation(&self) -> &::std::option::Option<bool> {
+        &self.current_generation
+    }
     /// <p>Determines whether the recommended reservation is size flexible.</p>
     pub fn size_flex_eligible(mut self, input: bool) -> Self {
         self.size_flex_eligible = ::std::option::Option::Some(input);
@@ -213,6 +245,10 @@ impl RdsInstanceDetailsBuilder {
     pub fn set_size_flex_eligible(mut self, input: ::std::option::Option<bool>) -> Self {
         self.size_flex_eligible = input;
         self
+    }
+    /// <p>Determines whether the recommended reservation is size flexible.</p>
+    pub fn get_size_flex_eligible(&self) -> &::std::option::Option<bool> {
+        &self.size_flex_eligible
     }
     /// Consumes the builder and constructs a [`RdsInstanceDetails`](crate::types::RdsInstanceDetails).
     pub fn build(self) -> crate::types::RdsInstanceDetails {

@@ -104,6 +104,20 @@ impl CalculateRouteOutputBuilder {
         self.legs = input;
         self
     }
+    /// <p>Contains details about each path between a pair of positions included along a route such as: <code>StartPosition</code>, <code>EndPosition</code>, <code>Distance</code>, <code>DurationSeconds</code>, <code>Geometry</code>, and <code>Steps</code>. The number of legs returned corresponds to one fewer than the total number of positions in the request. </p>
+    /// <p>For example, a route with a departure position and destination position returns one leg with the positions <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>:</p>
+    /// <ul>
+    /// <li> <p>The <code>StartPosition</code> is the departure position.</p> </li>
+    /// <li> <p>The <code>EndPosition</code> is the destination position.</p> </li>
+    /// </ul>
+    /// <p>A route with a waypoint between the departure and destination position returns two legs with the positions snapped to a nearby road:</p>
+    /// <ul>
+    /// <li> <p>Leg 1: The <code>StartPosition</code> is the departure position . The <code>EndPosition</code> is the waypoint positon.</p> </li>
+    /// <li> <p>Leg 2: The <code>StartPosition</code> is the waypoint position. The <code>EndPosition</code> is the destination position.</p> </li>
+    /// </ul>
+    pub fn get_legs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Leg>> {
+        &self.legs
+    }
     /// <p>Contains information about the whole route, such as: <code>RouteBBox</code>, <code>DataSource</code>, <code>Distance</code>, <code>DistanceUnit</code>, and <code>DurationSeconds</code>.</p>
     pub fn summary(mut self, input: crate::types::CalculateRouteSummary) -> Self {
         self.summary = ::std::option::Option::Some(input);
@@ -116,6 +130,10 @@ impl CalculateRouteOutputBuilder {
     ) -> Self {
         self.summary = input;
         self
+    }
+    /// <p>Contains information about the whole route, such as: <code>RouteBBox</code>, <code>DataSource</code>, <code>Distance</code>, <code>DistanceUnit</code>, and <code>DurationSeconds</code>.</p>
+    pub fn get_summary(&self) -> &::std::option::Option<crate::types::CalculateRouteSummary> {
+        &self.summary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

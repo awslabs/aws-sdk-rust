@@ -39,6 +39,10 @@ impl ResolveCaseInputBuilder {
         self.case_id = input;
         self
     }
+    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
+    pub fn get_case_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.case_id
+    }
     /// Consumes the builder and constructs a [`ResolveCaseInput`](crate::operation::resolve_case::ResolveCaseInput).
     pub fn build(
         self,

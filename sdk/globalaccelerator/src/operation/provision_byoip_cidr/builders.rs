@@ -37,6 +37,12 @@ impl ProvisionByoipCidrFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ProvisionByoipCidr as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::provision_byoip_cidr::builders::ProvisionByoipCidrInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl ProvisionByoipCidrFluentBuilder {
         self.inner = self.inner.set_cidr(input);
         self
     }
+    /// <p>The public IPv4 address range, in CIDR notation. The most specific IP prefix that you can specify is /24. The address range cannot overlap with another address range that you've brought to this or another Region.</p>
+    pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cidr()
+    }
     /// <p>A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP. </p>
     pub fn cidr_authorization_context(
         mut self,
@@ -142,5 +152,11 @@ impl ProvisionByoipCidrFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_cidr_authorization_context(input);
         self
+    }
+    /// <p>A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP. </p>
+    pub fn get_cidr_authorization_context(
+        &self,
+    ) -> &::std::option::Option<crate::types::CidrAuthorizationContext> {
+        self.inner.get_cidr_authorization_context()
     }
 }

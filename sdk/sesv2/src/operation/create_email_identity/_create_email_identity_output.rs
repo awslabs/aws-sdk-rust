@@ -69,6 +69,10 @@ impl CreateEmailIdentityOutputBuilder {
         self.identity_type = input;
         self
     }
+    /// <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type is not supported.</p>
+    pub fn get_identity_type(&self) -> &::std::option::Option<crate::types::IdentityType> {
+        &self.identity_type
+    }
     /// <p>Specifies whether or not the identity is verified. You can only send email from verified email addresses or domains. For more information about verifying identities, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint User Guide</a>.</p>
     pub fn verified_for_sending_status(mut self, input: bool) -> Self {
         self.verified_for_sending_status = ::std::option::Option::Some(input);
@@ -78,6 +82,10 @@ impl CreateEmailIdentityOutputBuilder {
     pub fn set_verified_for_sending_status(mut self, input: ::std::option::Option<bool>) -> Self {
         self.verified_for_sending_status = input;
         self
+    }
+    /// <p>Specifies whether or not the identity is verified. You can only send email from verified email addresses or domains. For more information about verifying identities, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint User Guide</a>.</p>
+    pub fn get_verified_for_sending_status(&self) -> &::std::option::Option<bool> {
+        &self.verified_for_sending_status
     }
     /// <p>An object that contains information about the DKIM attributes for the identity.</p>
     pub fn dkim_attributes(mut self, input: crate::types::DkimAttributes) -> Self {
@@ -91,6 +99,10 @@ impl CreateEmailIdentityOutputBuilder {
     ) -> Self {
         self.dkim_attributes = input;
         self
+    }
+    /// <p>An object that contains information about the DKIM attributes for the identity.</p>
+    pub fn get_dkim_attributes(&self) -> &::std::option::Option<crate::types::DkimAttributes> {
+        &self.dkim_attributes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

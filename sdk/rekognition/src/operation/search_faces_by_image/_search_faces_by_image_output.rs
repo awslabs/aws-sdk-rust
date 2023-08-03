@@ -75,6 +75,12 @@ impl SearchFacesByImageOutputBuilder {
         self.searched_face_bounding_box = input;
         self
     }
+    /// <p>The bounding box around the face in the input image that Amazon Rekognition used for the search.</p>
+    pub fn get_searched_face_bounding_box(
+        &self,
+    ) -> &::std::option::Option<crate::types::BoundingBox> {
+        &self.searched_face_bounding_box
+    }
     /// <p>The level of confidence that the <code>searchedFaceBoundingBox</code>, contains a face.</p>
     pub fn searched_face_confidence(mut self, input: f32) -> Self {
         self.searched_face_confidence = ::std::option::Option::Some(input);
@@ -84,6 +90,10 @@ impl SearchFacesByImageOutputBuilder {
     pub fn set_searched_face_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
         self.searched_face_confidence = input;
         self
+    }
+    /// <p>The level of confidence that the <code>searchedFaceBoundingBox</code>, contains a face.</p>
+    pub fn get_searched_face_confidence(&self) -> &::std::option::Option<f32> {
+        &self.searched_face_confidence
     }
     /// Appends an item to `face_matches`.
     ///
@@ -104,6 +114,12 @@ impl SearchFacesByImageOutputBuilder {
         self.face_matches = input;
         self
     }
+    /// <p>An array of faces that match the input face, along with the confidence in the match.</p>
+    pub fn get_face_matches(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FaceMatch>> {
+        &self.face_matches
+    }
     /// <p>Version number of the face detection model associated with the input collection (<code>CollectionId</code>).</p>
     pub fn face_model_version(
         mut self,
@@ -119,6 +135,10 @@ impl SearchFacesByImageOutputBuilder {
     ) -> Self {
         self.face_model_version = input;
         self
+    }
+    /// <p>Version number of the face detection model associated with the input collection (<code>CollectionId</code>).</p>
+    pub fn get_face_model_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.face_model_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

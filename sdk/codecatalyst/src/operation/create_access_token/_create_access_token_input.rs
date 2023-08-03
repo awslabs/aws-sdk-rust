@@ -48,6 +48,10 @@ impl CreateAccessTokenInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The friendly name of the personal access token.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The date and time the personal access token expires, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
     pub fn expires_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.expires_time = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl CreateAccessTokenInputBuilder {
     ) -> Self {
         self.expires_time = input;
         self
+    }
+    /// <p>The date and time the personal access token expires, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
+    pub fn get_expires_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expires_time
     }
     /// Consumes the builder and constructs a [`CreateAccessTokenInput`](crate::operation::create_access_token::CreateAccessTokenInput).
     pub fn build(

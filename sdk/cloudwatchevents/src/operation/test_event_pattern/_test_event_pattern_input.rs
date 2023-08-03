@@ -72,6 +72,10 @@ impl TestEventPatternInputBuilder {
         self.event_pattern = input;
         self
     }
+    /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    pub fn get_event_pattern(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_pattern
+    }
     /// <p>The event, in JSON format, to test against the event pattern. The JSON must follow the format specified in <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/aws-events.html">Amazon Web Services Events</a>, and the following fields are mandatory:</p>
     /// <ul>
     /// <li> <p> <code>id</code> </p> </li>
@@ -99,6 +103,19 @@ impl TestEventPatternInputBuilder {
     pub fn set_event(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event = input;
         self
+    }
+    /// <p>The event, in JSON format, to test against the event pattern. The JSON must follow the format specified in <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/aws-events.html">Amazon Web Services Events</a>, and the following fields are mandatory:</p>
+    /// <ul>
+    /// <li> <p> <code>id</code> </p> </li>
+    /// <li> <p> <code>account</code> </p> </li>
+    /// <li> <p> <code>source</code> </p> </li>
+    /// <li> <p> <code>time</code> </p> </li>
+    /// <li> <p> <code>region</code> </p> </li>
+    /// <li> <p> <code>resources</code> </p> </li>
+    /// <li> <p> <code>detail-type</code> </p> </li>
+    /// </ul>
+    pub fn get_event(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event
     }
     /// Consumes the builder and constructs a [`TestEventPatternInput`](crate::operation::test_event_pattern::TestEventPatternInput).
     pub fn build(

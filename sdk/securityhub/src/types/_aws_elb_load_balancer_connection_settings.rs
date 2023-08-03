@@ -40,6 +40,10 @@ impl AwsElbLoadBalancerConnectionSettingsBuilder {
         self.idle_timeout = input;
         self
     }
+    /// <p>The time, in seconds, that the connection can be idle (no data is sent over the connection) before it is closed by the load balancer.</p>
+    pub fn get_idle_timeout(&self) -> &::std::option::Option<i32> {
+        &self.idle_timeout
+    }
     /// Consumes the builder and constructs a [`AwsElbLoadBalancerConnectionSettings`](crate::types::AwsElbLoadBalancerConnectionSettings).
     pub fn build(self) -> crate::types::AwsElbLoadBalancerConnectionSettings {
         crate::types::AwsElbLoadBalancerConnectionSettings {

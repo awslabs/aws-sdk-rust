@@ -37,6 +37,10 @@ impl DisassociateTrialComponentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociateTrialComponent as a reference.
+    pub fn as_input(&self) -> &crate::operation::disassociate_trial_component::builders::DisassociateTrialComponentInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,10 @@ impl DisassociateTrialComponentFluentBuilder {
         self.inner = self.inner.set_trial_component_name(input);
         self
     }
+    /// <p>The name of the component to disassociate from the trial.</p>
+    pub fn get_trial_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_trial_component_name()
+    }
     /// <p>The name of the trial to disassociate from.</p>
     pub fn trial_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.trial_name(input.into());
@@ -142,5 +150,9 @@ impl DisassociateTrialComponentFluentBuilder {
     pub fn set_trial_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_trial_name(input);
         self
+    }
+    /// <p>The name of the trial to disassociate from.</p>
+    pub fn get_trial_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_trial_name()
     }
 }

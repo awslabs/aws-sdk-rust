@@ -36,6 +36,10 @@ impl GetSchemaFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetSchema as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_schema::builders::GetSchemaInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +129,13 @@ impl GetSchemaFluentBuilder {
     pub fn set_schema_id(mut self, input: ::std::option::Option<crate::types::SchemaId>) -> Self {
         self.inner = self.inner.set_schema_id(input);
         self
+    }
+    /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
+    /// <ul>
+    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
+    /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
+    /// </ul>
+    pub fn get_schema_id(&self) -> &::std::option::Option<crate::types::SchemaId> {
+        self.inner.get_schema_id()
     }
 }

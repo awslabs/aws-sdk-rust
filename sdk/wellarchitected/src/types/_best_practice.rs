@@ -48,6 +48,10 @@ impl BestPracticeBuilder {
         self.choice_id = input;
         self
     }
+    /// <p>The ID of a choice.</p>
+    pub fn get_choice_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.choice_id
+    }
     /// <p>The title of a choice.</p>
     pub fn choice_title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.choice_title = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl BestPracticeBuilder {
     pub fn set_choice_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.choice_title = input;
         self
+    }
+    /// <p>The title of a choice.</p>
+    pub fn get_choice_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.choice_title
     }
     /// Consumes the builder and constructs a [`BestPractice`](crate::types::BestPractice).
     pub fn build(self) -> crate::types::BestPractice {

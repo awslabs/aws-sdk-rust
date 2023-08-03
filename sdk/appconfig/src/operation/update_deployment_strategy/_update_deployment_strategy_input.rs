@@ -99,6 +99,10 @@ impl UpdateDeploymentStrategyInputBuilder {
         self.deployment_strategy_id = input;
         self
     }
+    /// <p>The deployment strategy ID.</p>
+    pub fn get_deployment_strategy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_strategy_id
+    }
     /// <p>A description of the deployment strategy.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -108,6 +112,10 @@ impl UpdateDeploymentStrategyInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the deployment strategy.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Total amount of time for a deployment to last.</p>
     pub fn deployment_duration_in_minutes(mut self, input: i32) -> Self {
@@ -119,6 +127,10 @@ impl UpdateDeploymentStrategyInputBuilder {
         self.deployment_duration_in_minutes = input;
         self
     }
+    /// <p>Total amount of time for a deployment to last.</p>
+    pub fn get_deployment_duration_in_minutes(&self) -> &::std::option::Option<i32> {
+        &self.deployment_duration_in_minutes
+    }
     /// <p>The amount of time that AppConfig monitors for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
     pub fn final_bake_time_in_minutes(mut self, input: i32) -> Self {
         self.final_bake_time_in_minutes = ::std::option::Option::Some(input);
@@ -129,6 +141,10 @@ impl UpdateDeploymentStrategyInputBuilder {
         self.final_bake_time_in_minutes = input;
         self
     }
+    /// <p>The amount of time that AppConfig monitors for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
+    pub fn get_final_bake_time_in_minutes(&self) -> &::std::option::Option<i32> {
+        &self.final_bake_time_in_minutes
+    }
     /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
     pub fn growth_factor(mut self, input: f32) -> Self {
         self.growth_factor = ::std::option::Option::Some(input);
@@ -138,6 +154,10 @@ impl UpdateDeploymentStrategyInputBuilder {
     pub fn set_growth_factor(mut self, input: ::std::option::Option<f32>) -> Self {
         self.growth_factor = input;
         self
+    }
+    /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
+    pub fn get_growth_factor(&self) -> &::std::option::Option<f32> {
+        &self.growth_factor
     }
     /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the following growth types:</p>
     /// <p> <b>Linear</b>: For this type, AppConfig processes the deployment by increments of the growth factor evenly distributed over the deployment time. For example, a linear deployment that uses a growth factor of 20 initially makes the configuration available to 20 percent of the targets. After 1/5th of the deployment time has passed, the system updates the percentage to 40 percent. This continues until 100% of the targets are set to receive the deployed configuration.</p>
@@ -163,6 +183,16 @@ impl UpdateDeploymentStrategyInputBuilder {
     ) -> Self {
         self.growth_type = input;
         self
+    }
+    /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the following growth types:</p>
+    /// <p> <b>Linear</b>: For this type, AppConfig processes the deployment by increments of the growth factor evenly distributed over the deployment time. For example, a linear deployment that uses a growth factor of 20 initially makes the configuration available to 20 percent of the targets. After 1/5th of the deployment time has passed, the system updates the percentage to 40 percent. This continues until 100% of the targets are set to receive the deployed configuration.</p>
+    /// <p> <b>Exponential</b>: For this type, AppConfig processes the deployment exponentially using the following formula: <code>G*(2^N)</code>. In this formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is the number of steps until the configuration is deployed to all targets. For example, if you specify a growth factor of 2, then the system rolls out the configuration as follows:</p>
+    /// <p> <code>2*(2^0)</code> </p>
+    /// <p> <code>2*(2^1)</code> </p>
+    /// <p> <code>2*(2^2)</code> </p>
+    /// <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the targets, 8% of the targets, and continues until the configuration has been deployed to all targets.</p>
+    pub fn get_growth_type(&self) -> &::std::option::Option<crate::types::GrowthType> {
+        &self.growth_type
     }
     /// Consumes the builder and constructs a [`UpdateDeploymentStrategyInput`](crate::operation::update_deployment_strategy::UpdateDeploymentStrategyInput).
     pub fn build(

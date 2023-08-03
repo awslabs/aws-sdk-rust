@@ -40,6 +40,10 @@ impl LoRaWanListDeviceBuilder {
         self.dev_eui = input;
         self
     }
+    /// <p>The DevEUI value.</p>
+    pub fn get_dev_eui(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dev_eui
+    }
     /// Consumes the builder and constructs a [`LoRaWanListDevice`](crate::types::LoRaWanListDevice).
     pub fn build(self) -> crate::types::LoRaWanListDevice {
         crate::types::LoRaWanListDevice {

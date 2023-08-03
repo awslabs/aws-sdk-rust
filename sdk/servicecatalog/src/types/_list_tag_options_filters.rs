@@ -56,6 +56,10 @@ impl ListTagOptionsFiltersBuilder {
         self.key = input;
         self
     }
+    /// <p>The TagOption key.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>The TagOption value.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl ListTagOptionsFiltersBuilder {
         self.value = input;
         self
     }
+    /// <p>The TagOption value.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// <p>The active state.</p>
     pub fn active(mut self, input: bool) -> Self {
         self.active = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl ListTagOptionsFiltersBuilder {
     pub fn set_active(mut self, input: ::std::option::Option<bool>) -> Self {
         self.active = input;
         self
+    }
+    /// <p>The active state.</p>
+    pub fn get_active(&self) -> &::std::option::Option<bool> {
+        &self.active
     }
     /// Consumes the builder and constructs a [`ListTagOptionsFilters`](crate::types::ListTagOptionsFilters).
     pub fn build(self) -> crate::types::ListTagOptionsFilters {

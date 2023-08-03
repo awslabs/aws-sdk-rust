@@ -65,6 +65,10 @@ impl UpdateFindingsFeedbackInputBuilder {
         self.detector_id = input;
         self
     }
+    /// <p>The ID of the detector associated with the findings to update feedback for.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
+    }
     /// Appends an item to `finding_ids`.
     ///
     /// To override the contents of this collection use [`set_finding_ids`](Self::set_finding_ids).
@@ -84,6 +88,12 @@ impl UpdateFindingsFeedbackInputBuilder {
         self.finding_ids = input;
         self
     }
+    /// <p>The IDs of the findings that you want to mark as useful or not useful.</p>
+    pub fn get_finding_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.finding_ids
+    }
     /// <p>The feedback for the finding.</p>
     pub fn feedback(mut self, input: crate::types::Feedback) -> Self {
         self.feedback = ::std::option::Option::Some(input);
@@ -94,6 +104,10 @@ impl UpdateFindingsFeedbackInputBuilder {
         self.feedback = input;
         self
     }
+    /// <p>The feedback for the finding.</p>
+    pub fn get_feedback(&self) -> &::std::option::Option<crate::types::Feedback> {
+        &self.feedback
+    }
     /// <p>Additional feedback about the GuardDuty findings.</p>
     pub fn comments(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comments = ::std::option::Option::Some(input.into());
@@ -103,6 +117,10 @@ impl UpdateFindingsFeedbackInputBuilder {
     pub fn set_comments(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comments = input;
         self
+    }
+    /// <p>Additional feedback about the GuardDuty findings.</p>
+    pub fn get_comments(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comments
     }
     /// Consumes the builder and constructs a [`UpdateFindingsFeedbackInput`](crate::operation::update_findings_feedback::UpdateFindingsFeedbackInput).
     pub fn build(

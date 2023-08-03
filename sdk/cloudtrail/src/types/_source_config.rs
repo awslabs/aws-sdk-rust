@@ -52,6 +52,10 @@ impl SourceConfigBuilder {
         self.apply_to_all_regions = input;
         self
     }
+    /// <p> Specifies whether the channel applies to a single Region or to all Regions.</p>
+    pub fn get_apply_to_all_regions(&self) -> &::std::option::Option<bool> {
+        &self.apply_to_all_regions
+    }
     /// Appends an item to `advanced_event_selectors`.
     ///
     /// To override the contents of this collection use [`set_advanced_event_selectors`](Self::set_advanced_event_selectors).
@@ -70,6 +74,12 @@ impl SourceConfigBuilder {
     ) -> Self {
         self.advanced_event_selectors = input;
         self
+    }
+    /// <p> The advanced event selectors that are configured for the channel.</p>
+    pub fn get_advanced_event_selectors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>> {
+        &self.advanced_event_selectors
     }
     /// Consumes the builder and constructs a [`SourceConfig`](crate::types::SourceConfig).
     pub fn build(self) -> crate::types::SourceConfig {

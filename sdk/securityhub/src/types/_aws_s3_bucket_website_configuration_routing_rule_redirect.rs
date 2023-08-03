@@ -77,6 +77,10 @@ impl AwsS3BucketWebsiteConfigurationRoutingRuleRedirectBuilder {
         self.hostname = input;
         self
     }
+    /// <p>The host name to use in the redirect request.</p>
+    pub fn get_hostname(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hostname
+    }
     /// <p>The HTTP redirect code to use in the response.</p>
     pub fn http_redirect_code(
         mut self,
@@ -93,6 +97,10 @@ impl AwsS3BucketWebsiteConfigurationRoutingRuleRedirectBuilder {
         self.http_redirect_code = input;
         self
     }
+    /// <p>The HTTP redirect code to use in the response.</p>
+    pub fn get_http_redirect_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.http_redirect_code
+    }
     /// <p>The protocol to use to redirect the request. By default, uses the protocol from the original request.</p>
     pub fn protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.protocol = ::std::option::Option::Some(input.into());
@@ -102,6 +110,10 @@ impl AwsS3BucketWebsiteConfigurationRoutingRuleRedirectBuilder {
     pub fn set_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.protocol = input;
         self
+    }
+    /// <p>The protocol to use to redirect the request. By default, uses the protocol from the original request.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<::std::string::String> {
+        &self.protocol
     }
     /// <p>The object key prefix to use in the redirect request.</p>
     /// <p>Cannot be provided if <code>ReplaceKeyWith</code> is present.</p>
@@ -121,6 +133,11 @@ impl AwsS3BucketWebsiteConfigurationRoutingRuleRedirectBuilder {
         self.replace_key_prefix_with = input;
         self
     }
+    /// <p>The object key prefix to use in the redirect request.</p>
+    /// <p>Cannot be provided if <code>ReplaceKeyWith</code> is present.</p>
+    pub fn get_replace_key_prefix_with(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replace_key_prefix_with
+    }
     /// <p>The specific object key to use in the redirect request.</p>
     /// <p>Cannot be provided if <code>ReplaceKeyPrefixWith</code> is present.</p>
     pub fn replace_key_with(
@@ -138,6 +155,11 @@ impl AwsS3BucketWebsiteConfigurationRoutingRuleRedirectBuilder {
     ) -> Self {
         self.replace_key_with = input;
         self
+    }
+    /// <p>The specific object key to use in the redirect request.</p>
+    /// <p>Cannot be provided if <code>ReplaceKeyPrefixWith</code> is present.</p>
+    pub fn get_replace_key_with(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replace_key_with
     }
     /// Consumes the builder and constructs a [`AwsS3BucketWebsiteConfigurationRoutingRuleRedirect`](crate::types::AwsS3BucketWebsiteConfigurationRoutingRuleRedirect).
     pub fn build(self) -> crate::types::AwsS3BucketWebsiteConfigurationRoutingRuleRedirect {

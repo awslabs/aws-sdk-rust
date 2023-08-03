@@ -45,6 +45,10 @@ impl DeleteModelExplainabilityJobDefinitionInputBuilder {
         self.job_definition_name = input;
         self
     }
+    /// <p>The name of the model explainability job definition to delete.</p>
+    pub fn get_job_definition_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_definition_name
+    }
     /// Consumes the builder and constructs a [`DeleteModelExplainabilityJobDefinitionInput`](crate::operation::delete_model_explainability_job_definition::DeleteModelExplainabilityJobDefinitionInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_model_explainability_job_definition::DeleteModelExplainabilityJobDefinitionInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

@@ -97,6 +97,10 @@ impl GetBulkPublishDetailsOutputBuilder {
         self.identity_pool_id = input;
         self
     }
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+    pub fn get_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_pool_id
+    }
     /// The date/time at which the last bulk publish was initiated.
     pub fn bulk_publish_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.bulk_publish_start_time = ::std::option::Option::Some(input);
@@ -110,6 +114,12 @@ impl GetBulkPublishDetailsOutputBuilder {
         self.bulk_publish_start_time = input;
         self
     }
+    /// The date/time at which the last bulk publish was initiated.
+    pub fn get_bulk_publish_start_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.bulk_publish_start_time
+    }
     /// If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation completed.
     pub fn bulk_publish_complete_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.bulk_publish_complete_time = ::std::option::Option::Some(input);
@@ -122,6 +132,12 @@ impl GetBulkPublishDetailsOutputBuilder {
     ) -> Self {
         self.bulk_publish_complete_time = input;
         self
+    }
+    /// If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation completed.
+    pub fn get_bulk_publish_complete_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.bulk_publish_complete_time
     }
     /// Status of the last bulk publish operation, valid values are:
     /// <p>NOT_STARTED - No bulk publish has been requested for this identity pool</p>
@@ -144,6 +160,16 @@ impl GetBulkPublishDetailsOutputBuilder {
         self.bulk_publish_status = input;
         self
     }
+    /// Status of the last bulk publish operation, valid values are:
+    /// <p>NOT_STARTED - No bulk publish has been requested for this identity pool</p>
+    /// <p>IN_PROGRESS - Data is being published to the configured stream</p>
+    /// <p>SUCCEEDED - All data for the identity pool has been published to the configured stream</p>
+    /// <p>FAILED - Some portion of the data has failed to publish, check FailureMessage for the cause.</p>
+    pub fn get_bulk_publish_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::BulkPublishStatus> {
+        &self.bulk_publish_status
+    }
     /// If BulkPublishStatus is FAILED this field will contain the error message that caused the bulk publish to fail.
     pub fn failure_message(
         mut self,
@@ -159,6 +185,10 @@ impl GetBulkPublishDetailsOutputBuilder {
     ) -> Self {
         self.failure_message = input;
         self
+    }
+    /// If BulkPublishStatus is FAILED this field will contain the error message that caused the bulk publish to fail.
+    pub fn get_failure_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_message
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

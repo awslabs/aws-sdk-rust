@@ -36,6 +36,10 @@ impl DeleteAliasFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteAlias as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_alias::builders::DeleteAliasInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl DeleteAliasFluentBuilder {
         self.inner = self.inner.set_organization_id(input);
         self
     }
+    /// <p>The identifier for the organization under which the user exists.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organization_id()
+    }
     /// <p>The identifier for the member (user or group) from which to have the aliases removed.</p>
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.entity_id(input.into());
@@ -134,6 +142,10 @@ impl DeleteAliasFluentBuilder {
         self.inner = self.inner.set_entity_id(input);
         self
     }
+    /// <p>The identifier for the member (user or group) from which to have the aliases removed.</p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_entity_id()
+    }
     /// <p>The aliases to be removed from the user's set of aliases. Duplicate entries in the list are collapsed into single entries (the list is transformed into a set).</p>
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.alias(input.into());
@@ -143,5 +155,9 @@ impl DeleteAliasFluentBuilder {
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_alias(input);
         self
+    }
+    /// <p>The aliases to be removed from the user's set of aliases. Duplicate entries in the list are collapsed into single entries (the list is transformed into a set).</p>
+    pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_alias()
     }
 }

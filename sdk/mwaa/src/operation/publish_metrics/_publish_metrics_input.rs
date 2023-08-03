@@ -53,6 +53,10 @@ impl PublishMetricsInputBuilder {
         self.environment_name = input;
         self
     }
+    /// <p> <b>Internal only</b>. The name of the environment.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_name
+    }
     /// Appends an item to `metric_data`.
     ///
     /// To override the contents of this collection use [`set_metric_data`](Self::set_metric_data).
@@ -71,6 +75,12 @@ impl PublishMetricsInputBuilder {
     ) -> Self {
         self.metric_data = input;
         self
+    }
+    /// <p> <b>Internal only</b>. Publishes metrics to Amazon CloudWatch. To learn more about the metrics published to Amazon CloudWatch, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html">Amazon MWAA performance metrics in Amazon CloudWatch</a>.</p>
+    pub fn get_metric_data(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDatum>> {
+        &self.metric_data
     }
     /// Consumes the builder and constructs a [`PublishMetricsInput`](crate::operation::publish_metrics::PublishMetricsInput).
     pub fn build(

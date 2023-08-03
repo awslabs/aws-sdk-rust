@@ -47,6 +47,10 @@ impl DescribeInsightInputBuilder {
         self.id = input;
         self
     }
+    /// <p> The ID of the insight. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The ID of the member account in the organization.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl DescribeInsightInputBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>The ID of the member account in the organization.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// Consumes the builder and constructs a [`DescribeInsightInput`](crate::operation::describe_insight::DescribeInsightInput).
     pub fn build(

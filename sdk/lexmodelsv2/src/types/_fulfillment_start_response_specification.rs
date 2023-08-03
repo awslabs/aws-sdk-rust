@@ -56,6 +56,10 @@ impl FulfillmentStartResponseSpecificationBuilder {
         self.delay_in_seconds = input;
         self
     }
+    /// <p>The delay between when the Lambda fulfillment function starts running and the start message is played. If the Lambda function returns before the delay is over, the start message isn't played.</p>
+    pub fn get_delay_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.delay_in_seconds
+    }
     /// Appends an item to `message_groups`.
     ///
     /// To override the contents of this collection use [`set_message_groups`](Self::set_message_groups).
@@ -75,6 +79,12 @@ impl FulfillmentStartResponseSpecificationBuilder {
         self.message_groups = input;
         self
     }
+    /// <p>1 - 5 message groups that contain start messages. Amazon Lex chooses one of the messages to play to the user.</p>
+    pub fn get_message_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageGroup>> {
+        &self.message_groups
+    }
     /// <p>Determines whether the user can interrupt the start message while it is playing.</p>
     pub fn allow_interrupt(mut self, input: bool) -> Self {
         self.allow_interrupt = ::std::option::Option::Some(input);
@@ -84,6 +94,10 @@ impl FulfillmentStartResponseSpecificationBuilder {
     pub fn set_allow_interrupt(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_interrupt = input;
         self
+    }
+    /// <p>Determines whether the user can interrupt the start message while it is playing.</p>
+    pub fn get_allow_interrupt(&self) -> &::std::option::Option<bool> {
+        &self.allow_interrupt
     }
     /// Consumes the builder and constructs a [`FulfillmentStartResponseSpecification`](crate::types::FulfillmentStartResponseSpecification).
     pub fn build(self) -> crate::types::FulfillmentStartResponseSpecification {

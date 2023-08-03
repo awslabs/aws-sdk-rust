@@ -39,6 +39,10 @@ impl CreateLBCookieStickinessPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateLBCookieStickinessPolicy as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_lb_cookie_stickiness_policy::builders::CreateLbCookieStickinessPolicyInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -109,6 +113,10 @@ impl CreateLBCookieStickinessPolicyFluentBuilder {
         self.inner = self.inner.set_load_balancer_name(input);
         self
     }
+    /// <p>The name of the load balancer.</p>
+    pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_load_balancer_name()
+    }
     /// <p>The name of the policy being created. Policy names must consist of alphanumeric characters and dashes (-). This name must be unique within the set of policies for this load balancer.</p>
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_name(input.into());
@@ -119,6 +127,10 @@ impl CreateLBCookieStickinessPolicyFluentBuilder {
         self.inner = self.inner.set_policy_name(input);
         self
     }
+    /// <p>The name of the policy being created. Policy names must consist of alphanumeric characters and dashes (-). This name must be unique within the set of policies for this load balancer.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_name()
+    }
     /// <p>The time period, in seconds, after which the cookie should be considered stale. If you do not specify this parameter, the default value is 0, which indicates that the sticky session should last for the duration of the browser session.</p>
     pub fn cookie_expiration_period(mut self, input: i64) -> Self {
         self.inner = self.inner.cookie_expiration_period(input);
@@ -128,5 +140,9 @@ impl CreateLBCookieStickinessPolicyFluentBuilder {
     pub fn set_cookie_expiration_period(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_cookie_expiration_period(input);
         self
+    }
+    /// <p>The time period, in seconds, after which the cookie should be considered stale. If you do not specify this parameter, the default value is 0, which indicates that the sticky session should last for the duration of the browser session.</p>
+    pub fn get_cookie_expiration_period(&self) -> &::std::option::Option<i64> {
+        self.inner.get_cookie_expiration_period()
     }
 }

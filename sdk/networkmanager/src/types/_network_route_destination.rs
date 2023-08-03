@@ -86,6 +86,10 @@ impl NetworkRouteDestinationBuilder {
         self.core_network_attachment_id = input;
         self
     }
+    /// <p>The ID of a core network attachment.</p>
+    pub fn get_core_network_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.core_network_attachment_id
+    }
     /// <p>The ID of the transit gateway attachment.</p>
     pub fn transit_gateway_attachment_id(
         mut self,
@@ -102,6 +106,12 @@ impl NetworkRouteDestinationBuilder {
         self.transit_gateway_attachment_id = input;
         self
     }
+    /// <p>The ID of the transit gateway attachment.</p>
+    pub fn get_transit_gateway_attachment_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_attachment_id
+    }
     /// <p>The name of the segment.</p>
     pub fn segment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.segment_name = ::std::option::Option::Some(input.into());
@@ -111,6 +121,10 @@ impl NetworkRouteDestinationBuilder {
     pub fn set_segment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.segment_name = input;
         self
+    }
+    /// <p>The name of the segment.</p>
+    pub fn get_segment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.segment_name
     }
     /// <p>The edge location for the network destination.</p>
     pub fn edge_location(
@@ -128,6 +142,10 @@ impl NetworkRouteDestinationBuilder {
         self.edge_location = input;
         self
     }
+    /// <p>The edge location for the network destination.</p>
+    pub fn get_edge_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.edge_location
+    }
     /// <p>The resource type.</p>
     pub fn resource_type(
         mut self,
@@ -144,6 +162,10 @@ impl NetworkRouteDestinationBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The resource type.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
+    }
     /// <p>The ID of the resource.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -153,6 +175,10 @@ impl NetworkRouteDestinationBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>The ID of the resource.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// Consumes the builder and constructs a [`NetworkRouteDestination`](crate::types::NetworkRouteDestination).
     pub fn build(self) -> crate::types::NetworkRouteDestination {

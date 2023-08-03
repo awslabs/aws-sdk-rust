@@ -47,6 +47,10 @@ impl ListFieldLevelEncryptionProfilesInputBuilder {
         self.marker = input;
         self
     }
+    /// <p>Use this when paginating results to indicate where to begin in your list of profiles. The results include profiles in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last profile on that page).</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// <p>The maximum number of field-level encryption profiles you want in the response body. </p>
     pub fn max_items(mut self, input: i32) -> Self {
         self.max_items = ::std::option::Option::Some(input);
@@ -56,6 +60,10 @@ impl ListFieldLevelEncryptionProfilesInputBuilder {
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_items = input;
         self
+    }
+    /// <p>The maximum number of field-level encryption profiles you want in the response body. </p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        &self.max_items
     }
     /// Consumes the builder and constructs a [`ListFieldLevelEncryptionProfilesInput`](crate::operation::list_field_level_encryption_profiles::ListFieldLevelEncryptionProfilesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_field_level_encryption_profiles::ListFieldLevelEncryptionProfilesInput, ::aws_smithy_http::operation::error::BuildError>{

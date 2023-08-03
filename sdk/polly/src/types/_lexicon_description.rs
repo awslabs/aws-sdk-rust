@@ -48,6 +48,10 @@ impl LexiconDescriptionBuilder {
         self.name = input;
         self
     }
+    /// <p>Name of the lexicon.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Provides lexicon metadata.</p>
     pub fn attributes(mut self, input: crate::types::LexiconAttributes) -> Self {
         self.attributes = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl LexiconDescriptionBuilder {
     ) -> Self {
         self.attributes = input;
         self
+    }
+    /// <p>Provides lexicon metadata.</p>
+    pub fn get_attributes(&self) -> &::std::option::Option<crate::types::LexiconAttributes> {
+        &self.attributes
     }
     /// Consumes the builder and constructs a [`LexiconDescription`](crate::types::LexiconDescription).
     pub fn build(self) -> crate::types::LexiconDescription {

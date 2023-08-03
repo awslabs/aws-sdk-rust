@@ -63,6 +63,10 @@ impl CreateTransitGatewayVpcAttachmentRequestOptionsBuilder {
         self.dns_support = input;
         self
     }
+    /// <p>Enable or disable DNS support. The default is <code>enable</code>.</p>
+    pub fn get_dns_support(&self) -> &::std::option::Option<crate::types::DnsSupportValue> {
+        &self.dns_support
+    }
     /// <p>Enable or disable IPv6 support. The default is <code>disable</code>.</p>
     pub fn ipv6_support(mut self, input: crate::types::Ipv6SupportValue) -> Self {
         self.ipv6_support = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl CreateTransitGatewayVpcAttachmentRequestOptionsBuilder {
     ) -> Self {
         self.ipv6_support = input;
         self
+    }
+    /// <p>Enable or disable IPv6 support. The default is <code>disable</code>.</p>
+    pub fn get_ipv6_support(&self) -> &::std::option::Option<crate::types::Ipv6SupportValue> {
+        &self.ipv6_support
     }
     /// <p>Enable or disable support for appliance mode. If enabled, a traffic flow between a source and destination uses the same Availability Zone for the VPC attachment for the lifetime of that flow. The default is <code>disable</code>.</p>
     pub fn appliance_mode_support(
@@ -91,6 +99,12 @@ impl CreateTransitGatewayVpcAttachmentRequestOptionsBuilder {
     ) -> Self {
         self.appliance_mode_support = input;
         self
+    }
+    /// <p>Enable or disable support for appliance mode. If enabled, a traffic flow between a source and destination uses the same Availability Zone for the VPC attachment for the lifetime of that flow. The default is <code>disable</code>.</p>
+    pub fn get_appliance_mode_support(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplianceModeSupportValue> {
+        &self.appliance_mode_support
     }
     /// Consumes the builder and constructs a [`CreateTransitGatewayVpcAttachmentRequestOptions`](crate::types::CreateTransitGatewayVpcAttachmentRequestOptions).
     pub fn build(self) -> crate::types::CreateTransitGatewayVpcAttachmentRequestOptions {

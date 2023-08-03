@@ -54,6 +54,11 @@ impl BatchPolicyBuilder {
         self.timeout_in_seconds = input;
         self
     }
+    /// <p>The amount of time, in seconds, to wait for the batch to complete. </p>
+    /// <p>If a batch times out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), they will be moved to the failed list and the batch status will be <code>Failed</code>. If the pending requests were failing for any other reason, the failed pending requests will be moved to the failed list and the batch status will be <code>TimedOut</code>. </p>
+    pub fn get_timeout_in_seconds(&self) -> &::std::option::Option<i64> {
+        &self.timeout_in_seconds
+    }
     /// <p>The number of active simulation jobs create as part of the batch that can be in an active state at the same time. </p>
     /// <p>Active states include: <code>Pending</code>,<code>Preparing</code>, <code>Running</code>, <code>Restarting</code>, <code>RunningFailed</code> and <code>Terminating</code>. All other states are terminal states. </p>
     pub fn max_concurrency(mut self, input: i32) -> Self {
@@ -65,6 +70,11 @@ impl BatchPolicyBuilder {
     pub fn set_max_concurrency(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_concurrency = input;
         self
+    }
+    /// <p>The number of active simulation jobs create as part of the batch that can be in an active state at the same time. </p>
+    /// <p>Active states include: <code>Pending</code>,<code>Preparing</code>, <code>Running</code>, <code>Restarting</code>, <code>RunningFailed</code> and <code>Terminating</code>. All other states are terminal states. </p>
+    pub fn get_max_concurrency(&self) -> &::std::option::Option<i32> {
+        &self.max_concurrency
     }
     /// Consumes the builder and constructs a [`BatchPolicy`](crate::types::BatchPolicy).
     pub fn build(self) -> crate::types::BatchPolicy {

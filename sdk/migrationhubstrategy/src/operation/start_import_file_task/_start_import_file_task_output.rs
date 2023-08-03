@@ -47,6 +47,10 @@ impl StartImportFileTaskOutputBuilder {
         self.id = input;
         self
     }
+    /// <p> The ID for a specific import task. The ID is unique within an AWS account. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

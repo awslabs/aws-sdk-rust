@@ -48,6 +48,10 @@ impl VirtualObjectBuilder {
         self.uri = input;
         self
     }
+    /// <p>The path to the Amazon S3 object. Must start with s3://</p>
+    pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.uri
+    }
     /// <p>The ETag of the Amazon S3 object.</p>
     pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.e_tag = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl VirtualObjectBuilder {
     pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.e_tag = input;
         self
+    }
+    /// <p>The ETag of the Amazon S3 object.</p>
+    pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.e_tag
     }
     /// Consumes the builder and constructs a [`VirtualObject`](crate::types::VirtualObject).
     pub fn build(self) -> crate::types::VirtualObject {

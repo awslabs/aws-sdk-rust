@@ -71,6 +71,12 @@ impl ListStageDevicesOutputBuilder {
         self.device_deployment_summaries = input;
         self
     }
+    /// <p>List of summaries of devices allocated to the stage.</p>
+    pub fn get_device_deployment_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceDeploymentSummary>> {
+        &self.device_deployment_summaries
+    }
     /// <p>The token to use when calling the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -80,6 +86,10 @@ impl ListStageDevicesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token to use when calling the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

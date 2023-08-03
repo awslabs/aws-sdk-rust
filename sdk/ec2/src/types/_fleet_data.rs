@@ -220,6 +220,10 @@ impl FleetDataBuilder {
         self.activity_status = input;
         self
     }
+    /// <p>The progress of the EC2 Fleet. If there is an error, the status is <code>error</code>. After all requests are placed, the status is <code>pending_fulfillment</code>. If the size of the EC2 Fleet is equal to or greater than its target capacity, the status is <code>fulfilled</code>. If the size of the EC2 Fleet is decreased, the status is <code>pending_termination</code> while instances are terminating.</p>
+    pub fn get_activity_status(&self) -> &::std::option::Option<crate::types::FleetActivityStatus> {
+        &self.activity_status
+    }
     /// <p>The creation date and time of the EC2 Fleet.</p>
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
@@ -233,6 +237,10 @@ impl FleetDataBuilder {
         self.create_time = input;
         self
     }
+    /// <p>The creation date and time of the EC2 Fleet.</p>
+    pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_time
+    }
     /// <p>The ID of the EC2 Fleet.</p>
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_id = ::std::option::Option::Some(input.into());
@@ -242,6 +250,10 @@ impl FleetDataBuilder {
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet_id = input;
         self
+    }
+    /// <p>The ID of the EC2 Fleet.</p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_id
     }
     /// <p>The state of the EC2 Fleet.</p>
     pub fn fleet_state(mut self, input: crate::types::FleetStateCode) -> Self {
@@ -256,6 +268,10 @@ impl FleetDataBuilder {
         self.fleet_state = input;
         self
     }
+    /// <p>The state of the EC2 Fleet.</p>
+    pub fn get_fleet_state(&self) -> &::std::option::Option<crate::types::FleetStateCode> {
+        &self.fleet_state
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     /// <p>Constraints: Maximum 64 ASCII characters</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -267,6 +283,11 @@ impl FleetDataBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
+    /// <p>Constraints: Maximum 64 ASCII characters</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// <p>Indicates whether running instances should be terminated if the target capacity of the EC2 Fleet is decreased below the current size of the EC2 Fleet.</p>
     /// <p>Supported only for fleets of type <code>maintain</code>.</p>
@@ -286,6 +307,13 @@ impl FleetDataBuilder {
         self.excess_capacity_termination_policy = input;
         self
     }
+    /// <p>Indicates whether running instances should be terminated if the target capacity of the EC2 Fleet is decreased below the current size of the EC2 Fleet.</p>
+    /// <p>Supported only for fleets of type <code>maintain</code>.</p>
+    pub fn get_excess_capacity_termination_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::FleetExcessCapacityTerminationPolicy> {
+        &self.excess_capacity_termination_policy
+    }
     /// <p>The number of units fulfilled by this request compared to the set target capacity.</p>
     pub fn fulfilled_capacity(mut self, input: f64) -> Self {
         self.fulfilled_capacity = ::std::option::Option::Some(input);
@@ -296,6 +324,10 @@ impl FleetDataBuilder {
         self.fulfilled_capacity = input;
         self
     }
+    /// <p>The number of units fulfilled by this request compared to the set target capacity.</p>
+    pub fn get_fulfilled_capacity(&self) -> &::std::option::Option<f64> {
+        &self.fulfilled_capacity
+    }
     /// <p>The number of units fulfilled by this request compared to the set target On-Demand capacity.</p>
     pub fn fulfilled_on_demand_capacity(mut self, input: f64) -> Self {
         self.fulfilled_on_demand_capacity = ::std::option::Option::Some(input);
@@ -305,6 +337,10 @@ impl FleetDataBuilder {
     pub fn set_fulfilled_on_demand_capacity(mut self, input: ::std::option::Option<f64>) -> Self {
         self.fulfilled_on_demand_capacity = input;
         self
+    }
+    /// <p>The number of units fulfilled by this request compared to the set target On-Demand capacity.</p>
+    pub fn get_fulfilled_on_demand_capacity(&self) -> &::std::option::Option<f64> {
+        &self.fulfilled_on_demand_capacity
     }
     /// Appends an item to `launch_template_configs`.
     ///
@@ -328,6 +364,12 @@ impl FleetDataBuilder {
         self.launch_template_configs = input;
         self
     }
+    /// <p>The launch template and overrides.</p>
+    pub fn get_launch_template_configs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetLaunchTemplateConfig>> {
+        &self.launch_template_configs
+    }
     /// <p>The number of units to request. You can choose to set the target capacity in terms of instances or a performance characteristic that is important to your application workload, such as vCPUs, memory, or I/O. If the request type is <code>maintain</code>, you can specify a target capacity of 0 and add capacity later.</p>
     pub fn target_capacity_specification(
         mut self,
@@ -344,6 +386,12 @@ impl FleetDataBuilder {
         self.target_capacity_specification = input;
         self
     }
+    /// <p>The number of units to request. You can choose to set the target capacity in terms of instances or a performance characteristic that is important to your application workload, such as vCPUs, memory, or I/O. If the request type is <code>maintain</code>, you can specify a target capacity of 0 and add capacity later.</p>
+    pub fn get_target_capacity_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::TargetCapacitySpecification> {
+        &self.target_capacity_specification
+    }
     /// <p>Indicates whether running instances should be terminated when the EC2 Fleet expires. </p>
     pub fn terminate_instances_with_expiration(mut self, input: bool) -> Self {
         self.terminate_instances_with_expiration = ::std::option::Option::Some(input);
@@ -357,6 +405,10 @@ impl FleetDataBuilder {
         self.terminate_instances_with_expiration = input;
         self
     }
+    /// <p>Indicates whether running instances should be terminated when the EC2 Fleet expires. </p>
+    pub fn get_terminate_instances_with_expiration(&self) -> &::std::option::Option<bool> {
+        &self.terminate_instances_with_expiration
+    }
     /// <p>The type of request. Indicates whether the EC2 Fleet only <code>requests</code> the target capacity, or also attempts to <code>maintain</code> it. If you request a certain target capacity, EC2 Fleet only places the required requests; it does not attempt to replenish instances if capacity is diminished, and it does not submit requests in alternative capacity pools if capacity is unavailable. To maintain a certain target capacity, EC2 Fleet places the required requests to meet this target capacity. It also automatically replenishes any interrupted Spot Instances. Default: <code>maintain</code>.</p>
     pub fn r#type(mut self, input: crate::types::FleetType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -366,6 +418,10 @@ impl FleetDataBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::FleetType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of request. Indicates whether the EC2 Fleet only <code>requests</code> the target capacity, or also attempts to <code>maintain</code> it. If you request a certain target capacity, EC2 Fleet only places the required requests; it does not attempt to replenish instances if capacity is diminished, and it does not submit requests in alternative capacity pools if capacity is unavailable. To maintain a certain target capacity, EC2 Fleet places the required requests to meet this target capacity. It also automatically replenishes any interrupted Spot Instances. Default: <code>maintain</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::FleetType> {
+        &self.r#type
     }
     /// <p>The start date and time of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The default is to start fulfilling the request immediately. </p>
     pub fn valid_from(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -380,6 +436,10 @@ impl FleetDataBuilder {
         self.valid_from = input;
         self
     }
+    /// <p>The start date and time of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The default is to start fulfilling the request immediately. </p>
+    pub fn get_valid_from(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.valid_from
+    }
     /// <p>The end date and time of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point, no new instance requests are placed or able to fulfill the request. The default end date is 7 days from the current date. </p>
     pub fn valid_until(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.valid_until = ::std::option::Option::Some(input);
@@ -393,6 +453,10 @@ impl FleetDataBuilder {
         self.valid_until = input;
         self
     }
+    /// <p>The end date and time of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point, no new instance requests are placed or able to fulfill the request. The default end date is 7 days from the current date. </p>
+    pub fn get_valid_until(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.valid_until
+    }
     /// <p>Indicates whether EC2 Fleet should replace unhealthy Spot Instances. Supported only for fleets of type <code>maintain</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#ec2-fleet-health-checks">EC2 Fleet health checks</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn replace_unhealthy_instances(mut self, input: bool) -> Self {
         self.replace_unhealthy_instances = ::std::option::Option::Some(input);
@@ -402,6 +466,10 @@ impl FleetDataBuilder {
     pub fn set_replace_unhealthy_instances(mut self, input: ::std::option::Option<bool>) -> Self {
         self.replace_unhealthy_instances = input;
         self
+    }
+    /// <p>Indicates whether EC2 Fleet should replace unhealthy Spot Instances. Supported only for fleets of type <code>maintain</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#ec2-fleet-health-checks">EC2 Fleet health checks</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn get_replace_unhealthy_instances(&self) -> &::std::option::Option<bool> {
+        &self.replace_unhealthy_instances
     }
     /// <p>The configuration of Spot Instances in an EC2 Fleet.</p>
     pub fn spot_options(mut self, input: crate::types::SpotOptions) -> Self {
@@ -416,6 +484,10 @@ impl FleetDataBuilder {
         self.spot_options = input;
         self
     }
+    /// <p>The configuration of Spot Instances in an EC2 Fleet.</p>
+    pub fn get_spot_options(&self) -> &::std::option::Option<crate::types::SpotOptions> {
+        &self.spot_options
+    }
     /// <p>The allocation strategy of On-Demand Instances in an EC2 Fleet.</p>
     pub fn on_demand_options(mut self, input: crate::types::OnDemandOptions) -> Self {
         self.on_demand_options = ::std::option::Option::Some(input);
@@ -428,6 +500,10 @@ impl FleetDataBuilder {
     ) -> Self {
         self.on_demand_options = input;
         self
+    }
+    /// <p>The allocation strategy of On-Demand Instances in an EC2 Fleet.</p>
+    pub fn get_on_demand_options(&self) -> &::std::option::Option<crate::types::OnDemandOptions> {
+        &self.on_demand_options
     }
     /// Appends an item to `tags`.
     ///
@@ -448,6 +524,10 @@ impl FleetDataBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags for an EC2 Fleet resource.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Appends an item to `errors`.
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
@@ -466,6 +546,12 @@ impl FleetDataBuilder {
     ) -> Self {
         self.errors = input;
         self
+    }
+    /// <p>Information about the instances that could not be launched by the fleet. Valid only when <b>Type</b> is set to <code>instant</code>.</p>
+    pub fn get_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DescribeFleetError>> {
+        &self.errors
     }
     /// Appends an item to `instances`.
     ///
@@ -486,6 +572,12 @@ impl FleetDataBuilder {
         self.instances = input;
         self
     }
+    /// <p>Information about the instances that were launched by the fleet. Valid only when <b>Type</b> is set to <code>instant</code>.</p>
+    pub fn get_instances(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DescribeFleetsInstances>> {
+        &self.instances
+    }
     /// <p>Reserved.</p>
     pub fn context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.context = ::std::option::Option::Some(input.into());
@@ -495,6 +587,10 @@ impl FleetDataBuilder {
     pub fn set_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.context = input;
         self
+    }
+    /// <p>Reserved.</p>
+    pub fn get_context(&self) -> &::std::option::Option<::std::string::String> {
+        &self.context
     }
     /// Consumes the builder and constructs a [`FleetData`](crate::types::FleetData).
     pub fn build(self) -> crate::types::FleetData {

@@ -51,6 +51,11 @@ impl ExportJournalToS3OutputBuilder {
         self.export_id = input;
         self
     }
+    /// <p>The UUID (represented in Base62-encoded text) that QLDB assigns to each journal export job.</p>
+    /// <p>To describe your export request and check the status of the job, you can use <code>ExportId</code> to call <code>DescribeJournalS3Export</code>.</p>
+    pub fn get_export_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.export_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

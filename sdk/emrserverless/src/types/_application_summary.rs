@@ -112,6 +112,10 @@ impl ApplicationSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the application.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the application.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -122,6 +126,10 @@ impl ApplicationSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the application.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The ARN of the application.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -131,6 +139,10 @@ impl ApplicationSummaryBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The ARN of the application.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The Amazon EMR release associated with the application.</p>
     pub fn release_label(
@@ -148,6 +160,10 @@ impl ApplicationSummaryBuilder {
         self.release_label = input;
         self
     }
+    /// <p>The Amazon EMR release associated with the application.</p>
+    pub fn get_release_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.release_label
+    }
     /// <p>The type of application, such as Spark or Hive.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -157,6 +173,10 @@ impl ApplicationSummaryBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of application, such as Spark or Hive.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// <p>The state of the application.</p>
     pub fn state(mut self, input: crate::types::ApplicationState) -> Self {
@@ -170,6 +190,10 @@ impl ApplicationSummaryBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the application.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ApplicationState> {
+        &self.state
     }
     /// <p>The state details of the application.</p>
     pub fn state_details(
@@ -187,6 +211,10 @@ impl ApplicationSummaryBuilder {
         self.state_details = input;
         self
     }
+    /// <p>The state details of the application.</p>
+    pub fn get_state_details(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_details
+    }
     /// <p>The date and time when the application was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -199,6 +227,10 @@ impl ApplicationSummaryBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The date and time when the application was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// <p>The date and time when the application was last updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -213,6 +245,10 @@ impl ApplicationSummaryBuilder {
         self.updated_at = input;
         self
     }
+    /// <p>The date and time when the application was last updated.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
+    }
     /// <p>The CPU architecture of an application.</p>
     pub fn architecture(mut self, input: crate::types::Architecture) -> Self {
         self.architecture = ::std::option::Option::Some(input);
@@ -225,6 +261,10 @@ impl ApplicationSummaryBuilder {
     ) -> Self {
         self.architecture = input;
         self
+    }
+    /// <p>The CPU architecture of an application.</p>
+    pub fn get_architecture(&self) -> &::std::option::Option<crate::types::Architecture> {
+        &self.architecture
     }
     /// Consumes the builder and constructs a [`ApplicationSummary`](crate::types::ApplicationSummary).
     pub fn build(self) -> crate::types::ApplicationSummary {

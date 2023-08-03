@@ -63,6 +63,10 @@ impl GetWorkingLocationOutputBuilder {
         self.s3_uri = input;
         self
     }
+    /// <p>Returns the Amazon S3 URI for the working location.</p>
+    pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_uri
+    }
     /// <p>Returns the Amazon S3 Path for the working location.</p>
     pub fn s3_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_path = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl GetWorkingLocationOutputBuilder {
         self.s3_path = input;
         self
     }
+    /// <p>Returns the Amazon S3 Path for the working location.</p>
+    pub fn get_s3_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_path
+    }
     /// <p>Returns the Amazon S3 bucket name for the working location.</p>
     pub fn s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl GetWorkingLocationOutputBuilder {
     pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket = input;
         self
+    }
+    /// <p>Returns the Amazon S3 bucket name for the working location.</p>
+    pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

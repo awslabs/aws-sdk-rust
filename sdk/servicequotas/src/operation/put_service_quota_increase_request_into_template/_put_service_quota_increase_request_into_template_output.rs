@@ -56,6 +56,12 @@ impl PutServiceQuotaIncreaseRequestIntoTemplateOutputBuilder {
         self.service_quota_increase_request_in_template = input;
         self
     }
+    /// <p>Information about the quota increase request.</p>
+    pub fn get_service_quota_increase_request_in_template(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServiceQuotaIncreaseRequestInTemplate> {
+        &self.service_quota_increase_request_in_template
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -56,6 +56,10 @@ impl BatchPutMessageErrorEntryBuilder {
         self.message_id = input;
         self
     }
+    /// <p>The ID of the message that caused the error. (See the value corresponding to the <code>"messageId"</code> key in the <code>"message"</code> object.)</p>
+    pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message_id
+    }
     /// <p>The error code.</p>
     pub fn error_code(mut self, input: crate::types::ErrorCode) -> Self {
         self.error_code = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl BatchPutMessageErrorEntryBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::ErrorCode>) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>The error code.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<crate::types::ErrorCode> {
+        &self.error_code
     }
     /// <p>A message that describes the error.</p>
     pub fn error_message(
@@ -81,6 +89,10 @@ impl BatchPutMessageErrorEntryBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>A message that describes the error.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`BatchPutMessageErrorEntry`](crate::types::BatchPutMessageErrorEntry).
     pub fn build(self) -> crate::types::BatchPutMessageErrorEntry {

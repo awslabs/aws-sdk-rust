@@ -83,6 +83,10 @@ impl CreateDatasetInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name for the dataset.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The ARN of the schema to associate with the dataset. The schema defines the dataset fields.</p>
     pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_arn = ::std::option::Option::Some(input.into());
@@ -92,6 +96,10 @@ impl CreateDatasetInputBuilder {
     pub fn set_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_arn = input;
         self
+    }
+    /// <p>The ARN of the schema to associate with the dataset. The schema defines the dataset fields.</p>
+    pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group to add the dataset to.</p>
     pub fn dataset_group_arn(
@@ -108,6 +116,10 @@ impl CreateDatasetInputBuilder {
     ) -> Self {
         self.dataset_group_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the dataset group to add the dataset to.</p>
+    pub fn get_dataset_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_group_arn
     }
     /// <p>The type of dataset.</p>
     /// <p>One of the following (case insensitive) values:</p>
@@ -131,6 +143,16 @@ impl CreateDatasetInputBuilder {
         self.dataset_type = input;
         self
     }
+    /// <p>The type of dataset.</p>
+    /// <p>One of the following (case insensitive) values:</p>
+    /// <ul>
+    /// <li> <p>Interactions</p> </li>
+    /// <li> <p>Items</p> </li>
+    /// <li> <p>Users</p> </li>
+    /// </ul>
+    pub fn get_dataset_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_type
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -149,6 +171,10 @@ impl CreateDatasetInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the dataset.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateDatasetInput`](crate::operation::create_dataset::CreateDatasetInput).
     pub fn build(

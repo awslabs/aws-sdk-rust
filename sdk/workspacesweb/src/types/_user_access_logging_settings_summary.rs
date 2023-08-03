@@ -54,6 +54,12 @@ impl UserAccessLoggingSettingsSummaryBuilder {
         self.user_access_logging_settings_arn = input;
         self
     }
+    /// <p>The ARN of the user access logging settings.</p>
+    pub fn get_user_access_logging_settings_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.user_access_logging_settings_arn
+    }
     /// <p>The ARN of the Kinesis stream.</p>
     pub fn kinesis_stream_arn(
         mut self,
@@ -69,6 +75,10 @@ impl UserAccessLoggingSettingsSummaryBuilder {
     ) -> Self {
         self.kinesis_stream_arn = input;
         self
+    }
+    /// <p>The ARN of the Kinesis stream.</p>
+    pub fn get_kinesis_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kinesis_stream_arn
     }
     /// Consumes the builder and constructs a [`UserAccessLoggingSettingsSummary`](crate::types::UserAccessLoggingSettingsSummary).
     pub fn build(self) -> crate::types::UserAccessLoggingSettingsSummary {

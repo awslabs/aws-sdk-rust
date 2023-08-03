@@ -49,6 +49,10 @@ impl PutPermissionPolicyInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the RuleGroup to which you want to attach the policy.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// <p>The policy to attach to the specified RuleGroup.</p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl PutPermissionPolicyInputBuilder {
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy = input;
         self
+    }
+    /// <p>The policy to attach to the specified RuleGroup.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy
     }
     /// Consumes the builder and constructs a [`PutPermissionPolicyInput`](crate::operation::put_permission_policy::PutPermissionPolicyInput).
     pub fn build(

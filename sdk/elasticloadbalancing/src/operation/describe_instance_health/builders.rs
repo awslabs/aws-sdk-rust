@@ -36,6 +36,13 @@ impl DescribeInstanceHealthFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeInstanceHealth as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_instance_health::builders::DescribeInstanceHealthInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl DescribeInstanceHealthFluentBuilder {
         self.inner = self.inner.set_load_balancer_name(input);
         self
     }
+    /// <p>The name of the load balancer.</p>
+    pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_load_balancer_name()
+    }
     /// Appends an item to `Instances`.
     ///
     /// To override the contents of this collection use [`set_instances`](Self::set_instances).
@@ -148,5 +159,9 @@ impl DescribeInstanceHealthFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_instances(input);
         self
+    }
+    /// <p>The IDs of the instances.</p>
+    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Instance>> {
+        self.inner.get_instances()
     }
 }

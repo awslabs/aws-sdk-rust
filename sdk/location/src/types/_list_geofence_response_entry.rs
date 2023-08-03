@@ -114,6 +114,10 @@ impl ListGeofenceResponseEntryBuilder {
         self.geofence_id = input;
         self
     }
+    /// <p>The geofence identifier.</p>
+    pub fn get_geofence_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.geofence_id
+    }
     /// <p>Contains the geofence geometry details describing a polygon or a circle.</p>
     pub fn geometry(mut self, input: crate::types::GeofenceGeometry) -> Self {
         self.geometry = ::std::option::Option::Some(input);
@@ -126,6 +130,10 @@ impl ListGeofenceResponseEntryBuilder {
     ) -> Self {
         self.geometry = input;
         self
+    }
+    /// <p>Contains the geofence geometry details describing a polygon or a circle.</p>
+    pub fn get_geometry(&self) -> &::std::option::Option<crate::types::GeofenceGeometry> {
+        &self.geometry
     }
     /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p>
     /// <ul>
@@ -151,6 +159,17 @@ impl ListGeofenceResponseEntryBuilder {
         self.status = input;
         self
     }
+    /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> — The geofence has been indexed by the system. </p> </li>
+    /// <li> <p> <code>PENDING</code> — The geofence is being processed by the system.</p> </li>
+    /// <li> <p> <code>FAILED</code> — The geofence failed to be indexed by the system.</p> </li>
+    /// <li> <p> <code>DELETED</code> — The geofence has been deleted from the system index.</p> </li>
+    /// <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>The timestamp for when the geofence was stored in a geofence collection in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
@@ -164,6 +183,10 @@ impl ListGeofenceResponseEntryBuilder {
         self.create_time = input;
         self
     }
+    /// <p>The timestamp for when the geofence was stored in a geofence collection in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
+    pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_time
+    }
     /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
@@ -176,6 +199,10 @@ impl ListGeofenceResponseEntryBuilder {
     ) -> Self {
         self.update_time = input;
         self
+    }
+    /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
+    pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_time
     }
     /// Adds a key-value pair to `geofence_properties`.
     ///
@@ -203,6 +230,15 @@ impl ListGeofenceResponseEntryBuilder {
     ) -> Self {
         self.geofence_properties = input;
         self
+    }
+    /// <p>User defined properties of the geofence. A property is a key-value pair stored with the geofence and added to any geofence event triggered with that geofence.</p>
+    /// <p>Format: <code>"key" : "value"</code> </p>
+    pub fn get_geofence_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.geofence_properties
     }
     /// Consumes the builder and constructs a [`ListGeofenceResponseEntry`](crate::types::ListGeofenceResponseEntry).
     pub fn build(self) -> crate::types::ListGeofenceResponseEntry {

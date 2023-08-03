@@ -54,6 +54,10 @@ impl GlobalNodeGroupBuilder {
         self.global_node_group_id = input;
         self
     }
+    /// <p>The name of the global node group</p>
+    pub fn get_global_node_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_node_group_id
+    }
     /// <p>The keyspace for this node group</p>
     pub fn slots(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.slots = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl GlobalNodeGroupBuilder {
     pub fn set_slots(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.slots = input;
         self
+    }
+    /// <p>The keyspace for this node group</p>
+    pub fn get_slots(&self) -> &::std::option::Option<::std::string::String> {
+        &self.slots
     }
     /// Consumes the builder and constructs a [`GlobalNodeGroup`](crate::types::GlobalNodeGroup).
     pub fn build(self) -> crate::types::GlobalNodeGroup {

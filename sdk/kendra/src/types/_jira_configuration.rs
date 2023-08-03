@@ -192,6 +192,10 @@ impl JiraConfigurationBuilder {
         self.jira_account_url = input;
         self
     }
+    /// <p>The URL of the Jira account. For example, <i>company.atlassian.net</i>.</p>
+    pub fn get_jira_account_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.jira_account_url
+    }
     /// <p>The Amazon Resource Name (ARN) of a secret in Secrets Manager contains the key-value pairs required to connect to your Jira data source. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
     /// <li> <p>jiraId—The Jira user name or email.</p> </li>
@@ -210,6 +214,14 @@ impl JiraConfigurationBuilder {
         self.secret_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of a secret in Secrets Manager contains the key-value pairs required to connect to your Jira data source. The secret must contain a JSON structure with the following keys:</p>
+    /// <ul>
+    /// <li> <p>jiraId—The Jira user name or email.</p> </li>
+    /// <li> <p>jiraCredentials—The Jira API token. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html">Using a Jira data source</a>.</p> </li>
+    /// </ul>
+    pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_arn
+    }
     /// <p> <code>TRUE</code> to use the Jira change log to determine which documents require updating in the index. Depending on the change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in Jira.</p>
     pub fn use_change_log(mut self, input: bool) -> Self {
         self.use_change_log = ::std::option::Option::Some(input);
@@ -219,6 +231,10 @@ impl JiraConfigurationBuilder {
     pub fn set_use_change_log(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_change_log = input;
         self
+    }
+    /// <p> <code>TRUE</code> to use the Jira change log to determine which documents require updating in the index. Depending on the change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in Jira.</p>
+    pub fn get_use_change_log(&self) -> &::std::option::Option<bool> {
+        &self.use_change_log
     }
     /// Appends an item to `project`.
     ///
@@ -239,6 +255,10 @@ impl JiraConfigurationBuilder {
         self.project = input;
         self
     }
+    /// <p>Specify which projects to crawl in your Jira data source. You can specify one or more Jira project IDs.</p>
+    pub fn get_project(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.project
+    }
     /// Appends an item to `issue_type`.
     ///
     /// To override the contents of this collection use [`set_issue_type`](Self::set_issue_type).
@@ -257,6 +277,10 @@ impl JiraConfigurationBuilder {
     ) -> Self {
         self.issue_type = input;
         self
+    }
+    /// <p>Specify which issue types to crawl in your Jira data source. You can specify one or more of these options to crawl.</p>
+    pub fn get_issue_type(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.issue_type
     }
     /// Appends an item to `status`.
     ///
@@ -277,6 +301,10 @@ impl JiraConfigurationBuilder {
         self.status = input;
         self
     }
+    /// <p>Specify which statuses to crawl in your Jira data source. You can specify one or more of these options to crawl.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.status
+    }
     /// Appends an item to `issue_sub_entity_filter`.
     ///
     /// To override the contents of this collection use [`set_issue_sub_entity_filter`](Self::set_issue_sub_entity_filter).
@@ -295,6 +323,12 @@ impl JiraConfigurationBuilder {
     ) -> Self {
         self.issue_sub_entity_filter = input;
         self
+    }
+    /// <p>Specify whether to crawl comments, attachments, and work logs. You can specify one or more of these options.</p>
+    pub fn get_issue_sub_entity_filter(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IssueSubEntity>> {
+        &self.issue_sub_entity_filter
     }
     /// Appends an item to `attachment_field_mappings`.
     ///
@@ -318,6 +352,12 @@ impl JiraConfigurationBuilder {
         self.attachment_field_mappings = input;
         self
     }
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Jira attachments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+    pub fn get_attachment_field_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>> {
+        &self.attachment_field_mappings
+    }
     /// Appends an item to `comment_field_mappings`.
     ///
     /// To override the contents of this collection use [`set_comment_field_mappings`](Self::set_comment_field_mappings).
@@ -339,6 +379,12 @@ impl JiraConfigurationBuilder {
     ) -> Self {
         self.comment_field_mappings = input;
         self
+    }
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Jira comments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+    pub fn get_comment_field_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>> {
+        &self.comment_field_mappings
     }
     /// Appends an item to `issue_field_mappings`.
     ///
@@ -362,6 +408,12 @@ impl JiraConfigurationBuilder {
         self.issue_field_mappings = input;
         self
     }
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Jira issues to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+    pub fn get_issue_field_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>> {
+        &self.issue_field_mappings
+    }
     /// Appends an item to `project_field_mappings`.
     ///
     /// To override the contents of this collection use [`set_project_field_mappings`](Self::set_project_field_mappings).
@@ -383,6 +435,12 @@ impl JiraConfigurationBuilder {
     ) -> Self {
         self.project_field_mappings = input;
         self
+    }
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Jira projects to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+    pub fn get_project_field_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>> {
+        &self.project_field_mappings
     }
     /// Appends an item to `work_log_field_mappings`.
     ///
@@ -406,6 +464,12 @@ impl JiraConfigurationBuilder {
         self.work_log_field_mappings = input;
         self
     }
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or field names of Jira work logs to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Jira fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping data source fields</a>. The Jira data source field names must exist in your Jira custom metadata.</p>
+    pub fn get_work_log_field_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>> {
+        &self.work_log_field_mappings
+    }
     /// Appends an item to `inclusion_patterns`.
     ///
     /// To override the contents of this collection use [`set_inclusion_patterns`](Self::set_inclusion_patterns).
@@ -427,6 +491,12 @@ impl JiraConfigurationBuilder {
     ) -> Self {
         self.inclusion_patterns = input;
         self
+    }
+    /// <p>A list of regular expression patterns to include certain file paths, file names, and file types in your Jira data source. Files that match the patterns are included in the index. Files that don't match the patterns are excluded from the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+    pub fn get_inclusion_patterns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.inclusion_patterns
     }
     /// Appends an item to `exclusion_patterns`.
     ///
@@ -450,6 +520,12 @@ impl JiraConfigurationBuilder {
         self.exclusion_patterns = input;
         self
     }
+    /// <p>A list of regular expression patterns to exclude certain file paths, file names, and file types in your Jira data source. Files that match the patterns are excluded from the index. Files that don’t match the patterns are included in the index. If a file matches both an inclusion pattern and an exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
+    pub fn get_exclusion_patterns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.exclusion_patterns
+    }
     /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Jira. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
     pub fn vpc_configuration(mut self, input: crate::types::DataSourceVpcConfiguration) -> Self {
         self.vpc_configuration = ::std::option::Option::Some(input);
@@ -462,6 +538,12 @@ impl JiraConfigurationBuilder {
     ) -> Self {
         self.vpc_configuration = input;
         self
+    }
+    /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Jira. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
+    pub fn get_vpc_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataSourceVpcConfiguration> {
+        &self.vpc_configuration
     }
     /// Consumes the builder and constructs a [`JiraConfiguration`](crate::types::JiraConfiguration).
     pub fn build(self) -> crate::types::JiraConfiguration {

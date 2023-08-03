@@ -36,6 +36,10 @@ impl GetGeofenceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetGeofence as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_geofence::builders::GetGeofenceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl GetGeofenceFluentBuilder {
         self.inner = self.inner.set_collection_name(input);
         self
     }
+    /// <p>The geofence collection storing the target geofence.</p>
+    pub fn get_collection_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_collection_name()
+    }
     /// <p>The geofence you're retrieving details for.</p>
     pub fn geofence_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.geofence_id(input.into());
@@ -133,5 +141,9 @@ impl GetGeofenceFluentBuilder {
     pub fn set_geofence_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_geofence_id(input);
         self
+    }
+    /// <p>The geofence you're retrieving details for.</p>
+    pub fn get_geofence_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_geofence_id()
     }
 }

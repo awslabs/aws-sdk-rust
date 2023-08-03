@@ -41,6 +41,10 @@ impl StopSnomedctInferenceJobInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p> The job id of the asynchronous InferSNOMEDCT job to be stopped. </p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// Consumes the builder and constructs a [`StopSnomedctInferenceJobInput`](crate::operation::stop_snomedct_inference_job::StopSnomedctInferenceJobInput).
     pub fn build(
         self,

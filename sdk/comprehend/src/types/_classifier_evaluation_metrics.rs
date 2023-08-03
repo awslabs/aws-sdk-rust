@@ -96,6 +96,10 @@ impl ClassifierEvaluationMetricsBuilder {
         self.accuracy = input;
         self
     }
+    /// <p>The fraction of the labels that were correct recognized. It is computed by dividing the number of labels in the test documents that were correctly recognized by the total number of labels in the test documents.</p>
+    pub fn get_accuracy(&self) -> &::std::option::Option<f64> {
+        &self.accuracy
+    }
     /// <p>A measure of the usefulness of the classifier results in the test data. High precision means that the classifier returned substantially more relevant results than irrelevant ones.</p>
     pub fn precision(mut self, input: f64) -> Self {
         self.precision = ::std::option::Option::Some(input);
@@ -105,6 +109,10 @@ impl ClassifierEvaluationMetricsBuilder {
     pub fn set_precision(mut self, input: ::std::option::Option<f64>) -> Self {
         self.precision = input;
         self
+    }
+    /// <p>A measure of the usefulness of the classifier results in the test data. High precision means that the classifier returned substantially more relevant results than irrelevant ones.</p>
+    pub fn get_precision(&self) -> &::std::option::Option<f64> {
+        &self.precision
     }
     /// <p>A measure of how complete the classifier results are for the test data. High recall means that the classifier returned most of the relevant results. </p>
     pub fn recall(mut self, input: f64) -> Self {
@@ -116,6 +124,10 @@ impl ClassifierEvaluationMetricsBuilder {
         self.recall = input;
         self
     }
+    /// <p>A measure of how complete the classifier results are for the test data. High recall means that the classifier returned most of the relevant results. </p>
+    pub fn get_recall(&self) -> &::std::option::Option<f64> {
+        &self.recall
+    }
     /// <p>A measure of how accurate the classifier results are for the test data. It is derived from the <code>Precision</code> and <code>Recall</code> values. The <code>F1Score</code> is the harmonic average of the two scores. The highest score is 1, and the worst score is 0. </p>
     pub fn f1_score(mut self, input: f64) -> Self {
         self.f1_score = ::std::option::Option::Some(input);
@@ -125,6 +137,10 @@ impl ClassifierEvaluationMetricsBuilder {
     pub fn set_f1_score(mut self, input: ::std::option::Option<f64>) -> Self {
         self.f1_score = input;
         self
+    }
+    /// <p>A measure of how accurate the classifier results are for the test data. It is derived from the <code>Precision</code> and <code>Recall</code> values. The <code>F1Score</code> is the harmonic average of the two scores. The highest score is 1, and the worst score is 0. </p>
+    pub fn get_f1_score(&self) -> &::std::option::Option<f64> {
+        &self.f1_score
     }
     /// <p>A measure of the usefulness of the recognizer results in the test data. High precision means that the recognizer returned substantially more relevant results than irrelevant ones. Unlike the Precision metric which comes from averaging the precision of all available labels, this is based on the overall score of all precision scores added together.</p>
     pub fn micro_precision(mut self, input: f64) -> Self {
@@ -136,6 +152,10 @@ impl ClassifierEvaluationMetricsBuilder {
         self.micro_precision = input;
         self
     }
+    /// <p>A measure of the usefulness of the recognizer results in the test data. High precision means that the recognizer returned substantially more relevant results than irrelevant ones. Unlike the Precision metric which comes from averaging the precision of all available labels, this is based on the overall score of all precision scores added together.</p>
+    pub fn get_micro_precision(&self) -> &::std::option::Option<f64> {
+        &self.micro_precision
+    }
     /// <p>A measure of how complete the classifier results are for the test data. High recall means that the classifier returned most of the relevant results. Specifically, this indicates how many of the correct categories in the text that the model can predict. It is a percentage of correct categories in the text that can found. Instead of averaging the recall scores of all labels (as with Recall), micro Recall is based on the overall score of all recall scores added together.</p>
     pub fn micro_recall(mut self, input: f64) -> Self {
         self.micro_recall = ::std::option::Option::Some(input);
@@ -145,6 +165,10 @@ impl ClassifierEvaluationMetricsBuilder {
     pub fn set_micro_recall(mut self, input: ::std::option::Option<f64>) -> Self {
         self.micro_recall = input;
         self
+    }
+    /// <p>A measure of how complete the classifier results are for the test data. High recall means that the classifier returned most of the relevant results. Specifically, this indicates how many of the correct categories in the text that the model can predict. It is a percentage of correct categories in the text that can found. Instead of averaging the recall scores of all labels (as with Recall), micro Recall is based on the overall score of all recall scores added together.</p>
+    pub fn get_micro_recall(&self) -> &::std::option::Option<f64> {
+        &self.micro_recall
     }
     /// <p>A measure of how accurate the classifier results are for the test data. It is a combination of the <code>Micro Precision</code> and <code>Micro Recall</code> values. The <code>Micro F1Score</code> is the harmonic mean of the two scores. The highest score is 1, and the worst score is 0.</p>
     pub fn micro_f1_score(mut self, input: f64) -> Self {
@@ -156,6 +180,10 @@ impl ClassifierEvaluationMetricsBuilder {
         self.micro_f1_score = input;
         self
     }
+    /// <p>A measure of how accurate the classifier results are for the test data. It is a combination of the <code>Micro Precision</code> and <code>Micro Recall</code> values. The <code>Micro F1Score</code> is the harmonic mean of the two scores. The highest score is 1, and the worst score is 0.</p>
+    pub fn get_micro_f1_score(&self) -> &::std::option::Option<f64> {
+        &self.micro_f1_score
+    }
     /// <p>Indicates the fraction of labels that are incorrectly predicted. Also seen as the fraction of wrong labels compared to the total number of labels. Scores closer to zero are better.</p>
     pub fn hamming_loss(mut self, input: f64) -> Self {
         self.hamming_loss = ::std::option::Option::Some(input);
@@ -165,6 +193,10 @@ impl ClassifierEvaluationMetricsBuilder {
     pub fn set_hamming_loss(mut self, input: ::std::option::Option<f64>) -> Self {
         self.hamming_loss = input;
         self
+    }
+    /// <p>Indicates the fraction of labels that are incorrectly predicted. Also seen as the fraction of wrong labels compared to the total number of labels. Scores closer to zero are better.</p>
+    pub fn get_hamming_loss(&self) -> &::std::option::Option<f64> {
+        &self.hamming_loss
     }
     /// Consumes the builder and constructs a [`ClassifierEvaluationMetrics`](crate::types::ClassifierEvaluationMetrics).
     pub fn build(self) -> crate::types::ClassifierEvaluationMetrics {

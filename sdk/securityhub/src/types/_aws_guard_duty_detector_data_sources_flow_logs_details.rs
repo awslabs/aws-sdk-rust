@@ -41,6 +41,10 @@ impl AwsGuardDutyDetectorDataSourcesFlowLogsDetailsBuilder {
         self.status = input;
         self
     }
+    /// <p> Describes whether VPC Flow Logs are activated as a data source for the detector. </p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// Consumes the builder and constructs a [`AwsGuardDutyDetectorDataSourcesFlowLogsDetails`](crate::types::AwsGuardDutyDetectorDataSourcesFlowLogsDetails).
     pub fn build(self) -> crate::types::AwsGuardDutyDetectorDataSourcesFlowLogsDetails {
         crate::types::AwsGuardDutyDetectorDataSourcesFlowLogsDetails {

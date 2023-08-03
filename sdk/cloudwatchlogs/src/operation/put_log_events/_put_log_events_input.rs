@@ -73,6 +73,10 @@ impl PutLogEventsInputBuilder {
         self.log_group_name = input;
         self
     }
+    /// <p>The name of the log group.</p>
+    pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group_name
+    }
     /// <p>The name of the log stream.</p>
     pub fn log_stream_name(
         mut self,
@@ -88,6 +92,10 @@ impl PutLogEventsInputBuilder {
     ) -> Self {
         self.log_stream_name = input;
         self
+    }
+    /// <p>The name of the log stream.</p>
+    pub fn get_log_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_stream_name
     }
     /// Appends an item to `log_events`.
     ///
@@ -108,6 +116,12 @@ impl PutLogEventsInputBuilder {
         self.log_events = input;
         self
     }
+    /// <p>The log events.</p>
+    pub fn get_log_events(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputLogEvent>> {
+        &self.log_events
+    }
     /// <p>The sequence token obtained from the response of the previous <code>PutLogEvents</code> call.</p> <important>
     /// <p>The <code>sequenceToken</code> parameter is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are now accepted and never return <code>InvalidSequenceTokenException</code> or <code>DataAlreadyAcceptedException</code> even if the sequence token is not valid.</p>
     /// </important>
@@ -127,6 +141,12 @@ impl PutLogEventsInputBuilder {
     ) -> Self {
         self.sequence_token = input;
         self
+    }
+    /// <p>The sequence token obtained from the response of the previous <code>PutLogEvents</code> call.</p> <important>
+    /// <p>The <code>sequenceToken</code> parameter is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are now accepted and never return <code>InvalidSequenceTokenException</code> or <code>DataAlreadyAcceptedException</code> even if the sequence token is not valid.</p>
+    /// </important>
+    pub fn get_sequence_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sequence_token
     }
     /// Consumes the builder and constructs a [`PutLogEventsInput`](crate::operation::put_log_events::PutLogEventsInput).
     pub fn build(

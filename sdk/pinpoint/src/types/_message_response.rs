@@ -86,6 +86,10 @@ impl MessageResponseBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The unique identifier for the application that was used to send the message.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// Adds a key-value pair to `endpoint_result`.
     ///
     /// To override the contents of this collection use [`set_endpoint_result`](Self::set_endpoint_result).
@@ -111,6 +115,14 @@ impl MessageResponseBuilder {
         self.endpoint_result = input;
         self
     }
+    /// <p>A map that contains a multipart response for each address that the message was sent to. In the map, the endpoint ID is the key and the result is the value.</p>
+    pub fn get_endpoint_result(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::EndpointMessageResult>,
+    > {
+        &self.endpoint_result
+    }
     /// <p>The identifier for the original request that the message was delivered for.</p>
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_id = ::std::option::Option::Some(input.into());
@@ -120,6 +132,10 @@ impl MessageResponseBuilder {
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_id = input;
         self
+    }
+    /// <p>The identifier for the original request that the message was delivered for.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
     }
     /// Adds a key-value pair to `result`.
     ///
@@ -145,6 +161,14 @@ impl MessageResponseBuilder {
     ) -> Self {
         self.result = input;
         self
+    }
+    /// <p>A map that contains a multipart response for each address (email address, phone number, or push notification token) that the message was sent to. In the map, the address is the key and the result is the value.</p>
+    pub fn get_result(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::MessageResult>,
+    > {
+        &self.result
     }
     /// Consumes the builder and constructs a [`MessageResponse`](crate::types::MessageResponse).
     pub fn build(self) -> crate::types::MessageResponse {

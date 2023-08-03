@@ -47,6 +47,10 @@ impl GetRateBasedRuleManagedKeysInputBuilder {
         self.rule_id = input;
         self
     }
+    /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> for which you want to get a list of <code>ManagedKeys</code>. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
+    pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_id
+    }
     /// <p>A null value and not currently used. Do not include this in your request.</p>
     pub fn next_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_marker = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl GetRateBasedRuleManagedKeysInputBuilder {
     pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_marker = input;
         self
+    }
+    /// <p>A null value and not currently used. Do not include this in your request.</p>
+    pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_marker
     }
     /// Consumes the builder and constructs a [`GetRateBasedRuleManagedKeysInput`](crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysInput).
     pub fn build(

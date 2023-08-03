@@ -63,6 +63,10 @@ impl ListUsersOutputBuilder {
         self.users = input;
         self
     }
+    /// <p>List of UsersID associated with the specified collection.</p>
+    pub fn get_users(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::User>> {
+        &self.users
+    }
     /// <p>A pagination token to be used with the subsequent request if the response is truncated.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl ListUsersOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A pagination token to be used with the subsequent request if the response is truncated.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

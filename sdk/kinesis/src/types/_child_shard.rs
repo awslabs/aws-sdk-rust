@@ -56,6 +56,10 @@ impl ChildShardBuilder {
         self.shard_id = input;
         self
     }
+    /// <p>The shard ID of the existing child shard of the current shard.</p>
+    pub fn get_shard_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.shard_id
+    }
     /// Appends an item to `parent_shards`.
     ///
     /// To override the contents of this collection use [`set_parent_shards`](Self::set_parent_shards).
@@ -78,6 +82,12 @@ impl ChildShardBuilder {
         self.parent_shards = input;
         self
     }
+    /// <p>The current shard that is the parent of the existing child shard.</p>
+    pub fn get_parent_shards(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.parent_shards
+    }
     /// <p>The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.</p>
     pub fn hash_key_range(mut self, input: crate::types::HashKeyRange) -> Self {
         self.hash_key_range = ::std::option::Option::Some(input);
@@ -90,6 +100,10 @@ impl ChildShardBuilder {
     ) -> Self {
         self.hash_key_range = input;
         self
+    }
+    /// <p>The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.</p>
+    pub fn get_hash_key_range(&self) -> &::std::option::Option<crate::types::HashKeyRange> {
+        &self.hash_key_range
     }
     /// Consumes the builder and constructs a [`ChildShard`](crate::types::ChildShard).
     pub fn build(self) -> crate::types::ChildShard {

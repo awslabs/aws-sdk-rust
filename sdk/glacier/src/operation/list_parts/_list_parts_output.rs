@@ -101,6 +101,10 @@ impl ListPartsOutputBuilder {
         self.multipart_upload_id = input;
         self
     }
+    /// <p>The ID of the upload to which the parts are associated.</p>
+    pub fn get_multipart_upload_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.multipart_upload_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the vault to which the multipart upload was initiated.</p>
     pub fn vault_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vault_arn = ::std::option::Option::Some(input.into());
@@ -110,6 +114,10 @@ impl ListPartsOutputBuilder {
     pub fn set_vault_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vault_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the vault to which the multipart upload was initiated.</p>
+    pub fn get_vault_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vault_arn
     }
     /// <p>The description of the archive that was specified in the Initiate Multipart Upload request.</p>
     pub fn archive_description(
@@ -127,6 +135,10 @@ impl ListPartsOutputBuilder {
         self.archive_description = input;
         self
     }
+    /// <p>The description of the archive that was specified in the Initiate Multipart Upload request.</p>
+    pub fn get_archive_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.archive_description
+    }
     /// <p>The part size in bytes. This is the same value that you specified in the Initiate Multipart Upload request.</p>
     pub fn part_size_in_bytes(mut self, input: i64) -> Self {
         self.part_size_in_bytes = ::std::option::Option::Some(input);
@@ -136,6 +148,10 @@ impl ListPartsOutputBuilder {
     pub fn set_part_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.part_size_in_bytes = input;
         self
+    }
+    /// <p>The part size in bytes. This is the same value that you specified in the Initiate Multipart Upload request.</p>
+    pub fn get_part_size_in_bytes(&self) -> &::std::option::Option<i64> {
+        &self.part_size_in_bytes
     }
     /// <p>The UTC time at which the multipart upload was initiated.</p>
     pub fn creation_date(
@@ -152,6 +168,10 @@ impl ListPartsOutputBuilder {
     ) -> Self {
         self.creation_date = input;
         self
+    }
+    /// <p>The UTC time at which the multipart upload was initiated.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_date
     }
     /// Appends an item to `parts`.
     ///
@@ -172,6 +192,12 @@ impl ListPartsOutputBuilder {
         self.parts = input;
         self
     }
+    /// <p>A list of the part sizes of the multipart upload. Each object in the array contains a <code>RangeBytes</code> and <code>sha256-tree-hash</code> name/value pair.</p>
+    pub fn get_parts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PartListElement>> {
+        &self.parts
+    }
     /// <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Parts request to obtain more jobs in the list. If there are no more parts, this value is <code>null</code>.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -181,6 +207,10 @@ impl ListPartsOutputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Parts request to obtain more jobs in the list. If there are no more parts, this value is <code>null</code>.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

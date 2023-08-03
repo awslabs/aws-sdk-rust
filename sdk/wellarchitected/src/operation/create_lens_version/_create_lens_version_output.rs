@@ -55,6 +55,10 @@ impl CreateLensVersionOutputBuilder {
         self.lens_arn = input;
         self
     }
+    /// <p>The ARN for the lens.</p>
+    pub fn get_lens_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lens_arn
+    }
     /// <p>The version of the lens.</p>
     pub fn lens_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lens_version = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl CreateLensVersionOutputBuilder {
     pub fn set_lens_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lens_version = input;
         self
+    }
+    /// <p>The version of the lens.</p>
+    pub fn get_lens_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lens_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -39,6 +39,10 @@ impl GetExperimentInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the experiment.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`GetExperimentInput`](crate::operation::get_experiment::GetExperimentInput).
     pub fn build(
         self,

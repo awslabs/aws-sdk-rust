@@ -57,6 +57,11 @@ impl DeleteCertificateAuthorityInputBuilder {
         self.certificate_authority_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must have the following form: </p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
+    pub fn get_certificate_authority_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_authority_arn
+    }
     /// <p>The number of days to make a CA restorable after it has been deleted. This can be anywhere from 7 to 30 days, with 30 being the default.</p>
     pub fn permanent_deletion_time_in_days(mut self, input: i32) -> Self {
         self.permanent_deletion_time_in_days = ::std::option::Option::Some(input);
@@ -69,6 +74,10 @@ impl DeleteCertificateAuthorityInputBuilder {
     ) -> Self {
         self.permanent_deletion_time_in_days = input;
         self
+    }
+    /// <p>The number of days to make a CA restorable after it has been deleted. This can be anywhere from 7 to 30 days, with 30 being the default.</p>
+    pub fn get_permanent_deletion_time_in_days(&self) -> &::std::option::Option<i32> {
+        &self.permanent_deletion_time_in_days
     }
     /// Consumes the builder and constructs a [`DeleteCertificateAuthorityInput`](crate::operation::delete_certificate_authority::DeleteCertificateAuthorityInput).
     pub fn build(

@@ -49,6 +49,12 @@ impl CreateContinuousDeploymentPolicyInputBuilder {
         self.continuous_deployment_policy_config = input;
         self
     }
+    /// <p>Contains the configuration for a continuous deployment policy.</p>
+    pub fn get_continuous_deployment_policy_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContinuousDeploymentPolicyConfig> {
+        &self.continuous_deployment_policy_config
+    }
     /// Consumes the builder and constructs a [`CreateContinuousDeploymentPolicyInput`](crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_continuous_deployment_policy::CreateContinuousDeploymentPolicyInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

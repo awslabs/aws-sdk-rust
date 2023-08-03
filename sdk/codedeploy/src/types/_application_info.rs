@@ -86,6 +86,10 @@ impl ApplicationInfoBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The application ID.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The application name.</p>
     pub fn application_name(
         mut self,
@@ -102,6 +106,10 @@ impl ApplicationInfoBuilder {
         self.application_name = input;
         self
     }
+    /// <p>The application name.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// <p>The time at which the application was created.</p>
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
@@ -115,6 +123,10 @@ impl ApplicationInfoBuilder {
         self.create_time = input;
         self
     }
+    /// <p>The time at which the application was created.</p>
+    pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_time
+    }
     /// <p>True if the user has authenticated with GitHub for the specified application. Otherwise, false.</p>
     pub fn linked_to_git_hub(mut self, input: bool) -> Self {
         self.linked_to_git_hub = ::std::option::Option::Some(input);
@@ -124,6 +136,10 @@ impl ApplicationInfoBuilder {
     pub fn set_linked_to_git_hub(mut self, input: ::std::option::Option<bool>) -> Self {
         self.linked_to_git_hub = input;
         self
+    }
+    /// <p>True if the user has authenticated with GitHub for the specified application. Otherwise, false.</p>
+    pub fn get_linked_to_git_hub(&self) -> &::std::option::Option<bool> {
+        &self.linked_to_git_hub
     }
     /// <p>The name for a connection to a GitHub account.</p>
     pub fn git_hub_account_name(
@@ -141,6 +157,10 @@ impl ApplicationInfoBuilder {
         self.git_hub_account_name = input;
         self
     }
+    /// <p>The name for a connection to a GitHub account.</p>
+    pub fn get_git_hub_account_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.git_hub_account_name
+    }
     /// <p>The destination platform type for deployment of the application (<code>Lambda</code> or <code>Server</code>).</p>
     pub fn compute_platform(mut self, input: crate::types::ComputePlatform) -> Self {
         self.compute_platform = ::std::option::Option::Some(input);
@@ -153,6 +173,10 @@ impl ApplicationInfoBuilder {
     ) -> Self {
         self.compute_platform = input;
         self
+    }
+    /// <p>The destination platform type for deployment of the application (<code>Lambda</code> or <code>Server</code>).</p>
+    pub fn get_compute_platform(&self) -> &::std::option::Option<crate::types::ComputePlatform> {
+        &self.compute_platform
     }
     /// Consumes the builder and constructs a [`ApplicationInfo`](crate::types::ApplicationInfo).
     pub fn build(self) -> crate::types::ApplicationInfo {

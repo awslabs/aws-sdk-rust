@@ -64,6 +64,10 @@ impl GsmNmrObjBuilder {
         self.bsic = input;
         self
     }
+    /// <p>GSM base station identity code (BSIC).</p>
+    pub fn get_bsic(&self) -> &::std::option::Option<i32> {
+        &self.bsic
+    }
     /// <p>GSM broadcast control channel.</p>
     pub fn bcch(mut self, input: i32) -> Self {
         self.bcch = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl GsmNmrObjBuilder {
         self.bcch = input;
         self
     }
+    /// <p>GSM broadcast control channel.</p>
+    pub fn get_bcch(&self) -> &::std::option::Option<i32> {
+        &self.bcch
+    }
     /// <p>Rx level, which is the received signal power, measured in dBm (decibel-milliwatts).</p>
     pub fn rx_level(mut self, input: i32) -> Self {
         self.rx_level = ::std::option::Option::Some(input);
@@ -83,6 +91,10 @@ impl GsmNmrObjBuilder {
     pub fn set_rx_level(mut self, input: ::std::option::Option<i32>) -> Self {
         self.rx_level = input;
         self
+    }
+    /// <p>Rx level, which is the received signal power, measured in dBm (decibel-milliwatts).</p>
+    pub fn get_rx_level(&self) -> &::std::option::Option<i32> {
+        &self.rx_level
     }
     /// <p>Global identity information of the GSM object.</p>
     pub fn global_identity(mut self, input: crate::types::GlobalIdentity) -> Self {
@@ -96,6 +108,10 @@ impl GsmNmrObjBuilder {
     ) -> Self {
         self.global_identity = input;
         self
+    }
+    /// <p>Global identity information of the GSM object.</p>
+    pub fn get_global_identity(&self) -> &::std::option::Option<crate::types::GlobalIdentity> {
+        &self.global_identity
     }
     /// Consumes the builder and constructs a [`GsmNmrObj`](crate::types::GsmNmrObj).
     pub fn build(self) -> crate::types::GsmNmrObj {

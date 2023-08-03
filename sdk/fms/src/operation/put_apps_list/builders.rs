@@ -36,6 +36,10 @@ impl PutAppsListFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutAppsList as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_apps_list::builders::PutAppsListInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -121,6 +125,10 @@ impl PutAppsListFluentBuilder {
         self.inner = self.inner.set_apps_list(input);
         self
     }
+    /// <p>The details of the Firewall Manager applications list to be created.</p>
+    pub fn get_apps_list(&self) -> &::std::option::Option<crate::types::AppsListData> {
+        self.inner.get_apps_list()
+    }
     /// Appends an item to `TagList`.
     ///
     /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
@@ -137,5 +145,9 @@ impl PutAppsListFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tag_list(input);
         self
+    }
+    /// <p>The tags associated with the resource.</p>
+    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tag_list()
     }
 }

@@ -58,6 +58,10 @@ impl StageExecutionBuilder {
         self.pipeline_execution_id = input;
         self
     }
+    /// <p>The ID of the pipeline execution associated with the stage.</p>
+    pub fn get_pipeline_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_execution_id
+    }
     /// <p>The status of the stage, or for a completed stage, the last status of the stage.</p> <note>
     /// <p>A status of cancelled means that the pipeline’s definition was updated before the stage execution could be completed.</p>
     /// </note>
@@ -74,6 +78,12 @@ impl StageExecutionBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the stage, or for a completed stage, the last status of the stage.</p> <note>
+    /// <p>A status of cancelled means that the pipeline’s definition was updated before the stage execution could be completed.</p>
+    /// </note>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::StageExecutionStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`StageExecution`](crate::types::StageExecution).
     pub fn build(self) -> crate::types::StageExecution {

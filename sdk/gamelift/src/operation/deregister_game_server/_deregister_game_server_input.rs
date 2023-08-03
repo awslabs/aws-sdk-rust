@@ -54,6 +54,10 @@ impl DeregisterGameServerInputBuilder {
         self.game_server_group_name = input;
         self
     }
+    /// <p>A unique identifier for the game server group where the game server is running.</p>
+    pub fn get_game_server_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.game_server_group_name
+    }
     /// <p>A custom string that uniquely identifies the game server to deregister.</p>
     pub fn game_server_id(
         mut self,
@@ -69,6 +73,10 @@ impl DeregisterGameServerInputBuilder {
     ) -> Self {
         self.game_server_id = input;
         self
+    }
+    /// <p>A custom string that uniquely identifies the game server to deregister.</p>
+    pub fn get_game_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.game_server_id
     }
     /// Consumes the builder and constructs a [`DeregisterGameServerInput`](crate::operation::deregister_game_server::DeregisterGameServerInput).
     pub fn build(

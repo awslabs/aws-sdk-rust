@@ -74,6 +74,12 @@ impl ResourceDetailsBuilder {
         self.net_app_ontapsv_ms = input;
         self
     }
+    /// <p>The information that DataSync Discovery collects about storage virtual machines (SVMs) in your on-premises storage system.</p>
+    pub fn get_net_app_ontapsv_ms(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetAppOntapsvm>> {
+        &self.net_app_ontapsv_ms
+    }
     /// Appends an item to `net_app_ontap_volumes`.
     ///
     /// To override the contents of this collection use [`set_net_app_ontap_volumes`](Self::set_net_app_ontap_volumes).
@@ -93,6 +99,12 @@ impl ResourceDetailsBuilder {
         self.net_app_ontap_volumes = input;
         self
     }
+    /// <p>The information that DataSync Discovery collects about volumes in your on-premises storage system.</p>
+    pub fn get_net_app_ontap_volumes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetAppOntapVolume>> {
+        &self.net_app_ontap_volumes
+    }
     /// Appends an item to `net_app_ontap_clusters`.
     ///
     /// To override the contents of this collection use [`set_net_app_ontap_clusters`](Self::set_net_app_ontap_clusters).
@@ -111,6 +123,12 @@ impl ResourceDetailsBuilder {
     ) -> Self {
         self.net_app_ontap_clusters = input;
         self
+    }
+    /// <p>The information that DataSync Discovery collects about the cluster in your on-premises storage system.</p>
+    pub fn get_net_app_ontap_clusters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetAppOntapCluster>> {
+        &self.net_app_ontap_clusters
     }
     /// Consumes the builder and constructs a [`ResourceDetails`](crate::types::ResourceDetails).
     pub fn build(self) -> crate::types::ResourceDetails {

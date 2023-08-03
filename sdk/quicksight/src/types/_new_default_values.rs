@@ -80,6 +80,12 @@ impl NewDefaultValuesBuilder {
         self.string_static_values = input;
         self
     }
+    /// <p>A list of static default values for a given string parameter.</p>
+    pub fn get_string_static_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.string_static_values
+    }
     /// Appends an item to `decimal_static_values`.
     ///
     /// To override the contents of this collection use [`set_decimal_static_values`](Self::set_decimal_static_values).
@@ -98,6 +104,10 @@ impl NewDefaultValuesBuilder {
     ) -> Self {
         self.decimal_static_values = input;
         self
+    }
+    /// <p>A list of static default values for a given decimal parameter.</p>
+    pub fn get_decimal_static_values(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+        &self.decimal_static_values
     }
     /// Appends an item to `date_time_static_values`.
     ///
@@ -118,6 +128,12 @@ impl NewDefaultValuesBuilder {
         self.date_time_static_values = input;
         self
     }
+    /// <p>A list of static default values for a given date time parameter.</p>
+    pub fn get_date_time_static_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>> {
+        &self.date_time_static_values
+    }
     /// Appends an item to `integer_static_values`.
     ///
     /// To override the contents of this collection use [`set_integer_static_values`](Self::set_integer_static_values).
@@ -136,6 +152,10 @@ impl NewDefaultValuesBuilder {
     ) -> Self {
         self.integer_static_values = input;
         self
+    }
+    /// <p>A list of static default values for a given integer parameter.</p>
+    pub fn get_integer_static_values(&self) -> &::std::option::Option<::std::vec::Vec<i64>> {
+        &self.integer_static_values
     }
     /// Consumes the builder and constructs a [`NewDefaultValues`](crate::types::NewDefaultValues).
     pub fn build(self) -> crate::types::NewDefaultValues {

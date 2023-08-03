@@ -39,6 +39,10 @@ impl GetPredictiveScalingForecastFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetPredictiveScalingForecast as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_predictive_scaling_forecast::builders::GetPredictiveScalingForecastInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +139,10 @@ impl GetPredictiveScalingForecastFluentBuilder {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_auto_scaling_group_name()
+    }
     /// <p>The name of the policy.</p>
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_name(input.into());
@@ -144,6 +152,10 @@ impl GetPredictiveScalingForecastFluentBuilder {
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_name(input);
         self
+    }
+    /// <p>The name of the policy.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_name()
     }
     /// <p>The inclusive start time of the time range for the forecast data to get. At most, the date and time can be one year before the current date and time.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -157,6 +169,10 @@ impl GetPredictiveScalingForecastFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
+    }
+    /// <p>The inclusive start time of the time range for the forecast data to get. At most, the date and time can be one year before the current date and time.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_time()
     }
     /// <p>The exclusive end time of the time range for the forecast data to get. The maximum time duration between the start and end time is 30 days. </p>
     /// <p>Although this parameter can accept a date and time that is more than two days in the future, the availability of forecast data has limits. Amazon EC2 Auto Scaling only issues forecasts for periods of two days in advance.</p>
@@ -172,5 +188,10 @@ impl GetPredictiveScalingForecastFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
+    }
+    /// <p>The exclusive end time of the time range for the forecast data to get. The maximum time duration between the start and end time is 30 days. </p>
+    /// <p>Although this parameter can accept a date and time that is more than two days in the future, the availability of forecast data has limits. Amazon EC2 Auto Scaling only issues forecasts for periods of two days in advance.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_time()
     }
 }

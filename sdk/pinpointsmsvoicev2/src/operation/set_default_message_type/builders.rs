@@ -37,6 +37,13 @@ impl SetDefaultMessageTypeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SetDefaultMessageType as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::set_default_message_type::builders::SetDefaultMessageTypeInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl SetDefaultMessageTypeFluentBuilder {
         self.inner = self.inner.set_configuration_set_name(input);
         self
     }
+    /// <p>The configuration set to update with a new default message type. This field can be the ConsigurationSetName or ConfigurationSetArn.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration_set_name()
+    }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
     pub fn message_type(mut self, input: crate::types::MessageType) -> Self {
         self.inner = self.inner.message_type(input);
@@ -145,5 +156,9 @@ impl SetDefaultMessageTypeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_message_type(input);
         self
+    }
+    /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
+    pub fn get_message_type(&self) -> &::std::option::Option<crate::types::MessageType> {
+        self.inner.get_message_type()
     }
 }

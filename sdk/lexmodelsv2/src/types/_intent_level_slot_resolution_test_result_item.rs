@@ -60,6 +60,10 @@ impl IntentLevelSlotResolutionTestResultItemBuilder {
         self.intent_name = input;
         self
     }
+    /// <p>The name of the intent that was recognized.</p>
+    pub fn get_intent_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.intent_name
+    }
     /// <p>Indicates whether the conversation involves multiple turns or not.</p>
     pub fn multi_turn_conversation(mut self, input: bool) -> Self {
         self.multi_turn_conversation = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl IntentLevelSlotResolutionTestResultItemBuilder {
     pub fn set_multi_turn_conversation(mut self, input: ::std::option::Option<bool>) -> Self {
         self.multi_turn_conversation = input;
         self
+    }
+    /// <p>Indicates whether the conversation involves multiple turns or not.</p>
+    pub fn get_multi_turn_conversation(&self) -> &::std::option::Option<bool> {
+        &self.multi_turn_conversation
     }
     /// Appends an item to `slot_resolution_results`.
     ///
@@ -91,6 +99,12 @@ impl IntentLevelSlotResolutionTestResultItemBuilder {
     ) -> Self {
         self.slot_resolution_results = input;
         self
+    }
+    /// <p>The results for the slot resolution in the test execution result.</p>
+    pub fn get_slot_resolution_results(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SlotResolutionTestResultItem>> {
+        &self.slot_resolution_results
     }
     /// Consumes the builder and constructs a [`IntentLevelSlotResolutionTestResultItem`](crate::types::IntentLevelSlotResolutionTestResultItem).
     pub fn build(self) -> crate::types::IntentLevelSlotResolutionTestResultItem {

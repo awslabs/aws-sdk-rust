@@ -48,6 +48,10 @@ impl ClusteringKeyBuilder {
         self.name = input;
         self
     }
+    /// <p>The name(s) of the clustering column(s).</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Sets the ascendant (<code>ASC</code>) or descendant (<code>DESC</code>) order modifier.</p>
     pub fn order_by(mut self, input: crate::types::SortOrder) -> Self {
         self.order_by = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ClusteringKeyBuilder {
     pub fn set_order_by(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.order_by = input;
         self
+    }
+    /// <p>Sets the ascendant (<code>ASC</code>) or descendant (<code>DESC</code>) order modifier.</p>
+    pub fn get_order_by(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.order_by
     }
     /// Consumes the builder and constructs a [`ClusteringKey`](crate::types::ClusteringKey).
     pub fn build(self) -> crate::types::ClusteringKey {

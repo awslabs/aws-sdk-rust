@@ -37,6 +37,10 @@ impl AssociateContactWithAddressBookFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateContactWithAddressBook as a reference.
+    pub fn as_input(&self) -> &crate::operation::associate_contact_with_address_book::builders::AssociateContactWithAddressBookInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -101,6 +105,10 @@ impl AssociateContactWithAddressBookFluentBuilder {
         self.inner = self.inner.set_contact_arn(input);
         self
     }
+    /// <p>The ARN of the contact to associate with an address book.</p>
+    pub fn get_contact_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_contact_arn()
+    }
     /// <p>The ARN of the address book with which to associate the contact.</p>
     pub fn address_book_arn(
         mut self,
@@ -116,5 +124,9 @@ impl AssociateContactWithAddressBookFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_address_book_arn(input);
         self
+    }
+    /// <p>The ARN of the address book with which to associate the contact.</p>
+    pub fn get_address_book_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_address_book_arn()
     }
 }

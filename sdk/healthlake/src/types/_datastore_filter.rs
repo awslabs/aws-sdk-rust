@@ -70,6 +70,10 @@ impl DatastoreFilterBuilder {
         self.datastore_name = input;
         self
     }
+    /// <p>Allows the user to filter data store results by name.</p>
+    pub fn get_datastore_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.datastore_name
+    }
     /// <p>Allows the user to filter data store results by status.</p>
     pub fn datastore_status(mut self, input: crate::types::DatastoreStatus) -> Self {
         self.datastore_status = ::std::option::Option::Some(input);
@@ -82,6 +86,10 @@ impl DatastoreFilterBuilder {
     ) -> Self {
         self.datastore_status = input;
         self
+    }
+    /// <p>Allows the user to filter data store results by status.</p>
+    pub fn get_datastore_status(&self) -> &::std::option::Option<crate::types::DatastoreStatus> {
+        &self.datastore_status
     }
     /// <p>A filter that allows the user to set cutoff dates for records. All data stores created before the specified date will be included in the results. </p>
     pub fn created_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -96,6 +104,10 @@ impl DatastoreFilterBuilder {
         self.created_before = input;
         self
     }
+    /// <p>A filter that allows the user to set cutoff dates for records. All data stores created before the specified date will be included in the results. </p>
+    pub fn get_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_before
+    }
     /// <p>A filter that allows the user to set cutoff dates for records. All data stores created after the specified date will be included in the results.</p>
     pub fn created_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_after = ::std::option::Option::Some(input);
@@ -108,6 +120,10 @@ impl DatastoreFilterBuilder {
     ) -> Self {
         self.created_after = input;
         self
+    }
+    /// <p>A filter that allows the user to set cutoff dates for records. All data stores created after the specified date will be included in the results.</p>
+    pub fn get_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_after
     }
     /// Consumes the builder and constructs a [`DatastoreFilter`](crate::types::DatastoreFilter).
     pub fn build(self) -> crate::types::DatastoreFilter {

@@ -41,6 +41,10 @@ impl DeleteDomainNameInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The name of the DomainName resource to be deleted.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// Consumes the builder and constructs a [`DeleteDomainNameInput`](crate::operation::delete_domain_name::DeleteDomainNameInput).
     pub fn build(
         self,

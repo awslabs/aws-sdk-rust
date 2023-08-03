@@ -129,6 +129,10 @@ impl DescribeUpdateActionsInputBuilder {
         self.service_update_name = input;
         self
     }
+    /// <p>The unique ID of the service update</p>
+    pub fn get_service_update_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_update_name
+    }
     /// Appends an item to `replication_group_ids`.
     ///
     /// To override the contents of this collection use [`set_replication_group_ids`](Self::set_replication_group_ids).
@@ -150,6 +154,12 @@ impl DescribeUpdateActionsInputBuilder {
     ) -> Self {
         self.replication_group_ids = input;
         self
+    }
+    /// <p>The replication group IDs</p>
+    pub fn get_replication_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.replication_group_ids
     }
     /// Appends an item to `cache_cluster_ids`.
     ///
@@ -173,6 +183,12 @@ impl DescribeUpdateActionsInputBuilder {
         self.cache_cluster_ids = input;
         self
     }
+    /// <p>The cache cluster IDs</p>
+    pub fn get_cache_cluster_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.cache_cluster_ids
+    }
     /// <p>The Elasticache engine to which the update applies. Either Redis or Memcached </p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
@@ -182,6 +198,10 @@ impl DescribeUpdateActionsInputBuilder {
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
         self
+    }
+    /// <p>The Elasticache engine to which the update applies. Either Redis or Memcached </p>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine
     }
     /// Appends an item to `service_update_status`.
     ///
@@ -202,6 +222,12 @@ impl DescribeUpdateActionsInputBuilder {
         self.service_update_status = input;
         self
     }
+    /// <p>The status of the service update</p>
+    pub fn get_service_update_status(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceUpdateStatus>> {
+        &self.service_update_status
+    }
     /// <p>The range of time specified to search for service updates that are in available status</p>
     pub fn service_update_time_range(mut self, input: crate::types::TimeRangeFilter) -> Self {
         self.service_update_time_range = ::std::option::Option::Some(input);
@@ -214,6 +240,12 @@ impl DescribeUpdateActionsInputBuilder {
     ) -> Self {
         self.service_update_time_range = input;
         self
+    }
+    /// <p>The range of time specified to search for service updates that are in available status</p>
+    pub fn get_service_update_time_range(
+        &self,
+    ) -> &::std::option::Option<crate::types::TimeRangeFilter> {
+        &self.service_update_time_range
     }
     /// Appends an item to `update_action_status`.
     ///
@@ -234,6 +266,12 @@ impl DescribeUpdateActionsInputBuilder {
         self.update_action_status = input;
         self
     }
+    /// <p>The status of the update action.</p>
+    pub fn get_update_action_status(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateActionStatus>> {
+        &self.update_action_status
+    }
     /// <p>Dictates whether to include node level update status in the response </p>
     pub fn show_node_level_update_status(mut self, input: bool) -> Self {
         self.show_node_level_update_status = ::std::option::Option::Some(input);
@@ -243,6 +281,10 @@ impl DescribeUpdateActionsInputBuilder {
     pub fn set_show_node_level_update_status(mut self, input: ::std::option::Option<bool>) -> Self {
         self.show_node_level_update_status = input;
         self
+    }
+    /// <p>Dictates whether to include node level update status in the response </p>
+    pub fn get_show_node_level_update_status(&self) -> &::std::option::Option<bool> {
+        &self.show_node_level_update_status
     }
     /// <p>The maximum number of records to include in the response</p>
     pub fn max_records(mut self, input: i32) -> Self {
@@ -254,6 +296,10 @@ impl DescribeUpdateActionsInputBuilder {
         self.max_records = input;
         self
     }
+    /// <p>The maximum number of records to include in the response</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        &self.max_records
+    }
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -263,6 +309,10 @@ impl DescribeUpdateActionsInputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// Consumes the builder and constructs a [`DescribeUpdateActionsInput`](crate::operation::describe_update_actions::DescribeUpdateActionsInput).
     pub fn build(

@@ -60,6 +60,10 @@ impl LocationFilterBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the filter being used. Each API call supports a list of filters that are available for it (for example, <code>LocationType</code> for <code>ListLocations</code>).</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::LocationFilterName> {
+        &self.name
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -79,6 +83,10 @@ impl LocationFilterBuilder {
         self.values = input;
         self
     }
+    /// <p>The values that you want to filter for. For example, you might want to display only Amazon S3 locations.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
+    }
     /// <p>The operator that is used to compare filter values (for example, <code>Equals</code> or <code>Contains</code>).</p>
     pub fn operator(mut self, input: crate::types::Operator) -> Self {
         self.operator = ::std::option::Option::Some(input);
@@ -88,6 +96,10 @@ impl LocationFilterBuilder {
     pub fn set_operator(mut self, input: ::std::option::Option<crate::types::Operator>) -> Self {
         self.operator = input;
         self
+    }
+    /// <p>The operator that is used to compare filter values (for example, <code>Equals</code> or <code>Contains</code>).</p>
+    pub fn get_operator(&self) -> &::std::option::Option<crate::types::Operator> {
+        &self.operator
     }
     /// Consumes the builder and constructs a [`LocationFilter`](crate::types::LocationFilter).
     pub fn build(self) -> crate::types::LocationFilter {

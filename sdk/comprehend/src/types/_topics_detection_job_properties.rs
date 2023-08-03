@@ -170,6 +170,10 @@ impl TopicsDetectionJobPropertiesBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The identifier assigned to the topic detection job.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the topics detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
     /// <p> <code>arn:
     /// <partition>
@@ -206,6 +210,23 @@ impl TopicsDetectionJobPropertiesBuilder {
         self.job_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the topics detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p> <code>arn:
+    /// <partition>
+    /// :comprehend:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :topics-detection-job/
+    /// <job-id></job-id>
+    /// </account-id>
+    /// </region>
+    /// </partition></code> </p>
+    /// <p>The following is an example job ARN:</p>
+    /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:topics-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
+    pub fn get_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_arn
+    }
     /// <p>The name of the topic detection job.</p>
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name = ::std::option::Option::Some(input.into());
@@ -215,6 +236,10 @@ impl TopicsDetectionJobPropertiesBuilder {
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_name = input;
         self
+    }
+    /// <p>The name of the topic detection job.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
     }
     /// <p>The current status of the topic detection job. If the status is <code>Failed</code>, the reason for the failure is shown in the <code>Message</code> field.</p>
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
@@ -226,6 +251,10 @@ impl TopicsDetectionJobPropertiesBuilder {
         self.job_status = input;
         self
     }
+    /// <p>The current status of the topic detection job. If the status is <code>Failed</code>, the reason for the failure is shown in the <code>Message</code> field.</p>
+    pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
+        &self.job_status
+    }
     /// <p>A description for the status of a job.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -235,6 +264,10 @@ impl TopicsDetectionJobPropertiesBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>A description for the status of a job.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// <p>The time that the topic detection job was submitted for processing.</p>
     pub fn submit_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -249,6 +282,10 @@ impl TopicsDetectionJobPropertiesBuilder {
         self.submit_time = input;
         self
     }
+    /// <p>The time that the topic detection job was submitted for processing.</p>
+    pub fn get_submit_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.submit_time
+    }
     /// <p>The time that the topic detection job was completed.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -261,6 +298,10 @@ impl TopicsDetectionJobPropertiesBuilder {
     ) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>The time that the topic detection job was completed.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// <p>The input data configuration supplied when you created the topic detection job.</p>
     pub fn input_data_config(mut self, input: crate::types::InputDataConfig) -> Self {
@@ -275,6 +316,10 @@ impl TopicsDetectionJobPropertiesBuilder {
         self.input_data_config = input;
         self
     }
+    /// <p>The input data configuration supplied when you created the topic detection job.</p>
+    pub fn get_input_data_config(&self) -> &::std::option::Option<crate::types::InputDataConfig> {
+        &self.input_data_config
+    }
     /// <p>The output data configuration supplied when you created the topic detection job.</p>
     pub fn output_data_config(mut self, input: crate::types::OutputDataConfig) -> Self {
         self.output_data_config = ::std::option::Option::Some(input);
@@ -288,6 +333,10 @@ impl TopicsDetectionJobPropertiesBuilder {
         self.output_data_config = input;
         self
     }
+    /// <p>The output data configuration supplied when you created the topic detection job.</p>
+    pub fn get_output_data_config(&self) -> &::std::option::Option<crate::types::OutputDataConfig> {
+        &self.output_data_config
+    }
     /// <p>The number of topics to detect supplied when you created the topic detection job. The default is 10. </p>
     pub fn number_of_topics(mut self, input: i32) -> Self {
         self.number_of_topics = ::std::option::Option::Some(input);
@@ -297,6 +346,10 @@ impl TopicsDetectionJobPropertiesBuilder {
     pub fn set_number_of_topics(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_topics = input;
         self
+    }
+    /// <p>The number of topics to detect supplied when you created the topic detection job. The default is 10. </p>
+    pub fn get_number_of_topics(&self) -> &::std::option::Option<i32> {
+        &self.number_of_topics
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your job data. </p>
     pub fn data_access_role_arn(
@@ -313,6 +366,10 @@ impl TopicsDetectionJobPropertiesBuilder {
     ) -> Self {
         self.data_access_role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your job data. </p>
+    pub fn get_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_access_role_arn
     }
     /// <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
     /// <ul>
@@ -338,6 +395,14 @@ impl TopicsDetectionJobPropertiesBuilder {
         self.volume_kms_key_id = input;
         self
     }
+    /// <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <ul>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// </ul>
+    pub fn get_volume_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_kms_key_id
+    }
     /// <p>Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your topic detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     pub fn vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
         self.vpc_config = ::std::option::Option::Some(input);
@@ -347,6 +412,10 @@ impl TopicsDetectionJobPropertiesBuilder {
     pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
         self.vpc_config = input;
         self
+    }
+    /// <p>Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for your topic detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
+    pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
+        &self.vpc_config
     }
     /// Consumes the builder and constructs a [`TopicsDetectionJobProperties`](crate::types::TopicsDetectionJobProperties).
     pub fn build(self) -> crate::types::TopicsDetectionJobProperties {

@@ -36,6 +36,12 @@ impl UpdateApplicationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateApplication as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_application::builders::UpdateApplicationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateApplicationFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the application. This name is visible to users when display name is not specified.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The display name of the application. This name is visible to users in the application catalog.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.display_name(input.into());
@@ -136,6 +146,10 @@ impl UpdateApplicationFluentBuilder {
         self.inner = self.inner.set_display_name(input);
         self
     }
+    /// <p>The display name of the application. This name is visible to users in the application catalog.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_display_name()
+    }
     /// <p>The description of the application.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -145,6 +159,10 @@ impl UpdateApplicationFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the application.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The icon S3 location of the application.</p>
     pub fn icon_s3_location(mut self, input: crate::types::S3Location) -> Self {
@@ -159,6 +177,10 @@ impl UpdateApplicationFluentBuilder {
         self.inner = self.inner.set_icon_s3_location(input);
         self
     }
+    /// <p>The icon S3 location of the application.</p>
+    pub fn get_icon_s3_location(&self) -> &::std::option::Option<crate::types::S3Location> {
+        self.inner.get_icon_s3_location()
+    }
     /// <p>The launch path of the application.</p>
     pub fn launch_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.launch_path(input.into());
@@ -168,6 +190,10 @@ impl UpdateApplicationFluentBuilder {
     pub fn set_launch_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_launch_path(input);
         self
+    }
+    /// <p>The launch path of the application.</p>
+    pub fn get_launch_path(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_launch_path()
     }
     /// <p>The working directory of the application.</p>
     pub fn working_directory(
@@ -185,6 +211,10 @@ impl UpdateApplicationFluentBuilder {
         self.inner = self.inner.set_working_directory(input);
         self
     }
+    /// <p>The working directory of the application.</p>
+    pub fn get_working_directory(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_working_directory()
+    }
     /// <p>The launch parameters of the application.</p>
     pub fn launch_parameters(
         mut self,
@@ -200,6 +230,10 @@ impl UpdateApplicationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_launch_parameters(input);
         self
+    }
+    /// <p>The launch parameters of the application.</p>
+    pub fn get_launch_parameters(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_launch_parameters()
     }
     /// <p>The ARN of the app block.</p>
     pub fn app_block_arn(
@@ -217,6 +251,10 @@ impl UpdateApplicationFluentBuilder {
         self.inner = self.inner.set_app_block_arn(input);
         self
     }
+    /// <p>The ARN of the app block.</p>
+    pub fn get_app_block_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_block_arn()
+    }
     /// Appends an item to `AttributesToDelete`.
     ///
     /// To override the contents of this collection use [`set_attributes_to_delete`](Self::set_attributes_to_delete).
@@ -233,5 +271,11 @@ impl UpdateApplicationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_attributes_to_delete(input);
         self
+    }
+    /// <p>The attributes to delete for an application.</p>
+    pub fn get_attributes_to_delete(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationAttribute>> {
+        self.inner.get_attributes_to_delete()
     }
 }

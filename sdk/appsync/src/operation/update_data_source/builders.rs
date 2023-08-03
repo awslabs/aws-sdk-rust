@@ -36,6 +36,12 @@ impl UpdateDataSourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDataSource as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_data_source::builders::UpdateDataSourceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateDataSourceFluentBuilder {
         self.inner = self.inner.set_api_id(input);
         self
     }
+    /// <p>The API ID.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_api_id()
+    }
     /// <p>The new name for the data source.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -135,6 +145,10 @@ impl UpdateDataSourceFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The new name for the data source.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The new description for the data source.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -146,6 +160,10 @@ impl UpdateDataSourceFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>The new description for the data source.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The new data source type.</p>
     pub fn r#type(mut self, input: crate::types::DataSourceType) -> Self {
         self.inner = self.inner.r#type(input);
@@ -155,6 +173,10 @@ impl UpdateDataSourceFluentBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DataSourceType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
+    }
+    /// <p>The new data source type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::DataSourceType> {
+        self.inner.get_type()
     }
     /// <p>The new service role Amazon Resource Name (ARN) for the data source.</p>
     pub fn service_role_arn(
@@ -172,6 +194,10 @@ impl UpdateDataSourceFluentBuilder {
         self.inner = self.inner.set_service_role_arn(input);
         self
     }
+    /// <p>The new service role Amazon Resource Name (ARN) for the data source.</p>
+    pub fn get_service_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_role_arn()
+    }
     /// <p>The new Amazon DynamoDB configuration.</p>
     pub fn dynamodb_config(mut self, input: crate::types::DynamodbDataSourceConfig) -> Self {
         self.inner = self.inner.dynamodb_config(input);
@@ -185,6 +211,12 @@ impl UpdateDataSourceFluentBuilder {
         self.inner = self.inner.set_dynamodb_config(input);
         self
     }
+    /// <p>The new Amazon DynamoDB configuration.</p>
+    pub fn get_dynamodb_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::DynamodbDataSourceConfig> {
+        self.inner.get_dynamodb_config()
+    }
     /// <p>The new Lambda configuration.</p>
     pub fn lambda_config(mut self, input: crate::types::LambdaDataSourceConfig) -> Self {
         self.inner = self.inner.lambda_config(input);
@@ -197,6 +229,12 @@ impl UpdateDataSourceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_lambda_config(input);
         self
+    }
+    /// <p>The new Lambda configuration.</p>
+    pub fn get_lambda_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::LambdaDataSourceConfig> {
+        self.inner.get_lambda_config()
     }
     /// <p>The new OpenSearch configuration.</p>
     /// <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This configuration is deprecated. Instead, use <code>UpdateDataSourceRequest$openSearchServiceConfig</code> to update an OpenSearch data source.</p>
@@ -217,6 +255,13 @@ impl UpdateDataSourceFluentBuilder {
         self
     }
     /// <p>The new OpenSearch configuration.</p>
+    /// <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This configuration is deprecated. Instead, use <code>UpdateDataSourceRequest$openSearchServiceConfig</code> to update an OpenSearch data source.</p>
+    pub fn get_elasticsearch_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ElasticsearchDataSourceConfig> {
+        self.inner.get_elasticsearch_config()
+    }
+    /// <p>The new OpenSearch configuration.</p>
     pub fn open_search_service_config(
         mut self,
         input: crate::types::OpenSearchServiceDataSourceConfig,
@@ -232,6 +277,12 @@ impl UpdateDataSourceFluentBuilder {
         self.inner = self.inner.set_open_search_service_config(input);
         self
     }
+    /// <p>The new OpenSearch configuration.</p>
+    pub fn get_open_search_service_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::OpenSearchServiceDataSourceConfig> {
+        self.inner.get_open_search_service_config()
+    }
     /// <p>The new HTTP endpoint configuration.</p>
     pub fn http_config(mut self, input: crate::types::HttpDataSourceConfig) -> Self {
         self.inner = self.inner.http_config(input);
@@ -244,6 +295,10 @@ impl UpdateDataSourceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_http_config(input);
         self
+    }
+    /// <p>The new HTTP endpoint configuration.</p>
+    pub fn get_http_config(&self) -> &::std::option::Option<crate::types::HttpDataSourceConfig> {
+        self.inner.get_http_config()
     }
     /// <p>The new relational database configuration.</p>
     pub fn relational_database_config(
@@ -261,6 +316,12 @@ impl UpdateDataSourceFluentBuilder {
         self.inner = self.inner.set_relational_database_config(input);
         self
     }
+    /// <p>The new relational database configuration.</p>
+    pub fn get_relational_database_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::RelationalDatabaseDataSourceConfig> {
+        self.inner.get_relational_database_config()
+    }
     /// <p>The new Amazon EventBridge settings.</p>
     pub fn event_bridge_config(mut self, input: crate::types::EventBridgeDataSourceConfig) -> Self {
         self.inner = self.inner.event_bridge_config(input);
@@ -273,5 +334,11 @@ impl UpdateDataSourceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_event_bridge_config(input);
         self
+    }
+    /// <p>The new Amazon EventBridge settings.</p>
+    pub fn get_event_bridge_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::EventBridgeDataSourceConfig> {
+        self.inner.get_event_bridge_config()
     }
 }

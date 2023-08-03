@@ -52,6 +52,12 @@ impl RenewOfferingOutputBuilder {
         self.offering_transaction = input;
         self
     }
+    /// <p>Represents the status of the offering transaction for the renewal.</p>
+    pub fn get_offering_transaction(
+        &self,
+    ) -> &::std::option::Option<crate::types::OfferingTransaction> {
+        &self.offering_transaction
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

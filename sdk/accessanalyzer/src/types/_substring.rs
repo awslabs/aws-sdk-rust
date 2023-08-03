@@ -48,6 +48,10 @@ impl SubstringBuilder {
         self.start = input;
         self
     }
+    /// <p>The start index of the substring, starting from 0.</p>
+    pub fn get_start(&self) -> &::std::option::Option<i32> {
+        &self.start
+    }
     /// <p>The length of the substring.</p>
     pub fn length(mut self, input: i32) -> Self {
         self.length = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl SubstringBuilder {
     pub fn set_length(mut self, input: ::std::option::Option<i32>) -> Self {
         self.length = input;
         self
+    }
+    /// <p>The length of the substring.</p>
+    pub fn get_length(&self) -> &::std::option::Option<i32> {
+        &self.length
     }
     /// Consumes the builder and constructs a [`Substring`](crate::types::Substring).
     pub fn build(self) -> crate::types::Substring {

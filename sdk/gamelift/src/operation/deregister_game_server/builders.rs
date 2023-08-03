@@ -40,6 +40,12 @@ impl DeregisterGameServerFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeregisterGameServer as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::deregister_game_server::builders::DeregisterGameServerInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +142,10 @@ impl DeregisterGameServerFluentBuilder {
         self.inner = self.inner.set_game_server_group_name(input);
         self
     }
+    /// <p>A unique identifier for the game server group where the game server is running.</p>
+    pub fn get_game_server_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_game_server_group_name()
+    }
     /// <p>A custom string that uniquely identifies the game server to deregister.</p>
     pub fn game_server_id(
         mut self,
@@ -151,5 +161,9 @@ impl DeregisterGameServerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_game_server_id(input);
         self
+    }
+    /// <p>A custom string that uniquely identifies the game server to deregister.</p>
+    pub fn get_game_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_game_server_id()
     }
 }

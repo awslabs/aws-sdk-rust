@@ -50,6 +50,10 @@ impl GetCurrentUserInputBuilder {
         self.authentication_token = input;
         self
     }
+    /// <p>Amazon WorkDocs authentication token.</p>
+    pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authentication_token
+    }
     /// Consumes the builder and constructs a [`GetCurrentUserInput`](crate::operation::get_current_user::GetCurrentUserInput).
     pub fn build(
         self,

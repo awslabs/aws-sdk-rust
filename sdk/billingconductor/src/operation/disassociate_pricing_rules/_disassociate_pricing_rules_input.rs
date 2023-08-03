@@ -49,6 +49,10 @@ impl DisassociatePricingRulesInputBuilder {
         self.arn = input;
         self
     }
+    /// <p> The pricing plan Amazon Resource Name (ARN) to disassociate pricing rules from. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Appends an item to `pricing_rule_arns`.
     ///
     /// To override the contents of this collection use [`set_pricing_rule_arns`](Self::set_pricing_rule_arns).
@@ -70,6 +74,12 @@ impl DisassociatePricingRulesInputBuilder {
     ) -> Self {
         self.pricing_rule_arns = input;
         self
+    }
+    /// <p> A list containing the Amazon Resource Name (ARN) of the pricing rules that will be disassociated. </p>
+    pub fn get_pricing_rule_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.pricing_rule_arns
     }
     /// Consumes the builder and constructs a [`DisassociatePricingRulesInput`](crate::operation::disassociate_pricing_rules::DisassociatePricingRulesInput).
     pub fn build(

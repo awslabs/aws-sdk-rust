@@ -50,6 +50,10 @@ impl DeleteVirtualNodeOutputBuilder {
         self.virtual_node = input;
         self
     }
+    /// <p>The virtual node that was deleted.</p>
+    pub fn get_virtual_node(&self) -> &::std::option::Option<crate::types::VirtualNodeData> {
+        &self.virtual_node
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

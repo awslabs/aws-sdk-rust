@@ -37,6 +37,13 @@ impl CreateVolumeFromBackupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateVolumeFromBackup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_volume_from_backup::builders::CreateVolumeFromBackupInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl CreateVolumeFromBackupFluentBuilder {
         self.inner = self.inner.set_backup_id(input);
         self
     }
+    /// <p>The ID of the source backup. Specifies the backup that you are copying.</p>
+    pub fn get_backup_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_backup_id()
+    }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn client_request_token(
         mut self,
@@ -143,6 +154,10 @@ impl CreateVolumeFromBackupFluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
+    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
+    }
     /// <p>The name of the new volume you're creating.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -152,6 +167,10 @@ impl CreateVolumeFromBackupFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the new volume you're creating.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>Specifies the configuration of the ONTAP volume that you are creating.</p>
     pub fn ontap_configuration(
@@ -169,6 +188,12 @@ impl CreateVolumeFromBackupFluentBuilder {
         self.inner = self.inner.set_ontap_configuration(input);
         self
     }
+    /// <p>Specifies the configuration of the ONTAP volume that you are creating.</p>
+    pub fn get_ontap_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateOntapVolumeConfiguration> {
+        self.inner.get_ontap_configuration()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -185,5 +210,9 @@ impl CreateVolumeFromBackupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

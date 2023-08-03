@@ -120,6 +120,10 @@ impl MaxP95PerformanceBuilder {
         self.iops_read = input;
         self
     }
+    /// <p>Peak IOPS related to read operations.</p>
+    pub fn get_iops_read(&self) -> &::std::option::Option<f64> {
+        &self.iops_read
+    }
     /// <p>Peak IOPS related to write operations.</p>
     pub fn iops_write(mut self, input: f64) -> Self {
         self.iops_write = ::std::option::Option::Some(input);
@@ -129,6 +133,10 @@ impl MaxP95PerformanceBuilder {
     pub fn set_iops_write(mut self, input: ::std::option::Option<f64>) -> Self {
         self.iops_write = input;
         self
+    }
+    /// <p>Peak IOPS related to write operations.</p>
+    pub fn get_iops_write(&self) -> &::std::option::Option<f64> {
+        &self.iops_write
     }
     /// <p>Peak IOPS unrelated to read and write operations.</p>
     pub fn iops_other(mut self, input: f64) -> Self {
@@ -140,6 +148,10 @@ impl MaxP95PerformanceBuilder {
         self.iops_other = input;
         self
     }
+    /// <p>Peak IOPS unrelated to read and write operations.</p>
+    pub fn get_iops_other(&self) -> &::std::option::Option<f64> {
+        &self.iops_other
+    }
     /// <p>Peak total IOPS on your on-premises storage system resource.</p>
     pub fn iops_total(mut self, input: f64) -> Self {
         self.iops_total = ::std::option::Option::Some(input);
@@ -149,6 +161,10 @@ impl MaxP95PerformanceBuilder {
     pub fn set_iops_total(mut self, input: ::std::option::Option<f64>) -> Self {
         self.iops_total = input;
         self
+    }
+    /// <p>Peak total IOPS on your on-premises storage system resource.</p>
+    pub fn get_iops_total(&self) -> &::std::option::Option<f64> {
+        &self.iops_total
     }
     /// <p>Peak throughput related to read operations.</p>
     pub fn throughput_read(mut self, input: f64) -> Self {
@@ -160,6 +176,10 @@ impl MaxP95PerformanceBuilder {
         self.throughput_read = input;
         self
     }
+    /// <p>Peak throughput related to read operations.</p>
+    pub fn get_throughput_read(&self) -> &::std::option::Option<f64> {
+        &self.throughput_read
+    }
     /// <p>Peak throughput related to write operations.</p>
     pub fn throughput_write(mut self, input: f64) -> Self {
         self.throughput_write = ::std::option::Option::Some(input);
@@ -169,6 +189,10 @@ impl MaxP95PerformanceBuilder {
     pub fn set_throughput_write(mut self, input: ::std::option::Option<f64>) -> Self {
         self.throughput_write = input;
         self
+    }
+    /// <p>Peak throughput related to write operations.</p>
+    pub fn get_throughput_write(&self) -> &::std::option::Option<f64> {
+        &self.throughput_write
     }
     /// <p>Peak throughput unrelated to read and write operations.</p>
     pub fn throughput_other(mut self, input: f64) -> Self {
@@ -180,6 +204,10 @@ impl MaxP95PerformanceBuilder {
         self.throughput_other = input;
         self
     }
+    /// <p>Peak throughput unrelated to read and write operations.</p>
+    pub fn get_throughput_other(&self) -> &::std::option::Option<f64> {
+        &self.throughput_other
+    }
     /// <p>Peak total throughput on your on-premises storage system resource.</p>
     pub fn throughput_total(mut self, input: f64) -> Self {
         self.throughput_total = ::std::option::Option::Some(input);
@@ -189,6 +217,10 @@ impl MaxP95PerformanceBuilder {
     pub fn set_throughput_total(mut self, input: ::std::option::Option<f64>) -> Self {
         self.throughput_total = input;
         self
+    }
+    /// <p>Peak total throughput on your on-premises storage system resource.</p>
+    pub fn get_throughput_total(&self) -> &::std::option::Option<f64> {
+        &self.throughput_total
     }
     /// <p>Peak latency for read operations.</p>
     pub fn latency_read(mut self, input: f64) -> Self {
@@ -200,6 +232,10 @@ impl MaxP95PerformanceBuilder {
         self.latency_read = input;
         self
     }
+    /// <p>Peak latency for read operations.</p>
+    pub fn get_latency_read(&self) -> &::std::option::Option<f64> {
+        &self.latency_read
+    }
     /// <p>Peak latency for write operations.</p>
     pub fn latency_write(mut self, input: f64) -> Self {
         self.latency_write = ::std::option::Option::Some(input);
@@ -210,6 +246,10 @@ impl MaxP95PerformanceBuilder {
         self.latency_write = input;
         self
     }
+    /// <p>Peak latency for write operations.</p>
+    pub fn get_latency_write(&self) -> &::std::option::Option<f64> {
+        &self.latency_write
+    }
     /// <p>Peak latency for operations unrelated to read and write operations.</p>
     pub fn latency_other(mut self, input: f64) -> Self {
         self.latency_other = ::std::option::Option::Some(input);
@@ -219,6 +259,10 @@ impl MaxP95PerformanceBuilder {
     pub fn set_latency_other(mut self, input: ::std::option::Option<f64>) -> Self {
         self.latency_other = input;
         self
+    }
+    /// <p>Peak latency for operations unrelated to read and write operations.</p>
+    pub fn get_latency_other(&self) -> &::std::option::Option<f64> {
+        &self.latency_other
     }
     /// Consumes the builder and constructs a [`MaxP95Performance`](crate::types::MaxP95Performance).
     pub fn build(self) -> crate::types::MaxP95Performance {

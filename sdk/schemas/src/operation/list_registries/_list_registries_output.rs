@@ -54,6 +54,10 @@ impl ListRegistriesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `registries`.
     ///
     /// To override the contents of this collection use [`set_registries`](Self::set_registries).
@@ -72,6 +76,12 @@ impl ListRegistriesOutputBuilder {
     ) -> Self {
         self.registries = input;
         self
+    }
+    /// <p>An array of registry summaries.</p>
+    pub fn get_registries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RegistrySummary>> {
+        &self.registries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

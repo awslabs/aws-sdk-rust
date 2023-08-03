@@ -64,6 +64,10 @@ impl ByoipCidrBuilder {
         self.cidr = input;
         self
     }
+    /// <p>The address range, in CIDR notation.</p>
+    pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr
+    }
     /// <p>The description of the address range.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl ByoipCidrBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the address range.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Upon success, contains the ID of the address pool. Otherwise, contains an error message.</p>
     pub fn status_message(
@@ -90,6 +98,10 @@ impl ByoipCidrBuilder {
         self.status_message = input;
         self
     }
+    /// <p>Upon success, contains the ID of the address pool. Otherwise, contains an error message.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>The state of the address pool.</p>
     pub fn state(mut self, input: crate::types::ByoipCidrState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -99,6 +111,10 @@ impl ByoipCidrBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ByoipCidrState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the address pool.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ByoipCidrState> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`ByoipCidr`](crate::types::ByoipCidr).
     pub fn build(self) -> crate::types::ByoipCidr {

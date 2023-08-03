@@ -36,6 +36,12 @@ impl GetPrefetchScheduleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetPrefetchSchedule as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_prefetch_schedule::builders::GetPrefetchScheduleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl GetPrefetchScheduleFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>Returns information about the prefetch schedule for a specific playback configuration. If you call <code>GetPrefetchSchedule</code> on an expired prefetch schedule, MediaTailor returns an HTTP 404 status code.</p>
     pub fn playback_configuration_name(
         mut self,
@@ -141,5 +151,9 @@ impl GetPrefetchScheduleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_playback_configuration_name(input);
         self
+    }
+    /// <p>Returns information about the prefetch schedule for a specific playback configuration. If you call <code>GetPrefetchSchedule</code> on an expired prefetch schedule, MediaTailor returns an HTTP 404 status code.</p>
+    pub fn get_playback_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_playback_configuration_name()
     }
 }

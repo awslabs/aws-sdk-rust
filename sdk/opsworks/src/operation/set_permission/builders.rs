@@ -37,6 +37,12 @@ impl SetPermissionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SetPermission as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::set_permission::builders::SetPermissionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +125,10 @@ impl SetPermissionFluentBuilder {
         self.inner = self.inner.set_stack_id(input);
         self
     }
+    /// <p>The stack ID.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stack_id()
+    }
     /// <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
     pub fn iam_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.iam_user_arn(input.into());
@@ -128,6 +138,10 @@ impl SetPermissionFluentBuilder {
     pub fn set_iam_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_iam_user_arn(input);
         self
+    }
+    /// <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
+    pub fn get_iam_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_iam_user_arn()
     }
     /// <p>The user is allowed to use SSH to communicate with the instance.</p>
     pub fn allow_ssh(mut self, input: bool) -> Self {
@@ -139,6 +153,10 @@ impl SetPermissionFluentBuilder {
         self.inner = self.inner.set_allow_ssh(input);
         self
     }
+    /// <p>The user is allowed to use SSH to communicate with the instance.</p>
+    pub fn get_allow_ssh(&self) -> &::std::option::Option<bool> {
+        self.inner.get_allow_ssh()
+    }
     /// <p>The user is allowed to use <b>sudo</b> to elevate privileges.</p>
     pub fn allow_sudo(mut self, input: bool) -> Self {
         self.inner = self.inner.allow_sudo(input);
@@ -148,6 +166,10 @@ impl SetPermissionFluentBuilder {
     pub fn set_allow_sudo(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_allow_sudo(input);
         self
+    }
+    /// <p>The user is allowed to use <b>sudo</b> to elevate privileges.</p>
+    pub fn get_allow_sudo(&self) -> &::std::option::Option<bool> {
+        self.inner.get_allow_sudo()
     }
     /// <p>The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level.</p>
     /// <ul>
@@ -174,5 +196,17 @@ impl SetPermissionFluentBuilder {
     pub fn set_level(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_level(input);
         self
+    }
+    /// <p>The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level.</p>
+    /// <ul>
+    /// <li> <p> <code>deny</code> </p> </li>
+    /// <li> <p> <code>show</code> </p> </li>
+    /// <li> <p> <code>deploy</code> </p> </li>
+    /// <li> <p> <code>manage</code> </p> </li>
+    /// <li> <p> <code>iam_only</code> </p> </li>
+    /// </ul>
+    /// <p>For more information about the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+    pub fn get_level(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_level()
     }
 }

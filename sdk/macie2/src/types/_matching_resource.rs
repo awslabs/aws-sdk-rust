@@ -43,6 +43,10 @@ impl MatchingResourceBuilder {
         self.matching_bucket = input;
         self
     }
+    /// <p>The details of an S3 bucket that Amazon Macie monitors and analyzes.</p>
+    pub fn get_matching_bucket(&self) -> &::std::option::Option<crate::types::MatchingBucket> {
+        &self.matching_bucket
+    }
     /// Consumes the builder and constructs a [`MatchingResource`](crate::types::MatchingResource).
     pub fn build(self) -> crate::types::MatchingResource {
         crate::types::MatchingResource {

@@ -47,6 +47,10 @@ impl DescribeWorkflowExecutionInputBuilder {
         self.domain = input;
         self
     }
+    /// <p>The name of the domain containing the workflow execution.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
+    }
     /// <p>The workflow execution to describe.</p>
     pub fn execution(mut self, input: crate::types::WorkflowExecution) -> Self {
         self.execution = ::std::option::Option::Some(input);
@@ -59,6 +63,10 @@ impl DescribeWorkflowExecutionInputBuilder {
     ) -> Self {
         self.execution = input;
         self
+    }
+    /// <p>The workflow execution to describe.</p>
+    pub fn get_execution(&self) -> &::std::option::Option<crate::types::WorkflowExecution> {
+        &self.execution
     }
     /// Consumes the builder and constructs a [`DescribeWorkflowExecutionInput`](crate::operation::describe_workflow_execution::DescribeWorkflowExecutionInput).
     pub fn build(

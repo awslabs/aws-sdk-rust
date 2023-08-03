@@ -117,6 +117,10 @@ impl PutObjectInputBuilder {
         self.backup_job_id = input;
         self
     }
+    /// Backup job Id for the in-progress backup.
+    pub fn get_backup_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_job_id
+    }
     /// The name of the Object to be uploaded.
     pub fn object_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_name = ::std::option::Option::Some(input.into());
@@ -126,6 +130,10 @@ impl PutObjectInputBuilder {
     pub fn set_object_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.object_name = input;
         self
+    }
+    /// The name of the Object to be uploaded.
+    pub fn get_object_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_name
     }
     /// Store user defined metadata like backup checksum, disk ids, restore metadata etc.
     pub fn metadata_string(
@@ -143,6 +151,10 @@ impl PutObjectInputBuilder {
         self.metadata_string = input;
         self
     }
+    /// Store user defined metadata like backup checksum, disk ids, restore metadata etc.
+    pub fn get_metadata_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metadata_string
+    }
     /// Inline chunk data to be uploaded.
     pub fn inline_chunk(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
         self.inline_chunk = ::std::option::Option::Some(input);
@@ -156,6 +168,12 @@ impl PutObjectInputBuilder {
         self.inline_chunk = input;
         self
     }
+    /// Inline chunk data to be uploaded.
+    pub fn get_inline_chunk(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+        &self.inline_chunk
+    }
     /// Length of the inline chunk data.
     pub fn inline_chunk_length(mut self, input: i64) -> Self {
         self.inline_chunk_length = ::std::option::Option::Some(input);
@@ -165,6 +183,10 @@ impl PutObjectInputBuilder {
     pub fn set_inline_chunk_length(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inline_chunk_length = input;
         self
+    }
+    /// Length of the inline chunk data.
+    pub fn get_inline_chunk_length(&self) -> &::std::option::Option<i64> {
+        &self.inline_chunk_length
     }
     /// Inline chunk checksum
     pub fn inline_chunk_checksum(
@@ -182,6 +204,10 @@ impl PutObjectInputBuilder {
         self.inline_chunk_checksum = input;
         self
     }
+    /// Inline chunk checksum
+    pub fn get_inline_chunk_checksum(&self) -> &::std::option::Option<::std::string::String> {
+        &self.inline_chunk_checksum
+    }
     /// Inline chunk checksum algorithm
     pub fn inline_chunk_checksum_algorithm(
         mut self,
@@ -197,6 +223,12 @@ impl PutObjectInputBuilder {
     ) -> Self {
         self.inline_chunk_checksum_algorithm = input;
         self
+    }
+    /// Inline chunk checksum algorithm
+    pub fn get_inline_chunk_checksum_algorithm(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.inline_chunk_checksum_algorithm
     }
     /// object checksum
     pub fn object_checksum(
@@ -214,6 +246,10 @@ impl PutObjectInputBuilder {
         self.object_checksum = input;
         self
     }
+    /// object checksum
+    pub fn get_object_checksum(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_checksum
+    }
     /// object checksum algorithm
     pub fn object_checksum_algorithm(
         mut self,
@@ -230,6 +266,12 @@ impl PutObjectInputBuilder {
         self.object_checksum_algorithm = input;
         self
     }
+    /// object checksum algorithm
+    pub fn get_object_checksum_algorithm(
+        &self,
+    ) -> &::std::option::Option<crate::types::SummaryChecksumAlgorithm> {
+        &self.object_checksum_algorithm
+    }
     /// Throw an exception if Object name is already exist.
     pub fn throw_on_duplicate(mut self, input: bool) -> Self {
         self.throw_on_duplicate = ::std::option::Option::Some(input);
@@ -239,6 +281,10 @@ impl PutObjectInputBuilder {
     pub fn set_throw_on_duplicate(mut self, input: ::std::option::Option<bool>) -> Self {
         self.throw_on_duplicate = input;
         self
+    }
+    /// Throw an exception if Object name is already exist.
+    pub fn get_throw_on_duplicate(&self) -> &::std::option::Option<bool> {
+        &self.throw_on_duplicate
     }
     /// Consumes the builder and constructs a [`PutObjectInput`](crate::operation::put_object::PutObjectInput).
     pub fn build(

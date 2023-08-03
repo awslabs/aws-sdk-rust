@@ -61,6 +61,11 @@ impl AssetRelationshipSummaryBuilder {
         self.hierarchy_info = input;
         self
     }
+    /// <p>The assets that are related through an asset hierarchy.</p>
+    /// <p>This object is present if the <code>relationshipType</code> is <code>HIERARCHY</code>.</p>
+    pub fn get_hierarchy_info(&self) -> &::std::option::Option<crate::types::AssetHierarchyInfo> {
+        &self.hierarchy_info
+    }
     /// <p>The relationship type of the assets in this relationship. This value is one of the following:</p>
     /// <ul>
     /// <li> <p> <code>HIERARCHY</code> – The assets are related through an asset hierarchy. If you specify this relationship type, this asset relationship includes the <code>hierarchyInfo</code> object.</p> </li>
@@ -79,6 +84,15 @@ impl AssetRelationshipSummaryBuilder {
     ) -> Self {
         self.relationship_type = input;
         self
+    }
+    /// <p>The relationship type of the assets in this relationship. This value is one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>HIERARCHY</code> – The assets are related through an asset hierarchy. If you specify this relationship type, this asset relationship includes the <code>hierarchyInfo</code> object.</p> </li>
+    /// </ul>
+    pub fn get_relationship_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::AssetRelationshipType> {
+        &self.relationship_type
     }
     /// Consumes the builder and constructs a [`AssetRelationshipSummary`](crate::types::AssetRelationshipSummary).
     pub fn build(self) -> crate::types::AssetRelationshipSummary {

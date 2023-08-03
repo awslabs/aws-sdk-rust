@@ -50,6 +50,10 @@ impl DescribeReportPlanOutputBuilder {
         self.report_plan = input;
         self
     }
+    /// <p>Returns details about the report plan that is specified by its name. These details include the report plan's Amazon Resource Name (ARN), description, settings, delivery channel, deployment status, creation time, and last attempted and successful run times.</p>
+    pub fn get_report_plan(&self) -> &::std::option::Option<crate::types::ReportPlan> {
+        &self.report_plan
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

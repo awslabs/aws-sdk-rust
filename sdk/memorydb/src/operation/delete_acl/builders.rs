@@ -36,6 +36,10 @@ impl DeleteACLFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteACL as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_acl::builders::DeleteAclInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -117,5 +121,9 @@ impl DeleteACLFluentBuilder {
     pub fn set_acl_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_acl_name(input);
         self
+    }
+    /// <p>The name of the Access Control List to delete</p>
+    pub fn get_acl_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_acl_name()
     }
 }

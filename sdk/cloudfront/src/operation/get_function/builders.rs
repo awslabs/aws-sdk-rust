@@ -37,6 +37,10 @@ impl GetFunctionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetFunction as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_function::builders::GetFunctionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl GetFunctionFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the function whose code you are getting.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
     pub fn stage(mut self, input: crate::types::FunctionStage) -> Self {
         self.inner = self.inner.stage(input);
@@ -128,5 +136,9 @@ impl GetFunctionFluentBuilder {
     pub fn set_stage(mut self, input: ::std::option::Option<crate::types::FunctionStage>) -> Self {
         self.inner = self.inner.set_stage(input);
         self
+    }
+    /// <p>The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
+    pub fn get_stage(&self) -> &::std::option::Option<crate::types::FunctionStage> {
+        self.inner.get_stage()
     }
 }

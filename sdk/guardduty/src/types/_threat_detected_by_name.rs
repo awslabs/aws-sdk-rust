@@ -64,6 +64,10 @@ impl ThreatDetectedByNameBuilder {
         self.item_count = input;
         self
     }
+    /// <p>Total number of infected files identified.</p>
+    pub fn get_item_count(&self) -> &::std::option::Option<i32> {
+        &self.item_count
+    }
     /// <p>Total number of unique threats by name identified, as part of the malware scan.</p>
     pub fn unique_threat_name_count(mut self, input: i32) -> Self {
         self.unique_threat_name_count = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl ThreatDetectedByNameBuilder {
         self.unique_threat_name_count = input;
         self
     }
+    /// <p>Total number of unique threats by name identified, as part of the malware scan.</p>
+    pub fn get_unique_threat_name_count(&self) -> &::std::option::Option<i32> {
+        &self.unique_threat_name_count
+    }
     /// <p>Flag to determine if the finding contains every single infected file-path and/or every threat.</p>
     pub fn shortened(mut self, input: bool) -> Self {
         self.shortened = ::std::option::Option::Some(input);
@@ -83,6 +91,10 @@ impl ThreatDetectedByNameBuilder {
     pub fn set_shortened(mut self, input: ::std::option::Option<bool>) -> Self {
         self.shortened = input;
         self
+    }
+    /// <p>Flag to determine if the finding contains every single infected file-path and/or every threat.</p>
+    pub fn get_shortened(&self) -> &::std::option::Option<bool> {
+        &self.shortened
     }
     /// Appends an item to `threat_names`.
     ///
@@ -102,6 +114,12 @@ impl ThreatDetectedByNameBuilder {
     ) -> Self {
         self.threat_names = input;
         self
+    }
+    /// <p>List of identified threats with details, organized by threat name.</p>
+    pub fn get_threat_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScanThreatName>> {
+        &self.threat_names
     }
     /// Consumes the builder and constructs a [`ThreatDetectedByName`](crate::types::ThreatDetectedByName).
     pub fn build(self) -> crate::types::ThreatDetectedByName {

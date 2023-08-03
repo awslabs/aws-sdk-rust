@@ -43,6 +43,10 @@ impl VirtualGatewayClientPolicyBuilder {
         self.tls = input;
         self
     }
+    /// <p>A reference to an object that represents a Transport Layer Security (TLS) client policy.</p>
+    pub fn get_tls(&self) -> &::std::option::Option<crate::types::VirtualGatewayClientPolicyTls> {
+        &self.tls
+    }
     /// Consumes the builder and constructs a [`VirtualGatewayClientPolicy`](crate::types::VirtualGatewayClientPolicy).
     pub fn build(self) -> crate::types::VirtualGatewayClientPolicy {
         crate::types::VirtualGatewayClientPolicy { tls: self.tls }

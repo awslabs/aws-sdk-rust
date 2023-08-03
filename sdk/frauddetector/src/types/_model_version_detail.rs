@@ -142,6 +142,10 @@ impl ModelVersionDetailBuilder {
         self.model_id = input;
         self
     }
+    /// <p>The model ID.</p>
+    pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_id
+    }
     /// <p>The model type.</p>
     pub fn model_type(mut self, input: crate::types::ModelTypeEnum) -> Self {
         self.model_type = ::std::option::Option::Some(input);
@@ -154,6 +158,10 @@ impl ModelVersionDetailBuilder {
     ) -> Self {
         self.model_type = input;
         self
+    }
+    /// <p>The model type.</p>
+    pub fn get_model_type(&self) -> &::std::option::Option<crate::types::ModelTypeEnum> {
+        &self.model_type
     }
     /// <p>The model version number.</p>
     pub fn model_version_number(
@@ -171,6 +179,10 @@ impl ModelVersionDetailBuilder {
         self.model_version_number = input;
         self
     }
+    /// <p>The model version number.</p>
+    pub fn get_model_version_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_version_number
+    }
     /// <p>The status of the model version.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -180,6 +192,10 @@ impl ModelVersionDetailBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the model version.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>The model version training data source.</p>
     pub fn training_data_source(mut self, input: crate::types::TrainingDataSourceEnum) -> Self {
@@ -194,6 +210,12 @@ impl ModelVersionDetailBuilder {
         self.training_data_source = input;
         self
     }
+    /// <p>The model version training data source.</p>
+    pub fn get_training_data_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::TrainingDataSourceEnum> {
+        &self.training_data_source
+    }
     /// <p>The training data schema.</p>
     pub fn training_data_schema(mut self, input: crate::types::TrainingDataSchema) -> Self {
         self.training_data_schema = ::std::option::Option::Some(input);
@@ -206,6 +228,12 @@ impl ModelVersionDetailBuilder {
     ) -> Self {
         self.training_data_schema = input;
         self
+    }
+    /// <p>The training data schema.</p>
+    pub fn get_training_data_schema(
+        &self,
+    ) -> &::std::option::Option<crate::types::TrainingDataSchema> {
+        &self.training_data_schema
     }
     /// <p>The external events data details. This will be populated if the <code>trainingDataSource</code> for the model version is specified as <code>EXTERNAL_EVENTS</code>.</p>
     pub fn external_events_detail(mut self, input: crate::types::ExternalEventsDetail) -> Self {
@@ -220,6 +248,12 @@ impl ModelVersionDetailBuilder {
         self.external_events_detail = input;
         self
     }
+    /// <p>The external events data details. This will be populated if the <code>trainingDataSource</code> for the model version is specified as <code>EXTERNAL_EVENTS</code>.</p>
+    pub fn get_external_events_detail(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExternalEventsDetail> {
+        &self.external_events_detail
+    }
     /// <p>The ingested events data details. This will be populated if the <code>trainingDataSource</code> for the model version is specified as <code>INGESTED_EVENTS</code>.</p>
     pub fn ingested_events_detail(mut self, input: crate::types::IngestedEventsDetail) -> Self {
         self.ingested_events_detail = ::std::option::Option::Some(input);
@@ -233,6 +267,12 @@ impl ModelVersionDetailBuilder {
         self.ingested_events_detail = input;
         self
     }
+    /// <p>The ingested events data details. This will be populated if the <code>trainingDataSource</code> for the model version is specified as <code>INGESTED_EVENTS</code>.</p>
+    pub fn get_ingested_events_detail(
+        &self,
+    ) -> &::std::option::Option<crate::types::IngestedEventsDetail> {
+        &self.ingested_events_detail
+    }
     /// <p>The training results.</p>
     pub fn training_result(mut self, input: crate::types::TrainingResult) -> Self {
         self.training_result = ::std::option::Option::Some(input);
@@ -245,6 +285,10 @@ impl ModelVersionDetailBuilder {
     ) -> Self {
         self.training_result = input;
         self
+    }
+    /// <p>The training results.</p>
+    pub fn get_training_result(&self) -> &::std::option::Option<crate::types::TrainingResult> {
+        &self.training_result
     }
     /// <p>The timestamp when the model was last updated.</p>
     pub fn last_updated_time(
@@ -262,6 +306,10 @@ impl ModelVersionDetailBuilder {
         self.last_updated_time = input;
         self
     }
+    /// <p>The timestamp when the model was last updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_updated_time
+    }
     /// <p>The timestamp when the model was created.</p>
     pub fn created_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_time = ::std::option::Option::Some(input.into());
@@ -272,6 +320,10 @@ impl ModelVersionDetailBuilder {
         self.created_time = input;
         self
     }
+    /// <p>The timestamp when the model was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_time
+    }
     /// <p>The model version ARN.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -281,6 +333,10 @@ impl ModelVersionDetailBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The model version ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p> The training result details. The details include the relative importance of the variables. </p>
     pub fn training_result_v2(mut self, input: crate::types::TrainingResultV2) -> Self {
@@ -294,6 +350,10 @@ impl ModelVersionDetailBuilder {
     ) -> Self {
         self.training_result_v2 = input;
         self
+    }
+    /// <p> The training result details. The details include the relative importance of the variables. </p>
+    pub fn get_training_result_v2(&self) -> &::std::option::Option<crate::types::TrainingResultV2> {
+        &self.training_result_v2
     }
     /// Consumes the builder and constructs a [`ModelVersionDetail`](crate::types::ModelVersionDetail).
     pub fn build(self) -> crate::types::ModelVersionDetail {

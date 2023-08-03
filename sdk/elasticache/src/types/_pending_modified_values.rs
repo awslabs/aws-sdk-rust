@@ -107,6 +107,11 @@ impl PendingModifiedValuesBuilder {
         self.num_cache_nodes = input;
         self
     }
+    /// <p>The new number of cache nodes for the cluster.</p>
+    /// <p>For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p>
+    pub fn get_num_cache_nodes(&self) -> &::std::option::Option<i32> {
+        &self.num_cache_nodes
+    }
     /// Appends an item to `cache_node_ids_to_remove`.
     ///
     /// To override the contents of this collection use [`set_cache_node_ids_to_remove`](Self::set_cache_node_ids_to_remove).
@@ -129,6 +134,12 @@ impl PendingModifiedValuesBuilder {
         self.cache_node_ids_to_remove = input;
         self
     }
+    /// <p>A list of cache node IDs that are being removed (or will be removed) from the cluster. A node ID is a 4-digit numeric identifier (0001, 0002, etc.).</p>
+    pub fn get_cache_node_ids_to_remove(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.cache_node_ids_to_remove
+    }
     /// <p>The new cache engine version that the cluster runs.</p>
     pub fn engine_version(
         mut self,
@@ -144,6 +155,10 @@ impl PendingModifiedValuesBuilder {
     ) -> Self {
         self.engine_version = input;
         self
+    }
+    /// <p>The new cache engine version that the cluster runs.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
     }
     /// <p>The cache node type that this cluster or replication group is scaled to.</p>
     pub fn cache_node_type(
@@ -161,6 +176,10 @@ impl PendingModifiedValuesBuilder {
         self.cache_node_type = input;
         self
     }
+    /// <p>The cache node type that this cluster or replication group is scaled to.</p>
+    pub fn get_cache_node_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_node_type
+    }
     /// <p>The auth token status</p>
     pub fn auth_token_status(mut self, input: crate::types::AuthTokenUpdateStatus) -> Self {
         self.auth_token_status = ::std::option::Option::Some(input);
@@ -173,6 +192,12 @@ impl PendingModifiedValuesBuilder {
     ) -> Self {
         self.auth_token_status = input;
         self
+    }
+    /// <p>The auth token status</p>
+    pub fn get_auth_token_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuthTokenUpdateStatus> {
+        &self.auth_token_status
     }
     /// Appends an item to `log_delivery_configurations`.
     ///
@@ -198,6 +223,13 @@ impl PendingModifiedValuesBuilder {
         self.log_delivery_configurations = input;
         self
     }
+    /// <p>The log delivery configurations being modified </p>
+    pub fn get_log_delivery_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PendingLogDeliveryConfiguration>>
+    {
+        &self.log_delivery_configurations
+    }
     /// <p>A flag that enables in-transit encryption when set to true.</p>
     pub fn transit_encryption_enabled(mut self, input: bool) -> Self {
         self.transit_encryption_enabled = ::std::option::Option::Some(input);
@@ -207,6 +239,10 @@ impl PendingModifiedValuesBuilder {
     pub fn set_transit_encryption_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.transit_encryption_enabled = input;
         self
+    }
+    /// <p>A flag that enables in-transit encryption when set to true.</p>
+    pub fn get_transit_encryption_enabled(&self) -> &::std::option::Option<bool> {
+        &self.transit_encryption_enabled
     }
     /// <p>A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.</p>
     pub fn transit_encryption_mode(mut self, input: crate::types::TransitEncryptionMode) -> Self {
@@ -220,6 +256,12 @@ impl PendingModifiedValuesBuilder {
     ) -> Self {
         self.transit_encryption_mode = input;
         self
+    }
+    /// <p>A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.</p>
+    pub fn get_transit_encryption_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransitEncryptionMode> {
+        &self.transit_encryption_mode
     }
     /// Consumes the builder and constructs a [`PendingModifiedValues`](crate::types::PendingModifiedValues).
     pub fn build(self) -> crate::types::PendingModifiedValues {

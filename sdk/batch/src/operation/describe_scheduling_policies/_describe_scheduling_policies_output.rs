@@ -59,6 +59,12 @@ impl DescribeSchedulingPoliciesOutputBuilder {
         self.scheduling_policies = input;
         self
     }
+    /// <p>The list of scheduling policies.</p>
+    pub fn get_scheduling_policies(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SchedulingPolicyDetail>> {
+        &self.scheduling_policies
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

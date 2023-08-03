@@ -47,6 +47,10 @@ impl ListKeyGroupsInputBuilder {
         self.marker = input;
         self
     }
+    /// <p>Use this field when paginating results to indicate where to begin in your list of key groups. The response includes key groups in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// <p>The maximum number of key groups that you want in the response.</p>
     pub fn max_items(mut self, input: i32) -> Self {
         self.max_items = ::std::option::Option::Some(input);
@@ -56,6 +60,10 @@ impl ListKeyGroupsInputBuilder {
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_items = input;
         self
+    }
+    /// <p>The maximum number of key groups that you want in the response.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        &self.max_items
     }
     /// Consumes the builder and constructs a [`ListKeyGroupsInput`](crate::operation::list_key_groups::ListKeyGroupsInput).
     pub fn build(

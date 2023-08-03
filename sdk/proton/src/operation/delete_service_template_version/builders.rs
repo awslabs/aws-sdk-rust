@@ -37,6 +37,10 @@ impl DeleteServiceTemplateVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteServiceTemplateVersion as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_service_template_version::builders::DeleteServiceTemplateVersionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,10 @@ impl DeleteServiceTemplateVersionFluentBuilder {
         self.inner = self.inner.set_template_name(input);
         self
     }
+    /// <p>The name of the service template.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_name()
+    }
     /// <p>The service template major version to delete.</p>
     pub fn major_version(
         mut self,
@@ -149,6 +157,10 @@ impl DeleteServiceTemplateVersionFluentBuilder {
         self.inner = self.inner.set_major_version(input);
         self
     }
+    /// <p>The service template major version to delete.</p>
+    pub fn get_major_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_major_version()
+    }
     /// <p>The service template minor version to delete.</p>
     pub fn minor_version(
         mut self,
@@ -164,5 +176,9 @@ impl DeleteServiceTemplateVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_minor_version(input);
         self
+    }
+    /// <p>The service template minor version to delete.</p>
+    pub fn get_minor_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_minor_version()
     }
 }

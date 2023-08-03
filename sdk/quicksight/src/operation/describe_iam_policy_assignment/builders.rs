@@ -36,6 +36,10 @@ impl DescribeIAMPolicyAssignmentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeIAMPolicyAssignment as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_iam_policy_assignment::builders::DescribeIamPolicyAssignmentInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl DescribeIAMPolicyAssignmentFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The ID of the Amazon Web Services account that contains the assignment that you want to describe.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>The name of the assignment, also called a rule.</p>
     pub fn assignment_name(
         mut self,
@@ -148,6 +156,10 @@ impl DescribeIAMPolicyAssignmentFluentBuilder {
         self.inner = self.inner.set_assignment_name(input);
         self
     }
+    /// <p>The name of the assignment, also called a rule.</p>
+    pub fn get_assignment_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_assignment_name()
+    }
     /// <p>The namespace that contains the assignment.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace(input.into());
@@ -157,5 +169,9 @@ impl DescribeIAMPolicyAssignmentFluentBuilder {
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace(input);
         self
+    }
+    /// <p>The namespace that contains the assignment.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_namespace()
     }
 }

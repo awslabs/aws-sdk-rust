@@ -111,6 +111,10 @@ impl StartJobRunInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The ID of the application on which to run the job.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The client idempotency token of the job run to start. Its value must be unique for each request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -120,6 +124,10 @@ impl StartJobRunInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>The client idempotency token of the job run to start. Its value must be unique for each request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// <p>The execution role ARN for the job run.</p>
     pub fn execution_role_arn(
@@ -137,6 +145,10 @@ impl StartJobRunInputBuilder {
         self.execution_role_arn = input;
         self
     }
+    /// <p>The execution role ARN for the job run.</p>
+    pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_role_arn
+    }
     /// <p>The job driver for the job run.</p>
     pub fn job_driver(mut self, input: crate::types::JobDriver) -> Self {
         self.job_driver = ::std::option::Option::Some(input);
@@ -146,6 +158,10 @@ impl StartJobRunInputBuilder {
     pub fn set_job_driver(mut self, input: ::std::option::Option<crate::types::JobDriver>) -> Self {
         self.job_driver = input;
         self
+    }
+    /// <p>The job driver for the job run.</p>
+    pub fn get_job_driver(&self) -> &::std::option::Option<crate::types::JobDriver> {
+        &self.job_driver
     }
     /// <p>The configuration overrides for the job run.</p>
     pub fn configuration_overrides(mut self, input: crate::types::ConfigurationOverrides) -> Self {
@@ -159,6 +175,12 @@ impl StartJobRunInputBuilder {
     ) -> Self {
         self.configuration_overrides = input;
         self
+    }
+    /// <p>The configuration overrides for the job run.</p>
+    pub fn get_configuration_overrides(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConfigurationOverrides> {
+        &self.configuration_overrides
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -185,6 +207,14 @@ impl StartJobRunInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags assigned to the job run.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The maximum duration for the job run to run. If the job run runs beyond this duration, it will be automatically cancelled.</p>
     pub fn execution_timeout_minutes(mut self, input: i64) -> Self {
         self.execution_timeout_minutes = ::std::option::Option::Some(input);
@@ -195,6 +225,10 @@ impl StartJobRunInputBuilder {
         self.execution_timeout_minutes = input;
         self
     }
+    /// <p>The maximum duration for the job run to run. If the job run runs beyond this duration, it will be automatically cancelled.</p>
+    pub fn get_execution_timeout_minutes(&self) -> &::std::option::Option<i64> {
+        &self.execution_timeout_minutes
+    }
     /// <p>The optional job run name. This doesn't have to be unique.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -204,6 +238,10 @@ impl StartJobRunInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The optional job run name. This doesn't have to be unique.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`StartJobRunInput`](crate::operation::start_job_run::StartJobRunInput).
     pub fn build(

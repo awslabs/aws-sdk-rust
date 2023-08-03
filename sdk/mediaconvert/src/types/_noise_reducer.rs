@@ -77,6 +77,10 @@ impl NoiseReducerBuilder {
         self.filter = input;
         self
     }
+    /// Use Noise reducer filter to select one of the following spatial image filtering functions. To use this setting, you must also enable Noise reducer. * Bilateral preserves edges while reducing noise. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) do convolution filtering. * Conserve does min/max noise reduction. * Spatial does frequency-domain filtering based on JND principles. * Temporal optimizes video quality for complex motion.
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::NoiseReducerFilter> {
+        &self.filter
+    }
     /// Settings for a noise reducer filter
     pub fn filter_settings(mut self, input: crate::types::NoiseReducerFilterSettings) -> Self {
         self.filter_settings = ::std::option::Option::Some(input);
@@ -89,6 +93,12 @@ impl NoiseReducerBuilder {
     ) -> Self {
         self.filter_settings = input;
         self
+    }
+    /// Settings for a noise reducer filter
+    pub fn get_filter_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::NoiseReducerFilterSettings> {
+        &self.filter_settings
     }
     /// Noise reducer filter settings for spatial filter.
     pub fn spatial_filter_settings(
@@ -106,6 +116,12 @@ impl NoiseReducerBuilder {
         self.spatial_filter_settings = input;
         self
     }
+    /// Noise reducer filter settings for spatial filter.
+    pub fn get_spatial_filter_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::NoiseReducerSpatialFilterSettings> {
+        &self.spatial_filter_settings
+    }
     /// Noise reducer filter settings for temporal filter.
     pub fn temporal_filter_settings(
         mut self,
@@ -121,6 +137,12 @@ impl NoiseReducerBuilder {
     ) -> Self {
         self.temporal_filter_settings = input;
         self
+    }
+    /// Noise reducer filter settings for temporal filter.
+    pub fn get_temporal_filter_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::NoiseReducerTemporalFilterSettings> {
+        &self.temporal_filter_settings
     }
     /// Consumes the builder and constructs a [`NoiseReducer`](crate::types::NoiseReducer).
     pub fn build(self) -> crate::types::NoiseReducer {

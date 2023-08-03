@@ -40,6 +40,10 @@ impl RestartSimulationJobInputBuilder {
         self.job = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the simulation job.</p>
+    pub fn get_job(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job
+    }
     /// Consumes the builder and constructs a [`RestartSimulationJobInput`](crate::operation::restart_simulation_job::RestartSimulationJobInput).
     pub fn build(
         self,

@@ -42,6 +42,10 @@ impl UpdateOrganizationConfigurationInputBuilder {
         self.auto_enable = input;
         self
     }
+    /// <p>Defines which scan types are enabled automatically for new members of your Amazon Inspector organization.</p>
+    pub fn get_auto_enable(&self) -> &::std::option::Option<crate::types::AutoEnable> {
+        &self.auto_enable
+    }
     /// Consumes the builder and constructs a [`UpdateOrganizationConfigurationInput`](crate::operation::update_organization_configuration::UpdateOrganizationConfigurationInput).
     pub fn build(
         self,

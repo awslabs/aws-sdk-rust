@@ -55,6 +55,10 @@ impl UpdateResourceInputBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The new role to use for the given resource registered in Lake Formation.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>The resource ARN.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl UpdateResourceInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The resource ARN.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// <p>Whether or not the resource is a federated resource.</p>
     pub fn with_federation(mut self, input: bool) -> Self {
         self.with_federation = ::std::option::Option::Some(input);
@@ -74,6 +82,10 @@ impl UpdateResourceInputBuilder {
     pub fn set_with_federation(mut self, input: ::std::option::Option<bool>) -> Self {
         self.with_federation = input;
         self
+    }
+    /// <p>Whether or not the resource is a federated resource.</p>
+    pub fn get_with_federation(&self) -> &::std::option::Option<bool> {
+        &self.with_federation
     }
     /// Consumes the builder and constructs a [`UpdateResourceInput`](crate::operation::update_resource::UpdateResourceInput).
     pub fn build(

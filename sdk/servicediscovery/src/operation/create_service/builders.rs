@@ -49,6 +49,12 @@ impl CreateServiceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateService as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_service::builders::CreateServiceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -153,6 +159,21 @@ impl CreateServiceFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name that you want to assign to the service.</p> <note>
+    /// <p>Do not include sensitive information in the name if the namespace is discoverable by public DNS queries.</p>
+    /// </note>
+    /// <p>If you want Cloud Map to create an <code>SRV</code> record when you register an instance and you're using a system that requires a specific <code>SRV</code> format, such as <a href="http://www.haproxy.org/">HAProxy</a>, specify the following for <code>Name</code>:</p>
+    /// <ul>
+    /// <li> <p>Start the name with an underscore (_), such as <code>_exampleservice</code>.</p> </li>
+    /// <li> <p>End the name with <i>._protocol</i>, such as <code>._tcp</code>.</p> </li>
+    /// </ul>
+    /// <p>When you register an instance, Cloud Map creates an <code>SRV</code> record and assigns a name to the record by concatenating the service name and the namespace name (for example,</p>
+    /// <p> <code>_exampleservice._tcp.example.com</code>).</p> <note>
+    /// <p>For services that are accessible by DNS queries, you can't create multiple services with names that differ only by case (such as EXAMPLE and example). Otherwise, these services have the same DNS name and can't be distinguished. However, if you use a namespace that's only accessible by API calls, then you can create services that with names that differ only by case.</p>
+    /// </note>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The ID of the namespace that you want to use to create the service. The namespace ID must be specified, but it can be specified either here or in the <code>DnsConfig</code> object.</p>
     pub fn namespace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace_id(input.into());
@@ -162,6 +183,10 @@ impl CreateServiceFluentBuilder {
     pub fn set_namespace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace_id(input);
         self
+    }
+    /// <p>The ID of the namespace that you want to use to create the service. The namespace ID must be specified, but it can be specified either here or in the <code>DnsConfig</code> object.</p>
+    pub fn get_namespace_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_namespace_id()
     }
     /// <p>A unique string that identifies the request and that allows failed <code>CreateService</code> requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a date/timestamp).</p>
     pub fn creator_request_id(
@@ -179,6 +204,10 @@ impl CreateServiceFluentBuilder {
         self.inner = self.inner.set_creator_request_id(input);
         self
     }
+    /// <p>A unique string that identifies the request and that allows failed <code>CreateService</code> requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a date/timestamp).</p>
+    pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_creator_request_id()
+    }
     /// <p>A description for the service.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -189,6 +218,10 @@ impl CreateServiceFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>A description for the service.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>A complex type that contains information about the Amazon Route&nbsp;53 records that you want Cloud Map to create when you register an instance. </p>
     pub fn dns_config(mut self, input: crate::types::DnsConfig) -> Self {
         self.inner = self.inner.dns_config(input);
@@ -198,6 +231,10 @@ impl CreateServiceFluentBuilder {
     pub fn set_dns_config(mut self, input: ::std::option::Option<crate::types::DnsConfig>) -> Self {
         self.inner = self.inner.set_dns_config(input);
         self
+    }
+    /// <p>A complex type that contains information about the Amazon Route&nbsp;53 records that you want Cloud Map to create when you register an instance. </p>
+    pub fn get_dns_config(&self) -> &::std::option::Option<crate::types::DnsConfig> {
+        self.inner.get_dns_config()
     }
     /// <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional Route&nbsp;53 health check. If you specify settings for a health check, Cloud Map associates the health check with all the Route&nbsp;53 DNS records that you specify in <code>DnsConfig</code>.</p> <important>
     /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
@@ -217,6 +254,15 @@ impl CreateServiceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_health_check_config(input);
         self
+    }
+    /// <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional Route&nbsp;53 health check. If you specify settings for a health check, Cloud Map associates the health check with all the Route&nbsp;53 DNS records that you specify in <code>DnsConfig</code>.</p> <important>
+    /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
+    /// </important>
+    /// <p>For information about the charges for health checks, see <a href="http://aws.amazon.com/cloud-map/pricing/">Cloud Map Pricing</a>.</p>
+    pub fn get_health_check_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::HealthCheckConfig> {
+        self.inner.get_health_check_config()
     }
     /// <p>A complex type that contains information about an optional custom health check.</p> <important>
     /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
@@ -240,6 +286,15 @@ impl CreateServiceFluentBuilder {
         self.inner = self.inner.set_health_check_custom_config(input);
         self
     }
+    /// <p>A complex type that contains information about an optional custom health check.</p> <important>
+    /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
+    /// </important>
+    /// <p>You can't add, update, or delete a <code>HealthCheckCustomConfig</code> configuration from an existing service.</p>
+    pub fn get_health_check_custom_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::HealthCheckCustomConfig> {
+        self.inner.get_health_check_custom_config()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -257,6 +312,10 @@ impl CreateServiceFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tags to add to the service. Each tag consists of a key and an optional value that you define. Tags keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>If present, specifies that the service instances are only discoverable using the <code>DiscoverInstances</code> API operation. No DNS records is registered for the service instances. The only valid value is <code>HTTP</code>.</p>
     pub fn r#type(mut self, input: crate::types::ServiceTypeOption) -> Self {
         self.inner = self.inner.r#type(input);
@@ -269,5 +328,9 @@ impl CreateServiceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_type(input);
         self
+    }
+    /// <p>If present, specifies that the service instances are only discoverable using the <code>DiscoverInstances</code> API operation. No DNS records is registered for the service instances. The only valid value is <code>HTTP</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ServiceTypeOption> {
+        self.inner.get_type()
     }
 }

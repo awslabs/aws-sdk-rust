@@ -40,6 +40,10 @@ impl SegmentConditionBuilder {
         self.segment_id = input;
         self
     }
+    /// <p>The unique identifier for the segment to associate with the activity.</p>
+    pub fn get_segment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.segment_id
+    }
     /// Consumes the builder and constructs a [`SegmentCondition`](crate::types::SegmentCondition).
     pub fn build(self) -> crate::types::SegmentCondition {
         crate::types::SegmentCondition {

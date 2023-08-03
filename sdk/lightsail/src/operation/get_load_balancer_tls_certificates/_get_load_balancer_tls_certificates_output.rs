@@ -59,6 +59,12 @@ impl GetLoadBalancerTlsCertificatesOutputBuilder {
         self.tls_certificates = input;
         self
     }
+    /// <p>An array of LoadBalancerTlsCertificate objects describing your SSL/TLS certificates.</p>
+    pub fn get_tls_certificates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerTlsCertificate>> {
+        &self.tls_certificates
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

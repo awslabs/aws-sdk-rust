@@ -36,6 +36,13 @@ impl DeleteImagePermissionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteImagePermissions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_image_permissions::builders::DeleteImagePermissionsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl DeleteImagePermissionsFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the private image.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The 12-digit identifier of the AWS account for which to delete image permissions.</p>
     pub fn shared_account_id(
         mut self,
@@ -141,5 +152,9 @@ impl DeleteImagePermissionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_shared_account_id(input);
         self
+    }
+    /// <p>The 12-digit identifier of the AWS account for which to delete image permissions.</p>
+    pub fn get_shared_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_shared_account_id()
     }
 }

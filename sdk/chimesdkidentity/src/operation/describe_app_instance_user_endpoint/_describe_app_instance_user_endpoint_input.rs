@@ -53,6 +53,10 @@ impl DescribeAppInstanceUserEndpointInputBuilder {
         self.app_instance_user_arn = input;
         self
     }
+    /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    pub fn get_app_instance_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_instance_user_arn
+    }
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
     pub fn endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_id = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl DescribeAppInstanceUserEndpointInputBuilder {
     pub fn set_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_id = input;
         self
+    }
+    /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
+    pub fn get_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_id
     }
     /// Consumes the builder and constructs a [`DescribeAppInstanceUserEndpointInput`](crate::operation::describe_app_instance_user_endpoint::DescribeAppInstanceUserEndpointInput).
     pub fn build(

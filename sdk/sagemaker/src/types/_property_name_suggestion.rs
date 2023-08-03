@@ -46,6 +46,10 @@ impl PropertyNameSuggestionBuilder {
         self.property_name = input;
         self
     }
+    /// <p>A suggested property name based on what you entered in the search textbox in the SageMaker console.</p>
+    pub fn get_property_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.property_name
+    }
     /// Consumes the builder and constructs a [`PropertyNameSuggestion`](crate::types::PropertyNameSuggestion).
     pub fn build(self) -> crate::types::PropertyNameSuggestion {
         crate::types::PropertyNameSuggestion {

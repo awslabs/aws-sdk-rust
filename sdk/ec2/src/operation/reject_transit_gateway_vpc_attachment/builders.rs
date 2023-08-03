@@ -37,6 +37,10 @@ impl RejectTransitGatewayVpcAttachmentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RejectTransitGatewayVpcAttachment as a reference.
+    pub fn as_input(&self) -> &crate::operation::reject_transit_gateway_vpc_attachment::builders::RejectTransitGatewayVpcAttachmentInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -107,6 +111,12 @@ impl RejectTransitGatewayVpcAttachmentFluentBuilder {
         self.inner = self.inner.set_transit_gateway_attachment_id(input);
         self
     }
+    /// <p>The ID of the attachment.</p>
+    pub fn get_transit_gateway_attachment_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_transit_gateway_attachment_id()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -116,5 +126,9 @@ impl RejectTransitGatewayVpcAttachmentFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

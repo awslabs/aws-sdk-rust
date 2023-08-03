@@ -36,6 +36,13 @@ impl UpdateOutpostResolverFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateOutpostResolver as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_outpost_resolver::builders::UpdateOutpostResolverInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl UpdateOutpostResolverFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>A unique string that identifies Resolver on an Outpost.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>Name of the Resolver on the Outpost.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -136,6 +147,10 @@ impl UpdateOutpostResolverFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>Name of the Resolver on the Outpost.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The Amazon EC2 instance count for a Resolver on the Outpost.</p>
     pub fn instance_count(mut self, input: i32) -> Self {
         self.inner = self.inner.instance_count(input);
@@ -145,6 +160,10 @@ impl UpdateOutpostResolverFluentBuilder {
     pub fn set_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_instance_count(input);
         self
+    }
+    /// <p>The Amazon EC2 instance count for a Resolver on the Outpost.</p>
+    pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
+        self.inner.get_instance_count()
     }
     /// <p> Amazon EC2 instance type. </p>
     pub fn preferred_instance_type(
@@ -161,5 +180,9 @@ impl UpdateOutpostResolverFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_preferred_instance_type(input);
         self
+    }
+    /// <p> Amazon EC2 instance type. </p>
+    pub fn get_preferred_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_preferred_instance_type()
     }
 }

@@ -57,6 +57,12 @@ impl PublicAccessBuilder {
         self.permission_configuration = input;
         self
     }
+    /// <p>Contains information about how permissions are configured for the S3 bucket.</p>
+    pub fn get_permission_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::PermissionConfiguration> {
+        &self.permission_configuration
+    }
     /// <p>Describes the effective permission on this bucket after factoring all attached policies.</p>
     pub fn effective_permission(
         mut self,
@@ -72,6 +78,10 @@ impl PublicAccessBuilder {
     ) -> Self {
         self.effective_permission = input;
         self
+    }
+    /// <p>Describes the effective permission on this bucket after factoring all attached policies.</p>
+    pub fn get_effective_permission(&self) -> &::std::option::Option<::std::string::String> {
+        &self.effective_permission
     }
     /// Consumes the builder and constructs a [`PublicAccess`](crate::types::PublicAccess).
     pub fn build(self) -> crate::types::PublicAccess {

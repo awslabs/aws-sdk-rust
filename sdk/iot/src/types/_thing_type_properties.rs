@@ -54,6 +54,10 @@ impl ThingTypePropertiesBuilder {
         self.thing_type_description = input;
         self
     }
+    /// <p>The description of the thing type.</p>
+    pub fn get_thing_type_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_type_description
+    }
     /// Appends an item to `searchable_attributes`.
     ///
     /// To override the contents of this collection use [`set_searchable_attributes`](Self::set_searchable_attributes).
@@ -75,6 +79,12 @@ impl ThingTypePropertiesBuilder {
     ) -> Self {
         self.searchable_attributes = input;
         self
+    }
+    /// <p>A list of searchable thing attribute names.</p>
+    pub fn get_searchable_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.searchable_attributes
     }
     /// Consumes the builder and constructs a [`ThingTypeProperties`](crate::types::ThingTypeProperties).
     pub fn build(self) -> crate::types::ThingTypeProperties {

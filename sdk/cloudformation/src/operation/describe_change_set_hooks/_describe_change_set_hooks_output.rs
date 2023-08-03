@@ -102,6 +102,10 @@ impl DescribeChangeSetHooksOutputBuilder {
         self.change_set_id = input;
         self
     }
+    /// <p>The change set identifier (stack ID).</p>
+    pub fn get_change_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.change_set_id
+    }
     /// <p>The change set name.</p>
     pub fn change_set_name(
         mut self,
@@ -117,6 +121,10 @@ impl DescribeChangeSetHooksOutputBuilder {
     ) -> Self {
         self.change_set_name = input;
         self
+    }
+    /// <p>The change set name.</p>
+    pub fn get_change_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.change_set_name
     }
     /// Appends an item to `hooks`.
     ///
@@ -137,6 +145,12 @@ impl DescribeChangeSetHooksOutputBuilder {
         self.hooks = input;
         self
     }
+    /// <p>List of hook objects.</p>
+    pub fn get_hooks(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChangeSetHook>> {
+        &self.hooks
+    }
     /// <p>Provides the status of the change set hook.</p>
     pub fn status(mut self, input: crate::types::ChangeSetHooksStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -150,6 +164,10 @@ impl DescribeChangeSetHooksOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>Provides the status of the change set hook.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ChangeSetHooksStatus> {
+        &self.status
+    }
     /// <p>Pagination token, <code>null</code> or empty if no more results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -159,6 +177,10 @@ impl DescribeChangeSetHooksOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Pagination token, <code>null</code> or empty if no more results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The stack identifier (stack ID).</p>
     pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -170,6 +192,10 @@ impl DescribeChangeSetHooksOutputBuilder {
         self.stack_id = input;
         self
     }
+    /// <p>The stack identifier (stack ID).</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_id
+    }
     /// <p>The stack name.</p>
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_name = ::std::option::Option::Some(input.into());
@@ -179,6 +205,10 @@ impl DescribeChangeSetHooksOutputBuilder {
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_name = input;
         self
+    }
+    /// <p>The stack name.</p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

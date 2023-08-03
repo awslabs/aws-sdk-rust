@@ -62,6 +62,10 @@ impl CompatibilityBuilder {
         self.cluster_version = input;
         self
     }
+    /// <p>The supported Kubernetes version of the cluster.</p>
+    pub fn get_cluster_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_version
+    }
     /// Appends an item to `platform_versions`.
     ///
     /// To override the contents of this collection use [`set_platform_versions`](Self::set_platform_versions).
@@ -84,6 +88,12 @@ impl CompatibilityBuilder {
         self.platform_versions = input;
         self
     }
+    /// <p>The supported compute platform.</p>
+    pub fn get_platform_versions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.platform_versions
+    }
     /// <p>The supported default version.</p>
     pub fn default_version(mut self, input: bool) -> Self {
         self.default_version = ::std::option::Option::Some(input);
@@ -93,6 +103,10 @@ impl CompatibilityBuilder {
     pub fn set_default_version(mut self, input: ::std::option::Option<bool>) -> Self {
         self.default_version = input;
         self
+    }
+    /// <p>The supported default version.</p>
+    pub fn get_default_version(&self) -> &::std::option::Option<bool> {
+        &self.default_version
     }
     /// Consumes the builder and constructs a [`Compatibility`](crate::types::Compatibility).
     pub fn build(self) -> crate::types::Compatibility {

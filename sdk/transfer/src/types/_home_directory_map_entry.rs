@@ -50,6 +50,10 @@ impl HomeDirectoryMapEntryBuilder {
         self.entry = input;
         self
     }
+    /// <p>Represents an entry for <code>HomeDirectoryMappings</code>.</p>
+    pub fn get_entry(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entry
+    }
     /// <p>Represents the map target that is used in a <code>HomeDirectorymapEntry</code>.</p>
     pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target = ::std::option::Option::Some(input.into());
@@ -59,6 +63,10 @@ impl HomeDirectoryMapEntryBuilder {
     pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target = input;
         self
+    }
+    /// <p>Represents the map target that is used in a <code>HomeDirectorymapEntry</code>.</p>
+    pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target
     }
     /// Consumes the builder and constructs a [`HomeDirectoryMapEntry`](crate::types::HomeDirectoryMapEntry).
     pub fn build(self) -> crate::types::HomeDirectoryMapEntry {

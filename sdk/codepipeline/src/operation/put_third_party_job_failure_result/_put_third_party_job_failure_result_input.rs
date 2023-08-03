@@ -56,6 +56,10 @@ impl PutThirdPartyJobFailureResultInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The ID of the job that failed. This is the same ID returned from <code>PollForThirdPartyJobs</code>.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl PutThirdPartyJobFailureResultInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// <p>Represents information about failure details.</p>
     pub fn failure_details(mut self, input: crate::types::FailureDetails) -> Self {
@@ -78,6 +86,10 @@ impl PutThirdPartyJobFailureResultInputBuilder {
     ) -> Self {
         self.failure_details = input;
         self
+    }
+    /// <p>Represents information about failure details.</p>
+    pub fn get_failure_details(&self) -> &::std::option::Option<crate::types::FailureDetails> {
+        &self.failure_details
     }
     /// Consumes the builder and constructs a [`PutThirdPartyJobFailureResultInput`](crate::operation::put_third_party_job_failure_result::PutThirdPartyJobFailureResultInput).
     pub fn build(

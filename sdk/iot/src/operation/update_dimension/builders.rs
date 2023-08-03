@@ -37,6 +37,12 @@ impl UpdateDimensionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDimension as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_dimension::builders::UpdateDimensionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl UpdateDimensionFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>A unique identifier for the dimension. Choose something that describes the type and value to make it easy to remember what it does.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// Appends an item to `stringValues`.
     ///
     /// To override the contents of this collection use [`set_string_values`](Self::set_string_values).
@@ -146,5 +156,11 @@ impl UpdateDimensionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_string_values(input);
         self
+    }
+    /// <p>Specifies the value or list of values for the dimension. For <code>TOPIC_FILTER</code> dimensions, this is a pattern used to match the MQTT topic (for example, "admin/#").</p>
+    pub fn get_string_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_string_values()
     }
 }

@@ -39,6 +39,10 @@ impl GetWorkerFleetInputBuilder {
         self.id = input;
         self
     }
+    /// Full ARN of the worker fleet.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`GetWorkerFleetInput`](crate::operation::get_worker_fleet::GetWorkerFleetInput).
     pub fn build(
         self,

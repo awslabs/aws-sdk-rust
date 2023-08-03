@@ -47,6 +47,10 @@ impl GetResourceLogLevelOutputBuilder {
         self.log_level = input;
         self
     }
+    /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
+    pub fn get_log_level(&self) -> &::std::option::Option<crate::types::LogLevel> {
+        &self.log_level
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -37,6 +37,12 @@ impl DeleteSnapshotFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteSnapshot as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_snapshot::builders::DeleteSnapshotInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,6 +131,10 @@ impl DeleteSnapshotFluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
+    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
+    }
     /// <p>The ID of the snapshot that you want to delete.</p>
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_id(input.into());
@@ -134,5 +144,9 @@ impl DeleteSnapshotFluentBuilder {
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_id(input);
         self
+    }
+    /// <p>The ID of the snapshot that you want to delete.</p>
+    pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_snapshot_id()
     }
 }

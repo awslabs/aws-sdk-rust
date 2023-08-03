@@ -101,6 +101,10 @@ impl DatasetMetadataBuilder {
         self.dataset_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
+    pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_arn
+    }
     /// <p>The name of the dataset.</p>
     pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_name = ::std::option::Option::Some(input.into());
@@ -110,6 +114,10 @@ impl DatasetMetadataBuilder {
     pub fn set_dataset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_name = input;
         self
+    }
+    /// <p>The name of the dataset.</p>
+    pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_name
     }
     /// <p>The description of the dataset.</p>
     pub fn dataset_description(
@@ -127,6 +135,10 @@ impl DatasetMetadataBuilder {
         self.dataset_description = input;
         self
     }
+    /// <p>The description of the dataset.</p>
+    pub fn get_dataset_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_description
+    }
     /// <p>The definition of a data aggregation.</p>
     pub fn data_aggregation(mut self, input: crate::types::DataAggregation) -> Self {
         self.data_aggregation = ::std::option::Option::Some(input);
@@ -139,6 +151,10 @@ impl DatasetMetadataBuilder {
     ) -> Self {
         self.data_aggregation = input;
         self
+    }
+    /// <p>The definition of a data aggregation.</p>
+    pub fn get_data_aggregation(&self) -> &::std::option::Option<crate::types::DataAggregation> {
+        &self.data_aggregation
     }
     /// Appends an item to `filters`.
     ///
@@ -159,6 +175,12 @@ impl DatasetMetadataBuilder {
         self.filters = input;
         self
     }
+    /// <p>The list of filter definitions.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicFilter>> {
+        &self.filters
+    }
     /// Appends an item to `columns`.
     ///
     /// To override the contents of this collection use [`set_columns`](Self::set_columns).
@@ -177,6 +199,12 @@ impl DatasetMetadataBuilder {
     ) -> Self {
         self.columns = input;
         self
+    }
+    /// <p>The list of column definitions.</p>
+    pub fn get_columns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicColumn>> {
+        &self.columns
     }
     /// Appends an item to `calculated_fields`.
     ///
@@ -197,6 +225,12 @@ impl DatasetMetadataBuilder {
         self.calculated_fields = input;
         self
     }
+    /// <p>The list of calculated field definitions.</p>
+    pub fn get_calculated_fields(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicCalculatedField>> {
+        &self.calculated_fields
+    }
     /// Appends an item to `named_entities`.
     ///
     /// To override the contents of this collection use [`set_named_entities`](Self::set_named_entities).
@@ -215,6 +249,12 @@ impl DatasetMetadataBuilder {
     ) -> Self {
         self.named_entities = input;
         self
+    }
+    /// <p>The list of named entities definitions.</p>
+    pub fn get_named_entities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicNamedEntity>> {
+        &self.named_entities
     }
     /// Consumes the builder and constructs a [`DatasetMetadata`](crate::types::DatasetMetadata).
     pub fn build(self) -> crate::types::DatasetMetadata {

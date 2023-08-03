@@ -36,6 +36,13 @@ impl CreateClusterSnapshotFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateClusterSnapshot as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_cluster_snapshot::builders::CreateClusterSnapshotInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl CreateClusterSnapshotFluentBuilder {
         self.inner = self.inner.set_cluster_arn(input);
         self
     }
+    /// <p>The arn of the Elastic DocumentDB cluster that the snapshot will be taken from.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_arn()
+    }
     /// <p>The name of the Elastic DocumentDB snapshot.</p>
     pub fn snapshot_name(
         mut self,
@@ -141,6 +152,10 @@ impl CreateClusterSnapshotFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_snapshot_name(input);
         self
+    }
+    /// <p>The name of the Elastic DocumentDB snapshot.</p>
+    pub fn get_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_snapshot_name()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -164,5 +179,13 @@ impl CreateClusterSnapshotFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags to be assigned to the new Elastic DocumentDB snapshot.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

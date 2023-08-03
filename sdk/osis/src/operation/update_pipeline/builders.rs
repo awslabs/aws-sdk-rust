@@ -36,6 +36,12 @@ impl UpdatePipelineFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdatePipeline as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_pipeline::builders::UpdatePipelineInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl UpdatePipelineFluentBuilder {
         self.inner = self.inner.set_pipeline_name(input);
         self
     }
+    /// <p>The name of the pipeline to update.</p>
+    pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pipeline_name()
+    }
     /// <p>The minimum pipeline capacity, in Ingestion Compute Units (ICUs).</p>
     pub fn min_units(mut self, input: i32) -> Self {
         self.inner = self.inner.min_units(input);
@@ -134,6 +144,10 @@ impl UpdatePipelineFluentBuilder {
         self.inner = self.inner.set_min_units(input);
         self
     }
+    /// <p>The minimum pipeline capacity, in Ingestion Compute Units (ICUs).</p>
+    pub fn get_min_units(&self) -> &::std::option::Option<i32> {
+        self.inner.get_min_units()
+    }
     /// <p>The maximum pipeline capacity, in Ingestion Compute Units (ICUs)</p>
     pub fn max_units(mut self, input: i32) -> Self {
         self.inner = self.inner.max_units(input);
@@ -143,6 +157,10 @@ impl UpdatePipelineFluentBuilder {
     pub fn set_max_units(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_units(input);
         self
+    }
+    /// <p>The maximum pipeline capacity, in Ingestion Compute Units (ICUs)</p>
+    pub fn get_max_units(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_units()
     }
     /// <p>The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with <code>\n</code>.</p>
     pub fn pipeline_configuration_body(
@@ -160,6 +178,10 @@ impl UpdatePipelineFluentBuilder {
         self.inner = self.inner.set_pipeline_configuration_body(input);
         self
     }
+    /// <p>The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with <code>\n</code>.</p>
+    pub fn get_pipeline_configuration_body(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pipeline_configuration_body()
+    }
     /// <p>Key-value pairs to configure log publishing.</p>
     pub fn log_publishing_options(mut self, input: crate::types::LogPublishingOptions) -> Self {
         self.inner = self.inner.log_publishing_options(input);
@@ -172,5 +194,11 @@ impl UpdatePipelineFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_log_publishing_options(input);
         self
+    }
+    /// <p>Key-value pairs to configure log publishing.</p>
+    pub fn get_log_publishing_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::LogPublishingOptions> {
+        self.inner.get_log_publishing_options()
     }
 }

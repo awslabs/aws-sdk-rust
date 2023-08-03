@@ -65,6 +65,12 @@ impl PivotTableAggregatedFieldWellsBuilder {
         self.rows = input;
         self
     }
+    /// <p>The rows field well for a pivot table. Values are grouped by rows fields.</p>
+    pub fn get_rows(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
+        &self.rows
+    }
     /// Appends an item to `columns`.
     ///
     /// To override the contents of this collection use [`set_columns`](Self::set_columns).
@@ -84,6 +90,12 @@ impl PivotTableAggregatedFieldWellsBuilder {
         self.columns = input;
         self
     }
+    /// <p>The columns field well for a pivot table. Values are grouped by columns fields.</p>
+    pub fn get_columns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
+        &self.columns
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -102,6 +114,12 @@ impl PivotTableAggregatedFieldWellsBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>The values field well for a pivot table. Values are aggregated based on rows and columns fields.</p>
+    pub fn get_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`PivotTableAggregatedFieldWells`](crate::types::PivotTableAggregatedFieldWells).
     pub fn build(self) -> crate::types::PivotTableAggregatedFieldWells {

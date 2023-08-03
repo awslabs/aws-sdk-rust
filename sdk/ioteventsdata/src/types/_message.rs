@@ -64,6 +64,10 @@ impl MessageBuilder {
         self.message_id = input;
         self
     }
+    /// <p>The ID to assign to the message. Within each batch sent, each <code>"messageId"</code> must be unique.</p>
+    pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message_id
+    }
     /// <p>The name of the input into which the message payload is transformed.</p>
     pub fn input_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_name = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl MessageBuilder {
         self.input_name = input;
         self
     }
+    /// <p>The name of the input into which the message payload is transformed.</p>
+    pub fn get_input_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_name
+    }
     /// <p>The payload of the message. This can be a JSON string or a Base-64-encoded string representing binary data (in which case you must decode it).</p>
     pub fn payload(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.payload = ::std::option::Option::Some(input);
@@ -83,6 +91,10 @@ impl MessageBuilder {
     pub fn set_payload(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.payload = input;
         self
+    }
+    /// <p>The payload of the message. This can be a JSON string or a Base-64-encoded string representing binary data (in which case you must decode it).</p>
+    pub fn get_payload(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.payload
     }
     /// <p>The timestamp associated with the message.</p>
     pub fn timestamp(mut self, input: crate::types::TimestampValue) -> Self {
@@ -96,6 +108,10 @@ impl MessageBuilder {
     ) -> Self {
         self.timestamp = input;
         self
+    }
+    /// <p>The timestamp associated with the message.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<crate::types::TimestampValue> {
+        &self.timestamp
     }
     /// Consumes the builder and constructs a [`Message`](crate::types::Message).
     pub fn build(self) -> crate::types::Message {

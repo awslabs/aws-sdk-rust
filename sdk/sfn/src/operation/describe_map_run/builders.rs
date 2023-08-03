@@ -36,6 +36,12 @@ impl DescribeMapRunFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeMapRun as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_map_run::builders::DescribeMapRunInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +131,9 @@ impl DescribeMapRunFluentBuilder {
     pub fn set_map_run_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_map_run_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) that identifies a Map Run.</p>
+    pub fn get_map_run_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_map_run_arn()
     }
 }

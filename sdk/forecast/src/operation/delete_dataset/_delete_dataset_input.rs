@@ -39,6 +39,10 @@ impl DeleteDatasetInputBuilder {
         self.dataset_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the dataset to delete.</p>
+    pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_arn
+    }
     /// Consumes the builder and constructs a [`DeleteDatasetInput`](crate::operation::delete_dataset::DeleteDatasetInput).
     pub fn build(
         self,

@@ -46,6 +46,10 @@ impl AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetailsBuilder
         self.credentials_parameter = input;
         self
     }
+    /// <p>The ARN of the secret that contains the private repository credentials.</p>
+    pub fn get_credentials_parameter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.credentials_parameter
+    }
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails).
     pub fn build(
         self,

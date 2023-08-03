@@ -36,6 +36,10 @@ impl SendSerialConsoleSSHPublicKeyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SendSerialConsoleSSHPublicKey as a reference.
+    pub fn as_input(&self) -> &crate::operation::send_serial_console_ssh_public_key::builders::SendSerialConsoleSshPublicKeyInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl SendSerialConsoleSSHPublicKeyFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The ID of the EC2 instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>The serial port of the EC2 instance. Currently only port 0 is supported.</p>
     /// <p>Default: 0</p>
     pub fn serial_port(mut self, input: i32) -> Self {
@@ -111,6 +119,11 @@ impl SendSerialConsoleSSHPublicKeyFluentBuilder {
     pub fn set_serial_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_serial_port(input);
         self
+    }
+    /// <p>The serial port of the EC2 instance. Currently only port 0 is supported.</p>
+    /// <p>Default: 0</p>
+    pub fn get_serial_port(&self) -> &::std::option::Option<i32> {
+        self.inner.get_serial_port()
     }
     /// <p>The public key material. To use the public key, you must have the matching private key. For information about the supported key formats and lengths, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#how-to-generate-your-own-key-and-import-it-to-aws">Requirements for key pairs</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn ssh_public_key(
@@ -127,5 +140,9 @@ impl SendSerialConsoleSSHPublicKeyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ssh_public_key(input);
         self
+    }
+    /// <p>The public key material. To use the public key, you must have the matching private key. For information about the supported key formats and lengths, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#how-to-generate-your-own-key-and-import-it-to-aws">Requirements for key pairs</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn get_ssh_public_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ssh_public_key()
     }
 }

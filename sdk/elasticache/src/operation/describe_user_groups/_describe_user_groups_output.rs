@@ -64,6 +64,12 @@ impl DescribeUserGroupsOutputBuilder {
         self.user_groups = input;
         self
     }
+    /// <p>Returns a list of user groups.</p>
+    pub fn get_user_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UserGroup>> {
+        &self.user_groups
+    }
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. &gt;</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -73,6 +79,10 @@ impl DescribeUserGroupsOutputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. &gt;</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

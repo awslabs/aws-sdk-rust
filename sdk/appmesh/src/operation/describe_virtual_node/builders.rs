@@ -36,6 +36,12 @@ impl DescribeVirtualNodeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeVirtualNode as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_virtual_node::builders::DescribeVirtualNodeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl DescribeVirtualNodeFluentBuilder {
         self.inner = self.inner.set_virtual_node_name(input);
         self
     }
+    /// <p>The name of the virtual node to describe.</p>
+    pub fn get_virtual_node_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_virtual_node_name()
+    }
     /// <p>The name of the service mesh that the virtual node resides in.</p>
     pub fn mesh_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.mesh_name(input.into());
@@ -142,6 +152,10 @@ impl DescribeVirtualNodeFluentBuilder {
         self.inner = self.inner.set_mesh_name(input);
         self
     }
+    /// <p>The name of the service mesh that the virtual node resides in.</p>
+    pub fn get_mesh_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_mesh_name()
+    }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.mesh_owner(input.into());
@@ -151,5 +165,9 @@ impl DescribeVirtualNodeFluentBuilder {
     pub fn set_mesh_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_mesh_owner(input);
         self
+    }
+    /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+    pub fn get_mesh_owner(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_mesh_owner()
     }
 }

@@ -82,6 +82,10 @@ impl ListCustomVocabularyItemsOutputBuilder {
         self.bot_id = input;
         self
     }
+    /// <p>The identifier of the bot associated with this custom vocabulary.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
+    }
     /// <p>The identifier of the version of the bot associated with this custom vocabulary.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
@@ -92,6 +96,10 @@ impl ListCustomVocabularyItemsOutputBuilder {
         self.bot_version = input;
         self
     }
+    /// <p>The identifier of the version of the bot associated with this custom vocabulary.</p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_version
+    }
     /// <p>The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html"> Supported Languages </a>.</p>
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
@@ -101,6 +109,10 @@ impl ListCustomVocabularyItemsOutputBuilder {
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.locale_id = input;
         self
+    }
+    /// <p>The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html"> Supported Languages </a>.</p>
+    pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale_id
     }
     /// Appends an item to `custom_vocabulary_items`.
     ///
@@ -121,6 +133,12 @@ impl ListCustomVocabularyItemsOutputBuilder {
         self.custom_vocabulary_items = input;
         self
     }
+    /// <p>The custom vocabulary items from the list custom vocabulary response.</p>
+    pub fn get_custom_vocabulary_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomVocabularyItem>> {
+        &self.custom_vocabulary_items
+    }
     /// <p>The nextToken identifier to the list custom vocabulary response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -130,6 +148,10 @@ impl ListCustomVocabularyItemsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The nextToken identifier to the list custom vocabulary response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

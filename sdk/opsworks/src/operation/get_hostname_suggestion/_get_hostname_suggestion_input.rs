@@ -41,6 +41,10 @@ impl GetHostnameSuggestionInputBuilder {
         self.layer_id = input;
         self
     }
+    /// <p>The layer ID.</p>
+    pub fn get_layer_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.layer_id
+    }
     /// Consumes the builder and constructs a [`GetHostnameSuggestionInput`](crate::operation::get_hostname_suggestion::GetHostnameSuggestionInput).
     pub fn build(
         self,

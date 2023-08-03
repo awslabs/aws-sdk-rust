@@ -57,6 +57,12 @@ impl GetLinkAttributesOutputBuilder {
         self.attributes = input;
         self
     }
+    /// <p>The attributes that are associated with the typed link.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>> {
+        &self.attributes
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

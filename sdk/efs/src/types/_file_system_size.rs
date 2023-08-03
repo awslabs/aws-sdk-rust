@@ -64,6 +64,10 @@ impl FileSystemSizeBuilder {
         self.value = input;
         self
     }
+    /// <p>The latest known metered size (in bytes) of data stored in the file system.</p>
+    pub fn get_value(&self) -> &::std::option::Option<i64> {
+        &self.value
+    }
     /// <p>The time at which the size of data, returned in the <code>Value</code> field, was determined. The value is the integer number of seconds since 1970-01-01T00:00:00Z.</p>
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
@@ -77,6 +81,10 @@ impl FileSystemSizeBuilder {
         self.timestamp = input;
         self
     }
+    /// <p>The time at which the size of data, returned in the <code>Value</code> field, was determined. The value is the integer number of seconds since 1970-01-01T00:00:00Z.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.timestamp
+    }
     /// <p>The latest known metered size (in bytes) of data stored in the Infrequent Access storage class.</p>
     pub fn value_in_ia(mut self, input: i64) -> Self {
         self.value_in_ia = ::std::option::Option::Some(input);
@@ -87,6 +95,10 @@ impl FileSystemSizeBuilder {
         self.value_in_ia = input;
         self
     }
+    /// <p>The latest known metered size (in bytes) of data stored in the Infrequent Access storage class.</p>
+    pub fn get_value_in_ia(&self) -> &::std::option::Option<i64> {
+        &self.value_in_ia
+    }
     /// <p>The latest known metered size (in bytes) of data stored in the Standard storage class.</p>
     pub fn value_in_standard(mut self, input: i64) -> Self {
         self.value_in_standard = ::std::option::Option::Some(input);
@@ -96,6 +108,10 @@ impl FileSystemSizeBuilder {
     pub fn set_value_in_standard(mut self, input: ::std::option::Option<i64>) -> Self {
         self.value_in_standard = input;
         self
+    }
+    /// <p>The latest known metered size (in bytes) of data stored in the Standard storage class.</p>
+    pub fn get_value_in_standard(&self) -> &::std::option::Option<i64> {
+        &self.value_in_standard
     }
     /// Consumes the builder and constructs a [`FileSystemSize`](crate::types::FileSystemSize).
     pub fn build(self) -> crate::types::FileSystemSize {

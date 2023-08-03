@@ -40,6 +40,10 @@ impl SsekmsBuilder {
         self.key_id = input;
         self
     }
+    /// <p>A container for the ARN of the SSE-KMS encryption. This property is read-only and follows the following format: <code> arn:aws:kms:<i>us-east-1</i>:<i>example-account-id</i>:key/<i>example-9a73-4afc-8d29-8f5900cef44e</i> </code> </p>
+    pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_id
+    }
     /// Consumes the builder and constructs a [`Ssekms`](crate::types::Ssekms).
     pub fn build(self) -> crate::types::Ssekms {
         crate::types::Ssekms {

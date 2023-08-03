@@ -40,6 +40,10 @@ impl CidrBlockBuilder {
         self.cidr_block = input;
         self
     }
+    /// <p>The IPv4 CIDR block.</p>
+    pub fn get_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr_block
+    }
     /// Consumes the builder and constructs a [`CidrBlock`](crate::types::CidrBlock).
     pub fn build(self) -> crate::types::CidrBlock {
         crate::types::CidrBlock {

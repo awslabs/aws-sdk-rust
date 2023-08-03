@@ -56,6 +56,10 @@ impl StartTableDataImportJobOutputBuilder {
         self.job_id = input;
         self
     }
+    /// <p> The id that is assigned to this import job. Future requests to find out the status of this import job need to send this id in the appropriate parameter in the request. </p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p> The status of the import job immediately after submitting the request. </p>
     pub fn job_status(mut self, input: crate::types::TableDataImportJobStatus) -> Self {
         self.job_status = ::std::option::Option::Some(input);
@@ -68,6 +72,10 @@ impl StartTableDataImportJobOutputBuilder {
     ) -> Self {
         self.job_status = input;
         self
+    }
+    /// <p> The status of the import job immediately after submitting the request. </p>
+    pub fn get_job_status(&self) -> &::std::option::Option<crate::types::TableDataImportJobStatus> {
+        &self.job_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

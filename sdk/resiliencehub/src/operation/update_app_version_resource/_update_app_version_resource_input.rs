@@ -125,6 +125,10 @@ impl UpdateAppVersionResourceInputBuilder {
         self.app_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_arn
+    }
     /// <p>The name of the resource.</p>
     pub fn resource_name(
         mut self,
@@ -141,6 +145,10 @@ impl UpdateAppVersionResourceInputBuilder {
         self.resource_name = input;
         self
     }
+    /// <p>The name of the resource.</p>
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_name
+    }
     /// <p>The logical identifier of the resource.</p>
     pub fn logical_resource_id(mut self, input: crate::types::LogicalResourceId) -> Self {
         self.logical_resource_id = ::std::option::Option::Some(input);
@@ -153,6 +161,12 @@ impl UpdateAppVersionResourceInputBuilder {
     ) -> Self {
         self.logical_resource_id = input;
         self
+    }
+    /// <p>The logical identifier of the resource.</p>
+    pub fn get_logical_resource_id(
+        &self,
+    ) -> &::std::option::Option<crate::types::LogicalResourceId> {
+        &self.logical_resource_id
     }
     /// <p>The physical identifier of the resource.</p>
     pub fn physical_resource_id(
@@ -170,6 +184,10 @@ impl UpdateAppVersionResourceInputBuilder {
         self.physical_resource_id = input;
         self
     }
+    /// <p>The physical identifier of the resource.</p>
+    pub fn get_physical_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.physical_resource_id
+    }
     /// <p>The Amazon Web Services region that owns the physical resource.</p>
     pub fn aws_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_region = ::std::option::Option::Some(input.into());
@@ -179,6 +197,10 @@ impl UpdateAppVersionResourceInputBuilder {
     pub fn set_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_region = input;
         self
+    }
+    /// <p>The Amazon Web Services region that owns the physical resource.</p>
+    pub fn get_aws_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_region
     }
     /// <p>The Amazon Web Services account that owns the physical resource.</p>
     pub fn aws_account_id(
@@ -196,6 +218,10 @@ impl UpdateAppVersionResourceInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account that owns the physical resource.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The type of resource.</p>
     pub fn resource_type(
         mut self,
@@ -211,6 +237,10 @@ impl UpdateAppVersionResourceInputBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>The type of resource.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
     }
     /// Appends an item to `app_components`.
     ///
@@ -233,6 +263,12 @@ impl UpdateAppVersionResourceInputBuilder {
     ) -> Self {
         self.app_components = input;
         self
+    }
+    /// <p>The list of Application Components that this resource belongs to. If an Application Component is not part of the Resilience Hub application, it will be added.</p>
+    pub fn get_app_components(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.app_components
     }
     /// Adds a key-value pair to `additional_info`.
     ///
@@ -262,6 +298,14 @@ impl UpdateAppVersionResourceInputBuilder {
         self.additional_info = input;
         self
     }
+    /// <p>Currently, there is no supported additional information for resources.</p>
+    pub fn get_additional_info(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
+    > {
+        &self.additional_info
+    }
     /// <p>Indicates if a resource is excluded from an Resilience Hub application.</p> <note>
     /// <p>You can exclude only imported resources from an Resilience Hub application.</p>
     /// </note>
@@ -275,6 +319,12 @@ impl UpdateAppVersionResourceInputBuilder {
     pub fn set_excluded(mut self, input: ::std::option::Option<bool>) -> Self {
         self.excluded = input;
         self
+    }
+    /// <p>Indicates if a resource is excluded from an Resilience Hub application.</p> <note>
+    /// <p>You can exclude only imported resources from an Resilience Hub application.</p>
+    /// </note>
+    pub fn get_excluded(&self) -> &::std::option::Option<bool> {
+        &self.excluded
     }
     /// Consumes the builder and constructs a [`UpdateAppVersionResourceInput`](crate::operation::update_app_version_resource::UpdateAppVersionResourceInput).
     pub fn build(

@@ -36,6 +36,12 @@ impl CreateUsagePlanKeyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateUsagePlanKey as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_usage_plan_key::builders::CreateUsagePlanKeyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl CreateUsagePlanKeyFluentBuilder {
         self.inner = self.inner.set_usage_plan_id(input);
         self
     }
+    /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-created UsagePlanKey resource representing a plan customer.</p>
+    pub fn get_usage_plan_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_usage_plan_id()
+    }
     /// <p>The identifier of a UsagePlanKey resource for a plan customer.</p>
     pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key_id(input.into());
@@ -142,6 +152,10 @@ impl CreateUsagePlanKeyFluentBuilder {
         self.inner = self.inner.set_key_id(input);
         self
     }
+    /// <p>The identifier of a UsagePlanKey resource for a plan customer.</p>
+    pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_key_id()
+    }
     /// <p>The type of a UsagePlanKey resource for a plan customer.</p>
     pub fn key_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key_type(input.into());
@@ -151,5 +165,9 @@ impl CreateUsagePlanKeyFluentBuilder {
     pub fn set_key_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key_type(input);
         self
+    }
+    /// <p>The type of a UsagePlanKey resource for a plan customer.</p>
+    pub fn get_key_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_key_type()
     }
 }

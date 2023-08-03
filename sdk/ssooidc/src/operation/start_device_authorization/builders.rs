@@ -36,6 +36,13 @@ impl StartDeviceAuthorizationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartDeviceAuthorization as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_device_authorization::builders::StartDeviceAuthorizationInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl StartDeviceAuthorizationFluentBuilder {
         self.inner = self.inner.set_client_id(input);
         self
     }
+    /// <p>The unique identifier string for the client that is registered with IAM Identity Center. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_id()
+    }
     /// <p>A secret string that is generated for the client. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
     pub fn client_secret(
         mut self,
@@ -142,6 +153,10 @@ impl StartDeviceAuthorizationFluentBuilder {
         self.inner = self.inner.set_client_secret(input);
         self
     }
+    /// <p>A secret string that is generated for the client. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
+    pub fn get_client_secret(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_secret()
+    }
     /// <p>The URL for the AWS access portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the AWS access portal</a> in the <i>IAM Identity Center User Guide</i>.</p>
     pub fn start_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.start_url(input.into());
@@ -151,5 +166,9 @@ impl StartDeviceAuthorizationFluentBuilder {
     pub fn set_start_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_start_url(input);
         self
+    }
+    /// <p>The URL for the AWS access portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the AWS access portal</a> in the <i>IAM Identity Center User Guide</i>.</p>
+    pub fn get_start_url(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_start_url()
     }
 }

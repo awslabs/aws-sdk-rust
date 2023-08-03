@@ -62,6 +62,10 @@ impl TargetBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name of the repository that contains the pull request.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>The branch of the repository that contains the changes for the pull request. Also known as the source branch.</p>
     pub fn source_reference(
         mut self,
@@ -78,6 +82,10 @@ impl TargetBuilder {
         self.source_reference = input;
         self
     }
+    /// <p>The branch of the repository that contains the changes for the pull request. Also known as the source branch.</p>
+    pub fn get_source_reference(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_reference
+    }
     /// <p>The branch of the repository where the pull request changes are merged. Also known as the destination branch.</p>
     pub fn destination_reference(
         mut self,
@@ -93,6 +101,10 @@ impl TargetBuilder {
     ) -> Self {
         self.destination_reference = input;
         self
+    }
+    /// <p>The branch of the repository where the pull request changes are merged. Also known as the destination branch.</p>
+    pub fn get_destination_reference(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_reference
     }
     /// Consumes the builder and constructs a [`Target`](crate::types::Target).
     pub fn build(self) -> crate::types::Target {

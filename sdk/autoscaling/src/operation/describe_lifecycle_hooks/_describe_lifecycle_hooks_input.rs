@@ -55,6 +55,10 @@ impl DescribeLifecycleHooksInputBuilder {
         self.auto_scaling_group_name = input;
         self
     }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auto_scaling_group_name
+    }
     /// Appends an item to `lifecycle_hook_names`.
     ///
     /// To override the contents of this collection use [`set_lifecycle_hook_names`](Self::set_lifecycle_hook_names).
@@ -76,6 +80,12 @@ impl DescribeLifecycleHooksInputBuilder {
     ) -> Self {
         self.lifecycle_hook_names = input;
         self
+    }
+    /// <p>The names of one or more lifecycle hooks. If you omit this property, all lifecycle hooks are described.</p>
+    pub fn get_lifecycle_hook_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.lifecycle_hook_names
     }
     /// Consumes the builder and constructs a [`DescribeLifecycleHooksInput`](crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooksInput).
     pub fn build(

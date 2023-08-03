@@ -36,6 +36,12 @@ impl DisassociateLicenseFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociateLicense as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::disassociate_license::builders::DisassociateLicenseInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DisassociateLicenseFluentBuilder {
         self.inner = self.inner.set_workspace_id(input);
         self
     }
+    /// <p>The ID of the workspace to remove the Grafana Enterprise license from.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workspace_id()
+    }
     /// <p>The type of license to remove from the workspace.</p>
     pub fn license_type(mut self, input: crate::types::LicenseType) -> Self {
         self.inner = self.inner.license_type(input);
@@ -138,5 +148,9 @@ impl DisassociateLicenseFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_license_type(input);
         self
+    }
+    /// <p>The type of license to remove from the workspace.</p>
+    pub fn get_license_type(&self) -> &::std::option::Option<crate::types::LicenseType> {
+        self.inner.get_license_type()
     }
 }

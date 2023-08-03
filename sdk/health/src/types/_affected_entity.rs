@@ -112,6 +112,10 @@ impl AffectedEntityBuilder {
         self.entity_arn = input;
         self
     }
+    /// <p>The unique identifier for the entity. Format: <code>arn:aws:health:<i>entity-region</i>:<i>aws-account</i>:entity/<i>entity-id</i> </code>. Example: <code>arn:aws:health:us-east-1:111222333444:entity/AVh5GGT7ul1arKr1sE1K</code> </p>
+    pub fn get_entity_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_arn
+    }
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
     /// <p> <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>
@@ -126,6 +130,12 @@ impl AffectedEntityBuilder {
         self.event_arn = input;
         self
     }
+    /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
+    /// <p>For example, an event ARN might look like the following:</p>
+    /// <p> <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>
+    pub fn get_event_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_arn
+    }
     /// <p>The ID of the affected entity.</p>
     pub fn entity_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_value = ::std::option::Option::Some(input.into());
@@ -136,6 +146,10 @@ impl AffectedEntityBuilder {
         self.entity_value = input;
         self
     }
+    /// <p>The ID of the affected entity.</p>
+    pub fn get_entity_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_value
+    }
     /// <p>The URL of the affected entity.</p>
     pub fn entity_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_url = ::std::option::Option::Some(input.into());
@@ -145,6 +159,10 @@ impl AffectedEntityBuilder {
     pub fn set_entity_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entity_url = input;
         self
+    }
+    /// <p>The URL of the affected entity.</p>
+    pub fn get_entity_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_url
     }
     /// <p>The 12-digit Amazon Web Services account number that contains the affected entity.</p>
     pub fn aws_account_id(
@@ -162,6 +180,10 @@ impl AffectedEntityBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The 12-digit Amazon Web Services account number that contains the affected entity.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The most recent time that the entity was updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
@@ -175,6 +197,10 @@ impl AffectedEntityBuilder {
         self.last_updated_time = input;
         self
     }
+    /// <p>The most recent time that the entity was updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
+    }
     /// <p>The most recent status of the entity affected by the event. The possible values are <code>IMPAIRED</code>, <code>UNIMPAIRED</code>, and <code>UNKNOWN</code>.</p>
     pub fn status_code(mut self, input: crate::types::EntityStatusCode) -> Self {
         self.status_code = ::std::option::Option::Some(input);
@@ -187,6 +213,10 @@ impl AffectedEntityBuilder {
     ) -> Self {
         self.status_code = input;
         self
+    }
+    /// <p>The most recent status of the entity affected by the event. The possible values are <code>IMPAIRED</code>, <code>UNIMPAIRED</code>, and <code>UNKNOWN</code>.</p>
+    pub fn get_status_code(&self) -> &::std::option::Option<crate::types::EntityStatusCode> {
+        &self.status_code
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -216,6 +246,16 @@ impl AffectedEntityBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A map of entity tags attached to the affected entity.</p> <note>
+    /// <p>Currently, the <code>tags</code> property isn't supported.</p>
+    /// </note>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`AffectedEntity`](crate::types::AffectedEntity).
     pub fn build(self) -> crate::types::AffectedEntity {

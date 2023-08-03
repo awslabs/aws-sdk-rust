@@ -49,6 +49,12 @@ impl GetExportJobOutputBuilder {
         self.export_job_response = input;
         self
     }
+    /// <p>Provides information about the status and settings of a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console.</p>
+    pub fn get_export_job_response(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExportJobResponse> {
+        &self.export_job_response
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

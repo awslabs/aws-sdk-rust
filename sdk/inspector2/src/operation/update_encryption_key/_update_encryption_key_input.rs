@@ -57,6 +57,10 @@ impl UpdateEncryptionKeyInputBuilder {
         self.kms_key_id = input;
         self
     }
+    /// <p>A KMS key ID for the encryption key.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
+    }
     /// <p>The scan type for the encryption key.</p>
     pub fn scan_type(mut self, input: crate::types::ScanType) -> Self {
         self.scan_type = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl UpdateEncryptionKeyInputBuilder {
     pub fn set_scan_type(mut self, input: ::std::option::Option<crate::types::ScanType>) -> Self {
         self.scan_type = input;
         self
+    }
+    /// <p>The scan type for the encryption key.</p>
+    pub fn get_scan_type(&self) -> &::std::option::Option<crate::types::ScanType> {
+        &self.scan_type
     }
     /// <p>The resource type for the encryption key.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
@@ -79,6 +87,10 @@ impl UpdateEncryptionKeyInputBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>The resource type for the encryption key.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
     }
     /// Consumes the builder and constructs a [`UpdateEncryptionKeyInput`](crate::operation::update_encryption_key::UpdateEncryptionKeyInput).
     pub fn build(

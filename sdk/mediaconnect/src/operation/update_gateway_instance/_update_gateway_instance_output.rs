@@ -59,6 +59,10 @@ impl UpdateGatewayInstanceOutputBuilder {
         self.bridge_placement = input;
         self
     }
+    /// The availability of the instance to host new bridges. The bridgePlacement property can be LOCKED or AVAILABLE. If it is LOCKED, no new bridges can be deployed to this instance. If it is AVAILABLE, new bridges can be added to this instance.
+    pub fn get_bridge_placement(&self) -> &::std::option::Option<crate::types::BridgePlacement> {
+        &self.bridge_placement
+    }
     /// The Amazon Resource Name (ARN) of the instance.
     pub fn gateway_instance_arn(
         mut self,
@@ -74,6 +78,10 @@ impl UpdateGatewayInstanceOutputBuilder {
     ) -> Self {
         self.gateway_instance_arn = input;
         self
+    }
+    /// The Amazon Resource Name (ARN) of the instance.
+    pub fn get_gateway_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_instance_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

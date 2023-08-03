@@ -57,6 +57,10 @@ impl SettingsBuilder {
         self.subnets = input;
         self
     }
+    /// <p>The subnets defined for the registered identity provider.</p>
+    pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnets
+    }
     /// <p>A security group ID that allows inbound TCP port 1688 communication between resources in your VPC and the VPC endpoint for activation servers.</p>
     pub fn security_group_id(
         mut self,
@@ -72,6 +76,10 @@ impl SettingsBuilder {
     ) -> Self {
         self.security_group_id = input;
         self
+    }
+    /// <p>A security group ID that allows inbound TCP port 1688 communication between resources in your VPC and the VPC endpoint for activation servers.</p>
+    pub fn get_security_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_group_id
     }
     /// Consumes the builder and constructs a [`Settings`](crate::types::Settings).
     pub fn build(self) -> crate::types::Settings {

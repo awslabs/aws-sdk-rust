@@ -77,6 +77,20 @@ impl StackInstanceComprehensiveStatusBuilder {
         self.detailed_status = input;
         self
     }
+    /// <ul>
+    /// <li> <p> <code>CANCELLED</code>: The operation in the specified account and Region has been canceled. This is either because a user has stopped the stack set operation, or because the failure tolerance of the stack set operation has been exceeded.</p> </li>
+    /// <li> <p> <code>FAILED</code>: The operation in the specified account and Region failed. If the stack set operation fails in enough accounts within a Region, the failure tolerance for the stack set operation as a whole might be exceeded.</p> </li>
+    /// <li> <p> <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to <code>true</code>, to delete the stack instance, and then delete the stack manually.</p> </li>
+    /// <li> <p> <code>PENDING</code>: The operation in the specified account and Region has yet to start.</p> </li>
+    /// <li> <p> <code>RUNNING</code>: The operation in the specified account and Region is currently in progress.</p> </li>
+    /// <li> <p> <code>SKIPPED_SUSPENDED_ACCOUNT</code>: The operation in the specified account and Region has been skipped because the account was suspended at the time of the operation.</p> </li>
+    /// <li> <p> <code>SUCCEEDED</code>: The operation in the specified account and Region completed successfully.</p> </li>
+    /// </ul>
+    pub fn get_detailed_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::StackInstanceDetailedStatus> {
+        &self.detailed_status
+    }
     /// Consumes the builder and constructs a [`StackInstanceComprehensiveStatus`](crate::types::StackInstanceComprehensiveStatus).
     pub fn build(self) -> crate::types::StackInstanceComprehensiveStatus {
         crate::types::StackInstanceComprehensiveStatus {

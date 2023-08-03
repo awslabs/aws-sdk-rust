@@ -60,6 +60,12 @@ impl GetConnectionsFilterBuilder {
         self.match_criteria = input;
         self
     }
+    /// <p>A criteria string that must match the criteria recorded in the connection definition for that connection definition to be returned.</p>
+    pub fn get_match_criteria(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.match_criteria
+    }
     /// <p>The type of connections to return. Currently, SFTP is not supported.</p>
     pub fn connection_type(mut self, input: crate::types::ConnectionType) -> Self {
         self.connection_type = ::std::option::Option::Some(input);
@@ -72,6 +78,10 @@ impl GetConnectionsFilterBuilder {
     ) -> Self {
         self.connection_type = input;
         self
+    }
+    /// <p>The type of connections to return. Currently, SFTP is not supported.</p>
+    pub fn get_connection_type(&self) -> &::std::option::Option<crate::types::ConnectionType> {
+        &self.connection_type
     }
     /// Consumes the builder and constructs a [`GetConnectionsFilter`](crate::types::GetConnectionsFilter).
     pub fn build(self) -> crate::types::GetConnectionsFilter {

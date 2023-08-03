@@ -61,6 +61,10 @@ impl GetVoiceToneAnalysisTaskInputBuilder {
         self.voice_connector_id = input;
         self
     }
+    /// <p>The Voice Connector ID.</p>
+    pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_connector_id
+    }
     /// <p>The ID of the voice tone anlysis task.</p>
     pub fn voice_tone_analysis_task_id(
         mut self,
@@ -77,6 +81,10 @@ impl GetVoiceToneAnalysisTaskInputBuilder {
         self.voice_tone_analysis_task_id = input;
         self
     }
+    /// <p>The ID of the voice tone anlysis task.</p>
+    pub fn get_voice_tone_analysis_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_tone_analysis_task_id
+    }
     /// <p>Specifies whether the voice being analyzed is the caller (originator) or the callee (responder).</p>
     pub fn is_caller(mut self, input: bool) -> Self {
         self.is_caller = ::std::option::Option::Some(input);
@@ -86,6 +94,10 @@ impl GetVoiceToneAnalysisTaskInputBuilder {
     pub fn set_is_caller(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_caller = input;
         self
+    }
+    /// <p>Specifies whether the voice being analyzed is the caller (originator) or the callee (responder).</p>
+    pub fn get_is_caller(&self) -> &::std::option::Option<bool> {
+        &self.is_caller
     }
     /// Consumes the builder and constructs a [`GetVoiceToneAnalysisTaskInput`](crate::operation::get_voice_tone_analysis_task::GetVoiceToneAnalysisTaskInput).
     pub fn build(

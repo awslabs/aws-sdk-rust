@@ -52,6 +52,10 @@ impl CreateAnomalySubscriptionOutputBuilder {
         self.subscription_arn = input;
         self
     }
+    /// <p>The unique identifier of your newly created cost anomaly subscription. </p>
+    pub fn get_subscription_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subscription_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

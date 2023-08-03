@@ -70,6 +70,10 @@ impl CreateSourceRepositoryBranchOutputBuilder {
         self.r#ref = input;
         self
     }
+    /// <p>The Git reference name of the branch.</p>
+    pub fn get_ref(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#ref
+    }
     /// <p>The name of the newly created branch.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl CreateSourceRepositoryBranchOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the newly created branch.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The time the branch was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -92,6 +100,10 @@ impl CreateSourceRepositoryBranchOutputBuilder {
     ) -> Self {
         self.last_updated_time = input;
         self
+    }
+    /// <p>The time the branch was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
     }
     /// <p>The commit ID of the tip of the newly created branch.</p>
     pub fn head_commit_id(
@@ -108,6 +120,10 @@ impl CreateSourceRepositoryBranchOutputBuilder {
     ) -> Self {
         self.head_commit_id = input;
         self
+    }
+    /// <p>The commit ID of the tip of the newly created branch.</p>
+    pub fn get_head_commit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.head_commit_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

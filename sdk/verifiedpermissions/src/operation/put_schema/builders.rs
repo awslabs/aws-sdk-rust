@@ -36,6 +36,10 @@ impl PutSchemaFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutSchema as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_schema::builders::PutSchemaInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl PutSchemaFluentBuilder {
         self.inner = self.inner.set_policy_store_id(input);
         self
     }
+    /// <p>Specifies the ID of the policy store in which to place the schema.</p>
+    pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_store_id()
+    }
     /// <p>Specifies the definition of the schema to be stored. The schema definition must be written in Cedar schema JSON.</p>
     pub fn definition(mut self, input: crate::types::SchemaDefinition) -> Self {
         self.inner = self.inner.definition(input);
@@ -136,5 +144,9 @@ impl PutSchemaFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_definition(input);
         self
+    }
+    /// <p>Specifies the definition of the schema to be stored. The schema definition must be written in Cedar schema JSON.</p>
+    pub fn get_definition(&self) -> &::std::option::Option<crate::types::SchemaDefinition> {
+        self.inner.get_definition()
     }
 }

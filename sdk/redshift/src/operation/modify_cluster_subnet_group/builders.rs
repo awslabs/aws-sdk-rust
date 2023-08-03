@@ -36,6 +36,10 @@ impl ModifyClusterSubnetGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyClusterSubnetGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::modify_cluster_subnet_group::builders::ModifyClusterSubnetGroupInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl ModifyClusterSubnetGroupFluentBuilder {
         self.inner = self.inner.set_cluster_subnet_group_name(input);
         self
     }
+    /// <p>The name of the subnet group to be modified.</p>
+    pub fn get_cluster_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_subnet_group_name()
+    }
     /// <p>A text description of the subnet group to be modified.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -141,6 +149,10 @@ impl ModifyClusterSubnetGroupFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A text description of the subnet group to be modified.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `SubnetIds`.
     ///
@@ -158,5 +170,9 @@ impl ModifyClusterSubnetGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_subnet_ids(input);
         self
+    }
+    /// <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_subnet_ids()
     }
 }

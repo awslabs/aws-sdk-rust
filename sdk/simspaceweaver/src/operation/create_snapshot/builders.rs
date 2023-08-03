@@ -46,6 +46,12 @@ impl CreateSnapshotFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateSnapshot as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_snapshot::builders::CreateSnapshotInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +134,10 @@ impl CreateSnapshotFluentBuilder {
         self.inner = self.inner.set_simulation(input);
         self
     }
+    /// <p>The name of the simulation.</p>
+    pub fn get_simulation(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_simulation()
+    }
     /// <p>The Amazon S3 bucket and optional folder (object key prefix) where SimSpace Weaver creates the snapshot file.</p>
     /// <p>The Amazon S3 bucket must be in the same Amazon Web Services Region as the simulation.</p>
     pub fn destination(mut self, input: crate::types::S3Destination) -> Self {
@@ -142,5 +152,10 @@ impl CreateSnapshotFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_destination(input);
         self
+    }
+    /// <p>The Amazon S3 bucket and optional folder (object key prefix) where SimSpace Weaver creates the snapshot file.</p>
+    /// <p>The Amazon S3 bucket must be in the same Amazon Web Services Region as the simulation.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<crate::types::S3Destination> {
+        self.inner.get_destination()
     }
 }

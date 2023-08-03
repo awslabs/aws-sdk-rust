@@ -36,6 +36,10 @@ impl PutVoiceConnectorTerminationCredentialsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutVoiceConnectorTerminationCredentials as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_voice_connector_termination_credentials::builders::PutVoiceConnectorTerminationCredentialsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl PutVoiceConnectorTerminationCredentialsFluentBuilder {
         self.inner = self.inner.set_voice_connector_id(input);
         self
     }
+    /// <p>The Voice Connector ID.</p>
+    pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_voice_connector_id()
+    }
     /// Appends an item to `Credentials`.
     ///
     /// To override the contents of this collection use [`set_credentials`](Self::set_credentials).
@@ -122,5 +130,11 @@ impl PutVoiceConnectorTerminationCredentialsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_credentials(input);
         self
+    }
+    /// <p>The termination credentials being updated.</p>
+    pub fn get_credentials(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Credential>> {
+        self.inner.get_credentials()
     }
 }

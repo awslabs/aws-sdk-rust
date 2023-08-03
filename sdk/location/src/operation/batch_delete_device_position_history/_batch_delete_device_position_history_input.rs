@@ -53,6 +53,10 @@ impl BatchDeleteDevicePositionHistoryInputBuilder {
         self.tracker_name = input;
         self
     }
+    /// <p>The name of the tracker resource to delete the device position history from.</p>
+    pub fn get_tracker_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tracker_name
+    }
     /// Appends an item to `device_ids`.
     ///
     /// To override the contents of this collection use [`set_device_ids`](Self::set_device_ids).
@@ -77,6 +81,13 @@ impl BatchDeleteDevicePositionHistoryInputBuilder {
     ) -> Self {
         self.device_ids = input;
         self
+    }
+    /// <p>Devices whose position history you want to delete.</p>
+    /// <ul>
+    /// <li> <p>For example, for two devices: <code>“DeviceIds” : [DeviceId1,DeviceId2]</code> </p> </li>
+    /// </ul>
+    pub fn get_device_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.device_ids
     }
     /// Consumes the builder and constructs a [`BatchDeleteDevicePositionHistoryInput`](crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryInput, ::aws_smithy_http::operation::error::BuildError>{

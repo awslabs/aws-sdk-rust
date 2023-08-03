@@ -40,6 +40,13 @@ impl CreateHITWithHITTypeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateHITWithHITType as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_hit_with_hit_type::builders::CreateHitWithHitTypeInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +137,10 @@ impl CreateHITWithHITTypeFluentBuilder {
         self.inner = self.inner.set_hit_type_id(input);
         self
     }
+    /// <p>The HIT type ID you want to create this HIT with.</p>
+    pub fn get_hit_type_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_hit_type_id()
+    }
     /// <p> The number of times the HIT can be accepted and completed before the HIT becomes unavailable. </p>
     pub fn max_assignments(mut self, input: i32) -> Self {
         self.inner = self.inner.max_assignments(input);
@@ -140,6 +151,10 @@ impl CreateHITWithHITTypeFluentBuilder {
         self.inner = self.inner.set_max_assignments(input);
         self
     }
+    /// <p> The number of times the HIT can be accepted and completed before the HIT becomes unavailable. </p>
+    pub fn get_max_assignments(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_assignments()
+    }
     /// <p> An amount of time, in seconds, after which the HIT is no longer available for users to accept. After the lifetime of the HIT elapses, the HIT no longer appears in HIT searches, even if not all of the assignments for the HIT have been accepted. </p>
     pub fn lifetime_in_seconds(mut self, input: i64) -> Self {
         self.inner = self.inner.lifetime_in_seconds(input);
@@ -149,6 +164,10 @@ impl CreateHITWithHITTypeFluentBuilder {
     pub fn set_lifetime_in_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_lifetime_in_seconds(input);
         self
+    }
+    /// <p> An amount of time, in seconds, after which the HIT is no longer available for users to accept. After the lifetime of the HIT elapses, the HIT no longer appears in HIT searches, even if not all of the assignments for the HIT have been accepted. </p>
+    pub fn get_lifetime_in_seconds(&self) -> &::std::option::Option<i64> {
+        self.inner.get_lifetime_in_seconds()
     }
     /// <p> The data the person completing the HIT uses to produce the results. </p>
     /// <p> Constraints: Must be a QuestionForm data structure, an ExternalQuestion data structure, or an HTMLQuestion data structure. The XML question data must not be larger than 64 kilobytes (65,535 bytes) in size, including whitespace. </p>
@@ -163,6 +182,12 @@ impl CreateHITWithHITTypeFluentBuilder {
     pub fn set_question(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_question(input);
         self
+    }
+    /// <p> The data the person completing the HIT uses to produce the results. </p>
+    /// <p> Constraints: Must be a QuestionForm data structure, an ExternalQuestion data structure, or an HTMLQuestion data structure. The XML question data must not be larger than 64 kilobytes (65,535 bytes) in size, including whitespace. </p>
+    /// <p>Either a Question parameter or a HITLayoutId parameter must be provided.</p>
+    pub fn get_question(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_question()
     }
     /// <p> An arbitrary data field. The RequesterAnnotation parameter lets your application attach arbitrary data to the HIT for tracking purposes. For example, this parameter could be an identifier internal to the Requester's application that corresponds with the HIT. </p>
     /// <p> The RequesterAnnotation parameter for a HIT is only visible to the Requester who created the HIT. It is not shown to the Worker, or any other Requester. </p>
@@ -184,6 +209,12 @@ impl CreateHITWithHITTypeFluentBuilder {
         self.inner = self.inner.set_requester_annotation(input);
         self
     }
+    /// <p> An arbitrary data field. The RequesterAnnotation parameter lets your application attach arbitrary data to the HIT for tracking purposes. For example, this parameter could be an identifier internal to the Requester's application that corresponds with the HIT. </p>
+    /// <p> The RequesterAnnotation parameter for a HIT is only visible to the Requester who created the HIT. It is not shown to the Worker, or any other Requester. </p>
+    /// <p> The RequesterAnnotation parameter may be different for each HIT you submit. It does not affect how your HITs are grouped. </p>
+    pub fn get_requester_annotation(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_requester_annotation()
+    }
     /// <p> A unique identifier for this request which allows you to retry the call on error without creating duplicate HITs. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the HIT already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return a AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId. </p> <note>
     /// <p> Note: It is your responsibility to ensure uniqueness of the token. The unique token expires after 24 hours. Subsequent calls using the same UniqueRequestToken made after the 24 hour limit could create duplicate HITs. </p>
     /// </note>
@@ -204,6 +235,12 @@ impl CreateHITWithHITTypeFluentBuilder {
         self.inner = self.inner.set_unique_request_token(input);
         self
     }
+    /// <p> A unique identifier for this request which allows you to retry the call on error without creating duplicate HITs. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the HIT already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return a AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId. </p> <note>
+    /// <p> Note: It is your responsibility to ensure uniqueness of the token. The unique token expires after 24 hours. Subsequent calls using the same UniqueRequestToken made after the 24 hour limit could create duplicate HITs. </p>
+    /// </note>
+    pub fn get_unique_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_unique_request_token()
+    }
     /// <p> The Assignment-level Review Policy applies to the assignments under the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
     pub fn assignment_review_policy(mut self, input: crate::types::ReviewPolicy) -> Self {
         self.inner = self.inner.assignment_review_policy(input);
@@ -217,6 +254,12 @@ impl CreateHITWithHITTypeFluentBuilder {
         self.inner = self.inner.set_assignment_review_policy(input);
         self
     }
+    /// <p> The Assignment-level Review Policy applies to the assignments under the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
+    pub fn get_assignment_review_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReviewPolicy> {
+        self.inner.get_assignment_review_policy()
+    }
     /// <p> The HIT-level Review Policy applies to the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
     pub fn hit_review_policy(mut self, input: crate::types::ReviewPolicy) -> Self {
         self.inner = self.inner.hit_review_policy(input);
@@ -229,6 +272,10 @@ impl CreateHITWithHITTypeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_hit_review_policy(input);
         self
+    }
+    /// <p> The HIT-level Review Policy applies to the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
+    pub fn get_hit_review_policy(&self) -> &::std::option::Option<crate::types::ReviewPolicy> {
+        self.inner.get_hit_review_policy()
     }
     /// <p> The HITLayoutId allows you to use a pre-existing HIT design with placeholder values and create an additional HIT by providing those values as HITLayoutParameters. </p>
     /// <p> Constraints: Either a Question parameter or a HITLayoutId parameter must be provided. </p>
@@ -248,6 +295,11 @@ impl CreateHITWithHITTypeFluentBuilder {
         self.inner = self.inner.set_hit_layout_id(input);
         self
     }
+    /// <p> The HITLayoutId allows you to use a pre-existing HIT design with placeholder values and create an additional HIT by providing those values as HITLayoutParameters. </p>
+    /// <p> Constraints: Either a Question parameter or a HITLayoutId parameter must be provided. </p>
+    pub fn get_hit_layout_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_hit_layout_id()
+    }
     /// Appends an item to `HITLayoutParameters`.
     ///
     /// To override the contents of this collection use [`set_hit_layout_parameters`](Self::set_hit_layout_parameters).
@@ -264,5 +316,11 @@ impl CreateHITWithHITTypeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_hit_layout_parameters(input);
         self
+    }
+    /// <p> If the HITLayoutId is provided, any placeholder values must be filled in with values using the HITLayoutParameter structure. For more information, see HITLayout. </p>
+    pub fn get_hit_layout_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HitLayoutParameter>> {
+        self.inner.get_hit_layout_parameters()
     }
 }

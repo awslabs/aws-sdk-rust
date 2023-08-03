@@ -59,6 +59,10 @@ impl DescribeReservedInstancesModificationsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `reserved_instances_modifications`.
     ///
     /// To override the contents of this collection use [`set_reserved_instances_modifications`](Self::set_reserved_instances_modifications).
@@ -80,6 +84,12 @@ impl DescribeReservedInstancesModificationsOutputBuilder {
     ) -> Self {
         self.reserved_instances_modifications = input;
         self
+    }
+    /// <p>The Reserved Instance modification information.</p>
+    pub fn get_reserved_instances_modifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesModification>> {
+        &self.reserved_instances_modifications
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

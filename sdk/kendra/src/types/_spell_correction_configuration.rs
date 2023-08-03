@@ -45,6 +45,10 @@ impl SpellCorrectionConfigurationBuilder {
         self.include_query_spell_check_suggestions = input;
         self
     }
+    /// <p> <code>TRUE</code> to suggest spell corrections for queries.</p>
+    pub fn get_include_query_spell_check_suggestions(&self) -> &::std::option::Option<bool> {
+        &self.include_query_spell_check_suggestions
+    }
     /// Consumes the builder and constructs a [`SpellCorrectionConfiguration`](crate::types::SpellCorrectionConfiguration).
     pub fn build(self) -> crate::types::SpellCorrectionConfiguration {
         crate::types::SpellCorrectionConfiguration {

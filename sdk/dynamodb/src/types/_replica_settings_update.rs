@@ -84,6 +84,10 @@ impl ReplicaSettingsUpdateBuilder {
         self.region_name = input;
         self
     }
+    /// <p>The Region of the replica to be added.</p>
+    pub fn get_region_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region_name
+    }
     /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
     pub fn replica_provisioned_read_capacity_units(mut self, input: i64) -> Self {
         self.replica_provisioned_read_capacity_units = ::std::option::Option::Some(input);
@@ -96,6 +100,10 @@ impl ReplicaSettingsUpdateBuilder {
     ) -> Self {
         self.replica_provisioned_read_capacity_units = input;
         self
+    }
+    /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
+    pub fn get_replica_provisioned_read_capacity_units(&self) -> &::std::option::Option<i64> {
+        &self.replica_provisioned_read_capacity_units
     }
     /// <p>Auto scaling settings for managing a global table replica's read capacity units.</p>
     pub fn replica_provisioned_read_capacity_auto_scaling_settings_update(
@@ -113,6 +121,12 @@ impl ReplicaSettingsUpdateBuilder {
     ) -> Self {
         self.replica_provisioned_read_capacity_auto_scaling_settings_update = input;
         self
+    }
+    /// <p>Auto scaling settings for managing a global table replica's read capacity units.</p>
+    pub fn get_replica_provisioned_read_capacity_auto_scaling_settings_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoScalingSettingsUpdate> {
+        &self.replica_provisioned_read_capacity_auto_scaling_settings_update
     }
     /// Appends an item to `replica_global_secondary_index_settings_update`.
     ///
@@ -140,6 +154,14 @@ impl ReplicaSettingsUpdateBuilder {
         self.replica_global_secondary_index_settings_update = input;
         self
     }
+    /// <p>Represents the settings of a global secondary index for a global table that will be modified.</p>
+    pub fn get_replica_global_secondary_index_settings_update(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::ReplicaGlobalSecondaryIndexSettingsUpdate>,
+    > {
+        &self.replica_global_secondary_index_settings_update
+    }
     /// <p>Replica-specific table class. If not specified, uses the source table's table class.</p>
     pub fn replica_table_class(mut self, input: crate::types::TableClass) -> Self {
         self.replica_table_class = ::std::option::Option::Some(input);
@@ -152,6 +174,10 @@ impl ReplicaSettingsUpdateBuilder {
     ) -> Self {
         self.replica_table_class = input;
         self
+    }
+    /// <p>Replica-specific table class. If not specified, uses the source table's table class.</p>
+    pub fn get_replica_table_class(&self) -> &::std::option::Option<crate::types::TableClass> {
+        &self.replica_table_class
     }
     /// Consumes the builder and constructs a [`ReplicaSettingsUpdate`](crate::types::ReplicaSettingsUpdate).
     pub fn build(self) -> crate::types::ReplicaSettingsUpdate {

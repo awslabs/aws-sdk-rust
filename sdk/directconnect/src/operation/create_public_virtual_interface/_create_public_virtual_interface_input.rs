@@ -57,6 +57,10 @@ impl CreatePublicVirtualInterfaceInputBuilder {
         self.connection_id = input;
         self
     }
+    /// <p>The ID of the connection.</p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_id
+    }
     /// <p>Information about the public virtual interface.</p>
     pub fn new_public_virtual_interface(
         mut self,
@@ -72,6 +76,12 @@ impl CreatePublicVirtualInterfaceInputBuilder {
     ) -> Self {
         self.new_public_virtual_interface = input;
         self
+    }
+    /// <p>Information about the public virtual interface.</p>
+    pub fn get_new_public_virtual_interface(
+        &self,
+    ) -> &::std::option::Option<crate::types::NewPublicVirtualInterface> {
+        &self.new_public_virtual_interface
     }
     /// Consumes the builder and constructs a [`CreatePublicVirtualInterfaceInput`](crate::operation::create_public_virtual_interface::CreatePublicVirtualInterfaceInput).
     pub fn build(

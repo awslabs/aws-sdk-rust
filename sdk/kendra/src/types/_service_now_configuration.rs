@@ -96,6 +96,10 @@ impl ServiceNowConfigurationBuilder {
         self.host_url = input;
         self
     }
+    /// <p>The ServiceNow instance that the data source connects to. The host endpoint should look like the following: <i>{instance}.service-now.com.</i> </p>
+    pub fn get_host_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host_url
+    }
     /// <p>The Amazon Resource Name (ARN) of the Secrets Manager secret that contains the user name and password required to connect to the ServiceNow instance. You can also provide OAuth authentication credentials of user name, password, client ID, and client secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using a ServiceNow data source</a>.</p>
     pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_arn = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl ServiceNowConfigurationBuilder {
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Secrets Manager secret that contains the user name and password required to connect to the ServiceNow instance. You can also provide OAuth authentication credentials of user name, password, client ID, and client secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using a ServiceNow data source</a>.</p>
+    pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_arn
     }
     /// <p>The identifier of the release that the ServiceNow host is running. If the host is not running the <code>LONDON</code> release, use <code>OTHERS</code>.</p>
     pub fn service_now_build_version(
@@ -122,6 +130,12 @@ impl ServiceNowConfigurationBuilder {
         self.service_now_build_version = input;
         self
     }
+    /// <p>The identifier of the release that the ServiceNow host is running. If the host is not running the <code>LONDON</code> release, use <code>OTHERS</code>.</p>
+    pub fn get_service_now_build_version(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServiceNowBuildVersionType> {
+        &self.service_now_build_version
+    }
     /// <p>Configuration information for crawling knowledge articles in the ServiceNow site.</p>
     pub fn knowledge_article_configuration(
         mut self,
@@ -138,6 +152,12 @@ impl ServiceNowConfigurationBuilder {
         self.knowledge_article_configuration = input;
         self
     }
+    /// <p>Configuration information for crawling knowledge articles in the ServiceNow site.</p>
+    pub fn get_knowledge_article_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServiceNowKnowledgeArticleConfiguration> {
+        &self.knowledge_article_configuration
+    }
     /// <p>Configuration information for crawling service catalogs in the ServiceNow site.</p>
     pub fn service_catalog_configuration(
         mut self,
@@ -153,6 +173,12 @@ impl ServiceNowConfigurationBuilder {
     ) -> Self {
         self.service_catalog_configuration = input;
         self
+    }
+    /// <p>Configuration information for crawling service catalogs in the ServiceNow site.</p>
+    pub fn get_service_catalog_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServiceNowServiceCatalogConfiguration> {
+        &self.service_catalog_configuration
     }
     /// <p>The type of authentication used to connect to the ServiceNow instance. If you choose <code>HTTP_BASIC</code>, Amazon Kendra is authenticated using the user name and password provided in the Secrets Manager secret in the <code>SecretArn</code> field. If you choose <code>OAUTH2</code>, Amazon Kendra is authenticated using the credentials of client ID, client secret, user name and password.</p>
     /// <p>When you use <code>OAUTH2</code> authentication, you must generate a token and a client secret using the ServiceNow console. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using a ServiceNow data source</a>.</p>
@@ -171,6 +197,13 @@ impl ServiceNowConfigurationBuilder {
     ) -> Self {
         self.authentication_type = input;
         self
+    }
+    /// <p>The type of authentication used to connect to the ServiceNow instance. If you choose <code>HTTP_BASIC</code>, Amazon Kendra is authenticated using the user name and password provided in the Secrets Manager secret in the <code>SecretArn</code> field. If you choose <code>OAUTH2</code>, Amazon Kendra is authenticated using the credentials of client ID, client secret, user name and password.</p>
+    /// <p>When you use <code>OAUTH2</code> authentication, you must generate a token and a client secret using the ServiceNow console. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using a ServiceNow data source</a>.</p>
+    pub fn get_authentication_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServiceNowAuthenticationType> {
+        &self.authentication_type
     }
     /// Consumes the builder and constructs a [`ServiceNowConfiguration`](crate::types::ServiceNowConfiguration).
     pub fn build(self) -> crate::types::ServiceNowConfiguration {

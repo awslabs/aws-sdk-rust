@@ -46,6 +46,10 @@ impl DeleteBackupVaultInputBuilder {
         self.backup_vault_name = input;
         self
     }
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    pub fn get_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_vault_name
+    }
     /// Consumes the builder and constructs a [`DeleteBackupVaultInput`](crate::operation::delete_backup_vault::DeleteBackupVaultInput).
     pub fn build(
         self,

@@ -46,6 +46,10 @@ impl DeleteCustomKeyStoreInputBuilder {
         self.custom_key_store_id = input;
         self
     }
+    /// <p>Enter the ID of the custom key store you want to delete. To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
+    pub fn get_custom_key_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_key_store_id
+    }
     /// Consumes the builder and constructs a [`DeleteCustomKeyStoreInput`](crate::operation::delete_custom_key_store::DeleteCustomKeyStoreInput).
     pub fn build(
         self,

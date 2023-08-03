@@ -45,6 +45,10 @@ impl DeleteDirectConnectGatewayInputBuilder {
         self.direct_connect_gateway_id = input;
         self
     }
+    /// <p>The ID of the Direct Connect gateway.</p>
+    pub fn get_direct_connect_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.direct_connect_gateway_id
+    }
     /// Consumes the builder and constructs a [`DeleteDirectConnectGatewayInput`](crate::operation::delete_direct_connect_gateway::DeleteDirectConnectGatewayInput).
     pub fn build(
         self,

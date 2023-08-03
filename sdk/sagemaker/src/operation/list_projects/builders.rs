@@ -36,6 +36,10 @@ impl ListProjectsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListProjects as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_projects::builders::ListProjectsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl ListProjectsFluentBuilder {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
+    /// <p>A filter that returns the projects that were created after a specified time.</p>
+    pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_creation_time_after()
+    }
     /// <p>A filter that returns the projects that were created before a specified time.</p>
     pub fn creation_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.creation_time_before(input);
@@ -145,6 +153,10 @@ impl ListProjectsFluentBuilder {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }
+    /// <p>A filter that returns the projects that were created before a specified time.</p>
+    pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_creation_time_before()
+    }
     /// <p>The maximum number of projects to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -154,6 +166,10 @@ impl ListProjectsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of projects to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>A filter that returns the projects whose name contains a specified string.</p>
     pub fn name_contains(
@@ -171,6 +187,10 @@ impl ListProjectsFluentBuilder {
         self.inner = self.inner.set_name_contains(input);
         self
     }
+    /// <p>A filter that returns the projects whose name contains a specified string.</p>
+    pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name_contains()
+    }
     /// <p>If the result of the previous <code>ListProjects</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of projects, use the token in the next request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -180,6 +200,10 @@ impl ListProjectsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>If the result of the previous <code>ListProjects</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of projects, use the token in the next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The field by which to sort results. The default is <code>CreationTime</code>.</p>
     pub fn sort_by(mut self, input: crate::types::ProjectSortBy) -> Self {
@@ -194,6 +218,10 @@ impl ListProjectsFluentBuilder {
         self.inner = self.inner.set_sort_by(input);
         self
     }
+    /// <p>The field by which to sort results. The default is <code>CreationTime</code>.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ProjectSortBy> {
+        self.inner.get_sort_by()
+    }
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
     pub fn sort_order(mut self, input: crate::types::ProjectSortOrder) -> Self {
         self.inner = self.inner.sort_order(input);
@@ -206,5 +234,9 @@ impl ListProjectsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
+    }
+    /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::ProjectSortOrder> {
+        self.inner.get_sort_order()
     }
 }

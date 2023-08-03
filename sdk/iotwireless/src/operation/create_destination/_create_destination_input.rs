@@ -88,6 +88,10 @@ impl CreateDestinationInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the new resource.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The type of value in <code>Expression</code>.</p>
     pub fn expression_type(mut self, input: crate::types::ExpressionType) -> Self {
         self.expression_type = ::std::option::Option::Some(input);
@@ -101,6 +105,10 @@ impl CreateDestinationInputBuilder {
         self.expression_type = input;
         self
     }
+    /// <p>The type of value in <code>Expression</code>.</p>
+    pub fn get_expression_type(&self) -> &::std::option::Option<crate::types::ExpressionType> {
+        &self.expression_type
+    }
     /// <p>The rule name or topic rule to send messages to.</p>
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression = ::std::option::Option::Some(input.into());
@@ -110,6 +118,10 @@ impl CreateDestinationInputBuilder {
     pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expression = input;
         self
+    }
+    /// <p>The rule name or topic rule to send messages to.</p>
+    pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expression
     }
     /// <p>The description of the new resource.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -121,6 +133,10 @@ impl CreateDestinationInputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the new resource.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The ARN of the IAM Role that authorizes the destination.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -130,6 +146,10 @@ impl CreateDestinationInputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The ARN of the IAM Role that authorizes the destination.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Appends an item to `tags`.
     ///
@@ -150,6 +170,10 @@ impl CreateDestinationInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags to attach to the new destination. Tags are metadata that you can use to manage a resource.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
     pub fn client_request_token(
         mut self,
@@ -165,6 +189,10 @@ impl CreateDestinationInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Consumes the builder and constructs a [`CreateDestinationInput`](crate::operation::create_destination::CreateDestinationInput).
     pub fn build(

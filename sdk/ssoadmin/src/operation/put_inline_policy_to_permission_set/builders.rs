@@ -38,6 +38,10 @@ impl PutInlinePolicyToPermissionSetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutInlinePolicyToPermissionSet as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_inline_policy_to_permission_set::builders::PutInlinePolicyToPermissionSetInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -102,6 +106,10 @@ impl PutInlinePolicyToPermissionSetFluentBuilder {
         self.inner = self.inner.set_instance_arn(input);
         self
     }
+    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+    pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_arn()
+    }
     /// <p>The ARN of the permission set.</p>
     pub fn permission_set_arn(
         mut self,
@@ -118,6 +126,10 @@ impl PutInlinePolicyToPermissionSetFluentBuilder {
         self.inner = self.inner.set_permission_set_arn(input);
         self
     }
+    /// <p>The ARN of the permission set.</p>
+    pub fn get_permission_set_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_permission_set_arn()
+    }
     /// <p>The inline policy to attach to a <code>PermissionSet</code>.</p>
     pub fn inline_policy(
         mut self,
@@ -133,5 +145,9 @@ impl PutInlinePolicyToPermissionSetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_inline_policy(input);
         self
+    }
+    /// <p>The inline policy to attach to a <code>PermissionSet</code>.</p>
+    pub fn get_inline_policy(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_inline_policy()
     }
 }

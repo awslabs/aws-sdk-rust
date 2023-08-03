@@ -50,6 +50,10 @@ impl InstanceCreditSpecificationBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The ID of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The credit option for CPU usage of the instance.</p>
     /// <p>Valid values: <code>standard</code> | <code>unlimited</code> </p>
     pub fn cpu_credits(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -61,6 +65,11 @@ impl InstanceCreditSpecificationBuilder {
     pub fn set_cpu_credits(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cpu_credits = input;
         self
+    }
+    /// <p>The credit option for CPU usage of the instance.</p>
+    /// <p>Valid values: <code>standard</code> | <code>unlimited</code> </p>
+    pub fn get_cpu_credits(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cpu_credits
     }
     /// Consumes the builder and constructs a [`InstanceCreditSpecification`](crate::types::InstanceCreditSpecification).
     pub fn build(self) -> crate::types::InstanceCreditSpecification {

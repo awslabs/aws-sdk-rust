@@ -39,6 +39,10 @@ impl GetComponentInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the component that you want to get the detailed data for.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`GetComponentInput`](crate::operation::get_component::GetComponentInput).
     pub fn build(
         self,

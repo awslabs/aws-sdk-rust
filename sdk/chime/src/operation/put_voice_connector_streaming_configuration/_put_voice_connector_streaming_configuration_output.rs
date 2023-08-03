@@ -51,6 +51,12 @@ impl PutVoiceConnectorStreamingConfigurationOutputBuilder {
         self.streaming_configuration = input;
         self
     }
+    /// <p>The updated streaming configuration details.</p>
+    pub fn get_streaming_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::StreamingConfiguration> {
+        &self.streaming_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -48,6 +48,10 @@ impl DisassociateMembersInputBuilder {
         self.detector_id = input;
         self
     }
+    /// <p>The unique ID of the detector of the GuardDuty account whose members you want to disassociate from the administrator account.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
+    }
     /// Appends an item to `account_ids`.
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
@@ -66,6 +70,12 @@ impl DisassociateMembersInputBuilder {
     ) -> Self {
         self.account_ids = input;
         self
+    }
+    /// <p>A list of account IDs of the GuardDuty member accounts that you want to disassociate from the administrator account.</p>
+    pub fn get_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.account_ids
     }
     /// Consumes the builder and constructs a [`DisassociateMembersInput`](crate::operation::disassociate_members::DisassociateMembersInput).
     pub fn build(

@@ -53,6 +53,12 @@ impl DescribeClusterOperationOutputBuilder {
         self.cluster_operation_info = input;
         self
     }
+    /// <p>Cluster operation information</p>
+    pub fn get_cluster_operation_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::ClusterOperationInfo> {
+        &self.cluster_operation_info
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

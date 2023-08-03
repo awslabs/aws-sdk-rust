@@ -56,6 +56,10 @@ impl ScriptModeConfigBuilder {
         self.entry_point = input;
         self
     }
+    /// <p>The path to the Python script that serves as the entry point for an Amazon Braket job.</p>
+    pub fn get_entry_point(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entry_point
+    }
     /// <p>The URI that specifies the S3 path to the Python script module that contains the training script used by an Amazon Braket job.</p>
     pub fn s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_uri = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl ScriptModeConfigBuilder {
     pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_uri = input;
         self
+    }
+    /// <p>The URI that specifies the S3 path to the Python script module that contains the training script used by an Amazon Braket job.</p>
+    pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_uri
     }
     /// <p>The type of compression used by the Python scripts for an Amazon Braket job.</p>
     pub fn compression_type(mut self, input: crate::types::CompressionType) -> Self {
@@ -78,6 +86,10 @@ impl ScriptModeConfigBuilder {
     ) -> Self {
         self.compression_type = input;
         self
+    }
+    /// <p>The type of compression used by the Python scripts for an Amazon Braket job.</p>
+    pub fn get_compression_type(&self) -> &::std::option::Option<crate::types::CompressionType> {
+        &self.compression_type
     }
     /// Consumes the builder and constructs a [`ScriptModeConfig`](crate::types::ScriptModeConfig).
     pub fn build(self) -> crate::types::ScriptModeConfig {

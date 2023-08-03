@@ -38,6 +38,12 @@ impl ExecuteTransactionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ExecuteTransaction as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::execute_transaction::builders::ExecuteTransactionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +141,12 @@ impl ExecuteTransactionFluentBuilder {
         self.inner = self.inner.set_transact_statements(input);
         self
     }
+    /// <p>The list of PartiQL statements representing the transaction to run.</p>
+    pub fn get_transact_statements(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterizedStatement>> {
+        self.inner.get_transact_statements()
+    }
     /// <p>Set this value to get remaining results, if <code>NextToken</code> was returned in the statement response.</p>
     pub fn client_request_token(
         mut self,
@@ -151,6 +163,10 @@ impl ExecuteTransactionFluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
+    /// <p>Set this value to get remaining results, if <code>NextToken</code> was returned in the statement response.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
+    }
     /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactGetItems.html">TransactGetItems</a> and <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactWriteItems.html">TransactWriteItems</a>.</p>
     pub fn return_consumed_capacity(mut self, input: crate::types::ReturnConsumedCapacity) -> Self {
         self.inner = self.inner.return_consumed_capacity(input);
@@ -163,5 +179,11 @@ impl ExecuteTransactionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_return_consumed_capacity(input);
         self
+    }
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactGetItems.html">TransactGetItems</a> and <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactWriteItems.html">TransactWriteItems</a>.</p>
+    pub fn get_return_consumed_capacity(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReturnConsumedCapacity> {
+        self.inner.get_return_consumed_capacity()
     }
 }

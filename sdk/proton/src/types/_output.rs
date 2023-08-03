@@ -54,6 +54,10 @@ impl OutputBuilder {
         self.key = input;
         self
     }
+    /// <p>The output key.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>The output value.</p>
     pub fn value_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value_string = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl OutputBuilder {
     pub fn set_value_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value_string = input;
         self
+    }
+    /// <p>The output value.</p>
+    pub fn get_value_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value_string
     }
     /// Consumes the builder and constructs a [`Output`](crate::types::Output).
     pub fn build(self) -> crate::types::Output {

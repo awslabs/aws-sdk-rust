@@ -36,6 +36,13 @@ impl UpdateCustomLineItemFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateCustomLineItem as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_custom_line_item::builders::UpdateCustomLineItemInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl UpdateCustomLineItemFluentBuilder {
         self.inner = self.inner.set_arn(input);
         self
     }
+    /// <p> The ARN of the custom line item to be updated. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
+    }
     /// <p> The new name for the custom line item. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -136,6 +147,10 @@ impl UpdateCustomLineItemFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p> The new name for the custom line item. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p> The new line item description of the custom line item. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -145,6 +160,10 @@ impl UpdateCustomLineItemFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p> The new line item description of the custom line item. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p> A <code>ListCustomLineItemChargeDetails</code> containing the new charge details for the custom line item. </p>
     pub fn charge_details(
@@ -162,6 +181,12 @@ impl UpdateCustomLineItemFluentBuilder {
         self.inner = self.inner.set_charge_details(input);
         self
     }
+    /// <p> A <code>ListCustomLineItemChargeDetails</code> containing the new charge details for the custom line item. </p>
+    pub fn get_charge_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateCustomLineItemChargeDetails> {
+        self.inner.get_charge_details()
+    }
     /// <p>The billing period range in which the custom line item request will be applied.</p>
     pub fn billing_period_range(
         mut self,
@@ -177,5 +202,11 @@ impl UpdateCustomLineItemFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_billing_period_range(input);
         self
+    }
+    /// <p>The billing period range in which the custom line item request will be applied.</p>
+    pub fn get_billing_period_range(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomLineItemBillingPeriodRange> {
+        self.inner.get_billing_period_range()
     }
 }

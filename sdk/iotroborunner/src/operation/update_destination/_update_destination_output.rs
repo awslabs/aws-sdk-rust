@@ -87,6 +87,10 @@ impl UpdateDestinationOutputBuilder {
         self.arn = input;
         self
     }
+    /// Destination ARN.
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Filters access by the destination's identifier
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -97,6 +101,10 @@ impl UpdateDestinationOutputBuilder {
         self.id = input;
         self
     }
+    /// Filters access by the destination's identifier
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Human friendly name of the resource.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -106,6 +114,10 @@ impl UpdateDestinationOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// Human friendly name of the resource.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Timestamp at which the resource was last updated.
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -120,6 +132,10 @@ impl UpdateDestinationOutputBuilder {
         self.updated_at = input;
         self
     }
+    /// Timestamp at which the resource was last updated.
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
+    }
     /// State of the destination.
     pub fn state(mut self, input: crate::types::DestinationState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -132,6 +148,10 @@ impl UpdateDestinationOutputBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// State of the destination.
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::DestinationState> {
+        &self.state
     }
     /// JSON document containing additional fixed properties regarding the destination
     pub fn additional_fixed_properties(
@@ -148,6 +168,10 @@ impl UpdateDestinationOutputBuilder {
     ) -> Self {
         self.additional_fixed_properties = input;
         self
+    }
+    /// JSON document containing additional fixed properties regarding the destination
+    pub fn get_additional_fixed_properties(&self) -> &::std::option::Option<::std::string::String> {
+        &self.additional_fixed_properties
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

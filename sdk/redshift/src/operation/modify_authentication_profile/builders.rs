@@ -36,6 +36,10 @@ impl ModifyAuthenticationProfileFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyAuthenticationProfile as a reference.
+    pub fn as_input(&self) -> &crate::operation::modify_authentication_profile::builders::ModifyAuthenticationProfileInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl ModifyAuthenticationProfileFluentBuilder {
         self.inner = self.inner.set_authentication_profile_name(input);
         self
     }
+    /// <p>The name of the authentication profile to replace.</p>
+    pub fn get_authentication_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_authentication_profile_name()
+    }
     /// <p>The new content of the authentication profile in JSON format. The maximum length of the JSON string is determined by a quota for your account.</p>
     pub fn authentication_profile_content(
         mut self,
@@ -147,5 +155,11 @@ impl ModifyAuthenticationProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_authentication_profile_content(input);
         self
+    }
+    /// <p>The new content of the authentication profile in JSON format. The maximum length of the JSON string is determined by a quota for your account.</p>
+    pub fn get_authentication_profile_content(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_authentication_profile_content()
     }
 }

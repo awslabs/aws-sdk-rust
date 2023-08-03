@@ -36,6 +36,13 @@ impl DescribeDetectorModelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeDetectorModel as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_detector_model::builders::DescribeDetectorModelInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl DescribeDetectorModelFluentBuilder {
         self.inner = self.inner.set_detector_model_name(input);
         self
     }
+    /// <p>The name of the detector model.</p>
+    pub fn get_detector_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_detector_model_name()
+    }
     /// <p>The version of the detector model.</p>
     pub fn detector_model_version(
         mut self,
@@ -147,5 +158,9 @@ impl DescribeDetectorModelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_detector_model_version(input);
         self
+    }
+    /// <p>The version of the detector model.</p>
+    pub fn get_detector_model_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_detector_model_version()
     }
 }

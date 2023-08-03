@@ -59,6 +59,10 @@ impl EventBuilder {
         self.timestamp = input;
         self
     }
+    /// <p>The timestamp of the event.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.timestamp
+    }
     /// <p> <code>aws.evidently.evaluation</code> specifies an evaluation event, which determines which feature variation that a user sees. <code>aws.evidently.custom</code> specifies a custom event, which generates metrics from user actions such as clicks and checkouts.</p>
     pub fn r#type(mut self, input: crate::types::EventType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl EventBuilder {
         self.r#type = input;
         self
     }
+    /// <p> <code>aws.evidently.evaluation</code> specifies an evaluation event, which determines which feature variation that a user sees. <code>aws.evidently.custom</code> specifies a custom event, which generates metrics from user actions such as clicks and checkouts.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::EventType> {
+        &self.r#type
+    }
     /// <p>The event data.</p>
     pub fn data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data = ::std::option::Option::Some(input.into());
@@ -78,6 +86,10 @@ impl EventBuilder {
     pub fn set_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data = input;
         self
+    }
+    /// <p>The event data.</p>
+    pub fn get_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data
     }
     /// Consumes the builder and constructs a [`Event`](crate::types::Event).
     pub fn build(self) -> crate::types::Event {

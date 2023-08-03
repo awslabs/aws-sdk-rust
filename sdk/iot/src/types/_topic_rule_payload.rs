@@ -80,6 +80,10 @@ impl TopicRulePayloadBuilder {
         self.sql = input;
         self
     }
+    /// <p>The SQL statement used to query the topic. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-sql-reference.html">IoT SQL Reference</a> in the <i>IoT Developer Guide</i>.</p>
+    pub fn get_sql(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sql
+    }
     /// <p>The description of the rule.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl TopicRulePayloadBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the rule.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `actions`.
     ///
@@ -109,6 +117,10 @@ impl TopicRulePayloadBuilder {
         self.actions = input;
         self
     }
+    /// <p>The actions associated with the rule.</p>
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Action>> {
+        &self.actions
+    }
     /// <p>Specifies whether the rule is disabled.</p>
     pub fn rule_disabled(mut self, input: bool) -> Self {
         self.rule_disabled = ::std::option::Option::Some(input);
@@ -118,6 +130,10 @@ impl TopicRulePayloadBuilder {
     pub fn set_rule_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.rule_disabled = input;
         self
+    }
+    /// <p>Specifies whether the rule is disabled.</p>
+    pub fn get_rule_disabled(&self) -> &::std::option::Option<bool> {
+        &self.rule_disabled
     }
     /// <p>The version of the SQL rules engine to use when evaluating the rule.</p>
     pub fn aws_iot_sql_version(
@@ -135,6 +151,10 @@ impl TopicRulePayloadBuilder {
         self.aws_iot_sql_version = input;
         self
     }
+    /// <p>The version of the SQL rules engine to use when evaluating the rule.</p>
+    pub fn get_aws_iot_sql_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_iot_sql_version
+    }
     /// <p>The action to take when an error occurs.</p>
     pub fn error_action(mut self, input: crate::types::Action) -> Self {
         self.error_action = ::std::option::Option::Some(input);
@@ -144,6 +164,10 @@ impl TopicRulePayloadBuilder {
     pub fn set_error_action(mut self, input: ::std::option::Option<crate::types::Action>) -> Self {
         self.error_action = input;
         self
+    }
+    /// <p>The action to take when an error occurs.</p>
+    pub fn get_error_action(&self) -> &::std::option::Option<crate::types::Action> {
+        &self.error_action
     }
     /// Consumes the builder and constructs a [`TopicRulePayload`](crate::types::TopicRulePayload).
     pub fn build(self) -> crate::types::TopicRulePayload {

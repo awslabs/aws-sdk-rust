@@ -51,6 +51,10 @@ impl MfaOptionTypeBuilder {
         self.delivery_medium = input;
         self
     }
+    /// <p>The delivery medium to send the MFA code. You can use this parameter to set only the <code>SMS</code> delivery medium value.</p>
+    pub fn get_delivery_medium(&self) -> &::std::option::Option<crate::types::DeliveryMediumType> {
+        &self.delivery_medium
+    }
     /// <p>The attribute name of the MFA option type. The only valid value is <code>phone_number</code>.</p>
     pub fn attribute_name(
         mut self,
@@ -66,6 +70,10 @@ impl MfaOptionTypeBuilder {
     ) -> Self {
         self.attribute_name = input;
         self
+    }
+    /// <p>The attribute name of the MFA option type. The only valid value is <code>phone_number</code>.</p>
+    pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_name
     }
     /// Consumes the builder and constructs a [`MfaOptionType`](crate::types::MfaOptionType).
     pub fn build(self) -> crate::types::MfaOptionType {

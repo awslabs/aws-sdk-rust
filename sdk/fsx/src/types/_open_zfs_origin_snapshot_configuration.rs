@@ -56,6 +56,10 @@ impl OpenZfsOriginSnapshotConfigurationBuilder {
         self.snapshot_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn get_snapshot_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_arn
+    }
     /// <p>The strategy used when copying data from the snapshot to the new volume. </p>
     /// <ul>
     /// <li> <p> <code>CLONE</code> - The new volume references the data in the origin snapshot. Cloning a snapshot is faster than copying the data from a snapshot to a new volume and doesn't consume disk throughput. However, the origin snapshot can't be deleted if there is a volume using its copied data. </p> </li>
@@ -76,6 +80,14 @@ impl OpenZfsOriginSnapshotConfigurationBuilder {
     ) -> Self {
         self.copy_strategy = input;
         self
+    }
+    /// <p>The strategy used when copying data from the snapshot to the new volume. </p>
+    /// <ul>
+    /// <li> <p> <code>CLONE</code> - The new volume references the data in the origin snapshot. Cloning a snapshot is faster than copying the data from a snapshot to a new volume and doesn't consume disk throughput. However, the origin snapshot can't be deleted if there is a volume using its copied data. </p> </li>
+    /// <li> <p> <code>FULL_COPY</code> - Copies all data from the snapshot to the new volume. </p> </li>
+    /// </ul>
+    pub fn get_copy_strategy(&self) -> &::std::option::Option<crate::types::OpenZfsCopyStrategy> {
+        &self.copy_strategy
     }
     /// Consumes the builder and constructs a [`OpenZfsOriginSnapshotConfiguration`](crate::types::OpenZfsOriginSnapshotConfiguration).
     pub fn build(self) -> crate::types::OpenZfsOriginSnapshotConfiguration {

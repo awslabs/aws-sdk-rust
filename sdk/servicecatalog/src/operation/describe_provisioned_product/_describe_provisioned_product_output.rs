@@ -67,6 +67,12 @@ impl DescribeProvisionedProductOutputBuilder {
         self.provisioned_product_detail = input;
         self
     }
+    /// <p>Information about the provisioned product.</p>
+    pub fn get_provisioned_product_detail(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProvisionedProductDetail> {
+        &self.provisioned_product_detail
+    }
     /// Appends an item to `cloud_watch_dashboards`.
     ///
     /// To override the contents of this collection use [`set_cloud_watch_dashboards`](Self::set_cloud_watch_dashboards).
@@ -85,6 +91,12 @@ impl DescribeProvisionedProductOutputBuilder {
     ) -> Self {
         self.cloud_watch_dashboards = input;
         self
+    }
+    /// <p>Any CloudWatch dashboards that were created when provisioning the product.</p>
+    pub fn get_cloud_watch_dashboards(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudWatchDashboard>> {
+        &self.cloud_watch_dashboards
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

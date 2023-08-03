@@ -36,6 +36,10 @@ impl ListFindingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListFindings as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_findings::builders::ListFindingsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +132,10 @@ impl ListFindingsFluentBuilder {
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_detector_id(input);
         self
+    }
+    /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to list.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_detector_id()
     }
     /// <p>Represents the criteria used for querying findings. Valid values include:</p>
     /// <ul>
@@ -242,6 +250,60 @@ impl ListFindingsFluentBuilder {
         self.inner = self.inner.set_finding_criteria(input);
         self
     }
+    /// <p>Represents the criteria used for querying findings. Valid values include:</p>
+    /// <ul>
+    /// <li> <p>JSON field name</p> </li>
+    /// <li> <p>accountId</p> </li>
+    /// <li> <p>region</p> </li>
+    /// <li> <p>confidence</p> </li>
+    /// <li> <p>id</p> </li>
+    /// <li> <p>resource.accessKeyDetails.accessKeyId</p> </li>
+    /// <li> <p>resource.accessKeyDetails.principalId</p> </li>
+    /// <li> <p>resource.accessKeyDetails.userName</p> </li>
+    /// <li> <p>resource.accessKeyDetails.userType</p> </li>
+    /// <li> <p>resource.instanceDetails.iamInstanceProfile.id</p> </li>
+    /// <li> <p>resource.instanceDetails.imageId</p> </li>
+    /// <li> <p>resource.instanceDetails.instanceId</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.publicDnsName</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.publicIp</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.subnetId</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.vpcId</p> </li>
+    /// <li> <p>resource.instanceDetails.tags.key</p> </li>
+    /// <li> <p>resource.instanceDetails.tags.value</p> </li>
+    /// <li> <p>resource.resourceType</p> </li>
+    /// <li> <p>service.action.actionType</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.api</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.callerType</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.serviceName</p> </li>
+    /// <li> <p>service.action.dnsRequestAction.domain</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.blocked</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.connectionDirection</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.localPortDetails.port</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.protocol</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p> </li>
+    /// <li> <p>service.additionalInfo.threatListName</p> </li>
+    /// <li> <p>service.archived</p> <p>When this attribute is set to 'true', only archived findings are listed. When it's set to 'false', only unarchived findings are listed. When this attribute is not set, all existing findings are listed.</p> </li>
+    /// <li> <p>service.resourceRole</p> </li>
+    /// <li> <p>severity</p> </li>
+    /// <li> <p>type</p> </li>
+    /// <li> <p>updatedAt</p> <p>Type: Timestamp in Unix Epoch millisecond format: 1486685375000</p> </li>
+    /// </ul>
+    pub fn get_finding_criteria(&self) -> &::std::option::Option<crate::types::FindingCriteria> {
+        self.inner.get_finding_criteria()
+    }
     /// <p>Represents the criteria used for sorting findings.</p>
     pub fn sort_criteria(mut self, input: crate::types::SortCriteria) -> Self {
         self.inner = self.inner.sort_criteria(input);
@@ -255,6 +317,10 @@ impl ListFindingsFluentBuilder {
         self.inner = self.inner.set_sort_criteria(input);
         self
     }
+    /// <p>Represents the criteria used for sorting findings.</p>
+    pub fn get_sort_criteria(&self) -> &::std::option::Option<crate::types::SortCriteria> {
+        self.inner.get_sort_criteria()
+    }
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -265,6 +331,10 @@ impl ListFindingsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -274,5 +344,9 @@ impl ListFindingsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

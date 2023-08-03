@@ -55,6 +55,10 @@ impl UpdateUsagePlanInputBuilder {
         self.usage_plan_id = input;
         self
     }
+    /// <p>The Id of the to-be-updated usage plan.</p>
+    pub fn get_usage_plan_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.usage_plan_id
+    }
     /// Appends an item to `patch_operations`.
     ///
     /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
@@ -73,6 +77,12 @@ impl UpdateUsagePlanInputBuilder {
     ) -> Self {
         self.patch_operations = input;
         self
+    }
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
+    pub fn get_patch_operations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
+        &self.patch_operations
     }
     /// Consumes the builder and constructs a [`UpdateUsagePlanInput`](crate::operation::update_usage_plan::UpdateUsagePlanInput).
     pub fn build(

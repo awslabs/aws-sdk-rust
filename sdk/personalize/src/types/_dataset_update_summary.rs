@@ -72,6 +72,10 @@ impl DatasetUpdateSummaryBuilder {
         self.schema_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the schema that replaced the previous schema of the dataset.</p>
+    pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_arn
+    }
     /// <p>The status of the dataset update. </p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl DatasetUpdateSummaryBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the dataset update. </p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>If updating a dataset fails, provides the reason why.</p>
     pub fn failure_reason(
@@ -98,6 +106,10 @@ impl DatasetUpdateSummaryBuilder {
         self.failure_reason = input;
         self
     }
+    /// <p>If updating a dataset fails, provides the reason why.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
+    }
     /// <p>The creation date and time (in Unix time) of the dataset update.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
@@ -111,6 +123,10 @@ impl DatasetUpdateSummaryBuilder {
         self.creation_date_time = input;
         self
     }
+    /// <p>The creation date and time (in Unix time) of the dataset update.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
+    }
     /// <p>The last update date and time (in Unix time) of the dataset.</p>
     pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date_time = ::std::option::Option::Some(input);
@@ -123,6 +139,12 @@ impl DatasetUpdateSummaryBuilder {
     ) -> Self {
         self.last_updated_date_time = input;
         self
+    }
+    /// <p>The last update date and time (in Unix time) of the dataset.</p>
+    pub fn get_last_updated_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date_time
     }
     /// Consumes the builder and constructs a [`DatasetUpdateSummary`](crate::types::DatasetUpdateSummary).
     pub fn build(self) -> crate::types::DatasetUpdateSummary {

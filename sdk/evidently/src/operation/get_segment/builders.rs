@@ -36,6 +36,10 @@ impl GetSegmentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetSegment as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_segment::builders::GetSegmentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -117,5 +121,9 @@ impl GetSegmentFluentBuilder {
     pub fn set_segment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_segment(input);
         self
+    }
+    /// <p>The ARN of the segment to return information for.</p>
+    pub fn get_segment(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_segment()
     }
 }

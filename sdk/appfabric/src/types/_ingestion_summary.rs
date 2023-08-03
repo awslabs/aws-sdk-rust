@@ -64,6 +64,10 @@ impl IngestionSummaryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the ingestion.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the application.</p>
     pub fn app(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl IngestionSummaryBuilder {
     pub fn set_app(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app = input;
         self
+    }
+    /// <p>The name of the application.</p>
+    pub fn get_app(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app
     }
     /// <p>The ID of the application tenant.</p>
     pub fn tenant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,6 +92,10 @@ impl IngestionSummaryBuilder {
         self.tenant_id = input;
         self
     }
+    /// <p>The ID of the application tenant.</p>
+    pub fn get_tenant_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tenant_id
+    }
     /// <p>The status of the ingestion.</p>
     pub fn state(mut self, input: crate::types::IngestionState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl IngestionSummaryBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::IngestionState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The status of the ingestion.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::IngestionState> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`IngestionSummary`](crate::types::IngestionSummary).
     pub fn build(self) -> crate::types::IngestionSummary {

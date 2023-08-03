@@ -36,6 +36,12 @@ impl UpdateReadinessCheckFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateReadinessCheck as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_readiness_check::builders::UpdateReadinessCheckInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateReadinessCheckFluentBuilder {
         self.inner = self.inner.set_readiness_check_name(input);
         self
     }
+    /// <p>Name of a readiness check.</p>
+    pub fn get_readiness_check_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_readiness_check_name()
+    }
     /// <p>The name of the resource set to be checked.</p>
     pub fn resource_set_name(
         mut self,
@@ -147,5 +157,9 @@ impl UpdateReadinessCheckFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_set_name(input);
         self
+    }
+    /// <p>The name of the resource set to be checked.</p>
+    pub fn get_resource_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_set_name()
     }
 }

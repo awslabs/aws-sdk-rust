@@ -75,6 +75,10 @@ impl VmServerBuilder {
         self.vm_server_address = input;
         self
     }
+    /// <p>The VM server location.</p>
+    pub fn get_vm_server_address(&self) -> &::std::option::Option<crate::types::VmServerAddress> {
+        &self.vm_server_address
+    }
     /// <p>The name of the VM.</p>
     pub fn vm_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vm_name = ::std::option::Option::Some(input.into());
@@ -84,6 +88,10 @@ impl VmServerBuilder {
     pub fn set_vm_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vm_name = input;
         self
+    }
+    /// <p>The name of the VM.</p>
+    pub fn get_vm_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vm_name
     }
     /// <p>The name of the VM manager.</p>
     pub fn vm_manager_name(
@@ -101,6 +109,10 @@ impl VmServerBuilder {
         self.vm_manager_name = input;
         self
     }
+    /// <p>The name of the VM manager.</p>
+    pub fn get_vm_manager_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vm_manager_name
+    }
     /// <p>The type of VM management product.</p>
     pub fn vm_manager_type(mut self, input: crate::types::VmManagerType) -> Self {
         self.vm_manager_type = ::std::option::Option::Some(input);
@@ -114,6 +126,10 @@ impl VmServerBuilder {
         self.vm_manager_type = input;
         self
     }
+    /// <p>The type of VM management product.</p>
+    pub fn get_vm_manager_type(&self) -> &::std::option::Option<crate::types::VmManagerType> {
+        &self.vm_manager_type
+    }
     /// <p>The VM folder path in the vCenter Server virtual machine inventory tree.</p>
     pub fn vm_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vm_path = ::std::option::Option::Some(input.into());
@@ -123,6 +139,10 @@ impl VmServerBuilder {
     pub fn set_vm_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vm_path = input;
         self
+    }
+    /// <p>The VM folder path in the vCenter Server virtual machine inventory tree.</p>
+    pub fn get_vm_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vm_path
     }
     /// Consumes the builder and constructs a [`VmServer`](crate::types::VmServer).
     pub fn build(self) -> crate::types::VmServer {

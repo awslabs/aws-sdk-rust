@@ -39,6 +39,10 @@ impl SendEventFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SendEvent as a reference.
+    pub fn as_input(&self) -> &crate::operation::send_event::builders::SendEventInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,16 @@ impl SendEventFluentBuilder {
         self.inner = self.inner.set_content_type(input);
         self
     }
+    /// <p>The content type of the request. Supported types are:</p>
+    /// <ul>
+    /// <li> <p>application/vnd.amazonaws.connect.event.typing</p> </li>
+    /// <li> <p>application/vnd.amazonaws.connect.event.connection.acknowledged</p> </li>
+    /// <li> <p>application/vnd.amazonaws.connect.event.message.delivered</p> </li>
+    /// <li> <p>application/vnd.amazonaws.connect.event.message.read</p> </li>
+    /// </ul>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_content_type()
+    }
     /// <p>The content of the event to be sent (for example, message text). For content related to message receipts, this is supported in the form of a JSON string.</p>
     /// <p>Sample Content: "{\"messageId\":\"11111111-aaaa-bbbb-cccc-EXAMPLE01234\"}"</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -145,6 +159,11 @@ impl SendEventFluentBuilder {
         self.inner = self.inner.set_content(input);
         self
     }
+    /// <p>The content of the event to be sent (for example, message text). For content related to message receipts, this is supported in the form of a JSON string.</p>
+    /// <p>Sample Content: "{\"messageId\":\"11111111-aaaa-bbbb-cccc-EXAMPLE01234\"}"</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_content()
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -154,6 +173,10 @@ impl SendEventFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// <p>The authentication token associated with the participant's connection.</p>
     pub fn connection_token(
@@ -170,5 +193,9 @@ impl SendEventFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_connection_token(input);
         self
+    }
+    /// <p>The authentication token associated with the participant's connection.</p>
+    pub fn get_connection_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connection_token()
     }
 }

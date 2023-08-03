@@ -69,6 +69,10 @@ impl CreateSnapshotInputBuilder {
         self.client_request_token = input;
         self
     }
+    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
+    }
     /// <p>The name of the snapshot. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl CreateSnapshotInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the snapshot. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The ID of the volume that you are taking a snapshot of.</p>
     pub fn volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_id = ::std::option::Option::Some(input.into());
@@ -88,6 +96,10 @@ impl CreateSnapshotInputBuilder {
     pub fn set_volume_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_id = input;
         self
+    }
+    /// <p>The ID of the volume that you are taking a snapshot of.</p>
+    pub fn get_volume_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_id
     }
     /// Appends an item to `tags`.
     ///
@@ -107,6 +119,10 @@ impl CreateSnapshotInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateSnapshotInput`](crate::operation::create_snapshot::CreateSnapshotInput).
     pub fn build(

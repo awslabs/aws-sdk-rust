@@ -47,6 +47,10 @@ impl DeleteMemberInputBuilder {
         self.network_id = input;
         self
     }
+    /// <p>The unique identifier of the network from which the member is removed.</p>
+    pub fn get_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_id
+    }
     /// <p>The unique identifier of the member to remove.</p>
     pub fn member_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_id = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl DeleteMemberInputBuilder {
     pub fn set_member_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.member_id = input;
         self
+    }
+    /// <p>The unique identifier of the member to remove.</p>
+    pub fn get_member_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.member_id
     }
     /// Consumes the builder and constructs a [`DeleteMemberInput`](crate::operation::delete_member::DeleteMemberInput).
     pub fn build(

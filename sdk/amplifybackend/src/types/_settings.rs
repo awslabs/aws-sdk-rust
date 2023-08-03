@@ -57,6 +57,12 @@ impl SettingsBuilder {
         self.mfa_types = input;
         self
     }
+    /// <p>The supported MFA types.</p>
+    pub fn get_mfa_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MfaTypesElement>> {
+        &self.mfa_types
+    }
     /// <p>The body of the SMS message.</p>
     pub fn sms_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sms_message = ::std::option::Option::Some(input.into());
@@ -66,6 +72,10 @@ impl SettingsBuilder {
     pub fn set_sms_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sms_message = input;
         self
+    }
+    /// <p>The body of the SMS message.</p>
+    pub fn get_sms_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sms_message
     }
     /// Consumes the builder and constructs a [`Settings`](crate::types::Settings).
     pub fn build(self) -> crate::types::Settings {

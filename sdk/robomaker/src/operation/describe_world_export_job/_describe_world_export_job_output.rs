@@ -268,6 +268,10 @@ impl DescribeWorldExportJobOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the world export job.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The status of the world export job.</p>
     /// <dl>
     /// <dt>
@@ -357,6 +361,48 @@ impl DescribeWorldExportJobOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the world export job.</p>
+    /// <dl>
+    /// <dt>
+    /// Pending
+    /// </dt>
+    /// <dd>
+    /// <p>The world export job request is pending.</p>
+    /// </dd>
+    /// <dt>
+    /// Running
+    /// </dt>
+    /// <dd>
+    /// <p>The world export job is running. </p>
+    /// </dd>
+    /// <dt>
+    /// Completed
+    /// </dt>
+    /// <dd>
+    /// <p>The world export job completed. </p>
+    /// </dd>
+    /// <dt>
+    /// Failed
+    /// </dt>
+    /// <dd>
+    /// <p>The world export job failed. See <code>failureCode</code> and <code>failureReason</code> for more information. </p>
+    /// </dd>
+    /// <dt>
+    /// Canceled
+    /// </dt>
+    /// <dd>
+    /// <p>The world export job was cancelled.</p>
+    /// </dd>
+    /// <dt>
+    /// Canceling
+    /// </dt>
+    /// <dd>
+    /// <p>The world export job is being cancelled.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::WorldExportJobStatus> {
+        &self.status
+    }
     /// <p>The time, in milliseconds since the epoch, when the world export job was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -369,6 +415,10 @@ impl DescribeWorldExportJobOutputBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The time, in milliseconds since the epoch, when the world export job was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// <p>The failure code of the world export job if it failed:</p>
     /// <dl>
@@ -447,6 +497,44 @@ impl DescribeWorldExportJobOutputBuilder {
         self.failure_code = input;
         self
     }
+    /// <p>The failure code of the world export job if it failed:</p>
+    /// <dl>
+    /// <dt>
+    /// InternalServiceError
+    /// </dt>
+    /// <dd>
+    /// <p>Internal service error.</p>
+    /// </dd>
+    /// <dt>
+    /// LimitExceeded
+    /// </dt>
+    /// <dd>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
+    /// </dd>
+    /// <dt>
+    /// ResourceNotFound
+    /// </dt>
+    /// <dd>
+    /// <p>The specified resource could not be found. </p>
+    /// </dd>
+    /// <dt>
+    /// RequestThrottled
+    /// </dt>
+    /// <dd>
+    /// <p>The request was throttled.</p>
+    /// </dd>
+    /// <dt>
+    /// InvalidInput
+    /// </dt>
+    /// <dd>
+    /// <p>An input parameter in the request is not valid.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_failure_code(
+        &self,
+    ) -> &::std::option::Option<crate::types::WorldExportJobErrorCode> {
+        &self.failure_code
+    }
     /// <p>The reason why the world export job failed.</p>
     pub fn failure_reason(
         mut self,
@@ -463,6 +551,10 @@ impl DescribeWorldExportJobOutputBuilder {
         self.failure_reason = input;
         self
     }
+    /// <p>The reason why the world export job failed.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(
         mut self,
@@ -478,6 +570,10 @@ impl DescribeWorldExportJobOutputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Appends an item to `worlds`.
     ///
@@ -498,6 +594,10 @@ impl DescribeWorldExportJobOutputBuilder {
         self.worlds = input;
         self
     }
+    /// <p>A list of Amazon Resource Names (arns) that correspond to worlds to be exported.</p>
+    pub fn get_worlds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.worlds
+    }
     /// <p>The output location.</p>
     pub fn output_location(mut self, input: crate::types::OutputLocation) -> Self {
         self.output_location = ::std::option::Option::Some(input);
@@ -511,6 +611,10 @@ impl DescribeWorldExportJobOutputBuilder {
         self.output_location = input;
         self
     }
+    /// <p>The output location.</p>
+    pub fn get_output_location(&self) -> &::std::option::Option<crate::types::OutputLocation> {
+        &self.output_location
+    }
     /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export.</p>
     pub fn iam_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_role = ::std::option::Option::Some(input.into());
@@ -520,6 +624,10 @@ impl DescribeWorldExportJobOutputBuilder {
     pub fn set_iam_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_role = input;
         self
+    }
+    /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export.</p>
+    pub fn get_iam_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iam_role
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -545,6 +653,14 @@ impl DescribeWorldExportJobOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A map that contains tag keys and tag values that are attached to the world export job.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

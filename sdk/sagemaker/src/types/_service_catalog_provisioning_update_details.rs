@@ -58,6 +58,10 @@ impl ServiceCatalogProvisioningUpdateDetailsBuilder {
         self.provisioning_artifact_id = input;
         self
     }
+    /// <p>The ID of the provisioning artifact.</p>
+    pub fn get_provisioning_artifact_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provisioning_artifact_id
+    }
     /// Appends an item to `provisioning_parameters`.
     ///
     /// To override the contents of this collection use [`set_provisioning_parameters`](Self::set_provisioning_parameters).
@@ -76,6 +80,12 @@ impl ServiceCatalogProvisioningUpdateDetailsBuilder {
     ) -> Self {
         self.provisioning_parameters = input;
         self
+    }
+    /// <p>A list of key value pairs that you specify when you provision a product.</p>
+    pub fn get_provisioning_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvisioningParameter>> {
+        &self.provisioning_parameters
     }
     /// Consumes the builder and constructs a [`ServiceCatalogProvisioningUpdateDetails`](crate::types::ServiceCatalogProvisioningUpdateDetails).
     pub fn build(self) -> crate::types::ServiceCatalogProvisioningUpdateDetails {

@@ -51,6 +51,10 @@ impl LfResourceDetailsBuilder {
         self.database = input;
         self
     }
+    /// <p>Details about the database resource included in the AWS Lake Formation data permission.</p>
+    pub fn get_database(&self) -> &::std::option::Option<crate::types::DatabaseLfTagPolicy> {
+        &self.database
+    }
     /// <p>Details about the table resource included in the AWS Lake Formation data permission.</p>
     pub fn table(mut self, input: crate::types::TableLfTagPolicy) -> Self {
         self.table = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl LfResourceDetailsBuilder {
     ) -> Self {
         self.table = input;
         self
+    }
+    /// <p>Details about the table resource included in the AWS Lake Formation data permission.</p>
+    pub fn get_table(&self) -> &::std::option::Option<crate::types::TableLfTagPolicy> {
+        &self.table
     }
     /// Consumes the builder and constructs a [`LfResourceDetails`](crate::types::LfResourceDetails).
     pub fn build(self) -> crate::types::LfResourceDetails {

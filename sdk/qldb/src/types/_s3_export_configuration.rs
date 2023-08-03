@@ -77,6 +77,11 @@ impl S3ExportConfigurationBuilder {
         self.bucket = input;
         self
     }
+    /// <p>The Amazon S3 bucket name in which a journal export job writes the journal contents.</p>
+    /// <p>The bucket name must comply with the Amazon S3 bucket naming conventions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket Restrictions and Limitations</a> in the <i>Amazon S3 Developer Guide</i>.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p>The prefix for the Amazon S3 bucket in which a journal export job writes the journal contents.</p>
     /// <p>The prefix must comply with Amazon S3 key naming rules and restrictions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">Object Key and Metadata</a> in the <i>Amazon S3 Developer Guide</i>.</p>
     /// <p>The following are examples of valid <code>Prefix</code> values:</p>
@@ -101,6 +106,17 @@ impl S3ExportConfigurationBuilder {
         self.prefix = input;
         self
     }
+    /// <p>The prefix for the Amazon S3 bucket in which a journal export job writes the journal contents.</p>
+    /// <p>The prefix must comply with Amazon S3 key naming rules and restrictions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">Object Key and Metadata</a> in the <i>Amazon S3 Developer Guide</i>.</p>
+    /// <p>The following are examples of valid <code>Prefix</code> values:</p>
+    /// <ul>
+    /// <li> <p> <code>JournalExports-ForMyLedger/Testing/</code> </p> </li>
+    /// <li> <p> <code>JournalExports</code> </p> </li>
+    /// <li> <p> <code>My:Tests/</code> </p> </li>
+    /// </ul>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
+    }
     /// <p>The encryption settings that are used by a journal export job to write data in an Amazon S3 bucket.</p>
     pub fn encryption_configuration(
         mut self,
@@ -116,6 +132,12 @@ impl S3ExportConfigurationBuilder {
     ) -> Self {
         self.encryption_configuration = input;
         self
+    }
+    /// <p>The encryption settings that are used by a journal export job to write data in an Amazon S3 bucket.</p>
+    pub fn get_encryption_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3EncryptionConfiguration> {
+        &self.encryption_configuration
     }
     /// Consumes the builder and constructs a [`S3ExportConfiguration`](crate::types::S3ExportConfiguration).
     pub fn build(self) -> crate::types::S3ExportConfiguration {

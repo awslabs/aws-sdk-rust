@@ -63,6 +63,10 @@ impl InviteMembersInputBuilder {
         self.detector_id = input;
         self
     }
+    /// <p>The unique ID of the detector of the GuardDuty account that you want to invite members with.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
+    }
     /// Appends an item to `account_ids`.
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
@@ -82,6 +86,12 @@ impl InviteMembersInputBuilder {
         self.account_ids = input;
         self
     }
+    /// <p>A list of account IDs of the accounts that you want to invite to GuardDuty as members.</p>
+    pub fn get_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.account_ids
+    }
     /// <p>A Boolean value that specifies whether you want to disable email notification to the accounts that you are inviting to GuardDuty as members.</p>
     pub fn disable_email_notification(mut self, input: bool) -> Self {
         self.disable_email_notification = ::std::option::Option::Some(input);
@@ -92,6 +102,10 @@ impl InviteMembersInputBuilder {
         self.disable_email_notification = input;
         self
     }
+    /// <p>A Boolean value that specifies whether you want to disable email notification to the accounts that you are inviting to GuardDuty as members.</p>
+    pub fn get_disable_email_notification(&self) -> &::std::option::Option<bool> {
+        &self.disable_email_notification
+    }
     /// <p>The invitation message that you want to send to the accounts that you're inviting to GuardDuty as members.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -101,6 +115,10 @@ impl InviteMembersInputBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>The invitation message that you want to send to the accounts that you're inviting to GuardDuty as members.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`InviteMembersInput`](crate::operation::invite_members::InviteMembersInput).
     pub fn build(

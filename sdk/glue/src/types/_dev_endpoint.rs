@@ -288,6 +288,10 @@ impl DevEndpointBuilder {
         self.endpoint_name = input;
         self
     }
+    /// <p>The name of the <code>DevEndpoint</code>.</p>
+    pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used in this <code>DevEndpoint</code>.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -297,6 +301,10 @@ impl DevEndpointBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role used in this <code>DevEndpoint</code>.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Appends an item to `security_group_ids`.
     ///
@@ -320,6 +328,12 @@ impl DevEndpointBuilder {
         self.security_group_ids = input;
         self
     }
+    /// <p>A list of security group identifiers used in this <code>DevEndpoint</code>.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
+    }
     /// <p>The subnet ID for this <code>DevEndpoint</code>.</p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
@@ -329,6 +343,10 @@ impl DevEndpointBuilder {
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_id = input;
         self
+    }
+    /// <p>The subnet ID for this <code>DevEndpoint</code>.</p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_id
     }
     /// <p>The YARN endpoint address used by this <code>DevEndpoint</code>.</p>
     pub fn yarn_endpoint_address(
@@ -346,6 +364,10 @@ impl DevEndpointBuilder {
         self.yarn_endpoint_address = input;
         self
     }
+    /// <p>The YARN endpoint address used by this <code>DevEndpoint</code>.</p>
+    pub fn get_yarn_endpoint_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.yarn_endpoint_address
+    }
     /// <p>A private IP address to access the <code>DevEndpoint</code> within a VPC if the <code>DevEndpoint</code> is created within one. The <code>PrivateAddress</code> field is present only when you create the <code>DevEndpoint</code> within your VPC.</p>
     pub fn private_address(
         mut self,
@@ -362,6 +384,10 @@ impl DevEndpointBuilder {
         self.private_address = input;
         self
     }
+    /// <p>A private IP address to access the <code>DevEndpoint</code> within a VPC if the <code>DevEndpoint</code> is created within one. The <code>PrivateAddress</code> field is present only when you create the <code>DevEndpoint</code> within your VPC.</p>
+    pub fn get_private_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_address
+    }
     /// <p>The Apache Zeppelin port for the remote Apache Spark interpreter.</p>
     pub fn zeppelin_remote_spark_interpreter_port(mut self, input: i32) -> Self {
         self.zeppelin_remote_spark_interpreter_port = ::std::option::Option::Some(input);
@@ -374,6 +400,10 @@ impl DevEndpointBuilder {
     ) -> Self {
         self.zeppelin_remote_spark_interpreter_port = input;
         self
+    }
+    /// <p>The Apache Zeppelin port for the remote Apache Spark interpreter.</p>
+    pub fn get_zeppelin_remote_spark_interpreter_port(&self) -> &::std::option::Option<i32> {
+        &self.zeppelin_remote_spark_interpreter_port
     }
     /// <p>The public IP address used by this <code>DevEndpoint</code>. The <code>PublicAddress</code> field is present only when you create a non-virtual private cloud (VPC) <code>DevEndpoint</code>.</p>
     pub fn public_address(
@@ -391,6 +421,10 @@ impl DevEndpointBuilder {
         self.public_address = input;
         self
     }
+    /// <p>The public IP address used by this <code>DevEndpoint</code>. The <code>PublicAddress</code> field is present only when you create a non-virtual private cloud (VPC) <code>DevEndpoint</code>.</p>
+    pub fn get_public_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_address
+    }
     /// <p>The current status of this <code>DevEndpoint</code>.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -400,6 +434,10 @@ impl DevEndpointBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of this <code>DevEndpoint</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>The type of predefined worker that is allocated to the development endpoint. Accepts a value of Standard, G.1X, or G.2X.</p>
     /// <ul>
@@ -426,6 +464,16 @@ impl DevEndpointBuilder {
         self.worker_type = input;
         self
     }
+    /// <p>The type of predefined worker that is allocated to the development endpoint. Accepts a value of Standard, G.1X, or G.2X.</p>
+    /// <ul>
+    /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+    /// <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
+    /// <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
+    /// </ul>
+    /// <p>Known issue: when a development endpoint is created with the <code>G.2X</code> <code>WorkerType</code> configuration, the Spark drivers for the development endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB disk. </p>
+    pub fn get_worker_type(&self) -> &::std::option::Option<crate::types::WorkerType> {
+        &self.worker_type
+    }
     /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints. </p>
     /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
     /// <p>Development endpoints that are created without specifying a Glue version default to Glue 0.9.</p>
@@ -442,6 +490,13 @@ impl DevEndpointBuilder {
         self.glue_version = input;
         self
     }
+    /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints. </p>
+    /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
+    /// <p>Development endpoints that are created without specifying a Glue version default to Glue 0.9.</p>
+    /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
+    pub fn get_glue_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.glue_version
+    }
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated to the development endpoint.</p>
     /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
     pub fn number_of_workers(mut self, input: i32) -> Self {
@@ -454,6 +509,11 @@ impl DevEndpointBuilder {
         self.number_of_workers = input;
         self
     }
+    /// <p>The number of workers of a defined <code>workerType</code> that are allocated to the development endpoint.</p>
+    /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
+    pub fn get_number_of_workers(&self) -> &::std::option::Option<i32> {
+        &self.number_of_workers
+    }
     /// <p>The number of Glue Data Processing Units (DPUs) allocated to this <code>DevEndpoint</code>.</p>
     pub fn number_of_nodes(mut self, input: i32) -> Self {
         self.number_of_nodes = ::std::option::Option::Some(input);
@@ -463,6 +523,10 @@ impl DevEndpointBuilder {
     pub fn set_number_of_nodes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_nodes = input;
         self
+    }
+    /// <p>The number of Glue Data Processing Units (DPUs) allocated to this <code>DevEndpoint</code>.</p>
+    pub fn get_number_of_nodes(&self) -> &::std::option::Option<i32> {
+        &self.number_of_nodes
     }
     /// <p>The Amazon Web Services Availability Zone where this <code>DevEndpoint</code> is located.</p>
     pub fn availability_zone(
@@ -480,6 +544,10 @@ impl DevEndpointBuilder {
         self.availability_zone = input;
         self
     }
+    /// <p>The Amazon Web Services Availability Zone where this <code>DevEndpoint</code> is located.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p>The ID of the virtual private cloud (VPC) used by this <code>DevEndpoint</code>.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -489,6 +557,10 @@ impl DevEndpointBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The ID of the virtual private cloud (VPC) used by this <code>DevEndpoint</code>.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// <p>The paths to one or more Python libraries in an Amazon S3 bucket that should be loaded in your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a comma.</p> <note>
     /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not currently supported.</p>
@@ -510,6 +582,12 @@ impl DevEndpointBuilder {
         self.extra_python_libs_s3_path = input;
         self
     }
+    /// <p>The paths to one or more Python libraries in an Amazon S3 bucket that should be loaded in your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a comma.</p> <note>
+    /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not currently supported.</p>
+    /// </note>
+    pub fn get_extra_python_libs_s3_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.extra_python_libs_s3_path
+    }
     /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded in your <code>DevEndpoint</code>.</p> <note>
     /// <p>You can only use pure Java/Scala libraries with a <code>DevEndpoint</code>.</p>
     /// </note>
@@ -530,6 +608,12 @@ impl DevEndpointBuilder {
         self.extra_jars_s3_path = input;
         self
     }
+    /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded in your <code>DevEndpoint</code>.</p> <note>
+    /// <p>You can only use pure Java/Scala libraries with a <code>DevEndpoint</code>.</p>
+    /// </note>
+    pub fn get_extra_jars_s3_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.extra_jars_s3_path
+    }
     /// <p>The reason for a current failure in this <code>DevEndpoint</code>.</p>
     pub fn failure_reason(
         mut self,
@@ -545,6 +629,10 @@ impl DevEndpointBuilder {
     ) -> Self {
         self.failure_reason = input;
         self
+    }
+    /// <p>The reason for a current failure in this <code>DevEndpoint</code>.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
     }
     /// <p>The status of the last update.</p>
     pub fn last_update_status(
@@ -562,6 +650,10 @@ impl DevEndpointBuilder {
         self.last_update_status = input;
         self
     }
+    /// <p>The status of the last update.</p>
+    pub fn get_last_update_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_update_status
+    }
     /// <p>The point in time at which this DevEndpoint was created.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_timestamp = ::std::option::Option::Some(input);
@@ -574,6 +666,10 @@ impl DevEndpointBuilder {
     ) -> Self {
         self.created_timestamp = input;
         self
+    }
+    /// <p>The point in time at which this DevEndpoint was created.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
     }
     /// <p>The point in time at which this <code>DevEndpoint</code> was last modified.</p>
     pub fn last_modified_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -588,6 +684,12 @@ impl DevEndpointBuilder {
         self.last_modified_timestamp = input;
         self
     }
+    /// <p>The point in time at which this <code>DevEndpoint</code> was last modified.</p>
+    pub fn get_last_modified_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_timestamp
+    }
     /// <p>The public key to be used by this <code>DevEndpoint</code> for authentication. This attribute is provided for backward compatibility because the recommended attribute to use is public keys.</p>
     pub fn public_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_key = ::std::option::Option::Some(input.into());
@@ -597,6 +699,10 @@ impl DevEndpointBuilder {
     pub fn set_public_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_key = input;
         self
+    }
+    /// <p>The public key to be used by this <code>DevEndpoint</code> for authentication. This attribute is provided for backward compatibility because the recommended attribute to use is public keys.</p>
+    pub fn get_public_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_key
     }
     /// Appends an item to `public_keys`.
     ///
@@ -621,6 +727,14 @@ impl DevEndpointBuilder {
         self.public_keys = input;
         self
     }
+    /// <p>A list of public keys to be used by the <code>DevEndpoints</code> for authentication. Using this attribute is preferred over a single public key because the public keys allow you to have a different private key per client.</p> <note>
+    /// <p>If you previously created an endpoint with a public key, you must remove that key to be able to set a list of public keys. Call the <code>UpdateDevEndpoint</code> API operation with the public key content in the <code>deletePublicKeys</code> attribute, and the list of new keys in the <code>addPublicKeys</code> attribute.</p>
+    /// </note>
+    pub fn get_public_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.public_keys
+    }
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this <code>DevEndpoint</code>.</p>
     pub fn security_configuration(
         mut self,
@@ -636,6 +750,10 @@ impl DevEndpointBuilder {
     ) -> Self {
         self.security_configuration = input;
         self
+    }
+    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this <code>DevEndpoint</code>.</p>
+    pub fn get_security_configuration(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_configuration
     }
     /// Adds a key-value pair to `arguments`.
     ///
@@ -671,6 +789,19 @@ impl DevEndpointBuilder {
     ) -> Self {
         self.arguments = input;
         self
+    }
+    /// <p>A map of arguments used to configure the <code>DevEndpoint</code>.</p>
+    /// <p>Valid arguments are:</p>
+    /// <ul>
+    /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>
+    /// </ul>
+    /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
+    pub fn get_arguments(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.arguments
     }
     /// Consumes the builder and constructs a [`DevEndpoint`](crate::types::DevEndpoint).
     pub fn build(self) -> crate::types::DevEndpoint {

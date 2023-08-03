@@ -56,6 +56,10 @@ impl ExportTaskSummaryBuilder {
         self.servers_count = input;
         self
     }
+    /// <p>Export task summary servers count.</p>
+    pub fn get_servers_count(&self) -> &::std::option::Option<i64> {
+        &self.servers_count
+    }
     /// <p>Export task summary applications count.</p>
     pub fn applications_count(mut self, input: i64) -> Self {
         self.applications_count = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl ExportTaskSummaryBuilder {
         self.applications_count = input;
         self
     }
+    /// <p>Export task summary applications count.</p>
+    pub fn get_applications_count(&self) -> &::std::option::Option<i64> {
+        &self.applications_count
+    }
     /// <p>Export task summary waves count.</p>
     pub fn waves_count(mut self, input: i64) -> Self {
         self.waves_count = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl ExportTaskSummaryBuilder {
     pub fn set_waves_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.waves_count = input;
         self
+    }
+    /// <p>Export task summary waves count.</p>
+    pub fn get_waves_count(&self) -> &::std::option::Option<i64> {
+        &self.waves_count
     }
     /// Consumes the builder and constructs a [`ExportTaskSummary`](crate::types::ExportTaskSummary).
     pub fn build(self) -> crate::types::ExportTaskSummary {

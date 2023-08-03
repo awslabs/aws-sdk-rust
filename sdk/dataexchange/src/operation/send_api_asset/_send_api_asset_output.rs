@@ -62,6 +62,10 @@ impl SendApiAssetOutputBuilder {
         self.body = input;
         self
     }
+    /// <p>The response body from the underlying API tracked by the API asset.</p>
+    pub fn get_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.body
+    }
     /// Adds a key-value pair to `response_headers`.
     ///
     /// To override the contents of this collection use [`set_response_headers`](Self::set_response_headers).
@@ -86,6 +90,14 @@ impl SendApiAssetOutputBuilder {
     ) -> Self {
         self.response_headers = input;
         self
+    }
+    /// <p>The response headers from the underlying API tracked by the API asset.</p>
+    pub fn get_response_headers(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.response_headers
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

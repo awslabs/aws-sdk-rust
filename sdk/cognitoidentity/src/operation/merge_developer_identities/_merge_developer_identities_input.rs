@@ -72,6 +72,10 @@ impl MergeDeveloperIdentitiesInputBuilder {
         self.source_user_identifier = input;
         self
     }
+    /// <p>User identifier for the source user. The value should be a <code>DeveloperUserIdentifier</code>.</p>
+    pub fn get_source_user_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_user_identifier
+    }
     /// <p>User identifier for the destination user. The value should be a <code>DeveloperUserIdentifier</code>.</p>
     pub fn destination_user_identifier(
         mut self,
@@ -87,6 +91,10 @@ impl MergeDeveloperIdentitiesInputBuilder {
     ) -> Self {
         self.destination_user_identifier = input;
         self
+    }
+    /// <p>User identifier for the destination user. The value should be a <code>DeveloperUserIdentifier</code>.</p>
+    pub fn get_destination_user_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_user_identifier
     }
     /// <p>The "domain" by which Cognito will refer to your users. This is a (pseudo) domain name that you provide while creating an identity pool. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (.), underscore (_), and dash (-).</p>
     pub fn developer_provider_name(
@@ -104,6 +112,10 @@ impl MergeDeveloperIdentitiesInputBuilder {
         self.developer_provider_name = input;
         self
     }
+    /// <p>The "domain" by which Cognito will refer to your users. This is a (pseudo) domain name that you provide while creating an identity pool. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (.), underscore (_), and dash (-).</p>
+    pub fn get_developer_provider_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.developer_provider_name
+    }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     pub fn identity_pool_id(
         mut self,
@@ -119,6 +131,10 @@ impl MergeDeveloperIdentitiesInputBuilder {
     ) -> Self {
         self.identity_pool_id = input;
         self
+    }
+    /// <p>An identity pool ID in the format REGION:GUID.</p>
+    pub fn get_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_pool_id
     }
     /// Consumes the builder and constructs a [`MergeDeveloperIdentitiesInput`](crate::operation::merge_developer_identities::MergeDeveloperIdentitiesInput).
     pub fn build(

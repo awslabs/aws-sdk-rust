@@ -40,6 +40,10 @@ impl ValidateMatchmakingRuleSetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ValidateMatchmakingRuleSet as a reference.
+    pub fn as_input(&self) -> &crate::operation::validate_matchmaking_rule_set::builders::ValidateMatchmakingRuleSetInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,5 +139,9 @@ impl ValidateMatchmakingRuleSetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_rule_set_body(input);
         self
+    }
+    /// <p>A collection of matchmaking rules to validate, formatted as a JSON string.</p>
+    pub fn get_rule_set_body(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rule_set_body()
     }
 }

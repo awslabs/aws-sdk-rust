@@ -86,6 +86,10 @@ impl MigrationTaskSummaryBuilder {
         self.progress_update_stream = input;
         self
     }
+    /// <p>An AWS resource used for access control. It should uniquely identify the migration tool as it is used for all updates made by the tool.</p>
+    pub fn get_progress_update_stream(&self) -> &::std::option::Option<::std::string::String> {
+        &self.progress_update_stream
+    }
     /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
     pub fn migration_task_name(
         mut self,
@@ -102,6 +106,10 @@ impl MigrationTaskSummaryBuilder {
         self.migration_task_name = input;
         self
     }
+    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
+    pub fn get_migration_task_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.migration_task_name
+    }
     /// <p>Status of the task.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -112,6 +120,10 @@ impl MigrationTaskSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>Status of the task.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.status
+    }
     /// <p>Indication of the percentage completion of the task.</p>
     pub fn progress_percent(mut self, input: i32) -> Self {
         self.progress_percent = ::std::option::Option::Some(input);
@@ -121,6 +133,10 @@ impl MigrationTaskSummaryBuilder {
     pub fn set_progress_percent(mut self, input: ::std::option::Option<i32>) -> Self {
         self.progress_percent = input;
         self
+    }
+    /// <p>Indication of the percentage completion of the task.</p>
+    pub fn get_progress_percent(&self) -> &::std::option::Option<i32> {
+        &self.progress_percent
     }
     /// <p>Detail information of what is being done within the overall status state.</p>
     pub fn status_detail(
@@ -138,6 +154,10 @@ impl MigrationTaskSummaryBuilder {
         self.status_detail = input;
         self
     }
+    /// <p>Detail information of what is being done within the overall status state.</p>
+    pub fn get_status_detail(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_detail
+    }
     /// <p>The timestamp when the task was gathered.</p>
     pub fn update_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_date_time = ::std::option::Option::Some(input);
@@ -150,6 +170,10 @@ impl MigrationTaskSummaryBuilder {
     ) -> Self {
         self.update_date_time = input;
         self
+    }
+    /// <p>The timestamp when the task was gathered.</p>
+    pub fn get_update_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_date_time
     }
     /// Consumes the builder and constructs a [`MigrationTaskSummary`](crate::types::MigrationTaskSummary).
     pub fn build(self) -> crate::types::MigrationTaskSummary {

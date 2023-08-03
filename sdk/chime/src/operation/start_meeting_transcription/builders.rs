@@ -45,6 +45,10 @@ impl StartMeetingTranscriptionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartMeetingTranscription as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_meeting_transcription::builders::StartMeetingTranscriptionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +139,10 @@ impl StartMeetingTranscriptionFluentBuilder {
         self.inner = self.inner.set_meeting_id(input);
         self
     }
+    /// <p>The unique ID of the meeting being transcribed.</p>
+    pub fn get_meeting_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_meeting_id()
+    }
     /// <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or <code>EngineTranscribeMedicalSettings</code>.</p>
     pub fn transcription_configuration(
         mut self,
@@ -150,5 +158,11 @@ impl StartMeetingTranscriptionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_transcription_configuration(input);
         self
+    }
+    /// <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or <code>EngineTranscribeMedicalSettings</code>.</p>
+    pub fn get_transcription_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::TranscriptionConfiguration> {
+        self.inner.get_transcription_configuration()
     }
 }

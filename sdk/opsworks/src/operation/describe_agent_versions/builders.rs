@@ -36,6 +36,13 @@ impl DescribeAgentVersionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeAgentVersions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_agent_versions::builders::DescribeAgentVersionsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl DescribeAgentVersionsFluentBuilder {
         self.inner = self.inner.set_stack_id(input);
         self
     }
+    /// <p>The stack ID.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stack_id()
+    }
     /// <p>The configuration manager.</p>
     pub fn configuration_manager(mut self, input: crate::types::StackConfigurationManager) -> Self {
         self.inner = self.inner.configuration_manager(input);
@@ -138,5 +149,11 @@ impl DescribeAgentVersionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_configuration_manager(input);
         self
+    }
+    /// <p>The configuration manager.</p>
+    pub fn get_configuration_manager(
+        &self,
+    ) -> &::std::option::Option<crate::types::StackConfigurationManager> {
+        self.inner.get_configuration_manager()
     }
 }

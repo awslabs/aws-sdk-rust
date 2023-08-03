@@ -36,6 +36,10 @@ impl GetAggregateResourceConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetAggregateResourceConfig as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_aggregate_resource_config::builders::GetAggregateResourceConfigInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,12 @@ impl GetAggregateResourceConfigFluentBuilder {
         self.inner = self.inner.set_configuration_aggregator_name(input);
         self
     }
+    /// <p>The name of the configuration aggregator.</p>
+    pub fn get_configuration_aggregator_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration_aggregator_name()
+    }
     /// <p>An object that identifies aggregate resource.</p>
     pub fn resource_identifier(mut self, input: crate::types::AggregateResourceIdentifier) -> Self {
         self.inner = self.inner.resource_identifier(input);
@@ -144,5 +154,11 @@ impl GetAggregateResourceConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_identifier(input);
         self
+    }
+    /// <p>An object that identifies aggregate resource.</p>
+    pub fn get_resource_identifier(
+        &self,
+    ) -> &::std::option::Option<crate::types::AggregateResourceIdentifier> {
+        self.inner.get_resource_identifier()
     }
 }

@@ -53,6 +53,10 @@ impl AssociateAddressOutputBuilder {
         self.association_id = input;
         self
     }
+    /// <p>The ID that represents the association of the Elastic IP address with an instance.</p>
+    pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

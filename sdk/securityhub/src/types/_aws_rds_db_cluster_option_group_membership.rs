@@ -54,6 +54,12 @@ impl AwsRdsDbClusterOptionGroupMembershipBuilder {
         self.db_cluster_option_group_name = input;
         self
     }
+    /// <p>The name of the DB cluster option group.</p>
+    pub fn get_db_cluster_option_group_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_option_group_name
+    }
     /// <p>The status of the DB cluster option group.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -63,6 +69,10 @@ impl AwsRdsDbClusterOptionGroupMembershipBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the DB cluster option group.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`AwsRdsDbClusterOptionGroupMembership`](crate::types::AwsRdsDbClusterOptionGroupMembership).
     pub fn build(self) -> crate::types::AwsRdsDbClusterOptionGroupMembership {

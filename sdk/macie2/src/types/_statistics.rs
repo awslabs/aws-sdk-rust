@@ -51,6 +51,10 @@ impl StatisticsBuilder {
         self.approximate_number_of_objects_to_process = input;
         self
     }
+    /// <p>The approximate number of objects that the job has yet to process during its current run.</p>
+    pub fn get_approximate_number_of_objects_to_process(&self) -> &::std::option::Option<f64> {
+        &self.approximate_number_of_objects_to_process
+    }
     /// <p>The number of times that the job has run.</p>
     pub fn number_of_runs(mut self, input: f64) -> Self {
         self.number_of_runs = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl StatisticsBuilder {
     pub fn set_number_of_runs(mut self, input: ::std::option::Option<f64>) -> Self {
         self.number_of_runs = input;
         self
+    }
+    /// <p>The number of times that the job has run.</p>
+    pub fn get_number_of_runs(&self) -> &::std::option::Option<f64> {
+        &self.number_of_runs
     }
     /// Consumes the builder and constructs a [`Statistics`](crate::types::Statistics).
     pub fn build(self) -> crate::types::Statistics {

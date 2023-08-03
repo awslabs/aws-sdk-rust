@@ -42,6 +42,10 @@ impl ListAccessPointsForObjectLambdaFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListAccessPointsForObjectLambda as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_access_points_for_object_lambda::builders::ListAccessPointsForObjectLambdaInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -112,6 +116,10 @@ impl ListAccessPointsForObjectLambdaFluentBuilder {
         self.inner = self.inner.set_account_id(input);
         self
     }
+    /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// <p>If the list has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -122,6 +130,10 @@ impl ListAccessPointsForObjectLambdaFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>If the list has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of access points that you want to include in the list. The response may contain fewer access points but will never contain more. If there are more than this number of access points, then the response will include a continuation token in the <code>NextToken</code> field that you can use to retrieve the next page of access points.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -131,5 +143,9 @@ impl ListAccessPointsForObjectLambdaFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of access points that you want to include in the list. The response may contain fewer access points but will never contain more. If there are more than this number of access points, then the response will include a continuation token in the <code>NextToken</code> field that you can use to retrieve the next page of access points.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

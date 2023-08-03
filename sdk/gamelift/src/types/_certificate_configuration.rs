@@ -63,6 +63,15 @@ impl CertificateConfigurationBuilder {
         self.certificate_type = input;
         self
     }
+    /// <p>Indicates whether a TLS/SSL certificate is generated for a fleet. </p>
+    /// <p>Valid values include: </p>
+    /// <ul>
+    /// <li> <p> <b>GENERATED</b> - Generate a TLS/SSL certificate for this fleet.</p> </li>
+    /// <li> <p> <b>DISABLED</b> - (default) Do not generate a TLS/SSL certificate for this fleet. </p> </li>
+    /// </ul>
+    pub fn get_certificate_type(&self) -> &::std::option::Option<crate::types::CertificateType> {
+        &self.certificate_type
+    }
     /// Consumes the builder and constructs a [`CertificateConfiguration`](crate::types::CertificateConfiguration).
     pub fn build(self) -> crate::types::CertificateConfiguration {
         crate::types::CertificateConfiguration {

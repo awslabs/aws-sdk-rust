@@ -48,6 +48,10 @@ impl FilterBuilder {
         self.key = input;
         self
     }
+    /// <p>The key that you're filtering on.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>The condition accepts before or after a specified time, equal to a string, or equal to an integer.</p>
     pub fn condition(mut self, input: crate::types::Condition) -> Self {
         self.condition = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl FilterBuilder {
     pub fn set_condition(mut self, input: ::std::option::Option<crate::types::Condition>) -> Self {
         self.condition = input;
         self
+    }
+    /// <p>The condition accepts before or after a specified time, equal to a string, or equal to an integer.</p>
+    pub fn get_condition(&self) -> &::std::option::Option<crate::types::Condition> {
+        &self.condition
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
     pub fn build(self) -> crate::types::Filter {

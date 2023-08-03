@@ -48,6 +48,10 @@ impl MembershipItemBuilder {
         self.member_id = input;
         self
     }
+    /// <p>The member ID.</p>
+    pub fn get_member_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.member_id
+    }
     /// <p>The member role.</p>
     pub fn role(mut self, input: crate::types::RoomMembershipRole) -> Self {
         self.role = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl MembershipItemBuilder {
     ) -> Self {
         self.role = input;
         self
+    }
+    /// <p>The member role.</p>
+    pub fn get_role(&self) -> &::std::option::Option<crate::types::RoomMembershipRole> {
+        &self.role
     }
     /// Consumes the builder and constructs a [`MembershipItem`](crate::types::MembershipItem).
     pub fn build(self) -> crate::types::MembershipItem {

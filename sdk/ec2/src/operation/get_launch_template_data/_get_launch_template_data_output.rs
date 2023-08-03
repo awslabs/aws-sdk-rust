@@ -54,6 +54,12 @@ impl GetLaunchTemplateDataOutputBuilder {
         self.launch_template_data = input;
         self
     }
+    /// <p>The instance data.</p>
+    pub fn get_launch_template_data(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResponseLaunchTemplateData> {
+        &self.launch_template_data
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

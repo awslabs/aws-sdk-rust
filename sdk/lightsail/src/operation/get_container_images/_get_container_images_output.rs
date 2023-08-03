@@ -57,6 +57,12 @@ impl GetContainerImagesOutputBuilder {
         self.container_images = input;
         self
     }
+    /// <p>An array of objects that describe container images that are registered to the container service.</p>
+    pub fn get_container_images(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerImage>> {
+        &self.container_images
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

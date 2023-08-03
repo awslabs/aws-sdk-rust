@@ -67,6 +67,10 @@ impl TableDataImportJobMetadataBuilder {
         self.submitter = input;
         self
     }
+    /// <p>Details about the submitter of the import request.</p>
+    pub fn get_submitter(&self) -> &::std::option::Option<crate::types::ImportJobSubmitter> {
+        &self.submitter
+    }
     /// <p>The timestamp when the job was submitted for import.</p>
     pub fn submit_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.submit_time = ::std::option::Option::Some(input);
@@ -79,6 +83,10 @@ impl TableDataImportJobMetadataBuilder {
     ) -> Self {
         self.submit_time = input;
         self
+    }
+    /// <p>The timestamp when the job was submitted for import.</p>
+    pub fn get_submit_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.submit_time
     }
     /// <p>The options that was specified at the time of submitting the import request.</p>
     pub fn import_options(mut self, input: crate::types::ImportOptions) -> Self {
@@ -93,6 +101,10 @@ impl TableDataImportJobMetadataBuilder {
         self.import_options = input;
         self
     }
+    /// <p>The options that was specified at the time of submitting the import request.</p>
+    pub fn get_import_options(&self) -> &::std::option::Option<crate::types::ImportOptions> {
+        &self.import_options
+    }
     /// <p>The source of the data that was submitted for import.</p>
     pub fn data_source(mut self, input: crate::types::ImportDataSource) -> Self {
         self.data_source = ::std::option::Option::Some(input);
@@ -105,6 +117,10 @@ impl TableDataImportJobMetadataBuilder {
     ) -> Self {
         self.data_source = input;
         self
+    }
+    /// <p>The source of the data that was submitted for import.</p>
+    pub fn get_data_source(&self) -> &::std::option::Option<crate::types::ImportDataSource> {
+        &self.data_source
     }
     /// Consumes the builder and constructs a [`TableDataImportJobMetadata`](crate::types::TableDataImportJobMetadata).
     pub fn build(self) -> crate::types::TableDataImportJobMetadata {

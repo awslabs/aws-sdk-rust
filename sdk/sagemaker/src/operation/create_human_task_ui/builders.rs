@@ -36,6 +36,12 @@ impl CreateHumanTaskUiFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateHumanTaskUi as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_human_task_ui::builders::CreateHumanTaskUiInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl CreateHumanTaskUiFluentBuilder {
         self.inner = self.inner.set_human_task_ui_name(input);
         self
     }
+    /// <p>The name of the user interface you are creating.</p>
+    pub fn get_human_task_ui_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_human_task_ui_name()
+    }
     /// <p>The Liquid template for the worker user interface.</p>
     pub fn ui_template(mut self, input: crate::types::UiTemplate) -> Self {
         self.inner = self.inner.ui_template(input);
@@ -144,6 +154,10 @@ impl CreateHumanTaskUiFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ui_template(input);
         self
+    }
+    /// <p>The Liquid template for the worker user interface.</p>
+    pub fn get_ui_template(&self) -> &::std::option::Option<crate::types::UiTemplate> {
+        self.inner.get_ui_template()
     }
     /// Appends an item to `Tags`.
     ///
@@ -161,5 +175,9 @@ impl CreateHumanTaskUiFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>An array of key-value pairs that contain metadata to help you categorize and organize a human review workflow user interface. Each tag consists of a key and a value, both of which you define.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

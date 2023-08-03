@@ -75,6 +75,14 @@ impl ResourceTagSetBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The type of the resource.</p>
+    /// <ul>
+    /// <li> <p>The resource type for health checks is <code>healthcheck</code>.</p> </li>
+    /// <li> <p>The resource type for hosted zones is <code>hostedzone</code>.</p> </li>
+    /// </ul>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::TagResourceType> {
+        &self.resource_type
+    }
     /// <p>The ID for the specified resource.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -84,6 +92,10 @@ impl ResourceTagSetBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>The ID for the specified resource.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// Appends an item to `tags`.
     ///
@@ -103,6 +115,10 @@ impl ResourceTagSetBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags associated with the specified resource.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`ResourceTagSet`](crate::types::ResourceTagSet).
     pub fn build(self) -> crate::types::ResourceTagSet {

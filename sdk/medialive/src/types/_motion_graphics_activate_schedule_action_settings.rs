@@ -65,6 +65,10 @@ impl MotionGraphicsActivateScheduleActionSettingsBuilder {
         self.duration = input;
         self
     }
+    /// Duration (in milliseconds) that motion graphics should render on to the video stream. Leaving out this property or setting to 0 will result in rendering continuing until a deactivate action is processed.
+    pub fn get_duration(&self) -> &::std::option::Option<i64> {
+        &self.duration
+    }
     /// Key used to extract the password from EC2 Parameter store
     pub fn password_param(
         mut self,
@@ -81,6 +85,10 @@ impl MotionGraphicsActivateScheduleActionSettingsBuilder {
         self.password_param = input;
         self
     }
+    /// Key used to extract the password from EC2 Parameter store
+    pub fn get_password_param(&self) -> &::std::option::Option<::std::string::String> {
+        &self.password_param
+    }
     /// URI of the HTML5 content to be rendered into the live stream.
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl MotionGraphicsActivateScheduleActionSettingsBuilder {
         self.url = input;
         self
     }
+    /// URI of the HTML5 content to be rendered into the live stream.
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
+    }
     /// Documentation update needed
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
@@ -100,6 +112,10 @@ impl MotionGraphicsActivateScheduleActionSettingsBuilder {
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
+    }
+    /// Documentation update needed
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
     }
     /// Consumes the builder and constructs a [`MotionGraphicsActivateScheduleActionSettings`](crate::types::MotionGraphicsActivateScheduleActionSettings).
     pub fn build(self) -> crate::types::MotionGraphicsActivateScheduleActionSettings {

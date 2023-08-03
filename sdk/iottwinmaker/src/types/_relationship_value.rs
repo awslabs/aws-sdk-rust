@@ -54,6 +54,10 @@ impl RelationshipValueBuilder {
         self.target_entity_id = input;
         self
     }
+    /// <p>The ID of the target entity associated with this relationship value.</p>
+    pub fn get_target_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_entity_id
+    }
     /// <p>The name of the target component associated with the relationship value.</p>
     pub fn target_component_name(
         mut self,
@@ -69,6 +73,10 @@ impl RelationshipValueBuilder {
     ) -> Self {
         self.target_component_name = input;
         self
+    }
+    /// <p>The name of the target component associated with the relationship value.</p>
+    pub fn get_target_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_component_name
     }
     /// Consumes the builder and constructs a [`RelationshipValue`](crate::types::RelationshipValue).
     pub fn build(self) -> crate::types::RelationshipValue {

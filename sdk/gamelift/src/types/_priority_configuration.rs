@@ -86,6 +86,18 @@ impl PriorityConfigurationBuilder {
         self.priority_order = input;
         self
     }
+    /// <p>The recommended sequence to use when prioritizing where to place new game sessions. Each type can only be listed once.</p>
+    /// <ul>
+    /// <li> <p> <code>LATENCY</code> -- FleetIQ prioritizes locations where the average player latency (provided in each game session request) is lowest. </p> </li>
+    /// <li> <p> <code>COST</code> -- FleetIQ prioritizes destinations with the lowest current hosting costs. Cost is evaluated based on the location, instance type, and fleet type (Spot or On-Demand) for each destination in the queue.</p> </li>
+    /// <li> <p> <code>DESTINATION</code> -- FleetIQ prioritizes based on the order that destinations are listed in the queue configuration.</p> </li>
+    /// <li> <p> <code>LOCATION</code> -- FleetIQ prioritizes based on the provided order of locations, as defined in <code>LocationOrder</code>. </p> </li>
+    /// </ul>
+    pub fn get_priority_order(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PriorityType>> {
+        &self.priority_order
+    }
     /// Appends an item to `location_order`.
     ///
     /// To override the contents of this collection use [`set_location_order`](Self::set_location_order).
@@ -107,6 +119,12 @@ impl PriorityConfigurationBuilder {
     ) -> Self {
         self.location_order = input;
         self
+    }
+    /// <p>The prioritization order to use for fleet locations, when the <code>PriorityOrder</code> property includes <code>LOCATION</code>. Locations are identified by Amazon Web Services Region codes such as <code>us-west-2</code>. Each location can only be listed once. </p>
+    pub fn get_location_order(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.location_order
     }
     /// Consumes the builder and constructs a [`PriorityConfiguration`](crate::types::PriorityConfiguration).
     pub fn build(self) -> crate::types::PriorityConfiguration {

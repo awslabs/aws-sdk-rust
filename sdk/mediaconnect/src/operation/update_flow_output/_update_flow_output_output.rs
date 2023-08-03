@@ -55,6 +55,10 @@ impl UpdateFlowOutputOutputBuilder {
         self.flow_arn = input;
         self
     }
+    /// The ARN of the flow that is associated with the updated output.
+    pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_arn
+    }
     /// The new settings of the output that you updated.
     pub fn output(mut self, input: crate::types::Output) -> Self {
         self.output = ::std::option::Option::Some(input);
@@ -64,6 +68,10 @@ impl UpdateFlowOutputOutputBuilder {
     pub fn set_output(mut self, input: ::std::option::Option<crate::types::Output>) -> Self {
         self.output = input;
         self
+    }
+    /// The new settings of the output that you updated.
+    pub fn get_output(&self) -> &::std::option::Option<crate::types::Output> {
+        &self.output
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

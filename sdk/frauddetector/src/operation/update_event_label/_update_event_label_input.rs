@@ -64,6 +64,10 @@ impl UpdateEventLabelInputBuilder {
         self.event_id = input;
         self
     }
+    /// <p>The ID of the event associated with the label to update.</p>
+    pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_id
+    }
     /// <p>The event type of the event associated with the label to update.</p>
     pub fn event_type_name(
         mut self,
@@ -79,6 +83,10 @@ impl UpdateEventLabelInputBuilder {
     ) -> Self {
         self.event_type_name = input;
         self
+    }
+    /// <p>The event type of the event associated with the label to update.</p>
+    pub fn get_event_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_type_name
     }
     /// <p>The new label to assign to the event.</p>
     pub fn assigned_label(
@@ -96,6 +104,10 @@ impl UpdateEventLabelInputBuilder {
         self.assigned_label = input;
         self
     }
+    /// <p>The new label to assign to the event.</p>
+    pub fn get_assigned_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assigned_label
+    }
     /// <p>The timestamp associated with the label. The timestamp must be specified using ISO 8601 standard in UTC. </p>
     pub fn label_timestamp(
         mut self,
@@ -111,6 +123,10 @@ impl UpdateEventLabelInputBuilder {
     ) -> Self {
         self.label_timestamp = input;
         self
+    }
+    /// <p>The timestamp associated with the label. The timestamp must be specified using ISO 8601 standard in UTC. </p>
+    pub fn get_label_timestamp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label_timestamp
     }
     /// Consumes the builder and constructs a [`UpdateEventLabelInput`](crate::operation::update_event_label::UpdateEventLabelInput).
     pub fn build(

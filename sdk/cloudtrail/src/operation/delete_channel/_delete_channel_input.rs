@@ -39,6 +39,10 @@ impl DeleteChannelInputBuilder {
         self.channel = input;
         self
     }
+    /// <p>The ARN or the <code>UUID</code> value of the channel that you want to delete.</p>
+    pub fn get_channel(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel
+    }
     /// Consumes the builder and constructs a [`DeleteChannelInput`](crate::operation::delete_channel::DeleteChannelInput).
     pub fn build(
         self,

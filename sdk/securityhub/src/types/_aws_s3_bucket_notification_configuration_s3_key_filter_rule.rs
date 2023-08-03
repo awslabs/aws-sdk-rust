@@ -65,6 +65,13 @@ impl AwsS3BucketNotificationConfigurationS3KeyFilterRuleBuilder {
         self.name = input;
         self
     }
+    /// <p>Indicates whether the filter is based on the prefix or suffix of the Amazon S3 key.</p>
+    pub fn get_name(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsS3BucketNotificationConfigurationS3KeyFilterRuleName>
+    {
+        &self.name
+    }
     /// <p>The filter value.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -74,6 +81,10 @@ impl AwsS3BucketNotificationConfigurationS3KeyFilterRuleBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The filter value.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`AwsS3BucketNotificationConfigurationS3KeyFilterRule`](crate::types::AwsS3BucketNotificationConfigurationS3KeyFilterRule).
     pub fn build(self) -> crate::types::AwsS3BucketNotificationConfigurationS3KeyFilterRule {

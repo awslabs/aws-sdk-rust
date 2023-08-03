@@ -36,6 +36,12 @@ impl UpdateBillingGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateBillingGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_billing_group::builders::UpdateBillingGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateBillingGroupFluentBuilder {
         self.inner = self.inner.set_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the billing group being updated. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
+    }
     /// <p>The name of the billing group. The names must be unique to each billing group. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -135,6 +145,10 @@ impl UpdateBillingGroupFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the billing group. The names must be unique to each billing group. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The status of the billing group. Only one of the valid values can be used. </p>
     pub fn status(mut self, input: crate::types::BillingGroupStatus) -> Self {
@@ -149,6 +163,10 @@ impl UpdateBillingGroupFluentBuilder {
         self.inner = self.inner.set_status(input);
         self
     }
+    /// <p>The status of the billing group. Only one of the valid values can be used. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::BillingGroupStatus> {
+        self.inner.get_status()
+    }
     /// <p> The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group. </p>
     pub fn computation_preference(mut self, input: crate::types::ComputationPreference) -> Self {
         self.inner = self.inner.computation_preference(input);
@@ -162,6 +180,12 @@ impl UpdateBillingGroupFluentBuilder {
         self.inner = self.inner.set_computation_preference(input);
         self
     }
+    /// <p> The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group. </p>
+    pub fn get_computation_preference(
+        &self,
+    ) -> &::std::option::Option<crate::types::ComputationPreference> {
+        self.inner.get_computation_preference()
+    }
     /// <p>A description of the billing group. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -171,6 +195,10 @@ impl UpdateBillingGroupFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of the billing group. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>Specifies if the billing group has automatic account association (<code>AutoAssociate</code>) enabled.</p>
     pub fn account_grouping(
@@ -187,5 +215,11 @@ impl UpdateBillingGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_account_grouping(input);
         self
+    }
+    /// <p>Specifies if the billing group has automatic account association (<code>AutoAssociate</code>) enabled.</p>
+    pub fn get_account_grouping(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateBillingGroupAccountGrouping> {
+        self.inner.get_account_grouping()
     }
 }

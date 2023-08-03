@@ -79,6 +79,10 @@ impl NetworkFirewallUnexpectedFirewallRoutesViolationBuilder {
         self.firewall_subnet_id = input;
         self
     }
+    /// <p>The subnet ID for the firewall.</p>
+    pub fn get_firewall_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.firewall_subnet_id
+    }
     /// Appends an item to `violating_routes`.
     ///
     /// To override the contents of this collection use [`set_violating_routes`](Self::set_violating_routes).
@@ -98,6 +102,12 @@ impl NetworkFirewallUnexpectedFirewallRoutesViolationBuilder {
         self.violating_routes = input;
         self
     }
+    /// <p>The routes that are in violation.</p>
+    pub fn get_violating_routes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Route>> {
+        &self.violating_routes
+    }
     /// <p>The ID of the route table.</p>
     pub fn route_table_id(
         mut self,
@@ -113,6 +123,10 @@ impl NetworkFirewallUnexpectedFirewallRoutesViolationBuilder {
     ) -> Self {
         self.route_table_id = input;
         self
+    }
+    /// <p>The ID of the route table.</p>
+    pub fn get_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.route_table_id
     }
     /// <p>The endpoint of the firewall.</p>
     pub fn firewall_endpoint(
@@ -130,6 +144,10 @@ impl NetworkFirewallUnexpectedFirewallRoutesViolationBuilder {
         self.firewall_endpoint = input;
         self
     }
+    /// <p>The endpoint of the firewall.</p>
+    pub fn get_firewall_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.firewall_endpoint
+    }
     /// <p>Information about the VPC ID.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -139,6 +157,10 @@ impl NetworkFirewallUnexpectedFirewallRoutesViolationBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>Information about the VPC ID.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// Consumes the builder and constructs a [`NetworkFirewallUnexpectedFirewallRoutesViolation`](crate::types::NetworkFirewallUnexpectedFirewallRoutesViolation).
     pub fn build(self) -> crate::types::NetworkFirewallUnexpectedFirewallRoutesViolation {

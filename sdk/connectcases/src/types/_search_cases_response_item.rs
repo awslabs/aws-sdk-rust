@@ -81,6 +81,10 @@ impl SearchCasesResponseItemBuilder {
         self.case_id = input;
         self
     }
+    /// <p>A unique identifier of the case.</p>
+    pub fn get_case_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.case_id
+    }
     /// <p>A unique identifier of a template.</p>
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_id = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl SearchCasesResponseItemBuilder {
     pub fn set_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_id = input;
         self
+    }
+    /// <p>A unique identifier of a template.</p>
+    pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_id
     }
     /// Appends an item to `fields`.
     ///
@@ -109,6 +117,10 @@ impl SearchCasesResponseItemBuilder {
     ) -> Self {
         self.fields = input;
         self
+    }
+    /// <p>List of case field values.</p>
+    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldValue>> {
+        &self.fields
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -137,6 +149,17 @@ impl SearchCasesResponseItemBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            ::std::option::Option<::std::string::String>,
+        >,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`SearchCasesResponseItem`](crate::types::SearchCasesResponseItem).
     pub fn build(self) -> crate::types::SearchCasesResponseItem {

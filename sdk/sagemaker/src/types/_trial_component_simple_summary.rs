@@ -80,6 +80,10 @@ impl TrialComponentSimpleSummaryBuilder {
         self.trial_component_name = input;
         self
     }
+    /// <p>The name of the trial component.</p>
+    pub fn get_trial_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trial_component_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
     pub fn trial_component_arn(
         mut self,
@@ -96,6 +100,10 @@ impl TrialComponentSimpleSummaryBuilder {
         self.trial_component_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
+    pub fn get_trial_component_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trial_component_arn
+    }
     /// <p>The Amazon Resource Name (ARN) and job type of the source of a trial component.</p>
     pub fn trial_component_source(mut self, input: crate::types::TrialComponentSource) -> Self {
         self.trial_component_source = ::std::option::Option::Some(input);
@@ -108,6 +116,12 @@ impl TrialComponentSimpleSummaryBuilder {
     ) -> Self {
         self.trial_component_source = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) and job type of the source of a trial component.</p>
+    pub fn get_trial_component_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::TrialComponentSource> {
+        &self.trial_component_source
     }
     /// <p>When the component was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -122,6 +136,10 @@ impl TrialComponentSimpleSummaryBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>When the component was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn created_by(mut self, input: crate::types::UserContext) -> Self {
         self.created_by = ::std::option::Option::Some(input);
@@ -134,6 +152,10 @@ impl TrialComponentSimpleSummaryBuilder {
     ) -> Self {
         self.created_by = input;
         self
+    }
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<crate::types::UserContext> {
+        &self.created_by
     }
     /// Consumes the builder and constructs a [`TrialComponentSimpleSummary`](crate::types::TrialComponentSimpleSummary).
     pub fn build(self) -> crate::types::TrialComponentSimpleSummary {

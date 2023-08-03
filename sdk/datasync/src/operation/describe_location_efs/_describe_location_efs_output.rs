@@ -99,6 +99,10 @@ impl DescribeLocationEfsOutputBuilder {
         self.location_arn = input;
         self
     }
+    /// <p>The ARN of the Amazon EFS file system location.</p>
+    pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location_arn
+    }
     /// <p>The URL of the Amazon EFS file system location.</p>
     pub fn location_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_uri = ::std::option::Option::Some(input.into());
@@ -109,6 +113,10 @@ impl DescribeLocationEfsOutputBuilder {
         self.location_uri = input;
         self
     }
+    /// <p>The URL of the Amazon EFS file system location.</p>
+    pub fn get_location_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location_uri
+    }
     /// <p>The subnet and security groups that DataSync uses to access your Amazon EFS file system.</p>
     pub fn ec2_config(mut self, input: crate::types::Ec2Config) -> Self {
         self.ec2_config = ::std::option::Option::Some(input);
@@ -118,6 +126,10 @@ impl DescribeLocationEfsOutputBuilder {
     pub fn set_ec2_config(mut self, input: ::std::option::Option<crate::types::Ec2Config>) -> Self {
         self.ec2_config = input;
         self
+    }
+    /// <p>The subnet and security groups that DataSync uses to access your Amazon EFS file system.</p>
+    pub fn get_ec2_config(&self) -> &::std::option::Option<crate::types::Ec2Config> {
+        &self.ec2_config
     }
     /// <p>The time that the location was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -131,6 +143,10 @@ impl DescribeLocationEfsOutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The time that the location was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The ARN of the access point that DataSync uses to access the Amazon EFS file system.</p>
     pub fn access_point_arn(
@@ -148,6 +164,10 @@ impl DescribeLocationEfsOutputBuilder {
         self.access_point_arn = input;
         self
     }
+    /// <p>The ARN of the access point that DataSync uses to access the Amazon EFS file system.</p>
+    pub fn get_access_point_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_point_arn
+    }
     /// <p>The Identity and Access Management (IAM) role that DataSync assumes when mounting the Amazon EFS file system.</p>
     pub fn file_system_access_role_arn(
         mut self,
@@ -164,6 +184,10 @@ impl DescribeLocationEfsOutputBuilder {
         self.file_system_access_role_arn = input;
         self
     }
+    /// <p>The Identity and Access Management (IAM) role that DataSync assumes when mounting the Amazon EFS file system.</p>
+    pub fn get_file_system_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_system_access_role_arn
+    }
     /// <p>Describes whether DataSync uses Transport Layer Security (TLS) encryption when copying data to or from the Amazon EFS file system.</p>
     pub fn in_transit_encryption(mut self, input: crate::types::EfsInTransitEncryption) -> Self {
         self.in_transit_encryption = ::std::option::Option::Some(input);
@@ -176,6 +200,12 @@ impl DescribeLocationEfsOutputBuilder {
     ) -> Self {
         self.in_transit_encryption = input;
         self
+    }
+    /// <p>Describes whether DataSync uses Transport Layer Security (TLS) encryption when copying data to or from the Amazon EFS file system.</p>
+    pub fn get_in_transit_encryption(
+        &self,
+    ) -> &::std::option::Option<crate::types::EfsInTransitEncryption> {
+        &self.in_transit_encryption
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

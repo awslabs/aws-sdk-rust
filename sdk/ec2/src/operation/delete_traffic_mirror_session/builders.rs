@@ -36,6 +36,10 @@ impl DeleteTrafficMirrorSessionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteTrafficMirrorSession as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_traffic_mirror_session::builders::DeleteTrafficMirrorSessionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl DeleteTrafficMirrorSessionFluentBuilder {
         self.inner = self.inner.set_traffic_mirror_session_id(input);
         self
     }
+    /// <p>The ID of the Traffic Mirror session.</p>
+    pub fn get_traffic_mirror_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_traffic_mirror_session_id()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -141,5 +149,9 @@ impl DeleteTrafficMirrorSessionFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

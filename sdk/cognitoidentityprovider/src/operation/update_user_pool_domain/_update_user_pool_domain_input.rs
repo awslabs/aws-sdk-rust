@@ -63,6 +63,11 @@ impl UpdateUserPoolDomainInputBuilder {
         self.domain = input;
         self
     }
+    /// <p>The domain name for the custom domain that hosts the sign-up and sign-in pages for your application. One example might be <code>auth.example.com</code>. </p>
+    /// <p>This string can include only lowercase letters, numbers, and hyphens. Don't use a hyphen for the first or last character. Use periods to separate subdomain names.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
+    }
     /// <p>The ID of the user pool that is associated with the custom domain whose certificate you're updating.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
@@ -72,6 +77,10 @@ impl UpdateUserPoolDomainInputBuilder {
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
+    }
+    /// <p>The ID of the user pool that is associated with the custom domain whose certificate you're updating.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_pool_id
     }
     /// <p>The configuration for a custom domain that hosts the sign-up and sign-in pages for your application. Use this object to specify an SSL certificate that is managed by ACM.</p>
     pub fn custom_domain_config(mut self, input: crate::types::CustomDomainConfigType) -> Self {
@@ -85,6 +94,12 @@ impl UpdateUserPoolDomainInputBuilder {
     ) -> Self {
         self.custom_domain_config = input;
         self
+    }
+    /// <p>The configuration for a custom domain that hosts the sign-up and sign-in pages for your application. Use this object to specify an SSL certificate that is managed by ACM.</p>
+    pub fn get_custom_domain_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomDomainConfigType> {
+        &self.custom_domain_config
     }
     /// Consumes the builder and constructs a [`UpdateUserPoolDomainInput`](crate::operation::update_user_pool_domain::UpdateUserPoolDomainInput).
     pub fn build(

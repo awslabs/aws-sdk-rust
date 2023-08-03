@@ -82,6 +82,12 @@ impl GetStatementResultOutputBuilder {
         self.records = input;
         self
     }
+    /// <p>The results of the SQL statement.</p>
+    pub fn get_records(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::Field>>> {
+        &self.records
+    }
     /// Appends an item to `column_metadata`.
     ///
     /// To override the contents of this collection use [`set_column_metadata`](Self::set_column_metadata).
@@ -101,6 +107,12 @@ impl GetStatementResultOutputBuilder {
         self.column_metadata = input;
         self
     }
+    /// <p>The properties (metadata) of a column. </p>
+    pub fn get_column_metadata(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>> {
+        &self.column_metadata
+    }
     /// <p>The total number of rows in the result set returned from a query. You can use this number to estimate the number of calls to the <code>GetStatementResult</code> operation needed to page through the results. </p>
     pub fn total_num_rows(mut self, input: i64) -> Self {
         self.total_num_rows = ::std::option::Option::Some(input);
@@ -111,6 +123,10 @@ impl GetStatementResultOutputBuilder {
         self.total_num_rows = input;
         self
     }
+    /// <p>The total number of rows in the result set returned from a query. You can use this number to estimate the number of calls to the <code>GetStatementResult</code> operation needed to page through the results. </p>
+    pub fn get_total_num_rows(&self) -> &::std::option::Option<i64> {
+        &self.total_num_rows
+    }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -120,6 +136,10 @@ impl GetStatementResultOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

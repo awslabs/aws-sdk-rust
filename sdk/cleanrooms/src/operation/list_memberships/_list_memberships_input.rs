@@ -55,6 +55,10 @@ impl ListMembershipsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token value retrieved from a previous call to access the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum size of the results that is returned per call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -64,6 +68,10 @@ impl ListMembershipsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum size of the results that is returned per call.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>A filter which will return only memberships in the specified status.</p>
     pub fn status(mut self, input: crate::types::MembershipStatus) -> Self {
@@ -77,6 +85,10 @@ impl ListMembershipsInputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>A filter which will return only memberships in the specified status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::MembershipStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`ListMembershipsInput`](crate::operation::list_memberships::ListMembershipsInput).
     pub fn build(

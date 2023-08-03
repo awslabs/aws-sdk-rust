@@ -47,6 +47,10 @@ impl UpdateCellInputBuilder {
         self.cell_name = input;
         self
     }
+    /// <p>The name of the cell.</p>
+    pub fn get_cell_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cell_name
+    }
     /// Appends an item to `cells`.
     ///
     /// To override the contents of this collection use [`set_cells`](Self::set_cells).
@@ -65,6 +69,10 @@ impl UpdateCellInputBuilder {
     ) -> Self {
         self.cells = input;
         self
+    }
+    /// <p>A list of cell Amazon Resource Names (ARNs), which completely replaces the previous list.</p>
+    pub fn get_cells(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.cells
     }
     /// Consumes the builder and constructs a [`UpdateCellInput`](crate::operation::update_cell::UpdateCellInput).
     pub fn build(

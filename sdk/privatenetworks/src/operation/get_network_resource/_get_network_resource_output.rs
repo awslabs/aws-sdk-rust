@@ -73,6 +73,10 @@ impl GetNetworkResourceOutputBuilder {
         self.network_resource = input;
         self
     }
+    /// <p>Information about the network resource.</p>
+    pub fn get_network_resource(&self) -> &::std::option::Option<crate::types::NetworkResource> {
+        &self.network_resource
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -97,6 +101,14 @@ impl GetNetworkResourceOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p> The network resource tags. </p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

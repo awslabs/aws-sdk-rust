@@ -89,6 +89,12 @@ impl ListExecutionsInputBuilder {
         self.state_machine_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the state machine whose executions is listed.</p>
+    /// <p>You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.</p>
+    /// <p>You can also return a list of executions associated with a specific <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a> or <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>, by specifying an alias ARN or a version ARN in the <code>stateMachineArn</code> parameter.</p>
+    pub fn get_state_machine_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_machine_arn
+    }
     /// <p>If specified, only list the executions whose current execution status matches the given filter.</p>
     pub fn status_filter(mut self, input: crate::types::ExecutionStatus) -> Self {
         self.status_filter = ::std::option::Option::Some(input);
@@ -102,6 +108,10 @@ impl ListExecutionsInputBuilder {
         self.status_filter = input;
         self
     }
+    /// <p>If specified, only list the executions whose current execution status matches the given filter.</p>
+    pub fn get_status_filter(&self) -> &::std::option::Option<crate::types::ExecutionStatus> {
+        &self.status_filter
+    }
     /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
     /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -114,6 +124,11 @@ impl ListExecutionsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
+    /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -123,6 +138,10 @@ impl ListExecutionsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The Amazon Resource Name (ARN) of the Map Run that started the child workflow executions. If the <code>mapRunArn</code> field is specified, a list of all of the child workflow executions started by a Map Run is returned. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html">Examining Map Run</a> in the <i>Step Functions Developer Guide</i>.</p>
     /// <p>You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.</p>
@@ -135,6 +154,11 @@ impl ListExecutionsInputBuilder {
     pub fn set_map_run_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.map_run_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Map Run that started the child workflow executions. If the <code>mapRunArn</code> field is specified, a list of all of the child workflow executions started by a Map Run is returned. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html">Examining Map Run</a> in the <i>Step Functions Developer Guide</i>.</p>
+    /// <p>You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.</p>
+    pub fn get_map_run_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.map_run_arn
     }
     /// Consumes the builder and constructs a [`ListExecutionsInput`](crate::operation::list_executions::ListExecutionsInput).
     pub fn build(

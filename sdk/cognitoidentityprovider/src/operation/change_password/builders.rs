@@ -36,6 +36,12 @@ impl ChangePasswordFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ChangePassword as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::change_password::builders::ChangePasswordInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl ChangePasswordFluentBuilder {
         self.inner = self.inner.set_previous_password(input);
         self
     }
+    /// <p>The old password.</p>
+    pub fn get_previous_password(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_previous_password()
+    }
     /// <p>The new password.</p>
     pub fn proposed_password(
         mut self,
@@ -140,6 +150,10 @@ impl ChangePasswordFluentBuilder {
         self.inner = self.inner.set_proposed_password(input);
         self
     }
+    /// <p>The new password.</p>
+    pub fn get_proposed_password(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_proposed_password()
+    }
     /// <p>A valid access token that Amazon Cognito issued to the user whose password you want to change.</p>
     pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.access_token(input.into());
@@ -149,5 +163,9 @@ impl ChangePasswordFluentBuilder {
     pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_access_token(input);
         self
+    }
+    /// <p>A valid access token that Amazon Cognito issued to the user whose password you want to change.</p>
+    pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_access_token()
     }
 }

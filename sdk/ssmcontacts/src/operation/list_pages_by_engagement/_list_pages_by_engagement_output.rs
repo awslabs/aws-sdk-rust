@@ -56,6 +56,10 @@ impl ListPagesByEngagementOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The pagination token to continue to the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `pages`.
     ///
     /// To override the contents of this collection use [`set_pages`](Self::set_pages).
@@ -74,6 +78,10 @@ impl ListPagesByEngagementOutputBuilder {
     ) -> Self {
         self.pages = input;
         self
+    }
+    /// <p>The list of engagements to contact channels.</p>
+    pub fn get_pages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Page>> {
+        &self.pages
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

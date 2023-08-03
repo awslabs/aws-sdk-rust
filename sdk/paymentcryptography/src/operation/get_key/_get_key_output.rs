@@ -46,6 +46,10 @@ impl GetKeyOutputBuilder {
         self.key = input;
         self
     }
+    /// <p>The key material, including the immutable and mutable data for the key.</p>
+    pub fn get_key(&self) -> &::std::option::Option<crate::types::Key> {
+        &self.key
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -184,6 +184,10 @@ impl RetryDataReplicationOutputBuilder {
         self.source_server_id = input;
         self
     }
+    /// <p>The ID of the Source Server.</p>
+    pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_server_id
+    }
     /// <p>The ARN of the Source Server.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -193,6 +197,10 @@ impl RetryDataReplicationOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The ARN of the Source Server.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -219,6 +227,14 @@ impl RetryDataReplicationOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags associated with the Source Server.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The ID of the Recovery Instance associated with this Source Server.</p>
     pub fn recovery_instance_id(
         mut self,
@@ -235,6 +251,10 @@ impl RetryDataReplicationOutputBuilder {
         self.recovery_instance_id = input;
         self
     }
+    /// <p>The ID of the Recovery Instance associated with this Source Server.</p>
+    pub fn get_recovery_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recovery_instance_id
+    }
     /// <p>The status of the last recovery launch of this Source Server.</p>
     pub fn last_launch_result(mut self, input: crate::types::LastLaunchResult) -> Self {
         self.last_launch_result = ::std::option::Option::Some(input);
@@ -247,6 +267,10 @@ impl RetryDataReplicationOutputBuilder {
     ) -> Self {
         self.last_launch_result = input;
         self
+    }
+    /// <p>The status of the last recovery launch of this Source Server.</p>
+    pub fn get_last_launch_result(&self) -> &::std::option::Option<crate::types::LastLaunchResult> {
+        &self.last_launch_result
     }
     /// <p>The Data Replication Info of the Source Server.</p>
     pub fn data_replication_info(mut self, input: crate::types::DataReplicationInfo) -> Self {
@@ -261,6 +285,12 @@ impl RetryDataReplicationOutputBuilder {
         self.data_replication_info = input;
         self
     }
+    /// <p>The Data Replication Info of the Source Server.</p>
+    pub fn get_data_replication_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataReplicationInfo> {
+        &self.data_replication_info
+    }
     /// <p>The lifecycle information of this Source Server.</p>
     pub fn life_cycle(mut self, input: crate::types::LifeCycle) -> Self {
         self.life_cycle = ::std::option::Option::Some(input);
@@ -270,6 +300,10 @@ impl RetryDataReplicationOutputBuilder {
     pub fn set_life_cycle(mut self, input: ::std::option::Option<crate::types::LifeCycle>) -> Self {
         self.life_cycle = input;
         self
+    }
+    /// <p>The lifecycle information of this Source Server.</p>
+    pub fn get_life_cycle(&self) -> &::std::option::Option<crate::types::LifeCycle> {
+        &self.life_cycle
     }
     /// <p>The source properties of the Source Server.</p>
     pub fn source_properties(mut self, input: crate::types::SourceProperties) -> Self {
@@ -284,6 +318,10 @@ impl RetryDataReplicationOutputBuilder {
         self.source_properties = input;
         self
     }
+    /// <p>The source properties of the Source Server.</p>
+    pub fn get_source_properties(&self) -> &::std::option::Option<crate::types::SourceProperties> {
+        &self.source_properties
+    }
     /// <p>The staging area of the source server.</p>
     pub fn staging_area(mut self, input: crate::types::StagingArea) -> Self {
         self.staging_area = ::std::option::Option::Some(input);
@@ -296,6 +334,10 @@ impl RetryDataReplicationOutputBuilder {
     ) -> Self {
         self.staging_area = input;
         self
+    }
+    /// <p>The staging area of the source server.</p>
+    pub fn get_staging_area(&self) -> &::std::option::Option<crate::types::StagingArea> {
+        &self.staging_area
     }
     /// <p>Source cloud properties of the Source Server.</p>
     pub fn source_cloud_properties(mut self, input: crate::types::SourceCloudProperties) -> Self {
@@ -310,6 +352,12 @@ impl RetryDataReplicationOutputBuilder {
         self.source_cloud_properties = input;
         self
     }
+    /// <p>Source cloud properties of the Source Server.</p>
+    pub fn get_source_cloud_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::SourceCloudProperties> {
+        &self.source_cloud_properties
+    }
     /// <p>Replication direction of the Source Server.</p>
     pub fn replication_direction(mut self, input: crate::types::ReplicationDirection) -> Self {
         self.replication_direction = ::std::option::Option::Some(input);
@@ -322,6 +370,12 @@ impl RetryDataReplicationOutputBuilder {
     ) -> Self {
         self.replication_direction = input;
         self
+    }
+    /// <p>Replication direction of the Source Server.</p>
+    pub fn get_replication_direction(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReplicationDirection> {
+        &self.replication_direction
     }
     /// <p>For EC2-originated Source Servers which have been failed over and then failed back, this value will mean the ARN of the Source Server on the opposite replication direction.</p>
     pub fn reversed_direction_source_server_arn(
@@ -339,6 +393,12 @@ impl RetryDataReplicationOutputBuilder {
         self.reversed_direction_source_server_arn = input;
         self
     }
+    /// <p>For EC2-originated Source Servers which have been failed over and then failed back, this value will mean the ARN of the Source Server on the opposite replication direction.</p>
+    pub fn get_reversed_direction_source_server_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.reversed_direction_source_server_arn
+    }
     /// <p>ID of the Source Network which is protecting this Source Server's network.</p>
     pub fn source_network_id(
         mut self,
@@ -354,6 +414,10 @@ impl RetryDataReplicationOutputBuilder {
     ) -> Self {
         self.source_network_id = input;
         self
+    }
+    /// <p>ID of the Source Network which is protecting this Source Server's network.</p>
+    pub fn get_source_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_network_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

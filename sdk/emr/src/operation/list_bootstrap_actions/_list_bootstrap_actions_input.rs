@@ -49,6 +49,10 @@ impl ListBootstrapActionsInputBuilder {
         self.cluster_id = input;
         self
     }
+    /// <p>The cluster identifier for the bootstrap actions to list.</p>
+    pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_id
+    }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl ListBootstrapActionsInputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// Consumes the builder and constructs a [`ListBootstrapActionsInput`](crate::operation::list_bootstrap_actions::ListBootstrapActionsInput).
     pub fn build(

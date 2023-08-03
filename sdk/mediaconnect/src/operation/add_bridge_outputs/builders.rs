@@ -36,6 +36,12 @@ impl AddBridgeOutputsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AddBridgeOutputs as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::add_bridge_outputs::builders::AddBridgeOutputsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl AddBridgeOutputsFluentBuilder {
         self.inner = self.inner.set_bridge_arn(input);
         self
     }
+    /// The ARN of the bridge that you want to update.
+    pub fn get_bridge_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bridge_arn()
+    }
     /// Appends an item to `Outputs`.
     ///
     /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
@@ -142,5 +152,11 @@ impl AddBridgeOutputsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_outputs(input);
         self
+    }
+    /// The outputs that you want to add to this bridge.
+    pub fn get_outputs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AddBridgeOutputRequest>> {
+        self.inner.get_outputs()
     }
 }

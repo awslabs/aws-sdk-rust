@@ -68,6 +68,12 @@ impl DescribeSourceNetworksRequestFiltersBuilder {
         self.source_network_i_ds = input;
         self
     }
+    /// <p>An array of Source Network IDs that should be returned. An empty array means all Source Networks.</p>
+    pub fn get_source_network_i_ds(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.source_network_i_ds
+    }
     /// <p>Filter Source Networks by account ID containing the protected VPCs.</p>
     pub fn origin_account_id(
         mut self,
@@ -84,6 +90,10 @@ impl DescribeSourceNetworksRequestFiltersBuilder {
         self.origin_account_id = input;
         self
     }
+    /// <p>Filter Source Networks by account ID containing the protected VPCs.</p>
+    pub fn get_origin_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.origin_account_id
+    }
     /// <p>Filter Source Networks by the region containing the protected VPCs.</p>
     pub fn origin_region(
         mut self,
@@ -99,6 +109,10 @@ impl DescribeSourceNetworksRequestFiltersBuilder {
     ) -> Self {
         self.origin_region = input;
         self
+    }
+    /// <p>Filter Source Networks by the region containing the protected VPCs.</p>
+    pub fn get_origin_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.origin_region
     }
     /// Consumes the builder and constructs a [`DescribeSourceNetworksRequestFilters`](crate::types::DescribeSourceNetworksRequestFilters).
     pub fn build(self) -> crate::types::DescribeSourceNetworksRequestFilters {

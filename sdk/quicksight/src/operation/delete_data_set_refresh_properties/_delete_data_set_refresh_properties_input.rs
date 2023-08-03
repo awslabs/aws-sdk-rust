@@ -53,6 +53,10 @@ impl DeleteDataSetRefreshPropertiesInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The ID of the dataset.</p>
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl DeleteDataSetRefreshPropertiesInputBuilder {
     pub fn set_data_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_set_id = input;
         self
+    }
+    /// <p>The ID of the dataset.</p>
+    pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_set_id
     }
     /// Consumes the builder and constructs a [`DeleteDataSetRefreshPropertiesInput`](crate::operation::delete_data_set_refresh_properties::DeleteDataSetRefreshPropertiesInput).
     pub fn build(

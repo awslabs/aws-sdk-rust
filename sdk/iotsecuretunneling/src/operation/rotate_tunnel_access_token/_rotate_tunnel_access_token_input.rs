@@ -57,6 +57,10 @@ impl RotateTunnelAccessTokenInputBuilder {
         self.tunnel_id = input;
         self
     }
+    /// <p>The tunnel for which you want to rotate the access tokens.</p>
+    pub fn get_tunnel_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tunnel_id
+    }
     /// <p>The mode of the client that will use the client token, which can be either the source or destination, or both source and destination.</p>
     pub fn client_mode(mut self, input: crate::types::ClientMode) -> Self {
         self.client_mode = ::std::option::Option::Some(input);
@@ -70,6 +74,10 @@ impl RotateTunnelAccessTokenInputBuilder {
         self.client_mode = input;
         self
     }
+    /// <p>The mode of the client that will use the client token, which can be either the source or destination, or both source and destination.</p>
+    pub fn get_client_mode(&self) -> &::std::option::Option<crate::types::ClientMode> {
+        &self.client_mode
+    }
     /// <p>The destination configuration.</p>
     pub fn destination_config(mut self, input: crate::types::DestinationConfig) -> Self {
         self.destination_config = ::std::option::Option::Some(input);
@@ -82,6 +90,12 @@ impl RotateTunnelAccessTokenInputBuilder {
     ) -> Self {
         self.destination_config = input;
         self
+    }
+    /// <p>The destination configuration.</p>
+    pub fn get_destination_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::DestinationConfig> {
+        &self.destination_config
     }
     /// Consumes the builder and constructs a [`RotateTunnelAccessTokenInput`](crate::operation::rotate_tunnel_access_token::RotateTunnelAccessTokenInput).
     pub fn build(

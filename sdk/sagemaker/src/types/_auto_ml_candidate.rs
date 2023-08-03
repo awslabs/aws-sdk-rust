@@ -162,6 +162,10 @@ impl AutoMlCandidateBuilder {
         self.candidate_name = input;
         self
     }
+    /// <p>The name of the candidate.</p>
+    pub fn get_candidate_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.candidate_name
+    }
     /// <p>The best candidate result from an AutoML training job.</p>
     pub fn final_auto_ml_job_objective_metric(
         mut self,
@@ -178,6 +182,12 @@ impl AutoMlCandidateBuilder {
         self.final_auto_ml_job_objective_metric = input;
         self
     }
+    /// <p>The best candidate result from an AutoML training job.</p>
+    pub fn get_final_auto_ml_job_objective_metric(
+        &self,
+    ) -> &::std::option::Option<crate::types::FinalAutoMlJobObjectiveMetric> {
+        &self.final_auto_ml_job_objective_metric
+    }
     /// <p>The objective's status.</p>
     pub fn objective_status(mut self, input: crate::types::ObjectiveStatus) -> Self {
         self.objective_status = ::std::option::Option::Some(input);
@@ -190,6 +200,10 @@ impl AutoMlCandidateBuilder {
     ) -> Self {
         self.objective_status = input;
         self
+    }
+    /// <p>The objective's status.</p>
+    pub fn get_objective_status(&self) -> &::std::option::Option<crate::types::ObjectiveStatus> {
+        &self.objective_status
     }
     /// Appends an item to `candidate_steps`.
     ///
@@ -210,6 +224,12 @@ impl AutoMlCandidateBuilder {
         self.candidate_steps = input;
         self
     }
+    /// <p>Information about the candidate's steps.</p>
+    pub fn get_candidate_steps(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoMlCandidateStep>> {
+        &self.candidate_steps
+    }
     /// <p>The candidate's status.</p>
     pub fn candidate_status(mut self, input: crate::types::CandidateStatus) -> Self {
         self.candidate_status = ::std::option::Option::Some(input);
@@ -222,6 +242,10 @@ impl AutoMlCandidateBuilder {
     ) -> Self {
         self.candidate_status = input;
         self
+    }
+    /// <p>The candidate's status.</p>
+    pub fn get_candidate_status(&self) -> &::std::option::Option<crate::types::CandidateStatus> {
+        &self.candidate_status
     }
     /// Appends an item to `inference_containers`.
     ///
@@ -242,6 +266,12 @@ impl AutoMlCandidateBuilder {
         self.inference_containers = input;
         self
     }
+    /// <p>Information about the recommended inference container definitions.</p>
+    pub fn get_inference_containers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoMlContainerDefinition>> {
+        &self.inference_containers
+    }
     /// <p>The creation time.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -254,6 +284,10 @@ impl AutoMlCandidateBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The creation time.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The end time.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -268,6 +302,10 @@ impl AutoMlCandidateBuilder {
         self.end_time = input;
         self
     }
+    /// <p>The end time.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>The last modified time.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -280,6 +318,10 @@ impl AutoMlCandidateBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>The last modified time.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// <p>The failure reason.</p>
     pub fn failure_reason(
@@ -297,6 +339,10 @@ impl AutoMlCandidateBuilder {
         self.failure_reason = input;
         self
     }
+    /// <p>The failure reason.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
+    }
     /// <p>The properties of an AutoML candidate job.</p>
     pub fn candidate_properties(mut self, input: crate::types::CandidateProperties) -> Self {
         self.candidate_properties = ::std::option::Option::Some(input);
@@ -309,6 +355,12 @@ impl AutoMlCandidateBuilder {
     ) -> Self {
         self.candidate_properties = input;
         self
+    }
+    /// <p>The properties of an AutoML candidate job.</p>
+    pub fn get_candidate_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::CandidateProperties> {
+        &self.candidate_properties
     }
     /// Adds a key-value pair to `inference_container_definitions`.
     ///
@@ -337,6 +389,17 @@ impl AutoMlCandidateBuilder {
     ) -> Self {
         self.inference_container_definitions = input;
         self
+    }
+    /// <p>The mapping of all supported processing unit (CPU, GPU, etc...) to inference container definitions for the candidate. This field is populated for the AutoML jobs V2 (for example, for jobs created by calling <code>CreateAutoMLJobV2</code>) related to image or text classification problem types only.</p>
+    pub fn get_inference_container_definitions(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::AutoMlProcessingUnit,
+            ::std::vec::Vec<crate::types::AutoMlContainerDefinition>,
+        >,
+    > {
+        &self.inference_container_definitions
     }
     /// Consumes the builder and constructs a [`AutoMlCandidate`](crate::types::AutoMlCandidate).
     pub fn build(self) -> crate::types::AutoMlCandidate {

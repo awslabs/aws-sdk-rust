@@ -57,6 +57,10 @@ impl DeleteStudioComponentInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>The studio component ID.</p>
     pub fn studio_component_id(
         mut self,
@@ -73,6 +77,10 @@ impl DeleteStudioComponentInputBuilder {
         self.studio_component_id = input;
         self
     }
+    /// <p>The studio component ID.</p>
+    pub fn get_studio_component_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_component_id
+    }
     /// <p>The studio ID. </p>
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl DeleteStudioComponentInputBuilder {
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.studio_id = input;
         self
+    }
+    /// <p>The studio ID. </p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_id
     }
     /// Consumes the builder and constructs a [`DeleteStudioComponentInput`](crate::operation::delete_studio_component::DeleteStudioComponentInput).
     pub fn build(

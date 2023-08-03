@@ -91,6 +91,11 @@ impl DescribeAccountAuditConfigurationOutputBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The ARN of the role that grants permission to IoT to access information about your devices, policies, certificates, and other items as required when performing an audit.</p>
+    /// <p>On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter is required.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// Adds a key-value pair to `audit_notification_target_configurations`.
     ///
     /// To override the contents of this collection use [`set_audit_notification_target_configurations`](Self::set_audit_notification_target_configurations).
@@ -121,6 +126,17 @@ impl DescribeAccountAuditConfigurationOutputBuilder {
         self.audit_notification_target_configurations = input;
         self
     }
+    /// <p>Information about the targets to which audit notifications are sent for this account.</p>
+    pub fn get_audit_notification_target_configurations(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::AuditNotificationType,
+            crate::types::AuditNotificationTarget,
+        >,
+    > {
+        &self.audit_notification_target_configurations
+    }
     /// Adds a key-value pair to `audit_check_configurations`.
     ///
     /// To override the contents of this collection use [`set_audit_check_configurations`](Self::set_audit_check_configurations).
@@ -148,6 +164,14 @@ impl DescribeAccountAuditConfigurationOutputBuilder {
     ) -> Self {
         self.audit_check_configurations = input;
         self
+    }
+    /// <p>Which audit checks are enabled and disabled for this account.</p>
+    pub fn get_audit_check_configurations(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::AuditCheckConfiguration>,
+    > {
+        &self.audit_check_configurations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -63,6 +63,10 @@ impl UpdateUploadInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the uploaded test spec.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The upload's test spec file name. The name must not contain any forward slashes (/). The test spec file name must end with the <code>.yaml</code> or <code>.yml</code> file extension.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl UpdateUploadInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The upload's test spec file name. The name must not contain any forward slashes (/). The test spec file name must end with the <code>.yaml</code> or <code>.yml</code> file extension.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The upload's content type (for example, <code>application/x-yaml</code>).</p>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -83,6 +91,10 @@ impl UpdateUploadInputBuilder {
         self.content_type = input;
         self
     }
+    /// <p>The upload's content type (for example, <code>application/x-yaml</code>).</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_type
+    }
     /// <p>Set to true if the YAML file has changed and must be updated. Otherwise, set to false.</p>
     pub fn edit_content(mut self, input: bool) -> Self {
         self.edit_content = ::std::option::Option::Some(input);
@@ -92,6 +104,10 @@ impl UpdateUploadInputBuilder {
     pub fn set_edit_content(mut self, input: ::std::option::Option<bool>) -> Self {
         self.edit_content = input;
         self
+    }
+    /// <p>Set to true if the YAML file has changed and must be updated. Otherwise, set to false.</p>
+    pub fn get_edit_content(&self) -> &::std::option::Option<bool> {
+        &self.edit_content
     }
     /// Consumes the builder and constructs a [`UpdateUploadInput`](crate::operation::update_upload::UpdateUploadInput).
     pub fn build(

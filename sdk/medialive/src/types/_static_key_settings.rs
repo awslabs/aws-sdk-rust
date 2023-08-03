@@ -51,6 +51,10 @@ impl StaticKeySettingsBuilder {
         self.key_provider_server = input;
         self
     }
+    /// The URL of the license server used for protecting content.
+    pub fn get_key_provider_server(&self) -> &::std::option::Option<crate::types::InputLocation> {
+        &self.key_provider_server
+    }
     /// Static key value as a 32 character hexadecimal string.
     pub fn static_key_value(
         mut self,
@@ -66,6 +70,10 @@ impl StaticKeySettingsBuilder {
     ) -> Self {
         self.static_key_value = input;
         self
+    }
+    /// Static key value as a 32 character hexadecimal string.
+    pub fn get_static_key_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.static_key_value
     }
     /// Consumes the builder and constructs a [`StaticKeySettings`](crate::types::StaticKeySettings).
     pub fn build(self) -> crate::types::StaticKeySettings {

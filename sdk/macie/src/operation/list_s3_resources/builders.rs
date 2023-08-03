@@ -36,6 +36,12 @@ impl ListS3ResourcesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListS3Resources as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_s3_resources::builders::ListS3ResourcesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -143,6 +149,10 @@ impl ListS3ResourcesFluentBuilder {
         self.inner = self.inner.set_member_account_id(input);
         self
     }
+    /// <p>(Discontinued) The Amazon Macie Classic member account ID whose associated S3 resources you want to list. </p>
+    pub fn get_member_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_member_account_id()
+    }
     /// <p>(Discontinued) Use this parameter when paginating results. Set its value to null on your first call to the <code>ListS3Resources</code> action. Subsequent calls to the action fill <code>nextToken</code> in the request with the value of <code>nextToken</code> from the previous response to continue listing data. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -153,6 +163,10 @@ impl ListS3ResourcesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>(Discontinued) Use this parameter when paginating results. Set its value to null on your first call to the <code>ListS3Resources</code> action. Subsequent calls to the action fill <code>nextToken</code> in the request with the value of <code>nextToken</code> from the previous response to continue listing data. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>(Discontinued) Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -162,5 +176,9 @@ impl ListS3ResourcesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>(Discontinued) Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

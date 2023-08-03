@@ -39,6 +39,10 @@ impl DeleteServerInputBuilder {
         self.server_name = input;
         self
     }
+    /// <p>The ID of the server to delete.</p>
+    pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_name
+    }
     /// Consumes the builder and constructs a [`DeleteServerInput`](crate::operation::delete_server::DeleteServerInput).
     pub fn build(
         self,

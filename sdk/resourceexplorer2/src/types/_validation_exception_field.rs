@@ -48,6 +48,10 @@ impl ValidationExceptionFieldBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the request field that had a validation error.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The validation error caused by the request field.</p>
     pub fn validation_issue(
         mut self,
@@ -63,6 +67,10 @@ impl ValidationExceptionFieldBuilder {
     ) -> Self {
         self.validation_issue = input;
         self
+    }
+    /// <p>The validation error caused by the request field.</p>
+    pub fn get_validation_issue(&self) -> &::std::option::Option<::std::string::String> {
+        &self.validation_issue
     }
     /// Consumes the builder and constructs a [`ValidationExceptionField`](crate::types::ValidationExceptionField).
     pub fn build(self) -> crate::types::ValidationExceptionField {

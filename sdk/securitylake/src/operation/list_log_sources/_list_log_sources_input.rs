@@ -80,6 +80,10 @@ impl ListLogSourcesInputBuilder {
         self.accounts = input;
         self
     }
+    /// <p>The list of Amazon Web Services accounts for which log sources are displayed.</p>
+    pub fn get_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.accounts
+    }
     /// Appends an item to `regions`.
     ///
     /// To override the contents of this collection use [`set_regions`](Self::set_regions).
@@ -98,6 +102,10 @@ impl ListLogSourcesInputBuilder {
     ) -> Self {
         self.regions = input;
         self
+    }
+    /// <p>The list of regions for which log sources are displayed.</p>
+    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.regions
     }
     /// Appends an item to `sources`.
     ///
@@ -118,6 +126,12 @@ impl ListLogSourcesInputBuilder {
         self.sources = input;
         self
     }
+    /// <p>The list of sources for which log sources are displayed.</p>
+    pub fn get_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LogSourceResource>> {
+        &self.sources
+    }
     /// <p>The maximum number of accounts for which the log sources are displayed.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -128,6 +142,10 @@ impl ListLogSourcesInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of accounts for which the log sources are displayed.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -137,6 +155,10 @@ impl ListLogSourcesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListLogSourcesInput`](crate::operation::list_log_sources::ListLogSourcesInput).
     pub fn build(

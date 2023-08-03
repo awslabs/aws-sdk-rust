@@ -47,6 +47,10 @@ impl DeleteConfiguredTableInputBuilder {
         self.configured_table_identifier = input;
         self
     }
+    /// <p>The unique ID for the configured table to delete.</p>
+    pub fn get_configured_table_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configured_table_identifier
+    }
     /// Consumes the builder and constructs a [`DeleteConfiguredTableInput`](crate::operation::delete_configured_table::DeleteConfiguredTableInput).
     pub fn build(
         self,

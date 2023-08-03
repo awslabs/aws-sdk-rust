@@ -39,6 +39,10 @@ impl StopTargetedSentimentDetectionJobInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The identifier of the targeted sentiment detection job to stop.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// Consumes the builder and constructs a [`StopTargetedSentimentDetectionJobInput`](crate::operation::stop_targeted_sentiment_detection_job::StopTargetedSentimentDetectionJobInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::stop_targeted_sentiment_detection_job::StopTargetedSentimentDetectionJobInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

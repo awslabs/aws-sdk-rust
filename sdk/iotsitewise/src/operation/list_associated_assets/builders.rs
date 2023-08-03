@@ -41,6 +41,12 @@ impl ListAssociatedAssetsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListAssociatedAssets as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_associated_assets::builders::ListAssociatedAssetsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -142,6 +148,10 @@ impl ListAssociatedAssetsFluentBuilder {
         self.inner = self.inner.set_asset_id(input);
         self
     }
+    /// <p>The ID of the asset to query.</p>
+    pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_asset_id()
+    }
     /// <p>The ID of the hierarchy by which child assets are associated to the asset. To find a hierarchy ID, use the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAsset.html">DescribeAsset</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a> operations. This parameter is required if you choose <code>CHILD</code> for <code>traversalDirection</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn hierarchy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -153,6 +163,11 @@ impl ListAssociatedAssetsFluentBuilder {
     pub fn set_hierarchy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hierarchy_id(input);
         self
+    }
+    /// <p>The ID of the hierarchy by which child assets are associated to the asset. To find a hierarchy ID, use the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAsset.html">DescribeAsset</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a> operations. This parameter is required if you choose <code>CHILD</code> for <code>traversalDirection</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn get_hierarchy_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_hierarchy_id()
     }
     /// <p>The direction to list associated assets. Choose one of the following options:</p>
     /// <ul>
@@ -177,6 +192,17 @@ impl ListAssociatedAssetsFluentBuilder {
         self.inner = self.inner.set_traversal_direction(input);
         self
     }
+    /// <p>The direction to list associated assets. Choose one of the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>CHILD</code> – The list includes all child assets associated to the asset. The <code>hierarchyId</code> parameter is required if you choose <code>CHILD</code>.</p> </li>
+    /// <li> <p> <code>PARENT</code> – The list includes the asset's parent asset.</p> </li>
+    /// </ul>
+    /// <p>Default: <code>CHILD</code> </p>
+    pub fn get_traversal_direction(
+        &self,
+    ) -> &::std::option::Option<crate::types::TraversalDirection> {
+        self.inner.get_traversal_direction()
+    }
     /// <p>The token to be used for the next set of paginated results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -186,6 +212,10 @@ impl ListAssociatedAssetsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The maximum number of results to return for each paginated request.</p>
     /// <p>Default: 50</p>
@@ -198,5 +228,10 @@ impl ListAssociatedAssetsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return for each paginated request.</p>
+    /// <p>Default: 50</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

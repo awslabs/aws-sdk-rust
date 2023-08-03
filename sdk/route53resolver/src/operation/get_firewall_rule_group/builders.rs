@@ -36,6 +36,13 @@ impl GetFirewallRuleGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetFirewallRuleGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_firewall_rule_group::builders::GetFirewallRuleGroupInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +138,9 @@ impl GetFirewallRuleGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_firewall_rule_group_id(input);
         self
+    }
+    /// <p>The unique identifier of the firewall rule group. </p>
+    pub fn get_firewall_rule_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_firewall_rule_group_id()
     }
 }

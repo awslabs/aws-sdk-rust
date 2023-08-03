@@ -50,6 +50,12 @@ impl MultiplexOutputDestinationBuilder {
         self.media_connect_settings = input;
         self
     }
+    /// Multiplex MediaConnect output destination settings.
+    pub fn get_media_connect_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::MultiplexMediaConnectOutputDestinationSettings> {
+        &self.media_connect_settings
+    }
     /// Consumes the builder and constructs a [`MultiplexOutputDestination`](crate::types::MultiplexOutputDestination).
     pub fn build(self) -> crate::types::MultiplexOutputDestination {
         crate::types::MultiplexOutputDestination {

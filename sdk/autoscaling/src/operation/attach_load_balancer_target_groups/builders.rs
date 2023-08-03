@@ -48,6 +48,10 @@ impl AttachLoadBalancerTargetGroupsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AttachLoadBalancerTargetGroups as a reference.
+    pub fn as_input(&self) -> &crate::operation::attach_load_balancer_target_groups::builders::AttachLoadBalancerTargetGroupsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -118,6 +122,10 @@ impl AttachLoadBalancerTargetGroupsFluentBuilder {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_auto_scaling_group_name()
+    }
     /// Appends an item to `TargetGroupARNs`.
     ///
     /// To override the contents of this collection use [`set_target_group_ar_ns`](Self::set_target_group_ar_ns).
@@ -137,5 +145,11 @@ impl AttachLoadBalancerTargetGroupsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_target_group_ar_ns(input);
         self
+    }
+    /// <p>The Amazon Resource Names (ARNs) of the target groups. You can specify up to 10 target groups. To get the ARN of a target group, use the Elastic Load Balancing <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
+    pub fn get_target_group_ar_ns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_target_group_ar_ns()
     }
 }

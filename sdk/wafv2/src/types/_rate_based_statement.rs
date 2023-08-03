@@ -156,6 +156,15 @@ impl RateBasedStatementBuilder {
         self.limit = input;
         self
     }
+    /// <p>The limit on requests per 5-minute period for a single aggregation instance for the rate-based rule. If the rate-based statement includes a <code>ScopeDownStatement</code>, this limit is applied only to the requests that match the statement.</p>
+    /// <p>Examples: </p>
+    /// <ul>
+    /// <li> <p>If you aggregate on just the IP address, this is the limit on requests from any single IP address. </p> </li>
+    /// <li> <p>If you aggregate on the HTTP method and the query argument name "city", then this is the limit on requests for any single method, city pair. </p> </li>
+    /// </ul>
+    pub fn get_limit(&self) -> &::std::option::Option<i64> {
+        &self.limit
+    }
     /// <p>Setting that indicates how to aggregate the request counts. </p> <note>
     /// <p>Web requests that are missing any of the components specified in the aggregation keys are omitted from the rate-based rule evaluation and handling. </p>
     /// </note>
@@ -188,6 +197,20 @@ impl RateBasedStatementBuilder {
         self.aggregate_key_type = input;
         self
     }
+    /// <p>Setting that indicates how to aggregate the request counts. </p> <note>
+    /// <p>Web requests that are missing any of the components specified in the aggregation keys are omitted from the rate-based rule evaluation and handling. </p>
+    /// </note>
+    /// <ul>
+    /// <li> <p> <code>CONSTANT</code> - Count and limit the requests that match the rate-based rule's scope-down statement. With this option, the counted requests aren't further aggregated. The scope-down statement is the only specification used. When the count of all requests that satisfy the scope-down statement goes over the limit, WAF applies the rule action to all requests that satisfy the scope-down statement. </p> <p>With this option, you must configure the <code>ScopeDownStatement</code> property. </p> </li>
+    /// <li> <p> <code>CUSTOM_KEYS</code> - Aggregate the request counts using one or more web request components as the aggregate keys.</p> <p>With this option, you must specify the aggregate keys in the <code>CustomKeys</code> property. </p> <p>To aggregate on only the IP address or only the forwarded IP address, don't use custom keys. Instead, set the aggregate key type to <code>IP</code> or <code>FORWARDED_IP</code>.</p> </li>
+    /// <li> <p> <code>FORWARDED_IP</code> - Aggregate the request counts on the first IP address in an HTTP header. </p> <p>With this option, you must specify the header to use in the <code>ForwardedIPConfig</code> property. </p> <p>To aggregate on a combination of the forwarded IP address with other aggregate keys, use <code>CUSTOM_KEYS</code>. </p> </li>
+    /// <li> <p> <code>IP</code> - Aggregate the request counts on the IP address from the web request origin.</p> <p>To aggregate on a combination of the IP address with other aggregate keys, use <code>CUSTOM_KEYS</code>. </p> </li>
+    /// </ul>
+    pub fn get_aggregate_key_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::RateBasedStatementAggregateKeyType> {
+        &self.aggregate_key_type
+    }
     /// <p>An optional nested statement that narrows the scope of the web requests that are evaluated and managed by the rate-based statement. When you use a scope-down statement, the rate-based rule only tracks and rate limits requests that match the scope-down statement. You can use any nestable <code>Statement</code> in the scope-down statement, and you can nest statements at any level, the same as you can for a rule statement. </p>
     pub fn scope_down_statement(
         mut self,
@@ -203,6 +226,12 @@ impl RateBasedStatementBuilder {
     ) -> Self {
         self.scope_down_statement = input;
         self
+    }
+    /// <p>An optional nested statement that narrows the scope of the web requests that are evaluated and managed by the rate-based statement. When you use a scope-down statement, the rate-based rule only tracks and rate limits requests that match the scope-down statement. You can use any nestable <code>Statement</code> in the scope-down statement, and you can nest statements at any level, the same as you can for a rule statement. </p>
+    pub fn get_scope_down_statement(
+        &self,
+    ) -> &::std::option::Option<::std::boxed::Box<crate::types::Statement>> {
+        &self.scope_down_statement
     }
     /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p> <note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
@@ -223,6 +252,15 @@ impl RateBasedStatementBuilder {
         self.forwarded_ip_config = input;
         self
     }
+    /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p> <note>
+    /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
+    /// </note>
+    /// <p>This is required if you specify a forwarded IP in the rule's aggregate key settings. </p>
+    pub fn get_forwarded_ip_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ForwardedIpConfig> {
+        &self.forwarded_ip_config
+    }
     /// Appends an item to `custom_keys`.
     ///
     /// To override the contents of this collection use [`set_custom_keys`](Self::set_custom_keys).
@@ -241,6 +279,12 @@ impl RateBasedStatementBuilder {
     ) -> Self {
         self.custom_keys = input;
         self
+    }
+    /// <p>Specifies the aggregate keys to use in a rate-base rule. </p>
+    pub fn get_custom_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RateBasedStatementCustomKey>> {
+        &self.custom_keys
     }
     /// Consumes the builder and constructs a [`RateBasedStatement`](crate::types::RateBasedStatement).
     pub fn build(self) -> crate::types::RateBasedStatement {

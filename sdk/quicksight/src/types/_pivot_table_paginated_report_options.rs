@@ -53,6 +53,12 @@ impl PivotTablePaginatedReportOptionsBuilder {
         self.vertical_overflow_visibility = input;
         self
     }
+    /// <p>The visibility of the printing table overflow across pages.</p>
+    pub fn get_vertical_overflow_visibility(
+        &self,
+    ) -> &::std::option::Option<crate::types::Visibility> {
+        &self.vertical_overflow_visibility
+    }
     /// <p>The visibility of the repeating header rows on each page.</p>
     pub fn overflow_column_header_visibility(mut self, input: crate::types::Visibility) -> Self {
         self.overflow_column_header_visibility = ::std::option::Option::Some(input);
@@ -65,6 +71,12 @@ impl PivotTablePaginatedReportOptionsBuilder {
     ) -> Self {
         self.overflow_column_header_visibility = input;
         self
+    }
+    /// <p>The visibility of the repeating header rows on each page.</p>
+    pub fn get_overflow_column_header_visibility(
+        &self,
+    ) -> &::std::option::Option<crate::types::Visibility> {
+        &self.overflow_column_header_visibility
     }
     /// Consumes the builder and constructs a [`PivotTablePaginatedReportOptions`](crate::types::PivotTablePaginatedReportOptions).
     pub fn build(self) -> crate::types::PivotTablePaginatedReportOptions {

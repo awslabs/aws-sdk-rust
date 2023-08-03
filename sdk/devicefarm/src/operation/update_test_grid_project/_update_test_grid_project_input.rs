@@ -65,6 +65,10 @@ impl UpdateTestGridProjectInputBuilder {
         self.project_arn = input;
         self
     }
+    /// <p>ARN of the project to update.</p>
+    pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_arn
+    }
     /// <p>Human-readable name for the project.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -75,6 +79,10 @@ impl UpdateTestGridProjectInputBuilder {
         self.name = input;
         self
     }
+    /// <p>Human-readable name for the project.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Human-readable description for the project.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -84,6 +92,10 @@ impl UpdateTestGridProjectInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>Human-readable description for the project.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
     pub fn vpc_config(mut self, input: crate::types::TestGridVpcConfig) -> Self {
@@ -97,6 +109,10 @@ impl UpdateTestGridProjectInputBuilder {
     ) -> Self {
         self.vpc_config = input;
         self
+    }
+    /// <p>The VPC security groups and subnets that are attached to a project.</p>
+    pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::TestGridVpcConfig> {
+        &self.vpc_config
     }
     /// Consumes the builder and constructs a [`UpdateTestGridProjectInput`](crate::operation::update_test_grid_project::UpdateTestGridProjectInput).
     pub fn build(

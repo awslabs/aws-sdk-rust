@@ -67,6 +67,10 @@ impl MaintenanceBuilder {
         self.maintenance_day = input;
         self
     }
+    /// A day of a week when the maintenance will happen. Use Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
+    pub fn get_maintenance_day(&self) -> &::std::option::Option<crate::types::MaintenanceDay> {
+        &self.maintenance_day
+    }
     /// The Maintenance has to be performed before this deadline in ISO UTC format. Example: 2021-01-30T08:30:00Z.
     pub fn maintenance_deadline(
         mut self,
@@ -82,6 +86,10 @@ impl MaintenanceBuilder {
     ) -> Self {
         self.maintenance_deadline = input;
         self
+    }
+    /// The Maintenance has to be performed before this deadline in ISO UTC format. Example: 2021-01-30T08:30:00Z.
+    pub fn get_maintenance_deadline(&self) -> &::std::option::Option<::std::string::String> {
+        &self.maintenance_deadline
     }
     /// A scheduled date in ISO UTC format when the maintenance will happen. Use YYYY-MM-DD format. Example: 2021-01-30.
     pub fn maintenance_scheduled_date(
@@ -99,6 +107,10 @@ impl MaintenanceBuilder {
         self.maintenance_scheduled_date = input;
         self
     }
+    /// A scheduled date in ISO UTC format when the maintenance will happen. Use YYYY-MM-DD format. Example: 2021-01-30.
+    pub fn get_maintenance_scheduled_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.maintenance_scheduled_date
+    }
     /// UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default value is 02:00.
     pub fn maintenance_start_hour(
         mut self,
@@ -114,6 +126,10 @@ impl MaintenanceBuilder {
     ) -> Self {
         self.maintenance_start_hour = input;
         self
+    }
+    /// UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default value is 02:00.
+    pub fn get_maintenance_start_hour(&self) -> &::std::option::Option<::std::string::String> {
+        &self.maintenance_start_hour
     }
     /// Consumes the builder and constructs a [`Maintenance`](crate::types::Maintenance).
     pub fn build(self) -> crate::types::Maintenance {

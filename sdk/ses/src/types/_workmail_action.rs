@@ -49,6 +49,10 @@ impl WorkmailActionBuilder {
         self.topic_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the WorkMail action is called. An example of an Amazon SNS topic ARN is <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
+    pub fn get_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_arn
+    }
     /// <p>The ARN of the Amazon WorkMail organization. An example of an Amazon WorkMail organization ARN is <code>arn:aws:workmail:us-west-2:123456789012:organization/m-68755160c4cb4e29a2b2f8fb58f359d7</code>. For information about Amazon WorkMail organizations, see the <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/organizations_overview.html">Amazon WorkMail Administrator Guide</a>.</p>
     pub fn organization_arn(
         mut self,
@@ -64,6 +68,10 @@ impl WorkmailActionBuilder {
     ) -> Self {
         self.organization_arn = input;
         self
+    }
+    /// <p>The ARN of the Amazon WorkMail organization. An example of an Amazon WorkMail organization ARN is <code>arn:aws:workmail:us-west-2:123456789012:organization/m-68755160c4cb4e29a2b2f8fb58f359d7</code>. For information about Amazon WorkMail organizations, see the <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/organizations_overview.html">Amazon WorkMail Administrator Guide</a>.</p>
+    pub fn get_organization_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_arn
     }
     /// Consumes the builder and constructs a [`WorkmailAction`](crate::types::WorkmailAction).
     pub fn build(self) -> crate::types::WorkmailAction {

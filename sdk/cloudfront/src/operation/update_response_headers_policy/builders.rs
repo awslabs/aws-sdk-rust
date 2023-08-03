@@ -42,6 +42,10 @@ impl UpdateResponseHeadersPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateResponseHeadersPolicy as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_response_headers_policy::builders::UpdateResponseHeadersPolicyInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +142,12 @@ impl UpdateResponseHeadersPolicyFluentBuilder {
         self.inner = self.inner.set_response_headers_policy_config(input);
         self
     }
+    /// <p>A response headers policy configuration.</p>
+    pub fn get_response_headers_policy_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResponseHeadersPolicyConfig> {
+        self.inner.get_response_headers_policy_config()
+    }
     /// <p>The identifier for the response headers policy that you are updating.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
@@ -147,6 +157,10 @@ impl UpdateResponseHeadersPolicyFluentBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
+    }
+    /// <p>The identifier for the response headers policy that you are updating.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
     }
     /// <p>The version of the response headers policy that you are updating.</p>
     /// <p>The version is returned in the cache policy's <code>ETag</code> field in the response to <code>GetResponseHeadersPolicyConfig</code>.</p>
@@ -159,5 +173,10 @@ impl UpdateResponseHeadersPolicyFluentBuilder {
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_if_match(input);
         self
+    }
+    /// <p>The version of the response headers policy that you are updating.</p>
+    /// <p>The version is returned in the cache policy's <code>ETag</code> field in the response to <code>GetResponseHeadersPolicyConfig</code>.</p>
+    pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_if_match()
     }
 }

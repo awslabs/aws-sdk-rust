@@ -57,6 +57,10 @@ impl ExportNotebookOutputBuilder {
         self.notebook_metadata = input;
         self
     }
+    /// <p>The notebook metadata, including notebook ID, notebook name, and workgroup name.</p>
+    pub fn get_notebook_metadata(&self) -> &::std::option::Option<crate::types::NotebookMetadata> {
+        &self.notebook_metadata
+    }
     /// <p>The content of the exported notebook.</p>
     pub fn payload(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.payload = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl ExportNotebookOutputBuilder {
     pub fn set_payload(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.payload = input;
         self
+    }
+    /// <p>The content of the exported notebook.</p>
+    pub fn get_payload(&self) -> &::std::option::Option<::std::string::String> {
+        &self.payload
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

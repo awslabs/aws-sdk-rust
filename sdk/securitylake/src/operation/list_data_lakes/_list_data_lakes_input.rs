@@ -48,6 +48,10 @@ impl ListDataLakesInputBuilder {
         self.regions = input;
         self
     }
+    /// <p>The list of regions where Security Lake is enabled.</p>
+    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.regions
+    }
     /// Consumes the builder and constructs a [`ListDataLakesInput`](crate::operation::list_data_lakes::ListDataLakesInput).
     pub fn build(
         self,

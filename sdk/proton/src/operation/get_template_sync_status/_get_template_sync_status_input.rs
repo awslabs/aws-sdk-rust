@@ -63,6 +63,10 @@ impl GetTemplateSyncStatusInputBuilder {
         self.template_name = input;
         self
     }
+    /// <p>The template name.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
     /// <p>The template type.</p>
     pub fn template_type(mut self, input: crate::types::TemplateType) -> Self {
         self.template_type = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl GetTemplateSyncStatusInputBuilder {
     ) -> Self {
         self.template_type = input;
         self
+    }
+    /// <p>The template type.</p>
+    pub fn get_template_type(&self) -> &::std::option::Option<crate::types::TemplateType> {
+        &self.template_type
     }
     /// <p>The template major version.</p>
     pub fn template_version(
@@ -91,6 +99,10 @@ impl GetTemplateSyncStatusInputBuilder {
     ) -> Self {
         self.template_version = input;
         self
+    }
+    /// <p>The template major version.</p>
+    pub fn get_template_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_version
     }
     /// Consumes the builder and constructs a [`GetTemplateSyncStatusInput`](crate::operation::get_template_sync_status::GetTemplateSyncStatusInput).
     pub fn build(

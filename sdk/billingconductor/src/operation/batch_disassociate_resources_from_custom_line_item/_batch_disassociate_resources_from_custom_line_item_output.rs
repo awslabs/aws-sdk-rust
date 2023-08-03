@@ -78,6 +78,13 @@ impl BatchDisassociateResourcesFromCustomLineItemOutputBuilder {
         self.successfully_disassociated_resources = input;
         self
     }
+    /// <p> A list of <code>DisassociateResourceResponseElement</code> for each resource that's been disassociated from a percentage custom line item successfully. </p>
+    pub fn get_successfully_disassociated_resources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DisassociateResourceResponseElement>>
+    {
+        &self.successfully_disassociated_resources
+    }
     /// Appends an item to `failed_disassociated_resources`.
     ///
     /// To override the contents of this collection use [`set_failed_disassociated_resources`](Self::set_failed_disassociated_resources).
@@ -101,6 +108,13 @@ impl BatchDisassociateResourcesFromCustomLineItemOutputBuilder {
     ) -> Self {
         self.failed_disassociated_resources = input;
         self
+    }
+    /// <p> A list of <code>DisassociateResourceResponseElement</code> for each resource that failed disassociation from a percentage custom line item. </p>
+    pub fn get_failed_disassociated_resources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DisassociateResourceResponseElement>>
+    {
+        &self.failed_disassociated_resources
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

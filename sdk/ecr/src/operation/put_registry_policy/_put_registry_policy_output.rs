@@ -55,6 +55,10 @@ impl PutRegistryPolicyOutputBuilder {
         self.registry_id = input;
         self
     }
+    /// <p>The registry ID.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_id
+    }
     /// <p>The JSON policy text for your registry.</p>
     pub fn policy_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_text = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl PutRegistryPolicyOutputBuilder {
     pub fn set_policy_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_text = input;
         self
+    }
+    /// <p>The JSON policy text for your registry.</p>
+    pub fn get_policy_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_text
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

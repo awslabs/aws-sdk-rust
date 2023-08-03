@@ -141,6 +141,10 @@ impl CreateTrafficMirrorFilterRuleInputBuilder {
         self.traffic_mirror_filter_id = input;
         self
     }
+    /// <p>The ID of the filter that this rule is associated with.</p>
+    pub fn get_traffic_mirror_filter_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.traffic_mirror_filter_id
+    }
     /// <p>The type of traffic.</p>
     pub fn traffic_direction(mut self, input: crate::types::TrafficDirection) -> Self {
         self.traffic_direction = ::std::option::Option::Some(input);
@@ -154,6 +158,10 @@ impl CreateTrafficMirrorFilterRuleInputBuilder {
         self.traffic_direction = input;
         self
     }
+    /// <p>The type of traffic.</p>
+    pub fn get_traffic_direction(&self) -> &::std::option::Option<crate::types::TrafficDirection> {
+        &self.traffic_direction
+    }
     /// <p>The number of the Traffic Mirror rule. This number must be unique for each Traffic Mirror rule in a given direction. The rules are processed in ascending order by rule number.</p>
     pub fn rule_number(mut self, input: i32) -> Self {
         self.rule_number = ::std::option::Option::Some(input);
@@ -163,6 +171,10 @@ impl CreateTrafficMirrorFilterRuleInputBuilder {
     pub fn set_rule_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.rule_number = input;
         self
+    }
+    /// <p>The number of the Traffic Mirror rule. This number must be unique for each Traffic Mirror rule in a given direction. The rules are processed in ascending order by rule number.</p>
+    pub fn get_rule_number(&self) -> &::std::option::Option<i32> {
+        &self.rule_number
     }
     /// <p>The action to take on the filtered traffic.</p>
     pub fn rule_action(mut self, input: crate::types::TrafficMirrorRuleAction) -> Self {
@@ -176,6 +188,10 @@ impl CreateTrafficMirrorFilterRuleInputBuilder {
     ) -> Self {
         self.rule_action = input;
         self
+    }
+    /// <p>The action to take on the filtered traffic.</p>
+    pub fn get_rule_action(&self) -> &::std::option::Option<crate::types::TrafficMirrorRuleAction> {
+        &self.rule_action
     }
     /// <p>The destination port range.</p>
     pub fn destination_port_range(
@@ -193,6 +209,12 @@ impl CreateTrafficMirrorFilterRuleInputBuilder {
         self.destination_port_range = input;
         self
     }
+    /// <p>The destination port range.</p>
+    pub fn get_destination_port_range(
+        &self,
+    ) -> &::std::option::Option<crate::types::TrafficMirrorPortRangeRequest> {
+        &self.destination_port_range
+    }
     /// <p>The source port range.</p>
     pub fn source_port_range(mut self, input: crate::types::TrafficMirrorPortRangeRequest) -> Self {
         self.source_port_range = ::std::option::Option::Some(input);
@@ -206,6 +228,12 @@ impl CreateTrafficMirrorFilterRuleInputBuilder {
         self.source_port_range = input;
         self
     }
+    /// <p>The source port range.</p>
+    pub fn get_source_port_range(
+        &self,
+    ) -> &::std::option::Option<crate::types::TrafficMirrorPortRangeRequest> {
+        &self.source_port_range
+    }
     /// <p>The protocol, for example UDP, to assign to the Traffic Mirror rule.</p>
     /// <p>For information about the protocol value, see <a href="https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a> on the Internet Assigned Numbers Authority (IANA) website.</p>
     pub fn protocol(mut self, input: i32) -> Self {
@@ -217,6 +245,11 @@ impl CreateTrafficMirrorFilterRuleInputBuilder {
     pub fn set_protocol(mut self, input: ::std::option::Option<i32>) -> Self {
         self.protocol = input;
         self
+    }
+    /// <p>The protocol, for example UDP, to assign to the Traffic Mirror rule.</p>
+    /// <p>For information about the protocol value, see <a href="https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a> on the Internet Assigned Numbers Authority (IANA) website.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<i32> {
+        &self.protocol
     }
     /// <p>The destination CIDR block to assign to the Traffic Mirror rule.</p>
     pub fn destination_cidr_block(
@@ -234,6 +267,10 @@ impl CreateTrafficMirrorFilterRuleInputBuilder {
         self.destination_cidr_block = input;
         self
     }
+    /// <p>The destination CIDR block to assign to the Traffic Mirror rule.</p>
+    pub fn get_destination_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_cidr_block
+    }
     /// <p>The source CIDR block to assign to the Traffic Mirror rule.</p>
     pub fn source_cidr_block(
         mut self,
@@ -250,6 +287,10 @@ impl CreateTrafficMirrorFilterRuleInputBuilder {
         self.source_cidr_block = input;
         self
     }
+    /// <p>The source CIDR block to assign to the Traffic Mirror rule.</p>
+    pub fn get_source_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_cidr_block
+    }
     /// <p>The description of the Traffic Mirror rule.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -259,6 +300,10 @@ impl CreateTrafficMirrorFilterRuleInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the Traffic Mirror rule.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -270,6 +315,10 @@ impl CreateTrafficMirrorFilterRuleInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -279,6 +328,10 @@ impl CreateTrafficMirrorFilterRuleInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateTrafficMirrorFilterRuleInput`](crate::operation::create_traffic_mirror_filter_rule::CreateTrafficMirrorFilterRuleInput).
     pub fn build(

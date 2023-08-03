@@ -100,6 +100,10 @@ impl GetQueryResultsOutputBuilder {
         self.query_status = input;
         self
     }
+    /// <p>The status of the query. Values include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code>.</p>
+    pub fn get_query_status(&self) -> &::std::option::Option<crate::types::QueryStatus> {
+        &self.query_status
+    }
     /// <p>Shows the count of query results.</p>
     pub fn query_statistics(mut self, input: crate::types::QueryStatistics) -> Self {
         self.query_statistics = ::std::option::Option::Some(input);
@@ -112,6 +116,10 @@ impl GetQueryResultsOutputBuilder {
     ) -> Self {
         self.query_statistics = input;
         self
+    }
+    /// <p>Shows the count of query results.</p>
+    pub fn get_query_statistics(&self) -> &::std::option::Option<crate::types::QueryStatistics> {
+        &self.query_statistics
     }
     /// Appends an item to `query_result_rows`.
     ///
@@ -143,6 +151,18 @@ impl GetQueryResultsOutputBuilder {
         self.query_result_rows = input;
         self
     }
+    /// <p>Contains the individual event results of the query.</p>
+    pub fn get_query_result_rows(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<
+            ::std::vec::Vec<
+                ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+            >,
+        >,
+    > {
+        &self.query_result_rows
+    }
     /// <p>A token you can use to get the next page of query results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -152,6 +172,10 @@ impl GetQueryResultsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token you can use to get the next page of query results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The error message returned if a query failed.</p>
     pub fn error_message(
@@ -168,6 +192,10 @@ impl GetQueryResultsOutputBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>The error message returned if a query failed.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

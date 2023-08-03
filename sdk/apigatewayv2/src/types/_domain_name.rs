@@ -93,6 +93,12 @@ impl DomainNameBuilder {
         self.api_mapping_selection_expression = input;
         self
     }
+    /// <p>The API mapping selection expression.</p>
+    pub fn get_api_mapping_selection_expression(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.api_mapping_selection_expression
+    }
     /// <p>The name of the DomainName resource.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
@@ -102,6 +108,10 @@ impl DomainNameBuilder {
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
+    }
+    /// <p>The name of the DomainName resource.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
     }
     /// Appends an item to `domain_name_configurations`.
     ///
@@ -125,6 +135,12 @@ impl DomainNameBuilder {
         self.domain_name_configurations = input;
         self
     }
+    /// <p>The domain name configurations.</p>
+    pub fn get_domain_name_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainNameConfiguration>> {
+        &self.domain_name_configurations
+    }
     /// <p>The mutual TLS authentication configuration for a custom domain name.</p>
     pub fn mutual_tls_authentication(
         mut self,
@@ -140,6 +156,12 @@ impl DomainNameBuilder {
     ) -> Self {
         self.mutual_tls_authentication = input;
         self
+    }
+    /// <p>The mutual TLS authentication configuration for a custom domain name.</p>
+    pub fn get_mutual_tls_authentication(
+        &self,
+    ) -> &::std::option::Option<crate::types::MutualTlsAuthentication> {
+        &self.mutual_tls_authentication
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -165,6 +187,14 @@ impl DomainNameBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The collection of tags associated with a domain name.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`DomainName`](crate::types::DomainName).
     pub fn build(self) -> crate::types::DomainName {

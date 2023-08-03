@@ -36,6 +36,12 @@ impl GetResourcePolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetResourcePolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_resource_policy::builders::GetResourcePolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +131,9 @@ impl GetResourcePolicyFluentBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
+    }
+    /// <p>The ARN of the Glue resource for which to retrieve the resource policy. If not supplied, the Data Catalog resource policy is returned. Use <code>GetResourcePolicies</code> to view all existing resource policies. For more information see <a href="https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html">Specifying Glue Resource ARNs</a>. </p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
     }
 }

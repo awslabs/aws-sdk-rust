@@ -36,6 +36,12 @@ impl UpdateEncryptionKeyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateEncryptionKey as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_encryption_key::builders::UpdateEncryptionKeyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateEncryptionKeyFluentBuilder {
         self.inner = self.inner.set_kms_key_id(input);
         self
     }
+    /// <p>A KMS key ID for the encryption key.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key_id()
+    }
     /// <p>The scan type for the encryption key.</p>
     pub fn scan_type(mut self, input: crate::types::ScanType) -> Self {
         self.inner = self.inner.scan_type(input);
@@ -135,6 +145,10 @@ impl UpdateEncryptionKeyFluentBuilder {
     pub fn set_scan_type(mut self, input: ::std::option::Option<crate::types::ScanType>) -> Self {
         self.inner = self.inner.set_scan_type(input);
         self
+    }
+    /// <p>The scan type for the encryption key.</p>
+    pub fn get_scan_type(&self) -> &::std::option::Option<crate::types::ScanType> {
+        self.inner.get_scan_type()
     }
     /// <p>The resource type for the encryption key.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
@@ -148,5 +162,9 @@ impl UpdateEncryptionKeyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
+    }
+    /// <p>The resource type for the encryption key.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        self.inner.get_resource_type()
     }
 }

@@ -48,6 +48,10 @@ impl FunctionAssociationBuilder {
         self.function_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the function.</p>
+    pub fn get_function_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.function_arn
+    }
     /// <p>The event type of the function, either <code>viewer-request</code> or <code>viewer-response</code>. You cannot use origin-facing event types (<code>origin-request</code> and <code>origin-response</code>) with a CloudFront function.</p>
     pub fn event_type(mut self, input: crate::types::EventType) -> Self {
         self.event_type = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl FunctionAssociationBuilder {
     pub fn set_event_type(mut self, input: ::std::option::Option<crate::types::EventType>) -> Self {
         self.event_type = input;
         self
+    }
+    /// <p>The event type of the function, either <code>viewer-request</code> or <code>viewer-response</code>. You cannot use origin-facing event types (<code>origin-request</code> and <code>origin-response</code>) with a CloudFront function.</p>
+    pub fn get_event_type(&self) -> &::std::option::Option<crate::types::EventType> {
+        &self.event_type
     }
     /// Consumes the builder and constructs a [`FunctionAssociation`](crate::types::FunctionAssociation).
     pub fn build(self) -> crate::types::FunctionAssociation {

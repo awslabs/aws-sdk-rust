@@ -44,6 +44,11 @@ impl GitConfigForUpdateBuilder {
         self.secret_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the git repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in the following format:</p>
+    /// <p> <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code> </p>
+    pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_arn
+    }
     /// Consumes the builder and constructs a [`GitConfigForUpdate`](crate::types::GitConfigForUpdate).
     pub fn build(self) -> crate::types::GitConfigForUpdate {
         crate::types::GitConfigForUpdate {

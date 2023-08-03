@@ -63,6 +63,10 @@ impl DescribeRefreshScheduleInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The ID of the dataset.</p>
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl DescribeRefreshScheduleInputBuilder {
         self.data_set_id = input;
         self
     }
+    /// <p>The ID of the dataset.</p>
+    pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_set_id
+    }
     /// <p>The ID of the refresh schedule.</p>
     pub fn schedule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule_id = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl DescribeRefreshScheduleInputBuilder {
     pub fn set_schedule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schedule_id = input;
         self
+    }
+    /// <p>The ID of the refresh schedule.</p>
+    pub fn get_schedule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schedule_id
     }
     /// Consumes the builder and constructs a [`DescribeRefreshScheduleInput`](crate::operation::describe_refresh_schedule::DescribeRefreshScheduleInput).
     pub fn build(

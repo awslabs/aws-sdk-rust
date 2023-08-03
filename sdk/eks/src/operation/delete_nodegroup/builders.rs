@@ -36,6 +36,12 @@ impl DeleteNodegroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteNodegroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_nodegroup::builders::DeleteNodegroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DeleteNodegroupFluentBuilder {
         self.inner = self.inner.set_cluster_name(input);
         self
     }
+    /// <p>The name of the Amazon EKS cluster that is associated with your node group.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_name()
+    }
     /// <p>The name of the node group to delete.</p>
     pub fn nodegroup_name(
         mut self,
@@ -141,5 +151,9 @@ impl DeleteNodegroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_nodegroup_name(input);
         self
+    }
+    /// <p>The name of the node group to delete.</p>
+    pub fn get_nodegroup_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_nodegroup_name()
     }
 }

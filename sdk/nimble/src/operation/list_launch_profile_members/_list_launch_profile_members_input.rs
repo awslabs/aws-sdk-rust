@@ -71,6 +71,10 @@ impl ListLaunchProfileMembersInputBuilder {
         self.launch_profile_id = input;
         self
     }
+    /// <p>The ID of the launch profile used to control access from the streaming session.</p>
+    pub fn get_launch_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch_profile_id
+    }
     /// <p>The max number of results to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -80,6 +84,10 @@ impl ListLaunchProfileMembersInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The max number of results to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -91,6 +99,10 @@ impl ListLaunchProfileMembersInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The studio ID. </p>
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
@@ -100,6 +112,10 @@ impl ListLaunchProfileMembersInputBuilder {
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.studio_id = input;
         self
+    }
+    /// <p>The studio ID. </p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_id
     }
     /// Consumes the builder and constructs a [`ListLaunchProfileMembersInput`](crate::operation::list_launch_profile_members::ListLaunchProfileMembersInput).
     pub fn build(

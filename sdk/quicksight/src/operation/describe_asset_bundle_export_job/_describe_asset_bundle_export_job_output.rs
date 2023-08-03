@@ -164,6 +164,13 @@ impl DescribeAssetBundleExportJobOutputBuilder {
         self.job_status = input;
         self
     }
+    /// <p>Indicates the status of a job through its queuing and execution.</p>
+    /// <p>Poll this <code>DescribeAssetBundleExportApi</code> until <code>JobStatus</code> is either <code>SUCCESSFUL</code> or <code>FAILED</code>.</p>
+    pub fn get_job_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::AssetBundleExportJobStatus> {
+        &self.job_status
+    }
     /// <p>The URL to download the exported asset bundle data from.</p>
     /// <p>This URL is available only after the job has succeeded. This URL is valid for 5 minutes after issuance. Call <code>DescribeAssetBundleExportJob</code> again for a fresh URL if needed.</p>
     /// <p>The downloaded asset bundle is a zip file named <code>assetbundle-{jobId}.qs</code>. The file has a <code>.qs</code> extension.</p>
@@ -179,6 +186,13 @@ impl DescribeAssetBundleExportJobOutputBuilder {
     pub fn set_download_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.download_url = input;
         self
+    }
+    /// <p>The URL to download the exported asset bundle data from.</p>
+    /// <p>This URL is available only after the job has succeeded. This URL is valid for 5 minutes after issuance. Call <code>DescribeAssetBundleExportJob</code> again for a fresh URL if needed.</p>
+    /// <p>The downloaded asset bundle is a zip file named <code>assetbundle-{jobId}.qs</code>. The file has a <code>.qs</code> extension.</p>
+    /// <p>This URL can't be used in a <code>StartAssetBundleImportJob</code> API call and should only be used for download purposes.</p>
+    pub fn get_download_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.download_url
     }
     /// Appends an item to `errors`.
     ///
@@ -201,6 +215,13 @@ impl DescribeAssetBundleExportJobOutputBuilder {
         self.errors = input;
         self
     }
+    /// <p>An array of error records that describes any failures that occurred during the export job processing.</p>
+    /// <p>Error records accumulate while the job runs. The complete set of error records is available after the job has completed and failed.</p>
+    pub fn get_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobError>> {
+        &self.errors
+    }
     /// <p>The Amazon Resource Name (ARN) for the export job.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -210,6 +231,10 @@ impl DescribeAssetBundleExportJobOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the export job.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The time that the export job was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -223,6 +248,10 @@ impl DescribeAssetBundleExportJobOutputBuilder {
     ) -> Self {
         self.created_time = input;
         self
+    }
+    /// <p>The time that the export job was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
     }
     /// <p>The ID of the job. The job ID is set when you start a new job with a <code>StartAssetBundleExportJob</code> API call.</p>
     pub fn asset_bundle_export_job_id(
@@ -240,6 +269,10 @@ impl DescribeAssetBundleExportJobOutputBuilder {
         self.asset_bundle_export_job_id = input;
         self
     }
+    /// <p>The ID of the job. The job ID is set when you start a new job with a <code>StartAssetBundleExportJob</code> API call.</p>
+    pub fn get_asset_bundle_export_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_bundle_export_job_id
+    }
     /// <p>The ID of the Amazon Web Services account that the export job was executed in. </p>
     pub fn aws_account_id(
         mut self,
@@ -255,6 +288,10 @@ impl DescribeAssetBundleExportJobOutputBuilder {
     ) -> Self {
         self.aws_account_id = input;
         self
+    }
+    /// <p>The ID of the Amazon Web Services account that the export job was executed in. </p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
     }
     /// Appends an item to `resource_arns`.
     ///
@@ -278,6 +315,12 @@ impl DescribeAssetBundleExportJobOutputBuilder {
         self.resource_arns = input;
         self
     }
+    /// <p>A list of resource ARNs that exported with the job.</p>
+    pub fn get_resource_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resource_arns
+    }
     /// <p>The include dependencies flag.</p>
     pub fn include_all_dependencies(mut self, input: bool) -> Self {
         self.include_all_dependencies = ::std::option::Option::Some(input);
@@ -287,6 +330,10 @@ impl DescribeAssetBundleExportJobOutputBuilder {
     pub fn set_include_all_dependencies(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_all_dependencies = input;
         self
+    }
+    /// <p>The include dependencies flag.</p>
+    pub fn get_include_all_dependencies(&self) -> &::std::option::Option<bool> {
+        &self.include_all_dependencies
     }
     /// <p>The format of the exported asset bundle. A <code>QUICKSIGHT_JSON</code> formatted file can be used to make a <code>StartAssetBundleImportJob</code> API call. A <code>CLOUDFORMATION_JSON</code> formatted file can be used in the CloudFormation console and with the CloudFormation APIs.</p>
     pub fn export_format(mut self, input: crate::types::AssetBundleExportFormat) -> Self {
@@ -300,6 +347,12 @@ impl DescribeAssetBundleExportJobOutputBuilder {
     ) -> Self {
         self.export_format = input;
         self
+    }
+    /// <p>The format of the exported asset bundle. A <code>QUICKSIGHT_JSON</code> formatted file can be used to make a <code>StartAssetBundleImportJob</code> API call. A <code>CLOUDFORMATION_JSON</code> formatted file can be used in the CloudFormation console and with the CloudFormation APIs.</p>
+    pub fn get_export_format(
+        &self,
+    ) -> &::std::option::Option<crate::types::AssetBundleExportFormat> {
+        &self.export_format
     }
     /// <p>The CloudFormation override property configuration for the export job.</p>
     pub fn cloud_formation_override_property_configuration(
@@ -319,6 +372,13 @@ impl DescribeAssetBundleExportJobOutputBuilder {
         self.cloud_formation_override_property_configuration = input;
         self
     }
+    /// <p>The CloudFormation override property configuration for the export job.</p>
+    pub fn get_cloud_formation_override_property_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AssetBundleCloudFormationOverridePropertyConfiguration>
+    {
+        &self.cloud_formation_override_property_configuration
+    }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_id = ::std::option::Option::Some(input.into());
@@ -329,6 +389,10 @@ impl DescribeAssetBundleExportJobOutputBuilder {
         self.request_id = input;
         self
     }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
+    }
     /// <p>The HTTP status of the response.</p>
     pub fn status(mut self, input: i32) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -338,6 +402,10 @@ impl DescribeAssetBundleExportJobOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<i32>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The HTTP status of the response.</p>
+    pub fn get_status(&self) -> &::std::option::Option<i32> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -45,6 +45,12 @@ impl GetUserAccessLoggingSettingsInputBuilder {
         self.user_access_logging_settings_arn = input;
         self
     }
+    /// <p>The ARN of the user access logging settings.</p>
+    pub fn get_user_access_logging_settings_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.user_access_logging_settings_arn
+    }
     /// Consumes the builder and constructs a [`GetUserAccessLoggingSettingsInput`](crate::operation::get_user_access_logging_settings::GetUserAccessLoggingSettingsInput).
     pub fn build(
         self,

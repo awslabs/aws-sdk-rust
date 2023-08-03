@@ -36,6 +36,13 @@ impl DescribeJobDefinitionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeJobDefinitions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_job_definitions::builders::DescribeJobDefinitionsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -148,6 +155,12 @@ impl DescribeJobDefinitionsFluentBuilder {
         self.inner = self.inner.set_job_definitions(input);
         self
     }
+    /// <p>A list of up to 100 job definitions. Each entry in the list can either be an ARN in the format <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code> or a short version using the form <code>${JobDefinitionName}:${Revision}</code>.</p>
+    pub fn get_job_definitions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_job_definitions()
+    }
     /// <p>The maximum number of results returned by <code>DescribeJobDefinitions</code> in paginated output. When this parameter is used, <code>DescribeJobDefinitions</code> only returns <code>maxResults</code> results in a single page and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeJobDefinitions</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>DescribeJobDefinitions</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -157,6 +170,10 @@ impl DescribeJobDefinitionsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results returned by <code>DescribeJobDefinitions</code> in paginated output. When this parameter is used, <code>DescribeJobDefinitions</code> only returns <code>maxResults</code> results in a single page and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeJobDefinitions</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>DescribeJobDefinitions</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>The name of the job definition to describe.</p>
     pub fn job_definition_name(
@@ -174,6 +191,10 @@ impl DescribeJobDefinitionsFluentBuilder {
         self.inner = self.inner.set_job_definition_name(input);
         self
     }
+    /// <p>The name of the job definition to describe.</p>
+    pub fn get_job_definition_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_definition_name()
+    }
     /// <p>The status used to filter job definitions.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.status(input.into());
@@ -183,6 +204,10 @@ impl DescribeJobDefinitionsFluentBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_status(input);
         self
+    }
+    /// <p>The status used to filter job definitions.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_status()
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeJobDefinitions</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p> <note>
     /// <p>Treat this token as an opaque identifier that's only used to retrieve the next items in a list and not for other programmatic purposes.</p>
@@ -197,5 +222,11 @@ impl DescribeJobDefinitionsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeJobDefinitions</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p> <note>
+    /// <p>Treat this token as an opaque identifier that's only used to retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// </note>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

@@ -47,6 +47,10 @@ impl GetAppsListInputBuilder {
         self.list_id = input;
         self
     }
+    /// <p>The ID of the Firewall Manager applications list that you want the details for.</p>
+    pub fn get_list_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.list_id
+    }
     /// <p>Specifies whether the list to retrieve is a default list owned by Firewall Manager.</p>
     pub fn default_list(mut self, input: bool) -> Self {
         self.default_list = ::std::option::Option::Some(input);
@@ -56,6 +60,10 @@ impl GetAppsListInputBuilder {
     pub fn set_default_list(mut self, input: ::std::option::Option<bool>) -> Self {
         self.default_list = input;
         self
+    }
+    /// <p>Specifies whether the list to retrieve is a default list owned by Firewall Manager.</p>
+    pub fn get_default_list(&self) -> &::std::option::Option<bool> {
+        &self.default_list
     }
     /// Consumes the builder and constructs a [`GetAppsListInput`](crate::operation::get_apps_list::GetAppsListInput).
     pub fn build(

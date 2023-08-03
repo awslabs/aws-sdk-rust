@@ -56,6 +56,10 @@ impl OpsItemFilterBuilder {
         self.key = input;
         self
     }
+    /// <p>The name of the filter.</p>
+    pub fn get_key(&self) -> &::std::option::Option<crate::types::OpsItemFilterKey> {
+        &self.key
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -75,6 +79,10 @@ impl OpsItemFilterBuilder {
         self.values = input;
         self
     }
+    /// <p>The filter value.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
+    }
     /// <p>The operator used by the filter call.</p>
     pub fn operator(mut self, input: crate::types::OpsItemFilterOperator) -> Self {
         self.operator = ::std::option::Option::Some(input);
@@ -87,6 +95,10 @@ impl OpsItemFilterBuilder {
     ) -> Self {
         self.operator = input;
         self
+    }
+    /// <p>The operator used by the filter call.</p>
+    pub fn get_operator(&self) -> &::std::option::Option<crate::types::OpsItemFilterOperator> {
+        &self.operator
     }
     /// Consumes the builder and constructs a [`OpsItemFilter`](crate::types::OpsItemFilter).
     pub fn build(self) -> crate::types::OpsItemFilter {

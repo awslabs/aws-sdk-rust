@@ -50,6 +50,10 @@ impl DescribeTableOutputBuilder {
         self.table = input;
         self
     }
+    /// <p>The properties of the table.</p>
+    pub fn get_table(&self) -> &::std::option::Option<crate::types::TableDescription> {
+        &self.table
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

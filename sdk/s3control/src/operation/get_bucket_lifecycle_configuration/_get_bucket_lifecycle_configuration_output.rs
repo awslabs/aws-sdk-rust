@@ -55,6 +55,12 @@ impl GetBucketLifecycleConfigurationOutputBuilder {
         self.rules = input;
         self
     }
+    /// <p>Container for the lifecycle rule of the Outposts bucket.</p>
+    pub fn get_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecycleRule>> {
+        &self.rules
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

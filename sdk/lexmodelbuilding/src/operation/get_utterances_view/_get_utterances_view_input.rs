@@ -56,6 +56,10 @@ impl GetUtterancesViewInputBuilder {
         self.bot_name = input;
         self
     }
+    /// <p>The name of the bot for which utterance information should be returned.</p>
+    pub fn get_bot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_name
+    }
     /// Appends an item to `bot_versions`.
     ///
     /// To override the contents of this collection use [`set_bot_versions`](Self::set_bot_versions).
@@ -75,6 +79,12 @@ impl GetUtterancesViewInputBuilder {
         self.bot_versions = input;
         self
     }
+    /// <p>An array of bot versions for which utterance information should be returned. The limit is 5 versions per request.</p>
+    pub fn get_bot_versions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.bot_versions
+    }
     /// <p>To return utterances that were recognized and handled, use <code>Detected</code>. To return utterances that were not recognized, use <code>Missed</code>.</p>
     pub fn status_type(mut self, input: crate::types::StatusType) -> Self {
         self.status_type = ::std::option::Option::Some(input);
@@ -87,6 +97,10 @@ impl GetUtterancesViewInputBuilder {
     ) -> Self {
         self.status_type = input;
         self
+    }
+    /// <p>To return utterances that were recognized and handled, use <code>Detected</code>. To return utterances that were not recognized, use <code>Missed</code>.</p>
+    pub fn get_status_type(&self) -> &::std::option::Option<crate::types::StatusType> {
+        &self.status_type
     }
     /// Consumes the builder and constructs a [`GetUtterancesViewInput`](crate::operation::get_utterances_view::GetUtterancesViewInput).
     pub fn build(

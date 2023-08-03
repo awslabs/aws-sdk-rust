@@ -86,6 +86,10 @@ impl GetMatchingJobOutputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The ID of the job.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>The current status of the job. Either <code>running</code>, <code>succeeded</code>, <code>queued</code>, or <code>failed</code>.</p>
     pub fn status(mut self, input: crate::types::JobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -95,6 +99,10 @@ impl GetMatchingJobOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the job. Either <code>running</code>, <code>succeeded</code>, <code>queued</code>, or <code>failed</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
+        &self.status
     }
     /// <p>The time at which the job was started.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -109,6 +117,10 @@ impl GetMatchingJobOutputBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The time at which the job was started.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The time at which the job has finished.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -122,6 +134,10 @@ impl GetMatchingJobOutputBuilder {
         self.end_time = input;
         self
     }
+    /// <p>The time at which the job has finished.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>Metrics associated with the execution, specifically total records processed, unique IDs generated, and records the execution skipped.</p>
     pub fn metrics(mut self, input: crate::types::JobMetrics) -> Self {
         self.metrics = ::std::option::Option::Some(input);
@@ -131,6 +147,10 @@ impl GetMatchingJobOutputBuilder {
     pub fn set_metrics(mut self, input: ::std::option::Option<crate::types::JobMetrics>) -> Self {
         self.metrics = input;
         self
+    }
+    /// <p>Metrics associated with the execution, specifically total records processed, unique IDs generated, and records the execution skipped.</p>
+    pub fn get_metrics(&self) -> &::std::option::Option<crate::types::JobMetrics> {
+        &self.metrics
     }
     /// <p>An object containing an error message, if there was an error.</p>
     pub fn error_details(mut self, input: crate::types::ErrorDetails) -> Self {
@@ -144,6 +164,10 @@ impl GetMatchingJobOutputBuilder {
     ) -> Self {
         self.error_details = input;
         self
+    }
+    /// <p>An object containing an error message, if there was an error.</p>
+    pub fn get_error_details(&self) -> &::std::option::Option<crate::types::ErrorDetails> {
+        &self.error_details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

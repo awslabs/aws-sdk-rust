@@ -74,6 +74,14 @@ impl ParameterStringFilterBuilder {
         self.key = input;
         self
     }
+    /// <p>The name of the filter.</p>
+    /// <p>The <code>ParameterStringFilter</code> object is used by the <code>DescribeParameters</code> and <code>GetParametersByPath</code> API operations. However, not all of the pattern values listed for <code>Key</code> can be used with both operations.</p>
+    /// <p>For <code>DescribeParameters</code>, all of the listed patterns are valid except <code>Label</code>.</p>
+    /// <p>For <code>GetParametersByPath</code>, the following patterns listed for <code>Key</code> aren't valid: <code>tag</code>, <code>DataType</code>, <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p>
+    /// <p>For examples of Amazon Web Services CLI commands demonstrating valid parameter filter constructions, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-search.html">Searching for Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>For all filters used with <code>DescribeParameters</code>, valid options include <code>Equals</code> and <code>BeginsWith</code>. The <code>Name</code> filter additionally supports the <code>Contains</code> option. (Exception: For filters using the key <code>Path</code>, valid options include <code>Recursive</code> and <code>OneLevel</code>.)</p>
     /// <p>For filters used with <code>GetParametersByPath</code>, valid options include <code>Equals</code> and <code>BeginsWith</code>. (Exception: For filters using <code>Label</code> as the Key name, the only valid option is <code>Equals</code>.)</p>
     pub fn option(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -85,6 +93,11 @@ impl ParameterStringFilterBuilder {
     pub fn set_option(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.option = input;
         self
+    }
+    /// <p>For all filters used with <code>DescribeParameters</code>, valid options include <code>Equals</code> and <code>BeginsWith</code>. The <code>Name</code> filter additionally supports the <code>Contains</code> option. (Exception: For filters using the key <code>Path</code>, valid options include <code>Recursive</code> and <code>OneLevel</code>.)</p>
+    /// <p>For filters used with <code>GetParametersByPath</code>, valid options include <code>Equals</code> and <code>BeginsWith</code>. (Exception: For filters using <code>Label</code> as the Key name, the only valid option is <code>Equals</code>.)</p>
+    pub fn get_option(&self) -> &::std::option::Option<::std::string::String> {
+        &self.option
     }
     /// Appends an item to `values`.
     ///
@@ -104,6 +117,10 @@ impl ParameterStringFilterBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>The value you want to search for.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`ParameterStringFilter`](crate::types::ParameterStringFilter).
     pub fn build(self) -> crate::types::ParameterStringFilter {

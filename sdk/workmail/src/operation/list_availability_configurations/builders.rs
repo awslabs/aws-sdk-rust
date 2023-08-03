@@ -36,6 +36,10 @@ impl ListAvailabilityConfigurationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListAvailabilityConfigurations as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_availability_configurations::builders::ListAvailabilityConfigurationsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +142,10 @@ impl ListAvailabilityConfigurationsFluentBuilder {
         self.inner = self.inner.set_organization_id(input);
         self
     }
+    /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code>'s will be listed.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organization_id()
+    }
     /// <p>The maximum number of results to return in a single call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -148,6 +156,10 @@ impl ListAvailabilityConfigurationsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return in a single call.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token to use to retrieve the next page of results. The first call does not require a token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -157,5 +169,9 @@ impl ListAvailabilityConfigurationsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token to use to retrieve the next page of results. The first call does not require a token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

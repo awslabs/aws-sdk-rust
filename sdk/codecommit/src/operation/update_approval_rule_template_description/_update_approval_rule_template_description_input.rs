@@ -53,6 +53,10 @@ impl UpdateApprovalRuleTemplateDescriptionInputBuilder {
         self.approval_rule_template_name = input;
         self
     }
+    /// <p>The name of the template for which you want to update the description.</p>
+    pub fn get_approval_rule_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.approval_rule_template_name
+    }
     /// <p>The updated description of the approval rule template.</p>
     pub fn approval_rule_template_description(
         mut self,
@@ -68,6 +72,12 @@ impl UpdateApprovalRuleTemplateDescriptionInputBuilder {
     ) -> Self {
         self.approval_rule_template_description = input;
         self
+    }
+    /// <p>The updated description of the approval rule template.</p>
+    pub fn get_approval_rule_template_description(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.approval_rule_template_description
     }
     /// Consumes the builder and constructs a [`UpdateApprovalRuleTemplateDescriptionInput`](crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescriptionInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescriptionInput, ::aws_smithy_http::operation::error::BuildError>{

@@ -104,6 +104,10 @@ impl EdgeBuilder {
         self.reference_id = input;
         self
     }
+    /// <p>Identifier of the edge. Unique within a service map.</p>
+    pub fn get_reference_id(&self) -> &::std::option::Option<i32> {
+        &self.reference_id
+    }
     /// <p>The start time of the first segment on the edge.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -116,6 +120,10 @@ impl EdgeBuilder {
     ) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>The start time of the first segment on the edge.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p>The end time of the last segment on the edge.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -130,6 +138,10 @@ impl EdgeBuilder {
         self.end_time = input;
         self
     }
+    /// <p>The end time of the last segment on the edge.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>Response statistics for segments on the edge.</p>
     pub fn summary_statistics(mut self, input: crate::types::EdgeStatistics) -> Self {
         self.summary_statistics = ::std::option::Option::Some(input);
@@ -142,6 +154,10 @@ impl EdgeBuilder {
     ) -> Self {
         self.summary_statistics = input;
         self
+    }
+    /// <p>Response statistics for segments on the edge.</p>
+    pub fn get_summary_statistics(&self) -> &::std::option::Option<crate::types::EdgeStatistics> {
+        &self.summary_statistics
     }
     /// Appends an item to `response_time_histogram`.
     ///
@@ -162,6 +178,12 @@ impl EdgeBuilder {
         self.response_time_histogram = input;
         self
     }
+    /// <p>A histogram that maps the spread of client response times on an edge. Only populated for synchronous edges.</p>
+    pub fn get_response_time_histogram(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HistogramEntry>> {
+        &self.response_time_histogram
+    }
     /// Appends an item to `aliases`.
     ///
     /// To override the contents of this collection use [`set_aliases`](Self::set_aliases).
@@ -181,6 +203,10 @@ impl EdgeBuilder {
         self.aliases = input;
         self
     }
+    /// <p>Aliases for the edge.</p>
+    pub fn get_aliases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Alias>> {
+        &self.aliases
+    }
     /// <p>Describes an asynchronous connection, with a value of <code>link</code>.</p>
     pub fn edge_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.edge_type = ::std::option::Option::Some(input.into());
@@ -190,6 +216,10 @@ impl EdgeBuilder {
     pub fn set_edge_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.edge_type = input;
         self
+    }
+    /// <p>Describes an asynchronous connection, with a value of <code>link</code>.</p>
+    pub fn get_edge_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.edge_type
     }
     /// Appends an item to `received_event_age_histogram`.
     ///
@@ -209,6 +239,12 @@ impl EdgeBuilder {
     ) -> Self {
         self.received_event_age_histogram = input;
         self
+    }
+    /// <p>A histogram that maps the spread of event age when received by consumers. Age is calculated each time an event is received. Only populated when <i>EdgeType</i> is <code>link</code>.</p>
+    pub fn get_received_event_age_histogram(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HistogramEntry>> {
+        &self.received_event_age_histogram
     }
     /// Consumes the builder and constructs a [`Edge`](crate::types::Edge).
     pub fn build(self) -> crate::types::Edge {

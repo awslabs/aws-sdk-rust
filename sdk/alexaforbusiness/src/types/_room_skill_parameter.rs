@@ -54,6 +54,10 @@ impl RoomSkillParameterBuilder {
         self.parameter_key = input;
         self
     }
+    /// <p>The parameter key of a room skill parameter. ParameterKey is an enumerated type that only takes “DEFAULT” or “SCOPE” as valid values.</p>
+    pub fn get_parameter_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_key
+    }
     /// <p>The parameter value of a room skill parameter.</p>
     pub fn parameter_value(
         mut self,
@@ -69,6 +73,10 @@ impl RoomSkillParameterBuilder {
     ) -> Self {
         self.parameter_value = input;
         self
+    }
+    /// <p>The parameter value of a room skill parameter.</p>
+    pub fn get_parameter_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_value
     }
     /// Consumes the builder and constructs a [`RoomSkillParameter`](crate::types::RoomSkillParameter).
     pub fn build(self) -> crate::types::RoomSkillParameter {

@@ -60,6 +60,10 @@ impl ListWorkflowStepGroupsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `workflow_step_groups_summary`.
     ///
     /// To override the contents of this collection use [`set_workflow_step_groups_summary`](Self::set_workflow_step_groups_summary).
@@ -81,6 +85,12 @@ impl ListWorkflowStepGroupsOutputBuilder {
     ) -> Self {
         self.workflow_step_groups_summary = input;
         self
+    }
+    /// <p>The summary of step groups in a migration workflow.</p>
+    pub fn get_workflow_step_groups_summary(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepGroupSummary>> {
+        &self.workflow_step_groups_summary
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

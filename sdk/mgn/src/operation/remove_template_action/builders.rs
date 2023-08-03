@@ -36,6 +36,12 @@ impl RemoveTemplateActionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RemoveTemplateAction as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::remove_template_action::builders::RemoveTemplateActionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,12 @@ impl RemoveTemplateActionFluentBuilder {
         self.inner = self.inner.set_launch_configuration_template_id(input);
         self
     }
+    /// <p>Launch configuration template ID of the post migration custom action to remove.</p>
+    pub fn get_launch_configuration_template_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_launch_configuration_template_id()
+    }
     /// <p>Template post migration custom action ID to remove.</p>
     pub fn action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.action_id(input.into());
@@ -141,5 +153,9 @@ impl RemoveTemplateActionFluentBuilder {
     pub fn set_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_action_id(input);
         self
+    }
+    /// <p>Template post migration custom action ID to remove.</p>
+    pub fn get_action_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_action_id()
     }
 }

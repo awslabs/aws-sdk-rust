@@ -48,6 +48,10 @@ impl SetActiveReceiptRuleSetInputBuilder {
         self.rule_set_name = input;
         self
     }
+    /// <p>The name of the receipt rule set to make active. Setting this value to null disables all email receiving.</p>
+    pub fn get_rule_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_set_name
+    }
     /// Consumes the builder and constructs a [`SetActiveReceiptRuleSetInput`](crate::operation::set_active_receipt_rule_set::SetActiveReceiptRuleSetInput).
     pub fn build(
         self,

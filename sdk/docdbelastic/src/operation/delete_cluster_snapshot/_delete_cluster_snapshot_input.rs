@@ -41,6 +41,10 @@ impl DeleteClusterSnapshotInputBuilder {
         self.snapshot_arn = input;
         self
     }
+    /// <p>The arn of the Elastic DocumentDB snapshot that is to be deleted.</p>
+    pub fn get_snapshot_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_arn
+    }
     /// Consumes the builder and constructs a [`DeleteClusterSnapshotInput`](crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotInput).
     pub fn build(
         self,

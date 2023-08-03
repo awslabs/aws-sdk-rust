@@ -85,6 +85,21 @@ impl ProcessTypeBuilder {
         self.process_name = input;
         self
     }
+    /// <p>One of the following processes:</p>
+    /// <ul>
+    /// <li> <p> <code>Launch</code> </p> </li>
+    /// <li> <p> <code>Terminate</code> </p> </li>
+    /// <li> <p> <code>AddToLoadBalancer</code> </p> </li>
+    /// <li> <p> <code>AlarmNotification</code> </p> </li>
+    /// <li> <p> <code>AZRebalance</code> </p> </li>
+    /// <li> <p> <code>HealthCheck</code> </p> </li>
+    /// <li> <p> <code>InstanceRefresh</code> </p> </li>
+    /// <li> <p> <code>ReplaceUnhealthy</code> </p> </li>
+    /// <li> <p> <code>ScheduledActions</code> </p> </li>
+    /// </ul>
+    pub fn get_process_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.process_name
+    }
     /// Consumes the builder and constructs a [`ProcessType`](crate::types::ProcessType).
     pub fn build(self) -> crate::types::ProcessType {
         crate::types::ProcessType {

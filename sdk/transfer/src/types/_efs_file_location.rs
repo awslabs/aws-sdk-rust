@@ -55,6 +55,10 @@ impl EfsFileLocationBuilder {
         self.file_system_id = input;
         self
     }
+    /// <p>The identifier of the file system, assigned by Amazon EFS.</p>
+    pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_system_id
+    }
     /// <p>The pathname for the folder being used by a workflow.</p>
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl EfsFileLocationBuilder {
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path = input;
         self
+    }
+    /// <p>The pathname for the folder being used by a workflow.</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
     }
     /// Consumes the builder and constructs a [`EfsFileLocation`](crate::types::EfsFileLocation).
     pub fn build(self) -> crate::types::EfsFileLocation {

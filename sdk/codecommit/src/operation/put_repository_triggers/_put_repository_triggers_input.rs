@@ -56,6 +56,10 @@ impl PutRepositoryTriggersInputBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name of the repository where you want to create or update the trigger.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// Appends an item to `triggers`.
     ///
     /// To override the contents of this collection use [`set_triggers`](Self::set_triggers).
@@ -74,6 +78,12 @@ impl PutRepositoryTriggersInputBuilder {
     ) -> Self {
         self.triggers = input;
         self
+    }
+    /// <p>The JSON block of configuration information for each trigger.</p>
+    pub fn get_triggers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositoryTrigger>> {
+        &self.triggers
     }
     /// Consumes the builder and constructs a [`PutRepositoryTriggersInput`](crate::operation::put_repository_triggers::PutRepositoryTriggersInput).
     pub fn build(

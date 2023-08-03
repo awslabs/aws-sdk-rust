@@ -48,6 +48,10 @@ impl InventoryGroupBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the group.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -66,6 +70,12 @@ impl InventoryGroupBuilder {
     ) -> Self {
         self.filters = input;
         self
+    }
+    /// <p>Filters define the criteria for the group. The <code>matchingCount</code> field displays the number of resources that match the criteria. The <code>notMatchingCount</code> field displays the number of resources that don't match the criteria. </p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryFilter>> {
+        &self.filters
     }
     /// Consumes the builder and constructs a [`InventoryGroup`](crate::types::InventoryGroup).
     pub fn build(self) -> crate::types::InventoryGroup {

@@ -46,6 +46,10 @@ impl DeleteExperimentInputBuilder {
         self.experiment_name = input;
         self
     }
+    /// <p>The name of the experiment to delete.</p>
+    pub fn get_experiment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.experiment_name
+    }
     /// Consumes the builder and constructs a [`DeleteExperimentInput`](crate::operation::delete_experiment::DeleteExperimentInput).
     pub fn build(
         self,

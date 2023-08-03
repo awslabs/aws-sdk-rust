@@ -60,6 +60,12 @@ impl PendingCloudwatchLogsExportsBuilder {
         self.log_types_to_enable = input;
         self
     }
+    /// <p>Log types that are in the process of being deactivated. After they are deactivated, these log types aren't exported to CloudWatch Logs.</p>
+    pub fn get_log_types_to_enable(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.log_types_to_enable
+    }
     /// Appends an item to `log_types_to_disable`.
     ///
     /// To override the contents of this collection use [`set_log_types_to_disable`](Self::set_log_types_to_disable).
@@ -81,6 +87,12 @@ impl PendingCloudwatchLogsExportsBuilder {
     ) -> Self {
         self.log_types_to_disable = input;
         self
+    }
+    /// <p>Log types that are in the process of being enabled. After they are enabled, these log types are exported to CloudWatch Logs.</p>
+    pub fn get_log_types_to_disable(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.log_types_to_disable
     }
     /// Consumes the builder and constructs a [`PendingCloudwatchLogsExports`](crate::types::PendingCloudwatchLogsExports).
     pub fn build(self) -> crate::types::PendingCloudwatchLogsExports {

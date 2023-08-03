@@ -64,6 +64,10 @@ impl CodeFilePathBuilder {
         self.file_name = input;
         self
     }
+    /// <p>The name of the file the code vulnerability was found in.</p>
+    pub fn get_file_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_name
+    }
     /// <p>The file path to the code that a vulnerability was found in.</p>
     pub fn file_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_path = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl CodeFilePathBuilder {
     pub fn set_file_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_path = input;
         self
+    }
+    /// <p>The file path to the code that a vulnerability was found in.</p>
+    pub fn get_file_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_path
     }
     /// <p>The line number of the first line of code that a vulnerability was found in.</p>
     pub fn start_line(mut self, input: i32) -> Self {
@@ -84,6 +92,10 @@ impl CodeFilePathBuilder {
         self.start_line = input;
         self
     }
+    /// <p>The line number of the first line of code that a vulnerability was found in.</p>
+    pub fn get_start_line(&self) -> &::std::option::Option<i32> {
+        &self.start_line
+    }
     /// <p>The line number of the last line of code that a vulnerability was found in.</p>
     pub fn end_line(mut self, input: i32) -> Self {
         self.end_line = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl CodeFilePathBuilder {
     pub fn set_end_line(mut self, input: ::std::option::Option<i32>) -> Self {
         self.end_line = input;
         self
+    }
+    /// <p>The line number of the last line of code that a vulnerability was found in.</p>
+    pub fn get_end_line(&self) -> &::std::option::Option<i32> {
+        &self.end_line
     }
     /// Consumes the builder and constructs a [`CodeFilePath`](crate::types::CodeFilePath).
     pub fn build(self) -> crate::types::CodeFilePath {

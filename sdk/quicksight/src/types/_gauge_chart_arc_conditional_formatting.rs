@@ -45,6 +45,12 @@ impl GaugeChartArcConditionalFormattingBuilder {
         self.foreground_color = input;
         self
     }
+    /// <p>The conditional formatting of the arc foreground color.</p>
+    pub fn get_foreground_color(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConditionalFormattingColor> {
+        &self.foreground_color
+    }
     /// Consumes the builder and constructs a [`GaugeChartArcConditionalFormatting`](crate::types::GaugeChartArcConditionalFormatting).
     pub fn build(self) -> crate::types::GaugeChartArcConditionalFormatting {
         crate::types::GaugeChartArcConditionalFormatting {

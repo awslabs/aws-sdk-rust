@@ -55,6 +55,10 @@ impl CreateUploadUrlOutputBuilder {
         self.import_id = input;
         self
     }
+    /// <p>An identifier for a unique import job. Use it when you call the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_StartImport.html">StartImport</a> operation.</p>
+    pub fn get_import_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.import_id
+    }
     /// <p>A pre-signed S3 write URL. Upload the zip archive file that contains the definition of your bot or bot locale.</p>
     pub fn upload_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upload_url = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl CreateUploadUrlOutputBuilder {
     pub fn set_upload_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.upload_url = input;
         self
+    }
+    /// <p>A pre-signed S3 write URL. Upload the zip archive file that contains the definition of your bot or bot locale.</p>
+    pub fn get_upload_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.upload_url
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

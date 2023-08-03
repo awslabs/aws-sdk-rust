@@ -55,6 +55,10 @@ impl ModifySnapshotScheduleInputBuilder {
         self.schedule_identifier = input;
         self
     }
+    /// <p>A unique alphanumeric identifier of the schedule to modify.</p>
+    pub fn get_schedule_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schedule_identifier
+    }
     /// Appends an item to `schedule_definitions`.
     ///
     /// To override the contents of this collection use [`set_schedule_definitions`](Self::set_schedule_definitions).
@@ -76,6 +80,12 @@ impl ModifySnapshotScheduleInputBuilder {
     ) -> Self {
         self.schedule_definitions = input;
         self
+    }
+    /// <p>An updated list of schedule definitions. A schedule definition is made up of schedule expressions, for example, "cron(30 12 *)" or "rate(12 hours)".</p>
+    pub fn get_schedule_definitions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.schedule_definitions
     }
     /// Consumes the builder and constructs a [`ModifySnapshotScheduleInput`](crate::operation::modify_snapshot_schedule::ModifySnapshotScheduleInput).
     pub fn build(

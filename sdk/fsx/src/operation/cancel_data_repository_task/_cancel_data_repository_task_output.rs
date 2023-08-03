@@ -89,6 +89,20 @@ impl CancelDataRepositoryTaskOutputBuilder {
         self.lifecycle = input;
         self
     }
+    /// <p>The lifecycle status of the data repository task, as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>PENDING</code> - Amazon FSx has not started the task.</p> </li>
+    /// <li> <p> <code>EXECUTING</code> - Amazon FSx is processing the task.</p> </li>
+    /// <li> <p> <code>FAILED</code> - Amazon FSx was not able to complete the task. For example, there may be files the task failed to process. The <code>DataRepositoryTaskFailureDetails</code> property provides more information about task failures.</p> </li>
+    /// <li> <p> <code>SUCCEEDED</code> - FSx completed the task successfully.</p> </li>
+    /// <li> <p> <code>CANCELED</code> - Amazon FSx canceled the task and it did not complete.</p> </li>
+    /// <li> <p> <code>CANCELING</code> - FSx is in process of canceling the task.</p> </li>
+    /// </ul>
+    pub fn get_lifecycle(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataRepositoryTaskLifecycle> {
+        &self.lifecycle
+    }
     /// <p>The ID of the task being canceled.</p>
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_id = ::std::option::Option::Some(input.into());
@@ -98,6 +112,10 @@ impl CancelDataRepositoryTaskOutputBuilder {
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_id = input;
         self
+    }
+    /// <p>The ID of the task being canceled.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

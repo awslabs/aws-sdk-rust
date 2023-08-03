@@ -87,6 +87,12 @@ impl PipeSourceRabbitMqBrokerParametersBuilder {
         self.credentials = input;
         self
     }
+    /// <p>The credentials needed to access the resource.</p>
+    pub fn get_credentials(
+        &self,
+    ) -> &::std::option::Option<crate::types::MqBrokerAccessCredentials> {
+        &self.credentials
+    }
     /// <p>The name of the destination queue to consume.</p>
     pub fn queue_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_name = ::std::option::Option::Some(input.into());
@@ -96,6 +102,10 @@ impl PipeSourceRabbitMqBrokerParametersBuilder {
     pub fn set_queue_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.queue_name = input;
         self
+    }
+    /// <p>The name of the destination queue to consume.</p>
+    pub fn get_queue_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.queue_name
     }
     /// <p>The name of the virtual host associated with the source broker.</p>
     pub fn virtual_host(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -107,6 +117,10 @@ impl PipeSourceRabbitMqBrokerParametersBuilder {
         self.virtual_host = input;
         self
     }
+    /// <p>The name of the virtual host associated with the source broker.</p>
+    pub fn get_virtual_host(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_host
+    }
     /// <p>The maximum number of records to include in each batch.</p>
     pub fn batch_size(mut self, input: i32) -> Self {
         self.batch_size = ::std::option::Option::Some(input);
@@ -116,6 +130,10 @@ impl PipeSourceRabbitMqBrokerParametersBuilder {
     pub fn set_batch_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.batch_size = input;
         self
+    }
+    /// <p>The maximum number of records to include in each batch.</p>
+    pub fn get_batch_size(&self) -> &::std::option::Option<i32> {
+        &self.batch_size
     }
     /// <p>The maximum length of a time to wait for events.</p>
     pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
@@ -129,6 +147,10 @@ impl PipeSourceRabbitMqBrokerParametersBuilder {
     ) -> Self {
         self.maximum_batching_window_in_seconds = input;
         self
+    }
+    /// <p>The maximum length of a time to wait for events.</p>
+    pub fn get_maximum_batching_window_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.maximum_batching_window_in_seconds
     }
     /// Consumes the builder and constructs a [`PipeSourceRabbitMqBrokerParameters`](crate::types::PipeSourceRabbitMqBrokerParameters).
     pub fn build(self) -> crate::types::PipeSourceRabbitMqBrokerParameters {

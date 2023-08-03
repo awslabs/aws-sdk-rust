@@ -79,6 +79,10 @@ impl UpdateProfileInputBuilder {
         self.profile_id = input;
         self
     }
+    /// <p>The unique identifier of the profile.</p>
+    pub fn get_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_id
+    }
     /// <p>The name of the profile.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -88,6 +92,10 @@ impl UpdateProfileInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the profile.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>A session policy that applies to the trust boundary of the vended session credentials. </p>
     pub fn session_policy(
@@ -104,6 +112,10 @@ impl UpdateProfileInputBuilder {
     ) -> Self {
         self.session_policy = input;
         self
+    }
+    /// <p>A session policy that applies to the trust boundary of the vended session credentials. </p>
+    pub fn get_session_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_policy
     }
     /// Appends an item to `role_arns`.
     ///
@@ -123,6 +135,10 @@ impl UpdateProfileInputBuilder {
     ) -> Self {
         self.role_arns = input;
         self
+    }
+    /// <p>A list of IAM roles that this profile can assume in a temporary credential request.</p>
+    pub fn get_role_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.role_arns
     }
     /// Appends an item to `managed_policy_arns`.
     ///
@@ -146,6 +162,12 @@ impl UpdateProfileInputBuilder {
         self.managed_policy_arns = input;
         self
     }
+    /// <p>A list of managed policy ARNs that apply to the vended session credentials. </p>
+    pub fn get_managed_policy_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.managed_policy_arns
+    }
     /// <p> The number of seconds the vended session credentials are valid for. </p>
     pub fn duration_seconds(mut self, input: i32) -> Self {
         self.duration_seconds = ::std::option::Option::Some(input);
@@ -155,6 +177,10 @@ impl UpdateProfileInputBuilder {
     pub fn set_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.duration_seconds = input;
         self
+    }
+    /// <p> The number of seconds the vended session credentials are valid for. </p>
+    pub fn get_duration_seconds(&self) -> &::std::option::Option<i32> {
+        &self.duration_seconds
     }
     /// Consumes the builder and constructs a [`UpdateProfileInput`](crate::operation::update_profile::UpdateProfileInput).
     pub fn build(

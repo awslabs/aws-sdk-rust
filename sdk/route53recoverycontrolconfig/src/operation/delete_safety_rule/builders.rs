@@ -36,6 +36,12 @@ impl DeleteSafetyRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteSafetyRule as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_safety_rule::builders::DeleteSafetyRuleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl DeleteSafetyRuleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_safety_rule_arn(input);
         self
+    }
+    /// <p>The ARN of the safety rule.</p>
+    pub fn get_safety_rule_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_safety_rule_arn()
     }
 }

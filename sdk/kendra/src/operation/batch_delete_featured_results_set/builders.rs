@@ -36,6 +36,10 @@ impl BatchDeleteFeaturedResultsSetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchDeleteFeaturedResultsSet as a reference.
+    pub fn as_input(&self) -> &crate::operation::batch_delete_featured_results_set::builders::BatchDeleteFeaturedResultsSetInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl BatchDeleteFeaturedResultsSetFluentBuilder {
         self.inner = self.inner.set_index_id(input);
         self
     }
+    /// <p>The identifier of the index used for featuring results.</p>
+    pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_index_id()
+    }
     /// Appends an item to `FeaturedResultsSetIds`.
     ///
     /// To override the contents of this collection use [`set_featured_results_set_ids`](Self::set_featured_results_set_ids).
@@ -145,5 +153,11 @@ impl BatchDeleteFeaturedResultsSetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_featured_results_set_ids(input);
         self
+    }
+    /// <p>The identifiers of the featured results sets that you want to delete.</p>
+    pub fn get_featured_results_set_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_featured_results_set_ids()
     }
 }

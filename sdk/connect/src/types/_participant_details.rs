@@ -40,6 +40,10 @@ impl ParticipantDetailsBuilder {
         self.display_name = input;
         self
     }
+    /// <p>Display name of the participant.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
+    }
     /// Consumes the builder and constructs a [`ParticipantDetails`](crate::types::ParticipantDetails).
     pub fn build(self) -> crate::types::ParticipantDetails {
         crate::types::ParticipantDetails {

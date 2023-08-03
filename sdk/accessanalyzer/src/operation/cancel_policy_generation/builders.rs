@@ -36,6 +36,13 @@ impl CancelPolicyGenerationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CancelPolicyGeneration as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::cancel_policy_generation::builders::CancelPolicyGenerationInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +132,9 @@ impl CancelPolicyGenerationFluentBuilder {
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_id(input);
         self
+    }
+    /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_id()
     }
 }

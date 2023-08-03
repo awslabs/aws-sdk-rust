@@ -48,6 +48,10 @@ impl SessionKeysAbpV10XBuilder {
         self.nwk_s_key = input;
         self
     }
+    /// <p>The NwkSKey value.</p>
+    pub fn get_nwk_s_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nwk_s_key
+    }
     /// <p>The AppSKey value.</p>
     pub fn app_s_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_s_key = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl SessionKeysAbpV10XBuilder {
     pub fn set_app_s_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_s_key = input;
         self
+    }
+    /// <p>The AppSKey value.</p>
+    pub fn get_app_s_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_s_key
     }
     /// Consumes the builder and constructs a [`SessionKeysAbpV10X`](crate::types::SessionKeysAbpV10X).
     pub fn build(self) -> crate::types::SessionKeysAbpV10X {

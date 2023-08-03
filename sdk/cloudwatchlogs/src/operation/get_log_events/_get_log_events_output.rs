@@ -71,6 +71,12 @@ impl GetLogEventsOutputBuilder {
         self.events = input;
         self
     }
+    /// <p>The events.</p>
+    pub fn get_events(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputLogEvent>> {
+        &self.events
+    }
     /// <p>The token for the next set of items in the forward direction. The token expires after 24 hours. If you have reached the end of the stream, it returns the same token you passed in.</p>
     pub fn next_forward_token(
         mut self,
@@ -87,6 +93,10 @@ impl GetLogEventsOutputBuilder {
         self.next_forward_token = input;
         self
     }
+    /// <p>The token for the next set of items in the forward direction. The token expires after 24 hours. If you have reached the end of the stream, it returns the same token you passed in.</p>
+    pub fn get_next_forward_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_forward_token
+    }
     /// <p>The token for the next set of items in the backward direction. The token expires after 24 hours. This token is not null. If you have reached the end of the stream, it returns the same token you passed in.</p>
     pub fn next_backward_token(
         mut self,
@@ -102,6 +112,10 @@ impl GetLogEventsOutputBuilder {
     ) -> Self {
         self.next_backward_token = input;
         self
+    }
+    /// <p>The token for the next set of items in the backward direction. The token expires after 24 hours. This token is not null. If you have reached the end of the stream, it returns the same token you passed in.</p>
+    pub fn get_next_backward_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_backward_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

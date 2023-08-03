@@ -47,6 +47,10 @@ impl DeleteScheduledActionInputBuilder {
         self.scheduled_action_name = input;
         self
     }
+    /// <p>The name of the scheduled action to delete. </p>
+    pub fn get_scheduled_action_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scheduled_action_name
+    }
     /// Consumes the builder and constructs a [`DeleteScheduledActionInput`](crate::operation::delete_scheduled_action::DeleteScheduledActionInput).
     pub fn build(
         self,

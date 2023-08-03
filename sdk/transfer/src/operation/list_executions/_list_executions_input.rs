@@ -65,6 +65,10 @@ impl ListExecutionsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>Specifies the maximum number of executions to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p> <code>ListExecutions</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional executions.</p>
     /// <p> This is useful for pagination, for instance. If you have 100 executions for a workflow, you might only want to list first 10. If so, call the API by specifying the <code>max-results</code>: </p>
     /// <p> <code>aws transfer list-executions --max-results 10</code> </p>
@@ -85,6 +89,15 @@ impl ListExecutionsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p> <code>ListExecutions</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional executions.</p>
+    /// <p> This is useful for pagination, for instance. If you have 100 executions for a workflow, you might only want to list first 10. If so, call the API by specifying the <code>max-results</code>: </p>
+    /// <p> <code>aws transfer list-executions --max-results 10</code> </p>
+    /// <p> This returns details for the first 10 executions, as well as the pointer (<code>NextToken</code>) to the eleventh execution. You can now call the API again, supplying the <code>NextToken</code> value you received: </p>
+    /// <p> <code>aws transfer list-executions --max-results 10 --next-token $somePointerReturnedFromPreviousListResult</code> </p>
+    /// <p> This call returns the next 10 executions, the 11th through the 20th. You can then repeat the call until the details for all 100 executions have been returned. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>A unique identifier for the workflow.</p>
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_id = ::std::option::Option::Some(input.into());
@@ -94,6 +107,10 @@ impl ListExecutionsInputBuilder {
     pub fn set_workflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_id = input;
         self
+    }
+    /// <p>A unique identifier for the workflow.</p>
+    pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_id
     }
     /// Consumes the builder and constructs a [`ListExecutionsInput`](crate::operation::list_executions::ListExecutionsInput).
     pub fn build(

@@ -52,6 +52,11 @@ impl PrefixListIdBuilder {
         self.description = input;
         self
     }
+    /// <p>A description for the security group rule that references this prefix list ID.</p>
+    /// <p>Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=;{}!$*</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The ID of the prefix.</p>
     pub fn prefix_list_id(
         mut self,
@@ -67,6 +72,10 @@ impl PrefixListIdBuilder {
     ) -> Self {
         self.prefix_list_id = input;
         self
+    }
+    /// <p>The ID of the prefix.</p>
+    pub fn get_prefix_list_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix_list_id
     }
     /// Consumes the builder and constructs a [`PrefixListId`](crate::types::PrefixListId).
     pub fn build(self) -> crate::types::PrefixListId {

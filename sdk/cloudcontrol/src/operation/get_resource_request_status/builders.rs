@@ -36,6 +36,10 @@ impl GetResourceRequestStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetResourceRequestStatus as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_resource_request_status::builders::GetResourceRequestStatusInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,5 +137,10 @@ impl GetResourceRequestStatusFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_request_token(input);
         self
+    }
+    /// <p>A unique token used to track the progress of the resource operation request.</p>
+    /// <p>Request tokens are included in the <code>ProgressEvent</code> type returned by a resource operation request.</p>
+    pub fn get_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_request_token()
     }
 }

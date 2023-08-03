@@ -99,6 +99,14 @@ impl DescribeDbClustersInputBuilder {
         self.db_cluster_identifier = input;
         self
     }
+    /// <p>The user-provided cluster identifier. If this parameter is specified, information from only the specific cluster is returned. This parameter isn't case sensitive.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>If provided, must match an existing <code>DBClusterIdentifier</code>.</p> </li>
+    /// </ul>
+    pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_identifier
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -126,6 +134,14 @@ impl DescribeDbClustersInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>A filter that specifies one or more clusters to describe.</p>
+    /// <p>Supported filters:</p>
+    /// <ul>
+    /// <li> <p> <code>db-cluster-id</code> - Accepts cluster identifiers and cluster Amazon Resource Names (ARNs). The results list only includes information about the clusters identified by these ARNs.</p> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
+    }
     /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
@@ -140,6 +156,12 @@ impl DescribeDbClustersInputBuilder {
         self.max_records = input;
         self
     }
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        &self.max_records
+    }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -149,6 +171,10 @@ impl DescribeDbClustersInputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// Consumes the builder and constructs a [`DescribeDbClustersInput`](crate::operation::describe_db_clusters::DescribeDbClustersInput).
     pub fn build(

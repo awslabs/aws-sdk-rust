@@ -60,6 +60,12 @@ impl ProtectiveEquipmentSummarizationAttributesBuilder {
         self.min_confidence = input;
         self
     }
+    /// <p>The minimum confidence level for which you want summary information. The confidence level applies to person detection, body part detection, equipment detection, and body part coverage. Amazon Rekognition doesn't return summary information with a confidence than this specified value. There isn't a default value.</p>
+    /// <p>Specify a <code>MinConfidence</code> value that is between 50-100% as <code>DetectProtectiveEquipment</code> returns predictions only where the detection confidence is between 50% - 100%. If you specify a value that is less than 50%, the results are the same specifying a value of 50%.</p>
+    /// <p> </p>
+    pub fn get_min_confidence(&self) -> &::std::option::Option<f32> {
+        &self.min_confidence
+    }
     /// Appends an item to `required_equipment_types`.
     ///
     /// To override the contents of this collection use [`set_required_equipment_types`](Self::set_required_equipment_types).
@@ -81,6 +87,12 @@ impl ProtectiveEquipmentSummarizationAttributesBuilder {
     ) -> Self {
         self.required_equipment_types = input;
         self
+    }
+    /// <p>An array of personal protective equipment types for which you want summary information. If a person is detected wearing a required requipment type, the person's ID is added to the <code>PersonsWithRequiredEquipment</code> array field returned in <code>ProtectiveEquipmentSummary</code> by <code>DetectProtectiveEquipment</code>. </p>
+    pub fn get_required_equipment_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProtectiveEquipmentType>> {
+        &self.required_equipment_types
     }
     /// Consumes the builder and constructs a [`ProtectiveEquipmentSummarizationAttributes`](crate::types::ProtectiveEquipmentSummarizationAttributes).
     pub fn build(self) -> crate::types::ProtectiveEquipmentSummarizationAttributes {

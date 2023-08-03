@@ -100,6 +100,10 @@ impl OriginAccessControlSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier of the origin access control.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>A description of the origin access control.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -110,6 +114,10 @@ impl OriginAccessControlSummaryBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the origin access control.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>A unique name that identifies the origin access control.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -119,6 +127,10 @@ impl OriginAccessControlSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A unique name that identifies the origin access control.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The signing protocol of the origin access control. The signing protocol determines how CloudFront signs (authenticates) requests. The only valid value is <code>sigv4</code>.</p>
     pub fn signing_protocol(
@@ -135,6 +147,12 @@ impl OriginAccessControlSummaryBuilder {
     ) -> Self {
         self.signing_protocol = input;
         self
+    }
+    /// <p>The signing protocol of the origin access control. The signing protocol determines how CloudFront signs (authenticates) requests. The only valid value is <code>sigv4</code>.</p>
+    pub fn get_signing_protocol(
+        &self,
+    ) -> &::std::option::Option<crate::types::OriginAccessControlSigningProtocols> {
+        &self.signing_protocol
     }
     /// <p>A value that specifies which requests CloudFront signs (adds authentication information to). This field can have one of the following values:</p>
     /// <ul>
@@ -162,6 +180,17 @@ impl OriginAccessControlSummaryBuilder {
         self.signing_behavior = input;
         self
     }
+    /// <p>A value that specifies which requests CloudFront signs (adds authentication information to). This field can have one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>never</code> – CloudFront doesn't sign any origin requests.</p> </li>
+    /// <li> <p> <code>always</code> – CloudFront signs all origin requests, overwriting the <code>Authorization</code> header from the viewer request if necessary.</p> </li>
+    /// <li> <p> <code>no-override</code> – If the viewer request doesn't contain the <code>Authorization</code> header, CloudFront signs the origin request. If the viewer request contains the <code>Authorization</code> header, CloudFront doesn't sign the origin request, but instead passes along the <code>Authorization</code> header that it received in the viewer request.</p> </li>
+    /// </ul>
+    pub fn get_signing_behavior(
+        &self,
+    ) -> &::std::option::Option<crate::types::OriginAccessControlSigningBehaviors> {
+        &self.signing_behavior
+    }
     /// <p>The type of origin that this origin access control is for.</p>
     pub fn origin_access_control_origin_type(
         mut self,
@@ -177,6 +206,12 @@ impl OriginAccessControlSummaryBuilder {
     ) -> Self {
         self.origin_access_control_origin_type = input;
         self
+    }
+    /// <p>The type of origin that this origin access control is for.</p>
+    pub fn get_origin_access_control_origin_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::OriginAccessControlOriginTypes> {
+        &self.origin_access_control_origin_type
     }
     /// Consumes the builder and constructs a [`OriginAccessControlSummary`](crate::types::OriginAccessControlSummary).
     pub fn build(self) -> crate::types::OriginAccessControlSummary {

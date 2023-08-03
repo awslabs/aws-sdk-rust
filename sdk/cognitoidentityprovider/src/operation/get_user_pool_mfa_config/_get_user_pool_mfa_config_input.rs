@@ -41,6 +41,10 @@ impl GetUserPoolMfaConfigInputBuilder {
         self.user_pool_id = input;
         self
     }
+    /// <p>The user pool ID.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_pool_id
+    }
     /// Consumes the builder and constructs a [`GetUserPoolMfaConfigInput`](crate::operation::get_user_pool_mfa_config::GetUserPoolMfaConfigInput).
     pub fn build(
         self,

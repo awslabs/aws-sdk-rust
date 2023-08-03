@@ -73,6 +73,10 @@ impl SimpleCriterionForJobBuilder {
         self.comparator = input;
         self
     }
+    /// <p>The operator to use in the condition. Valid values are EQ (equals) and NE (not equals).</p>
+    pub fn get_comparator(&self) -> &::std::option::Option<crate::types::JobComparator> {
+        &self.comparator
+    }
     /// <p>The property to use in the condition.</p>
     pub fn key(mut self, input: crate::types::SimpleCriterionKeyForJob) -> Self {
         self.key = ::std::option::Option::Some(input);
@@ -85,6 +89,10 @@ impl SimpleCriterionForJobBuilder {
     ) -> Self {
         self.key = input;
         self
+    }
+    /// <p>The property to use in the condition.</p>
+    pub fn get_key(&self) -> &::std::option::Option<crate::types::SimpleCriterionKeyForJob> {
+        &self.key
     }
     /// Appends an item to `values`.
     ///
@@ -118,6 +126,17 @@ impl SimpleCriterionForJobBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>An array that lists one or more values to use in the condition. If you specify multiple values, Amazon Macie uses OR logic to join the values. Valid values for each supported property (key) are:</p>
+    /// <ul>
+    /// <li><p>ACCOUNT_ID - A string that represents the unique identifier for the Amazon Web Services account that owns the bucket.</p></li>
+    /// <li><p>S3_BUCKET_EFFECTIVE_PERMISSION - A string that represents an enumerated value that Macie defines for the <a href="https://docs.aws.amazon.com/macie/latest/APIReference/datasources-s3.html#datasources-s3-prop-bucketpublicaccess-effectivepermission">BucketPublicAccess.effectivePermission</a> property of a bucket.</p></li>
+    /// <li><p>S3_BUCKET_NAME - A string that represents the name of a bucket.</p></li>
+    /// <li><p>S3_BUCKET_SHARED_ACCESS - A string that represents an enumerated value that Macie defines for the <a href="https://docs.aws.amazon.com/macie/latest/APIReference/datasources-s3.html#datasources-s3-prop-bucketmetadata-sharedaccess">BucketMetadata.sharedAccess</a> property of a bucket.</p></li>
+    /// </ul>
+    /// <p>Values are case sensitive. Also, Macie doesn't support use of partial values or wildcard characters in these values.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`SimpleCriterionForJob`](crate::types::SimpleCriterionForJob).
     pub fn build(self) -> crate::types::SimpleCriterionForJob {

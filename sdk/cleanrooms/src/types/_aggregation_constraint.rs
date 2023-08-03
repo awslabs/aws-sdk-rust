@@ -56,6 +56,10 @@ impl AggregationConstraintBuilder {
         self.column_name = input;
         self
     }
+    /// <p>Column in aggregation constraint for which there must be a minimum number of distinct values in an output row for it to be in the query output.</p>
+    pub fn get_column_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.column_name
+    }
     /// <p>The minimum number of distinct values that an output row must be an aggregation of. Minimum threshold of distinct values for a specified column that must exist in an output row for it to be in the query output.</p>
     pub fn minimum(mut self, input: i32) -> Self {
         self.minimum = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl AggregationConstraintBuilder {
         self.minimum = input;
         self
     }
+    /// <p>The minimum number of distinct values that an output row must be an aggregation of. Minimum threshold of distinct values for a specified column that must exist in an output row for it to be in the query output.</p>
+    pub fn get_minimum(&self) -> &::std::option::Option<i32> {
+        &self.minimum
+    }
     /// <p>The type of aggregation the constraint allows. The only valid value is currently `COUNT_DISTINCT`.</p>
     pub fn r#type(mut self, input: crate::types::AggregationType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl AggregationConstraintBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::AggregationType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of aggregation the constraint allows. The only valid value is currently `COUNT_DISTINCT`.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::AggregationType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`AggregationConstraint`](crate::types::AggregationConstraint).
     pub fn build(self) -> crate::types::AggregationConstraint {

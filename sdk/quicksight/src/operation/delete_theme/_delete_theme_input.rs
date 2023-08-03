@@ -63,6 +63,10 @@ impl DeleteThemeInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services account that contains the theme that you're deleting.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>An ID for the theme that you want to delete.</p>
     pub fn theme_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.theme_id = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl DeleteThemeInputBuilder {
     pub fn set_theme_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.theme_id = input;
         self
+    }
+    /// <p>An ID for the theme that you want to delete.</p>
+    pub fn get_theme_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.theme_id
     }
     /// <p>The version of the theme that you want to delete. </p>
     /// <p> <b>Note:</b> If you don't provide a version number, you're using this call to <code>DeleteTheme</code> to delete all versions of the theme.</p>
@@ -84,6 +92,11 @@ impl DeleteThemeInputBuilder {
     pub fn set_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.version_number = input;
         self
+    }
+    /// <p>The version of the theme that you want to delete. </p>
+    /// <p> <b>Note:</b> If you don't provide a version number, you're using this call to <code>DeleteTheme</code> to delete all versions of the theme.</p>
+    pub fn get_version_number(&self) -> &::std::option::Option<i64> {
+        &self.version_number
     }
     /// Consumes the builder and constructs a [`DeleteThemeInput`](crate::operation::delete_theme::DeleteThemeInput).
     pub fn build(

@@ -62,6 +62,10 @@ impl DescribeIngestionInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The ID of the dataset used in the ingestion.</p>
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl DescribeIngestionInputBuilder {
         self.data_set_id = input;
         self
     }
+    /// <p>The ID of the dataset used in the ingestion.</p>
+    pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_set_id
+    }
     /// <p>An ID for the ingestion.</p>
     pub fn ingestion_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ingestion_id = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl DescribeIngestionInputBuilder {
     pub fn set_ingestion_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ingestion_id = input;
         self
+    }
+    /// <p>An ID for the ingestion.</p>
+    pub fn get_ingestion_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ingestion_id
     }
     /// Consumes the builder and constructs a [`DescribeIngestionInput`](crate::operation::describe_ingestion::DescribeIngestionInput).
     pub fn build(

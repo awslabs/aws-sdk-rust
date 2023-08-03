@@ -163,6 +163,10 @@ impl ImportComponentInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the component.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note>
     /// <p>The semantic version has four nodes: <major>
     /// .
@@ -207,6 +211,24 @@ impl ImportComponentInputBuilder {
         self.semantic_version = input;
         self
     }
+    /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note>
+    /// <p>The semantic version has four nodes: <major>
+    /// .
+    /// <minor>
+    /// .
+    /// <patch>
+    /// /
+    /// <build>
+    /// . You can assign values for the first three, and can filter on all of them.
+    /// </build>
+    /// </patch>
+    /// </minor>
+    /// </major></p>
+    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
+    /// </note>
+    pub fn get_semantic_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.semantic_version
+    }
     /// <p>The description of the component. Describes the contents of the component.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -216,6 +238,10 @@ impl ImportComponentInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the component. Describes the contents of the component.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The change description of the component. This description indicates the change that has been made in this version, or what makes this version different from other versions of this component.</p>
     pub fn change_description(
@@ -233,6 +259,10 @@ impl ImportComponentInputBuilder {
         self.change_description = input;
         self
     }
+    /// <p>The change description of the component. This description indicates the change that has been made in this version, or what makes this version different from other versions of this component.</p>
+    pub fn get_change_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.change_description
+    }
     /// <p>The type of the component denotes whether the component is used to build the image, or only to test it.</p>
     pub fn r#type(mut self, input: crate::types::ComponentType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -242,6 +272,10 @@ impl ImportComponentInputBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ComponentType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of the component denotes whether the component is used to build the image, or only to test it.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ComponentType> {
+        &self.r#type
     }
     /// <p>The format of the resource that you want to import as a component.</p>
     pub fn format(mut self, input: crate::types::ComponentFormat) -> Self {
@@ -256,6 +290,10 @@ impl ImportComponentInputBuilder {
         self.format = input;
         self
     }
+    /// <p>The format of the resource that you want to import as a component.</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::ComponentFormat> {
+        &self.format
+    }
     /// <p>The platform of the component.</p>
     pub fn platform(mut self, input: crate::types::Platform) -> Self {
         self.platform = ::std::option::Option::Some(input);
@@ -265,6 +303,10 @@ impl ImportComponentInputBuilder {
     pub fn set_platform(mut self, input: ::std::option::Option<crate::types::Platform>) -> Self {
         self.platform = input;
         self
+    }
+    /// <p>The platform of the component.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<crate::types::Platform> {
+        &self.platform
     }
     /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
     pub fn data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -276,6 +318,10 @@ impl ImportComponentInputBuilder {
         self.data = input;
         self
     }
+    /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
+    pub fn get_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data
+    }
     /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
     pub fn uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.uri = ::std::option::Option::Some(input.into());
@@ -286,6 +332,10 @@ impl ImportComponentInputBuilder {
         self.uri = input;
         self
     }
+    /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
+    pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.uri
+    }
     /// <p>The ID of the KMS key that should be used to encrypt this component.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -295,6 +345,10 @@ impl ImportComponentInputBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p>The ID of the KMS key that should be used to encrypt this component.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -321,6 +375,14 @@ impl ImportComponentInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags of the component.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The idempotency token of the component.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -330,6 +392,10 @@ impl ImportComponentInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>The idempotency token of the component.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`ImportComponentInput`](crate::operation::import_component::ImportComponentInput).
     pub fn build(

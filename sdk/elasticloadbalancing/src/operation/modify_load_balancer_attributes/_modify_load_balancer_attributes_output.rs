@@ -64,6 +64,10 @@ impl ModifyLoadBalancerAttributesOutputBuilder {
         self.load_balancer_name = input;
         self
     }
+    /// <p>The name of the load balancer.</p>
+    pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.load_balancer_name
+    }
     /// <p>Information about the load balancer attributes.</p>
     pub fn load_balancer_attributes(mut self, input: crate::types::LoadBalancerAttributes) -> Self {
         self.load_balancer_attributes = ::std::option::Option::Some(input);
@@ -76,6 +80,12 @@ impl ModifyLoadBalancerAttributesOutputBuilder {
     ) -> Self {
         self.load_balancer_attributes = input;
         self
+    }
+    /// <p>Information about the load balancer attributes.</p>
+    pub fn get_load_balancer_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::LoadBalancerAttributes> {
+        &self.load_balancer_attributes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

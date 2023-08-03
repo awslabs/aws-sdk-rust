@@ -68,6 +68,10 @@ impl ReferenceDataSourceUpdateBuilder {
         self.reference_id = input;
         self
     }
+    /// <p>The ID of the reference data source that is being updated. You can use the <code>DescribeApplication</code> operation to get this value.</p>
+    pub fn get_reference_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reference_id
+    }
     /// <p>The in-application table name that is created by this update.</p>
     pub fn table_name_update(
         mut self,
@@ -83,6 +87,10 @@ impl ReferenceDataSourceUpdateBuilder {
     ) -> Self {
         self.table_name_update = input;
         self
+    }
+    /// <p>The in-application table name that is created by this update.</p>
+    pub fn get_table_name_update(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name_update
     }
     /// <p>Describes the S3 bucket name, object key name, and IAM role that Kinesis Data Analytics can assume to read the Amazon S3 object on your behalf and populate the in-application reference table.</p>
     pub fn s3_reference_data_source_update(
@@ -100,6 +108,12 @@ impl ReferenceDataSourceUpdateBuilder {
         self.s3_reference_data_source_update = input;
         self
     }
+    /// <p>Describes the S3 bucket name, object key name, and IAM role that Kinesis Data Analytics can assume to read the Amazon S3 object on your behalf and populate the in-application reference table.</p>
+    pub fn get_s3_reference_data_source_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3ReferenceDataSourceUpdate> {
+        &self.s3_reference_data_source_update
+    }
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream. </p>
     pub fn reference_schema_update(mut self, input: crate::types::SourceSchema) -> Self {
         self.reference_schema_update = ::std::option::Option::Some(input);
@@ -112,6 +126,12 @@ impl ReferenceDataSourceUpdateBuilder {
     ) -> Self {
         self.reference_schema_update = input;
         self
+    }
+    /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream. </p>
+    pub fn get_reference_schema_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::SourceSchema> {
+        &self.reference_schema_update
     }
     /// Consumes the builder and constructs a [`ReferenceDataSourceUpdate`](crate::types::ReferenceDataSourceUpdate).
     pub fn build(self) -> crate::types::ReferenceDataSourceUpdate {

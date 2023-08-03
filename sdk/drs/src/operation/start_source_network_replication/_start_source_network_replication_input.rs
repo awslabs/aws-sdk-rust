@@ -45,6 +45,10 @@ impl StartSourceNetworkReplicationInputBuilder {
         self.source_network_id = input;
         self
     }
+    /// <p>ID of the Source Network to replicate.</p>
+    pub fn get_source_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_network_id
+    }
     /// Consumes the builder and constructs a [`StartSourceNetworkReplicationInput`](crate::operation::start_source_network_replication::StartSourceNetworkReplicationInput).
     pub fn build(
         self,

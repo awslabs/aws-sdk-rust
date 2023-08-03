@@ -36,6 +36,10 @@ impl DescribeSubscribersForNotificationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeSubscribersForNotification as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_subscribers_for_notification::builders::DescribeSubscribersForNotificationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl DescribeSubscribersForNotificationFluentBuilder {
         self.inner = self.inner.set_account_id(input);
         self
     }
+    /// <p>The <code>accountId</code> that is associated with the budget whose subscribers you want descriptions of.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// <p>The name of the budget whose subscribers you want descriptions of.</p>
     pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.budget_name(input.into());
@@ -115,6 +123,10 @@ impl DescribeSubscribersForNotificationFluentBuilder {
     pub fn set_budget_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_budget_name(input);
         self
+    }
+    /// <p>The name of the budget whose subscribers you want descriptions of.</p>
+    pub fn get_budget_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_budget_name()
     }
     /// <p>The notification whose subscribers you want to list.</p>
     pub fn notification(mut self, input: crate::types::Notification) -> Self {
@@ -129,6 +141,10 @@ impl DescribeSubscribersForNotificationFluentBuilder {
         self.inner = self.inner.set_notification(input);
         self
     }
+    /// <p>The notification whose subscribers you want to list.</p>
+    pub fn get_notification(&self) -> &::std::option::Option<crate::types::Notification> {
+        self.inner.get_notification()
+    }
     /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -139,6 +155,10 @@ impl DescribeSubscribersForNotificationFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -148,5 +168,9 @@ impl DescribeSubscribersForNotificationFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

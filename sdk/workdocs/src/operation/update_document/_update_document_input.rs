@@ -86,6 +86,10 @@ impl UpdateDocumentInputBuilder {
         self.authentication_token = input;
         self
     }
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authentication_token
+    }
     /// <p>The ID of the document.</p>
     pub fn document_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_id = ::std::option::Option::Some(input.into());
@@ -96,6 +100,10 @@ impl UpdateDocumentInputBuilder {
         self.document_id = input;
         self
     }
+    /// <p>The ID of the document.</p>
+    pub fn get_document_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_id
+    }
     /// <p>The name of the document.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -105,6 +113,10 @@ impl UpdateDocumentInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the document.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The ID of the parent folder.</p>
     pub fn parent_folder_id(
@@ -122,6 +134,10 @@ impl UpdateDocumentInputBuilder {
         self.parent_folder_id = input;
         self
     }
+    /// <p>The ID of the parent folder.</p>
+    pub fn get_parent_folder_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent_folder_id
+    }
     /// <p>The resource state of the document. Only ACTIVE and RECYCLED are supported.</p>
     pub fn resource_state(mut self, input: crate::types::ResourceStateType) -> Self {
         self.resource_state = ::std::option::Option::Some(input);
@@ -134,6 +150,10 @@ impl UpdateDocumentInputBuilder {
     ) -> Self {
         self.resource_state = input;
         self
+    }
+    /// <p>The resource state of the document. Only ACTIVE and RECYCLED are supported.</p>
+    pub fn get_resource_state(&self) -> &::std::option::Option<crate::types::ResourceStateType> {
+        &self.resource_state
     }
     /// Consumes the builder and constructs a [`UpdateDocumentInput`](crate::operation::update_document::UpdateDocumentInput).
     pub fn build(

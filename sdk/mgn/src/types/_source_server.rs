@@ -168,6 +168,10 @@ impl SourceServerBuilder {
         self.source_server_id = input;
         self
     }
+    /// <p>Source server ID.</p>
+    pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_server_id
+    }
     /// <p>Source server ARN.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -178,6 +182,10 @@ impl SourceServerBuilder {
         self.arn = input;
         self
     }
+    /// <p>Source server ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>Source server archived status.</p>
     pub fn is_archived(mut self, input: bool) -> Self {
         self.is_archived = ::std::option::Option::Some(input);
@@ -187,6 +195,10 @@ impl SourceServerBuilder {
     pub fn set_is_archived(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_archived = input;
         self
+    }
+    /// <p>Source server archived status.</p>
+    pub fn get_is_archived(&self) -> &::std::option::Option<bool> {
+        &self.is_archived
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -213,6 +225,14 @@ impl SourceServerBuilder {
         self.tags = input;
         self
     }
+    /// <p>Source server Tags.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>Source server launched instance.</p>
     pub fn launched_instance(mut self, input: crate::types::LaunchedInstance) -> Self {
         self.launched_instance = ::std::option::Option::Some(input);
@@ -225,6 +245,10 @@ impl SourceServerBuilder {
     ) -> Self {
         self.launched_instance = input;
         self
+    }
+    /// <p>Source server launched instance.</p>
+    pub fn get_launched_instance(&self) -> &::std::option::Option<crate::types::LaunchedInstance> {
+        &self.launched_instance
     }
     /// <p>Source server data replication info.</p>
     pub fn data_replication_info(mut self, input: crate::types::DataReplicationInfo) -> Self {
@@ -239,6 +263,12 @@ impl SourceServerBuilder {
         self.data_replication_info = input;
         self
     }
+    /// <p>Source server data replication info.</p>
+    pub fn get_data_replication_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataReplicationInfo> {
+        &self.data_replication_info
+    }
     /// <p>Source server lifecycle state.</p>
     pub fn life_cycle(mut self, input: crate::types::LifeCycle) -> Self {
         self.life_cycle = ::std::option::Option::Some(input);
@@ -248,6 +278,10 @@ impl SourceServerBuilder {
     pub fn set_life_cycle(mut self, input: ::std::option::Option<crate::types::LifeCycle>) -> Self {
         self.life_cycle = input;
         self
+    }
+    /// <p>Source server lifecycle state.</p>
+    pub fn get_life_cycle(&self) -> &::std::option::Option<crate::types::LifeCycle> {
+        &self.life_cycle
     }
     /// <p>Source server properties.</p>
     pub fn source_properties(mut self, input: crate::types::SourceProperties) -> Self {
@@ -262,6 +296,10 @@ impl SourceServerBuilder {
         self.source_properties = input;
         self
     }
+    /// <p>Source server properties.</p>
+    pub fn get_source_properties(&self) -> &::std::option::Option<crate::types::SourceProperties> {
+        &self.source_properties
+    }
     /// <p>Source server replication type.</p>
     pub fn replication_type(mut self, input: crate::types::ReplicationType) -> Self {
         self.replication_type = ::std::option::Option::Some(input);
@@ -274,6 +312,10 @@ impl SourceServerBuilder {
     ) -> Self {
         self.replication_type = input;
         self
+    }
+    /// <p>Source server replication type.</p>
+    pub fn get_replication_type(&self) -> &::std::option::Option<crate::types::ReplicationType> {
+        &self.replication_type
     }
     /// <p>Source server vCenter client id.</p>
     pub fn vcenter_client_id(
@@ -291,6 +333,10 @@ impl SourceServerBuilder {
         self.vcenter_client_id = input;
         self
     }
+    /// <p>Source server vCenter client id.</p>
+    pub fn get_vcenter_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vcenter_client_id
+    }
     /// <p>Source server application ID.</p>
     pub fn application_id(
         mut self,
@@ -306,6 +352,10 @@ impl SourceServerBuilder {
     ) -> Self {
         self.application_id = input;
         self
+    }
+    /// <p>Source server application ID.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
     }
     /// <p>Source server user provided ID.</p>
     pub fn user_provided_id(
@@ -323,6 +373,10 @@ impl SourceServerBuilder {
         self.user_provided_id = input;
         self
     }
+    /// <p>Source server user provided ID.</p>
+    pub fn get_user_provided_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_provided_id
+    }
     /// <p>Source server fqdn for action framework.</p>
     pub fn fqdn_for_action_framework(
         mut self,
@@ -338,6 +392,10 @@ impl SourceServerBuilder {
     ) -> Self {
         self.fqdn_for_action_framework = input;
         self
+    }
+    /// <p>Source server fqdn for action framework.</p>
+    pub fn get_fqdn_for_action_framework(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fqdn_for_action_framework
     }
     /// Consumes the builder and constructs a [`SourceServer`](crate::types::SourceServer).
     pub fn build(self) -> crate::types::SourceServer {

@@ -54,6 +54,10 @@ impl PutOptedOutNumberInputBuilder {
         self.opt_out_list_name = input;
         self
     }
+    /// <p>The OptOutListName or OptOutListArn to add the phone number to.</p>
+    pub fn get_opt_out_list_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.opt_out_list_name
+    }
     /// <p>The phone number to add to the OptOutList in E.164 format.</p>
     pub fn opted_out_number(
         mut self,
@@ -69,6 +73,10 @@ impl PutOptedOutNumberInputBuilder {
     ) -> Self {
         self.opted_out_number = input;
         self
+    }
+    /// <p>The phone number to add to the OptOutList in E.164 format.</p>
+    pub fn get_opted_out_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.opted_out_number
     }
     /// Consumes the builder and constructs a [`PutOptedOutNumberInput`](crate::operation::put_opted_out_number::PutOptedOutNumberInput).
     pub fn build(

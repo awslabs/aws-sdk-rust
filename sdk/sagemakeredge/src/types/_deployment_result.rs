@@ -87,6 +87,10 @@ impl DeploymentResultBuilder {
         self.deployment_name = input;
         self
     }
+    /// <p>The name and unique ID of the deployment.</p>
+    pub fn get_deployment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_name
+    }
     /// <p>Returns the bucket error code.</p>
     pub fn deployment_status(
         mut self,
@@ -102,6 +106,10 @@ impl DeploymentResultBuilder {
     ) -> Self {
         self.deployment_status = input;
         self
+    }
+    /// <p>Returns the bucket error code.</p>
+    pub fn get_deployment_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_status
     }
     /// <p>Returns the detailed error message.</p>
     pub fn deployment_status_message(
@@ -119,6 +127,10 @@ impl DeploymentResultBuilder {
         self.deployment_status_message = input;
         self
     }
+    /// <p>Returns the detailed error message.</p>
+    pub fn get_deployment_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_status_message
+    }
     /// <p>The timestamp of when the deployment was started on the agent.</p>
     pub fn deployment_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.deployment_start_time = ::std::option::Option::Some(input);
@@ -132,6 +144,12 @@ impl DeploymentResultBuilder {
         self.deployment_start_time = input;
         self
     }
+    /// <p>The timestamp of when the deployment was started on the agent.</p>
+    pub fn get_deployment_start_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.deployment_start_time
+    }
     /// <p>The timestamp of when the deployment was ended, and the agent got the deployment results.</p>
     pub fn deployment_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.deployment_end_time = ::std::option::Option::Some(input);
@@ -144,6 +162,10 @@ impl DeploymentResultBuilder {
     ) -> Self {
         self.deployment_end_time = input;
         self
+    }
+    /// <p>The timestamp of when the deployment was ended, and the agent got the deployment results.</p>
+    pub fn get_deployment_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.deployment_end_time
     }
     /// Appends an item to `deployment_models`.
     ///
@@ -163,6 +185,12 @@ impl DeploymentResultBuilder {
     ) -> Self {
         self.deployment_models = input;
         self
+    }
+    /// <p>Returns a list of models deployed on the agent.</p>
+    pub fn get_deployment_models(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentModel>> {
+        &self.deployment_models
     }
     /// Consumes the builder and constructs a [`DeploymentResult`](crate::types::DeploymentResult).
     pub fn build(self) -> crate::types::DeploymentResult {

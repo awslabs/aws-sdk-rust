@@ -40,6 +40,10 @@ impl KnownGenderBuilder {
         self.r#type = input;
         self
     }
+    /// <p>A string value of the KnownGender info about the Celebrity.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::KnownGenderType> {
+        &self.r#type
+    }
     /// Consumes the builder and constructs a [`KnownGender`](crate::types::KnownGender).
     pub fn build(self) -> crate::types::KnownGender {
         crate::types::KnownGender {

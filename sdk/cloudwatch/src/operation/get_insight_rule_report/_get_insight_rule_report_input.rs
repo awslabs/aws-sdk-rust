@@ -106,6 +106,10 @@ impl GetInsightRuleReportInputBuilder {
         self.rule_name = input;
         self
     }
+    /// <p>The name of the rule that you want to see data from.</p>
+    pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_name
+    }
     /// <p>The start time of the data to use in the report. When used in a raw HTTP Query API, it is formatted as <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example, <code>2019-07-01T23:59:59</code>.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -118,6 +122,10 @@ impl GetInsightRuleReportInputBuilder {
     ) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>The start time of the data to use in the report. When used in a raw HTTP Query API, it is formatted as <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example, <code>2019-07-01T23:59:59</code>.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p>The end time of the data to use in the report. When used in a raw HTTP Query API, it is formatted as <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example, <code>2019-07-01T23:59:59</code>.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -132,6 +140,10 @@ impl GetInsightRuleReportInputBuilder {
         self.end_time = input;
         self
     }
+    /// <p>The end time of the data to use in the report. When used in a raw HTTP Query API, it is formatted as <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example, <code>2019-07-01T23:59:59</code>.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>The period, in seconds, to use for the statistics in the <code>InsightRuleMetricDatapoint</code> results.</p>
     pub fn period(mut self, input: i32) -> Self {
         self.period = ::std::option::Option::Some(input);
@@ -142,6 +154,10 @@ impl GetInsightRuleReportInputBuilder {
         self.period = input;
         self
     }
+    /// <p>The period, in seconds, to use for the statistics in the <code>InsightRuleMetricDatapoint</code> results.</p>
+    pub fn get_period(&self) -> &::std::option::Option<i32> {
+        &self.period
+    }
     /// <p>The maximum number of contributors to include in the report. The range is 1 to 100. If you omit this, the default of 10 is used.</p>
     pub fn max_contributor_count(mut self, input: i32) -> Self {
         self.max_contributor_count = ::std::option::Option::Some(input);
@@ -151,6 +167,10 @@ impl GetInsightRuleReportInputBuilder {
     pub fn set_max_contributor_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_contributor_count = input;
         self
+    }
+    /// <p>The maximum number of contributors to include in the report. The range is 1 to 100. If you omit this, the default of 10 is used.</p>
+    pub fn get_max_contributor_count(&self) -> &::std::option::Option<i32> {
+        &self.max_contributor_count
     }
     /// Appends an item to `metrics`.
     ///
@@ -189,6 +209,19 @@ impl GetInsightRuleReportInputBuilder {
         self.metrics = input;
         self
     }
+    /// <p>Specifies which metrics to use for aggregation of contributor values for the report. You can specify one or more of the following metrics:</p>
+    /// <ul>
+    /// <li> <p> <code>UniqueContributors</code> -- the number of unique contributors for each data point.</p> </li>
+    /// <li> <p> <code>MaxContributorValue</code> -- the value of the top contributor for each data point. The identity of the contributor might change for each data point in the graph.</p> <p>If this rule aggregates by COUNT, the top contributor for each data point is the contributor with the most occurrences in that period. If the rule aggregates by SUM, the top contributor is the contributor with the highest sum in the log field specified by the rule's <code>Value</code>, during that period.</p> </li>
+    /// <li> <p> <code>SampleCount</code> -- the number of data points matched by the rule.</p> </li>
+    /// <li> <p> <code>Sum</code> -- the sum of the values from all contributors during the time period represented by that data point.</p> </li>
+    /// <li> <p> <code>Minimum</code> -- the minimum value from a single observation during the time period represented by that data point.</p> </li>
+    /// <li> <p> <code>Maximum</code> -- the maximum value from a single observation during the time period represented by that data point.</p> </li>
+    /// <li> <p> <code>Average</code> -- the average value from all contributors during the time period represented by that data point.</p> </li>
+    /// </ul>
+    pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.metrics
+    }
     /// <p>Determines what statistic to use to rank the contributors. Valid values are SUM and MAXIMUM.</p>
     pub fn order_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.order_by = ::std::option::Option::Some(input.into());
@@ -198,6 +231,10 @@ impl GetInsightRuleReportInputBuilder {
     pub fn set_order_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.order_by = input;
         self
+    }
+    /// <p>Determines what statistic to use to rank the contributors. Valid values are SUM and MAXIMUM.</p>
+    pub fn get_order_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.order_by
     }
     /// Consumes the builder and constructs a [`GetInsightRuleReportInput`](crate::operation::get_insight_rule_report::GetInsightRuleReportInput).
     pub fn build(

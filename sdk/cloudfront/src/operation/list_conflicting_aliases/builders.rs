@@ -39,6 +39,13 @@ impl ListConflictingAliasesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListConflictingAliases as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_conflicting_aliases::builders::ListConflictingAliasesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +142,10 @@ impl ListConflictingAliasesFluentBuilder {
         self.inner = self.inner.set_distribution_id(input);
         self
     }
+    /// <p>The ID of a distribution in your account that has an attached SSL/TLS certificate that includes the provided alias.</p>
+    pub fn get_distribution_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_distribution_id()
+    }
     /// <p>The alias (also called a CNAME) to search for conflicting aliases.</p>
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.alias(input.into());
@@ -144,6 +155,10 @@ impl ListConflictingAliasesFluentBuilder {
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_alias(input);
         self
+    }
+    /// <p>The alias (also called a CNAME) to search for conflicting aliases.</p>
+    pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_alias()
     }
     /// <p>Use this field when paginating results to indicate where to begin in the list of conflicting aliases. The response includes conflicting aliases in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -155,6 +170,10 @@ impl ListConflictingAliasesFluentBuilder {
         self.inner = self.inner.set_marker(input);
         self
     }
+    /// <p>Use this field when paginating results to indicate where to begin in the list of conflicting aliases. The response includes conflicting aliases in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
+    }
     /// <p>The maximum number of conflicting aliases that you want in the response.</p>
     pub fn max_items(mut self, input: i32) -> Self {
         self.inner = self.inner.max_items(input);
@@ -164,5 +183,9 @@ impl ListConflictingAliasesFluentBuilder {
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_items(input);
         self
+    }
+    /// <p>The maximum number of conflicting aliases that you want in the response.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_items()
     }
 }

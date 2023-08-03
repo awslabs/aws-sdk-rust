@@ -47,6 +47,10 @@ impl GetMultiRegionAccessPointRoutesInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The Multi-Region Access Point ARN.</p>
     pub fn mrap(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mrap = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl GetMultiRegionAccessPointRoutesInputBuilder {
     pub fn set_mrap(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mrap = input;
         self
+    }
+    /// <p>The Multi-Region Access Point ARN.</p>
+    pub fn get_mrap(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mrap
     }
     /// Consumes the builder and constructs a [`GetMultiRegionAccessPointRoutesInput`](crate::operation::get_multi_region_access_point_routes::GetMultiRegionAccessPointRoutesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_multi_region_access_point_routes::GetMultiRegionAccessPointRoutesInput, ::aws_smithy_http::operation::error::BuildError>{

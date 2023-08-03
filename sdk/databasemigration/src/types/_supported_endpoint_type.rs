@@ -75,6 +75,10 @@ impl SupportedEndpointTypeBuilder {
         self.engine_name = input;
         self
     }
+    /// <p>The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and <code>"babelfish"</code>.</p>
+    pub fn get_engine_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_name
+    }
     /// <p>Indicates if change data capture (CDC) is supported.</p>
     pub fn supports_cdc(mut self, input: bool) -> Self {
         self.supports_cdc = ::std::option::Option::Some(input);
@@ -84,6 +88,10 @@ impl SupportedEndpointTypeBuilder {
     pub fn set_supports_cdc(mut self, input: ::std::option::Option<bool>) -> Self {
         self.supports_cdc = input;
         self
+    }
+    /// <p>Indicates if change data capture (CDC) is supported.</p>
+    pub fn get_supports_cdc(&self) -> &::std::option::Option<bool> {
+        &self.supports_cdc
     }
     /// <p>The type of endpoint. Valid values are <code>source</code> and <code>target</code>.</p>
     pub fn endpoint_type(mut self, input: crate::types::ReplicationEndpointTypeValue) -> Self {
@@ -97,6 +105,12 @@ impl SupportedEndpointTypeBuilder {
     ) -> Self {
         self.endpoint_type = input;
         self
+    }
+    /// <p>The type of endpoint. Valid values are <code>source</code> and <code>target</code>.</p>
+    pub fn get_endpoint_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReplicationEndpointTypeValue> {
+        &self.endpoint_type
     }
     /// <p>The earliest DMS engine version that supports this endpoint engine. Note that endpoint engines released with DMS versions earlier than 3.1.1 do not return a value for this parameter.</p>
     pub fn replication_instance_engine_minimum_version(
@@ -115,6 +129,12 @@ impl SupportedEndpointTypeBuilder {
         self.replication_instance_engine_minimum_version = input;
         self
     }
+    /// <p>The earliest DMS engine version that supports this endpoint engine. Note that endpoint engines released with DMS versions earlier than 3.1.1 do not return a value for this parameter.</p>
+    pub fn get_replication_instance_engine_minimum_version(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.replication_instance_engine_minimum_version
+    }
     /// <p>The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora", this value would be "Amazon Aurora MySQL".</p>
     pub fn engine_display_name(
         mut self,
@@ -130,6 +150,10 @@ impl SupportedEndpointTypeBuilder {
     ) -> Self {
         self.engine_display_name = input;
         self
+    }
+    /// <p>The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora", this value would be "Amazon Aurora MySQL".</p>
+    pub fn get_engine_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_display_name
     }
     /// Consumes the builder and constructs a [`SupportedEndpointType`](crate::types::SupportedEndpointType).
     pub fn build(self) -> crate::types::SupportedEndpointType {

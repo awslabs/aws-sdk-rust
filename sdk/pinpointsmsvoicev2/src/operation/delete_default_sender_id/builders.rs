@@ -37,6 +37,13 @@ impl DeleteDefaultSenderIdFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteDefaultSenderId as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_default_sender_id::builders::DeleteDefaultSenderIdInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +139,9 @@ impl DeleteDefaultSenderIdFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_configuration_set_name(input);
         self
+    }
+    /// <p>The name of the configuration set or the configuration set Amazon Resource Name (ARN) to delete the default sender ID from. The ConfigurationSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration_set_name()
     }
 }

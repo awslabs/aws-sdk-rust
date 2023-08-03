@@ -92,6 +92,10 @@ impl DomainValidationBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>A fully qualified domain name (FQDN) in the certificate. For example, <code>www.example.com</code> or <code>example.com</code>. </p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// Appends an item to `validation_emails`.
     ///
     /// To override the contents of this collection use [`set_validation_emails`](Self::set_validation_emails).
@@ -114,6 +118,12 @@ impl DomainValidationBuilder {
         self.validation_emails = input;
         self
     }
+    /// <p>A list of email addresses that ACM used to send domain validation emails.</p>
+    pub fn get_validation_emails(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.validation_emails
+    }
     /// <p>The domain name that ACM used to send domain validation emails.</p>
     pub fn validation_domain(
         mut self,
@@ -129,6 +139,10 @@ impl DomainValidationBuilder {
     ) -> Self {
         self.validation_domain = input;
         self
+    }
+    /// <p>The domain name that ACM used to send domain validation emails.</p>
+    pub fn get_validation_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.validation_domain
     }
     /// <p>The validation status of the domain name. This can be one of the following values:</p>
     /// <ul>
@@ -153,6 +167,15 @@ impl DomainValidationBuilder {
         self.validation_status = input;
         self
     }
+    /// <p>The validation status of the domain name. This can be one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>PENDING_VALIDATION</code> </p> </li>
+    /// <li> <p> <code></code>SUCCESS</p> </li>
+    /// <li> <p> <code></code>FAILED</p> </li>
+    /// </ul>
+    pub fn get_validation_status(&self) -> &::std::option::Option<crate::types::DomainStatus> {
+        &self.validation_status
+    }
     /// <p>Contains the CNAME record that you add to your DNS database for domain validation. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use DNS to Validate Domain Ownership</a>.</p>
     /// <p>Note: The CNAME information that you need does not include the name of your domain. If you include  your domain name in the DNS database CNAME record, validation fails.  For example, if the name is "_a79865eb4cd1a6ab990a45779b4e0b96.yourdomain.com", only "_a79865eb4cd1a6ab990a45779b4e0b96" must be used.</p>
     pub fn resource_record(mut self, input: crate::types::ResourceRecord) -> Self {
@@ -168,6 +191,11 @@ impl DomainValidationBuilder {
         self.resource_record = input;
         self
     }
+    /// <p>Contains the CNAME record that you add to your DNS database for domain validation. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use DNS to Validate Domain Ownership</a>.</p>
+    /// <p>Note: The CNAME information that you need does not include the name of your domain. If you include  your domain name in the DNS database CNAME record, validation fails.  For example, if the name is "_a79865eb4cd1a6ab990a45779b4e0b96.yourdomain.com", only "_a79865eb4cd1a6ab990a45779b4e0b96" must be used.</p>
+    pub fn get_resource_record(&self) -> &::std::option::Option<crate::types::ResourceRecord> {
+        &self.resource_record
+    }
     /// <p>Specifies the domain validation method.</p>
     pub fn validation_method(mut self, input: crate::types::ValidationMethod) -> Self {
         self.validation_method = ::std::option::Option::Some(input);
@@ -180,6 +208,10 @@ impl DomainValidationBuilder {
     ) -> Self {
         self.validation_method = input;
         self
+    }
+    /// <p>Specifies the domain validation method.</p>
+    pub fn get_validation_method(&self) -> &::std::option::Option<crate::types::ValidationMethod> {
+        &self.validation_method
     }
     /// Consumes the builder and constructs a [`DomainValidation`](crate::types::DomainValidation).
     pub fn build(self) -> crate::types::DomainValidation {

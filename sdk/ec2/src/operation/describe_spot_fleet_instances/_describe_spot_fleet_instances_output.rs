@@ -73,6 +73,12 @@ impl DescribeSpotFleetInstancesOutputBuilder {
         self.active_instances = input;
         self
     }
+    /// <p>The running instances. This list is refreshed periodically and might be out of date.</p>
+    pub fn get_active_instances(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ActiveInstance>> {
+        &self.active_instances
+    }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -82,6 +88,10 @@ impl DescribeSpotFleetInstancesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The ID of the Spot Fleet request.</p>
     pub fn spot_fleet_request_id(
@@ -98,6 +108,10 @@ impl DescribeSpotFleetInstancesOutputBuilder {
     ) -> Self {
         self.spot_fleet_request_id = input;
         self
+    }
+    /// <p>The ID of the Spot Fleet request.</p>
+    pub fn get_spot_fleet_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.spot_fleet_request_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

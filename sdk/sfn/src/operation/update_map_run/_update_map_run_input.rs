@@ -63,6 +63,10 @@ impl UpdateMapRunInputBuilder {
         self.map_run_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of a Map Run.</p>
+    pub fn get_map_run_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.map_run_arn
+    }
     /// <p>The maximum number of child workflow executions that can be specified to run in parallel for the Map Run at the same time.</p>
     pub fn max_concurrency(mut self, input: i32) -> Self {
         self.max_concurrency = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl UpdateMapRunInputBuilder {
     pub fn set_max_concurrency(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_concurrency = input;
         self
+    }
+    /// <p>The maximum number of child workflow executions that can be specified to run in parallel for the Map Run at the same time.</p>
+    pub fn get_max_concurrency(&self) -> &::std::option::Option<i32> {
+        &self.max_concurrency
     }
     /// <p>The maximum percentage of failed items before the Map Run fails.</p>
     pub fn tolerated_failure_percentage(mut self, input: f32) -> Self {
@@ -83,6 +91,10 @@ impl UpdateMapRunInputBuilder {
         self.tolerated_failure_percentage = input;
         self
     }
+    /// <p>The maximum percentage of failed items before the Map Run fails.</p>
+    pub fn get_tolerated_failure_percentage(&self) -> &::std::option::Option<f32> {
+        &self.tolerated_failure_percentage
+    }
     /// <p>The maximum number of failed items before the Map Run fails.</p>
     pub fn tolerated_failure_count(mut self, input: i64) -> Self {
         self.tolerated_failure_count = ::std::option::Option::Some(input);
@@ -92,6 +104,10 @@ impl UpdateMapRunInputBuilder {
     pub fn set_tolerated_failure_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.tolerated_failure_count = input;
         self
+    }
+    /// <p>The maximum number of failed items before the Map Run fails.</p>
+    pub fn get_tolerated_failure_count(&self) -> &::std::option::Option<i64> {
+        &self.tolerated_failure_count
     }
     /// Consumes the builder and constructs a [`UpdateMapRunInput`](crate::operation::update_map_run::UpdateMapRunInput).
     pub fn build(

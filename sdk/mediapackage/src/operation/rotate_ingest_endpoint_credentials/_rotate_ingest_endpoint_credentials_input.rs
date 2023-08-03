@@ -47,6 +47,10 @@ impl RotateIngestEndpointCredentialsInputBuilder {
         self.id = input;
         self
     }
+    /// The ID of the channel the IngestEndpoint is on.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// The id of the IngestEndpoint whose credentials should be rotated
     pub fn ingest_endpoint_id(
         mut self,
@@ -62,6 +66,10 @@ impl RotateIngestEndpointCredentialsInputBuilder {
     ) -> Self {
         self.ingest_endpoint_id = input;
         self
+    }
+    /// The id of the IngestEndpoint whose credentials should be rotated
+    pub fn get_ingest_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ingest_endpoint_id
     }
     /// Consumes the builder and constructs a [`RotateIngestEndpointCredentialsInput`](crate::operation::rotate_ingest_endpoint_credentials::RotateIngestEndpointCredentialsInput).
     pub fn build(

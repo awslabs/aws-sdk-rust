@@ -73,6 +73,12 @@ impl GetComponentOutputBuilder {
         self.recipe_output_format = input;
         self
     }
+    /// <p>The format of the recipe.</p>
+    pub fn get_recipe_output_format(
+        &self,
+    ) -> &::std::option::Option<crate::types::RecipeOutputFormat> {
+        &self.recipe_output_format
+    }
     /// <p>The recipe of the component version.</p>
     pub fn recipe(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.recipe = ::std::option::Option::Some(input);
@@ -82,6 +88,10 @@ impl GetComponentOutputBuilder {
     pub fn set_recipe(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.recipe = input;
         self
+    }
+    /// <p>The recipe of the component version.</p>
+    pub fn get_recipe(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.recipe
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -107,6 +117,14 @@ impl GetComponentOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

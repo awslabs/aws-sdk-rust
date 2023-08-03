@@ -64,6 +64,12 @@ impl GetRecommendationsOutputBuilder {
         self.item_list = input;
         self
     }
+    /// <p>A list of recommendations sorted in descending order by prediction score. There can be a maximum of 500 items in the list.</p>
+    pub fn get_item_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PredictedItem>> {
+        &self.item_list
+    }
     /// <p>The ID of the recommendation.</p>
     pub fn recommendation_id(
         mut self,
@@ -79,6 +85,10 @@ impl GetRecommendationsOutputBuilder {
     ) -> Self {
         self.recommendation_id = input;
         self
+    }
+    /// <p>The ID of the recommendation.</p>
+    pub fn get_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommendation_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

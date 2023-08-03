@@ -36,6 +36,10 @@ impl CreateSceneFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateScene as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_scene::builders::CreateSceneInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl CreateSceneFluentBuilder {
         self.inner = self.inner.set_workspace_id(input);
         self
     }
+    /// <p>The ID of the workspace that contains the scene.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workspace_id()
+    }
     /// <p>The ID of the scene.</p>
     pub fn scene_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.scene_id(input.into());
@@ -127,6 +135,10 @@ impl CreateSceneFluentBuilder {
     pub fn set_scene_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_scene_id(input);
         self
+    }
+    /// <p>The ID of the scene.</p>
+    pub fn get_scene_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_scene_id()
     }
     /// <p>The relative path that specifies the location of the content definition file.</p>
     pub fn content_location(
@@ -144,6 +156,10 @@ impl CreateSceneFluentBuilder {
         self.inner = self.inner.set_content_location(input);
         self
     }
+    /// <p>The relative path that specifies the location of the content definition file.</p>
+    pub fn get_content_location(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_content_location()
+    }
     /// <p>The description for this scene.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -153,6 +169,10 @@ impl CreateSceneFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description for this scene.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `capabilities`.
     ///
@@ -170,6 +190,12 @@ impl CreateSceneFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_capabilities(input);
         self
+    }
+    /// <p>A list of capabilities that the scene uses to render itself.</p>
+    pub fn get_capabilities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_capabilities()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -194,6 +220,14 @@ impl CreateSceneFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>Metadata that you can use to manage the scene.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// Adds a key-value pair to `sceneMetadata`.
     ///
     /// To override the contents of this collection use [`set_scene_metadata`](Self::set_scene_metadata).
@@ -216,5 +250,13 @@ impl CreateSceneFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_scene_metadata(input);
         self
+    }
+    /// <p>The request metadata.</p>
+    pub fn get_scene_metadata(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_scene_metadata()
     }
 }

@@ -169,6 +169,10 @@ impl PushNotificationTemplateResponseBuilder {
         self.adm = input;
         self
     }
+    /// <p>The message template that's used for the ADM (Amazon Device Messaging) channel. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
+    pub fn get_adm(&self) -> &::std::option::Option<crate::types::AndroidPushNotificationTemplate> {
+        &self.adm
+    }
     /// <p>The message template that's used for the APNs (Apple Push Notification service) channel. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
     pub fn apns(mut self, input: crate::types::ApnsPushNotificationTemplate) -> Self {
         self.apns = ::std::option::Option::Some(input);
@@ -182,6 +186,10 @@ impl PushNotificationTemplateResponseBuilder {
         self.apns = input;
         self
     }
+    /// <p>The message template that's used for the APNs (Apple Push Notification service) channel. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
+    pub fn get_apns(&self) -> &::std::option::Option<crate::types::ApnsPushNotificationTemplate> {
+        &self.apns
+    }
     /// <p>The Amazon Resource Name (ARN) of the message template.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -191,6 +199,10 @@ impl PushNotificationTemplateResponseBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the message template.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The message template that's used for the Baidu (Baidu Cloud Push) channel. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
     pub fn baidu(mut self, input: crate::types::AndroidPushNotificationTemplate) -> Self {
@@ -204,6 +216,12 @@ impl PushNotificationTemplateResponseBuilder {
     ) -> Self {
         self.baidu = input;
         self
+    }
+    /// <p>The message template that's used for the Baidu (Baidu Cloud Push) channel. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
+    pub fn get_baidu(
+        &self,
+    ) -> &::std::option::Option<crate::types::AndroidPushNotificationTemplate> {
+        &self.baidu
     }
     /// <p>The date, in ISO 8601 format, when the message template was created.</p>
     pub fn creation_date(
@@ -221,6 +239,10 @@ impl PushNotificationTemplateResponseBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>The date, in ISO 8601 format, when the message template was created.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_date
+    }
     /// <p>The default message template that's used for push notification channels.</p>
     pub fn default_value(mut self, input: crate::types::DefaultPushNotificationTemplate) -> Self {
         self.default_value = ::std::option::Option::Some(input);
@@ -233,6 +255,12 @@ impl PushNotificationTemplateResponseBuilder {
     ) -> Self {
         self.default_value = input;
         self
+    }
+    /// <p>The default message template that's used for push notification channels.</p>
+    pub fn get_default(
+        &self,
+    ) -> &::std::option::Option<crate::types::DefaultPushNotificationTemplate> {
+        &self.default_value
     }
     /// <p>The JSON object that specifies the default values that are used for message variables in the message template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the default value for that variable.</p>
     pub fn default_substitutions(
@@ -250,6 +278,10 @@ impl PushNotificationTemplateResponseBuilder {
         self.default_substitutions = input;
         self
     }
+    /// <p>The JSON object that specifies the default values that are used for message variables in the message template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the default value for that variable.</p>
+    pub fn get_default_substitutions(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_substitutions
+    }
     /// <p>The message template that's used for the GCM channel, which is used to send notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
     pub fn gcm(mut self, input: crate::types::AndroidPushNotificationTemplate) -> Self {
         self.gcm = ::std::option::Option::Some(input);
@@ -262,6 +294,10 @@ impl PushNotificationTemplateResponseBuilder {
     ) -> Self {
         self.gcm = input;
         self
+    }
+    /// <p>The message template that's used for the GCM channel, which is used to send notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
+    pub fn get_gcm(&self) -> &::std::option::Option<crate::types::AndroidPushNotificationTemplate> {
+        &self.gcm
     }
     /// <p>The date, in ISO 8601 format, when the message template was last modified.</p>
     pub fn last_modified_date(
@@ -279,6 +315,10 @@ impl PushNotificationTemplateResponseBuilder {
         self.last_modified_date = input;
         self
     }
+    /// <p>The date, in ISO 8601 format, when the message template was last modified.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_date
+    }
     /// <p>The unique identifier for the recommender model that's used by the message template.</p>
     pub fn recommender_id(
         mut self,
@@ -294,6 +334,10 @@ impl PushNotificationTemplateResponseBuilder {
     ) -> Self {
         self.recommender_id = input;
         self
+    }
+    /// <p>The unique identifier for the recommender model that's used by the message template.</p>
+    pub fn get_recommender_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommender_id
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -320,6 +364,14 @@ impl PushNotificationTemplateResponseBuilder {
         self.tags = input;
         self
     }
+    /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the message template. Each tag consists of a required tag key and an associated tag value.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The custom description of the message template.</p>
     pub fn template_description(
         mut self,
@@ -335,6 +387,10 @@ impl PushNotificationTemplateResponseBuilder {
     ) -> Self {
         self.template_description = input;
         self
+    }
+    /// <p>The custom description of the message template.</p>
+    pub fn get_template_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_description
     }
     /// <p>The name of the message template.</p>
     pub fn template_name(
@@ -352,6 +408,10 @@ impl PushNotificationTemplateResponseBuilder {
         self.template_name = input;
         self
     }
+    /// <p>The name of the message template.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
     /// <p>The type of channel that the message template is designed for. For a push notification template, this value is PUSH.</p>
     pub fn template_type(mut self, input: crate::types::TemplateType) -> Self {
         self.template_type = ::std::option::Option::Some(input);
@@ -365,6 +425,10 @@ impl PushNotificationTemplateResponseBuilder {
         self.template_type = input;
         self
     }
+    /// <p>The type of channel that the message template is designed for. For a push notification template, this value is PUSH.</p>
+    pub fn get_template_type(&self) -> &::std::option::Option<crate::types::TemplateType> {
+        &self.template_type
+    }
     /// <p>The unique identifier, as an integer, for the active version of the message template, or the version of the template that you specified by using the version parameter in your request.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -374,6 +438,10 @@ impl PushNotificationTemplateResponseBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The unique identifier, as an integer, for the active version of the message template, or the version of the template that you specified by using the version parameter in your request.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`PushNotificationTemplateResponse`](crate::types::PushNotificationTemplateResponse).
     pub fn build(self) -> crate::types::PushNotificationTemplateResponse {

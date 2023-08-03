@@ -74,6 +74,12 @@ impl DeleteFleetsOutputBuilder {
         self.successful_fleet_deletions = input;
         self
     }
+    /// <p>Information about the EC2 Fleets that are successfully deleted.</p>
+    pub fn get_successful_fleet_deletions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeleteFleetSuccessItem>> {
+        &self.successful_fleet_deletions
+    }
     /// Appends an item to `unsuccessful_fleet_deletions`.
     ///
     /// To override the contents of this collection use [`set_unsuccessful_fleet_deletions`](Self::set_unsuccessful_fleet_deletions).
@@ -95,6 +101,12 @@ impl DeleteFleetsOutputBuilder {
     ) -> Self {
         self.unsuccessful_fleet_deletions = input;
         self
+    }
+    /// <p>Information about the EC2 Fleets that are not successfully deleted.</p>
+    pub fn get_unsuccessful_fleet_deletions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeleteFleetErrorItem>> {
+        &self.unsuccessful_fleet_deletions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

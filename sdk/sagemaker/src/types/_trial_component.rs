@@ -242,6 +242,10 @@ impl TrialComponentBuilder {
         self.trial_component_name = input;
         self
     }
+    /// <p>The name of the trial component.</p>
+    pub fn get_trial_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trial_component_name
+    }
     /// <p>The name of the component as displayed. If <code>DisplayName</code> isn't specified, <code>TrialComponentName</code> is displayed.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -251,6 +255,10 @@ impl TrialComponentBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
+    }
+    /// <p>The name of the component as displayed. If <code>DisplayName</code> isn't specified, <code>TrialComponentName</code> is displayed.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
     pub fn trial_component_arn(
@@ -268,6 +276,10 @@ impl TrialComponentBuilder {
         self.trial_component_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
+    pub fn get_trial_component_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trial_component_arn
+    }
     /// <p>The Amazon Resource Name (ARN) and job type of the source of the component.</p>
     pub fn source(mut self, input: crate::types::TrialComponentSource) -> Self {
         self.source = ::std::option::Option::Some(input);
@@ -280,6 +292,10 @@ impl TrialComponentBuilder {
     ) -> Self {
         self.source = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) and job type of the source of the component.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::TrialComponentSource> {
+        &self.source
     }
     /// <p>The status of the trial component.</p>
     pub fn status(mut self, input: crate::types::TrialComponentStatus) -> Self {
@@ -294,6 +310,10 @@ impl TrialComponentBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the trial component.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TrialComponentStatus> {
+        &self.status
+    }
     /// <p>When the component started.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -306,6 +326,10 @@ impl TrialComponentBuilder {
     ) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>When the component started.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p>When the component ended.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -320,6 +344,10 @@ impl TrialComponentBuilder {
         self.end_time = input;
         self
     }
+    /// <p>When the component ended.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>When the component was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -332,6 +360,10 @@ impl TrialComponentBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>When the component was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>Who created the trial component.</p>
     pub fn created_by(mut self, input: crate::types::UserContext) -> Self {
@@ -346,6 +378,10 @@ impl TrialComponentBuilder {
         self.created_by = input;
         self
     }
+    /// <p>Who created the trial component.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<crate::types::UserContext> {
+        &self.created_by
+    }
     /// <p>When the component was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -359,6 +395,10 @@ impl TrialComponentBuilder {
         self.last_modified_time = input;
         self
     }
+    /// <p>When the component was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn last_modified_by(mut self, input: crate::types::UserContext) -> Self {
         self.last_modified_by = ::std::option::Option::Some(input);
@@ -371,6 +411,10 @@ impl TrialComponentBuilder {
     ) -> Self {
         self.last_modified_by = input;
         self
+    }
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    pub fn get_last_modified_by(&self) -> &::std::option::Option<crate::types::UserContext> {
+        &self.last_modified_by
     }
     /// Adds a key-value pair to `parameters`.
     ///
@@ -400,6 +444,17 @@ impl TrialComponentBuilder {
         self.parameters = input;
         self
     }
+    /// <p>The hyperparameters of the component.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::TrialComponentParameterValue,
+        >,
+    > {
+        &self.parameters
+    }
     /// Adds a key-value pair to `input_artifacts`.
     ///
     /// To override the contents of this collection use [`set_input_artifacts`](Self::set_input_artifacts).
@@ -427,6 +482,14 @@ impl TrialComponentBuilder {
     ) -> Self {
         self.input_artifacts = input;
         self
+    }
+    /// <p>The input artifacts of the component.</p>
+    pub fn get_input_artifacts(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::TrialComponentArtifact>,
+    > {
+        &self.input_artifacts
     }
     /// Adds a key-value pair to `output_artifacts`.
     ///
@@ -456,6 +519,14 @@ impl TrialComponentBuilder {
         self.output_artifacts = input;
         self
     }
+    /// <p>The output artifacts of the component.</p>
+    pub fn get_output_artifacts(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::TrialComponentArtifact>,
+    > {
+        &self.output_artifacts
+    }
     /// Appends an item to `metrics`.
     ///
     /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
@@ -475,6 +546,12 @@ impl TrialComponentBuilder {
         self.metrics = input;
         self
     }
+    /// <p>The metrics for the component.</p>
+    pub fn get_metrics(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TrialComponentMetricSummary>> {
+        &self.metrics
+    }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     pub fn metadata_properties(mut self, input: crate::types::MetadataProperties) -> Self {
         self.metadata_properties = ::std::option::Option::Some(input);
@@ -488,6 +565,12 @@ impl TrialComponentBuilder {
         self.metadata_properties = input;
         self
     }
+    /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
+    pub fn get_metadata_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::MetadataProperties> {
+        &self.metadata_properties
+    }
     /// <p>Details of the source of the component.</p>
     pub fn source_detail(mut self, input: crate::types::TrialComponentSourceDetail) -> Self {
         self.source_detail = ::std::option::Option::Some(input);
@@ -500,6 +583,12 @@ impl TrialComponentBuilder {
     ) -> Self {
         self.source_detail = input;
         self
+    }
+    /// <p>Details of the source of the component.</p>
+    pub fn get_source_detail(
+        &self,
+    ) -> &::std::option::Option<crate::types::TrialComponentSourceDetail> {
+        &self.source_detail
     }
     /// <p>The Amazon Resource Name (ARN) of the lineage group resource.</p>
     pub fn lineage_group_arn(
@@ -516,6 +605,10 @@ impl TrialComponentBuilder {
     ) -> Self {
         self.lineage_group_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the lineage group resource.</p>
+    pub fn get_lineage_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lineage_group_arn
     }
     /// Appends an item to `tags`.
     ///
@@ -536,6 +629,10 @@ impl TrialComponentBuilder {
         self.tags = input;
         self
     }
+    /// <p>The list of tags that are associated with the component. You can use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search on the tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Appends an item to `parents`.
     ///
     /// To override the contents of this collection use [`set_parents`](Self::set_parents).
@@ -555,6 +652,10 @@ impl TrialComponentBuilder {
         self.parents = input;
         self
     }
+    /// <p>An array of the parents of the component. A parent is a trial the component is associated with and the experiment the trial is part of. A component might not have any parents.</p>
+    pub fn get_parents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parent>> {
+        &self.parents
+    }
     /// <p>The name of the experiment run.</p>
     pub fn run_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.run_name = ::std::option::Option::Some(input.into());
@@ -564,6 +665,10 @@ impl TrialComponentBuilder {
     pub fn set_run_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.run_name = input;
         self
+    }
+    /// <p>The name of the experiment run.</p>
+    pub fn get_run_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.run_name
     }
     /// Consumes the builder and constructs a [`TrialComponent`](crate::types::TrialComponent).
     pub fn build(self) -> crate::types::TrialComponent {

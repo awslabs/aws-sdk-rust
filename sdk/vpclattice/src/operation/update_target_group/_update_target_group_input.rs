@@ -54,6 +54,10 @@ impl UpdateTargetGroupInputBuilder {
         self.target_group_identifier = input;
         self
     }
+    /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
+    pub fn get_target_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_group_identifier
+    }
     /// <p>The health check configuration.</p>
     pub fn health_check(mut self, input: crate::types::HealthCheckConfig) -> Self {
         self.health_check = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl UpdateTargetGroupInputBuilder {
     ) -> Self {
         self.health_check = input;
         self
+    }
+    /// <p>The health check configuration.</p>
+    pub fn get_health_check(&self) -> &::std::option::Option<crate::types::HealthCheckConfig> {
+        &self.health_check
     }
     /// Consumes the builder and constructs a [`UpdateTargetGroupInput`](crate::operation::update_target_group::UpdateTargetGroupInput).
     pub fn build(

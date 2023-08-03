@@ -58,6 +58,10 @@ impl ListStudioLifecycleConfigsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `studio_lifecycle_configs`.
     ///
     /// To override the contents of this collection use [`set_studio_lifecycle_configs`](Self::set_studio_lifecycle_configs).
@@ -79,6 +83,12 @@ impl ListStudioLifecycleConfigsOutputBuilder {
     ) -> Self {
         self.studio_lifecycle_configs = input;
         self
+    }
+    /// <p>A list of Lifecycle Configurations and their properties.</p>
+    pub fn get_studio_lifecycle_configs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StudioLifecycleConfigDetails>> {
+        &self.studio_lifecycle_configs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

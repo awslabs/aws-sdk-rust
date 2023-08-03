@@ -36,6 +36,12 @@ impl GetTraceGraphFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetTraceGraph as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_trace_graph::builders::GetTraceGraphInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +142,10 @@ impl GetTraceGraphFluentBuilder {
         self.inner = self.inner.set_trace_ids(input);
         self
     }
+    /// <p>Trace IDs of requests for which to generate a service graph.</p>
+    pub fn get_trace_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_trace_ids()
+    }
     /// <p>Pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -145,5 +155,9 @@ impl GetTraceGraphFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>Pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

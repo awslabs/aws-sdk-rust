@@ -39,6 +39,12 @@ impl StartReportCreationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartReportCreation as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_report_creation::builders::StartReportCreationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +138,11 @@ impl StartReportCreationFluentBuilder {
     pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_s3_bucket(input);
         self
+    }
+    /// <p>The name of the Amazon S3 bucket where the report will be stored; for example:</p>
+    /// <p> <code>awsexamplebucket</code> </p>
+    /// <p>For more information on S3 bucket requirements, including an example bucket policy, see the example S3 bucket policy on this page.</p>
+    pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_s3_bucket()
     }
 }

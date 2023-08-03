@@ -76,6 +76,10 @@ impl ModifyCustomDomainAssociationOutputBuilder {
         self.custom_domain_name = input;
         self
     }
+    /// <p>The custom domain name associated with the result for the changed custom domain association.</p>
+    pub fn get_custom_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_domain_name
+    }
     /// <p>The certificate Amazon Resource Name (ARN) associated with the result for the changed custom domain association.</p>
     pub fn custom_domain_certificate_arn(
         mut self,
@@ -91,6 +95,12 @@ impl ModifyCustomDomainAssociationOutputBuilder {
     ) -> Self {
         self.custom_domain_certificate_arn = input;
         self
+    }
+    /// <p>The certificate Amazon Resource Name (ARN) associated with the result for the changed custom domain association.</p>
+    pub fn get_custom_domain_certificate_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.custom_domain_certificate_arn
     }
     /// <p>The identifier of the cluster associated with the result for the changed custom domain association.</p>
     pub fn cluster_identifier(
@@ -108,6 +118,10 @@ impl ModifyCustomDomainAssociationOutputBuilder {
         self.cluster_identifier = input;
         self
     }
+    /// <p>The identifier of the cluster associated with the result for the changed custom domain association.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_identifier
+    }
     /// <p>The certificate expiration time associated with the result for the changed custom domain association.</p>
     pub fn custom_domain_cert_expiry_time(
         mut self,
@@ -123,6 +137,12 @@ impl ModifyCustomDomainAssociationOutputBuilder {
     ) -> Self {
         self.custom_domain_cert_expiry_time = input;
         self
+    }
+    /// <p>The certificate expiration time associated with the result for the changed custom domain association.</p>
+    pub fn get_custom_domain_cert_expiry_time(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.custom_domain_cert_expiry_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

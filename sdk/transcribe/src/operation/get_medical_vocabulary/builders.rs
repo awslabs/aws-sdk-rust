@@ -38,6 +38,12 @@ impl GetMedicalVocabularyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetMedicalVocabulary as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_medical_vocabulary::builders::GetMedicalVocabularyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,5 +139,9 @@ impl GetMedicalVocabularyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_vocabulary_name(input);
         self
+    }
+    /// <p>The name of the custom medical vocabulary you want information about. Custom medical vocabulary names are case sensitive.</p>
+    pub fn get_vocabulary_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vocabulary_name()
     }
 }

@@ -50,6 +50,12 @@ impl AnalysisDefaultsBuilder {
         self.default_new_sheet_configuration = input;
         self
     }
+    /// <p>The configuration for default new sheet settings.</p>
+    pub fn get_default_new_sheet_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DefaultNewSheetConfiguration> {
+        &self.default_new_sheet_configuration
+    }
     /// Consumes the builder and constructs a [`AnalysisDefaults`](crate::types::AnalysisDefaults).
     pub fn build(self) -> crate::types::AnalysisDefaults {
         crate::types::AnalysisDefaults {

@@ -36,6 +36,12 @@ impl DeleteResourcePolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteResourcePolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_resource_policy::builders::DeleteResourcePolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +131,9 @@ impl DeleteResourcePolicyFluentBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource policy you want to delete. </p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
     }
 }

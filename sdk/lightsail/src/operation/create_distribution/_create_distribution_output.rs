@@ -58,6 +58,10 @@ impl CreateDistributionOutputBuilder {
         self.distribution = input;
         self
     }
+    /// <p>An object that describes the distribution created.</p>
+    pub fn get_distribution(&self) -> &::std::option::Option<crate::types::LightsailDistribution> {
+        &self.distribution
+    }
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operation(mut self, input: crate::types::Operation) -> Self {
         self.operation = ::std::option::Option::Some(input);
@@ -67,6 +71,10 @@ impl CreateDistributionOutputBuilder {
     pub fn set_operation(mut self, input: ::std::option::Option<crate::types::Operation>) -> Self {
         self.operation = input;
         self
+    }
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn get_operation(&self) -> &::std::option::Option<crate::types::Operation> {
+        &self.operation
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

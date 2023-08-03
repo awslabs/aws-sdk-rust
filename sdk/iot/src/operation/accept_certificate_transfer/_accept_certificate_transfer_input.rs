@@ -54,6 +54,10 @@ impl AcceptCertificateTransferInputBuilder {
         self.certificate_id = input;
         self
     }
+    /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
+    pub fn get_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_id
+    }
     /// <p>Specifies whether the certificate is active.</p>
     pub fn set_as_active(mut self, input: bool) -> Self {
         self.set_as_active = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl AcceptCertificateTransferInputBuilder {
     pub fn set_set_as_active(mut self, input: ::std::option::Option<bool>) -> Self {
         self.set_as_active = input;
         self
+    }
+    /// <p>Specifies whether the certificate is active.</p>
+    pub fn get_set_as_active(&self) -> &::std::option::Option<bool> {
+        &self.set_as_active
     }
     /// Consumes the builder and constructs a [`AcceptCertificateTransferInput`](crate::operation::accept_certificate_transfer::AcceptCertificateTransferInput).
     pub fn build(

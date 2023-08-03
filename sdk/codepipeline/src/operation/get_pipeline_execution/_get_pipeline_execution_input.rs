@@ -55,6 +55,10 @@ impl GetPipelineExecutionInputBuilder {
         self.pipeline_name = input;
         self
     }
+    /// <p>The name of the pipeline about which you want to get execution details.</p>
+    pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_name
+    }
     /// <p>The ID of the pipeline execution about which you want to get execution details.</p>
     pub fn pipeline_execution_id(
         mut self,
@@ -70,6 +74,10 @@ impl GetPipelineExecutionInputBuilder {
     ) -> Self {
         self.pipeline_execution_id = input;
         self
+    }
+    /// <p>The ID of the pipeline execution about which you want to get execution details.</p>
+    pub fn get_pipeline_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_execution_id
     }
     /// Consumes the builder and constructs a [`GetPipelineExecutionInput`](crate::operation::get_pipeline_execution::GetPipelineExecutionInput).
     pub fn build(

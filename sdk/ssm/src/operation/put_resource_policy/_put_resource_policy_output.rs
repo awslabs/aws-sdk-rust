@@ -55,6 +55,10 @@ impl PutResourcePolicyOutputBuilder {
         self.policy_id = input;
         self
     }
+    /// <p>The policy ID. To update a policy, you must specify <code>PolicyId</code> and <code>PolicyHash</code>.</p>
+    pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_id
+    }
     /// <p>ID of the current policy version.</p>
     pub fn policy_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_hash = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl PutResourcePolicyOutputBuilder {
     pub fn set_policy_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_hash = input;
         self
+    }
+    /// <p>ID of the current policy version.</p>
+    pub fn get_policy_hash(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_hash
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

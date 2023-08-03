@@ -54,6 +54,10 @@ impl GetPortalServiceProviderMetadataOutputBuilder {
         self.portal_arn = input;
         self
     }
+    /// <p>The ARN of the web portal.</p>
+    pub fn get_portal_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.portal_arn
+    }
     /// <p>The service provider SAML metadata.</p>
     pub fn service_provider_saml_metadata(
         mut self,
@@ -69,6 +73,12 @@ impl GetPortalServiceProviderMetadataOutputBuilder {
     ) -> Self {
         self.service_provider_saml_metadata = input;
         self
+    }
+    /// <p>The service provider SAML metadata.</p>
+    pub fn get_service_provider_saml_metadata(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.service_provider_saml_metadata
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

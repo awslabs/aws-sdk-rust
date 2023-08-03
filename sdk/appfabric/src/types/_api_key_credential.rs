@@ -45,6 +45,10 @@ impl ApiKeyCredentialBuilder {
         self.api_key = input;
         self
     }
+    /// <p>An API key for an application.</p>
+    pub fn get_api_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_key
+    }
     /// Consumes the builder and constructs a [`ApiKeyCredential`](crate::types::ApiKeyCredential).
     pub fn build(self) -> crate::types::ApiKeyCredential {
         crate::types::ApiKeyCredential {

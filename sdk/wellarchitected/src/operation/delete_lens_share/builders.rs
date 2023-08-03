@@ -40,6 +40,12 @@ impl DeleteLensShareFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteLensShare as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_lens_share::builders::DeleteLensShareInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +136,10 @@ impl DeleteLensShareFluentBuilder {
         self.inner = self.inner.set_share_id(input);
         self
     }
+    /// <p>The ID associated with the share.</p>
+    pub fn get_share_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_share_id()
+    }
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
@@ -145,6 +155,13 @@ impl DeleteLensShareFluentBuilder {
     pub fn set_lens_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_lens_alias(input);
         self
+    }
+    /// <p>The alias of the lens.</p>
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    pub fn get_lens_alias(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_lens_alias()
     }
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
@@ -167,5 +184,12 @@ impl DeleteLensShareFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
+    }
+    /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
+    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
+    /// </important>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
     }
 }

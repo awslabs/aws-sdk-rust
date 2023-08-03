@@ -41,6 +41,10 @@ impl DescribeUserPoolDomainInputBuilder {
         self.domain = input;
         self
     }
+    /// <p>The domain string. For custom domains, this is the fully-qualified domain name, such as <code>auth.example.com</code>. For Amazon Cognito prefix domains, this is the prefix alone, such as <code>auth</code>.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
+    }
     /// Consumes the builder and constructs a [`DescribeUserPoolDomainInput`](crate::operation::describe_user_pool_domain::DescribeUserPoolDomainInput).
     pub fn build(
         self,

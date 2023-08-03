@@ -55,6 +55,10 @@ impl ListRecipeVersionsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `recipes`.
     ///
     /// To override the contents of this collection use [`set_recipes`](Self::set_recipes).
@@ -73,6 +77,10 @@ impl ListRecipeVersionsOutputBuilder {
     ) -> Self {
         self.recipes = input;
         self
+    }
+    /// <p>A list of versions for the specified recipe.</p>
+    pub fn get_recipes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Recipe>> {
+        &self.recipes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

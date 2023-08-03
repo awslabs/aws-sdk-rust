@@ -138,6 +138,10 @@ impl SchemaBuilder {
         self.columns = input;
         self
     }
+    /// <p>The columns for the relation this schema represents.</p>
+    pub fn get_columns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Column>> {
+        &self.columns
+    }
     /// Appends an item to `partition_keys`.
     ///
     /// To override the contents of this collection use [`set_partition_keys`](Self::set_partition_keys).
@@ -156,6 +160,12 @@ impl SchemaBuilder {
     ) -> Self {
         self.partition_keys = input;
         self
+    }
+    /// <p>The partition keys for the dataset underlying this schema.</p>
+    pub fn get_partition_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Column>> {
+        &self.partition_keys
     }
     /// Appends an item to `analysis_rule_types`.
     ///
@@ -176,6 +186,12 @@ impl SchemaBuilder {
         self.analysis_rule_types = input;
         self
     }
+    /// <p>The analysis rule types associated with the schema. Valued values are LIST and AGGREGATION. Currently, only one entry is present.</p>
+    pub fn get_analysis_rule_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalysisRuleType>> {
+        &self.analysis_rule_types
+    }
     /// <p>The analysis method for the schema. The only valid value is currently DIRECT_QUERY.</p>
     pub fn analysis_method(mut self, input: crate::types::AnalysisMethod) -> Self {
         self.analysis_method = ::std::option::Option::Some(input);
@@ -188,6 +204,10 @@ impl SchemaBuilder {
     ) -> Self {
         self.analysis_method = input;
         self
+    }
+    /// <p>The analysis method for the schema. The only valid value is currently DIRECT_QUERY.</p>
+    pub fn get_analysis_method(&self) -> &::std::option::Option<crate::types::AnalysisMethod> {
+        &self.analysis_method
     }
     /// <p>The unique account ID for the Amazon Web Services account that owns the schema.</p>
     pub fn creator_account_id(
@@ -205,6 +225,10 @@ impl SchemaBuilder {
         self.creator_account_id = input;
         self
     }
+    /// <p>The unique account ID for the Amazon Web Services account that owns the schema.</p>
+    pub fn get_creator_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creator_account_id
+    }
     /// <p>A name for the schema. The schema relation is referred to by this name when queried by a protected query.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -214,6 +238,10 @@ impl SchemaBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A name for the schema. The schema relation is referred to by this name when queried by a protected query.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The unique ID for the collaboration that the schema belongs to.</p>
     pub fn collaboration_id(
@@ -231,6 +259,10 @@ impl SchemaBuilder {
         self.collaboration_id = input;
         self
     }
+    /// <p>The unique ID for the collaboration that the schema belongs to.</p>
+    pub fn get_collaboration_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collaboration_id
+    }
     /// <p>The unique ARN for the collaboration that the schema belongs to.</p>
     pub fn collaboration_arn(
         mut self,
@@ -247,6 +279,10 @@ impl SchemaBuilder {
         self.collaboration_arn = input;
         self
     }
+    /// <p>The unique ARN for the collaboration that the schema belongs to.</p>
+    pub fn get_collaboration_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collaboration_arn
+    }
     /// <p>A description for the schema.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -256,6 +292,10 @@ impl SchemaBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description for the schema.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The time the schema was created.</p>
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -270,6 +310,10 @@ impl SchemaBuilder {
         self.create_time = input;
         self
     }
+    /// <p>The time the schema was created.</p>
+    pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_time
+    }
     /// <p>The time the schema was last updated.</p>
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
@@ -283,6 +327,10 @@ impl SchemaBuilder {
         self.update_time = input;
         self
     }
+    /// <p>The time the schema was last updated.</p>
+    pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_time
+    }
     /// <p>The type of schema. The only valid value is currently `TABLE`.</p>
     pub fn r#type(mut self, input: crate::types::SchemaType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -292,6 +340,10 @@ impl SchemaBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::SchemaType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of schema. The only valid value is currently `TABLE`.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::SchemaType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`Schema`](crate::types::Schema).
     pub fn build(self) -> crate::types::Schema {

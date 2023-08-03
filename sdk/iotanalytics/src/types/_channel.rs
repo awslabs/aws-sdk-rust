@@ -102,6 +102,10 @@ impl ChannelBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the channel.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't change this storage option after the channel is created.</p>
     pub fn storage(mut self, input: crate::types::ChannelStorage) -> Self {
         self.storage = ::std::option::Option::Some(input);
@@ -115,6 +119,10 @@ impl ChannelBuilder {
         self.storage = input;
         self
     }
+    /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't change this storage option after the channel is created.</p>
+    pub fn get_storage(&self) -> &::std::option::Option<crate::types::ChannelStorage> {
+        &self.storage
+    }
     /// <p>The ARN of the channel.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -125,6 +133,10 @@ impl ChannelBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the channel.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The status of the channel.</p>
     pub fn status(mut self, input: crate::types::ChannelStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -134,6 +146,10 @@ impl ChannelBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ChannelStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the channel.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ChannelStatus> {
+        &self.status
     }
     /// <p>How long, in days, message data is kept for the channel.</p>
     pub fn retention_period(mut self, input: crate::types::RetentionPeriod) -> Self {
@@ -148,6 +164,10 @@ impl ChannelBuilder {
         self.retention_period = input;
         self
     }
+    /// <p>How long, in days, message data is kept for the channel.</p>
+    pub fn get_retention_period(&self) -> &::std::option::Option<crate::types::RetentionPeriod> {
+        &self.retention_period
+    }
     /// <p>When the channel was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -161,6 +181,10 @@ impl ChannelBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>When the channel was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>When the channel was last updated.</p>
     pub fn last_update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_update_time = ::std::option::Option::Some(input);
@@ -173,6 +197,10 @@ impl ChannelBuilder {
     ) -> Self {
         self.last_update_time = input;
         self
+    }
+    /// <p>When the channel was last updated.</p>
+    pub fn get_last_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_update_time
     }
     /// <p>The last time when a new message arrived in the channel.</p>
     /// <p>IoT Analytics updates this value at most once per minute for one channel. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
@@ -190,6 +218,14 @@ impl ChannelBuilder {
     ) -> Self {
         self.last_message_arrival_time = input;
         self
+    }
+    /// <p>The last time when a new message arrived in the channel.</p>
+    /// <p>IoT Analytics updates this value at most once per minute for one channel. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
+    /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
+    pub fn get_last_message_arrival_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_message_arrival_time
     }
     /// Consumes the builder and constructs a [`Channel`](crate::types::Channel).
     pub fn build(self) -> crate::types::Channel {

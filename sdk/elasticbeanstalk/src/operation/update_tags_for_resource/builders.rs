@@ -53,6 +53,13 @@ impl UpdateTagsForResourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateTagsForResource as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_tags_for_resource::builders::UpdateTagsForResourceInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -145,6 +152,11 @@ impl UpdateTagsForResourceFluentBuilder {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the resouce to be updated.</p>
+    /// <p>Must be the ARN of an Elastic Beanstalk resource.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
+    }
     /// Appends an item to `TagsToAdd`.
     ///
     /// To override the contents of this collection use [`set_tags_to_add`](Self::set_tags_to_add).
@@ -163,6 +175,11 @@ impl UpdateTagsForResourceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags_to_add(input);
         self
+    }
+    /// <p>A list of tags to add or update. If a key of an existing tag is added, the tag's value is updated.</p>
+    /// <p>Specify at least one of these parameters: <code>TagsToAdd</code>, <code>TagsToRemove</code>.</p>
+    pub fn get_tags_to_add(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags_to_add()
     }
     /// Appends an item to `TagsToRemove`.
     ///
@@ -185,5 +202,12 @@ impl UpdateTagsForResourceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags_to_remove(input);
         self
+    }
+    /// <p>A list of tag keys to remove. If a tag key doesn't exist, it is silently ignored.</p>
+    /// <p>Specify at least one of these parameters: <code>TagsToAdd</code>, <code>TagsToRemove</code>.</p>
+    pub fn get_tags_to_remove(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_tags_to_remove()
     }
 }

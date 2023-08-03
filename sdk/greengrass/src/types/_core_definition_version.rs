@@ -49,6 +49,10 @@ impl CoreDefinitionVersionBuilder {
         self.cores = input;
         self
     }
+    /// A list of cores in the core definition version.
+    pub fn get_cores(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Core>> {
+        &self.cores
+    }
     /// Consumes the builder and constructs a [`CoreDefinitionVersion`](crate::types::CoreDefinitionVersion).
     pub fn build(self) -> crate::types::CoreDefinitionVersion {
         crate::types::CoreDefinitionVersion { cores: self.cores }

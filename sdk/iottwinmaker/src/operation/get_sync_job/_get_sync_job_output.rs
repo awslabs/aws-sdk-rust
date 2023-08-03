@@ -98,6 +98,10 @@ impl GetSyncJobOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The sync job ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The ID of the workspace that contains the sync job.</p>
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
@@ -107,6 +111,10 @@ impl GetSyncJobOutputBuilder {
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workspace_id = input;
         self
+    }
+    /// <p>The ID of the workspace that contains the sync job.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
     }
     /// <p>The sync soucre.</p> <note>
     /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
@@ -122,6 +130,12 @@ impl GetSyncJobOutputBuilder {
         self.sync_source = input;
         self
     }
+    /// <p>The sync soucre.</p> <note>
+    /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
+    /// </note>
+    pub fn get_sync_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sync_source
+    }
     /// <p>The sync IAM role.</p>
     pub fn sync_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sync_role = ::std::option::Option::Some(input.into());
@@ -132,6 +146,10 @@ impl GetSyncJobOutputBuilder {
         self.sync_role = input;
         self
     }
+    /// <p>The sync IAM role.</p>
+    pub fn get_sync_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sync_role
+    }
     /// <p>The SyncJob response status.</p>
     pub fn status(mut self, input: crate::types::SyncJobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -141,6 +159,10 @@ impl GetSyncJobOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::SyncJobStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The SyncJob response status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::SyncJobStatus> {
+        &self.status
     }
     /// <p>The creation date and time.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -155,6 +177,10 @@ impl GetSyncJobOutputBuilder {
         self.creation_date_time = input;
         self
     }
+    /// <p>The creation date and time.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
+    }
     /// <p>The update date and time.</p>
     pub fn update_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_date_time = ::std::option::Option::Some(input);
@@ -167,6 +193,10 @@ impl GetSyncJobOutputBuilder {
     ) -> Self {
         self.update_date_time = input;
         self
+    }
+    /// <p>The update date and time.</p>
+    pub fn get_update_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_date_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

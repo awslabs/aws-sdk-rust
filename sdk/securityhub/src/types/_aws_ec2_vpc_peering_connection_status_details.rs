@@ -48,6 +48,10 @@ impl AwsEc2VpcPeeringConnectionStatusDetailsBuilder {
         self.code = input;
         self
     }
+    /// <p>The status of the VPC peering connection. </p>
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
+    }
     /// <p>A message that provides more information about the status, if applicable. </p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl AwsEc2VpcPeeringConnectionStatusDetailsBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>A message that provides more information about the status, if applicable. </p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`AwsEc2VpcPeeringConnectionStatusDetails`](crate::types::AwsEc2VpcPeeringConnectionStatusDetails).
     pub fn build(self) -> crate::types::AwsEc2VpcPeeringConnectionStatusDetails {

@@ -40,6 +40,10 @@ impl DeprovisionByoipCidrInputBuilder {
         self.cidr = input;
         self
     }
+    /// <p>The address range, in CIDR notation. The prefix must be the same prefix that you specified when you provisioned the address range.</p>
+    pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr
+    }
     /// Consumes the builder and constructs a [`DeprovisionByoipCidrInput`](crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidrInput).
     pub fn build(
         self,

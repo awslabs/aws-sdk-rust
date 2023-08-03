@@ -56,6 +56,10 @@ impl CreateParticipantConnectionOutputBuilder {
         self.websocket = input;
         self
     }
+    /// <p>Creates the participant's websocket connection.</p>
+    pub fn get_websocket(&self) -> &::std::option::Option<crate::types::Websocket> {
+        &self.websocket
+    }
     /// <p>Creates the participant's connection credentials. The authentication token associated with the participant's connection.</p>
     pub fn connection_credentials(mut self, input: crate::types::ConnectionCredentials) -> Self {
         self.connection_credentials = ::std::option::Option::Some(input);
@@ -68,6 +72,12 @@ impl CreateParticipantConnectionOutputBuilder {
     ) -> Self {
         self.connection_credentials = input;
         self
+    }
+    /// <p>Creates the participant's connection credentials. The authentication token associated with the participant's connection.</p>
+    pub fn get_connection_credentials(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConnectionCredentials> {
+        &self.connection_credentials
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

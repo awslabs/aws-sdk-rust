@@ -50,6 +50,10 @@ impl DeleteUsageLimitOutputBuilder {
         self.usage_limit = input;
         self
     }
+    /// <p>The deleted usage limit object.</p>
+    pub fn get_usage_limit(&self) -> &::std::option::Option<crate::types::UsageLimit> {
+        &self.usage_limit
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

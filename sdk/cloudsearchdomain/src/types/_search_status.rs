@@ -48,6 +48,10 @@ impl SearchStatusBuilder {
         self.timems = input;
         self
     }
+    /// <p>How long it took to process the request, in milliseconds.</p>
+    pub fn get_timems(&self) -> &::std::option::Option<i64> {
+        &self.timems
+    }
     /// <p>The encrypted resource ID for the request.</p>
     pub fn rid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rid = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl SearchStatusBuilder {
     pub fn set_rid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rid = input;
         self
+    }
+    /// <p>The encrypted resource ID for the request.</p>
+    pub fn get_rid(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rid
     }
     /// Consumes the builder and constructs a [`SearchStatus`](crate::types::SearchStatus).
     pub fn build(self) -> crate::types::SearchStatus {

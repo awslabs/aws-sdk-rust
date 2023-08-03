@@ -56,6 +56,10 @@ impl ModelSummaryBuilder {
         self.model_name = input;
         self
     }
+    /// <p>The name of the model that you want a summary for.</p>
+    pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the model.</p>
     pub fn model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_arn = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl ModelSummaryBuilder {
     pub fn set_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the model.</p>
+    pub fn get_model_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_arn
     }
     /// <p>A timestamp that indicates when the model was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -78,6 +86,10 @@ impl ModelSummaryBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>A timestamp that indicates when the model was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// Consumes the builder and constructs a [`ModelSummary`](crate::types::ModelSummary).
     pub fn build(self) -> crate::types::ModelSummary {

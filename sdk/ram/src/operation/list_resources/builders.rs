@@ -36,6 +36,12 @@ impl ListResourcesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListResources as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_resources::builders::ListResourcesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +146,14 @@ impl ListResourcesFluentBuilder {
         self.inner = self.inner.set_resource_owner(input);
         self
     }
+    /// <p>Specifies that you want to list only the resource shares that match the following:</p>
+    /// <ul>
+    /// <li> <p> <b> <code>SELF</code> </b> – resources that your account shares with other accounts</p> </li>
+    /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with your account</p> </li>
+    /// </ul>
+    pub fn get_resource_owner(&self) -> &::std::option::Option<crate::types::ResourceOwner> {
+        self.inner.get_resource_owner()
+    }
     /// <p>Specifies that you want to list only the resource shares that are associated with the specified principal.</p>
     pub fn principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.principal(input.into());
@@ -149,6 +163,10 @@ impl ListResourcesFluentBuilder {
     pub fn set_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_principal(input);
         self
+    }
+    /// <p>Specifies that you want to list only the resource shares that are associated with the specified principal.</p>
+    pub fn get_principal(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_principal()
     }
     /// <p>Specifies that you want to list only the resource shares that include resources of the specified resource type.</p>
     /// <p>For valid values, query the <code>ListResourceTypes</code> operation.</p>
@@ -167,6 +185,11 @@ impl ListResourcesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
+    }
+    /// <p>Specifies that you want to list only the resource shares that include resources of the specified resource type.</p>
+    /// <p>For valid values, query the <code>ListResourceTypes</code> operation.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_type()
     }
     /// Appends an item to `resourceArns`.
     ///
@@ -188,6 +211,12 @@ impl ListResourcesFluentBuilder {
         self.inner = self.inner.set_resource_arns(input);
         self
     }
+    /// <p>Specifies that you want to list only the resource shares that include resources with the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
+    pub fn get_resource_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_resource_arns()
+    }
     /// Appends an item to `resourceShareArns`.
     ///
     /// To override the contents of this collection use [`set_resource_share_arns`](Self::set_resource_share_arns).
@@ -208,6 +237,12 @@ impl ListResourcesFluentBuilder {
         self.inner = self.inner.set_resource_share_arns(input);
         self
     }
+    /// <p>Specifies that you want to list only resources in the resource shares identified by the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
+    pub fn get_resource_share_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_resource_share_arns()
+    }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -218,6 +253,10 @@ impl ListResourcesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -227,6 +266,10 @@ impl ListResourcesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>Specifies that you want the results to include only resources that have the specified scope.</p>
     /// <ul>
@@ -252,5 +295,17 @@ impl ListResourcesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_region_scope(input);
         self
+    }
+    /// <p>Specifies that you want the results to include only resources that have the specified scope.</p>
+    /// <ul>
+    /// <li> <p> <code>ALL</code> – the results include both global and regional resources or resource types.</p> </li>
+    /// <li> <p> <code>GLOBAL</code> – the results include only global resources or resource types.</p> </li>
+    /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li>
+    /// </ul>
+    /// <p>The default value is <code>ALL</code>.</p>
+    pub fn get_resource_region_scope(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceRegionScopeFilter> {
+        self.inner.get_resource_region_scope()
     }
 }

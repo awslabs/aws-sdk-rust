@@ -97,6 +97,17 @@ impl AnalyticsIntentMetricResultBuilder {
         self.name = input;
         self
     }
+    /// <p>The metric that you requested. See <a href="https://docs.aws.amazon.com/lexv2/latest/dg/analytics-key-definitions.html">Key definitions</a> for more details about these metrics.</p>
+    /// <ul>
+    /// <li> <p> <code>Count</code> – The number of times the intent was invoked.</p> </li>
+    /// <li> <p> <code>Success</code> – The number of times the intent succeeded.</p> </li>
+    /// <li> <p> <code>Failure</code> – The number of times the intent failed.</p> </li>
+    /// <li> <p> <code>Switched</code> – The number of times there was a switch to a different intent.</p> </li>
+    /// <li> <p> <code>Dropped</code> – The number of times the user dropped the intent.</p> </li>
+    /// </ul>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::AnalyticsIntentMetricName> {
+        &self.name
+    }
     /// <p>The statistic that you requested to calculate.</p>
     /// <ul>
     /// <li> <p> <code>Sum</code> – The total count for the category you provide in <code>name</code>.</p> </li>
@@ -120,6 +131,15 @@ impl AnalyticsIntentMetricResultBuilder {
         self.statistic = input;
         self
     }
+    /// <p>The statistic that you requested to calculate.</p>
+    /// <ul>
+    /// <li> <p> <code>Sum</code> – The total count for the category you provide in <code>name</code>.</p> </li>
+    /// <li> <p> <code>Average</code> – The total count divided by the number of intents in the category you provide in <code>name</code>.</p> </li>
+    /// <li> <p> <code>Max</code> – The highest count in the category you provide in <code>name</code>.</p> </li>
+    /// </ul>
+    pub fn get_statistic(&self) -> &::std::option::Option<crate::types::AnalyticsMetricStatistic> {
+        &self.statistic
+    }
     /// <p>The value of the summary statistic for the metric that you requested.</p>
     pub fn value(mut self, input: f64) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -129,6 +149,10 @@ impl AnalyticsIntentMetricResultBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value of the summary statistic for the metric that you requested.</p>
+    pub fn get_value(&self) -> &::std::option::Option<f64> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`AnalyticsIntentMetricResult`](crate::types::AnalyticsIntentMetricResult).
     pub fn build(self) -> crate::types::AnalyticsIntentMetricResult {

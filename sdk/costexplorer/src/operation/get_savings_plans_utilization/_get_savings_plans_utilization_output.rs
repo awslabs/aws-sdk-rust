@@ -70,6 +70,12 @@ impl GetSavingsPlansUtilizationOutputBuilder {
         self.savings_plans_utilizations_by_time = input;
         self
     }
+    /// <p>The amount of cost/commitment that you used your Savings Plans. You can use it to specify date ranges.</p>
+    pub fn get_savings_plans_utilizations_by_time(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlansUtilizationByTime>> {
+        &self.savings_plans_utilizations_by_time
+    }
     /// <p>The total amount of cost/commitment that you used your Savings Plans, regardless of date ranges.</p>
     pub fn total(mut self, input: crate::types::SavingsPlansUtilizationAggregates) -> Self {
         self.total = ::std::option::Option::Some(input);
@@ -82,6 +88,12 @@ impl GetSavingsPlansUtilizationOutputBuilder {
     ) -> Self {
         self.total = input;
         self
+    }
+    /// <p>The total amount of cost/commitment that you used your Savings Plans, regardless of date ranges.</p>
+    pub fn get_total(
+        &self,
+    ) -> &::std::option::Option<crate::types::SavingsPlansUtilizationAggregates> {
+        &self.total
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -36,6 +36,12 @@ impl UpdateRoutingControlFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateRoutingControl as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_routing_control::builders::UpdateRoutingControlInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateRoutingControlFluentBuilder {
         self.inner = self.inner.set_routing_control_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
+    pub fn get_routing_control_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_routing_control_arn()
+    }
     /// <p>The name of the routing control.</p>
     pub fn routing_control_name(
         mut self,
@@ -147,5 +157,9 @@ impl UpdateRoutingControlFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_routing_control_name(input);
         self
+    }
+    /// <p>The name of the routing control.</p>
+    pub fn get_routing_control_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_routing_control_name()
     }
 }

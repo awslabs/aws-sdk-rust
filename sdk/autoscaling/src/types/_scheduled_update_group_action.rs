@@ -128,6 +128,10 @@ impl ScheduledUpdateGroupActionBuilder {
         self.auto_scaling_group_name = input;
         self
     }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auto_scaling_group_name
+    }
     /// <p>The name of the scheduled action.</p>
     pub fn scheduled_action_name(
         mut self,
@@ -143,6 +147,10 @@ impl ScheduledUpdateGroupActionBuilder {
     ) -> Self {
         self.scheduled_action_name = input;
         self
+    }
+    /// <p>The name of the scheduled action.</p>
+    pub fn get_scheduled_action_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scheduled_action_name
     }
     /// <p>The Amazon Resource Name (ARN) of the scheduled action.</p>
     pub fn scheduled_action_arn(
@@ -160,6 +168,10 @@ impl ScheduledUpdateGroupActionBuilder {
         self.scheduled_action_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the scheduled action.</p>
+    pub fn get_scheduled_action_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scheduled_action_arn
+    }
     /// <p>This property is no longer used.</p>
     pub fn time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.time = ::std::option::Option::Some(input);
@@ -169,6 +181,10 @@ impl ScheduledUpdateGroupActionBuilder {
     pub fn set_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.time = input;
         self
+    }
+    /// <p>This property is no longer used.</p>
+    pub fn get_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.time
     }
     /// <p>The date and time in UTC for this action to start. For example, <code>"2019-06-01T00:00:00Z"</code>. </p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -183,6 +199,10 @@ impl ScheduledUpdateGroupActionBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The date and time in UTC for this action to start. For example, <code>"2019-06-01T00:00:00Z"</code>. </p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The date and time in UTC for the recurring schedule to end. For example, <code>"2019-06-01T00:00:00Z"</code>. </p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -196,6 +216,10 @@ impl ScheduledUpdateGroupActionBuilder {
         self.end_time = input;
         self
     }
+    /// <p>The date and time in UTC for the recurring schedule to end. For example, <code>"2019-06-01T00:00:00Z"</code>. </p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>The recurring schedule for the action, in Unix cron syntax format.</p>
     /// <p>When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the boundaries of when the recurring action starts and stops.</p>
     pub fn recurrence(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -208,6 +232,11 @@ impl ScheduledUpdateGroupActionBuilder {
         self.recurrence = input;
         self
     }
+    /// <p>The recurring schedule for the action, in Unix cron syntax format.</p>
+    /// <p>When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the boundaries of when the recurring action starts and stops.</p>
+    pub fn get_recurrence(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recurrence
+    }
     /// <p>The minimum size of the Auto Scaling group.</p>
     pub fn min_size(mut self, input: i32) -> Self {
         self.min_size = ::std::option::Option::Some(input);
@@ -217,6 +246,10 @@ impl ScheduledUpdateGroupActionBuilder {
     pub fn set_min_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_size = input;
         self
+    }
+    /// <p>The minimum size of the Auto Scaling group.</p>
+    pub fn get_min_size(&self) -> &::std::option::Option<i32> {
+        &self.min_size
     }
     /// <p>The maximum size of the Auto Scaling group.</p>
     pub fn max_size(mut self, input: i32) -> Self {
@@ -228,6 +261,10 @@ impl ScheduledUpdateGroupActionBuilder {
         self.max_size = input;
         self
     }
+    /// <p>The maximum size of the Auto Scaling group.</p>
+    pub fn get_max_size(&self) -> &::std::option::Option<i32> {
+        &self.max_size
+    }
     /// <p>The desired capacity is the initial capacity of the Auto Scaling group after the scheduled action runs and the capacity it attempts to maintain.</p>
     pub fn desired_capacity(mut self, input: i32) -> Self {
         self.desired_capacity = ::std::option::Option::Some(input);
@@ -238,6 +275,10 @@ impl ScheduledUpdateGroupActionBuilder {
         self.desired_capacity = input;
         self
     }
+    /// <p>The desired capacity is the initial capacity of the Auto Scaling group after the scheduled action runs and the capacity it attempts to maintain.</p>
+    pub fn get_desired_capacity(&self) -> &::std::option::Option<i32> {
+        &self.desired_capacity
+    }
     /// <p>The time zone for the cron expression.</p>
     pub fn time_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.time_zone = ::std::option::Option::Some(input.into());
@@ -247,6 +288,10 @@ impl ScheduledUpdateGroupActionBuilder {
     pub fn set_time_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.time_zone = input;
         self
+    }
+    /// <p>The time zone for the cron expression.</p>
+    pub fn get_time_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.time_zone
     }
     /// Consumes the builder and constructs a [`ScheduledUpdateGroupAction`](crate::types::ScheduledUpdateGroupAction).
     pub fn build(self) -> crate::types::ScheduledUpdateGroupAction {

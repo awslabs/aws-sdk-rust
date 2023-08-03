@@ -65,6 +65,10 @@ impl AmiAggregationBuilder {
         self.amis = input;
         self
     }
+    /// <p>The IDs of AMIs to aggregate findings for.</p>
+    pub fn get_amis(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.amis
+    }
     /// <p>The order to sort results by.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl AmiAggregationBuilder {
         self.sort_order = input;
         self
     }
+    /// <p>The order to sort results by.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.sort_order
+    }
     /// <p>The value to sort results by.</p>
     pub fn sort_by(mut self, input: crate::types::AmiSortBy) -> Self {
         self.sort_by = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl AmiAggregationBuilder {
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::AmiSortBy>) -> Self {
         self.sort_by = input;
         self
+    }
+    /// <p>The value to sort results by.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::AmiSortBy> {
+        &self.sort_by
     }
     /// Consumes the builder and constructs a [`AmiAggregation`](crate::types::AmiAggregation).
     pub fn build(self) -> crate::types::AmiAggregation {

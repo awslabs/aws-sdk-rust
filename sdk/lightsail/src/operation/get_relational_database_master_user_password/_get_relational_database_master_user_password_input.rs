@@ -60,6 +60,10 @@ impl GetRelationalDatabaseMasterUserPasswordInputBuilder {
         self.relational_database_name = input;
         self
     }
+    /// <p>The name of your database for which to get the master user password.</p>
+    pub fn get_relational_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.relational_database_name
+    }
     /// <p>The password version to return.</p>
     /// <p>Specifying <code>CURRENT</code> or <code>PREVIOUS</code> returns the current or previous passwords respectively. Specifying <code>PENDING</code> returns the newest version of the password that will rotate to <code>CURRENT</code>. After the <code>PENDING</code> password rotates to <code>CURRENT</code>, the <code>PENDING</code> password is no longer available.</p>
     /// <p>Default: <code>CURRENT</code> </p>
@@ -79,6 +83,14 @@ impl GetRelationalDatabaseMasterUserPasswordInputBuilder {
     ) -> Self {
         self.password_version = input;
         self
+    }
+    /// <p>The password version to return.</p>
+    /// <p>Specifying <code>CURRENT</code> or <code>PREVIOUS</code> returns the current or previous passwords respectively. Specifying <code>PENDING</code> returns the newest version of the password that will rotate to <code>CURRENT</code>. After the <code>PENDING</code> password rotates to <code>CURRENT</code>, the <code>PENDING</code> password is no longer available.</p>
+    /// <p>Default: <code>CURRENT</code> </p>
+    pub fn get_password_version(
+        &self,
+    ) -> &::std::option::Option<crate::types::RelationalDatabasePasswordVersion> {
+        &self.password_version
     }
     /// Consumes the builder and constructs a [`GetRelationalDatabaseMasterUserPasswordInput`](crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordInput, ::aws_smithy_http::operation::error::BuildError>{

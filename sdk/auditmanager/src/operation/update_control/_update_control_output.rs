@@ -46,6 +46,10 @@ impl UpdateControlOutputBuilder {
         self.control = input;
         self
     }
+    /// <p> The name of the updated control set that the <code>UpdateControl</code> API returned. </p>
+    pub fn get_control(&self) -> &::std::option::Option<crate::types::Control> {
+        &self.control
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -82,6 +82,12 @@ impl AwsEcsServiceServiceRegistriesDetailsBuilder {
         self.container_name = input;
         self
     }
+    /// <p>The container name value to use for the service discovery service.</p>
+    /// <p>If the task definition uses the <code>bridge</code> or <code>host</code> network mode, you must specify <code>ContainerName</code> and <code>ContainerPort</code>.</p>
+    /// <p>If the task definition uses the <code>awsvpc</code> network mode and a type SRV DNS record, you must specify either <code>ContainerName</code> and <code>ContainerPort</code>, or <code>Port</code> , but not both.</p>
+    pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.container_name
+    }
     /// <p>The port value to use for the service discovery service.</p>
     /// <p>If the task definition uses the <code>bridge</code> or <code>host</code> network mode, you must specify <code>ContainerName</code> and <code>ContainerPort</code>.</p>
     /// <p>If the task definition uses the <code>awsvpc</code> network mode and a type SRV DNS record, you must specify either <code>ContainerName</code> and <code>ContainerPort</code>, or <code>Port</code> , but not both.</p>
@@ -96,6 +102,12 @@ impl AwsEcsServiceServiceRegistriesDetailsBuilder {
         self.container_port = input;
         self
     }
+    /// <p>The port value to use for the service discovery service.</p>
+    /// <p>If the task definition uses the <code>bridge</code> or <code>host</code> network mode, you must specify <code>ContainerName</code> and <code>ContainerPort</code>.</p>
+    /// <p>If the task definition uses the <code>awsvpc</code> network mode and a type SRV DNS record, you must specify either <code>ContainerName</code> and <code>ContainerPort</code>, or <code>Port</code> , but not both.</p>
+    pub fn get_container_port(&self) -> &::std::option::Option<i32> {
+        &self.container_port
+    }
     /// <p>The port value to use for a service discovery service that specifies an SRV record. This field can be used if both the <code>awsvpc</code>awsvpc network mode and SRV records are used.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -106,6 +118,10 @@ impl AwsEcsServiceServiceRegistriesDetailsBuilder {
         self.port = input;
         self
     }
+    /// <p>The port value to use for a service discovery service that specifies an SRV record. This field can be used if both the <code>awsvpc</code>awsvpc network mode and SRV records are used.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
+    }
     /// <p>The ARN of the service registry.</p>
     pub fn registry_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_arn = ::std::option::Option::Some(input.into());
@@ -115,6 +131,10 @@ impl AwsEcsServiceServiceRegistriesDetailsBuilder {
     pub fn set_registry_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registry_arn = input;
         self
+    }
+    /// <p>The ARN of the service registry.</p>
+    pub fn get_registry_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_arn
     }
     /// Consumes the builder and constructs a [`AwsEcsServiceServiceRegistriesDetails`](crate::types::AwsEcsServiceServiceRegistriesDetails).
     pub fn build(self) -> crate::types::AwsEcsServiceServiceRegistriesDetails {

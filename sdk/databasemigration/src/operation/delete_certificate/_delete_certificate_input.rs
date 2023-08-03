@@ -46,6 +46,10 @@ impl DeleteCertificateInputBuilder {
         self.certificate_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_arn
+    }
     /// Consumes the builder and constructs a [`DeleteCertificateInput`](crate::operation::delete_certificate::DeleteCertificateInput).
     pub fn build(
         self,

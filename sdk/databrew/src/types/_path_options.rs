@@ -69,6 +69,12 @@ impl PathOptionsBuilder {
         self.last_modified_date_condition = input;
         self
     }
+    /// <p>If provided, this structure defines a date range for matching Amazon S3 objects based on their LastModifiedDate attribute in Amazon S3.</p>
+    pub fn get_last_modified_date_condition(
+        &self,
+    ) -> &::std::option::Option<crate::types::FilterExpression> {
+        &self.last_modified_date_condition
+    }
     /// <p>If provided, this structure imposes a limit on a number of files that should be selected.</p>
     pub fn files_limit(mut self, input: crate::types::FilesLimit) -> Self {
         self.files_limit = ::std::option::Option::Some(input);
@@ -81,6 +87,10 @@ impl PathOptionsBuilder {
     ) -> Self {
         self.files_limit = input;
         self
+    }
+    /// <p>If provided, this structure imposes a limit on a number of files that should be selected.</p>
+    pub fn get_files_limit(&self) -> &::std::option::Option<crate::types::FilesLimit> {
+        &self.files_limit
     }
     /// Adds a key-value pair to `parameters`.
     ///
@@ -106,6 +116,14 @@ impl PathOptionsBuilder {
     ) -> Self {
         self.parameters = input;
         self
+    }
+    /// <p>A structure that maps names of parameters used in the Amazon S3 path of a dataset to their definitions.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::DatasetParameter>,
+    > {
+        &self.parameters
     }
     /// Consumes the builder and constructs a [`PathOptions`](crate::types::PathOptions).
     pub fn build(self) -> crate::types::PathOptions {

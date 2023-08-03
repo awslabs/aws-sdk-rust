@@ -45,6 +45,10 @@ impl DescribeModelPackageGroupInputBuilder {
         self.model_package_group_name = input;
         self
     }
+    /// <p>The name of gthe model group to describe.</p>
+    pub fn get_model_package_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_package_group_name
+    }
     /// Consumes the builder and constructs a [`DescribeModelPackageGroupInput`](crate::operation::describe_model_package_group::DescribeModelPackageGroupInput).
     pub fn build(
         self,

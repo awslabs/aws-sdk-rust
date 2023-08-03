@@ -68,6 +68,12 @@ impl EmailConfigurationBuilder {
         self.from = input;
         self
     }
+    /// <p>The email address that sends emails.</p> <important>
+    /// <p>If you use the AWS IoT Events managed AWS Lambda function to manage your emails, you must <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the email address that sends emails in Amazon SES</a>.</p>
+    /// </important>
+    pub fn get_from(&self) -> &::std::option::Option<::std::string::String> {
+        &self.from
+    }
     /// <p>Contains the subject and message of an email.</p>
     pub fn content(mut self, input: crate::types::EmailContent) -> Self {
         self.content = ::std::option::Option::Some(input);
@@ -77,6 +83,10 @@ impl EmailConfigurationBuilder {
     pub fn set_content(mut self, input: ::std::option::Option<crate::types::EmailContent>) -> Self {
         self.content = input;
         self
+    }
+    /// <p>Contains the subject and message of an email.</p>
+    pub fn get_content(&self) -> &::std::option::Option<crate::types::EmailContent> {
+        &self.content
     }
     /// <p>Contains the information of one or more recipients who receive the emails.</p> <important>
     /// <p>You must <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/addusers.html">add the users that receive emails to your AWS SSO store</a>.</p>
@@ -94,6 +104,12 @@ impl EmailConfigurationBuilder {
     ) -> Self {
         self.recipients = input;
         self
+    }
+    /// <p>Contains the information of one or more recipients who receive the emails.</p> <important>
+    /// <p>You must <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/addusers.html">add the users that receive emails to your AWS SSO store</a>.</p>
+    /// </important>
+    pub fn get_recipients(&self) -> &::std::option::Option<crate::types::EmailRecipients> {
+        &self.recipients
     }
     /// Consumes the builder and constructs a [`EmailConfiguration`](crate::types::EmailConfiguration).
     pub fn build(self) -> crate::types::EmailConfiguration {

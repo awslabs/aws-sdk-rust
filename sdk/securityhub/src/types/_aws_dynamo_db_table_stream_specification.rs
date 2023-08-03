@@ -48,6 +48,10 @@ impl AwsDynamoDbTableStreamSpecificationBuilder {
         self.stream_enabled = input;
         self
     }
+    /// <p>Indicates whether DynamoDB Streams is enabled on the table.</p>
+    pub fn get_stream_enabled(&self) -> &::std::option::Option<bool> {
+        &self.stream_enabled
+    }
     /// <p>Determines the information that is written to the table.</p>
     pub fn stream_view_type(
         mut self,
@@ -63,6 +67,10 @@ impl AwsDynamoDbTableStreamSpecificationBuilder {
     ) -> Self {
         self.stream_view_type = input;
         self
+    }
+    /// <p>Determines the information that is written to the table.</p>
+    pub fn get_stream_view_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_view_type
     }
     /// Consumes the builder and constructs a [`AwsDynamoDbTableStreamSpecification`](crate::types::AwsDynamoDbTableStreamSpecification).
     pub fn build(self) -> crate::types::AwsDynamoDbTableStreamSpecification {

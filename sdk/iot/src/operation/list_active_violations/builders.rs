@@ -37,6 +37,12 @@ impl ListActiveViolationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListActiveViolations as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_active_violations::builders::ListActiveViolationsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +144,10 @@ impl ListActiveViolationsFluentBuilder {
         self.inner = self.inner.set_thing_name(input);
         self
     }
+    /// <p>The name of the thing whose active violations are listed.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_thing_name()
+    }
     /// <p>The name of the Device Defender security profile for which violations are listed.</p>
     pub fn security_profile_name(
         mut self,
@@ -154,6 +164,10 @@ impl ListActiveViolationsFluentBuilder {
         self.inner = self.inner.set_security_profile_name(input);
         self
     }
+    /// <p>The name of the Device Defender security profile for which violations are listed.</p>
+    pub fn get_security_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_security_profile_name()
+    }
     /// <p> The criteria for a behavior. </p>
     pub fn behavior_criteria_type(mut self, input: crate::types::BehaviorCriteriaType) -> Self {
         self.inner = self.inner.behavior_criteria_type(input);
@@ -167,6 +181,12 @@ impl ListActiveViolationsFluentBuilder {
         self.inner = self.inner.set_behavior_criteria_type(input);
         self
     }
+    /// <p> The criteria for a behavior. </p>
+    pub fn get_behavior_criteria_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::BehaviorCriteriaType> {
+        self.inner.get_behavior_criteria_type()
+    }
     /// <p> A list of all suppressed alerts. </p>
     pub fn list_suppressed_alerts(mut self, input: bool) -> Self {
         self.inner = self.inner.list_suppressed_alerts(input);
@@ -176,6 +196,10 @@ impl ListActiveViolationsFluentBuilder {
     pub fn set_list_suppressed_alerts(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_list_suppressed_alerts(input);
         self
+    }
+    /// <p> A list of all suppressed alerts. </p>
+    pub fn get_list_suppressed_alerts(&self) -> &::std::option::Option<bool> {
+        self.inner.get_list_suppressed_alerts()
     }
     /// <p>The verification state of the violation (detect alarm).</p>
     pub fn verification_state(mut self, input: crate::types::VerificationState) -> Self {
@@ -190,6 +214,12 @@ impl ListActiveViolationsFluentBuilder {
         self.inner = self.inner.set_verification_state(input);
         self
     }
+    /// <p>The verification state of the violation (detect alarm).</p>
+    pub fn get_verification_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::VerificationState> {
+        self.inner.get_verification_state()
+    }
     /// <p>The token for the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -200,6 +230,10 @@ impl ListActiveViolationsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return at one time.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -209,5 +243,9 @@ impl ListActiveViolationsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return at one time.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

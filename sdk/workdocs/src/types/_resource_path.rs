@@ -50,6 +50,12 @@ impl ResourcePathBuilder {
         self.components = input;
         self
     }
+    /// <p>The components of the resource path.</p>
+    pub fn get_components(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePathComponent>> {
+        &self.components
+    }
     /// Consumes the builder and constructs a [`ResourcePath`](crate::types::ResourcePath).
     pub fn build(self) -> crate::types::ResourcePath {
         crate::types::ResourcePath {

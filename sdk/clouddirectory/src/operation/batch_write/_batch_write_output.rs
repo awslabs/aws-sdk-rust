@@ -57,6 +57,12 @@ impl BatchWriteOutputBuilder {
         self.responses = input;
         self
     }
+    /// <p>A list of all the responses for each batch write.</p>
+    pub fn get_responses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchWriteOperationResponse>> {
+        &self.responses
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

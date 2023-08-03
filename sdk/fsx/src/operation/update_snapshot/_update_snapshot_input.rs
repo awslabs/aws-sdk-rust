@@ -61,6 +61,10 @@ impl UpdateSnapshotInputBuilder {
         self.client_request_token = input;
         self
     }
+    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
+    }
     /// <p>The name of the snapshot to update.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl UpdateSnapshotInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the snapshot to update.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The ID of the snapshot that you want to update, in the format <code>fsvolsnap-0123456789abcdef0</code>.</p>
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_id = ::std::option::Option::Some(input.into());
@@ -80,6 +88,10 @@ impl UpdateSnapshotInputBuilder {
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_id = input;
         self
+    }
+    /// <p>The ID of the snapshot that you want to update, in the format <code>fsvolsnap-0123456789abcdef0</code>.</p>
+    pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_id
     }
     /// Consumes the builder and constructs a [`UpdateSnapshotInput`](crate::operation::update_snapshot::UpdateSnapshotInput).
     pub fn build(

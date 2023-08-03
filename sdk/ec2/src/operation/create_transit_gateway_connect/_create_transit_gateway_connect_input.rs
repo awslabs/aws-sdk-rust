@@ -74,6 +74,12 @@ impl CreateTransitGatewayConnectInputBuilder {
         self.transport_transit_gateway_attachment_id = input;
         self
     }
+    /// <p>The ID of the transit gateway attachment. You can specify a VPC attachment or Amazon Web Services Direct Connect attachment.</p>
+    pub fn get_transport_transit_gateway_attachment_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.transport_transit_gateway_attachment_id
+    }
     /// <p>The Connect attachment options.</p>
     pub fn options(
         mut self,
@@ -89,6 +95,12 @@ impl CreateTransitGatewayConnectInputBuilder {
     ) -> Self {
         self.options = input;
         self
+    }
+    /// <p>The Connect attachment options.</p>
+    pub fn get_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateTransitGatewayConnectRequestOptions> {
+        &self.options
     }
     /// Appends an item to `tag_specifications`.
     ///
@@ -109,6 +121,12 @@ impl CreateTransitGatewayConnectInputBuilder {
         self.tag_specifications = input;
         self
     }
+    /// <p>The tags to apply to the Connect attachment.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        &self.tag_specifications
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -118,6 +136,10 @@ impl CreateTransitGatewayConnectInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`CreateTransitGatewayConnectInput`](crate::operation::create_transit_gateway_connect::CreateTransitGatewayConnectInput).
     pub fn build(

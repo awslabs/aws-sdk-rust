@@ -39,6 +39,10 @@ impl DescribeAlertInputBuilder {
         self.alert_arn = input;
         self
     }
+    /// <p>The ARN of the alert to describe.</p>
+    pub fn get_alert_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alert_arn
+    }
     /// Consumes the builder and constructs a [`DescribeAlertInput`](crate::operation::describe_alert::DescribeAlertInput).
     pub fn build(
         self,

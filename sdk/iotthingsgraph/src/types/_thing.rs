@@ -48,6 +48,10 @@ impl ThingBuilder {
         self.thing_arn = input;
         self
     }
+    /// <p>The ARN of the thing.</p>
+    pub fn get_thing_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_arn
+    }
     /// <p>The name of the thing.</p>
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_name = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl ThingBuilder {
     pub fn set_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_name = input;
         self
+    }
+    /// <p>The name of the thing.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_name
     }
     /// Consumes the builder and constructs a [`Thing`](crate::types::Thing).
     pub fn build(self) -> crate::types::Thing {

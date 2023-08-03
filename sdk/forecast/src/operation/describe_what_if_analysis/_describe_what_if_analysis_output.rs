@@ -160,6 +160,10 @@ impl DescribeWhatIfAnalysisOutputBuilder {
         self.what_if_analysis_name = input;
         self
     }
+    /// <p>The name of the what-if analysis.</p>
+    pub fn get_what_if_analysis_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.what_if_analysis_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the what-if analysis.</p>
     pub fn what_if_analysis_arn(
         mut self,
@@ -176,6 +180,10 @@ impl DescribeWhatIfAnalysisOutputBuilder {
         self.what_if_analysis_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the what-if analysis.</p>
+    pub fn get_what_if_analysis_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.what_if_analysis_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast.</p>
     pub fn forecast_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.forecast_arn = ::std::option::Option::Some(input.into());
@@ -185,6 +193,10 @@ impl DescribeWhatIfAnalysisOutputBuilder {
     pub fn set_forecast_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.forecast_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the what-if forecast.</p>
+    pub fn get_forecast_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.forecast_arn
     }
     /// <p>The approximate time remaining to complete the what-if analysis, in minutes.</p>
     pub fn estimated_time_remaining_in_minutes(mut self, input: i64) -> Self {
@@ -198,6 +210,10 @@ impl DescribeWhatIfAnalysisOutputBuilder {
     ) -> Self {
         self.estimated_time_remaining_in_minutes = input;
         self
+    }
+    /// <p>The approximate time remaining to complete the what-if analysis, in minutes.</p>
+    pub fn get_estimated_time_remaining_in_minutes(&self) -> &::std::option::Option<i64> {
+        &self.estimated_time_remaining_in_minutes
     }
     /// <p>The status of the what-if analysis. States include:</p>
     /// <ul>
@@ -225,6 +241,18 @@ impl DescribeWhatIfAnalysisOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the what-if analysis. States include:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// </ul> <note>
+    /// <p>The <code>Status</code> of the what-if analysis must be <code>ACTIVE</code> before you can access the analysis.</p>
+    /// </note>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>If an error occurred, an informational message about the error.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -234,6 +262,10 @@ impl DescribeWhatIfAnalysisOutputBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>If an error occurred, an informational message about the error.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// <p>When the what-if analysis was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -247,6 +279,10 @@ impl DescribeWhatIfAnalysisOutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>When the what-if analysis was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
@@ -275,6 +311,19 @@ impl DescribeWhatIfAnalysisOutputBuilder {
         self.last_modification_time = input;
         self
     }
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
+    /// <ul>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
+    /// </ul>
+    pub fn get_last_modification_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modification_time
+    }
     /// <p>Defines the set of time series that are used to create the forecasts in a <code>TimeSeriesIdentifiers</code> object.</p>
     /// <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
     /// <ul>
@@ -299,6 +348,18 @@ impl DescribeWhatIfAnalysisOutputBuilder {
     ) -> Self {
         self.time_series_selector = input;
         self
+    }
+    /// <p>Defines the set of time series that are used to create the forecasts in a <code>TimeSeriesIdentifiers</code> object.</p>
+    /// <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
+    /// <ul>
+    /// <li> <p> <code>DataSource</code> </p> </li>
+    /// <li> <p> <code>Format</code> </p> </li>
+    /// <li> <p> <code>Schema</code> </p> </li>
+    /// </ul>
+    pub fn get_time_series_selector(
+        &self,
+    ) -> &::std::option::Option<crate::types::TimeSeriesSelector> {
+        &self.time_series_selector
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

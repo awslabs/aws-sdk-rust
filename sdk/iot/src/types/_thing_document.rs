@@ -108,6 +108,10 @@ impl ThingDocumentBuilder {
         self.thing_name = input;
         self
     }
+    /// <p>The thing name.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_name
+    }
     /// <p>The thing ID.</p>
     pub fn thing_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_id = ::std::option::Option::Some(input.into());
@@ -117,6 +121,10 @@ impl ThingDocumentBuilder {
     pub fn set_thing_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_id = input;
         self
+    }
+    /// <p>The thing ID.</p>
+    pub fn get_thing_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_id
     }
     /// <p>The thing type name.</p>
     pub fn thing_type_name(
@@ -133,6 +141,10 @@ impl ThingDocumentBuilder {
     ) -> Self {
         self.thing_type_name = input;
         self
+    }
+    /// <p>The thing type name.</p>
+    pub fn get_thing_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_type_name
     }
     /// Appends an item to `thing_group_names`.
     ///
@@ -155,6 +167,12 @@ impl ThingDocumentBuilder {
     ) -> Self {
         self.thing_group_names = input;
         self
+    }
+    /// <p>Thing group names.</p>
+    pub fn get_thing_group_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.thing_group_names
     }
     /// Adds a key-value pair to `attributes`.
     ///
@@ -181,6 +199,14 @@ impl ThingDocumentBuilder {
         self.attributes = input;
         self
     }
+    /// <p>The attributes.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.attributes
+    }
     /// <p>The unnamed shadow and named shadow.</p>
     /// <p>For more information about shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service.</a> </p>
     pub fn shadow(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -192,6 +218,11 @@ impl ThingDocumentBuilder {
     pub fn set_shadow(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.shadow = input;
         self
+    }
+    /// <p>The unnamed shadow and named shadow.</p>
+    /// <p>For more information about shadows, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT Device Shadow service.</a> </p>
+    pub fn get_shadow(&self) -> &::std::option::Option<::std::string::String> {
+        &self.shadow
     }
     /// <p>Contains Device Defender data.</p>
     /// <p>For more information about Device Defender, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender.html">Device Defender</a>. </p>
@@ -211,6 +242,11 @@ impl ThingDocumentBuilder {
         self.device_defender = input;
         self
     }
+    /// <p>Contains Device Defender data.</p>
+    /// <p>For more information about Device Defender, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender.html">Device Defender</a>. </p>
+    pub fn get_device_defender(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_defender
+    }
     /// <p>Indicates whether the thing is connected to the Amazon Web Services IoT Core service.</p>
     pub fn connectivity(mut self, input: crate::types::ThingConnectivity) -> Self {
         self.connectivity = ::std::option::Option::Some(input);
@@ -223,6 +259,10 @@ impl ThingDocumentBuilder {
     ) -> Self {
         self.connectivity = input;
         self
+    }
+    /// <p>Indicates whether the thing is connected to the Amazon Web Services IoT Core service.</p>
+    pub fn get_connectivity(&self) -> &::std::option::Option<crate::types::ThingConnectivity> {
+        &self.connectivity
     }
     /// Consumes the builder and constructs a [`ThingDocument`](crate::types::ThingDocument).
     pub fn build(self) -> crate::types::ThingDocument {

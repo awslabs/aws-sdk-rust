@@ -80,6 +80,10 @@ impl ArtifactSummaryBuilder {
         self.artifact_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the artifact.</p>
+    pub fn get_artifact_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.artifact_arn
+    }
     /// <p>The name of the artifact.</p>
     pub fn artifact_name(
         mut self,
@@ -96,6 +100,10 @@ impl ArtifactSummaryBuilder {
         self.artifact_name = input;
         self
     }
+    /// <p>The name of the artifact.</p>
+    pub fn get_artifact_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.artifact_name
+    }
     /// <p>The source of the artifact.</p>
     pub fn source(mut self, input: crate::types::ArtifactSource) -> Self {
         self.source = ::std::option::Option::Some(input);
@@ -108,6 +116,10 @@ impl ArtifactSummaryBuilder {
     ) -> Self {
         self.source = input;
         self
+    }
+    /// <p>The source of the artifact.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::ArtifactSource> {
+        &self.source
     }
     /// <p>The type of the artifact.</p>
     pub fn artifact_type(
@@ -125,6 +137,10 @@ impl ArtifactSummaryBuilder {
         self.artifact_type = input;
         self
     }
+    /// <p>The type of the artifact.</p>
+    pub fn get_artifact_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.artifact_type
+    }
     /// <p>When the artifact was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -138,6 +154,10 @@ impl ArtifactSummaryBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>When the artifact was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>When the artifact was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -150,6 +170,10 @@ impl ArtifactSummaryBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>When the artifact was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// Consumes the builder and constructs a [`ArtifactSummary`](crate::types::ArtifactSummary).
     pub fn build(self) -> crate::types::ArtifactSummary {

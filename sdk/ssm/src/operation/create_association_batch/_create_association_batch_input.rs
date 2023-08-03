@@ -56,6 +56,13 @@ impl CreateAssociationBatchInputBuilder {
         self.entries = input;
         self
     }
+    /// <p>One or more associations.</p>
+    pub fn get_entries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateAssociationBatchRequestEntry>>
+    {
+        &self.entries
+    }
     /// Consumes the builder and constructs a [`CreateAssociationBatchInput`](crate::operation::create_association_batch::CreateAssociationBatchInput).
     pub fn build(
         self,

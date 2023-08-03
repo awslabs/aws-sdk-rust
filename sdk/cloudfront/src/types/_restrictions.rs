@@ -43,6 +43,10 @@ impl RestrictionsBuilder {
         self.geo_restriction = input;
         self
     }
+    /// <p>A complex type that controls the countries in which your content is distributed. CloudFront determines the location of your users using <code>MaxMind</code> GeoIP databases.</p>
+    pub fn get_geo_restriction(&self) -> &::std::option::Option<crate::types::GeoRestriction> {
+        &self.geo_restriction
+    }
     /// Consumes the builder and constructs a [`Restrictions`](crate::types::Restrictions).
     pub fn build(self) -> crate::types::Restrictions {
         crate::types::Restrictions {

@@ -48,6 +48,10 @@ impl AlarmBuilder {
         self.alarm_name = input;
         self
     }
+    /// <p>The name of the alarm.</p>
+    pub fn get_alarm_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alarm_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the alarm.</p>
     pub fn alarm_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alarm_arn = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl AlarmBuilder {
     pub fn set_alarm_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alarm_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the alarm.</p>
+    pub fn get_alarm_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alarm_arn
     }
     /// Consumes the builder and constructs a [`Alarm`](crate::types::Alarm).
     pub fn build(self) -> crate::types::Alarm {

@@ -56,6 +56,10 @@ impl DocumentSuggesterOptionsBuilder {
         self.source_field = input;
         self
     }
+    /// <p>The name of the index field you want to use for suggestions. </p>
+    pub fn get_source_field(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_field
+    }
     /// <p>The level of fuzziness allowed when suggesting matches for a string: <code>none</code>, <code>low</code>, or <code>high</code>. With none, the specified string is treated as an exact prefix. With low, suggestions must differ from the specified string by no more than one character. With high, suggestions can differ by up to two characters. The default is none. </p>
     pub fn fuzzy_matching(mut self, input: crate::types::SuggesterFuzzyMatching) -> Self {
         self.fuzzy_matching = ::std::option::Option::Some(input);
@@ -68,6 +72,12 @@ impl DocumentSuggesterOptionsBuilder {
     ) -> Self {
         self.fuzzy_matching = input;
         self
+    }
+    /// <p>The level of fuzziness allowed when suggesting matches for a string: <code>none</code>, <code>low</code>, or <code>high</code>. With none, the specified string is treated as an exact prefix. With low, suggestions must differ from the specified string by no more than one character. With high, suggestions can differ by up to two characters. The default is none. </p>
+    pub fn get_fuzzy_matching(
+        &self,
+    ) -> &::std::option::Option<crate::types::SuggesterFuzzyMatching> {
+        &self.fuzzy_matching
     }
     /// <p>An expression that computes a score for each suggestion to control how they are sorted. The scores are rounded to the nearest integer, with a floor of 0 and a ceiling of 2^31-1. A document's relevance score is not computed for suggestions, so sort expressions cannot reference the <code>_score</code> value. To sort suggestions using a numeric field or existing expression, simply specify the name of the field or expression. If no expression is configured for the suggester, the suggestions are sorted with the closest matches listed first.</p>
     pub fn sort_expression(
@@ -84,6 +94,10 @@ impl DocumentSuggesterOptionsBuilder {
     ) -> Self {
         self.sort_expression = input;
         self
+    }
+    /// <p>An expression that computes a score for each suggestion to control how they are sorted. The scores are rounded to the nearest integer, with a floor of 0 and a ceiling of 2^31-1. A document's relevance score is not computed for suggestions, so sort expressions cannot reference the <code>_score</code> value. To sort suggestions using a numeric field or existing expression, simply specify the name of the field or expression. If no expression is configured for the suggester, the suggestions are sorted with the closest matches listed first.</p>
+    pub fn get_sort_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sort_expression
     }
     /// Consumes the builder and constructs a [`DocumentSuggesterOptions`](crate::types::DocumentSuggesterOptions).
     pub fn build(self) -> crate::types::DocumentSuggesterOptions {

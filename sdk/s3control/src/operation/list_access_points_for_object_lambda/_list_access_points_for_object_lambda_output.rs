@@ -70,6 +70,12 @@ impl ListAccessPointsForObjectLambdaOutputBuilder {
         self.object_lambda_access_point_list = input;
         self
     }
+    /// <p>Returns list of Object Lambda Access Points.</p>
+    pub fn get_object_lambda_access_point_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ObjectLambdaAccessPoint>> {
+        &self.object_lambda_access_point_list
+    }
     /// <p>If the list has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -79,6 +85,10 @@ impl ListAccessPointsForObjectLambdaOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the list has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

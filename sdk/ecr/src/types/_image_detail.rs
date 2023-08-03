@@ -133,6 +133,10 @@ impl ImageDetailBuilder {
         self.registry_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID associated with the registry to which this image belongs.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_id
+    }
     /// <p>The name of the repository to which this image belongs.</p>
     pub fn repository_name(
         mut self,
@@ -149,6 +153,10 @@ impl ImageDetailBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name of the repository to which this image belongs.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>The <code>sha256</code> digest of the image manifest.</p>
     pub fn image_digest(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_digest = ::std::option::Option::Some(input.into());
@@ -158,6 +166,10 @@ impl ImageDetailBuilder {
     pub fn set_image_digest(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_digest = input;
         self
+    }
+    /// <p>The <code>sha256</code> digest of the image manifest.</p>
+    pub fn get_image_digest(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_digest
     }
     /// Appends an item to `image_tags`.
     ///
@@ -178,6 +190,10 @@ impl ImageDetailBuilder {
         self.image_tags = input;
         self
     }
+    /// <p>The list of tags associated with this image.</p>
+    pub fn get_image_tags(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.image_tags
+    }
     /// <p>The size, in bytes, of the image in the repository.</p>
     /// <p>If the image is a manifest list, this will be the max size of all manifests in the list.</p> <note>
     /// <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may return a larger image size than the image sizes returned by <code>DescribeImages</code>.</p>
@@ -194,6 +210,13 @@ impl ImageDetailBuilder {
         self.image_size_in_bytes = input;
         self
     }
+    /// <p>The size, in bytes, of the image in the repository.</p>
+    /// <p>If the image is a manifest list, this will be the max size of all manifests in the list.</p> <note>
+    /// <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may return a larger image size than the image sizes returned by <code>DescribeImages</code>.</p>
+    /// </note>
+    pub fn get_image_size_in_bytes(&self) -> &::std::option::Option<i64> {
+        &self.image_size_in_bytes
+    }
     /// <p>The date and time, expressed in standard JavaScript date format, at which the current image was pushed to the repository. </p>
     pub fn image_pushed_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.image_pushed_at = ::std::option::Option::Some(input);
@@ -207,6 +230,10 @@ impl ImageDetailBuilder {
         self.image_pushed_at = input;
         self
     }
+    /// <p>The date and time, expressed in standard JavaScript date format, at which the current image was pushed to the repository. </p>
+    pub fn get_image_pushed_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.image_pushed_at
+    }
     /// <p>The current state of the scan.</p>
     pub fn image_scan_status(mut self, input: crate::types::ImageScanStatus) -> Self {
         self.image_scan_status = ::std::option::Option::Some(input);
@@ -219,6 +246,10 @@ impl ImageDetailBuilder {
     ) -> Self {
         self.image_scan_status = input;
         self
+    }
+    /// <p>The current state of the scan.</p>
+    pub fn get_image_scan_status(&self) -> &::std::option::Option<crate::types::ImageScanStatus> {
+        &self.image_scan_status
     }
     /// <p>A summary of the last completed image scan.</p>
     pub fn image_scan_findings_summary(
@@ -236,6 +267,12 @@ impl ImageDetailBuilder {
         self.image_scan_findings_summary = input;
         self
     }
+    /// <p>A summary of the last completed image scan.</p>
+    pub fn get_image_scan_findings_summary(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImageScanFindingsSummary> {
+        &self.image_scan_findings_summary
+    }
     /// <p>The media type of the image manifest.</p>
     pub fn image_manifest_media_type(
         mut self,
@@ -251,6 +288,10 @@ impl ImageDetailBuilder {
     ) -> Self {
         self.image_manifest_media_type = input;
         self
+    }
+    /// <p>The media type of the image manifest.</p>
+    pub fn get_image_manifest_media_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_manifest_media_type
     }
     /// <p>The artifact media type of the image.</p>
     pub fn artifact_media_type(
@@ -268,6 +309,10 @@ impl ImageDetailBuilder {
         self.artifact_media_type = input;
         self
     }
+    /// <p>The artifact media type of the image.</p>
+    pub fn get_artifact_media_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.artifact_media_type
+    }
     /// <p>The date and time, expressed in standard JavaScript date format, when Amazon ECR recorded the last image pull.</p> <note>
     /// <p>Amazon ECR refreshes the last image pull timestamp at least once every 24 hours. For example, if you pull an image once a day then the <code>lastRecordedPullTime</code> timestamp will indicate the exact time that the image was last pulled. However, if you pull an image once an hour, because Amazon ECR refreshes the <code>lastRecordedPullTime</code> timestamp at least once every 24 hours, the result may not be the exact time that the image was last pulled.</p>
     /// </note>
@@ -284,6 +329,14 @@ impl ImageDetailBuilder {
     ) -> Self {
         self.last_recorded_pull_time = input;
         self
+    }
+    /// <p>The date and time, expressed in standard JavaScript date format, when Amazon ECR recorded the last image pull.</p> <note>
+    /// <p>Amazon ECR refreshes the last image pull timestamp at least once every 24 hours. For example, if you pull an image once a day then the <code>lastRecordedPullTime</code> timestamp will indicate the exact time that the image was last pulled. However, if you pull an image once an hour, because Amazon ECR refreshes the <code>lastRecordedPullTime</code> timestamp at least once every 24 hours, the result may not be the exact time that the image was last pulled.</p>
+    /// </note>
+    pub fn get_last_recorded_pull_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_recorded_pull_time
     }
     /// Consumes the builder and constructs a [`ImageDetail`](crate::types::ImageDetail).
     pub fn build(self) -> crate::types::ImageDetail {

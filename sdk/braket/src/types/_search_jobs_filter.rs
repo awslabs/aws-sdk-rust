@@ -56,6 +56,10 @@ impl SearchJobsFilterBuilder {
         self.name = input;
         self
     }
+    /// <p>The name to use for the jobs filter.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -75,6 +79,10 @@ impl SearchJobsFilterBuilder {
         self.values = input;
         self
     }
+    /// <p>The values to use for the jobs filter.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
+    }
     /// <p>An operator to use for the jobs filter.</p>
     pub fn operator(mut self, input: crate::types::SearchJobsFilterOperator) -> Self {
         self.operator = ::std::option::Option::Some(input);
@@ -87,6 +95,10 @@ impl SearchJobsFilterBuilder {
     ) -> Self {
         self.operator = input;
         self
+    }
+    /// <p>An operator to use for the jobs filter.</p>
+    pub fn get_operator(&self) -> &::std::option::Option<crate::types::SearchJobsFilterOperator> {
+        &self.operator
     }
     /// Consumes the builder and constructs a [`SearchJobsFilter`](crate::types::SearchJobsFilter).
     pub fn build(self) -> crate::types::SearchJobsFilter {

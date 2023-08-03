@@ -42,6 +42,10 @@ impl AcceptMatchFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AcceptMatch as a reference.
+    pub fn as_input(&self) -> &crate::operation::accept_match::builders::AcceptMatchInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl AcceptMatchFluentBuilder {
         self.inner = self.inner.set_ticket_id(input);
         self
     }
+    /// <p>A unique identifier for a matchmaking ticket. The ticket must be in status <code>REQUIRES_ACCEPTANCE</code>; otherwise this request will fail.</p>
+    pub fn get_ticket_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ticket_id()
+    }
     /// Appends an item to `PlayerIds`.
     ///
     /// To override the contents of this collection use [`set_player_ids`](Self::set_player_ids).
@@ -141,6 +149,10 @@ impl AcceptMatchFluentBuilder {
         self.inner = self.inner.set_player_ids(input);
         self
     }
+    /// <p>A unique identifier for a player delivering the response. This parameter can include one or multiple player IDs.</p>
+    pub fn get_player_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_player_ids()
+    }
     /// <p>Player response to the proposed match.</p>
     pub fn acceptance_type(mut self, input: crate::types::AcceptanceType) -> Self {
         self.inner = self.inner.acceptance_type(input);
@@ -153,5 +165,9 @@ impl AcceptMatchFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_acceptance_type(input);
         self
+    }
+    /// <p>Player response to the proposed match.</p>
+    pub fn get_acceptance_type(&self) -> &::std::option::Option<crate::types::AcceptanceType> {
+        self.inner.get_acceptance_type()
     }
 }

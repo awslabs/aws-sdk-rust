@@ -36,6 +36,10 @@ impl ListUsageForLicenseConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListUsageForLicenseConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_usage_for_license_configuration::builders::ListUsageForLicenseConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl ListUsageForLicenseConfigurationFluentBuilder {
         self.inner = self.inner.set_license_configuration_arn(input);
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
+    pub fn get_license_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_license_configuration_arn()
+    }
     /// <p>Maximum number of results to return in a single call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -116,6 +124,10 @@ impl ListUsageForLicenseConfigurationFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>Maximum number of results to return in a single call.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>Token for the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -125,6 +137,10 @@ impl ListUsageForLicenseConfigurationFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>Token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// Appends an item to `Filters`.
     ///
@@ -152,5 +168,14 @@ impl ListUsageForLicenseConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
+    }
+    /// <p>Filters to scope the results. The following filters and logical operators are supported:</p>
+    /// <ul>
+    /// <li> <p> <code>resourceArn</code> - The ARN of the license configuration resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+    /// <li> <p> <code>resourceType</code> - The resource type (<code>EC2_INSTANCE</code> | <code>EC2_HOST</code> | <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>). Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+    /// <li> <p> <code>resourceAccount</code> - The ID of the account that owns the resource. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
     }
 }

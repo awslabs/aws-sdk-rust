@@ -36,6 +36,12 @@ impl DeleteTimelineEventFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteTimelineEvent as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_timeline_event::builders::DeleteTimelineEventInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl DeleteTimelineEventFluentBuilder {
         self.inner = self.inner.set_incident_record_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
+    pub fn get_incident_record_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_incident_record_arn()
+    }
     /// <p>The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.</p>
     pub fn event_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_id(input.into());
@@ -141,5 +151,9 @@ impl DeleteTimelineEventFluentBuilder {
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_id(input);
         self
+    }
+    /// <p>The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.</p>
+    pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_event_id()
     }
 }

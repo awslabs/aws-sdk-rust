@@ -90,6 +90,10 @@ impl SendBounceInputBuilder {
         self.original_message_id = input;
         self
     }
+    /// <p>The message ID of the message to be bounced.</p>
+    pub fn get_original_message_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.original_message_id
+    }
     /// <p>The address to use in the "From" header of the bounce message. This must be an identity that you have verified with Amazon SES.</p>
     pub fn bounce_sender(
         mut self,
@@ -106,6 +110,10 @@ impl SendBounceInputBuilder {
         self.bounce_sender = input;
         self
     }
+    /// <p>The address to use in the "From" header of the bounce message. This must be an identity that you have verified with Amazon SES.</p>
+    pub fn get_bounce_sender(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bounce_sender
+    }
     /// <p>Human-readable text for the bounce message to explain the failure. If not specified, the text will be auto-generated based on the bounced recipient information.</p>
     pub fn explanation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.explanation = ::std::option::Option::Some(input.into());
@@ -115,6 +123,10 @@ impl SendBounceInputBuilder {
     pub fn set_explanation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.explanation = input;
         self
+    }
+    /// <p>Human-readable text for the bounce message to explain the failure. If not specified, the text will be auto-generated based on the bounced recipient information.</p>
+    pub fn get_explanation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.explanation
     }
     /// <p>Message-related DSN fields. If not specified, Amazon SES will choose the values.</p>
     pub fn message_dsn(mut self, input: crate::types::MessageDsn) -> Self {
@@ -128,6 +140,10 @@ impl SendBounceInputBuilder {
     ) -> Self {
         self.message_dsn = input;
         self
+    }
+    /// <p>Message-related DSN fields. If not specified, Amazon SES will choose the values.</p>
+    pub fn get_message_dsn(&self) -> &::std::option::Option<crate::types::MessageDsn> {
+        &self.message_dsn
     }
     /// Appends an item to `bounced_recipient_info_list`.
     ///
@@ -151,6 +167,12 @@ impl SendBounceInputBuilder {
         self.bounced_recipient_info_list = input;
         self
     }
+    /// <p>A list of recipients of the bounced message, including the information required to create the Delivery Status Notifications (DSNs) for the recipients. You must specify at least one <code>BouncedRecipientInfo</code> in the list.</p>
+    pub fn get_bounced_recipient_info_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BouncedRecipientInfo>> {
+        &self.bounced_recipient_info_list
+    }
     /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the address in the "From" header of the bounce. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
     pub fn bounce_sender_arn(
         mut self,
@@ -166,6 +188,10 @@ impl SendBounceInputBuilder {
     ) -> Self {
         self.bounce_sender_arn = input;
         self
+    }
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the address in the "From" header of the bounce. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
+    pub fn get_bounce_sender_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bounce_sender_arn
     }
     /// Consumes the builder and constructs a [`SendBounceInput`](crate::operation::send_bounce::SendBounceInput).
     pub fn build(

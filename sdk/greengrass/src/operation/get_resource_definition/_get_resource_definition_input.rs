@@ -47,6 +47,10 @@ impl GetResourceDefinitionInputBuilder {
         self.resource_definition_id = input;
         self
     }
+    /// The ID of the resource definition.
+    pub fn get_resource_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_definition_id
+    }
     /// Consumes the builder and constructs a [`GetResourceDefinitionInput`](crate::operation::get_resource_definition::GetResourceDefinitionInput).
     pub fn build(
         self,

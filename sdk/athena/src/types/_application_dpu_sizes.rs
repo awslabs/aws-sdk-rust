@@ -54,6 +54,10 @@ impl ApplicationDpuSizesBuilder {
         self.application_runtime_id = input;
         self
     }
+    /// <p>The name of the supported application runtime (for example, <code>Athena notebook version 1</code>).</p>
+    pub fn get_application_runtime_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_runtime_id
+    }
     /// Appends an item to `supported_dpu_sizes`.
     ///
     /// To override the contents of this collection use [`set_supported_dpu_sizes`](Self::set_supported_dpu_sizes).
@@ -72,6 +76,10 @@ impl ApplicationDpuSizesBuilder {
     ) -> Self {
         self.supported_dpu_sizes = input;
         self
+    }
+    /// <p>A list of the supported DPU sizes that the application runtime supports.</p>
+    pub fn get_supported_dpu_sizes(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        &self.supported_dpu_sizes
     }
     /// Consumes the builder and constructs a [`ApplicationDpuSizes`](crate::types::ApplicationDpuSizes).
     pub fn build(self) -> crate::types::ApplicationDpuSizes {

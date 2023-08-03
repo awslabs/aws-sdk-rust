@@ -54,6 +54,10 @@ impl PipeTargetCloudWatchLogsParametersBuilder {
         self.log_stream_name = input;
         self
     }
+    /// <p>The name of the log stream.</p>
+    pub fn get_log_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_stream_name
+    }
     /// <p>The time the event occurred, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
     pub fn timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timestamp = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl PipeTargetCloudWatchLogsParametersBuilder {
     pub fn set_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timestamp = input;
         self
+    }
+    /// <p>The time the event occurred, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timestamp
     }
     /// Consumes the builder and constructs a [`PipeTargetCloudWatchLogsParameters`](crate::types::PipeTargetCloudWatchLogsParameters).
     pub fn build(self) -> crate::types::PipeTargetCloudWatchLogsParameters {

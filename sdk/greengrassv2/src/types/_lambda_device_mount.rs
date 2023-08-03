@@ -60,6 +60,10 @@ impl LambdaDeviceMountBuilder {
         self.path = input;
         self
     }
+    /// <p>The mount path for the device in the file system.</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
+    }
     /// <p>The permission to access the device: read/only (<code>ro</code>) or read/write (<code>rw</code>).</p>
     /// <p>Default: <code>ro</code> </p>
     pub fn permission(mut self, input: crate::types::LambdaFilesystemPermission) -> Self {
@@ -75,6 +79,13 @@ impl LambdaDeviceMountBuilder {
         self.permission = input;
         self
     }
+    /// <p>The permission to access the device: read/only (<code>ro</code>) or read/write (<code>rw</code>).</p>
+    /// <p>Default: <code>ro</code> </p>
+    pub fn get_permission(
+        &self,
+    ) -> &::std::option::Option<crate::types::LambdaFilesystemPermission> {
+        &self.permission
+    }
     /// <p>Whether or not to add the component's system user as an owner of the device.</p>
     /// <p>Default: <code>false</code> </p>
     pub fn add_group_owner(mut self, input: bool) -> Self {
@@ -86,6 +97,11 @@ impl LambdaDeviceMountBuilder {
     pub fn set_add_group_owner(mut self, input: ::std::option::Option<bool>) -> Self {
         self.add_group_owner = input;
         self
+    }
+    /// <p>Whether or not to add the component's system user as an owner of the device.</p>
+    /// <p>Default: <code>false</code> </p>
+    pub fn get_add_group_owner(&self) -> &::std::option::Option<bool> {
+        &self.add_group_owner
     }
     /// Consumes the builder and constructs a [`LambdaDeviceMount`](crate::types::LambdaDeviceMount).
     pub fn build(self) -> crate::types::LambdaDeviceMount {

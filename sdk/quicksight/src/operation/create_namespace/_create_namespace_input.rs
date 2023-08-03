@@ -69,6 +69,10 @@ impl CreateNamespaceInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The ID for the Amazon Web Services account that you want to create the Amazon QuickSight namespace in.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The name that you want to use to describe the new namespace.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
@@ -78,6 +82,10 @@ impl CreateNamespaceInputBuilder {
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace = input;
         self
+    }
+    /// <p>The name that you want to use to describe the new namespace.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
     }
     /// <p>Specifies the type of your user identity directory. Currently, this supports users with an identity type of <code>QUICKSIGHT</code>.</p>
     pub fn identity_store(mut self, input: crate::types::IdentityStore) -> Self {
@@ -91,6 +99,10 @@ impl CreateNamespaceInputBuilder {
     ) -> Self {
         self.identity_store = input;
         self
+    }
+    /// <p>Specifies the type of your user identity directory. Currently, this supports users with an identity type of <code>QUICKSIGHT</code>.</p>
+    pub fn get_identity_store(&self) -> &::std::option::Option<crate::types::IdentityStore> {
+        &self.identity_store
     }
     /// Appends an item to `tags`.
     ///
@@ -110,6 +122,10 @@ impl CreateNamespaceInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags that you want to associate with the namespace that you're creating.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateNamespaceInput`](crate::operation::create_namespace::CreateNamespaceInput).
     pub fn build(

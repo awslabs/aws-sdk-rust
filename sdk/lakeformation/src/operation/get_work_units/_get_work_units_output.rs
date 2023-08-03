@@ -64,6 +64,10 @@ impl GetWorkUnitsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The ID of the plan query operation.</p>
     pub fn query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_id = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl GetWorkUnitsOutputBuilder {
     pub fn set_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_id = input;
         self
+    }
+    /// <p>The ID of the plan query operation.</p>
+    pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_id
     }
     /// Appends an item to `work_unit_ranges`.
     ///
@@ -92,6 +100,12 @@ impl GetWorkUnitsOutputBuilder {
     ) -> Self {
         self.work_unit_ranges = input;
         self
+    }
+    /// <p>A <code>WorkUnitRangeList</code> object that specifies the valid range of work unit IDs for querying the execution service.</p>
+    pub fn get_work_unit_ranges(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkUnitRange>> {
+        &self.work_unit_ranges
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

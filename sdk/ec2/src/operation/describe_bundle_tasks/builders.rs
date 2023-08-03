@@ -38,6 +38,12 @@ impl DescribeBundleTasksFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeBundleTasks as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_bundle_tasks::builders::DescribeBundleTasksInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,11 @@ impl DescribeBundleTasksFluentBuilder {
         self.inner = self.inner.set_bundle_ids(input);
         self
     }
+    /// <p>The bundle task IDs.</p>
+    /// <p>Default: Describes all your bundle tasks.</p>
+    pub fn get_bundle_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_bundle_ids()
+    }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -178,6 +189,22 @@ impl DescribeBundleTasksFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>The filters.</p>
+    /// <ul>
+    /// <li> <p> <code>bundle-id</code> - The ID of the bundle task.</p> </li>
+    /// <li> <p> <code>error-code</code> - If the task failed, the error code returned.</p> </li>
+    /// <li> <p> <code>error-message</code> - If the task failed, the error message returned.</p> </li>
+    /// <li> <p> <code>instance-id</code> - The ID of the instance.</p> </li>
+    /// <li> <p> <code>progress</code> - The level of task completion, as a percentage (for example, 20%).</p> </li>
+    /// <li> <p> <code>s3-bucket</code> - The Amazon S3 bucket to store the AMI.</p> </li>
+    /// <li> <p> <code>s3-prefix</code> - The beginning of the AMI name.</p> </li>
+    /// <li> <p> <code>start-time</code> - The time the task started (for example, 2013-09-15T17:15:20.000Z).</p> </li>
+    /// <li> <p> <code>state</code> - The state of the task (<code>pending</code> | <code>waiting-for-shutdown</code> | <code>bundling</code> | <code>storing</code> | <code>cancelling</code> | <code>complete</code> | <code>failed</code>).</p> </li>
+    /// <li> <p> <code>update-time</code> - The time of the most recent update for the task.</p> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -187,5 +214,9 @@ impl DescribeBundleTasksFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

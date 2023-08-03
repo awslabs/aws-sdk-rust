@@ -49,6 +49,10 @@ impl DeletePermissionSetInputBuilder {
         self.instance_arn = input;
         self
     }
+    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+    pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_arn
+    }
     /// <p>The ARN of the permission set that should be deleted.</p>
     pub fn permission_set_arn(
         mut self,
@@ -64,6 +68,10 @@ impl DeletePermissionSetInputBuilder {
     ) -> Self {
         self.permission_set_arn = input;
         self
+    }
+    /// <p>The ARN of the permission set that should be deleted.</p>
+    pub fn get_permission_set_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.permission_set_arn
     }
     /// Consumes the builder and constructs a [`DeletePermissionSetInput`](crate::operation::delete_permission_set::DeletePermissionSetInput).
     pub fn build(

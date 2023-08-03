@@ -79,6 +79,10 @@ impl CreateUploadUrlOutputBuilder {
         self.s3_url = input;
         self
     }
+    /// <p>A pre-signed S3 URL. You can upload the code file you want to scan and add the required <code>requestHeaders</code> using any HTTP client.</p>
+    pub fn get_s3_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_url
+    }
     /// Adds a key-value pair to `request_headers`.
     ///
     /// To override the contents of this collection use [`set_request_headers`](Self::set_request_headers).
@@ -104,6 +108,14 @@ impl CreateUploadUrlOutputBuilder {
         self.request_headers = input;
         self
     }
+    /// <p>A set of key-value pairs that contain the required headers when uploading your resource.</p>
+    pub fn get_request_headers(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.request_headers
+    }
     /// <p>The identifier for the uploaded code resource. </p>
     pub fn code_artifact_id(
         mut self,
@@ -119,6 +131,10 @@ impl CreateUploadUrlOutputBuilder {
     ) -> Self {
         self.code_artifact_id = input;
         self
+    }
+    /// <p>The identifier for the uploaded code resource. </p>
+    pub fn get_code_artifact_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code_artifact_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

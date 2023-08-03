@@ -56,6 +56,10 @@ impl EndpointBuilder {
         self.endpoint_arn = input;
         self
     }
+    /// <p>The <code>EndpointArn</code> for mobile app and device.</p>
+    pub fn get_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_arn
+    }
     /// Adds a key-value pair to `attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
@@ -80,6 +84,14 @@ impl EndpointBuilder {
     ) -> Self {
         self.attributes = input;
         self
+    }
+    /// <p>Attributes for endpoint.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.attributes
     }
     /// Consumes the builder and constructs a [`Endpoint`](crate::types::Endpoint).
     pub fn build(self) -> crate::types::Endpoint {

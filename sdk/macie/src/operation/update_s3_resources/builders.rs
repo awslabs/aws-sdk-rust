@@ -36,6 +36,12 @@ impl UpdateS3ResourcesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateS3Resources as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_s3_resources::builders::UpdateS3ResourcesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateS3ResourcesFluentBuilder {
         self.inner = self.inner.set_member_account_id(input);
         self
     }
+    /// <p>(Discontinued) The Amazon Web Services account ID of the Amazon Macie Classic member account whose S3 resources' classification types you want to update.</p>
+    pub fn get_member_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_member_account_id()
+    }
     /// Appends an item to `s3ResourcesUpdate`.
     ///
     /// To override the contents of this collection use [`set_s3_resources_update`](Self::set_s3_resources_update).
@@ -151,5 +161,11 @@ impl UpdateS3ResourcesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_s3_resources_update(input);
         self
+    }
+    /// <p>(Discontinued) The S3 resources whose classification types you want to update.</p>
+    pub fn get_s3_resources_update(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::S3ResourceClassificationUpdate>> {
+        self.inner.get_s3_resources_update()
     }
 }

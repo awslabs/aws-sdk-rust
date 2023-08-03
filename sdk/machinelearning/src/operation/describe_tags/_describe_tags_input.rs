@@ -47,6 +47,10 @@ impl DescribeTagsInputBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The ID of the ML object. For example, <code>exampleModelId</code>. </p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// <p>The type of the ML object.</p>
     pub fn resource_type(mut self, input: crate::types::TaggableResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
@@ -59,6 +63,10 @@ impl DescribeTagsInputBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>The type of the ML object.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::TaggableResourceType> {
+        &self.resource_type
     }
     /// Consumes the builder and constructs a [`DescribeTagsInput`](crate::operation::describe_tags::DescribeTagsInput).
     pub fn build(

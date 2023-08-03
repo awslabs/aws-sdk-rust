@@ -50,6 +50,10 @@ impl LateDataRuleBuilder {
         self.rule_name = input;
         self
     }
+    /// <p>The name of the late data rule.</p>
+    pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_name
+    }
     /// <p>The information needed to configure the late data rule.</p>
     pub fn rule_configuration(mut self, input: crate::types::LateDataRuleConfiguration) -> Self {
         self.rule_configuration = ::std::option::Option::Some(input);
@@ -62,6 +66,12 @@ impl LateDataRuleBuilder {
     ) -> Self {
         self.rule_configuration = input;
         self
+    }
+    /// <p>The information needed to configure the late data rule.</p>
+    pub fn get_rule_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::LateDataRuleConfiguration> {
+        &self.rule_configuration
     }
     /// Consumes the builder and constructs a [`LateDataRule`](crate::types::LateDataRule).
     pub fn build(self) -> crate::types::LateDataRule {

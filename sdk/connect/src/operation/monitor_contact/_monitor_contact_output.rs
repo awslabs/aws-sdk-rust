@@ -54,6 +54,10 @@ impl MonitorContactOutputBuilder {
         self.contact_id = input;
         self
     }
+    /// <p>The identifier of the contact.</p>
+    pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_id
+    }
     /// <p>The ARN of the contact.</p>
     pub fn contact_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_arn = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl MonitorContactOutputBuilder {
     pub fn set_contact_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contact_arn = input;
         self
+    }
+    /// <p>The ARN of the contact.</p>
+    pub fn get_contact_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

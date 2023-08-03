@@ -119,6 +119,10 @@ impl ActionDeclarationBuilder {
         self.name = input;
         self
     }
+    /// <p>The action declaration's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Specifies the action type and the provider of the action.</p>
     pub fn action_type_id(mut self, input: crate::types::ActionTypeId) -> Self {
         self.action_type_id = ::std::option::Option::Some(input);
@@ -132,6 +136,10 @@ impl ActionDeclarationBuilder {
         self.action_type_id = input;
         self
     }
+    /// <p>Specifies the action type and the provider of the action.</p>
+    pub fn get_action_type_id(&self) -> &::std::option::Option<crate::types::ActionTypeId> {
+        &self.action_type_id
+    }
     /// <p>The order in which actions are run.</p>
     pub fn run_order(mut self, input: i32) -> Self {
         self.run_order = ::std::option::Option::Some(input);
@@ -141,6 +149,10 @@ impl ActionDeclarationBuilder {
     pub fn set_run_order(mut self, input: ::std::option::Option<i32>) -> Self {
         self.run_order = input;
         self
+    }
+    /// <p>The order in which actions are run.</p>
+    pub fn get_run_order(&self) -> &::std::option::Option<i32> {
+        &self.run_order
     }
     /// Adds a key-value pair to `configuration`.
     ///
@@ -173,6 +185,17 @@ impl ActionDeclarationBuilder {
         self.configuration = input;
         self
     }
+    /// <p>The action's configuration. These are key-value pairs that specify input values for an action. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Action Structure Requirements in CodePipeline</a>. For the list of configuration properties for the CloudFormation action type in CodePipeline, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html">Configuration Properties Reference</a> in the <i>CloudFormation User Guide</i>. For template snippets with examples, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html">Using Parameter Override Functions with CodePipeline Pipelines</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>The values can be represented in either JSON or YAML format. For example, the JSON configuration item format is as follows: </p>
+    /// <p> <i>JSON:</i> </p>
+    /// <p> <code>"Configuration" : { Key : Value },</code> </p>
+    pub fn get_configuration(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.configuration
+    }
     /// Appends an item to `output_artifacts`.
     ///
     /// To override the contents of this collection use [`set_output_artifacts`](Self::set_output_artifacts).
@@ -191,6 +214,12 @@ impl ActionDeclarationBuilder {
     ) -> Self {
         self.output_artifacts = input;
         self
+    }
+    /// <p>The name or ID of the result of the action declaration, such as a test or build artifact.</p>
+    pub fn get_output_artifacts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputArtifact>> {
+        &self.output_artifacts
     }
     /// Appends an item to `input_artifacts`.
     ///
@@ -211,6 +240,12 @@ impl ActionDeclarationBuilder {
         self.input_artifacts = input;
         self
     }
+    /// <p>The name or ID of the artifact consumed by the action, such as a test or build artifact.</p>
+    pub fn get_input_artifacts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputArtifact>> {
+        &self.input_artifacts
+    }
     /// <p>The ARN of the IAM service role that performs the declared action. This is assumed through the roleArn for the pipeline.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -220,6 +255,10 @@ impl ActionDeclarationBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The ARN of the IAM service role that performs the declared action. This is assumed through the roleArn for the pipeline.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The action declaration's Amazon Web Services Region, such as us-east-1.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -231,6 +270,10 @@ impl ActionDeclarationBuilder {
         self.region = input;
         self
     }
+    /// <p>The action declaration's Amazon Web Services Region, such as us-east-1.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
+    }
     /// <p>The variable namespace associated with the action. All variables produced as output by this action fall under this namespace.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
@@ -240,6 +283,10 @@ impl ActionDeclarationBuilder {
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace = input;
         self
+    }
+    /// <p>The variable namespace associated with the action. All variables produced as output by this action fall under this namespace.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
     }
     /// Consumes the builder and constructs a [`ActionDeclaration`](crate::types::ActionDeclaration).
     pub fn build(self) -> crate::types::ActionDeclaration {

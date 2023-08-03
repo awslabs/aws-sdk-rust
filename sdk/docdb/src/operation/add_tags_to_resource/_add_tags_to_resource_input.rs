@@ -55,6 +55,10 @@ impl AddTagsToResourceInputBuilder {
         self.resource_name = input;
         self
     }
+    /// <p>The Amazon DocumentDB resource that the tags are added to. This value is an Amazon Resource Name .</p>
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_name
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -73,6 +77,10 @@ impl AddTagsToResourceInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags to be assigned to the Amazon DocumentDB resource.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`AddTagsToResourceInput`](crate::operation::add_tags_to_resource::AddTagsToResourceInput).
     pub fn build(

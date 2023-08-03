@@ -57,6 +57,10 @@ impl PageBuilder {
         self
     }
     /// <p>Reserved for future use.</p>
+    pub fn get_line_range(&self) -> &::std::option::Option<crate::types::Range> {
+        &self.line_range
+    }
+    /// <p>Reserved for future use.</p>
     pub fn offset_range(mut self, input: crate::types::Range) -> Self {
         self.offset_range = ::std::option::Option::Some(input);
         self
@@ -65,6 +69,10 @@ impl PageBuilder {
     pub fn set_offset_range(mut self, input: ::std::option::Option<crate::types::Range>) -> Self {
         self.offset_range = input;
         self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn get_offset_range(&self) -> &::std::option::Option<crate::types::Range> {
+        &self.offset_range
     }
     /// <p>The page number of the page that contains the sensitive data.</p>
     pub fn page_number(mut self, input: i64) -> Self {
@@ -75,6 +83,10 @@ impl PageBuilder {
     pub fn set_page_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.page_number = input;
         self
+    }
+    /// <p>The page number of the page that contains the sensitive data.</p>
+    pub fn get_page_number(&self) -> &::std::option::Option<i64> {
+        &self.page_number
     }
     /// Consumes the builder and constructs a [`Page`](crate::types::Page).
     pub fn build(self) -> crate::types::Page {

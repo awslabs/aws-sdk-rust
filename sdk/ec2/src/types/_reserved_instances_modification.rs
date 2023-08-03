@@ -112,6 +112,10 @@ impl ReservedInstancesModificationBuilder {
         self.client_token = input;
         self
     }
+    /// <p>A unique, case-sensitive key supplied by the client to ensure that the request is idempotent. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>The time when the modification request was created.</p>
     pub fn create_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_date = ::std::option::Option::Some(input);
@@ -125,6 +129,10 @@ impl ReservedInstancesModificationBuilder {
         self.create_date = input;
         self
     }
+    /// <p>The time when the modification request was created.</p>
+    pub fn get_create_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_date
+    }
     /// <p>The time for the modification to become effective.</p>
     pub fn effective_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.effective_date = ::std::option::Option::Some(input);
@@ -137,6 +145,10 @@ impl ReservedInstancesModificationBuilder {
     ) -> Self {
         self.effective_date = input;
         self
+    }
+    /// <p>The time for the modification to become effective.</p>
+    pub fn get_effective_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.effective_date
     }
     /// Appends an item to `modification_results`.
     ///
@@ -162,6 +174,13 @@ impl ReservedInstancesModificationBuilder {
         self.modification_results = input;
         self
     }
+    /// <p>Contains target configurations along with their corresponding new Reserved Instance IDs.</p>
+    pub fn get_modification_results(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesModificationResult>>
+    {
+        &self.modification_results
+    }
     /// Appends an item to `reserved_instances_ids`.
     ///
     /// To override the contents of this collection use [`set_reserved_instances_ids`](Self::set_reserved_instances_ids).
@@ -181,6 +200,12 @@ impl ReservedInstancesModificationBuilder {
         self.reserved_instances_ids = input;
         self
     }
+    /// <p>The IDs of one or more Reserved Instances.</p>
+    pub fn get_reserved_instances_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesId>> {
+        &self.reserved_instances_ids
+    }
     /// <p>A unique ID for the Reserved Instance modification.</p>
     pub fn reserved_instances_modification_id(
         mut self,
@@ -197,6 +222,12 @@ impl ReservedInstancesModificationBuilder {
         self.reserved_instances_modification_id = input;
         self
     }
+    /// <p>A unique ID for the Reserved Instance modification.</p>
+    pub fn get_reserved_instances_modification_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.reserved_instances_modification_id
+    }
     /// <p>The status of the Reserved Instances modification request.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -206,6 +237,10 @@ impl ReservedInstancesModificationBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the Reserved Instances modification request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>The reason for the status.</p>
     pub fn status_message(
@@ -223,6 +258,10 @@ impl ReservedInstancesModificationBuilder {
         self.status_message = input;
         self
     }
+    /// <p>The reason for the status.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>The time when the modification request was last updated.</p>
     pub fn update_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_date = ::std::option::Option::Some(input);
@@ -235,6 +274,10 @@ impl ReservedInstancesModificationBuilder {
     ) -> Self {
         self.update_date = input;
         self
+    }
+    /// <p>The time when the modification request was last updated.</p>
+    pub fn get_update_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_date
     }
     /// Consumes the builder and constructs a [`ReservedInstancesModification`](crate::types::ReservedInstancesModification).
     pub fn build(self) -> crate::types::ReservedInstancesModification {

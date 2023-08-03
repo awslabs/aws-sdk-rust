@@ -58,6 +58,10 @@ impl UpdateMonitoringScheduleInputBuilder {
         self.monitoring_schedule_name = input;
         self
     }
+    /// <p>The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within an Amazon Web Services account.</p>
+    pub fn get_monitoring_schedule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitoring_schedule_name
+    }
     /// <p>The configuration object that specifies the monitoring schedule and defines the monitoring job.</p>
     pub fn monitoring_schedule_config(
         mut self,
@@ -73,6 +77,12 @@ impl UpdateMonitoringScheduleInputBuilder {
     ) -> Self {
         self.monitoring_schedule_config = input;
         self
+    }
+    /// <p>The configuration object that specifies the monitoring schedule and defines the monitoring job.</p>
+    pub fn get_monitoring_schedule_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::MonitoringScheduleConfig> {
+        &self.monitoring_schedule_config
     }
     /// Consumes the builder and constructs a [`UpdateMonitoringScheduleInput`](crate::operation::update_monitoring_schedule::UpdateMonitoringScheduleInput).
     pub fn build(

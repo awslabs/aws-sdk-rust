@@ -38,6 +38,13 @@ impl UpdateQueueMaxContactsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateQueueMaxContacts as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_queue_max_contacts::builders::UpdateQueueMaxContactsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +135,10 @@ impl UpdateQueueMaxContactsFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>The identifier for the queue.</p>
     pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.queue_id(input.into());
@@ -138,6 +149,10 @@ impl UpdateQueueMaxContactsFluentBuilder {
         self.inner = self.inner.set_queue_id(input);
         self
     }
+    /// <p>The identifier for the queue.</p>
+    pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_queue_id()
+    }
     /// <p>The maximum number of contacts that can be in the queue before it is considered full.</p>
     pub fn max_contacts(mut self, input: i32) -> Self {
         self.inner = self.inner.max_contacts(input);
@@ -147,5 +162,9 @@ impl UpdateQueueMaxContactsFluentBuilder {
     pub fn set_max_contacts(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_contacts(input);
         self
+    }
+    /// <p>The maximum number of contacts that can be in the queue before it is considered full.</p>
+    pub fn get_max_contacts(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_contacts()
     }
 }

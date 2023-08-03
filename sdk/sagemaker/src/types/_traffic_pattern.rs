@@ -51,6 +51,10 @@ impl TrafficPatternBuilder {
         self.traffic_type = input;
         self
     }
+    /// <p>Defines the traffic patterns.</p>
+    pub fn get_traffic_type(&self) -> &::std::option::Option<crate::types::TrafficType> {
+        &self.traffic_type
+    }
     /// Appends an item to `phases`.
     ///
     /// To override the contents of this collection use [`set_phases`](Self::set_phases).
@@ -69,6 +73,10 @@ impl TrafficPatternBuilder {
     ) -> Self {
         self.phases = input;
         self
+    }
+    /// <p>Defines the phases traffic specification.</p>
+    pub fn get_phases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Phase>> {
+        &self.phases
     }
     /// Consumes the builder and constructs a [`TrafficPattern`](crate::types::TrafficPattern).
     pub fn build(self) -> crate::types::TrafficPattern {

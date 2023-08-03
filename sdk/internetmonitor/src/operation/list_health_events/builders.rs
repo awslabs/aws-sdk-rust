@@ -38,6 +38,12 @@ impl ListHealthEventsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListHealthEvents as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_health_events::builders::ListHealthEventsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -139,6 +145,10 @@ impl ListHealthEventsFluentBuilder {
         self.inner = self.inner.set_monitor_name(input);
         self
     }
+    /// <p>The name of the monitor.</p>
+    pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_monitor_name()
+    }
     /// <p>The time when a health event started.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
@@ -151,6 +161,10 @@ impl ListHealthEventsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
+    }
+    /// <p>The time when a health event started.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_time()
     }
     /// <p>The time when a health event ended. If the health event is still ongoing, then the end time is not set.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -165,6 +179,10 @@ impl ListHealthEventsFluentBuilder {
         self.inner = self.inner.set_end_time(input);
         self
     }
+    /// <p>The time when a health event ended. If the health event is still ongoing, then the end time is not set.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_time()
+    }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -175,6 +193,10 @@ impl ListHealthEventsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token for the next set of results. You receive this token from a previous call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The number of health event objects that you want to return with this call. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -184,6 +206,10 @@ impl ListHealthEventsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The number of health event objects that you want to return with this call. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>The status of a health event.</p>
     pub fn event_status(mut self, input: crate::types::HealthEventStatus) -> Self {
@@ -197,5 +223,9 @@ impl ListHealthEventsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_event_status(input);
         self
+    }
+    /// <p>The status of a health event.</p>
+    pub fn get_event_status(&self) -> &::std::option::Option<crate::types::HealthEventStatus> {
+        self.inner.get_event_status()
     }
 }

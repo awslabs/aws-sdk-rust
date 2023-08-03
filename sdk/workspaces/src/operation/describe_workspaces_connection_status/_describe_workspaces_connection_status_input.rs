@@ -59,6 +59,12 @@ impl DescribeWorkspacesConnectionStatusInputBuilder {
         self.workspace_ids = input;
         self
     }
+    /// <p>The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.</p>
+    pub fn get_workspace_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.workspace_ids
+    }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -68,6 +74,10 @@ impl DescribeWorkspacesConnectionStatusInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeWorkspacesConnectionStatusInput`](crate::operation::describe_workspaces_connection_status::DescribeWorkspacesConnectionStatusInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_workspaces_connection_status::DescribeWorkspacesConnectionStatusInput, ::aws_smithy_http::operation::error::BuildError>{

@@ -39,6 +39,10 @@ impl DeleteTagOptionInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The TagOption identifier.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`DeleteTagOptionInput`](crate::operation::delete_tag_option::DeleteTagOptionInput).
     pub fn build(
         self,

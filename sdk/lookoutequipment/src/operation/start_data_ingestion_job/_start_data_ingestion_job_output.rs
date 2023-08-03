@@ -56,6 +56,10 @@ impl StartDataIngestionJobOutputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>Indicates the job ID of the data ingestion job. </p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>Indicates the status of the <code>StartDataIngestionJob</code> operation. </p>
     pub fn status(mut self, input: crate::types::IngestionJobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -68,6 +72,10 @@ impl StartDataIngestionJobOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Indicates the status of the <code>StartDataIngestionJob</code> operation. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::IngestionJobStatus> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

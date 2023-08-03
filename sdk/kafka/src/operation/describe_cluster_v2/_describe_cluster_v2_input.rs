@@ -40,6 +40,10 @@ impl DescribeClusterV2InputBuilder {
         self.cluster_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_arn
+    }
     /// Consumes the builder and constructs a [`DescribeClusterV2Input`](crate::operation::describe_cluster_v2::DescribeClusterV2Input).
     pub fn build(
         self,

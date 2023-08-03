@@ -51,6 +51,10 @@ impl EnableAddressTransferOutputBuilder {
         self.address_transfer = input;
         self
     }
+    /// <p>An Elastic IP address transfer.</p>
+    pub fn get_address_transfer(&self) -> &::std::option::Option<crate::types::AddressTransfer> {
+        &self.address_transfer
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

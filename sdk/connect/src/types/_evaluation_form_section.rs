@@ -72,6 +72,10 @@ impl EvaluationFormSectionBuilder {
         self.title = input;
         self
     }
+    /// <p>The title of the section.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
+    }
     /// <p>The identifier of the section. An identifier must be unique within the evaluation form.</p>
     pub fn ref_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ref_id = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl EvaluationFormSectionBuilder {
         self.ref_id = input;
         self
     }
+    /// <p>The identifier of the section. An identifier must be unique within the evaluation form.</p>
+    pub fn get_ref_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ref_id
+    }
     /// <p>The instructions of the section.</p>
     pub fn instructions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instructions = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl EvaluationFormSectionBuilder {
     pub fn set_instructions(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instructions = input;
         self
+    }
+    /// <p>The instructions of the section.</p>
+    pub fn get_instructions(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instructions
     }
     /// Appends an item to `items`.
     ///
@@ -111,6 +123,12 @@ impl EvaluationFormSectionBuilder {
         self.items = input;
         self
     }
+    /// <p>The items of the section.</p>
+    pub fn get_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormItem>> {
+        &self.items
+    }
     /// <p>The scoring weight of the section.</p>
     pub fn weight(mut self, input: f64) -> Self {
         self.weight = ::std::option::Option::Some(input);
@@ -120,6 +138,10 @@ impl EvaluationFormSectionBuilder {
     pub fn set_weight(mut self, input: ::std::option::Option<f64>) -> Self {
         self.weight = input;
         self
+    }
+    /// <p>The scoring weight of the section.</p>
+    pub fn get_weight(&self) -> &::std::option::Option<f64> {
+        &self.weight
     }
     /// Consumes the builder and constructs a [`EvaluationFormSection`](crate::types::EvaluationFormSection).
     pub fn build(self) -> crate::types::EvaluationFormSection {

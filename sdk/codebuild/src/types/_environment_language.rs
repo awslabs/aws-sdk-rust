@@ -51,6 +51,10 @@ impl EnvironmentLanguageBuilder {
         self.language = input;
         self
     }
+    /// <p>The programming language for the Docker images.</p>
+    pub fn get_language(&self) -> &::std::option::Option<crate::types::LanguageType> {
+        &self.language
+    }
     /// Appends an item to `images`.
     ///
     /// To override the contents of this collection use [`set_images`](Self::set_images).
@@ -69,6 +73,12 @@ impl EnvironmentLanguageBuilder {
     ) -> Self {
         self.images = input;
         self
+    }
+    /// <p>The list of Docker images that are related by the specified programming language.</p>
+    pub fn get_images(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentImage>> {
+        &self.images
     }
     /// Consumes the builder and constructs a [`EnvironmentLanguage`](crate::types::EnvironmentLanguage).
     pub fn build(self) -> crate::types::EnvironmentLanguage {

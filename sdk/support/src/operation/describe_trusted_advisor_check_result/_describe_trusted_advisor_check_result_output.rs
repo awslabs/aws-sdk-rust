@@ -50,6 +50,10 @@ impl DescribeTrustedAdvisorCheckResultOutputBuilder {
         self.result = input;
         self
     }
+    /// <p>The detailed results of the Trusted Advisor check.</p>
+    pub fn get_result(&self) -> &::std::option::Option<crate::types::TrustedAdvisorCheckResult> {
+        &self.result
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

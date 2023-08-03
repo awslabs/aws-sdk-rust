@@ -422,6 +422,10 @@ impl UserPoolClientTypeBuilder {
         self.user_pool_id = input;
         self
     }
+    /// <p>The user pool ID for the user pool client.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_pool_id
+    }
     /// <p>The client name from the user pool request of the client type.</p>
     pub fn client_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_name = ::std::option::Option::Some(input.into());
@@ -432,6 +436,10 @@ impl UserPoolClientTypeBuilder {
         self.client_name = input;
         self
     }
+    /// <p>The client name from the user pool request of the client type.</p>
+    pub fn get_client_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_name
+    }
     /// <p>The ID of the client associated with the user pool.</p>
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
@@ -441,6 +449,10 @@ impl UserPoolClientTypeBuilder {
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_id = input;
         self
+    }
+    /// <p>The ID of the client associated with the user pool.</p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_id
     }
     /// <p>The client secret from the user pool request of the client type.</p>
     pub fn client_secret(
@@ -458,6 +470,10 @@ impl UserPoolClientTypeBuilder {
         self.client_secret = input;
         self
     }
+    /// <p>The client secret from the user pool request of the client type.</p>
+    pub fn get_client_secret(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_secret
+    }
     /// <p>The date the user pool client was last modified.</p>
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input);
@@ -471,6 +487,10 @@ impl UserPoolClientTypeBuilder {
         self.last_modified_date = input;
         self
     }
+    /// <p>The date the user pool client was last modified.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_date
+    }
     /// <p>The date the user pool client was created.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
@@ -483,6 +503,10 @@ impl UserPoolClientTypeBuilder {
     ) -> Self {
         self.creation_date = input;
         self
+    }
+    /// <p>The date the user pool client was created.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
     }
     /// <p>The refresh token time limit. After this limit expires, your user can't use their refresh token. To specify the time unit for <code>RefreshTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
     /// <p>For example, when you set <code>RefreshTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>days</code>, your user can refresh their session and retrieve new access and ID tokens for 10 days.</p>
@@ -500,6 +524,13 @@ impl UserPoolClientTypeBuilder {
         self.refresh_token_validity = input;
         self
     }
+    /// <p>The refresh token time limit. After this limit expires, your user can't use their refresh token. To specify the time unit for <code>RefreshTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
+    /// <p>For example, when you set <code>RefreshTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>days</code>, your user can refresh their session and retrieve new access and ID tokens for 10 days.</p>
+    /// <p>The default time unit for <code>RefreshTokenValidity</code> in an API request is days. You can't set <code>RefreshTokenValidity</code> to 0. If you do, Amazon Cognito overrides the value with the default value of 30 days. <i>Valid range</i> is displayed below in seconds.</p>
+    /// <p>If you don't specify otherwise in the configuration of your app client, your refresh tokens are valid for 30 days.</p>
+    pub fn get_refresh_token_validity(&self) -> &::std::option::Option<i32> {
+        &self.refresh_token_validity
+    }
     /// <p>The access token time limit. After this limit expires, your user can't use their access token. To specify the time unit for <code>AccessTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
     /// <p>For example, when you set <code>AccessTokenValidity</code> to <code>10</code> and <code>TokenValidityUnits</code> to <code>hours</code>, your user can authorize access with their access token for 10 hours.</p>
     /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
@@ -515,6 +546,13 @@ impl UserPoolClientTypeBuilder {
     pub fn set_access_token_validity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.access_token_validity = input;
         self
+    }
+    /// <p>The access token time limit. After this limit expires, your user can't use their access token. To specify the time unit for <code>AccessTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
+    /// <p>For example, when you set <code>AccessTokenValidity</code> to <code>10</code> and <code>TokenValidityUnits</code> to <code>hours</code>, your user can authorize access with their access token for 10 hours.</p>
+    /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
+    /// <p>If you don't specify otherwise in the configuration of your app client, your access tokens are valid for one hour.</p>
+    pub fn get_access_token_validity(&self) -> &::std::option::Option<i32> {
+        &self.access_token_validity
     }
     /// <p>The ID token time limit. After this limit expires, your user can't use their ID token. To specify the time unit for <code>IdTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
     /// <p>For example, when you set <code>IdTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your user can authenticate their session with their ID token for 10 hours.</p>
@@ -532,6 +570,13 @@ impl UserPoolClientTypeBuilder {
         self.id_token_validity = input;
         self
     }
+    /// <p>The ID token time limit. After this limit expires, your user can't use their ID token. To specify the time unit for <code>IdTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
+    /// <p>For example, when you set <code>IdTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your user can authenticate their session with their ID token for 10 hours.</p>
+    /// <p>The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is displayed below in seconds.</p>
+    /// <p>If you don't specify otherwise in the configuration of your app client, your ID tokens are valid for one hour.</p>
+    pub fn get_id_token_validity(&self) -> &::std::option::Option<i32> {
+        &self.id_token_validity
+    }
     /// <p>The time units used to specify the token validity times of each token type: ID, access, and refresh.</p>
     pub fn token_validity_units(mut self, input: crate::types::TokenValidityUnitsType) -> Self {
         self.token_validity_units = ::std::option::Option::Some(input);
@@ -544,6 +589,12 @@ impl UserPoolClientTypeBuilder {
     ) -> Self {
         self.token_validity_units = input;
         self
+    }
+    /// <p>The time units used to specify the token validity times of each token type: ID, access, and refresh.</p>
+    pub fn get_token_validity_units(
+        &self,
+    ) -> &::std::option::Option<crate::types::TokenValidityUnitsType> {
+        &self.token_validity_units
     }
     /// Appends an item to `read_attributes`.
     ///
@@ -567,6 +618,12 @@ impl UserPoolClientTypeBuilder {
         self.read_attributes = input;
         self
     }
+    /// <p>The Read-only attributes.</p>
+    pub fn get_read_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.read_attributes
+    }
     /// Appends an item to `write_attributes`.
     ///
     /// To override the contents of this collection use [`set_write_attributes`](Self::set_write_attributes).
@@ -588,6 +645,12 @@ impl UserPoolClientTypeBuilder {
     ) -> Self {
         self.write_attributes = input;
         self
+    }
+    /// <p>The writeable attributes.</p>
+    pub fn get_write_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.write_attributes
     }
     /// Appends an item to `explicit_auth_flows`.
     ///
@@ -630,6 +693,23 @@ impl UserPoolClientTypeBuilder {
         self.explicit_auth_flows = input;
         self
     }
+    /// <p>The authentication flows that you want your user pool client to support. For each app client in your user pool, you can sign in your users with any combination of one or more flows, including with a user name and Secure Remote Password (SRP), a user name and password, or a custom authentication process that you define with Lambda functions.</p> <note>
+    /// <p>If you don't specify a value for <code>ExplicitAuthFlows</code>, your user client supports <code>ALLOW_REFRESH_TOKEN_AUTH</code>, <code>ALLOW_USER_SRP_AUTH</code>, and <code>ALLOW_CUSTOM_AUTH</code>.</p>
+    /// </note>
+    /// <p>Valid values include:</p>
+    /// <ul>
+    /// <li> <p> <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow, your app passes a user name and password to Amazon Cognito in the request, instead of using the Secure Remote Password (SRP) protocol to securely transmit the password.</p> </li>
+    /// <li> <p> <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.</p> </li>
+    /// <li> <p> <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication. In this flow, Amazon Cognito receives the password in the request instead of using the SRP protocol to verify passwords.</p> </li>
+    /// <li> <p> <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.</p> </li>
+    /// <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.</p> </li>
+    /// </ul>
+    /// <p>In some environments, you will see the values <code>ADMIN_NO_SRP_AUTH</code>, <code>CUSTOM_AUTH_FLOW_ONLY</code>, or <code>USER_PASSWORD_AUTH</code>. You can't assign these legacy <code>ExplicitAuthFlows</code> values to user pool clients at the same time as values that begin with <code>ALLOW_</code>, like <code>ALLOW_USER_SRP_AUTH</code>.</p>
+    pub fn get_explicit_auth_flows(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExplicitAuthFlowsType>> {
+        &self.explicit_auth_flows
+    }
     /// Appends an item to `supported_identity_providers`.
     ///
     /// To override the contents of this collection use [`set_supported_identity_providers`](Self::set_supported_identity_providers).
@@ -651,6 +731,12 @@ impl UserPoolClientTypeBuilder {
     ) -> Self {
         self.supported_identity_providers = input;
         self
+    }
+    /// <p>A list of provider names for the IdPs that this client supports. The following are supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code>, <code>SignInWithApple</code>, <code>LoginWithAmazon</code>, and the names of your own SAML and OIDC providers.</p>
+    pub fn get_supported_identity_providers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.supported_identity_providers
     }
     /// Appends an item to `callback_ur_ls`.
     ///
@@ -692,6 +778,21 @@ impl UserPoolClientTypeBuilder {
         self.callback_ur_ls = input;
         self
     }
+    /// <p>A list of allowed redirect (callback) URLs for the IdPs.</p>
+    /// <p>A redirect URI must:</p>
+    /// <ul>
+    /// <li> <p>Be an absolute URI.</p> </li>
+    /// <li> <p>Be registered with the authorization server.</p> </li>
+    /// <li> <p>Not include a fragment component.</p> </li>
+    /// </ul>
+    /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
+    /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
+    /// <p>App callback URLs such as myapp://example are also supported.</p>
+    pub fn get_callback_ur_ls(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.callback_ur_ls
+    }
     /// Appends an item to `logout_ur_ls`.
     ///
     /// To override the contents of this collection use [`set_logout_ur_ls`](Self::set_logout_ur_ls).
@@ -710,6 +811,12 @@ impl UserPoolClientTypeBuilder {
     ) -> Self {
         self.logout_ur_ls = input;
         self
+    }
+    /// <p>A list of allowed logout URLs for the IdPs.</p>
+    pub fn get_logout_ur_ls(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.logout_ur_ls
     }
     /// <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
     /// <p>A redirect URI must:</p>
@@ -744,6 +851,19 @@ impl UserPoolClientTypeBuilder {
     ) -> Self {
         self.default_redirect_uri = input;
         self
+    }
+    /// <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
+    /// <p>A redirect URI must:</p>
+    /// <ul>
+    /// <li> <p>Be an absolute URI.</p> </li>
+    /// <li> <p>Be registered with the authorization server.</p> </li>
+    /// <li> <p>Not include a fragment component.</p> </li>
+    /// </ul>
+    /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
+    /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
+    /// <p>App callback URLs such as myapp://example are also supported.</p>
+    pub fn get_default_redirect_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_redirect_uri
     }
     /// Appends an item to `allowed_o_auth_flows`.
     ///
@@ -804,6 +924,32 @@ impl UserPoolClientTypeBuilder {
         self.allowed_o_auth_flows = input;
         self
     }
+    /// <p>The allowed OAuth flows.</p>
+    /// <dl>
+    /// <dt>
+    /// code
+    /// </dt>
+    /// <dd>
+    /// <p>Use a code grant flow, which provides an authorization code as the response. This code can be exchanged for access tokens with the <code>/oauth2/token</code> endpoint.</p>
+    /// </dd>
+    /// <dt>
+    /// implicit
+    /// </dt>
+    /// <dd>
+    /// <p>Issue the access token (and, optionally, ID token, based on scopes) directly to your user.</p>
+    /// </dd>
+    /// <dt>
+    /// client_credentials
+    /// </dt>
+    /// <dd>
+    /// <p>Issue the access token from the <code>/oauth2/token</code> endpoint directly to a non-person user using a combination of the client ID and client secret.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_allowed_o_auth_flows(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OAuthFlowType>> {
+        &self.allowed_o_auth_flows
+    }
     /// Appends an item to `allowed_o_auth_scopes`.
     ///
     /// To override the contents of this collection use [`set_allowed_o_auth_scopes`](Self::set_allowed_o_auth_scopes).
@@ -826,6 +972,12 @@ impl UserPoolClientTypeBuilder {
         self.allowed_o_auth_scopes = input;
         self
     }
+    /// <p>The OAuth scopes that your app client supports. Possible values that OAuth provides are <code>phone</code>, <code>email</code>, <code>openid</code>, and <code>profile</code>. Possible values that Amazon Web Services provides are <code>aws.cognito.signin.user.admin</code>. Amazon Cognito also supports custom scopes that you create in Resource Servers.</p>
+    pub fn get_allowed_o_auth_scopes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.allowed_o_auth_scopes
+    }
     /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito user pools.</p>
     pub fn allowed_o_auth_flows_user_pool_client(mut self, input: bool) -> Self {
         self.allowed_o_auth_flows_user_pool_client = ::std::option::Option::Some(input);
@@ -838,6 +990,10 @@ impl UserPoolClientTypeBuilder {
     ) -> Self {
         self.allowed_o_auth_flows_user_pool_client = input;
         self
+    }
+    /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting with Amazon Cognito user pools.</p>
+    pub fn get_allowed_o_auth_flows_user_pool_client(&self) -> &::std::option::Option<bool> {
+        &self.allowed_o_auth_flows_user_pool_client
     }
     /// <p>The Amazon Pinpoint analytics configuration for the user pool client.</p> <note>
     /// <p>Amazon Cognito user pools only support sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the Region where the user pool resides.</p>
@@ -858,6 +1014,14 @@ impl UserPoolClientTypeBuilder {
     ) -> Self {
         self.analytics_configuration = input;
         self
+    }
+    /// <p>The Amazon Pinpoint analytics configuration for the user pool client.</p> <note>
+    /// <p>Amazon Cognito user pools only support sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the Region where the user pool resides.</p>
+    /// </note>
+    pub fn get_analytics_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AnalyticsConfigurationType> {
+        &self.analytics_configuration
     }
     /// <p>Errors and responses that you want Amazon Cognito APIs to return during authentication, account confirmation, and password recovery when the user doesn't exist in the user pool. When set to <code>ENABLED</code> and the user doesn't exist, authentication returns an error indicating either the username or password was incorrect. Account confirmation and password recovery return a response indicating a code was sent to a simulated destination. When set to <code>LEGACY</code>, those APIs return a <code>UserNotFoundException</code> exception if the user doesn't exist in the user pool.</p>
     /// <p>Valid values include:</p>
@@ -885,6 +1049,17 @@ impl UserPoolClientTypeBuilder {
         self.prevent_user_existence_errors = input;
         self
     }
+    /// <p>Errors and responses that you want Amazon Cognito APIs to return during authentication, account confirmation, and password recovery when the user doesn't exist in the user pool. When set to <code>ENABLED</code> and the user doesn't exist, authentication returns an error indicating either the username or password was incorrect. Account confirmation and password recovery return a response indicating a code was sent to a simulated destination. When set to <code>LEGACY</code>, those APIs return a <code>UserNotFoundException</code> exception if the user doesn't exist in the user pool.</p>
+    /// <p>Valid values include:</p>
+    /// <ul>
+    /// <li> <p> <code>ENABLED</code> - This prevents user existence-related errors.</p> </li>
+    /// <li> <p> <code>LEGACY</code> - This represents the old behavior of Amazon Cognito where user existence related errors aren't prevented.</p> </li>
+    /// </ul>
+    pub fn get_prevent_user_existence_errors(
+        &self,
+    ) -> &::std::option::Option<crate::types::PreventUserExistenceErrorTypes> {
+        &self.prevent_user_existence_errors
+    }
     /// <p>Indicates whether token revocation is activated for the user pool client. When you create a new user pool client, token revocation is activated by default. For more information about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p>
     pub fn enable_token_revocation(mut self, input: bool) -> Self {
         self.enable_token_revocation = ::std::option::Option::Some(input);
@@ -894,6 +1069,10 @@ impl UserPoolClientTypeBuilder {
     pub fn set_enable_token_revocation(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_token_revocation = input;
         self
+    }
+    /// <p>Indicates whether token revocation is activated for the user pool client. When you create a new user pool client, token revocation is activated by default. For more information about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p>
+    pub fn get_enable_token_revocation(&self) -> &::std::option::Option<bool> {
+        &self.enable_token_revocation
     }
     /// <p>When <code>EnablePropagateAdditionalUserContextData</code> is true, Amazon Cognito accepts an <code>IpAddress</code> value that you send in the <code>UserContextData</code> parameter. The <code>UserContextData</code> parameter sends information to Amazon Cognito advanced security for risk analysis. You can send <code>UserContextData</code> when you sign in Amazon Cognito native users with the <code>InitiateAuth</code> and <code>RespondToAuthChallenge</code> API operations.</p>
     /// <p>When <code>EnablePropagateAdditionalUserContextData</code> is false, you can't send your user's source IP address to Amazon Cognito advanced security with unauthenticated API operations. <code>EnablePropagateAdditionalUserContextData</code> doesn't affect whether you can send a source IP address in a <code>ContextData</code> parameter with the authenticated API operations <code>AdminInitiateAuth</code> and <code>AdminRespondToAuthChallenge</code>.</p>
@@ -912,6 +1091,14 @@ impl UserPoolClientTypeBuilder {
         self.enable_propagate_additional_user_context_data = input;
         self
     }
+    /// <p>When <code>EnablePropagateAdditionalUserContextData</code> is true, Amazon Cognito accepts an <code>IpAddress</code> value that you send in the <code>UserContextData</code> parameter. The <code>UserContextData</code> parameter sends information to Amazon Cognito advanced security for risk analysis. You can send <code>UserContextData</code> when you sign in Amazon Cognito native users with the <code>InitiateAuth</code> and <code>RespondToAuthChallenge</code> API operations.</p>
+    /// <p>When <code>EnablePropagateAdditionalUserContextData</code> is false, you can't send your user's source IP address to Amazon Cognito advanced security with unauthenticated API operations. <code>EnablePropagateAdditionalUserContextData</code> doesn't affect whether you can send a source IP address in a <code>ContextData</code> parameter with the authenticated API operations <code>AdminInitiateAuth</code> and <code>AdminRespondToAuthChallenge</code>.</p>
+    /// <p>You can only activate <code>EnablePropagateAdditionalUserContextData</code> in an app client that has a client secret. For more information about propagation of user context data, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-device-fingerprint">Adding user device and session data to API requests</a>.</p>
+    pub fn get_enable_propagate_additional_user_context_data(
+        &self,
+    ) -> &::std::option::Option<bool> {
+        &self.enable_propagate_additional_user_context_data
+    }
     /// <p>Amazon Cognito creates a session token for each API request in an authentication flow. <code>AuthSessionValidity</code> is the duration, in minutes, of that session token. Your user pool native user must respond to each authentication challenge before the session expires.</p>
     pub fn auth_session_validity(mut self, input: i32) -> Self {
         self.auth_session_validity = ::std::option::Option::Some(input);
@@ -921,6 +1108,10 @@ impl UserPoolClientTypeBuilder {
     pub fn set_auth_session_validity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.auth_session_validity = input;
         self
+    }
+    /// <p>Amazon Cognito creates a session token for each API request in an authentication flow. <code>AuthSessionValidity</code> is the duration, in minutes, of that session token. Your user pool native user must respond to each authentication challenge before the session expires.</p>
+    pub fn get_auth_session_validity(&self) -> &::std::option::Option<i32> {
+        &self.auth_session_validity
     }
     /// Consumes the builder and constructs a [`UserPoolClientType`](crate::types::UserPoolClientType).
     pub fn build(self) -> crate::types::UserPoolClientType {

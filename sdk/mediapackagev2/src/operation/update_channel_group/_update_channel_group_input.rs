@@ -54,6 +54,10 @@ impl UpdateChannelGroupInputBuilder {
         self.channel_group_name = input;
         self
     }
+    /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
+    pub fn get_channel_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_group_name
+    }
     /// <p>Any descriptive information that you want to add to the channel group for future identification purposes.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl UpdateChannelGroupInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>Any descriptive information that you want to add to the channel group for future identification purposes.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`UpdateChannelGroupInput`](crate::operation::update_channel_group::UpdateChannelGroupInput).
     pub fn build(

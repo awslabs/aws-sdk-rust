@@ -56,6 +56,10 @@ impl DetectorStateDefinitionBuilder {
         self.state_name = input;
         self
     }
+    /// <p>The name of the new state of the detector (instance).</p>
+    pub fn get_state_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_name
+    }
     /// Appends an item to `variables`.
     ///
     /// To override the contents of this collection use [`set_variables`](Self::set_variables).
@@ -75,6 +79,12 @@ impl DetectorStateDefinitionBuilder {
         self.variables = input;
         self
     }
+    /// <p>The new values of the detector's variables. Any variable whose value isn't specified is cleared.</p>
+    pub fn get_variables(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VariableDefinition>> {
+        &self.variables
+    }
     /// Appends an item to `timers`.
     ///
     /// To override the contents of this collection use [`set_timers`](Self::set_timers).
@@ -93,6 +103,12 @@ impl DetectorStateDefinitionBuilder {
     ) -> Self {
         self.timers = input;
         self
+    }
+    /// <p>The new values of the detector's timers. Any timer whose value isn't specified is cleared, and its timeout event won't occur.</p>
+    pub fn get_timers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TimerDefinition>> {
+        &self.timers
     }
     /// Consumes the builder and constructs a [`DetectorStateDefinition`](crate::types::DetectorStateDefinition).
     pub fn build(self) -> crate::types::DetectorStateDefinition {

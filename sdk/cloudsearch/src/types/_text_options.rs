@@ -90,6 +90,10 @@ impl TextOptionsBuilder {
         self.default_value = input;
         self
     }
+    /// A value to use for the field if the field isn't specified for a document.
+    pub fn get_default_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_value
+    }
     /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
     /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
     /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
@@ -104,6 +108,12 @@ impl TextOptionsBuilder {
         self.source_field = input;
         self
     }
+    /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
+    /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
+    /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
+    pub fn get_source_field(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_field
+    }
     /// <p>Whether the contents of the field can be returned in the search results.</p>
     pub fn return_enabled(mut self, input: bool) -> Self {
         self.return_enabled = ::std::option::Option::Some(input);
@@ -113,6 +123,10 @@ impl TextOptionsBuilder {
     pub fn set_return_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.return_enabled = input;
         self
+    }
+    /// <p>Whether the contents of the field can be returned in the search results.</p>
+    pub fn get_return_enabled(&self) -> &::std::option::Option<bool> {
+        &self.return_enabled
     }
     /// <p>Whether the field can be used to sort the search results.</p>
     pub fn sort_enabled(mut self, input: bool) -> Self {
@@ -124,6 +138,10 @@ impl TextOptionsBuilder {
         self.sort_enabled = input;
         self
     }
+    /// <p>Whether the field can be used to sort the search results.</p>
+    pub fn get_sort_enabled(&self) -> &::std::option::Option<bool> {
+        &self.sort_enabled
+    }
     /// <p>Whether highlights can be returned for the field.</p>
     pub fn highlight_enabled(mut self, input: bool) -> Self {
         self.highlight_enabled = ::std::option::Option::Some(input);
@@ -133,6 +151,10 @@ impl TextOptionsBuilder {
     pub fn set_highlight_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.highlight_enabled = input;
         self
+    }
+    /// <p>Whether highlights can be returned for the field.</p>
+    pub fn get_highlight_enabled(&self) -> &::std::option::Option<bool> {
+        &self.highlight_enabled
     }
     /// <p>The name of an analysis scheme for a <code>text</code> field.</p>
     pub fn analysis_scheme(
@@ -149,6 +171,10 @@ impl TextOptionsBuilder {
     ) -> Self {
         self.analysis_scheme = input;
         self
+    }
+    /// <p>The name of an analysis scheme for a <code>text</code> field.</p>
+    pub fn get_analysis_scheme(&self) -> &::std::option::Option<::std::string::String> {
+        &self.analysis_scheme
     }
     /// Consumes the builder and constructs a [`TextOptions`](crate::types::TextOptions).
     pub fn build(self) -> crate::types::TextOptions {

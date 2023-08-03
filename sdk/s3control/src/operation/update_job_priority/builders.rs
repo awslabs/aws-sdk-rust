@@ -44,6 +44,12 @@ impl UpdateJobPriorityFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateJobPriority as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_job_priority::builders::UpdateJobPriorityInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +140,10 @@ impl UpdateJobPriorityFluentBuilder {
         self.inner = self.inner.set_account_id(input);
         self
     }
+    /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// <p>The ID for the job whose priority you want to update.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_id(input.into());
@@ -144,6 +154,10 @@ impl UpdateJobPriorityFluentBuilder {
         self.inner = self.inner.set_job_id(input);
         self
     }
+    /// <p>The ID for the job whose priority you want to update.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_id()
+    }
     /// <p>The priority you want to assign to this job.</p>
     pub fn priority(mut self, input: i32) -> Self {
         self.inner = self.inner.priority(input);
@@ -153,5 +167,9 @@ impl UpdateJobPriorityFluentBuilder {
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_priority(input);
         self
+    }
+    /// <p>The priority you want to assign to this job.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        self.inner.get_priority()
     }
 }

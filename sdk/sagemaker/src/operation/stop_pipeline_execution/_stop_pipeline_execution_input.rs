@@ -55,6 +55,10 @@ impl StopPipelineExecutionInputBuilder {
         self.pipeline_execution_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
+    pub fn get_pipeline_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_execution_arn
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once.</p>
     pub fn client_request_token(
         mut self,
@@ -70,6 +74,10 @@ impl StopPipelineExecutionInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Consumes the builder and constructs a [`StopPipelineExecutionInput`](crate::operation::stop_pipeline_execution::StopPipelineExecutionInput).
     pub fn build(

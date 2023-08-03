@@ -51,6 +51,10 @@ impl DeregisterTaskDefinitionOutputBuilder {
         self.task_definition = input;
         self
     }
+    /// <p>The full description of the deregistered task.</p>
+    pub fn get_task_definition(&self) -> &::std::option::Option<crate::types::TaskDefinition> {
+        &self.task_definition
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

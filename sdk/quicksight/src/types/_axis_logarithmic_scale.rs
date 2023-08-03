@@ -40,6 +40,10 @@ impl AxisLogarithmicScaleBuilder {
         self.base = input;
         self
     }
+    /// <p>The base setup of a logarithmic axis scale.</p>
+    pub fn get_base(&self) -> &::std::option::Option<f64> {
+        &self.base
+    }
     /// Consumes the builder and constructs a [`AxisLogarithmicScale`](crate::types::AxisLogarithmicScale).
     pub fn build(self) -> crate::types::AxisLogarithmicScale {
         crate::types::AxisLogarithmicScale { base: self.base }

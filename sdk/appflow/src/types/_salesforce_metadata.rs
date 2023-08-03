@@ -116,6 +116,12 @@ impl SalesforceMetadataBuilder {
         self.o_auth_scopes = input;
         self
     }
+    /// <p> The desired authorization scope for the Salesforce account. </p>
+    pub fn get_o_auth_scopes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.o_auth_scopes
+    }
     /// Appends an item to `data_transfer_apis`.
     ///
     /// To override the contents of this collection use [`set_data_transfer_apis`](Self::set_data_transfer_apis).
@@ -134,6 +140,12 @@ impl SalesforceMetadataBuilder {
     ) -> Self {
         self.data_transfer_apis = input;
         self
+    }
+    /// <p>The Salesforce APIs that you can have Amazon AppFlow use when your flows transfers data to or from Salesforce.</p>
+    pub fn get_data_transfer_apis(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SalesforceDataTransferApi>> {
+        &self.data_transfer_apis
     }
     /// Appends an item to `oauth2_grant_types_supported`.
     ///
@@ -193,6 +205,32 @@ impl SalesforceMetadataBuilder {
     ) -> Self {
         self.oauth2_grant_types_supported = input;
         self
+    }
+    /// <p>The OAuth 2.0 grant types that Amazon AppFlow can use when it requests an access token from Salesforce. Amazon AppFlow requires an access token each time it attempts to access your Salesforce records.</p>
+    /// <dl>
+    /// <dt>
+    /// AUTHORIZATION_CODE
+    /// </dt>
+    /// <dd>
+    /// <p>Amazon AppFlow passes an authorization code when it requests the access token from Salesforce. Amazon AppFlow receives the authorization code from Salesforce after you log in to your Salesforce account and authorize Amazon AppFlow to access your records.</p>
+    /// </dd>
+    /// <dt>
+    /// CLIENT_CREDENTIALS
+    /// </dt>
+    /// <dd>
+    /// <p>Amazon AppFlow passes client credentials (a client ID and client secret) when it requests the access token from Salesforce. You provide these credentials to Amazon AppFlow when you define the connection to your Salesforce account.</p>
+    /// </dd>
+    /// <dt>
+    /// JWT_BEARER
+    /// </dt>
+    /// <dd>
+    /// <p>Amazon AppFlow passes a JSON web token (JWT) when it requests the access token from Salesforce. You provide the JWT to Amazon AppFlow when you define the connection to your Salesforce account. When you use this grant type, you don't need to log in to your Salesforce account to authorize Amazon AppFlow to access your records.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_oauth2_grant_types_supported(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OAuth2GrantType>> {
+        &self.oauth2_grant_types_supported
     }
     /// Consumes the builder and constructs a [`SalesforceMetadata`](crate::types::SalesforceMetadata).
     pub fn build(self) -> crate::types::SalesforceMetadata {

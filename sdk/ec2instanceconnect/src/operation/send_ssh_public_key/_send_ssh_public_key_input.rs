@@ -64,6 +64,10 @@ impl SendSshPublicKeyInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The ID of the EC2 instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The OS user on the EC2 instance for whom the key can be used to authenticate.</p>
     pub fn instance_os_user(
         mut self,
@@ -79,6 +83,10 @@ impl SendSshPublicKeyInputBuilder {
     ) -> Self {
         self.instance_os_user = input;
         self
+    }
+    /// <p>The OS user on the EC2 instance for whom the key can be used to authenticate.</p>
+    pub fn get_instance_os_user(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_os_user
     }
     /// <p>The public key material. To use the public key, you must have the matching private key.</p>
     pub fn ssh_public_key(
@@ -96,6 +104,10 @@ impl SendSshPublicKeyInputBuilder {
         self.ssh_public_key = input;
         self
     }
+    /// <p>The public key material. To use the public key, you must have the matching private key.</p>
+    pub fn get_ssh_public_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ssh_public_key
+    }
     /// <p>The Availability Zone in which the EC2 instance was launched.</p>
     pub fn availability_zone(
         mut self,
@@ -111,6 +123,10 @@ impl SendSshPublicKeyInputBuilder {
     ) -> Self {
         self.availability_zone = input;
         self
+    }
+    /// <p>The Availability Zone in which the EC2 instance was launched.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
     }
     /// Consumes the builder and constructs a [`SendSshPublicKeyInput`](crate::operation::send_ssh_public_key::SendSshPublicKeyInput).
     pub fn build(

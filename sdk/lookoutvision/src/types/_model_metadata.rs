@@ -91,6 +91,10 @@ impl ModelMetadataBuilder {
         self.creation_timestamp = input;
         self
     }
+    /// <p>The unix timestamp for the date and time that the model was created. </p>
+    pub fn get_creation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_timestamp
+    }
     /// <p>The version of the model.</p>
     pub fn model_version(
         mut self,
@@ -107,6 +111,10 @@ impl ModelMetadataBuilder {
         self.model_version = input;
         self
     }
+    /// <p>The version of the model.</p>
+    pub fn get_model_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_version
+    }
     /// <p>The Amazon Resource Name (ARN) of the model.</p>
     pub fn model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_arn = ::std::option::Option::Some(input.into());
@@ -116,6 +124,10 @@ impl ModelMetadataBuilder {
     pub fn set_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the model.</p>
+    pub fn get_model_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_arn
     }
     /// <p>The description for the model.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -127,6 +139,10 @@ impl ModelMetadataBuilder {
         self.description = input;
         self
     }
+    /// <p>The description for the model.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The status of the model.</p>
     pub fn status(mut self, input: crate::types::ModelStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -136,6 +152,10 @@ impl ModelMetadataBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ModelStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the model.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ModelStatus> {
+        &self.status
     }
     /// <p>The status message for the model.</p>
     pub fn status_message(
@@ -153,6 +173,10 @@ impl ModelMetadataBuilder {
         self.status_message = input;
         self
     }
+    /// <p>The status message for the model.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>Performance metrics for the model. Not available until training has successfully completed.</p>
     pub fn performance(mut self, input: crate::types::ModelPerformance) -> Self {
         self.performance = ::std::option::Option::Some(input);
@@ -165,6 +189,10 @@ impl ModelMetadataBuilder {
     ) -> Self {
         self.performance = input;
         self
+    }
+    /// <p>Performance metrics for the model. Not available until training has successfully completed.</p>
+    pub fn get_performance(&self) -> &::std::option::Option<crate::types::ModelPerformance> {
+        &self.performance
     }
     /// Consumes the builder and constructs a [`ModelMetadata`](crate::types::ModelMetadata).
     pub fn build(self) -> crate::types::ModelMetadata {

@@ -63,6 +63,10 @@ impl BatchDescribeSimulationJobOutputBuilder {
         self.jobs = input;
         self
     }
+    /// <p>A list of simulation jobs.</p>
+    pub fn get_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SimulationJob>> {
+        &self.jobs
+    }
     /// Appends an item to `unprocessed_jobs`.
     ///
     /// To override the contents of this collection use [`set_unprocessed_jobs`](Self::set_unprocessed_jobs).
@@ -84,6 +88,12 @@ impl BatchDescribeSimulationJobOutputBuilder {
     ) -> Self {
         self.unprocessed_jobs = input;
         self
+    }
+    /// <p>A list of unprocessed simulation job Amazon Resource Names (ARNs).</p>
+    pub fn get_unprocessed_jobs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.unprocessed_jobs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

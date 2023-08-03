@@ -39,6 +39,10 @@ impl UpdateTemplateInputBuilder {
         self.template = input;
         self
     }
+    /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only part.</p>
+    pub fn get_template(&self) -> &::std::option::Option<crate::types::Template> {
+        &self.template
+    }
     /// Consumes the builder and constructs a [`UpdateTemplateInput`](crate::operation::update_template::UpdateTemplateInput).
     pub fn build(
         self,

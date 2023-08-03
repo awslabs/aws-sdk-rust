@@ -104,6 +104,10 @@ impl ListDatasetEntriesInputBuilder {
         self.project_name = input;
         self
     }
+    /// <p>The name of the project that contains the dataset that you want to list.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_name
+    }
     /// <p>The type of the dataset that you want to list. Specify <code>train</code> to list the training dataset. Specify <code>test</code> to list the test dataset. If you have a single dataset project, specify <code>train</code>.</p>
     pub fn dataset_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_type = ::std::option::Option::Some(input.into());
@@ -114,6 +118,10 @@ impl ListDatasetEntriesInputBuilder {
         self.dataset_type = input;
         self
     }
+    /// <p>The type of the dataset that you want to list. Specify <code>train</code> to list the training dataset. Specify <code>test</code> to list the test dataset. If you have a single dataset project, specify <code>train</code>.</p>
+    pub fn get_dataset_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_type
+    }
     /// <p>Specify <code>true</code> to include labeled entries, otherwise specify <code>false</code>. If you don't specify a value, Lookout for Vision returns all entries.</p>
     pub fn labeled(mut self, input: bool) -> Self {
         self.labeled = ::std::option::Option::Some(input);
@@ -123,6 +131,10 @@ impl ListDatasetEntriesInputBuilder {
     pub fn set_labeled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.labeled = input;
         self
+    }
+    /// <p>Specify <code>true</code> to include labeled entries, otherwise specify <code>false</code>. If you don't specify a value, Lookout for Vision returns all entries.</p>
+    pub fn get_labeled(&self) -> &::std::option::Option<bool> {
+        &self.labeled
     }
     /// <p>Specify <code>normal</code> to include only normal images. Specify <code>anomaly</code> to only include anomalous entries. If you don't specify a value, Amazon Lookout for Vision returns normal and anomalous images.</p>
     pub fn anomaly_class(
@@ -140,6 +152,10 @@ impl ListDatasetEntriesInputBuilder {
         self.anomaly_class = input;
         self
     }
+    /// <p>Specify <code>normal</code> to include only normal images. Specify <code>anomaly</code> to only include anomalous entries. If you don't specify a value, Amazon Lookout for Vision returns normal and anomalous images.</p>
+    pub fn get_anomaly_class(&self) -> &::std::option::Option<::std::string::String> {
+        &self.anomaly_class
+    }
     /// <p>Only includes entries before the specified date in the response. For example, <code>2020-06-23T00:00:00</code>.</p>
     pub fn before_creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.before_creation_date = ::std::option::Option::Some(input);
@@ -152,6 +168,10 @@ impl ListDatasetEntriesInputBuilder {
     ) -> Self {
         self.before_creation_date = input;
         self
+    }
+    /// <p>Only includes entries before the specified date in the response. For example, <code>2020-06-23T00:00:00</code>.</p>
+    pub fn get_before_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.before_creation_date
     }
     /// <p>Only includes entries after the specified date in the response. For example, <code>2020-06-23T00:00:00</code>.</p>
     pub fn after_creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -166,6 +186,10 @@ impl ListDatasetEntriesInputBuilder {
         self.after_creation_date = input;
         self
     }
+    /// <p>Only includes entries after the specified date in the response. For example, <code>2020-06-23T00:00:00</code>.</p>
+    pub fn get_after_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.after_creation_date
+    }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to retrieve the next set of dataset entries.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -176,6 +200,10 @@ impl ListDatasetEntriesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to retrieve the next set of dataset entries.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -185,6 +213,10 @@ impl ListDatasetEntriesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>Perform a "contains" search on the values of the <code>source-ref</code> key within the dataset. For example a value of "IMG_17" returns all JSON Lines where the <code>source-ref</code> key value matches <i>*IMG_17*</i>.</p>
     pub fn source_ref_contains(
@@ -201,6 +233,10 @@ impl ListDatasetEntriesInputBuilder {
     ) -> Self {
         self.source_ref_contains = input;
         self
+    }
+    /// <p>Perform a "contains" search on the values of the <code>source-ref</code> key within the dataset. For example a value of "IMG_17" returns all JSON Lines where the <code>source-ref</code> key value matches <i>*IMG_17*</i>.</p>
+    pub fn get_source_ref_contains(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_ref_contains
     }
     /// Consumes the builder and constructs a [`ListDatasetEntriesInput`](crate::operation::list_dataset_entries::ListDatasetEntriesInput).
     pub fn build(

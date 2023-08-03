@@ -41,6 +41,10 @@ impl DeleteScriptFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteScript as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_script::builders::DeleteScriptInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -122,5 +126,9 @@ impl DeleteScriptFluentBuilder {
     pub fn set_script_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_script_id(input);
         self
+    }
+    /// <p>A unique identifier for the Realtime script to delete. You can use either the script ID or ARN value.</p>
+    pub fn get_script_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_script_id()
     }
 }

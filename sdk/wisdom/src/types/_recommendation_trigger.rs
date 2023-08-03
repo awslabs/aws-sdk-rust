@@ -80,6 +80,10 @@ impl RecommendationTriggerBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the recommendation trigger.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The type of recommendation trigger.</p>
     pub fn r#type(mut self, input: crate::types::RecommendationTriggerType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -92,6 +96,10 @@ impl RecommendationTriggerBuilder {
     ) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of recommendation trigger.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::RecommendationTriggerType> {
+        &self.r#type
     }
     /// <p>The source of the recommendation trigger.</p>
     /// <ul>
@@ -114,6 +122,14 @@ impl RecommendationTriggerBuilder {
         self.source = input;
         self
     }
+    /// <p>The source of the recommendation trigger.</p>
+    /// <ul>
+    /// <li> <p>ISSUE_DETECTION: The corresponding recommendations were triggered by a Contact Lens issue.</p> </li>
+    /// <li> <p>RULE_EVALUATION: The corresponding recommendations were triggered by a Contact Lens rule.</p> </li>
+    /// </ul>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::RecommendationSourceType> {
+        &self.source
+    }
     /// <p>A union type containing information related to the trigger.</p>
     pub fn data(mut self, input: crate::types::RecommendationTriggerData) -> Self {
         self.data = ::std::option::Option::Some(input);
@@ -126,6 +142,10 @@ impl RecommendationTriggerBuilder {
     ) -> Self {
         self.data = input;
         self
+    }
+    /// <p>A union type containing information related to the trigger.</p>
+    pub fn get_data(&self) -> &::std::option::Option<crate::types::RecommendationTriggerData> {
+        &self.data
     }
     /// Appends an item to `recommendation_ids`.
     ///
@@ -148,6 +168,12 @@ impl RecommendationTriggerBuilder {
     ) -> Self {
         self.recommendation_ids = input;
         self
+    }
+    /// <p>The identifiers of the recommendations.</p>
+    pub fn get_recommendation_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.recommendation_ids
     }
     /// Consumes the builder and constructs a [`RecommendationTrigger`](crate::types::RecommendationTrigger).
     pub fn build(self) -> crate::types::RecommendationTrigger {

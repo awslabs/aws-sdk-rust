@@ -51,6 +51,10 @@ impl AnalyticsBinKeyBuilder {
         self.name = input;
         self
     }
+    /// <p>The criterion by which to bin the results.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::AnalyticsBinByName> {
+        &self.name
+    }
     /// <p>The value of the criterion that defines the bin.</p>
     pub fn value(mut self, input: i64) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl AnalyticsBinKeyBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<i64>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value of the criterion that defines the bin.</p>
+    pub fn get_value(&self) -> &::std::option::Option<i64> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`AnalyticsBinKey`](crate::types::AnalyticsBinKey).
     pub fn build(self) -> crate::types::AnalyticsBinKey {

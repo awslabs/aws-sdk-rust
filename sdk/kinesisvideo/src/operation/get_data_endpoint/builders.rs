@@ -39,6 +39,12 @@ impl GetDataEndpointFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetDataEndpoint as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_data_endpoint::builders::GetDataEndpointInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl GetDataEndpointFluentBuilder {
         self.inner = self.inner.set_stream_name(input);
         self
     }
+    /// <p>The name of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamARN</code> in the request.</p>
+    pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_name()
+    }
     /// <p>The Amazon Resource Name (ARN) of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamName</code> in the request. </p>
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stream_arn(input.into());
@@ -139,6 +149,10 @@ impl GetDataEndpointFluentBuilder {
         self.inner = self.inner.set_stream_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamName</code> in the request. </p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_arn()
+    }
     /// <p>The name of the API action for which to get an endpoint.</p>
     pub fn api_name(mut self, input: crate::types::ApiName) -> Self {
         self.inner = self.inner.api_name(input);
@@ -148,5 +162,9 @@ impl GetDataEndpointFluentBuilder {
     pub fn set_api_name(mut self, input: ::std::option::Option<crate::types::ApiName>) -> Self {
         self.inner = self.inner.set_api_name(input);
         self
+    }
+    /// <p>The name of the API action for which to get an endpoint.</p>
+    pub fn get_api_name(&self) -> &::std::option::Option<crate::types::ApiName> {
+        self.inner.get_api_name()
     }
 }

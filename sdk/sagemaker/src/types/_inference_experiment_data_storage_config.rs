@@ -56,6 +56,10 @@ impl InferenceExperimentDataStorageConfigBuilder {
         self.destination = input;
         self
     }
+    /// <p>The Amazon S3 bucket where the inference request and response data is stored. </p>
+    pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination
+    }
     /// <p> The Amazon Web Services Key Management Service key that Amazon SageMaker uses to encrypt captured data at rest using Amazon S3 server-side encryption. </p>
     pub fn kms_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl InferenceExperimentDataStorageConfigBuilder {
     pub fn set_kms_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key = input;
         self
+    }
+    /// <p> The Amazon Web Services Key Management Service key that Amazon SageMaker uses to encrypt captured data at rest using Amazon S3 server-side encryption. </p>
+    pub fn get_kms_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key
     }
     /// <p>Configuration specifying how to treat different headers. If no headers are specified SageMaker will by default base64 encode when capturing the data.</p>
     pub fn content_type(mut self, input: crate::types::CaptureContentTypeHeader) -> Self {
@@ -78,6 +86,12 @@ impl InferenceExperimentDataStorageConfigBuilder {
     ) -> Self {
         self.content_type = input;
         self
+    }
+    /// <p>Configuration specifying how to treat different headers. If no headers are specified SageMaker will by default base64 encode when capturing the data.</p>
+    pub fn get_content_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::CaptureContentTypeHeader> {
+        &self.content_type
     }
     /// Consumes the builder and constructs a [`InferenceExperimentDataStorageConfig`](crate::types::InferenceExperimentDataStorageConfig).
     pub fn build(self) -> crate::types::InferenceExperimentDataStorageConfig {

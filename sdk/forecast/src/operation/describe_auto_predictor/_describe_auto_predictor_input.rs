@@ -47,6 +47,10 @@ impl DescribeAutoPredictorInputBuilder {
         self.predictor_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the predictor.</p>
+    pub fn get_predictor_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.predictor_arn
+    }
     /// Consumes the builder and constructs a [`DescribeAutoPredictorInput`](crate::operation::describe_auto_predictor::DescribeAutoPredictorInput).
     pub fn build(
         self,

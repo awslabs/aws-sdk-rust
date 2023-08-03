@@ -49,6 +49,10 @@ impl ModifyReportDefinitionInputBuilder {
         self.report_name = input;
         self
     }
+    /// <p>The name of the report that you want to create. The name must be unique, is case sensitive, and can't include spaces. </p>
+    pub fn get_report_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.report_name
+    }
     /// <p>The definition of AWS Cost and Usage Report. You can specify the report name, time unit, report format, compression format, S3 bucket, additional artifacts, and schema elements in the definition. </p>
     pub fn report_definition(mut self, input: crate::types::ReportDefinition) -> Self {
         self.report_definition = ::std::option::Option::Some(input);
@@ -61,6 +65,10 @@ impl ModifyReportDefinitionInputBuilder {
     ) -> Self {
         self.report_definition = input;
         self
+    }
+    /// <p>The definition of AWS Cost and Usage Report. You can specify the report name, time unit, report format, compression format, S3 bucket, additional artifacts, and schema elements in the definition. </p>
+    pub fn get_report_definition(&self) -> &::std::option::Option<crate::types::ReportDefinition> {
+        &self.report_definition
     }
     /// Consumes the builder and constructs a [`ModifyReportDefinitionInput`](crate::operation::modify_report_definition::ModifyReportDefinitionInput).
     pub fn build(

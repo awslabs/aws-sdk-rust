@@ -49,6 +49,10 @@ impl DescribeMatchmakingInputBuilder {
         self.ticket_ids = input;
         self
     }
+    /// <p>A unique identifier for a matchmaking ticket. You can include up to 10 ID values. </p>
+    pub fn get_ticket_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ticket_ids
+    }
     /// Consumes the builder and constructs a [`DescribeMatchmakingInput`](crate::operation::describe_matchmaking::DescribeMatchmakingInput).
     pub fn build(
         self,

@@ -36,6 +36,12 @@ impl UpdateGlobalSettingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateGlobalSettings as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_global_settings::builders::UpdateGlobalSettingsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,12 @@ impl UpdateGlobalSettingsFluentBuilder {
         self.inner = self.inner.set_organization_sharing_status(input);
         self
     }
+    /// <p>The status of organization sharing settings.</p>
+    pub fn get_organization_sharing_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::OrganizationSharingStatus> {
+        self.inner.get_organization_sharing_status()
+    }
     /// <p>The status of discovery support settings.</p>
     pub fn discovery_integration_status(
         mut self,
@@ -147,5 +159,11 @@ impl UpdateGlobalSettingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_discovery_integration_status(input);
         self
+    }
+    /// <p>The status of discovery support settings.</p>
+    pub fn get_discovery_integration_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::DiscoveryIntegrationStatus> {
+        self.inner.get_discovery_integration_status()
     }
 }

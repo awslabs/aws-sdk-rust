@@ -68,6 +68,14 @@ impl BatchDeleteDocumentOutputBuilder {
         self.failed_documents = input;
         self
     }
+    /// <p>A list of documents that could not be removed from the index. Each entry contains an error message that indicates why the document couldn't be removed from the index.</p>
+    pub fn get_failed_documents(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::BatchDeleteDocumentResponseFailedDocument>,
+    > {
+        &self.failed_documents
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

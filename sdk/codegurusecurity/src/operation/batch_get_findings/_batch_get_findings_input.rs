@@ -51,6 +51,12 @@ impl BatchGetFindingsInputBuilder {
         self.finding_identifiers = input;
         self
     }
+    /// <p>A list of finding identifiers. Each identifier consists of a <code>scanName</code> and a <code>findingId</code>. You retrieve the <code>findingId</code> when you call <code>GetFindings</code>.</p>
+    pub fn get_finding_identifiers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FindingIdentifier>> {
+        &self.finding_identifiers
+    }
     /// Consumes the builder and constructs a [`BatchGetFindingsInput`](crate::operation::batch_get_findings::BatchGetFindingsInput).
     pub fn build(
         self,

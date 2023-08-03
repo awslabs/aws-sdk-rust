@@ -36,6 +36,10 @@ impl GetLensVersionDifferenceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetLensVersionDifference as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_lens_version_difference::builders::GetLensVersionDifferenceInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,13 @@ impl GetLensVersionDifferenceFluentBuilder {
         self.inner = self.inner.set_lens_alias(input);
         self
     }
+    /// <p>The alias of the lens.</p>
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    pub fn get_lens_alias(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_lens_alias()
+    }
     /// <p>The base version of the lens.</p>
     pub fn base_lens_version(
         mut self,
@@ -148,6 +159,10 @@ impl GetLensVersionDifferenceFluentBuilder {
         self.inner = self.inner.set_base_lens_version(input);
         self
     }
+    /// <p>The base version of the lens.</p>
+    pub fn get_base_lens_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_base_lens_version()
+    }
     /// <p>The lens version to target a difference for.</p>
     pub fn target_lens_version(
         mut self,
@@ -163,5 +178,9 @@ impl GetLensVersionDifferenceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_target_lens_version(input);
         self
+    }
+    /// <p>The lens version to target a difference for.</p>
+    pub fn get_target_lens_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_lens_version()
     }
 }

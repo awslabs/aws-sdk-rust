@@ -54,6 +54,10 @@ impl GetRecordsInputBuilder {
         self.shard_iterator = input;
         self
     }
+    /// <p>A shard iterator that was retrieved from a previous GetShardIterator operation. This iterator can be used to access the stream records in this shard.</p>
+    pub fn get_shard_iterator(&self) -> &::std::option::Option<::std::string::String> {
+        &self.shard_iterator
+    }
     /// <p>The maximum number of records to return from the shard. The upper limit is 1000.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl GetRecordsInputBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
+    }
+    /// <p>The maximum number of records to return from the shard. The upper limit is 1000.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// Consumes the builder and constructs a [`GetRecordsInput`](crate::operation::get_records::GetRecordsInput).
     pub fn build(

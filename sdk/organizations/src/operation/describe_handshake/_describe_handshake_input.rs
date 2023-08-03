@@ -44,6 +44,11 @@ impl DescribeHandshakeInputBuilder {
         self.handshake_id = input;
         self
     }
+    /// <p>The unique identifier (ID) of the handshake that you want information about. You can get the ID from the original call to <code>InviteAccountToOrganization</code>, or from a call to <code>ListHandshakesForAccount</code> or <code>ListHandshakesForOrganization</code>.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
+    pub fn get_handshake_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.handshake_id
+    }
     /// Consumes the builder and constructs a [`DescribeHandshakeInput`](crate::operation::describe_handshake::DescribeHandshakeInput).
     pub fn build(
         self,

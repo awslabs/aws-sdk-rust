@@ -58,6 +58,10 @@ impl AssociateWebsiteAuthorizationProviderInputBuilder {
         self.fleet_arn = input;
         self
     }
+    /// <p>The ARN of the fleet.</p>
+    pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_arn
+    }
     /// <p>The authorization provider type.</p>
     pub fn authorization_provider_type(
         mut self,
@@ -74,6 +78,12 @@ impl AssociateWebsiteAuthorizationProviderInputBuilder {
         self.authorization_provider_type = input;
         self
     }
+    /// <p>The authorization provider type.</p>
+    pub fn get_authorization_provider_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuthorizationProviderType> {
+        &self.authorization_provider_type
+    }
     /// <p>The domain name of the authorization provider. This applies only to SAML-based authorization providers.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
@@ -83,6 +93,10 @@ impl AssociateWebsiteAuthorizationProviderInputBuilder {
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
+    }
+    /// <p>The domain name of the authorization provider. This applies only to SAML-based authorization providers.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
     }
     /// Consumes the builder and constructs a [`AssociateWebsiteAuthorizationProviderInput`](crate::operation::associate_website_authorization_provider::AssociateWebsiteAuthorizationProviderInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::associate_website_authorization_provider::AssociateWebsiteAuthorizationProviderInput, ::aws_smithy_http::operation::error::BuildError>{

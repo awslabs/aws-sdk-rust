@@ -70,6 +70,10 @@ impl SessionKeysAbpV11Builder {
         self.f_nwk_s_int_key = input;
         self
     }
+    /// <p>The FNwkSIntKey value.</p>
+    pub fn get_f_nwk_s_int_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.f_nwk_s_int_key
+    }
     /// <p>The SNwkSIntKey value.</p>
     pub fn s_nwk_s_int_key(
         mut self,
@@ -85,6 +89,10 @@ impl SessionKeysAbpV11Builder {
     ) -> Self {
         self.s_nwk_s_int_key = input;
         self
+    }
+    /// <p>The SNwkSIntKey value.</p>
+    pub fn get_s_nwk_s_int_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s_nwk_s_int_key
     }
     /// <p>The NwkSEncKey value.</p>
     pub fn nwk_s_enc_key(
@@ -102,6 +110,10 @@ impl SessionKeysAbpV11Builder {
         self.nwk_s_enc_key = input;
         self
     }
+    /// <p>The NwkSEncKey value.</p>
+    pub fn get_nwk_s_enc_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nwk_s_enc_key
+    }
     /// <p>The AppSKey value.</p>
     pub fn app_s_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_s_key = ::std::option::Option::Some(input.into());
@@ -111,6 +123,10 @@ impl SessionKeysAbpV11Builder {
     pub fn set_app_s_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_s_key = input;
         self
+    }
+    /// <p>The AppSKey value.</p>
+    pub fn get_app_s_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_s_key
     }
     /// Consumes the builder and constructs a [`SessionKeysAbpV11`](crate::types::SessionKeysAbpV11).
     pub fn build(self) -> crate::types::SessionKeysAbpV11 {

@@ -63,6 +63,10 @@ impl DescribeVolumesInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The instance ID. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the volumes associated with the specified instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>A stack ID. The action describes the stack's registered Amazon EBS volumes.</p>
     pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_id = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl DescribeVolumesInputBuilder {
     pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_id = input;
         self
+    }
+    /// <p>A stack ID. The action describes the stack's registered Amazon EBS volumes.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_id
     }
     /// <p>The RAID array ID. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the volumes associated with the specified RAID array.</p>
     pub fn raid_array_id(
@@ -88,6 +96,10 @@ impl DescribeVolumesInputBuilder {
     ) -> Self {
         self.raid_array_id = input;
         self
+    }
+    /// <p>The RAID array ID. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the volumes associated with the specified RAID array.</p>
+    pub fn get_raid_array_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.raid_array_id
     }
     /// Appends an item to `volume_ids`.
     ///
@@ -107,6 +119,10 @@ impl DescribeVolumesInputBuilder {
     ) -> Self {
         self.volume_ids = input;
         self
+    }
+    /// <p>Am array of volume IDs. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the specified volumes. Otherwise, it returns a description of every volume.</p>
+    pub fn get_volume_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.volume_ids
     }
     /// Consumes the builder and constructs a [`DescribeVolumesInput`](crate::operation::describe_volumes::DescribeVolumesInput).
     pub fn build(

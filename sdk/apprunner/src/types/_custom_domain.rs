@@ -68,6 +68,10 @@ impl CustomDomainBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>An associated custom domain endpoint. It can be a root domain (for example, <code>example.com</code>), a subdomain (for example, <code>login.example.com</code> or <code>admin.login.example.com</code>), or a wildcard (for example, <code>*.example.com</code>).</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>When <code>true</code>, the subdomain <code>www.<i>DomainName</i> </code> is associated with the App Runner service in addition to the base domain.</p>
     pub fn enable_www_subdomain(mut self, input: bool) -> Self {
         self.enable_www_subdomain = ::std::option::Option::Some(input);
@@ -77,6 +81,10 @@ impl CustomDomainBuilder {
     pub fn set_enable_www_subdomain(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_www_subdomain = input;
         self
+    }
+    /// <p>When <code>true</code>, the subdomain <code>www.<i>DomainName</i> </code> is associated with the App Runner service in addition to the base domain.</p>
+    pub fn get_enable_www_subdomain(&self) -> &::std::option::Option<bool> {
+        &self.enable_www_subdomain
     }
     /// Appends an item to `certificate_validation_records`.
     ///
@@ -100,6 +108,12 @@ impl CustomDomainBuilder {
         self.certificate_validation_records = input;
         self
     }
+    /// <p>A list of certificate CNAME records that's used for this domain name.</p>
+    pub fn get_certificate_validation_records(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CertificateValidationRecord>> {
+        &self.certificate_validation_records
+    }
     /// <p>The current state of the domain name association.</p>
     pub fn status(mut self, input: crate::types::CustomDomainAssociationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -112,6 +126,12 @@ impl CustomDomainBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current state of the domain name association.</p>
+    pub fn get_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomDomainAssociationStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`CustomDomain`](crate::types::CustomDomain).
     pub fn build(self) -> crate::types::CustomDomain {

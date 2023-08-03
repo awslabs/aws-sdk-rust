@@ -69,6 +69,10 @@ impl ListEntitiesInputBuilder {
         self.workspace_id = input;
         self
     }
+    /// <p>The ID of the workspace.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -92,6 +96,14 @@ impl ListEntitiesInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>A list of objects that filter the request.</p> <note>
+    /// <p>Only one object is accepted as a valid input.</p>
+    /// </note>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListEntitiesFilter>> {
+        &self.filters
+    }
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -104,6 +116,11 @@ impl ListEntitiesInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to return at one time. The default is 25.</p>
+    /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The string that specifies the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -113,6 +130,10 @@ impl ListEntitiesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The string that specifies the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListEntitiesInput`](crate::operation::list_entities::ListEntitiesInput).
     pub fn build(

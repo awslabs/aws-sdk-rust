@@ -55,6 +55,10 @@ impl DeprecateThingTypeInputBuilder {
         self.thing_type_name = input;
         self
     }
+    /// <p>The name of the thing type to deprecate.</p>
+    pub fn get_thing_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_type_name
+    }
     /// <p>Whether to undeprecate a deprecated thing type. If <b>true</b>, the thing type will not be deprecated anymore and you can associate it with things.</p>
     pub fn undo_deprecate(mut self, input: bool) -> Self {
         self.undo_deprecate = ::std::option::Option::Some(input);
@@ -64,6 +68,10 @@ impl DeprecateThingTypeInputBuilder {
     pub fn set_undo_deprecate(mut self, input: ::std::option::Option<bool>) -> Self {
         self.undo_deprecate = input;
         self
+    }
+    /// <p>Whether to undeprecate a deprecated thing type. If <b>true</b>, the thing type will not be deprecated anymore and you can associate it with things.</p>
+    pub fn get_undo_deprecate(&self) -> &::std::option::Option<bool> {
+        &self.undo_deprecate
     }
     /// Consumes the builder and constructs a [`DeprecateThingTypeInput`](crate::operation::deprecate_thing_type::DeprecateThingTypeInput).
     pub fn build(

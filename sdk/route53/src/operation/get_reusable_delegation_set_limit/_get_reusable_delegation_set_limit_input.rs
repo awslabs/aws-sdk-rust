@@ -51,6 +51,10 @@ impl GetReusableDelegationSetLimitInputBuilder {
         self.r#type = input;
         self
     }
+    /// <p>Specify <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code> to get the maximum number of hosted zones that you can associate with the specified reusable delegation set.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ReusableDelegationSetLimitType> {
+        &self.r#type
+    }
     /// <p>The ID of the delegation set that you want to get the limit for.</p>
     pub fn delegation_set_id(
         mut self,
@@ -66,6 +70,10 @@ impl GetReusableDelegationSetLimitInputBuilder {
     ) -> Self {
         self.delegation_set_id = input;
         self
+    }
+    /// <p>The ID of the delegation set that you want to get the limit for.</p>
+    pub fn get_delegation_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delegation_set_id
     }
     /// Consumes the builder and constructs a [`GetReusableDelegationSetLimitInput`](crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimitInput).
     pub fn build(

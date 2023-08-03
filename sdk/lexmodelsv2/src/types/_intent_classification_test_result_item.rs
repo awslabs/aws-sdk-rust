@@ -60,6 +60,10 @@ impl IntentClassificationTestResultItemBuilder {
         self.intent_name = input;
         self
     }
+    /// <p>The name of the intent.</p>
+    pub fn get_intent_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.intent_name
+    }
     /// <p>Indicates whether the conversation involves multiple turns or not.</p>
     pub fn multi_turn_conversation(mut self, input: bool) -> Self {
         self.multi_turn_conversation = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl IntentClassificationTestResultItemBuilder {
     pub fn set_multi_turn_conversation(mut self, input: ::std::option::Option<bool>) -> Self {
         self.multi_turn_conversation = input;
         self
+    }
+    /// <p>Indicates whether the conversation involves multiple turns or not.</p>
+    pub fn get_multi_turn_conversation(&self) -> &::std::option::Option<bool> {
+        &self.multi_turn_conversation
     }
     /// <p>The result of the intent classification test.</p>
     pub fn result_counts(
@@ -85,6 +93,12 @@ impl IntentClassificationTestResultItemBuilder {
     ) -> Self {
         self.result_counts = input;
         self
+    }
+    /// <p>The result of the intent classification test.</p>
+    pub fn get_result_counts(
+        &self,
+    ) -> &::std::option::Option<crate::types::IntentClassificationTestResultItemCounts> {
+        &self.result_counts
     }
     /// Consumes the builder and constructs a [`IntentClassificationTestResultItem`](crate::types::IntentClassificationTestResultItem).
     pub fn build(self) -> crate::types::IntentClassificationTestResultItem {

@@ -56,6 +56,10 @@ impl PutSuppressedDestinationInputBuilder {
         self.email_address = input;
         self
     }
+    /// <p>The email address that should be added to the suppression list for your account.</p>
+    pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email_address
+    }
     /// <p>The factors that should cause the email address to be added to the suppression list for your account.</p>
     pub fn reason(mut self, input: crate::types::SuppressionListReason) -> Self {
         self.reason = ::std::option::Option::Some(input);
@@ -68,6 +72,10 @@ impl PutSuppressedDestinationInputBuilder {
     ) -> Self {
         self.reason = input;
         self
+    }
+    /// <p>The factors that should cause the email address to be added to the suppression list for your account.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<crate::types::SuppressionListReason> {
+        &self.reason
     }
     /// Consumes the builder and constructs a [`PutSuppressedDestinationInput`](crate::operation::put_suppressed_destination::PutSuppressedDestinationInput).
     pub fn build(

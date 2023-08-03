@@ -80,6 +80,10 @@ impl StartFhirImportJobInputBuilder {
         self.job_name = input;
         self
     }
+    /// <p>The name of the FHIR Import job in the StartFHIRImport job request.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
+    }
     /// <p>The input properties of the FHIR Import job in the StartFHIRImport job request.</p>
     pub fn input_data_config(mut self, input: crate::types::InputDataConfig) -> Self {
         self.input_data_config = ::std::option::Option::Some(input);
@@ -92,6 +96,10 @@ impl StartFhirImportJobInputBuilder {
     ) -> Self {
         self.input_data_config = input;
         self
+    }
+    /// <p>The input properties of the FHIR Import job in the StartFHIRImport job request.</p>
+    pub fn get_input_data_config(&self) -> &::std::option::Option<crate::types::InputDataConfig> {
+        &self.input_data_config
     }
     /// <p>The output data configuration that was supplied when the export job was created.</p>
     pub fn job_output_data_config(mut self, input: crate::types::OutputDataConfig) -> Self {
@@ -106,6 +114,12 @@ impl StartFhirImportJobInputBuilder {
         self.job_output_data_config = input;
         self
     }
+    /// <p>The output data configuration that was supplied when the export job was created.</p>
+    pub fn get_job_output_data_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::OutputDataConfig> {
+        &self.job_output_data_config
+    }
     /// <p>The AWS-generated data store ID.</p>
     pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_id = ::std::option::Option::Some(input.into());
@@ -115,6 +129,10 @@ impl StartFhirImportJobInputBuilder {
     pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.datastore_id = input;
         self
+    }
+    /// <p>The AWS-generated data store ID.</p>
+    pub fn get_datastore_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.datastore_id
     }
     /// <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access permission.</p>
     pub fn data_access_role_arn(
@@ -132,6 +150,10 @@ impl StartFhirImportJobInputBuilder {
         self.data_access_role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access permission.</p>
+    pub fn get_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_access_role_arn
+    }
     /// <p>Optional user provided token used for ensuring idempotency.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -141,6 +163,10 @@ impl StartFhirImportJobInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>Optional user provided token used for ensuring idempotency.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`StartFhirImportJobInput`](crate::operation::start_fhir_import_job::StartFhirImportJobInput).
     pub fn build(

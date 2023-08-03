@@ -96,6 +96,10 @@ impl ListTransactionsInputBuilder {
         self.address = input;
         self
     }
+    /// <p>The address (either a contract or wallet), whose transactions are being requested.</p>
+    pub fn get_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.address
+    }
     /// <p>The blockchain network where the transactions occurred.</p>
     pub fn network(mut self, input: crate::types::QueryNetwork) -> Self {
         self.network = ::std::option::Option::Some(input);
@@ -105,6 +109,10 @@ impl ListTransactionsInputBuilder {
     pub fn set_network(mut self, input: ::std::option::Option<crate::types::QueryNetwork>) -> Self {
         self.network = input;
         self
+    }
+    /// <p>The blockchain network where the transactions occurred.</p>
+    pub fn get_network(&self) -> &::std::option::Option<crate::types::QueryNetwork> {
+        &self.network
     }
     /// <p>The container for time.</p>
     pub fn from_blockchain_instant(mut self, input: crate::types::BlockchainInstant) -> Self {
@@ -120,6 +128,12 @@ impl ListTransactionsInputBuilder {
         self
     }
     /// <p>The container for time.</p>
+    pub fn get_from_blockchain_instant(
+        &self,
+    ) -> &::std::option::Option<crate::types::BlockchainInstant> {
+        &self.from_blockchain_instant
+    }
+    /// <p>The container for time.</p>
     pub fn to_blockchain_instant(mut self, input: crate::types::BlockchainInstant) -> Self {
         self.to_blockchain_instant = ::std::option::Option::Some(input);
         self
@@ -131,6 +145,12 @@ impl ListTransactionsInputBuilder {
     ) -> Self {
         self.to_blockchain_instant = input;
         self
+    }
+    /// <p>The container for time.</p>
+    pub fn get_to_blockchain_instant(
+        &self,
+    ) -> &::std::option::Option<crate::types::BlockchainInstant> {
+        &self.to_blockchain_instant
     }
     /// <p>Sorts items in an ascending order if the first page starts at <code>fromTime</code>. Sorts items in a descending order if the first page starts at <code>toTime</code>.</p>
     pub fn sort(mut self, input: crate::types::ListTransactionsSort) -> Self {
@@ -145,6 +165,10 @@ impl ListTransactionsInputBuilder {
         self.sort = input;
         self
     }
+    /// <p>Sorts items in an ascending order if the first page starts at <code>fromTime</code>. Sorts items in a descending order if the first page starts at <code>toTime</code>.</p>
+    pub fn get_sort(&self) -> &::std::option::Option<crate::types::ListTransactionsSort> {
+        &self.sort
+    }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -154,6 +178,10 @@ impl ListTransactionsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The maximum number of transactions to list.</p> <note>
     /// <p>Even if additional results can be retrieved, the request can return less results than <code>maxResults</code> or an empty array of results.</p>
@@ -170,6 +198,13 @@ impl ListTransactionsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of transactions to list.</p> <note>
+    /// <p>Even if additional results can be retrieved, the request can return less results than <code>maxResults</code> or an empty array of results.</p>
+    /// <p>To retrieve the next set of results, make another request with the returned <code>nextToken</code> value. The value of <code>nextToken</code> is <code>null</code> when there are no more results to return</p>
+    /// </note>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListTransactionsInput`](crate::operation::list_transactions::ListTransactionsInput).
     pub fn build(

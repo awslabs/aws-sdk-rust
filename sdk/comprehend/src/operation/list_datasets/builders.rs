@@ -36,6 +36,10 @@ impl ListDatasetsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListDatasets as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_datasets::builders::ListDatasetsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +133,10 @@ impl ListDatasetsFluentBuilder {
         self.inner = self.inner.set_flywheel_arn(input);
         self
     }
+    /// <p>The Amazon Resource Number (ARN) of the flywheel.</p>
+    pub fn get_flywheel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_flywheel_arn()
+    }
     /// <p>Filters the datasets to be returned in the response.</p>
     pub fn filter(mut self, input: crate::types::DatasetFilter) -> Self {
         self.inner = self.inner.filter(input);
@@ -138,6 +146,10 @@ impl ListDatasetsFluentBuilder {
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::DatasetFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
+    }
+    /// <p>Filters the datasets to be returned in the response.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::DatasetFilter> {
+        self.inner.get_filter()
     }
     /// <p>Identifies the next page of results to return.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -149,6 +161,10 @@ impl ListDatasetsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>Identifies the next page of results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>Maximum number of results to return in a response. The default is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -158,5 +174,9 @@ impl ListDatasetsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>Maximum number of results to return in a response. The default is 100.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

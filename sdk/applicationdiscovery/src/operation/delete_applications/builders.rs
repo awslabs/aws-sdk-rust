@@ -36,6 +36,12 @@ impl DeleteApplicationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteApplications as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_applications::builders::DeleteApplicationsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,5 +141,11 @@ impl DeleteApplicationsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_configuration_ids(input);
         self
+    }
+    /// <p>Configuration ID of an application to be deleted.</p>
+    pub fn get_configuration_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_configuration_ids()
     }
 }

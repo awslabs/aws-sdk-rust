@@ -59,6 +59,10 @@ impl UpdateMaintenanceBuilder {
         self.maintenance_day = input;
         self
     }
+    /// A day of a week when the maintenance will happen. use Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
+    pub fn get_maintenance_day(&self) -> &::std::option::Option<crate::types::MaintenanceDay> {
+        &self.maintenance_day
+    }
     /// A scheduled date in ISO UTC format when the maintenance will happen. Use YYYY-MM-DD format. Example: 2021-01-30.
     pub fn maintenance_scheduled_date(
         mut self,
@@ -75,6 +79,10 @@ impl UpdateMaintenanceBuilder {
         self.maintenance_scheduled_date = input;
         self
     }
+    /// A scheduled date in ISO UTC format when the maintenance will happen. Use YYYY-MM-DD format. Example: 2021-01-30.
+    pub fn get_maintenance_scheduled_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.maintenance_scheduled_date
+    }
     /// UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default value is 02:00.
     pub fn maintenance_start_hour(
         mut self,
@@ -90,6 +98,10 @@ impl UpdateMaintenanceBuilder {
     ) -> Self {
         self.maintenance_start_hour = input;
         self
+    }
+    /// UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default value is 02:00.
+    pub fn get_maintenance_start_hour(&self) -> &::std::option::Option<::std::string::String> {
+        &self.maintenance_start_hour
     }
     /// Consumes the builder and constructs a [`UpdateMaintenance`](crate::types::UpdateMaintenance).
     pub fn build(self) -> crate::types::UpdateMaintenance {

@@ -40,6 +40,10 @@ impl ControlPlanePlacementResponseBuilder {
         self.group_name = input;
         self
     }
+    /// <p>The name of the placement group for the Kubernetes control plane instances.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
+    }
     /// Consumes the builder and constructs a [`ControlPlanePlacementResponse`](crate::types::ControlPlanePlacementResponse).
     pub fn build(self) -> crate::types::ControlPlanePlacementResponse {
         crate::types::ControlPlanePlacementResponse {

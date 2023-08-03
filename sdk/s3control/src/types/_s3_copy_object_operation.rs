@@ -197,6 +197,10 @@ impl S3CopyObjectOperationBuilder {
         self.target_resource = input;
         self
     }
+    /// <p>Specifies the destination bucket Amazon Resource Name (ARN) for the batch copy operation. For example, to copy objects to a bucket named <code>destinationBucket</code>, set the <code>TargetResource</code> property to <code>arn:aws:s3:::destinationBucket</code>.</p>
+    pub fn get_target_resource(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_resource
+    }
     /// <p></p>
     pub fn canned_access_control_list(
         mut self,
@@ -212,6 +216,12 @@ impl S3CopyObjectOperationBuilder {
     ) -> Self {
         self.canned_access_control_list = input;
         self
+    }
+    /// <p></p>
+    pub fn get_canned_access_control_list(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3CannedAccessControlList> {
+        &self.canned_access_control_list
     }
     /// Appends an item to `access_control_grants`.
     ///
@@ -233,6 +243,12 @@ impl S3CopyObjectOperationBuilder {
         self
     }
     /// <p></p>
+    pub fn get_access_control_grants(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::S3Grant>> {
+        &self.access_control_grants
+    }
+    /// <p></p>
     pub fn metadata_directive(mut self, input: crate::types::S3MetadataDirective) -> Self {
         self.metadata_directive = ::std::option::Option::Some(input);
         self
@@ -244,6 +260,12 @@ impl S3CopyObjectOperationBuilder {
     ) -> Self {
         self.metadata_directive = input;
         self
+    }
+    /// <p></p>
+    pub fn get_metadata_directive(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3MetadataDirective> {
+        &self.metadata_directive
     }
     /// <p></p>
     pub fn modified_since_constraint(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -258,6 +280,12 @@ impl S3CopyObjectOperationBuilder {
         self.modified_since_constraint = input;
         self
     }
+    /// <p></p>
+    pub fn get_modified_since_constraint(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.modified_since_constraint
+    }
     /// <p>If you don't provide this parameter, Amazon S3 copies all the metadata from the original objects. If you specify an empty set, the new objects will have no tags. Otherwise, Amazon S3 assigns the supplied tags to the new objects.</p>
     pub fn new_object_metadata(mut self, input: crate::types::S3ObjectMetadata) -> Self {
         self.new_object_metadata = ::std::option::Option::Some(input);
@@ -270,6 +298,12 @@ impl S3CopyObjectOperationBuilder {
     ) -> Self {
         self.new_object_metadata = input;
         self
+    }
+    /// <p>If you don't provide this parameter, Amazon S3 copies all the metadata from the original objects. If you specify an empty set, the new objects will have no tags. Otherwise, Amazon S3 assigns the supplied tags to the new objects.</p>
+    pub fn get_new_object_metadata(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3ObjectMetadata> {
+        &self.new_object_metadata
     }
     /// Appends an item to `new_object_tagging`.
     ///
@@ -290,6 +324,12 @@ impl S3CopyObjectOperationBuilder {
         self.new_object_tagging = input;
         self
     }
+    /// <p></p>
+    pub fn get_new_object_tagging(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::S3Tag>> {
+        &self.new_object_tagging
+    }
     /// <p>Specifies an optional metadata property for website redirects, <code>x-amz-website-redirect-location</code>. Allows webpage redirects if the object is accessed through a website endpoint.</p>
     pub fn redirect_location(
         mut self,
@@ -306,6 +346,10 @@ impl S3CopyObjectOperationBuilder {
         self.redirect_location = input;
         self
     }
+    /// <p>Specifies an optional metadata property for website redirects, <code>x-amz-website-redirect-location</code>. Allows webpage redirects if the object is accessed through a website endpoint.</p>
+    pub fn get_redirect_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.redirect_location
+    }
     /// <p></p>
     pub fn requester_pays(mut self, input: bool) -> Self {
         self.requester_pays = ::std::option::Option::Some(input);
@@ -315,6 +359,10 @@ impl S3CopyObjectOperationBuilder {
     pub fn set_requester_pays(mut self, input: ::std::option::Option<bool>) -> Self {
         self.requester_pays = input;
         self
+    }
+    /// <p></p>
+    pub fn get_requester_pays(&self) -> &::std::option::Option<bool> {
+        &self.requester_pays
     }
     /// <p></p>
     pub fn storage_class(mut self, input: crate::types::S3StorageClass) -> Self {
@@ -330,6 +378,10 @@ impl S3CopyObjectOperationBuilder {
         self
     }
     /// <p></p>
+    pub fn get_storage_class(&self) -> &::std::option::Option<crate::types::S3StorageClass> {
+        &self.storage_class
+    }
+    /// <p></p>
     pub fn un_modified_since_constraint(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.un_modified_since_constraint = ::std::option::Option::Some(input);
         self
@@ -341,6 +393,12 @@ impl S3CopyObjectOperationBuilder {
     ) -> Self {
         self.un_modified_since_constraint = input;
         self
+    }
+    /// <p></p>
+    pub fn get_un_modified_since_constraint(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.un_modified_since_constraint
     }
     /// <p></p>
     pub fn sse_aws_kms_key_id(
@@ -358,6 +416,10 @@ impl S3CopyObjectOperationBuilder {
         self.sse_aws_kms_key_id = input;
         self
     }
+    /// <p></p>
+    pub fn get_sse_aws_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sse_aws_kms_key_id
+    }
     /// <p>Specifies the folder prefix that you want the objects to be copied into. For example, to copy objects into a folder named <code>Folder1</code> in the destination bucket, set the <code>TargetKeyPrefix</code> property to <code>Folder1</code>.</p>
     pub fn target_key_prefix(
         mut self,
@@ -373,6 +435,10 @@ impl S3CopyObjectOperationBuilder {
     ) -> Self {
         self.target_key_prefix = input;
         self
+    }
+    /// <p>Specifies the folder prefix that you want the objects to be copied into. For example, to copy objects into a folder named <code>Folder1</code> in the destination bucket, set the <code>TargetKeyPrefix</code> property to <code>Folder1</code>.</p>
+    pub fn get_target_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_key_prefix
     }
     /// <p>The legal hold status to be applied to all objects in the Batch Operations job.</p>
     pub fn object_lock_legal_hold_status(
@@ -390,6 +456,12 @@ impl S3CopyObjectOperationBuilder {
         self.object_lock_legal_hold_status = input;
         self
     }
+    /// <p>The legal hold status to be applied to all objects in the Batch Operations job.</p>
+    pub fn get_object_lock_legal_hold_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3ObjectLockLegalHoldStatus> {
+        &self.object_lock_legal_hold_status
+    }
     /// <p>The retention mode to be applied to all objects in the Batch Operations job.</p>
     pub fn object_lock_mode(mut self, input: crate::types::S3ObjectLockMode) -> Self {
         self.object_lock_mode = ::std::option::Option::Some(input);
@@ -402,6 +474,10 @@ impl S3CopyObjectOperationBuilder {
     ) -> Self {
         self.object_lock_mode = input;
         self
+    }
+    /// <p>The retention mode to be applied to all objects in the Batch Operations job.</p>
+    pub fn get_object_lock_mode(&self) -> &::std::option::Option<crate::types::S3ObjectLockMode> {
+        &self.object_lock_mode
     }
     /// <p>The date when the applied object retention configuration expires on all objects in the Batch Operations job.</p>
     pub fn object_lock_retain_until_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -416,6 +492,12 @@ impl S3CopyObjectOperationBuilder {
         self.object_lock_retain_until_date = input;
         self
     }
+    /// <p>The date when the applied object retention configuration expires on all objects in the Batch Operations job.</p>
+    pub fn get_object_lock_retain_until_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.object_lock_retain_until_date
+    }
     /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using Amazon Web Services KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption with SSE-KMS.</p>
     /// <p>Specifying this header with an <i>object</i> action doesn’t affect <i>bucket-level</i> settings for S3 Bucket Key.</p>
     pub fn bucket_key_enabled(mut self, input: bool) -> Self {
@@ -427,6 +509,11 @@ impl S3CopyObjectOperationBuilder {
     pub fn set_bucket_key_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.bucket_key_enabled = input;
         self
+    }
+    /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using Amazon Web Services KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption with SSE-KMS.</p>
+    /// <p>Specifying this header with an <i>object</i> action doesn’t affect <i>bucket-level</i> settings for S3 Bucket Key.</p>
+    pub fn get_bucket_key_enabled(&self) -> &::std::option::Option<bool> {
+        &self.bucket_key_enabled
     }
     /// <p>Indicates the algorithm that you want Amazon S3 to use to create the checksum. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CheckingObjectIntegrity.xml"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn checksum_algorithm(mut self, input: crate::types::S3ChecksumAlgorithm) -> Self {
@@ -440,6 +527,12 @@ impl S3CopyObjectOperationBuilder {
     ) -> Self {
         self.checksum_algorithm = input;
         self
+    }
+    /// <p>Indicates the algorithm that you want Amazon S3 to use to create the checksum. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CheckingObjectIntegrity.xml"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn get_checksum_algorithm(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3ChecksumAlgorithm> {
+        &self.checksum_algorithm
     }
     /// Consumes the builder and constructs a [`S3CopyObjectOperation`](crate::types::S3CopyObjectOperation).
     pub fn build(self) -> crate::types::S3CopyObjectOperation {

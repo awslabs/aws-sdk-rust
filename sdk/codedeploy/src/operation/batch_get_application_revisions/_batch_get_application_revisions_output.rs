@@ -69,6 +69,10 @@ impl BatchGetApplicationRevisionsOutputBuilder {
         self.application_name = input;
         self
     }
+    /// <p>The name of the application that corresponds to the revisions.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// <p>Information about errors that might have occurred during the API call.</p>
     pub fn error_message(
         mut self,
@@ -84,6 +88,10 @@ impl BatchGetApplicationRevisionsOutputBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>Information about errors that might have occurred during the API call.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Appends an item to `revisions`.
     ///
@@ -103,6 +111,12 @@ impl BatchGetApplicationRevisionsOutputBuilder {
     ) -> Self {
         self.revisions = input;
         self
+    }
+    /// <p>Additional information about the revisions, including the type and location.</p>
+    pub fn get_revisions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RevisionInfo>> {
+        &self.revisions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

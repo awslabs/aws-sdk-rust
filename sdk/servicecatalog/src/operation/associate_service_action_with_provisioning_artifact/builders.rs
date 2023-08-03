@@ -36,6 +36,10 @@ impl AssociateServiceActionWithProvisioningArtifactFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateServiceActionWithProvisioningArtifact as a reference.
+    pub fn as_input(&self) -> &crate::operation::associate_service_action_with_provisioning_artifact::builders::AssociateServiceActionWithProvisioningArtifactInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl AssociateServiceActionWithProvisioningArtifactFluentBuilder {
         self.inner = self.inner.set_product_id(input);
         self
     }
+    /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
+    pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_product_id()
+    }
     /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
     pub fn provisioning_artifact_id(
         mut self,
@@ -116,6 +124,10 @@ impl AssociateServiceActionWithProvisioningArtifactFluentBuilder {
         self.inner = self.inner.set_provisioning_artifact_id(input);
         self
     }
+    /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
+    pub fn get_provisioning_artifact_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_provisioning_artifact_id()
+    }
     /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
     pub fn service_action_id(
         mut self,
@@ -131,6 +143,10 @@ impl AssociateServiceActionWithProvisioningArtifactFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_service_action_id(input);
         self
+    }
+    /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
+    pub fn get_service_action_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_action_id()
     }
     /// <p>The language code.</p>
     /// <ul>
@@ -155,5 +171,13 @@ impl AssociateServiceActionWithProvisioningArtifactFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
+    }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_accept_language()
     }
 }

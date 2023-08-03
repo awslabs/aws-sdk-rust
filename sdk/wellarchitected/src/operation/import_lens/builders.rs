@@ -43,6 +43,10 @@ impl ImportLensFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ImportLens as a reference.
+    pub fn as_input(&self) -> &crate::operation::import_lens::builders::ImportLensInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +135,13 @@ impl ImportLensFluentBuilder {
         self.inner = self.inner.set_lens_alias(input);
         self
     }
+    /// <p>The alias of the lens.</p>
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    pub fn get_lens_alias(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_lens_alias()
+    }
     /// <p>The JSON representation of a lens.</p>
     pub fn json_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.json_string(input.into());
@@ -140,6 +151,10 @@ impl ImportLensFluentBuilder {
     pub fn set_json_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_json_string(input);
         self
+    }
+    /// <p>The JSON representation of a lens.</p>
+    pub fn get_json_string(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_json_string()
     }
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
@@ -163,6 +178,13 @@ impl ImportLensFluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
+    /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
+    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
+    /// </important>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
+    }
     /// Adds a key-value pair to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -185,5 +207,13 @@ impl ImportLensFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Tags to associate to a lens.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

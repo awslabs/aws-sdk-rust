@@ -64,6 +64,12 @@ impl DescribeNetworkInterfacesOutputBuilder {
         self.network_interfaces = input;
         self
     }
+    /// <p>Information about one or more network interfaces.</p>
+    pub fn get_network_interfaces(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>> {
+        &self.network_interfaces
+    }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -73,6 +79,10 @@ impl DescribeNetworkInterfacesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

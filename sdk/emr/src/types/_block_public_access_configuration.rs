@@ -89,6 +89,10 @@ impl BlockPublicAccessConfigurationBuilder {
         self.block_public_security_group_rules = input;
         self
     }
+    /// <p>Indicates whether Amazon EMR block public access is enabled (<code>true</code>) or disabled (<code>false</code>). By default, the value is <code>false</code> for accounts that have created Amazon EMR clusters before July 2019. For accounts created after this, the default is <code>true</code>.</p>
+    pub fn get_block_public_security_group_rules(&self) -> &::std::option::Option<bool> {
+        &self.block_public_security_group_rules
+    }
     /// Appends an item to `permitted_public_security_group_rule_ranges`.
     ///
     /// To override the contents of this collection use [`set_permitted_public_security_group_rule_ranges`](Self::set_permitted_public_security_group_rule_ranges).
@@ -115,6 +119,13 @@ impl BlockPublicAccessConfigurationBuilder {
         self.permitted_public_security_group_rule_ranges = input;
         self
     }
+    /// <p>Specifies ports and port ranges that are permitted to have security group rules that allow inbound traffic from all public sources. For example, if Port 23 (Telnet) is specified for <code>PermittedPublicSecurityGroupRuleRanges</code>, Amazon EMR allows cluster creation if a security group associated with the cluster has a rule that allows inbound traffic on Port 23 from IPv4 0.0.0.0/0 or IPv6 port ::/0 as the source.</p>
+    /// <p>By default, Port 22, which is used for SSH access to the cluster Amazon EC2 instances, is in the list of <code>PermittedPublicSecurityGroupRuleRanges</code>.</p>
+    pub fn get_permitted_public_security_group_rule_ranges(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PortRange>> {
+        &self.permitted_public_security_group_rule_ranges
+    }
     /// <p>The classification within a configuration.</p>
     pub fn classification(
         mut self,
@@ -130,6 +141,10 @@ impl BlockPublicAccessConfigurationBuilder {
     ) -> Self {
         self.classification = input;
         self
+    }
+    /// <p>The classification within a configuration.</p>
+    pub fn get_classification(&self) -> &::std::option::Option<::std::string::String> {
+        &self.classification
     }
     /// Appends an item to `configurations`.
     ///
@@ -149,6 +164,12 @@ impl BlockPublicAccessConfigurationBuilder {
     ) -> Self {
         self.configurations = input;
         self
+    }
+    /// <p>A list of additional configurations to apply within a configuration object.</p>
+    pub fn get_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Configuration>> {
+        &self.configurations
     }
     /// Adds a key-value pair to `properties`.
     ///
@@ -174,6 +195,14 @@ impl BlockPublicAccessConfigurationBuilder {
     ) -> Self {
         self.properties = input;
         self
+    }
+    /// <p>A set of properties specified within a configuration classification.</p>
+    pub fn get_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.properties
     }
     /// Consumes the builder and constructs a [`BlockPublicAccessConfiguration`](crate::types::BlockPublicAccessConfiguration).
     pub fn build(self) -> crate::types::BlockPublicAccessConfiguration {

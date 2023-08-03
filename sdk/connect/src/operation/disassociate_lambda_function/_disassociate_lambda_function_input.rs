@@ -47,6 +47,10 @@ impl DisassociateLambdaFunctionInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance..</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function being disassociated.</p>
     pub fn function_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_arn = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl DisassociateLambdaFunctionInputBuilder {
     pub fn set_function_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.function_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Lambda function being disassociated.</p>
+    pub fn get_function_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.function_arn
     }
     /// Consumes the builder and constructs a [`DisassociateLambdaFunctionInput`](crate::operation::disassociate_lambda_function::DisassociateLambdaFunctionInput).
     pub fn build(

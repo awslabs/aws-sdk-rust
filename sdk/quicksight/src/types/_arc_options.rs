@@ -43,6 +43,10 @@ impl ArcOptionsBuilder {
         self.arc_thickness = input;
         self
     }
+    /// <p>The arc thickness of a <code>GaugeChartVisual</code>.</p>
+    pub fn get_arc_thickness(&self) -> &::std::option::Option<crate::types::ArcThickness> {
+        &self.arc_thickness
+    }
     /// Consumes the builder and constructs a [`ArcOptions`](crate::types::ArcOptions).
     pub fn build(self) -> crate::types::ArcOptions {
         crate::types::ArcOptions {

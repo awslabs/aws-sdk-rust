@@ -38,6 +38,10 @@ impl ExportECSServiceRecommendationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ExportECSServiceRecommendations as a reference.
+    pub fn as_input(&self) -> &crate::operation::export_ecs_service_recommendations::builders::ExportEcsServiceRecommendationsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -117,6 +121,16 @@ impl ExportECSServiceRecommendationsFluentBuilder {
         self.inner = self.inner.set_account_ids(input);
         self
     }
+    /// <p> The Amazon Web Services account IDs for the export Amazon ECS service recommendations. </p>
+    /// <p>If your account is the management account or the delegated administrator of an organization, use this parameter to specify the member account you want to export recommendations to.</p>
+    /// <p>This parameter can't be specified together with the include member accounts parameter. The parameters are mutually exclusive.</p>
+    /// <p>If this parameter or the include member accounts parameter is omitted, the recommendations for member accounts aren't included in the export.</p>
+    /// <p>You can specify multiple account IDs per request.</p>
+    pub fn get_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_account_ids()
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -133,6 +147,12 @@ impl ExportECSServiceRecommendationsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
+    }
+    /// <p> An array of objects to specify a filter that exports a more specific set of Amazon ECS service recommendations. </p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EcsServiceRecommendationFilter>> {
+        self.inner.get_filters()
     }
     /// Appends an item to `fieldsToExport`.
     ///
@@ -151,6 +171,12 @@ impl ExportECSServiceRecommendationsFluentBuilder {
         self.inner = self.inner.set_fields_to_export(input);
         self
     }
+    /// <p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    pub fn get_fields_to_export(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportableEcsServiceField>> {
+        self.inner.get_fields_to_export()
+    }
     /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and key prefix for a recommendations export job.</p>
     /// <p>You must create the destination Amazon S3 bucket for your recommendations export before you create the export job. Compute Optimizer does not create the S3 bucket for you. After you create the S3 bucket, ensure that it has the required permission policy to allow Compute Optimizer to write the export file to it. If you plan to specify an object prefix when you create the export job, you must include the object prefix in the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.</p>
     pub fn s3_destination_config(mut self, input: crate::types::S3DestinationConfig) -> Self {
@@ -165,6 +191,13 @@ impl ExportECSServiceRecommendationsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_s3_destination_config(input);
         self
+    }
+    /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and key prefix for a recommendations export job.</p>
+    /// <p>You must create the destination Amazon S3 bucket for your recommendations export before you create the export job. Compute Optimizer does not create the S3 bucket for you. After you create the S3 bucket, ensure that it has the required permission policy to allow Compute Optimizer to write the export file to it. If you plan to specify an object prefix when you create the export job, you must include the object prefix in the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    pub fn get_s3_destination_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3DestinationConfig> {
+        self.inner.get_s3_destination_config()
     }
     /// <p> The format of the export file. </p>
     /// <p>The CSV file is the only export file format currently supported.</p>
@@ -181,6 +214,11 @@ impl ExportECSServiceRecommendationsFluentBuilder {
         self.inner = self.inner.set_file_format(input);
         self
     }
+    /// <p> The format of the export file. </p>
+    /// <p>The CSV file is the only export file format currently supported.</p>
+    pub fn get_file_format(&self) -> &::std::option::Option<crate::types::FileFormat> {
+        self.inner.get_file_format()
+    }
     /// <p>If your account is the management account or the delegated administrator of an organization, this parameter indicates whether to include recommendations for resources in all member accounts of the organization.</p>
     /// <p>The member accounts must also be opted in to Compute Optimizer, and trusted access for Compute Optimizer must be enabled in the organization account. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute Optimizer and Amazon Web Services Organizations trusted access</a> in the <i>Compute Optimizer User Guide</i>.</p>
     /// <p>If this parameter is omitted, recommendations for member accounts of the organization aren't included in the export file.</p>
@@ -196,5 +234,12 @@ impl ExportECSServiceRecommendationsFluentBuilder {
     pub fn set_include_member_accounts(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_member_accounts(input);
         self
+    }
+    /// <p>If your account is the management account or the delegated administrator of an organization, this parameter indicates whether to include recommendations for resources in all member accounts of the organization.</p>
+    /// <p>The member accounts must also be opted in to Compute Optimizer, and trusted access for Compute Optimizer must be enabled in the organization account. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute Optimizer and Amazon Web Services Organizations trusted access</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    /// <p>If this parameter is omitted, recommendations for member accounts of the organization aren't included in the export file.</p>
+    /// <p>If this parameter or the account ID parameter is omitted, recommendations for member accounts aren't included in the export.</p>
+    pub fn get_include_member_accounts(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_member_accounts()
     }
 }

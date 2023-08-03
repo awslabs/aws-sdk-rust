@@ -74,6 +74,12 @@ impl ValueMappingsBuilder {
         self.values = input;
         self
     }
+    /// <p>The value and display value pairs.</p>
+    pub fn get_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ValueMapping>> {
+        &self.values
+    }
     /// Adds a key-value pair to `binding_properties`.
     ///
     /// To override the contents of this collection use [`set_binding_properties`](Self::set_binding_properties).
@@ -101,6 +107,17 @@ impl ValueMappingsBuilder {
     ) -> Self {
         self.binding_properties = input;
         self
+    }
+    /// <p>The information to bind fields to data at runtime.</p>
+    pub fn get_binding_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::FormInputBindingPropertiesValue,
+        >,
+    > {
+        &self.binding_properties
     }
     /// Consumes the builder and constructs a [`ValueMappings`](crate::types::ValueMappings).
     pub fn build(self) -> crate::types::ValueMappings {

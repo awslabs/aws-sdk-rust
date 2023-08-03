@@ -48,6 +48,10 @@ impl TableVersionBuilder {
         self.table = input;
         self
     }
+    /// <p>The table in question.</p>
+    pub fn get_table(&self) -> &::std::option::Option<crate::types::Table> {
+        &self.table
+    }
     /// <p>The ID value that identifies this table version. A <code>VersionId</code> is a string representation of an integer. Each version is incremented by 1.</p>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl TableVersionBuilder {
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_id = input;
         self
+    }
+    /// <p>The ID value that identifies this table version. A <code>VersionId</code> is a string representation of an integer. Each version is incremented by 1.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_id
     }
     /// Consumes the builder and constructs a [`TableVersion`](crate::types::TableVersion).
     pub fn build(self) -> crate::types::TableVersion {

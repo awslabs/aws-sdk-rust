@@ -46,6 +46,10 @@ impl AutoMlPartialFailureReasonBuilder {
         self.partial_failure_message = input;
         self
     }
+    /// <p>The message containing the reason for a partial failure of an AutoML job.</p>
+    pub fn get_partial_failure_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.partial_failure_message
+    }
     /// Consumes the builder and constructs a [`AutoMlPartialFailureReason`](crate::types::AutoMlPartialFailureReason).
     pub fn build(self) -> crate::types::AutoMlPartialFailureReason {
         crate::types::AutoMlPartialFailureReason {

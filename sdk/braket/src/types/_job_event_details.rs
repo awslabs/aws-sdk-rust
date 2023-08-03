@@ -59,6 +59,10 @@ impl JobEventDetailsBuilder {
         self.event_type = input;
         self
     }
+    /// <p>The type of event that occurred related to the Amazon Braket job.</p>
+    pub fn get_event_type(&self) -> &::std::option::Option<crate::types::JobEventType> {
+        &self.event_type
+    }
     /// <p>TThe type of event that occurred related to the Amazon Braket job.</p>
     pub fn time_of_event(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.time_of_event = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl JobEventDetailsBuilder {
         self.time_of_event = input;
         self
     }
+    /// <p>TThe type of event that occurred related to the Amazon Braket job.</p>
+    pub fn get_time_of_event(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.time_of_event
+    }
     /// <p>A message describing the event that occurred related to the Amazon Braket job.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl JobEventDetailsBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>A message describing the event that occurred related to the Amazon Braket job.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`JobEventDetails`](crate::types::JobEventDetails).
     pub fn build(self) -> crate::types::JobEventDetails {

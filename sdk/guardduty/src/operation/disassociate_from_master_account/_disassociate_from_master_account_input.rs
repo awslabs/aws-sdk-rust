@@ -42,6 +42,10 @@ impl DisassociateFromMasterAccountInputBuilder {
         self.detector_id = input;
         self
     }
+    /// <p>The unique ID of the detector of the GuardDuty member account.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
+    }
     /// Consumes the builder and constructs a [`DisassociateFromMasterAccountInput`](crate::operation::disassociate_from_master_account::DisassociateFromMasterAccountInput).
     pub fn build(
         self,

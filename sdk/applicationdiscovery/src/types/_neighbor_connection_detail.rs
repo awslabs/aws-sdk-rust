@@ -78,6 +78,10 @@ impl NeighborConnectionDetailBuilder {
         self.source_server_id = input;
         self
     }
+    /// <p>The ID of the server that opened the network connection.</p>
+    pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_server_id
+    }
     /// <p>The ID of the server that accepted the network connection.</p>
     pub fn destination_server_id(
         mut self,
@@ -94,6 +98,10 @@ impl NeighborConnectionDetailBuilder {
         self.destination_server_id = input;
         self
     }
+    /// <p>The ID of the server that accepted the network connection.</p>
+    pub fn get_destination_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_server_id
+    }
     /// <p>The destination network port for the connection.</p>
     pub fn destination_port(mut self, input: i32) -> Self {
         self.destination_port = ::std::option::Option::Some(input);
@@ -103,6 +111,10 @@ impl NeighborConnectionDetailBuilder {
     pub fn set_destination_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.destination_port = input;
         self
+    }
+    /// <p>The destination network port for the connection.</p>
+    pub fn get_destination_port(&self) -> &::std::option::Option<i32> {
+        &self.destination_port
     }
     /// <p>The network protocol used for the connection.</p>
     pub fn transport_protocol(
@@ -120,6 +132,10 @@ impl NeighborConnectionDetailBuilder {
         self.transport_protocol = input;
         self
     }
+    /// <p>The network protocol used for the connection.</p>
+    pub fn get_transport_protocol(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transport_protocol
+    }
     /// <p>The number of open network connections with the neighboring server.</p>
     pub fn connections_count(mut self, input: i64) -> Self {
         self.connections_count = ::std::option::Option::Some(input);
@@ -129,6 +145,10 @@ impl NeighborConnectionDetailBuilder {
     pub fn set_connections_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.connections_count = input;
         self
+    }
+    /// <p>The number of open network connections with the neighboring server.</p>
+    pub fn get_connections_count(&self) -> &::std::option::Option<i64> {
+        &self.connections_count
     }
     /// Consumes the builder and constructs a [`NeighborConnectionDetail`](crate::types::NeighborConnectionDetail).
     pub fn build(self) -> crate::types::NeighborConnectionDetail {

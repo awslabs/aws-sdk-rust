@@ -54,6 +54,10 @@ impl KinesisStreamsOutputUpdateBuilder {
         self.resource_arn_update = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the Amazon Kinesis stream where you want to write the output.</p>
+    pub fn get_resource_arn_update(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn_update
+    }
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need to grant the necessary permissions to this role.</p>
     pub fn role_arn_update(
         mut self,
@@ -69,6 +73,10 @@ impl KinesisStreamsOutputUpdateBuilder {
     ) -> Self {
         self.role_arn_update = input;
         self
+    }
+    /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need to grant the necessary permissions to this role.</p>
+    pub fn get_role_arn_update(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn_update
     }
     /// Consumes the builder and constructs a [`KinesisStreamsOutputUpdate`](crate::types::KinesisStreamsOutputUpdate).
     pub fn build(self) -> crate::types::KinesisStreamsOutputUpdate {

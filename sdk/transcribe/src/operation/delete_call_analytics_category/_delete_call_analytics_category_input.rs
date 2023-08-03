@@ -45,6 +45,10 @@ impl DeleteCallAnalyticsCategoryInputBuilder {
         self.category_name = input;
         self
     }
+    /// <p>The name of the Call Analytics category you want to delete. Category names are case sensitive.</p>
+    pub fn get_category_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.category_name
+    }
     /// Consumes the builder and constructs a [`DeleteCallAnalyticsCategoryInput`](crate::operation::delete_call_analytics_category::DeleteCallAnalyticsCategoryInput).
     pub fn build(
         self,

@@ -48,6 +48,10 @@ impl CreateBackupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateBackup as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_backup::builders::CreateBackupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +134,10 @@ impl CreateBackupFluentBuilder {
         self.inner = self.inner.set_table_name(input);
         self
     }
+    /// <p>The name of the table.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_table_name()
+    }
     /// <p>Specified name for the backup.</p>
     pub fn backup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backup_name(input.into());
@@ -139,5 +147,9 @@ impl CreateBackupFluentBuilder {
     pub fn set_backup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_backup_name(input);
         self
+    }
+    /// <p>Specified name for the backup.</p>
+    pub fn get_backup_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_backup_name()
     }
 }

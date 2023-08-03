@@ -72,6 +72,10 @@ impl SelfManagedActiveDirectoryAttributesBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The fully qualified domain name of the self-managed AD directory.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The fully qualified distinguished name of the organizational unit within the self-managed AD directory to which the Windows File Server or ONTAP storage virtual machine (SVM) instance is joined.</p>
     pub fn organizational_unit_distinguished_name(
         mut self,
@@ -87,6 +91,12 @@ impl SelfManagedActiveDirectoryAttributesBuilder {
     ) -> Self {
         self.organizational_unit_distinguished_name = input;
         self
+    }
+    /// <p>The fully qualified distinguished name of the organizational unit within the self-managed AD directory to which the Windows File Server or ONTAP storage virtual machine (SVM) instance is joined.</p>
+    pub fn get_organizational_unit_distinguished_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.organizational_unit_distinguished_name
     }
     /// <p>The name of the domain group whose members have administrative privileges for the FSx file system.</p>
     pub fn file_system_administrators_group(
@@ -104,6 +114,12 @@ impl SelfManagedActiveDirectoryAttributesBuilder {
         self.file_system_administrators_group = input;
         self
     }
+    /// <p>The name of the domain group whose members have administrative privileges for the FSx file system.</p>
+    pub fn get_file_system_administrators_group(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.file_system_administrators_group
+    }
     /// <p>The user name for the service account on your self-managed AD domain that FSx uses to join to your AD domain.</p>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
@@ -113,6 +129,10 @@ impl SelfManagedActiveDirectoryAttributesBuilder {
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_name = input;
         self
+    }
+    /// <p>The user name for the service account on your self-managed AD domain that FSx uses to join to your AD domain.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
     }
     /// Appends an item to `dns_ips`.
     ///
@@ -132,6 +152,10 @@ impl SelfManagedActiveDirectoryAttributesBuilder {
     ) -> Self {
         self.dns_ips = input;
         self
+    }
+    /// <p>A list of up to three IP addresses of DNS servers or domain controllers in the self-managed AD directory.</p>
+    pub fn get_dns_ips(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.dns_ips
     }
     /// Consumes the builder and constructs a [`SelfManagedActiveDirectoryAttributes`](crate::types::SelfManagedActiveDirectoryAttributes).
     pub fn build(self) -> crate::types::SelfManagedActiveDirectoryAttributes {

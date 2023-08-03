@@ -37,6 +37,12 @@ impl GetOTAUpdateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetOTAUpdate as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_ota_update::builders::GetOtaUpdateInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,5 +130,9 @@ impl GetOTAUpdateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ota_update_id(input);
         self
+    }
+    /// <p>The OTA update ID.</p>
+    pub fn get_ota_update_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ota_update_id()
     }
 }

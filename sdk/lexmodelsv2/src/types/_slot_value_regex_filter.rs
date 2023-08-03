@@ -96,6 +96,24 @@ impl SlotValueRegexFilterBuilder {
         self.pattern = input;
         self
     }
+    /// <p>A regular expression used to validate the value of a slot.</p>
+    /// <p> Use a standard regular expression. Amazon Lex supports the following characters in the regular expression: </p>
+    /// <ul>
+    /// <li> <p>A-Z, a-z</p> </li>
+    /// <li> <p>0-9</p> </li>
+    /// <li> <p>Unicode characters ("\⁠u<unicode>
+    /// ")
+    /// </unicode></p> </li>
+    /// </ul>
+    /// <p> Represent Unicode characters with four digits, for example "\⁠u0041" or "\⁠u005A". </p>
+    /// <p> The following regular expression operators are not supported: </p>
+    /// <ul>
+    /// <li> <p>Infinite repeaters: *, +, or {x,} with no upper bound.</p> </li>
+    /// <li> <p>Wild card (.)</p> </li>
+    /// </ul>
+    pub fn get_pattern(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pattern
+    }
     /// Consumes the builder and constructs a [`SlotValueRegexFilter`](crate::types::SlotValueRegexFilter).
     pub fn build(self) -> crate::types::SlotValueRegexFilter {
         crate::types::SlotValueRegexFilter {

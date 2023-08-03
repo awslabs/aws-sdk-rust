@@ -56,6 +56,10 @@ impl DescribeDeploymentsInputBuilder {
         self.stack_id = input;
         self
     }
+    /// <p>The stack ID. If you include this parameter, the command returns a description of the commands associated with the specified stack.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_id
+    }
     /// <p>The app ID. If you include this parameter, the command returns a description of the commands associated with the specified app.</p>
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl DescribeDeploymentsInputBuilder {
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_id = input;
         self
+    }
+    /// <p>The app ID. If you include this parameter, the command returns a description of the commands associated with the specified app.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
     }
     /// Appends an item to `deployment_ids`.
     ///
@@ -87,6 +95,12 @@ impl DescribeDeploymentsInputBuilder {
     ) -> Self {
         self.deployment_ids = input;
         self
+    }
+    /// <p>An array of deployment IDs to be described. If you include this parameter, the command returns a description of the specified deployments. Otherwise, it returns a description of every deployment.</p>
+    pub fn get_deployment_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.deployment_ids
     }
     /// Consumes the builder and constructs a [`DescribeDeploymentsInput`](crate::operation::describe_deployments::DescribeDeploymentsInput).
     pub fn build(

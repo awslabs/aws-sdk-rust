@@ -181,6 +181,10 @@ impl BatchPredictionBuilder {
         self.batch_prediction_id = input;
         self
     }
+    /// <p>The ID assigned to the <code>BatchPrediction</code> at creation. This value should be identical to the value of the <code>BatchPredictionID</code> in the request. </p>
+    pub fn get_batch_prediction_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.batch_prediction_id
+    }
     /// <p>The ID of the <code>MLModel</code> that generated predictions for the <code>BatchPrediction</code> request.</p>
     pub fn ml_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ml_model_id = ::std::option::Option::Some(input.into());
@@ -190,6 +194,10 @@ impl BatchPredictionBuilder {
     pub fn set_ml_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ml_model_id = input;
         self
+    }
+    /// <p>The ID of the <code>MLModel</code> that generated predictions for the <code>BatchPrediction</code> request.</p>
+    pub fn get_ml_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ml_model_id
     }
     /// <p>The ID of the <code>DataSource</code> that points to the group of observations to predict.</p>
     pub fn batch_prediction_data_source_id(
@@ -207,6 +215,12 @@ impl BatchPredictionBuilder {
         self.batch_prediction_data_source_id = input;
         self
     }
+    /// <p>The ID of the <code>DataSource</code> that points to the group of observations to predict.</p>
+    pub fn get_batch_prediction_data_source_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.batch_prediction_data_source_id
+    }
     /// <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
     pub fn input_data_location_s3(
         mut self,
@@ -222,6 +236,10 @@ impl BatchPredictionBuilder {
     ) -> Self {
         self.input_data_location_s3 = input;
         self
+    }
+    /// <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
+    pub fn get_input_data_location_s3(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_data_location_s3
     }
     /// <p>The AWS user account that invoked the <code>BatchPrediction</code>. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
     pub fn created_by_iam_user(
@@ -239,6 +257,10 @@ impl BatchPredictionBuilder {
         self.created_by_iam_user = input;
         self
     }
+    /// <p>The AWS user account that invoked the <code>BatchPrediction</code>. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
+    pub fn get_created_by_iam_user(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_by_iam_user
+    }
     /// <p>The time that the <code>BatchPrediction</code> was created. The time is expressed in epoch time.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -251,6 +273,10 @@ impl BatchPredictionBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The time that the <code>BatchPrediction</code> was created. The time is expressed in epoch time.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// <p>The time of the most recent edit to the <code>BatchPrediction</code>. The time is expressed in epoch time.</p>
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -265,6 +291,10 @@ impl BatchPredictionBuilder {
         self.last_updated_at = input;
         self
     }
+    /// <p>The time of the most recent edit to the <code>BatchPrediction</code>. The time is expressed in epoch time.</p>
+    pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_at
+    }
     /// <p>A user-supplied name or description of the <code>BatchPrediction</code>.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -274,6 +304,10 @@ impl BatchPredictionBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A user-supplied name or description of the <code>BatchPrediction</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The status of the <code>BatchPrediction</code>. This element can have one of the following values:</p>
     /// <ul>
@@ -299,6 +333,17 @@ impl BatchPredictionBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the <code>BatchPrediction</code>. This element can have one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to generate predictions for a batch of observations.</p> </li>
+    /// <li> <p> <code>INPROGRESS</code> - The process is underway.</p> </li>
+    /// <li> <p> <code>FAILED</code> - The request to perform a batch prediction did not run to completion. It is not usable.</p> </li>
+    /// <li> <p> <code>COMPLETED</code> - The batch prediction process completed successfully.</p> </li>
+    /// <li> <p> <code>DELETED</code> - The <code>BatchPrediction</code> is marked as deleted. It is not usable.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::EntityStatus> {
+        &self.status
+    }
     /// <p>The location of an Amazon S3 bucket or directory to receive the operation results. The following substrings are not allowed in the <code>s3 key</code> portion of the <code>outputURI</code> field: ':', '//', '/./', '/../'.</p>
     pub fn output_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_uri = ::std::option::Option::Some(input.into());
@@ -308,6 +353,10 @@ impl BatchPredictionBuilder {
     pub fn set_output_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_uri = input;
         self
+    }
+    /// <p>The location of an Amazon S3 bucket or directory to receive the operation results. The following substrings are not allowed in the <code>s3 key</code> portion of the <code>outputURI</code> field: ':', '//', '/./', '/../'.</p>
+    pub fn get_output_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_uri
     }
     /// <p>A description of the most recent details about processing the batch prediction request.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -319,6 +368,10 @@ impl BatchPredictionBuilder {
         self.message = input;
         self
     }
+    /// <p>A description of the most recent details about processing the batch prediction request.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>Long integer type that is a 64-bit signed number.</p>
     pub fn compute_time(mut self, input: i64) -> Self {
         self.compute_time = ::std::option::Option::Some(input);
@@ -328,6 +381,10 @@ impl BatchPredictionBuilder {
     pub fn set_compute_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.compute_time = input;
         self
+    }
+    /// <p>Long integer type that is a 64-bit signed number.</p>
+    pub fn get_compute_time(&self) -> &::std::option::Option<i64> {
+        &self.compute_time
     }
     /// <p>A timestamp represented in epoch time.</p>
     pub fn finished_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -343,6 +400,10 @@ impl BatchPredictionBuilder {
         self
     }
     /// <p>A timestamp represented in epoch time.</p>
+    pub fn get_finished_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.finished_at
+    }
+    /// <p>A timestamp represented in epoch time.</p>
     pub fn started_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.started_at = ::std::option::Option::Some(input);
         self
@@ -355,6 +416,10 @@ impl BatchPredictionBuilder {
         self.started_at = input;
         self
     }
+    /// <p>A timestamp represented in epoch time.</p>
+    pub fn get_started_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.started_at
+    }
     /// <p>Long integer type that is a 64-bit signed number.</p>
     pub fn total_record_count(mut self, input: i64) -> Self {
         self.total_record_count = ::std::option::Option::Some(input);
@@ -366,6 +431,10 @@ impl BatchPredictionBuilder {
         self
     }
     /// <p>Long integer type that is a 64-bit signed number.</p>
+    pub fn get_total_record_count(&self) -> &::std::option::Option<i64> {
+        &self.total_record_count
+    }
+    /// <p>Long integer type that is a 64-bit signed number.</p>
     pub fn invalid_record_count(mut self, input: i64) -> Self {
         self.invalid_record_count = ::std::option::Option::Some(input);
         self
@@ -374,6 +443,10 @@ impl BatchPredictionBuilder {
     pub fn set_invalid_record_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.invalid_record_count = input;
         self
+    }
+    /// <p>Long integer type that is a 64-bit signed number.</p>
+    pub fn get_invalid_record_count(&self) -> &::std::option::Option<i64> {
+        &self.invalid_record_count
     }
     /// Consumes the builder and constructs a [`BatchPrediction`](crate::types::BatchPrediction).
     pub fn build(self) -> crate::types::BatchPrediction {

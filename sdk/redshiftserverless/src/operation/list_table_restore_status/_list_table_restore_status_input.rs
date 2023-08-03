@@ -65,6 +65,10 @@ impl ListTableRestoreStatusInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If your initial <code>ListTableRestoreStatus</code> operation returns a nextToken, you can include the returned <code>nextToken</code> in following <code>ListTableRestoreStatus</code> operations. This will return results on the next page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use nextToken to display the next page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl ListTableRestoreStatusInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>An optional parameter that specifies the maximum number of results to return. You can use nextToken to display the next page of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The namespace from which to list all of the statuses of <code>RestoreTableFromSnapshot</code> operations .</p>
     pub fn namespace_name(
@@ -91,6 +99,10 @@ impl ListTableRestoreStatusInputBuilder {
         self.namespace_name = input;
         self
     }
+    /// <p>The namespace from which to list all of the statuses of <code>RestoreTableFromSnapshot</code> operations .</p>
+    pub fn get_namespace_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace_name
+    }
     /// <p>The workgroup from which to list all of the statuses of <code>RestoreTableFromSnapshot</code> operations.</p>
     pub fn workgroup_name(
         mut self,
@@ -106,6 +118,10 @@ impl ListTableRestoreStatusInputBuilder {
     ) -> Self {
         self.workgroup_name = input;
         self
+    }
+    /// <p>The workgroup from which to list all of the statuses of <code>RestoreTableFromSnapshot</code> operations.</p>
+    pub fn get_workgroup_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workgroup_name
     }
     /// Consumes the builder and constructs a [`ListTableRestoreStatusInput`](crate::operation::list_table_restore_status::ListTableRestoreStatusInput).
     pub fn build(

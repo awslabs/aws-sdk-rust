@@ -36,6 +36,12 @@ impl GetRotationOverrideFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetRotationOverride as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_rotation_override::builders::GetRotationOverrideInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl GetRotationOverrideFluentBuilder {
         self.inner = self.inner.set_rotation_id(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the overridden rotation to retrieve information about.</p>
+    pub fn get_rotation_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rotation_id()
+    }
     /// <p>The Amazon Resource Name (ARN) of the on-call rotation override to retrieve information about.</p>
     pub fn rotation_override_id(
         mut self,
@@ -141,5 +151,9 @@ impl GetRotationOverrideFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_rotation_override_id(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the on-call rotation override to retrieve information about.</p>
+    pub fn get_rotation_override_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rotation_override_id()
     }
 }

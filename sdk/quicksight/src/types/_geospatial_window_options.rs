@@ -51,6 +51,10 @@ impl GeospatialWindowOptionsBuilder {
         self.bounds = input;
         self
     }
+    /// <p>The bounds options (north, south, west, east) of the geospatial window options.</p>
+    pub fn get_bounds(&self) -> &::std::option::Option<crate::types::GeospatialCoordinateBounds> {
+        &self.bounds
+    }
     /// <p>The map zoom modes (manual, auto) of the geospatial window options.</p>
     pub fn map_zoom_mode(mut self, input: crate::types::MapZoomMode) -> Self {
         self.map_zoom_mode = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl GeospatialWindowOptionsBuilder {
     ) -> Self {
         self.map_zoom_mode = input;
         self
+    }
+    /// <p>The map zoom modes (manual, auto) of the geospatial window options.</p>
+    pub fn get_map_zoom_mode(&self) -> &::std::option::Option<crate::types::MapZoomMode> {
+        &self.map_zoom_mode
     }
     /// Consumes the builder and constructs a [`GeospatialWindowOptions`](crate::types::GeospatialWindowOptions).
     pub fn build(self) -> crate::types::GeospatialWindowOptions {

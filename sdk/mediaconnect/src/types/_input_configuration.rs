@@ -56,6 +56,10 @@ impl InputConfigurationBuilder {
         self.input_ip = input;
         self
     }
+    /// The IP address that the flow listens on for incoming content for a media stream.
+    pub fn get_input_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_ip
+    }
     /// The port that the flow listens on for an incoming media stream.
     pub fn input_port(mut self, input: i32) -> Self {
         self.input_port = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl InputConfigurationBuilder {
         self.input_port = input;
         self
     }
+    /// The port that the flow listens on for an incoming media stream.
+    pub fn get_input_port(&self) -> &::std::option::Option<i32> {
+        &self.input_port
+    }
     /// The VPC interface where the media stream comes in from.
     pub fn interface(mut self, input: crate::types::Interface) -> Self {
         self.interface = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl InputConfigurationBuilder {
     pub fn set_interface(mut self, input: ::std::option::Option<crate::types::Interface>) -> Self {
         self.interface = input;
         self
+    }
+    /// The VPC interface where the media stream comes in from.
+    pub fn get_interface(&self) -> &::std::option::Option<crate::types::Interface> {
+        &self.interface
     }
     /// Consumes the builder and constructs a [`InputConfiguration`](crate::types::InputConfiguration).
     pub fn build(self) -> crate::types::InputConfiguration {

@@ -48,6 +48,10 @@ impl MultiRegionAccessPointRegionalResponseBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the Region in the Multi-Region Access Point.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The current status of the Multi-Region Access Point in this Region.</p>
     pub fn request_status(
         mut self,
@@ -63,6 +67,10 @@ impl MultiRegionAccessPointRegionalResponseBuilder {
     ) -> Self {
         self.request_status = input;
         self
+    }
+    /// <p>The current status of the Multi-Region Access Point in this Region.</p>
+    pub fn get_request_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_status
     }
     /// Consumes the builder and constructs a [`MultiRegionAccessPointRegionalResponse`](crate::types::MultiRegionAccessPointRegionalResponse).
     pub fn build(self) -> crate::types::MultiRegionAccessPointRegionalResponse {

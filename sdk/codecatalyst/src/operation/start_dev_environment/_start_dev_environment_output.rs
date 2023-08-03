@@ -72,6 +72,10 @@ impl StartDevEnvironmentOutputBuilder {
         self.space_name = input;
         self
     }
+    /// <p>The name of the space.</p>
+    pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.space_name
+    }
     /// <p>The name of the project in the space.</p>
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl StartDevEnvironmentOutputBuilder {
         self.project_name = input;
         self
     }
+    /// <p>The name of the project in the space.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_name
+    }
     /// <p>The system-generated unique ID of the Dev Environment. </p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl StartDevEnvironmentOutputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The system-generated unique ID of the Dev Environment. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The status of the Dev Environment. </p>
     pub fn status(mut self, input: crate::types::DevEnvironmentStatus) -> Self {
@@ -104,6 +116,10 @@ impl StartDevEnvironmentOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the Dev Environment. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DevEnvironmentStatus> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

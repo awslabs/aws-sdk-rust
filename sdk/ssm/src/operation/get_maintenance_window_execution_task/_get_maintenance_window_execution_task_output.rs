@@ -223,6 +223,10 @@ impl GetMaintenanceWindowExecutionTaskOutputBuilder {
         self.window_execution_id = input;
         self
     }
+    /// <p>The ID of the maintenance window execution that includes the task.</p>
+    pub fn get_window_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.window_execution_id
+    }
     /// <p>The ID of the specific task execution in the maintenance window task that was retrieved.</p>
     pub fn task_execution_id(
         mut self,
@@ -239,6 +243,10 @@ impl GetMaintenanceWindowExecutionTaskOutputBuilder {
         self.task_execution_id = input;
         self
     }
+    /// <p>The ID of the specific task execution in the maintenance window task that was retrieved.</p>
+    pub fn get_task_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_execution_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the task that ran.</p>
     pub fn task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_arn = ::std::option::Option::Some(input.into());
@@ -249,6 +257,10 @@ impl GetMaintenanceWindowExecutionTaskOutputBuilder {
         self.task_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the task that ran.</p>
+    pub fn get_task_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_arn
+    }
     /// <p>The role that was assumed when running the task.</p>
     pub fn service_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_role = ::std::option::Option::Some(input.into());
@@ -258,6 +270,10 @@ impl GetMaintenanceWindowExecutionTaskOutputBuilder {
     pub fn set_service_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_role = input;
         self
+    }
+    /// <p>The role that was assumed when running the task.</p>
+    pub fn get_service_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_role
     }
     /// <p>The type of task that was run.</p>
     pub fn r#type(mut self, input: crate::types::MaintenanceWindowTaskType) -> Self {
@@ -271,6 +287,10 @@ impl GetMaintenanceWindowExecutionTaskOutputBuilder {
     ) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of task that was run.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::MaintenanceWindowTaskType> {
+        &self.r#type
     }
     /// Appends an item to `task_parameters`.
     ///
@@ -318,6 +338,26 @@ impl GetMaintenanceWindowExecutionTaskOutputBuilder {
         self.task_parameters = input;
         self
     }
+    /// <p>The parameters passed to the task when it was run.</p> <note>
+    /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+    /// </note>
+    /// <p>The map has the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>Key</code>: string, between 1 and 255 characters</p> </li>
+    /// <li> <p> <code>Value</code>: an array of strings, each between 1 and 255 characters</p> </li>
+    /// </ul>
+    pub fn get_task_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<
+            ::std::collections::HashMap<
+                ::std::string::String,
+                crate::types::MaintenanceWindowTaskParameterValueExpression,
+            >,
+        >,
+    > {
+        &self.task_parameters
+    }
     /// <p>The priority of the task.</p>
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
@@ -327,6 +367,10 @@ impl GetMaintenanceWindowExecutionTaskOutputBuilder {
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
+    }
+    /// <p>The priority of the task.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
     }
     /// <p>The defined maximum number of task executions that could be run in parallel.</p>
     pub fn max_concurrency(
@@ -344,6 +388,10 @@ impl GetMaintenanceWindowExecutionTaskOutputBuilder {
         self.max_concurrency = input;
         self
     }
+    /// <p>The defined maximum number of task executions that could be run in parallel.</p>
+    pub fn get_max_concurrency(&self) -> &::std::option::Option<::std::string::String> {
+        &self.max_concurrency
+    }
     /// <p>The defined maximum number of task execution errors allowed before scheduling of the task execution would have been stopped.</p>
     pub fn max_errors(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.max_errors = ::std::option::Option::Some(input.into());
@@ -353,6 +401,10 @@ impl GetMaintenanceWindowExecutionTaskOutputBuilder {
     pub fn set_max_errors(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_errors = input;
         self
+    }
+    /// <p>The defined maximum number of task execution errors allowed before scheduling of the task execution would have been stopped.</p>
+    pub fn get_max_errors(&self) -> &::std::option::Option<::std::string::String> {
+        &self.max_errors
     }
     /// <p>The status of the task.</p>
     pub fn status(mut self, input: crate::types::MaintenanceWindowExecutionStatus) -> Self {
@@ -366,6 +418,12 @@ impl GetMaintenanceWindowExecutionTaskOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the task.</p>
+    pub fn get_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::MaintenanceWindowExecutionStatus> {
+        &self.status
     }
     /// <p>The details explaining the status. Not available for all status values.</p>
     pub fn status_details(
@@ -383,6 +441,10 @@ impl GetMaintenanceWindowExecutionTaskOutputBuilder {
         self.status_details = input;
         self
     }
+    /// <p>The details explaining the status. Not available for all status values.</p>
+    pub fn get_status_details(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_details
+    }
     /// <p>The time the task execution started.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -395,6 +457,10 @@ impl GetMaintenanceWindowExecutionTaskOutputBuilder {
     ) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>The time the task execution started.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p>The time the task execution completed.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -409,6 +475,10 @@ impl GetMaintenanceWindowExecutionTaskOutputBuilder {
         self.end_time = input;
         self
     }
+    /// <p>The time the task execution completed.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>The details for the CloudWatch alarm you applied to your maintenance window task.</p>
     pub fn alarm_configuration(mut self, input: crate::types::AlarmConfiguration) -> Self {
         self.alarm_configuration = ::std::option::Option::Some(input);
@@ -421,6 +491,12 @@ impl GetMaintenanceWindowExecutionTaskOutputBuilder {
     ) -> Self {
         self.alarm_configuration = input;
         self
+    }
+    /// <p>The details for the CloudWatch alarm you applied to your maintenance window task.</p>
+    pub fn get_alarm_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AlarmConfiguration> {
+        &self.alarm_configuration
     }
     /// Appends an item to `triggered_alarms`.
     ///
@@ -440,6 +516,12 @@ impl GetMaintenanceWindowExecutionTaskOutputBuilder {
     ) -> Self {
         self.triggered_alarms = input;
         self
+    }
+    /// <p>The CloudWatch alarms that were invoked by the maintenance window task.</p>
+    pub fn get_triggered_alarms(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>> {
+        &self.triggered_alarms
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

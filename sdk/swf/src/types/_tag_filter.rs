@@ -44,6 +44,11 @@ impl TagFilterBuilder {
         self.tag = input;
         self
     }
+    /// <p> Specifies the tag that must be associated with the execution for it to meet the filter criteria.</p>
+    /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
+    pub fn get_tag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tag
+    }
     /// Consumes the builder and constructs a [`TagFilter`](crate::types::TagFilter).
     pub fn build(self) -> crate::types::TagFilter {
         crate::types::TagFilter { tag: self.tag }

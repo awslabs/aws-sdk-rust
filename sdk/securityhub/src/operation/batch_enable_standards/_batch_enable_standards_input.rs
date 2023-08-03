@@ -56,6 +56,12 @@ impl BatchEnableStandardsInputBuilder {
         self.standards_subscription_requests = input;
         self
     }
+    /// <p>The list of standards checks to enable.</p>
+    pub fn get_standards_subscription_requests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StandardsSubscriptionRequest>> {
+        &self.standards_subscription_requests
+    }
     /// Consumes the builder and constructs a [`BatchEnableStandardsInput`](crate::operation::batch_enable_standards::BatchEnableStandardsInput).
     pub fn build(
         self,

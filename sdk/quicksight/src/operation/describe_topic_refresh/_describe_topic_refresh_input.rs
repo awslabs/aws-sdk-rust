@@ -62,6 +62,10 @@ impl DescribeTopicRefreshInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services account that contains the topic whose refresh you want to describe.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The ID of the topic that you want to describe. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn topic_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_id = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl DescribeTopicRefreshInputBuilder {
         self.topic_id = input;
         self
     }
+    /// <p>The ID of the topic that you want to describe. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    pub fn get_topic_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_id
+    }
     /// <p>The ID of the refresh, which is performed when the topic is created or updated.</p>
     pub fn refresh_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.refresh_id = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl DescribeTopicRefreshInputBuilder {
     pub fn set_refresh_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.refresh_id = input;
         self
+    }
+    /// <p>The ID of the refresh, which is performed when the topic is created or updated.</p>
+    pub fn get_refresh_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.refresh_id
     }
     /// Consumes the builder and constructs a [`DescribeTopicRefreshInput`](crate::operation::describe_topic_refresh::DescribeTopicRefreshInput).
     pub fn build(

@@ -95,6 +95,10 @@ impl VerifyAuthRequestCryptogramInputBuilder {
         self.key_identifier = input;
         self
     }
+    /// <p>The <code>keyARN</code> of the major encryption key that Amazon Web Services Payment Cryptography uses for ARQC verification.</p>
+    pub fn get_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_identifier
+    }
     /// <p>The transaction data that Amazon Web Services Payment Cryptography uses for ARQC verification. The same transaction is used for ARQC generation outside of Amazon Web Services Payment Cryptography.</p>
     pub fn transaction_data(
         mut self,
@@ -110,6 +114,10 @@ impl VerifyAuthRequestCryptogramInputBuilder {
     ) -> Self {
         self.transaction_data = input;
         self
+    }
+    /// <p>The transaction data that Amazon Web Services Payment Cryptography uses for ARQC verification. The same transaction is used for ARQC generation outside of Amazon Web Services Payment Cryptography.</p>
+    pub fn get_transaction_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transaction_data
     }
     /// <p>The auth request cryptogram imported into Amazon Web Services Payment Cryptography for ARQC verification using a major encryption key and transaction data.</p>
     pub fn auth_request_cryptogram(
@@ -127,6 +135,10 @@ impl VerifyAuthRequestCryptogramInputBuilder {
         self.auth_request_cryptogram = input;
         self
     }
+    /// <p>The auth request cryptogram imported into Amazon Web Services Payment Cryptography for ARQC verification using a major encryption key and transaction data.</p>
+    pub fn get_auth_request_cryptogram(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auth_request_cryptogram
+    }
     /// <p>The method to use when deriving the major encryption key for ARQC verification within Amazon Web Services Payment Cryptography. The same key derivation mode was used for ARQC generation outside of Amazon Web Services Payment Cryptography.</p>
     pub fn major_key_derivation_mode(
         mut self,
@@ -142,6 +154,12 @@ impl VerifyAuthRequestCryptogramInputBuilder {
     ) -> Self {
         self.major_key_derivation_mode = input;
         self
+    }
+    /// <p>The method to use when deriving the major encryption key for ARQC verification within Amazon Web Services Payment Cryptography. The same key derivation mode was used for ARQC generation outside of Amazon Web Services Payment Cryptography.</p>
+    pub fn get_major_key_derivation_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::MajorKeyDerivationMode> {
+        &self.major_key_derivation_mode
     }
     /// <p>The attributes and values to use for deriving a session key for ARQC verification within Amazon Web Services Payment Cryptography. The same attributes were used for ARQC generation outside of Amazon Web Services Payment Cryptography.</p>
     pub fn session_key_derivation_attributes(
@@ -159,6 +177,12 @@ impl VerifyAuthRequestCryptogramInputBuilder {
         self.session_key_derivation_attributes = input;
         self
     }
+    /// <p>The attributes and values to use for deriving a session key for ARQC verification within Amazon Web Services Payment Cryptography. The same attributes were used for ARQC generation outside of Amazon Web Services Payment Cryptography.</p>
+    pub fn get_session_key_derivation_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::SessionKeyDerivation> {
+        &self.session_key_derivation_attributes
+    }
     /// <p>The attributes and values for auth request cryptogram verification. These parameters are required in case using ARPC Method 1 or Method 2 for ARQC verification.</p>
     pub fn auth_response_attributes(mut self, input: crate::types::CryptogramAuthResponse) -> Self {
         self.auth_response_attributes = ::std::option::Option::Some(input);
@@ -171,6 +195,12 @@ impl VerifyAuthRequestCryptogramInputBuilder {
     ) -> Self {
         self.auth_response_attributes = input;
         self
+    }
+    /// <p>The attributes and values for auth request cryptogram verification. These parameters are required in case using ARPC Method 1 or Method 2 for ARQC verification.</p>
+    pub fn get_auth_response_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::CryptogramAuthResponse> {
+        &self.auth_response_attributes
     }
     /// Consumes the builder and constructs a [`VerifyAuthRequestCryptogramInput`](crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramInput).
     pub fn build(

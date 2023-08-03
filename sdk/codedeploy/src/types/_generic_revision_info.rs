@@ -72,6 +72,10 @@ impl GenericRevisionInfoBuilder {
         self.description = input;
         self
     }
+    /// <p>A comment about the revision.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// Appends an item to `deployment_groups`.
     ///
     /// To override the contents of this collection use [`set_deployment_groups`](Self::set_deployment_groups).
@@ -94,6 +98,12 @@ impl GenericRevisionInfoBuilder {
         self.deployment_groups = input;
         self
     }
+    /// <p>The deployment groups for which this is the current target revision.</p>
+    pub fn get_deployment_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.deployment_groups
+    }
     /// <p>When the revision was first used by CodeDeploy.</p>
     pub fn first_used_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.first_used_time = ::std::option::Option::Some(input);
@@ -106,6 +116,10 @@ impl GenericRevisionInfoBuilder {
     ) -> Self {
         self.first_used_time = input;
         self
+    }
+    /// <p>When the revision was first used by CodeDeploy.</p>
+    pub fn get_first_used_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.first_used_time
     }
     /// <p>When the revision was last used by CodeDeploy.</p>
     pub fn last_used_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -120,6 +134,10 @@ impl GenericRevisionInfoBuilder {
         self.last_used_time = input;
         self
     }
+    /// <p>When the revision was last used by CodeDeploy.</p>
+    pub fn get_last_used_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_used_time
+    }
     /// <p>When the revision was registered with CodeDeploy.</p>
     pub fn register_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.register_time = ::std::option::Option::Some(input);
@@ -132,6 +150,10 @@ impl GenericRevisionInfoBuilder {
     ) -> Self {
         self.register_time = input;
         self
+    }
+    /// <p>When the revision was registered with CodeDeploy.</p>
+    pub fn get_register_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.register_time
     }
     /// Consumes the builder and constructs a [`GenericRevisionInfo`](crate::types::GenericRevisionInfo).
     pub fn build(self) -> crate::types::GenericRevisionInfo {

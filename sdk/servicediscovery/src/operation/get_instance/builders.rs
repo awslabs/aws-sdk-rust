@@ -36,6 +36,10 @@ impl GetInstanceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetInstance as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_instance::builders::GetInstanceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl GetInstanceFluentBuilder {
         self.inner = self.inner.set_service_id(input);
         self
     }
+    /// <p>The ID of the service that the instance is associated with.</p>
+    pub fn get_service_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_id()
+    }
     /// <p>The ID of the instance that you want to get information about.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
@@ -127,5 +135,9 @@ impl GetInstanceFluentBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
+    }
+    /// <p>The ID of the instance that you want to get information about.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
     }
 }

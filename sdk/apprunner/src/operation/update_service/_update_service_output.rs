@@ -54,6 +54,10 @@ impl UpdateServiceOutputBuilder {
         self.service = input;
         self
     }
+    /// <p>A description of the App Runner service updated by this request. All configuration values in the returned <code>Service</code> structure reflect configuration changes that are being applied by this request.</p>
+    pub fn get_service(&self) -> &::std::option::Option<crate::types::Service> {
+        &self.service
+    }
     /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
     pub fn operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operation_id = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl UpdateServiceOutputBuilder {
     pub fn set_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operation_id = input;
         self
+    }
+    /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
+    pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operation_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -65,6 +65,10 @@ impl GrpcGatewayRouteMatchBuilder {
         self.service_name = input;
         self
     }
+    /// <p>The fully qualified domain name for the service to match from the request.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
+    }
     /// <p>The gateway route host name to be matched on.</p>
     pub fn hostname(mut self, input: crate::types::GatewayRouteHostnameMatch) -> Self {
         self.hostname = ::std::option::Option::Some(input);
@@ -77,6 +81,10 @@ impl GrpcGatewayRouteMatchBuilder {
     ) -> Self {
         self.hostname = input;
         self
+    }
+    /// <p>The gateway route host name to be matched on.</p>
+    pub fn get_hostname(&self) -> &::std::option::Option<crate::types::GatewayRouteHostnameMatch> {
+        &self.hostname
     }
     /// Appends an item to `metadata`.
     ///
@@ -97,6 +105,12 @@ impl GrpcGatewayRouteMatchBuilder {
         self.metadata = input;
         self
     }
+    /// <p>The gateway route metadata to be matched on.</p>
+    pub fn get_metadata(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GrpcGatewayRouteMetadata>> {
+        &self.metadata
+    }
     /// <p>The port number to match from the request.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -106,6 +120,10 @@ impl GrpcGatewayRouteMatchBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
+    }
+    /// <p>The port number to match from the request.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// Consumes the builder and constructs a [`GrpcGatewayRouteMatch`](crate::types::GrpcGatewayRouteMatch).
     pub fn build(self) -> crate::types::GrpcGatewayRouteMatch {

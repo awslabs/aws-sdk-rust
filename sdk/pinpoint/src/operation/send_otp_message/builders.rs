@@ -36,6 +36,12 @@ impl SendOTPMessageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SendOTPMessage as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::send_otp_message::builders::SendOtpMessageInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl SendOTPMessageFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The unique ID of your Amazon Pinpoint application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>Send OTP message request parameters.</p>
     pub fn send_otp_message_request_parameters(
         mut self,
@@ -147,5 +157,11 @@ impl SendOTPMessageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_send_otp_message_request_parameters(input);
         self
+    }
+    /// <p>Send OTP message request parameters.</p>
+    pub fn get_send_otp_message_request_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::SendOtpMessageRequestParameters> {
+        self.inner.get_send_otp_message_request_parameters()
     }
 }

@@ -54,6 +54,10 @@ impl Oauth2CredentialBuilder {
         self.client_id = input;
         self
     }
+    /// <p>The client ID of the client application.</p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_id
+    }
     /// <p>The client secret of the client application.</p>
     pub fn client_secret(
         mut self,
@@ -69,6 +73,10 @@ impl Oauth2CredentialBuilder {
     ) -> Self {
         self.client_secret = input;
         self
+    }
+    /// <p>The client secret of the client application.</p>
+    pub fn get_client_secret(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_secret
     }
     /// Consumes the builder and constructs a [`Oauth2Credential`](crate::types::Oauth2Credential).
     pub fn build(self) -> crate::types::Oauth2Credential {

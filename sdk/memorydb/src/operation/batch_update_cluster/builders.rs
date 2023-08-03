@@ -36,6 +36,12 @@ impl BatchUpdateClusterFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchUpdateCluster as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_update_cluster::builders::BatchUpdateClusterInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +142,12 @@ impl BatchUpdateClusterFluentBuilder {
         self.inner = self.inner.set_cluster_names(input);
         self
     }
+    /// <p>The cluster names to apply the updates.</p>
+    pub fn get_cluster_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_cluster_names()
+    }
     /// <p>The unique ID of the service update</p>
     pub fn service_update(mut self, input: crate::types::ServiceUpdateRequest) -> Self {
         self.inner = self.inner.service_update(input);
@@ -148,5 +160,9 @@ impl BatchUpdateClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_service_update(input);
         self
+    }
+    /// <p>The unique ID of the service update</p>
+    pub fn get_service_update(&self) -> &::std::option::Option<crate::types::ServiceUpdateRequest> {
+        self.inner.get_service_update()
     }
 }

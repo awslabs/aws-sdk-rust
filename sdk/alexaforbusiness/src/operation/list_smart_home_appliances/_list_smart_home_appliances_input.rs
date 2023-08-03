@@ -57,6 +57,10 @@ impl ListSmartHomeAppliancesInputBuilder {
         self.room_arn = input;
         self
     }
+    /// <p>The room that the appliances are associated with.</p>
+    pub fn get_room_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.room_arn
+    }
     /// <p>The maximum number of appliances to be returned, per paginated calls.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -67,6 +71,10 @@ impl ListSmartHomeAppliancesInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of appliances to be returned, per paginated calls.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The tokens used for pagination.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -76,6 +84,10 @@ impl ListSmartHomeAppliancesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The tokens used for pagination.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListSmartHomeAppliancesInput`](crate::operation::list_smart_home_appliances::ListSmartHomeAppliancesInput).
     pub fn build(

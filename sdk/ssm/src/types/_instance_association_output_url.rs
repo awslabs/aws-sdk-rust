@@ -43,6 +43,10 @@ impl InstanceAssociationOutputUrlBuilder {
         self.s3_output_url = input;
         self
     }
+    /// <p>The URL of S3 bucket where you want to store the results of this request.</p>
+    pub fn get_s3_output_url(&self) -> &::std::option::Option<crate::types::S3OutputUrl> {
+        &self.s3_output_url
+    }
     /// Consumes the builder and constructs a [`InstanceAssociationOutputUrl`](crate::types::InstanceAssociationOutputUrl).
     pub fn build(self) -> crate::types::InstanceAssociationOutputUrl {
         crate::types::InstanceAssociationOutputUrl {

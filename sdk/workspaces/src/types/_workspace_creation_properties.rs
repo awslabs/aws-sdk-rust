@@ -102,6 +102,13 @@ impl WorkspaceCreationPropertiesBuilder {
         self.enable_work_docs = input;
         self
     }
+    /// <p>Indicates whether Amazon WorkDocs is enabled for your WorkSpaces.</p> <note>
+    /// <p>If WorkDocs is already enabled for a WorkSpaces directory and you disable it, new WorkSpaces launched in the directory will not have WorkDocs enabled. However, WorkDocs remains enabled for any existing WorkSpaces, unless you either disable users' access to WorkDocs or you delete the WorkDocs site. To disable users' access to WorkDocs, see <a href="https://docs.aws.amazon.com/workdocs/latest/adminguide/inactive-user.html">Disabling Users</a> in the <i>Amazon WorkDocs Administration Guide</i>. To delete a WorkDocs site, see <a href="https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-sites.html">Deleting a Site</a> in the <i>Amazon WorkDocs Administration Guide</i>.</p>
+    /// <p>If you enable WorkDocs on a directory that already has existing WorkSpaces, the existing WorkSpaces and any new WorkSpaces that are launched in the directory will have WorkDocs enabled.</p>
+    /// </note>
+    pub fn get_enable_work_docs(&self) -> &::std::option::Option<bool> {
+        &self.enable_work_docs
+    }
     /// <p>Indicates whether internet access is enabled for your WorkSpaces.</p>
     pub fn enable_internet_access(mut self, input: bool) -> Self {
         self.enable_internet_access = ::std::option::Option::Some(input);
@@ -111,6 +118,10 @@ impl WorkspaceCreationPropertiesBuilder {
     pub fn set_enable_internet_access(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_internet_access = input;
         self
+    }
+    /// <p>Indicates whether internet access is enabled for your WorkSpaces.</p>
+    pub fn get_enable_internet_access(&self) -> &::std::option::Option<bool> {
+        &self.enable_internet_access
     }
     /// <p>The default organizational unit (OU) for your WorkSpaces directories. This string must be the full Lightweight Directory Access Protocol (LDAP) distinguished name for the target domain and OU. It must be in the form <code>"OU=<i>value</i>,DC=<i>value</i>,DC=<i>value</i>"</code>, where <i>value</i> is any string of characters, and the number of domain components (DCs) is two or more. For example, <code>OU=WorkSpaces_machines,DC=machines,DC=example,DC=com</code>. </p> <important>
     /// <ul>
@@ -132,6 +143,15 @@ impl WorkspaceCreationPropertiesBuilder {
         self.default_ou = input;
         self
     }
+    /// <p>The default organizational unit (OU) for your WorkSpaces directories. This string must be the full Lightweight Directory Access Protocol (LDAP) distinguished name for the target domain and OU. It must be in the form <code>"OU=<i>value</i>,DC=<i>value</i>,DC=<i>value</i>"</code>, where <i>value</i> is any string of characters, and the number of domain components (DCs) is two or more. For example, <code>OU=WorkSpaces_machines,DC=machines,DC=example,DC=com</code>. </p> <important>
+    /// <ul>
+    /// <li> <p>To avoid errors, certain characters in the distinguished name must be escaped. For more information, see <a href="https://docs.microsoft.com/previous-versions/windows/desktop/ldap/distinguished-names"> Distinguished Names</a> in the Microsoft documentation.</p> </li>
+    /// <li> <p>The API doesn't validate whether the OU exists.</p> </li>
+    /// </ul>
+    /// </important>
+    pub fn get_default_ou(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_ou
+    }
     /// <p>The identifier of your custom security group.</p>
     pub fn custom_security_group_id(
         mut self,
@@ -148,6 +168,10 @@ impl WorkspaceCreationPropertiesBuilder {
         self.custom_security_group_id = input;
         self
     }
+    /// <p>The identifier of your custom security group.</p>
+    pub fn get_custom_security_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_security_group_id
+    }
     /// <p>Indicates whether users are local administrators of their WorkSpaces.</p>
     pub fn user_enabled_as_local_administrator(mut self, input: bool) -> Self {
         self.user_enabled_as_local_administrator = ::std::option::Option::Some(input);
@@ -161,6 +185,10 @@ impl WorkspaceCreationPropertiesBuilder {
         self.user_enabled_as_local_administrator = input;
         self
     }
+    /// <p>Indicates whether users are local administrators of their WorkSpaces.</p>
+    pub fn get_user_enabled_as_local_administrator(&self) -> &::std::option::Option<bool> {
+        &self.user_enabled_as_local_administrator
+    }
     /// <p>Indicates whether maintenance mode is enabled for your WorkSpaces. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspace-maintenance.html">WorkSpace Maintenance</a>. </p>
     pub fn enable_maintenance_mode(mut self, input: bool) -> Self {
         self.enable_maintenance_mode = ::std::option::Option::Some(input);
@@ -170,6 +198,10 @@ impl WorkspaceCreationPropertiesBuilder {
     pub fn set_enable_maintenance_mode(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_maintenance_mode = input;
         self
+    }
+    /// <p>Indicates whether maintenance mode is enabled for your WorkSpaces. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspace-maintenance.html">WorkSpace Maintenance</a>. </p>
+    pub fn get_enable_maintenance_mode(&self) -> &::std::option::Option<bool> {
+        &self.enable_maintenance_mode
     }
     /// Consumes the builder and constructs a [`WorkspaceCreationProperties`](crate::types::WorkspaceCreationProperties).
     pub fn build(self) -> crate::types::WorkspaceCreationProperties {

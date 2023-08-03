@@ -51,6 +51,12 @@ impl GetPortfolioSummaryOutputBuilder {
         self.assessment_summary = input;
         self
     }
+    /// <p> An assessment summary for the portfolio including the number of servers to rehost and the overall number of anti-patterns. </p>
+    pub fn get_assessment_summary(
+        &self,
+    ) -> &::std::option::Option<crate::types::AssessmentSummary> {
+        &self.assessment_summary
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

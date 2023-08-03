@@ -37,6 +37,10 @@ impl GetBotChannelAssociationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetBotChannelAssociation as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_bot_channel_association::builders::GetBotChannelAssociationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl GetBotChannelAssociationFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the association between the bot and the channel. The name is case sensitive. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The name of the Amazon Lex bot.</p>
     pub fn bot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_name(input.into());
@@ -137,6 +145,10 @@ impl GetBotChannelAssociationFluentBuilder {
         self.inner = self.inner.set_bot_name(input);
         self
     }
+    /// <p>The name of the Amazon Lex bot.</p>
+    pub fn get_bot_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bot_name()
+    }
     /// <p>An alias pointing to the specific version of the Amazon Lex bot to which this association is being made.</p>
     pub fn bot_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_alias(input.into());
@@ -146,5 +158,9 @@ impl GetBotChannelAssociationFluentBuilder {
     pub fn set_bot_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bot_alias(input);
         self
+    }
+    /// <p>An alias pointing to the specific version of the Amazon Lex bot to which this association is being made.</p>
+    pub fn get_bot_alias(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bot_alias()
     }
 }

@@ -46,6 +46,10 @@ impl HlsConfigurationBuilder {
         self.manifest_endpoint_prefix = input;
         self
     }
+    /// <p>The URL that is used to initiate a playback session for devices that support Apple HLS. The session uses server-side reporting.</p>
+    pub fn get_manifest_endpoint_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.manifest_endpoint_prefix
+    }
     /// Consumes the builder and constructs a [`HlsConfiguration`](crate::types::HlsConfiguration).
     pub fn build(self) -> crate::types::HlsConfiguration {
         crate::types::HlsConfiguration {

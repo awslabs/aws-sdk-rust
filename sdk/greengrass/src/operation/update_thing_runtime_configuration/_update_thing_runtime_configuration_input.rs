@@ -56,6 +56,12 @@ impl UpdateThingRuntimeConfigurationInputBuilder {
         self.telemetry_configuration = input;
         self
     }
+    /// Configuration for telemetry service.
+    pub fn get_telemetry_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::TelemetryConfigurationUpdate> {
+        &self.telemetry_configuration
+    }
     /// The thing name.
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_name = ::std::option::Option::Some(input.into());
@@ -65,6 +71,10 @@ impl UpdateThingRuntimeConfigurationInputBuilder {
     pub fn set_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_name = input;
         self
+    }
+    /// The thing name.
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_name
     }
     /// Consumes the builder and constructs a [`UpdateThingRuntimeConfigurationInput`](crate::operation::update_thing_runtime_configuration::UpdateThingRuntimeConfigurationInput).
     pub fn build(

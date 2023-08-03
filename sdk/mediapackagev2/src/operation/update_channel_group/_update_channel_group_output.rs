@@ -109,6 +109,10 @@ impl UpdateChannelGroupOutputBuilder {
         self.channel_group_name = input;
         self
     }
+    /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
+    pub fn get_channel_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_group_name
+    }
     /// <p>The Amazon Resource Name (ARN) associated with the resource.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -118,6 +122,10 @@ impl UpdateChannelGroupOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) associated with the resource.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The output domain where the source stream is sent. Integrate the domain with a downstream CDN (such as Amazon CloudFront) or playback device.</p>
     pub fn egress_domain(
@@ -135,6 +143,10 @@ impl UpdateChannelGroupOutputBuilder {
         self.egress_domain = input;
         self
     }
+    /// <p>The output domain where the source stream is sent. Integrate the domain with a downstream CDN (such as Amazon CloudFront) or playback device.</p>
+    pub fn get_egress_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.egress_domain
+    }
     /// <p>The date and time the channel group was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -147,6 +159,10 @@ impl UpdateChannelGroupOutputBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The date and time the channel group was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// <p>The date and time the channel group was modified.</p>
     pub fn modified_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -161,6 +177,10 @@ impl UpdateChannelGroupOutputBuilder {
         self.modified_at = input;
         self
     }
+    /// <p>The date and time the channel group was modified.</p>
+    pub fn get_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.modified_at
+    }
     /// <p>The description for your channel group.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -170,6 +190,10 @@ impl UpdateChannelGroupOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description for your channel group.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -195,6 +219,14 @@ impl UpdateChannelGroupOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The comma-separated list of tag key:value pairs assigned to the channel group.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

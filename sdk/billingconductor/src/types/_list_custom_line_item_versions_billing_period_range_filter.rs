@@ -55,6 +55,10 @@ impl ListCustomLineItemVersionsBillingPeriodRangeFilterBuilder {
         self.start_billing_period = input;
         self
     }
+    /// <p>The inclusive start billing period that defines a billing period range where a custom line item version is applied.</p>
+    pub fn get_start_billing_period(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_billing_period
+    }
     /// <p>The exclusive end billing period that defines a billing period range where a custom line item version is applied.</p>
     pub fn end_billing_period(
         mut self,
@@ -70,6 +74,10 @@ impl ListCustomLineItemVersionsBillingPeriodRangeFilterBuilder {
     ) -> Self {
         self.end_billing_period = input;
         self
+    }
+    /// <p>The exclusive end billing period that defines a billing period range where a custom line item version is applied.</p>
+    pub fn get_end_billing_period(&self) -> &::std::option::Option<::std::string::String> {
+        &self.end_billing_period
     }
     /// Consumes the builder and constructs a [`ListCustomLineItemVersionsBillingPeriodRangeFilter`](crate::types::ListCustomLineItemVersionsBillingPeriodRangeFilter).
     pub fn build(self) -> crate::types::ListCustomLineItemVersionsBillingPeriodRangeFilter {

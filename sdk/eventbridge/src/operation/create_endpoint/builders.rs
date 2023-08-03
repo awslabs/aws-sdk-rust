@@ -36,6 +36,12 @@ impl CreateEndpointFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateEndpoint as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_endpoint::builders::CreateEndpointInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl CreateEndpointFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the global endpoint. For example, <code>"Name":"us-east-2-custom_bus_A-endpoint"</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>A description of the global endpoint.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -127,6 +137,10 @@ impl CreateEndpointFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of the global endpoint.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>Configure the routing policy, including the health check and secondary Region..</p>
     pub fn routing_config(mut self, input: crate::types::RoutingConfig) -> Self {
@@ -141,6 +155,10 @@ impl CreateEndpointFluentBuilder {
         self.inner = self.inner.set_routing_config(input);
         self
     }
+    /// <p>Configure the routing policy, including the health check and secondary Region..</p>
+    pub fn get_routing_config(&self) -> &::std::option::Option<crate::types::RoutingConfig> {
+        self.inner.get_routing_config()
+    }
     /// <p>Enable or disable event replication. The default state is <code>ENABLED</code> which means you must supply a <code>RoleArn</code>. If you don't have a <code>RoleArn</code> or you don't want event replication enabled, set the state to <code>DISABLED</code>.</p>
     pub fn replication_config(mut self, input: crate::types::ReplicationConfig) -> Self {
         self.inner = self.inner.replication_config(input);
@@ -153,6 +171,12 @@ impl CreateEndpointFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_replication_config(input);
         self
+    }
+    /// <p>Enable or disable event replication. The default state is <code>ENABLED</code> which means you must supply a <code>RoleArn</code>. If you don't have a <code>RoleArn</code> or you don't want event replication enabled, set the state to <code>DISABLED</code>.</p>
+    pub fn get_replication_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReplicationConfig> {
+        self.inner.get_replication_config()
     }
     /// Appends an item to `EventBuses`.
     ///
@@ -175,6 +199,14 @@ impl CreateEndpointFluentBuilder {
         self.inner = self.inner.set_event_buses(input);
         self
     }
+    /// <p>Define the event buses used. </p> <important>
+    /// <p>The names of the event buses must be identical in each Region.</p>
+    /// </important>
+    pub fn get_event_buses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointEventBus>> {
+        self.inner.get_event_buses()
+    }
     /// <p>The ARN of the role used for replication.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -184,5 +216,9 @@ impl CreateEndpointFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p>The ARN of the role used for replication.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
 }

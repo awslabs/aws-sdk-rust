@@ -52,6 +52,10 @@ impl FormInputBindingPropertiesValueBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The property type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// <p>Describes the properties to customize with data at runtime.</p>
     pub fn binding_properties(
         mut self,
@@ -67,6 +71,12 @@ impl FormInputBindingPropertiesValueBuilder {
     ) -> Self {
         self.binding_properties = input;
         self
+    }
+    /// <p>Describes the properties to customize with data at runtime.</p>
+    pub fn get_binding_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::FormInputBindingPropertiesValueProperties> {
+        &self.binding_properties
     }
     /// Consumes the builder and constructs a [`FormInputBindingPropertiesValue`](crate::types::FormInputBindingPropertiesValue).
     pub fn build(self) -> crate::types::FormInputBindingPropertiesValue {

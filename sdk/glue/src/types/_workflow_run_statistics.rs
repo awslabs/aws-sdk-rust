@@ -96,6 +96,10 @@ impl WorkflowRunStatisticsBuilder {
         self.total_actions = input;
         self
     }
+    /// <p>Total number of Actions in the workflow run.</p>
+    pub fn get_total_actions(&self) -> &::std::option::Option<i32> {
+        &self.total_actions
+    }
     /// <p>Total number of Actions that timed out.</p>
     pub fn timeout_actions(mut self, input: i32) -> Self {
         self.timeout_actions = ::std::option::Option::Some(input);
@@ -105,6 +109,10 @@ impl WorkflowRunStatisticsBuilder {
     pub fn set_timeout_actions(mut self, input: ::std::option::Option<i32>) -> Self {
         self.timeout_actions = input;
         self
+    }
+    /// <p>Total number of Actions that timed out.</p>
+    pub fn get_timeout_actions(&self) -> &::std::option::Option<i32> {
+        &self.timeout_actions
     }
     /// <p>Total number of Actions that have failed.</p>
     pub fn failed_actions(mut self, input: i32) -> Self {
@@ -116,6 +124,10 @@ impl WorkflowRunStatisticsBuilder {
         self.failed_actions = input;
         self
     }
+    /// <p>Total number of Actions that have failed.</p>
+    pub fn get_failed_actions(&self) -> &::std::option::Option<i32> {
+        &self.failed_actions
+    }
     /// <p>Total number of Actions that have stopped.</p>
     pub fn stopped_actions(mut self, input: i32) -> Self {
         self.stopped_actions = ::std::option::Option::Some(input);
@@ -125,6 +137,10 @@ impl WorkflowRunStatisticsBuilder {
     pub fn set_stopped_actions(mut self, input: ::std::option::Option<i32>) -> Self {
         self.stopped_actions = input;
         self
+    }
+    /// <p>Total number of Actions that have stopped.</p>
+    pub fn get_stopped_actions(&self) -> &::std::option::Option<i32> {
+        &self.stopped_actions
     }
     /// <p>Total number of Actions that have succeeded.</p>
     pub fn succeeded_actions(mut self, input: i32) -> Self {
@@ -136,6 +152,10 @@ impl WorkflowRunStatisticsBuilder {
         self.succeeded_actions = input;
         self
     }
+    /// <p>Total number of Actions that have succeeded.</p>
+    pub fn get_succeeded_actions(&self) -> &::std::option::Option<i32> {
+        &self.succeeded_actions
+    }
     /// <p>Total number Actions in running state.</p>
     pub fn running_actions(mut self, input: i32) -> Self {
         self.running_actions = ::std::option::Option::Some(input);
@@ -145,6 +165,10 @@ impl WorkflowRunStatisticsBuilder {
     pub fn set_running_actions(mut self, input: ::std::option::Option<i32>) -> Self {
         self.running_actions = input;
         self
+    }
+    /// <p>Total number Actions in running state.</p>
+    pub fn get_running_actions(&self) -> &::std::option::Option<i32> {
+        &self.running_actions
     }
     /// <p>Indicates the count of job runs in the ERROR state in the workflow run.</p>
     pub fn errored_actions(mut self, input: i32) -> Self {
@@ -156,6 +180,10 @@ impl WorkflowRunStatisticsBuilder {
         self.errored_actions = input;
         self
     }
+    /// <p>Indicates the count of job runs in the ERROR state in the workflow run.</p>
+    pub fn get_errored_actions(&self) -> &::std::option::Option<i32> {
+        &self.errored_actions
+    }
     /// <p>Indicates the count of job runs in WAITING state in the workflow run.</p>
     pub fn waiting_actions(mut self, input: i32) -> Self {
         self.waiting_actions = ::std::option::Option::Some(input);
@@ -165,6 +193,10 @@ impl WorkflowRunStatisticsBuilder {
     pub fn set_waiting_actions(mut self, input: ::std::option::Option<i32>) -> Self {
         self.waiting_actions = input;
         self
+    }
+    /// <p>Indicates the count of job runs in WAITING state in the workflow run.</p>
+    pub fn get_waiting_actions(&self) -> &::std::option::Option<i32> {
+        &self.waiting_actions
     }
     /// Consumes the builder and constructs a [`WorkflowRunStatistics`](crate::types::WorkflowRunStatistics).
     pub fn build(self) -> crate::types::WorkflowRunStatistics {

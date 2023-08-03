@@ -78,6 +78,10 @@ impl DescribeEntityOutputBuilder {
         self.entity_type = input;
         self
     }
+    /// <p>The named type of the entity, in the format of <code>EntityType@Version</code>.</p>
+    pub fn get_entity_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_type
+    }
     /// <p>The identifier of the entity, in the format of <code>EntityId@RevisionId</code>.</p>
     pub fn entity_identifier(
         mut self,
@@ -94,6 +98,10 @@ impl DescribeEntityOutputBuilder {
         self.entity_identifier = input;
         self
     }
+    /// <p>The identifier of the entity, in the format of <code>EntityId@RevisionId</code>.</p>
+    pub fn get_entity_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_identifier
+    }
     /// <p>The ARN associated to the unique identifier for the entity referenced in this request.</p>
     pub fn entity_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_arn = ::std::option::Option::Some(input.into());
@@ -103,6 +111,10 @@ impl DescribeEntityOutputBuilder {
     pub fn set_entity_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entity_arn = input;
         self
+    }
+    /// <p>The ARN associated to the unique identifier for the entity referenced in this request.</p>
+    pub fn get_entity_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_arn
     }
     /// <p>The last modified date of the entity, in ISO 8601 format (2018-02-27T13:45:22Z).</p>
     pub fn last_modified_date(
@@ -120,6 +132,10 @@ impl DescribeEntityOutputBuilder {
         self.last_modified_date = input;
         self
     }
+    /// <p>The last modified date of the entity, in ISO 8601 format (2018-02-27T13:45:22Z).</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_date
+    }
     /// <p>This stringified JSON object includes the details of the entity.</p>
     pub fn details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.details = ::std::option::Option::Some(input.into());
@@ -129,6 +145,10 @@ impl DescribeEntityOutputBuilder {
     pub fn set_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.details = input;
         self
+    }
+    /// <p>This stringified JSON object includes the details of the entity.</p>
+    pub fn get_details(&self) -> &::std::option::Option<::std::string::String> {
+        &self.details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -56,6 +56,12 @@ impl GetResolverQueryLogConfigAssociationOutputBuilder {
         self.resolver_query_log_config_association = input;
         self
     }
+    /// <p>Information about the Resolver query logging configuration association that you specified in a <code>GetQueryLogConfigAssociation</code> request.</p>
+    pub fn get_resolver_query_log_config_association(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResolverQueryLogConfigAssociation> {
+        &self.resolver_query_log_config_association
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

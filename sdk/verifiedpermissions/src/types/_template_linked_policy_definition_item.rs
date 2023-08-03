@@ -63,6 +63,10 @@ impl TemplateLinkedPolicyDefinitionItemBuilder {
         self.policy_template_id = input;
         self
     }
+    /// <p>The unique identifier of the policy template used to create this policy.</p>
+    pub fn get_policy_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_template_id
+    }
     /// <p>The principal associated with this template-linked policy. Verified Permissions substitutes this principal for the <code>?principal</code> placeholder in the policy template when it evaluates an authorization request.</p>
     pub fn principal(mut self, input: crate::types::EntityIdentifier) -> Self {
         self.principal = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl TemplateLinkedPolicyDefinitionItemBuilder {
         self.principal = input;
         self
     }
+    /// <p>The principal associated with this template-linked policy. Verified Permissions substitutes this principal for the <code>?principal</code> placeholder in the policy template when it evaluates an authorization request.</p>
+    pub fn get_principal(&self) -> &::std::option::Option<crate::types::EntityIdentifier> {
+        &self.principal
+    }
     /// <p>The resource associated with this template-linked policy. Verified Permissions substitutes this resource for the <code>?resource</code> placeholder in the policy template when it evaluates an authorization request.</p>
     pub fn resource(mut self, input: crate::types::EntityIdentifier) -> Self {
         self.resource = ::std::option::Option::Some(input);
@@ -88,6 +96,10 @@ impl TemplateLinkedPolicyDefinitionItemBuilder {
     ) -> Self {
         self.resource = input;
         self
+    }
+    /// <p>The resource associated with this template-linked policy. Verified Permissions substitutes this resource for the <code>?resource</code> placeholder in the policy template when it evaluates an authorization request.</p>
+    pub fn get_resource(&self) -> &::std::option::Option<crate::types::EntityIdentifier> {
+        &self.resource
     }
     /// Consumes the builder and constructs a [`TemplateLinkedPolicyDefinitionItem`](crate::types::TemplateLinkedPolicyDefinitionItem).
     pub fn build(self) -> crate::types::TemplateLinkedPolicyDefinitionItem {

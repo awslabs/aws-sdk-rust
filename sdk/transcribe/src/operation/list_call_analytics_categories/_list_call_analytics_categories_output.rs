@@ -54,6 +54,10 @@ impl ListCallAnalyticsCategoriesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `categories`.
     ///
     /// To override the contents of this collection use [`set_categories`](Self::set_categories).
@@ -72,6 +76,12 @@ impl ListCallAnalyticsCategoriesOutputBuilder {
     ) -> Self {
         self.categories = input;
         self
+    }
+    /// <p>Provides detailed information about your Call Analytics categories, including all the rules associated with each category.</p>
+    pub fn get_categories(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CategoryProperties>> {
+        &self.categories
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

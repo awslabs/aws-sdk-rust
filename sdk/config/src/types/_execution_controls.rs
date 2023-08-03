@@ -43,6 +43,10 @@ impl ExecutionControlsBuilder {
         self.ssm_controls = input;
         self
     }
+    /// <p>A SsmControls object.</p>
+    pub fn get_ssm_controls(&self) -> &::std::option::Option<crate::types::SsmControls> {
+        &self.ssm_controls
+    }
     /// Consumes the builder and constructs a [`ExecutionControls`](crate::types::ExecutionControls).
     pub fn build(self) -> crate::types::ExecutionControls {
         crate::types::ExecutionControls {

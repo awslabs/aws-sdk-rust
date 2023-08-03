@@ -36,6 +36,10 @@ impl DeleteNotebookInstanceLifecycleConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteNotebookInstanceLifecycleConfig as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_notebook_instance_lifecycle_config::builders::DeleteNotebookInstanceLifecycleConfigInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -109,5 +113,11 @@ impl DeleteNotebookInstanceLifecycleConfigFluentBuilder {
             .inner
             .set_notebook_instance_lifecycle_config_name(input);
         self
+    }
+    /// <p>The name of the lifecycle configuration to delete.</p>
+    pub fn get_notebook_instance_lifecycle_config_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_notebook_instance_lifecycle_config_name()
     }
 }

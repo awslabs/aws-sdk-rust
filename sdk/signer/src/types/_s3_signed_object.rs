@@ -48,6 +48,10 @@ impl S3SignedObjectBuilder {
         self.bucket_name = input;
         self
     }
+    /// <p>Name of the S3 bucket.</p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_name
+    }
     /// <p>Key name that uniquely identifies a signed code image in your bucket.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl S3SignedObjectBuilder {
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
+    }
+    /// <p>Key name that uniquely identifies a signed code image in your bucket.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
     }
     /// Consumes the builder and constructs a [`S3SignedObject`](crate::types::S3SignedObject).
     pub fn build(self) -> crate::types::S3SignedObject {

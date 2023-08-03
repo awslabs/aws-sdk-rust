@@ -70,6 +70,10 @@ impl AttendeeBuilder {
         self.external_user_id = input;
         self
     }
+    /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
+    pub fn get_external_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.external_user_id
+    }
     /// <p>The Amazon Chime SDK attendee ID.</p>
     pub fn attendee_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attendee_id = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl AttendeeBuilder {
         self.attendee_id = input;
         self
     }
+    /// <p>The Amazon Chime SDK attendee ID.</p>
+    pub fn get_attendee_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attendee_id
+    }
     /// <p>The join token used by the Amazon Chime SDK attendee.</p>
     pub fn join_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.join_token = ::std::option::Option::Some(input.into());
@@ -89,6 +97,10 @@ impl AttendeeBuilder {
     pub fn set_join_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.join_token = input;
         self
+    }
+    /// <p>The join token used by the Amazon Chime SDK attendee.</p>
+    pub fn get_join_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.join_token
     }
     /// Consumes the builder and constructs a [`Attendee`](crate::types::Attendee).
     pub fn build(self) -> crate::types::Attendee {

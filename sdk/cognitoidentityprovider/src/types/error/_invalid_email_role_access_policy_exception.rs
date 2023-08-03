@@ -70,6 +70,10 @@ impl InvalidEmailRoleAccessPolicyExceptionBuilder {
         self.message = input;
         self
     }
+    /// <p>The message returned when you have an unverified email address or the identity policy isn't set on an email address that Amazon Cognito can access.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);

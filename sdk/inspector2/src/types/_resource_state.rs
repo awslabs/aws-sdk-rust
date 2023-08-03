@@ -64,6 +64,10 @@ impl ResourceStateBuilder {
         self.ec2 = input;
         self
     }
+    /// <p>An object detailing the state of Amazon Inspector scanning for Amazon EC2 resources.</p>
+    pub fn get_ec2(&self) -> &::std::option::Option<crate::types::State> {
+        &self.ec2
+    }
     /// <p>An object detailing the state of Amazon Inspector scanning for Amazon ECR resources.</p>
     pub fn ecr(mut self, input: crate::types::State) -> Self {
         self.ecr = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl ResourceStateBuilder {
     pub fn set_ecr(mut self, input: ::std::option::Option<crate::types::State>) -> Self {
         self.ecr = input;
         self
+    }
+    /// <p>An object detailing the state of Amazon Inspector scanning for Amazon ECR resources.</p>
+    pub fn get_ecr(&self) -> &::std::option::Option<crate::types::State> {
+        &self.ecr
     }
     /// <p>An object that described the state of Amazon Inspector scans for an account.</p>
     pub fn lambda(mut self, input: crate::types::State) -> Self {
@@ -85,6 +93,10 @@ impl ResourceStateBuilder {
         self
     }
     /// <p>An object that described the state of Amazon Inspector scans for an account.</p>
+    pub fn get_lambda(&self) -> &::std::option::Option<crate::types::State> {
+        &self.lambda
+    }
+    /// <p>An object that described the state of Amazon Inspector scans for an account.</p>
     pub fn lambda_code(mut self, input: crate::types::State) -> Self {
         self.lambda_code = ::std::option::Option::Some(input);
         self
@@ -93,6 +105,10 @@ impl ResourceStateBuilder {
     pub fn set_lambda_code(mut self, input: ::std::option::Option<crate::types::State>) -> Self {
         self.lambda_code = input;
         self
+    }
+    /// <p>An object that described the state of Amazon Inspector scans for an account.</p>
+    pub fn get_lambda_code(&self) -> &::std::option::Option<crate::types::State> {
+        &self.lambda_code
     }
     /// Consumes the builder and constructs a [`ResourceState`](crate::types::ResourceState).
     pub fn build(self) -> crate::types::ResourceState {

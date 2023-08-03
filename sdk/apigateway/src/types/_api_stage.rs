@@ -64,6 +64,10 @@ impl ApiStageBuilder {
         self.api_id = input;
         self
     }
+    /// <p>API Id of the associated API stage in a usage plan.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_id
+    }
     /// <p>API stage name of the associated API stage in a usage plan.</p>
     pub fn stage(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl ApiStageBuilder {
     pub fn set_stage(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stage = input;
         self
+    }
+    /// <p>API stage name of the associated API stage in a usage plan.</p>
+    pub fn get_stage(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stage
     }
     /// Adds a key-value pair to `throttle`.
     ///
@@ -98,6 +106,14 @@ impl ApiStageBuilder {
     ) -> Self {
         self.throttle = input;
         self
+    }
+    /// <p>Map containing method level throttling information for API stage in a usage plan.</p>
+    pub fn get_throttle(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::ThrottleSettings>,
+    > {
+        &self.throttle
     }
     /// Consumes the builder and constructs a [`ApiStage`](crate::types::ApiStage).
     pub fn build(self) -> crate::types::ApiStage {

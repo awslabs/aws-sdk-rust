@@ -53,6 +53,12 @@ impl UpdateAccessLogSubscriptionInputBuilder {
         self.access_log_subscription_identifier = input;
         self
     }
+    /// <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
+    pub fn get_access_log_subscription_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.access_log_subscription_identifier
+    }
     /// <p>The Amazon Resource Name (ARN) of the access log destination.</p>
     pub fn destination_arn(
         mut self,
@@ -68,6 +74,10 @@ impl UpdateAccessLogSubscriptionInputBuilder {
     ) -> Self {
         self.destination_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the access log destination.</p>
+    pub fn get_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_arn
     }
     /// Consumes the builder and constructs a [`UpdateAccessLogSubscriptionInput`](crate::operation::update_access_log_subscription::UpdateAccessLogSubscriptionInput).
     pub fn build(

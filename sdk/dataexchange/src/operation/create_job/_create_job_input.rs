@@ -50,6 +50,10 @@ impl CreateJobInputBuilder {
         self.details = input;
         self
     }
+    /// <p>The details for the CreateJob request.</p>
+    pub fn get_details(&self) -> &::std::option::Option<crate::types::RequestDetails> {
+        &self.details
+    }
     /// <p>The type of job to be created.</p>
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -59,6 +63,10 @@ impl CreateJobInputBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::Type>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of job to be created.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::Type> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`CreateJobInput`](crate::operation::create_job::CreateJobInput).
     pub fn build(

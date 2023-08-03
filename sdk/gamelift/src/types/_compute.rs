@@ -128,6 +128,10 @@ impl ComputeBuilder {
         self.fleet_id = input;
         self
     }
+    /// <p>A unique identifier for the fleet that the compute is registered to.</p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the fleet that the compute is registered to.</p>
     pub fn fleet_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_arn = ::std::option::Option::Some(input.into());
@@ -137,6 +141,10 @@ impl ComputeBuilder {
     pub fn set_fleet_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the fleet that the compute is registered to.</p>
+    pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_arn
     }
     /// <p>A descriptive label that is associated with the compute resource registered to your fleet.</p>
     pub fn compute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -148,6 +156,10 @@ impl ComputeBuilder {
         self.compute_name = input;
         self
     }
+    /// <p>A descriptive label that is associated with the compute resource registered to your fleet.</p>
+    pub fn get_compute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.compute_name
+    }
     /// <p>The ARN that is assigned to the compute resource and uniquely identifies it. ARNs are unique across locations.</p>
     pub fn compute_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compute_arn = ::std::option::Option::Some(input.into());
@@ -157,6 +169,10 @@ impl ComputeBuilder {
     pub fn set_compute_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.compute_arn = input;
         self
+    }
+    /// <p>The ARN that is assigned to the compute resource and uniquely identifies it. ARNs are unique across locations.</p>
+    pub fn get_compute_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.compute_arn
     }
     /// <p>The IP address of the compute resource. Amazon GameLift requires the DNS name or IP address to manage your compute resource.</p>
     pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -168,6 +184,10 @@ impl ComputeBuilder {
         self.ip_address = input;
         self
     }
+    /// <p>The IP address of the compute resource. Amazon GameLift requires the DNS name or IP address to manage your compute resource.</p>
+    pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_address
+    }
     /// <p>The DNS name of the compute resource. Amazon GameLift requires the DNS name or IP address to manage your compute resource.</p>
     pub fn dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dns_name = ::std::option::Option::Some(input.into());
@@ -177,6 +197,10 @@ impl ComputeBuilder {
     pub fn set_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dns_name = input;
         self
+    }
+    /// <p>The DNS name of the compute resource. Amazon GameLift requires the DNS name or IP address to manage your compute resource.</p>
+    pub fn get_dns_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dns_name
     }
     /// <p>Current status of the compute. A compute must have an <code>ACTIVE</code> status to host game sessions.</p>
     pub fn compute_status(mut self, input: crate::types::ComputeStatus) -> Self {
@@ -191,6 +215,10 @@ impl ComputeBuilder {
         self.compute_status = input;
         self
     }
+    /// <p>Current status of the compute. A compute must have an <code>ACTIVE</code> status to host game sessions.</p>
+    pub fn get_compute_status(&self) -> &::std::option::Option<crate::types::ComputeStatus> {
+        &self.compute_status
+    }
     /// <p>The name of the custom location you added to the fleet that this compute resource resides in.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
@@ -200,6 +228,10 @@ impl ComputeBuilder {
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
+    }
+    /// <p>The name of the custom location you added to the fleet that this compute resource resides in.</p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
     }
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -214,6 +246,10 @@ impl ComputeBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The type of operating system on your compute resource.</p>
     pub fn operating_system(mut self, input: crate::types::OperatingSystem) -> Self {
         self.operating_system = ::std::option::Option::Some(input);
@@ -227,6 +263,10 @@ impl ComputeBuilder {
         self.operating_system = input;
         self
     }
+    /// <p>The type of operating system on your compute resource.</p>
+    pub fn get_operating_system(&self) -> &::std::option::Option<crate::types::OperatingSystem> {
+        &self.operating_system
+    }
     /// <p>The compute type that the fleet uses. A fleet can use Anywhere compute resources that you own, or use managed Amazon EC2 instances.</p>
     pub fn r#type(mut self, input: crate::types::Ec2InstanceType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -236,6 +276,10 @@ impl ComputeBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::Ec2InstanceType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The compute type that the fleet uses. A fleet can use Anywhere compute resources that you own, or use managed Amazon EC2 instances.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::Ec2InstanceType> {
+        &self.r#type
     }
     /// <p>The endpoint connection details of the Amazon GameLift SDK endpoint that your game server connects to.</p>
     pub fn game_lift_service_sdk_endpoint(
@@ -252,6 +296,12 @@ impl ComputeBuilder {
     ) -> Self {
         self.game_lift_service_sdk_endpoint = input;
         self
+    }
+    /// <p>The endpoint connection details of the Amazon GameLift SDK endpoint that your game server connects to.</p>
+    pub fn get_game_lift_service_sdk_endpoint(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.game_lift_service_sdk_endpoint
     }
     /// Consumes the builder and constructs a [`Compute`](crate::types::Compute).
     pub fn build(self) -> crate::types::Compute {

@@ -192,6 +192,10 @@ impl AppSummaryBuilder {
         self.app_id = input;
         self
     }
+    /// <p>The unique ID of the application.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// <p>The ID of the application.</p>
     pub fn imported_app_id(
         mut self,
@@ -208,6 +212,10 @@ impl AppSummaryBuilder {
         self.imported_app_id = input;
         self
     }
+    /// <p>The ID of the application.</p>
+    pub fn get_imported_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.imported_app_id
+    }
     /// <p>The name of the application.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -217,6 +225,10 @@ impl AppSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the application.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The description of the application.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -228,6 +240,10 @@ impl AppSummaryBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the application.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>Status of the application.</p>
     pub fn status(mut self, input: crate::types::AppStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -237,6 +253,10 @@ impl AppSummaryBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AppStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Status of the application.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AppStatus> {
+        &self.status
     }
     /// <p>A message related to the status of the application</p>
     pub fn status_message(
@@ -254,6 +274,10 @@ impl AppSummaryBuilder {
         self.status_message = input;
         self
     }
+    /// <p>A message related to the status of the application</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>Status of the replication configuration.</p>
     pub fn replication_configuration_status(
         mut self,
@@ -270,6 +294,12 @@ impl AppSummaryBuilder {
         self.replication_configuration_status = input;
         self
     }
+    /// <p>Status of the replication configuration.</p>
+    pub fn get_replication_configuration_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::AppReplicationConfigurationStatus> {
+        &self.replication_configuration_status
+    }
     /// <p>The replication status of the application.</p>
     pub fn replication_status(mut self, input: crate::types::AppReplicationStatus) -> Self {
         self.replication_status = ::std::option::Option::Some(input);
@@ -282,6 +312,12 @@ impl AppSummaryBuilder {
     ) -> Self {
         self.replication_status = input;
         self
+    }
+    /// <p>The replication status of the application.</p>
+    pub fn get_replication_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::AppReplicationStatus> {
+        &self.replication_status
     }
     /// <p>A message related to the replication status of the application.</p>
     pub fn replication_status_message(
@@ -299,6 +335,10 @@ impl AppSummaryBuilder {
         self.replication_status_message = input;
         self
     }
+    /// <p>A message related to the replication status of the application.</p>
+    pub fn get_replication_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_status_message
+    }
     /// <p>The timestamp of the application's most recent successful replication.</p>
     pub fn latest_replication_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.latest_replication_time = ::std::option::Option::Some(input);
@@ -311,6 +351,12 @@ impl AppSummaryBuilder {
     ) -> Self {
         self.latest_replication_time = input;
         self
+    }
+    /// <p>The timestamp of the application's most recent successful replication.</p>
+    pub fn get_latest_replication_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.latest_replication_time
     }
     /// <p>Status of the launch configuration.</p>
     pub fn launch_configuration_status(
@@ -328,6 +374,12 @@ impl AppSummaryBuilder {
         self.launch_configuration_status = input;
         self
     }
+    /// <p>Status of the launch configuration.</p>
+    pub fn get_launch_configuration_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::AppLaunchConfigurationStatus> {
+        &self.launch_configuration_status
+    }
     /// <p>The launch status of the application.</p>
     pub fn launch_status(mut self, input: crate::types::AppLaunchStatus) -> Self {
         self.launch_status = ::std::option::Option::Some(input);
@@ -340,6 +392,10 @@ impl AppSummaryBuilder {
     ) -> Self {
         self.launch_status = input;
         self
+    }
+    /// <p>The launch status of the application.</p>
+    pub fn get_launch_status(&self) -> &::std::option::Option<crate::types::AppLaunchStatus> {
+        &self.launch_status
     }
     /// <p>A message related to the launch status of the application.</p>
     pub fn launch_status_message(
@@ -357,6 +413,10 @@ impl AppSummaryBuilder {
         self.launch_status_message = input;
         self
     }
+    /// <p>A message related to the launch status of the application.</p>
+    pub fn get_launch_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch_status_message
+    }
     /// <p>Details about the latest launch of the application.</p>
     pub fn launch_details(mut self, input: crate::types::LaunchDetails) -> Self {
         self.launch_details = ::std::option::Option::Some(input);
@@ -369,6 +429,10 @@ impl AppSummaryBuilder {
     ) -> Self {
         self.launch_details = input;
         self
+    }
+    /// <p>Details about the latest launch of the application.</p>
+    pub fn get_launch_details(&self) -> &::std::option::Option<crate::types::LaunchDetails> {
+        &self.launch_details
     }
     /// <p>The creation time of the application.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -383,6 +447,10 @@ impl AppSummaryBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The creation time of the application.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The last modified time of the application.</p>
     pub fn last_modified(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified = ::std::option::Option::Some(input);
@@ -396,6 +464,10 @@ impl AppSummaryBuilder {
         self.last_modified = input;
         self
     }
+    /// <p>The last modified time of the application.</p>
+    pub fn get_last_modified(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified
+    }
     /// <p>The name of the service role in the customer's account used by Server Migration Service.</p>
     pub fn role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_name = ::std::option::Option::Some(input.into());
@@ -405,6 +477,10 @@ impl AppSummaryBuilder {
     pub fn set_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_name = input;
         self
+    }
+    /// <p>The name of the service role in the customer's account used by Server Migration Service.</p>
+    pub fn get_role_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_name
     }
     /// <p>The number of server groups present in the application.</p>
     pub fn total_server_groups(mut self, input: i32) -> Self {
@@ -416,6 +492,10 @@ impl AppSummaryBuilder {
         self.total_server_groups = input;
         self
     }
+    /// <p>The number of server groups present in the application.</p>
+    pub fn get_total_server_groups(&self) -> &::std::option::Option<i32> {
+        &self.total_server_groups
+    }
     /// <p>The number of servers present in the application.</p>
     pub fn total_servers(mut self, input: i32) -> Self {
         self.total_servers = ::std::option::Option::Some(input);
@@ -425,6 +505,10 @@ impl AppSummaryBuilder {
     pub fn set_total_servers(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_servers = input;
         self
+    }
+    /// <p>The number of servers present in the application.</p>
+    pub fn get_total_servers(&self) -> &::std::option::Option<i32> {
+        &self.total_servers
     }
     /// Consumes the builder and constructs a [`AppSummary`](crate::types::AppSummary).
     pub fn build(self) -> crate::types::AppSummary {

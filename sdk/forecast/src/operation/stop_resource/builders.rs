@@ -47,6 +47,10 @@ impl StopResourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StopResource as a reference.
+    pub fn as_input(&self) -> &crate::operation::stop_resource::builders::StopResourceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,5 +132,9 @@ impl StopResourceFluentBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) that identifies the resource to stop. The supported ARNs are <code>DatasetImportJobArn</code>, <code>PredictorArn</code>, <code>PredictorBacktestExportJobArn</code>, <code>ForecastArn</code>, <code>ForecastExportJobArn</code>, <code>ExplainabilityArn</code>, and <code>ExplainabilityExportArn</code>. </p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
     }
 }

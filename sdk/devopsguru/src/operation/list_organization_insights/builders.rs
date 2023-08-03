@@ -36,6 +36,13 @@ impl ListOrganizationInsightsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListOrganizationInsights as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_organization_insights::builders::ListOrganizationInsightsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +145,12 @@ impl ListOrganizationInsightsFluentBuilder {
         self.inner = self.inner.set_status_filter(input);
         self
     }
+    /// <p> A filter used by <code>ListInsights</code> to specify which insights to return. </p>
+    pub fn get_status_filter(
+        &self,
+    ) -> &::std::option::Option<crate::types::ListInsightsStatusFilter> {
+        self.inner.get_status_filter()
+    }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -147,6 +160,10 @@ impl ListOrganizationInsightsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// Appends an item to `AccountIds`.
     ///
@@ -164,6 +181,12 @@ impl ListOrganizationInsightsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
+    }
+    /// <p>The ID of the Amazon Web Services account. </p>
+    pub fn get_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_account_ids()
     }
     /// Appends an item to `OrganizationalUnitIds`.
     ///
@@ -185,6 +208,12 @@ impl ListOrganizationInsightsFluentBuilder {
         self.inner = self.inner.set_organizational_unit_ids(input);
         self
     }
+    /// <p>The ID of the organizational unit.</p>
+    pub fn get_organizational_unit_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_organizational_unit_ids()
+    }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -194,5 +223,9 @@ impl ListOrganizationInsightsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

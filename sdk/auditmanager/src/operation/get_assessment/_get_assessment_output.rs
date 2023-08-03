@@ -57,6 +57,10 @@ impl GetAssessmentOutputBuilder {
         self.assessment = input;
         self
     }
+    /// <p> An entity that defines the scope of audit evidence collected by Audit Manager. An Audit Manager assessment is an implementation of an Audit Manager framework. </p>
+    pub fn get_assessment(&self) -> &::std::option::Option<crate::types::Assessment> {
+        &self.assessment
+    }
     /// <p> The wrapper that contains the Audit Manager role information of the current user. This includes the role type and IAM Amazon Resource Name (ARN). </p>
     pub fn user_role(mut self, input: crate::types::Role) -> Self {
         self.user_role = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl GetAssessmentOutputBuilder {
     pub fn set_user_role(mut self, input: ::std::option::Option<crate::types::Role>) -> Self {
         self.user_role = input;
         self
+    }
+    /// <p> The wrapper that contains the Audit Manager role information of the current user. This includes the role type and IAM Amazon Resource Name (ARN). </p>
+    pub fn get_user_role(&self) -> &::std::option::Option<crate::types::Role> {
+        &self.user_role
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

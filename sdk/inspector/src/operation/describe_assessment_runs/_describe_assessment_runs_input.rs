@@ -53,6 +53,12 @@ impl DescribeAssessmentRunsInputBuilder {
         self.assessment_run_arns = input;
         self
     }
+    /// <p>The ARN that specifies the assessment run that you want to describe.</p>
+    pub fn get_assessment_run_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.assessment_run_arns
+    }
     /// Consumes the builder and constructs a [`DescribeAssessmentRunsInput`](crate::operation::describe_assessment_runs::DescribeAssessmentRunsInput).
     pub fn build(
         self,

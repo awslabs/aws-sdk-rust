@@ -36,6 +36,12 @@ impl QueryTableRowsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the QueryTableRows as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::query_table_rows::builders::QueryTableRowsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -139,6 +145,11 @@ impl QueryTableRowsFluentBuilder {
         self.inner = self.inner.set_workbook_id(input);
         self
     }
+    /// <p>The ID of the workbook whose table rows are being queried.</p>
+    /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    pub fn get_workbook_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workbook_id()
+    }
     /// <p>The ID of the table whose rows are being queried.</p>
     /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
     pub fn table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -150,6 +161,11 @@ impl QueryTableRowsFluentBuilder {
     pub fn set_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_table_id(input);
         self
+    }
+    /// <p>The ID of the table whose rows are being queried.</p>
+    /// <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
+    pub fn get_table_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_table_id()
     }
     /// <p>An object that represents a filter formula along with the id of the context row under which the filter function needs to evaluate.</p>
     pub fn filter_formula(mut self, input: crate::types::Filter) -> Self {
@@ -164,6 +180,10 @@ impl QueryTableRowsFluentBuilder {
         self.inner = self.inner.set_filter_formula(input);
         self
     }
+    /// <p>An object that represents a filter formula along with the id of the context row under which the filter function needs to evaluate.</p>
+    pub fn get_filter_formula(&self) -> &::std::option::Option<crate::types::Filter> {
+        self.inner.get_filter_formula()
+    }
     /// <p>The maximum number of rows to return in each page of the results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -173,6 +193,10 @@ impl QueryTableRowsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of rows to return in each page of the results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
     /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
@@ -185,5 +209,10 @@ impl QueryTableRowsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
+    /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

@@ -43,6 +43,12 @@ impl CopyProjectVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CopyProjectVersion as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::copy_project_version::builders::CopyProjectVersionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -139,6 +145,10 @@ impl CopyProjectVersionFluentBuilder {
         self.inner = self.inner.set_source_project_arn(input);
         self
     }
+    /// <p>The ARN of the source project in the trusting AWS account.</p>
+    pub fn get_source_project_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_project_arn()
+    }
     /// <p>The ARN of the model version in the source project that you want to copy to a destination project.</p>
     pub fn source_project_version_arn(
         mut self,
@@ -154,6 +164,10 @@ impl CopyProjectVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_source_project_version_arn(input);
         self
+    }
+    /// <p>The ARN of the model version in the source project that you want to copy to a destination project.</p>
+    pub fn get_source_project_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_project_version_arn()
     }
     /// <p>The ARN of the project in the trusted AWS account that you want to copy the model version to. </p>
     pub fn destination_project_arn(
@@ -171,6 +185,10 @@ impl CopyProjectVersionFluentBuilder {
         self.inner = self.inner.set_destination_project_arn(input);
         self
     }
+    /// <p>The ARN of the project in the trusted AWS account that you want to copy the model version to. </p>
+    pub fn get_destination_project_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_project_arn()
+    }
     /// <p>A name for the version of the model that's copied to the destination project.</p>
     pub fn version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version_name(input.into());
@@ -180,6 +198,10 @@ impl CopyProjectVersionFluentBuilder {
     pub fn set_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version_name(input);
         self
+    }
+    /// <p>A name for the version of the model that's copied to the destination project.</p>
+    pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_version_name()
     }
     /// <p>The S3 bucket and folder location where the training output for the source model version is placed.</p>
     pub fn output_config(mut self, input: crate::types::OutputConfig) -> Self {
@@ -193,6 +215,10 @@ impl CopyProjectVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_output_config(input);
         self
+    }
+    /// <p>The S3 bucket and folder location where the training output for the source model version is placed.</p>
+    pub fn get_output_config(&self) -> &::std::option::Option<crate::types::OutputConfig> {
+        self.inner.get_output_config()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -216,6 +242,14 @@ impl CopyProjectVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The key-value tags to assign to the model version. </p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
     /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
     /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p>
@@ -242,5 +276,17 @@ impl CopyProjectVersionFluentBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
         self
+    }
+    /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
+    /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p>
+    /// <ul>
+    /// <li> <p>kms:CreateGrant</p> </li>
+    /// <li> <p>kms:DescribeKey</p> </li>
+    /// <li> <p>kms:GenerateDataKey</p> </li>
+    /// <li> <p>kms:Decrypt</p> </li>
+    /// </ul>
+    /// <p>If you don't specify a value for <code>KmsKeyId</code>, images copied into the service are encrypted using a key that AWS owns and manages.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key_id()
     }
 }

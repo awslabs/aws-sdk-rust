@@ -58,6 +58,10 @@ impl ListTrafficDistributionGroupsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `traffic_distribution_group_summary_list`.
     ///
     /// To override the contents of this collection use [`set_traffic_distribution_group_summary_list`](Self::set_traffic_distribution_group_summary_list).
@@ -83,6 +87,13 @@ impl ListTrafficDistributionGroupsOutputBuilder {
     ) -> Self {
         self.traffic_distribution_group_summary_list = input;
         self
+    }
+    /// <p>A list of traffic distribution groups.</p>
+    pub fn get_traffic_distribution_group_summary_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TrafficDistributionGroupSummary>>
+    {
+        &self.traffic_distribution_group_summary_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

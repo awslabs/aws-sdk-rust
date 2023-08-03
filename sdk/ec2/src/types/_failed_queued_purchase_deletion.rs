@@ -53,6 +53,12 @@ impl FailedQueuedPurchaseDeletionBuilder {
         self.error = input;
         self
     }
+    /// <p>The error.</p>
+    pub fn get_error(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeleteQueuedReservedInstancesError> {
+        &self.error
+    }
     /// <p>The ID of the Reserved Instance.</p>
     pub fn reserved_instances_id(
         mut self,
@@ -68,6 +74,10 @@ impl FailedQueuedPurchaseDeletionBuilder {
     ) -> Self {
         self.reserved_instances_id = input;
         self
+    }
+    /// <p>The ID of the Reserved Instance.</p>
+    pub fn get_reserved_instances_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reserved_instances_id
     }
     /// Consumes the builder and constructs a [`FailedQueuedPurchaseDeletion`](crate::types::FailedQueuedPurchaseDeletion).
     pub fn build(self) -> crate::types::FailedQueuedPurchaseDeletion {

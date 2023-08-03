@@ -42,6 +42,12 @@ impl AttachLoadBalancersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AttachLoadBalancers as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::attach_load_balancers::builders::AttachLoadBalancersInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +144,10 @@ impl AttachLoadBalancersFluentBuilder {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_auto_scaling_group_name()
+    }
     /// Appends an item to `LoadBalancerNames`.
     ///
     /// To override the contents of this collection use [`set_load_balancer_names`](Self::set_load_balancer_names).
@@ -157,5 +167,11 @@ impl AttachLoadBalancersFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_load_balancer_names(input);
         self
+    }
+    /// <p>The names of the load balancers. You can specify up to 10 load balancers.</p>
+    pub fn get_load_balancer_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_load_balancer_names()
     }
 }

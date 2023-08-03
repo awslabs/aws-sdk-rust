@@ -41,6 +41,10 @@ impl StopRxNormInferenceJobInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The identifier of the job.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// Consumes the builder and constructs a [`StopRxNormInferenceJobInput`](crate::operation::stop_rx_norm_inference_job::StopRxNormInferenceJobInput).
     pub fn build(
         self,

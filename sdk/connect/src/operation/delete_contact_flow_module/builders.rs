@@ -37,6 +37,13 @@ impl DeleteContactFlowModuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteContactFlowModule as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_contact_flow_module::builders::DeleteContactFlowModuleInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl DeleteContactFlowModuleFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>The identifier of the flow module.</p>
     pub fn contact_flow_module_id(
         mut self,
@@ -142,5 +153,9 @@ impl DeleteContactFlowModuleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_contact_flow_module_id(input);
         self
+    }
+    /// <p>The identifier of the flow module.</p>
+    pub fn get_contact_flow_module_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_contact_flow_module_id()
     }
 }

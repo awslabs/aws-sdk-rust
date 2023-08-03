@@ -36,6 +36,10 @@ impl ChangeServerLifeCycleStateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ChangeServerLifeCycleState as a reference.
+    pub fn as_input(&self) -> &crate::operation::change_server_life_cycle_state::builders::ChangeServerLifeCycleStateInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl ChangeServerLifeCycleStateFluentBuilder {
         self.inner = self.inner.set_source_server_id(input);
         self
     }
+    /// <p>The request to change the source server migration lifecycle state by source server ID.</p>
+    pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_server_id()
+    }
     /// <p>The request to change the source server migration lifecycle state.</p>
     pub fn life_cycle(
         mut self,
@@ -148,6 +156,12 @@ impl ChangeServerLifeCycleStateFluentBuilder {
         self.inner = self.inner.set_life_cycle(input);
         self
     }
+    /// <p>The request to change the source server migration lifecycle state.</p>
+    pub fn get_life_cycle(
+        &self,
+    ) -> &::std::option::Option<crate::types::ChangeServerLifeCycleStateSourceServerLifecycle> {
+        self.inner.get_life_cycle()
+    }
     /// <p>The request to change the source server migration account ID.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());
@@ -157,5 +171,9 @@ impl ChangeServerLifeCycleStateFluentBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_id(input);
         self
+    }
+    /// <p>The request to change the source server migration account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
     }
 }

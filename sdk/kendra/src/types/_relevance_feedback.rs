@@ -48,6 +48,10 @@ impl RelevanceFeedbackBuilder {
         self.result_id = input;
         self
     }
+    /// <p>The identifier of the search result that the user provided relevance feedback for.</p>
+    pub fn get_result_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.result_id
+    }
     /// <p>Whether the document was relevant or not relevant to the search.</p>
     pub fn relevance_value(mut self, input: crate::types::RelevanceType) -> Self {
         self.relevance_value = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl RelevanceFeedbackBuilder {
     ) -> Self {
         self.relevance_value = input;
         self
+    }
+    /// <p>Whether the document was relevant or not relevant to the search.</p>
+    pub fn get_relevance_value(&self) -> &::std::option::Option<crate::types::RelevanceType> {
+        &self.relevance_value
     }
     /// Consumes the builder and constructs a [`RelevanceFeedback`](crate::types::RelevanceFeedback).
     pub fn build(self) -> crate::types::RelevanceFeedback {

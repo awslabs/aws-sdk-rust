@@ -104,6 +104,10 @@ impl CreateEventDestinationInputBuilder {
         self.configuration_set_name = input;
         self
     }
+    /// <p>Either the name of the configuration set or the configuration set ARN to apply event logging to. The ConfigurateSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_set_name
+    }
     /// <p>The name that identifies the event destination.</p>
     pub fn event_destination_name(
         mut self,
@@ -119,6 +123,10 @@ impl CreateEventDestinationInputBuilder {
     ) -> Self {
         self.event_destination_name = input;
         self
+    }
+    /// <p>The name that identifies the event destination.</p>
+    pub fn get_event_destination_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_destination_name
     }
     /// Appends an item to `matching_event_types`.
     ///
@@ -139,6 +147,12 @@ impl CreateEventDestinationInputBuilder {
         self.matching_event_types = input;
         self
     }
+    /// <p>An array of event types that determine which events to log. If "ALL" is used, then Amazon Pinpoint logs every event type.</p>
+    pub fn get_matching_event_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventType>> {
+        &self.matching_event_types
+    }
     /// <p>An object that contains information about an event destination for logging to Amazon CloudWatch logs.</p>
     pub fn cloud_watch_logs_destination(
         mut self,
@@ -154,6 +168,12 @@ impl CreateEventDestinationInputBuilder {
     ) -> Self {
         self.cloud_watch_logs_destination = input;
         self
+    }
+    /// <p>An object that contains information about an event destination for logging to Amazon CloudWatch logs.</p>
+    pub fn get_cloud_watch_logs_destination(
+        &self,
+    ) -> &::std::option::Option<crate::types::CloudWatchLogsDestination> {
+        &self.cloud_watch_logs_destination
     }
     /// <p>An object that contains information about an event destination for logging to Amazon Kinesis Data Firehose.</p>
     pub fn kinesis_firehose_destination(
@@ -171,6 +191,12 @@ impl CreateEventDestinationInputBuilder {
         self.kinesis_firehose_destination = input;
         self
     }
+    /// <p>An object that contains information about an event destination for logging to Amazon Kinesis Data Firehose.</p>
+    pub fn get_kinesis_firehose_destination(
+        &self,
+    ) -> &::std::option::Option<crate::types::KinesisFirehoseDestination> {
+        &self.kinesis_firehose_destination
+    }
     /// <p>An object that contains information about an event destination for logging to Amazon SNS.</p>
     pub fn sns_destination(mut self, input: crate::types::SnsDestination) -> Self {
         self.sns_destination = ::std::option::Option::Some(input);
@@ -184,6 +210,10 @@ impl CreateEventDestinationInputBuilder {
         self.sns_destination = input;
         self
     }
+    /// <p>An object that contains information about an event destination for logging to Amazon SNS.</p>
+    pub fn get_sns_destination(&self) -> &::std::option::Option<crate::types::SnsDestination> {
+        &self.sns_destination
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -193,6 +223,10 @@ impl CreateEventDestinationInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateEventDestinationInput`](crate::operation::create_event_destination::CreateEventDestinationInput).
     pub fn build(

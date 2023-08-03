@@ -48,6 +48,10 @@ impl ConnectDirectoryOutputBuilder {
         self.directory_id = input;
         self
     }
+    /// <p>The identifier of the new directory.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -59,6 +59,10 @@ impl DescribeDbClusterBacktracksOutputBuilder {
         self.marker = input;
         self
     }
+    /// <p>A pagination token that can be used in a later <code>DescribeDBClusterBacktracks</code> request.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// Appends an item to `db_cluster_backtracks`.
     ///
     /// To override the contents of this collection use [`set_db_cluster_backtracks`](Self::set_db_cluster_backtracks).
@@ -77,6 +81,12 @@ impl DescribeDbClusterBacktracksOutputBuilder {
     ) -> Self {
         self.db_cluster_backtracks = input;
         self
+    }
+    /// <p>Contains a list of backtracks for the user.</p>
+    pub fn get_db_cluster_backtracks(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DbClusterBacktrack>> {
+        &self.db_cluster_backtracks
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

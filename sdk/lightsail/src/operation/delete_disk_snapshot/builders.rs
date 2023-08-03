@@ -38,6 +38,12 @@ impl DeleteDiskSnapshotFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteDiskSnapshot as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_disk_snapshot::builders::DeleteDiskSnapshotInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,5 +139,9 @@ impl DeleteDiskSnapshotFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_disk_snapshot_name(input);
         self
+    }
+    /// <p>The name of the disk snapshot you want to delete (e.g., <code>my-disk-snapshot</code>).</p>
+    pub fn get_disk_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_disk_snapshot_name()
     }
 }

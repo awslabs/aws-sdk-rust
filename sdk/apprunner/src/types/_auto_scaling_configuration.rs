@@ -123,6 +123,12 @@ impl AutoScalingConfigurationBuilder {
         self.auto_scaling_configuration_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of this auto scaling configuration.</p>
+    pub fn get_auto_scaling_configuration_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.auto_scaling_configuration_arn
+    }
     /// <p>The customer-provided auto scaling configuration name. It can be used in multiple revisions of a configuration.</p>
     pub fn auto_scaling_configuration_name(
         mut self,
@@ -139,6 +145,12 @@ impl AutoScalingConfigurationBuilder {
         self.auto_scaling_configuration_name = input;
         self
     }
+    /// <p>The customer-provided auto scaling configuration name. It can be used in multiple revisions of a configuration.</p>
+    pub fn get_auto_scaling_configuration_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.auto_scaling_configuration_name
+    }
     /// <p>The revision of this auto scaling configuration. It's unique among all the active configurations (<code>"Status": "ACTIVE"</code>) that share the same <code>AutoScalingConfigurationName</code>.</p>
     pub fn auto_scaling_configuration_revision(mut self, input: i32) -> Self {
         self.auto_scaling_configuration_revision = ::std::option::Option::Some(input);
@@ -152,6 +164,10 @@ impl AutoScalingConfigurationBuilder {
         self.auto_scaling_configuration_revision = input;
         self
     }
+    /// <p>The revision of this auto scaling configuration. It's unique among all the active configurations (<code>"Status": "ACTIVE"</code>) that share the same <code>AutoScalingConfigurationName</code>.</p>
+    pub fn get_auto_scaling_configuration_revision(&self) -> &::std::option::Option<i32> {
+        &self.auto_scaling_configuration_revision
+    }
     /// <p>It's set to <code>true</code> for the configuration with the highest <code>Revision</code> among all configurations that share the same <code>AutoScalingConfigurationName</code>. It's set to <code>false</code> otherwise.</p>
     pub fn latest(mut self, input: bool) -> Self {
         self.latest = ::std::option::Option::Some(input);
@@ -161,6 +177,10 @@ impl AutoScalingConfigurationBuilder {
     pub fn set_latest(mut self, input: ::std::option::Option<bool>) -> Self {
         self.latest = input;
         self
+    }
+    /// <p>It's set to <code>true</code> for the configuration with the highest <code>Revision</code> among all configurations that share the same <code>AutoScalingConfigurationName</code>. It's set to <code>false</code> otherwise.</p>
+    pub fn get_latest(&self) -> &::std::option::Option<bool> {
+        &self.latest
     }
     /// <p>The current state of the auto scaling configuration. If the status of a configuration revision is <code>INACTIVE</code>, it was deleted and can't be used. Inactive configuration revisions are permanently removed some time after they are deleted.</p>
     pub fn status(mut self, input: crate::types::AutoScalingConfigurationStatus) -> Self {
@@ -175,6 +195,12 @@ impl AutoScalingConfigurationBuilder {
         self.status = input;
         self
     }
+    /// <p>The current state of the auto scaling configuration. If the status of a configuration revision is <code>INACTIVE</code>, it was deleted and can't be used. Inactive configuration revisions are permanently removed some time after they are deleted.</p>
+    pub fn get_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoScalingConfigurationStatus> {
+        &self.status
+    }
     /// <p>The maximum number of concurrent requests that an instance processes. If the number of concurrent requests exceeds this limit, App Runner scales the service up.</p>
     pub fn max_concurrency(mut self, input: i32) -> Self {
         self.max_concurrency = ::std::option::Option::Some(input);
@@ -184,6 +210,10 @@ impl AutoScalingConfigurationBuilder {
     pub fn set_max_concurrency(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_concurrency = input;
         self
+    }
+    /// <p>The maximum number of concurrent requests that an instance processes. If the number of concurrent requests exceeds this limit, App Runner scales the service up.</p>
+    pub fn get_max_concurrency(&self) -> &::std::option::Option<i32> {
+        &self.max_concurrency
     }
     /// <p>The minimum number of instances that App Runner provisions for a service. The service always has at least <code>MinSize</code> provisioned instances. Some of them actively serve traffic. The rest of them (provisioned and inactive instances) are a cost-effective compute capacity reserve and are ready to be quickly activated. You pay for memory usage of all the provisioned instances. You pay for CPU usage of only the active subset.</p>
     /// <p>App Runner temporarily doubles the number of provisioned instances during deployments, to maintain the same capacity for both old and new code.</p>
@@ -197,6 +227,11 @@ impl AutoScalingConfigurationBuilder {
         self.min_size = input;
         self
     }
+    /// <p>The minimum number of instances that App Runner provisions for a service. The service always has at least <code>MinSize</code> provisioned instances. Some of them actively serve traffic. The rest of them (provisioned and inactive instances) are a cost-effective compute capacity reserve and are ready to be quickly activated. You pay for memory usage of all the provisioned instances. You pay for CPU usage of only the active subset.</p>
+    /// <p>App Runner temporarily doubles the number of provisioned instances during deployments, to maintain the same capacity for both old and new code.</p>
+    pub fn get_min_size(&self) -> &::std::option::Option<i32> {
+        &self.min_size
+    }
     /// <p>The maximum number of instances that a service scales up to. At most <code>MaxSize</code> instances actively serve traffic for your service.</p>
     pub fn max_size(mut self, input: i32) -> Self {
         self.max_size = ::std::option::Option::Some(input);
@@ -206,6 +241,10 @@ impl AutoScalingConfigurationBuilder {
     pub fn set_max_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_size = input;
         self
+    }
+    /// <p>The maximum number of instances that a service scales up to. At most <code>MaxSize</code> instances actively serve traffic for your service.</p>
+    pub fn get_max_size(&self) -> &::std::option::Option<i32> {
+        &self.max_size
     }
     /// <p>The time when the auto scaling configuration was created. It's in Unix time stamp format.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -220,6 +259,10 @@ impl AutoScalingConfigurationBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The time when the auto scaling configuration was created. It's in Unix time stamp format.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The time when the auto scaling configuration was deleted. It's in Unix time stamp format.</p>
     pub fn deleted_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.deleted_at = ::std::option::Option::Some(input);
@@ -232,6 +275,10 @@ impl AutoScalingConfigurationBuilder {
     ) -> Self {
         self.deleted_at = input;
         self
+    }
+    /// <p>The time when the auto scaling configuration was deleted. It's in Unix time stamp format.</p>
+    pub fn get_deleted_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.deleted_at
     }
     /// Consumes the builder and constructs a [`AutoScalingConfiguration`](crate::types::AutoScalingConfiguration).
     pub fn build(self) -> crate::types::AutoScalingConfiguration {

@@ -46,6 +46,10 @@ impl CreateNodegroupOutputBuilder {
         self.nodegroup = input;
         self
     }
+    /// <p>The full description of your new node group.</p>
+    pub fn get_nodegroup(&self) -> &::std::option::Option<crate::types::Nodegroup> {
+        &self.nodegroup
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

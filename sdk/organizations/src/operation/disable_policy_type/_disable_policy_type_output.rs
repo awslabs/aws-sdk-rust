@@ -47,6 +47,10 @@ impl DisablePolicyTypeOutputBuilder {
         self.root = input;
         self
     }
+    /// <p>A structure that shows the root with the updated list of enabled policy types.</p>
+    pub fn get_root(&self) -> &::std::option::Option<crate::types::Root> {
+        &self.root
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

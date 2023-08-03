@@ -95,6 +95,10 @@ impl GetMulticastGroupOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The arn of the multicast group.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The ID of the multicast group.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -104,6 +108,10 @@ impl GetMulticastGroupOutputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The ID of the multicast group.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The name of the multicast group.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -115,6 +123,10 @@ impl GetMulticastGroupOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the multicast group.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the new resource.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -125,6 +137,10 @@ impl GetMulticastGroupOutputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the new resource.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The status of the multicast group.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -134,6 +150,10 @@ impl GetMulticastGroupOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the multicast group.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>The LoRaWAN information that is to be returned from getting multicast group information.</p>
     pub fn lo_ra_wan(mut self, input: crate::types::LoRaWanMulticastGet) -> Self {
@@ -148,6 +168,10 @@ impl GetMulticastGroupOutputBuilder {
         self.lo_ra_wan = input;
         self
     }
+    /// <p>The LoRaWAN information that is to be returned from getting multicast group information.</p>
+    pub fn get_lo_ra_wan(&self) -> &::std::option::Option<crate::types::LoRaWanMulticastGet> {
+        &self.lo_ra_wan
+    }
     /// <p>Created at timestamp for the resource.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -160,6 +184,10 @@ impl GetMulticastGroupOutputBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>Created at timestamp for the resource.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

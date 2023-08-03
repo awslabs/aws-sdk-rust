@@ -49,6 +49,10 @@ impl ErrorDetailsBuilder {
         self.message = input;
         self
     }
+    /// <p>Detailed information about the reason that the operation failed.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The error code associated with the operation failure.</p>
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl ErrorDetailsBuilder {
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code = input;
         self
+    }
+    /// <p>The error code associated with the operation failure.</p>
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
     }
     /// Consumes the builder and constructs a [`ErrorDetails`](crate::types::ErrorDetails).
     pub fn build(self) -> crate::types::ErrorDetails {

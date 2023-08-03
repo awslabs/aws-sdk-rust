@@ -36,6 +36,10 @@ impl PutConfigurationSetDeliveryOptionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutConfigurationSetDeliveryOptions as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_configuration_set_delivery_options::builders::PutConfigurationSetDeliveryOptionsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl PutConfigurationSetDeliveryOptionsFluentBuilder {
         self.inner = self.inner.set_configuration_set_name(input);
         self
     }
+    /// <p>The name of the configuration set that you want to associate with a dedicated IP pool.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration_set_name()
+    }
     /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.</p>
     pub fn tls_policy(mut self, input: crate::types::TlsPolicy) -> Self {
         self.inner = self.inner.tls_policy(input);
@@ -115,6 +123,10 @@ impl PutConfigurationSetDeliveryOptionsFluentBuilder {
     pub fn set_tls_policy(mut self, input: ::std::option::Option<crate::types::TlsPolicy>) -> Self {
         self.inner = self.inner.set_tls_policy(input);
         self
+    }
+    /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.</p>
+    pub fn get_tls_policy(&self) -> &::std::option::Option<crate::types::TlsPolicy> {
+        self.inner.get_tls_policy()
     }
     /// <p>The name of the dedicated IP pool that you want to associate with the configuration set.</p>
     pub fn sending_pool_name(
@@ -131,5 +143,9 @@ impl PutConfigurationSetDeliveryOptionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sending_pool_name(input);
         self
+    }
+    /// <p>The name of the dedicated IP pool that you want to associate with the configuration set.</p>
+    pub fn get_sending_pool_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sending_pool_name()
     }
 }

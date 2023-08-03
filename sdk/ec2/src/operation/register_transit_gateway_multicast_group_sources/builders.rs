@@ -38,6 +38,10 @@ impl RegisterTransitGatewayMulticastGroupSourcesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RegisterTransitGatewayMulticastGroupSources as a reference.
+    pub fn as_input(&self) -> &crate::operation::register_transit_gateway_multicast_group_sources::builders::RegisterTransitGatewayMulticastGroupSourcesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -108,6 +112,12 @@ impl RegisterTransitGatewayMulticastGroupSourcesFluentBuilder {
         self.inner = self.inner.set_transit_gateway_multicast_domain_id(input);
         self
     }
+    /// <p>The ID of the transit gateway multicast domain.</p>
+    pub fn get_transit_gateway_multicast_domain_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_transit_gateway_multicast_domain_id()
+    }
     /// <p>The IP address assigned to the transit gateway multicast group.</p>
     pub fn group_ip_address(
         mut self,
@@ -123,6 +133,10 @@ impl RegisterTransitGatewayMulticastGroupSourcesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_group_ip_address(input);
         self
+    }
+    /// <p>The IP address assigned to the transit gateway multicast group.</p>
+    pub fn get_group_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group_ip_address()
     }
     /// Appends an item to `NetworkInterfaceIds`.
     ///
@@ -144,6 +158,12 @@ impl RegisterTransitGatewayMulticastGroupSourcesFluentBuilder {
         self.inner = self.inner.set_network_interface_ids(input);
         self
     }
+    /// <p>The group sources' network interface IDs to register with the transit gateway multicast group.</p>
+    pub fn get_network_interface_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_network_interface_ids()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -153,5 +173,9 @@ impl RegisterTransitGatewayMulticastGroupSourcesFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

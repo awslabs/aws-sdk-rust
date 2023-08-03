@@ -37,6 +37,12 @@ impl UpdateTagsForDomainFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateTagsForDomain as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_tags_for_domain::builders::UpdateTagsForDomainInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl UpdateTagsForDomainFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p>The domain for which you want to add or update tags.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
     /// Appends an item to `TagsToUpdate`.
     ///
     /// To override the contents of this collection use [`set_tags_to_update`](Self::set_tags_to_update).
@@ -143,5 +153,9 @@ impl UpdateTagsForDomainFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags_to_update(input);
         self
+    }
+    /// <p>A list of the tag keys and values that you want to add or update. If you specify a key that already exists, the corresponding value will be replaced.</p>
+    pub fn get_tags_to_update(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags_to_update()
     }
 }

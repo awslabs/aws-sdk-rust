@@ -64,6 +64,10 @@ impl DefaultRetentionBuilder {
         self.mode = input;
         self
     }
+    /// <p>The default Object Lock retention mode you want to apply to new objects placed in the specified bucket. Must be used with either <code>Days</code> or <code>Years</code>.</p>
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::ObjectLockRetentionMode> {
+        &self.mode
+    }
     /// <p>The number of days that you want to specify for the default retention period. Must be used with <code>Mode</code>.</p>
     pub fn days(mut self, input: i32) -> Self {
         self.days = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl DefaultRetentionBuilder {
         self.days = input;
         self
     }
+    /// <p>The number of days that you want to specify for the default retention period. Must be used with <code>Mode</code>.</p>
+    pub fn get_days(&self) -> &::std::option::Option<i32> {
+        &self.days
+    }
     /// <p>The number of years that you want to specify for the default retention period. Must be used with <code>Mode</code>.</p>
     pub fn years(mut self, input: i32) -> Self {
         self.years = ::std::option::Option::Some(input);
@@ -83,6 +91,10 @@ impl DefaultRetentionBuilder {
     pub fn set_years(mut self, input: ::std::option::Option<i32>) -> Self {
         self.years = input;
         self
+    }
+    /// <p>The number of years that you want to specify for the default retention period. Must be used with <code>Mode</code>.</p>
+    pub fn get_years(&self) -> &::std::option::Option<i32> {
+        &self.years
     }
     /// Consumes the builder and constructs a [`DefaultRetention`](crate::types::DefaultRetention).
     pub fn build(self) -> crate::types::DefaultRetention {

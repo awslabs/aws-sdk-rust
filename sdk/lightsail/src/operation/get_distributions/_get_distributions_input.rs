@@ -60,6 +60,11 @@ impl GetDistributionsInputBuilder {
         self.distribution_name = input;
         self
     }
+    /// <p>The name of the distribution for which to return information.</p>
+    /// <p>When omitted, the response includes all of your distributions in the Amazon Web Services Region where the request is made.</p>
+    pub fn get_distribution_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.distribution_name
+    }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetDistributions</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     pub fn page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -71,6 +76,11 @@ impl GetDistributionsInputBuilder {
     pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.page_token = input;
         self
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>To get a page token, perform an initial <code>GetDistributions</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.page_token
     }
     /// Consumes the builder and constructs a [`GetDistributionsInput`](crate::operation::get_distributions::GetDistributionsInput).
     pub fn build(

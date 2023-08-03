@@ -38,6 +38,12 @@ impl DescribeAlarmHistoryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeAlarmHistory as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_alarm_history::builders::DescribeAlarmHistoryInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -139,6 +145,10 @@ impl DescribeAlarmHistoryFluentBuilder {
         self.inner = self.inner.set_alarm_name(input);
         self
     }
+    /// <p>The name of the alarm.</p>
+    pub fn get_alarm_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_alarm_name()
+    }
     /// Appends an item to `AlarmTypes`.
     ///
     /// To override the contents of this collection use [`set_alarm_types`](Self::set_alarm_types).
@@ -156,6 +166,12 @@ impl DescribeAlarmHistoryFluentBuilder {
         self.inner = self.inner.set_alarm_types(input);
         self
     }
+    /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned.</p>
+    pub fn get_alarm_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmType>> {
+        self.inner.get_alarm_types()
+    }
     /// <p>The type of alarm histories to retrieve.</p>
     pub fn history_item_type(mut self, input: crate::types::HistoryItemType) -> Self {
         self.inner = self.inner.history_item_type(input);
@@ -168,6 +184,10 @@ impl DescribeAlarmHistoryFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_history_item_type(input);
         self
+    }
+    /// <p>The type of alarm histories to retrieve.</p>
+    pub fn get_history_item_type(&self) -> &::std::option::Option<crate::types::HistoryItemType> {
+        self.inner.get_history_item_type()
     }
     /// <p>The starting date to retrieve alarm history.</p>
     pub fn start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -182,6 +202,10 @@ impl DescribeAlarmHistoryFluentBuilder {
         self.inner = self.inner.set_start_date(input);
         self
     }
+    /// <p>The starting date to retrieve alarm history.</p>
+    pub fn get_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_date()
+    }
     /// <p>The ending date to retrieve alarm history.</p>
     pub fn end_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_date(input);
@@ -195,6 +219,10 @@ impl DescribeAlarmHistoryFluentBuilder {
         self.inner = self.inner.set_end_date(input);
         self
     }
+    /// <p>The ending date to retrieve alarm history.</p>
+    pub fn get_end_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_date()
+    }
     /// <p>The maximum number of alarm history records to retrieve.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.inner = self.inner.max_records(input);
@@ -204,6 +232,10 @@ impl DescribeAlarmHistoryFluentBuilder {
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_records(input);
         self
+    }
+    /// <p>The maximum number of alarm history records to retrieve.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_records()
     }
     /// <p>The token returned by a previous call to indicate that there is more data available.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -215,6 +247,10 @@ impl DescribeAlarmHistoryFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token returned by a previous call to indicate that there is more data available.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>Specified whether to return the newest or oldest alarm history first. Specify <code>TimestampDescending</code> to have the newest event history returned first, and specify <code>TimestampAscending</code> to have the oldest history returned first.</p>
     pub fn scan_by(mut self, input: crate::types::ScanBy) -> Self {
         self.inner = self.inner.scan_by(input);
@@ -224,5 +260,9 @@ impl DescribeAlarmHistoryFluentBuilder {
     pub fn set_scan_by(mut self, input: ::std::option::Option<crate::types::ScanBy>) -> Self {
         self.inner = self.inner.set_scan_by(input);
         self
+    }
+    /// <p>Specified whether to return the newest or oldest alarm history first. Specify <code>TimestampDescending</code> to have the newest event history returned first, and specify <code>TimestampAscending</code> to have the oldest history returned first.</p>
+    pub fn get_scan_by(&self) -> &::std::option::Option<crate::types::ScanBy> {
+        self.inner.get_scan_by()
     }
 }

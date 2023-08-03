@@ -43,6 +43,13 @@ impl RequestEnvironmentInfoFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RequestEnvironmentInfo as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::request_environment_info::builders::RequestEnvironmentInfoInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -143,6 +150,12 @@ impl RequestEnvironmentInfoFluentBuilder {
         self.inner = self.inner.set_environment_id(input);
         self
     }
+    /// <p>The ID of the environment of the requested data.</p>
+    /// <p>If no such environment is found, <code>RequestEnvironmentInfo</code> returns an <code>InvalidParameterValue</code> error. </p>
+    /// <p>Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_id()
+    }
     /// <p>The name of the environment of the requested data.</p>
     /// <p>If no such environment is found, <code>RequestEnvironmentInfo</code> returns an <code>InvalidParameterValue</code> error. </p>
     /// <p>Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
@@ -163,6 +176,12 @@ impl RequestEnvironmentInfoFluentBuilder {
         self.inner = self.inner.set_environment_name(input);
         self
     }
+    /// <p>The name of the environment of the requested data.</p>
+    /// <p>If no such environment is found, <code>RequestEnvironmentInfo</code> returns an <code>InvalidParameterValue</code> error. </p>
+    /// <p>Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_name()
+    }
     /// <p>The type of information to request.</p>
     pub fn info_type(mut self, input: crate::types::EnvironmentInfoType) -> Self {
         self.inner = self.inner.info_type(input);
@@ -175,5 +194,9 @@ impl RequestEnvironmentInfoFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_info_type(input);
         self
+    }
+    /// <p>The type of information to request.</p>
+    pub fn get_info_type(&self) -> &::std::option::Option<crate::types::EnvironmentInfoType> {
+        self.inner.get_info_type()
     }
 }

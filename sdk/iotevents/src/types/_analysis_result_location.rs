@@ -40,6 +40,10 @@ impl AnalysisResultLocationBuilder {
         self.path = input;
         self
     }
+    /// <p>A <a href="https://github.com/json-path/JsonPath">JsonPath</a> expression that identifies the error field in your detector model.</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
+    }
     /// Consumes the builder and constructs a [`AnalysisResultLocation`](crate::types::AnalysisResultLocation).
     pub fn build(self) -> crate::types::AnalysisResultLocation {
         crate::types::AnalysisResultLocation { path: self.path }

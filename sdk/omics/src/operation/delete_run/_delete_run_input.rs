@@ -39,6 +39,10 @@ impl DeleteRunInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The run's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`DeleteRunInput`](crate::operation::delete_run::DeleteRunInput).
     pub fn build(
         self,

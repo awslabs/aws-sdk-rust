@@ -90,6 +90,10 @@ impl OrganizationEventDetailsBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>Summary information about an Health event.</p>
     /// <p>Health events can be public or account-specific:</p>
     /// <ul>
@@ -112,6 +116,16 @@ impl OrganizationEventDetailsBuilder {
         self.event = input;
         self
     }
+    /// <p>Summary information about an Health event.</p>
+    /// <p>Health events can be public or account-specific:</p>
+    /// <ul>
+    /// <li> <p> <i>Public events</i> might be service events that are not specific to an Amazon Web Services account. For example, if there is an issue with an Amazon Web Services Region, Health provides information about the event, even if you don't use services or resources in that Region.</p> </li>
+    /// <li> <p> <i>Account-specific</i> events are specific to either your Amazon Web Services account or an account in your organization. For example, if there's an issue with Amazon Elastic Compute Cloud in a Region that you use, Health provides information about the event and the affected resources in the account.</p> </li>
+    /// </ul>
+    /// <p>You can determine if an event is public or account-specific by using the <code>eventScopeCode</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html#AWSHealth-Type-Event-eventScopeCode">eventScopeCode</a>.</p>
+    pub fn get_event(&self) -> &::std::option::Option<crate::types::Event> {
+        &self.event
+    }
     /// <p>The detailed description of the event. Included in the information returned by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetails.html">DescribeEventDetails</a> operation.</p>
     pub fn event_description(mut self, input: crate::types::EventDescription) -> Self {
         self.event_description = ::std::option::Option::Some(input);
@@ -124,6 +138,10 @@ impl OrganizationEventDetailsBuilder {
     ) -> Self {
         self.event_description = input;
         self
+    }
+    /// <p>The detailed description of the event. Included in the information returned by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetails.html">DescribeEventDetails</a> operation.</p>
+    pub fn get_event_description(&self) -> &::std::option::Option<crate::types::EventDescription> {
+        &self.event_description
     }
     /// Adds a key-value pair to `event_metadata`.
     ///
@@ -149,6 +167,14 @@ impl OrganizationEventDetailsBuilder {
     ) -> Self {
         self.event_metadata = input;
         self
+    }
+    /// <p>Additional metadata about the event.</p>
+    pub fn get_event_metadata(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.event_metadata
     }
     /// Consumes the builder and constructs a [`OrganizationEventDetails`](crate::types::OrganizationEventDetails).
     pub fn build(self) -> crate::types::OrganizationEventDetails {

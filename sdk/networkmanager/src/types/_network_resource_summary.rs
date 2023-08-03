@@ -86,6 +86,10 @@ impl NetworkResourceSummaryBuilder {
         self.registered_gateway_arn = input;
         self
     }
+    /// <p>The ARN of the gateway.</p>
+    pub fn get_registered_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registered_gateway_arn
+    }
     /// <p>The ARN of the resource.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
@@ -95,6 +99,10 @@ impl NetworkResourceSummaryBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
+    }
+    /// <p>The ARN of the resource.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// <p>The resource type.</p>
     pub fn resource_type(
@@ -112,6 +120,10 @@ impl NetworkResourceSummaryBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The resource type.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
+    }
     /// <p>Information about the resource, in JSON format. Network Manager gets this information by describing the resource using its Describe API call.</p>
     pub fn definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.definition = ::std::option::Option::Some(input.into());
@@ -121,6 +133,10 @@ impl NetworkResourceSummaryBuilder {
     pub fn set_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.definition = input;
         self
+    }
+    /// <p>Information about the resource, in JSON format. Network Manager gets this information by describing the resource using its Describe API call.</p>
+    pub fn get_definition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.definition
     }
     /// <p>The value for the Name tag.</p>
     pub fn name_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -132,6 +148,10 @@ impl NetworkResourceSummaryBuilder {
         self.name_tag = input;
         self
     }
+    /// <p>The value for the Name tag.</p>
+    pub fn get_name_tag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name_tag
+    }
     /// <p>Indicates whether this is a middlebox appliance.</p>
     pub fn is_middlebox(mut self, input: bool) -> Self {
         self.is_middlebox = ::std::option::Option::Some(input);
@@ -141,6 +161,10 @@ impl NetworkResourceSummaryBuilder {
     pub fn set_is_middlebox(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_middlebox = input;
         self
+    }
+    /// <p>Indicates whether this is a middlebox appliance.</p>
+    pub fn get_is_middlebox(&self) -> &::std::option::Option<bool> {
+        &self.is_middlebox
     }
     /// Consumes the builder and constructs a [`NetworkResourceSummary`](crate::types::NetworkResourceSummary).
     pub fn build(self) -> crate::types::NetworkResourceSummary {

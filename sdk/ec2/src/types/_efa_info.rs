@@ -40,6 +40,10 @@ impl EfaInfoBuilder {
         self.maximum_efa_interfaces = input;
         self
     }
+    /// <p>The maximum number of Elastic Fabric Adapters for the instance type.</p>
+    pub fn get_maximum_efa_interfaces(&self) -> &::std::option::Option<i32> {
+        &self.maximum_efa_interfaces
+    }
     /// Consumes the builder and constructs a [`EfaInfo`](crate::types::EfaInfo).
     pub fn build(self) -> crate::types::EfaInfo {
         crate::types::EfaInfo {

@@ -42,6 +42,12 @@ impl CreateEndpointConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateEndpointConfig as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_endpoint_config::builders::CreateEndpointConfigInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +144,10 @@ impl CreateEndpointConfigFluentBuilder {
         self.inner = self.inner.set_endpoint_config_name(input);
         self
     }
+    /// <p>The name of the endpoint configuration. You specify this name in a <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a> request. </p>
+    pub fn get_endpoint_config_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_endpoint_config_name()
+    }
     /// Appends an item to `ProductionVariants`.
     ///
     /// To override the contents of this collection use [`set_production_variants`](Self::set_production_variants).
@@ -155,6 +165,12 @@ impl CreateEndpointConfigFluentBuilder {
         self.inner = self.inner.set_production_variants(input);
         self
     }
+    /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint.</p>
+    pub fn get_production_variants(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductionVariant>> {
+        self.inner.get_production_variants()
+    }
     /// <p>Configuration to control how SageMaker captures inference data.</p>
     pub fn data_capture_config(mut self, input: crate::types::DataCaptureConfig) -> Self {
         self.inner = self.inner.data_capture_config(input);
@@ -167,6 +183,12 @@ impl CreateEndpointConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_data_capture_config(input);
         self
+    }
+    /// <p>Configuration to control how SageMaker captures inference data.</p>
+    pub fn get_data_capture_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataCaptureConfig> {
+        self.inner.get_data_capture_config()
     }
     /// Appends an item to `Tags`.
     ///
@@ -184,6 +206,10 @@ impl CreateEndpointConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
     /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.</p>
     /// <p>The KmsKeyId can be any of the following formats: </p>
@@ -219,6 +245,22 @@ impl CreateEndpointConfigFluentBuilder {
         self.inner = self.inner.set_kms_key_id(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.</p>
+    /// <p>The KmsKeyId can be any of the following formats: </p>
+    /// <ul>
+    /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+    /// <li> <p>Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+    /// <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li>
+    /// <li> <p>Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li>
+    /// </ul>
+    /// <p>The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateEndpoint</code>, <code>UpdateEndpoint</code> requests. For more information, refer to the Amazon Web Services Key Management Service section<a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html"> Using Key Policies in Amazon Web Services KMS </a> </p> <note>
+    /// <p>Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes are encrypted using a hardware module on the instance. You can't request a <code>KmsKeyId</code> when using an instance type with local storage. If any of the models that you specify in the <code>ProductionVariants</code> parameter use nitro-based instances with local storage, do not specify a value for the <code>KmsKeyId</code> parameter. If you specify a value for <code>KmsKeyId</code> when using any nitro-based instances with local storage, the call to <code>CreateEndpointConfig</code> fails.</p>
+    /// <p>For a list of instance types that support local instance storage, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
+    /// <p>For more information about local instance storage encryption, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD Instance Store Volumes</a>.</p>
+    /// </note>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key_id()
+    }
     /// <p>Specifies configuration for how an endpoint performs asynchronous inference. This is a required field in order for your Endpoint to be invoked using <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpointAsync.html">InvokeEndpointAsync</a>.</p>
     pub fn async_inference_config(mut self, input: crate::types::AsyncInferenceConfig) -> Self {
         self.inner = self.inner.async_inference_config(input);
@@ -232,6 +274,12 @@ impl CreateEndpointConfigFluentBuilder {
         self.inner = self.inner.set_async_inference_config(input);
         self
     }
+    /// <p>Specifies configuration for how an endpoint performs asynchronous inference. This is a required field in order for your Endpoint to be invoked using <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpointAsync.html">InvokeEndpointAsync</a>.</p>
+    pub fn get_async_inference_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::AsyncInferenceConfig> {
+        self.inner.get_async_inference_config()
+    }
     /// <p>A member of <code>CreateEndpointConfig</code> that enables explainers.</p>
     pub fn explainer_config(mut self, input: crate::types::ExplainerConfig) -> Self {
         self.inner = self.inner.explainer_config(input);
@@ -244,6 +292,10 @@ impl CreateEndpointConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_explainer_config(input);
         self
+    }
+    /// <p>A member of <code>CreateEndpointConfig</code> that enables explainers.</p>
+    pub fn get_explainer_config(&self) -> &::std::option::Option<crate::types::ExplainerConfig> {
+        self.inner.get_explainer_config()
     }
     /// Appends an item to `ShadowProductionVariants`.
     ///
@@ -261,5 +313,11 @@ impl CreateEndpointConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_shadow_production_variants(input);
         self
+    }
+    /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>. If you use this field, you can only specify one variant for <code>ProductionVariants</code> and one variant for <code>ShadowProductionVariants</code>.</p>
+    pub fn get_shadow_production_variants(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductionVariant>> {
+        self.inner.get_shadow_production_variants()
     }
 }

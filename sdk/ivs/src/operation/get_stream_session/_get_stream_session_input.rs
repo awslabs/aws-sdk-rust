@@ -48,6 +48,10 @@ impl GetStreamSessionInputBuilder {
         self.channel_arn = input;
         self
     }
+    /// <p>ARN of the channel resource</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
+    }
     /// <p>Unique identifier for a live or previously live stream in the specified channel. If no <code>streamId</code> is provided, this returns the most recent stream session for the channel, if it exists.</p>
     pub fn stream_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl GetStreamSessionInputBuilder {
     pub fn set_stream_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_id = input;
         self
+    }
+    /// <p>Unique identifier for a live or previously live stream in the specified channel. If no <code>streamId</code> is provided, this returns the most recent stream session for the channel, if it exists.</p>
+    pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_id
     }
     /// Consumes the builder and constructs a [`GetStreamSessionInput`](crate::operation::get_stream_session::GetStreamSessionInput).
     pub fn build(

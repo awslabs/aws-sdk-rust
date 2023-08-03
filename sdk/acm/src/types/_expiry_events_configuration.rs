@@ -40,6 +40,10 @@ impl ExpiryEventsConfigurationBuilder {
         self.days_before_expiry = input;
         self
     }
+    /// <p>Specifies the number of days prior to certificate expiration when ACM starts generating <code>EventBridge</code> events. ACM sends one event per day per certificate until the certificate expires. By default, accounts receive events starting 45 days before certificate expiration.</p>
+    pub fn get_days_before_expiry(&self) -> &::std::option::Option<i32> {
+        &self.days_before_expiry
+    }
     /// Consumes the builder and constructs a [`ExpiryEventsConfiguration`](crate::types::ExpiryEventsConfiguration).
     pub fn build(self) -> crate::types::ExpiryEventsConfiguration {
         crate::types::ExpiryEventsConfiguration {

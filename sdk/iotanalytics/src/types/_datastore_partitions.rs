@@ -49,6 +49,12 @@ impl DatastorePartitionsBuilder {
         self.partitions = input;
         self
     }
+    /// <p> A list of partition dimensions in a data store. </p>
+    pub fn get_partitions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DatastorePartition>> {
+        &self.partitions
+    }
     /// Consumes the builder and constructs a [`DatastorePartitions`](crate::types::DatastorePartitions).
     pub fn build(self) -> crate::types::DatastorePartitions {
         crate::types::DatastorePartitions {

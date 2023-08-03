@@ -63,6 +63,10 @@ impl ListKeysOutputBuilder {
         self.keys = input;
         self
     }
+    /// <p>The list of keys created within the caller's Amazon Web Services account and Amazon Web Services Region.</p>
+    pub fn get_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeySummary>> {
+        &self.keys
+    }
     /// <p>The token for the next set of results, or an empty or null value if there are no more results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl ListKeysOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token for the next set of results, or an empty or null value if there are no more results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -46,6 +46,10 @@ impl GetHitOutputBuilder {
         self.hit = input;
         self
     }
+    /// <p> Contains the requested HIT data.</p>
+    pub fn get_hit(&self) -> &::std::option::Option<crate::types::Hit> {
+        &self.hit
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

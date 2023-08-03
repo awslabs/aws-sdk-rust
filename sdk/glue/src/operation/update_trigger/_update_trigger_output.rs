@@ -46,6 +46,10 @@ impl UpdateTriggerOutputBuilder {
         self.trigger = input;
         self
     }
+    /// <p>The resulting trigger definition.</p>
+    pub fn get_trigger(&self) -> &::std::option::Option<crate::types::Trigger> {
+        &self.trigger
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

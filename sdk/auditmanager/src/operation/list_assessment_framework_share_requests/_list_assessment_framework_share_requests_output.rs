@@ -72,6 +72,13 @@ impl ListAssessmentFrameworkShareRequestsOutputBuilder {
         self.assessment_framework_share_requests = input;
         self
     }
+    /// <p> The list of share requests that the <code>ListAssessmentFrameworkShareRequests</code> API returned. </p>
+    pub fn get_assessment_framework_share_requests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssessmentFrameworkShareRequest>>
+    {
+        &self.assessment_framework_share_requests
+    }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -81,6 +88,10 @@ impl ListAssessmentFrameworkShareRequestsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p> The pagination token that's used to fetch the next set of results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -47,6 +47,10 @@ impl DisassociateOpsItemRelatedItemInputBuilder {
         self.ops_item_id = input;
         self
     }
+    /// <p>The ID of the OpsItem for which you want to delete an association between the OpsItem and a related item.</p>
+    pub fn get_ops_item_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ops_item_id
+    }
     /// <p>The ID of the association for which you want to delete an association between the OpsItem and a related item.</p>
     pub fn association_id(
         mut self,
@@ -62,6 +66,10 @@ impl DisassociateOpsItemRelatedItemInputBuilder {
     ) -> Self {
         self.association_id = input;
         self
+    }
+    /// <p>The ID of the association for which you want to delete an association between the OpsItem and a related item.</p>
+    pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_id
     }
     /// Consumes the builder and constructs a [`DisassociateOpsItemRelatedItemInput`](crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItemInput).
     pub fn build(

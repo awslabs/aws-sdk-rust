@@ -102,6 +102,10 @@ impl CreateMicrosoftAdInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The fully qualified domain name for the Managed Microsoft AD directory, such as <code>corp.example.com</code>. This name will resolve inside your VPC only. It does not need to be publicly resolvable.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The NetBIOS name for your domain, such as <code>CORP</code>. If you don't specify a NetBIOS name, it will default to the first part of your directory DNS. For example, <code>CORP</code> for the directory DNS <code>corp.example.com</code>. </p>
     pub fn short_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.short_name = ::std::option::Option::Some(input.into());
@@ -111,6 +115,10 @@ impl CreateMicrosoftAdInputBuilder {
     pub fn set_short_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.short_name = input;
         self
+    }
+    /// <p>The NetBIOS name for your domain, such as <code>CORP</code>. If you don't specify a NetBIOS name, it will default to the first part of your directory DNS. For example, <code>CORP</code> for the directory DNS <code>corp.example.com</code>. </p>
+    pub fn get_short_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.short_name
     }
     /// <p>The password for the default administrative user named <code>Admin</code>.</p>
     /// <p>If you need to change the password for the administrator account, you can use the <code>ResetUserPassword</code> API call.</p>
@@ -124,6 +132,11 @@ impl CreateMicrosoftAdInputBuilder {
         self.password = input;
         self
     }
+    /// <p>The password for the default administrative user named <code>Admin</code>.</p>
+    /// <p>If you need to change the password for the administrator account, you can use the <code>ResetUserPassword</code> API call.</p>
+    pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.password
+    }
     /// <p>A description for the directory. This label will appear on the Amazon Web Services console <code>Directory Details</code> page after the directory is created.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -133,6 +146,10 @@ impl CreateMicrosoftAdInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description for the directory. This label will appear on the Amazon Web Services console <code>Directory Details</code> page after the directory is created.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
     pub fn vpc_settings(mut self, input: crate::types::DirectoryVpcSettings) -> Self {
@@ -147,6 +164,10 @@ impl CreateMicrosoftAdInputBuilder {
         self.vpc_settings = input;
         self
     }
+    /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
+    pub fn get_vpc_settings(&self) -> &::std::option::Option<crate::types::DirectoryVpcSettings> {
+        &self.vpc_settings
+    }
     /// <p>Managed Microsoft AD is available in two editions: <code>Standard</code> and <code>Enterprise</code>. <code>Enterprise</code> is the default.</p>
     pub fn edition(mut self, input: crate::types::DirectoryEdition) -> Self {
         self.edition = ::std::option::Option::Some(input);
@@ -159,6 +180,10 @@ impl CreateMicrosoftAdInputBuilder {
     ) -> Self {
         self.edition = input;
         self
+    }
+    /// <p>Managed Microsoft AD is available in two editions: <code>Standard</code> and <code>Enterprise</code>. <code>Enterprise</code> is the default.</p>
+    pub fn get_edition(&self) -> &::std::option::Option<crate::types::DirectoryEdition> {
+        &self.edition
     }
     /// Appends an item to `tags`.
     ///
@@ -178,6 +203,10 @@ impl CreateMicrosoftAdInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags to be assigned to the Managed Microsoft AD directory.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateMicrosoftAdInput`](crate::operation::create_microsoft_ad::CreateMicrosoftAdInput).
     pub fn build(

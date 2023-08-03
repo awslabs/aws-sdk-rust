@@ -36,6 +36,12 @@ impl DescribeImageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeImage as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_image::builders::DescribeImageInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -117,5 +123,9 @@ impl DescribeImageFluentBuilder {
     pub fn set_image_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_image_name(input);
         self
+    }
+    /// <p>The name of the image to describe.</p>
+    pub fn get_image_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_image_name()
     }
 }

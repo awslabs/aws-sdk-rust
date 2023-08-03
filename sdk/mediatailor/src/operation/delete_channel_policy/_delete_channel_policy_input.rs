@@ -41,6 +41,10 @@ impl DeleteChannelPolicyInputBuilder {
         self.channel_name = input;
         self
     }
+    /// <p>The name of the channel associated with this channel policy.</p>
+    pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_name
+    }
     /// Consumes the builder and constructs a [`DeleteChannelPolicyInput`](crate::operation::delete_channel_policy::DeleteChannelPolicyInput).
     pub fn build(
         self,

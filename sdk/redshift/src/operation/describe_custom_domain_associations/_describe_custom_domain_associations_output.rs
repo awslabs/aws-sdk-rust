@@ -54,6 +54,10 @@ impl DescribeCustomDomainAssociationsOutputBuilder {
         self.marker = input;
         self
     }
+    /// <p>The marker for the custom domain association.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// Appends an item to `associations`.
     ///
     /// To override the contents of this collection use [`set_associations`](Self::set_associations).
@@ -72,6 +76,12 @@ impl DescribeCustomDomainAssociationsOutputBuilder {
     ) -> Self {
         self.associations = input;
         self
+    }
+    /// <p>The associations for the custom domain.</p>
+    pub fn get_associations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Association>> {
+        &self.associations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

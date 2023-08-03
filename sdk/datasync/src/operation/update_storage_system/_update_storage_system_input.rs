@@ -90,6 +90,10 @@ impl UpdateStorageSystemInputBuilder {
         self.storage_system_arn = input;
         self
     }
+    /// <p>Specifies the ARN of the on-premises storage system that you want reconfigure.</p>
+    pub fn get_storage_system_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_system_arn
+    }
     /// <p>Specifies the server name and network port required to connect with your on-premises storage system's management interface.</p>
     pub fn server_configuration(
         mut self,
@@ -105,6 +109,12 @@ impl UpdateStorageSystemInputBuilder {
     ) -> Self {
         self.server_configuration = input;
         self
+    }
+    /// <p>Specifies the server name and network port required to connect with your on-premises storage system's management interface.</p>
+    pub fn get_server_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DiscoveryServerConfiguration> {
+        &self.server_configuration
     }
     /// Appends an item to `agent_arns`.
     ///
@@ -125,6 +135,10 @@ impl UpdateStorageSystemInputBuilder {
         self.agent_arns = input;
         self
     }
+    /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that connects to and reads your on-premises storage system. You can only specify one ARN.</p>
+    pub fn get_agent_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.agent_arns
+    }
     /// <p>Specifies a familiar name for your on-premises storage system.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -134,6 +148,10 @@ impl UpdateStorageSystemInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>Specifies a familiar name for your on-premises storage system.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Specifies the ARN of the Amazon CloudWatch log group for monitoring and logging discovery job events.</p>
     pub fn cloud_watch_log_group_arn(
@@ -151,6 +169,10 @@ impl UpdateStorageSystemInputBuilder {
         self.cloud_watch_log_group_arn = input;
         self
     }
+    /// <p>Specifies the ARN of the Amazon CloudWatch log group for monitoring and logging discovery job events.</p>
+    pub fn get_cloud_watch_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cloud_watch_log_group_arn
+    }
     /// <p>Specifies the user name and password for accessing your on-premises storage system's management interface.</p>
     pub fn credentials(mut self, input: crate::types::Credentials) -> Self {
         self.credentials = ::std::option::Option::Some(input);
@@ -163,6 +185,10 @@ impl UpdateStorageSystemInputBuilder {
     ) -> Self {
         self.credentials = input;
         self
+    }
+    /// <p>Specifies the user name and password for accessing your on-premises storage system's management interface.</p>
+    pub fn get_credentials(&self) -> &::std::option::Option<crate::types::Credentials> {
+        &self.credentials
     }
     /// Consumes the builder and constructs a [`UpdateStorageSystemInput`](crate::operation::update_storage_system::UpdateStorageSystemInput).
     pub fn build(

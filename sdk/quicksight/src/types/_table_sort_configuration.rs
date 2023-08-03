@@ -60,6 +60,12 @@ impl TableSortConfigurationBuilder {
         self.row_sort = input;
         self
     }
+    /// <p>The field sort options for rows in the table.</p>
+    pub fn get_row_sort(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>> {
+        &self.row_sort
+    }
     /// <p>The pagination configuration (page size, page number) for the table.</p>
     pub fn pagination_configuration(
         mut self,
@@ -75,6 +81,12 @@ impl TableSortConfigurationBuilder {
     ) -> Self {
         self.pagination_configuration = input;
         self
+    }
+    /// <p>The pagination configuration (page size, page number) for the table.</p>
+    pub fn get_pagination_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::PaginationConfiguration> {
+        &self.pagination_configuration
     }
     /// Consumes the builder and constructs a [`TableSortConfiguration`](crate::types::TableSortConfiguration).
     pub fn build(self) -> crate::types::TableSortConfiguration {

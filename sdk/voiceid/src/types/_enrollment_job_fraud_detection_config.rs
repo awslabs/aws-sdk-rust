@@ -61,6 +61,12 @@ impl EnrollmentJobFraudDetectionConfigBuilder {
         self.fraud_detection_action = input;
         self
     }
+    /// <p>The action to take when the given speaker is flagged by the fraud detection system. The default value is <code>FAIL</code>, which fails the speaker enrollment. Changing this value to <code>IGNORE</code> results in the speaker being enrolled even if they are flagged by the fraud detection system.</p>
+    pub fn get_fraud_detection_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::FraudDetectionAction> {
+        &self.fraud_detection_action
+    }
     /// <p>Threshold value for determining whether the speaker is a high risk to be fraudulent. If the detected risk score calculated by Voice ID is greater than or equal to the threshold, the speaker is considered a fraudster.</p>
     pub fn risk_threshold(mut self, input: i32) -> Self {
         self.risk_threshold = ::std::option::Option::Some(input);
@@ -70,6 +76,10 @@ impl EnrollmentJobFraudDetectionConfigBuilder {
     pub fn set_risk_threshold(mut self, input: ::std::option::Option<i32>) -> Self {
         self.risk_threshold = input;
         self
+    }
+    /// <p>Threshold value for determining whether the speaker is a high risk to be fraudulent. If the detected risk score calculated by Voice ID is greater than or equal to the threshold, the speaker is considered a fraudster.</p>
+    pub fn get_risk_threshold(&self) -> &::std::option::Option<i32> {
+        &self.risk_threshold
     }
     /// Appends an item to `watchlist_ids`.
     ///
@@ -92,6 +102,12 @@ impl EnrollmentJobFraudDetectionConfigBuilder {
     ) -> Self {
         self.watchlist_ids = input;
         self
+    }
+    /// <p>The identifier of watchlists against which fraud detection is performed. </p>
+    pub fn get_watchlist_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.watchlist_ids
     }
     /// Consumes the builder and constructs a [`EnrollmentJobFraudDetectionConfig`](crate::types::EnrollmentJobFraudDetectionConfig).
     pub fn build(self) -> crate::types::EnrollmentJobFraudDetectionConfig {

@@ -64,6 +64,10 @@ impl OAuth2PropertiesBuilder {
         self.token_url = input;
         self
     }
+    /// <p>The token URL required for OAuth 2.0 authentication.</p>
+    pub fn get_token_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.token_url
+    }
     /// <p>The OAuth 2.0 grant type used by connector for OAuth 2.0 authentication.</p>
     pub fn o_auth2_grant_type(mut self, input: crate::types::OAuth2GrantType) -> Self {
         self.o_auth2_grant_type = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl OAuth2PropertiesBuilder {
     ) -> Self {
         self.o_auth2_grant_type = input;
         self
+    }
+    /// <p>The OAuth 2.0 grant type used by connector for OAuth 2.0 authentication.</p>
+    pub fn get_o_auth2_grant_type(&self) -> &::std::option::Option<crate::types::OAuth2GrantType> {
+        &self.o_auth2_grant_type
     }
     /// Adds a key-value pair to `token_url_custom_properties`.
     ///
@@ -101,6 +109,14 @@ impl OAuth2PropertiesBuilder {
     ) -> Self {
         self.token_url_custom_properties = input;
         self
+    }
+    /// <p>Associates your token URL with a map of properties that you define. Use this parameter to provide any additional details that the connector requires to authenticate your request.</p>
+    pub fn get_token_url_custom_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.token_url_custom_properties
     }
     /// Consumes the builder and constructs a [`OAuth2Properties`](crate::types::OAuth2Properties).
     pub fn build(self) -> crate::types::OAuth2Properties {

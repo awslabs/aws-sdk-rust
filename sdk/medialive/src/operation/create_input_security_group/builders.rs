@@ -36,6 +36,10 @@ impl CreateInputSecurityGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateInputSecurityGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_input_security_group::builders::CreateInputSecurityGroupInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -139,6 +143,14 @@ impl CreateInputSecurityGroupFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// A collection of key-value pairs.
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// Appends an item to `WhitelistRules`.
     ///
     /// To override the contents of this collection use [`set_whitelist_rules`](Self::set_whitelist_rules).
@@ -155,5 +167,11 @@ impl CreateInputSecurityGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_whitelist_rules(input);
         self
+    }
+    /// List of IPv4 CIDR addresses to whitelist
+    pub fn get_whitelist_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputWhitelistRuleCidr>> {
+        self.inner.get_whitelist_rules()
     }
 }

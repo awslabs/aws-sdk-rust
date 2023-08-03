@@ -72,6 +72,10 @@ impl CreateWorkloadShareInputBuilder {
         self.workload_id = input;
         self
     }
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workload_id
+    }
     /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.</p>
     pub fn shared_with(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shared_with = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl CreateWorkloadShareInputBuilder {
     pub fn set_shared_with(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.shared_with = input;
         self
+    }
+    /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.</p>
+    pub fn get_shared_with(&self) -> &::std::option::Option<::std::string::String> {
+        &self.shared_with
     }
     /// <p>Permission granted on a share request.</p>
     pub fn permission_type(mut self, input: crate::types::PermissionType) -> Self {
@@ -94,6 +102,10 @@ impl CreateWorkloadShareInputBuilder {
     ) -> Self {
         self.permission_type = input;
         self
+    }
+    /// <p>Permission granted on a share request.</p>
+    pub fn get_permission_type(&self) -> &::std::option::Option<crate::types::PermissionType> {
+        &self.permission_type
     }
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
@@ -116,6 +128,13 @@ impl CreateWorkloadShareInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
+    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
+    /// </important>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Consumes the builder and constructs a [`CreateWorkloadShareInput`](crate::operation::create_workload_share::CreateWorkloadShareInput).
     pub fn build(

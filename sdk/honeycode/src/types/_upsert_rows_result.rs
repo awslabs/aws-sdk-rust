@@ -57,6 +57,10 @@ impl UpsertRowsResultBuilder {
         self.row_ids = input;
         self
     }
+    /// <p> The list of row ids that were changed as part of an upsert row operation. If the upsert resulted in an update, this list could potentially contain multiple rows that matched the filter and hence got updated. If the upsert resulted in an append, this list would only have the single row that was appended. </p>
+    pub fn get_row_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.row_ids
+    }
     /// <p> The result of the upsert action. </p>
     pub fn upsert_action(mut self, input: crate::types::UpsertAction) -> Self {
         self.upsert_action = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl UpsertRowsResultBuilder {
     ) -> Self {
         self.upsert_action = input;
         self
+    }
+    /// <p> The result of the upsert action. </p>
+    pub fn get_upsert_action(&self) -> &::std::option::Option<crate::types::UpsertAction> {
+        &self.upsert_action
     }
     /// Consumes the builder and constructs a [`UpsertRowsResult`](crate::types::UpsertRowsResult).
     pub fn build(self) -> crate::types::UpsertRowsResult {

@@ -320,6 +320,18 @@ impl CreateEventSourceMappingInputBuilder {
         self.event_source_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the event source.</p>
+    /// <ul>
+    /// <li> <p> <b>Amazon Kinesis</b> – The ARN of the data stream or a stream consumer.</p> </li>
+    /// <li> <p> <b>Amazon DynamoDB Streams</b> – The ARN of the stream.</p> </li>
+    /// <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
+    /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.</p> </li>
+    /// <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
+    /// <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.</p> </li>
+    /// </ul>
+    pub fn get_event_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_source_arn
+    }
     /// <p>The name of the Lambda function.</p>
     /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
@@ -352,6 +364,18 @@ impl CreateEventSourceMappingInputBuilder {
         self.function_name = input;
         self
     }
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title"> <b>Name formats</b> </p>
+    /// <ul>
+    /// <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p> </li>
+    /// </ul>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
+    pub fn get_function_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.function_name
+    }
     /// <p>When true, the event source mapping is active. When false, Lambda pauses polling and invocation.</p>
     /// <p>Default: True</p>
     pub fn enabled(mut self, input: bool) -> Self {
@@ -363,6 +387,11 @@ impl CreateEventSourceMappingInputBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    /// <p>When true, the event source mapping is active. When false, Lambda pauses polling and invocation.</p>
+    /// <p>Default: True</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
     /// <ul>
@@ -392,6 +421,19 @@ impl CreateEventSourceMappingInputBuilder {
         self.batch_size = input;
         self
     }
+    /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
+    /// <ul>
+    /// <li> <p> <b>Amazon Kinesis</b> – Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Amazon DynamoDB Streams</b> – Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Amazon Simple Queue Service</b> – Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
+    /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Self-managed Apache Kafka</b> – Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> – Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>DocumentDB</b> – Default 100. Max 10,000.</p> </li>
+    /// </ul>
+    pub fn get_batch_size(&self) -> &::std::option::Option<i32> {
+        &self.batch_size
+    }
     /// <p>An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
     pub fn filter_criteria(mut self, input: crate::types::FilterCriteria) -> Self {
         self.filter_criteria = ::std::option::Option::Some(input);
@@ -404,6 +446,10 @@ impl CreateEventSourceMappingInputBuilder {
     ) -> Self {
         self.filter_criteria = input;
         self
+    }
+    /// <p>An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+    pub fn get_filter_criteria(&self) -> &::std::option::Option<crate::types::FilterCriteria> {
+        &self.filter_criteria
     }
     /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p>
     /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, Amazon MQ, and DocumentDB event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p>
@@ -422,6 +468,12 @@ impl CreateEventSourceMappingInputBuilder {
         self.maximum_batching_window_in_seconds = input;
         self
     }
+    /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p>
+    /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, Amazon MQ, and DocumentDB event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p>
+    /// <p>Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
+    pub fn get_maximum_batching_window_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.maximum_batching_window_in_seconds
+    }
     /// <p>(Kinesis and DynamoDB Streams only) The number of batches to process from each shard concurrently.</p>
     pub fn parallelization_factor(mut self, input: i32) -> Self {
         self.parallelization_factor = ::std::option::Option::Some(input);
@@ -431,6 +483,10 @@ impl CreateEventSourceMappingInputBuilder {
     pub fn set_parallelization_factor(mut self, input: ::std::option::Option<i32>) -> Self {
         self.parallelization_factor = input;
         self
+    }
+    /// <p>(Kinesis and DynamoDB Streams only) The number of batches to process from each shard concurrently.</p>
+    pub fn get_parallelization_factor(&self) -> &::std::option::Option<i32> {
+        &self.parallelization_factor
     }
     /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis and Amazon DynamoDB Stream event sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams, Amazon DocumentDB, Amazon MSK, and self-managed Apache Kafka.</p>
     pub fn starting_position(mut self, input: crate::types::EventSourcePosition) -> Self {
@@ -445,6 +501,12 @@ impl CreateEventSourceMappingInputBuilder {
         self.starting_position = input;
         self
     }
+    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis and Amazon DynamoDB Stream event sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams, Amazon DocumentDB, Amazon MSK, and self-managed Apache Kafka.</p>
+    pub fn get_starting_position(
+        &self,
+    ) -> &::std::option::Option<crate::types::EventSourcePosition> {
+        &self.starting_position
+    }
     /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading. <code>StartingPositionTimestamp</code> cannot be in the future.</p>
     pub fn starting_position_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.starting_position_timestamp = ::std::option::Option::Some(input);
@@ -457,6 +519,12 @@ impl CreateEventSourceMappingInputBuilder {
     ) -> Self {
         self.starting_position_timestamp = input;
         self
+    }
+    /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading. <code>StartingPositionTimestamp</code> cannot be in the future.</p>
+    pub fn get_starting_position_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.starting_position_timestamp
     }
     /// <p>(Kinesis and DynamoDB Streams only) A standard Amazon SQS queue or standard Amazon SNS topic destination for discarded records.</p>
     pub fn destination_config(mut self, input: crate::types::DestinationConfig) -> Self {
@@ -471,6 +539,12 @@ impl CreateEventSourceMappingInputBuilder {
         self.destination_config = input;
         self
     }
+    /// <p>(Kinesis and DynamoDB Streams only) A standard Amazon SQS queue or standard Amazon SNS topic destination for discarded records.</p>
+    pub fn get_destination_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::DestinationConfig> {
+        &self.destination_config
+    }
     /// <p>(Kinesis and DynamoDB Streams only) Discard records older than the specified age. The default value is infinite (-1).</p>
     pub fn maximum_record_age_in_seconds(mut self, input: i32) -> Self {
         self.maximum_record_age_in_seconds = ::std::option::Option::Some(input);
@@ -480,6 +554,10 @@ impl CreateEventSourceMappingInputBuilder {
     pub fn set_maximum_record_age_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum_record_age_in_seconds = input;
         self
+    }
+    /// <p>(Kinesis and DynamoDB Streams only) Discard records older than the specified age. The default value is infinite (-1).</p>
+    pub fn get_maximum_record_age_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.maximum_record_age_in_seconds
     }
     /// <p>(Kinesis and DynamoDB Streams only) If the function returns an error, split the batch in two and retry.</p>
     pub fn bisect_batch_on_function_error(mut self, input: bool) -> Self {
@@ -494,6 +572,10 @@ impl CreateEventSourceMappingInputBuilder {
         self.bisect_batch_on_function_error = input;
         self
     }
+    /// <p>(Kinesis and DynamoDB Streams only) If the function returns an error, split the batch in two and retry.</p>
+    pub fn get_bisect_batch_on_function_error(&self) -> &::std::option::Option<bool> {
+        &self.bisect_batch_on_function_error
+    }
     /// <p>(Kinesis and DynamoDB Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
     pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
         self.maximum_retry_attempts = ::std::option::Option::Some(input);
@@ -504,6 +586,10 @@ impl CreateEventSourceMappingInputBuilder {
         self.maximum_retry_attempts = input;
         self
     }
+    /// <p>(Kinesis and DynamoDB Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
+    pub fn get_maximum_retry_attempts(&self) -> &::std::option::Option<i32> {
+        &self.maximum_retry_attempts
+    }
     /// <p>(Kinesis and DynamoDB Streams only) The duration in seconds of a processing window for DynamoDB and Kinesis Streams event sources. A value of 0 seconds indicates no tumbling window.</p>
     pub fn tumbling_window_in_seconds(mut self, input: i32) -> Self {
         self.tumbling_window_in_seconds = ::std::option::Option::Some(input);
@@ -513,6 +599,10 @@ impl CreateEventSourceMappingInputBuilder {
     pub fn set_tumbling_window_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.tumbling_window_in_seconds = input;
         self
+    }
+    /// <p>(Kinesis and DynamoDB Streams only) The duration in seconds of a processing window for DynamoDB and Kinesis Streams event sources. A value of 0 seconds indicates no tumbling window.</p>
+    pub fn get_tumbling_window_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.tumbling_window_in_seconds
     }
     /// Appends an item to `topics`.
     ///
@@ -533,6 +623,10 @@ impl CreateEventSourceMappingInputBuilder {
         self.topics = input;
         self
     }
+    /// <p>The name of the Kafka topic.</p>
+    pub fn get_topics(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.topics
+    }
     /// Appends an item to `queues`.
     ///
     /// To override the contents of this collection use [`set_queues`](Self::set_queues).
@@ -551,6 +645,10 @@ impl CreateEventSourceMappingInputBuilder {
     ) -> Self {
         self.queues = input;
         self
+    }
+    /// <p> (MQ) The name of the Amazon MQ broker destination queue to consume. </p>
+    pub fn get_queues(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.queues
     }
     /// Appends an item to `source_access_configurations`.
     ///
@@ -574,6 +672,12 @@ impl CreateEventSourceMappingInputBuilder {
         self.source_access_configurations = input;
         self
     }
+    /// <p>An array of authentication protocols or VPC components required to secure your event source.</p>
+    pub fn get_source_access_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceAccessConfiguration>> {
+        &self.source_access_configurations
+    }
     /// <p>The self-managed Apache Kafka cluster to receive records from.</p>
     pub fn self_managed_event_source(
         mut self,
@@ -589,6 +693,12 @@ impl CreateEventSourceMappingInputBuilder {
     ) -> Self {
         self.self_managed_event_source = input;
         self
+    }
+    /// <p>The self-managed Apache Kafka cluster to receive records from.</p>
+    pub fn get_self_managed_event_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::SelfManagedEventSource> {
+        &self.self_managed_event_source
     }
     /// Appends an item to `function_response_types`.
     ///
@@ -609,6 +719,12 @@ impl CreateEventSourceMappingInputBuilder {
         self.function_response_types = input;
         self
     }
+    /// <p>(Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
+    pub fn get_function_response_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FunctionResponseType>> {
+        &self.function_response_types
+    }
     /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
     pub fn amazon_managed_kafka_event_source_config(
         mut self,
@@ -624,6 +740,12 @@ impl CreateEventSourceMappingInputBuilder {
     ) -> Self {
         self.amazon_managed_kafka_event_source_config = input;
         self
+    }
+    /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
+    pub fn get_amazon_managed_kafka_event_source_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::AmazonManagedKafkaEventSourceConfig> {
+        &self.amazon_managed_kafka_event_source_config
     }
     /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
     pub fn self_managed_kafka_event_source_config(
@@ -641,6 +763,12 @@ impl CreateEventSourceMappingInputBuilder {
         self.self_managed_kafka_event_source_config = input;
         self
     }
+    /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
+    pub fn get_self_managed_kafka_event_source_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::SelfManagedKafkaEventSourceConfig> {
+        &self.self_managed_kafka_event_source_config
+    }
     /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
     pub fn scaling_config(mut self, input: crate::types::ScalingConfig) -> Self {
         self.scaling_config = ::std::option::Option::Some(input);
@@ -653,6 +781,10 @@ impl CreateEventSourceMappingInputBuilder {
     ) -> Self {
         self.scaling_config = input;
         self
+    }
+    /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
+    pub fn get_scaling_config(&self) -> &::std::option::Option<crate::types::ScalingConfig> {
+        &self.scaling_config
     }
     /// <p>Specific configuration settings for a DocumentDB event source.</p>
     pub fn document_db_event_source_config(
@@ -669,6 +801,12 @@ impl CreateEventSourceMappingInputBuilder {
     ) -> Self {
         self.document_db_event_source_config = input;
         self
+    }
+    /// <p>Specific configuration settings for a DocumentDB event source.</p>
+    pub fn get_document_db_event_source_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::DocumentDbEventSourceConfig> {
+        &self.document_db_event_source_config
     }
     /// Consumes the builder and constructs a [`CreateEventSourceMappingInput`](crate::operation::create_event_source_mapping::CreateEventSourceMappingInput).
     pub fn build(

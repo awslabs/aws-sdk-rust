@@ -50,6 +50,10 @@ impl UpdateConnectionAliasPermissionInputBuilder {
         self.alias_id = input;
         self
     }
+    /// <p>The identifier of the connection alias that you want to update permissions for.</p>
+    pub fn get_alias_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias_id
+    }
     /// <p>Indicates whether to share or unshare the connection alias with the specified Amazon Web Services account.</p>
     pub fn connection_alias_permission(
         mut self,
@@ -65,6 +69,12 @@ impl UpdateConnectionAliasPermissionInputBuilder {
     ) -> Self {
         self.connection_alias_permission = input;
         self
+    }
+    /// <p>Indicates whether to share or unshare the connection alias with the specified Amazon Web Services account.</p>
+    pub fn get_connection_alias_permission(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConnectionAliasPermission> {
+        &self.connection_alias_permission
     }
     /// Consumes the builder and constructs a [`UpdateConnectionAliasPermissionInput`](crate::operation::update_connection_alias_permission::UpdateConnectionAliasPermissionInput).
     pub fn build(

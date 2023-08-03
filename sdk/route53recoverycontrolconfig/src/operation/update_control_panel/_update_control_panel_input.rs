@@ -55,6 +55,10 @@ impl UpdateControlPanelInputBuilder {
         self.control_panel_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
+    pub fn get_control_panel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control_panel_arn
+    }
     /// <p>The name of the control panel.</p>
     pub fn control_panel_name(
         mut self,
@@ -70,6 +74,10 @@ impl UpdateControlPanelInputBuilder {
     ) -> Self {
         self.control_panel_name = input;
         self
+    }
+    /// <p>The name of the control panel.</p>
+    pub fn get_control_panel_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control_panel_name
     }
     /// Consumes the builder and constructs a [`UpdateControlPanelInput`](crate::operation::update_control_panel::UpdateControlPanelInput).
     pub fn build(

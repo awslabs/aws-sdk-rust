@@ -242,6 +242,10 @@ impl TableBuilder {
         self.name = input;
         self
     }
+    /// <p>The table name. For Hive compatibility, this must be entirely lowercase.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The name of the database where the table metadata resides. For Hive compatibility, this must be all lowercase.</p>
     pub fn database_name(
         mut self,
@@ -258,6 +262,10 @@ impl TableBuilder {
         self.database_name = input;
         self
     }
+    /// <p>The name of the database where the table metadata resides. For Hive compatibility, this must be all lowercase.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>A description of the table.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -268,6 +276,10 @@ impl TableBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the table.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The owner of the table.</p>
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner = ::std::option::Option::Some(input.into());
@@ -277,6 +289,10 @@ impl TableBuilder {
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner = input;
         self
+    }
+    /// <p>The owner of the table.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner
     }
     /// <p>The time when the table definition was created in the Data Catalog.</p>
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -291,6 +307,10 @@ impl TableBuilder {
         self.create_time = input;
         self
     }
+    /// <p>The time when the table definition was created in the Data Catalog.</p>
+    pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_time
+    }
     /// <p>The last time that the table was updated.</p>
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
@@ -303,6 +323,10 @@ impl TableBuilder {
     ) -> Self {
         self.update_time = input;
         self
+    }
+    /// <p>The last time that the table was updated.</p>
+    pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_time
     }
     /// <p>The last time that the table was accessed. This is usually taken from HDFS, and might not be reliable.</p>
     pub fn last_access_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -317,6 +341,10 @@ impl TableBuilder {
         self.last_access_time = input;
         self
     }
+    /// <p>The last time that the table was accessed. This is usually taken from HDFS, and might not be reliable.</p>
+    pub fn get_last_access_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_access_time
+    }
     /// <p>The last time that column statistics were computed for this table.</p>
     pub fn last_analyzed_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_analyzed_time = ::std::option::Option::Some(input);
@@ -330,6 +358,10 @@ impl TableBuilder {
         self.last_analyzed_time = input;
         self
     }
+    /// <p>The last time that column statistics were computed for this table.</p>
+    pub fn get_last_analyzed_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_analyzed_time
+    }
     /// <p>The retention time for this table.</p>
     pub fn retention(mut self, input: i32) -> Self {
         self.retention = ::std::option::Option::Some(input);
@@ -339,6 +371,10 @@ impl TableBuilder {
     pub fn set_retention(mut self, input: ::std::option::Option<i32>) -> Self {
         self.retention = input;
         self
+    }
+    /// <p>The retention time for this table.</p>
+    pub fn get_retention(&self) -> &::std::option::Option<i32> {
+        &self.retention
     }
     /// <p>A storage descriptor containing information about the physical storage of this table.</p>
     pub fn storage_descriptor(mut self, input: crate::types::StorageDescriptor) -> Self {
@@ -352,6 +388,12 @@ impl TableBuilder {
     ) -> Self {
         self.storage_descriptor = input;
         self
+    }
+    /// <p>A storage descriptor containing information about the physical storage of this table.</p>
+    pub fn get_storage_descriptor(
+        &self,
+    ) -> &::std::option::Option<crate::types::StorageDescriptor> {
+        &self.storage_descriptor
     }
     /// Appends an item to `partition_keys`.
     ///
@@ -376,6 +418,14 @@ impl TableBuilder {
         self.partition_keys = input;
         self
     }
+    /// <p>A list of columns by which the table is partitioned. Only primitive types are supported as partition keys.</p>
+    /// <p>When you create a table used by Amazon Athena, and you do not specify any <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to an empty list. For example:</p>
+    /// <p> <code>"PartitionKeys": []</code> </p>
+    pub fn get_partition_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Column>> {
+        &self.partition_keys
+    }
     /// <p>Included for Apache Hive compatibility. Not used in the normal course of Glue operations. If the table is a <code>VIRTUAL_VIEW</code>, certain Athena configuration encoded in base64.</p>
     pub fn view_original_text(
         mut self,
@@ -392,6 +442,10 @@ impl TableBuilder {
         self.view_original_text = input;
         self
     }
+    /// <p>Included for Apache Hive compatibility. Not used in the normal course of Glue operations. If the table is a <code>VIRTUAL_VIEW</code>, certain Athena configuration encoded in base64.</p>
+    pub fn get_view_original_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.view_original_text
+    }
     /// <p>Included for Apache Hive compatibility. Not used in the normal course of Glue operations.</p>
     pub fn view_expanded_text(
         mut self,
@@ -407,6 +461,10 @@ impl TableBuilder {
     ) -> Self {
         self.view_expanded_text = input;
         self
+    }
+    /// <p>Included for Apache Hive compatibility. Not used in the normal course of Glue operations.</p>
+    pub fn get_view_expanded_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.view_expanded_text
     }
     /// <p>The type of this table. Glue will create tables with the <code>EXTERNAL_TABLE</code> type. Other services, such as Athena, may create tables with additional table types. </p>
     /// <p>Glue related table types:</p>
@@ -448,6 +506,25 @@ impl TableBuilder {
         self.table_type = input;
         self
     }
+    /// <p>The type of this table. Glue will create tables with the <code>EXTERNAL_TABLE</code> type. Other services, such as Athena, may create tables with additional table types. </p>
+    /// <p>Glue related table types:</p>
+    /// <dl>
+    /// <dt>
+    /// EXTERNAL_TABLE
+    /// </dt>
+    /// <dd>
+    /// <p>Hive compatible attribute - indicates a non-Hive managed table.</p>
+    /// </dd>
+    /// <dt>
+    /// GOVERNED
+    /// </dt>
+    /// <dd>
+    /// <p>Used by Lake Formation. The Glue Data Catalog understands <code>GOVERNED</code>.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_table_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_type
+    }
     /// Adds a key-value pair to `parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
@@ -473,6 +550,14 @@ impl TableBuilder {
         self.parameters = input;
         self
     }
+    /// <p>These key-value pairs define properties associated with the table.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.parameters
+    }
     /// <p>The person or entity who created the table.</p>
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by = ::std::option::Option::Some(input.into());
@@ -482,6 +567,10 @@ impl TableBuilder {
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_by = input;
         self
+    }
+    /// <p>The person or entity who created the table.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_by
     }
     /// <p>Indicates whether the table has been registered with Lake Formation.</p>
     pub fn is_registered_with_lake_formation(mut self, input: bool) -> Self {
@@ -496,6 +585,10 @@ impl TableBuilder {
         self.is_registered_with_lake_formation = input;
         self
     }
+    /// <p>Indicates whether the table has been registered with Lake Formation.</p>
+    pub fn get_is_registered_with_lake_formation(&self) -> &::std::option::Option<bool> {
+        &self.is_registered_with_lake_formation
+    }
     /// <p>A <code>TableIdentifier</code> structure that describes a target table for resource linking.</p>
     pub fn target_table(mut self, input: crate::types::TableIdentifier) -> Self {
         self.target_table = ::std::option::Option::Some(input);
@@ -509,6 +602,10 @@ impl TableBuilder {
         self.target_table = input;
         self
     }
+    /// <p>A <code>TableIdentifier</code> structure that describes a target table for resource linking.</p>
+    pub fn get_target_table(&self) -> &::std::option::Option<crate::types::TableIdentifier> {
+        &self.target_table
+    }
     /// <p>The ID of the Data Catalog in which the table resides.</p>
     pub fn catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog_id = ::std::option::Option::Some(input.into());
@@ -519,6 +616,10 @@ impl TableBuilder {
         self.catalog_id = input;
         self
     }
+    /// <p>The ID of the Data Catalog in which the table resides.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// <p>The ID of the table version.</p>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_id = ::std::option::Option::Some(input.into());
@@ -528,6 +629,10 @@ impl TableBuilder {
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_id = input;
         self
+    }
+    /// <p>The ID of the table version.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_id
     }
     /// <p>A <code>FederatedTable</code> structure that references an entity outside the Glue Data Catalog.</p>
     pub fn federated_table(mut self, input: crate::types::FederatedTable) -> Self {
@@ -541,6 +646,10 @@ impl TableBuilder {
     ) -> Self {
         self.federated_table = input;
         self
+    }
+    /// <p>A <code>FederatedTable</code> structure that references an entity outside the Glue Data Catalog.</p>
+    pub fn get_federated_table(&self) -> &::std::option::Option<crate::types::FederatedTable> {
+        &self.federated_table
     }
     /// Consumes the builder and constructs a [`Table`](crate::types::Table).
     pub fn build(self) -> crate::types::Table {

@@ -36,6 +36,10 @@ impl GetBandwidthRateLimitScheduleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetBandwidthRateLimitSchedule as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_bandwidth_rate_limit_schedule::builders::GetBandwidthRateLimitScheduleInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +129,9 @@ impl GetBandwidthRateLimitScheduleFluentBuilder {
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_gateway_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html"> <code>ListGateways</code> </a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_gateway_arn()
     }
 }

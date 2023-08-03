@@ -70,6 +70,12 @@ impl SavingsPlansCoverageDataBuilder {
         self.spend_covered_by_savings_plans = input;
         self
     }
+    /// <p>The amount of your Amazon Web Services usage that's covered by a Savings Plans.</p>
+    pub fn get_spend_covered_by_savings_plans(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.spend_covered_by_savings_plans
+    }
     /// <p>The cost of your Amazon Web Services usage at the public On-Demand rate.</p>
     pub fn on_demand_cost(
         mut self,
@@ -86,6 +92,10 @@ impl SavingsPlansCoverageDataBuilder {
         self.on_demand_cost = input;
         self
     }
+    /// <p>The cost of your Amazon Web Services usage at the public On-Demand rate.</p>
+    pub fn get_on_demand_cost(&self) -> &::std::option::Option<::std::string::String> {
+        &self.on_demand_cost
+    }
     /// <p>The total cost of your Amazon Web Services usage, regardless of your purchase option.</p>
     pub fn total_cost(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.total_cost = ::std::option::Option::Some(input.into());
@@ -95,6 +105,10 @@ impl SavingsPlansCoverageDataBuilder {
     pub fn set_total_cost(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.total_cost = input;
         self
+    }
+    /// <p>The total cost of your Amazon Web Services usage, regardless of your purchase option.</p>
+    pub fn get_total_cost(&self) -> &::std::option::Option<::std::string::String> {
+        &self.total_cost
     }
     /// <p>The percentage of your existing Savings Plans covered usage, divided by all of your eligible Savings Plans usage in an account (or set of accounts).</p>
     pub fn coverage_percentage(
@@ -111,6 +125,10 @@ impl SavingsPlansCoverageDataBuilder {
     ) -> Self {
         self.coverage_percentage = input;
         self
+    }
+    /// <p>The percentage of your existing Savings Plans covered usage, divided by all of your eligible Savings Plans usage in an account (or set of accounts).</p>
+    pub fn get_coverage_percentage(&self) -> &::std::option::Option<::std::string::String> {
+        &self.coverage_percentage
     }
     /// Consumes the builder and constructs a [`SavingsPlansCoverageData`](crate::types::SavingsPlansCoverageData).
     pub fn build(self) -> crate::types::SavingsPlansCoverageData {

@@ -64,6 +64,10 @@ impl ShardDetailBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the shard</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The configuration details of the shard</p>
     pub fn configuration(mut self, input: crate::types::ShardConfiguration) -> Self {
         self.configuration = ::std::option::Option::Some(input);
@@ -77,6 +81,10 @@ impl ShardDetailBuilder {
         self.configuration = input;
         self
     }
+    /// <p>The configuration details of the shard</p>
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ShardConfiguration> {
+        &self.configuration
+    }
     /// <p>The size of the shard's snapshot</p>
     pub fn size(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.size = ::std::option::Option::Some(input.into());
@@ -86,6 +94,10 @@ impl ShardDetailBuilder {
     pub fn set_size(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.size = input;
         self
+    }
+    /// <p>The size of the shard's snapshot</p>
+    pub fn get_size(&self) -> &::std::option::Option<::std::string::String> {
+        &self.size
     }
     /// <p>The date and time that the shard's snapshot was created</p>
     pub fn snapshot_creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -99,6 +111,12 @@ impl ShardDetailBuilder {
     ) -> Self {
         self.snapshot_creation_time = input;
         self
+    }
+    /// <p>The date and time that the shard's snapshot was created</p>
+    pub fn get_snapshot_creation_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.snapshot_creation_time
     }
     /// Consumes the builder and constructs a [`ShardDetail`](crate::types::ShardDetail).
     pub fn build(self) -> crate::types::ShardDetail {

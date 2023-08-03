@@ -104,6 +104,10 @@ impl LambdaDetailsBuilder {
         self.function_arn = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the Lambda function.</p>
+    pub fn get_function_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.function_arn
+    }
     /// <p>Name of the Lambda function.</p>
     pub fn function_name(
         mut self,
@@ -120,6 +124,10 @@ impl LambdaDetailsBuilder {
         self.function_name = input;
         self
     }
+    /// <p>Name of the Lambda function.</p>
+    pub fn get_function_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.function_name
+    }
     /// <p>Description of the Lambda function.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -129,6 +137,10 @@ impl LambdaDetailsBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>Description of the Lambda function.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The timestamp when the Lambda function was last modified. This field is in the UTC date string format <code>(2023-03-22T19:37:20.168Z)</code>.</p>
     pub fn last_modified_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -143,6 +155,10 @@ impl LambdaDetailsBuilder {
         self.last_modified_at = input;
         self
     }
+    /// <p>The timestamp when the Lambda function was last modified. This field is in the UTC date string format <code>(2023-03-22T19:37:20.168Z)</code>.</p>
+    pub fn get_last_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_at
+    }
     /// <p>The revision ID of the Lambda function version.</p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
@@ -152,6 +168,10 @@ impl LambdaDetailsBuilder {
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision_id = input;
         self
+    }
+    /// <p>The revision ID of the Lambda function version.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision_id
     }
     /// <p>The version of the Lambda function.</p>
     pub fn function_version(
@@ -169,6 +189,10 @@ impl LambdaDetailsBuilder {
         self.function_version = input;
         self
     }
+    /// <p>The version of the Lambda function.</p>
+    pub fn get_function_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.function_version
+    }
     /// <p>The execution role of the Lambda function.</p>
     pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role = ::std::option::Option::Some(input.into());
@@ -179,6 +203,10 @@ impl LambdaDetailsBuilder {
         self.role = input;
         self
     }
+    /// <p>The execution role of the Lambda function.</p>
+    pub fn get_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role
+    }
     /// <p>Amazon Virtual Private Cloud configuration details associated with your Lambda function.</p>
     pub fn vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
         self.vpc_config = ::std::option::Option::Some(input);
@@ -188,6 +216,10 @@ impl LambdaDetailsBuilder {
     pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
         self.vpc_config = input;
         self
+    }
+    /// <p>Amazon Virtual Private Cloud configuration details associated with your Lambda function.</p>
+    pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
+        &self.vpc_config
     }
     /// Appends an item to `tags`.
     ///
@@ -207,6 +239,10 @@ impl LambdaDetailsBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of tags attached to this resource, listed in the format of <code>key</code>:<code>value</code> pair.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`LambdaDetails`](crate::types::LambdaDetails).
     pub fn build(self) -> crate::types::LambdaDetails {

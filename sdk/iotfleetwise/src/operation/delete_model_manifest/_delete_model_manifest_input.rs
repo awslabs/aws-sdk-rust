@@ -41,6 +41,10 @@ impl DeleteModelManifestInputBuilder {
         self.name = input;
         self
     }
+    /// <p> The name of the model manifest to delete. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DeleteModelManifestInput`](crate::operation::delete_model_manifest::DeleteModelManifestInput).
     pub fn build(
         self,

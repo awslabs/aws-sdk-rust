@@ -36,6 +36,12 @@ impl GetDomainSuggestionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetDomainSuggestions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_domain_suggestions::builders::GetDomainSuggestionsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -142,6 +148,18 @@ impl GetDomainSuggestionsFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p>A domain name that you want to use as the basis for a list of possible domain names. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
+    /// <p>The domain name can contain only the following characters:</p>
+    /// <ul>
+    /// <li> <p>Letters a through z. Domain names are not case sensitive.</p> </li>
+    /// <li> <p>Numbers 0 through 9.</p> </li>
+    /// <li> <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p> </li>
+    /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>
+    /// </ul>
+    /// <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>. </p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
     /// <p>The number of suggested domain names that you want Route 53 to return. Specify a value between 1 and 50.</p>
     pub fn suggestion_count(mut self, input: i32) -> Self {
         self.inner = self.inner.suggestion_count(input);
@@ -152,6 +170,10 @@ impl GetDomainSuggestionsFluentBuilder {
         self.inner = self.inner.set_suggestion_count(input);
         self
     }
+    /// <p>The number of suggested domain names that you want Route 53 to return. Specify a value between 1 and 50.</p>
+    pub fn get_suggestion_count(&self) -> &::std::option::Option<i32> {
+        self.inner.get_suggestion_count()
+    }
     /// <p>If <code>OnlyAvailable</code> is <code>true</code>, Route 53 returns only domain names that are available. If <code>OnlyAvailable</code> is <code>false</code>, Route 53 returns domain names without checking whether they're available to be registered. To determine whether the domain is available, you can call <code>checkDomainAvailability</code> for each suggestion.</p>
     pub fn only_available(mut self, input: bool) -> Self {
         self.inner = self.inner.only_available(input);
@@ -161,5 +183,9 @@ impl GetDomainSuggestionsFluentBuilder {
     pub fn set_only_available(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_only_available(input);
         self
+    }
+    /// <p>If <code>OnlyAvailable</code> is <code>true</code>, Route 53 returns only domain names that are available. If <code>OnlyAvailable</code> is <code>false</code>, Route 53 returns domain names without checking whether they're available to be registered. To determine whether the domain is available, you can call <code>checkDomainAvailability</code> for each suggestion.</p>
+    pub fn get_only_available(&self) -> &::std::option::Option<bool> {
+        self.inner.get_only_available()
     }
 }

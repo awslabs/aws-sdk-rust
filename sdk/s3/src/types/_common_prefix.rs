@@ -40,6 +40,10 @@ impl CommonPrefixBuilder {
         self.prefix = input;
         self
     }
+    /// <p>Container for the specified common prefix.</p>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
+    }
     /// Consumes the builder and constructs a [`CommonPrefix`](crate::types::CommonPrefix).
     pub fn build(self) -> crate::types::CommonPrefix {
         crate::types::CommonPrefix {

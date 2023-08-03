@@ -79,6 +79,14 @@ impl ListConfigurationsOutputBuilder {
         self.configurations = input;
         self
     }
+    /// <p>Returns configuration details, including the configuration ID, attribute names, and attribute values.</p>
+    pub fn get_configurations(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    > {
+        &self.configurations
+    }
     /// <p>Token to retrieve the next set of results. For example, if your call to ListConfigurations returned 100 items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -88,6 +96,10 @@ impl ListConfigurationsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Token to retrieve the next set of results. For example, if your call to ListConfigurations returned 100 items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

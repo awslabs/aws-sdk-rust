@@ -65,6 +65,12 @@ impl TargetInstancesBuilder {
         self.tag_filters = input;
         self
     }
+    /// <p>The tag filter key, type, and value used to identify Amazon EC2 instances in a replacement environment for a blue/green deployment. Cannot be used in the same call as <code>ec2TagSet</code>.</p>
+    pub fn get_tag_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Ec2TagFilter>> {
+        &self.tag_filters
+    }
     /// Appends an item to `auto_scaling_groups`.
     ///
     /// To override the contents of this collection use [`set_auto_scaling_groups`](Self::set_auto_scaling_groups).
@@ -87,6 +93,12 @@ impl TargetInstancesBuilder {
         self.auto_scaling_groups = input;
         self
     }
+    /// <p>The names of one or more Auto Scaling groups to identify a replacement environment for a blue/green deployment.</p>
+    pub fn get_auto_scaling_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.auto_scaling_groups
+    }
     /// <p>Information about the groups of Amazon EC2 instance tags that an instance must be identified by in order for it to be included in the replacement environment for a blue/green deployment. Cannot be used in the same call as <code>tagFilters</code>.</p>
     pub fn ec2_tag_set(mut self, input: crate::types::Ec2TagSet) -> Self {
         self.ec2_tag_set = ::std::option::Option::Some(input);
@@ -99,6 +111,10 @@ impl TargetInstancesBuilder {
     ) -> Self {
         self.ec2_tag_set = input;
         self
+    }
+    /// <p>Information about the groups of Amazon EC2 instance tags that an instance must be identified by in order for it to be included in the replacement environment for a blue/green deployment. Cannot be used in the same call as <code>tagFilters</code>.</p>
+    pub fn get_ec2_tag_set(&self) -> &::std::option::Option<crate::types::Ec2TagSet> {
+        &self.ec2_tag_set
     }
     /// Consumes the builder and constructs a [`TargetInstances`](crate::types::TargetInstances).
     pub fn build(self) -> crate::types::TargetInstances {

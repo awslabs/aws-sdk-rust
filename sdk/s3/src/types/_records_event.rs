@@ -40,6 +40,10 @@ impl RecordsEventBuilder {
         self.payload = input;
         self
     }
+    /// <p>The byte array of partial, one or more result records.</p>
+    pub fn get_payload(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.payload
+    }
     /// Consumes the builder and constructs a [`RecordsEvent`](crate::types::RecordsEvent).
     pub fn build(self) -> crate::types::RecordsEvent {
         crate::types::RecordsEvent {

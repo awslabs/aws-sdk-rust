@@ -64,6 +64,10 @@ impl AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetailsBuilder {
         self.container_path = input;
         self
     }
+    /// <p>The path on the container to mount the host volume at.</p>
+    pub fn get_container_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.container_path
+    }
     /// <p>Whether the container has read-only access to the volume.</p>
     pub fn read_only(mut self, input: bool) -> Self {
         self.read_only = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetailsBuilder {
     pub fn set_read_only(mut self, input: ::std::option::Option<bool>) -> Self {
         self.read_only = input;
         self
+    }
+    /// <p>Whether the container has read-only access to the volume.</p>
+    pub fn get_read_only(&self) -> &::std::option::Option<bool> {
+        &self.read_only
     }
     /// <p>The name of the volume to mount. Must match the name of a volume listed in <code>VolumeDetails</code> for the task definition.</p>
     pub fn source_volume(
@@ -89,6 +97,10 @@ impl AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetailsBuilder {
     ) -> Self {
         self.source_volume = input;
         self
+    }
+    /// <p>The name of the volume to mount. Must match the name of a volume listed in <code>VolumeDetails</code> for the task definition.</p>
+    pub fn get_source_volume(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_volume
     }
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails).
     pub fn build(self) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails {

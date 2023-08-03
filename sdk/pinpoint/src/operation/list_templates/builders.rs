@@ -36,6 +36,12 @@ impl ListTemplatesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListTemplates as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_templates::builders::ListTemplatesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl ListTemplatesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     pub fn page_size(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.page_size(input.into());
@@ -128,6 +138,10 @@ impl ListTemplatesFluentBuilder {
         self.inner = self.inner.set_page_size(input);
         self
     }
+    /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_page_size()
+    }
     /// <p>The substring to match in the names of the message templates to include in the results. If you specify this value, Amazon Pinpoint returns only those templates whose names begin with the value that you specify.</p>
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.prefix(input.into());
@@ -137,6 +151,10 @@ impl ListTemplatesFluentBuilder {
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_prefix(input);
         self
+    }
+    /// <p>The substring to match in the names of the message templates to include in the results. If you specify this value, Amazon Pinpoint returns only those templates whose names begin with the value that you specify.</p>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_prefix()
     }
     /// <p>The type of message template to include in the results. Valid values are: EMAIL, PUSH, SMS, and VOICE. To include all types of templates in the results, don't include this parameter in your request.</p>
     pub fn template_type(
@@ -153,5 +171,9 @@ impl ListTemplatesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_template_type(input);
         self
+    }
+    /// <p>The type of message template to include in the results. Valid values are: EMAIL, PUSH, SMS, and VOICE. To include all types of templates in the results, don't include this parameter in your request.</p>
+    pub fn get_template_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_type()
     }
 }

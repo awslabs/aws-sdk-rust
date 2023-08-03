@@ -36,6 +36,10 @@ impl GetRunFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetRun as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_run::builders::GetRunInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl GetRunFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The run's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// Appends an item to `export`.
     ///
     /// To override the contents of this collection use [`set_export`](Self::set_export).
@@ -134,5 +142,9 @@ impl GetRunFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_export(input);
         self
+    }
+    /// <p>The run's export format.</p>
+    pub fn get_export(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RunExport>> {
+        self.inner.get_export()
     }
 }

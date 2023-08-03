@@ -56,6 +56,10 @@ impl OracleParametersBuilder {
         self.host = input;
         self
     }
+    /// <p>An Oracle host.</p>
+    pub fn get_host(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host
+    }
     /// <p>The port.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl OracleParametersBuilder {
         self.port = input;
         self
     }
+    /// <p>The port.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
+    }
     /// <p>The database.</p>
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl OracleParametersBuilder {
     pub fn set_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database = input;
         self
+    }
+    /// <p>The database.</p>
+    pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database
     }
     /// Consumes the builder and constructs a [`OracleParameters`](crate::types::OracleParameters).
     pub fn build(self) -> crate::types::OracleParameters {

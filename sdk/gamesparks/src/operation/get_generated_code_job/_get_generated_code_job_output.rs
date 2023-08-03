@@ -52,6 +52,12 @@ impl GetGeneratedCodeJobOutputBuilder {
         self.generated_code_job = input;
         self
     }
+    /// <p>Details about the generated code job.</p>
+    pub fn get_generated_code_job(
+        &self,
+    ) -> &::std::option::Option<crate::types::GeneratedCodeJobDetails> {
+        &self.generated_code_job
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

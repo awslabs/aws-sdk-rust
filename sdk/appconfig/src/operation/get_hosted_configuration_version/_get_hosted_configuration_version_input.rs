@@ -61,6 +61,10 @@ impl GetHostedConfigurationVersionInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The application ID.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The configuration profile ID.</p>
     pub fn configuration_profile_id(
         mut self,
@@ -77,6 +81,10 @@ impl GetHostedConfigurationVersionInputBuilder {
         self.configuration_profile_id = input;
         self
     }
+    /// <p>The configuration profile ID.</p>
+    pub fn get_configuration_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_profile_id
+    }
     /// <p>The version.</p>
     pub fn version_number(mut self, input: i32) -> Self {
         self.version_number = ::std::option::Option::Some(input);
@@ -86,6 +94,10 @@ impl GetHostedConfigurationVersionInputBuilder {
     pub fn set_version_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.version_number = input;
         self
+    }
+    /// <p>The version.</p>
+    pub fn get_version_number(&self) -> &::std::option::Option<i32> {
+        &self.version_number
     }
     /// Consumes the builder and constructs a [`GetHostedConfigurationVersionInput`](crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionInput).
     pub fn build(

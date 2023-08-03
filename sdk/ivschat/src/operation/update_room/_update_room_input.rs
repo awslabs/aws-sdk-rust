@@ -85,6 +85,10 @@ impl UpdateRoomInputBuilder {
         self.identifier = input;
         self
     }
+    /// <p>Identifier of the room to be updated. Currently this must be an ARN.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
+    }
     /// <p>Room name. The value does not need to be unique.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -94,6 +98,10 @@ impl UpdateRoomInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>Room name. The value does not need to be unique.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.</p>
     pub fn maximum_message_rate_per_second(mut self, input: i32) -> Self {
@@ -108,6 +116,10 @@ impl UpdateRoomInputBuilder {
         self.maximum_message_rate_per_second = input;
         self
     }
+    /// <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.</p>
+    pub fn get_maximum_message_rate_per_second(&self) -> &::std::option::Option<i32> {
+        &self.maximum_message_rate_per_second
+    }
     /// <p>The maximum number of characters in a single message. Messages are expected to be UTF-8 encoded and this limit applies specifically to rune/code-point count, not number of bytes. Default: 500.</p>
     pub fn maximum_message_length(mut self, input: i32) -> Self {
         self.maximum_message_length = ::std::option::Option::Some(input);
@@ -117,6 +129,10 @@ impl UpdateRoomInputBuilder {
     pub fn set_maximum_message_length(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum_message_length = input;
         self
+    }
+    /// <p>The maximum number of characters in a single message. Messages are expected to be UTF-8 encoded and this limit applies specifically to rune/code-point count, not number of bytes. Default: 500.</p>
+    pub fn get_maximum_message_length(&self) -> &::std::option::Option<i32> {
+        &self.maximum_message_length
     }
     /// <p>Configuration information for optional review of messages. Specify an empty <code>uri</code> string to disassociate a message review handler from the specified room.</p>
     pub fn message_review_handler(mut self, input: crate::types::MessageReviewHandler) -> Self {
@@ -130,6 +146,12 @@ impl UpdateRoomInputBuilder {
     ) -> Self {
         self.message_review_handler = input;
         self
+    }
+    /// <p>Configuration information for optional review of messages. Specify an empty <code>uri</code> string to disassociate a message review handler from the specified room.</p>
+    pub fn get_message_review_handler(
+        &self,
+    ) -> &::std::option::Option<crate::types::MessageReviewHandler> {
+        &self.message_review_handler
     }
     /// Appends an item to `logging_configuration_identifiers`.
     ///
@@ -152,6 +174,12 @@ impl UpdateRoomInputBuilder {
     ) -> Self {
         self.logging_configuration_identifiers = input;
         self
+    }
+    /// <p>Array of logging-configuration identifiers attached to the room.</p>
+    pub fn get_logging_configuration_identifiers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.logging_configuration_identifiers
     }
     /// Consumes the builder and constructs a [`UpdateRoomInput`](crate::operation::update_room::UpdateRoomInput).
     pub fn build(

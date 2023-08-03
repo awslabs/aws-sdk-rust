@@ -49,6 +49,10 @@ impl StopMonitoringMembersInputBuilder {
         self.detector_id = input;
         self
     }
+    /// <p>The unique ID of the detector associated with the GuardDuty administrator account that is monitoring member accounts.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
+    }
     /// Appends an item to `account_ids`.
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
@@ -67,6 +71,12 @@ impl StopMonitoringMembersInputBuilder {
     ) -> Self {
         self.account_ids = input;
         self
+    }
+    /// <p>A list of account IDs for the member accounts to stop monitoring.</p>
+    pub fn get_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.account_ids
     }
     /// Consumes the builder and constructs a [`StopMonitoringMembersInput`](crate::operation::stop_monitoring_members::StopMonitoringMembersInput).
     pub fn build(

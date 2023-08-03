@@ -45,6 +45,10 @@ impl DeleteReplicationConfigurationInputBuilder {
         self.source_file_system_id = input;
         self
     }
+    /// <p>The ID of the source file system in the replication configuration.</p>
+    pub fn get_source_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_file_system_id
+    }
     /// Consumes the builder and constructs a [`DeleteReplicationConfigurationInput`](crate::operation::delete_replication_configuration::DeleteReplicationConfigurationInput).
     pub fn build(
         self,

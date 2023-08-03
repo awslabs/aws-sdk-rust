@@ -37,6 +37,10 @@ impl CreateThemeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateTheme as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_theme::builders::CreateThemeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,6 +129,10 @@ impl CreateThemeFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The ID of the Amazon Web Services account where you want to store the new theme. </p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>An ID for the theme that you want to create. The theme ID is unique per Amazon Web Services Region in each Amazon Web Services account.</p>
     pub fn theme_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.theme_id(input.into());
@@ -135,6 +143,10 @@ impl CreateThemeFluentBuilder {
         self.inner = self.inner.set_theme_id(input);
         self
     }
+    /// <p>An ID for the theme that you want to create. The theme ID is unique per Amazon Web Services Region in each Amazon Web Services account.</p>
+    pub fn get_theme_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_theme_id()
+    }
     /// <p>A display name for the theme.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -144,6 +156,10 @@ impl CreateThemeFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>A display name for the theme.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of the starting themes defined by Amazon QuickSight. For a list of the starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis. </p>
     pub fn base_theme_id(
@@ -161,6 +177,10 @@ impl CreateThemeFluentBuilder {
         self.inner = self.inner.set_base_theme_id(input);
         self
     }
+    /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of the starting themes defined by Amazon QuickSight. For a list of the starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis. </p>
+    pub fn get_base_theme_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_base_theme_id()
+    }
     /// <p>A description of the first version of the theme that you're creating. Every time <code>UpdateTheme</code> is called, a new version is created. Each version of the theme has a description of the version in the <code>VersionDescription</code> field.</p>
     pub fn version_description(
         mut self,
@@ -177,6 +197,10 @@ impl CreateThemeFluentBuilder {
         self.inner = self.inner.set_version_description(input);
         self
     }
+    /// <p>A description of the first version of the theme that you're creating. Every time <code>UpdateTheme</code> is called, a new version is created. Each version of the theme has a description of the version in the <code>VersionDescription</code> field.</p>
+    pub fn get_version_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_version_description()
+    }
     /// <p>The theme configuration, which contains the theme display properties.</p>
     pub fn configuration(mut self, input: crate::types::ThemeConfiguration) -> Self {
         self.inner = self.inner.configuration(input);
@@ -189,6 +213,10 @@ impl CreateThemeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
+    }
+    /// <p>The theme configuration, which contains the theme display properties.</p>
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ThemeConfiguration> {
+        self.inner.get_configuration()
     }
     /// Appends an item to `Permissions`.
     ///
@@ -207,6 +235,12 @@ impl CreateThemeFluentBuilder {
         self.inner = self.inner.set_permissions(input);
         self
     }
+    /// <p>A valid grouping of resource permissions to apply to the new theme. </p>
+    pub fn get_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+        self.inner.get_permissions()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -223,5 +257,9 @@ impl CreateThemeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A map of the key-value pairs for the resource tag or tags that you want to add to the resource.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

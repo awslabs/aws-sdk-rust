@@ -51,6 +51,12 @@ impl BatchGetMetricDataInputBuilder {
         self.queries = input;
         self
     }
+    /// <p>A list of queries for metrics to be retrieved.</p>
+    pub fn get_queries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetMetricDataQuery>> {
+        &self.queries
+    }
     /// Consumes the builder and constructs a [`BatchGetMetricDataInput`](crate::operation::batch_get_metric_data::BatchGetMetricDataInput).
     pub fn build(
         self,

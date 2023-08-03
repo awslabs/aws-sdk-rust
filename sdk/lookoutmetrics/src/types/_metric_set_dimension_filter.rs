@@ -48,6 +48,10 @@ impl MetricSetDimensionFilterBuilder {
         self.name = input;
         self
     }
+    /// <p>The dimension that you want to filter on.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `filter_list`.
     ///
     /// To override the contents of this collection use [`set_filter_list`](Self::set_filter_list).
@@ -66,6 +70,10 @@ impl MetricSetDimensionFilterBuilder {
     ) -> Self {
         self.filter_list = input;
         self
+    }
+    /// <p>The list of filters that you are applying.</p>
+    pub fn get_filter_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filter_list
     }
     /// Consumes the builder and constructs a [`MetricSetDimensionFilter`](crate::types::MetricSetDimensionFilter).
     pub fn build(self) -> crate::types::MetricSetDimensionFilter {

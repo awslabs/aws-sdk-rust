@@ -59,6 +59,12 @@ impl StartCostEstimationInputBuilder {
         self.resource_collection = input;
         self
     }
+    /// <p>The collection of Amazon Web Services resources used to create a monthly DevOps Guru cost estimate.</p>
+    pub fn get_resource_collection(
+        &self,
+    ) -> &::std::option::Option<crate::types::CostEstimationResourceCollectionFilter> {
+        &self.resource_collection
+    }
     /// <p>The idempotency token used to identify each cost estimate request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -68,6 +74,10 @@ impl StartCostEstimationInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>The idempotency token used to identify each cost estimate request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`StartCostEstimationInput`](crate::operation::start_cost_estimation::StartCostEstimationInput).
     pub fn build(

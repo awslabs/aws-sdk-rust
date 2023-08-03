@@ -36,6 +36,13 @@ impl CreateSnapshotScheduleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateSnapshotSchedule as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_snapshot_schedule::builders::CreateSnapshotScheduleInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +143,12 @@ impl CreateSnapshotScheduleFluentBuilder {
         self.inner = self.inner.set_schedule_definitions(input);
         self
     }
+    /// <p>The definition of the snapshot schedule. The definition is made up of schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)". </p>
+    pub fn get_schedule_definitions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_schedule_definitions()
+    }
     /// <p>A unique identifier for a snapshot schedule. Only alphanumeric characters are allowed for the identifier.</p>
     pub fn schedule_identifier(
         mut self,
@@ -152,6 +165,10 @@ impl CreateSnapshotScheduleFluentBuilder {
         self.inner = self.inner.set_schedule_identifier(input);
         self
     }
+    /// <p>A unique identifier for a snapshot schedule. Only alphanumeric characters are allowed for the identifier.</p>
+    pub fn get_schedule_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_schedule_identifier()
+    }
     /// <p>The description of the snapshot schedule.</p>
     pub fn schedule_description(
         mut self,
@@ -167,6 +184,10 @@ impl CreateSnapshotScheduleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_schedule_description(input);
         self
+    }
+    /// <p>The description of the snapshot schedule.</p>
+    pub fn get_schedule_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_schedule_description()
     }
     /// Appends an item to `Tags`.
     ///
@@ -185,6 +206,10 @@ impl CreateSnapshotScheduleFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>An optional set of tags you can use to search for the schedule.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p></p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -196,6 +221,10 @@ impl CreateSnapshotScheduleFluentBuilder {
         self
     }
     /// <p></p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
+    /// <p></p>
     pub fn next_invocations(mut self, input: i32) -> Self {
         self.inner = self.inner.next_invocations(input);
         self
@@ -204,5 +233,9 @@ impl CreateSnapshotScheduleFluentBuilder {
     pub fn set_next_invocations(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_next_invocations(input);
         self
+    }
+    /// <p></p>
+    pub fn get_next_invocations(&self) -> &::std::option::Option<i32> {
+        self.inner.get_next_invocations()
     }
 }

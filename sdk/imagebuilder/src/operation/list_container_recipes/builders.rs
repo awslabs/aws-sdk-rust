@@ -36,6 +36,12 @@ impl ListContainerRecipesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListContainerRecipes as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_container_recipes::builders::ListContainerRecipesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl ListContainerRecipesFluentBuilder {
         self.inner = self.inner.set_owner(input);
         self
     }
+    /// <p>Returns container recipes belonging to the specified owner, that have been shared with you. You can omit this field to return container recipes belonging to your account.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<crate::types::Ownership> {
+        self.inner.get_owner()
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -166,6 +176,16 @@ impl ListContainerRecipesFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>Use the following filters to streamline results:</p>
+    /// <ul>
+    /// <li> <p> <code>containerType</code> </p> </li>
+    /// <li> <p> <code>name</code> </p> </li>
+    /// <li> <p> <code>parentImage</code> </p> </li>
+    /// <li> <p> <code>platform</code> </p> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
+    }
     /// <p>The maximum items to return in a request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -176,6 +196,10 @@ impl ListContainerRecipesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum items to return in a request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -185,5 +209,9 @@ impl ListContainerRecipesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

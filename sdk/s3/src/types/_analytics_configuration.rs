@@ -58,6 +58,10 @@ impl AnalyticsConfigurationBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID that identifies the analytics configuration.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The filter used to describe a set of objects for analyses. A filter must have exactly one prefix, one tag, or one conjunction (AnalyticsAndOperator). If no filter is provided, all objects will be considered in any analysis.</p>
     pub fn filter(mut self, input: crate::types::AnalyticsFilter) -> Self {
         self.filter = ::std::option::Option::Some(input);
@@ -71,6 +75,10 @@ impl AnalyticsConfigurationBuilder {
         self.filter = input;
         self
     }
+    /// <p>The filter used to describe a set of objects for analyses. A filter must have exactly one prefix, one tag, or one conjunction (AnalyticsAndOperator). If no filter is provided, all objects will be considered in any analysis.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::AnalyticsFilter> {
+        &self.filter
+    }
     /// <p> Contains data related to access patterns to be collected and made available to analyze the tradeoffs between different storage classes. </p>
     pub fn storage_class_analysis(mut self, input: crate::types::StorageClassAnalysis) -> Self {
         self.storage_class_analysis = ::std::option::Option::Some(input);
@@ -83,6 +91,12 @@ impl AnalyticsConfigurationBuilder {
     ) -> Self {
         self.storage_class_analysis = input;
         self
+    }
+    /// <p> Contains data related to access patterns to be collected and made available to analyze the tradeoffs between different storage classes. </p>
+    pub fn get_storage_class_analysis(
+        &self,
+    ) -> &::std::option::Option<crate::types::StorageClassAnalysis> {
+        &self.storage_class_analysis
     }
     /// Consumes the builder and constructs a [`AnalyticsConfiguration`](crate::types::AnalyticsConfiguration).
     pub fn build(self) -> crate::types::AnalyticsConfiguration {

@@ -55,6 +55,10 @@ impl ResetResourceLogLevelInputBuilder {
         self.resource_identifier = input;
         self
     }
+    /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
+    pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_identifier
+    }
     /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
     pub fn resource_type(
         mut self,
@@ -70,6 +74,10 @@ impl ResetResourceLogLevelInputBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
     }
     /// Consumes the builder and constructs a [`ResetResourceLogLevelInput`](crate::operation::reset_resource_log_level::ResetResourceLogLevelInput).
     pub fn build(

@@ -36,6 +36,10 @@ impl GetImpersonationRoleEffectFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetImpersonationRoleEffect as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_impersonation_role_effect::builders::GetImpersonationRoleEffectInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl GetImpersonationRoleEffectFluentBuilder {
         self.inner = self.inner.set_organization_id(input);
         self
     }
+    /// <p>The WorkMail organization where the impersonation role is defined.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organization_id()
+    }
     /// <p>The impersonation role ID to test.</p>
     pub fn impersonation_role_id(
         mut self,
@@ -147,6 +155,10 @@ impl GetImpersonationRoleEffectFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_impersonation_role_id(input);
         self
+    }
+    /// <p>The impersonation role ID to test.</p>
+    pub fn get_impersonation_role_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_impersonation_role_id()
     }
     /// <p>The WorkMail organization user chosen to test the impersonation role. The following identity formats are available:</p>
     /// <ul>
@@ -167,5 +179,14 @@ impl GetImpersonationRoleEffectFluentBuilder {
     pub fn set_target_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_user(input);
         self
+    }
+    /// <p>The WorkMail organization user chosen to test the impersonation role. The following identity formats are available:</p>
+    /// <ul>
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+    /// <li> <p>User name: <code>user</code> </p> </li>
+    /// </ul>
+    pub fn get_target_user(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_user()
     }
 }

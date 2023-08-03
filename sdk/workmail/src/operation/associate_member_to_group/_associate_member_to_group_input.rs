@@ -63,6 +63,10 @@ impl AssociateMemberToGroupInputBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The organization under which the group exists.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p>The group to which the member (user or group) is associated.</p>
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl AssociateMemberToGroupInputBuilder {
         self.group_id = input;
         self
     }
+    /// <p>The group to which the member (user or group) is associated.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
+    }
     /// <p>The member (user or group) to associate to the group.</p>
     pub fn member_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.member_id = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl AssociateMemberToGroupInputBuilder {
     pub fn set_member_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.member_id = input;
         self
+    }
+    /// <p>The member (user or group) to associate to the group.</p>
+    pub fn get_member_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.member_id
     }
     /// Consumes the builder and constructs a [`AssociateMemberToGroupInput`](crate::operation::associate_member_to_group::AssociateMemberToGroupInput).
     pub fn build(

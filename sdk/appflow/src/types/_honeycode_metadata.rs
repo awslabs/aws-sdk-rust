@@ -52,6 +52,12 @@ impl HoneycodeMetadataBuilder {
         self.o_auth_scopes = input;
         self
     }
+    /// <p> The desired authorization scope for the Amazon Honeycode account. </p>
+    pub fn get_o_auth_scopes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.o_auth_scopes
+    }
     /// Consumes the builder and constructs a [`HoneycodeMetadata`](crate::types::HoneycodeMetadata).
     pub fn build(self) -> crate::types::HoneycodeMetadata {
         crate::types::HoneycodeMetadata {

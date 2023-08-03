@@ -92,6 +92,10 @@ impl CreateDeploymentInputBuilder {
         self.stack_id = input;
         self
     }
+    /// <p>The stack ID.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_id
+    }
     /// <p>The app ID. This parameter is required for app deployments, but not for other deployment commands.</p>
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_id = ::std::option::Option::Some(input.into());
@@ -101,6 +105,10 @@ impl CreateDeploymentInputBuilder {
     pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_id = input;
         self
+    }
+    /// <p>The app ID. This parameter is required for app deployments, but not for other deployment commands.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
     }
     /// Appends an item to `instance_ids`.
     ///
@@ -121,6 +129,12 @@ impl CreateDeploymentInputBuilder {
         self.instance_ids = input;
         self
     }
+    /// <p>The instance IDs for the deployment targets.</p>
+    pub fn get_instance_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.instance_ids
+    }
     /// Appends an item to `layer_ids`.
     ///
     /// To override the contents of this collection use [`set_layer_ids`](Self::set_layer_ids).
@@ -140,6 +154,10 @@ impl CreateDeploymentInputBuilder {
         self.layer_ids = input;
         self
     }
+    /// <p>The layer IDs for the deployment targets.</p>
+    pub fn get_layer_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.layer_ids
+    }
     /// <p>A <code>DeploymentCommand</code> object that specifies the deployment command and any associated arguments.</p>
     pub fn command(mut self, input: crate::types::DeploymentCommand) -> Self {
         self.command = ::std::option::Option::Some(input);
@@ -153,6 +171,10 @@ impl CreateDeploymentInputBuilder {
         self.command = input;
         self
     }
+    /// <p>A <code>DeploymentCommand</code> object that specifies the deployment command and any associated arguments.</p>
+    pub fn get_command(&self) -> &::std::option::Option<crate::types::DeploymentCommand> {
+        &self.command
+    }
     /// <p>A user-defined comment.</p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment = ::std::option::Option::Some(input.into());
@@ -162,6 +184,10 @@ impl CreateDeploymentInputBuilder {
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comment = input;
         self
+    }
+    /// <p>A user-defined comment.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comment
     }
     /// <p>A string that contains user-defined, custom JSON. You can use this parameter to override some corresponding default stack configuration JSON values. The string should be in the following format:</p>
     /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
@@ -176,6 +202,12 @@ impl CreateDeploymentInputBuilder {
     pub fn set_custom_json(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_json = input;
         self
+    }
+    /// <p>A string that contains user-defined, custom JSON. You can use this parameter to override some corresponding default stack configuration JSON values. The string should be in the following format:</p>
+    /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
+    /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">Overriding Attributes With Custom JSON</a>.</p>
+    pub fn get_custom_json(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_json
     }
     /// Consumes the builder and constructs a [`CreateDeploymentInput`](crate::operation::create_deployment::CreateDeploymentInput).
     pub fn build(

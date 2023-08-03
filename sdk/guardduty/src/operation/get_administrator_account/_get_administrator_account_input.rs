@@ -41,6 +41,10 @@ impl GetAdministratorAccountInputBuilder {
         self.detector_id = input;
         self
     }
+    /// <p>The unique ID of the detector of the GuardDuty member account.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
+    }
     /// Consumes the builder and constructs a [`GetAdministratorAccountInput`](crate::operation::get_administrator_account::GetAdministratorAccountInput).
     pub fn build(
         self,

@@ -43,6 +43,10 @@ impl VirtualServiceSpecBuilder {
         self.provider = input;
         self
     }
+    /// <p>The App Mesh object that is acting as the provider for a virtual service. You can specify a single virtual node or virtual router.</p>
+    pub fn get_provider(&self) -> &::std::option::Option<crate::types::VirtualServiceProvider> {
+        &self.provider
+    }
     /// Consumes the builder and constructs a [`VirtualServiceSpec`](crate::types::VirtualServiceSpec).
     pub fn build(self) -> crate::types::VirtualServiceSpec {
         crate::types::VirtualServiceSpec {

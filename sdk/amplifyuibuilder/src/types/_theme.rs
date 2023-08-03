@@ -112,6 +112,10 @@ impl ThemeBuilder {
         self.app_id = input;
         self
     }
+    /// <p>The unique ID for the Amplify app associated with the theme.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
     pub fn environment_name(
         mut self,
@@ -128,6 +132,10 @@ impl ThemeBuilder {
         self.environment_name = input;
         self
     }
+    /// <p>The name of the backend environment that is a part of the Amplify app.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_name
+    }
     /// <p>The ID for the theme.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -138,6 +146,10 @@ impl ThemeBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID for the theme.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the theme.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -147,6 +159,10 @@ impl ThemeBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the theme.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The time that the theme was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -161,6 +177,10 @@ impl ThemeBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The time that the theme was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The time that the theme was modified.</p>
     pub fn modified_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.modified_at = ::std::option::Option::Some(input);
@@ -173,6 +193,10 @@ impl ThemeBuilder {
     ) -> Self {
         self.modified_at = input;
         self
+    }
+    /// <p>The time that the theme was modified.</p>
+    pub fn get_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.modified_at
     }
     /// Appends an item to `values`.
     ///
@@ -193,6 +217,10 @@ impl ThemeBuilder {
         self.values = input;
         self
     }
+    /// <p>A list of key-value pairs that defines the properties of the theme.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ThemeValues>> {
+        &self.values
+    }
     /// Appends an item to `overrides`.
     ///
     /// To override the contents of this collection use [`set_overrides`](Self::set_overrides).
@@ -211,6 +239,12 @@ impl ThemeBuilder {
     ) -> Self {
         self.overrides = input;
         self
+    }
+    /// <p>Describes the properties that can be overriden to customize a theme.</p>
+    pub fn get_overrides(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ThemeValues>> {
+        &self.overrides
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -236,6 +270,14 @@ impl ThemeBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>One or more key-value pairs to use when tagging the theme.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`Theme`](crate::types::Theme).
     pub fn build(self) -> crate::types::Theme {

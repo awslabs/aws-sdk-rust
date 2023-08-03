@@ -57,6 +57,10 @@ impl DeprovisionIpamPoolCidrInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>The ID of the pool that has the CIDR you want to deprovision.</p>
     pub fn ipam_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_pool_id = ::std::option::Option::Some(input.into());
@@ -67,6 +71,10 @@ impl DeprovisionIpamPoolCidrInputBuilder {
         self.ipam_pool_id = input;
         self
     }
+    /// <p>The ID of the pool that has the CIDR you want to deprovision.</p>
+    pub fn get_ipam_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipam_pool_id
+    }
     /// <p>The CIDR which you want to deprovision from the pool.</p>
     pub fn cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cidr = ::std::option::Option::Some(input.into());
@@ -76,6 +84,10 @@ impl DeprovisionIpamPoolCidrInputBuilder {
     pub fn set_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cidr = input;
         self
+    }
+    /// <p>The CIDR which you want to deprovision from the pool.</p>
+    pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr
     }
     /// Consumes the builder and constructs a [`DeprovisionIpamPoolCidrInput`](crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidrInput).
     pub fn build(

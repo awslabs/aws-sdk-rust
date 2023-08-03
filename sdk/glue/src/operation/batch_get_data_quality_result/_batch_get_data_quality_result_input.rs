@@ -48,6 +48,10 @@ impl BatchGetDataQualityResultInputBuilder {
         self.result_ids = input;
         self
     }
+    /// <p>A list of unique result IDs for the data quality results.</p>
+    pub fn get_result_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.result_ids
+    }
     /// Consumes the builder and constructs a [`BatchGetDataQualityResultInput`](crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultInput).
     pub fn build(
         self,

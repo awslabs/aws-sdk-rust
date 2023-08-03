@@ -63,6 +63,10 @@ impl DeleteMailboxPermissionsInputBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The identifier of the organization under which the member (user or group) exists.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p>The identifier of the member (user or group) that owns the mailbox.</p>
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl DeleteMailboxPermissionsInputBuilder {
         self.entity_id = input;
         self
     }
+    /// <p>The identifier of the member (user or group) that owns the mailbox.</p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_id
+    }
     /// <p>The identifier of the member (user or group) for which to delete granted permissions.</p>
     pub fn grantee_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grantee_id = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl DeleteMailboxPermissionsInputBuilder {
     pub fn set_grantee_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.grantee_id = input;
         self
+    }
+    /// <p>The identifier of the member (user or group) for which to delete granted permissions.</p>
+    pub fn get_grantee_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grantee_id
     }
     /// Consumes the builder and constructs a [`DeleteMailboxPermissionsInput`](crate::operation::delete_mailbox_permissions::DeleteMailboxPermissionsInput).
     pub fn build(

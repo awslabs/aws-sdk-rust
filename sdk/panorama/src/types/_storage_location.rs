@@ -72,6 +72,10 @@ impl StorageLocationBuilder {
         self.bucket = input;
         self
     }
+    /// <p>The location's bucket.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p>The location's repo prefix.</p>
     pub fn repo_prefix_location(
         mut self,
@@ -87,6 +91,10 @@ impl StorageLocationBuilder {
     ) -> Self {
         self.repo_prefix_location = input;
         self
+    }
+    /// <p>The location's repo prefix.</p>
+    pub fn get_repo_prefix_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repo_prefix_location
     }
     /// <p>The location's generated prefix.</p>
     pub fn generated_prefix_location(
@@ -104,6 +112,10 @@ impl StorageLocationBuilder {
         self.generated_prefix_location = input;
         self
     }
+    /// <p>The location's generated prefix.</p>
+    pub fn get_generated_prefix_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.generated_prefix_location
+    }
     /// <p>The location's binary prefix.</p>
     pub fn binary_prefix_location(
         mut self,
@@ -120,6 +132,10 @@ impl StorageLocationBuilder {
         self.binary_prefix_location = input;
         self
     }
+    /// <p>The location's binary prefix.</p>
+    pub fn get_binary_prefix_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.binary_prefix_location
+    }
     /// <p>The location's manifest prefix.</p>
     pub fn manifest_prefix_location(
         mut self,
@@ -135,6 +151,10 @@ impl StorageLocationBuilder {
     ) -> Self {
         self.manifest_prefix_location = input;
         self
+    }
+    /// <p>The location's manifest prefix.</p>
+    pub fn get_manifest_prefix_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.manifest_prefix_location
     }
     /// Consumes the builder and constructs a [`StorageLocation`](crate::types::StorageLocation).
     pub fn build(self) -> crate::types::StorageLocation {

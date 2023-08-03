@@ -36,6 +36,10 @@ impl StopEntitiesDetectionV2JobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StopEntitiesDetectionV2Job as a reference.
+    pub fn as_input(&self) -> &crate::operation::stop_entities_detection_v2_job::builders::StopEntitiesDetectionV2JobInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +129,9 @@ impl StopEntitiesDetectionV2JobFluentBuilder {
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_id(input);
         self
+    }
+    /// <p>The identifier of the medical entities job to stop.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_id()
     }
 }

@@ -52,6 +52,10 @@ impl CreateEdgeDeploymentPlanOutputBuilder {
         self.edge_deployment_plan_arn = input;
         self
     }
+    /// <p>The ARN of the edge deployment plan.</p>
+    pub fn get_edge_deployment_plan_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.edge_deployment_plan_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

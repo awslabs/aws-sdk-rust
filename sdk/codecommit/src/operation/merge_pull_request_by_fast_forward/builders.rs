@@ -36,6 +36,10 @@ impl MergePullRequestByFastForwardFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the MergePullRequestByFastForward as a reference.
+    pub fn as_input(&self) -> &crate::operation::merge_pull_request_by_fast_forward::builders::MergePullRequestByFastForwardInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl MergePullRequestByFastForwardFluentBuilder {
         self.inner = self.inner.set_pull_request_id(input);
         self
     }
+    /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+    pub fn get_pull_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pull_request_id()
+    }
     /// <p>The name of the repository where the pull request was created.</p>
     pub fn repository_name(
         mut self,
@@ -122,6 +130,10 @@ impl MergePullRequestByFastForwardFluentBuilder {
         self.inner = self.inner.set_repository_name(input);
         self
     }
+    /// <p>The name of the repository where the pull request was created.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_repository_name()
+    }
     /// <p>The full commit ID of the original or updated commit in the pull request source branch. Pass this value if you want an exception thrown if the current commit ID of the tip of the source branch does not match this commit ID.</p>
     pub fn source_commit_id(
         mut self,
@@ -137,5 +149,9 @@ impl MergePullRequestByFastForwardFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_source_commit_id(input);
         self
+    }
+    /// <p>The full commit ID of the original or updated commit in the pull request source branch. Pass this value if you want an exception thrown if the current commit ID of the tip of the source branch does not match this commit ID.</p>
+    pub fn get_source_commit_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_commit_id()
     }
 }

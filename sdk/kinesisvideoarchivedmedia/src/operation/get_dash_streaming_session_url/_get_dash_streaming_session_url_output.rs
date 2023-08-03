@@ -52,6 +52,10 @@ impl GetDashStreamingSessionUrlOutputBuilder {
         self.dash_streaming_session_url = input;
         self
     }
+    /// <p>The URL (containing the session token) that a media player can use to retrieve the MPEG-DASH manifest.</p>
+    pub fn get_dash_streaming_session_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dash_streaming_session_url
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -36,6 +36,13 @@ impl ListApplicationStatesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListApplicationStates as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_application_states::builders::ListApplicationStatesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -147,6 +154,12 @@ impl ListApplicationStatesFluentBuilder {
         self.inner = self.inner.set_application_ids(input);
         self
     }
+    /// <p>The configurationIds from the Application Discovery Service that uniquely identifies your applications.</p>
+    pub fn get_application_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_application_ids()
+    }
     /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -157,6 +170,10 @@ impl ListApplicationStatesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>Maximum number of results to be returned per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -166,5 +183,9 @@ impl ListApplicationStatesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>Maximum number of results to be returned per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

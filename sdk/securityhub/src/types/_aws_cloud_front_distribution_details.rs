@@ -155,6 +155,12 @@ impl AwsCloudFrontDistributionDetailsBuilder {
         self.cache_behaviors = input;
         self
     }
+    /// <p>Provides information about the cache configuration for the distribution.</p>
+    pub fn get_cache_behaviors(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsCloudFrontDistributionCacheBehaviors> {
+        &self.cache_behaviors
+    }
     /// <p>The default cache behavior for the configuration.</p>
     pub fn default_cache_behavior(
         mut self,
@@ -170,6 +176,12 @@ impl AwsCloudFrontDistributionDetailsBuilder {
     ) -> Self {
         self.default_cache_behavior = input;
         self
+    }
+    /// <p>The default cache behavior for the configuration.</p>
+    pub fn get_default_cache_behavior(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsCloudFrontDistributionDefaultCacheBehavior> {
+        &self.default_cache_behavior
     }
     /// <p>The object that CloudFront sends in response to requests from the origin (for example, index.html) when a viewer requests the root URL for the distribution (http://www.example.com) instead of an object in your distribution (http://www.example.com/product-description.html). </p>
     pub fn default_root_object(
@@ -187,6 +199,10 @@ impl AwsCloudFrontDistributionDetailsBuilder {
         self.default_root_object = input;
         self
     }
+    /// <p>The object that CloudFront sends in response to requests from the origin (for example, index.html) when a viewer requests the root URL for the distribution (http://www.example.com) instead of an object in your distribution (http://www.example.com/product-description.html). </p>
+    pub fn get_default_root_object(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_root_object
+    }
     /// <p>The domain name corresponding to the distribution.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
@@ -197,6 +213,10 @@ impl AwsCloudFrontDistributionDetailsBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The domain name corresponding to the distribution.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The entity tag is a hash of the object.</p>
     pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.e_tag = ::std::option::Option::Some(input.into());
@@ -206,6 +226,10 @@ impl AwsCloudFrontDistributionDetailsBuilder {
     pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.e_tag = input;
         self
+    }
+    /// <p>The entity tag is a hash of the object.</p>
+    pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.e_tag
     }
     /// <p>Indicates when that the distribution was last modified.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
@@ -225,6 +249,11 @@ impl AwsCloudFrontDistributionDetailsBuilder {
         self.last_modified_time = input;
         self
     }
+    /// <p>Indicates when that the distribution was last modified.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_time
+    }
     /// <p>A complex type that controls whether access logs are written for the distribution.</p>
     pub fn logging(mut self, input: crate::types::AwsCloudFrontDistributionLogging) -> Self {
         self.logging = ::std::option::Option::Some(input);
@@ -238,6 +267,12 @@ impl AwsCloudFrontDistributionDetailsBuilder {
         self.logging = input;
         self
     }
+    /// <p>A complex type that controls whether access logs are written for the distribution.</p>
+    pub fn get_logging(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsCloudFrontDistributionLogging> {
+        &self.logging
+    }
     /// <p>A complex type that contains information about origins for this distribution.</p>
     pub fn origins(mut self, input: crate::types::AwsCloudFrontDistributionOrigins) -> Self {
         self.origins = ::std::option::Option::Some(input);
@@ -250,6 +285,12 @@ impl AwsCloudFrontDistributionDetailsBuilder {
     ) -> Self {
         self.origins = input;
         self
+    }
+    /// <p>A complex type that contains information about origins for this distribution.</p>
+    pub fn get_origins(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsCloudFrontDistributionOrigins> {
+        &self.origins
     }
     /// <p>Provides information about the origin groups in the distribution.</p>
     pub fn origin_groups(
@@ -267,6 +308,12 @@ impl AwsCloudFrontDistributionDetailsBuilder {
         self.origin_groups = input;
         self
     }
+    /// <p>Provides information about the origin groups in the distribution.</p>
+    pub fn get_origin_groups(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsCloudFrontDistributionOriginGroups> {
+        &self.origin_groups
+    }
     /// <p>Provides information about the TLS/SSL configuration that the distribution uses to communicate with viewers.</p>
     pub fn viewer_certificate(
         mut self,
@@ -283,6 +330,12 @@ impl AwsCloudFrontDistributionDetailsBuilder {
         self.viewer_certificate = input;
         self
     }
+    /// <p>Provides information about the TLS/SSL configuration that the distribution uses to communicate with viewers.</p>
+    pub fn get_viewer_certificate(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsCloudFrontDistributionViewerCertificate> {
+        &self.viewer_certificate
+    }
     /// <p>Indicates the current status of the distribution.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -293,6 +346,10 @@ impl AwsCloudFrontDistributionDetailsBuilder {
         self.status = input;
         self
     }
+    /// <p>Indicates the current status of the distribution.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>A unique identifier that specifies the WAF web ACL, if any, to associate with this distribution.</p>
     pub fn web_acl_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.web_acl_id = ::std::option::Option::Some(input.into());
@@ -302,6 +359,10 @@ impl AwsCloudFrontDistributionDetailsBuilder {
     pub fn set_web_acl_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.web_acl_id = input;
         self
+    }
+    /// <p>A unique identifier that specifies the WAF web ACL, if any, to associate with this distribution.</p>
+    pub fn get_web_acl_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.web_acl_id
     }
     /// Consumes the builder and constructs a [`AwsCloudFrontDistributionDetails`](crate::types::AwsCloudFrontDistributionDetails).
     pub fn build(self) -> crate::types::AwsCloudFrontDistributionDetails {

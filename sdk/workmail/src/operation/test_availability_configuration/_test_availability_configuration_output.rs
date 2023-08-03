@@ -54,6 +54,10 @@ impl TestAvailabilityConfigurationOutputBuilder {
         self.test_passed = input;
         self
     }
+    /// <p>Boolean indicating whether the test passed or failed.</p>
+    pub fn get_test_passed(&self) -> &::std::option::Option<bool> {
+        &self.test_passed
+    }
     /// <p>String containing the reason for a failed test if <code>TestPassed</code> is false.</p>
     pub fn failure_reason(
         mut self,
@@ -69,6 +73,10 @@ impl TestAvailabilityConfigurationOutputBuilder {
     ) -> Self {
         self.failure_reason = input;
         self
+    }
+    /// <p>String containing the reason for a failed test if <code>TestPassed</code> is false.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

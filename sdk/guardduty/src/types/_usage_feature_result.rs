@@ -48,6 +48,10 @@ impl UsageFeatureResultBuilder {
         self.feature = input;
         self
     }
+    /// <p>The feature that generated the usage cost.</p>
+    pub fn get_feature(&self) -> &::std::option::Option<crate::types::UsageFeature> {
+        &self.feature
+    }
     /// <p>Contains the total usage with the corresponding currency unit for that value.</p>
     pub fn total(mut self, input: crate::types::Total) -> Self {
         self.total = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl UsageFeatureResultBuilder {
     pub fn set_total(mut self, input: ::std::option::Option<crate::types::Total>) -> Self {
         self.total = input;
         self
+    }
+    /// <p>Contains the total usage with the corresponding currency unit for that value.</p>
+    pub fn get_total(&self) -> &::std::option::Option<crate::types::Total> {
+        &self.total
     }
     /// Consumes the builder and constructs a [`UsageFeatureResult`](crate::types::UsageFeatureResult).
     pub fn build(self) -> crate::types::UsageFeatureResult {

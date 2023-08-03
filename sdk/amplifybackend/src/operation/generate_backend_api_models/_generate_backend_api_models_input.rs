@@ -58,6 +58,10 @@ impl GenerateBackendApiModelsInputBuilder {
         self.app_id = input;
         self
     }
+    /// <p>The app ID.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// <p>The name of the backend environment.</p>
     pub fn backend_environment_name(
         mut self,
@@ -74,6 +78,10 @@ impl GenerateBackendApiModelsInputBuilder {
         self.backend_environment_name = input;
         self
     }
+    /// <p>The name of the backend environment.</p>
+    pub fn get_backend_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backend_environment_name
+    }
     /// <p>The name of this resource.</p>
     pub fn resource_name(
         mut self,
@@ -89,6 +97,10 @@ impl GenerateBackendApiModelsInputBuilder {
     ) -> Self {
         self.resource_name = input;
         self
+    }
+    /// <p>The name of this resource.</p>
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_name
     }
     /// Consumes the builder and constructs a [`GenerateBackendApiModelsInput`](crate::operation::generate_backend_api_models::GenerateBackendApiModelsInput).
     pub fn build(

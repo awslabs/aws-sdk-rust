@@ -78,6 +78,12 @@ impl SearchProvisionedProductsOutputBuilder {
         self.provisioned_products = input;
         self
     }
+    /// <p>Information about the provisioned products.</p>
+    pub fn get_provisioned_products(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvisionedProductAttribute>> {
+        &self.provisioned_products
+    }
     /// <p>The number of provisioned products found.</p>
     pub fn total_results_count(mut self, input: i32) -> Self {
         self.total_results_count = ::std::option::Option::Some(input);
@@ -87,6 +93,10 @@ impl SearchProvisionedProductsOutputBuilder {
     pub fn set_total_results_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_results_count = input;
         self
+    }
+    /// <p>The number of provisioned products found.</p>
+    pub fn get_total_results_count(&self) -> &::std::option::Option<i32> {
+        &self.total_results_count
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub fn next_page_token(
@@ -103,6 +113,10 @@ impl SearchProvisionedProductsOutputBuilder {
     ) -> Self {
         self.next_page_token = input;
         self
+    }
+    /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_page_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

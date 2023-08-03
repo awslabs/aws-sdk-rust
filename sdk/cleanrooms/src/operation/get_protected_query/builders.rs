@@ -36,6 +36,12 @@ impl GetProtectedQueryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetProtectedQuery as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_protected_query::builders::GetProtectedQueryInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl GetProtectedQueryFluentBuilder {
         self.inner = self.inner.set_membership_identifier(input);
         self
     }
+    /// <p>The identifier for a membership in a protected query instance.</p>
+    pub fn get_membership_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_membership_identifier()
+    }
     /// <p>The identifier for a protected query instance.</p>
     pub fn protected_query_identifier(
         mut self,
@@ -147,5 +157,9 @@ impl GetProtectedQueryFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_protected_query_identifier(input);
         self
+    }
+    /// <p>The identifier for a protected query instance.</p>
+    pub fn get_protected_query_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_protected_query_identifier()
     }
 }

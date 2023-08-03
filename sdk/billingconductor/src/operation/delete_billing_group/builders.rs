@@ -36,6 +36,12 @@ impl DeleteBillingGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteBillingGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_billing_group::builders::DeleteBillingGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +131,9 @@ impl DeleteBillingGroupFluentBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the billing group that you're deleting.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
     }
 }

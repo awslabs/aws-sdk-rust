@@ -56,6 +56,10 @@ impl ReferenceStoreFilterBuilder {
         self.name = input;
         self
     }
+    /// <p>The name to filter on.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The filter's start date.</p>
     pub fn created_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_after = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl ReferenceStoreFilterBuilder {
         self.created_after = input;
         self
     }
+    /// <p>The filter's start date.</p>
+    pub fn get_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_after
+    }
     /// <p>The filter's end date.</p>
     pub fn created_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_before = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl ReferenceStoreFilterBuilder {
     ) -> Self {
         self.created_before = input;
         self
+    }
+    /// <p>The filter's end date.</p>
+    pub fn get_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_before
     }
     /// Consumes the builder and constructs a [`ReferenceStoreFilter`](crate::types::ReferenceStoreFilter).
     pub fn build(self) -> crate::types::ReferenceStoreFilter {

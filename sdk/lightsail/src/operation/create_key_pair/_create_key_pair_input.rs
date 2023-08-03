@@ -55,6 +55,10 @@ impl CreateKeyPairInputBuilder {
         self.key_pair_name = input;
         self
     }
+    /// <p>The name for your new key pair.</p>
+    pub fn get_key_pair_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_pair_name
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -75,6 +79,11 @@ impl CreateKeyPairInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tag keys and optional values to add to the resource during create.</p>
+    /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateKeyPairInput`](crate::operation::create_key_pair::CreateKeyPairInput).
     pub fn build(

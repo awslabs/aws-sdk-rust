@@ -84,6 +84,12 @@ impl GetMigrationsInputBuilder {
         self.sort_by_attribute = input;
         self
     }
+    /// <p>The field to sort the list of migrations by. You can sort by the Amazon Lex V1 bot name or the date and time that the migration was started.</p>
+    pub fn get_sort_by_attribute(
+        &self,
+    ) -> &::std::option::Option<crate::types::MigrationSortAttribute> {
+        &self.sort_by_attribute
+    }
     /// <p>The order so sort the list.</p>
     pub fn sort_by_order(mut self, input: crate::types::SortOrder) -> Self {
         self.sort_by_order = ::std::option::Option::Some(input);
@@ -96,6 +102,10 @@ impl GetMigrationsInputBuilder {
     ) -> Self {
         self.sort_by_order = input;
         self
+    }
+    /// <p>The order so sort the list.</p>
+    pub fn get_sort_by_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.sort_by_order
     }
     /// <p>Filters the list to contain only bots whose name contains the specified string. The string is matched anywhere in bot name.</p>
     pub fn v1_bot_name_contains(
@@ -113,6 +123,10 @@ impl GetMigrationsInputBuilder {
         self.v1_bot_name_contains = input;
         self
     }
+    /// <p>Filters the list to contain only bots whose name contains the specified string. The string is matched anywhere in bot name.</p>
+    pub fn get_v1_bot_name_contains(&self) -> &::std::option::Option<::std::string::String> {
+        &self.v1_bot_name_contains
+    }
     /// <p>Filters the list to contain only migrations in the specified state.</p>
     pub fn migration_status_equals(mut self, input: crate::types::MigrationStatus) -> Self {
         self.migration_status_equals = ::std::option::Option::Some(input);
@@ -126,6 +140,12 @@ impl GetMigrationsInputBuilder {
         self.migration_status_equals = input;
         self
     }
+    /// <p>Filters the list to contain only migrations in the specified state.</p>
+    pub fn get_migration_status_equals(
+        &self,
+    ) -> &::std::option::Option<crate::types::MigrationStatus> {
+        &self.migration_status_equals
+    }
     /// <p>The maximum number of migrations to return in the response. The default is 10.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -136,6 +156,10 @@ impl GetMigrationsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of migrations to return in the response. The default is 10.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>A pagination token that fetches the next page of migrations. If the response to this operation is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of migrations, specify the pagination token in the request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -145,6 +169,10 @@ impl GetMigrationsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A pagination token that fetches the next page of migrations. If the response to this operation is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of migrations, specify the pagination token in the request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`GetMigrationsInput`](crate::operation::get_migrations::GetMigrationsInput).
     pub fn build(

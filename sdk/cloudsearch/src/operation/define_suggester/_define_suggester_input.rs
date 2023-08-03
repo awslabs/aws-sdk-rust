@@ -48,6 +48,10 @@ impl DefineSuggesterInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>Configuration information for a search suggester. Each suggester has a unique name and specifies the text field you want to use for suggestions. The following options can be configured for a suggester: <code>FuzzyMatching</code>, <code>SortExpression</code>. </p>
     pub fn suggester(mut self, input: crate::types::Suggester) -> Self {
         self.suggester = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl DefineSuggesterInputBuilder {
     pub fn set_suggester(mut self, input: ::std::option::Option<crate::types::Suggester>) -> Self {
         self.suggester = input;
         self
+    }
+    /// <p>Configuration information for a search suggester. Each suggester has a unique name and specifies the text field you want to use for suggestions. The following options can be configured for a suggester: <code>FuzzyMatching</code>, <code>SortExpression</code>. </p>
+    pub fn get_suggester(&self) -> &::std::option::Option<crate::types::Suggester> {
+        &self.suggester
     }
     /// Consumes the builder and constructs a [`DefineSuggesterInput`](crate::operation::define_suggester::DefineSuggesterInput).
     pub fn build(

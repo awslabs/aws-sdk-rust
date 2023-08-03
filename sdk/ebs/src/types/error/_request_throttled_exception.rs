@@ -75,6 +75,10 @@ impl RequestThrottledExceptionBuilder {
         self.message = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The reason for the exception.</p>
     pub fn reason(mut self, input: crate::types::RequestThrottledExceptionReason) -> Self {
         self.reason = ::std::option::Option::Some(input);
@@ -87,6 +91,12 @@ impl RequestThrottledExceptionBuilder {
     ) -> Self {
         self.reason = input;
         self
+    }
+    /// <p>The reason for the exception.</p>
+    pub fn get_reason(
+        &self,
+    ) -> &::std::option::Option<crate::types::RequestThrottledExceptionReason> {
+        &self.reason
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

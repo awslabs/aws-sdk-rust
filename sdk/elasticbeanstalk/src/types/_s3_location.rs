@@ -48,6 +48,10 @@ impl S3LocationBuilder {
         self.s3_bucket = input;
         self
     }
+    /// <p>The Amazon S3 bucket where the data is located.</p>
+    pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket
+    }
     /// <p>The Amazon S3 key where the data is located.</p>
     pub fn s3_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_key = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl S3LocationBuilder {
     pub fn set_s3_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_key = input;
         self
+    }
+    /// <p>The Amazon S3 key where the data is located.</p>
+    pub fn get_s3_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_key
     }
     /// Consumes the builder and constructs a [`S3Location`](crate::types::S3Location).
     pub fn build(self) -> crate::types::S3Location {

@@ -36,6 +36,10 @@ impl PutHypervisorPropertyMappingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutHypervisorPropertyMappings as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_hypervisor_property_mappings::builders::PutHypervisorPropertyMappingsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl PutHypervisorPropertyMappingsFluentBuilder {
         self.inner = self.inner.set_hypervisor_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
+    pub fn get_hypervisor_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_hypervisor_arn()
+    }
     /// Appends an item to `VmwareToAwsTagMappings`.
     ///
     /// To override the contents of this collection use [`set_vmware_to_aws_tag_mappings`](Self::set_vmware_to_aws_tag_mappings).
@@ -152,6 +160,12 @@ impl PutHypervisorPropertyMappingsFluentBuilder {
         self.inner = self.inner.set_vmware_to_aws_tag_mappings(input);
         self
     }
+    /// <p>This action requests the mappings of on-premises VMware tags to the Amazon Web Services tags.</p>
+    pub fn get_vmware_to_aws_tag_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VmwareToAwsTagMapping>> {
+        self.inner.get_vmware_to_aws_tag_mappings()
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM role.</p>
     pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.iam_role_arn(input.into());
@@ -161,5 +175,9 @@ impl PutHypervisorPropertyMappingsFluentBuilder {
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_iam_role_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role.</p>
+    pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_iam_role_arn()
     }
 }

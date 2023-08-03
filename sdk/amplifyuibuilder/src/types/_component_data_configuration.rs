@@ -64,6 +64,10 @@ impl ComponentDataConfigurationBuilder {
         self.model = input;
         self
     }
+    /// <p>The name of the data model to use to bind data to a component.</p>
+    pub fn get_model(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model
+    }
     /// Appends an item to `sort`.
     ///
     /// To override the contents of this collection use [`set_sort`](Self::set_sort).
@@ -83,6 +87,10 @@ impl ComponentDataConfigurationBuilder {
         self.sort = input;
         self
     }
+    /// <p>Describes how to sort the component's properties.</p>
+    pub fn get_sort(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SortProperty>> {
+        &self.sort
+    }
     /// <p>Represents the conditional logic to use when binding data to a component. Use this property to retrieve only a subset of the data in a collection.</p>
     pub fn predicate(mut self, input: crate::types::Predicate) -> Self {
         self.predicate = ::std::option::Option::Some(input);
@@ -92,6 +100,10 @@ impl ComponentDataConfigurationBuilder {
     pub fn set_predicate(mut self, input: ::std::option::Option<crate::types::Predicate>) -> Self {
         self.predicate = input;
         self
+    }
+    /// <p>Represents the conditional logic to use when binding data to a component. Use this property to retrieve only a subset of the data in a collection.</p>
+    pub fn get_predicate(&self) -> &::std::option::Option<crate::types::Predicate> {
+        &self.predicate
     }
     /// Appends an item to `identifiers`.
     ///
@@ -111,6 +123,12 @@ impl ComponentDataConfigurationBuilder {
     ) -> Self {
         self.identifiers = input;
         self
+    }
+    /// <p>A list of IDs to use to bind data to a component. Use this property to bind specifically chosen data, rather than data retrieved from a query.</p>
+    pub fn get_identifiers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.identifiers
     }
     /// Consumes the builder and constructs a [`ComponentDataConfiguration`](crate::types::ComponentDataConfiguration).
     pub fn build(self) -> crate::types::ComponentDataConfiguration {

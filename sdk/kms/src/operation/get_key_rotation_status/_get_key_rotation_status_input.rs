@@ -68,6 +68,17 @@ impl GetKeyRotationStatusInputBuilder {
         self.key_id = input;
         self
     }
+    /// <p>Gets the rotation status for the specified KMS key.</p>
+    /// <p>Specify the key ID or key ARN of the KMS key. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN.</p>
+    /// <p>For example:</p>
+    /// <ul>
+    /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+    /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+    /// </ul>
+    /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
+    pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_id
+    }
     /// Consumes the builder and constructs a [`GetKeyRotationStatusInput`](crate::operation::get_key_rotation_status::GetKeyRotationStatusInput).
     pub fn build(
         self,

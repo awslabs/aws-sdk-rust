@@ -45,6 +45,12 @@ impl ReportConfigurationBuilder {
         self.report_s3_configuration = input;
         self
     }
+    /// <p>Configuration of an S3 location to write error reports and events for a batch load.</p>
+    pub fn get_report_s3_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReportS3Configuration> {
+        &self.report_s3_configuration
+    }
     /// Consumes the builder and constructs a [`ReportConfiguration`](crate::types::ReportConfiguration).
     pub fn build(self) -> crate::types::ReportConfiguration {
         crate::types::ReportConfiguration {

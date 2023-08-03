@@ -40,6 +40,10 @@ impl FileCacheFailureDetailsBuilder {
         self.message = input;
         self
     }
+    /// <p>A message describing any failures that occurred.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Consumes the builder and constructs a [`FileCacheFailureDetails`](crate::types::FileCacheFailureDetails).
     pub fn build(self) -> crate::types::FileCacheFailureDetails {
         crate::types::FileCacheFailureDetails {

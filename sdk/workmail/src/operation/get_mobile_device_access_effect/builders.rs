@@ -36,6 +36,10 @@ impl GetMobileDeviceAccessEffectFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetMobileDeviceAccessEffect as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_mobile_device_access_effect::builders::GetMobileDeviceAccessEffectInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl GetMobileDeviceAccessEffectFluentBuilder {
         self.inner = self.inner.set_organization_id(input);
         self
     }
+    /// <p>The WorkMail organization to simulate the access effect for.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organization_id()
+    }
     /// <p>Device type the simulated user will report.</p>
     pub fn device_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_type(input.into());
@@ -142,6 +150,10 @@ impl GetMobileDeviceAccessEffectFluentBuilder {
         self.inner = self.inner.set_device_type(input);
         self
     }
+    /// <p>Device type the simulated user will report.</p>
+    pub fn get_device_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_type()
+    }
     /// <p>Device model the simulated user will report.</p>
     pub fn device_model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_model(input.into());
@@ -151,6 +163,10 @@ impl GetMobileDeviceAccessEffectFluentBuilder {
     pub fn set_device_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_model(input);
         self
+    }
+    /// <p>Device model the simulated user will report.</p>
+    pub fn get_device_model(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_model()
     }
     /// <p>Device operating system the simulated user will report.</p>
     pub fn device_operating_system(
@@ -168,6 +184,10 @@ impl GetMobileDeviceAccessEffectFluentBuilder {
         self.inner = self.inner.set_device_operating_system(input);
         self
     }
+    /// <p>Device operating system the simulated user will report.</p>
+    pub fn get_device_operating_system(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_operating_system()
+    }
     /// <p>Device user agent the simulated user will report.</p>
     pub fn device_user_agent(
         mut self,
@@ -183,5 +203,9 @@ impl GetMobileDeviceAccessEffectFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_device_user_agent(input);
         self
+    }
+    /// <p>Device user agent the simulated user will report.</p>
+    pub fn get_device_user_agent(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_user_agent()
     }
 }

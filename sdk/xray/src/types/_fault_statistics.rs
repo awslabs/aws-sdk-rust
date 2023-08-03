@@ -48,6 +48,10 @@ impl FaultStatisticsBuilder {
         self.other_count = input;
         self
     }
+    /// <p>The number of requests that failed with untracked 5xx Server Error status codes.</p>
+    pub fn get_other_count(&self) -> &::std::option::Option<i64> {
+        &self.other_count
+    }
     /// <p>The total number of requests that failed with a 5xx Server Error status code.</p>
     pub fn total_count(mut self, input: i64) -> Self {
         self.total_count = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl FaultStatisticsBuilder {
     pub fn set_total_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_count = input;
         self
+    }
+    /// <p>The total number of requests that failed with a 5xx Server Error status code.</p>
+    pub fn get_total_count(&self) -> &::std::option::Option<i64> {
+        &self.total_count
     }
     /// Consumes the builder and constructs a [`FaultStatistics`](crate::types::FaultStatistics).
     pub fn build(self) -> crate::types::FaultStatistics {

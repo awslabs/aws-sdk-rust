@@ -41,6 +41,10 @@ impl DescribeSimulationJobInputBuilder {
         self.job = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the simulation job to be described.</p>
+    pub fn get_job(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job
+    }
     /// Consumes the builder and constructs a [`DescribeSimulationJobInput`](crate::operation::describe_simulation_job::DescribeSimulationJobInput).
     pub fn build(
         self,

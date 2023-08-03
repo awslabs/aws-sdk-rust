@@ -60,6 +60,12 @@ impl CreateTrafficPolicyInstanceOutputBuilder {
         self.traffic_policy_instance = input;
         self
     }
+    /// <p>A complex type that contains settings for the new traffic policy instance.</p>
+    pub fn get_traffic_policy_instance(
+        &self,
+    ) -> &::std::option::Option<crate::types::TrafficPolicyInstance> {
+        &self.traffic_policy_instance
+    }
     /// <p>A unique URL that represents a new traffic policy instance.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
@@ -69,6 +75,10 @@ impl CreateTrafficPolicyInstanceOutputBuilder {
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
+    }
+    /// <p>A unique URL that represents a new traffic policy instance.</p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

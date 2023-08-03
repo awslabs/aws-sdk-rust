@@ -57,6 +57,10 @@ impl KeyGroupBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier for the key group.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The date and time when the key group was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -70,6 +74,10 @@ impl KeyGroupBuilder {
         self.last_modified_time = input;
         self
     }
+    /// <p>The date and time when the key group was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
     /// <p>The key group configuration.</p>
     pub fn key_group_config(mut self, input: crate::types::KeyGroupConfig) -> Self {
         self.key_group_config = ::std::option::Option::Some(input);
@@ -82,6 +90,10 @@ impl KeyGroupBuilder {
     ) -> Self {
         self.key_group_config = input;
         self
+    }
+    /// <p>The key group configuration.</p>
+    pub fn get_key_group_config(&self) -> &::std::option::Option<crate::types::KeyGroupConfig> {
+        &self.key_group_config
     }
     /// Consumes the builder and constructs a [`KeyGroup`](crate::types::KeyGroup).
     pub fn build(self) -> crate::types::KeyGroup {

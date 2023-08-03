@@ -36,6 +36,10 @@ impl CreateTrafficPolicyVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateTrafficPolicyVersion as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_traffic_policy_version::builders::CreateTrafficPolicyVersionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl CreateTrafficPolicyVersionFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The ID of the traffic policy for which you want to create a new version.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The definition of this version of the traffic policy, in JSON format. You specified the JSON in the <code>CreateTrafficPolicyVersion</code> request. For more information about the JSON format, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateTrafficPolicy.html">CreateTrafficPolicy</a>.</p>
     pub fn document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.document(input.into());
@@ -136,6 +144,10 @@ impl CreateTrafficPolicyVersionFluentBuilder {
         self.inner = self.inner.set_document(input);
         self
     }
+    /// <p>The definition of this version of the traffic policy, in JSON format. You specified the JSON in the <code>CreateTrafficPolicyVersion</code> request. For more information about the JSON format, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateTrafficPolicy.html">CreateTrafficPolicy</a>.</p>
+    pub fn get_document(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_document()
+    }
     /// <p>The comment that you specified in the <code>CreateTrafficPolicyVersion</code> request, if any.</p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.comment(input.into());
@@ -145,5 +157,9 @@ impl CreateTrafficPolicyVersionFluentBuilder {
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_comment(input);
         self
+    }
+    /// <p>The comment that you specified in the <code>CreateTrafficPolicyVersion</code> request, if any.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_comment()
     }
 }

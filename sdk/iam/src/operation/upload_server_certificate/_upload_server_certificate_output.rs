@@ -66,6 +66,12 @@ impl UploadServerCertificateOutputBuilder {
         self.server_certificate_metadata = input;
         self
     }
+    /// <p>The meta information of the uploaded server certificate without its certificate body, certificate chain, and private key.</p>
+    pub fn get_server_certificate_metadata(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServerCertificateMetadata> {
+        &self.server_certificate_metadata
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -84,6 +90,10 @@ impl UploadServerCertificateOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of tags that are attached to the new IAM server certificate. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

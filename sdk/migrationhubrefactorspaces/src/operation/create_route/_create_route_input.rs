@@ -121,6 +121,10 @@ impl CreateRouteInputBuilder {
         self.environment_identifier = input;
         self
     }
+    /// <p>The ID of the environment in which the route is created.</p>
+    pub fn get_environment_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_identifier
+    }
     /// <p>The ID of the application within which the route is being created.</p>
     pub fn application_identifier(
         mut self,
@@ -136,6 +140,10 @@ impl CreateRouteInputBuilder {
     ) -> Self {
         self.application_identifier = input;
         self
+    }
+    /// <p>The ID of the application within which the route is being created.</p>
+    pub fn get_application_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_identifier
     }
     /// <p>The ID of the service in which the route is created. Traffic that matches this route is forwarded to this service.</p>
     pub fn service_identifier(
@@ -153,6 +161,10 @@ impl CreateRouteInputBuilder {
         self.service_identifier = input;
         self
     }
+    /// <p>The ID of the service in which the route is created. Traffic that matches this route is forwarded to this service.</p>
+    pub fn get_service_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_identifier
+    }
     /// <p>The route type of the route. <code>DEFAULT</code> indicates that all traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created. <code>URI_PATH</code> indicates a route that is based on a URI path.</p>
     pub fn route_type(mut self, input: crate::types::RouteType) -> Self {
         self.route_type = ::std::option::Option::Some(input);
@@ -162,6 +174,10 @@ impl CreateRouteInputBuilder {
     pub fn set_route_type(mut self, input: ::std::option::Option<crate::types::RouteType>) -> Self {
         self.route_type = input;
         self
+    }
+    /// <p>The route type of the route. <code>DEFAULT</code> indicates that all traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created. <code>URI_PATH</code> indicates a route that is based on a URI path.</p>
+    pub fn get_route_type(&self) -> &::std::option::Option<crate::types::RouteType> {
+        &self.route_type
     }
     /// <p> Configuration for the default route type. </p>
     pub fn default_route(mut self, input: crate::types::DefaultRouteInput) -> Self {
@@ -176,6 +192,10 @@ impl CreateRouteInputBuilder {
         self.default_route = input;
         self
     }
+    /// <p> Configuration for the default route type. </p>
+    pub fn get_default_route(&self) -> &::std::option::Option<crate::types::DefaultRouteInput> {
+        &self.default_route
+    }
     /// <p>The configuration for the URI path route type. </p>
     pub fn uri_path_route(mut self, input: crate::types::UriPathRouteInput) -> Self {
         self.uri_path_route = ::std::option::Option::Some(input);
@@ -188,6 +208,10 @@ impl CreateRouteInputBuilder {
     ) -> Self {
         self.uri_path_route = input;
         self
+    }
+    /// <p>The configuration for the URI path route type. </p>
+    pub fn get_uri_path_route(&self) -> &::std::option::Option<crate::types::UriPathRouteInput> {
+        &self.uri_path_route
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -214,6 +238,14 @@ impl CreateRouteInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags to assign to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -223,6 +255,10 @@ impl CreateRouteInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateRouteInput`](crate::operation::create_route::CreateRouteInput).
     pub fn build(

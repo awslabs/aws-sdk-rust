@@ -62,6 +62,10 @@ impl UpdateServiceSyncBlockerOutputBuilder {
         self.service_name = input;
         self
     }
+    /// <p>The name of the service that you want to update the service sync blocker for.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
+    }
     /// <p>The name of the service instance that you want to update the service sync blocker for.</p>
     pub fn service_instance_name(
         mut self,
@@ -78,6 +82,10 @@ impl UpdateServiceSyncBlockerOutputBuilder {
         self.service_instance_name = input;
         self
     }
+    /// <p>The name of the service instance that you want to update the service sync blocker for.</p>
+    pub fn get_service_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_instance_name
+    }
     /// <p>The detailed data on the service sync blocker that was updated.</p>
     pub fn service_sync_blocker(mut self, input: crate::types::SyncBlocker) -> Self {
         self.service_sync_blocker = ::std::option::Option::Some(input);
@@ -90,6 +98,10 @@ impl UpdateServiceSyncBlockerOutputBuilder {
     ) -> Self {
         self.service_sync_blocker = input;
         self
+    }
+    /// <p>The detailed data on the service sync blocker that was updated.</p>
+    pub fn get_service_sync_blocker(&self) -> &::std::option::Option<crate::types::SyncBlocker> {
+        &self.service_sync_blocker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

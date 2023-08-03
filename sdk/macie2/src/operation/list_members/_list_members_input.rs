@@ -55,6 +55,10 @@ impl ListMembersInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of items to include in each page of a paginated response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl ListMembersInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>Specifies which accounts to include in the response, based on the status of an account's relationship with the administrator account. By default, the response includes only current member accounts. To include all accounts, set this value to false.</p>
     pub fn only_associated(
@@ -80,6 +88,10 @@ impl ListMembersInputBuilder {
     ) -> Self {
         self.only_associated = input;
         self
+    }
+    /// <p>Specifies which accounts to include in the response, based on the status of an account's relationship with the administrator account. By default, the response includes only current member accounts. To include all accounts, set this value to false.</p>
+    pub fn get_only_associated(&self) -> &::std::option::Option<::std::string::String> {
+        &self.only_associated
     }
     /// Consumes the builder and constructs a [`ListMembersInput`](crate::operation::list_members::ListMembersInput).
     pub fn build(

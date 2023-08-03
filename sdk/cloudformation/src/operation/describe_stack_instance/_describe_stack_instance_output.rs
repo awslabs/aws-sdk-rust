@@ -51,6 +51,10 @@ impl DescribeStackInstanceOutputBuilder {
         self.stack_instance = input;
         self
     }
+    /// <p>The stack instance that matches the specified request parameters.</p>
+    pub fn get_stack_instance(&self) -> &::std::option::Option<crate::types::StackInstance> {
+        &self.stack_instance
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

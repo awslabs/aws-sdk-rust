@@ -101,6 +101,10 @@ impl ListTrialsInputBuilder {
         self.experiment_name = input;
         self
     }
+    /// <p>A filter that returns only trials that are part of the specified experiment.</p>
+    pub fn get_experiment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.experiment_name
+    }
     /// <p>A filter that returns only trials that are associated with the specified trial component.</p>
     pub fn trial_component_name(
         mut self,
@@ -117,6 +121,10 @@ impl ListTrialsInputBuilder {
         self.trial_component_name = input;
         self
     }
+    /// <p>A filter that returns only trials that are associated with the specified trial component.</p>
+    pub fn get_trial_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trial_component_name
+    }
     /// <p>A filter that returns only trials created after the specified time.</p>
     pub fn created_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_after = ::std::option::Option::Some(input);
@@ -129,6 +137,10 @@ impl ListTrialsInputBuilder {
     ) -> Self {
         self.created_after = input;
         self
+    }
+    /// <p>A filter that returns only trials created after the specified time.</p>
+    pub fn get_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_after
     }
     /// <p>A filter that returns only trials created before the specified time.</p>
     pub fn created_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -143,6 +155,10 @@ impl ListTrialsInputBuilder {
         self.created_before = input;
         self
     }
+    /// <p>A filter that returns only trials created before the specified time.</p>
+    pub fn get_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_before
+    }
     /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
     pub fn sort_by(mut self, input: crate::types::SortTrialsBy) -> Self {
         self.sort_by = ::std::option::Option::Some(input);
@@ -152,6 +168,10 @@ impl ListTrialsInputBuilder {
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SortTrialsBy>) -> Self {
         self.sort_by = input;
         self
+    }
+    /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::SortTrialsBy> {
+        &self.sort_by
     }
     /// <p>The sort order. The default value is <code>Descending</code>.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
@@ -163,6 +183,10 @@ impl ListTrialsInputBuilder {
         self.sort_order = input;
         self
     }
+    /// <p>The sort order. The default value is <code>Descending</code>.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.sort_order
+    }
     /// <p>The maximum number of trials to return in the response. The default value is 10.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -173,6 +197,10 @@ impl ListTrialsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of trials to return in the response. The default value is 10.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>If the previous call to <code>ListTrials</code> didn't return the full set of trials, the call returns a token for getting the next set of trials.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -182,6 +210,10 @@ impl ListTrialsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the previous call to <code>ListTrials</code> didn't return the full set of trials, the call returns a token for getting the next set of trials.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListTrialsInput`](crate::operation::list_trials::ListTrialsInput).
     pub fn build(

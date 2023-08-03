@@ -56,6 +56,10 @@ impl AbpV11Builder {
         self.dev_addr = input;
         self
     }
+    /// <p>The DevAddr value.</p>
+    pub fn get_dev_addr(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dev_addr
+    }
     /// <p>Session keys for ABP v1.1</p>
     pub fn session_keys(mut self, input: crate::types::SessionKeysAbpV11) -> Self {
         self.session_keys = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl AbpV11Builder {
         self.session_keys = input;
         self
     }
+    /// <p>Session keys for ABP v1.1</p>
+    pub fn get_session_keys(&self) -> &::std::option::Option<crate::types::SessionKeysAbpV11> {
+        &self.session_keys
+    }
     /// <p>The FCnt init value.</p>
     pub fn f_cnt_start(mut self, input: i32) -> Self {
         self.f_cnt_start = ::std::option::Option::Some(input);
@@ -78,6 +86,10 @@ impl AbpV11Builder {
     pub fn set_f_cnt_start(mut self, input: ::std::option::Option<i32>) -> Self {
         self.f_cnt_start = input;
         self
+    }
+    /// <p>The FCnt init value.</p>
+    pub fn get_f_cnt_start(&self) -> &::std::option::Option<i32> {
+        &self.f_cnt_start
     }
     /// Consumes the builder and constructs a [`AbpV11`](crate::types::AbpV11).
     pub fn build(self) -> crate::types::AbpV11 {

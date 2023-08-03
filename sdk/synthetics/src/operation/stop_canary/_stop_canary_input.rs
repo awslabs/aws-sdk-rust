@@ -39,6 +39,10 @@ impl StopCanaryInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the canary that you want to stop. To find the names of your canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">ListCanaries</a>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`StopCanaryInput`](crate::operation::stop_canary::StopCanaryInput).
     pub fn build(
         self,

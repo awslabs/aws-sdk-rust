@@ -36,6 +36,12 @@ impl PutGatewayResponseFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutGatewayResponse as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_gateway_response::builders::PutGatewayResponseInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl PutGatewayResponseFluentBuilder {
         self.inner = self.inner.set_rest_api_id(input);
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rest_api_id()
+    }
     /// <p>The response type of the associated GatewayResponse</p>
     pub fn response_type(mut self, input: crate::types::GatewayResponseType) -> Self {
         self.inner = self.inner.response_type(input);
@@ -139,6 +149,10 @@ impl PutGatewayResponseFluentBuilder {
         self.inner = self.inner.set_response_type(input);
         self
     }
+    /// <p>The response type of the associated GatewayResponse</p>
+    pub fn get_response_type(&self) -> &::std::option::Option<crate::types::GatewayResponseType> {
+        self.inner.get_response_type()
+    }
     /// <p>The HTTP status code of the GatewayResponse.</p>
     pub fn status_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.status_code(input.into());
@@ -148,6 +162,10 @@ impl PutGatewayResponseFluentBuilder {
     pub fn set_status_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_status_code(input);
         self
+    }
+    /// <p>The HTTP status code of the GatewayResponse.</p>
+    pub fn get_status_code(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_status_code()
     }
     /// Adds a key-value pair to `responseParameters`.
     ///
@@ -172,6 +190,14 @@ impl PutGatewayResponseFluentBuilder {
         self.inner = self.inner.set_response_parameters(input);
         self
     }
+    /// <p>Response parameters (paths, query strings and headers) of the GatewayResponse as a string-to-string map of key-value pairs.</p>
+    pub fn get_response_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_response_parameters()
+    }
     /// Adds a key-value pair to `responseTemplates`.
     ///
     /// To override the contents of this collection use [`set_response_templates`](Self::set_response_templates).
@@ -194,5 +220,13 @@ impl PutGatewayResponseFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_response_templates(input);
         self
+    }
+    /// <p>Response templates of the GatewayResponse as a string-to-string map of key-value pairs.</p>
+    pub fn get_response_templates(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_response_templates()
     }
 }

@@ -46,6 +46,10 @@ impl DeleteWhatIfForecastInputBuilder {
         self.what_if_forecast_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the what-if forecast that you want to delete.</p>
+    pub fn get_what_if_forecast_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.what_if_forecast_arn
+    }
     /// Consumes the builder and constructs a [`DeleteWhatIfForecastInput`](crate::operation::delete_what_if_forecast::DeleteWhatIfForecastInput).
     pub fn build(
         self,

@@ -56,6 +56,10 @@ impl InAppMessageHeaderConfigBuilder {
         self.alignment = input;
         self
     }
+    /// <p>The alignment of the text. Valid values: LEFT, CENTER, RIGHT.</p>
+    pub fn get_alignment(&self) -> &::std::option::Option<crate::types::Alignment> {
+        &self.alignment
+    }
     /// <p>Message Header.</p>
     pub fn header(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.header = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl InAppMessageHeaderConfigBuilder {
         self.header = input;
         self
     }
+    /// <p>Message Header.</p>
+    pub fn get_header(&self) -> &::std::option::Option<::std::string::String> {
+        &self.header
+    }
     /// <p>The text color.</p>
     pub fn text_color(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text_color = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl InAppMessageHeaderConfigBuilder {
     pub fn set_text_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.text_color = input;
         self
+    }
+    /// <p>The text color.</p>
+    pub fn get_text_color(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text_color
     }
     /// Consumes the builder and constructs a [`InAppMessageHeaderConfig`](crate::types::InAppMessageHeaderConfig).
     pub fn build(self) -> crate::types::InAppMessageHeaderConfig {

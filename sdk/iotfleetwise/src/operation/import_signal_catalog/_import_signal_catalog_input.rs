@@ -65,6 +65,10 @@ impl ImportSignalCatalogInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the signal catalog to import.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p> A brief description of the signal catalog. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -75,6 +79,10 @@ impl ImportSignalCatalogInputBuilder {
         self.description = input;
         self
     }
+    /// <p> A brief description of the signal catalog. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The contents of the Vehicle Signal Specification (VSS) configuration. VSS is a precise language used to describe and model signals in vehicle networks.</p>
     pub fn vss(mut self, input: crate::types::FormattedVss) -> Self {
         self.vss = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl ImportSignalCatalogInputBuilder {
     pub fn set_vss(mut self, input: ::std::option::Option<crate::types::FormattedVss>) -> Self {
         self.vss = input;
         self
+    }
+    /// <p>The contents of the Vehicle Signal Specification (VSS) configuration. VSS is a precise language used to describe and model signals in vehicle networks.</p>
+    pub fn get_vss(&self) -> &::std::option::Option<crate::types::FormattedVss> {
+        &self.vss
     }
     /// Appends an item to `tags`.
     ///
@@ -103,6 +115,10 @@ impl ImportSignalCatalogInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Metadata that can be used to manage the signal catalog.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`ImportSignalCatalogInput`](crate::operation::import_signal_catalog::ImportSignalCatalogInput).
     pub fn build(

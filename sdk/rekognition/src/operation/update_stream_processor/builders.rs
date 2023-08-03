@@ -36,6 +36,13 @@ impl UpdateStreamProcessorFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateStreamProcessor as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_stream_processor::builders::UpdateStreamProcessorInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl UpdateStreamProcessorFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p> Name of the stream processor that you want to update. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p> The stream processor settings that you want to update. Label detection settings can be updated to detect different labels with a different minimum confidence. </p>
     pub fn settings_for_update(
         mut self,
@@ -141,6 +152,12 @@ impl UpdateStreamProcessorFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_settings_for_update(input);
         self
+    }
+    /// <p> The stream processor settings that you want to update. Label detection settings can be updated to detect different labels with a different minimum confidence. </p>
+    pub fn get_settings_for_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::StreamProcessorSettingsForUpdate> {
+        self.inner.get_settings_for_update()
     }
     /// Appends an item to `RegionsOfInterestForUpdate`.
     ///
@@ -159,6 +176,12 @@ impl UpdateStreamProcessorFluentBuilder {
         self.inner = self.inner.set_regions_of_interest_for_update(input);
         self
     }
+    /// <p> Specifies locations in the frames where Amazon Rekognition checks for objects or people. This is an optional parameter for label detection stream processors. </p>
+    pub fn get_regions_of_interest_for_update(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RegionOfInterest>> {
+        self.inner.get_regions_of_interest_for_update()
+    }
     /// <p> Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams. </p>
     pub fn data_sharing_preference_for_update(
         mut self,
@@ -174,6 +197,12 @@ impl UpdateStreamProcessorFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_data_sharing_preference_for_update(input);
         self
+    }
+    /// <p> Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams. </p>
+    pub fn get_data_sharing_preference_for_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::StreamProcessorDataSharingPreference> {
+        self.inner.get_data_sharing_preference_for_update()
     }
     /// Appends an item to `ParametersToDelete`.
     ///
@@ -196,5 +225,12 @@ impl UpdateStreamProcessorFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_parameters_to_delete(input);
         self
+    }
+    /// <p> A list of parameters you want to delete from the stream processor. </p>
+    pub fn get_parameters_to_delete(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamProcessorParameterToDelete>>
+    {
+        self.inner.get_parameters_to_delete()
     }
 }

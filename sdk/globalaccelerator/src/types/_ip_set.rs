@@ -60,6 +60,11 @@ impl IpSetBuilder {
         self.ip_family = input;
         self
     }
+    /// <p>IpFamily is deprecated and has been replaced by IpAddressFamily.</p>
+    #[deprecated(note = "IpFamily has been replaced by IpAddressFamily")]
+    pub fn get_ip_family(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_family
+    }
     /// Appends an item to `ip_addresses`.
     ///
     /// To override the contents of this collection use [`set_ip_addresses`](Self::set_ip_addresses).
@@ -79,6 +84,12 @@ impl IpSetBuilder {
         self.ip_addresses = input;
         self
     }
+    /// <p>The array of IP addresses in the IP address set. An IP address set can have a maximum of two IP addresses.</p>
+    pub fn get_ip_addresses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ip_addresses
+    }
     /// <p>The types of IP addresses included in this IP set. </p>
     pub fn ip_address_family(mut self, input: crate::types::IpAddressFamily) -> Self {
         self.ip_address_family = ::std::option::Option::Some(input);
@@ -91,6 +102,10 @@ impl IpSetBuilder {
     ) -> Self {
         self.ip_address_family = input;
         self
+    }
+    /// <p>The types of IP addresses included in this IP set. </p>
+    pub fn get_ip_address_family(&self) -> &::std::option::Option<crate::types::IpAddressFamily> {
+        &self.ip_address_family
     }
     /// Consumes the builder and constructs a [`IpSet`](crate::types::IpSet).
     pub fn build(self) -> crate::types::IpSet {

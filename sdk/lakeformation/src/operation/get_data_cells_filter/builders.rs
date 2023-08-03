@@ -36,6 +36,12 @@ impl GetDataCellsFilterFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetDataCellsFilter as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_data_cells_filter::builders::GetDataCellsFilterInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl GetDataCellsFilterFluentBuilder {
         self.inner = self.inner.set_table_catalog_id(input);
         self
     }
+    /// <p>The ID of the catalog to which the table belongs.</p>
+    pub fn get_table_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_table_catalog_id()
+    }
     /// <p>A database in the Glue Data Catalog.</p>
     pub fn database_name(
         mut self,
@@ -148,6 +158,10 @@ impl GetDataCellsFilterFluentBuilder {
         self.inner = self.inner.set_database_name(input);
         self
     }
+    /// <p>A database in the Glue Data Catalog.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_database_name()
+    }
     /// <p>A table in the database.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.table_name(input.into());
@@ -158,6 +172,10 @@ impl GetDataCellsFilterFluentBuilder {
         self.inner = self.inner.set_table_name(input);
         self
     }
+    /// <p>A table in the database.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_table_name()
+    }
     /// <p>The name given by the user to the data filter cell.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -167,5 +185,9 @@ impl GetDataCellsFilterFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name given by the user to the data filter cell.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
 }

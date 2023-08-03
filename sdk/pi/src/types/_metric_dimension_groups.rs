@@ -48,6 +48,10 @@ impl MetricDimensionGroupsBuilder {
         self.metric = input;
         self
     }
+    /// <p>The metric type to which the dimension information belongs.</p>
+    pub fn get_metric(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric
+    }
     /// Appends an item to `groups`.
     ///
     /// To override the contents of this collection use [`set_groups`](Self::set_groups).
@@ -66,6 +70,12 @@ impl MetricDimensionGroupsBuilder {
     ) -> Self {
         self.groups = input;
         self
+    }
+    /// <p>The available dimension groups for a metric type.</p>
+    pub fn get_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionGroupDetail>> {
+        &self.groups
     }
     /// Consumes the builder and constructs a [`MetricDimensionGroups`](crate::types::MetricDimensionGroups).
     pub fn build(self) -> crate::types::MetricDimensionGroups {

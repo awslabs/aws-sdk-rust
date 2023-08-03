@@ -40,6 +40,10 @@ impl MonitoringStatisticsResourceBuilder {
         self.s3_uri = input;
         self
     }
+    /// <p>The Amazon S3 URI for the statistics resource.</p>
+    pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_uri
+    }
     /// Consumes the builder and constructs a [`MonitoringStatisticsResource`](crate::types::MonitoringStatisticsResource).
     pub fn build(self) -> crate::types::MonitoringStatisticsResource {
         crate::types::MonitoringStatisticsResource {

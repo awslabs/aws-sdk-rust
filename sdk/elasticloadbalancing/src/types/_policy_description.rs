@@ -60,6 +60,10 @@ impl PolicyDescriptionBuilder {
         self.policy_name = input;
         self
     }
+    /// <p>The name of the policy.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_name
+    }
     /// <p>The name of the policy type.</p>
     pub fn policy_type_name(
         mut self,
@@ -75,6 +79,10 @@ impl PolicyDescriptionBuilder {
     ) -> Self {
         self.policy_type_name = input;
         self
+    }
+    /// <p>The name of the policy type.</p>
+    pub fn get_policy_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_type_name
     }
     /// Appends an item to `policy_attribute_descriptions`.
     ///
@@ -97,6 +105,12 @@ impl PolicyDescriptionBuilder {
     ) -> Self {
         self.policy_attribute_descriptions = input;
         self
+    }
+    /// <p>The policy attributes.</p>
+    pub fn get_policy_attribute_descriptions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyAttributeDescription>> {
+        &self.policy_attribute_descriptions
     }
     /// Consumes the builder and constructs a [`PolicyDescription`](crate::types::PolicyDescription).
     pub fn build(self) -> crate::types::PolicyDescription {

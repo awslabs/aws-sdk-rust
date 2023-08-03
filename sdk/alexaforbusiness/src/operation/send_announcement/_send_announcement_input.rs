@@ -73,6 +73,12 @@ impl SendAnnouncementInputBuilder {
         self.room_filters = input;
         self
     }
+    /// <p>The filters to use to send an announcement to a specified list of rooms. The supported filter keys are RoomName, ProfileName, RoomArn, and ProfileArn. To send to all rooms, specify an empty RoomFilters list.</p>
+    pub fn get_room_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.room_filters
+    }
     /// <p>The announcement content. This can contain only one of the three possible announcement types (text, SSML or audio).</p>
     pub fn content(mut self, input: crate::types::Content) -> Self {
         self.content = ::std::option::Option::Some(input);
@@ -83,6 +89,10 @@ impl SendAnnouncementInputBuilder {
         self.content = input;
         self
     }
+    /// <p>The announcement content. This can contain only one of the three possible announcement types (text, SSML or audio).</p>
+    pub fn get_content(&self) -> &::std::option::Option<crate::types::Content> {
+        &self.content
+    }
     /// <p>The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the announcement is not delivered.</p>
     pub fn time_to_live_in_seconds(mut self, input: i32) -> Self {
         self.time_to_live_in_seconds = ::std::option::Option::Some(input);
@@ -92,6 +102,10 @@ impl SendAnnouncementInputBuilder {
     pub fn set_time_to_live_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.time_to_live_in_seconds = input;
         self
+    }
+    /// <p>The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the announcement is not delivered.</p>
+    pub fn get_time_to_live_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.time_to_live_in_seconds
     }
     /// <p>The unique, user-specified identifier for the request that ensures idempotency.</p>
     pub fn client_request_token(
@@ -108,6 +122,10 @@ impl SendAnnouncementInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>The unique, user-specified identifier for the request that ensures idempotency.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Consumes the builder and constructs a [`SendAnnouncementInput`](crate::operation::send_announcement::SendAnnouncementInput).
     pub fn build(

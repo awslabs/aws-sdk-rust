@@ -48,6 +48,10 @@ impl AccountSharingInfoBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID where the current document is shared.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The version of the current document shared with the account.</p>
     pub fn shared_document_version(
         mut self,
@@ -63,6 +67,10 @@ impl AccountSharingInfoBuilder {
     ) -> Self {
         self.shared_document_version = input;
         self
+    }
+    /// <p>The version of the current document shared with the account.</p>
+    pub fn get_shared_document_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.shared_document_version
     }
     /// Consumes the builder and constructs a [`AccountSharingInfo`](crate::types::AccountSharingInfo).
     pub fn build(self) -> crate::types::AccountSharingInfo {

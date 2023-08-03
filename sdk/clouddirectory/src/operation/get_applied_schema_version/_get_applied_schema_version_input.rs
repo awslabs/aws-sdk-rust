@@ -41,6 +41,10 @@ impl GetAppliedSchemaVersionInputBuilder {
         self.schema_arn = input;
         self
     }
+    /// <p>The ARN of the applied schema.</p>
+    pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_arn
+    }
     /// Consumes the builder and constructs a [`GetAppliedSchemaVersionInput`](crate::operation::get_applied_schema_version::GetAppliedSchemaVersionInput).
     pub fn build(
         self,

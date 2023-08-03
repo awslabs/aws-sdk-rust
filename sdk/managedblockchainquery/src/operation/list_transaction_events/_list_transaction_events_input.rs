@@ -77,6 +77,10 @@ impl ListTransactionEventsInputBuilder {
         self.transaction_hash = input;
         self
     }
+    /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
+    pub fn get_transaction_hash(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transaction_hash
+    }
     /// <p>The blockchain network where the transaction events occurred.</p>
     pub fn network(mut self, input: crate::types::QueryNetwork) -> Self {
         self.network = ::std::option::Option::Some(input);
@@ -87,6 +91,10 @@ impl ListTransactionEventsInputBuilder {
         self.network = input;
         self
     }
+    /// <p>The blockchain network where the transaction events occurred.</p>
+    pub fn get_network(&self) -> &::std::option::Option<crate::types::QueryNetwork> {
+        &self.network
+    }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -96,6 +104,10 @@ impl ListTransactionEventsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The maximum number of transaction events to list.</p> <note>
     /// <p>Even if additional results can be retrieved, the request can return less results than <code>maxResults</code> or an empty array of results.</p>
@@ -112,6 +124,13 @@ impl ListTransactionEventsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of transaction events to list.</p> <note>
+    /// <p>Even if additional results can be retrieved, the request can return less results than <code>maxResults</code> or an empty array of results.</p>
+    /// <p>To retrieve the next set of results, make another request with the returned <code>nextToken</code> value. The value of <code>nextToken</code> is <code>null</code> when there are no more results to return</p>
+    /// </note>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListTransactionEventsInput`](crate::operation::list_transaction_events::ListTransactionEventsInput).
     pub fn build(

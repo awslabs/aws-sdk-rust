@@ -48,6 +48,10 @@ impl FailedEntityBuilder {
         self.entity_id = input;
         self
     }
+    /// <p>The identifier of the user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_id
+    }
     /// <p>The reason the user or group in your IAM Identity Center identity source failed to properly configure with your Amazon Kendra experience.</p>
     pub fn error_message(
         mut self,
@@ -63,6 +67,10 @@ impl FailedEntityBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>The reason the user or group in your IAM Identity Center identity source failed to properly configure with your Amazon Kendra experience.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`FailedEntity`](crate::types::FailedEntity).
     pub fn build(self) -> crate::types::FailedEntity {

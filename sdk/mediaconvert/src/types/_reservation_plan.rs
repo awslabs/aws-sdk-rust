@@ -83,6 +83,10 @@ impl ReservationPlanBuilder {
         self.commitment = input;
         self
     }
+    /// The length of the term of your reserved queue pricing plan commitment.
+    pub fn get_commitment(&self) -> &::std::option::Option<crate::types::Commitment> {
+        &self.commitment
+    }
     /// The timestamp in epoch seconds for when the current pricing plan term for this reserved queue expires.
     pub fn expires_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.expires_at = ::std::option::Option::Some(input);
@@ -95,6 +99,10 @@ impl ReservationPlanBuilder {
     ) -> Self {
         self.expires_at = input;
         self
+    }
+    /// The timestamp in epoch seconds for when the current pricing plan term for this reserved queue expires.
+    pub fn get_expires_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expires_at
     }
     /// The timestamp in epoch seconds for when you set up the current pricing plan for this reserved queue.
     pub fn purchased_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -109,6 +117,10 @@ impl ReservationPlanBuilder {
         self.purchased_at = input;
         self
     }
+    /// The timestamp in epoch seconds for when you set up the current pricing plan for this reserved queue.
+    pub fn get_purchased_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.purchased_at
+    }
     /// Specifies whether the term of your reserved queue pricing plan is automatically extended (AUTO_RENEW) or expires (EXPIRE) at the end of the term.
     pub fn renewal_type(mut self, input: crate::types::RenewalType) -> Self {
         self.renewal_type = ::std::option::Option::Some(input);
@@ -122,6 +134,10 @@ impl ReservationPlanBuilder {
         self.renewal_type = input;
         self
     }
+    /// Specifies whether the term of your reserved queue pricing plan is automatically extended (AUTO_RENEW) or expires (EXPIRE) at the end of the term.
+    pub fn get_renewal_type(&self) -> &::std::option::Option<crate::types::RenewalType> {
+        &self.renewal_type
+    }
     /// Specifies the number of reserved transcode slots (RTS) for this queue. The number of RTS determines how many jobs the queue can process in parallel; each RTS can process one job at a time. When you increase this number, you extend your existing commitment with a new 12-month commitment for a larger number of RTS. The new commitment begins when you purchase the additional capacity. You can't decrease the number of RTS in your reserved queue.
     pub fn reserved_slots(mut self, input: i32) -> Self {
         self.reserved_slots = ::std::option::Option::Some(input);
@@ -131,6 +147,10 @@ impl ReservationPlanBuilder {
     pub fn set_reserved_slots(mut self, input: ::std::option::Option<i32>) -> Self {
         self.reserved_slots = input;
         self
+    }
+    /// Specifies the number of reserved transcode slots (RTS) for this queue. The number of RTS determines how many jobs the queue can process in parallel; each RTS can process one job at a time. When you increase this number, you extend your existing commitment with a new 12-month commitment for a larger number of RTS. The new commitment begins when you purchase the additional capacity. You can't decrease the number of RTS in your reserved queue.
+    pub fn get_reserved_slots(&self) -> &::std::option::Option<i32> {
+        &self.reserved_slots
     }
     /// Specifies whether the pricing plan for your reserved queue is ACTIVE or EXPIRED.
     pub fn status(mut self, input: crate::types::ReservationPlanStatus) -> Self {
@@ -144,6 +164,10 @@ impl ReservationPlanBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// Specifies whether the pricing plan for your reserved queue is ACTIVE or EXPIRED.
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ReservationPlanStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`ReservationPlan`](crate::types::ReservationPlan).
     pub fn build(self) -> crate::types::ReservationPlan {

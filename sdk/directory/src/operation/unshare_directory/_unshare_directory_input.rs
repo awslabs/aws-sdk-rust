@@ -48,6 +48,10 @@ impl UnshareDirectoryInputBuilder {
         self.directory_id = input;
         self
     }
+    /// <p>The identifier of the Managed Microsoft AD directory that you want to stop sharing.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
+    }
     /// <p>Identifier for the directory consumer account with whom the directory has to be unshared.</p>
     pub fn unshare_target(mut self, input: crate::types::UnshareTarget) -> Self {
         self.unshare_target = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl UnshareDirectoryInputBuilder {
     ) -> Self {
         self.unshare_target = input;
         self
+    }
+    /// <p>Identifier for the directory consumer account with whom the directory has to be unshared.</p>
+    pub fn get_unshare_target(&self) -> &::std::option::Option<crate::types::UnshareTarget> {
+        &self.unshare_target
     }
     /// Consumes the builder and constructs a [`UnshareDirectoryInput`](crate::operation::unshare_directory::UnshareDirectoryInput).
     pub fn build(

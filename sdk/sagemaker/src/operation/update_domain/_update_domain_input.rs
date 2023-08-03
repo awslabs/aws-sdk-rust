@@ -80,6 +80,10 @@ impl UpdateDomainInputBuilder {
         self.domain_id = input;
         self
     }
+    /// <p>The ID of the domain to be updated.</p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_id
+    }
     /// <p>A collection of settings.</p>
     pub fn default_user_settings(mut self, input: crate::types::UserSettings) -> Self {
         self.default_user_settings = ::std::option::Option::Some(input);
@@ -92,6 +96,10 @@ impl UpdateDomainInputBuilder {
     ) -> Self {
         self.default_user_settings = input;
         self
+    }
+    /// <p>A collection of settings.</p>
+    pub fn get_default_user_settings(&self) -> &::std::option::Option<crate::types::UserSettings> {
+        &self.default_user_settings
     }
     /// <p>A collection of <code>DomainSettings</code> configuration values to update.</p>
     pub fn domain_settings_for_update(
@@ -109,6 +117,12 @@ impl UpdateDomainInputBuilder {
         self.domain_settings_for_update = input;
         self
     }
+    /// <p>A collection of <code>DomainSettings</code> configuration values to update.</p>
+    pub fn get_domain_settings_for_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::DomainSettingsForUpdate> {
+        &self.domain_settings_for_update
+    }
     /// <p>The default settings used to create a space within the Domain.</p>
     pub fn default_space_settings(mut self, input: crate::types::DefaultSpaceSettings) -> Self {
         self.default_space_settings = ::std::option::Option::Some(input);
@@ -121,6 +135,12 @@ impl UpdateDomainInputBuilder {
     ) -> Self {
         self.default_space_settings = input;
         self
+    }
+    /// <p>The default settings used to create a space within the Domain.</p>
+    pub fn get_default_space_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::DefaultSpaceSettings> {
+        &self.default_space_settings
     }
     /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided. If setting up the domain for use with RStudio, this value must be set to <code>Service</code>.</p>
     pub fn app_security_group_management(
@@ -137,6 +157,12 @@ impl UpdateDomainInputBuilder {
     ) -> Self {
         self.app_security_group_management = input;
         self
+    }
+    /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided. If setting up the domain for use with RStudio, this value must be set to <code>Service</code>.</p>
+    pub fn get_app_security_group_management(
+        &self,
+    ) -> &::std::option::Option<crate::types::AppSecurityGroupManagement> {
+        &self.app_security_group_management
     }
     /// Consumes the builder and constructs a [`UpdateDomainInput`](crate::operation::update_domain::UpdateDomainInput).
     pub fn build(

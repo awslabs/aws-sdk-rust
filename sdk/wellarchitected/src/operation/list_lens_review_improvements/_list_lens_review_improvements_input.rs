@@ -98,6 +98,10 @@ impl ListLensReviewImprovementsInputBuilder {
         self.workload_id = input;
         self
     }
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workload_id
+    }
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
@@ -114,6 +118,13 @@ impl ListLensReviewImprovementsInputBuilder {
         self.lens_alias = input;
         self
     }
+    /// <p>The alias of the lens.</p>
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    pub fn get_lens_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lens_alias
+    }
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
     pub fn pillar_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -125,6 +136,11 @@ impl ListLensReviewImprovementsInputBuilder {
     pub fn set_pillar_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pillar_id = input;
         self
+    }
+    /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
+    /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
+    pub fn get_pillar_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pillar_id
     }
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
@@ -138,6 +154,11 @@ impl ListLensReviewImprovementsInputBuilder {
         self.milestone_number = input;
         self
     }
+    /// <p>The milestone number.</p>
+    /// <p>A workload can have a maximum of 100 milestones.</p>
+    pub fn get_milestone_number(&self) -> &::std::option::Option<i32> {
+        &self.milestone_number
+    }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -148,6 +169,10 @@ impl ListLensReviewImprovementsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to use to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return for this request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -157,6 +182,10 @@ impl ListLensReviewImprovementsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return for this request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The priority of the question.</p>
     pub fn question_priority(mut self, input: crate::types::QuestionPriority) -> Self {
@@ -170,6 +199,10 @@ impl ListLensReviewImprovementsInputBuilder {
     ) -> Self {
         self.question_priority = input;
         self
+    }
+    /// <p>The priority of the question.</p>
+    pub fn get_question_priority(&self) -> &::std::option::Option<crate::types::QuestionPriority> {
+        &self.question_priority
     }
     /// Consumes the builder and constructs a [`ListLensReviewImprovementsInput`](crate::operation::list_lens_review_improvements::ListLensReviewImprovementsInput).
     pub fn build(

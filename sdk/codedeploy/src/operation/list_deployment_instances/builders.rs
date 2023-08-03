@@ -41,6 +41,13 @@ impl ListDeploymentInstancesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListDeploymentInstances as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_deployment_instances::builders::ListDeploymentInstancesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -146,6 +153,10 @@ impl ListDeploymentInstancesFluentBuilder {
         self.inner = self.inner.set_deployment_id(input);
         self
     }
+    /// <p> The unique ID of a deployment. </p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_deployment_id()
+    }
     /// <p>An identifier returned from the previous list deployment instances call. It can be used to return the next set of deployment instances in the list.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -155,6 +166,10 @@ impl ListDeploymentInstancesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>An identifier returned from the previous list deployment instances call. It can be used to return the next set of deployment instances in the list.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// Appends an item to `instanceStatusFilter`.
     ///
@@ -189,6 +204,20 @@ impl ListDeploymentInstancesFluentBuilder {
         self.inner = self.inner.set_instance_status_filter(input);
         self
     }
+    /// <p>A subset of instances to list by status:</p>
+    /// <ul>
+    /// <li> <p> <code>Pending</code>: Include those instances with pending deployments.</p> </li>
+    /// <li> <p> <code>InProgress</code>: Include those instances where deployments are still in progress.</p> </li>
+    /// <li> <p> <code>Succeeded</code>: Include those instances with successful deployments.</p> </li>
+    /// <li> <p> <code>Failed</code>: Include those instances with failed deployments.</p> </li>
+    /// <li> <p> <code>Skipped</code>: Include those instances with skipped deployments.</p> </li>
+    /// <li> <p> <code>Unknown</code>: Include those instances with deployments in an unknown state.</p> </li>
+    /// </ul>
+    pub fn get_instance_status_filter(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceStatus>> {
+        self.inner.get_instance_status_filter()
+    }
     /// Appends an item to `instanceTypeFilter`.
     ///
     /// To override the contents of this collection use [`set_instance_type_filter`](Self::set_instance_type_filter).
@@ -205,5 +234,11 @@ impl ListDeploymentInstancesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_instance_type_filter(input);
         self
+    }
+    /// <p>The set of instances in a blue/green deployment, either those in the original environment ("BLUE") or those in the replacement environment ("GREEN"), for which you want to view instance information.</p>
+    pub fn get_instance_type_filter(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceType>> {
+        self.inner.get_instance_type_filter()
     }
 }

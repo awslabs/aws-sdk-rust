@@ -43,6 +43,10 @@ impl MsSmoothEncryptionSettingsBuilder {
         self.speke_key_provider = input;
         self
     }
+    /// If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider. If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
+    pub fn get_speke_key_provider(&self) -> &::std::option::Option<crate::types::SpekeKeyProvider> {
+        &self.speke_key_provider
+    }
     /// Consumes the builder and constructs a [`MsSmoothEncryptionSettings`](crate::types::MsSmoothEncryptionSettings).
     pub fn build(self) -> crate::types::MsSmoothEncryptionSettings {
         crate::types::MsSmoothEncryptionSettings {

@@ -103,6 +103,12 @@ impl OpsItemLimitExceededExceptionBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
+    pub fn get_resource_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resource_types
+    }
+    #[allow(missing_docs)] // documentation missing in model
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
         self
@@ -111,6 +117,10 @@ impl OpsItemLimitExceededExceptionBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn limit_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -123,6 +133,10 @@ impl OpsItemLimitExceededExceptionBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
+    pub fn get_limit_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.limit_type
+    }
+    #[allow(missing_docs)] // documentation missing in model
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -131,6 +145,10 @@ impl OpsItemLimitExceededExceptionBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

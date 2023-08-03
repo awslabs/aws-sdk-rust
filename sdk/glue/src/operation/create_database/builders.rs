@@ -36,6 +36,12 @@ impl CreateDatabaseFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDatabase as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_database::builders::CreateDatabaseInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl CreateDatabaseFluentBuilder {
         self.inner = self.inner.set_catalog_id(input);
         self
     }
+    /// <p>The ID of the Data Catalog in which to create the database. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_catalog_id()
+    }
     /// <p>The metadata for the database.</p>
     pub fn database_input(mut self, input: crate::types::DatabaseInput) -> Self {
         self.inner = self.inner.database_input(input);
@@ -130,6 +140,10 @@ impl CreateDatabaseFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_database_input(input);
         self
+    }
+    /// <p>The metadata for the database.</p>
+    pub fn get_database_input(&self) -> &::std::option::Option<crate::types::DatabaseInput> {
+        self.inner.get_database_input()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -153,5 +167,13 @@ impl CreateDatabaseFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags you assign to the database.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

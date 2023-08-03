@@ -64,6 +64,10 @@ impl VpcDerivedInfoBuilder {
         self.vpc_id = input;
         self
     }
+    /// <p>The VPC Id for the Elasticsearch domain. Exists only if the domain was created with VPCOptions.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
+    }
     /// Appends an item to `subnet_ids`.
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
@@ -82,6 +86,10 @@ impl VpcDerivedInfoBuilder {
     ) -> Self {
         self.subnet_ids = input;
         self
+    }
+    /// <p>Specifies the subnets for VPC endpoint.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
     }
     /// Appends an item to `availability_zones`.
     ///
@@ -105,6 +113,12 @@ impl VpcDerivedInfoBuilder {
         self.availability_zones = input;
         self
     }
+    /// <p>The availability zones for the Elasticsearch domain. Exists only if the domain was created with VPCOptions.</p>
+    pub fn get_availability_zones(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.availability_zones
+    }
     /// Appends an item to `security_group_ids`.
     ///
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
@@ -126,6 +140,12 @@ impl VpcDerivedInfoBuilder {
     ) -> Self {
         self.security_group_ids = input;
         self
+    }
+    /// <p>Specifies the security groups for VPC endpoint.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
     }
     /// Consumes the builder and constructs a [`VpcDerivedInfo`](crate::types::VpcDerivedInfo).
     pub fn build(self) -> crate::types::VpcDerivedInfo {

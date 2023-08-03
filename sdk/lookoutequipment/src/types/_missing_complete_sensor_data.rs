@@ -40,6 +40,10 @@ impl MissingCompleteSensorDataBuilder {
         self.affected_sensor_count = input;
         self
     }
+    /// <p> Indicates the number of sensors that have data missing completely. </p>
+    pub fn get_affected_sensor_count(&self) -> &::std::option::Option<i32> {
+        &self.affected_sensor_count
+    }
     /// Consumes the builder and constructs a [`MissingCompleteSensorData`](crate::types::MissingCompleteSensorData).
     pub fn build(self) -> crate::types::MissingCompleteSensorData {
         crate::types::MissingCompleteSensorData {

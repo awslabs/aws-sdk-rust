@@ -47,6 +47,10 @@ impl PutInventoryInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>An managed node ID where you want to add or update inventory items.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// Appends an item to `items`.
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
@@ -65,6 +69,12 @@ impl PutInventoryInputBuilder {
     ) -> Self {
         self.items = input;
         self
+    }
+    /// <p>The inventory items that you want to add or update on managed nodes.</p>
+    pub fn get_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryItem>> {
+        &self.items
     }
     /// Consumes the builder and constructs a [`PutInventoryInput`](crate::operation::put_inventory::PutInventoryInput).
     pub fn build(

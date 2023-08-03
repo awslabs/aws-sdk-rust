@@ -83,6 +83,10 @@ impl CreateAssessmentFrameworkInputBuilder {
         self.name = input;
         self
     }
+    /// <p> The name of the new custom framework. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p> An optional description for the new custom framework. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -92,6 +96,10 @@ impl CreateAssessmentFrameworkInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p> An optional description for the new custom framework. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
     pub fn compliance_type(
@@ -108,6 +116,10 @@ impl CreateAssessmentFrameworkInputBuilder {
     ) -> Self {
         self.compliance_type = input;
         self
+    }
+    /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
+    pub fn get_compliance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.compliance_type
     }
     /// Appends an item to `control_sets`.
     ///
@@ -133,6 +145,13 @@ impl CreateAssessmentFrameworkInputBuilder {
         self.control_sets = input;
         self
     }
+    /// <p> The control sets that are associated with the framework. </p>
+    pub fn get_control_sets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateAssessmentFrameworkControlSet>>
+    {
+        &self.control_sets
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -157,6 +176,14 @@ impl CreateAssessmentFrameworkInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p> The tags that are associated with the framework. </p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateAssessmentFrameworkInput`](crate::operation::create_assessment_framework::CreateAssessmentFrameworkInput).
     pub fn build(

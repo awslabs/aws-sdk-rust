@@ -47,6 +47,10 @@ impl GetStreamingSessionBackupInputBuilder {
         self.backup_id = input;
         self
     }
+    /// <p>The ID of the backup.</p>
+    pub fn get_backup_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_id
+    }
     /// <p>The studio ID. </p>
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl GetStreamingSessionBackupInputBuilder {
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.studio_id = input;
         self
+    }
+    /// <p>The studio ID. </p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_id
     }
     /// Consumes the builder and constructs a [`GetStreamingSessionBackupInput`](crate::operation::get_streaming_session_backup::GetStreamingSessionBackupInput).
     pub fn build(

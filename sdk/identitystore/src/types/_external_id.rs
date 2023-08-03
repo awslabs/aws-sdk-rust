@@ -54,6 +54,10 @@ impl ExternalIdBuilder {
         self.issuer = input;
         self
     }
+    /// <p>The issuer for an external identifier.</p>
+    pub fn get_issuer(&self) -> &::std::option::Option<::std::string::String> {
+        &self.issuer
+    }
     /// <p>The identifier issued to this resource by an external identity provider.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl ExternalIdBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The identifier issued to this resource by an external identity provider.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`ExternalId`](crate::types::ExternalId).
     pub fn build(self) -> crate::types::ExternalId {

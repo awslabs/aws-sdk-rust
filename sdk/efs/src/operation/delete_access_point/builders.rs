@@ -37,6 +37,12 @@ impl DeleteAccessPointFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteAccessPoint as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_access_point::builders::DeleteAccessPointInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +138,9 @@ impl DeleteAccessPointFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_access_point_id(input);
         self
+    }
+    /// <p>The ID of the access point that you want to delete.</p>
+    pub fn get_access_point_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_access_point_id()
     }
 }

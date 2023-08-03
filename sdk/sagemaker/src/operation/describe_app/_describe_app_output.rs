@@ -138,6 +138,10 @@ impl DescribeAppOutputBuilder {
         self.app_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the app.</p>
+    pub fn get_app_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_arn
+    }
     /// <p>The type of app.</p>
     pub fn app_type(mut self, input: crate::types::AppType) -> Self {
         self.app_type = ::std::option::Option::Some(input);
@@ -147,6 +151,10 @@ impl DescribeAppOutputBuilder {
     pub fn set_app_type(mut self, input: ::std::option::Option<crate::types::AppType>) -> Self {
         self.app_type = input;
         self
+    }
+    /// <p>The type of app.</p>
+    pub fn get_app_type(&self) -> &::std::option::Option<crate::types::AppType> {
+        &self.app_type
     }
     /// <p>The name of the app.</p>
     pub fn app_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -158,6 +166,10 @@ impl DescribeAppOutputBuilder {
         self.app_name = input;
         self
     }
+    /// <p>The name of the app.</p>
+    pub fn get_app_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_name
+    }
     /// <p>The domain ID.</p>
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
@@ -167,6 +179,10 @@ impl DescribeAppOutputBuilder {
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_id = input;
         self
+    }
+    /// <p>The domain ID.</p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_id
     }
     /// <p>The user profile name.</p>
     pub fn user_profile_name(
@@ -184,6 +200,10 @@ impl DescribeAppOutputBuilder {
         self.user_profile_name = input;
         self
     }
+    /// <p>The user profile name.</p>
+    pub fn get_user_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_profile_name
+    }
     /// <p>The status.</p>
     pub fn status(mut self, input: crate::types::AppStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -193,6 +213,10 @@ impl DescribeAppOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AppStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AppStatus> {
+        &self.status
     }
     /// <p>The timestamp of the last health check.</p>
     pub fn last_health_check_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -207,6 +231,12 @@ impl DescribeAppOutputBuilder {
         self.last_health_check_timestamp = input;
         self
     }
+    /// <p>The timestamp of the last health check.</p>
+    pub fn get_last_health_check_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_health_check_timestamp
+    }
     /// <p>The timestamp of the last user's activity. <code>LastUserActivityTimestamp</code> is also updated when SageMaker performs health checks without user activity. As a result, this value is set to the same value as <code>LastHealthCheckTimestamp</code>.</p>
     pub fn last_user_activity_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_user_activity_timestamp = ::std::option::Option::Some(input);
@@ -220,6 +250,12 @@ impl DescribeAppOutputBuilder {
         self.last_user_activity_timestamp = input;
         self
     }
+    /// <p>The timestamp of the last user's activity. <code>LastUserActivityTimestamp</code> is also updated when SageMaker performs health checks without user activity. As a result, this value is set to the same value as <code>LastHealthCheckTimestamp</code>.</p>
+    pub fn get_last_user_activity_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_user_activity_timestamp
+    }
     /// <p>The creation time.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -232,6 +268,10 @@ impl DescribeAppOutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The creation time.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The failure reason.</p>
     pub fn failure_reason(
@@ -249,6 +289,10 @@ impl DescribeAppOutputBuilder {
         self.failure_reason = input;
         self
     }
+    /// <p>The failure reason.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
+    }
     /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
     pub fn resource_spec(mut self, input: crate::types::ResourceSpec) -> Self {
         self.resource_spec = ::std::option::Option::Some(input);
@@ -262,6 +306,10 @@ impl DescribeAppOutputBuilder {
         self.resource_spec = input;
         self
     }
+    /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
+    pub fn get_resource_spec(&self) -> &::std::option::Option<crate::types::ResourceSpec> {
+        &self.resource_spec
+    }
     /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
     pub fn space_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.space_name = ::std::option::Option::Some(input.into());
@@ -271,6 +319,10 @@ impl DescribeAppOutputBuilder {
     pub fn set_space_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.space_name = input;
         self
+    }
+    /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
+    pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.space_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

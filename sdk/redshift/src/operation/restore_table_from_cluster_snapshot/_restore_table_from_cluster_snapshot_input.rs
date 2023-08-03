@@ -110,6 +110,10 @@ impl RestoreTableFromClusterSnapshotInputBuilder {
         self.cluster_identifier = input;
         self
     }
+    /// <p>The identifier of the Amazon Redshift cluster to restore the table to.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_identifier
+    }
     /// <p>The identifier of the snapshot to restore the table from. This snapshot must have been created from the Amazon Redshift cluster specified by the <code>ClusterIdentifier</code> parameter.</p>
     pub fn snapshot_identifier(
         mut self,
@@ -125,6 +129,10 @@ impl RestoreTableFromClusterSnapshotInputBuilder {
     ) -> Self {
         self.snapshot_identifier = input;
         self
+    }
+    /// <p>The identifier of the snapshot to restore the table from. This snapshot must have been created from the Amazon Redshift cluster specified by the <code>ClusterIdentifier</code> parameter.</p>
+    pub fn get_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_identifier
     }
     /// <p>The name of the source database that contains the table to restore from.</p>
     pub fn source_database_name(
@@ -142,6 +150,10 @@ impl RestoreTableFromClusterSnapshotInputBuilder {
         self.source_database_name = input;
         self
     }
+    /// <p>The name of the source database that contains the table to restore from.</p>
+    pub fn get_source_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_database_name
+    }
     /// <p>The name of the source schema that contains the table to restore from. If you do not specify a <code>SourceSchemaName</code> value, the default is <code>public</code>.</p>
     pub fn source_schema_name(
         mut self,
@@ -157,6 +169,10 @@ impl RestoreTableFromClusterSnapshotInputBuilder {
     ) -> Self {
         self.source_schema_name = input;
         self
+    }
+    /// <p>The name of the source schema that contains the table to restore from. If you do not specify a <code>SourceSchemaName</code> value, the default is <code>public</code>.</p>
+    pub fn get_source_schema_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_schema_name
     }
     /// <p>The name of the source table to restore from.</p>
     pub fn source_table_name(
@@ -174,6 +190,10 @@ impl RestoreTableFromClusterSnapshotInputBuilder {
         self.source_table_name = input;
         self
     }
+    /// <p>The name of the source table to restore from.</p>
+    pub fn get_source_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_table_name
+    }
     /// <p>The name of the database to restore the table to.</p>
     pub fn target_database_name(
         mut self,
@@ -189,6 +209,10 @@ impl RestoreTableFromClusterSnapshotInputBuilder {
     ) -> Self {
         self.target_database_name = input;
         self
+    }
+    /// <p>The name of the database to restore the table to.</p>
+    pub fn get_target_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_database_name
     }
     /// <p>The name of the schema to restore the table to.</p>
     pub fn target_schema_name(
@@ -206,6 +230,10 @@ impl RestoreTableFromClusterSnapshotInputBuilder {
         self.target_schema_name = input;
         self
     }
+    /// <p>The name of the schema to restore the table to.</p>
+    pub fn get_target_schema_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_schema_name
+    }
     /// <p>The name of the table to create as a result of the current request.</p>
     pub fn new_table_name(
         mut self,
@@ -222,6 +250,10 @@ impl RestoreTableFromClusterSnapshotInputBuilder {
         self.new_table_name = input;
         self
     }
+    /// <p>The name of the table to create as a result of the current request.</p>
+    pub fn get_new_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.new_table_name
+    }
     /// <p>Indicates whether name identifiers for database, schema, and table are case sensitive. If <code>true</code>, the names are case sensitive. If <code>false</code> (default), the names are not case sensitive.</p>
     pub fn enable_case_sensitive_identifier(mut self, input: bool) -> Self {
         self.enable_case_sensitive_identifier = ::std::option::Option::Some(input);
@@ -234,6 +266,10 @@ impl RestoreTableFromClusterSnapshotInputBuilder {
     ) -> Self {
         self.enable_case_sensitive_identifier = input;
         self
+    }
+    /// <p>Indicates whether name identifiers for database, schema, and table are case sensitive. If <code>true</code>, the names are case sensitive. If <code>false</code> (default), the names are not case sensitive.</p>
+    pub fn get_enable_case_sensitive_identifier(&self) -> &::std::option::Option<bool> {
+        &self.enable_case_sensitive_identifier
     }
     /// Consumes the builder and constructs a [`RestoreTableFromClusterSnapshotInput`](crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotInput).
     pub fn build(

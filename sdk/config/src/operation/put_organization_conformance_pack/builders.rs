@@ -42,6 +42,10 @@ impl PutOrganizationConformancePackFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutOrganizationConformancePack as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_organization_conformance_pack::builders::PutOrganizationConformancePackInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -112,6 +116,12 @@ impl PutOrganizationConformancePackFluentBuilder {
         self.inner = self.inner.set_organization_conformance_pack_name(input);
         self
     }
+    /// <p>Name of the organization conformance pack you want to create.</p>
+    pub fn get_organization_conformance_pack_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organization_conformance_pack_name()
+    }
     /// <p>Location of file containing the template body. The uri must point to the conformance pack template (max size: 300 KB).</p> <note>
     /// <p>You must have access to read Amazon S3 bucket.</p>
     /// </note>
@@ -132,6 +142,12 @@ impl PutOrganizationConformancePackFluentBuilder {
         self.inner = self.inner.set_template_s3_uri(input);
         self
     }
+    /// <p>Location of file containing the template body. The uri must point to the conformance pack template (max size: 300 KB).</p> <note>
+    /// <p>You must have access to read Amazon S3 bucket.</p>
+    /// </note>
+    pub fn get_template_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_s3_uri()
+    }
     /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p>
     pub fn template_body(
         mut self,
@@ -147,6 +163,10 @@ impl PutOrganizationConformancePackFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_template_body(input);
         self
+    }
+    /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p>
+    pub fn get_template_body(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_body()
     }
     /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
     /// <p>This field is optional. If used, it must be prefixed with <code>awsconfigconforms</code>.</p>
@@ -168,6 +188,12 @@ impl PutOrganizationConformancePackFluentBuilder {
         self.inner = self.inner.set_delivery_s3_bucket(input);
         self
     }
+    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
+    /// <p>This field is optional. If used, it must be prefixed with <code>awsconfigconforms</code>.</p>
+    /// </note>
+    pub fn get_delivery_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_delivery_s3_bucket()
+    }
     /// <p>The prefix for the Amazon S3 bucket.</p> <note>
     /// <p>This field is optional.</p>
     /// </note>
@@ -187,6 +213,12 @@ impl PutOrganizationConformancePackFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_delivery_s3_key_prefix(input);
         self
+    }
+    /// <p>The prefix for the Amazon S3 bucket.</p> <note>
+    /// <p>This field is optional.</p>
+    /// </note>
+    pub fn get_delivery_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_delivery_s3_key_prefix()
     }
     /// Appends an item to `ConformancePackInputParameters`.
     ///
@@ -208,6 +240,12 @@ impl PutOrganizationConformancePackFluentBuilder {
         self.inner = self.inner.set_conformance_pack_input_parameters(input);
         self
     }
+    /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
+    pub fn get_conformance_pack_input_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConformancePackInputParameter>> {
+        self.inner.get_conformance_pack_input_parameters()
+    }
     /// Appends an item to `ExcludedAccounts`.
     ///
     /// To override the contents of this collection use [`set_excluded_accounts`](Self::set_excluded_accounts).
@@ -227,5 +265,11 @@ impl PutOrganizationConformancePackFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_excluded_accounts(input);
         self
+    }
+    /// <p>A list of Amazon Web Services accounts to be excluded from an organization conformance pack while deploying a conformance pack.</p>
+    pub fn get_excluded_accounts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_excluded_accounts()
     }
 }

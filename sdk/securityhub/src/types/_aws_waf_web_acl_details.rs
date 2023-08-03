@@ -64,6 +64,10 @@ impl AwsWafWebAclDetailsBuilder {
         self.name = input;
         self
     }
+    /// <p>A friendly name or description of the web ACL. You can't change the name of a web ACL after you create it.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The action to perform if none of the rules contained in the web ACL match.</p>
     pub fn default_action(
         mut self,
@@ -79,6 +83,10 @@ impl AwsWafWebAclDetailsBuilder {
     ) -> Self {
         self.default_action = input;
         self
+    }
+    /// <p>The action to perform if none of the rules contained in the web ACL match.</p>
+    pub fn get_default_action(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_action
     }
     /// Appends an item to `rules`.
     ///
@@ -99,6 +107,12 @@ impl AwsWafWebAclDetailsBuilder {
         self.rules = input;
         self
     }
+    /// <p>An array that contains the action for each rule in a web ACL, the priority of the rule, and the ID of the rule.</p>
+    pub fn get_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsWafWebAclRule>> {
+        &self.rules
+    }
     /// <p>A unique identifier for a web ACL.</p>
     pub fn web_acl_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.web_acl_id = ::std::option::Option::Some(input.into());
@@ -108,6 +122,10 @@ impl AwsWafWebAclDetailsBuilder {
     pub fn set_web_acl_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.web_acl_id = input;
         self
+    }
+    /// <p>A unique identifier for a web ACL.</p>
+    pub fn get_web_acl_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.web_acl_id
     }
     /// Consumes the builder and constructs a [`AwsWafWebAclDetails`](crate::types::AwsWafWebAclDetails).
     pub fn build(self) -> crate::types::AwsWafWebAclDetails {

@@ -48,6 +48,10 @@ impl GetRepositoryTriggersInputBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name of the repository for which the trigger is configured.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// Consumes the builder and constructs a [`GetRepositoryTriggersInput`](crate::operation::get_repository_triggers::GetRepositoryTriggersInput).
     pub fn build(
         self,

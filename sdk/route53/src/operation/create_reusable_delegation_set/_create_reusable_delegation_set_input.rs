@@ -53,6 +53,10 @@ impl CreateReusableDelegationSetInputBuilder {
         self.caller_reference = input;
         self
     }
+    /// <p>A unique string that identifies the request, and that allows you to retry failed <code>CreateReusableDelegationSet</code> requests without the risk of executing the operation twice. You must use a unique <code>CallerReference</code> string every time you submit a <code>CreateReusableDelegationSet</code> request. <code>CallerReference</code> can be any unique string, for example a date/time stamp.</p>
+    pub fn get_caller_reference(&self) -> &::std::option::Option<::std::string::String> {
+        &self.caller_reference
+    }
     /// <p>If you want to mark the delegation set for an existing hosted zone as reusable, the ID for that hosted zone.</p>
     pub fn hosted_zone_id(
         mut self,
@@ -68,6 +72,10 @@ impl CreateReusableDelegationSetInputBuilder {
     ) -> Self {
         self.hosted_zone_id = input;
         self
+    }
+    /// <p>If you want to mark the delegation set for an existing hosted zone as reusable, the ID for that hosted zone.</p>
+    pub fn get_hosted_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hosted_zone_id
     }
     /// Consumes the builder and constructs a [`CreateReusableDelegationSetInput`](crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetInput).
     pub fn build(

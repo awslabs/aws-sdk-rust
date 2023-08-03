@@ -56,6 +56,12 @@ impl SageMakerPipelineParametersBuilder {
         self.pipeline_parameter_list = input;
         self
     }
+    /// <p>List of Parameter names and values for SageMaker Model Building Pipeline execution.</p>
+    pub fn get_pipeline_parameter_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SageMakerPipelineParameter>> {
+        &self.pipeline_parameter_list
+    }
     /// Consumes the builder and constructs a [`SageMakerPipelineParameters`](crate::types::SageMakerPipelineParameters).
     pub fn build(self) -> crate::types::SageMakerPipelineParameters {
         crate::types::SageMakerPipelineParameters {

@@ -43,6 +43,10 @@ impl DescribeConfigRulesFiltersBuilder {
         self.evaluation_mode = input;
         self
     }
+    /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
+    pub fn get_evaluation_mode(&self) -> &::std::option::Option<crate::types::EvaluationMode> {
+        &self.evaluation_mode
+    }
     /// Consumes the builder and constructs a [`DescribeConfigRulesFilters`](crate::types::DescribeConfigRulesFilters).
     pub fn build(self) -> crate::types::DescribeConfigRulesFilters {
         crate::types::DescribeConfigRulesFilters {

@@ -36,6 +36,10 @@ impl ListServiceActionsForProvisioningArtifactFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListServiceActionsForProvisioningArtifact as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_service_actions_for_provisioning_artifact::builders::ListServiceActionsForProvisioningArtifactInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl ListServiceActionsForProvisioningArtifactFluentBuilder {
         self.inner = self.inner.set_product_id(input);
         self
     }
+    /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
+    pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_product_id()
+    }
     /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
     pub fn provisioning_artifact_id(
         mut self,
@@ -122,6 +130,10 @@ impl ListServiceActionsForProvisioningArtifactFluentBuilder {
         self.inner = self.inner.set_provisioning_artifact_id(input);
         self
     }
+    /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
+    pub fn get_provisioning_artifact_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_provisioning_artifact_id()
+    }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn page_size(mut self, input: i32) -> Self {
         self.inner = self.inner.page_size(input);
@@ -132,6 +144,10 @@ impl ListServiceActionsForProvisioningArtifactFluentBuilder {
         self.inner = self.inner.set_page_size(input);
         self
     }
+    /// <p>The maximum number of items to return with this call.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        self.inner.get_page_size()
+    }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.page_token(input.into());
@@ -141,6 +157,10 @@ impl ListServiceActionsForProvisioningArtifactFluentBuilder {
     pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_page_token(input);
         self
+    }
+    /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_page_token()
     }
     /// <p>The language code.</p>
     /// <ul>
@@ -165,5 +185,13 @@ impl ListServiceActionsForProvisioningArtifactFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
+    }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_accept_language()
     }
 }

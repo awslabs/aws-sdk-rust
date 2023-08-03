@@ -98,6 +98,10 @@ impl SimulationJobSummaryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the simulation job.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The time, in milliseconds since the epoch, when the simulation job was last updated.</p>
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_at = ::std::option::Option::Some(input);
@@ -111,6 +115,10 @@ impl SimulationJobSummaryBuilder {
         self.last_updated_at = input;
         self
     }
+    /// <p>The time, in milliseconds since the epoch, when the simulation job was last updated.</p>
+    pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_at
+    }
     /// <p>The name of the simulation job.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -120,6 +128,10 @@ impl SimulationJobSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the simulation job.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The status of the simulation job.</p>
     pub fn status(mut self, input: crate::types::SimulationJobStatus) -> Self {
@@ -133,6 +145,10 @@ impl SimulationJobSummaryBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the simulation job.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::SimulationJobStatus> {
+        &self.status
     }
     /// Appends an item to `simulation_application_names`.
     ///
@@ -156,6 +172,12 @@ impl SimulationJobSummaryBuilder {
         self.simulation_application_names = input;
         self
     }
+    /// <p>A list of simulation job simulation application names.</p>
+    pub fn get_simulation_application_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.simulation_application_names
+    }
     /// Appends an item to `robot_application_names`.
     ///
     /// To override the contents of this collection use [`set_robot_application_names`](Self::set_robot_application_names).
@@ -177,6 +199,12 @@ impl SimulationJobSummaryBuilder {
     ) -> Self {
         self.robot_application_names = input;
         self
+    }
+    /// <p>A list of simulation job robot application names.</p>
+    pub fn get_robot_application_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.robot_application_names
     }
     /// Appends an item to `data_source_names`.
     ///
@@ -200,6 +228,12 @@ impl SimulationJobSummaryBuilder {
         self.data_source_names = input;
         self
     }
+    /// <p>The names of the data sources.</p>
+    pub fn get_data_source_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.data_source_names
+    }
     /// <p>The compute type for the simulation job summary.</p>
     pub fn compute_type(mut self, input: crate::types::ComputeType) -> Self {
         self.compute_type = ::std::option::Option::Some(input);
@@ -212,6 +246,10 @@ impl SimulationJobSummaryBuilder {
     ) -> Self {
         self.compute_type = input;
         self
+    }
+    /// <p>The compute type for the simulation job summary.</p>
+    pub fn get_compute_type(&self) -> &::std::option::Option<crate::types::ComputeType> {
+        &self.compute_type
     }
     /// Consumes the builder and constructs a [`SimulationJobSummary`](crate::types::SimulationJobSummary).
     pub fn build(self) -> crate::types::SimulationJobSummary {

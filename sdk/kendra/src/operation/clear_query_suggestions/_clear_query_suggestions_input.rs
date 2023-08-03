@@ -41,6 +41,10 @@ impl ClearQuerySuggestionsInputBuilder {
         self.index_id = input;
         self
     }
+    /// <p>The identifier of the index you want to clear query suggestions from.</p>
+    pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_id
+    }
     /// Consumes the builder and constructs a [`ClearQuerySuggestionsInput`](crate::operation::clear_query_suggestions::ClearQuerySuggestionsInput).
     pub fn build(
         self,

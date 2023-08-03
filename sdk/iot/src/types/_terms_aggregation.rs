@@ -40,6 +40,10 @@ impl TermsAggregationBuilder {
         self.max_buckets = input;
         self
     }
+    /// <p>The number of buckets to return in the response. Default to 10.</p>
+    pub fn get_max_buckets(&self) -> &::std::option::Option<i32> {
+        &self.max_buckets
+    }
     /// Consumes the builder and constructs a [`TermsAggregation`](crate::types::TermsAggregation).
     pub fn build(self) -> crate::types::TermsAggregation {
         crate::types::TermsAggregation {

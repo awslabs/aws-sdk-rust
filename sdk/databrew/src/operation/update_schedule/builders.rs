@@ -36,6 +36,12 @@ impl UpdateScheduleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateSchedule as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_schedule::builders::UpdateScheduleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,6 +131,10 @@ impl UpdateScheduleFluentBuilder {
         self.inner = self.inner.set_job_names(input);
         self
     }
+    /// <p>The name or names of one or more jobs to be run for this schedule.</p>
+    pub fn get_job_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_job_names()
+    }
     /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
     pub fn cron_expression(
         mut self,
@@ -141,6 +151,10 @@ impl UpdateScheduleFluentBuilder {
         self.inner = self.inner.set_cron_expression(input);
         self
     }
+    /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
+    pub fn get_cron_expression(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cron_expression()
+    }
     /// <p>The name of the schedule to update.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -150,5 +164,9 @@ impl UpdateScheduleFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the schedule to update.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
 }

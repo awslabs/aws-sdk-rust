@@ -56,6 +56,10 @@ impl ListTargetsForPolicyInputBuilder {
         self.policy_name = input;
         self
     }
+    /// <p>The policy name.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_name
+    }
     /// <p>A marker used to get the next set of results.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl ListTargetsForPolicyInputBuilder {
         self.marker = input;
         self
     }
+    /// <p>A marker used to get the next set of results.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// <p>The maximum number of results to return at one time.</p>
     pub fn page_size(mut self, input: i32) -> Self {
         self.page_size = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl ListTargetsForPolicyInputBuilder {
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.page_size = input;
         self
+    }
+    /// <p>The maximum number of results to return at one time.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        &self.page_size
     }
     /// Consumes the builder and constructs a [`ListTargetsForPolicyInput`](crate::operation::list_targets_for_policy::ListTargetsForPolicyInput).
     pub fn build(

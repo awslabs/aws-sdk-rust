@@ -40,6 +40,10 @@ impl SnsTopicConfigurationBuilder {
         self.topic_policy = input;
         self
     }
+    /// <p>The JSON policy text that defines who can access an Amazon SNS topic. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-access-policy-use-cases.html">Example cases for Amazon SNS access control</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+    pub fn get_topic_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_policy
+    }
     /// Consumes the builder and constructs a [`SnsTopicConfiguration`](crate::types::SnsTopicConfiguration).
     pub fn build(self) -> crate::types::SnsTopicConfiguration {
         crate::types::SnsTopicConfiguration {

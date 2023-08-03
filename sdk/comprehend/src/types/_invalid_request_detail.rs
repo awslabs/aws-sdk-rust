@@ -49,6 +49,10 @@ impl InvalidRequestDetailBuilder {
         self.reason = input;
         self
     }
+    /// <p>Reason code is <code>INVALID_DOCUMENT</code>.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<crate::types::InvalidRequestDetailReason> {
+        &self.reason
+    }
     /// Consumes the builder and constructs a [`InvalidRequestDetail`](crate::types::InvalidRequestDetail).
     pub fn build(self) -> crate::types::InvalidRequestDetail {
         crate::types::InvalidRequestDetail {

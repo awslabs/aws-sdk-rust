@@ -56,6 +56,10 @@ impl GenerateDataKeyWithoutPlaintextFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GenerateDataKeyWithoutPlaintext as a reference.
+    pub fn as_input(&self) -> &crate::operation::generate_data_key_without_plaintext::builders::GenerateDataKeyWithoutPlaintextInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -138,6 +142,19 @@ impl GenerateDataKeyWithoutPlaintextFluentBuilder {
         self.inner = self.inner.set_key_id(input);
         self
     }
+    /// <p>Specifies the symmetric encryption KMS key that encrypts the data key. You cannot specify an asymmetric KMS key or a KMS key in a custom key store. To get the type and origin of your KMS key, use the <code>DescribeKey</code> operation.</p>
+    /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
+    /// <p>For example:</p>
+    /// <ul>
+    /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+    /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+    /// <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li>
+    /// <li> <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code> </p> </li>
+    /// </ul>
+    /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>. To get the alias name and alias ARN, use <code>ListAliases</code>.</p>
+    pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_key_id()
+    }
     /// Adds a key-value pair to `EncryptionContext`.
     ///
     /// To override the contents of this collection use [`set_encryption_context`](Self::set_encryption_context).
@@ -169,6 +186,18 @@ impl GenerateDataKeyWithoutPlaintextFluentBuilder {
         self.inner = self.inner.set_encryption_context(input);
         self
     }
+    /// <p>Specifies the encryption context that will be used when encrypting the data key.</p> <important>
+    /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
+    /// </important>
+    /// <p>An <i>encryption context</i> is a collection of non-secret key-value pairs that represent additional authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact case-sensitive match) encryption context to decrypt the data. An encryption context is supported only on operations with symmetric encryption KMS keys. On operations with symmetric encryption KMS keys, an encryption context is optional, but it is strongly recommended.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption context</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn get_encryption_context(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_encryption_context()
+    }
     /// <p>The length of the data key. Use <code>AES_128</code> to generate a 128-bit symmetric key, or <code>AES_256</code> to generate a 256-bit symmetric key.</p>
     pub fn key_spec(mut self, input: crate::types::DataKeySpec) -> Self {
         self.inner = self.inner.key_spec(input);
@@ -179,6 +208,10 @@ impl GenerateDataKeyWithoutPlaintextFluentBuilder {
         self.inner = self.inner.set_key_spec(input);
         self
     }
+    /// <p>The length of the data key. Use <code>AES_128</code> to generate a 128-bit symmetric key, or <code>AES_256</code> to generate a 256-bit symmetric key.</p>
+    pub fn get_key_spec(&self) -> &::std::option::Option<crate::types::DataKeySpec> {
+        self.inner.get_key_spec()
+    }
     /// <p>The length of the data key in bytes. For example, use the value 64 to generate a 512-bit data key (64 bytes is 512 bits). For common key lengths (128-bit and 256-bit symmetric keys), we recommend that you use the <code>KeySpec</code> field instead of this one.</p>
     pub fn number_of_bytes(mut self, input: i32) -> Self {
         self.inner = self.inner.number_of_bytes(input);
@@ -188,6 +221,10 @@ impl GenerateDataKeyWithoutPlaintextFluentBuilder {
     pub fn set_number_of_bytes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_number_of_bytes(input);
         self
+    }
+    /// <p>The length of the data key in bytes. For example, use the value 64 to generate a 512-bit data key (64 bytes is 512 bits). For common key lengths (128-bit and 256-bit symmetric keys), we recommend that you use the <code>KeySpec</code> field instead of this one.</p>
+    pub fn get_number_of_bytes(&self) -> &::std::option::Option<i32> {
+        self.inner.get_number_of_bytes()
     }
     /// Appends an item to `GrantTokens`.
     ///
@@ -208,6 +245,13 @@ impl GenerateDataKeyWithoutPlaintextFluentBuilder {
         self.inner = self.inner.set_grant_tokens(input);
         self
     }
+    /// <p>A list of grant tokens.</p>
+    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn get_grant_tokens(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_grant_tokens()
+    }
     /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
     /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -219,5 +263,10 @@ impl GenerateDataKeyWithoutPlaintextFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+    /// <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

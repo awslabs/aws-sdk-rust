@@ -48,6 +48,10 @@ impl DocumentTypeListItemBuilder {
         self.page = input;
         self
     }
+    /// <p>Page number.</p>
+    pub fn get_page(&self) -> &::std::option::Option<i32> {
+        &self.page
+    }
     /// <p>Document type.</p>
     pub fn r#type(mut self, input: crate::types::DocumentType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl DocumentTypeListItemBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DocumentType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>Document type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::DocumentType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`DocumentTypeListItem`](crate::types::DocumentTypeListItem).
     pub fn build(self) -> crate::types::DocumentTypeListItem {

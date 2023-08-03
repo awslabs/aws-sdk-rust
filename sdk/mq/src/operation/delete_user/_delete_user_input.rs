@@ -47,6 +47,10 @@ impl DeleteUserInputBuilder {
         self.broker_id = input;
         self
     }
+    /// <p>The unique ID that Amazon MQ generates for the broker.</p>
+    pub fn get_broker_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.broker_id
+    }
     /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl DeleteUserInputBuilder {
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
+    }
+    /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
     }
     /// Consumes the builder and constructs a [`DeleteUserInput`](crate::operation::delete_user::DeleteUserInput).
     pub fn build(

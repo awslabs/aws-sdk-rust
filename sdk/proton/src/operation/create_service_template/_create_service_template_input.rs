@@ -93,6 +93,10 @@ impl CreateServiceTemplateInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the service template.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The name of the service template as displayed in the developer interface.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -103,6 +107,10 @@ impl CreateServiceTemplateInputBuilder {
         self.display_name = input;
         self
     }
+    /// <p>The name of the service template as displayed in the developer interface.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
+    }
     /// <p>A description of the service template.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -112,6 +120,10 @@ impl CreateServiceTemplateInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the service template.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>A customer provided encryption key that's used to encrypt data.</p>
     pub fn encryption_key(
@@ -129,6 +141,10 @@ impl CreateServiceTemplateInputBuilder {
         self.encryption_key = input;
         self
     }
+    /// <p>A customer provided encryption key that's used to encrypt data.</p>
+    pub fn get_encryption_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encryption_key
+    }
     /// <p>By default, Proton provides a service pipeline for your service. When this parameter is included, it indicates that an Proton service pipeline <i>isn't</i> provided for your service. After it's included, it <i>can't</i> be changed. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-template-authoring.html#ag-template-bundles">Template bundles</a> in the <i>Proton User Guide</i>.</p>
     pub fn pipeline_provisioning(mut self, input: crate::types::Provisioning) -> Self {
         self.pipeline_provisioning = ::std::option::Option::Some(input);
@@ -141,6 +157,10 @@ impl CreateServiceTemplateInputBuilder {
     ) -> Self {
         self.pipeline_provisioning = input;
         self
+    }
+    /// <p>By default, Proton provides a service pipeline for your service. When this parameter is included, it indicates that an Proton service pipeline <i>isn't</i> provided for your service. After it's included, it <i>can't</i> be changed. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-template-authoring.html#ag-template-bundles">Template bundles</a> in the <i>Proton User Guide</i>.</p>
+    pub fn get_pipeline_provisioning(&self) -> &::std::option::Option<crate::types::Provisioning> {
+        &self.pipeline_provisioning
     }
     /// Appends an item to `tags`.
     ///
@@ -162,6 +182,11 @@ impl CreateServiceTemplateInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>An optional list of metadata items that you can associate with the Proton service template. A tag is a key-value pair.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateServiceTemplateInput`](crate::operation::create_service_template::CreateServiceTemplateInput).
     pub fn build(

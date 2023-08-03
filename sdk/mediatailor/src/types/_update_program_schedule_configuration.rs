@@ -51,6 +51,10 @@ impl UpdateProgramScheduleConfigurationBuilder {
         self.transition = input;
         self
     }
+    /// <p>Program transition configuration.</p>
+    pub fn get_transition(&self) -> &::std::option::Option<crate::types::UpdateProgramTransition> {
+        &self.transition
+    }
     /// <p>Program clip range configuration.</p>
     pub fn clip_range(mut self, input: crate::types::ClipRange) -> Self {
         self.clip_range = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl UpdateProgramScheduleConfigurationBuilder {
     pub fn set_clip_range(mut self, input: ::std::option::Option<crate::types::ClipRange>) -> Self {
         self.clip_range = input;
         self
+    }
+    /// <p>Program clip range configuration.</p>
+    pub fn get_clip_range(&self) -> &::std::option::Option<crate::types::ClipRange> {
+        &self.clip_range
     }
     /// Consumes the builder and constructs a [`UpdateProgramScheduleConfiguration`](crate::types::UpdateProgramScheduleConfiguration).
     pub fn build(self) -> crate::types::UpdateProgramScheduleConfiguration {

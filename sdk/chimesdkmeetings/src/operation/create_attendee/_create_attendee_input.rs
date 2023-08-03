@@ -82,6 +82,10 @@ impl CreateAttendeeInputBuilder {
         self.meeting_id = input;
         self
     }
+    /// <p>The unique ID of the meeting.</p>
+    pub fn get_meeting_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.meeting_id
+    }
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
     /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p>
     /// <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix.</p>
@@ -101,6 +105,12 @@ impl CreateAttendeeInputBuilder {
     ) -> Self {
         self.external_user_id = input;
         self
+    }
+    /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
+    /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p>
+    /// <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix.</p>
+    pub fn get_external_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.external_user_id
     }
     /// <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to grant an attendee. If you don't specify capabilities, all users have send and receive capabilities on all media channels by default.</p> <note>
     /// <p>You use the capabilities with a set of values that control what the capabilities can do, such as <code>SendReceive</code> data. For more information about those values, see .</p>
@@ -130,6 +140,18 @@ impl CreateAttendeeInputBuilder {
     ) -> Self {
         self.capabilities = input;
         self
+    }
+    /// <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to grant an attendee. If you don't specify capabilities, all users have send and receive capabilities on all media channels by default.</p> <note>
+    /// <p>You use the capabilities with a set of values that control what the capabilities can do, such as <code>SendReceive</code> data. For more information about those values, see .</p>
+    /// </note>
+    /// <p>When using capabilities, be aware of these corner cases:</p>
+    /// <ul>
+    /// <li> <p>You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code> unless you also set <code>video</code> capabilities to <code>SendReceive</code> or <code>Receive</code>. If you don't set the <code>video</code> capability to receive, the response will contain an HTTP 400 Bad Request status code. However, you can set your <code>video</code> capability to receive and you set your <code>content</code> capability to not receive.</p> </li>
+    /// <li> <p>When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee left their microphone unmuted, audio will flow from the attendee to the other meeting participants.</p> </li>
+    /// <li> <p>When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video or content streams, remote attendees can receive those streams, but only after media renegotiation between the client and the Amazon Chime back-end server.</p> </li>
+    /// </ul>
+    pub fn get_capabilities(&self) -> &::std::option::Option<crate::types::AttendeeCapabilities> {
+        &self.capabilities
     }
     /// Consumes the builder and constructs a [`CreateAttendeeInput`](crate::operation::create_attendee::CreateAttendeeInput).
     pub fn build(

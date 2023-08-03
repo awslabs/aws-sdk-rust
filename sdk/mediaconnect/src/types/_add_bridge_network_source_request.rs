@@ -72,6 +72,10 @@ impl AddBridgeNetworkSourceRequestBuilder {
         self.multicast_ip = input;
         self
     }
+    /// The network source multicast IP.
+    pub fn get_multicast_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.multicast_ip
+    }
     /// The name of the network source. This name is used to reference the source and must be unique among sources in this bridge.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl AddBridgeNetworkSourceRequestBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// The name of the network source. This name is used to reference the source and must be unique among sources in this bridge.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// The network source's gateway network name.
     pub fn network_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -92,6 +100,10 @@ impl AddBridgeNetworkSourceRequestBuilder {
         self.network_name = input;
         self
     }
+    /// The network source's gateway network name.
+    pub fn get_network_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_name
+    }
     /// The network source port.
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -102,6 +114,10 @@ impl AddBridgeNetworkSourceRequestBuilder {
         self.port = input;
         self
     }
+    /// The network source port.
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
+    }
     /// The network source protocol.
     pub fn protocol(mut self, input: crate::types::Protocol) -> Self {
         self.protocol = ::std::option::Option::Some(input);
@@ -111,6 +127,10 @@ impl AddBridgeNetworkSourceRequestBuilder {
     pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::Protocol>) -> Self {
         self.protocol = input;
         self
+    }
+    /// The network source protocol.
+    pub fn get_protocol(&self) -> &::std::option::Option<crate::types::Protocol> {
+        &self.protocol
     }
     /// Consumes the builder and constructs a [`AddBridgeNetworkSourceRequest`](crate::types::AddBridgeNetworkSourceRequest).
     pub fn build(self) -> crate::types::AddBridgeNetworkSourceRequest {

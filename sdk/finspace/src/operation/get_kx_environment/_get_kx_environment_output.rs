@@ -183,6 +183,10 @@ impl GetKxEnvironmentOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the kdb environment.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A unique identifier for the kdb environment.</p>
     pub fn environment_id(
         mut self,
@@ -198,6 +202,10 @@ impl GetKxEnvironmentOutputBuilder {
     ) -> Self {
         self.environment_id = input;
         self
+    }
+    /// <p>A unique identifier for the kdb environment.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
     }
     /// <p>The unique identifier of the AWS account that is used to create the kdb environment.</p>
     pub fn aws_account_id(
@@ -215,6 +223,10 @@ impl GetKxEnvironmentOutputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The unique identifier of the AWS account that is used to create the kdb environment.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The status of the kdb environment.</p>
     pub fn status(mut self, input: crate::types::EnvironmentStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -228,6 +240,10 @@ impl GetKxEnvironmentOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the kdb environment.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::EnvironmentStatus> {
+        &self.status
+    }
     /// <p>The status of the network configuration.</p>
     pub fn tgw_status(mut self, input: crate::types::TgwStatus) -> Self {
         self.tgw_status = ::std::option::Option::Some(input);
@@ -238,6 +254,10 @@ impl GetKxEnvironmentOutputBuilder {
         self.tgw_status = input;
         self
     }
+    /// <p>The status of the network configuration.</p>
+    pub fn get_tgw_status(&self) -> &::std::option::Option<crate::types::TgwStatus> {
+        &self.tgw_status
+    }
     /// <p>The status of DNS configuration.</p>
     pub fn dns_status(mut self, input: crate::types::DnsStatus) -> Self {
         self.dns_status = ::std::option::Option::Some(input);
@@ -247,6 +267,10 @@ impl GetKxEnvironmentOutputBuilder {
     pub fn set_dns_status(mut self, input: ::std::option::Option<crate::types::DnsStatus>) -> Self {
         self.dns_status = input;
         self
+    }
+    /// <p>The status of DNS configuration.</p>
+    pub fn get_dns_status(&self) -> &::std::option::Option<crate::types::DnsStatus> {
+        &self.dns_status
     }
     /// <p>Specifies the error message that appears if a flow fails.</p>
     pub fn error_message(
@@ -264,6 +288,10 @@ impl GetKxEnvironmentOutputBuilder {
         self.error_message = input;
         self
     }
+    /// <p>Specifies the error message that appears if a flow fails.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
+    }
     /// <p>A description for the kdb environment.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -273,6 +301,10 @@ impl GetKxEnvironmentOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description for the kdb environment.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The ARN identifier of the environment.</p>
     pub fn environment_arn(
@@ -290,6 +322,10 @@ impl GetKxEnvironmentOutputBuilder {
         self.environment_arn = input;
         self
     }
+    /// <p>The ARN identifier of the environment.</p>
+    pub fn get_environment_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_arn
+    }
     /// <p>The KMS key ID to encrypt your data in the FinSpace environment.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -299,6 +335,10 @@ impl GetKxEnvironmentOutputBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p>The KMS key ID to encrypt your data in the FinSpace environment.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// <p>A unique identifier for the AWS environment infrastructure account.</p>
     pub fn dedicated_service_account_id(
@@ -316,6 +356,12 @@ impl GetKxEnvironmentOutputBuilder {
         self.dedicated_service_account_id = input;
         self
     }
+    /// <p>A unique identifier for the AWS environment infrastructure account.</p>
+    pub fn get_dedicated_service_account_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.dedicated_service_account_id
+    }
     /// <p>The structure of the transit gateway and network configuration that is used to connect the kdb environment to an internal network.</p>
     pub fn transit_gateway_configuration(
         mut self,
@@ -331,6 +377,12 @@ impl GetKxEnvironmentOutputBuilder {
     ) -> Self {
         self.transit_gateway_configuration = input;
         self
+    }
+    /// <p>The structure of the transit gateway and network configuration that is used to connect the kdb environment to an internal network.</p>
+    pub fn get_transit_gateway_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransitGatewayConfiguration> {
+        &self.transit_gateway_configuration
     }
     /// Appends an item to `custom_dns_configuration`.
     ///
@@ -351,6 +403,12 @@ impl GetKxEnvironmentOutputBuilder {
         self.custom_dns_configuration = input;
         self
     }
+    /// <p>A list of DNS server name and server IP. This is used to set up Route-53 outbound resolvers.</p>
+    pub fn get_custom_dns_configuration(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomDnsServer>> {
+        &self.custom_dns_configuration
+    }
     /// <p>The timestamp at which the kdb environment was created in FinSpace. </p>
     pub fn creation_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_timestamp = ::std::option::Option::Some(input);
@@ -364,6 +422,10 @@ impl GetKxEnvironmentOutputBuilder {
         self.creation_timestamp = input;
         self
     }
+    /// <p>The timestamp at which the kdb environment was created in FinSpace. </p>
+    pub fn get_creation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_timestamp
+    }
     /// <p>The timestamp at which the kdb environment was updated. </p>
     pub fn update_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_timestamp = ::std::option::Option::Some(input);
@@ -376,6 +438,10 @@ impl GetKxEnvironmentOutputBuilder {
     ) -> Self {
         self.update_timestamp = input;
         self
+    }
+    /// <p>The timestamp at which the kdb environment was updated. </p>
+    pub fn get_update_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_timestamp
     }
     /// Appends an item to `availability_zone_ids`.
     ///
@@ -399,6 +465,12 @@ impl GetKxEnvironmentOutputBuilder {
         self.availability_zone_ids = input;
         self
     }
+    /// <p>The identifier of the availability zones where subnets for the environment are created.</p>
+    pub fn get_availability_zone_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.availability_zone_ids
+    }
     /// <p>The Amazon Resource Name (ARN) of the certificate authority of the kdb environment.</p>
     pub fn certificate_authority_arn(
         mut self,
@@ -414,6 +486,10 @@ impl GetKxEnvironmentOutputBuilder {
     ) -> Self {
         self.certificate_authority_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the certificate authority of the kdb environment.</p>
+    pub fn get_certificate_authority_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_authority_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

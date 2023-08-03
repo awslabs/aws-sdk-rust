@@ -36,6 +36,12 @@ impl CreateSampleFindingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateSampleFindings as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_sample_findings::builders::CreateSampleFindingsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +138,11 @@ impl CreateSampleFindingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_finding_types(input);
         self
+    }
+    /// <p>An array of finding types, one for each type of sample finding to create. To create a sample of every type of finding that Amazon Macie supports, don't include this array in your request.</p>
+    pub fn get_finding_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FindingType>> {
+        self.inner.get_finding_types()
     }
 }

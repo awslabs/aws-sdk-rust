@@ -106,6 +106,10 @@ impl BatchDescribeModelPackageSummaryBuilder {
         self.model_package_group_name = input;
         self
     }
+    /// <p>The group name for the model package</p>
+    pub fn get_model_package_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_package_group_name
+    }
     /// <p>The version number of a versioned model.</p>
     pub fn model_package_version(mut self, input: i32) -> Self {
         self.model_package_version = ::std::option::Option::Some(input);
@@ -115,6 +119,10 @@ impl BatchDescribeModelPackageSummaryBuilder {
     pub fn set_model_package_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.model_package_version = input;
         self
+    }
+    /// <p>The version number of a versioned model.</p>
+    pub fn get_model_package_version(&self) -> &::std::option::Option<i32> {
+        &self.model_package_version
     }
     /// <p>The Amazon Resource Name (ARN) of the model package.</p>
     pub fn model_package_arn(
@@ -132,6 +140,10 @@ impl BatchDescribeModelPackageSummaryBuilder {
         self.model_package_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the model package.</p>
+    pub fn get_model_package_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_package_arn
+    }
     /// <p>The description of the model package.</p>
     pub fn model_package_description(
         mut self,
@@ -148,6 +160,10 @@ impl BatchDescribeModelPackageSummaryBuilder {
         self.model_package_description = input;
         self
     }
+    /// <p>The description of the model package.</p>
+    pub fn get_model_package_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_package_description
+    }
     /// <p>The creation time of the mortgage package summary.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -160,6 +176,10 @@ impl BatchDescribeModelPackageSummaryBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The creation time of the mortgage package summary.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>Defines how to perform inference generation after a training job is run.</p>
     pub fn inference_specification(mut self, input: crate::types::InferenceSpecification) -> Self {
@@ -174,6 +194,12 @@ impl BatchDescribeModelPackageSummaryBuilder {
         self.inference_specification = input;
         self
     }
+    /// <p>Defines how to perform inference generation after a training job is run.</p>
+    pub fn get_inference_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::InferenceSpecification> {
+        &self.inference_specification
+    }
     /// <p>The status of the mortgage package.</p>
     pub fn model_package_status(mut self, input: crate::types::ModelPackageStatus) -> Self {
         self.model_package_status = ::std::option::Option::Some(input);
@@ -187,6 +213,12 @@ impl BatchDescribeModelPackageSummaryBuilder {
         self.model_package_status = input;
         self
     }
+    /// <p>The status of the mortgage package.</p>
+    pub fn get_model_package_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ModelPackageStatus> {
+        &self.model_package_status
+    }
     /// <p>The approval status of the model.</p>
     pub fn model_approval_status(mut self, input: crate::types::ModelApprovalStatus) -> Self {
         self.model_approval_status = ::std::option::Option::Some(input);
@@ -199,6 +231,12 @@ impl BatchDescribeModelPackageSummaryBuilder {
     ) -> Self {
         self.model_approval_status = input;
         self
+    }
+    /// <p>The approval status of the model.</p>
+    pub fn get_model_approval_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ModelApprovalStatus> {
+        &self.model_approval_status
     }
     /// Consumes the builder and constructs a [`BatchDescribeModelPackageSummary`](crate::types::BatchDescribeModelPackageSummary).
     pub fn build(self) -> crate::types::BatchDescribeModelPackageSummary {

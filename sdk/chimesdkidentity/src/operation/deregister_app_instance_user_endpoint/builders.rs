@@ -36,6 +36,10 @@ impl DeregisterAppInstanceUserEndpointFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeregisterAppInstanceUserEndpoint as a reference.
+    pub fn as_input(&self) -> &crate::operation::deregister_app_instance_user_endpoint::builders::DeregisterAppInstanceUserEndpointInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl DeregisterAppInstanceUserEndpointFluentBuilder {
         self.inner = self.inner.set_app_instance_user_arn(input);
         self
     }
+    /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    pub fn get_app_instance_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_instance_user_arn()
+    }
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
     pub fn endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.endpoint_id(input.into());
@@ -115,5 +123,9 @@ impl DeregisterAppInstanceUserEndpointFluentBuilder {
     pub fn set_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_endpoint_id(input);
         self
+    }
+    /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
+    pub fn get_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_endpoint_id()
     }
 }

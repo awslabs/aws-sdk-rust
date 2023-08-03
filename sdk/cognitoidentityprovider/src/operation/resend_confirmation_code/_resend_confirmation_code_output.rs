@@ -54,6 +54,12 @@ impl ResendConfirmationCodeOutputBuilder {
         self.code_delivery_details = input;
         self
     }
+    /// <p>The code delivery details returned by the server in response to the request to resend the confirmation code.</p>
+    pub fn get_code_delivery_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::CodeDeliveryDetailsType> {
+        &self.code_delivery_details
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

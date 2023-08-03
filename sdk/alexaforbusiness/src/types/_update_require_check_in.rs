@@ -48,6 +48,10 @@ impl UpdateRequireCheckInBuilder {
         self.release_after_minutes = input;
         self
     }
+    /// <p>Duration between 5 and 20 minutes to determine when to release the room if it's not checked into. </p>
+    pub fn get_release_after_minutes(&self) -> &::std::option::Option<i32> {
+        &self.release_after_minutes
+    }
     /// <p>Whether require check in is enabled or not.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl UpdateRequireCheckInBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    /// <p>Whether require check in is enabled or not.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// Consumes the builder and constructs a [`UpdateRequireCheckIn`](crate::types::UpdateRequireCheckIn).
     pub fn build(self) -> crate::types::UpdateRequireCheckIn {

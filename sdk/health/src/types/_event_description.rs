@@ -46,6 +46,10 @@ impl EventDescriptionBuilder {
         self.latest_description = input;
         self
     }
+    /// <p>The most recent description of the event.</p>
+    pub fn get_latest_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.latest_description
+    }
     /// Consumes the builder and constructs a [`EventDescription`](crate::types::EventDescription).
     pub fn build(self) -> crate::types::EventDescription {
         crate::types::EventDescription {

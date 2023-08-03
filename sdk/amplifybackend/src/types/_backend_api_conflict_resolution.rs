@@ -43,6 +43,12 @@ impl BackendApiConflictResolutionBuilder {
         self.resolution_strategy = input;
         self
     }
+    /// <p>The strategy for conflict resolution.</p>
+    pub fn get_resolution_strategy(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResolutionStrategy> {
+        &self.resolution_strategy
+    }
     /// Consumes the builder and constructs a [`BackendApiConflictResolution`](crate::types::BackendApiConflictResolution).
     pub fn build(self) -> crate::types::BackendApiConflictResolution {
         crate::types::BackendApiConflictResolution {

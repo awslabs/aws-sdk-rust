@@ -71,6 +71,10 @@ impl DeleteColumnStatisticsForPartitionInputBuilder {
         self.catalog_id = input;
         self
     }
+    /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// <p>The name of the catalog database where the partitions reside.</p>
     pub fn database_name(
         mut self,
@@ -87,6 +91,10 @@ impl DeleteColumnStatisticsForPartitionInputBuilder {
         self.database_name = input;
         self
     }
+    /// <p>The name of the catalog database where the partitions reside.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>The name of the partitions' table.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
@@ -96,6 +104,10 @@ impl DeleteColumnStatisticsForPartitionInputBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
+    }
+    /// <p>The name of the partitions' table.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
     }
     /// Appends an item to `partition_values`.
     ///
@@ -119,6 +131,12 @@ impl DeleteColumnStatisticsForPartitionInputBuilder {
         self.partition_values = input;
         self
     }
+    /// <p>A list of partition values identifying the partition.</p>
+    pub fn get_partition_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.partition_values
+    }
     /// <p>Name of the column.</p>
     pub fn column_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.column_name = ::std::option::Option::Some(input.into());
@@ -128,6 +146,10 @@ impl DeleteColumnStatisticsForPartitionInputBuilder {
     pub fn set_column_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.column_name = input;
         self
+    }
+    /// <p>Name of the column.</p>
+    pub fn get_column_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.column_name
     }
     /// Consumes the builder and constructs a [`DeleteColumnStatisticsForPartitionInput`](crate::operation::delete_column_statistics_for_partition::DeleteColumnStatisticsForPartitionInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_column_statistics_for_partition::DeleteColumnStatisticsForPartitionInput, ::aws_smithy_http::operation::error::BuildError>{

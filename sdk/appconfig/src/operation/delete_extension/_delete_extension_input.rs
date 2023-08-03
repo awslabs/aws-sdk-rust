@@ -53,6 +53,10 @@ impl DeleteExtensionInputBuilder {
         self.extension_identifier = input;
         self
     }
+    /// <p>The name, ID, or Amazon Resource Name (ARN) of the extension you want to delete.</p>
+    pub fn get_extension_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.extension_identifier
+    }
     /// <p>A specific version of an extension to delete. If omitted, the highest version is deleted.</p>
     pub fn version_number(mut self, input: i32) -> Self {
         self.version_number = ::std::option::Option::Some(input);
@@ -62,6 +66,10 @@ impl DeleteExtensionInputBuilder {
     pub fn set_version_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.version_number = input;
         self
+    }
+    /// <p>A specific version of an extension to delete. If omitted, the highest version is deleted.</p>
+    pub fn get_version_number(&self) -> &::std::option::Option<i32> {
+        &self.version_number
     }
     /// Consumes the builder and constructs a [`DeleteExtensionInput`](crate::operation::delete_extension::DeleteExtensionInput).
     pub fn build(

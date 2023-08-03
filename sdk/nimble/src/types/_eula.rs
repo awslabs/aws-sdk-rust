@@ -72,6 +72,10 @@ impl EulaBuilder {
         self.content = input;
         self
     }
+    /// <p>The EULA content.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
+    }
     /// <p>The ISO timestamp in seconds for when the resource was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -85,6 +89,10 @@ impl EulaBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The ISO timestamp in seconds for when the resource was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The EULA ID.</p>
     pub fn eula_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.eula_id = ::std::option::Option::Some(input.into());
@@ -95,6 +103,10 @@ impl EulaBuilder {
         self.eula_id = input;
         self
     }
+    /// <p>The EULA ID.</p>
+    pub fn get_eula_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.eula_id
+    }
     /// <p>The name for the EULA.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -104,6 +116,10 @@ impl EulaBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name for the EULA.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -117,6 +133,10 @@ impl EulaBuilder {
     ) -> Self {
         self.updated_at = input;
         self
+    }
+    /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     /// Consumes the builder and constructs a [`Eula`](crate::types::Eula).
     pub fn build(self) -> crate::types::Eula {

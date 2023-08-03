@@ -102,6 +102,10 @@ impl CreateServiceInstanceInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the service instance to create.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The name of the service the service instance is added to.</p>
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
@@ -112,6 +116,10 @@ impl CreateServiceInstanceInputBuilder {
         self.service_name = input;
         self
     }
+    /// <p>The name of the service the service instance is added to.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
+    }
     /// <p>The spec for the service instance you want to create.</p>
     pub fn spec(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.spec = ::std::option::Option::Some(input.into());
@@ -121,6 +129,10 @@ impl CreateServiceInstanceInputBuilder {
     pub fn set_spec(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.spec = input;
         self
+    }
+    /// <p>The spec for the service instance you want to create.</p>
+    pub fn get_spec(&self) -> &::std::option::Option<::std::string::String> {
+        &self.spec
     }
     /// <p>To create a new major and minor version of the service template, <i>exclude</i> <code>major Version</code>.</p>
     pub fn template_major_version(
@@ -138,6 +150,10 @@ impl CreateServiceInstanceInputBuilder {
         self.template_major_version = input;
         self
     }
+    /// <p>To create a new major and minor version of the service template, <i>exclude</i> <code>major Version</code>.</p>
+    pub fn get_template_major_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_major_version
+    }
     /// <p>To create a new minor version of the service template, include a <code>major Version</code>.</p>
     pub fn template_minor_version(
         mut self,
@@ -153,6 +169,10 @@ impl CreateServiceInstanceInputBuilder {
     ) -> Self {
         self.template_minor_version = input;
         self
+    }
+    /// <p>To create a new minor version of the service template, include a <code>major Version</code>.</p>
+    pub fn get_template_minor_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_minor_version
     }
     /// Appends an item to `tags`.
     ///
@@ -175,6 +195,11 @@ impl CreateServiceInstanceInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>An optional list of metadata items that you can associate with the Proton service instance. A tag is a key-value pair.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The client token of the service instance to create.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -184,6 +209,10 @@ impl CreateServiceInstanceInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>The client token of the service instance to create.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateServiceInstanceInput`](crate::operation::create_service_instance::CreateServiceInstanceInput).
     pub fn build(

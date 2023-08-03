@@ -74,6 +74,13 @@ impl ListAutoScalingConfigurationsOutputBuilder {
         self.auto_scaling_configuration_summary_list = input;
         self
     }
+    /// <p>A list of summary information records for auto scaling configurations. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
+    pub fn get_auto_scaling_configuration_summary_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoScalingConfigurationSummary>>
+    {
+        &self.auto_scaling_configuration_summary_list
+    }
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -83,6 +90,10 @@ impl ListAutoScalingConfigurationsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

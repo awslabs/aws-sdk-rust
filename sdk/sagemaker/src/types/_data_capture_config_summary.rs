@@ -72,6 +72,10 @@ impl DataCaptureConfigSummaryBuilder {
         self.enable_capture = input;
         self
     }
+    /// <p>Whether data capture is enabled or disabled.</p>
+    pub fn get_enable_capture(&self) -> &::std::option::Option<bool> {
+        &self.enable_capture
+    }
     /// <p>Whether data capture is currently functional.</p>
     pub fn capture_status(mut self, input: crate::types::CaptureStatus) -> Self {
         self.capture_status = ::std::option::Option::Some(input);
@@ -85,6 +89,10 @@ impl DataCaptureConfigSummaryBuilder {
         self.capture_status = input;
         self
     }
+    /// <p>Whether data capture is currently functional.</p>
+    pub fn get_capture_status(&self) -> &::std::option::Option<crate::types::CaptureStatus> {
+        &self.capture_status
+    }
     /// <p>The percentage of requests being captured by your Endpoint.</p>
     pub fn current_sampling_percentage(mut self, input: i32) -> Self {
         self.current_sampling_percentage = ::std::option::Option::Some(input);
@@ -94,6 +102,10 @@ impl DataCaptureConfigSummaryBuilder {
     pub fn set_current_sampling_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.current_sampling_percentage = input;
         self
+    }
+    /// <p>The percentage of requests being captured by your Endpoint.</p>
+    pub fn get_current_sampling_percentage(&self) -> &::std::option::Option<i32> {
+        &self.current_sampling_percentage
     }
     /// <p>The Amazon S3 location being used to capture the data.</p>
     pub fn destination_s3_uri(
@@ -111,6 +123,10 @@ impl DataCaptureConfigSummaryBuilder {
         self.destination_s3_uri = input;
         self
     }
+    /// <p>The Amazon S3 location being used to capture the data.</p>
+    pub fn get_destination_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_s3_uri
+    }
     /// <p>The KMS key being used to encrypt the data in Amazon S3.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -120,6 +136,10 @@ impl DataCaptureConfigSummaryBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p>The KMS key being used to encrypt the data in Amazon S3.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// Consumes the builder and constructs a [`DataCaptureConfigSummary`](crate::types::DataCaptureConfigSummary).
     pub fn build(self) -> crate::types::DataCaptureConfigSummary {

@@ -57,6 +57,10 @@ impl PutRoomSkillParameterInputBuilder {
         self.room_arn = input;
         self
     }
+    /// <p>The ARN of the room associated with the room skill parameter. Required.</p>
+    pub fn get_room_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.room_arn
+    }
     /// <p>The ARN of the skill associated with the room skill parameter. Required.</p>
     pub fn skill_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.skill_id = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl PutRoomSkillParameterInputBuilder {
     pub fn set_skill_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.skill_id = input;
         self
+    }
+    /// <p>The ARN of the skill associated with the room skill parameter. Required.</p>
+    pub fn get_skill_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.skill_id
     }
     /// <p>The updated room skill parameter. Required.</p>
     pub fn room_skill_parameter(mut self, input: crate::types::RoomSkillParameter) -> Self {
@@ -79,6 +87,12 @@ impl PutRoomSkillParameterInputBuilder {
     ) -> Self {
         self.room_skill_parameter = input;
         self
+    }
+    /// <p>The updated room skill parameter. Required.</p>
+    pub fn get_room_skill_parameter(
+        &self,
+    ) -> &::std::option::Option<crate::types::RoomSkillParameter> {
+        &self.room_skill_parameter
     }
     /// Consumes the builder and constructs a [`PutRoomSkillParameterInput`](crate::operation::put_room_skill_parameter::PutRoomSkillParameterInput).
     pub fn build(

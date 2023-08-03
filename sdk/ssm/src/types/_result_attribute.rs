@@ -40,6 +40,10 @@ impl ResultAttributeBuilder {
         self.type_name = input;
         self
     }
+    /// <p>Name of the inventory item type. Valid value: <code>AWS:InstanceInformation</code>. Default Value: <code>AWS:InstanceInformation</code>.</p>
+    pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.type_name
+    }
     /// Consumes the builder and constructs a [`ResultAttribute`](crate::types::ResultAttribute).
     pub fn build(self) -> crate::types::ResultAttribute {
         crate::types::ResultAttribute {

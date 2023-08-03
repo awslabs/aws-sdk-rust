@@ -67,6 +67,10 @@ impl InstanceEventWindowTimeRangeBuilder {
         self.start_week_day = input;
         self
     }
+    /// <p>The day on which the time range begins.</p>
+    pub fn get_start_week_day(&self) -> &::std::option::Option<crate::types::WeekDay> {
+        &self.start_week_day
+    }
     /// <p>The hour when the time range begins.</p>
     pub fn start_hour(mut self, input: i32) -> Self {
         self.start_hour = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl InstanceEventWindowTimeRangeBuilder {
     pub fn set_start_hour(mut self, input: ::std::option::Option<i32>) -> Self {
         self.start_hour = input;
         self
+    }
+    /// <p>The hour when the time range begins.</p>
+    pub fn get_start_hour(&self) -> &::std::option::Option<i32> {
+        &self.start_hour
     }
     /// <p>The day on which the time range ends.</p>
     pub fn end_week_day(mut self, input: crate::types::WeekDay) -> Self {
@@ -87,6 +95,10 @@ impl InstanceEventWindowTimeRangeBuilder {
         self.end_week_day = input;
         self
     }
+    /// <p>The day on which the time range ends.</p>
+    pub fn get_end_week_day(&self) -> &::std::option::Option<crate::types::WeekDay> {
+        &self.end_week_day
+    }
     /// <p>The hour when the time range ends.</p>
     pub fn end_hour(mut self, input: i32) -> Self {
         self.end_hour = ::std::option::Option::Some(input);
@@ -96,6 +108,10 @@ impl InstanceEventWindowTimeRangeBuilder {
     pub fn set_end_hour(mut self, input: ::std::option::Option<i32>) -> Self {
         self.end_hour = input;
         self
+    }
+    /// <p>The hour when the time range ends.</p>
+    pub fn get_end_hour(&self) -> &::std::option::Option<i32> {
+        &self.end_hour
     }
     /// Consumes the builder and constructs a [`InstanceEventWindowTimeRange`](crate::types::InstanceEventWindowTimeRange).
     pub fn build(self) -> crate::types::InstanceEventWindowTimeRange {

@@ -38,6 +38,13 @@ impl AssociateDeviceWithRoomFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateDeviceWithRoom as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::associate_device_with_room::builders::AssociateDeviceWithRoomInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +135,10 @@ impl AssociateDeviceWithRoomFluentBuilder {
         self.inner = self.inner.set_device_arn(input);
         self
     }
+    /// <p>The ARN of the device to associate to a room. Required.</p>
+    pub fn get_device_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_arn()
+    }
     /// <p>The ARN of the room with which to associate the device. Required.</p>
     pub fn room_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.room_arn(input.into());
@@ -137,5 +148,9 @@ impl AssociateDeviceWithRoomFluentBuilder {
     pub fn set_room_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_room_arn(input);
         self
+    }
+    /// <p>The ARN of the room with which to associate the device. Required.</p>
+    pub fn get_room_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_room_arn()
     }
 }

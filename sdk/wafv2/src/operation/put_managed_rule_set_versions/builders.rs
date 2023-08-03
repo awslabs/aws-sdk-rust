@@ -41,6 +41,10 @@ impl PutManagedRuleSetVersionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutManagedRuleSetVersions as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_managed_rule_set_versions::builders::PutManagedRuleSetVersionsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,11 @@ impl PutManagedRuleSetVersionsFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
+    /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance. </p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
     /// <ul>
@@ -153,6 +162,15 @@ impl PutManagedRuleSetVersionsFluentBuilder {
         self.inner = self.inner.set_scope(input);
         self
     }
+    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance. </p>
+    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+    /// <ul>
+    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+    /// </ul>
+    pub fn get_scope(&self) -> &::std::option::Option<crate::types::Scope> {
+        self.inner.get_scope()
+    }
     /// <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
@@ -163,6 +181,10 @@ impl PutManagedRuleSetVersionsFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     pub fn lock_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.lock_token(input.into());
@@ -172,6 +194,10 @@ impl PutManagedRuleSetVersionsFluentBuilder {
     pub fn set_lock_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_lock_token(input);
         self
+    }
+    /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
+    pub fn get_lock_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_lock_token()
     }
     /// <p>The version of the named managed rule group that you'd like your customers to choose, from among your version offerings. </p>
     pub fn recommended_version(
@@ -188,6 +214,10 @@ impl PutManagedRuleSetVersionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_recommended_version(input);
         self
+    }
+    /// <p>The version of the named managed rule group that you'd like your customers to choose, from among your version offerings. </p>
+    pub fn get_recommended_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_recommended_version()
     }
     /// Adds a key-value pair to `VersionsToPublish`.
     ///
@@ -211,5 +241,13 @@ impl PutManagedRuleSetVersionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_versions_to_publish(input);
         self
+    }
+    /// <p>The versions of the named managed rule group that you want to offer to your customers. </p>
+    pub fn get_versions_to_publish(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::VersionToPublish>,
+    > {
+        self.inner.get_versions_to_publish()
     }
 }

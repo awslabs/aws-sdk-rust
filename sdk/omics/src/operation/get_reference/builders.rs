@@ -36,6 +36,10 @@ impl GetReferenceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetReference as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_reference::builders::GetReferenceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl GetReferenceFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The reference's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The reference's store ID.</p>
     pub fn reference_store_id(
         mut self,
@@ -134,6 +142,10 @@ impl GetReferenceFluentBuilder {
         self.inner = self.inner.set_reference_store_id(input);
         self
     }
+    /// <p>The reference's store ID.</p>
+    pub fn get_reference_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reference_store_id()
+    }
     /// <p>The range to retrieve.</p>
     pub fn range(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.range(input.into());
@@ -143,6 +155,10 @@ impl GetReferenceFluentBuilder {
     pub fn set_range(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_range(input);
         self
+    }
+    /// <p>The range to retrieve.</p>
+    pub fn get_range(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_range()
     }
     /// <p>The part number to retrieve.</p>
     pub fn part_number(mut self, input: i32) -> Self {
@@ -154,6 +170,10 @@ impl GetReferenceFluentBuilder {
         self.inner = self.inner.set_part_number(input);
         self
     }
+    /// <p>The part number to retrieve.</p>
+    pub fn get_part_number(&self) -> &::std::option::Option<i32> {
+        self.inner.get_part_number()
+    }
     /// <p>The file to retrieve.</p>
     pub fn file(mut self, input: crate::types::ReferenceFile) -> Self {
         self.inner = self.inner.file(input);
@@ -163,5 +183,9 @@ impl GetReferenceFluentBuilder {
     pub fn set_file(mut self, input: ::std::option::Option<crate::types::ReferenceFile>) -> Self {
         self.inner = self.inner.set_file(input);
         self
+    }
+    /// <p>The file to retrieve.</p>
+    pub fn get_file(&self) -> &::std::option::Option<crate::types::ReferenceFile> {
+        self.inner.get_file()
     }
 }

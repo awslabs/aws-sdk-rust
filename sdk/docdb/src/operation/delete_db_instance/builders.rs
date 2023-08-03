@@ -36,6 +36,12 @@ impl DeleteDBInstanceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteDBInstance as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_db_instance::builders::DeleteDbInstanceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -139,5 +145,13 @@ impl DeleteDBInstanceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_db_instance_identifier(input);
         self
+    }
+    /// <p>The instance identifier for the instance to be deleted. This parameter isn't case sensitive.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match the name of an existing instance.</p> </li>
+    /// </ul>
+    pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_instance_identifier()
     }
 }

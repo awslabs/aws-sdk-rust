@@ -68,6 +68,10 @@ impl UpdateIdentityProviderSettingsInputBuilder {
         self.identity_provider = input;
         self
     }
+    /// <p>Details about an identity provider.</p>
+    pub fn get_identity_provider(&self) -> &::std::option::Option<crate::types::IdentityProvider> {
+        &self.identity_provider
+    }
     /// <p>The name of the user-based subscription product.</p>
     pub fn product(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product = ::std::option::Option::Some(input.into());
@@ -77,6 +81,10 @@ impl UpdateIdentityProviderSettingsInputBuilder {
     pub fn set_product(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product = input;
         self
+    }
+    /// <p>The name of the user-based subscription product.</p>
+    pub fn get_product(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product
     }
     /// <p>Updates the registered identity provider’s product related configuration settings. You can update any combination of settings in a single operation such as the:</p>
     /// <ul>
@@ -100,6 +108,15 @@ impl UpdateIdentityProviderSettingsInputBuilder {
     ) -> Self {
         self.update_settings = input;
         self
+    }
+    /// <p>Updates the registered identity provider’s product related configuration settings. You can update any combination of settings in a single operation such as the:</p>
+    /// <ul>
+    /// <li> <p>Subnets which you want to add to provision VPC endpoints.</p> </li>
+    /// <li> <p>Subnets which you want to remove the VPC endpoints from.</p> </li>
+    /// <li> <p>Security group ID which permits traffic to the VPC endpoints.</p> </li>
+    /// </ul>
+    pub fn get_update_settings(&self) -> &::std::option::Option<crate::types::UpdateSettings> {
+        &self.update_settings
     }
     /// Consumes the builder and constructs a [`UpdateIdentityProviderSettingsInput`](crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsInput).
     pub fn build(

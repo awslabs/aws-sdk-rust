@@ -37,6 +37,13 @@ impl DescribeDomainAutoTunesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeDomainAutoTunes as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_domain_auto_tunes::builders::DescribeDomainAutoTunesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +143,10 @@ impl DescribeDomainAutoTunesFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p>Specifies the domain name for which you want Auto-Tune action details.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
     /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -146,6 +157,10 @@ impl DescribeDomainAutoTunesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -155,5 +170,9 @@ impl DescribeDomainAutoTunesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

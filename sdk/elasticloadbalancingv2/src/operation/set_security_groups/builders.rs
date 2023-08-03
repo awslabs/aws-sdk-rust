@@ -37,6 +37,12 @@ impl SetSecurityGroupsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SetSecurityGroups as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::set_security_groups::builders::SetSecurityGroupsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl SetSecurityGroupsFluentBuilder {
         self.inner = self.inner.set_load_balancer_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
+    pub fn get_load_balancer_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_load_balancer_arn()
+    }
     /// Appends an item to `SecurityGroups`.
     ///
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
@@ -152,5 +162,11 @@ impl SetSecurityGroupsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_security_groups(input);
         self
+    }
+    /// <p>The IDs of the security groups.</p>
+    pub fn get_security_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_security_groups()
     }
 }

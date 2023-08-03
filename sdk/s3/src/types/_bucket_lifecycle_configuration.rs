@@ -49,6 +49,12 @@ impl BucketLifecycleConfigurationBuilder {
         self.rules = input;
         self
     }
+    /// <p>A lifecycle rule for individual objects in an Amazon S3 bucket.</p>
+    pub fn get_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecycleRule>> {
+        &self.rules
+    }
     /// Consumes the builder and constructs a [`BucketLifecycleConfiguration`](crate::types::BucketLifecycleConfiguration).
     pub fn build(self) -> crate::types::BucketLifecycleConfiguration {
         crate::types::BucketLifecycleConfiguration { rules: self.rules }

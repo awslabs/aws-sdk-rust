@@ -114,6 +114,17 @@ impl EntityRecognizerInputDataConfigBuilder {
         self.data_format = input;
         self
     }
+    /// <p>The format of your training data:</p>
+    /// <ul>
+    /// <li> <p> <code>COMPREHEND_CSV</code>: A CSV file that supplements your training documents. The CSV file contains information about the custom entities that your trained model will detect. The required format of the file depends on whether you are providing annotations or an entity list.</p> <p>If you use this value, you must provide your CSV file by using either the <code>Annotations</code> or <code>EntityList</code> parameters. You must provide your training documents by using the <code>Documents</code> parameter.</p> </li>
+    /// <li> <p> <code>AUGMENTED_MANIFEST</code>: A labeled dataset that is produced by Amazon SageMaker Ground Truth. This file is in JSON lines format. Each line is a complete JSON object that contains a training document and its labels. Each label annotates a named entity in the training document. </p> <p>If you use this value, you must provide the <code>AugmentedManifests</code> parameter in your request.</p> </li>
+    /// </ul>
+    /// <p>If you don't specify a value, Amazon Comprehend uses <code>COMPREHEND_CSV</code> as the default.</p>
+    pub fn get_data_format(
+        &self,
+    ) -> &::std::option::Option<crate::types::EntityRecognizerDataFormat> {
+        &self.data_format
+    }
     /// Appends an item to `entity_types`.
     ///
     /// To override the contents of this collection use [`set_entity_types`](Self::set_entity_types).
@@ -135,6 +146,13 @@ impl EntityRecognizerInputDataConfigBuilder {
         self.entity_types = input;
         self
     }
+    /// <p>The entity types in the labeled training data that Amazon Comprehend uses to train the custom entity recognizer. Any entity types that you don't specify are ignored.</p>
+    /// <p>A maximum of 25 entity types can be used at one time to train an entity recognizer. Entity types must not contain the following invalid characters: \n (line break), \\n (escaped line break), \r (carriage return), \\r (escaped carriage return), \t (tab), \\t (escaped tab), space, and , (comma). </p>
+    pub fn get_entity_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityTypesListItem>> {
+        &self.entity_types
+    }
     /// <p>The S3 location of the folder that contains the training documents for your custom entity recognizer.</p>
     /// <p>This parameter is required if you set <code>DataFormat</code> to <code>COMPREHEND_CSV</code>.</p>
     pub fn documents(mut self, input: crate::types::EntityRecognizerDocuments) -> Self {
@@ -150,6 +168,11 @@ impl EntityRecognizerInputDataConfigBuilder {
         self.documents = input;
         self
     }
+    /// <p>The S3 location of the folder that contains the training documents for your custom entity recognizer.</p>
+    /// <p>This parameter is required if you set <code>DataFormat</code> to <code>COMPREHEND_CSV</code>.</p>
+    pub fn get_documents(&self) -> &::std::option::Option<crate::types::EntityRecognizerDocuments> {
+        &self.documents
+    }
     /// <p>The S3 location of the CSV file that annotates your training documents.</p>
     pub fn annotations(mut self, input: crate::types::EntityRecognizerAnnotations) -> Self {
         self.annotations = ::std::option::Option::Some(input);
@@ -163,6 +186,12 @@ impl EntityRecognizerInputDataConfigBuilder {
         self.annotations = input;
         self
     }
+    /// <p>The S3 location of the CSV file that annotates your training documents.</p>
+    pub fn get_annotations(
+        &self,
+    ) -> &::std::option::Option<crate::types::EntityRecognizerAnnotations> {
+        &self.annotations
+    }
     /// <p>The S3 location of the CSV file that has the entity list for your custom entity recognizer.</p>
     pub fn entity_list(mut self, input: crate::types::EntityRecognizerEntityList) -> Self {
         self.entity_list = ::std::option::Option::Some(input);
@@ -175,6 +204,12 @@ impl EntityRecognizerInputDataConfigBuilder {
     ) -> Self {
         self.entity_list = input;
         self
+    }
+    /// <p>The S3 location of the CSV file that has the entity list for your custom entity recognizer.</p>
+    pub fn get_entity_list(
+        &self,
+    ) -> &::std::option::Option<crate::types::EntityRecognizerEntityList> {
+        &self.entity_list
     }
     /// Appends an item to `augmented_manifests`.
     ///
@@ -196,6 +231,13 @@ impl EntityRecognizerInputDataConfigBuilder {
     ) -> Self {
         self.augmented_manifests = input;
         self
+    }
+    /// <p>A list of augmented manifest files that provide training data for your custom model. An augmented manifest file is a labeled dataset that is produced by Amazon SageMaker Ground Truth.</p>
+    /// <p>This parameter is required if you set <code>DataFormat</code> to <code>AUGMENTED_MANIFEST</code>.</p>
+    pub fn get_augmented_manifests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AugmentedManifestsListItem>> {
+        &self.augmented_manifests
     }
     /// Consumes the builder and constructs a [`EntityRecognizerInputDataConfig`](crate::types::EntityRecognizerInputDataConfig).
     pub fn build(self) -> crate::types::EntityRecognizerInputDataConfig {

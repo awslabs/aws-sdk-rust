@@ -36,6 +36,10 @@ impl PurchaseReservedElasticsearchInstanceOfferingFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PurchaseReservedElasticsearchInstanceOffering as a reference.
+    pub fn as_input(&self) -> &crate::operation::purchase_reserved_elasticsearch_instance_offering::builders::PurchaseReservedElasticsearchInstanceOfferingInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -110,6 +114,12 @@ impl PurchaseReservedElasticsearchInstanceOfferingFluentBuilder {
             .set_reserved_elasticsearch_instance_offering_id(input);
         self
     }
+    /// <p>The ID of the reserved Elasticsearch instance offering to purchase.</p>
+    pub fn get_reserved_elasticsearch_instance_offering_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reserved_elasticsearch_instance_offering_id()
+    }
     /// <p>A customer-specified identifier to track this reservation.</p>
     pub fn reservation_name(
         mut self,
@@ -126,6 +136,10 @@ impl PurchaseReservedElasticsearchInstanceOfferingFluentBuilder {
         self.inner = self.inner.set_reservation_name(input);
         self
     }
+    /// <p>A customer-specified identifier to track this reservation.</p>
+    pub fn get_reservation_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reservation_name()
+    }
     /// <p>The number of Elasticsearch instances to reserve.</p>
     pub fn instance_count(mut self, input: i32) -> Self {
         self.inner = self.inner.instance_count(input);
@@ -135,5 +149,9 @@ impl PurchaseReservedElasticsearchInstanceOfferingFluentBuilder {
     pub fn set_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_instance_count(input);
         self
+    }
+    /// <p>The number of Elasticsearch instances to reserve.</p>
+    pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
+        self.inner.get_instance_count()
     }
 }

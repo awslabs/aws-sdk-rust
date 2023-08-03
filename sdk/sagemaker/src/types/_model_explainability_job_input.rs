@@ -53,6 +53,10 @@ impl ModelExplainabilityJobInputBuilder {
         self.endpoint_input = input;
         self
     }
+    /// <p>Input object for the endpoint</p>
+    pub fn get_endpoint_input(&self) -> &::std::option::Option<crate::types::EndpointInput> {
+        &self.endpoint_input
+    }
     /// <p>Input object for the batch transform job.</p>
     pub fn batch_transform_input(mut self, input: crate::types::BatchTransformInput) -> Self {
         self.batch_transform_input = ::std::option::Option::Some(input);
@@ -65,6 +69,12 @@ impl ModelExplainabilityJobInputBuilder {
     ) -> Self {
         self.batch_transform_input = input;
         self
+    }
+    /// <p>Input object for the batch transform job.</p>
+    pub fn get_batch_transform_input(
+        &self,
+    ) -> &::std::option::Option<crate::types::BatchTransformInput> {
+        &self.batch_transform_input
     }
     /// Consumes the builder and constructs a [`ModelExplainabilityJobInput`](crate::types::ModelExplainabilityJobInput).
     pub fn build(self) -> crate::types::ModelExplainabilityJobInput {

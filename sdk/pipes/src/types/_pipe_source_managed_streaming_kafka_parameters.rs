@@ -93,6 +93,10 @@ impl PipeSourceManagedStreamingKafkaParametersBuilder {
         self.topic_name = input;
         self
     }
+    /// <p>The name of the topic that the pipe will read from.</p>
+    pub fn get_topic_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_name
+    }
     /// <p>(Streams only) The position in a stream from which to start reading.</p>
     pub fn starting_position(mut self, input: crate::types::MskStartPosition) -> Self {
         self.starting_position = ::std::option::Option::Some(input);
@@ -106,6 +110,10 @@ impl PipeSourceManagedStreamingKafkaParametersBuilder {
         self.starting_position = input;
         self
     }
+    /// <p>(Streams only) The position in a stream from which to start reading.</p>
+    pub fn get_starting_position(&self) -> &::std::option::Option<crate::types::MskStartPosition> {
+        &self.starting_position
+    }
     /// <p>The maximum number of records to include in each batch.</p>
     pub fn batch_size(mut self, input: i32) -> Self {
         self.batch_size = ::std::option::Option::Some(input);
@@ -115,6 +123,10 @@ impl PipeSourceManagedStreamingKafkaParametersBuilder {
     pub fn set_batch_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.batch_size = input;
         self
+    }
+    /// <p>The maximum number of records to include in each batch.</p>
+    pub fn get_batch_size(&self) -> &::std::option::Option<i32> {
+        &self.batch_size
     }
     /// <p>The maximum length of a time to wait for events.</p>
     pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
@@ -128,6 +140,10 @@ impl PipeSourceManagedStreamingKafkaParametersBuilder {
     ) -> Self {
         self.maximum_batching_window_in_seconds = input;
         self
+    }
+    /// <p>The maximum length of a time to wait for events.</p>
+    pub fn get_maximum_batching_window_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.maximum_batching_window_in_seconds
     }
     /// <p>The name of the destination queue to consume.</p>
     pub fn consumer_group_id(
@@ -145,6 +161,10 @@ impl PipeSourceManagedStreamingKafkaParametersBuilder {
         self.consumer_group_id = input;
         self
     }
+    /// <p>The name of the destination queue to consume.</p>
+    pub fn get_consumer_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.consumer_group_id
+    }
     /// <p>The credentials needed to access the resource.</p>
     pub fn credentials(mut self, input: crate::types::MskAccessCredentials) -> Self {
         self.credentials = ::std::option::Option::Some(input);
@@ -157,6 +177,10 @@ impl PipeSourceManagedStreamingKafkaParametersBuilder {
     ) -> Self {
         self.credentials = input;
         self
+    }
+    /// <p>The credentials needed to access the resource.</p>
+    pub fn get_credentials(&self) -> &::std::option::Option<crate::types::MskAccessCredentials> {
+        &self.credentials
     }
     /// Consumes the builder and constructs a [`PipeSourceManagedStreamingKafkaParameters`](crate::types::PipeSourceManagedStreamingKafkaParameters).
     pub fn build(self) -> crate::types::PipeSourceManagedStreamingKafkaParameters {

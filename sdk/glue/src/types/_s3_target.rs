@@ -80,6 +80,10 @@ impl S3TargetBuilder {
         self.path = input;
         self
     }
+    /// <p>The path to the Amazon S3 target.</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
+    }
     /// Appends an item to `exclusions`.
     ///
     /// To override the contents of this collection use [`set_exclusions`](Self::set_exclusions).
@@ -99,6 +103,10 @@ impl S3TargetBuilder {
         self.exclusions = input;
         self
     }
+    /// <p>A list of glob patterns used to exclude from the crawl. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
+    pub fn get_exclusions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.exclusions
+    }
     /// <p>The name of a connection which allows a job or crawler to access data in Amazon S3 within an Amazon Virtual Private Cloud environment (Amazon VPC).</p>
     pub fn connection_name(
         mut self,
@@ -115,6 +123,10 @@ impl S3TargetBuilder {
         self.connection_name = input;
         self
     }
+    /// <p>The name of a connection which allows a job or crawler to access data in Amazon S3 within an Amazon Virtual Private Cloud environment (Amazon VPC).</p>
+    pub fn get_connection_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_name
+    }
     /// <p>Sets the number of files in each leaf folder to be crawled when crawling sample files in a dataset. If not set, all the files are crawled. A valid value is an integer between 1 and 249.</p>
     pub fn sample_size(mut self, input: i32) -> Self {
         self.sample_size = ::std::option::Option::Some(input);
@@ -124,6 +136,10 @@ impl S3TargetBuilder {
     pub fn set_sample_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.sample_size = input;
         self
+    }
+    /// <p>Sets the number of files in each leaf folder to be crawled when crawling sample files in a dataset. If not set, all the files are crawled. A valid value is an integer between 1 and 249.</p>
+    pub fn get_sample_size(&self) -> &::std::option::Option<i32> {
+        &self.sample_size
     }
     /// <p>A valid Amazon SQS ARN. For example, <code>arn:aws:sqs:region:account:sqs</code>.</p>
     pub fn event_queue_arn(
@@ -141,6 +157,10 @@ impl S3TargetBuilder {
         self.event_queue_arn = input;
         self
     }
+    /// <p>A valid Amazon SQS ARN. For example, <code>arn:aws:sqs:region:account:sqs</code>.</p>
+    pub fn get_event_queue_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_queue_arn
+    }
     /// <p>A valid Amazon dead-letter SQS ARN. For example, <code>arn:aws:sqs:region:account:deadLetterQueue</code>.</p>
     pub fn dlq_event_queue_arn(
         mut self,
@@ -156,6 +176,10 @@ impl S3TargetBuilder {
     ) -> Self {
         self.dlq_event_queue_arn = input;
         self
+    }
+    /// <p>A valid Amazon dead-letter SQS ARN. For example, <code>arn:aws:sqs:region:account:deadLetterQueue</code>.</p>
+    pub fn get_dlq_event_queue_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dlq_event_queue_arn
     }
     /// Consumes the builder and constructs a [`S3Target`](crate::types::S3Target).
     pub fn build(self) -> crate::types::S3Target {

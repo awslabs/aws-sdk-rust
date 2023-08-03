@@ -67,6 +67,12 @@ impl BatchCreateChannelMembershipOutputBuilder {
         self.batch_channel_memberships = input;
         self
     }
+    /// <p>The list of channel memberships in the response.</p>
+    pub fn get_batch_channel_memberships(
+        &self,
+    ) -> &::std::option::Option<crate::types::BatchChannelMemberships> {
+        &self.batch_channel_memberships
+    }
     /// Appends an item to `errors`.
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
@@ -87,6 +93,13 @@ impl BatchCreateChannelMembershipOutputBuilder {
     ) -> Self {
         self.errors = input;
         self
+    }
+    /// <p>If the action fails for one or more of the memberships in the request, a list of the memberships is returned, along with error codes and error messages.</p>
+    pub fn get_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchCreateChannelMembershipError>>
+    {
+        &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

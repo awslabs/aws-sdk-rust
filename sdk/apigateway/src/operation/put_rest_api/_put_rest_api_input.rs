@@ -80,6 +80,10 @@ impl PutRestApiInputBuilder {
         self.rest_api_id = input;
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rest_api_id
+    }
     /// <p>The <code>mode</code> query parameter to specify the update mode. Valid values are "merge" and "overwrite". By default, the update mode is "merge".</p>
     pub fn mode(mut self, input: crate::types::PutMode) -> Self {
         self.mode = ::std::option::Option::Some(input);
@@ -90,6 +94,10 @@ impl PutRestApiInputBuilder {
         self.mode = input;
         self
     }
+    /// <p>The <code>mode</code> query parameter to specify the update mode. Valid values are "merge" and "overwrite". By default, the update mode is "merge".</p>
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::PutMode> {
+        &self.mode
+    }
     /// <p>A query parameter to indicate whether to rollback the API update (<code>true</code>) or not (<code>false</code>) when a warning is encountered. The default value is <code>false</code>.</p>
     pub fn fail_on_warnings(mut self, input: bool) -> Self {
         self.fail_on_warnings = ::std::option::Option::Some(input);
@@ -99,6 +107,10 @@ impl PutRestApiInputBuilder {
     pub fn set_fail_on_warnings(mut self, input: ::std::option::Option<bool>) -> Self {
         self.fail_on_warnings = input;
         self
+    }
+    /// <p>A query parameter to indicate whether to rollback the API update (<code>true</code>) or not (<code>false</code>) when a warning is encountered. The default value is <code>false</code>.</p>
+    pub fn get_fail_on_warnings(&self) -> &::std::option::Option<bool> {
+        &self.fail_on_warnings
     }
     /// Adds a key-value pair to `parameters`.
     ///
@@ -125,6 +137,14 @@ impl PutRestApiInputBuilder {
         self.parameters = input;
         self
     }
+    /// <p>Custom header parameters as part of the request. For example, to exclude DocumentationParts from an imported API, set <code>ignore=documentation</code> as a <code>parameters</code> value, as in the AWS CLI command of <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code>.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.parameters
+    }
     /// <p>The PUT request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
     pub fn body(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.body = ::std::option::Option::Some(input);
@@ -134,6 +154,10 @@ impl PutRestApiInputBuilder {
     pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.body = input;
         self
+    }
+    /// <p>The PUT request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
+    pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.body
     }
     /// Consumes the builder and constructs a [`PutRestApiInput`](crate::operation::put_rest_api::PutRestApiInput).
     pub fn build(

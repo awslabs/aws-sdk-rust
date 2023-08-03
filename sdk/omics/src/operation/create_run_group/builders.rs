@@ -36,6 +36,12 @@ impl CreateRunGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateRunGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_run_group::builders::CreateRunGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateRunGroupFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>A name for the group.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The maximum number of CPUs to use in the group.</p>
     pub fn max_cpus(mut self, input: i32) -> Self {
         self.inner = self.inner.max_cpus(input);
@@ -135,6 +145,10 @@ impl CreateRunGroupFluentBuilder {
     pub fn set_max_cpus(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_cpus(input);
         self
+    }
+    /// <p>The maximum number of CPUs to use in the group.</p>
+    pub fn get_max_cpus(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_cpus()
     }
     /// <p>The maximum number of concurrent runs for the group.</p>
     pub fn max_runs(mut self, input: i32) -> Self {
@@ -146,6 +160,10 @@ impl CreateRunGroupFluentBuilder {
         self.inner = self.inner.set_max_runs(input);
         self
     }
+    /// <p>The maximum number of concurrent runs for the group.</p>
+    pub fn get_max_runs(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_runs()
+    }
     /// <p>A maximum run time for the group in minutes.</p>
     pub fn max_duration(mut self, input: i32) -> Self {
         self.inner = self.inner.max_duration(input);
@@ -155,6 +173,10 @@ impl CreateRunGroupFluentBuilder {
     pub fn set_max_duration(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_duration(input);
         self
+    }
+    /// <p>A maximum run time for the group in minutes.</p>
+    pub fn get_max_duration(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_duration()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -179,6 +201,14 @@ impl CreateRunGroupFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>Tags for the group.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.request_id(input.into());
@@ -189,6 +219,10 @@ impl CreateRunGroupFluentBuilder {
         self.inner = self.inner.set_request_id(input);
         self
     }
+    /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_request_id()
+    }
     /// <p> The maximum GPUs that can be used by a run group. </p>
     pub fn max_gpus(mut self, input: i32) -> Self {
         self.inner = self.inner.max_gpus(input);
@@ -198,5 +232,9 @@ impl CreateRunGroupFluentBuilder {
     pub fn set_max_gpus(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_gpus(input);
         self
+    }
+    /// <p> The maximum GPUs that can be used by a run group. </p>
+    pub fn get_max_gpus(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_gpus()
     }
 }

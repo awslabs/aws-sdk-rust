@@ -57,6 +57,10 @@ impl DetectorModelDefinitionBuilder {
         self.states = input;
         self
     }
+    /// <p>Information about the states of the detector.</p>
+    pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::State>> {
+        &self.states
+    }
     /// <p>The state that is entered at the creation of each detector (instance).</p>
     pub fn initial_state_name(
         mut self,
@@ -72,6 +76,10 @@ impl DetectorModelDefinitionBuilder {
     ) -> Self {
         self.initial_state_name = input;
         self
+    }
+    /// <p>The state that is entered at the creation of each detector (instance).</p>
+    pub fn get_initial_state_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.initial_state_name
     }
     /// Consumes the builder and constructs a [`DetectorModelDefinition`](crate::types::DetectorModelDefinition).
     pub fn build(self) -> crate::types::DetectorModelDefinition {

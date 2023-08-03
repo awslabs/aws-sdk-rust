@@ -36,6 +36,10 @@ impl UpdateSpaceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateSpace as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_space::builders::UpdateSpaceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl UpdateSpaceFluentBuilder {
         self.inner = self.inner.set_domain_id(input);
         self
     }
+    /// <p>The ID of the associated Domain.</p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_id()
+    }
     /// <p>The name of the space.</p>
     pub fn space_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.space_name(input.into());
@@ -127,6 +135,10 @@ impl UpdateSpaceFluentBuilder {
     pub fn set_space_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_space_name(input);
         self
+    }
+    /// <p>The name of the space.</p>
+    pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_space_name()
     }
     /// <p>A collection of space settings.</p>
     pub fn space_settings(mut self, input: crate::types::SpaceSettings) -> Self {
@@ -140,5 +152,9 @@ impl UpdateSpaceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_space_settings(input);
         self
+    }
+    /// <p>A collection of space settings.</p>
+    pub fn get_space_settings(&self) -> &::std::option::Option<crate::types::SpaceSettings> {
+        self.inner.get_space_settings()
     }
 }

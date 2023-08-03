@@ -53,6 +53,12 @@ impl HttpGatewayRoutePrefixRewriteBuilder {
         self.default_prefix = input;
         self
     }
+    /// <p>The default prefix used to replace the incoming route prefix when rewritten.</p>
+    pub fn get_default_prefix(
+        &self,
+    ) -> &::std::option::Option<crate::types::DefaultGatewayRouteRewrite> {
+        &self.default_prefix
+    }
     /// <p>The value used to replace the incoming route prefix when rewritten.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -62,6 +68,10 @@ impl HttpGatewayRoutePrefixRewriteBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value used to replace the incoming route prefix when rewritten.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`HttpGatewayRoutePrefixRewrite`](crate::types::HttpGatewayRoutePrefixRewrite).
     pub fn build(self) -> crate::types::HttpGatewayRoutePrefixRewrite {

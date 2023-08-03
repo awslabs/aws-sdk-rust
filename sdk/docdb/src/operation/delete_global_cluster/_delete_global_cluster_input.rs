@@ -48,6 +48,10 @@ impl DeleteGlobalClusterInputBuilder {
         self.global_cluster_identifier = input;
         self
     }
+    /// <p>The cluster identifier of the global cluster being deleted.</p>
+    pub fn get_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_cluster_identifier
+    }
     /// Consumes the builder and constructs a [`DeleteGlobalClusterInput`](crate::operation::delete_global_cluster::DeleteGlobalClusterInput).
     pub fn build(
         self,

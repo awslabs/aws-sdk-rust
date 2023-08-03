@@ -56,6 +56,10 @@ impl FieldBuilder {
         self.key = input;
         self
     }
+    /// <p>The field identifier.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>The field value, expressed as a String.</p>
     pub fn string_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.string_value = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl FieldBuilder {
         self.string_value = input;
         self
     }
+    /// <p>The field value, expressed as a String.</p>
+    pub fn get_string_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.string_value
+    }
     /// <p>The field value, expressed as the identifier of another object.</p>
     pub fn ref_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ref_value = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl FieldBuilder {
     pub fn set_ref_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ref_value = input;
         self
+    }
+    /// <p>The field value, expressed as the identifier of another object.</p>
+    pub fn get_ref_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ref_value
     }
     /// Consumes the builder and constructs a [`Field`](crate::types::Field).
     pub fn build(self) -> crate::types::Field {

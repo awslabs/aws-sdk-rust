@@ -88,6 +88,10 @@ impl TaskRunPropertiesBuilder {
         self.task_type = input;
         self
     }
+    /// <p>The type of task run.</p>
+    pub fn get_task_type(&self) -> &::std::option::Option<crate::types::TaskType> {
+        &self.task_type
+    }
     /// <p>The configuration properties for an importing labels task run.</p>
     pub fn import_labels_task_run_properties(
         mut self,
@@ -103,6 +107,12 @@ impl TaskRunPropertiesBuilder {
     ) -> Self {
         self.import_labels_task_run_properties = input;
         self
+    }
+    /// <p>The configuration properties for an importing labels task run.</p>
+    pub fn get_import_labels_task_run_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImportLabelsTaskRunProperties> {
+        &self.import_labels_task_run_properties
     }
     /// <p>The configuration properties for an exporting labels task run.</p>
     pub fn export_labels_task_run_properties(
@@ -120,6 +130,12 @@ impl TaskRunPropertiesBuilder {
         self.export_labels_task_run_properties = input;
         self
     }
+    /// <p>The configuration properties for an exporting labels task run.</p>
+    pub fn get_export_labels_task_run_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExportLabelsTaskRunProperties> {
+        &self.export_labels_task_run_properties
+    }
     /// <p>The configuration properties for a labeling set generation task run.</p>
     pub fn labeling_set_generation_task_run_properties(
         mut self,
@@ -136,6 +152,12 @@ impl TaskRunPropertiesBuilder {
         self.labeling_set_generation_task_run_properties = input;
         self
     }
+    /// <p>The configuration properties for a labeling set generation task run.</p>
+    pub fn get_labeling_set_generation_task_run_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::LabelingSetGenerationTaskRunProperties> {
+        &self.labeling_set_generation_task_run_properties
+    }
     /// <p>The configuration properties for a find matches task run.</p>
     pub fn find_matches_task_run_properties(
         mut self,
@@ -151,6 +173,12 @@ impl TaskRunPropertiesBuilder {
     ) -> Self {
         self.find_matches_task_run_properties = input;
         self
+    }
+    /// <p>The configuration properties for a find matches task run.</p>
+    pub fn get_find_matches_task_run_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::FindMatchesTaskRunProperties> {
+        &self.find_matches_task_run_properties
     }
     /// Consumes the builder and constructs a [`TaskRunProperties`](crate::types::TaskRunProperties).
     pub fn build(self) -> crate::types::TaskRunProperties {

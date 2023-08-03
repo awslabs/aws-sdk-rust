@@ -45,6 +45,12 @@ impl EcrConfigurationStateBuilder {
         self.rescan_duration_state = input;
         self
     }
+    /// <p>An object that contains details about the state of the ECR automated re-scan setting.</p>
+    pub fn get_rescan_duration_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::EcrRescanDurationState> {
+        &self.rescan_duration_state
+    }
     /// Consumes the builder and constructs a [`EcrConfigurationState`](crate::types::EcrConfigurationState).
     pub fn build(self) -> crate::types::EcrConfigurationState {
         crate::types::EcrConfigurationState {

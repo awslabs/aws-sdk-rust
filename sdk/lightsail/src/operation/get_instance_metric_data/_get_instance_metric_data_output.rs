@@ -59,6 +59,10 @@ impl GetInstanceMetricDataOutputBuilder {
         self.metric_name = input;
         self
     }
+    /// <p>The name of the metric returned.</p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<crate::types::InstanceMetricName> {
+        &self.metric_name
+    }
     /// Appends an item to `metric_data`.
     ///
     /// To override the contents of this collection use [`set_metric_data`](Self::set_metric_data).
@@ -77,6 +81,12 @@ impl GetInstanceMetricDataOutputBuilder {
     ) -> Self {
         self.metric_data = input;
         self
+    }
+    /// <p>An array of objects that describe the metric data returned.</p>
+    pub fn get_metric_data(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDatapoint>> {
+        &self.metric_data
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

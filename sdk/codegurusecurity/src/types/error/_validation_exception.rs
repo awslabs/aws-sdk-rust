@@ -92,6 +92,10 @@ impl ValidationExceptionBuilder {
         self.error_code = input;
         self
     }
+    /// <p>The identifier for the error.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
+    }
     /// <p>Description of the error.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -101,6 +105,10 @@ impl ValidationExceptionBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>Description of the error.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// <p>The reason the request failed validation.</p>
     pub fn reason(mut self, input: crate::types::ValidationExceptionReason) -> Self {
@@ -114,6 +122,10 @@ impl ValidationExceptionBuilder {
     ) -> Self {
         self.reason = input;
         self
+    }
+    /// <p>The reason the request failed validation.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<crate::types::ValidationExceptionReason> {
+        &self.reason
     }
     /// Appends an item to `field_list`.
     ///
@@ -133,6 +145,12 @@ impl ValidationExceptionBuilder {
     ) -> Self {
         self.field_list = input;
         self
+    }
+    /// <p>The field that caused the error, if applicable.</p>
+    pub fn get_field_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionField>> {
+        &self.field_list
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

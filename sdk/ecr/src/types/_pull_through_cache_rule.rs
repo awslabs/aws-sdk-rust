@@ -70,6 +70,10 @@ impl PullThroughCacheRuleBuilder {
         self.ecr_repository_prefix = input;
         self
     }
+    /// <p>The Amazon ECR repository prefix associated with the pull through cache rule.</p>
+    pub fn get_ecr_repository_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ecr_repository_prefix
+    }
     /// <p>The upstream registry URL associated with the pull through cache rule.</p>
     pub fn upstream_registry_url(
         mut self,
@@ -86,6 +90,10 @@ impl PullThroughCacheRuleBuilder {
         self.upstream_registry_url = input;
         self
     }
+    /// <p>The upstream registry URL associated with the pull through cache rule.</p>
+    pub fn get_upstream_registry_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.upstream_registry_url
+    }
     /// <p>The date and time the pull through cache was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -99,6 +107,10 @@ impl PullThroughCacheRuleBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The date and time the pull through cache was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The Amazon Web Services account ID associated with the registry the pull through cache rule is associated with.</p>
     pub fn registry_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_id = ::std::option::Option::Some(input.into());
@@ -108,6 +120,10 @@ impl PullThroughCacheRuleBuilder {
     pub fn set_registry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registry_id = input;
         self
+    }
+    /// <p>The Amazon Web Services account ID associated with the registry the pull through cache rule is associated with.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_id
     }
     /// Consumes the builder and constructs a [`PullThroughCacheRule`](crate::types::PullThroughCacheRule).
     pub fn build(self) -> crate::types::PullThroughCacheRule {

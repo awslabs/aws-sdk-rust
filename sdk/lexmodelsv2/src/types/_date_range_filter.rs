@@ -51,6 +51,10 @@ impl DateRangeFilterBuilder {
         self.start_date_time = input;
         self
     }
+    /// <p>A timestamp indicating the start date for the date range filter.</p>
+    pub fn get_start_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_date_time
+    }
     /// <p>A timestamp indicating the end date for the date range filter.</p>
     pub fn end_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_date_time = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl DateRangeFilterBuilder {
     ) -> Self {
         self.end_date_time = input;
         self
+    }
+    /// <p>A timestamp indicating the end date for the date range filter.</p>
+    pub fn get_end_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_date_time
     }
     /// Consumes the builder and constructs a [`DateRangeFilter`](crate::types::DateRangeFilter).
     pub fn build(self) -> crate::types::DateRangeFilter {

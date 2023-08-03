@@ -56,6 +56,10 @@ impl S3LocationBuilder {
         self.bucket = input;
         self
     }
+    /// <p>The Amazon S3 bucket name.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p>The unique name of the object in the bucket.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl S3LocationBuilder {
         self.key = input;
         self
     }
+    /// <p>The unique name of the object in the bucket.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>The Amazon Web Services account ID of the bucket owner.</p>
     pub fn bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_owner = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl S3LocationBuilder {
     pub fn set_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_owner = input;
         self
+    }
+    /// <p>The Amazon Web Services account ID of the bucket owner.</p>
+    pub fn get_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_owner
     }
     /// Consumes the builder and constructs a [`S3Location`](crate::types::S3Location).
     pub fn build(self) -> crate::types::S3Location {

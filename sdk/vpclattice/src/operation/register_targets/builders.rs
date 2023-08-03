@@ -36,6 +36,12 @@ impl RegisterTargetsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RegisterTargets as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::register_targets::builders::RegisterTargetsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl RegisterTargetsFluentBuilder {
         self.inner = self.inner.set_target_group_identifier(input);
         self
     }
+    /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
+    pub fn get_target_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_group_identifier()
+    }
     /// Appends an item to `targets`.
     ///
     /// To override the contents of this collection use [`set_targets`](Self::set_targets).
@@ -148,5 +158,9 @@ impl RegisterTargetsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_targets(input);
         self
+    }
+    /// <p>The targets.</p>
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Target>> {
+        self.inner.get_targets()
     }
 }

@@ -62,6 +62,12 @@ impl FleetLaunchTemplateConfigBuilder {
         self.launch_template_specification = input;
         self
     }
+    /// <p>The launch template.</p>
+    pub fn get_launch_template_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::FleetLaunchTemplateSpecification> {
+        &self.launch_template_specification
+    }
     /// Appends an item to `overrides`.
     ///
     /// To override the contents of this collection use [`set_overrides`](Self::set_overrides).
@@ -80,6 +86,12 @@ impl FleetLaunchTemplateConfigBuilder {
     ) -> Self {
         self.overrides = input;
         self
+    }
+    /// <p>Any parameters that you specify override the same parameters in the launch template.</p>
+    pub fn get_overrides(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetLaunchTemplateOverrides>> {
+        &self.overrides
     }
     /// Consumes the builder and constructs a [`FleetLaunchTemplateConfig`](crate::types::FleetLaunchTemplateConfig).
     pub fn build(self) -> crate::types::FleetLaunchTemplateConfig {

@@ -36,6 +36,12 @@ impl UpdateDataSetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDataSet as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_data_set::builders::UpdateDataSetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl UpdateDataSetFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>The ID for the dataset that you want to update. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_set_id(input.into());
@@ -134,6 +144,10 @@ impl UpdateDataSetFluentBuilder {
         self.inner = self.inner.set_data_set_id(input);
         self
     }
+    /// <p>The ID for the dataset that you want to update. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_data_set_id()
+    }
     /// <p>The display name for the dataset.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -143,6 +157,10 @@ impl UpdateDataSetFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The display name for the dataset.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// Adds a key-value pair to `PhysicalTableMap`.
     ///
@@ -167,6 +185,14 @@ impl UpdateDataSetFluentBuilder {
         self.inner = self.inner.set_physical_table_map(input);
         self
     }
+    /// <p>Declares the physical tables that are available in the underlying data sources.</p>
+    pub fn get_physical_table_map(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::PhysicalTable>,
+    > {
+        self.inner.get_physical_table_map()
+    }
     /// Adds a key-value pair to `LogicalTableMap`.
     ///
     /// To override the contents of this collection use [`set_logical_table_map`](Self::set_logical_table_map).
@@ -190,6 +216,14 @@ impl UpdateDataSetFluentBuilder {
         self.inner = self.inner.set_logical_table_map(input);
         self
     }
+    /// <p>Configures the combination and transformation of the data from the physical tables.</p>
+    pub fn get_logical_table_map(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::LogicalTable>,
+    > {
+        self.inner.get_logical_table_map()
+    }
     /// <p>Indicates whether you want to import the data into SPICE.</p>
     pub fn import_mode(mut self, input: crate::types::DataSetImportMode) -> Self {
         self.inner = self.inner.import_mode(input);
@@ -202,6 +236,10 @@ impl UpdateDataSetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_import_mode(input);
         self
+    }
+    /// <p>Indicates whether you want to import the data into SPICE.</p>
+    pub fn get_import_mode(&self) -> &::std::option::Option<crate::types::DataSetImportMode> {
+        self.inner.get_import_mode()
     }
     /// Appends an item to `ColumnGroups`.
     ///
@@ -219,6 +257,12 @@ impl UpdateDataSetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_column_groups(input);
         self
+    }
+    /// <p>Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial hierarchy is supported.</p>
+    pub fn get_column_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnGroup>> {
+        self.inner.get_column_groups()
     }
     /// Adds a key-value pair to `FieldFolders`.
     ///
@@ -243,6 +287,14 @@ impl UpdateDataSetFluentBuilder {
         self.inner = self.inner.set_field_folders(input);
         self
     }
+    /// <p>The folder that contains fields and nested subfolders for your dataset.</p>
+    pub fn get_field_folders(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::FieldFolder>,
+    > {
+        self.inner.get_field_folders()
+    }
     /// <p>The row-level security configuration for the data you want to create.</p>
     pub fn row_level_permission_data_set(
         mut self,
@@ -259,6 +311,12 @@ impl UpdateDataSetFluentBuilder {
         self.inner = self.inner.set_row_level_permission_data_set(input);
         self
     }
+    /// <p>The row-level security configuration for the data you want to create.</p>
+    pub fn get_row_level_permission_data_set(
+        &self,
+    ) -> &::std::option::Option<crate::types::RowLevelPermissionDataSet> {
+        self.inner.get_row_level_permission_data_set()
+    }
     /// <p>The configuration of tags on a dataset to set row-level security. Row-level security tags are currently supported for anonymous embedding only.</p>
     pub fn row_level_permission_tag_configuration(
         mut self,
@@ -274,6 +332,12 @@ impl UpdateDataSetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_row_level_permission_tag_configuration(input);
         self
+    }
+    /// <p>The configuration of tags on a dataset to set row-level security. Row-level security tags are currently supported for anonymous embedding only.</p>
+    pub fn get_row_level_permission_tag_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::RowLevelPermissionTagConfiguration> {
+        self.inner.get_row_level_permission_tag_configuration()
     }
     /// Appends an item to `ColumnLevelPermissionRules`.
     ///
@@ -295,6 +359,12 @@ impl UpdateDataSetFluentBuilder {
         self.inner = self.inner.set_column_level_permission_rules(input);
         self
     }
+    /// <p>A set of one or more definitions of a <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a> </code>.</p>
+    pub fn get_column_level_permission_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnLevelPermissionRule>> {
+        self.inner.get_column_level_permission_rules()
+    }
     /// <p>The usage configuration to apply to child datasets that reference this dataset as a source.</p>
     pub fn data_set_usage_configuration(
         mut self,
@@ -310,6 +380,12 @@ impl UpdateDataSetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_data_set_usage_configuration(input);
         self
+    }
+    /// <p>The usage configuration to apply to child datasets that reference this dataset as a source.</p>
+    pub fn get_data_set_usage_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataSetUsageConfiguration> {
+        self.inner.get_data_set_usage_configuration()
     }
     /// Appends an item to `DatasetParameters`.
     ///
@@ -327,5 +403,11 @@ impl UpdateDataSetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_dataset_parameters(input);
         self
+    }
+    /// <p>The parameter declarations of the dataset.</p>
+    pub fn get_dataset_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasetParameter>> {
+        self.inner.get_dataset_parameters()
     }
 }

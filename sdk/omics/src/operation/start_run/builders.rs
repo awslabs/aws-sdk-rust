@@ -36,6 +36,10 @@ impl StartRunFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartRun as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_run::builders::StartRunInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl StartRunFluentBuilder {
         self.inner = self.inner.set_workflow_id(input);
         self
     }
+    /// <p>The run's workflow ID.</p>
+    pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workflow_id()
+    }
     /// <p>The run's workflows type.</p>
     pub fn workflow_type(mut self, input: crate::types::WorkflowType) -> Self {
         self.inner = self.inner.workflow_type(input);
@@ -131,6 +139,10 @@ impl StartRunFluentBuilder {
         self.inner = self.inner.set_workflow_type(input);
         self
     }
+    /// <p>The run's workflows type.</p>
+    pub fn get_workflow_type(&self) -> &::std::option::Option<crate::types::WorkflowType> {
+        self.inner.get_workflow_type()
+    }
     /// <p>The run's ID.</p>
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.run_id(input.into());
@@ -140,6 +152,10 @@ impl StartRunFluentBuilder {
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_run_id(input);
         self
+    }
+    /// <p>The run's ID.</p>
+    pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_run_id()
     }
     /// <p>A service role for the run.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -151,6 +167,10 @@ impl StartRunFluentBuilder {
         self.inner = self.inner.set_role_arn(input);
         self
     }
+    /// <p>A service role for the run.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
+    }
     /// <p>A name for the run.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -160,6 +180,10 @@ impl StartRunFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>A name for the run.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The run's group ID.</p>
     pub fn run_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -171,6 +195,10 @@ impl StartRunFluentBuilder {
         self.inner = self.inner.set_run_group_id(input);
         self
     }
+    /// <p>The run's group ID.</p>
+    pub fn get_run_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_run_group_id()
+    }
     /// <p>A priority for the run.</p>
     pub fn priority(mut self, input: i32) -> Self {
         self.inner = self.inner.priority(input);
@@ -180,6 +208,10 @@ impl StartRunFluentBuilder {
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_priority(input);
         self
+    }
+    /// <p>A priority for the run.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        self.inner.get_priority()
     }
     /// <p>Parameters for the run.</p>
     pub fn parameters(mut self, input: ::aws_smithy_types::Document) -> Self {
@@ -194,6 +226,10 @@ impl StartRunFluentBuilder {
         self.inner = self.inner.set_parameters(input);
         self
     }
+    /// <p>Parameters for the run.</p>
+    pub fn get_parameters(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
+        self.inner.get_parameters()
+    }
     /// <p>A storage capacity for the run in gigabytes.</p>
     pub fn storage_capacity(mut self, input: i32) -> Self {
         self.inner = self.inner.storage_capacity(input);
@@ -204,6 +240,10 @@ impl StartRunFluentBuilder {
         self.inner = self.inner.set_storage_capacity(input);
         self
     }
+    /// <p>A storage capacity for the run in gigabytes.</p>
+    pub fn get_storage_capacity(&self) -> &::std::option::Option<i32> {
+        self.inner.get_storage_capacity()
+    }
     /// <p>An output URI for the run.</p>
     pub fn output_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.output_uri(input.into());
@@ -213,6 +253,10 @@ impl StartRunFluentBuilder {
     pub fn set_output_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_output_uri(input);
         self
+    }
+    /// <p>An output URI for the run.</p>
+    pub fn get_output_uri(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_output_uri()
     }
     /// <p>A log level for the run.</p>
     pub fn log_level(mut self, input: crate::types::RunLogLevel) -> Self {
@@ -226,6 +270,10 @@ impl StartRunFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_log_level(input);
         self
+    }
+    /// <p>A log level for the run.</p>
+    pub fn get_log_level(&self) -> &::std::option::Option<crate::types::RunLogLevel> {
+        self.inner.get_log_level()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -250,6 +298,14 @@ impl StartRunFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>Tags for the run.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.request_id(input.into());
@@ -259,5 +315,9 @@ impl StartRunFluentBuilder {
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_request_id(input);
         self
+    }
+    /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_request_id()
     }
 }

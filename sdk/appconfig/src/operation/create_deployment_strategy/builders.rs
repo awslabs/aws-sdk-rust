@@ -36,6 +36,13 @@ impl CreateDeploymentStrategyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDeploymentStrategy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_deployment_strategy::builders::CreateDeploymentStrategyInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl CreateDeploymentStrategyFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>A name for the deployment strategy.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>A description of the deployment strategy.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -135,6 +146,10 @@ impl CreateDeploymentStrategyFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of the deployment strategy.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>Total amount of time for a deployment to last.</p>
     pub fn deployment_duration_in_minutes(mut self, input: i32) -> Self {
@@ -146,6 +161,10 @@ impl CreateDeploymentStrategyFluentBuilder {
         self.inner = self.inner.set_deployment_duration_in_minutes(input);
         self
     }
+    /// <p>Total amount of time for a deployment to last.</p>
+    pub fn get_deployment_duration_in_minutes(&self) -> &::std::option::Option<i32> {
+        self.inner.get_deployment_duration_in_minutes()
+    }
     /// <p>Specifies the amount of time AppConfig monitors for Amazon CloudWatch alarms after the configuration has been deployed to 100% of its targets, before considering the deployment to be complete. If an alarm is triggered during this time, AppConfig rolls back the deployment. You must configure permissions for AppConfig to roll back based on CloudWatch alarms. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/getting-started-with-appconfig-cloudwatch-alarms-permissions.html">Configuring permissions for rollback based on Amazon CloudWatch alarms</a> in the <i>AppConfig User Guide</i>.</p>
     pub fn final_bake_time_in_minutes(mut self, input: i32) -> Self {
         self.inner = self.inner.final_bake_time_in_minutes(input);
@@ -156,6 +175,10 @@ impl CreateDeploymentStrategyFluentBuilder {
         self.inner = self.inner.set_final_bake_time_in_minutes(input);
         self
     }
+    /// <p>Specifies the amount of time AppConfig monitors for Amazon CloudWatch alarms after the configuration has been deployed to 100% of its targets, before considering the deployment to be complete. If an alarm is triggered during this time, AppConfig rolls back the deployment. You must configure permissions for AppConfig to roll back based on CloudWatch alarms. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/getting-started-with-appconfig-cloudwatch-alarms-permissions.html">Configuring permissions for rollback based on Amazon CloudWatch alarms</a> in the <i>AppConfig User Guide</i>.</p>
+    pub fn get_final_bake_time_in_minutes(&self) -> &::std::option::Option<i32> {
+        self.inner.get_final_bake_time_in_minutes()
+    }
     /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
     pub fn growth_factor(mut self, input: f32) -> Self {
         self.inner = self.inner.growth_factor(input);
@@ -165,6 +188,10 @@ impl CreateDeploymentStrategyFluentBuilder {
     pub fn set_growth_factor(mut self, input: ::std::option::Option<f32>) -> Self {
         self.inner = self.inner.set_growth_factor(input);
         self
+    }
+    /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
+    pub fn get_growth_factor(&self) -> &::std::option::Option<f32> {
+        self.inner.get_growth_factor()
     }
     /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the following growth types:</p>
     /// <p> <b>Linear</b>: For this type, AppConfig processes the deployment by dividing the total number of targets by the value specified for <code>Step percentage</code>. For example, a linear deployment that uses a <code>Step percentage</code> of 10 deploys the configuration to 10 percent of the hosts. After those deployments are complete, the system deploys the configuration to the next 10 percent. This continues until 100% of the targets have successfully received the configuration.</p>
@@ -191,6 +218,16 @@ impl CreateDeploymentStrategyFluentBuilder {
         self.inner = self.inner.set_growth_type(input);
         self
     }
+    /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the following growth types:</p>
+    /// <p> <b>Linear</b>: For this type, AppConfig processes the deployment by dividing the total number of targets by the value specified for <code>Step percentage</code>. For example, a linear deployment that uses a <code>Step percentage</code> of 10 deploys the configuration to 10 percent of the hosts. After those deployments are complete, the system deploys the configuration to the next 10 percent. This continues until 100% of the targets have successfully received the configuration.</p>
+    /// <p> <b>Exponential</b>: For this type, AppConfig processes the deployment exponentially using the following formula: <code>G*(2^N)</code>. In this formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is the number of steps until the configuration is deployed to all targets. For example, if you specify a growth factor of 2, then the system rolls out the configuration as follows:</p>
+    /// <p> <code>2*(2^0)</code> </p>
+    /// <p> <code>2*(2^1)</code> </p>
+    /// <p> <code>2*(2^2)</code> </p>
+    /// <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the targets, 8% of the targets, and continues until the configuration has been deployed to all targets.</p>
+    pub fn get_growth_type(&self) -> &::std::option::Option<crate::types::GrowthType> {
+        self.inner.get_growth_type()
+    }
     /// <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
     pub fn replicate_to(mut self, input: crate::types::ReplicateTo) -> Self {
         self.inner = self.inner.replicate_to(input);
@@ -203,6 +240,10 @@ impl CreateDeploymentStrategyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_replicate_to(input);
         self
+    }
+    /// <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
+    pub fn get_replicate_to(&self) -> &::std::option::Option<crate::types::ReplicateTo> {
+        self.inner.get_replicate_to()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -226,5 +267,13 @@ impl CreateDeploymentStrategyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Metadata to assign to the deployment strategy. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

@@ -48,6 +48,10 @@ impl FileLocationBuilder {
         self.stream = input;
         self
     }
+    /// <p>The stream that contains the OTA update.</p>
+    pub fn get_stream(&self) -> &::std::option::Option<crate::types::Stream> {
+        &self.stream
+    }
     /// <p>The location of the updated firmware in S3.</p>
     pub fn s3_location(mut self, input: crate::types::S3Location) -> Self {
         self.s3_location = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl FileLocationBuilder {
     ) -> Self {
         self.s3_location = input;
         self
+    }
+    /// <p>The location of the updated firmware in S3.</p>
+    pub fn get_s3_location(&self) -> &::std::option::Option<crate::types::S3Location> {
+        &self.s3_location
     }
     /// Consumes the builder and constructs a [`FileLocation`](crate::types::FileLocation).
     pub fn build(self) -> crate::types::FileLocation {

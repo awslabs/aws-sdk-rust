@@ -43,6 +43,10 @@ impl MetricProcessingConfigBuilder {
         self.compute_location = input;
         self
     }
+    /// <p>The compute location for the given metric property. </p>
+    pub fn get_compute_location(&self) -> &::std::option::Option<crate::types::ComputeLocation> {
+        &self.compute_location
+    }
     /// Consumes the builder and constructs a [`MetricProcessingConfig`](crate::types::MetricProcessingConfig).
     pub fn build(self) -> crate::types::MetricProcessingConfig {
         crate::types::MetricProcessingConfig {

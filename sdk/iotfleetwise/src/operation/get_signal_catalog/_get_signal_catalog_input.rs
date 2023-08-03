@@ -40,6 +40,10 @@ impl GetSignalCatalogInputBuilder {
         self.name = input;
         self
     }
+    /// <p> The name of the signal catalog to retrieve information about. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`GetSignalCatalogInput`](crate::operation::get_signal_catalog::GetSignalCatalogInput).
     pub fn build(
         self,

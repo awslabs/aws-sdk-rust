@@ -72,6 +72,10 @@ impl InsightRuleBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the rule.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Indicates whether the rule is enabled or disabled.</p>
     pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl InsightRuleBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>Indicates whether the rule is enabled or disabled.</p>
+    pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state
     }
     /// <p>For rules that you create, this is always <code>{"Name": "CloudWatchLogRule", "Version": 1}</code>. For managed rules, this is <code>{"Name": "ServiceLogRule", "Version": 1}</code> </p>
     pub fn schema(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -92,6 +100,10 @@ impl InsightRuleBuilder {
         self.schema = input;
         self
     }
+    /// <p>For rules that you create, this is always <code>{"Name": "CloudWatchLogRule", "Version": 1}</code>. For managed rules, this is <code>{"Name": "ServiceLogRule", "Version": 1}</code> </p>
+    pub fn get_schema(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema
+    }
     /// <p>The definition of the rule, as a JSON object. The definition contains the keywords used to define contributors, the value to aggregate on if this rule returns a sum instead of a count, and the filters. For details on the valid syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights-RuleSyntax.html">Contributor Insights Rule Syntax</a>.</p>
     pub fn definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.definition = ::std::option::Option::Some(input.into());
@@ -102,6 +114,10 @@ impl InsightRuleBuilder {
         self.definition = input;
         self
     }
+    /// <p>The definition of the rule, as a JSON object. The definition contains the keywords used to define contributors, the value to aggregate on if this rule returns a sum instead of a count, and the filters. For details on the valid syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights-RuleSyntax.html">Contributor Insights Rule Syntax</a>.</p>
+    pub fn get_definition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.definition
+    }
     /// <p> An optional built-in rule that Amazon Web Services manages. </p>
     pub fn managed_rule(mut self, input: bool) -> Self {
         self.managed_rule = ::std::option::Option::Some(input);
@@ -111,6 +127,10 @@ impl InsightRuleBuilder {
     pub fn set_managed_rule(mut self, input: ::std::option::Option<bool>) -> Self {
         self.managed_rule = input;
         self
+    }
+    /// <p> An optional built-in rule that Amazon Web Services manages. </p>
+    pub fn get_managed_rule(&self) -> &::std::option::Option<bool> {
+        &self.managed_rule
     }
     /// Consumes the builder and constructs a [`InsightRule`](crate::types::InsightRule).
     pub fn build(self) -> crate::types::InsightRule {

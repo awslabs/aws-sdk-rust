@@ -93,6 +93,10 @@ impl UpdateUsageOutputBuilder {
         self.usage_plan_id = input;
         self
     }
+    /// <p>The plan Id associated with this usage data.</p>
+    pub fn get_usage_plan_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.usage_plan_id
+    }
     /// <p>The starting date of the usage data.</p>
     pub fn start_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_date = ::std::option::Option::Some(input.into());
@@ -103,6 +107,10 @@ impl UpdateUsageOutputBuilder {
         self.start_date = input;
         self
     }
+    /// <p>The starting date of the usage data.</p>
+    pub fn get_start_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_date
+    }
     /// <p>The ending date of the usage data.</p>
     pub fn end_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.end_date = ::std::option::Option::Some(input.into());
@@ -112,6 +120,10 @@ impl UpdateUsageOutputBuilder {
     pub fn set_end_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.end_date = input;
         self
+    }
+    /// <p>The ending date of the usage data.</p>
+    pub fn get_end_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.end_date
     }
     /// Adds a key-value pair to `items`.
     ///
@@ -141,6 +153,14 @@ impl UpdateUsageOutputBuilder {
         self.items = input;
         self
     }
+    /// <p>The usage data, as daily logs of used and remaining quotas, over the specified time interval indexed over the API keys in a usage plan. For example, <code>{..., "values" : { "{api_key}" : [ [0, 100], [10, 90], [100, 10]]}</code>, where <code>{api_key}</code> stands for an API key value and the daily log entry is of the format <code>[used quota, remaining quota]</code>.</p>
+    pub fn get_items(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::vec::Vec<i64>>>,
+    > {
+        &self.items
+    }
     /// <p>The current pagination position in the paged result set.</p>
     pub fn position(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.position = ::std::option::Option::Some(input.into());
@@ -150,6 +170,10 @@ impl UpdateUsageOutputBuilder {
     pub fn set_position(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.position = input;
         self
+    }
+    /// <p>The current pagination position in the paged result set.</p>
+    pub fn get_position(&self) -> &::std::option::Option<::std::string::String> {
+        &self.position
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

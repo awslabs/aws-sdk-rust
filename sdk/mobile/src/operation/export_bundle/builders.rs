@@ -36,6 +36,10 @@ impl ExportBundleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ExportBundle as a reference.
+    pub fn as_input(&self) -> &crate::operation::export_bundle::builders::ExportBundleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl ExportBundleFluentBuilder {
         self.inner = self.inner.set_bundle_id(input);
         self
     }
+    /// <p> Unique bundle identifier. </p>
+    pub fn get_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bundle_id()
+    }
     /// <p> Unique project identifier. </p>
     pub fn project_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.project_id(input.into());
@@ -128,6 +136,10 @@ impl ExportBundleFluentBuilder {
         self.inner = self.inner.set_project_id(input);
         self
     }
+    /// <p> Unique project identifier. </p>
+    pub fn get_project_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_id()
+    }
     /// <p> Developer desktop or target application platform. </p>
     pub fn platform(mut self, input: crate::types::Platform) -> Self {
         self.inner = self.inner.platform(input);
@@ -137,5 +149,9 @@ impl ExportBundleFluentBuilder {
     pub fn set_platform(mut self, input: ::std::option::Option<crate::types::Platform>) -> Self {
         self.inner = self.inner.set_platform(input);
         self
+    }
+    /// <p> Developer desktop or target application platform. </p>
+    pub fn get_platform(&self) -> &::std::option::Option<crate::types::Platform> {
+        self.inner.get_platform()
     }
 }

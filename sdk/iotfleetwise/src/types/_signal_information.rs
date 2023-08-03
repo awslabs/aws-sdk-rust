@@ -60,6 +60,10 @@ impl SignalInformationBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the signal.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The maximum number of samples to collect.</p>
     pub fn max_sample_count(mut self, input: i64) -> Self {
         self.max_sample_count = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl SignalInformationBuilder {
     pub fn set_max_sample_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.max_sample_count = input;
         self
+    }
+    /// <p>The maximum number of samples to collect.</p>
+    pub fn get_max_sample_count(&self) -> &::std::option::Option<i64> {
+        &self.max_sample_count
     }
     /// <p>The minimum duration of time (in milliseconds) between two triggering events to collect data.</p> <note>
     /// <p>If a signal changes often, you might want to collect data at a slower rate.</p>
@@ -83,6 +91,12 @@ impl SignalInformationBuilder {
     pub fn set_minimum_sampling_interval_ms(mut self, input: ::std::option::Option<i64>) -> Self {
         self.minimum_sampling_interval_ms = input;
         self
+    }
+    /// <p>The minimum duration of time (in milliseconds) between two triggering events to collect data.</p> <note>
+    /// <p>If a signal changes often, you might want to collect data at a slower rate.</p>
+    /// </note>
+    pub fn get_minimum_sampling_interval_ms(&self) -> &::std::option::Option<i64> {
+        &self.minimum_sampling_interval_ms
     }
     /// Consumes the builder and constructs a [`SignalInformation`](crate::types::SignalInformation).
     pub fn build(self) -> crate::types::SignalInformation {

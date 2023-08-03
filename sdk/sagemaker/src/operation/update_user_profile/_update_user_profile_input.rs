@@ -56,6 +56,10 @@ impl UpdateUserProfileInputBuilder {
         self.domain_id = input;
         self
     }
+    /// <p>The domain ID.</p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_id
+    }
     /// <p>The user profile name.</p>
     pub fn user_profile_name(
         mut self,
@@ -72,6 +76,10 @@ impl UpdateUserProfileInputBuilder {
         self.user_profile_name = input;
         self
     }
+    /// <p>The user profile name.</p>
+    pub fn get_user_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_profile_name
+    }
     /// <p>A collection of settings.</p>
     pub fn user_settings(mut self, input: crate::types::UserSettings) -> Self {
         self.user_settings = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl UpdateUserProfileInputBuilder {
     ) -> Self {
         self.user_settings = input;
         self
+    }
+    /// <p>A collection of settings.</p>
+    pub fn get_user_settings(&self) -> &::std::option::Option<crate::types::UserSettings> {
+        &self.user_settings
     }
     /// Consumes the builder and constructs a [`UpdateUserProfileInput`](crate::operation::update_user_profile::UpdateUserProfileInput).
     pub fn build(

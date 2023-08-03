@@ -70,6 +70,10 @@ impl StartLifecyclePolicyPreviewOutputBuilder {
         self.registry_id = input;
         self
     }
+    /// <p>The registry ID associated with the request.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_id
+    }
     /// <p>The repository name associated with the request.</p>
     pub fn repository_name(
         mut self,
@@ -85,6 +89,10 @@ impl StartLifecyclePolicyPreviewOutputBuilder {
     ) -> Self {
         self.repository_name = input;
         self
+    }
+    /// <p>The repository name associated with the request.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
     }
     /// <p>The JSON repository policy text.</p>
     pub fn lifecycle_policy_text(
@@ -102,6 +110,10 @@ impl StartLifecyclePolicyPreviewOutputBuilder {
         self.lifecycle_policy_text = input;
         self
     }
+    /// <p>The JSON repository policy text.</p>
+    pub fn get_lifecycle_policy_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lifecycle_policy_text
+    }
     /// <p>The status of the lifecycle policy preview request.</p>
     pub fn status(mut self, input: crate::types::LifecyclePolicyPreviewStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -114,6 +126,10 @@ impl StartLifecyclePolicyPreviewOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the lifecycle policy preview request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::LifecyclePolicyPreviewStatus> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

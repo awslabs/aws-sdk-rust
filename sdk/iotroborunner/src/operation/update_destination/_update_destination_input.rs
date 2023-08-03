@@ -64,6 +64,10 @@ impl UpdateDestinationInputBuilder {
         self.id = input;
         self
     }
+    /// Destination ARN.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Human friendly name of the resource.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl UpdateDestinationInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// Human friendly name of the resource.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// State of the destination.
     pub fn state(mut self, input: crate::types::DestinationState) -> Self {
@@ -86,6 +94,10 @@ impl UpdateDestinationInputBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// State of the destination.
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::DestinationState> {
+        &self.state
     }
     /// JSON document containing additional fixed properties regarding the destination
     pub fn additional_fixed_properties(
@@ -102,6 +114,10 @@ impl UpdateDestinationInputBuilder {
     ) -> Self {
         self.additional_fixed_properties = input;
         self
+    }
+    /// JSON document containing additional fixed properties regarding the destination
+    pub fn get_additional_fixed_properties(&self) -> &::std::option::Option<::std::string::String> {
+        &self.additional_fixed_properties
     }
     /// Consumes the builder and constructs a [`UpdateDestinationInput`](crate::operation::update_destination::UpdateDestinationInput).
     pub fn build(

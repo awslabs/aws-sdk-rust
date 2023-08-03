@@ -37,6 +37,10 @@ impl ListAggregateDiscoveredResourcesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListAggregateDiscoveredResources as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_aggregate_discovered_resources::builders::ListAggregateDiscoveredResourcesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -113,6 +117,12 @@ impl ListAggregateDiscoveredResourcesFluentBuilder {
         self.inner = self.inner.set_configuration_aggregator_name(input);
         self
     }
+    /// <p>The name of the configuration aggregator. </p>
+    pub fn get_configuration_aggregator_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration_aggregator_name()
+    }
     /// <p>The type of resources that you want Config to list in the response.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.inner = self.inner.resource_type(input);
@@ -125,6 +135,10 @@ impl ListAggregateDiscoveredResourcesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
+    }
+    /// <p>The type of resources that you want Config to list in the response.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        self.inner.get_resource_type()
     }
     /// <p>Filters the results based on the <code>ResourceFilters</code> object.</p>
     pub fn filters(mut self, input: crate::types::ResourceFilters) -> Self {
@@ -139,6 +153,10 @@ impl ListAggregateDiscoveredResourcesFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>Filters the results based on the <code>ResourceFilters</code> object.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::ResourceFilters> {
+        self.inner.get_filters()
+    }
     /// <p>The maximum number of resource identifiers returned on each page. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -149,6 +167,10 @@ impl ListAggregateDiscoveredResourcesFluentBuilder {
         self.inner = self.inner.set_limit(input);
         self
     }
+    /// <p>The maximum number of resource identifiers returned on each page. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
+    }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -158,5 +180,9 @@ impl ListAggregateDiscoveredResourcesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

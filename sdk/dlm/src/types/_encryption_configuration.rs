@@ -48,6 +48,10 @@ impl EncryptionConfigurationBuilder {
         self.encrypted = input;
         self
     }
+    /// <p>To encrypt a copy of an unencrypted snapshot when encryption by default is not enabled, enable encryption using this parameter. Copies of encrypted snapshots are encrypted, even if this parameter is false or when encryption by default is not enabled.</p>
+    pub fn get_encrypted(&self) -> &::std::option::Option<bool> {
+        &self.encrypted
+    }
     /// <p>The Amazon Resource Name (ARN) of the KMS key to use for EBS encryption. If this parameter is not specified, the default KMS key for the account is used.</p>
     pub fn cmk_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cmk_arn = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl EncryptionConfigurationBuilder {
     pub fn set_cmk_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cmk_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the KMS key to use for EBS encryption. If this parameter is not specified, the default KMS key for the account is used.</p>
+    pub fn get_cmk_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cmk_arn
     }
     /// Consumes the builder and constructs a [`EncryptionConfiguration`](crate::types::EncryptionConfiguration).
     pub fn build(self) -> crate::types::EncryptionConfiguration {

@@ -47,6 +47,10 @@ impl StartInferenceSchedulerInputBuilder {
         self.inference_scheduler_name = input;
         self
     }
+    /// <p>The name of the inference scheduler to be started. </p>
+    pub fn get_inference_scheduler_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.inference_scheduler_name
+    }
     /// Consumes the builder and constructs a [`StartInferenceSchedulerInput`](crate::operation::start_inference_scheduler::StartInferenceSchedulerInput).
     pub fn build(
         self,

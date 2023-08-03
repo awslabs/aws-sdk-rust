@@ -100,6 +100,10 @@ impl InsightsBuilder {
         self.active_assessments_count = input;
         self
     }
+    /// <p>The number of active assessments in Audit Manager. </p>
+    pub fn get_active_assessments_count(&self) -> &::std::option::Option<i32> {
+        &self.active_assessments_count
+    }
     /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant on the <code>lastUpdated</code> date. This includes evidence that was collected from Security Hub with a <i>Fail</i> ruling, or collected from Config with a <i>Non-compliant</i> ruling. </p>
     pub fn noncompliant_evidence_count(mut self, input: i32) -> Self {
         self.noncompliant_evidence_count = ::std::option::Option::Some(input);
@@ -110,6 +114,10 @@ impl InsightsBuilder {
         self.noncompliant_evidence_count = input;
         self
     }
+    /// <p>The number of compliance check evidence that Audit Manager classified as non-compliant on the <code>lastUpdated</code> date. This includes evidence that was collected from Security Hub with a <i>Fail</i> ruling, or collected from Config with a <i>Non-compliant</i> ruling. </p>
+    pub fn get_noncompliant_evidence_count(&self) -> &::std::option::Option<i32> {
+        &self.noncompliant_evidence_count
+    }
     /// <p>The number of compliance check evidence that Audit Manager classified as compliant on the <code>lastUpdated</code> date. This includes evidence that was collected from Security Hub with a <i>Pass</i> ruling, or collected from Config with a <i>Compliant</i> ruling. </p>
     pub fn compliant_evidence_count(mut self, input: i32) -> Self {
         self.compliant_evidence_count = ::std::option::Option::Some(input);
@@ -119,6 +127,10 @@ impl InsightsBuilder {
     pub fn set_compliant_evidence_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.compliant_evidence_count = input;
         self
+    }
+    /// <p>The number of compliance check evidence that Audit Manager classified as compliant on the <code>lastUpdated</code> date. This includes evidence that was collected from Security Hub with a <i>Pass</i> ruling, or collected from Config with a <i>Compliant</i> ruling. </p>
+    pub fn get_compliant_evidence_count(&self) -> &::std::option::Option<i32> {
+        &self.compliant_evidence_count
     }
     /// <p>The number of evidence without a compliance check ruling. Evidence is inconclusive when the associated control uses Security Hub or Config as a data source but you didn't enable those services. This is also the case when a control uses a data source that doesn’t support compliance checks (for example: manual evidence, API calls, or CloudTrail). </p> <note>
     /// <p>If evidence has a compliance check status of <i>not applicable</i>, it's classed as <i>inconclusive</i> in <code>Insights</code> data.</p>
@@ -134,6 +146,12 @@ impl InsightsBuilder {
         self.inconclusive_evidence_count = input;
         self
     }
+    /// <p>The number of evidence without a compliance check ruling. Evidence is inconclusive when the associated control uses Security Hub or Config as a data source but you didn't enable those services. This is also the case when a control uses a data source that doesn’t support compliance checks (for example: manual evidence, API calls, or CloudTrail). </p> <note>
+    /// <p>If evidence has a compliance check status of <i>not applicable</i>, it's classed as <i>inconclusive</i> in <code>Insights</code> data.</p>
+    /// </note>
+    pub fn get_inconclusive_evidence_count(&self) -> &::std::option::Option<i32> {
+        &self.inconclusive_evidence_count
+    }
     /// <p>The number of assessment controls that collected non-compliant evidence on the <code>lastUpdated</code> date. </p>
     pub fn assessment_controls_count_by_noncompliant_evidence(mut self, input: i32) -> Self {
         self.assessment_controls_count_by_noncompliant_evidence =
@@ -148,6 +166,12 @@ impl InsightsBuilder {
         self.assessment_controls_count_by_noncompliant_evidence = input;
         self
     }
+    /// <p>The number of assessment controls that collected non-compliant evidence on the <code>lastUpdated</code> date. </p>
+    pub fn get_assessment_controls_count_by_noncompliant_evidence(
+        &self,
+    ) -> &::std::option::Option<i32> {
+        &self.assessment_controls_count_by_noncompliant_evidence
+    }
     /// <p>The total number of controls across all active assessments. </p>
     pub fn total_assessment_controls_count(mut self, input: i32) -> Self {
         self.total_assessment_controls_count = ::std::option::Option::Some(input);
@@ -161,6 +185,10 @@ impl InsightsBuilder {
         self.total_assessment_controls_count = input;
         self
     }
+    /// <p>The total number of controls across all active assessments. </p>
+    pub fn get_total_assessment_controls_count(&self) -> &::std::option::Option<i32> {
+        &self.total_assessment_controls_count
+    }
     /// <p>The time when the cross-assessment insights were last updated. </p>
     pub fn last_updated(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated = ::std::option::Option::Some(input);
@@ -173,6 +201,10 @@ impl InsightsBuilder {
     ) -> Self {
         self.last_updated = input;
         self
+    }
+    /// <p>The time when the cross-assessment insights were last updated. </p>
+    pub fn get_last_updated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated
     }
     /// Consumes the builder and constructs a [`Insights`](crate::types::Insights).
     pub fn build(self) -> crate::types::Insights {

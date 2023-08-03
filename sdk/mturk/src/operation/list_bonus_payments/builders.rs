@@ -36,6 +36,12 @@ impl ListBonusPaymentsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListBonusPayments as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_bonus_payments::builders::ListBonusPaymentsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl ListBonusPaymentsFluentBuilder {
         self.inner = self.inner.set_hit_id(input);
         self
     }
+    /// <p>The ID of the HIT associated with the bonus payments to retrieve. If not specified, all bonus payments for all assignments for the given HIT are returned. Either the HITId parameter or the AssignmentId parameter must be specified</p>
+    pub fn get_hit_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_hit_id()
+    }
     /// <p>The ID of the assignment associated with the bonus payments to retrieve. If specified, only bonus payments for the given assignment are returned. Either the HITId parameter or the AssignmentId parameter must be specified</p>
     pub fn assignment_id(
         mut self,
@@ -153,6 +163,10 @@ impl ListBonusPaymentsFluentBuilder {
         self.inner = self.inner.set_assignment_id(input);
         self
     }
+    /// <p>The ID of the assignment associated with the bonus payments to retrieve. If specified, only bonus payments for the given assignment are returned. Either the HITId parameter or the AssignmentId parameter must be specified</p>
+    pub fn get_assignment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_assignment_id()
+    }
     /// <p>Pagination token</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -163,6 +177,10 @@ impl ListBonusPaymentsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>Pagination token</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     #[allow(missing_docs)] // documentation missing in model
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -172,5 +190,9 @@ impl ListBonusPaymentsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

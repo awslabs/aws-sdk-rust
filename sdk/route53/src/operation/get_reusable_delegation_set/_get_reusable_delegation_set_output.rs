@@ -50,6 +50,10 @@ impl GetReusableDelegationSetOutputBuilder {
         self.delegation_set = input;
         self
     }
+    /// <p>A complex type that contains information about the reusable delegation set.</p>
+    pub fn get_delegation_set(&self) -> &::std::option::Option<crate::types::DelegationSet> {
+        &self.delegation_set
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

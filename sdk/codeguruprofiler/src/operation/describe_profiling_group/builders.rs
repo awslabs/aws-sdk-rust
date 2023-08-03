@@ -36,6 +36,13 @@ impl DescribeProfilingGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeProfilingGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_profiling_group::builders::DescribeProfilingGroupInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +138,9 @@ impl DescribeProfilingGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_profiling_group_name(input);
         self
+    }
+    /// <p> The name of the profiling group to get information about. </p>
+    pub fn get_profiling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_profiling_group_name()
     }
 }

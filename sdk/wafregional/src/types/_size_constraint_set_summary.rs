@@ -62,6 +62,11 @@ impl SizeConstraintSetSummaryBuilder {
         self.size_constraint_set_id = input;
         self
     }
+    /// <p>A unique identifier for a <code>SizeConstraintSet</code>. You use <code>SizeConstraintSetId</code> to get information about a <code>SizeConstraintSet</code> (see <code>GetSizeConstraintSet</code>), update a <code>SizeConstraintSet</code> (see <code>UpdateSizeConstraintSet</code>), insert a <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SizeConstraintSet</code> from AWS WAF (see <code>DeleteSizeConstraintSet</code>).</p>
+    /// <p> <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
+    pub fn get_size_constraint_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.size_constraint_set_id
+    }
     /// <p>The name of the <code>SizeConstraintSet</code>, if any.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -71,6 +76,10 @@ impl SizeConstraintSetSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the <code>SizeConstraintSet</code>, if any.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`SizeConstraintSetSummary`](crate::types::SizeConstraintSetSummary).
     pub fn build(self) -> crate::types::SizeConstraintSetSummary {

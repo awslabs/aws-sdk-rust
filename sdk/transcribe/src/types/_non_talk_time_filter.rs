@@ -70,6 +70,10 @@ impl NonTalkTimeFilterBuilder {
         self.threshold = input;
         self
     }
+    /// <p>Specify the duration, in milliseconds, of the period of silence that you want to flag. For example, you can flag a silent period that lasts 30,000 milliseconds.</p>
+    pub fn get_threshold(&self) -> &::std::option::Option<i64> {
+        &self.threshold
+    }
     /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for a period of silence. See for more detail.</p>
     pub fn absolute_time_range(mut self, input: crate::types::AbsoluteTimeRange) -> Self {
         self.absolute_time_range = ::std::option::Option::Some(input);
@@ -82,6 +86,12 @@ impl NonTalkTimeFilterBuilder {
     ) -> Self {
         self.absolute_time_range = input;
         self
+    }
+    /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for a period of silence. See for more detail.</p>
+    pub fn get_absolute_time_range(
+        &self,
+    ) -> &::std::option::Option<crate::types::AbsoluteTimeRange> {
+        &self.absolute_time_range
     }
     /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for a period of silence. See for more detail.</p>
     pub fn relative_time_range(mut self, input: crate::types::RelativeTimeRange) -> Self {
@@ -96,6 +106,12 @@ impl NonTalkTimeFilterBuilder {
         self.relative_time_range = input;
         self
     }
+    /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for a period of silence. See for more detail.</p>
+    pub fn get_relative_time_range(
+        &self,
+    ) -> &::std::option::Option<crate::types::RelativeTimeRange> {
+        &self.relative_time_range
+    }
     /// <p>Set to <code>TRUE</code> to flag periods of speech. Set to <code>FALSE</code> to flag periods of silence</p>
     pub fn negate(mut self, input: bool) -> Self {
         self.negate = ::std::option::Option::Some(input);
@@ -105,6 +121,10 @@ impl NonTalkTimeFilterBuilder {
     pub fn set_negate(mut self, input: ::std::option::Option<bool>) -> Self {
         self.negate = input;
         self
+    }
+    /// <p>Set to <code>TRUE</code> to flag periods of speech. Set to <code>FALSE</code> to flag periods of silence</p>
+    pub fn get_negate(&self) -> &::std::option::Option<bool> {
+        &self.negate
     }
     /// Consumes the builder and constructs a [`NonTalkTimeFilter`](crate::types::NonTalkTimeFilter).
     pub fn build(self) -> crate::types::NonTalkTimeFilter {

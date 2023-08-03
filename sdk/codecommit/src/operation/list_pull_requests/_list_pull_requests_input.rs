@@ -80,6 +80,10 @@ impl ListPullRequestsInputBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name of the repository for which you want to list pull requests.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>Optional. The Amazon Resource Name (ARN) of the user who created the pull request. If used, this filters the results to pull requests created by that user.</p>
     pub fn author_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.author_arn = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl ListPullRequestsInputBuilder {
     pub fn set_author_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.author_arn = input;
         self
+    }
+    /// <p>Optional. The Amazon Resource Name (ARN) of the user who created the pull request. If used, this filters the results to pull requests created by that user.</p>
+    pub fn get_author_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.author_arn
     }
     /// <p>Optional. The status of the pull request. If used, this refines the results to the pull requests that match the specified status.</p>
     pub fn pull_request_status(mut self, input: crate::types::PullRequestStatusEnum) -> Self {
@@ -103,6 +111,12 @@ impl ListPullRequestsInputBuilder {
         self.pull_request_status = input;
         self
     }
+    /// <p>Optional. The status of the pull request. If used, this refines the results to the pull requests that match the specified status.</p>
+    pub fn get_pull_request_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::PullRequestStatusEnum> {
+        &self.pull_request_status
+    }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -113,6 +127,10 @@ impl ListPullRequestsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -122,6 +140,10 @@ impl ListPullRequestsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListPullRequestsInput`](crate::operation::list_pull_requests::ListPullRequestsInput).
     pub fn build(

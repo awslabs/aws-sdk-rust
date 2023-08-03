@@ -62,6 +62,10 @@ impl RevokeTokenInputBuilder {
         self.token = input;
         self
     }
+    /// <p>The refresh token that you want to revoke.</p>
+    pub fn get_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.token
+    }
     /// <p>The client ID for the token that you want to revoke.</p>
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl RevokeTokenInputBuilder {
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_id = input;
         self
+    }
+    /// <p>The client ID for the token that you want to revoke.</p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_id
     }
     /// <p>The secret for the client ID. This is required only if the client ID has a secret.</p>
     pub fn client_secret(
@@ -87,6 +95,10 @@ impl RevokeTokenInputBuilder {
     ) -> Self {
         self.client_secret = input;
         self
+    }
+    /// <p>The secret for the client ID. This is required only if the client ID has a secret.</p>
+    pub fn get_client_secret(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_secret
     }
     /// Consumes the builder and constructs a [`RevokeTokenInput`](crate::operation::revoke_token::RevokeTokenInput).
     pub fn build(

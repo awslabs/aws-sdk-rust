@@ -36,6 +36,12 @@ impl DescribeHostKeyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeHostKey as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_host_key::builders::DescribeHostKeyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DescribeHostKeyFluentBuilder {
         self.inner = self.inner.set_server_id(input);
         self
     }
+    /// <p>The identifier of the server that contains the host key that you want described.</p>
+    pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_server_id()
+    }
     /// <p>The identifier of the host key that you want described.</p>
     pub fn host_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.host_key_id(input.into());
@@ -135,5 +145,9 @@ impl DescribeHostKeyFluentBuilder {
     pub fn set_host_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_host_key_id(input);
         self
+    }
+    /// <p>The identifier of the host key that you want described.</p>
+    pub fn get_host_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_host_key_id()
     }
 }

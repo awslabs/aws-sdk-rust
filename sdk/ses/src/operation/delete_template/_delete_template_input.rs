@@ -46,6 +46,10 @@ impl DeleteTemplateInputBuilder {
         self.template_name = input;
         self
     }
+    /// <p>The name of the template to be deleted.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
     /// Consumes the builder and constructs a [`DeleteTemplateInput`](crate::operation::delete_template::DeleteTemplateInput).
     pub fn build(
         self,

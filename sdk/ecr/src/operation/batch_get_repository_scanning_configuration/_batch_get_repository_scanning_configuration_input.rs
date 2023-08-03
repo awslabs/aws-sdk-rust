@@ -51,6 +51,12 @@ impl BatchGetRepositoryScanningConfigurationInputBuilder {
         self.repository_names = input;
         self
     }
+    /// <p>One or more repository names to get the scanning configuration for.</p>
+    pub fn get_repository_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.repository_names
+    }
     /// Consumes the builder and constructs a [`BatchGetRepositoryScanningConfigurationInput`](crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

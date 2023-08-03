@@ -37,6 +37,13 @@ impl DescribePublicIpv4PoolsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribePublicIpv4Pools as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_public_ipv4_pools::builders::DescribePublicIpv4PoolsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -143,6 +150,10 @@ impl DescribePublicIpv4PoolsFluentBuilder {
         self.inner = self.inner.set_pool_ids(input);
         self
     }
+    /// <p>The IDs of the address pools.</p>
+    pub fn get_pool_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_pool_ids()
+    }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -153,6 +164,10 @@ impl DescribePublicIpv4PoolsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token for the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -162,6 +177,10 @@ impl DescribePublicIpv4PoolsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// Appends an item to `Filters`.
     ///
@@ -199,5 +218,19 @@ impl DescribePublicIpv4PoolsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
+    }
+    /// <p>One or more filters.</p>
+    /// <ul>
+    /// <li> <p> <code>tag</code>:<key>
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
+    /// <code>Owner</code> and the value
+    /// <code>TeamA</code>, specify
+    /// <code>tag:Owner</code> for the filter name and
+    /// <code>TeamA</code> for the filter value.
+    /// </key></p> </li>
+    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
     }
 }

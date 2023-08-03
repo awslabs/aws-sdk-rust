@@ -36,6 +36,12 @@ impl DescribeDatastoreFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeDatastore as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_datastore::builders::DescribeDatastoreInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl DescribeDatastoreFluentBuilder {
         self.inner = self.inner.set_datastore_name(input);
         self
     }
+    /// <p>The name of the data store</p>
+    pub fn get_datastore_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_datastore_name()
+    }
     /// <p>If true, additional statistical information about the data store is included in the response. This feature can't be used with a data store whose S3 storage is customer-managed.</p>
     pub fn include_statistics(mut self, input: bool) -> Self {
         self.inner = self.inner.include_statistics(input);
@@ -141,5 +151,9 @@ impl DescribeDatastoreFluentBuilder {
     pub fn set_include_statistics(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_statistics(input);
         self
+    }
+    /// <p>If true, additional statistical information about the data store is included in the response. This feature can't be used with a data store whose S3 storage is customer-managed.</p>
+    pub fn get_include_statistics(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_statistics()
     }
 }

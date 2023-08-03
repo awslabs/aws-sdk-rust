@@ -68,6 +68,10 @@ impl UpdateCampaignOutboundCallConfigInputBuilder {
         self.id = input;
         self
     }
+    /// Identifier representing a Campaign
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// The identifier of the contact flow for the outbound call.
     pub fn connect_contact_flow_id(
         mut self,
@@ -83,6 +87,10 @@ impl UpdateCampaignOutboundCallConfigInputBuilder {
     ) -> Self {
         self.connect_contact_flow_id = input;
         self
+    }
+    /// The identifier of the contact flow for the outbound call.
+    pub fn get_connect_contact_flow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connect_contact_flow_id
     }
     /// The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.
     pub fn connect_source_phone_number(
@@ -100,6 +108,10 @@ impl UpdateCampaignOutboundCallConfigInputBuilder {
         self.connect_source_phone_number = input;
         self
     }
+    /// The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.
+    pub fn get_connect_source_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connect_source_phone_number
+    }
     /// Answering Machine Detection config
     pub fn answer_machine_detection_config(
         mut self,
@@ -115,6 +127,12 @@ impl UpdateCampaignOutboundCallConfigInputBuilder {
     ) -> Self {
         self.answer_machine_detection_config = input;
         self
+    }
+    /// Answering Machine Detection config
+    pub fn get_answer_machine_detection_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::AnswerMachineDetectionConfig> {
+        &self.answer_machine_detection_config
     }
     /// Consumes the builder and constructs a [`UpdateCampaignOutboundCallConfigInput`](crate::operation::update_campaign_outbound_call_config::UpdateCampaignOutboundCallConfigInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_campaign_outbound_call_config::UpdateCampaignOutboundCallConfigInput, ::aws_smithy_http::operation::error::BuildError>{

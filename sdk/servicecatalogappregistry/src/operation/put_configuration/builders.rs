@@ -36,6 +36,12 @@ impl PutConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutConfiguration as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_configuration::builders::PutConfigurationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,5 +134,11 @@ impl PutConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
+    }
+    /// <p> Associates a <code>TagKey</code> configuration to an account. </p>
+    pub fn get_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AppRegistryConfiguration> {
+        self.inner.get_configuration()
     }
 }

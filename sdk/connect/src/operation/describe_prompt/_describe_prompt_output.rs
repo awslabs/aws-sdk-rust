@@ -46,6 +46,10 @@ impl DescribePromptOutputBuilder {
         self.prompt = input;
         self
     }
+    /// <p>Information about the prompt.</p>
+    pub fn get_prompt(&self) -> &::std::option::Option<crate::types::Prompt> {
+        &self.prompt
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

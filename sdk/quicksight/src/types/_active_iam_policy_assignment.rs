@@ -54,6 +54,10 @@ impl ActiveIamPolicyAssignmentBuilder {
         self.assignment_name = input;
         self
     }
+    /// <p>A name for the IAM policy assignment.</p>
+    pub fn get_assignment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assignment_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_arn = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl ActiveIamPolicyAssignmentBuilder {
     pub fn set_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn get_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_arn
     }
     /// Consumes the builder and constructs a [`ActiveIamPolicyAssignment`](crate::types::ActiveIamPolicyAssignment).
     pub fn build(self) -> crate::types::ActiveIamPolicyAssignment {

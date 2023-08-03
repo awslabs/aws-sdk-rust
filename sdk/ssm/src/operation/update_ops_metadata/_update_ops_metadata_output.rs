@@ -53,6 +53,10 @@ impl UpdateOpsMetadataOutputBuilder {
         self.ops_metadata_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the OpsMetadata Object that was updated.</p>
+    pub fn get_ops_metadata_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ops_metadata_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

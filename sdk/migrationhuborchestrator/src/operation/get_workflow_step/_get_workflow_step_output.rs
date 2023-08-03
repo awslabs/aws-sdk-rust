@@ -211,6 +211,10 @@ impl GetWorkflowStepOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the step.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The ID of the step group.</p>
     pub fn step_group_id(
         mut self,
@@ -227,6 +231,10 @@ impl GetWorkflowStepOutputBuilder {
         self.step_group_id = input;
         self
     }
+    /// <p>The ID of the step group.</p>
+    pub fn get_step_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.step_group_id
+    }
     /// <p>The ID of the migration workflow.</p>
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_id = ::std::option::Option::Some(input.into());
@@ -236,6 +244,10 @@ impl GetWorkflowStepOutputBuilder {
     pub fn set_workflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_id = input;
         self
+    }
+    /// <p>The ID of the migration workflow.</p>
+    pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_id
     }
     /// <p>The ID of the step.</p>
     pub fn step_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -247,6 +259,10 @@ impl GetWorkflowStepOutputBuilder {
         self.step_id = input;
         self
     }
+    /// <p>The ID of the step.</p>
+    pub fn get_step_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.step_id
+    }
     /// <p>The description of the step.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -256,6 +272,10 @@ impl GetWorkflowStepOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the step.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
     pub fn step_action_type(mut self, input: crate::types::StepActionType) -> Self {
@@ -270,6 +290,10 @@ impl GetWorkflowStepOutputBuilder {
         self.step_action_type = input;
         self
     }
+    /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
+    pub fn get_step_action_type(&self) -> &::std::option::Option<crate::types::StepActionType> {
+        &self.step_action_type
+    }
     /// <p>The owner of the step.</p>
     pub fn owner(mut self, input: crate::types::Owner) -> Self {
         self.owner = ::std::option::Option::Some(input);
@@ -279,6 +303,10 @@ impl GetWorkflowStepOutputBuilder {
     pub fn set_owner(mut self, input: ::std::option::Option<crate::types::Owner>) -> Self {
         self.owner = input;
         self
+    }
+    /// <p>The owner of the step.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<crate::types::Owner> {
+        &self.owner
     }
     /// <p>The custom script to run tests on source or target environments.</p>
     pub fn workflow_step_automation_configuration(
@@ -295,6 +323,12 @@ impl GetWorkflowStepOutputBuilder {
     ) -> Self {
         self.workflow_step_automation_configuration = input;
         self
+    }
+    /// <p>The custom script to run tests on source or target environments.</p>
+    pub fn get_workflow_step_automation_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::WorkflowStepAutomationConfiguration> {
+        &self.workflow_step_automation_configuration
     }
     /// Appends an item to `step_target`.
     ///
@@ -315,6 +349,12 @@ impl GetWorkflowStepOutputBuilder {
         self.step_target = input;
         self
     }
+    /// <p>The servers on which a step will be run.</p>
+    pub fn get_step_target(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.step_target
+    }
     /// Appends an item to `outputs`.
     ///
     /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
@@ -333,6 +373,12 @@ impl GetWorkflowStepOutputBuilder {
     ) -> Self {
         self.outputs = input;
         self
+    }
+    /// <p>The outputs of the step.</p>
+    pub fn get_outputs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepOutput>> {
+        &self.outputs
     }
     /// Appends an item to `previous`.
     ///
@@ -353,6 +399,10 @@ impl GetWorkflowStepOutputBuilder {
         self.previous = input;
         self
     }
+    /// <p>The previous step.</p>
+    pub fn get_previous(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.previous
+    }
     /// Appends an item to `next`.
     ///
     /// To override the contents of this collection use [`set_next`](Self::set_next).
@@ -372,6 +422,10 @@ impl GetWorkflowStepOutputBuilder {
         self.next = input;
         self
     }
+    /// <p>The next step.</p>
+    pub fn get_next(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.next
+    }
     /// <p>The status of the step.</p>
     pub fn status(mut self, input: crate::types::StepStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -381,6 +435,10 @@ impl GetWorkflowStepOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::StepStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the step.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::StepStatus> {
+        &self.status
     }
     /// <p>The status message of the migration workflow.</p>
     pub fn status_message(
@@ -398,6 +456,10 @@ impl GetWorkflowStepOutputBuilder {
         self.status_message = input;
         self
     }
+    /// <p>The status message of the migration workflow.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>The output location of the script.</p>
     pub fn script_output_location(
         mut self,
@@ -414,6 +476,10 @@ impl GetWorkflowStepOutputBuilder {
         self.script_output_location = input;
         self
     }
+    /// <p>The output location of the script.</p>
+    pub fn get_script_output_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.script_output_location
+    }
     /// <p>The time at which the step was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -426,6 +492,10 @@ impl GetWorkflowStepOutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The time at which the step was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The time at which the workflow was last started.</p>
     pub fn last_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -440,6 +510,10 @@ impl GetWorkflowStepOutputBuilder {
         self.last_start_time = input;
         self
     }
+    /// <p>The time at which the workflow was last started.</p>
+    pub fn get_last_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_start_time
+    }
     /// <p>The time at which the step ended.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -453,6 +527,10 @@ impl GetWorkflowStepOutputBuilder {
         self.end_time = input;
         self
     }
+    /// <p>The time at which the step ended.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>The number of servers that have been migrated.</p>
     pub fn no_of_srv_completed(mut self, input: i32) -> Self {
         self.no_of_srv_completed = ::std::option::Option::Some(input);
@@ -462,6 +540,10 @@ impl GetWorkflowStepOutputBuilder {
     pub fn set_no_of_srv_completed(mut self, input: ::std::option::Option<i32>) -> Self {
         self.no_of_srv_completed = input;
         self
+    }
+    /// <p>The number of servers that have been migrated.</p>
+    pub fn get_no_of_srv_completed(&self) -> &::std::option::Option<i32> {
+        &self.no_of_srv_completed
     }
     /// <p>The number of servers that have failed to migrate.</p>
     pub fn no_of_srv_failed(mut self, input: i32) -> Self {
@@ -473,6 +555,10 @@ impl GetWorkflowStepOutputBuilder {
         self.no_of_srv_failed = input;
         self
     }
+    /// <p>The number of servers that have failed to migrate.</p>
+    pub fn get_no_of_srv_failed(&self) -> &::std::option::Option<i32> {
+        &self.no_of_srv_failed
+    }
     /// <p>The total number of servers that have been migrated.</p>
     pub fn total_no_of_srv(mut self, input: i32) -> Self {
         self.total_no_of_srv = ::std::option::Option::Some(input);
@@ -482,6 +568,10 @@ impl GetWorkflowStepOutputBuilder {
     pub fn set_total_no_of_srv(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_no_of_srv = input;
         self
+    }
+    /// <p>The total number of servers that have been migrated.</p>
+    pub fn get_total_no_of_srv(&self) -> &::std::option::Option<i32> {
+        &self.total_no_of_srv
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

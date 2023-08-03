@@ -56,6 +56,10 @@ impl ChoiceUpdateBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of a choice.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ChoiceStatus> {
+        &self.status
+    }
     /// <p>The reason why a choice is non-applicable to a question in your workload.</p>
     pub fn reason(mut self, input: crate::types::ChoiceReason) -> Self {
         self.reason = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl ChoiceUpdateBuilder {
         self.reason = input;
         self
     }
+    /// <p>The reason why a choice is non-applicable to a question in your workload.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<crate::types::ChoiceReason> {
+        &self.reason
+    }
     /// <p>The notes associated with a choice.</p>
     pub fn notes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notes = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl ChoiceUpdateBuilder {
     pub fn set_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notes = input;
         self
+    }
+    /// <p>The notes associated with a choice.</p>
+    pub fn get_notes(&self) -> &::std::option::Option<::std::string::String> {
+        &self.notes
     }
     /// Consumes the builder and constructs a [`ChoiceUpdate`](crate::types::ChoiceUpdate).
     pub fn build(self) -> crate::types::ChoiceUpdate {

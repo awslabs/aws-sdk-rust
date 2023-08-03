@@ -40,6 +40,10 @@ impl VpcConfigurationBuilder {
         self.vpc_id = input;
         self
     }
+    /// <p> If this field is specified, this access point will only allow connections from the specified VPC ID. </p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
+    }
     /// Consumes the builder and constructs a [`VpcConfiguration`](crate::types::VpcConfiguration).
     pub fn build(self) -> crate::types::VpcConfiguration {
         crate::types::VpcConfiguration {

@@ -53,6 +53,12 @@ impl StartOnDemandAuditTaskInputBuilder {
         self.target_check_names = input;
         self
     }
+    /// <p>Which checks are performed during the audit. The checks you specify must be enabled for your account or an exception occurs. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.</p>
+    pub fn get_target_check_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.target_check_names
+    }
     /// Consumes the builder and constructs a [`StartOnDemandAuditTaskInput`](crate::operation::start_on_demand_audit_task::StartOnDemandAuditTaskInput).
     pub fn build(
         self,

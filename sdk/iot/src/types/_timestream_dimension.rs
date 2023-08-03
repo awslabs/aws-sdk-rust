@@ -52,6 +52,11 @@ impl TimestreamDimensionBuilder {
         self.name = input;
         self
     }
+    /// <p>The metadata dimension name. This is the name of the column in the Amazon Timestream database table record.</p>
+    /// <p>Dimensions cannot be named: <code>measure_name</code>, <code>measure_value</code>, or <code>time</code>. These names are reserved. Dimension names cannot start with <code>ts_</code> or <code>measure_value</code> and they cannot contain the colon (<code>:</code>) character.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The value to write in this column of the database record.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -61,6 +66,10 @@ impl TimestreamDimensionBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value to write in this column of the database record.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`TimestreamDimension`](crate::types::TimestreamDimension).
     pub fn build(self) -> crate::types::TimestreamDimension {

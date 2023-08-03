@@ -54,6 +54,10 @@ impl DescribeResourceInputBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The identifier associated with the organization for which the resource is described.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p>The identifier of the resource to be described.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl DescribeResourceInputBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>The identifier of the resource to be described.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// Consumes the builder and constructs a [`DescribeResourceInput`](crate::operation::describe_resource::DescribeResourceInput).
     pub fn build(

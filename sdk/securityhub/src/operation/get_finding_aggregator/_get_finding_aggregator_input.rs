@@ -46,6 +46,10 @@ impl GetFindingAggregatorInputBuilder {
         self.finding_aggregator_arn = input;
         self
     }
+    /// <p>The ARN of the finding aggregator to return details for. To obtain the ARN, use <code>ListFindingAggregators</code>.</p>
+    pub fn get_finding_aggregator_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.finding_aggregator_arn
+    }
     /// Consumes the builder and constructs a [`GetFindingAggregatorInput`](crate::operation::get_finding_aggregator::GetFindingAggregatorInput).
     pub fn build(
         self,

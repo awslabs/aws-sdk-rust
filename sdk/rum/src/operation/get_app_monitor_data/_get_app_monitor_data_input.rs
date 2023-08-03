@@ -72,6 +72,10 @@ impl GetAppMonitorDataInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the app monitor that collected the data that you want to retrieve.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A structure that defines the time range that you want to retrieve results from.</p>
     pub fn time_range(mut self, input: crate::types::TimeRange) -> Self {
         self.time_range = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl GetAppMonitorDataInputBuilder {
     pub fn set_time_range(mut self, input: ::std::option::Option<crate::types::TimeRange>) -> Self {
         self.time_range = input;
         self
+    }
+    /// <p>A structure that defines the time range that you want to retrieve results from.</p>
+    pub fn get_time_range(&self) -> &::std::option::Option<crate::types::TimeRange> {
+        &self.time_range
     }
     /// Appends an item to `filters`.
     ///
@@ -101,6 +109,12 @@ impl GetAppMonitorDataInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryFilter>> {
+        &self.filters
+    }
     /// <p>The maximum number of results to return in one operation. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -111,6 +125,10 @@ impl GetAppMonitorDataInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to return in one operation. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>Use the token returned by the previous operation to request the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -120,6 +138,10 @@ impl GetAppMonitorDataInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Use the token returned by the previous operation to request the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`GetAppMonitorDataInput`](crate::operation::get_app_monitor_data::GetAppMonitorDataInput).
     pub fn build(

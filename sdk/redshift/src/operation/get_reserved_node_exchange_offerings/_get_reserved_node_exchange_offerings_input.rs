@@ -62,6 +62,10 @@ impl GetReservedNodeExchangeOfferingsInputBuilder {
         self.reserved_node_id = input;
         self
     }
+    /// <p>A string representing the node identifier for the DC1 Reserved Node to be exchanged.</p>
+    pub fn get_reserved_node_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reserved_node_id
+    }
     /// <p>An integer setting the maximum number of ReservedNodeOfferings to retrieve.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.max_records = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl GetReservedNodeExchangeOfferingsInputBuilder {
         self.max_records = input;
         self
     }
+    /// <p>An integer setting the maximum number of ReservedNodeOfferings to retrieve.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        &self.max_records
+    }
     /// <p>A value that indicates the starting point for the next set of ReservedNodeOfferings.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl GetReservedNodeExchangeOfferingsInputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>A value that indicates the starting point for the next set of ReservedNodeOfferings.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// Consumes the builder and constructs a [`GetReservedNodeExchangeOfferingsInput`](crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsInput, ::aws_smithy_http::operation::error::BuildError>{

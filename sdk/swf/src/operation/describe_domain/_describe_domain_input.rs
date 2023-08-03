@@ -39,6 +39,10 @@ impl DescribeDomainInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the domain to describe.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DescribeDomainInput`](crate::operation::describe_domain::DescribeDomainInput).
     pub fn build(
         self,

@@ -48,6 +48,10 @@ impl UserMatchBuilder {
         self.similarity = input;
         self
     }
+    /// <p> Describes the UserID metadata.</p>
+    pub fn get_similarity(&self) -> &::std::option::Option<f32> {
+        &self.similarity
+    }
     /// <p> Confidence in the match of this UserID with the input face. </p>
     pub fn user(mut self, input: crate::types::MatchedUser) -> Self {
         self.user = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl UserMatchBuilder {
     pub fn set_user(mut self, input: ::std::option::Option<crate::types::MatchedUser>) -> Self {
         self.user = input;
         self
+    }
+    /// <p> Confidence in the match of this UserID with the input face. </p>
+    pub fn get_user(&self) -> &::std::option::Option<crate::types::MatchedUser> {
+        &self.user
     }
     /// Consumes the builder and constructs a [`UserMatch`](crate::types::UserMatch).
     pub fn build(self) -> crate::types::UserMatch {

@@ -44,6 +44,10 @@ impl CountPendingActivityTasksFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CountPendingActivityTasks as a reference.
+    pub fn as_input(&self) -> &crate::operation::count_pending_activity_tasks::builders::CountPendingActivityTasksInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +138,10 @@ impl CountPendingActivityTasksFluentBuilder {
         self.inner = self.inner.set_domain(input);
         self
     }
+    /// <p>The name of the domain that contains the task list.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain()
+    }
     /// <p>The name of the task list.</p>
     pub fn task_list(mut self, input: crate::types::TaskList) -> Self {
         self.inner = self.inner.task_list(input);
@@ -143,5 +151,9 @@ impl CountPendingActivityTasksFluentBuilder {
     pub fn set_task_list(mut self, input: ::std::option::Option<crate::types::TaskList>) -> Self {
         self.inner = self.inner.set_task_list(input);
         self
+    }
+    /// <p>The name of the task list.</p>
+    pub fn get_task_list(&self) -> &::std::option::Option<crate::types::TaskList> {
+        self.inner.get_task_list()
     }
 }

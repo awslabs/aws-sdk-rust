@@ -69,6 +69,10 @@ impl CreateThingGroupOutputBuilder {
         self.thing_group_name = input;
         self
     }
+    /// <p>The thing group name.</p>
+    pub fn get_thing_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_group_name
+    }
     /// <p>The thing group ARN.</p>
     pub fn thing_group_arn(
         mut self,
@@ -85,6 +89,10 @@ impl CreateThingGroupOutputBuilder {
         self.thing_group_arn = input;
         self
     }
+    /// <p>The thing group ARN.</p>
+    pub fn get_thing_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_group_arn
+    }
     /// <p>The thing group ID.</p>
     pub fn thing_group_id(
         mut self,
@@ -100,6 +108,10 @@ impl CreateThingGroupOutputBuilder {
     ) -> Self {
         self.thing_group_id = input;
         self
+    }
+    /// <p>The thing group ID.</p>
+    pub fn get_thing_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_group_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

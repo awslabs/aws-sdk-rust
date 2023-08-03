@@ -40,6 +40,10 @@ impl IpSetMetadataBuilder {
         self.resolved_cidr_count = input;
         self
     }
+    /// <p>Describes the total number of CIDR blocks currently in use by the IP set references in a firewall. To determine how many CIDR blocks are available for you to use in a firewall, you can call <code>AvailableCIDRCount</code>.</p>
+    pub fn get_resolved_cidr_count(&self) -> &::std::option::Option<i32> {
+        &self.resolved_cidr_count
+    }
     /// Consumes the builder and constructs a [`IpSetMetadata`](crate::types::IpSetMetadata).
     pub fn build(self) -> crate::types::IpSetMetadata {
         crate::types::IpSetMetadata {

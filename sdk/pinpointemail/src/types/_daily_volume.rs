@@ -63,6 +63,10 @@ impl DailyVolumeBuilder {
         self.start_date = input;
         self
     }
+    /// <p>The date that the DailyVolume metrics apply to, in Unix time.</p>
+    pub fn get_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_date
+    }
     /// <p>An object that contains inbox placement metrics for a specific day in the analysis period.</p>
     pub fn volume_statistics(mut self, input: crate::types::VolumeStatistics) -> Self {
         self.volume_statistics = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl DailyVolumeBuilder {
     ) -> Self {
         self.volume_statistics = input;
         self
+    }
+    /// <p>An object that contains inbox placement metrics for a specific day in the analysis period.</p>
+    pub fn get_volume_statistics(&self) -> &::std::option::Option<crate::types::VolumeStatistics> {
+        &self.volume_statistics
     }
     /// Appends an item to `domain_isp_placements`.
     ///
@@ -94,6 +102,12 @@ impl DailyVolumeBuilder {
     ) -> Self {
         self.domain_isp_placements = input;
         self
+    }
+    /// <p>An object that contains inbox placement metrics for a specified day in the analysis period, broken out by the recipient's email provider.</p>
+    pub fn get_domain_isp_placements(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainIspPlacement>> {
+        &self.domain_isp_placements
     }
     /// Consumes the builder and constructs a [`DailyVolume`](crate::types::DailyVolume).
     pub fn build(self) -> crate::types::DailyVolume {

@@ -54,6 +54,10 @@ impl CopySnapshotOutputBuilder {
         self.snapshot_id = input;
         self
     }
+    /// <p>The ID of the new snapshot.</p>
+    pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_id
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -72,6 +76,10 @@ impl CopySnapshotOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Any tags applied to the new snapshot.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

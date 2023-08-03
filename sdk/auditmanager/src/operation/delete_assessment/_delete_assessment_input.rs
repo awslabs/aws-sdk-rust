@@ -46,6 +46,10 @@ impl DeleteAssessmentInputBuilder {
         self.assessment_id = input;
         self
     }
+    /// <p> The identifier for the assessment. </p>
+    pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assessment_id
+    }
     /// Consumes the builder and constructs a [`DeleteAssessmentInput`](crate::operation::delete_assessment::DeleteAssessmentInput).
     pub fn build(
         self,

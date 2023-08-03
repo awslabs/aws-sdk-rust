@@ -47,6 +47,10 @@ impl DeleteResourceDefinitionInputBuilder {
         self.resource_definition_id = input;
         self
     }
+    /// The ID of the resource definition.
+    pub fn get_resource_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_definition_id
+    }
     /// Consumes the builder and constructs a [`DeleteResourceDefinitionInput`](crate::operation::delete_resource_definition::DeleteResourceDefinitionInput).
     pub fn build(
         self,

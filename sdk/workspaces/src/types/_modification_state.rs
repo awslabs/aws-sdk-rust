@@ -51,6 +51,10 @@ impl ModificationStateBuilder {
         self.resource = input;
         self
     }
+    /// <p>The resource.</p>
+    pub fn get_resource(&self) -> &::std::option::Option<crate::types::ModificationResourceEnum> {
+        &self.resource
+    }
     /// <p>The modification state.</p>
     pub fn state(mut self, input: crate::types::ModificationStateEnum) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl ModificationStateBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The modification state.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ModificationStateEnum> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`ModificationState`](crate::types::ModificationState).
     pub fn build(self) -> crate::types::ModificationState {

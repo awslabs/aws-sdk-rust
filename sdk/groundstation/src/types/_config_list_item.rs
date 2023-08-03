@@ -64,6 +64,10 @@ impl ConfigListItemBuilder {
         self.config_id = input;
         self
     }
+    /// <p>UUID of a <code>Config</code>.</p>
+    pub fn get_config_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.config_id
+    }
     /// <p>Type of a <code>Config</code>.</p>
     pub fn config_type(mut self, input: crate::types::ConfigCapabilityType) -> Self {
         self.config_type = ::std::option::Option::Some(input);
@@ -77,6 +81,10 @@ impl ConfigListItemBuilder {
         self.config_type = input;
         self
     }
+    /// <p>Type of a <code>Config</code>.</p>
+    pub fn get_config_type(&self) -> &::std::option::Option<crate::types::ConfigCapabilityType> {
+        &self.config_type
+    }
     /// <p>ARN of a <code>Config</code>.</p>
     pub fn config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.config_arn = ::std::option::Option::Some(input.into());
@@ -87,6 +95,10 @@ impl ConfigListItemBuilder {
         self.config_arn = input;
         self
     }
+    /// <p>ARN of a <code>Config</code>.</p>
+    pub fn get_config_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.config_arn
+    }
     /// <p>Name of a <code>Config</code>.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -96,6 +108,10 @@ impl ConfigListItemBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>Name of a <code>Config</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`ConfigListItem`](crate::types::ConfigListItem).
     pub fn build(self) -> crate::types::ConfigListItem {

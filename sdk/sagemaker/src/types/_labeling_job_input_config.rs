@@ -53,6 +53,10 @@ impl LabelingJobInputConfigBuilder {
         self.data_source = input;
         self
     }
+    /// <p>The location of the input data.</p>
+    pub fn get_data_source(&self) -> &::std::option::Option<crate::types::LabelingJobDataSource> {
+        &self.data_source
+    }
     /// <p>Attributes of the data specified by the customer.</p>
     pub fn data_attributes(mut self, input: crate::types::LabelingJobDataAttributes) -> Self {
         self.data_attributes = ::std::option::Option::Some(input);
@@ -65,6 +69,12 @@ impl LabelingJobInputConfigBuilder {
     ) -> Self {
         self.data_attributes = input;
         self
+    }
+    /// <p>Attributes of the data specified by the customer.</p>
+    pub fn get_data_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::LabelingJobDataAttributes> {
+        &self.data_attributes
     }
     /// Consumes the builder and constructs a [`LabelingJobInputConfig`](crate::types::LabelingJobInputConfig).
     pub fn build(self) -> crate::types::LabelingJobInputConfig {

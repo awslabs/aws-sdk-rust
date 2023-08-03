@@ -124,6 +124,10 @@ impl PatchSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the compliance standard that was used to determine the patch compliance status.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The number of patches from the compliance standard that were installed successfully.</p>
     pub fn installed_count(mut self, input: i32) -> Self {
         self.installed_count = ::std::option::Option::Some(input);
@@ -133,6 +137,10 @@ impl PatchSummaryBuilder {
     pub fn set_installed_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.installed_count = input;
         self
+    }
+    /// <p>The number of patches from the compliance standard that were installed successfully.</p>
+    pub fn get_installed_count(&self) -> &::std::option::Option<i32> {
+        &self.installed_count
     }
     /// <p>The number of patches that are part of the compliance standard but are not installed. The count includes patches that failed to install.</p>
     pub fn missing_count(mut self, input: i32) -> Self {
@@ -144,6 +152,10 @@ impl PatchSummaryBuilder {
         self.missing_count = input;
         self
     }
+    /// <p>The number of patches that are part of the compliance standard but are not installed. The count includes patches that failed to install.</p>
+    pub fn get_missing_count(&self) -> &::std::option::Option<i32> {
+        &self.missing_count
+    }
     /// <p>The number of patches from the compliance standard that failed to install.</p>
     pub fn failed_count(mut self, input: i32) -> Self {
         self.failed_count = ::std::option::Option::Some(input);
@@ -153,6 +165,10 @@ impl PatchSummaryBuilder {
     pub fn set_failed_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.failed_count = input;
         self
+    }
+    /// <p>The number of patches from the compliance standard that failed to install.</p>
+    pub fn get_failed_count(&self) -> &::std::option::Option<i32> {
+        &self.failed_count
     }
     /// <p>The number of installed patches that are not part of the compliance standard.</p>
     pub fn installed_other_count(mut self, input: i32) -> Self {
@@ -164,6 +180,10 @@ impl PatchSummaryBuilder {
         self.installed_other_count = input;
         self
     }
+    /// <p>The number of installed patches that are not part of the compliance standard.</p>
+    pub fn get_installed_other_count(&self) -> &::std::option::Option<i32> {
+        &self.installed_other_count
+    }
     /// <p>The number of patches that are installed but are also on a list of patches that the customer rejected.</p>
     pub fn installed_rejected_count(mut self, input: i32) -> Self {
         self.installed_rejected_count = ::std::option::Option::Some(input);
@@ -174,6 +194,10 @@ impl PatchSummaryBuilder {
         self.installed_rejected_count = input;
         self
     }
+    /// <p>The number of patches that are installed but are also on a list of patches that the customer rejected.</p>
+    pub fn get_installed_rejected_count(&self) -> &::std::option::Option<i32> {
+        &self.installed_rejected_count
+    }
     /// <p>The number of patches that were applied, but that require the instance to be rebooted in order to be marked as installed.</p>
     pub fn installed_pending_reboot(mut self, input: i32) -> Self {
         self.installed_pending_reboot = ::std::option::Option::Some(input);
@@ -183,6 +207,10 @@ impl PatchSummaryBuilder {
     pub fn set_installed_pending_reboot(mut self, input: ::std::option::Option<i32>) -> Self {
         self.installed_pending_reboot = input;
         self
+    }
+    /// <p>The number of patches that were applied, but that require the instance to be rebooted in order to be marked as installed.</p>
+    pub fn get_installed_pending_reboot(&self) -> &::std::option::Option<i32> {
+        &self.installed_pending_reboot
     }
     /// <p>Indicates when the operation started.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
@@ -202,6 +230,11 @@ impl PatchSummaryBuilder {
         self.operation_start_time = input;
         self
     }
+    /// <p>Indicates when the operation started.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_operation_start_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operation_start_time
+    }
     /// <p>Indicates when the operation completed.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn operation_end_time(
@@ -220,6 +253,11 @@ impl PatchSummaryBuilder {
         self.operation_end_time = input;
         self
     }
+    /// <p>Indicates when the operation completed.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_operation_end_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operation_end_time
+    }
     /// <p>The reboot option specified for the instance.</p>
     pub fn reboot_option(
         mut self,
@@ -236,6 +274,10 @@ impl PatchSummaryBuilder {
         self.reboot_option = input;
         self
     }
+    /// <p>The reboot option specified for the instance.</p>
+    pub fn get_reboot_option(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reboot_option
+    }
     /// <p>The type of patch operation performed. For Patch Manager, the values are <code>SCAN</code> and <code>INSTALL</code>. </p>
     pub fn operation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operation = ::std::option::Option::Some(input.into());
@@ -245,6 +287,10 @@ impl PatchSummaryBuilder {
     pub fn set_operation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operation = input;
         self
+    }
+    /// <p>The type of patch operation performed. For Patch Manager, the values are <code>SCAN</code> and <code>INSTALL</code>. </p>
+    pub fn get_operation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operation
     }
     /// Consumes the builder and constructs a [`PatchSummary`](crate::types::PatchSummary).
     pub fn build(self) -> crate::types::PatchSummary {

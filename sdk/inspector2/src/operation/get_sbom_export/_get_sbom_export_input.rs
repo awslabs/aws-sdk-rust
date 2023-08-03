@@ -39,6 +39,10 @@ impl GetSbomExportInputBuilder {
         self.report_id = input;
         self
     }
+    /// <p>The report ID of the SBOM export to get details for.</p>
+    pub fn get_report_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.report_id
+    }
     /// Consumes the builder and constructs a [`GetSbomExportInput`](crate::operation::get_sbom_export::GetSbomExportInput).
     pub fn build(
         self,

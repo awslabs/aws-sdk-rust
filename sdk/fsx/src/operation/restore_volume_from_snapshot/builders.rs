@@ -36,6 +36,10 @@ impl RestoreVolumeFromSnapshotFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RestoreVolumeFromSnapshot as a reference.
+    pub fn as_input(&self) -> &crate::operation::restore_volume_from_snapshot::builders::RestoreVolumeFromSnapshotInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl RestoreVolumeFromSnapshotFluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
+    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
+    }
     /// <p>The ID of the volume that you are restoring.</p>
     pub fn volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.volume_id(input.into());
@@ -142,6 +150,10 @@ impl RestoreVolumeFromSnapshotFluentBuilder {
         self.inner = self.inner.set_volume_id(input);
         self
     }
+    /// <p>The ID of the volume that you are restoring.</p>
+    pub fn get_volume_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_volume_id()
+    }
     /// <p>The ID of the source snapshot. Specifies the snapshot that you are restoring from.</p>
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_id(input.into());
@@ -151,6 +163,10 @@ impl RestoreVolumeFromSnapshotFluentBuilder {
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_id(input);
         self
+    }
+    /// <p>The ID of the source snapshot. Specifies the snapshot that you are restoring from.</p>
+    pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_snapshot_id()
     }
     /// Appends an item to `Options`.
     ///
@@ -176,5 +192,15 @@ impl RestoreVolumeFromSnapshotFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_options(input);
         self
+    }
+    /// <p>The settings used when restoring the specified volume from snapshot.</p>
+    /// <ul>
+    /// <li> <p> <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots between the current state and the specified snapshot. If there are intermediate snapshots and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li>
+    /// <li> <p> <code>DELETE_CLONED_VOLUMES</code> - Deletes any dependent clone volumes created from intermediate snapshots. If there are any dependent clone volumes and this option isn't used, <code>RestoreVolumeFromSnapshot</code> fails.</p> </li>
+    /// </ul>
+    pub fn get_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RestoreOpenZfsVolumeOption>> {
+        self.inner.get_options()
     }
 }

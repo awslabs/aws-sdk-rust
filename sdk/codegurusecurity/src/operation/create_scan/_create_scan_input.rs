@@ -97,6 +97,10 @@ impl CreateScanInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>The idempotency token for the request. Amazon CodeGuru Security uses this value to prevent the accidental creation of duplicate scans if there are failures and retries.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>The identifier for an input resource used to create a scan.</p>
     pub fn resource_id(mut self, input: crate::types::ResourceId) -> Self {
         self.resource_id = ::std::option::Option::Some(input);
@@ -110,6 +114,10 @@ impl CreateScanInputBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The identifier for an input resource used to create a scan.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<crate::types::ResourceId> {
+        &self.resource_id
+    }
     /// <p>The unique name that CodeGuru Security uses to track revisions across multiple scans of the same resource. Only allowed for a <code>STANDARD</code> scan type. If not specified, it will be auto generated. </p>
     pub fn scan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scan_name = ::std::option::Option::Some(input.into());
@@ -119,6 +127,10 @@ impl CreateScanInputBuilder {
     pub fn set_scan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scan_name = input;
         self
+    }
+    /// <p>The unique name that CodeGuru Security uses to track revisions across multiple scans of the same resource. Only allowed for a <code>STANDARD</code> scan type. If not specified, it will be auto generated. </p>
+    pub fn get_scan_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scan_name
     }
     /// <p>The type of scan, either <code>Standard</code> or <code>Express</code>. Defaults to <code>Standard</code> type if missing.</p>
     /// <p> <code>Express</code> scans run on limited resources and use a limited set of detectors to analyze your code in near-real time. <code>Standard</code> scans have standard resource limits and use the full set of detectors to analyze your code.</p>
@@ -132,6 +144,11 @@ impl CreateScanInputBuilder {
         self.scan_type = input;
         self
     }
+    /// <p>The type of scan, either <code>Standard</code> or <code>Express</code>. Defaults to <code>Standard</code> type if missing.</p>
+    /// <p> <code>Express</code> scans run on limited resources and use a limited set of detectors to analyze your code in near-real time. <code>Standard</code> scans have standard resource limits and use the full set of detectors to analyze your code.</p>
+    pub fn get_scan_type(&self) -> &::std::option::Option<crate::types::ScanType> {
+        &self.scan_type
+    }
     /// <p>The type of analysis you want CodeGuru Security to perform in the scan, either <code>Security</code> or <code>All</code>. The <code>Security</code> type only generates findings related to security. The <code>All</code> type generates both security findings and quality findings. Defaults to <code>Security</code> type if missing.</p>
     pub fn analysis_type(mut self, input: crate::types::AnalysisType) -> Self {
         self.analysis_type = ::std::option::Option::Some(input);
@@ -144,6 +161,10 @@ impl CreateScanInputBuilder {
     ) -> Self {
         self.analysis_type = input;
         self
+    }
+    /// <p>The type of analysis you want CodeGuru Security to perform in the scan, either <code>Security</code> or <code>All</code>. The <code>Security</code> type only generates findings related to security. The <code>All</code> type generates both security findings and quality findings. Defaults to <code>Security</code> type if missing.</p>
+    pub fn get_analysis_type(&self) -> &::std::option::Option<crate::types::AnalysisType> {
+        &self.analysis_type
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -177,6 +198,18 @@ impl CreateScanInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>An array of key-value pairs used to tag a scan. A tag is a custom attribute label with two parts:</p>
+    /// <ul>
+    /// <li> <p>A tag key. For example, <code>CostCenter</code>, <code>Environment</code>, or <code>Secret</code>. Tag keys are case sensitive.</p> </li>
+    /// <li> <p>An optional tag value field. For example, <code>111122223333</code>, <code>Production</code>, or a team name. Omitting the tag value is the same as using an empty string. Tag values are case sensitive.</p> </li>
+    /// </ul>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateScanInput`](crate::operation::create_scan::CreateScanInput).
     pub fn build(

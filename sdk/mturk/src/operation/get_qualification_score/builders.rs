@@ -38,6 +38,13 @@ impl GetQualificationScoreFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetQualificationScore as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_qualification_score::builders::GetQualificationScoreInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +141,10 @@ impl GetQualificationScoreFluentBuilder {
         self.inner = self.inner.set_qualification_type_id(input);
         self
     }
+    /// <p>The ID of the QualificationType.</p>
+    pub fn get_qualification_type_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_qualification_type_id()
+    }
     /// <p>The ID of the Worker whose Qualification is being updated.</p>
     pub fn worker_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.worker_id(input.into());
@@ -143,5 +154,9 @@ impl GetQualificationScoreFluentBuilder {
     pub fn set_worker_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_worker_id(input);
         self
+    }
+    /// <p>The ID of the Worker whose Qualification is being updated.</p>
+    pub fn get_worker_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_worker_id()
     }
 }

@@ -53,6 +53,12 @@ impl GetExtensionVersionOutputBuilder {
         self.extension_version = input;
         self
     }
+    /// <p>The version of the extension.</p>
+    pub fn get_extension_version(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExtensionVersionDetails> {
+        &self.extension_version
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

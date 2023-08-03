@@ -77,6 +77,10 @@ impl MixedMeasureMappingBuilder {
         self
     }
     /// <p></p>
+    pub fn get_measure_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.measure_name
+    }
+    /// <p></p>
     pub fn source_column(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -91,6 +95,10 @@ impl MixedMeasureMappingBuilder {
     ) -> Self {
         self.source_column = input;
         self
+    }
+    /// <p></p>
+    pub fn get_source_column(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_column
     }
     /// <p></p>
     pub fn target_measure_name(
@@ -109,6 +117,10 @@ impl MixedMeasureMappingBuilder {
         self
     }
     /// <p></p>
+    pub fn get_target_measure_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_measure_name
+    }
+    /// <p></p>
     pub fn measure_value_type(mut self, input: crate::types::MeasureValueType) -> Self {
         self.measure_value_type = ::std::option::Option::Some(input);
         self
@@ -120,6 +132,10 @@ impl MixedMeasureMappingBuilder {
     ) -> Self {
         self.measure_value_type = input;
         self
+    }
+    /// <p></p>
+    pub fn get_measure_value_type(&self) -> &::std::option::Option<crate::types::MeasureValueType> {
+        &self.measure_value_type
     }
     /// Appends an item to `multi_measure_attribute_mappings`.
     ///
@@ -142,6 +158,12 @@ impl MixedMeasureMappingBuilder {
     ) -> Self {
         self.multi_measure_attribute_mappings = input;
         self
+    }
+    /// <p></p>
+    pub fn get_multi_measure_attribute_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MultiMeasureAttributeMapping>> {
+        &self.multi_measure_attribute_mappings
     }
     /// Consumes the builder and constructs a [`MixedMeasureMapping`](crate::types::MixedMeasureMapping).
     pub fn build(self) -> crate::types::MixedMeasureMapping {

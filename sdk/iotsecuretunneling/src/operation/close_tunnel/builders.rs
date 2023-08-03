@@ -37,6 +37,10 @@ impl CloseTunnelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CloseTunnel as a reference.
+    pub fn as_input(&self) -> &crate::operation::close_tunnel::builders::CloseTunnelInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl CloseTunnelFluentBuilder {
         self.inner = self.inner.set_tunnel_id(input);
         self
     }
+    /// <p>The ID of the tunnel to close.</p>
+    pub fn get_tunnel_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_tunnel_id()
+    }
     /// <p>When set to true, IoT Secure Tunneling deletes the tunnel data immediately.</p>
     pub fn delete(mut self, input: bool) -> Self {
         self.inner = self.inner.delete(input);
@@ -128,5 +136,9 @@ impl CloseTunnelFluentBuilder {
     pub fn set_delete(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_delete(input);
         self
+    }
+    /// <p>When set to true, IoT Secure Tunneling deletes the tunnel data immediately.</p>
+    pub fn get_delete(&self) -> &::std::option::Option<bool> {
+        self.inner.get_delete()
     }
 }

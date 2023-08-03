@@ -40,6 +40,13 @@ impl DeleteRegexPatternSetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteRegexPatternSet as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_regex_pattern_set::builders::DeleteRegexPatternSetInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +143,10 @@ impl DeleteRegexPatternSetFluentBuilder {
         self.inner = self.inner.set_regex_pattern_set_id(input);
         self
     }
+    /// <p>The <code>RegexPatternSetId</code> of the <code>RegexPatternSet</code> that you want to delete. <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
+    pub fn get_regex_pattern_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_regex_pattern_set_id()
+    }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.change_token(input.into());
@@ -145,5 +156,9 @@ impl DeleteRegexPatternSetFluentBuilder {
     pub fn set_change_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_change_token(input);
         self
+    }
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    pub fn get_change_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_change_token()
     }
 }

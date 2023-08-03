@@ -49,6 +49,10 @@ impl PortRangeBuilder {
         self
     }
     /// <p>The smallest port number in a specified range of port numbers.</p>
+    pub fn get_min_range(&self) -> &::std::option::Option<i32> {
+        &self.min_range
+    }
+    /// <p>The smallest port number in a specified range of port numbers.</p>
     pub fn max_range(mut self, input: i32) -> Self {
         self.max_range = ::std::option::Option::Some(input);
         self
@@ -57,6 +61,10 @@ impl PortRangeBuilder {
     pub fn set_max_range(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_range = input;
         self
+    }
+    /// <p>The smallest port number in a specified range of port numbers.</p>
+    pub fn get_max_range(&self) -> &::std::option::Option<i32> {
+        &self.max_range
     }
     /// Consumes the builder and constructs a [`PortRange`](crate::types::PortRange).
     pub fn build(self) -> crate::types::PortRange {

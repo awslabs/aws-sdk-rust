@@ -40,6 +40,10 @@ impl SplunkRetryOptionsBuilder {
         self.duration_in_seconds = input;
         self
     }
+    /// <p>The total amount of time that Kinesis Data Firehose spends on retries. This duration starts after the initial attempt to send data to Splunk fails. It doesn't include the periods during which Kinesis Data Firehose waits for acknowledgment from Splunk after each attempt.</p>
+    pub fn get_duration_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.duration_in_seconds
+    }
     /// Consumes the builder and constructs a [`SplunkRetryOptions`](crate::types::SplunkRetryOptions).
     pub fn build(self) -> crate::types::SplunkRetryOptions {
         crate::types::SplunkRetryOptions {

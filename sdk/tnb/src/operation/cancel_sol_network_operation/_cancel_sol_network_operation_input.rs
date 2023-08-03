@@ -45,6 +45,10 @@ impl CancelSolNetworkOperationInputBuilder {
         self.ns_lcm_op_occ_id = input;
         self
     }
+    /// <p>The identifier of the network operation.</p>
+    pub fn get_ns_lcm_op_occ_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ns_lcm_op_occ_id
+    }
     /// Consumes the builder and constructs a [`CancelSolNetworkOperationInput`](crate::operation::cancel_sol_network_operation::CancelSolNetworkOperationInput).
     pub fn build(
         self,

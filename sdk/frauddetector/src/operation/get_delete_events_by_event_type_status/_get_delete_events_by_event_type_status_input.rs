@@ -45,6 +45,10 @@ impl GetDeleteEventsByEventTypeStatusInputBuilder {
         self.event_type_name = input;
         self
     }
+    /// <p>Name of event type for which to get the deletion status.</p>
+    pub fn get_event_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_type_name
+    }
     /// Consumes the builder and constructs a [`GetDeleteEventsByEventTypeStatusInput`](crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

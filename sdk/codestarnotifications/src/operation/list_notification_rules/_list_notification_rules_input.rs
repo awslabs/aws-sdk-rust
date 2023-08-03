@@ -75,6 +75,14 @@ impl ListNotificationRulesInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>The filters to use to return information by service or resource type. For valid values, see <code>ListNotificationRulesFilter</code>.</p> <note>
+    /// <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p>
+    /// </note>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListNotificationRulesFilter>> {
+        &self.filters
+    }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -85,6 +93,10 @@ impl ListNotificationRulesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>A non-negative integer used to limit the number of returned results. The maximum number of results that can be returned is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -94,6 +106,10 @@ impl ListNotificationRulesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>A non-negative integer used to limit the number of returned results. The maximum number of results that can be returned is 100.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListNotificationRulesInput`](crate::operation::list_notification_rules::ListNotificationRulesInput).
     pub fn build(

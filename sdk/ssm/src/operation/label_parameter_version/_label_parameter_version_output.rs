@@ -68,6 +68,12 @@ impl LabelParameterVersionOutputBuilder {
         self.invalid_labels = input;
         self
     }
+    /// <p>The label doesn't meet the requirements. For information about parameter label requirements, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Labeling parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    pub fn get_invalid_labels(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.invalid_labels
+    }
     /// <p>The version of the parameter that has been labeled.</p>
     pub fn parameter_version(mut self, input: i64) -> Self {
         self.parameter_version = ::std::option::Option::Some(input);
@@ -77,6 +83,10 @@ impl LabelParameterVersionOutputBuilder {
     pub fn set_parameter_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.parameter_version = input;
         self
+    }
+    /// <p>The version of the parameter that has been labeled.</p>
+    pub fn get_parameter_version(&self) -> &::std::option::Option<i64> {
+        &self.parameter_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

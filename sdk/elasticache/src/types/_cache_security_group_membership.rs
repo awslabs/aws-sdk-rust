@@ -54,6 +54,10 @@ impl CacheSecurityGroupMembershipBuilder {
         self.cache_security_group_name = input;
         self
     }
+    /// <p>The name of the cache security group.</p>
+    pub fn get_cache_security_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_security_group_name
+    }
     /// <p>The membership status in the cache security group. The status changes when a cache security group is modified, or when the cache security groups assigned to a cluster are modified.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl CacheSecurityGroupMembershipBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The membership status in the cache security group. The status changes when a cache security group is modified, or when the cache security groups assigned to a cluster are modified.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`CacheSecurityGroupMembership`](crate::types::CacheSecurityGroupMembership).
     pub fn build(self) -> crate::types::CacheSecurityGroupMembership {

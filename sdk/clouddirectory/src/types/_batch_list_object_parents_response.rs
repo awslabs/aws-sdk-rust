@@ -63,6 +63,13 @@ impl BatchListObjectParentsResponseBuilder {
         self.parent_links = input;
         self
     }
+    /// <p>Returns a list of parent reference and LinkName Tuples.</p>
+    pub fn get_parent_links(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ObjectIdentifierAndLinkNameTuple>>
+    {
+        &self.parent_links
+    }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -72,6 +79,10 @@ impl BatchListObjectParentsResponseBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`BatchListObjectParentsResponse`](crate::types::BatchListObjectParentsResponse).
     pub fn build(self) -> crate::types::BatchListObjectParentsResponse {

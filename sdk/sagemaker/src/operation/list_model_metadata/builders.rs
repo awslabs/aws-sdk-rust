@@ -36,6 +36,12 @@ impl ListModelMetadataFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListModelMetadata as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_model_metadata::builders::ListModelMetadataInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +146,12 @@ impl ListModelMetadataFluentBuilder {
         self.inner = self.inner.set_search_expression(input);
         self
     }
+    /// <p>One or more filters that searches for the specified resource or resources in a search. All resource objects that satisfy the expression's condition are included in the search results. Specify the Framework, FrameworkVersion, Domain or Task to filter supported. Filter names and values are case-sensitive.</p>
+    pub fn get_search_expression(
+        &self,
+    ) -> &::std::option::Option<crate::types::ModelMetadataSearchExpression> {
+        self.inner.get_search_expression()
+    }
     /// <p>If the response to a previous <code>ListModelMetadataResponse</code> request was truncated, the response includes a NextToken. To retrieve the next set of model metadata, use the token in the next request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -150,6 +162,10 @@ impl ListModelMetadataFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>If the response to a previous <code>ListModelMetadataResponse</code> request was truncated, the response includes a NextToken. To retrieve the next set of model metadata, use the token in the next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of models to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -159,5 +175,9 @@ impl ListModelMetadataFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of models to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

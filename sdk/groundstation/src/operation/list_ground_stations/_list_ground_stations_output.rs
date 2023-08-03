@@ -58,6 +58,10 @@ impl ListGroundStationsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Next token that can be supplied in the next call to get the next page of ground stations.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `ground_station_list`.
     ///
     /// To override the contents of this collection use [`set_ground_station_list`](Self::set_ground_station_list).
@@ -76,6 +80,12 @@ impl ListGroundStationsOutputBuilder {
     ) -> Self {
         self.ground_station_list = input;
         self
+    }
+    /// <p>List of ground stations.</p>
+    pub fn get_ground_station_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroundStationData>> {
+        &self.ground_station_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -37,6 +37,10 @@ impl CreateStreamFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateStream as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_stream::builders::CreateStreamInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl CreateStreamFluentBuilder {
         self.inner = self.inner.set_stream_id(input);
         self
     }
+    /// <p>The stream ID.</p>
+    pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_id()
+    }
     /// <p>A description of the stream.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -128,6 +136,10 @@ impl CreateStreamFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of the stream.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `files`.
     ///
@@ -146,6 +158,10 @@ impl CreateStreamFluentBuilder {
         self.inner = self.inner.set_files(input);
         self
     }
+    /// <p>The files to stream.</p>
+    pub fn get_files(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamFile>> {
+        self.inner.get_files()
+    }
     /// <p>An IAM role that allows the IoT service principal to access your S3 files.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -155,6 +171,10 @@ impl CreateStreamFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p>An IAM role that allows the IoT service principal to access your S3 files.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
     /// Appends an item to `tags`.
     ///
@@ -172,5 +192,9 @@ impl CreateStreamFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Metadata which can be used to manage streams.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

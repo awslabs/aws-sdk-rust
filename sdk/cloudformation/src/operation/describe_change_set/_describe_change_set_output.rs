@@ -218,6 +218,10 @@ impl DescribeChangeSetOutputBuilder {
         self.change_set_name = input;
         self
     }
+    /// <p>The name of the change set.</p>
+    pub fn get_change_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.change_set_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the change set.</p>
     pub fn change_set_id(
         mut self,
@@ -234,6 +238,10 @@ impl DescribeChangeSetOutputBuilder {
         self.change_set_id = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the change set.</p>
+    pub fn get_change_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.change_set_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the stack that's associated with the change set.</p>
     pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_id = ::std::option::Option::Some(input.into());
@@ -243,6 +251,10 @@ impl DescribeChangeSetOutputBuilder {
     pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_id = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the stack that's associated with the change set.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_id
     }
     /// <p>The name of the stack that's associated with the change set.</p>
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -254,6 +266,10 @@ impl DescribeChangeSetOutputBuilder {
         self.stack_name = input;
         self
     }
+    /// <p>The name of the stack that's associated with the change set.</p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_name
+    }
     /// <p>Information about the change set.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -263,6 +279,10 @@ impl DescribeChangeSetOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>Information about the change set.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `parameters`.
     ///
@@ -283,6 +303,12 @@ impl DescribeChangeSetOutputBuilder {
         self.parameters = input;
         self
     }
+    /// <p>A list of <code>Parameter</code> structures that describes the input parameters and their values used to create the change set. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data type.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+        &self.parameters
+    }
     /// <p>The start time when the change set was created, in UTC.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -295,6 +321,10 @@ impl DescribeChangeSetOutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The start time when the change set was created, in UTC.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>If the change set execution status is <code>AVAILABLE</code>, you can execute the change set. If you can't execute the change set, the status indicates why. For example, a change set might be in an <code>UNAVAILABLE</code> state because CloudFormation is still creating it or in an <code>OBSOLETE</code> state because the stack was already updated.</p>
     pub fn execution_status(mut self, input: crate::types::ExecutionStatus) -> Self {
@@ -309,6 +339,10 @@ impl DescribeChangeSetOutputBuilder {
         self.execution_status = input;
         self
     }
+    /// <p>If the change set execution status is <code>AVAILABLE</code>, you can execute the change set. If you can't execute the change set, the status indicates why. For example, a change set might be in an <code>UNAVAILABLE</code> state because CloudFormation is still creating it or in an <code>OBSOLETE</code> state because the stack was already updated.</p>
+    pub fn get_execution_status(&self) -> &::std::option::Option<crate::types::ExecutionStatus> {
+        &self.execution_status
+    }
     /// <p>The current status of the change set, such as <code>CREATE_IN_PROGRESS</code>, <code>CREATE_COMPLETE</code>, or <code>FAILED</code>.</p>
     pub fn status(mut self, input: crate::types::ChangeSetStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -321,6 +355,10 @@ impl DescribeChangeSetOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the change set, such as <code>CREATE_IN_PROGRESS</code>, <code>CREATE_COMPLETE</code>, or <code>FAILED</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ChangeSetStatus> {
+        &self.status
     }
     /// <p>A description of the change set's status. For example, if your attempt to create a change set failed, CloudFormation shows the error message.</p>
     pub fn status_reason(
@@ -337,6 +375,10 @@ impl DescribeChangeSetOutputBuilder {
     ) -> Self {
         self.status_reason = input;
         self
+    }
+    /// <p>A description of the change set's status. For example, if your attempt to create a change set failed, CloudFormation shows the error message.</p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_reason
     }
     /// Appends an item to `notification_ar_ns`.
     ///
@@ -360,6 +402,12 @@ impl DescribeChangeSetOutputBuilder {
         self.notification_ar_ns = input;
         self
     }
+    /// <p>The ARNs of the Amazon Simple Notification Service (Amazon SNS) topics that will be associated with the stack if you execute the change set.</p>
+    pub fn get_notification_ar_ns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.notification_ar_ns
+    }
     /// <p>The rollback triggers for CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p>
     pub fn rollback_configuration(mut self, input: crate::types::RollbackConfiguration) -> Self {
         self.rollback_configuration = ::std::option::Option::Some(input);
@@ -372,6 +420,12 @@ impl DescribeChangeSetOutputBuilder {
     ) -> Self {
         self.rollback_configuration = input;
         self
+    }
+    /// <p>The rollback triggers for CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p>
+    pub fn get_rollback_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::RollbackConfiguration> {
+        &self.rollback_configuration
     }
     /// Appends an item to `capabilities`.
     ///
@@ -392,6 +446,12 @@ impl DescribeChangeSetOutputBuilder {
         self.capabilities = input;
         self
     }
+    /// <p>If you execute the change set, the list of capabilities that were explicitly acknowledged when the change set was created.</p>
+    pub fn get_capabilities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Capability>> {
+        &self.capabilities
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -410,6 +470,10 @@ impl DescribeChangeSetOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>If you execute the change set, the tags that will be associated with the stack.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Appends an item to `changes`.
     ///
@@ -430,6 +494,10 @@ impl DescribeChangeSetOutputBuilder {
         self.changes = input;
         self
     }
+    /// <p>A list of <code>Change</code> structures that describes the resources CloudFormation changes if you execute the change set.</p>
+    pub fn get_changes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Change>> {
+        &self.changes
+    }
     /// <p>If the output exceeds 1 MB, a string that identifies the next page of changes. If there is no additional page, this value is null.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -440,6 +508,10 @@ impl DescribeChangeSetOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If the output exceeds 1 MB, a string that identifies the next page of changes. If there is no additional page, this value is null.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>Verifies if <code>IncludeNestedStacks</code> is set to <code>True</code>.</p>
     pub fn include_nested_stacks(mut self, input: bool) -> Self {
         self.include_nested_stacks = ::std::option::Option::Some(input);
@@ -449,6 +521,10 @@ impl DescribeChangeSetOutputBuilder {
     pub fn set_include_nested_stacks(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_nested_stacks = input;
         self
+    }
+    /// <p>Verifies if <code>IncludeNestedStacks</code> is set to <code>True</code>.</p>
+    pub fn get_include_nested_stacks(&self) -> &::std::option::Option<bool> {
+        &self.include_nested_stacks
     }
     /// <p>Specifies the change set ID of the parent change set in the current nested change set hierarchy.</p>
     pub fn parent_change_set_id(
@@ -466,6 +542,10 @@ impl DescribeChangeSetOutputBuilder {
         self.parent_change_set_id = input;
         self
     }
+    /// <p>Specifies the change set ID of the parent change set in the current nested change set hierarchy.</p>
+    pub fn get_parent_change_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent_change_set_id
+    }
     /// <p>Specifies the change set ID of the root change set in the current nested change set hierarchy.</p>
     pub fn root_change_set_id(
         mut self,
@@ -481,6 +561,10 @@ impl DescribeChangeSetOutputBuilder {
     ) -> Self {
         self.root_change_set_id = input;
         self
+    }
+    /// <p>Specifies the change set ID of the root change set in the current nested change set hierarchy.</p>
+    pub fn get_root_change_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.root_change_set_id
     }
     /// <p>Determines what action will be taken if stack creation fails. When this parameter is specified, the <code>DisableRollback</code> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a> API operation must not be specified. This must be one of these values:</p>
     /// <ul>
@@ -504,6 +588,15 @@ impl DescribeChangeSetOutputBuilder {
     ) -> Self {
         self.on_stack_failure = input;
         self
+    }
+    /// <p>Determines what action will be taken if stack creation fails. When this parameter is specified, the <code>DisableRollback</code> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a> API operation must not be specified. This must be one of these values:</p>
+    /// <ul>
+    /// <li> <p> <code>DELETE</code> - Deletes the change set if the stack creation fails. This is only valid when the <code>ChangeSetType</code> parameter is set to <code>CREATE</code>. If the deletion of the stack fails, the status of the stack is <code>DELETE_FAILED</code>.</p> </li>
+    /// <li> <p> <code>DO_NOTHING</code> - if the stack creation fails, do nothing. This is equivalent to specifying <code>true</code> for the <code>DisableRollback</code> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a> API operation.</p> </li>
+    /// <li> <p> <code>ROLLBACK</code> - if the stack creation fails, roll back the stack. This is equivalent to specifying <code>false</code> for the <code>DisableRollback</code> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a> API operation.</p> </li>
+    /// </ul>
+    pub fn get_on_stack_failure(&self) -> &::std::option::Option<crate::types::OnStackFailure> {
+        &self.on_stack_failure
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -50,6 +50,10 @@ impl GetMobileSdkReleaseOutputBuilder {
         self.mobile_sdk_release = input;
         self
     }
+    /// <p>Information for a specified SDK release, including release notes and tags.</p>
+    pub fn get_mobile_sdk_release(&self) -> &::std::option::Option<crate::types::MobileSdkRelease> {
+        &self.mobile_sdk_release
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

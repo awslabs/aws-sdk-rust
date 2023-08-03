@@ -40,6 +40,10 @@ impl DeregisterResourceInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the resource that you want to deregister.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// Consumes the builder and constructs a [`DeregisterResourceInput`](crate::operation::deregister_resource::DeregisterResourceInput).
     pub fn build(
         self,

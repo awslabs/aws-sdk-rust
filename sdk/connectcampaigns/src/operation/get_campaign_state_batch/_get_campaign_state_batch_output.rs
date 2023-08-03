@@ -79,6 +79,13 @@ impl GetCampaignStateBatchOutputBuilder {
         self.successful_requests = input;
         self
     }
+    /// List of successful response of campaign state
+    pub fn get_successful_requests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SuccessfulCampaignStateResponse>>
+    {
+        &self.successful_requests
+    }
     /// Appends an item to `failed_requests`.
     ///
     /// To override the contents of this collection use [`set_failed_requests`](Self::set_failed_requests).
@@ -97,6 +104,12 @@ impl GetCampaignStateBatchOutputBuilder {
     ) -> Self {
         self.failed_requests = input;
         self
+    }
+    /// List of failed requests of campaign state
+    pub fn get_failed_requests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedCampaignStateResponse>> {
+        &self.failed_requests
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

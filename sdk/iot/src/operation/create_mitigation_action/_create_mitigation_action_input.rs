@@ -65,6 +65,10 @@ impl CreateMitigationActionInputBuilder {
         self.action_name = input;
         self
     }
+    /// <p>A friendly name for the action. Choose a friendly name that accurately describes the action (for example, <code>EnableLoggingAction</code>).</p>
+    pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_name
+    }
     /// <p>The ARN of the IAM role that is used to apply the mitigation action.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl CreateMitigationActionInputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The ARN of the IAM role that is used to apply the mitigation action.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>Defines the type of action and the parameters for that action.</p>
     pub fn action_params(mut self, input: crate::types::MitigationActionParams) -> Self {
@@ -87,6 +95,12 @@ impl CreateMitigationActionInputBuilder {
     ) -> Self {
         self.action_params = input;
         self
+    }
+    /// <p>Defines the type of action and the parameters for that action.</p>
+    pub fn get_action_params(
+        &self,
+    ) -> &::std::option::Option<crate::types::MitigationActionParams> {
+        &self.action_params
     }
     /// Appends an item to `tags`.
     ///
@@ -106,6 +120,10 @@ impl CreateMitigationActionInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Metadata that can be used to manage the mitigation action.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateMitigationActionInput`](crate::operation::create_mitigation_action::CreateMitigationActionInput).
     pub fn build(

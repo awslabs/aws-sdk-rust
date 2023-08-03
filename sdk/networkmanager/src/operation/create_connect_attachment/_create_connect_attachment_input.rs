@@ -87,6 +87,10 @@ impl CreateConnectAttachmentInputBuilder {
         self.core_network_id = input;
         self
     }
+    /// <p>The ID of a core network where you want to create the attachment. </p>
+    pub fn get_core_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.core_network_id
+    }
     /// <p>The Region where the edge is located.</p>
     pub fn edge_location(
         mut self,
@@ -102,6 +106,10 @@ impl CreateConnectAttachmentInputBuilder {
     ) -> Self {
         self.edge_location = input;
         self
+    }
+    /// <p>The Region where the edge is located.</p>
+    pub fn get_edge_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.edge_location
     }
     /// <p>The ID of the attachment between the two connections.</p>
     pub fn transport_attachment_id(
@@ -119,6 +127,10 @@ impl CreateConnectAttachmentInputBuilder {
         self.transport_attachment_id = input;
         self
     }
+    /// <p>The ID of the attachment between the two connections.</p>
+    pub fn get_transport_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transport_attachment_id
+    }
     /// <p>Options for creating an attachment.</p>
     pub fn options(mut self, input: crate::types::ConnectAttachmentOptions) -> Self {
         self.options = ::std::option::Option::Some(input);
@@ -131,6 +143,10 @@ impl CreateConnectAttachmentInputBuilder {
     ) -> Self {
         self.options = input;
         self
+    }
+    /// <p>Options for creating an attachment.</p>
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::ConnectAttachmentOptions> {
+        &self.options
     }
     /// Appends an item to `tags`.
     ///
@@ -151,6 +167,10 @@ impl CreateConnectAttachmentInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The list of key-value tags associated with the request.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The client token associated with the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -160,6 +180,10 @@ impl CreateConnectAttachmentInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>The client token associated with the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateConnectAttachmentInput`](crate::operation::create_connect_attachment::CreateConnectAttachmentInput).
     pub fn build(

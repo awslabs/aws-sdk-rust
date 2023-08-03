@@ -36,6 +36,10 @@ impl StartReplayFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartReplay as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_replay::builders::StartReplayInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl StartReplayFluentBuilder {
         self.inner = self.inner.set_replay_name(input);
         self
     }
+    /// <p>The name of the replay to start.</p>
+    pub fn get_replay_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_replay_name()
+    }
     /// <p>A description for the replay to start.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -127,6 +135,10 @@ impl StartReplayFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description for the replay to start.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The ARN of the archive to replay events from.</p>
     pub fn event_source_arn(
@@ -144,6 +156,10 @@ impl StartReplayFluentBuilder {
         self.inner = self.inner.set_event_source_arn(input);
         self
     }
+    /// <p>The ARN of the archive to replay events from.</p>
+    pub fn get_event_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_event_source_arn()
+    }
     /// <p>A time stamp for the time to start replaying events. Only events that occurred between the <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
     pub fn event_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.event_start_time(input);
@@ -156,6 +172,10 @@ impl StartReplayFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_event_start_time(input);
         self
+    }
+    /// <p>A time stamp for the time to start replaying events. Only events that occurred between the <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
+    pub fn get_event_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_event_start_time()
     }
     /// <p>A time stamp for the time to stop replaying events. Only events that occurred between the <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
     pub fn event_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -170,6 +190,10 @@ impl StartReplayFluentBuilder {
         self.inner = self.inner.set_event_end_time(input);
         self
     }
+    /// <p>A time stamp for the time to stop replaying events. Only events that occurred between the <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
+    pub fn get_event_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_event_end_time()
+    }
     /// <p>A <code>ReplayDestination</code> object that includes details about the destination for the replay.</p>
     pub fn destination(mut self, input: crate::types::ReplayDestination) -> Self {
         self.inner = self.inner.destination(input);
@@ -182,5 +206,9 @@ impl StartReplayFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_destination(input);
         self
+    }
+    /// <p>A <code>ReplayDestination</code> object that includes details about the destination for the replay.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<crate::types::ReplayDestination> {
+        self.inner.get_destination()
     }
 }

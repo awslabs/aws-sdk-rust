@@ -78,6 +78,12 @@ impl CreateTestSetDiscrepancyReportOutputBuilder {
         self.test_set_discrepancy_report_id = input;
         self
     }
+    /// <p>The unique identifier of the test set discrepancy report to describe.</p>
+    pub fn get_test_set_discrepancy_report_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.test_set_discrepancy_report_id
+    }
     /// <p>The creation date and time for the test set discrepancy report.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
@@ -91,6 +97,10 @@ impl CreateTestSetDiscrepancyReportOutputBuilder {
         self.creation_date_time = input;
         self
     }
+    /// <p>The creation date and time for the test set discrepancy report.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
+    }
     /// <p>The test set Id for the test set discrepancy report.</p>
     pub fn test_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.test_set_id = ::std::option::Option::Some(input.into());
@@ -100,6 +110,10 @@ impl CreateTestSetDiscrepancyReportOutputBuilder {
     pub fn set_test_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.test_set_id = input;
         self
+    }
+    /// <p>The test set Id for the test set discrepancy report.</p>
+    pub fn get_test_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.test_set_id
     }
     /// <p>The target bot for the test set discrepancy report.</p>
     pub fn target(mut self, input: crate::types::TestSetDiscrepancyReportResourceTarget) -> Self {
@@ -113,6 +127,12 @@ impl CreateTestSetDiscrepancyReportOutputBuilder {
     ) -> Self {
         self.target = input;
         self
+    }
+    /// <p>The target bot for the test set discrepancy report.</p>
+    pub fn get_target(
+        &self,
+    ) -> &::std::option::Option<crate::types::TestSetDiscrepancyReportResourceTarget> {
+        &self.target
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

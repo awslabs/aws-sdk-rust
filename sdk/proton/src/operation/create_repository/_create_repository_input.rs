@@ -77,6 +77,10 @@ impl CreateRepositoryInputBuilder {
         self.provider = input;
         self
     }
+    /// <p>The repository provider.</p>
+    pub fn get_provider(&self) -> &::std::option::Option<crate::types::RepositoryProvider> {
+        &self.provider
+    }
     /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -86,6 +90,10 @@ impl CreateRepositoryInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects Proton to your repository provider account. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html">Setting up for Proton</a> in the <i>Proton User Guide</i>.</p>
     pub fn connection_arn(
@@ -103,6 +111,10 @@ impl CreateRepositoryInputBuilder {
         self.connection_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects Proton to your repository provider account. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html">Setting up for Proton</a> in the <i>Proton User Guide</i>.</p>
+    pub fn get_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_arn
+    }
     /// <p>The ARN of your customer Amazon Web Services Key Management Service (Amazon Web Services KMS) key.</p>
     pub fn encryption_key(
         mut self,
@@ -118,6 +130,10 @@ impl CreateRepositoryInputBuilder {
     ) -> Self {
         self.encryption_key = input;
         self
+    }
+    /// <p>The ARN of your customer Amazon Web Services Key Management Service (Amazon Web Services KMS) key.</p>
+    pub fn get_encryption_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encryption_key
     }
     /// Appends an item to `tags`.
     ///
@@ -139,6 +155,11 @@ impl CreateRepositoryInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>An optional list of metadata items that you can associate with the Proton repository. A tag is a key-value pair.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateRepositoryInput`](crate::operation::create_repository::CreateRepositoryInput).
     pub fn build(

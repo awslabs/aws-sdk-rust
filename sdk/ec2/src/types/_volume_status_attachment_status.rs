@@ -54,6 +54,10 @@ impl VolumeStatusAttachmentStatusBuilder {
         self.io_performance = input;
         self
     }
+    /// <p>The maximum IOPS supported by the attached instance.</p>
+    pub fn get_io_performance(&self) -> &::std::option::Option<::std::string::String> {
+        &self.io_performance
+    }
     /// <p>The ID of the attached instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl VolumeStatusAttachmentStatusBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
+    }
+    /// <p>The ID of the attached instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// Consumes the builder and constructs a [`VolumeStatusAttachmentStatus`](crate::types::VolumeStatusAttachmentStatus).
     pub fn build(self) -> crate::types::VolumeStatusAttachmentStatus {

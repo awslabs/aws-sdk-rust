@@ -66,6 +66,10 @@ impl ServiceActionSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The self-service action identifier.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The self-service action name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -76,6 +80,10 @@ impl ServiceActionSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The self-service action name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The self-service action description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -85,6 +93,10 @@ impl ServiceActionSummaryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The self-service action description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The self-service action definition type. For example, <code>SSM_AUTOMATION</code>.</p>
     pub fn definition_type(mut self, input: crate::types::ServiceActionDefinitionType) -> Self {
@@ -98,6 +110,12 @@ impl ServiceActionSummaryBuilder {
     ) -> Self {
         self.definition_type = input;
         self
+    }
+    /// <p>The self-service action definition type. For example, <code>SSM_AUTOMATION</code>.</p>
+    pub fn get_definition_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServiceActionDefinitionType> {
+        &self.definition_type
     }
     /// Consumes the builder and constructs a [`ServiceActionSummary`](crate::types::ServiceActionSummary).
     pub fn build(self) -> crate::types::ServiceActionSummary {

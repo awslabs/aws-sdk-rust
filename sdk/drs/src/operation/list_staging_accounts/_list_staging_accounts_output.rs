@@ -65,6 +65,10 @@ impl ListStagingAccountsOutputBuilder {
         self.accounts = input;
         self
     }
+    /// <p>An array of staging AWS Accounts.</p>
+    pub fn get_accounts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Account>> {
+        &self.accounts
+    }
     /// <p>The token of the next staging Account to retrieve.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl ListStagingAccountsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token of the next staging Account to retrieve.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

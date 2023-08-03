@@ -53,6 +53,10 @@ impl UpdateSubscriberNotificationInputBuilder {
         self.subscriber_id = input;
         self
     }
+    /// <p>The subscription ID for which the subscription notification is specified.</p>
+    pub fn get_subscriber_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subscriber_id
+    }
     /// <p>The configuration for subscriber notification.</p>
     pub fn configuration(mut self, input: crate::types::NotificationConfiguration) -> Self {
         self.configuration = ::std::option::Option::Some(input);
@@ -65,6 +69,12 @@ impl UpdateSubscriberNotificationInputBuilder {
     ) -> Self {
         self.configuration = input;
         self
+    }
+    /// <p>The configuration for subscriber notification.</p>
+    pub fn get_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::NotificationConfiguration> {
+        &self.configuration
     }
     /// Consumes the builder and constructs a [`UpdateSubscriberNotificationInput`](crate::operation::update_subscriber_notification::UpdateSubscriberNotificationInput).
     pub fn build(

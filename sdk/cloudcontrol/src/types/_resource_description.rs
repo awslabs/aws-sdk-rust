@@ -58,6 +58,11 @@ impl ResourceDescriptionBuilder {
         self.identifier = input;
         self
     }
+    /// <p>The primary identifier for the resource.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html">Identifying resources</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
+    }
     /// <p>A list of the resource properties and their current values.</p>
     pub fn properties(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.properties = ::std::option::Option::Some(input.into());
@@ -67,6 +72,10 @@ impl ResourceDescriptionBuilder {
     pub fn set_properties(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.properties = input;
         self
+    }
+    /// <p>A list of the resource properties and their current values.</p>
+    pub fn get_properties(&self) -> &::std::option::Option<::std::string::String> {
+        &self.properties
     }
     /// Consumes the builder and constructs a [`ResourceDescription`](crate::types::ResourceDescription).
     pub fn build(self) -> crate::types::ResourceDescription {

@@ -36,6 +36,12 @@ impl AddCustomAttributesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AddCustomAttributes as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::add_custom_attributes::builders::AddCustomAttributesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl AddCustomAttributesFluentBuilder {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
+    /// <p>The user pool ID for the user pool where you want to add custom attributes.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_pool_id()
+    }
     /// Appends an item to `CustomAttributes`.
     ///
     /// To override the contents of this collection use [`set_custom_attributes`](Self::set_custom_attributes).
@@ -142,5 +152,11 @@ impl AddCustomAttributesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_custom_attributes(input);
         self
+    }
+    /// <p>An array of custom attributes, such as Mutable and Name.</p>
+    pub fn get_custom_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaAttributeType>> {
+        self.inner.get_custom_attributes()
     }
 }

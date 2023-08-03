@@ -51,6 +51,10 @@ impl ScopingBuilder {
         self.excludes = input;
         self
     }
+    /// <p>The property- and tag-based conditions that determine which objects to exclude from the analysis.</p>
+    pub fn get_excludes(&self) -> &::std::option::Option<crate::types::JobScopingBlock> {
+        &self.excludes
+    }
     /// <p>The property- and tag-based conditions that determine which objects to include in the analysis.</p>
     pub fn includes(mut self, input: crate::types::JobScopingBlock) -> Self {
         self.includes = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl ScopingBuilder {
     ) -> Self {
         self.includes = input;
         self
+    }
+    /// <p>The property- and tag-based conditions that determine which objects to include in the analysis.</p>
+    pub fn get_includes(&self) -> &::std::option::Option<crate::types::JobScopingBlock> {
+        &self.includes
     }
     /// Consumes the builder and constructs a [`Scoping`](crate::types::Scoping).
     pub fn build(self) -> crate::types::Scoping {

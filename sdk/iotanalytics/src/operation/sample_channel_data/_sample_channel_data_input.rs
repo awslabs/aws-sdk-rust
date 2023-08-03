@@ -64,6 +64,10 @@ impl SampleChannelDataInputBuilder {
         self.channel_name = input;
         self
     }
+    /// <p>The name of the channel whose message samples are retrieved.</p>
+    pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_name
+    }
     /// <p>The number of sample messages to be retrieved. The limit is 10. The default is also 10.</p>
     pub fn max_messages(mut self, input: i32) -> Self {
         self.max_messages = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl SampleChannelDataInputBuilder {
     pub fn set_max_messages(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_messages = input;
         self
+    }
+    /// <p>The number of sample messages to be retrieved. The limit is 10. The default is also 10.</p>
+    pub fn get_max_messages(&self) -> &::std::option::Option<i32> {
+        &self.max_messages
     }
     /// <p>The start of the time window from which sample messages are retrieved.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -87,6 +95,10 @@ impl SampleChannelDataInputBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The start of the time window from which sample messages are retrieved.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The end of the time window from which sample messages are retrieved.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -99,6 +111,10 @@ impl SampleChannelDataInputBuilder {
     ) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>The end of the time window from which sample messages are retrieved.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// Consumes the builder and constructs a [`SampleChannelDataInput`](crate::operation::sample_channel_data::SampleChannelDataInput).
     pub fn build(

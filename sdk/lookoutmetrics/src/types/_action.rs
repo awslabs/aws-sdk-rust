@@ -53,6 +53,10 @@ impl ActionBuilder {
         self.sns_configuration = input;
         self
     }
+    /// <p>A configuration for an Amazon SNS channel.</p>
+    pub fn get_sns_configuration(&self) -> &::std::option::Option<crate::types::SnsConfiguration> {
+        &self.sns_configuration
+    }
     /// <p>A configuration for an AWS Lambda channel.</p>
     pub fn lambda_configuration(mut self, input: crate::types::LambdaConfiguration) -> Self {
         self.lambda_configuration = ::std::option::Option::Some(input);
@@ -65,6 +69,12 @@ impl ActionBuilder {
     ) -> Self {
         self.lambda_configuration = input;
         self
+    }
+    /// <p>A configuration for an AWS Lambda channel.</p>
+    pub fn get_lambda_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::LambdaConfiguration> {
+        &self.lambda_configuration
     }
     /// Consumes the builder and constructs a [`Action`](crate::types::Action).
     pub fn build(self) -> crate::types::Action {

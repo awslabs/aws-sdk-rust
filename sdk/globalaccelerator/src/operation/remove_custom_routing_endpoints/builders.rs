@@ -36,6 +36,10 @@ impl RemoveCustomRoutingEndpointsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RemoveCustomRoutingEndpoints as a reference.
+    pub fn as_input(&self) -> &crate::operation::remove_custom_routing_endpoints::builders::RemoveCustomRoutingEndpointsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,12 @@ impl RemoveCustomRoutingEndpointsFluentBuilder {
         self.inner = self.inner.set_endpoint_ids(input);
         self
     }
+    /// <p>The IDs for the endpoints. For custom routing accelerators, endpoint IDs are the virtual private cloud (VPC) subnet IDs. </p>
+    pub fn get_endpoint_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_endpoint_ids()
+    }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to remove endpoints from.</p>
     pub fn endpoint_group_arn(
         mut self,
@@ -148,5 +158,9 @@ impl RemoveCustomRoutingEndpointsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_endpoint_group_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the endpoint group to remove endpoints from.</p>
+    pub fn get_endpoint_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_endpoint_group_arn()
     }
 }

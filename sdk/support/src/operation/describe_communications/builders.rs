@@ -43,6 +43,13 @@ impl DescribeCommunicationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeCommunications as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_communications::builders::DescribeCommunicationsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -144,6 +151,10 @@ impl DescribeCommunicationsFluentBuilder {
         self.inner = self.inner.set_case_id(input);
         self
     }
+    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
+    pub fn get_case_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_case_id()
+    }
     /// <p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
     pub fn before_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.before_time(input.into());
@@ -153,6 +164,10 @@ impl DescribeCommunicationsFluentBuilder {
     pub fn set_before_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_before_time(input);
         self
+    }
+    /// <p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
+    pub fn get_before_time(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_before_time()
     }
     /// <p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
     pub fn after_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -164,6 +179,10 @@ impl DescribeCommunicationsFluentBuilder {
         self.inner = self.inner.set_after_time(input);
         self
     }
+    /// <p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
+    pub fn get_after_time(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_after_time()
+    }
     /// <p>A resumption point for pagination.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -174,6 +193,10 @@ impl DescribeCommunicationsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A resumption point for pagination.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return before paginating.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -183,5 +206,9 @@ impl DescribeCommunicationsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return before paginating.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

@@ -40,6 +40,10 @@ impl DeleteEntityTypeInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the entity type to delete.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DeleteEntityTypeInput`](crate::operation::delete_entity_type::DeleteEntityTypeInput).
     pub fn build(
         self,

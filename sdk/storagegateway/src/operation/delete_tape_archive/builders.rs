@@ -36,6 +36,12 @@ impl DeleteTapeArchiveFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteTapeArchive as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_tape_archive::builders::DeleteTapeArchiveInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DeleteTapeArchiveFluentBuilder {
         self.inner = self.inner.set_tape_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the virtual tape to delete from the virtual tape shelf (VTS).</p>
+    pub fn get_tape_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_tape_arn()
+    }
     /// <p>Set to <code>TRUE</code> to delete an archived tape that belongs to a custom pool with tape retention lock. Only archived tapes with tape retention lock set to <code>governance</code> can be deleted. Archived tapes with tape retention lock set to <code>compliance</code> can't be deleted.</p>
     pub fn bypass_governance_retention(mut self, input: bool) -> Self {
         self.inner = self.inner.bypass_governance_retention(input);
@@ -135,5 +145,9 @@ impl DeleteTapeArchiveFluentBuilder {
     pub fn set_bypass_governance_retention(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_bypass_governance_retention(input);
         self
+    }
+    /// <p>Set to <code>TRUE</code> to delete an archived tape that belongs to a custom pool with tape retention lock. Only archived tapes with tape retention lock set to <code>governance</code> can be deleted. Archived tapes with tape retention lock set to <code>compliance</code> can't be deleted.</p>
+    pub fn get_bypass_governance_retention(&self) -> &::std::option::Option<bool> {
+        self.inner.get_bypass_governance_retention()
     }
 }

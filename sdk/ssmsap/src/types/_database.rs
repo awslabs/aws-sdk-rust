@@ -127,6 +127,10 @@ impl DatabaseBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The ID of the application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The ID of the component.</p>
     pub fn component_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_id = ::std::option::Option::Some(input.into());
@@ -136,6 +140,10 @@ impl DatabaseBuilder {
     pub fn set_component_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_id = input;
         self
+    }
+    /// <p>The ID of the component.</p>
+    pub fn get_component_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_id
     }
     /// Appends an item to `credentials`.
     ///
@@ -156,6 +164,12 @@ impl DatabaseBuilder {
         self.credentials = input;
         self
     }
+    /// <p>The credentials of the database.</p>
+    pub fn get_credentials(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>> {
+        &self.credentials
+    }
     /// <p>The ID of the SAP HANA database.</p>
     pub fn database_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_id = ::std::option::Option::Some(input.into());
@@ -165,6 +179,10 @@ impl DatabaseBuilder {
     pub fn set_database_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_id = input;
         self
+    }
+    /// <p>The ID of the SAP HANA database.</p>
+    pub fn get_database_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_id
     }
     /// <p>The name of the database.</p>
     pub fn database_name(
@@ -182,6 +200,10 @@ impl DatabaseBuilder {
         self.database_name = input;
         self
     }
+    /// <p>The name of the database.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>The type of the database.</p>
     pub fn database_type(mut self, input: crate::types::DatabaseType) -> Self {
         self.database_type = ::std::option::Option::Some(input);
@@ -195,6 +217,10 @@ impl DatabaseBuilder {
         self.database_type = input;
         self
     }
+    /// <p>The type of the database.</p>
+    pub fn get_database_type(&self) -> &::std::option::Option<crate::types::DatabaseType> {
+        &self.database_type
+    }
     /// <p>The Amazon Resource Name (ARN) of the database.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -204,6 +230,10 @@ impl DatabaseBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the database.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The status of the database.</p>
     pub fn status(mut self, input: crate::types::DatabaseStatus) -> Self {
@@ -218,6 +248,10 @@ impl DatabaseBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the database.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DatabaseStatus> {
+        &self.status
+    }
     /// <p>The primary host of the database.</p>
     pub fn primary_host(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.primary_host = ::std::option::Option::Some(input.into());
@@ -228,6 +262,10 @@ impl DatabaseBuilder {
         self.primary_host = input;
         self
     }
+    /// <p>The primary host of the database.</p>
+    pub fn get_primary_host(&self) -> &::std::option::Option<::std::string::String> {
+        &self.primary_host
+    }
     /// <p>The SQL port of the database.</p>
     pub fn sql_port(mut self, input: i32) -> Self {
         self.sql_port = ::std::option::Option::Some(input);
@@ -237,6 +275,10 @@ impl DatabaseBuilder {
     pub fn set_sql_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.sql_port = input;
         self
+    }
+    /// <p>The SQL port of the database.</p>
+    pub fn get_sql_port(&self) -> &::std::option::Option<i32> {
+        &self.sql_port
     }
     /// <p>The time at which the database was last updated.</p>
     pub fn last_updated(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -250,6 +292,10 @@ impl DatabaseBuilder {
     ) -> Self {
         self.last_updated = input;
         self
+    }
+    /// <p>The time at which the database was last updated.</p>
+    pub fn get_last_updated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated
     }
     /// Consumes the builder and constructs a [`Database`](crate::types::Database).
     pub fn build(self) -> crate::types::Database {

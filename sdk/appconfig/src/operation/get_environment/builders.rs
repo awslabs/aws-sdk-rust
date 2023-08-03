@@ -36,6 +36,12 @@ impl GetEnvironmentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetEnvironment as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_environment::builders::GetEnvironmentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl GetEnvironmentFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The ID of the application that includes the environment you want to get.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>The ID of the environment that you want to get.</p>
     pub fn environment_id(
         mut self,
@@ -139,5 +149,9 @@ impl GetEnvironmentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_environment_id(input);
         self
+    }
+    /// <p>The ID of the environment that you want to get.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_id()
     }
 }

@@ -68,6 +68,10 @@ impl LambdaVolumeMountBuilder {
         self.source_path = input;
         self
     }
+    /// <p>The path to the physical volume in the file system.</p>
+    pub fn get_source_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_path
+    }
     /// <p>The path to the logical volume in the file system.</p>
     pub fn destination_path(
         mut self,
@@ -84,6 +88,10 @@ impl LambdaVolumeMountBuilder {
         self.destination_path = input;
         self
     }
+    /// <p>The path to the logical volume in the file system.</p>
+    pub fn get_destination_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_path
+    }
     /// <p>The permission to access the volume: read/only (<code>ro</code>) or read/write (<code>rw</code>).</p>
     /// <p>Default: <code>ro</code> </p>
     pub fn permission(mut self, input: crate::types::LambdaFilesystemPermission) -> Self {
@@ -99,6 +107,13 @@ impl LambdaVolumeMountBuilder {
         self.permission = input;
         self
     }
+    /// <p>The permission to access the volume: read/only (<code>ro</code>) or read/write (<code>rw</code>).</p>
+    /// <p>Default: <code>ro</code> </p>
+    pub fn get_permission(
+        &self,
+    ) -> &::std::option::Option<crate::types::LambdaFilesystemPermission> {
+        &self.permission
+    }
     /// <p>Whether or not to add the IoT Greengrass user group as an owner of the volume.</p>
     /// <p>Default: <code>false</code> </p>
     pub fn add_group_owner(mut self, input: bool) -> Self {
@@ -110,6 +125,11 @@ impl LambdaVolumeMountBuilder {
     pub fn set_add_group_owner(mut self, input: ::std::option::Option<bool>) -> Self {
         self.add_group_owner = input;
         self
+    }
+    /// <p>Whether or not to add the IoT Greengrass user group as an owner of the volume.</p>
+    /// <p>Default: <code>false</code> </p>
+    pub fn get_add_group_owner(&self) -> &::std::option::Option<bool> {
+        &self.add_group_owner
     }
     /// Consumes the builder and constructs a [`LambdaVolumeMount`](crate::types::LambdaVolumeMount).
     pub fn build(self) -> crate::types::LambdaVolumeMount {

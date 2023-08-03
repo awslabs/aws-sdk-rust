@@ -72,6 +72,10 @@ impl SamplingTargetDocumentBuilder {
         self.rule_name = input;
         self
     }
+    /// <p>The name of the sampling rule.</p>
+    pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_name
+    }
     /// <p>The percentage of matching requests to instrument, after the reservoir is exhausted.</p>
     pub fn fixed_rate(mut self, input: f64) -> Self {
         self.fixed_rate = ::std::option::Option::Some(input);
@@ -82,6 +86,10 @@ impl SamplingTargetDocumentBuilder {
         self.fixed_rate = input;
         self
     }
+    /// <p>The percentage of matching requests to instrument, after the reservoir is exhausted.</p>
+    pub fn get_fixed_rate(&self) -> &::std::option::Option<f64> {
+        &self.fixed_rate
+    }
     /// <p>The number of requests per second that X-Ray allocated for this service.</p>
     pub fn reservoir_quota(mut self, input: i32) -> Self {
         self.reservoir_quota = ::std::option::Option::Some(input);
@@ -91,6 +99,10 @@ impl SamplingTargetDocumentBuilder {
     pub fn set_reservoir_quota(mut self, input: ::std::option::Option<i32>) -> Self {
         self.reservoir_quota = input;
         self
+    }
+    /// <p>The number of requests per second that X-Ray allocated for this service.</p>
+    pub fn get_reservoir_quota(&self) -> &::std::option::Option<i32> {
+        &self.reservoir_quota
     }
     /// <p>When the reservoir quota expires.</p>
     pub fn reservoir_quota_ttl(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -105,6 +117,10 @@ impl SamplingTargetDocumentBuilder {
         self.reservoir_quota_ttl = input;
         self
     }
+    /// <p>When the reservoir quota expires.</p>
+    pub fn get_reservoir_quota_ttl(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.reservoir_quota_ttl
+    }
     /// <p>The number of seconds for the service to wait before getting sampling targets again.</p>
     pub fn interval(mut self, input: i32) -> Self {
         self.interval = ::std::option::Option::Some(input);
@@ -114,6 +130,10 @@ impl SamplingTargetDocumentBuilder {
     pub fn set_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.interval = input;
         self
+    }
+    /// <p>The number of seconds for the service to wait before getting sampling targets again.</p>
+    pub fn get_interval(&self) -> &::std::option::Option<i32> {
+        &self.interval
     }
     /// Consumes the builder and constructs a [`SamplingTargetDocument`](crate::types::SamplingTargetDocument).
     pub fn build(self) -> crate::types::SamplingTargetDocument {

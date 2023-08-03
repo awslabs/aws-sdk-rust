@@ -36,6 +36,12 @@ impl GetTaskTemplateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetTaskTemplate as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_task_template::builders::GetTaskTemplateInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl GetTaskTemplateFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>A unique identifier for the task template.</p>
     pub fn task_template_id(
         mut self,
@@ -142,6 +152,10 @@ impl GetTaskTemplateFluentBuilder {
         self.inner = self.inner.set_task_template_id(input);
         self
     }
+    /// <p>A unique identifier for the task template.</p>
+    pub fn get_task_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_task_template_id()
+    }
     /// <p>The system generated version of a task template that is associated with a task, when the task is created.</p>
     pub fn snapshot_version(
         mut self,
@@ -157,5 +171,9 @@ impl GetTaskTemplateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_snapshot_version(input);
         self
+    }
+    /// <p>The system generated version of a task template that is associated with a task, when the task is created.</p>
+    pub fn get_snapshot_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_snapshot_version()
     }
 }

@@ -67,6 +67,12 @@ impl GetActiveNamesOutputBuilder {
         self.active_names = input;
         self
     }
+    /// <p>The list of active names returned by the get active names request.</p>
+    pub fn get_active_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.active_names
+    }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetActiveNames</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
@@ -86,6 +92,12 @@ impl GetActiveNamesOutputBuilder {
     ) -> Self {
         self.next_page_token = input;
         self
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>To get the next page of results, perform another <code>GetActiveNames</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_page_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -36,6 +36,10 @@ impl ListFeaturesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListFeatures as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_features::builders::ListFeaturesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +133,10 @@ impl ListFeaturesFluentBuilder {
         self.inner = self.inner.set_project(input);
         self
     }
+    /// <p>The name or ARN of the project to return the feature list from.</p>
+    pub fn get_project(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project()
+    }
     /// <p>The maximum number of results to include in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -139,6 +147,10 @@ impl ListFeaturesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to include in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListFeatures</code> operation.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -148,5 +160,9 @@ impl ListFeaturesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListFeatures</code> operation.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

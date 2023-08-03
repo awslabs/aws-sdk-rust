@@ -49,6 +49,10 @@ impl LogConfigurationForChannelBuilder {
         self.log_types = input;
         self
     }
+    /// <p>The log types.</p>
+    pub fn get_log_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogType>> {
+        &self.log_types
+    }
     /// Consumes the builder and constructs a [`LogConfigurationForChannel`](crate::types::LogConfigurationForChannel).
     pub fn build(self) -> crate::types::LogConfigurationForChannel {
         crate::types::LogConfigurationForChannel {

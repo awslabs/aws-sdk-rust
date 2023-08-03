@@ -71,6 +71,12 @@ impl NotebookInstanceLifecycleConfigSummaryBuilder {
         self.notebook_instance_lifecycle_config_name = input;
         self
     }
+    /// <p>The name of the lifecycle configuration.</p>
+    pub fn get_notebook_instance_lifecycle_config_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.notebook_instance_lifecycle_config_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the lifecycle configuration.</p>
     pub fn notebook_instance_lifecycle_config_arn(
         mut self,
@@ -87,6 +93,12 @@ impl NotebookInstanceLifecycleConfigSummaryBuilder {
         self.notebook_instance_lifecycle_config_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the lifecycle configuration.</p>
+    pub fn get_notebook_instance_lifecycle_config_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.notebook_instance_lifecycle_config_arn
+    }
     /// <p>A timestamp that tells when the lifecycle configuration was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -100,6 +112,10 @@ impl NotebookInstanceLifecycleConfigSummaryBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>A timestamp that tells when the lifecycle configuration was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>A timestamp that tells when the lifecycle configuration was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -112,6 +128,10 @@ impl NotebookInstanceLifecycleConfigSummaryBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>A timestamp that tells when the lifecycle configuration was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// Consumes the builder and constructs a [`NotebookInstanceLifecycleConfigSummary`](crate::types::NotebookInstanceLifecycleConfigSummary).
     pub fn build(self) -> crate::types::NotebookInstanceLifecycleConfigSummary {

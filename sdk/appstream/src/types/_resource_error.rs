@@ -59,6 +59,10 @@ impl ResourceErrorBuilder {
         self.error_code = input;
         self
     }
+    /// <p>The error code.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<crate::types::FleetErrorCode> {
+        &self.error_code
+    }
     /// <p>The error message.</p>
     pub fn error_message(
         mut self,
@@ -75,6 +79,10 @@ impl ResourceErrorBuilder {
         self.error_message = input;
         self
     }
+    /// <p>The error message.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
+    }
     /// <p>The time the error occurred.</p>
     pub fn error_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.error_timestamp = ::std::option::Option::Some(input);
@@ -87,6 +95,10 @@ impl ResourceErrorBuilder {
     ) -> Self {
         self.error_timestamp = input;
         self
+    }
+    /// <p>The time the error occurred.</p>
+    pub fn get_error_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.error_timestamp
     }
     /// Consumes the builder and constructs a [`ResourceError`](crate::types::ResourceError).
     pub fn build(self) -> crate::types::ResourceError {

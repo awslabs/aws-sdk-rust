@@ -36,6 +36,12 @@ impl BatchGetPartitionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchGetPartition as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_get_partition::builders::BatchGetPartitionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl BatchGetPartitionFluentBuilder {
         self.inner = self.inner.set_catalog_id(input);
         self
     }
+    /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_catalog_id()
+    }
     /// <p>The name of the catalog database where the partitions reside.</p>
     pub fn database_name(
         mut self,
@@ -142,6 +152,10 @@ impl BatchGetPartitionFluentBuilder {
         self.inner = self.inner.set_database_name(input);
         self
     }
+    /// <p>The name of the catalog database where the partitions reside.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_database_name()
+    }
     /// <p>The name of the partitions' table.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.table_name(input.into());
@@ -151,6 +165,10 @@ impl BatchGetPartitionFluentBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_table_name(input);
         self
+    }
+    /// <p>The name of the partitions' table.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_table_name()
     }
     /// Appends an item to `PartitionsToGet`.
     ///
@@ -168,5 +186,11 @@ impl BatchGetPartitionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_partitions_to_get(input);
         self
+    }
+    /// <p>A list of partition values identifying the partitions to retrieve.</p>
+    pub fn get_partitions_to_get(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PartitionValueList>> {
+        self.inner.get_partitions_to_get()
     }
 }

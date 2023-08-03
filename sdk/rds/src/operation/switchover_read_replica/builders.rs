@@ -36,6 +36,13 @@ impl SwitchoverReadReplicaFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SwitchoverReadReplica as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::switchover_read_replica::builders::SwitchoverReadReplicaInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -139,5 +146,13 @@ impl SwitchoverReadReplicaFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_db_instance_identifier(input);
         self
+    }
+    /// <p>The DB instance identifier of the current standby database. This value is stored as a lowercase string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match the identiﬁer of an existing Oracle read replica DB instance.</p> </li>
+    /// </ul>
+    pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_instance_identifier()
     }
 }

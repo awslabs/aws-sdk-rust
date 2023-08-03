@@ -48,6 +48,10 @@ impl ParentBuilder {
         self.trial_name = input;
         self
     }
+    /// <p>The name of the trial.</p>
+    pub fn get_trial_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trial_name
+    }
     /// <p>The name of the experiment.</p>
     pub fn experiment_name(
         mut self,
@@ -63,6 +67,10 @@ impl ParentBuilder {
     ) -> Self {
         self.experiment_name = input;
         self
+    }
+    /// <p>The name of the experiment.</p>
+    pub fn get_experiment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.experiment_name
     }
     /// Consumes the builder and constructs a [`Parent`](crate::types::Parent).
     pub fn build(self) -> crate::types::Parent {

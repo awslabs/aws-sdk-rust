@@ -52,6 +52,12 @@ impl DescribeTrustedAdvisorCheckSummariesInputBuilder {
         self.check_ids = input;
         self
     }
+    /// <p>The IDs of the Trusted Advisor checks.</p>
+    pub fn get_check_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::option::Option<::std::string::String>>> {
+        &self.check_ids
+    }
     /// Consumes the builder and constructs a [`DescribeTrustedAdvisorCheckSummariesInput`](crate::operation::describe_trusted_advisor_check_summaries::DescribeTrustedAdvisorCheckSummariesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_trusted_advisor_check_summaries::DescribeTrustedAdvisorCheckSummariesInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

@@ -48,6 +48,10 @@ impl EnvironmentLinkBuilder {
         self.link_name = input;
         self
     }
+    /// <p>The name of the link.</p>
+    pub fn get_link_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.link_name
+    }
     /// <p>The name of the linked environment (the dependency).</p>
     pub fn environment_name(
         mut self,
@@ -63,6 +67,10 @@ impl EnvironmentLinkBuilder {
     ) -> Self {
         self.environment_name = input;
         self
+    }
+    /// <p>The name of the linked environment (the dependency).</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_name
     }
     /// Consumes the builder and constructs a [`EnvironmentLink`](crate::types::EnvironmentLink).
     pub fn build(self) -> crate::types::EnvironmentLink {

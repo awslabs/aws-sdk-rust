@@ -144,6 +144,10 @@ impl ContactDataBuilder {
         self.contact_id = input;
         self
     }
+    /// <p>UUID of a contact.</p>
+    pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_id
+    }
     /// <p>ARN of a mission profile.</p>
     pub fn mission_profile_arn(
         mut self,
@@ -159,6 +163,10 @@ impl ContactDataBuilder {
     ) -> Self {
         self.mission_profile_arn = input;
         self
+    }
+    /// <p>ARN of a mission profile.</p>
+    pub fn get_mission_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mission_profile_arn
     }
     /// <p>ARN of a satellite.</p>
     pub fn satellite_arn(
@@ -176,6 +184,10 @@ impl ContactDataBuilder {
         self.satellite_arn = input;
         self
     }
+    /// <p>ARN of a satellite.</p>
+    pub fn get_satellite_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.satellite_arn
+    }
     /// <p>Start time of a contact in UTC.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -188,6 +200,10 @@ impl ContactDataBuilder {
     ) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>Start time of a contact in UTC.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p>End time of a contact in UTC.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -202,6 +218,10 @@ impl ContactDataBuilder {
         self.end_time = input;
         self
     }
+    /// <p>End time of a contact in UTC.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
     pub fn pre_pass_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.pre_pass_start_time = ::std::option::Option::Some(input);
@@ -215,6 +235,10 @@ impl ContactDataBuilder {
         self.pre_pass_start_time = input;
         self
     }
+    /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
+    pub fn get_pre_pass_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.pre_pass_start_time
+    }
     /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
     pub fn post_pass_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.post_pass_end_time = ::std::option::Option::Some(input);
@@ -227,6 +251,10 @@ impl ContactDataBuilder {
     ) -> Self {
         self.post_pass_end_time = input;
         self
+    }
+    /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
+    pub fn get_post_pass_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.post_pass_end_time
     }
     /// <p>Name of a ground station.</p>
     pub fn ground_station(
@@ -244,6 +272,10 @@ impl ContactDataBuilder {
         self.ground_station = input;
         self
     }
+    /// <p>Name of a ground station.</p>
+    pub fn get_ground_station(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ground_station
+    }
     /// <p>Status of a contact.</p>
     pub fn contact_status(mut self, input: crate::types::ContactStatus) -> Self {
         self.contact_status = ::std::option::Option::Some(input);
@@ -256,6 +288,10 @@ impl ContactDataBuilder {
     ) -> Self {
         self.contact_status = input;
         self
+    }
+    /// <p>Status of a contact.</p>
+    pub fn get_contact_status(&self) -> &::std::option::Option<crate::types::ContactStatus> {
+        &self.contact_status
     }
     /// <p>Error message of a contact.</p>
     pub fn error_message(
@@ -273,6 +309,10 @@ impl ContactDataBuilder {
         self.error_message = input;
         self
     }
+    /// <p>Error message of a contact.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
+    }
     /// <p>Maximum elevation angle of a contact.</p>
     pub fn maximum_elevation(mut self, input: crate::types::Elevation) -> Self {
         self.maximum_elevation = ::std::option::Option::Some(input);
@@ -286,6 +326,10 @@ impl ContactDataBuilder {
         self.maximum_elevation = input;
         self
     }
+    /// <p>Maximum elevation angle of a contact.</p>
+    pub fn get_maximum_elevation(&self) -> &::std::option::Option<crate::types::Elevation> {
+        &self.maximum_elevation
+    }
     /// <p>Region of a contact.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
@@ -295,6 +339,10 @@ impl ContactDataBuilder {
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
+    }
+    /// <p>Region of a contact.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -320,6 +368,14 @@ impl ContactDataBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Tags assigned to a contact.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`ContactData`](crate::types::ContactData).
     pub fn build(self) -> crate::types::ContactData {

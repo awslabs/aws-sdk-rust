@@ -48,6 +48,10 @@ impl NotificationConfigurationBuilder {
         self.topic_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that identifies the topic. </p>
+    pub fn get_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_arn
+    }
     /// <p>The current state of the topic. A value of “active” means that notifications will be sent to the topic. A value of “inactive” means that notifications will not be sent to the topic.</p>
     pub fn topic_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_status = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl NotificationConfigurationBuilder {
     pub fn set_topic_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.topic_status = input;
         self
+    }
+    /// <p>The current state of the topic. A value of “active” means that notifications will be sent to the topic. A value of “inactive” means that notifications will not be sent to the topic.</p>
+    pub fn get_topic_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_status
     }
     /// Consumes the builder and constructs a [`NotificationConfiguration`](crate::types::NotificationConfiguration).
     pub fn build(self) -> crate::types::NotificationConfiguration {

@@ -53,6 +53,10 @@ impl LifecycleBuilder {
         self.move_to_cold_storage_after_days = input;
         self
     }
+    /// <p>Specifies the number of days after creation that a recovery point is moved to cold storage.</p>
+    pub fn get_move_to_cold_storage_after_days(&self) -> &::std::option::Option<i64> {
+        &self.move_to_cold_storage_after_days
+    }
     /// <p>Specifies the number of days after creation that a recovery point is deleted. Must be greater than 90 days plus <code>MoveToColdStorageAfterDays</code>.</p>
     pub fn delete_after_days(mut self, input: i64) -> Self {
         self.delete_after_days = ::std::option::Option::Some(input);
@@ -62,6 +66,10 @@ impl LifecycleBuilder {
     pub fn set_delete_after_days(mut self, input: ::std::option::Option<i64>) -> Self {
         self.delete_after_days = input;
         self
+    }
+    /// <p>Specifies the number of days after creation that a recovery point is deleted. Must be greater than 90 days plus <code>MoveToColdStorageAfterDays</code>.</p>
+    pub fn get_delete_after_days(&self) -> &::std::option::Option<i64> {
+        &self.delete_after_days
     }
     /// Consumes the builder and constructs a [`Lifecycle`](crate::types::Lifecycle).
     pub fn build(self) -> crate::types::Lifecycle {

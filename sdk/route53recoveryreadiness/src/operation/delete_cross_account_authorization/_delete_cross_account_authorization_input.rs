@@ -45,6 +45,10 @@ impl DeleteCrossAccountAuthorizationInputBuilder {
         self.cross_account_authorization = input;
         self
     }
+    /// <p>The cross-account authorization.</p>
+    pub fn get_cross_account_authorization(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cross_account_authorization
+    }
     /// Consumes the builder and constructs a [`DeleteCrossAccountAuthorizationInput`](crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationInput).
     pub fn build(
         self,

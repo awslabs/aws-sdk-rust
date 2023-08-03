@@ -59,6 +59,10 @@ impl AntennaDownlinkDemodDecodeConfigBuilder {
         self.spectrum_config = input;
         self
     }
+    /// <p>Information about the spectral <code>Config</code>.</p>
+    pub fn get_spectrum_config(&self) -> &::std::option::Option<crate::types::SpectrumConfig> {
+        &self.spectrum_config
+    }
     /// <p>Information about the demodulation <code>Config</code>.</p>
     pub fn demodulation_config(mut self, input: crate::types::DemodulationConfig) -> Self {
         self.demodulation_config = ::std::option::Option::Some(input);
@@ -72,6 +76,12 @@ impl AntennaDownlinkDemodDecodeConfigBuilder {
         self.demodulation_config = input;
         self
     }
+    /// <p>Information about the demodulation <code>Config</code>.</p>
+    pub fn get_demodulation_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::DemodulationConfig> {
+        &self.demodulation_config
+    }
     /// <p>Information about the decode <code>Config</code>.</p>
     pub fn decode_config(mut self, input: crate::types::DecodeConfig) -> Self {
         self.decode_config = ::std::option::Option::Some(input);
@@ -84,6 +94,10 @@ impl AntennaDownlinkDemodDecodeConfigBuilder {
     ) -> Self {
         self.decode_config = input;
         self
+    }
+    /// <p>Information about the decode <code>Config</code>.</p>
+    pub fn get_decode_config(&self) -> &::std::option::Option<crate::types::DecodeConfig> {
+        &self.decode_config
     }
     /// Consumes the builder and constructs a [`AntennaDownlinkDemodDecodeConfig`](crate::types::AntennaDownlinkDemodDecodeConfig).
     pub fn build(self) -> crate::types::AntennaDownlinkDemodDecodeConfig {

@@ -69,6 +69,10 @@ impl EnvironmentInfoDescriptionBuilder {
         self.info_type = input;
         self
     }
+    /// <p>The type of information retrieved.</p>
+    pub fn get_info_type(&self) -> &::std::option::Option<crate::types::EnvironmentInfoType> {
+        &self.info_type
+    }
     /// <p>The Amazon EC2 Instance ID for this information.</p>
     pub fn ec2_instance_id(
         mut self,
@@ -85,6 +89,10 @@ impl EnvironmentInfoDescriptionBuilder {
         self.ec2_instance_id = input;
         self
     }
+    /// <p>The Amazon EC2 Instance ID for this information.</p>
+    pub fn get_ec2_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ec2_instance_id
+    }
     /// <p>The time stamp when this information was retrieved.</p>
     pub fn sample_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.sample_timestamp = ::std::option::Option::Some(input);
@@ -98,6 +106,10 @@ impl EnvironmentInfoDescriptionBuilder {
         self.sample_timestamp = input;
         self
     }
+    /// <p>The time stamp when this information was retrieved.</p>
+    pub fn get_sample_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.sample_timestamp
+    }
     /// <p>The retrieved information. Currently contains a presigned Amazon S3 URL. The files are deleted after 15 minutes.</p>
     /// <p>Anyone in possession of this URL can access the files before they are deleted. Make the URL available only to trusted parties.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -109,6 +121,11 @@ impl EnvironmentInfoDescriptionBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>The retrieved information. Currently contains a presigned Amazon S3 URL. The files are deleted after 15 minutes.</p>
+    /// <p>Anyone in possession of this URL can access the files before they are deleted. Make the URL available only to trusted parties.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`EnvironmentInfoDescription`](crate::types::EnvironmentInfoDescription).
     pub fn build(self) -> crate::types::EnvironmentInfoDescription {

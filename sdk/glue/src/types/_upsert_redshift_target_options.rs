@@ -62,6 +62,10 @@ impl UpsertRedshiftTargetOptionsBuilder {
         self.table_location = input;
         self
     }
+    /// <p>The physical location of the Redshift table.</p>
+    pub fn get_table_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_location
+    }
     /// <p>The name of the connection to use to write to Redshift.</p>
     pub fn connection_name(
         mut self,
@@ -77,6 +81,10 @@ impl UpsertRedshiftTargetOptionsBuilder {
     ) -> Self {
         self.connection_name = input;
         self
+    }
+    /// <p>The name of the connection to use to write to Redshift.</p>
+    pub fn get_connection_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_name
     }
     /// Appends an item to `upsert_keys`.
     ///
@@ -96,6 +104,12 @@ impl UpsertRedshiftTargetOptionsBuilder {
     ) -> Self {
         self.upsert_keys = input;
         self
+    }
+    /// <p>The keys used to determine whether to perform an update or insert.</p>
+    pub fn get_upsert_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.upsert_keys
     }
     /// Consumes the builder and constructs a [`UpsertRedshiftTargetOptions`](crate::types::UpsertRedshiftTargetOptions).
     pub fn build(self) -> crate::types::UpsertRedshiftTargetOptions {

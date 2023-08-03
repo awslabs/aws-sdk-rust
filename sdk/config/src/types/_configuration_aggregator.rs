@@ -102,6 +102,12 @@ impl ConfigurationAggregatorBuilder {
         self.configuration_aggregator_name = input;
         self
     }
+    /// <p>The name of the aggregator.</p>
+    pub fn get_configuration_aggregator_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_aggregator_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the aggregator.</p>
     pub fn configuration_aggregator_arn(
         mut self,
@@ -117,6 +123,12 @@ impl ConfigurationAggregatorBuilder {
     ) -> Self {
         self.configuration_aggregator_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the aggregator.</p>
+    pub fn get_configuration_aggregator_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_aggregator_arn
     }
     /// Appends an item to `account_aggregation_sources`.
     ///
@@ -140,6 +152,12 @@ impl ConfigurationAggregatorBuilder {
         self.account_aggregation_sources = input;
         self
     }
+    /// <p>Provides a list of source accounts and regions to be aggregated.</p>
+    pub fn get_account_aggregation_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountAggregationSource>> {
+        &self.account_aggregation_sources
+    }
     /// <p>Provides an organization and list of regions to be aggregated.</p>
     pub fn organization_aggregation_source(
         mut self,
@@ -156,6 +174,12 @@ impl ConfigurationAggregatorBuilder {
         self.organization_aggregation_source = input;
         self
     }
+    /// <p>Provides an organization and list of regions to be aggregated.</p>
+    pub fn get_organization_aggregation_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::OrganizationAggregationSource> {
+        &self.organization_aggregation_source
+    }
     /// <p>The time stamp when the configuration aggregator was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -168,6 +192,10 @@ impl ConfigurationAggregatorBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The time stamp when the configuration aggregator was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The time of the last update.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -182,6 +210,10 @@ impl ConfigurationAggregatorBuilder {
         self.last_updated_time = input;
         self
     }
+    /// <p>The time of the last update.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
+    }
     /// <p>Amazon Web Services service that created the configuration aggregator.</p>
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by = ::std::option::Option::Some(input.into());
@@ -191,6 +223,10 @@ impl ConfigurationAggregatorBuilder {
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_by = input;
         self
+    }
+    /// <p>Amazon Web Services service that created the configuration aggregator.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_by
     }
     /// Consumes the builder and constructs a [`ConfigurationAggregator`](crate::types::ConfigurationAggregator).
     pub fn build(self) -> crate::types::ConfigurationAggregator {

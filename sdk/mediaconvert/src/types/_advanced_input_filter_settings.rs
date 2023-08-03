@@ -53,6 +53,12 @@ impl AdvancedInputFilterSettingsBuilder {
         self.add_texture = input;
         self
     }
+    /// Add texture and detail to areas of your input video content that were lost after applying the Advanced input filter. To adaptively add texture and reduce softness: Choose Enabled. To not add any texture: Keep the default value, Disabled. We recommend that you choose Disabled for input video content that doesn't have texture, including screen recordings, computer graphics, or cartoons.
+    pub fn get_add_texture(
+        &self,
+    ) -> &::std::option::Option<crate::types::AdvancedInputFilterAddTexture> {
+        &self.add_texture
+    }
     /// Optionally specify the amount of sharpening to apply when you use the Advanced input filter. Sharpening adds contrast to the edges of your video content and can reduce softness. To apply no sharpening: Keep the default value, Off. To apply a minimal amount of sharpening choose Low, or for the maximum choose High.
     pub fn sharpening(mut self, input: crate::types::AdvancedInputFilterSharpen) -> Self {
         self.sharpening = ::std::option::Option::Some(input);
@@ -65,6 +71,12 @@ impl AdvancedInputFilterSettingsBuilder {
     ) -> Self {
         self.sharpening = input;
         self
+    }
+    /// Optionally specify the amount of sharpening to apply when you use the Advanced input filter. Sharpening adds contrast to the edges of your video content and can reduce softness. To apply no sharpening: Keep the default value, Off. To apply a minimal amount of sharpening choose Low, or for the maximum choose High.
+    pub fn get_sharpening(
+        &self,
+    ) -> &::std::option::Option<crate::types::AdvancedInputFilterSharpen> {
+        &self.sharpening
     }
     /// Consumes the builder and constructs a [`AdvancedInputFilterSettings`](crate::types::AdvancedInputFilterSettings).
     pub fn build(self) -> crate::types::AdvancedInputFilterSettings {

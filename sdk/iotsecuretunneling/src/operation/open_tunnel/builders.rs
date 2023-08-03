@@ -37,6 +37,10 @@ impl OpenTunnelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the OpenTunnel as a reference.
+    pub fn as_input(&self) -> &crate::operation::open_tunnel::builders::OpenTunnelInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl OpenTunnelFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>A short text description of the tunnel. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -136,6 +144,10 @@ impl OpenTunnelFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>A collection of tag metadata.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>The destination configuration for the OpenTunnel request.</p>
     pub fn destination_config(mut self, input: crate::types::DestinationConfig) -> Self {
         self.inner = self.inner.destination_config(input);
@@ -149,6 +161,12 @@ impl OpenTunnelFluentBuilder {
         self.inner = self.inner.set_destination_config(input);
         self
     }
+    /// <p>The destination configuration for the OpenTunnel request.</p>
+    pub fn get_destination_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::DestinationConfig> {
+        self.inner.get_destination_config()
+    }
     /// <p>Timeout configuration for a tunnel.</p>
     pub fn timeout_config(mut self, input: crate::types::TimeoutConfig) -> Self {
         self.inner = self.inner.timeout_config(input);
@@ -161,5 +179,9 @@ impl OpenTunnelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_timeout_config(input);
         self
+    }
+    /// <p>Timeout configuration for a tunnel.</p>
+    pub fn get_timeout_config(&self) -> &::std::option::Option<crate::types::TimeoutConfig> {
+        self.inner.get_timeout_config()
     }
 }

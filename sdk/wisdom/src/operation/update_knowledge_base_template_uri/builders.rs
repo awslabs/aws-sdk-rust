@@ -36,6 +36,10 @@ impl UpdateKnowledgeBaseTemplateUriFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateKnowledgeBaseTemplateUri as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_knowledge_base_template_uri::builders::UpdateKnowledgeBaseTemplateUriInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl UpdateKnowledgeBaseTemplateUriFluentBuilder {
         self.inner = self.inner.set_knowledge_base_id(input);
         self
     }
+    /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_knowledge_base_id()
+    }
     /// <p>The template URI to update.</p>
     pub fn template_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_uri(input.into());
@@ -115,5 +123,9 @@ impl UpdateKnowledgeBaseTemplateUriFluentBuilder {
     pub fn set_template_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_uri(input);
         self
+    }
+    /// <p>The template URI to update.</p>
+    pub fn get_template_uri(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_uri()
     }
 }

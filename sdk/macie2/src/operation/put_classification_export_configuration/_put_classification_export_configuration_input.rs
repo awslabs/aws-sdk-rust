@@ -45,6 +45,12 @@ impl PutClassificationExportConfigurationInputBuilder {
         self.configuration = input;
         self
     }
+    /// <p>The location to store data classification results in, and the encryption settings to use when storing results in that location.</p>
+    pub fn get_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ClassificationExportConfiguration> {
+        &self.configuration
+    }
     /// Consumes the builder and constructs a [`PutClassificationExportConfigurationInput`](crate::operation::put_classification_export_configuration::PutClassificationExportConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_classification_export_configuration::PutClassificationExportConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

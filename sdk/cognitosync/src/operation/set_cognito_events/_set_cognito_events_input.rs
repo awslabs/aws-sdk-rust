@@ -63,6 +63,10 @@ impl SetCognitoEventsInputBuilder {
         self.identity_pool_id = input;
         self
     }
+    /// <p>The Cognito Identity Pool to use when configuring Cognito Events</p>
+    pub fn get_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_pool_id
+    }
     /// Adds a key-value pair to `events`.
     ///
     /// To override the contents of this collection use [`set_events`](Self::set_events).
@@ -87,6 +91,14 @@ impl SetCognitoEventsInputBuilder {
     ) -> Self {
         self.events = input;
         self
+    }
+    /// <p>The events to configure</p>
+    pub fn get_events(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.events
     }
     /// Consumes the builder and constructs a [`SetCognitoEventsInput`](crate::operation::set_cognito_events::SetCognitoEventsInput).
     pub fn build(

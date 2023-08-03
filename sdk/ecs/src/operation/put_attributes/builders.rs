@@ -36,6 +36,12 @@ impl PutAttributesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutAttributes as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_attributes::builders::PutAttributesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl PutAttributesFluentBuilder {
         self.inner = self.inner.set_cluster(input);
         self
     }
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that contains the resource to apply attributes. If you do not specify a cluster, the default cluster is assumed.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster()
+    }
     /// Appends an item to `attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
@@ -134,5 +144,11 @@ impl PutAttributesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
+    }
+    /// <p>The attributes to apply to your resource. You can specify up to 10 custom attributes for each resource. You can specify up to 10 attributes in a single call.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+        self.inner.get_attributes()
     }
 }

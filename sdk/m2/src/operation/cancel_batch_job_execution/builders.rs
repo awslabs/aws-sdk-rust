@@ -37,6 +37,13 @@ impl CancelBatchJobExecutionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CancelBatchJobExecution as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::cancel_batch_job_execution::builders::CancelBatchJobExecutionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl CancelBatchJobExecutionFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The unique identifier of the application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>The unique identifier of the batch job execution.</p>
     pub fn execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.execution_id(input.into());
@@ -142,5 +153,9 @@ impl CancelBatchJobExecutionFluentBuilder {
     pub fn set_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_execution_id(input);
         self
+    }
+    /// <p>The unique identifier of the batch job execution.</p>
+    pub fn get_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_execution_id()
     }
 }

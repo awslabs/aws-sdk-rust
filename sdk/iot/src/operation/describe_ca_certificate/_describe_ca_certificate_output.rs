@@ -66,6 +66,12 @@ impl DescribeCaCertificateOutputBuilder {
         self.certificate_description = input;
         self
     }
+    /// <p>The CA certificate description.</p>
+    pub fn get_certificate_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::CaCertificateDescription> {
+        &self.certificate_description
+    }
     /// <p>Information about the registration configuration.</p>
     pub fn registration_config(mut self, input: crate::types::RegistrationConfig) -> Self {
         self.registration_config = ::std::option::Option::Some(input);
@@ -78,6 +84,12 @@ impl DescribeCaCertificateOutputBuilder {
     ) -> Self {
         self.registration_config = input;
         self
+    }
+    /// <p>Information about the registration configuration.</p>
+    pub fn get_registration_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::RegistrationConfig> {
+        &self.registration_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

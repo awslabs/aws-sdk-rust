@@ -63,6 +63,10 @@ impl UpdateConnectClientAddInInputBuilder {
         self.add_in_id = input;
         self
     }
+    /// <p>The identifier of the client add-in to update.</p>
+    pub fn get_add_in_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.add_in_id
+    }
     /// <p>The directory identifier for which the client add-in is configured.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl UpdateConnectClientAddInInputBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>The directory identifier for which the client add-in is configured.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// <p>The name of the client add-in.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -83,6 +91,10 @@ impl UpdateConnectClientAddInInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the client add-in.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The endpoint URL of the Amazon Connect client add-in.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
@@ -92,6 +104,10 @@ impl UpdateConnectClientAddInInputBuilder {
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
+    }
+    /// <p>The endpoint URL of the Amazon Connect client add-in.</p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
     }
     /// Consumes the builder and constructs a [`UpdateConnectClientAddInInput`](crate::operation::update_connect_client_add_in::UpdateConnectClientAddInInput).
     pub fn build(

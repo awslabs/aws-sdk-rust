@@ -36,6 +36,10 @@ impl ListProblemsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListProblems as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_problems::builders::ListProblemsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +139,10 @@ impl ListProblemsFluentBuilder {
         self.inner = self.inner.set_resource_group_name(input);
         self
     }
+    /// <p>The name of the resource group.</p>
+    pub fn get_resource_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_group_name()
+    }
     /// <p>The time when the problem was detected, in epoch seconds. If you don't specify a time frame for the request, problems within the past seven days are returned.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
@@ -147,6 +155,10 @@ impl ListProblemsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
+    }
+    /// <p>The time when the problem was detected, in epoch seconds. If you don't specify a time frame for the request, problems within the past seven days are returned.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_time()
     }
     /// <p>The time when the problem ended, in epoch seconds. If not specified, problems within the past seven days are returned.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -161,6 +173,10 @@ impl ListProblemsFluentBuilder {
         self.inner = self.inner.set_end_time(input);
         self
     }
+    /// <p>The time when the problem ended, in epoch seconds. If not specified, problems within the past seven days are returned.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_time()
+    }
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -171,6 +187,10 @@ impl ListProblemsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token to request the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -180,6 +200,10 @@ impl ListProblemsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token to request the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p> The name of the component. </p>
     pub fn component_name(
@@ -196,5 +220,9 @@ impl ListProblemsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_component_name(input);
         self
+    }
+    /// <p> The name of the component. </p>
+    pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_component_name()
     }
 }

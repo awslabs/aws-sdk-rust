@@ -71,6 +71,10 @@ impl SalesforceStandardObjectConfigurationBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the standard object.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::SalesforceStandardObjectName> {
+        &self.name
+    }
     /// <p>The name of the field in the standard object table that contains the document contents.</p>
     pub fn document_data_field_name(
         mut self,
@@ -87,6 +91,10 @@ impl SalesforceStandardObjectConfigurationBuilder {
         self.document_data_field_name = input;
         self
     }
+    /// <p>The name of the field in the standard object table that contains the document contents.</p>
+    pub fn get_document_data_field_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_data_field_name
+    }
     /// <p>The name of the field in the standard object table that contains the document title.</p>
     pub fn document_title_field_name(
         mut self,
@@ -102,6 +110,10 @@ impl SalesforceStandardObjectConfigurationBuilder {
     ) -> Self {
         self.document_title_field_name = input;
         self
+    }
+    /// <p>The name of the field in the standard object table that contains the document title.</p>
+    pub fn get_document_title_field_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_title_field_name
     }
     /// Appends an item to `field_mappings`.
     ///
@@ -121,6 +133,12 @@ impl SalesforceStandardObjectConfigurationBuilder {
     ) -> Self {
         self.field_mappings = input;
         self
+    }
+    /// <p>Maps attributes or field names of the standard object to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Salesforce fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Salesforce data source field names must exist in your Salesforce custom metadata.</p>
+    pub fn get_field_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>> {
+        &self.field_mappings
     }
     /// Consumes the builder and constructs a [`SalesforceStandardObjectConfiguration`](crate::types::SalesforceStandardObjectConfiguration).
     pub fn build(self) -> crate::types::SalesforceStandardObjectConfiguration {

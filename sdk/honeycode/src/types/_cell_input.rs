@@ -56,6 +56,10 @@ impl CellInputBuilder {
         self.fact = input;
         self
     }
+    /// <p> Fact represents the data that is entered into a cell. This data can be free text or a formula. Formulas need to start with the equals (=) sign. </p>
+    pub fn get_fact(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fact
+    }
     /// Appends an item to `facts`.
     ///
     /// To override the contents of this collection use [`set_facts`](Self::set_facts).
@@ -74,6 +78,10 @@ impl CellInputBuilder {
     ) -> Self {
         self.facts = input;
         self
+    }
+    /// <p> A list representing the values that are entered into a ROWSET cell. Facts list can have either only values or rowIDs, and rowIDs should from the same table. </p>
+    pub fn get_facts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.facts
     }
     /// Consumes the builder and constructs a [`CellInput`](crate::types::CellInput).
     pub fn build(self) -> crate::types::CellInput {

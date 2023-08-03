@@ -73,6 +73,10 @@ impl TieringPolicyBuilder {
         self.cooling_period = input;
         self
     }
+    /// <p>Specifies the number of days that user data in a volume must remain inactive before it is considered "cold" and moved to the capacity pool. Used with the <code>AUTO</code> and <code>SNAPSHOT_ONLY</code> tiering policies. Enter a whole number between 2 and 183. Default values are 31 days for <code>AUTO</code> and 2 days for <code>SNAPSHOT_ONLY</code>.</p>
+    pub fn get_cooling_period(&self) -> &::std::option::Option<i32> {
+        &self.cooling_period
+    }
     /// <p>Specifies the tiering policy used to transition data. Default value is <code>SNAPSHOT_ONLY</code>.</p>
     /// <ul>
     /// <li> <p> <code>SNAPSHOT_ONLY</code> - moves cold snapshots to the capacity pool storage tier.</p> </li>
@@ -97,6 +101,16 @@ impl TieringPolicyBuilder {
     ) -> Self {
         self.name = input;
         self
+    }
+    /// <p>Specifies the tiering policy used to transition data. Default value is <code>SNAPSHOT_ONLY</code>.</p>
+    /// <ul>
+    /// <li> <p> <code>SNAPSHOT_ONLY</code> - moves cold snapshots to the capacity pool storage tier.</p> </li>
+    /// <li> <p> <code>AUTO</code> - moves cold user data and snapshots to the capacity pool storage tier based on your access patterns.</p> </li>
+    /// <li> <p> <code>ALL</code> - moves all user data blocks in both the active file system and Snapshot copies to the storage pool tier.</p> </li>
+    /// <li> <p> <code>NONE</code> - keeps a volume's data in the primary storage tier, preventing it from being moved to the capacity pool tier.</p> </li>
+    /// </ul>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::TieringPolicyName> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`TieringPolicy`](crate::types::TieringPolicy).
     pub fn build(self) -> crate::types::TieringPolicy {

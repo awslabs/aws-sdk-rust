@@ -51,6 +51,10 @@ impl ConfigurationSetFilterBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the attribute to filter on.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::ConfigurationSetFilterName> {
+        &self.name
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -69,6 +73,10 @@ impl ConfigurationSetFilterBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>An array values to filter for.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`ConfigurationSetFilter`](crate::types::ConfigurationSetFilter).
     pub fn build(self) -> crate::types::ConfigurationSetFilter {

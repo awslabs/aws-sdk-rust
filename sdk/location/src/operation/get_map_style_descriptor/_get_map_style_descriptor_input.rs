@@ -55,6 +55,10 @@ impl GetMapStyleDescriptorInputBuilder {
         self.map_name = input;
         self
     }
+    /// <p>The map resource to retrieve the style descriptor from.</p>
+    pub fn get_map_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.map_name
+    }
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl GetMapStyleDescriptorInputBuilder {
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
+    }
+    /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
     }
     /// Consumes the builder and constructs a [`GetMapStyleDescriptorInput`](crate::operation::get_map_style_descriptor::GetMapStyleDescriptorInput).
     pub fn build(

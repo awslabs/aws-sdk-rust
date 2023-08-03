@@ -55,6 +55,10 @@ impl DeregisterTargetFromMaintenanceWindowInputBuilder {
         self.window_id = input;
         self
     }
+    /// <p>The ID of the maintenance window the target should be removed from.</p>
+    pub fn get_window_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.window_id
+    }
     /// <p>The ID of the target definition to remove.</p>
     pub fn window_target_id(
         mut self,
@@ -71,6 +75,10 @@ impl DeregisterTargetFromMaintenanceWindowInputBuilder {
         self.window_target_id = input;
         self
     }
+    /// <p>The ID of the target definition to remove.</p>
+    pub fn get_window_target_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.window_target_id
+    }
     /// <p>The system checks if the target is being referenced by a task. If the target is being referenced, the system returns an error and doesn't deregister the target from the maintenance window.</p>
     pub fn safe(mut self, input: bool) -> Self {
         self.safe = ::std::option::Option::Some(input);
@@ -80,6 +88,10 @@ impl DeregisterTargetFromMaintenanceWindowInputBuilder {
     pub fn set_safe(mut self, input: ::std::option::Option<bool>) -> Self {
         self.safe = input;
         self
+    }
+    /// <p>The system checks if the target is being referenced by a task. If the target is being referenced, the system returns an error and doesn't deregister the target from the maintenance window.</p>
+    pub fn get_safe(&self) -> &::std::option::Option<bool> {
+        &self.safe
     }
     /// Consumes the builder and constructs a [`DeregisterTargetFromMaintenanceWindowInput`](crate::operation::deregister_target_from_maintenance_window::DeregisterTargetFromMaintenanceWindowInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::deregister_target_from_maintenance_window::DeregisterTargetFromMaintenanceWindowInput, ::aws_smithy_http::operation::error::BuildError>{

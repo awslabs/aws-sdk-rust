@@ -43,6 +43,10 @@ impl SipMediaApplicationLoggingConfigurationBuilder {
         self.enable_sip_media_application_message_logs = input;
         self
     }
+    /// <p>Enables application message logs for the SIP media application.</p>
+    pub fn get_enable_sip_media_application_message_logs(&self) -> &::std::option::Option<bool> {
+        &self.enable_sip_media_application_message_logs
+    }
     /// Consumes the builder and constructs a [`SipMediaApplicationLoggingConfiguration`](crate::types::SipMediaApplicationLoggingConfiguration).
     pub fn build(self) -> crate::types::SipMediaApplicationLoggingConfiguration {
         crate::types::SipMediaApplicationLoggingConfiguration {

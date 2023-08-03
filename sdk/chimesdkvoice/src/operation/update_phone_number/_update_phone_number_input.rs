@@ -69,6 +69,10 @@ impl UpdatePhoneNumberInputBuilder {
         self.phone_number_id = input;
         self
     }
+    /// <p>The phone number ID.</p>
+    pub fn get_phone_number_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.phone_number_id
+    }
     /// <p>The product type.</p>
     pub fn product_type(mut self, input: crate::types::PhoneNumberProductType) -> Self {
         self.product_type = ::std::option::Option::Some(input);
@@ -82,6 +86,10 @@ impl UpdatePhoneNumberInputBuilder {
         self.product_type = input;
         self
     }
+    /// <p>The product type.</p>
+    pub fn get_product_type(&self) -> &::std::option::Option<crate::types::PhoneNumberProductType> {
+        &self.product_type
+    }
     /// <p>The outbound calling name associated with the phone number.</p>
     pub fn calling_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.calling_name = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl UpdatePhoneNumberInputBuilder {
     pub fn set_calling_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.calling_name = input;
         self
+    }
+    /// <p>The outbound calling name associated with the phone number.</p>
+    pub fn get_calling_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.calling_name
     }
     /// Consumes the builder and constructs a [`UpdatePhoneNumberInput`](crate::operation::update_phone_number::UpdatePhoneNumberInput).
     pub fn build(

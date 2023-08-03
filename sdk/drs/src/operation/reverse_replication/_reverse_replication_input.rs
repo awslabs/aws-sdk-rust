@@ -46,6 +46,10 @@ impl ReverseReplicationInputBuilder {
         self.recovery_instance_id = input;
         self
     }
+    /// <p>The ID of the Recovery Instance that we want to reverse the replication for.</p>
+    pub fn get_recovery_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recovery_instance_id
+    }
     /// Consumes the builder and constructs a [`ReverseReplicationInput`](crate::operation::reverse_replication::ReverseReplicationInput).
     pub fn build(
         self,

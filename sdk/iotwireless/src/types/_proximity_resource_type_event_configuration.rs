@@ -46,6 +46,12 @@ impl ProximityResourceTypeEventConfigurationBuilder {
         self.sidewalk = input;
         self
     }
+    /// <p>Proximity resource type event configuration object for enabling and disabling wireless device topic.</p>
+    pub fn get_sidewalk(
+        &self,
+    ) -> &::std::option::Option<crate::types::SidewalkResourceTypeEventConfiguration> {
+        &self.sidewalk
+    }
     /// Consumes the builder and constructs a [`ProximityResourceTypeEventConfiguration`](crate::types::ProximityResourceTypeEventConfiguration).
     pub fn build(self) -> crate::types::ProximityResourceTypeEventConfiguration {
         crate::types::ProximityResourceTypeEventConfiguration {

@@ -37,6 +37,12 @@ impl ListFirewallRulesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListFirewallRules as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_firewall_rules::builders::ListFirewallRulesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -144,6 +150,10 @@ impl ListFirewallRulesFluentBuilder {
         self.inner = self.inner.set_firewall_rule_group_id(input);
         self
     }
+    /// <p>The unique identifier of the firewall rule group that you want to retrieve the rules for. </p>
+    pub fn get_firewall_rule_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_firewall_rule_group_id()
+    }
     /// <p>Optional additional filter for the rules to retrieve.</p>
     /// <p>The setting that determines the processing order of the rules in a rule group. DNS Firewall processes the rules in a rule group by order of priority, starting from the lowest setting.</p>
     pub fn priority(mut self, input: i32) -> Self {
@@ -155,6 +165,11 @@ impl ListFirewallRulesFluentBuilder {
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_priority(input);
         self
+    }
+    /// <p>Optional additional filter for the rules to retrieve.</p>
+    /// <p>The setting that determines the processing order of the rules in a rule group. DNS Firewall processes the rules in a rule group by order of priority, starting from the lowest setting.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        self.inner.get_priority()
     }
     /// <p>Optional additional filter for the rules to retrieve.</p>
     /// <p>The action that DNS Firewall should take on a DNS query when it matches one of the domains in the rule's domain list:</p>
@@ -178,6 +193,16 @@ impl ListFirewallRulesFluentBuilder {
         self.inner = self.inner.set_action(input);
         self
     }
+    /// <p>Optional additional filter for the rules to retrieve.</p>
+    /// <p>The action that DNS Firewall should take on a DNS query when it matches one of the domains in the rule's domain list:</p>
+    /// <ul>
+    /// <li> <p> <code>ALLOW</code> - Permit the request to go through.</p> </li>
+    /// <li> <p> <code>ALERT</code> - Permit the request to go through but send an alert to the logs.</p> </li>
+    /// <li> <p> <code>BLOCK</code> - Disallow the request. If this is specified, additional handling details are provided in the rule's <code>BlockResponse</code> setting. </p> </li>
+    /// </ul>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::Action> {
+        self.inner.get_action()
+    }
     /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -190,6 +215,11 @@ impl ListFirewallRulesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>For the first call to this list request, omit this value.</p>
     /// <p>When you request a list of objects, Resolver returns at most the number of objects specified in <code>MaxResults</code>. If more objects are available for retrieval, Resolver returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token that was returned for the prior request in your next request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -201,5 +231,10 @@ impl ListFirewallRulesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>For the first call to this list request, omit this value.</p>
+    /// <p>When you request a list of objects, Resolver returns at most the number of objects specified in <code>MaxResults</code>. If more objects are available for retrieval, Resolver returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token that was returned for the prior request in your next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

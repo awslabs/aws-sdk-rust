@@ -55,6 +55,10 @@ impl UpdateApplicationInputBuilder {
         self.application_name = input;
         self
     }
+    /// <p>The current name of the application you want to change.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// <p>The new name to give the application.</p>
     pub fn new_application_name(
         mut self,
@@ -70,6 +74,10 @@ impl UpdateApplicationInputBuilder {
     ) -> Self {
         self.new_application_name = input;
         self
+    }
+    /// <p>The new name to give the application.</p>
+    pub fn get_new_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.new_application_name
     }
     /// Consumes the builder and constructs a [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
     pub fn build(

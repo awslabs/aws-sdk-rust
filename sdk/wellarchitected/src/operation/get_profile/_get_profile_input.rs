@@ -47,6 +47,10 @@ impl GetProfileInputBuilder {
         self.profile_arn = input;
         self
     }
+    /// <p>The profile ARN.</p>
+    pub fn get_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_arn
+    }
     /// <p>The profile version.</p>
     pub fn profile_version(
         mut self,
@@ -62,6 +66,10 @@ impl GetProfileInputBuilder {
     ) -> Self {
         self.profile_version = input;
         self
+    }
+    /// <p>The profile version.</p>
+    pub fn get_profile_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_version
     }
     /// Consumes the builder and constructs a [`GetProfileInput`](crate::operation::get_profile::GetProfileInput).
     pub fn build(

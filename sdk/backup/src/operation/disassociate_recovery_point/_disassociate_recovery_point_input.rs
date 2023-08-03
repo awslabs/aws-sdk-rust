@@ -53,6 +53,10 @@ impl DisassociateRecoveryPointInputBuilder {
         self.backup_vault_name = input;
         self
     }
+    /// <p>The unique name of an Backup vault.</p>
+    pub fn get_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_vault_name
+    }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies an Backup recovery point.</p>
     pub fn recovery_point_arn(
         mut self,
@@ -68,6 +72,10 @@ impl DisassociateRecoveryPointInputBuilder {
     ) -> Self {
         self.recovery_point_arn = input;
         self
+    }
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies an Backup recovery point.</p>
+    pub fn get_recovery_point_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recovery_point_arn
     }
     /// Consumes the builder and constructs a [`DisassociateRecoveryPointInput`](crate::operation::disassociate_recovery_point::DisassociateRecoveryPointInput).
     pub fn build(

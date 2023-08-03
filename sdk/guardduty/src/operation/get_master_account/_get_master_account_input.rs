@@ -41,6 +41,10 @@ impl GetMasterAccountInputBuilder {
         self.detector_id = input;
         self
     }
+    /// <p>The unique ID of the detector of the GuardDuty member account.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
+    }
     /// Consumes the builder and constructs a [`GetMasterAccountInput`](crate::operation::get_master_account::GetMasterAccountInput).
     pub fn build(
         self,

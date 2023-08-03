@@ -36,6 +36,10 @@ impl ListProfilesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListProfiles as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_profiles::builders::ListProfilesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +139,10 @@ impl ListProfilesFluentBuilder {
         self.inner = self.inner.set_profile_name_prefix(input);
         self
     }
+    /// <p>Prefix for profile name.</p>
+    pub fn get_profile_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_profile_name_prefix()
+    }
     /// <p>Profile owner type.</p>
     pub fn profile_owner_type(mut self, input: crate::types::ProfileOwnerType) -> Self {
         self.inner = self.inner.profile_owner_type(input);
@@ -148,6 +156,10 @@ impl ListProfilesFluentBuilder {
         self.inner = self.inner.set_profile_owner_type(input);
         self
     }
+    /// <p>Profile owner type.</p>
+    pub fn get_profile_owner_type(&self) -> &::std::option::Option<crate::types::ProfileOwnerType> {
+        self.inner.get_profile_owner_type()
+    }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -158,6 +170,10 @@ impl ListProfilesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token to use to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return for this request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -167,5 +183,9 @@ impl ListProfilesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return for this request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

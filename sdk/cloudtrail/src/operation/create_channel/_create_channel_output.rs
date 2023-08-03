@@ -78,6 +78,10 @@ impl CreateChannelOutputBuilder {
         self.channel_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the new channel.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
+    }
     /// <p>The name of the new channel.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -88,6 +92,10 @@ impl CreateChannelOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the new channel.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The partner or external event source name.</p>
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source = ::std::option::Option::Some(input.into());
@@ -97,6 +105,10 @@ impl CreateChannelOutputBuilder {
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source = input;
         self
+    }
+    /// <p>The partner or external event source name.</p>
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source
     }
     /// Appends an item to `destinations`.
     ///
@@ -117,6 +129,12 @@ impl CreateChannelOutputBuilder {
         self.destinations = input;
         self
     }
+    /// <p>The event data stores that log the events arriving through the channel.</p>
+    pub fn get_destinations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Destination>> {
+        &self.destinations
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -135,6 +153,10 @@ impl CreateChannelOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

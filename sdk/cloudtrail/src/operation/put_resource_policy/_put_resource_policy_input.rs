@@ -60,6 +60,10 @@ impl PutResourcePolicyInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p> The Amazon Resource Name (ARN) of the CloudTrail channel attached to the resource-based policy. The following is the format of a resource ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/MyChannel</code>. </p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// <p> A JSON-formatted string for an Amazon Web Services resource-based policy. </p>
     /// <p>The following are requirements for the resource policy:</p>
     /// <ul>
@@ -87,6 +91,16 @@ impl PutResourcePolicyInputBuilder {
     ) -> Self {
         self.resource_policy = input;
         self
+    }
+    /// <p> A JSON-formatted string for an Amazon Web Services resource-based policy. </p>
+    /// <p>The following are requirements for the resource policy:</p>
+    /// <ul>
+    /// <li> <p> Contains only one action: cloudtrail-data:PutAuditEvents </p> </li>
+    /// <li> <p> Contains at least one statement. The policy can have a maximum of 20 statements. </p> </li>
+    /// <li> <p> Each statement contains at least one principal. A statement can have a maximum of 50 principals. </p> </li>
+    /// </ul>
+    pub fn get_resource_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_policy
     }
     /// Consumes the builder and constructs a [`PutResourcePolicyInput`](crate::operation::put_resource_policy::PutResourcePolicyInput).
     pub fn build(

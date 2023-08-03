@@ -63,6 +63,12 @@ impl DescribeResourcePermissionsOutputBuilder {
         self.principals = input;
         self
     }
+    /// <p>The principals.</p>
+    pub fn get_principals(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Principal>> {
+        &self.principals
+    }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -72,6 +78,10 @@ impl DescribeResourcePermissionsOutputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

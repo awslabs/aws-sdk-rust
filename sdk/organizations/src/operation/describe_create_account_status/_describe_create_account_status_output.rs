@@ -51,6 +51,12 @@ impl DescribeCreateAccountStatusOutputBuilder {
         self.create_account_status = input;
         self
     }
+    /// <p>A structure that contains the current status of an account creation request.</p>
+    pub fn get_create_account_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateAccountStatus> {
+        &self.create_account_status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

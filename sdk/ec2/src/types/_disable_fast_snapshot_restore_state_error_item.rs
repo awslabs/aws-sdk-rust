@@ -56,6 +56,10 @@ impl DisableFastSnapshotRestoreStateErrorItemBuilder {
         self.availability_zone = input;
         self
     }
+    /// <p>The Availability Zone.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p>The error.</p>
     pub fn error(mut self, input: crate::types::DisableFastSnapshotRestoreStateError) -> Self {
         self.error = ::std::option::Option::Some(input);
@@ -68,6 +72,12 @@ impl DisableFastSnapshotRestoreStateErrorItemBuilder {
     ) -> Self {
         self.error = input;
         self
+    }
+    /// <p>The error.</p>
+    pub fn get_error(
+        &self,
+    ) -> &::std::option::Option<crate::types::DisableFastSnapshotRestoreStateError> {
+        &self.error
     }
     /// Consumes the builder and constructs a [`DisableFastSnapshotRestoreStateErrorItem`](crate::types::DisableFastSnapshotRestoreStateErrorItem).
     pub fn build(self) -> crate::types::DisableFastSnapshotRestoreStateErrorItem {

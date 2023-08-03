@@ -64,6 +64,12 @@ impl DeleteProjectOutputBuilder {
         self.deleted_resources = input;
         self
     }
+    /// <p> Resources which were deleted. </p>
+    pub fn get_deleted_resources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Resource>> {
+        &self.deleted_resources
+    }
     /// Appends an item to `orphaned_resources`.
     ///
     /// To override the contents of this collection use [`set_orphaned_resources`](Self::set_orphaned_resources).
@@ -82,6 +88,12 @@ impl DeleteProjectOutputBuilder {
     ) -> Self {
         self.orphaned_resources = input;
         self
+    }
+    /// <p> Resources which were not deleted, due to a risk of losing potentially important data or files. </p>
+    pub fn get_orphaned_resources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Resource>> {
+        &self.orphaned_resources
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

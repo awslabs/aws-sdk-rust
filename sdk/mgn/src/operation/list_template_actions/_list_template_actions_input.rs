@@ -71,6 +71,12 @@ impl ListTemplateActionsInputBuilder {
         self.launch_configuration_template_id = input;
         self
     }
+    /// <p>Launch configuration template ID.</p>
+    pub fn get_launch_configuration_template_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.launch_configuration_template_id
+    }
     /// <p>Filters to apply when listing template post migration custom actions.</p>
     pub fn filters(mut self, input: crate::types::TemplateActionsRequestFilters) -> Self {
         self.filters = ::std::option::Option::Some(input);
@@ -84,6 +90,12 @@ impl ListTemplateActionsInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>Filters to apply when listing template post migration custom actions.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<crate::types::TemplateActionsRequestFilters> {
+        &self.filters
+    }
     /// <p>Maximum amount of items to return when listing template post migration custom actions.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -94,6 +106,10 @@ impl ListTemplateActionsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>Maximum amount of items to return when listing template post migration custom actions.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>Next token to use when listing template post migration custom actions.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -103,6 +119,10 @@ impl ListTemplateActionsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Next token to use when listing template post migration custom actions.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListTemplateActionsInput`](crate::operation::list_template_actions::ListTemplateActionsInput).
     pub fn build(

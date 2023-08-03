@@ -58,6 +58,10 @@ impl ConformancePackComplianceSummaryBuilder {
         self.conformance_pack_name = input;
         self
     }
+    /// <p>The name of the conformance pack name.</p>
+    pub fn get_conformance_pack_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.conformance_pack_name
+    }
     /// <p>The status of the conformance pack.</p>
     pub fn conformance_pack_compliance_status(
         mut self,
@@ -73,6 +77,12 @@ impl ConformancePackComplianceSummaryBuilder {
     ) -> Self {
         self.conformance_pack_compliance_status = input;
         self
+    }
+    /// <p>The status of the conformance pack.</p>
+    pub fn get_conformance_pack_compliance_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConformancePackComplianceType> {
+        &self.conformance_pack_compliance_status
     }
     /// Consumes the builder and constructs a [`ConformancePackComplianceSummary`](crate::types::ConformancePackComplianceSummary).
     pub fn build(self) -> crate::types::ConformancePackComplianceSummary {

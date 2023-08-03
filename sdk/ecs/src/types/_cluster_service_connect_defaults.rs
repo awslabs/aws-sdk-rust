@@ -41,6 +41,10 @@ impl ClusterServiceConnectDefaultsBuilder {
         self.namespace = input;
         self
     }
+    /// <p>The namespace name or full Amazon Resource Name (ARN) of the Cloud Map namespace. When you create a service and don't specify a Service Connect configuration, this namespace is used.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
+    }
     /// Consumes the builder and constructs a [`ClusterServiceConnectDefaults`](crate::types::ClusterServiceConnectDefaults).
     pub fn build(self) -> crate::types::ClusterServiceConnectDefaults {
         crate::types::ClusterServiceConnectDefaults {

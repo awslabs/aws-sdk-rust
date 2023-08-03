@@ -64,6 +64,10 @@ impl DocumentBuilder {
         self.content = input;
         self
     }
+    /// <p>The <code>Content</code>field type is Binary large object (blob). This object contains the document content converted into base64-encoded binary data. If you use one of the AWS SDKs, the SDK performs the Base64-encoding on this field before sending the request. </p>
+    pub fn get_content(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.content
+    }
     /// <p>Describes the format of the document. You can specify one of the following:</p>
     /// <ul>
     /// <li> <p> <code>text/html</code> - The input data consists of HTML content. Amazon Translate translates only the text in the HTML element.</p> </li>
@@ -83,6 +87,15 @@ impl DocumentBuilder {
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
         self
+    }
+    /// <p>Describes the format of the document. You can specify one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>text/html</code> - The input data consists of HTML content. Amazon Translate translates only the text in the HTML element.</p> </li>
+    /// <li> <p> <code>text/plain</code> - The input data consists of unformatted text. Amazon Translate translates every character in the content. </p> </li>
+    /// <li> <p> <code>application/vnd.openxmlformats-officedocument.wordprocessingml.document</code> - The input data consists of a Word document (.docx).</p> </li>
+    /// </ul>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_type
     }
     /// Consumes the builder and constructs a [`Document`](crate::types::Document).
     pub fn build(self) -> crate::types::Document {

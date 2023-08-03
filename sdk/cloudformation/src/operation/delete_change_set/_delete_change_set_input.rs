@@ -54,6 +54,10 @@ impl DeleteChangeSetInputBuilder {
         self.change_set_name = input;
         self
     }
+    /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to delete.</p>
+    pub fn get_change_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.change_set_name
+    }
     /// <p>If you specified the name of a change set to delete, specify the stack name or Amazon Resource Name (ARN) that's associated with it.</p>
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_name = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl DeleteChangeSetInputBuilder {
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_name = input;
         self
+    }
+    /// <p>If you specified the name of a change set to delete, specify the stack name or Amazon Resource Name (ARN) that's associated with it.</p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_name
     }
     /// Consumes the builder and constructs a [`DeleteChangeSetInput`](crate::operation::delete_change_set::DeleteChangeSetInput).
     pub fn build(

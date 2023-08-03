@@ -49,6 +49,12 @@ impl SidewalkEventNotificationConfigurationsBuilder {
         self.amazon_id_event_topic = input;
         self
     }
+    /// <p>Denotes whether the Amazon ID event topic is enabled or disabled.</p>
+    pub fn get_amazon_id_event_topic(
+        &self,
+    ) -> &::std::option::Option<crate::types::EventNotificationTopicStatus> {
+        &self.amazon_id_event_topic
+    }
     /// Consumes the builder and constructs a [`SidewalkEventNotificationConfigurations`](crate::types::SidewalkEventNotificationConfigurations).
     pub fn build(self) -> crate::types::SidewalkEventNotificationConfigurations {
         crate::types::SidewalkEventNotificationConfigurations {

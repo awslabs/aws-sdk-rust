@@ -43,6 +43,10 @@ impl DescribeTagsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeTags as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_tags::builders::DescribeTagsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl DescribeTagsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these items by using logical operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>. </p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagFilter>> {
+        self.inner.get_filters()
+    }
     /// <p>The total number of items to return in a single page of output. The maximum value is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -142,6 +150,10 @@ impl DescribeTagsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The total number of items to return in a single page of output. The maximum value is 100.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -151,5 +163,9 @@ impl DescribeTagsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>A token to start the list. Use this token to get the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

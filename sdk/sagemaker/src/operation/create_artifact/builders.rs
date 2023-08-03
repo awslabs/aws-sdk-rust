@@ -36,6 +36,12 @@ impl CreateArtifactFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateArtifact as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_artifact::builders::CreateArtifactInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl CreateArtifactFluentBuilder {
         self.inner = self.inner.set_artifact_name(input);
         self
     }
+    /// <p>The name of the artifact. Must be unique to your account in an Amazon Web Services Region.</p>
+    pub fn get_artifact_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_artifact_name()
+    }
     /// <p>The ID, ID type, and URI of the source.</p>
     pub fn source(mut self, input: crate::types::ArtifactSource) -> Self {
         self.inner = self.inner.source(input);
@@ -136,6 +146,10 @@ impl CreateArtifactFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_source(input);
         self
+    }
+    /// <p>The ID, ID type, and URI of the source.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::ArtifactSource> {
+        self.inner.get_source()
     }
     /// <p>The artifact type.</p>
     pub fn artifact_type(
@@ -152,6 +166,10 @@ impl CreateArtifactFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_artifact_type(input);
         self
+    }
+    /// <p>The artifact type.</p>
+    pub fn get_artifact_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_artifact_type()
     }
     /// Adds a key-value pair to `Properties`.
     ///
@@ -176,6 +194,14 @@ impl CreateArtifactFluentBuilder {
         self.inner = self.inner.set_properties(input);
         self
     }
+    /// <p>A list of properties to add to the artifact.</p>
+    pub fn get_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_properties()
+    }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     pub fn metadata_properties(mut self, input: crate::types::MetadataProperties) -> Self {
         self.inner = self.inner.metadata_properties(input);
@@ -188,6 +214,12 @@ impl CreateArtifactFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_metadata_properties(input);
         self
+    }
+    /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
+    pub fn get_metadata_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::MetadataProperties> {
+        self.inner.get_metadata_properties()
     }
     /// Appends an item to `Tags`.
     ///
@@ -205,5 +237,9 @@ impl CreateArtifactFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of tags to apply to the artifact.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

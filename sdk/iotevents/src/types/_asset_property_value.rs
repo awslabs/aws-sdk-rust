@@ -66,6 +66,10 @@ impl AssetPropertyValueBuilder {
         self.value = input;
         self
     }
+    /// <p>The value to send to an asset property.</p>
+    pub fn get_value(&self) -> &::std::option::Option<crate::types::AssetPropertyVariant> {
+        &self.value
+    }
     /// <p>The timestamp associated with the asset property value. The default is the current event time.</p>
     pub fn timestamp(mut self, input: crate::types::AssetPropertyTimestamp) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
@@ -79,6 +83,10 @@ impl AssetPropertyValueBuilder {
         self.timestamp = input;
         self
     }
+    /// <p>The timestamp associated with the asset property value. The default is the current event time.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<crate::types::AssetPropertyTimestamp> {
+        &self.timestamp
+    }
     /// <p>The quality of the asset property value. The value must be <code>'GOOD'</code>, <code>'BAD'</code>, or <code>'UNCERTAIN'</code>.</p>
     pub fn quality(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.quality = ::std::option::Option::Some(input.into());
@@ -88,6 +96,10 @@ impl AssetPropertyValueBuilder {
     pub fn set_quality(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.quality = input;
         self
+    }
+    /// <p>The quality of the asset property value. The value must be <code>'GOOD'</code>, <code>'BAD'</code>, or <code>'UNCERTAIN'</code>.</p>
+    pub fn get_quality(&self) -> &::std::option::Option<::std::string::String> {
+        &self.quality
     }
     /// Consumes the builder and constructs a [`AssetPropertyValue`](crate::types::AssetPropertyValue).
     pub fn build(self) -> crate::types::AssetPropertyValue {

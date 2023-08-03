@@ -36,6 +36,13 @@ impl UpdateAnomalyDetectorFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAnomalyDetector as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_anomaly_detector::builders::UpdateAnomalyDetectorInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl UpdateAnomalyDetectorFluentBuilder {
         self.inner = self.inner.set_anomaly_detector_arn(input);
         self
     }
+    /// <p>The ARN of the detector to update.</p>
+    pub fn get_anomaly_detector_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_anomaly_detector_arn()
+    }
     /// <p>The Amazon Resource Name (ARN) of an AWS KMS encryption key.</p>
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_arn(input.into());
@@ -141,6 +152,10 @@ impl UpdateAnomalyDetectorFluentBuilder {
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an AWS KMS encryption key.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key_arn()
     }
     /// <p>The updated detector description.</p>
     pub fn anomaly_detector_description(
@@ -158,6 +173,12 @@ impl UpdateAnomalyDetectorFluentBuilder {
         self.inner = self.inner.set_anomaly_detector_description(input);
         self
     }
+    /// <p>The updated detector description.</p>
+    pub fn get_anomaly_detector_description(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_anomaly_detector_description()
+    }
     /// <p>Contains information about the configuration to which the detector will be updated.</p>
     pub fn anomaly_detector_config(mut self, input: crate::types::AnomalyDetectorConfig) -> Self {
         self.inner = self.inner.anomaly_detector_config(input);
@@ -170,5 +191,11 @@ impl UpdateAnomalyDetectorFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_anomaly_detector_config(input);
         self
+    }
+    /// <p>Contains information about the configuration to which the detector will be updated.</p>
+    pub fn get_anomaly_detector_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::AnomalyDetectorConfig> {
+        self.inner.get_anomaly_detector_config()
     }
 }

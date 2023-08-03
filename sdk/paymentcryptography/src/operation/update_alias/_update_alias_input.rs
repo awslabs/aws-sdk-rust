@@ -47,6 +47,10 @@ impl UpdateAliasInputBuilder {
         self.alias_name = input;
         self
     }
+    /// <p>The alias whose associated key is changing.</p>
+    pub fn get_alias_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias_name
+    }
     /// <p>The <code>KeyARN</code> for the key that you are updating or removing from the alias.</p>
     pub fn key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_arn = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl UpdateAliasInputBuilder {
     pub fn set_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_arn = input;
         self
+    }
+    /// <p>The <code>KeyARN</code> for the key that you are updating or removing from the alias.</p>
+    pub fn get_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_arn
     }
     /// Consumes the builder and constructs a [`UpdateAliasInput`](crate::operation::update_alias::UpdateAliasInput).
     pub fn build(

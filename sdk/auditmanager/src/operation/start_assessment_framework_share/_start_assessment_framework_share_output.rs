@@ -56,6 +56,12 @@ impl StartAssessmentFrameworkShareOutputBuilder {
         self.assessment_framework_share_request = input;
         self
     }
+    /// <p> The share request that's created by the <code>StartAssessmentFrameworkShare</code> API. </p>
+    pub fn get_assessment_framework_share_request(
+        &self,
+    ) -> &::std::option::Option<crate::types::AssessmentFrameworkShareRequest> {
+        &self.assessment_framework_share_request
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

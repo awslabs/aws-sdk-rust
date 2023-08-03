@@ -36,6 +36,12 @@ impl BatchUpdateDetectorFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchUpdateDetector as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_update_detector::builders::BatchUpdateDetectorInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +138,11 @@ impl BatchUpdateDetectorFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_detectors(input);
         self
+    }
+    /// <p>The list of detectors (instances) to update, along with the values to update.</p>
+    pub fn get_detectors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateDetectorRequest>> {
+        self.inner.get_detectors()
     }
 }

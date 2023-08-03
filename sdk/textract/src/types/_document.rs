@@ -57,6 +57,11 @@ impl DocumentBuilder {
         self.bytes = input;
         self
     }
+    /// <p>A blob of base64-encoded document bytes. The maximum size of a document that's provided in a blob of bytes is 5 MB. The document bytes must be in PNG or JPEG format.</p>
+    /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. </p>
+    pub fn get_bytes(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.bytes
+    }
     /// <p>Identifies an S3 object as the document source. The maximum size of a document that's stored in an S3 bucket is 5 MB.</p>
     pub fn s3_object(mut self, input: crate::types::S3Object) -> Self {
         self.s3_object = ::std::option::Option::Some(input);
@@ -66,6 +71,10 @@ impl DocumentBuilder {
     pub fn set_s3_object(mut self, input: ::std::option::Option<crate::types::S3Object>) -> Self {
         self.s3_object = input;
         self
+    }
+    /// <p>Identifies an S3 object as the document source. The maximum size of a document that's stored in an S3 bucket is 5 MB.</p>
+    pub fn get_s3_object(&self) -> &::std::option::Option<crate::types::S3Object> {
+        &self.s3_object
     }
     /// Consumes the builder and constructs a [`Document`](crate::types::Document).
     pub fn build(self) -> crate::types::Document {

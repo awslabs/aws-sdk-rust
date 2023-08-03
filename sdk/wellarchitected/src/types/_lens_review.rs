@@ -151,6 +151,13 @@ impl LensReviewBuilder {
         self.lens_alias = input;
         self
     }
+    /// <p>The alias of the lens.</p>
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
+    /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    pub fn get_lens_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lens_alias
+    }
     /// <p>The ARN for the lens.</p>
     pub fn lens_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lens_arn = ::std::option::Option::Some(input.into());
@@ -160,6 +167,10 @@ impl LensReviewBuilder {
     pub fn set_lens_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lens_arn = input;
         self
+    }
+    /// <p>The ARN for the lens.</p>
+    pub fn get_lens_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lens_arn
     }
     /// <p>The version of the lens.</p>
     pub fn lens_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -171,6 +182,10 @@ impl LensReviewBuilder {
         self.lens_version = input;
         self
     }
+    /// <p>The version of the lens.</p>
+    pub fn get_lens_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lens_version
+    }
     /// <p>The full name of the lens.</p>
     pub fn lens_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lens_name = ::std::option::Option::Some(input.into());
@@ -180,6 +195,10 @@ impl LensReviewBuilder {
     pub fn set_lens_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lens_name = input;
         self
+    }
+    /// <p>The full name of the lens.</p>
+    pub fn get_lens_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lens_name
     }
     /// <p>The status of the lens.</p>
     pub fn lens_status(mut self, input: crate::types::LensStatus) -> Self {
@@ -193,6 +212,10 @@ impl LensReviewBuilder {
     ) -> Self {
         self.lens_status = input;
         self
+    }
+    /// <p>The status of the lens.</p>
+    pub fn get_lens_status(&self) -> &::std::option::Option<crate::types::LensStatus> {
+        &self.lens_status
     }
     /// Appends an item to `pillar_review_summaries`.
     ///
@@ -213,6 +236,12 @@ impl LensReviewBuilder {
         self.pillar_review_summaries = input;
         self
     }
+    /// <p>List of pillar review summaries of lens review in a workload.</p>
+    pub fn get_pillar_review_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PillarReviewSummary>> {
+        &self.pillar_review_summaries
+    }
     /// <p>The date and time recorded.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
@@ -226,6 +255,10 @@ impl LensReviewBuilder {
         self.updated_at = input;
         self
     }
+    /// <p>The date and time recorded.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
+    }
     /// <p>The notes associated with the workload.</p>
     pub fn notes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notes = ::std::option::Option::Some(input.into());
@@ -235,6 +268,10 @@ impl LensReviewBuilder {
     pub fn set_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notes = input;
         self
+    }
+    /// <p>The notes associated with the workload.</p>
+    pub fn get_notes(&self) -> &::std::option::Option<::std::string::String> {
+        &self.notes
     }
     /// Adds a key-value pair to `risk_counts`.
     ///
@@ -255,6 +292,12 @@ impl LensReviewBuilder {
         self.risk_counts = input;
         self
     }
+    /// <p>A map from risk names to the count of how many questions have that rating.</p>
+    pub fn get_risk_counts(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>> {
+        &self.risk_counts
+    }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -264,6 +307,10 @@ impl LensReviewBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token to use to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `profiles`.
     ///
@@ -284,6 +331,12 @@ impl LensReviewBuilder {
         self.profiles = input;
         self
     }
+    /// <p>The profiles associated with the workload.</p>
+    pub fn get_profiles(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkloadProfile>> {
+        &self.profiles
+    }
     /// Adds a key-value pair to `prioritized_risk_counts`.
     ///
     /// To override the contents of this collection use [`set_prioritized_risk_counts`](Self::set_prioritized_risk_counts).
@@ -302,6 +355,12 @@ impl LensReviewBuilder {
     ) -> Self {
         self.prioritized_risk_counts = input;
         self
+    }
+    /// <p>A map from risk names to the count of how many questions have that rating.</p>
+    pub fn get_prioritized_risk_counts(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>> {
+        &self.prioritized_risk_counts
     }
     /// Consumes the builder and constructs a [`LensReview`](crate::types::LensReview).
     pub fn build(self) -> crate::types::LensReview {

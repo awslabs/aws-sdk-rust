@@ -48,6 +48,10 @@ impl PolicyVersionIdentifierBuilder {
         self.policy_name = input;
         self
     }
+    /// <p>The name of the policy.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_name
+    }
     /// <p>The ID of the version of the policy associated with the resource.</p>
     pub fn policy_version_id(
         mut self,
@@ -63,6 +67,10 @@ impl PolicyVersionIdentifierBuilder {
     ) -> Self {
         self.policy_version_id = input;
         self
+    }
+    /// <p>The ID of the version of the policy associated with the resource.</p>
+    pub fn get_policy_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_version_id
     }
     /// Consumes the builder and constructs a [`PolicyVersionIdentifier`](crate::types::PolicyVersionIdentifier).
     pub fn build(self) -> crate::types::PolicyVersionIdentifier {

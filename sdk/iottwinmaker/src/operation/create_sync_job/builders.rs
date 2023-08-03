@@ -36,6 +36,12 @@ impl CreateSyncJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateSyncJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_sync_job::builders::CreateSyncJobInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl CreateSyncJobFluentBuilder {
         self.inner = self.inner.set_workspace_id(input);
         self
     }
+    /// <p>The workspace ID.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workspace_id()
+    }
     /// <p>The sync source.</p> <note>
     /// <p>Currently the only supported syncSoource is <code>SITEWISE </code>.</p>
     /// </note>
@@ -132,6 +142,12 @@ impl CreateSyncJobFluentBuilder {
         self.inner = self.inner.set_sync_source(input);
         self
     }
+    /// <p>The sync source.</p> <note>
+    /// <p>Currently the only supported syncSoource is <code>SITEWISE </code>.</p>
+    /// </note>
+    pub fn get_sync_source(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sync_source()
+    }
     /// <p>The SyncJob IAM role. This IAM role is used by the SyncJob to read from the syncSource, and create, update, or delete the corresponding resources.</p>
     pub fn sync_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sync_role(input.into());
@@ -141,6 +157,10 @@ impl CreateSyncJobFluentBuilder {
     pub fn set_sync_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sync_role(input);
         self
+    }
+    /// <p>The SyncJob IAM role. This IAM role is used by the SyncJob to read from the syncSource, and create, update, or delete the corresponding resources.</p>
+    pub fn get_sync_role(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sync_role()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -164,5 +184,13 @@ impl CreateSyncJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The SyncJob tags.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

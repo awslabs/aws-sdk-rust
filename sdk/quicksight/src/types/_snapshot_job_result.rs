@@ -53,6 +53,12 @@ impl SnapshotJobResultBuilder {
         self.anonymous_users = input;
         self
     }
+    /// <p> A list of <code>AnonymousUserSnapshotJobResult</code> objects that contain information on anonymous users and their user configurations. This data provided by you when you make a <code>StartDashboardSnapshotJob</code> API call.</p>
+    pub fn get_anonymous_users(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnonymousUserSnapshotJobResult>> {
+        &self.anonymous_users
+    }
     /// Consumes the builder and constructs a [`SnapshotJobResult`](crate::types::SnapshotJobResult).
     pub fn build(self) -> crate::types::SnapshotJobResult {
         crate::types::SnapshotJobResult {

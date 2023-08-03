@@ -55,6 +55,10 @@ impl ListDeploymentsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of objects to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -64,6 +68,10 @@ impl ListDeploymentsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of objects to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The application identifier.</p>
     pub fn application_id(
@@ -80,6 +88,10 @@ impl ListDeploymentsInputBuilder {
     ) -> Self {
         self.application_id = input;
         self
+    }
+    /// <p>The application identifier.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
     }
     /// Consumes the builder and constructs a [`ListDeploymentsInput`](crate::operation::list_deployments::ListDeploymentsInput).
     pub fn build(

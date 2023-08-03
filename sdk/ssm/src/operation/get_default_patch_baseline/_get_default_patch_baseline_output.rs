@@ -56,6 +56,10 @@ impl GetDefaultPatchBaselineOutputBuilder {
         self.baseline_id = input;
         self
     }
+    /// <p>The ID of the default patch baseline.</p>
+    pub fn get_baseline_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.baseline_id
+    }
     /// <p>The operating system for the returned patch baseline. </p>
     pub fn operating_system(mut self, input: crate::types::OperatingSystem) -> Self {
         self.operating_system = ::std::option::Option::Some(input);
@@ -68,6 +72,10 @@ impl GetDefaultPatchBaselineOutputBuilder {
     ) -> Self {
         self.operating_system = input;
         self
+    }
+    /// <p>The operating system for the returned patch baseline. </p>
+    pub fn get_operating_system(&self) -> &::std::option::Option<crate::types::OperatingSystem> {
+        &self.operating_system
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -46,6 +46,10 @@ impl DescribeAttackOutputBuilder {
         self.attack = input;
         self
     }
+    /// <p>The attack that you requested. </p>
+    pub fn get_attack(&self) -> &::std::option::Option<crate::types::AttackDetail> {
+        &self.attack
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

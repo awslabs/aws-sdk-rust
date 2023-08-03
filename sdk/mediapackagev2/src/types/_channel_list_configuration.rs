@@ -80,6 +80,10 @@ impl ChannelListConfigurationBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) associated with the resource.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. </p>
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_name = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl ChannelListConfigurationBuilder {
     pub fn set_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_name = input;
         self
+    }
+    /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. </p>
+    pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_name
     }
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
     pub fn channel_group_name(
@@ -106,6 +114,10 @@ impl ChannelListConfigurationBuilder {
         self.channel_group_name = input;
         self
     }
+    /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
+    pub fn get_channel_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_group_name
+    }
     /// <p>The date and time the channel was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -118,6 +130,10 @@ impl ChannelListConfigurationBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The date and time the channel was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// <p>The date and time the channel was modified.</p>
     pub fn modified_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -132,6 +148,10 @@ impl ChannelListConfigurationBuilder {
         self.modified_at = input;
         self
     }
+    /// <p>The date and time the channel was modified.</p>
+    pub fn get_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.modified_at
+    }
     /// <p>Any descriptive information that you want to add to the channel for future identification purposes.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -141,6 +161,10 @@ impl ChannelListConfigurationBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>Any descriptive information that you want to add to the channel for future identification purposes.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`ChannelListConfiguration`](crate::types::ChannelListConfiguration).
     pub fn build(self) -> crate::types::ChannelListConfiguration {

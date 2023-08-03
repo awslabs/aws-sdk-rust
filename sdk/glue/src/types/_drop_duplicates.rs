@@ -57,6 +57,10 @@ impl DropDuplicatesBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the transform node.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `inputs`.
     ///
     /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
@@ -76,6 +80,10 @@ impl DropDuplicatesBuilder {
         self.inputs = input;
         self
     }
+    /// <p>The data inputs identified by their node names.</p>
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.inputs
+    }
     /// Appends an item to `columns`.
     ///
     /// To override the contents of this collection use [`set_columns`](Self::set_columns).
@@ -94,6 +102,12 @@ impl DropDuplicatesBuilder {
     ) -> Self {
         self.columns = input;
         self
+    }
+    /// <p>The name of the columns to be merged or removed if repeating.</p>
+    pub fn get_columns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>> {
+        &self.columns
     }
     /// Consumes the builder and constructs a [`DropDuplicates`](crate::types::DropDuplicates).
     pub fn build(self) -> crate::types::DropDuplicates {

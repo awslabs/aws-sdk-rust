@@ -56,6 +56,10 @@ impl CloudFrontOriginAccessIdentitySummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The Amazon S3 canonical user ID for the origin access identity, which you use when giving the origin access identity read permission to an object in Amazon S3.</p>
     pub fn s3_canonical_user_id(
         mut self,
@@ -72,6 +76,10 @@ impl CloudFrontOriginAccessIdentitySummaryBuilder {
         self.s3_canonical_user_id = input;
         self
     }
+    /// <p>The Amazon S3 canonical user ID for the origin access identity, which you use when giving the origin access identity read permission to an object in Amazon S3.</p>
+    pub fn get_s3_canonical_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_canonical_user_id
+    }
     /// <p>The comment for this origin access identity, as originally specified when created.</p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl CloudFrontOriginAccessIdentitySummaryBuilder {
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comment = input;
         self
+    }
+    /// <p>The comment for this origin access identity, as originally specified when created.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comment
     }
     /// Consumes the builder and constructs a [`CloudFrontOriginAccessIdentitySummary`](crate::types::CloudFrontOriginAccessIdentitySummary).
     pub fn build(self) -> crate::types::CloudFrontOriginAccessIdentitySummary {

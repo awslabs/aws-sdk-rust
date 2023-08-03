@@ -95,6 +95,10 @@ impl GetConfigOutputBuilder {
         self.config_id = input;
         self
     }
+    /// <p>UUID of a <code>Config</code>.</p>
+    pub fn get_config_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.config_id
+    }
     /// <p>ARN of a <code>Config</code> </p>
     pub fn config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.config_arn = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl GetConfigOutputBuilder {
         self.config_arn = input;
         self
     }
+    /// <p>ARN of a <code>Config</code> </p>
+    pub fn get_config_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.config_arn
+    }
     /// <p>Name of a <code>Config</code>.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -114,6 +122,10 @@ impl GetConfigOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>Name of a <code>Config</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Type of a <code>Config</code>.</p>
     pub fn config_type(mut self, input: crate::types::ConfigCapabilityType) -> Self {
@@ -128,6 +140,10 @@ impl GetConfigOutputBuilder {
         self.config_type = input;
         self
     }
+    /// <p>Type of a <code>Config</code>.</p>
+    pub fn get_config_type(&self) -> &::std::option::Option<crate::types::ConfigCapabilityType> {
+        &self.config_type
+    }
     /// <p>Data elements in a <code>Config</code>.</p>
     pub fn config_data(mut self, input: crate::types::ConfigTypeData) -> Self {
         self.config_data = ::std::option::Option::Some(input);
@@ -140,6 +156,10 @@ impl GetConfigOutputBuilder {
     ) -> Self {
         self.config_data = input;
         self
+    }
+    /// <p>Data elements in a <code>Config</code>.</p>
+    pub fn get_config_data(&self) -> &::std::option::Option<crate::types::ConfigTypeData> {
+        &self.config_data
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -165,6 +185,14 @@ impl GetConfigOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Tags assigned to a <code>Config</code>.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

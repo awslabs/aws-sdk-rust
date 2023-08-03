@@ -71,6 +71,10 @@ impl StagingSourceServerBuilder {
         self.hostname = input;
         self
     }
+    /// <p>Hostname of staging source server.</p>
+    pub fn get_hostname(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hostname
+    }
     /// <p>The ARN of the source server.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl StagingSourceServerBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The ARN of the source server.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -105,6 +113,14 @@ impl StagingSourceServerBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of tags associated with the staging source server.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`StagingSourceServer`](crate::types::StagingSourceServer).
     pub fn build(self) -> crate::types::StagingSourceServer {

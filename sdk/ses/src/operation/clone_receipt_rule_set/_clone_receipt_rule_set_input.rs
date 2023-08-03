@@ -76,6 +76,15 @@ impl CloneReceiptRuleSetInputBuilder {
         self.rule_set_name = input;
         self
     }
+    /// <p>The name of the rule set to create. The name must:</p>
+    /// <ul>
+    /// <li> <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+    /// <li> <p>Start and end with a letter or number.</p> </li>
+    /// <li> <p>Contain less than 64 characters.</p> </li>
+    /// </ul>
+    pub fn get_rule_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_set_name
+    }
     /// <p>The name of the rule set to clone.</p>
     pub fn original_rule_set_name(
         mut self,
@@ -91,6 +100,10 @@ impl CloneReceiptRuleSetInputBuilder {
     ) -> Self {
         self.original_rule_set_name = input;
         self
+    }
+    /// <p>The name of the rule set to clone.</p>
+    pub fn get_original_rule_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.original_rule_set_name
     }
     /// Consumes the builder and constructs a [`CloneReceiptRuleSetInput`](crate::operation::clone_receipt_rule_set::CloneReceiptRuleSetInput).
     pub fn build(

@@ -36,6 +36,12 @@ impl ListWorkteamsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListWorkteams as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_workteams::builders::ListWorkteamsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl ListWorkteamsFluentBuilder {
         self.inner = self.inner.set_sort_by(input);
         self
     }
+    /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ListWorkteamsSortByOptions> {
+        self.inner.get_sort_by()
+    }
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.inner = self.inner.sort_order(input);
@@ -141,6 +151,10 @@ impl ListWorkteamsFluentBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
+    }
+    /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        self.inner.get_sort_order()
     }
     /// <p>A string in the work team's name. This filter returns only work teams whose name contains the specified string.</p>
     pub fn name_contains(
@@ -158,6 +172,10 @@ impl ListWorkteamsFluentBuilder {
         self.inner = self.inner.set_name_contains(input);
         self
     }
+    /// <p>A string in the work team's name. This filter returns only work teams whose name contains the specified string.</p>
+    pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name_contains()
+    }
     /// <p>If the result of the previous <code>ListWorkteams</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs, use the token in the next request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -168,6 +186,10 @@ impl ListWorkteamsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>If the result of the previous <code>ListWorkteams</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs, use the token in the next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of work teams to return in each page of the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -177,5 +199,9 @@ impl ListWorkteamsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of work teams to return in each page of the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

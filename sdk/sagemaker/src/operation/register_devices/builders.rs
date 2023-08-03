@@ -36,6 +36,12 @@ impl RegisterDevicesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RegisterDevices as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::register_devices::builders::RegisterDevicesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl RegisterDevicesFluentBuilder {
         self.inner = self.inner.set_device_fleet_name(input);
         self
     }
+    /// <p>The name of the fleet.</p>
+    pub fn get_device_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_fleet_name()
+    }
     /// Appends an item to `Devices`.
     ///
     /// To override the contents of this collection use [`set_devices`](Self::set_devices).
@@ -149,6 +159,10 @@ impl RegisterDevicesFluentBuilder {
         self.inner = self.inner.set_devices(input);
         self
     }
+    /// <p>A list of devices to register with SageMaker Edge Manager.</p>
+    pub fn get_devices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Device>> {
+        self.inner.get_devices()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -165,5 +179,9 @@ impl RegisterDevicesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags associated with devices.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

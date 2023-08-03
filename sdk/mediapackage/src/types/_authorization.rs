@@ -54,6 +54,10 @@ impl AuthorizationBuilder {
         self.cdn_identifier_secret = input;
         self
     }
+    /// The Amazon Resource Name (ARN) for the secret in Secrets Manager that your Content Distribution Network (CDN) uses for authorization to access your endpoint.
+    pub fn get_cdn_identifier_secret(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cdn_identifier_secret
+    }
     /// The Amazon Resource Name (ARN) for the IAM role that allows MediaPackage to communicate with AWS Secrets Manager.
     pub fn secrets_role_arn(
         mut self,
@@ -69,6 +73,10 @@ impl AuthorizationBuilder {
     ) -> Self {
         self.secrets_role_arn = input;
         self
+    }
+    /// The Amazon Resource Name (ARN) for the IAM role that allows MediaPackage to communicate with AWS Secrets Manager.
+    pub fn get_secrets_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secrets_role_arn
     }
     /// Consumes the builder and constructs a [`Authorization`](crate::types::Authorization).
     pub fn build(self) -> crate::types::Authorization {

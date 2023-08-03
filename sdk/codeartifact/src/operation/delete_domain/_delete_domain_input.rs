@@ -47,6 +47,10 @@ impl DeleteDomainInputBuilder {
         self.domain = input;
         self
     }
+    /// <p> The name of the domain to delete. </p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
+    }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_owner = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl DeleteDomainInputBuilder {
     pub fn set_domain_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_owner = input;
         self
+    }
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_owner
     }
     /// Consumes the builder and constructs a [`DeleteDomainInput`](crate::operation::delete_domain::DeleteDomainInput).
     pub fn build(

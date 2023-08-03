@@ -74,6 +74,10 @@ impl ScheduleLambdaFunctionDecisionAttributesBuilder {
         self.id = input;
         self
     }
+    /// <p>A string that identifies the Lambda function execution in the event history.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name, or ARN, of the Lambda function to schedule.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -83,6 +87,10 @@ impl ScheduleLambdaFunctionDecisionAttributesBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name, or ARN, of the Lambda function to schedule.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The data attached to the event that the decider can use in subsequent workflow tasks. This data isn't sent to the Lambda task.</p>
     pub fn control(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -94,6 +102,10 @@ impl ScheduleLambdaFunctionDecisionAttributesBuilder {
         self.control = input;
         self
     }
+    /// <p>The data attached to the event that the decider can use in subsequent workflow tasks. This data isn't sent to the Lambda task.</p>
+    pub fn get_control(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control
+    }
     /// <p>The optional input data to be supplied to the Lambda function.</p>
     pub fn input(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input = ::std::option::Option::Some(input.into());
@@ -103,6 +115,10 @@ impl ScheduleLambdaFunctionDecisionAttributesBuilder {
     pub fn set_input(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input = input;
         self
+    }
+    /// <p>The optional input data to be supplied to the Lambda function.</p>
+    pub fn get_input(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input
     }
     /// <p>The timeout value, in seconds, after which the Lambda function is considered to be failed once it has started. This can be any integer from 1-900 (1s-15m).</p>
     /// <p>If no value is supplied, then a default value of 900s is assumed.</p>
@@ -121,6 +137,11 @@ impl ScheduleLambdaFunctionDecisionAttributesBuilder {
     ) -> Self {
         self.start_to_close_timeout = input;
         self
+    }
+    /// <p>The timeout value, in seconds, after which the Lambda function is considered to be failed once it has started. This can be any integer from 1-900 (1s-15m).</p>
+    /// <p>If no value is supplied, then a default value of 900s is assumed.</p>
+    pub fn get_start_to_close_timeout(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_to_close_timeout
     }
     /// Consumes the builder and constructs a [`ScheduleLambdaFunctionDecisionAttributes`](crate::types::ScheduleLambdaFunctionDecisionAttributes).
     pub fn build(self) -> crate::types::ScheduleLambdaFunctionDecisionAttributes {

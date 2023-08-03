@@ -43,6 +43,10 @@ impl BatchDeleteObjectBuilder {
         self.object_reference = input;
         self
     }
+    /// <p>The reference that identifies the object.</p>
+    pub fn get_object_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
+        &self.object_reference
+    }
     /// Consumes the builder and constructs a [`BatchDeleteObject`](crate::types::BatchDeleteObject).
     pub fn build(self) -> crate::types::BatchDeleteObject {
         crate::types::BatchDeleteObject {

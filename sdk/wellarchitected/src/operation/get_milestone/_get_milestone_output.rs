@@ -55,6 +55,10 @@ impl GetMilestoneOutputBuilder {
         self.workload_id = input;
         self
     }
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workload_id
+    }
     /// <p>A milestone return object.</p>
     pub fn milestone(mut self, input: crate::types::Milestone) -> Self {
         self.milestone = ::std::option::Option::Some(input);
@@ -64,6 +68,10 @@ impl GetMilestoneOutputBuilder {
     pub fn set_milestone(mut self, input: ::std::option::Option<crate::types::Milestone>) -> Self {
         self.milestone = input;
         self
+    }
+    /// <p>A milestone return object.</p>
+    pub fn get_milestone(&self) -> &::std::option::Option<crate::types::Milestone> {
+        &self.milestone
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

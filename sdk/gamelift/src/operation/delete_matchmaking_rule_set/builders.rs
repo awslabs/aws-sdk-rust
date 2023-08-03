@@ -40,6 +40,10 @@ impl DeleteMatchmakingRuleSetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteMatchmakingRuleSet as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_matchmaking_rule_set::builders::DeleteMatchmakingRuleSetInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,5 +133,9 @@ impl DeleteMatchmakingRuleSetFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>A unique identifier for the matchmaking rule set to be deleted. (Note: The rule set name is different from the optional "name" field in the rule set body.) You can use either the rule set name or ARN value.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
 }

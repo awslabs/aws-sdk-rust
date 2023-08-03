@@ -84,6 +84,18 @@ impl DescribeNodeAssociationStatusOutputBuilder {
         self.node_association_status = input;
         self
     }
+    /// <p>The status of the association or disassociation request. </p>
+    /// <p class="title"> <b>Possible values:</b> </p>
+    /// <ul>
+    /// <li> <p> <code>SUCCESS</code>: The association or disassociation succeeded. </p> </li>
+    /// <li> <p> <code>FAILED</code>: The association or disassociation failed. </p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code>: The association or disassociation is still in progress. </p> </li>
+    /// </ul>
+    pub fn get_node_association_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::NodeAssociationStatus> {
+        &self.node_association_status
+    }
     /// Appends an item to `engine_attributes`.
     ///
     /// To override the contents of this collection use [`set_engine_attributes`](Self::set_engine_attributes).
@@ -102,6 +114,12 @@ impl DescribeNodeAssociationStatusOutputBuilder {
     ) -> Self {
         self.engine_attributes = input;
         self
+    }
+    /// <p>Attributes specific to the node association. In Puppet, the attibute PUPPET_NODE_CERT contains the signed certificate (the result of the CSR). </p>
+    pub fn get_engine_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>> {
+        &self.engine_attributes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

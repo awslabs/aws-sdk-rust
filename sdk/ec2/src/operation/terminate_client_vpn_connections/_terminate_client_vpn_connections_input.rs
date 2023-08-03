@@ -69,6 +69,10 @@ impl TerminateClientVpnConnectionsInputBuilder {
         self.client_vpn_endpoint_id = input;
         self
     }
+    /// <p>The ID of the Client VPN endpoint to which the client is connected.</p>
+    pub fn get_client_vpn_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_vpn_endpoint_id
+    }
     /// <p>The ID of the client connection to be terminated.</p>
     pub fn connection_id(
         mut self,
@@ -85,6 +89,10 @@ impl TerminateClientVpnConnectionsInputBuilder {
         self.connection_id = input;
         self
     }
+    /// <p>The ID of the client connection to be terminated.</p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_id
+    }
     /// <p>The name of the user who initiated the connection. Use this option to terminate all active connections for the specified user. This option can only be used if the user has established up to five connections.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
@@ -95,6 +103,10 @@ impl TerminateClientVpnConnectionsInputBuilder {
         self.username = input;
         self
     }
+    /// <p>The name of the user who initiated the connection. Use this option to terminate all active connections for the specified user. This option can only be used if the user has established up to five connections.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -104,6 +116,10 @@ impl TerminateClientVpnConnectionsInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`TerminateClientVpnConnectionsInput`](crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsInput).
     pub fn build(

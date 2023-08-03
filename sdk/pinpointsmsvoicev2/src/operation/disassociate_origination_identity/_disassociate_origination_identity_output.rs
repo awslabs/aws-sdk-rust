@@ -78,6 +78,10 @@ impl DisassociateOriginationIdentityOutputBuilder {
         self.pool_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the pool.</p>
+    pub fn get_pool_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pool_arn
+    }
     /// <p>The PoolId of the pool no longer associated with the origination identity.</p>
     pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pool_id = ::std::option::Option::Some(input.into());
@@ -87,6 +91,10 @@ impl DisassociateOriginationIdentityOutputBuilder {
     pub fn set_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pool_id = input;
         self
+    }
+    /// <p>The PoolId of the pool no longer associated with the origination identity.</p>
+    pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pool_id
     }
     /// <p>The PhoneNumberArn or SenderIdArn of the origination identity.</p>
     pub fn origination_identity_arn(
@@ -104,6 +112,10 @@ impl DisassociateOriginationIdentityOutputBuilder {
         self.origination_identity_arn = input;
         self
     }
+    /// <p>The PhoneNumberArn or SenderIdArn of the origination identity.</p>
+    pub fn get_origination_identity_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.origination_identity_arn
+    }
     /// <p>The PhoneNumberId or SenderId of the origination identity.</p>
     pub fn origination_identity(
         mut self,
@@ -120,6 +132,10 @@ impl DisassociateOriginationIdentityOutputBuilder {
         self.origination_identity = input;
         self
     }
+    /// <p>The PhoneNumberId or SenderId of the origination identity.</p>
+    pub fn get_origination_identity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.origination_identity
+    }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
     pub fn iso_country_code(
         mut self,
@@ -135,6 +151,10 @@ impl DisassociateOriginationIdentityOutputBuilder {
     ) -> Self {
         self.iso_country_code = input;
         self
+    }
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
+    pub fn get_iso_country_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iso_country_code
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

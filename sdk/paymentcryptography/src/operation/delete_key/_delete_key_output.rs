@@ -46,6 +46,10 @@ impl DeleteKeyOutputBuilder {
         self.key = input;
         self
     }
+    /// <p>The <code>KeyARN</code> of the key that is scheduled for deletion.</p>
+    pub fn get_key(&self) -> &::std::option::Option<crate::types::Key> {
+        &self.key
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

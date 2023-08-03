@@ -71,6 +71,10 @@ impl TestAvailabilityConfigurationInputBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The WorkMail organization where the availability provider will be tested.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p>The domain to which the provider applies. If this field is provided, a stored availability provider associated to this domain name will be tested.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl TestAvailabilityConfigurationInputBuilder {
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
+    }
+    /// <p>The domain to which the provider applies. If this field is provided, a stored availability provider associated to this domain name will be tested.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
     }
     /// <p>Describes an EWS based availability provider. This is only used as input to the service.</p>
     pub fn ews_provider(mut self, input: crate::types::EwsAvailabilityProvider) -> Self {
@@ -94,6 +102,12 @@ impl TestAvailabilityConfigurationInputBuilder {
         self.ews_provider = input;
         self
     }
+    /// <p>Describes an EWS based availability provider. This is only used as input to the service.</p>
+    pub fn get_ews_provider(
+        &self,
+    ) -> &::std::option::Option<crate::types::EwsAvailabilityProvider> {
+        &self.ews_provider
+    }
     /// <p>Describes a Lambda based availability provider.</p>
     pub fn lambda_provider(mut self, input: crate::types::LambdaAvailabilityProvider) -> Self {
         self.lambda_provider = ::std::option::Option::Some(input);
@@ -106,6 +120,12 @@ impl TestAvailabilityConfigurationInputBuilder {
     ) -> Self {
         self.lambda_provider = input;
         self
+    }
+    /// <p>Describes a Lambda based availability provider.</p>
+    pub fn get_lambda_provider(
+        &self,
+    ) -> &::std::option::Option<crate::types::LambdaAvailabilityProvider> {
+        &self.lambda_provider
     }
     /// Consumes the builder and constructs a [`TestAvailabilityConfigurationInput`](crate::operation::test_availability_configuration::TestAvailabilityConfigurationInput).
     pub fn build(

@@ -49,6 +49,12 @@ impl ListObjectVersionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListObjectVersions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_object_versions::builders::ListObjectVersionsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -139,6 +145,10 @@ impl ListObjectVersionsFluentBuilder {
         self.inner = self.inner.set_bucket(input);
         self
     }
+    /// <p>The bucket name that contains the objects. </p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bucket()
+    }
     /// <p>A delimiter is a character that you specify to group keys. All keys that contain the same string between the <code>prefix</code> and the first occurrence of the delimiter are grouped under a single result element in <code>CommonPrefixes</code>. These groups are counted as one result against the <code>max-keys</code> limitation. These keys are not returned elsewhere in the response.</p>
     pub fn delimiter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.delimiter(input.into());
@@ -148,6 +158,10 @@ impl ListObjectVersionsFluentBuilder {
     pub fn set_delimiter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_delimiter(input);
         self
+    }
+    /// <p>A delimiter is a character that you specify to group keys. All keys that contain the same string between the <code>prefix</code> and the first occurrence of the delimiter are grouped under a single result element in <code>CommonPrefixes</code>. These groups are counted as one result against the <code>max-keys</code> limitation. These keys are not returned elsewhere in the response.</p>
+    pub fn get_delimiter(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_delimiter()
     }
     /// <p>Requests Amazon S3 to encode the object keys in the response and specifies the encoding method to use. An object key can contain any Unicode character; however, the XML 1.0 parser cannot parse some characters, such as characters with an ASCII value from 0 to 10. For characters that are not supported in XML 1.0, you can add this parameter to request that Amazon S3 encode the keys in the response.</p>
     pub fn encoding_type(mut self, input: crate::types::EncodingType) -> Self {
@@ -162,6 +176,10 @@ impl ListObjectVersionsFluentBuilder {
         self.inner = self.inner.set_encoding_type(input);
         self
     }
+    /// <p>Requests Amazon S3 to encode the object keys in the response and specifies the encoding method to use. An object key can contain any Unicode character; however, the XML 1.0 parser cannot parse some characters, such as characters with an ASCII value from 0 to 10. For characters that are not supported in XML 1.0, you can add this parameter to request that Amazon S3 encode the keys in the response.</p>
+    pub fn get_encoding_type(&self) -> &::std::option::Option<crate::types::EncodingType> {
+        self.inner.get_encoding_type()
+    }
     /// <p>Specifies the key to start with when listing objects in a bucket.</p>
     pub fn key_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key_marker(input.into());
@@ -171,6 +189,10 @@ impl ListObjectVersionsFluentBuilder {
     pub fn set_key_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key_marker(input);
         self
+    }
+    /// <p>Specifies the key to start with when listing objects in a bucket.</p>
+    pub fn get_key_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_key_marker()
     }
     /// <p>Sets the maximum number of keys returned in the response. By default, the action returns up to 1,000 key names. The response might contain fewer keys but will never contain more. If additional keys satisfy the search criteria, but were not returned because <code>max-keys</code> was exceeded, the response contains <code>
     /// <istruncated>
@@ -188,6 +210,13 @@ impl ListObjectVersionsFluentBuilder {
         self.inner = self.inner.set_max_keys(input);
         self
     }
+    /// <p>Sets the maximum number of keys returned in the response. By default, the action returns up to 1,000 key names. The response might contain fewer keys but will never contain more. If additional keys satisfy the search criteria, but were not returned because <code>max-keys</code> was exceeded, the response contains <code>
+    /// <istruncated>
+    /// true
+    /// </istruncated></code>. To return the additional keys, see <code>key-marker</code> and <code>version-id-marker</code>.</p>
+    pub fn get_max_keys(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_keys()
+    }
     /// <p>Use this parameter to select only those keys that begin with the specified prefix. You can use prefixes to separate a bucket into different groupings of keys. (You can think of using <code>prefix</code> to make groups in the same way that you'd use a folder in a file system.) You can use <code>prefix</code> with <code>delimiter</code> to roll up numerous objects into a single result under <code>CommonPrefixes</code>. </p>
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.prefix(input.into());
@@ -197,6 +226,10 @@ impl ListObjectVersionsFluentBuilder {
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_prefix(input);
         self
+    }
+    /// <p>Use this parameter to select only those keys that begin with the specified prefix. You can use prefixes to separate a bucket into different groupings of keys. (You can think of using <code>prefix</code> to make groups in the same way that you'd use a folder in a file system.) You can use <code>prefix</code> with <code>delimiter</code> to roll up numerous objects into a single result under <code>CommonPrefixes</code>. </p>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_prefix()
     }
     /// <p>Specifies the object version you want to start listing from.</p>
     pub fn version_id_marker(
@@ -214,6 +247,10 @@ impl ListObjectVersionsFluentBuilder {
         self.inner = self.inner.set_version_id_marker(input);
         self
     }
+    /// <p>Specifies the object version you want to start listing from.</p>
+    pub fn get_version_id_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_version_id_marker()
+    }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(
         mut self,
@@ -230,6 +267,10 @@ impl ListObjectVersionsFluentBuilder {
         self.inner = self.inner.set_expected_bucket_owner(input);
         self
     }
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
+    pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_expected_bucket_owner()
+    }
     /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(mut self, input: crate::types::RequestPayer) -> Self {
         self.inner = self.inner.request_payer(input);
@@ -242,6 +283,10 @@ impl ListObjectVersionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_request_payer(input);
         self
+    }
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn get_request_payer(&self) -> &::std::option::Option<crate::types::RequestPayer> {
+        self.inner.get_request_payer()
     }
     /// Appends an item to `OptionalObjectAttributes`.
     ///
@@ -262,5 +307,11 @@ impl ListObjectVersionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_optional_object_attributes(input);
         self
+    }
+    /// <p>Specifies the optional fields that you want returned in the response. Fields that you do not specify are not returned.</p>
+    pub fn get_optional_object_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OptionalObjectAttributes>> {
+        self.inner.get_optional_object_attributes()
     }
 }

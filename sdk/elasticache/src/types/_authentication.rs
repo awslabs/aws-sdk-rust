@@ -51,6 +51,10 @@ impl AuthenticationBuilder {
         self.r#type = input;
         self
     }
+    /// <p>Indicates whether the user requires a password to authenticate.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::AuthenticationType> {
+        &self.r#type
+    }
     /// <p>The number of passwords belonging to the user. The maximum is two.</p>
     pub fn password_count(mut self, input: i32) -> Self {
         self.password_count = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl AuthenticationBuilder {
     pub fn set_password_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.password_count = input;
         self
+    }
+    /// <p>The number of passwords belonging to the user. The maximum is two.</p>
+    pub fn get_password_count(&self) -> &::std::option::Option<i32> {
+        &self.password_count
     }
     /// Consumes the builder and constructs a [`Authentication`](crate::types::Authentication).
     pub fn build(self) -> crate::types::Authentication {

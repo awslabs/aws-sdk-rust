@@ -56,6 +56,10 @@ impl MetricBuilder {
         self.namespace = input;
         self
     }
+    /// <p>The namespace of the metric.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
+    }
     /// <p>The name of the metric. This is a required field.</p>
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_name = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl MetricBuilder {
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_name = input;
         self
+    }
+    /// <p>The name of the metric. This is a required field.</p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_name
     }
     /// Appends an item to `dimensions`.
     ///
@@ -84,6 +92,12 @@ impl MetricBuilder {
     ) -> Self {
         self.dimensions = input;
         self
+    }
+    /// <p>The dimensions for the metric.</p>
+    pub fn get_dimensions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Dimension>> {
+        &self.dimensions
     }
     /// Consumes the builder and constructs a [`Metric`](crate::types::Metric).
     pub fn build(self) -> crate::types::Metric {

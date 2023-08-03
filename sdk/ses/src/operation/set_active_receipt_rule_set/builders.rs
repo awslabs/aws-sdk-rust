@@ -40,6 +40,13 @@ impl SetActiveReceiptRuleSetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SetActiveReceiptRuleSet as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::set_active_receipt_rule_set::builders::SetActiveReceiptRuleSetInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,5 +142,9 @@ impl SetActiveReceiptRuleSetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_rule_set_name(input);
         self
+    }
+    /// <p>The name of the receipt rule set to make active. Setting this value to null disables all email receiving.</p>
+    pub fn get_rule_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rule_set_name()
     }
 }

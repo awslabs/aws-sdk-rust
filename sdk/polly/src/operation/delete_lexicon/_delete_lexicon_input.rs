@@ -39,6 +39,10 @@ impl DeleteLexiconInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the lexicon to delete. Must be an existing lexicon in the region.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DeleteLexiconInput`](crate::operation::delete_lexicon::DeleteLexiconInput).
     pub fn build(
         self,

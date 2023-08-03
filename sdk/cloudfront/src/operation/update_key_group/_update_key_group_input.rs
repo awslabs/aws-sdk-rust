@@ -58,6 +58,10 @@ impl UpdateKeyGroupInputBuilder {
         self.key_group_config = input;
         self
     }
+    /// <p>The key group configuration.</p>
+    pub fn get_key_group_config(&self) -> &::std::option::Option<crate::types::KeyGroupConfig> {
+        &self.key_group_config
+    }
     /// <p>The identifier of the key group that you are updating.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -68,6 +72,10 @@ impl UpdateKeyGroupInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the key group that you are updating.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The version of the key group that you are updating. The version is the key group's <code>ETag</code> value.</p>
     pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.if_match = ::std::option::Option::Some(input.into());
@@ -77,6 +85,10 @@ impl UpdateKeyGroupInputBuilder {
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.if_match = input;
         self
+    }
+    /// <p>The version of the key group that you are updating. The version is the key group's <code>ETag</code> value.</p>
+    pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
+        &self.if_match
     }
     /// Consumes the builder and constructs a [`UpdateKeyGroupInput`](crate::operation::update_key_group::UpdateKeyGroupInput).
     pub fn build(

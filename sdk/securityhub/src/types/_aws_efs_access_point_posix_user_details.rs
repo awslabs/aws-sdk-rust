@@ -56,6 +56,10 @@ impl AwsEfsAccessPointPosixUserDetailsBuilder {
         self.gid = input;
         self
     }
+    /// <p>The POSIX group ID used for all file system operations using this access point. </p>
+    pub fn get_gid(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gid
+    }
     /// Appends an item to `secondary_gids`.
     ///
     /// To override the contents of this collection use [`set_secondary_gids`](Self::set_secondary_gids).
@@ -78,6 +82,12 @@ impl AwsEfsAccessPointPosixUserDetailsBuilder {
         self.secondary_gids = input;
         self
     }
+    /// <p>Secondary POSIX group IDs used for all file system operations using this access point. </p>
+    pub fn get_secondary_gids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.secondary_gids
+    }
     /// <p>The POSIX user ID used for all file system operations using this access point. </p>
     pub fn uid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.uid = ::std::option::Option::Some(input.into());
@@ -87,6 +97,10 @@ impl AwsEfsAccessPointPosixUserDetailsBuilder {
     pub fn set_uid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.uid = input;
         self
+    }
+    /// <p>The POSIX user ID used for all file system operations using this access point. </p>
+    pub fn get_uid(&self) -> &::std::option::Option<::std::string::String> {
+        &self.uid
     }
     /// Consumes the builder and constructs a [`AwsEfsAccessPointPosixUserDetails`](crate::types::AwsEfsAccessPointPosixUserDetails).
     pub fn build(self) -> crate::types::AwsEfsAccessPointPosixUserDetails {

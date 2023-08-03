@@ -37,6 +37,10 @@ impl ListEndpointsByPlatformApplicationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListEndpointsByPlatformApplication as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_endpoints_by_platform_application::builders::ListEndpointsByPlatformApplicationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -113,6 +117,10 @@ impl ListEndpointsByPlatformApplicationFluentBuilder {
         self.inner = self.inner.set_platform_application_arn(input);
         self
     }
+    /// <p>PlatformApplicationArn for ListEndpointsByPlatformApplicationInput action.</p>
+    pub fn get_platform_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_platform_application_arn()
+    }
     /// <p>NextToken string is used when calling ListEndpointsByPlatformApplication action to retrieve additional records that are available after the first page results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -122,5 +130,9 @@ impl ListEndpointsByPlatformApplicationFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>NextToken string is used when calling ListEndpointsByPlatformApplication action to retrieve additional records that are available after the first page results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

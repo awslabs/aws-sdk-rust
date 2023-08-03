@@ -63,6 +63,10 @@ impl UpdateClusterKafkaVersionInputBuilder {
         self.cluster_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_arn
+    }
     /// <p>The custom configuration that should be applied on the new version of cluster.</p>
     pub fn configuration_info(mut self, input: crate::types::ConfigurationInfo) -> Self {
         self.configuration_info = ::std::option::Option::Some(input);
@@ -75,6 +79,12 @@ impl UpdateClusterKafkaVersionInputBuilder {
     ) -> Self {
         self.configuration_info = input;
         self
+    }
+    /// <p>The custom configuration that should be applied on the new version of cluster.</p>
+    pub fn get_configuration_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConfigurationInfo> {
+        &self.configuration_info
     }
     /// <p>Current cluster version.</p>
     pub fn current_version(
@@ -92,6 +102,10 @@ impl UpdateClusterKafkaVersionInputBuilder {
         self.current_version = input;
         self
     }
+    /// <p>Current cluster version.</p>
+    pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.current_version
+    }
     /// <p>Target Kafka version.</p>
     pub fn target_kafka_version(
         mut self,
@@ -107,6 +121,10 @@ impl UpdateClusterKafkaVersionInputBuilder {
     ) -> Self {
         self.target_kafka_version = input;
         self
+    }
+    /// <p>Target Kafka version.</p>
+    pub fn get_target_kafka_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_kafka_version
     }
     /// Consumes the builder and constructs a [`UpdateClusterKafkaVersionInput`](crate::operation::update_cluster_kafka_version::UpdateClusterKafkaVersionInput).
     pub fn build(

@@ -56,6 +56,10 @@ impl RebootCacheClusterInputBuilder {
         self.cache_cluster_id = input;
         self
     }
+    /// <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
+    pub fn get_cache_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_cluster_id
+    }
     /// Appends an item to `cache_node_ids_to_reboot`.
     ///
     /// To override the contents of this collection use [`set_cache_node_ids_to_reboot`](Self::set_cache_node_ids_to_reboot).
@@ -77,6 +81,12 @@ impl RebootCacheClusterInputBuilder {
     ) -> Self {
         self.cache_node_ids_to_reboot = input;
         self
+    }
+    /// <p>A list of cache node IDs to reboot. A node ID is a numeric identifier (0001, 0002, etc.). To reboot an entire cluster, specify all of the cache node IDs.</p>
+    pub fn get_cache_node_ids_to_reboot(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.cache_node_ids_to_reboot
     }
     /// Consumes the builder and constructs a [`RebootCacheClusterInput`](crate::operation::reboot_cache_cluster::RebootCacheClusterInput).
     pub fn build(

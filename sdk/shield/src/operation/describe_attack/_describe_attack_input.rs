@@ -39,6 +39,10 @@ impl DescribeAttackInputBuilder {
         self.attack_id = input;
         self
     }
+    /// <p>The unique identifier (ID) for the attack.</p>
+    pub fn get_attack_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attack_id
+    }
     /// Consumes the builder and constructs a [`DescribeAttackInput`](crate::operation::describe_attack::DescribeAttackInput).
     pub fn build(
         self,

@@ -46,6 +46,10 @@ impl GetLifecyclePolicyInputBuilder {
         self.container_name = input;
         self
     }
+    /// <p>The name of the container that the object lifecycle policy is assigned to.</p>
+    pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.container_name
+    }
     /// Consumes the builder and constructs a [`GetLifecyclePolicyInput`](crate::operation::get_lifecycle_policy::GetLifecyclePolicyInput).
     pub fn build(
         self,

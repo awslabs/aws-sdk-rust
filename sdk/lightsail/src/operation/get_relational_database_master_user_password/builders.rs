@@ -37,6 +37,10 @@ impl GetRelationalDatabaseMasterUserPasswordFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetRelationalDatabaseMasterUserPassword as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_relational_database_master_user_password::builders::GetRelationalDatabaseMasterUserPasswordInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -107,6 +111,10 @@ impl GetRelationalDatabaseMasterUserPasswordFluentBuilder {
         self.inner = self.inner.set_relational_database_name(input);
         self
     }
+    /// <p>The name of your database for which to get the master user password.</p>
+    pub fn get_relational_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_relational_database_name()
+    }
     /// <p>The password version to return.</p>
     /// <p>Specifying <code>CURRENT</code> or <code>PREVIOUS</code> returns the current or previous passwords respectively. Specifying <code>PENDING</code> returns the newest version of the password that will rotate to <code>CURRENT</code>. After the <code>PENDING</code> password rotates to <code>CURRENT</code>, the <code>PENDING</code> password is no longer available.</p>
     /// <p>Default: <code>CURRENT</code> </p>
@@ -126,5 +134,13 @@ impl GetRelationalDatabaseMasterUserPasswordFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_password_version(input);
         self
+    }
+    /// <p>The password version to return.</p>
+    /// <p>Specifying <code>CURRENT</code> or <code>PREVIOUS</code> returns the current or previous passwords respectively. Specifying <code>PENDING</code> returns the newest version of the password that will rotate to <code>CURRENT</code>. After the <code>PENDING</code> password rotates to <code>CURRENT</code>, the <code>PENDING</code> password is no longer available.</p>
+    /// <p>Default: <code>CURRENT</code> </p>
+    pub fn get_password_version(
+        &self,
+    ) -> &::std::option::Option<crate::types::RelationalDatabasePasswordVersion> {
+        self.inner.get_password_version()
     }
 }

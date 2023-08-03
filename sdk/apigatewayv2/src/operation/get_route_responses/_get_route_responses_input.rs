@@ -64,6 +64,10 @@ impl GetRouteResponsesInputBuilder {
         self.api_id = input;
         self
     }
+    /// <p>The API identifier.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_id
+    }
     /// <p>The maximum number of elements to be returned for this resource.</p>
     pub fn max_results(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.max_results = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl GetRouteResponsesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of elements to be returned for this resource.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<::std::string::String> {
+        &self.max_results
     }
     /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,6 +92,10 @@ impl GetRouteResponsesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The route ID.</p>
     pub fn route_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_id = ::std::option::Option::Some(input.into());
@@ -93,6 +105,10 @@ impl GetRouteResponsesInputBuilder {
     pub fn set_route_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.route_id = input;
         self
+    }
+    /// <p>The route ID.</p>
+    pub fn get_route_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.route_id
     }
     /// Consumes the builder and constructs a [`GetRouteResponsesInput`](crate::operation::get_route_responses::GetRouteResponsesInput).
     pub fn build(

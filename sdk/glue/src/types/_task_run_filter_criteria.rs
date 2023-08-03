@@ -67,6 +67,10 @@ impl TaskRunFilterCriteriaBuilder {
         self.task_run_type = input;
         self
     }
+    /// <p>The type of task run.</p>
+    pub fn get_task_run_type(&self) -> &::std::option::Option<crate::types::TaskType> {
+        &self.task_run_type
+    }
     /// <p>The current status of the task run.</p>
     pub fn status(mut self, input: crate::types::TaskStatusType) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -79,6 +83,10 @@ impl TaskRunFilterCriteriaBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the task run.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TaskStatusType> {
+        &self.status
     }
     /// <p>Filter on task runs started before this date.</p>
     pub fn started_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -93,6 +101,10 @@ impl TaskRunFilterCriteriaBuilder {
         self.started_before = input;
         self
     }
+    /// <p>Filter on task runs started before this date.</p>
+    pub fn get_started_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.started_before
+    }
     /// <p>Filter on task runs started after this date.</p>
     pub fn started_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.started_after = ::std::option::Option::Some(input);
@@ -105,6 +117,10 @@ impl TaskRunFilterCriteriaBuilder {
     ) -> Self {
         self.started_after = input;
         self
+    }
+    /// <p>Filter on task runs started after this date.</p>
+    pub fn get_started_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.started_after
     }
     /// Consumes the builder and constructs a [`TaskRunFilterCriteria`](crate::types::TaskRunFilterCriteria).
     pub fn build(self) -> crate::types::TaskRunFilterCriteria {

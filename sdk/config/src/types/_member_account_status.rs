@@ -107,6 +107,10 @@ impl MemberAccountStatusBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The 12-digit account ID of a member account.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The name of Config rule deployed in the member account.</p>
     pub fn config_rule_name(
         mut self,
@@ -122,6 +126,10 @@ impl MemberAccountStatusBuilder {
     ) -> Self {
         self.config_rule_name = input;
         self
+    }
+    /// <p>The name of Config rule deployed in the member account.</p>
+    pub fn get_config_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.config_rule_name
     }
     /// <p>Indicates deployment status for Config rule in the member account. When management account calls <code>PutOrganizationConfigRule</code> action for the first time, Config rule status is created in the member account. When management account calls <code>PutOrganizationConfigRule</code> action for the second time, Config rule status is updated in the member account. Config rule status is deleted when the management account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
     /// <p> Config sets the state of the rule to:</p>
@@ -163,6 +171,24 @@ impl MemberAccountStatusBuilder {
         self.member_account_rule_status = input;
         self
     }
+    /// <p>Indicates deployment status for Config rule in the member account. When management account calls <code>PutOrganizationConfigRule</code> action for the first time, Config rule status is created in the member account. When management account calls <code>PutOrganizationConfigRule</code> action for the second time, Config rule status is updated in the member account. Config rule status is deleted when the management account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
+    /// <p> Config sets the state of the rule to:</p>
+    /// <ul>
+    /// <li> <p> <code>CREATE_SUCCESSFUL</code> when Config rule has been created in the member account. </p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> when Config rule is being created in the member account.</p> </li>
+    /// <li> <p> <code>CREATE_FAILED</code> when Config rule creation has failed in the member account.</p> </li>
+    /// <li> <p> <code>DELETE_FAILED</code> when Config rule deletion has failed in the member account.</p> </li>
+    /// <li> <p> <code>DELETE_IN_PROGRESS</code> when Config rule is being deleted in the member account.</p> </li>
+    /// <li> <p> <code>DELETE_SUCCESSFUL</code> when Config rule has been deleted in the member account. </p> </li>
+    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> when Config rule has been updated in the member account.</p> </li>
+    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when Config rule is being updated in the member account.</p> </li>
+    /// <li> <p> <code>UPDATE_FAILED</code> when Config rule deletion has failed in the member account.</p> </li>
+    /// </ul>
+    pub fn get_member_account_rule_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::MemberAccountRuleStatus> {
+        &self.member_account_rule_status
+    }
     /// <p>An error code that is returned when Config rule creation or deletion failed in the member account.</p>
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
@@ -172,6 +198,10 @@ impl MemberAccountStatusBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>An error code that is returned when Config rule creation or deletion failed in the member account.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
     }
     /// <p>An error message indicating that Config rule account creation or deletion has failed due to an error in the member account.</p>
     pub fn error_message(
@@ -189,6 +219,10 @@ impl MemberAccountStatusBuilder {
         self.error_message = input;
         self
     }
+    /// <p>An error message indicating that Config rule account creation or deletion has failed due to an error in the member account.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
+    }
     /// <p>The timestamp of the last status update.</p>
     pub fn last_update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_update_time = ::std::option::Option::Some(input);
@@ -201,6 +235,10 @@ impl MemberAccountStatusBuilder {
     ) -> Self {
         self.last_update_time = input;
         self
+    }
+    /// <p>The timestamp of the last status update.</p>
+    pub fn get_last_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_update_time
     }
     /// Consumes the builder and constructs a [`MemberAccountStatus`](crate::types::MemberAccountStatus).
     pub fn build(self) -> crate::types::MemberAccountStatus {

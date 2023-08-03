@@ -80,6 +80,10 @@ impl DirectoryConnectSettingsDescriptionBuilder {
         self.vpc_id = input;
         self
     }
+    /// <p>The identifier of the VPC that the AD Connector is in.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
+    }
     /// Appends an item to `subnet_ids`.
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
@@ -99,6 +103,10 @@ impl DirectoryConnectSettingsDescriptionBuilder {
         self.subnet_ids = input;
         self
     }
+    /// <p>A list of subnet identifiers in the VPC that the AD Connector is in.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
+    }
     /// <p>The user name of the service account in your self-managed directory.</p>
     pub fn customer_user_name(
         mut self,
@@ -115,6 +123,10 @@ impl DirectoryConnectSettingsDescriptionBuilder {
         self.customer_user_name = input;
         self
     }
+    /// <p>The user name of the service account in your self-managed directory.</p>
+    pub fn get_customer_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.customer_user_name
+    }
     /// <p>The security group identifier for the AD Connector directory.</p>
     pub fn security_group_id(
         mut self,
@@ -130,6 +142,10 @@ impl DirectoryConnectSettingsDescriptionBuilder {
     ) -> Self {
         self.security_group_id = input;
         self
+    }
+    /// <p>The security group identifier for the AD Connector directory.</p>
+    pub fn get_security_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_group_id
     }
     /// Appends an item to `availability_zones`.
     ///
@@ -153,6 +169,12 @@ impl DirectoryConnectSettingsDescriptionBuilder {
         self.availability_zones = input;
         self
     }
+    /// <p>A list of the Availability Zones that the directory is in.</p>
+    pub fn get_availability_zones(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.availability_zones
+    }
     /// Appends an item to `connect_ips`.
     ///
     /// To override the contents of this collection use [`set_connect_ips`](Self::set_connect_ips).
@@ -171,6 +193,12 @@ impl DirectoryConnectSettingsDescriptionBuilder {
     ) -> Self {
         self.connect_ips = input;
         self
+    }
+    /// <p>The IP addresses of the AD Connector servers.</p>
+    pub fn get_connect_ips(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.connect_ips
     }
     /// Consumes the builder and constructs a [`DirectoryConnectSettingsDescription`](crate::types::DirectoryConnectSettingsDescription).
     pub fn build(self) -> crate::types::DirectoryConnectSettingsDescription {

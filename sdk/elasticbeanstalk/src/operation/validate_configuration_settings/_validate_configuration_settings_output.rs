@@ -56,6 +56,12 @@ impl ValidateConfigurationSettingsOutputBuilder {
         self.messages = input;
         self
     }
+    /// <p> A list of <code>ValidationMessage</code>. </p>
+    pub fn get_messages(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationMessage>> {
+        &self.messages
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

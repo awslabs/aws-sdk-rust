@@ -36,6 +36,12 @@ impl DescribeDashboardFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeDashboard as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_dashboard::builders::DescribeDashboardInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +131,9 @@ impl DescribeDashboardFluentBuilder {
     pub fn set_dashboard_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dashboard_id(input);
         self
+    }
+    /// <p>The ID of the dashboard.</p>
+    pub fn get_dashboard_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dashboard_id()
     }
 }

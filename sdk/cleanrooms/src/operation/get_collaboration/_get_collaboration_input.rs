@@ -46,6 +46,10 @@ impl GetCollaborationInputBuilder {
         self.collaboration_identifier = input;
         self
     }
+    /// <p>The identifier for the collaboration.</p>
+    pub fn get_collaboration_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collaboration_identifier
+    }
     /// Consumes the builder and constructs a [`GetCollaborationInput`](crate::operation::get_collaboration::GetCollaborationInput).
     pub fn build(
         self,

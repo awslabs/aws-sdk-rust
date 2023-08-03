@@ -36,6 +36,10 @@ impl PutVerificationStateOnViolationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutVerificationStateOnViolation as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_verification_state_on_violation::builders::PutVerificationStateOnViolationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl PutVerificationStateOnViolationFluentBuilder {
         self.inner = self.inner.set_violation_id(input);
         self
     }
+    /// <p>The violation ID.</p>
+    pub fn get_violation_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_violation_id()
+    }
     /// <p>The verification state of the violation.</p>
     pub fn verification_state(mut self, input: crate::types::VerificationState) -> Self {
         self.inner = self.inner.verification_state(input);
@@ -112,6 +120,12 @@ impl PutVerificationStateOnViolationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_verification_state(input);
         self
+    }
+    /// <p>The verification state of the violation.</p>
+    pub fn get_verification_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::VerificationState> {
+        self.inner.get_verification_state()
     }
     /// <p>The description of the verification state of the violation (detect alarm).</p>
     pub fn verification_state_description(
@@ -128,5 +142,11 @@ impl PutVerificationStateOnViolationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_verification_state_description(input);
         self
+    }
+    /// <p>The description of the verification state of the violation (detect alarm).</p>
+    pub fn get_verification_state_description(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_verification_state_description()
     }
 }

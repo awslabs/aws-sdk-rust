@@ -41,6 +41,12 @@ impl UpdateConnectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateConnection as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_connection::builders::UpdateConnectionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -139,6 +145,11 @@ impl UpdateConnectionFluentBuilder {
         self.inner = self.inner.set_connection_id(input);
         self
     }
+    /// <p>The ID of the dedicated connection.</p>
+    /// <p>You can use <code>DescribeConnections</code> to retrieve the connection ID.</p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connection_id()
+    }
     /// <p>The name of the connection.</p>
     pub fn connection_name(
         mut self,
@@ -154,6 +165,10 @@ impl UpdateConnectionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_connection_name(input);
         self
+    }
+    /// <p>The name of the connection.</p>
+    pub fn get_connection_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connection_name()
     }
     /// <p>The connection MAC Security (MACsec) encryption mode.</p>
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
@@ -172,5 +187,10 @@ impl UpdateConnectionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_encryption_mode(input);
         self
+    }
+    /// <p>The connection MAC Security (MACsec) encryption mode.</p>
+    /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
+    pub fn get_encryption_mode(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_encryption_mode()
     }
 }

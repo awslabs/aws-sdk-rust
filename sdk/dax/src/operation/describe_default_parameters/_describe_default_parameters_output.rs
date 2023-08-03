@@ -54,6 +54,10 @@ impl DescribeDefaultParametersOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
@@ -72,6 +76,12 @@ impl DescribeDefaultParametersOutputBuilder {
     ) -> Self {
         self.parameters = input;
         self
+    }
+    /// <p>A list of parameters. Each element in the list represents one parameter.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+        &self.parameters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

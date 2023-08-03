@@ -144,6 +144,10 @@ impl PermissionGroupBuilder {
         self.permission_group_id = input;
         self
     }
+    /// <p> The unique identifier for the permission group.</p>
+    pub fn get_permission_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.permission_group_id
+    }
     /// <p>The name of the permission group.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -154,6 +158,10 @@ impl PermissionGroupBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the permission group.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p> A brief description for the permission group.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -163,6 +171,10 @@ impl PermissionGroupBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p> A brief description for the permission group.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `application_permissions`.
     ///
@@ -205,6 +217,23 @@ impl PermissionGroupBuilder {
         self.application_permissions = input;
         self
     }
+    /// <p>Indicates the permissions that are granted to a specific group for accessing the FinSpace application.</p> <important>
+    /// <p>When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code> allows users to grant themselves or others access to any functionality in their FinSpace environment's application. It should only be granted to trusted users.</p>
+    /// </important>
+    /// <ul>
+    /// <li> <p> <code>CreateDataset</code> – Group members can create new datasets.</p> </li>
+    /// <li> <p> <code>ManageClusters</code> – Group members can manage Apache Spark clusters from FinSpace notebooks.</p> </li>
+    /// <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage users and permission groups. This is a privileged permission that allows users to grant themselves or others access to any functionality in the application. It should only be granted to trusted users.</p> </li>
+    /// <li> <p> <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p> </li>
+    /// <li> <p> <code>ViewAuditData</code> – Group members can view audit data.</p> </li>
+    /// <li> <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.</p> </li>
+    /// <li> <p> <code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.</p> </li>
+    /// </ul>
+    pub fn get_application_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationPermission>> {
+        &self.application_permissions
+    }
     /// <p>The timestamp at which the group was created in FinSpace. The value is determined as epoch time in milliseconds. </p>
     pub fn create_time(mut self, input: i64) -> Self {
         self.create_time = ::std::option::Option::Some(input);
@@ -215,6 +244,10 @@ impl PermissionGroupBuilder {
         self.create_time = input;
         self
     }
+    /// <p>The timestamp at which the group was created in FinSpace. The value is determined as epoch time in milliseconds. </p>
+    pub fn get_create_time(&self) -> &::std::option::Option<i64> {
+        &self.create_time
+    }
     /// <p>Describes the last time the permission group was updated. The value is determined as epoch time in milliseconds. </p>
     pub fn last_modified_time(mut self, input: i64) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -224,6 +257,10 @@ impl PermissionGroupBuilder {
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>Describes the last time the permission group was updated. The value is determined as epoch time in milliseconds. </p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<i64> {
+        &self.last_modified_time
     }
     /// <p>Indicates the status of the user account within a permission group.</p>
     /// <ul>
@@ -250,6 +287,17 @@ impl PermissionGroupBuilder {
     ) -> Self {
         self.membership_status = input;
         self
+    }
+    /// <p>Indicates the status of the user account within a permission group.</p>
+    /// <ul>
+    /// <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.</p> </li>
+    /// <li> <p> <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.</p> </li>
+    /// <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li>
+    /// </ul>
+    pub fn get_membership_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::PermissionGroupMembershipStatus> {
+        &self.membership_status
     }
     /// Consumes the builder and constructs a [`PermissionGroup`](crate::types::PermissionGroup).
     pub fn build(self) -> crate::types::PermissionGroup {

@@ -46,6 +46,10 @@ impl GetIngestionOutputBuilder {
         self.ingestion = input;
         self
     }
+    /// <p>Contains information about an ingestion.</p>
+    pub fn get_ingestion(&self) -> &::std::option::Option<crate::types::Ingestion> {
+        &self.ingestion
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

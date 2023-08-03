@@ -62,6 +62,10 @@ impl SigV4AuthorizationBuilder {
         self.signing_region = input;
         self
     }
+    /// <p>The signing region.</p>
+    pub fn get_signing_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.signing_region
+    }
     /// <p>The service name to use while signing with Sig V4.</p>
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl SigV4AuthorizationBuilder {
         self.service_name = input;
         self
     }
+    /// <p>The service name to use while signing with Sig V4.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
+    }
     /// <p>The ARN of the signing role.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl SigV4AuthorizationBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The ARN of the signing role.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Consumes the builder and constructs a [`SigV4Authorization`](crate::types::SigV4Authorization).
     pub fn build(self) -> crate::types::SigV4Authorization {

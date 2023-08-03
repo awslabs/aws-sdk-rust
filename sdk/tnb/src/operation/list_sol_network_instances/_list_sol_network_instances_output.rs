@@ -60,6 +60,10 @@ impl ListSolNetworkInstancesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `network_instances`.
     ///
     /// To override the contents of this collection use [`set_network_instances`](Self::set_network_instances).
@@ -78,6 +82,12 @@ impl ListSolNetworkInstancesOutputBuilder {
     ) -> Self {
         self.network_instances = input;
         self
+    }
+    /// <p>Lists network instances.</p>
+    pub fn get_network_instances(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListSolNetworkInstanceInfo>> {
+        &self.network_instances
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -96,6 +96,10 @@ impl IngestionBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the ingestion.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the app bundle for the ingestion.</p>
     pub fn app_bundle_arn(
         mut self,
@@ -112,6 +116,10 @@ impl IngestionBuilder {
         self.app_bundle_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the app bundle for the ingestion.</p>
+    pub fn get_app_bundle_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_bundle_arn
+    }
     /// <p>The name of the application.</p>
     pub fn app(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app = ::std::option::Option::Some(input.into());
@@ -122,6 +130,10 @@ impl IngestionBuilder {
         self.app = input;
         self
     }
+    /// <p>The name of the application.</p>
+    pub fn get_app(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app
+    }
     /// <p>The ID of the application tenant.</p>
     pub fn tenant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tenant_id = ::std::option::Option::Some(input.into());
@@ -131,6 +143,10 @@ impl IngestionBuilder {
     pub fn set_tenant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tenant_id = input;
         self
+    }
+    /// <p>The ID of the application tenant.</p>
+    pub fn get_tenant_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tenant_id
     }
     /// <p>The timestamp of when the ingestion was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -145,6 +161,10 @@ impl IngestionBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The timestamp of when the ingestion was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The timestamp of when the ingestion was last updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
@@ -158,6 +178,10 @@ impl IngestionBuilder {
         self.updated_at = input;
         self
     }
+    /// <p>The timestamp of when the ingestion was last updated.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
+    }
     /// <p>The status of the ingestion.</p>
     pub fn state(mut self, input: crate::types::IngestionState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -167,6 +191,10 @@ impl IngestionBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::IngestionState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The status of the ingestion.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::IngestionState> {
+        &self.state
     }
     /// <p>The type of the ingestion.</p>
     pub fn ingestion_type(mut self, input: crate::types::IngestionType) -> Self {
@@ -180,6 +208,10 @@ impl IngestionBuilder {
     ) -> Self {
         self.ingestion_type = input;
         self
+    }
+    /// <p>The type of the ingestion.</p>
+    pub fn get_ingestion_type(&self) -> &::std::option::Option<crate::types::IngestionType> {
+        &self.ingestion_type
     }
     /// Consumes the builder and constructs a [`Ingestion`](crate::types::Ingestion).
     pub fn build(self) -> crate::types::Ingestion {

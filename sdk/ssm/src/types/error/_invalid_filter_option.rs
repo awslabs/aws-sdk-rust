@@ -65,6 +65,10 @@ impl InvalidFilterOptionBuilder {
         self.message = input;
         self
     }
+    /// <p>The specified filter option isn't valid. Valid options are Equals and BeginsWith. For Path filter, valid options are Recursive and OneLevel.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);

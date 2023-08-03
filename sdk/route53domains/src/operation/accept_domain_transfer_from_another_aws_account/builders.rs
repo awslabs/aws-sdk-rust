@@ -38,6 +38,10 @@ impl AcceptDomainTransferFromAnotherAwsAccountFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AcceptDomainTransferFromAnotherAwsAccount as a reference.
+    pub fn as_input(&self) -> &crate::operation::accept_domain_transfer_from_another_aws_account::builders::AcceptDomainTransferFromAnotherAwsAccountInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -102,6 +106,10 @@ impl AcceptDomainTransferFromAnotherAwsAccountFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p>The name of the domain that was specified when another Amazon Web Services account submitted a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a> request. </p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
     /// <p>The password that was returned by the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a> request. </p>
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.password(input.into());
@@ -111,5 +119,9 @@ impl AcceptDomainTransferFromAnotherAwsAccountFluentBuilder {
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_password(input);
         self
+    }
+    /// <p>The password that was returned by the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a> request. </p>
+    pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_password()
     }
 }

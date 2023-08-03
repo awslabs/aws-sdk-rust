@@ -48,6 +48,10 @@ impl DeleteDataLakeInputBuilder {
         self.regions = input;
         self
     }
+    /// <p>The list of Regions where Security Lake is enabled.</p>
+    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.regions
+    }
     /// Consumes the builder and constructs a [`DeleteDataLakeInput`](crate::operation::delete_data_lake::DeleteDataLakeInput).
     pub fn build(
         self,

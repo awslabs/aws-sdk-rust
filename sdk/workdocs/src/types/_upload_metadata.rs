@@ -62,6 +62,10 @@ impl UploadMetadataBuilder {
         self.upload_url = input;
         self
     }
+    /// <p>The URL of the upload.</p>
+    pub fn get_upload_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.upload_url
+    }
     /// Adds a key-value pair to `signed_headers`.
     ///
     /// To override the contents of this collection use [`set_signed_headers`](Self::set_signed_headers).
@@ -86,6 +90,14 @@ impl UploadMetadataBuilder {
     ) -> Self {
         self.signed_headers = input;
         self
+    }
+    /// <p>The signed headers.</p>
+    pub fn get_signed_headers(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.signed_headers
     }
     /// Consumes the builder and constructs a [`UploadMetadata`](crate::types::UploadMetadata).
     pub fn build(self) -> crate::types::UploadMetadata {

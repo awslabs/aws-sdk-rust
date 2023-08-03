@@ -47,6 +47,10 @@ impl ListTagsForResourceOutputBuilder {
         self.tags_model = input;
         self
     }
+    /// <p>Specifies the tags (keys and values) for an application, campaign, message template, or segment.</p>
+    pub fn get_tags_model(&self) -> &::std::option::Option<crate::types::TagsModel> {
+        &self.tags_model
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

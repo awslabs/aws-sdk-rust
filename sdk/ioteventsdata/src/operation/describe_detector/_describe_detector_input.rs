@@ -54,6 +54,10 @@ impl DescribeDetectorInputBuilder {
         self.detector_model_name = input;
         self
     }
+    /// <p>The name of the detector model whose detectors (instances) you want information about.</p>
+    pub fn get_detector_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_model_name
+    }
     /// <p>A filter used to limit results to detectors (instances) created because of the given key ID.</p>
     pub fn key_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_value = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl DescribeDetectorInputBuilder {
     pub fn set_key_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_value = input;
         self
+    }
+    /// <p>A filter used to limit results to detectors (instances) created because of the given key ID.</p>
+    pub fn get_key_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_value
     }
     /// Consumes the builder and constructs a [`DescribeDetectorInput`](crate::operation::describe_detector::DescribeDetectorInput).
     pub fn build(

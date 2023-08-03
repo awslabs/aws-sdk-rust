@@ -48,6 +48,10 @@ impl UpdateIpAddressBuilder {
         self.ip_id = input;
         self
     }
+    /// <p> The ID of the IP address, specified by the <code>ResolverEndpointId</code>. </p>
+    pub fn get_ip_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_id
+    }
     /// <p> The IPv6 address that you want to use for DNS queries. </p>
     pub fn ipv6(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipv6 = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl UpdateIpAddressBuilder {
     pub fn set_ipv6(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipv6 = input;
         self
+    }
+    /// <p> The IPv6 address that you want to use for DNS queries. </p>
+    pub fn get_ipv6(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv6
     }
     /// Consumes the builder and constructs a [`UpdateIpAddress`](crate::types::UpdateIpAddress).
     pub fn build(self) -> crate::types::UpdateIpAddress {

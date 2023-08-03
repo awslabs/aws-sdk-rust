@@ -51,6 +51,13 @@ impl UndeprecateActivityTypeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UndeprecateActivityType as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::undeprecate_activity_type::builders::UndeprecateActivityTypeInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -141,6 +148,10 @@ impl UndeprecateActivityTypeFluentBuilder {
         self.inner = self.inner.set_domain(input);
         self
     }
+    /// <p>The name of the domain of the deprecated activity type.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain()
+    }
     /// <p>The activity type to undeprecate.</p>
     pub fn activity_type(mut self, input: crate::types::ActivityType) -> Self {
         self.inner = self.inner.activity_type(input);
@@ -153,5 +164,9 @@ impl UndeprecateActivityTypeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_activity_type(input);
         self
+    }
+    /// <p>The activity type to undeprecate.</p>
+    pub fn get_activity_type(&self) -> &::std::option::Option<crate::types::ActivityType> {
+        self.inner.get_activity_type()
     }
 }

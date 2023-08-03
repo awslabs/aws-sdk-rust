@@ -43,6 +43,12 @@ impl ListPipelinesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListPipelines as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_pipelines::builders::ListPipelinesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,5 +141,9 @@ impl ListPipelinesFluentBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
+    }
+    /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>ListPipelines</code> with the marker value from the previous call to retrieve the next set of results.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
     }
 }

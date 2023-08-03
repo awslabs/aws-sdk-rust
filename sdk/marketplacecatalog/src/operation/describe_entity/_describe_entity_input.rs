@@ -47,6 +47,10 @@ impl DescribeEntityInputBuilder {
         self.catalog = input;
         self
     }
+    /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
+    pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog
+    }
     /// <p>Required. The unique ID of the entity to describe.</p>
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl DescribeEntityInputBuilder {
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entity_id = input;
         self
+    }
+    /// <p>Required. The unique ID of the entity to describe.</p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_id
     }
     /// Consumes the builder and constructs a [`DescribeEntityInput`](crate::operation::describe_entity::DescribeEntityInput).
     pub fn build(

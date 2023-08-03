@@ -39,6 +39,10 @@ impl DeleteRuleInputBuilder {
         self.rule_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the rule.</p>
+    pub fn get_rule_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_arn
+    }
     /// Consumes the builder and constructs a [`DeleteRuleInput`](crate::operation::delete_rule::DeleteRuleInput).
     pub fn build(
         self,

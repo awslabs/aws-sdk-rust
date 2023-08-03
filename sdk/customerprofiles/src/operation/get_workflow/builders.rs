@@ -36,6 +36,10 @@ impl GetWorkflowFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetWorkflow as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_workflow::builders::GetWorkflowInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl GetWorkflowFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p>The unique name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
     /// <p>Unique identifier for the workflow.</p>
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workflow_id(input.into());
@@ -127,5 +135,9 @@ impl GetWorkflowFluentBuilder {
     pub fn set_workflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workflow_id(input);
         self
+    }
+    /// <p>Unique identifier for the workflow.</p>
+    pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workflow_id()
     }
 }

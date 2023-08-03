@@ -49,6 +49,10 @@ impl DescribeAccountAttributesOutputBuilder {
         self.resource_quotas = input;
         self
     }
+    /// <p>The Elastic Beanstalk resource quotas associated with the calling AWS account.</p>
+    pub fn get_resource_quotas(&self) -> &::std::option::Option<crate::types::ResourceQuotas> {
+        &self.resource_quotas
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

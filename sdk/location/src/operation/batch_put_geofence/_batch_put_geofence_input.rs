@@ -55,6 +55,10 @@ impl BatchPutGeofenceInputBuilder {
         self.collection_name = input;
         self
     }
+    /// <p>The geofence collection storing the geofences.</p>
+    pub fn get_collection_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collection_name
+    }
     /// Appends an item to `entries`.
     ///
     /// To override the contents of this collection use [`set_entries`](Self::set_entries).
@@ -73,6 +77,12 @@ impl BatchPutGeofenceInputBuilder {
     ) -> Self {
         self.entries = input;
         self
+    }
+    /// <p>The batch of geofences to be stored in a geofence collection.</p>
+    pub fn get_entries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchPutGeofenceRequestEntry>> {
+        &self.entries
     }
     /// Consumes the builder and constructs a [`BatchPutGeofenceInput`](crate::operation::batch_put_geofence::BatchPutGeofenceInput).
     pub fn build(

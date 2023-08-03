@@ -47,6 +47,10 @@ impl UpdateStageInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>ARN of the stage to be updated.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>Name of the stage to be updated.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl UpdateStageInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>Name of the stage to be updated.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`UpdateStageInput`](crate::operation::update_stage::UpdateStageInput).
     pub fn build(

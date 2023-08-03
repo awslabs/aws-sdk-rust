@@ -36,6 +36,12 @@ impl ModifyOptionGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyOptionGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::modify_option_group::builders::ModifyOptionGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +140,11 @@ impl ModifyOptionGroupFluentBuilder {
         self.inner = self.inner.set_option_group_name(input);
         self
     }
+    /// <p>The name of the option group to be modified.</p>
+    /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group, and that option group can't be removed from a DB instance once it is associated with a DB instance</p>
+    pub fn get_option_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_option_group_name()
+    }
     /// Appends an item to `OptionsToInclude`.
     ///
     /// To override the contents of this collection use [`set_options_to_include`](Self::set_options_to_include).
@@ -150,6 +161,12 @@ impl ModifyOptionGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_options_to_include(input);
         self
+    }
+    /// <p>Options in this list are added to the option group or, if already present, the specified configuration is used to update the existing configuration.</p>
+    pub fn get_options_to_include(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OptionConfiguration>> {
+        self.inner.get_options_to_include()
     }
     /// Appends an item to `OptionsToRemove`.
     ///
@@ -171,6 +188,12 @@ impl ModifyOptionGroupFluentBuilder {
         self.inner = self.inner.set_options_to_remove(input);
         self
     }
+    /// <p>Options in this list are removed from the option group.</p>
+    pub fn get_options_to_remove(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_options_to_remove()
+    }
     /// <p>A value that indicates whether to apply the change immediately or during the next maintenance window for each instance associated with the option group.</p>
     pub fn apply_immediately(mut self, input: bool) -> Self {
         self.inner = self.inner.apply_immediately(input);
@@ -180,5 +203,9 @@ impl ModifyOptionGroupFluentBuilder {
     pub fn set_apply_immediately(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_apply_immediately(input);
         self
+    }
+    /// <p>A value that indicates whether to apply the change immediately or during the next maintenance window for each instance associated with the option group.</p>
+    pub fn get_apply_immediately(&self) -> &::std::option::Option<bool> {
+        self.inner.get_apply_immediately()
     }
 }

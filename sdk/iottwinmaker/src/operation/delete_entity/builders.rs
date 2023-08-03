@@ -36,6 +36,10 @@ impl DeleteEntityFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteEntity as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_entity::builders::DeleteEntityInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl DeleteEntityFluentBuilder {
         self.inner = self.inner.set_workspace_id(input);
         self
     }
+    /// <p>The ID of the workspace that contains the entity to delete.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workspace_id()
+    }
     /// <p>The ID of the entity to delete.</p>
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.entity_id(input.into());
@@ -128,6 +136,10 @@ impl DeleteEntityFluentBuilder {
         self.inner = self.inner.set_entity_id(input);
         self
     }
+    /// <p>The ID of the entity to delete.</p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_entity_id()
+    }
     /// <p>A Boolean value that specifies whether the operation deletes child entities.</p>
     pub fn is_recursive(mut self, input: bool) -> Self {
         self.inner = self.inner.is_recursive(input);
@@ -137,5 +149,9 @@ impl DeleteEntityFluentBuilder {
     pub fn set_is_recursive(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_is_recursive(input);
         self
+    }
+    /// <p>A Boolean value that specifies whether the operation deletes child entities.</p>
+    pub fn get_is_recursive(&self) -> &::std::option::Option<bool> {
+        self.inner.get_is_recursive()
     }
 }

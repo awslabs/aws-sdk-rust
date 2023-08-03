@@ -86,6 +86,10 @@ impl DestinationBuilder {
         self.destination_name = input;
         self
     }
+    /// <p>The name of the destination.</p>
+    pub fn get_destination_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the physical target where the log events are delivered (for example, a Kinesis stream).</p>
     pub fn target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_arn = ::std::option::Option::Some(input.into());
@@ -96,6 +100,10 @@ impl DestinationBuilder {
         self.target_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the physical target where the log events are delivered (for example, a Kinesis stream).</p>
+    pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_arn
+    }
     /// <p>A role for impersonation, used when delivering log events to the target.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -105,6 +113,10 @@ impl DestinationBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>A role for impersonation, used when delivering log events to the target.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>An IAM policy document that governs which Amazon Web Services accounts can create subscription filters against this destination.</p>
     pub fn access_policy(
@@ -122,6 +134,10 @@ impl DestinationBuilder {
         self.access_policy = input;
         self
     }
+    /// <p>An IAM policy document that governs which Amazon Web Services accounts can create subscription filters against this destination.</p>
+    pub fn get_access_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_policy
+    }
     /// <p>The ARN of this destination.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -132,6 +148,10 @@ impl DestinationBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of this destination.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The creation time of the destination, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
     pub fn creation_time(mut self, input: i64) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -141,6 +161,10 @@ impl DestinationBuilder {
     pub fn set_creation_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The creation time of the destination, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<i64> {
+        &self.creation_time
     }
     /// Consumes the builder and constructs a [`Destination`](crate::types::Destination).
     pub fn build(self) -> crate::types::Destination {

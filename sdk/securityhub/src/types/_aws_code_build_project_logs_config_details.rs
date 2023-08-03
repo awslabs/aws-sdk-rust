@@ -64,6 +64,13 @@ impl AwsCodeBuildProjectLogsConfigDetailsBuilder {
         self.cloud_watch_logs = input;
         self
     }
+    /// <p>Information about CloudWatch Logs for the build project.</p>
+    pub fn get_cloud_watch_logs(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails>
+    {
+        &self.cloud_watch_logs
+    }
     /// <p>Information about logs built to an S3 bucket for a build project.</p>
     pub fn s3_logs(
         mut self,
@@ -79,6 +86,12 @@ impl AwsCodeBuildProjectLogsConfigDetailsBuilder {
     ) -> Self {
         self.s3_logs = input;
         self
+    }
+    /// <p>Information about logs built to an S3 bucket for a build project.</p>
+    pub fn get_s3_logs(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsCodeBuildProjectLogsConfigS3LogsDetails> {
+        &self.s3_logs
     }
     /// Consumes the builder and constructs a [`AwsCodeBuildProjectLogsConfigDetails`](crate::types::AwsCodeBuildProjectLogsConfigDetails).
     pub fn build(self) -> crate::types::AwsCodeBuildProjectLogsConfigDetails {

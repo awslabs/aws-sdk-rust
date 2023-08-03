@@ -36,6 +36,12 @@ impl UpdateRuleVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateRuleVersion as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_rule_version::builders::UpdateRuleVersionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateRuleVersionFluentBuilder {
         self.inner = self.inner.set_rule(input);
         self
     }
+    /// <p>The rule to update.</p>
+    pub fn get_rule(&self) -> &::std::option::Option<crate::types::Rule> {
+        self.inner.get_rule()
+    }
     /// <p>The description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -135,6 +145,10 @@ impl UpdateRuleVersionFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The rule expression.</p>
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -146,6 +160,10 @@ impl UpdateRuleVersionFluentBuilder {
         self.inner = self.inner.set_expression(input);
         self
     }
+    /// <p>The rule expression.</p>
+    pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_expression()
+    }
     /// <p>The language.</p>
     pub fn language(mut self, input: crate::types::Language) -> Self {
         self.inner = self.inner.language(input);
@@ -155,6 +173,10 @@ impl UpdateRuleVersionFluentBuilder {
     pub fn set_language(mut self, input: ::std::option::Option<crate::types::Language>) -> Self {
         self.inner = self.inner.set_language(input);
         self
+    }
+    /// <p>The language.</p>
+    pub fn get_language(&self) -> &::std::option::Option<crate::types::Language> {
+        self.inner.get_language()
     }
     /// Appends an item to `outcomes`.
     ///
@@ -173,6 +195,10 @@ impl UpdateRuleVersionFluentBuilder {
         self.inner = self.inner.set_outcomes(input);
         self
     }
+    /// <p>The outcomes.</p>
+    pub fn get_outcomes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_outcomes()
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -189,5 +215,9 @@ impl UpdateRuleVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags to assign to the rule version.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

@@ -89,6 +89,10 @@ impl CreatePricingPlanInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>The name of the pricing plan. The names must be unique to each pricing plan. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -99,6 +103,10 @@ impl CreatePricingPlanInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the pricing plan. The names must be unique to each pricing plan. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the pricing plan. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -108,6 +116,10 @@ impl CreatePricingPlanInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the pricing plan. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `pricing_rule_arns`.
     ///
@@ -130,6 +142,12 @@ impl CreatePricingPlanInputBuilder {
     ) -> Self {
         self.pricing_rule_arns = input;
         self
+    }
+    /// <p> A list of Amazon Resource Names (ARNs) that define the pricing plan parameters. </p>
+    pub fn get_pricing_rule_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.pricing_rule_arns
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -155,6 +173,14 @@ impl CreatePricingPlanInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p> A map that contains tag keys and tag values that are attached to a pricing plan. </p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreatePricingPlanInput`](crate::operation::create_pricing_plan::CreatePricingPlanInput).
     pub fn build(

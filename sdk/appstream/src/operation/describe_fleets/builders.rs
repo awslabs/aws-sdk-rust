@@ -36,6 +36,12 @@ impl DescribeFleetsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeFleets as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_fleets::builders::DescribeFleetsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,6 +131,10 @@ impl DescribeFleetsFluentBuilder {
         self.inner = self.inner.set_names(input);
         self
     }
+    /// <p>The names of the fleets to describe.</p>
+    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_names()
+    }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -134,5 +144,9 @@ impl DescribeFleetsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

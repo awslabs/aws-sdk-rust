@@ -51,6 +51,10 @@ impl VpcCidrBlockStateBuilder {
         self.state = input;
         self
     }
+    /// <p>The state of the CIDR block.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::VpcCidrBlockStateCode> {
+        &self.state
+    }
     /// <p>A message about the status of the CIDR block, if applicable.</p>
     pub fn status_message(
         mut self,
@@ -66,6 +70,10 @@ impl VpcCidrBlockStateBuilder {
     ) -> Self {
         self.status_message = input;
         self
+    }
+    /// <p>A message about the status of the CIDR block, if applicable.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     /// Consumes the builder and constructs a [`VpcCidrBlockState`](crate::types::VpcCidrBlockState).
     pub fn build(self) -> crate::types::VpcCidrBlockState {

@@ -63,6 +63,12 @@ impl SearchDevicesOutputBuilder {
         self.devices = input;
         self
     }
+    /// <p>An array of <code>DeviceSummary</code> objects for devices that match the specified filter values.</p>
+    pub fn get_devices(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceSummary>> {
+        &self.devices
+    }
     /// <p>A token used for pagination of results, or null if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -72,6 +78,10 @@ impl SearchDevicesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token used for pagination of results, or null if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

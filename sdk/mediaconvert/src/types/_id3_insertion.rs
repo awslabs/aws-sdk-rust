@@ -48,6 +48,10 @@ impl Id3InsertionBuilder {
         self.id3 = input;
         self
     }
+    /// Use ID3 tag to provide a fully formed ID3 tag in base64-encode format.
+    pub fn get_id3(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id3
+    }
     /// Provide a Timecode in HH:MM:SS:FF or HH:MM:SS;FF format.
     pub fn timecode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timecode = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl Id3InsertionBuilder {
     pub fn set_timecode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timecode = input;
         self
+    }
+    /// Provide a Timecode in HH:MM:SS:FF or HH:MM:SS;FF format.
+    pub fn get_timecode(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timecode
     }
     /// Consumes the builder and constructs a [`Id3Insertion`](crate::types::Id3Insertion).
     pub fn build(self) -> crate::types::Id3Insertion {

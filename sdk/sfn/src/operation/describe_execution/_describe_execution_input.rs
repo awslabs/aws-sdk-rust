@@ -46,6 +46,10 @@ impl DescribeExecutionInputBuilder {
         self.execution_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the execution to describe.</p>
+    pub fn get_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_arn
+    }
     /// Consumes the builder and constructs a [`DescribeExecutionInput`](crate::operation::describe_execution::DescribeExecutionInput).
     pub fn build(
         self,

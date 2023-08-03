@@ -67,6 +67,12 @@ impl ListCostCategoryDefinitionsOutputBuilder {
         self.cost_category_references = input;
         self
     }
+    /// <p>A reference to a Cost Category that contains enough information to identify the Cost Category. </p>
+    pub fn get_cost_category_references(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CostCategoryReference>> {
+        &self.cost_category_references
+    }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -76,6 +82,10 @@ impl ListCostCategoryDefinitionsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

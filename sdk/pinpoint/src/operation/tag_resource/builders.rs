@@ -36,6 +36,10 @@ impl TagResourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the TagResource as a reference.
+    pub fn as_input(&self) -> &crate::operation::tag_resource::builders::TagResourceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl TagResourceFluentBuilder {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
+    }
     /// <p>Specifies the tags (keys and values) for an application, campaign, message template, or segment.</p>
     pub fn tags_model(mut self, input: crate::types::TagsModel) -> Self {
         self.inner = self.inner.tags_model(input);
@@ -127,5 +135,9 @@ impl TagResourceFluentBuilder {
     pub fn set_tags_model(mut self, input: ::std::option::Option<crate::types::TagsModel>) -> Self {
         self.inner = self.inner.set_tags_model(input);
         self
+    }
+    /// <p>Specifies the tags (keys and values) for an application, campaign, message template, or segment.</p>
+    pub fn get_tags_model(&self) -> &::std::option::Option<crate::types::TagsModel> {
+        self.inner.get_tags_model()
     }
 }

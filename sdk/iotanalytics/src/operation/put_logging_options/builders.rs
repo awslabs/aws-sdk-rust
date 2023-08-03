@@ -37,6 +37,12 @@ impl PutLoggingOptionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutLoggingOptions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_logging_options::builders::PutLoggingOptionsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,5 +135,9 @@ impl PutLoggingOptionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_logging_options(input);
         self
+    }
+    /// <p>The new values of the IoT Analytics logging options.</p>
+    pub fn get_logging_options(&self) -> &::std::option::Option<crate::types::LoggingOptions> {
+        self.inner.get_logging_options()
     }
 }

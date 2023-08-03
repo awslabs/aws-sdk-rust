@@ -94,6 +94,10 @@ impl CreateSavingsPlanInputBuilder {
         self.savings_plan_offering_id = input;
         self
     }
+    /// <p>The ID of the offering.</p>
+    pub fn get_savings_plan_offering_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.savings_plan_offering_id
+    }
     /// <p>The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more than five digits after the decimal point.</p>
     pub fn commitment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.commitment = ::std::option::Option::Some(input.into());
@@ -103,6 +107,10 @@ impl CreateSavingsPlanInputBuilder {
     pub fn set_commitment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.commitment = input;
         self
+    }
+    /// <p>The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more than five digits after the decimal point.</p>
+    pub fn get_commitment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.commitment
     }
     /// <p>The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings Plan. This parameter is supported only if the payment option is <code>Partial Upfront</code>.</p>
     pub fn upfront_payment_amount(
@@ -120,6 +128,10 @@ impl CreateSavingsPlanInputBuilder {
         self.upfront_payment_amount = input;
         self
     }
+    /// <p>The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings Plan. This parameter is supported only if the payment option is <code>Partial Upfront</code>.</p>
+    pub fn get_upfront_payment_amount(&self) -> &::std::option::Option<::std::string::String> {
+        &self.upfront_payment_amount
+    }
     /// <p>The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).</p>
     pub fn purchase_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.purchase_time = ::std::option::Option::Some(input);
@@ -133,6 +145,10 @@ impl CreateSavingsPlanInputBuilder {
         self.purchase_time = input;
         self
     }
+    /// <p>The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).</p>
+    pub fn get_purchase_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.purchase_time
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -142,6 +158,10 @@ impl CreateSavingsPlanInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -167,6 +187,14 @@ impl CreateSavingsPlanInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>One or more tags.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateSavingsPlanInput`](crate::operation::create_savings_plan::CreateSavingsPlanInput).
     pub fn build(

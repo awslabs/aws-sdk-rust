@@ -56,6 +56,10 @@ impl TemplateInputBuilder {
         self.input_name = input;
         self
     }
+    /// <p>The name of the template.</p>
+    pub fn get_input_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_name
+    }
     /// <p>The data type of the template input.</p>
     pub fn data_type(mut self, input: crate::types::DataType) -> Self {
         self.data_type = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl TemplateInputBuilder {
         self.data_type = input;
         self
     }
+    /// <p>The data type of the template input.</p>
+    pub fn get_data_type(&self) -> &::std::option::Option<crate::types::DataType> {
+        &self.data_type
+    }
     /// <p>Determine if an input is required from the template.</p>
     pub fn required(mut self, input: bool) -> Self {
         self.required = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl TemplateInputBuilder {
     pub fn set_required(mut self, input: ::std::option::Option<bool>) -> Self {
         self.required = input;
         self
+    }
+    /// <p>Determine if an input is required from the template.</p>
+    pub fn get_required(&self) -> &::std::option::Option<bool> {
+        &self.required
     }
     /// Consumes the builder and constructs a [`TemplateInput`](crate::types::TemplateInput).
     pub fn build(self) -> crate::types::TemplateInput {

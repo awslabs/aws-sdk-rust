@@ -46,6 +46,10 @@ impl BillingGroupPropertiesBuilder {
         self.billing_group_description = input;
         self
     }
+    /// <p>The description of the billing group.</p>
+    pub fn get_billing_group_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.billing_group_description
+    }
     /// Consumes the builder and constructs a [`BillingGroupProperties`](crate::types::BillingGroupProperties).
     pub fn build(self) -> crate::types::BillingGroupProperties {
         crate::types::BillingGroupProperties {

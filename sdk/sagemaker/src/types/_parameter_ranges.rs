@@ -87,6 +87,12 @@ impl ParameterRangesBuilder {
         self.integer_parameter_ranges = input;
         self
     }
+    /// <p>The array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_IntegerParameterRange.html">IntegerParameterRange</a> objects that specify ranges of integer hyperparameters that a hyperparameter tuning job searches.</p>
+    pub fn get_integer_parameter_ranges(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IntegerParameterRange>> {
+        &self.integer_parameter_ranges
+    }
     /// Appends an item to `continuous_parameter_ranges`.
     ///
     /// To override the contents of this collection use [`set_continuous_parameter_ranges`](Self::set_continuous_parameter_ranges).
@@ -108,6 +114,12 @@ impl ParameterRangesBuilder {
     ) -> Self {
         self.continuous_parameter_ranges = input;
         self
+    }
+    /// <p>The array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContinuousParameterRange.html">ContinuousParameterRange</a> objects that specify ranges of continuous hyperparameters that a hyperparameter tuning job searches.</p>
+    pub fn get_continuous_parameter_ranges(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContinuousParameterRange>> {
+        &self.continuous_parameter_ranges
     }
     /// Appends an item to `categorical_parameter_ranges`.
     ///
@@ -131,6 +143,12 @@ impl ParameterRangesBuilder {
         self.categorical_parameter_ranges = input;
         self
     }
+    /// <p>The array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CategoricalParameterRange.html">CategoricalParameterRange</a> objects that specify ranges of categorical hyperparameters that a hyperparameter tuning job searches.</p>
+    pub fn get_categorical_parameter_ranges(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CategoricalParameterRange>> {
+        &self.categorical_parameter_ranges
+    }
     /// Appends an item to `auto_parameters`.
     ///
     /// To override the contents of this collection use [`set_auto_parameters`](Self::set_auto_parameters).
@@ -149,6 +167,12 @@ impl ParameterRangesBuilder {
     ) -> Self {
         self.auto_parameters = input;
         self
+    }
+    /// <p>A list containing hyperparameter names and example values to be used by Autotune to determine optimal ranges for your tuning job.</p>
+    pub fn get_auto_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoParameter>> {
+        &self.auto_parameters
     }
     /// Consumes the builder and constructs a [`ParameterRanges`](crate::types::ParameterRanges).
     pub fn build(self) -> crate::types::ParameterRanges {

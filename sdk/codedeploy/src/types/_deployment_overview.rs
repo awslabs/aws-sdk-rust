@@ -80,6 +80,10 @@ impl DeploymentOverviewBuilder {
         self.pending = input;
         self
     }
+    /// <p>The number of instances in the deployment in a pending state.</p>
+    pub fn get_pending(&self) -> &::std::option::Option<i64> {
+        &self.pending
+    }
     /// <p>The number of instances in which the deployment is in progress.</p>
     pub fn in_progress(mut self, input: i64) -> Self {
         self.in_progress = ::std::option::Option::Some(input);
@@ -89,6 +93,10 @@ impl DeploymentOverviewBuilder {
     pub fn set_in_progress(mut self, input: ::std::option::Option<i64>) -> Self {
         self.in_progress = input;
         self
+    }
+    /// <p>The number of instances in which the deployment is in progress.</p>
+    pub fn get_in_progress(&self) -> &::std::option::Option<i64> {
+        &self.in_progress
     }
     /// <p>The number of instances in the deployment to which revisions have been successfully deployed.</p>
     pub fn succeeded(mut self, input: i64) -> Self {
@@ -100,6 +108,10 @@ impl DeploymentOverviewBuilder {
         self.succeeded = input;
         self
     }
+    /// <p>The number of instances in the deployment to which revisions have been successfully deployed.</p>
+    pub fn get_succeeded(&self) -> &::std::option::Option<i64> {
+        &self.succeeded
+    }
     /// <p>The number of instances in the deployment in a failed state.</p>
     pub fn failed(mut self, input: i64) -> Self {
         self.failed = ::std::option::Option::Some(input);
@@ -109,6 +121,10 @@ impl DeploymentOverviewBuilder {
     pub fn set_failed(mut self, input: ::std::option::Option<i64>) -> Self {
         self.failed = input;
         self
+    }
+    /// <p>The number of instances in the deployment in a failed state.</p>
+    pub fn get_failed(&self) -> &::std::option::Option<i64> {
+        &self.failed
     }
     /// <p>The number of instances in the deployment in a skipped state.</p>
     pub fn skipped(mut self, input: i64) -> Self {
@@ -120,6 +136,10 @@ impl DeploymentOverviewBuilder {
         self.skipped = input;
         self
     }
+    /// <p>The number of instances in the deployment in a skipped state.</p>
+    pub fn get_skipped(&self) -> &::std::option::Option<i64> {
+        &self.skipped
+    }
     /// <p>The number of instances in a replacement environment ready to receive traffic in a blue/green deployment.</p>
     pub fn ready(mut self, input: i64) -> Self {
         self.ready = ::std::option::Option::Some(input);
@@ -129,6 +149,10 @@ impl DeploymentOverviewBuilder {
     pub fn set_ready(mut self, input: ::std::option::Option<i64>) -> Self {
         self.ready = input;
         self
+    }
+    /// <p>The number of instances in a replacement environment ready to receive traffic in a blue/green deployment.</p>
+    pub fn get_ready(&self) -> &::std::option::Option<i64> {
+        &self.ready
     }
     /// Consumes the builder and constructs a [`DeploymentOverview`](crate::types::DeploymentOverview).
     pub fn build(self) -> crate::types::DeploymentOverview {

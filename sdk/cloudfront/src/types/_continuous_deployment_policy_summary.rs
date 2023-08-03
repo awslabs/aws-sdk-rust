@@ -50,6 +50,12 @@ impl ContinuousDeploymentPolicySummaryBuilder {
         self.continuous_deployment_policy = input;
         self
     }
+    /// <p>The continuous deployment policy.</p>
+    pub fn get_continuous_deployment_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContinuousDeploymentPolicy> {
+        &self.continuous_deployment_policy
+    }
     /// Consumes the builder and constructs a [`ContinuousDeploymentPolicySummary`](crate::types::ContinuousDeploymentPolicySummary).
     pub fn build(self) -> crate::types::ContinuousDeploymentPolicySummary {
         crate::types::ContinuousDeploymentPolicySummary {

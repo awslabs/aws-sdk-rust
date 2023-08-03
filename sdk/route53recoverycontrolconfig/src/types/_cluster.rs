@@ -67,6 +67,10 @@ impl ClusterBuilder {
         self.cluster_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_arn
+    }
     /// Appends an item to `cluster_endpoints`.
     ///
     /// To override the contents of this collection use [`set_cluster_endpoints`](Self::set_cluster_endpoints).
@@ -88,6 +92,13 @@ impl ClusterBuilder {
         self.cluster_endpoints = input;
         self
     }
+    /// <p>Endpoints for a cluster. Specify one of these endpoints when you want to set or retrieve a routing control state in the cluster.</p>
+    /// <p>To get or update the routing control state, see the Amazon Route 53 Application Recovery Controller Routing Control Actions.</p>
+    pub fn get_cluster_endpoints(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterEndpoint>> {
+        &self.cluster_endpoints
+    }
     /// <p>The name of the cluster.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -98,6 +109,10 @@ impl ClusterBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the cluster.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Deployment status of a resource. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -107,6 +122,10 @@ impl ClusterBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Deployment status of a resource. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`Cluster`](crate::types::Cluster).
     pub fn build(self) -> crate::types::Cluster {

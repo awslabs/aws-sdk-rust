@@ -55,6 +55,10 @@ impl ListRoleAliasesInputBuilder {
         self.page_size = input;
         self
     }
+    /// <p>The maximum number of results to return at one time.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        &self.page_size
+    }
     /// <p>A marker used to get the next set of results.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl ListRoleAliasesInputBuilder {
         self.marker = input;
         self
     }
+    /// <p>A marker used to get the next set of results.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// <p>Return the list of role aliases in ascending alphabetical order.</p>
     pub fn ascending_order(mut self, input: bool) -> Self {
         self.ascending_order = ::std::option::Option::Some(input);
@@ -74,6 +82,10 @@ impl ListRoleAliasesInputBuilder {
     pub fn set_ascending_order(mut self, input: ::std::option::Option<bool>) -> Self {
         self.ascending_order = input;
         self
+    }
+    /// <p>Return the list of role aliases in ascending alphabetical order.</p>
+    pub fn get_ascending_order(&self) -> &::std::option::Option<bool> {
+        &self.ascending_order
     }
     /// Consumes the builder and constructs a [`ListRoleAliasesInput`](crate::operation::list_role_aliases::ListRoleAliasesInput).
     pub fn build(

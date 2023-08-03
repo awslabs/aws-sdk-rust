@@ -36,6 +36,10 @@ impl AssociateServiceQuotaTemplateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateServiceQuotaTemplate as a reference.
+    pub fn as_input(&self) -> &crate::operation::associate_service_quota_template::builders::AssociateServiceQuotaTemplateInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(

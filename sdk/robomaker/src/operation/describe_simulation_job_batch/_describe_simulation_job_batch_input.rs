@@ -39,6 +39,10 @@ impl DescribeSimulationJobBatchInputBuilder {
         self.batch = input;
         self
     }
+    /// <p>The id of the batch to describe.</p>
+    pub fn get_batch(&self) -> &::std::option::Option<::std::string::String> {
+        &self.batch
+    }
     /// Consumes the builder and constructs a [`DescribeSimulationJobBatchInput`](crate::operation::describe_simulation_job_batch::DescribeSimulationJobBatchInput).
     pub fn build(
         self,

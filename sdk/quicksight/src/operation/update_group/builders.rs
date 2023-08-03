@@ -36,6 +36,10 @@ impl UpdateGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_group::builders::UpdateGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl UpdateGroupFluentBuilder {
         self.inner = self.inner.set_group_name(input);
         self
     }
+    /// <p>The name of the group that you want to update.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group_name()
+    }
     /// <p>The description for the group that you want to update.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -127,6 +135,10 @@ impl UpdateGroupFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description for the group that you want to update.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
     pub fn aws_account_id(
@@ -144,6 +156,10 @@ impl UpdateGroupFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>The namespace of the group that you want to update.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace(input.into());
@@ -153,5 +169,9 @@ impl UpdateGroupFluentBuilder {
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace(input);
         self
+    }
+    /// <p>The namespace of the group that you want to update.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_namespace()
     }
 }

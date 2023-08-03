@@ -36,6 +36,12 @@ impl GetIntegrationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetIntegration as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_integration::builders::GetIntegrationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl GetIntegrationFluentBuilder {
         self.inner = self.inner.set_rest_api_id(input);
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rest_api_id()
+    }
     /// <p>Specifies a get integration request's resource identifier</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_id(input.into());
@@ -128,6 +138,10 @@ impl GetIntegrationFluentBuilder {
         self.inner = self.inner.set_resource_id(input);
         self
     }
+    /// <p>Specifies a get integration request's resource identifier</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_id()
+    }
     /// <p>Specifies a get integration request's HTTP method.</p>
     pub fn http_method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.http_method(input.into());
@@ -137,5 +151,9 @@ impl GetIntegrationFluentBuilder {
     pub fn set_http_method(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_http_method(input);
         self
+    }
+    /// <p>Specifies a get integration request's HTTP method.</p>
+    pub fn get_http_method(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_http_method()
     }
 }

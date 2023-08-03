@@ -56,6 +56,10 @@ impl GetResourceLfTagsInputBuilder {
         self.catalog_id = input;
         self
     }
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// <p>The database, table, or column resource for which you want to return LF-tags.</p>
     pub fn resource(mut self, input: crate::types::Resource) -> Self {
         self.resource = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl GetResourceLfTagsInputBuilder {
         self.resource = input;
         self
     }
+    /// <p>The database, table, or column resource for which you want to return LF-tags.</p>
+    pub fn get_resource(&self) -> &::std::option::Option<crate::types::Resource> {
+        &self.resource
+    }
     /// <p>Indicates whether to show the assigned LF-tags.</p>
     pub fn show_assigned_lf_tags(mut self, input: bool) -> Self {
         self.show_assigned_lf_tags = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl GetResourceLfTagsInputBuilder {
     pub fn set_show_assigned_lf_tags(mut self, input: ::std::option::Option<bool>) -> Self {
         self.show_assigned_lf_tags = input;
         self
+    }
+    /// <p>Indicates whether to show the assigned LF-tags.</p>
+    pub fn get_show_assigned_lf_tags(&self) -> &::std::option::Option<bool> {
+        &self.show_assigned_lf_tags
     }
     /// Consumes the builder and constructs a [`GetResourceLfTagsInput`](crate::operation::get_resource_lf_tags::GetResourceLfTagsInput).
     pub fn build(

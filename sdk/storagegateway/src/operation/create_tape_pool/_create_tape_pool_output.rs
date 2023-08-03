@@ -46,6 +46,10 @@ impl CreateTapePoolOutputBuilder {
         self.pool_arn = input;
         self
     }
+    /// <p>The unique Amazon Resource Name (ARN) that represents the custom tape pool. Use the <code>ListTapePools</code> operation to return a list of tape pools for your account and Amazon Web Services Region.</p>
+    pub fn get_pool_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pool_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

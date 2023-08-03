@@ -54,6 +54,10 @@ impl DetectorDebugOptionBuilder {
         self.detector_model_name = input;
         self
     }
+    /// <p>The name of the detector model.</p>
+    pub fn get_detector_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_model_name
+    }
     /// <p>The value of the input attribute key used to create the detector (the instance of the detector model).</p>
     pub fn key_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_value = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl DetectorDebugOptionBuilder {
     pub fn set_key_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_value = input;
         self
+    }
+    /// <p>The value of the input attribute key used to create the detector (the instance of the detector model).</p>
+    pub fn get_key_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_value
     }
     /// Consumes the builder and constructs a [`DetectorDebugOption`](crate::types::DetectorDebugOption).
     pub fn build(self) -> crate::types::DetectorDebugOption {

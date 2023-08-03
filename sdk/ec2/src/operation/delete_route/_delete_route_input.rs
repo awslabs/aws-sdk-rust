@@ -77,6 +77,10 @@ impl DeleteRouteInputBuilder {
         self.destination_cidr_block = input;
         self
     }
+    /// <p>The IPv4 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
+    pub fn get_destination_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_cidr_block
+    }
     /// <p>The IPv6 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
     pub fn destination_ipv6_cidr_block(
         mut self,
@@ -92,6 +96,10 @@ impl DeleteRouteInputBuilder {
     ) -> Self {
         self.destination_ipv6_cidr_block = input;
         self
+    }
+    /// <p>The IPv6 CIDR range for the route. The value you specify must match the CIDR for the route exactly.</p>
+    pub fn get_destination_ipv6_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_ipv6_cidr_block
     }
     /// <p>The ID of the prefix list for the route.</p>
     pub fn destination_prefix_list_id(
@@ -109,6 +117,10 @@ impl DeleteRouteInputBuilder {
         self.destination_prefix_list_id = input;
         self
     }
+    /// <p>The ID of the prefix list for the route.</p>
+    pub fn get_destination_prefix_list_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_prefix_list_id
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -118,6 +130,10 @@ impl DeleteRouteInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// <p>The ID of the route table.</p>
     pub fn route_table_id(
@@ -134,6 +150,10 @@ impl DeleteRouteInputBuilder {
     ) -> Self {
         self.route_table_id = input;
         self
+    }
+    /// <p>The ID of the route table.</p>
+    pub fn get_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.route_table_id
     }
     /// Consumes the builder and constructs a [`DeleteRouteInput`](crate::operation::delete_route::DeleteRouteInput).
     pub fn build(

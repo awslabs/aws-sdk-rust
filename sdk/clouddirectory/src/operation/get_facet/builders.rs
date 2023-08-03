@@ -36,6 +36,10 @@ impl GetFacetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetFacet as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_facet::builders::GetFacetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl GetFacetFluentBuilder {
         self.inner = self.inner.set_schema_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Facet</code>. For more information, see <code>arns</code>.</p>
+    pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_schema_arn()
+    }
     /// <p>The name of the facet to retrieve.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -127,5 +135,9 @@ impl GetFacetFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the facet to retrieve.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
 }

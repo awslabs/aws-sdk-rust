@@ -72,6 +72,11 @@ impl DocumentClassifierOutputDataConfigBuilder {
         self.s3_uri = input;
         self
     }
+    /// <p>When you use the <code>OutputDataConfig</code> object while creating a custom classifier, you specify the Amazon S3 location where you want to write the confusion matrix and other output files. The URI must be in the same Region as the API endpoint that you are calling. The location is used as the prefix for the actual location of this output file.</p>
+    /// <p>When the custom classifier job is finished, the service creates the output file in a directory specific to the job. The <code>S3Uri</code> field contains the location of the output file, called <code>output.tar.gz</code>. It is a compressed archive that contains the confusion matrix.</p>
+    pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_uri
+    }
     /// <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt the output results from an analysis job. The KmsKeyId can be one of the following formats:</p>
     /// <ul>
     /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
@@ -94,6 +99,16 @@ impl DocumentClassifierOutputDataConfigBuilder {
         self.kms_key_id = input;
         self
     }
+    /// <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt the output results from an analysis job. The KmsKeyId can be one of the following formats:</p>
+    /// <ul>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>KMS Key Alias: <code>"alias/ExampleAlias"</code> </p> </li>
+    /// <li> <p>ARN of a KMS Key Alias: <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
+    /// </ul>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
+    }
     /// <p>The Amazon S3 prefix for the data lake location of the flywheel statistics.</p>
     pub fn flywheel_stats_s3_prefix(
         mut self,
@@ -109,6 +124,10 @@ impl DocumentClassifierOutputDataConfigBuilder {
     ) -> Self {
         self.flywheel_stats_s3_prefix = input;
         self
+    }
+    /// <p>The Amazon S3 prefix for the data lake location of the flywheel statistics.</p>
+    pub fn get_flywheel_stats_s3_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flywheel_stats_s3_prefix
     }
     /// Consumes the builder and constructs a [`DocumentClassifierOutputDataConfig`](crate::types::DocumentClassifierOutputDataConfig).
     pub fn build(self) -> crate::types::DocumentClassifierOutputDataConfig {

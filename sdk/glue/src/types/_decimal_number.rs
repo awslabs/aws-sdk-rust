@@ -51,6 +51,10 @@ impl DecimalNumberBuilder {
         self.unscaled_value = input;
         self
     }
+    /// <p>The unscaled numeric value.</p>
+    pub fn get_unscaled_value(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.unscaled_value
+    }
     /// <p>The scale that determines where the decimal point falls in the unscaled value.</p>
     pub fn scale(mut self, input: i32) -> Self {
         self.scale = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl DecimalNumberBuilder {
     pub fn set_scale(mut self, input: ::std::option::Option<i32>) -> Self {
         self.scale = input;
         self
+    }
+    /// <p>The scale that determines where the decimal point falls in the unscaled value.</p>
+    pub fn get_scale(&self) -> &::std::option::Option<i32> {
+        &self.scale
     }
     /// Consumes the builder and constructs a [`DecimalNumber`](crate::types::DecimalNumber).
     pub fn build(self) -> crate::types::DecimalNumber {

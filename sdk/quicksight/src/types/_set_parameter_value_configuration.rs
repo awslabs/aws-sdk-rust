@@ -58,6 +58,10 @@ impl SetParameterValueConfigurationBuilder {
         self.destination_parameter_name = input;
         self
     }
+    /// <p>The destination parameter name of the <code>SetParameterValueConfiguration</code>.</p>
+    pub fn get_destination_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_parameter_name
+    }
     /// <p>The configuration of destination parameter values.</p>
     /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
     pub fn value(mut self, input: crate::types::DestinationParameterValueConfiguration) -> Self {
@@ -72,6 +76,13 @@ impl SetParameterValueConfigurationBuilder {
     ) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The configuration of destination parameter values.</p>
+    /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
+    pub fn get_value(
+        &self,
+    ) -> &::std::option::Option<crate::types::DestinationParameterValueConfiguration> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`SetParameterValueConfiguration`](crate::types::SetParameterValueConfiguration).
     pub fn build(self) -> crate::types::SetParameterValueConfiguration {

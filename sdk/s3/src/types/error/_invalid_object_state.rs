@@ -95,6 +95,10 @@ impl InvalidObjectStateBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
+    pub fn get_storage_class(&self) -> &::std::option::Option<crate::types::StorageClass> {
+        &self.storage_class
+    }
+    #[allow(missing_docs)] // documentation missing in model
     pub fn access_tier(mut self, input: crate::types::IntelligentTieringAccessTier) -> Self {
         self.access_tier = ::std::option::Option::Some(input);
         self
@@ -108,6 +112,12 @@ impl InvalidObjectStateBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
+    pub fn get_access_tier(
+        &self,
+    ) -> &::std::option::Option<crate::types::IntelligentTieringAccessTier> {
+        &self.access_tier
+    }
+    #[allow(missing_docs)] // documentation missing in model
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -116,6 +126,10 @@ impl InvalidObjectStateBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

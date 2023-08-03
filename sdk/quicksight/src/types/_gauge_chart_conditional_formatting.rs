@@ -58,6 +58,13 @@ impl GaugeChartConditionalFormattingBuilder {
         self.conditional_formatting_options = input;
         self
     }
+    /// <p>Conditional formatting options of a <code>GaugeChartVisual</code>.</p>
+    pub fn get_conditional_formatting_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GaugeChartConditionalFormattingOption>>
+    {
+        &self.conditional_formatting_options
+    }
     /// Consumes the builder and constructs a [`GaugeChartConditionalFormatting`](crate::types::GaugeChartConditionalFormatting).
     pub fn build(self) -> crate::types::GaugeChartConditionalFormatting {
         crate::types::GaugeChartConditionalFormatting {

@@ -84,6 +84,10 @@ impl UnableToDetectSchemaExceptionBuilder {
         self.message = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Appends an item to `raw_input_records`.
     ///
     /// To override the contents of this collection use [`set_raw_input_records`](Self::set_raw_input_records).
@@ -105,6 +109,12 @@ impl UnableToDetectSchemaExceptionBuilder {
         self.raw_input_records = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_raw_input_records(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.raw_input_records
+    }
     /// Appends an item to `processed_input_records`.
     ///
     /// To override the contents of this collection use [`set_processed_input_records`](Self::set_processed_input_records).
@@ -125,6 +135,12 @@ impl UnableToDetectSchemaExceptionBuilder {
     ) -> Self {
         self.processed_input_records = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_processed_input_records(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.processed_input_records
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

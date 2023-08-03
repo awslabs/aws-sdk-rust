@@ -135,6 +135,11 @@ impl DeleteAnomalyDetectorInputBuilder {
         self.namespace = input;
         self
     }
+    /// <p>The namespace associated with the anomaly detection model to delete.</p>
+    #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
+    }
     /// <p>The metric name associated with the anomaly detection model to delete.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -146,6 +151,11 @@ impl DeleteAnomalyDetectorInputBuilder {
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_name = input;
         self
+    }
+    /// <p>The metric name associated with the anomaly detection model to delete.</p>
+    #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_name
     }
     /// Appends an item to `dimensions`.
     ///
@@ -168,6 +178,13 @@ impl DeleteAnomalyDetectorInputBuilder {
         self.dimensions = input;
         self
     }
+    /// <p>The metric dimensions associated with the anomaly detection model to delete.</p>
+    #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
+    pub fn get_dimensions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Dimension>> {
+        &self.dimensions
+    }
     /// <p>The statistic associated with the anomaly detection model to delete.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
     pub fn stat(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -179,6 +196,11 @@ impl DeleteAnomalyDetectorInputBuilder {
     pub fn set_stat(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stat = input;
         self
+    }
+    /// <p>The statistic associated with the anomaly detection model to delete.</p>
+    #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
+    pub fn get_stat(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stat
     }
     /// <p>A single metric anomaly detector to be deleted.</p>
     /// <p>When using <code>SingleMetricAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>
@@ -214,6 +236,21 @@ impl DeleteAnomalyDetectorInputBuilder {
         self.single_metric_anomaly_detector = input;
         self
     }
+    /// <p>A single metric anomaly detector to be deleted.</p>
+    /// <p>When using <code>SingleMetricAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>
+    /// <ul>
+    /// <li> <p> <code>Dimensions</code>,</p> </li>
+    /// <li> <p> <code>MetricName</code> </p> </li>
+    /// <li> <p> <code>Namespace</code> </p> </li>
+    /// <li> <p> <code>Stat</code> </p> </li>
+    /// <li> <p>the <code>MetricMathAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code> </p> </li>
+    /// </ul>
+    /// <p>Instead, specify the single metric anomaly detector attributes as part of the <code>SingleMetricAnomalyDetector</code> property.</p>
+    pub fn get_single_metric_anomaly_detector(
+        &self,
+    ) -> &::std::option::Option<crate::types::SingleMetricAnomalyDetector> {
+        &self.single_metric_anomaly_detector
+    }
     /// <p>The metric math anomaly detector to be deleted.</p>
     /// <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include following parameters in the same operation:</p>
     /// <ul>
@@ -247,6 +284,21 @@ impl DeleteAnomalyDetectorInputBuilder {
     ) -> Self {
         self.metric_math_anomaly_detector = input;
         self
+    }
+    /// <p>The metric math anomaly detector to be deleted.</p>
+    /// <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include following parameters in the same operation:</p>
+    /// <ul>
+    /// <li> <p> <code>Dimensions</code>,</p> </li>
+    /// <li> <p> <code>MetricName</code> </p> </li>
+    /// <li> <p> <code>Namespace</code> </p> </li>
+    /// <li> <p> <code>Stat</code> </p> </li>
+    /// <li> <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code> </p> </li>
+    /// </ul>
+    /// <p>Instead, specify the metric math anomaly detector attributes as part of the <code>MetricMathAnomalyDetector</code> property.</p>
+    pub fn get_metric_math_anomaly_detector(
+        &self,
+    ) -> &::std::option::Option<crate::types::MetricMathAnomalyDetector> {
+        &self.metric_math_anomaly_detector
     }
     /// Consumes the builder and constructs a [`DeleteAnomalyDetectorInput`](crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorInput).
     pub fn build(

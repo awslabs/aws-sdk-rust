@@ -56,6 +56,13 @@ impl GetComplianceSummaryByResourceTypeInputBuilder {
         self.resource_types = input;
         self
     }
+    /// <p>Specify one or more resource types to get the number of resources that are compliant and the number that are noncompliant for each resource type.</p>
+    /// <p>For this request, you can specify an Amazon Web Services resource type such as <code>AWS::EC2::Instance</code>. You can specify that the resource type is an Amazon Web Services account by specifying <code>AWS::::Account</code>.</p>
+    pub fn get_resource_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resource_types
+    }
     /// Consumes the builder and constructs a [`GetComplianceSummaryByResourceTypeInput`](crate::operation::get_compliance_summary_by_resource_type::GetComplianceSummaryByResourceTypeInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_compliance_summary_by_resource_type::GetComplianceSummaryByResourceTypeInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

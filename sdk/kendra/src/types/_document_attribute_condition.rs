@@ -78,6 +78,14 @@ impl DocumentAttributeConditionBuilder {
         self.condition_document_attribute_key = input;
         self
     }
+    /// <p>The identifier of the document attribute used for the condition.</p>
+    /// <p>For example, 'Source_URI' could be an identifier for the attribute or metadata field that contains source URIs associated with the documents.</p>
+    /// <p>Amazon Kendra currently does not support <code>_document_body</code> as an attribute key used for the condition.</p>
+    pub fn get_condition_document_attribute_key(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.condition_document_attribute_key
+    }
     /// <p>The condition operator.</p>
     /// <p>For example, you can use 'Contains' to partially match a string.</p>
     pub fn operator(mut self, input: crate::types::ConditionOperator) -> Self {
@@ -93,6 +101,11 @@ impl DocumentAttributeConditionBuilder {
         self.operator = input;
         self
     }
+    /// <p>The condition operator.</p>
+    /// <p>For example, you can use 'Contains' to partially match a string.</p>
+    pub fn get_operator(&self) -> &::std::option::Option<crate::types::ConditionOperator> {
+        &self.operator
+    }
     /// <p>The value used by the operator.</p>
     /// <p>For example, you can specify the value 'financial' for strings in the 'Source_URI' field that partially match or contain this value.</p>
     pub fn condition_on_value(mut self, input: crate::types::DocumentAttributeValue) -> Self {
@@ -107,6 +120,13 @@ impl DocumentAttributeConditionBuilder {
     ) -> Self {
         self.condition_on_value = input;
         self
+    }
+    /// <p>The value used by the operator.</p>
+    /// <p>For example, you can specify the value 'financial' for strings in the 'Source_URI' field that partially match or contain this value.</p>
+    pub fn get_condition_on_value(
+        &self,
+    ) -> &::std::option::Option<crate::types::DocumentAttributeValue> {
+        &self.condition_on_value
     }
     /// Consumes the builder and constructs a [`DocumentAttributeCondition`](crate::types::DocumentAttributeCondition).
     pub fn build(self) -> crate::types::DocumentAttributeCondition {

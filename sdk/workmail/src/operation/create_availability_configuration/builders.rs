@@ -36,6 +36,10 @@ impl CreateAvailabilityConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateAvailabilityConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_availability_configuration::builders::CreateAvailabilityConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl CreateAvailabilityConfigurationFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>An idempotent token that ensures that an API request is executed only once.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be created.</p>
     pub fn organization_id(
         mut self,
@@ -116,6 +124,10 @@ impl CreateAvailabilityConfigurationFluentBuilder {
         self.inner = self.inner.set_organization_id(input);
         self
     }
+    /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be created.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organization_id()
+    }
     /// <p>The domain to which the provider applies.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_name(input.into());
@@ -125,6 +137,10 @@ impl CreateAvailabilityConfigurationFluentBuilder {
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_name(input);
         self
+    }
+    /// <p>The domain to which the provider applies.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
     }
     /// <p>Exchange Web Services (EWS) availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>.</p>
     pub fn ews_provider(mut self, input: crate::types::EwsAvailabilityProvider) -> Self {
@@ -139,6 +155,12 @@ impl CreateAvailabilityConfigurationFluentBuilder {
         self.inner = self.inner.set_ews_provider(input);
         self
     }
+    /// <p>Exchange Web Services (EWS) availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>.</p>
+    pub fn get_ews_provider(
+        &self,
+    ) -> &::std::option::Option<crate::types::EwsAvailabilityProvider> {
+        self.inner.get_ews_provider()
+    }
     /// <p>Lambda availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>.</p>
     pub fn lambda_provider(mut self, input: crate::types::LambdaAvailabilityProvider) -> Self {
         self.inner = self.inner.lambda_provider(input);
@@ -151,5 +173,11 @@ impl CreateAvailabilityConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_lambda_provider(input);
         self
+    }
+    /// <p>Lambda availability provider definition. The request must contain exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>.</p>
+    pub fn get_lambda_provider(
+        &self,
+    ) -> &::std::option::Option<crate::types::LambdaAvailabilityProvider> {
+        self.inner.get_lambda_provider()
     }
 }

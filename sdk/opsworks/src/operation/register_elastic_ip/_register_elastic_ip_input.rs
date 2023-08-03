@@ -48,6 +48,10 @@ impl RegisterElasticIpInputBuilder {
         self.elastic_ip = input;
         self
     }
+    /// <p>The Elastic IP address.</p>
+    pub fn get_elastic_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.elastic_ip
+    }
     /// <p>The stack ID.</p>
     pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl RegisterElasticIpInputBuilder {
     pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_id = input;
         self
+    }
+    /// <p>The stack ID.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_id
     }
     /// Consumes the builder and constructs a [`RegisterElasticIpInput`](crate::operation::register_elastic_ip::RegisterElasticIpInput).
     pub fn build(

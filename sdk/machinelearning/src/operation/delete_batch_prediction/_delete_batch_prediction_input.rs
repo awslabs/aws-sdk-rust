@@ -47,6 +47,10 @@ impl DeleteBatchPredictionInputBuilder {
         self.batch_prediction_id = input;
         self
     }
+    /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</p>
+    pub fn get_batch_prediction_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.batch_prediction_id
+    }
     /// Consumes the builder and constructs a [`DeleteBatchPredictionInput`](crate::operation::delete_batch_prediction::DeleteBatchPredictionInput).
     pub fn build(
         self,

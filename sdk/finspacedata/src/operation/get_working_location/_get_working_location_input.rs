@@ -59,6 +59,14 @@ impl GetWorkingLocationInputBuilder {
         self.location_type = input;
         self
     }
+    /// <p>Specify the type of the working location.</p>
+    /// <ul>
+    /// <li> <p> <code>SAGEMAKER</code> – Use the Amazon S3 location as a temporary location to store data content when working with FinSpace Notebooks that run on SageMaker studio.</p> </li>
+    /// <li> <p> <code>INGESTION</code> – Use the Amazon S3 location as a staging location to copy your data content and then use the location with the Changeset creation operation.</p> </li>
+    /// </ul>
+    pub fn get_location_type(&self) -> &::std::option::Option<crate::types::LocationType> {
+        &self.location_type
+    }
     /// Consumes the builder and constructs a [`GetWorkingLocationInput`](crate::operation::get_working_location::GetWorkingLocationInput).
     pub fn build(
         self,

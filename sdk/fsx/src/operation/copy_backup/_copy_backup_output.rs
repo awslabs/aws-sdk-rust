@@ -46,6 +46,10 @@ impl CopyBackupOutputBuilder {
         self.backup = input;
         self
     }
+    /// <p>A backup of an Amazon FSx for Windows File Server, Amazon FSx for Lustre file system, Amazon FSx for NetApp ONTAP volume, or Amazon FSx for OpenZFS file system.</p>
+    pub fn get_backup(&self) -> &::std::option::Option<crate::types::Backup> {
+        &self.backup
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -81,6 +81,10 @@ impl CvssScoreDetailsBuilder {
         self.score_source = input;
         self
     }
+    /// <p>The source for the CVSS score.</p>
+    pub fn get_score_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.score_source
+    }
     /// <p>The source of the finding.</p>
     pub fn cvss_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cvss_source = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl CvssScoreDetailsBuilder {
     pub fn set_cvss_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cvss_source = input;
         self
+    }
+    /// <p>The source of the finding.</p>
+    pub fn get_cvss_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cvss_source
     }
     /// <p>The CVSS version that generated the score.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -101,6 +109,10 @@ impl CvssScoreDetailsBuilder {
         self.version = input;
         self
     }
+    /// <p>The CVSS version that generated the score.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
+    }
     /// <p>The CVSS score.</p>
     pub fn score(mut self, input: f64) -> Self {
         self.score = ::std::option::Option::Some(input);
@@ -110,6 +122,10 @@ impl CvssScoreDetailsBuilder {
     pub fn set_score(mut self, input: ::std::option::Option<f64>) -> Self {
         self.score = input;
         self
+    }
+    /// <p>The CVSS score.</p>
+    pub fn get_score(&self) -> &::std::option::Option<f64> {
+        &self.score
     }
     /// <p>A vector that measures the severity of the vulnerability.</p>
     pub fn scoring_vector(
@@ -126,6 +142,10 @@ impl CvssScoreDetailsBuilder {
     ) -> Self {
         self.scoring_vector = input;
         self
+    }
+    /// <p>A vector that measures the severity of the vulnerability.</p>
+    pub fn get_scoring_vector(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scoring_vector
     }
     /// Appends an item to `adjustments`.
     ///
@@ -145,6 +165,12 @@ impl CvssScoreDetailsBuilder {
     ) -> Self {
         self.adjustments = input;
         self
+    }
+    /// <p>An object that contains details about an adjustment that Amazon Inspector made to the CVSS score for the finding.</p>
+    pub fn get_adjustments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CvssScoreAdjustment>> {
+        &self.adjustments
     }
     /// Consumes the builder and constructs a [`CvssScoreDetails`](crate::types::CvssScoreDetails).
     pub fn build(self) -> crate::types::CvssScoreDetails {

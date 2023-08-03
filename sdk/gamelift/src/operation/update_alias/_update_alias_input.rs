@@ -63,6 +63,10 @@ impl UpdateAliasInputBuilder {
         self.alias_id = input;
         self
     }
+    /// <p>A unique identifier for the alias that you want to update. You can use either the alias ID or ARN value.</p>
+    pub fn get_alias_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias_id
+    }
     /// <p>A descriptive label that is associated with an alias. Alias names do not need to be unique.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl UpdateAliasInputBuilder {
         self.name = input;
         self
     }
+    /// <p>A descriptive label that is associated with an alias. Alias names do not need to be unique.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A human-readable description of the alias.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl UpdateAliasInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A human-readable description of the alias.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The routing configuration, including routing type and fleet target, for the alias.</p>
     pub fn routing_strategy(mut self, input: crate::types::RoutingStrategy) -> Self {
@@ -95,6 +107,10 @@ impl UpdateAliasInputBuilder {
     ) -> Self {
         self.routing_strategy = input;
         self
+    }
+    /// <p>The routing configuration, including routing type and fleet target, for the alias.</p>
+    pub fn get_routing_strategy(&self) -> &::std::option::Option<crate::types::RoutingStrategy> {
+        &self.routing_strategy
     }
     /// Consumes the builder and constructs a [`UpdateAliasInput`](crate::operation::update_alias::UpdateAliasInput).
     pub fn build(

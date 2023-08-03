@@ -72,6 +72,10 @@ impl GetLaunchProfileDetailsOutputBuilder {
         self.launch_profile = input;
         self
     }
+    /// <p>The launch profile.</p>
+    pub fn get_launch_profile(&self) -> &::std::option::Option<crate::types::LaunchProfile> {
+        &self.launch_profile
+    }
     /// Appends an item to `streaming_images`.
     ///
     /// To override the contents of this collection use [`set_streaming_images`](Self::set_streaming_images).
@@ -90,6 +94,12 @@ impl GetLaunchProfileDetailsOutputBuilder {
     ) -> Self {
         self.streaming_images = input;
         self
+    }
+    /// <p>A collection of streaming images.</p>
+    pub fn get_streaming_images(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamingImage>> {
+        &self.streaming_images
     }
     /// Appends an item to `studio_component_summaries`.
     ///
@@ -112,6 +122,12 @@ impl GetLaunchProfileDetailsOutputBuilder {
     ) -> Self {
         self.studio_component_summaries = input;
         self
+    }
+    /// <p>A collection of studio component summaries.</p>
+    pub fn get_studio_component_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StudioComponentSummary>> {
+        &self.studio_component_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

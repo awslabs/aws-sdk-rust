@@ -81,6 +81,10 @@ impl OrderableDbInstanceOptionBuilder {
         self.engine = input;
         self
     }
+    /// <p>The engine type of an instance.</p>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine
+    }
     /// <p>The engine version of an instance.</p>
     pub fn engine_version(
         mut self,
@@ -96,6 +100,10 @@ impl OrderableDbInstanceOptionBuilder {
     ) -> Self {
         self.engine_version = input;
         self
+    }
+    /// <p>The engine version of an instance.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
     }
     /// <p>The instance class for an instance.</p>
     pub fn db_instance_class(
@@ -113,6 +121,10 @@ impl OrderableDbInstanceOptionBuilder {
         self.db_instance_class = input;
         self
     }
+    /// <p>The instance class for an instance.</p>
+    pub fn get_db_instance_class(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_instance_class
+    }
     /// <p>The license model for an instance.</p>
     pub fn license_model(
         mut self,
@@ -128,6 +140,10 @@ impl OrderableDbInstanceOptionBuilder {
     ) -> Self {
         self.license_model = input;
         self
+    }
+    /// <p>The license model for an instance.</p>
+    pub fn get_license_model(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_model
     }
     /// Appends an item to `availability_zones`.
     ///
@@ -148,6 +164,12 @@ impl OrderableDbInstanceOptionBuilder {
         self.availability_zones = input;
         self
     }
+    /// <p>A list of Availability Zones for an instance.</p>
+    pub fn get_availability_zones(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>> {
+        &self.availability_zones
+    }
     /// <p>Indicates whether an instance is in a virtual private cloud (VPC).</p>
     pub fn vpc(mut self, input: bool) -> Self {
         self.vpc = ::std::option::Option::Some(input);
@@ -157,6 +179,10 @@ impl OrderableDbInstanceOptionBuilder {
     pub fn set_vpc(mut self, input: ::std::option::Option<bool>) -> Self {
         self.vpc = input;
         self
+    }
+    /// <p>Indicates whether an instance is in a virtual private cloud (VPC).</p>
+    pub fn get_vpc(&self) -> &::std::option::Option<bool> {
+        &self.vpc
     }
     /// Consumes the builder and constructs a [`OrderableDbInstanceOption`](crate::types::OrderableDbInstanceOption).
     pub fn build(self) -> crate::types::OrderableDbInstanceOption {

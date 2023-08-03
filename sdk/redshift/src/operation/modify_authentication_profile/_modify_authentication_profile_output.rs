@@ -60,6 +60,10 @@ impl ModifyAuthenticationProfileOutputBuilder {
         self.authentication_profile_name = input;
         self
     }
+    /// <p>The name of the authentication profile that was replaced.</p>
+    pub fn get_authentication_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authentication_profile_name
+    }
     /// <p>The updated content of the authentication profile in JSON format.</p>
     pub fn authentication_profile_content(
         mut self,
@@ -75,6 +79,12 @@ impl ModifyAuthenticationProfileOutputBuilder {
     ) -> Self {
         self.authentication_profile_content = input;
         self
+    }
+    /// <p>The updated content of the authentication profile in JSON format.</p>
+    pub fn get_authentication_profile_content(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.authentication_profile_content
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

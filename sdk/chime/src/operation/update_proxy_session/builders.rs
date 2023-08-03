@@ -40,6 +40,12 @@ impl UpdateProxySessionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateProxySession as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_proxy_session::builders::UpdateProxySessionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +142,10 @@ impl UpdateProxySessionFluentBuilder {
         self.inner = self.inner.set_voice_connector_id(input);
         self
     }
+    /// <p>The Amazon Chime voice connector ID.</p>
+    pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_voice_connector_id()
+    }
     /// <p>The proxy session ID.</p>
     pub fn proxy_session_id(
         mut self,
@@ -151,6 +161,10 @@ impl UpdateProxySessionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_proxy_session_id(input);
         self
+    }
+    /// <p>The proxy session ID.</p>
+    pub fn get_proxy_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_proxy_session_id()
     }
     /// Appends an item to `Capabilities`.
     ///
@@ -169,6 +183,12 @@ impl UpdateProxySessionFluentBuilder {
         self.inner = self.inner.set_capabilities(input);
         self
     }
+    /// <p>The proxy session capabilities.</p>
+    pub fn get_capabilities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Capability>> {
+        self.inner.get_capabilities()
+    }
     /// <p>The number of minutes allowed for the proxy session.</p>
     pub fn expiry_minutes(mut self, input: i32) -> Self {
         self.inner = self.inner.expiry_minutes(input);
@@ -178,5 +198,9 @@ impl UpdateProxySessionFluentBuilder {
     pub fn set_expiry_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_expiry_minutes(input);
         self
+    }
+    /// <p>The number of minutes allowed for the proxy session.</p>
+    pub fn get_expiry_minutes(&self) -> &::std::option::Option<i32> {
+        self.inner.get_expiry_minutes()
     }
 }

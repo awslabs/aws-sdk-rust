@@ -46,6 +46,10 @@ impl DescribeReservationInputBuilder {
         self.reservation_arn = input;
         self
     }
+    /// The Amazon Resource Name (ARN) of the reservation.
+    pub fn get_reservation_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reservation_arn
+    }
     /// Consumes the builder and constructs a [`DescribeReservationInput`](crate::operation::describe_reservation::DescribeReservationInput).
     pub fn build(
         self,

@@ -73,6 +73,12 @@ impl AnalyticsIntentResultBuilder {
         self.bin_keys = input;
         self
     }
+    /// <p>A list of objects containing the criteria you requested for binning results and the values of the bins.</p>
+    pub fn get_bin_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsBinKey>> {
+        &self.bin_keys
+    }
     /// Appends an item to `group_by_keys`.
     ///
     /// To override the contents of this collection use [`set_group_by_keys`](Self::set_group_by_keys).
@@ -92,6 +98,12 @@ impl AnalyticsIntentResultBuilder {
         self.group_by_keys = input;
         self
     }
+    /// <p>A list of objects containing the criteria you requested for grouping results and the values of the groups.</p>
+    pub fn get_group_by_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentGroupByKey>> {
+        &self.group_by_keys
+    }
     /// Appends an item to `metrics_results`.
     ///
     /// To override the contents of this collection use [`set_metrics_results`](Self::set_metrics_results).
@@ -110,6 +122,12 @@ impl AnalyticsIntentResultBuilder {
     ) -> Self {
         self.metrics_results = input;
         self
+    }
+    /// <p>A list of objects, each of which contains a metric you want to list, the statistic for the metric you want to return, and the method by which to organize the results.</p>
+    pub fn get_metrics_results(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalyticsIntentMetricResult>> {
+        &self.metrics_results
     }
     /// Consumes the builder and constructs a [`AnalyticsIntentResult`](crate::types::AnalyticsIntentResult).
     pub fn build(self) -> crate::types::AnalyticsIntentResult {

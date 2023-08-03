@@ -71,6 +71,10 @@ impl CreatePreparedStatementInputBuilder {
         self.statement_name = input;
         self
     }
+    /// <p>The name of the prepared statement.</p>
+    pub fn get_statement_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.statement_name
+    }
     /// <p>The name of the workgroup to which the prepared statement belongs.</p>
     pub fn work_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.work_group = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl CreatePreparedStatementInputBuilder {
     pub fn set_work_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.work_group = input;
         self
+    }
+    /// <p>The name of the workgroup to which the prepared statement belongs.</p>
+    pub fn get_work_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.work_group
     }
     /// <p>The query string for the prepared statement.</p>
     pub fn query_statement(
@@ -97,6 +105,10 @@ impl CreatePreparedStatementInputBuilder {
         self.query_statement = input;
         self
     }
+    /// <p>The query string for the prepared statement.</p>
+    pub fn get_query_statement(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_statement
+    }
     /// <p>The description of the prepared statement.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -106,6 +118,10 @@ impl CreatePreparedStatementInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the prepared statement.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`CreatePreparedStatementInput`](crate::operation::create_prepared_statement::CreatePreparedStatementInput).
     pub fn build(

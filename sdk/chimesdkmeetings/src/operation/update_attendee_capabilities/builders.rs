@@ -44,6 +44,10 @@ impl UpdateAttendeeCapabilitiesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAttendeeCapabilities as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_attendee_capabilities::builders::UpdateAttendeeCapabilitiesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +138,10 @@ impl UpdateAttendeeCapabilitiesFluentBuilder {
         self.inner = self.inner.set_meeting_id(input);
         self
     }
+    /// <p>The ID of the meeting associated with the update request.</p>
+    pub fn get_meeting_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_meeting_id()
+    }
     /// <p>The ID of the attendee associated with the update request.</p>
     pub fn attendee_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attendee_id(input.into());
@@ -143,6 +151,10 @@ impl UpdateAttendeeCapabilitiesFluentBuilder {
     pub fn set_attendee_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_attendee_id(input);
         self
+    }
+    /// <p>The ID of the attendee associated with the update request.</p>
+    pub fn get_attendee_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_attendee_id()
     }
     /// <p>The capabilities that you want to update.</p>
     pub fn capabilities(mut self, input: crate::types::AttendeeCapabilities) -> Self {
@@ -156,5 +168,9 @@ impl UpdateAttendeeCapabilitiesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_capabilities(input);
         self
+    }
+    /// <p>The capabilities that you want to update.</p>
+    pub fn get_capabilities(&self) -> &::std::option::Option<crate::types::AttendeeCapabilities> {
+        self.inner.get_capabilities()
     }
 }

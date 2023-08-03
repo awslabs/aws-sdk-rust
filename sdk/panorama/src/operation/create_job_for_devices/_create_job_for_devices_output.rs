@@ -56,6 +56,10 @@ impl CreateJobForDevicesOutputBuilder {
         self.jobs = input;
         self
     }
+    /// <p>A list of jobs.</p>
+    pub fn get_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Job>> {
+        &self.jobs
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

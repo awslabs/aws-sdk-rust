@@ -45,6 +45,12 @@ impl GeospatialHeatmapConfigurationBuilder {
         self.heatmap_color = input;
         self
     }
+    /// <p>The color scale specification for the heatmap point style.</p>
+    pub fn get_heatmap_color(
+        &self,
+    ) -> &::std::option::Option<crate::types::GeospatialHeatmapColorScale> {
+        &self.heatmap_color
+    }
     /// Consumes the builder and constructs a [`GeospatialHeatmapConfiguration`](crate::types::GeospatialHeatmapConfiguration).
     pub fn build(self) -> crate::types::GeospatialHeatmapConfiguration {
         crate::types::GeospatialHeatmapConfiguration {

@@ -49,6 +49,10 @@ impl BatchDeleteRecipeVersionInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the recipe whose versions are to be deleted.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `recipe_versions`.
     ///
     /// To override the contents of this collection use [`set_recipe_versions`](Self::set_recipe_versions).
@@ -70,6 +74,12 @@ impl BatchDeleteRecipeVersionInputBuilder {
     ) -> Self {
         self.recipe_versions = input;
         self
+    }
+    /// <p>An array of version identifiers, for the recipe versions to be deleted. You can specify numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.</p>
+    pub fn get_recipe_versions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.recipe_versions
     }
     /// Consumes the builder and constructs a [`BatchDeleteRecipeVersionInput`](crate::operation::batch_delete_recipe_version::BatchDeleteRecipeVersionInput).
     pub fn build(

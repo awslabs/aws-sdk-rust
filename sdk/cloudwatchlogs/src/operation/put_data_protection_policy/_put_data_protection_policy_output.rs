@@ -70,6 +70,10 @@ impl PutDataProtectionPolicyOutputBuilder {
         self.log_group_identifier = input;
         self
     }
+    /// <p>The log group name or ARN that you specified in your request.</p>
+    pub fn get_log_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group_identifier
+    }
     /// <p>The data protection policy used for this log group.</p>
     pub fn policy_document(
         mut self,
@@ -86,6 +90,10 @@ impl PutDataProtectionPolicyOutputBuilder {
         self.policy_document = input;
         self
     }
+    /// <p>The data protection policy used for this log group.</p>
+    pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_document
+    }
     /// <p>The date and time that this policy was most recently updated.</p>
     pub fn last_updated_time(mut self, input: i64) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
@@ -95,6 +103,10 @@ impl PutDataProtectionPolicyOutputBuilder {
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.last_updated_time = input;
         self
+    }
+    /// <p>The date and time that this policy was most recently updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<i64> {
+        &self.last_updated_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

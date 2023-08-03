@@ -36,6 +36,12 @@ impl UpdateConnectorFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateConnector as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_connector::builders::UpdateConnectorInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateConnectorFluentBuilder {
         self.inner = self.inner.set_connector_id(input);
         self
     }
+    /// <p>The unique identifier for the connector.</p>
+    pub fn get_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connector_id()
+    }
     /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.url(input.into());
@@ -135,6 +145,10 @@ impl UpdateConnectorFluentBuilder {
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_url(input);
         self
+    }
+    /// <p>The URL of the partner's AS2 or SFTP endpoint.</p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_url()
     }
     /// <p>A structure that contains the parameters for an AS2 connector object.</p>
     pub fn as2_config(mut self, input: crate::types::As2ConnectorConfig) -> Self {
@@ -149,6 +163,10 @@ impl UpdateConnectorFluentBuilder {
         self.inner = self.inner.set_as2_config(input);
         self
     }
+    /// <p>A structure that contains the parameters for an AS2 connector object.</p>
+    pub fn get_as2_config(&self) -> &::std::option::Option<crate::types::As2ConnectorConfig> {
+        self.inner.get_as2_config()
+    }
     /// <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2 message file, store the MDN when we receive them from the partner, and write a final JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code> needs to provide read and write access to the parent directory of the file location used in the <code>StartFileTransfer</code> request. Additionally, you need to provide read and write access to the parent directory of the files that you intend to send with <code>StartFileTransfer</code>.</p>
     /// <p>If you are using Basic authentication for your AS2 connector, the access role requires the <code>secretsmanager:GetSecretValue</code> permission for the secret. If the secret is encrypted using a customer-managed key instead of the Amazon Web Services managed key in Secrets Manager, then the role also needs the <code>kms:Decrypt</code> permission for that key.</p>
     pub fn access_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -161,6 +179,11 @@ impl UpdateConnectorFluentBuilder {
         self.inner = self.inner.set_access_role(input);
         self
     }
+    /// <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2 message file, store the MDN when we receive them from the partner, and write a final JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code> needs to provide read and write access to the parent directory of the file location used in the <code>StartFileTransfer</code> request. Additionally, you need to provide read and write access to the parent directory of the files that you intend to send with <code>StartFileTransfer</code>.</p>
+    /// <p>If you are using Basic authentication for your AS2 connector, the access role requires the <code>secretsmanager:GetSecretValue</code> permission for the secret. If the secret is encrypted using a customer-managed key instead of the Amazon Web Services managed key in Secrets Manager, then the role also needs the <code>kms:Decrypt</code> permission for that key.</p>
+    pub fn get_access_role(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_access_role()
+    }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a connector to turn on CloudWatch logging for Amazon S3 events. When set, you can view connector activity in your CloudWatch logs.</p>
     pub fn logging_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.logging_role(input.into());
@@ -170,6 +193,10 @@ impl UpdateConnectorFluentBuilder {
     pub fn set_logging_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_logging_role(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a connector to turn on CloudWatch logging for Amazon S3 events. When set, you can view connector activity in your CloudWatch logs.</p>
+    pub fn get_logging_role(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_logging_role()
     }
     /// <p>A structure that contains the parameters for an SFTP connector object.</p>
     pub fn sftp_config(mut self, input: crate::types::SftpConnectorConfig) -> Self {
@@ -183,5 +210,9 @@ impl UpdateConnectorFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sftp_config(input);
         self
+    }
+    /// <p>A structure that contains the parameters for an SFTP connector object.</p>
+    pub fn get_sftp_config(&self) -> &::std::option::Option<crate::types::SftpConnectorConfig> {
+        self.inner.get_sftp_config()
     }
 }

@@ -65,6 +65,12 @@ impl ListUserPoolsOutputBuilder {
         self.user_pools = input;
         self
     }
+    /// <p>The user pools from the response to list users.</p>
+    pub fn get_user_pools(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UserPoolDescriptionType>> {
+        &self.user_pools
+    }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -74,6 +80,10 @@ impl ListUserPoolsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

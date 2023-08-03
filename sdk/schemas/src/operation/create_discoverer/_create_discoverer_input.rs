@@ -72,6 +72,10 @@ impl CreateDiscovererInputBuilder {
         self.description = input;
         self
     }
+    /// <p>A description for the discoverer.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The ARN of the event bus.</p>
     pub fn source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_arn = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl CreateDiscovererInputBuilder {
         self.source_arn = input;
         self
     }
+    /// <p>The ARN of the event bus.</p>
+    pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_arn
+    }
     /// <p>Support discovery of schemas in events sent to the bus from another account. (default: true).</p>
     pub fn cross_account(mut self, input: bool) -> Self {
         self.cross_account = ::std::option::Option::Some(input);
@@ -91,6 +99,10 @@ impl CreateDiscovererInputBuilder {
     pub fn set_cross_account(mut self, input: ::std::option::Option<bool>) -> Self {
         self.cross_account = input;
         self
+    }
+    /// <p>Support discovery of schemas in events sent to the bus from another account. (default: true).</p>
+    pub fn get_cross_account(&self) -> &::std::option::Option<bool> {
+        &self.cross_account
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -116,6 +128,14 @@ impl CreateDiscovererInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Tags associated with the resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateDiscovererInput`](crate::operation::create_discoverer::CreateDiscovererInput).
     pub fn build(

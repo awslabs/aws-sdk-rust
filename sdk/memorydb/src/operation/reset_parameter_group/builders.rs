@@ -36,6 +36,12 @@ impl ResetParameterGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ResetParameterGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::reset_parameter_group::builders::ResetParameterGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl ResetParameterGroupFluentBuilder {
         self.inner = self.inner.set_parameter_group_name(input);
         self
     }
+    /// <p>The name of the parameter group to reset.</p>
+    pub fn get_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_parameter_group_name()
+    }
     /// <p>If true, all parameters in the parameter group are reset to their default values. If false, only the parameters listed by ParameterNames are reset to their default values.</p>
     pub fn all_parameters(mut self, input: bool) -> Self {
         self.inner = self.inner.all_parameters(input);
@@ -141,6 +151,10 @@ impl ResetParameterGroupFluentBuilder {
     pub fn set_all_parameters(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_all_parameters(input);
         self
+    }
+    /// <p>If true, all parameters in the parameter group are reset to their default values. If false, only the parameters listed by ParameterNames are reset to their default values.</p>
+    pub fn get_all_parameters(&self) -> &::std::option::Option<bool> {
+        self.inner.get_all_parameters()
     }
     /// Appends an item to `ParameterNames`.
     ///
@@ -161,5 +175,11 @@ impl ResetParameterGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_parameter_names(input);
         self
+    }
+    /// <p>An array of parameter names to reset to their default values. If AllParameters is true, do not use ParameterNames. If AllParameters is false, you must specify the name of at least one parameter to reset.</p>
+    pub fn get_parameter_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_parameter_names()
     }
 }

@@ -37,6 +37,12 @@ impl RevokeSnapshotAccessFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RevokeSnapshotAccess as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::revoke_snapshot_access::builders::RevokeSnapshotAccessInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl RevokeSnapshotAccessFluentBuilder {
         self.inner = self.inner.set_snapshot_identifier(input);
         self
     }
+    /// <p>The identifier of the snapshot that the account can no longer access.</p>
+    pub fn get_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_snapshot_identifier()
+    }
     /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to revoke access.</p>
     pub fn snapshot_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_arn(input.into());
@@ -142,6 +152,10 @@ impl RevokeSnapshotAccessFluentBuilder {
     pub fn set_snapshot_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to revoke access.</p>
+    pub fn get_snapshot_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_snapshot_arn()
     }
     /// <p>The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     pub fn snapshot_cluster_identifier(
@@ -159,6 +173,10 @@ impl RevokeSnapshotAccessFluentBuilder {
         self.inner = self.inner.set_snapshot_cluster_identifier(input);
         self
     }
+    /// <p>The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
+    pub fn get_snapshot_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_snapshot_cluster_identifier()
+    }
     /// <p>The identifier of the Amazon Web Services account that can no longer restore the specified snapshot.</p>
     pub fn account_with_restore_access(
         mut self,
@@ -174,5 +192,9 @@ impl RevokeSnapshotAccessFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_account_with_restore_access(input);
         self
+    }
+    /// <p>The identifier of the Amazon Web Services account that can no longer restore the specified snapshot.</p>
+    pub fn get_account_with_restore_access(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_with_restore_access()
     }
 }

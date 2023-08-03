@@ -81,6 +81,10 @@ impl FirewallManagerRuleGroupBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>If you define more than one rule group in the first or last Firewall Manager rule groups, WAF evaluates each request against the rule groups in order, starting from the lowest priority setting. The priorities don't need to be consecutive, but they must all be different.</p>
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
@@ -90,6 +94,10 @@ impl FirewallManagerRuleGroupBuilder {
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
+    }
+    /// <p>If you define more than one rule group in the first or last Firewall Manager rule groups, WAF evaluates each request against the rule groups in order, starting from the lowest priority setting. The priorities don't need to be consecutive, but they must all be different.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
     }
     /// <p>The processing guidance for an Firewall Manager rule. This is like a regular rule <code>Statement</code>, but it can only contain a rule group reference.</p>
     pub fn firewall_manager_statement(
@@ -106,6 +114,12 @@ impl FirewallManagerRuleGroupBuilder {
     ) -> Self {
         self.firewall_manager_statement = input;
         self
+    }
+    /// <p>The processing guidance for an Firewall Manager rule. This is like a regular rule <code>Statement</code>, but it can only contain a rule group reference.</p>
+    pub fn get_firewall_manager_statement(
+        &self,
+    ) -> &::std::option::Option<crate::types::FirewallManagerStatement> {
+        &self.firewall_manager_statement
     }
     /// <p>The action to use in the place of the action that results from the rule group evaluation. Set the override action to none to leave the result of the rule group alone. Set it to count to override the result to count only. </p>
     /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p> <note>
@@ -126,6 +140,13 @@ impl FirewallManagerRuleGroupBuilder {
         self.override_action = input;
         self
     }
+    /// <p>The action to use in the place of the action that results from the rule group evaluation. Set the override action to none to leave the result of the rule group alone. Set it to count to override the result to count only. </p>
+    /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p> <note>
+    /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count matches, do not use this and instead use the rule action override option, with <code>Count</code> action, in your rule group reference statement settings. </p>
+    /// </note>
+    pub fn get_override_action(&self) -> &::std::option::Option<crate::types::OverrideAction> {
+        &self.override_action
+    }
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
     pub fn visibility_config(mut self, input: crate::types::VisibilityConfig) -> Self {
         self.visibility_config = ::std::option::Option::Some(input);
@@ -138,6 +159,10 @@ impl FirewallManagerRuleGroupBuilder {
     ) -> Self {
         self.visibility_config = input;
         self
+    }
+    /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
+    pub fn get_visibility_config(&self) -> &::std::option::Option<crate::types::VisibilityConfig> {
+        &self.visibility_config
     }
     /// Consumes the builder and constructs a [`FirewallManagerRuleGroup`](crate::types::FirewallManagerRuleGroup).
     pub fn build(self) -> crate::types::FirewallManagerRuleGroup {

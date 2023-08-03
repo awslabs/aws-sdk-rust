@@ -51,6 +51,10 @@ impl SamplingStrategyBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of a sampling rule.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::SamplingStrategyName> {
+        &self.name
+    }
     /// <p>The value of a sampling rule.</p>
     pub fn value(mut self, input: f64) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl SamplingStrategyBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value of a sampling rule.</p>
+    pub fn get_value(&self) -> &::std::option::Option<f64> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`SamplingStrategy`](crate::types::SamplingStrategy).
     pub fn build(self) -> crate::types::SamplingStrategy {

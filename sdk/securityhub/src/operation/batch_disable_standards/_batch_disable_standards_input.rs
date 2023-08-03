@@ -54,6 +54,12 @@ impl BatchDisableStandardsInputBuilder {
         self.standards_subscription_arns = input;
         self
     }
+    /// <p>The ARNs of the standards subscriptions to disable.</p>
+    pub fn get_standards_subscription_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.standards_subscription_arns
+    }
     /// Consumes the builder and constructs a [`BatchDisableStandardsInput`](crate::operation::batch_disable_standards::BatchDisableStandardsInput).
     pub fn build(
         self,

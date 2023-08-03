@@ -39,6 +39,10 @@ impl DisableVpcClassicLinkDnsSupportInputBuilder {
         self.vpc_id = input;
         self
     }
+    /// <p>The ID of the VPC.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
+    }
     /// Consumes the builder and constructs a [`DisableVpcClassicLinkDnsSupportInput`](crate::operation::disable_vpc_classic_link_dns_support::DisableVpcClassicLinkDnsSupportInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::disable_vpc_classic_link_dns_support::DisableVpcClassicLinkDnsSupportInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

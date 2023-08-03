@@ -55,6 +55,10 @@ impl DeleteReportDefinitionOutputBuilder {
         self.response_message = input;
         self
     }
+    /// <p>Whether the deletion was successful or not.</p>
+    pub fn get_response_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.response_message
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

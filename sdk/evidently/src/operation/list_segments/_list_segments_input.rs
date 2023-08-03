@@ -47,6 +47,10 @@ impl ListSegmentsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to include in the response. If you omit this, the default of 50 is used.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListSegments</code> operation.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl ListSegmentsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListSegments</code> operation.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListSegmentsInput`](crate::operation::list_segments::ListSegmentsInput).
     pub fn build(

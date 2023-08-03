@@ -36,6 +36,10 @@ impl CreateFormFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateForm as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_form::builders::CreateFormInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl CreateFormFluentBuilder {
         self.inner = self.inner.set_app_id(input);
         self
     }
+    /// <p>The unique ID of the Amplify app to associate with the form.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_id()
+    }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
     pub fn environment_name(
         mut self,
@@ -134,6 +142,10 @@ impl CreateFormFluentBuilder {
         self.inner = self.inner.set_environment_name(input);
         self
     }
+    /// <p>The name of the backend environment that is a part of the Amplify app.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_name()
+    }
     /// <p>The unique client token.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -143,6 +155,10 @@ impl CreateFormFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>The unique client token.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// <p>Represents the configuration of the form to create.</p>
     pub fn form_to_create(mut self, input: crate::types::CreateFormData) -> Self {
@@ -156,5 +172,9 @@ impl CreateFormFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_form_to_create(input);
         self
+    }
+    /// <p>Represents the configuration of the form to create.</p>
+    pub fn get_form_to_create(&self) -> &::std::option::Option<crate::types::CreateFormData> {
+        self.inner.get_form_to_create()
     }
 }

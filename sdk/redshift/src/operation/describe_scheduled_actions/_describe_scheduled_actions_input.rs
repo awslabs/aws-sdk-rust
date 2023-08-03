@@ -109,6 +109,10 @@ impl DescribeScheduledActionsInputBuilder {
         self.scheduled_action_name = input;
         self
     }
+    /// <p>The name of the scheduled action to retrieve. </p>
+    pub fn get_scheduled_action_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scheduled_action_name
+    }
     /// <p>The type of the scheduled actions to retrieve. </p>
     pub fn target_action_type(mut self, input: crate::types::ScheduledActionTypeValues) -> Self {
         self.target_action_type = ::std::option::Option::Some(input);
@@ -121,6 +125,12 @@ impl DescribeScheduledActionsInputBuilder {
     ) -> Self {
         self.target_action_type = input;
         self
+    }
+    /// <p>The type of the scheduled actions to retrieve. </p>
+    pub fn get_target_action_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ScheduledActionTypeValues> {
+        &self.target_action_type
     }
     /// <p>The start time in UTC of the scheduled actions to retrieve. Only active scheduled actions that have invocations after this time are retrieved.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -135,6 +145,10 @@ impl DescribeScheduledActionsInputBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The start time in UTC of the scheduled actions to retrieve. Only active scheduled actions that have invocations after this time are retrieved.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The end time in UTC of the scheduled action to retrieve. Only active scheduled actions that have invocations before this time are retrieved.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -148,6 +162,10 @@ impl DescribeScheduledActionsInputBuilder {
         self.end_time = input;
         self
     }
+    /// <p>The end time in UTC of the scheduled action to retrieve. Only active scheduled actions that have invocations before this time are retrieved.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>If true, retrieve only active scheduled actions. If false, retrieve only disabled scheduled actions. </p>
     pub fn active(mut self, input: bool) -> Self {
         self.active = ::std::option::Option::Some(input);
@@ -157,6 +175,10 @@ impl DescribeScheduledActionsInputBuilder {
     pub fn set_active(mut self, input: ::std::option::Option<bool>) -> Self {
         self.active = input;
         self
+    }
+    /// <p>If true, retrieve only active scheduled actions. If false, retrieve only disabled scheduled actions. </p>
+    pub fn get_active(&self) -> &::std::option::Option<bool> {
+        &self.active
     }
     /// Appends an item to `filters`.
     ///
@@ -177,6 +199,12 @@ impl DescribeScheduledActionsInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>List of scheduled action filters. </p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledActionFilter>> {
+        &self.filters
+    }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeScheduledActions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -186,6 +214,10 @@ impl DescribeScheduledActionsInputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeScheduledActions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
     /// <p>Default: <code>100</code> </p>
@@ -200,6 +232,12 @@ impl DescribeScheduledActionsInputBuilder {
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_records = input;
         self
+    }
+    /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
+    /// <p>Default: <code>100</code> </p>
+    /// <p>Constraints: minimum 20, maximum 100.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        &self.max_records
     }
     /// Consumes the builder and constructs a [`DescribeScheduledActionsInput`](crate::operation::describe_scheduled_actions::DescribeScheduledActionsInput).
     pub fn build(

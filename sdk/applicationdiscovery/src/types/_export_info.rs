@@ -96,6 +96,10 @@ impl ExportInfoBuilder {
         self.export_id = input;
         self
     }
+    /// <p>A unique identifier used to query an export.</p>
+    pub fn get_export_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.export_id
+    }
     /// <p>The status of the data export job.</p>
     pub fn export_status(mut self, input: crate::types::ExportStatus) -> Self {
         self.export_status = ::std::option::Option::Some(input);
@@ -108,6 +112,10 @@ impl ExportInfoBuilder {
     ) -> Self {
         self.export_status = input;
         self
+    }
+    /// <p>The status of the data export job.</p>
+    pub fn get_export_status(&self) -> &::std::option::Option<crate::types::ExportStatus> {
+        &self.export_status
     }
     /// <p>A status message provided for API callers.</p>
     pub fn status_message(
@@ -125,6 +133,10 @@ impl ExportInfoBuilder {
         self.status_message = input;
         self
     }
+    /// <p>A status message provided for API callers.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>A URL for an Amazon S3 bucket where you can review the exported data. The URL is displayed only if the export succeeded.</p>
     pub fn configurations_download_url(
         mut self,
@@ -141,6 +153,10 @@ impl ExportInfoBuilder {
         self.configurations_download_url = input;
         self
     }
+    /// <p>A URL for an Amazon S3 bucket where you can review the exported data. The URL is displayed only if the export succeeded.</p>
+    pub fn get_configurations_download_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configurations_download_url
+    }
     /// <p>The time that the data export was initiated.</p>
     pub fn export_request_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.export_request_time = ::std::option::Option::Some(input);
@@ -154,6 +170,10 @@ impl ExportInfoBuilder {
         self.export_request_time = input;
         self
     }
+    /// <p>The time that the data export was initiated.</p>
+    pub fn get_export_request_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.export_request_time
+    }
     /// <p>If true, the export of agent information exceeded the size limit for a single export and the exported data is incomplete for the requested time range. To address this, select a smaller time range for the export by using <code>startDate</code> and <code>endDate</code>.</p>
     pub fn is_truncated(mut self, input: bool) -> Self {
         self.is_truncated = ::std::option::Option::Some(input);
@@ -163,6 +183,10 @@ impl ExportInfoBuilder {
     pub fn set_is_truncated(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_truncated = input;
         self
+    }
+    /// <p>If true, the export of agent information exceeded the size limit for a single export and the exported data is incomplete for the requested time range. To address this, select a smaller time range for the export by using <code>startDate</code> and <code>endDate</code>.</p>
+    pub fn get_is_truncated(&self) -> &::std::option::Option<bool> {
+        &self.is_truncated
     }
     /// <p>The value of <code>startTime</code> parameter in the <code>StartExportTask</code> request. If no <code>startTime</code> was requested, this result does not appear in <code>ExportInfo</code>.</p>
     pub fn requested_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -177,6 +201,10 @@ impl ExportInfoBuilder {
         self.requested_start_time = input;
         self
     }
+    /// <p>The value of <code>startTime</code> parameter in the <code>StartExportTask</code> request. If no <code>startTime</code> was requested, this result does not appear in <code>ExportInfo</code>.</p>
+    pub fn get_requested_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.requested_start_time
+    }
     /// <p>The <code>endTime</code> used in the <code>StartExportTask</code> request. If no <code>endTime</code> was requested, this result does not appear in <code>ExportInfo</code>.</p>
     pub fn requested_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.requested_end_time = ::std::option::Option::Some(input);
@@ -189,6 +217,10 @@ impl ExportInfoBuilder {
     ) -> Self {
         self.requested_end_time = input;
         self
+    }
+    /// <p>The <code>endTime</code> used in the <code>StartExportTask</code> request. If no <code>endTime</code> was requested, this result does not appear in <code>ExportInfo</code>.</p>
+    pub fn get_requested_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.requested_end_time
     }
     /// Consumes the builder and constructs a [`ExportInfo`](crate::types::ExportInfo).
     pub fn build(self) -> crate::types::ExportInfo {

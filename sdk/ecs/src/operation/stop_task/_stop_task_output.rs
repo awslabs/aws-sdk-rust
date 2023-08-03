@@ -46,6 +46,10 @@ impl StopTaskOutputBuilder {
         self.task = input;
         self
     }
+    /// <p>The task that was stopped.</p>
+    pub fn get_task(&self) -> &::std::option::Option<crate::types::Task> {
+        &self.task
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

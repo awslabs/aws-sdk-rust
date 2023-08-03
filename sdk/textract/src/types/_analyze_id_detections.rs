@@ -56,6 +56,10 @@ impl AnalyzeIdDetectionsBuilder {
         self.text = input;
         self
     }
+    /// <p>Text of either the normalized field or value associated with it.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
+    }
     /// <p>Only returned for dates, returns the type of value detected and the date written in a more machine readable way.</p>
     pub fn normalized_value(mut self, input: crate::types::NormalizedValue) -> Self {
         self.normalized_value = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl AnalyzeIdDetectionsBuilder {
         self.normalized_value = input;
         self
     }
+    /// <p>Only returned for dates, returns the type of value detected and the date written in a more machine readable way.</p>
+    pub fn get_normalized_value(&self) -> &::std::option::Option<crate::types::NormalizedValue> {
+        &self.normalized_value
+    }
     /// <p>The confidence score of the detected text.</p>
     pub fn confidence(mut self, input: f32) -> Self {
         self.confidence = ::std::option::Option::Some(input);
@@ -78,6 +86,10 @@ impl AnalyzeIdDetectionsBuilder {
     pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
         self.confidence = input;
         self
+    }
+    /// <p>The confidence score of the detected text.</p>
+    pub fn get_confidence(&self) -> &::std::option::Option<f32> {
+        &self.confidence
     }
     /// Consumes the builder and constructs a [`AnalyzeIdDetections`](crate::types::AnalyzeIdDetections).
     pub fn build(self) -> crate::types::AnalyzeIdDetections {

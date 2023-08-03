@@ -68,6 +68,10 @@ impl PolicyFilterBuilder {
         self.principal = input;
         self
     }
+    /// <p>Filters the output to only policies that reference the specified principal.</p>
+    pub fn get_principal(&self) -> &::std::option::Option<crate::types::EntityReference> {
+        &self.principal
+    }
     /// <p>Filters the output to only policies that reference the specified resource.</p>
     pub fn resource(mut self, input: crate::types::EntityReference) -> Self {
         self.resource = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl PolicyFilterBuilder {
         self.resource = input;
         self
     }
+    /// <p>Filters the output to only policies that reference the specified resource.</p>
+    pub fn get_resource(&self) -> &::std::option::Option<crate::types::EntityReference> {
+        &self.resource
+    }
     /// <p>Filters the output to only policies of the specified type.</p>
     pub fn policy_type(mut self, input: crate::types::PolicyType) -> Self {
         self.policy_type = ::std::option::Option::Some(input);
@@ -93,6 +101,10 @@ impl PolicyFilterBuilder {
     ) -> Self {
         self.policy_type = input;
         self
+    }
+    /// <p>Filters the output to only policies of the specified type.</p>
+    pub fn get_policy_type(&self) -> &::std::option::Option<crate::types::PolicyType> {
+        &self.policy_type
     }
     /// <p>Filters the output to only template-linked policies that were instantiated from the specified policy template.</p>
     pub fn policy_template_id(
@@ -109,6 +121,10 @@ impl PolicyFilterBuilder {
     ) -> Self {
         self.policy_template_id = input;
         self
+    }
+    /// <p>Filters the output to only template-linked policies that were instantiated from the specified policy template.</p>
+    pub fn get_policy_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_template_id
     }
     /// Consumes the builder and constructs a [`PolicyFilter`](crate::types::PolicyFilter).
     pub fn build(self) -> crate::types::PolicyFilter {

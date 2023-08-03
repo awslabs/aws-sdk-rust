@@ -37,6 +37,10 @@ impl GetOpsItemFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetOpsItem as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_ops_item::builders::GetOpsItemInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl GetOpsItemFluentBuilder {
         self.inner = self.inner.set_ops_item_id(input);
         self
     }
+    /// <p>The ID of the OpsItem that you want to get.</p>
+    pub fn get_ops_item_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ops_item_id()
+    }
     /// <p>The OpsItem Amazon Resource Name (ARN).</p>
     pub fn ops_item_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ops_item_arn(input.into());
@@ -128,5 +136,9 @@ impl GetOpsItemFluentBuilder {
     pub fn set_ops_item_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ops_item_arn(input);
         self
+    }
+    /// <p>The OpsItem Amazon Resource Name (ARN).</p>
+    pub fn get_ops_item_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ops_item_arn()
     }
 }

@@ -74,6 +74,10 @@ impl CreateIdentitySourceOutputBuilder {
         self.created_date = input;
         self
     }
+    /// <p>The date and time the identity source was originally created.</p>
+    pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_date
+    }
     /// <p>The unique ID of the new identity source.</p>
     pub fn identity_source_id(
         mut self,
@@ -90,6 +94,10 @@ impl CreateIdentitySourceOutputBuilder {
         self.identity_source_id = input;
         self
     }
+    /// <p>The unique ID of the new identity source.</p>
+    pub fn get_identity_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_source_id
+    }
     /// <p>The date and time the identity source was most recently updated.</p>
     pub fn last_updated_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date = ::std::option::Option::Some(input);
@@ -102,6 +110,10 @@ impl CreateIdentitySourceOutputBuilder {
     ) -> Self {
         self.last_updated_date = input;
         self
+    }
+    /// <p>The date and time the identity source was most recently updated.</p>
+    pub fn get_last_updated_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date
     }
     /// <p>The ID of the policy store that contains the identity source.</p>
     pub fn policy_store_id(
@@ -118,6 +130,10 @@ impl CreateIdentitySourceOutputBuilder {
     ) -> Self {
         self.policy_store_id = input;
         self
+    }
+    /// <p>The ID of the policy store that contains the identity source.</p>
+    pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_store_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

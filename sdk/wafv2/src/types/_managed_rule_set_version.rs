@@ -97,6 +97,10 @@ impl ManagedRuleSetVersionBuilder {
         self.associated_rule_group_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the vendor rule group that's used to define the published version of your managed rule group. </p>
+    pub fn get_associated_rule_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.associated_rule_group_arn
+    }
     /// <p>The web ACL capacity units (WCUs) required for this rule group.</p>
     /// <p>WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-waf-capacity-units.html">WAF web ACL capacity units (WCU)</a> in the <i>WAF Developer Guide</i>. </p>
     pub fn capacity(mut self, input: i64) -> Self {
@@ -109,6 +113,11 @@ impl ManagedRuleSetVersionBuilder {
         self.capacity = input;
         self
     }
+    /// <p>The web ACL capacity units (WCUs) required for this rule group.</p>
+    /// <p>WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-waf-capacity-units.html">WAF web ACL capacity units (WCU)</a> in the <i>WAF Developer Guide</i>. </p>
+    pub fn get_capacity(&self) -> &::std::option::Option<i64> {
+        &self.capacity
+    }
     /// <p>The amount of time you expect this version of your managed rule group to last, in days. </p>
     pub fn forecasted_lifetime(mut self, input: i32) -> Self {
         self.forecasted_lifetime = ::std::option::Option::Some(input);
@@ -118,6 +127,10 @@ impl ManagedRuleSetVersionBuilder {
     pub fn set_forecasted_lifetime(mut self, input: ::std::option::Option<i32>) -> Self {
         self.forecasted_lifetime = input;
         self
+    }
+    /// <p>The amount of time you expect this version of your managed rule group to last, in days. </p>
+    pub fn get_forecasted_lifetime(&self) -> &::std::option::Option<i32> {
+        &self.forecasted_lifetime
     }
     /// <p>The time that you first published this version. </p>
     /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
@@ -134,6 +147,11 @@ impl ManagedRuleSetVersionBuilder {
         self.publish_timestamp = input;
         self
     }
+    /// <p>The time that you first published this version. </p>
+    /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
+    pub fn get_publish_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.publish_timestamp
+    }
     /// <p>The last time that you updated this version. </p>
     /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
     pub fn last_update_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -149,6 +167,13 @@ impl ManagedRuleSetVersionBuilder {
         self.last_update_timestamp = input;
         self
     }
+    /// <p>The last time that you updated this version. </p>
+    /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
+    pub fn get_last_update_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_update_timestamp
+    }
     /// <p>The time that this version is set to expire.</p>
     /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
     pub fn expiry_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -163,6 +188,11 @@ impl ManagedRuleSetVersionBuilder {
     ) -> Self {
         self.expiry_timestamp = input;
         self
+    }
+    /// <p>The time that this version is set to expire.</p>
+    /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
+    pub fn get_expiry_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expiry_timestamp
     }
     /// Consumes the builder and constructs a [`ManagedRuleSetVersion`](crate::types::ManagedRuleSetVersion).
     pub fn build(self) -> crate::types::ManagedRuleSetVersion {

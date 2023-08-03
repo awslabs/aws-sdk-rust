@@ -47,6 +47,10 @@ impl DescribeRuleInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the rule.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
     pub fn event_bus_name(
         mut self,
@@ -62,6 +66,10 @@ impl DescribeRuleInputBuilder {
     ) -> Self {
         self.event_bus_name = input;
         self
+    }
+    /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
+    pub fn get_event_bus_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_bus_name
     }
     /// Consumes the builder and constructs a [`DescribeRuleInput`](crate::operation::describe_rule::DescribeRuleInput).
     pub fn build(

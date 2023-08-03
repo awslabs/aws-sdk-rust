@@ -36,6 +36,12 @@ impl ListImportFailuresFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListImportFailures as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_import_failures::builders::ListImportFailuresInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl ListImportFailuresFluentBuilder {
         self.inner = self.inner.set_import_id(input);
         self
     }
+    /// <p> The ID of the import. </p>
+    pub fn get_import_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_import_id()
+    }
     /// <p> The maximum number of failures to display on a single page. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -147,6 +157,10 @@ impl ListImportFailuresFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p> The maximum number of failures to display on a single page. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p> A token you can use to get the next page of import failures. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -156,5 +170,9 @@ impl ListImportFailuresFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p> A token you can use to get the next page of import failures. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

@@ -68,6 +68,13 @@ impl ListResourceProfileArtifactsOutputBuilder {
         self.artifacts = input;
         self
     }
+    /// <p>An array of objects, one for each of 1-100 S3 objects that Amazon Macie selected for analysis.</p>
+    /// <p>If Macie has analyzed more than 100 objects in the bucket, Macie populates the array based on the value for the ResourceProfileArtifact.sensitive field for an object: true (sensitive), followed by false (not sensitive). Macie then populates any remaining items in the array with information about objects where the value for the ResourceProfileArtifact.classificationResultStatus field is SKIPPED.</p>
+    pub fn get_artifacts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceProfileArtifact>> {
+        &self.artifacts
+    }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -77,6 +84,10 @@ impl ListResourceProfileArtifactsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

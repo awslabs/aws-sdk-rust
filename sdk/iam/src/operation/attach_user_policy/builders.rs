@@ -39,6 +39,12 @@ impl AttachUserPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AttachUserPolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::attach_user_policy::builders::AttachUserPolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +137,11 @@ impl AttachUserPolicyFluentBuilder {
         self.inner = self.inner.set_user_name(input);
         self
     }
+    /// <p>The name (friendly name, not ARN) of the IAM user to attach the policy to.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_name()
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -142,5 +153,10 @@ impl AttachUserPolicyFluentBuilder {
     pub fn set_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn get_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_arn()
     }
 }

@@ -71,6 +71,10 @@ impl TestFailoverFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the TestFailover as a reference.
+    pub fn as_input(&self) -> &crate::operation::test_failover::builders::TestFailoverInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -159,6 +163,10 @@ impl TestFailoverFluentBuilder {
         self.inner = self.inner.set_replication_group_id(input);
         self
     }
+    /// <p>The name of the replication group (console: cluster) whose automatic failover is being tested by this operation.</p>
+    pub fn get_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_replication_group_id()
+    }
     /// <p>The name of the node group (called shard in the console) in this replication group on which automatic failover is to be tested. You may test automatic failover on up to 5 node groups in any rolling 24-hour period.</p>
     pub fn node_group_id(
         mut self,
@@ -174,5 +182,9 @@ impl TestFailoverFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_node_group_id(input);
         self
+    }
+    /// <p>The name of the node group (called shard in the console) in this replication group on which automatic failover is to be tested. You may test automatic failover on up to 5 node groups in any rolling 24-hour period.</p>
+    pub fn get_node_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_node_group_id()
     }
 }

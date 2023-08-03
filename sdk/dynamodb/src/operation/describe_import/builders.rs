@@ -36,6 +36,12 @@ impl DescribeImportFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeImport as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_import::builders::DescribeImportInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -117,5 +123,9 @@ impl DescribeImportFluentBuilder {
     pub fn set_import_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_import_arn(input);
         self
+    }
+    /// <p> The Amazon Resource Name (ARN) associated with the table you're importing to. </p>
+    pub fn get_import_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_import_arn()
     }
 }

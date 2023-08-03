@@ -84,6 +84,10 @@ impl AwsRedshiftClusterLoggingStatusBuilder {
         self.bucket_name = input;
         self
     }
+    /// <p>The name of the S3 bucket where the log files are stored.</p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_name
+    }
     /// <p>The message indicating that the logs failed to be delivered.</p>
     pub fn last_failure_message(
         mut self,
@@ -99,6 +103,10 @@ impl AwsRedshiftClusterLoggingStatusBuilder {
     ) -> Self {
         self.last_failure_message = input;
         self
+    }
+    /// <p>The message indicating that the logs failed to be delivered.</p>
+    pub fn get_last_failure_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_failure_message
     }
     /// <p>The last time when logs failed to be delivered.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
@@ -118,6 +126,11 @@ impl AwsRedshiftClusterLoggingStatusBuilder {
         self.last_failure_time = input;
         self
     }
+    /// <p>The last time when logs failed to be delivered.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_last_failure_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_failure_time
+    }
     /// <p>The last time that logs were delivered successfully.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn last_successful_delivery_time(
@@ -136,6 +149,13 @@ impl AwsRedshiftClusterLoggingStatusBuilder {
         self.last_successful_delivery_time = input;
         self
     }
+    /// <p>The last time that logs were delivered successfully.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_last_successful_delivery_time(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.last_successful_delivery_time
+    }
     /// <p>Indicates whether logging is enabled.</p>
     pub fn logging_enabled(mut self, input: bool) -> Self {
         self.logging_enabled = ::std::option::Option::Some(input);
@@ -145,6 +165,10 @@ impl AwsRedshiftClusterLoggingStatusBuilder {
     pub fn set_logging_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.logging_enabled = input;
         self
+    }
+    /// <p>Indicates whether logging is enabled.</p>
+    pub fn get_logging_enabled(&self) -> &::std::option::Option<bool> {
+        &self.logging_enabled
     }
     /// <p>Provides the prefix applied to the log file names.</p>
     pub fn s3_key_prefix(
@@ -161,6 +185,10 @@ impl AwsRedshiftClusterLoggingStatusBuilder {
     ) -> Self {
         self.s3_key_prefix = input;
         self
+    }
+    /// <p>Provides the prefix applied to the log file names.</p>
+    pub fn get_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_key_prefix
     }
     /// Consumes the builder and constructs a [`AwsRedshiftClusterLoggingStatus`](crate::types::AwsRedshiftClusterLoggingStatus).
     pub fn build(self) -> crate::types::AwsRedshiftClusterLoggingStatus {

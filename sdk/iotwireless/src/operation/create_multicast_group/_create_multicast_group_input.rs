@@ -72,6 +72,10 @@ impl CreateMulticastGroupInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the multicast group.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the multicast group.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl CreateMulticastGroupInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the multicast group.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
     pub fn client_request_token(
@@ -98,6 +106,10 @@ impl CreateMulticastGroupInputBuilder {
         self.client_request_token = input;
         self
     }
+    /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
+    }
     /// <p>The LoRaWAN information that is to be used with the multicast group.</p>
     pub fn lo_ra_wan(mut self, input: crate::types::LoRaWanMulticast) -> Self {
         self.lo_ra_wan = ::std::option::Option::Some(input);
@@ -110,6 +122,10 @@ impl CreateMulticastGroupInputBuilder {
     ) -> Self {
         self.lo_ra_wan = input;
         self
+    }
+    /// <p>The LoRaWAN information that is to be used with the multicast group.</p>
+    pub fn get_lo_ra_wan(&self) -> &::std::option::Option<crate::types::LoRaWanMulticast> {
+        &self.lo_ra_wan
     }
     /// Appends an item to `tags`.
     ///
@@ -129,6 +145,10 @@ impl CreateMulticastGroupInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateMulticastGroupInput`](crate::operation::create_multicast_group::CreateMulticastGroupInput).
     pub fn build(

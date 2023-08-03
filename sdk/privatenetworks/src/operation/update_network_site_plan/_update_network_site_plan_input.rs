@@ -63,6 +63,10 @@ impl UpdateNetworkSitePlanInputBuilder {
         self.network_site_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the network site.</p>
+    pub fn get_network_site_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_site_arn
+    }
     /// <p>The pending plan.</p>
     pub fn pending_plan(mut self, input: crate::types::SitePlan) -> Self {
         self.pending_plan = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl UpdateNetworkSitePlanInputBuilder {
         self.pending_plan = input;
         self
     }
+    /// <p>The pending plan.</p>
+    pub fn get_pending_plan(&self) -> &::std::option::Option<crate::types::SitePlan> {
+        &self.pending_plan
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -85,6 +93,10 @@ impl UpdateNetworkSitePlanInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateNetworkSitePlanInput`](crate::operation::update_network_site_plan::UpdateNetworkSitePlanInput).
     pub fn build(

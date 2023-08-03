@@ -71,6 +71,10 @@ impl ListReplaysInputBuilder {
         self.name_prefix = input;
         self
     }
+    /// <p>A name prefix to filter the replays returned. Only replays with name that match the prefix are returned.</p>
+    pub fn get_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name_prefix
+    }
     /// <p>The state of the replay.</p>
     pub fn state(mut self, input: crate::types::ReplayState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -80,6 +84,10 @@ impl ListReplaysInputBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ReplayState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the replay.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ReplayState> {
+        &self.state
     }
     /// <p>The ARN of the archive from which the events are replayed.</p>
     pub fn event_source_arn(
@@ -97,6 +105,10 @@ impl ListReplaysInputBuilder {
         self.event_source_arn = input;
         self
     }
+    /// <p>The ARN of the archive from which the events are replayed.</p>
+    pub fn get_event_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_source_arn
+    }
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -107,6 +119,10 @@ impl ListReplaysInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of replays to retrieve.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -116,6 +132,10 @@ impl ListReplaysInputBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
+    }
+    /// <p>The maximum number of replays to retrieve.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// Consumes the builder and constructs a [`ListReplaysInput`](crate::operation::list_replays::ListReplaysInput).
     pub fn build(

@@ -50,6 +50,12 @@ impl ChannelMappingBuilder {
         self.output_channels = input;
         self
     }
+    /// In your JSON job specification, include one child of OutputChannels for each audio channel that you want in your output. Each child should contain one instance of InputChannels or InputChannelsFineTune.
+    pub fn get_output_channels(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputChannelMapping>> {
+        &self.output_channels
+    }
     /// Consumes the builder and constructs a [`ChannelMapping`](crate::types::ChannelMapping).
     pub fn build(self) -> crate::types::ChannelMapping {
         crate::types::ChannelMapping {

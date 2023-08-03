@@ -91,6 +91,10 @@ impl AwsWafWebAclRuleBuilder {
         self.action = input;
         self
     }
+    /// <p>Specifies the action that CloudFront or WAF takes when a web request matches the conditions in the rule. </p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::WafAction> {
+        &self.action
+    }
     /// Appends an item to `excluded_rules`.
     ///
     /// To override the contents of this collection use [`set_excluded_rules`](Self::set_excluded_rules).
@@ -109,6 +113,12 @@ impl AwsWafWebAclRuleBuilder {
     ) -> Self {
         self.excluded_rules = input;
         self
+    }
+    /// <p>Rules to exclude from a rule group.</p>
+    pub fn get_excluded_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WafExcludedRule>> {
+        &self.excluded_rules
     }
     /// <p>Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.</p>
     /// <p>Any rule in a <code>RuleGroup</code> can potentially block a request. If you set the <code>OverrideAction</code> to <code>None</code>, the <code>RuleGroup</code> blocks a request if any individual rule in the <code>RuleGroup</code> matches the request and is configured to block that request.</p>
@@ -129,6 +139,13 @@ impl AwsWafWebAclRuleBuilder {
         self.override_action = input;
         self
     }
+    /// <p>Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.</p>
+    /// <p>Any rule in a <code>RuleGroup</code> can potentially block a request. If you set the <code>OverrideAction</code> to <code>None</code>, the <code>RuleGroup</code> blocks a request if any individual rule in the <code>RuleGroup</code> matches the request and is configured to block that request.</p>
+    /// <p>However, if you first want to test the <code>RuleGroup</code>, set the <code>OverrideAction</code> to <code>Count</code>. The <code>RuleGroup</code> then overrides any block action specified by individual rules contained within the group. Instead of blocking matching requests, those requests are counted.</p>
+    /// <p> <code>ActivatedRule</code>|<code>OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a web ACL. In this case you do not use <code>ActivatedRule</code> <code>Action</code>. For all other update requests, <code>ActivatedRule</code> <code>Action</code> is used instead of <code>ActivatedRule</code> <code>OverrideAction</code>.</p>
+    pub fn get_override_action(&self) -> &::std::option::Option<crate::types::WafOverrideAction> {
+        &self.override_action
+    }
     /// <p>Specifies the order in which the rules in a web ACL are evaluated. Rules with a lower value for <code>Priority</code> are evaluated before rules with a higher value. The value must be a unique integer. If you add multiple rules to a web ACL, the values do not need to be consecutive.</p>
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
@@ -139,6 +156,10 @@ impl AwsWafWebAclRuleBuilder {
         self.priority = input;
         self
     }
+    /// <p>Specifies the order in which the rules in a web ACL are evaluated. Rules with a lower value for <code>Priority</code> are evaluated before rules with a higher value. The value must be a unique integer. If you add multiple rules to a web ACL, the values do not need to be consecutive.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
+    }
     /// <p>The identifier for a rule.</p>
     pub fn rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rule_id = ::std::option::Option::Some(input.into());
@@ -148,6 +169,10 @@ impl AwsWafWebAclRuleBuilder {
     pub fn set_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_id = input;
         self
+    }
+    /// <p>The identifier for a rule.</p>
+    pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_id
     }
     /// <p>The rule type.</p>
     /// <p>Valid values: <code>REGULAR</code> | <code>RATE_BASED</code> | <code>GROUP</code> </p>
@@ -162,6 +187,12 @@ impl AwsWafWebAclRuleBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The rule type.</p>
+    /// <p>Valid values: <code>REGULAR</code> | <code>RATE_BASED</code> | <code>GROUP</code> </p>
+    /// <p>The default is <code>REGULAR</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`AwsWafWebAclRule`](crate::types::AwsWafWebAclRule).
     pub fn build(self) -> crate::types::AwsWafWebAclRule {

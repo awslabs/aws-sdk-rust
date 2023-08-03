@@ -36,6 +36,10 @@ impl ListReadSetActivationJobsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListReadSetActivationJobs as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_read_set_activation_jobs::builders::ListReadSetActivationJobsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +142,10 @@ impl ListReadSetActivationJobsFluentBuilder {
         self.inner = self.inner.set_sequence_store_id(input);
         self
     }
+    /// <p>The read set's sequence store ID.</p>
+    pub fn get_sequence_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sequence_store_id()
+    }
     /// <p>The maximum number of read set activation jobs to return in one page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -148,6 +156,10 @@ impl ListReadSetActivationJobsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of read set activation jobs to return in one page of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -157,6 +169,10 @@ impl ListReadSetActivationJobsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>A filter to apply to the list.</p>
     pub fn filter(mut self, input: crate::types::ActivateReadSetFilter) -> Self {
@@ -170,5 +186,9 @@ impl ListReadSetActivationJobsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_filter(input);
         self
+    }
+    /// <p>A filter to apply to the list.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::ActivateReadSetFilter> {
+        self.inner.get_filter()
     }
 }

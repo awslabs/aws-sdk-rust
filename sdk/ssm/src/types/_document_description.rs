@@ -285,6 +285,10 @@ impl DocumentDescriptionBuilder {
         self.sha1 = input;
         self
     }
+    /// <p>The SHA1 hash of the document, which you can use for verification.</p>
+    pub fn get_sha1(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sha1
+    }
     /// <p>The Sha256 or Sha1 hash created by the system when the document was created. </p> <note>
     /// <p>Sha1 hashes have been deprecated.</p>
     /// </note>
@@ -298,6 +302,12 @@ impl DocumentDescriptionBuilder {
     pub fn set_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hash = input;
         self
+    }
+    /// <p>The Sha256 or Sha1 hash created by the system when the document was created. </p> <note>
+    /// <p>Sha1 hashes have been deprecated.</p>
+    /// </note>
+    pub fn get_hash(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hash
     }
     /// <p>The hash type of the document. Valid values include <code>Sha256</code> or <code>Sha1</code>.</p> <note>
     /// <p>Sha1 hashes have been deprecated.</p>
@@ -316,6 +326,12 @@ impl DocumentDescriptionBuilder {
         self.hash_type = input;
         self
     }
+    /// <p>The hash type of the document. Valid values include <code>Sha256</code> or <code>Sha1</code>.</p> <note>
+    /// <p>Sha1 hashes have been deprecated.</p>
+    /// </note>
+    pub fn get_hash_type(&self) -> &::std::option::Option<crate::types::DocumentHashType> {
+        &self.hash_type
+    }
     /// <p>The name of the SSM document.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -325,6 +341,10 @@ impl DocumentDescriptionBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the SSM document.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The friendly name of the SSM document. This value can differ for each version of the document. If you want to update this value, see <code>UpdateDocument</code>.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -336,6 +356,10 @@ impl DocumentDescriptionBuilder {
         self.display_name = input;
         self
     }
+    /// <p>The friendly name of the SSM document. This value can differ for each version of the document. If you want to update this value, see <code>UpdateDocument</code>.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
+    }
     /// <p>The version of the artifact associated with the document.</p>
     pub fn version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_name = ::std::option::Option::Some(input.into());
@@ -346,6 +370,10 @@ impl DocumentDescriptionBuilder {
         self.version_name = input;
         self
     }
+    /// <p>The version of the artifact associated with the document.</p>
+    pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_name
+    }
     /// <p>The Amazon Web Services user that created the document.</p>
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner = ::std::option::Option::Some(input.into());
@@ -355,6 +383,10 @@ impl DocumentDescriptionBuilder {
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner = input;
         self
+    }
+    /// <p>The Amazon Web Services user that created the document.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner
     }
     /// <p>The date when the document was created.</p>
     pub fn created_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -369,6 +401,10 @@ impl DocumentDescriptionBuilder {
         self.created_date = input;
         self
     }
+    /// <p>The date when the document was created.</p>
+    pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_date
+    }
     /// <p>The status of the SSM document.</p>
     pub fn status(mut self, input: crate::types::DocumentStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -381,6 +417,10 @@ impl DocumentDescriptionBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the SSM document.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DocumentStatus> {
+        &self.status
     }
     /// <p>A message returned by Amazon Web Services Systems Manager that explains the <code>Status</code> value. For example, a <code>Failed</code> status might be explained by the <code>StatusInformation</code> message, "The specified S3 bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
     pub fn status_information(
@@ -398,6 +438,10 @@ impl DocumentDescriptionBuilder {
         self.status_information = input;
         self
     }
+    /// <p>A message returned by Amazon Web Services Systems Manager that explains the <code>Status</code> value. For example, a <code>Failed</code> status might be explained by the <code>StatusInformation</code> message, "The specified S3 bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
+    pub fn get_status_information(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_information
+    }
     /// <p>The document version.</p>
     pub fn document_version(
         mut self,
@@ -414,6 +458,10 @@ impl DocumentDescriptionBuilder {
         self.document_version = input;
         self
     }
+    /// <p>The document version.</p>
+    pub fn get_document_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_version
+    }
     /// <p>A description of the document. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -423,6 +471,10 @@ impl DocumentDescriptionBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the document. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `parameters`.
     ///
@@ -443,6 +495,12 @@ impl DocumentDescriptionBuilder {
         self.parameters = input;
         self
     }
+    /// <p>A description of the parameters for a document.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentParameter>> {
+        &self.parameters
+    }
     /// Appends an item to `platform_types`.
     ///
     /// To override the contents of this collection use [`set_platform_types`](Self::set_platform_types).
@@ -462,6 +520,12 @@ impl DocumentDescriptionBuilder {
         self.platform_types = input;
         self
     }
+    /// <p>The list of operating system (OS) platforms compatible with this SSM document. </p>
+    pub fn get_platform_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PlatformType>> {
+        &self.platform_types
+    }
     /// <p>The type of document.</p>
     pub fn document_type(mut self, input: crate::types::DocumentType) -> Self {
         self.document_type = ::std::option::Option::Some(input);
@@ -474,6 +538,10 @@ impl DocumentDescriptionBuilder {
     ) -> Self {
         self.document_type = input;
         self
+    }
+    /// <p>The type of document.</p>
+    pub fn get_document_type(&self) -> &::std::option::Option<crate::types::DocumentType> {
+        &self.document_type
     }
     /// <p>The schema version.</p>
     pub fn schema_version(
@@ -491,6 +559,10 @@ impl DocumentDescriptionBuilder {
         self.schema_version = input;
         self
     }
+    /// <p>The schema version.</p>
+    pub fn get_schema_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_version
+    }
     /// <p>The latest version of the document.</p>
     pub fn latest_version(
         mut self,
@@ -506,6 +578,10 @@ impl DocumentDescriptionBuilder {
     ) -> Self {
         self.latest_version = input;
         self
+    }
+    /// <p>The latest version of the document.</p>
+    pub fn get_latest_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.latest_version
     }
     /// <p>The default version.</p>
     pub fn default_version(
@@ -523,6 +599,10 @@ impl DocumentDescriptionBuilder {
         self.default_version = input;
         self
     }
+    /// <p>The default version.</p>
+    pub fn get_default_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_version
+    }
     /// <p>The document format, either JSON or YAML.</p>
     pub fn document_format(mut self, input: crate::types::DocumentFormat) -> Self {
         self.document_format = ::std::option::Option::Some(input);
@@ -536,6 +616,10 @@ impl DocumentDescriptionBuilder {
         self.document_format = input;
         self
     }
+    /// <p>The document format, either JSON or YAML.</p>
+    pub fn get_document_format(&self) -> &::std::option::Option<crate::types::DocumentFormat> {
+        &self.document_format
+    }
     /// <p>The target type which defines the kinds of resources the document can run on. For example, <code>/AWS::EC2::Instance</code>. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>. </p>
     pub fn target_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_type = ::std::option::Option::Some(input.into());
@@ -545,6 +629,10 @@ impl DocumentDescriptionBuilder {
     pub fn set_target_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_type = input;
         self
+    }
+    /// <p>The target type which defines the kinds of resources the document can run on. For example, <code>/AWS::EC2::Instance</code>. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>. </p>
+    pub fn get_target_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_type
     }
     /// Appends an item to `tags`.
     ///
@@ -565,6 +653,10 @@ impl DocumentDescriptionBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags, or metadata, that have been applied to the document.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Appends an item to `attachments_information`.
     ///
     /// To override the contents of this collection use [`set_attachments_information`](Self::set_attachments_information).
@@ -583,6 +675,12 @@ impl DocumentDescriptionBuilder {
     ) -> Self {
         self.attachments_information = input;
         self
+    }
+    /// <p>Details about the document attachments, including names, locations, sizes, and so on.</p>
+    pub fn get_attachments_information(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttachmentInformation>> {
+        &self.attachments_information
     }
     /// Appends an item to `requires`.
     ///
@@ -603,6 +701,12 @@ impl DocumentDescriptionBuilder {
         self.requires = input;
         self
     }
+    /// <p>A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document.</p>
+    pub fn get_requires(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentRequires>> {
+        &self.requires
+    }
     /// <p>The user in your organization who created the document.</p>
     pub fn author(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.author = ::std::option::Option::Some(input.into());
@@ -612,6 +716,10 @@ impl DocumentDescriptionBuilder {
     pub fn set_author(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.author = input;
         self
+    }
+    /// <p>The user in your organization who created the document.</p>
+    pub fn get_author(&self) -> &::std::option::Option<::std::string::String> {
+        &self.author
     }
     /// Appends an item to `review_information`.
     ///
@@ -632,6 +740,12 @@ impl DocumentDescriptionBuilder {
         self.review_information = input;
         self
     }
+    /// <p>Details about the review of a document.</p>
+    pub fn get_review_information(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReviewInformation>> {
+        &self.review_information
+    }
     /// <p>The version of the document currently approved for use in the organization.</p>
     pub fn approved_version(
         mut self,
@@ -647,6 +761,10 @@ impl DocumentDescriptionBuilder {
     ) -> Self {
         self.approved_version = input;
         self
+    }
+    /// <p>The version of the document currently approved for use in the organization.</p>
+    pub fn get_approved_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.approved_version
     }
     /// <p>The version of the document that is currently under review.</p>
     pub fn pending_review_version(
@@ -664,6 +782,10 @@ impl DocumentDescriptionBuilder {
         self.pending_review_version = input;
         self
     }
+    /// <p>The version of the document that is currently under review.</p>
+    pub fn get_pending_review_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pending_review_version
+    }
     /// <p>The current status of the review.</p>
     pub fn review_status(mut self, input: crate::types::ReviewStatus) -> Self {
         self.review_status = ::std::option::Option::Some(input);
@@ -676,6 +798,10 @@ impl DocumentDescriptionBuilder {
     ) -> Self {
         self.review_status = input;
         self
+    }
+    /// <p>The current status of the review.</p>
+    pub fn get_review_status(&self) -> &::std::option::Option<crate::types::ReviewStatus> {
+        &self.review_status
     }
     /// Appends an item to `category`.
     ///
@@ -695,6 +821,10 @@ impl DocumentDescriptionBuilder {
     ) -> Self {
         self.category = input;
         self
+    }
+    /// <p>The classification of a document to help you identify and categorize its use.</p>
+    pub fn get_category(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.category
     }
     /// Appends an item to `category_enum`.
     ///
@@ -717,6 +847,12 @@ impl DocumentDescriptionBuilder {
     ) -> Self {
         self.category_enum = input;
         self
+    }
+    /// <p>The value that identifies a document's category.</p>
+    pub fn get_category_enum(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.category_enum
     }
     /// Consumes the builder and constructs a [`DocumentDescription`](crate::types::DocumentDescription).
     pub fn build(self) -> crate::types::DocumentDescription {

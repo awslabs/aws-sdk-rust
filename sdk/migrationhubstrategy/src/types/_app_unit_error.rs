@@ -45,6 +45,12 @@ impl AppUnitErrorBuilder {
         self.app_unit_error_category = input;
         self
     }
+    /// <p>The category of the error.</p>
+    pub fn get_app_unit_error_category(
+        &self,
+    ) -> &::std::option::Option<crate::types::AppUnitErrorCategory> {
+        &self.app_unit_error_category
+    }
     /// Consumes the builder and constructs a [`AppUnitError`](crate::types::AppUnitError).
     pub fn build(self) -> crate::types::AppUnitError {
         crate::types::AppUnitError {

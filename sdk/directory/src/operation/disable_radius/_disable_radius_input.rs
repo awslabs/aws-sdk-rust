@@ -40,6 +40,10 @@ impl DisableRadiusInputBuilder {
         self.directory_id = input;
         self
     }
+    /// <p>The identifier of the directory for which to disable MFA.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
+    }
     /// Consumes the builder and constructs a [`DisableRadiusInput`](crate::operation::disable_radius::DisableRadiusInput).
     pub fn build(
         self,

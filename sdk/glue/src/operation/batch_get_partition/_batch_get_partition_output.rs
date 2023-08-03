@@ -65,6 +65,12 @@ impl BatchGetPartitionOutputBuilder {
         self.partitions = input;
         self
     }
+    /// <p>A list of the requested partitions.</p>
+    pub fn get_partitions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Partition>> {
+        &self.partitions
+    }
     /// Appends an item to `unprocessed_keys`.
     ///
     /// To override the contents of this collection use [`set_unprocessed_keys`](Self::set_unprocessed_keys).
@@ -83,6 +89,12 @@ impl BatchGetPartitionOutputBuilder {
     ) -> Self {
         self.unprocessed_keys = input;
         self
+    }
+    /// <p>A list of the partition values in the request for which partitions were not returned.</p>
+    pub fn get_unprocessed_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PartitionValueList>> {
+        &self.unprocessed_keys
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

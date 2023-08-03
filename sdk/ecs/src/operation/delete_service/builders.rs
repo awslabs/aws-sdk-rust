@@ -40,6 +40,12 @@ impl DeleteServiceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteService as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_service::builders::DeleteServiceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -122,6 +128,10 @@ impl DeleteServiceFluentBuilder {
         self.inner = self.inner.set_cluster(input);
         self
     }
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service to delete. If you do not specify a cluster, the default cluster is assumed.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster()
+    }
     /// <p>The name of the service to delete.</p>
     pub fn service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service(input.into());
@@ -132,6 +142,10 @@ impl DeleteServiceFluentBuilder {
         self.inner = self.inner.set_service(input);
         self
     }
+    /// <p>The name of the service to delete.</p>
+    pub fn get_service(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service()
+    }
     /// <p>If <code>true</code>, allows you to delete a service even if it wasn't scaled down to zero tasks. It's only necessary to use this if the service uses the <code>REPLICA</code> scheduling strategy.</p>
     pub fn force(mut self, input: bool) -> Self {
         self.inner = self.inner.force(input);
@@ -141,5 +155,9 @@ impl DeleteServiceFluentBuilder {
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force(input);
         self
+    }
+    /// <p>If <code>true</code>, allows you to delete a service even if it wasn't scaled down to zero tasks. It's only necessary to use this if the service uses the <code>REPLICA</code> scheduling strategy.</p>
+    pub fn get_force(&self) -> &::std::option::Option<bool> {
+        self.inner.get_force()
     }
 }

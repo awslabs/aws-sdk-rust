@@ -70,6 +70,12 @@ impl ServiceActionDetailBuilder {
         self.service_action_summary = input;
         self
     }
+    /// <p>Summary information about the self-service action.</p>
+    pub fn get_service_action_summary(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServiceActionSummary> {
+        &self.service_action_summary
+    }
     /// Adds a key-value pair to `definition`.
     ///
     /// To override the contents of this collection use [`set_definition`](Self::set_definition).
@@ -97,6 +103,17 @@ impl ServiceActionDetailBuilder {
     ) -> Self {
         self.definition = input;
         self
+    }
+    /// <p>A map that defines the self-service action.</p>
+    pub fn get_definition(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::ServiceActionDefinitionKey,
+            ::std::string::String,
+        >,
+    > {
+        &self.definition
     }
     /// Consumes the builder and constructs a [`ServiceActionDetail`](crate::types::ServiceActionDetail).
     pub fn build(self) -> crate::types::ServiceActionDetail {

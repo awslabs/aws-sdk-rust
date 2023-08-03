@@ -39,6 +39,10 @@ impl UpdateAutomaticTapeCreationPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAutomaticTapeCreationPolicy as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_automatic_tape_creation_policy::builders::UpdateAutomaticTapeCreationPolicyInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -113,6 +117,12 @@ impl UpdateAutomaticTapeCreationPolicyFluentBuilder {
         self.inner = self.inner.set_automatic_tape_creation_rules(input);
         self
     }
+    /// <p>An automatic tape creation policy consists of a list of automatic tape creation rules. The rules determine when and how to automatically create new tapes.</p>
+    pub fn get_automatic_tape_creation_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutomaticTapeCreationRule>> {
+        self.inner.get_automatic_tape_creation_rules()
+    }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.gateway_arn(input.into());
@@ -122,5 +132,9 @@ impl UpdateAutomaticTapeCreationPolicyFluentBuilder {
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_gateway_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_gateway_arn()
     }
 }

@@ -57,6 +57,10 @@ impl GetDataSourceInputBuilder {
         self.data_source_id = input;
         self
     }
+    /// <p>The ID assigned to the <code>DataSource</code> at creation.</p>
+    pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source_id
+    }
     /// <p>Specifies whether the <code>GetDataSource</code> operation should return <code>DataSourceSchema</code>.</p>
     /// <p>If true, <code>DataSourceSchema</code> is returned.</p>
     /// <p>If false, <code>DataSourceSchema</code> is not returned.</p>
@@ -70,6 +74,12 @@ impl GetDataSourceInputBuilder {
     pub fn set_verbose(mut self, input: ::std::option::Option<bool>) -> Self {
         self.verbose = input;
         self
+    }
+    /// <p>Specifies whether the <code>GetDataSource</code> operation should return <code>DataSourceSchema</code>.</p>
+    /// <p>If true, <code>DataSourceSchema</code> is returned.</p>
+    /// <p>If false, <code>DataSourceSchema</code> is not returned.</p>
+    pub fn get_verbose(&self) -> &::std::option::Option<bool> {
+        &self.verbose
     }
     /// Consumes the builder and constructs a [`GetDataSourceInput`](crate::operation::get_data_source::GetDataSourceInput).
     pub fn build(

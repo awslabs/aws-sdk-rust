@@ -54,6 +54,12 @@ impl CustomLineItemBillingPeriodRangeBuilder {
         self.inclusive_start_billing_period = input;
         self
     }
+    /// <p>The inclusive start billing period that defines a billing period range where a custom line is applied.</p>
+    pub fn get_inclusive_start_billing_period(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.inclusive_start_billing_period
+    }
     /// <p>The inclusive end billing period that defines a billing period range where a custom line is applied.</p>
     pub fn exclusive_end_billing_period(
         mut self,
@@ -69,6 +75,12 @@ impl CustomLineItemBillingPeriodRangeBuilder {
     ) -> Self {
         self.exclusive_end_billing_period = input;
         self
+    }
+    /// <p>The inclusive end billing period that defines a billing period range where a custom line is applied.</p>
+    pub fn get_exclusive_end_billing_period(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.exclusive_end_billing_period
     }
     /// Consumes the builder and constructs a [`CustomLineItemBillingPeriodRange`](crate::types::CustomLineItemBillingPeriodRange).
     pub fn build(self) -> crate::types::CustomLineItemBillingPeriodRange {

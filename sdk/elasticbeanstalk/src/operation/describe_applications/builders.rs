@@ -36,6 +36,12 @@ impl DescribeApplicationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeApplications as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_applications::builders::DescribeApplicationsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,5 +141,11 @@ impl DescribeApplicationsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_application_names(input);
         self
+    }
+    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to only include those with the specified names.</p>
+    pub fn get_application_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_application_names()
     }
 }

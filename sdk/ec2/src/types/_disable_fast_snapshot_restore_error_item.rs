@@ -54,6 +54,10 @@ impl DisableFastSnapshotRestoreErrorItemBuilder {
         self.snapshot_id = input;
         self
     }
+    /// <p>The ID of the snapshot.</p>
+    pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_id
+    }
     /// Appends an item to `fast_snapshot_restore_state_errors`.
     ///
     /// To override the contents of this collection use [`set_fast_snapshot_restore_state_errors`](Self::set_fast_snapshot_restore_state_errors).
@@ -77,6 +81,14 @@ impl DisableFastSnapshotRestoreErrorItemBuilder {
     ) -> Self {
         self.fast_snapshot_restore_state_errors = input;
         self
+    }
+    /// <p>The errors.</p>
+    pub fn get_fast_snapshot_restore_state_errors(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::DisableFastSnapshotRestoreStateErrorItem>,
+    > {
+        &self.fast_snapshot_restore_state_errors
     }
     /// Consumes the builder and constructs a [`DisableFastSnapshotRestoreErrorItem`](crate::types::DisableFastSnapshotRestoreErrorItem).
     pub fn build(self) -> crate::types::DisableFastSnapshotRestoreErrorItem {

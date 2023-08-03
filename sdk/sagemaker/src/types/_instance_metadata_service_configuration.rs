@@ -47,6 +47,12 @@ impl InstanceMetadataServiceConfigurationBuilder {
         self.minimum_instance_metadata_service_version = input;
         self
     }
+    /// <p>Indicates the minimum IMDS version that the notebook instance supports. When passed as part of <code>CreateNotebookInstance</code>, if no value is selected, then it defaults to IMDSv1. This means that both IMDSv1 and IMDSv2 are supported. If passed as part of <code>UpdateNotebookInstance</code>, there is no default.</p>
+    pub fn get_minimum_instance_metadata_service_version(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.minimum_instance_metadata_service_version
+    }
     /// Consumes the builder and constructs a [`InstanceMetadataServiceConfiguration`](crate::types::InstanceMetadataServiceConfiguration).
     pub fn build(self) -> crate::types::InstanceMetadataServiceConfiguration {
         crate::types::InstanceMetadataServiceConfiguration {

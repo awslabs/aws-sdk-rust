@@ -79,6 +79,10 @@ impl RemoveAllBackendsOutputBuilder {
         self.app_id = input;
         self
     }
+    /// <p>The app ID.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// <p>If the request fails, this error is returned.</p>
     pub fn error(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error = ::std::option::Option::Some(input.into());
@@ -88,6 +92,10 @@ impl RemoveAllBackendsOutputBuilder {
     pub fn set_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error = input;
         self
+    }
+    /// <p>If the request fails, this error is returned.</p>
+    pub fn get_error(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error
     }
     /// <p>The ID for the job.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -99,6 +107,10 @@ impl RemoveAllBackendsOutputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The ID for the job.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>The name of the operation.</p>
     pub fn operation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operation = ::std::option::Option::Some(input.into());
@@ -109,6 +121,10 @@ impl RemoveAllBackendsOutputBuilder {
         self.operation = input;
         self
     }
+    /// <p>The name of the operation.</p>
+    pub fn get_operation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operation
+    }
     /// <p>The current status of the request.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -118,6 +134,10 @@ impl RemoveAllBackendsOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

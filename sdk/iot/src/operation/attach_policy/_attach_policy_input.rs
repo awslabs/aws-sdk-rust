@@ -47,6 +47,10 @@ impl AttachPolicyInputBuilder {
         self.policy_name = input;
         self
     }
+    /// <p>The name of the policy to attach.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_name
+    }
     /// <p>The <a href="https://docs.aws.amazon.com/iot/latest/developerguide/security-iam.html">identity</a> to which the policy is attached. For example, a thing group or a certificate.</p>
     pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl AttachPolicyInputBuilder {
     pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target = input;
         self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/iot/latest/developerguide/security-iam.html">identity</a> to which the policy is attached. For example, a thing group or a certificate.</p>
+    pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target
     }
     /// Consumes the builder and constructs a [`AttachPolicyInput`](crate::operation::attach_policy::AttachPolicyInput).
     pub fn build(

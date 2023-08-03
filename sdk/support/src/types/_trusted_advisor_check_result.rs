@@ -91,6 +91,10 @@ impl TrustedAdvisorCheckResultBuilder {
         self.check_id = input;
         self
     }
+    /// <p>The unique identifier for the Trusted Advisor check.</p>
+    pub fn get_check_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.check_id
+    }
     /// <p>The time of the last refresh of the check.</p>
     pub fn timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timestamp = ::std::option::Option::Some(input.into());
@@ -101,6 +105,10 @@ impl TrustedAdvisorCheckResultBuilder {
         self.timestamp = input;
         self
     }
+    /// <p>The time of the last refresh of the check.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timestamp
+    }
     /// <p>The alert status of the check: "ok" (green), "warning" (yellow), "error" (red), or "not_available".</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -110,6 +118,10 @@ impl TrustedAdvisorCheckResultBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The alert status of the check: "ok" (green), "warning" (yellow), "error" (red), or "not_available".</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>Details about Amazon Web Services resources that were analyzed in a call to Trusted Advisor <code>DescribeTrustedAdvisorCheckSummaries</code>.</p>
     pub fn resources_summary(
@@ -127,6 +139,12 @@ impl TrustedAdvisorCheckResultBuilder {
         self.resources_summary = input;
         self
     }
+    /// <p>Details about Amazon Web Services resources that were analyzed in a call to Trusted Advisor <code>DescribeTrustedAdvisorCheckSummaries</code>.</p>
+    pub fn get_resources_summary(
+        &self,
+    ) -> &::std::option::Option<crate::types::TrustedAdvisorResourcesSummary> {
+        &self.resources_summary
+    }
     /// <p>Summary information that relates to the category of the check. Cost Optimizing is the only category that is currently supported.</p>
     pub fn category_specific_summary(
         mut self,
@@ -142,6 +160,12 @@ impl TrustedAdvisorCheckResultBuilder {
     ) -> Self {
         self.category_specific_summary = input;
         self
+    }
+    /// <p>Summary information that relates to the category of the check. Cost Optimizing is the only category that is currently supported.</p>
+    pub fn get_category_specific_summary(
+        &self,
+    ) -> &::std::option::Option<crate::types::TrustedAdvisorCategorySpecificSummary> {
+        &self.category_specific_summary
     }
     /// Appends an item to `flagged_resources`.
     ///
@@ -161,6 +185,12 @@ impl TrustedAdvisorCheckResultBuilder {
     ) -> Self {
         self.flagged_resources = input;
         self
+    }
+    /// <p>The details about each resource listed in the check result.</p>
+    pub fn get_flagged_resources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TrustedAdvisorResourceDetail>> {
+        &self.flagged_resources
     }
     /// Consumes the builder and constructs a [`TrustedAdvisorCheckResult`](crate::types::TrustedAdvisorCheckResult).
     pub fn build(self) -> crate::types::TrustedAdvisorCheckResult {

@@ -119,6 +119,10 @@ impl CreateAssetOutputBuilder {
         self.arn = input;
         self
     }
+    /// The ARN of the Asset.
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// The time the Asset was initially submitted for Ingest.
     pub fn created_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_at = ::std::option::Option::Some(input.into());
@@ -128,6 +132,10 @@ impl CreateAssetOutputBuilder {
     pub fn set_created_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_at = input;
         self
+    }
+    /// The time the Asset was initially submitted for Ingest.
+    pub fn get_created_at(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_at
     }
     /// Appends an item to `egress_endpoints`.
     ///
@@ -148,6 +156,12 @@ impl CreateAssetOutputBuilder {
         self.egress_endpoints = input;
         self
     }
+    /// The list of egress endpoints available for the Asset.
+    pub fn get_egress_endpoints(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EgressEndpoint>> {
+        &self.egress_endpoints
+    }
     /// The unique identifier for the Asset.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -157,6 +171,10 @@ impl CreateAssetOutputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// The unique identifier for the Asset.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// The ID of the PackagingGroup for the Asset.
     pub fn packaging_group_id(
@@ -174,6 +192,10 @@ impl CreateAssetOutputBuilder {
         self.packaging_group_id = input;
         self
     }
+    /// The ID of the PackagingGroup for the Asset.
+    pub fn get_packaging_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.packaging_group_id
+    }
     /// The resource ID to include in SPEKE key requests.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -184,6 +206,10 @@ impl CreateAssetOutputBuilder {
         self.resource_id = input;
         self
     }
+    /// The resource ID to include in SPEKE key requests.
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// ARN of the source object in S3.
     pub fn source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_arn = ::std::option::Option::Some(input.into());
@@ -193,6 +219,10 @@ impl CreateAssetOutputBuilder {
     pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_arn = input;
         self
+    }
+    /// ARN of the source object in S3.
+    pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_arn
     }
     /// The IAM role_arn used to access the source S3 bucket.
     pub fn source_role_arn(
@@ -209,6 +239,10 @@ impl CreateAssetOutputBuilder {
     ) -> Self {
         self.source_role_arn = input;
         self
+    }
+    /// The IAM role_arn used to access the source S3 bucket.
+    pub fn get_source_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_role_arn
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -234,6 +268,14 @@ impl CreateAssetOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// A collection of tags associated with a resource
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

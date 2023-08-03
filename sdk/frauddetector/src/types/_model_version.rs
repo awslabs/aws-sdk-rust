@@ -64,6 +64,10 @@ impl ModelVersionBuilder {
         self.model_id = input;
         self
     }
+    /// <p>The model ID.</p>
+    pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_id
+    }
     /// <p>The model type.</p>
     pub fn model_type(mut self, input: crate::types::ModelTypeEnum) -> Self {
         self.model_type = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl ModelVersionBuilder {
     ) -> Self {
         self.model_type = input;
         self
+    }
+    /// <p>The model type.</p>
+    pub fn get_model_type(&self) -> &::std::option::Option<crate::types::ModelTypeEnum> {
+        &self.model_type
     }
     /// <p>The model version number.</p>
     pub fn model_version_number(
@@ -93,6 +101,10 @@ impl ModelVersionBuilder {
         self.model_version_number = input;
         self
     }
+    /// <p>The model version number.</p>
+    pub fn get_model_version_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_version_number
+    }
     /// <p>The model version ARN.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -102,6 +114,10 @@ impl ModelVersionBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The model version ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`ModelVersion`](crate::types::ModelVersion).
     pub fn build(self) -> crate::types::ModelVersion {

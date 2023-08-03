@@ -103,6 +103,10 @@ impl CreateEntityInputBuilder {
         self.workspace_id = input;
         self
     }
+    /// <p>The ID of the workspace that contains the entity.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
+    }
     /// <p>The ID of the entity.</p>
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_id = ::std::option::Option::Some(input.into());
@@ -112,6 +116,10 @@ impl CreateEntityInputBuilder {
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entity_id = input;
         self
+    }
+    /// <p>The ID of the entity.</p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_id
     }
     /// <p>The name of the entity.</p>
     pub fn entity_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -123,6 +131,10 @@ impl CreateEntityInputBuilder {
         self.entity_name = input;
         self
     }
+    /// <p>The name of the entity.</p>
+    pub fn get_entity_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_name
+    }
     /// <p>The description of the entity.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -132,6 +144,10 @@ impl CreateEntityInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the entity.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Adds a key-value pair to `components`.
     ///
@@ -158,6 +174,14 @@ impl CreateEntityInputBuilder {
         self.components = input;
         self
     }
+    /// <p>An object that maps strings to the components in the entity. Each string in the mapping must be unique to this object.</p>
+    pub fn get_components(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::ComponentRequest>,
+    > {
+        &self.components
+    }
     /// <p>The ID of the entity's parent entity.</p>
     pub fn parent_entity_id(
         mut self,
@@ -173,6 +197,10 @@ impl CreateEntityInputBuilder {
     ) -> Self {
         self.parent_entity_id = input;
         self
+    }
+    /// <p>The ID of the entity's parent entity.</p>
+    pub fn get_parent_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent_entity_id
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -198,6 +226,14 @@ impl CreateEntityInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Metadata that you can use to manage the entity.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateEntityInput`](crate::operation::create_entity::CreateEntityInput).
     pub fn build(

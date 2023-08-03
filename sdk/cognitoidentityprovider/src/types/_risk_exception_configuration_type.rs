@@ -60,6 +60,12 @@ impl RiskExceptionConfigurationTypeBuilder {
         self.blocked_ip_range_list = input;
         self
     }
+    /// <p>Overrides the risk decision to always block the pre-authentication requests. The IP range is in CIDR notation, a compact representation of an IP address and its routing prefix.</p>
+    pub fn get_blocked_ip_range_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.blocked_ip_range_list
+    }
     /// Appends an item to `skipped_ip_range_list`.
     ///
     /// To override the contents of this collection use [`set_skipped_ip_range_list`](Self::set_skipped_ip_range_list).
@@ -81,6 +87,12 @@ impl RiskExceptionConfigurationTypeBuilder {
     ) -> Self {
         self.skipped_ip_range_list = input;
         self
+    }
+    /// <p>Risk detection isn't performed on the IP addresses in this range list. The IP range is in CIDR notation.</p>
+    pub fn get_skipped_ip_range_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.skipped_ip_range_list
     }
     /// Consumes the builder and constructs a [`RiskExceptionConfigurationType`](crate::types::RiskExceptionConfigurationType).
     pub fn build(self) -> crate::types::RiskExceptionConfigurationType {

@@ -48,6 +48,10 @@ impl S3ContentBaseLocationBuilder {
         self.bucket_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
+    pub fn get_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_arn
+    }
     /// <p>The base path for the S3 bucket.</p>
     pub fn base_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.base_path = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl S3ContentBaseLocationBuilder {
     pub fn set_base_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.base_path = input;
         self
+    }
+    /// <p>The base path for the S3 bucket.</p>
+    pub fn get_base_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.base_path
     }
     /// Consumes the builder and constructs a [`S3ContentBaseLocation`](crate::types::S3ContentBaseLocation).
     pub fn build(self) -> crate::types::S3ContentBaseLocation {

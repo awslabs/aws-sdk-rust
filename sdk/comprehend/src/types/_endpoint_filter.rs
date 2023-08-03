@@ -64,6 +64,10 @@ impl EndpointFilterBuilder {
         self.model_arn = input;
         self
     }
+    /// <p>The Amazon Resource Number (ARN) of the model to which the endpoint is attached.</p>
+    pub fn get_model_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_arn
+    }
     /// <p>Specifies the status of the endpoint being returned. Possible values are: Creating, Ready, Updating, Deleting, Failed.</p>
     pub fn status(mut self, input: crate::types::EndpointStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl EndpointFilterBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Specifies the status of the endpoint being returned. Possible values are: Creating, Ready, Updating, Deleting, Failed.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::EndpointStatus> {
+        &self.status
     }
     /// <p>Specifies a date before which the returned endpoint or endpoints were created.</p>
     pub fn creation_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -90,6 +98,10 @@ impl EndpointFilterBuilder {
         self.creation_time_before = input;
         self
     }
+    /// <p>Specifies a date before which the returned endpoint or endpoints were created.</p>
+    pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time_before
+    }
     /// <p>Specifies a date after which the returned endpoint or endpoints were created.</p>
     pub fn creation_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time_after = ::std::option::Option::Some(input);
@@ -102,6 +114,10 @@ impl EndpointFilterBuilder {
     ) -> Self {
         self.creation_time_after = input;
         self
+    }
+    /// <p>Specifies a date after which the returned endpoint or endpoints were created.</p>
+    pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time_after
     }
     /// Consumes the builder and constructs a [`EndpointFilter`](crate::types::EndpointFilter).
     pub fn build(self) -> crate::types::EndpointFilter {

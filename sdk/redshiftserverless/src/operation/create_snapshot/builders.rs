@@ -36,6 +36,12 @@ impl CreateSnapshotFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateSnapshot as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_snapshot::builders::CreateSnapshotInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl CreateSnapshotFluentBuilder {
         self.inner = self.inner.set_namespace_name(input);
         self
     }
+    /// <p>The namespace to create a snapshot for.</p>
+    pub fn get_namespace_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_namespace_name()
+    }
     /// <p>The name of the snapshot.</p>
     pub fn snapshot_name(
         mut self,
@@ -140,6 +150,10 @@ impl CreateSnapshotFluentBuilder {
         self.inner = self.inner.set_snapshot_name(input);
         self
     }
+    /// <p>The name of the snapshot.</p>
+    pub fn get_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_snapshot_name()
+    }
     /// <p>How long to retain the created snapshot.</p>
     pub fn retention_period(mut self, input: i32) -> Self {
         self.inner = self.inner.retention_period(input);
@@ -149,6 +163,10 @@ impl CreateSnapshotFluentBuilder {
     pub fn set_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_retention_period(input);
         self
+    }
+    /// <p>How long to retain the created snapshot.</p>
+    pub fn get_retention_period(&self) -> &::std::option::Option<i32> {
+        self.inner.get_retention_period()
     }
     /// Appends an item to `tags`.
     ///
@@ -166,5 +184,9 @@ impl CreateSnapshotFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>An array of <a href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag objects</a> to associate with the snapshot.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

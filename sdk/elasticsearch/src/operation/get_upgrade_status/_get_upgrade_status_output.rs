@@ -105,6 +105,16 @@ impl GetUpgradeStatusOutputBuilder {
         self.upgrade_step = input;
         self
     }
+    /// <p> Represents one of 3 steps that an Upgrade or Upgrade Eligibility Check does through: </p>
+    /// <ul>
+    /// <li>PreUpgradeCheck</li>
+    /// <li>Snapshot</li>
+    /// <li>Upgrade</li>
+    /// </ul>
+    /// <p></p>
+    pub fn get_upgrade_step(&self) -> &::std::option::Option<crate::types::UpgradeStep> {
+        &self.upgrade_step
+    }
     /// <p> One of 4 statuses that a step can go through returned as part of the <code> <code>GetUpgradeStatusResponse</code> </code> object. The status can take one of the following values: </p>
     /// <ul>
     /// <li>In Progress</li>
@@ -132,6 +142,17 @@ impl GetUpgradeStatusOutputBuilder {
         self.step_status = input;
         self
     }
+    /// <p> One of 4 statuses that a step can go through returned as part of the <code> <code>GetUpgradeStatusResponse</code> </code> object. The status can take one of the following values: </p>
+    /// <ul>
+    /// <li>In Progress</li>
+    /// <li>Succeeded</li>
+    /// <li>Succeeded with Issues</li>
+    /// <li>Failed</li>
+    /// </ul>
+    /// <p></p>
+    pub fn get_step_status(&self) -> &::std::option::Option<crate::types::UpgradeStatus> {
+        &self.step_status
+    }
     /// <p>A string that describes the update briefly</p>
     pub fn upgrade_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upgrade_name = ::std::option::Option::Some(input.into());
@@ -141,6 +162,10 @@ impl GetUpgradeStatusOutputBuilder {
     pub fn set_upgrade_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.upgrade_name = input;
         self
+    }
+    /// <p>A string that describes the update briefly</p>
+    pub fn get_upgrade_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.upgrade_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -71,6 +71,14 @@ impl AddAttributesToFindingsOutputBuilder {
         self.failed_items = input;
         self
     }
+    /// <p>Attribute details that cannot be described. An error code is provided for each failed item.</p>
+    pub fn get_failed_items(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::FailedItemDetails>,
+    > {
+        &self.failed_items
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

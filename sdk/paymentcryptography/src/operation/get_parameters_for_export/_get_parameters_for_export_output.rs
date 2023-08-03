@@ -108,6 +108,10 @@ impl GetParametersForExportOutputBuilder {
         self.signing_key_certificate = input;
         self
     }
+    /// <p>The signing key certificate of the public key for signature within the TR-34 key block cryptogram. The certificate expires after 7 days.</p>
+    pub fn get_signing_key_certificate(&self) -> &::std::option::Option<::std::string::String> {
+        &self.signing_key_certificate
+    }
     /// <p>The certificate chain that signed the signing key certificate. This is the root certificate authority (CA) within your service account.</p>
     pub fn signing_key_certificate_chain(
         mut self,
@@ -124,6 +128,12 @@ impl GetParametersForExportOutputBuilder {
         self.signing_key_certificate_chain = input;
         self
     }
+    /// <p>The certificate chain that signed the signing key certificate. This is the root certificate authority (CA) within your service account.</p>
+    pub fn get_signing_key_certificate_chain(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.signing_key_certificate_chain
+    }
     /// <p>The algorithm of the signing key certificate for use in TR-34 key block generation. <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
     pub fn signing_key_algorithm(mut self, input: crate::types::KeyAlgorithm) -> Self {
         self.signing_key_algorithm = ::std::option::Option::Some(input);
@@ -137,6 +147,10 @@ impl GetParametersForExportOutputBuilder {
         self.signing_key_algorithm = input;
         self
     }
+    /// <p>The algorithm of the signing key certificate for use in TR-34 key block generation. <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
+    pub fn get_signing_key_algorithm(&self) -> &::std::option::Option<crate::types::KeyAlgorithm> {
+        &self.signing_key_algorithm
+    }
     /// <p>The export token to initiate key export from Amazon Web Services Payment Cryptography. The export token expires after 7 days. You can use the same export token to export multiple keys from the same service account.</p>
     pub fn export_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.export_token = ::std::option::Option::Some(input.into());
@@ -146,6 +160,10 @@ impl GetParametersForExportOutputBuilder {
     pub fn set_export_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.export_token = input;
         self
+    }
+    /// <p>The export token to initiate key export from Amazon Web Services Payment Cryptography. The export token expires after 7 days. You can use the same export token to export multiple keys from the same service account.</p>
+    pub fn get_export_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.export_token
     }
     /// <p>The validity period of the export token.</p>
     pub fn parameters_valid_until_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -159,6 +177,12 @@ impl GetParametersForExportOutputBuilder {
     ) -> Self {
         self.parameters_valid_until_timestamp = input;
         self
+    }
+    /// <p>The validity period of the export token.</p>
+    pub fn get_parameters_valid_until_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.parameters_valid_until_timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

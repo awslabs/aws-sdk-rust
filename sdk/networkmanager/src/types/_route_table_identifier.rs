@@ -58,6 +58,12 @@ impl RouteTableIdentifierBuilder {
         self.transit_gateway_route_table_arn = input;
         self
     }
+    /// <p>The ARN of the transit gateway route table.</p>
+    pub fn get_transit_gateway_route_table_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_route_table_arn
+    }
     /// <p>The segment edge in a core network.</p>
     pub fn core_network_segment_edge(
         mut self,
@@ -73,6 +79,12 @@ impl RouteTableIdentifierBuilder {
     ) -> Self {
         self.core_network_segment_edge = input;
         self
+    }
+    /// <p>The segment edge in a core network.</p>
+    pub fn get_core_network_segment_edge(
+        &self,
+    ) -> &::std::option::Option<crate::types::CoreNetworkSegmentEdgeIdentifier> {
+        &self.core_network_segment_edge
     }
     /// Consumes the builder and constructs a [`RouteTableIdentifier`](crate::types::RouteTableIdentifier).
     pub fn build(self) -> crate::types::RouteTableIdentifier {

@@ -37,6 +37,10 @@ impl ListPhoneNumbersOptedOutFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListPhoneNumbersOptedOut as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_phone_numbers_opted_out::builders::ListPhoneNumbersOptedOutInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,5 +139,9 @@ impl ListPhoneNumbersOptedOutFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>A <code>NextToken</code> string is used when you call the <code>ListPhoneNumbersOptedOut</code> action to retrieve additional records that are available after the first page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

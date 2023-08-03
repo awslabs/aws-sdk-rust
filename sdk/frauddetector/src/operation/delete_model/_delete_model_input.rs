@@ -47,6 +47,10 @@ impl DeleteModelInputBuilder {
         self.model_id = input;
         self
     }
+    /// <p>The model ID of the model to delete.</p>
+    pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_id
+    }
     /// <p>The model type of the model to delete.</p>
     pub fn model_type(mut self, input: crate::types::ModelTypeEnum) -> Self {
         self.model_type = ::std::option::Option::Some(input);
@@ -59,6 +63,10 @@ impl DeleteModelInputBuilder {
     ) -> Self {
         self.model_type = input;
         self
+    }
+    /// <p>The model type of the model to delete.</p>
+    pub fn get_model_type(&self) -> &::std::option::Option<crate::types::ModelTypeEnum> {
+        &self.model_type
     }
     /// Consumes the builder and constructs a [`DeleteModelInput`](crate::operation::delete_model::DeleteModelInput).
     pub fn build(

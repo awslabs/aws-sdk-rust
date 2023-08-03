@@ -54,6 +54,10 @@ impl GetWorldTemplateBodyOutputBuilder {
         self.template_body = input;
         self
     }
+    /// <p>The world template body.</p>
+    pub fn get_template_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_body
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

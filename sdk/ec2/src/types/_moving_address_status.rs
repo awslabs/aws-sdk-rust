@@ -54,6 +54,10 @@ impl MovingAddressStatusBuilder {
         self.move_status = input;
         self
     }
+    /// <p>The status of the Elastic IP address that's being moved or restored.</p>
+    pub fn get_move_status(&self) -> &::std::option::Option<crate::types::MoveStatus> {
+        &self.move_status
+    }
     /// <p>The Elastic IP address.</p>
     pub fn public_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_ip = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl MovingAddressStatusBuilder {
     pub fn set_public_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_ip = input;
         self
+    }
+    /// <p>The Elastic IP address.</p>
+    pub fn get_public_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_ip
     }
     /// Consumes the builder and constructs a [`MovingAddressStatus`](crate::types::MovingAddressStatus).
     pub fn build(self) -> crate::types::MovingAddressStatus {

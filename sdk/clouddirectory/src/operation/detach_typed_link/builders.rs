@@ -36,6 +36,12 @@ impl DetachTypedLinkFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DetachTypedLink as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::detach_typed_link::builders::DetachTypedLinkInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl DetachTypedLinkFluentBuilder {
         self.inner = self.inner.set_directory_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the directory where you want to detach the typed link.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_arn()
+    }
     /// <p>Used to accept a typed link specifier as input.</p>
     pub fn typed_link_specifier(mut self, input: crate::types::TypedLinkSpecifier) -> Self {
         self.inner = self.inner.typed_link_specifier(input);
@@ -144,5 +154,11 @@ impl DetachTypedLinkFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_typed_link_specifier(input);
         self
+    }
+    /// <p>Used to accept a typed link specifier as input.</p>
+    pub fn get_typed_link_specifier(
+        &self,
+    ) -> &::std::option::Option<crate::types::TypedLinkSpecifier> {
+        self.inner.get_typed_link_specifier()
     }
 }

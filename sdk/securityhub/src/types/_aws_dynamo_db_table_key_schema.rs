@@ -54,6 +54,10 @@ impl AwsDynamoDbTableKeySchemaBuilder {
         self.attribute_name = input;
         self
     }
+    /// <p>The name of the key schema attribute.</p>
+    pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_name
+    }
     /// <p>The type of key used for the key schema attribute. Valid values are <code>HASH</code> or <code>RANGE</code>.</p>
     pub fn key_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_type = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl AwsDynamoDbTableKeySchemaBuilder {
     pub fn set_key_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_type = input;
         self
+    }
+    /// <p>The type of key used for the key schema attribute. Valid values are <code>HASH</code> or <code>RANGE</code>.</p>
+    pub fn get_key_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_type
     }
     /// Consumes the builder and constructs a [`AwsDynamoDbTableKeySchema`](crate::types::AwsDynamoDbTableKeySchema).
     pub fn build(self) -> crate::types::AwsDynamoDbTableKeySchema {

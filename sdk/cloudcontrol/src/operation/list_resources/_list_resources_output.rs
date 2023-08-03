@@ -66,6 +66,10 @@ impl ListResourcesOutputBuilder {
         self.type_name = input;
         self
     }
+    /// <p>The name of the resource type.</p>
+    pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.type_name
+    }
     /// Appends an item to `resource_descriptions`.
     ///
     /// To override the contents of this collection use [`set_resource_descriptions`](Self::set_resource_descriptions).
@@ -85,6 +89,12 @@ impl ListResourcesOutputBuilder {
         self.resource_descriptions = input;
         self
     }
+    /// <p>Information about the specified resources, including primary identifier and resource model.</p>
+    pub fn get_resource_descriptions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceDescription>> {
+        &self.resource_descriptions
+    }
     /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListResources</code> again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to null.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -94,6 +104,10 @@ impl ListResourcesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the request doesn't return all of the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call <code>ListResources</code> again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to null.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

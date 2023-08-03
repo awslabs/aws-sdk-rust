@@ -55,6 +55,10 @@ impl InviteUsersInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// Appends an item to `user_email_list`.
     ///
     /// To override the contents of this collection use [`set_user_email_list`](Self::set_user_email_list).
@@ -77,6 +81,12 @@ impl InviteUsersInputBuilder {
         self.user_email_list = input;
         self
     }
+    /// <p>The user email addresses to which to send the email invitation.</p>
+    pub fn get_user_email_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.user_email_list
+    }
     /// <p>The user type.</p>
     pub fn user_type(mut self, input: crate::types::UserType) -> Self {
         self.user_type = ::std::option::Option::Some(input);
@@ -86,6 +96,10 @@ impl InviteUsersInputBuilder {
     pub fn set_user_type(mut self, input: ::std::option::Option<crate::types::UserType>) -> Self {
         self.user_type = input;
         self
+    }
+    /// <p>The user type.</p>
+    pub fn get_user_type(&self) -> &::std::option::Option<crate::types::UserType> {
+        &self.user_type
     }
     /// Consumes the builder and constructs a [`InviteUsersInput`](crate::operation::invite_users::InviteUsersInput).
     pub fn build(

@@ -49,6 +49,10 @@ impl EcrContainerImageMetadataBuilder {
         self.tags = input;
         self
     }
+    /// <p>Tags associated with the Amazon ECR image metadata.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`EcrContainerImageMetadata`](crate::types::EcrContainerImageMetadata).
     pub fn build(self) -> crate::types::EcrContainerImageMetadata {
         crate::types::EcrContainerImageMetadata { tags: self.tags }

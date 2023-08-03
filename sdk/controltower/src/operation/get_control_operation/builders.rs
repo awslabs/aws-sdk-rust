@@ -36,6 +36,12 @@ impl GetControlOperationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetControlOperation as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_control_operation::builders::GetControlOperationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl GetControlOperationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_operation_identifier(input);
         self
+    }
+    /// <p>The ID of the asynchronous operation, which is used to track status. The operation is available for 90 days.</p>
+    pub fn get_operation_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_operation_identifier()
     }
 }

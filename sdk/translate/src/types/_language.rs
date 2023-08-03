@@ -54,6 +54,10 @@ impl LanguageBuilder {
         self.language_name = input;
         self
     }
+    /// <p>Language name of the supported language.</p>
+    pub fn get_language_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.language_name
+    }
     /// <p>Language code for the supported language.</p>
     pub fn language_code(
         mut self,
@@ -69,6 +73,10 @@ impl LanguageBuilder {
     ) -> Self {
         self.language_code = input;
         self
+    }
+    /// <p>Language code for the supported language.</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.language_code
     }
     /// Consumes the builder and constructs a [`Language`](crate::types::Language).
     pub fn build(self) -> crate::types::Language {

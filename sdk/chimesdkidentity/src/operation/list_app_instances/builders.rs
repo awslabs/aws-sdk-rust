@@ -36,6 +36,12 @@ impl ListAppInstancesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListAppInstances as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_app_instances::builders::ListAppInstancesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl ListAppInstancesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of <code>AppInstance</code>s that you want to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token passed by previous API requests until you reach the maximum number of <code>AppInstances</code>.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -146,5 +156,9 @@ impl ListAppInstancesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token passed by previous API requests until you reach the maximum number of <code>AppInstances</code>.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

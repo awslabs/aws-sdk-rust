@@ -81,6 +81,10 @@ impl LabelBuilder {
         self.name = input;
         self
     }
+    /// <p>The name (label) of the object or scene.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Level of confidence.</p>
     pub fn confidence(mut self, input: f32) -> Self {
         self.confidence = ::std::option::Option::Some(input);
@@ -90,6 +94,10 @@ impl LabelBuilder {
     pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
         self.confidence = input;
         self
+    }
+    /// <p>Level of confidence.</p>
+    pub fn get_confidence(&self) -> &::std::option::Option<f32> {
+        &self.confidence
     }
     /// Appends an item to `instances`.
     ///
@@ -110,6 +118,10 @@ impl LabelBuilder {
         self.instances = input;
         self
     }
+    /// <p>If <code>Label</code> represents an object, <code>Instances</code> contains the bounding boxes for each instance of the detected object. Bounding boxes are returned for common object labels such as people, cars, furniture, apparel or pets.</p>
+    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Instance>> {
+        &self.instances
+    }
     /// Appends an item to `parents`.
     ///
     /// To override the contents of this collection use [`set_parents`](Self::set_parents).
@@ -128,6 +140,10 @@ impl LabelBuilder {
     ) -> Self {
         self.parents = input;
         self
+    }
+    /// <p>The parent labels for a label. The response includes all ancestor labels.</p>
+    pub fn get_parents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Parent>> {
+        &self.parents
     }
     /// Appends an item to `aliases`.
     ///
@@ -148,6 +164,10 @@ impl LabelBuilder {
         self.aliases = input;
         self
     }
+    /// <p>A list of potential aliases for a given label.</p>
+    pub fn get_aliases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LabelAlias>> {
+        &self.aliases
+    }
     /// Appends an item to `categories`.
     ///
     /// To override the contents of this collection use [`set_categories`](Self::set_categories).
@@ -166,6 +186,12 @@ impl LabelBuilder {
     ) -> Self {
         self.categories = input;
         self
+    }
+    /// <p>A list of the categories associated with a given label.</p>
+    pub fn get_categories(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LabelCategory>> {
+        &self.categories
     }
     /// Consumes the builder and constructs a [`Label`](crate::types::Label).
     pub fn build(self) -> crate::types::Label {

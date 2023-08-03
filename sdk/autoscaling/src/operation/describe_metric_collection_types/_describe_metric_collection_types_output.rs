@@ -64,6 +64,12 @@ impl DescribeMetricCollectionTypesOutputBuilder {
         self.metrics = input;
         self
     }
+    /// <p>The metrics.</p>
+    pub fn get_metrics(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricCollectionType>> {
+        &self.metrics
+    }
     /// Appends an item to `granularities`.
     ///
     /// To override the contents of this collection use [`set_granularities`](Self::set_granularities).
@@ -82,6 +88,12 @@ impl DescribeMetricCollectionTypesOutputBuilder {
     ) -> Self {
         self.granularities = input;
         self
+    }
+    /// <p>The granularities for the metrics.</p>
+    pub fn get_granularities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricGranularityType>> {
+        &self.granularities
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

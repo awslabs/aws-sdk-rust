@@ -57,6 +57,12 @@ impl DeleteBuilder {
         self.objects = input;
         self
     }
+    /// <p>The object to delete.</p>
+    pub fn get_objects(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ObjectIdentifier>> {
+        &self.objects
+    }
     /// <p>Element to enable quiet mode for the request. When you add this element, you must set its value to true.</p>
     pub fn quiet(mut self, input: bool) -> Self {
         self.quiet = ::std::option::Option::Some(input);
@@ -66,6 +72,10 @@ impl DeleteBuilder {
     pub fn set_quiet(mut self, input: ::std::option::Option<bool>) -> Self {
         self.quiet = input;
         self
+    }
+    /// <p>Element to enable quiet mode for the request. When you add this element, you must set its value to true.</p>
+    pub fn get_quiet(&self) -> &::std::option::Option<bool> {
+        &self.quiet
     }
     /// Consumes the builder and constructs a [`Delete`](crate::types::Delete).
     pub fn build(self) -> crate::types::Delete {

@@ -36,6 +36,12 @@ impl DescribeModelCardFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeModelCard as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_model_card::builders::DescribeModelCardInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl DescribeModelCardFluentBuilder {
         self.inner = self.inner.set_model_card_name(input);
         self
     }
+    /// <p>The name of the model card to describe.</p>
+    pub fn get_model_card_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_model_card_name()
+    }
     /// <p>The version of the model card to describe. If a version is not provided, then the latest version of the model card is described.</p>
     pub fn model_card_version(mut self, input: i32) -> Self {
         self.inner = self.inner.model_card_version(input);
@@ -141,5 +151,9 @@ impl DescribeModelCardFluentBuilder {
     pub fn set_model_card_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_model_card_version(input);
         self
+    }
+    /// <p>The version of the model card to describe. If a version is not provided, then the latest version of the model card is described.</p>
+    pub fn get_model_card_version(&self) -> &::std::option::Option<i32> {
+        self.inner.get_model_card_version()
     }
 }

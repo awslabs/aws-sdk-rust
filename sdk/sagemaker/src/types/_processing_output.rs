@@ -67,6 +67,10 @@ impl ProcessingOutputBuilder {
         self.output_name = input;
         self
     }
+    /// <p>The name for the processing job output.</p>
+    pub fn get_output_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_name
+    }
     /// <p>Configuration for processing job outputs in Amazon S3.</p>
     pub fn s3_output(mut self, input: crate::types::ProcessingS3Output) -> Self {
         self.s3_output = ::std::option::Option::Some(input);
@@ -79,6 +83,10 @@ impl ProcessingOutputBuilder {
     ) -> Self {
         self.s3_output = input;
         self
+    }
+    /// <p>Configuration for processing job outputs in Amazon S3.</p>
+    pub fn get_s3_output(&self) -> &::std::option::Option<crate::types::ProcessingS3Output> {
+        &self.s3_output
     }
     /// <p>Configuration for processing job outputs in Amazon SageMaker Feature Store. This processing output type is only supported when <code>AppManaged</code> is specified. </p>
     pub fn feature_store_output(
@@ -96,6 +104,12 @@ impl ProcessingOutputBuilder {
         self.feature_store_output = input;
         self
     }
+    /// <p>Configuration for processing job outputs in Amazon SageMaker Feature Store. This processing output type is only supported when <code>AppManaged</code> is specified. </p>
+    pub fn get_feature_store_output(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProcessingFeatureStoreOutput> {
+        &self.feature_store_output
+    }
     /// <p>When <code>True</code>, output operations such as data upload are managed natively by the processing job application. When <code>False</code> (default), output operations are managed by Amazon SageMaker.</p>
     pub fn app_managed(mut self, input: bool) -> Self {
         self.app_managed = ::std::option::Option::Some(input);
@@ -105,6 +119,10 @@ impl ProcessingOutputBuilder {
     pub fn set_app_managed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.app_managed = input;
         self
+    }
+    /// <p>When <code>True</code>, output operations such as data upload are managed natively by the processing job application. When <code>False</code> (default), output operations are managed by Amazon SageMaker.</p>
+    pub fn get_app_managed(&self) -> &::std::option::Option<bool> {
+        &self.app_managed
     }
     /// Consumes the builder and constructs a [`ProcessingOutput`](crate::types::ProcessingOutput).
     pub fn build(self) -> crate::types::ProcessingOutput {

@@ -36,6 +36,10 @@ impl StartSpeechSynthesisTaskFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartSpeechSynthesisTask as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_speech_synthesis_task::builders::StartSpeechSynthesisTaskInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl StartSpeechSynthesisTaskFluentBuilder {
         self.inner = self.inner.set_engine(input);
         self
     }
+    /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.</p>
+    pub fn get_engine(&self) -> &::std::option::Option<crate::types::Engine> {
+        self.inner.get_engine()
+    }
     /// <p>Optional language code for the Speech Synthesis request. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p>
     /// <p>If a bilingual voice is used and no language code is specified, Amazon Polly uses the default language of the bilingual voice. The default language for any voice is the one returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use Indian English rather than Hindi.</p>
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
@@ -140,6 +148,11 @@ impl StartSpeechSynthesisTaskFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_language_code(input);
         self
+    }
+    /// <p>Optional language code for the Speech Synthesis request. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p>
+    /// <p>If a bilingual voice is used and no language code is specified, Amazon Polly uses the default language of the bilingual voice. The default language for any voice is the one returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use Indian English rather than Hindi.</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
+        self.inner.get_language_code()
     }
     /// Appends an item to `LexiconNames`.
     ///
@@ -161,6 +174,12 @@ impl StartSpeechSynthesisTaskFluentBuilder {
         self.inner = self.inner.set_lexicon_names(input);
         self
     }
+    /// <p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. </p>
+    pub fn get_lexicon_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_lexicon_names()
+    }
     /// <p>The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>
     pub fn output_format(mut self, input: crate::types::OutputFormat) -> Self {
         self.inner = self.inner.output_format(input);
@@ -173,6 +192,10 @@ impl StartSpeechSynthesisTaskFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_output_format(input);
         self
+    }
+    /// <p>The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>
+    pub fn get_output_format(&self) -> &::std::option::Option<crate::types::OutputFormat> {
+        self.inner.get_output_format()
     }
     /// <p>Amazon S3 bucket name to which the output file will be saved.</p>
     pub fn output_s3_bucket_name(
@@ -190,6 +213,10 @@ impl StartSpeechSynthesisTaskFluentBuilder {
         self.inner = self.inner.set_output_s3_bucket_name(input);
         self
     }
+    /// <p>Amazon S3 bucket name to which the output file will be saved.</p>
+    pub fn get_output_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_output_s3_bucket_name()
+    }
     /// <p>The Amazon S3 key prefix for the output speech file.</p>
     pub fn output_s3_key_prefix(
         mut self,
@@ -206,6 +233,10 @@ impl StartSpeechSynthesisTaskFluentBuilder {
         self.inner = self.inner.set_output_s3_key_prefix(input);
         self
     }
+    /// <p>The Amazon S3 key prefix for the output speech file.</p>
+    pub fn get_output_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_output_s3_key_prefix()
+    }
     /// <p>The audio frequency specified in Hz.</p>
     /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000".</p>
     /// <p>Valid values for pcm are "8000" and "16000" The default value is "16000". </p>
@@ -219,6 +250,12 @@ impl StartSpeechSynthesisTaskFluentBuilder {
     pub fn set_sample_rate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sample_rate(input);
         self
+    }
+    /// <p>The audio frequency specified in Hz.</p>
+    /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000".</p>
+    /// <p>Valid values for pcm are "8000" and "16000" The default value is "16000". </p>
+    pub fn get_sample_rate(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sample_rate()
     }
     /// <p>ARN for the SNS topic optionally used for providing status notification for a speech synthesis task.</p>
     pub fn sns_topic_arn(
@@ -235,6 +272,10 @@ impl StartSpeechSynthesisTaskFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sns_topic_arn(input);
         self
+    }
+    /// <p>ARN for the SNS topic optionally used for providing status notification for a speech synthesis task.</p>
+    pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sns_topic_arn()
     }
     /// Appends an item to `SpeechMarkTypes`.
     ///
@@ -253,6 +294,12 @@ impl StartSpeechSynthesisTaskFluentBuilder {
         self.inner = self.inner.set_speech_mark_types(input);
         self
     }
+    /// <p>The type of speech marks returned for the input text.</p>
+    pub fn get_speech_mark_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SpeechMarkType>> {
+        self.inner.get_speech_mark_types()
+    }
     /// <p>The input text to synthesize. If you specify ssml as the TextType, follow the SSML format for the input text. </p>
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.text(input.into());
@@ -262,6 +309,10 @@ impl StartSpeechSynthesisTaskFluentBuilder {
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_text(input);
         self
+    }
+    /// <p>The input text to synthesize. If you specify ssml as the TextType, follow the SSML format for the input text. </p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_text()
     }
     /// <p>Specifies whether the input text is plain text or SSML. The default value is plain text. </p>
     pub fn text_type(mut self, input: crate::types::TextType) -> Self {
@@ -273,6 +324,10 @@ impl StartSpeechSynthesisTaskFluentBuilder {
         self.inner = self.inner.set_text_type(input);
         self
     }
+    /// <p>Specifies whether the input text is plain text or SSML. The default value is plain text. </p>
+    pub fn get_text_type(&self) -> &::std::option::Option<crate::types::TextType> {
+        self.inner.get_text_type()
+    }
     /// <p>Voice ID to use for the synthesis. </p>
     pub fn voice_id(mut self, input: crate::types::VoiceId) -> Self {
         self.inner = self.inner.voice_id(input);
@@ -282,5 +337,9 @@ impl StartSpeechSynthesisTaskFluentBuilder {
     pub fn set_voice_id(mut self, input: ::std::option::Option<crate::types::VoiceId>) -> Self {
         self.inner = self.inner.set_voice_id(input);
         self
+    }
+    /// <p>Voice ID to use for the synthesis. </p>
+    pub fn get_voice_id(&self) -> &::std::option::Option<crate::types::VoiceId> {
+        self.inner.get_voice_id()
     }
 }

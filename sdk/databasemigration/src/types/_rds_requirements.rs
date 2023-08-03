@@ -94,6 +94,10 @@ impl RdsRequirementsBuilder {
         self.engine_edition = input;
         self
     }
+    /// <p>The required target Amazon RDS engine edition.</p>
+    pub fn get_engine_edition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_edition
+    }
     /// <p>The required number of virtual CPUs (vCPU) on the Amazon RDS DB instance.</p>
     pub fn instance_vcpu(mut self, input: f64) -> Self {
         self.instance_vcpu = ::std::option::Option::Some(input);
@@ -103,6 +107,10 @@ impl RdsRequirementsBuilder {
     pub fn set_instance_vcpu(mut self, input: ::std::option::Option<f64>) -> Self {
         self.instance_vcpu = input;
         self
+    }
+    /// <p>The required number of virtual CPUs (vCPU) on the Amazon RDS DB instance.</p>
+    pub fn get_instance_vcpu(&self) -> &::std::option::Option<f64> {
+        &self.instance_vcpu
     }
     /// <p>The required memory on the Amazon RDS DB instance.</p>
     pub fn instance_memory(mut self, input: f64) -> Self {
@@ -114,6 +122,10 @@ impl RdsRequirementsBuilder {
         self.instance_memory = input;
         self
     }
+    /// <p>The required memory on the Amazon RDS DB instance.</p>
+    pub fn get_instance_memory(&self) -> &::std::option::Option<f64> {
+        &self.instance_memory
+    }
     /// <p>The required Amazon RDS DB instance storage size.</p>
     pub fn storage_size(mut self, input: i32) -> Self {
         self.storage_size = ::std::option::Option::Some(input);
@@ -124,6 +136,10 @@ impl RdsRequirementsBuilder {
         self.storage_size = input;
         self
     }
+    /// <p>The required Amazon RDS DB instance storage size.</p>
+    pub fn get_storage_size(&self) -> &::std::option::Option<i32> {
+        &self.storage_size
+    }
     /// <p>The required number of I/O operations completed each second (IOPS) on your Amazon RDS DB instance.</p>
     pub fn storage_iops(mut self, input: i32) -> Self {
         self.storage_iops = ::std::option::Option::Some(input);
@@ -133,6 +149,10 @@ impl RdsRequirementsBuilder {
     pub fn set_storage_iops(mut self, input: ::std::option::Option<i32>) -> Self {
         self.storage_iops = input;
         self
+    }
+    /// <p>The required number of I/O operations completed each second (IOPS) on your Amazon RDS DB instance.</p>
+    pub fn get_storage_iops(&self) -> &::std::option::Option<i32> {
+        &self.storage_iops
     }
     /// <p>The required deployment option for the Amazon RDS DB instance. Valid values include <code>"MULTI_AZ"</code> for Multi-AZ deployments and <code>"SINGLE_AZ"</code> for Single-AZ deployments.</p>
     pub fn deployment_option(
@@ -150,6 +170,10 @@ impl RdsRequirementsBuilder {
         self.deployment_option = input;
         self
     }
+    /// <p>The required deployment option for the Amazon RDS DB instance. Valid values include <code>"MULTI_AZ"</code> for Multi-AZ deployments and <code>"SINGLE_AZ"</code> for Single-AZ deployments.</p>
+    pub fn get_deployment_option(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_option
+    }
     /// <p>The required target Amazon RDS engine version.</p>
     pub fn engine_version(
         mut self,
@@ -165,6 +189,10 @@ impl RdsRequirementsBuilder {
     ) -> Self {
         self.engine_version = input;
         self
+    }
+    /// <p>The required target Amazon RDS engine version.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
     }
     /// Consumes the builder and constructs a [`RdsRequirements`](crate::types::RdsRequirements).
     pub fn build(self) -> crate::types::RdsRequirements {

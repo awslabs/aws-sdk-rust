@@ -61,6 +61,12 @@ impl DescribeRecoveryInstancesRequestFiltersBuilder {
         self.recovery_instance_i_ds = input;
         self
     }
+    /// <p>An array of Recovery Instance IDs that should be returned. An empty array means all Recovery Instances.</p>
+    pub fn get_recovery_instance_i_ds(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.recovery_instance_i_ds
+    }
     /// Appends an item to `source_server_i_ds`.
     ///
     /// To override the contents of this collection use [`set_source_server_i_ds`](Self::set_source_server_i_ds).
@@ -82,6 +88,12 @@ impl DescribeRecoveryInstancesRequestFiltersBuilder {
     ) -> Self {
         self.source_server_i_ds = input;
         self
+    }
+    /// <p>An array of Source Server IDs for which associated Recovery Instances should be returned.</p>
+    pub fn get_source_server_i_ds(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.source_server_i_ds
     }
     /// Consumes the builder and constructs a [`DescribeRecoveryInstancesRequestFilters`](crate::types::DescribeRecoveryInstancesRequestFilters).
     pub fn build(self) -> crate::types::DescribeRecoveryInstancesRequestFilters {

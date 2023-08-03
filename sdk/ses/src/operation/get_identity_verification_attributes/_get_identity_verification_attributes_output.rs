@@ -82,6 +82,17 @@ impl GetIdentityVerificationAttributesOutputBuilder {
         self.verification_attributes = input;
         self
     }
+    /// <p>A map of Identities to IdentityVerificationAttributes objects.</p>
+    pub fn get_verification_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::IdentityVerificationAttributes,
+        >,
+    > {
+        &self.verification_attributes
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

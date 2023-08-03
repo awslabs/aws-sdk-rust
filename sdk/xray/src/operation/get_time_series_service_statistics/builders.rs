@@ -36,6 +36,10 @@ impl GetTimeSeriesServiceStatisticsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetTimeSeriesServiceStatistics as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_time_series_service_statistics::builders::GetTimeSeriesServiceStatisticsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -109,6 +113,10 @@ impl GetTimeSeriesServiceStatisticsFluentBuilder {
         self.inner = self.inner.set_start_time(input);
         self
     }
+    /// <p>The start of the time frame for which to aggregate statistics.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_time()
+    }
     /// <p>The end of the time frame for which to aggregate statistics.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_time(input);
@@ -122,6 +130,10 @@ impl GetTimeSeriesServiceStatisticsFluentBuilder {
         self.inner = self.inner.set_end_time(input);
         self
     }
+    /// <p>The end of the time frame for which to aggregate statistics.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_time()
+    }
     /// <p>The case-sensitive name of the group for which to pull statistics from.</p>
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_name(input.into());
@@ -132,6 +144,10 @@ impl GetTimeSeriesServiceStatisticsFluentBuilder {
         self.inner = self.inner.set_group_name(input);
         self
     }
+    /// <p>The case-sensitive name of the group for which to pull statistics from.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group_name()
+    }
     /// <p>The Amazon Resource Name (ARN) of the group for which to pull statistics from.</p>
     pub fn group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_arn(input.into());
@@ -141,6 +157,10 @@ impl GetTimeSeriesServiceStatisticsFluentBuilder {
     pub fn set_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the group for which to pull statistics from.</p>
+    pub fn get_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group_arn()
     }
     /// <p>A filter expression defining entities that will be aggregated for statistics. Supports ID, service, and edge functions. If no selector expression is specified, edge statistics are returned. </p>
     pub fn entity_selector_expression(
@@ -158,6 +178,10 @@ impl GetTimeSeriesServiceStatisticsFluentBuilder {
         self.inner = self.inner.set_entity_selector_expression(input);
         self
     }
+    /// <p>A filter expression defining entities that will be aggregated for statistics. Supports ID, service, and edge functions. If no selector expression is specified, edge statistics are returned. </p>
+    pub fn get_entity_selector_expression(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_entity_selector_expression()
+    }
     /// <p>Aggregation period in seconds.</p>
     pub fn period(mut self, input: i32) -> Self {
         self.inner = self.inner.period(input);
@@ -167,6 +191,10 @@ impl GetTimeSeriesServiceStatisticsFluentBuilder {
     pub fn set_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_period(input);
         self
+    }
+    /// <p>Aggregation period in seconds.</p>
+    pub fn get_period(&self) -> &::std::option::Option<i32> {
+        self.inner.get_period()
     }
     /// <p>The forecasted high and low fault count values. Forecast enabled requests require the EntitySelectorExpression ID be provided.</p>
     pub fn forecast_statistics(mut self, input: bool) -> Self {
@@ -178,6 +206,10 @@ impl GetTimeSeriesServiceStatisticsFluentBuilder {
         self.inner = self.inner.set_forecast_statistics(input);
         self
     }
+    /// <p>The forecasted high and low fault count values. Forecast enabled requests require the EntitySelectorExpression ID be provided.</p>
+    pub fn get_forecast_statistics(&self) -> &::std::option::Option<bool> {
+        self.inner.get_forecast_statistics()
+    }
     /// <p>Pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -187,5 +219,9 @@ impl GetTimeSeriesServiceStatisticsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>Pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

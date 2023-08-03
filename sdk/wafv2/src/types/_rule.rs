@@ -140,6 +140,10 @@ impl RuleBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the rule. You can't change the name of a <code>Rule</code> after you create it. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>If you define more than one <code>Rule</code> in a <code>WebACL</code>, WAF evaluates each request against the <code>Rules</code> in order based on the value of <code>Priority</code>. WAF processes rules with lower priority first. The priorities don't need to be consecutive, but they must all be different.</p>
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
@@ -150,6 +154,10 @@ impl RuleBuilder {
         self.priority = input;
         self
     }
+    /// <p>If you define more than one <code>Rule</code> in a <code>WebACL</code>, WAF evaluates each request against the <code>Rules</code> in order based on the value of <code>Priority</code>. WAF processes rules with lower priority first. The priorities don't need to be consecutive, but they must all be different.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
+    }
     /// <p>The WAF processing statement for the rule, for example <code>ByteMatchStatement</code> or <code>SizeConstraintStatement</code>. </p>
     pub fn statement(mut self, input: crate::types::Statement) -> Self {
         self.statement = ::std::option::Option::Some(input);
@@ -159,6 +167,10 @@ impl RuleBuilder {
     pub fn set_statement(mut self, input: ::std::option::Option<crate::types::Statement>) -> Self {
         self.statement = input;
         self
+    }
+    /// <p>The WAF processing statement for the rule, for example <code>ByteMatchStatement</code> or <code>SizeConstraintStatement</code>. </p>
+    pub fn get_statement(&self) -> &::std::option::Option<crate::types::Statement> {
+        &self.statement
     }
     /// <p>The action that WAF should take on a web request when it matches the rule statement. Settings at the web ACL level can override the rule action setting. </p>
     /// <p>This is used only for rules whose statements do not reference a rule group. Rule statements that reference a rule group include <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p>
@@ -182,6 +194,16 @@ impl RuleBuilder {
         self.action = input;
         self
     }
+    /// <p>The action that WAF should take on a web request when it matches the rule statement. Settings at the web ACL level can override the rule action setting. </p>
+    /// <p>This is used only for rules whose statements do not reference a rule group. Rule statements that reference a rule group include <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p>
+    /// <p>You must specify either this <code>Action</code> setting or the rule <code>OverrideAction</code> setting, but not both:</p>
+    /// <ul>
+    /// <li> <p>If the rule statement does not reference a rule group, use this rule action setting and not the rule override action setting. </p> </li>
+    /// <li> <p>If the rule statement references a rule group, use the override action setting and not this action setting. </p> </li>
+    /// </ul>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::RuleAction> {
+        &self.action
+    }
     /// <p>The action to use in the place of the action that results from the rule group evaluation. Set the override action to none to leave the result of the rule group alone. Set it to count to override the result to count only. </p>
     /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p> <note>
     /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count matches, do not use this and instead use the rule action override option, with <code>Count</code> action, in your rule group reference statement settings. </p>
@@ -200,6 +222,13 @@ impl RuleBuilder {
     ) -> Self {
         self.override_action = input;
         self
+    }
+    /// <p>The action to use in the place of the action that results from the rule group evaluation. Set the override action to none to leave the result of the rule group alone. Set it to count to override the result to count only. </p>
+    /// <p>You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p> <note>
+    /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count matches, do not use this and instead use the rule action override option, with <code>Count</code> action, in your rule group reference statement settings. </p>
+    /// </note>
+    pub fn get_override_action(&self) -> &::std::option::Option<crate::types::OverrideAction> {
+        &self.override_action
     }
     /// Appends an item to `rule_labels`.
     ///
@@ -238,6 +267,19 @@ impl RuleBuilder {
         self.rule_labels = input;
         self
     }
+    /// <p>Labels to apply to web requests that match the rule match statement. WAF applies fully qualified labels to matching web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule group or web ACL defines the label namespace. </p>
+    /// <p>Rules that run after this rule in the web ACL can match against these labels using a <code>LabelMatchStatement</code>.</p>
+    /// <p>For each label, provide a case-sensitive string containing optional namespaces and a label name, according to the following guidelines:</p>
+    /// <ul>
+    /// <li> <p>Separate each component of the label with a colon. </p> </li>
+    /// <li> <p>Each namespace or name can have up to 128 characters.</p> </li>
+    /// <li> <p>You can specify up to 5 namespaces in a label.</p> </li>
+    /// <li> <p>Don't use the following reserved words in your label specification: <code>aws</code>, <code>waf</code>, <code>managed</code>, <code>rulegroup</code>, <code>webacl</code>, <code>regexpatternset</code>, or <code>ipset</code>.</p> </li>
+    /// </ul>
+    /// <p>For example, <code>myLabelName</code> or <code>nameSpace1:nameSpace2:myLabelName</code>. </p>
+    pub fn get_rule_labels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Label>> {
+        &self.rule_labels
+    }
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
     pub fn visibility_config(mut self, input: crate::types::VisibilityConfig) -> Self {
         self.visibility_config = ::std::option::Option::Some(input);
@@ -250,6 +292,10 @@ impl RuleBuilder {
     ) -> Self {
         self.visibility_config = input;
         self
+    }
+    /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
+    pub fn get_visibility_config(&self) -> &::std::option::Option<crate::types::VisibilityConfig> {
+        &self.visibility_config
     }
     /// <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations. If you don't specify this, WAF uses the <code>CAPTCHA</code> configuration that's defined for the web ACL. </p>
     pub fn captcha_config(mut self, input: crate::types::CaptchaConfig) -> Self {
@@ -264,6 +310,10 @@ impl RuleBuilder {
         self.captcha_config = input;
         self
     }
+    /// <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations. If you don't specify this, WAF uses the <code>CAPTCHA</code> configuration that's defined for the web ACL. </p>
+    pub fn get_captcha_config(&self) -> &::std::option::Option<crate::types::CaptchaConfig> {
+        &self.captcha_config
+    }
     /// <p>Specifies how WAF should handle <code>Challenge</code> evaluations. If you don't specify this, WAF uses the challenge configuration that's defined for the web ACL. </p>
     pub fn challenge_config(mut self, input: crate::types::ChallengeConfig) -> Self {
         self.challenge_config = ::std::option::Option::Some(input);
@@ -276,6 +326,10 @@ impl RuleBuilder {
     ) -> Self {
         self.challenge_config = input;
         self
+    }
+    /// <p>Specifies how WAF should handle <code>Challenge</code> evaluations. If you don't specify this, WAF uses the challenge configuration that's defined for the web ACL. </p>
+    pub fn get_challenge_config(&self) -> &::std::option::Option<crate::types::ChallengeConfig> {
+        &self.challenge_config
     }
     /// Consumes the builder and constructs a [`Rule`](crate::types::Rule).
     pub fn build(self) -> crate::types::Rule {

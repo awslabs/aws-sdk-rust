@@ -51,6 +51,10 @@ impl ConfigureLogsInputBuilder {
         self.egress_access_logs = input;
         self
     }
+    /// Configure egress access logging.
+    pub fn get_egress_access_logs(&self) -> &::std::option::Option<crate::types::EgressAccessLogs> {
+        &self.egress_access_logs
+    }
     /// The ID of a MediaPackage VOD PackagingGroup resource.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl ConfigureLogsInputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// The ID of a MediaPackage VOD PackagingGroup resource.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`ConfigureLogsInput`](crate::operation::configure_logs::ConfigureLogsInput).
     pub fn build(

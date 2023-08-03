@@ -46,6 +46,10 @@ impl GetConfiguredTableInputBuilder {
         self.configured_table_identifier = input;
         self
     }
+    /// <p>The unique ID for the configured table to retrieve.</p>
+    pub fn get_configured_table_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configured_table_identifier
+    }
     /// Consumes the builder and constructs a [`GetConfiguredTableInput`](crate::operation::get_configured_table::GetConfiguredTableInput).
     pub fn build(
         self,

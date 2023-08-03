@@ -64,6 +64,10 @@ impl RepositoryAggregationResponseBuilder {
         self.repository = input;
         self
     }
+    /// <p>The name of the repository associated with the findings.</p>
+    pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository
+    }
     /// <p>The ID of the Amazon Web Services account associated with the findings.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl RepositoryAggregationResponseBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>The ID of the Amazon Web Services account associated with the findings.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// <p>An object that represent the count of matched findings per severity.</p>
     pub fn severity_counts(mut self, input: crate::types::SeverityCounts) -> Self {
@@ -87,6 +95,10 @@ impl RepositoryAggregationResponseBuilder {
         self.severity_counts = input;
         self
     }
+    /// <p>An object that represent the count of matched findings per severity.</p>
+    pub fn get_severity_counts(&self) -> &::std::option::Option<crate::types::SeverityCounts> {
+        &self.severity_counts
+    }
     /// <p>The number of container images impacted by the findings.</p>
     pub fn affected_images(mut self, input: i64) -> Self {
         self.affected_images = ::std::option::Option::Some(input);
@@ -96,6 +108,10 @@ impl RepositoryAggregationResponseBuilder {
     pub fn set_affected_images(mut self, input: ::std::option::Option<i64>) -> Self {
         self.affected_images = input;
         self
+    }
+    /// <p>The number of container images impacted by the findings.</p>
+    pub fn get_affected_images(&self) -> &::std::option::Option<i64> {
+        &self.affected_images
     }
     /// Consumes the builder and constructs a [`RepositoryAggregationResponse`](crate::types::RepositoryAggregationResponse).
     pub fn build(self) -> crate::types::RepositoryAggregationResponse {

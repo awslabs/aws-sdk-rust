@@ -49,6 +49,10 @@ impl ListJourneysOutputBuilder {
         self.journeys_response = input;
         self
     }
+    /// <p>Provides information about the status, configuration, and other settings for all the journeys that are associated with an application.</p>
+    pub fn get_journeys_response(&self) -> &::std::option::Option<crate::types::JourneysResponse> {
+        &self.journeys_response
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

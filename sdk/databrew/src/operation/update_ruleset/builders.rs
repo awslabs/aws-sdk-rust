@@ -36,6 +36,12 @@ impl UpdateRulesetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateRuleset as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_ruleset::builders::UpdateRulesetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl UpdateRulesetFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the ruleset to be updated.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The description of the ruleset.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -127,6 +137,10 @@ impl UpdateRulesetFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the ruleset.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `Rules`.
     ///
@@ -144,5 +158,9 @@ impl UpdateRulesetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_rules(input);
         self
+    }
+    /// <p>A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.</p>
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Rule>> {
+        self.inner.get_rules()
     }
 }

@@ -64,6 +64,10 @@ impl ListTargetGroupsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>A pagination token for the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl ListTargetGroupsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A pagination token for the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
     pub fn vpc_identifier(
@@ -90,6 +98,10 @@ impl ListTargetGroupsInputBuilder {
         self.vpc_identifier = input;
         self
     }
+    /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    pub fn get_vpc_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_identifier
+    }
     /// <p>The target group type.</p>
     pub fn target_group_type(mut self, input: crate::types::TargetGroupType) -> Self {
         self.target_group_type = ::std::option::Option::Some(input);
@@ -102,6 +114,10 @@ impl ListTargetGroupsInputBuilder {
     ) -> Self {
         self.target_group_type = input;
         self
+    }
+    /// <p>The target group type.</p>
+    pub fn get_target_group_type(&self) -> &::std::option::Option<crate::types::TargetGroupType> {
+        &self.target_group_type
     }
     /// Consumes the builder and constructs a [`ListTargetGroupsInput`](crate::operation::list_target_groups::ListTargetGroupsInput).
     pub fn build(

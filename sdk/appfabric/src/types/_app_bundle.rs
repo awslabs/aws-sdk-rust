@@ -48,6 +48,10 @@ impl AppBundleBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the app bundle.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt the application data.</p>
     pub fn customer_managed_key_arn(
         mut self,
@@ -63,6 +67,10 @@ impl AppBundleBuilder {
     ) -> Self {
         self.customer_managed_key_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt the application data.</p>
+    pub fn get_customer_managed_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.customer_managed_key_arn
     }
     /// Consumes the builder and constructs a [`AppBundle`](crate::types::AppBundle).
     pub fn build(self) -> crate::types::AppBundle {

@@ -51,6 +51,12 @@ impl UpdateAcceleratorAttributesOutputBuilder {
         self.accelerator_attributes = input;
         self
     }
+    /// <p>Updated attributes for the accelerator.</p>
+    pub fn get_accelerator_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::AcceleratorAttributes> {
+        &self.accelerator_attributes
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

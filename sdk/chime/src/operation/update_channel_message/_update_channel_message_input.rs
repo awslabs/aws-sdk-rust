@@ -81,6 +81,10 @@ impl UpdateChannelMessageInputBuilder {
         self.channel_arn = input;
         self
     }
+    /// <p>The ARN of the channel.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
+    }
     /// <p>The ID string of the message being updated.</p>
     pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_id = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl UpdateChannelMessageInputBuilder {
     pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message_id = input;
         self
+    }
+    /// <p>The ID string of the message being updated.</p>
+    pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message_id
     }
     /// <p>The content of the message being updated.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -101,6 +109,10 @@ impl UpdateChannelMessageInputBuilder {
         self.content = input;
         self
     }
+    /// <p>The content of the message being updated.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
+    }
     /// <p>The metadata of the message being updated.</p>
     pub fn metadata(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metadata = ::std::option::Option::Some(input.into());
@@ -111,6 +123,10 @@ impl UpdateChannelMessageInputBuilder {
         self.metadata = input;
         self
     }
+    /// <p>The metadata of the message being updated.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metadata
+    }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.chime_bearer = ::std::option::Option::Some(input.into());
@@ -120,6 +136,10 @@ impl UpdateChannelMessageInputBuilder {
     pub fn set_chime_bearer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.chime_bearer = input;
         self
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
+        &self.chime_bearer
     }
     /// Consumes the builder and constructs a [`UpdateChannelMessageInput`](crate::operation::update_channel_message::UpdateChannelMessageInput).
     pub fn build(

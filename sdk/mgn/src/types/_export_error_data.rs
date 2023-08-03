@@ -40,6 +40,10 @@ impl ExportErrorDataBuilder {
         self.raw_error = input;
         self
     }
+    /// <p>Export errors data raw error.</p>
+    pub fn get_raw_error(&self) -> &::std::option::Option<::std::string::String> {
+        &self.raw_error
+    }
     /// Consumes the builder and constructs a [`ExportErrorData`](crate::types::ExportErrorData).
     pub fn build(self) -> crate::types::ExportErrorData {
         crate::types::ExportErrorData {

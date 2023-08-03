@@ -57,6 +57,10 @@ impl DescribeOrganizationConfigurationOutputBuilder {
         self.auto_enable = input;
         self
     }
+    /// <p>The scan types are automatically enabled for new members of your organization.</p>
+    pub fn get_auto_enable(&self) -> &::std::option::Option<crate::types::AutoEnable> {
+        &self.auto_enable
+    }
     /// <p>Represents whether your organization has reached the maximum Amazon Web Services account limit for Amazon Inspector.</p>
     pub fn max_account_limit_reached(mut self, input: bool) -> Self {
         self.max_account_limit_reached = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl DescribeOrganizationConfigurationOutputBuilder {
     pub fn set_max_account_limit_reached(mut self, input: ::std::option::Option<bool>) -> Self {
         self.max_account_limit_reached = input;
         self
+    }
+    /// <p>Represents whether your organization has reached the maximum Amazon Web Services account limit for Amazon Inspector.</p>
+    pub fn get_max_account_limit_reached(&self) -> &::std::option::Option<bool> {
+        &self.max_account_limit_reached
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

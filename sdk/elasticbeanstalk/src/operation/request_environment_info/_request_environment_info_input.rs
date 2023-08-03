@@ -76,6 +76,12 @@ impl RequestEnvironmentInfoInputBuilder {
         self.environment_id = input;
         self
     }
+    /// <p>The ID of the environment of the requested data.</p>
+    /// <p>If no such environment is found, <code>RequestEnvironmentInfo</code> returns an <code>InvalidParameterValue</code> error. </p>
+    /// <p>Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
+    }
     /// <p>The name of the environment of the requested data.</p>
     /// <p>If no such environment is found, <code>RequestEnvironmentInfo</code> returns an <code>InvalidParameterValue</code> error. </p>
     /// <p>Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
@@ -96,6 +102,12 @@ impl RequestEnvironmentInfoInputBuilder {
         self.environment_name = input;
         self
     }
+    /// <p>The name of the environment of the requested data.</p>
+    /// <p>If no such environment is found, <code>RequestEnvironmentInfo</code> returns an <code>InvalidParameterValue</code> error. </p>
+    /// <p>Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_name
+    }
     /// <p>The type of information to request.</p>
     pub fn info_type(mut self, input: crate::types::EnvironmentInfoType) -> Self {
         self.info_type = ::std::option::Option::Some(input);
@@ -108,6 +120,10 @@ impl RequestEnvironmentInfoInputBuilder {
     ) -> Self {
         self.info_type = input;
         self
+    }
+    /// <p>The type of information to request.</p>
+    pub fn get_info_type(&self) -> &::std::option::Option<crate::types::EnvironmentInfoType> {
+        &self.info_type
     }
     /// Consumes the builder and constructs a [`RequestEnvironmentInfoInput`](crate::operation::request_environment_info::RequestEnvironmentInfoInput).
     pub fn build(

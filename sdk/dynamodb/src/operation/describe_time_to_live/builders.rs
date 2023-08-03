@@ -36,6 +36,12 @@ impl DescribeTimeToLiveFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeTimeToLive as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_time_to_live::builders::DescribeTimeToLiveInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +131,9 @@ impl DescribeTimeToLiveFluentBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_table_name(input);
         self
+    }
+    /// <p>The name of the table to be described.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_table_name()
     }
 }

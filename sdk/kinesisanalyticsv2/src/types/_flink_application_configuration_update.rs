@@ -74,6 +74,12 @@ impl FlinkApplicationConfigurationUpdateBuilder {
         self.checkpoint_configuration_update = input;
         self
     }
+    /// <p>Describes updates to an application's checkpointing configuration. Checkpointing is the process of persisting application state for fault tolerance.</p>
+    pub fn get_checkpoint_configuration_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::CheckpointConfigurationUpdate> {
+        &self.checkpoint_configuration_update
+    }
     /// <p>Describes updates to the configuration parameters for Amazon CloudWatch logging for an application.</p>
     pub fn monitoring_configuration_update(
         mut self,
@@ -90,6 +96,12 @@ impl FlinkApplicationConfigurationUpdateBuilder {
         self.monitoring_configuration_update = input;
         self
     }
+    /// <p>Describes updates to the configuration parameters for Amazon CloudWatch logging for an application.</p>
+    pub fn get_monitoring_configuration_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::MonitoringConfigurationUpdate> {
+        &self.monitoring_configuration_update
+    }
     /// <p>Describes updates to the parameters for how an application executes multiple tasks simultaneously.</p>
     pub fn parallelism_configuration_update(
         mut self,
@@ -105,6 +117,12 @@ impl FlinkApplicationConfigurationUpdateBuilder {
     ) -> Self {
         self.parallelism_configuration_update = input;
         self
+    }
+    /// <p>Describes updates to the parameters for how an application executes multiple tasks simultaneously.</p>
+    pub fn get_parallelism_configuration_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::ParallelismConfigurationUpdate> {
+        &self.parallelism_configuration_update
     }
     /// Consumes the builder and constructs a [`FlinkApplicationConfigurationUpdate`](crate::types::FlinkApplicationConfigurationUpdate).
     pub fn build(self) -> crate::types::FlinkApplicationConfigurationUpdate {

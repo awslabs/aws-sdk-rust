@@ -69,6 +69,10 @@ impl AssociateDiscoveredResourceInputBuilder {
         self.progress_update_stream = input;
         self
     }
+    /// <p>The name of the ProgressUpdateStream.</p>
+    pub fn get_progress_update_stream(&self) -> &::std::option::Option<::std::string::String> {
+        &self.progress_update_stream
+    }
     /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
     pub fn migration_task_name(
         mut self,
@@ -85,6 +89,10 @@ impl AssociateDiscoveredResourceInputBuilder {
         self.migration_task_name = input;
         self
     }
+    /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
+    pub fn get_migration_task_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.migration_task_name
+    }
     /// <p>Object representing a Resource.</p>
     pub fn discovered_resource(mut self, input: crate::types::DiscoveredResource) -> Self {
         self.discovered_resource = ::std::option::Option::Some(input);
@@ -98,6 +106,12 @@ impl AssociateDiscoveredResourceInputBuilder {
         self.discovered_resource = input;
         self
     }
+    /// <p>Object representing a Resource.</p>
+    pub fn get_discovered_resource(
+        &self,
+    ) -> &::std::option::Option<crate::types::DiscoveredResource> {
+        &self.discovered_resource
+    }
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -107,6 +121,10 @@ impl AssociateDiscoveredResourceInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`AssociateDiscoveredResourceInput`](crate::operation::associate_discovered_resource::AssociateDiscoveredResourceInput).
     pub fn build(

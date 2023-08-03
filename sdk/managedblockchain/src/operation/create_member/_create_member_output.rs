@@ -46,6 +46,10 @@ impl CreateMemberOutputBuilder {
         self.member_id = input;
         self
     }
+    /// <p>The unique identifier of the member.</p>
+    pub fn get_member_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.member_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -52,6 +52,11 @@ impl KinesisStreamConfigBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFront can use to send real-time log data to your Kinesis data stream.</p>
+    /// <p>For more information the IAM role, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-iam-role">Real-time log configuration IAM role</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream where you are sending real-time log data.</p>
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_arn = ::std::option::Option::Some(input.into());
@@ -61,6 +66,10 @@ impl KinesisStreamConfigBuilder {
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream where you are sending real-time log data.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_arn
     }
     /// Consumes the builder and constructs a [`KinesisStreamConfig`](crate::types::KinesisStreamConfig).
     pub fn build(self) -> crate::types::KinesisStreamConfig {

@@ -47,6 +47,10 @@ impl RegisterDeviceOutputBuilder {
         self.device_id = input;
         self
     }
+    /// <p>The unique ID generated for this device by Cognito.</p>
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

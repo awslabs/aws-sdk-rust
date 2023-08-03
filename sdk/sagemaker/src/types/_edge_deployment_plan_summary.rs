@@ -102,6 +102,10 @@ impl EdgeDeploymentPlanSummaryBuilder {
         self.edge_deployment_plan_arn = input;
         self
     }
+    /// <p>The ARN of the edge deployment plan.</p>
+    pub fn get_edge_deployment_plan_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.edge_deployment_plan_arn
+    }
     /// <p>The name of the edge deployment plan.</p>
     pub fn edge_deployment_plan_name(
         mut self,
@@ -117,6 +121,10 @@ impl EdgeDeploymentPlanSummaryBuilder {
     ) -> Self {
         self.edge_deployment_plan_name = input;
         self
+    }
+    /// <p>The name of the edge deployment plan.</p>
+    pub fn get_edge_deployment_plan_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.edge_deployment_plan_name
     }
     /// <p>The name of the device fleet used for the deployment. </p>
     pub fn device_fleet_name(
@@ -134,6 +142,10 @@ impl EdgeDeploymentPlanSummaryBuilder {
         self.device_fleet_name = input;
         self
     }
+    /// <p>The name of the device fleet used for the deployment. </p>
+    pub fn get_device_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_fleet_name
+    }
     /// <p>The number of edge devices with the successful deployment.</p>
     pub fn edge_deployment_success(mut self, input: i32) -> Self {
         self.edge_deployment_success = ::std::option::Option::Some(input);
@@ -143,6 +155,10 @@ impl EdgeDeploymentPlanSummaryBuilder {
     pub fn set_edge_deployment_success(mut self, input: ::std::option::Option<i32>) -> Self {
         self.edge_deployment_success = input;
         self
+    }
+    /// <p>The number of edge devices with the successful deployment.</p>
+    pub fn get_edge_deployment_success(&self) -> &::std::option::Option<i32> {
+        &self.edge_deployment_success
     }
     /// <p>The number of edge devices yet to pick up the deployment, or in progress.</p>
     pub fn edge_deployment_pending(mut self, input: i32) -> Self {
@@ -154,6 +170,10 @@ impl EdgeDeploymentPlanSummaryBuilder {
         self.edge_deployment_pending = input;
         self
     }
+    /// <p>The number of edge devices yet to pick up the deployment, or in progress.</p>
+    pub fn get_edge_deployment_pending(&self) -> &::std::option::Option<i32> {
+        &self.edge_deployment_pending
+    }
     /// <p>The number of edge devices that failed the deployment.</p>
     pub fn edge_deployment_failed(mut self, input: i32) -> Self {
         self.edge_deployment_failed = ::std::option::Option::Some(input);
@@ -163,6 +183,10 @@ impl EdgeDeploymentPlanSummaryBuilder {
     pub fn set_edge_deployment_failed(mut self, input: ::std::option::Option<i32>) -> Self {
         self.edge_deployment_failed = input;
         self
+    }
+    /// <p>The number of edge devices that failed the deployment.</p>
+    pub fn get_edge_deployment_failed(&self) -> &::std::option::Option<i32> {
+        &self.edge_deployment_failed
     }
     /// <p>The time when the edge deployment plan was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -177,6 +201,10 @@ impl EdgeDeploymentPlanSummaryBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The time when the edge deployment plan was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The time when the edge deployment plan was last updated.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -189,6 +217,10 @@ impl EdgeDeploymentPlanSummaryBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>The time when the edge deployment plan was last updated.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// Consumes the builder and constructs a [`EdgeDeploymentPlanSummary`](crate::types::EdgeDeploymentPlanSummary).
     pub fn build(self) -> crate::types::EdgeDeploymentPlanSummary {

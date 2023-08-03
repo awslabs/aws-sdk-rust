@@ -79,6 +79,10 @@ impl AccountInfoBuilder {
         self.account_name = input;
         self
     }
+    /// <p>The account name that you provided for the Amazon QuickSight subscription in your Amazon Web Services account. You create this name when you sign up for Amazon QuickSight. It's unique over all of Amazon Web Services, and it appears only when users sign in.</p>
+    pub fn get_account_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_name
+    }
     /// <p>The edition of your Amazon QuickSight account.</p>
     pub fn edition(mut self, input: crate::types::Edition) -> Self {
         self.edition = ::std::option::Option::Some(input);
@@ -88,6 +92,10 @@ impl AccountInfoBuilder {
     pub fn set_edition(mut self, input: ::std::option::Option<crate::types::Edition>) -> Self {
         self.edition = input;
         self
+    }
+    /// <p>The edition of your Amazon QuickSight account.</p>
+    pub fn get_edition(&self) -> &::std::option::Option<crate::types::Edition> {
+        &self.edition
     }
     /// <p>The email address that will be used for Amazon QuickSight to send notifications regarding your Amazon Web Services account or Amazon QuickSight subscription.</p>
     pub fn notification_email(
@@ -105,6 +113,10 @@ impl AccountInfoBuilder {
         self.notification_email = input;
         self
     }
+    /// <p>The email address that will be used for Amazon QuickSight to send notifications regarding your Amazon Web Services account or Amazon QuickSight subscription.</p>
+    pub fn get_notification_email(&self) -> &::std::option::Option<::std::string::String> {
+        &self.notification_email
+    }
     /// <p>The way that your Amazon QuickSight account is authenticated.</p>
     pub fn authentication_type(
         mut self,
@@ -121,6 +133,10 @@ impl AccountInfoBuilder {
         self.authentication_type = input;
         self
     }
+    /// <p>The way that your Amazon QuickSight account is authenticated.</p>
+    pub fn get_authentication_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authentication_type
+    }
     /// <p>The status of your account subscription.</p>
     pub fn account_subscription_status(
         mut self,
@@ -136,6 +152,10 @@ impl AccountInfoBuilder {
     ) -> Self {
         self.account_subscription_status = input;
         self
+    }
+    /// <p>The status of your account subscription.</p>
+    pub fn get_account_subscription_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_subscription_status
     }
     /// Consumes the builder and constructs a [`AccountInfo`](crate::types::AccountInfo).
     pub fn build(self) -> crate::types::AccountInfo {

@@ -47,6 +47,10 @@ impl ListContainersInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Only if you used <code>MaxResults</code> in the first command, enter the token (which was included in the previous response) to obtain the next set of containers. This token is included in a response only if there actually are more containers to list.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>Enter the maximum number of containers in the response. Use from 1 to 255 characters. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -56,6 +60,10 @@ impl ListContainersInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>Enter the maximum number of containers in the response. Use from 1 to 255 characters. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListContainersInput`](crate::operation::list_containers::ListContainersInput).
     pub fn build(

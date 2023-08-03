@@ -73,6 +73,12 @@ impl GetResourceLfTagsOutputBuilder {
         self.lf_tag_on_database = input;
         self
     }
+    /// <p>A list of LF-tags applied to a database resource.</p>
+    pub fn get_lf_tag_on_database(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>> {
+        &self.lf_tag_on_database
+    }
     /// Appends an item to `lf_tags_on_table`.
     ///
     /// To override the contents of this collection use [`set_lf_tags_on_table`](Self::set_lf_tags_on_table).
@@ -92,6 +98,12 @@ impl GetResourceLfTagsOutputBuilder {
         self.lf_tags_on_table = input;
         self
     }
+    /// <p>A list of LF-tags applied to a table resource.</p>
+    pub fn get_lf_tags_on_table(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>> {
+        &self.lf_tags_on_table
+    }
     /// Appends an item to `lf_tags_on_columns`.
     ///
     /// To override the contents of this collection use [`set_lf_tags_on_columns`](Self::set_lf_tags_on_columns).
@@ -110,6 +122,12 @@ impl GetResourceLfTagsOutputBuilder {
     ) -> Self {
         self.lf_tags_on_columns = input;
         self
+    }
+    /// <p>A list of LF-tags applied to a column resource.</p>
+    pub fn get_lf_tags_on_columns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnLfTag>> {
+        &self.lf_tags_on_columns
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

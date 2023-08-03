@@ -67,6 +67,10 @@ impl MetricPointBuilder {
         self.start_date = input;
         self
     }
+    /// <p>The start date for the metric point. The starting date for the metric point. The starting time must be formatted as <code>yyyy-mm-ddThh:mm:ss</code>. For example, <code>2022-06-10T12:00:00.000Z</code>.</p>
+    pub fn get_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_date
+    }
     /// <p>The end date for the metric point. The ending time must be formatted as <code>yyyy-mm-ddThh:mm:ss</code>. For example, <code>2022-06-12T12:00:00.000Z</code>.</p>
     pub fn end_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_date = ::std::option::Option::Some(input);
@@ -80,6 +84,10 @@ impl MetricPointBuilder {
         self.end_date = input;
         self
     }
+    /// <p>The end date for the metric point. The ending time must be formatted as <code>yyyy-mm-ddThh:mm:ss</code>. For example, <code>2022-06-12T12:00:00.000Z</code>.</p>
+    pub fn get_end_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_date
+    }
     #[allow(missing_docs)] // documentation missing in model
     pub fn value(mut self, input: f32) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -90,6 +98,10 @@ impl MetricPointBuilder {
         self.value = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_value(&self) -> &::std::option::Option<f32> {
+        &self.value
+    }
     /// <p>The status of the metric point.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -99,6 +111,10 @@ impl MetricPointBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the metric point.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`MetricPoint`](crate::types::MetricPoint).
     pub fn build(self) -> crate::types::MetricPoint {

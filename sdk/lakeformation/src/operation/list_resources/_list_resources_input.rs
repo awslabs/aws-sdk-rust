@@ -66,6 +66,12 @@ impl ListResourcesInputBuilder {
         self.filter_condition_list = input;
         self
     }
+    /// <p>Any applicable row-level and/or column-level filtering conditions for the resources.</p>
+    pub fn get_filter_condition_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterCondition>> {
+        &self.filter_condition_list
+    }
     /// <p>The maximum number of resource results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -76,6 +82,10 @@ impl ListResourcesInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of resource results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>A continuation token, if this is not the first call to retrieve these resources.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -85,6 +95,10 @@ impl ListResourcesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A continuation token, if this is not the first call to retrieve these resources.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListResourcesInput`](crate::operation::list_resources::ListResourcesInput).
     pub fn build(

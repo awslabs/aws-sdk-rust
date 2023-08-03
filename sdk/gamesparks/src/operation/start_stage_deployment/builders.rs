@@ -38,6 +38,12 @@ impl StartStageDeploymentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartStageDeployment as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_stage_deployment::builders::StartStageDeploymentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +134,10 @@ impl StartStageDeploymentFluentBuilder {
         self.inner = self.inner.set_game_name(input);
         self
     }
+    /// <p>The name of the game.</p>
+    pub fn get_game_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_game_name()
+    }
     /// <p>The name of the stage to deploy the snapshot onto.</p>
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stage_name(input.into());
@@ -137,6 +147,10 @@ impl StartStageDeploymentFluentBuilder {
     pub fn set_stage_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stage_name(input);
         self
+    }
+    /// <p>The name of the stage to deploy the snapshot onto.</p>
+    pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stage_name()
     }
     /// <p>The identifier of the snapshot to deploy.</p>
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -148,6 +162,10 @@ impl StartStageDeploymentFluentBuilder {
         self.inner = self.inner.set_snapshot_id(input);
         self
     }
+    /// <p>The identifier of the snapshot to deploy.</p>
+    pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_snapshot_id()
+    }
     /// <p> A client-defined token. With an active client token in the request, this action is idempotent. </p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -157,5 +175,9 @@ impl StartStageDeploymentFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p> A client-defined token. With an active client token in the request, this action is idempotent. </p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

@@ -46,6 +46,10 @@ impl TestCustomDataIdentifierOutputBuilder {
         self.match_count = input;
         self
     }
+    /// <p>The number of occurrences of sample text that matched the criteria specified by the custom data identifier.</p>
+    pub fn get_match_count(&self) -> &::std::option::Option<i32> {
+        &self.match_count
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

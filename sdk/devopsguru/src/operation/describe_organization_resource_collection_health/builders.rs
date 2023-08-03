@@ -36,6 +36,10 @@ impl DescribeOrganizationResourceCollectionHealthFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeOrganizationResourceCollectionHealth as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_organization_resource_collection_health::builders::DescribeOrganizationResourceCollectionHealthInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -112,6 +116,12 @@ impl DescribeOrganizationResourceCollectionHealthFluentBuilder {
         self.inner = self.inner.set_organization_resource_collection_type(input);
         self
     }
+    /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
+    pub fn get_organization_resource_collection_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::OrganizationResourceCollectionType> {
+        self.inner.get_organization_resource_collection_type()
+    }
     /// Appends an item to `AccountIds`.
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
@@ -128,6 +138,12 @@ impl DescribeOrganizationResourceCollectionHealthFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
+    }
+    /// <p>The ID of the Amazon Web Services account.</p>
+    pub fn get_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_account_ids()
     }
     /// Appends an item to `OrganizationalUnitIds`.
     ///
@@ -149,6 +165,12 @@ impl DescribeOrganizationResourceCollectionHealthFluentBuilder {
         self.inner = self.inner.set_organizational_unit_ids(input);
         self
     }
+    /// <p>The ID of the organizational unit.</p>
+    pub fn get_organizational_unit_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_organizational_unit_ids()
+    }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -159,6 +181,10 @@ impl DescribeOrganizationResourceCollectionHealthFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -168,5 +194,9 @@ impl DescribeOrganizationResourceCollectionHealthFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

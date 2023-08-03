@@ -86,6 +86,10 @@ impl LastSyncBuilder {
         self.last_sync_time = input;
         self
     }
+    /// <p>The time of the last attempted sync from the repository to the Service Catalog product. </p>
+    pub fn get_last_sync_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_sync_time
+    }
     /// <p>The current status of the sync. Responses include <code>SUCCEEDED</code> or <code>FAILED</code>. </p>
     pub fn last_sync_status(mut self, input: crate::types::LastSyncStatus) -> Self {
         self.last_sync_status = ::std::option::Option::Some(input);
@@ -98,6 +102,10 @@ impl LastSyncBuilder {
     ) -> Self {
         self.last_sync_status = input;
         self
+    }
+    /// <p>The current status of the sync. Responses include <code>SUCCEEDED</code> or <code>FAILED</code>. </p>
+    pub fn get_last_sync_status(&self) -> &::std::option::Option<crate::types::LastSyncStatus> {
+        &self.last_sync_status
     }
     /// <p>The sync's status message. </p>
     pub fn last_sync_status_message(
@@ -115,6 +123,10 @@ impl LastSyncBuilder {
         self.last_sync_status_message = input;
         self
     }
+    /// <p>The sync's status message. </p>
+    pub fn get_last_sync_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_sync_status_message
+    }
     /// <p>The time of the latest successful sync from the source repo artifact to the Service Catalog product.</p>
     pub fn last_successful_sync_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_successful_sync_time = ::std::option::Option::Some(input);
@@ -127,6 +139,12 @@ impl LastSyncBuilder {
     ) -> Self {
         self.last_successful_sync_time = input;
         self
+    }
+    /// <p>The time of the latest successful sync from the source repo artifact to the Service Catalog product.</p>
+    pub fn get_last_successful_sync_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_successful_sync_time
     }
     /// <p>The ProvisioningArtifactID of the ProvisioningArtifact created from the latest successful sync. </p>
     pub fn last_successful_sync_provisioning_artifact_id(
@@ -144,6 +162,12 @@ impl LastSyncBuilder {
     ) -> Self {
         self.last_successful_sync_provisioning_artifact_id = input;
         self
+    }
+    /// <p>The ProvisioningArtifactID of the ProvisioningArtifact created from the latest successful sync. </p>
+    pub fn get_last_successful_sync_provisioning_artifact_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.last_successful_sync_provisioning_artifact_id
     }
     /// Consumes the builder and constructs a [`LastSync`](crate::types::LastSync).
     pub fn build(self) -> crate::types::LastSync {

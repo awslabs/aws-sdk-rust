@@ -78,6 +78,10 @@ impl RegisterGameServerInputBuilder {
         self.game_server_group_name = input;
         self
     }
+    /// <p>A unique identifier for the game server group where the game server is running.</p>
+    pub fn get_game_server_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.game_server_group_name
+    }
     /// <p>A custom string that uniquely identifies the game server to register. Game server IDs are developer-defined and must be unique across all game server groups in your Amazon Web Services account.</p>
     pub fn game_server_id(
         mut self,
@@ -94,6 +98,10 @@ impl RegisterGameServerInputBuilder {
         self.game_server_id = input;
         self
     }
+    /// <p>A custom string that uniquely identifies the game server to register. Game server IDs are developer-defined and must be unique across all game server groups in your Amazon Web Services account.</p>
+    pub fn get_game_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.game_server_id
+    }
     /// <p>The unique identifier for the instance where the game server is running. This ID is available in the instance metadata. EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -103,6 +111,10 @@ impl RegisterGameServerInputBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
+    }
+    /// <p>The unique identifier for the instance where the game server is running. This ID is available in the instance metadata. EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// <p>Information that is needed to make inbound client connections to the game server. This might include the IP address and port, DNS name, and other information.</p>
     pub fn connection_info(
@@ -120,6 +132,10 @@ impl RegisterGameServerInputBuilder {
         self.connection_info = input;
         self
     }
+    /// <p>Information that is needed to make inbound client connections to the game server. This might include the IP address and port, DNS name, and other information.</p>
+    pub fn get_connection_info(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_info
+    }
     /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers. </p>
     pub fn game_server_data(
         mut self,
@@ -135,6 +151,10 @@ impl RegisterGameServerInputBuilder {
     ) -> Self {
         self.game_server_data = input;
         self
+    }
+    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers. </p>
+    pub fn get_game_server_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.game_server_data
     }
     /// Consumes the builder and constructs a [`RegisterGameServerInput`](crate::operation::register_game_server::RegisterGameServerInput).
     pub fn build(

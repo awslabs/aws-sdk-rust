@@ -54,6 +54,10 @@ impl CmafAdditionalManifestBuilder {
         self.manifest_name_modifier = input;
         self
     }
+    /// Specify a name modifier that the service adds to the name of this manifest to make it different from the file names of the other main manifests in the output group. For example, say that the default main manifest for your HLS group is film-name.m3u8. If you enter "-no-premium" for this setting, then the file name the service generates for this top-level manifest is film-name-no-premium.m3u8. For HLS output groups, specify a manifestNameModifier that is different from the nameModifier of the output. The service uses the output name modifier to create unique names for the individual variant manifests.
+    pub fn get_manifest_name_modifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.manifest_name_modifier
+    }
     /// Appends an item to `selected_outputs`.
     ///
     /// To override the contents of this collection use [`set_selected_outputs`](Self::set_selected_outputs).
@@ -75,6 +79,12 @@ impl CmafAdditionalManifestBuilder {
     ) -> Self {
         self.selected_outputs = input;
         self
+    }
+    /// Specify the outputs that you want this additional top-level manifest to reference.
+    pub fn get_selected_outputs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.selected_outputs
     }
     /// Consumes the builder and constructs a [`CmafAdditionalManifest`](crate::types::CmafAdditionalManifest).
     pub fn build(self) -> crate::types::CmafAdditionalManifest {

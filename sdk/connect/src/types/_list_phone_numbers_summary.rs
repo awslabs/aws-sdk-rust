@@ -89,6 +89,10 @@ impl ListPhoneNumbersSummaryBuilder {
         self.phone_number_id = input;
         self
     }
+    /// <p>A unique identifier for the phone number.</p>
+    pub fn get_phone_number_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.phone_number_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
     pub fn phone_number_arn(
         mut self,
@@ -105,6 +109,10 @@ impl ListPhoneNumbersSummaryBuilder {
         self.phone_number_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
+    pub fn get_phone_number_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.phone_number_arn
+    }
     /// <p>The phone number. Phone numbers are formatted <code>[+] [country code] [subscriber number including area code]</code>.</p>
     pub fn phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number = ::std::option::Option::Some(input.into());
@@ -114,6 +122,10 @@ impl ListPhoneNumbersSummaryBuilder {
     pub fn set_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.phone_number = input;
         self
+    }
+    /// <p>The phone number. Phone numbers are formatted <code>[+] [country code] [subscriber number including area code]</code>.</p>
+    pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.phone_number
     }
     /// <p>The ISO country code.</p>
     pub fn phone_number_country_code(
@@ -131,6 +143,12 @@ impl ListPhoneNumbersSummaryBuilder {
         self.phone_number_country_code = input;
         self
     }
+    /// <p>The ISO country code.</p>
+    pub fn get_phone_number_country_code(
+        &self,
+    ) -> &::std::option::Option<crate::types::PhoneNumberCountryCode> {
+        &self.phone_number_country_code
+    }
     /// <p>The type of phone number.</p>
     pub fn phone_number_type(mut self, input: crate::types::PhoneNumberType) -> Self {
         self.phone_number_type = ::std::option::Option::Some(input);
@@ -144,6 +162,10 @@ impl ListPhoneNumbersSummaryBuilder {
         self.phone_number_type = input;
         self
     }
+    /// <p>The type of phone number.</p>
+    pub fn get_phone_number_type(&self) -> &::std::option::Option<crate::types::PhoneNumberType> {
+        &self.phone_number_type
+    }
     /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are claimed to.</p>
     pub fn target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_arn = ::std::option::Option::Some(input.into());
@@ -153,6 +175,10 @@ impl ListPhoneNumbersSummaryBuilder {
     pub fn set_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are claimed to.</p>
+    pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_arn
     }
     /// Consumes the builder and constructs a [`ListPhoneNumbersSummary`](crate::types::ListPhoneNumbersSummary).
     pub fn build(self) -> crate::types::ListPhoneNumbersSummary {

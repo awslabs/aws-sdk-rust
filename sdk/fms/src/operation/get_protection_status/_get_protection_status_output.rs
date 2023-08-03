@@ -96,6 +96,10 @@ impl GetProtectionStatusOutputBuilder {
         self.admin_account_id = input;
         self
     }
+    /// <p>The ID of the Firewall Manager administrator account for this policy.</p>
+    pub fn get_admin_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.admin_account_id
+    }
     /// <p>The service type that is protected by the policy. Currently, this is always <code>SHIELD_ADVANCED</code>.</p>
     pub fn service_type(mut self, input: crate::types::SecurityServiceType) -> Self {
         self.service_type = ::std::option::Option::Some(input);
@@ -108,6 +112,10 @@ impl GetProtectionStatusOutputBuilder {
     ) -> Self {
         self.service_type = input;
         self
+    }
+    /// <p>The service type that is protected by the policy. Currently, this is always <code>SHIELD_ADVANCED</code>.</p>
+    pub fn get_service_type(&self) -> &::std::option::Option<crate::types::SecurityServiceType> {
+        &self.service_type
     }
     /// <p>Details about the attack, including the following:</p>
     /// <ul>
@@ -135,6 +143,18 @@ impl GetProtectionStatusOutputBuilder {
         self.data = input;
         self
     }
+    /// <p>Details about the attack, including the following:</p>
+    /// <ul>
+    /// <li> <p>Attack type</p> </li>
+    /// <li> <p>Account ID</p> </li>
+    /// <li> <p>ARN of the resource attacked</p> </li>
+    /// <li> <p>Start time of the attack</p> </li>
+    /// <li> <p>End time of the attack (ongoing attacks will not have an end time)</p> </li>
+    /// </ul>
+    /// <p>The details are in JSON format. </p>
+    pub fn get_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data
+    }
     /// <p>If you have more objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more objects, submit another <code>GetProtectionStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
     /// <p>Amazon Web Services SDKs provide auto-pagination that identify <code>NextToken</code> in a response and make subsequent request calls automatically on your behalf. However, this feature is not supported by <code>GetProtectionStatus</code>. You must submit subsequent requests with <code>NextToken</code> using your own processes. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -146,6 +166,11 @@ impl GetProtectionStatusOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If you have more objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more objects, submit another <code>GetProtectionStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
+    /// <p>Amazon Web Services SDKs provide auto-pagination that identify <code>NextToken</code> in a response and make subsequent request calls automatically on your behalf. However, this feature is not supported by <code>GetProtectionStatus</code>. You must submit subsequent requests with <code>NextToken</code> using your own processes. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

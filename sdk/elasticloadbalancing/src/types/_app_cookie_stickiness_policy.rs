@@ -48,6 +48,10 @@ impl AppCookieStickinessPolicyBuilder {
         self.policy_name = input;
         self
     }
+    /// <p>The mnemonic name for the policy being created. The name must be unique within a set of policies for this load balancer.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_name
+    }
     /// <p>The name of the application cookie used for stickiness.</p>
     pub fn cookie_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cookie_name = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl AppCookieStickinessPolicyBuilder {
     pub fn set_cookie_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cookie_name = input;
         self
+    }
+    /// <p>The name of the application cookie used for stickiness.</p>
+    pub fn get_cookie_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cookie_name
     }
     /// Consumes the builder and constructs a [`AppCookieStickinessPolicy`](crate::types::AppCookieStickinessPolicy).
     pub fn build(self) -> crate::types::AppCookieStickinessPolicy {

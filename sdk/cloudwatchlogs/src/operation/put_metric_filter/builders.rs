@@ -42,6 +42,12 @@ impl PutMetricFilterFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutMetricFilter as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_metric_filter::builders::PutMetricFilterInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +144,10 @@ impl PutMetricFilterFluentBuilder {
         self.inner = self.inner.set_log_group_name(input);
         self
     }
+    /// <p>The name of the log group.</p>
+    pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_log_group_name()
+    }
     /// <p>A name for the metric filter.</p>
     pub fn filter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.filter_name(input.into());
@@ -147,6 +157,10 @@ impl PutMetricFilterFluentBuilder {
     pub fn set_filter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_filter_name(input);
         self
+    }
+    /// <p>A name for the metric filter.</p>
+    pub fn get_filter_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_filter_name()
     }
     /// <p>A filter pattern for extracting metric data out of ingested log events.</p>
     pub fn filter_pattern(
@@ -164,6 +178,10 @@ impl PutMetricFilterFluentBuilder {
         self.inner = self.inner.set_filter_pattern(input);
         self
     }
+    /// <p>A filter pattern for extracting metric data out of ingested log events.</p>
+    pub fn get_filter_pattern(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_filter_pattern()
+    }
     /// Appends an item to `metricTransformations`.
     ///
     /// To override the contents of this collection use [`set_metric_transformations`](Self::set_metric_transformations).
@@ -180,5 +198,11 @@ impl PutMetricFilterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_metric_transformations(input);
         self
+    }
+    /// <p>A collection of information that defines how metric data gets emitted.</p>
+    pub fn get_metric_transformations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricTransformation>> {
+        self.inner.get_metric_transformations()
     }
 }

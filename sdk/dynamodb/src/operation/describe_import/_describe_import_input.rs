@@ -39,6 +39,10 @@ impl DescribeImportInputBuilder {
         self.import_arn = input;
         self
     }
+    /// <p> The Amazon Resource Name (ARN) associated with the table you're importing to. </p>
+    pub fn get_import_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.import_arn
+    }
     /// Consumes the builder and constructs a [`DescribeImportInput`](crate::operation::describe_import::DescribeImportInput).
     pub fn build(
         self,

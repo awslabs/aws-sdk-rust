@@ -71,6 +71,10 @@ impl GroupResourcesOutputBuilder {
         self.succeeded = input;
         self
     }
+    /// <p>A list of ARNs of the resources that this operation successfully added to the group.</p>
+    pub fn get_succeeded(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.succeeded
+    }
     /// Appends an item to `failed`.
     ///
     /// To override the contents of this collection use [`set_failed`](Self::set_failed).
@@ -90,6 +94,12 @@ impl GroupResourcesOutputBuilder {
         self.failed = input;
         self
     }
+    /// <p>A list of ARNs of any resources that this operation failed to add to the group.</p>
+    pub fn get_failed(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedResource>> {
+        &self.failed
+    }
     /// Appends an item to `pending`.
     ///
     /// To override the contents of this collection use [`set_pending`](Self::set_pending).
@@ -108,6 +118,12 @@ impl GroupResourcesOutputBuilder {
     ) -> Self {
         self.pending = input;
         self
+    }
+    /// <p>A list of ARNs of any resources that this operation is still in the process adding to the group. These pending additions continue asynchronously. You can check the status of pending additions by using the <code> <code>ListGroupResources</code> </code> operation, and checking the <code>Resources</code> array in the response and the <code>Status</code> field of each object in that array. </p>
+    pub fn get_pending(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PendingResource>> {
+        &self.pending
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

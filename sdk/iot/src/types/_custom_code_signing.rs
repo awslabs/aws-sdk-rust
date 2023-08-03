@@ -69,6 +69,10 @@ impl CustomCodeSigningBuilder {
         self.signature = input;
         self
     }
+    /// <p>The signature for the file.</p>
+    pub fn get_signature(&self) -> &::std::option::Option<crate::types::CodeSigningSignature> {
+        &self.signature
+    }
     /// <p>The certificate chain.</p>
     pub fn certificate_chain(mut self, input: crate::types::CodeSigningCertificateChain) -> Self {
         self.certificate_chain = ::std::option::Option::Some(input);
@@ -81,6 +85,12 @@ impl CustomCodeSigningBuilder {
     ) -> Self {
         self.certificate_chain = input;
         self
+    }
+    /// <p>The certificate chain.</p>
+    pub fn get_certificate_chain(
+        &self,
+    ) -> &::std::option::Option<crate::types::CodeSigningCertificateChain> {
+        &self.certificate_chain
     }
     /// <p>The hash algorithm used to code sign the file. You can use a string as the algorithm name if the target over-the-air (OTA) update devices are able to verify the signature that was generated using the same signature algorithm. For example, FreeRTOS uses <code>SHA256</code> or <code>SHA1</code>, so you can pass either of them based on which was used for generating the signature.</p>
     pub fn hash_algorithm(
@@ -98,6 +108,10 @@ impl CustomCodeSigningBuilder {
         self.hash_algorithm = input;
         self
     }
+    /// <p>The hash algorithm used to code sign the file. You can use a string as the algorithm name if the target over-the-air (OTA) update devices are able to verify the signature that was generated using the same signature algorithm. For example, FreeRTOS uses <code>SHA256</code> or <code>SHA1</code>, so you can pass either of them based on which was used for generating the signature.</p>
+    pub fn get_hash_algorithm(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hash_algorithm
+    }
     /// <p>The signature algorithm used to code sign the file. You can use a string as the algorithm name if the target over-the-air (OTA) update devices are able to verify the signature that was generated using the same signature algorithm. For example, FreeRTOS uses <code>ECDSA</code> or <code>RSA</code>, so you can pass either of them based on which was used for generating the signature.</p>
     pub fn signature_algorithm(
         mut self,
@@ -113,6 +127,10 @@ impl CustomCodeSigningBuilder {
     ) -> Self {
         self.signature_algorithm = input;
         self
+    }
+    /// <p>The signature algorithm used to code sign the file. You can use a string as the algorithm name if the target over-the-air (OTA) update devices are able to verify the signature that was generated using the same signature algorithm. For example, FreeRTOS uses <code>ECDSA</code> or <code>RSA</code>, so you can pass either of them based on which was used for generating the signature.</p>
+    pub fn get_signature_algorithm(&self) -> &::std::option::Option<::std::string::String> {
+        &self.signature_algorithm
     }
     /// Consumes the builder and constructs a [`CustomCodeSigning`](crate::types::CustomCodeSigning).
     pub fn build(self) -> crate::types::CustomCodeSigning {

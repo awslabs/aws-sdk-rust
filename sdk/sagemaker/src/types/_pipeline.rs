@@ -139,6 +139,10 @@ impl PipelineBuilder {
         self.pipeline_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
+    pub fn get_pipeline_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_arn
+    }
     /// <p>The name of the pipeline.</p>
     pub fn pipeline_name(
         mut self,
@@ -154,6 +158,10 @@ impl PipelineBuilder {
     ) -> Self {
         self.pipeline_name = input;
         self
+    }
+    /// <p>The name of the pipeline.</p>
+    pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_name
     }
     /// <p>The display name of the pipeline.</p>
     pub fn pipeline_display_name(
@@ -171,6 +179,10 @@ impl PipelineBuilder {
         self.pipeline_display_name = input;
         self
     }
+    /// <p>The display name of the pipeline.</p>
+    pub fn get_pipeline_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_display_name
+    }
     /// <p>The description of the pipeline.</p>
     pub fn pipeline_description(
         mut self,
@@ -187,6 +199,10 @@ impl PipelineBuilder {
         self.pipeline_description = input;
         self
     }
+    /// <p>The description of the pipeline.</p>
+    pub fn get_pipeline_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_description
+    }
     /// <p>The Amazon Resource Name (ARN) of the role that created the pipeline.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -196,6 +212,10 @@ impl PipelineBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the role that created the pipeline.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The status of the pipeline.</p>
     pub fn pipeline_status(mut self, input: crate::types::PipelineStatus) -> Self {
@@ -210,6 +230,10 @@ impl PipelineBuilder {
         self.pipeline_status = input;
         self
     }
+    /// <p>The status of the pipeline.</p>
+    pub fn get_pipeline_status(&self) -> &::std::option::Option<crate::types::PipelineStatus> {
+        &self.pipeline_status
+    }
     /// <p>The creation time of the pipeline.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -222,6 +246,10 @@ impl PipelineBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The creation time of the pipeline.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The time that the pipeline was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -236,6 +264,10 @@ impl PipelineBuilder {
         self.last_modified_time = input;
         self
     }
+    /// <p>The time that the pipeline was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
     /// <p>The time when the pipeline was last run.</p>
     pub fn last_run_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_run_time = ::std::option::Option::Some(input);
@@ -248,6 +280,10 @@ impl PipelineBuilder {
     ) -> Self {
         self.last_run_time = input;
         self
+    }
+    /// <p>The time when the pipeline was last run.</p>
+    pub fn get_last_run_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_run_time
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn created_by(mut self, input: crate::types::UserContext) -> Self {
@@ -263,6 +299,10 @@ impl PipelineBuilder {
         self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<crate::types::UserContext> {
+        &self.created_by
+    }
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn last_modified_by(mut self, input: crate::types::UserContext) -> Self {
         self.last_modified_by = ::std::option::Option::Some(input);
         self
@@ -274,6 +314,10 @@ impl PipelineBuilder {
     ) -> Self {
         self.last_modified_by = input;
         self
+    }
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    pub fn get_last_modified_by(&self) -> &::std::option::Option<crate::types::UserContext> {
+        &self.last_modified_by
     }
     /// <p>The parallelism configuration applied to the pipeline.</p>
     pub fn parallelism_configuration(
@@ -290,6 +334,12 @@ impl PipelineBuilder {
     ) -> Self {
         self.parallelism_configuration = input;
         self
+    }
+    /// <p>The parallelism configuration applied to the pipeline.</p>
+    pub fn get_parallelism_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ParallelismConfiguration> {
+        &self.parallelism_configuration
     }
     /// Appends an item to `tags`.
     ///
@@ -309,6 +359,10 @@ impl PipelineBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of tags that apply to the pipeline.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`Pipeline`](crate::types::Pipeline).
     pub fn build(self) -> crate::types::Pipeline {

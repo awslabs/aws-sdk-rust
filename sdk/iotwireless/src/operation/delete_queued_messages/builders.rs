@@ -36,6 +36,12 @@ impl DeleteQueuedMessagesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteQueuedMessages as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_queued_messages::builders::DeleteQueuedMessagesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DeleteQueuedMessagesFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The ID of a given wireless device for which downlink messages will be deleted.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>If message ID is <code>"*"</code>, it cleares the entire downlink queue for a given device, specified by the wireless device ID. Otherwise, the downlink message with the specified message ID will be deleted.</p>
     pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.message_id(input.into());
@@ -135,6 +145,10 @@ impl DeleteQueuedMessagesFluentBuilder {
     pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_message_id(input);
         self
+    }
+    /// <p>If message ID is <code>"*"</code>, it cleares the entire downlink queue for a given device, specified by the wireless device ID. Otherwise, the downlink message with the specified message ID will be deleted.</p>
+    pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_message_id()
     }
     /// <p>The wireless device type, which can be either Sidewalk or LoRaWAN.</p>
     pub fn wireless_device_type(mut self, input: crate::types::WirelessDeviceType) -> Self {
@@ -148,5 +162,11 @@ impl DeleteQueuedMessagesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_wireless_device_type(input);
         self
+    }
+    /// <p>The wireless device type, which can be either Sidewalk or LoRaWAN.</p>
+    pub fn get_wireless_device_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::WirelessDeviceType> {
+        self.inner.get_wireless_device_type()
     }
 }

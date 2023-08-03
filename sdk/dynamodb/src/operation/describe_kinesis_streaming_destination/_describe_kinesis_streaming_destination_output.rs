@@ -58,6 +58,10 @@ impl DescribeKinesisStreamingDestinationOutputBuilder {
         self.table_name = input;
         self
     }
+    /// <p>The name of the table being described.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
+    }
     /// Appends an item to `kinesis_data_stream_destinations`.
     ///
     /// To override the contents of this collection use [`set_kinesis_data_stream_destinations`](Self::set_kinesis_data_stream_destinations).
@@ -79,6 +83,12 @@ impl DescribeKinesisStreamingDestinationOutputBuilder {
     ) -> Self {
         self.kinesis_data_stream_destinations = input;
         self
+    }
+    /// <p>The list of replica structures for the table being described.</p>
+    pub fn get_kinesis_data_stream_destinations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KinesisDataStreamDestination>> {
+        &self.kinesis_data_stream_destinations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

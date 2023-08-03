@@ -57,6 +57,10 @@ impl VpcConfigurationBuilder {
         self.subnet_ids = input;
         self
     }
+    /// <p>The array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Subnet.html">Subnet</a> IDs used by the VPC configuration.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
+    }
     /// Appends an item to `security_group_ids`.
     ///
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
@@ -78,6 +82,12 @@ impl VpcConfigurationBuilder {
     ) -> Self {
         self.security_group_ids = input;
         self
+    }
+    /// <p>The array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SecurityGroup.html">SecurityGroup</a> IDs used by the VPC configuration.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
     }
     /// Consumes the builder and constructs a [`VpcConfiguration`](crate::types::VpcConfiguration).
     pub fn build(self) -> crate::types::VpcConfiguration {

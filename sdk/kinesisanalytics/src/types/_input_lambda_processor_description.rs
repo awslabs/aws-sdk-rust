@@ -48,6 +48,10 @@ impl InputLambdaProcessorDescriptionBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The ARN of the <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a> function that is used to preprocess the records in the stream.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// <p>The ARN of the IAM role that is used to access the AWS Lambda function.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl InputLambdaProcessorDescriptionBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The ARN of the IAM role that is used to access the AWS Lambda function.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Consumes the builder and constructs a [`InputLambdaProcessorDescription`](crate::types::InputLambdaProcessorDescription).
     pub fn build(self) -> crate::types::InputLambdaProcessorDescription {

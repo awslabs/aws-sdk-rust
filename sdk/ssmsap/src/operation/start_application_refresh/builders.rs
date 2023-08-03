@@ -37,6 +37,13 @@ impl StartApplicationRefreshFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartApplicationRefresh as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_application_refresh::builders::StartApplicationRefreshInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +139,9 @@ impl StartApplicationRefreshFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
+    }
+    /// <p>The ID of the application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
     }
 }

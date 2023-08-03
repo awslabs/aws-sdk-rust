@@ -47,6 +47,10 @@ impl TestEventPatternOutputBuilder {
         self.result = input;
         self
     }
+    /// <p>Indicates whether the event matches the event pattern.</p>
+    pub fn get_result(&self) -> &::std::option::Option<bool> {
+        &self.result
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

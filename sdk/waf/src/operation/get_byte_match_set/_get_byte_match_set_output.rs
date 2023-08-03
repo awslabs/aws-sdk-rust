@@ -70,6 +70,15 @@ impl GetByteMatchSetOutputBuilder {
         self.byte_match_set = input;
         self
     }
+    /// <p>Information about the <code>ByteMatchSet</code> that you specified in the <code>GetByteMatchSet</code> request. For more information, see the following topics:</p>
+    /// <ul>
+    /// <li> <p> <code>ByteMatchSet</code>: Contains <code>ByteMatchSetId</code>, <code>ByteMatchTuples</code>, and <code>Name</code> </p> </li>
+    /// <li> <p> <code>ByteMatchTuples</code>: Contains an array of <code>ByteMatchTuple</code> objects. Each <code>ByteMatchTuple</code> object contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>, <code>TargetString</code>, and <code>TextTransformation</code> </p> </li>
+    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
+    /// </ul>
+    pub fn get_byte_match_set(&self) -> &::std::option::Option<crate::types::ByteMatchSet> {
+        &self.byte_match_set
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

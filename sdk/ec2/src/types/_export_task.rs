@@ -90,6 +90,10 @@ impl ExportTaskBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the resource being exported.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The ID of the export task.</p>
     pub fn export_task_id(
         mut self,
@@ -106,6 +110,10 @@ impl ExportTaskBuilder {
         self.export_task_id = input;
         self
     }
+    /// <p>The ID of the export task.</p>
+    pub fn get_export_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.export_task_id
+    }
     /// <p>Information about the export task.</p>
     pub fn export_to_s3_task(mut self, input: crate::types::ExportToS3Task) -> Self {
         self.export_to_s3_task = ::std::option::Option::Some(input);
@@ -118,6 +126,10 @@ impl ExportTaskBuilder {
     ) -> Self {
         self.export_to_s3_task = input;
         self
+    }
+    /// <p>Information about the export task.</p>
+    pub fn get_export_to_s3_task(&self) -> &::std::option::Option<crate::types::ExportToS3Task> {
+        &self.export_to_s3_task
     }
     /// <p>Information about the instance to export.</p>
     pub fn instance_export_details(mut self, input: crate::types::InstanceExportDetails) -> Self {
@@ -132,6 +144,12 @@ impl ExportTaskBuilder {
         self.instance_export_details = input;
         self
     }
+    /// <p>Information about the instance to export.</p>
+    pub fn get_instance_export_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceExportDetails> {
+        &self.instance_export_details
+    }
     /// <p>The state of the export task.</p>
     pub fn state(mut self, input: crate::types::ExportTaskState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -144,6 +162,10 @@ impl ExportTaskBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the export task.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ExportTaskState> {
+        &self.state
     }
     /// <p>The status message related to the export task.</p>
     pub fn status_message(
@@ -160,6 +182,10 @@ impl ExportTaskBuilder {
     ) -> Self {
         self.status_message = input;
         self
+    }
+    /// <p>The status message related to the export task.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     /// Appends an item to `tags`.
     ///
@@ -179,6 +205,10 @@ impl ExportTaskBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags for the export task.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`ExportTask`](crate::types::ExportTask).
     pub fn build(self) -> crate::types::ExportTask {

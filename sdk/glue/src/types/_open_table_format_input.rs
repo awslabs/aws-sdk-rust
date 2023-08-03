@@ -43,6 +43,10 @@ impl OpenTableFormatInputBuilder {
         self.iceberg_input = input;
         self
     }
+    /// <p>Specifies an <code>IcebergInput</code> structure that defines an Apache Iceberg metadata table.</p>
+    pub fn get_iceberg_input(&self) -> &::std::option::Option<crate::types::IcebergInput> {
+        &self.iceberg_input
+    }
     /// Consumes the builder and constructs a [`OpenTableFormatInput`](crate::types::OpenTableFormatInput).
     pub fn build(self) -> crate::types::OpenTableFormatInput {
         crate::types::OpenTableFormatInput {

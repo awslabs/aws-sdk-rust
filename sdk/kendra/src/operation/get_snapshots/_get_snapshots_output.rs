@@ -77,6 +77,10 @@ impl GetSnapshotsOutputBuilder {
         self.snap_shot_time_filter = input;
         self
     }
+    /// <p>The Unix timestamp for the beginning and end of the time window for the search metrics data.</p>
+    pub fn get_snap_shot_time_filter(&self) -> &::std::option::Option<crate::types::TimeRange> {
+        &self.snap_shot_time_filter
+    }
     /// Appends an item to `snapshots_data_header`.
     ///
     /// To override the contents of this collection use [`set_snapshots_data_header`](Self::set_snapshots_data_header).
@@ -99,6 +103,12 @@ impl GetSnapshotsOutputBuilder {
         self.snapshots_data_header = input;
         self
     }
+    /// <p>The column headers for the search metrics data.</p>
+    pub fn get_snapshots_data_header(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.snapshots_data_header
+    }
     /// Appends an item to `snapshots_data`.
     ///
     /// To override the contents of this collection use [`set_snapshots_data`](Self::set_snapshots_data).
@@ -118,6 +128,12 @@ impl GetSnapshotsOutputBuilder {
         self.snapshots_data = input;
         self
     }
+    /// <p>The search metrics data. The data returned depends on the metric type you requested.</p>
+    pub fn get_snapshots_data(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>> {
+        &self.snapshots_data
+    }
     /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use in a later request to retrieve the next set of search metrics data.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -127,6 +143,10 @@ impl GetSnapshotsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the response is truncated, Amazon Kendra returns this token, which you can use in a later request to retrieve the next set of search metrics data.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

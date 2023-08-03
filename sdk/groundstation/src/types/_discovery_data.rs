@@ -68,6 +68,12 @@ impl DiscoveryDataBuilder {
         self.public_ip_addresses = input;
         self
     }
+    /// <p>List of public IP addresses to associate with agent.</p>
+    pub fn get_public_ip_addresses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.public_ip_addresses
+    }
     /// Appends an item to `private_ip_addresses`.
     ///
     /// To override the contents of this collection use [`set_private_ip_addresses`](Self::set_private_ip_addresses).
@@ -90,6 +96,12 @@ impl DiscoveryDataBuilder {
         self.private_ip_addresses = input;
         self
     }
+    /// <p>List of private IP addresses to associate with agent.</p>
+    pub fn get_private_ip_addresses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.private_ip_addresses
+    }
     /// Appends an item to `capability_arns`.
     ///
     /// To override the contents of this collection use [`set_capability_arns`](Self::set_capability_arns).
@@ -111,6 +123,12 @@ impl DiscoveryDataBuilder {
     ) -> Self {
         self.capability_arns = input;
         self
+    }
+    /// <p>List of capabilities to associate with agent.</p>
+    pub fn get_capability_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.capability_arns
     }
     /// Consumes the builder and constructs a [`DiscoveryData`](crate::types::DiscoveryData).
     pub fn build(self) -> crate::types::DiscoveryData {

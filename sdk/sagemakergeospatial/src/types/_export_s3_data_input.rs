@@ -48,6 +48,10 @@ impl ExportS3DataInputBuilder {
         self.s3_uri = input;
         self
     }
+    /// <p>The URL to the Amazon S3 data input.</p>
+    pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_uri
+    }
     /// <p>The Key Management Service key ID for server-side encryption.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl ExportS3DataInputBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p>The Key Management Service key ID for server-side encryption.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// Consumes the builder and constructs a [`ExportS3DataInput`](crate::types::ExportS3DataInput).
     pub fn build(self) -> crate::types::ExportS3DataInput {

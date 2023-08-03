@@ -46,6 +46,10 @@ impl CheckCapacityOutputBuilder {
         self.capacity = input;
         self
     }
+    /// <p>The capacity required by the rules and scope.</p>
+    pub fn get_capacity(&self) -> &::std::option::Option<i64> {
+        &self.capacity
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

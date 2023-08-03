@@ -54,6 +54,10 @@ impl AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails
         self.access_point_id = input;
         self
     }
+    /// <p>The Amazon EFS access point identifier to use.</p>
+    pub fn get_access_point_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_point_id
+    }
     /// <p>Whether to use the Amazon ECS task IAM role defined in a task definition when mounting the Amazon EFS file system.</p>
     pub fn iam(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails
     pub fn set_iam(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam = input;
         self
+    }
+    /// <p>Whether to use the Amazon ECS task IAM role defined in a task definition when mounting the Amazon EFS file system.</p>
+    pub fn get_iam(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iam
     }
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails`](crate::types::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails).
     pub fn build(

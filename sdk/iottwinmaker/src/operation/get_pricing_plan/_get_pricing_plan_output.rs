@@ -57,6 +57,10 @@ impl GetPricingPlanOutputBuilder {
         self.current_pricing_plan = input;
         self
     }
+    /// <p>The chosen pricing plan for the current billing cycle.</p>
+    pub fn get_current_pricing_plan(&self) -> &::std::option::Option<crate::types::PricingPlan> {
+        &self.current_pricing_plan
+    }
     /// <p>The pending pricing plan.</p>
     pub fn pending_pricing_plan(mut self, input: crate::types::PricingPlan) -> Self {
         self.pending_pricing_plan = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl GetPricingPlanOutputBuilder {
     ) -> Self {
         self.pending_pricing_plan = input;
         self
+    }
+    /// <p>The pending pricing plan.</p>
+    pub fn get_pending_pricing_plan(&self) -> &::std::option::Option<crate::types::PricingPlan> {
+        &self.pending_pricing_plan
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

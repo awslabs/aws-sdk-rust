@@ -70,6 +70,10 @@ impl DeveloperInfoBuilder {
         self.developer_name = input;
         self
     }
+    /// <p>The name of the developer.</p>
+    pub fn get_developer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.developer_name
+    }
     /// <p>The URL of the privacy policy.</p>
     pub fn privacy_policy(
         mut self,
@@ -86,6 +90,10 @@ impl DeveloperInfoBuilder {
         self.privacy_policy = input;
         self
     }
+    /// <p>The URL of the privacy policy.</p>
+    pub fn get_privacy_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.privacy_policy
+    }
     /// <p>The email of the developer.</p>
     pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email = ::std::option::Option::Some(input.into());
@@ -96,6 +104,10 @@ impl DeveloperInfoBuilder {
         self.email = input;
         self
     }
+    /// <p>The email of the developer.</p>
+    pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email
+    }
     /// <p>The website of the developer.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
@@ -105,6 +117,10 @@ impl DeveloperInfoBuilder {
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
+    }
+    /// <p>The website of the developer.</p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
     }
     /// Consumes the builder and constructs a [`DeveloperInfo`](crate::types::DeveloperInfo).
     pub fn build(self) -> crate::types::DeveloperInfo {

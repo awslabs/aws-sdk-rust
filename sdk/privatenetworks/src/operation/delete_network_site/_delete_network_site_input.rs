@@ -54,6 +54,10 @@ impl DeleteNetworkSiteInputBuilder {
         self.network_site_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the network site.</p>
+    pub fn get_network_site_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_site_arn
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl DeleteNetworkSiteInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`DeleteNetworkSiteInput`](crate::operation::delete_network_site::DeleteNetworkSiteInput).
     pub fn build(

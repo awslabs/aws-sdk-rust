@@ -56,6 +56,10 @@ impl JobStatsBuilder {
         self.number_of_profiles_reviewed = input;
         self
     }
+    /// <p>The number of profiles reviewed.</p>
+    pub fn get_number_of_profiles_reviewed(&self) -> &::std::option::Option<i64> {
+        &self.number_of_profiles_reviewed
+    }
     /// <p>The number of matches found.</p>
     pub fn number_of_matches_found(mut self, input: i64) -> Self {
         self.number_of_matches_found = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl JobStatsBuilder {
         self.number_of_matches_found = input;
         self
     }
+    /// <p>The number of matches found.</p>
+    pub fn get_number_of_matches_found(&self) -> &::std::option::Option<i64> {
+        &self.number_of_matches_found
+    }
     /// <p>The number of merges completed.</p>
     pub fn number_of_merges_done(mut self, input: i64) -> Self {
         self.number_of_merges_done = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl JobStatsBuilder {
     pub fn set_number_of_merges_done(mut self, input: ::std::option::Option<i64>) -> Self {
         self.number_of_merges_done = input;
         self
+    }
+    /// <p>The number of merges completed.</p>
+    pub fn get_number_of_merges_done(&self) -> &::std::option::Option<i64> {
+        &self.number_of_merges_done
     }
     /// Consumes the builder and constructs a [`JobStats`](crate::types::JobStats).
     pub fn build(self) -> crate::types::JobStats {

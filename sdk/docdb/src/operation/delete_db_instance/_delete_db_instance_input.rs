@@ -63,6 +63,14 @@ impl DeleteDbInstanceInputBuilder {
         self.db_instance_identifier = input;
         self
     }
+    /// <p>The instance identifier for the instance to be deleted. This parameter isn't case sensitive.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match the name of an existing instance.</p> </li>
+    /// </ul>
+    pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_instance_identifier
+    }
     /// Consumes the builder and constructs a [`DeleteDbInstanceInput`](crate::operation::delete_db_instance::DeleteDbInstanceInput).
     pub fn build(
         self,

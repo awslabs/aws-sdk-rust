@@ -50,6 +50,12 @@ impl DeployAsApplicationConfigurationUpdateBuilder {
         self.s3_content_location_update = input;
         self
     }
+    /// <p>Updates to the location that holds the data required to specify an Amazon Data Analytics application.</p>
+    pub fn get_s3_content_location_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3ContentBaseLocationUpdate> {
+        &self.s3_content_location_update
+    }
     /// Consumes the builder and constructs a [`DeployAsApplicationConfigurationUpdate`](crate::types::DeployAsApplicationConfigurationUpdate).
     pub fn build(self) -> crate::types::DeployAsApplicationConfigurationUpdate {
         crate::types::DeployAsApplicationConfigurationUpdate {

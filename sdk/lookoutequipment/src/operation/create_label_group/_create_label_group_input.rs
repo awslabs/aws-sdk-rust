@@ -78,6 +78,11 @@ impl CreateLabelGroupInputBuilder {
         self.label_group_name = input;
         self
     }
+    /// <p> Names a group of labels.</p>
+    /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
+    pub fn get_label_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label_group_name
+    }
     /// Appends an item to `fault_codes`.
     ///
     /// To override the contents of this collection use [`set_fault_codes`](Self::set_fault_codes).
@@ -99,6 +104,13 @@ impl CreateLabelGroupInputBuilder {
         self.fault_codes = input;
         self
     }
+    /// <p> The acceptable fault codes (indicating the type of anomaly associated with the label) that can be used with this label group.</p>
+    /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+    pub fn get_fault_codes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.fault_codes
+    }
     /// <p> A unique identifier for the request to create a label group. If you do not set the client request token, Lookout for Equipment generates one. </p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -108,6 +120,10 @@ impl CreateLabelGroupInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p> A unique identifier for the request to create a label group. If you do not set the client request token, Lookout for Equipment generates one. </p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Appends an item to `tags`.
     ///
@@ -129,6 +145,11 @@ impl CreateLabelGroupInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p> Tags that provide metadata about the label group you are creating. </p>
+    /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateLabelGroupInput`](crate::operation::create_label_group::CreateLabelGroupInput).
     pub fn build(

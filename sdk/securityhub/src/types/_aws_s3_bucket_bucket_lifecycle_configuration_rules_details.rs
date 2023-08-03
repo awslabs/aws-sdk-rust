@@ -140,6 +140,10 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesDetailsBuilder {
         self.abort_incomplete_multipart_upload = input;
         self
     }
+    /// <p>How Amazon S3 responds when a multipart upload is incomplete. Specifically, provides a number of days before Amazon S3 cancels the entire upload.</p>
+    pub fn get_abort_incomplete_multipart_upload(&self) -> &::std::option::Option<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails>{
+        &self.abort_incomplete_multipart_upload
+    }
     /// <p>The date when objects are moved or deleted.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn expiration_date(
@@ -158,6 +162,11 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesDetailsBuilder {
         self.expiration_date = input;
         self
     }
+    /// <p>The date when objects are moved or deleted.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_expiration_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expiration_date
+    }
     /// <p>The length in days of the lifetime for objects that are subject to the rule.</p>
     pub fn expiration_in_days(mut self, input: i32) -> Self {
         self.expiration_in_days = ::std::option::Option::Some(input);
@@ -167,6 +176,10 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesDetailsBuilder {
     pub fn set_expiration_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.expiration_in_days = input;
         self
+    }
+    /// <p>The length in days of the lifetime for objects that are subject to the rule.</p>
+    pub fn get_expiration_in_days(&self) -> &::std::option::Option<i32> {
+        &self.expiration_in_days
     }
     /// <p>Whether Amazon S3 removes a delete marker that has no noncurrent versions. If set to <code>true</code>, the delete marker is expired. If set to <code>false</code>, the policy takes no action.</p>
     /// <p>If you provide <code>ExpiredObjectDeleteMarker</code>, you cannot provide <code>ExpirationInDays</code> or <code>ExpirationDate</code>.</p>
@@ -179,6 +192,11 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesDetailsBuilder {
     pub fn set_expired_object_delete_marker(mut self, input: ::std::option::Option<bool>) -> Self {
         self.expired_object_delete_marker = input;
         self
+    }
+    /// <p>Whether Amazon S3 removes a delete marker that has no noncurrent versions. If set to <code>true</code>, the delete marker is expired. If set to <code>false</code>, the policy takes no action.</p>
+    /// <p>If you provide <code>ExpiredObjectDeleteMarker</code>, you cannot provide <code>ExpirationInDays</code> or <code>ExpirationDate</code>.</p>
+    pub fn get_expired_object_delete_marker(&self) -> &::std::option::Option<bool> {
+        &self.expired_object_delete_marker
     }
     /// <p>Identifies the objects that a rule applies to.</p>
     pub fn filter(
@@ -198,6 +216,14 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesDetailsBuilder {
         self.filter = input;
         self
     }
+    /// <p>Identifies the objects that a rule applies to.</p>
+    pub fn get_filter(
+        &self,
+    ) -> &::std::option::Option<
+        crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails,
+    > {
+        &self.filter
+    }
     /// <p>The unique identifier of the rule.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -207,6 +233,10 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesDetailsBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The unique identifier of the rule.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The number of days that an object is noncurrent before Amazon S3 can perform the associated action.</p>
     pub fn noncurrent_version_expiration_in_days(mut self, input: i32) -> Self {
@@ -220,6 +250,10 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesDetailsBuilder {
     ) -> Self {
         self.noncurrent_version_expiration_in_days = input;
         self
+    }
+    /// <p>The number of days that an object is noncurrent before Amazon S3 can perform the associated action.</p>
+    pub fn get_noncurrent_version_expiration_in_days(&self) -> &::std::option::Option<i32> {
+        &self.noncurrent_version_expiration_in_days
     }
     /// Appends an item to `noncurrent_version_transitions`.
     ///
@@ -243,6 +277,10 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesDetailsBuilder {
         self.noncurrent_version_transitions = input;
         self
     }
+    /// <p>Transition rules that describe when noncurrent objects transition to a specified storage class.</p>
+    pub fn get_noncurrent_version_transitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails>>{
+        &self.noncurrent_version_transitions
+    }
     /// <p>A prefix that identifies one or more objects that the rule applies to.</p>
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix = ::std::option::Option::Some(input.into());
@@ -253,6 +291,10 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesDetailsBuilder {
         self.prefix = input;
         self
     }
+    /// <p>A prefix that identifies one or more objects that the rule applies to.</p>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
+    }
     /// <p>The current status of the rule. Indicates whether the rule is currently being applied.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -262,6 +304,10 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesDetailsBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the rule. Indicates whether the rule is currently being applied.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Appends an item to `transitions`.
     ///
@@ -288,6 +334,16 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesDetailsBuilder {
     ) -> Self {
         self.transitions = input;
         self
+    }
+    /// <p>Transition rules that indicate when objects transition to a specified storage class.</p>
+    pub fn get_transitions(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<
+            crate::types::AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails,
+        >,
+    > {
+        &self.transitions
     }
     /// Consumes the builder and constructs a [`AwsS3BucketBucketLifecycleConfigurationRulesDetails`](crate::types::AwsS3BucketBucketLifecycleConfigurationRulesDetails).
     pub fn build(self) -> crate::types::AwsS3BucketBucketLifecycleConfigurationRulesDetails {

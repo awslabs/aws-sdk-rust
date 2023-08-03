@@ -39,6 +39,12 @@ impl RegisterApplicationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RegisterApplication as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::register_application::builders::RegisterApplicationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +141,10 @@ impl RegisterApplicationFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The ID of the application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>The type of the application.</p>
     pub fn application_type(mut self, input: crate::types::ApplicationType) -> Self {
         self.inner = self.inner.application_type(input);
@@ -147,6 +157,10 @@ impl RegisterApplicationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_application_type(input);
         self
+    }
+    /// <p>The type of the application.</p>
+    pub fn get_application_type(&self) -> &::std::option::Option<crate::types::ApplicationType> {
+        self.inner.get_application_type()
     }
     /// Appends an item to `Instances`.
     ///
@@ -165,6 +179,10 @@ impl RegisterApplicationFluentBuilder {
         self.inner = self.inner.set_instances(input);
         self
     }
+    /// <p>The Amazon EC2 instances on which your SAP application is running.</p>
+    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_instances()
+    }
     /// <p>The SAP instance number of the application.</p>
     pub fn sap_instance_number(
         mut self,
@@ -181,6 +199,10 @@ impl RegisterApplicationFluentBuilder {
         self.inner = self.inner.set_sap_instance_number(input);
         self
     }
+    /// <p>The SAP instance number of the application.</p>
+    pub fn get_sap_instance_number(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sap_instance_number()
+    }
     /// <p>The System ID of the application.</p>
     pub fn sid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sid(input.into());
@@ -190,6 +212,10 @@ impl RegisterApplicationFluentBuilder {
     pub fn set_sid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sid(input);
         self
+    }
+    /// <p>The System ID of the application.</p>
+    pub fn get_sid(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sid()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -214,6 +240,14 @@ impl RegisterApplicationFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tags to be attached to the SAP application.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// Appends an item to `Credentials`.
     ///
     /// To override the contents of this collection use [`set_credentials`](Self::set_credentials).
@@ -230,5 +264,11 @@ impl RegisterApplicationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_credentials(input);
         self
+    }
+    /// <p>The credentials of the SAP application.</p>
+    pub fn get_credentials(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>> {
+        self.inner.get_credentials()
     }
 }

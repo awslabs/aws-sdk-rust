@@ -39,6 +39,10 @@ impl DescribeCompanyNetworkConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeCompanyNetworkConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_company_network_configuration::builders::DescribeCompanyNetworkConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -102,5 +106,9 @@ impl DescribeCompanyNetworkConfigurationFluentBuilder {
     pub fn set_fleet_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fleet_arn(input);
         self
+    }
+    /// <p>The ARN of the fleet.</p>
+    pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_fleet_arn()
     }
 }

@@ -72,6 +72,10 @@ impl VirtualNodeDataBuilder {
         self.mesh_name = input;
         self
     }
+    /// <p>The name of the service mesh that the virtual node resides in.</p>
+    pub fn get_mesh_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mesh_name
+    }
     /// <p>The name of the virtual node.</p>
     pub fn virtual_node_name(
         mut self,
@@ -88,6 +92,10 @@ impl VirtualNodeDataBuilder {
         self.virtual_node_name = input;
         self
     }
+    /// <p>The name of the virtual node.</p>
+    pub fn get_virtual_node_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_node_name
+    }
     /// <p>The specifications of the virtual node.</p>
     pub fn spec(mut self, input: crate::types::VirtualNodeSpec) -> Self {
         self.spec = ::std::option::Option::Some(input);
@@ -97,6 +105,10 @@ impl VirtualNodeDataBuilder {
     pub fn set_spec(mut self, input: ::std::option::Option<crate::types::VirtualNodeSpec>) -> Self {
         self.spec = input;
         self
+    }
+    /// <p>The specifications of the virtual node.</p>
+    pub fn get_spec(&self) -> &::std::option::Option<crate::types::VirtualNodeSpec> {
+        &self.spec
     }
     /// <p>The associated metadata for the virtual node.</p>
     pub fn metadata(mut self, input: crate::types::ResourceMetadata) -> Self {
@@ -111,6 +123,10 @@ impl VirtualNodeDataBuilder {
         self.metadata = input;
         self
     }
+    /// <p>The associated metadata for the virtual node.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<crate::types::ResourceMetadata> {
+        &self.metadata
+    }
     /// <p>The current status for the virtual node.</p>
     pub fn status(mut self, input: crate::types::VirtualNodeStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -123,6 +139,10 @@ impl VirtualNodeDataBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status for the virtual node.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::VirtualNodeStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`VirtualNodeData`](crate::types::VirtualNodeData).
     pub fn build(self) -> crate::types::VirtualNodeData {

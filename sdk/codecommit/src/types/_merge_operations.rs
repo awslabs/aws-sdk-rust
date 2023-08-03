@@ -51,6 +51,10 @@ impl MergeOperationsBuilder {
         self.source = input;
         self
     }
+    /// <p>The operation (add, modify, or delete) on a file in the source of a merge or pull request.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::ChangeTypeEnum> {
+        &self.source
+    }
     /// <p>The operation on a file in the destination of a merge or pull request.</p>
     pub fn destination(mut self, input: crate::types::ChangeTypeEnum) -> Self {
         self.destination = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl MergeOperationsBuilder {
     ) -> Self {
         self.destination = input;
         self
+    }
+    /// <p>The operation on a file in the destination of a merge or pull request.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<crate::types::ChangeTypeEnum> {
+        &self.destination
     }
     /// Consumes the builder and constructs a [`MergeOperations`](crate::types::MergeOperations).
     pub fn build(self) -> crate::types::MergeOperations {

@@ -50,6 +50,10 @@ impl WebsocketBuilder {
         self.url = input;
         self
     }
+    /// <p>The URL of the websocket.</p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
+    }
     /// <p>The URL expiration timestamp in ISO date format.</p>
     /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
     pub fn connection_expiry(
@@ -67,6 +71,11 @@ impl WebsocketBuilder {
     ) -> Self {
         self.connection_expiry = input;
         self
+    }
+    /// <p>The URL expiration timestamp in ISO date format.</p>
+    /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
+    pub fn get_connection_expiry(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_expiry
     }
     /// Consumes the builder and constructs a [`Websocket`](crate::types::Websocket).
     pub fn build(self) -> crate::types::Websocket {

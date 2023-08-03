@@ -54,6 +54,10 @@ impl CredentialBuilder {
         self.username = input;
         self
     }
+    /// <p>The RFC2617 compliant user name associated with the SIP credentials, in US-ASCII format.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
+    }
     /// <p>The RFC2617 compliant password associated with the SIP credentials, in US-ASCII format.</p>
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl CredentialBuilder {
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.password = input;
         self
+    }
+    /// <p>The RFC2617 compliant password associated with the SIP credentials, in US-ASCII format.</p>
+    pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.password
     }
     /// Consumes the builder and constructs a [`Credential`](crate::types::Credential).
     pub fn build(self) -> crate::types::Credential {

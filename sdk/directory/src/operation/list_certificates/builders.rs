@@ -36,6 +36,12 @@ impl ListCertificatesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListCertificates as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_certificates::builders::ListCertificatesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl ListCertificatesFluentBuilder {
         self.inner = self.inner.set_directory_id(input);
         self
     }
+    /// <p>The identifier of the directory.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_id()
+    }
     /// <p>A token for requesting another page of certificates if the <code>NextToken</code> response element indicates that more certificates are available. Use the value of the returned <code>NextToken</code> element in your request until the token comes back as <code>null</code>. Pass <code>null</code> if this is the first call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -147,6 +157,10 @@ impl ListCertificatesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A token for requesting another page of certificates if the <code>NextToken</code> response element indicates that more certificates are available. Use the value of the returned <code>NextToken</code> element in your request until the token comes back as <code>null</code>. Pass <code>null</code> if this is the first call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The number of items that should show up on one page</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -156,5 +170,9 @@ impl ListCertificatesFluentBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
+    }
+    /// <p>The number of items that should show up on one page</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
     }
 }

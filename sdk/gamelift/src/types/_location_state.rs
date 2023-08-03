@@ -57,6 +57,10 @@ impl LocationStateBuilder {
         self.location = input;
         self
     }
+    /// <p>The fleet location, expressed as an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
+    }
     /// <p>The life-cycle status of a fleet location. </p>
     pub fn status(mut self, input: crate::types::FleetStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl LocationStateBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::FleetStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The life-cycle status of a fleet location. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::FleetStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`LocationState`](crate::types::LocationState).
     pub fn build(self) -> crate::types::LocationState {

@@ -63,6 +63,10 @@ impl CreateDefaultSubnetInputBuilder {
         self.availability_zone = input;
         self
     }
+    /// <p>The Availability Zone in which to create the default subnet.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl CreateDefaultSubnetInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>Indicates whether to create an IPv6 only subnet. If you already have a default subnet for this Availability Zone, you must delete it before you can create an IPv6 only subnet.</p>
     pub fn ipv6_native(mut self, input: bool) -> Self {
         self.ipv6_native = ::std::option::Option::Some(input);
@@ -82,6 +90,10 @@ impl CreateDefaultSubnetInputBuilder {
     pub fn set_ipv6_native(mut self, input: ::std::option::Option<bool>) -> Self {
         self.ipv6_native = input;
         self
+    }
+    /// <p>Indicates whether to create an IPv6 only subnet. If you already have a default subnet for this Availability Zone, you must delete it before you can create an IPv6 only subnet.</p>
+    pub fn get_ipv6_native(&self) -> &::std::option::Option<bool> {
+        &self.ipv6_native
     }
     /// Consumes the builder and constructs a [`CreateDefaultSubnetInput`](crate::operation::create_default_subnet::CreateDefaultSubnetInput).
     pub fn build(

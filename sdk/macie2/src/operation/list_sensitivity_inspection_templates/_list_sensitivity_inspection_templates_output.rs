@@ -58,6 +58,10 @@ impl ListSensitivityInspectionTemplatesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `sensitivity_inspection_templates`.
     ///
     /// To override the contents of this collection use [`set_sensitivity_inspection_templates`](Self::set_sensitivity_inspection_templates).
@@ -81,6 +85,13 @@ impl ListSensitivityInspectionTemplatesOutputBuilder {
     ) -> Self {
         self.sensitivity_inspection_templates = input;
         self
+    }
+    /// <p>An array that specifies the unique identifier and name of the sensitivity inspection template for the account.</p>
+    pub fn get_sensitivity_inspection_templates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SensitivityInspectionTemplatesEntry>>
+    {
+        &self.sensitivity_inspection_templates
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

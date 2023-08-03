@@ -48,6 +48,10 @@ impl CreatedArtifactBuilder {
         self.name = input;
         self
     }
+    /// <p>An ARN that uniquely identifies the result of a migration task.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A description that can be free-form text to record additional detail about the artifact for clarity or for later reference.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl CreatedArtifactBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description that can be free-form text to record additional detail about the artifact for clarity or for later reference.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`CreatedArtifact`](crate::types::CreatedArtifact).
     pub fn build(self) -> crate::types::CreatedArtifact {

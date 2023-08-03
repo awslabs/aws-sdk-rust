@@ -99,6 +99,10 @@ impl InventoryConfigurationBuilder {
         self.destination = input;
         self
     }
+    /// <p>Contains information about where to publish the inventory results.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<crate::types::InventoryDestination> {
+        &self.destination
+    }
     /// <p>Specifies whether the inventory is enabled or disabled. If set to <code>True</code>, an inventory list is generated. If set to <code>False</code>, no inventory list is generated.</p>
     pub fn is_enabled(mut self, input: bool) -> Self {
         self.is_enabled = ::std::option::Option::Some(input);
@@ -108,6 +112,10 @@ impl InventoryConfigurationBuilder {
     pub fn set_is_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_enabled = input;
         self
+    }
+    /// <p>Specifies whether the inventory is enabled or disabled. If set to <code>True</code>, an inventory list is generated. If set to <code>False</code>, no inventory list is generated.</p>
+    pub fn get_is_enabled(&self) -> &::std::option::Option<bool> {
+        &self.is_enabled
     }
     /// <p>Specifies an inventory filter. The inventory only includes objects that meet the filter's criteria.</p>
     pub fn filter(mut self, input: crate::types::InventoryFilter) -> Self {
@@ -122,6 +130,10 @@ impl InventoryConfigurationBuilder {
         self.filter = input;
         self
     }
+    /// <p>Specifies an inventory filter. The inventory only includes objects that meet the filter's criteria.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::InventoryFilter> {
+        &self.filter
+    }
     /// <p>The ID used to identify the inventory configuration.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -131,6 +143,10 @@ impl InventoryConfigurationBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The ID used to identify the inventory configuration.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>Object versions to include in the inventory list. If set to <code>All</code>, the list includes all the object versions, which adds the version-related fields <code>VersionId</code>, <code>IsLatest</code>, and <code>DeleteMarker</code> to the list. If set to <code>Current</code>, the list does not contain these version-related fields.</p>
     pub fn included_object_versions(
@@ -147,6 +163,12 @@ impl InventoryConfigurationBuilder {
     ) -> Self {
         self.included_object_versions = input;
         self
+    }
+    /// <p>Object versions to include in the inventory list. If set to <code>All</code>, the list includes all the object versions, which adds the version-related fields <code>VersionId</code>, <code>IsLatest</code>, and <code>DeleteMarker</code> to the list. If set to <code>Current</code>, the list does not contain these version-related fields.</p>
+    pub fn get_included_object_versions(
+        &self,
+    ) -> &::std::option::Option<crate::types::InventoryIncludedObjectVersions> {
+        &self.included_object_versions
     }
     /// Appends an item to `optional_fields`.
     ///
@@ -167,6 +189,12 @@ impl InventoryConfigurationBuilder {
         self.optional_fields = input;
         self
     }
+    /// <p>Contains the optional fields that are included in the inventory results.</p>
+    pub fn get_optional_fields(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryOptionalField>> {
+        &self.optional_fields
+    }
     /// <p>Specifies the schedule for generating inventory results.</p>
     pub fn schedule(mut self, input: crate::types::InventorySchedule) -> Self {
         self.schedule = ::std::option::Option::Some(input);
@@ -179,6 +207,10 @@ impl InventoryConfigurationBuilder {
     ) -> Self {
         self.schedule = input;
         self
+    }
+    /// <p>Specifies the schedule for generating inventory results.</p>
+    pub fn get_schedule(&self) -> &::std::option::Option<crate::types::InventorySchedule> {
+        &self.schedule
     }
     /// Consumes the builder and constructs a [`InventoryConfiguration`](crate::types::InventoryConfiguration).
     pub fn build(self) -> crate::types::InventoryConfiguration {

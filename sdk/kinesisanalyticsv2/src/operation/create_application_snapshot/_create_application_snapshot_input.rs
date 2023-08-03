@@ -53,6 +53,10 @@ impl CreateApplicationSnapshotInputBuilder {
         self.application_name = input;
         self
     }
+    /// <p>The name of an existing application</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// <p>An identifier for the application snapshot.</p>
     pub fn snapshot_name(
         mut self,
@@ -68,6 +72,10 @@ impl CreateApplicationSnapshotInputBuilder {
     ) -> Self {
         self.snapshot_name = input;
         self
+    }
+    /// <p>An identifier for the application snapshot.</p>
+    pub fn get_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_name
     }
     /// Consumes the builder and constructs a [`CreateApplicationSnapshotInput`](crate::operation::create_application_snapshot::CreateApplicationSnapshotInput).
     pub fn build(

@@ -37,6 +37,12 @@ impl ListTagsForResourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListTagsForResource as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_tags_for_resource::builders::ListTagsForResourceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +144,14 @@ impl ListTagsForResourceFluentBuilder {
         self.inner = self.inner.set_resource_type(input);
         self
     }
+    /// <p>The type of the resource.</p>
+    /// <ul>
+    /// <li> <p>The resource type for health checks is <code>healthcheck</code>.</p> </li>
+    /// <li> <p>The resource type for hosted zones is <code>hostedzone</code>.</p> </li>
+    /// </ul>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::TagResourceType> {
+        self.inner.get_resource_type()
+    }
     /// <p>The ID of the resource for which you want to retrieve tags.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_id(input.into());
@@ -147,5 +161,9 @@ impl ListTagsForResourceFluentBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_id(input);
         self
+    }
+    /// <p>The ID of the resource for which you want to retrieve tags.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_id()
     }
 }

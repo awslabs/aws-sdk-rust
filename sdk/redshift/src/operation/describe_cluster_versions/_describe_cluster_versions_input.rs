@@ -92,6 +92,11 @@ impl DescribeClusterVersionsInputBuilder {
         self.cluster_version = input;
         self
     }
+    /// <p>The specific cluster version to return.</p>
+    /// <p>Example: <code>1.0</code> </p>
+    pub fn get_cluster_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_version
+    }
     /// <p>The name of a specific cluster parameter group family to return details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -120,6 +125,18 @@ impl DescribeClusterVersionsInputBuilder {
         self.cluster_parameter_group_family = input;
         self
     }
+    /// <p>The name of a specific cluster parameter group family to return details for.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be 1 to 255 alphanumeric characters</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// </ul>
+    pub fn get_cluster_parameter_group_family(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_parameter_group_family
+    }
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
     /// <p>Default: <code>100</code> </p>
     /// <p>Constraints: minimum 20, maximum 100.</p>
@@ -134,6 +151,12 @@ impl DescribeClusterVersionsInputBuilder {
         self.max_records = input;
         self
     }
+    /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
+    /// <p>Default: <code>100</code> </p>
+    /// <p>Constraints: minimum 20, maximum 100.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        &self.max_records
+    }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeClusterVersions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -143,6 +166,10 @@ impl DescribeClusterVersionsInputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeClusterVersions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// Consumes the builder and constructs a [`DescribeClusterVersionsInput`](crate::operation::describe_cluster_versions::DescribeClusterVersionsInput).
     pub fn build(

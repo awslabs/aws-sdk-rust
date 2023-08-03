@@ -39,6 +39,10 @@ impl DescribeVpcClassicLinkDnsSupportFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeVpcClassicLinkDnsSupport as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_vpc_classic_link_dns_support::builders::DescribeVpcClassicLinkDnsSupportInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -109,6 +113,10 @@ impl DescribeVpcClassicLinkDnsSupportFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -118,6 +126,10 @@ impl DescribeVpcClassicLinkDnsSupportFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// Appends an item to `VpcIds`.
     ///
@@ -135,5 +147,9 @@ impl DescribeVpcClassicLinkDnsSupportFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_vpc_ids(input);
         self
+    }
+    /// <p>The IDs of the VPCs.</p>
+    pub fn get_vpc_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_vpc_ids()
     }
 }

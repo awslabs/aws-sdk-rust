@@ -36,6 +36,12 @@ impl GetTemplateStepFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetTemplateStep as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_template_step::builders::GetTemplateStepInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl GetTemplateStepFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The ID of the step.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The ID of the template.</p>
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_id(input.into());
@@ -135,6 +145,10 @@ impl GetTemplateStepFluentBuilder {
     pub fn set_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_id(input);
         self
+    }
+    /// <p>The ID of the template.</p>
+    pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_id()
     }
     /// <p>The ID of the step group.</p>
     pub fn step_group_id(
@@ -151,5 +165,9 @@ impl GetTemplateStepFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_step_group_id(input);
         self
+    }
+    /// <p>The ID of the step group.</p>
+    pub fn get_step_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_step_group_id()
     }
 }

@@ -56,6 +56,10 @@ impl SetStackPolicyInputBuilder {
         self.stack_name = input;
         self
     }
+    /// <p>The name or unique stack ID that you want to associate a policy with.</p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_name
+    }
     /// <p>Structure containing the stack policy body. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent updates to stack resources</a> in the CloudFormation User Guide. You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.</p>
     pub fn stack_policy_body(
         mut self,
@@ -72,6 +76,10 @@ impl SetStackPolicyInputBuilder {
         self.stack_policy_body = input;
         self
     }
+    /// <p>Structure containing the stack policy body. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent updates to stack resources</a> in the CloudFormation User Guide. You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.</p>
+    pub fn get_stack_policy_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_policy_body
+    }
     /// <p>Location of a file containing the stack policy. The URL must point to a policy (maximum size: 16 KB) located in an Amazon S3 bucket in the same Amazon Web Services Region as the stack. You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.</p>
     pub fn stack_policy_url(
         mut self,
@@ -87,6 +95,10 @@ impl SetStackPolicyInputBuilder {
     ) -> Self {
         self.stack_policy_url = input;
         self
+    }
+    /// <p>Location of a file containing the stack policy. The URL must point to a policy (maximum size: 16 KB) located in an Amazon S3 bucket in the same Amazon Web Services Region as the stack. You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.</p>
+    pub fn get_stack_policy_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_policy_url
     }
     /// Consumes the builder and constructs a [`SetStackPolicyInput`](crate::operation::set_stack_policy::SetStackPolicyInput).
     pub fn build(

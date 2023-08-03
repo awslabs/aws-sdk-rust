@@ -36,6 +36,10 @@ impl GetJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetJob as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_job::builders::GetJobInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -117,5 +121,9 @@ impl GetJobFluentBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_arn(input);
         self
+    }
+    /// <p>The job's ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
     }
 }

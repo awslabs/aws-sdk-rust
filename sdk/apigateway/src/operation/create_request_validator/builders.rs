@@ -36,6 +36,13 @@ impl CreateRequestValidatorFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateRequestValidator as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_request_validator::builders::CreateRequestValidatorInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl CreateRequestValidatorFluentBuilder {
         self.inner = self.inner.set_rest_api_id(input);
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rest_api_id()
+    }
     /// <p>The name of the to-be-created RequestValidator.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -135,6 +146,10 @@ impl CreateRequestValidatorFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the to-be-created RequestValidator.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>A Boolean flag to indicate whether to validate request body according to the configured model schema for the method (<code>true</code>) or not (<code>false</code>).</p>
     pub fn validate_request_body(mut self, input: bool) -> Self {
@@ -146,6 +161,10 @@ impl CreateRequestValidatorFluentBuilder {
         self.inner = self.inner.set_validate_request_body(input);
         self
     }
+    /// <p>A Boolean flag to indicate whether to validate request body according to the configured model schema for the method (<code>true</code>) or not (<code>false</code>).</p>
+    pub fn get_validate_request_body(&self) -> &::std::option::Option<bool> {
+        self.inner.get_validate_request_body()
+    }
     /// <p>A Boolean flag to indicate whether to validate request parameters, <code>true</code>, or not <code>false</code>.</p>
     pub fn validate_request_parameters(mut self, input: bool) -> Self {
         self.inner = self.inner.validate_request_parameters(input);
@@ -155,5 +174,9 @@ impl CreateRequestValidatorFluentBuilder {
     pub fn set_validate_request_parameters(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_validate_request_parameters(input);
         self
+    }
+    /// <p>A Boolean flag to indicate whether to validate request parameters, <code>true</code>, or not <code>false</code>.</p>
+    pub fn get_validate_request_parameters(&self) -> &::std::option::Option<bool> {
+        self.inner.get_validate_request_parameters()
     }
 }

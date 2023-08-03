@@ -61,6 +61,10 @@ impl ListGatewaysInputBuilder {
         self.gateway_group_arn = input;
         self
     }
+    /// <p>The gateway group ARN for which to list gateways.</p>
+    pub fn get_gateway_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_group_arn
+    }
     /// <p>The token used to paginate though multiple pages of gateway summaries.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl ListGatewaysInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token used to paginate though multiple pages of gateway summaries.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of gateway summaries to return. The default is 50.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -80,6 +88,10 @@ impl ListGatewaysInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of gateway summaries to return. The default is 50.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListGatewaysInput`](crate::operation::list_gateways::ListGatewaysInput).
     pub fn build(

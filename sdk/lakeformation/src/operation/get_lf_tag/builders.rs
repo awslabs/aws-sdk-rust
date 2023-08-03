@@ -36,6 +36,10 @@ impl GetLFTagFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetLFTag as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_lf_tag::builders::GetLfTagInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl GetLFTagFluentBuilder {
         self.inner = self.inner.set_catalog_id(input);
         self
     }
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_catalog_id()
+    }
     /// <p>The key-name for the LF-tag.</p>
     pub fn tag_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tag_key(input.into());
@@ -127,5 +135,9 @@ impl GetLFTagFluentBuilder {
     pub fn set_tag_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_tag_key(input);
         self
+    }
+    /// <p>The key-name for the LF-tag.</p>
+    pub fn get_tag_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_tag_key()
     }
 }

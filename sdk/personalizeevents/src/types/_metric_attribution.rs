@@ -46,6 +46,10 @@ impl MetricAttributionBuilder {
         self.event_attribution_source = input;
         self
     }
+    /// <p>The source of the event, such as a third party.</p>
+    pub fn get_event_attribution_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_attribution_source
+    }
     /// Consumes the builder and constructs a [`MetricAttribution`](crate::types::MetricAttribution).
     pub fn build(self) -> crate::types::MetricAttribution {
         crate::types::MetricAttribution {

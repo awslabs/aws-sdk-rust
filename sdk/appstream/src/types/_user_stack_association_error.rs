@@ -63,6 +63,12 @@ impl UserStackAssociationErrorBuilder {
         self.user_stack_association = input;
         self
     }
+    /// <p>Information about the user and associated stack.</p>
+    pub fn get_user_stack_association(
+        &self,
+    ) -> &::std::option::Option<crate::types::UserStackAssociation> {
+        &self.user_stack_association
+    }
     /// <p>The error code for the error that is returned when a user can’t be associated with or disassociated from a stack.</p>
     pub fn error_code(mut self, input: crate::types::UserStackAssociationErrorCode) -> Self {
         self.error_code = ::std::option::Option::Some(input);
@@ -75,6 +81,12 @@ impl UserStackAssociationErrorBuilder {
     ) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>The error code for the error that is returned when a user can’t be associated with or disassociated from a stack.</p>
+    pub fn get_error_code(
+        &self,
+    ) -> &::std::option::Option<crate::types::UserStackAssociationErrorCode> {
+        &self.error_code
     }
     /// <p>The error message for the error that is returned when a user can’t be associated with or disassociated from a stack.</p>
     pub fn error_message(
@@ -91,6 +103,10 @@ impl UserStackAssociationErrorBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>The error message for the error that is returned when a user can’t be associated with or disassociated from a stack.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`UserStackAssociationError`](crate::types::UserStackAssociationError).
     pub fn build(self) -> crate::types::UserStackAssociationError {

@@ -37,6 +37,12 @@ impl UpdateProfileFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateProfile as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_profile::builders::UpdateProfileInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +125,10 @@ impl UpdateProfileFluentBuilder {
         self.inner = self.inner.set_profile_id(input);
         self
     }
+    /// <p>The unique identifier of the profile.</p>
+    pub fn get_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_profile_id()
+    }
     /// <p>The name of the profile.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -128,6 +138,10 @@ impl UpdateProfileFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the profile.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>A session policy that applies to the trust boundary of the vended session credentials. </p>
     pub fn session_policy(
@@ -145,6 +159,10 @@ impl UpdateProfileFluentBuilder {
         self.inner = self.inner.set_session_policy(input);
         self
     }
+    /// <p>A session policy that applies to the trust boundary of the vended session credentials. </p>
+    pub fn get_session_policy(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_session_policy()
+    }
     /// Appends an item to `roleArns`.
     ///
     /// To override the contents of this collection use [`set_role_arns`](Self::set_role_arns).
@@ -161,6 +179,10 @@ impl UpdateProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_role_arns(input);
         self
+    }
+    /// <p>A list of IAM roles that this profile can assume in a temporary credential request.</p>
+    pub fn get_role_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_role_arns()
     }
     /// Appends an item to `managedPolicyArns`.
     ///
@@ -182,6 +204,12 @@ impl UpdateProfileFluentBuilder {
         self.inner = self.inner.set_managed_policy_arns(input);
         self
     }
+    /// <p>A list of managed policy ARNs that apply to the vended session credentials. </p>
+    pub fn get_managed_policy_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_managed_policy_arns()
+    }
     /// <p> The number of seconds the vended session credentials are valid for. </p>
     pub fn duration_seconds(mut self, input: i32) -> Self {
         self.inner = self.inner.duration_seconds(input);
@@ -191,5 +219,9 @@ impl UpdateProfileFluentBuilder {
     pub fn set_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_duration_seconds(input);
         self
+    }
+    /// <p> The number of seconds the vended session credentials are valid for. </p>
+    pub fn get_duration_seconds(&self) -> &::std::option::Option<i32> {
+        self.inner.get_duration_seconds()
     }
 }

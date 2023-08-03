@@ -110,6 +110,10 @@ impl CreateChannelOutputBuilder {
         self.arn = input;
         self
     }
+    /// The Amazon Resource Name (ARN) assigned to the Channel.
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// The date and time the Channel was created.
     pub fn created_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_at = ::std::option::Option::Some(input.into());
@@ -120,6 +124,10 @@ impl CreateChannelOutputBuilder {
         self.created_at = input;
         self
     }
+    /// The date and time the Channel was created.
+    pub fn get_created_at(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_at
+    }
     /// A short text description of the Channel.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -129,6 +137,10 @@ impl CreateChannelOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// A short text description of the Channel.
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Configure egress access logging.
     pub fn egress_access_logs(mut self, input: crate::types::EgressAccessLogs) -> Self {
@@ -143,6 +155,10 @@ impl CreateChannelOutputBuilder {
         self.egress_access_logs = input;
         self
     }
+    /// Configure egress access logging.
+    pub fn get_egress_access_logs(&self) -> &::std::option::Option<crate::types::EgressAccessLogs> {
+        &self.egress_access_logs
+    }
     /// An HTTP Live Streaming (HLS) ingest resource configuration.
     pub fn hls_ingest(mut self, input: crate::types::HlsIngest) -> Self {
         self.hls_ingest = ::std::option::Option::Some(input);
@@ -153,6 +169,10 @@ impl CreateChannelOutputBuilder {
         self.hls_ingest = input;
         self
     }
+    /// An HTTP Live Streaming (HLS) ingest resource configuration.
+    pub fn get_hls_ingest(&self) -> &::std::option::Option<crate::types::HlsIngest> {
+        &self.hls_ingest
+    }
     /// The ID of the Channel.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -162,6 +182,10 @@ impl CreateChannelOutputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// The ID of the Channel.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Configure ingress access logging.
     pub fn ingress_access_logs(mut self, input: crate::types::IngressAccessLogs) -> Self {
@@ -175,6 +199,12 @@ impl CreateChannelOutputBuilder {
     ) -> Self {
         self.ingress_access_logs = input;
         self
+    }
+    /// Configure ingress access logging.
+    pub fn get_ingress_access_logs(
+        &self,
+    ) -> &::std::option::Option<crate::types::IngressAccessLogs> {
+        &self.ingress_access_logs
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -200,6 +230,14 @@ impl CreateChannelOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// A collection of tags associated with a resource
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

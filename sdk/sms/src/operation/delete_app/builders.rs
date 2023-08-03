@@ -36,6 +36,10 @@ impl DeleteAppFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteApp as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_app::builders::DeleteAppInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl DeleteAppFluentBuilder {
         self.inner = self.inner.set_app_id(input);
         self
     }
+    /// <p>The ID of the application.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_id()
+    }
     /// <p>Indicates whether to stop all replication jobs corresponding to the servers in the application while deleting the application.</p>
     pub fn force_stop_app_replication(mut self, input: bool) -> Self {
         self.inner = self.inner.force_stop_app_replication(input);
@@ -128,6 +136,10 @@ impl DeleteAppFluentBuilder {
         self.inner = self.inner.set_force_stop_app_replication(input);
         self
     }
+    /// <p>Indicates whether to stop all replication jobs corresponding to the servers in the application while deleting the application.</p>
+    pub fn get_force_stop_app_replication(&self) -> &::std::option::Option<bool> {
+        self.inner.get_force_stop_app_replication()
+    }
     /// <p>Indicates whether to terminate the stack corresponding to the application while deleting the application.</p>
     pub fn force_terminate_app(mut self, input: bool) -> Self {
         self.inner = self.inner.force_terminate_app(input);
@@ -137,5 +149,9 @@ impl DeleteAppFluentBuilder {
     pub fn set_force_terminate_app(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force_terminate_app(input);
         self
+    }
+    /// <p>Indicates whether to terminate the stack corresponding to the application while deleting the application.</p>
+    pub fn get_force_terminate_app(&self) -> &::std::option::Option<bool> {
+        self.inner.get_force_terminate_app()
     }
 }

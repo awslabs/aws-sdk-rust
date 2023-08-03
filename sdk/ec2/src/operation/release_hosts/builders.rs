@@ -38,6 +38,10 @@ impl ReleaseHostsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ReleaseHosts as a reference.
+    pub fn as_input(&self) -> &crate::operation::release_hosts::builders::ReleaseHostsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,5 +130,9 @@ impl ReleaseHostsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_host_ids(input);
         self
+    }
+    /// <p>The IDs of the Dedicated Hosts to release.</p>
+    pub fn get_host_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_host_ids()
     }
 }

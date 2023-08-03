@@ -56,6 +56,12 @@ impl DeleteInstanceEventWindowOutputBuilder {
         self.instance_event_window_state = input;
         self
     }
+    /// <p>The state of the event window.</p>
+    pub fn get_instance_event_window_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceEventWindowStateChange> {
+        &self.instance_event_window_state
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

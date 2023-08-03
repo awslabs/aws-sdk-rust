@@ -61,6 +61,11 @@ impl ListKeysInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>An optional limit for the number of resources returned in a single call. </p>
+    /// <p>Default value: <code>100</code> </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
     /// <p>Default value: <code>null</code> </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -73,6 +78,11 @@ impl ListKeysInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
+    /// <p>Default value: <code>null</code> </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>Optionally filter the list to only <code>Active</code> or <code>Expired</code> API keys.</p>
     pub fn filter(mut self, input: crate::types::ApiKeyFilter) -> Self {
         self.filter = ::std::option::Option::Some(input);
@@ -82,6 +92,10 @@ impl ListKeysInputBuilder {
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ApiKeyFilter>) -> Self {
         self.filter = input;
         self
+    }
+    /// <p>Optionally filter the list to only <code>Active</code> or <code>Expired</code> API keys.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::ApiKeyFilter> {
+        &self.filter
     }
     /// Consumes the builder and constructs a [`ListKeysInput`](crate::operation::list_keys::ListKeysInput).
     pub fn build(

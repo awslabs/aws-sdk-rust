@@ -73,6 +73,14 @@ impl MessageTagBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the tag. The name must:</p>
+    /// <ul>
+    /// <li> <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+    /// <li> <p>Contain less than 256 characters.</p> </li>
+    /// </ul>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The value of the tag. The value must:</p>
     /// <ul>
     /// <li> <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
@@ -90,6 +98,14 @@ impl MessageTagBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value of the tag. The value must:</p>
+    /// <ul>
+    /// <li> <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+    /// <li> <p>Contain less than 256 characters.</p> </li>
+    /// </ul>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`MessageTag`](crate::types::MessageTag).
     pub fn build(self) -> crate::types::MessageTag {

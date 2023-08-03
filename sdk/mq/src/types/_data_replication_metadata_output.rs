@@ -58,6 +58,12 @@ impl DataReplicationMetadataOutputBuilder {
         self.data_replication_counterpart = input;
         self
     }
+    /// <p>Describes the replica/primary broker. Only returned if this broker is currently set as a primary or replica in the broker's dataReplicationRole property.</p>
+    pub fn get_data_replication_counterpart(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataReplicationCounterpart> {
+        &self.data_replication_counterpart
+    }
     /// <p>Defines the role of this broker in a data replication pair. When a replica broker is promoted to primary, this role is interchanged.</p>
     pub fn data_replication_role(
         mut self,
@@ -73,6 +79,10 @@ impl DataReplicationMetadataOutputBuilder {
     ) -> Self {
         self.data_replication_role = input;
         self
+    }
+    /// <p>Defines the role of this broker in a data replication pair. When a replica broker is promoted to primary, this role is interchanged.</p>
+    pub fn get_data_replication_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_replication_role
     }
     /// Consumes the builder and constructs a [`DataReplicationMetadataOutput`](crate::types::DataReplicationMetadataOutput).
     pub fn build(self) -> crate::types::DataReplicationMetadataOutput {

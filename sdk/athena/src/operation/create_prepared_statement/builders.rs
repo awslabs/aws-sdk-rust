@@ -37,6 +37,13 @@ impl CreatePreparedStatementFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreatePreparedStatement as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_prepared_statement::builders::CreatePreparedStatementInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl CreatePreparedStatementFluentBuilder {
         self.inner = self.inner.set_statement_name(input);
         self
     }
+    /// <p>The name of the prepared statement.</p>
+    pub fn get_statement_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_statement_name()
+    }
     /// <p>The name of the workgroup to which the prepared statement belongs.</p>
     pub fn work_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.work_group(input.into());
@@ -142,6 +153,10 @@ impl CreatePreparedStatementFluentBuilder {
     pub fn set_work_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_work_group(input);
         self
+    }
+    /// <p>The name of the workgroup to which the prepared statement belongs.</p>
+    pub fn get_work_group(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_work_group()
     }
     /// <p>The query string for the prepared statement.</p>
     pub fn query_statement(
@@ -159,6 +174,10 @@ impl CreatePreparedStatementFluentBuilder {
         self.inner = self.inner.set_query_statement(input);
         self
     }
+    /// <p>The query string for the prepared statement.</p>
+    pub fn get_query_statement(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_query_statement()
+    }
     /// <p>The description of the prepared statement.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -168,5 +187,9 @@ impl CreatePreparedStatementFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the prepared statement.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
 }

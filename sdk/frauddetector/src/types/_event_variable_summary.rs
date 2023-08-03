@@ -63,6 +63,10 @@ impl EventVariableSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p> The event variable name. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p> The value of the event variable. </p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl EventVariableSummaryBuilder {
         self.value = input;
         self
     }
+    /// <p> The value of the event variable. </p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// <p> The event variable source. </p>
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl EventVariableSummaryBuilder {
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source = input;
         self
+    }
+    /// <p> The event variable source. </p>
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source
     }
     /// Consumes the builder and constructs a [`EventVariableSummary`](crate::types::EventVariableSummary).
     pub fn build(self) -> crate::types::EventVariableSummary {

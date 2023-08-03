@@ -110,6 +110,12 @@ impl ImportClientBrandingOutputBuilder {
         self.device_type_windows = input;
         self
     }
+    /// <p>The branding information configured for Windows devices.</p>
+    pub fn get_device_type_windows(
+        &self,
+    ) -> &::std::option::Option<crate::types::DefaultClientBrandingAttributes> {
+        &self.device_type_windows
+    }
     /// <p>The branding information configured for macOS devices.</p>
     pub fn device_type_osx(mut self, input: crate::types::DefaultClientBrandingAttributes) -> Self {
         self.device_type_osx = ::std::option::Option::Some(input);
@@ -122,6 +128,12 @@ impl ImportClientBrandingOutputBuilder {
     ) -> Self {
         self.device_type_osx = input;
         self
+    }
+    /// <p>The branding information configured for macOS devices.</p>
+    pub fn get_device_type_osx(
+        &self,
+    ) -> &::std::option::Option<crate::types::DefaultClientBrandingAttributes> {
+        &self.device_type_osx
     }
     /// <p>The branding information configured for Android devices.</p>
     pub fn device_type_android(
@@ -139,6 +151,12 @@ impl ImportClientBrandingOutputBuilder {
         self.device_type_android = input;
         self
     }
+    /// <p>The branding information configured for Android devices.</p>
+    pub fn get_device_type_android(
+        &self,
+    ) -> &::std::option::Option<crate::types::DefaultClientBrandingAttributes> {
+        &self.device_type_android
+    }
     /// <p>The branding information configured for iOS devices.</p>
     pub fn device_type_ios(mut self, input: crate::types::IosClientBrandingAttributes) -> Self {
         self.device_type_ios = ::std::option::Option::Some(input);
@@ -151,6 +169,12 @@ impl ImportClientBrandingOutputBuilder {
     ) -> Self {
         self.device_type_ios = input;
         self
+    }
+    /// <p>The branding information configured for iOS devices.</p>
+    pub fn get_device_type_ios(
+        &self,
+    ) -> &::std::option::Option<crate::types::IosClientBrandingAttributes> {
+        &self.device_type_ios
     }
     /// <p>The branding information configured for Linux devices.</p>
     pub fn device_type_linux(
@@ -168,6 +192,12 @@ impl ImportClientBrandingOutputBuilder {
         self.device_type_linux = input;
         self
     }
+    /// <p>The branding information configured for Linux devices.</p>
+    pub fn get_device_type_linux(
+        &self,
+    ) -> &::std::option::Option<crate::types::DefaultClientBrandingAttributes> {
+        &self.device_type_linux
+    }
     /// <p>The branding information configured for web access.</p>
     pub fn device_type_web(mut self, input: crate::types::DefaultClientBrandingAttributes) -> Self {
         self.device_type_web = ::std::option::Option::Some(input);
@@ -180,6 +210,12 @@ impl ImportClientBrandingOutputBuilder {
     ) -> Self {
         self.device_type_web = input;
         self
+    }
+    /// <p>The branding information configured for web access.</p>
+    pub fn get_device_type_web(
+        &self,
+    ) -> &::std::option::Option<crate::types::DefaultClientBrandingAttributes> {
+        &self.device_type_web
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

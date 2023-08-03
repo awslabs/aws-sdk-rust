@@ -62,6 +62,10 @@ impl GetViewOutputBuilder {
         self.view = input;
         self
     }
+    /// <p>A structure that contains the details for the requested view.</p>
+    pub fn get_view(&self) -> &::std::option::Option<crate::types::View> {
+        &self.view
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -86,6 +90,14 @@ impl GetViewOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Tag key and value pairs that are attached to the view.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

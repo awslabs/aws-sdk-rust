@@ -64,6 +64,10 @@ impl RelationalDatabaseEventBuilder {
         self.resource = input;
         self
     }
+    /// <p>The database that the database event relates to.</p>
+    pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource
+    }
     /// <p>The timestamp when the database event was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -77,6 +81,10 @@ impl RelationalDatabaseEventBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The timestamp when the database event was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The message of the database event.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -86,6 +94,10 @@ impl RelationalDatabaseEventBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>The message of the database event.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Appends an item to `event_categories`.
     ///
@@ -108,6 +120,12 @@ impl RelationalDatabaseEventBuilder {
     ) -> Self {
         self.event_categories = input;
         self
+    }
+    /// <p>The category that the database event belongs to.</p>
+    pub fn get_event_categories(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.event_categories
     }
     /// Consumes the builder and constructs a [`RelationalDatabaseEvent`](crate::types::RelationalDatabaseEvent).
     pub fn build(self) -> crate::types::RelationalDatabaseEvent {

@@ -55,6 +55,10 @@ impl ListAccessPointsForObjectLambdaInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>If the list has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl ListAccessPointsForObjectLambdaInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If the list has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of access points that you want to include in the list. The response may contain fewer access points but will never contain more. If there are more than this number of access points, then the response will include a continuation token in the <code>NextToken</code> field that you can use to retrieve the next page of access points.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -74,6 +82,10 @@ impl ListAccessPointsForObjectLambdaInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of access points that you want to include in the list. The response may contain fewer access points but will never contain more. If there are more than this number of access points, then the response will include a continuation token in the <code>NextToken</code> field that you can use to retrieve the next page of access points.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListAccessPointsForObjectLambdaInput`](crate::operation::list_access_points_for_object_lambda::ListAccessPointsForObjectLambdaInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_access_points_for_object_lambda::ListAccessPointsForObjectLambdaInput, ::aws_smithy_http::operation::error::BuildError>{

@@ -56,6 +56,10 @@ impl BotAliasHistoryEventBuilder {
         self.bot_version = input;
         self
     }
+    /// <p>The version of the bot that was used in the event. </p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_version
+    }
     /// <p>The date and time that the event started.</p>
     pub fn start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_date = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl BotAliasHistoryEventBuilder {
         self.start_date = input;
         self
     }
+    /// <p>The date and time that the event started.</p>
+    pub fn get_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_date
+    }
     /// <p>The date and time that the event ended.</p>
     pub fn end_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_date = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl BotAliasHistoryEventBuilder {
     ) -> Self {
         self.end_date = input;
         self
+    }
+    /// <p>The date and time that the event ended.</p>
+    pub fn get_end_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_date
     }
     /// Consumes the builder and constructs a [`BotAliasHistoryEvent`](crate::types::BotAliasHistoryEvent).
     pub fn build(self) -> crate::types::BotAliasHistoryEvent {

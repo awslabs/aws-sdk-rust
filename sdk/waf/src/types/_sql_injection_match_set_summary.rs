@@ -62,6 +62,11 @@ impl SqlInjectionMatchSetSummaryBuilder {
         self.sql_injection_match_set_id = input;
         self
     }
+    /// <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use <code>SqlInjectionMatchSetId</code> to get information about a <code>SqlInjectionMatchSet</code> (see <code>GetSqlInjectionMatchSet</code>), update a <code>SqlInjectionMatchSet</code> (see <code>UpdateSqlInjectionMatchSet</code>), insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SqlInjectionMatchSet</code> from AWS WAF (see <code>DeleteSqlInjectionMatchSet</code>).</p>
+    /// <p> <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
+    pub fn get_sql_injection_match_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sql_injection_match_set_id
+    }
     /// <p>The name of the <code>SqlInjectionMatchSet</code>, if any, specified by <code>Id</code>.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -71,6 +76,10 @@ impl SqlInjectionMatchSetSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the <code>SqlInjectionMatchSet</code>, if any, specified by <code>Id</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`SqlInjectionMatchSetSummary`](crate::types::SqlInjectionMatchSetSummary).
     pub fn build(self) -> crate::types::SqlInjectionMatchSetSummary {

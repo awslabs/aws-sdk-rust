@@ -50,6 +50,12 @@ impl DeviceConfigurationBuilder {
         self.snowcone_device_configuration = input;
         self
     }
+    /// <p>Returns information about the device configuration for an Snowcone job.</p>
+    pub fn get_snowcone_device_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SnowconeDeviceConfiguration> {
+        &self.snowcone_device_configuration
+    }
     /// Consumes the builder and constructs a [`DeviceConfiguration`](crate::types::DeviceConfiguration).
     pub fn build(self) -> crate::types::DeviceConfiguration {
         crate::types::DeviceConfiguration {

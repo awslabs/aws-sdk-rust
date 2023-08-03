@@ -40,6 +40,10 @@ impl LabelAliasBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of an alias for a given label.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`LabelAlias`](crate::types::LabelAlias).
     pub fn build(self) -> crate::types::LabelAlias {
         crate::types::LabelAlias { name: self.name }

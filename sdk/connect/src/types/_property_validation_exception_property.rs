@@ -64,6 +64,10 @@ impl PropertyValidationExceptionPropertyBuilder {
         self.property_path = input;
         self
     }
+    /// <p>The full property path.</p>
+    pub fn get_property_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.property_path
+    }
     /// <p>Why the property is not valid.</p>
     pub fn reason(mut self, input: crate::types::PropertyValidationExceptionReason) -> Self {
         self.reason = ::std::option::Option::Some(input);
@@ -77,6 +81,12 @@ impl PropertyValidationExceptionPropertyBuilder {
         self.reason = input;
         self
     }
+    /// <p>Why the property is not valid.</p>
+    pub fn get_reason(
+        &self,
+    ) -> &::std::option::Option<crate::types::PropertyValidationExceptionReason> {
+        &self.reason
+    }
     /// <p>A message describing why the property is not valid.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -86,6 +96,10 @@ impl PropertyValidationExceptionPropertyBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>A message describing why the property is not valid.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`PropertyValidationExceptionProperty`](crate::types::PropertyValidationExceptionProperty).
     pub fn build(self) -> crate::types::PropertyValidationExceptionProperty {

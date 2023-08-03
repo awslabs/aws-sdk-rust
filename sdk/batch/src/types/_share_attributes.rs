@@ -64,6 +64,12 @@ impl ShareAttributesBuilder {
         self.share_identifier = input;
         self
     }
+    /// <p>A fair share identifier or fair share identifier prefix. If the string ends with an asterisk (*), this entry specifies the weight factor to use for fair share identifiers that start with that prefix. The list of fair share identifiers in a fair share policy can't overlap. For example, you can't have one that specifies a <code>shareIdentifier</code> of <code>UserA*</code> and another that specifies a <code>shareIdentifier</code> of <code>UserA-1</code>.</p>
+    /// <p>There can be no more than 500 fair share identifiers active in a job queue.</p>
+    /// <p>The string is limited to 255 alphanumeric characters, and can be followed by an asterisk (*).</p>
+    pub fn get_share_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.share_identifier
+    }
     /// <p>The weight factor for the fair share identifier. The default value is 1.0. A lower value has a higher priority for compute resources. For example, jobs that use a share identifier with a weight factor of 0.125 (1/8) get 8 times the compute resources of jobs that use a share identifier with a weight factor of 1.</p>
     /// <p>The smallest supported value is 0.0001, and the largest supported value is 999.9999.</p>
     pub fn weight_factor(mut self, input: f32) -> Self {
@@ -75,6 +81,11 @@ impl ShareAttributesBuilder {
     pub fn set_weight_factor(mut self, input: ::std::option::Option<f32>) -> Self {
         self.weight_factor = input;
         self
+    }
+    /// <p>The weight factor for the fair share identifier. The default value is 1.0. A lower value has a higher priority for compute resources. For example, jobs that use a share identifier with a weight factor of 0.125 (1/8) get 8 times the compute resources of jobs that use a share identifier with a weight factor of 1.</p>
+    /// <p>The smallest supported value is 0.0001, and the largest supported value is 999.9999.</p>
+    pub fn get_weight_factor(&self) -> &::std::option::Option<f32> {
+        &self.weight_factor
     }
     /// Consumes the builder and constructs a [`ShareAttributes`](crate::types::ShareAttributes).
     pub fn build(self) -> crate::types::ShareAttributes {

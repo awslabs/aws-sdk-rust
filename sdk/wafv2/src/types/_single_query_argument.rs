@@ -42,6 +42,10 @@ impl SingleQueryArgumentBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the query argument to inspect.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`SingleQueryArgument`](crate::types::SingleQueryArgument).
     pub fn build(self) -> crate::types::SingleQueryArgument {
         crate::types::SingleQueryArgument { name: self.name }

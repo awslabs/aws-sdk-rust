@@ -55,6 +55,10 @@ impl ListStreamingSessionBackupsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The user ID of the user that owns the streaming session.</p>
     pub fn owned_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owned_by = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl ListStreamingSessionBackupsInputBuilder {
         self.owned_by = input;
         self
     }
+    /// <p>The user ID of the user that owns the streaming session.</p>
+    pub fn get_owned_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owned_by
+    }
     /// <p>The studio ID. </p>
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
@@ -74,6 +82,10 @@ impl ListStreamingSessionBackupsInputBuilder {
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.studio_id = input;
         self
+    }
+    /// <p>The studio ID. </p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_id
     }
     /// Consumes the builder and constructs a [`ListStreamingSessionBackupsInput`](crate::operation::list_streaming_session_backups::ListStreamingSessionBackupsInput).
     pub fn build(

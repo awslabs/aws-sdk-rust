@@ -63,6 +63,10 @@ impl GetProfileOutputBuilder {
         self.profile = input;
         self
     }
+    /// <p>Information about the profile.</p>
+    pub fn get_profile(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.profile
+    }
     /// <p>The content type of the profile in the payload. It is either <code>application/json</code> or the default <code>application/x-amzn-ion</code>.</p>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl GetProfileOutputBuilder {
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
         self
+    }
+    /// <p>The content type of the profile in the payload. It is either <code>application/json</code> or the default <code>application/x-amzn-ion</code>.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_type
     }
     /// <p>The content encoding of the profile.</p>
     pub fn content_encoding(
@@ -88,6 +96,10 @@ impl GetProfileOutputBuilder {
     ) -> Self {
         self.content_encoding = input;
         self
+    }
+    /// <p>The content encoding of the profile.</p>
+    pub fn get_content_encoding(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_encoding
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

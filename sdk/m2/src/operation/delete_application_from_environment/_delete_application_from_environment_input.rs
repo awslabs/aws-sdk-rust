@@ -53,6 +53,10 @@ impl DeleteApplicationFromEnvironmentInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The unique identifier of the application you want to delete.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The unique identifier of the runtime environment where the application was previously deployed.</p>
     pub fn environment_id(
         mut self,
@@ -68,6 +72,10 @@ impl DeleteApplicationFromEnvironmentInputBuilder {
     ) -> Self {
         self.environment_id = input;
         self
+    }
+    /// <p>The unique identifier of the runtime environment where the application was previously deployed.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
     }
     /// Consumes the builder and constructs a [`DeleteApplicationFromEnvironmentInput`](crate::operation::delete_application_from_environment::DeleteApplicationFromEnvironmentInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_application_from_environment::DeleteApplicationFromEnvironmentInput, ::aws_smithy_http::operation::error::BuildError>{

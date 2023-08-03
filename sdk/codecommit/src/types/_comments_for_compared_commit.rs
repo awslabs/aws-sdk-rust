@@ -94,6 +94,10 @@ impl CommentsForComparedCommitBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name of the repository that contains the compared commits.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>The full commit ID of the commit used to establish the before of the comparison.</p>
     pub fn before_commit_id(
         mut self,
@@ -109,6 +113,10 @@ impl CommentsForComparedCommitBuilder {
     ) -> Self {
         self.before_commit_id = input;
         self
+    }
+    /// <p>The full commit ID of the commit used to establish the before of the comparison.</p>
+    pub fn get_before_commit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.before_commit_id
     }
     /// <p>The full commit ID of the commit used to establish the after of the comparison.</p>
     pub fn after_commit_id(
@@ -126,6 +134,10 @@ impl CommentsForComparedCommitBuilder {
         self.after_commit_id = input;
         self
     }
+    /// <p>The full commit ID of the commit used to establish the after of the comparison.</p>
+    pub fn get_after_commit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.after_commit_id
+    }
     /// <p>The full blob ID of the commit used to establish the before of the comparison.</p>
     pub fn before_blob_id(
         mut self,
@@ -141,6 +153,10 @@ impl CommentsForComparedCommitBuilder {
     ) -> Self {
         self.before_blob_id = input;
         self
+    }
+    /// <p>The full blob ID of the commit used to establish the before of the comparison.</p>
+    pub fn get_before_blob_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.before_blob_id
     }
     /// <p>The full blob ID of the commit used to establish the after of the comparison.</p>
     pub fn after_blob_id(
@@ -158,6 +174,10 @@ impl CommentsForComparedCommitBuilder {
         self.after_blob_id = input;
         self
     }
+    /// <p>The full blob ID of the commit used to establish the after of the comparison.</p>
+    pub fn get_after_blob_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.after_blob_id
+    }
     /// <p>Location information about the comment on the comparison, including the file name, line number, and whether the version of the file where the comment was made is BEFORE or AFTER.</p>
     pub fn location(mut self, input: crate::types::Location) -> Self {
         self.location = ::std::option::Option::Some(input);
@@ -167,6 +187,10 @@ impl CommentsForComparedCommitBuilder {
     pub fn set_location(mut self, input: ::std::option::Option<crate::types::Location>) -> Self {
         self.location = input;
         self
+    }
+    /// <p>Location information about the comment on the comparison, including the file name, line number, and whether the version of the file where the comment was made is BEFORE or AFTER.</p>
+    pub fn get_location(&self) -> &::std::option::Option<crate::types::Location> {
+        &self.location
     }
     /// Appends an item to `comments`.
     ///
@@ -186,6 +210,10 @@ impl CommentsForComparedCommitBuilder {
     ) -> Self {
         self.comments = input;
         self
+    }
+    /// <p>An array of comment objects. Each comment object contains information about a comment on the comparison between commits.</p>
+    pub fn get_comments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Comment>> {
+        &self.comments
     }
     /// Consumes the builder and constructs a [`CommentsForComparedCommit`](crate::types::CommentsForComparedCommit).
     pub fn build(self) -> crate::types::CommentsForComparedCommit {

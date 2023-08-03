@@ -81,6 +81,12 @@ impl KmsGrantConfigurationBuilder {
         self.operations = input;
         self
     }
+    /// <p>A list of operations that the grant permits.</p>
+    pub fn get_operations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KmsGrantOperation>> {
+        &self.operations
+    }
     /// <p>The principal that is given permission to perform the operations that the grant permits.</p>
     pub fn grantee_principal(
         mut self,
@@ -96,6 +102,10 @@ impl KmsGrantConfigurationBuilder {
     ) -> Self {
         self.grantee_principal = input;
         self
+    }
+    /// <p>The principal that is given permission to perform the operations that the grant permits.</p>
+    pub fn get_grantee_principal(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grantee_principal
     }
     /// <p>The principal that is given permission to retire the grant by using <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RetireGrant.html">RetireGrant</a> operation.</p>
     pub fn retiring_principal(
@@ -113,6 +123,10 @@ impl KmsGrantConfigurationBuilder {
         self.retiring_principal = input;
         self
     }
+    /// <p>The principal that is given permission to retire the grant by using <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RetireGrant.html">RetireGrant</a> operation.</p>
+    pub fn get_retiring_principal(&self) -> &::std::option::Option<::std::string::String> {
+        &self.retiring_principal
+    }
     /// <p>Use this structure to propose allowing <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> in the grant only when the operation request includes the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption context</a>.</p>
     pub fn constraints(mut self, input: crate::types::KmsGrantConstraints) -> Self {
         self.constraints = ::std::option::Option::Some(input);
@@ -125,6 +139,10 @@ impl KmsGrantConfigurationBuilder {
     ) -> Self {
         self.constraints = input;
         self
+    }
+    /// <p>Use this structure to propose allowing <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> in the grant only when the operation request includes the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption context</a>.</p>
+    pub fn get_constraints(&self) -> &::std::option::Option<crate::types::KmsGrantConstraints> {
+        &self.constraints
     }
     /// <p> The Amazon Web Services account under which the grant was issued. The account is used to propose KMS grants issued by accounts other than the owner of the key.</p>
     pub fn issuing_account(
@@ -141,6 +159,10 @@ impl KmsGrantConfigurationBuilder {
     ) -> Self {
         self.issuing_account = input;
         self
+    }
+    /// <p> The Amazon Web Services account under which the grant was issued. The account is used to propose KMS grants issued by accounts other than the owner of the key.</p>
+    pub fn get_issuing_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.issuing_account
     }
     /// Consumes the builder and constructs a [`KmsGrantConfiguration`](crate::types::KmsGrantConfiguration).
     pub fn build(self) -> crate::types::KmsGrantConfiguration {

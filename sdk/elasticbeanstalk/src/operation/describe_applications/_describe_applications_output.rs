@@ -58,6 +58,12 @@ impl DescribeApplicationsOutputBuilder {
         self.applications = input;
         self
     }
+    /// <p>This parameter contains a list of <code>ApplicationDescription</code>.</p>
+    pub fn get_applications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationDescription>> {
+        &self.applications
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

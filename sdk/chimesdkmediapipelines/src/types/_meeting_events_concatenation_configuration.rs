@@ -43,6 +43,10 @@ impl MeetingEventsConcatenationConfigurationBuilder {
         self.state = input;
         self
     }
+    /// <p>Enables or disables the configuration object.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ArtifactsConcatenationState> {
+        &self.state
+    }
     /// Consumes the builder and constructs a [`MeetingEventsConcatenationConfiguration`](crate::types::MeetingEventsConcatenationConfiguration).
     pub fn build(self) -> crate::types::MeetingEventsConcatenationConfiguration {
         crate::types::MeetingEventsConcatenationConfiguration { state: self.state }

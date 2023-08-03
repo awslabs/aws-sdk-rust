@@ -40,6 +40,10 @@ impl DeleteParallelDataInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the parallel data resource that is being deleted.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DeleteParallelDataInput`](crate::operation::delete_parallel_data::DeleteParallelDataInput).
     pub fn build(
         self,

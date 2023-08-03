@@ -98,6 +98,10 @@ impl CreateRouteResponseInputBuilder {
         self.api_id = input;
         self
     }
+    /// <p>The API identifier.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_id
+    }
     /// <p>The model selection expression for the route response. Supported only for WebSocket APIs.</p>
     pub fn model_selection_expression(
         mut self,
@@ -113,6 +117,10 @@ impl CreateRouteResponseInputBuilder {
     ) -> Self {
         self.model_selection_expression = input;
         self
+    }
+    /// <p>The model selection expression for the route response. Supported only for WebSocket APIs.</p>
+    pub fn get_model_selection_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_selection_expression
     }
     /// Adds a key-value pair to `response_models`.
     ///
@@ -139,6 +147,14 @@ impl CreateRouteResponseInputBuilder {
         self.response_models = input;
         self
     }
+    /// <p>The response models for the route response.</p>
+    pub fn get_response_models(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.response_models
+    }
     /// Adds a key-value pair to `response_parameters`.
     ///
     /// To override the contents of this collection use [`set_response_parameters`](Self::set_response_parameters).
@@ -164,6 +180,14 @@ impl CreateRouteResponseInputBuilder {
         self.response_parameters = input;
         self
     }
+    /// <p>The route response parameters.</p>
+    pub fn get_response_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::ParameterConstraints>,
+    > {
+        &self.response_parameters
+    }
     /// <p>The route ID.</p>
     pub fn route_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.route_id = ::std::option::Option::Some(input.into());
@@ -173,6 +197,10 @@ impl CreateRouteResponseInputBuilder {
     pub fn set_route_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.route_id = input;
         self
+    }
+    /// <p>The route ID.</p>
+    pub fn get_route_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.route_id
     }
     /// <p>The route response key.</p>
     pub fn route_response_key(
@@ -189,6 +217,10 @@ impl CreateRouteResponseInputBuilder {
     ) -> Self {
         self.route_response_key = input;
         self
+    }
+    /// <p>The route response key.</p>
+    pub fn get_route_response_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.route_response_key
     }
     /// Consumes the builder and constructs a [`CreateRouteResponseInput`](crate::operation::create_route_response::CreateRouteResponseInput).
     pub fn build(

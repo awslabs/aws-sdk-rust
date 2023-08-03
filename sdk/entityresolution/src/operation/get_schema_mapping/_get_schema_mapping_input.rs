@@ -40,6 +40,10 @@ impl GetSchemaMappingInputBuilder {
         self.schema_name = input;
         self
     }
+    /// <p>The name of the schema to be retrieved.</p>
+    pub fn get_schema_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_name
+    }
     /// Consumes the builder and constructs a [`GetSchemaMappingInput`](crate::operation::get_schema_mapping::GetSchemaMappingInput).
     pub fn build(
         self,

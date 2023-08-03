@@ -36,6 +36,12 @@ impl CreateWorkerBlockFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateWorkerBlock as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_worker_block::builders::CreateWorkerBlockInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateWorkerBlockFluentBuilder {
         self.inner = self.inner.set_worker_id(input);
         self
     }
+    /// <p>The ID of the Worker to block.</p>
+    pub fn get_worker_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_worker_id()
+    }
     /// <p>A message explaining the reason for blocking the Worker. This parameter enables you to keep track of your Workers. The Worker does not see this message.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reason(input.into());
@@ -135,5 +145,9 @@ impl CreateWorkerBlockFluentBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reason(input);
         self
+    }
+    /// <p>A message explaining the reason for blocking the Worker. This parameter enables you to keep track of your Workers. The Worker does not see this message.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reason()
     }
 }

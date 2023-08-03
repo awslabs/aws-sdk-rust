@@ -36,6 +36,10 @@ impl UpdateMethodFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateMethod as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_method::builders::UpdateMethodInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl UpdateMethodFluentBuilder {
         self.inner = self.inner.set_rest_api_id(input);
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rest_api_id()
+    }
     /// <p>The Resource identifier for the Method resource.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_id(input.into());
@@ -128,6 +136,10 @@ impl UpdateMethodFluentBuilder {
         self.inner = self.inner.set_resource_id(input);
         self
     }
+    /// <p>The Resource identifier for the Method resource.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_id()
+    }
     /// <p>The HTTP verb of the Method resource.</p>
     pub fn http_method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.http_method(input.into());
@@ -137,6 +149,10 @@ impl UpdateMethodFluentBuilder {
     pub fn set_http_method(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_http_method(input);
         self
+    }
+    /// <p>The HTTP verb of the Method resource.</p>
+    pub fn get_http_method(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_http_method()
     }
     /// Appends an item to `patchOperations`.
     ///
@@ -154,5 +170,11 @@ impl UpdateMethodFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_patch_operations(input);
         self
+    }
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
+    pub fn get_patch_operations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
+        self.inner.get_patch_operations()
     }
 }

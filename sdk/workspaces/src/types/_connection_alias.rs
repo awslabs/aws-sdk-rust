@@ -82,6 +82,10 @@ impl ConnectionAliasBuilder {
         self.connection_string = input;
         self
     }
+    /// <p>The connection string specified for the connection alias. The connection string must be in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p>
+    pub fn get_connection_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_string
+    }
     /// <p>The identifier of the connection alias.</p>
     pub fn alias_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias_id = ::std::option::Option::Some(input.into());
@@ -91,6 +95,10 @@ impl ConnectionAliasBuilder {
     pub fn set_alias_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alias_id = input;
         self
+    }
+    /// <p>The identifier of the connection alias.</p>
+    pub fn get_alias_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias_id
     }
     /// <p>The current state of the connection alias.</p>
     pub fn state(mut self, input: crate::types::ConnectionAliasState) -> Self {
@@ -104,6 +112,10 @@ impl ConnectionAliasBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The current state of the connection alias.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ConnectionAliasState> {
+        &self.state
     }
     /// <p>The identifier of the Amazon Web Services account that owns the connection alias.</p>
     pub fn owner_account_id(
@@ -120,6 +132,10 @@ impl ConnectionAliasBuilder {
     ) -> Self {
         self.owner_account_id = input;
         self
+    }
+    /// <p>The identifier of the Amazon Web Services account that owns the connection alias.</p>
+    pub fn get_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_account_id
     }
     /// Appends an item to `associations`.
     ///
@@ -139,6 +155,12 @@ impl ConnectionAliasBuilder {
     ) -> Self {
         self.associations = input;
         self
+    }
+    /// <p>The association status of the connection alias.</p>
+    pub fn get_associations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectionAliasAssociation>> {
+        &self.associations
     }
     /// Consumes the builder and constructs a [`ConnectionAlias`](crate::types::ConnectionAlias).
     pub fn build(self) -> crate::types::ConnectionAlias {

@@ -140,6 +140,10 @@ impl DevEnvironmentSummaryBuilder {
         self.space_name = input;
         self
     }
+    /// <p>The name of the space.</p>
+    pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.space_name
+    }
     /// <p>The name of the project in the space.</p>
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
@@ -150,6 +154,10 @@ impl DevEnvironmentSummaryBuilder {
         self.project_name = input;
         self
     }
+    /// <p>The name of the project in the space.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_name
+    }
     /// <p>The system-generated unique ID for the Dev Environment. </p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -159,6 +167,10 @@ impl DevEnvironmentSummaryBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The system-generated unique ID for the Dev Environment. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The time when the Dev Environment was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -173,6 +185,10 @@ impl DevEnvironmentSummaryBuilder {
         self.last_updated_time = input;
         self
     }
+    /// <p>The time when the Dev Environment was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
+    }
     /// <p>The system-generated unique ID of the user who created the Dev Environment. </p>
     pub fn creator_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creator_id = ::std::option::Option::Some(input.into());
@@ -182,6 +198,10 @@ impl DevEnvironmentSummaryBuilder {
     pub fn set_creator_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creator_id = input;
         self
+    }
+    /// <p>The system-generated unique ID of the user who created the Dev Environment. </p>
+    pub fn get_creator_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creator_id
     }
     /// <p>The status of the Dev Environment. </p>
     pub fn status(mut self, input: crate::types::DevEnvironmentStatus) -> Self {
@@ -195,6 +215,10 @@ impl DevEnvironmentSummaryBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the Dev Environment. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DevEnvironmentStatus> {
+        &self.status
     }
     /// <p>The reason for the status.</p>
     pub fn status_reason(
@@ -211,6 +235,10 @@ impl DevEnvironmentSummaryBuilder {
     ) -> Self {
         self.status_reason = input;
         self
+    }
+    /// <p>The reason for the status.</p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_reason
     }
     /// Appends an item to `repositories`.
     ///
@@ -233,6 +261,13 @@ impl DevEnvironmentSummaryBuilder {
         self.repositories = input;
         self
     }
+    /// <p>Information about the repositories that will be cloned into the Dev Environment. If no rvalue is specified, no repository is cloned.</p>
+    pub fn get_repositories(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DevEnvironmentRepositorySummary>>
+    {
+        &self.repositories
+    }
     /// <p>The user-specified alias for the Dev Environment.</p>
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias = ::std::option::Option::Some(input.into());
@@ -242,6 +277,10 @@ impl DevEnvironmentSummaryBuilder {
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alias = input;
         self
+    }
+    /// <p>The user-specified alias for the Dev Environment.</p>
+    pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias
     }
     /// Appends an item to `ides`.
     ///
@@ -262,6 +301,10 @@ impl DevEnvironmentSummaryBuilder {
         self.ides = input;
         self
     }
+    /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p>
+    pub fn get_ides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Ide>> {
+        &self.ides
+    }
     /// <p>The Amazon EC2 instace type used for the Dev Environment. </p>
     pub fn instance_type(mut self, input: crate::types::InstanceType) -> Self {
         self.instance_type = ::std::option::Option::Some(input);
@@ -275,6 +318,10 @@ impl DevEnvironmentSummaryBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The Amazon EC2 instace type used for the Dev Environment. </p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::InstanceType> {
+        &self.instance_type
+    }
     /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Dev Environments consume compute minutes when running.</p>
     pub fn inactivity_timeout_minutes(mut self, input: i32) -> Self {
         self.inactivity_timeout_minutes = ::std::option::Option::Some(input);
@@ -284,6 +331,10 @@ impl DevEnvironmentSummaryBuilder {
     pub fn set_inactivity_timeout_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inactivity_timeout_minutes = input;
         self
+    }
+    /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Dev Environments consume compute minutes when running.</p>
+    pub fn get_inactivity_timeout_minutes(&self) -> &::std::option::Option<i32> {
+        &self.inactivity_timeout_minutes
     }
     /// <p>Information about the configuration of persistent storage for the Dev Environment.</p>
     pub fn persistent_storage(mut self, input: crate::types::PersistentStorage) -> Self {
@@ -297,6 +348,12 @@ impl DevEnvironmentSummaryBuilder {
     ) -> Self {
         self.persistent_storage = input;
         self
+    }
+    /// <p>Information about the configuration of persistent storage for the Dev Environment.</p>
+    pub fn get_persistent_storage(
+        &self,
+    ) -> &::std::option::Option<crate::types::PersistentStorage> {
+        &self.persistent_storage
     }
     /// Consumes the builder and constructs a [`DevEnvironmentSummary`](crate::types::DevEnvironmentSummary).
     pub fn build(self) -> crate::types::DevEnvironmentSummary {

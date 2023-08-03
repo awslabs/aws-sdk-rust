@@ -61,6 +61,12 @@ impl AudioChannelMappingBuilder {
         self.input_channel_levels = input;
         self
     }
+    /// Indices and gain values for each input channel that should be remixed into this output channel.
+    pub fn get_input_channel_levels(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputChannelLevel>> {
+        &self.input_channel_levels
+    }
     /// The index of the output channel being produced.
     pub fn output_channel(mut self, input: i32) -> Self {
         self.output_channel = ::std::option::Option::Some(input);
@@ -70,6 +76,10 @@ impl AudioChannelMappingBuilder {
     pub fn set_output_channel(mut self, input: ::std::option::Option<i32>) -> Self {
         self.output_channel = input;
         self
+    }
+    /// The index of the output channel being produced.
+    pub fn get_output_channel(&self) -> &::std::option::Option<i32> {
+        &self.output_channel
     }
     /// Consumes the builder and constructs a [`AudioChannelMapping`](crate::types::AudioChannelMapping).
     pub fn build(self) -> crate::types::AudioChannelMapping {

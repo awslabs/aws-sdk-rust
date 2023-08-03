@@ -36,6 +36,13 @@ impl DeletePermissionGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeletePermissionGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_permission_group::builders::DeletePermissionGroupInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl DeletePermissionGroupFluentBuilder {
         self.inner = self.inner.set_permission_group_id(input);
         self
     }
+    /// <p>The unique identifier for the permission group that you want to delete.</p>
+    pub fn get_permission_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_permission_group_id()
+    }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -141,5 +152,9 @@ impl DeletePermissionGroupFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

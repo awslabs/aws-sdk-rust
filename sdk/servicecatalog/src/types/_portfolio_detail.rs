@@ -80,6 +80,10 @@ impl PortfolioDetailBuilder {
         self.id = input;
         self
     }
+    /// <p>The portfolio identifier.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The ARN assigned to the portfolio.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl PortfolioDetailBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The ARN assigned to the portfolio.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The name to use for display purposes.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -100,6 +108,10 @@ impl PortfolioDetailBuilder {
         self.display_name = input;
         self
     }
+    /// <p>The name to use for display purposes.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
+    }
     /// <p>The description of the portfolio.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -109,6 +121,10 @@ impl PortfolioDetailBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the portfolio.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The UTC time stamp of the creation time.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -122,6 +138,10 @@ impl PortfolioDetailBuilder {
     ) -> Self {
         self.created_time = input;
         self
+    }
+    /// <p>The UTC time stamp of the creation time.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
     }
     /// <p>The name of the portfolio provider.</p>
     pub fn provider_name(
@@ -138,6 +158,10 @@ impl PortfolioDetailBuilder {
     ) -> Self {
         self.provider_name = input;
         self
+    }
+    /// <p>The name of the portfolio provider.</p>
+    pub fn get_provider_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provider_name
     }
     /// Consumes the builder and constructs a [`PortfolioDetail`](crate::types::PortfolioDetail).
     pub fn build(self) -> crate::types::PortfolioDetail {

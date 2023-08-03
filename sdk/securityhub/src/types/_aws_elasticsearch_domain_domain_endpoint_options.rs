@@ -58,6 +58,10 @@ impl AwsElasticsearchDomainDomainEndpointOptionsBuilder {
         self.enforce_https = input;
         self
     }
+    /// <p>Whether to require that all traffic to the domain arrive over HTTPS.</p>
+    pub fn get_enforce_https(&self) -> &::std::option::Option<bool> {
+        &self.enforce_https
+    }
     /// <p>The TLS security policy to apply to the HTTPS endpoint of the OpenSearch domain.</p>
     /// <p>Valid values:</p>
     /// <ul>
@@ -83,6 +87,15 @@ impl AwsElasticsearchDomainDomainEndpointOptionsBuilder {
     ) -> Self {
         self.tls_security_policy = input;
         self
+    }
+    /// <p>The TLS security policy to apply to the HTTPS endpoint of the OpenSearch domain.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li> <p> <code>Policy-Min-TLS-1-0-2019-07</code>, which supports TLSv1.0 and higher</p> </li>
+    /// <li> <p> <code>Policy-Min-TLS-1-2-2019-07</code>, which only supports TLSv1.2</p> </li>
+    /// </ul>
+    pub fn get_tls_security_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tls_security_policy
     }
     /// Consumes the builder and constructs a [`AwsElasticsearchDomainDomainEndpointOptions`](crate::types::AwsElasticsearchDomainDomainEndpointOptions).
     pub fn build(self) -> crate::types::AwsElasticsearchDomainDomainEndpointOptions {

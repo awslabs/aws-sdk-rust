@@ -66,6 +66,11 @@ impl AssociateVpcWithHostedZoneInputBuilder {
         self.hosted_zone_id = input;
         self
     }
+    /// <p>The ID of the private hosted zone that you want to associate an Amazon VPC with.</p>
+    /// <p>Note that you can't associate a VPC with a hosted zone that doesn't have an existing VPC association.</p>
+    pub fn get_hosted_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hosted_zone_id
+    }
     /// <p>A complex type that contains information about the VPC that you want to associate with a private hosted zone.</p>
     pub fn vpc(mut self, input: crate::types::Vpc) -> Self {
         self.vpc = ::std::option::Option::Some(input);
@@ -76,6 +81,10 @@ impl AssociateVpcWithHostedZoneInputBuilder {
         self.vpc = input;
         self
     }
+    /// <p>A complex type that contains information about the VPC that you want to associate with a private hosted zone.</p>
+    pub fn get_vpc(&self) -> &::std::option::Option<crate::types::Vpc> {
+        &self.vpc
+    }
     /// <p> <i>Optional:</i> A comment about the association request.</p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment = ::std::option::Option::Some(input.into());
@@ -85,6 +94,10 @@ impl AssociateVpcWithHostedZoneInputBuilder {
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comment = input;
         self
+    }
+    /// <p> <i>Optional:</i> A comment about the association request.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comment
     }
     /// Consumes the builder and constructs a [`AssociateVpcWithHostedZoneInput`](crate::operation::associate_vpc_with_hosted_zone::AssociateVpcWithHostedZoneInput).
     pub fn build(

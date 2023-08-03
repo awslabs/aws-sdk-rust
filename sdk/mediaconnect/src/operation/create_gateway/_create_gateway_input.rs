@@ -68,6 +68,12 @@ impl CreateGatewayInputBuilder {
         self.egress_cidr_blocks = input;
         self
     }
+    /// The range of IP addresses that are allowed to contribute content or initiate output requests for flows communicating with this gateway. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+    pub fn get_egress_cidr_blocks(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.egress_cidr_blocks
+    }
     /// The name of the gateway. This name can not be modified after the gateway is created.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -77,6 +83,10 @@ impl CreateGatewayInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// The name of the gateway. This name can not be modified after the gateway is created.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `networks`.
     ///
@@ -96,6 +106,12 @@ impl CreateGatewayInputBuilder {
     ) -> Self {
         self.networks = input;
         self
+    }
+    /// The list of networks that you want to add.
+    pub fn get_networks(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GatewayNetwork>> {
+        &self.networks
     }
     /// Consumes the builder and constructs a [`CreateGatewayInput`](crate::operation::create_gateway::CreateGatewayInput).
     pub fn build(

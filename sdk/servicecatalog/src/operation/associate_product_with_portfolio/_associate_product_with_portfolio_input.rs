@@ -85,6 +85,14 @@ impl AssociateProductWithPortfolioInputBuilder {
         self.accept_language = input;
         self
     }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accept_language
+    }
     /// <p>The product identifier.</p>
     pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_id = ::std::option::Option::Some(input.into());
@@ -95,6 +103,10 @@ impl AssociateProductWithPortfolioInputBuilder {
         self.product_id = input;
         self
     }
+    /// <p>The product identifier.</p>
+    pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product_id
+    }
     /// <p>The portfolio identifier.</p>
     pub fn portfolio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portfolio_id = ::std::option::Option::Some(input.into());
@@ -104,6 +116,10 @@ impl AssociateProductWithPortfolioInputBuilder {
     pub fn set_portfolio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.portfolio_id = input;
         self
+    }
+    /// <p>The portfolio identifier.</p>
+    pub fn get_portfolio_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.portfolio_id
     }
     /// <p>The identifier of the source portfolio.</p>
     pub fn source_portfolio_id(
@@ -120,6 +136,10 @@ impl AssociateProductWithPortfolioInputBuilder {
     ) -> Self {
         self.source_portfolio_id = input;
         self
+    }
+    /// <p>The identifier of the source portfolio.</p>
+    pub fn get_source_portfolio_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_portfolio_id
     }
     /// Consumes the builder and constructs a [`AssociateProductWithPortfolioInput`](crate::operation::associate_product_with_portfolio::AssociateProductWithPortfolioInput).
     pub fn build(

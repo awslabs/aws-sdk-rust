@@ -39,6 +39,12 @@ impl DescribeRaidArraysFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeRaidArrays as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_raid_arrays::builders::DescribeRaidArraysInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl DescribeRaidArraysFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The instance ID. If you use this parameter, <code>DescribeRaidArrays</code> returns descriptions of the RAID arrays associated with the specified instance. </p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>The stack ID.</p>
     pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_id(input.into());
@@ -138,6 +148,10 @@ impl DescribeRaidArraysFluentBuilder {
     pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_id(input);
         self
+    }
+    /// <p>The stack ID.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stack_id()
     }
     /// Appends an item to `RaidArrayIds`.
     ///
@@ -158,5 +172,11 @@ impl DescribeRaidArraysFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_raid_array_ids(input);
         self
+    }
+    /// <p>An array of RAID array IDs. If you use this parameter, <code>DescribeRaidArrays</code> returns descriptions of the specified arrays. Otherwise, it returns a description of every array.</p>
+    pub fn get_raid_array_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_raid_array_ids()
     }
 }

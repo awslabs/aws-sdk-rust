@@ -38,6 +38,12 @@ impl GetCalendarStateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetCalendarState as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_calendar_state::builders::GetCalendarStateInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +144,12 @@ impl GetCalendarStateFluentBuilder {
         self.inner = self.inner.set_calendar_names(input);
         self
     }
+    /// <p>The names or Amazon Resource Names (ARNs) of the Systems Manager documents (SSM documents) that represent the calendar entries for which you want to get the state.</p>
+    pub fn get_calendar_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_calendar_names()
+    }
     /// <p>(Optional) The specific time for which you want to get calendar state information, in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format. If you don't specify a value or <code>AtTime</code>, the current time is used.</p>
     pub fn at_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.at_time(input.into());
@@ -147,5 +159,9 @@ impl GetCalendarStateFluentBuilder {
     pub fn set_at_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_at_time(input);
         self
+    }
+    /// <p>(Optional) The specific time for which you want to get calendar state information, in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format. If you don't specify a value or <code>AtTime</code>, the current time is used.</p>
+    pub fn get_at_time(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_at_time()
     }
 }

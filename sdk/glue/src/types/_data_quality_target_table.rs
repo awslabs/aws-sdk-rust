@@ -56,6 +56,10 @@ impl DataQualityTargetTableBuilder {
         self.table_name = input;
         self
     }
+    /// <p>The name of the Glue table.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
+    }
     /// <p>The name of the database where the Glue table exists.</p>
     pub fn database_name(
         mut self,
@@ -72,6 +76,10 @@ impl DataQualityTargetTableBuilder {
         self.database_name = input;
         self
     }
+    /// <p>The name of the database where the Glue table exists.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>The catalog id where the Glue table exists.</p>
     pub fn catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.catalog_id = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl DataQualityTargetTableBuilder {
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.catalog_id = input;
         self
+    }
+    /// <p>The catalog id where the Glue table exists.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
     }
     /// Consumes the builder and constructs a [`DataQualityTargetTable`](crate::types::DataQualityTargetTable).
     pub fn build(self) -> crate::types::DataQualityTargetTable {

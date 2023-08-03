@@ -54,6 +54,10 @@ impl TimeSeriesFeedbackBuilder {
         self.time_series_id = input;
         self
     }
+    /// <p>The ID of the metric.</p>
+    pub fn get_time_series_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.time_series_id
+    }
     /// <p>Feedback on whether the metric is a legitimate anomaly.</p>
     pub fn is_anomaly(mut self, input: bool) -> Self {
         self.is_anomaly = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl TimeSeriesFeedbackBuilder {
     pub fn set_is_anomaly(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_anomaly = input;
         self
+    }
+    /// <p>Feedback on whether the metric is a legitimate anomaly.</p>
+    pub fn get_is_anomaly(&self) -> &::std::option::Option<bool> {
+        &self.is_anomaly
     }
     /// Consumes the builder and constructs a [`TimeSeriesFeedback`](crate::types::TimeSeriesFeedback).
     pub fn build(self) -> crate::types::TimeSeriesFeedback {

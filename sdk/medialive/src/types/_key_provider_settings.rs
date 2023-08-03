@@ -43,6 +43,12 @@ impl KeyProviderSettingsBuilder {
         self.static_key_settings = input;
         self
     }
+    /// Static Key Settings
+    pub fn get_static_key_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::StaticKeySettings> {
+        &self.static_key_settings
+    }
     /// Consumes the builder and constructs a [`KeyProviderSettings`](crate::types::KeyProviderSettings).
     pub fn build(self) -> crate::types::KeyProviderSettings {
         crate::types::KeyProviderSettings {

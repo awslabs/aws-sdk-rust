@@ -61,6 +61,10 @@ impl ModifyUserGroupInputBuilder {
         self.user_group_id = input;
         self
     }
+    /// <p>The ID of the user group.</p>
+    pub fn get_user_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_group_id
+    }
     /// Appends an item to `user_ids_to_add`.
     ///
     /// To override the contents of this collection use [`set_user_ids_to_add`](Self::set_user_ids_to_add).
@@ -83,6 +87,12 @@ impl ModifyUserGroupInputBuilder {
         self.user_ids_to_add = input;
         self
     }
+    /// <p>The list of user IDs to add to the user group.</p>
+    pub fn get_user_ids_to_add(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.user_ids_to_add
+    }
     /// Appends an item to `user_ids_to_remove`.
     ///
     /// To override the contents of this collection use [`set_user_ids_to_remove`](Self::set_user_ids_to_remove).
@@ -104,6 +114,12 @@ impl ModifyUserGroupInputBuilder {
     ) -> Self {
         self.user_ids_to_remove = input;
         self
+    }
+    /// <p>The list of user IDs to remove from the user group.</p>
+    pub fn get_user_ids_to_remove(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.user_ids_to_remove
     }
     /// Consumes the builder and constructs a [`ModifyUserGroupInput`](crate::operation::modify_user_group::ModifyUserGroupInput).
     pub fn build(

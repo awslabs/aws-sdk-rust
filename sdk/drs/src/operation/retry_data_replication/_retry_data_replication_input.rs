@@ -47,6 +47,10 @@ impl RetryDataReplicationInputBuilder {
         self.source_server_id = input;
         self
     }
+    /// <p>The ID of the Source Server whose data replication should be retried.</p>
+    pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_server_id
+    }
     /// Consumes the builder and constructs a [`RetryDataReplicationInput`](crate::operation::retry_data_replication::RetryDataReplicationInput).
     pub fn build(
         self,

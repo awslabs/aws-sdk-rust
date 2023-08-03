@@ -55,6 +55,10 @@ impl DisassociateHealthCheckInputBuilder {
         self.protection_id = input;
         self
     }
+    /// <p>The unique identifier (ID) for the <code>Protection</code> object to remove the health check association from. </p>
+    pub fn get_protection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.protection_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the health check that is associated with the protection.</p>
     pub fn health_check_arn(
         mut self,
@@ -70,6 +74,10 @@ impl DisassociateHealthCheckInputBuilder {
     ) -> Self {
         self.health_check_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the health check that is associated with the protection.</p>
+    pub fn get_health_check_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.health_check_arn
     }
     /// Consumes the builder and constructs a [`DisassociateHealthCheckInput`](crate::operation::disassociate_health_check::DisassociateHealthCheckInput).
     pub fn build(

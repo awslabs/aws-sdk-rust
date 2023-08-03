@@ -87,6 +87,14 @@ impl ChangeTagsForResourceInputBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The type of the resource.</p>
+    /// <ul>
+    /// <li> <p>The resource type for health checks is <code>healthcheck</code>.</p> </li>
+    /// <li> <p>The resource type for hosted zones is <code>hostedzone</code>.</p> </li>
+    /// </ul>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::TagResourceType> {
+        &self.resource_type
+    }
     /// <p>The ID of the resource for which you want to add, change, or delete tags.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -96,6 +104,10 @@ impl ChangeTagsForResourceInputBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>The ID of the resource for which you want to add, change, or delete tags.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// Appends an item to `add_tags`.
     ///
@@ -118,6 +130,11 @@ impl ChangeTagsForResourceInputBuilder {
         self.add_tags = input;
         self
     }
+    /// <p>A complex type that contains a list of the tags that you want to add to the specified health check or hosted zone and/or the tags that you want to edit <code>Value</code> for.</p>
+    /// <p>You can add a maximum of 10 tags to a health check or a hosted zone.</p>
+    pub fn get_add_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.add_tags
+    }
     /// Appends an item to `remove_tag_keys`.
     ///
     /// To override the contents of this collection use [`set_remove_tag_keys`](Self::set_remove_tag_keys).
@@ -139,6 +156,12 @@ impl ChangeTagsForResourceInputBuilder {
     ) -> Self {
         self.remove_tag_keys = input;
         self
+    }
+    /// <p>A complex type that contains a list of the tags that you want to delete from the specified health check or hosted zone. You can specify up to 10 keys.</p>
+    pub fn get_remove_tag_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.remove_tag_keys
     }
     /// Consumes the builder and constructs a [`ChangeTagsForResourceInput`](crate::operation::change_tags_for_resource::ChangeTagsForResourceInput).
     pub fn build(

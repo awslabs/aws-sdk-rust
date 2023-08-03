@@ -56,6 +56,10 @@ impl ConformancePackComplianceScoreBuilder {
         self.score = input;
         self
     }
+    /// <p>Compliance score for the conformance pack. Conformance packs with no evaluation results will have a compliance score of <code>INSUFFICIENT_DATA</code>.</p>
+    pub fn get_score(&self) -> &::std::option::Option<::std::string::String> {
+        &self.score
+    }
     /// <p>The name of the conformance pack.</p>
     pub fn conformance_pack_name(
         mut self,
@@ -72,6 +76,10 @@ impl ConformancePackComplianceScoreBuilder {
         self.conformance_pack_name = input;
         self
     }
+    /// <p>The name of the conformance pack.</p>
+    pub fn get_conformance_pack_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.conformance_pack_name
+    }
     /// <p>The time that the conformance pack compliance score was last updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl ConformancePackComplianceScoreBuilder {
     ) -> Self {
         self.last_updated_time = input;
         self
+    }
+    /// <p>The time that the conformance pack compliance score was last updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
     }
     /// Consumes the builder and constructs a [`ConformancePackComplianceScore`](crate::types::ConformancePackComplianceScore).
     pub fn build(self) -> crate::types::ConformancePackComplianceScore {

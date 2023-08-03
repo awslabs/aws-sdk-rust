@@ -45,6 +45,10 @@ impl StartGuiSessionInputBuilder {
         self.resource_name = input;
         self
     }
+    /// <p>The resource name.</p>
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_name
+    }
     /// Consumes the builder and constructs a [`StartGuiSessionInput`](crate::operation::start_gui_session::StartGuiSessionInput).
     pub fn build(
         self,

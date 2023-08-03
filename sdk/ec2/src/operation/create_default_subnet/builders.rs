@@ -36,6 +36,12 @@ impl CreateDefaultSubnetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDefaultSubnet as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_default_subnet::builders::CreateDefaultSubnetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl CreateDefaultSubnetFluentBuilder {
         self.inner = self.inner.set_availability_zone(input);
         self
     }
+    /// <p>The Availability Zone in which to create the default subnet.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_availability_zone()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -142,6 +152,10 @@ impl CreateDefaultSubnetFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>Indicates whether to create an IPv6 only subnet. If you already have a default subnet for this Availability Zone, you must delete it before you can create an IPv6 only subnet.</p>
     pub fn ipv6_native(mut self, input: bool) -> Self {
         self.inner = self.inner.ipv6_native(input);
@@ -151,5 +165,9 @@ impl CreateDefaultSubnetFluentBuilder {
     pub fn set_ipv6_native(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_ipv6_native(input);
         self
+    }
+    /// <p>Indicates whether to create an IPv6 only subnet. If you already have a default subnet for this Availability Zone, you must delete it before you can create an IPv6 only subnet.</p>
+    pub fn get_ipv6_native(&self) -> &::std::option::Option<bool> {
+        self.inner.get_ipv6_native()
     }
 }

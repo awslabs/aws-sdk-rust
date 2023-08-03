@@ -39,6 +39,10 @@ impl DisassociateSkillFromUsersInputBuilder {
         self.skill_id = input;
         self
     }
+    /// <p> The private skill ID you want to make unavailable for enrolled users.</p>
+    pub fn get_skill_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.skill_id
+    }
     /// Consumes the builder and constructs a [`DisassociateSkillFromUsersInput`](crate::operation::disassociate_skill_from_users::DisassociateSkillFromUsersInput).
     pub fn build(
         self,

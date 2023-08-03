@@ -78,6 +78,10 @@ impl GetExclusionsPreviewInputBuilder {
         self.assessment_template_arn = input;
         self
     }
+    /// <p>The ARN that specifies the assessment template for which the exclusions preview was requested.</p>
+    pub fn get_assessment_template_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assessment_template_arn
+    }
     /// <p>The unique identifier associated of the exclusions preview.</p>
     pub fn preview_token(
         mut self,
@@ -94,6 +98,10 @@ impl GetExclusionsPreviewInputBuilder {
         self.preview_token = input;
         self
     }
+    /// <p>The unique identifier associated of the exclusions preview.</p>
+    pub fn get_preview_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.preview_token
+    }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the GetExclusionsPreviewRequest action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -103,6 +111,10 @@ impl GetExclusionsPreviewInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the GetExclusionsPreviewRequest action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 100. The maximum value is 500.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -114,6 +126,10 @@ impl GetExclusionsPreviewInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 100. The maximum value is 500.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The locale into which you want to translate the exclusion's title, description, and recommendation.</p>
     pub fn locale(mut self, input: crate::types::Locale) -> Self {
         self.locale = ::std::option::Option::Some(input);
@@ -123,6 +139,10 @@ impl GetExclusionsPreviewInputBuilder {
     pub fn set_locale(mut self, input: ::std::option::Option<crate::types::Locale>) -> Self {
         self.locale = input;
         self
+    }
+    /// <p>The locale into which you want to translate the exclusion's title, description, and recommendation.</p>
+    pub fn get_locale(&self) -> &::std::option::Option<crate::types::Locale> {
+        &self.locale
     }
     /// Consumes the builder and constructs a [`GetExclusionsPreviewInput`](crate::operation::get_exclusions_preview::GetExclusionsPreviewInput).
     pub fn build(

@@ -75,6 +75,12 @@ impl ModifyReservedInstancesInputBuilder {
         self.reserved_instances_ids = input;
         self
     }
+    /// <p>The IDs of the Reserved Instances to modify.</p>
+    pub fn get_reserved_instances_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.reserved_instances_ids
+    }
     /// <p>A unique, case-sensitive token you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -84,6 +90,10 @@ impl ModifyReservedInstancesInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A unique, case-sensitive token you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Appends an item to `target_configurations`.
     ///
@@ -106,6 +116,12 @@ impl ModifyReservedInstancesInputBuilder {
     ) -> Self {
         self.target_configurations = input;
         self
+    }
+    /// <p>The configuration settings for the Reserved Instances to modify.</p>
+    pub fn get_target_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesConfiguration>> {
+        &self.target_configurations
     }
     /// Consumes the builder and constructs a [`ModifyReservedInstancesInput`](crate::operation::modify_reserved_instances::ModifyReservedInstancesInput).
     pub fn build(

@@ -45,6 +45,12 @@ impl DeleteOrganizationConformancePackInputBuilder {
         self.organization_conformance_pack_name = input;
         self
     }
+    /// <p>The name of organization conformance pack that you want to delete.</p>
+    pub fn get_organization_conformance_pack_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.organization_conformance_pack_name
+    }
     /// Consumes the builder and constructs a [`DeleteOrganizationConformancePackInput`](crate::operation::delete_organization_conformance_pack::DeleteOrganizationConformancePackInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_organization_conformance_pack::DeleteOrganizationConformancePackInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

@@ -94,6 +94,10 @@ impl GetImportOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name given to the import job.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The type of resource imported.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
@@ -106,6 +110,10 @@ impl GetImportOutputBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>The type of resource imported.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
     }
     /// <p>The action taken when there was a conflict between an existing resource and a resource in the import file.</p>
     pub fn merge_strategy(mut self, input: crate::types::MergeStrategy) -> Self {
@@ -120,6 +128,10 @@ impl GetImportOutputBuilder {
         self.merge_strategy = input;
         self
     }
+    /// <p>The action taken when there was a conflict between an existing resource and a resource in the import file.</p>
+    pub fn get_merge_strategy(&self) -> &::std::option::Option<crate::types::MergeStrategy> {
+        &self.merge_strategy
+    }
     /// <p>The identifier for the specific import job.</p>
     pub fn import_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.import_id = ::std::option::Option::Some(input.into());
@@ -129,6 +141,10 @@ impl GetImportOutputBuilder {
     pub fn set_import_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.import_id = input;
         self
+    }
+    /// <p>The identifier for the specific import job.</p>
+    pub fn get_import_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.import_id
     }
     /// <p>The status of the import job. If the status is <code>FAILED</code>, you can get the reason for the failure from the <code>failureReason</code> field.</p>
     pub fn import_status(mut self, input: crate::types::ImportStatus) -> Self {
@@ -142,6 +158,10 @@ impl GetImportOutputBuilder {
     ) -> Self {
         self.import_status = input;
         self
+    }
+    /// <p>The status of the import job. If the status is <code>FAILED</code>, you can get the reason for the failure from the <code>failureReason</code> field.</p>
+    pub fn get_import_status(&self) -> &::std::option::Option<crate::types::ImportStatus> {
+        &self.import_status
     }
     /// Appends an item to `failure_reason`.
     ///
@@ -165,6 +185,12 @@ impl GetImportOutputBuilder {
         self.failure_reason = input;
         self
     }
+    /// <p>A string that describes why an import job failed to complete.</p>
+    pub fn get_failure_reason(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.failure_reason
+    }
     /// <p>A timestamp for the date and time that the import job was created.</p>
     pub fn created_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_date = ::std::option::Option::Some(input);
@@ -177,6 +203,10 @@ impl GetImportOutputBuilder {
     ) -> Self {
         self.created_date = input;
         self
+    }
+    /// <p>A timestamp for the date and time that the import job was created.</p>
+    pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

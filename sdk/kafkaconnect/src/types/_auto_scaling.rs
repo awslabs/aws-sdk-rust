@@ -72,6 +72,10 @@ impl AutoScalingBuilder {
         self.max_worker_count = input;
         self
     }
+    /// <p>The maximum number of workers allocated to the connector.</p>
+    pub fn get_max_worker_count(&self) -> &::std::option::Option<i32> {
+        &self.max_worker_count
+    }
     /// <p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>
     pub fn mcu_count(mut self, input: i32) -> Self {
         self.mcu_count = ::std::option::Option::Some(input);
@@ -82,6 +86,10 @@ impl AutoScalingBuilder {
         self.mcu_count = input;
         self
     }
+    /// <p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>
+    pub fn get_mcu_count(&self) -> &::std::option::Option<i32> {
+        &self.mcu_count
+    }
     /// <p>The minimum number of workers allocated to the connector.</p>
     pub fn min_worker_count(mut self, input: i32) -> Self {
         self.min_worker_count = ::std::option::Option::Some(input);
@@ -91,6 +99,10 @@ impl AutoScalingBuilder {
     pub fn set_min_worker_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_worker_count = input;
         self
+    }
+    /// <p>The minimum number of workers allocated to the connector.</p>
+    pub fn get_min_worker_count(&self) -> &::std::option::Option<i32> {
+        &self.min_worker_count
     }
     /// <p>The sacle-in policy for the connector.</p>
     pub fn scale_in_policy(mut self, input: crate::types::ScaleInPolicy) -> Self {
@@ -105,6 +117,10 @@ impl AutoScalingBuilder {
         self.scale_in_policy = input;
         self
     }
+    /// <p>The sacle-in policy for the connector.</p>
+    pub fn get_scale_in_policy(&self) -> &::std::option::Option<crate::types::ScaleInPolicy> {
+        &self.scale_in_policy
+    }
     /// <p>The sacle-out policy for the connector.</p>
     pub fn scale_out_policy(mut self, input: crate::types::ScaleOutPolicy) -> Self {
         self.scale_out_policy = ::std::option::Option::Some(input);
@@ -117,6 +133,10 @@ impl AutoScalingBuilder {
     ) -> Self {
         self.scale_out_policy = input;
         self
+    }
+    /// <p>The sacle-out policy for the connector.</p>
+    pub fn get_scale_out_policy(&self) -> &::std::option::Option<crate::types::ScaleOutPolicy> {
+        &self.scale_out_policy
     }
     /// Consumes the builder and constructs a [`AutoScaling`](crate::types::AutoScaling).
     pub fn build(self) -> crate::types::AutoScaling {

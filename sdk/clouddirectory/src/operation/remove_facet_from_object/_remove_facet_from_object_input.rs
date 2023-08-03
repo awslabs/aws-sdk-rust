@@ -63,6 +63,10 @@ impl RemoveFacetFromObjectInputBuilder {
         self.directory_arn = input;
         self
     }
+    /// <p>The ARN of the directory in which the object resides.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_arn
+    }
     /// <p>The facet to remove. See <code>SchemaFacet</code> for details.</p>
     pub fn schema_facet(mut self, input: crate::types::SchemaFacet) -> Self {
         self.schema_facet = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl RemoveFacetFromObjectInputBuilder {
         self.schema_facet = input;
         self
     }
+    /// <p>The facet to remove. See <code>SchemaFacet</code> for details.</p>
+    pub fn get_schema_facet(&self) -> &::std::option::Option<crate::types::SchemaFacet> {
+        &self.schema_facet
+    }
     /// <p>A reference to the object to remove the facet from.</p>
     pub fn object_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.object_reference = ::std::option::Option::Some(input);
@@ -88,6 +96,10 @@ impl RemoveFacetFromObjectInputBuilder {
     ) -> Self {
         self.object_reference = input;
         self
+    }
+    /// <p>A reference to the object to remove the facet from.</p>
+    pub fn get_object_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
+        &self.object_reference
     }
     /// Consumes the builder and constructs a [`RemoveFacetFromObjectInput`](crate::operation::remove_facet_from_object::RemoveFacetFromObjectInput).
     pub fn build(

@@ -36,6 +36,10 @@ impl GetEndpointFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetEndpoint as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_endpoint::builders::GetEndpointInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl GetEndpointFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>The unique identifier for the endpoint.</p>
     pub fn endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.endpoint_id(input.into());
@@ -133,5 +141,9 @@ impl GetEndpointFluentBuilder {
     pub fn set_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_endpoint_id(input);
         self
+    }
+    /// <p>The unique identifier for the endpoint.</p>
+    pub fn get_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_endpoint_id()
     }
 }

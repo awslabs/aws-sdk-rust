@@ -85,6 +85,10 @@ impl DescribeLabelGroupOutputBuilder {
         self.label_group_name = input;
         self
     }
+    /// <p> The name of the label group. </p>
+    pub fn get_label_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label_group_name
+    }
     /// <p> The ARN of the label group. </p>
     pub fn label_group_arn(
         mut self,
@@ -100,6 +104,10 @@ impl DescribeLabelGroupOutputBuilder {
     ) -> Self {
         self.label_group_arn = input;
         self
+    }
+    /// <p> The ARN of the label group. </p>
+    pub fn get_label_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label_group_arn
     }
     /// Appends an item to `fault_codes`.
     ///
@@ -120,6 +128,12 @@ impl DescribeLabelGroupOutputBuilder {
         self.fault_codes = input;
         self
     }
+    /// <p> Codes indicating the type of anomaly associated with the labels in the lagbel group. </p>
+    pub fn get_fault_codes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.fault_codes
+    }
     /// <p> The time at which the label group was created. </p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -133,6 +147,10 @@ impl DescribeLabelGroupOutputBuilder {
         self.created_at = input;
         self
     }
+    /// <p> The time at which the label group was created. </p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p> The time at which the label group was updated. </p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
@@ -145,6 +163,10 @@ impl DescribeLabelGroupOutputBuilder {
     ) -> Self {
         self.updated_at = input;
         self
+    }
+    /// <p> The time at which the label group was updated. </p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

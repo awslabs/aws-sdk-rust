@@ -80,6 +80,10 @@ impl VirtualMachineBuilder {
         self.host_name = input;
         self
     }
+    /// <p>The host name of the virtual machine.</p>
+    pub fn get_host_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host_name
+    }
     /// <p>The ID of the virtual machine's hypervisor.</p>
     pub fn hypervisor_id(
         mut self,
@@ -96,6 +100,10 @@ impl VirtualMachineBuilder {
         self.hypervisor_id = input;
         self
     }
+    /// <p>The ID of the virtual machine's hypervisor.</p>
+    pub fn get_hypervisor_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hypervisor_id
+    }
     /// <p>The name of the virtual machine.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -105,6 +113,10 @@ impl VirtualMachineBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the virtual machine.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The path of the virtual machine.</p>
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -116,6 +128,10 @@ impl VirtualMachineBuilder {
         self.path = input;
         self
     }
+    /// <p>The path of the virtual machine.</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
+    }
     /// <p>The Amazon Resource Name (ARN) of the virtual machine. For example, <code>arn:aws:backup-gateway:us-west-1:0000000000000:vm/vm-0000ABCDEFGIJKL</code>.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
@@ -125,6 +141,10 @@ impl VirtualMachineBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the virtual machine. For example, <code>arn:aws:backup-gateway:us-west-1:0000000000000:vm/vm-0000ABCDEFGIJKL</code>.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// <p>The most recent date a virtual machine was backed up, in Unix format and UTC time.</p>
     pub fn last_backup_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -138,6 +158,10 @@ impl VirtualMachineBuilder {
     ) -> Self {
         self.last_backup_date = input;
         self
+    }
+    /// <p>The most recent date a virtual machine was backed up, in Unix format and UTC time.</p>
+    pub fn get_last_backup_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_backup_date
     }
     /// Consumes the builder and constructs a [`VirtualMachine`](crate::types::VirtualMachine).
     pub fn build(self) -> crate::types::VirtualMachine {

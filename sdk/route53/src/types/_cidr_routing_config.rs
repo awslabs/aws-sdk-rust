@@ -55,6 +55,10 @@ impl CidrRoutingConfigBuilder {
         self.collection_id = input;
         self
     }
+    /// <p>The CIDR collection ID.</p>
+    pub fn get_collection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collection_id
+    }
     /// <p>The CIDR collection location name.</p>
     pub fn location_name(
         mut self,
@@ -70,6 +74,10 @@ impl CidrRoutingConfigBuilder {
     ) -> Self {
         self.location_name = input;
         self
+    }
+    /// <p>The CIDR collection location name.</p>
+    pub fn get_location_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location_name
     }
     /// Consumes the builder and constructs a [`CidrRoutingConfig`](crate::types::CidrRoutingConfig).
     pub fn build(self) -> crate::types::CidrRoutingConfig {

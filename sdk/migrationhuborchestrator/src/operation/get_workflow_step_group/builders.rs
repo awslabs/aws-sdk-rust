@@ -36,6 +36,13 @@ impl GetWorkflowStepGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetWorkflowStepGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_workflow_step_group::builders::GetWorkflowStepGroupInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl GetWorkflowStepGroupFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The ID of the step group.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The ID of the migration workflow.</p>
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workflow_id(input.into());
@@ -135,5 +146,9 @@ impl GetWorkflowStepGroupFluentBuilder {
     pub fn set_workflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workflow_id(input);
         self
+    }
+    /// <p>The ID of the migration workflow.</p>
+    pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workflow_id()
     }
 }

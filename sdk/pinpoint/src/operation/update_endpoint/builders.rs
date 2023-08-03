@@ -36,6 +36,12 @@ impl UpdateEndpointFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateEndpoint as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_endpoint::builders::UpdateEndpointInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl UpdateEndpointFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>The unique identifier for the endpoint.</p>
     pub fn endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.endpoint_id(input.into());
@@ -133,6 +143,10 @@ impl UpdateEndpointFluentBuilder {
     pub fn set_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_endpoint_id(input);
         self
+    }
+    /// <p>The unique identifier for the endpoint.</p>
+    pub fn get_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_endpoint_id()
     }
     /// <p>Specifies the channel type and other settings for an endpoint.</p>
     pub fn endpoint_request(mut self, input: crate::types::EndpointRequest) -> Self {
@@ -146,5 +160,9 @@ impl UpdateEndpointFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_endpoint_request(input);
         self
+    }
+    /// <p>Specifies the channel type and other settings for an endpoint.</p>
+    pub fn get_endpoint_request(&self) -> &::std::option::Option<crate::types::EndpointRequest> {
+        self.inner.get_endpoint_request()
     }
 }

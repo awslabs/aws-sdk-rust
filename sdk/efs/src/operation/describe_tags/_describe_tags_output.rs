@@ -63,6 +63,10 @@ impl DescribeTagsOutputBuilder {
         self.marker = input;
         self
     }
+    /// <p>If the request included a <code>Marker</code>, the response returns that value in this field.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -82,6 +86,10 @@ impl DescribeTagsOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Returns tags associated with the file system as an array of <code>Tag</code> objects. </p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>If a value is present, there are more tags to return. In a subsequent request, you can provide the value of <code>NextMarker</code> as the value of the <code>Marker</code> parameter in your next request to retrieve the next set of tags.</p>
     pub fn next_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_marker = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl DescribeTagsOutputBuilder {
     pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_marker = input;
         self
+    }
+    /// <p>If a value is present, there are more tags to return. In a subsequent request, you can provide the value of <code>NextMarker</code> as the value of the <code>Marker</code> parameter in your next request to retrieve the next set of tags.</p>
+    pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

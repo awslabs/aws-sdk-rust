@@ -56,6 +56,10 @@ impl S3SourceBuilder {
         self.bucket_name = input;
         self
     }
+    /// <p>Name of the S3 bucket.</p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_name
+    }
     /// <p>Key name of the bucket object that contains your unsigned code.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl S3SourceBuilder {
         self.key = input;
         self
     }
+    /// <p>Key name of the bucket object that contains your unsigned code.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>Version of your source image in your version enabled S3 bucket.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl S3SourceBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>Version of your source image in your version enabled S3 bucket.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`S3Source`](crate::types::S3Source).
     pub fn build(self) -> crate::types::S3Source {

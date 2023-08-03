@@ -81,6 +81,12 @@ impl ElasticInferenceAcceleratorBuilder {
         self.accelerator_health = input;
         self
     }
+    /// <p> The health of the Elastic Inference Accelerator. </p>
+    pub fn get_accelerator_health(
+        &self,
+    ) -> &::std::option::Option<crate::types::ElasticInferenceAcceleratorHealth> {
+        &self.accelerator_health
+    }
     /// <p> The type of the Elastic Inference Accelerator. </p>
     pub fn accelerator_type(
         mut self,
@@ -96,6 +102,10 @@ impl ElasticInferenceAcceleratorBuilder {
     ) -> Self {
         self.accelerator_type = input;
         self
+    }
+    /// <p> The type of the Elastic Inference Accelerator. </p>
+    pub fn get_accelerator_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accelerator_type
     }
     /// <p> The ID of the Elastic Inference Accelerator. </p>
     pub fn accelerator_id(
@@ -113,6 +123,10 @@ impl ElasticInferenceAcceleratorBuilder {
         self.accelerator_id = input;
         self
     }
+    /// <p> The ID of the Elastic Inference Accelerator. </p>
+    pub fn get_accelerator_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accelerator_id
+    }
     /// <p> The availability zone where the Elastic Inference Accelerator is present. </p>
     pub fn availability_zone(
         mut self,
@@ -129,6 +143,10 @@ impl ElasticInferenceAcceleratorBuilder {
         self.availability_zone = input;
         self
     }
+    /// <p> The availability zone where the Elastic Inference Accelerator is present. </p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p> The ARN of the resource that the Elastic Inference Accelerator is attached to. </p>
     pub fn attached_resource(
         mut self,
@@ -144,6 +162,10 @@ impl ElasticInferenceAcceleratorBuilder {
     ) -> Self {
         self.attached_resource = input;
         self
+    }
+    /// <p> The ARN of the resource that the Elastic Inference Accelerator is attached to. </p>
+    pub fn get_attached_resource(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attached_resource
     }
     /// Consumes the builder and constructs a [`ElasticInferenceAccelerator`](crate::types::ElasticInferenceAccelerator).
     pub fn build(self) -> crate::types::ElasticInferenceAccelerator {

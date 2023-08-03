@@ -54,6 +54,10 @@ impl CreateDomainOutputBuilder {
         self.domain_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the created domain.</p>
+    pub fn get_domain_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_arn
+    }
     /// <p>The URL to the created domain.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl CreateDomainOutputBuilder {
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
+    }
+    /// <p>The URL to the created domain.</p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -39,6 +39,10 @@ impl GetPublicKeyInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the public key you are getting.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`GetPublicKeyInput`](crate::operation::get_public_key::GetPublicKeyInput).
     pub fn build(
         self,

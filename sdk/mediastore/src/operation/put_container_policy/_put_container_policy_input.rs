@@ -62,6 +62,10 @@ impl PutContainerPolicyInputBuilder {
         self.container_name = input;
         self
     }
+    /// <p>The name of the container.</p>
+    pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.container_name
+    }
     /// <p>The contents of the policy, which includes the following: </p>
     /// <ul>
     /// <li> <p>One <code>Version</code> tag</p> </li>
@@ -79,6 +83,14 @@ impl PutContainerPolicyInputBuilder {
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy = input;
         self
+    }
+    /// <p>The contents of the policy, which includes the following: </p>
+    /// <ul>
+    /// <li> <p>One <code>Version</code> tag</p> </li>
+    /// <li> <p>One <code>Statement</code> tag that contains the standard tags for the policy.</p> </li>
+    /// </ul>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy
     }
     /// Consumes the builder and constructs a [`PutContainerPolicyInput`](crate::operation::put_container_policy::PutContainerPolicyInput).
     pub fn build(

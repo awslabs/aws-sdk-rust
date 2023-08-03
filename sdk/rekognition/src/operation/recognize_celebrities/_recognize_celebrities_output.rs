@@ -85,6 +85,12 @@ impl RecognizeCelebritiesOutputBuilder {
         self.celebrity_faces = input;
         self
     }
+    /// <p>Details about each celebrity found in the image. Amazon Rekognition can detect a maximum of 64 celebrities in an image. Each celebrity object includes the following attributes: <code>Face</code>, <code>Confidence</code>, <code>Emotions</code>, <code>Landmarks</code>, <code>Pose</code>, <code>Quality</code>, <code>Smile</code>, <code>Id</code>, <code>KnownGender</code>, <code>MatchConfidence</code>, <code>Name</code>, <code>Urls</code>.</p>
+    pub fn get_celebrity_faces(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Celebrity>> {
+        &self.celebrity_faces
+    }
     /// Appends an item to `unrecognized_faces`.
     ///
     /// To override the contents of this collection use [`set_unrecognized_faces`](Self::set_unrecognized_faces).
@@ -103,6 +109,12 @@ impl RecognizeCelebritiesOutputBuilder {
     ) -> Self {
         self.unrecognized_faces = input;
         self
+    }
+    /// <p>Details about each unrecognized face in the image.</p>
+    pub fn get_unrecognized_faces(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComparedFace>> {
+        &self.unrecognized_faces
     }
     /// <note>
     /// <p>Support for estimating image orientation using the the OrientationCorrection field has ceased as of August 2021. Any returned values for this field included in an API response will always be NULL.</p>
@@ -126,6 +138,17 @@ impl RecognizeCelebritiesOutputBuilder {
     ) -> Self {
         self.orientation_correction = input;
         self
+    }
+    /// <note>
+    /// <p>Support for estimating image orientation using the the OrientationCorrection field has ceased as of August 2021. Any returned values for this field included in an API response will always be NULL.</p>
+    /// </note>
+    /// <p>The orientation of the input image (counterclockwise direction). If your application displays the image, you can use this value to correct the orientation. The bounding box coordinates returned in <code>CelebrityFaces</code> and <code>UnrecognizedFaces</code> represent face locations before the image orientation is corrected. </p> <note>
+    /// <p>If the input image is in .jpeg format, it might contain exchangeable image (Exif) metadata that includes the image's orientation. If so, and the Exif metadata for the input image populates the orientation field, the value of <code>OrientationCorrection</code> is null. The <code>CelebrityFaces</code> and <code>UnrecognizedFaces</code> bounding box coordinates represent face locations after Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata. </p>
+    /// </note>
+    pub fn get_orientation_correction(
+        &self,
+    ) -> &::std::option::Option<crate::types::OrientationCorrection> {
+        &self.orientation_correction
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -138,6 +138,10 @@ impl ReplicaSettingsDescriptionBuilder {
         self.region_name = input;
         self
     }
+    /// <p>The Region name of the replica.</p>
+    pub fn get_region_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region_name
+    }
     /// <p>The current state of the Region:</p>
     /// <ul>
     /// <li> <p> <code>CREATING</code> - The Region is being created.</p> </li>
@@ -163,6 +167,16 @@ impl ReplicaSettingsDescriptionBuilder {
         self.replica_status = input;
         self
     }
+    /// <p>The current state of the Region:</p>
+    /// <ul>
+    /// <li> <p> <code>CREATING</code> - The Region is being created.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The Region is being updated.</p> </li>
+    /// <li> <p> <code>DELETING</code> - The Region is being deleted.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> - The Region is ready for use.</p> </li>
+    /// </ul>
+    pub fn get_replica_status(&self) -> &::std::option::Option<crate::types::ReplicaStatus> {
+        &self.replica_status
+    }
     /// <p>The read/write capacity mode of the replica.</p>
     pub fn replica_billing_mode_summary(mut self, input: crate::types::BillingModeSummary) -> Self {
         self.replica_billing_mode_summary = ::std::option::Option::Some(input);
@@ -176,6 +190,12 @@ impl ReplicaSettingsDescriptionBuilder {
         self.replica_billing_mode_summary = input;
         self
     }
+    /// <p>The read/write capacity mode of the replica.</p>
+    pub fn get_replica_billing_mode_summary(
+        &self,
+    ) -> &::std::option::Option<crate::types::BillingModeSummary> {
+        &self.replica_billing_mode_summary
+    }
     /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
     pub fn replica_provisioned_read_capacity_units(mut self, input: i64) -> Self {
         self.replica_provisioned_read_capacity_units = ::std::option::Option::Some(input);
@@ -188,6 +208,10 @@ impl ReplicaSettingsDescriptionBuilder {
     ) -> Self {
         self.replica_provisioned_read_capacity_units = input;
         self
+    }
+    /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
+    pub fn get_replica_provisioned_read_capacity_units(&self) -> &::std::option::Option<i64> {
+        &self.replica_provisioned_read_capacity_units
     }
     /// <p>Auto scaling settings for a global table replica's read capacity units.</p>
     pub fn replica_provisioned_read_capacity_auto_scaling_settings(
@@ -206,6 +230,12 @@ impl ReplicaSettingsDescriptionBuilder {
         self.replica_provisioned_read_capacity_auto_scaling_settings = input;
         self
     }
+    /// <p>Auto scaling settings for a global table replica's read capacity units.</p>
+    pub fn get_replica_provisioned_read_capacity_auto_scaling_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoScalingSettingsDescription> {
+        &self.replica_provisioned_read_capacity_auto_scaling_settings
+    }
     /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn replica_provisioned_write_capacity_units(mut self, input: i64) -> Self {
         self.replica_provisioned_write_capacity_units = ::std::option::Option::Some(input);
@@ -218,6 +248,10 @@ impl ReplicaSettingsDescriptionBuilder {
     ) -> Self {
         self.replica_provisioned_write_capacity_units = input;
         self
+    }
+    /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    pub fn get_replica_provisioned_write_capacity_units(&self) -> &::std::option::Option<i64> {
+        &self.replica_provisioned_write_capacity_units
     }
     /// <p>Auto scaling settings for a global table replica's write capacity units.</p>
     pub fn replica_provisioned_write_capacity_auto_scaling_settings(
@@ -235,6 +269,12 @@ impl ReplicaSettingsDescriptionBuilder {
     ) -> Self {
         self.replica_provisioned_write_capacity_auto_scaling_settings = input;
         self
+    }
+    /// <p>Auto scaling settings for a global table replica's write capacity units.</p>
+    pub fn get_replica_provisioned_write_capacity_auto_scaling_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoScalingSettingsDescription> {
+        &self.replica_provisioned_write_capacity_auto_scaling_settings
     }
     /// Appends an item to `replica_global_secondary_index_settings`.
     ///
@@ -262,6 +302,14 @@ impl ReplicaSettingsDescriptionBuilder {
         self.replica_global_secondary_index_settings = input;
         self
     }
+    /// <p>Replica global secondary index settings for the global table.</p>
+    pub fn get_replica_global_secondary_index_settings(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::ReplicaGlobalSecondaryIndexSettingsDescription>,
+    > {
+        &self.replica_global_secondary_index_settings
+    }
     /// <p>Contains details of the table class.</p>
     pub fn replica_table_class_summary(mut self, input: crate::types::TableClassSummary) -> Self {
         self.replica_table_class_summary = ::std::option::Option::Some(input);
@@ -274,6 +322,12 @@ impl ReplicaSettingsDescriptionBuilder {
     ) -> Self {
         self.replica_table_class_summary = input;
         self
+    }
+    /// <p>Contains details of the table class.</p>
+    pub fn get_replica_table_class_summary(
+        &self,
+    ) -> &::std::option::Option<crate::types::TableClassSummary> {
+        &self.replica_table_class_summary
     }
     /// Consumes the builder and constructs a [`ReplicaSettingsDescription`](crate::types::ReplicaSettingsDescription).
     pub fn build(self) -> crate::types::ReplicaSettingsDescription {

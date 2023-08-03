@@ -72,6 +72,10 @@ impl ListedBridgeBuilder {
         self.bridge_arn = input;
         self
     }
+    /// The ARN of the bridge.
+    pub fn get_bridge_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bridge_arn
+    }
     #[allow(missing_docs)] // documentation missing in model
     pub fn bridge_state(mut self, input: crate::types::BridgeState) -> Self {
         self.bridge_state = ::std::option::Option::Some(input);
@@ -85,6 +89,10 @@ impl ListedBridgeBuilder {
         self.bridge_state = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_bridge_state(&self) -> &::std::option::Option<crate::types::BridgeState> {
+        &self.bridge_state
+    }
     /// The type of the bridge.
     pub fn bridge_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bridge_type = ::std::option::Option::Some(input.into());
@@ -95,6 +103,10 @@ impl ListedBridgeBuilder {
         self.bridge_type = input;
         self
     }
+    /// The type of the bridge.
+    pub fn get_bridge_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bridge_type
+    }
     /// The name of the bridge.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -104,6 +116,10 @@ impl ListedBridgeBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// The name of the bridge.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// The ARN of the gateway associated with the bridge.
     pub fn placement_arn(
@@ -120,6 +136,10 @@ impl ListedBridgeBuilder {
     ) -> Self {
         self.placement_arn = input;
         self
+    }
+    /// The ARN of the gateway associated with the bridge.
+    pub fn get_placement_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.placement_arn
     }
     /// Consumes the builder and constructs a [`ListedBridge`](crate::types::ListedBridge).
     pub fn build(self) -> crate::types::ListedBridge {

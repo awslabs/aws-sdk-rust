@@ -109,6 +109,10 @@ impl CreateCaseInputBuilder {
         self.subject = input;
         self
     }
+    /// <p>The title of the support case. The title appears in the <b>Subject</b> field on the Amazon Web Services Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
+    pub fn get_subject(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subject
+    }
     /// <p>The code for the Amazon Web Services service. You can use the <code>DescribeServices</code> operation to get the possible <code>serviceCode</code> values.</p>
     pub fn service_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_code = ::std::option::Option::Some(input.into());
@@ -118,6 +122,10 @@ impl CreateCaseInputBuilder {
     pub fn set_service_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_code = input;
         self
+    }
+    /// <p>The code for the Amazon Web Services service. You can use the <code>DescribeServices</code> operation to get the possible <code>serviceCode</code> values.</p>
+    pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_code
     }
     /// <p>A value that indicates the urgency of the case. This value determines the response time according to your service level agreement with Amazon Web Services Support. You can use the <code>DescribeSeverityLevels</code> operation to get the possible values for <code>severityCode</code>. </p>
     /// <p>For more information, see <code>SeverityLevel</code> and <a href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing a Severity</a> in the <i>Amazon Web Services Support User Guide</i>.</p> <note>
@@ -141,6 +149,13 @@ impl CreateCaseInputBuilder {
         self.severity_code = input;
         self
     }
+    /// <p>A value that indicates the urgency of the case. This value determines the response time according to your service level agreement with Amazon Web Services Support. You can use the <code>DescribeSeverityLevels</code> operation to get the possible values for <code>severityCode</code>. </p>
+    /// <p>For more information, see <code>SeverityLevel</code> and <a href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing a Severity</a> in the <i>Amazon Web Services Support User Guide</i>.</p> <note>
+    /// <p>The availability of severity levels depends on the support plan for the Amazon Web Services account.</p>
+    /// </note>
+    pub fn get_severity_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.severity_code
+    }
     /// <p>The category of problem for the support case. You also use the <code>DescribeServices</code> operation to get the category code for a service. Each Amazon Web Services service defines its own set of category codes.</p>
     pub fn category_code(
         mut self,
@@ -157,6 +172,10 @@ impl CreateCaseInputBuilder {
         self.category_code = input;
         self
     }
+    /// <p>The category of problem for the support case. You also use the <code>DescribeServices</code> operation to get the category code for a service. Each Amazon Web Services service defines its own set of category codes.</p>
+    pub fn get_category_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.category_code
+    }
     /// <p>The communication body text that describes the issue. This text appears in the <b>Description</b> field on the Amazon Web Services Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
     pub fn communication_body(
         mut self,
@@ -172,6 +191,10 @@ impl CreateCaseInputBuilder {
     ) -> Self {
         self.communication_body = input;
         self
+    }
+    /// <p>The communication body text that describes the issue. This text appears in the <b>Description</b> field on the Amazon Web Services Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
+    pub fn get_communication_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.communication_body
     }
     /// Appends an item to `cc_email_addresses`.
     ///
@@ -195,6 +218,12 @@ impl CreateCaseInputBuilder {
         self.cc_email_addresses = input;
         self
     }
+    /// <p>A list of email addresses that Amazon Web Services Support copies on case correspondence. Amazon Web Services Support identifies the account that creates the case when you specify your Amazon Web Services credentials in an HTTP POST method or use the <a href="http://aws.amazon.com/tools/">Amazon Web Services SDKs</a>. </p>
+    pub fn get_cc_email_addresses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.cc_email_addresses
+    }
     /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     pub fn language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.language = ::std::option::Option::Some(input.into());
@@ -205,6 +234,10 @@ impl CreateCaseInputBuilder {
         self.language = input;
         self
     }
+    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
+    pub fn get_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.language
+    }
     /// <p>The type of issue for the case. You can specify <code>customer-service</code> or <code>technical</code>. If you don't specify a value, the default is <code>technical</code>.</p>
     pub fn issue_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.issue_type = ::std::option::Option::Some(input.into());
@@ -214,6 +247,10 @@ impl CreateCaseInputBuilder {
     pub fn set_issue_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.issue_type = input;
         self
+    }
+    /// <p>The type of issue for the case. You can specify <code>customer-service</code> or <code>technical</code>. If you don't specify a value, the default is <code>technical</code>.</p>
+    pub fn get_issue_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.issue_type
     }
     /// <p>The ID of a set of one or more attachments for the case. Create the set by using the <code>AddAttachmentsToSet</code> operation.</p>
     pub fn attachment_set_id(
@@ -230,6 +267,10 @@ impl CreateCaseInputBuilder {
     ) -> Self {
         self.attachment_set_id = input;
         self
+    }
+    /// <p>The ID of a set of one or more attachments for the case. Create the set by using the <code>AddAttachmentsToSet</code> operation.</p>
+    pub fn get_attachment_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attachment_set_id
     }
     /// Consumes the builder and constructs a [`CreateCaseInput`](crate::operation::create_case::CreateCaseInput).
     pub fn build(

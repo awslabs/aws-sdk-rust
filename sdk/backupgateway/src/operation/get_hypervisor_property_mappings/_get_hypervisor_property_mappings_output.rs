@@ -72,6 +72,10 @@ impl GetHypervisorPropertyMappingsOutputBuilder {
         self.hypervisor_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
+    pub fn get_hypervisor_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hypervisor_arn
+    }
     /// Appends an item to `vmware_to_aws_tag_mappings`.
     ///
     /// To override the contents of this collection use [`set_vmware_to_aws_tag_mappings`](Self::set_vmware_to_aws_tag_mappings).
@@ -94,6 +98,12 @@ impl GetHypervisorPropertyMappingsOutputBuilder {
         self.vmware_to_aws_tag_mappings = input;
         self
     }
+    /// <p>This is a display of the mappings of on-premises VMware tags to the Amazon Web Services tags.</p>
+    pub fn get_vmware_to_aws_tag_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VmwareToAwsTagMapping>> {
+        &self.vmware_to_aws_tag_mappings
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM role.</p>
     pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_role_arn = ::std::option::Option::Some(input.into());
@@ -103,6 +113,10 @@ impl GetHypervisorPropertyMappingsOutputBuilder {
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role.</p>
+    pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iam_role_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -47,6 +47,10 @@ impl DescribeFlowDefinitionInputBuilder {
         self.flow_definition_name = input;
         self
     }
+    /// <p>The name of the flow definition.</p>
+    pub fn get_flow_definition_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_definition_name
+    }
     /// Consumes the builder and constructs a [`DescribeFlowDefinitionInput`](crate::operation::describe_flow_definition::DescribeFlowDefinitionInput).
     pub fn build(
         self,

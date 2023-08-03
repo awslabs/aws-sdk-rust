@@ -79,6 +79,12 @@ impl ResponseOutputItemBuilder {
         self.dash_playlist_settings = input;
         self
     }
+    /// <p>DASH manifest configuration settings.</p>
+    pub fn get_dash_playlist_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::DashPlaylistSettings> {
+        &self.dash_playlist_settings
+    }
     /// <p>HLS manifest configuration settings.</p>
     pub fn hls_playlist_settings(mut self, input: crate::types::HlsPlaylistSettings) -> Self {
         self.hls_playlist_settings = ::std::option::Option::Some(input);
@@ -91,6 +97,12 @@ impl ResponseOutputItemBuilder {
     ) -> Self {
         self.hls_playlist_settings = input;
         self
+    }
+    /// <p>HLS manifest configuration settings.</p>
+    pub fn get_hls_playlist_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::HlsPlaylistSettings> {
+        &self.hls_playlist_settings
     }
     /// <p>The name of the manifest for the channel that will appear in the channel output's playback URL.</p>
     pub fn manifest_name(
@@ -108,6 +120,10 @@ impl ResponseOutputItemBuilder {
         self.manifest_name = input;
         self
     }
+    /// <p>The name of the manifest for the channel that will appear in the channel output's playback URL.</p>
+    pub fn get_manifest_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.manifest_name
+    }
     /// <p>The URL used for playback by content players.</p>
     pub fn playback_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.playback_url = ::std::option::Option::Some(input.into());
@@ -118,6 +134,10 @@ impl ResponseOutputItemBuilder {
         self.playback_url = input;
         self
     }
+    /// <p>The URL used for playback by content players.</p>
+    pub fn get_playback_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.playback_url
+    }
     /// <p>A string used to associate a package configuration source group with a channel output.</p>
     pub fn source_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_group = ::std::option::Option::Some(input.into());
@@ -127,6 +147,10 @@ impl ResponseOutputItemBuilder {
     pub fn set_source_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_group = input;
         self
+    }
+    /// <p>A string used to associate a package configuration source group with a channel output.</p>
+    pub fn get_source_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_group
     }
     /// Consumes the builder and constructs a [`ResponseOutputItem`](crate::types::ResponseOutputItem).
     pub fn build(self) -> crate::types::ResponseOutputItem {

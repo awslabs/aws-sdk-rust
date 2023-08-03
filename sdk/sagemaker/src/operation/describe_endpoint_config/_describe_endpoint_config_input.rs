@@ -47,6 +47,10 @@ impl DescribeEndpointConfigInputBuilder {
         self.endpoint_config_name = input;
         self
     }
+    /// <p>The name of the endpoint configuration.</p>
+    pub fn get_endpoint_config_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_config_name
+    }
     /// Consumes the builder and constructs a [`DescribeEndpointConfigInput`](crate::operation::describe_endpoint_config::DescribeEndpointConfigInput).
     pub fn build(
         self,

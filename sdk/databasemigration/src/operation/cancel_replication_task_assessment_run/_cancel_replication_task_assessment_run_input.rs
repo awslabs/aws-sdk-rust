@@ -46,6 +46,12 @@ impl CancelReplicationTaskAssessmentRunInputBuilder {
         self.replication_task_assessment_run_arn = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the premigration assessment run to be canceled.</p>
+    pub fn get_replication_task_assessment_run_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.replication_task_assessment_run_arn
+    }
     /// Consumes the builder and constructs a [`CancelReplicationTaskAssessmentRunInput`](crate::operation::cancel_replication_task_assessment_run::CancelReplicationTaskAssessmentRunInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::cancel_replication_task_assessment_run::CancelReplicationTaskAssessmentRunInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

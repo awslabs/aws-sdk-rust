@@ -40,6 +40,10 @@ impl PivotTableFieldSubtotalOptionsBuilder {
         self.field_id = input;
         self
     }
+    /// <p>The field ID of the subtotal options.</p>
+    pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_id
+    }
     /// Consumes the builder and constructs a [`PivotTableFieldSubtotalOptions`](crate::types::PivotTableFieldSubtotalOptions).
     pub fn build(self) -> crate::types::PivotTableFieldSubtotalOptions {
         crate::types::PivotTableFieldSubtotalOptions {

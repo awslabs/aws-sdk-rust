@@ -49,6 +49,10 @@ impl DeleteThingShadowInputBuilder {
         self.thing_name = input;
         self
     }
+    /// <p>The name of the thing.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_name
+    }
     /// <p>The name of the shadow.</p>
     pub fn shadow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shadow_name = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl DeleteThingShadowInputBuilder {
     pub fn set_shadow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.shadow_name = input;
         self
+    }
+    /// <p>The name of the shadow.</p>
+    pub fn get_shadow_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.shadow_name
     }
     /// Consumes the builder and constructs a [`DeleteThingShadowInput`](crate::operation::delete_thing_shadow::DeleteThingShadowInput).
     pub fn build(

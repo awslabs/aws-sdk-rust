@@ -61,6 +61,12 @@ impl BatchPutPropertyValuesOutputBuilder {
         self.error_entries = input;
         self
     }
+    /// <p>Entries that caused errors in the batch put operation.</p>
+    pub fn get_error_entries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchPutPropertyErrorEntry>> {
+        &self.error_entries
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

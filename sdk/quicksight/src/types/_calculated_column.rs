@@ -63,6 +63,10 @@ impl CalculatedColumnBuilder {
         self.column_name = input;
         self
     }
+    /// <p>Column name.</p>
+    pub fn get_column_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.column_name
+    }
     /// <p>A unique ID to identify a calculated column. During a dataset update, if the column ID of a calculated column matches that of an existing calculated column, Amazon QuickSight preserves the existing calculated column.</p>
     pub fn column_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.column_id = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl CalculatedColumnBuilder {
         self.column_id = input;
         self
     }
+    /// <p>A unique ID to identify a calculated column. During a dataset update, if the column ID of a calculated column matches that of an existing calculated column, Amazon QuickSight preserves the existing calculated column.</p>
+    pub fn get_column_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.column_id
+    }
     /// <p>An expression that defines the calculated column.</p>
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl CalculatedColumnBuilder {
     pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expression = input;
         self
+    }
+    /// <p>An expression that defines the calculated column.</p>
+    pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expression
     }
     /// Consumes the builder and constructs a [`CalculatedColumn`](crate::types::CalculatedColumn).
     pub fn build(self) -> crate::types::CalculatedColumn {

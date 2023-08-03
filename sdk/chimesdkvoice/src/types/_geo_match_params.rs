@@ -48,6 +48,10 @@ impl GeoMatchParamsBuilder {
         self.country = input;
         self
     }
+    /// <p>The country.</p>
+    pub fn get_country(&self) -> &::std::option::Option<::std::string::String> {
+        &self.country
+    }
     /// <p>The area code.</p>
     pub fn area_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.area_code = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl GeoMatchParamsBuilder {
     pub fn set_area_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.area_code = input;
         self
+    }
+    /// <p>The area code.</p>
+    pub fn get_area_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.area_code
     }
     /// Consumes the builder and constructs a [`GeoMatchParams`](crate::types::GeoMatchParams).
     pub fn build(self) -> crate::types::GeoMatchParams {

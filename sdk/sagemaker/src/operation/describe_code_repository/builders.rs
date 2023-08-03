@@ -36,6 +36,13 @@ impl DescribeCodeRepositoryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeCodeRepository as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_code_repository::builders::DescribeCodeRepositoryInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +138,9 @@ impl DescribeCodeRepositoryFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_code_repository_name(input);
         self
+    }
+    /// <p>The name of the Git repository to describe.</p>
+    pub fn get_code_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_code_repository_name()
     }
 }

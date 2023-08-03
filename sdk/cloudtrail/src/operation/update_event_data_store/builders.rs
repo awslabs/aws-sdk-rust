@@ -38,6 +38,13 @@ impl UpdateEventDataStoreFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateEventDataStore as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_event_data_store::builders::UpdateEventDataStoreInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +141,10 @@ impl UpdateEventDataStoreFluentBuilder {
         self.inner = self.inner.set_event_data_store(input);
         self
     }
+    /// <p>The ARN (or the ID suffix of the ARN) of the event data store that you want to update.</p>
+    pub fn get_event_data_store(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_event_data_store()
+    }
     /// <p>The event data store name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -143,6 +154,10 @@ impl UpdateEventDataStoreFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The event data store name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// Appends an item to `AdvancedEventSelectors`.
     ///
@@ -161,6 +176,12 @@ impl UpdateEventDataStoreFluentBuilder {
         self.inner = self.inner.set_advanced_event_selectors(input);
         self
     }
+    /// <p>The advanced event selectors used to select events for the event data store. You can configure up to five advanced event selectors for each event data store.</p>
+    pub fn get_advanced_event_selectors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>> {
+        self.inner.get_advanced_event_selectors()
+    }
     /// <p>Specifies whether an event data store collects events from all Regions, or only from the Region in which it was created.</p>
     pub fn multi_region_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.multi_region_enabled(input);
@@ -170,6 +191,10 @@ impl UpdateEventDataStoreFluentBuilder {
     pub fn set_multi_region_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_multi_region_enabled(input);
         self
+    }
+    /// <p>Specifies whether an event data store collects events from all Regions, or only from the Region in which it was created.</p>
+    pub fn get_multi_region_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_multi_region_enabled()
     }
     /// <p>Specifies whether an event data store collects events logged for an organization in Organizations.</p>
     pub fn organization_enabled(mut self, input: bool) -> Self {
@@ -181,6 +206,10 @@ impl UpdateEventDataStoreFluentBuilder {
         self.inner = self.inner.set_organization_enabled(input);
         self
     }
+    /// <p>Specifies whether an event data store collects events logged for an organization in Organizations.</p>
+    pub fn get_organization_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_organization_enabled()
+    }
     /// <p>The retention period, in days.</p>
     pub fn retention_period(mut self, input: i32) -> Self {
         self.inner = self.inner.retention_period(input);
@@ -190,6 +219,10 @@ impl UpdateEventDataStoreFluentBuilder {
     pub fn set_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_retention_period(input);
         self
+    }
+    /// <p>The retention period, in days.</p>
+    pub fn get_retention_period(&self) -> &::std::option::Option<i32> {
+        self.inner.get_retention_period()
     }
     /// <p>Indicates that termination protection is enabled and the event data store cannot be automatically deleted.</p>
     pub fn termination_protection_enabled(mut self, input: bool) -> Self {
@@ -203,6 +236,10 @@ impl UpdateEventDataStoreFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_termination_protection_enabled(input);
         self
+    }
+    /// <p>Indicates that termination protection is enabled and the event data store cannot be automatically deleted.</p>
+    pub fn get_termination_protection_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_termination_protection_enabled()
     }
     /// <p>Specifies the KMS key ID to use to encrypt the events delivered by CloudTrail. The value can be an alias name prefixed by <code>alias/</code>, a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p> <important>
     /// <p>Disabling or deleting the KMS key, or removing CloudTrail permissions on the key, prevents CloudTrail from logging events to the event data store, and prevents users from querying the data in the event data store that was encrypted with the key. After you associate an event data store with a KMS key, the KMS key cannot be removed or changed. Before you disable or delete a KMS key that you are using with an event data store, delete or back up your event data store.</p>
@@ -233,5 +270,19 @@ impl UpdateEventDataStoreFluentBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
         self
+    }
+    /// <p>Specifies the KMS key ID to use to encrypt the events delivered by CloudTrail. The value can be an alias name prefixed by <code>alias/</code>, a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p> <important>
+    /// <p>Disabling or deleting the KMS key, or removing CloudTrail permissions on the key, prevents CloudTrail from logging events to the event data store, and prevents users from querying the data in the event data store that was encrypted with the key. After you associate an event data store with a KMS key, the KMS key cannot be removed or changed. Before you disable or delete a KMS key that you are using with an event data store, delete or back up your event data store.</p>
+    /// </important>
+    /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>Examples:</p>
+    /// <ul>
+    /// <li> <p> <code>alias/MyAliasName</code> </p> </li>
+    /// <li> <p> <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code> </p> </li>
+    /// <li> <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p> </li>
+    /// <li> <p> <code>12345678-1234-1234-1234-123456789012</code> </p> </li>
+    /// </ul>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key_id()
     }
 }

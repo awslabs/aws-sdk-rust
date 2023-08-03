@@ -73,6 +73,12 @@ impl DescribeObjectsOutputBuilder {
         self.pipeline_objects = input;
         self
     }
+    /// <p>An array of object definitions.</p>
+    pub fn get_pipeline_objects(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>> {
+        &self.pipeline_objects
+    }
     /// <p>The starting point for the next page of results. To view the next page of results, call <code>DescribeObjects</code> again with this marker value. If the value is null, there are no more results.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -83,6 +89,10 @@ impl DescribeObjectsOutputBuilder {
         self.marker = input;
         self
     }
+    /// <p>The starting point for the next page of results. To view the next page of results, call <code>DescribeObjects</code> again with this marker value. If the value is null, there are no more results.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// <p>Indicates whether there are more results to return.</p>
     pub fn has_more_results(mut self, input: bool) -> Self {
         self.has_more_results = ::std::option::Option::Some(input);
@@ -92,6 +102,10 @@ impl DescribeObjectsOutputBuilder {
     pub fn set_has_more_results(mut self, input: ::std::option::Option<bool>) -> Self {
         self.has_more_results = input;
         self
+    }
+    /// <p>Indicates whether there are more results to return.</p>
+    pub fn get_has_more_results(&self) -> &::std::option::Option<bool> {
+        &self.has_more_results
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

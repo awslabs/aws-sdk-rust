@@ -40,6 +40,10 @@ impl MetadataBuilder {
         self.source_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) associated with the dataset. Currently, DataBrew only supports ARNs from Amazon AppFlow.</p>
+    pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_arn
+    }
     /// Consumes the builder and constructs a [`Metadata`](crate::types::Metadata).
     pub fn build(self) -> crate::types::Metadata {
         crate::types::Metadata {

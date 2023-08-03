@@ -42,6 +42,10 @@ impl ListSupportedPhoneNumberCountriesInputBuilder {
         self.product_type = input;
         self
     }
+    /// <p>The phone number product type.</p>
+    pub fn get_product_type(&self) -> &::std::option::Option<crate::types::PhoneNumberProductType> {
+        &self.product_type
+    }
     /// Consumes the builder and constructs a [`ListSupportedPhoneNumberCountriesInput`](crate::operation::list_supported_phone_number_countries::ListSupportedPhoneNumberCountriesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_supported_phone_number_countries::ListSupportedPhoneNumberCountriesInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

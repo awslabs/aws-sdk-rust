@@ -181,6 +181,10 @@ impl CreateSnapshotOutputBuilder {
         self.data_encryption_key_id = input;
         self
     }
+    /// <p>The data encryption key identifier for the snapshot. This value is a unique identifier that corresponds to the data encryption key that was used to encrypt the original volume or snapshot copy. Because data encryption keys are inherited by volumes created from snapshots, and vice versa, if snapshots share the same data encryption key identifier, then they belong to the same volume/snapshot lineage. This parameter is only returned by <code>DescribeSnapshots</code>.</p>
+    pub fn get_data_encryption_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_encryption_key_id
+    }
     /// <p>The description for the snapshot.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -190,6 +194,10 @@ impl CreateSnapshotOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description for the snapshot.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Indicates whether the snapshot is encrypted.</p>
     pub fn encrypted(mut self, input: bool) -> Self {
@@ -201,6 +209,10 @@ impl CreateSnapshotOutputBuilder {
         self.encrypted = input;
         self
     }
+    /// <p>Indicates whether the snapshot is encrypted.</p>
+    pub fn get_encrypted(&self) -> &::std::option::Option<bool> {
+        &self.encrypted
+    }
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the volume encryption key for the parent volume.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -210,6 +222,10 @@ impl CreateSnapshotOutputBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the volume encryption key for the parent volume.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// <p>The ID of the Amazon Web Services account that owns the EBS snapshot.</p>
     pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -221,6 +237,10 @@ impl CreateSnapshotOutputBuilder {
         self.owner_id = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services account that owns the EBS snapshot.</p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
+    }
     /// <p>The progress of the snapshot, as a percentage.</p>
     pub fn progress(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.progress = ::std::option::Option::Some(input.into());
@@ -231,6 +251,10 @@ impl CreateSnapshotOutputBuilder {
         self.progress = input;
         self
     }
+    /// <p>The progress of the snapshot, as a percentage.</p>
+    pub fn get_progress(&self) -> &::std::option::Option<::std::string::String> {
+        &self.progress
+    }
     /// <p>The ID of the snapshot. Each snapshot receives a unique identifier when it is created.</p>
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_id = ::std::option::Option::Some(input.into());
@@ -240,6 +264,10 @@ impl CreateSnapshotOutputBuilder {
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_id = input;
         self
+    }
+    /// <p>The ID of the snapshot. Each snapshot receives a unique identifier when it is created.</p>
+    pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_id
     }
     /// <p>The time stamp when the snapshot was initiated.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -254,6 +282,10 @@ impl CreateSnapshotOutputBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The time stamp when the snapshot was initiated.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The snapshot state.</p>
     pub fn state(mut self, input: crate::types::SnapshotState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -263,6 +295,10 @@ impl CreateSnapshotOutputBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::SnapshotState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The snapshot state.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::SnapshotState> {
+        &self.state
     }
     /// <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation fails (for example, if the proper Key Management Service (KMS) permissions are not obtained) this field displays error state details to help you diagnose why the error occurred. This parameter is only returned by <code>DescribeSnapshots</code>.</p>
     pub fn state_message(
@@ -280,6 +316,10 @@ impl CreateSnapshotOutputBuilder {
         self.state_message = input;
         self
     }
+    /// <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation fails (for example, if the proper Key Management Service (KMS) permissions are not obtained) this field displays error state details to help you diagnose why the error occurred. This parameter is only returned by <code>DescribeSnapshots</code>.</p>
+    pub fn get_state_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_message
+    }
     /// <p>The ID of the volume that was used to create the snapshot. Snapshots created by the <code>CopySnapshot</code> action have an arbitrary volume ID that should not be used for any purpose.</p>
     pub fn volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_id = ::std::option::Option::Some(input.into());
@@ -289,6 +329,10 @@ impl CreateSnapshotOutputBuilder {
     pub fn set_volume_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_id = input;
         self
+    }
+    /// <p>The ID of the volume that was used to create the snapshot. Snapshots created by the <code>CopySnapshot</code> action have an arbitrary volume ID that should not be used for any purpose.</p>
+    pub fn get_volume_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_id
     }
     /// <p>The size of the volume, in GiB.</p>
     pub fn volume_size(mut self, input: i32) -> Self {
@@ -300,6 +344,10 @@ impl CreateSnapshotOutputBuilder {
         self.volume_size = input;
         self
     }
+    /// <p>The size of the volume, in GiB.</p>
+    pub fn get_volume_size(&self) -> &::std::option::Option<i32> {
+        &self.volume_size
+    }
     /// <p>The Amazon Web Services owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not the user-configured Amazon Web Services account alias set using the IAM console.</p>
     pub fn owner_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_alias = ::std::option::Option::Some(input.into());
@@ -310,6 +358,10 @@ impl CreateSnapshotOutputBuilder {
         self.owner_alias = input;
         self
     }
+    /// <p>The Amazon Web Services owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not the user-configured Amazon Web Services account alias set using the IAM console.</p>
+    pub fn get_owner_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_alias
+    }
     /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub fn outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outpost_arn = ::std::option::Option::Some(input.into());
@@ -319,6 +371,10 @@ impl CreateSnapshotOutputBuilder {
     pub fn set_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outpost_arn = input;
         self
+    }
+    /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    pub fn get_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.outpost_arn
     }
     /// Appends an item to `tags`.
     ///
@@ -339,6 +395,10 @@ impl CreateSnapshotOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Any tags assigned to the snapshot.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The storage tier in which the snapshot is stored. <code>standard</code> indicates that the snapshot is stored in the standard snapshot storage tier and that it is ready for use. <code>archive</code> indicates that the snapshot is currently archived and that it must be restored before it can be used.</p>
     pub fn storage_tier(mut self, input: crate::types::StorageTier) -> Self {
         self.storage_tier = ::std::option::Option::Some(input);
@@ -352,6 +412,10 @@ impl CreateSnapshotOutputBuilder {
         self.storage_tier = input;
         self
     }
+    /// <p>The storage tier in which the snapshot is stored. <code>standard</code> indicates that the snapshot is stored in the standard snapshot storage tier and that it is ready for use. <code>archive</code> indicates that the snapshot is currently archived and that it must be restored before it can be used.</p>
+    pub fn get_storage_tier(&self) -> &::std::option::Option<crate::types::StorageTier> {
+        &self.storage_tier
+    }
     /// <p>Only for archived snapshots that are temporarily restored. Indicates the date and time when a temporarily restored snapshot will be automatically re-archived.</p>
     pub fn restore_expiry_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.restore_expiry_time = ::std::option::Option::Some(input);
@@ -364,6 +428,10 @@ impl CreateSnapshotOutputBuilder {
     ) -> Self {
         self.restore_expiry_time = input;
         self
+    }
+    /// <p>Only for archived snapshots that are temporarily restored. Indicates the date and time when a temporarily restored snapshot will be automatically re-archived.</p>
+    pub fn get_restore_expiry_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.restore_expiry_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

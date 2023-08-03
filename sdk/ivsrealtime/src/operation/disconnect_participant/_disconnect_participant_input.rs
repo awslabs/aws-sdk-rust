@@ -56,6 +56,10 @@ impl DisconnectParticipantInputBuilder {
         self.stage_arn = input;
         self
     }
+    /// <p>ARN of the stage to which the participant is attached.</p>
+    pub fn get_stage_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stage_arn
+    }
     /// <p>Identifier of the participant to be disconnected. This is assigned by IVS and returned by <code>CreateParticipantToken</code>.</p>
     pub fn participant_id(
         mut self,
@@ -72,6 +76,10 @@ impl DisconnectParticipantInputBuilder {
         self.participant_id = input;
         self
     }
+    /// <p>Identifier of the participant to be disconnected. This is assigned by IVS and returned by <code>CreateParticipantToken</code>.</p>
+    pub fn get_participant_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.participant_id
+    }
     /// <p>Description of why this participant is being disconnected.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl DisconnectParticipantInputBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
+    }
+    /// <p>Description of why this participant is being disconnected.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
     }
     /// Consumes the builder and constructs a [`DisconnectParticipantInput`](crate::operation::disconnect_participant::DisconnectParticipantInput).
     pub fn build(

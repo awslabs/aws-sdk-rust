@@ -38,6 +38,12 @@ impl CreateReceiptFilterFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateReceiptFilter as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_receipt_filter::builders::CreateReceiptFilterInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,5 +133,9 @@ impl CreateReceiptFilterFluentBuilder {
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ReceiptFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
+    }
+    /// <p>A data structure that describes the IP address filter to create, which consists of a name, an IP address range, and whether to allow or block mail from it.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::ReceiptFilter> {
+        self.inner.get_filter()
     }
 }

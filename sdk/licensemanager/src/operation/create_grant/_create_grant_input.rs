@@ -98,6 +98,10 @@ impl CreateGrantInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>Grant name.</p>
     pub fn grant_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grant_name = ::std::option::Option::Some(input.into());
@@ -108,6 +112,10 @@ impl CreateGrantInputBuilder {
         self.grant_name = input;
         self
     }
+    /// <p>Grant name.</p>
+    pub fn get_grant_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grant_name
+    }
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     pub fn license_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_arn = ::std::option::Option::Some(input.into());
@@ -117,6 +125,10 @@ impl CreateGrantInputBuilder {
     pub fn set_license_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.license_arn = input;
         self
+    }
+    /// <p>Amazon Resource Name (ARN) of the license.</p>
+    pub fn get_license_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_arn
     }
     /// Appends an item to `principals`.
     ///
@@ -155,6 +167,19 @@ impl CreateGrantInputBuilder {
         self.principals = input;
         self
     }
+    /// <p>The grant principals. You can specify one of the following as an Amazon Resource Name (ARN):</p>
+    /// <ul>
+    /// <li> <p>An Amazon Web Services account, which includes only the account specified.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>An organizational unit (OU), which includes all accounts in the OU.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>An organization, which will include all accounts across your organization.</p> </li>
+    /// </ul>
+    pub fn get_principals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.principals
+    }
     /// <p>Home Region of the grant.</p>
     pub fn home_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.home_region = ::std::option::Option::Some(input.into());
@@ -164,6 +189,10 @@ impl CreateGrantInputBuilder {
     pub fn set_home_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.home_region = input;
         self
+    }
+    /// <p>Home Region of the grant.</p>
+    pub fn get_home_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.home_region
     }
     /// Appends an item to `allowed_operations`.
     ///
@@ -183,6 +212,12 @@ impl CreateGrantInputBuilder {
     ) -> Self {
         self.allowed_operations = input;
         self
+    }
+    /// <p>Allowed operations for the grant.</p>
+    pub fn get_allowed_operations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>> {
+        &self.allowed_operations
     }
     /// Consumes the builder and constructs a [`CreateGrantInput`](crate::operation::create_grant::CreateGrantInput).
     pub fn build(

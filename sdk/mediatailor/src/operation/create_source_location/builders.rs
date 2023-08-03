@@ -36,6 +36,12 @@ impl CreateSourceLocationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateSourceLocation as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_source_location::builders::CreateSourceLocationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,12 @@ impl CreateSourceLocationFluentBuilder {
         self.inner = self.inner.set_access_configuration(input);
         self
     }
+    /// <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
+    pub fn get_access_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AccessConfiguration> {
+        self.inner.get_access_configuration()
+    }
     /// <p>The optional configuration for the server that serves segments.</p>
     pub fn default_segment_delivery_configuration(
         mut self,
@@ -145,6 +157,12 @@ impl CreateSourceLocationFluentBuilder {
         self.inner = self.inner.set_default_segment_delivery_configuration(input);
         self
     }
+    /// <p>The optional configuration for the server that serves segments.</p>
+    pub fn get_default_segment_delivery_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DefaultSegmentDeliveryConfiguration> {
+        self.inner.get_default_segment_delivery_configuration()
+    }
     /// <p>The source's HTTP package configurations.</p>
     pub fn http_configuration(mut self, input: crate::types::HttpConfiguration) -> Self {
         self.inner = self.inner.http_configuration(input);
@@ -157,6 +175,12 @@ impl CreateSourceLocationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_http_configuration(input);
         self
+    }
+    /// <p>The source's HTTP package configurations.</p>
+    pub fn get_http_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::HttpConfiguration> {
+        self.inner.get_http_configuration()
     }
     /// Appends an item to `SegmentDeliveryConfigurations`.
     ///
@@ -178,6 +202,12 @@ impl CreateSourceLocationFluentBuilder {
         self.inner = self.inner.set_segment_delivery_configurations(input);
         self
     }
+    /// <p>A list of the segment delivery configurations associated with this resource.</p>
+    pub fn get_segment_delivery_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SegmentDeliveryConfiguration>> {
+        self.inner.get_segment_delivery_configurations()
+    }
     /// <p>The name associated with the source location.</p>
     pub fn source_location_name(
         mut self,
@@ -193,6 +223,10 @@ impl CreateSourceLocationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_source_location_name(input);
         self
+    }
+    /// <p>The name associated with the source location.</p>
+    pub fn get_source_location_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_location_name()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -216,5 +250,13 @@ impl CreateSourceLocationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

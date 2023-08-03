@@ -55,6 +55,10 @@ impl ListIpRoutesInputBuilder {
         self.directory_id = input;
         self
     }
+    /// <p>Identifier (ID) of the directory for which you want to retrieve the IP addresses.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
+    }
     /// <p>The <i>ListIpRoutes.NextToken</i> value from a previous call to <code>ListIpRoutes</code>. Pass null if this is the first call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl ListIpRoutesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The <i>ListIpRoutes.NextToken</i> value from a previous call to <code>ListIpRoutes</code>. Pass null if this is the first call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>Maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -74,6 +82,10 @@ impl ListIpRoutesInputBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
+    }
+    /// <p>Maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// Consumes the builder and constructs a [`ListIpRoutesInput`](crate::operation::list_ip_routes::ListIpRoutesInput).
     pub fn build(

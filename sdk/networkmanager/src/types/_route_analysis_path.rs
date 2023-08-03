@@ -53,6 +53,12 @@ impl RouteAnalysisPathBuilder {
         self.completion_status = input;
         self
     }
+    /// <p>The status of the analysis at completion.</p>
+    pub fn get_completion_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::RouteAnalysisCompletion> {
+        &self.completion_status
+    }
     /// Appends an item to `path`.
     ///
     /// To override the contents of this collection use [`set_path`](Self::set_path).
@@ -71,6 +77,10 @@ impl RouteAnalysisPathBuilder {
     ) -> Self {
         self.path = input;
         self
+    }
+    /// <p>The route analysis path.</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PathComponent>> {
+        &self.path
     }
     /// Consumes the builder and constructs a [`RouteAnalysisPath`](crate::types::RouteAnalysisPath).
     pub fn build(self) -> crate::types::RouteAnalysisPath {

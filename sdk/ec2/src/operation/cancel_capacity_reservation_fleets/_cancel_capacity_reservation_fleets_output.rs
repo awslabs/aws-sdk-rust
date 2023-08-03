@@ -81,6 +81,14 @@ impl CancelCapacityReservationFleetsOutputBuilder {
         self.successful_fleet_cancellations = input;
         self
     }
+    /// <p>Information about the Capacity Reservation Fleets that were successfully cancelled.</p>
+    pub fn get_successful_fleet_cancellations(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::CapacityReservationFleetCancellationState>,
+    > {
+        &self.successful_fleet_cancellations
+    }
     /// Appends an item to `failed_fleet_cancellations`.
     ///
     /// To override the contents of this collection use [`set_failed_fleet_cancellations`](Self::set_failed_fleet_cancellations).
@@ -104,6 +112,14 @@ impl CancelCapacityReservationFleetsOutputBuilder {
     ) -> Self {
         self.failed_fleet_cancellations = input;
         self
+    }
+    /// <p>Information about the Capacity Reservation Fleets that could not be cancelled.</p>
+    pub fn get_failed_fleet_cancellations(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::FailedCapacityReservationFleetCancellationResult>,
+    > {
+        &self.failed_fleet_cancellations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -36,6 +36,13 @@ impl DeleteClusterSnapshotFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteClusterSnapshot as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_cluster_snapshot::builders::DeleteClusterSnapshotInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +132,9 @@ impl DeleteClusterSnapshotFluentBuilder {
     pub fn set_snapshot_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_arn(input);
         self
+    }
+    /// <p>The arn of the Elastic DocumentDB snapshot that is to be deleted.</p>
+    pub fn get_snapshot_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_snapshot_arn()
     }
 }

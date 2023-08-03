@@ -56,6 +56,10 @@ impl ListChangesetsInputBuilder {
         self.dataset_id = input;
         self
     }
+    /// <p>The unique identifier for the FinSpace Dataset to which the Changeset belongs.</p>
+    pub fn get_dataset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_id
+    }
     /// <p>The maximum number of results per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl ListChangesetsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>A token that indicates where a results page should begin.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl ListChangesetsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token that indicates where a results page should begin.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListChangesetsInput`](crate::operation::list_changesets::ListChangesetsInput).
     pub fn build(

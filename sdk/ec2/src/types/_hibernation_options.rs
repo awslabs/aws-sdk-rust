@@ -40,6 +40,10 @@ impl HibernationOptionsBuilder {
         self.configured = input;
         self
     }
+    /// <p>If <code>true</code>, your instance is enabled for hibernation; otherwise, it is not enabled for hibernation.</p>
+    pub fn get_configured(&self) -> &::std::option::Option<bool> {
+        &self.configured
+    }
     /// Consumes the builder and constructs a [`HibernationOptions`](crate::types::HibernationOptions).
     pub fn build(self) -> crate::types::HibernationOptions {
         crate::types::HibernationOptions {

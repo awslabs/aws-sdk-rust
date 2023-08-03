@@ -63,6 +63,10 @@ impl UpdateAccountCustomizationInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The ID for the Amazon Web Services account that you want to update Amazon QuickSight customizations for.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The namespace that you want to update Amazon QuickSight customizations for.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl UpdateAccountCustomizationInputBuilder {
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace = input;
         self
+    }
+    /// <p>The namespace that you want to update Amazon QuickSight customizations for.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
     }
     /// <p>The Amazon QuickSight customizations you're updating in the current Amazon Web Services Region. </p>
     pub fn account_customization(mut self, input: crate::types::AccountCustomization) -> Self {
@@ -85,6 +93,12 @@ impl UpdateAccountCustomizationInputBuilder {
     ) -> Self {
         self.account_customization = input;
         self
+    }
+    /// <p>The Amazon QuickSight customizations you're updating in the current Amazon Web Services Region. </p>
+    pub fn get_account_customization(
+        &self,
+    ) -> &::std::option::Option<crate::types::AccountCustomization> {
+        &self.account_customization
     }
     /// Consumes the builder and constructs a [`UpdateAccountCustomizationInput`](crate::operation::update_account_customization::UpdateAccountCustomizationInput).
     pub fn build(

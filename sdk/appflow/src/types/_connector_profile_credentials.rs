@@ -228,6 +228,12 @@ impl ConnectorProfileCredentialsBuilder {
         self.amplitude = input;
         self
     }
+    /// <p> The connector-specific credentials required when using Amplitude. </p>
+    pub fn get_amplitude(
+        &self,
+    ) -> &::std::option::Option<crate::types::AmplitudeConnectorProfileCredentials> {
+        &self.amplitude
+    }
     /// <p> The connector-specific credentials required when using Datadog. </p>
     pub fn datadog(mut self, input: crate::types::DatadogConnectorProfileCredentials) -> Self {
         self.datadog = ::std::option::Option::Some(input);
@@ -241,6 +247,12 @@ impl ConnectorProfileCredentialsBuilder {
         self.datadog = input;
         self
     }
+    /// <p> The connector-specific credentials required when using Datadog. </p>
+    pub fn get_datadog(
+        &self,
+    ) -> &::std::option::Option<crate::types::DatadogConnectorProfileCredentials> {
+        &self.datadog
+    }
     /// <p> The connector-specific credentials required when using Dynatrace. </p>
     pub fn dynatrace(mut self, input: crate::types::DynatraceConnectorProfileCredentials) -> Self {
         self.dynatrace = ::std::option::Option::Some(input);
@@ -253,6 +265,12 @@ impl ConnectorProfileCredentialsBuilder {
     ) -> Self {
         self.dynatrace = input;
         self
+    }
+    /// <p> The connector-specific credentials required when using Dynatrace. </p>
+    pub fn get_dynatrace(
+        &self,
+    ) -> &::std::option::Option<crate::types::DynatraceConnectorProfileCredentials> {
+        &self.dynatrace
     }
     /// <p> The connector-specific credentials required when using Google Analytics. </p>
     pub fn google_analytics(
@@ -270,6 +288,12 @@ impl ConnectorProfileCredentialsBuilder {
         self.google_analytics = input;
         self
     }
+    /// <p> The connector-specific credentials required when using Google Analytics. </p>
+    pub fn get_google_analytics(
+        &self,
+    ) -> &::std::option::Option<crate::types::GoogleAnalyticsConnectorProfileCredentials> {
+        &self.google_analytics
+    }
     /// <p> The connector-specific credentials required when using Amazon Honeycode. </p>
     pub fn honeycode(mut self, input: crate::types::HoneycodeConnectorProfileCredentials) -> Self {
         self.honeycode = ::std::option::Option::Some(input);
@@ -282,6 +306,12 @@ impl ConnectorProfileCredentialsBuilder {
     ) -> Self {
         self.honeycode = input;
         self
+    }
+    /// <p> The connector-specific credentials required when using Amazon Honeycode. </p>
+    pub fn get_honeycode(
+        &self,
+    ) -> &::std::option::Option<crate::types::HoneycodeConnectorProfileCredentials> {
+        &self.honeycode
     }
     /// <p> The connector-specific credentials required when using Infor Nexus. </p>
     pub fn infor_nexus(
@@ -299,6 +329,12 @@ impl ConnectorProfileCredentialsBuilder {
         self.infor_nexus = input;
         self
     }
+    /// <p> The connector-specific credentials required when using Infor Nexus. </p>
+    pub fn get_infor_nexus(
+        &self,
+    ) -> &::std::option::Option<crate::types::InforNexusConnectorProfileCredentials> {
+        &self.infor_nexus
+    }
     /// <p> The connector-specific credentials required when using Marketo. </p>
     pub fn marketo(mut self, input: crate::types::MarketoConnectorProfileCredentials) -> Self {
         self.marketo = ::std::option::Option::Some(input);
@@ -312,6 +348,12 @@ impl ConnectorProfileCredentialsBuilder {
         self.marketo = input;
         self
     }
+    /// <p> The connector-specific credentials required when using Marketo. </p>
+    pub fn get_marketo(
+        &self,
+    ) -> &::std::option::Option<crate::types::MarketoConnectorProfileCredentials> {
+        &self.marketo
+    }
     /// <p> The connector-specific credentials required when using Amazon Redshift. </p>
     pub fn redshift(mut self, input: crate::types::RedshiftConnectorProfileCredentials) -> Self {
         self.redshift = ::std::option::Option::Some(input);
@@ -324,6 +366,12 @@ impl ConnectorProfileCredentialsBuilder {
     ) -> Self {
         self.redshift = input;
         self
+    }
+    /// <p> The connector-specific credentials required when using Amazon Redshift. </p>
+    pub fn get_redshift(
+        &self,
+    ) -> &::std::option::Option<crate::types::RedshiftConnectorProfileCredentials> {
+        &self.redshift
     }
     /// <p> The connector-specific credentials required when using Salesforce. </p>
     pub fn salesforce(
@@ -341,6 +389,12 @@ impl ConnectorProfileCredentialsBuilder {
         self.salesforce = input;
         self
     }
+    /// <p> The connector-specific credentials required when using Salesforce. </p>
+    pub fn get_salesforce(
+        &self,
+    ) -> &::std::option::Option<crate::types::SalesforceConnectorProfileCredentials> {
+        &self.salesforce
+    }
     /// <p> The connector-specific credentials required when using ServiceNow. </p>
     pub fn service_now(
         mut self,
@@ -357,6 +411,12 @@ impl ConnectorProfileCredentialsBuilder {
         self.service_now = input;
         self
     }
+    /// <p> The connector-specific credentials required when using ServiceNow. </p>
+    pub fn get_service_now(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServiceNowConnectorProfileCredentials> {
+        &self.service_now
+    }
     /// <p> The connector-specific credentials required when using Singular. </p>
     pub fn singular(mut self, input: crate::types::SingularConnectorProfileCredentials) -> Self {
         self.singular = ::std::option::Option::Some(input);
@@ -369,6 +429,12 @@ impl ConnectorProfileCredentialsBuilder {
     ) -> Self {
         self.singular = input;
         self
+    }
+    /// <p> The connector-specific credentials required when using Singular. </p>
+    pub fn get_singular(
+        &self,
+    ) -> &::std::option::Option<crate::types::SingularConnectorProfileCredentials> {
+        &self.singular
     }
     /// <p> The connector-specific credentials required when using Slack. </p>
     pub fn slack(mut self, input: crate::types::SlackConnectorProfileCredentials) -> Self {
@@ -383,6 +449,12 @@ impl ConnectorProfileCredentialsBuilder {
         self.slack = input;
         self
     }
+    /// <p> The connector-specific credentials required when using Slack. </p>
+    pub fn get_slack(
+        &self,
+    ) -> &::std::option::Option<crate::types::SlackConnectorProfileCredentials> {
+        &self.slack
+    }
     /// <p> The connector-specific credentials required when using Snowflake. </p>
     pub fn snowflake(mut self, input: crate::types::SnowflakeConnectorProfileCredentials) -> Self {
         self.snowflake = ::std::option::Option::Some(input);
@@ -395,6 +467,12 @@ impl ConnectorProfileCredentialsBuilder {
     ) -> Self {
         self.snowflake = input;
         self
+    }
+    /// <p> The connector-specific credentials required when using Snowflake. </p>
+    pub fn get_snowflake(
+        &self,
+    ) -> &::std::option::Option<crate::types::SnowflakeConnectorProfileCredentials> {
+        &self.snowflake
     }
     /// <p> The connector-specific credentials required when using Trend Micro. </p>
     pub fn trendmicro(
@@ -412,6 +490,12 @@ impl ConnectorProfileCredentialsBuilder {
         self.trendmicro = input;
         self
     }
+    /// <p> The connector-specific credentials required when using Trend Micro. </p>
+    pub fn get_trendmicro(
+        &self,
+    ) -> &::std::option::Option<crate::types::TrendmicroConnectorProfileCredentials> {
+        &self.trendmicro
+    }
     /// <p> The connector-specific credentials required when using Veeva. </p>
     pub fn veeva(mut self, input: crate::types::VeevaConnectorProfileCredentials) -> Self {
         self.veeva = ::std::option::Option::Some(input);
@@ -424,6 +508,12 @@ impl ConnectorProfileCredentialsBuilder {
     ) -> Self {
         self.veeva = input;
         self
+    }
+    /// <p> The connector-specific credentials required when using Veeva. </p>
+    pub fn get_veeva(
+        &self,
+    ) -> &::std::option::Option<crate::types::VeevaConnectorProfileCredentials> {
+        &self.veeva
     }
     /// <p> The connector-specific credentials required when using Zendesk. </p>
     pub fn zendesk(mut self, input: crate::types::ZendeskConnectorProfileCredentials) -> Self {
@@ -438,6 +528,12 @@ impl ConnectorProfileCredentialsBuilder {
         self.zendesk = input;
         self
     }
+    /// <p> The connector-specific credentials required when using Zendesk. </p>
+    pub fn get_zendesk(
+        &self,
+    ) -> &::std::option::Option<crate::types::ZendeskConnectorProfileCredentials> {
+        &self.zendesk
+    }
     /// <p> The connector-specific profile credentials required when using SAPOData. </p>
     pub fn sapo_data(mut self, input: crate::types::SapoDataConnectorProfileCredentials) -> Self {
         self.sapo_data = ::std::option::Option::Some(input);
@@ -450,6 +546,12 @@ impl ConnectorProfileCredentialsBuilder {
     ) -> Self {
         self.sapo_data = input;
         self
+    }
+    /// <p> The connector-specific profile credentials required when using SAPOData. </p>
+    pub fn get_sapo_data(
+        &self,
+    ) -> &::std::option::Option<crate::types::SapoDataConnectorProfileCredentials> {
+        &self.sapo_data
     }
     /// <p>The connector-specific profile credentials that are required when using the custom connector.</p>
     pub fn custom_connector(
@@ -467,6 +569,12 @@ impl ConnectorProfileCredentialsBuilder {
         self.custom_connector = input;
         self
     }
+    /// <p>The connector-specific profile credentials that are required when using the custom connector.</p>
+    pub fn get_custom_connector(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomConnectorProfileCredentials> {
+        &self.custom_connector
+    }
     /// <p>The connector-specific credentials required when using Salesforce Pardot.</p>
     pub fn pardot(mut self, input: crate::types::PardotConnectorProfileCredentials) -> Self {
         self.pardot = ::std::option::Option::Some(input);
@@ -479,6 +587,12 @@ impl ConnectorProfileCredentialsBuilder {
     ) -> Self {
         self.pardot = input;
         self
+    }
+    /// <p>The connector-specific credentials required when using Salesforce Pardot.</p>
+    pub fn get_pardot(
+        &self,
+    ) -> &::std::option::Option<crate::types::PardotConnectorProfileCredentials> {
+        &self.pardot
     }
     /// Consumes the builder and constructs a [`ConnectorProfileCredentials`](crate::types::ConnectorProfileCredentials).
     pub fn build(self) -> crate::types::ConnectorProfileCredentials {

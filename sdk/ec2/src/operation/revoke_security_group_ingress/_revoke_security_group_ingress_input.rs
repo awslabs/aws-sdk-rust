@@ -120,6 +120,10 @@ impl RevokeSecurityGroupIngressInputBuilder {
         self.cidr_ip = input;
         self
     }
+    /// <p>The CIDR IP address range. You can't specify this parameter when specifying a source security group.</p>
+    pub fn get_cidr_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr_ip
+    }
     /// <p>If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP, this is the type number. A value of -1 indicates all ICMP types.</p>
     pub fn from_port(mut self, input: i32) -> Self {
         self.from_port = ::std::option::Option::Some(input);
@@ -129,6 +133,10 @@ impl RevokeSecurityGroupIngressInputBuilder {
     pub fn set_from_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.from_port = input;
         self
+    }
+    /// <p>If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP, this is the type number. A value of -1 indicates all ICMP types.</p>
+    pub fn get_from_port(&self) -> &::std::option::Option<i32> {
+        &self.from_port
     }
     /// <p>The ID of the security group.</p>
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -140,6 +148,10 @@ impl RevokeSecurityGroupIngressInputBuilder {
         self.group_id = input;
         self
     }
+    /// <p>The ID of the security group.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
+    }
     /// <p>[Default VPC] The name of the security group. You must specify either the security group ID or the security group name in the request. For security groups in a nondefault VPC, you must specify the security group ID.</p>
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_name = ::std::option::Option::Some(input.into());
@@ -149,6 +161,10 @@ impl RevokeSecurityGroupIngressInputBuilder {
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_name = input;
         self
+    }
+    /// <p>[Default VPC] The name of the security group. You must specify either the security group ID or the security group name in the request. For security groups in a nondefault VPC, you must specify the security group ID.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
     }
     /// Appends an item to `ip_permissions`.
     ///
@@ -169,6 +185,12 @@ impl RevokeSecurityGroupIngressInputBuilder {
         self.ip_permissions = input;
         self
     }
+    /// <p>The sets of IP permissions. You can't specify a source security group and a CIDR IP address range in the same set of permissions.</p>
+    pub fn get_ip_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpPermission>> {
+        &self.ip_permissions
+    }
     /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). Use <code>-1</code> to specify all.</p>
     pub fn ip_protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_protocol = ::std::option::Option::Some(input.into());
@@ -178,6 +200,10 @@ impl RevokeSecurityGroupIngressInputBuilder {
     pub fn set_ip_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_protocol = input;
         self
+    }
+    /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). Use <code>-1</code> to specify all.</p>
+    pub fn get_ip_protocol(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_protocol
     }
     /// <p>[Default VPC] The name of the source security group. You can't specify this parameter in combination with the following parameters: the CIDR IP address range, the start of the port range, the IP protocol, and the end of the port range. The source security group must be in the same VPC. To revoke a specific rule for an IP protocol and port range, use a set of IP permissions instead.</p>
     pub fn source_security_group_name(
@@ -195,6 +221,10 @@ impl RevokeSecurityGroupIngressInputBuilder {
         self.source_security_group_name = input;
         self
     }
+    /// <p>[Default VPC] The name of the source security group. You can't specify this parameter in combination with the following parameters: the CIDR IP address range, the start of the port range, the IP protocol, and the end of the port range. The source security group must be in the same VPC. To revoke a specific rule for an IP protocol and port range, use a set of IP permissions instead.</p>
+    pub fn get_source_security_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_security_group_name
+    }
     /// <p>Not supported.</p>
     pub fn source_security_group_owner_id(
         mut self,
@@ -211,6 +241,12 @@ impl RevokeSecurityGroupIngressInputBuilder {
         self.source_security_group_owner_id = input;
         self
     }
+    /// <p>Not supported.</p>
+    pub fn get_source_security_group_owner_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.source_security_group_owner_id
+    }
     /// <p>If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP, this is the code. A value of -1 indicates all ICMP codes.</p>
     pub fn to_port(mut self, input: i32) -> Self {
         self.to_port = ::std::option::Option::Some(input);
@@ -221,6 +257,10 @@ impl RevokeSecurityGroupIngressInputBuilder {
         self.to_port = input;
         self
     }
+    /// <p>If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP, this is the code. A value of -1 indicates all ICMP codes.</p>
+    pub fn get_to_port(&self) -> &::std::option::Option<i32> {
+        &self.to_port
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -230,6 +270,10 @@ impl RevokeSecurityGroupIngressInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Appends an item to `security_group_rule_ids`.
     ///
@@ -252,6 +296,12 @@ impl RevokeSecurityGroupIngressInputBuilder {
     ) -> Self {
         self.security_group_rule_ids = input;
         self
+    }
+    /// <p>The IDs of the security group rules.</p>
+    pub fn get_security_group_rule_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_rule_ids
     }
     /// Consumes the builder and constructs a [`RevokeSecurityGroupIngressInput`](crate::operation::revoke_security_group_ingress::RevokeSecurityGroupIngressInput).
     pub fn build(

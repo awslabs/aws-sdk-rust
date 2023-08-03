@@ -69,6 +69,10 @@ impl AggregationSortConfigurationBuilder {
         self.column = input;
         self
     }
+    /// <p>The column that determines the sort order of aggregated values.</p>
+    pub fn get_column(&self) -> &::std::option::Option<crate::types::ColumnIdentifier> {
+        &self.column
+    }
     /// <p>The sort direction of values.</p>
     /// <ul>
     /// <li> <p> <code>ASC</code>: Sort in ascending order.</p> </li>
@@ -90,6 +94,14 @@ impl AggregationSortConfigurationBuilder {
         self.sort_direction = input;
         self
     }
+    /// <p>The sort direction of values.</p>
+    /// <ul>
+    /// <li> <p> <code>ASC</code>: Sort in ascending order.</p> </li>
+    /// <li> <p> <code>DESC</code>: Sort in descending order.</p> </li>
+    /// </ul>
+    pub fn get_sort_direction(&self) -> &::std::option::Option<crate::types::SortDirection> {
+        &self.sort_direction
+    }
     /// <p>The function that aggregates the values in <code>Column</code>.</p>
     pub fn aggregation_function(mut self, input: crate::types::AggregationFunction) -> Self {
         self.aggregation_function = ::std::option::Option::Some(input);
@@ -102,6 +114,12 @@ impl AggregationSortConfigurationBuilder {
     ) -> Self {
         self.aggregation_function = input;
         self
+    }
+    /// <p>The function that aggregates the values in <code>Column</code>.</p>
+    pub fn get_aggregation_function(
+        &self,
+    ) -> &::std::option::Option<crate::types::AggregationFunction> {
+        &self.aggregation_function
     }
     /// Consumes the builder and constructs a [`AggregationSortConfiguration`](crate::types::AggregationSortConfiguration).
     pub fn build(self) -> crate::types::AggregationSortConfiguration {

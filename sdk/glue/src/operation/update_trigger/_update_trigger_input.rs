@@ -47,6 +47,10 @@ impl UpdateTriggerInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the trigger to update.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The new values with which to update the trigger.</p>
     pub fn trigger_update(mut self, input: crate::types::TriggerUpdate) -> Self {
         self.trigger_update = ::std::option::Option::Some(input);
@@ -59,6 +63,10 @@ impl UpdateTriggerInputBuilder {
     ) -> Self {
         self.trigger_update = input;
         self
+    }
+    /// <p>The new values with which to update the trigger.</p>
+    pub fn get_trigger_update(&self) -> &::std::option::Option<crate::types::TriggerUpdate> {
+        &self.trigger_update
     }
     /// Consumes the builder and constructs a [`UpdateTriggerInput`](crate::operation::update_trigger::UpdateTriggerInput).
     pub fn build(

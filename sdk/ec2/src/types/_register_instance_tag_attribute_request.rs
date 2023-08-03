@@ -48,6 +48,10 @@ impl RegisterInstanceTagAttributeRequestBuilder {
         self.include_all_tags_of_instance = input;
         self
     }
+    /// <p>Indicates whether to register all tag keys in the current Region. Specify <code>true</code> to register all tag keys.</p>
+    pub fn get_include_all_tags_of_instance(&self) -> &::std::option::Option<bool> {
+        &self.include_all_tags_of_instance
+    }
     /// Appends an item to `instance_tag_keys`.
     ///
     /// To override the contents of this collection use [`set_instance_tag_keys`](Self::set_instance_tag_keys).
@@ -69,6 +73,12 @@ impl RegisterInstanceTagAttributeRequestBuilder {
     ) -> Self {
         self.instance_tag_keys = input;
         self
+    }
+    /// <p>The tag keys to register.</p>
+    pub fn get_instance_tag_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.instance_tag_keys
     }
     /// Consumes the builder and constructs a [`RegisterInstanceTagAttributeRequest`](crate::types::RegisterInstanceTagAttributeRequest).
     pub fn build(self) -> crate::types::RegisterInstanceTagAttributeRequest {

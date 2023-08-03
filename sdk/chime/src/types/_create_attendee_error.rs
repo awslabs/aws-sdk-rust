@@ -69,6 +69,10 @@ impl CreateAttendeeErrorBuilder {
         self.external_user_id = input;
         self
     }
+    /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
+    pub fn get_external_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.external_user_id
+    }
     /// <p>The error code.</p>
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
@@ -78,6 +82,10 @@ impl CreateAttendeeErrorBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>The error code.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
     }
     /// <p>The error message.</p>
     pub fn error_message(
@@ -94,6 +102,10 @@ impl CreateAttendeeErrorBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>The error message.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`CreateAttendeeError`](crate::types::CreateAttendeeError).
     pub fn build(self) -> crate::types::CreateAttendeeError {

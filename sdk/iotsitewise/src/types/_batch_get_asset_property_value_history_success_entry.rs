@@ -53,6 +53,10 @@ impl BatchGetAssetPropertyValueHistorySuccessEntryBuilder {
         self.entry_id = input;
         self
     }
+    /// <p>The ID of the entry.</p>
+    pub fn get_entry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entry_id
+    }
     /// Appends an item to `asset_property_value_history`.
     ///
     /// To override the contents of this collection use [`set_asset_property_value_history`](Self::set_asset_property_value_history).
@@ -71,6 +75,12 @@ impl BatchGetAssetPropertyValueHistorySuccessEntryBuilder {
     ) -> Self {
         self.asset_property_value_history = input;
         self
+    }
+    /// <p>The requested historical values for the specified asset property.</p>
+    pub fn get_asset_property_value_history(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyValue>> {
+        &self.asset_property_value_history
     }
     /// Consumes the builder and constructs a [`BatchGetAssetPropertyValueHistorySuccessEntry`](crate::types::BatchGetAssetPropertyValueHistorySuccessEntry).
     pub fn build(self) -> crate::types::BatchGetAssetPropertyValueHistorySuccessEntry {

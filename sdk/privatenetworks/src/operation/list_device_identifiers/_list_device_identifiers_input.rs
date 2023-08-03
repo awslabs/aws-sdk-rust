@@ -124,6 +124,23 @@ impl ListDeviceIdentifiersInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>The filters.</p>
+    /// <ul>
+    /// <li> <p> <code>ORDER</code> - The Amazon Resource Name (ARN) of the order.</p> </li>
+    /// <li> <p> <code>STATUS</code> - The status (<code>ACTIVE</code> | <code>INACTIVE</code>).</p> </li>
+    /// <li> <p> <code>TRAFFIC_GROUP</code> - The Amazon Resource Name (ARN) of the traffic group.</p> </li>
+    /// </ul>
+    /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::DeviceIdentifierFilterKeys,
+            ::std::vec::Vec<::std::string::String>,
+        >,
+    > {
+        &self.filters
+    }
     /// <p>The Amazon Resource Name (ARN) of the network.</p>
     pub fn network_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_arn = ::std::option::Option::Some(input.into());
@@ -133,6 +150,10 @@ impl ListDeviceIdentifiersInputBuilder {
     pub fn set_network_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the network.</p>
+    pub fn get_network_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_arn
     }
     /// <p>The token for the next page of results.</p>
     pub fn start_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -144,6 +165,10 @@ impl ListDeviceIdentifiersInputBuilder {
         self.start_token = input;
         self
     }
+    /// <p>The token for the next page of results.</p>
+    pub fn get_start_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_token
+    }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -153,6 +178,10 @@ impl ListDeviceIdentifiersInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListDeviceIdentifiersInput`](crate::operation::list_device_identifiers::ListDeviceIdentifiersInput).
     pub fn build(

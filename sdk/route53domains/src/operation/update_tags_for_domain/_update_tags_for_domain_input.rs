@@ -50,6 +50,10 @@ impl UpdateTagsForDomainInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The domain for which you want to add or update tags.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// Appends an item to `tags_to_update`.
     ///
     /// To override the contents of this collection use [`set_tags_to_update`](Self::set_tags_to_update).
@@ -68,6 +72,10 @@ impl UpdateTagsForDomainInputBuilder {
     ) -> Self {
         self.tags_to_update = input;
         self
+    }
+    /// <p>A list of the tag keys and values that you want to add or update. If you specify a key that already exists, the corresponding value will be replaced.</p>
+    pub fn get_tags_to_update(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags_to_update
     }
     /// Consumes the builder and constructs a [`UpdateTagsForDomainInput`](crate::operation::update_tags_for_domain::UpdateTagsForDomainInput).
     pub fn build(

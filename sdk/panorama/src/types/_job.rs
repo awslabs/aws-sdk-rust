@@ -48,6 +48,10 @@ impl JobBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The job's ID.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>The target device's ID.</p>
     pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl JobBuilder {
     pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_id = input;
         self
+    }
+    /// <p>The target device's ID.</p>
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_id
     }
     /// Consumes the builder and constructs a [`Job`](crate::types::Job).
     pub fn build(self) -> crate::types::Job {

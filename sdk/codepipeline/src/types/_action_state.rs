@@ -72,6 +72,10 @@ impl ActionStateBuilder {
         self.action_name = input;
         self
     }
+    /// <p>The name of the action.</p>
+    pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_name
+    }
     /// <p>Represents information about the version (or revision) of an action.</p>
     pub fn current_revision(mut self, input: crate::types::ActionRevision) -> Self {
         self.current_revision = ::std::option::Option::Some(input);
@@ -84,6 +88,10 @@ impl ActionStateBuilder {
     ) -> Self {
         self.current_revision = input;
         self
+    }
+    /// <p>Represents information about the version (or revision) of an action.</p>
+    pub fn get_current_revision(&self) -> &::std::option::Option<crate::types::ActionRevision> {
+        &self.current_revision
     }
     /// <p>Represents information about the run of an action.</p>
     pub fn latest_execution(mut self, input: crate::types::ActionExecution) -> Self {
@@ -98,6 +106,10 @@ impl ActionStateBuilder {
         self.latest_execution = input;
         self
     }
+    /// <p>Represents information about the run of an action.</p>
+    pub fn get_latest_execution(&self) -> &::std::option::Option<crate::types::ActionExecution> {
+        &self.latest_execution
+    }
     /// <p>A URL link for more information about the state of the action, such as a deployment group details page.</p>
     pub fn entity_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_url = ::std::option::Option::Some(input.into());
@@ -108,6 +120,10 @@ impl ActionStateBuilder {
         self.entity_url = input;
         self
     }
+    /// <p>A URL link for more information about the state of the action, such as a deployment group details page.</p>
+    pub fn get_entity_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_url
+    }
     /// <p>A URL link for more information about the revision, such as a commit details page.</p>
     pub fn revision_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_url = ::std::option::Option::Some(input.into());
@@ -117,6 +133,10 @@ impl ActionStateBuilder {
     pub fn set_revision_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision_url = input;
         self
+    }
+    /// <p>A URL link for more information about the revision, such as a commit details page.</p>
+    pub fn get_revision_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision_url
     }
     /// Consumes the builder and constructs a [`ActionState`](crate::types::ActionState).
     pub fn build(self) -> crate::types::ActionState {

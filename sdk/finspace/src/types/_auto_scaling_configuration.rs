@@ -80,6 +80,10 @@ impl AutoScalingConfigurationBuilder {
         self.min_node_count = input;
         self
     }
+    /// <p>The lowest number of nodes to scale. This value must be at least 1 and less than the <code>maxNodeCount</code>. If the nodes in a cluster belong to multiple availability zones, then <code>minNodeCount</code> must be at least 3.</p>
+    pub fn get_min_node_count(&self) -> &::std::option::Option<i32> {
+        &self.min_node_count
+    }
     /// <p>The highest number of nodes to scale. This value cannot be greater than 5.</p>
     pub fn max_node_count(mut self, input: i32) -> Self {
         self.max_node_count = ::std::option::Option::Some(input);
@@ -89,6 +93,10 @@ impl AutoScalingConfigurationBuilder {
     pub fn set_max_node_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_node_count = input;
         self
+    }
+    /// <p>The highest number of nodes to scale. This value cannot be greater than 5.</p>
+    pub fn get_max_node_count(&self) -> &::std::option::Option<i32> {
+        &self.max_node_count
     }
     /// <p> The metric your cluster will track in order to scale in and out. For example, <code>CPU_UTILIZATION_PERCENTAGE</code> is the average CPU usage across all the nodes in a cluster.</p>
     pub fn auto_scaling_metric(mut self, input: crate::types::AutoScalingMetric) -> Self {
@@ -103,6 +111,12 @@ impl AutoScalingConfigurationBuilder {
         self.auto_scaling_metric = input;
         self
     }
+    /// <p> The metric your cluster will track in order to scale in and out. For example, <code>CPU_UTILIZATION_PERCENTAGE</code> is the average CPU usage across all the nodes in a cluster.</p>
+    pub fn get_auto_scaling_metric(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoScalingMetric> {
+        &self.auto_scaling_metric
+    }
     /// <p>The desired value of the chosen <code>autoScalingMetric</code>. When the metric drops below this value, the cluster will scale in. When the metric goes above this value, the cluster will scale out. You can set the target value between 1 and 100 percent.</p>
     pub fn metric_target(mut self, input: f64) -> Self {
         self.metric_target = ::std::option::Option::Some(input);
@@ -112,6 +126,10 @@ impl AutoScalingConfigurationBuilder {
     pub fn set_metric_target(mut self, input: ::std::option::Option<f64>) -> Self {
         self.metric_target = input;
         self
+    }
+    /// <p>The desired value of the chosen <code>autoScalingMetric</code>. When the metric drops below this value, the cluster will scale in. When the metric goes above this value, the cluster will scale out. You can set the target value between 1 and 100 percent.</p>
+    pub fn get_metric_target(&self) -> &::std::option::Option<f64> {
+        &self.metric_target
     }
     /// <p>The duration in seconds that FinSpace will wait after a scale in event before initiating another scaling event.</p>
     pub fn scale_in_cooldown_seconds(mut self, input: f64) -> Self {
@@ -123,6 +141,10 @@ impl AutoScalingConfigurationBuilder {
         self.scale_in_cooldown_seconds = input;
         self
     }
+    /// <p>The duration in seconds that FinSpace will wait after a scale in event before initiating another scaling event.</p>
+    pub fn get_scale_in_cooldown_seconds(&self) -> &::std::option::Option<f64> {
+        &self.scale_in_cooldown_seconds
+    }
     /// <p>The duration in seconds that FinSpace will wait after a scale out event before initiating another scaling event.</p>
     pub fn scale_out_cooldown_seconds(mut self, input: f64) -> Self {
         self.scale_out_cooldown_seconds = ::std::option::Option::Some(input);
@@ -132,6 +154,10 @@ impl AutoScalingConfigurationBuilder {
     pub fn set_scale_out_cooldown_seconds(mut self, input: ::std::option::Option<f64>) -> Self {
         self.scale_out_cooldown_seconds = input;
         self
+    }
+    /// <p>The duration in seconds that FinSpace will wait after a scale out event before initiating another scaling event.</p>
+    pub fn get_scale_out_cooldown_seconds(&self) -> &::std::option::Option<f64> {
+        &self.scale_out_cooldown_seconds
     }
     /// Consumes the builder and constructs a [`AutoScalingConfiguration`](crate::types::AutoScalingConfiguration).
     pub fn build(self) -> crate::types::AutoScalingConfiguration {

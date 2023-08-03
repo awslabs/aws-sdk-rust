@@ -65,6 +65,10 @@ impl VpcConfigBuilder {
         self.subnets = input;
         self
     }
+    /// <p>A list of one or more subnet IDs in your VPC.</p>
+    pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnets
+    }
     /// Appends an item to `security_groups`.
     ///
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
@@ -87,6 +91,12 @@ impl VpcConfigBuilder {
         self.security_groups = input;
         self
     }
+    /// <p>A list of one or more security groups IDs in your VPC.</p>
+    pub fn get_security_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_groups
+    }
     /// <p>A boolean indicating whether to assign a public IP address.</p>
     pub fn assign_public_ip(mut self, input: bool) -> Self {
         self.assign_public_ip = ::std::option::Option::Some(input);
@@ -96,6 +106,10 @@ impl VpcConfigBuilder {
     pub fn set_assign_public_ip(mut self, input: ::std::option::Option<bool>) -> Self {
         self.assign_public_ip = input;
         self
+    }
+    /// <p>A boolean indicating whether to assign a public IP address.</p>
+    pub fn get_assign_public_ip(&self) -> &::std::option::Option<bool> {
+        &self.assign_public_ip
     }
     /// Consumes the builder and constructs a [`VpcConfig`](crate::types::VpcConfig).
     pub fn build(self) -> crate::types::VpcConfig {

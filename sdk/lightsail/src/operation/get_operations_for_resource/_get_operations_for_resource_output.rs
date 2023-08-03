@@ -81,6 +81,12 @@ impl GetOperationsForResourceOutputBuilder {
         self.operations = input;
         self
     }
+    /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
+    pub fn get_operations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Operation>> {
+        &self.operations
+    }
     /// <p>(Deprecated) Returns the number of pages of results that remain.</p> <note>
     /// <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>next page token</code> parameter instead.</p>
     /// </note>
@@ -103,6 +109,13 @@ impl GetOperationsForResourceOutputBuilder {
         self.next_page_count = input;
         self
     }
+    /// <p>(Deprecated) Returns the number of pages of results that remain.</p> <note>
+    /// <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>next page token</code> parameter instead.</p>
+    /// </note>
+    #[deprecated]
+    pub fn get_next_page_count(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_page_count
+    }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetOperationsForResource</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
@@ -122,6 +135,12 @@ impl GetOperationsForResourceOutputBuilder {
     ) -> Self {
         self.next_page_token = input;
         self
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>To get the next page of results, perform another <code>GetOperationsForResource</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
+    pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_page_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

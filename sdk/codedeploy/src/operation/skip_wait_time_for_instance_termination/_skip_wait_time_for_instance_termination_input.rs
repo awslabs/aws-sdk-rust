@@ -45,6 +45,10 @@ impl SkipWaitTimeForInstanceTerminationInputBuilder {
         self.deployment_id = input;
         self
     }
+    /// <p> The unique ID of a blue/green deployment for which you want to skip the instance termination wait time. </p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_id
+    }
     /// Consumes the builder and constructs a [`SkipWaitTimeForInstanceTerminationInput`](crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

@@ -36,6 +36,13 @@ impl UpdateResourceCollectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateResourceCollection as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_resource_collection::builders::UpdateResourceCollectionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +136,12 @@ impl UpdateResourceCollectionFluentBuilder {
         self.inner = self.inner.set_action(input);
         self
     }
+    /// <p> Specifies if the resource collection in the request is added or deleted to the resource collection. </p>
+    pub fn get_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateResourceCollectionAction> {
+        self.inner.get_action()
+    }
     /// <p> Contains information used to update a collection of Amazon Web Services resources. </p>
     pub fn resource_collection(
         mut self,
@@ -144,5 +157,11 @@ impl UpdateResourceCollectionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_collection(input);
         self
+    }
+    /// <p> Contains information used to update a collection of Amazon Web Services resources. </p>
+    pub fn get_resource_collection(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateResourceCollectionFilter> {
+        self.inner.get_resource_collection()
     }
 }

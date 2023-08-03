@@ -57,6 +57,10 @@ impl EncryptionConfigBuilder {
         self.resources = input;
         self
     }
+    /// <p>Specifies the resources to be encrypted. The only supported value is "secrets".</p>
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resources
+    }
     /// <p>Key Management Service (KMS) key. Either the ARN or the alias can be used.</p>
     pub fn provider(mut self, input: crate::types::Provider) -> Self {
         self.provider = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl EncryptionConfigBuilder {
     pub fn set_provider(mut self, input: ::std::option::Option<crate::types::Provider>) -> Self {
         self.provider = input;
         self
+    }
+    /// <p>Key Management Service (KMS) key. Either the ARN or the alias can be used.</p>
+    pub fn get_provider(&self) -> &::std::option::Option<crate::types::Provider> {
+        &self.provider
     }
     /// Consumes the builder and constructs a [`EncryptionConfig`](crate::types::EncryptionConfig).
     pub fn build(self) -> crate::types::EncryptionConfig {

@@ -68,6 +68,13 @@ impl ResponseInspectionBodyContainsBuilder {
         self.success_strings = input;
         self
     }
+    /// <p>Strings in the body of the response that indicate a successful login or account creation attempt. To be counted as a success, the string can be anywhere in the body and must be an exact match, including case. Each string must be unique among the success and failure strings. </p>
+    /// <p>JSON examples: <code>"SuccessStrings": [ "Login successful" ]</code> and <code>"SuccessStrings": [ "Account creation successful", "Welcome to our site!" ]</code> </p>
+    pub fn get_success_strings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.success_strings
+    }
     /// Appends an item to `failure_strings`.
     ///
     /// To override the contents of this collection use [`set_failure_strings`](Self::set_failure_strings).
@@ -91,6 +98,13 @@ impl ResponseInspectionBodyContainsBuilder {
     ) -> Self {
         self.failure_strings = input;
         self
+    }
+    /// <p>Strings in the body of the response that indicate a failed login or account creation attempt. To be counted as a failure, the string can be anywhere in the body and must be an exact match, including case. Each string must be unique among the success and failure strings. </p>
+    /// <p>JSON example: <code>"FailureStrings": [ "Request failed" ]</code> </p>
+    pub fn get_failure_strings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.failure_strings
     }
     /// Consumes the builder and constructs a [`ResponseInspectionBodyContains`](crate::types::ResponseInspectionBodyContains).
     pub fn build(self) -> crate::types::ResponseInspectionBodyContains {

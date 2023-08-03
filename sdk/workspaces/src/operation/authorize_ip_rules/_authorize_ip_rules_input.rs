@@ -48,6 +48,10 @@ impl AuthorizeIpRulesInputBuilder {
         self.group_id = input;
         self
     }
+    /// <p>The identifier of the group.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
+    }
     /// Appends an item to `user_rules`.
     ///
     /// To override the contents of this collection use [`set_user_rules`](Self::set_user_rules).
@@ -66,6 +70,12 @@ impl AuthorizeIpRulesInputBuilder {
     ) -> Self {
         self.user_rules = input;
         self
+    }
+    /// <p>The rules to add to the group.</p>
+    pub fn get_user_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpRuleItem>> {
+        &self.user_rules
     }
     /// Consumes the builder and constructs a [`AuthorizeIpRulesInput`](crate::operation::authorize_ip_rules::AuthorizeIpRulesInput).
     pub fn build(

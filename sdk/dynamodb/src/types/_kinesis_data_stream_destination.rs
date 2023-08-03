@@ -56,6 +56,10 @@ impl KinesisDataStreamDestinationBuilder {
         self.stream_arn = input;
         self
     }
+    /// <p>The ARN for a specific Kinesis data stream.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_arn
+    }
     /// <p>The current status of replication.</p>
     pub fn destination_status(mut self, input: crate::types::DestinationStatus) -> Self {
         self.destination_status = ::std::option::Option::Some(input);
@@ -68,6 +72,12 @@ impl KinesisDataStreamDestinationBuilder {
     ) -> Self {
         self.destination_status = input;
         self
+    }
+    /// <p>The current status of replication.</p>
+    pub fn get_destination_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::DestinationStatus> {
+        &self.destination_status
     }
     /// <p>The human-readable string that corresponds to the replica status.</p>
     pub fn destination_status_description(
@@ -84,6 +94,12 @@ impl KinesisDataStreamDestinationBuilder {
     ) -> Self {
         self.destination_status_description = input;
         self
+    }
+    /// <p>The human-readable string that corresponds to the replica status.</p>
+    pub fn get_destination_status_description(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.destination_status_description
     }
     /// Consumes the builder and constructs a [`KinesisDataStreamDestination`](crate::types::KinesisDataStreamDestination).
     pub fn build(self) -> crate::types::KinesisDataStreamDestination {

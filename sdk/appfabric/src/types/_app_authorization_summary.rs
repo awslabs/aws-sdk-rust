@@ -100,6 +100,10 @@ impl AppAuthorizationSummaryBuilder {
         self.app_authorization_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the app authorization.</p>
+    pub fn get_app_authorization_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_authorization_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the app bundle for the app authorization.</p>
     pub fn app_bundle_arn(
         mut self,
@@ -116,6 +120,10 @@ impl AppAuthorizationSummaryBuilder {
         self.app_bundle_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the app bundle for the app authorization.</p>
+    pub fn get_app_bundle_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_bundle_arn
+    }
     /// <p>The name of the application.</p>
     pub fn app(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app = ::std::option::Option::Some(input.into());
@@ -126,6 +134,10 @@ impl AppAuthorizationSummaryBuilder {
         self.app = input;
         self
     }
+    /// <p>The name of the application.</p>
+    pub fn get_app(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app
+    }
     /// <p>Contains information about an application tenant, such as the application display name and identifier.</p>
     pub fn tenant(mut self, input: crate::types::Tenant) -> Self {
         self.tenant = ::std::option::Option::Some(input);
@@ -135,6 +147,10 @@ impl AppAuthorizationSummaryBuilder {
     pub fn set_tenant(mut self, input: ::std::option::Option<crate::types::Tenant>) -> Self {
         self.tenant = input;
         self
+    }
+    /// <p>Contains information about an application tenant, such as the application display name and identifier.</p>
+    pub fn get_tenant(&self) -> &::std::option::Option<crate::types::Tenant> {
+        &self.tenant
     }
     /// <p>The state of the app authorization.</p>
     /// <p>The following states are possible:</p>
@@ -163,6 +179,17 @@ impl AppAuthorizationSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The state of the app authorization.</p>
+    /// <p>The following states are possible:</p>
+    /// <ul>
+    /// <li> <p> <code>PendingConnect</code>: The initial state of the app authorization. The app authorization is created but not yet connected.</p> </li>
+    /// <li> <p> <code>Connected</code>: The app authorization is connected to the application, and is ready to be used.</p> </li>
+    /// <li> <p> <code>ConnectionValidationFailed</code>: The app authorization received a validation exception when trying to connect to the application. If the app authorization is in this state, you should verify the configured credentials and try to connect the app authorization again.</p> </li>
+    /// <li> <p> <code>TokenAutoRotationFailed</code>: AppFabric failed to refresh the access token. If the app authorization is in this state, you should try to reconnect the app authorization.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AppAuthorizationStatus> {
+        &self.status
+    }
     /// <p>Timestamp for when the app authorization was last updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
@@ -175,6 +202,10 @@ impl AppAuthorizationSummaryBuilder {
     ) -> Self {
         self.updated_at = input;
         self
+    }
+    /// <p>Timestamp for when the app authorization was last updated.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     /// Consumes the builder and constructs a [`AppAuthorizationSummary`](crate::types::AppAuthorizationSummary).
     pub fn build(self) -> crate::types::AppAuthorizationSummary {

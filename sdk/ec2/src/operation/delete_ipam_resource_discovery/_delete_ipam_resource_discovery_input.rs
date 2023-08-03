@@ -47,6 +47,10 @@ impl DeleteIpamResourceDiscoveryInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>The IPAM resource discovery ID.</p>
     pub fn ipam_resource_discovery_id(
         mut self,
@@ -62,6 +66,10 @@ impl DeleteIpamResourceDiscoveryInputBuilder {
     ) -> Self {
         self.ipam_resource_discovery_id = input;
         self
+    }
+    /// <p>The IPAM resource discovery ID.</p>
+    pub fn get_ipam_resource_discovery_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipam_resource_discovery_id
     }
     /// Consumes the builder and constructs a [`DeleteIpamResourceDiscoveryInput`](crate::operation::delete_ipam_resource_discovery::DeleteIpamResourceDiscoveryInput).
     pub fn build(

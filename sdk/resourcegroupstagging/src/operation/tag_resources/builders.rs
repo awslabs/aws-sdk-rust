@@ -50,6 +50,10 @@ impl TagResourcesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the TagResources as a reference.
+    pub fn as_input(&self) -> &crate::operation::tag_resources::builders::TagResourcesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -144,6 +148,13 @@ impl TagResourcesFluentBuilder {
         self.inner = self.inner.set_resource_arn_list(input);
         self
     }
+    /// <p>Specifies the list of ARNs of the resources that you want to apply tags to.</p>
+    /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn get_resource_arn_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_resource_arn_list()
+    }
     /// Adds a key-value pair to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -166,5 +177,13 @@ impl TagResourcesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Specifies a list of tags that you want to add to the specified resources. A tag consists of a key and a value that you define.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

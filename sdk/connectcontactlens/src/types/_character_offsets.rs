@@ -48,6 +48,10 @@ impl CharacterOffsetsBuilder {
         self.begin_offset_char = input;
         self
     }
+    /// <p>The beginning of the issue.</p>
+    pub fn get_begin_offset_char(&self) -> &::std::option::Option<i32> {
+        &self.begin_offset_char
+    }
     /// <p>The end of the issue.</p>
     pub fn end_offset_char(mut self, input: i32) -> Self {
         self.end_offset_char = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl CharacterOffsetsBuilder {
     pub fn set_end_offset_char(mut self, input: ::std::option::Option<i32>) -> Self {
         self.end_offset_char = input;
         self
+    }
+    /// <p>The end of the issue.</p>
+    pub fn get_end_offset_char(&self) -> &::std::option::Option<i32> {
+        &self.end_offset_char
     }
     /// Consumes the builder and constructs a [`CharacterOffsets`](crate::types::CharacterOffsets).
     pub fn build(self) -> crate::types::CharacterOffsets {

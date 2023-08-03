@@ -40,6 +40,10 @@ impl GetBlockFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetBlock as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_block::builders::GetBlockInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -122,6 +126,10 @@ impl GetBlockFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the ledger.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The location of the block that you want to request. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
     /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
     pub fn block_address(mut self, input: crate::types::ValueHolder) -> Self {
@@ -137,6 +145,11 @@ impl GetBlockFluentBuilder {
         self.inner = self.inner.set_block_address(input);
         self
     }
+    /// <p>The location of the block that you want to request. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
+    /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
+    pub fn get_block_address(&self) -> &::std::option::Option<crate::types::ValueHolder> {
+        self.inner.get_block_address()
+    }
     /// <p>The latest block location covered by the digest for which to request a proof. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
     /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.</p>
     pub fn digest_tip_address(mut self, input: crate::types::ValueHolder) -> Self {
@@ -151,5 +164,10 @@ impl GetBlockFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_digest_tip_address(input);
         self
+    }
+    /// <p>The latest block location covered by the digest for which to request a proof. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
+    /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.</p>
+    pub fn get_digest_tip_address(&self) -> &::std::option::Option<crate::types::ValueHolder> {
+        self.inner.get_digest_tip_address()
     }
 }

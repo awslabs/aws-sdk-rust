@@ -56,6 +56,10 @@ impl FederatedTableBuilder {
         self.identifier = input;
         self
     }
+    /// <p>A unique identifier for the federated table.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
+    }
     /// <p>A unique identifier for the federated database.</p>
     pub fn database_identifier(
         mut self,
@@ -72,6 +76,10 @@ impl FederatedTableBuilder {
         self.database_identifier = input;
         self
     }
+    /// <p>A unique identifier for the federated database.</p>
+    pub fn get_database_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_identifier
+    }
     /// <p>The name of the connection to the external metastore.</p>
     pub fn connection_name(
         mut self,
@@ -87,6 +95,10 @@ impl FederatedTableBuilder {
     ) -> Self {
         self.connection_name = input;
         self
+    }
+    /// <p>The name of the connection to the external metastore.</p>
+    pub fn get_connection_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_name
     }
     /// Consumes the builder and constructs a [`FederatedTable`](crate::types::FederatedTable).
     pub fn build(self) -> crate::types::FederatedTable {

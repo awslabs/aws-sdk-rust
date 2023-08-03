@@ -40,6 +40,10 @@ impl MediaConnectFlowRequestBuilder {
         self.flow_arn = input;
         self
     }
+    /// The ARN of the MediaConnect Flow that you want to use as a source.
+    pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_arn
+    }
     /// Consumes the builder and constructs a [`MediaConnectFlowRequest`](crate::types::MediaConnectFlowRequest).
     pub fn build(self) -> crate::types::MediaConnectFlowRequest {
         crate::types::MediaConnectFlowRequest {

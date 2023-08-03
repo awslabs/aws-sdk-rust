@@ -40,6 +40,10 @@ impl GetRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetRule as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_rule::builders::GetRuleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -121,5 +125,9 @@ impl GetRuleFluentBuilder {
     pub fn set_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_rule_id(input);
         self
+    }
+    /// <p>The <code>RuleId</code> of the <code>Rule</code> that you want to get. <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
+    pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rule_id()
     }
 }

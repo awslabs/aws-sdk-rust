@@ -57,6 +57,10 @@ impl UpdateApplicationSettingsInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>Specifies the default settings for an application.</p>
     pub fn write_application_settings_request(
         mut self,
@@ -72,6 +76,12 @@ impl UpdateApplicationSettingsInputBuilder {
     ) -> Self {
         self.write_application_settings_request = input;
         self
+    }
+    /// <p>Specifies the default settings for an application.</p>
+    pub fn get_write_application_settings_request(
+        &self,
+    ) -> &::std::option::Option<crate::types::WriteApplicationSettingsRequest> {
+        &self.write_application_settings_request
     }
     /// Consumes the builder and constructs a [`UpdateApplicationSettingsInput`](crate::operation::update_application_settings::UpdateApplicationSettingsInput).
     pub fn build(

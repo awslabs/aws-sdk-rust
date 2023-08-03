@@ -60,6 +60,12 @@ impl DeleteSchemaVersionsOutputBuilder {
         self.schema_version_errors = input;
         self
     }
+    /// <p>A list of <code>SchemaVersionErrorItem</code> objects, each containing an error and schema version.</p>
+    pub fn get_schema_version_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaVersionErrorItem>> {
+        &self.schema_version_errors
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

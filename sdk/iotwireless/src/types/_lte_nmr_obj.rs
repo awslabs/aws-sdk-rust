@@ -72,6 +72,10 @@ impl LteNmrObjBuilder {
         self.pci = input;
         self
     }
+    /// <p>Physical cell ID.</p>
+    pub fn get_pci(&self) -> &::std::option::Option<i32> {
+        &self.pci
+    }
     /// <p>E-UTRA (Evolved universal terrestrial Radio Access) absolute radio frequency channel Number (EARFCN).</p>
     pub fn earfcn(mut self, input: i32) -> Self {
         self.earfcn = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl LteNmrObjBuilder {
     pub fn set_earfcn(mut self, input: ::std::option::Option<i32>) -> Self {
         self.earfcn = input;
         self
+    }
+    /// <p>E-UTRA (Evolved universal terrestrial Radio Access) absolute radio frequency channel Number (EARFCN).</p>
+    pub fn get_earfcn(&self) -> &::std::option::Option<i32> {
+        &self.earfcn
     }
     /// <p>E-UTRAN (Evolved Universal Terrestrial Radio Access Network) cell global identifier (EUTRANCID).</p>
     pub fn eutran_cid(mut self, input: i32) -> Self {
@@ -92,6 +100,10 @@ impl LteNmrObjBuilder {
         self.eutran_cid = input;
         self
     }
+    /// <p>E-UTRAN (Evolved Universal Terrestrial Radio Access Network) cell global identifier (EUTRANCID).</p>
+    pub fn get_eutran_cid(&self) -> &::std::option::Option<i32> {
+        &self.eutran_cid
+    }
     /// <p>Signal power of the reference signal received, measured in dBm (decibel-milliwatts).</p>
     pub fn rsrp(mut self, input: i32) -> Self {
         self.rsrp = ::std::option::Option::Some(input);
@@ -102,6 +114,10 @@ impl LteNmrObjBuilder {
         self.rsrp = input;
         self
     }
+    /// <p>Signal power of the reference signal received, measured in dBm (decibel-milliwatts).</p>
+    pub fn get_rsrp(&self) -> &::std::option::Option<i32> {
+        &self.rsrp
+    }
     /// <p>Signal quality of the reference Signal received, measured in decibels (dB).</p>
     pub fn rsrq(mut self, input: f32) -> Self {
         self.rsrq = ::std::option::Option::Some(input);
@@ -111,6 +127,10 @@ impl LteNmrObjBuilder {
     pub fn set_rsrq(mut self, input: ::std::option::Option<f32>) -> Self {
         self.rsrq = input;
         self
+    }
+    /// <p>Signal quality of the reference Signal received, measured in decibels (dB).</p>
+    pub fn get_rsrq(&self) -> &::std::option::Option<f32> {
+        &self.rsrq
     }
     /// Consumes the builder and constructs a [`LteNmrObj`](crate::types::LteNmrObj).
     pub fn build(self) -> crate::types::LteNmrObj {

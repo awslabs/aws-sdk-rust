@@ -70,6 +70,10 @@ impl EffectivePolicyBuilder {
         self.policy_content = input;
         self
     }
+    /// <p>The text content of the policy.</p>
+    pub fn get_policy_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_content
+    }
     /// <p>The time of the last update to this policy.</p>
     pub fn last_updated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_timestamp = ::std::option::Option::Some(input);
@@ -83,6 +87,12 @@ impl EffectivePolicyBuilder {
         self.last_updated_timestamp = input;
         self
     }
+    /// <p>The time of the last update to this policy.</p>
+    pub fn get_last_updated_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_timestamp
+    }
     /// <p>The account ID of the policy target. </p>
     pub fn target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_id = ::std::option::Option::Some(input.into());
@@ -92,6 +102,10 @@ impl EffectivePolicyBuilder {
     pub fn set_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_id = input;
         self
+    }
+    /// <p>The account ID of the policy target. </p>
+    pub fn get_target_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_id
     }
     /// <p>The policy type.</p>
     pub fn policy_type(mut self, input: crate::types::EffectivePolicyType) -> Self {
@@ -105,6 +119,10 @@ impl EffectivePolicyBuilder {
     ) -> Self {
         self.policy_type = input;
         self
+    }
+    /// <p>The policy type.</p>
+    pub fn get_policy_type(&self) -> &::std::option::Option<crate::types::EffectivePolicyType> {
+        &self.policy_type
     }
     /// Consumes the builder and constructs a [`EffectivePolicy`](crate::types::EffectivePolicy).
     pub fn build(self) -> crate::types::EffectivePolicy {

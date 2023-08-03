@@ -81,6 +81,10 @@ impl DeleteAccountAssignmentInputBuilder {
         self.instance_arn = input;
         self
     }
+    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+    pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_arn
+    }
     /// <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
     pub fn target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_id = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl DeleteAccountAssignmentInputBuilder {
     pub fn set_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_id = input;
         self
+    }
+    /// <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
+    pub fn get_target_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_id
     }
     /// <p>The entity type for which the assignment will be deleted.</p>
     pub fn target_type(mut self, input: crate::types::TargetType) -> Self {
@@ -103,6 +111,10 @@ impl DeleteAccountAssignmentInputBuilder {
     ) -> Self {
         self.target_type = input;
         self
+    }
+    /// <p>The entity type for which the assignment will be deleted.</p>
+    pub fn get_target_type(&self) -> &::std::option::Option<crate::types::TargetType> {
+        &self.target_type
     }
     /// <p>The ARN of the permission set that will be used to remove access.</p>
     pub fn permission_set_arn(
@@ -120,6 +132,10 @@ impl DeleteAccountAssignmentInputBuilder {
         self.permission_set_arn = input;
         self
     }
+    /// <p>The ARN of the permission set that will be used to remove access.</p>
+    pub fn get_permission_set_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.permission_set_arn
+    }
     /// <p>The entity type for which the assignment will be deleted.</p>
     pub fn principal_type(mut self, input: crate::types::PrincipalType) -> Self {
         self.principal_type = ::std::option::Option::Some(input);
@@ -133,6 +149,10 @@ impl DeleteAccountAssignmentInputBuilder {
         self.principal_type = input;
         self
     }
+    /// <p>The entity type for which the assignment will be deleted.</p>
+    pub fn get_principal_type(&self) -> &::std::option::Option<crate::types::PrincipalType> {
+        &self.principal_type
+    }
     /// <p>An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API Reference</a>.</p>
     pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_id = ::std::option::Option::Some(input.into());
@@ -142,6 +162,10 @@ impl DeleteAccountAssignmentInputBuilder {
     pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal_id = input;
         self
+    }
+    /// <p>An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM Identity Center Identity Store API Reference</a>.</p>
+    pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal_id
     }
     /// Consumes the builder and constructs a [`DeleteAccountAssignmentInput`](crate::operation::delete_account_assignment::DeleteAccountAssignmentInput).
     pub fn build(

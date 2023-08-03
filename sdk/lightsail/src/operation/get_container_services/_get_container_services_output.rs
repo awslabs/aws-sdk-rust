@@ -57,6 +57,12 @@ impl GetContainerServicesOutputBuilder {
         self.container_services = input;
         self
     }
+    /// <p>An array of objects that describe one or more container services.</p>
+    pub fn get_container_services(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerService>> {
+        &self.container_services
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

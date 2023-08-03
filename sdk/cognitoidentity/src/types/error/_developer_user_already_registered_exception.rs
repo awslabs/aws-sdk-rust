@@ -70,6 +70,10 @@ impl DeveloperUserAlreadyRegisteredExceptionBuilder {
         self.message = input;
         self
     }
+    /// <p>This developer user identifier is already registered with Cognito.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);

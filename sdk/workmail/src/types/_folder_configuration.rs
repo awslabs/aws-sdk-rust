@@ -56,6 +56,10 @@ impl FolderConfigurationBuilder {
         self.name = input;
         self
     }
+    /// <p>The folder name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::FolderName> {
+        &self.name
+    }
     /// <p>The action to take on the folder contents at the end of the folder configuration period.</p>
     pub fn action(mut self, input: crate::types::RetentionAction) -> Self {
         self.action = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl FolderConfigurationBuilder {
         self.action = input;
         self
     }
+    /// <p>The action to take on the folder contents at the end of the folder configuration period.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::RetentionAction> {
+        &self.action
+    }
     /// <p>The number of days for which the folder-configuration action applies.</p>
     pub fn period(mut self, input: i32) -> Self {
         self.period = ::std::option::Option::Some(input);
@@ -78,6 +86,10 @@ impl FolderConfigurationBuilder {
     pub fn set_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.period = input;
         self
+    }
+    /// <p>The number of days for which the folder-configuration action applies.</p>
+    pub fn get_period(&self) -> &::std::option::Option<i32> {
+        &self.period
     }
     /// Consumes the builder and constructs a [`FolderConfiguration`](crate::types::FolderConfiguration).
     pub fn build(self) -> crate::types::FolderConfiguration {

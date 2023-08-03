@@ -48,6 +48,10 @@ impl GrantBuilder {
         self.grantee = input;
         self
     }
+    /// <p>The grantee.</p>
+    pub fn get_grantee(&self) -> &::std::option::Option<crate::types::Grantee> {
+        &self.grantee
+    }
     /// <p>Specifies the permission given to the grantee. </p>
     pub fn permission(mut self, input: crate::types::Permission) -> Self {
         self.permission = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl GrantBuilder {
     ) -> Self {
         self.permission = input;
         self
+    }
+    /// <p>Specifies the permission given to the grantee. </p>
+    pub fn get_permission(&self) -> &::std::option::Option<crate::types::Permission> {
+        &self.permission
     }
     /// Consumes the builder and constructs a [`Grant`](crate::types::Grant).
     pub fn build(self) -> crate::types::Grant {

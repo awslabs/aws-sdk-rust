@@ -61,6 +61,10 @@ impl DeleteDataRepositoryAssociationInputBuilder {
         self.association_id = input;
         self
     }
+    /// <p>The ID of the data repository association that you want to delete.</p>
+    pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_id
+    }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn client_request_token(
         mut self,
@@ -77,6 +81,10 @@ impl DeleteDataRepositoryAssociationInputBuilder {
         self.client_request_token = input;
         self
     }
+    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
+    }
     /// <p>Set to <code>true</code> to delete the data in the file system that corresponds to the data repository association.</p>
     pub fn delete_data_in_file_system(mut self, input: bool) -> Self {
         self.delete_data_in_file_system = ::std::option::Option::Some(input);
@@ -86,6 +94,10 @@ impl DeleteDataRepositoryAssociationInputBuilder {
     pub fn set_delete_data_in_file_system(mut self, input: ::std::option::Option<bool>) -> Self {
         self.delete_data_in_file_system = input;
         self
+    }
+    /// <p>Set to <code>true</code> to delete the data in the file system that corresponds to the data repository association.</p>
+    pub fn get_delete_data_in_file_system(&self) -> &::std::option::Option<bool> {
+        &self.delete_data_in_file_system
     }
     /// Consumes the builder and constructs a [`DeleteDataRepositoryAssociationInput`](crate::operation::delete_data_repository_association::DeleteDataRepositoryAssociationInput).
     pub fn build(

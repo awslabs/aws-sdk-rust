@@ -47,6 +47,10 @@ impl DeleteMediaPipelineInputBuilder {
         self.media_pipeline_id = input;
         self
     }
+    /// <p>The ID of the media pipeline to delete.</p>
+    pub fn get_media_pipeline_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.media_pipeline_id
+    }
     /// Consumes the builder and constructs a [`DeleteMediaPipelineInput`](crate::operation::delete_media_pipeline::DeleteMediaPipelineInput).
     pub fn build(
         self,

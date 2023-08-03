@@ -61,6 +61,12 @@ impl JobWorkerExecutorConfigurationBuilder {
         self.polling_accounts = input;
         self
     }
+    /// <p>The accounts in which the job worker is configured and might poll for jobs as part of the action execution.</p>
+    pub fn get_polling_accounts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.polling_accounts
+    }
     /// Appends an item to `polling_service_principals`.
     ///
     /// To override the contents of this collection use [`set_polling_service_principals`](Self::set_polling_service_principals).
@@ -82,6 +88,12 @@ impl JobWorkerExecutorConfigurationBuilder {
     ) -> Self {
         self.polling_service_principals = input;
         self
+    }
+    /// <p>The service Principals in which the job worker is configured and might poll for jobs as part of the action execution.</p>
+    pub fn get_polling_service_principals(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.polling_service_principals
     }
     /// Consumes the builder and constructs a [`JobWorkerExecutorConfiguration`](crate::types::JobWorkerExecutorConfiguration).
     pub fn build(self) -> crate::types::JobWorkerExecutorConfiguration {

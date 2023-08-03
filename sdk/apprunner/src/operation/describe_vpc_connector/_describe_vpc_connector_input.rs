@@ -50,6 +50,11 @@ impl DescribeVpcConnectorInputBuilder {
         self.vpc_connector_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want a description for.</p>
+    /// <p>The ARN must be a full VPC connector ARN.</p>
+    pub fn get_vpc_connector_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_connector_arn
+    }
     /// Consumes the builder and constructs a [`DescribeVpcConnectorInput`](crate::operation::describe_vpc_connector::DescribeVpcConnectorInput).
     pub fn build(
         self,

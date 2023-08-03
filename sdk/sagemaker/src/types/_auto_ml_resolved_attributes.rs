@@ -68,6 +68,12 @@ impl AutoMlResolvedAttributesBuilder {
         self.auto_ml_job_objective = input;
         self
     }
+    /// <p>Specifies a metric to minimize or maximize as the objective of a job.</p>
+    pub fn get_auto_ml_job_objective(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoMlJobObjective> {
+        &self.auto_ml_job_objective
+    }
     /// <p>How long a job is allowed to run, or how many candidates a job is allowed to generate.</p>
     pub fn completion_criteria(mut self, input: crate::types::AutoMlJobCompletionCriteria) -> Self {
         self.completion_criteria = ::std::option::Option::Some(input);
@@ -80,6 +86,12 @@ impl AutoMlResolvedAttributesBuilder {
     ) -> Self {
         self.completion_criteria = input;
         self
+    }
+    /// <p>How long a job is allowed to run, or how many candidates a job is allowed to generate.</p>
+    pub fn get_completion_criteria(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoMlJobCompletionCriteria> {
+        &self.completion_criteria
     }
     /// <p>Defines the resolved attributes specific to a problem type.</p>
     pub fn auto_ml_problem_type_resolved_attributes(
@@ -96,6 +108,12 @@ impl AutoMlResolvedAttributesBuilder {
     ) -> Self {
         self.auto_ml_problem_type_resolved_attributes = input;
         self
+    }
+    /// <p>Defines the resolved attributes specific to a problem type.</p>
+    pub fn get_auto_ml_problem_type_resolved_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoMlProblemTypeResolvedAttributes> {
+        &self.auto_ml_problem_type_resolved_attributes
     }
     /// Consumes the builder and constructs a [`AutoMlResolvedAttributes`](crate::types::AutoMlResolvedAttributes).
     pub fn build(self) -> crate::types::AutoMlResolvedAttributes {

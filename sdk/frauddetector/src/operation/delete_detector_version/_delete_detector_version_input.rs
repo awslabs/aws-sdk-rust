@@ -49,6 +49,10 @@ impl DeleteDetectorVersionInputBuilder {
         self.detector_id = input;
         self
     }
+    /// <p>The ID of the parent detector for the detector version to delete.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
+    }
     /// <p>The ID of the detector version to delete.</p>
     pub fn detector_version_id(
         mut self,
@@ -64,6 +68,10 @@ impl DeleteDetectorVersionInputBuilder {
     ) -> Self {
         self.detector_version_id = input;
         self
+    }
+    /// <p>The ID of the detector version to delete.</p>
+    pub fn get_detector_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_version_id
     }
     /// Consumes the builder and constructs a [`DeleteDetectorVersionInput`](crate::operation::delete_detector_version::DeleteDetectorVersionInput).
     pub fn build(

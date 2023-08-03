@@ -38,6 +38,13 @@ impl DescribeAlarmsForMetricFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeAlarmsForMetric as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_alarms_for_metric::builders::DescribeAlarmsForMetricInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +135,10 @@ impl DescribeAlarmsForMetricFluentBuilder {
         self.inner = self.inner.set_metric_name(input);
         self
     }
+    /// <p>The name of the metric.</p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_metric_name()
+    }
     /// <p>The namespace of the metric.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace(input.into());
@@ -138,6 +149,10 @@ impl DescribeAlarmsForMetricFluentBuilder {
         self.inner = self.inner.set_namespace(input);
         self
     }
+    /// <p>The namespace of the metric.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_namespace()
+    }
     /// <p>The statistic for the metric, other than percentiles. For percentile statistics, use <code>ExtendedStatistics</code>.</p>
     pub fn statistic(mut self, input: crate::types::Statistic) -> Self {
         self.inner = self.inner.statistic(input);
@@ -147,6 +162,10 @@ impl DescribeAlarmsForMetricFluentBuilder {
     pub fn set_statistic(mut self, input: ::std::option::Option<crate::types::Statistic>) -> Self {
         self.inner = self.inner.set_statistic(input);
         self
+    }
+    /// <p>The statistic for the metric, other than percentiles. For percentile statistics, use <code>ExtendedStatistics</code>.</p>
+    pub fn get_statistic(&self) -> &::std::option::Option<crate::types::Statistic> {
+        self.inner.get_statistic()
     }
     /// <p>The percentile statistic for the metric. Specify a value between p0.0 and p100.</p>
     pub fn extended_statistic(
@@ -163,6 +182,10 @@ impl DescribeAlarmsForMetricFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_extended_statistic(input);
         self
+    }
+    /// <p>The percentile statistic for the metric. Specify a value between p0.0 and p100.</p>
+    pub fn get_extended_statistic(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_extended_statistic()
     }
     /// Appends an item to `Dimensions`.
     ///
@@ -181,6 +204,12 @@ impl DescribeAlarmsForMetricFluentBuilder {
         self.inner = self.inner.set_dimensions(input);
         self
     }
+    /// <p>The dimensions associated with the metric. If the metric has any associated dimensions, you must specify them in order for the call to succeed.</p>
+    pub fn get_dimensions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Dimension>> {
+        self.inner.get_dimensions()
+    }
     /// <p>The period, in seconds, over which the statistic is applied.</p>
     pub fn period(mut self, input: i32) -> Self {
         self.inner = self.inner.period(input);
@@ -191,6 +220,10 @@ impl DescribeAlarmsForMetricFluentBuilder {
         self.inner = self.inner.set_period(input);
         self
     }
+    /// <p>The period, in seconds, over which the statistic is applied.</p>
+    pub fn get_period(&self) -> &::std::option::Option<i32> {
+        self.inner.get_period()
+    }
     /// <p>The unit for the metric.</p>
     pub fn unit(mut self, input: crate::types::StandardUnit) -> Self {
         self.inner = self.inner.unit(input);
@@ -200,5 +233,9 @@ impl DescribeAlarmsForMetricFluentBuilder {
     pub fn set_unit(mut self, input: ::std::option::Option<crate::types::StandardUnit>) -> Self {
         self.inner = self.inner.set_unit(input);
         self
+    }
+    /// <p>The unit for the metric.</p>
+    pub fn get_unit(&self) -> &::std::option::Option<crate::types::StandardUnit> {
+        self.inner.get_unit()
     }
 }

@@ -43,6 +43,10 @@ impl VirtualNodeStatusBuilder {
         self.status = input;
         self
     }
+    /// <p>The current status of the virtual node.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::VirtualNodeStatusCode> {
+        &self.status
+    }
     /// Consumes the builder and constructs a [`VirtualNodeStatus`](crate::types::VirtualNodeStatus).
     pub fn build(self) -> crate::types::VirtualNodeStatus {
         crate::types::VirtualNodeStatus {

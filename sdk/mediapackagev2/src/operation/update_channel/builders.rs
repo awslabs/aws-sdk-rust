@@ -37,6 +37,12 @@ impl UpdateChannelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateChannel as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_channel::builders::UpdateChannelInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,6 +131,10 @@ impl UpdateChannelFluentBuilder {
         self.inner = self.inner.set_channel_group_name(input);
         self
     }
+    /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
+    pub fn get_channel_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_group_name()
+    }
     /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. </p>
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.channel_name(input.into());
@@ -135,6 +145,10 @@ impl UpdateChannelFluentBuilder {
         self.inner = self.inner.set_channel_name(input);
         self
     }
+    /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. </p>
+    pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_name()
+    }
     /// <p>Any descriptive information that you want to add to the channel for future identification purposes.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -144,5 +158,9 @@ impl UpdateChannelFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>Any descriptive information that you want to add to the channel for future identification purposes.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
 }

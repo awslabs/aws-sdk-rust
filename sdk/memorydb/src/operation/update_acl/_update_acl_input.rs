@@ -55,6 +55,10 @@ impl UpdateAclInputBuilder {
         self.acl_name = input;
         self
     }
+    /// <p>The name of the Access Control List</p>
+    pub fn get_acl_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.acl_name
+    }
     /// Appends an item to `user_names_to_add`.
     ///
     /// To override the contents of this collection use [`set_user_names_to_add`](Self::set_user_names_to_add).
@@ -77,6 +81,12 @@ impl UpdateAclInputBuilder {
         self.user_names_to_add = input;
         self
     }
+    /// <p>The list of users to add to the Access Control List</p>
+    pub fn get_user_names_to_add(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.user_names_to_add
+    }
     /// Appends an item to `user_names_to_remove`.
     ///
     /// To override the contents of this collection use [`set_user_names_to_remove`](Self::set_user_names_to_remove).
@@ -98,6 +108,12 @@ impl UpdateAclInputBuilder {
     ) -> Self {
         self.user_names_to_remove = input;
         self
+    }
+    /// <p>The list of users to remove from the Access Control List</p>
+    pub fn get_user_names_to_remove(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.user_names_to_remove
     }
     /// Consumes the builder and constructs a [`UpdateAclInput`](crate::operation::update_acl::UpdateAclInput).
     pub fn build(

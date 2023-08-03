@@ -219,6 +219,50 @@ impl ProgressDetailBuilder {
         self.current_progress = input;
         self
     }
+    /// <p>The current progress status.</p>
+    /// <dl>
+    /// <dt>
+    /// Validating
+    /// </dt>
+    /// <dd>
+    /// <p>Validating the deployment.</p>
+    /// </dd>
+    /// <dt>
+    /// DownloadingExtracting
+    /// </dt>
+    /// <dd>
+    /// <p>Downloading and extracting the bundle on the robot.</p>
+    /// </dd>
+    /// <dt>
+    /// ExecutingPreLaunch
+    /// </dt>
+    /// <dd>
+    /// <p>Executing pre-launch script(s) if provided.</p>
+    /// </dd>
+    /// <dt>
+    /// Launching
+    /// </dt>
+    /// <dd>
+    /// <p>Launching the robot application.</p>
+    /// </dd>
+    /// <dt>
+    /// ExecutingPostLaunch
+    /// </dt>
+    /// <dd>
+    /// <p>Executing post-launch script(s) if provided.</p>
+    /// </dd>
+    /// <dt>
+    /// Finished
+    /// </dt>
+    /// <dd>
+    /// <p>Deployment is complete.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_current_progress(
+        &self,
+    ) -> &::std::option::Option<crate::types::RobotDeploymentStep> {
+        &self.current_progress
+    }
     /// <p>Precentage of the step that is done. This currently only applies to the <code>Downloading/Extracting</code> step of the deployment. It is empty for other steps.</p>
     pub fn percent_done(mut self, input: f32) -> Self {
         self.percent_done = ::std::option::Option::Some(input);
@@ -228,6 +272,10 @@ impl ProgressDetailBuilder {
     pub fn set_percent_done(mut self, input: ::std::option::Option<f32>) -> Self {
         self.percent_done = input;
         self
+    }
+    /// <p>Precentage of the step that is done. This currently only applies to the <code>Downloading/Extracting</code> step of the deployment. It is empty for other steps.</p>
+    pub fn get_percent_done(&self) -> &::std::option::Option<f32> {
+        &self.percent_done
     }
     /// <p>Estimated amount of time in seconds remaining in the step. This currently only applies to the <code>Downloading/Extracting</code> step of the deployment. It is empty for other steps.</p>
     pub fn estimated_time_remaining_seconds(mut self, input: i32) -> Self {
@@ -241,6 +289,10 @@ impl ProgressDetailBuilder {
     ) -> Self {
         self.estimated_time_remaining_seconds = input;
         self
+    }
+    /// <p>Estimated amount of time in seconds remaining in the step. This currently only applies to the <code>Downloading/Extracting</code> step of the deployment. It is empty for other steps.</p>
+    pub fn get_estimated_time_remaining_seconds(&self) -> &::std::option::Option<i32> {
+        &self.estimated_time_remaining_seconds
     }
     /// <p>The Amazon Resource Name (ARN) of the deployment job.</p>
     pub fn target_resource(
@@ -257,6 +309,10 @@ impl ProgressDetailBuilder {
     ) -> Self {
         self.target_resource = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the deployment job.</p>
+    pub fn get_target_resource(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_resource
     }
     /// Consumes the builder and constructs a [`ProgressDetail`](crate::types::ProgressDetail).
     pub fn build(self) -> crate::types::ProgressDetail {

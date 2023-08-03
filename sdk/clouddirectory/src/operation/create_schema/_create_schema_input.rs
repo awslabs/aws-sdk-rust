@@ -39,6 +39,10 @@ impl CreateSchemaInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name that is associated with the schema. This is unique to each account and in each region.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`CreateSchemaInput`](crate::operation::create_schema::CreateSchemaInput).
     pub fn build(
         self,

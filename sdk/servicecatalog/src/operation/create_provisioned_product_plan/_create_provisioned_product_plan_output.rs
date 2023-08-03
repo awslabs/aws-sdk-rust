@@ -78,6 +78,10 @@ impl CreateProvisionedProductPlanOutputBuilder {
         self.plan_name = input;
         self
     }
+    /// <p>The name of the plan.</p>
+    pub fn get_plan_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.plan_name
+    }
     /// <p>The plan identifier.</p>
     pub fn plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.plan_id = ::std::option::Option::Some(input.into());
@@ -87,6 +91,10 @@ impl CreateProvisionedProductPlanOutputBuilder {
     pub fn set_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.plan_id = input;
         self
+    }
+    /// <p>The plan identifier.</p>
+    pub fn get_plan_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.plan_id
     }
     /// <p>The product identifier.</p>
     pub fn provision_product_id(
@@ -104,6 +112,10 @@ impl CreateProvisionedProductPlanOutputBuilder {
         self.provision_product_id = input;
         self
     }
+    /// <p>The product identifier.</p>
+    pub fn get_provision_product_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provision_product_id
+    }
     /// <p>The user-friendly name of the provisioned product.</p>
     pub fn provisioned_product_name(
         mut self,
@@ -120,6 +132,10 @@ impl CreateProvisionedProductPlanOutputBuilder {
         self.provisioned_product_name = input;
         self
     }
+    /// <p>The user-friendly name of the provisioned product.</p>
+    pub fn get_provisioned_product_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provisioned_product_name
+    }
     /// <p>The identifier of the provisioning artifact.</p>
     pub fn provisioning_artifact_id(
         mut self,
@@ -135,6 +151,10 @@ impl CreateProvisionedProductPlanOutputBuilder {
     ) -> Self {
         self.provisioning_artifact_id = input;
         self
+    }
+    /// <p>The identifier of the provisioning artifact.</p>
+    pub fn get_provisioning_artifact_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provisioning_artifact_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

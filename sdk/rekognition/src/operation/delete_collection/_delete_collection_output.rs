@@ -47,6 +47,10 @@ impl DeleteCollectionOutputBuilder {
         self.status_code = input;
         self
     }
+    /// <p>HTTP status code that indicates the result of the operation.</p>
+    pub fn get_status_code(&self) -> &::std::option::Option<i32> {
+        &self.status_code
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

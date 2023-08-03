@@ -63,6 +63,10 @@ impl UpdateDocumentationVersionOutputBuilder {
         self.version = input;
         self
     }
+    /// <p>The version identifier of the API documentation snapshot.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
+    }
     /// <p>The date when the API documentation snapshot is created.</p>
     pub fn created_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_date = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl UpdateDocumentationVersionOutputBuilder {
         self.created_date = input;
         self
     }
+    /// <p>The date when the API documentation snapshot is created.</p>
+    pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_date
+    }
     /// <p>The description of the API documentation snapshot.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -85,6 +93,10 @@ impl UpdateDocumentationVersionOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the API documentation snapshot.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

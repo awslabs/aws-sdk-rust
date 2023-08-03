@@ -39,6 +39,10 @@ impl PutImageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutImage as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_image::builders::PutImageInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -121,6 +125,10 @@ impl PutImageFluentBuilder {
         self.inner = self.inner.set_registry_id(input);
         self
     }
+    /// <p>The Amazon Web Services account ID, or registry alias, that's associated with the public registry that contains the repository where the image is put. If you do not specify a registry, the default public registry is assumed.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_registry_id()
+    }
     /// <p>The name of the repository where the image is put.</p>
     pub fn repository_name(
         mut self,
@@ -136,6 +144,10 @@ impl PutImageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
+    }
+    /// <p>The name of the repository where the image is put.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_repository_name()
     }
     /// <p>The image manifest that corresponds to the image to be uploaded.</p>
     pub fn image_manifest(
@@ -153,6 +165,10 @@ impl PutImageFluentBuilder {
         self.inner = self.inner.set_image_manifest(input);
         self
     }
+    /// <p>The image manifest that corresponds to the image to be uploaded.</p>
+    pub fn get_image_manifest(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_image_manifest()
+    }
     /// <p>The media type of the image manifest. If you push an image manifest that doesn't contain the <code>mediaType</code> field, you must specify the <code>imageManifestMediaType</code> in the request.</p>
     pub fn image_manifest_media_type(
         mut self,
@@ -169,6 +185,10 @@ impl PutImageFluentBuilder {
         self.inner = self.inner.set_image_manifest_media_type(input);
         self
     }
+    /// <p>The media type of the image manifest. If you push an image manifest that doesn't contain the <code>mediaType</code> field, you must specify the <code>imageManifestMediaType</code> in the request.</p>
+    pub fn get_image_manifest_media_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_image_manifest_media_type()
+    }
     /// <p>The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.</p>
     pub fn image_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.image_tag(input.into());
@@ -179,6 +199,10 @@ impl PutImageFluentBuilder {
         self.inner = self.inner.set_image_tag(input);
         self
     }
+    /// <p>The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.</p>
+    pub fn get_image_tag(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_image_tag()
+    }
     /// <p>The image digest of the image manifest that corresponds to the image.</p>
     pub fn image_digest(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.image_digest(input.into());
@@ -188,5 +212,9 @@ impl PutImageFluentBuilder {
     pub fn set_image_digest(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_image_digest(input);
         self
+    }
+    /// <p>The image digest of the image manifest that corresponds to the image.</p>
+    pub fn get_image_digest(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_image_digest()
     }
 }

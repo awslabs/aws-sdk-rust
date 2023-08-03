@@ -64,6 +64,10 @@ impl CellBuilder {
         self.column = input;
         self
     }
+    /// <p>The column number of the column that contains the data. For a Microsoft Excel workbook, the column number corresponds to the alphabetical column identifiers. For example, a value of 1 for Column corresponds to the A column in the workbook.</p>
+    pub fn get_column(&self) -> &::std::option::Option<i64> {
+        &self.column
+    }
     /// <p>The row number of the row that contains the data.</p>
     pub fn row(mut self, input: i64) -> Self {
         self.row = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl CellBuilder {
         self.row = input;
         self
     }
+    /// <p>The row number of the row that contains the data.</p>
+    pub fn get_row(&self) -> &::std::option::Option<i64> {
+        &self.row
+    }
     /// <p>The name of the column that contains the data.</p>
     pub fn column_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.column_name = ::std::option::Option::Some(input.into());
@@ -83,6 +91,10 @@ impl CellBuilder {
     pub fn set_column_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.column_name = input;
         self
+    }
+    /// <p>The name of the column that contains the data.</p>
+    pub fn get_column_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.column_name
     }
     /// <p>For a Microsoft Excel workbook, provides the location of the cell, as an absolute cell reference, that contains the data. For example, Sheet2!C5 for cell C5 on Sheet2.</p>
     pub fn cell_reference(
@@ -99,6 +111,10 @@ impl CellBuilder {
     ) -> Self {
         self.cell_reference = input;
         self
+    }
+    /// <p>For a Microsoft Excel workbook, provides the location of the cell, as an absolute cell reference, that contains the data. For example, Sheet2!C5 for cell C5 on Sheet2.</p>
+    pub fn get_cell_reference(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cell_reference
     }
     /// Consumes the builder and constructs a [`Cell`](crate::types::Cell).
     pub fn build(self) -> crate::types::Cell {

@@ -36,6 +36,12 @@ impl UpdateVpcEndpointFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateVpcEndpoint as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_vpc_endpoint::builders::UpdateVpcEndpointInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateVpcEndpointFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The unique identifier of the interface endpoint to update.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// Appends an item to `addSubnetIds`.
     ///
     /// To override the contents of this collection use [`set_add_subnet_ids`](Self::set_add_subnet_ids).
@@ -145,6 +155,12 @@ impl UpdateVpcEndpointFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_add_subnet_ids(input);
         self
+    }
+    /// <p>The ID of one or more subnets to add to the endpoint.</p>
+    pub fn get_add_subnet_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_add_subnet_ids()
     }
     /// Appends an item to `removeSubnetIds`.
     ///
@@ -166,6 +182,12 @@ impl UpdateVpcEndpointFluentBuilder {
         self.inner = self.inner.set_remove_subnet_ids(input);
         self
     }
+    /// <p>The unique identifiers of the subnets to remove from the endpoint.</p>
+    pub fn get_remove_subnet_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_remove_subnet_ids()
+    }
     /// Appends an item to `addSecurityGroupIds`.
     ///
     /// To override the contents of this collection use [`set_add_security_group_ids`](Self::set_add_security_group_ids).
@@ -185,6 +207,12 @@ impl UpdateVpcEndpointFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_add_security_group_ids(input);
         self
+    }
+    /// <p>The unique identifiers of the security groups to add to the endpoint. Security groups define the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.</p>
+    pub fn get_add_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_add_security_group_ids()
     }
     /// Appends an item to `removeSecurityGroupIds`.
     ///
@@ -206,6 +234,12 @@ impl UpdateVpcEndpointFluentBuilder {
         self.inner = self.inner.set_remove_security_group_ids(input);
         self
     }
+    /// <p>The unique identifiers of the security groups to remove from the endpoint.</p>
+    pub fn get_remove_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_remove_security_group_ids()
+    }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -215,5 +249,9 @@ impl UpdateVpcEndpointFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

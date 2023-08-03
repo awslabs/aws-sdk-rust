@@ -39,6 +39,10 @@ impl DeleteDatasetInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the dataset to be deleted.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DeleteDatasetInput`](crate::operation::delete_dataset::DeleteDatasetInput).
     pub fn build(
         self,

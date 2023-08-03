@@ -36,6 +36,10 @@ impl ListProjectsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListProjects as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_projects::builders::ListProjectsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl ListProjectsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The continuation token to be used to return the next set of results, if the results cannot be returned in one response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum amount of data that can be contained in a single set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -127,5 +135,9 @@ impl ListProjectsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum amount of data that can be contained in a single set of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

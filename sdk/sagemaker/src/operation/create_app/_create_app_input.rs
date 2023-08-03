@@ -91,6 +91,10 @@ impl CreateAppInputBuilder {
         self.domain_id = input;
         self
     }
+    /// <p>The domain ID.</p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_id
+    }
     /// <p>The user profile name. If this value is not set, then <code>SpaceName</code> must be set.</p>
     pub fn user_profile_name(
         mut self,
@@ -107,6 +111,10 @@ impl CreateAppInputBuilder {
         self.user_profile_name = input;
         self
     }
+    /// <p>The user profile name. If this value is not set, then <code>SpaceName</code> must be set.</p>
+    pub fn get_user_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_profile_name
+    }
     /// <p>The type of app.</p>
     pub fn app_type(mut self, input: crate::types::AppType) -> Self {
         self.app_type = ::std::option::Option::Some(input);
@@ -117,6 +125,10 @@ impl CreateAppInputBuilder {
         self.app_type = input;
         self
     }
+    /// <p>The type of app.</p>
+    pub fn get_app_type(&self) -> &::std::option::Option<crate::types::AppType> {
+        &self.app_type
+    }
     /// <p>The name of the app.</p>
     pub fn app_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.app_name = ::std::option::Option::Some(input.into());
@@ -126,6 +138,10 @@ impl CreateAppInputBuilder {
     pub fn set_app_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_name = input;
         self
+    }
+    /// <p>The name of the app.</p>
+    pub fn get_app_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_name
     }
     /// Appends an item to `tags`.
     ///
@@ -146,6 +162,10 @@ impl CreateAppInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Each tag consists of a key and an optional value. Tag keys must be unique per resource.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p> <note>
     /// <p>The value of <code>InstanceType</code> passed as part of the <code>ResourceSpec</code> in the <code>CreateApp</code> call overrides the value passed as part of the <code>ResourceSpec</code> configured for the user profile or the domain. If <code>InstanceType</code> is not specified in any of those three <code>ResourceSpec</code> values for a <code>KernelGateway</code> app, the <code>CreateApp</code> call fails with a request validation error.</p>
     /// </note>
@@ -163,6 +183,12 @@ impl CreateAppInputBuilder {
         self.resource_spec = input;
         self
     }
+    /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p> <note>
+    /// <p>The value of <code>InstanceType</code> passed as part of the <code>ResourceSpec</code> in the <code>CreateApp</code> call overrides the value passed as part of the <code>ResourceSpec</code> configured for the user profile or the domain. If <code>InstanceType</code> is not specified in any of those three <code>ResourceSpec</code> values for a <code>KernelGateway</code> app, the <code>CreateApp</code> call fails with a request validation error.</p>
+    /// </note>
+    pub fn get_resource_spec(&self) -> &::std::option::Option<crate::types::ResourceSpec> {
+        &self.resource_spec
+    }
     /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
     pub fn space_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.space_name = ::std::option::Option::Some(input.into());
@@ -172,6 +198,10 @@ impl CreateAppInputBuilder {
     pub fn set_space_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.space_name = input;
         self
+    }
+    /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
+    pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.space_name
     }
     /// Consumes the builder and constructs a [`CreateAppInput`](crate::operation::create_app::CreateAppInput).
     pub fn build(

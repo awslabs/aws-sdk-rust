@@ -38,6 +38,12 @@ impl UpdateApplicationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateApplication as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_application::builders::UpdateApplicationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +140,10 @@ impl UpdateApplicationFluentBuilder {
         self.inner = self.inner.set_application_name(input);
         self
     }
+    /// <p>The name of the application to update. If no such application is found, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error. </p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_name()
+    }
     /// <p>A new description for the application.</p>
     /// <p>Default: If not specified, AWS Elastic Beanstalk does not update the description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -145,5 +155,10 @@ impl UpdateApplicationFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A new description for the application.</p>
+    /// <p>Default: If not specified, AWS Elastic Beanstalk does not update the description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
 }

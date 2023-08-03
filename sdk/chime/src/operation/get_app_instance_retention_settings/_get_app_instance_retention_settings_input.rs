@@ -45,6 +45,10 @@ impl GetAppInstanceRetentionSettingsInputBuilder {
         self.app_instance_arn = input;
         self
     }
+    /// <p>The ARN of the <code>AppInstance</code>.</p>
+    pub fn get_app_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_instance_arn
+    }
     /// Consumes the builder and constructs a [`GetAppInstanceRetentionSettingsInput`](crate::operation::get_app_instance_retention_settings::GetAppInstanceRetentionSettingsInput).
     pub fn build(
         self,

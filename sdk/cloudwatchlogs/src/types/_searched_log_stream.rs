@@ -54,6 +54,10 @@ impl SearchedLogStreamBuilder {
         self.log_stream_name = input;
         self
     }
+    /// <p>The name of the log stream.</p>
+    pub fn get_log_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_stream_name
+    }
     /// <p>Indicates whether all the events in this log stream were searched.</p>
     pub fn searched_completely(mut self, input: bool) -> Self {
         self.searched_completely = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl SearchedLogStreamBuilder {
     pub fn set_searched_completely(mut self, input: ::std::option::Option<bool>) -> Self {
         self.searched_completely = input;
         self
+    }
+    /// <p>Indicates whether all the events in this log stream were searched.</p>
+    pub fn get_searched_completely(&self) -> &::std::option::Option<bool> {
+        &self.searched_completely
     }
     /// Consumes the builder and constructs a [`SearchedLogStream`](crate::types::SearchedLogStream).
     pub fn build(self) -> crate::types::SearchedLogStream {

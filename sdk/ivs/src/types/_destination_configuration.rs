@@ -43,6 +43,10 @@ impl DestinationConfigurationBuilder {
         self.s3 = input;
         self
     }
+    /// <p>An S3 destination configuration where recorded videos will be stored.</p>
+    pub fn get_s3(&self) -> &::std::option::Option<crate::types::S3DestinationConfiguration> {
+        &self.s3
+    }
     /// Consumes the builder and constructs a [`DestinationConfiguration`](crate::types::DestinationConfiguration).
     pub fn build(self) -> crate::types::DestinationConfiguration {
         crate::types::DestinationConfiguration { s3: self.s3 }

@@ -135,6 +135,10 @@ impl UpdateBotLocaleOutputBuilder {
         self.bot_id = input;
         self
     }
+    /// <p>The identifier of the bot that contains the updated locale.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
+    }
     /// <p>The version of the bot that contains the updated locale.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
@@ -144,6 +148,10 @@ impl UpdateBotLocaleOutputBuilder {
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_version = input;
         self
+    }
+    /// <p>The version of the bot that contains the updated locale.</p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_version
     }
     /// <p>The language and locale of the updated bot locale.</p>
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -155,6 +163,10 @@ impl UpdateBotLocaleOutputBuilder {
         self.locale_id = input;
         self
     }
+    /// <p>The language and locale of the updated bot locale.</p>
+    pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale_id
+    }
     /// <p>The updated locale name for the locale.</p>
     pub fn locale_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_name = ::std::option::Option::Some(input.into());
@@ -165,6 +177,10 @@ impl UpdateBotLocaleOutputBuilder {
         self.locale_name = input;
         self
     }
+    /// <p>The updated locale name for the locale.</p>
+    pub fn get_locale_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale_name
+    }
     /// <p>The updated description of the locale.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -174,6 +190,10 @@ impl UpdateBotLocaleOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The updated description of the locale.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The updated confidence threshold for inserting the <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> intents in the list of possible intents for an utterance.</p>
     pub fn nlu_intent_confidence_threshold(mut self, input: f64) -> Self {
@@ -188,6 +208,10 @@ impl UpdateBotLocaleOutputBuilder {
         self.nlu_intent_confidence_threshold = input;
         self
     }
+    /// <p>The updated confidence threshold for inserting the <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> intents in the list of possible intents for an utterance.</p>
+    pub fn get_nlu_intent_confidence_threshold(&self) -> &::std::option::Option<f64> {
+        &self.nlu_intent_confidence_threshold
+    }
     /// <p>The updated Amazon Polly voice to use for voice interaction with the user.</p>
     pub fn voice_settings(mut self, input: crate::types::VoiceSettings) -> Self {
         self.voice_settings = ::std::option::Option::Some(input);
@@ -201,6 +225,10 @@ impl UpdateBotLocaleOutputBuilder {
         self.voice_settings = input;
         self
     }
+    /// <p>The updated Amazon Polly voice to use for voice interaction with the user.</p>
+    pub fn get_voice_settings(&self) -> &::std::option::Option<crate::types::VoiceSettings> {
+        &self.voice_settings
+    }
     /// <p>The current status of the locale. When the bot status is <code>Built</code> the locale is ready for use.</p>
     pub fn bot_locale_status(mut self, input: crate::types::BotLocaleStatus) -> Self {
         self.bot_locale_status = ::std::option::Option::Some(input);
@@ -213,6 +241,10 @@ impl UpdateBotLocaleOutputBuilder {
     ) -> Self {
         self.bot_locale_status = input;
         self
+    }
+    /// <p>The current status of the locale. When the bot status is <code>Built</code> the locale is ready for use.</p>
+    pub fn get_bot_locale_status(&self) -> &::std::option::Option<crate::types::BotLocaleStatus> {
+        &self.bot_locale_status
     }
     /// Appends an item to `failure_reasons`.
     ///
@@ -236,6 +268,12 @@ impl UpdateBotLocaleOutputBuilder {
         self.failure_reasons = input;
         self
     }
+    /// <p>If the <code>botLocaleStatus</code> is <code>Failed</code>, the <code>failureReasons</code> field lists the errors that occurred while building the bot.</p>
+    pub fn get_failure_reasons(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.failure_reasons
+    }
     /// <p>A timestamp of the date and time that the locale was created.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
@@ -249,6 +287,10 @@ impl UpdateBotLocaleOutputBuilder {
         self.creation_date_time = input;
         self
     }
+    /// <p>A timestamp of the date and time that the locale was created.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
+    }
     /// <p>A timestamp of the date and time that the locale was last updated.</p>
     pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date_time = ::std::option::Option::Some(input);
@@ -261,6 +303,12 @@ impl UpdateBotLocaleOutputBuilder {
     ) -> Self {
         self.last_updated_date_time = input;
         self
+    }
+    /// <p>A timestamp of the date and time that the locale was last updated.</p>
+    pub fn get_last_updated_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date_time
     }
     /// Appends an item to `recommended_actions`.
     ///
@@ -283,6 +331,12 @@ impl UpdateBotLocaleOutputBuilder {
     ) -> Self {
         self.recommended_actions = input;
         self
+    }
+    /// <p>Recommended actions to take to resolve an error in the <code>failureReasons</code> field.</p>
+    pub fn get_recommended_actions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.recommended_actions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

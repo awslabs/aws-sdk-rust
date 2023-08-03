@@ -81,6 +81,12 @@ impl MediaInsightsPipelineConfigurationSummaryBuilder {
         self.media_insights_pipeline_configuration_name = input;
         self
     }
+    /// <p>The name of the media insights pipeline configuration.</p>
+    pub fn get_media_insights_pipeline_configuration_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.media_insights_pipeline_configuration_name
+    }
     /// <p>The ID of the media insights pipeline configuration.</p>
     pub fn media_insights_pipeline_configuration_id(
         mut self,
@@ -97,6 +103,12 @@ impl MediaInsightsPipelineConfigurationSummaryBuilder {
         self.media_insights_pipeline_configuration_id = input;
         self
     }
+    /// <p>The ID of the media insights pipeline configuration.</p>
+    pub fn get_media_insights_pipeline_configuration_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.media_insights_pipeline_configuration_id
+    }
     /// <p>The ARN of the media insights pipeline configuration.</p>
     pub fn media_insights_pipeline_configuration_arn(
         mut self,
@@ -112,6 +124,12 @@ impl MediaInsightsPipelineConfigurationSummaryBuilder {
     ) -> Self {
         self.media_insights_pipeline_configuration_arn = input;
         self
+    }
+    /// <p>The ARN of the media insights pipeline configuration.</p>
+    pub fn get_media_insights_pipeline_configuration_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.media_insights_pipeline_configuration_arn
     }
     /// Consumes the builder and constructs a [`MediaInsightsPipelineConfigurationSummary`](crate::types::MediaInsightsPipelineConfigurationSummary).
     pub fn build(self) -> crate::types::MediaInsightsPipelineConfigurationSummary {

@@ -57,6 +57,10 @@ impl AvailableProcessorFeatureBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the processor feature. Valid names are <code>coreCount</code> and <code>threadsPerCore</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The default value for the processor feature of the DB instance class.</p>
     pub fn default_value(
         mut self,
@@ -73,6 +77,10 @@ impl AvailableProcessorFeatureBuilder {
         self.default_value = input;
         self
     }
+    /// <p>The default value for the processor feature of the DB instance class.</p>
+    pub fn get_default_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_value
+    }
     /// <p>The allowed values for the processor feature of the DB instance class.</p>
     pub fn allowed_values(
         mut self,
@@ -88,6 +96,10 @@ impl AvailableProcessorFeatureBuilder {
     ) -> Self {
         self.allowed_values = input;
         self
+    }
+    /// <p>The allowed values for the processor feature of the DB instance class.</p>
+    pub fn get_allowed_values(&self) -> &::std::option::Option<::std::string::String> {
+        &self.allowed_values
     }
     /// Consumes the builder and constructs a [`AvailableProcessorFeature`](crate::types::AvailableProcessorFeature).
     pub fn build(self) -> crate::types::AvailableProcessorFeature {

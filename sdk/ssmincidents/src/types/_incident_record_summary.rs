@@ -90,6 +90,10 @@ impl IncidentRecordSummaryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the incident.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The title of the incident. This value is either provided by the response plan or overwritten on creation.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
@@ -99,6 +103,10 @@ impl IncidentRecordSummaryBuilder {
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
+    }
+    /// <p>The title of the incident. This value is either provided by the response plan or overwritten on creation.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
     }
     /// <p>The current status of the incident.</p>
     pub fn status(mut self, input: crate::types::IncidentRecordStatus) -> Self {
@@ -113,6 +121,10 @@ impl IncidentRecordSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The current status of the incident.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::IncidentRecordStatus> {
+        &self.status
+    }
     /// <p>Defines the impact to customers and applications.</p>
     pub fn impact(mut self, input: i32) -> Self {
         self.impact = ::std::option::Option::Some(input);
@@ -122,6 +134,10 @@ impl IncidentRecordSummaryBuilder {
     pub fn set_impact(mut self, input: ::std::option::Option<i32>) -> Self {
         self.impact = input;
         self
+    }
+    /// <p>Defines the impact to customers and applications.</p>
+    pub fn get_impact(&self) -> &::std::option::Option<i32> {
+        &self.impact
     }
     /// <p>The time the incident was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -136,6 +152,10 @@ impl IncidentRecordSummaryBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The time the incident was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The time the incident was resolved.</p>
     pub fn resolved_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.resolved_time = ::std::option::Option::Some(input);
@@ -149,6 +169,10 @@ impl IncidentRecordSummaryBuilder {
         self.resolved_time = input;
         self
     }
+    /// <p>The time the incident was resolved.</p>
+    pub fn get_resolved_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.resolved_time
+    }
     /// <p>What caused Incident Manager to create the incident.</p>
     pub fn incident_record_source(mut self, input: crate::types::IncidentRecordSource) -> Self {
         self.incident_record_source = ::std::option::Option::Some(input);
@@ -161,6 +185,12 @@ impl IncidentRecordSummaryBuilder {
     ) -> Self {
         self.incident_record_source = input;
         self
+    }
+    /// <p>What caused Incident Manager to create the incident.</p>
+    pub fn get_incident_record_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::IncidentRecordSource> {
+        &self.incident_record_source
     }
     /// Consumes the builder and constructs a [`IncidentRecordSummary`](crate::types::IncidentRecordSummary).
     pub fn build(self) -> crate::types::IncidentRecordSummary {

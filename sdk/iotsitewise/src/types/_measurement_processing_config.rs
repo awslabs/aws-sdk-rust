@@ -43,6 +43,10 @@ impl MeasurementProcessingConfigBuilder {
         self.forwarding_config = input;
         self
     }
+    /// <p>The forwarding configuration for the given measurement property. </p>
+    pub fn get_forwarding_config(&self) -> &::std::option::Option<crate::types::ForwardingConfig> {
+        &self.forwarding_config
+    }
     /// Consumes the builder and constructs a [`MeasurementProcessingConfig`](crate::types::MeasurementProcessingConfig).
     pub fn build(self) -> crate::types::MeasurementProcessingConfig {
         crate::types::MeasurementProcessingConfig {

@@ -85,6 +85,10 @@ impl CreateKeyOutputBuilder {
         self.key = input;
         self
     }
+    /// <p>The key value/string of an API key. This value is used when making API calls to authorize the call. For example, see <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_GetMapGlyphs.html">GetMapGlyphs</a>.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>The Amazon Resource Name (ARN) for the API key resource. Used when you need to specify a resource across all Amazon Web Services.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:key/ExampleKey</code> </p> </li>
@@ -101,6 +105,13 @@ impl CreateKeyOutputBuilder {
         self.key_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the API key resource. Used when you need to specify a resource across all Amazon Web Services.</p>
+    /// <ul>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:key/ExampleKey</code> </p> </li>
+    /// </ul>
+    pub fn get_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_arn
+    }
     /// <p>The name of the API key resource.</p>
     pub fn key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_name = ::std::option::Option::Some(input.into());
@@ -110,6 +121,10 @@ impl CreateKeyOutputBuilder {
     pub fn set_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_name = input;
         self
+    }
+    /// <p>The name of the API key resource.</p>
+    pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_name
     }
     /// <p>The timestamp for when the API key resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -123,6 +138,10 @@ impl CreateKeyOutputBuilder {
     ) -> Self {
         self.create_time = input;
         self
+    }
+    /// <p>The timestamp for when the API key resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

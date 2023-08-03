@@ -48,6 +48,10 @@ impl DescribeProfilingGroupInputBuilder {
         self.profiling_group_name = input;
         self
     }
+    /// <p> The name of the profiling group to get information about. </p>
+    pub fn get_profiling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profiling_group_name
+    }
     /// Consumes the builder and constructs a [`DescribeProfilingGroupInput`](crate::operation::describe_profiling_group::DescribeProfilingGroupInput).
     pub fn build(
         self,

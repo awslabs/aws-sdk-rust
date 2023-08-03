@@ -69,6 +69,10 @@ impl UpdateRouteInputBuilder {
         self.environment_identifier = input;
         self
     }
+    /// <p> The ID of the environment in which the route is being updated. </p>
+    pub fn get_environment_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_identifier
+    }
     /// <p> The ID of the application within which the route is being updated. </p>
     pub fn application_identifier(
         mut self,
@@ -84,6 +88,10 @@ impl UpdateRouteInputBuilder {
     ) -> Self {
         self.application_identifier = input;
         self
+    }
+    /// <p> The ID of the application within which the route is being updated. </p>
+    pub fn get_application_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_identifier
     }
     /// <p> The unique identifier of the route to update. </p>
     pub fn route_identifier(
@@ -101,6 +109,10 @@ impl UpdateRouteInputBuilder {
         self.route_identifier = input;
         self
     }
+    /// <p> The unique identifier of the route to update. </p>
+    pub fn get_route_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.route_identifier
+    }
     /// <p> If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is updated. </p>
     pub fn activation_state(mut self, input: crate::types::RouteActivationState) -> Self {
         self.activation_state = ::std::option::Option::Some(input);
@@ -113,6 +125,12 @@ impl UpdateRouteInputBuilder {
     ) -> Self {
         self.activation_state = input;
         self
+    }
+    /// <p> If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is updated. </p>
+    pub fn get_activation_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::RouteActivationState> {
+        &self.activation_state
     }
     /// Consumes the builder and constructs a [`UpdateRouteInput`](crate::operation::update_route::UpdateRouteInput).
     pub fn build(

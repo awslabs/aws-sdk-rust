@@ -36,6 +36,12 @@ impl UnregisterConnectorFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UnregisterConnector as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::unregister_connector::builders::UnregisterConnectorInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UnregisterConnectorFluentBuilder {
         self.inner = self.inner.set_connector_label(input);
         self
     }
+    /// <p>The label of the connector. The label is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account.</p>
+    pub fn get_connector_label(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connector_label()
+    }
     /// <p>Indicates whether Amazon AppFlow should unregister the connector, even if it is currently in use in one or more connector profiles. The default value is false.</p>
     pub fn force_delete(mut self, input: bool) -> Self {
         self.inner = self.inner.force_delete(input);
@@ -141,5 +151,9 @@ impl UnregisterConnectorFluentBuilder {
     pub fn set_force_delete(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force_delete(input);
         self
+    }
+    /// <p>Indicates whether Amazon AppFlow should unregister the connector, even if it is currently in use in one or more connector profiles. The default value is false.</p>
+    pub fn get_force_delete(&self) -> &::std::option::Option<bool> {
+        self.inner.get_force_delete()
     }
 }

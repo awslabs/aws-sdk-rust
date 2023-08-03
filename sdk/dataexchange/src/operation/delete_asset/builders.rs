@@ -36,6 +36,10 @@ impl DeleteAssetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteAsset as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_asset::builders::DeleteAssetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl DeleteAssetFluentBuilder {
         self.inner = self.inner.set_asset_id(input);
         self
     }
+    /// <p>The unique identifier for an asset.</p>
+    pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_asset_id()
+    }
     /// <p>The unique identifier for a data set.</p>
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_set_id(input.into());
@@ -128,6 +136,10 @@ impl DeleteAssetFluentBuilder {
         self.inner = self.inner.set_data_set_id(input);
         self
     }
+    /// <p>The unique identifier for a data set.</p>
+    pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_data_set_id()
+    }
     /// <p>The unique identifier for a revision.</p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.revision_id(input.into());
@@ -137,5 +149,9 @@ impl DeleteAssetFluentBuilder {
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_revision_id(input);
         self
+    }
+    /// <p>The unique identifier for a revision.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_revision_id()
     }
 }

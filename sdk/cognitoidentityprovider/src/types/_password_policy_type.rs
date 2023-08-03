@@ -84,6 +84,10 @@ impl PasswordPolicyTypeBuilder {
         self.minimum_length = input;
         self
     }
+    /// <p>The minimum length of the password in the policy that you have set. This value can't be less than 6.</p>
+    pub fn get_minimum_length(&self) -> &::std::option::Option<i32> {
+        &self.minimum_length
+    }
     /// <p>In the password policy that you have set, refers to whether you have required users to use at least one uppercase letter in their password.</p>
     pub fn require_uppercase(mut self, input: bool) -> Self {
         self.require_uppercase = ::std::option::Option::Some(input);
@@ -93,6 +97,10 @@ impl PasswordPolicyTypeBuilder {
     pub fn set_require_uppercase(mut self, input: ::std::option::Option<bool>) -> Self {
         self.require_uppercase = input;
         self
+    }
+    /// <p>In the password policy that you have set, refers to whether you have required users to use at least one uppercase letter in their password.</p>
+    pub fn get_require_uppercase(&self) -> &::std::option::Option<bool> {
+        &self.require_uppercase
     }
     /// <p>In the password policy that you have set, refers to whether you have required users to use at least one lowercase letter in their password.</p>
     pub fn require_lowercase(mut self, input: bool) -> Self {
@@ -104,6 +112,10 @@ impl PasswordPolicyTypeBuilder {
         self.require_lowercase = input;
         self
     }
+    /// <p>In the password policy that you have set, refers to whether you have required users to use at least one lowercase letter in their password.</p>
+    pub fn get_require_lowercase(&self) -> &::std::option::Option<bool> {
+        &self.require_lowercase
+    }
     /// <p>In the password policy that you have set, refers to whether you have required users to use at least one number in their password.</p>
     pub fn require_numbers(mut self, input: bool) -> Self {
         self.require_numbers = ::std::option::Option::Some(input);
@@ -114,6 +126,10 @@ impl PasswordPolicyTypeBuilder {
         self.require_numbers = input;
         self
     }
+    /// <p>In the password policy that you have set, refers to whether you have required users to use at least one number in their password.</p>
+    pub fn get_require_numbers(&self) -> &::std::option::Option<bool> {
+        &self.require_numbers
+    }
     /// <p>In the password policy that you have set, refers to whether you have required users to use at least one symbol in their password.</p>
     pub fn require_symbols(mut self, input: bool) -> Self {
         self.require_symbols = ::std::option::Option::Some(input);
@@ -123,6 +139,10 @@ impl PasswordPolicyTypeBuilder {
     pub fn set_require_symbols(mut self, input: ::std::option::Option<bool>) -> Self {
         self.require_symbols = input;
         self
+    }
+    /// <p>In the password policy that you have set, refers to whether you have required users to use at least one symbol in their password.</p>
+    pub fn get_require_symbols(&self) -> &::std::option::Option<bool> {
+        &self.require_symbols
     }
     /// <p>The number of days a temporary password is valid in the password policy. If the user doesn't sign in during this time, an administrator must reset their password.</p> <note>
     /// <p>When you set <code>TemporaryPasswordValidityDays</code> for a user pool, you can no longer set a value for the legacy <code>UnusedAccountValidityDays</code> parameter in that user pool.</p>
@@ -140,6 +160,12 @@ impl PasswordPolicyTypeBuilder {
     ) -> Self {
         self.temporary_password_validity_days = input;
         self
+    }
+    /// <p>The number of days a temporary password is valid in the password policy. If the user doesn't sign in during this time, an administrator must reset their password.</p> <note>
+    /// <p>When you set <code>TemporaryPasswordValidityDays</code> for a user pool, you can no longer set a value for the legacy <code>UnusedAccountValidityDays</code> parameter in that user pool.</p>
+    /// </note>
+    pub fn get_temporary_password_validity_days(&self) -> &::std::option::Option<i32> {
+        &self.temporary_password_validity_days
     }
     /// Consumes the builder and constructs a [`PasswordPolicyType`](crate::types::PasswordPolicyType).
     pub fn build(self) -> crate::types::PasswordPolicyType {

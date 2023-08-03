@@ -56,6 +56,10 @@ impl ExportReadSetDetailBuilder {
         self.id = input;
         self
     }
+    /// <p>The set's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The set's status.</p>
     pub fn status(mut self, input: crate::types::ReadSetExportJobItemStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -68,6 +72,10 @@ impl ExportReadSetDetailBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The set's status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ReadSetExportJobItemStatus> {
+        &self.status
     }
     /// <p>The set's status message.</p>
     pub fn status_message(
@@ -84,6 +92,10 @@ impl ExportReadSetDetailBuilder {
     ) -> Self {
         self.status_message = input;
         self
+    }
+    /// <p>The set's status message.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     /// Consumes the builder and constructs a [`ExportReadSetDetail`](crate::types::ExportReadSetDetail).
     pub fn build(self) -> crate::types::ExportReadSetDetail {

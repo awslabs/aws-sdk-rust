@@ -133,6 +133,10 @@ impl UpdateExperimentTemplateInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the experiment template.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>A description for the template.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -142,6 +146,10 @@ impl UpdateExperimentTemplateInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description for the template.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `stop_conditions`.
     ///
@@ -166,6 +174,14 @@ impl UpdateExperimentTemplateInputBuilder {
     ) -> Self {
         self.stop_conditions = input;
         self
+    }
+    /// <p>The stop conditions for the experiment.</p>
+    pub fn get_stop_conditions(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::UpdateExperimentTemplateStopConditionInput>,
+    > {
+        &self.stop_conditions
     }
     /// Adds a key-value pair to `targets`.
     ///
@@ -195,6 +211,17 @@ impl UpdateExperimentTemplateInputBuilder {
         self.targets = input;
         self
     }
+    /// <p>The targets for the experiment.</p>
+    pub fn get_targets(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::UpdateExperimentTemplateTargetInput,
+        >,
+    > {
+        &self.targets
+    }
     /// Adds a key-value pair to `actions`.
     ///
     /// To override the contents of this collection use [`set_actions`](Self::set_actions).
@@ -223,6 +250,17 @@ impl UpdateExperimentTemplateInputBuilder {
         self.actions = input;
         self
     }
+    /// <p>The actions for the experiment.</p>
+    pub fn get_actions(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::UpdateExperimentTemplateActionInputItem,
+        >,
+    > {
+        &self.actions
+    }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -232,6 +270,10 @@ impl UpdateExperimentTemplateInputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The configuration for experiment logging.</p>
     pub fn log_configuration(
@@ -248,6 +290,12 @@ impl UpdateExperimentTemplateInputBuilder {
     ) -> Self {
         self.log_configuration = input;
         self
+    }
+    /// <p>The configuration for experiment logging.</p>
+    pub fn get_log_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateExperimentTemplateLogConfigurationInput> {
+        &self.log_configuration
     }
     /// Consumes the builder and constructs a [`UpdateExperimentTemplateInput`](crate::operation::update_experiment_template::UpdateExperimentTemplateInput).
     pub fn build(

@@ -141,6 +141,10 @@ impl EventTypeBuilder {
         self.name = input;
         self
     }
+    /// <p>The event type name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The event type description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -150,6 +154,10 @@ impl EventTypeBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The event type description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `event_variables`.
     ///
@@ -173,6 +181,12 @@ impl EventTypeBuilder {
         self.event_variables = input;
         self
     }
+    /// <p>The event type event variables.</p>
+    pub fn get_event_variables(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.event_variables
+    }
     /// Appends an item to `labels`.
     ///
     /// To override the contents of this collection use [`set_labels`](Self::set_labels).
@@ -191,6 +205,10 @@ impl EventTypeBuilder {
     ) -> Self {
         self.labels = input;
         self
+    }
+    /// <p>The event type labels.</p>
+    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.labels
     }
     /// Appends an item to `entity_types`.
     ///
@@ -211,6 +229,12 @@ impl EventTypeBuilder {
         self.entity_types = input;
         self
     }
+    /// <p>The event type entity types.</p>
+    pub fn get_entity_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.entity_types
+    }
     /// <p>If <code>Enabled</code>, Amazon Fraud Detector stores event data when you generate a prediction and uses that data to update calculated variables in near real-time. Amazon Fraud Detector uses this data, known as <code>INGESTED_EVENTS</code>, to train your model and improve fraud predictions.</p>
     pub fn event_ingestion(mut self, input: crate::types::EventIngestion) -> Self {
         self.event_ingestion = ::std::option::Option::Some(input);
@@ -223,6 +247,10 @@ impl EventTypeBuilder {
     ) -> Self {
         self.event_ingestion = input;
         self
+    }
+    /// <p>If <code>Enabled</code>, Amazon Fraud Detector stores event data when you generate a prediction and uses that data to update calculated variables in near real-time. Amazon Fraud Detector uses this data, known as <code>INGESTED_EVENTS</code>, to train your model and improve fraud predictions.</p>
+    pub fn get_event_ingestion(&self) -> &::std::option::Option<crate::types::EventIngestion> {
+        &self.event_ingestion
     }
     /// <p>Data about the stored events.</p>
     pub fn ingested_event_statistics(
@@ -240,6 +268,12 @@ impl EventTypeBuilder {
         self.ingested_event_statistics = input;
         self
     }
+    /// <p>Data about the stored events.</p>
+    pub fn get_ingested_event_statistics(
+        &self,
+    ) -> &::std::option::Option<crate::types::IngestedEventStatistics> {
+        &self.ingested_event_statistics
+    }
     /// <p>Timestamp of when the event type was last updated.</p>
     pub fn last_updated_time(
         mut self,
@@ -256,6 +290,10 @@ impl EventTypeBuilder {
         self.last_updated_time = input;
         self
     }
+    /// <p>Timestamp of when the event type was last updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_updated_time
+    }
     /// <p>Timestamp of when the event type was created.</p>
     pub fn created_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_time = ::std::option::Option::Some(input.into());
@@ -266,6 +304,10 @@ impl EventTypeBuilder {
         self.created_time = input;
         self
     }
+    /// <p>Timestamp of when the event type was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_time
+    }
     /// <p>The entity type ARN.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -275,6 +317,10 @@ impl EventTypeBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The entity type ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The event orchestration status. </p>
     pub fn event_orchestration(mut self, input: crate::types::EventOrchestration) -> Self {
@@ -288,6 +334,12 @@ impl EventTypeBuilder {
     ) -> Self {
         self.event_orchestration = input;
         self
+    }
+    /// <p>The event orchestration status. </p>
+    pub fn get_event_orchestration(
+        &self,
+    ) -> &::std::option::Option<crate::types::EventOrchestration> {
+        &self.event_orchestration
     }
     /// Consumes the builder and constructs a [`EventType`](crate::types::EventType).
     pub fn build(self) -> crate::types::EventType {

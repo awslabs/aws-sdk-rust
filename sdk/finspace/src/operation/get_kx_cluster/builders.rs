@@ -36,6 +36,12 @@ impl GetKxClusterFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetKxCluster as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_kx_cluster::builders::GetKxClusterInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl GetKxClusterFluentBuilder {
         self.inner = self.inner.set_environment_id(input);
         self
     }
+    /// <p>A unique identifier for the kdb environment.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_id()
+    }
     /// <p>The name of the cluster that you want to retrieve.</p>
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_name(input.into());
@@ -133,5 +143,9 @@ impl GetKxClusterFluentBuilder {
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_name(input);
         self
+    }
+    /// <p>The name of the cluster that you want to retrieve.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_name()
     }
 }

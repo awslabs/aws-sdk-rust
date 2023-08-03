@@ -41,6 +41,10 @@ impl DeleteLogSubscriptionInputBuilder {
         self.directory_id = input;
         self
     }
+    /// <p>Identifier of the directory whose log subscription you want to delete.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
+    }
     /// Consumes the builder and constructs a [`DeleteLogSubscriptionInput`](crate::operation::delete_log_subscription::DeleteLogSubscriptionInput).
     pub fn build(
         self,

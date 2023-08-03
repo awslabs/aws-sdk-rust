@@ -36,6 +36,10 @@ impl ModifyPrivateDnsNameOptionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyPrivateDnsNameOptions as a reference.
+    pub fn as_input(&self) -> &crate::operation::modify_private_dns_name_options::builders::ModifyPrivateDnsNameOptionsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl ModifyPrivateDnsNameOptionsFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>The ID of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
@@ -135,6 +143,10 @@ impl ModifyPrivateDnsNameOptionsFluentBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
+    }
+    /// <p>The ID of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
     }
     /// <p>The type of hostname for EC2 instances. For IPv4 only subnets, an instance DNS name must be based on the instance IPv4 address. For IPv6 only subnets, an instance DNS name must be based on the instance ID. For dual-stack subnets, you can specify whether DNS names use the instance IPv4 address or the instance ID.</p>
     pub fn private_dns_hostname_type(mut self, input: crate::types::HostnameType) -> Self {
@@ -149,6 +161,12 @@ impl ModifyPrivateDnsNameOptionsFluentBuilder {
         self.inner = self.inner.set_private_dns_hostname_type(input);
         self
     }
+    /// <p>The type of hostname for EC2 instances. For IPv4 only subnets, an instance DNS name must be based on the instance IPv4 address. For IPv6 only subnets, an instance DNS name must be based on the instance ID. For dual-stack subnets, you can specify whether DNS names use the instance IPv4 address or the instance ID.</p>
+    pub fn get_private_dns_hostname_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::HostnameType> {
+        self.inner.get_private_dns_hostname_type()
+    }
     /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS A records.</p>
     pub fn enable_resource_name_dns_a_record(mut self, input: bool) -> Self {
         self.inner = self.inner.enable_resource_name_dns_a_record(input);
@@ -162,6 +180,10 @@ impl ModifyPrivateDnsNameOptionsFluentBuilder {
         self.inner = self.inner.set_enable_resource_name_dns_a_record(input);
         self
     }
+    /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS A records.</p>
+    pub fn get_enable_resource_name_dns_a_record(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_resource_name_dns_a_record()
+    }
     /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS AAAA records.</p>
     pub fn enable_resource_name_dns_aaaa_record(mut self, input: bool) -> Self {
         self.inner = self.inner.enable_resource_name_dns_aaaa_record(input);
@@ -174,5 +196,9 @@ impl ModifyPrivateDnsNameOptionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_enable_resource_name_dns_aaaa_record(input);
         self
+    }
+    /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS AAAA records.</p>
+    pub fn get_enable_resource_name_dns_aaaa_record(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_resource_name_dns_aaaa_record()
     }
 }

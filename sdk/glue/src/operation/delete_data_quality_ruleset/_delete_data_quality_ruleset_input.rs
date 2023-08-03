@@ -41,6 +41,10 @@ impl DeleteDataQualityRulesetInputBuilder {
         self.name = input;
         self
     }
+    /// <p>A name for the data quality ruleset.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DeleteDataQualityRulesetInput`](crate::operation::delete_data_quality_ruleset::DeleteDataQualityRulesetInput).
     pub fn build(
         self,

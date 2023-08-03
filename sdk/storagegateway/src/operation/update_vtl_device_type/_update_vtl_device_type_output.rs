@@ -54,6 +54,10 @@ impl UpdateVtlDeviceTypeOutputBuilder {
         self.vtl_device_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the medium changer you have selected.</p>
+    pub fn get_vtl_device_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vtl_device_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -64,6 +64,10 @@ impl GetSolutionMetricsOutputBuilder {
         self.solution_version_arn = input;
         self
     }
+    /// <p>The same solution version ARN as specified in the request.</p>
+    pub fn get_solution_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.solution_version_arn
+    }
     /// Adds a key-value pair to `metrics`.
     ///
     /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
@@ -82,6 +86,12 @@ impl GetSolutionMetricsOutputBuilder {
     ) -> Self {
         self.metrics = input;
         self
+    }
+    /// <p>The metrics for the solution version. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-training-metrics.html"> Evaluating a solution version with metrics </a>.</p>
+    pub fn get_metrics(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, f64>> {
+        &self.metrics
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

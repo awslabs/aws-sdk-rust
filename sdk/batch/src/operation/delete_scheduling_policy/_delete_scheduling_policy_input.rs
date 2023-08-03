@@ -42,6 +42,10 @@ impl DeleteSchedulingPolicyInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the scheduling policy to delete.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`DeleteSchedulingPolicyInput`](crate::operation::delete_scheduling_policy::DeleteSchedulingPolicyInput).
     pub fn build(
         self,

@@ -62,6 +62,10 @@ impl ExportClientVpnClientCertificateRevocationListOutputBuilder {
         self.certificate_revocation_list = input;
         self
     }
+    /// <p>Information about the client certificate revocation list.</p>
+    pub fn get_certificate_revocation_list(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_revocation_list
+    }
     /// <p>The current state of the client certificate revocation list.</p>
     pub fn status(mut self, input: crate::types::ClientCertificateRevocationListStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -74,6 +78,12 @@ impl ExportClientVpnClientCertificateRevocationListOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current state of the client certificate revocation list.</p>
+    pub fn get_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ClientCertificateRevocationListStatus> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

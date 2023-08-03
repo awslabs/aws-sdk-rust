@@ -40,6 +40,10 @@ impl AppValidationOutputBuilder {
         self.ssm_output = input;
         self
     }
+    /// <p>Output from using SSM to validate the application.</p>
+    pub fn get_ssm_output(&self) -> &::std::option::Option<crate::types::SsmOutput> {
+        &self.ssm_output
+    }
     /// Consumes the builder and constructs a [`AppValidationOutput`](crate::types::AppValidationOutput).
     pub fn build(self) -> crate::types::AppValidationOutput {
         crate::types::AppValidationOutput {

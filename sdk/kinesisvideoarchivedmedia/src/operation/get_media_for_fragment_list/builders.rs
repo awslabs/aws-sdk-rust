@@ -47,6 +47,13 @@ impl GetMediaForFragmentListFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetMediaForFragmentList as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_media_for_fragment_list::builders::GetMediaForFragmentListInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +144,10 @@ impl GetMediaForFragmentListFluentBuilder {
         self.inner = self.inner.set_stream_name(input);
         self
     }
+    /// <p>The name of the stream from which to retrieve fragment media. Specify either this parameter or the <code>StreamARN</code> parameter.</p>
+    pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_name()
+    }
     /// <p>The Amazon Resource Name (ARN) of the stream from which to retrieve fragment media. Specify either this parameter or the <code>StreamName</code> parameter.</p>
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stream_arn(input.into());
@@ -146,6 +157,10 @@ impl GetMediaForFragmentListFluentBuilder {
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stream_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the stream from which to retrieve fragment media. Specify either this parameter or the <code>StreamName</code> parameter.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_arn()
     }
     /// Appends an item to `Fragments`.
     ///
@@ -163,5 +178,9 @@ impl GetMediaForFragmentListFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_fragments(input);
         self
+    }
+    /// <p>A list of the numbers of fragments for which to retrieve media. You retrieve these values with <code>ListFragments</code>.</p>
+    pub fn get_fragments(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_fragments()
     }
 }

@@ -76,6 +76,10 @@ impl JdbcTargetBuilder {
         self.connection_name = input;
         self
     }
+    /// <p>The name of the connection to use to connect to the JDBC target.</p>
+    pub fn get_connection_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_name
+    }
     /// <p>The path of the JDBC target.</p>
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path = ::std::option::Option::Some(input.into());
@@ -85,6 +89,10 @@ impl JdbcTargetBuilder {
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path = input;
         self
+    }
+    /// <p>The path of the JDBC target.</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
     }
     /// Appends an item to `exclusions`.
     ///
@@ -104,6 +112,10 @@ impl JdbcTargetBuilder {
     ) -> Self {
         self.exclusions = input;
         self
+    }
+    /// <p>A list of glob patterns used to exclude from the crawl. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
+    pub fn get_exclusions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.exclusions
     }
     /// Appends an item to `enable_additional_metadata`.
     ///
@@ -125,6 +137,13 @@ impl JdbcTargetBuilder {
     ) -> Self {
         self.enable_additional_metadata = input;
         self
+    }
+    /// <p>Specify a value of <code>RAWTYPES</code> or <code>COMMENTS</code> to enable additional metadata in table responses. <code>RAWTYPES</code> provides the native-level datatype. <code>COMMENTS</code> provides comments associated with a column or table in the database.</p>
+    /// <p>If you do not need additional metadata, keep the field empty.</p>
+    pub fn get_enable_additional_metadata(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JdbcMetadataEntry>> {
+        &self.enable_additional_metadata
     }
     /// Consumes the builder and constructs a [`JdbcTarget`](crate::types::JdbcTarget).
     pub fn build(self) -> crate::types::JdbcTarget {

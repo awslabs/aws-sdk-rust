@@ -46,6 +46,10 @@ impl DeleteImageOutputBuilder {
         self.image = input;
         self
     }
+    /// <p>Information about the image.</p>
+    pub fn get_image(&self) -> &::std::option::Option<crate::types::Image> {
+        &self.image
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

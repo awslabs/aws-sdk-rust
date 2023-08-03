@@ -36,6 +36,10 @@ impl ListResourcesInProtectionGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListResourcesInProtectionGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_resources_in_protection_group::builders::ListResourcesInProtectionGroupInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -112,6 +116,10 @@ impl ListResourcesInProtectionGroupFluentBuilder {
         self.inner = self.inner.set_protection_group_id(input);
         self
     }
+    /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
+    pub fn get_protection_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_protection_group_id()
+    }
     /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>
     /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
     /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
@@ -128,6 +136,13 @@ impl ListResourcesInProtectionGroupFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>
+    /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+    /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
+    /// <p>On your first call to a list operation, leave this setting empty.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value in the response.</p>
     /// <p>The default setting is 20.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -139,5 +154,10 @@ impl ListResourcesInProtectionGroupFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value in the response.</p>
+    /// <p>The default setting is 20.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

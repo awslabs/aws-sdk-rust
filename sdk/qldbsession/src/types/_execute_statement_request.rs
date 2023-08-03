@@ -62,6 +62,10 @@ impl ExecuteStatementRequestBuilder {
         self.transaction_id = input;
         self
     }
+    /// <p>Specifies the transaction ID of the request.</p>
+    pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transaction_id
+    }
     /// <p>Specifies the statement of the request.</p>
     pub fn statement(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.statement = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl ExecuteStatementRequestBuilder {
     pub fn set_statement(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.statement = input;
         self
+    }
+    /// <p>Specifies the statement of the request.</p>
+    pub fn get_statement(&self) -> &::std::option::Option<::std::string::String> {
+        &self.statement
     }
     /// Appends an item to `parameters`.
     ///
@@ -90,6 +98,12 @@ impl ExecuteStatementRequestBuilder {
     ) -> Self {
         self.parameters = input;
         self
+    }
+    /// <p>Specifies the parameters for the parameterized statement in the request.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ValueHolder>> {
+        &self.parameters
     }
     /// Consumes the builder and constructs a [`ExecuteStatementRequest`](crate::types::ExecuteStatementRequest).
     pub fn build(self) -> crate::types::ExecuteStatementRequest {

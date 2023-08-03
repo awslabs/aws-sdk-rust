@@ -111,6 +111,10 @@ impl CreateDataSourceFromRedshiftInputBuilder {
         self.data_source_id = input;
         self
     }
+    /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
+    pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source_id
+    }
     /// <p>A user-supplied name or description of the <code>DataSource</code>. </p>
     pub fn data_source_name(
         mut self,
@@ -126,6 +130,10 @@ impl CreateDataSourceFromRedshiftInputBuilder {
     ) -> Self {
         self.data_source_name = input;
         self
+    }
+    /// <p>A user-supplied name or description of the <code>DataSource</code>. </p>
+    pub fn get_data_source_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source_name
     }
     /// <p>The data specification of an Amazon Redshift <code>DataSource</code>:</p>
     /// <ul>
@@ -166,6 +174,23 @@ impl CreateDataSourceFromRedshiftInputBuilder {
         self.data_spec = input;
         self
     }
+    /// <p>The data specification of an Amazon Redshift <code>DataSource</code>:</p>
+    /// <ul>
+    /// <li> <p>DatabaseInformation -</p>
+    /// <ul>
+    /// <li> <p> <code>DatabaseName</code> - The name of the Amazon Redshift database.</p> </li>
+    /// <li> <p> <code> ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>DatabaseCredentials - The AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon Redshift database.</p> </li>
+    /// <li> <p>SelectSqlQuery - The query that is used to retrieve the observation data for the <code>Datasource</code>.</p> </li>
+    /// <li> <p>S3StagingLocation - The Amazon Simple Storage Service (Amazon S3) location for staging Amazon Redshift data. The data retrieved from Amazon Redshift using the <code>SelectSqlQuery</code> query is stored in this location.</p> </li>
+    /// <li> <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p> </li>
+    /// <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li>
+    /// <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>DataSource</code>.</p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
+    /// </ul>
+    pub fn get_data_spec(&self) -> &::std::option::Option<crate::types::RedshiftDataSpec> {
+        &self.data_spec
+    }
     /// <p>A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role on behalf of the user to create the following:</p>
     /// <ul>
     /// <li> <p>A security group to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an Amazon Redshift cluster</p> </li>
@@ -184,6 +209,14 @@ impl CreateDataSourceFromRedshiftInputBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role on behalf of the user to create the following:</p>
+    /// <ul>
+    /// <li> <p>A security group to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an Amazon Redshift cluster</p> </li>
+    /// <li> <p>An Amazon S3 bucket policy to grant Amazon ML read/write permissions on the <code>S3StagingLocation</code> </p> </li>
+    /// </ul>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code>DataSource</code> needs to be used for <code>MLModel</code> training.</p>
     pub fn compute_statistics(mut self, input: bool) -> Self {
         self.compute_statistics = ::std::option::Option::Some(input);
@@ -193,6 +226,10 @@ impl CreateDataSourceFromRedshiftInputBuilder {
     pub fn set_compute_statistics(mut self, input: ::std::option::Option<bool>) -> Self {
         self.compute_statistics = input;
         self
+    }
+    /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code>DataSource</code> needs to be used for <code>MLModel</code> training.</p>
+    pub fn get_compute_statistics(&self) -> &::std::option::Option<bool> {
+        &self.compute_statistics
     }
     /// Consumes the builder and constructs a [`CreateDataSourceFromRedshiftInput`](crate::operation::create_data_source_from_redshift::CreateDataSourceFromRedshiftInput).
     pub fn build(

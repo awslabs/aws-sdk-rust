@@ -71,6 +71,14 @@ impl ListMembersOutputBuilder {
         self.member_details = input;
         self
     }
+    /// <p>The list of member accounts in the behavior graph.</p>
+    /// <p>For invited accounts, the results include member accounts that did not pass verification and member accounts that have not yet accepted the invitation to the behavior graph. The results do not include member accounts that were removed from the behavior graph.</p>
+    /// <p>For the organization behavior graph, the results do not include organization accounts that the Detective administrator account has not enabled as member accounts.</p>
+    pub fn get_member_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberDetail>> {
+        &self.member_details
+    }
     /// <p>If there are more member accounts remaining in the results, then use this pagination token to request the next page of member accounts.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -80,6 +88,10 @@ impl ListMembersOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If there are more member accounts remaining in the results, then use this pagination token to request the next page of member accounts.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

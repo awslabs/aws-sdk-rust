@@ -36,6 +36,12 @@ impl CreateConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateConfiguration as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_configuration::builders::CreateConfigurationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,12 @@ impl CreateConfigurationFluentBuilder {
         self.inner = self.inner.set_authentication_strategy(input);
         self
     }
+    /// <p>Optional. The authentication strategy associated with the configuration. The default is SIMPLE.</p>
+    pub fn get_authentication_strategy(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuthenticationStrategy> {
+        self.inner.get_authentication_strategy()
+    }
     /// <p>Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
     pub fn engine_type(mut self, input: crate::types::EngineType) -> Self {
         self.inner = self.inner.engine_type(input);
@@ -141,6 +153,10 @@ impl CreateConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_engine_type(input);
         self
+    }
+    /// <p>Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
+    pub fn get_engine_type(&self) -> &::std::option::Option<crate::types::EngineType> {
+        self.inner.get_engine_type()
     }
     /// <p>Required. The broker engine's version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
     pub fn engine_version(
@@ -158,6 +174,10 @@ impl CreateConfigurationFluentBuilder {
         self.inner = self.inner.set_engine_version(input);
         self
     }
+    /// <p>Required. The broker engine's version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_engine_version()
+    }
     /// <p>Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -167,6 +187,10 @@ impl CreateConfigurationFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -190,5 +214,13 @@ impl CreateConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Create tags when creating the configuration.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

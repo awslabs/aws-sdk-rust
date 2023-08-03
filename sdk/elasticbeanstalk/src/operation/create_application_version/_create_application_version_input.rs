@@ -131,6 +131,10 @@ impl CreateApplicationVersionInputBuilder {
         self.application_name = input;
         self
     }
+    /// <p> The name of the application. If no application is found with this name, and <code>AutoCreateApplication</code> is <code>false</code>, returns an <code>InvalidParameterValue</code> error. </p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// <p>A label identifying this version.</p>
     /// <p>Constraint: Must be unique per application. If an application version already exists with this label for the specified application, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
     pub fn version_label(
@@ -149,6 +153,11 @@ impl CreateApplicationVersionInputBuilder {
         self.version_label = input;
         self
     }
+    /// <p>A label identifying this version.</p>
+    /// <p>Constraint: Must be unique per application. If an application version already exists with this label for the specified application, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
+    pub fn get_version_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_label
+    }
     /// <p>A description of this application version.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -158,6 +167,10 @@ impl CreateApplicationVersionInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of this application version.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.</p>
     pub fn source_build_information(mut self, input: crate::types::SourceBuildInformation) -> Self {
@@ -171,6 +184,12 @@ impl CreateApplicationVersionInputBuilder {
     ) -> Self {
         self.source_build_information = input;
         self
+    }
+    /// <p>Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.</p>
+    pub fn get_source_build_information(
+        &self,
+    ) -> &::std::option::Option<crate::types::SourceBuildInformation> {
+        &self.source_build_information
     }
     /// <p>The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <note>
     /// <p>The Amazon S3 bucket must be in the same region as the environment.</p>
@@ -191,6 +210,13 @@ impl CreateApplicationVersionInputBuilder {
         self.source_bundle = input;
         self
     }
+    /// <p>The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <note>
+    /// <p>The Amazon S3 bucket must be in the same region as the environment.</p>
+    /// </note>
+    /// <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>
+    pub fn get_source_bundle(&self) -> &::std::option::Option<crate::types::S3Location> {
+        &self.source_bundle
+    }
     /// <p>Settings for an AWS CodeBuild build.</p>
     pub fn build_configuration(mut self, input: crate::types::BuildConfiguration) -> Self {
         self.build_configuration = ::std::option::Option::Some(input);
@@ -204,6 +230,12 @@ impl CreateApplicationVersionInputBuilder {
         self.build_configuration = input;
         self
     }
+    /// <p>Settings for an AWS CodeBuild build.</p>
+    pub fn get_build_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::BuildConfiguration> {
+        &self.build_configuration
+    }
     /// <p>Set to <code>true</code> to create an application with the specified name if it doesn't already exist.</p>
     pub fn auto_create_application(mut self, input: bool) -> Self {
         self.auto_create_application = ::std::option::Option::Some(input);
@@ -213,6 +245,10 @@ impl CreateApplicationVersionInputBuilder {
     pub fn set_auto_create_application(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_create_application = input;
         self
+    }
+    /// <p>Set to <code>true</code> to create an application with the specified name if it doesn't already exist.</p>
+    pub fn get_auto_create_application(&self) -> &::std::option::Option<bool> {
+        &self.auto_create_application
     }
     /// <p>Pre-processes and validates the environment manifest (<code>env.yaml</code>) and configuration files (<code>*.config</code> files in the <code>.ebextensions</code> folder) in the source bundle. Validating configuration files can identify issues prior to deploying the application version to an environment.</p>
     /// <p>You must turn processing on for application versions that you create using AWS CodeBuild or AWS CodeCommit. For application versions built from a source bundle in Amazon S3, processing is optional.</p> <note>
@@ -229,6 +265,13 @@ impl CreateApplicationVersionInputBuilder {
     pub fn set_process(mut self, input: ::std::option::Option<bool>) -> Self {
         self.process = input;
         self
+    }
+    /// <p>Pre-processes and validates the environment manifest (<code>env.yaml</code>) and configuration files (<code>*.config</code> files in the <code>.ebextensions</code> folder) in the source bundle. Validating configuration files can identify issues prior to deploying the application version to an environment.</p>
+    /// <p>You must turn processing on for application versions that you create using AWS CodeBuild or AWS CodeCommit. For application versions built from a source bundle in Amazon S3, processing is optional.</p> <note>
+    /// <p>The <code>Process</code> option validates Elastic Beanstalk configuration files. It doesn't validate your application's configuration files, like proxy server or Docker configuration.</p>
+    /// </note>
+    pub fn get_process(&self) -> &::std::option::Option<bool> {
+        &self.process
     }
     /// Appends an item to `tags`.
     ///
@@ -250,6 +293,11 @@ impl CreateApplicationVersionInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Specifies the tags applied to the application version.</p>
+    /// <p>Elastic Beanstalk applies these tags only to the application version. Environments that use the application version don't inherit the tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateApplicationVersionInput`](crate::operation::create_application_version::CreateApplicationVersionInput).
     pub fn build(

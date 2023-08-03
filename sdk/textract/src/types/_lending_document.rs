@@ -61,6 +61,12 @@ impl LendingDocumentBuilder {
         self.lending_fields = input;
         self
     }
+    /// <p>An array of LendingField objects.</p>
+    pub fn get_lending_fields(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LendingField>> {
+        &self.lending_fields
+    }
     /// Appends an item to `signature_detections`.
     ///
     /// To override the contents of this collection use [`set_signature_detections`](Self::set_signature_detections).
@@ -79,6 +85,12 @@ impl LendingDocumentBuilder {
     ) -> Self {
         self.signature_detections = input;
         self
+    }
+    /// <p>A list of signatures detected in a lending document.</p>
+    pub fn get_signature_detections(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SignatureDetection>> {
+        &self.signature_detections
     }
     /// Consumes the builder and constructs a [`LendingDocument`](crate::types::LendingDocument).
     pub fn build(self) -> crate::types::LendingDocument {

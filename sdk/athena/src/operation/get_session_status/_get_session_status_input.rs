@@ -40,6 +40,10 @@ impl GetSessionStatusInputBuilder {
         self.session_id = input;
         self
     }
+    /// <p>The session ID.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
+    }
     /// Consumes the builder and constructs a [`GetSessionStatusInput`](crate::operation::get_session_status::GetSessionStatusInput).
     pub fn build(
         self,

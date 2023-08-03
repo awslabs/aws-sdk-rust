@@ -37,6 +37,10 @@ impl ListThingRegistrationTasksFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListThingRegistrationTasks as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_thing_registration_tasks::builders::ListThingRegistrationTasksInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,10 @@ impl ListThingRegistrationTasksFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return at one time.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -143,6 +151,10 @@ impl ListThingRegistrationTasksFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return at one time.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The status of the bulk thing provisioning task.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.inner = self.inner.status(input);
@@ -152,5 +164,9 @@ impl ListThingRegistrationTasksFluentBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.inner = self.inner.set_status(input);
         self
+    }
+    /// <p>The status of the bulk thing provisioning task.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        self.inner.get_status()
     }
 }

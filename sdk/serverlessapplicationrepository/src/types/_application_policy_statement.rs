@@ -73,6 +73,10 @@ impl ApplicationPolicyStatementBuilder {
         self.actions = input;
         self
     }
+    /// <p>For the list of actions supported for this operation, see <a href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application Permissions</a>.</p>
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.actions
+    }
     /// Appends an item to `principal_org_i_ds`.
     ///
     /// To override the contents of this collection use [`set_principal_org_i_ds`](Self::set_principal_org_i_ds).
@@ -95,6 +99,12 @@ impl ApplicationPolicyStatementBuilder {
         self.principal_org_i_ds = input;
         self
     }
+    /// <p>An array of PrinciplalOrgIDs, which corresponds to AWS IAM <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#principal-org-id">aws:PrincipalOrgID</a> global condition key.</p>
+    pub fn get_principal_org_i_ds(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.principal_org_i_ds
+    }
     /// Appends an item to `principals`.
     ///
     /// To override the contents of this collection use [`set_principals`](Self::set_principals).
@@ -114,6 +124,10 @@ impl ApplicationPolicyStatementBuilder {
         self.principals = input;
         self
     }
+    /// <p>An array of AWS account IDs, or * to make the application public.</p>
+    pub fn get_principals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.principals
+    }
     /// <p>A unique ID for the statement.</p>
     pub fn statement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.statement_id = ::std::option::Option::Some(input.into());
@@ -123,6 +137,10 @@ impl ApplicationPolicyStatementBuilder {
     pub fn set_statement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.statement_id = input;
         self
+    }
+    /// <p>A unique ID for the statement.</p>
+    pub fn get_statement_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.statement_id
     }
     /// Consumes the builder and constructs a [`ApplicationPolicyStatement`](crate::types::ApplicationPolicyStatement).
     pub fn build(self) -> crate::types::ApplicationPolicyStatement {

@@ -48,6 +48,10 @@ impl IntegerRangeBuilder {
         self.minimum = input;
         self
     }
+    /// <p>A minimum value.</p>
+    pub fn get_minimum(&self) -> &::std::option::Option<i32> {
+        &self.minimum
+    }
     /// <p>A maximum value.</p>
     pub fn maximum(mut self, input: i32) -> Self {
         self.maximum = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl IntegerRangeBuilder {
     pub fn set_maximum(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum = input;
         self
+    }
+    /// <p>A maximum value.</p>
+    pub fn get_maximum(&self) -> &::std::option::Option<i32> {
+        &self.maximum
     }
     /// Consumes the builder and constructs a [`IntegerRange`](crate::types::IntegerRange).
     pub fn build(self) -> crate::types::IntegerRange {

@@ -60,6 +60,10 @@ impl ComputeFarmConfigurationBuilder {
         self.active_directory_user = input;
         self
     }
+    /// <p>The name of an Active Directory user that is used on ComputeFarm worker instances.</p>
+    pub fn get_active_directory_user(&self) -> &::std::option::Option<::std::string::String> {
+        &self.active_directory_user
+    }
     /// <p>The endpoint of the ComputeFarm that is accessed by the studio component resource.</p>
     pub fn endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint = ::std::option::Option::Some(input.into());
@@ -69,6 +73,10 @@ impl ComputeFarmConfigurationBuilder {
     pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint = input;
         self
+    }
+    /// <p>The endpoint of the ComputeFarm that is accessed by the studio component resource.</p>
+    pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint
     }
     /// Consumes the builder and constructs a [`ComputeFarmConfiguration`](crate::types::ComputeFarmConfiguration).
     pub fn build(self) -> crate::types::ComputeFarmConfiguration {

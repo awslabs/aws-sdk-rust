@@ -36,6 +36,12 @@ impl CreateAttributeGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateAttributeGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_attribute_group::builders::CreateAttributeGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateAttributeGroupFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the attribute group.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The description of the attribute group that the user provides.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -136,6 +146,10 @@ impl CreateAttributeGroupFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>The description of the attribute group that the user provides.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.</p>
     pub fn attributes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attributes(input.into());
@@ -145,6 +159,10 @@ impl CreateAttributeGroupFluentBuilder {
     pub fn set_attributes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
+    }
+    /// <p>A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.</p>
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_attributes()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -169,6 +187,14 @@ impl CreateAttributeGroupFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>Key-value pairs you can use to associate with the attribute group.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>A unique identifier that you provide to ensure idempotency. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -178,5 +204,9 @@ impl CreateAttributeGroupFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A unique identifier that you provide to ensure idempotency. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

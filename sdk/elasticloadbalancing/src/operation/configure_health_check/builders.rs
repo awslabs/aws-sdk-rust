@@ -37,6 +37,12 @@ impl ConfigureHealthCheckFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ConfigureHealthCheck as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::configure_health_check::builders::ConfigureHealthCheckInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl ConfigureHealthCheckFluentBuilder {
         self.inner = self.inner.set_load_balancer_name(input);
         self
     }
+    /// <p>The name of the load balancer.</p>
+    pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_load_balancer_name()
+    }
     /// <p>The configuration information.</p>
     pub fn health_check(mut self, input: crate::types::HealthCheck) -> Self {
         self.inner = self.inner.health_check(input);
@@ -145,5 +155,9 @@ impl ConfigureHealthCheckFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_health_check(input);
         self
+    }
+    /// <p>The configuration information.</p>
+    pub fn get_health_check(&self) -> &::std::option::Option<crate::types::HealthCheck> {
+        self.inner.get_health_check()
     }
 }

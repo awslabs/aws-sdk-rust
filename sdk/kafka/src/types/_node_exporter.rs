@@ -40,6 +40,10 @@ impl NodeExporterBuilder {
         self.enabled_in_broker = input;
         self
     }
+    /// <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
+    pub fn get_enabled_in_broker(&self) -> &::std::option::Option<bool> {
+        &self.enabled_in_broker
+    }
     /// Consumes the builder and constructs a [`NodeExporter`](crate::types::NodeExporter).
     pub fn build(self) -> crate::types::NodeExporter {
         crate::types::NodeExporter {

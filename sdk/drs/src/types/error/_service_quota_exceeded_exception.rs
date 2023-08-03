@@ -108,6 +108,10 @@ impl ServiceQuotaExceededExceptionBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
+    #[allow(missing_docs)] // documentation missing in model
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
         self
@@ -116,6 +120,10 @@ impl ServiceQuotaExceededExceptionBuilder {
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
     }
     /// <p>The ID of the resource.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -126,6 +134,10 @@ impl ServiceQuotaExceededExceptionBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>The ID of the resource.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// <p>The type of the resource.</p>
     pub fn resource_type(
@@ -143,6 +155,10 @@ impl ServiceQuotaExceededExceptionBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The type of the resource.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
+    }
     /// <p>Service code.</p>
     pub fn service_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_code = ::std::option::Option::Some(input.into());
@@ -153,6 +169,10 @@ impl ServiceQuotaExceededExceptionBuilder {
         self.service_code = input;
         self
     }
+    /// <p>Service code.</p>
+    pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_code
+    }
     /// <p>Quota code.</p>
     pub fn quota_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.quota_code = ::std::option::Option::Some(input.into());
@@ -162,6 +182,10 @@ impl ServiceQuotaExceededExceptionBuilder {
     pub fn set_quota_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.quota_code = input;
         self
+    }
+    /// <p>Quota code.</p>
+    pub fn get_quota_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.quota_code
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

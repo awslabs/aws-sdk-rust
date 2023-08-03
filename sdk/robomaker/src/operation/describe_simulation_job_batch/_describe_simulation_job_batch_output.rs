@@ -266,6 +266,10 @@ impl DescribeSimulationJobBatchOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the batch.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The status of the batch.</p>
     /// <dl>
     /// <dt>
@@ -393,6 +397,67 @@ impl DescribeSimulationJobBatchOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the batch.</p>
+    /// <dl>
+    /// <dt>
+    /// Pending
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation job batch request is pending.</p>
+    /// </dd>
+    /// <dt>
+    /// InProgress
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation job batch is in progress. </p>
+    /// </dd>
+    /// <dt>
+    /// Failed
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation job batch failed. One or more simulation job requests could not be completed due to an internal failure (like <code>InternalServiceError</code>). See <code>failureCode</code> and <code>failureReason</code> for more information.</p>
+    /// </dd>
+    /// <dt>
+    /// Completed
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>). </p>
+    /// </dd>
+    /// <dt>
+    /// Canceled
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation batch job was cancelled.</p>
+    /// </dd>
+    /// <dt>
+    /// Canceling
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation batch job is being cancelled.</p>
+    /// </dd>
+    /// <dt>
+    /// Completing
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation batch job is completing.</p>
+    /// </dd>
+    /// <dt>
+    /// TimingOut
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation job batch is timing out.</p>
+    /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>. </p>
+    /// </dd>
+    /// <dt>
+    /// TimedOut
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation batch job timed out.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::SimulationJobBatchStatus> {
+        &self.status
+    }
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch was last updated.</p>
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_at = ::std::option::Option::Some(input);
@@ -406,6 +471,10 @@ impl DescribeSimulationJobBatchOutputBuilder {
         self.last_updated_at = input;
         self
     }
+    /// <p>The time, in milliseconds since the epoch, when the simulation job batch was last updated.</p>
+    pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_at
+    }
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -418,6 +487,10 @@ impl DescribeSimulationJobBatchOutputBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The time, in milliseconds since the epoch, when the simulation job batch was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(
@@ -435,6 +508,10 @@ impl DescribeSimulationJobBatchOutputBuilder {
         self.client_request_token = input;
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
+    }
     /// <p>The batch policy.</p>
     pub fn batch_policy(mut self, input: crate::types::BatchPolicy) -> Self {
         self.batch_policy = ::std::option::Option::Some(input);
@@ -448,6 +525,10 @@ impl DescribeSimulationJobBatchOutputBuilder {
         self.batch_policy = input;
         self
     }
+    /// <p>The batch policy.</p>
+    pub fn get_batch_policy(&self) -> &::std::option::Option<crate::types::BatchPolicy> {
+        &self.batch_policy
+    }
     /// <p>The failure code of the simulation job batch.</p>
     pub fn failure_code(mut self, input: crate::types::SimulationJobBatchErrorCode) -> Self {
         self.failure_code = ::std::option::Option::Some(input);
@@ -460,6 +541,12 @@ impl DescribeSimulationJobBatchOutputBuilder {
     ) -> Self {
         self.failure_code = input;
         self
+    }
+    /// <p>The failure code of the simulation job batch.</p>
+    pub fn get_failure_code(
+        &self,
+    ) -> &::std::option::Option<crate::types::SimulationJobBatchErrorCode> {
+        &self.failure_code
     }
     /// <p>The reason the simulation job batch failed.</p>
     pub fn failure_reason(
@@ -476,6 +563,10 @@ impl DescribeSimulationJobBatchOutputBuilder {
     ) -> Self {
         self.failure_reason = input;
         self
+    }
+    /// <p>The reason the simulation job batch failed.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
     }
     /// Appends an item to `failed_requests`.
     ///
@@ -501,6 +592,13 @@ impl DescribeSimulationJobBatchOutputBuilder {
         self.failed_requests = input;
         self
     }
+    /// <p>A list of failed create simulation job requests. The request failed to be created into a simulation job. Failed requests do not have a simulation job ID. </p>
+    pub fn get_failed_requests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedCreateSimulationJobRequest>>
+    {
+        &self.failed_requests
+    }
     /// Appends an item to `pending_requests`.
     ///
     /// To override the contents of this collection use [`set_pending_requests`](Self::set_pending_requests).
@@ -520,6 +618,12 @@ impl DescribeSimulationJobBatchOutputBuilder {
         self.pending_requests = input;
         self
     }
+    /// <p>A list of pending simulation job requests. These requests have not yet been created into simulation jobs.</p>
+    pub fn get_pending_requests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SimulationJobRequest>> {
+        &self.pending_requests
+    }
     /// Appends an item to `created_requests`.
     ///
     /// To override the contents of this collection use [`set_created_requests`](Self::set_created_requests).
@@ -538,6 +642,12 @@ impl DescribeSimulationJobBatchOutputBuilder {
     ) -> Self {
         self.created_requests = input;
         self
+    }
+    /// <p>A list of created simulation job summaries.</p>
+    pub fn get_created_requests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SimulationJobSummary>> {
+        &self.created_requests
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -563,6 +673,14 @@ impl DescribeSimulationJobBatchOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A map that contains tag keys and tag values that are attached to the simulation job batch.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -48,6 +48,10 @@ impl ForceIncludeRenditionSizeBuilder {
         self.height = input;
         self
     }
+    /// Use Height to define the video resolution height, in pixels, for this rule.
+    pub fn get_height(&self) -> &::std::option::Option<i32> {
+        &self.height
+    }
     /// Use Width to define the video resolution width, in pixels, for this rule.
     pub fn width(mut self, input: i32) -> Self {
         self.width = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ForceIncludeRenditionSizeBuilder {
     pub fn set_width(mut self, input: ::std::option::Option<i32>) -> Self {
         self.width = input;
         self
+    }
+    /// Use Width to define the video resolution width, in pixels, for this rule.
+    pub fn get_width(&self) -> &::std::option::Option<i32> {
+        &self.width
     }
     /// Consumes the builder and constructs a [`ForceIncludeRenditionSize`](crate::types::ForceIncludeRenditionSize).
     pub fn build(self) -> crate::types::ForceIncludeRenditionSize {

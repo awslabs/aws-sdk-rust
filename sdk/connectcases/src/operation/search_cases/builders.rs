@@ -38,6 +38,10 @@ impl SearchCasesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SearchCases as a reference.
+    pub fn as_input(&self) -> &crate::operation::search_cases::builders::SearchCasesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +133,10 @@ impl SearchCasesFluentBuilder {
         self.inner = self.inner.set_domain_id(input);
         self
     }
+    /// <p>The unique identifier of the Cases domain. </p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_id()
+    }
     /// <p>The maximum number of cases to return. The current maximum supported value is 25. This is also the default value when no other value is provided.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -138,6 +146,10 @@ impl SearchCasesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of cases to return. The current maximum supported value is 25. This is also the default value when no other value is provided.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -149,6 +161,10 @@ impl SearchCasesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>A word or phrase used to perform a quick search.</p>
     pub fn search_term(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.search_term(input.into());
@@ -159,6 +175,10 @@ impl SearchCasesFluentBuilder {
         self.inner = self.inner.set_search_term(input);
         self
     }
+    /// <p>A word or phrase used to perform a quick search.</p>
+    pub fn get_search_term(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_search_term()
+    }
     /// <p>A list of filter objects.</p>
     pub fn filter(mut self, input: crate::types::CaseFilter) -> Self {
         self.inner = self.inner.filter(input);
@@ -168,6 +188,10 @@ impl SearchCasesFluentBuilder {
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::CaseFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
+    }
+    /// <p>A list of filter objects.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::CaseFilter> {
+        self.inner.get_filter()
     }
     /// Appends an item to `sorts`.
     ///
@@ -186,6 +210,10 @@ impl SearchCasesFluentBuilder {
         self.inner = self.inner.set_sorts(input);
         self
     }
+    /// <p>A list of sorts where each sort specifies a field and their sort order to be applied to the results. </p>
+    pub fn get_sorts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Sort>> {
+        self.inner.get_sorts()
+    }
     /// Appends an item to `fields`.
     ///
     /// To override the contents of this collection use [`set_fields`](Self::set_fields).
@@ -202,5 +230,11 @@ impl SearchCasesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_fields(input);
         self
+    }
+    /// <p>The list of field identifiers to be returned as part of the response.</p>
+    pub fn get_fields(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>> {
+        self.inner.get_fields()
     }
 }

@@ -45,6 +45,10 @@ impl DisableImportFindingsForProductInputBuilder {
         self.product_subscription_arn = input;
         self
     }
+    /// <p>The ARN of the integrated product to disable the integration for.</p>
+    pub fn get_product_subscription_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product_subscription_arn
+    }
     /// Consumes the builder and constructs a [`DisableImportFindingsForProductInput`](crate::operation::disable_import_findings_for_product::DisableImportFindingsForProductInput).
     pub fn build(
         self,

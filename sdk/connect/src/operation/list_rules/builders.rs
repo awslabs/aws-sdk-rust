@@ -36,6 +36,10 @@ impl ListRulesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListRules as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_rules::builders::ListRulesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl ListRulesFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>The publish status of the rule.</p>
     pub fn publish_status(mut self, input: crate::types::RulePublishStatus) -> Self {
         self.inner = self.inner.publish_status(input);
@@ -136,6 +144,10 @@ impl ListRulesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_publish_status(input);
         self
+    }
+    /// <p>The publish status of the rule.</p>
+    pub fn get_publish_status(&self) -> &::std::option::Option<crate::types::RulePublishStatus> {
+        self.inner.get_publish_status()
     }
     /// <p>The name of the event source.</p>
     pub fn event_source_name(mut self, input: crate::types::EventSourceName) -> Self {
@@ -150,6 +162,10 @@ impl ListRulesFluentBuilder {
         self.inner = self.inner.set_event_source_name(input);
         self
     }
+    /// <p>The name of the event source.</p>
+    pub fn get_event_source_name(&self) -> &::std::option::Option<crate::types::EventSourceName> {
+        self.inner.get_event_source_name()
+    }
     /// <p>The maximum number of results to return per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -160,6 +176,10 @@ impl ListRulesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -169,5 +189,9 @@ impl ListRulesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

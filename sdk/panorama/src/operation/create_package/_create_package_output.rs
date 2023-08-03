@@ -62,6 +62,10 @@ impl CreatePackageOutputBuilder {
         self.package_id = input;
         self
     }
+    /// <p>The package's ID.</p>
+    pub fn get_package_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_id
+    }
     /// <p>The package's ARN.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl CreatePackageOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The package's ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The package's storage location.</p>
     pub fn storage_location(mut self, input: crate::types::StorageLocation) -> Self {
@@ -84,6 +92,10 @@ impl CreatePackageOutputBuilder {
     ) -> Self {
         self.storage_location = input;
         self
+    }
+    /// <p>The package's storage location.</p>
+    pub fn get_storage_location(&self) -> &::std::option::Option<crate::types::StorageLocation> {
+        &self.storage_location
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -36,6 +36,10 @@ impl CreateFirewallDomainListFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateFirewallDomainList as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_firewall_domain_list::builders::CreateFirewallDomainListInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl CreateFirewallDomainListFluentBuilder {
         self.inner = self.inner.set_creator_request_id(input);
         self
     }
+    /// <p>A unique string that identifies the request and that allows you to retry failed requests without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
+    pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_creator_request_id()
+    }
     /// <p>A name that lets you identify the domain list to manage and use it.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -141,6 +149,10 @@ impl CreateFirewallDomainListFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>A name that lets you identify the domain list to manage and use it.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// Appends an item to `Tags`.
     ///
@@ -158,5 +170,9 @@ impl CreateFirewallDomainListFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of the tag keys and values that you want to associate with the domain list. </p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

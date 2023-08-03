@@ -40,6 +40,10 @@ impl VolumeDetailBuilder {
         self.size = input;
         self
     }
+    /// <p>The size of the volume, in GiB.</p>
+    pub fn get_size(&self) -> &::std::option::Option<i64> {
+        &self.size
+    }
     /// Consumes the builder and constructs a [`VolumeDetail`](crate::types::VolumeDetail).
     pub fn build(self) -> crate::types::VolumeDetail {
         crate::types::VolumeDetail { size: self.size }

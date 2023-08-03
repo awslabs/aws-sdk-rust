@@ -51,6 +51,10 @@ impl ModifyInstanceFleetInputBuilder {
         self.cluster_id = input;
         self
     }
+    /// <p>The unique identifier of the cluster.</p>
+    pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_id
+    }
     /// <p>The configuration parameters of the instance fleet.</p>
     pub fn instance_fleet(mut self, input: crate::types::InstanceFleetModifyConfig) -> Self {
         self.instance_fleet = ::std::option::Option::Some(input);
@@ -63,6 +67,12 @@ impl ModifyInstanceFleetInputBuilder {
     ) -> Self {
         self.instance_fleet = input;
         self
+    }
+    /// <p>The configuration parameters of the instance fleet.</p>
+    pub fn get_instance_fleet(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceFleetModifyConfig> {
+        &self.instance_fleet
     }
     /// Consumes the builder and constructs a [`ModifyInstanceFleetInput`](crate::operation::modify_instance_fleet::ModifyInstanceFleetInput).
     pub fn build(

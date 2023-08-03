@@ -57,6 +57,12 @@ impl ModifyAccountInputBuilder {
         self.dedicated_tenancy_support = input;
         self
     }
+    /// <p>The status of BYOL.</p>
+    pub fn get_dedicated_tenancy_support(
+        &self,
+    ) -> &::std::option::Option<crate::types::DedicatedTenancySupportEnum> {
+        &self.dedicated_tenancy_support
+    }
     /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network interface. Specify an IP address range that is compatible with your network and in CIDR notation (that is, specify the range as an IPv4 CIDR block). The CIDR block size must be /16 (for example, 203.0.113.25/16). It must also be specified as available by the <code>ListAvailableManagementCidrRanges</code> operation.</p>
     pub fn dedicated_tenancy_management_cidr_range(
         mut self,
@@ -72,6 +78,12 @@ impl ModifyAccountInputBuilder {
     ) -> Self {
         self.dedicated_tenancy_management_cidr_range = input;
         self
+    }
+    /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network interface. Specify an IP address range that is compatible with your network and in CIDR notation (that is, specify the range as an IPv4 CIDR block). The CIDR block size must be /16 (for example, 203.0.113.25/16). It must also be specified as available by the <code>ListAvailableManagementCidrRanges</code> operation.</p>
+    pub fn get_dedicated_tenancy_management_cidr_range(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.dedicated_tenancy_management_cidr_range
     }
     /// Consumes the builder and constructs a [`ModifyAccountInput`](crate::operation::modify_account::ModifyAccountInput).
     pub fn build(

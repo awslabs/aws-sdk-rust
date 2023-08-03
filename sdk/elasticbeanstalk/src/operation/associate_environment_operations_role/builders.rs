@@ -36,6 +36,10 @@ impl AssociateEnvironmentOperationsRoleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateEnvironmentOperationsRole as a reference.
+    pub fn as_input(&self) -> &crate::operation::associate_environment_operations_role::builders::AssociateEnvironmentOperationsRoleInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl AssociateEnvironmentOperationsRoleFluentBuilder {
         self.inner = self.inner.set_environment_name(input);
         self
     }
+    /// <p>The name of the environment to which to set the operations role.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_name()
+    }
     /// <p>The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's operations role.</p>
     pub fn operations_role(
         mut self,
@@ -121,5 +129,9 @@ impl AssociateEnvironmentOperationsRoleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_operations_role(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's operations role.</p>
+    pub fn get_operations_role(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_operations_role()
     }
 }

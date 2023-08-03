@@ -112,6 +112,10 @@ impl ExecuteStatementInputBuilder {
         self.sql = input;
         self
     }
+    /// <p>The SQL statement text to run. </p>
+    pub fn get_sql(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sql
+    }
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
     pub fn cluster_identifier(
         mut self,
@@ -128,6 +132,10 @@ impl ExecuteStatementInputBuilder {
         self.cluster_identifier = input;
         self
     }
+    /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_identifier
+    }
     /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
     pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_arn = ::std::option::Option::Some(input.into());
@@ -137,6 +145,10 @@ impl ExecuteStatementInputBuilder {
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_arn = input;
         self
+    }
+    /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
+    pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_arn
     }
     /// <p>The database user name. This parameter is required when connecting to a cluster as a database user and authenticating using temporary credentials. </p>
     pub fn db_user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -148,6 +160,10 @@ impl ExecuteStatementInputBuilder {
         self.db_user = input;
         self
     }
+    /// <p>The database user name. This parameter is required when connecting to a cluster as a database user and authenticating using temporary credentials. </p>
+    pub fn get_db_user(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_user
+    }
     /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database = ::std::option::Option::Some(input.into());
@@ -158,6 +174,10 @@ impl ExecuteStatementInputBuilder {
         self.database = input;
         self
     }
+    /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
+    pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database
+    }
     /// <p>A value that indicates whether to send an event to the Amazon EventBridge event bus after the SQL statement runs. </p>
     pub fn with_event(mut self, input: bool) -> Self {
         self.with_event = ::std::option::Option::Some(input);
@@ -167,6 +187,10 @@ impl ExecuteStatementInputBuilder {
     pub fn set_with_event(mut self, input: ::std::option::Option<bool>) -> Self {
         self.with_event = input;
         self
+    }
+    /// <p>A value that indicates whether to send an event to the Amazon EventBridge event bus after the SQL statement runs. </p>
+    pub fn get_with_event(&self) -> &::std::option::Option<bool> {
+        &self.with_event
     }
     /// <p>The name of the SQL statement. You can name the SQL statement when you create it to identify the query. </p>
     pub fn statement_name(
@@ -183,6 +207,10 @@ impl ExecuteStatementInputBuilder {
     ) -> Self {
         self.statement_name = input;
         self
+    }
+    /// <p>The name of the SQL statement. You can name the SQL statement when you create it to identify the query. </p>
+    pub fn get_statement_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.statement_name
     }
     /// Appends an item to `parameters`.
     ///
@@ -203,6 +231,12 @@ impl ExecuteStatementInputBuilder {
         self.parameters = input;
         self
     }
+    /// <p>The parameters for the SQL statement.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SqlParameter>> {
+        &self.parameters
+    }
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
     pub fn workgroup_name(
         mut self,
@@ -219,6 +253,10 @@ impl ExecuteStatementInputBuilder {
         self.workgroup_name = input;
         self
     }
+    /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
+    pub fn get_workgroup_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workgroup_name
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -228,6 +266,10 @@ impl ExecuteStatementInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`ExecuteStatementInput`](crate::operation::execute_statement::ExecuteStatementInput).
     pub fn build(

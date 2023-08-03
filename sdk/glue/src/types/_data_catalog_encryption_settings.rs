@@ -55,6 +55,10 @@ impl DataCatalogEncryptionSettingsBuilder {
         self.encryption_at_rest = input;
         self
     }
+    /// <p>Specifies the encryption-at-rest configuration for the Data Catalog.</p>
+    pub fn get_encryption_at_rest(&self) -> &::std::option::Option<crate::types::EncryptionAtRest> {
+        &self.encryption_at_rest
+    }
     /// <p>When connection password protection is enabled, the Data Catalog uses a customer-provided key to encrypt the password as part of <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in the <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can enable catalog encryption or only password encryption.</p>
     pub fn connection_password_encryption(
         mut self,
@@ -70,6 +74,12 @@ impl DataCatalogEncryptionSettingsBuilder {
     ) -> Self {
         self.connection_password_encryption = input;
         self
+    }
+    /// <p>When connection password protection is enabled, the Data Catalog uses a customer-provided key to encrypt the password as part of <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in the <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can enable catalog encryption or only password encryption.</p>
+    pub fn get_connection_password_encryption(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConnectionPasswordEncryption> {
+        &self.connection_password_encryption
     }
     /// Consumes the builder and constructs a [`DataCatalogEncryptionSettings`](crate::types::DataCatalogEncryptionSettings).
     pub fn build(self) -> crate::types::DataCatalogEncryptionSettings {

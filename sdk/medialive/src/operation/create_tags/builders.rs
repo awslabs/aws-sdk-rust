@@ -36,6 +36,10 @@ impl CreateTagsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateTags as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_tags::builders::CreateTagsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl CreateTagsFluentBuilder {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
+    /// Placeholder documentation for __string
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
+    }
     /// Adds a key-value pair to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -140,5 +148,13 @@ impl CreateTagsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// Placeholder documentation for Tags
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

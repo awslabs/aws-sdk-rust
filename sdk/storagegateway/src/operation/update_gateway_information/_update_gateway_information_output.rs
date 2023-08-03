@@ -57,6 +57,10 @@ impl UpdateGatewayInformationOutputBuilder {
         self.gateway_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_arn
+    }
     /// <p>The name you configured for your gateway.</p>
     pub fn gateway_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_name = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl UpdateGatewayInformationOutputBuilder {
     pub fn set_gateway_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_name = input;
         self
+    }
+    /// <p>The name you configured for your gateway.</p>
+    pub fn get_gateway_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

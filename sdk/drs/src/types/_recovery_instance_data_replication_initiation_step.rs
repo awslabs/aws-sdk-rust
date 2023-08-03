@@ -67,6 +67,13 @@ impl RecoveryInstanceDataReplicationInitiationStepBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the step.</p>
+    pub fn get_name(
+        &self,
+    ) -> &::std::option::Option<crate::types::RecoveryInstanceDataReplicationInitiationStepName>
+    {
+        &self.name
+    }
     /// <p>The status of the step.</p>
     pub fn status(
         mut self,
@@ -84,6 +91,13 @@ impl RecoveryInstanceDataReplicationInitiationStepBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the step.</p>
+    pub fn get_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::RecoveryInstanceDataReplicationInitiationStepStatus>
+    {
+        &self.status
     }
     /// Consumes the builder and constructs a [`RecoveryInstanceDataReplicationInitiationStep`](crate::types::RecoveryInstanceDataReplicationInitiationStep).
     pub fn build(self) -> crate::types::RecoveryInstanceDataReplicationInitiationStep {

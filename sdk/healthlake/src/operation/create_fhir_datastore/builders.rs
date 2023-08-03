@@ -36,6 +36,12 @@ impl CreateFHIRDatastoreFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateFHIRDatastore as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_fhir_datastore::builders::CreateFhirDatastoreInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl CreateFHIRDatastoreFluentBuilder {
         self.inner = self.inner.set_datastore_name(input);
         self
     }
+    /// <p>The user generated name for the data store.</p>
+    pub fn get_datastore_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_datastore_name()
+    }
     /// <p>The FHIR version of the data store. The only supported version is R4.</p>
     pub fn datastore_type_version(mut self, input: crate::types::FhirVersion) -> Self {
         self.inner = self.inner.datastore_type_version(input);
@@ -144,6 +154,10 @@ impl CreateFHIRDatastoreFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_datastore_type_version(input);
         self
+    }
+    /// <p>The FHIR version of the data store. The only supported version is R4.</p>
+    pub fn get_datastore_type_version(&self) -> &::std::option::Option<crate::types::FhirVersion> {
+        self.inner.get_datastore_type_version()
     }
     /// <p> The server-side encryption key configuration for a customer provided encryption key specified for creating a data store. </p>
     pub fn sse_configuration(mut self, input: crate::types::SseConfiguration) -> Self {
@@ -158,6 +172,10 @@ impl CreateFHIRDatastoreFluentBuilder {
         self.inner = self.inner.set_sse_configuration(input);
         self
     }
+    /// <p> The server-side encryption key configuration for a customer provided encryption key specified for creating a data store. </p>
+    pub fn get_sse_configuration(&self) -> &::std::option::Option<crate::types::SseConfiguration> {
+        self.inner.get_sse_configuration()
+    }
     /// <p>Optional parameter to preload data upon creation of the data store. Currently, the only supported preloaded data is synthetic data generated from Synthea.</p>
     pub fn preload_data_config(mut self, input: crate::types::PreloadDataConfig) -> Self {
         self.inner = self.inner.preload_data_config(input);
@@ -171,6 +189,12 @@ impl CreateFHIRDatastoreFluentBuilder {
         self.inner = self.inner.set_preload_data_config(input);
         self
     }
+    /// <p>Optional parameter to preload data upon creation of the data store. Currently, the only supported preloaded data is synthetic data generated from Synthea.</p>
+    pub fn get_preload_data_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::PreloadDataConfig> {
+        self.inner.get_preload_data_config()
+    }
     /// <p>Optional user provided token used for ensuring idempotency.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -180,6 +204,10 @@ impl CreateFHIRDatastoreFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>Optional user provided token used for ensuring idempotency.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// Appends an item to `Tags`.
     ///
@@ -198,6 +226,10 @@ impl CreateFHIRDatastoreFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p> Resource tags that are applied to a data store when it is created. </p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>The configuration of the identity provider that you want to use for your data store.</p>
     pub fn identity_provider_configuration(
         mut self,
@@ -213,5 +245,11 @@ impl CreateFHIRDatastoreFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_identity_provider_configuration(input);
         self
+    }
+    /// <p>The configuration of the identity provider that you want to use for your data store.</p>
+    pub fn get_identity_provider_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::IdentityProviderConfiguration> {
+        self.inner.get_identity_provider_configuration()
     }
 }

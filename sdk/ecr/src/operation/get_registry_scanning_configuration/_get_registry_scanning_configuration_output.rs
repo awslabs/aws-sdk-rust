@@ -57,6 +57,10 @@ impl GetRegistryScanningConfigurationOutputBuilder {
         self.registry_id = input;
         self
     }
+    /// <p>The ID of the registry.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_id
+    }
     /// <p>The scanning configuration for the registry.</p>
     pub fn scanning_configuration(
         mut self,
@@ -72,6 +76,12 @@ impl GetRegistryScanningConfigurationOutputBuilder {
     ) -> Self {
         self.scanning_configuration = input;
         self
+    }
+    /// <p>The scanning configuration for the registry.</p>
+    pub fn get_scanning_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::RegistryScanningConfiguration> {
+        &self.scanning_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

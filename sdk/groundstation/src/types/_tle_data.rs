@@ -56,6 +56,10 @@ impl TleDataBuilder {
         self.tle_line1 = input;
         self
     }
+    /// <p>First line of two-line element set (TLE) data.</p>
+    pub fn get_tle_line1(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tle_line1
+    }
     /// <p>Second line of two-line element set (TLE) data.</p>
     pub fn tle_line2(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tle_line2 = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl TleDataBuilder {
     pub fn set_tle_line2(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tle_line2 = input;
         self
+    }
+    /// <p>Second line of two-line element set (TLE) data.</p>
+    pub fn get_tle_line2(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tle_line2
     }
     /// <p>The valid time range for the TLE. Gaps or overlap are not permitted.</p>
     pub fn valid_time_range(mut self, input: crate::types::TimeRange) -> Self {
@@ -78,6 +86,10 @@ impl TleDataBuilder {
     ) -> Self {
         self.valid_time_range = input;
         self
+    }
+    /// <p>The valid time range for the TLE. Gaps or overlap are not permitted.</p>
+    pub fn get_valid_time_range(&self) -> &::std::option::Option<crate::types::TimeRange> {
+        &self.valid_time_range
     }
     /// Consumes the builder and constructs a [`TleData`](crate::types::TleData).
     pub fn build(self) -> crate::types::TleData {

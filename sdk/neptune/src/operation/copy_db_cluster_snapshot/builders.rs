@@ -37,6 +37,13 @@ impl CopyDBClusterSnapshotFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CopyDBClusterSnapshot as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::copy_db_cluster_snapshot::builders::CopyDbClusterSnapshotInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -147,6 +154,18 @@ impl CopyDBClusterSnapshotFluentBuilder {
         self.inner = self.inner.set_source_db_cluster_snapshot_identifier(input);
         self
     }
+    /// <p>The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must specify a valid system snapshot in the "available" state.</p> </li>
+    /// <li> <p>Specify a valid DB snapshot identifier.</p> </li>
+    /// </ul>
+    /// <p>Example: <code>my-cluster-snapshot1</code> </p>
+    pub fn get_source_db_cluster_snapshot_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_db_cluster_snapshot_identifier()
+    }
     /// <p>The identifier of the new DB cluster snapshot to create from the source DB cluster snapshot. This parameter is not case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -179,6 +198,19 @@ impl CopyDBClusterSnapshotFluentBuilder {
         self.inner = self.inner.set_target_db_cluster_snapshot_identifier(input);
         self
     }
+    /// <p>The identifier of the new DB cluster snapshot to create from the source DB cluster snapshot. This parameter is not case-sensitive.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// </ul>
+    /// <p>Example: <code>my-cluster-snapshot2</code> </p>
+    pub fn get_target_db_cluster_snapshot_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_db_cluster_snapshot_identifier()
+    }
     /// <p>The Amazon Amazon KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.</p>
     /// <p>If you copy an encrypted DB cluster snapshot from your Amazon account, you can specify a value for <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you don't specify a value for <code>KmsKeyId</code>, then the copy of the DB cluster snapshot is encrypted with the same KMS key as the source DB cluster snapshot.</p>
     /// <p>If you copy an encrypted DB cluster snapshot that is shared from another Amazon account, then you must specify a value for <code>KmsKeyId</code>.</p>
@@ -197,6 +229,14 @@ impl CopyDBClusterSnapshotFluentBuilder {
         self.inner = self.inner.set_kms_key_id(input);
         self
     }
+    /// <p>The Amazon Amazon KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.</p>
+    /// <p>If you copy an encrypted DB cluster snapshot from your Amazon account, you can specify a value for <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you don't specify a value for <code>KmsKeyId</code>, then the copy of the DB cluster snapshot is encrypted with the same KMS key as the source DB cluster snapshot.</p>
+    /// <p>If you copy an encrypted DB cluster snapshot that is shared from another Amazon account, then you must specify a value for <code>KmsKeyId</code>.</p>
+    /// <p> KMS encryption keys are specific to the Amazon Region that they are created in, and you can't use encryption keys from one Amazon Region in another Amazon Region.</p>
+    /// <p>You cannot encrypt an unencrypted DB cluster snapshot when you copy it. If you try to copy an unencrypted DB cluster snapshot and specify a value for the KmsKeyId parameter, an error is returned.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key_id()
+    }
     /// <p>Not currently supported.</p>
     pub fn pre_signed_url(
         mut self,
@@ -213,6 +253,10 @@ impl CopyDBClusterSnapshotFluentBuilder {
         self.inner = self.inner.set_pre_signed_url(input);
         self
     }
+    /// <p>Not currently supported.</p>
+    pub fn get_pre_signed_url(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pre_signed_url()
+    }
     /// <p>True to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot, and otherwise false. The default is false.</p>
     pub fn copy_tags(mut self, input: bool) -> Self {
         self.inner = self.inner.copy_tags(input);
@@ -222,6 +266,10 @@ impl CopyDBClusterSnapshotFluentBuilder {
     pub fn set_copy_tags(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_copy_tags(input);
         self
+    }
+    /// <p>True to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot, and otherwise false. The default is false.</p>
+    pub fn get_copy_tags(&self) -> &::std::option::Option<bool> {
+        self.inner.get_copy_tags()
     }
     /// Appends an item to `Tags`.
     ///
@@ -239,5 +287,9 @@ impl CopyDBClusterSnapshotFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags to assign to the new DB cluster snapshot copy.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

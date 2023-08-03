@@ -58,6 +58,10 @@ impl DescribeCapacityReservationsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `capacity_reservations`.
     ///
     /// To override the contents of this collection use [`set_capacity_reservations`](Self::set_capacity_reservations).
@@ -76,6 +80,12 @@ impl DescribeCapacityReservationsOutputBuilder {
     ) -> Self {
         self.capacity_reservations = input;
         self
+    }
+    /// <p>Information about the Capacity Reservations.</p>
+    pub fn get_capacity_reservations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityReservation>> {
+        &self.capacity_reservations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

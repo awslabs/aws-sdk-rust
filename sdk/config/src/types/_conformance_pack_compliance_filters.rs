@@ -64,6 +64,12 @@ impl ConformancePackComplianceFiltersBuilder {
         self.config_rule_names = input;
         self
     }
+    /// <p>Filters the results by Config rule names.</p>
+    pub fn get_config_rule_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.config_rule_names
+    }
     /// <p>Filters the results by compliance.</p>
     /// <p>The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>
     pub fn compliance_type(mut self, input: crate::types::ConformancePackComplianceType) -> Self {
@@ -78,6 +84,13 @@ impl ConformancePackComplianceFiltersBuilder {
     ) -> Self {
         self.compliance_type = input;
         self
+    }
+    /// <p>Filters the results by compliance.</p>
+    /// <p>The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code> is not supported.</p>
+    pub fn get_compliance_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConformancePackComplianceType> {
+        &self.compliance_type
     }
     /// Consumes the builder and constructs a [`ConformancePackComplianceFilters`](crate::types::ConformancePackComplianceFilters).
     pub fn build(self) -> crate::types::ConformancePackComplianceFilters {

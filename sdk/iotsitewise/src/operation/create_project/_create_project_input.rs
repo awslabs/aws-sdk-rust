@@ -79,6 +79,10 @@ impl CreateProjectInputBuilder {
         self.portal_id = input;
         self
     }
+    /// <p>The ID of the portal in which to create the project.</p>
+    pub fn get_portal_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.portal_id
+    }
     /// <p>A friendly name for the project.</p>
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
@@ -88,6 +92,10 @@ impl CreateProjectInputBuilder {
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_name = input;
         self
+    }
+    /// <p>A friendly name for the project.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_name
     }
     /// <p>A description for the project.</p>
     pub fn project_description(
@@ -105,6 +113,10 @@ impl CreateProjectInputBuilder {
         self.project_description = input;
         self
     }
+    /// <p>A description for the project.</p>
+    pub fn get_project_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_description
+    }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -114,6 +126,10 @@ impl CreateProjectInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -139,6 +155,14 @@ impl CreateProjectInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of key-value pairs that contain metadata for the project. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateProjectInput`](crate::operation::create_project::CreateProjectInput).
     pub fn build(

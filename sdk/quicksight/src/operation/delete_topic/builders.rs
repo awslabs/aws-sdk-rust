@@ -36,6 +36,10 @@ impl DeleteTopicFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteTopic as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_topic::builders::DeleteTopicInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl DeleteTopicFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The ID of the Amazon Web Services account that contains the topic that you want to delete.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>The ID of the topic that you want to delete. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn topic_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.topic_id(input.into());
@@ -133,5 +141,9 @@ impl DeleteTopicFluentBuilder {
     pub fn set_topic_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_topic_id(input);
         self
+    }
+    /// <p>The ID of the topic that you want to delete. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    pub fn get_topic_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_topic_id()
     }
 }

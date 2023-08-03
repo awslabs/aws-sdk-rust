@@ -62,6 +62,10 @@ impl InputSourceBuilder {
         self.input_source_arn = input;
         self
     }
+    /// <p>An Glue table ARN for the input source table.</p>
+    pub fn get_input_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_source_arn
+    }
     /// <p>The name of the schema to be retrieved.</p>
     pub fn schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_name = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl InputSourceBuilder {
         self.schema_name = input;
         self
     }
+    /// <p>The name of the schema to be retrieved.</p>
+    pub fn get_schema_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_name
+    }
     /// <p>Normalizes the attributes defined in the schema in the input data. For example, if an attribute has an <code>AttributeType</code> of <code>PHONE_NUMBER</code>, and the data in the input table is in a format of 1234567890, Entity Resolution will normalize this field in the output to (123)-456-7890.</p>
     pub fn apply_normalization(mut self, input: bool) -> Self {
         self.apply_normalization = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl InputSourceBuilder {
     pub fn set_apply_normalization(mut self, input: ::std::option::Option<bool>) -> Self {
         self.apply_normalization = input;
         self
+    }
+    /// <p>Normalizes the attributes defined in the schema in the input data. For example, if an attribute has an <code>AttributeType</code> of <code>PHONE_NUMBER</code>, and the data in the input table is in a format of 1234567890, Entity Resolution will normalize this field in the output to (123)-456-7890.</p>
+    pub fn get_apply_normalization(&self) -> &::std::option::Option<bool> {
+        &self.apply_normalization
     }
     /// Consumes the builder and constructs a [`InputSource`](crate::types::InputSource).
     pub fn build(self) -> crate::types::InputSource {

@@ -36,6 +36,13 @@ impl DescribeBulkImportJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeBulkImportJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_bulk_import_job::builders::DescribeBulkImportJobInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +132,9 @@ impl DescribeBulkImportJobFluentBuilder {
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_id(input);
         self
+    }
+    /// <p>The ID of the job.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_id()
     }
 }

@@ -62,6 +62,10 @@ impl CachePolicyBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier for the cache policy.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The date and time when the cache policy was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl CachePolicyBuilder {
         self.last_modified_time = input;
         self
     }
+    /// <p>The date and time when the cache policy was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
     /// <p>The cache policy configuration.</p>
     pub fn cache_policy_config(mut self, input: crate::types::CachePolicyConfig) -> Self {
         self.cache_policy_config = ::std::option::Option::Some(input);
@@ -87,6 +95,12 @@ impl CachePolicyBuilder {
     ) -> Self {
         self.cache_policy_config = input;
         self
+    }
+    /// <p>The cache policy configuration.</p>
+    pub fn get_cache_policy_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::CachePolicyConfig> {
+        &self.cache_policy_config
     }
     /// Consumes the builder and constructs a [`CachePolicy`](crate::types::CachePolicy).
     pub fn build(self) -> crate::types::CachePolicy {

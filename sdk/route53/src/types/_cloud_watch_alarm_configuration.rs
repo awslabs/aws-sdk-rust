@@ -96,6 +96,10 @@ impl CloudWatchAlarmConfigurationBuilder {
         self.evaluation_periods = input;
         self
     }
+    /// <p>For the metric that the CloudWatch alarm is associated with, the number of periods that the metric is compared to the threshold.</p>
+    pub fn get_evaluation_periods(&self) -> &::std::option::Option<i32> {
+        &self.evaluation_periods
+    }
     /// <p>For the metric that the CloudWatch alarm is associated with, the value the metric is compared with.</p>
     pub fn threshold(mut self, input: f64) -> Self {
         self.threshold = ::std::option::Option::Some(input);
@@ -105,6 +109,10 @@ impl CloudWatchAlarmConfigurationBuilder {
     pub fn set_threshold(mut self, input: ::std::option::Option<f64>) -> Self {
         self.threshold = input;
         self
+    }
+    /// <p>For the metric that the CloudWatch alarm is associated with, the value the metric is compared with.</p>
+    pub fn get_threshold(&self) -> &::std::option::Option<f64> {
+        &self.threshold
     }
     /// <p>For the metric that the CloudWatch alarm is associated with, the arithmetic operation that is used for the comparison.</p>
     pub fn comparison_operator(mut self, input: crate::types::ComparisonOperator) -> Self {
@@ -119,6 +127,12 @@ impl CloudWatchAlarmConfigurationBuilder {
         self.comparison_operator = input;
         self
     }
+    /// <p>For the metric that the CloudWatch alarm is associated with, the arithmetic operation that is used for the comparison.</p>
+    pub fn get_comparison_operator(
+        &self,
+    ) -> &::std::option::Option<crate::types::ComparisonOperator> {
+        &self.comparison_operator
+    }
     /// <p>For the metric that the CloudWatch alarm is associated with, the duration of one evaluation period in seconds.</p>
     pub fn period(mut self, input: i32) -> Self {
         self.period = ::std::option::Option::Some(input);
@@ -128,6 +142,10 @@ impl CloudWatchAlarmConfigurationBuilder {
     pub fn set_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.period = input;
         self
+    }
+    /// <p>For the metric that the CloudWatch alarm is associated with, the duration of one evaluation period in seconds.</p>
+    pub fn get_period(&self) -> &::std::option::Option<i32> {
+        &self.period
     }
     /// <p>The name of the CloudWatch metric that the alarm is associated with.</p>
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -139,6 +157,10 @@ impl CloudWatchAlarmConfigurationBuilder {
         self.metric_name = input;
         self
     }
+    /// <p>The name of the CloudWatch metric that the alarm is associated with.</p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_name
+    }
     /// <p>The namespace of the metric that the alarm is associated with. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
@@ -149,6 +171,10 @@ impl CloudWatchAlarmConfigurationBuilder {
         self.namespace = input;
         self
     }
+    /// <p>The namespace of the metric that the alarm is associated with. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
+    }
     /// <p>For the metric that the CloudWatch alarm is associated with, the statistic that is applied to the metric.</p>
     pub fn statistic(mut self, input: crate::types::Statistic) -> Self {
         self.statistic = ::std::option::Option::Some(input);
@@ -158,6 +184,10 @@ impl CloudWatchAlarmConfigurationBuilder {
     pub fn set_statistic(mut self, input: ::std::option::Option<crate::types::Statistic>) -> Self {
         self.statistic = input;
         self
+    }
+    /// <p>For the metric that the CloudWatch alarm is associated with, the statistic that is applied to the metric.</p>
+    pub fn get_statistic(&self) -> &::std::option::Option<crate::types::Statistic> {
+        &self.statistic
     }
     /// Appends an item to `dimensions`.
     ///
@@ -177,6 +207,12 @@ impl CloudWatchAlarmConfigurationBuilder {
     ) -> Self {
         self.dimensions = input;
         self
+    }
+    /// <p>For the metric that the CloudWatch alarm is associated with, a complex type that contains information about the dimensions for the metric. For information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    pub fn get_dimensions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Dimension>> {
+        &self.dimensions
     }
     /// Consumes the builder and constructs a [`CloudWatchAlarmConfiguration`](crate::types::CloudWatchAlarmConfiguration).
     pub fn build(self) -> crate::types::CloudWatchAlarmConfiguration {

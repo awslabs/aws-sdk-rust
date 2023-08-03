@@ -36,6 +36,12 @@ impl DescribeUserProfileFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeUserProfile as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_user_profile::builders::DescribeUserProfileInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DescribeUserProfileFluentBuilder {
         self.inner = self.inner.set_domain_id(input);
         self
     }
+    /// <p>The domain ID.</p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_id()
+    }
     /// <p>The user profile name. This value is not case sensitive.</p>
     pub fn user_profile_name(
         mut self,
@@ -141,5 +151,9 @@ impl DescribeUserProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_user_profile_name(input);
         self
+    }
+    /// <p>The user profile name. This value is not case sensitive.</p>
+    pub fn get_user_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_profile_name()
     }
 }

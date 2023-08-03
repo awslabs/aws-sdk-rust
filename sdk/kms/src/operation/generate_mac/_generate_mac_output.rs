@@ -66,6 +66,11 @@ impl GenerateMacOutputBuilder {
         self.mac = input;
         self
     }
+    /// <p>The hash-based message authentication code (HMAC) that was generated for the specified message, HMAC KMS key, and MAC algorithm.</p>
+    /// <p>This is the standard, raw HMAC defined in <a href="https://datatracker.ietf.org/doc/html/rfc2104">RFC 2104</a>.</p>
+    pub fn get_mac(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.mac
+    }
     /// <p>The MAC algorithm that was used to generate the HMAC.</p>
     pub fn mac_algorithm(mut self, input: crate::types::MacAlgorithmSpec) -> Self {
         self.mac_algorithm = ::std::option::Option::Some(input);
@@ -79,6 +84,10 @@ impl GenerateMacOutputBuilder {
         self.mac_algorithm = input;
         self
     }
+    /// <p>The MAC algorithm that was used to generate the HMAC.</p>
+    pub fn get_mac_algorithm(&self) -> &::std::option::Option<crate::types::MacAlgorithmSpec> {
+        &self.mac_algorithm
+    }
     /// <p>The HMAC KMS key used in the operation.</p>
     pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_id = ::std::option::Option::Some(input.into());
@@ -88,6 +97,10 @@ impl GenerateMacOutputBuilder {
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_id = input;
         self
+    }
+    /// <p>The HMAC KMS key used in the operation.</p>
+    pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

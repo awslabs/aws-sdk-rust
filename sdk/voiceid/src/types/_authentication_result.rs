@@ -126,6 +126,10 @@ impl AuthenticationResultBuilder {
         self.authentication_result_id = input;
         self
     }
+    /// <p>The unique identifier for this authentication result. Because there can be multiple authentications for a given session, this field helps to identify if the returned result is from a previous streaming activity or a new result. Note that in absence of any new streaming activity, <code>AcceptanceThreshold</code> changes, or <code>SpeakerId</code> changes, Voice ID always returns cached Authentication Result for this API.</p>
+    pub fn get_authentication_result_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authentication_result_id
+    }
     /// <p>A timestamp of when audio aggregation started for this authentication result.</p>
     pub fn audio_aggregation_started_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.audio_aggregation_started_at = ::std::option::Option::Some(input);
@@ -139,6 +143,12 @@ impl AuthenticationResultBuilder {
         self.audio_aggregation_started_at = input;
         self
     }
+    /// <p>A timestamp of when audio aggregation started for this authentication result.</p>
+    pub fn get_audio_aggregation_started_at(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.audio_aggregation_started_at
+    }
     /// <p>A timestamp of when audio aggregation ended for this authentication result.</p>
     pub fn audio_aggregation_ended_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.audio_aggregation_ended_at = ::std::option::Option::Some(input);
@@ -151,6 +161,12 @@ impl AuthenticationResultBuilder {
     ) -> Self {
         self.audio_aggregation_ended_at = input;
         self
+    }
+    /// <p>A timestamp of when audio aggregation ended for this authentication result.</p>
+    pub fn get_audio_aggregation_ended_at(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.audio_aggregation_ended_at
     }
     /// <p>The client-provided identifier for the speaker whose authentication result is produced. Only present if a <code>SpeakerId</code> is provided for the session.</p>
     pub fn customer_speaker_id(
@@ -168,6 +184,10 @@ impl AuthenticationResultBuilder {
         self.customer_speaker_id = input;
         self
     }
+    /// <p>The client-provided identifier for the speaker whose authentication result is produced. Only present if a <code>SpeakerId</code> is provided for the session.</p>
+    pub fn get_customer_speaker_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.customer_speaker_id
+    }
     /// <p>The service-generated identifier for the speaker whose authentication result is produced.</p>
     pub fn generated_speaker_id(
         mut self,
@@ -184,6 +204,10 @@ impl AuthenticationResultBuilder {
         self.generated_speaker_id = input;
         self
     }
+    /// <p>The service-generated identifier for the speaker whose authentication result is produced.</p>
+    pub fn get_generated_speaker_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.generated_speaker_id
+    }
     /// <p>The authentication decision produced by Voice ID, processed against the current session state and streamed audio of the speaker.</p>
     pub fn decision(mut self, input: crate::types::AuthenticationDecision) -> Self {
         self.decision = ::std::option::Option::Some(input);
@@ -197,6 +221,10 @@ impl AuthenticationResultBuilder {
         self.decision = input;
         self
     }
+    /// <p>The authentication decision produced by Voice ID, processed against the current session state and streamed audio of the speaker.</p>
+    pub fn get_decision(&self) -> &::std::option::Option<crate::types::AuthenticationDecision> {
+        &self.decision
+    }
     /// <p>The authentication score for the speaker whose authentication result is produced. This value is only present if the authentication decision is either <code>ACCEPT</code> or <code>REJECT</code>.</p>
     pub fn score(mut self, input: i32) -> Self {
         self.score = ::std::option::Option::Some(input);
@@ -206,6 +234,10 @@ impl AuthenticationResultBuilder {
     pub fn set_score(mut self, input: ::std::option::Option<i32>) -> Self {
         self.score = input;
         self
+    }
+    /// <p>The authentication score for the speaker whose authentication result is produced. This value is only present if the authentication decision is either <code>ACCEPT</code> or <code>REJECT</code>.</p>
+    pub fn get_score(&self) -> &::std::option::Option<i32> {
+        &self.score
     }
     /// <p>The <code>AuthenticationConfiguration</code> used to generate this authentication result.</p>
     pub fn configuration(mut self, input: crate::types::AuthenticationConfiguration) -> Self {
@@ -219,6 +251,12 @@ impl AuthenticationResultBuilder {
     ) -> Self {
         self.configuration = input;
         self
+    }
+    /// <p>The <code>AuthenticationConfiguration</code> used to generate this authentication result.</p>
+    pub fn get_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuthenticationConfiguration> {
+        &self.configuration
     }
     /// Consumes the builder and constructs a [`AuthenticationResult`](crate::types::AuthenticationResult).
     pub fn build(self) -> crate::types::AuthenticationResult {

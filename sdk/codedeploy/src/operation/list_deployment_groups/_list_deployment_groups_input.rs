@@ -55,6 +55,10 @@ impl ListDeploymentGroupsInputBuilder {
         self.application_name = input;
         self
     }
+    /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// <p>An identifier returned from the previous list deployment groups call. It can be used to return the next set of deployment groups in the list.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl ListDeploymentGroupsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>An identifier returned from the previous list deployment groups call. It can be used to return the next set of deployment groups in the list.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListDeploymentGroupsInput`](crate::operation::list_deployment_groups::ListDeploymentGroupsInput).
     pub fn build(

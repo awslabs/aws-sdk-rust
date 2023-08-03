@@ -57,6 +57,12 @@ impl PivotTableDataPathOptionBuilder {
         self.data_path_list = input;
         self
     }
+    /// <p>The list of data path values for the data path options.</p>
+    pub fn get_data_path_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataPathValue>> {
+        &self.data_path_list
+    }
     /// <p>The width of the data path option.</p>
     pub fn width(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.width = ::std::option::Option::Some(input.into());
@@ -66,6 +72,10 @@ impl PivotTableDataPathOptionBuilder {
     pub fn set_width(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.width = input;
         self
+    }
+    /// <p>The width of the data path option.</p>
+    pub fn get_width(&self) -> &::std::option::Option<::std::string::String> {
+        &self.width
     }
     /// Consumes the builder and constructs a [`PivotTableDataPathOption`](crate::types::PivotTableDataPathOption).
     pub fn build(self) -> crate::types::PivotTableDataPathOption {

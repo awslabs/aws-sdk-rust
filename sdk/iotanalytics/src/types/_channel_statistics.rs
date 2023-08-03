@@ -43,6 +43,10 @@ impl ChannelStatisticsBuilder {
         self.size = input;
         self
     }
+    /// <p>The estimated size of the channel.</p>
+    pub fn get_size(&self) -> &::std::option::Option<crate::types::EstimatedResourceSize> {
+        &self.size
+    }
     /// Consumes the builder and constructs a [`ChannelStatistics`](crate::types::ChannelStatistics).
     pub fn build(self) -> crate::types::ChannelStatistics {
         crate::types::ChannelStatistics { size: self.size }

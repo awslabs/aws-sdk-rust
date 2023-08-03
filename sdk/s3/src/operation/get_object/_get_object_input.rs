@@ -243,6 +243,13 @@ impl GetObjectInputBuilder {
         self.bucket = input;
         self
     }
+    /// <p>The bucket name containing the object. </p>
+    /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using an Object Lambda access point the hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-object-lambda.<i>Region</i>.amazonaws.com.</p>
+    /// <p>When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p>Return the object only if its entity tag (ETag) is the same as the one specified; otherwise, return a 412 (precondition failed) error.</p>
     pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.if_match = ::std::option::Option::Some(input.into());
@@ -252,6 +259,10 @@ impl GetObjectInputBuilder {
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.if_match = input;
         self
+    }
+    /// <p>Return the object only if its entity tag (ETag) is the same as the one specified; otherwise, return a 412 (precondition failed) error.</p>
+    pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
+        &self.if_match
     }
     /// <p>Return the object only if it has been modified since the specified time; otherwise, return a 304 (not modified) error.</p>
     pub fn if_modified_since(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -265,6 +276,10 @@ impl GetObjectInputBuilder {
     ) -> Self {
         self.if_modified_since = input;
         self
+    }
+    /// <p>Return the object only if it has been modified since the specified time; otherwise, return a 304 (not modified) error.</p>
+    pub fn get_if_modified_since(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.if_modified_since
     }
     /// <p>Return the object only if its entity tag (ETag) is different from the one specified; otherwise, return a 304 (not modified) error.</p>
     pub fn if_none_match(
@@ -282,6 +297,10 @@ impl GetObjectInputBuilder {
         self.if_none_match = input;
         self
     }
+    /// <p>Return the object only if its entity tag (ETag) is different from the one specified; otherwise, return a 304 (not modified) error.</p>
+    pub fn get_if_none_match(&self) -> &::std::option::Option<::std::string::String> {
+        &self.if_none_match
+    }
     /// <p>Return the object only if it has not been modified since the specified time; otherwise, return a 412 (precondition failed) error.</p>
     pub fn if_unmodified_since(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.if_unmodified_since = ::std::option::Option::Some(input);
@@ -295,6 +314,10 @@ impl GetObjectInputBuilder {
         self.if_unmodified_since = input;
         self
     }
+    /// <p>Return the object only if it has not been modified since the specified time; otherwise, return a 412 (precondition failed) error.</p>
+    pub fn get_if_unmodified_since(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.if_unmodified_since
+    }
     /// <p>Key of the object to get.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
@@ -304,6 +327,10 @@ impl GetObjectInputBuilder {
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
+    }
+    /// <p>Key of the object to get.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
     }
     /// <p>Downloads the specified range bytes of an object. For more information about the HTTP Range header, see <a href="https://www.rfc-editor.org/rfc/rfc9110.html#name-range">https://www.rfc-editor.org/rfc/rfc9110.html#name-range</a>.</p> <note>
     /// <p>Amazon S3 doesn't support retrieving multiple ranges of data per <code>GET</code> request.</p>
@@ -318,6 +345,12 @@ impl GetObjectInputBuilder {
     pub fn set_range(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.range = input;
         self
+    }
+    /// <p>Downloads the specified range bytes of an object. For more information about the HTTP Range header, see <a href="https://www.rfc-editor.org/rfc/rfc9110.html#name-range">https://www.rfc-editor.org/rfc/rfc9110.html#name-range</a>.</p> <note>
+    /// <p>Amazon S3 doesn't support retrieving multiple ranges of data per <code>GET</code> request.</p>
+    /// </note>
+    pub fn get_range(&self) -> &::std::option::Option<::std::string::String> {
+        &self.range
     }
     /// <p>Sets the <code>Cache-Control</code> header of the response.</p>
     pub fn response_cache_control(
@@ -335,6 +368,10 @@ impl GetObjectInputBuilder {
         self.response_cache_control = input;
         self
     }
+    /// <p>Sets the <code>Cache-Control</code> header of the response.</p>
+    pub fn get_response_cache_control(&self) -> &::std::option::Option<::std::string::String> {
+        &self.response_cache_control
+    }
     /// <p>Sets the <code>Content-Disposition</code> header of the response</p>
     pub fn response_content_disposition(
         mut self,
@@ -350,6 +387,12 @@ impl GetObjectInputBuilder {
     ) -> Self {
         self.response_content_disposition = input;
         self
+    }
+    /// <p>Sets the <code>Content-Disposition</code> header of the response</p>
+    pub fn get_response_content_disposition(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.response_content_disposition
     }
     /// <p>Sets the <code>Content-Encoding</code> header of the response.</p>
     pub fn response_content_encoding(
@@ -367,6 +410,10 @@ impl GetObjectInputBuilder {
         self.response_content_encoding = input;
         self
     }
+    /// <p>Sets the <code>Content-Encoding</code> header of the response.</p>
+    pub fn get_response_content_encoding(&self) -> &::std::option::Option<::std::string::String> {
+        &self.response_content_encoding
+    }
     /// <p>Sets the <code>Content-Language</code> header of the response.</p>
     pub fn response_content_language(
         mut self,
@@ -382,6 +429,10 @@ impl GetObjectInputBuilder {
     ) -> Self {
         self.response_content_language = input;
         self
+    }
+    /// <p>Sets the <code>Content-Language</code> header of the response.</p>
+    pub fn get_response_content_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.response_content_language
     }
     /// <p>Sets the <code>Content-Type</code> header of the response.</p>
     pub fn response_content_type(
@@ -399,6 +450,10 @@ impl GetObjectInputBuilder {
         self.response_content_type = input;
         self
     }
+    /// <p>Sets the <code>Content-Type</code> header of the response.</p>
+    pub fn get_response_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.response_content_type
+    }
     /// <p>Sets the <code>Expires</code> header of the response.</p>
     pub fn response_expires(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.response_expires = ::std::option::Option::Some(input);
@@ -412,6 +467,10 @@ impl GetObjectInputBuilder {
         self.response_expires = input;
         self
     }
+    /// <p>Sets the <code>Expires</code> header of the response.</p>
+    pub fn get_response_expires(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.response_expires
+    }
     /// <p>VersionId used to reference a specific version of the object.</p>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_id = ::std::option::Option::Some(input.into());
@@ -421,6 +480,10 @@ impl GetObjectInputBuilder {
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_id = input;
         self
+    }
+    /// <p>VersionId used to reference a specific version of the object.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_id
     }
     /// <p>Specifies the algorithm to use to when decrypting the object (for example, AES256).</p>
     pub fn sse_customer_algorithm(
@@ -438,6 +501,10 @@ impl GetObjectInputBuilder {
         self.sse_customer_algorithm = input;
         self
     }
+    /// <p>Specifies the algorithm to use to when decrypting the object (for example, AES256).</p>
+    pub fn get_sse_customer_algorithm(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sse_customer_algorithm
+    }
     /// <p>Specifies the customer-provided encryption key for Amazon S3 used to encrypt the data. This value is used to decrypt the object when recovering it and must match the one used when storing the data. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
     pub fn sse_customer_key(
         mut self,
@@ -453,6 +520,10 @@ impl GetObjectInputBuilder {
     ) -> Self {
         self.sse_customer_key = input;
         self
+    }
+    /// <p>Specifies the customer-provided encryption key for Amazon S3 used to encrypt the data. This value is used to decrypt the object when recovering it and must match the one used when storing the data. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
+    pub fn get_sse_customer_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sse_customer_key
     }
     /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
     pub fn sse_customer_key_md5(
@@ -470,6 +541,10 @@ impl GetObjectInputBuilder {
         self.sse_customer_key_md5 = input;
         self
     }
+    /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
+    pub fn get_sse_customer_key_md5(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sse_customer_key_md5
+    }
     /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(mut self, input: crate::types::RequestPayer) -> Self {
         self.request_payer = ::std::option::Option::Some(input);
@@ -483,6 +558,10 @@ impl GetObjectInputBuilder {
         self.request_payer = input;
         self
     }
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn get_request_payer(&self) -> &::std::option::Option<crate::types::RequestPayer> {
+        &self.request_payer
+    }
     /// <p>Part number of the object being read. This is a positive integer between 1 and 10,000. Effectively performs a 'ranged' GET request for the part specified. Useful for downloading just a part of an object.</p>
     pub fn part_number(mut self, input: i32) -> Self {
         self.part_number = ::std::option::Option::Some(input);
@@ -492,6 +571,10 @@ impl GetObjectInputBuilder {
     pub fn set_part_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.part_number = input;
         self
+    }
+    /// <p>Part number of the object being read. This is a positive integer between 1 and 10,000. Effectively performs a 'ranged' GET request for the part specified. Useful for downloading just a part of an object.</p>
+    pub fn get_part_number(&self) -> &::std::option::Option<i32> {
+        &self.part_number
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(
@@ -509,6 +592,10 @@ impl GetObjectInputBuilder {
         self.expected_bucket_owner = input;
         self
     }
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
+    pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expected_bucket_owner
+    }
     /// <p>To retrieve the checksum, this mode must be enabled.</p>
     pub fn checksum_mode(mut self, input: crate::types::ChecksumMode) -> Self {
         self.checksum_mode = ::std::option::Option::Some(input);
@@ -521,6 +608,10 @@ impl GetObjectInputBuilder {
     ) -> Self {
         self.checksum_mode = input;
         self
+    }
+    /// <p>To retrieve the checksum, this mode must be enabled.</p>
+    pub fn get_checksum_mode(&self) -> &::std::option::Option<crate::types::ChecksumMode> {
+        &self.checksum_mode
     }
     /// Consumes the builder and constructs a [`GetObjectInput`](crate::operation::get_object::GetObjectInput).
     pub fn build(

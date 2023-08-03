@@ -103,6 +103,12 @@ impl GetBulkDeploymentStatusOutputBuilder {
         self.bulk_deployment_metrics = input;
         self
     }
+    /// Relevant metrics on input records processed during bulk deployment.
+    pub fn get_bulk_deployment_metrics(
+        &self,
+    ) -> &::std::option::Option<crate::types::BulkDeploymentMetrics> {
+        &self.bulk_deployment_metrics
+    }
     /// The status of the bulk deployment.
     pub fn bulk_deployment_status(mut self, input: crate::types::BulkDeploymentStatus) -> Self {
         self.bulk_deployment_status = ::std::option::Option::Some(input);
@@ -116,6 +122,12 @@ impl GetBulkDeploymentStatusOutputBuilder {
         self.bulk_deployment_status = input;
         self
     }
+    /// The status of the bulk deployment.
+    pub fn get_bulk_deployment_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::BulkDeploymentStatus> {
+        &self.bulk_deployment_status
+    }
     /// The time, in ISO format, when the deployment was created.
     pub fn created_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_at = ::std::option::Option::Some(input.into());
@@ -125,6 +137,10 @@ impl GetBulkDeploymentStatusOutputBuilder {
     pub fn set_created_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_at = input;
         self
+    }
+    /// The time, in ISO format, when the deployment was created.
+    pub fn get_created_at(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_at
     }
     /// Appends an item to `error_details`.
     ///
@@ -145,6 +161,12 @@ impl GetBulkDeploymentStatusOutputBuilder {
         self.error_details = input;
         self
     }
+    /// Error details
+    pub fn get_error_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>> {
+        &self.error_details
+    }
     /// Error message
     pub fn error_message(
         mut self,
@@ -160,6 +182,10 @@ impl GetBulkDeploymentStatusOutputBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// Error message
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -185,6 +211,14 @@ impl GetBulkDeploymentStatusOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// Tag(s) attached to the resource arn.
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

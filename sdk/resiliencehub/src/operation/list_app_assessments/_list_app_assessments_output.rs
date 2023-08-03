@@ -59,6 +59,10 @@ impl ListAppAssessmentsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `assessment_summaries`.
     ///
     /// To override the contents of this collection use [`set_assessment_summaries`](Self::set_assessment_summaries).
@@ -77,6 +81,12 @@ impl ListAppAssessmentsOutputBuilder {
     ) -> Self {
         self.assessment_summaries = input;
         self
+    }
+    /// <p>The summaries for the specified assessments, returned as an object. This object includes application versions, associated Amazon Resource Numbers (ARNs), cost, messages, resiliency scores, and more.</p>
+    pub fn get_assessment_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AppAssessmentSummary>> {
+        &self.assessment_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

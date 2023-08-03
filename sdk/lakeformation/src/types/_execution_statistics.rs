@@ -56,6 +56,10 @@ impl ExecutionStatisticsBuilder {
         self.average_execution_time_millis = input;
         self
     }
+    /// <p>The average time the request took to be executed.</p>
+    pub fn get_average_execution_time_millis(&self) -> &::std::option::Option<i64> {
+        &self.average_execution_time_millis
+    }
     /// <p>The amount of data that was scanned in bytes.</p>
     pub fn data_scanned_bytes(mut self, input: i64) -> Self {
         self.data_scanned_bytes = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl ExecutionStatisticsBuilder {
         self.data_scanned_bytes = input;
         self
     }
+    /// <p>The amount of data that was scanned in bytes.</p>
+    pub fn get_data_scanned_bytes(&self) -> &::std::option::Option<i64> {
+        &self.data_scanned_bytes
+    }
     /// <p>The number of work units executed.</p>
     pub fn work_units_executed_count(mut self, input: i64) -> Self {
         self.work_units_executed_count = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl ExecutionStatisticsBuilder {
     pub fn set_work_units_executed_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.work_units_executed_count = input;
         self
+    }
+    /// <p>The number of work units executed.</p>
+    pub fn get_work_units_executed_count(&self) -> &::std::option::Option<i64> {
+        &self.work_units_executed_count
     }
     /// Consumes the builder and constructs a [`ExecutionStatistics`](crate::types::ExecutionStatistics).
     pub fn build(self) -> crate::types::ExecutionStatistics {

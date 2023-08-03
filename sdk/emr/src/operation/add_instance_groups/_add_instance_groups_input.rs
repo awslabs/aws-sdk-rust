@@ -59,6 +59,12 @@ impl AddInstanceGroupsInputBuilder {
         self.instance_groups = input;
         self
     }
+    /// <p>Instance groups to add.</p>
+    pub fn get_instance_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupConfig>> {
+        &self.instance_groups
+    }
     /// <p>Job flow in which to add the instance groups.</p>
     pub fn job_flow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_flow_id = ::std::option::Option::Some(input.into());
@@ -68,6 +74,10 @@ impl AddInstanceGroupsInputBuilder {
     pub fn set_job_flow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_flow_id = input;
         self
+    }
+    /// <p>Job flow in which to add the instance groups.</p>
+    pub fn get_job_flow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_flow_id
     }
     /// Consumes the builder and constructs a [`AddInstanceGroupsInput`](crate::operation::add_instance_groups::AddInstanceGroupsInput).
     pub fn build(

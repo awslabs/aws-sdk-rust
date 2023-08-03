@@ -67,6 +67,10 @@ impl GetQueryStateOutputBuilder {
         self.error = input;
         self
     }
+    /// <p>An error message when the operation fails.</p>
+    pub fn get_error(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error
+    }
     /// <p>The state of a query previously submitted. The possible states are:</p>
     /// <ul>
     /// <li> <p>PENDING: the query is pending.</p> </li>
@@ -91,6 +95,16 @@ impl GetQueryStateOutputBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of a query previously submitted. The possible states are:</p>
+    /// <ul>
+    /// <li> <p>PENDING: the query is pending.</p> </li>
+    /// <li> <p>WORKUNITS_AVAILABLE: some work units are ready for retrieval and execution.</p> </li>
+    /// <li> <p>FINISHED: the query planning finished successfully, and all work units are ready for retrieval and execution.</p> </li>
+    /// <li> <p>ERROR: an error occurred with the query, such as an invalid query ID or a backend error.</p> </li>
+    /// </ul>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::QueryStateString> {
+        &self.state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

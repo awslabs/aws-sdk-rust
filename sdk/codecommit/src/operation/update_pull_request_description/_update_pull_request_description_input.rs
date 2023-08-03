@@ -53,6 +53,10 @@ impl UpdatePullRequestDescriptionInputBuilder {
         self.pull_request_id = input;
         self
     }
+    /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+    pub fn get_pull_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pull_request_id
+    }
     /// <p>The updated content of the description for the pull request. This content replaces the existing description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl UpdatePullRequestDescriptionInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The updated content of the description for the pull request. This content replaces the existing description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`UpdatePullRequestDescriptionInput`](crate::operation::update_pull_request_description::UpdatePullRequestDescriptionInput).
     pub fn build(

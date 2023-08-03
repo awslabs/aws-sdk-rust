@@ -45,6 +45,10 @@ impl DeleteDatastoreInputBuilder {
         self.datastore_name = input;
         self
     }
+    /// <p>The name of the data store to delete.</p>
+    pub fn get_datastore_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.datastore_name
+    }
     /// Consumes the builder and constructs a [`DeleteDatastoreInput`](crate::operation::delete_datastore::DeleteDatastoreInput).
     pub fn build(
         self,

@@ -43,6 +43,12 @@ impl BatchDetachTypedLinkBuilder {
         self.typed_link_specifier = input;
         self
     }
+    /// <p>Used to accept a typed link specifier as input.</p>
+    pub fn get_typed_link_specifier(
+        &self,
+    ) -> &::std::option::Option<crate::types::TypedLinkSpecifier> {
+        &self.typed_link_specifier
+    }
     /// Consumes the builder and constructs a [`BatchDetachTypedLink`](crate::types::BatchDetachTypedLink).
     pub fn build(self) -> crate::types::BatchDetachTypedLink {
         crate::types::BatchDetachTypedLink {

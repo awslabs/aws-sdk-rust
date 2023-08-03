@@ -83,6 +83,10 @@ impl TimeSeriesServiceStatisticsBuilder {
         self.timestamp = input;
         self
     }
+    /// <p>Timestamp of the window for which statistics are aggregated.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.timestamp
+    }
     /// <p>Response statistics for an edge.</p>
     pub fn edge_summary_statistics(mut self, input: crate::types::EdgeStatistics) -> Self {
         self.edge_summary_statistics = ::std::option::Option::Some(input);
@@ -95,6 +99,12 @@ impl TimeSeriesServiceStatisticsBuilder {
     ) -> Self {
         self.edge_summary_statistics = input;
         self
+    }
+    /// <p>Response statistics for an edge.</p>
+    pub fn get_edge_summary_statistics(
+        &self,
+    ) -> &::std::option::Option<crate::types::EdgeStatistics> {
+        &self.edge_summary_statistics
     }
     /// <p>Response statistics for a service.</p>
     pub fn service_summary_statistics(mut self, input: crate::types::ServiceStatistics) -> Self {
@@ -109,6 +119,12 @@ impl TimeSeriesServiceStatisticsBuilder {
         self.service_summary_statistics = input;
         self
     }
+    /// <p>Response statistics for a service.</p>
+    pub fn get_service_summary_statistics(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServiceStatistics> {
+        &self.service_summary_statistics
+    }
     /// <p>The forecasted high and low fault count values.</p>
     pub fn service_forecast_statistics(mut self, input: crate::types::ForecastStatistics) -> Self {
         self.service_forecast_statistics = ::std::option::Option::Some(input);
@@ -121,6 +137,12 @@ impl TimeSeriesServiceStatisticsBuilder {
     ) -> Self {
         self.service_forecast_statistics = input;
         self
+    }
+    /// <p>The forecasted high and low fault count values.</p>
+    pub fn get_service_forecast_statistics(
+        &self,
+    ) -> &::std::option::Option<crate::types::ForecastStatistics> {
+        &self.service_forecast_statistics
     }
     /// Appends an item to `response_time_histogram`.
     ///
@@ -140,6 +162,12 @@ impl TimeSeriesServiceStatisticsBuilder {
     ) -> Self {
         self.response_time_histogram = input;
         self
+    }
+    /// <p>The response time histogram for the selected entities.</p>
+    pub fn get_response_time_histogram(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HistogramEntry>> {
+        &self.response_time_histogram
     }
     /// Consumes the builder and constructs a [`TimeSeriesServiceStatistics`](crate::types::TimeSeriesServiceStatistics).
     pub fn build(self) -> crate::types::TimeSeriesServiceStatistics {

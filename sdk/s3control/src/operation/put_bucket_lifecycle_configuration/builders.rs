@@ -46,6 +46,10 @@ impl PutBucketLifecycleConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutBucketLifecycleConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_bucket_lifecycle_configuration::builders::PutBucketLifecycleConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -110,6 +114,10 @@ impl PutBucketLifecycleConfigurationFluentBuilder {
         self.inner = self.inner.set_account_id(input);
         self
     }
+    /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// <p>The name of the bucket for which to set the configuration.</p>
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bucket(input.into());
@@ -119,6 +127,10 @@ impl PutBucketLifecycleConfigurationFluentBuilder {
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bucket(input);
         self
+    }
+    /// <p>The name of the bucket for which to set the configuration.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bucket()
     }
     /// <p>Container for lifecycle rules. You can add as many as 1,000 rules.</p>
     pub fn lifecycle_configuration(mut self, input: crate::types::LifecycleConfiguration) -> Self {
@@ -132,5 +144,11 @@ impl PutBucketLifecycleConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_lifecycle_configuration(input);
         self
+    }
+    /// <p>Container for lifecycle rules. You can add as many as 1,000 rules.</p>
+    pub fn get_lifecycle_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::LifecycleConfiguration> {
+        self.inner.get_lifecycle_configuration()
     }
 }

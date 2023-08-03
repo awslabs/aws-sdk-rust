@@ -74,6 +74,10 @@ impl AwsVpcSecurityGroupViolationBuilder {
         self.violation_target = input;
         self
     }
+    /// <p>The security group rule that is being evaluated.</p>
+    pub fn get_violation_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.violation_target
+    }
     /// <p>A description of the security group that violates the policy.</p>
     pub fn violation_target_description(
         mut self,
@@ -89,6 +93,12 @@ impl AwsVpcSecurityGroupViolationBuilder {
     ) -> Self {
         self.violation_target_description = input;
         self
+    }
+    /// <p>A description of the security group that violates the policy.</p>
+    pub fn get_violation_target_description(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.violation_target_description
     }
     /// Appends an item to `partial_matches`.
     ///
@@ -108,6 +118,12 @@ impl AwsVpcSecurityGroupViolationBuilder {
     ) -> Self {
         self.partial_matches = input;
         self
+    }
+    /// <p>List of rules specified in the security group of the Firewall Manager policy that partially match the <code>ViolationTarget</code> rule.</p>
+    pub fn get_partial_matches(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PartialMatch>> {
+        &self.partial_matches
     }
     /// Appends an item to `possible_security_group_remediation_actions`.
     ///
@@ -132,6 +148,12 @@ impl AwsVpcSecurityGroupViolationBuilder {
     ) -> Self {
         self.possible_security_group_remediation_actions = input;
         self
+    }
+    /// <p>Remediation options for the rule specified in the <code>ViolationTarget</code>.</p>
+    pub fn get_possible_security_group_remediation_actions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupRemediationAction>> {
+        &self.possible_security_group_remediation_actions
     }
     /// Consumes the builder and constructs a [`AwsVpcSecurityGroupViolation`](crate::types::AwsVpcSecurityGroupViolation).
     pub fn build(self) -> crate::types::AwsVpcSecurityGroupViolation {

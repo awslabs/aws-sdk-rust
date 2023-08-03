@@ -39,6 +39,10 @@ impl DescribeAuditMitigationActionsTaskInputBuilder {
         self.task_id = input;
         self
     }
+    /// <p>The unique identifier for the audit mitigation task.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_id
+    }
     /// Consumes the builder and constructs a [`DescribeAuditMitigationActionsTaskInput`](crate::operation::describe_audit_mitigation_actions_task::DescribeAuditMitigationActionsTaskInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_audit_mitigation_actions_task::DescribeAuditMitigationActionsTaskInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

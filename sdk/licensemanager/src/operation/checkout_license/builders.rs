@@ -38,6 +38,12 @@ impl CheckoutLicenseFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CheckoutLicense as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::checkout_license::builders::CheckoutLicenseInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +134,10 @@ impl CheckoutLicenseFluentBuilder {
         self.inner = self.inner.set_product_sku(input);
         self
     }
+    /// <p>Product SKU.</p>
+    pub fn get_product_sku(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_product_sku()
+    }
     /// <p>Checkout type.</p>
     pub fn checkout_type(mut self, input: crate::types::CheckoutType) -> Self {
         self.inner = self.inner.checkout_type(input);
@@ -140,6 +150,10 @@ impl CheckoutLicenseFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_checkout_type(input);
         self
+    }
+    /// <p>Checkout type.</p>
+    pub fn get_checkout_type(&self) -> &::std::option::Option<crate::types::CheckoutType> {
+        self.inner.get_checkout_type()
     }
     /// <p>Key fingerprint identifying the license.</p>
     pub fn key_fingerprint(
@@ -156,6 +170,10 @@ impl CheckoutLicenseFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_key_fingerprint(input);
         self
+    }
+    /// <p>Key fingerprint identifying the license.</p>
+    pub fn get_key_fingerprint(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_key_fingerprint()
     }
     /// Appends an item to `Entitlements`.
     ///
@@ -174,6 +192,12 @@ impl CheckoutLicenseFluentBuilder {
         self.inner = self.inner.set_entitlements(input);
         self
     }
+    /// <p>License entitlements.</p>
+    pub fn get_entitlements(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EntitlementData>> {
+        self.inner.get_entitlements()
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -183,6 +207,10 @@ impl CheckoutLicenseFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// <p>License beneficiary.</p>
     pub fn beneficiary(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -194,6 +222,10 @@ impl CheckoutLicenseFluentBuilder {
         self.inner = self.inner.set_beneficiary(input);
         self
     }
+    /// <p>License beneficiary.</p>
+    pub fn get_beneficiary(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_beneficiary()
+    }
     /// <p>Node ID.</p>
     pub fn node_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.node_id(input.into());
@@ -203,5 +235,9 @@ impl CheckoutLicenseFluentBuilder {
     pub fn set_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_node_id(input);
         self
+    }
+    /// <p>Node ID.</p>
+    pub fn get_node_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_node_id()
     }
 }

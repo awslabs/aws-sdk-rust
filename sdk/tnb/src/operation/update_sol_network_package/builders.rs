@@ -39,6 +39,13 @@ impl UpdateSolNetworkPackageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateSolNetworkPackage as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_sol_network_package::builders::UpdateSolNetworkPackageInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +136,10 @@ impl UpdateSolNetworkPackageFluentBuilder {
         self.inner = self.inner.set_nsd_info_id(input);
         self
     }
+    /// <p>ID of the network service descriptor in the network package.</p>
+    pub fn get_nsd_info_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_nsd_info_id()
+    }
     /// <p>Operational state of the network service descriptor in the network package.</p>
     pub fn nsd_operational_state(mut self, input: crate::types::NsdOperationalState) -> Self {
         self.inner = self.inner.nsd_operational_state(input);
@@ -141,5 +152,11 @@ impl UpdateSolNetworkPackageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_nsd_operational_state(input);
         self
+    }
+    /// <p>Operational state of the network service descriptor in the network package.</p>
+    pub fn get_nsd_operational_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::NsdOperationalState> {
+        self.inner.get_nsd_operational_state()
     }
 }

@@ -39,6 +39,10 @@ impl CancelOrderInputBuilder {
         self.order_id = input;
         self
     }
+    /// <p> The ID of the order. </p>
+    pub fn get_order_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.order_id
+    }
     /// Consumes the builder and constructs a [`CancelOrderInput`](crate::operation::cancel_order::CancelOrderInput).
     pub fn build(
         self,

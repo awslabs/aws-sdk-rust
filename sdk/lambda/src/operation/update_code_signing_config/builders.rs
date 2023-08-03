@@ -37,6 +37,13 @@ impl UpdateCodeSigningConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateCodeSigningConfig as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_code_signing_config::builders::UpdateCodeSigningConfigInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl UpdateCodeSigningConfigFluentBuilder {
         self.inner = self.inner.set_code_signing_config_arn(input);
         self
     }
+    /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
+    pub fn get_code_signing_config_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_code_signing_config_arn()
+    }
     /// <p>Descriptive name for this code signing configuration.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -142,6 +153,10 @@ impl UpdateCodeSigningConfigFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>Descriptive name for this code signing configuration.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>Signing profiles for this code signing configuration.</p>
     pub fn allowed_publishers(mut self, input: crate::types::AllowedPublishers) -> Self {
@@ -156,6 +171,12 @@ impl UpdateCodeSigningConfigFluentBuilder {
         self.inner = self.inner.set_allowed_publishers(input);
         self
     }
+    /// <p>Signing profiles for this code signing configuration.</p>
+    pub fn get_allowed_publishers(
+        &self,
+    ) -> &::std::option::Option<crate::types::AllowedPublishers> {
+        self.inner.get_allowed_publishers()
+    }
     /// <p>The code signing policy.</p>
     pub fn code_signing_policies(mut self, input: crate::types::CodeSigningPolicies) -> Self {
         self.inner = self.inner.code_signing_policies(input);
@@ -168,5 +189,11 @@ impl UpdateCodeSigningConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_code_signing_policies(input);
         self
+    }
+    /// <p>The code signing policy.</p>
+    pub fn get_code_signing_policies(
+        &self,
+    ) -> &::std::option::Option<crate::types::CodeSigningPolicies> {
+        self.inner.get_code_signing_policies()
     }
 }

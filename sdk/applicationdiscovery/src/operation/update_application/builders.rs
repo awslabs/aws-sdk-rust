@@ -36,6 +36,12 @@ impl UpdateApplicationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateApplication as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_application::builders::UpdateApplicationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateApplicationFluentBuilder {
         self.inner = self.inner.set_configuration_id(input);
         self
     }
+    /// <p>Configuration ID of the application to be updated.</p>
+    pub fn get_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration_id()
+    }
     /// <p>New name of the application to be updated.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -142,6 +152,10 @@ impl UpdateApplicationFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>New name of the application to be updated.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>New description of the application to be updated.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -151,5 +165,9 @@ impl UpdateApplicationFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>New description of the application to be updated.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
 }

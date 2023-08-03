@@ -70,6 +70,10 @@ impl RuleUpdateBuilder {
         self.rule_identifier = input;
         self
     }
+    /// <p>The ID or Amazon Resource Name (ARN) of the rule.</p>
+    pub fn get_rule_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_identifier
+    }
     /// <p>The rule match.</p>
     pub fn r#match(mut self, input: crate::types::RuleMatch) -> Self {
         self.r#match = ::std::option::Option::Some(input);
@@ -79,6 +83,10 @@ impl RuleUpdateBuilder {
     pub fn set_match(mut self, input: ::std::option::Option<crate::types::RuleMatch>) -> Self {
         self.r#match = input;
         self
+    }
+    /// <p>The rule match.</p>
+    pub fn get_match(&self) -> &::std::option::Option<crate::types::RuleMatch> {
+        &self.r#match
     }
     /// <p>The rule priority. A listener can't have multiple rules with the same priority.</p>
     pub fn priority(mut self, input: i32) -> Self {
@@ -90,6 +98,10 @@ impl RuleUpdateBuilder {
         self.priority = input;
         self
     }
+    /// <p>The rule priority. A listener can't have multiple rules with the same priority.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
+    }
     /// <p>The rule action.</p>
     pub fn action(mut self, input: crate::types::RuleAction) -> Self {
         self.action = ::std::option::Option::Some(input);
@@ -99,6 +111,10 @@ impl RuleUpdateBuilder {
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::RuleAction>) -> Self {
         self.action = input;
         self
+    }
+    /// <p>The rule action.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::RuleAction> {
+        &self.action
     }
     /// Consumes the builder and constructs a [`RuleUpdate`](crate::types::RuleUpdate).
     pub fn build(self) -> crate::types::RuleUpdate {

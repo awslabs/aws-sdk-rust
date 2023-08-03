@@ -51,6 +51,12 @@ impl SearchResourcesBucketCriteriaBuilder {
         self.excludes = input;
         self
     }
+    /// <p>The property- and tag-based conditions that determine which buckets to exclude from the results.</p>
+    pub fn get_excludes(
+        &self,
+    ) -> &::std::option::Option<crate::types::SearchResourcesCriteriaBlock> {
+        &self.excludes
+    }
     /// <p>The property- and tag-based conditions that determine which buckets to include in the results.</p>
     pub fn includes(mut self, input: crate::types::SearchResourcesCriteriaBlock) -> Self {
         self.includes = ::std::option::Option::Some(input);
@@ -63,6 +69,12 @@ impl SearchResourcesBucketCriteriaBuilder {
     ) -> Self {
         self.includes = input;
         self
+    }
+    /// <p>The property- and tag-based conditions that determine which buckets to include in the results.</p>
+    pub fn get_includes(
+        &self,
+    ) -> &::std::option::Option<crate::types::SearchResourcesCriteriaBlock> {
+        &self.includes
     }
     /// Consumes the builder and constructs a [`SearchResourcesBucketCriteria`](crate::types::SearchResourcesBucketCriteria).
     pub fn build(self) -> crate::types::SearchResourcesBucketCriteria {

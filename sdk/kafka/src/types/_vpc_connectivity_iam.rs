@@ -40,6 +40,10 @@ impl VpcConnectivityIamBuilder {
         self.enabled = input;
         self
     }
+    /// <p>SASL/IAM authentication is on or off for VPC connectivity.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// Consumes the builder and constructs a [`VpcConnectivityIam`](crate::types::VpcConnectivityIam).
     pub fn build(self) -> crate::types::VpcConnectivityIam {
         crate::types::VpcConnectivityIam {

@@ -56,6 +56,10 @@ impl DependentEntityBuilder {
         self.relation_type = input;
         self
     }
+    /// <p>The type of relationship between one resource and the other resource that it is related to or depends on.</p>
+    pub fn get_relation_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.relation_type
+    }
     /// Appends an item to `dependent_resource_ids`.
     ///
     /// To override the contents of this collection use [`set_dependent_resource_ids`](Self::set_dependent_resource_ids).
@@ -77,6 +81,12 @@ impl DependentEntityBuilder {
     ) -> Self {
         self.dependent_resource_ids = input;
         self
+    }
+    /// <p>The Amazon Resource Names (ARNs) of the dependent resources.</p>
+    pub fn get_dependent_resource_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.dependent_resource_ids
     }
     /// Consumes the builder and constructs a [`DependentEntity`](crate::types::DependentEntity).
     pub fn build(self) -> crate::types::DependentEntity {

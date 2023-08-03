@@ -64,6 +64,10 @@ impl EventDetailsBuilder {
         self.event = input;
         self
     }
+    /// <p>Summary information about the event.</p>
+    pub fn get_event(&self) -> &::std::option::Option<crate::types::Event> {
+        &self.event
+    }
     /// <p>The most recent description of the event.</p>
     pub fn event_description(mut self, input: crate::types::EventDescription) -> Self {
         self.event_description = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl EventDetailsBuilder {
     ) -> Self {
         self.event_description = input;
         self
+    }
+    /// <p>The most recent description of the event.</p>
+    pub fn get_event_description(&self) -> &::std::option::Option<crate::types::EventDescription> {
+        &self.event_description
     }
     /// Adds a key-value pair to `event_metadata`.
     ///
@@ -101,6 +109,14 @@ impl EventDetailsBuilder {
     ) -> Self {
         self.event_metadata = input;
         self
+    }
+    /// <p>Additional metadata about the event.</p>
+    pub fn get_event_metadata(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.event_metadata
     }
     /// Consumes the builder and constructs a [`EventDetails`](crate::types::EventDetails).
     pub fn build(self) -> crate::types::EventDetails {

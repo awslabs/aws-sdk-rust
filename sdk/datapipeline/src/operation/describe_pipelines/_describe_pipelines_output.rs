@@ -61,6 +61,12 @@ impl DescribePipelinesOutputBuilder {
         self.pipeline_description_list = input;
         self
     }
+    /// <p>An array of descriptions for the specified pipelines.</p>
+    pub fn get_pipeline_description_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineDescription>> {
+        &self.pipeline_description_list
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

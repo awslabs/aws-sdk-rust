@@ -50,6 +50,12 @@ impl VariableImportanceMetricsBuilder {
         self.log_odds_metrics = input;
         self
     }
+    /// <p>List of variable metrics.</p>
+    pub fn get_log_odds_metrics(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LogOddsMetric>> {
+        &self.log_odds_metrics
+    }
     /// Consumes the builder and constructs a [`VariableImportanceMetrics`](crate::types::VariableImportanceMetrics).
     pub fn build(self) -> crate::types::VariableImportanceMetrics {
         crate::types::VariableImportanceMetrics {

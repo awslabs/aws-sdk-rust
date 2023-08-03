@@ -48,6 +48,10 @@ impl ProtectedQueryErrorBuilder {
         self.message = input;
         self
     }
+    /// <p>A description of why the query failed.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>An error code for the error.</p>
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl ProtectedQueryErrorBuilder {
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code = input;
         self
+    }
+    /// <p>An error code for the error.</p>
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
     }
     /// Consumes the builder and constructs a [`ProtectedQueryError`](crate::types::ProtectedQueryError).
     pub fn build(self) -> crate::types::ProtectedQueryError {

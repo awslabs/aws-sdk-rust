@@ -110,6 +110,10 @@ impl StopImportOutputBuilder {
         self.import_id = input;
         self
     }
+    /// <p> The ID for the import. </p>
+    pub fn get_import_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.import_id
+    }
     /// <p> The source S3 bucket for the import. </p>
     pub fn import_source(mut self, input: crate::types::ImportSource) -> Self {
         self.import_source = ::std::option::Option::Some(input);
@@ -122,6 +126,10 @@ impl StopImportOutputBuilder {
     ) -> Self {
         self.import_source = input;
         self
+    }
+    /// <p> The source S3 bucket for the import. </p>
+    pub fn get_import_source(&self) -> &::std::option::Option<crate::types::ImportSource> {
+        &self.import_source
     }
     /// Appends an item to `destinations`.
     ///
@@ -142,6 +150,12 @@ impl StopImportOutputBuilder {
         self.destinations = input;
         self
     }
+    /// <p> The ARN of the destination event data store. </p>
+    pub fn get_destinations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.destinations
+    }
     /// <p> The status of the import. </p>
     pub fn import_status(mut self, input: crate::types::ImportStatus) -> Self {
         self.import_status = ::std::option::Option::Some(input);
@@ -154,6 +168,10 @@ impl StopImportOutputBuilder {
     ) -> Self {
         self.import_status = input;
         self
+    }
+    /// <p> The status of the import. </p>
+    pub fn get_import_status(&self) -> &::std::option::Option<crate::types::ImportStatus> {
+        &self.import_status
     }
     /// <p> The timestamp of the import's creation. </p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -168,6 +186,10 @@ impl StopImportOutputBuilder {
         self.created_timestamp = input;
         self
     }
+    /// <p> The timestamp of the import's creation. </p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
+    }
     /// <p> The timestamp of the import's last update. </p>
     pub fn updated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_timestamp = ::std::option::Option::Some(input);
@@ -180,6 +202,10 @@ impl StopImportOutputBuilder {
     ) -> Self {
         self.updated_timestamp = input;
         self
+    }
+    /// <p> The timestamp of the import's last update. </p>
+    pub fn get_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_timestamp
     }
     /// <p> Used with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
     pub fn start_event_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -194,6 +220,10 @@ impl StopImportOutputBuilder {
         self.start_event_time = input;
         self
     }
+    /// <p> Used with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+    pub fn get_start_event_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_event_time
+    }
     /// <p> Used with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
     pub fn end_event_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_event_time = ::std::option::Option::Some(input);
@@ -207,6 +237,10 @@ impl StopImportOutputBuilder {
         self.end_event_time = input;
         self
     }
+    /// <p> Used with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
+    pub fn get_end_event_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_event_time
+    }
     /// <p> Returns information on the stopped import. </p>
     pub fn import_statistics(mut self, input: crate::types::ImportStatistics) -> Self {
         self.import_statistics = ::std::option::Option::Some(input);
@@ -219,6 +253,10 @@ impl StopImportOutputBuilder {
     ) -> Self {
         self.import_statistics = input;
         self
+    }
+    /// <p> Returns information on the stopped import. </p>
+    pub fn get_import_statistics(&self) -> &::std::option::Option<crate::types::ImportStatistics> {
+        &self.import_statistics
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

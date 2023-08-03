@@ -79,6 +79,10 @@ impl QueryTableRowsOutputBuilder {
         self.column_ids = input;
         self
     }
+    /// <p> The list of columns in the table whose row data is returned in the result. </p>
+    pub fn get_column_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.column_ids
+    }
     /// Appends an item to `rows`.
     ///
     /// To override the contents of this collection use [`set_rows`](Self::set_rows).
@@ -98,6 +102,10 @@ impl QueryTableRowsOutputBuilder {
         self.rows = input;
         self
     }
+    /// <p> The list of rows in the table that match the query filter. </p>
+    pub fn get_rows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TableRow>> {
+        &self.rows
+    }
     /// <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -108,6 +116,10 @@ impl QueryTableRowsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p> Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
     pub fn workbook_cursor(mut self, input: i64) -> Self {
         self.workbook_cursor = ::std::option::Option::Some(input);
@@ -117,6 +129,10 @@ impl QueryTableRowsOutputBuilder {
     pub fn set_workbook_cursor(mut self, input: ::std::option::Option<i64>) -> Self {
         self.workbook_cursor = input;
         self
+    }
+    /// <p> Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
+    pub fn get_workbook_cursor(&self) -> &::std::option::Option<i64> {
+        &self.workbook_cursor
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

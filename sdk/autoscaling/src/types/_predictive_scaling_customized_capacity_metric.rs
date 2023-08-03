@@ -50,6 +50,12 @@ impl PredictiveScalingCustomizedCapacityMetricBuilder {
         self.metric_data_queries = input;
         self
     }
+    /// <p>One or more metric data queries to provide the data points for a capacity metric. Use multiple metric data queries only if you are performing a math expression on returned data. </p>
+    pub fn get_metric_data_queries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDataQuery>> {
+        &self.metric_data_queries
+    }
     /// Consumes the builder and constructs a [`PredictiveScalingCustomizedCapacityMetric`](crate::types::PredictiveScalingCustomizedCapacityMetric).
     pub fn build(self) -> crate::types::PredictiveScalingCustomizedCapacityMetric {
         crate::types::PredictiveScalingCustomizedCapacityMetric {

@@ -80,6 +80,10 @@ impl VoiceMessageBuilder {
         self.body = input;
         self
     }
+    /// <p>The text of the script to use for the voice message.</p>
+    pub fn get_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.body
+    }
     /// <p>The code for the language to use when synthesizing the text of the message script. For a list of supported languages and the code for each one, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.</p>
     pub fn language_code(
         mut self,
@@ -96,6 +100,10 @@ impl VoiceMessageBuilder {
         self.language_code = input;
         self
     }
+    /// <p>The code for the language to use when synthesizing the text of the message script. For a list of supported languages and the code for each one, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.language_code
+    }
     /// <p>The long code to send the voice message from. This value should be one of the dedicated long codes that's assigned to your AWS account. Although it isn't required, we recommend that you specify the long code in E.164 format, for example +12065550100, to ensure prompt and accurate delivery of the message.</p>
     pub fn origination_number(
         mut self,
@@ -111,6 +119,10 @@ impl VoiceMessageBuilder {
     ) -> Self {
         self.origination_number = input;
         self
+    }
+    /// <p>The long code to send the voice message from. This value should be one of the dedicated long codes that's assigned to your AWS account. Although it isn't required, we recommend that you specify the long code in E.164 format, for example +12065550100, to ensure prompt and accurate delivery of the message.</p>
+    pub fn get_origination_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.origination_number
     }
     /// Adds a key-value pair to `substitutions`.
     ///
@@ -140,6 +152,14 @@ impl VoiceMessageBuilder {
         self.substitutions = input;
         self
     }
+    /// <p>The default message variables to use in the voice message. You can override the default variables with individual address variables.</p>
+    pub fn get_substitutions(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
+    > {
+        &self.substitutions
+    }
     /// <p>The name of the voice to use when delivering the message. For a list of supported voices, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.</p>
     pub fn voice_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_id = ::std::option::Option::Some(input.into());
@@ -149,6 +169,10 @@ impl VoiceMessageBuilder {
     pub fn set_voice_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.voice_id = input;
         self
+    }
+    /// <p>The name of the voice to use when delivering the message. For a list of supported voices, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.</p>
+    pub fn get_voice_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_id
     }
     /// Consumes the builder and constructs a [`VoiceMessage`](crate::types::VoiceMessage).
     pub fn build(self) -> crate::types::VoiceMessage {

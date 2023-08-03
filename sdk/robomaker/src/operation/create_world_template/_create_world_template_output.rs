@@ -88,6 +88,10 @@ impl CreateWorldTemplateOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the world template.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(
         mut self,
@@ -104,6 +108,10 @@ impl CreateWorldTemplateOutputBuilder {
         self.client_request_token = input;
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
+    }
     /// <p>The time, in milliseconds since the epoch, when the world template was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -117,6 +125,10 @@ impl CreateWorldTemplateOutputBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The time, in milliseconds since the epoch, when the world template was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The name of the world template.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -126,6 +138,10 @@ impl CreateWorldTemplateOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the world template.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -151,6 +167,14 @@ impl CreateWorldTemplateOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A map that contains tag keys and tag values that are attached to the world template.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

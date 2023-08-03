@@ -43,6 +43,12 @@ impl GetRecommendationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetRecommendations as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_recommendations::builders::GetRecommendationsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl GetRecommendationsFluentBuilder {
         self.inner = self.inner.set_campaign_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the campaign to use for getting recommendations.</p>
+    pub fn get_campaign_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_campaign_arn()
+    }
     /// <p>The item ID to provide recommendations for.</p>
     /// <p>Required for <code>RELATED_ITEMS</code> recipe type.</p>
     pub fn item_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -144,6 +154,11 @@ impl GetRecommendationsFluentBuilder {
     pub fn set_item_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_item_id(input);
         self
+    }
+    /// <p>The item ID to provide recommendations for.</p>
+    /// <p>Required for <code>RELATED_ITEMS</code> recipe type.</p>
+    pub fn get_item_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_item_id()
     }
     /// <p>The user ID to provide recommendations for.</p>
     /// <p>Required for <code>USER_PERSONALIZATION</code> recipe type.</p>
@@ -157,6 +172,11 @@ impl GetRecommendationsFluentBuilder {
         self.inner = self.inner.set_user_id(input);
         self
     }
+    /// <p>The user ID to provide recommendations for.</p>
+    /// <p>Required for <code>USER_PERSONALIZATION</code> recipe type.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_id()
+    }
     /// <p>The number of results to return. The default is 25. The maximum is 500.</p>
     pub fn num_results(mut self, input: i32) -> Self {
         self.inner = self.inner.num_results(input);
@@ -166,6 +186,10 @@ impl GetRecommendationsFluentBuilder {
     pub fn set_num_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_num_results(input);
         self
+    }
+    /// <p>The number of results to return. The default is 25. The maximum is 500.</p>
+    pub fn get_num_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_num_results()
     }
     /// Adds a key-value pair to `context`.
     ///
@@ -190,6 +214,14 @@ impl GetRecommendationsFluentBuilder {
         self.inner = self.inner.set_context(input);
         self
     }
+    /// <p>The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction information that might be relevant when getting a user's recommendations, such as the user's current location or device type.</p>
+    pub fn get_context(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_context()
+    }
     /// <p>The ARN of the filter to apply to the returned recommendations. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering Recommendations</a>.</p>
     /// <p>When using this parameter, be sure the filter resource is <code>ACTIVE</code>.</p>
     pub fn filter_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -201,6 +233,11 @@ impl GetRecommendationsFluentBuilder {
     pub fn set_filter_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_filter_arn(input);
         self
+    }
+    /// <p>The ARN of the filter to apply to the returned recommendations. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering Recommendations</a>.</p>
+    /// <p>When using this parameter, be sure the filter resource is <code>ACTIVE</code>.</p>
+    pub fn get_filter_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_filter_arn()
     }
     /// Adds a key-value pair to `filterValues`.
     ///
@@ -229,6 +266,16 @@ impl GetRecommendationsFluentBuilder {
         self.inner = self.inner.set_filter_values(input);
         self
     }
+    /// <p>The values to use when filtering recommendations. For each placeholder parameter in your filter expression, provide the parameter name (in matching case) as a key and the filter value(s) as the corresponding value. Separate multiple values for one parameter with a comma. </p>
+    /// <p>For filter expressions that use an <code>INCLUDE</code> element to include items, you must provide values for all parameters that are defined in the expression. For filters with expressions that use an <code>EXCLUDE</code> element to exclude items, you can omit the <code>filter-values</code>.In this case, Amazon Personalize doesn't use that portion of the expression to filter recommendations.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering recommendations and user segments</a>.</p>
+    pub fn get_filter_values(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_filter_values()
+    }
     /// <p>The Amazon Resource Name (ARN) of the recommender to use to get recommendations. Provide a recommender ARN if you created a Domain dataset group with a recommender for a domain use case.</p>
     pub fn recommender_arn(
         mut self,
@@ -244,6 +291,10 @@ impl GetRecommendationsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_recommender_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the recommender to use to get recommendations. Provide a recommender ARN if you created a Domain dataset group with a recommender for a domain use case.</p>
+    pub fn get_recommender_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_recommender_arn()
     }
     /// Appends an item to `promotions`.
     ///
@@ -261,5 +312,11 @@ impl GetRecommendationsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_promotions(input);
         self
+    }
+    /// <p>The promotions to apply to the recommendation request. A promotion defines additional business rules that apply to a configurable subset of recommended items.</p>
+    pub fn get_promotions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Promotion>> {
+        self.inner.get_promotions()
     }
 }

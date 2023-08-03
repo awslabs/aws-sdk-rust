@@ -48,6 +48,10 @@ impl MetadataKeyValuePairBuilder {
         self.metadata_key = input;
         self
     }
+    /// <p>A metadata key.</p>
+    pub fn get_metadata_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metadata_key
+    }
     /// <p>A metadata key’s corresponding value.</p>
     pub fn metadata_value(
         mut self,
@@ -63,6 +67,10 @@ impl MetadataKeyValuePairBuilder {
     ) -> Self {
         self.metadata_value = input;
         self
+    }
+    /// <p>A metadata key’s corresponding value.</p>
+    pub fn get_metadata_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metadata_value
     }
     /// Consumes the builder and constructs a [`MetadataKeyValuePair`](crate::types::MetadataKeyValuePair).
     pub fn build(self) -> crate::types::MetadataKeyValuePair {

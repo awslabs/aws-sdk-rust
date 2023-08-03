@@ -47,6 +47,10 @@ impl UntagResourceInputBuilder {
         self.workload_arn = input;
         self
     }
+    /// <p>The ARN for the workload.</p>
+    pub fn get_workload_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workload_arn
+    }
     /// Appends an item to `tag_keys`.
     ///
     /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
@@ -65,6 +69,10 @@ impl UntagResourceInputBuilder {
     ) -> Self {
         self.tag_keys = input;
         self
+    }
+    /// <p>A list of tag keys. Existing tags of the resource whose keys are members of this list are removed from the resource.</p>
+    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tag_keys
     }
     /// Consumes the builder and constructs a [`UntagResourceInput`](crate::operation::untag_resource::UntagResourceInput).
     pub fn build(

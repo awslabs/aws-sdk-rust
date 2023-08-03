@@ -60,6 +60,12 @@ impl AddThingsToThingGroupParamsBuilder {
         self.thing_group_names = input;
         self
     }
+    /// <p>The list of groups to which you want to add the things that triggered the mitigation action. You can add a thing to a maximum of 10 groups, but you can't add a thing to more than one group in the same hierarchy.</p>
+    pub fn get_thing_group_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.thing_group_names
+    }
     /// <p>Specifies if this mitigation action can move the things that triggered the mitigation action even if they are part of one or more dynamic thing groups.</p>
     pub fn override_dynamic_groups(mut self, input: bool) -> Self {
         self.override_dynamic_groups = ::std::option::Option::Some(input);
@@ -69,6 +75,10 @@ impl AddThingsToThingGroupParamsBuilder {
     pub fn set_override_dynamic_groups(mut self, input: ::std::option::Option<bool>) -> Self {
         self.override_dynamic_groups = input;
         self
+    }
+    /// <p>Specifies if this mitigation action can move the things that triggered the mitigation action even if they are part of one or more dynamic thing groups.</p>
+    pub fn get_override_dynamic_groups(&self) -> &::std::option::Option<bool> {
+        &self.override_dynamic_groups
     }
     /// Consumes the builder and constructs a [`AddThingsToThingGroupParams`](crate::types::AddThingsToThingGroupParams).
     pub fn build(self) -> crate::types::AddThingsToThingGroupParams {

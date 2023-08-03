@@ -38,6 +38,13 @@ impl DisassociateHealthCheckFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociateHealthCheck as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::disassociate_health_check::builders::DisassociateHealthCheckInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +141,10 @@ impl DisassociateHealthCheckFluentBuilder {
         self.inner = self.inner.set_protection_id(input);
         self
     }
+    /// <p>The unique identifier (ID) for the <code>Protection</code> object to remove the health check association from. </p>
+    pub fn get_protection_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_protection_id()
+    }
     /// <p>The Amazon Resource Name (ARN) of the health check that is associated with the protection.</p>
     pub fn health_check_arn(
         mut self,
@@ -149,5 +160,9 @@ impl DisassociateHealthCheckFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_health_check_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the health check that is associated with the protection.</p>
+    pub fn get_health_check_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_health_check_arn()
     }
 }

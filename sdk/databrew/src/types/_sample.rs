@@ -48,6 +48,10 @@ impl SampleBuilder {
         self.size = input;
         self
     }
+    /// <p>The number of rows in the sample.</p>
+    pub fn get_size(&self) -> &::std::option::Option<i32> {
+        &self.size
+    }
     /// <p>The way in which DataBrew obtains rows from a dataset.</p>
     pub fn r#type(mut self, input: crate::types::SampleType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl SampleBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::SampleType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The way in which DataBrew obtains rows from a dataset.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::SampleType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`Sample`](crate::types::Sample).
     pub fn build(self) -> crate::types::Sample {

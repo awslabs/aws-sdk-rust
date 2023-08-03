@@ -56,6 +56,10 @@ impl UpdateLensReviewOutputBuilder {
         self.workload_id = input;
         self
     }
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workload_id
+    }
     /// <p>A lens review of a question.</p>
     pub fn lens_review(mut self, input: crate::types::LensReview) -> Self {
         self.lens_review = ::std::option::Option::Some(input);
@@ -68,6 +72,10 @@ impl UpdateLensReviewOutputBuilder {
     ) -> Self {
         self.lens_review = input;
         self
+    }
+    /// <p>A lens review of a question.</p>
+    pub fn get_lens_review(&self) -> &::std::option::Option<crate::types::LensReview> {
+        &self.lens_review
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -61,6 +61,10 @@ impl GetAssociatedRoleOutputBuilder {
         self.associated_at = input;
         self
     }
+    /// The time when the role was associated with the group.
+    pub fn get_associated_at(&self) -> &::std::option::Option<::std::string::String> {
+        &self.associated_at
+    }
     /// The ARN of the role that is associated with the group.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -70,6 +74,10 @@ impl GetAssociatedRoleOutputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// The ARN of the role that is associated with the group.
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

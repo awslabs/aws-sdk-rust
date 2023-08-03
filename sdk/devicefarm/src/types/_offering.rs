@@ -73,6 +73,10 @@ impl OfferingBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID that corresponds to a device offering.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>A string that describes the offering.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -83,6 +87,10 @@ impl OfferingBuilder {
         self.description = input;
         self
     }
+    /// <p>A string that describes the offering.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The type of offering (for example, <code>RECURRING</code>) for a device.</p>
     pub fn r#type(mut self, input: crate::types::OfferingType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -92,6 +100,10 @@ impl OfferingBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::OfferingType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of offering (for example, <code>RECURRING</code>) for a device.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::OfferingType> {
+        &self.r#type
     }
     /// <p>The platform of the device (for example, <code>ANDROID</code> or <code>IOS</code>).</p>
     pub fn platform(mut self, input: crate::types::DevicePlatform) -> Self {
@@ -105,6 +117,10 @@ impl OfferingBuilder {
     ) -> Self {
         self.platform = input;
         self
+    }
+    /// <p>The platform of the device (for example, <code>ANDROID</code> or <code>IOS</code>).</p>
+    pub fn get_platform(&self) -> &::std::option::Option<crate::types::DevicePlatform> {
+        &self.platform
     }
     /// Appends an item to `recurring_charges`.
     ///
@@ -124,6 +140,12 @@ impl OfferingBuilder {
     ) -> Self {
         self.recurring_charges = input;
         self
+    }
+    /// <p>Specifies whether there are recurring charges for the offering.</p>
+    pub fn get_recurring_charges(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>> {
+        &self.recurring_charges
     }
     /// Consumes the builder and constructs a [`Offering`](crate::types::Offering).
     pub fn build(self) -> crate::types::Offering {

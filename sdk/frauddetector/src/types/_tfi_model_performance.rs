@@ -48,6 +48,10 @@ impl TfiModelPerformanceBuilder {
         self.auc = input;
         self
     }
+    /// <p> The area under the curve (auc). This summarizes the total positive rate (tpr) and false positive rate (FPR) across all possible model score thresholds. </p>
+    pub fn get_auc(&self) -> &::std::option::Option<f32> {
+        &self.auc
+    }
     /// <p> Indicates the range of area under curve (auc) expected from the TFI model. A range greater than 0.1 indicates higher model uncertainity. </p>
     pub fn uncertainty_range(mut self, input: crate::types::UncertaintyRange) -> Self {
         self.uncertainty_range = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl TfiModelPerformanceBuilder {
     ) -> Self {
         self.uncertainty_range = input;
         self
+    }
+    /// <p> Indicates the range of area under curve (auc) expected from the TFI model. A range greater than 0.1 indicates higher model uncertainity. </p>
+    pub fn get_uncertainty_range(&self) -> &::std::option::Option<crate::types::UncertaintyRange> {
+        &self.uncertainty_range
     }
     /// Consumes the builder and constructs a [`TfiModelPerformance`](crate::types::TfiModelPerformance).
     pub fn build(self) -> crate::types::TfiModelPerformance {

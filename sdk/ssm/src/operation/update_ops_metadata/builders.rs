@@ -36,6 +36,12 @@ impl UpdateOpsMetadataFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateOpsMetadata as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_ops_metadata::builders::UpdateOpsMetadataInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateOpsMetadataFluentBuilder {
         self.inner = self.inner.set_ops_metadata_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the OpsMetadata Object to update.</p>
+    pub fn get_ops_metadata_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ops_metadata_arn()
+    }
     /// Adds a key-value pair to `MetadataToUpdate`.
     ///
     /// To override the contents of this collection use [`set_metadata_to_update`](Self::set_metadata_to_update).
@@ -155,6 +165,14 @@ impl UpdateOpsMetadataFluentBuilder {
         self.inner = self.inner.set_metadata_to_update(input);
         self
     }
+    /// <p>Metadata to add to an OpsMetadata object.</p>
+    pub fn get_metadata_to_update(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>,
+    > {
+        self.inner.get_metadata_to_update()
+    }
     /// Appends an item to `KeysToDelete`.
     ///
     /// To override the contents of this collection use [`set_keys_to_delete`](Self::set_keys_to_delete).
@@ -174,5 +192,11 @@ impl UpdateOpsMetadataFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_keys_to_delete(input);
         self
+    }
+    /// <p>The metadata keys to delete from the OpsMetadata object. </p>
+    pub fn get_keys_to_delete(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_keys_to_delete()
     }
 }

@@ -36,6 +36,10 @@ impl DeleteDBInstanceAutomatedBackupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteDBInstanceAutomatedBackup as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_db_instance_automated_backup::builders::DeleteDbInstanceAutomatedBackupInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl DeleteDBInstanceAutomatedBackupFluentBuilder {
         self.inner = self.inner.set_dbi_resource_id(input);
         self
     }
+    /// <p>The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web Services Region.</p>
+    pub fn get_dbi_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dbi_resource_id()
+    }
     /// <p>The Amazon Resource Name (ARN) of the automated backups to delete, for example, <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn db_instance_automated_backups_arn(
@@ -123,5 +131,12 @@ impl DeleteDBInstanceAutomatedBackupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_db_instance_automated_backups_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the automated backups to delete, for example, <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
+    /// <p>This setting doesn't apply to RDS Custom.</p>
+    pub fn get_db_instance_automated_backups_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_instance_automated_backups_arn()
     }
 }

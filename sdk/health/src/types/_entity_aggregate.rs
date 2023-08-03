@@ -56,6 +56,12 @@ impl EntityAggregateBuilder {
         self.event_arn = input;
         self
     }
+    /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
+    /// <p>For example, an event ARN might look like the following:</p>
+    /// <p> <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>
+    pub fn get_event_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_arn
+    }
     /// <p>The number of entities that match the criteria for the specified events.</p>
     pub fn count(mut self, input: i32) -> Self {
         self.count = ::std::option::Option::Some(input);
@@ -65,6 +71,10 @@ impl EntityAggregateBuilder {
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count = input;
         self
+    }
+    /// <p>The number of entities that match the criteria for the specified events.</p>
+    pub fn get_count(&self) -> &::std::option::Option<i32> {
+        &self.count
     }
     /// Consumes the builder and constructs a [`EntityAggregate`](crate::types::EntityAggregate).
     pub fn build(self) -> crate::types::EntityAggregate {

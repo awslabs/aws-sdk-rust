@@ -36,6 +36,10 @@ impl AdminUpdateAuthEventFeedbackFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AdminUpdateAuthEventFeedback as a reference.
+    pub fn as_input(&self) -> &crate::operation::admin_update_auth_event_feedback::builders::AdminUpdateAuthEventFeedbackInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl AdminUpdateAuthEventFeedbackFluentBuilder {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
+    /// <p>The user pool ID.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_pool_id()
+    }
     /// <p>The user pool username.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.username(input.into());
@@ -136,6 +144,10 @@ impl AdminUpdateAuthEventFeedbackFluentBuilder {
         self.inner = self.inner.set_username(input);
         self
     }
+    /// <p>The user pool username.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_username()
+    }
     /// <p>The authentication event ID.</p>
     pub fn event_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_id(input.into());
@@ -145,6 +157,10 @@ impl AdminUpdateAuthEventFeedbackFluentBuilder {
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_id(input);
         self
+    }
+    /// <p>The authentication event ID.</p>
+    pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_event_id()
     }
     /// <p>The authentication event feedback value.</p>
     pub fn feedback_value(mut self, input: crate::types::FeedbackValueType) -> Self {
@@ -158,5 +174,9 @@ impl AdminUpdateAuthEventFeedbackFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_feedback_value(input);
         self
+    }
+    /// <p>The authentication event feedback value.</p>
+    pub fn get_feedback_value(&self) -> &::std::option::Option<crate::types::FeedbackValueType> {
+        self.inner.get_feedback_value()
     }
 }

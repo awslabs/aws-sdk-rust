@@ -36,6 +36,10 @@ impl UpdatePublishingDestinationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdatePublishingDestination as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_publishing_destination::builders::UpdatePublishingDestinationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl UpdatePublishingDestinationFluentBuilder {
         self.inner = self.inner.set_detector_id(input);
         self
     }
+    /// <p>The ID of the detector associated with the publishing destinations to update.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_detector_id()
+    }
     /// <p>The ID of the publishing destination to update.</p>
     pub fn destination_id(
         mut self,
@@ -142,6 +150,10 @@ impl UpdatePublishingDestinationFluentBuilder {
         self.inner = self.inner.set_destination_id(input);
         self
     }
+    /// <p>The ID of the publishing destination to update.</p>
+    pub fn get_destination_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_id()
+    }
     /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing destination.</p>
     pub fn destination_properties(mut self, input: crate::types::DestinationProperties) -> Self {
         self.inner = self.inner.destination_properties(input);
@@ -154,5 +166,11 @@ impl UpdatePublishingDestinationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_destination_properties(input);
         self
+    }
+    /// <p>A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing destination.</p>
+    pub fn get_destination_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::DestinationProperties> {
+        self.inner.get_destination_properties()
     }
 }

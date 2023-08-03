@@ -64,6 +64,12 @@ impl BatchDisassociateServiceActionFromProvisioningArtifactOutputBuilder {
         self.failed_service_action_associations = input;
         self
     }
+    /// <p>An object that contains a list of errors, along with information to help you identify the self-service action.</p>
+    pub fn get_failed_service_action_associations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedServiceActionAssociation>> {
+        &self.failed_service_action_associations
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

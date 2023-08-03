@@ -56,6 +56,10 @@ impl NodeOutputPortBuilder {
         self.name = input;
         self
     }
+    /// <p>The output port's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The output port's description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl NodeOutputPortBuilder {
         self.description = input;
         self
     }
+    /// <p>The output port's description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The output port's type.</p>
     pub fn r#type(mut self, input: crate::types::PortType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl NodeOutputPortBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::PortType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The output port's type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::PortType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`NodeOutputPort`](crate::types::NodeOutputPort).
     pub fn build(self) -> crate::types::NodeOutputPort {

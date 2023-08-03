@@ -73,6 +73,15 @@ impl CreateObservabilityConfigurationInputBuilder {
         self.observability_configuration_name = input;
         self
     }
+    /// <p>A name for the observability configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p> <note>
+    /// <p>The name <code>DefaultConfiguration</code> is reserved. You can't use it to create a new observability configuration, and you can't create a revision of it.</p>
+    /// <p>When you want to use your own observability configuration for your App Runner service, <i>create a configuration with a different name</i>, and then provide it when you create or update your service.</p>
+    /// </note>
+    pub fn get_observability_configuration_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.observability_configuration_name
+    }
     /// <p>The configuration of the tracing feature within this observability configuration. If you don't specify it, App Runner doesn't enable tracing.</p>
     pub fn trace_configuration(mut self, input: crate::types::TraceConfiguration) -> Self {
         self.trace_configuration = ::std::option::Option::Some(input);
@@ -85,6 +94,12 @@ impl CreateObservabilityConfigurationInputBuilder {
     ) -> Self {
         self.trace_configuration = input;
         self
+    }
+    /// <p>The configuration of the tracing feature within this observability configuration. If you don't specify it, App Runner doesn't enable tracing.</p>
+    pub fn get_trace_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::TraceConfiguration> {
+        &self.trace_configuration
     }
     /// Appends an item to `tags`.
     ///
@@ -104,6 +119,10 @@ impl CreateObservabilityConfigurationInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of metadata items that you can associate with your observability configuration resource. A tag is a key-value pair.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateObservabilityConfigurationInput`](crate::operation::create_observability_configuration::CreateObservabilityConfigurationInput).
     pub fn build(

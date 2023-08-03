@@ -55,6 +55,10 @@ impl AnomalyDetectorDataQualityMetricBuilder {
         self.start_timestamp = input;
         self
     }
+    /// <p>The start time for the data quality metrics collection.</p>
+    pub fn get_start_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_timestamp
+    }
     /// Appends an item to `metric_set_data_quality_metric_list`.
     ///
     /// To override the contents of this collection use [`set_metric_set_data_quality_metric_list`](Self::set_metric_set_data_quality_metric_list).
@@ -76,6 +80,12 @@ impl AnomalyDetectorDataQualityMetricBuilder {
     ) -> Self {
         self.metric_set_data_quality_metric_list = input;
         self
+    }
+    /// <p>An array of <code>DataQualityMetricList</code> objects. Each object in the array contains information about a data quality metric.</p>
+    pub fn get_metric_set_data_quality_metric_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricSetDataQualityMetric>> {
+        &self.metric_set_data_quality_metric_list
     }
     /// Consumes the builder and constructs a [`AnomalyDetectorDataQualityMetric`](crate::types::AnomalyDetectorDataQualityMetric).
     pub fn build(self) -> crate::types::AnomalyDetectorDataQualityMetric {

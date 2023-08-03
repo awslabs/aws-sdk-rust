@@ -36,6 +36,12 @@ impl DescribeListenerFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeListener as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_listener::builders::DescribeListenerInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +131,9 @@ impl DescribeListenerFluentBuilder {
     pub fn set_listener_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_listener_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the listener to describe.</p>
+    pub fn get_listener_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_listener_arn()
     }
 }

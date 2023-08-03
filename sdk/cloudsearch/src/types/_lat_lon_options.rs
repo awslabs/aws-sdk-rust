@@ -90,6 +90,10 @@ impl LatLonOptionsBuilder {
         self.default_value = input;
         self
     }
+    /// A value to use for the field if the field isn't specified for a document.
+    pub fn get_default_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_value
+    }
     /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
     /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
     /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
@@ -104,6 +108,12 @@ impl LatLonOptionsBuilder {
         self.source_field = input;
         self
     }
+    /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p>
+    /// <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p>
+    /// <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
+    pub fn get_source_field(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_field
+    }
     /// <p>Whether facet information can be returned for the field.</p>
     pub fn facet_enabled(mut self, input: bool) -> Self {
         self.facet_enabled = ::std::option::Option::Some(input);
@@ -113,6 +123,10 @@ impl LatLonOptionsBuilder {
     pub fn set_facet_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.facet_enabled = input;
         self
+    }
+    /// <p>Whether facet information can be returned for the field.</p>
+    pub fn get_facet_enabled(&self) -> &::std::option::Option<bool> {
+        &self.facet_enabled
     }
     /// <p>Whether the contents of the field are searchable.</p>
     pub fn search_enabled(mut self, input: bool) -> Self {
@@ -124,6 +138,10 @@ impl LatLonOptionsBuilder {
         self.search_enabled = input;
         self
     }
+    /// <p>Whether the contents of the field are searchable.</p>
+    pub fn get_search_enabled(&self) -> &::std::option::Option<bool> {
+        &self.search_enabled
+    }
     /// <p>Whether the contents of the field can be returned in the search results.</p>
     pub fn return_enabled(mut self, input: bool) -> Self {
         self.return_enabled = ::std::option::Option::Some(input);
@@ -134,6 +152,10 @@ impl LatLonOptionsBuilder {
         self.return_enabled = input;
         self
     }
+    /// <p>Whether the contents of the field can be returned in the search results.</p>
+    pub fn get_return_enabled(&self) -> &::std::option::Option<bool> {
+        &self.return_enabled
+    }
     /// <p>Whether the field can be used to sort the search results.</p>
     pub fn sort_enabled(mut self, input: bool) -> Self {
         self.sort_enabled = ::std::option::Option::Some(input);
@@ -143,6 +165,10 @@ impl LatLonOptionsBuilder {
     pub fn set_sort_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.sort_enabled = input;
         self
+    }
+    /// <p>Whether the field can be used to sort the search results.</p>
+    pub fn get_sort_enabled(&self) -> &::std::option::Option<bool> {
+        &self.sort_enabled
     }
     /// Consumes the builder and constructs a [`LatLonOptions`](crate::types::LatLonOptions).
     pub fn build(self) -> crate::types::LatLonOptions {

@@ -53,6 +53,10 @@ impl DryRunResultsBuilder {
         self.deployment_type = input;
         self
     }
+    /// <p> Specifies the deployment mechanism through which the update shall be applied on the domain. Possible responses are <code>Blue/Green</code> (The update will require a blue/green deployment.) <code>DynamicUpdate</code> (The update can be applied in-place without a Blue/Green deployment required.) <code>Undetermined</code> (The domain is undergoing an update which needs to complete before the deployment type can be predicted.) <code>None</code> (The configuration change matches the current configuration and will not result in any update.) </p>
+    pub fn get_deployment_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_type
+    }
     /// <p>Contains an optional message associated with the DryRunResults.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl DryRunResultsBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>Contains an optional message associated with the DryRunResults.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`DryRunResults`](crate::types::DryRunResults).
     pub fn build(self) -> crate::types::DryRunResults {

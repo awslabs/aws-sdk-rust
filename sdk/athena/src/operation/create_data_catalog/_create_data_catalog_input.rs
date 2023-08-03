@@ -108,6 +108,10 @@ impl CreateDataCatalogInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the data catalog to create. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of 256 is reserved for use by Athena.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
     pub fn r#type(mut self, input: crate::types::DataCatalogType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -118,6 +122,10 @@ impl CreateDataCatalogInputBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::DataCatalogType> {
+        &self.r#type
+    }
     /// <p>A description of the data catalog to be created.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -127,6 +135,10 @@ impl CreateDataCatalogInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the data catalog to be created.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Adds a key-value pair to `parameters`.
     ///
@@ -181,6 +193,28 @@ impl CreateDataCatalogInputBuilder {
         self.parameters = input;
         self
     }
+    /// <p>Specifies the Lambda function or functions to use for creating the data catalog. This is a mapping whose values depend on the catalog type. </p>
+    /// <ul>
+    /// <li> <p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p> <p> <code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code> </p> </li>
+    /// <li> <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets of required parameters, but not both.</p>
+    /// <ul>
+    /// <li> <p>If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.</p> <p> <code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code> </p> </li>
+    /// <li> <p> If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>The <code>GLUE</code> type takes a catalog ID parameter and is required. The <code> <i>catalog_id</i> </code> is the account ID of the Amazon Web Services account to which the Glue Data Catalog belongs.</p> <p> <code>catalog-id=<i>catalog_id</i> </code> </p>
+    /// <ul>
+    /// <li> <p>The <code>GLUE</code> data catalog type also applies to the default <code>AwsDataCatalog</code> that already exists in your account, of which you can have only one and cannot modify.</p> </li>
+    /// <li> <p>Queries that specify a Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run on Athena engine version 2.</p> </li>
+    /// <li> <p>In Regions where Athena engine version 2 is not available, creating new Glue data catalogs results in an <code>INVALID_INPUT</code> error.</p> </li>
+    /// </ul> </li>
+    /// </ul>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.parameters
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -199,6 +233,10 @@ impl CreateDataCatalogInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of comma separated tags to add to the data catalog that is created.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateDataCatalogInput`](crate::operation::create_data_catalog::CreateDataCatalogInput).
     pub fn build(

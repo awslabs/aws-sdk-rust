@@ -346,6 +346,23 @@ impl CreateServerInputBuilder {
         self.certificate = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Certificate Manager (ACM) certificate. Required when <code>Protocols</code> is set to <code>FTPS</code>.</p>
+    /// <p>To request a new public certificate, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public certificate</a> in the <i>Certificate Manager User Guide</i>.</p>
+    /// <p>To import an existing certificate into ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into ACM</a> in the <i>Certificate Manager User Guide</i>.</p>
+    /// <p>To request a private certificate to use FTPS through private IP addresses, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a private certificate</a> in the <i>Certificate Manager User Guide</i>.</p>
+    /// <p>Certificates with the following cryptographic algorithms and key sizes are supported:</p>
+    /// <ul>
+    /// <li> <p>2048-bit RSA (RSA_2048)</p> </li>
+    /// <li> <p>4096-bit RSA (RSA_4096)</p> </li>
+    /// <li> <p>Elliptic Prime Curve 256 bit (EC_prime256v1)</p> </li>
+    /// <li> <p>Elliptic Prime Curve 384 bit (EC_secp384r1)</p> </li>
+    /// <li> <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p> </li>
+    /// </ul> <note>
+    /// <p>The certificate must be a valid SSL/TLS X.509 version 3 certificate with FQDN or IP address specified and information about the issuer.</p>
+    /// </note>
+    pub fn get_certificate(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate
+    }
     /// <p>The domain of the storage system that is used for file transfers. There are two domains available: Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The default value is S3.</p> <note>
     /// <p>After the server is created, the domain cannot be changed.</p>
     /// </note>
@@ -360,6 +377,12 @@ impl CreateServerInputBuilder {
         self.domain = input;
         self
     }
+    /// <p>The domain of the storage system that is used for file transfers. There are two domains available: Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The default value is S3.</p> <note>
+    /// <p>After the server is created, the domain cannot be changed.</p>
+    /// </note>
+    pub fn get_domain(&self) -> &::std::option::Option<crate::types::Domain> {
+        &self.domain
+    }
     /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make your endpoint accessible only to resources within your VPC, or you can attach Elastic IP addresses and make your endpoint accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.</p>
     pub fn endpoint_details(mut self, input: crate::types::EndpointDetails) -> Self {
         self.endpoint_details = ::std::option::Option::Some(input);
@@ -372,6 +395,10 @@ impl CreateServerInputBuilder {
     ) -> Self {
         self.endpoint_details = input;
         self
+    }
+    /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make your endpoint accessible only to resources within your VPC, or you can attach Elastic IP addresses and make your endpoint accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.</p>
+    pub fn get_endpoint_details(&self) -> &::std::option::Option<crate::types::EndpointDetails> {
+        &self.endpoint_details
     }
     /// <p>The type of endpoint that you want your server to use. You can choose to make your server's endpoint publicly accessible (PUBLIC) or host it inside your VPC. With an endpoint that is hosted in a VPC, you can restrict access to your server and resources only within your VPC or choose to make it internet facing by attaching Elastic IP addresses directly to it.</p> <note>
     /// <p> After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Services account if your account hasn't already done so before May 19, 2021. If you have already created servers with <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Services account on or before May 19, 2021, you will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.</p>
@@ -393,6 +420,14 @@ impl CreateServerInputBuilder {
     ) -> Self {
         self.endpoint_type = input;
         self
+    }
+    /// <p>The type of endpoint that you want your server to use. You can choose to make your server's endpoint publicly accessible (PUBLIC) or host it inside your VPC. With an endpoint that is hosted in a VPC, you can restrict access to your server and resources only within your VPC or choose to make it internet facing by attaching Elastic IP addresses directly to it.</p> <note>
+    /// <p> After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Services account if your account hasn't already done so before May 19, 2021. If you have already created servers with <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Services account on or before May 19, 2021, you will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.</p>
+    /// <p>For more information, see https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
+    /// <p>It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type, you have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with your server's endpoint and use VPC security groups to restrict traffic by the client's public IP address. This is not possible with <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.</p>
+    /// </note>
+    pub fn get_endpoint_type(&self) -> &::std::option::Option<crate::types::EndpointType> {
+        &self.endpoint_type
     }
     /// <p>The RSA, ECDSA, or ED25519 private key to use for your SFTP-enabled server. You can add multiple host keys, in case you want to rotate keys, or have a set of active keys that use different algorithms.</p>
     /// <p>Use the following command to generate an RSA 2048 bit key with no passphrase:</p>
@@ -428,6 +463,22 @@ impl CreateServerInputBuilder {
         self.host_key = input;
         self
     }
+    /// <p>The RSA, ECDSA, or ED25519 private key to use for your SFTP-enabled server. You can add multiple host keys, in case you want to rotate keys, or have a set of active keys that use different algorithms.</p>
+    /// <p>Use the following command to generate an RSA 2048 bit key with no passphrase:</p>
+    /// <p> <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
+    /// <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a stronger key by using 3072 or 4096.</p>
+    /// <p>Use the following command to generate an ECDSA 256 bit key with no passphrase:</p>
+    /// <p> <code>ssh-keygen -t ecdsa -b 256 -N "" -m PEM -f my-new-server-key</code>.</p>
+    /// <p>Valid values for the <code>-b</code> option for ECDSA are 256, 384, and 521.</p>
+    /// <p>Use the following command to generate an ED25519 key with no passphrase:</p>
+    /// <p> <code>ssh-keygen -t ed25519 -N "" -f my-new-server-key</code>.</p>
+    /// <p>For all of these commands, you can replace <i>my-new-server-key</i> with a string of your choice.</p> <important>
+    /// <p>If you aren't planning to migrate existing users from an existing SFTP-enabled server to a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.</p>
+    /// </important>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Manage host keys for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.</p>
+    pub fn get_host_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host_key
+    }
     /// <p>Required when <code>IdentityProviderType</code> is set to <code>AWS_DIRECTORY_SERVICE</code>, <code>Amazon Web Services_LAMBDA</code> or <code>API_GATEWAY</code>. Accepts an array containing all of the information required to use a directory in <code>AWS_DIRECTORY_SERVICE</code> or invoke a customer-supplied authentication API, including the API Gateway URL. Not required when <code>IdentityProviderType</code> is set to <code>SERVICE_MANAGED</code>.</p>
     pub fn identity_provider_details(
         mut self,
@@ -443,6 +494,12 @@ impl CreateServerInputBuilder {
     ) -> Self {
         self.identity_provider_details = input;
         self
+    }
+    /// <p>Required when <code>IdentityProviderType</code> is set to <code>AWS_DIRECTORY_SERVICE</code>, <code>Amazon Web Services_LAMBDA</code> or <code>API_GATEWAY</code>. Accepts an array containing all of the information required to use a directory in <code>AWS_DIRECTORY_SERVICE</code> or invoke a customer-supplied authentication API, including the API Gateway URL. Not required when <code>IdentityProviderType</code> is set to <code>SERVICE_MANAGED</code>.</p>
+    pub fn get_identity_provider_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::IdentityProviderDetails> {
+        &self.identity_provider_details
     }
     /// <p>The mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Transfer Family service.</p>
     /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Directory Service for Microsoft Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connector. This option also requires you to provide a Directory ID by using the <code>IdentityProviderDetails</code> parameter.</p>
@@ -463,6 +520,15 @@ impl CreateServerInputBuilder {
         self.identity_provider_type = input;
         self
     }
+    /// <p>The mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Transfer Family service.</p>
+    /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Directory Service for Microsoft Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connector. This option also requires you to provide a Directory ID by using the <code>IdentityProviderDetails</code> parameter.</p>
+    /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an Amazon API Gateway endpoint URL to call for authentication by using the <code>IdentityProviderDetails</code> parameter.</p>
+    /// <p>Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code> data type.</p>
+    pub fn get_identity_provider_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::IdentityProviderType> {
+        &self.identity_provider_type
+    }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity in your CloudWatch logs.</p>
     pub fn logging_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.logging_role = ::std::option::Option::Some(input.into());
@@ -472,6 +538,10 @@ impl CreateServerInputBuilder {
     pub fn set_logging_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.logging_role = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity in your CloudWatch logs.</p>
+    pub fn get_logging_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.logging_role
     }
     /// <p>Specifies a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
     /// <p>The SFTP protocol does not support post-authentication display banners.</p>
@@ -493,6 +563,14 @@ impl CreateServerInputBuilder {
         self.post_authentication_login_banner = input;
         self
     }
+    /// <p>Specifies a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
+    /// <p>The SFTP protocol does not support post-authentication display banners.</p>
+    /// </note>
+    pub fn get_post_authentication_login_banner(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.post_authentication_login_banner
+    }
     /// <p>Specifies a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system:</p>
     /// <p> <code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code> </p>
     pub fn pre_authentication_login_banner(
@@ -510,6 +588,13 @@ impl CreateServerInputBuilder {
     ) -> Self {
         self.pre_authentication_login_banner = input;
         self
+    }
+    /// <p>Specifies a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system:</p>
+    /// <p> <code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code> </p>
+    pub fn get_pre_authentication_login_banner(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.pre_authentication_login_banner
     }
     /// Appends an item to `protocols`.
     ///
@@ -558,6 +643,24 @@ impl CreateServerInputBuilder {
         self.protocols = input;
         self
     }
+    /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to your server's endpoint. The available protocols are:</p>
+    /// <ul>
+    /// <li> <p> <code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over SSH</p> </li>
+    /// <li> <p> <code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS encryption</p> </li>
+    /// <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer</p> </li>
+    /// <li> <p> <code>AS2</code> (Applicability Statement 2): used for transporting structured business-to-business data</p> </li>
+    /// </ul> <note>
+    /// <ul>
+    /// <li> <p>If you select <code>FTPS</code>, you must choose a certificate stored in Certificate Manager (ACM) which is used to identify your server when clients connect to it over FTPS.</p> </li>
+    /// <li> <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be either <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or <code>API_GATEWAY</code>.</p> </li>
+    /// <li> <p>If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.</p> </li>
+    /// <li> <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set any of the supported identity types: <code>SERVICE_MANAGED</code>, <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or <code>API_GATEWAY</code>.</p> </li>
+    /// <li> <p>If <code>Protocol</code> includes <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>, and domain must be Amazon S3.</p> </li>
+    /// </ul>
+    /// </note>
+    pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Protocol>> {
+        &self.protocols
+    }
     /// <p>The protocol settings that are configured for your server.</p>
     /// <ul>
     /// <li> <p> To indicate passive mode (for FTP and FTPS protocols), use the <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer. </p> </li>
@@ -583,6 +686,16 @@ impl CreateServerInputBuilder {
         self.protocol_details = input;
         self
     }
+    /// <p>The protocol settings that are configured for your server.</p>
+    /// <ul>
+    /// <li> <p> To indicate passive mode (for FTP and FTPS protocols), use the <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer. </p> </li>
+    /// <li> <p>To ignore the error that is generated when the client attempts to use the <code>SETSTAT</code> command on a file that you are uploading to an Amazon S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer Family server ignore the <code>SETSTAT</code> command and upload files without needing to make any changes to your SFTP client, set the value to <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon CloudWatch Logs, so that you can determine when the client is making a <code>SETSTAT</code> call.</p> </li>
+    /// <li> <p>To determine whether your Transfer Family server resumes recent, negotiated sessions through a unique session ID, use the <code>TlsSessionResumptionMode</code> parameter.</p> </li>
+    /// <li> <p> <code>As2Transports</code> indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p> </li>
+    /// </ul>
+    pub fn get_protocol_details(&self) -> &::std::option::Option<crate::types::ProtocolDetails> {
+        &self.protocol_details
+    }
     /// <p>Specifies the name of the security policy that is attached to the server.</p>
     pub fn security_policy_name(
         mut self,
@@ -598,6 +711,10 @@ impl CreateServerInputBuilder {
     ) -> Self {
         self.security_policy_name = input;
         self
+    }
+    /// <p>Specifies the name of the security policy that is attached to the server.</p>
+    pub fn get_security_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_policy_name
     }
     /// Appends an item to `tags`.
     ///
@@ -618,6 +735,10 @@ impl CreateServerInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Key-value pairs that can be used to group and search for servers.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
     /// <p>In addition to a workflow to execute when a file is uploaded completely, <code>WorkflowDetails</code> can also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs when the server session disconnects while the file is still being uploaded.</p>
     pub fn workflow_details(mut self, input: crate::types::WorkflowDetails) -> Self {
@@ -632,6 +753,11 @@ impl CreateServerInputBuilder {
     ) -> Self {
         self.workflow_details = input;
         self
+    }
+    /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
+    /// <p>In addition to a workflow to execute when a file is uploaded completely, <code>WorkflowDetails</code> can also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs when the server session disconnects while the file is still being uploaded.</p>
+    pub fn get_workflow_details(&self) -> &::std::option::Option<crate::types::WorkflowDetails> {
+        &self.workflow_details
     }
     /// Appends an item to `structured_log_destinations`.
     ///
@@ -664,6 +790,17 @@ impl CreateServerInputBuilder {
     ) -> Self {
         self.structured_log_destinations = input;
         self
+    }
+    /// <p>Specifies the log groups to which your server logs are sent.</p>
+    /// <p>To specify a log group, you must provide the ARN for an existing log group. In this case, the format of the log group is as follows:</p>
+    /// <p> <code>arn:aws:logs:region-name:amazon-account-id:log-group:log-group-name:*</code> </p>
+    /// <p>For example, <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code> </p>
+    /// <p>If you have previously specified a log group for a server, you can clear it, and in effect turn off structured logging, by providing an empty value for this parameter in an <code>update-server</code> call. For example:</p>
+    /// <p> <code>update-server --server-id s-1234567890abcdef0 --structured-log-destinations</code> </p>
+    pub fn get_structured_log_destinations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.structured_log_destinations
     }
     /// Consumes the builder and constructs a [`CreateServerInput`](crate::operation::create_server::CreateServerInput).
     pub fn build(

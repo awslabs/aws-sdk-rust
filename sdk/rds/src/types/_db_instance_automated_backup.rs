@@ -282,6 +282,10 @@ impl DbInstanceAutomatedBackupBuilder {
         self.db_instance_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the automated backups.</p>
+    pub fn get_db_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_instance_arn
+    }
     /// <p>The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web Services Region.</p>
     pub fn dbi_resource_id(
         mut self,
@@ -298,6 +302,10 @@ impl DbInstanceAutomatedBackupBuilder {
         self.dbi_resource_id = input;
         self
     }
+    /// <p>The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web Services Region.</p>
+    pub fn get_dbi_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dbi_resource_id
+    }
     /// <p>The Amazon Web Services Region associated with the automated backup.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
@@ -307,6 +315,10 @@ impl DbInstanceAutomatedBackupBuilder {
     pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
+    }
+    /// <p>The Amazon Web Services Region associated with the automated backup.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
     }
     /// <p>The customer id of the instance that is/was associated with the automated backup.</p>
     pub fn db_instance_identifier(
@@ -324,6 +336,10 @@ impl DbInstanceAutomatedBackupBuilder {
         self.db_instance_identifier = input;
         self
     }
+    /// <p>The customer id of the instance that is/was associated with the automated backup.</p>
+    pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_instance_identifier
+    }
     /// <p>Earliest and latest time an instance can be restored to.</p>
     pub fn restore_window(mut self, input: crate::types::RestoreWindow) -> Self {
         self.restore_window = ::std::option::Option::Some(input);
@@ -337,6 +353,10 @@ impl DbInstanceAutomatedBackupBuilder {
         self.restore_window = input;
         self
     }
+    /// <p>Earliest and latest time an instance can be restored to.</p>
+    pub fn get_restore_window(&self) -> &::std::option::Option<crate::types::RestoreWindow> {
+        &self.restore_window
+    }
     /// <p>Specifies the allocated storage size in gibibytes (GiB).</p>
     pub fn allocated_storage(mut self, input: i32) -> Self {
         self.allocated_storage = ::std::option::Option::Some(input);
@@ -346,6 +366,10 @@ impl DbInstanceAutomatedBackupBuilder {
     pub fn set_allocated_storage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.allocated_storage = input;
         self
+    }
+    /// <p>Specifies the allocated storage size in gibibytes (GiB).</p>
+    pub fn get_allocated_storage(&self) -> &::std::option::Option<i32> {
+        &self.allocated_storage
     }
     /// <p>Provides a list of status information for an automated backup:</p>
     /// <ul>
@@ -367,6 +391,15 @@ impl DbInstanceAutomatedBackupBuilder {
         self.status = input;
         self
     }
+    /// <p>Provides a list of status information for an automated backup:</p>
+    /// <ul>
+    /// <li> <p> <code>active</code> - automated backups for current instances</p> </li>
+    /// <li> <p> <code>retained</code> - automated backups for deleted instances</p> </li>
+    /// <li> <p> <code>creating</code> - automated backups that are waiting for the first automated snapshot to be available.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>The port number that the automated backup used for connections.</p>
     /// <p>Default: Inherits from the source DB instance</p>
     /// <p>Valid Values: <code>1150-65535</code> </p>
@@ -380,6 +413,12 @@ impl DbInstanceAutomatedBackupBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
+    }
+    /// <p>The port number that the automated backup used for connections.</p>
+    /// <p>Default: Inherits from the source DB instance</p>
+    /// <p>Valid Values: <code>1150-65535</code> </p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// <p>The Availability Zone that the automated backup was created in. For information on Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions and Availability Zones</a>.</p>
     pub fn availability_zone(
@@ -397,6 +436,10 @@ impl DbInstanceAutomatedBackupBuilder {
         self.availability_zone = input;
         self
     }
+    /// <p>The Availability Zone that the automated backup was created in. For information on Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions and Availability Zones</a>.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p>Provides the VPC ID associated with the DB instance.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -406,6 +449,10 @@ impl DbInstanceAutomatedBackupBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>Provides the VPC ID associated with the DB instance.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// <p>Provides the date and time that the DB instance was created.</p>
     pub fn instance_create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -419,6 +466,10 @@ impl DbInstanceAutomatedBackupBuilder {
     ) -> Self {
         self.instance_create_time = input;
         self
+    }
+    /// <p>Provides the date and time that the DB instance was created.</p>
+    pub fn get_instance_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.instance_create_time
     }
     /// <p>The license model of an automated backup.</p>
     pub fn master_username(
@@ -436,6 +487,10 @@ impl DbInstanceAutomatedBackupBuilder {
         self.master_username = input;
         self
     }
+    /// <p>The license model of an automated backup.</p>
+    pub fn get_master_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.master_username
+    }
     /// <p>The name of the database engine for this automated backup.</p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
@@ -445,6 +500,10 @@ impl DbInstanceAutomatedBackupBuilder {
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
         self
+    }
+    /// <p>The name of the database engine for this automated backup.</p>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine
     }
     /// <p>The version of the database engine for the automated backup.</p>
     pub fn engine_version(
@@ -462,6 +521,10 @@ impl DbInstanceAutomatedBackupBuilder {
         self.engine_version = input;
         self
     }
+    /// <p>The version of the database engine for the automated backup.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
+    }
     /// <p>License model information for the automated backup.</p>
     pub fn license_model(
         mut self,
@@ -478,6 +541,10 @@ impl DbInstanceAutomatedBackupBuilder {
         self.license_model = input;
         self
     }
+    /// <p>License model information for the automated backup.</p>
+    pub fn get_license_model(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_model
+    }
     /// <p>The IOPS (I/O operations per second) value for the automated backup.</p>
     pub fn iops(mut self, input: i32) -> Self {
         self.iops = ::std::option::Option::Some(input);
@@ -487,6 +554,10 @@ impl DbInstanceAutomatedBackupBuilder {
     pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
         self.iops = input;
         self
+    }
+    /// <p>The IOPS (I/O operations per second) value for the automated backup.</p>
+    pub fn get_iops(&self) -> &::std::option::Option<i32> {
+        &self.iops
     }
     /// <p>The option group the automated backup is associated with. If omitted, the default option group for the engine specified is used.</p>
     pub fn option_group_name(
@@ -504,6 +575,10 @@ impl DbInstanceAutomatedBackupBuilder {
         self.option_group_name = input;
         self
     }
+    /// <p>The option group the automated backup is associated with. If omitted, the default option group for the engine specified is used.</p>
+    pub fn get_option_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.option_group_name
+    }
     /// <p>The ARN from the key store with which the automated backup is associated for TDE encryption.</p>
     pub fn tde_credential_arn(
         mut self,
@@ -520,6 +595,10 @@ impl DbInstanceAutomatedBackupBuilder {
         self.tde_credential_arn = input;
         self
     }
+    /// <p>The ARN from the key store with which the automated backup is associated for TDE encryption.</p>
+    pub fn get_tde_credential_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tde_credential_arn
+    }
     /// <p>Specifies whether the automated backup is encrypted.</p>
     pub fn encrypted(mut self, input: bool) -> Self {
         self.encrypted = ::std::option::Option::Some(input);
@@ -530,6 +609,10 @@ impl DbInstanceAutomatedBackupBuilder {
         self.encrypted = input;
         self
     }
+    /// <p>Specifies whether the automated backup is encrypted.</p>
+    pub fn get_encrypted(&self) -> &::std::option::Option<bool> {
+        &self.encrypted
+    }
     /// <p>Specifies the storage type associated with the automated backup.</p>
     pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_type = ::std::option::Option::Some(input.into());
@@ -539,6 +622,10 @@ impl DbInstanceAutomatedBackupBuilder {
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_type = input;
         self
+    }
+    /// <p>Specifies the storage type associated with the automated backup.</p>
+    pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_type
     }
     /// <p>The Amazon Web Services KMS key ID for an automated backup.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
@@ -552,6 +639,11 @@ impl DbInstanceAutomatedBackupBuilder {
         self.kms_key_id = input;
         self
     }
+    /// <p>The Amazon Web Services KMS key ID for an automated backup.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
+    }
     /// <p>The time zone of the automated backup. In most cases, the <code>Timezone</code> element is empty. <code>Timezone</code> content appears only for Microsoft SQL Server DB instances that were created with a time zone specified.</p>
     pub fn timezone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timezone = ::std::option::Option::Some(input.into());
@@ -561,6 +653,10 @@ impl DbInstanceAutomatedBackupBuilder {
     pub fn set_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timezone = input;
         self
+    }
+    /// <p>The time zone of the automated backup. In most cases, the <code>Timezone</code> element is empty. <code>Timezone</code> content appears only for Microsoft SQL Server DB instances that were created with a time zone specified.</p>
+    pub fn get_timezone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timezone
     }
     /// <p>True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
     pub fn iam_database_authentication_enabled(mut self, input: bool) -> Self {
@@ -575,6 +671,10 @@ impl DbInstanceAutomatedBackupBuilder {
         self.iam_database_authentication_enabled = input;
         self
     }
+    /// <p>True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
+    pub fn get_iam_database_authentication_enabled(&self) -> &::std::option::Option<bool> {
+        &self.iam_database_authentication_enabled
+    }
     /// <p>The retention period for the automated backups.</p>
     pub fn backup_retention_period(mut self, input: i32) -> Self {
         self.backup_retention_period = ::std::option::Option::Some(input);
@@ -584,6 +684,10 @@ impl DbInstanceAutomatedBackupBuilder {
     pub fn set_backup_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.backup_retention_period = input;
         self
+    }
+    /// <p>The retention period for the automated backups.</p>
+    pub fn get_backup_retention_period(&self) -> &::std::option::Option<i32> {
+        &self.backup_retention_period
     }
     /// <p>The Amazon Resource Name (ARN) for the replicated automated backups.</p>
     pub fn db_instance_automated_backups_arn(
@@ -600,6 +704,12 @@ impl DbInstanceAutomatedBackupBuilder {
     ) -> Self {
         self.db_instance_automated_backups_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the replicated automated backups.</p>
+    pub fn get_db_instance_automated_backups_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.db_instance_automated_backups_arn
     }
     /// Appends an item to `db_instance_automated_backups_replications`.
     ///
@@ -627,6 +737,13 @@ impl DbInstanceAutomatedBackupBuilder {
         self.db_instance_automated_backups_replications = input;
         self
     }
+    /// <p>The list of replications to different Amazon Web Services Regions associated with the automated backup.</p>
+    pub fn get_db_instance_automated_backups_replications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DbInstanceAutomatedBackupsReplication>>
+    {
+        &self.db_instance_automated_backups_replications
+    }
     /// <p>Specifies where automated backups are stored: Amazon Web Services Outposts or the Amazon Web Services Region.</p>
     pub fn backup_target(
         mut self,
@@ -643,6 +760,10 @@ impl DbInstanceAutomatedBackupBuilder {
         self.backup_target = input;
         self
     }
+    /// <p>Specifies where automated backups are stored: Amazon Web Services Outposts or the Amazon Web Services Region.</p>
+    pub fn get_backup_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_target
+    }
     /// <p>Specifies the storage throughput for the automated backup.</p>
     pub fn storage_throughput(mut self, input: i32) -> Self {
         self.storage_throughput = ::std::option::Option::Some(input);
@@ -652,6 +773,10 @@ impl DbInstanceAutomatedBackupBuilder {
     pub fn set_storage_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
         self.storage_throughput = input;
         self
+    }
+    /// <p>Specifies the storage throughput for the automated backup.</p>
+    pub fn get_storage_throughput(&self) -> &::std::option::Option<i32> {
+        &self.storage_throughput
     }
     /// Consumes the builder and constructs a [`DbInstanceAutomatedBackup`](crate::types::DbInstanceAutomatedBackup).
     pub fn build(self) -> crate::types::DbInstanceAutomatedBackup {

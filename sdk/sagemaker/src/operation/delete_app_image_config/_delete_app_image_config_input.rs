@@ -46,6 +46,10 @@ impl DeleteAppImageConfigInputBuilder {
         self.app_image_config_name = input;
         self
     }
+    /// <p>The name of the AppImageConfig to delete.</p>
+    pub fn get_app_image_config_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_image_config_name
+    }
     /// Consumes the builder and constructs a [`DeleteAppImageConfigInput`](crate::operation::delete_app_image_config::DeleteAppImageConfigInput).
     pub fn build(
         self,

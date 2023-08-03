@@ -112,6 +112,10 @@ impl CreateCustomLineItemInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p> The name of the custom line item. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -122,6 +126,10 @@ impl CreateCustomLineItemInputBuilder {
         self.name = input;
         self
     }
+    /// <p> The name of the custom line item. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p> The description of the custom line item. This is shown on the Bills page in association with the charge value. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -131,6 +139,10 @@ impl CreateCustomLineItemInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p> The description of the custom line item. This is shown on the Bills page in association with the charge value. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p> The Amazon Resource Name (ARN) that references the billing group where the custom line item applies to. </p>
     pub fn billing_group_arn(
@@ -148,6 +160,10 @@ impl CreateCustomLineItemInputBuilder {
         self.billing_group_arn = input;
         self
     }
+    /// <p> The Amazon Resource Name (ARN) that references the billing group where the custom line item applies to. </p>
+    pub fn get_billing_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.billing_group_arn
+    }
     /// <p> A time range for which the custom line item is effective. </p>
     pub fn billing_period_range(
         mut self,
@@ -163,6 +179,12 @@ impl CreateCustomLineItemInputBuilder {
     ) -> Self {
         self.billing_period_range = input;
         self
+    }
+    /// <p> A time range for which the custom line item is effective. </p>
+    pub fn get_billing_period_range(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomLineItemBillingPeriodRange> {
+        &self.billing_period_range
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -189,6 +211,14 @@ impl CreateCustomLineItemInputBuilder {
         self.tags = input;
         self
     }
+    /// <p> A map that contains tag keys and tag values that are attached to a custom line item. </p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p> A <code>CustomLineItemChargeDetails</code> that describes the charge details for a custom line item. </p>
     pub fn charge_details(mut self, input: crate::types::CustomLineItemChargeDetails) -> Self {
         self.charge_details = ::std::option::Option::Some(input);
@@ -201,6 +231,12 @@ impl CreateCustomLineItemInputBuilder {
     ) -> Self {
         self.charge_details = input;
         self
+    }
+    /// <p> A <code>CustomLineItemChargeDetails</code> that describes the charge details for a custom line item. </p>
+    pub fn get_charge_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomLineItemChargeDetails> {
+        &self.charge_details
     }
     /// Consumes the builder and constructs a [`CreateCustomLineItemInput`](crate::operation::create_custom_line_item::CreateCustomLineItemInput).
     pub fn build(

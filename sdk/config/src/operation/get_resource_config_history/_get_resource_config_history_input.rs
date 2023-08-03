@@ -93,6 +93,10 @@ impl GetResourceConfigHistoryInputBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The resource type.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
+    }
     /// <p>The ID of the resource (for example., <code>sg-xxxxxx</code>).</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -102,6 +106,10 @@ impl GetResourceConfigHistoryInputBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>The ID of the resource (for example., <code>sg-xxxxxx</code>).</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// <p>The time stamp that indicates a later time. If not specified, current time is taken.</p>
     pub fn later_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -116,6 +124,10 @@ impl GetResourceConfigHistoryInputBuilder {
         self.later_time = input;
         self
     }
+    /// <p>The time stamp that indicates a later time. If not specified, current time is taken.</p>
+    pub fn get_later_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.later_time
+    }
     /// <p>The time stamp that indicates an earlier time. If not specified, the action returns paginated results that contain configuration items that start when the first configuration item was recorded.</p>
     pub fn earlier_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.earlier_time = ::std::option::Option::Some(input);
@@ -128,6 +140,10 @@ impl GetResourceConfigHistoryInputBuilder {
     ) -> Self {
         self.earlier_time = input;
         self
+    }
+    /// <p>The time stamp that indicates an earlier time. If not specified, the action returns paginated results that contain configuration items that start when the first configuration item was recorded.</p>
+    pub fn get_earlier_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.earlier_time
     }
     /// <p>The chronological order for configuration items listed. By default, the results are listed in reverse chronological order.</p>
     pub fn chronological_order(mut self, input: crate::types::ChronologicalOrder) -> Self {
@@ -142,6 +158,12 @@ impl GetResourceConfigHistoryInputBuilder {
         self.chronological_order = input;
         self
     }
+    /// <p>The chronological order for configuration items listed. By default, the results are listed in reverse chronological order.</p>
+    pub fn get_chronological_order(
+        &self,
+    ) -> &::std::option::Option<crate::types::ChronologicalOrder> {
+        &self.chronological_order
+    }
     /// <p>The maximum number of configuration items returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -152,6 +174,10 @@ impl GetResourceConfigHistoryInputBuilder {
         self.limit = input;
         self
     }
+    /// <p>The maximum number of configuration items returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
+    }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -161,6 +187,10 @@ impl GetResourceConfigHistoryInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`GetResourceConfigHistoryInput`](crate::operation::get_resource_config_history::GetResourceConfigHistoryInput).
     pub fn build(

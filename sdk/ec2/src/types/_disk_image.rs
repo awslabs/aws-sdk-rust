@@ -56,6 +56,10 @@ impl DiskImageBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the disk image.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>Information about the disk image.</p>
     pub fn image(mut self, input: crate::types::DiskImageDetail) -> Self {
         self.image = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl DiskImageBuilder {
         self.image = input;
         self
     }
+    /// <p>Information about the disk image.</p>
+    pub fn get_image(&self) -> &::std::option::Option<crate::types::DiskImageDetail> {
+        &self.image
+    }
     /// <p>Information about the volume.</p>
     pub fn volume(mut self, input: crate::types::VolumeDetail) -> Self {
         self.volume = ::std::option::Option::Some(input);
@@ -78,6 +86,10 @@ impl DiskImageBuilder {
     pub fn set_volume(mut self, input: ::std::option::Option<crate::types::VolumeDetail>) -> Self {
         self.volume = input;
         self
+    }
+    /// <p>Information about the volume.</p>
+    pub fn get_volume(&self) -> &::std::option::Option<crate::types::VolumeDetail> {
+        &self.volume
     }
     /// Consumes the builder and constructs a [`DiskImage`](crate::types::DiskImage).
     pub fn build(self) -> crate::types::DiskImage {

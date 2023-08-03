@@ -67,6 +67,10 @@ impl InstanceStorageInfoBuilder {
         self.total_size_in_gb = input;
         self
     }
+    /// <p>The total size of the disks, in GB.</p>
+    pub fn get_total_size_in_gb(&self) -> &::std::option::Option<i64> {
+        &self.total_size_in_gb
+    }
     /// Appends an item to `disks`.
     ///
     /// To override the contents of this collection use [`set_disks`](Self::set_disks).
@@ -86,6 +90,10 @@ impl InstanceStorageInfoBuilder {
         self.disks = input;
         self
     }
+    /// <p>Describes the disks that are available for the instance type.</p>
+    pub fn get_disks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DiskInfo>> {
+        &self.disks
+    }
     /// <p>Indicates whether non-volatile memory express (NVMe) is supported.</p>
     pub fn nvme_support(mut self, input: crate::types::EphemeralNvmeSupport) -> Self {
         self.nvme_support = ::std::option::Option::Some(input);
@@ -98,6 +106,10 @@ impl InstanceStorageInfoBuilder {
     ) -> Self {
         self.nvme_support = input;
         self
+    }
+    /// <p>Indicates whether non-volatile memory express (NVMe) is supported.</p>
+    pub fn get_nvme_support(&self) -> &::std::option::Option<crate::types::EphemeralNvmeSupport> {
+        &self.nvme_support
     }
     /// <p>Indicates whether data is encrypted at rest.</p>
     pub fn encryption_support(
@@ -114,6 +126,12 @@ impl InstanceStorageInfoBuilder {
     ) -> Self {
         self.encryption_support = input;
         self
+    }
+    /// <p>Indicates whether data is encrypted at rest.</p>
+    pub fn get_encryption_support(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceStorageEncryptionSupport> {
+        &self.encryption_support
     }
     /// Consumes the builder and constructs a [`InstanceStorageInfo`](crate::types::InstanceStorageInfo).
     pub fn build(self) -> crate::types::InstanceStorageInfo {

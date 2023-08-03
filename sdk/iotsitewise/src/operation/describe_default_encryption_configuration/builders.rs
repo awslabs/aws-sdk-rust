@@ -36,6 +36,10 @@ impl DescribeDefaultEncryptionConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeDefaultEncryptionConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_default_encryption_configuration::builders::DescribeDefaultEncryptionConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<

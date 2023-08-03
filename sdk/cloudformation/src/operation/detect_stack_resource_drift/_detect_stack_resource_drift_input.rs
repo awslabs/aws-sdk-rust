@@ -49,6 +49,10 @@ impl DetectStackResourceDriftInputBuilder {
         self.stack_name = input;
         self
     }
+    /// <p>The name of the stack to which the resource belongs.</p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_name
+    }
     /// <p>The logical name of the resource for which to return drift information.</p>
     pub fn logical_resource_id(
         mut self,
@@ -64,6 +68,10 @@ impl DetectStackResourceDriftInputBuilder {
     ) -> Self {
         self.logical_resource_id = input;
         self
+    }
+    /// <p>The logical name of the resource for which to return drift information.</p>
+    pub fn get_logical_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.logical_resource_id
     }
     /// Consumes the builder and constructs a [`DetectStackResourceDriftInput`](crate::operation::detect_stack_resource_drift::DetectStackResourceDriftInput).
     pub fn build(

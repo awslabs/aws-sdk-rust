@@ -89,6 +89,10 @@ impl UpdateTemplateInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services account that contains the template that you're updating.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The ID for the template.</p>
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_id = ::std::option::Option::Some(input.into());
@@ -98,6 +102,10 @@ impl UpdateTemplateInputBuilder {
     pub fn set_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_id = input;
         self
+    }
+    /// <p>The ID for the template.</p>
+    pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_id
     }
     /// <p>The entity that you are using as a source when you update the template. In <code>SourceEntity</code>, you specify the type of object you're using as source: <code>SourceTemplate</code> for a template or <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the source template. For <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region;. </p>
     /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder. </p>
@@ -113,6 +121,11 @@ impl UpdateTemplateInputBuilder {
     ) -> Self {
         self.source_entity = input;
         self
+    }
+    /// <p>The entity that you are using as a source when you update the template. In <code>SourceEntity</code>, you specify the type of object you're using as source: <code>SourceTemplate</code> for a template or <code>SourceAnalysis</code> for an analysis. Both of these require an Amazon Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of the source template. For <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region;. </p>
+    /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder. </p>
+    pub fn get_source_entity(&self) -> &::std::option::Option<crate::types::TemplateSourceEntity> {
+        &self.source_entity
     }
     /// <p>A description of the current template version that is being updated. Every time you call <code>UpdateTemplate</code>, you create a new version of the template. Each version of the template maintains a description of the version in the <code>VersionDescription</code> field.</p>
     pub fn version_description(
@@ -130,6 +143,10 @@ impl UpdateTemplateInputBuilder {
         self.version_description = input;
         self
     }
+    /// <p>A description of the current template version that is being updated. Every time you call <code>UpdateTemplate</code>, you create a new version of the template. Each version of the template maintains a description of the version in the <code>VersionDescription</code> field.</p>
+    pub fn get_version_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_description
+    }
     /// <p>The name for the template.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -139,6 +156,10 @@ impl UpdateTemplateInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name for the template.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The definition of a template.</p>
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
@@ -154,6 +175,13 @@ impl UpdateTemplateInputBuilder {
     ) -> Self {
         self.definition = input;
         self
+    }
+    /// <p>The definition of a template.</p>
+    /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
+    pub fn get_definition(
+        &self,
+    ) -> &::std::option::Option<crate::types::TemplateVersionDefinition> {
+        &self.definition
     }
     /// Consumes the builder and constructs a [`UpdateTemplateInput`](crate::operation::update_template::UpdateTemplateInput).
     pub fn build(

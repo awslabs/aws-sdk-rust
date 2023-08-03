@@ -59,6 +59,10 @@ impl FlywheelFilterBuilder {
         self.status = input;
         self
     }
+    /// <p>Filter the flywheels based on the flywheel status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::FlywheelStatus> {
+        &self.status
+    }
     /// <p>Filter the flywheels to include flywheels created after the specified time.</p>
     pub fn creation_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time_after = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl FlywheelFilterBuilder {
         self.creation_time_after = input;
         self
     }
+    /// <p>Filter the flywheels to include flywheels created after the specified time.</p>
+    pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time_after
+    }
     /// <p>Filter the flywheels to include flywheels created before the specified time.</p>
     pub fn creation_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time_before = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl FlywheelFilterBuilder {
     ) -> Self {
         self.creation_time_before = input;
         self
+    }
+    /// <p>Filter the flywheels to include flywheels created before the specified time.</p>
+    pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time_before
     }
     /// Consumes the builder and constructs a [`FlywheelFilter`](crate::types::FlywheelFilter).
     pub fn build(self) -> crate::types::FlywheelFilter {

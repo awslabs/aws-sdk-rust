@@ -41,6 +41,10 @@ impl CreateCertificateAuthorityAuditReportFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateCertificateAuthorityAuditReport as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_certificate_authority_audit_report::builders::CreateCertificateAuthorityAuditReportInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -113,6 +117,11 @@ impl CreateCertificateAuthorityAuditReportFluentBuilder {
         self.inner = self.inner.set_certificate_authority_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the CA to be audited. This is of the form:</p>
+    /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.</p>
+    pub fn get_certificate_authority_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_certificate_authority_arn()
+    }
     /// <p>The name of the S3 bucket that will contain the audit report.</p>
     pub fn s3_bucket_name(
         mut self,
@@ -129,6 +138,10 @@ impl CreateCertificateAuthorityAuditReportFluentBuilder {
         self.inner = self.inner.set_s3_bucket_name(input);
         self
     }
+    /// <p>The name of the S3 bucket that will contain the audit report.</p>
+    pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_s3_bucket_name()
+    }
     /// <p>The format in which to create the report. This can be either <b>JSON</b> or <b>CSV</b>.</p>
     pub fn audit_report_response_format(
         mut self,
@@ -144,5 +157,11 @@ impl CreateCertificateAuthorityAuditReportFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_audit_report_response_format(input);
         self
+    }
+    /// <p>The format in which to create the report. This can be either <b>JSON</b> or <b>CSV</b>.</p>
+    pub fn get_audit_report_response_format(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuditReportResponseFormat> {
+        self.inner.get_audit_report_response_format()
     }
 }

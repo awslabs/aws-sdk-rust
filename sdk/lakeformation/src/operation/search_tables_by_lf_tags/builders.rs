@@ -36,6 +36,13 @@ impl SearchTablesByLFTagsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SearchTablesByLFTags as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::search_tables_by_lf_tags::builders::SearchTablesByLfTagsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +144,10 @@ impl SearchTablesByLFTagsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -147,6 +158,10 @@ impl SearchTablesByLFTagsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub fn catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.catalog_id(input.into());
@@ -156,6 +171,10 @@ impl SearchTablesByLFTagsFluentBuilder {
     pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_catalog_id(input);
         self
+    }
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_catalog_id()
     }
     /// Appends an item to `Expression`.
     ///
@@ -173,5 +192,9 @@ impl SearchTablesByLFTagsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_expression(input);
         self
+    }
+    /// <p>A list of conditions (<code>LFTag</code> structures) to search for in table resources.</p>
+    pub fn get_expression(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LfTag>> {
+        self.inner.get_expression()
     }
 }

@@ -84,6 +84,10 @@ impl UpdateModelVersionInputBuilder {
         self.model_id = input;
         self
     }
+    /// <p>The model ID.</p>
+    pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_id
+    }
     /// <p>The model type.</p>
     pub fn model_type(mut self, input: crate::types::ModelTypeEnum) -> Self {
         self.model_type = ::std::option::Option::Some(input);
@@ -96,6 +100,10 @@ impl UpdateModelVersionInputBuilder {
     ) -> Self {
         self.model_type = input;
         self
+    }
+    /// <p>The model type.</p>
+    pub fn get_model_type(&self) -> &::std::option::Option<crate::types::ModelTypeEnum> {
+        &self.model_type
     }
     /// <p>The major version number.</p>
     pub fn major_version_number(
@@ -113,6 +121,10 @@ impl UpdateModelVersionInputBuilder {
         self.major_version_number = input;
         self
     }
+    /// <p>The major version number.</p>
+    pub fn get_major_version_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.major_version_number
+    }
     /// <p>The details of the external events data used for training the model version. Required if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
     pub fn external_events_detail(mut self, input: crate::types::ExternalEventsDetail) -> Self {
         self.external_events_detail = ::std::option::Option::Some(input);
@@ -126,6 +138,12 @@ impl UpdateModelVersionInputBuilder {
         self.external_events_detail = input;
         self
     }
+    /// <p>The details of the external events data used for training the model version. Required if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
+    pub fn get_external_events_detail(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExternalEventsDetail> {
+        &self.external_events_detail
+    }
     /// <p>The details of the ingested event used for training the model version. Required if your <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
     pub fn ingested_events_detail(mut self, input: crate::types::IngestedEventsDetail) -> Self {
         self.ingested_events_detail = ::std::option::Option::Some(input);
@@ -138,6 +156,12 @@ impl UpdateModelVersionInputBuilder {
     ) -> Self {
         self.ingested_events_detail = input;
         self
+    }
+    /// <p>The details of the ingested event used for training the model version. Required if your <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
+    pub fn get_ingested_events_detail(
+        &self,
+    ) -> &::std::option::Option<crate::types::IngestedEventsDetail> {
+        &self.ingested_events_detail
     }
     /// Appends an item to `tags`.
     ///
@@ -157,6 +181,10 @@ impl UpdateModelVersionInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A collection of key and value pairs.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`UpdateModelVersionInput`](crate::operation::update_model_version::UpdateModelVersionInput).
     pub fn build(

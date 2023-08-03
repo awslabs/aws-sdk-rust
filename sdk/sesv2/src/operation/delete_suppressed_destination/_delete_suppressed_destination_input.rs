@@ -46,6 +46,10 @@ impl DeleteSuppressedDestinationInputBuilder {
         self.email_address = input;
         self
     }
+    /// <p>The suppressed email destination to remove from the account suppression list.</p>
+    pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email_address
+    }
     /// Consumes the builder and constructs a [`DeleteSuppressedDestinationInput`](crate::operation::delete_suppressed_destination::DeleteSuppressedDestinationInput).
     pub fn build(
         self,

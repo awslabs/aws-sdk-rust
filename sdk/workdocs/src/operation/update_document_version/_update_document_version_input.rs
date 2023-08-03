@@ -79,6 +79,10 @@ impl UpdateDocumentVersionInputBuilder {
         self.authentication_token = input;
         self
     }
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authentication_token
+    }
     /// <p>The ID of the document.</p>
     pub fn document_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_id = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl UpdateDocumentVersionInputBuilder {
         self.document_id = input;
         self
     }
+    /// <p>The ID of the document.</p>
+    pub fn get_document_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_id
+    }
     /// <p>The version ID of the document.</p>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_id = ::std::option::Option::Some(input.into());
@@ -98,6 +106,10 @@ impl UpdateDocumentVersionInputBuilder {
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_id = input;
         self
+    }
+    /// <p>The version ID of the document.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_id
     }
     /// <p>The status of the version.</p>
     pub fn version_status(mut self, input: crate::types::DocumentVersionStatus) -> Self {
@@ -111,6 +123,12 @@ impl UpdateDocumentVersionInputBuilder {
     ) -> Self {
         self.version_status = input;
         self
+    }
+    /// <p>The status of the version.</p>
+    pub fn get_version_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::DocumentVersionStatus> {
+        &self.version_status
     }
     /// Consumes the builder and constructs a [`UpdateDocumentVersionInput`](crate::operation::update_document_version::UpdateDocumentVersionInput).
     pub fn build(

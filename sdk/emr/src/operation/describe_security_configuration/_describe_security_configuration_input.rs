@@ -39,6 +39,10 @@ impl DescribeSecurityConfigurationInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the security configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DescribeSecurityConfigurationInput`](crate::operation::describe_security_configuration::DescribeSecurityConfigurationInput).
     pub fn build(
         self,

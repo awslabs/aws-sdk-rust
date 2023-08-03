@@ -58,6 +58,12 @@ impl GetPackageConfigurationOutputBuilder {
         self.version_update_by_jobs_config = input;
         self
     }
+    /// <p>The version that is associated to a specific job.</p>
+    pub fn get_version_update_by_jobs_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::VersionUpdateByJobsConfig> {
+        &self.version_update_by_jobs_config
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -59,6 +59,10 @@ impl ManagedResourceSummaryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the managed resource.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the managed resource.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -68,6 +72,10 @@ impl ManagedResourceSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the managed resource.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `availability_zones`.
     ///
@@ -90,6 +98,12 @@ impl ManagedResourceSummaryBuilder {
     ) -> Self {
         self.availability_zones = input;
         self
+    }
+    /// <p>The Availability Zones that a resource is deployed in.</p>
+    pub fn get_availability_zones(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.availability_zones
     }
     /// Consumes the builder and constructs a [`ManagedResourceSummary`](crate::types::ManagedResourceSummary).
     pub fn build(self) -> crate::types::ManagedResourceSummary {

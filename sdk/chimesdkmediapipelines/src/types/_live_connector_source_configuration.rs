@@ -55,6 +55,10 @@ impl LiveConnectorSourceConfigurationBuilder {
         self.source_type = input;
         self
     }
+    /// <p>The source configuration's media source type.</p>
+    pub fn get_source_type(&self) -> &::std::option::Option<crate::types::LiveConnectorSourceType> {
+        &self.source_type
+    }
     /// <p>The configuration settings of the connector pipeline.</p>
     pub fn chime_sdk_meeting_live_connector_configuration(
         mut self,
@@ -70,6 +74,12 @@ impl LiveConnectorSourceConfigurationBuilder {
     ) -> Self {
         self.chime_sdk_meeting_live_connector_configuration = input;
         self
+    }
+    /// <p>The configuration settings of the connector pipeline.</p>
+    pub fn get_chime_sdk_meeting_live_connector_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ChimeSdkMeetingLiveConnectorConfiguration> {
+        &self.chime_sdk_meeting_live_connector_configuration
     }
     /// Consumes the builder and constructs a [`LiveConnectorSourceConfiguration`](crate::types::LiveConnectorSourceConfiguration).
     pub fn build(self) -> crate::types::LiveConnectorSourceConfiguration {

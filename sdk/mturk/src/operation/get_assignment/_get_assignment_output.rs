@@ -57,6 +57,10 @@ impl GetAssignmentOutputBuilder {
         self.assignment = input;
         self
     }
+    /// <p> The assignment. The response includes one Assignment element. </p>
+    pub fn get_assignment(&self) -> &::std::option::Option<crate::types::Assignment> {
+        &self.assignment
+    }
     /// <p> The HIT associated with this assignment. The response includes one HIT element.</p>
     pub fn hit(mut self, input: crate::types::Hit) -> Self {
         self.hit = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl GetAssignmentOutputBuilder {
     pub fn set_hit(mut self, input: ::std::option::Option<crate::types::Hit>) -> Self {
         self.hit = input;
         self
+    }
+    /// <p> The HIT associated with this assignment. The response includes one HIT element.</p>
+    pub fn get_hit(&self) -> &::std::option::Option<crate::types::Hit> {
+        &self.hit
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

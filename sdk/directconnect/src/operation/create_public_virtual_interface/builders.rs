@@ -37,6 +37,10 @@ impl CreatePublicVirtualInterfaceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreatePublicVirtualInterface as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_public_virtual_interface::builders::CreatePublicVirtualInterfaceInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,10 @@ impl CreatePublicVirtualInterfaceFluentBuilder {
         self.inner = self.inner.set_connection_id(input);
         self
     }
+    /// <p>The ID of the connection.</p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connection_id()
+    }
     /// <p>Information about the public virtual interface.</p>
     pub fn new_public_virtual_interface(
         mut self,
@@ -148,5 +156,11 @@ impl CreatePublicVirtualInterfaceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_new_public_virtual_interface(input);
         self
+    }
+    /// <p>Information about the public virtual interface.</p>
+    pub fn get_new_public_virtual_interface(
+        &self,
+    ) -> &::std::option::Option<crate::types::NewPublicVirtualInterface> {
+        self.inner.get_new_public_virtual_interface()
     }
 }

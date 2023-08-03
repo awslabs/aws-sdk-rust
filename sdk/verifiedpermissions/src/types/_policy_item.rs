@@ -111,6 +111,10 @@ impl PolicyItemBuilder {
         self.policy_store_id = input;
         self
     }
+    /// <p>The identifier of the PolicyStore where the policy you want information about is stored.</p>
+    pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_store_id
+    }
     /// <p>The identifier of the policy you want information about.</p>
     pub fn policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_id = ::std::option::Option::Some(input.into());
@@ -120,6 +124,10 @@ impl PolicyItemBuilder {
     pub fn set_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_id = input;
         self
+    }
+    /// <p>The identifier of the policy you want information about.</p>
+    pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_id
     }
     /// <p>The type of the policy. This is one of the following values:</p>
     /// <ul>
@@ -142,6 +150,14 @@ impl PolicyItemBuilder {
         self.policy_type = input;
         self
     }
+    /// <p>The type of the policy. This is one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>static</code> </p> </li>
+    /// <li> <p> <code>templateLinked</code> </p> </li>
+    /// </ul>
+    pub fn get_policy_type(&self) -> &::std::option::Option<crate::types::PolicyType> {
+        &self.policy_type
+    }
     /// <p>The principal associated with the policy.</p>
     pub fn principal(mut self, input: crate::types::EntityIdentifier) -> Self {
         self.principal = ::std::option::Option::Some(input);
@@ -154,6 +170,10 @@ impl PolicyItemBuilder {
     ) -> Self {
         self.principal = input;
         self
+    }
+    /// <p>The principal associated with the policy.</p>
+    pub fn get_principal(&self) -> &::std::option::Option<crate::types::EntityIdentifier> {
+        &self.principal
     }
     /// <p>The resource associated with the policy.</p>
     pub fn resource(mut self, input: crate::types::EntityIdentifier) -> Self {
@@ -168,6 +188,10 @@ impl PolicyItemBuilder {
         self.resource = input;
         self
     }
+    /// <p>The resource associated with the policy.</p>
+    pub fn get_resource(&self) -> &::std::option::Option<crate::types::EntityIdentifier> {
+        &self.resource
+    }
     /// <p>The policy definition of an item in the list of policies returned.</p>
     pub fn definition(mut self, input: crate::types::PolicyDefinitionItem) -> Self {
         self.definition = ::std::option::Option::Some(input);
@@ -180,6 +204,10 @@ impl PolicyItemBuilder {
     ) -> Self {
         self.definition = input;
         self
+    }
+    /// <p>The policy definition of an item in the list of policies returned.</p>
+    pub fn get_definition(&self) -> &::std::option::Option<crate::types::PolicyDefinitionItem> {
+        &self.definition
     }
     /// <p>The date and time the policy was created.</p>
     pub fn created_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -194,6 +222,10 @@ impl PolicyItemBuilder {
         self.created_date = input;
         self
     }
+    /// <p>The date and time the policy was created.</p>
+    pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_date
+    }
     /// <p>The date and time the policy was most recently updated.</p>
     pub fn last_updated_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date = ::std::option::Option::Some(input);
@@ -206,6 +238,10 @@ impl PolicyItemBuilder {
     ) -> Self {
         self.last_updated_date = input;
         self
+    }
+    /// <p>The date and time the policy was most recently updated.</p>
+    pub fn get_last_updated_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date
     }
     /// Consumes the builder and constructs a [`PolicyItem`](crate::types::PolicyItem).
     pub fn build(self) -> crate::types::PolicyItem {

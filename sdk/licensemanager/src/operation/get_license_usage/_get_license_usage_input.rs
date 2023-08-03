@@ -39,6 +39,10 @@ impl GetLicenseUsageInputBuilder {
         self.license_arn = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the license.</p>
+    pub fn get_license_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_arn
+    }
     /// Consumes the builder and constructs a [`GetLicenseUsageInput`](crate::operation::get_license_usage::GetLicenseUsageInput).
     pub fn build(
         self,

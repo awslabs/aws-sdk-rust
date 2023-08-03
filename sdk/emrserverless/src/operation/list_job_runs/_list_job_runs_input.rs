@@ -85,6 +85,10 @@ impl ListJobRunsInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The ID of the application for which to list the job run.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The token for the next set of job run results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -95,6 +99,10 @@ impl ListJobRunsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next set of job run results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of job runs that can be listed.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -104,6 +112,10 @@ impl ListJobRunsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of job runs that can be listed.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The lower bound of the option to filter by creation date and time.</p>
     pub fn created_at_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -118,6 +130,10 @@ impl ListJobRunsInputBuilder {
         self.created_at_after = input;
         self
     }
+    /// <p>The lower bound of the option to filter by creation date and time.</p>
+    pub fn get_created_at_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at_after
+    }
     /// <p>The upper bound of the option to filter by creation date and time.</p>
     pub fn created_at_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at_before = ::std::option::Option::Some(input);
@@ -130,6 +146,10 @@ impl ListJobRunsInputBuilder {
     ) -> Self {
         self.created_at_before = input;
         self
+    }
+    /// <p>The upper bound of the option to filter by creation date and time.</p>
+    pub fn get_created_at_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at_before
     }
     /// Appends an item to `states`.
     ///
@@ -149,6 +169,10 @@ impl ListJobRunsInputBuilder {
     ) -> Self {
         self.states = input;
         self
+    }
+    /// <p>An optional filter for job run states. Note that if this filter contains multiple states, the resulting list will be grouped by the state.</p>
+    pub fn get_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobRunState>> {
+        &self.states
     }
     /// Consumes the builder and constructs a [`ListJobRunsInput`](crate::operation::list_job_runs::ListJobRunsInput).
     pub fn build(

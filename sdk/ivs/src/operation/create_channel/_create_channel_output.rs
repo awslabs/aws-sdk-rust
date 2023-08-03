@@ -55,6 +55,10 @@ impl CreateChannelOutputBuilder {
         self
     }
     /// <p></p>
+    pub fn get_channel(&self) -> &::std::option::Option<crate::types::Channel> {
+        &self.channel
+    }
+    /// <p></p>
     pub fn stream_key(mut self, input: crate::types::StreamKey) -> Self {
         self.stream_key = ::std::option::Option::Some(input);
         self
@@ -63,6 +67,10 @@ impl CreateChannelOutputBuilder {
     pub fn set_stream_key(mut self, input: ::std::option::Option<crate::types::StreamKey>) -> Self {
         self.stream_key = input;
         self
+    }
+    /// <p></p>
+    pub fn get_stream_key(&self) -> &::std::option::Option<crate::types::StreamKey> {
+        &self.stream_key
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

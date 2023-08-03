@@ -38,6 +38,12 @@ impl BatchDeleteImageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchDeleteImage as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_delete_image::builders::BatchDeleteImageInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +134,10 @@ impl BatchDeleteImageFluentBuilder {
         self.inner = self.inner.set_registry_id(input);
         self
     }
+    /// <p>The Amazon Web Services account ID, or registry alias, that's associated with the registry that contains the image to delete. If you do not specify a registry, the default public registry is assumed.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_registry_id()
+    }
     /// <p>The repository in a public registry that contains the image to delete.</p>
     pub fn repository_name(
         mut self,
@@ -143,6 +153,10 @@ impl BatchDeleteImageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
+    }
+    /// <p>The repository in a public registry that contains the image to delete.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_repository_name()
     }
     /// Appends an item to `imageIds`.
     ///
@@ -160,5 +174,11 @@ impl BatchDeleteImageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_image_ids(input);
         self
+    }
+    /// <p>A list of image ID references that correspond to images to delete. The format of the <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.</p>
+    pub fn get_image_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageIdentifier>> {
+        self.inner.get_image_ids()
     }
 }

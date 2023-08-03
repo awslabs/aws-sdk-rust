@@ -72,6 +72,10 @@ impl ContentModerationDetectionBuilder {
         self.timestamp = input;
         self
     }
+    /// <p>Time, in milliseconds from the beginning of the video, that the content moderation label was detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the moderated content first appears.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<i64> {
+        &self.timestamp
+    }
     /// <p>The content moderation label detected by in the stored video.</p>
     pub fn moderation_label(mut self, input: crate::types::ModerationLabel) -> Self {
         self.moderation_label = ::std::option::Option::Some(input);
@@ -85,6 +89,10 @@ impl ContentModerationDetectionBuilder {
         self.moderation_label = input;
         self
     }
+    /// <p>The content moderation label detected by in the stored video.</p>
+    pub fn get_moderation_label(&self) -> &::std::option::Option<crate::types::ModerationLabel> {
+        &self.moderation_label
+    }
     /// <p>The time in milliseconds defining the start of the timeline segment containing a continuously detected moderation label.</p>
     pub fn start_timestamp_millis(mut self, input: i64) -> Self {
         self.start_timestamp_millis = ::std::option::Option::Some(input);
@@ -94,6 +102,10 @@ impl ContentModerationDetectionBuilder {
     pub fn set_start_timestamp_millis(mut self, input: ::std::option::Option<i64>) -> Self {
         self.start_timestamp_millis = input;
         self
+    }
+    /// <p>The time in milliseconds defining the start of the timeline segment containing a continuously detected moderation label.</p>
+    pub fn get_start_timestamp_millis(&self) -> &::std::option::Option<i64> {
+        &self.start_timestamp_millis
     }
     /// <p> The time in milliseconds defining the end of the timeline segment containing a continuously detected moderation label. </p>
     pub fn end_timestamp_millis(mut self, input: i64) -> Self {
@@ -105,6 +117,10 @@ impl ContentModerationDetectionBuilder {
         self.end_timestamp_millis = input;
         self
     }
+    /// <p> The time in milliseconds defining the end of the timeline segment containing a continuously detected moderation label. </p>
+    pub fn get_end_timestamp_millis(&self) -> &::std::option::Option<i64> {
+        &self.end_timestamp_millis
+    }
     /// <p> The time duration of a segment in milliseconds, I.e. time elapsed from StartTimestampMillis to EndTimestampMillis. </p>
     pub fn duration_millis(mut self, input: i64) -> Self {
         self.duration_millis = ::std::option::Option::Some(input);
@@ -114,6 +130,10 @@ impl ContentModerationDetectionBuilder {
     pub fn set_duration_millis(mut self, input: ::std::option::Option<i64>) -> Self {
         self.duration_millis = input;
         self
+    }
+    /// <p> The time duration of a segment in milliseconds, I.e. time elapsed from StartTimestampMillis to EndTimestampMillis. </p>
+    pub fn get_duration_millis(&self) -> &::std::option::Option<i64> {
+        &self.duration_millis
     }
     /// Consumes the builder and constructs a [`ContentModerationDetection`](crate::types::ContentModerationDetection).
     pub fn build(self) -> crate::types::ContentModerationDetection {

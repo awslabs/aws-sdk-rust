@@ -49,6 +49,12 @@ impl TranscriptSourceSettingBuilder {
         self.s3_bucket_transcript_source = input;
         self
     }
+    /// <p>Indicates the setting of the Amazon S3 bucket where the transcript is stored.</p>
+    pub fn get_s3_bucket_transcript_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3BucketTranscriptSource> {
+        &self.s3_bucket_transcript_source
+    }
     /// Consumes the builder and constructs a [`TranscriptSourceSetting`](crate::types::TranscriptSourceSetting).
     pub fn build(self) -> crate::types::TranscriptSourceSetting {
         crate::types::TranscriptSourceSetting {

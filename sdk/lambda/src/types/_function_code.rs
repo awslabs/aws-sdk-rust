@@ -81,6 +81,10 @@ impl FunctionCodeBuilder {
         self.zip_file = input;
         self
     }
+    /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and CLI clients handle the encoding for you.</p>
+    pub fn get_zip_file(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.zip_file
+    }
     /// <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different Amazon Web Services account.</p>
     pub fn s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket = ::std::option::Option::Some(input.into());
@@ -91,6 +95,10 @@ impl FunctionCodeBuilder {
         self.s3_bucket = input;
         self
     }
+    /// <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different Amazon Web Services account.</p>
+    pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket
+    }
     /// <p>The Amazon S3 key of the deployment package.</p>
     pub fn s3_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_key = ::std::option::Option::Some(input.into());
@@ -100,6 +108,10 @@ impl FunctionCodeBuilder {
     pub fn set_s3_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_key = input;
         self
+    }
+    /// <p>The Amazon S3 key of the deployment package.</p>
+    pub fn get_s3_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_key
     }
     /// <p>For versioned objects, the version of the deployment package object to use.</p>
     pub fn s3_object_version(
@@ -117,6 +129,10 @@ impl FunctionCodeBuilder {
         self.s3_object_version = input;
         self
     }
+    /// <p>For versioned objects, the version of the deployment package object to use.</p>
+    pub fn get_s3_object_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_object_version
+    }
     /// <p>URI of a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container image</a> in the Amazon ECR registry.</p>
     pub fn image_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_uri = ::std::option::Option::Some(input.into());
@@ -126,6 +142,10 @@ impl FunctionCodeBuilder {
     pub fn set_image_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_uri = input;
         self
+    }
+    /// <p>URI of a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container image</a> in the Amazon ECR registry.</p>
+    pub fn get_image_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_uri
     }
     /// Consumes the builder and constructs a [`FunctionCode`](crate::types::FunctionCode).
     pub fn build(self) -> crate::types::FunctionCode {

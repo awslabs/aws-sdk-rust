@@ -39,6 +39,10 @@ impl GetDigestInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the ledger.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`GetDigestInput`](crate::operation::get_digest::GetDigestInput).
     pub fn build(
         self,

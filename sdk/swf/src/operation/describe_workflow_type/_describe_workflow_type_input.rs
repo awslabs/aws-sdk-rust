@@ -48,6 +48,10 @@ impl DescribeWorkflowTypeInputBuilder {
         self.domain = input;
         self
     }
+    /// <p>The name of the domain in which this workflow type is registered.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
+    }
     /// <p>The workflow type to describe.</p>
     pub fn workflow_type(mut self, input: crate::types::WorkflowType) -> Self {
         self.workflow_type = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl DescribeWorkflowTypeInputBuilder {
     ) -> Self {
         self.workflow_type = input;
         self
+    }
+    /// <p>The workflow type to describe.</p>
+    pub fn get_workflow_type(&self) -> &::std::option::Option<crate::types::WorkflowType> {
+        &self.workflow_type
     }
     /// Consumes the builder and constructs a [`DescribeWorkflowTypeInput`](crate::operation::describe_workflow_type::DescribeWorkflowTypeInput).
     pub fn build(

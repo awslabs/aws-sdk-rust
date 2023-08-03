@@ -45,6 +45,12 @@ impl MemberLogPublishingConfigurationBuilder {
         self.fabric = input;
         self
     }
+    /// <p>Configuration properties for logging events associated with a member of a Managed Blockchain network using the Hyperledger Fabric framework.</p>
+    pub fn get_fabric(
+        &self,
+    ) -> &::std::option::Option<crate::types::MemberFabricLogPublishingConfiguration> {
+        &self.fabric
+    }
     /// Consumes the builder and constructs a [`MemberLogPublishingConfiguration`](crate::types::MemberLogPublishingConfiguration).
     pub fn build(self) -> crate::types::MemberLogPublishingConfiguration {
         crate::types::MemberLogPublishingConfiguration {

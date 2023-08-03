@@ -45,6 +45,12 @@ impl DeleteResolverQueryLogConfigInputBuilder {
         self.resolver_query_log_config_id = input;
         self
     }
+    /// <p>The ID of the query logging configuration that you want to delete.</p>
+    pub fn get_resolver_query_log_config_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.resolver_query_log_config_id
+    }
     /// Consumes the builder and constructs a [`DeleteResolverQueryLogConfigInput`](crate::operation::delete_resolver_query_log_config::DeleteResolverQueryLogConfigInput).
     pub fn build(
         self,

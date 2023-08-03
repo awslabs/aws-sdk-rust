@@ -60,6 +60,12 @@ impl ListThirdPartyFirewallFirewallPoliciesInputBuilder {
         self.third_party_firewall = input;
         self
     }
+    /// <p>The name of the third-party firewall vendor.</p>
+    pub fn get_third_party_firewall(
+        &self,
+    ) -> &::std::option::Option<crate::types::ThirdPartyFirewall> {
+        &self.third_party_firewall
+    }
     /// <p>If the previous response included a <code>NextToken</code> element, the specified third-party firewall vendor is associated with more third-party firewall policies. To get more third-party firewall policies, submit another <code>ListThirdPartyFirewallFirewallPoliciesRequest</code> request.</p>
     /// <p> For the value of <code>NextToken</code>, specify the value of <code>NextToken</code> from the previous response. If the previous response didn't include a <code>NextToken</code> element, there are no more third-party firewall policies to get. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -72,6 +78,11 @@ impl ListThirdPartyFirewallFirewallPoliciesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If the previous response included a <code>NextToken</code> element, the specified third-party firewall vendor is associated with more third-party firewall policies. To get more third-party firewall policies, submit another <code>ListThirdPartyFirewallFirewallPoliciesRequest</code> request.</p>
+    /// <p> For the value of <code>NextToken</code>, specify the value of <code>NextToken</code> from the previous response. If the previous response didn't include a <code>NextToken</code> element, there are no more third-party firewall policies to get. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of third-party firewall policies that you want Firewall Manager to return. If the specified third-party firewall vendor is associated with more than <code>MaxResults</code> firewall policies, the response includes a <code>NextToken</code> element. <code>NextToken</code> contains an encrypted token that identifies the first third-party firewall policies that Firewall Manager will return if you submit another request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -81,6 +92,10 @@ impl ListThirdPartyFirewallFirewallPoliciesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of third-party firewall policies that you want Firewall Manager to return. If the specified third-party firewall vendor is associated with more than <code>MaxResults</code> firewall policies, the response includes a <code>NextToken</code> element. <code>NextToken</code> contains an encrypted token that identifies the first third-party firewall policies that Firewall Manager will return if you submit another request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListThirdPartyFirewallFirewallPoliciesInput`](crate::operation::list_third_party_firewall_firewall_policies::ListThirdPartyFirewallFirewallPoliciesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_third_party_firewall_firewall_policies::ListThirdPartyFirewallFirewallPoliciesInput, ::aws_smithy_http::operation::error::BuildError>{

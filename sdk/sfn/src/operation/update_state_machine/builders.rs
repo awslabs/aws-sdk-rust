@@ -73,6 +73,12 @@ impl UpdateStateMachineFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateStateMachine as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_state_machine::builders::UpdateStateMachineInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -169,6 +175,10 @@ impl UpdateStateMachineFluentBuilder {
         self.inner = self.inner.set_state_machine_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the state machine.</p>
+    pub fn get_state_machine_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_state_machine_arn()
+    }
     /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
     pub fn definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.definition(input.into());
@@ -179,6 +189,10 @@ impl UpdateStateMachineFluentBuilder {
         self.inner = self.inner.set_definition(input);
         self
     }
+    /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
+    pub fn get_definition(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_definition()
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM role of the state machine.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -188,6 +202,10 @@ impl UpdateStateMachineFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role of the state machine.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
     /// <p>Use the <code>LoggingConfiguration</code> data type to set CloudWatch Logs options.</p>
     pub fn logging_configuration(mut self, input: crate::types::LoggingConfiguration) -> Self {
@@ -202,6 +220,12 @@ impl UpdateStateMachineFluentBuilder {
         self.inner = self.inner.set_logging_configuration(input);
         self
     }
+    /// <p>Use the <code>LoggingConfiguration</code> data type to set CloudWatch Logs options.</p>
+    pub fn get_logging_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::LoggingConfiguration> {
+        self.inner.get_logging_configuration()
+    }
     /// <p>Selects whether X-Ray tracing is enabled.</p>
     pub fn tracing_configuration(mut self, input: crate::types::TracingConfiguration) -> Self {
         self.inner = self.inner.tracing_configuration(input);
@@ -215,6 +239,12 @@ impl UpdateStateMachineFluentBuilder {
         self.inner = self.inner.set_tracing_configuration(input);
         self
     }
+    /// <p>Selects whether X-Ray tracing is enabled.</p>
+    pub fn get_tracing_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::TracingConfiguration> {
+        self.inner.get_tracing_configuration()
+    }
     /// <p>Specifies whether the state machine version is published. The default is <code>false</code>. To publish a version after updating the state machine, set <code>publish</code> to <code>true</code>.</p>
     pub fn publish(mut self, input: bool) -> Self {
         self.inner = self.inner.publish(input);
@@ -224,6 +254,10 @@ impl UpdateStateMachineFluentBuilder {
     pub fn set_publish(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_publish(input);
         self
+    }
+    /// <p>Specifies whether the state machine version is published. The default is <code>false</code>. To publish a version after updating the state machine, set <code>publish</code> to <code>true</code>.</p>
+    pub fn get_publish(&self) -> &::std::option::Option<bool> {
+        self.inner.get_publish()
     }
     /// <p>An optional description of the state machine version to publish.</p>
     /// <p>You can only specify the <code>versionDescription</code> parameter if you've set <code>publish</code> to <code>true</code>.</p>
@@ -242,5 +276,10 @@ impl UpdateStateMachineFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_version_description(input);
         self
+    }
+    /// <p>An optional description of the state machine version to publish.</p>
+    /// <p>You can only specify the <code>versionDescription</code> parameter if you've set <code>publish</code> to <code>true</code>.</p>
+    pub fn get_version_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_version_description()
     }
 }

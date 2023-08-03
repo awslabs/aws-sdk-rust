@@ -45,6 +45,10 @@ impl ExportSnapshotInputBuilder {
         self.source_snapshot_name = input;
         self
     }
+    /// <p>The name of the instance or disk snapshot to be exported to Amazon EC2.</p>
+    pub fn get_source_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_snapshot_name
+    }
     /// Consumes the builder and constructs a [`ExportSnapshotInput`](crate::operation::export_snapshot::ExportSnapshotInput).
     pub fn build(
         self,

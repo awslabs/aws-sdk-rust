@@ -57,6 +57,12 @@ impl ServerStatusSummaryBuilder {
         self.run_time_assessment_status = input;
         self
     }
+    /// <p>The status of the run time.</p>
+    pub fn get_run_time_assessment_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::RunTimeAssessmentStatus> {
+        &self.run_time_assessment_status
+    }
     /// <p>The number of servers successfully analyzed, partially successful or failed analysis.</p>
     pub fn count(mut self, input: i32) -> Self {
         self.count = ::std::option::Option::Some(input);
@@ -66,6 +72,10 @@ impl ServerStatusSummaryBuilder {
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count = input;
         self
+    }
+    /// <p>The number of servers successfully analyzed, partially successful or failed analysis.</p>
+    pub fn get_count(&self) -> &::std::option::Option<i32> {
+        &self.count
     }
     /// Consumes the builder and constructs a [`ServerStatusSummary`](crate::types::ServerStatusSummary).
     pub fn build(self) -> crate::types::ServerStatusSummary {

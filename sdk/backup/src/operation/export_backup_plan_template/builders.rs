@@ -36,6 +36,10 @@ impl ExportBackupPlanTemplateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ExportBackupPlanTemplate as a reference.
+    pub fn as_input(&self) -> &crate::operation::export_backup_plan_template::builders::ExportBackupPlanTemplateInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +135,9 @@ impl ExportBackupPlanTemplateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_backup_plan_id(input);
         self
+    }
+    /// <p>Uniquely identifies a backup plan.</p>
+    pub fn get_backup_plan_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_backup_plan_id()
     }
 }

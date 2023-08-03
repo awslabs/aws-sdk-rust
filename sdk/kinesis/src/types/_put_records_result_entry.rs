@@ -70,6 +70,10 @@ impl PutRecordsResultEntryBuilder {
         self.sequence_number = input;
         self
     }
+    /// <p>The sequence number for an individual record result.</p>
+    pub fn get_sequence_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sequence_number
+    }
     /// <p>The shard ID for an individual record result.</p>
     pub fn shard_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.shard_id = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl PutRecordsResultEntryBuilder {
         self.shard_id = input;
         self
     }
+    /// <p>The shard ID for an individual record result.</p>
+    pub fn get_shard_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.shard_id
+    }
     /// <p>The error code for an individual record result. <code>ErrorCodes</code> can be either <code>ProvisionedThroughputExceededException</code> or <code>InternalFailure</code>.</p>
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
@@ -89,6 +97,10 @@ impl PutRecordsResultEntryBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>The error code for an individual record result. <code>ErrorCodes</code> can be either <code>ProvisionedThroughputExceededException</code> or <code>InternalFailure</code>.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
     }
     /// <p>The error message for an individual record result. An <code>ErrorCode</code> value of <code>ProvisionedThroughputExceededException</code> has an error message that includes the account ID, stream name, and shard ID. An <code>ErrorCode</code> value of <code>InternalFailure</code> has the error message <code>"Internal Service Failure"</code>.</p>
     pub fn error_message(
@@ -105,6 +117,10 @@ impl PutRecordsResultEntryBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>The error message for an individual record result. An <code>ErrorCode</code> value of <code>ProvisionedThroughputExceededException</code> has an error message that includes the account ID, stream name, and shard ID. An <code>ErrorCode</code> value of <code>InternalFailure</code> has the error message <code>"Internal Service Failure"</code>.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`PutRecordsResultEntry`](crate::types::PutRecordsResultEntry).
     pub fn build(self) -> crate::types::PutRecordsResultEntry {

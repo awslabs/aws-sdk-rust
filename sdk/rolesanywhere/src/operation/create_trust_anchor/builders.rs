@@ -37,6 +37,12 @@ impl CreateTrustAnchorFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateTrustAnchor as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_trust_anchor::builders::CreateTrustAnchorInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl CreateTrustAnchorFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the trust anchor.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The trust anchor type and its related certificate data.</p>
     pub fn source(mut self, input: crate::types::Source) -> Self {
         self.inner = self.inner.source(input);
@@ -137,6 +147,10 @@ impl CreateTrustAnchorFluentBuilder {
         self.inner = self.inner.set_source(input);
         self
     }
+    /// <p>The trust anchor type and its related certificate data.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::Source> {
+        self.inner.get_source()
+    }
     /// <p>Specifies whether the trust anchor is enabled.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.enabled(input);
@@ -146,6 +160,10 @@ impl CreateTrustAnchorFluentBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enabled(input);
         self
+    }
+    /// <p>Specifies whether the trust anchor is enabled.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enabled()
     }
     /// Appends an item to `tags`.
     ///
@@ -164,6 +182,10 @@ impl CreateTrustAnchorFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tags to attach to the trust anchor.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// Appends an item to `notificationSettings`.
     ///
     /// To override the contents of this collection use [`set_notification_settings`](Self::set_notification_settings).
@@ -180,5 +202,11 @@ impl CreateTrustAnchorFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_notification_settings(input);
         self
+    }
+    /// <p>A list of notification settings to be associated to the trust anchor.</p>
+    pub fn get_notification_settings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationSetting>> {
+        self.inner.get_notification_settings()
     }
 }

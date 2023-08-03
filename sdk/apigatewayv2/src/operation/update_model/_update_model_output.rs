@@ -78,6 +78,10 @@ impl UpdateModelOutputBuilder {
         self.content_type = input;
         self
     }
+    /// <p>The content-type for the model, for example, "application/json".</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_type
+    }
     /// <p>The description of the model.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -87,6 +91,10 @@ impl UpdateModelOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the model.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The model identifier.</p>
     pub fn model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -98,6 +106,10 @@ impl UpdateModelOutputBuilder {
         self.model_id = input;
         self
     }
+    /// <p>The model identifier.</p>
+    pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_id
+    }
     /// <p>The name of the model. Must be alphanumeric.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -108,6 +120,10 @@ impl UpdateModelOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the model. Must be alphanumeric.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The schema for the model. For application/json models, this should be JSON schema draft 4 model.</p>
     pub fn schema(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema = ::std::option::Option::Some(input.into());
@@ -117,6 +133,10 @@ impl UpdateModelOutputBuilder {
     pub fn set_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema = input;
         self
+    }
+    /// <p>The schema for the model. For application/json models, this should be JSON schema draft 4 model.</p>
+    pub fn get_schema(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

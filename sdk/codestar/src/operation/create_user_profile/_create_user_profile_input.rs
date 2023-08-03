@@ -72,6 +72,10 @@ impl CreateUserProfileInputBuilder {
         self.user_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
+    pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_arn
+    }
     /// <p>The name that will be displayed as the friendly name for the user in AWS CodeStar. </p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl CreateUserProfileInputBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
+    }
+    /// <p>The name that will be displayed as the friendly name for the user in AWS CodeStar. </p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// <p>The email address that will be displayed as part of the user's profile in AWS CodeStar.</p>
     pub fn email_address(
@@ -98,6 +106,10 @@ impl CreateUserProfileInputBuilder {
         self.email_address = input;
         self
     }
+    /// <p>The email address that will be displayed as part of the user's profile in AWS CodeStar.</p>
+    pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email_address
+    }
     /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.</p>
     pub fn ssh_public_key(
         mut self,
@@ -113,6 +125,10 @@ impl CreateUserProfileInputBuilder {
     ) -> Self {
         self.ssh_public_key = input;
         self
+    }
+    /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.</p>
+    pub fn get_ssh_public_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ssh_public_key
     }
     /// Consumes the builder and constructs a [`CreateUserProfileInput`](crate::operation::create_user_profile::CreateUserProfileInput).
     pub fn build(

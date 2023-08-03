@@ -96,6 +96,10 @@ impl EventStreamSummaryBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The unique name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The name of the event stream.</p>
     pub fn event_stream_name(
         mut self,
@@ -111,6 +115,10 @@ impl EventStreamSummaryBuilder {
     ) -> Self {
         self.event_stream_name = input;
         self
+    }
+    /// <p>The name of the event stream.</p>
+    pub fn get_event_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_stream_name
     }
     /// <p>A unique identifier for the event stream.</p>
     pub fn event_stream_arn(
@@ -128,6 +136,10 @@ impl EventStreamSummaryBuilder {
         self.event_stream_arn = input;
         self
     }
+    /// <p>A unique identifier for the event stream.</p>
+    pub fn get_event_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_stream_arn
+    }
     /// <p>The operational state of destination stream for export.</p>
     pub fn state(mut self, input: crate::types::EventStreamState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -140,6 +152,10 @@ impl EventStreamSummaryBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The operational state of destination stream for export.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::EventStreamState> {
+        &self.state
     }
     /// <p>The timestamp when the <code>State</code> changed to <code>STOPPED</code>.</p>
     pub fn stopped_since(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -154,6 +170,10 @@ impl EventStreamSummaryBuilder {
         self.stopped_since = input;
         self
     }
+    /// <p>The timestamp when the <code>State</code> changed to <code>STOPPED</code>.</p>
+    pub fn get_stopped_since(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.stopped_since
+    }
     /// <p>Summary information about the Kinesis data stream.</p>
     pub fn destination_summary(mut self, input: crate::types::DestinationSummary) -> Self {
         self.destination_summary = ::std::option::Option::Some(input);
@@ -166,6 +186,12 @@ impl EventStreamSummaryBuilder {
     ) -> Self {
         self.destination_summary = input;
         self
+    }
+    /// <p>Summary information about the Kinesis data stream.</p>
+    pub fn get_destination_summary(
+        &self,
+    ) -> &::std::option::Option<crate::types::DestinationSummary> {
+        &self.destination_summary
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -191,6 +217,14 @@ impl EventStreamSummaryBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`EventStreamSummary`](crate::types::EventStreamSummary).
     pub fn build(self) -> crate::types::EventStreamSummary {

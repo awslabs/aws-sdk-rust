@@ -61,6 +61,10 @@ impl GetBucketAclOutputBuilder {
         self.owner = input;
         self
     }
+    /// <p>Container for the bucket owner's display name and ID.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<crate::types::Owner> {
+        &self.owner
+    }
     /// Appends an item to `grants`.
     ///
     /// To override the contents of this collection use [`set_grants`](Self::set_grants).
@@ -79,6 +83,10 @@ impl GetBucketAclOutputBuilder {
     ) -> Self {
         self.grants = input;
         self
+    }
+    /// <p>A list of grants.</p>
+    pub fn get_grants(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Grant>> {
+        &self.grants
     }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
         self._extended_request_id = Some(extended_request_id.into());

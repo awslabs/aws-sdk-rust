@@ -39,6 +39,10 @@ impl CreatePresignedNotebookUrlInputBuilder {
         self.session_id = input;
         self
     }
+    /// <p>The session ID.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
+    }
     /// Consumes the builder and constructs a [`CreatePresignedNotebookUrlInput`](crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlInput).
     pub fn build(
         self,

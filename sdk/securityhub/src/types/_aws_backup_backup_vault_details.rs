@@ -82,6 +82,10 @@ impl AwsBackupBackupVaultDetailsBuilder {
         self.backup_vault_arn = input;
         self
     }
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault. </p>
+    pub fn get_backup_vault_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_vault_arn
+    }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the Amazon Web Services account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens. </p>
     pub fn backup_vault_name(
         mut self,
@@ -97,6 +101,10 @@ impl AwsBackupBackupVaultDetailsBuilder {
     ) -> Self {
         self.backup_vault_name = input;
         self
+    }
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the Amazon Web Services account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens. </p>
+    pub fn get_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_vault_name
     }
     /// <p>The unique ARN associated with the server-side encryption key. You can specify a key to encrypt your backups from services that support full Backup management. If you do not specify a key, Backup creates an KMS key for you by default. </p>
     pub fn encryption_key_arn(
@@ -114,6 +122,10 @@ impl AwsBackupBackupVaultDetailsBuilder {
         self.encryption_key_arn = input;
         self
     }
+    /// <p>The unique ARN associated with the server-side encryption key. You can specify a key to encrypt your backups from services that support full Backup management. If you do not specify a key, Backup creates an KMS key for you by default. </p>
+    pub fn get_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encryption_key_arn
+    }
     /// <p>The Amazon SNS event notifications for the specified backup vault. </p>
     pub fn notifications(
         mut self,
@@ -130,6 +142,12 @@ impl AwsBackupBackupVaultDetailsBuilder {
         self.notifications = input;
         self
     }
+    /// <p>The Amazon SNS event notifications for the specified backup vault. </p>
+    pub fn get_notifications(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsBackupBackupVaultNotificationsDetails> {
+        &self.notifications
+    }
     /// <p>A resource-based policy that is used to manage access permissions on the target backup vault. </p>
     pub fn access_policy(
         mut self,
@@ -145,6 +163,10 @@ impl AwsBackupBackupVaultDetailsBuilder {
     ) -> Self {
         self.access_policy = input;
         self
+    }
+    /// <p>A resource-based policy that is used to manage access permissions on the target backup vault. </p>
+    pub fn get_access_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_policy
     }
     /// Consumes the builder and constructs a [`AwsBackupBackupVaultDetails`](crate::types::AwsBackupBackupVaultDetails).
     pub fn build(self) -> crate::types::AwsBackupBackupVaultDetails {

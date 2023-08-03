@@ -81,6 +81,10 @@ impl CreateAssistantAssociationInputBuilder {
         self.assistant_id = input;
         self
     }
+    /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn get_assistant_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assistant_id
+    }
     /// <p>The type of association.</p>
     pub fn association_type(mut self, input: crate::types::AssociationType) -> Self {
         self.association_type = ::std::option::Option::Some(input);
@@ -93,6 +97,10 @@ impl CreateAssistantAssociationInputBuilder {
     ) -> Self {
         self.association_type = input;
         self
+    }
+    /// <p>The type of association.</p>
+    pub fn get_association_type(&self) -> &::std::option::Option<crate::types::AssociationType> {
+        &self.association_type
     }
     /// <p>The identifier of the associated resource.</p>
     pub fn association(mut self, input: crate::types::AssistantAssociationInputData) -> Self {
@@ -107,6 +115,12 @@ impl CreateAssistantAssociationInputBuilder {
         self.association = input;
         self
     }
+    /// <p>The identifier of the associated resource.</p>
+    pub fn get_association(
+        &self,
+    ) -> &::std::option::Option<crate::types::AssistantAssociationInputData> {
+        &self.association
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -116,6 +130,10 @@ impl CreateAssistantAssociationInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -141,6 +159,14 @@ impl CreateAssistantAssociationInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateAssistantAssociationInput`](crate::operation::create_assistant_association::CreateAssistantAssociationInput).
     pub fn build(

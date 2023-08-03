@@ -39,6 +39,10 @@ impl AddEgressGatewayBridgeRequestBuilder {
         self.max_bitrate = input;
         self
     }
+    /// The maximum expected bitrate (in bps).
+    pub fn get_max_bitrate(&self) -> &::std::option::Option<i32> {
+        &self.max_bitrate
+    }
     /// Consumes the builder and constructs a [`AddEgressGatewayBridgeRequest`](crate::types::AddEgressGatewayBridgeRequest).
     pub fn build(self) -> crate::types::AddEgressGatewayBridgeRequest {
         crate::types::AddEgressGatewayBridgeRequest {

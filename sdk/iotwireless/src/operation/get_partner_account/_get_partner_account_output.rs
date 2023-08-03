@@ -60,6 +60,12 @@ impl GetPartnerAccountOutputBuilder {
         self.sidewalk = input;
         self
     }
+    /// <p>The Sidewalk account credentials.</p>
+    pub fn get_sidewalk(
+        &self,
+    ) -> &::std::option::Option<crate::types::SidewalkAccountInfoWithFingerprint> {
+        &self.sidewalk
+    }
     /// <p>Whether the partner account is linked to the AWS account.</p>
     pub fn account_linked(mut self, input: bool) -> Self {
         self.account_linked = ::std::option::Option::Some(input);
@@ -69,6 +75,10 @@ impl GetPartnerAccountOutputBuilder {
     pub fn set_account_linked(mut self, input: ::std::option::Option<bool>) -> Self {
         self.account_linked = input;
         self
+    }
+    /// <p>Whether the partner account is linked to the AWS account.</p>
+    pub fn get_account_linked(&self) -> &::std::option::Option<bool> {
+        &self.account_linked
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

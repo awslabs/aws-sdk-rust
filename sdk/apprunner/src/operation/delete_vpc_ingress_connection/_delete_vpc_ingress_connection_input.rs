@@ -45,6 +45,10 @@ impl DeleteVpcIngressConnectionInputBuilder {
         self.vpc_ingress_connection_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the App Runner VPC Ingress Connection that you want to delete.</p>
+    pub fn get_vpc_ingress_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_ingress_connection_arn
+    }
     /// Consumes the builder and constructs a [`DeleteVpcIngressConnectionInput`](crate::operation::delete_vpc_ingress_connection::DeleteVpcIngressConnectionInput).
     pub fn build(
         self,

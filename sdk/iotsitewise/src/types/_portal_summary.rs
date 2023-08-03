@@ -96,6 +96,10 @@ impl PortalSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the portal.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the portal.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl PortalSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the portal.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The portal's description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -116,6 +124,10 @@ impl PortalSummaryBuilder {
         self.description = input;
         self
     }
+    /// <p>The portal's description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
     pub fn start_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_url = ::std::option::Option::Some(input.into());
@@ -125,6 +137,10 @@ impl PortalSummaryBuilder {
     pub fn set_start_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_url = input;
         self
+    }
+    /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
+    pub fn get_start_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_url
     }
     /// <p>The date the portal was created, in Unix epoch time.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -139,6 +155,10 @@ impl PortalSummaryBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>The date the portal was created, in Unix epoch time.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
+    }
     /// <p>The date the portal was last updated, in Unix epoch time.</p>
     pub fn last_update_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_update_date = ::std::option::Option::Some(input);
@@ -152,6 +172,10 @@ impl PortalSummaryBuilder {
         self.last_update_date = input;
         self
     }
+    /// <p>The date the portal was last updated, in Unix epoch time.</p>
+    pub fn get_last_update_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_update_date
+    }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -162,6 +186,10 @@ impl PortalSummaryBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>Contains information about the current status of a portal.</p>
     pub fn status(mut self, input: crate::types::PortalStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -171,6 +199,10 @@ impl PortalSummaryBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::PortalStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Contains information about the current status of a portal.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::PortalStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`PortalSummary`](crate::types::PortalSummary).
     pub fn build(self) -> crate::types::PortalSummary {

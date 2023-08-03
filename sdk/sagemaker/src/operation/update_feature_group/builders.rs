@@ -38,6 +38,12 @@ impl UpdateFeatureGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateFeatureGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_feature_group::builders::UpdateFeatureGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +140,10 @@ impl UpdateFeatureGroupFluentBuilder {
         self.inner = self.inner.set_feature_group_name(input);
         self
     }
+    /// <p>The name or Amazon Resource Name (ARN) of the feature group that you're updating.</p>
+    pub fn get_feature_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_feature_group_name()
+    }
     /// Appends an item to `FeatureAdditions`.
     ///
     /// To override the contents of this collection use [`set_feature_additions`](Self::set_feature_additions).
@@ -151,6 +161,12 @@ impl UpdateFeatureGroupFluentBuilder {
         self.inner = self.inner.set_feature_additions(input);
         self
     }
+    /// <p>Updates the feature group. Updating a feature group is an asynchronous operation. When you get an HTTP 200 response, you've made a valid request. It takes some time after you've made a valid request for Feature Store to update the feature group.</p>
+    pub fn get_feature_additions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureDefinition>> {
+        self.inner.get_feature_additions()
+    }
     /// <p>Updates the feature group online store configuration.</p>
     pub fn online_store_config(mut self, input: crate::types::OnlineStoreConfigUpdate) -> Self {
         self.inner = self.inner.online_store_config(input);
@@ -163,5 +179,11 @@ impl UpdateFeatureGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_online_store_config(input);
         self
+    }
+    /// <p>Updates the feature group online store configuration.</p>
+    pub fn get_online_store_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::OnlineStoreConfigUpdate> {
+        self.inner.get_online_store_config()
     }
 }

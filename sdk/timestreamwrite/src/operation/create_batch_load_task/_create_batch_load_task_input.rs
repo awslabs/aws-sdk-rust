@@ -109,6 +109,10 @@ impl CreateBatchLoadTaskInputBuilder {
         self
     }
     /// <p></p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
+    /// <p></p>
     pub fn data_model_configuration(mut self, input: crate::types::DataModelConfiguration) -> Self {
         self.data_model_configuration = ::std::option::Option::Some(input);
         self
@@ -120,6 +124,12 @@ impl CreateBatchLoadTaskInputBuilder {
     ) -> Self {
         self.data_model_configuration = input;
         self
+    }
+    /// <p></p>
+    pub fn get_data_model_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataModelConfiguration> {
+        &self.data_model_configuration
     }
     /// <p>Defines configuration details about the data source for a batch load task.</p>
     pub fn data_source_configuration(
@@ -137,6 +147,12 @@ impl CreateBatchLoadTaskInputBuilder {
         self.data_source_configuration = input;
         self
     }
+    /// <p>Defines configuration details about the data source for a batch load task.</p>
+    pub fn get_data_source_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataSourceConfiguration> {
+        &self.data_source_configuration
+    }
     /// <p>Report configuration for a batch load task. This contains details about where error reports are stored.</p>
     pub fn report_configuration(mut self, input: crate::types::ReportConfiguration) -> Self {
         self.report_configuration = ::std::option::Option::Some(input);
@@ -149,6 +165,12 @@ impl CreateBatchLoadTaskInputBuilder {
     ) -> Self {
         self.report_configuration = input;
         self
+    }
+    /// <p>Report configuration for a batch load task. This contains details about where error reports are stored.</p>
+    pub fn get_report_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReportConfiguration> {
+        &self.report_configuration
     }
     /// <p>Target Timestream database for a batch load task.</p>
     pub fn target_database_name(
@@ -166,6 +188,10 @@ impl CreateBatchLoadTaskInputBuilder {
         self.target_database_name = input;
         self
     }
+    /// <p>Target Timestream database for a batch load task.</p>
+    pub fn get_target_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_database_name
+    }
     /// <p>Target Timestream table for a batch load task.</p>
     pub fn target_table_name(
         mut self,
@@ -182,6 +208,10 @@ impl CreateBatchLoadTaskInputBuilder {
         self.target_table_name = input;
         self
     }
+    /// <p>Target Timestream table for a batch load task.</p>
+    pub fn get_target_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_table_name
+    }
     /// <p></p>
     pub fn record_version(mut self, input: i64) -> Self {
         self.record_version = ::std::option::Option::Some(input);
@@ -191,6 +221,10 @@ impl CreateBatchLoadTaskInputBuilder {
     pub fn set_record_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.record_version = input;
         self
+    }
+    /// <p></p>
+    pub fn get_record_version(&self) -> &::std::option::Option<i64> {
+        &self.record_version
     }
     /// Consumes the builder and constructs a [`CreateBatchLoadTaskInput`](crate::operation::create_batch_load_task::CreateBatchLoadTaskInput).
     pub fn build(

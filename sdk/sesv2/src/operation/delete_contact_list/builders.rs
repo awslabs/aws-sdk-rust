@@ -36,6 +36,12 @@ impl DeleteContactListFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteContactList as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_contact_list::builders::DeleteContactListInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl DeleteContactListFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_contact_list_name(input);
         self
+    }
+    /// <p>The name of the contact list.</p>
+    pub fn get_contact_list_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_contact_list_name()
     }
 }

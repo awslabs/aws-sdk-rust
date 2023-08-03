@@ -103,6 +103,10 @@ impl UserBuilder {
         self.user_id = input;
         self
     }
+    /// <p>The ID of the user.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
+    }
     /// <p>The username of the user.</p>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
@@ -112,6 +116,10 @@ impl UserBuilder {
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_name = input;
         self
+    }
+    /// <p>The username of the user.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
     }
     /// <p>Indicates the user status. Can be "active", "modifying" or "deleting".</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -123,6 +131,10 @@ impl UserBuilder {
         self.status = input;
         self
     }
+    /// <p>Indicates the user status. Can be "active", "modifying" or "deleting".</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>The current supported value is Redis.</p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
@@ -132,6 +144,10 @@ impl UserBuilder {
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
         self
+    }
+    /// <p>The current supported value is Redis.</p>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine
     }
     /// <p>The minimum engine version required, which is Redis 6.0</p>
     pub fn minimum_engine_version(
@@ -149,6 +165,10 @@ impl UserBuilder {
         self.minimum_engine_version = input;
         self
     }
+    /// <p>The minimum engine version required, which is Redis 6.0</p>
+    pub fn get_minimum_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.minimum_engine_version
+    }
     /// <p>Access permissions string used for this user.</p>
     pub fn access_string(
         mut self,
@@ -164,6 +184,10 @@ impl UserBuilder {
     ) -> Self {
         self.access_string = input;
         self
+    }
+    /// <p>Access permissions string used for this user.</p>
+    pub fn get_access_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_string
     }
     /// Appends an item to `user_group_ids`.
     ///
@@ -187,6 +211,12 @@ impl UserBuilder {
         self.user_group_ids = input;
         self
     }
+    /// <p>Returns a list of the user group IDs the user belongs to.</p>
+    pub fn get_user_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.user_group_ids
+    }
     /// <p>Denotes whether the user requires a password to authenticate.</p>
     pub fn authentication(mut self, input: crate::types::Authentication) -> Self {
         self.authentication = ::std::option::Option::Some(input);
@@ -200,6 +230,10 @@ impl UserBuilder {
         self.authentication = input;
         self
     }
+    /// <p>Denotes whether the user requires a password to authenticate.</p>
+    pub fn get_authentication(&self) -> &::std::option::Option<crate::types::Authentication> {
+        &self.authentication
+    }
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -209,6 +243,10 @@ impl UserBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the user.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`User`](crate::types::User).
     pub fn build(self) -> crate::types::User {

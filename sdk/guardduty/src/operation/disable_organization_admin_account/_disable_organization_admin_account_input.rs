@@ -45,6 +45,10 @@ impl DisableOrganizationAdminAccountInputBuilder {
         self.admin_account_id = input;
         self
     }
+    /// <p>The Amazon Web Services Account ID for the organizations account to be disabled as a GuardDuty delegated administrator.</p>
+    pub fn get_admin_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.admin_account_id
+    }
     /// Consumes the builder and constructs a [`DisableOrganizationAdminAccountInput`](crate::operation::disable_organization_admin_account::DisableOrganizationAdminAccountInput).
     pub fn build(
         self,

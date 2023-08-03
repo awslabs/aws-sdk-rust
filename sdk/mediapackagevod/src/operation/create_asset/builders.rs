@@ -36,6 +36,10 @@ impl CreateAssetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateAsset as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_asset::builders::CreateAssetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl CreateAssetFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// The unique identifier for the Asset.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// The ID of the PackagingGroup for the Asset.
     pub fn packaging_group_id(
         mut self,
@@ -134,6 +142,10 @@ impl CreateAssetFluentBuilder {
         self.inner = self.inner.set_packaging_group_id(input);
         self
     }
+    /// The ID of the PackagingGroup for the Asset.
+    pub fn get_packaging_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_packaging_group_id()
+    }
     /// The resource ID to include in SPEKE key requests.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_id(input.into());
@@ -144,6 +156,10 @@ impl CreateAssetFluentBuilder {
         self.inner = self.inner.set_resource_id(input);
         self
     }
+    /// The resource ID to include in SPEKE key requests.
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_id()
+    }
     /// ARN of the source object in S3.
     pub fn source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_arn(input.into());
@@ -153,6 +169,10 @@ impl CreateAssetFluentBuilder {
     pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_arn(input);
         self
+    }
+    /// ARN of the source object in S3.
+    pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_arn()
     }
     /// The IAM role ARN used to access the source S3 bucket.
     pub fn source_role_arn(
@@ -169,6 +189,10 @@ impl CreateAssetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_source_role_arn(input);
         self
+    }
+    /// The IAM role ARN used to access the source S3 bucket.
+    pub fn get_source_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_role_arn()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -192,5 +216,13 @@ impl CreateAssetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// A collection of tags associated with a resource
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

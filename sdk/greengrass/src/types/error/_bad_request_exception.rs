@@ -84,6 +84,12 @@ impl BadRequestExceptionBuilder {
         self.error_details = input;
         self
     }
+    /// Details about the error.
+    pub fn get_error_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>> {
+        &self.error_details
+    }
     /// A message containing information about the error.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -93,6 +99,10 @@ impl BadRequestExceptionBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// A message containing information about the error.
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

@@ -68,6 +68,10 @@ impl CreateReservedInstancesListingInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of your listings. This helps avoid duplicate listings. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>The number of instances that are a part of a Reserved Instance account to be listed in the Reserved Instance Marketplace. This number should be less than or equal to the instance count associated with the Reserved Instance ID specified in this call.</p>
     pub fn instance_count(mut self, input: i32) -> Self {
         self.instance_count = ::std::option::Option::Some(input);
@@ -77,6 +81,10 @@ impl CreateReservedInstancesListingInputBuilder {
     pub fn set_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.instance_count = input;
         self
+    }
+    /// <p>The number of instances that are a part of a Reserved Instance account to be listed in the Reserved Instance Marketplace. This number should be less than or equal to the instance count associated with the Reserved Instance ID specified in this call.</p>
+    pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
+        &self.instance_count
     }
     /// Appends an item to `price_schedules`.
     ///
@@ -97,6 +105,12 @@ impl CreateReservedInstancesListingInputBuilder {
         self.price_schedules = input;
         self
     }
+    /// <p>A list specifying the price of the Standard Reserved Instance for each month remaining in the Reserved Instance term.</p>
+    pub fn get_price_schedules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PriceScheduleSpecification>> {
+        &self.price_schedules
+    }
     /// <p>The ID of the active Standard Reserved Instance.</p>
     pub fn reserved_instances_id(
         mut self,
@@ -112,6 +126,10 @@ impl CreateReservedInstancesListingInputBuilder {
     ) -> Self {
         self.reserved_instances_id = input;
         self
+    }
+    /// <p>The ID of the active Standard Reserved Instance.</p>
+    pub fn get_reserved_instances_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reserved_instances_id
     }
     /// Consumes the builder and constructs a [`CreateReservedInstancesListingInput`](crate::operation::create_reserved_instances_listing::CreateReservedInstancesListingInput).
     pub fn build(

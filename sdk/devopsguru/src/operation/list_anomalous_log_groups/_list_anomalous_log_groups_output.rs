@@ -68,6 +68,10 @@ impl ListAnomalousLogGroupsOutputBuilder {
         self.insight_id = input;
         self
     }
+    /// <p> The ID of the insight containing the log groups. </p>
+    pub fn get_insight_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.insight_id
+    }
     /// Appends an item to `anomalous_log_groups`.
     ///
     /// To override the contents of this collection use [`set_anomalous_log_groups`](Self::set_anomalous_log_groups).
@@ -87,6 +91,12 @@ impl ListAnomalousLogGroupsOutputBuilder {
         self.anomalous_log_groups = input;
         self
     }
+    /// <p> The list of Amazon CloudWatch log groups that are related to an insight. </p>
+    pub fn get_anomalous_log_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnomalousLogGroup>> {
+        &self.anomalous_log_groups
+    }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -96,6 +106,10 @@ impl ListAnomalousLogGroupsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

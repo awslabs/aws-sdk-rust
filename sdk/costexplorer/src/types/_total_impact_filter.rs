@@ -59,6 +59,10 @@ impl TotalImpactFilterBuilder {
         self.numeric_operator = input;
         self
     }
+    /// <p>The comparing value that's used in the filter. </p>
+    pub fn get_numeric_operator(&self) -> &::std::option::Option<crate::types::NumericOperator> {
+        &self.numeric_operator
+    }
     /// <p>The lower bound dollar value that's used in the filter. </p>
     pub fn start_value(mut self, input: f64) -> Self {
         self.start_value = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl TotalImpactFilterBuilder {
         self.start_value = input;
         self
     }
+    /// <p>The lower bound dollar value that's used in the filter. </p>
+    pub fn get_start_value(&self) -> &::std::option::Option<f64> {
+        &self.start_value
+    }
     /// <p>The upper bound dollar value that's used in the filter. </p>
     pub fn end_value(mut self, input: f64) -> Self {
         self.end_value = ::std::option::Option::Some(input);
@@ -78,6 +86,10 @@ impl TotalImpactFilterBuilder {
     pub fn set_end_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.end_value = input;
         self
+    }
+    /// <p>The upper bound dollar value that's used in the filter. </p>
+    pub fn get_end_value(&self) -> &::std::option::Option<f64> {
+        &self.end_value
     }
     /// Consumes the builder and constructs a [`TotalImpactFilter`](crate::types::TotalImpactFilter).
     pub fn build(self) -> crate::types::TotalImpactFilter {

@@ -96,6 +96,12 @@ impl Ec2ResourceUtilizationBuilder {
         self.max_cpu_utilization_percentage = input;
         self
     }
+    /// <p>The maximum observed or expected CPU utilization of the instance.</p>
+    pub fn get_max_cpu_utilization_percentage(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.max_cpu_utilization_percentage
+    }
     /// <p>The maximum observed or expected memory utilization of the instance.</p>
     pub fn max_memory_utilization_percentage(
         mut self,
@@ -111,6 +117,12 @@ impl Ec2ResourceUtilizationBuilder {
     ) -> Self {
         self.max_memory_utilization_percentage = input;
         self
+    }
+    /// <p>The maximum observed or expected memory utilization of the instance.</p>
+    pub fn get_max_memory_utilization_percentage(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.max_memory_utilization_percentage
     }
     /// <p>The maximum observed or expected storage utilization of the instance. This doesn't include EBS storage.</p>
     pub fn max_storage_utilization_percentage(
@@ -128,6 +140,12 @@ impl Ec2ResourceUtilizationBuilder {
         self.max_storage_utilization_percentage = input;
         self
     }
+    /// <p>The maximum observed or expected storage utilization of the instance. This doesn't include EBS storage.</p>
+    pub fn get_max_storage_utilization_percentage(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.max_storage_utilization_percentage
+    }
     /// <p>The EBS field that contains a list of EBS metrics that are associated with the current instance. </p>
     pub fn ebs_resource_utilization(mut self, input: crate::types::EbsResourceUtilization) -> Self {
         self.ebs_resource_utilization = ::std::option::Option::Some(input);
@@ -140,6 +158,12 @@ impl Ec2ResourceUtilizationBuilder {
     ) -> Self {
         self.ebs_resource_utilization = input;
         self
+    }
+    /// <p>The EBS field that contains a list of EBS metrics that are associated with the current instance. </p>
+    pub fn get_ebs_resource_utilization(
+        &self,
+    ) -> &::std::option::Option<crate::types::EbsResourceUtilization> {
+        &self.ebs_resource_utilization
     }
     /// <p>The field that contains a list of disk (local storage) metrics that are associated with the current instance. </p>
     pub fn disk_resource_utilization(
@@ -157,6 +181,12 @@ impl Ec2ResourceUtilizationBuilder {
         self.disk_resource_utilization = input;
         self
     }
+    /// <p>The field that contains a list of disk (local storage) metrics that are associated with the current instance. </p>
+    pub fn get_disk_resource_utilization(
+        &self,
+    ) -> &::std::option::Option<crate::types::DiskResourceUtilization> {
+        &self.disk_resource_utilization
+    }
     /// <p>The network field that contains a list of network metrics that are associated with the current instance. </p>
     pub fn network_resource_utilization(
         mut self,
@@ -172,6 +202,12 @@ impl Ec2ResourceUtilizationBuilder {
     ) -> Self {
         self.network_resource_utilization = input;
         self
+    }
+    /// <p>The network field that contains a list of network metrics that are associated with the current instance. </p>
+    pub fn get_network_resource_utilization(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkResourceUtilization> {
+        &self.network_resource_utilization
     }
     /// Consumes the builder and constructs a [`Ec2ResourceUtilization`](crate::types::Ec2ResourceUtilization).
     pub fn build(self) -> crate::types::Ec2ResourceUtilization {

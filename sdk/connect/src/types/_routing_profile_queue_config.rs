@@ -61,6 +61,12 @@ impl RoutingProfileQueueConfigBuilder {
         self.queue_reference = input;
         self
     }
+    /// <p>Contains information about a queue resource.</p>
+    pub fn get_queue_reference(
+        &self,
+    ) -> &::std::option::Option<crate::types::RoutingProfileQueueReference> {
+        &self.queue_reference
+    }
     /// <p>The order in which contacts are to be handled for the queue. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a>.</p>
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
@@ -71,6 +77,10 @@ impl RoutingProfileQueueConfigBuilder {
         self.priority = input;
         self
     }
+    /// <p>The order in which contacts are to be handled for the queue. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a>.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
+    }
     /// <p>The delay, in seconds, a contact should be in the queue before they are routed to an available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub fn delay(mut self, input: i32) -> Self {
         self.delay = ::std::option::Option::Some(input);
@@ -80,6 +90,10 @@ impl RoutingProfileQueueConfigBuilder {
     pub fn set_delay(mut self, input: ::std::option::Option<i32>) -> Self {
         self.delay = input;
         self
+    }
+    /// <p>The delay, in seconds, a contact should be in the queue before they are routed to an available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    pub fn get_delay(&self) -> &::std::option::Option<i32> {
+        &self.delay
     }
     /// Consumes the builder and constructs a [`RoutingProfileQueueConfig`](crate::types::RoutingProfileQueueConfig).
     pub fn build(self) -> crate::types::RoutingProfileQueueConfig {

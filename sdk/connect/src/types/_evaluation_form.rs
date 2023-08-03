@@ -160,6 +160,10 @@ impl EvaluationFormBuilder {
         self.evaluation_form_id = input;
         self
     }
+    /// <p>The unique identifier for the evaluation form.</p>
+    pub fn get_evaluation_form_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evaluation_form_id
+    }
     /// <p>A version of the evaluation form.</p>
     pub fn evaluation_form_version(mut self, input: i32) -> Self {
         self.evaluation_form_version = ::std::option::Option::Some(input);
@@ -170,6 +174,10 @@ impl EvaluationFormBuilder {
         self.evaluation_form_version = input;
         self
     }
+    /// <p>A version of the evaluation form.</p>
+    pub fn get_evaluation_form_version(&self) -> &::std::option::Option<i32> {
+        &self.evaluation_form_version
+    }
     /// <p>The flag indicating whether the evaluation form is locked for changes.</p>
     pub fn locked(mut self, input: bool) -> Self {
         self.locked = ::std::option::Option::Some(input);
@@ -179,6 +187,10 @@ impl EvaluationFormBuilder {
     pub fn set_locked(mut self, input: ::std::option::Option<bool>) -> Self {
         self.locked = input;
         self
+    }
+    /// <p>The flag indicating whether the evaluation form is locked for changes.</p>
+    pub fn get_locked(&self) -> &::std::option::Option<bool> {
+        &self.locked
     }
     /// <p>The Amazon Resource Name (ARN) for the evaluation form resource.</p>
     pub fn evaluation_form_arn(
@@ -196,6 +208,10 @@ impl EvaluationFormBuilder {
         self.evaluation_form_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the evaluation form resource.</p>
+    pub fn get_evaluation_form_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evaluation_form_arn
+    }
     /// <p>A title of the evaluation form.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
@@ -206,6 +222,10 @@ impl EvaluationFormBuilder {
         self.title = input;
         self
     }
+    /// <p>A title of the evaluation form.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
+    }
     /// <p>The description of the evaluation form.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -215,6 +235,10 @@ impl EvaluationFormBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the evaluation form.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The status of the evaluation form.</p>
     pub fn status(mut self, input: crate::types::EvaluationFormVersionStatus) -> Self {
@@ -228,6 +252,10 @@ impl EvaluationFormBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the evaluation form.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::EvaluationFormVersionStatus> {
+        &self.status
     }
     /// Appends an item to `items`.
     ///
@@ -248,6 +276,12 @@ impl EvaluationFormBuilder {
         self.items = input;
         self
     }
+    /// <p>Items that are part of the evaluation form. The total number of sections and questions must not exceed 100 each. Questions must be contained in a section.</p>
+    pub fn get_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormItem>> {
+        &self.items
+    }
     /// <p>A scoring strategy of the evaluation form.</p>
     pub fn scoring_strategy(mut self, input: crate::types::EvaluationFormScoringStrategy) -> Self {
         self.scoring_strategy = ::std::option::Option::Some(input);
@@ -260,6 +294,12 @@ impl EvaluationFormBuilder {
     ) -> Self {
         self.scoring_strategy = input;
         self
+    }
+    /// <p>A scoring strategy of the evaluation form.</p>
+    pub fn get_scoring_strategy(
+        &self,
+    ) -> &::std::option::Option<crate::types::EvaluationFormScoringStrategy> {
+        &self.scoring_strategy
     }
     /// <p>The timestamp for when the evaluation form was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -274,6 +314,10 @@ impl EvaluationFormBuilder {
         self.created_time = input;
         self
     }
+    /// <p>The timestamp for when the evaluation form was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
     /// <p>The Amazon Resource Name (ARN) of the user who created the evaluation form.</p>
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by = ::std::option::Option::Some(input.into());
@@ -283,6 +327,10 @@ impl EvaluationFormBuilder {
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_by = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the user who created the evaluation form.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_by
     }
     /// <p>The timestamp for when the evaluation form was last updated.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -296,6 +344,10 @@ impl EvaluationFormBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>The timestamp for when the evaluation form was last updated.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the evaluation form.</p>
     pub fn last_modified_by(
@@ -312,6 +364,10 @@ impl EvaluationFormBuilder {
     ) -> Self {
         self.last_modified_by = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the user who last updated the evaluation form.</p>
+    pub fn get_last_modified_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_by
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -337,6 +393,14 @@ impl EvaluationFormBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`EvaluationForm`](crate::types::EvaluationForm).
     pub fn build(self) -> crate::types::EvaluationForm {

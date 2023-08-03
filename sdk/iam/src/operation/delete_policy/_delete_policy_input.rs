@@ -43,6 +43,11 @@ impl DeletePolicyInputBuilder {
         self.policy_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to delete.</p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn get_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_arn
+    }
     /// Consumes the builder and constructs a [`DeletePolicyInput`](crate::operation::delete_policy::DeletePolicyInput).
     pub fn build(
         self,

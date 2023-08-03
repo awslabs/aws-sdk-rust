@@ -40,6 +40,10 @@ impl ConnectionSettingsBuilder {
         self.idle_timeout = input;
         self
     }
+    /// <p>The time, in seconds, that the connection is allowed to be idle (no data has been sent over the connection) before it is closed by the load balancer.</p>
+    pub fn get_idle_timeout(&self) -> &::std::option::Option<i32> {
+        &self.idle_timeout
+    }
     /// Consumes the builder and constructs a [`ConnectionSettings`](crate::types::ConnectionSettings).
     pub fn build(self) -> crate::types::ConnectionSettings {
         crate::types::ConnectionSettings {

@@ -40,6 +40,10 @@ impl GetAnnotationStoreInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The store's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`GetAnnotationStoreInput`](crate::operation::get_annotation_store::GetAnnotationStoreInput).
     pub fn build(
         self,

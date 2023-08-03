@@ -63,6 +63,10 @@ impl ListDatasetsInputBuilder {
         self.flywheel_arn = input;
         self
     }
+    /// <p>The Amazon Resource Number (ARN) of the flywheel.</p>
+    pub fn get_flywheel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flywheel_arn
+    }
     /// <p>Filters the datasets to be returned in the response.</p>
     pub fn filter(mut self, input: crate::types::DatasetFilter) -> Self {
         self.filter = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl ListDatasetsInputBuilder {
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::DatasetFilter>) -> Self {
         self.filter = input;
         self
+    }
+    /// <p>Filters the datasets to be returned in the response.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::DatasetFilter> {
+        &self.filter
     }
     /// <p>Identifies the next page of results to return.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -83,6 +91,10 @@ impl ListDatasetsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Identifies the next page of results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>Maximum number of results to return in a response. The default is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -92,6 +104,10 @@ impl ListDatasetsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>Maximum number of results to return in a response. The default is 100.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListDatasetsInput`](crate::operation::list_datasets::ListDatasetsInput).
     pub fn build(

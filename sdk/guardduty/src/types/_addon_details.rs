@@ -54,6 +54,10 @@ impl AddonDetailsBuilder {
         self.addon_version = input;
         self
     }
+    /// <p>Version of the installed EKS add-on.</p>
+    pub fn get_addon_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.addon_version
+    }
     /// <p>Status of the installed EKS add-on.</p>
     pub fn addon_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.addon_status = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl AddonDetailsBuilder {
     pub fn set_addon_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.addon_status = input;
         self
+    }
+    /// <p>Status of the installed EKS add-on.</p>
+    pub fn get_addon_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.addon_status
     }
     /// Consumes the builder and constructs a [`AddonDetails`](crate::types::AddonDetails).
     pub fn build(self) -> crate::types::AddonDetails {

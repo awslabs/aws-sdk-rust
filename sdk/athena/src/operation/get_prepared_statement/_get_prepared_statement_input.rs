@@ -54,6 +54,10 @@ impl GetPreparedStatementInputBuilder {
         self.statement_name = input;
         self
     }
+    /// <p>The name of the prepared statement to retrieve.</p>
+    pub fn get_statement_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.statement_name
+    }
     /// <p>The workgroup to which the statement to be retrieved belongs.</p>
     pub fn work_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.work_group = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl GetPreparedStatementInputBuilder {
     pub fn set_work_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.work_group = input;
         self
+    }
+    /// <p>The workgroup to which the statement to be retrieved belongs.</p>
+    pub fn get_work_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.work_group
     }
     /// Consumes the builder and constructs a [`GetPreparedStatementInput`](crate::operation::get_prepared_statement::GetPreparedStatementInput).
     pub fn build(

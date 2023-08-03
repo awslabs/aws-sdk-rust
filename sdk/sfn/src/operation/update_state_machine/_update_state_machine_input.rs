@@ -111,6 +111,10 @@ impl UpdateStateMachineInputBuilder {
         self.state_machine_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the state machine.</p>
+    pub fn get_state_machine_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_machine_arn
+    }
     /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
     pub fn definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.definition = ::std::option::Option::Some(input.into());
@@ -121,6 +125,10 @@ impl UpdateStateMachineInputBuilder {
         self.definition = input;
         self
     }
+    /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
+    pub fn get_definition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.definition
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM role of the state machine.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -130,6 +138,10 @@ impl UpdateStateMachineInputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role of the state machine.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>Use the <code>LoggingConfiguration</code> data type to set CloudWatch Logs options.</p>
     pub fn logging_configuration(mut self, input: crate::types::LoggingConfiguration) -> Self {
@@ -144,6 +156,12 @@ impl UpdateStateMachineInputBuilder {
         self.logging_configuration = input;
         self
     }
+    /// <p>Use the <code>LoggingConfiguration</code> data type to set CloudWatch Logs options.</p>
+    pub fn get_logging_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::LoggingConfiguration> {
+        &self.logging_configuration
+    }
     /// <p>Selects whether X-Ray tracing is enabled.</p>
     pub fn tracing_configuration(mut self, input: crate::types::TracingConfiguration) -> Self {
         self.tracing_configuration = ::std::option::Option::Some(input);
@@ -157,6 +175,12 @@ impl UpdateStateMachineInputBuilder {
         self.tracing_configuration = input;
         self
     }
+    /// <p>Selects whether X-Ray tracing is enabled.</p>
+    pub fn get_tracing_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::TracingConfiguration> {
+        &self.tracing_configuration
+    }
     /// <p>Specifies whether the state machine version is published. The default is <code>false</code>. To publish a version after updating the state machine, set <code>publish</code> to <code>true</code>.</p>
     pub fn publish(mut self, input: bool) -> Self {
         self.publish = ::std::option::Option::Some(input);
@@ -166,6 +190,10 @@ impl UpdateStateMachineInputBuilder {
     pub fn set_publish(mut self, input: ::std::option::Option<bool>) -> Self {
         self.publish = input;
         self
+    }
+    /// <p>Specifies whether the state machine version is published. The default is <code>false</code>. To publish a version after updating the state machine, set <code>publish</code> to <code>true</code>.</p>
+    pub fn get_publish(&self) -> &::std::option::Option<bool> {
+        &self.publish
     }
     /// <p>An optional description of the state machine version to publish.</p>
     /// <p>You can only specify the <code>versionDescription</code> parameter if you've set <code>publish</code> to <code>true</code>.</p>
@@ -184,6 +212,11 @@ impl UpdateStateMachineInputBuilder {
     ) -> Self {
         self.version_description = input;
         self
+    }
+    /// <p>An optional description of the state machine version to publish.</p>
+    /// <p>You can only specify the <code>versionDescription</code> parameter if you've set <code>publish</code> to <code>true</code>.</p>
+    pub fn get_version_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_description
     }
     /// Consumes the builder and constructs a [`UpdateStateMachineInput`](crate::operation::update_state_machine::UpdateStateMachineInput).
     pub fn build(

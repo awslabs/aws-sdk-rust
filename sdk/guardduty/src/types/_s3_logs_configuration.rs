@@ -40,6 +40,10 @@ impl S3LogsConfigurationBuilder {
         self.enable = input;
         self
     }
+    /// <p> The status of S3 data event logs as a data source.</p>
+    pub fn get_enable(&self) -> &::std::option::Option<bool> {
+        &self.enable
+    }
     /// Consumes the builder and constructs a [`S3LogsConfiguration`](crate::types::S3LogsConfiguration).
     pub fn build(self) -> crate::types::S3LogsConfiguration {
         crate::types::S3LogsConfiguration {

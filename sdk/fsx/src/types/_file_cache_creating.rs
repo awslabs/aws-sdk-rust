@@ -197,6 +197,10 @@ impl FileCacheCreatingBuilder {
         self.owner_id = input;
         self
     }
+    /// <p>An Amazon Web Services account ID. This ID is a 12-digit number that you use to construct Amazon Resource Names (ARNs) for resources.</p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
+    }
     /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -209,6 +213,10 @@ impl FileCacheCreatingBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The system-generated, unique ID of the cache.</p>
     pub fn file_cache_id(
@@ -226,6 +234,10 @@ impl FileCacheCreatingBuilder {
         self.file_cache_id = input;
         self
     }
+    /// <p>The system-generated, unique ID of the cache.</p>
+    pub fn get_file_cache_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_cache_id
+    }
     /// <p>The type of cache, which must be <code>LUSTRE</code>.</p>
     pub fn file_cache_type(mut self, input: crate::types::FileCacheType) -> Self {
         self.file_cache_type = ::std::option::Option::Some(input);
@@ -238,6 +250,10 @@ impl FileCacheCreatingBuilder {
     ) -> Self {
         self.file_cache_type = input;
         self
+    }
+    /// <p>The type of cache, which must be <code>LUSTRE</code>.</p>
+    pub fn get_file_cache_type(&self) -> &::std::option::Option<crate::types::FileCacheType> {
+        &self.file_cache_type
     }
     /// <p>The Lustre version of the cache, which must be <code>2.12</code>.</p>
     pub fn file_cache_type_version(
@@ -254,6 +270,10 @@ impl FileCacheCreatingBuilder {
     ) -> Self {
         self.file_cache_type_version = input;
         self
+    }
+    /// <p>The Lustre version of the cache, which must be <code>2.12</code>.</p>
+    pub fn get_file_cache_type_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_cache_type_version
     }
     /// <p>The lifecycle status of the cache. The following are the possible values and what they mean:</p>
     /// <ul>
@@ -282,6 +302,17 @@ impl FileCacheCreatingBuilder {
         self.lifecycle = input;
         self
     }
+    /// <p>The lifecycle status of the cache. The following are the possible values and what they mean:</p>
+    /// <ul>
+    /// <li> <p> <code>AVAILABLE</code> - The cache is in a healthy state, and is reachable and available for use.</p> </li>
+    /// <li> <p> <code>CREATING</code> - The new cache is being created.</p> </li>
+    /// <li> <p> <code>DELETING</code> - An existing cache is being deleted.</p> </li>
+    /// <li> <p> <code>UPDATING</code> - The cache is undergoing a customer-initiated update.</p> </li>
+    /// <li> <p> <code>FAILED</code> - An existing cache has experienced an unrecoverable failure. When creating a new cache, the cache was unable to be created.</p> </li>
+    /// </ul>
+    pub fn get_lifecycle(&self) -> &::std::option::Option<crate::types::FileCacheLifecycle> {
+        &self.lifecycle
+    }
     /// <p>A structure providing details of any failures that occurred.</p>
     pub fn failure_details(mut self, input: crate::types::FileCacheFailureDetails) -> Self {
         self.failure_details = ::std::option::Option::Some(input);
@@ -295,6 +326,12 @@ impl FileCacheCreatingBuilder {
         self.failure_details = input;
         self
     }
+    /// <p>A structure providing details of any failures that occurred.</p>
+    pub fn get_failure_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::FileCacheFailureDetails> {
+        &self.failure_details
+    }
     /// <p>The storage capacity of the cache in gibibytes (GiB).</p>
     pub fn storage_capacity(mut self, input: i32) -> Self {
         self.storage_capacity = ::std::option::Option::Some(input);
@@ -305,6 +342,10 @@ impl FileCacheCreatingBuilder {
         self.storage_capacity = input;
         self
     }
+    /// <p>The storage capacity of the cache in gibibytes (GiB).</p>
+    pub fn get_storage_capacity(&self) -> &::std::option::Option<i32> {
+        &self.storage_capacity
+    }
     /// <p>The ID of your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">VPC and subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -314,6 +355,10 @@ impl FileCacheCreatingBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The ID of your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">VPC and subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -333,6 +378,10 @@ impl FileCacheCreatingBuilder {
     ) -> Self {
         self.subnet_ids = input;
         self
+    }
+    /// <p>A list of subnet IDs that the cache will be accessible from. You can specify only one subnet ID in a call to the <code>CreateFileCache</code> operation.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
     }
     /// Appends an item to `network_interface_ids`.
     ///
@@ -356,6 +405,12 @@ impl FileCacheCreatingBuilder {
         self.network_interface_ids = input;
         self
     }
+    /// <p>A list of network interface IDs.</p>
+    pub fn get_network_interface_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.network_interface_ids
+    }
     /// <p>The Domain Name System (DNS) name for the cache.</p>
     pub fn dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dns_name = ::std::option::Option::Some(input.into());
@@ -365,6 +420,10 @@ impl FileCacheCreatingBuilder {
     pub fn set_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dns_name = input;
         self
+    }
+    /// <p>The Domain Name System (DNS) name for the cache.</p>
+    pub fn get_dns_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dns_name
     }
     /// <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on an Amazon File Cache. If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -376,6 +435,10 @@ impl FileCacheCreatingBuilder {
         self.kms_key_id = input;
         self
     }
+    /// <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on an Amazon File Cache. If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
+    }
     /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
@@ -385,6 +448,10 @@ impl FileCacheCreatingBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// Appends an item to `tags`.
     ///
@@ -405,6 +472,10 @@ impl FileCacheCreatingBuilder {
         self.tags = input;
         self
     }
+    /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>A boolean flag indicating whether tags for the cache should be copied to data repository associations.</p>
     pub fn copy_tags_to_data_repository_associations(mut self, input: bool) -> Self {
         self.copy_tags_to_data_repository_associations = ::std::option::Option::Some(input);
@@ -417,6 +488,10 @@ impl FileCacheCreatingBuilder {
     ) -> Self {
         self.copy_tags_to_data_repository_associations = input;
         self
+    }
+    /// <p>A boolean flag indicating whether tags for the cache should be copied to data repository associations.</p>
+    pub fn get_copy_tags_to_data_repository_associations(&self) -> &::std::option::Option<bool> {
+        &self.copy_tags_to_data_repository_associations
     }
     /// <p>The configuration for the Amazon File Cache resource.</p>
     pub fn lustre_configuration(
@@ -433,6 +508,12 @@ impl FileCacheCreatingBuilder {
     ) -> Self {
         self.lustre_configuration = input;
         self
+    }
+    /// <p>The configuration for the Amazon File Cache resource.</p>
+    pub fn get_lustre_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::FileCacheLustreConfiguration> {
+        &self.lustre_configuration
     }
     /// Appends an item to `data_repository_association_ids`.
     ///
@@ -455,6 +536,12 @@ impl FileCacheCreatingBuilder {
     ) -> Self {
         self.data_repository_association_ids = input;
         self
+    }
+    /// <p>A list of IDs of data repository associations that are associated with this cache.</p>
+    pub fn get_data_repository_association_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.data_repository_association_ids
     }
     /// Consumes the builder and constructs a [`FileCacheCreating`](crate::types::FileCacheCreating).
     pub fn build(self) -> crate::types::FileCacheCreating {

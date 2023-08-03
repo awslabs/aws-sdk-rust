@@ -47,6 +47,10 @@ impl DescribeDeviceFleetInputBuilder {
         self.device_fleet_name = input;
         self
     }
+    /// <p>The name of the fleet.</p>
+    pub fn get_device_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_fleet_name
+    }
     /// Consumes the builder and constructs a [`DescribeDeviceFleetInput`](crate::operation::describe_device_fleet::DescribeDeviceFleetInput).
     pub fn build(
         self,

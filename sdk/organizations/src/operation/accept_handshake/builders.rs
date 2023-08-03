@@ -42,6 +42,12 @@ impl AcceptHandshakeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AcceptHandshake as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::accept_handshake::builders::AcceptHandshakeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,5 +139,10 @@ impl AcceptHandshakeFluentBuilder {
     pub fn set_handshake_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_handshake_id(input);
         self
+    }
+    /// <p>The unique identifier (ID) of the handshake that you want to accept.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
+    pub fn get_handshake_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_handshake_id()
     }
 }

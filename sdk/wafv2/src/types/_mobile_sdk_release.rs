@@ -71,6 +71,10 @@ impl MobileSdkReleaseBuilder {
         self.release_version = input;
         self
     }
+    /// <p>The release version. </p>
+    pub fn get_release_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.release_version
+    }
     /// <p>The timestamp of the release. </p>
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
@@ -83,6 +87,10 @@ impl MobileSdkReleaseBuilder {
     ) -> Self {
         self.timestamp = input;
         self
+    }
+    /// <p>The timestamp of the release. </p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.timestamp
     }
     /// <p>Notes describing the release.</p>
     pub fn release_notes(
@@ -99,6 +107,10 @@ impl MobileSdkReleaseBuilder {
     ) -> Self {
         self.release_notes = input;
         self
+    }
+    /// <p>Notes describing the release.</p>
+    pub fn get_release_notes(&self) -> &::std::option::Option<::std::string::String> {
+        &self.release_notes
     }
     /// Appends an item to `tags`.
     ///
@@ -118,6 +130,10 @@ impl MobileSdkReleaseBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Tags that are associated with the release. </p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`MobileSdkRelease`](crate::types::MobileSdkRelease).
     pub fn build(self) -> crate::types::MobileSdkRelease {

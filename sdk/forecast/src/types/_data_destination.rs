@@ -40,6 +40,10 @@ impl DataDestinationBuilder {
         self.s3_config = input;
         self
     }
+    /// <p>The path to an Amazon Simple Storage Service (Amazon S3) bucket along with the credentials to access the bucket.</p>
+    pub fn get_s3_config(&self) -> &::std::option::Option<crate::types::S3Config> {
+        &self.s3_config
+    }
     /// Consumes the builder and constructs a [`DataDestination`](crate::types::DataDestination).
     pub fn build(self) -> crate::types::DataDestination {
         crate::types::DataDestination {

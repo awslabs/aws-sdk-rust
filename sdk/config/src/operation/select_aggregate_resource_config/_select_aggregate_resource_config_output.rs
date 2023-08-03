@@ -71,6 +71,10 @@ impl SelectAggregateResourceConfigOutputBuilder {
         self.results = input;
         self
     }
+    /// <p>Returns the results for the SQL query.</p>
+    pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.results
+    }
     /// <p>Details about the query.</p>
     pub fn query_info(mut self, input: crate::types::QueryInfo) -> Self {
         self.query_info = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl SelectAggregateResourceConfigOutputBuilder {
         self.query_info = input;
         self
     }
+    /// <p>Details about the query.</p>
+    pub fn get_query_info(&self) -> &::std::option::Option<crate::types::QueryInfo> {
+        &self.query_info
+    }
     /// <p>The nextToken string returned in a previous request that you use to request the next page of results in a paginated response. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -90,6 +98,10 @@ impl SelectAggregateResourceConfigOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The nextToken string returned in a previous request that you use to request the next page of results in a paginated response. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -421,6 +421,11 @@ impl PutObjectInputBuilder {
         self.acl = input;
         self
     }
+    /// <p>The canned ACL to apply to the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned ACL</a>.</p>
+    /// <p>This action is not supported by Amazon S3 on Outposts.</p>
+    pub fn get_acl(&self) -> &::std::option::Option<crate::types::ObjectCannedAcl> {
+        &self.acl
+    }
     /// <p>Object data.</p>
     pub fn body(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
         self.body = ::std::option::Option::Some(input);
@@ -433,6 +438,10 @@ impl PutObjectInputBuilder {
     ) -> Self {
         self.body = input;
         self
+    }
+    /// <p>Object data.</p>
+    pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+        &self.body
     }
     /// <p>The bucket name to which the PUT action was initiated. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -447,6 +456,12 @@ impl PutObjectInputBuilder {
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket = input;
         self
+    }
+    /// <p>The bucket name to which the PUT action was initiated. </p>
+    /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
     }
     /// <p> Can be used to specify caching behavior along the request/reply chain. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
     pub fn cache_control(
@@ -464,6 +479,10 @@ impl PutObjectInputBuilder {
         self.cache_control = input;
         self
     }
+    /// <p> Can be used to specify caching behavior along the request/reply chain. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
+    pub fn get_cache_control(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_control
+    }
     /// <p>Specifies presentational information for the object. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc6266#section-4">https://www.rfc-editor.org/rfc/rfc6266#section-4</a>.</p>
     pub fn content_disposition(
         mut self,
@@ -479,6 +498,10 @@ impl PutObjectInputBuilder {
     ) -> Self {
         self.content_disposition = input;
         self
+    }
+    /// <p>Specifies presentational information for the object. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc6266#section-4">https://www.rfc-editor.org/rfc/rfc6266#section-4</a>.</p>
+    pub fn get_content_disposition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_disposition
     }
     /// <p>Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc9110.html#field.content-encoding">https://www.rfc-editor.org/rfc/rfc9110.html#field.content-encoding</a>.</p>
     pub fn content_encoding(
@@ -496,6 +519,10 @@ impl PutObjectInputBuilder {
         self.content_encoding = input;
         self
     }
+    /// <p>Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc9110.html#field.content-encoding">https://www.rfc-editor.org/rfc/rfc9110.html#field.content-encoding</a>.</p>
+    pub fn get_content_encoding(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_encoding
+    }
     /// <p>The language the content is in.</p>
     pub fn content_language(
         mut self,
@@ -512,6 +539,10 @@ impl PutObjectInputBuilder {
         self.content_language = input;
         self
     }
+    /// <p>The language the content is in.</p>
+    pub fn get_content_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_language
+    }
     /// <p>Size of the body in bytes. This parameter is useful when the size of the body cannot be determined automatically. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc9110.html#name-content-length">https://www.rfc-editor.org/rfc/rfc9110.html#name-content-length</a>.</p>
     pub fn content_length(mut self, input: i64) -> Self {
         self.content_length = ::std::option::Option::Some(input);
@@ -521,6 +552,10 @@ impl PutObjectInputBuilder {
     pub fn set_content_length(mut self, input: ::std::option::Option<i64>) -> Self {
         self.content_length = input;
         self
+    }
+    /// <p>Size of the body in bytes. This parameter is useful when the size of the body cannot be determined automatically. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc9110.html#name-content-length">https://www.rfc-editor.org/rfc/rfc9110.html#name-content-length</a>.</p>
+    pub fn get_content_length(&self) -> &::std::option::Option<i64> {
+        &self.content_length
     }
     /// <p>The base64-encoded 128-bit MD5 digest of the message (without the headers) according to RFC 1864. This header can be used as a message integrity check to verify that the data is the same data that was originally sent. Although it is optional, we recommend using the Content-MD5 mechanism as an end-to-end integrity check. For more information about REST request authentication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST Authentication</a>.</p>
     pub fn content_md5(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -532,6 +567,10 @@ impl PutObjectInputBuilder {
         self.content_md5 = input;
         self
     }
+    /// <p>The base64-encoded 128-bit MD5 digest of the message (without the headers) according to RFC 1864. This header can be used as a message integrity check to verify that the data is the same data that was originally sent. Although it is optional, we recommend using the Content-MD5 mechanism as an end-to-end integrity check. For more information about REST request authentication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST Authentication</a>.</p>
+    pub fn get_content_md5(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_md5
+    }
     /// <p>A standard MIME type describing the format of the contents. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc9110.html#name-content-type">https://www.rfc-editor.org/rfc/rfc9110.html#name-content-type</a>.</p>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
@@ -541,6 +580,10 @@ impl PutObjectInputBuilder {
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
         self
+    }
+    /// <p>A standard MIME type describing the format of the contents. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc9110.html#name-content-type">https://www.rfc-editor.org/rfc/rfc9110.html#name-content-type</a>.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_type
     }
     /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
@@ -556,6 +599,13 @@ impl PutObjectInputBuilder {
     ) -> Self {
         self.checksum_algorithm = input;
         self
+    }
+    /// <p>Indicates the algorithm used to create the checksum for the object when using the SDK. This header will not provide any additional functionality if not using the SDK. When sending this header, there must be a corresponding <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad Request</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
+    pub fn get_checksum_algorithm(
+        &self,
+    ) -> &::std::option::Option<crate::types::ChecksumAlgorithm> {
+        &self.checksum_algorithm
     }
     /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 32-bit CRC32 checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn checksum_crc32(
@@ -573,6 +623,10 @@ impl PutObjectInputBuilder {
         self.checksum_crc32 = input;
         self
     }
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 32-bit CRC32 checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn get_checksum_crc32(&self) -> &::std::option::Option<::std::string::String> {
+        &self.checksum_crc32
+    }
     /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 32-bit CRC32C checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn checksum_crc32_c(
         mut self,
@@ -588,6 +642,10 @@ impl PutObjectInputBuilder {
     ) -> Self {
         self.checksum_crc32_c = input;
         self
+    }
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 32-bit CRC32C checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn get_checksum_crc32_c(&self) -> &::std::option::Option<::std::string::String> {
+        &self.checksum_crc32_c
     }
     /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 160-bit SHA-1 digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn checksum_sha1(
@@ -605,6 +663,10 @@ impl PutObjectInputBuilder {
         self.checksum_sha1 = input;
         self
     }
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 160-bit SHA-1 digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn get_checksum_sha1(&self) -> &::std::option::Option<::std::string::String> {
+        &self.checksum_sha1
+    }
     /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 256-bit SHA-256 digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn checksum_sha256(
         mut self,
@@ -621,6 +683,10 @@ impl PutObjectInputBuilder {
         self.checksum_sha256 = input;
         self
     }
+    /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 256-bit SHA-256 digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn get_checksum_sha256(&self) -> &::std::option::Option<::std::string::String> {
+        &self.checksum_sha256
+    }
     /// <p>The date and time at which the object is no longer cacheable. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc7234#section-5.3">https://www.rfc-editor.org/rfc/rfc7234#section-5.3</a>.</p>
     pub fn expires(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.expires = ::std::option::Option::Some(input);
@@ -633,6 +699,10 @@ impl PutObjectInputBuilder {
     ) -> Self {
         self.expires = input;
         self
+    }
+    /// <p>The date and time at which the object is no longer cacheable. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc7234#section-5.3">https://www.rfc-editor.org/rfc/rfc7234#section-5.3</a>.</p>
+    pub fn get_expires(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expires
     }
     /// <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the object.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
@@ -652,6 +722,11 @@ impl PutObjectInputBuilder {
         self.grant_full_control = input;
         self
     }
+    /// <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the object.</p>
+    /// <p>This action is not supported by Amazon S3 on Outposts.</p>
+    pub fn get_grant_full_control(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grant_full_control
+    }
     /// <p>Allows grantee to read the object data and its metadata.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
     pub fn grant_read(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -663,6 +738,11 @@ impl PutObjectInputBuilder {
     pub fn set_grant_read(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.grant_read = input;
         self
+    }
+    /// <p>Allows grantee to read the object data and its metadata.</p>
+    /// <p>This action is not supported by Amazon S3 on Outposts.</p>
+    pub fn get_grant_read(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grant_read
     }
     /// <p>Allows grantee to read the object ACL.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
@@ -682,6 +762,11 @@ impl PutObjectInputBuilder {
         self.grant_read_acp = input;
         self
     }
+    /// <p>Allows grantee to read the object ACL.</p>
+    /// <p>This action is not supported by Amazon S3 on Outposts.</p>
+    pub fn get_grant_read_acp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grant_read_acp
+    }
     /// <p>Allows grantee to write the ACL for the applicable object.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
     pub fn grant_write_acp(
@@ -700,6 +785,11 @@ impl PutObjectInputBuilder {
         self.grant_write_acp = input;
         self
     }
+    /// <p>Allows grantee to write the ACL for the applicable object.</p>
+    /// <p>This action is not supported by Amazon S3 on Outposts.</p>
+    pub fn get_grant_write_acp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grant_write_acp
+    }
     /// <p>Object key for which the PUT action was initiated.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
@@ -709,6 +799,10 @@ impl PutObjectInputBuilder {
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
+    }
+    /// <p>Object key for which the PUT action was initiated.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
     }
     /// Adds a key-value pair to `metadata`.
     ///
@@ -735,6 +829,14 @@ impl PutObjectInputBuilder {
         self.metadata = input;
         self
     }
+    /// <p>A map of metadata to store with the object in S3.</p>
+    pub fn get_metadata(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.metadata
+    }
     /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, <code>AES256</code>, <code>aws:kms</code>, <code>aws:kms:dsse</code>).</p>
     pub fn server_side_encryption(mut self, input: crate::types::ServerSideEncryption) -> Self {
         self.server_side_encryption = ::std::option::Option::Some(input);
@@ -748,6 +850,12 @@ impl PutObjectInputBuilder {
         self.server_side_encryption = input;
         self
     }
+    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, <code>AES256</code>, <code>aws:kms</code>, <code>aws:kms:dsse</code>).</p>
+    pub fn get_server_side_encryption(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServerSideEncryption> {
+        &self.server_side_encryption
+    }
     /// <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The STANDARD storage class provides high durability and high availability. Depending on performance needs, you can specify a different Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn storage_class(mut self, input: crate::types::StorageClass) -> Self {
         self.storage_class = ::std::option::Option::Some(input);
@@ -760,6 +868,10 @@ impl PutObjectInputBuilder {
     ) -> Self {
         self.storage_class = input;
         self
+    }
+    /// <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The STANDARD storage class provides high durability and high availability. Depending on performance needs, you can specify a different Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn get_storage_class(&self) -> &::std::option::Option<crate::types::StorageClass> {
+        &self.storage_class
     }
     /// <p>If the bucket is configured as a website, redirects requests for this object to another object in the same bucket or to an external URL. Amazon S3 stores the value of this header in the object metadata. For information about object metadata, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">Object Key and Metadata</a>.</p>
     /// <p>In the following example, the request header sets the redirect to an object (anotherPage.html) in the same bucket:</p>
@@ -787,6 +899,15 @@ impl PutObjectInputBuilder {
         self.website_redirect_location = input;
         self
     }
+    /// <p>If the bucket is configured as a website, redirects requests for this object to another object in the same bucket or to an external URL. Amazon S3 stores the value of this header in the object metadata. For information about object metadata, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">Object Key and Metadata</a>.</p>
+    /// <p>In the following example, the request header sets the redirect to an object (anotherPage.html) in the same bucket:</p>
+    /// <p> <code>x-amz-website-redirect-location: /anotherPage.html</code> </p>
+    /// <p>In the following example, the request header sets the object redirect to another website:</p>
+    /// <p> <code>x-amz-website-redirect-location: http://www.example.com/</code> </p>
+    /// <p>For more information about website hosting in Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting Websites on Amazon S3</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/how-to-page-redirect.html">How to Configure Website Page Redirects</a>. </p>
+    pub fn get_website_redirect_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.website_redirect_location
+    }
     /// <p>Specifies the algorithm to use to when encrypting the object (for example, AES256).</p>
     pub fn sse_customer_algorithm(
         mut self,
@@ -802,6 +923,10 @@ impl PutObjectInputBuilder {
     ) -> Self {
         self.sse_customer_algorithm = input;
         self
+    }
+    /// <p>Specifies the algorithm to use to when encrypting the object (for example, AES256).</p>
+    pub fn get_sse_customer_algorithm(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sse_customer_algorithm
     }
     /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon S3 does not store the encryption key. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
     pub fn sse_customer_key(
@@ -819,6 +944,10 @@ impl PutObjectInputBuilder {
         self.sse_customer_key = input;
         self
     }
+    /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon S3 does not store the encryption key. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
+    pub fn get_sse_customer_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sse_customer_key
+    }
     /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
     pub fn sse_customer_key_md5(
         mut self,
@@ -834,6 +963,10 @@ impl PutObjectInputBuilder {
     ) -> Self {
         self.sse_customer_key_md5 = input;
         self
+    }
+    /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
+    pub fn get_sse_customer_key_md5(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sse_customer_key_md5
     }
     /// <p>If <code>x-amz-server-side-encryption</code> has a valid value of <code>aws:kms</code> or <code>aws:kms:dsse</code>, this header specifies the ID of the Key Management Service (KMS) symmetric encryption customer managed key that was used for the object. If you specify <code>x-amz-server-side-encryption:aws:kms</code> or <code>x-amz-server-side-encryption:aws:kms:dsse</code>, but do not provide<code> x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon Web Services managed key (<code>aws/s3</code>) to protect the data. If the KMS key does not exist in the same account that's issuing the command, you must use the full ARN and not just the ID. </p>
     pub fn ssekms_key_id(
@@ -851,6 +984,10 @@ impl PutObjectInputBuilder {
         self.ssekms_key_id = input;
         self
     }
+    /// <p>If <code>x-amz-server-side-encryption</code> has a valid value of <code>aws:kms</code> or <code>aws:kms:dsse</code>, this header specifies the ID of the Key Management Service (KMS) symmetric encryption customer managed key that was used for the object. If you specify <code>x-amz-server-side-encryption:aws:kms</code> or <code>x-amz-server-side-encryption:aws:kms:dsse</code>, but do not provide<code> x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon Web Services managed key (<code>aws/s3</code>) to protect the data. If the KMS key does not exist in the same account that's issuing the command, you must use the full ARN and not just the ID. </p>
+    pub fn get_ssekms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ssekms_key_id
+    }
     /// <p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs. This value is stored as object metadata and automatically gets passed on to Amazon Web Services KMS for future <code>GetObject</code> or <code>CopyObject</code> operations on this object.</p>
     pub fn ssekms_encryption_context(
         mut self,
@@ -867,6 +1004,10 @@ impl PutObjectInputBuilder {
         self.ssekms_encryption_context = input;
         self
     }
+    /// <p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs. This value is stored as object metadata and automatically gets passed on to Amazon Web Services KMS for future <code>GetObject</code> or <code>CopyObject</code> operations on this object.</p>
+    pub fn get_ssekms_encryption_context(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ssekms_encryption_context
+    }
     /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using Key Management Service (KMS) keys (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption with SSE-KMS.</p>
     /// <p>Specifying this header with a PUT action doesn’t affect bucket-level settings for S3 Bucket Key.</p>
     pub fn bucket_key_enabled(mut self, input: bool) -> Self {
@@ -878,6 +1019,11 @@ impl PutObjectInputBuilder {
     pub fn set_bucket_key_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.bucket_key_enabled = input;
         self
+    }
+    /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using Key Management Service (KMS) keys (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption with SSE-KMS.</p>
+    /// <p>Specifying this header with a PUT action doesn’t affect bucket-level settings for S3 Bucket Key.</p>
+    pub fn get_bucket_key_enabled(&self) -> &::std::option::Option<bool> {
+        &self.bucket_key_enabled
     }
     /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(mut self, input: crate::types::RequestPayer) -> Self {
@@ -892,6 +1038,10 @@ impl PutObjectInputBuilder {
         self.request_payer = input;
         self
     }
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn get_request_payer(&self) -> &::std::option::Option<crate::types::RequestPayer> {
+        &self.request_payer
+    }
     /// <p>The tag-set for the object. The tag-set must be encoded as URL Query parameters. (For example, "Key1=Value1")</p>
     pub fn tagging(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tagging = ::std::option::Option::Some(input.into());
@@ -901,6 +1051,10 @@ impl PutObjectInputBuilder {
     pub fn set_tagging(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tagging = input;
         self
+    }
+    /// <p>The tag-set for the object. The tag-set must be encoded as URL Query parameters. (For example, "Key1=Value1")</p>
+    pub fn get_tagging(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tagging
     }
     /// <p>The Object Lock mode that you want to apply to this object.</p>
     pub fn object_lock_mode(mut self, input: crate::types::ObjectLockMode) -> Self {
@@ -915,6 +1069,10 @@ impl PutObjectInputBuilder {
         self.object_lock_mode = input;
         self
     }
+    /// <p>The Object Lock mode that you want to apply to this object.</p>
+    pub fn get_object_lock_mode(&self) -> &::std::option::Option<crate::types::ObjectLockMode> {
+        &self.object_lock_mode
+    }
     /// <p>The date and time when you want this object's Object Lock to expire. Must be formatted as a timestamp parameter.</p>
     pub fn object_lock_retain_until_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.object_lock_retain_until_date = ::std::option::Option::Some(input);
@@ -927,6 +1085,12 @@ impl PutObjectInputBuilder {
     ) -> Self {
         self.object_lock_retain_until_date = input;
         self
+    }
+    /// <p>The date and time when you want this object's Object Lock to expire. Must be formatted as a timestamp parameter.</p>
+    pub fn get_object_lock_retain_until_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.object_lock_retain_until_date
     }
     /// <p>Specifies whether a legal hold will be applied to this object. For more information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object Lock</a>.</p>
     pub fn object_lock_legal_hold_status(
@@ -944,6 +1108,12 @@ impl PutObjectInputBuilder {
         self.object_lock_legal_hold_status = input;
         self
     }
+    /// <p>Specifies whether a legal hold will be applied to this object. For more information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object Lock</a>.</p>
+    pub fn get_object_lock_legal_hold_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ObjectLockLegalHoldStatus> {
+        &self.object_lock_legal_hold_status
+    }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(
         mut self,
@@ -959,6 +1129,10 @@ impl PutObjectInputBuilder {
     ) -> Self {
         self.expected_bucket_owner = input;
         self
+    }
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
+    pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expected_bucket_owner
     }
     /// Consumes the builder and constructs a [`PutObjectInput`](crate::operation::put_object::PutObjectInput).
     pub fn build(

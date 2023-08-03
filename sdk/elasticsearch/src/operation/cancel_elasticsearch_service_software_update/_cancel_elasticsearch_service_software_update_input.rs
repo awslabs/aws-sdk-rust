@@ -40,6 +40,10 @@ impl CancelElasticsearchServiceSoftwareUpdateInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The name of the domain that you want to stop the latest service software update on.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// Consumes the builder and constructs a [`CancelElasticsearchServiceSoftwareUpdateInput`](crate::operation::cancel_elasticsearch_service_software_update::CancelElasticsearchServiceSoftwareUpdateInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::cancel_elasticsearch_service_software_update::CancelElasticsearchServiceSoftwareUpdateInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

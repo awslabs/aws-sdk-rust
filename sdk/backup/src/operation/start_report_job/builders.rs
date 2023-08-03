@@ -36,6 +36,12 @@ impl StartReportJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartReportJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_report_job::builders::StartReportJobInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl StartReportJobFluentBuilder {
         self.inner = self.inner.set_report_plan_name(input);
         self
     }
+    /// <p>The unique name of a report plan.</p>
+    pub fn get_report_plan_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_report_plan_name()
+    }
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartReportJobInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
     pub fn idempotency_token(
         mut self,
@@ -147,5 +157,9 @@ impl StartReportJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self
+    }
+    /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartReportJobInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
+    pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_idempotency_token()
     }
 }

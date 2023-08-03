@@ -62,6 +62,10 @@ impl CreateSecurityProfileOutputBuilder {
         self.security_profile_name = input;
         self
     }
+    /// <p>The name you gave to the security profile.</p>
+    pub fn get_security_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_profile_name
+    }
     /// <p>The ARN of the security profile.</p>
     pub fn security_profile_arn(
         mut self,
@@ -77,6 +81,10 @@ impl CreateSecurityProfileOutputBuilder {
     ) -> Self {
         self.security_profile_arn = input;
         self
+    }
+    /// <p>The ARN of the security profile.</p>
+    pub fn get_security_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_profile_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

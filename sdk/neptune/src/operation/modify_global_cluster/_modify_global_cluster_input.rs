@@ -103,6 +103,11 @@ impl ModifyGlobalClusterInputBuilder {
         self.global_cluster_identifier = input;
         self
     }
+    /// <p>The DB cluster identifier for the global cluster being modified. This parameter is not case-sensitive.</p>
+    /// <p>Constraints: Must match the identifier of an existing global database cluster.</p>
+    pub fn get_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_cluster_identifier
+    }
     /// <p>A new cluster identifier to assign to the global database. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -133,6 +138,19 @@ impl ModifyGlobalClusterInputBuilder {
         self.new_global_cluster_identifier = input;
         self
     }
+    /// <p>A new cluster identifier to assign to the global database. This value is stored as a lowercase string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// </ul>
+    /// <p>Example: <code>my-cluster2</code> </p>
+    pub fn get_new_global_cluster_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.new_global_cluster_identifier
+    }
     /// <p>Indicates whether the global database has deletion protection enabled. The global database cannot be deleted when deletion protection is enabled.</p>
     pub fn deletion_protection(mut self, input: bool) -> Self {
         self.deletion_protection = ::std::option::Option::Some(input);
@@ -142,6 +160,10 @@ impl ModifyGlobalClusterInputBuilder {
     pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.deletion_protection = input;
         self
+    }
+    /// <p>Indicates whether the global database has deletion protection enabled. The global database cannot be deleted when deletion protection is enabled.</p>
+    pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
+        &self.deletion_protection
     }
     /// <p>The version number of the database engine to which you want to upgrade. Changing this parameter will result in an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
     /// <p>To list all of the available Neptune engine versions, use the following command:</p>
@@ -161,6 +183,11 @@ impl ModifyGlobalClusterInputBuilder {
         self.engine_version = input;
         self
     }
+    /// <p>The version number of the database engine to which you want to upgrade. Changing this parameter will result in an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
+    /// <p>To list all of the available Neptune engine versions, use the following command:</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
+    }
     /// <p>A value that indicates whether major version upgrades are allowed.</p>
     /// <p>Constraints: You must allow major version upgrades if you specify a value for the <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current version.</p>
     /// <p>If you upgrade the major version of a global database, the cluster and DB instance parameter groups are set to the default parameter groups for the new version, so you will need to apply any custom parameter groups after completing the upgrade.</p>
@@ -174,6 +201,12 @@ impl ModifyGlobalClusterInputBuilder {
     pub fn set_allow_major_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_major_version_upgrade = input;
         self
+    }
+    /// <p>A value that indicates whether major version upgrades are allowed.</p>
+    /// <p>Constraints: You must allow major version upgrades if you specify a value for the <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current version.</p>
+    /// <p>If you upgrade the major version of a global database, the cluster and DB instance parameter groups are set to the default parameter groups for the new version, so you will need to apply any custom parameter groups after completing the upgrade.</p>
+    pub fn get_allow_major_version_upgrade(&self) -> &::std::option::Option<bool> {
+        &self.allow_major_version_upgrade
     }
     /// Consumes the builder and constructs a [`ModifyGlobalClusterInput`](crate::operation::modify_global_cluster::ModifyGlobalClusterInput).
     pub fn build(

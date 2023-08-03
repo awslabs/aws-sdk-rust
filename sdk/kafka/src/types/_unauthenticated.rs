@@ -39,6 +39,10 @@ impl UnauthenticatedBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Specifies whether you want to turn on or turn off unauthenticated traffic to your cluster.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// Consumes the builder and constructs a [`Unauthenticated`](crate::types::Unauthenticated).
     pub fn build(self) -> crate::types::Unauthenticated {
         crate::types::Unauthenticated {

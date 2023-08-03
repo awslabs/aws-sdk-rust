@@ -43,6 +43,13 @@ impl AssociateTargetsWithJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateTargetsWithJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::associate_targets_with_job::builders::AssociateTargetsWithJobInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +147,10 @@ impl AssociateTargetsWithJobFluentBuilder {
         self.inner = self.inner.set_targets(input);
         self
     }
+    /// <p>A list of thing group ARNs that define the targets of the job.</p>
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_targets()
+    }
     /// <p>The unique identifier you assigned to this job when it was created.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_id(input.into());
@@ -150,6 +161,10 @@ impl AssociateTargetsWithJobFluentBuilder {
         self.inner = self.inner.set_job_id(input);
         self
     }
+    /// <p>The unique identifier you assigned to this job when it was created.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_id()
+    }
     /// <p>An optional comment string describing why the job was associated with the targets.</p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.comment(input.into());
@@ -159,6 +174,10 @@ impl AssociateTargetsWithJobFluentBuilder {
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_comment(input);
         self
+    }
+    /// <p>An optional comment string describing why the job was associated with the targets.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_comment()
     }
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
     /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
@@ -177,5 +196,13 @@ impl AssociateTargetsWithJobFluentBuilder {
     pub fn set_namespace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace_id(input);
         self
+    }
+    /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
+    /// <p>The <code>namespaceId</code> feature is in public preview.</p>
+    /// </note>
+    pub fn get_namespace_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_namespace_id()
     }
 }

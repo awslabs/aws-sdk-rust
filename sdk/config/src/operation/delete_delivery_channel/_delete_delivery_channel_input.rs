@@ -48,6 +48,10 @@ impl DeleteDeliveryChannelInputBuilder {
         self.delivery_channel_name = input;
         self
     }
+    /// <p>The name of the delivery channel to delete.</p>
+    pub fn get_delivery_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delivery_channel_name
+    }
     /// Consumes the builder and constructs a [`DeleteDeliveryChannelInput`](crate::operation::delete_delivery_channel::DeleteDeliveryChannelInput).
     pub fn build(
         self,

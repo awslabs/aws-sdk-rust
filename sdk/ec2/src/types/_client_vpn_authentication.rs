@@ -76,6 +76,10 @@ impl ClientVpnAuthenticationBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The authentication type used.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ClientVpnAuthenticationType> {
+        &self.r#type
+    }
     /// <p>Information about the Active Directory, if applicable.</p>
     pub fn active_directory(mut self, input: crate::types::DirectoryServiceAuthentication) -> Self {
         self.active_directory = ::std::option::Option::Some(input);
@@ -89,6 +93,12 @@ impl ClientVpnAuthenticationBuilder {
         self.active_directory = input;
         self
     }
+    /// <p>Information about the Active Directory, if applicable.</p>
+    pub fn get_active_directory(
+        &self,
+    ) -> &::std::option::Option<crate::types::DirectoryServiceAuthentication> {
+        &self.active_directory
+    }
     /// <p>Information about the authentication certificates, if applicable.</p>
     pub fn mutual_authentication(mut self, input: crate::types::CertificateAuthentication) -> Self {
         self.mutual_authentication = ::std::option::Option::Some(input);
@@ -101,6 +111,12 @@ impl ClientVpnAuthenticationBuilder {
     ) -> Self {
         self.mutual_authentication = input;
         self
+    }
+    /// <p>Information about the authentication certificates, if applicable.</p>
+    pub fn get_mutual_authentication(
+        &self,
+    ) -> &::std::option::Option<crate::types::CertificateAuthentication> {
+        &self.mutual_authentication
     }
     /// <p>Information about the IAM SAML identity provider, if applicable.</p>
     pub fn federated_authentication(
@@ -117,6 +133,12 @@ impl ClientVpnAuthenticationBuilder {
     ) -> Self {
         self.federated_authentication = input;
         self
+    }
+    /// <p>Information about the IAM SAML identity provider, if applicable.</p>
+    pub fn get_federated_authentication(
+        &self,
+    ) -> &::std::option::Option<crate::types::FederatedAuthentication> {
+        &self.federated_authentication
     }
     /// Consumes the builder and constructs a [`ClientVpnAuthentication`](crate::types::ClientVpnAuthentication).
     pub fn build(self) -> crate::types::ClientVpnAuthentication {

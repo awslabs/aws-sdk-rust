@@ -48,6 +48,10 @@ impl OsInfoBuilder {
         self.r#type = input;
         self
     }
+    /// <p> Information about the type of operating system. </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::OsType> {
+        &self.r#type
+    }
     /// <p> Information about the version of operating system. </p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl OsInfoBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p> Information about the version of operating system. </p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`OsInfo`](crate::types::OsInfo).
     pub fn build(self) -> crate::types::OsInfo {

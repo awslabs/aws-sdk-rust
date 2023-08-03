@@ -40,6 +40,10 @@ impl DataStorageBuilder {
         self.cw_log = input;
         self
     }
+    /// <p>A structure that contains the information about whether the app monitor stores copies of the data that RUM collects in CloudWatch Logs. If it does, this structure also contains the name of the log group.</p>
+    pub fn get_cw_log(&self) -> &::std::option::Option<crate::types::CwLog> {
+        &self.cw_log
+    }
     /// Consumes the builder and constructs a [`DataStorage`](crate::types::DataStorage).
     pub fn build(self) -> crate::types::DataStorage {
         crate::types::DataStorage {

@@ -64,6 +64,10 @@ impl DataflowEndpointBuilder {
         self.name = input;
         self
     }
+    /// <p>Name of a dataflow endpoint.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Socket address of a dataflow endpoint.</p>
     pub fn address(mut self, input: crate::types::SocketAddress) -> Self {
         self.address = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl DataflowEndpointBuilder {
     ) -> Self {
         self.address = input;
         self
+    }
+    /// <p>Socket address of a dataflow endpoint.</p>
+    pub fn get_address(&self) -> &::std::option::Option<crate::types::SocketAddress> {
+        &self.address
     }
     /// <p>Status of a dataflow endpoint.</p>
     pub fn status(mut self, input: crate::types::EndpointStatus) -> Self {
@@ -90,6 +98,10 @@ impl DataflowEndpointBuilder {
         self.status = input;
         self
     }
+    /// <p>Status of a dataflow endpoint.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::EndpointStatus> {
+        &self.status
+    }
     /// <p>Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.</p>
     pub fn mtu(mut self, input: i32) -> Self {
         self.mtu = ::std::option::Option::Some(input);
@@ -99,6 +111,10 @@ impl DataflowEndpointBuilder {
     pub fn set_mtu(mut self, input: ::std::option::Option<i32>) -> Self {
         self.mtu = input;
         self
+    }
+    /// <p>Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.</p>
+    pub fn get_mtu(&self) -> &::std::option::Option<i32> {
+        &self.mtu
     }
     /// Consumes the builder and constructs a [`DataflowEndpoint`](crate::types::DataflowEndpoint).
     pub fn build(self) -> crate::types::DataflowEndpoint {

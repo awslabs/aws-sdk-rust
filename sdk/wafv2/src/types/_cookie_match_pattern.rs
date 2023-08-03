@@ -58,6 +58,10 @@ impl CookieMatchPatternBuilder {
         self.all = input;
         self
     }
+    /// <p>Inspect all cookies. </p>
+    pub fn get_all(&self) -> &::std::option::Option<crate::types::All> {
+        &self.all
+    }
     /// Appends an item to `included_cookies`.
     ///
     /// To override the contents of this collection use [`set_included_cookies`](Self::set_included_cookies).
@@ -80,6 +84,12 @@ impl CookieMatchPatternBuilder {
         self.included_cookies = input;
         self
     }
+    /// <p>Inspect only the cookies that have a key that matches one of the strings specified here. </p>
+    pub fn get_included_cookies(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.included_cookies
+    }
     /// Appends an item to `excluded_cookies`.
     ///
     /// To override the contents of this collection use [`set_excluded_cookies`](Self::set_excluded_cookies).
@@ -101,6 +111,12 @@ impl CookieMatchPatternBuilder {
     ) -> Self {
         self.excluded_cookies = input;
         self
+    }
+    /// <p>Inspect only the cookies whose keys don't match any of the strings specified here. </p>
+    pub fn get_excluded_cookies(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.excluded_cookies
     }
     /// Consumes the builder and constructs a [`CookieMatchPattern`](crate::types::CookieMatchPattern).
     pub fn build(self) -> crate::types::CookieMatchPattern {

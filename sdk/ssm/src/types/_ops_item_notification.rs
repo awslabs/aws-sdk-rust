@@ -40,6 +40,10 @@ impl OpsItemNotificationBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of an Amazon Simple Notification Service (Amazon SNS) topic where notifications are sent when this OpsItem is edited or changed.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`OpsItemNotification`](crate::types::OpsItemNotification).
     pub fn build(self) -> crate::types::OpsItemNotification {
         crate::types::OpsItemNotification { arn: self.arn }

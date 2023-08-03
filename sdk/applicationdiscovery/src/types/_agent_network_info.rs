@@ -48,6 +48,10 @@ impl AgentNetworkInfoBuilder {
         self.ip_address = input;
         self
     }
+    /// <p>The IP address for the host where the agent/collector resides.</p>
+    pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_address
+    }
     /// <p>The MAC address for the host where the agent/collector resides.</p>
     pub fn mac_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mac_address = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl AgentNetworkInfoBuilder {
     pub fn set_mac_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mac_address = input;
         self
+    }
+    /// <p>The MAC address for the host where the agent/collector resides.</p>
+    pub fn get_mac_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mac_address
     }
     /// Consumes the builder and constructs a [`AgentNetworkInfo`](crate::types::AgentNetworkInfo).
     pub fn build(self) -> crate::types::AgentNetworkInfo {

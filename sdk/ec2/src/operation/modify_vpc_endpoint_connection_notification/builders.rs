@@ -36,6 +36,10 @@ impl ModifyVpcEndpointConnectionNotificationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyVpcEndpointConnectionNotification as a reference.
+    pub fn as_input(&self) -> &crate::operation::modify_vpc_endpoint_connection_notification::builders::ModifyVpcEndpointConnectionNotificationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl ModifyVpcEndpointConnectionNotificationFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>The ID of the notification.</p>
     pub fn connection_notification_id(
         mut self,
@@ -116,6 +124,10 @@ impl ModifyVpcEndpointConnectionNotificationFluentBuilder {
         self.inner = self.inner.set_connection_notification_id(input);
         self
     }
+    /// <p>The ID of the notification.</p>
+    pub fn get_connection_notification_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connection_notification_id()
+    }
     /// <p>The ARN for the SNS topic for the notification.</p>
     pub fn connection_notification_arn(
         mut self,
@@ -131,6 +143,10 @@ impl ModifyVpcEndpointConnectionNotificationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_connection_notification_arn(input);
         self
+    }
+    /// <p>The ARN for the SNS topic for the notification.</p>
+    pub fn get_connection_notification_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connection_notification_arn()
     }
     /// Appends an item to `ConnectionEvents`.
     ///
@@ -151,5 +167,11 @@ impl ModifyVpcEndpointConnectionNotificationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_connection_events(input);
         self
+    }
+    /// <p>The events for the endpoint. Valid values are <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and <code>Reject</code>.</p>
+    pub fn get_connection_events(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_connection_events()
     }
 }

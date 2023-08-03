@@ -86,6 +86,10 @@ impl OptionConfigurationBuilder {
         self.option_name = input;
         self
     }
+    /// <p>The configuration of options to include in a group.</p>
+    pub fn get_option_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.option_name
+    }
     /// <p>The optional port for the option.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -95,6 +99,10 @@ impl OptionConfigurationBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
+    }
+    /// <p>The optional port for the option.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// <p>The version for the option.</p>
     pub fn option_version(
@@ -111,6 +119,10 @@ impl OptionConfigurationBuilder {
     ) -> Self {
         self.option_version = input;
         self
+    }
+    /// <p>The version for the option.</p>
+    pub fn get_option_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.option_version
     }
     /// Appends an item to `db_security_group_memberships`.
     ///
@@ -134,6 +146,12 @@ impl OptionConfigurationBuilder {
         self.db_security_group_memberships = input;
         self
     }
+    /// <p>A list of DBSecurityGroupMembership name strings used for this option.</p>
+    pub fn get_db_security_group_memberships(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.db_security_group_memberships
+    }
     /// Appends an item to `vpc_security_group_memberships`.
     ///
     /// To override the contents of this collection use [`set_vpc_security_group_memberships`](Self::set_vpc_security_group_memberships).
@@ -156,6 +174,12 @@ impl OptionConfigurationBuilder {
         self.vpc_security_group_memberships = input;
         self
     }
+    /// <p>A list of VpcSecurityGroupMembership name strings used for this option.</p>
+    pub fn get_vpc_security_group_memberships(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.vpc_security_group_memberships
+    }
     /// Appends an item to `option_settings`.
     ///
     /// To override the contents of this collection use [`set_option_settings`](Self::set_option_settings).
@@ -174,6 +198,12 @@ impl OptionConfigurationBuilder {
     ) -> Self {
         self.option_settings = input;
         self
+    }
+    /// <p>The option settings to include in an option group.</p>
+    pub fn get_option_settings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OptionSetting>> {
+        &self.option_settings
     }
     /// Consumes the builder and constructs a [`OptionConfiguration`](crate::types::OptionConfiguration).
     pub fn build(self) -> crate::types::OptionConfiguration {

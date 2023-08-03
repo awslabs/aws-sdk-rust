@@ -40,6 +40,10 @@ impl IngressConfigurationBuilder {
         self.is_publicly_accessible = input;
         self
     }
+    /// <p>Specifies whether your App Runner service is publicly accessible. To make the service publicly accessible set it to <code>True</code>. To make the service privately accessible, from only within an Amazon VPC set it to <code>False</code>. </p>
+    pub fn get_is_publicly_accessible(&self) -> &::std::option::Option<bool> {
+        &self.is_publicly_accessible
+    }
     /// Consumes the builder and constructs a [`IngressConfiguration`](crate::types::IngressConfiguration).
     pub fn build(self) -> crate::types::IngressConfiguration {
         crate::types::IngressConfiguration {

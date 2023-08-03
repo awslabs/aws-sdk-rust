@@ -66,6 +66,12 @@ impl CloudTrailPropertiesBuilder {
         self.trail_properties = input;
         self
     }
+    /// <p>A <code>TrailProperties</code> object that contains settings for trail properties.</p>
+    pub fn get_trail_properties(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TrailProperties>> {
+        &self.trail_properties
+    }
     /// <p>The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp before this time are not considered to generate a policy.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -79,6 +85,10 @@ impl CloudTrailPropertiesBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp before this time are not considered to generate a policy.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp after this time are not considered to generate a policy. If this is not included in the request, the default value is the current time.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -91,6 +101,10 @@ impl CloudTrailPropertiesBuilder {
     ) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp after this time are not considered to generate a policy. If this is not included in the request, the default value is the current time.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// Consumes the builder and constructs a [`CloudTrailProperties`](crate::types::CloudTrailProperties).
     pub fn build(self) -> crate::types::CloudTrailProperties {

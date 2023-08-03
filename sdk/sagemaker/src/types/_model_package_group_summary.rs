@@ -81,6 +81,10 @@ impl ModelPackageGroupSummaryBuilder {
         self.model_package_group_name = input;
         self
     }
+    /// <p>The name of the model group.</p>
+    pub fn get_model_package_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_package_group_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the model group.</p>
     pub fn model_package_group_arn(
         mut self,
@@ -96,6 +100,10 @@ impl ModelPackageGroupSummaryBuilder {
     ) -> Self {
         self.model_package_group_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the model group.</p>
+    pub fn get_model_package_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_package_group_arn
     }
     /// <p>A description of the model group.</p>
     pub fn model_package_group_description(
@@ -113,6 +121,12 @@ impl ModelPackageGroupSummaryBuilder {
         self.model_package_group_description = input;
         self
     }
+    /// <p>A description of the model group.</p>
+    pub fn get_model_package_group_description(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.model_package_group_description
+    }
     /// <p>The time that the model group was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -125,6 +139,10 @@ impl ModelPackageGroupSummaryBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The time that the model group was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The status of the model group.</p>
     pub fn model_package_group_status(
@@ -141,6 +159,12 @@ impl ModelPackageGroupSummaryBuilder {
     ) -> Self {
         self.model_package_group_status = input;
         self
+    }
+    /// <p>The status of the model group.</p>
+    pub fn get_model_package_group_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ModelPackageGroupStatus> {
+        &self.model_package_group_status
     }
     /// Consumes the builder and constructs a [`ModelPackageGroupSummary`](crate::types::ModelPackageGroupSummary).
     pub fn build(self) -> crate::types::ModelPackageGroupSummary {

@@ -92,6 +92,10 @@ impl GetContactListOutputBuilder {
         self.contact_list_name = input;
         self
     }
+    /// <p>The name of the contact list.</p>
+    pub fn get_contact_list_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_list_name
+    }
     /// Appends an item to `topics`.
     ///
     /// To override the contents of this collection use [`set_topics`](Self::set_topics).
@@ -111,6 +115,10 @@ impl GetContactListOutputBuilder {
         self.topics = input;
         self
     }
+    /// <p>An interest group, theme, or label within a list. A contact list can have multiple topics.</p>
+    pub fn get_topics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Topic>> {
+        &self.topics
+    }
     /// <p>A description of what the contact list is about.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -120,6 +128,10 @@ impl GetContactListOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of what the contact list is about.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>A timestamp noting when the contact list was created.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -134,6 +146,10 @@ impl GetContactListOutputBuilder {
         self.created_timestamp = input;
         self
     }
+    /// <p>A timestamp noting when the contact list was created.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
+    }
     /// <p>A timestamp noting the last time the contact list was updated.</p>
     pub fn last_updated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_timestamp = ::std::option::Option::Some(input);
@@ -146,6 +162,12 @@ impl GetContactListOutputBuilder {
     ) -> Self {
         self.last_updated_timestamp = input;
         self
+    }
+    /// <p>A timestamp noting the last time the contact list was updated.</p>
+    pub fn get_last_updated_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_timestamp
     }
     /// Appends an item to `tags`.
     ///
@@ -165,6 +187,10 @@ impl GetContactListOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags associated with a contact list.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

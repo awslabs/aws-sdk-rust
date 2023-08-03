@@ -129,6 +129,10 @@ impl TestInvokeMethodInputBuilder {
         self.rest_api_id = input;
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rest_api_id
+    }
     /// <p>Specifies a test invoke method request's resource ID.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -139,6 +143,10 @@ impl TestInvokeMethodInputBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>Specifies a test invoke method request's resource ID.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// <p>Specifies a test invoke method request's HTTP method.</p>
     pub fn http_method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.http_method = ::std::option::Option::Some(input.into());
@@ -148,6 +156,10 @@ impl TestInvokeMethodInputBuilder {
     pub fn set_http_method(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.http_method = input;
         self
+    }
+    /// <p>Specifies a test invoke method request's HTTP method.</p>
+    pub fn get_http_method(&self) -> &::std::option::Option<::std::string::String> {
+        &self.http_method
     }
     /// <p>The URI path, including query string, of the simulated invocation request. Use this to specify path parameters and query string parameters.</p>
     pub fn path_with_query_string(
@@ -165,6 +177,10 @@ impl TestInvokeMethodInputBuilder {
         self.path_with_query_string = input;
         self
     }
+    /// <p>The URI path, including query string, of the simulated invocation request. Use this to specify path parameters and query string parameters.</p>
+    pub fn get_path_with_query_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path_with_query_string
+    }
     /// <p>The simulated request body of an incoming invocation request.</p>
     pub fn body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.body = ::std::option::Option::Some(input.into());
@@ -174,6 +190,10 @@ impl TestInvokeMethodInputBuilder {
     pub fn set_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.body = input;
         self
+    }
+    /// <p>The simulated request body of an incoming invocation request.</p>
+    pub fn get_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.body
     }
     /// Adds a key-value pair to `headers`.
     ///
@@ -199,6 +219,14 @@ impl TestInvokeMethodInputBuilder {
     ) -> Self {
         self.headers = input;
         self
+    }
+    /// <p>A key-value map of headers to simulate an incoming invocation request.</p>
+    pub fn get_headers(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.headers
     }
     /// Adds a key-value pair to `multi_value_headers`.
     ///
@@ -228,6 +256,14 @@ impl TestInvokeMethodInputBuilder {
         self.multi_value_headers = input;
         self
     }
+    /// <p>The headers as a map from string to list of values to simulate an incoming invocation request.</p>
+    pub fn get_multi_value_headers(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
+    > {
+        &self.multi_value_headers
+    }
     /// <p>A ClientCertificate identifier to use in the test invocation. API Gateway will use the certificate when making the HTTPS request to the defined back-end endpoint.</p>
     pub fn client_certificate_id(
         mut self,
@@ -243,6 +279,10 @@ impl TestInvokeMethodInputBuilder {
     ) -> Self {
         self.client_certificate_id = input;
         self
+    }
+    /// <p>A ClientCertificate identifier to use in the test invocation. API Gateway will use the certificate when making the HTTPS request to the defined back-end endpoint.</p>
+    pub fn get_client_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_certificate_id
     }
     /// Adds a key-value pair to `stage_variables`.
     ///
@@ -268,6 +308,14 @@ impl TestInvokeMethodInputBuilder {
     ) -> Self {
         self.stage_variables = input;
         self
+    }
+    /// <p>A key-value map of stage variables to simulate an invocation on a deployed Stage.</p>
+    pub fn get_stage_variables(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.stage_variables
     }
     /// Consumes the builder and constructs a [`TestInvokeMethodInput`](crate::operation::test_invoke_method::TestInvokeMethodInput).
     pub fn build(

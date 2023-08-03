@@ -48,6 +48,10 @@ impl ApprovalRuleOverriddenEventMetadataBuilder {
         self.revision_id = input;
         self
     }
+    /// <p>The revision ID of the pull request when the override event occurred.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision_id
+    }
     /// <p>The status of the override event.</p>
     pub fn override_status(mut self, input: crate::types::OverrideStatus) -> Self {
         self.override_status = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl ApprovalRuleOverriddenEventMetadataBuilder {
     ) -> Self {
         self.override_status = input;
         self
+    }
+    /// <p>The status of the override event.</p>
+    pub fn get_override_status(&self) -> &::std::option::Option<crate::types::OverrideStatus> {
+        &self.override_status
     }
     /// Consumes the builder and constructs a [`ApprovalRuleOverriddenEventMetadata`](crate::types::ApprovalRuleOverriddenEventMetadata).
     pub fn build(self) -> crate::types::ApprovalRuleOverriddenEventMetadata {

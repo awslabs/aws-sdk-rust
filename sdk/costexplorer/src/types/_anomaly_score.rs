@@ -48,6 +48,10 @@ impl AnomalyScoreBuilder {
         self.max_score = input;
         self
     }
+    /// <p>The maximum score that's observed during the <code>AnomalyDateInterval</code>. </p>
+    pub fn get_max_score(&self) -> &::std::option::Option<f64> {
+        &self.max_score
+    }
     /// <p>The last observed score. </p>
     pub fn current_score(mut self, input: f64) -> Self {
         self.current_score = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl AnomalyScoreBuilder {
     pub fn set_current_score(mut self, input: ::std::option::Option<f64>) -> Self {
         self.current_score = input;
         self
+    }
+    /// <p>The last observed score. </p>
+    pub fn get_current_score(&self) -> &::std::option::Option<f64> {
+        &self.current_score
     }
     /// Consumes the builder and constructs a [`AnomalyScore`](crate::types::AnomalyScore).
     pub fn build(self) -> crate::types::AnomalyScore {

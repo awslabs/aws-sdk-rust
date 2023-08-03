@@ -48,6 +48,10 @@ impl SortPropertyBuilder {
         self.field = input;
         self
     }
+    /// <p>The field to perform the sort on.</p>
+    pub fn get_field(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field
+    }
     /// <p>The direction of the sort, either ascending or descending.</p>
     pub fn direction(mut self, input: crate::types::SortDirection) -> Self {
         self.direction = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl SortPropertyBuilder {
     ) -> Self {
         self.direction = input;
         self
+    }
+    /// <p>The direction of the sort, either ascending or descending.</p>
+    pub fn get_direction(&self) -> &::std::option::Option<crate::types::SortDirection> {
+        &self.direction
     }
     /// Consumes the builder and constructs a [`SortProperty`](crate::types::SortProperty).
     pub fn build(self) -> crate::types::SortProperty {

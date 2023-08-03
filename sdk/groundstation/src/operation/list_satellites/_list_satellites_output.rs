@@ -55,6 +55,10 @@ impl ListSatellitesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Next token that can be supplied in the next call to get the next page of satellites.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `satellites`.
     ///
     /// To override the contents of this collection use [`set_satellites`](Self::set_satellites).
@@ -73,6 +77,12 @@ impl ListSatellitesOutputBuilder {
     ) -> Self {
         self.satellites = input;
         self
+    }
+    /// <p>List of satellites.</p>
+    pub fn get_satellites(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SatelliteListItem>> {
+        &self.satellites
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

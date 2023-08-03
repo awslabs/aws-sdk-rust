@@ -60,6 +60,10 @@ impl DescribePipelineDefinitionForExecutionOutputBuilder {
         self.pipeline_definition = input;
         self
     }
+    /// <p>The JSON pipeline definition.</p>
+    pub fn get_pipeline_definition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_definition
+    }
     /// <p>The time when the pipeline was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl DescribePipelineDefinitionForExecutionOutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The time when the pipeline was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -44,6 +44,10 @@ impl AddNotificationChannelInputBuilder {
         self.config = input;
         self
     }
+    /// <p> A <code>NotificationChannelConfig</code> object that specifies what type of notification channel to add. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS). </p>
+    pub fn get_config(&self) -> &::std::option::Option<crate::types::NotificationChannelConfig> {
+        &self.config
+    }
     /// Consumes the builder and constructs a [`AddNotificationChannelInput`](crate::operation::add_notification_channel::AddNotificationChannelInput).
     pub fn build(
         self,

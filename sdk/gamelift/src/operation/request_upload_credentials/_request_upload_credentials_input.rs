@@ -41,6 +41,10 @@ impl RequestUploadCredentialsInputBuilder {
         self.build_id = input;
         self
     }
+    /// <p>A unique identifier for the build to get credentials for. You can use either the build ID or ARN value. </p>
+    pub fn get_build_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.build_id
+    }
     /// Consumes the builder and constructs a [`RequestUploadCredentialsInput`](crate::operation::request_upload_credentials::RequestUploadCredentialsInput).
     pub fn build(
         self,

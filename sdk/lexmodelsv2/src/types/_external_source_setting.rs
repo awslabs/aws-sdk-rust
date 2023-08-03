@@ -49,6 +49,12 @@ impl ExternalSourceSettingBuilder {
         self.grammar_slot_type_setting = input;
         self
     }
+    /// <p>Settings required for a slot type based on a grammar that you provide.</p>
+    pub fn get_grammar_slot_type_setting(
+        &self,
+    ) -> &::std::option::Option<crate::types::GrammarSlotTypeSetting> {
+        &self.grammar_slot_type_setting
+    }
     /// Consumes the builder and constructs a [`ExternalSourceSetting`](crate::types::ExternalSourceSetting).
     pub fn build(self) -> crate::types::ExternalSourceSetting {
         crate::types::ExternalSourceSetting {

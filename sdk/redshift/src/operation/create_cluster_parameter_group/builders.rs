@@ -38,6 +38,10 @@ impl CreateClusterParameterGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateClusterParameterGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_cluster_parameter_group::builders::CreateClusterParameterGroupInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -152,6 +156,19 @@ impl CreateClusterParameterGroupFluentBuilder {
         self.inner = self.inner.set_parameter_group_name(input);
         self
     }
+    /// <p>The name of the cluster parameter group.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be 1 to 255 alphanumeric characters or hyphens</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li> <p>Must be unique withing your Amazon Web Services account.</p> </li>
+    /// </ul> <note>
+    /// <p>This value is stored as a lower-case string.</p>
+    /// </note>
+    pub fn get_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_parameter_group_name()
+    }
     /// <p>The Amazon Redshift engine version to which the cluster parameter group applies. The cluster engine version determines the set of parameters.</p>
     /// <p>To get a list of valid parameter group family names, you can call <code>DescribeClusterParameterGroups</code>. By default, Amazon Redshift returns a list of all the parameter groups that are owned by your Amazon Web Services account, including the default parameter groups for each Amazon Redshift engine version. The parameter group family names associated with the default parameter groups provide you the valid values. For example, a valid family name is "redshift-1.0". </p>
     pub fn parameter_group_family(
@@ -170,6 +187,11 @@ impl CreateClusterParameterGroupFluentBuilder {
         self.inner = self.inner.set_parameter_group_family(input);
         self
     }
+    /// <p>The Amazon Redshift engine version to which the cluster parameter group applies. The cluster engine version determines the set of parameters.</p>
+    /// <p>To get a list of valid parameter group family names, you can call <code>DescribeClusterParameterGroups</code>. By default, Amazon Redshift returns a list of all the parameter groups that are owned by your Amazon Web Services account, including the default parameter groups for each Amazon Redshift engine version. The parameter group family names associated with the default parameter groups provide you the valid values. For example, a valid family name is "redshift-1.0". </p>
+    pub fn get_parameter_group_family(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_parameter_group_family()
+    }
     /// <p>A description of the parameter group.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -179,6 +201,10 @@ impl CreateClusterParameterGroupFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of the parameter group.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `Tags`.
     ///
@@ -196,5 +222,9 @@ impl CreateClusterParameterGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of tag instances.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

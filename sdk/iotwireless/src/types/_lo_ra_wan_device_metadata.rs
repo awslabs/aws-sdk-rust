@@ -81,6 +81,10 @@ impl LoRaWanDeviceMetadataBuilder {
         self.dev_eui = input;
         self
     }
+    /// <p>The DevEUI value.</p>
+    pub fn get_dev_eui(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dev_eui
+    }
     /// <p>The FPort value.</p>
     pub fn f_port(mut self, input: i32) -> Self {
         self.f_port = ::std::option::Option::Some(input);
@@ -90,6 +94,10 @@ impl LoRaWanDeviceMetadataBuilder {
     pub fn set_f_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.f_port = input;
         self
+    }
+    /// <p>The FPort value.</p>
+    pub fn get_f_port(&self) -> &::std::option::Option<i32> {
+        &self.f_port
     }
     /// <p>The DataRate value.</p>
     pub fn data_rate(mut self, input: i32) -> Self {
@@ -101,6 +109,10 @@ impl LoRaWanDeviceMetadataBuilder {
         self.data_rate = input;
         self
     }
+    /// <p>The DataRate value.</p>
+    pub fn get_data_rate(&self) -> &::std::option::Option<i32> {
+        &self.data_rate
+    }
     /// <p>The device's channel frequency in Hz.</p>
     pub fn frequency(mut self, input: i32) -> Self {
         self.frequency = ::std::option::Option::Some(input);
@@ -111,6 +123,10 @@ impl LoRaWanDeviceMetadataBuilder {
         self.frequency = input;
         self
     }
+    /// <p>The device's channel frequency in Hz.</p>
+    pub fn get_frequency(&self) -> &::std::option::Option<i32> {
+        &self.frequency
+    }
     /// <p>The date and time of the metadata.</p>
     pub fn timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timestamp = ::std::option::Option::Some(input.into());
@@ -120,6 +136,10 @@ impl LoRaWanDeviceMetadataBuilder {
     pub fn set_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timestamp = input;
         self
+    }
+    /// <p>The date and time of the metadata.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timestamp
     }
     /// Appends an item to `gateways`.
     ///
@@ -139,6 +159,12 @@ impl LoRaWanDeviceMetadataBuilder {
     ) -> Self {
         self.gateways = input;
         self
+    }
+    /// <p>Information about the gateways accessed by the device.</p>
+    pub fn get_gateways(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LoRaWanGatewayMetadata>> {
+        &self.gateways
     }
     /// Consumes the builder and constructs a [`LoRaWanDeviceMetadata`](crate::types::LoRaWanDeviceMetadata).
     pub fn build(self) -> crate::types::LoRaWanDeviceMetadata {

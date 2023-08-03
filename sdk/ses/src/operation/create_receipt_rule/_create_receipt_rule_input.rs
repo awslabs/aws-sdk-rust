@@ -63,6 +63,10 @@ impl CreateReceiptRuleInputBuilder {
         self.rule_set_name = input;
         self
     }
+    /// <p>The name of the rule set that the receipt rule will be added to.</p>
+    pub fn get_rule_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_set_name
+    }
     /// <p>The name of an existing rule after which the new rule will be placed. If this parameter is null, the new rule will be inserted at the beginning of the rule list.</p>
     pub fn after(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.after = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl CreateReceiptRuleInputBuilder {
         self.after = input;
         self
     }
+    /// <p>The name of an existing rule after which the new rule will be placed. If this parameter is null, the new rule will be inserted at the beginning of the rule list.</p>
+    pub fn get_after(&self) -> &::std::option::Option<::std::string::String> {
+        &self.after
+    }
     /// <p>A data structure that contains the specified rule's name, actions, recipients, domains, enabled status, scan status, and TLS policy.</p>
     pub fn rule(mut self, input: crate::types::ReceiptRule) -> Self {
         self.rule = ::std::option::Option::Some(input);
@@ -82,6 +90,10 @@ impl CreateReceiptRuleInputBuilder {
     pub fn set_rule(mut self, input: ::std::option::Option<crate::types::ReceiptRule>) -> Self {
         self.rule = input;
         self
+    }
+    /// <p>A data structure that contains the specified rule's name, actions, recipients, domains, enabled status, scan status, and TLS policy.</p>
+    pub fn get_rule(&self) -> &::std::option::Option<crate::types::ReceiptRule> {
+        &self.rule
     }
     /// Consumes the builder and constructs a [`CreateReceiptRuleInput`](crate::operation::create_receipt_rule::CreateReceiptRuleInput).
     pub fn build(

@@ -45,6 +45,10 @@ impl DescribeGeofenceCollectionInputBuilder {
         self.collection_name = input;
         self
     }
+    /// <p>The name of the geofence collection.</p>
+    pub fn get_collection_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collection_name
+    }
     /// Consumes the builder and constructs a [`DescribeGeofenceCollectionInput`](crate::operation::describe_geofence_collection::DescribeGeofenceCollectionInput).
     pub fn build(
         self,

@@ -76,6 +76,10 @@ impl GetMethodResponseOutputBuilder {
         self.status_code = input;
         self
     }
+    /// <p>The method response's status code.</p>
+    pub fn get_status_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_code
+    }
     /// Adds a key-value pair to `response_parameters`.
     ///
     /// To override the contents of this collection use [`set_response_parameters`](Self::set_response_parameters).
@@ -98,6 +102,12 @@ impl GetMethodResponseOutputBuilder {
     ) -> Self {
         self.response_parameters = input;
         self
+    }
+    /// <p>A key-value map specifying required or optional response parameters that API Gateway can send back to the caller. A key defines a method response header and the value specifies whether the associated method response header is required or not. The expression of the key must match the pattern <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. API Gateway passes certain integration response data to the method response headers specified here according to the mapping you prescribe in the API's IntegrationResponse. The integration response data that can be mapped include an integration response header expressed in <code>integration.response.header.{name}</code>, a static value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON expression from the back-end response payload in the form of <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.)</p>
+    pub fn get_response_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, bool>> {
+        &self.response_parameters
     }
     /// Adds a key-value pair to `response_models`.
     ///
@@ -123,6 +133,14 @@ impl GetMethodResponseOutputBuilder {
     ) -> Self {
         self.response_models = input;
         self
+    }
+    /// <p>Specifies the Model resources used for the response's content-type. Response models are represented as a key/value map, with a content-type as the key and a Model name as the value.</p>
+    pub fn get_response_models(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.response_models
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -54,6 +54,10 @@ impl ProjectDataDeliveryConfigBuilder {
         self.s3_destination = input;
         self
     }
+    /// <p>If the project stores evaluation events in an Amazon S3 bucket, this structure stores the bucket name and bucket prefix.</p>
+    pub fn get_s3_destination(&self) -> &::std::option::Option<crate::types::S3DestinationConfig> {
+        &self.s3_destination
+    }
     /// <p>If the project stores evaluation events in CloudWatch Logs, this structure stores the log group name.</p>
     pub fn cloud_watch_logs(
         mut self,
@@ -69,6 +73,12 @@ impl ProjectDataDeliveryConfigBuilder {
     ) -> Self {
         self.cloud_watch_logs = input;
         self
+    }
+    /// <p>If the project stores evaluation events in CloudWatch Logs, this structure stores the log group name.</p>
+    pub fn get_cloud_watch_logs(
+        &self,
+    ) -> &::std::option::Option<crate::types::CloudWatchLogsDestinationConfig> {
+        &self.cloud_watch_logs
     }
     /// Consumes the builder and constructs a [`ProjectDataDeliveryConfig`](crate::types::ProjectDataDeliveryConfig).
     pub fn build(self) -> crate::types::ProjectDataDeliveryConfig {

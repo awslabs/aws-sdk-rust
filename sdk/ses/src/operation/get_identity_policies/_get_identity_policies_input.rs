@@ -54,6 +54,11 @@ impl GetIdentityPoliciesInputBuilder {
         self.identity = input;
         self
     }
+    /// <p>The identity for which the policies will be retrieved. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+    /// <p>To successfully call this API, you must own the identity.</p>
+    pub fn get_identity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity
+    }
     /// Appends an item to `policy_names`.
     ///
     /// To override the contents of this collection use [`set_policy_names`](Self::set_policy_names).
@@ -72,6 +77,12 @@ impl GetIdentityPoliciesInputBuilder {
     ) -> Self {
         self.policy_names = input;
         self
+    }
+    /// <p>A list of the names of policies to be retrieved. You can retrieve a maximum of 20 policies at a time. If you do not know the names of the policies that are attached to the identity, you can use <code>ListIdentityPolicies</code>.</p>
+    pub fn get_policy_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.policy_names
     }
     /// Consumes the builder and constructs a [`GetIdentityPoliciesInput`](crate::operation::get_identity_policies::GetIdentityPoliciesInput).
     pub fn build(

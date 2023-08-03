@@ -54,6 +54,10 @@ impl StopInferenceExperimentOutputBuilder {
         self.inference_experiment_arn = input;
         self
     }
+    /// <p>The ARN of the stopped inference experiment.</p>
+    pub fn get_inference_experiment_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.inference_experiment_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

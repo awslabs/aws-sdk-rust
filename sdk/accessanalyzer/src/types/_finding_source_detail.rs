@@ -54,6 +54,10 @@ impl FindingSourceDetailBuilder {
         self.access_point_arn = input;
         self
     }
+    /// <p>The ARN of the access point that generated the finding. The ARN format depends on whether the ARN represents an access point or a multi-region access point.</p>
+    pub fn get_access_point_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_point_arn
+    }
     /// <p>The account of the cross-account access point that generated the finding.</p>
     pub fn access_point_account(
         mut self,
@@ -69,6 +73,10 @@ impl FindingSourceDetailBuilder {
     ) -> Self {
         self.access_point_account = input;
         self
+    }
+    /// <p>The account of the cross-account access point that generated the finding.</p>
+    pub fn get_access_point_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_point_account
     }
     /// Consumes the builder and constructs a [`FindingSourceDetail`](crate::types::FindingSourceDetail).
     pub fn build(self) -> crate::types::FindingSourceDetail {

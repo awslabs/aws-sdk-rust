@@ -56,6 +56,11 @@ impl RuleSummaryBuilder {
         self.rule_id = input;
         self
     }
+    /// <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a <code>Rule</code> (see <code>GetRule</code>), update a <code>Rule</code> (see <code>UpdateRule</code>), insert a <code>Rule</code> into a <code>WebACL</code> or delete one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>Rule</code> from AWS WAF (see <code>DeleteRule</code>).</p>
+    /// <p> <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
+    pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_id
+    }
     /// <p>A friendly name or description of the <code>Rule</code>. You can't change the name of a <code>Rule</code> after you create it.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -65,6 +70,10 @@ impl RuleSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A friendly name or description of the <code>Rule</code>. You can't change the name of a <code>Rule</code> after you create it.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`RuleSummary`](crate::types::RuleSummary).
     pub fn build(self) -> crate::types::RuleSummary {

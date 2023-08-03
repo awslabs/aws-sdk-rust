@@ -51,6 +51,10 @@ impl SqsQueueSinkConfigurationBuilder {
         self.insights_target = input;
         self
     }
+    /// <p>The ARN of the SQS sink.</p>
+    pub fn get_insights_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.insights_target
+    }
     /// Consumes the builder and constructs a [`SqsQueueSinkConfiguration`](crate::types::SqsQueueSinkConfiguration).
     pub fn build(self) -> crate::types::SqsQueueSinkConfiguration {
         crate::types::SqsQueueSinkConfiguration {

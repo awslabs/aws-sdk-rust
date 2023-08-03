@@ -43,6 +43,12 @@ impl DescribeObjectsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeObjects as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_objects::builders::DescribeObjectsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -144,6 +150,10 @@ impl DescribeObjectsFluentBuilder {
         self.inner = self.inner.set_pipeline_id(input);
         self
     }
+    /// <p>The ID of the pipeline that contains the object definitions.</p>
+    pub fn get_pipeline_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pipeline_id()
+    }
     /// Appends an item to `objectIds`.
     ///
     /// To override the contents of this collection use [`set_object_ids`](Self::set_object_ids).
@@ -161,6 +171,10 @@ impl DescribeObjectsFluentBuilder {
         self.inner = self.inner.set_object_ids(input);
         self
     }
+    /// <p>The IDs of the pipeline objects that contain the definitions to be described. You can pass as many as 25 identifiers in a single call to <code>DescribeObjects</code>.</p>
+    pub fn get_object_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_object_ids()
+    }
     /// <p>Indicates whether any expressions in the object should be evaluated when the object descriptions are returned.</p>
     pub fn evaluate_expressions(mut self, input: bool) -> Self {
         self.inner = self.inner.evaluate_expressions(input);
@@ -171,6 +185,10 @@ impl DescribeObjectsFluentBuilder {
         self.inner = self.inner.set_evaluate_expressions(input);
         self
     }
+    /// <p>Indicates whether any expressions in the object should be evaluated when the object descriptions are returned.</p>
+    pub fn get_evaluate_expressions(&self) -> &::std::option::Option<bool> {
+        self.inner.get_evaluate_expressions()
+    }
     /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>DescribeObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -180,5 +198,9 @@ impl DescribeObjectsFluentBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
+    }
+    /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>DescribeObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
     }
 }

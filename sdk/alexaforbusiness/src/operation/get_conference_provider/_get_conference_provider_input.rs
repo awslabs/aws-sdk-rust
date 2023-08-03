@@ -47,6 +47,10 @@ impl GetConferenceProviderInputBuilder {
         self.conference_provider_arn = input;
         self
     }
+    /// <p>The ARN of the newly created conference provider.</p>
+    pub fn get_conference_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.conference_provider_arn
+    }
     /// Consumes the builder and constructs a [`GetConferenceProviderInput`](crate::operation::get_conference_provider::GetConferenceProviderInput).
     pub fn build(
         self,

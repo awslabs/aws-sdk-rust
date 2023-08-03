@@ -48,6 +48,10 @@ impl AwsElbLoadBalancerBackendServerDescriptionBuilder {
         self.instance_port = input;
         self
     }
+    /// <p>The port on which the EC2 instance is listening.</p>
+    pub fn get_instance_port(&self) -> &::std::option::Option<i32> {
+        &self.instance_port
+    }
     /// Appends an item to `policy_names`.
     ///
     /// To override the contents of this collection use [`set_policy_names`](Self::set_policy_names).
@@ -66,6 +70,12 @@ impl AwsElbLoadBalancerBackendServerDescriptionBuilder {
     ) -> Self {
         self.policy_names = input;
         self
+    }
+    /// <p>The names of the policies that are enabled for the EC2 instance.</p>
+    pub fn get_policy_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.policy_names
     }
     /// Consumes the builder and constructs a [`AwsElbLoadBalancerBackendServerDescription`](crate::types::AwsElbLoadBalancerBackendServerDescription).
     pub fn build(self) -> crate::types::AwsElbLoadBalancerBackendServerDescription {

@@ -36,6 +36,10 @@ impl GetDataQualityRuleRecommendationRunFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetDataQualityRuleRecommendationRun as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_data_quality_rule_recommendation_run::builders::GetDataQualityRuleRecommendationRunInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -99,5 +103,9 @@ impl GetDataQualityRuleRecommendationRunFluentBuilder {
     pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_run_id(input);
         self
+    }
+    /// <p>The unique run identifier associated with this run.</p>
+    pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_run_id()
     }
 }

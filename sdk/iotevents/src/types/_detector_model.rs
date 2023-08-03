@@ -61,6 +61,12 @@ impl DetectorModelBuilder {
         self.detector_model_definition = input;
         self
     }
+    /// <p>Information that defines how a detector operates.</p>
+    pub fn get_detector_model_definition(
+        &self,
+    ) -> &::std::option::Option<crate::types::DetectorModelDefinition> {
+        &self.detector_model_definition
+    }
     /// <p>Information about how the detector is configured.</p>
     pub fn detector_model_configuration(
         mut self,
@@ -76,6 +82,12 @@ impl DetectorModelBuilder {
     ) -> Self {
         self.detector_model_configuration = input;
         self
+    }
+    /// <p>Information about how the detector is configured.</p>
+    pub fn get_detector_model_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DetectorModelConfiguration> {
+        &self.detector_model_configuration
     }
     /// Consumes the builder and constructs a [`DetectorModel`](crate::types::DetectorModel).
     pub fn build(self) -> crate::types::DetectorModel {

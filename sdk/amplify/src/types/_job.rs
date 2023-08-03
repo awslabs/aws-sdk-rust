@@ -48,6 +48,10 @@ impl JobBuilder {
         self.summary = input;
         self
     }
+    /// <p> Describes the summary for an execution job for an Amplify app. </p>
+    pub fn get_summary(&self) -> &::std::option::Option<crate::types::JobSummary> {
+        &self.summary
+    }
     /// Appends an item to `steps`.
     ///
     /// To override the contents of this collection use [`set_steps`](Self::set_steps).
@@ -66,6 +70,10 @@ impl JobBuilder {
     ) -> Self {
         self.steps = input;
         self
+    }
+    /// <p> The execution steps for an execution job, for an Amplify app. </p>
+    pub fn get_steps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Step>> {
+        &self.steps
     }
     /// Consumes the builder and constructs a [`Job`](crate::types::Job).
     pub fn build(self) -> crate::types::Job {

@@ -107,6 +107,17 @@ impl CreateAliasInputBuilder {
         self.function_name = input;
         self
     }
+    /// <p>The name of the Lambda function.</p>
+    /// <p class="title"> <b>Name formats</b> </p>
+    /// <ul>
+    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
+    /// </ul>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    pub fn get_function_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.function_name
+    }
     /// <p>The name of the alias.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -116,6 +127,10 @@ impl CreateAliasInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the alias.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The function version that the alias invokes.</p>
     pub fn function_version(
@@ -133,6 +148,10 @@ impl CreateAliasInputBuilder {
         self.function_version = input;
         self
     }
+    /// <p>The function version that the alias invokes.</p>
+    pub fn get_function_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.function_version
+    }
     /// <p>A description of the alias.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -142,6 +161,10 @@ impl CreateAliasInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the alias.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html#configuring-alias-routing">routing configuration</a> of the alias.</p>
     pub fn routing_config(mut self, input: crate::types::AliasRoutingConfiguration) -> Self {
@@ -155,6 +178,12 @@ impl CreateAliasInputBuilder {
     ) -> Self {
         self.routing_config = input;
         self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html#configuring-alias-routing">routing configuration</a> of the alias.</p>
+    pub fn get_routing_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::AliasRoutingConfiguration> {
+        &self.routing_config
     }
     /// Consumes the builder and constructs a [`CreateAliasInput`](crate::operation::create_alias::CreateAliasInput).
     pub fn build(

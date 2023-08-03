@@ -56,6 +56,10 @@ impl CodeConfigurationBuilder {
         self.s3_bucket = input;
         self
     }
+    /// <p>A unique name for the S3 bucket.</p>
+    pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket
+    }
     /// <p>The full S3 path (excluding bucket) to the .zip file. This file contains the code that is loaded onto the cluster when it's started.</p>
     pub fn s3_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_key = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl CodeConfigurationBuilder {
     pub fn set_s3_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_key = input;
         self
+    }
+    /// <p>The full S3 path (excluding bucket) to the .zip file. This file contains the code that is loaded onto the cluster when it's started.</p>
+    pub fn get_s3_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_key
     }
     /// <p>The version of an S3 object.</p>
     pub fn s3_object_version(
@@ -81,6 +89,10 @@ impl CodeConfigurationBuilder {
     ) -> Self {
         self.s3_object_version = input;
         self
+    }
+    /// <p>The version of an S3 object.</p>
+    pub fn get_s3_object_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_object_version
     }
     /// Consumes the builder and constructs a [`CodeConfiguration`](crate::types::CodeConfiguration).
     pub fn build(self) -> crate::types::CodeConfiguration {

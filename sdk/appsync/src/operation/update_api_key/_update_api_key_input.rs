@@ -63,6 +63,10 @@ impl UpdateApiKeyInputBuilder {
         self.api_id = input;
         self
     }
+    /// <p>The ID for the GraphQL API.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_id
+    }
     /// <p>The API key ID.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl UpdateApiKeyInputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The API key ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>A description of the purpose of the API key.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -83,6 +91,10 @@ impl UpdateApiKeyInputBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the purpose of the API key.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>From the update time, the time after which the API key expires. The date is represented as seconds since the epoch. For more information, see .</p>
     pub fn expires(mut self, input: i64) -> Self {
         self.expires = ::std::option::Option::Some(input);
@@ -92,6 +104,10 @@ impl UpdateApiKeyInputBuilder {
     pub fn set_expires(mut self, input: ::std::option::Option<i64>) -> Self {
         self.expires = input;
         self
+    }
+    /// <p>From the update time, the time after which the API key expires. The date is represented as seconds since the epoch. For more information, see .</p>
+    pub fn get_expires(&self) -> &::std::option::Option<i64> {
+        &self.expires
     }
     /// Consumes the builder and constructs a [`UpdateApiKeyInput`](crate::operation::update_api_key::UpdateApiKeyInput).
     pub fn build(

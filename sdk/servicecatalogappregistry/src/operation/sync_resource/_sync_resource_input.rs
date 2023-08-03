@@ -50,6 +50,10 @@ impl SyncResourceInputBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The type of resource of which the application will be associated.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
+    }
     /// <p>An entity you can work with and specify with a name or ID. Examples include an Amazon EC2 instance, an Amazon Web Services CloudFormation stack, or an Amazon S3 bucket.</p>
     pub fn resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource = ::std::option::Option::Some(input.into());
@@ -59,6 +63,10 @@ impl SyncResourceInputBuilder {
     pub fn set_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource = input;
         self
+    }
+    /// <p>An entity you can work with and specify with a name or ID. Examples include an Amazon EC2 instance, an Amazon Web Services CloudFormation stack, or an Amazon S3 bucket.</p>
+    pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource
     }
     /// Consumes the builder and constructs a [`SyncResourceInput`](crate::operation::sync_resource::SyncResourceInput).
     pub fn build(

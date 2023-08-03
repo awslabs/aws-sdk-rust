@@ -48,6 +48,10 @@ impl MessageBuilder {
         self.subject = input;
         self
     }
+    /// <p>The subject of the message: A short summary of the content, which will appear in the recipient's inbox.</p>
+    pub fn get_subject(&self) -> &::std::option::Option<crate::types::Content> {
+        &self.subject
+    }
     /// <p>The message body.</p>
     pub fn body(mut self, input: crate::types::Body) -> Self {
         self.body = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl MessageBuilder {
     pub fn set_body(mut self, input: ::std::option::Option<crate::types::Body>) -> Self {
         self.body = input;
         self
+    }
+    /// <p>The message body.</p>
+    pub fn get_body(&self) -> &::std::option::Option<crate::types::Body> {
+        &self.body
     }
     /// Consumes the builder and constructs a [`Message`](crate::types::Message).
     pub fn build(self) -> crate::types::Message {

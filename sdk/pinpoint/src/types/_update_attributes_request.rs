@@ -49,6 +49,10 @@ impl UpdateAttributesRequestBuilder {
         self.blacklist = input;
         self
     }
+    /// <p>An array of the attributes to remove from all the endpoints that are associated with the application. The array can specify the complete, exact name of each attribute to remove or it can specify a glob pattern that an attribute name must match in order for the attribute to be removed.</p>
+    pub fn get_blacklist(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.blacklist
+    }
     /// Consumes the builder and constructs a [`UpdateAttributesRequest`](crate::types::UpdateAttributesRequest).
     pub fn build(self) -> crate::types::UpdateAttributesRequest {
         crate::types::UpdateAttributesRequest {

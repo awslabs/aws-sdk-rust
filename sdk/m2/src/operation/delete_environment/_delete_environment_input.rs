@@ -46,6 +46,10 @@ impl DeleteEnvironmentInputBuilder {
         self.environment_id = input;
         self
     }
+    /// <p>The unique identifier of the runtime environment you want to delete.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
+    }
     /// Consumes the builder and constructs a [`DeleteEnvironmentInput`](crate::operation::delete_environment::DeleteEnvironmentInput).
     pub fn build(
         self,

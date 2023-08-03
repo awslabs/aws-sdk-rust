@@ -43,6 +43,10 @@ impl CreateKeysAndCertificateInputBuilder {
         self.set_as_active = input;
         self
     }
+    /// <p>Specifies whether the certificate is active.</p>
+    pub fn get_set_as_active(&self) -> &::std::option::Option<bool> {
+        &self.set_as_active
+    }
     /// Consumes the builder and constructs a [`CreateKeysAndCertificateInput`](crate::operation::create_keys_and_certificate::CreateKeysAndCertificateInput).
     pub fn build(
         self,

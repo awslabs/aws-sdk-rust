@@ -105,6 +105,10 @@ impl CreateSolFunctionPackageOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>ID of the function package.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>Function package ARN.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -114,6 +118,10 @@ impl CreateSolFunctionPackageOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>Function package ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>Onboarding state of the function package.</p>
     pub fn onboarding_state(mut self, input: crate::types::OnboardingState) -> Self {
@@ -128,6 +136,10 @@ impl CreateSolFunctionPackageOutputBuilder {
         self.onboarding_state = input;
         self
     }
+    /// <p>Onboarding state of the function package.</p>
+    pub fn get_onboarding_state(&self) -> &::std::option::Option<crate::types::OnboardingState> {
+        &self.onboarding_state
+    }
     /// <p>Operational state of the function package.</p>
     pub fn operational_state(mut self, input: crate::types::OperationalState) -> Self {
         self.operational_state = ::std::option::Option::Some(input);
@@ -141,6 +153,10 @@ impl CreateSolFunctionPackageOutputBuilder {
         self.operational_state = input;
         self
     }
+    /// <p>Operational state of the function package.</p>
+    pub fn get_operational_state(&self) -> &::std::option::Option<crate::types::OperationalState> {
+        &self.operational_state
+    }
     /// <p>Usage state of the function package.</p>
     pub fn usage_state(mut self, input: crate::types::UsageState) -> Self {
         self.usage_state = ::std::option::Option::Some(input);
@@ -153,6 +169,10 @@ impl CreateSolFunctionPackageOutputBuilder {
     ) -> Self {
         self.usage_state = input;
         self
+    }
+    /// <p>Usage state of the function package.</p>
+    pub fn get_usage_state(&self) -> &::std::option::Option<crate::types::UsageState> {
+        &self.usage_state
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -178,6 +198,14 @@ impl CreateSolFunctionPackageOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -58,6 +58,12 @@ impl BatchUpdatePhoneNumberOutputBuilder {
         self.phone_number_errors = input;
         self
     }
+    /// <p>If the action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and error messages.</p>
+    pub fn get_phone_number_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberError>> {
+        &self.phone_number_errors
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -39,6 +39,10 @@ impl DeleteGameInputBuilder {
         self.game_name = input;
         self
     }
+    /// <p>The name of the game to delete.</p>
+    pub fn get_game_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.game_name
+    }
     /// Consumes the builder and constructs a [`DeleteGameInput`](crate::operation::delete_game::DeleteGameInput).
     pub fn build(
         self,

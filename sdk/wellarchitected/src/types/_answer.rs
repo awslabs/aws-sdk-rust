@@ -158,6 +158,10 @@ impl AnswerBuilder {
         self.question_id = input;
         self
     }
+    /// <p>The ID of the question.</p>
+    pub fn get_question_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.question_id
+    }
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
     pub fn pillar_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -169,6 +173,11 @@ impl AnswerBuilder {
     pub fn set_pillar_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pillar_id = input;
         self
+    }
+    /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
+    /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
+    pub fn get_pillar_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pillar_id
     }
     /// <p>The title of the question.</p>
     pub fn question_title(
@@ -186,6 +195,10 @@ impl AnswerBuilder {
         self.question_title = input;
         self
     }
+    /// <p>The title of the question.</p>
+    pub fn get_question_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.question_title
+    }
     /// <p>The description of the question.</p>
     pub fn question_description(
         mut self,
@@ -201,6 +214,10 @@ impl AnswerBuilder {
     ) -> Self {
         self.question_description = input;
         self
+    }
+    /// <p>The description of the question.</p>
+    pub fn get_question_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.question_description
     }
     /// <p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p>
     /// <p>This value is only available if the question has been answered.</p>
@@ -222,6 +239,12 @@ impl AnswerBuilder {
         self.improvement_plan_url = input;
         self
     }
+    /// <p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p>
+    /// <p>This value is only available if the question has been answered.</p>
+    /// <p>This value does not apply to custom lenses.</p>
+    pub fn get_improvement_plan_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.improvement_plan_url
+    }
     /// <p>The helpful resource URL.</p>
     /// <p>For Amazon Web Services official lenses, this is the helpful resource URL for a question or choice.</p>
     /// <p>For custom lenses, this is the helpful resource URL for a question and is only provided if <code>HelpfulResourceDisplayText</code> was specified for the question.</p>
@@ -242,6 +265,12 @@ impl AnswerBuilder {
         self.helpful_resource_url = input;
         self
     }
+    /// <p>The helpful resource URL.</p>
+    /// <p>For Amazon Web Services official lenses, this is the helpful resource URL for a question or choice.</p>
+    /// <p>For custom lenses, this is the helpful resource URL for a question and is only provided if <code>HelpfulResourceDisplayText</code> was specified for the question.</p>
+    pub fn get_helpful_resource_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.helpful_resource_url
+    }
     /// <p>The helpful resource text to be displayed for a custom lens.</p>
     /// <p>This field does not apply to Amazon Web Services official lenses.</p>
     pub fn helpful_resource_display_text(
@@ -259,6 +288,13 @@ impl AnswerBuilder {
     ) -> Self {
         self.helpful_resource_display_text = input;
         self
+    }
+    /// <p>The helpful resource text to be displayed for a custom lens.</p>
+    /// <p>This field does not apply to Amazon Web Services official lenses.</p>
+    pub fn get_helpful_resource_display_text(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.helpful_resource_display_text
     }
     /// Appends an item to `choices`.
     ///
@@ -278,6 +314,10 @@ impl AnswerBuilder {
     ) -> Self {
         self.choices = input;
         self
+    }
+    /// <p>List of choices available for a question.</p>
+    pub fn get_choices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Choice>> {
+        &self.choices
     }
     /// Appends an item to `selected_choices`.
     ///
@@ -303,6 +343,13 @@ impl AnswerBuilder {
         self.selected_choices = input;
         self
     }
+    /// <p>List of selected choice IDs in a question answer.</p>
+    /// <p>The values entered replace the previously selected choices.</p>
+    pub fn get_selected_choices(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.selected_choices
+    }
     /// Appends an item to `choice_answers`.
     ///
     /// To override the contents of this collection use [`set_choice_answers`](Self::set_choice_answers).
@@ -322,6 +369,12 @@ impl AnswerBuilder {
         self.choice_answers = input;
         self
     }
+    /// <p>A list of selected choices to a question in your workload.</p>
+    pub fn get_choice_answers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChoiceAnswer>> {
+        &self.choice_answers
+    }
     /// <p>Defines whether this question is applicable to a lens review.</p>
     pub fn is_applicable(mut self, input: bool) -> Self {
         self.is_applicable = ::std::option::Option::Some(input);
@@ -331,6 +384,10 @@ impl AnswerBuilder {
     pub fn set_is_applicable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_applicable = input;
         self
+    }
+    /// <p>Defines whether this question is applicable to a lens review.</p>
+    pub fn get_is_applicable(&self) -> &::std::option::Option<bool> {
+        &self.is_applicable
     }
     /// <p>The risk for a given workload, lens review, pillar, or question.</p>
     pub fn risk(mut self, input: crate::types::Risk) -> Self {
@@ -342,6 +399,10 @@ impl AnswerBuilder {
         self.risk = input;
         self
     }
+    /// <p>The risk for a given workload, lens review, pillar, or question.</p>
+    pub fn get_risk(&self) -> &::std::option::Option<crate::types::Risk> {
+        &self.risk
+    }
     /// <p>The notes associated with the workload.</p>
     pub fn notes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notes = ::std::option::Option::Some(input.into());
@@ -352,6 +413,10 @@ impl AnswerBuilder {
         self.notes = input;
         self
     }
+    /// <p>The notes associated with the workload.</p>
+    pub fn get_notes(&self) -> &::std::option::Option<::std::string::String> {
+        &self.notes
+    }
     /// <p>The reason why the question is not applicable to your workload.</p>
     pub fn reason(mut self, input: crate::types::AnswerReason) -> Self {
         self.reason = ::std::option::Option::Some(input);
@@ -361,6 +426,10 @@ impl AnswerBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<crate::types::AnswerReason>) -> Self {
         self.reason = input;
         self
+    }
+    /// <p>The reason why the question is not applicable to your workload.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<crate::types::AnswerReason> {
+        &self.reason
     }
     /// Consumes the builder and constructs a [`Answer`](crate::types::Answer).
     pub fn build(self) -> crate::types::Answer {

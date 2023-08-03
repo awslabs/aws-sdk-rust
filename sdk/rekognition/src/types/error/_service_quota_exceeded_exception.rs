@@ -85,6 +85,10 @@ impl ServiceQuotaExceededExceptionBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
+    #[allow(missing_docs)] // documentation missing in model
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
         self
@@ -93,6 +97,10 @@ impl ServiceQuotaExceededExceptionBuilder {
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
     }
     /// <p>A universally unique identifier (UUID) for the request.</p>
     pub fn logref(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -103,6 +111,10 @@ impl ServiceQuotaExceededExceptionBuilder {
     pub fn set_logref(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.logref = input;
         self
+    }
+    /// <p>A universally unique identifier (UUID) for the request.</p>
+    pub fn get_logref(&self) -> &::std::option::Option<::std::string::String> {
+        &self.logref
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

@@ -36,6 +36,10 @@ impl ListModelsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListModels as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_models::builders::ListModelsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl ListModelsFluentBuilder {
         self.inner = self.inner.set_sort_by(input);
         self
     }
+    /// <p>Sorts the list of results. The default is <code>CreationTime</code>.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ModelSortKey> {
+        self.inner.get_sort_by()
+    }
     /// <p>The sort order for results. The default is <code>Descending</code>.</p>
     pub fn sort_order(mut self, input: crate::types::OrderKey) -> Self {
         self.inner = self.inner.sort_order(input);
@@ -133,6 +141,10 @@ impl ListModelsFluentBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::OrderKey>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
+    }
+    /// <p>The sort order for results. The default is <code>Descending</code>.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::OrderKey> {
+        self.inner.get_sort_order()
     }
     /// <p>If the response to a previous <code>ListModels</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of models, use the token in the next request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -144,6 +156,10 @@ impl ListModelsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>If the response to a previous <code>ListModels</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of models, use the token in the next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of models to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -153,6 +169,10 @@ impl ListModelsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of models to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>A string in the model name. This filter returns only models whose name contains the specified string.</p>
     pub fn name_contains(
@@ -170,6 +190,10 @@ impl ListModelsFluentBuilder {
         self.inner = self.inner.set_name_contains(input);
         self
     }
+    /// <p>A string in the model name. This filter returns only models whose name contains the specified string.</p>
+    pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name_contains()
+    }
     /// <p>A filter that returns only models created before the specified time (timestamp).</p>
     pub fn creation_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.creation_time_before(input);
@@ -183,6 +207,10 @@ impl ListModelsFluentBuilder {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }
+    /// <p>A filter that returns only models created before the specified time (timestamp).</p>
+    pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_creation_time_before()
+    }
     /// <p>A filter that returns only models with a creation time greater than or equal to the specified time (timestamp).</p>
     pub fn creation_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.creation_time_after(input);
@@ -195,5 +223,9 @@ impl ListModelsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
+    }
+    /// <p>A filter that returns only models with a creation time greater than or equal to the specified time (timestamp).</p>
+    pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_creation_time_after()
     }
 }

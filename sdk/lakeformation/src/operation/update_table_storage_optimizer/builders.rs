@@ -36,6 +36,10 @@ impl UpdateTableStorageOptimizerFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateTableStorageOptimizer as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_table_storage_optimizer::builders::UpdateTableStorageOptimizerInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl UpdateTableStorageOptimizerFluentBuilder {
         self.inner = self.inner.set_catalog_id(input);
         self
     }
+    /// <p>The Catalog ID of the table.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_catalog_id()
+    }
     /// <p>Name of the database where the table is present.</p>
     pub fn database_name(
         mut self,
@@ -142,6 +150,10 @@ impl UpdateTableStorageOptimizerFluentBuilder {
         self.inner = self.inner.set_database_name(input);
         self
     }
+    /// <p>Name of the database where the table is present.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_database_name()
+    }
     /// <p>Name of the table for which to enable the storage optimizer.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.table_name(input.into());
@@ -151,6 +163,10 @@ impl UpdateTableStorageOptimizerFluentBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_table_name(input);
         self
+    }
+    /// <p>Name of the table for which to enable the storage optimizer.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_table_name()
     }
     /// Adds a key-value pair to `StorageOptimizerConfig`.
     ///
@@ -177,5 +193,16 @@ impl UpdateTableStorageOptimizerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_storage_optimizer_config(input);
         self
+    }
+    /// <p>Name of the table for which to enable the storage optimizer.</p>
+    pub fn get_storage_optimizer_config(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::OptimizerType,
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+        >,
+    > {
+        self.inner.get_storage_optimizer_config()
     }
 }

@@ -63,6 +63,10 @@ impl AutoTuneOptionsInputBuilder {
         self.desired_state = input;
         self
     }
+    /// <p>Whether Auto-Tune is enabled or disabled.</p>
+    pub fn get_desired_state(&self) -> &::std::option::Option<crate::types::AutoTuneDesiredState> {
+        &self.desired_state
+    }
     /// Appends an item to `maintenance_schedules`.
     ///
     /// To override the contents of this collection use [`set_maintenance_schedules`](Self::set_maintenance_schedules).
@@ -85,6 +89,12 @@ impl AutoTuneOptionsInputBuilder {
         self.maintenance_schedules = input;
         self
     }
+    /// <p>A list of maintenance schedules during which Auto-Tune can deploy changes. Maintenance windows are deprecated and have been replaced with <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak windows</a>.</p>
+    pub fn get_maintenance_schedules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoTuneMaintenanceSchedule>> {
+        &self.maintenance_schedules
+    }
     /// <p>Whether to schedule Auto-Tune optimizations that require blue/green deployments during the domain's configured daily off-peak window.</p>
     pub fn use_off_peak_window(mut self, input: bool) -> Self {
         self.use_off_peak_window = ::std::option::Option::Some(input);
@@ -94,6 +104,10 @@ impl AutoTuneOptionsInputBuilder {
     pub fn set_use_off_peak_window(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_off_peak_window = input;
         self
+    }
+    /// <p>Whether to schedule Auto-Tune optimizations that require blue/green deployments during the domain's configured daily off-peak window.</p>
+    pub fn get_use_off_peak_window(&self) -> &::std::option::Option<bool> {
+        &self.use_off_peak_window
     }
     /// Consumes the builder and constructs a [`AutoTuneOptionsInput`](crate::types::AutoTuneOptionsInput).
     pub fn build(self) -> crate::types::AutoTuneOptionsInput {

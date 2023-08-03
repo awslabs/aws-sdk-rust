@@ -83,6 +83,10 @@ impl ConfigExportDeliveryInfoBuilder {
         self.last_status = input;
         self
     }
+    /// <p>Status of the last attempted delivery.</p>
+    pub fn get_last_status(&self) -> &::std::option::Option<crate::types::DeliveryStatus> {
+        &self.last_status
+    }
     /// <p>The error code from the last attempted delivery.</p>
     pub fn last_error_code(
         mut self,
@@ -98,6 +102,10 @@ impl ConfigExportDeliveryInfoBuilder {
     ) -> Self {
         self.last_error_code = input;
         self
+    }
+    /// <p>The error code from the last attempted delivery.</p>
+    pub fn get_last_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_error_code
     }
     /// <p>The error message from the last attempted delivery.</p>
     pub fn last_error_message(
@@ -115,6 +123,10 @@ impl ConfigExportDeliveryInfoBuilder {
         self.last_error_message = input;
         self
     }
+    /// <p>The error message from the last attempted delivery.</p>
+    pub fn get_last_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_error_message
+    }
     /// <p>The time of the last attempted delivery.</p>
     pub fn last_attempt_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_attempt_time = ::std::option::Option::Some(input);
@@ -127,6 +139,10 @@ impl ConfigExportDeliveryInfoBuilder {
     ) -> Self {
         self.last_attempt_time = input;
         self
+    }
+    /// <p>The time of the last attempted delivery.</p>
+    pub fn get_last_attempt_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_attempt_time
     }
     /// <p>The time of the last successful delivery.</p>
     pub fn last_successful_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -141,6 +157,10 @@ impl ConfigExportDeliveryInfoBuilder {
         self.last_successful_time = input;
         self
     }
+    /// <p>The time of the last successful delivery.</p>
+    pub fn get_last_successful_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_successful_time
+    }
     /// <p>The time that the next delivery occurs.</p>
     pub fn next_delivery_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.next_delivery_time = ::std::option::Option::Some(input);
@@ -153,6 +173,10 @@ impl ConfigExportDeliveryInfoBuilder {
     ) -> Self {
         self.next_delivery_time = input;
         self
+    }
+    /// <p>The time that the next delivery occurs.</p>
+    pub fn get_next_delivery_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.next_delivery_time
     }
     /// Consumes the builder and constructs a [`ConfigExportDeliveryInfo`](crate::types::ConfigExportDeliveryInfo).
     pub fn build(self) -> crate::types::ConfigExportDeliveryInfo {

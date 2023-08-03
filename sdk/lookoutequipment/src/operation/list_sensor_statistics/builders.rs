@@ -36,6 +36,12 @@ impl ListSensorStatisticsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListSensorStatistics as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_sensor_statistics::builders::ListSensorStatisticsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl ListSensorStatisticsFluentBuilder {
         self.inner = self.inner.set_dataset_name(input);
         self
     }
+    /// <p> The name of the dataset associated with the list of Sensor Statistics. </p>
+    pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dataset_name()
+    }
     /// <p> The ingestion job id associated with the list of Sensor Statistics. To get sensor statistics for a particular ingestion job id, both dataset name and ingestion job id must be submitted as inputs. </p>
     pub fn ingestion_job_id(
         mut self,
@@ -153,6 +163,10 @@ impl ListSensorStatisticsFluentBuilder {
         self.inner = self.inner.set_ingestion_job_id(input);
         self
     }
+    /// <p> The ingestion job id associated with the list of Sensor Statistics. To get sensor statistics for a particular ingestion job id, both dataset name and ingestion job id must be submitted as inputs. </p>
+    pub fn get_ingestion_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ingestion_job_id()
+    }
     /// <p>Specifies the maximum number of sensors for which to retrieve statistics. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -163,6 +177,10 @@ impl ListSensorStatisticsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>Specifies the maximum number of sensors for which to retrieve statistics. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -172,5 +190,9 @@ impl ListSensorStatisticsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>An opaque pagination token indicating where to continue the listing of sensor statistics. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

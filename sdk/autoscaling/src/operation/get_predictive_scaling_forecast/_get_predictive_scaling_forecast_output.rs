@@ -71,6 +71,12 @@ impl GetPredictiveScalingForecastOutputBuilder {
         self.load_forecast = input;
         self
     }
+    /// <p>The load forecast.</p>
+    pub fn get_load_forecast(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LoadForecast>> {
+        &self.load_forecast
+    }
     /// <p>The capacity forecast.</p>
     pub fn capacity_forecast(mut self, input: crate::types::CapacityForecast) -> Self {
         self.capacity_forecast = ::std::option::Option::Some(input);
@@ -84,6 +90,10 @@ impl GetPredictiveScalingForecastOutputBuilder {
         self.capacity_forecast = input;
         self
     }
+    /// <p>The capacity forecast.</p>
+    pub fn get_capacity_forecast(&self) -> &::std::option::Option<crate::types::CapacityForecast> {
+        &self.capacity_forecast
+    }
     /// <p>The time the forecast was made.</p>
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
@@ -96,6 +106,10 @@ impl GetPredictiveScalingForecastOutputBuilder {
     ) -> Self {
         self.update_time = input;
         self
+    }
+    /// <p>The time the forecast was made.</p>
+    pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

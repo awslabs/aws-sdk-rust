@@ -37,6 +37,12 @@ impl AttachThingPrincipalFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AttachThingPrincipal as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::attach_thing_principal::builders::AttachThingPrincipalInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl AttachThingPrincipalFluentBuilder {
         self.inner = self.inner.set_thing_name(input);
         self
     }
+    /// <p>The name of the thing.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_thing_name()
+    }
     /// <p>The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</p>
     pub fn principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.principal(input.into());
@@ -136,5 +146,9 @@ impl AttachThingPrincipalFluentBuilder {
     pub fn set_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_principal(input);
         self
+    }
+    /// <p>The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</p>
+    pub fn get_principal(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_principal()
     }
 }

@@ -36,6 +36,13 @@ impl ListDatasetImportJobsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListDatasetImportJobs as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_dataset_import_jobs::builders::ListDatasetImportJobsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +144,10 @@ impl ListDatasetImportJobsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The number of items to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -146,6 +157,10 @@ impl ListDatasetImportJobsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The number of items to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// Appends an item to `Filters`.
     ///
@@ -179,5 +194,17 @@ impl ListDatasetImportJobsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
+    }
+    /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the datasets that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
+    /// <p> <b>Filter properties</b> </p>
+    /// <ul>
+    /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the datasets that match the statement, specify <code>IS</code>. To exclude matching datasets, specify <code>IS_NOT</code>.</p> </li>
+    /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetArn</code> and <code>Status</code>.</p> </li>
+    /// <li> <p> <code>Value</code> - The value to match.</p> </li>
+    /// </ul>
+    /// <p>For example, to list all dataset import jobs whose status is ACTIVE, you specify the following filter:</p>
+    /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code> </p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
     }
 }

@@ -55,6 +55,10 @@ impl DeleteRuleInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the rule.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
     pub fn event_bus_name(
         mut self,
@@ -71,6 +75,10 @@ impl DeleteRuleInputBuilder {
         self.event_bus_name = input;
         self
     }
+    /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
+    pub fn get_event_bus_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_bus_name
+    }
     /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify <code>Force</code> as <code>True</code> to delete the rule. This parameter is ignored for rules that are not managed rules. You can check whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code> field of the response.</p>
     pub fn force(mut self, input: bool) -> Self {
         self.force = ::std::option::Option::Some(input);
@@ -80,6 +88,10 @@ impl DeleteRuleInputBuilder {
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force = input;
         self
+    }
+    /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify <code>Force</code> as <code>True</code> to delete the rule. This parameter is ignored for rules that are not managed rules. You can check whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code> field of the response.</p>
+    pub fn get_force(&self) -> &::std::option::Option<bool> {
+        &self.force
     }
     /// Consumes the builder and constructs a [`DeleteRuleInput`](crate::operation::delete_rule::DeleteRuleInput).
     pub fn build(

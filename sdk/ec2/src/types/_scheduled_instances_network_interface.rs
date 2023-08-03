@@ -138,6 +138,10 @@ impl ScheduledInstancesNetworkInterfaceBuilder {
         self.associate_public_ip_address = input;
         self
     }
+    /// <p>Indicates whether to assign a public IPv4 address to instances launched in a VPC. The public IPv4 address can only be assigned to a network interface for eth0, and can only be assigned to a new network interface, not an existing one. You cannot specify more than one network interface in the request. If launching into a default subnet, the default value is <code>true</code>.</p>
+    pub fn get_associate_public_ip_address(&self) -> &::std::option::Option<bool> {
+        &self.associate_public_ip_address
+    }
     /// <p>Indicates whether to delete the interface when the instance is terminated.</p>
     pub fn delete_on_termination(mut self, input: bool) -> Self {
         self.delete_on_termination = ::std::option::Option::Some(input);
@@ -147,6 +151,10 @@ impl ScheduledInstancesNetworkInterfaceBuilder {
     pub fn set_delete_on_termination(mut self, input: ::std::option::Option<bool>) -> Self {
         self.delete_on_termination = input;
         self
+    }
+    /// <p>Indicates whether to delete the interface when the instance is terminated.</p>
+    pub fn get_delete_on_termination(&self) -> &::std::option::Option<bool> {
+        &self.delete_on_termination
     }
     /// <p>The description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -158,6 +166,10 @@ impl ScheduledInstancesNetworkInterfaceBuilder {
         self.description = input;
         self
     }
+    /// <p>The description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The index of the device for the network interface attachment.</p>
     pub fn device_index(mut self, input: i32) -> Self {
         self.device_index = ::std::option::Option::Some(input);
@@ -167,6 +179,10 @@ impl ScheduledInstancesNetworkInterfaceBuilder {
     pub fn set_device_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.device_index = input;
         self
+    }
+    /// <p>The index of the device for the network interface attachment.</p>
+    pub fn get_device_index(&self) -> &::std::option::Option<i32> {
+        &self.device_index
     }
     /// Appends an item to `groups`.
     ///
@@ -187,6 +203,10 @@ impl ScheduledInstancesNetworkInterfaceBuilder {
         self.groups = input;
         self
     }
+    /// <p>The IDs of the security groups.</p>
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.groups
+    }
     /// <p>The number of IPv6 addresses to assign to the network interface. The IPv6 addresses are automatically selected from the subnet range.</p>
     pub fn ipv6_address_count(mut self, input: i32) -> Self {
         self.ipv6_address_count = ::std::option::Option::Some(input);
@@ -196,6 +216,10 @@ impl ScheduledInstancesNetworkInterfaceBuilder {
     pub fn set_ipv6_address_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.ipv6_address_count = input;
         self
+    }
+    /// <p>The number of IPv6 addresses to assign to the network interface. The IPv6 addresses are automatically selected from the subnet range.</p>
+    pub fn get_ipv6_address_count(&self) -> &::std::option::Option<i32> {
+        &self.ipv6_address_count
     }
     /// Appends an item to `ipv6_addresses`.
     ///
@@ -216,6 +240,12 @@ impl ScheduledInstancesNetworkInterfaceBuilder {
         self.ipv6_addresses = input;
         self
     }
+    /// <p>The specific IPv6 addresses from the subnet range.</p>
+    pub fn get_ipv6_addresses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstancesIpv6Address>> {
+        &self.ipv6_addresses
+    }
     /// <p>The ID of the network interface.</p>
     pub fn network_interface_id(
         mut self,
@@ -232,6 +262,10 @@ impl ScheduledInstancesNetworkInterfaceBuilder {
         self.network_interface_id = input;
         self
     }
+    /// <p>The ID of the network interface.</p>
+    pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_interface_id
+    }
     /// <p>The IPv4 address of the network interface within the subnet.</p>
     pub fn private_ip_address(
         mut self,
@@ -247,6 +281,10 @@ impl ScheduledInstancesNetworkInterfaceBuilder {
     ) -> Self {
         self.private_ip_address = input;
         self
+    }
+    /// <p>The IPv4 address of the network interface within the subnet.</p>
+    pub fn get_private_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_ip_address
     }
     /// Appends an item to `private_ip_address_configs`.
     ///
@@ -272,6 +310,14 @@ impl ScheduledInstancesNetworkInterfaceBuilder {
         self.private_ip_address_configs = input;
         self
     }
+    /// <p>The private IPv4 addresses.</p>
+    pub fn get_private_ip_address_configs(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::ScheduledInstancesPrivateIpAddressConfig>,
+    > {
+        &self.private_ip_address_configs
+    }
     /// <p>The number of secondary private IPv4 addresses.</p>
     pub fn secondary_private_ip_address_count(mut self, input: i32) -> Self {
         self.secondary_private_ip_address_count = ::std::option::Option::Some(input);
@@ -285,6 +331,10 @@ impl ScheduledInstancesNetworkInterfaceBuilder {
         self.secondary_private_ip_address_count = input;
         self
     }
+    /// <p>The number of secondary private IPv4 addresses.</p>
+    pub fn get_secondary_private_ip_address_count(&self) -> &::std::option::Option<i32> {
+        &self.secondary_private_ip_address_count
+    }
     /// <p>The ID of the subnet.</p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
@@ -294,6 +344,10 @@ impl ScheduledInstancesNetworkInterfaceBuilder {
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_id = input;
         self
+    }
+    /// <p>The ID of the subnet.</p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_id
     }
     /// Consumes the builder and constructs a [`ScheduledInstancesNetworkInterface`](crate::types::ScheduledInstancesNetworkInterface).
     pub fn build(self) -> crate::types::ScheduledInstancesNetworkInterface {

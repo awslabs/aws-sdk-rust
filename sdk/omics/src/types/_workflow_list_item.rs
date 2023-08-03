@@ -104,6 +104,10 @@ impl WorkflowListItemBuilder {
         self.arn = input;
         self
     }
+    /// <p>The workflow's ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The workflow's ID.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -114,6 +118,10 @@ impl WorkflowListItemBuilder {
         self.id = input;
         self
     }
+    /// <p>The workflow's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The workflow's name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -123,6 +131,10 @@ impl WorkflowListItemBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The workflow's name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The workflow's status.</p>
     pub fn status(mut self, input: crate::types::WorkflowStatus) -> Self {
@@ -137,6 +149,10 @@ impl WorkflowListItemBuilder {
         self.status = input;
         self
     }
+    /// <p>The workflow's status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::WorkflowStatus> {
+        &self.status
+    }
     /// <p>The workflow's type.</p>
     pub fn r#type(mut self, input: crate::types::WorkflowType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -147,6 +163,10 @@ impl WorkflowListItemBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The workflow's type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::WorkflowType> {
+        &self.r#type
+    }
     /// <p>The workflow's digest.</p>
     pub fn digest(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.digest = ::std::option::Option::Some(input.into());
@@ -156,6 +176,10 @@ impl WorkflowListItemBuilder {
     pub fn set_digest(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.digest = input;
         self
+    }
+    /// <p>The workflow's digest.</p>
+    pub fn get_digest(&self) -> &::std::option::Option<::std::string::String> {
+        &self.digest
     }
     /// <p>When the workflow was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -169,6 +193,10 @@ impl WorkflowListItemBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>When the workflow was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// Adds a key-value pair to `metadata`.
     ///
@@ -194,6 +222,14 @@ impl WorkflowListItemBuilder {
     ) -> Self {
         self.metadata = input;
         self
+    }
+    /// <p> Any metadata available for workflow. The information listed may vary depending on the workflow, and there may also be no metadata to return. </p>
+    pub fn get_metadata(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.metadata
     }
     /// Consumes the builder and constructs a [`WorkflowListItem`](crate::types::WorkflowListItem).
     pub fn build(self) -> crate::types::WorkflowListItem {

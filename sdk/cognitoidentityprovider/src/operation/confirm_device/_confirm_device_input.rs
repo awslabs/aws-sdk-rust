@@ -79,6 +79,10 @@ impl ConfirmDeviceInputBuilder {
         self.access_token = input;
         self
     }
+    /// <p>A valid access token that Amazon Cognito issued to the user whose device you want to confirm.</p>
+    pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_token
+    }
     /// <p>The device key.</p>
     pub fn device_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_key = ::std::option::Option::Some(input.into());
@@ -88,6 +92,10 @@ impl ConfirmDeviceInputBuilder {
     pub fn set_device_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_key = input;
         self
+    }
+    /// <p>The device key.</p>
+    pub fn get_device_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_key
     }
     /// <p>The configuration of the device secret verifier.</p>
     pub fn device_secret_verifier_config(
@@ -105,6 +113,12 @@ impl ConfirmDeviceInputBuilder {
         self.device_secret_verifier_config = input;
         self
     }
+    /// <p>The configuration of the device secret verifier.</p>
+    pub fn get_device_secret_verifier_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeviceSecretVerifierConfigType> {
+        &self.device_secret_verifier_config
+    }
     /// <p>The device name.</p>
     pub fn device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_name = ::std::option::Option::Some(input.into());
@@ -114,6 +128,10 @@ impl ConfirmDeviceInputBuilder {
     pub fn set_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_name = input;
         self
+    }
+    /// <p>The device name.</p>
+    pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_name
     }
     /// Consumes the builder and constructs a [`ConfirmDeviceInput`](crate::operation::confirm_device::ConfirmDeviceInput).
     pub fn build(

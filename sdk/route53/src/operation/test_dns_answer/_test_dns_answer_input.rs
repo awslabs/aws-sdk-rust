@@ -96,6 +96,10 @@ impl TestDnsAnswerInputBuilder {
         self.hosted_zone_id = input;
         self
     }
+    /// <p>The ID of the hosted zone that you want Amazon Route 53 to simulate a query for.</p>
+    pub fn get_hosted_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hosted_zone_id
+    }
     /// <p>The name of the resource record set that you want Amazon Route 53 to simulate a query for.</p>
     pub fn record_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.record_name = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl TestDnsAnswerInputBuilder {
     pub fn set_record_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.record_name = input;
         self
+    }
+    /// <p>The name of the resource record set that you want Amazon Route 53 to simulate a query for.</p>
+    pub fn get_record_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.record_name
     }
     /// <p>The type of the resource record set.</p>
     pub fn record_type(mut self, input: crate::types::RrType) -> Self {
@@ -116,6 +124,10 @@ impl TestDnsAnswerInputBuilder {
         self.record_type = input;
         self
     }
+    /// <p>The type of the resource record set.</p>
+    pub fn get_record_type(&self) -> &::std::option::Option<crate::types::RrType> {
+        &self.record_type
+    }
     /// <p>If you want to simulate a request from a specific DNS resolver, specify the IP address for that resolver. If you omit this value, <code>TestDnsAnswer</code> uses the IP address of a DNS resolver in the Amazon Web Services US East (N. Virginia) Region (<code>us-east-1</code>).</p>
     pub fn resolver_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolver_ip = ::std::option::Option::Some(input.into());
@@ -125,6 +137,10 @@ impl TestDnsAnswerInputBuilder {
     pub fn set_resolver_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resolver_ip = input;
         self
+    }
+    /// <p>If you want to simulate a request from a specific DNS resolver, specify the IP address for that resolver. If you omit this value, <code>TestDnsAnswer</code> uses the IP address of a DNS resolver in the Amazon Web Services US East (N. Virginia) Region (<code>us-east-1</code>).</p>
+    pub fn get_resolver_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resolver_ip
     }
     /// <p>If the resolver that you specified for resolverip supports EDNS0, specify the IPv4 or IPv6 address of a client in the applicable location, for example, <code>192.0.2.44</code> or <code>2001:db8:85a3::8a2e:370:7334</code>.</p>
     pub fn edns0_client_subnet_ip(
@@ -141,6 +157,10 @@ impl TestDnsAnswerInputBuilder {
     ) -> Self {
         self.edns0_client_subnet_ip = input;
         self
+    }
+    /// <p>If the resolver that you specified for resolverip supports EDNS0, specify the IPv4 or IPv6 address of a client in the applicable location, for example, <code>192.0.2.44</code> or <code>2001:db8:85a3::8a2e:370:7334</code>.</p>
+    pub fn get_edns0_client_subnet_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.edns0_client_subnet_ip
     }
     /// <p>If you specify an IP address for <code>edns0clientsubnetip</code>, you can optionally specify the number of bits of the IP address that you want the checking tool to include in the DNS query. For example, if you specify <code>192.0.2.44</code> for <code>edns0clientsubnetip</code> and <code>24</code> for <code>edns0clientsubnetmask</code>, the checking tool will simulate a request from 192.0.2.0/24. The default value is 24 bits for IPv4 addresses and 64 bits for IPv6 addresses.</p>
     /// <p>The range of valid values depends on whether <code>edns0clientsubnetip</code> is an IPv4 or an IPv6 address:</p>
@@ -167,6 +187,15 @@ impl TestDnsAnswerInputBuilder {
     ) -> Self {
         self.edns0_client_subnet_mask = input;
         self
+    }
+    /// <p>If you specify an IP address for <code>edns0clientsubnetip</code>, you can optionally specify the number of bits of the IP address that you want the checking tool to include in the DNS query. For example, if you specify <code>192.0.2.44</code> for <code>edns0clientsubnetip</code> and <code>24</code> for <code>edns0clientsubnetmask</code>, the checking tool will simulate a request from 192.0.2.0/24. The default value is 24 bits for IPv4 addresses and 64 bits for IPv6 addresses.</p>
+    /// <p>The range of valid values depends on whether <code>edns0clientsubnetip</code> is an IPv4 or an IPv6 address:</p>
+    /// <ul>
+    /// <li> <p> <b>IPv4</b>: Specify a value between 0 and 32</p> </li>
+    /// <li> <p> <b>IPv6</b>: Specify a value between 0 and 128</p> </li>
+    /// </ul>
+    pub fn get_edns0_client_subnet_mask(&self) -> &::std::option::Option<::std::string::String> {
+        &self.edns0_client_subnet_mask
     }
     /// Consumes the builder and constructs a [`TestDnsAnswerInput`](crate::operation::test_dns_answer::TestDnsAnswerInput).
     pub fn build(

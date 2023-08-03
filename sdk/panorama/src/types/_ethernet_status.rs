@@ -58,6 +58,10 @@ impl EthernetStatusBuilder {
         self.ip_address = input;
         self
     }
+    /// <p>The device's IP address.</p>
+    pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_address
+    }
     /// <p>The device's connection status.</p>
     pub fn connection_status(mut self, input: crate::types::NetworkConnectionStatus) -> Self {
         self.connection_status = ::std::option::Option::Some(input);
@@ -71,6 +75,12 @@ impl EthernetStatusBuilder {
         self.connection_status = input;
         self
     }
+    /// <p>The device's connection status.</p>
+    pub fn get_connection_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkConnectionStatus> {
+        &self.connection_status
+    }
     /// <p>The device's physical address.</p>
     pub fn hw_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hw_address = ::std::option::Option::Some(input.into());
@@ -80,6 +90,10 @@ impl EthernetStatusBuilder {
     pub fn set_hw_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hw_address = input;
         self
+    }
+    /// <p>The device's physical address.</p>
+    pub fn get_hw_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hw_address
     }
     /// Consumes the builder and constructs a [`EthernetStatus`](crate::types::EthernetStatus).
     pub fn build(self) -> crate::types::EthernetStatus {

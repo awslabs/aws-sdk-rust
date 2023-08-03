@@ -93,6 +93,10 @@ impl GetDifferencesInputBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name of the repository where you want to get differences.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, the full commit ID). Optional. If not specified, all changes before the <code>afterCommitSpecifier</code> value are shown. If you do not use <code>beforeCommitSpecifier</code> in your request, consider limiting the results with <code>maxResults</code>.</p>
     pub fn before_commit_specifier(
         mut self,
@@ -108,6 +112,10 @@ impl GetDifferencesInputBuilder {
     ) -> Self {
         self.before_commit_specifier = input;
         self
+    }
+    /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, the full commit ID). Optional. If not specified, all changes before the <code>afterCommitSpecifier</code> value are shown. If you do not use <code>beforeCommitSpecifier</code> in your request, consider limiting the results with <code>maxResults</code>.</p>
+    pub fn get_before_commit_specifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.before_commit_specifier
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit.</p>
     pub fn after_commit_specifier(
@@ -125,6 +133,10 @@ impl GetDifferencesInputBuilder {
         self.after_commit_specifier = input;
         self
     }
+    /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit.</p>
+    pub fn get_after_commit_specifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.after_commit_specifier
+    }
     /// <p>The file path in which to check for differences. Limits the results to this path. Can also be used to specify the previous name of a directory or folder. If <code>beforePath</code> and <code>afterPath</code> are not specified, differences are shown for all paths.</p>
     pub fn before_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.before_path = ::std::option::Option::Some(input.into());
@@ -134,6 +146,10 @@ impl GetDifferencesInputBuilder {
     pub fn set_before_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.before_path = input;
         self
+    }
+    /// <p>The file path in which to check for differences. Limits the results to this path. Can also be used to specify the previous name of a directory or folder. If <code>beforePath</code> and <code>afterPath</code> are not specified, differences are shown for all paths.</p>
+    pub fn get_before_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.before_path
     }
     /// <p>The file path in which to check differences. Limits the results to this path. Can also be used to specify the changed name of a directory or folder, if it has changed. If not specified, differences are shown for all paths.</p>
     pub fn after_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -145,6 +161,10 @@ impl GetDifferencesInputBuilder {
         self.after_path = input;
         self
     }
+    /// <p>The file path in which to check differences. Limits the results to this path. Can also be used to specify the changed name of a directory or folder, if it has changed. If not specified, differences are shown for all paths.</p>
+    pub fn get_after_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.after_path
+    }
     /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -155,6 +175,10 @@ impl GetDifferencesInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -164,6 +188,10 @@ impl GetDifferencesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`GetDifferencesInput`](crate::operation::get_differences::GetDifferencesInput).
     pub fn build(

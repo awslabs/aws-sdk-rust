@@ -49,6 +49,12 @@ impl ResultSetMetadataBuilder {
         self.column_info = input;
         self
     }
+    /// <p>Information about the columns returned in a query result metadata.</p>
+    pub fn get_column_info(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnInfo>> {
+        &self.column_info
+    }
     /// Consumes the builder and constructs a [`ResultSetMetadata`](crate::types::ResultSetMetadata).
     pub fn build(self) -> crate::types::ResultSetMetadata {
         crate::types::ResultSetMetadata {

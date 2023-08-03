@@ -78,6 +78,10 @@ impl DataLabelTypeBuilder {
         self.field_label_type = input;
         self
     }
+    /// <p>Determines the label configuration for the entire field.</p>
+    pub fn get_field_label_type(&self) -> &::std::option::Option<crate::types::FieldLabelType> {
+        &self.field_label_type
+    }
     /// <p>The option that specifies individual data values for labels.</p>
     pub fn data_path_label_type(mut self, input: crate::types::DataPathLabelType) -> Self {
         self.data_path_label_type = ::std::option::Option::Some(input);
@@ -90,6 +94,12 @@ impl DataLabelTypeBuilder {
     ) -> Self {
         self.data_path_label_type = input;
         self
+    }
+    /// <p>The option that specifies individual data values for labels.</p>
+    pub fn get_data_path_label_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataPathLabelType> {
+        &self.data_path_label_type
     }
     /// <p>Determines the label configuration for range end value in a visual.</p>
     pub fn range_ends_label_type(mut self, input: crate::types::RangeEndsLabelType) -> Self {
@@ -104,6 +114,12 @@ impl DataLabelTypeBuilder {
         self.range_ends_label_type = input;
         self
     }
+    /// <p>Determines the label configuration for range end value in a visual.</p>
+    pub fn get_range_ends_label_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::RangeEndsLabelType> {
+        &self.range_ends_label_type
+    }
     /// <p>Determines the label configuration for the minimum value in a visual.</p>
     pub fn minimum_label_type(mut self, input: crate::types::MinimumLabelType) -> Self {
         self.minimum_label_type = ::std::option::Option::Some(input);
@@ -117,6 +133,10 @@ impl DataLabelTypeBuilder {
         self.minimum_label_type = input;
         self
     }
+    /// <p>Determines the label configuration for the minimum value in a visual.</p>
+    pub fn get_minimum_label_type(&self) -> &::std::option::Option<crate::types::MinimumLabelType> {
+        &self.minimum_label_type
+    }
     /// <p>Determines the label configuration for the maximum value in a visual.</p>
     pub fn maximum_label_type(mut self, input: crate::types::MaximumLabelType) -> Self {
         self.maximum_label_type = ::std::option::Option::Some(input);
@@ -129,6 +149,10 @@ impl DataLabelTypeBuilder {
     ) -> Self {
         self.maximum_label_type = input;
         self
+    }
+    /// <p>Determines the label configuration for the maximum value in a visual.</p>
+    pub fn get_maximum_label_type(&self) -> &::std::option::Option<crate::types::MaximumLabelType> {
+        &self.maximum_label_type
     }
     /// Consumes the builder and constructs a [`DataLabelType`](crate::types::DataLabelType).
     pub fn build(self) -> crate::types::DataLabelType {

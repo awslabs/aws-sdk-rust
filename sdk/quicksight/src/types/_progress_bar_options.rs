@@ -43,6 +43,10 @@ impl ProgressBarOptionsBuilder {
         self.visibility = input;
         self
     }
+    /// <p>The visibility of the progress bar.</p>
+    pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.visibility
+    }
     /// Consumes the builder and constructs a [`ProgressBarOptions`](crate::types::ProgressBarOptions).
     pub fn build(self) -> crate::types::ProgressBarOptions {
         crate::types::ProgressBarOptions {

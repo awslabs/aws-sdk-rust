@@ -40,6 +40,10 @@ impl IkeVersionsRequestListValueBuilder {
         self.value = input;
         self
     }
+    /// <p>The IKE version.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// Consumes the builder and constructs a [`IkeVersionsRequestListValue`](crate::types::IkeVersionsRequestListValue).
     pub fn build(self) -> crate::types::IkeVersionsRequestListValue {
         crate::types::IkeVersionsRequestListValue { value: self.value }

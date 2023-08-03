@@ -66,6 +66,11 @@ impl GlueDataCatalogConfigBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that grants Amazon AppFlow the permissions it needs to create Data Catalog tables, databases, and partitions.</p>
+    /// <p>For an example IAM policy that has the required permissions, see <a href="https://docs.aws.amazon.com/appflow/latest/userguide/security_iam_id-based-policy-examples.html">Identity-based policy examples for Amazon AppFlow</a>.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>The name of the Data Catalog database that stores the metadata tables that Amazon AppFlow creates in your Amazon Web Services account. These tables contain metadata for the data that's transferred by the flow that you configure with this parameter.</p> <note>
     /// <p>When you configure a new flow with this parameter, you must specify an existing database.</p>
     /// </note>
@@ -86,6 +91,12 @@ impl GlueDataCatalogConfigBuilder {
         self.database_name = input;
         self
     }
+    /// <p>The name of the Data Catalog database that stores the metadata tables that Amazon AppFlow creates in your Amazon Web Services account. These tables contain metadata for the data that's transferred by the flow that you configure with this parameter.</p> <note>
+    /// <p>When you configure a new flow with this parameter, you must specify an existing database.</p>
+    /// </note>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>A naming prefix for each Data Catalog table that Amazon AppFlow creates for the flow that you configure with this setting. Amazon AppFlow adds the prefix to the beginning of the each table name.</p>
     pub fn table_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_prefix = ::std::option::Option::Some(input.into());
@@ -95,6 +106,10 @@ impl GlueDataCatalogConfigBuilder {
     pub fn set_table_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_prefix = input;
         self
+    }
+    /// <p>A naming prefix for each Data Catalog table that Amazon AppFlow creates for the flow that you configure with this setting. Amazon AppFlow adds the prefix to the beginning of the each table name.</p>
+    pub fn get_table_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_prefix
     }
     /// Consumes the builder and constructs a [`GlueDataCatalogConfig`](crate::types::GlueDataCatalogConfig).
     pub fn build(self) -> crate::types::GlueDataCatalogConfig {

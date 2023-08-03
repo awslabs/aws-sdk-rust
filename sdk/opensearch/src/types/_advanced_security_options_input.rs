@@ -72,6 +72,10 @@ impl AdvancedSecurityOptionsInputBuilder {
         self.enabled = input;
         self
     }
+    /// <p>True to enable fine-grained access control.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// <p>True to enable the internal user database.</p>
     pub fn internal_user_database_enabled(mut self, input: bool) -> Self {
         self.internal_user_database_enabled = ::std::option::Option::Some(input);
@@ -84,6 +88,10 @@ impl AdvancedSecurityOptionsInputBuilder {
     ) -> Self {
         self.internal_user_database_enabled = input;
         self
+    }
+    /// <p>True to enable the internal user database.</p>
+    pub fn get_internal_user_database_enabled(&self) -> &::std::option::Option<bool> {
+        &self.internal_user_database_enabled
     }
     /// <p>Container for information about the master user.</p>
     pub fn master_user_options(mut self, input: crate::types::MasterUserOptions) -> Self {
@@ -98,6 +106,12 @@ impl AdvancedSecurityOptionsInputBuilder {
         self.master_user_options = input;
         self
     }
+    /// <p>Container for information about the master user.</p>
+    pub fn get_master_user_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::MasterUserOptions> {
+        &self.master_user_options
+    }
     /// <p>Container for information about the SAML configuration for OpenSearch Dashboards.</p>
     pub fn saml_options(mut self, input: crate::types::SamlOptionsInput) -> Self {
         self.saml_options = ::std::option::Option::Some(input);
@@ -111,6 +125,10 @@ impl AdvancedSecurityOptionsInputBuilder {
         self.saml_options = input;
         self
     }
+    /// <p>Container for information about the SAML configuration for OpenSearch Dashboards.</p>
+    pub fn get_saml_options(&self) -> &::std::option::Option<crate::types::SamlOptionsInput> {
+        &self.saml_options
+    }
     /// <p>True to enable a 30-day migration period during which administrators can create role mappings. Only necessary when <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing">enabling fine-grained access control on an existing domain</a>.</p>
     pub fn anonymous_auth_enabled(mut self, input: bool) -> Self {
         self.anonymous_auth_enabled = ::std::option::Option::Some(input);
@@ -120,6 +138,10 @@ impl AdvancedSecurityOptionsInputBuilder {
     pub fn set_anonymous_auth_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.anonymous_auth_enabled = input;
         self
+    }
+    /// <p>True to enable a 30-day migration period during which administrators can create role mappings. Only necessary when <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing">enabling fine-grained access control on an existing domain</a>.</p>
+    pub fn get_anonymous_auth_enabled(&self) -> &::std::option::Option<bool> {
+        &self.anonymous_auth_enabled
     }
     /// Consumes the builder and constructs a [`AdvancedSecurityOptionsInput`](crate::types::AdvancedSecurityOptionsInput).
     pub fn build(self) -> crate::types::AdvancedSecurityOptionsInput {

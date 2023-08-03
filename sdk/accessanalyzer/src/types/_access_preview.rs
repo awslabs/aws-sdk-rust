@@ -100,6 +100,10 @@ impl AccessPreviewBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique ID for the access preview.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The ARN of the analyzer used to generate the access preview.</p>
     pub fn analyzer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analyzer_arn = ::std::option::Option::Some(input.into());
@@ -109,6 +113,10 @@ impl AccessPreviewBuilder {
     pub fn set_analyzer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.analyzer_arn = input;
         self
+    }
+    /// <p>The ARN of the analyzer used to generate the access preview.</p>
+    pub fn get_analyzer_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.analyzer_arn
     }
     /// Adds a key-value pair to `configurations`.
     ///
@@ -135,6 +143,14 @@ impl AccessPreviewBuilder {
         self.configurations = input;
         self
     }
+    /// <p>A map of resource ARNs for the proposed resource configuration.</p>
+    pub fn get_configurations(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::Configuration>,
+    > {
+        &self.configurations
+    }
     /// <p>The time at which the access preview was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -147,6 +163,10 @@ impl AccessPreviewBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The time at which the access preview was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// <p>The status of the access preview.</p>
     /// <ul>
@@ -171,6 +191,15 @@ impl AccessPreviewBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the access preview.</p>
+    /// <ul>
+    /// <li> <p> <code>Creating</code> - The access preview creation is in progress.</p> </li>
+    /// <li> <p> <code>Completed</code> - The access preview is complete. You can preview findings for external access to the resource.</p> </li>
+    /// <li> <p> <code>Failed</code> - The access preview creation has failed.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AccessPreviewStatus> {
+        &self.status
+    }
     /// <p>Provides more details about the current status of the access preview.</p>
     /// <p>For example, if the creation of the access preview fails, a <code>Failed</code> status is returned. This failure can be due to an internal issue with the analysis or due to an invalid resource configuration.</p>
     pub fn status_reason(mut self, input: crate::types::AccessPreviewStatusReason) -> Self {
@@ -185,6 +214,13 @@ impl AccessPreviewBuilder {
     ) -> Self {
         self.status_reason = input;
         self
+    }
+    /// <p>Provides more details about the current status of the access preview.</p>
+    /// <p>For example, if the creation of the access preview fails, a <code>Failed</code> status is returned. This failure can be due to an internal issue with the analysis or due to an invalid resource configuration.</p>
+    pub fn get_status_reason(
+        &self,
+    ) -> &::std::option::Option<crate::types::AccessPreviewStatusReason> {
+        &self.status_reason
     }
     /// Consumes the builder and constructs a [`AccessPreview`](crate::types::AccessPreview).
     pub fn build(self) -> crate::types::AccessPreview {

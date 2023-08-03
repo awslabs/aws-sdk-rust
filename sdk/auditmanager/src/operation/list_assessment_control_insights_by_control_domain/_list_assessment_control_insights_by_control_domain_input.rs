@@ -69,6 +69,10 @@ impl ListAssessmentControlInsightsByControlDomainInputBuilder {
         self.control_domain_id = input;
         self
     }
+    /// <p>The unique identifier for the control domain. </p>
+    pub fn get_control_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.control_domain_id
+    }
     /// <p>The unique identifier for the active assessment. </p>
     pub fn assessment_id(
         mut self,
@@ -85,6 +89,10 @@ impl ListAssessmentControlInsightsByControlDomainInputBuilder {
         self.assessment_id = input;
         self
     }
+    /// <p>The unique identifier for the active assessment. </p>
+    pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assessment_id
+    }
     /// <p>The pagination token that's used to fetch the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -95,6 +103,10 @@ impl ListAssessmentControlInsightsByControlDomainInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The pagination token that's used to fetch the next set of results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>Represents the maximum number of results on a page or for an API request call. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -104,6 +116,10 @@ impl ListAssessmentControlInsightsByControlDomainInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>Represents the maximum number of results on a page or for an API request call. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListAssessmentControlInsightsByControlDomainInput`](crate::operation::list_assessment_control_insights_by_control_domain::ListAssessmentControlInsightsByControlDomainInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_assessment_control_insights_by_control_domain::ListAssessmentControlInsightsByControlDomainInput, ::aws_smithy_http::operation::error::BuildError>{

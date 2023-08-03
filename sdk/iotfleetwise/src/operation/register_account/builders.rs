@@ -43,6 +43,12 @@ impl RegisterAccountFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RegisterAccount as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::register_account::builders::RegisterAccountInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +144,13 @@ impl RegisterAccountFluentBuilder {
         self.inner = self.inner.set_timestream_resources(input);
         self
     }
+    /// <p>The registered Amazon Timestream resources that Amazon Web Services IoT FleetWise edge agent software can transfer your vehicle data to.</p>
+    #[deprecated(note = "Amazon Timestream metadata is now passed in the CreateCampaign API.")]
+    pub fn get_timestream_resources(
+        &self,
+    ) -> &::std::option::Option<crate::types::TimestreamResources> {
+        self.inner.get_timestream_resources()
+    }
     /// <p>The IAM resource that allows Amazon Web Services IoT FleetWise to send data to Amazon Timestream.</p>
     #[deprecated(note = "iamResources is no longer used or needed as input")]
     pub fn iam_resources(mut self, input: crate::types::IamResources) -> Self {
@@ -152,5 +165,10 @@ impl RegisterAccountFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_iam_resources(input);
         self
+    }
+    /// <p>The IAM resource that allows Amazon Web Services IoT FleetWise to send data to Amazon Timestream.</p>
+    #[deprecated(note = "iamResources is no longer used or needed as input")]
+    pub fn get_iam_resources(&self) -> &::std::option::Option<crate::types::IamResources> {
+        self.inner.get_iam_resources()
     }
 }

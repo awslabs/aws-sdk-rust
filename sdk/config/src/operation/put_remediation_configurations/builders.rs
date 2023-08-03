@@ -42,6 +42,10 @@ impl PutRemediationConfigurationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutRemediationConfigurations as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_remediation_configurations::builders::PutRemediationConfigurationsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -141,5 +145,11 @@ impl PutRemediationConfigurationsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_remediation_configurations(input);
         self
+    }
+    /// <p>A list of remediation configuration objects.</p>
+    pub fn get_remediation_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RemediationConfiguration>> {
+        self.inner.get_remediation_configurations()
     }
 }

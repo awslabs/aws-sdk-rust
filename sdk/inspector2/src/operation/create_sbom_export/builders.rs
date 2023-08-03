@@ -36,6 +36,12 @@ impl CreateSbomExportFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateSbomExport as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_sbom_export::builders::CreateSbomExportInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,12 @@ impl CreateSbomExportFluentBuilder {
         self.inner = self.inner.set_resource_filter_criteria(input);
         self
     }
+    /// <p>The resource filter criteria for the software bill of materials (SBOM) report.</p>
+    pub fn get_resource_filter_criteria(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceFilterCriteria> {
+        self.inner.get_resource_filter_criteria()
+    }
     /// <p>The output format for the software bill of materials (SBOM) report.</p>
     pub fn report_format(mut self, input: crate::types::SbomReportFormat) -> Self {
         self.inner = self.inner.report_format(input);
@@ -142,6 +154,10 @@ impl CreateSbomExportFluentBuilder {
         self.inner = self.inner.set_report_format(input);
         self
     }
+    /// <p>The output format for the software bill of materials (SBOM) report.</p>
+    pub fn get_report_format(&self) -> &::std::option::Option<crate::types::SbomReportFormat> {
+        self.inner.get_report_format()
+    }
     /// <p>Contains details of the Amazon S3 bucket and KMS key used to export findings.</p>
     pub fn s3_destination(mut self, input: crate::types::Destination) -> Self {
         self.inner = self.inner.s3_destination(input);
@@ -154,5 +170,9 @@ impl CreateSbomExportFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_s3_destination(input);
         self
+    }
+    /// <p>Contains details of the Amazon S3 bucket and KMS key used to export findings.</p>
+    pub fn get_s3_destination(&self) -> &::std::option::Option<crate::types::Destination> {
+        self.inner.get_s3_destination()
     }
 }

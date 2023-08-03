@@ -48,6 +48,10 @@ impl InstanceMetadataBuilder {
         self.instance_arn = input;
         self
     }
+    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+    pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_arn
+    }
     /// <p>The identifier of the identity store that is connected to the IAM Identity Center instance.</p>
     pub fn identity_store_id(
         mut self,
@@ -63,6 +67,10 @@ impl InstanceMetadataBuilder {
     ) -> Self {
         self.identity_store_id = input;
         self
+    }
+    /// <p>The identifier of the identity store that is connected to the IAM Identity Center instance.</p>
+    pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_store_id
     }
     /// Consumes the builder and constructs a [`InstanceMetadata`](crate::types::InstanceMetadata).
     pub fn build(self) -> crate::types::InstanceMetadata {

@@ -87,6 +87,10 @@ impl UpdateListInputBuilder {
         self.name = input;
         self
     }
+    /// <p> The name of the list to update. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `elements`.
     ///
     /// To override the contents of this collection use [`set_elements`](Self::set_elements).
@@ -108,6 +112,11 @@ impl UpdateListInputBuilder {
         self.elements = input;
         self
     }
+    /// <p> One or more list elements to add or replace. If you are providing the elements, make sure to specify the <code>updateMode</code> to use. </p>
+    /// <p>If you are deleting all elements from the list, use <code>REPLACE</code> for the <code>updateMode</code> and provide an empty list (0 elements).</p>
+    pub fn get_elements(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.elements
+    }
     /// <p> The new description. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -117,6 +126,10 @@ impl UpdateListInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p> The new description. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p> The update mode (type). </p>
     /// <ul>
@@ -141,6 +154,15 @@ impl UpdateListInputBuilder {
         self.update_mode = input;
         self
     }
+    /// <p> The update mode (type). </p>
+    /// <ul>
+    /// <li> <p>Use <code>APPEND</code> if you are adding elements to the list.</p> </li>
+    /// <li> <p>Use <code>REPLACE</code> if you replacing existing elements in the list.</p> </li>
+    /// <li> <p>Use <code>REMOVE</code> if you are removing elements from the list.</p> </li>
+    /// </ul>
+    pub fn get_update_mode(&self) -> &::std::option::Option<crate::types::ListUpdateMode> {
+        &self.update_mode
+    }
     /// <p> The variable type you want to assign to the list. </p> <note>
     /// <p>You cannot update a variable type of a list that already has a variable type assigned to it. You can assign a variable type to a list only if the list does not already have a variable type.</p>
     /// </note>
@@ -160,6 +182,12 @@ impl UpdateListInputBuilder {
     ) -> Self {
         self.variable_type = input;
         self
+    }
+    /// <p> The variable type you want to assign to the list. </p> <note>
+    /// <p>You cannot update a variable type of a list that already has a variable type assigned to it. You can assign a variable type to a list only if the list does not already have a variable type.</p>
+    /// </note>
+    pub fn get_variable_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.variable_type
     }
     /// Consumes the builder and constructs a [`UpdateListInput`](crate::operation::update_list::UpdateListInput).
     pub fn build(

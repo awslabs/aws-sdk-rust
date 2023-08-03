@@ -43,6 +43,10 @@ impl ViolationEventAdditionalInfoBuilder {
         self.confidence_level = input;
         self
     }
+    /// <p> The sensitivity of anomalous behavior evaluation. Can be <code>Low</code>, <code>Medium</code>, or <code>High</code>. </p>
+    pub fn get_confidence_level(&self) -> &::std::option::Option<crate::types::ConfidenceLevel> {
+        &self.confidence_level
+    }
     /// Consumes the builder and constructs a [`ViolationEventAdditionalInfo`](crate::types::ViolationEventAdditionalInfo).
     pub fn build(self) -> crate::types::ViolationEventAdditionalInfo {
         crate::types::ViolationEventAdditionalInfo {

@@ -115,6 +115,10 @@ impl ListEdgeDeploymentPlansInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The response from the last list when returning a list large enough to need tokening.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to select (50 by default).</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -124,6 +128,10 @@ impl ListEdgeDeploymentPlansInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to select (50 by default).</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>Selects edge deployment plans created after this time.</p>
     pub fn creation_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -138,6 +146,10 @@ impl ListEdgeDeploymentPlansInputBuilder {
         self.creation_time_after = input;
         self
     }
+    /// <p>Selects edge deployment plans created after this time.</p>
+    pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time_after
+    }
     /// <p>Selects edge deployment plans created before this time.</p>
     pub fn creation_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time_before = ::std::option::Option::Some(input);
@@ -150,6 +162,10 @@ impl ListEdgeDeploymentPlansInputBuilder {
     ) -> Self {
         self.creation_time_before = input;
         self
+    }
+    /// <p>Selects edge deployment plans created before this time.</p>
+    pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time_before
     }
     /// <p>Selects edge deployment plans that were last updated after this time.</p>
     pub fn last_modified_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -164,6 +180,12 @@ impl ListEdgeDeploymentPlansInputBuilder {
         self.last_modified_time_after = input;
         self
     }
+    /// <p>Selects edge deployment plans that were last updated after this time.</p>
+    pub fn get_last_modified_time_after(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time_after
+    }
     /// <p>Selects edge deployment plans that were last updated before this time.</p>
     pub fn last_modified_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time_before = ::std::option::Option::Some(input);
@@ -176,6 +198,12 @@ impl ListEdgeDeploymentPlansInputBuilder {
     ) -> Self {
         self.last_modified_time_before = input;
         self
+    }
+    /// <p>Selects edge deployment plans that were last updated before this time.</p>
+    pub fn get_last_modified_time_before(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time_before
     }
     /// <p>Selects edge deployment plans with names containing this name.</p>
     pub fn name_contains(
@@ -193,6 +221,10 @@ impl ListEdgeDeploymentPlansInputBuilder {
         self.name_contains = input;
         self
     }
+    /// <p>Selects edge deployment plans with names containing this name.</p>
+    pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name_contains
+    }
     /// <p>Selects edge deployment plans with a device fleet name containing this name.</p>
     pub fn device_fleet_name_contains(
         mut self,
@@ -209,6 +241,10 @@ impl ListEdgeDeploymentPlansInputBuilder {
         self.device_fleet_name_contains = input;
         self
     }
+    /// <p>Selects edge deployment plans with a device fleet name containing this name.</p>
+    pub fn get_device_fleet_name_contains(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_fleet_name_contains
+    }
     /// <p>The column by which to sort the edge deployment plans. Can be one of <code>NAME</code>, <code>DEVICEFLEETNAME</code>, <code>CREATIONTIME</code>, <code>LASTMODIFIEDTIME</code>.</p>
     pub fn sort_by(mut self, input: crate::types::ListEdgeDeploymentPlansSortBy) -> Self {
         self.sort_by = ::std::option::Option::Some(input);
@@ -222,6 +258,12 @@ impl ListEdgeDeploymentPlansInputBuilder {
         self.sort_by = input;
         self
     }
+    /// <p>The column by which to sort the edge deployment plans. Can be one of <code>NAME</code>, <code>DEVICEFLEETNAME</code>, <code>CREATIONTIME</code>, <code>LASTMODIFIEDTIME</code>.</p>
+    pub fn get_sort_by(
+        &self,
+    ) -> &::std::option::Option<crate::types::ListEdgeDeploymentPlansSortBy> {
+        &self.sort_by
+    }
     /// <p>The direction of the sorting (ascending or descending).</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -231,6 +273,10 @@ impl ListEdgeDeploymentPlansInputBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.sort_order = input;
         self
+    }
+    /// <p>The direction of the sorting (ascending or descending).</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.sort_order
     }
     /// Consumes the builder and constructs a [`ListEdgeDeploymentPlansInput`](crate::operation::list_edge_deployment_plans::ListEdgeDeploymentPlansInput).
     pub fn build(

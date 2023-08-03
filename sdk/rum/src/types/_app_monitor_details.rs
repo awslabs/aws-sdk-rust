@@ -56,6 +56,10 @@ impl AppMonitorDetailsBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the app monitor.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The unique ID of the app monitor.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl AppMonitorDetailsBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique ID of the app monitor.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The version of the app monitor.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl AppMonitorDetailsBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The version of the app monitor.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`AppMonitorDetails`](crate::types::AppMonitorDetails).
     pub fn build(self) -> crate::types::AppMonitorDetails {

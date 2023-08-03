@@ -40,6 +40,10 @@ impl BuilderBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the builder.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`Builder`](crate::types::Builder).
     pub fn build(self) -> crate::types::Builder {
         crate::types::Builder { arn: self.arn }

@@ -78,6 +78,10 @@ impl CertificateSummaryBuilder {
         self.certificate_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_arn
+    }
     /// <p>The name of the certificate.</p>
     pub fn certificate_name(
         mut self,
@@ -94,6 +98,10 @@ impl CertificateSummaryBuilder {
         self.certificate_name = input;
         self
     }
+    /// <p>The name of the certificate.</p>
+    pub fn get_certificate_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_name
+    }
     /// <p>The domain name of the certificate.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
@@ -103,6 +111,10 @@ impl CertificateSummaryBuilder {
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
+    }
+    /// <p>The domain name of the certificate.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
     }
     /// <p>An object that describes a certificate in detail.</p>
     pub fn certificate_detail(mut self, input: crate::types::Certificate) -> Self {
@@ -116,6 +128,10 @@ impl CertificateSummaryBuilder {
     ) -> Self {
         self.certificate_detail = input;
         self
+    }
+    /// <p>An object that describes a certificate in detail.</p>
+    pub fn get_certificate_detail(&self) -> &::std::option::Option<crate::types::Certificate> {
+        &self.certificate_detail
     }
     /// Appends an item to `tags`.
     ///
@@ -135,6 +151,10 @@ impl CertificateSummaryBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CertificateSummary`](crate::types::CertificateSummary).
     pub fn build(self) -> crate::types::CertificateSummary {

@@ -88,6 +88,10 @@ impl ProvisioningTemplateSummaryBuilder {
         self.template_arn = input;
         self
     }
+    /// <p>The ARN of the provisioning template.</p>
+    pub fn get_template_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_arn
+    }
     /// <p>The name of the provisioning template.</p>
     pub fn template_name(
         mut self,
@@ -104,6 +108,10 @@ impl ProvisioningTemplateSummaryBuilder {
         self.template_name = input;
         self
     }
+    /// <p>The name of the provisioning template.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
     /// <p>The description of the provisioning template.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -113,6 +121,10 @@ impl ProvisioningTemplateSummaryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the provisioning template.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The date when the provisioning template summary was created.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -127,6 +139,10 @@ impl ProvisioningTemplateSummaryBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>The date when the provisioning template summary was created.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
+    }
     /// <p>The date when the provisioning template summary was last modified.</p>
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input);
@@ -140,6 +156,10 @@ impl ProvisioningTemplateSummaryBuilder {
         self.last_modified_date = input;
         self
     }
+    /// <p>The date when the provisioning template summary was last modified.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_date
+    }
     /// <p>True if the fleet provision template is enabled, otherwise false.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -150,6 +170,10 @@ impl ProvisioningTemplateSummaryBuilder {
         self.enabled = input;
         self
     }
+    /// <p>True if the fleet provision template is enabled, otherwise false.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>. </p>
     pub fn r#type(mut self, input: crate::types::TemplateType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -159,6 +183,10 @@ impl ProvisioningTemplateSummaryBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::TemplateType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>. </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::TemplateType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`ProvisioningTemplateSummary`](crate::types::ProvisioningTemplateSummary).
     pub fn build(self) -> crate::types::ProvisioningTemplateSummary {

@@ -82,6 +82,10 @@ impl ListAppInstanceUsersOutputBuilder {
         self.app_instance_arn = input;
         self
     }
+    /// <p>The ARN of the <code>AppInstance</code>.</p>
+    pub fn get_app_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_instance_arn
+    }
     /// Appends an item to `app_instance_users`.
     ///
     /// To override the contents of this collection use [`set_app_instance_users`](Self::set_app_instance_users).
@@ -101,6 +105,12 @@ impl ListAppInstanceUsersOutputBuilder {
         self.app_instance_users = input;
         self
     }
+    /// <p>The information for each requested <code>AppInstanceUser</code>.</p>
+    pub fn get_app_instance_users(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AppInstanceUserSummary>> {
+        &self.app_instance_users
+    }
     /// <p>The token passed by previous API calls until all requested users are returned.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -110,6 +120,10 @@ impl ListAppInstanceUsersOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token passed by previous API calls until all requested users are returned.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

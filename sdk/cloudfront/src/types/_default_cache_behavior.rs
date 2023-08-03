@@ -254,6 +254,10 @@ impl DefaultCacheBehaviorBuilder {
         self.target_origin_id = input;
         self
     }
+    /// <p>The value of <code>ID</code> for the origin that you want CloudFront to route requests to when they use the default cache behavior.</p>
+    pub fn get_target_origin_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_origin_id
+    }
     /// <important>
     /// <p>We recommend using <code>TrustedKeyGroups</code> instead of <code>TrustedSigners</code>.</p>
     /// </important>
@@ -275,6 +279,14 @@ impl DefaultCacheBehaviorBuilder {
         self.trusted_signers = input;
         self
     }
+    /// <important>
+    /// <p>We recommend using <code>TrustedKeyGroups</code> instead of <code>TrustedSigners</code>.</p>
+    /// </important>
+    /// <p>A list of Amazon Web Services account IDs whose public keys CloudFront can use to validate signed URLs or signed cookies.</p>
+    /// <p>When a cache behavior contains trusted signers, CloudFront requires signed URLs or signed cookies for all requests that match the cache behavior. The URLs or cookies must be signed with the private key of a CloudFront key pair in a trusted signer's Amazon Web Services account. The signed URL or cookie contains information about which public key CloudFront should use to verify the signature. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub fn get_trusted_signers(&self) -> &::std::option::Option<crate::types::TrustedSigners> {
+        &self.trusted_signers
+    }
     /// <p>A list of key groups that CloudFront can use to validate signed URLs or signed cookies.</p>
     /// <p>When a cache behavior contains trusted key groups, CloudFront requires signed URLs or signed cookies for all requests that match the cache behavior. The URLs or cookies must be signed with a private key whose corresponding public key is in the key group. The signed URL or cookie contains information about which public key CloudFront should use to verify the signature. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn trusted_key_groups(mut self, input: crate::types::TrustedKeyGroups) -> Self {
@@ -289,6 +301,11 @@ impl DefaultCacheBehaviorBuilder {
     ) -> Self {
         self.trusted_key_groups = input;
         self
+    }
+    /// <p>A list of key groups that CloudFront can use to validate signed URLs or signed cookies.</p>
+    /// <p>When a cache behavior contains trusted key groups, CloudFront requires signed URLs or signed cookies for all requests that match the cache behavior. The URLs or cookies must be signed with a private key whose corresponding public key is in the key group. The signed URL or cookie contains information about which public key CloudFront should use to verify the signature. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub fn get_trusted_key_groups(&self) -> &::std::option::Option<crate::types::TrustedKeyGroups> {
+        &self.trusted_key_groups
     }
     /// <p>The protocol that viewers can use to access the files in the origin specified by <code>TargetOriginId</code> when a request matches the path pattern in <code>PathPattern</code>. You can specify the following options:</p>
     /// <ul>
@@ -319,6 +336,20 @@ impl DefaultCacheBehaviorBuilder {
         self.viewer_protocol_policy = input;
         self
     }
+    /// <p>The protocol that viewers can use to access the files in the origin specified by <code>TargetOriginId</code> when a request matches the path pattern in <code>PathPattern</code>. You can specify the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>allow-all</code>: Viewers can use HTTP or HTTPS.</p> </li>
+    /// <li> <p> <code>redirect-to-https</code>: If a viewer submits an HTTP request, CloudFront returns an HTTP status code of 301 (Moved Permanently) to the viewer along with the HTTPS URL. The viewer then resubmits the request using the new URL.</p> </li>
+    /// <li> <p> <code>https-only</code>: If a viewer sends an HTTP request, CloudFront returns an HTTP status code of 403 (Forbidden).</p> </li>
+    /// </ul>
+    /// <p>For more information about requiring the HTTPS protocol, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-viewers-to-cloudfront.html">Requiring HTTPS Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> <note>
+    /// <p>The only way to guarantee that viewers retrieve an object that was fetched from the origin using HTTPS is never to use any other protocol to fetch the object. If you have recently changed from HTTP to HTTPS, we recommend that you clear your objects' cache because cached objects are protocol agnostic. That means that an edge location will return an object from the cache regardless of whether the current request protocol matches the protocol used previously. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing Cache Expiration</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// </note>
+    pub fn get_viewer_protocol_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::ViewerProtocolPolicy> {
+        &self.viewer_protocol_policy
+    }
     /// <p>A complex type that controls which HTTP methods CloudFront processes and forwards to your Amazon S3 bucket or your custom origin. There are three choices:</p>
     /// <ul>
     /// <li> <p>CloudFront forwards only <code>GET</code> and <code>HEAD</code> requests.</p> </li>
@@ -344,6 +375,16 @@ impl DefaultCacheBehaviorBuilder {
         self.allowed_methods = input;
         self
     }
+    /// <p>A complex type that controls which HTTP methods CloudFront processes and forwards to your Amazon S3 bucket or your custom origin. There are three choices:</p>
+    /// <ul>
+    /// <li> <p>CloudFront forwards only <code>GET</code> and <code>HEAD</code> requests.</p> </li>
+    /// <li> <p>CloudFront forwards only <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests.</p> </li>
+    /// <li> <p>CloudFront forwards <code>GET, HEAD, OPTIONS, PUT, PATCH, POST</code>, and <code>DELETE</code> requests.</p> </li>
+    /// </ul>
+    /// <p>If you pick the third choice, you may need to restrict access to your Amazon S3 bucket or to your custom origin so users can't perform operations that you don't want them to. For example, you might not want users to have permissions to delete objects from your origin.</p>
+    pub fn get_allowed_methods(&self) -> &::std::option::Option<crate::types::AllowedMethods> {
+        &self.allowed_methods
+    }
     /// <p>Indicates whether you want to distribute media files in the Microsoft Smooth Streaming format using the origin that is associated with this cache behavior. If so, specify <code>true</code>; if not, specify <code>false</code>. If you specify <code>true</code> for <code>SmoothStreaming</code>, you can still distribute other content using this cache behavior if the content matches the value of <code>PathPattern</code>.</p>
     pub fn smooth_streaming(mut self, input: bool) -> Self {
         self.smooth_streaming = ::std::option::Option::Some(input);
@@ -354,6 +395,10 @@ impl DefaultCacheBehaviorBuilder {
         self.smooth_streaming = input;
         self
     }
+    /// <p>Indicates whether you want to distribute media files in the Microsoft Smooth Streaming format using the origin that is associated with this cache behavior. If so, specify <code>true</code>; if not, specify <code>false</code>. If you specify <code>true</code> for <code>SmoothStreaming</code>, you can still distribute other content using this cache behavior if the content matches the value of <code>PathPattern</code>.</p>
+    pub fn get_smooth_streaming(&self) -> &::std::option::Option<bool> {
+        &self.smooth_streaming
+    }
     /// <p>Whether you want CloudFront to automatically compress certain files for this cache behavior. If so, specify <code>true</code>; if not, specify <code>false</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html">Serving Compressed Files</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn compress(mut self, input: bool) -> Self {
         self.compress = ::std::option::Option::Some(input);
@@ -363,6 +408,10 @@ impl DefaultCacheBehaviorBuilder {
     pub fn set_compress(mut self, input: ::std::option::Option<bool>) -> Self {
         self.compress = input;
         self
+    }
+    /// <p>Whether you want CloudFront to automatically compress certain files for this cache behavior. If so, specify <code>true</code>; if not, specify <code>false</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html">Serving Compressed Files</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub fn get_compress(&self) -> &::std::option::Option<bool> {
+        &self.compress
     }
     /// <p>A complex type that contains zero or more Lambda@Edge function associations for a cache behavior.</p>
     pub fn lambda_function_associations(
@@ -380,6 +429,12 @@ impl DefaultCacheBehaviorBuilder {
         self.lambda_function_associations = input;
         self
     }
+    /// <p>A complex type that contains zero or more Lambda@Edge function associations for a cache behavior.</p>
+    pub fn get_lambda_function_associations(
+        &self,
+    ) -> &::std::option::Option<crate::types::LambdaFunctionAssociations> {
+        &self.lambda_function_associations
+    }
     /// <p>A list of CloudFront functions that are associated with this cache behavior. CloudFront functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.</p>
     pub fn function_associations(mut self, input: crate::types::FunctionAssociations) -> Self {
         self.function_associations = ::std::option::Option::Some(input);
@@ -392,6 +447,12 @@ impl DefaultCacheBehaviorBuilder {
     ) -> Self {
         self.function_associations = input;
         self
+    }
+    /// <p>A list of CloudFront functions that are associated with this cache behavior. CloudFront functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.</p>
+    pub fn get_function_associations(
+        &self,
+    ) -> &::std::option::Option<crate::types::FunctionAssociations> {
+        &self.function_associations
     }
     /// <p>The value of <code>ID</code> for the field-level encryption configuration that you want CloudFront to use for encrypting specific fields of data for the default cache behavior.</p>
     pub fn field_level_encryption_id(
@@ -409,6 +470,10 @@ impl DefaultCacheBehaviorBuilder {
         self.field_level_encryption_id = input;
         self
     }
+    /// <p>The value of <code>ID</code> for the field-level encryption configuration that you want CloudFront to use for encrypting specific fields of data for the default cache behavior.</p>
+    pub fn get_field_level_encryption_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_level_encryption_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the real-time log configuration that is attached to this cache behavior. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html">Real-time logs</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn realtime_log_config_arn(
         mut self,
@@ -424,6 +489,10 @@ impl DefaultCacheBehaviorBuilder {
     ) -> Self {
         self.realtime_log_config_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the real-time log configuration that is attached to this cache behavior. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html">Real-time logs</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub fn get_realtime_log_config_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.realtime_log_config_arn
     }
     /// <p>The unique identifier of the cache policy that is attached to the default cache behavior. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>A <code>DefaultCacheBehavior</code> must include either a <code>CachePolicyId</code> or <code>ForwardedValues</code>. We recommend that you use a <code>CachePolicyId</code>.</p>
@@ -443,6 +512,11 @@ impl DefaultCacheBehaviorBuilder {
         self.cache_policy_id = input;
         self
     }
+    /// <p>The unique identifier of the cache policy that is attached to the default cache behavior. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>A <code>DefaultCacheBehavior</code> must include either a <code>CachePolicyId</code> or <code>ForwardedValues</code>. We recommend that you use a <code>CachePolicyId</code>.</p>
+    pub fn get_cache_policy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_policy_id
+    }
     /// <p>The unique identifier of the origin request policy that is attached to the default cache behavior. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating origin request policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html">Using the managed origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn origin_request_policy_id(
         mut self,
@@ -459,6 +533,10 @@ impl DefaultCacheBehaviorBuilder {
         self.origin_request_policy_id = input;
         self
     }
+    /// <p>The unique identifier of the origin request policy that is attached to the default cache behavior. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating origin request policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html">Using the managed origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub fn get_origin_request_policy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.origin_request_policy_id
+    }
     /// <p>The identifier for a response headers policy.</p>
     pub fn response_headers_policy_id(
         mut self,
@@ -474,6 +552,10 @@ impl DefaultCacheBehaviorBuilder {
     ) -> Self {
         self.response_headers_policy_id = input;
         self
+    }
+    /// <p>The identifier for a response headers policy.</p>
+    pub fn get_response_headers_policy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.response_headers_policy_id
     }
     /// <p>This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/working-with-policies.html">Working with policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>If you want to include values in the cache key, use a cache policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -498,6 +580,15 @@ impl DefaultCacheBehaviorBuilder {
         self.forwarded_values = input;
         self
     }
+    /// <p>This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/working-with-policies.html">Working with policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>If you want to include values in the cache key, use a cache policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>If you want to send values to the origin but not include them in the cache key, use an origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating origin request policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html">Using the managed origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>A <code>DefaultCacheBehavior</code> must include either a <code>CachePolicyId</code> or <code>ForwardedValues</code>. We recommend that you use a <code>CachePolicyId</code>.</p>
+    /// <p>A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.</p>
+    #[deprecated]
+    pub fn get_forwarded_values(&self) -> &::std::option::Option<crate::types::ForwardedValues> {
+        &self.forwarded_values
+    }
     /// <p>This field is deprecated. We recommend that you use the <code>MinTTL</code> field in a cache policy instead of this field. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>The minimum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another request to your origin to determine whether the object has been updated. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>You must specify <code>0</code> for <code>MinTTL</code> if you configure CloudFront to forward all headers to your origin (under <code>Headers</code>, if you specify <code>1</code> for <code>Quantity</code> and <code>*</code> for <code>Name</code>).</p>
@@ -514,6 +605,13 @@ impl DefaultCacheBehaviorBuilder {
         self.min_ttl = input;
         self
     }
+    /// <p>This field is deprecated. We recommend that you use the <code>MinTTL</code> field in a cache policy instead of this field. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>The minimum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another request to your origin to determine whether the object has been updated. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>You must specify <code>0</code> for <code>MinTTL</code> if you configure CloudFront to forward all headers to your origin (under <code>Headers</code>, if you specify <code>1</code> for <code>Quantity</code> and <code>*</code> for <code>Name</code>).</p>
+    #[deprecated]
+    pub fn get_min_ttl(&self) -> &::std::option::Option<i64> {
+        &self.min_ttl
+    }
     /// <p>This field is deprecated. We recommend that you use the <code>DefaultTTL</code> field in a cache policy instead of this field. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>The default amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another request to your origin to determine whether the object has been updated. The value that you specify applies only when your origin does not add HTTP headers such as <code>Cache-Control max-age</code>, <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     #[deprecated]
@@ -528,6 +626,12 @@ impl DefaultCacheBehaviorBuilder {
         self.default_ttl = input;
         self
     }
+    /// <p>This field is deprecated. We recommend that you use the <code>DefaultTTL</code> field in a cache policy instead of this field. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>The default amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another request to your origin to determine whether the object has been updated. The value that you specify applies only when your origin does not add HTTP headers such as <code>Cache-Control max-age</code>, <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    #[deprecated]
+    pub fn get_default_ttl(&self) -> &::std::option::Option<i64> {
+        &self.default_ttl
+    }
     /// <p>This field is deprecated. We recommend that you use the <code>MaxTTL</code> field in a cache policy instead of this field. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>The maximum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another request to your origin to determine whether the object has been updated. The value that you specify applies only when your origin adds HTTP headers such as <code>Cache-Control max-age</code>, <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     #[deprecated]
@@ -541,6 +645,12 @@ impl DefaultCacheBehaviorBuilder {
     pub fn set_max_ttl(mut self, input: ::std::option::Option<i64>) -> Self {
         self.max_ttl = input;
         self
+    }
+    /// <p>This field is deprecated. We recommend that you use the <code>MaxTTL</code> field in a cache policy instead of this field. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>The maximum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another request to your origin to determine whether the object has been updated. The value that you specify applies only when your origin adds HTTP headers such as <code>Cache-Control max-age</code>, <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    #[deprecated]
+    pub fn get_max_ttl(&self) -> &::std::option::Option<i64> {
+        &self.max_ttl
     }
     /// Consumes the builder and constructs a [`DefaultCacheBehavior`](crate::types::DefaultCacheBehavior).
     pub fn build(self) -> crate::types::DefaultCacheBehavior {

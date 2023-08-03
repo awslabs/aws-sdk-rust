@@ -54,6 +54,10 @@ impl CustomPluginBuilder {
         self.custom_plugin_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the custom plugin.</p>
+    pub fn get_custom_plugin_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_plugin_arn
+    }
     /// <p>The revision of the custom plugin.</p>
     pub fn revision(mut self, input: i64) -> Self {
         self.revision = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl CustomPluginBuilder {
     pub fn set_revision(mut self, input: ::std::option::Option<i64>) -> Self {
         self.revision = input;
         self
+    }
+    /// <p>The revision of the custom plugin.</p>
+    pub fn get_revision(&self) -> &::std::option::Option<i64> {
+        &self.revision
     }
     /// Consumes the builder and constructs a [`CustomPlugin`](crate::types::CustomPlugin).
     pub fn build(self) -> crate::types::CustomPlugin {

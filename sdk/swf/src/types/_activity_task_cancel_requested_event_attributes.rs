@@ -51,6 +51,10 @@ impl ActivityTaskCancelRequestedEventAttributesBuilder {
         self.decision_task_completed_event_id = input;
         self
     }
+    /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>RequestCancelActivityTask</code> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    pub fn get_decision_task_completed_event_id(&self) -> &::std::option::Option<i64> {
+        &self.decision_task_completed_event_id
+    }
     /// <p>The unique ID of the task.</p>
     pub fn activity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.activity_id = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl ActivityTaskCancelRequestedEventAttributesBuilder {
     pub fn set_activity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.activity_id = input;
         self
+    }
+    /// <p>The unique ID of the task.</p>
+    pub fn get_activity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.activity_id
     }
     /// Consumes the builder and constructs a [`ActivityTaskCancelRequestedEventAttributes`](crate::types::ActivityTaskCancelRequestedEventAttributes).
     pub fn build(self) -> crate::types::ActivityTaskCancelRequestedEventAttributes {

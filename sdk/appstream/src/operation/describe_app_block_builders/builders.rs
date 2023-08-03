@@ -36,6 +36,10 @@ impl DescribeAppBlockBuildersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeAppBlockBuilders as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_app_block_builders::builders::DescribeAppBlockBuildersInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -142,6 +146,10 @@ impl DescribeAppBlockBuildersFluentBuilder {
         self.inner = self.inner.set_names(input);
         self
     }
+    /// <p>The names of the app block builders.</p>
+    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_names()
+    }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -152,6 +160,10 @@ impl DescribeAppBlockBuildersFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum size of each page of results. The maximum value is 25.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -161,5 +173,9 @@ impl DescribeAppBlockBuildersFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum size of each page of results. The maximum value is 25.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

@@ -61,6 +61,11 @@ impl ListCidrCollectionsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
+    /// <p>If no value is provided, the listing of results starts from the beginning.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `cidr_collections`.
     ///
     /// To override the contents of this collection use [`set_cidr_collections`](Self::set_cidr_collections).
@@ -79,6 +84,12 @@ impl ListCidrCollectionsOutputBuilder {
     ) -> Self {
         self.cidr_collections = input;
         self
+    }
+    /// <p>A complex type with information about the CIDR collection.</p>
+    pub fn get_cidr_collections(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CollectionSummary>> {
+        &self.cidr_collections
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

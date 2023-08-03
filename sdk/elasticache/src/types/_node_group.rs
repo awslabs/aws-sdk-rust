@@ -87,6 +87,10 @@ impl NodeGroupBuilder {
         self.node_group_id = input;
         self
     }
+    /// <p>The identifier for the node group (shard). A Redis (cluster mode disabled) replication group contains only 1 node group; therefore, the node group ID is 0001. A Redis (cluster mode enabled) replication group contains 1 to 90 node groups numbered 0001 to 0090. Optionally, the user can provide the id for a node group. </p>
+    pub fn get_node_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_group_id
+    }
     /// <p>The current state of this replication group - <code>creating</code>, <code>available</code>, <code>modifying</code>, <code>deleting</code>.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -96,6 +100,10 @@ impl NodeGroupBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current state of this replication group - <code>creating</code>, <code>available</code>, <code>modifying</code>, <code>deleting</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>The endpoint of the primary node in this node group (shard).</p>
     pub fn primary_endpoint(mut self, input: crate::types::Endpoint) -> Self {
@@ -110,6 +118,10 @@ impl NodeGroupBuilder {
         self.primary_endpoint = input;
         self
     }
+    /// <p>The endpoint of the primary node in this node group (shard).</p>
+    pub fn get_primary_endpoint(&self) -> &::std::option::Option<crate::types::Endpoint> {
+        &self.primary_endpoint
+    }
     /// <p>The endpoint of the replica nodes in this node group (shard).</p>
     pub fn reader_endpoint(mut self, input: crate::types::Endpoint) -> Self {
         self.reader_endpoint = ::std::option::Option::Some(input);
@@ -123,6 +135,10 @@ impl NodeGroupBuilder {
         self.reader_endpoint = input;
         self
     }
+    /// <p>The endpoint of the replica nodes in this node group (shard).</p>
+    pub fn get_reader_endpoint(&self) -> &::std::option::Option<crate::types::Endpoint> {
+        &self.reader_endpoint
+    }
     /// <p>The keyspace for this node group (shard).</p>
     pub fn slots(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.slots = ::std::option::Option::Some(input.into());
@@ -132,6 +148,10 @@ impl NodeGroupBuilder {
     pub fn set_slots(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.slots = input;
         self
+    }
+    /// <p>The keyspace for this node group (shard).</p>
+    pub fn get_slots(&self) -> &::std::option::Option<::std::string::String> {
+        &self.slots
     }
     /// Appends an item to `node_group_members`.
     ///
@@ -151,6 +171,12 @@ impl NodeGroupBuilder {
     ) -> Self {
         self.node_group_members = input;
         self
+    }
+    /// <p>A list containing information about individual nodes within the node group (shard).</p>
+    pub fn get_node_group_members(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NodeGroupMember>> {
+        &self.node_group_members
     }
     /// Consumes the builder and constructs a [`NodeGroup`](crate::types::NodeGroup).
     pub fn build(self) -> crate::types::NodeGroup {

@@ -48,6 +48,10 @@ impl GetGameConfigurationInputBuilder {
         self.game_name = input;
         self
     }
+    /// <p>The name of the game.</p>
+    pub fn get_game_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.game_name
+    }
     /// Appends an item to `sections`.
     ///
     /// To override the contents of this collection use [`set_sections`](Self::set_sections).
@@ -66,6 +70,10 @@ impl GetGameConfigurationInputBuilder {
     ) -> Self {
         self.sections = input;
         self
+    }
+    /// <p>The list of sections to return.</p>
+    pub fn get_sections(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.sections
     }
     /// Consumes the builder and constructs a [`GetGameConfigurationInput`](crate::operation::get_game_configuration::GetGameConfigurationInput).
     pub fn build(

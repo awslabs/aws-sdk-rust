@@ -51,6 +51,10 @@ impl UpdateLaunchProfileOutputBuilder {
         self.launch_profile = input;
         self
     }
+    /// <p>The launch profile.</p>
+    pub fn get_launch_profile(&self) -> &::std::option::Option<crate::types::LaunchProfile> {
+        &self.launch_profile
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

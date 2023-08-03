@@ -57,6 +57,10 @@ impl DeleteNotificationInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The <code>accountId</code> that is associated with the budget whose notification you want to delete.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The name of the budget whose notification you want to delete.</p>
     pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.budget_name = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl DeleteNotificationInputBuilder {
     pub fn set_budget_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.budget_name = input;
         self
+    }
+    /// <p>The name of the budget whose notification you want to delete.</p>
+    pub fn get_budget_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.budget_name
     }
     /// <p>The notification that you want to delete.</p>
     pub fn notification(mut self, input: crate::types::Notification) -> Self {
@@ -79,6 +87,10 @@ impl DeleteNotificationInputBuilder {
     ) -> Self {
         self.notification = input;
         self
+    }
+    /// <p>The notification that you want to delete.</p>
+    pub fn get_notification(&self) -> &::std::option::Option<crate::types::Notification> {
+        &self.notification
     }
     /// Consumes the builder and constructs a [`DeleteNotificationInput`](crate::operation::delete_notification::DeleteNotificationInput).
     pub fn build(

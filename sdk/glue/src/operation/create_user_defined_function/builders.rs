@@ -36,6 +36,10 @@ impl CreateUserDefinedFunctionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateUserDefinedFunction as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_user_defined_function::builders::CreateUserDefinedFunctionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl CreateUserDefinedFunctionFluentBuilder {
         self.inner = self.inner.set_catalog_id(input);
         self
     }
+    /// <p>The ID of the Data Catalog in which to create the function. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_catalog_id()
+    }
     /// <p>The name of the catalog database in which to create the function.</p>
     pub fn database_name(
         mut self,
@@ -142,6 +150,10 @@ impl CreateUserDefinedFunctionFluentBuilder {
         self.inner = self.inner.set_database_name(input);
         self
     }
+    /// <p>The name of the catalog database in which to create the function.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_database_name()
+    }
     /// <p>A <code>FunctionInput</code> object that defines the function to create in the Data Catalog.</p>
     pub fn function_input(mut self, input: crate::types::UserDefinedFunctionInput) -> Self {
         self.inner = self.inner.function_input(input);
@@ -154,5 +166,11 @@ impl CreateUserDefinedFunctionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_function_input(input);
         self
+    }
+    /// <p>A <code>FunctionInput</code> object that defines the function to create in the Data Catalog.</p>
+    pub fn get_function_input(
+        &self,
+    ) -> &::std::option::Option<crate::types::UserDefinedFunctionInput> {
+        self.inner.get_function_input()
     }
 }

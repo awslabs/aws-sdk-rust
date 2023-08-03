@@ -64,6 +64,10 @@ impl ExecutionSummaryBuilder {
         self.task_id = input;
         self
     }
+    /// <p>The ID of the task.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_id
+    }
     /// <p>The ID of the execution.</p>
     pub fn execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_id = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl ExecutionSummaryBuilder {
     pub fn set_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_id = input;
         self
+    }
+    /// <p>The ID of the execution.</p>
+    pub fn get_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_id
     }
     /// <p>The ID of the managed device that the task is being executed on.</p>
     pub fn managed_device_id(
@@ -90,6 +98,10 @@ impl ExecutionSummaryBuilder {
         self.managed_device_id = input;
         self
     }
+    /// <p>The ID of the managed device that the task is being executed on.</p>
+    pub fn get_managed_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.managed_device_id
+    }
     /// <p>The state of the execution.</p>
     pub fn state(mut self, input: crate::types::ExecutionState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -99,6 +111,10 @@ impl ExecutionSummaryBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ExecutionState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the execution.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ExecutionState> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`ExecutionSummary`](crate::types::ExecutionSummary).
     pub fn build(self) -> crate::types::ExecutionSummary {

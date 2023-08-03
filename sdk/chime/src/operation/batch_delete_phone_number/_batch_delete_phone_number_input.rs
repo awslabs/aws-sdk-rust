@@ -53,6 +53,12 @@ impl BatchDeletePhoneNumberInputBuilder {
         self.phone_number_ids = input;
         self
     }
+    /// <p>List of phone number IDs.</p>
+    pub fn get_phone_number_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.phone_number_ids
+    }
     /// Consumes the builder and constructs a [`BatchDeletePhoneNumberInput`](crate::operation::batch_delete_phone_number::BatchDeletePhoneNumberInput).
     pub fn build(
         self,

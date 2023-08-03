@@ -58,6 +58,10 @@ impl S3ReferenceBuilder {
         self.bucket = input;
         self
     }
+    /// <p>The S3 bucket name.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p>The S3 key object name.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
@@ -67,6 +71,10 @@ impl S3ReferenceBuilder {
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
+    }
+    /// <p>The S3 key object name.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
     }
     /// <p>If you enable versioning for the bucket, you can specify the object version.</p>
     pub fn object_version(
@@ -83,6 +91,10 @@ impl S3ReferenceBuilder {
     ) -> Self {
         self.object_version = input;
         self
+    }
+    /// <p>If you enable versioning for the bucket, you can specify the object version.</p>
+    pub fn get_object_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_version
     }
     /// Consumes the builder and constructs a [`S3Reference`](crate::types::S3Reference).
     pub fn build(self) -> crate::types::S3Reference {

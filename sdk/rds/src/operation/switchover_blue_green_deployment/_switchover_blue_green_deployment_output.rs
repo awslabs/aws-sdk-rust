@@ -55,6 +55,13 @@ impl SwitchoverBlueGreenDeploymentOutputBuilder {
         self.blue_green_deployment = input;
         self
     }
+    /// <p>Details about a blue/green deployment.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn get_blue_green_deployment(
+        &self,
+    ) -> &::std::option::Option<crate::types::BlueGreenDeployment> {
+        &self.blue_green_deployment
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -48,6 +48,10 @@ impl HostedZoneConfigBuilder {
         self.comment = input;
         self
     }
+    /// <p>Any comments that you want to include about the hosted zone.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comment
+    }
     /// <p>A value that indicates whether this is a private hosted zone.</p>
     pub fn private_zone(mut self, input: bool) -> Self {
         self.private_zone = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl HostedZoneConfigBuilder {
     pub fn set_private_zone(mut self, input: ::std::option::Option<bool>) -> Self {
         self.private_zone = input;
         self
+    }
+    /// <p>A value that indicates whether this is a private hosted zone.</p>
+    pub fn get_private_zone(&self) -> &::std::option::Option<bool> {
+        &self.private_zone
     }
     /// Consumes the builder and constructs a [`HostedZoneConfig`](crate::types::HostedZoneConfig).
     pub fn build(self) -> crate::types::HostedZoneConfig {

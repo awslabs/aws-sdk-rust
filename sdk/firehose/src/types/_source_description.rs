@@ -50,6 +50,12 @@ impl SourceDescriptionBuilder {
         self.kinesis_stream_source_description = input;
         self
     }
+    /// <p>The <code>KinesisStreamSourceDescription</code> value for the source Kinesis data stream.</p>
+    pub fn get_kinesis_stream_source_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::KinesisStreamSourceDescription> {
+        &self.kinesis_stream_source_description
+    }
     /// Consumes the builder and constructs a [`SourceDescription`](crate::types::SourceDescription).
     pub fn build(self) -> crate::types::SourceDescription {
         crate::types::SourceDescription {

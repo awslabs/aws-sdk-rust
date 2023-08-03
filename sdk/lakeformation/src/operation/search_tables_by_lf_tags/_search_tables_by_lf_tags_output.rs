@@ -56,6 +56,10 @@ impl SearchTablesByLfTagsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A continuation token, present if the current list segment is not the last.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `table_list`.
     ///
     /// To override the contents of this collection use [`set_table_list`](Self::set_table_list).
@@ -74,6 +78,12 @@ impl SearchTablesByLfTagsOutputBuilder {
     ) -> Self {
         self.table_list = input;
         self
+    }
+    /// <p>A list of tables that meet the LF-tag conditions.</p>
+    pub fn get_table_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TaggedTable>> {
+        &self.table_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

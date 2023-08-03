@@ -51,6 +51,12 @@ impl GetQueryLoggingConfigOutputBuilder {
         self.query_logging_config = input;
         self
     }
+    /// <p>A complex type that contains information about the query logging configuration that you specified in a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetQueryLoggingConfig.html">GetQueryLoggingConfig</a> request.</p>
+    pub fn get_query_logging_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::QueryLoggingConfig> {
+        &self.query_logging_config
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

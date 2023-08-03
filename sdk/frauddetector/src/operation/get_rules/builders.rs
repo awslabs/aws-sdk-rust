@@ -37,6 +37,10 @@ impl GetRulesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetRules as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_rules::builders::GetRulesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,6 +129,10 @@ impl GetRulesFluentBuilder {
         self.inner = self.inner.set_rule_id(input);
         self
     }
+    /// <p>The rule ID.</p>
+    pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rule_id()
+    }
     /// <p>The detector ID.</p>
     pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.detector_id(input.into());
@@ -134,6 +142,10 @@ impl GetRulesFluentBuilder {
     pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_detector_id(input);
         self
+    }
+    /// <p>The detector ID.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_detector_id()
     }
     /// <p>The rule version.</p>
     pub fn rule_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -145,6 +157,10 @@ impl GetRulesFluentBuilder {
         self.inner = self.inner.set_rule_version(input);
         self
     }
+    /// <p>The rule version.</p>
+    pub fn get_rule_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rule_version()
+    }
     /// <p>The next page token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -155,6 +171,10 @@ impl GetRulesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The next page token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of rules to return for the request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -164,5 +184,9 @@ impl GetRulesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of rules to return for the request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

@@ -47,6 +47,10 @@ impl DeleteRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteRule as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_rule::builders::DeleteRuleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +133,10 @@ impl DeleteRuleFluentBuilder {
         self.inner = self.inner.set_rule_id(input);
         self
     }
+    /// <p>The <code>RuleId</code> of the <code>Rule</code> that you want to delete. <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
+    pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rule_id()
+    }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.change_token(input.into());
@@ -138,5 +146,9 @@ impl DeleteRuleFluentBuilder {
     pub fn set_change_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_change_token(input);
         self
+    }
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    pub fn get_change_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_change_token()
     }
 }

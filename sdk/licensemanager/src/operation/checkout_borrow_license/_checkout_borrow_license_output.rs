@@ -105,6 +105,10 @@ impl CheckoutBorrowLicenseOutputBuilder {
         self.license_arn = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the license.</p>
+    pub fn get_license_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_arn
+    }
     /// <p>License consumption token.</p>
     pub fn license_consumption_token(
         mut self,
@@ -120,6 +124,10 @@ impl CheckoutBorrowLicenseOutputBuilder {
     ) -> Self {
         self.license_consumption_token = input;
         self
+    }
+    /// <p>License consumption token.</p>
+    pub fn get_license_consumption_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_consumption_token
     }
     /// Appends an item to `entitlements_allowed`.
     ///
@@ -140,6 +148,12 @@ impl CheckoutBorrowLicenseOutputBuilder {
         self.entitlements_allowed = input;
         self
     }
+    /// <p>Allowed license entitlements.</p>
+    pub fn get_entitlements_allowed(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EntitlementData>> {
+        &self.entitlements_allowed
+    }
     /// <p>Node ID.</p>
     pub fn node_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_id = ::std::option::Option::Some(input.into());
@@ -149,6 +163,10 @@ impl CheckoutBorrowLicenseOutputBuilder {
     pub fn set_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_id = input;
         self
+    }
+    /// <p>Node ID.</p>
+    pub fn get_node_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_id
     }
     /// <p>Signed token.</p>
     pub fn signed_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -160,6 +178,10 @@ impl CheckoutBorrowLicenseOutputBuilder {
         self.signed_token = input;
         self
     }
+    /// <p>Signed token.</p>
+    pub fn get_signed_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.signed_token
+    }
     /// <p>Date and time at which the license checkout is issued.</p>
     pub fn issued_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.issued_at = ::std::option::Option::Some(input.into());
@@ -170,6 +192,10 @@ impl CheckoutBorrowLicenseOutputBuilder {
         self.issued_at = input;
         self
     }
+    /// <p>Date and time at which the license checkout is issued.</p>
+    pub fn get_issued_at(&self) -> &::std::option::Option<::std::string::String> {
+        &self.issued_at
+    }
     /// <p>Date and time at which the license checkout expires.</p>
     pub fn expiration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expiration = ::std::option::Option::Some(input.into());
@@ -179,6 +205,10 @@ impl CheckoutBorrowLicenseOutputBuilder {
     pub fn set_expiration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expiration = input;
         self
+    }
+    /// <p>Date and time at which the license checkout expires.</p>
+    pub fn get_expiration(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expiration
     }
     /// Appends an item to `checkout_metadata`.
     ///
@@ -198,6 +228,12 @@ impl CheckoutBorrowLicenseOutputBuilder {
     ) -> Self {
         self.checkout_metadata = input;
         self
+    }
+    /// <p>Information about constraints.</p>
+    pub fn get_checkout_metadata(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Metadata>> {
+        &self.checkout_metadata
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

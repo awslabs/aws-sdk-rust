@@ -36,6 +36,10 @@ impl UpdateFilterFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateFilter as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_filter::builders::UpdateFilterInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl UpdateFilterFluentBuilder {
         self.inner = self.inner.set_action(input);
         self
     }
+    /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::FilterAction> {
+        self.inner.get_action()
+    }
     /// <p>A description of the filter.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -127,6 +135,10 @@ impl UpdateFilterFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of the filter.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>Defines the criteria to be update in the filter.</p>
     pub fn filter_criteria(mut self, input: crate::types::FilterCriteria) -> Self {
@@ -141,6 +153,10 @@ impl UpdateFilterFluentBuilder {
         self.inner = self.inner.set_filter_criteria(input);
         self
     }
+    /// <p>Defines the criteria to be update in the filter.</p>
+    pub fn get_filter_criteria(&self) -> &::std::option::Option<crate::types::FilterCriteria> {
+        self.inner.get_filter_criteria()
+    }
     /// <p>The name of the filter.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -150,6 +166,10 @@ impl UpdateFilterFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the filter.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The Amazon Resource Number (ARN) of the filter to update.</p>
     pub fn filter_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -161,6 +181,10 @@ impl UpdateFilterFluentBuilder {
         self.inner = self.inner.set_filter_arn(input);
         self
     }
+    /// <p>The Amazon Resource Number (ARN) of the filter to update.</p>
+    pub fn get_filter_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_filter_arn()
+    }
     /// <p>The reason the filter was updated.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reason(input.into());
@@ -170,5 +194,9 @@ impl UpdateFilterFluentBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reason(input);
         self
+    }
+    /// <p>The reason the filter was updated.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reason()
     }
 }

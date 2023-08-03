@@ -39,6 +39,10 @@ impl GetContactReachabilityStatusInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The name of the domain for which you want to know whether the registrant contact has confirmed that the email address is valid.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// Consumes the builder and constructs a [`GetContactReachabilityStatusInput`](crate::operation::get_contact_reachability_status::GetContactReachabilityStatusInput).
     pub fn build(
         self,

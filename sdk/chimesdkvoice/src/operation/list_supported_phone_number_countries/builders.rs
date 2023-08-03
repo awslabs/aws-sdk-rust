@@ -36,6 +36,10 @@ impl ListSupportedPhoneNumberCountriesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListSupportedPhoneNumberCountries as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_supported_phone_number_countries::builders::ListSupportedPhoneNumberCountriesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -102,5 +106,9 @@ impl ListSupportedPhoneNumberCountriesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_product_type(input);
         self
+    }
+    /// <p>The phone number product type.</p>
+    pub fn get_product_type(&self) -> &::std::option::Option<crate::types::PhoneNumberProductType> {
+        self.inner.get_product_type()
     }
 }

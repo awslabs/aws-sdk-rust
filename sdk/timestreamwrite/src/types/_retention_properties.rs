@@ -51,6 +51,10 @@ impl RetentionPropertiesBuilder {
         self.memory_store_retention_period_in_hours = input;
         self
     }
+    /// <p>The duration for which data must be stored in the memory store. </p>
+    pub fn get_memory_store_retention_period_in_hours(&self) -> &::std::option::Option<i64> {
+        &self.memory_store_retention_period_in_hours
+    }
     /// <p>The duration for which data must be stored in the magnetic store. </p>
     pub fn magnetic_store_retention_period_in_days(mut self, input: i64) -> Self {
         self.magnetic_store_retention_period_in_days = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl RetentionPropertiesBuilder {
     ) -> Self {
         self.magnetic_store_retention_period_in_days = input;
         self
+    }
+    /// <p>The duration for which data must be stored in the magnetic store. </p>
+    pub fn get_magnetic_store_retention_period_in_days(&self) -> &::std::option::Option<i64> {
+        &self.magnetic_store_retention_period_in_days
     }
     /// Consumes the builder and constructs a [`RetentionProperties`](crate::types::RetentionProperties).
     pub fn build(self) -> crate::types::RetentionProperties {

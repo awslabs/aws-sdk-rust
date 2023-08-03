@@ -36,6 +36,12 @@ impl CreateBudgetActionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateBudgetAction as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_budget_action::builders::CreateBudgetActionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateBudgetActionFluentBuilder {
         self.inner = self.inner.set_account_id(input);
         self
     }
+    /// <p>The account ID of the user. It's a 12-digit number.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.budget_name(input.into());
@@ -135,6 +145,10 @@ impl CreateBudgetActionFluentBuilder {
     pub fn set_budget_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_budget_name(input);
         self
+    }
+    /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
+    pub fn get_budget_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_budget_name()
     }
     /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
     pub fn notification_type(mut self, input: crate::types::NotificationType) -> Self {
@@ -149,6 +163,10 @@ impl CreateBudgetActionFluentBuilder {
         self.inner = self.inner.set_notification_type(input);
         self
     }
+    /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
+    pub fn get_notification_type(&self) -> &::std::option::Option<crate::types::NotificationType> {
+        self.inner.get_notification_type()
+    }
     /// <p> The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition. </p>
     pub fn action_type(mut self, input: crate::types::ActionType) -> Self {
         self.inner = self.inner.action_type(input);
@@ -161,6 +179,10 @@ impl CreateBudgetActionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_action_type(input);
         self
+    }
+    /// <p> The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition. </p>
+    pub fn get_action_type(&self) -> &::std::option::Option<crate::types::ActionType> {
+        self.inner.get_action_type()
     }
     /// <p>The trigger threshold of the action. </p>
     pub fn action_threshold(mut self, input: crate::types::ActionThreshold) -> Self {
@@ -175,6 +197,10 @@ impl CreateBudgetActionFluentBuilder {
         self.inner = self.inner.set_action_threshold(input);
         self
     }
+    /// <p>The trigger threshold of the action. </p>
+    pub fn get_action_threshold(&self) -> &::std::option::Option<crate::types::ActionThreshold> {
+        self.inner.get_action_threshold()
+    }
     /// <p>Specifies all of the type-specific parameters. </p>
     pub fn definition(mut self, input: crate::types::Definition) -> Self {
         self.inner = self.inner.definition(input);
@@ -187,6 +213,10 @@ impl CreateBudgetActionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_definition(input);
         self
+    }
+    /// <p>Specifies all of the type-specific parameters. </p>
+    pub fn get_definition(&self) -> &::std::option::Option<crate::types::Definition> {
+        self.inner.get_definition()
     }
     /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
     pub fn execution_role_arn(
@@ -204,6 +234,10 @@ impl CreateBudgetActionFluentBuilder {
         self.inner = self.inner.set_execution_role_arn(input);
         self
     }
+    /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
+    pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_execution_role_arn()
+    }
     /// <p> This specifies if the action needs manual or automatic approval. </p>
     pub fn approval_model(mut self, input: crate::types::ApprovalModel) -> Self {
         self.inner = self.inner.approval_model(input);
@@ -216,6 +250,10 @@ impl CreateBudgetActionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_approval_model(input);
         self
+    }
+    /// <p> This specifies if the action needs manual or automatic approval. </p>
+    pub fn get_approval_model(&self) -> &::std::option::Option<crate::types::ApprovalModel> {
+        self.inner.get_approval_model()
     }
     /// Appends an item to `Subscribers`.
     ///
@@ -233,5 +271,11 @@ impl CreateBudgetActionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_subscribers(input);
         self
+    }
+    /// <p> A list of subscribers.</p>
+    pub fn get_subscribers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Subscriber>> {
+        self.inner.get_subscribers()
     }
 }

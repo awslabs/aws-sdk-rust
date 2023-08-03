@@ -37,6 +37,12 @@ impl StartWorkspacesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartWorkspaces as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_workspaces::builders::StartWorkspacesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,5 +139,11 @@ impl StartWorkspacesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_start_workspace_requests(input);
         self
+    }
+    /// <p>The WorkSpaces to start. You can specify up to 25 WorkSpaces.</p>
+    pub fn get_start_workspace_requests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StartRequest>> {
+        self.inner.get_start_workspace_requests()
     }
 }

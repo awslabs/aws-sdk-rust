@@ -45,6 +45,10 @@ impl DeleteAppBundleInputBuilder {
         self.app_bundle_identifier = input;
         self
     }
+    /// <p>The ID or Amazon Resource Name (ARN) of the app bundle that needs to be deleted.</p>
+    pub fn get_app_bundle_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_bundle_identifier
+    }
     /// Consumes the builder and constructs a [`DeleteAppBundleInput`](crate::operation::delete_app_bundle::DeleteAppBundleInput).
     pub fn build(
         self,

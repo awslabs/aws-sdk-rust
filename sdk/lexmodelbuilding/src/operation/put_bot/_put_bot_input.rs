@@ -249,6 +249,10 @@ impl PutBotInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the bot. The name is <i>not</i> case sensitive. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A description of the bot.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -258,6 +262,10 @@ impl PutBotInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the bot.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `intents`.
     ///
@@ -277,6 +285,10 @@ impl PutBotInputBuilder {
     ) -> Self {
         self.intents = input;
         self
+    }
+    /// <p>An array of <code>Intent</code> objects. Each intent represents a command that a user can express. For example, a pizza ordering bot might support an OrderPizza intent. For more information, see <code>how-it-works</code>.</p>
+    pub fn get_intents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Intent>> {
+        &self.intents
     }
     /// <p>Set to <code>true</code> to enable access to natural language understanding improvements. </p>
     /// <p>When you set the <code>enableModelImprovements</code> parameter to <code>true</code> you can use the <code>nluIntentConfidenceThreshold</code> parameter to configure confidence scores. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html">Confidence Scores</a>.</p>
@@ -307,6 +319,20 @@ impl PutBotInputBuilder {
     pub fn set_enable_model_improvements(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_model_improvements = input;
         self
+    }
+    /// <p>Set to <code>true</code> to enable access to natural language understanding improvements. </p>
+    /// <p>When you set the <code>enableModelImprovements</code> parameter to <code>true</code> you can use the <code>nluIntentConfidenceThreshold</code> parameter to configure confidence scores. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html">Confidence Scores</a>.</p>
+    /// <p>You can only set the <code>enableModelImprovements</code> parameter in certain Regions. If you set the parameter to <code>true</code>, your bot has access to accuracy improvements.</p>
+    /// <p>The Regions where you can set the <code>enableModelImprovements</code> parameter to <code>true</code> are:</p>
+    /// <ul>
+    /// <li> <p>US East (N. Virginia) (us-east-1)</p> </li>
+    /// <li> <p>US West (Oregon) (us-west-2)</p> </li>
+    /// <li> <p>Asia Pacific (Sydney) (ap-southeast-2)</p> </li>
+    /// <li> <p>EU (Ireland) (eu-west-1)</p> </li>
+    /// </ul>
+    /// <p>In other Regions, the <code>enableModelImprovements</code> parameter is set to <code>true</code> by default. In these Regions setting the parameter to <code>false</code> throws a <code>ValidationException</code> exception.</p>
+    pub fn get_enable_model_improvements(&self) -> &::std::option::Option<bool> {
+        &self.enable_model_improvements
     }
     /// <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> response. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot.</p>
     /// <p>You must set the <code>enableModelImprovements</code> parameter to <code>true</code> to use confidence scores in the following regions.</p>
@@ -351,6 +377,25 @@ impl PutBotInputBuilder {
         self.nlu_intent_confidence_threshold = input;
         self
     }
+    /// <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> response. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot.</p>
+    /// <p>You must set the <code>enableModelImprovements</code> parameter to <code>true</code> to use confidence scores in the following regions.</p>
+    /// <ul>
+    /// <li> <p>US East (N. Virginia) (us-east-1)</p> </li>
+    /// <li> <p>US West (Oregon) (us-west-2)</p> </li>
+    /// <li> <p>Asia Pacific (Sydney) (ap-southeast-2)</p> </li>
+    /// <li> <p>EU (Ireland) (eu-west-1)</p> </li>
+    /// </ul>
+    /// <p>In other Regions, the <code>enableModelImprovements</code> parameter is set to <code>true</code> by default.</p>
+    /// <p>For example, suppose a bot is configured with the confidence threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the <code>PostText</code> operation would be:</p>
+    /// <ul>
+    /// <li> <p>AMAZON.FallbackIntent</p> </li>
+    /// <li> <p>IntentA</p> </li>
+    /// <li> <p>IntentB</p> </li>
+    /// <li> <p>IntentC</p> </li>
+    /// </ul>
+    pub fn get_nlu_intent_confidence_threshold(&self) -> &::std::option::Option<f64> {
+        &self.nlu_intent_confidence_threshold
+    }
     /// <p>When Amazon Lex doesn't understand the user's intent, it uses this message to get clarification. To specify how many times Amazon Lex should repeat the clarification prompt, use the <code>maxAttempts</code> field. If Amazon Lex still doesn't understand, it sends the message in the <code>abortStatement</code> field. </p>
     /// <p>When you create a clarification prompt, make sure that it suggests the correct response from the user. for example, for a bot that orders pizza and drinks, you might create this clarification prompt: "What would you like to do? You can say 'Order a pizza' or 'Order a drink.'"</p>
     /// <p>If you have defined a fallback intent, it will be invoked if the clarification prompt is repeated the number of times defined in the <code>maxAttempts</code> field. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html"> AMAZON.FallbackIntent</a>.</p>
@@ -380,6 +425,18 @@ impl PutBotInputBuilder {
         self.clarification_prompt = input;
         self
     }
+    /// <p>When Amazon Lex doesn't understand the user's intent, it uses this message to get clarification. To specify how many times Amazon Lex should repeat the clarification prompt, use the <code>maxAttempts</code> field. If Amazon Lex still doesn't understand, it sends the message in the <code>abortStatement</code> field. </p>
+    /// <p>When you create a clarification prompt, make sure that it suggests the correct response from the user. for example, for a bot that orders pizza and drinks, you might create this clarification prompt: "What would you like to do? You can say 'Order a pizza' or 'Order a drink.'"</p>
+    /// <p>If you have defined a fallback intent, it will be invoked if the clarification prompt is repeated the number of times defined in the <code>maxAttempts</code> field. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html"> AMAZON.FallbackIntent</a>.</p>
+    /// <p>If you don't define a clarification prompt, at runtime Amazon Lex will return a 400 Bad Request exception in three cases: </p>
+    /// <ul>
+    /// <li> <p>Follow-up prompt - When the user responds to a follow-up prompt but does not provide an intent. For example, in response to a follow-up prompt that says "Would you like anything else today?" the user says "Yes." Amazon Lex will return a 400 Bad Request exception because it does not have a clarification prompt to send to the user to get an intent.</p> </li>
+    /// <li> <p>Lambda function - When using a Lambda function, you return an <code>ElicitIntent</code> dialog type. Since Amazon Lex does not have a clarification prompt to get an intent from the user, it returns a 400 Bad Request exception.</p> </li>
+    /// <li> <p>PutSession operation - When using the <code>PutSession</code> operation, you send an <code>ElicitIntent</code> dialog type. Since Amazon Lex does not have a clarification prompt to get an intent from the user, it returns a 400 Bad Request exception.</p> </li>
+    /// </ul>
+    pub fn get_clarification_prompt(&self) -> &::std::option::Option<crate::types::Prompt> {
+        &self.clarification_prompt
+    }
     /// <p>When Amazon Lex can't understand the user's input in context, it tries to elicit the information a few times. After that, Amazon Lex sends the message defined in <code>abortStatement</code> to the user, and then cancels the conversation. To set the number of retries, use the <code>valueElicitationPrompt</code> field for the slot type. </p>
     /// <p>For example, in a pizza ordering bot, Amazon Lex might ask a user "What type of crust would you like?" If the user's response is not one of the expected responses (for example, "thin crust, "deep dish," etc.), Amazon Lex tries to elicit a correct response a few more times. </p>
     /// <p>For example, in a pizza ordering application, <code>OrderPizza</code> might be one of the intents. This intent might require the <code>CrustType</code> slot. You specify the <code>valueElicitationPrompt</code> field when you create the <code>CrustType</code> slot.</p>
@@ -399,6 +456,13 @@ impl PutBotInputBuilder {
         self.abort_statement = input;
         self
     }
+    /// <p>When Amazon Lex can't understand the user's input in context, it tries to elicit the information a few times. After that, Amazon Lex sends the message defined in <code>abortStatement</code> to the user, and then cancels the conversation. To set the number of retries, use the <code>valueElicitationPrompt</code> field for the slot type. </p>
+    /// <p>For example, in a pizza ordering bot, Amazon Lex might ask a user "What type of crust would you like?" If the user's response is not one of the expected responses (for example, "thin crust, "deep dish," etc.), Amazon Lex tries to elicit a correct response a few more times. </p>
+    /// <p>For example, in a pizza ordering application, <code>OrderPizza</code> might be one of the intents. This intent might require the <code>CrustType</code> slot. You specify the <code>valueElicitationPrompt</code> field when you create the <code>CrustType</code> slot.</p>
+    /// <p>If you have defined a fallback intent the cancel statement will not be sent to the user, the fallback intent is used instead. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html"> AMAZON.FallbackIntent</a>.</p>
+    pub fn get_abort_statement(&self) -> &::std::option::Option<crate::types::Statement> {
+        &self.abort_statement
+    }
     /// <p>The maximum time in seconds that Amazon Lex retains the data gathered in a conversation.</p>
     /// <p>A user interaction session remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
     /// <p>For example, suppose that a user chooses the OrderPizza intent, but gets sidetracked halfway through placing an order. If the user doesn't complete the order within the specified time, Amazon Lex discards the slot information that it gathered, and the user must start over.</p>
@@ -417,6 +481,14 @@ impl PutBotInputBuilder {
         self.idle_session_ttl_in_seconds = input;
         self
     }
+    /// <p>The maximum time in seconds that Amazon Lex retains the data gathered in a conversation.</p>
+    /// <p>A user interaction session remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
+    /// <p>For example, suppose that a user chooses the OrderPizza intent, but gets sidetracked halfway through placing an order. If the user doesn't complete the order within the specified time, Amazon Lex discards the slot information that it gathered, and the user must start over.</p>
+    /// <p>If you don't include the <code>idleSessionTTLInSeconds</code> element in a <code>PutBot</code> operation request, Amazon Lex uses the default value. This is also true if the request replaces an existing bot.</p>
+    /// <p>The default is 300 seconds (5 minutes).</p>
+    pub fn get_idle_session_ttl_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.idle_session_ttl_in_seconds
+    }
     /// <p>The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Voices in Amazon Polly</a> in the <i>Amazon Polly Developer Guide</i>.</p>
     pub fn voice_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_id = ::std::option::Option::Some(input.into());
@@ -426,6 +498,10 @@ impl PutBotInputBuilder {
     pub fn set_voice_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.voice_id = input;
         self
+    }
+    /// <p>The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Voices in Amazon Polly</a> in the <i>Amazon Polly Developer Guide</i>.</p>
+    pub fn get_voice_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_id
     }
     /// <p>Identifies a specific revision of the <code>$LATEST</code> version.</p>
     /// <p>When you create a new bot, leave the <code>checksum</code> field blank. If you specify a checksum you get a <code>BadRequestException</code> exception.</p>
@@ -440,6 +516,12 @@ impl PutBotInputBuilder {
     pub fn set_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.checksum = input;
         self
+    }
+    /// <p>Identifies a specific revision of the <code>$LATEST</code> version.</p>
+    /// <p>When you create a new bot, leave the <code>checksum</code> field blank. If you specify a checksum you get a <code>BadRequestException</code> exception.</p>
+    /// <p>When you want to update a bot, set the <code>checksum</code> field to the checksum of the most recent revision of the <code>$LATEST</code> version. If you don't specify the <code> checksum</code> field, or if the checksum does not match the <code>$LATEST</code> version, you get a <code>PreconditionFailedException</code> exception.</p>
+    pub fn get_checksum(&self) -> &::std::option::Option<::std::string::String> {
+        &self.checksum
     }
     /// <p>If you set the <code>processBehavior</code> element to <code>BUILD</code>, Amazon Lex builds the bot so that it can be run. If you set the element to <code>SAVE</code> Amazon Lex saves the bot, but doesn't build it. </p>
     /// <p>If you don't specify this value, the default value is <code>BUILD</code>.</p>
@@ -456,6 +538,11 @@ impl PutBotInputBuilder {
         self.process_behavior = input;
         self
     }
+    /// <p>If you set the <code>processBehavior</code> element to <code>BUILD</code>, Amazon Lex builds the bot so that it can be run. If you set the element to <code>SAVE</code> Amazon Lex saves the bot, but doesn't build it. </p>
+    /// <p>If you don't specify this value, the default value is <code>BUILD</code>.</p>
+    pub fn get_process_behavior(&self) -> &::std::option::Option<crate::types::ProcessBehavior> {
+        &self.process_behavior
+    }
     /// <p> Specifies the target locale for the bot. Any intent used in the bot must be compatible with the locale of the bot. </p>
     /// <p>The default is <code>en-US</code>.</p>
     pub fn locale(mut self, input: crate::types::Locale) -> Self {
@@ -467,6 +554,11 @@ impl PutBotInputBuilder {
     pub fn set_locale(mut self, input: ::std::option::Option<crate::types::Locale>) -> Self {
         self.locale = input;
         self
+    }
+    /// <p> Specifies the target locale for the bot. Any intent used in the bot must be compatible with the locale of the bot. </p>
+    /// <p>The default is <code>en-US</code>.</p>
+    pub fn get_locale(&self) -> &::std::option::Option<crate::types::Locale> {
+        &self.locale
     }
     /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p>
     /// <p>If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a> </p>
@@ -480,6 +572,11 @@ impl PutBotInputBuilder {
         self.child_directed = input;
         self
     }
+    /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p>
+    /// <p>If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a> </p>
+    pub fn get_child_directed(&self) -> &::std::option::Option<bool> {
+        &self.child_directed
+    }
     /// <p>When set to <code>true</code> user utterances are sent to Amazon Comprehend for sentiment analysis. If you don't specify <code>detectSentiment</code>, the default is <code>false</code>.</p>
     pub fn detect_sentiment(mut self, input: bool) -> Self {
         self.detect_sentiment = ::std::option::Option::Some(input);
@@ -490,6 +587,10 @@ impl PutBotInputBuilder {
         self.detect_sentiment = input;
         self
     }
+    /// <p>When set to <code>true</code> user utterances are sent to Amazon Comprehend for sentiment analysis. If you don't specify <code>detectSentiment</code>, the default is <code>false</code>.</p>
+    pub fn get_detect_sentiment(&self) -> &::std::option::Option<bool> {
+        &self.detect_sentiment
+    }
     /// <p>When set to <code>true</code> a new numbered version of the bot is created. This is the same as calling the <code>CreateBotVersion</code> operation. If you don't specify <code>createVersion</code>, the default is <code>false</code>.</p>
     pub fn create_version(mut self, input: bool) -> Self {
         self.create_version = ::std::option::Option::Some(input);
@@ -499,6 +600,10 @@ impl PutBotInputBuilder {
     pub fn set_create_version(mut self, input: ::std::option::Option<bool>) -> Self {
         self.create_version = input;
         self
+    }
+    /// <p>When set to <code>true</code> a new numbered version of the bot is created. This is the same as calling the <code>CreateBotVersion</code> operation. If you don't specify <code>createVersion</code>, the default is <code>false</code>.</p>
+    pub fn get_create_version(&self) -> &::std::option::Option<bool> {
+        &self.create_version
     }
     /// Appends an item to `tags`.
     ///
@@ -518,6 +623,10 @@ impl PutBotInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of tags to add to the bot. You can only add tags when you create a bot, you can't use the <code>PutBot</code> operation to update the tags on a bot. To update tags, use the <code>TagResource</code> operation.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`PutBotInput`](crate::operation::put_bot::PutBotInput).
     pub fn build(

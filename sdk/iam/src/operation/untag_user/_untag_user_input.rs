@@ -51,6 +51,11 @@ impl UntagUserInputBuilder {
         self.user_name = input;
         self
     }
+    /// <p>The name of the IAM user from which you want to remove tags.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
+    }
     /// Appends an item to `tag_keys`.
     ///
     /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
@@ -69,6 +74,10 @@ impl UntagUserInputBuilder {
     ) -> Self {
         self.tag_keys = input;
         self
+    }
+    /// <p>A list of key names as a simple array of strings. The tags with matching keys are removed from the specified user.</p>
+    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tag_keys
     }
     /// Consumes the builder and constructs a [`UntagUserInput`](crate::operation::untag_user::UntagUserInput).
     pub fn build(

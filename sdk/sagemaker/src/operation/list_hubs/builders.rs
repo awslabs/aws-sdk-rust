@@ -38,6 +38,10 @@ impl ListHubsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListHubs as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_hubs::builders::ListHubsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl ListHubsFluentBuilder {
         self.inner = self.inner.set_name_contains(input);
         self
     }
+    /// <p>Only list hubs with names that contain the specified string.</p>
+    pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name_contains()
+    }
     /// <p>Only list hubs that were created before the time specified.</p>
     pub fn creation_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.creation_time_before(input);
@@ -138,6 +146,10 @@ impl ListHubsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
+    }
+    /// <p>Only list hubs that were created before the time specified.</p>
+    pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_creation_time_before()
     }
     /// <p>Only list hubs that were created after the time specified.</p>
     pub fn creation_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -152,6 +164,10 @@ impl ListHubsFluentBuilder {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
+    /// <p>Only list hubs that were created after the time specified.</p>
+    pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_creation_time_after()
+    }
     /// <p>Only list hubs that were last modified before the time specified.</p>
     pub fn last_modified_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.last_modified_time_before(input);
@@ -164,6 +180,12 @@ impl ListHubsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_last_modified_time_before(input);
         self
+    }
+    /// <p>Only list hubs that were last modified before the time specified.</p>
+    pub fn get_last_modified_time_before(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_last_modified_time_before()
     }
     /// <p>Only list hubs that were last modified after the time specified.</p>
     pub fn last_modified_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -178,6 +200,12 @@ impl ListHubsFluentBuilder {
         self.inner = self.inner.set_last_modified_time_after(input);
         self
     }
+    /// <p>Only list hubs that were last modified after the time specified.</p>
+    pub fn get_last_modified_time_after(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_last_modified_time_after()
+    }
     /// <p>Sort hubs by either name or creation time.</p>
     pub fn sort_by(mut self, input: crate::types::HubSortBy) -> Self {
         self.inner = self.inner.sort_by(input);
@@ -187,6 +215,10 @@ impl ListHubsFluentBuilder {
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::HubSortBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
+    }
+    /// <p>Sort hubs by either name or creation time.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::HubSortBy> {
+        self.inner.get_sort_by()
     }
     /// <p>Sort hubs by ascending or descending order.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
@@ -198,6 +230,10 @@ impl ListHubsFluentBuilder {
         self.inner = self.inner.set_sort_order(input);
         self
     }
+    /// <p>Sort hubs by ascending or descending order.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        self.inner.get_sort_order()
+    }
     /// <p>The maximum number of hubs to list.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -208,6 +244,10 @@ impl ListHubsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of hubs to list.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>If the response to a previous <code>ListHubs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of hubs, use the token in the next request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -217,5 +257,9 @@ impl ListHubsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>If the response to a previous <code>ListHubs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of hubs, use the token in the next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

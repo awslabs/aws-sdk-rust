@@ -54,6 +54,10 @@ impl ListFuotaTasksOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `fuota_task_list`.
     ///
     /// To override the contents of this collection use [`set_fuota_task_list`](Self::set_fuota_task_list).
@@ -72,6 +76,12 @@ impl ListFuotaTasksOutputBuilder {
     ) -> Self {
         self.fuota_task_list = input;
         self
+    }
+    /// <p>Lists the FUOTA tasks registered to your AWS account.</p>
+    pub fn get_fuota_task_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FuotaTask>> {
+        &self.fuota_task_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

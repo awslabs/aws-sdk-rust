@@ -36,6 +36,10 @@ impl DescribeEnvironmentManagedActionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeEnvironmentManagedActions as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_environment_managed_actions::builders::DescribeEnvironmentManagedActionsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl DescribeEnvironmentManagedActionsFluentBuilder {
         self.inner = self.inner.set_environment_name(input);
         self
     }
+    /// <p>The name of the target environment.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_name()
+    }
     /// <p>The environment ID of the target environment.</p>
     pub fn environment_id(
         mut self,
@@ -122,6 +130,10 @@ impl DescribeEnvironmentManagedActionsFluentBuilder {
         self.inner = self.inner.set_environment_id(input);
         self
     }
+    /// <p>The environment ID of the target environment.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_id()
+    }
     /// <p>To show only actions with a particular status, specify a status.</p>
     pub fn status(mut self, input: crate::types::ActionStatus) -> Self {
         self.inner = self.inner.status(input);
@@ -131,5 +143,9 @@ impl DescribeEnvironmentManagedActionsFluentBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ActionStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
+    }
+    /// <p>To show only actions with a particular status, specify a status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ActionStatus> {
+        self.inner.get_status()
     }
 }

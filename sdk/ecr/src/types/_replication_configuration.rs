@@ -49,6 +49,12 @@ impl ReplicationConfigurationBuilder {
         self.rules = input;
         self
     }
+    /// <p>An array of objects representing the replication destinations and repository filters for a replication configuration.</p>
+    pub fn get_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationRule>> {
+        &self.rules
+    }
     /// Consumes the builder and constructs a [`ReplicationConfiguration`](crate::types::ReplicationConfiguration).
     pub fn build(self) -> crate::types::ReplicationConfiguration {
         crate::types::ReplicationConfiguration { rules: self.rules }

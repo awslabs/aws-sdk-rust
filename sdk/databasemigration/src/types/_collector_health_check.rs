@@ -67,6 +67,10 @@ impl CollectorHealthCheckBuilder {
         self.collector_status = input;
         self
     }
+    /// <p>The status of the Fleet Advisor collector.</p>
+    pub fn get_collector_status(&self) -> &::std::option::Option<crate::types::CollectorStatus> {
+        &self.collector_status
+    }
     /// <p>Whether the local collector can access its Amazon S3 bucket.</p>
     pub fn local_collector_s3_access(mut self, input: bool) -> Self {
         self.local_collector_s3_access = ::std::option::Option::Some(input);
@@ -77,6 +81,10 @@ impl CollectorHealthCheckBuilder {
         self.local_collector_s3_access = input;
         self
     }
+    /// <p>Whether the local collector can access its Amazon S3 bucket.</p>
+    pub fn get_local_collector_s3_access(&self) -> &::std::option::Option<bool> {
+        &self.local_collector_s3_access
+    }
     /// <p>Whether the web collector can access its Amazon S3 bucket.</p>
     pub fn web_collector_s3_access(mut self, input: bool) -> Self {
         self.web_collector_s3_access = ::std::option::Option::Some(input);
@@ -86,6 +94,10 @@ impl CollectorHealthCheckBuilder {
     pub fn set_web_collector_s3_access(mut self, input: ::std::option::Option<bool>) -> Self {
         self.web_collector_s3_access = input;
         self
+    }
+    /// <p>Whether the web collector can access its Amazon S3 bucket.</p>
+    pub fn get_web_collector_s3_access(&self) -> &::std::option::Option<bool> {
+        &self.web_collector_s3_access
     }
     /// <p>Whether the role that you provided when creating the Fleet Advisor collector has sufficient permissions to access the Fleet Advisor web collector.</p>
     pub fn web_collector_granted_role_based_access(mut self, input: bool) -> Self {
@@ -99,6 +111,10 @@ impl CollectorHealthCheckBuilder {
     ) -> Self {
         self.web_collector_granted_role_based_access = input;
         self
+    }
+    /// <p>Whether the role that you provided when creating the Fleet Advisor collector has sufficient permissions to access the Fleet Advisor web collector.</p>
+    pub fn get_web_collector_granted_role_based_access(&self) -> &::std::option::Option<bool> {
+        &self.web_collector_granted_role_based_access
     }
     /// Consumes the builder and constructs a [`CollectorHealthCheck`](crate::types::CollectorHealthCheck).
     pub fn build(self) -> crate::types::CollectorHealthCheck {

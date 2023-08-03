@@ -54,6 +54,10 @@ impl VpcSecurityGroupMembershipBuilder {
         self.vpc_security_group_id = input;
         self
     }
+    /// <p>The unique identifier of the VPC security group.</p>
+    pub fn get_vpc_security_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_security_group_id
+    }
     /// <p>The status of the VPC security group.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl VpcSecurityGroupMembershipBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the VPC security group.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`VpcSecurityGroupMembership`](crate::types::VpcSecurityGroupMembership).
     pub fn build(self) -> crate::types::VpcSecurityGroupMembership {

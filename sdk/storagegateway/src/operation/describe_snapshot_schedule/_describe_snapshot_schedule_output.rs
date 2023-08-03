@@ -88,6 +88,10 @@ impl DescribeSnapshotScheduleOutputBuilder {
         self.volume_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the volume that was specified in the request.</p>
+    pub fn get_volume_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_arn
+    }
     /// <p>The hour of the day at which the snapshot schedule begins represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day is in the time zone of the gateway.</p>
     pub fn start_at(mut self, input: i32) -> Self {
         self.start_at = ::std::option::Option::Some(input);
@@ -97,6 +101,10 @@ impl DescribeSnapshotScheduleOutputBuilder {
     pub fn set_start_at(mut self, input: ::std::option::Option<i32>) -> Self {
         self.start_at = input;
         self
+    }
+    /// <p>The hour of the day at which the snapshot schedule begins represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day is in the time zone of the gateway.</p>
+    pub fn get_start_at(&self) -> &::std::option::Option<i32> {
+        &self.start_at
     }
     /// <p>The number of hours between snapshots.</p>
     pub fn recurrence_in_hours(mut self, input: i32) -> Self {
@@ -108,6 +116,10 @@ impl DescribeSnapshotScheduleOutputBuilder {
         self.recurrence_in_hours = input;
         self
     }
+    /// <p>The number of hours between snapshots.</p>
+    pub fn get_recurrence_in_hours(&self) -> &::std::option::Option<i32> {
+        &self.recurrence_in_hours
+    }
     /// <p>The snapshot description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -118,6 +130,10 @@ impl DescribeSnapshotScheduleOutputBuilder {
         self.description = input;
         self
     }
+    /// <p>The snapshot description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>A value that indicates the time zone of the gateway.</p>
     pub fn timezone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timezone = ::std::option::Option::Some(input.into());
@@ -127,6 +143,10 @@ impl DescribeSnapshotScheduleOutputBuilder {
     pub fn set_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timezone = input;
         self
+    }
+    /// <p>A value that indicates the time zone of the gateway.</p>
+    pub fn get_timezone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timezone
     }
     /// Appends an item to `tags`.
     ///
@@ -146,6 +166,10 @@ impl DescribeSnapshotScheduleOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of up to 50 tags assigned to the snapshot schedule, sorted alphabetically by key name. Each tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the <code>ListTagsForResource</code> API operation.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

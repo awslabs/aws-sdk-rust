@@ -40,6 +40,10 @@ impl MultiplexSettingsSummaryBuilder {
         self.transport_stream_bitrate = input;
         self
     }
+    /// Transport stream bit rate.
+    pub fn get_transport_stream_bitrate(&self) -> &::std::option::Option<i32> {
+        &self.transport_stream_bitrate
+    }
     /// Consumes the builder and constructs a [`MultiplexSettingsSummary`](crate::types::MultiplexSettingsSummary).
     pub fn build(self) -> crate::types::MultiplexSettingsSummary {
         crate::types::MultiplexSettingsSummary {

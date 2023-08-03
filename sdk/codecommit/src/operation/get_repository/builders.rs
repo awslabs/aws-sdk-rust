@@ -38,6 +38,12 @@ impl GetRepositoryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetRepository as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_repository::builders::GetRepositoryInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +131,9 @@ impl GetRepositoryFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
+    }
+    /// <p>The name of the repository to get information about.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_repository_name()
     }
 }

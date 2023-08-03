@@ -68,6 +68,10 @@ impl UpdateDomainNameserversInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The name of the domain that you want to change name servers for.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The authorization key for .fi domains</p>
     #[deprecated]
     pub fn fi_auth_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -79,6 +83,11 @@ impl UpdateDomainNameserversInputBuilder {
     pub fn set_fi_auth_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fi_auth_key = input;
         self
+    }
+    /// <p>The authorization key for .fi domains</p>
+    #[deprecated]
+    pub fn get_fi_auth_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fi_auth_key
     }
     /// Appends an item to `nameservers`.
     ///
@@ -98,6 +107,12 @@ impl UpdateDomainNameserversInputBuilder {
     ) -> Self {
         self.nameservers = input;
         self
+    }
+    /// <p>A list of new name servers for the domain.</p>
+    pub fn get_nameservers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Nameserver>> {
+        &self.nameservers
     }
     /// Consumes the builder and constructs a [`UpdateDomainNameserversInput`](crate::operation::update_domain_nameservers::UpdateDomainNameserversInput).
     pub fn build(

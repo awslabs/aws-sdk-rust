@@ -86,6 +86,10 @@ impl ApplicationDateRangeKpiResponseBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The unique identifier for the application that the metric applies to.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The last date and time of the date range that was used to filter the query results, in extended ISO 8601 format. The date range is inclusive.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -99,6 +103,10 @@ impl ApplicationDateRangeKpiResponseBuilder {
         self.end_time = input;
         self
     }
+    /// <p>The last date and time of the date range that was used to filter the query results, in extended ISO 8601 format. The date range is inclusive.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, that the data was retrieved for. This value describes the associated metric and consists of two or more terms, which are comprised of lowercase alphanumeric characters, separated by a hyphen. For a list of possible values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
     pub fn kpi_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kpi_name = ::std::option::Option::Some(input.into());
@@ -108,6 +116,10 @@ impl ApplicationDateRangeKpiResponseBuilder {
     pub fn set_kpi_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kpi_name = input;
         self
+    }
+    /// <p>The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, that the data was retrieved for. This value describes the associated metric and consists of two or more terms, which are comprised of lowercase alphanumeric characters, separated by a hyphen. For a list of possible values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
+    pub fn get_kpi_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kpi_name
     }
     /// <p>An array of objects that contains the results of the query. Each object contains the value for the metric and metadata about that value.</p>
     pub fn kpi_result(mut self, input: crate::types::BaseKpiResult) -> Self {
@@ -122,6 +134,10 @@ impl ApplicationDateRangeKpiResponseBuilder {
         self.kpi_result = input;
         self
     }
+    /// <p>An array of objects that contains the results of the query. Each object contains the value for the metric and metadata about that value.</p>
+    pub fn get_kpi_result(&self) -> &::std::option::Option<crate::types::BaseKpiResult> {
+        &self.kpi_result
+    }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null for the Application Metrics resource because the resource returns all results in a single page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -131,6 +147,10 @@ impl ApplicationDateRangeKpiResponseBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null for the Application Metrics resource because the resource returns all results in a single page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The first date and time of the date range that was used to filter the query results, in extended ISO 8601 format. The date range is inclusive.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -144,6 +164,10 @@ impl ApplicationDateRangeKpiResponseBuilder {
     ) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>The first date and time of the date range that was used to filter the query results, in extended ISO 8601 format. The date range is inclusive.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// Consumes the builder and constructs a [`ApplicationDateRangeKpiResponse`](crate::types::ApplicationDateRangeKpiResponse).
     pub fn build(self) -> crate::types::ApplicationDateRangeKpiResponse {

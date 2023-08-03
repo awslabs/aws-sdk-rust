@@ -36,6 +36,12 @@ impl CreateJobForDevicesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateJobForDevices as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_job_for_devices::builders::CreateJobForDevicesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl CreateJobForDevicesFluentBuilder {
         self.inner = self.inner.set_device_ids(input);
         self
     }
+    /// <p>ID of target device.</p>
+    pub fn get_device_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_device_ids()
+    }
     /// <p>Configuration settings for a software update job.</p>
     pub fn device_job_config(mut self, input: crate::types::DeviceJobConfig) -> Self {
         self.inner = self.inner.device_job_config(input);
@@ -146,6 +156,10 @@ impl CreateJobForDevicesFluentBuilder {
         self.inner = self.inner.set_device_job_config(input);
         self
     }
+    /// <p>Configuration settings for a software update job.</p>
+    pub fn get_device_job_config(&self) -> &::std::option::Option<crate::types::DeviceJobConfig> {
+        self.inner.get_device_job_config()
+    }
     /// <p>The type of job to run.</p>
     pub fn job_type(mut self, input: crate::types::JobType) -> Self {
         self.inner = self.inner.job_type(input);
@@ -155,5 +169,9 @@ impl CreateJobForDevicesFluentBuilder {
     pub fn set_job_type(mut self, input: ::std::option::Option<crate::types::JobType>) -> Self {
         self.inner = self.inner.set_job_type(input);
         self
+    }
+    /// <p>The type of job to run.</p>
+    pub fn get_job_type(&self) -> &::std::option::Option<crate::types::JobType> {
+        self.inner.get_job_type()
     }
 }

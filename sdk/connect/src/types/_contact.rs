@@ -162,6 +162,10 @@ impl ContactBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the contact.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The identifier for the contact.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -171,6 +175,10 @@ impl ContactBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The identifier for the contact.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>If this contact is related to other contacts, this is the ID of the initial contact.</p>
     pub fn initial_contact_id(
@@ -188,6 +196,10 @@ impl ContactBuilder {
         self.initial_contact_id = input;
         self
     }
+    /// <p>If this contact is related to other contacts, this is the ID of the initial contact.</p>
+    pub fn get_initial_contact_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.initial_contact_id
+    }
     /// <p>If this contact is not the first contact, this is the ID of the previous contact.</p>
     pub fn previous_contact_id(
         mut self,
@@ -204,6 +216,10 @@ impl ContactBuilder {
         self.previous_contact_id = input;
         self
     }
+    /// <p>If this contact is not the first contact, this is the ID of the previous contact.</p>
+    pub fn get_previous_contact_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.previous_contact_id
+    }
     /// <p>Indicates how the contact was initiated.</p>
     pub fn initiation_method(mut self, input: crate::types::ContactInitiationMethod) -> Self {
         self.initiation_method = ::std::option::Option::Some(input);
@@ -217,6 +233,12 @@ impl ContactBuilder {
         self.initiation_method = input;
         self
     }
+    /// <p>Indicates how the contact was initiated.</p>
+    pub fn get_initiation_method(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContactInitiationMethod> {
+        &self.initiation_method
+    }
     /// <p>The name of the contact.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -226,6 +248,10 @@ impl ContactBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the contact.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The description of the contact.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -237,6 +263,10 @@ impl ContactBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the contact.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>How the contact reached your contact center.</p>
     pub fn channel(mut self, input: crate::types::Channel) -> Self {
         self.channel = ::std::option::Option::Some(input);
@@ -246,6 +276,10 @@ impl ContactBuilder {
     pub fn set_channel(mut self, input: ::std::option::Option<crate::types::Channel>) -> Self {
         self.channel = input;
         self
+    }
+    /// <p>How the contact reached your contact center.</p>
+    pub fn get_channel(&self) -> &::std::option::Option<crate::types::Channel> {
+        &self.channel
     }
     /// <p>If this contact was queued, this contains information about the queue. </p>
     pub fn queue_info(mut self, input: crate::types::QueueInfo) -> Self {
@@ -257,6 +291,10 @@ impl ContactBuilder {
         self.queue_info = input;
         self
     }
+    /// <p>If this contact was queued, this contains information about the queue. </p>
+    pub fn get_queue_info(&self) -> &::std::option::Option<crate::types::QueueInfo> {
+        &self.queue_info
+    }
     /// <p>Information about the agent who accepted the contact.</p>
     pub fn agent_info(mut self, input: crate::types::AgentInfo) -> Self {
         self.agent_info = ::std::option::Option::Some(input);
@@ -266,6 +304,10 @@ impl ContactBuilder {
     pub fn set_agent_info(mut self, input: ::std::option::Option<crate::types::AgentInfo>) -> Self {
         self.agent_info = input;
         self
+    }
+    /// <p>Information about the agent who accepted the contact.</p>
+    pub fn get_agent_info(&self) -> &::std::option::Option<crate::types::AgentInfo> {
+        &self.agent_info
     }
     /// <p>The date and time this contact was initiated, in UTC time. For <code>INBOUND</code>, this is when the contact arrived. For <code>OUTBOUND</code>, this is when the agent began dialing. For <code>CALLBACK</code>, this is when the callback contact was created. For <code>TRANSFER</code> and <code>QUEUE_TRANSFER</code>, this is when the transfer was initiated. For <code>API</code>, this is when the request arrived. For <code>EXTERNAL_OUTBOUND</code>, this is when the agent started dialing the external participant. For <code>MONITOR</code>, this is when the supervisor started listening to a contact.</p>
     pub fn initiation_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -280,6 +322,10 @@ impl ContactBuilder {
         self.initiation_timestamp = input;
         self
     }
+    /// <p>The date and time this contact was initiated, in UTC time. For <code>INBOUND</code>, this is when the contact arrived. For <code>OUTBOUND</code>, this is when the agent began dialing. For <code>CALLBACK</code>, this is when the callback contact was created. For <code>TRANSFER</code> and <code>QUEUE_TRANSFER</code>, this is when the transfer was initiated. For <code>API</code>, this is when the request arrived. For <code>EXTERNAL_OUTBOUND</code>, this is when the agent started dialing the external participant. For <code>MONITOR</code>, this is when the supervisor started listening to a contact.</p>
+    pub fn get_initiation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.initiation_timestamp
+    }
     /// <p>The timestamp when the customer endpoint disconnected from Amazon Connect.</p>
     pub fn disconnect_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.disconnect_timestamp = ::std::option::Option::Some(input);
@@ -292,6 +338,10 @@ impl ContactBuilder {
     ) -> Self {
         self.disconnect_timestamp = input;
         self
+    }
+    /// <p>The timestamp when the customer endpoint disconnected from Amazon Connect.</p>
+    pub fn get_disconnect_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.disconnect_timestamp
     }
     /// <p>The timestamp when contact was last updated.</p>
     pub fn last_update_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -306,6 +356,12 @@ impl ContactBuilder {
         self.last_update_timestamp = input;
         self
     }
+    /// <p>The timestamp when contact was last updated.</p>
+    pub fn get_last_update_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_update_timestamp
+    }
     /// <p>The timestamp, in Unix epoch time format, at which to start running the inbound flow. </p>
     pub fn scheduled_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.scheduled_timestamp = ::std::option::Option::Some(input);
@@ -318,6 +374,10 @@ impl ContactBuilder {
     ) -> Self {
         self.scheduled_timestamp = input;
         self
+    }
+    /// <p>The timestamp, in Unix epoch time format, at which to start running the inbound flow. </p>
+    pub fn get_scheduled_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.scheduled_timestamp
     }
     /// <p>The contactId that is <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html#relatedcontactid">related</a> to this contact.</p>
     pub fn related_contact_id(
@@ -335,6 +395,10 @@ impl ContactBuilder {
         self.related_contact_id = input;
         self
     }
+    /// <p>The contactId that is <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html#relatedcontactid">related</a> to this contact.</p>
+    pub fn get_related_contact_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.related_contact_id
+    }
     /// <p>Information about Amazon Connect Wisdom.</p>
     pub fn wisdom_info(mut self, input: crate::types::WisdomInfo) -> Self {
         self.wisdom_info = ::std::option::Option::Some(input);
@@ -347,6 +411,10 @@ impl ContactBuilder {
     ) -> Self {
         self.wisdom_info = input;
         self
+    }
+    /// <p>Information about Amazon Connect Wisdom.</p>
+    pub fn get_wisdom_info(&self) -> &::std::option::Option<crate::types::WisdomInfo> {
+        &self.wisdom_info
     }
     /// Consumes the builder and constructs a [`Contact`](crate::types::Contact).
     pub fn build(self) -> crate::types::Contact {

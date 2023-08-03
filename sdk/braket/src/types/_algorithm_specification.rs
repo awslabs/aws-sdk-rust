@@ -51,6 +51,10 @@ impl AlgorithmSpecificationBuilder {
         self.script_mode_config = input;
         self
     }
+    /// <p>Configures the paths to the Python scripts used for entry and training.</p>
+    pub fn get_script_mode_config(&self) -> &::std::option::Option<crate::types::ScriptModeConfig> {
+        &self.script_mode_config
+    }
     /// <p>The container image used to create an Amazon Braket job.</p>
     pub fn container_image(mut self, input: crate::types::ContainerImage) -> Self {
         self.container_image = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl AlgorithmSpecificationBuilder {
     ) -> Self {
         self.container_image = input;
         self
+    }
+    /// <p>The container image used to create an Amazon Braket job.</p>
+    pub fn get_container_image(&self) -> &::std::option::Option<crate::types::ContainerImage> {
+        &self.container_image
     }
     /// Consumes the builder and constructs a [`AlgorithmSpecification`](crate::types::AlgorithmSpecification).
     pub fn build(self) -> crate::types::AlgorithmSpecification {

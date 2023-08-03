@@ -54,6 +54,10 @@ impl RemoveNotificationChannelInputBuilder {
         self.profiling_group_name = input;
         self
     }
+    /// <p>The name of the profiling group we want to change notification configuration for.</p>
+    pub fn get_profiling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profiling_group_name
+    }
     /// <p>The id of the channel that we want to stop receiving notifications.</p>
     pub fn channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_id = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl RemoveNotificationChannelInputBuilder {
     pub fn set_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_id = input;
         self
+    }
+    /// <p>The id of the channel that we want to stop receiving notifications.</p>
+    pub fn get_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_id
     }
     /// Consumes the builder and constructs a [`RemoveNotificationChannelInput`](crate::operation::remove_notification_channel::RemoveNotificationChannelInput).
     pub fn build(

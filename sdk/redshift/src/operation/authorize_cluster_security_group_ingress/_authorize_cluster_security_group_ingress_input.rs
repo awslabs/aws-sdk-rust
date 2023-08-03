@@ -72,6 +72,10 @@ impl AuthorizeClusterSecurityGroupIngressInputBuilder {
         self.cluster_security_group_name = input;
         self
     }
+    /// <p>The name of the security group to which the ingress rule is added.</p>
+    pub fn get_cluster_security_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_security_group_name
+    }
     /// <p>The IP range to be added the Amazon Redshift security group.</p>
     pub fn cidrip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cidrip = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl AuthorizeClusterSecurityGroupIngressInputBuilder {
     pub fn set_cidrip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cidrip = input;
         self
+    }
+    /// <p>The IP range to be added the Amazon Redshift security group.</p>
+    pub fn get_cidrip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidrip
     }
     /// <p>The EC2 security group to be added the Amazon Redshift security group.</p>
     pub fn ec2_security_group_name(
@@ -97,6 +105,10 @@ impl AuthorizeClusterSecurityGroupIngressInputBuilder {
     ) -> Self {
         self.ec2_security_group_name = input;
         self
+    }
+    /// <p>The EC2 security group to be added the Amazon Redshift security group.</p>
+    pub fn get_ec2_security_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ec2_security_group_name
     }
     /// <p>The Amazon Web Services account number of the owner of the security group specified by the <i>EC2SecurityGroupName</i> parameter. The Amazon Web Services Access Key ID is not an acceptable value. </p>
     /// <p>Example: <code>111122223333</code> </p>
@@ -115,6 +127,11 @@ impl AuthorizeClusterSecurityGroupIngressInputBuilder {
     ) -> Self {
         self.ec2_security_group_owner_id = input;
         self
+    }
+    /// <p>The Amazon Web Services account number of the owner of the security group specified by the <i>EC2SecurityGroupName</i> parameter. The Amazon Web Services Access Key ID is not an acceptable value. </p>
+    /// <p>Example: <code>111122223333</code> </p>
+    pub fn get_ec2_security_group_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ec2_security_group_owner_id
     }
     /// Consumes the builder and constructs a [`AuthorizeClusterSecurityGroupIngressInput`](crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressInput, ::aws_smithy_http::operation::error::BuildError>{

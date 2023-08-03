@@ -49,6 +49,10 @@ impl AllowedBuilder {
         self.policies = input;
         self
     }
+    /// <p>A list of policies that allowed the authentication.</p>
+    pub fn get_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Policy>> {
+        &self.policies
+    }
     /// Consumes the builder and constructs a [`Allowed`](crate::types::Allowed).
     pub fn build(self) -> crate::types::Allowed {
         crate::types::Allowed {

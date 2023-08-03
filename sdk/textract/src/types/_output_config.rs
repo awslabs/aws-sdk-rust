@@ -51,6 +51,10 @@ impl OutputConfigBuilder {
         self.s3_bucket = input;
         self
     }
+    /// <p>The name of the bucket your output will go to.</p>
+    pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket
+    }
     /// <p>The prefix of the object key that the output will be saved to. When not enabled, the prefix will be “textract_output".</p>
     pub fn s3_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_prefix = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl OutputConfigBuilder {
     pub fn set_s3_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_prefix = input;
         self
+    }
+    /// <p>The prefix of the object key that the output will be saved to. When not enabled, the prefix will be “textract_output".</p>
+    pub fn get_s3_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_prefix
     }
     /// Consumes the builder and constructs a [`OutputConfig`](crate::types::OutputConfig).
     pub fn build(self) -> crate::types::OutputConfig {

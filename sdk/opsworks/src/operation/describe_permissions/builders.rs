@@ -37,6 +37,12 @@ impl DescribePermissionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribePermissions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_permissions::builders::DescribePermissionsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl DescribePermissionsFluentBuilder {
         self.inner = self.inner.set_iam_user_arn(input);
         self
     }
+    /// <p>The user's IAM ARN. This can also be a federated user's ARN. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
+    pub fn get_iam_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_iam_user_arn()
+    }
     /// <p>The stack ID.</p>
     pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_id(input.into());
@@ -136,5 +146,9 @@ impl DescribePermissionsFluentBuilder {
     pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_id(input);
         self
+    }
+    /// <p>The stack ID.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stack_id()
     }
 }

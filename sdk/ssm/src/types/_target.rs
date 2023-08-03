@@ -96,6 +96,10 @@ impl TargetBuilder {
         self.key = input;
         self
     }
+    /// <p>User-defined criteria for sending commands that target managed nodes that meet the criteria.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -116,6 +120,11 @@ impl TargetBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>User-defined criteria that maps to <code>Key</code>. For example, if you specified <code>tag:ServerRole</code>, you could specify <code>value:WebServer</code> to run a command on instances that include EC2 tags of <code>ServerRole,WebServer</code>. </p>
+    /// <p>Depending on the type of target, the maximum number of values for a key might be lower than the global maximum of 50.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`Target`](crate::types::Target).
     pub fn build(self) -> crate::types::Target {

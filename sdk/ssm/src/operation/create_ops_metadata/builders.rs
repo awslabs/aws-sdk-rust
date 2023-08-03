@@ -36,6 +36,12 @@ impl CreateOpsMetadataFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateOpsMetadata as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_ops_metadata::builders::CreateOpsMetadataInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateOpsMetadataFluentBuilder {
         self.inner = self.inner.set_resource_id(input);
         self
     }
+    /// <p>A resource ID for a new Application Manager application.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_id()
+    }
     /// Adds a key-value pair to `Metadata`.
     ///
     /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
@@ -148,6 +158,14 @@ impl CreateOpsMetadataFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_metadata(input);
         self
+    }
+    /// <p>Metadata for a new Application Manager application. </p>
+    pub fn get_metadata(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>,
+    > {
+        self.inner.get_metadata()
     }
     /// Appends an item to `Tags`.
     ///
@@ -173,5 +191,13 @@ impl CreateOpsMetadataFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for an OpsMetadata object. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an OpsMetadata object to identify an environment or target Amazon Web Services Region. In this case, you could specify the following key-value pairs:</p>
+    /// <ul>
+    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
+    /// <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li>
+    /// </ul>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

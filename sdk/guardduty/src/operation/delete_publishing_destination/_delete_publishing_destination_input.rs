@@ -47,6 +47,10 @@ impl DeletePublishingDestinationInputBuilder {
         self.detector_id = input;
         self
     }
+    /// <p>The unique ID of the detector associated with the publishing destination to delete.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
+    }
     /// <p>The ID of the publishing destination to delete.</p>
     pub fn destination_id(
         mut self,
@@ -62,6 +66,10 @@ impl DeletePublishingDestinationInputBuilder {
     ) -> Self {
         self.destination_id = input;
         self
+    }
+    /// <p>The ID of the publishing destination to delete.</p>
+    pub fn get_destination_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_id
     }
     /// Consumes the builder and constructs a [`DeletePublishingDestinationInput`](crate::operation::delete_publishing_destination::DeletePublishingDestinationInput).
     pub fn build(

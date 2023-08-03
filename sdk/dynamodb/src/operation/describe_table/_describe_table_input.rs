@@ -40,6 +40,10 @@ impl DescribeTableInputBuilder {
         self.table_name = input;
         self
     }
+    /// <p>The name of the table to describe.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
+    }
     /// Consumes the builder and constructs a [`DescribeTableInput`](crate::operation::describe_table::DescribeTableInput).
     pub fn build(
         self,

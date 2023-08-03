@@ -120,6 +120,10 @@ impl CreateUsageLimitOutputBuilder {
         self.usage_limit_id = input;
         self
     }
+    /// <p>The identifier of the usage limit.</p>
+    pub fn get_usage_limit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.usage_limit_id
+    }
     /// <p>The identifier of the cluster with a usage limit.</p>
     pub fn cluster_identifier(
         mut self,
@@ -136,6 +140,10 @@ impl CreateUsageLimitOutputBuilder {
         self.cluster_identifier = input;
         self
     }
+    /// <p>The identifier of the cluster with a usage limit.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_identifier
+    }
     /// <p>The Amazon Redshift feature to which the limit applies.</p>
     pub fn feature_type(mut self, input: crate::types::UsageLimitFeatureType) -> Self {
         self.feature_type = ::std::option::Option::Some(input);
@@ -148,6 +156,10 @@ impl CreateUsageLimitOutputBuilder {
     ) -> Self {
         self.feature_type = input;
         self
+    }
+    /// <p>The Amazon Redshift feature to which the limit applies.</p>
+    pub fn get_feature_type(&self) -> &::std::option::Option<crate::types::UsageLimitFeatureType> {
+        &self.feature_type
     }
     /// <p>The type of limit. Depending on the feature type, this can be based on a time duration or data size.</p>
     pub fn limit_type(mut self, input: crate::types::UsageLimitLimitType) -> Self {
@@ -162,6 +174,10 @@ impl CreateUsageLimitOutputBuilder {
         self.limit_type = input;
         self
     }
+    /// <p>The type of limit. Depending on the feature type, this can be based on a time duration or data size.</p>
+    pub fn get_limit_type(&self) -> &::std::option::Option<crate::types::UsageLimitLimitType> {
+        &self.limit_type
+    }
     /// <p>The limit amount. If time-based, this amount is in minutes. If data-based, this amount is in terabytes (TB).</p>
     pub fn amount(mut self, input: i64) -> Self {
         self.amount = ::std::option::Option::Some(input);
@@ -171,6 +187,10 @@ impl CreateUsageLimitOutputBuilder {
     pub fn set_amount(mut self, input: ::std::option::Option<i64>) -> Self {
         self.amount = input;
         self
+    }
+    /// <p>The limit amount. If time-based, this amount is in minutes. If data-based, this amount is in terabytes (TB).</p>
+    pub fn get_amount(&self) -> &::std::option::Option<i64> {
+        &self.amount
     }
     /// <p>The time period that the amount applies to. A <code>weekly</code> period begins on Sunday. The default is <code>monthly</code>. </p>
     pub fn period(mut self, input: crate::types::UsageLimitPeriod) -> Self {
@@ -184,6 +204,10 @@ impl CreateUsageLimitOutputBuilder {
     ) -> Self {
         self.period = input;
         self
+    }
+    /// <p>The time period that the amount applies to. A <code>weekly</code> period begins on Sunday. The default is <code>monthly</code>. </p>
+    pub fn get_period(&self) -> &::std::option::Option<crate::types::UsageLimitPeriod> {
+        &self.period
     }
     /// <p>The action that Amazon Redshift takes when the limit is reached. Possible values are: </p>
     /// <ul>
@@ -208,6 +232,17 @@ impl CreateUsageLimitOutputBuilder {
         self.breach_action = input;
         self
     }
+    /// <p>The action that Amazon Redshift takes when the limit is reached. Possible values are: </p>
+    /// <ul>
+    /// <li> <p> <b>log</b> - To log an event in a system table. The default is log.</p> </li>
+    /// <li> <p> <b>emit-metric</b> - To emit CloudWatch metrics.</p> </li>
+    /// <li> <p> <b>disable</b> - To disable the feature until the next usage period begins.</p> </li>
+    /// </ul>
+    pub fn get_breach_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::UsageLimitBreachAction> {
+        &self.breach_action
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -226,6 +261,10 @@ impl CreateUsageLimitOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of tag instances.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

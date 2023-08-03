@@ -50,6 +50,10 @@ impl GetDeviceInstanceOutputBuilder {
         self.device_instance = input;
         self
     }
+    /// <p>An object that contains information about your device instance.</p>
+    pub fn get_device_instance(&self) -> &::std::option::Option<crate::types::DeviceInstance> {
+        &self.device_instance
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

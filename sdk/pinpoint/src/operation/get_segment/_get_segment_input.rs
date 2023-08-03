@@ -53,6 +53,10 @@ impl GetSegmentInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The unique identifier for the segment.</p>
     pub fn segment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.segment_id = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl GetSegmentInputBuilder {
     pub fn set_segment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.segment_id = input;
         self
+    }
+    /// <p>The unique identifier for the segment.</p>
+    pub fn get_segment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.segment_id
     }
     /// Consumes the builder and constructs a [`GetSegmentInput`](crate::operation::get_segment::GetSegmentInput).
     pub fn build(

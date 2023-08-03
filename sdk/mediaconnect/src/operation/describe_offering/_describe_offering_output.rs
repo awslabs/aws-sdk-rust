@@ -47,6 +47,10 @@ impl DescribeOfferingOutputBuilder {
         self.offering = input;
         self
     }
+    /// A savings plan that reserves a certain amount of outbound bandwidth usage at a discounted rate each month over a period of time.
+    pub fn get_offering(&self) -> &::std::option::Option<crate::types::Offering> {
+        &self.offering
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

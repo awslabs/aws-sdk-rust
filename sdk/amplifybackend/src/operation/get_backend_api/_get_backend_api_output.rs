@@ -80,6 +80,10 @@ impl GetBackendApiOutputBuilder {
         self.app_id = input;
         self
     }
+    /// <p>The app ID.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// <p>The name of the backend environment.</p>
     pub fn backend_environment_name(
         mut self,
@@ -96,6 +100,10 @@ impl GetBackendApiOutputBuilder {
         self.backend_environment_name = input;
         self
     }
+    /// <p>The name of the backend environment.</p>
+    pub fn get_backend_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backend_environment_name
+    }
     /// <p>If the request fails, this error is returned.</p>
     pub fn error(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error = ::std::option::Option::Some(input.into());
@@ -105,6 +113,10 @@ impl GetBackendApiOutputBuilder {
     pub fn set_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error = input;
         self
+    }
+    /// <p>If the request fails, this error is returned.</p>
+    pub fn get_error(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error
     }
     /// <p>The resource configuration for this response object.</p>
     pub fn resource_config(mut self, input: crate::types::BackendApiResourceConfig) -> Self {
@@ -118,6 +130,12 @@ impl GetBackendApiOutputBuilder {
     ) -> Self {
         self.resource_config = input;
         self
+    }
+    /// <p>The resource configuration for this response object.</p>
+    pub fn get_resource_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::BackendApiResourceConfig> {
+        &self.resource_config
     }
     /// <p>The name of this resource.</p>
     pub fn resource_name(
@@ -134,6 +152,10 @@ impl GetBackendApiOutputBuilder {
     ) -> Self {
         self.resource_name = input;
         self
+    }
+    /// <p>The name of this resource.</p>
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

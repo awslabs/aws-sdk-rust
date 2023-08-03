@@ -41,6 +41,10 @@ impl GetNotebookMetadataInputBuilder {
         self.notebook_id = input;
         self
     }
+    /// <p>The ID of the notebook whose metadata is to be retrieved.</p>
+    pub fn get_notebook_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.notebook_id
+    }
     /// Consumes the builder and constructs a [`GetNotebookMetadataInput`](crate::operation::get_notebook_metadata::GetNotebookMetadataInput).
     pub fn build(
         self,

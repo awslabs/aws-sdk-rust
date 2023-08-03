@@ -54,6 +54,10 @@ impl AuthorizerConfigBuilder {
         self.default_authorizer_name = input;
         self
     }
+    /// <p>The name of the authorization service for a domain configuration.</p>
+    pub fn get_default_authorizer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_authorizer_name
+    }
     /// <p>A Boolean that specifies whether the domain configuration's authorization service can be overridden.</p>
     pub fn allow_authorizer_override(mut self, input: bool) -> Self {
         self.allow_authorizer_override = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl AuthorizerConfigBuilder {
     pub fn set_allow_authorizer_override(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_authorizer_override = input;
         self
+    }
+    /// <p>A Boolean that specifies whether the domain configuration's authorization service can be overridden.</p>
+    pub fn get_allow_authorizer_override(&self) -> &::std::option::Option<bool> {
+        &self.allow_authorizer_override
     }
     /// Consumes the builder and constructs a [`AuthorizerConfig`](crate::types::AuthorizerConfig).
     pub fn build(self) -> crate::types::AuthorizerConfig {

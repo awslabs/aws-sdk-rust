@@ -83,6 +83,12 @@ impl ListComplianceItemsInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>One or more compliance filters. Use a filter to return a more specific list of results.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComplianceStringFilter>> {
+        &self.filters
+    }
     /// Appends an item to `resource_ids`.
     ///
     /// To override the contents of this collection use [`set_resource_ids`](Self::set_resource_ids).
@@ -101,6 +107,12 @@ impl ListComplianceItemsInputBuilder {
     ) -> Self {
         self.resource_ids = input;
         self
+    }
+    /// <p>The ID for the resources from which to get compliance information. Currently, you can only specify one resource ID.</p>
+    pub fn get_resource_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resource_ids
     }
     /// Appends an item to `resource_types`.
     ///
@@ -124,6 +136,12 @@ impl ListComplianceItemsInputBuilder {
         self.resource_types = input;
         self
     }
+    /// <p>The type of resource from which to get compliance information. Currently, the only supported resource type is <code>ManagedInstance</code>.</p>
+    pub fn get_resource_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resource_types
+    }
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -134,6 +152,10 @@ impl ListComplianceItemsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token to start the list. Use this token to get the next set of results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -143,6 +165,10 @@ impl ListComplianceItemsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListComplianceItemsInput`](crate::operation::list_compliance_items::ListComplianceItemsInput).
     pub fn build(

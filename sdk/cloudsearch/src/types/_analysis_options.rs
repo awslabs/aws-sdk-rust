@@ -74,6 +74,10 @@ impl AnalysisOptionsBuilder {
         self.synonyms = input;
         self
     }
+    /// <p>A JSON object that defines synonym groups and aliases. A synonym group is an array of arrays, where each sub-array is a group of terms where each term in the group is considered a synonym of every other term in the group. The aliases value is an object that contains a collection of string:value pairs where the string specifies a term and the array of values specifies each of the aliases for that term. An alias is considered a synonym of the specified term, but the term is not considered a synonym of the alias. For more information about specifying synonyms, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html#synonyms">Synonyms</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
+    pub fn get_synonyms(&self) -> &::std::option::Option<::std::string::String> {
+        &self.synonyms
+    }
     /// <p>A JSON array of terms to ignore during indexing and searching. For example, <code>["a", "an", "the", "of"]</code>. The stopwords dictionary must explicitly list each word you want to ignore. Wildcards and regular expressions are not supported. </p>
     pub fn stopwords(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stopwords = ::std::option::Option::Some(input.into());
@@ -83,6 +87,10 @@ impl AnalysisOptionsBuilder {
     pub fn set_stopwords(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stopwords = input;
         self
+    }
+    /// <p>A JSON array of terms to ignore during indexing and searching. For example, <code>["a", "an", "the", "of"]</code>. The stopwords dictionary must explicitly list each word you want to ignore. Wildcards and regular expressions are not supported. </p>
+    pub fn get_stopwords(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stopwords
     }
     /// <p>A JSON object that contains a collection of string:value pairs that each map a term to its stem. For example, <code>{"term1": "stem1", "term2": "stem2", "term3": "stem3"}</code>. The stemming dictionary is applied in addition to any algorithmic stemming. This enables you to override the results of the algorithmic stemming to correct specific cases of overstemming or understemming. The maximum size of a stemming dictionary is 500 KB.</p>
     pub fn stemming_dictionary(
@@ -100,6 +108,10 @@ impl AnalysisOptionsBuilder {
         self.stemming_dictionary = input;
         self
     }
+    /// <p>A JSON object that contains a collection of string:value pairs that each map a term to its stem. For example, <code>{"term1": "stem1", "term2": "stem2", "term3": "stem3"}</code>. The stemming dictionary is applied in addition to any algorithmic stemming. This enables you to override the results of the algorithmic stemming to correct specific cases of overstemming or understemming. The maximum size of a stemming dictionary is 500 KB.</p>
+    pub fn get_stemming_dictionary(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stemming_dictionary
+    }
     /// <p>A JSON array that contains a collection of terms, tokens, readings and part of speech for Japanese Tokenizaiton. The Japanese tokenization dictionary enables you to override the default tokenization for selected terms. This is only valid for Japanese language fields.</p>
     pub fn japanese_tokenization_dictionary(
         mut self,
@@ -116,6 +128,12 @@ impl AnalysisOptionsBuilder {
         self.japanese_tokenization_dictionary = input;
         self
     }
+    /// <p>A JSON array that contains a collection of terms, tokens, readings and part of speech for Japanese Tokenizaiton. The Japanese tokenization dictionary enables you to override the default tokenization for selected terms. This is only valid for Japanese language fields.</p>
+    pub fn get_japanese_tokenization_dictionary(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.japanese_tokenization_dictionary
+    }
     /// <p>The level of algorithmic stemming to perform: <code>none</code>, <code>minimal</code>, <code>light</code>, or <code>full</code>. The available levels vary depending on the language. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/text-processing.html#text-processing-settings" target="_blank">Language Specific Text Processing Settings</a> in the <i>Amazon CloudSearch Developer Guide</i> </p>
     pub fn algorithmic_stemming(mut self, input: crate::types::AlgorithmicStemming) -> Self {
         self.algorithmic_stemming = ::std::option::Option::Some(input);
@@ -128,6 +146,12 @@ impl AnalysisOptionsBuilder {
     ) -> Self {
         self.algorithmic_stemming = input;
         self
+    }
+    /// <p>The level of algorithmic stemming to perform: <code>none</code>, <code>minimal</code>, <code>light</code>, or <code>full</code>. The available levels vary depending on the language. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/text-processing.html#text-processing-settings" target="_blank">Language Specific Text Processing Settings</a> in the <i>Amazon CloudSearch Developer Guide</i> </p>
+    pub fn get_algorithmic_stemming(
+        &self,
+    ) -> &::std::option::Option<crate::types::AlgorithmicStemming> {
+        &self.algorithmic_stemming
     }
     /// Consumes the builder and constructs a [`AnalysisOptions`](crate::types::AnalysisOptions).
     pub fn build(self) -> crate::types::AnalysisOptions {

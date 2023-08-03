@@ -56,6 +56,10 @@ impl StateBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of Amazon Inspector for the account.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.status
+    }
     /// <p>The error code explaining why the account failed to enable Amazon Inspector.</p>
     pub fn error_code(mut self, input: crate::types::ErrorCode) -> Self {
         self.error_code = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl StateBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::ErrorCode>) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>The error code explaining why the account failed to enable Amazon Inspector.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<crate::types::ErrorCode> {
+        &self.error_code
     }
     /// <p>The error message received when the account failed to enable Amazon Inspector.</p>
     pub fn error_message(
@@ -81,6 +89,10 @@ impl StateBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>The error message received when the account failed to enable Amazon Inspector.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`State`](crate::types::State).
     pub fn build(self) -> crate::types::State {

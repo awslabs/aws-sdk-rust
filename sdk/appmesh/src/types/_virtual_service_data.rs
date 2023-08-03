@@ -72,6 +72,10 @@ impl VirtualServiceDataBuilder {
         self.mesh_name = input;
         self
     }
+    /// <p>The name of the service mesh that the virtual service resides in.</p>
+    pub fn get_mesh_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mesh_name
+    }
     /// <p>The name of the virtual service.</p>
     pub fn virtual_service_name(
         mut self,
@@ -88,6 +92,10 @@ impl VirtualServiceDataBuilder {
         self.virtual_service_name = input;
         self
     }
+    /// <p>The name of the virtual service.</p>
+    pub fn get_virtual_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_service_name
+    }
     /// <p>The specifications of the virtual service.</p>
     pub fn spec(mut self, input: crate::types::VirtualServiceSpec) -> Self {
         self.spec = ::std::option::Option::Some(input);
@@ -100,6 +108,10 @@ impl VirtualServiceDataBuilder {
     ) -> Self {
         self.spec = input;
         self
+    }
+    /// <p>The specifications of the virtual service.</p>
+    pub fn get_spec(&self) -> &::std::option::Option<crate::types::VirtualServiceSpec> {
+        &self.spec
     }
     /// <p>An object that represents metadata for a resource.</p>
     pub fn metadata(mut self, input: crate::types::ResourceMetadata) -> Self {
@@ -114,6 +126,10 @@ impl VirtualServiceDataBuilder {
         self.metadata = input;
         self
     }
+    /// <p>An object that represents metadata for a resource.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<crate::types::ResourceMetadata> {
+        &self.metadata
+    }
     /// <p>The current status of the virtual service.</p>
     pub fn status(mut self, input: crate::types::VirtualServiceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -126,6 +142,10 @@ impl VirtualServiceDataBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the virtual service.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::VirtualServiceStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`VirtualServiceData`](crate::types::VirtualServiceData).
     pub fn build(self) -> crate::types::VirtualServiceData {

@@ -69,6 +69,10 @@ impl CreateUserGroupInputBuilder {
         self.user_group_id = input;
         self
     }
+    /// <p>The ID of the user group.</p>
+    pub fn get_user_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_group_id
+    }
     /// <p>The current supported value is Redis. </p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
@@ -78,6 +82,10 @@ impl CreateUserGroupInputBuilder {
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
         self
+    }
+    /// <p>The current supported value is Redis. </p>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine
     }
     /// Appends an item to `user_ids`.
     ///
@@ -98,6 +106,10 @@ impl CreateUserGroupInputBuilder {
         self.user_ids = input;
         self
     }
+    /// <p>The list of user IDs that belong to the user group.</p>
+    pub fn get_user_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.user_ids
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -116,6 +128,10 @@ impl CreateUserGroupInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateUserGroupInput`](crate::operation::create_user_group::CreateUserGroupInput).
     pub fn build(

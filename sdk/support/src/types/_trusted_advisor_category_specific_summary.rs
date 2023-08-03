@@ -49,6 +49,12 @@ impl TrustedAdvisorCategorySpecificSummaryBuilder {
         self.cost_optimizing = input;
         self
     }
+    /// <p>The summary information about cost savings for a Trusted Advisor check that is in the Cost Optimizing category.</p>
+    pub fn get_cost_optimizing(
+        &self,
+    ) -> &::std::option::Option<crate::types::TrustedAdvisorCostOptimizingSummary> {
+        &self.cost_optimizing
+    }
     /// Consumes the builder and constructs a [`TrustedAdvisorCategorySpecificSummary`](crate::types::TrustedAdvisorCategorySpecificSummary).
     pub fn build(self) -> crate::types::TrustedAdvisorCategorySpecificSummary {
         crate::types::TrustedAdvisorCategorySpecificSummary {

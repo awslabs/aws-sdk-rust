@@ -109,6 +109,12 @@ impl GridViewConfigurationBuilder {
         self.content_share_layout = input;
         self
     }
+    /// <p>Defines the layout of the video tiles when content sharing is enabled.</p>
+    pub fn get_content_share_layout(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContentShareLayoutOption> {
+        &self.content_share_layout
+    }
     /// <p>Defines the configuration options for a presenter only video tile.</p>
     pub fn presenter_only_configuration(
         mut self,
@@ -124,6 +130,12 @@ impl GridViewConfigurationBuilder {
     ) -> Self {
         self.presenter_only_configuration = input;
         self
+    }
+    /// <p>Defines the configuration options for a presenter only video tile.</p>
+    pub fn get_presenter_only_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::PresenterOnlyConfiguration> {
+        &self.presenter_only_configuration
     }
     /// <p>The configuration settings for an <code>ActiveSpeakerOnly</code> video tile.</p>
     pub fn active_speaker_only_configuration(
@@ -141,6 +153,12 @@ impl GridViewConfigurationBuilder {
         self.active_speaker_only_configuration = input;
         self
     }
+    /// <p>The configuration settings for an <code>ActiveSpeakerOnly</code> video tile.</p>
+    pub fn get_active_speaker_only_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ActiveSpeakerOnlyConfiguration> {
+        &self.active_speaker_only_configuration
+    }
     /// <p>The configuration settings for a horizontal layout.</p>
     pub fn horizontal_layout_configuration(
         mut self,
@@ -156,6 +174,12 @@ impl GridViewConfigurationBuilder {
     ) -> Self {
         self.horizontal_layout_configuration = input;
         self
+    }
+    /// <p>The configuration settings for a horizontal layout.</p>
+    pub fn get_horizontal_layout_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::HorizontalLayoutConfiguration> {
+        &self.horizontal_layout_configuration
     }
     /// <p>The configuration settings for a vertical layout.</p>
     pub fn vertical_layout_configuration(
@@ -173,6 +197,12 @@ impl GridViewConfigurationBuilder {
         self.vertical_layout_configuration = input;
         self
     }
+    /// <p>The configuration settings for a vertical layout.</p>
+    pub fn get_vertical_layout_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::VerticalLayoutConfiguration> {
+        &self.vertical_layout_configuration
+    }
     /// <p>The attribute settings for the video tiles.</p>
     pub fn video_attribute(mut self, input: crate::types::VideoAttribute) -> Self {
         self.video_attribute = ::std::option::Option::Some(input);
@@ -186,6 +216,10 @@ impl GridViewConfigurationBuilder {
         self.video_attribute = input;
         self
     }
+    /// <p>The attribute settings for the video tiles.</p>
+    pub fn get_video_attribute(&self) -> &::std::option::Option<crate::types::VideoAttribute> {
+        &self.video_attribute
+    }
     /// <p>The orientation setting, horizontal or vertical.</p>
     pub fn canvas_orientation(mut self, input: crate::types::CanvasOrientation) -> Self {
         self.canvas_orientation = ::std::option::Option::Some(input);
@@ -198,6 +232,12 @@ impl GridViewConfigurationBuilder {
     ) -> Self {
         self.canvas_orientation = input;
         self
+    }
+    /// <p>The orientation setting, horizontal or vertical.</p>
+    pub fn get_canvas_orientation(
+        &self,
+    ) -> &::std::option::Option<crate::types::CanvasOrientation> {
+        &self.canvas_orientation
     }
     /// Consumes the builder and constructs a [`GridViewConfiguration`](crate::types::GridViewConfiguration).
     pub fn build(self) -> crate::types::GridViewConfiguration {

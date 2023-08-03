@@ -40,6 +40,10 @@ impl FastLaunchSnapshotConfigurationRequestBuilder {
         self.target_resource_count = input;
         self
     }
+    /// <p>The number of pre-provisioned snapshots to keep on hand for a fast-launch enabled Windows AMI.</p>
+    pub fn get_target_resource_count(&self) -> &::std::option::Option<i32> {
+        &self.target_resource_count
+    }
     /// Consumes the builder and constructs a [`FastLaunchSnapshotConfigurationRequest`](crate::types::FastLaunchSnapshotConfigurationRequest).
     pub fn build(self) -> crate::types::FastLaunchSnapshotConfigurationRequest {
         crate::types::FastLaunchSnapshotConfigurationRequest {

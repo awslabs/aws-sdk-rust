@@ -36,6 +36,12 @@ impl ListKxClusterNodesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListKxClusterNodes as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_kx_cluster_nodes::builders::ListKxClusterNodesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -143,6 +149,10 @@ impl ListKxClusterNodesFluentBuilder {
         self.inner = self.inner.set_environment_id(input);
         self
     }
+    /// <p>A unique identifier for the kdb environment.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_id()
+    }
     /// <p>A unique name for the cluster.</p>
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_name(input.into());
@@ -152,6 +162,10 @@ impl ListKxClusterNodesFluentBuilder {
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_name(input);
         self
+    }
+    /// <p>A unique name for the cluster.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_name()
     }
     /// <p>A token that indicates where a results page should begin.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -163,6 +177,10 @@ impl ListKxClusterNodesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A token that indicates where a results page should begin.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return in this request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -172,5 +190,9 @@ impl ListKxClusterNodesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return in this request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

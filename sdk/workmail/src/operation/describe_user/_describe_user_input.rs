@@ -53,6 +53,10 @@ impl DescribeUserInputBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The identifier for the organization under which the user exists.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p>The identifier for the user to be described.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl DescribeUserInputBuilder {
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
+    }
+    /// <p>The identifier for the user to be described.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
     }
     /// Consumes the builder and constructs a [`DescribeUserInput`](crate::operation::describe_user::DescribeUserInput).
     pub fn build(

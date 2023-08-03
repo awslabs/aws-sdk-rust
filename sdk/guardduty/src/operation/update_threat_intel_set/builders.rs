@@ -36,6 +36,13 @@ impl UpdateThreatIntelSetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateThreatIntelSet as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_threat_intel_set::builders::UpdateThreatIntelSetInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl UpdateThreatIntelSetFluentBuilder {
         self.inner = self.inner.set_detector_id(input);
         self
     }
+    /// <p>The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to update.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_detector_id()
+    }
     /// <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
     pub fn threat_intel_set_id(
         mut self,
@@ -143,6 +154,10 @@ impl UpdateThreatIntelSetFluentBuilder {
         self
     }
     /// <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
+    pub fn get_threat_intel_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_threat_intel_set_id()
+    }
+    /// <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
@@ -151,6 +166,10 @@ impl UpdateThreatIntelSetFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The unique ID that specifies the ThreatIntelSet that you want to update.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The updated URI of the file that contains the ThreateIntelSet.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -162,6 +181,10 @@ impl UpdateThreatIntelSetFluentBuilder {
         self.inner = self.inner.set_location(input);
         self
     }
+    /// <p>The updated URI of the file that contains the ThreateIntelSet.</p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_location()
+    }
     /// <p>The updated Boolean value that specifies whether the ThreateIntelSet is active or not.</p>
     pub fn activate(mut self, input: bool) -> Self {
         self.inner = self.inner.activate(input);
@@ -171,5 +194,9 @@ impl UpdateThreatIntelSetFluentBuilder {
     pub fn set_activate(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_activate(input);
         self
+    }
+    /// <p>The updated Boolean value that specifies whether the ThreateIntelSet is active or not.</p>
+    pub fn get_activate(&self) -> &::std::option::Option<bool> {
+        self.inner.get_activate()
     }
 }

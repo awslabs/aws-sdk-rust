@@ -43,6 +43,10 @@ impl SegmentBehaviorsBuilder {
         self.recency = input;
         self
     }
+    /// <p>The dimension settings that are based on how recently an endpoint was active.</p>
+    pub fn get_recency(&self) -> &::std::option::Option<crate::types::RecencyDimension> {
+        &self.recency
+    }
     /// Consumes the builder and constructs a [`SegmentBehaviors`](crate::types::SegmentBehaviors).
     pub fn build(self) -> crate::types::SegmentBehaviors {
         crate::types::SegmentBehaviors {

@@ -63,6 +63,10 @@ impl DisableOutputBuilder {
         self.accounts = input;
         self
     }
+    /// <p>Information on the accounts that have had Amazon Inspector scans successfully disabled. Details are provided for each account.</p>
+    pub fn get_accounts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Account>> {
+        &self.accounts
+    }
     /// Appends an item to `failed_accounts`.
     ///
     /// To override the contents of this collection use [`set_failed_accounts`](Self::set_failed_accounts).
@@ -81,6 +85,12 @@ impl DisableOutputBuilder {
     ) -> Self {
         self.failed_accounts = input;
         self
+    }
+    /// <p>Information on any accounts for which Amazon Inspector scans could not be disabled. Details are provided for each account.</p>
+    pub fn get_failed_accounts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedAccount>> {
+        &self.failed_accounts
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

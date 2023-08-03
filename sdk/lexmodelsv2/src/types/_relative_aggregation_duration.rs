@@ -67,6 +67,10 @@ impl RelativeAggregationDurationBuilder {
         self.time_dimension = input;
         self
     }
+    /// <p>The type of time period that the <code>timeValue</code> field represents. </p>
+    pub fn get_time_dimension(&self) -> &::std::option::Option<crate::types::TimeDimension> {
+        &self.time_dimension
+    }
     /// <p>The period of the time window to gather statistics for. The valid value depends on the setting of the <code>timeDimension</code> field.</p>
     /// <ul>
     /// <li> <p> <code>Hours</code> - 1/3/6/12/24</p> </li>
@@ -86,6 +90,15 @@ impl RelativeAggregationDurationBuilder {
     pub fn set_time_value(mut self, input: ::std::option::Option<i32>) -> Self {
         self.time_value = input;
         self
+    }
+    /// <p>The period of the time window to gather statistics for. The valid value depends on the setting of the <code>timeDimension</code> field.</p>
+    /// <ul>
+    /// <li> <p> <code>Hours</code> - 1/3/6/12/24</p> </li>
+    /// <li> <p> <code>Days</code> - 3</p> </li>
+    /// <li> <p> <code>Weeks</code> - 1/2</p> </li>
+    /// </ul>
+    pub fn get_time_value(&self) -> &::std::option::Option<i32> {
+        &self.time_value
     }
     /// Consumes the builder and constructs a [`RelativeAggregationDuration`](crate::types::RelativeAggregationDuration).
     pub fn build(self) -> crate::types::RelativeAggregationDuration {

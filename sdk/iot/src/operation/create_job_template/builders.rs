@@ -37,6 +37,12 @@ impl CreateJobTemplateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateJobTemplate as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_job_template::builders::CreateJobTemplateInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl CreateJobTemplateFluentBuilder {
         self.inner = self.inner.set_job_template_id(input);
         self
     }
+    /// <p>A unique identifier for the job template. We recommend using a UUID. Alpha-numeric characters, "-", and "_" are valid for use here.</p>
+    pub fn get_job_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_template_id()
+    }
     /// <p>The ARN of the job to use as the basis for the job template.</p>
     pub fn job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_arn(input.into());
@@ -142,6 +152,10 @@ impl CreateJobTemplateFluentBuilder {
     pub fn set_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_arn(input);
         self
+    }
+    /// <p>The ARN of the job to use as the basis for the job template.</p>
+    pub fn get_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_arn()
     }
     /// <p>An S3 link to the job document to use in the template. Required if you don't specify a value for <code>document</code>.</p> <note>
     /// <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p>
@@ -169,6 +183,15 @@ impl CreateJobTemplateFluentBuilder {
         self.inner = self.inner.set_document_source(input);
         self
     }
+    /// <p>An S3 link to the job document to use in the template. Required if you don't specify a value for <code>document</code>.</p> <note>
+    /// <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p>
+    /// <p>The placeholder link is of the following form:</p>
+    /// <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p>
+    /// <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p>
+    /// </note>
+    pub fn get_document_source(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_document_source()
+    }
     /// <p>The job document. Required if you don't specify a value for <code>documentSource</code>.</p>
     pub fn document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.document(input.into());
@@ -179,6 +202,10 @@ impl CreateJobTemplateFluentBuilder {
         self.inner = self.inner.set_document(input);
         self
     }
+    /// <p>The job document. Required if you don't specify a value for <code>documentSource</code>.</p>
+    pub fn get_document(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_document()
+    }
     /// <p>A description of the job document.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -188,6 +215,10 @@ impl CreateJobTemplateFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of the job document.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>Configuration for pre-signed S3 URLs.</p>
     pub fn presigned_url_config(mut self, input: crate::types::PresignedUrlConfig) -> Self {
@@ -201,6 +232,12 @@ impl CreateJobTemplateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_presigned_url_config(input);
         self
+    }
+    /// <p>Configuration for pre-signed S3 URLs.</p>
+    pub fn get_presigned_url_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::PresignedUrlConfig> {
+        self.inner.get_presigned_url_config()
     }
     /// <p>Allows you to create a staged rollout of a job.</p>
     pub fn job_executions_rollout_config(
@@ -218,6 +255,12 @@ impl CreateJobTemplateFluentBuilder {
         self.inner = self.inner.set_job_executions_rollout_config(input);
         self
     }
+    /// <p>Allows you to create a staged rollout of a job.</p>
+    pub fn get_job_executions_rollout_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::JobExecutionsRolloutConfig> {
+        self.inner.get_job_executions_rollout_config()
+    }
     /// <p>The criteria that determine when and how a job abort takes place.</p>
     pub fn abort_config(mut self, input: crate::types::AbortConfig) -> Self {
         self.inner = self.inner.abort_config(input);
@@ -231,6 +274,10 @@ impl CreateJobTemplateFluentBuilder {
         self.inner = self.inner.set_abort_config(input);
         self
     }
+    /// <p>The criteria that determine when and how a job abort takes place.</p>
+    pub fn get_abort_config(&self) -> &::std::option::Option<crate::types::AbortConfig> {
+        self.inner.get_abort_config()
+    }
     /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
     pub fn timeout_config(mut self, input: crate::types::TimeoutConfig) -> Self {
         self.inner = self.inner.timeout_config(input);
@@ -243,6 +290,10 @@ impl CreateJobTemplateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_timeout_config(input);
         self
+    }
+    /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
+    pub fn get_timeout_config(&self) -> &::std::option::Option<crate::types::TimeoutConfig> {
+        self.inner.get_timeout_config()
     }
     /// Appends an item to `tags`.
     ///
@@ -261,6 +312,10 @@ impl CreateJobTemplateFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>Metadata that can be used to manage the job template.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>Allows you to create the criteria to retry a job.</p>
     pub fn job_executions_retry_config(
         mut self,
@@ -276,6 +331,12 @@ impl CreateJobTemplateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_job_executions_retry_config(input);
         self
+    }
+    /// <p>Allows you to create the criteria to retry a job.</p>
+    pub fn get_job_executions_retry_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::JobExecutionsRetryConfig> {
+        self.inner.get_job_executions_retry_config()
     }
     /// Appends an item to `maintenanceWindows`.
     ///
@@ -293,6 +354,12 @@ impl CreateJobTemplateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_maintenance_windows(input);
         self
+    }
+    /// <p>Allows you to configure an optional maintenance window for the rollout of a job document to all devices in the target group for a job.</p>
+    pub fn get_maintenance_windows(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindow>> {
+        self.inner.get_maintenance_windows()
     }
     /// Appends an item to `destinationPackageVersions`.
     ///
@@ -315,5 +382,12 @@ impl CreateJobTemplateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_destination_package_versions(input);
         self
+    }
+    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. </p>
+    /// <p> <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.</p>
+    pub fn get_destination_package_versions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_destination_package_versions()
     }
 }

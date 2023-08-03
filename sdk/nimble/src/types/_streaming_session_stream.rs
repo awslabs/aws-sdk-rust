@@ -113,6 +113,10 @@ impl StreamingSessionStreamBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The ISO timestamp in seconds for when the resource was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The user ID of the user that created the streaming session stream.</p>
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by = ::std::option::Option::Some(input.into());
@@ -122,6 +126,10 @@ impl StreamingSessionStreamBuilder {
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_by = input;
         self
+    }
+    /// <p>The user ID of the user that created the streaming session stream.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_by
     }
     /// <p>The ISO timestamp in seconds for when the resource expires.</p>
     pub fn expires_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -136,6 +144,10 @@ impl StreamingSessionStreamBuilder {
         self.expires_at = input;
         self
     }
+    /// <p>The ISO timestamp in seconds for when the resource expires.</p>
+    pub fn get_expires_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expires_at
+    }
     /// <p>The user ID of the user that owns the streaming session. The user that owns the session will be logging into the session and interacting with the virtual workstation.</p>
     pub fn owned_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owned_by = ::std::option::Option::Some(input.into());
@@ -145,6 +157,10 @@ impl StreamingSessionStreamBuilder {
     pub fn set_owned_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owned_by = input;
         self
+    }
+    /// <p>The user ID of the user that owns the streaming session. The user that owns the session will be logging into the session and interacting with the virtual workstation.</p>
+    pub fn get_owned_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owned_by
     }
     /// <p>The current state.</p>
     pub fn state(mut self, input: crate::types::StreamingSessionStreamState) -> Self {
@@ -159,6 +175,10 @@ impl StreamingSessionStreamBuilder {
         self.state = input;
         self
     }
+    /// <p>The current state.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::StreamingSessionStreamState> {
+        &self.state
+    }
     /// <p>The streaming session stream status code.</p>
     pub fn status_code(mut self, input: crate::types::StreamingSessionStreamStatusCode) -> Self {
         self.status_code = ::std::option::Option::Some(input);
@@ -172,6 +192,12 @@ impl StreamingSessionStreamBuilder {
         self.status_code = input;
         self
     }
+    /// <p>The streaming session stream status code.</p>
+    pub fn get_status_code(
+        &self,
+    ) -> &::std::option::Option<crate::types::StreamingSessionStreamStatusCode> {
+        &self.status_code
+    }
     /// <p>The stream ID.</p>
     pub fn stream_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_id = ::std::option::Option::Some(input.into());
@@ -182,6 +208,10 @@ impl StreamingSessionStreamBuilder {
         self.stream_id = input;
         self
     }
+    /// <p>The stream ID.</p>
+    pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_id
+    }
     /// <p>The URL to connect to this stream using the DCV client.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
@@ -191,6 +221,10 @@ impl StreamingSessionStreamBuilder {
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
+    }
+    /// <p>The URL to connect to this stream using the DCV client.</p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
     }
     /// Consumes the builder and constructs a [`StreamingSessionStream`](crate::types::StreamingSessionStream).
     pub fn build(self) -> crate::types::StreamingSessionStream {

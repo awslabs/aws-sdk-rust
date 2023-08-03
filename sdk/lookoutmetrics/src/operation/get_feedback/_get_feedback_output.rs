@@ -70,6 +70,12 @@ impl GetFeedbackOutputBuilder {
         self.anomaly_group_time_series_feedback = input;
         self
     }
+    /// <p>Feedback for an anomalous metric.</p>
+    pub fn get_anomaly_group_time_series_feedback(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesFeedback>> {
+        &self.anomaly_group_time_series_feedback
+    }
     /// <p>The pagination token that's included if more results are available.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -79,6 +85,10 @@ impl GetFeedbackOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The pagination token that's included if more results are available.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -36,6 +36,12 @@ impl CreateUserGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateUserGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_user_group::builders::CreateUserGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl CreateUserGroupFluentBuilder {
         self.inner = self.inner.set_user_group_id(input);
         self
     }
+    /// <p>The ID of the user group.</p>
+    pub fn get_user_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_group_id()
+    }
     /// <p>The current supported value is Redis. </p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine(input.into());
@@ -141,6 +151,10 @@ impl CreateUserGroupFluentBuilder {
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine(input);
         self
+    }
+    /// <p>The current supported value is Redis. </p>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_engine()
     }
     /// Appends an item to `UserIds`.
     ///
@@ -159,6 +173,10 @@ impl CreateUserGroupFluentBuilder {
         self.inner = self.inner.set_user_ids(input);
         self
     }
+    /// <p>The list of user IDs that belong to the user group.</p>
+    pub fn get_user_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_user_ids()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -175,5 +193,9 @@ impl CreateUserGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

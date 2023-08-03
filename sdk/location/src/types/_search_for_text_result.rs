@@ -74,6 +74,10 @@ impl SearchForTextResultBuilder {
         self.place = input;
         self
     }
+    /// <p>Details about the search result, such as its address and position.</p>
+    pub fn get_place(&self) -> &::std::option::Option<crate::types::Place> {
+        &self.place
+    }
     /// <p>The distance in meters of a great-circle arc between the bias position specified and the result. <code>Distance</code> will be returned only if a bias position was specified in the query.</p> <note>
     /// <p>A great-circle arc is the shortest path on a sphere, in this case the Earth. This returns the shortest distance between two locations.</p>
     /// </note>
@@ -88,6 +92,12 @@ impl SearchForTextResultBuilder {
         self.distance = input;
         self
     }
+    /// <p>The distance in meters of a great-circle arc between the bias position specified and the result. <code>Distance</code> will be returned only if a bias position was specified in the query.</p> <note>
+    /// <p>A great-circle arc is the shortest path on a sphere, in this case the Earth. This returns the shortest distance between two locations.</p>
+    /// </note>
+    pub fn get_distance(&self) -> &::std::option::Option<f64> {
+        &self.distance
+    }
     /// <p>The relative confidence in the match for a result among the results returned. For example, if more fields for an address match (including house number, street, city, country/region, and postal code), the relevance score is closer to 1.</p>
     /// <p>Returned only when the partner selected is Esri or Grab.</p>
     pub fn relevance(mut self, input: f64) -> Self {
@@ -99,6 +109,11 @@ impl SearchForTextResultBuilder {
     pub fn set_relevance(mut self, input: ::std::option::Option<f64>) -> Self {
         self.relevance = input;
         self
+    }
+    /// <p>The relative confidence in the match for a result among the results returned. For example, if more fields for an address match (including house number, street, city, country/region, and postal code), the relevance score is closer to 1.</p>
+    /// <p>Returned only when the partner selected is Esri or Grab.</p>
+    pub fn get_relevance(&self) -> &::std::option::Option<f64> {
+        &self.relevance
     }
     /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
     /// <p>For <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE or Grab as a data provider.</p>
@@ -113,6 +128,12 @@ impl SearchForTextResultBuilder {
     pub fn set_place_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.place_id = input;
         self
+    }
+    /// <p>The unique identifier of the place. You can use this with the <code>GetPlace</code> operation to find the place again later.</p> <note>
+    /// <p>For <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is returned only by place indexes that use HERE or Grab as a data provider.</p>
+    /// </note>
+    pub fn get_place_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.place_id
     }
     /// Consumes the builder and constructs a [`SearchForTextResult`](crate::types::SearchForTextResult).
     pub fn build(self) -> crate::types::SearchForTextResult {

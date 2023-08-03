@@ -86,6 +86,10 @@ impl ApplicationSummaryBuilder {
         self.application_name = input;
         self
     }
+    /// <p>The name of the application.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// <p>The ARN of the application.</p>
     pub fn application_arn(
         mut self,
@@ -102,6 +106,10 @@ impl ApplicationSummaryBuilder {
         self.application_arn = input;
         self
     }
+    /// <p>The ARN of the application.</p>
+    pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_arn
+    }
     /// <p>The status of the application.</p>
     pub fn application_status(mut self, input: crate::types::ApplicationStatus) -> Self {
         self.application_status = ::std::option::Option::Some(input);
@@ -115,6 +123,12 @@ impl ApplicationSummaryBuilder {
         self.application_status = input;
         self
     }
+    /// <p>The status of the application.</p>
+    pub fn get_application_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationStatus> {
+        &self.application_status
+    }
     /// <p>Provides the current application version.</p>
     pub fn application_version_id(mut self, input: i64) -> Self {
         self.application_version_id = ::std::option::Option::Some(input);
@@ -124,6 +138,10 @@ impl ApplicationSummaryBuilder {
     pub fn set_application_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.application_version_id = input;
         self
+    }
+    /// <p>Provides the current application version.</p>
+    pub fn get_application_version_id(&self) -> &::std::option::Option<i64> {
+        &self.application_version_id
     }
     /// <p>The runtime environment for the application.</p>
     pub fn runtime_environment(mut self, input: crate::types::RuntimeEnvironment) -> Self {
@@ -138,6 +156,12 @@ impl ApplicationSummaryBuilder {
         self.runtime_environment = input;
         self
     }
+    /// <p>The runtime environment for the application.</p>
+    pub fn get_runtime_environment(
+        &self,
+    ) -> &::std::option::Option<crate::types::RuntimeEnvironment> {
+        &self.runtime_environment
+    }
     /// <p>For a Kinesis Data Analytics for Apache Flink application, the mode is <code>STREAMING</code>. For a Kinesis Data Analytics Studio notebook, it is <code>INTERACTIVE</code>.</p>
     pub fn application_mode(mut self, input: crate::types::ApplicationMode) -> Self {
         self.application_mode = ::std::option::Option::Some(input);
@@ -150,6 +174,10 @@ impl ApplicationSummaryBuilder {
     ) -> Self {
         self.application_mode = input;
         self
+    }
+    /// <p>For a Kinesis Data Analytics for Apache Flink application, the mode is <code>STREAMING</code>. For a Kinesis Data Analytics Studio notebook, it is <code>INTERACTIVE</code>.</p>
+    pub fn get_application_mode(&self) -> &::std::option::Option<crate::types::ApplicationMode> {
+        &self.application_mode
     }
     /// Consumes the builder and constructs a [`ApplicationSummary`](crate::types::ApplicationSummary).
     pub fn build(self) -> crate::types::ApplicationSummary {

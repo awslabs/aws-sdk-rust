@@ -38,6 +38,13 @@ impl DeleteGeofenceCollectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteGeofenceCollection as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_geofence_collection::builders::DeleteGeofenceCollectionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,5 +140,9 @@ impl DeleteGeofenceCollectionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_collection_name(input);
         self
+    }
+    /// <p>The name of the geofence collection to be deleted.</p>
+    pub fn get_collection_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_collection_name()
     }
 }

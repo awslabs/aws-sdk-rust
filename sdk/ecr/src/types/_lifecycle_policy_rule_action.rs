@@ -40,6 +40,10 @@ impl LifecyclePolicyRuleActionBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of action to be taken.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ImageActionType> {
+        &self.r#type
+    }
     /// Consumes the builder and constructs a [`LifecyclePolicyRuleAction`](crate::types::LifecyclePolicyRuleAction).
     pub fn build(self) -> crate::types::LifecyclePolicyRuleAction {
         crate::types::LifecyclePolicyRuleAction {

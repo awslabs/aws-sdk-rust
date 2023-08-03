@@ -122,6 +122,10 @@ impl CreateLicenseInputBuilder {
         self.license_name = input;
         self
     }
+    /// <p>License name.</p>
+    pub fn get_license_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_name
+    }
     /// <p>Product name.</p>
     pub fn product_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_name = ::std::option::Option::Some(input.into());
@@ -131,6 +135,10 @@ impl CreateLicenseInputBuilder {
     pub fn set_product_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product_name = input;
         self
+    }
+    /// <p>Product name.</p>
+    pub fn get_product_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product_name
     }
     /// <p>Product SKU.</p>
     pub fn product_sku(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -142,6 +150,10 @@ impl CreateLicenseInputBuilder {
         self.product_sku = input;
         self
     }
+    /// <p>Product SKU.</p>
+    pub fn get_product_sku(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product_sku
+    }
     /// <p>License issuer.</p>
     pub fn issuer(mut self, input: crate::types::Issuer) -> Self {
         self.issuer = ::std::option::Option::Some(input);
@@ -152,6 +164,10 @@ impl CreateLicenseInputBuilder {
         self.issuer = input;
         self
     }
+    /// <p>License issuer.</p>
+    pub fn get_issuer(&self) -> &::std::option::Option<crate::types::Issuer> {
+        &self.issuer
+    }
     /// <p>Home Region for the license.</p>
     pub fn home_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.home_region = ::std::option::Option::Some(input.into());
@@ -161,6 +177,10 @@ impl CreateLicenseInputBuilder {
     pub fn set_home_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.home_region = input;
         self
+    }
+    /// <p>Home Region for the license.</p>
+    pub fn get_home_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.home_region
     }
     /// <p>Date and time range during which the license is valid, in ISO8601-UTC format.</p>
     pub fn validity(mut self, input: crate::types::DatetimeRange) -> Self {
@@ -174,6 +194,10 @@ impl CreateLicenseInputBuilder {
     ) -> Self {
         self.validity = input;
         self
+    }
+    /// <p>Date and time range during which the license is valid, in ISO8601-UTC format.</p>
+    pub fn get_validity(&self) -> &::std::option::Option<crate::types::DatetimeRange> {
+        &self.validity
     }
     /// Appends an item to `entitlements`.
     ///
@@ -194,6 +218,12 @@ impl CreateLicenseInputBuilder {
         self.entitlements = input;
         self
     }
+    /// <p>License entitlements.</p>
+    pub fn get_entitlements(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Entitlement>> {
+        &self.entitlements
+    }
     /// <p>License beneficiary.</p>
     pub fn beneficiary(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.beneficiary = ::std::option::Option::Some(input.into());
@@ -203,6 +233,10 @@ impl CreateLicenseInputBuilder {
     pub fn set_beneficiary(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.beneficiary = input;
         self
+    }
+    /// <p>License beneficiary.</p>
+    pub fn get_beneficiary(&self) -> &::std::option::Option<::std::string::String> {
+        &self.beneficiary
     }
     /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads running with continuous connectivity. Choose a borrow configuration for workloads with offline usage.</p>
     pub fn consumption_configuration(
@@ -219,6 +253,12 @@ impl CreateLicenseInputBuilder {
     ) -> Self {
         self.consumption_configuration = input;
         self
+    }
+    /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads running with continuous connectivity. Choose a borrow configuration for workloads with offline usage.</p>
+    pub fn get_consumption_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConsumptionConfiguration> {
+        &self.consumption_configuration
     }
     /// Appends an item to `license_metadata`.
     ///
@@ -239,6 +279,12 @@ impl CreateLicenseInputBuilder {
         self.license_metadata = input;
         self
     }
+    /// <p>Information about the license.</p>
+    pub fn get_license_metadata(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Metadata>> {
+        &self.license_metadata
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -248,6 +294,10 @@ impl CreateLicenseInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateLicenseInput`](crate::operation::create_license::CreateLicenseInput).
     pub fn build(

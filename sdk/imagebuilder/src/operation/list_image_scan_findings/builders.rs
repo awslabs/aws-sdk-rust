@@ -36,6 +36,13 @@ impl ListImageScanFindingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListImageScanFindings as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_image_scan_findings::builders::ListImageScanFindingsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -158,6 +165,19 @@ impl ListImageScanFindingsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>An array of name value pairs that you can use to filter your results. You can use the following filters to streamline results:</p>
+    /// <ul>
+    /// <li> <p> <code>imageBuildVersionArn</code> </p> </li>
+    /// <li> <p> <code>imagePipelineArn</code> </p> </li>
+    /// <li> <p> <code>vulnerabilityId</code> </p> </li>
+    /// <li> <p> <code>severity</code> </p> </li>
+    /// </ul>
+    /// <p>If you don't request a filter, then all findings in your account are listed.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageScanFindingsFilter>> {
+        self.inner.get_filters()
+    }
     /// <p>The maximum items to return in a request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -168,6 +188,10 @@ impl ListImageScanFindingsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum items to return in a request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -177,5 +201,9 @@ impl ListImageScanFindingsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

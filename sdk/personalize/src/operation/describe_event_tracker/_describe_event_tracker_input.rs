@@ -46,6 +46,10 @@ impl DescribeEventTrackerInputBuilder {
         self.event_tracker_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the event tracker to describe.</p>
+    pub fn get_event_tracker_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_tracker_arn
+    }
     /// Consumes the builder and constructs a [`DescribeEventTrackerInput`](crate::operation::describe_event_tracker::DescribeEventTrackerInput).
     pub fn build(
         self,

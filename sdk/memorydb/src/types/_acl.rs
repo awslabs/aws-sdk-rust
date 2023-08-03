@@ -88,6 +88,10 @@ impl AclBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the Access Control List</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Indicates ACL status. Can be "creating", "active", "modifying", "deleting".</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -97,6 +101,10 @@ impl AclBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Indicates ACL status. Can be "creating", "active", "modifying", "deleting".</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Appends an item to `user_names`.
     ///
@@ -117,6 +125,10 @@ impl AclBuilder {
         self.user_names = input;
         self
     }
+    /// <p>The list of user names that belong to the ACL.</p>
+    pub fn get_user_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.user_names
+    }
     /// <p>The minimum engine version supported for the ACL</p>
     pub fn minimum_engine_version(
         mut self,
@@ -133,6 +145,10 @@ impl AclBuilder {
         self.minimum_engine_version = input;
         self
     }
+    /// <p>The minimum engine version supported for the ACL</p>
+    pub fn get_minimum_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.minimum_engine_version
+    }
     /// <p>A list of updates being applied to the ACL.</p>
     pub fn pending_changes(mut self, input: crate::types::AclPendingChanges) -> Self {
         self.pending_changes = ::std::option::Option::Some(input);
@@ -145,6 +161,10 @@ impl AclBuilder {
     ) -> Self {
         self.pending_changes = input;
         self
+    }
+    /// <p>A list of updates being applied to the ACL.</p>
+    pub fn get_pending_changes(&self) -> &::std::option::Option<crate::types::AclPendingChanges> {
+        &self.pending_changes
     }
     /// Appends an item to `clusters`.
     ///
@@ -165,6 +185,10 @@ impl AclBuilder {
         self.clusters = input;
         self
     }
+    /// <p>A list of clusters associated with the ACL.</p>
+    pub fn get_clusters(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.clusters
+    }
     /// <p>The Amazon Resource Name (ARN) of the ACL</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -174,6 +198,10 @@ impl AclBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the ACL</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`Acl`](crate::types::Acl).
     pub fn build(self) -> crate::types::Acl {

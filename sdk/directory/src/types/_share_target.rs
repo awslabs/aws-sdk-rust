@@ -48,6 +48,10 @@ impl ShareTargetBuilder {
         self.id = input;
         self
     }
+    /// <p>Identifier of the directory consumer account.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>Type of identifier to be used in the <code>Id</code> field.</p>
     pub fn r#type(mut self, input: crate::types::TargetType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ShareTargetBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::TargetType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>Type of identifier to be used in the <code>Id</code> field.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::TargetType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`ShareTarget`](crate::types::ShareTarget).
     pub fn build(self) -> crate::types::ShareTarget {

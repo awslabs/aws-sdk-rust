@@ -79,6 +79,10 @@ impl PackageDescriptionBuilder {
         self.format = input;
         self
     }
+    /// <p>A format that specifies the type of the package.</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::PackageFormat> {
+        &self.format
+    }
     /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
     /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
@@ -101,6 +105,16 @@ impl PackageDescriptionBuilder {
         self.namespace = input;
         self
     }
+    /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
+    /// </ul>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
+    }
     /// <p>The name of the package.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -110,6 +124,10 @@ impl PackageDescriptionBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the package.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The package origin configuration for the package.</p>
     pub fn origin_configuration(mut self, input: crate::types::PackageOriginConfiguration) -> Self {
@@ -123,6 +141,12 @@ impl PackageDescriptionBuilder {
     ) -> Self {
         self.origin_configuration = input;
         self
+    }
+    /// <p>The package origin configuration for the package.</p>
+    pub fn get_origin_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::PackageOriginConfiguration> {
+        &self.origin_configuration
     }
     /// Consumes the builder and constructs a [`PackageDescription`](crate::types::PackageDescription).
     pub fn build(self) -> crate::types::PackageDescription {

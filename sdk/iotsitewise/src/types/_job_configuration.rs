@@ -43,6 +43,10 @@ impl JobConfigurationBuilder {
         self.file_format = input;
         self
     }
+    /// <p>The file format of the data in Amazon S3.</p>
+    pub fn get_file_format(&self) -> &::std::option::Option<crate::types::FileFormat> {
+        &self.file_format
+    }
     /// Consumes the builder and constructs a [`JobConfiguration`](crate::types::JobConfiguration).
     pub fn build(self) -> crate::types::JobConfiguration {
         crate::types::JobConfiguration {

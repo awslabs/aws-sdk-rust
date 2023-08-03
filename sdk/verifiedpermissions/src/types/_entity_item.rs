@@ -69,6 +69,10 @@ impl EntityItemBuilder {
         self.identifier = input;
         self
     }
+    /// <p>The identifier of the entity.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<crate::types::EntityIdentifier> {
+        &self.identifier
+    }
     /// Adds a key-value pair to `attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
@@ -94,6 +98,14 @@ impl EntityItemBuilder {
         self.attributes = input;
         self
     }
+    /// <p>A list of attributes for the entity.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
+    > {
+        &self.attributes
+    }
     /// Appends an item to `parents`.
     ///
     /// To override the contents of this collection use [`set_parents`](Self::set_parents).
@@ -112,6 +124,12 @@ impl EntityItemBuilder {
     ) -> Self {
         self.parents = input;
         self
+    }
+    /// <p>The parents in the hierarchy that contains the entity.</p>
+    pub fn get_parents(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityIdentifier>> {
+        &self.parents
     }
     /// Consumes the builder and constructs a [`EntityItem`](crate::types::EntityItem).
     pub fn build(self) -> crate::types::EntityItem {

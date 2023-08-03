@@ -37,6 +37,12 @@ impl StartMigrationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartMigration as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_migration::builders::StartMigrationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +125,10 @@ impl StartMigrationFluentBuilder {
         self.inner = self.inner.set_v1_bot_name(input);
         self
     }
+    /// <p>The name of the Amazon Lex V1 bot that you are migrating to Amazon Lex V2.</p>
+    pub fn get_v1_bot_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_v1_bot_name()
+    }
     /// <p>The version of the bot to migrate to Amazon Lex V2. You can migrate the <code>$LATEST</code> version as well as any numbered version.</p>
     pub fn v1_bot_version(
         mut self,
@@ -134,6 +144,10 @@ impl StartMigrationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_v1_bot_version(input);
         self
+    }
+    /// <p>The version of the bot to migrate to Amazon Lex V2. You can migrate the <code>$LATEST</code> version as well as any numbered version.</p>
+    pub fn get_v1_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_v1_bot_version()
     }
     /// <p>The name of the Amazon Lex V2 bot that you are migrating the Amazon Lex V1 bot to. </p>
     /// <ul>
@@ -153,6 +167,14 @@ impl StartMigrationFluentBuilder {
         self.inner = self.inner.set_v2_bot_name(input);
         self
     }
+    /// <p>The name of the Amazon Lex V2 bot that you are migrating the Amazon Lex V1 bot to. </p>
+    /// <ul>
+    /// <li> <p>If the Amazon Lex V2 bot doesn't exist, you must use the <code>CREATE_NEW</code> migration strategy.</p> </li>
+    /// <li> <p>If the Amazon Lex V2 bot exists, you must use the <code>UPDATE_EXISTING</code> migration strategy to change the contents of the Amazon Lex V2 bot.</p> </li>
+    /// </ul>
+    pub fn get_v2_bot_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_v2_bot_name()
+    }
     /// <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
     pub fn v2_bot_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.v2_bot_role(input.into());
@@ -162,6 +184,10 @@ impl StartMigrationFluentBuilder {
     pub fn set_v2_bot_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_v2_bot_role(input);
         self
+    }
+    /// <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
+    pub fn get_v2_bot_role(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_v2_bot_role()
     }
     /// <p>The strategy used to conduct the migration.</p>
     /// <ul>
@@ -183,5 +209,15 @@ impl StartMigrationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_migration_strategy(input);
         self
+    }
+    /// <p>The strategy used to conduct the migration.</p>
+    /// <ul>
+    /// <li> <p> <code>CREATE_NEW</code> - Creates a new Amazon Lex V2 bot and migrates the Amazon Lex V1 bot to the new bot.</p> </li>
+    /// <li> <p> <code>UPDATE_EXISTING</code> - Overwrites the existing Amazon Lex V2 bot metadata and the locale being migrated. It doesn't change any other locales in the Amazon Lex V2 bot. If the locale doesn't exist, a new locale is created in the Amazon Lex V2 bot.</p> </li>
+    /// </ul>
+    pub fn get_migration_strategy(
+        &self,
+    ) -> &::std::option::Option<crate::types::MigrationStrategy> {
+        self.inner.get_migration_strategy()
     }
 }

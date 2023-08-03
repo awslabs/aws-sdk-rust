@@ -48,6 +48,10 @@ impl GatewayListItemBuilder {
         self.gateway_id = input;
         self
     }
+    /// <p>The ID of the wireless gateways that you want to add to the list of gateways when sending downlink messages.</p>
+    pub fn get_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_id
+    }
     /// <p>The frequency to use for the gateways when sending a downlink message to the wireless device.</p>
     pub fn downlink_frequency(mut self, input: i32) -> Self {
         self.downlink_frequency = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl GatewayListItemBuilder {
     pub fn set_downlink_frequency(mut self, input: ::std::option::Option<i32>) -> Self {
         self.downlink_frequency = input;
         self
+    }
+    /// <p>The frequency to use for the gateways when sending a downlink message to the wireless device.</p>
+    pub fn get_downlink_frequency(&self) -> &::std::option::Option<i32> {
+        &self.downlink_frequency
     }
     /// Consumes the builder and constructs a [`GatewayListItem`](crate::types::GatewayListItem).
     pub fn build(self) -> crate::types::GatewayListItem {

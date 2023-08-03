@@ -50,6 +50,10 @@ impl RetentionPeriodBuilder {
         self.retention_period_value = input;
         self
     }
+    /// <p>The period value for which the retention rule is to retain resources. The period is measured using the unit specified for <b>RetentionPeriodUnit</b>.</p>
+    pub fn get_retention_period_value(&self) -> &::std::option::Option<i32> {
+        &self.retention_period_value
+    }
     /// <p>The unit of time in which the retention period is measured. Currently, only <code>DAYS</code> is supported.</p>
     pub fn retention_period_unit(mut self, input: crate::types::RetentionPeriodUnit) -> Self {
         self.retention_period_unit = ::std::option::Option::Some(input);
@@ -62,6 +66,12 @@ impl RetentionPeriodBuilder {
     ) -> Self {
         self.retention_period_unit = input;
         self
+    }
+    /// <p>The unit of time in which the retention period is measured. Currently, only <code>DAYS</code> is supported.</p>
+    pub fn get_retention_period_unit(
+        &self,
+    ) -> &::std::option::Option<crate::types::RetentionPeriodUnit> {
+        &self.retention_period_unit
     }
     /// Consumes the builder and constructs a [`RetentionPeriod`](crate::types::RetentionPeriod).
     pub fn build(self) -> crate::types::RetentionPeriod {

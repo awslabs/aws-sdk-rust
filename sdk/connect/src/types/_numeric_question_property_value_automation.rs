@@ -51,6 +51,12 @@ impl NumericQuestionPropertyValueAutomationBuilder {
         self.label = input;
         self
     }
+    /// <p>The property label of the automation.</p>
+    pub fn get_label(
+        &self,
+    ) -> &::std::option::Option<crate::types::NumericQuestionPropertyAutomationLabel> {
+        &self.label
+    }
     /// Consumes the builder and constructs a [`NumericQuestionPropertyValueAutomation`](crate::types::NumericQuestionPropertyValueAutomation).
     pub fn build(self) -> crate::types::NumericQuestionPropertyValueAutomation {
         crate::types::NumericQuestionPropertyValueAutomation { label: self.label }

@@ -55,6 +55,10 @@ impl ListFunctionsInputBuilder {
         self.marker = input;
         self
     }
+    /// <p>Use this field when paginating results to indicate where to begin in your list of functions. The response includes functions in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// <p>The maximum number of functions that you want in the response.</p>
     pub fn max_items(mut self, input: i32) -> Self {
         self.max_items = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl ListFunctionsInputBuilder {
         self.max_items = input;
         self
     }
+    /// <p>The maximum number of functions that you want in the response.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        &self.max_items
+    }
     /// <p>An optional filter to return only the functions that are in the specified stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
     pub fn stage(mut self, input: crate::types::FunctionStage) -> Self {
         self.stage = ::std::option::Option::Some(input);
@@ -74,6 +82,10 @@ impl ListFunctionsInputBuilder {
     pub fn set_stage(mut self, input: ::std::option::Option<crate::types::FunctionStage>) -> Self {
         self.stage = input;
         self
+    }
+    /// <p>An optional filter to return only the functions that are in the specified stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
+    pub fn get_stage(&self) -> &::std::option::Option<crate::types::FunctionStage> {
+        &self.stage
     }
     /// Consumes the builder and constructs a [`ListFunctionsInput`](crate::operation::list_functions::ListFunctionsInput).
     pub fn build(

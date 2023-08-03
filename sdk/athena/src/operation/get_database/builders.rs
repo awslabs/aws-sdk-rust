@@ -36,6 +36,10 @@ impl GetDatabaseFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetDatabase as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_database::builders::GetDatabaseInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl GetDatabaseFluentBuilder {
         self.inner = self.inner.set_catalog_name(input);
         self
     }
+    /// <p>The name of the data catalog that contains the database to return.</p>
+    pub fn get_catalog_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_catalog_name()
+    }
     /// <p>The name of the database to return.</p>
     pub fn database_name(
         mut self,
@@ -133,5 +141,9 @@ impl GetDatabaseFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
+    }
+    /// <p>The name of the database to return.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_database_name()
     }
 }

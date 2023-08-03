@@ -64,6 +64,11 @@ impl DisablePolicyTypeInputBuilder {
         self.root_id = input;
         self
     }
+    /// <p>The unique identifier (ID) of the root in which you want to disable a policy type. You can get the ID from the <code>ListRoots</code> operation.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
+    pub fn get_root_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.root_id
+    }
     /// <p>The policy type that you want to disable in this root. You can specify one of the following values:</p>
     /// <ul>
     /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a> </p> </li>
@@ -88,6 +93,16 @@ impl DisablePolicyTypeInputBuilder {
     ) -> Self {
         self.policy_type = input;
         self
+    }
+    /// <p>The policy type that you want to disable in this root. You can specify one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a> </p> </li>
+    /// </ul>
+    pub fn get_policy_type(&self) -> &::std::option::Option<crate::types::PolicyType> {
+        &self.policy_type
     }
     /// Consumes the builder and constructs a [`DisablePolicyTypeInput`](crate::operation::disable_policy_type::DisablePolicyTypeInput).
     pub fn build(

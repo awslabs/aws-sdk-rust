@@ -99,6 +99,10 @@ impl SessionStatusBuilder {
         self.start_date_time = input;
         self
     }
+    /// <p>The date and time that the session started.</p>
+    pub fn get_start_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_date_time
+    }
     /// <p>The most recent date and time that the session was modified.</p>
     pub fn last_modified_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_date_time = ::std::option::Option::Some(input);
@@ -111,6 +115,12 @@ impl SessionStatusBuilder {
     ) -> Self {
         self.last_modified_date_time = input;
         self
+    }
+    /// <p>The most recent date and time that the session was modified.</p>
+    pub fn get_last_modified_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_date_time
     }
     /// <p>The date and time that the session ended.</p>
     pub fn end_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -125,6 +135,10 @@ impl SessionStatusBuilder {
         self.end_date_time = input;
         self
     }
+    /// <p>The date and time that the session ended.</p>
+    pub fn get_end_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_date_time
+    }
     /// <p>The date and time starting at which the session became idle. Can be empty if the session is not currently idle.</p>
     pub fn idle_since_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.idle_since_date_time = ::std::option::Option::Some(input);
@@ -137,6 +151,10 @@ impl SessionStatusBuilder {
     ) -> Self {
         self.idle_since_date_time = input;
         self
+    }
+    /// <p>The date and time starting at which the session became idle. Can be empty if the session is not currently idle.</p>
+    pub fn get_idle_since_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.idle_since_date_time
     }
     /// <p>The state of the session. A description of each state follows.</p>
     /// <p> <code>CREATING</code> - The session is being started, including acquiring resources.</p>
@@ -164,6 +182,18 @@ impl SessionStatusBuilder {
         self.state = input;
         self
     }
+    /// <p>The state of the session. A description of each state follows.</p>
+    /// <p> <code>CREATING</code> - The session is being started, including acquiring resources.</p>
+    /// <p> <code>CREATED</code> - The session has been started.</p>
+    /// <p> <code>IDLE</code> - The session is able to accept a calculation.</p>
+    /// <p> <code>BUSY</code> - The session is processing another task and is unable to accept a calculation.</p>
+    /// <p> <code>TERMINATING</code> - The session is in the process of shutting down.</p>
+    /// <p> <code>TERMINATED</code> - The session and its resources are no longer running.</p>
+    /// <p> <code>DEGRADED</code> - The session has no healthy coordinators.</p>
+    /// <p> <code>FAILED</code> - Due to a failure, the session and its resources are no longer running.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::SessionState> {
+        &self.state
+    }
     /// <p>The reason for the session state change (for example, canceled because the session was terminated).</p>
     pub fn state_change_reason(
         mut self,
@@ -179,6 +209,10 @@ impl SessionStatusBuilder {
     ) -> Self {
         self.state_change_reason = input;
         self
+    }
+    /// <p>The reason for the session state change (for example, canceled because the session was terminated).</p>
+    pub fn get_state_change_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_change_reason
     }
     /// Consumes the builder and constructs a [`SessionStatus`](crate::types::SessionStatus).
     pub fn build(self) -> crate::types::SessionStatus {

@@ -37,6 +37,10 @@ impl CreateDirectConnectGatewayAssociationProposalFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDirectConnectGatewayAssociationProposal as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_direct_connect_gateway_association_proposal::builders::CreateDirectConnectGatewayAssociationProposalInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -107,6 +111,10 @@ impl CreateDirectConnectGatewayAssociationProposalFluentBuilder {
         self.inner = self.inner.set_direct_connect_gateway_id(input);
         self
     }
+    /// <p>The ID of the Direct Connect gateway.</p>
+    pub fn get_direct_connect_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_direct_connect_gateway_id()
+    }
     /// <p>The ID of the Amazon Web Services account that owns the Direct Connect gateway.</p>
     pub fn direct_connect_gateway_owner_account(
         mut self,
@@ -125,6 +133,12 @@ impl CreateDirectConnectGatewayAssociationProposalFluentBuilder {
         self.inner = self.inner.set_direct_connect_gateway_owner_account(input);
         self
     }
+    /// <p>The ID of the Amazon Web Services account that owns the Direct Connect gateway.</p>
+    pub fn get_direct_connect_gateway_owner_account(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_direct_connect_gateway_owner_account()
+    }
     /// <p>The ID of the virtual private gateway or transit gateway.</p>
     pub fn gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.gateway_id(input.into());
@@ -134,6 +148,10 @@ impl CreateDirectConnectGatewayAssociationProposalFluentBuilder {
     pub fn set_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_gateway_id(input);
         self
+    }
+    /// <p>The ID of the virtual private gateway or transit gateway.</p>
+    pub fn get_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_gateway_id()
     }
     /// Appends an item to `addAllowedPrefixesToDirectConnectGateway`.
     ///
@@ -159,6 +177,13 @@ impl CreateDirectConnectGatewayAssociationProposalFluentBuilder {
             .set_add_allowed_prefixes_to_direct_connect_gateway(input);
         self
     }
+    /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway.</p>
+    pub fn get_add_allowed_prefixes_to_direct_connect_gateway(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>> {
+        self.inner
+            .get_add_allowed_prefixes_to_direct_connect_gateway()
+    }
     /// Appends an item to `removeAllowedPrefixesToDirectConnectGateway`.
     ///
     /// To override the contents of this collection use [`set_remove_allowed_prefixes_to_direct_connect_gateway`](Self::set_remove_allowed_prefixes_to_direct_connect_gateway).
@@ -182,5 +207,12 @@ impl CreateDirectConnectGatewayAssociationProposalFluentBuilder {
             .inner
             .set_remove_allowed_prefixes_to_direct_connect_gateway(input);
         self
+    }
+    /// <p>The Amazon VPC prefixes to no longer advertise to the Direct Connect gateway.</p>
+    pub fn get_remove_allowed_prefixes_to_direct_connect_gateway(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>> {
+        self.inner
+            .get_remove_allowed_prefixes_to_direct_connect_gateway()
     }
 }

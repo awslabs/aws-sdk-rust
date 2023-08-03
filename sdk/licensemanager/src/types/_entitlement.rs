@@ -80,6 +80,10 @@ impl EntitlementBuilder {
         self.name = input;
         self
     }
+    /// <p>Entitlement name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Entitlement resource. Use only if the unit is None.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl EntitlementBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>Entitlement resource. Use only if the unit is None.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// <p>Maximum entitlement count. Use if the unit is not None.</p>
     pub fn max_count(mut self, input: i64) -> Self {
@@ -100,6 +108,10 @@ impl EntitlementBuilder {
         self.max_count = input;
         self
     }
+    /// <p>Maximum entitlement count. Use if the unit is not None.</p>
+    pub fn get_max_count(&self) -> &::std::option::Option<i64> {
+        &self.max_count
+    }
     /// <p>Indicates whether overages are allowed.</p>
     pub fn overage(mut self, input: bool) -> Self {
         self.overage = ::std::option::Option::Some(input);
@@ -109,6 +121,10 @@ impl EntitlementBuilder {
     pub fn set_overage(mut self, input: ::std::option::Option<bool>) -> Self {
         self.overage = input;
         self
+    }
+    /// <p>Indicates whether overages are allowed.</p>
+    pub fn get_overage(&self) -> &::std::option::Option<bool> {
+        &self.overage
     }
     /// <p>Entitlement unit.</p>
     pub fn unit(mut self, input: crate::types::EntitlementUnit) -> Self {
@@ -120,6 +136,10 @@ impl EntitlementBuilder {
         self.unit = input;
         self
     }
+    /// <p>Entitlement unit.</p>
+    pub fn get_unit(&self) -> &::std::option::Option<crate::types::EntitlementUnit> {
+        &self.unit
+    }
     /// <p>Indicates whether check-ins are allowed.</p>
     pub fn allow_check_in(mut self, input: bool) -> Self {
         self.allow_check_in = ::std::option::Option::Some(input);
@@ -129,6 +149,10 @@ impl EntitlementBuilder {
     pub fn set_allow_check_in(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_check_in = input;
         self
+    }
+    /// <p>Indicates whether check-ins are allowed.</p>
+    pub fn get_allow_check_in(&self) -> &::std::option::Option<bool> {
+        &self.allow_check_in
     }
     /// Consumes the builder and constructs a [`Entitlement`](crate::types::Entitlement).
     pub fn build(self) -> crate::types::Entitlement {

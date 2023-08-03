@@ -37,6 +37,12 @@ impl CreateProfileFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateProfile as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_profile::builders::CreateProfileInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +125,10 @@ impl CreateProfileFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the profile.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>Specifies whether instance properties are required in temporary credential requests with this profile. </p>
     pub fn require_instance_properties(mut self, input: bool) -> Self {
         self.inner = self.inner.require_instance_properties(input);
@@ -128,6 +138,10 @@ impl CreateProfileFluentBuilder {
     pub fn set_require_instance_properties(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_require_instance_properties(input);
         self
+    }
+    /// <p>Specifies whether instance properties are required in temporary credential requests with this profile. </p>
+    pub fn get_require_instance_properties(&self) -> &::std::option::Option<bool> {
+        self.inner.get_require_instance_properties()
     }
     /// <p>A session policy that applies to the trust boundary of the vended session credentials. </p>
     pub fn session_policy(
@@ -145,6 +159,10 @@ impl CreateProfileFluentBuilder {
         self.inner = self.inner.set_session_policy(input);
         self
     }
+    /// <p>A session policy that applies to the trust boundary of the vended session credentials. </p>
+    pub fn get_session_policy(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_session_policy()
+    }
     /// Appends an item to `roleArns`.
     ///
     /// To override the contents of this collection use [`set_role_arns`](Self::set_role_arns).
@@ -161,6 +179,10 @@ impl CreateProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_role_arns(input);
         self
+    }
+    /// <p>A list of IAM roles that this profile can assume in a temporary credential request.</p>
+    pub fn get_role_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_role_arns()
     }
     /// Appends an item to `managedPolicyArns`.
     ///
@@ -182,6 +204,12 @@ impl CreateProfileFluentBuilder {
         self.inner = self.inner.set_managed_policy_arns(input);
         self
     }
+    /// <p>A list of managed policy ARNs that apply to the vended session credentials. </p>
+    pub fn get_managed_policy_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_managed_policy_arns()
+    }
     /// <p> The number of seconds the vended session credentials are valid for. </p>
     pub fn duration_seconds(mut self, input: i32) -> Self {
         self.inner = self.inner.duration_seconds(input);
@@ -192,6 +220,10 @@ impl CreateProfileFluentBuilder {
         self.inner = self.inner.set_duration_seconds(input);
         self
     }
+    /// <p> The number of seconds the vended session credentials are valid for. </p>
+    pub fn get_duration_seconds(&self) -> &::std::option::Option<i32> {
+        self.inner.get_duration_seconds()
+    }
     /// <p>Specifies whether the profile is enabled.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.enabled(input);
@@ -201,6 +233,10 @@ impl CreateProfileFluentBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enabled(input);
         self
+    }
+    /// <p>Specifies whether the profile is enabled.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enabled()
     }
     /// Appends an item to `tags`.
     ///
@@ -218,5 +254,9 @@ impl CreateProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags to attach to the profile.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

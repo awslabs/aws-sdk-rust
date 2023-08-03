@@ -85,6 +85,10 @@ impl UpdateCaCertificateInputBuilder {
         self.certificate_id = input;
         self
     }
+    /// <p>The CA certificate identifier.</p>
+    pub fn get_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_id
+    }
     /// <p>The updated status of the CA certificate.</p>
     /// <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
     pub fn new_status(mut self, input: crate::types::CaCertificateStatus) -> Self {
@@ -99,6 +103,11 @@ impl UpdateCaCertificateInputBuilder {
     ) -> Self {
         self.new_status = input;
         self
+    }
+    /// <p>The updated status of the CA certificate.</p>
+    /// <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
+    pub fn get_new_status(&self) -> &::std::option::Option<crate::types::CaCertificateStatus> {
+        &self.new_status
     }
     /// <p>The new value for the auto registration status. Valid values are: "ENABLE" or "DISABLE".</p>
     pub fn new_auto_registration_status(
@@ -116,6 +125,12 @@ impl UpdateCaCertificateInputBuilder {
         self.new_auto_registration_status = input;
         self
     }
+    /// <p>The new value for the auto registration status. Valid values are: "ENABLE" or "DISABLE".</p>
+    pub fn get_new_auto_registration_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoRegistrationStatus> {
+        &self.new_auto_registration_status
+    }
     /// <p>Information about the registration configuration.</p>
     pub fn registration_config(mut self, input: crate::types::RegistrationConfig) -> Self {
         self.registration_config = ::std::option::Option::Some(input);
@@ -129,6 +144,12 @@ impl UpdateCaCertificateInputBuilder {
         self.registration_config = input;
         self
     }
+    /// <p>Information about the registration configuration.</p>
+    pub fn get_registration_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::RegistrationConfig> {
+        &self.registration_config
+    }
     /// <p>If true, removes auto registration.</p>
     pub fn remove_auto_registration(mut self, input: bool) -> Self {
         self.remove_auto_registration = ::std::option::Option::Some(input);
@@ -138,6 +159,10 @@ impl UpdateCaCertificateInputBuilder {
     pub fn set_remove_auto_registration(mut self, input: ::std::option::Option<bool>) -> Self {
         self.remove_auto_registration = input;
         self
+    }
+    /// <p>If true, removes auto registration.</p>
+    pub fn get_remove_auto_registration(&self) -> &::std::option::Option<bool> {
+        &self.remove_auto_registration
     }
     /// Consumes the builder and constructs a [`UpdateCaCertificateInput`](crate::operation::update_ca_certificate::UpdateCaCertificateInput).
     pub fn build(

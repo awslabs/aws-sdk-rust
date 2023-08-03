@@ -46,6 +46,10 @@ impl AwsEc2SecurityGroupPrefixListIdBuilder {
         self.prefix_list_id = input;
         self
     }
+    /// <p>The ID of the prefix.</p>
+    pub fn get_prefix_list_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix_list_id
+    }
     /// Consumes the builder and constructs a [`AwsEc2SecurityGroupPrefixListId`](crate::types::AwsEc2SecurityGroupPrefixListId).
     pub fn build(self) -> crate::types::AwsEc2SecurityGroupPrefixListId {
         crate::types::AwsEc2SecurityGroupPrefixListId {

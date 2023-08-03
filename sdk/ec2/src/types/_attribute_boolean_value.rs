@@ -40,6 +40,10 @@ impl AttributeBooleanValueBuilder {
         self.value = input;
         self
     }
+    /// <p>The attribute value. The valid values are <code>true</code> or <code>false</code>.</p>
+    pub fn get_value(&self) -> &::std::option::Option<bool> {
+        &self.value
+    }
     /// Consumes the builder and constructs a [`AttributeBooleanValue`](crate::types::AttributeBooleanValue).
     pub fn build(self) -> crate::types::AttributeBooleanValue {
         crate::types::AttributeBooleanValue { value: self.value }

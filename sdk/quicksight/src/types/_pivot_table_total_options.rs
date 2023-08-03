@@ -67,6 +67,12 @@ impl PivotTableTotalOptionsBuilder {
         self.row_subtotal_options = input;
         self
     }
+    /// <p>The row subtotal options.</p>
+    pub fn get_row_subtotal_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::SubtotalOptions> {
+        &self.row_subtotal_options
+    }
     /// <p>The column subtotal options.</p>
     pub fn column_subtotal_options(mut self, input: crate::types::SubtotalOptions) -> Self {
         self.column_subtotal_options = ::std::option::Option::Some(input);
@@ -79,6 +85,12 @@ impl PivotTableTotalOptionsBuilder {
     ) -> Self {
         self.column_subtotal_options = input;
         self
+    }
+    /// <p>The column subtotal options.</p>
+    pub fn get_column_subtotal_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::SubtotalOptions> {
+        &self.column_subtotal_options
     }
     /// <p>The row total options.</p>
     pub fn row_total_options(mut self, input: crate::types::PivotTotalOptions) -> Self {
@@ -93,6 +105,10 @@ impl PivotTableTotalOptionsBuilder {
         self.row_total_options = input;
         self
     }
+    /// <p>The row total options.</p>
+    pub fn get_row_total_options(&self) -> &::std::option::Option<crate::types::PivotTotalOptions> {
+        &self.row_total_options
+    }
     /// <p>The column total options.</p>
     pub fn column_total_options(mut self, input: crate::types::PivotTotalOptions) -> Self {
         self.column_total_options = ::std::option::Option::Some(input);
@@ -105,6 +121,12 @@ impl PivotTableTotalOptionsBuilder {
     ) -> Self {
         self.column_total_options = input;
         self
+    }
+    /// <p>The column total options.</p>
+    pub fn get_column_total_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::PivotTotalOptions> {
+        &self.column_total_options
     }
     /// Consumes the builder and constructs a [`PivotTableTotalOptions`](crate::types::PivotTableTotalOptions).
     pub fn build(self) -> crate::types::PivotTableTotalOptions {

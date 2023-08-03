@@ -36,6 +36,12 @@ impl UpdatePricingPlanFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdatePricingPlan as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_pricing_plan::builders::UpdatePricingPlanInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl UpdatePricingPlanFluentBuilder {
         self.inner = self.inner.set_pricing_mode(input);
         self
     }
+    /// <p>The pricing mode.</p>
+    pub fn get_pricing_mode(&self) -> &::std::option::Option<crate::types::PricingMode> {
+        self.inner.get_pricing_mode()
+    }
     /// Appends an item to `bundleNames`.
     ///
     /// To override the contents of this collection use [`set_bundle_names`](Self::set_bundle_names).
@@ -145,5 +155,11 @@ impl UpdatePricingPlanFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_bundle_names(input);
         self
+    }
+    /// <p>The bundle names.</p>
+    pub fn get_bundle_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_bundle_names()
     }
 }

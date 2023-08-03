@@ -64,6 +64,14 @@ impl DeleteDbSubnetGroupInputBuilder {
         self.db_subnet_group_name = input;
         self
     }
+    /// <p>The name of the database subnet group to delete.</p> <note>
+    /// <p>You can't delete the default subnet group.</p>
+    /// </note>
+    /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
+    /// <p>Example: <code>mydbsubnetgroup</code> </p>
+    pub fn get_db_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_subnet_group_name
+    }
     /// Consumes the builder and constructs a [`DeleteDbSubnetGroupInput`](crate::operation::delete_db_subnet_group::DeleteDbSubnetGroupInput).
     pub fn build(
         self,

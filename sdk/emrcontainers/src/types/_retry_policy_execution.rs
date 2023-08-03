@@ -40,6 +40,10 @@ impl RetryPolicyExecutionBuilder {
         self.current_attempt_count = input;
         self
     }
+    /// <p>The current number of attempts made on the driver of the job.</p>
+    pub fn get_current_attempt_count(&self) -> &::std::option::Option<i32> {
+        &self.current_attempt_count
+    }
     /// Consumes the builder and constructs a [`RetryPolicyExecution`](crate::types::RetryPolicyExecution).
     pub fn build(self) -> crate::types::RetryPolicyExecution {
         crate::types::RetryPolicyExecution {

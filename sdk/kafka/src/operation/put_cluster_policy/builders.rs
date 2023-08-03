@@ -36,6 +36,12 @@ impl PutClusterPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutClusterPolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_cluster_policy::builders::PutClusterPolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl PutClusterPolicyFluentBuilder {
         self.inner = self.inner.set_cluster_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_arn()
+    }
     /// <p>The policy version.</p>
     pub fn current_version(
         mut self,
@@ -142,6 +152,10 @@ impl PutClusterPolicyFluentBuilder {
         self.inner = self.inner.set_current_version(input);
         self
     }
+    /// <p>The policy version.</p>
+    pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_current_version()
+    }
     /// <p>The policy.</p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy(input.into());
@@ -151,5 +165,9 @@ impl PutClusterPolicyFluentBuilder {
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy(input);
         self
+    }
+    /// <p>The policy.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy()
     }
 }

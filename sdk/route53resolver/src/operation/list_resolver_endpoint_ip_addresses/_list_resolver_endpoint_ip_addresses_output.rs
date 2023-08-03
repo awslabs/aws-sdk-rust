@@ -63,6 +63,10 @@ impl ListResolverEndpointIpAddressesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If the specified endpoint has more than <code>MaxResults</code> IP addresses, you can submit another <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP addresses. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The value that you specified for <code>MaxResults</code> in the request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl ListResolverEndpointIpAddressesOutputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The value that you specified for <code>MaxResults</code> in the request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Appends an item to `ip_addresses`.
     ///
@@ -91,6 +99,12 @@ impl ListResolverEndpointIpAddressesOutputBuilder {
     ) -> Self {
         self.ip_addresses = input;
         self
+    }
+    /// <p>Information about the IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints).</p>
+    pub fn get_ip_addresses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpAddressResponse>> {
+        &self.ip_addresses
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -93,6 +93,11 @@ impl PartitionInputBuilder {
         self.values = input;
         self
     }
+    /// <p>The values of the partition. Although this parameter is not required by the SDK, you must specify this parameter for a valid input.</p>
+    /// <p>The values for the keys for the new partition must be passed as an array of String objects that must be ordered in the same order as the partition keys appearing in the Amazon S3 prefix. Otherwise Glue will add the values to the wrong keys.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
+    }
     /// <p>The last time at which the partition was accessed.</p>
     pub fn last_access_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_access_time = ::std::option::Option::Some(input);
@@ -106,6 +111,10 @@ impl PartitionInputBuilder {
         self.last_access_time = input;
         self
     }
+    /// <p>The last time at which the partition was accessed.</p>
+    pub fn get_last_access_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_access_time
+    }
     /// <p>Provides information about the physical location where the partition is stored.</p>
     pub fn storage_descriptor(mut self, input: crate::types::StorageDescriptor) -> Self {
         self.storage_descriptor = ::std::option::Option::Some(input);
@@ -118,6 +127,12 @@ impl PartitionInputBuilder {
     ) -> Self {
         self.storage_descriptor = input;
         self
+    }
+    /// <p>Provides information about the physical location where the partition is stored.</p>
+    pub fn get_storage_descriptor(
+        &self,
+    ) -> &::std::option::Option<crate::types::StorageDescriptor> {
+        &self.storage_descriptor
     }
     /// Adds a key-value pair to `parameters`.
     ///
@@ -144,6 +159,14 @@ impl PartitionInputBuilder {
         self.parameters = input;
         self
     }
+    /// <p>These key-value pairs define partition parameters.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.parameters
+    }
     /// <p>The last time at which column statistics were computed for this partition.</p>
     pub fn last_analyzed_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_analyzed_time = ::std::option::Option::Some(input);
@@ -156,6 +179,10 @@ impl PartitionInputBuilder {
     ) -> Self {
         self.last_analyzed_time = input;
         self
+    }
+    /// <p>The last time at which column statistics were computed for this partition.</p>
+    pub fn get_last_analyzed_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_analyzed_time
     }
     /// Consumes the builder and constructs a [`PartitionInput`](crate::types::PartitionInput).
     pub fn build(self) -> crate::types::PartitionInput {

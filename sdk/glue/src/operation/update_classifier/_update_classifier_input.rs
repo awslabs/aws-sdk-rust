@@ -75,6 +75,12 @@ impl UpdateClassifierInputBuilder {
         self.grok_classifier = input;
         self
     }
+    /// <p>A <code>GrokClassifier</code> object with updated fields.</p>
+    pub fn get_grok_classifier(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateGrokClassifierRequest> {
+        &self.grok_classifier
+    }
     /// <p>An <code>XMLClassifier</code> object with updated fields.</p>
     pub fn xml_classifier(mut self, input: crate::types::UpdateXmlClassifierRequest) -> Self {
         self.xml_classifier = ::std::option::Option::Some(input);
@@ -87,6 +93,12 @@ impl UpdateClassifierInputBuilder {
     ) -> Self {
         self.xml_classifier = input;
         self
+    }
+    /// <p>An <code>XMLClassifier</code> object with updated fields.</p>
+    pub fn get_xml_classifier(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateXmlClassifierRequest> {
+        &self.xml_classifier
     }
     /// <p>A <code>JsonClassifier</code> object with updated fields.</p>
     pub fn json_classifier(mut self, input: crate::types::UpdateJsonClassifierRequest) -> Self {
@@ -101,6 +113,12 @@ impl UpdateClassifierInputBuilder {
         self.json_classifier = input;
         self
     }
+    /// <p>A <code>JsonClassifier</code> object with updated fields.</p>
+    pub fn get_json_classifier(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateJsonClassifierRequest> {
+        &self.json_classifier
+    }
     /// <p>A <code>CsvClassifier</code> object with updated fields.</p>
     pub fn csv_classifier(mut self, input: crate::types::UpdateCsvClassifierRequest) -> Self {
         self.csv_classifier = ::std::option::Option::Some(input);
@@ -113,6 +131,12 @@ impl UpdateClassifierInputBuilder {
     ) -> Self {
         self.csv_classifier = input;
         self
+    }
+    /// <p>A <code>CsvClassifier</code> object with updated fields.</p>
+    pub fn get_csv_classifier(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateCsvClassifierRequest> {
+        &self.csv_classifier
     }
     /// Consumes the builder and constructs a [`UpdateClassifierInput`](crate::operation::update_classifier::UpdateClassifierInput).
     pub fn build(

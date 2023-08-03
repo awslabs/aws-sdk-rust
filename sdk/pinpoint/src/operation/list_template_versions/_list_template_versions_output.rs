@@ -56,6 +56,12 @@ impl ListTemplateVersionsOutputBuilder {
         self.template_versions_response = input;
         self
     }
+    /// <p>Provides information about all the versions of a specific message template.</p>
+    pub fn get_template_versions_response(
+        &self,
+    ) -> &::std::option::Option<crate::types::TemplateVersionsResponse> {
+        &self.template_versions_response
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -36,6 +36,12 @@ impl GetArtifactUrlFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetArtifactUrl as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_artifact_url::builders::GetArtifactUrlInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +131,9 @@ impl GetArtifactUrlFluentBuilder {
     pub fn set_artifact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_artifact_id(input);
         self
+    }
+    /// <p> The unique ID for an artifact. </p>
+    pub fn get_artifact_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_artifact_id()
     }
 }

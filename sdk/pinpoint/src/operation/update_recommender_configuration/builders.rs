@@ -36,6 +36,10 @@ impl UpdateRecommenderConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateRecommenderConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_recommender_configuration::builders::UpdateRecommenderConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl UpdateRecommenderConfigurationFluentBuilder {
         self.inner = self.inner.set_recommender_id(input);
         self
     }
+    /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
+    pub fn get_recommender_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_recommender_id()
+    }
     /// <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
     pub fn update_recommender_configuration(
         mut self,
@@ -147,5 +155,11 @@ impl UpdateRecommenderConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_update_recommender_configuration(input);
         self
+    }
+    /// <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
+    pub fn get_update_recommender_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateRecommenderConfigurationShape> {
+        self.inner.get_update_recommender_configuration()
     }
 }

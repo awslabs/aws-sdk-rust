@@ -48,6 +48,10 @@ impl ValidationConfigurationBuilder {
         self.ruleset_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the ruleset to be validated in the profile job. The TargetArn of the selected ruleset should be the same as the Amazon Resource Name (ARN) of the dataset that is associated with the profile job.</p>
+    pub fn get_ruleset_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ruleset_arn
+    }
     /// <p>Mode of data quality validation. Default mode is “CHECK_ALL” which verifies all rules defined in the selected ruleset.</p>
     pub fn validation_mode(mut self, input: crate::types::ValidationMode) -> Self {
         self.validation_mode = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl ValidationConfigurationBuilder {
     ) -> Self {
         self.validation_mode = input;
         self
+    }
+    /// <p>Mode of data quality validation. Default mode is “CHECK_ALL” which verifies all rules defined in the selected ruleset.</p>
+    pub fn get_validation_mode(&self) -> &::std::option::Option<crate::types::ValidationMode> {
+        &self.validation_mode
     }
     /// Consumes the builder and constructs a [`ValidationConfiguration`](crate::types::ValidationConfiguration).
     pub fn build(self) -> crate::types::ValidationConfiguration {

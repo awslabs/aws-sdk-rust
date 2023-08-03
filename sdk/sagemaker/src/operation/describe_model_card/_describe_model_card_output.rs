@@ -184,6 +184,10 @@ impl DescribeModelCardOutputBuilder {
         self.model_card_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the model card.</p>
+    pub fn get_model_card_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_card_arn
+    }
     /// <p>The name of the model card.</p>
     pub fn model_card_name(
         mut self,
@@ -200,6 +204,10 @@ impl DescribeModelCardOutputBuilder {
         self.model_card_name = input;
         self
     }
+    /// <p>The name of the model card.</p>
+    pub fn get_model_card_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_card_name
+    }
     /// <p>The version of the model card.</p>
     pub fn model_card_version(mut self, input: i32) -> Self {
         self.model_card_version = ::std::option::Option::Some(input);
@@ -210,6 +218,10 @@ impl DescribeModelCardOutputBuilder {
         self.model_card_version = input;
         self
     }
+    /// <p>The version of the model card.</p>
+    pub fn get_model_card_version(&self) -> &::std::option::Option<i32> {
+        &self.model_card_version
+    }
     /// <p>The content of the model card.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
@@ -219,6 +231,10 @@ impl DescribeModelCardOutputBuilder {
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
         self
+    }
+    /// <p>The content of the model card.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
     }
     /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
     /// <ul>
@@ -245,6 +261,16 @@ impl DescribeModelCardOutputBuilder {
         self.model_card_status = input;
         self
     }
+    /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
+    /// <ul>
+    /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li>
+    /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li>
+    /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
+    /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
+    /// </ul>
+    pub fn get_model_card_status(&self) -> &::std::option::Option<crate::types::ModelCardStatus> {
+        &self.model_card_status
+    }
     /// <p>The security configuration used to protect model card content.</p>
     pub fn security_config(mut self, input: crate::types::ModelCardSecurityConfig) -> Self {
         self.security_config = ::std::option::Option::Some(input);
@@ -257,6 +283,12 @@ impl DescribeModelCardOutputBuilder {
     ) -> Self {
         self.security_config = input;
         self
+    }
+    /// <p>The security configuration used to protect model card content.</p>
+    pub fn get_security_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ModelCardSecurityConfig> {
+        &self.security_config
     }
     /// <p>The date and time the model card was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -271,6 +303,10 @@ impl DescribeModelCardOutputBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The date and time the model card was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn created_by(mut self, input: crate::types::UserContext) -> Self {
         self.created_by = ::std::option::Option::Some(input);
@@ -283,6 +319,10 @@ impl DescribeModelCardOutputBuilder {
     ) -> Self {
         self.created_by = input;
         self
+    }
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<crate::types::UserContext> {
+        &self.created_by
     }
     /// <p>The date and time the model card was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -297,6 +337,10 @@ impl DescribeModelCardOutputBuilder {
         self.last_modified_time = input;
         self
     }
+    /// <p>The date and time the model card was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn last_modified_by(mut self, input: crate::types::UserContext) -> Self {
         self.last_modified_by = ::std::option::Option::Some(input);
@@ -309,6 +353,10 @@ impl DescribeModelCardOutputBuilder {
     ) -> Self {
         self.last_modified_by = input;
         self
+    }
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    pub fn get_last_modified_by(&self) -> &::std::option::Option<crate::types::UserContext> {
+        &self.last_modified_by
     }
     /// <p>The processing status of model card deletion. The <code>ModelCardProcessingStatus</code> updates throughout the different deletion steps.</p>
     /// <ul>
@@ -341,6 +389,20 @@ impl DescribeModelCardOutputBuilder {
     ) -> Self {
         self.model_card_processing_status = input;
         self
+    }
+    /// <p>The processing status of model card deletion. The <code>ModelCardProcessingStatus</code> updates throughout the different deletion steps.</p>
+    /// <ul>
+    /// <li> <p> <code>DeletePending</code>: Model card deletion request received.</p> </li>
+    /// <li> <p> <code>DeleteInProgress</code>: Model card deletion is in progress.</p> </li>
+    /// <li> <p> <code>ContentDeleted</code>: Deleted model card content.</p> </li>
+    /// <li> <p> <code>ExportJobsDeleted</code>: Deleted all export jobs associated with the model card.</p> </li>
+    /// <li> <p> <code>DeleteCompleted</code>: Successfully deleted the model card.</p> </li>
+    /// <li> <p> <code>DeleteFailed</code>: The model card failed to delete.</p> </li>
+    /// </ul>
+    pub fn get_model_card_processing_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ModelCardProcessingStatus> {
+        &self.model_card_processing_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

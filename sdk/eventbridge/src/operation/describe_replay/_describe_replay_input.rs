@@ -39,6 +39,10 @@ impl DescribeReplayInputBuilder {
         self.replay_name = input;
         self
     }
+    /// <p>The name of the replay to retrieve.</p>
+    pub fn get_replay_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replay_name
+    }
     /// Consumes the builder and constructs a [`DescribeReplayInput`](crate::operation::describe_replay::DescribeReplayInput).
     pub fn build(
         self,

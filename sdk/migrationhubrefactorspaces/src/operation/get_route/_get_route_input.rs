@@ -61,6 +61,10 @@ impl GetRouteInputBuilder {
         self.environment_identifier = input;
         self
     }
+    /// <p>The ID of the environment.</p>
+    pub fn get_environment_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_identifier
+    }
     /// <p>The ID of the application. </p>
     pub fn application_identifier(
         mut self,
@@ -77,6 +81,10 @@ impl GetRouteInputBuilder {
         self.application_identifier = input;
         self
     }
+    /// <p>The ID of the application. </p>
+    pub fn get_application_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_identifier
+    }
     /// <p>The ID of the route.</p>
     pub fn route_identifier(
         mut self,
@@ -92,6 +100,10 @@ impl GetRouteInputBuilder {
     ) -> Self {
         self.route_identifier = input;
         self
+    }
+    /// <p>The ID of the route.</p>
+    pub fn get_route_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.route_identifier
     }
     /// Consumes the builder and constructs a [`GetRouteInput`](crate::operation::get_route::GetRouteInput).
     pub fn build(

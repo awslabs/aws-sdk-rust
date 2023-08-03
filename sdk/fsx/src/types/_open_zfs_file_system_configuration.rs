@@ -115,6 +115,10 @@ impl OpenZfsFileSystemConfigurationBuilder {
         self.automatic_backup_retention_days = input;
         self
     }
+    /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
+    pub fn get_automatic_backup_retention_days(&self) -> &::std::option::Option<i32> {
+        &self.automatic_backup_retention_days
+    }
     /// <p>A Boolean value indicating whether tags on the file system should be copied to backups. If it's set to <code>true</code>, all tags on the file system are copied to all automatic backups and any user-initiated backups where the user doesn't specify any tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the file system, regardless of this value. </p>
     pub fn copy_tags_to_backups(mut self, input: bool) -> Self {
         self.copy_tags_to_backups = ::std::option::Option::Some(input);
@@ -125,6 +129,10 @@ impl OpenZfsFileSystemConfigurationBuilder {
         self.copy_tags_to_backups = input;
         self
     }
+    /// <p>A Boolean value indicating whether tags on the file system should be copied to backups. If it's set to <code>true</code>, all tags on the file system are copied to all automatic backups and any user-initiated backups where the user doesn't specify any tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the file system, regardless of this value. </p>
+    pub fn get_copy_tags_to_backups(&self) -> &::std::option::Option<bool> {
+        &self.copy_tags_to_backups
+    }
     /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value. </p>
     pub fn copy_tags_to_volumes(mut self, input: bool) -> Self {
         self.copy_tags_to_volumes = ::std::option::Option::Some(input);
@@ -134,6 +142,10 @@ impl OpenZfsFileSystemConfigurationBuilder {
     pub fn set_copy_tags_to_volumes(mut self, input: ::std::option::Option<bool>) -> Self {
         self.copy_tags_to_volumes = input;
         self
+    }
+    /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value. </p>
+    pub fn get_copy_tags_to_volumes(&self) -> &::std::option::Option<bool> {
+        &self.copy_tags_to_volumes
     }
     /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
     pub fn daily_automatic_backup_start_time(
@@ -151,6 +163,12 @@ impl OpenZfsFileSystemConfigurationBuilder {
         self.daily_automatic_backup_start_time = input;
         self
     }
+    /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
+    pub fn get_daily_automatic_backup_start_time(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.daily_automatic_backup_start_time
+    }
     /// <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS supports  <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code>.</p>
     pub fn deployment_type(mut self, input: crate::types::OpenZfsDeploymentType) -> Self {
         self.deployment_type = ::std::option::Option::Some(input);
@@ -164,6 +182,12 @@ impl OpenZfsFileSystemConfigurationBuilder {
         self.deployment_type = input;
         self
     }
+    /// <p>Specifies the file-system deployment type. Amazon FSx for OpenZFS supports  <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code>.</p>
+    pub fn get_deployment_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::OpenZfsDeploymentType> {
+        &self.deployment_type
+    }
     /// <p>The throughput of an Amazon FSx file system, measured in megabytes per second (MBps).</p>
     pub fn throughput_capacity(mut self, input: i32) -> Self {
         self.throughput_capacity = ::std::option::Option::Some(input);
@@ -173,6 +197,10 @@ impl OpenZfsFileSystemConfigurationBuilder {
     pub fn set_throughput_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.throughput_capacity = input;
         self
+    }
+    /// <p>The throughput of an Amazon FSx file system, measured in megabytes per second (MBps).</p>
+    pub fn get_throughput_capacity(&self) -> &::std::option::Option<i32> {
+        &self.throughput_capacity
     }
     /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
     /// <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
@@ -196,6 +224,15 @@ impl OpenZfsFileSystemConfigurationBuilder {
         self.weekly_maintenance_start_time = input;
         self
     }
+    /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
+    /// <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
+    /// <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p>
+    /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
+    pub fn get_weekly_maintenance_start_time(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.weekly_maintenance_start_time
+    }
     /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP or FSx for OpenZFS file system. By default, Amazon FSx automatically provisions 3 IOPS per GB of storage capacity. You can provision additional IOPS per GB of storage. The configuration consists of the total number of provisioned SSD IOPS and how it is was provisioned, or the mode (by the customer or by Amazon FSx).</p>
     pub fn disk_iops_configuration(mut self, input: crate::types::DiskIopsConfiguration) -> Self {
         self.disk_iops_configuration = ::std::option::Option::Some(input);
@@ -208,6 +245,12 @@ impl OpenZfsFileSystemConfigurationBuilder {
     ) -> Self {
         self.disk_iops_configuration = input;
         self
+    }
+    /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP or FSx for OpenZFS file system. By default, Amazon FSx automatically provisions 3 IOPS per GB of storage capacity. You can provision additional IOPS per GB of storage. The configuration consists of the total number of provisioned SSD IOPS and how it is was provisioned, or the mode (by the customer or by Amazon FSx).</p>
+    pub fn get_disk_iops_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DiskIopsConfiguration> {
+        &self.disk_iops_configuration
     }
     /// <p>The ID of the root volume of the OpenZFS file system. </p>
     pub fn root_volume_id(
@@ -224,6 +267,10 @@ impl OpenZfsFileSystemConfigurationBuilder {
     ) -> Self {
         self.root_volume_id = input;
         self
+    }
+    /// <p>The ID of the root volume of the OpenZFS file system. </p>
+    pub fn get_root_volume_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.root_volume_id
     }
     /// Consumes the builder and constructs a [`OpenZfsFileSystemConfiguration`](crate::types::OpenZfsFileSystemConfiguration).
     pub fn build(self) -> crate::types::OpenZfsFileSystemConfiguration {

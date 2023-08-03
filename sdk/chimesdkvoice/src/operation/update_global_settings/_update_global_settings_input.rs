@@ -43,6 +43,12 @@ impl UpdateGlobalSettingsInputBuilder {
         self.voice_connector = input;
         self
     }
+    /// <p>The Voice Connector settings.</p>
+    pub fn get_voice_connector(
+        &self,
+    ) -> &::std::option::Option<crate::types::VoiceConnectorSettings> {
+        &self.voice_connector
+    }
     /// Consumes the builder and constructs a [`UpdateGlobalSettingsInput`](crate::operation::update_global_settings::UpdateGlobalSettingsInput).
     pub fn build(
         self,

@@ -64,6 +64,10 @@ impl WorldSummaryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the world.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The time, in milliseconds since the epoch, when the world was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl WorldSummaryBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The time, in milliseconds since the epoch, when the world was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// <p>The Amazon Resource Name (arn) of the world generation job.</p>
     pub fn generation_job(
@@ -93,6 +101,10 @@ impl WorldSummaryBuilder {
         self.generation_job = input;
         self
     }
+    /// <p>The Amazon Resource Name (arn) of the world generation job.</p>
+    pub fn get_generation_job(&self) -> &::std::option::Option<::std::string::String> {
+        &self.generation_job
+    }
     /// <p>The Amazon Resource Name (arn) of the world template.</p>
     pub fn template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template = ::std::option::Option::Some(input.into());
@@ -102,6 +114,10 @@ impl WorldSummaryBuilder {
     pub fn set_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template = input;
         self
+    }
+    /// <p>The Amazon Resource Name (arn) of the world template.</p>
+    pub fn get_template(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template
     }
     /// Consumes the builder and constructs a [`WorldSummary`](crate::types::WorldSummary).
     pub fn build(self) -> crate::types::WorldSummary {

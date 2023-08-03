@@ -54,6 +54,10 @@ impl NotifyRecommendationsReceivedErrorBuilder {
         self.recommendation_id = input;
         self
     }
+    /// <p>The identifier of the recommendation that is in error.</p>
+    pub fn get_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommendation_id
+    }
     /// <p>A recommendation is causing an error.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl NotifyRecommendationsReceivedErrorBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>A recommendation is causing an error.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`NotifyRecommendationsReceivedError`](crate::types::NotifyRecommendationsReceivedError).
     pub fn build(self) -> crate::types::NotifyRecommendationsReceivedError {

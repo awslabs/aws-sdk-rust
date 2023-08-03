@@ -47,6 +47,10 @@ impl CreateProvisioningClaimInputBuilder {
         self.template_name = input;
         self
     }
+    /// <p>The name of the provisioning template to use.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
     /// Consumes the builder and constructs a [`CreateProvisioningClaimInput`](crate::operation::create_provisioning_claim::CreateProvisioningClaimInput).
     pub fn build(
         self,

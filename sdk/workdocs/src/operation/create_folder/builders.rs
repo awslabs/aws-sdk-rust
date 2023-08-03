@@ -36,6 +36,10 @@ impl CreateFolderFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateFolder as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_folder::builders::CreateFolderInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl CreateFolderFluentBuilder {
         self.inner = self.inner.set_authentication_token(input);
         self
     }
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_authentication_token()
+    }
     /// <p>The name of the new folder.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -133,6 +141,10 @@ impl CreateFolderFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the new folder.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The ID of the parent folder.</p>
     pub fn parent_folder_id(
@@ -149,5 +161,9 @@ impl CreateFolderFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_parent_folder_id(input);
         self
+    }
+    /// <p>The ID of the parent folder.</p>
+    pub fn get_parent_folder_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_parent_folder_id()
     }
 }

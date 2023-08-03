@@ -81,6 +81,10 @@ impl DescribeTopicPermissionsOutputBuilder {
         self.topic_id = input;
         self
     }
+    /// <p>The ID of the topic that you want to describe. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    pub fn get_topic_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the topic.</p>
     pub fn topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_arn = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl DescribeTopicPermissionsOutputBuilder {
     pub fn set_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.topic_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the topic.</p>
+    pub fn get_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_arn
     }
     /// Appends an item to `permissions`.
     ///
@@ -110,6 +118,12 @@ impl DescribeTopicPermissionsOutputBuilder {
         self.permissions = input;
         self
     }
+    /// <p>A list of resource permissions that are configured to the topic.</p>
+    pub fn get_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+        &self.permissions
+    }
     /// <p>The HTTP status of the request.</p>
     pub fn status(mut self, input: i32) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -120,6 +134,10 @@ impl DescribeTopicPermissionsOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The HTTP status of the request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<i32> {
+        &self.status
+    }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_id = ::std::option::Option::Some(input.into());
@@ -129,6 +147,10 @@ impl DescribeTopicPermissionsOutputBuilder {
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_id = input;
         self
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -51,6 +51,12 @@ impl ModifyVerifiedAccessGroupOutputBuilder {
         self.verified_access_group = input;
         self
     }
+    /// <p>Details of Verified Access group.</p>
+    pub fn get_verified_access_group(
+        &self,
+    ) -> &::std::option::Option<crate::types::VerifiedAccessGroup> {
+        &self.verified_access_group
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

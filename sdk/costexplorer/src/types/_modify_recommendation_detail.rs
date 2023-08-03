@@ -50,6 +50,12 @@ impl ModifyRecommendationDetailBuilder {
         self.target_instances = input;
         self
     }
+    /// <p>Determines whether this instance type is the Amazon Web Services default recommendation.</p>
+    pub fn get_target_instances(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetInstance>> {
+        &self.target_instances
+    }
     /// Consumes the builder and constructs a [`ModifyRecommendationDetail`](crate::types::ModifyRecommendationDetail).
     pub fn build(self) -> crate::types::ModifyRecommendationDetail {
         crate::types::ModifyRecommendationDetail {

@@ -162,6 +162,10 @@ impl OutputBuilder {
         self.data_transfer_subscriber_fee_percent = input;
         self
     }
+    /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
+    pub fn get_data_transfer_subscriber_fee_percent(&self) -> &::std::option::Option<i32> {
+        &self.data_transfer_subscriber_fee_percent
+    }
     /// A description of the output.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -172,6 +176,10 @@ impl OutputBuilder {
         self.description = input;
         self
     }
+    /// A description of the output.
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// The address where you want to send the output.
     pub fn destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination = ::std::option::Option::Some(input.into());
@@ -181,6 +189,10 @@ impl OutputBuilder {
     pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination = input;
         self
+    }
+    /// The address where you want to send the output.
+    pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination
     }
     /// The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
     pub fn encryption(mut self, input: crate::types::Encryption) -> Self {
@@ -194,6 +206,10 @@ impl OutputBuilder {
     ) -> Self {
         self.encryption = input;
         self
+    }
+    /// The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
+    pub fn get_encryption(&self) -> &::std::option::Option<crate::types::Encryption> {
+        &self.encryption
     }
     /// The ARN of the entitlement on the originator''s flow. This value is relevant only on entitled flows.
     pub fn entitlement_arn(
@@ -211,6 +227,10 @@ impl OutputBuilder {
         self.entitlement_arn = input;
         self
     }
+    /// The ARN of the entitlement on the originator''s flow. This value is relevant only on entitled flows.
+    pub fn get_entitlement_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entitlement_arn
+    }
     /// The IP address that the receiver requires in order to establish a connection with the flow. For public networking, the ListenerAddress is represented by the elastic IP address of the flow. For private networking, the ListenerAddress is represented by the elastic network interface IP address of the VPC. This field applies only to outputs that use the Zixi pull or SRT listener protocol.
     pub fn listener_address(
         mut self,
@@ -227,6 +247,10 @@ impl OutputBuilder {
         self.listener_address = input;
         self
     }
+    /// The IP address that the receiver requires in order to establish a connection with the flow. For public networking, the ListenerAddress is represented by the elastic IP address of the flow. For private networking, the ListenerAddress is represented by the elastic network interface IP address of the VPC. This field applies only to outputs that use the Zixi pull or SRT listener protocol.
+    pub fn get_listener_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.listener_address
+    }
     /// The input ARN of the AWS Elemental MediaLive channel. This parameter is relevant only for outputs that were added by creating a MediaLive input.
     pub fn media_live_input_arn(
         mut self,
@@ -242,6 +266,10 @@ impl OutputBuilder {
     ) -> Self {
         self.media_live_input_arn = input;
         self
+    }
+    /// The input ARN of the AWS Elemental MediaLive channel. This parameter is relevant only for outputs that were added by creating a MediaLive input.
+    pub fn get_media_live_input_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.media_live_input_arn
     }
     /// Appends an item to `media_stream_output_configurations`.
     ///
@@ -265,6 +293,12 @@ impl OutputBuilder {
         self.media_stream_output_configurations = input;
         self
     }
+    /// The configuration for each media stream that is associated with the output.
+    pub fn get_media_stream_output_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaStreamOutputConfiguration>> {
+        &self.media_stream_output_configurations
+    }
     /// The name of the output. This value must be unique within the current flow.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -274,6 +308,10 @@ impl OutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// The name of the output. This value must be unique within the current flow.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// The ARN of the output.
     pub fn output_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -285,6 +323,10 @@ impl OutputBuilder {
         self.output_arn = input;
         self
     }
+    /// The ARN of the output.
+    pub fn get_output_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_arn
+    }
     /// The port to use when content is distributed to this output.
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -295,6 +337,10 @@ impl OutputBuilder {
         self.port = input;
         self
     }
+    /// The port to use when content is distributed to this output.
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
+    }
     /// Attributes related to the transport stream that are used in the output.
     pub fn transport(mut self, input: crate::types::Transport) -> Self {
         self.transport = ::std::option::Option::Some(input);
@@ -304,6 +350,10 @@ impl OutputBuilder {
     pub fn set_transport(mut self, input: ::std::option::Option<crate::types::Transport>) -> Self {
         self.transport = input;
         self
+    }
+    /// Attributes related to the transport stream that are used in the output.
+    pub fn get_transport(&self) -> &::std::option::Option<crate::types::Transport> {
+        &self.transport
     }
     /// The name of the VPC interface attachment to use for this output.
     pub fn vpc_interface_attachment(mut self, input: crate::types::VpcInterfaceAttachment) -> Self {
@@ -318,6 +368,12 @@ impl OutputBuilder {
         self.vpc_interface_attachment = input;
         self
     }
+    /// The name of the VPC interface attachment to use for this output.
+    pub fn get_vpc_interface_attachment(
+        &self,
+    ) -> &::std::option::Option<crate::types::VpcInterfaceAttachment> {
+        &self.vpc_interface_attachment
+    }
     /// The ARN of the bridge that added this output.
     pub fn bridge_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bridge_arn = ::std::option::Option::Some(input.into());
@@ -327,6 +383,10 @@ impl OutputBuilder {
     pub fn set_bridge_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bridge_arn = input;
         self
+    }
+    /// The ARN of the bridge that added this output.
+    pub fn get_bridge_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bridge_arn
     }
     /// Appends an item to `bridge_ports`.
     ///
@@ -343,6 +403,10 @@ impl OutputBuilder {
     pub fn set_bridge_ports(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.bridge_ports = input;
         self
+    }
+    /// The bridge output ports currently in use.
+    pub fn get_bridge_ports(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        &self.bridge_ports
     }
     /// Consumes the builder and constructs a [`Output`](crate::types::Output).
     pub fn build(self) -> crate::types::Output {

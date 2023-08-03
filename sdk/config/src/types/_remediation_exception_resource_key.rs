@@ -54,6 +54,10 @@ impl RemediationExceptionResourceKeyBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The type of a resource.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
+    }
     /// <p>The ID of the resource (for example., sg-xxxxxx).</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl RemediationExceptionResourceKeyBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>The ID of the resource (for example., sg-xxxxxx).</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// Consumes the builder and constructs a [`RemediationExceptionResourceKey`](crate::types::RemediationExceptionResourceKey).
     pub fn build(self) -> crate::types::RemediationExceptionResourceKey {

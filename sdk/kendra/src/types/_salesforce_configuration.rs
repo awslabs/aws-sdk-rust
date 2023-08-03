@@ -148,6 +148,10 @@ impl SalesforceConfigurationBuilder {
         self.server_url = input;
         self
     }
+    /// <p>The instance URL for the Salesforce site that you want to index.</p>
+    pub fn get_server_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_url
+    }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the key/value pairs required to connect to your Salesforce instance. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
     /// <li> <p>authenticationUrl - The OAUTH endpoint that Amazon Kendra connects to get an OAUTH token. </p> </li>
@@ -174,6 +178,18 @@ impl SalesforceConfigurationBuilder {
         self.secret_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the key/value pairs required to connect to your Salesforce instance. The secret must contain a JSON structure with the following keys:</p>
+    /// <ul>
+    /// <li> <p>authenticationUrl - The OAUTH endpoint that Amazon Kendra connects to get an OAUTH token. </p> </li>
+    /// <li> <p>consumerKey - The application public key generated when you created your Salesforce application.</p> </li>
+    /// <li> <p>consumerSecret - The application private key generated when you created your Salesforce application.</p> </li>
+    /// <li> <p>password - The password associated with the user logging in to the Salesforce instance.</p> </li>
+    /// <li> <p>securityToken - The token associated with the user logging in to the Salesforce instance.</p> </li>
+    /// <li> <p>username - The user name of the user logging in to the Salesforce instance.</p> </li>
+    /// </ul>
+    pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_arn
+    }
     /// Appends an item to `standard_object_configurations`.
     ///
     /// To override the contents of this collection use [`set_standard_object_configurations`](Self::set_standard_object_configurations).
@@ -198,6 +214,13 @@ impl SalesforceConfigurationBuilder {
         self.standard_object_configurations = input;
         self
     }
+    /// <p>Configuration of the Salesforce standard objects that Amazon Kendra indexes.</p>
+    pub fn get_standard_object_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SalesforceStandardObjectConfiguration>>
+    {
+        &self.standard_object_configurations
+    }
     /// <p>Configuration information for the knowledge article types that Amazon Kendra indexes. Amazon Kendra indexes standard knowledge articles and the standard fields of knowledge articles, or the custom fields of custom knowledge articles, but not both.</p>
     pub fn knowledge_article_configuration(
         mut self,
@@ -213,6 +236,12 @@ impl SalesforceConfigurationBuilder {
     ) -> Self {
         self.knowledge_article_configuration = input;
         self
+    }
+    /// <p>Configuration information for the knowledge article types that Amazon Kendra indexes. Amazon Kendra indexes standard knowledge articles and the standard fields of knowledge articles, or the custom fields of custom knowledge articles, but not both.</p>
+    pub fn get_knowledge_article_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SalesforceKnowledgeArticleConfiguration> {
+        &self.knowledge_article_configuration
     }
     /// <p>Configuration information for Salesforce chatter feeds.</p>
     pub fn chatter_feed_configuration(
@@ -230,6 +259,12 @@ impl SalesforceConfigurationBuilder {
         self.chatter_feed_configuration = input;
         self
     }
+    /// <p>Configuration information for Salesforce chatter feeds.</p>
+    pub fn get_chatter_feed_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SalesforceChatterFeedConfiguration> {
+        &self.chatter_feed_configuration
+    }
     /// <p>Indicates whether Amazon Kendra should index attachments to Salesforce objects.</p>
     pub fn crawl_attachments(mut self, input: bool) -> Self {
         self.crawl_attachments = ::std::option::Option::Some(input);
@@ -239,6 +274,10 @@ impl SalesforceConfigurationBuilder {
     pub fn set_crawl_attachments(mut self, input: ::std::option::Option<bool>) -> Self {
         self.crawl_attachments = input;
         self
+    }
+    /// <p>Indicates whether Amazon Kendra should index attachments to Salesforce objects.</p>
+    pub fn get_crawl_attachments(&self) -> &::std::option::Option<bool> {
+        &self.crawl_attachments
     }
     /// <p>Configuration information for processing attachments to Salesforce standard objects. </p>
     pub fn standard_object_attachment_configuration(
@@ -255,6 +294,12 @@ impl SalesforceConfigurationBuilder {
     ) -> Self {
         self.standard_object_attachment_configuration = input;
         self
+    }
+    /// <p>Configuration information for processing attachments to Salesforce standard objects. </p>
+    pub fn get_standard_object_attachment_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SalesforceStandardObjectAttachmentConfiguration> {
+        &self.standard_object_attachment_configuration
     }
     /// Appends an item to `include_attachment_file_patterns`.
     ///
@@ -280,6 +325,13 @@ impl SalesforceConfigurationBuilder {
         self.include_attachment_file_patterns = input;
         self
     }
+    /// <p>A list of regular expression patterns to include certain documents in your Salesforce. Documents that match the patterns are included in the index. Documents that don't match the patterns are excluded from the index. If a document matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the document isn't included in the index.</p>
+    /// <p>The pattern is applied to the name of the attached file.</p>
+    pub fn get_include_attachment_file_patterns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.include_attachment_file_patterns
+    }
     /// Appends an item to `exclude_attachment_file_patterns`.
     ///
     /// To override the contents of this collection use [`set_exclude_attachment_file_patterns`](Self::set_exclude_attachment_file_patterns).
@@ -303,6 +355,13 @@ impl SalesforceConfigurationBuilder {
     ) -> Self {
         self.exclude_attachment_file_patterns = input;
         self
+    }
+    /// <p>A list of regular expression patterns to exclude certain documents in your Salesforce. Documents that match the patterns are excluded from the index. Documents that don't match the patterns are included in the index. If a document matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the document isn't included in the index.</p>
+    /// <p>The pattern is applied to the name of the attached file.</p>
+    pub fn get_exclude_attachment_file_patterns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.exclude_attachment_file_patterns
     }
     /// Consumes the builder and constructs a [`SalesforceConfiguration`](crate::types::SalesforceConfiguration).
     pub fn build(self) -> crate::types::SalesforceConfiguration {

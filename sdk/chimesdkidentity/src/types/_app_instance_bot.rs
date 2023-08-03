@@ -96,6 +96,10 @@ impl AppInstanceBotBuilder {
         self.app_instance_bot_arn = input;
         self
     }
+    /// <p>The ARN of the AppInstanceBot.</p>
+    pub fn get_app_instance_bot_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_instance_bot_arn
+    }
     /// <p>The name of the AppInstanceBot.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl AppInstanceBotBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the AppInstanceBot.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The data processing instructions for an AppInstanceBot.</p>
     pub fn configuration(mut self, input: crate::types::Configuration) -> Self {
@@ -119,6 +127,10 @@ impl AppInstanceBotBuilder {
         self.configuration = input;
         self
     }
+    /// <p>The data processing instructions for an AppInstanceBot.</p>
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::Configuration> {
+        &self.configuration
+    }
     /// <p>The time at which the <code>AppInstanceBot</code> was created.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_timestamp = ::std::option::Option::Some(input);
@@ -131,6 +143,10 @@ impl AppInstanceBotBuilder {
     ) -> Self {
         self.created_timestamp = input;
         self
+    }
+    /// <p>The time at which the <code>AppInstanceBot</code> was created.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
     }
     /// <p>The time at which the <code>AppInstanceBot</code> was last updated.</p>
     pub fn last_updated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -145,6 +161,12 @@ impl AppInstanceBotBuilder {
         self.last_updated_timestamp = input;
         self
     }
+    /// <p>The time at which the <code>AppInstanceBot</code> was last updated.</p>
+    pub fn get_last_updated_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_timestamp
+    }
     /// <p>The metadata for an AppInstanceBot.</p>
     pub fn metadata(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metadata = ::std::option::Option::Some(input.into());
@@ -154,6 +176,10 @@ impl AppInstanceBotBuilder {
     pub fn set_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metadata = input;
         self
+    }
+    /// <p>The metadata for an AppInstanceBot.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metadata
     }
     /// Consumes the builder and constructs a [`AppInstanceBot`](crate::types::AppInstanceBot).
     pub fn build(self) -> crate::types::AppInstanceBot {

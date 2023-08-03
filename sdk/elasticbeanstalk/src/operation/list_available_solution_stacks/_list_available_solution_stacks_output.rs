@@ -71,6 +71,12 @@ impl ListAvailableSolutionStacksOutputBuilder {
         self.solution_stacks = input;
         self
     }
+    /// <p>A list of available solution stacks.</p>
+    pub fn get_solution_stacks(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.solution_stacks
+    }
     /// Appends an item to `solution_stack_details`.
     ///
     /// To override the contents of this collection use [`set_solution_stack_details`](Self::set_solution_stack_details).
@@ -89,6 +95,12 @@ impl ListAvailableSolutionStacksOutputBuilder {
     ) -> Self {
         self.solution_stack_details = input;
         self
+    }
+    /// <p> A list of available solution stacks and their <code>SolutionStackDescription</code>. </p>
+    pub fn get_solution_stack_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SolutionStackDescription>> {
+        &self.solution_stack_details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

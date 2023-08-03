@@ -50,6 +50,12 @@ impl PointsOfInterestBuilder {
         self.timestamp_ranges = input;
         self
     }
+    /// <p>Contains the timestamp ranges (start time through end time) of matched categories and rules.</p>
+    pub fn get_timestamp_ranges(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TimestampRange>> {
+        &self.timestamp_ranges
+    }
     /// Consumes the builder and constructs a [`PointsOfInterest`](crate::types::PointsOfInterest).
     pub fn build(self) -> crate::types::PointsOfInterest {
         crate::types::PointsOfInterest {

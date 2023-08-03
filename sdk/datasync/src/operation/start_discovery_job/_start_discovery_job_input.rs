@@ -74,6 +74,10 @@ impl StartDiscoveryJobInputBuilder {
         self.storage_system_arn = input;
         self
     }
+    /// <p>Specifies the Amazon Resource Name (ARN) of the on-premises storage system that you want to run the discovery job on.</p>
+    pub fn get_storage_system_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_system_arn
+    }
     /// <p>Specifies in minutes how long you want the discovery job to run.</p> <note>
     /// <p>For more accurate recommendations, we recommend a duration of at least 14 days. Longer durations allow time to collect a sufficient number of data points and provide a realistic representation of storage performance and utilization.</p>
     /// </note>
@@ -88,6 +92,12 @@ impl StartDiscoveryJobInputBuilder {
         self.collection_duration_minutes = input;
         self
     }
+    /// <p>Specifies in minutes how long you want the discovery job to run.</p> <note>
+    /// <p>For more accurate recommendations, we recommend a duration of at least 14 days. Longer durations allow time to collect a sufficient number of data points and provide a realistic representation of storage performance and utilization.</p>
+    /// </note>
+    pub fn get_collection_duration_minutes(&self) -> &::std::option::Option<i32> {
+        &self.collection_duration_minutes
+    }
     /// <p>Specifies a client token to make sure requests with this API operation are idempotent. If you don't specify a client token, DataSync generates one for you automatically.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -97,6 +107,10 @@ impl StartDiscoveryJobInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>Specifies a client token to make sure requests with this API operation are idempotent. If you don't specify a client token, DataSync generates one for you automatically.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Appends an item to `tags`.
     ///
@@ -116,6 +130,10 @@ impl StartDiscoveryJobInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`StartDiscoveryJobInput`](crate::operation::start_discovery_job::StartDiscoveryJobInput).
     pub fn build(

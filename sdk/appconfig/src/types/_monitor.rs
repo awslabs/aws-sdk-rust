@@ -48,6 +48,10 @@ impl MonitorBuilder {
         self.alarm_arn = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the Amazon CloudWatch alarm.</p>
+    pub fn get_alarm_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alarm_arn
+    }
     /// <p>ARN of an Identity and Access Management (IAM) role for AppConfig to monitor <code>AlarmArn</code>.</p>
     pub fn alarm_role_arn(
         mut self,
@@ -63,6 +67,10 @@ impl MonitorBuilder {
     ) -> Self {
         self.alarm_role_arn = input;
         self
+    }
+    /// <p>ARN of an Identity and Access Management (IAM) role for AppConfig to monitor <code>AlarmArn</code>.</p>
+    pub fn get_alarm_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alarm_role_arn
     }
     /// Consumes the builder and constructs a [`Monitor`](crate::types::Monitor).
     pub fn build(self) -> crate::types::Monitor {

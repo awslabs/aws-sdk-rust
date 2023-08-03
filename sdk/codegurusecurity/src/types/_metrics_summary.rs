@@ -86,6 +86,10 @@ impl MetricsSummaryBuilder {
         self.date = input;
         self
     }
+    /// <p>The date from which the metrics summary information was retrieved.</p>
+    pub fn get_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.date
+    }
     /// <p>The number of open findings of each severity in an account.</p>
     pub fn open_findings(mut self, input: crate::types::FindingMetricsValuePerSeverity) -> Self {
         self.open_findings = ::std::option::Option::Some(input);
@@ -98,6 +102,12 @@ impl MetricsSummaryBuilder {
     ) -> Self {
         self.open_findings = input;
         self
+    }
+    /// <p>The number of open findings of each severity in an account.</p>
+    pub fn get_open_findings(
+        &self,
+    ) -> &::std::option::Option<crate::types::FindingMetricsValuePerSeverity> {
+        &self.open_findings
     }
     /// Appends an item to `categories_with_most_findings`.
     ///
@@ -121,6 +131,12 @@ impl MetricsSummaryBuilder {
         self.categories_with_most_findings = input;
         self
     }
+    /// <p>A list of <code>CategoryWithFindingNum</code> objects for the top 5 finding categories with the most open findings in an account.</p>
+    pub fn get_categories_with_most_findings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CategoryWithFindingNum>> {
+        &self.categories_with_most_findings
+    }
     /// Appends an item to `scans_with_most_open_findings`.
     ///
     /// To override the contents of this collection use [`set_scans_with_most_open_findings`](Self::set_scans_with_most_open_findings).
@@ -142,6 +158,12 @@ impl MetricsSummaryBuilder {
     ) -> Self {
         self.scans_with_most_open_findings = input;
         self
+    }
+    /// <p>A list of <code>ScanNameWithFindingNum</code> objects for the top 3 scans with the most number of open critical findings in an account.</p>
+    pub fn get_scans_with_most_open_findings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScanNameWithFindingNum>> {
+        &self.scans_with_most_open_findings
     }
     /// Appends an item to `scans_with_most_open_critical_findings`.
     ///
@@ -166,6 +188,12 @@ impl MetricsSummaryBuilder {
     ) -> Self {
         self.scans_with_most_open_critical_findings = input;
         self
+    }
+    /// <p>A list of <code>ScanNameWithFindingNum</code> objects for the top 3 scans with the most number of open findings in an account.</p>
+    pub fn get_scans_with_most_open_critical_findings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScanNameWithFindingNum>> {
+        &self.scans_with_most_open_critical_findings
     }
     /// Consumes the builder and constructs a [`MetricsSummary`](crate::types::MetricsSummary).
     pub fn build(self) -> crate::types::MetricsSummary {

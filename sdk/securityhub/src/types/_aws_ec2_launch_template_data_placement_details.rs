@@ -96,6 +96,10 @@ impl AwsEc2LaunchTemplateDataPlacementDetailsBuilder {
         self.affinity = input;
         self
     }
+    /// <p> The affinity setting for an instance on an EC2 Dedicated Host. </p>
+    pub fn get_affinity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.affinity
+    }
     /// <p> The Availability Zone for the instance. </p>
     pub fn availability_zone(
         mut self,
@@ -112,6 +116,10 @@ impl AwsEc2LaunchTemplateDataPlacementDetailsBuilder {
         self.availability_zone = input;
         self
     }
+    /// <p> The Availability Zone for the instance. </p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p> The name of the placement group for the instance. </p>
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_name = ::std::option::Option::Some(input.into());
@@ -122,6 +130,10 @@ impl AwsEc2LaunchTemplateDataPlacementDetailsBuilder {
         self.group_name = input;
         self
     }
+    /// <p> The name of the placement group for the instance. </p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
+    }
     /// <p> The ID of the Dedicated Host for the instance. </p>
     pub fn host_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host_id = ::std::option::Option::Some(input.into());
@@ -131,6 +143,10 @@ impl AwsEc2LaunchTemplateDataPlacementDetailsBuilder {
     pub fn set_host_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.host_id = input;
         self
+    }
+    /// <p> The ID of the Dedicated Host for the instance. </p>
+    pub fn get_host_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host_id
     }
     /// <p> The Amazon Resource Name (ARN) of the host resource group in which to launch the instances. </p>
     pub fn host_resource_group_arn(
@@ -148,6 +164,10 @@ impl AwsEc2LaunchTemplateDataPlacementDetailsBuilder {
         self.host_resource_group_arn = input;
         self
     }
+    /// <p> The Amazon Resource Name (ARN) of the host resource group in which to launch the instances. </p>
+    pub fn get_host_resource_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host_resource_group_arn
+    }
     /// <p> The number of the partition the instance should launch in. </p>
     pub fn partition_number(mut self, input: i32) -> Self {
         self.partition_number = ::std::option::Option::Some(input);
@@ -157,6 +177,10 @@ impl AwsEc2LaunchTemplateDataPlacementDetailsBuilder {
     pub fn set_partition_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.partition_number = input;
         self
+    }
+    /// <p> The number of the partition the instance should launch in. </p>
+    pub fn get_partition_number(&self) -> &::std::option::Option<i32> {
+        &self.partition_number
     }
     /// <p> Reserved for future use. </p>
     pub fn spread_domain(
@@ -174,6 +198,10 @@ impl AwsEc2LaunchTemplateDataPlacementDetailsBuilder {
         self.spread_domain = input;
         self
     }
+    /// <p> Reserved for future use. </p>
+    pub fn get_spread_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.spread_domain
+    }
     /// <p> The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of dedicated runs on single-tenant hardware. </p>
     pub fn tenancy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tenancy = ::std::option::Option::Some(input.into());
@@ -183,6 +211,10 @@ impl AwsEc2LaunchTemplateDataPlacementDetailsBuilder {
     pub fn set_tenancy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tenancy = input;
         self
+    }
+    /// <p> The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of dedicated runs on single-tenant hardware. </p>
+    pub fn get_tenancy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tenancy
     }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataPlacementDetails`](crate::types::AwsEc2LaunchTemplateDataPlacementDetails).
     pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataPlacementDetails {

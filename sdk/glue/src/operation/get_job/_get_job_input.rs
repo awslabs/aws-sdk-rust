@@ -39,6 +39,10 @@ impl GetJobInputBuilder {
         self.job_name = input;
         self
     }
+    /// <p>The name of the job definition to retrieve.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
+    }
     /// Consumes the builder and constructs a [`GetJobInput`](crate::operation::get_job::GetJobInput).
     pub fn build(
         self,

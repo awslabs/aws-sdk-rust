@@ -39,6 +39,10 @@ impl SetLoadBalancerPoliciesForBackendServerFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SetLoadBalancerPoliciesForBackendServer as a reference.
+    pub fn as_input(&self) -> &crate::operation::set_load_balancer_policies_for_backend_server::builders::SetLoadBalancerPoliciesForBackendServerInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -109,6 +113,10 @@ impl SetLoadBalancerPoliciesForBackendServerFluentBuilder {
         self.inner = self.inner.set_load_balancer_name(input);
         self
     }
+    /// <p>The name of the load balancer.</p>
+    pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_load_balancer_name()
+    }
     /// <p>The port number associated with the EC2 instance.</p>
     pub fn instance_port(mut self, input: i32) -> Self {
         self.inner = self.inner.instance_port(input);
@@ -118,6 +126,10 @@ impl SetLoadBalancerPoliciesForBackendServerFluentBuilder {
     pub fn set_instance_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_instance_port(input);
         self
+    }
+    /// <p>The port number associated with the EC2 instance.</p>
+    pub fn get_instance_port(&self) -> &::std::option::Option<i32> {
+        self.inner.get_instance_port()
     }
     /// Appends an item to `PolicyNames`.
     ///
@@ -135,5 +147,11 @@ impl SetLoadBalancerPoliciesForBackendServerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_policy_names(input);
         self
+    }
+    /// <p>The names of the policies. If the list is empty, then all current polices are removed from the EC2 instance.</p>
+    pub fn get_policy_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_policy_names()
     }
 }

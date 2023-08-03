@@ -192,6 +192,10 @@ impl DescribeEndpointOutputBuilder {
         self.endpoint_name = input;
         self
     }
+    /// <p>Name of the endpoint.</p>
+    pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
     pub fn endpoint_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_arn = ::std::option::Option::Some(input.into());
@@ -201,6 +205,10 @@ impl DescribeEndpointOutputBuilder {
     pub fn set_endpoint_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
+    pub fn get_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_arn
     }
     /// <p>The name of the endpoint configuration associated with this endpoint.</p>
     pub fn endpoint_config_name(
@@ -217,6 +225,10 @@ impl DescribeEndpointOutputBuilder {
     ) -> Self {
         self.endpoint_config_name = input;
         self
+    }
+    /// <p>The name of the endpoint configuration associated with this endpoint.</p>
+    pub fn get_endpoint_config_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_config_name
     }
     /// Appends an item to `production_variants`.
     ///
@@ -237,6 +249,12 @@ impl DescribeEndpointOutputBuilder {
         self.production_variants = input;
         self
     }
+    /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ProductionVariantSummary.html">ProductionVariantSummary</a> objects, one for each model hosted behind this endpoint.</p>
+    pub fn get_production_variants(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantSummary>> {
+        &self.production_variants
+    }
     /// <p>The currently active data capture configuration used by your Endpoint.</p>
     pub fn data_capture_config(mut self, input: crate::types::DataCaptureConfigSummary) -> Self {
         self.data_capture_config = ::std::option::Option::Some(input);
@@ -249,6 +267,12 @@ impl DescribeEndpointOutputBuilder {
     ) -> Self {
         self.data_capture_config = input;
         self
+    }
+    /// <p>The currently active data capture configuration used by your Endpoint.</p>
+    pub fn get_data_capture_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataCaptureConfigSummary> {
+        &self.data_capture_config
     }
     /// <p>The status of the endpoint.</p>
     /// <ul>
@@ -283,6 +307,20 @@ impl DescribeEndpointOutputBuilder {
         self.endpoint_status = input;
         self
     }
+    /// <p>The status of the endpoint.</p>
+    /// <ul>
+    /// <li> <p> <code>OutOfService</code>: Endpoint is not available to take incoming requests.</p> </li>
+    /// <li> <p> <code>Creating</code>: <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a> is executing.</p> </li>
+    /// <li> <p> <code>Updating</code>: <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpoint.html">UpdateEndpoint</a> or <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html">UpdateEndpointWeightsAndCapacities</a> is executing.</p> </li>
+    /// <li> <p> <code>SystemUpdating</code>: Endpoint is undergoing maintenance and cannot be updated or deleted or re-scaled until it has completed. This maintenance operation does not change any customer-specified values such as VPC config, KMS encryption, model, instance type, or instance count.</p> </li>
+    /// <li> <p> <code>RollingBack</code>: Endpoint fails to scale up or down or change its variant weight and is in the process of rolling back to its previous configuration. Once the rollback completes, endpoint returns to an <code>InService</code> status. This transitional status only applies to an endpoint that has autoscaling enabled and is undergoing variant weight or capacity changes as part of an <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html">UpdateEndpointWeightsAndCapacities</a> call or when the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html">UpdateEndpointWeightsAndCapacities</a> operation is called explicitly.</p> </li>
+    /// <li> <p> <code>InService</code>: Endpoint is available to process incoming requests.</p> </li>
+    /// <li> <p> <code>Deleting</code>: <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpoint.html">DeleteEndpoint</a> is executing.</p> </li>
+    /// <li> <p> <code>Failed</code>: Endpoint could not be created, updated, or re-scaled. Use the <code>FailureReason</code> value returned by <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeEndpoint.html">DescribeEndpoint</a> for information about the failure. <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpoint.html">DeleteEndpoint</a> is the only operation that can be performed on a failed endpoint.</p> </li>
+    /// </ul>
+    pub fn get_endpoint_status(&self) -> &::std::option::Option<crate::types::EndpointStatus> {
+        &self.endpoint_status
+    }
     /// <p>If the status of the endpoint is <code>Failed</code>, the reason why it failed. </p>
     pub fn failure_reason(
         mut self,
@@ -299,6 +337,10 @@ impl DescribeEndpointOutputBuilder {
         self.failure_reason = input;
         self
     }
+    /// <p>If the status of the endpoint is <code>Failed</code>, the reason why it failed. </p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
+    }
     /// <p>A timestamp that shows when the endpoint was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -311,6 +353,10 @@ impl DescribeEndpointOutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>A timestamp that shows when the endpoint was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>A timestamp that shows when the endpoint was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -325,6 +371,10 @@ impl DescribeEndpointOutputBuilder {
         self.last_modified_time = input;
         self
     }
+    /// <p>A timestamp that shows when the endpoint was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
     /// <p>The most recent deployment configuration for the endpoint.</p>
     pub fn last_deployment_config(mut self, input: crate::types::DeploymentConfig) -> Self {
         self.last_deployment_config = ::std::option::Option::Some(input);
@@ -338,6 +388,12 @@ impl DescribeEndpointOutputBuilder {
         self.last_deployment_config = input;
         self
     }
+    /// <p>The most recent deployment configuration for the endpoint.</p>
+    pub fn get_last_deployment_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeploymentConfig> {
+        &self.last_deployment_config
+    }
     /// <p>Returns the description of an endpoint configuration created using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html"> <code>CreateEndpointConfig</code> </a> API.</p>
     pub fn async_inference_config(mut self, input: crate::types::AsyncInferenceConfig) -> Self {
         self.async_inference_config = ::std::option::Option::Some(input);
@@ -350,6 +406,12 @@ impl DescribeEndpointOutputBuilder {
     ) -> Self {
         self.async_inference_config = input;
         self
+    }
+    /// <p>Returns the description of an endpoint configuration created using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html"> <code>CreateEndpointConfig</code> </a> API.</p>
+    pub fn get_async_inference_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::AsyncInferenceConfig> {
+        &self.async_inference_config
     }
     /// <p>Returns the summary of an in-progress deployment. This field is only returned when the endpoint is creating or updating with a new endpoint configuration.</p>
     pub fn pending_deployment_summary(
@@ -367,6 +429,12 @@ impl DescribeEndpointOutputBuilder {
         self.pending_deployment_summary = input;
         self
     }
+    /// <p>Returns the summary of an in-progress deployment. This field is only returned when the endpoint is creating or updating with a new endpoint configuration.</p>
+    pub fn get_pending_deployment_summary(
+        &self,
+    ) -> &::std::option::Option<crate::types::PendingDeploymentSummary> {
+        &self.pending_deployment_summary
+    }
     /// <p>The configuration parameters for an explainer.</p>
     pub fn explainer_config(mut self, input: crate::types::ExplainerConfig) -> Self {
         self.explainer_config = ::std::option::Option::Some(input);
@@ -379,6 +447,10 @@ impl DescribeEndpointOutputBuilder {
     ) -> Self {
         self.explainer_config = input;
         self
+    }
+    /// <p>The configuration parameters for an explainer.</p>
+    pub fn get_explainer_config(&self) -> &::std::option::Option<crate::types::ExplainerConfig> {
+        &self.explainer_config
     }
     /// Appends an item to `shadow_production_variants`.
     ///
@@ -401,6 +473,12 @@ impl DescribeEndpointOutputBuilder {
     ) -> Self {
         self.shadow_production_variants = input;
         self
+    }
+    /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ProductionVariantSummary.html">ProductionVariantSummary</a> objects, one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>.</p>
+    pub fn get_shadow_production_variants(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantSummary>> {
+        &self.shadow_production_variants
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

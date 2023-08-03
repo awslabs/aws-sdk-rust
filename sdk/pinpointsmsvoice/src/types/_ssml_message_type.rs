@@ -62,6 +62,10 @@ impl SsmlMessageTypeBuilder {
         self.language_code = input;
         self
     }
+    /// The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.
+    pub fn get_language_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.language_code
+    }
     /// The SSML-formatted text to deliver to the recipient.
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl SsmlMessageTypeBuilder {
         self.text = input;
         self
     }
+    /// The SSML-formatted text to deliver to the recipient.
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
+    }
     /// The name of the voice that you want to use to deliver the message. For a complete list of supported voices, see the Amazon Polly Developer Guide.
     pub fn voice_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.voice_id = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl SsmlMessageTypeBuilder {
     pub fn set_voice_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.voice_id = input;
         self
+    }
+    /// The name of the voice that you want to use to deliver the message. For a complete list of supported voices, see the Amazon Polly Developer Guide.
+    pub fn get_voice_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_id
     }
     /// Consumes the builder and constructs a [`SsmlMessageType`](crate::types::SsmlMessageType).
     pub fn build(self) -> crate::types::SsmlMessageType {

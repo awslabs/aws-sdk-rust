@@ -278,6 +278,12 @@ impl WorkspaceDescriptionBuilder {
         self.account_access_type = input;
         self
     }
+    /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If this is <code>ORGANIZATION</code>, the <code>workspaceOrganizationalUnits</code> parameter specifies which organizational units the workspace can access.</p>
+    pub fn get_account_access_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::AccountAccessType> {
+        &self.account_access_type
+    }
     /// <p>The date that the workspace was created.</p>
     pub fn created(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created = ::std::option::Option::Some(input);
@@ -290,6 +296,10 @@ impl WorkspaceDescriptionBuilder {
     ) -> Self {
         self.created = input;
         self
+    }
+    /// <p>The date that the workspace was created.</p>
+    pub fn get_created(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created
     }
     /// Appends an item to `data_sources`.
     ///
@@ -312,6 +322,13 @@ impl WorkspaceDescriptionBuilder {
         self.data_sources = input;
         self
     }
+    /// <p>Specifies the Amazon Web Services data sources that have been configured to have IAM roles and permissions created to allow Amazon Managed Grafana to read data from these sources.</p>
+    /// <p>This list is only used when the workspace was created through the Amazon Web Services console, and the <code>permissionType</code> is <code>SERVICE_MANAGED</code>.</p>
+    pub fn get_data_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceType>> {
+        &self.data_sources
+    }
     /// <p>The user-defined description of the workspace.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -322,6 +339,10 @@ impl WorkspaceDescriptionBuilder {
         self.description = input;
         self
     }
+    /// <p>The user-defined description of the workspace.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The URL that users can use to access the Grafana console in the workspace.</p>
     pub fn endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint = ::std::option::Option::Some(input.into());
@@ -331,6 +352,10 @@ impl WorkspaceDescriptionBuilder {
     pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint = input;
         self
+    }
+    /// <p>The URL that users can use to access the Grafana console in the workspace.</p>
+    pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint
     }
     /// <p>The version of Grafana supported in this workspace.</p>
     pub fn grafana_version(
@@ -348,6 +373,10 @@ impl WorkspaceDescriptionBuilder {
         self.grafana_version = input;
         self
     }
+    /// <p>The version of Grafana supported in this workspace.</p>
+    pub fn get_grafana_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grafana_version
+    }
     /// <p>The unique ID of this workspace.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -357,6 +386,10 @@ impl WorkspaceDescriptionBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The unique ID of this workspace.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The most recent date that the workspace was modified.</p>
     pub fn modified(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -371,6 +404,10 @@ impl WorkspaceDescriptionBuilder {
         self.modified = input;
         self
     }
+    /// <p>The most recent date that the workspace was modified.</p>
+    pub fn get_modified(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.modified
+    }
     /// <p>The name of the workspace.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -380,6 +417,10 @@ impl WorkspaceDescriptionBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the workspace.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The name of the IAM role that is used to access resources through Organizations.</p>
     pub fn organization_role_name(
@@ -396,6 +437,10 @@ impl WorkspaceDescriptionBuilder {
     ) -> Self {
         self.organization_role_name = input;
         self
+    }
+    /// <p>The name of the IAM role that is used to access resources through Organizations.</p>
+    pub fn get_organization_role_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_role_name
     }
     /// Appends an item to `notification_destinations`.
     ///
@@ -419,6 +464,12 @@ impl WorkspaceDescriptionBuilder {
         self.notification_destinations = input;
         self
     }
+    /// <p>The Amazon Web Services notification channels that Amazon Managed Grafana can automatically create IAM roles and permissions for, to allow Amazon Managed Grafana to use these channels.</p>
+    pub fn get_notification_destinations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationDestinationType>> {
+        &self.notification_destinations
+    }
     /// Appends an item to `organizational_units`.
     ///
     /// To override the contents of this collection use [`set_organizational_units`](Self::set_organizational_units).
@@ -441,6 +492,12 @@ impl WorkspaceDescriptionBuilder {
         self.organizational_units = input;
         self
     }
+    /// <p>Specifies the organizational units that this workspace is allowed to use data sources from, if this workspace is in an account that is part of an organization.</p>
+    pub fn get_organizational_units(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.organizational_units
+    }
     /// <p>If this is <code>SERVICE_MANAGED</code>, and the workplace was created through the Amazon Managed Grafana console, then Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels.</p>
     /// <p>If this is <code>CUSTOMER_MANAGED</code>, you must manage those roles and permissions yourself.</p>
     /// <p>If you are working with a workspace in a member account of an organization and that account is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, this parameter must be set to <code>CUSTOMER_MANAGED</code>.</p>
@@ -460,6 +517,13 @@ impl WorkspaceDescriptionBuilder {
         self.permission_type = input;
         self
     }
+    /// <p>If this is <code>SERVICE_MANAGED</code>, and the workplace was created through the Amazon Managed Grafana console, then Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels.</p>
+    /// <p>If this is <code>CUSTOMER_MANAGED</code>, you must manage those roles and permissions yourself.</p>
+    /// <p>If you are working with a workspace in a member account of an organization and that account is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, this parameter must be set to <code>CUSTOMER_MANAGED</code>.</p>
+    /// <p>For more information about converting between customer and service managed, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-datasource-and-notification.html">Managing permissions for data sources and notification channels</a>. For more information about the roles and permissions that must be managed for customer managed workspaces, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a> </p>
+    pub fn get_permission_type(&self) -> &::std::option::Option<crate::types::PermissionType> {
+        &self.permission_type
+    }
     /// <p>The name of the CloudFormation stack set that is used to generate IAM roles to be used for this workspace.</p>
     pub fn stack_set_name(
         mut self,
@@ -476,6 +540,10 @@ impl WorkspaceDescriptionBuilder {
         self.stack_set_name = input;
         self
     }
+    /// <p>The name of the CloudFormation stack set that is used to generate IAM roles to be used for this workspace.</p>
+    pub fn get_stack_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_set_name
+    }
     /// <p>The current status of the workspace.</p>
     pub fn status(mut self, input: crate::types::WorkspaceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -488,6 +556,10 @@ impl WorkspaceDescriptionBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the workspace.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::WorkspaceStatus> {
+        &self.status
     }
     /// <p>The IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from. This role must already exist.</p>
     pub fn workspace_role_arn(
@@ -505,6 +577,10 @@ impl WorkspaceDescriptionBuilder {
         self.workspace_role_arn = input;
         self
     }
+    /// <p>The IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from. This role must already exist.</p>
+    pub fn get_workspace_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_role_arn
+    }
     /// <p>Specifies whether this workspace has a full Grafana Enterprise license or a free trial license.</p>
     pub fn license_type(mut self, input: crate::types::LicenseType) -> Self {
         self.license_type = ::std::option::Option::Some(input);
@@ -518,6 +594,10 @@ impl WorkspaceDescriptionBuilder {
         self.license_type = input;
         self
     }
+    /// <p>Specifies whether this workspace has a full Grafana Enterprise license or a free trial license.</p>
+    pub fn get_license_type(&self) -> &::std::option::Option<crate::types::LicenseType> {
+        &self.license_type
+    }
     /// <p>Specifies whether this workspace has already fully used its free trial for Grafana Enterprise.</p>
     pub fn free_trial_consumed(mut self, input: bool) -> Self {
         self.free_trial_consumed = ::std::option::Option::Some(input);
@@ -527,6 +607,10 @@ impl WorkspaceDescriptionBuilder {
     pub fn set_free_trial_consumed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.free_trial_consumed = input;
         self
+    }
+    /// <p>Specifies whether this workspace has already fully used its free trial for Grafana Enterprise.</p>
+    pub fn get_free_trial_consumed(&self) -> &::std::option::Option<bool> {
+        &self.free_trial_consumed
     }
     /// <p>If this workspace has a full Grafana Enterprise license, this specifies when the license ends and will need to be renewed.</p>
     pub fn license_expiration(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -541,6 +625,10 @@ impl WorkspaceDescriptionBuilder {
         self.license_expiration = input;
         self
     }
+    /// <p>If this workspace has a full Grafana Enterprise license, this specifies when the license ends and will need to be renewed.</p>
+    pub fn get_license_expiration(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.license_expiration
+    }
     /// <p>If this workspace is currently in the free trial period for Grafana Enterprise, this value specifies when that free trial ends.</p>
     pub fn free_trial_expiration(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.free_trial_expiration = ::std::option::Option::Some(input);
@@ -554,6 +642,12 @@ impl WorkspaceDescriptionBuilder {
         self.free_trial_expiration = input;
         self
     }
+    /// <p>If this workspace is currently in the free trial period for Grafana Enterprise, this value specifies when that free trial ends.</p>
+    pub fn get_free_trial_expiration(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.free_trial_expiration
+    }
     /// <p>A structure that describes whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication.</p>
     pub fn authentication(mut self, input: crate::types::AuthenticationSummary) -> Self {
         self.authentication = ::std::option::Option::Some(input);
@@ -566,6 +660,12 @@ impl WorkspaceDescriptionBuilder {
     ) -> Self {
         self.authentication = input;
         self
+    }
+    /// <p>A structure that describes whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication.</p>
+    pub fn get_authentication(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuthenticationSummary> {
+        &self.authentication
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -592,6 +692,14 @@ impl WorkspaceDescriptionBuilder {
         self.tags = input;
         self
     }
+    /// <p>The list of tags associated with the workspace.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The configuration for connecting to data sources in a private VPC (Amazon Virtual Private Cloud).</p>
     pub fn vpc_configuration(mut self, input: crate::types::VpcConfiguration) -> Self {
         self.vpc_configuration = ::std::option::Option::Some(input);
@@ -604,6 +712,10 @@ impl WorkspaceDescriptionBuilder {
     ) -> Self {
         self.vpc_configuration = input;
         self
+    }
+    /// <p>The configuration for connecting to data sources in a private VPC (Amazon Virtual Private Cloud).</p>
+    pub fn get_vpc_configuration(&self) -> &::std::option::Option<crate::types::VpcConfiguration> {
+        &self.vpc_configuration
     }
     /// <p>The configuration settings for network access to your workspace.</p>
     pub fn network_access_control(
@@ -620,6 +732,12 @@ impl WorkspaceDescriptionBuilder {
     ) -> Self {
         self.network_access_control = input;
         self
+    }
+    /// <p>The configuration settings for network access to your workspace.</p>
+    pub fn get_network_access_control(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkAccessConfiguration> {
+        &self.network_access_control
     }
     /// Consumes the builder and constructs a [`WorkspaceDescription`](crate::types::WorkspaceDescription).
     pub fn build(self) -> crate::types::WorkspaceDescription {

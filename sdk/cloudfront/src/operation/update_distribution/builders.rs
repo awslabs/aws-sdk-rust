@@ -47,6 +47,12 @@ impl UpdateDistributionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDistribution as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_distribution::builders::UpdateDistributionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +146,12 @@ impl UpdateDistributionFluentBuilder {
         self.inner = self.inner.set_distribution_config(input);
         self
     }
+    /// <p>The distribution's configuration information.</p>
+    pub fn get_distribution_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::DistributionConfig> {
+        self.inner.get_distribution_config()
+    }
     /// <p>The distribution's id.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
@@ -150,6 +162,10 @@ impl UpdateDistributionFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The distribution's id.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.if_match(input.into());
@@ -159,5 +175,9 @@ impl UpdateDistributionFluentBuilder {
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_if_match(input);
         self
+    }
+    /// <p>The value of the <code>ETag</code> header that you received when retrieving the distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_if_match()
     }
 }

@@ -84,6 +84,17 @@ impl GetBlacklistReportsOutputBuilder {
         self.blacklist_report = input;
         self
     }
+    /// <p>An object that contains information about a blacklist that one of your dedicated IP addresses appears on.</p>
+    pub fn get_blacklist_report(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            ::std::vec::Vec<crate::types::BlacklistEntry>,
+        >,
+    > {
+        &self.blacklist_report
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

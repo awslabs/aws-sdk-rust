@@ -57,6 +57,10 @@ impl ContactFilterBuilder {
         self.channel = input;
         self
     }
+    /// <p>A list of channels to filter on for related items of type <code>Contact</code>.</p>
+    pub fn get_channel(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.channel
+    }
     /// <p>A unique identifier of a contact in Amazon Connect.</p>
     pub fn contact_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_arn = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl ContactFilterBuilder {
     pub fn set_contact_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contact_arn = input;
         self
+    }
+    /// <p>A unique identifier of a contact in Amazon Connect.</p>
+    pub fn get_contact_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_arn
     }
     /// Consumes the builder and constructs a [`ContactFilter`](crate::types::ContactFilter).
     pub fn build(self) -> crate::types::ContactFilter {

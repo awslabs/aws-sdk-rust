@@ -62,6 +62,10 @@ impl HostedZoneSummaryBuilder {
         self.hosted_zone_id = input;
         self
     }
+    /// <p>The Route 53 hosted zone ID of a private hosted zone that the specified VPC is associated with.</p>
+    pub fn get_hosted_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hosted_zone_id
+    }
     /// <p>The name of the private hosted zone, such as <code>example.com</code>.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl HostedZoneSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the private hosted zone, such as <code>example.com</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The owner of a private hosted zone that the specified VPC is associated with. The owner can be either an Amazon Web Services account or an Amazon Web Services service.</p>
     pub fn owner(mut self, input: crate::types::HostedZoneOwner) -> Self {
@@ -84,6 +92,10 @@ impl HostedZoneSummaryBuilder {
     ) -> Self {
         self.owner = input;
         self
+    }
+    /// <p>The owner of a private hosted zone that the specified VPC is associated with. The owner can be either an Amazon Web Services account or an Amazon Web Services service.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<crate::types::HostedZoneOwner> {
+        &self.owner
     }
     /// Consumes the builder and constructs a [`HostedZoneSummary`](crate::types::HostedZoneSummary).
     pub fn build(self) -> crate::types::HostedZoneSummary {

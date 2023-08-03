@@ -154,6 +154,10 @@ impl DescribeWhatIfForecastExportOutputBuilder {
         self.what_if_forecast_export_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the what-if forecast export.</p>
+    pub fn get_what_if_forecast_export_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.what_if_forecast_export_arn
+    }
     /// <p>The name of the what-if forecast export.</p>
     pub fn what_if_forecast_export_name(
         mut self,
@@ -169,6 +173,12 @@ impl DescribeWhatIfForecastExportOutputBuilder {
     ) -> Self {
         self.what_if_forecast_export_name = input;
         self
+    }
+    /// <p>The name of the what-if forecast export.</p>
+    pub fn get_what_if_forecast_export_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.what_if_forecast_export_name
     }
     /// Appends an item to `what_if_forecast_arns`.
     ///
@@ -192,6 +202,12 @@ impl DescribeWhatIfForecastExportOutputBuilder {
         self.what_if_forecast_arns = input;
         self
     }
+    /// <p>An array of Amazon Resource Names (ARNs) that represent all of the what-if forecasts exported in this resource.</p>
+    pub fn get_what_if_forecast_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.what_if_forecast_arns
+    }
     /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional). </p>
     pub fn destination(mut self, input: crate::types::DataDestination) -> Self {
         self.destination = ::std::option::Option::Some(input);
@@ -205,6 +221,10 @@ impl DescribeWhatIfForecastExportOutputBuilder {
         self.destination = input;
         self
     }
+    /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional). </p>
+    pub fn get_destination(&self) -> &::std::option::Option<crate::types::DataDestination> {
+        &self.destination
+    }
     /// <p>If an error occurred, an informational message about the error.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -214,6 +234,10 @@ impl DescribeWhatIfForecastExportOutputBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>If an error occurred, an informational message about the error.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// <p>The status of the what-if forecast. States include:</p>
     /// <ul>
@@ -241,6 +265,18 @@ impl DescribeWhatIfForecastExportOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the what-if forecast. States include:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// </ul> <note>
+    /// <p>The <code>Status</code> of the what-if forecast export must be <code>ACTIVE</code> before you can access the forecast export.</p>
+    /// </note>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>When the what-if forecast export was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -254,6 +290,10 @@ impl DescribeWhatIfForecastExportOutputBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>When the what-if forecast export was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The approximate time remaining to complete the what-if forecast export, in minutes.</p>
     pub fn estimated_time_remaining_in_minutes(mut self, input: i64) -> Self {
         self.estimated_time_remaining_in_minutes = ::std::option::Option::Some(input);
@@ -266,6 +306,10 @@ impl DescribeWhatIfForecastExportOutputBuilder {
     ) -> Self {
         self.estimated_time_remaining_in_minutes = input;
         self
+    }
+    /// <p>The approximate time remaining to complete the what-if forecast export, in minutes.</p>
+    pub fn get_estimated_time_remaining_in_minutes(&self) -> &::std::option::Option<i64> {
+        &self.estimated_time_remaining_in_minutes
     }
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
@@ -294,6 +338,19 @@ impl DescribeWhatIfForecastExportOutputBuilder {
         self.last_modification_time = input;
         self
     }
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
+    /// <ul>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
+    /// </ul>
+    pub fn get_last_modification_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modification_time
+    }
     /// <p>The format of the exported data, CSV or PARQUET.</p>
     pub fn format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.format = ::std::option::Option::Some(input.into());
@@ -303,6 +360,10 @@ impl DescribeWhatIfForecastExportOutputBuilder {
     pub fn set_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.format = input;
         self
+    }
+    /// <p>The format of the exported data, CSV or PARQUET.</p>
+    pub fn get_format(&self) -> &::std::option::Option<::std::string::String> {
+        &self.format
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

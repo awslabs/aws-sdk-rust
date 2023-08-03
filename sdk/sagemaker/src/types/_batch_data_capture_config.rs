@@ -76,6 +76,10 @@ impl BatchDataCaptureConfigBuilder {
         self.destination_s3_uri = input;
         self
     }
+    /// <p>The Amazon S3 location being used to capture the data.</p>
+    pub fn get_destination_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_s3_uri
+    }
     /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the batch transform job.</p>
     /// <p>The KmsKeyId can be any of the following formats: </p>
     /// <ul>
@@ -100,6 +104,17 @@ impl BatchDataCaptureConfigBuilder {
         self.kms_key_id = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the batch transform job.</p>
+    /// <p>The KmsKeyId can be any of the following formats: </p>
+    /// <ul>
+    /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+    /// <li> <p>Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+    /// <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li>
+    /// <li> <p>Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li>
+    /// </ul>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
+    }
     /// <p>Flag that indicates whether to append inference id to the output.</p>
     pub fn generate_inference_id(mut self, input: bool) -> Self {
         self.generate_inference_id = ::std::option::Option::Some(input);
@@ -109,6 +124,10 @@ impl BatchDataCaptureConfigBuilder {
     pub fn set_generate_inference_id(mut self, input: ::std::option::Option<bool>) -> Self {
         self.generate_inference_id = input;
         self
+    }
+    /// <p>Flag that indicates whether to append inference id to the output.</p>
+    pub fn get_generate_inference_id(&self) -> &::std::option::Option<bool> {
+        &self.generate_inference_id
     }
     /// Consumes the builder and constructs a [`BatchDataCaptureConfig`](crate::types::BatchDataCaptureConfig).
     pub fn build(self) -> crate::types::BatchDataCaptureConfig {

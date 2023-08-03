@@ -42,6 +42,10 @@ impl UpdateVoiceConnectorGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateVoiceConnectorGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_voice_connector_group::builders::UpdateVoiceConnectorGroupInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +142,10 @@ impl UpdateVoiceConnectorGroupFluentBuilder {
         self.inner = self.inner.set_voice_connector_group_id(input);
         self
     }
+    /// <p>The Amazon Chime Voice Connector group ID.</p>
+    pub fn get_voice_connector_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_voice_connector_group_id()
+    }
     /// <p>The name of the Amazon Chime Voice Connector group.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -147,6 +155,10 @@ impl UpdateVoiceConnectorGroupFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the Amazon Chime Voice Connector group.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// Appends an item to `VoiceConnectorItems`.
     ///
@@ -164,5 +176,11 @@ impl UpdateVoiceConnectorGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_voice_connector_items(input);
         self
+    }
+    /// <p>The <code>VoiceConnectorItems</code> to associate with the group.</p>
+    pub fn get_voice_connector_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VoiceConnectorItem>> {
+        self.inner.get_voice_connector_items()
     }
 }

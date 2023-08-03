@@ -48,6 +48,10 @@ impl CancelTimerDecisionAttributesBuilder {
         self.timer_id = input;
         self
     }
+    /// <p> The unique ID of the timer to cancel.</p>
+    pub fn get_timer_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timer_id
+    }
     /// Consumes the builder and constructs a [`CancelTimerDecisionAttributes`](crate::types::CancelTimerDecisionAttributes).
     pub fn build(self) -> crate::types::CancelTimerDecisionAttributes {
         crate::types::CancelTimerDecisionAttributes {

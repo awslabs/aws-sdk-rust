@@ -46,6 +46,10 @@ impl VirtualNodeServiceProviderBuilder {
         self.virtual_node_name = input;
         self
     }
+    /// <p>The name of the virtual node that is acting as a service provider.</p>
+    pub fn get_virtual_node_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_node_name
+    }
     /// Consumes the builder and constructs a [`VirtualNodeServiceProvider`](crate::types::VirtualNodeServiceProvider).
     pub fn build(self) -> crate::types::VirtualNodeServiceProvider {
         crate::types::VirtualNodeServiceProvider {

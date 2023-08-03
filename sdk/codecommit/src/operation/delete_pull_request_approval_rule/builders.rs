@@ -36,6 +36,10 @@ impl DeletePullRequestApprovalRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeletePullRequestApprovalRule as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_pull_request_approval_rule::builders::DeletePullRequestApprovalRuleInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl DeletePullRequestApprovalRuleFluentBuilder {
         self.inner = self.inner.set_pull_request_id(input);
         self
     }
+    /// <p>The system-generated ID of the pull request that contains the approval rule you want to delete.</p>
+    pub fn get_pull_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pull_request_id()
+    }
     /// <p>The name of the approval rule you want to delete.</p>
     pub fn approval_rule_name(
         mut self,
@@ -147,5 +155,9 @@ impl DeletePullRequestApprovalRuleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_approval_rule_name(input);
         self
+    }
+    /// <p>The name of the approval rule you want to delete.</p>
+    pub fn get_approval_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_approval_rule_name()
     }
 }

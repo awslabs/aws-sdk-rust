@@ -54,6 +54,10 @@ impl ListWorkflowsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p> <code>ListWorkflows</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional workflows.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `workflows`.
     ///
     /// To override the contents of this collection use [`set_workflows`](Self::set_workflows).
@@ -72,6 +76,12 @@ impl ListWorkflowsOutputBuilder {
     ) -> Self {
         self.workflows = input;
         self
+    }
+    /// <p>Returns the <code>Arn</code>, <code>WorkflowId</code>, and <code>Description</code> for each workflow.</p>
+    pub fn get_workflows(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListedWorkflow>> {
+        &self.workflows
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

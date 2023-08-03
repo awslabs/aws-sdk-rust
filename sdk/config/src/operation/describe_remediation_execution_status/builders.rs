@@ -36,6 +36,10 @@ impl DescribeRemediationExecutionStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeRemediationExecutionStatus as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_remediation_execution_status::builders::DescribeRemediationExecutionStatusInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -112,6 +116,10 @@ impl DescribeRemediationExecutionStatusFluentBuilder {
         self.inner = self.inner.set_config_rule_name(input);
         self
     }
+    /// <p>A list of Config rule names.</p>
+    pub fn get_config_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_config_rule_name()
+    }
     /// Appends an item to `ResourceKeys`.
     ///
     /// To override the contents of this collection use [`set_resource_keys`](Self::set_resource_keys).
@@ -129,6 +137,12 @@ impl DescribeRemediationExecutionStatusFluentBuilder {
         self.inner = self.inner.set_resource_keys(input);
         self
     }
+    /// <p>A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID. </p>
+    pub fn get_resource_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceKey>> {
+        self.inner.get_resource_keys()
+    }
     /// <p>The maximum number of RemediationExecutionStatuses returned on each page. The default is maximum. If you specify 0, Config uses the default. </p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -139,6 +153,10 @@ impl DescribeRemediationExecutionStatusFluentBuilder {
         self.inner = self.inner.set_limit(input);
         self
     }
+    /// <p>The maximum number of RemediationExecutionStatuses returned on each page. The default is maximum. If you specify 0, Config uses the default. </p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
+    }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -148,5 +166,9 @@ impl DescribeRemediationExecutionStatusFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

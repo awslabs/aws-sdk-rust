@@ -63,6 +63,11 @@ impl DetachPolicyInputBuilder {
         self.policy_id = input;
         self
     }
+    /// <p>The unique identifier (ID) of the policy you want to detach. You can get the ID from the <code>ListPolicies</code> or <code>ListPoliciesForTarget</code> operations.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
+    pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_id
+    }
     /// <p>The unique identifier (ID) of the root, OU, or account that you want to detach the policy from. You can get the ID from the <code>ListRoots</code>, <code>ListOrganizationalUnitsForParent</code>, or <code>ListAccounts</code> operations.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the following:</p>
     /// <ul>
@@ -84,6 +89,16 @@ impl DetachPolicyInputBuilder {
     pub fn set_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_id = input;
         self
+    }
+    /// <p>The unique identifier (ID) of the root, OU, or account that you want to detach the policy from. You can get the ID from the <code>ListRoots</code>, <code>ListOrganizationalUnitsForParent</code>, or <code>ListAccounts</code> operations.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the following:</p>
+    /// <ul>
+    /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>
+    /// <li> <p> <b>Account</b> - A string that consists of exactly 12 digits.</p> </li>
+    /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
+    /// </ul>
+    pub fn get_target_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_id
     }
     /// Consumes the builder and constructs a [`DetachPolicyInput`](crate::operation::detach_policy::DetachPolicyInput).
     pub fn build(

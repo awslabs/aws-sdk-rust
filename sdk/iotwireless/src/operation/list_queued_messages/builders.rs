@@ -36,6 +36,12 @@ impl ListQueuedMessagesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListQueuedMessages as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_queued_messages::builders::ListQueuedMessagesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl ListQueuedMessagesFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The ID of a given wireless device which the downlink message packets are being sent.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -147,6 +157,10 @@ impl ListQueuedMessagesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return in this operation.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -156,6 +170,10 @@ impl ListQueuedMessagesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return in this operation.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>The wireless device type, whic can be either Sidewalk or LoRaWAN.</p>
     pub fn wireless_device_type(mut self, input: crate::types::WirelessDeviceType) -> Self {
@@ -169,5 +187,11 @@ impl ListQueuedMessagesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_wireless_device_type(input);
         self
+    }
+    /// <p>The wireless device type, whic can be either Sidewalk or LoRaWAN.</p>
+    pub fn get_wireless_device_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::WirelessDeviceType> {
+        self.inner.get_wireless_device_type()
     }
 }

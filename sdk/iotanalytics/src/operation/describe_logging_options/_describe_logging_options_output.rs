@@ -51,6 +51,10 @@ impl DescribeLoggingOptionsOutputBuilder {
         self.logging_options = input;
         self
     }
+    /// <p>The current settings of the IoT Analytics logging options.</p>
+    pub fn get_logging_options(&self) -> &::std::option::Option<crate::types::LoggingOptions> {
+        &self.logging_options
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

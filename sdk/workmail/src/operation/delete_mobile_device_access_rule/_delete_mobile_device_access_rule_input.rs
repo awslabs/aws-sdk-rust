@@ -53,6 +53,10 @@ impl DeleteMobileDeviceAccessRuleInputBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The WorkMail organization under which the rule will be deleted.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p>The identifier of the rule to be deleted.</p>
     pub fn mobile_device_access_rule_id(
         mut self,
@@ -68,6 +72,12 @@ impl DeleteMobileDeviceAccessRuleInputBuilder {
     ) -> Self {
         self.mobile_device_access_rule_id = input;
         self
+    }
+    /// <p>The identifier of the rule to be deleted.</p>
+    pub fn get_mobile_device_access_rule_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.mobile_device_access_rule_id
     }
     /// Consumes the builder and constructs a [`DeleteMobileDeviceAccessRuleInput`](crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleInput).
     pub fn build(

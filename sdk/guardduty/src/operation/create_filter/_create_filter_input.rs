@@ -219,6 +219,10 @@ impl CreateFilterInputBuilder {
         self.detector_id = input;
         self
     }
+    /// <p>The ID of the detector belonging to the GuardDuty account that you want to create a filter for.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
+    }
     /// <p>The name of the filter. Valid characters include period (.), underscore (_), dash (-), and alphanumeric characters. A whitespace is considered to be an invalid character.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -228,6 +232,10 @@ impl CreateFilterInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the filter. Valid characters include period (.), underscore (_), dash (-), and alphanumeric characters. A whitespace is considered to be an invalid character.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The description of the filter. Valid characters include alphanumeric characters, and special characters such as hyphen, period, colon, underscore, parentheses (<code>{ }</code>, <code>[ ]</code>, and <code>( )</code>), forward slash, horizontal tab, vertical tab, newline, form feed, return, and whitespace.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -239,6 +247,10 @@ impl CreateFilterInputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the filter. Valid characters include alphanumeric characters, and special characters such as hyphen, period, colon, underscore, parentheses (<code>{ }</code>, <code>[ ]</code>, and <code>( )</code>), forward slash, horizontal tab, vertical tab, newline, form feed, return, and whitespace.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
     pub fn action(mut self, input: crate::types::FilterAction) -> Self {
         self.action = ::std::option::Option::Some(input);
@@ -249,6 +261,10 @@ impl CreateFilterInputBuilder {
         self.action = input;
         self
     }
+    /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::FilterAction> {
+        &self.action
+    }
     /// <p>Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.</p>
     pub fn rank(mut self, input: i32) -> Self {
         self.rank = ::std::option::Option::Some(input);
@@ -258,6 +274,10 @@ impl CreateFilterInputBuilder {
     pub fn set_rank(mut self, input: ::std::option::Option<i32>) -> Self {
         self.rank = input;
         self
+    }
+    /// <p>Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.</p>
+    pub fn get_rank(&self) -> &::std::option::Option<i32> {
+        &self.rank
     }
     /// <p>Represents the criteria to be used in the filter for querying findings.</p>
     /// <p>You can only use the following attributes to query findings:</p>
@@ -388,6 +408,68 @@ impl CreateFilterInputBuilder {
         self.finding_criteria = input;
         self
     }
+    /// <p>Represents the criteria to be used in the filter for querying findings.</p>
+    /// <p>You can only use the following attributes to query findings:</p>
+    /// <ul>
+    /// <li> <p>accountId</p> </li>
+    /// <li> <p>region</p> </li>
+    /// <li> <p>id</p> </li>
+    /// <li> <p>resource.accessKeyDetails.accessKeyId</p> </li>
+    /// <li> <p>resource.accessKeyDetails.principalId</p> </li>
+    /// <li> <p>resource.accessKeyDetails.userName</p> </li>
+    /// <li> <p>resource.accessKeyDetails.userType</p> </li>
+    /// <li> <p>resource.instanceDetails.iamInstanceProfile.id</p> </li>
+    /// <li> <p>resource.instanceDetails.imageId</p> </li>
+    /// <li> <p>resource.instanceDetails.instanceId</p> </li>
+    /// <li> <p>resource.instanceDetails.outpostArn</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.publicDnsName</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.publicIp</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupId</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.securityGroups.groupName</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.subnetId</p> </li>
+    /// <li> <p>resource.instanceDetails.networkInterfaces.vpcId</p> </li>
+    /// <li> <p>resource.instanceDetails.tags.key</p> </li>
+    /// <li> <p>resource.instanceDetails.tags.value</p> </li>
+    /// <li> <p>resource.resourceType</p> </li>
+    /// <li> <p>service.action.actionType</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.api</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.callerType</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.errorCode</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.userAgent</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.city.cityName</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.country.countryName</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.ipAddressV4</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asn</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg</p> </li>
+    /// <li> <p>service.action.awsApiCallAction.serviceName</p> </li>
+    /// <li> <p>service.action.dnsRequestAction.domain</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.blocked</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.connectionDirection</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.localPortDetails.port</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.protocol</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.ipAddressV4</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asn</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg</p> </li>
+    /// <li> <p>service.action.networkConnectionAction.remotePortDetails.port</p> </li>
+    /// <li> <p>service.additionalInfo.threatListName</p> </li>
+    /// <li> <p>resource.s3BucketDetails.publicAccess.effectivePermissions</p> </li>
+    /// <li> <p>resource.s3BucketDetails.name</p> </li>
+    /// <li> <p>resource.s3BucketDetails.tags.key</p> </li>
+    /// <li> <p>resource.s3BucketDetails.tags.value</p> </li>
+    /// <li> <p>resource.s3BucketDetails.type</p> </li>
+    /// <li> <p>service.resourceRole</p> </li>
+    /// <li> <p>severity</p> </li>
+    /// <li> <p>type</p> </li>
+    /// <li> <p>updatedAt</p> <p>Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ depending on whether the value contains milliseconds.</p> </li>
+    /// </ul>
+    pub fn get_finding_criteria(&self) -> &::std::option::Option<crate::types::FindingCriteria> {
+        &self.finding_criteria
+    }
     /// <p>The idempotency token for the create request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -397,6 +479,10 @@ impl CreateFilterInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>The idempotency token for the create request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -422,6 +508,14 @@ impl CreateFilterInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags to be added to a new filter resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateFilterInput`](crate::operation::create_filter::CreateFilterInput).
     pub fn build(

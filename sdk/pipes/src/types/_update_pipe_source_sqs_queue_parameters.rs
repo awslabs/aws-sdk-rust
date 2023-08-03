@@ -48,6 +48,10 @@ impl UpdatePipeSourceSqsQueueParametersBuilder {
         self.batch_size = input;
         self
     }
+    /// <p>The maximum number of records to include in each batch.</p>
+    pub fn get_batch_size(&self) -> &::std::option::Option<i32> {
+        &self.batch_size
+    }
     /// <p>The maximum length of a time to wait for events.</p>
     pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
         self.maximum_batching_window_in_seconds = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl UpdatePipeSourceSqsQueueParametersBuilder {
     ) -> Self {
         self.maximum_batching_window_in_seconds = input;
         self
+    }
+    /// <p>The maximum length of a time to wait for events.</p>
+    pub fn get_maximum_batching_window_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.maximum_batching_window_in_seconds
     }
     /// Consumes the builder and constructs a [`UpdatePipeSourceSqsQueueParameters`](crate::types::UpdatePipeSourceSqsQueueParameters).
     pub fn build(self) -> crate::types::UpdatePipeSourceSqsQueueParameters {

@@ -43,6 +43,10 @@ impl PackageVersionInputConfigBuilder {
         self.s3_location = input;
         self
     }
+    /// <p>A location in Amazon S3.</p>
+    pub fn get_s3_location(&self) -> &::std::option::Option<crate::types::S3Location> {
+        &self.s3_location
+    }
     /// Consumes the builder and constructs a [`PackageVersionInputConfig`](crate::types::PackageVersionInputConfig).
     pub fn build(self) -> crate::types::PackageVersionInputConfig {
         crate::types::PackageVersionInputConfig {

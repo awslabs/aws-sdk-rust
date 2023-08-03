@@ -53,6 +53,10 @@ impl AttachStaticIpInputBuilder {
         self.static_ip_name = input;
         self
     }
+    /// <p>The name of the static IP.</p>
+    pub fn get_static_ip_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.static_ip_name
+    }
     /// <p>The instance name to which you want to attach the static IP address.</p>
     pub fn instance_name(
         mut self,
@@ -68,6 +72,10 @@ impl AttachStaticIpInputBuilder {
     ) -> Self {
         self.instance_name = input;
         self
+    }
+    /// <p>The instance name to which you want to attach the static IP address.</p>
+    pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_name
     }
     /// Consumes the builder and constructs a [`AttachStaticIpInput`](crate::operation::attach_static_ip::AttachStaticIpInput).
     pub fn build(

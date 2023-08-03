@@ -48,6 +48,10 @@ impl SnsTopicPublishActionBuilder {
         self.target_arn = input;
         self
     }
+    /// <p>The ARN of the Amazon SNS target where the message is sent.</p>
+    pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_arn
+    }
     /// <p>You can configure the action payload when you send a message as an Amazon SNS push notification.</p>
     pub fn payload(mut self, input: crate::types::Payload) -> Self {
         self.payload = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl SnsTopicPublishActionBuilder {
     pub fn set_payload(mut self, input: ::std::option::Option<crate::types::Payload>) -> Self {
         self.payload = input;
         self
+    }
+    /// <p>You can configure the action payload when you send a message as an Amazon SNS push notification.</p>
+    pub fn get_payload(&self) -> &::std::option::Option<crate::types::Payload> {
+        &self.payload
     }
     /// Consumes the builder and constructs a [`SnsTopicPublishAction`](crate::types::SnsTopicPublishAction).
     pub fn build(self) -> crate::types::SnsTopicPublishAction {

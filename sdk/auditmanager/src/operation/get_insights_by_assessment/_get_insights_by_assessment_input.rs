@@ -47,6 +47,10 @@ impl GetInsightsByAssessmentInputBuilder {
         self.assessment_id = input;
         self
     }
+    /// <p>The unique identifier for the assessment. </p>
+    pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assessment_id
+    }
     /// Consumes the builder and constructs a [`GetInsightsByAssessmentInput`](crate::operation::get_insights_by_assessment::GetInsightsByAssessmentInput).
     pub fn build(
         self,

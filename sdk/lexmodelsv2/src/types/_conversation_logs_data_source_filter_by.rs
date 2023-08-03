@@ -61,6 +61,10 @@ impl ConversationLogsDataSourceFilterByBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The start time for the conversation log.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The end time for the conversation log.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl ConversationLogsDataSourceFilterByBuilder {
         self.end_time = input;
         self
     }
+    /// <p>The end time for the conversation log.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>The selection to filter by input mode for the conversation logs. </p>
     pub fn input_mode(mut self, input: crate::types::ConversationLogsInputModeFilter) -> Self {
         self.input_mode = ::std::option::Option::Some(input);
@@ -86,6 +94,12 @@ impl ConversationLogsDataSourceFilterByBuilder {
     ) -> Self {
         self.input_mode = input;
         self
+    }
+    /// <p>The selection to filter by input mode for the conversation logs. </p>
+    pub fn get_input_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConversationLogsInputModeFilter> {
+        &self.input_mode
     }
     /// Consumes the builder and constructs a [`ConversationLogsDataSourceFilterBy`](crate::types::ConversationLogsDataSourceFilterBy).
     pub fn build(self) -> crate::types::ConversationLogsDataSourceFilterBy {

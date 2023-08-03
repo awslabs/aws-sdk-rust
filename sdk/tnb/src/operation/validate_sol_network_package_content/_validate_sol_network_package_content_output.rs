@@ -97,6 +97,10 @@ impl ValidateSolNetworkPackageContentOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>Network package ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>Network package ARN.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -106,6 +110,10 @@ impl ValidateSolNetworkPackageContentOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>Network package ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>Network service descriptor ID.</p>
     pub fn nsd_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -117,6 +125,10 @@ impl ValidateSolNetworkPackageContentOutputBuilder {
         self.nsd_id = input;
         self
     }
+    /// <p>Network service descriptor ID.</p>
+    pub fn get_nsd_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nsd_id
+    }
     /// <p>Network service descriptor name.</p>
     pub fn nsd_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nsd_name = ::std::option::Option::Some(input.into());
@@ -127,6 +139,10 @@ impl ValidateSolNetworkPackageContentOutputBuilder {
         self.nsd_name = input;
         self
     }
+    /// <p>Network service descriptor name.</p>
+    pub fn get_nsd_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nsd_name
+    }
     /// <p>Network service descriptor version.</p>
     pub fn nsd_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nsd_version = ::std::option::Option::Some(input.into());
@@ -136,6 +152,10 @@ impl ValidateSolNetworkPackageContentOutputBuilder {
     pub fn set_nsd_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.nsd_version = input;
         self
+    }
+    /// <p>Network service descriptor version.</p>
+    pub fn get_nsd_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nsd_version
     }
     /// Appends an item to `vnf_pkg_ids`.
     ///
@@ -156,6 +176,12 @@ impl ValidateSolNetworkPackageContentOutputBuilder {
         self.vnf_pkg_ids = input;
         self
     }
+    /// <p>Function package IDs.</p>
+    pub fn get_vnf_pkg_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.vnf_pkg_ids
+    }
     /// <p>Network package metadata.</p>
     pub fn metadata(
         mut self,
@@ -171,6 +197,12 @@ impl ValidateSolNetworkPackageContentOutputBuilder {
     ) -> Self {
         self.metadata = input;
         self
+    }
+    /// <p>Network package metadata.</p>
+    pub fn get_metadata(
+        &self,
+    ) -> &::std::option::Option<crate::types::ValidateSolNetworkPackageContentMetadata> {
+        &self.metadata
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -51,6 +51,10 @@ impl GenderBuilder {
         self.value = input;
         self
     }
+    /// <p>The predicted gender of the face.</p>
+    pub fn get_value(&self) -> &::std::option::Option<crate::types::GenderType> {
+        &self.value
+    }
     /// <p>Level of confidence in the prediction.</p>
     pub fn confidence(mut self, input: f32) -> Self {
         self.confidence = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl GenderBuilder {
     pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
         self.confidence = input;
         self
+    }
+    /// <p>Level of confidence in the prediction.</p>
+    pub fn get_confidence(&self) -> &::std::option::Option<f32> {
+        &self.confidence
     }
     /// Consumes the builder and constructs a [`Gender`](crate::types::Gender).
     pub fn build(self) -> crate::types::Gender {

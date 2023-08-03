@@ -41,6 +41,10 @@ impl AdMarkerPassthroughBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Enables ad marker passthrough for your configuration.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// Consumes the builder and constructs a [`AdMarkerPassthrough`](crate::types::AdMarkerPassthrough).
     pub fn build(self) -> crate::types::AdMarkerPassthrough {
         crate::types::AdMarkerPassthrough {

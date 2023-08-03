@@ -50,6 +50,10 @@ impl GetBackendEnvironmentInputBuilder {
         self.app_id = input;
         self
     }
+    /// <p> The unique id for an Amplify app. </p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// <p> The name for the backend environment. </p>
     pub fn environment_name(
         mut self,
@@ -65,6 +69,10 @@ impl GetBackendEnvironmentInputBuilder {
     ) -> Self {
         self.environment_name = input;
         self
+    }
+    /// <p> The name for the backend environment. </p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_name
     }
     /// Consumes the builder and constructs a [`GetBackendEnvironmentInput`](crate::operation::get_backend_environment::GetBackendEnvironmentInput).
     pub fn build(

@@ -50,6 +50,10 @@ impl StopInstanceOnIdleRequestBuilder {
         self.threshold = input;
         self
     }
+    /// <p>The value to compare with the duration.</p>
+    pub fn get_threshold(&self) -> &::std::option::Option<::std::string::String> {
+        &self.threshold
+    }
     /// <p>The amount of idle time in minutes after which your virtual computer will automatically stop.</p>
     pub fn duration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.duration = ::std::option::Option::Some(input.into());
@@ -59,6 +63,10 @@ impl StopInstanceOnIdleRequestBuilder {
     pub fn set_duration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.duration = input;
         self
+    }
+    /// <p>The amount of idle time in minutes after which your virtual computer will automatically stop.</p>
+    pub fn get_duration(&self) -> &::std::option::Option<::std::string::String> {
+        &self.duration
     }
     /// Consumes the builder and constructs a [`StopInstanceOnIdleRequest`](crate::types::StopInstanceOnIdleRequest).
     pub fn build(self) -> crate::types::StopInstanceOnIdleRequest {

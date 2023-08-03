@@ -69,6 +69,10 @@ impl SpectrumConfigBuilder {
         self.center_frequency = input;
         self
     }
+    /// <p>Center frequency of a spectral <code>Config</code>. Valid values are between 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz for uplink.</p>
+    pub fn get_center_frequency(&self) -> &::std::option::Option<crate::types::Frequency> {
+        &self.center_frequency
+    }
     /// <p>Bandwidth of a spectral <code>Config</code>. AWS Ground Station currently has the following bandwidth limitations:</p>
     /// <ul>
     /// <li> <p>For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.</p> </li>
@@ -92,6 +96,15 @@ impl SpectrumConfigBuilder {
         self.bandwidth = input;
         self
     }
+    /// <p>Bandwidth of a spectral <code>Config</code>. AWS Ground Station currently has the following bandwidth limitations:</p>
+    /// <ul>
+    /// <li> <p>For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.</p> </li>
+    /// <li> <p>For <code>AntennaDownlinkconfig</code> valid values are between 10 kHz to 54 MHz.</p> </li>
+    /// <li> <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p> </li>
+    /// </ul>
+    pub fn get_bandwidth(&self) -> &::std::option::Option<crate::types::FrequencyBandwidth> {
+        &self.bandwidth
+    }
     /// <p>Polarization of a spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and <code>"LEFT_HAND"</code> polarization requires two separate configs.</p>
     pub fn polarization(mut self, input: crate::types::Polarization) -> Self {
         self.polarization = ::std::option::Option::Some(input);
@@ -104,6 +117,10 @@ impl SpectrumConfigBuilder {
     ) -> Self {
         self.polarization = input;
         self
+    }
+    /// <p>Polarization of a spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and <code>"LEFT_HAND"</code> polarization requires two separate configs.</p>
+    pub fn get_polarization(&self) -> &::std::option::Option<crate::types::Polarization> {
+        &self.polarization
     }
     /// Consumes the builder and constructs a [`SpectrumConfig`](crate::types::SpectrumConfig).
     pub fn build(self) -> crate::types::SpectrumConfig {

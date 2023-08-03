@@ -39,6 +39,10 @@ impl ResendOperationAuthorizationInputBuilder {
         self.operation_id = input;
         self
     }
+    /// <p> Operation ID. </p>
+    pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operation_id
+    }
     /// Consumes the builder and constructs a [`ResendOperationAuthorizationInput`](crate::operation::resend_operation_authorization::ResendOperationAuthorizationInput).
     pub fn build(
         self,

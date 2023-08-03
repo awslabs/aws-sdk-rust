@@ -88,6 +88,10 @@ impl ListedAgreementBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the specified agreement.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
     pub fn agreement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agreement_id = ::std::option::Option::Some(input.into());
@@ -98,6 +102,10 @@ impl ListedAgreementBuilder {
         self.agreement_id = input;
         self
     }
+    /// <p>A unique identifier for the agreement. This identifier is returned when you create an agreement.</p>
+    pub fn get_agreement_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agreement_id
+    }
     /// <p>The current description for the agreement. You can change it by calling the <code>UpdateAgreement</code> operation and providing a new description. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -107,6 +115,10 @@ impl ListedAgreementBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The current description for the agreement. You can change it by calling the <code>UpdateAgreement</code> operation and providing a new description. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The agreement can be either <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
     pub fn status(mut self, input: crate::types::AgreementStatusType) -> Self {
@@ -121,6 +133,10 @@ impl ListedAgreementBuilder {
         self.status = input;
         self
     }
+    /// <p>The agreement can be either <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AgreementStatusType> {
+        &self.status
+    }
     /// <p>The unique identifier for the agreement.</p>
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_id = ::std::option::Option::Some(input.into());
@@ -130,6 +146,10 @@ impl ListedAgreementBuilder {
     pub fn set_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_id = input;
         self
+    }
+    /// <p>The unique identifier for the agreement.</p>
+    pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_id
     }
     /// <p>A unique identifier for the AS2 local profile.</p>
     pub fn local_profile_id(
@@ -147,6 +167,10 @@ impl ListedAgreementBuilder {
         self.local_profile_id = input;
         self
     }
+    /// <p>A unique identifier for the AS2 local profile.</p>
+    pub fn get_local_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.local_profile_id
+    }
     /// <p>A unique identifier for the partner profile.</p>
     pub fn partner_profile_id(
         mut self,
@@ -162,6 +186,10 @@ impl ListedAgreementBuilder {
     ) -> Self {
         self.partner_profile_id = input;
         self
+    }
+    /// <p>A unique identifier for the partner profile.</p>
+    pub fn get_partner_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.partner_profile_id
     }
     /// Consumes the builder and constructs a [`ListedAgreement`](crate::types::ListedAgreement).
     pub fn build(self) -> crate::types::ListedAgreement {

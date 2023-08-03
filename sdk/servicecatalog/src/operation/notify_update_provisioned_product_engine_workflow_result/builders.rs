@@ -36,6 +36,10 @@ impl NotifyUpdateProvisionedProductEngineWorkflowResultFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the NotifyUpdateProvisionedProductEngineWorkflowResult as a reference.
+    pub fn as_input(&self) -> &crate::operation::notify_update_provisioned_product_engine_workflow_result::builders::NotifyUpdateProvisionedProductEngineWorkflowResultInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl NotifyUpdateProvisionedProductEngineWorkflowResultFluentBuilder {
         self.inner = self.inner.set_workflow_token(input);
         self
     }
+    /// <p> The encrypted contents of the update engine execution payload that Service Catalog sends after the Terraform product update workflow starts. </p>
+    pub fn get_workflow_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workflow_token()
+    }
     /// <p> The identifier of the record. </p>
     pub fn record_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.record_id(input.into());
@@ -115,6 +123,10 @@ impl NotifyUpdateProvisionedProductEngineWorkflowResultFluentBuilder {
     pub fn set_record_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_record_id(input);
         self
+    }
+    /// <p> The identifier of the record. </p>
+    pub fn get_record_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_record_id()
     }
     /// <p> The status of the update engine execution. </p>
     pub fn status(mut self, input: crate::types::EngineWorkflowStatus) -> Self {
@@ -128,6 +140,10 @@ impl NotifyUpdateProvisionedProductEngineWorkflowResultFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_status(input);
         self
+    }
+    /// <p> The status of the update engine execution. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::EngineWorkflowStatus> {
+        self.inner.get_status()
     }
     /// <p> The reason why the update engine execution failed. </p>
     pub fn failure_reason(
@@ -144,6 +160,10 @@ impl NotifyUpdateProvisionedProductEngineWorkflowResultFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_failure_reason(input);
         self
+    }
+    /// <p> The reason why the update engine execution failed. </p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_failure_reason()
     }
     /// Appends an item to `Outputs`.
     ///
@@ -162,6 +182,12 @@ impl NotifyUpdateProvisionedProductEngineWorkflowResultFluentBuilder {
         self.inner = self.inner.set_outputs(input);
         self
     }
+    /// <p> The output of the update engine execution. </p>
+    pub fn get_outputs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecordOutput>> {
+        self.inner.get_outputs()
+    }
     /// <p> The idempotency token that identifies the update engine execution. </p>
     pub fn idempotency_token(
         mut self,
@@ -177,5 +203,9 @@ impl NotifyUpdateProvisionedProductEngineWorkflowResultFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self
+    }
+    /// <p> The idempotency token that identifies the update engine execution. </p>
+    pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_idempotency_token()
     }
 }

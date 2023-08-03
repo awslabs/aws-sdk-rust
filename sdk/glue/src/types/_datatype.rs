@@ -48,6 +48,10 @@ impl DatatypeBuilder {
         self.id = input;
         self
     }
+    /// <p>The datatype of the value.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>A label assigned to the datatype.</p>
     pub fn label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl DatatypeBuilder {
     pub fn set_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label = input;
         self
+    }
+    /// <p>A label assigned to the datatype.</p>
+    pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label
     }
     /// Consumes the builder and constructs a [`Datatype`](crate::types::Datatype).
     pub fn build(self) -> crate::types::Datatype {

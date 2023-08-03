@@ -48,6 +48,10 @@ impl FailoverConfigBuilder {
         self.primary = input;
         self
     }
+    /// <p>The main Region of the endpoint.</p>
+    pub fn get_primary(&self) -> &::std::option::Option<crate::types::Primary> {
+        &self.primary
+    }
     /// <p>The Region that events are routed to when failover is triggered or event replication is enabled.</p>
     pub fn secondary(mut self, input: crate::types::Secondary) -> Self {
         self.secondary = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl FailoverConfigBuilder {
     pub fn set_secondary(mut self, input: ::std::option::Option<crate::types::Secondary>) -> Self {
         self.secondary = input;
         self
+    }
+    /// <p>The Region that events are routed to when failover is triggered or event replication is enabled.</p>
+    pub fn get_secondary(&self) -> &::std::option::Option<crate::types::Secondary> {
+        &self.secondary
     }
     /// Consumes the builder and constructs a [`FailoverConfig`](crate::types::FailoverConfig).
     pub fn build(self) -> crate::types::FailoverConfig {

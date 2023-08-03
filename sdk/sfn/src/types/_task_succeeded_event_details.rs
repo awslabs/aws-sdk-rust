@@ -81,6 +81,10 @@ impl TaskSucceededEventDetailsBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The service name of the resource in a task state.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
+    }
     /// <p>The action of the resource called by a task state.</p>
     pub fn resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource = ::std::option::Option::Some(input.into());
@@ -91,6 +95,10 @@ impl TaskSucceededEventDetailsBuilder {
         self.resource = input;
         self
     }
+    /// <p>The action of the resource called by a task state.</p>
+    pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource
+    }
     /// <p>The full JSON response from a resource when a task has succeeded. This response becomes the output of the related task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn output(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output = ::std::option::Option::Some(input.into());
@@ -100,6 +108,10 @@ impl TaskSucceededEventDetailsBuilder {
     pub fn set_output(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output = input;
         self
+    }
+    /// <p>The full JSON response from a resource when a task has succeeded. This response becomes the output of the related task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    pub fn get_output(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output
     }
     /// <p>Contains details about the output of an execution history event.</p>
     pub fn output_details(mut self, input: crate::types::HistoryEventExecutionDataDetails) -> Self {
@@ -113,6 +125,12 @@ impl TaskSucceededEventDetailsBuilder {
     ) -> Self {
         self.output_details = input;
         self
+    }
+    /// <p>Contains details about the output of an execution history event.</p>
+    pub fn get_output_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::HistoryEventExecutionDataDetails> {
+        &self.output_details
     }
     /// Consumes the builder and constructs a [`TaskSucceededEventDetails`](crate::types::TaskSucceededEventDetails).
     pub fn build(self) -> crate::types::TaskSucceededEventDetails {

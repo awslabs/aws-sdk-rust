@@ -46,6 +46,10 @@ impl StopEdgePackagingJobInputBuilder {
         self.edge_packaging_job_name = input;
         self
     }
+    /// <p>The name of the edge packaging job.</p>
+    pub fn get_edge_packaging_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.edge_packaging_job_name
+    }
     /// Consumes the builder and constructs a [`StopEdgePackagingJobInput`](crate::operation::stop_edge_packaging_job::StopEdgePackagingJobInput).
     pub fn build(
         self,

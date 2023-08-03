@@ -71,6 +71,12 @@ impl InferIcd10CmOutputBuilder {
         self.entities = input;
         self
     }
+    /// <p>The medical conditions detected in the text linked to ICD-10-CM concepts. If the action is successful, the service sends back an HTTP 200 response, as well as the entities detected.</p>
+    pub fn get_entities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Icd10CmEntity>> {
+        &self.entities
+    }
     /// <p>If the result of the previous request to <code>InferICD10CM</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of medical condition entities. </p>
     pub fn pagination_token(
         mut self,
@@ -87,6 +93,10 @@ impl InferIcd10CmOutputBuilder {
         self.pagination_token = input;
         self
     }
+    /// <p>If the result of the previous request to <code>InferICD10CM</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of medical condition entities. </p>
+    pub fn get_pagination_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pagination_token
+    }
     /// <p>The version of the model used to analyze the documents, in the format <i>n</i>.<i>n</i>.<i>n</i> You can use this information to track the model used for a particular batch of documents.</p>
     pub fn model_version(
         mut self,
@@ -102,6 +112,10 @@ impl InferIcd10CmOutputBuilder {
     ) -> Self {
         self.model_version = input;
         self
+    }
+    /// <p>The version of the model used to analyze the documents, in the format <i>n</i>.<i>n</i>.<i>n</i> You can use this information to track the model used for a particular batch of documents.</p>
+    pub fn get_model_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

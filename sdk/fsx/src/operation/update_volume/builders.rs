@@ -36,6 +36,10 @@ impl UpdateVolumeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateVolume as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_volume::builders::UpdateVolumeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl UpdateVolumeFluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
+    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
+    }
     /// <p>The ID of the volume that you want to update, in the format <code>fsvol-0123456789abcdef0</code>.</p>
     pub fn volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.volume_id(input.into());
@@ -133,6 +141,10 @@ impl UpdateVolumeFluentBuilder {
     pub fn set_volume_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_volume_id(input);
         self
+    }
+    /// <p>The ID of the volume that you want to update, in the format <code>fsvol-0123456789abcdef0</code>.</p>
+    pub fn get_volume_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_volume_id()
     }
     /// <p>The configuration of the ONTAP volume that you are updating.</p>
     pub fn ontap_configuration(
@@ -150,6 +162,12 @@ impl UpdateVolumeFluentBuilder {
         self.inner = self.inner.set_ontap_configuration(input);
         self
     }
+    /// <p>The configuration of the ONTAP volume that you are updating.</p>
+    pub fn get_ontap_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateOntapVolumeConfiguration> {
+        self.inner.get_ontap_configuration()
+    }
     /// <p>The name of the OpenZFS volume. OpenZFS root volumes are automatically named <code>FSX</code>. Child volume names must be unique among their parent volume's children. The name of the volume is part of the mount string for the OpenZFS volume. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -159,6 +177,10 @@ impl UpdateVolumeFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the OpenZFS volume. OpenZFS root volumes are automatically named <code>FSX</code>. Child volume names must be unique among their parent volume's children. The name of the volume is part of the mount string for the OpenZFS volume. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The configuration of the OpenZFS volume that you are updating.</p>
     pub fn open_zfs_configuration(
@@ -175,5 +197,11 @@ impl UpdateVolumeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_open_zfs_configuration(input);
         self
+    }
+    /// <p>The configuration of the OpenZFS volume that you are updating.</p>
+    pub fn get_open_zfs_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateOpenZfsVolumeConfiguration> {
+        self.inner.get_open_zfs_configuration()
     }
 }

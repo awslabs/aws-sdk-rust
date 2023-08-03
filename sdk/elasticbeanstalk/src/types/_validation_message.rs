@@ -72,6 +72,10 @@ impl ValidationMessageBuilder {
         self.message = input;
         self
     }
+    /// <p>A message describing the error or warning.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>An indication of the severity of this message:</p>
     /// <ul>
     /// <li> <p> <code>error</code>: This message indicates that this is not a valid setting for an option.</p> </li>
@@ -93,6 +97,14 @@ impl ValidationMessageBuilder {
         self.severity = input;
         self
     }
+    /// <p>An indication of the severity of this message:</p>
+    /// <ul>
+    /// <li> <p> <code>error</code>: This message indicates that this is not a valid setting for an option.</p> </li>
+    /// <li> <p> <code>warning</code>: This message is providing information you should take into account.</p> </li>
+    /// </ul>
+    pub fn get_severity(&self) -> &::std::option::Option<crate::types::ValidationSeverity> {
+        &self.severity
+    }
     /// <p>The namespace to which the option belongs.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
@@ -103,6 +115,10 @@ impl ValidationMessageBuilder {
         self.namespace = input;
         self
     }
+    /// <p>The namespace to which the option belongs.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
+    }
     /// <p>The name of the option.</p>
     pub fn option_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.option_name = ::std::option::Option::Some(input.into());
@@ -112,6 +128,10 @@ impl ValidationMessageBuilder {
     pub fn set_option_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.option_name = input;
         self
+    }
+    /// <p>The name of the option.</p>
+    pub fn get_option_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.option_name
     }
     /// Consumes the builder and constructs a [`ValidationMessage`](crate::types::ValidationMessage).
     pub fn build(self) -> crate::types::ValidationMessage {

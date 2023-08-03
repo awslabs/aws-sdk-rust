@@ -64,6 +64,10 @@ impl PackageSummaryBuilder {
         self.package_name = input;
         self
     }
+    /// <p>The name for the target package.</p>
+    pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_name
+    }
     /// <p>The name of the default package version.</p>
     pub fn default_version_name(
         mut self,
@@ -80,6 +84,10 @@ impl PackageSummaryBuilder {
         self.default_version_name = input;
         self
     }
+    /// <p>The name of the default package version.</p>
+    pub fn get_default_version_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_version_name
+    }
     /// <p>The date that the package was created.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
@@ -93,6 +101,10 @@ impl PackageSummaryBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>The date that the package was created.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
+    }
     /// <p>The date that the package was last updated.</p>
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input);
@@ -105,6 +117,10 @@ impl PackageSummaryBuilder {
     ) -> Self {
         self.last_modified_date = input;
         self
+    }
+    /// <p>The date that the package was last updated.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_date
     }
     /// Consumes the builder and constructs a [`PackageSummary`](crate::types::PackageSummary).
     pub fn build(self) -> crate::types::PackageSummary {

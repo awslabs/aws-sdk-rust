@@ -54,6 +54,10 @@ impl DeregisterDevicesInputBuilder {
         self.device_fleet_name = input;
         self
     }
+    /// <p>The name of the fleet the devices belong to.</p>
+    pub fn get_device_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_fleet_name
+    }
     /// Appends an item to `device_names`.
     ///
     /// To override the contents of this collection use [`set_device_names`](Self::set_device_names).
@@ -72,6 +76,12 @@ impl DeregisterDevicesInputBuilder {
     ) -> Self {
         self.device_names = input;
         self
+    }
+    /// <p>The unique IDs of the devices.</p>
+    pub fn get_device_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.device_names
     }
     /// Consumes the builder and constructs a [`DeregisterDevicesInput`](crate::operation::deregister_devices::DeregisterDevicesInput).
     pub fn build(

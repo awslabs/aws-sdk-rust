@@ -52,6 +52,10 @@ impl EnableDelegatedAdminAccountOutputBuilder {
         self.delegated_admin_account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID of the successfully Amazon Inspector delegated administrator.</p>
+    pub fn get_delegated_admin_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delegated_admin_account_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

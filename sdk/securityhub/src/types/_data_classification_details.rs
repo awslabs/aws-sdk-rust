@@ -54,6 +54,10 @@ impl DataClassificationDetailsBuilder {
         self.detailed_results_location = input;
         self
     }
+    /// <p>The path to the folder or file that contains the sensitive data.</p>
+    pub fn get_detailed_results_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detailed_results_location
+    }
     /// <p>The details about the sensitive data that was detected on the resource.</p>
     pub fn result(mut self, input: crate::types::ClassificationResult) -> Self {
         self.result = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl DataClassificationDetailsBuilder {
     ) -> Self {
         self.result = input;
         self
+    }
+    /// <p>The details about the sensitive data that was detected on the resource.</p>
+    pub fn get_result(&self) -> &::std::option::Option<crate::types::ClassificationResult> {
+        &self.result
     }
     /// Consumes the builder and constructs a [`DataClassificationDetails`](crate::types::DataClassificationDetails).
     pub fn build(self) -> crate::types::DataClassificationDetails {

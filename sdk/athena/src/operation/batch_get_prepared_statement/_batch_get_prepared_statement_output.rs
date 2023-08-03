@@ -69,6 +69,12 @@ impl BatchGetPreparedStatementOutputBuilder {
         self.prepared_statements = input;
         self
     }
+    /// <p>The list of prepared statements returned.</p>
+    pub fn get_prepared_statements(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PreparedStatement>> {
+        &self.prepared_statements
+    }
     /// Appends an item to `unprocessed_prepared_statement_names`.
     ///
     /// To override the contents of this collection use [`set_unprocessed_prepared_statement_names`](Self::set_unprocessed_prepared_statement_names).
@@ -94,6 +100,13 @@ impl BatchGetPreparedStatementOutputBuilder {
     ) -> Self {
         self.unprocessed_prepared_statement_names = input;
         self
+    }
+    /// <p>A list of one or more prepared statements that were requested but could not be returned.</p>
+    pub fn get_unprocessed_prepared_statement_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedPreparedStatementName>>
+    {
+        &self.unprocessed_prepared_statement_names
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

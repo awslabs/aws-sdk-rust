@@ -49,6 +49,10 @@ impl UpdateDomainContactOutputBuilder {
         self.operation_id = input;
         self
     }
+    /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
+    pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operation_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

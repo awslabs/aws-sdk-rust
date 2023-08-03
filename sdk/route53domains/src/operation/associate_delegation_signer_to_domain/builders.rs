@@ -37,6 +37,10 @@ impl AssociateDelegationSignerToDomainFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateDelegationSignerToDomain as a reference.
+    pub fn as_input(&self) -> &crate::operation::associate_delegation_signer_to_domain::builders::AssociateDelegationSignerToDomainInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -101,6 +105,10 @@ impl AssociateDelegationSignerToDomainFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p>The name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
     /// <p>The information about a key, including the algorithm, public key-value, and flags.</p>
     pub fn signing_attributes(mut self, input: crate::types::DnssecSigningAttributes) -> Self {
         self.inner = self.inner.signing_attributes(input);
@@ -113,5 +121,11 @@ impl AssociateDelegationSignerToDomainFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_signing_attributes(input);
         self
+    }
+    /// <p>The information about a key, including the algorithm, public key-value, and flags.</p>
+    pub fn get_signing_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::DnssecSigningAttributes> {
+        self.inner.get_signing_attributes()
     }
 }

@@ -39,6 +39,10 @@ impl GetJobInputBuilder {
         self.job_arn = input;
         self
     }
+    /// <p>The ARN of the job to retrieve.</p>
+    pub fn get_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_arn
+    }
     /// Consumes the builder and constructs a [`GetJobInput`](crate::operation::get_job::GetJobInput).
     pub fn build(
         self,

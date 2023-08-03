@@ -40,6 +40,13 @@ impl RemoveTagsFromStreamFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RemoveTagsFromStream as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::remove_tags_from_stream::builders::RemoveTagsFromStreamInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +137,10 @@ impl RemoveTagsFromStreamFluentBuilder {
         self.inner = self.inner.set_stream_name(input);
         self
     }
+    /// <p>The name of the stream.</p>
+    pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_name()
+    }
     /// Appends an item to `TagKeys`.
     ///
     /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
@@ -147,6 +158,10 @@ impl RemoveTagsFromStreamFluentBuilder {
         self.inner = self.inner.set_tag_keys(input);
         self
     }
+    /// <p>A list of tag keys. Each corresponding tag is removed from the stream.</p>
+    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_tag_keys()
+    }
     /// <p>The ARN of the stream.</p>
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stream_arn(input.into());
@@ -156,5 +171,9 @@ impl RemoveTagsFromStreamFluentBuilder {
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stream_arn(input);
         self
+    }
+    /// <p>The ARN of the stream.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_arn()
     }
 }

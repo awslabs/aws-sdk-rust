@@ -50,6 +50,10 @@ impl StartBuildBatchOutputBuilder {
         self.build_batch = input;
         self
     }
+    /// <p>A <code>BuildBatch</code> object that contains information about the batch build.</p>
+    pub fn get_build_batch(&self) -> &::std::option::Option<crate::types::BuildBatch> {
+        &self.build_batch
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

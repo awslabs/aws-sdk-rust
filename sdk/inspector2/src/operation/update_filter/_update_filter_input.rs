@@ -79,6 +79,10 @@ impl UpdateFilterInputBuilder {
         self.action = input;
         self
     }
+    /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::FilterAction> {
+        &self.action
+    }
     /// <p>A description of the filter.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -88,6 +92,10 @@ impl UpdateFilterInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the filter.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Defines the criteria to be update in the filter.</p>
     pub fn filter_criteria(mut self, input: crate::types::FilterCriteria) -> Self {
@@ -102,6 +110,10 @@ impl UpdateFilterInputBuilder {
         self.filter_criteria = input;
         self
     }
+    /// <p>Defines the criteria to be update in the filter.</p>
+    pub fn get_filter_criteria(&self) -> &::std::option::Option<crate::types::FilterCriteria> {
+        &self.filter_criteria
+    }
     /// <p>The name of the filter.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -111,6 +123,10 @@ impl UpdateFilterInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the filter.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The Amazon Resource Number (ARN) of the filter to update.</p>
     pub fn filter_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -122,6 +138,10 @@ impl UpdateFilterInputBuilder {
         self.filter_arn = input;
         self
     }
+    /// <p>The Amazon Resource Number (ARN) of the filter to update.</p>
+    pub fn get_filter_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filter_arn
+    }
     /// <p>The reason the filter was updated.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
@@ -131,6 +151,10 @@ impl UpdateFilterInputBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
+    }
+    /// <p>The reason the filter was updated.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
     }
     /// Consumes the builder and constructs a [`UpdateFilterInput`](crate::operation::update_filter::UpdateFilterInput).
     pub fn build(

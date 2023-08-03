@@ -71,6 +71,10 @@ impl CreateFilterInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the filter to create.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The ARN of the dataset group that the filter will belong to.</p>
     pub fn dataset_group_arn(
         mut self,
@@ -87,6 +91,10 @@ impl CreateFilterInputBuilder {
         self.dataset_group_arn = input;
         self
     }
+    /// <p>The ARN of the dataset group that the filter will belong to.</p>
+    pub fn get_dataset_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_group_arn
+    }
     /// <p>The filter expression defines which items are included or excluded from recommendations. Filter expression must follow specific format rules. For information about filter expression structure and syntax, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html">Filter expressions</a>.</p>
     pub fn filter_expression(
         mut self,
@@ -102,6 +110,10 @@ impl CreateFilterInputBuilder {
     ) -> Self {
         self.filter_expression = input;
         self
+    }
+    /// <p>The filter expression defines which items are included or excluded from recommendations. Filter expression must follow specific format rules. For information about filter expression structure and syntax, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html">Filter expressions</a>.</p>
+    pub fn get_filter_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filter_expression
     }
     /// Appends an item to `tags`.
     ///
@@ -121,6 +133,10 @@ impl CreateFilterInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the filter.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateFilterInput`](crate::operation::create_filter::CreateFilterInput).
     pub fn build(

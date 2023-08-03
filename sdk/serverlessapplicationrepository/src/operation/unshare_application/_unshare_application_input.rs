@@ -54,6 +54,10 @@ impl UnshareApplicationInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The AWS Organization ID to unshare the application from.</p>
     pub fn organization_id(
         mut self,
@@ -69,6 +73,10 @@ impl UnshareApplicationInputBuilder {
     ) -> Self {
         self.organization_id = input;
         self
+    }
+    /// <p>The AWS Organization ID to unshare the application from.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
     }
     /// Consumes the builder and constructs a [`UnshareApplicationInput`](crate::operation::unshare_application::UnshareApplicationInput).
     pub fn build(

@@ -42,6 +42,12 @@ impl DeploySystemInstanceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeploySystemInstance as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::deploy_system_instance::builders::DeploySystemInstanceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,5 +141,11 @@ impl DeploySystemInstanceFluentBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
+    }
+    /// <p>The ID of the system instance. This value is returned by the <code>CreateSystemInstance</code> action.</p>
+    /// <p>The ID should be in the following format.</p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code> </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
     }
 }

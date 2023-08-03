@@ -53,6 +53,10 @@ impl DataSourceBuilder {
         self.s3_data_source = input;
         self
     }
+    /// <p>The S3 location of the data source that is associated with a channel.</p>
+    pub fn get_s3_data_source(&self) -> &::std::option::Option<crate::types::S3DataSource> {
+        &self.s3_data_source
+    }
     /// <p>The file system that is associated with a channel.</p>
     pub fn file_system_data_source(mut self, input: crate::types::FileSystemDataSource) -> Self {
         self.file_system_data_source = ::std::option::Option::Some(input);
@@ -65,6 +69,12 @@ impl DataSourceBuilder {
     ) -> Self {
         self.file_system_data_source = input;
         self
+    }
+    /// <p>The file system that is associated with a channel.</p>
+    pub fn get_file_system_data_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::FileSystemDataSource> {
+        &self.file_system_data_source
     }
     /// Consumes the builder and constructs a [`DataSource`](crate::types::DataSource).
     pub fn build(self) -> crate::types::DataSource {

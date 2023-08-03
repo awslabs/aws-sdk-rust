@@ -51,6 +51,10 @@ impl GetTestGridProjectOutputBuilder {
         self.test_grid_project = input;
         self
     }
+    /// <p>A <code>TestGridProject</code>.</p>
+    pub fn get_test_grid_project(&self) -> &::std::option::Option<crate::types::TestGridProject> {
+        &self.test_grid_project
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

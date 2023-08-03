@@ -37,6 +37,13 @@ impl CreateMitigationActionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateMitigationAction as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_mitigation_action::builders::CreateMitigationActionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl CreateMitigationActionFluentBuilder {
         self.inner = self.inner.set_action_name(input);
         self
     }
+    /// <p>A friendly name for the action. Choose a friendly name that accurately describes the action (for example, <code>EnableLoggingAction</code>).</p>
+    pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_action_name()
+    }
     /// <p>The ARN of the IAM role that is used to apply the mitigation action.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -136,6 +147,10 @@ impl CreateMitigationActionFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p>The ARN of the IAM role that is used to apply the mitigation action.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
     /// <p>Defines the type of action and the parameters for that action.</p>
     pub fn action_params(mut self, input: crate::types::MitigationActionParams) -> Self {
@@ -149,6 +164,12 @@ impl CreateMitigationActionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_action_params(input);
         self
+    }
+    /// <p>Defines the type of action and the parameters for that action.</p>
+    pub fn get_action_params(
+        &self,
+    ) -> &::std::option::Option<crate::types::MitigationActionParams> {
+        self.inner.get_action_params()
     }
     /// Appends an item to `tags`.
     ///
@@ -166,5 +187,9 @@ impl CreateMitigationActionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Metadata that can be used to manage the mitigation action.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

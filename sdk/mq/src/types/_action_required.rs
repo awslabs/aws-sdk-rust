@@ -54,6 +54,10 @@ impl ActionRequiredBuilder {
         self.action_required_code = input;
         self
     }
+    /// <p>The code you can use to find instructions on the action required to resolve your broker issue.</p>
+    pub fn get_action_required_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_required_code
+    }
     /// <p>Information about the action required to resolve your broker issue.</p>
     pub fn action_required_info(
         mut self,
@@ -69,6 +73,10 @@ impl ActionRequiredBuilder {
     ) -> Self {
         self.action_required_info = input;
         self
+    }
+    /// <p>Information about the action required to resolve your broker issue.</p>
+    pub fn get_action_required_info(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_required_info
     }
     /// Consumes the builder and constructs a [`ActionRequired`](crate::types::ActionRequired).
     pub fn build(self) -> crate::types::ActionRequired {

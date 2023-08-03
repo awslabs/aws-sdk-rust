@@ -72,6 +72,10 @@ impl DataFieldSeriesItemBuilder {
         self.field_id = input;
         self
     }
+    /// <p>The field ID of the field that you are setting the axis binding to.</p>
+    pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_id
+    }
     /// <p>The field value of the field that you are setting the axis binding to.</p>
     pub fn field_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.field_value = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl DataFieldSeriesItemBuilder {
     pub fn set_field_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.field_value = input;
         self
+    }
+    /// <p>The field value of the field that you are setting the axis binding to.</p>
+    pub fn get_field_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_value
     }
     /// <p>The axis that you are binding the field to.</p>
     pub fn axis_binding(mut self, input: crate::types::AxisBinding) -> Self {
@@ -95,6 +103,10 @@ impl DataFieldSeriesItemBuilder {
         self.axis_binding = input;
         self
     }
+    /// <p>The axis that you are binding the field to.</p>
+    pub fn get_axis_binding(&self) -> &::std::option::Option<crate::types::AxisBinding> {
+        &self.axis_binding
+    }
     /// <p>The options that determine the presentation of line series associated to the field.</p>
     pub fn settings(mut self, input: crate::types::LineChartSeriesSettings) -> Self {
         self.settings = ::std::option::Option::Some(input);
@@ -107,6 +119,10 @@ impl DataFieldSeriesItemBuilder {
     ) -> Self {
         self.settings = input;
         self
+    }
+    /// <p>The options that determine the presentation of line series associated to the field.</p>
+    pub fn get_settings(&self) -> &::std::option::Option<crate::types::LineChartSeriesSettings> {
+        &self.settings
     }
     /// Consumes the builder and constructs a [`DataFieldSeriesItem`](crate::types::DataFieldSeriesItem).
     pub fn build(self) -> crate::types::DataFieldSeriesItem {

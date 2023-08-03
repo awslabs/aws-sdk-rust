@@ -45,6 +45,10 @@ impl GetGroupInputBuilder {
         self.group_identifier = input;
         self
     }
+    /// <p>Specifies the group to return information for. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
+    pub fn get_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_identifier
+    }
     /// Consumes the builder and constructs a [`GetGroupInput`](crate::operation::get_group::GetGroupInput).
     pub fn build(
         self,

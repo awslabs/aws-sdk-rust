@@ -53,6 +53,10 @@ impl GlobalTableBorderOptionsBuilder {
         self.uniform_border = input;
         self
     }
+    /// <p>Determines the options for uniform border.</p>
+    pub fn get_uniform_border(&self) -> &::std::option::Option<crate::types::TableBorderOptions> {
+        &self.uniform_border
+    }
     /// <p>Determines the options for side specific border.</p>
     pub fn side_specific_border(mut self, input: crate::types::TableSideBorderOptions) -> Self {
         self.side_specific_border = ::std::option::Option::Some(input);
@@ -65,6 +69,12 @@ impl GlobalTableBorderOptionsBuilder {
     ) -> Self {
         self.side_specific_border = input;
         self
+    }
+    /// <p>Determines the options for side specific border.</p>
+    pub fn get_side_specific_border(
+        &self,
+    ) -> &::std::option::Option<crate::types::TableSideBorderOptions> {
+        &self.side_specific_border
     }
     /// Consumes the builder and constructs a [`GlobalTableBorderOptions`](crate::types::GlobalTableBorderOptions).
     pub fn build(self) -> crate::types::GlobalTableBorderOptions {

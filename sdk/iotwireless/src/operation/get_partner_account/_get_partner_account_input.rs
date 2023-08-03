@@ -54,6 +54,10 @@ impl GetPartnerAccountInputBuilder {
         self.partner_account_id = input;
         self
     }
+    /// <p>The partner account ID to disassociate from the AWS account.</p>
+    pub fn get_partner_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.partner_account_id
+    }
     /// <p>The partner type.</p>
     pub fn partner_type(mut self, input: crate::types::PartnerType) -> Self {
         self.partner_type = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl GetPartnerAccountInputBuilder {
     ) -> Self {
         self.partner_type = input;
         self
+    }
+    /// <p>The partner type.</p>
+    pub fn get_partner_type(&self) -> &::std::option::Option<crate::types::PartnerType> {
+        &self.partner_type
     }
     /// Consumes the builder and constructs a [`GetPartnerAccountInput`](crate::operation::get_partner_account::GetPartnerAccountInput).
     pub fn build(

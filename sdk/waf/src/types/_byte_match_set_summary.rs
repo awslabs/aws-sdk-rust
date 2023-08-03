@@ -62,6 +62,11 @@ impl ByteMatchSetSummaryBuilder {
         self.byte_match_set_id = input;
         self
     }
+    /// <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use <code>ByteMatchSetId</code> to get information about a <code>ByteMatchSet</code>, update a <code>ByteMatchSet</code>, remove a <code>ByteMatchSet</code> from a <code>Rule</code>, and delete a <code>ByteMatchSet</code> from AWS WAF.</p>
+    /// <p> <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
+    pub fn get_byte_match_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.byte_match_set_id
+    }
     /// <p>A friendly name or description of the <code>ByteMatchSet</code>. You can't change <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -71,6 +76,10 @@ impl ByteMatchSetSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A friendly name or description of the <code>ByteMatchSet</code>. You can't change <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`ByteMatchSetSummary`](crate::types::ByteMatchSetSummary).
     pub fn build(self) -> crate::types::ByteMatchSetSummary {

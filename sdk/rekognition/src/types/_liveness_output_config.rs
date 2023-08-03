@@ -48,6 +48,10 @@ impl LivenessOutputConfigBuilder {
         self.s3_bucket = input;
         self
     }
+    /// <p>The path to an AWS Amazon S3 bucket used to store Face Liveness session results.</p>
+    pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket
+    }
     /// <p>The prefix prepended to the output files for the Face Liveness session results.</p>
     pub fn s3_key_prefix(
         mut self,
@@ -63,6 +67,10 @@ impl LivenessOutputConfigBuilder {
     ) -> Self {
         self.s3_key_prefix = input;
         self
+    }
+    /// <p>The prefix prepended to the output files for the Face Liveness session results.</p>
+    pub fn get_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_key_prefix
     }
     /// Consumes the builder and constructs a [`LivenessOutputConfig`](crate::types::LivenessOutputConfig).
     pub fn build(self) -> crate::types::LivenessOutputConfig {

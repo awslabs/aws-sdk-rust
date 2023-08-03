@@ -59,6 +59,10 @@ impl ReactionForCommentBuilder {
         self.reaction = input;
         self
     }
+    /// <p>The reaction for a specified comment.</p>
+    pub fn get_reaction(&self) -> &::std::option::Option<crate::types::ReactionValueFormats> {
+        &self.reaction
+    }
     /// Appends an item to `reaction_users`.
     ///
     /// To override the contents of this collection use [`set_reaction_users`](Self::set_reaction_users).
@@ -81,6 +85,12 @@ impl ReactionForCommentBuilder {
         self.reaction_users = input;
         self
     }
+    /// <p>The Amazon Resource Names (ARNs) of users who have provided reactions to the comment.</p>
+    pub fn get_reaction_users(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.reaction_users
+    }
     /// <p>A numerical count of users who reacted with the specified emoji whose identities have been subsequently deleted from IAM. While these IAM users or roles no longer exist, the reactions might still appear in total reaction counts.</p>
     pub fn reactions_from_deleted_users_count(mut self, input: i32) -> Self {
         self.reactions_from_deleted_users_count = ::std::option::Option::Some(input);
@@ -93,6 +103,10 @@ impl ReactionForCommentBuilder {
     ) -> Self {
         self.reactions_from_deleted_users_count = input;
         self
+    }
+    /// <p>A numerical count of users who reacted with the specified emoji whose identities have been subsequently deleted from IAM. While these IAM users or roles no longer exist, the reactions might still appear in total reaction counts.</p>
+    pub fn get_reactions_from_deleted_users_count(&self) -> &::std::option::Option<i32> {
+        &self.reactions_from_deleted_users_count
     }
     /// Consumes the builder and constructs a [`ReactionForComment`](crate::types::ReactionForComment).
     pub fn build(self) -> crate::types::ReactionForComment {

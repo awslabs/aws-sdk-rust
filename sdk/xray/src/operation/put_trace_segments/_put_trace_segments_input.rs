@@ -53,6 +53,12 @@ impl PutTraceSegmentsInputBuilder {
         self.trace_segment_documents = input;
         self
     }
+    /// <p>A string containing a JSON document defining one or more segments or subsegments.</p>
+    pub fn get_trace_segment_documents(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.trace_segment_documents
+    }
     /// Consumes the builder and constructs a [`PutTraceSegmentsInput`](crate::operation::put_trace_segments::PutTraceSegmentsInput).
     pub fn build(
         self,

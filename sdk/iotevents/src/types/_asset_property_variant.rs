@@ -73,6 +73,10 @@ impl AssetPropertyVariantBuilder {
         self.string_value = input;
         self
     }
+    /// <p>The asset property value is a string. You must use an expression, and the evaluated result should be a string.</p>
+    pub fn get_string_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.string_value
+    }
     /// <p>The asset property value is an integer. You must use an expression, and the evaluated result should be an integer.</p>
     pub fn integer_value(
         mut self,
@@ -89,6 +93,10 @@ impl AssetPropertyVariantBuilder {
         self.integer_value = input;
         self
     }
+    /// <p>The asset property value is an integer. You must use an expression, and the evaluated result should be an integer.</p>
+    pub fn get_integer_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.integer_value
+    }
     /// <p>The asset property value is a double. You must use an expression, and the evaluated result should be a double.</p>
     pub fn double_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.double_value = ::std::option::Option::Some(input.into());
@@ -98,6 +106,10 @@ impl AssetPropertyVariantBuilder {
     pub fn set_double_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.double_value = input;
         self
+    }
+    /// <p>The asset property value is a double. You must use an expression, and the evaluated result should be a double.</p>
+    pub fn get_double_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.double_value
     }
     /// <p>The asset property value is a Boolean value that must be <code>'TRUE'</code> or <code>'FALSE'</code>. You must use an expression, and the evaluated result should be a Boolean value.</p>
     pub fn boolean_value(
@@ -114,6 +126,10 @@ impl AssetPropertyVariantBuilder {
     ) -> Self {
         self.boolean_value = input;
         self
+    }
+    /// <p>The asset property value is a Boolean value that must be <code>'TRUE'</code> or <code>'FALSE'</code>. You must use an expression, and the evaluated result should be a Boolean value.</p>
+    pub fn get_boolean_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.boolean_value
     }
     /// Consumes the builder and constructs a [`AssetPropertyVariant`](crate::types::AssetPropertyVariant).
     pub fn build(self) -> crate::types::AssetPropertyVariant {

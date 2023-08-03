@@ -56,6 +56,10 @@ impl AssociateNetworkSettingsOutputBuilder {
         self.portal_arn = input;
         self
     }
+    /// <p>The ARN of the web portal.</p>
+    pub fn get_portal_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.portal_arn
+    }
     /// <p>The ARN of the network settings.</p>
     pub fn network_settings_arn(
         mut self,
@@ -71,6 +75,10 @@ impl AssociateNetworkSettingsOutputBuilder {
     ) -> Self {
         self.network_settings_arn = input;
         self
+    }
+    /// <p>The ARN of the network settings.</p>
+    pub fn get_network_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_settings_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

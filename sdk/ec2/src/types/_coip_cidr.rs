@@ -56,6 +56,10 @@ impl CoipCidrBuilder {
         self.cidr = input;
         self
     }
+    /// <p> An address range in a customer-owned IP address space. </p>
+    pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr
+    }
     /// <p> The ID of the address pool. </p>
     pub fn coip_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.coip_pool_id = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl CoipCidrBuilder {
     pub fn set_coip_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.coip_pool_id = input;
         self
+    }
+    /// <p> The ID of the address pool. </p>
+    pub fn get_coip_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.coip_pool_id
     }
     /// <p> The ID of the local gateway route table. </p>
     pub fn local_gateway_route_table_id(
@@ -81,6 +89,12 @@ impl CoipCidrBuilder {
     ) -> Self {
         self.local_gateway_route_table_id = input;
         self
+    }
+    /// <p> The ID of the local gateway route table. </p>
+    pub fn get_local_gateway_route_table_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.local_gateway_route_table_id
     }
     /// Consumes the builder and constructs a [`CoipCidr`](crate::types::CoipCidr).
     pub fn build(self) -> crate::types::CoipCidr {

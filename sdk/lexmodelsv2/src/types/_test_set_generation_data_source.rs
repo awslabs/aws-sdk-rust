@@ -50,6 +50,12 @@ impl TestSetGenerationDataSourceBuilder {
         self.conversation_logs_data_source = input;
         self
     }
+    /// <p>Contains information about the bot from which the conversation logs are sourced.</p>
+    pub fn get_conversation_logs_data_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConversationLogsDataSource> {
+        &self.conversation_logs_data_source
+    }
     /// Consumes the builder and constructs a [`TestSetGenerationDataSource`](crate::types::TestSetGenerationDataSource).
     pub fn build(self) -> crate::types::TestSetGenerationDataSource {
         crate::types::TestSetGenerationDataSource {

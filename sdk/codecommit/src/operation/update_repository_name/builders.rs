@@ -36,6 +36,12 @@ impl UpdateRepositoryNameFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateRepositoryName as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_repository_name::builders::UpdateRepositoryNameInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateRepositoryNameFluentBuilder {
         self.inner = self.inner.set_old_name(input);
         self
     }
+    /// <p>The current name of the repository.</p>
+    pub fn get_old_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_old_name()
+    }
     /// <p>The new name for the repository.</p>
     pub fn new_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.new_name(input.into());
@@ -135,5 +145,9 @@ impl UpdateRepositoryNameFluentBuilder {
     pub fn set_new_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_new_name(input);
         self
+    }
+    /// <p>The new name for the repository.</p>
+    pub fn get_new_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_new_name()
     }
 }

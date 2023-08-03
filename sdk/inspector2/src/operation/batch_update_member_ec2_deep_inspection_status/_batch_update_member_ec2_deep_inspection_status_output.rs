@@ -81,6 +81,14 @@ impl BatchUpdateMemberEc2DeepInspectionStatusOutputBuilder {
         self.account_ids = input;
         self
     }
+    /// <p>An array of objects that provide details for each of the accounts that Amazon Inspector deep inspection status was successfully changed for. </p>
+    pub fn get_account_ids(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::MemberAccountEc2DeepInspectionStatusState>,
+    > {
+        &self.account_ids
+    }
     /// Appends an item to `failed_account_ids`.
     ///
     /// To override the contents of this collection use [`set_failed_account_ids`](Self::set_failed_account_ids).
@@ -104,6 +112,14 @@ impl BatchUpdateMemberEc2DeepInspectionStatusOutputBuilder {
     ) -> Self {
         self.failed_account_ids = input;
         self
+    }
+    /// <p>An array of objects that provide details for each of the accounts that Amazon Inspector deep inspection status could not be successfully changed for. </p>
+    pub fn get_failed_account_ids(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::FailedMemberAccountEc2DeepInspectionStatusState>,
+    > {
+        &self.failed_account_ids
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

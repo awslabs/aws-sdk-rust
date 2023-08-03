@@ -41,6 +41,10 @@ impl ContainerServiceEcrImagePullerRoleRequestBuilder {
         self.is_active = input;
         self
     }
+    /// <p>A Boolean value that indicates whether to activate the role.</p>
+    pub fn get_is_active(&self) -> &::std::option::Option<bool> {
+        &self.is_active
+    }
     /// Consumes the builder and constructs a [`ContainerServiceEcrImagePullerRoleRequest`](crate::types::ContainerServiceEcrImagePullerRoleRequest).
     pub fn build(self) -> crate::types::ContainerServiceEcrImagePullerRoleRequest {
         crate::types::ContainerServiceEcrImagePullerRoleRequest {

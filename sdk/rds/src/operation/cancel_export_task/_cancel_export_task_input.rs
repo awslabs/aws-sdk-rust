@@ -46,6 +46,10 @@ impl CancelExportTaskInputBuilder {
         self.export_task_identifier = input;
         self
     }
+    /// <p>The identifier of the snapshot or cluster export task to cancel.</p>
+    pub fn get_export_task_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.export_task_identifier
+    }
     /// Consumes the builder and constructs a [`CancelExportTaskInput`](crate::operation::cancel_export_task::CancelExportTaskInput).
     pub fn build(
         self,

@@ -55,6 +55,10 @@ impl ConfigureHealthCheckInputBuilder {
         self.load_balancer_name = input;
         self
     }
+    /// <p>The name of the load balancer.</p>
+    pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.load_balancer_name
+    }
     /// <p>The configuration information.</p>
     pub fn health_check(mut self, input: crate::types::HealthCheck) -> Self {
         self.health_check = ::std::option::Option::Some(input);
@@ -67,6 +71,10 @@ impl ConfigureHealthCheckInputBuilder {
     ) -> Self {
         self.health_check = input;
         self
+    }
+    /// <p>The configuration information.</p>
+    pub fn get_health_check(&self) -> &::std::option::Option<crate::types::HealthCheck> {
+        &self.health_check
     }
     /// Consumes the builder and constructs a [`ConfigureHealthCheckInput`](crate::operation::configure_health_check::ConfigureHealthCheckInput).
     pub fn build(

@@ -62,6 +62,10 @@ impl PackageVersionHistoryBuilder {
         self.package_version = input;
         self
     }
+    /// <p>The package version.</p>
+    pub fn get_package_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_version
+    }
     /// <p>A message associated with the package version when it was uploaded.</p>
     pub fn commit_message(
         mut self,
@@ -78,6 +82,10 @@ impl PackageVersionHistoryBuilder {
         self.commit_message = input;
         self
     }
+    /// <p>A message associated with the package version when it was uploaded.</p>
+    pub fn get_commit_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.commit_message
+    }
     /// <p>The date and time when the package was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -90,6 +98,10 @@ impl PackageVersionHistoryBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The date and time when the package was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// Consumes the builder and constructs a [`PackageVersionHistory`](crate::types::PackageVersionHistory).
     pub fn build(self) -> crate::types::PackageVersionHistory {

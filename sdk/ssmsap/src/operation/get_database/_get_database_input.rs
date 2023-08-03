@@ -69,6 +69,10 @@ impl GetDatabaseInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The ID of the application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The ID of the component.</p>
     pub fn component_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_id = ::std::option::Option::Some(input.into());
@@ -78,6 +82,10 @@ impl GetDatabaseInputBuilder {
     pub fn set_component_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_id = input;
         self
+    }
+    /// <p>The ID of the component.</p>
+    pub fn get_component_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_id
     }
     /// <p>The ID of the database.</p>
     pub fn database_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -89,6 +97,10 @@ impl GetDatabaseInputBuilder {
         self.database_id = input;
         self
     }
+    /// <p>The ID of the database.</p>
+    pub fn get_database_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the database.</p>
     pub fn database_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_arn = ::std::option::Option::Some(input.into());
@@ -98,6 +110,10 @@ impl GetDatabaseInputBuilder {
     pub fn set_database_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the database.</p>
+    pub fn get_database_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_arn
     }
     /// Consumes the builder and constructs a [`GetDatabaseInput`](crate::operation::get_database::GetDatabaseInput).
     pub fn build(

@@ -55,6 +55,10 @@ impl AddRegionInputBuilder {
         self.directory_id = input;
         self
     }
+    /// <p>The identifier of the directory to which you want to add Region replication.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
+    }
     /// <p>The name of the Region where you want to add domain controllers for replication. For example, <code>us-east-1</code>.</p>
     pub fn region_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region_name = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl AddRegionInputBuilder {
     pub fn set_region_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region_name = input;
         self
+    }
+    /// <p>The name of the Region where you want to add domain controllers for replication. For example, <code>us-east-1</code>.</p>
+    pub fn get_region_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region_name
     }
     /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
     pub fn vpc_settings(mut self, input: crate::types::DirectoryVpcSettings) -> Self {
@@ -77,6 +85,10 @@ impl AddRegionInputBuilder {
     ) -> Self {
         self.vpc_settings = input;
         self
+    }
+    /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
+    pub fn get_vpc_settings(&self) -> &::std::option::Option<crate::types::DirectoryVpcSettings> {
+        &self.vpc_settings
     }
     /// Consumes the builder and constructs a [`AddRegionInput`](crate::operation::add_region::AddRegionInput).
     pub fn build(

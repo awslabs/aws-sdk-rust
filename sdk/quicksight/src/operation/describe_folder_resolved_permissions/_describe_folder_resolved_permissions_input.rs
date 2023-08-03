@@ -53,6 +53,10 @@ impl DescribeFolderResolvedPermissionsInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The ID of the folder.</p>
     pub fn folder_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.folder_id = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl DescribeFolderResolvedPermissionsInputBuilder {
     pub fn set_folder_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.folder_id = input;
         self
+    }
+    /// <p>The ID of the folder.</p>
+    pub fn get_folder_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.folder_id
     }
     /// Consumes the builder and constructs a [`DescribeFolderResolvedPermissionsInput`](crate::operation::describe_folder_resolved_permissions::DescribeFolderResolvedPermissionsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_folder_resolved_permissions::DescribeFolderResolvedPermissionsInput, ::aws_smithy_http::operation::error::BuildError>{

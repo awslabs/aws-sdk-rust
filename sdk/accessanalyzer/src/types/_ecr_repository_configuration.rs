@@ -51,6 +51,10 @@ impl EcrRepositoryConfigurationBuilder {
         self.repository_policy = input;
         self
     }
+    /// <p>The JSON repository policy text to apply to the Amazon ECR repository. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Private repository policy examples</a> in the <i>Amazon ECR User Guide</i>.</p>
+    pub fn get_repository_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_policy
+    }
     /// Consumes the builder and constructs a [`EcrRepositoryConfiguration`](crate::types::EcrRepositoryConfiguration).
     pub fn build(self) -> crate::types::EcrRepositoryConfiguration {
         crate::types::EcrRepositoryConfiguration {

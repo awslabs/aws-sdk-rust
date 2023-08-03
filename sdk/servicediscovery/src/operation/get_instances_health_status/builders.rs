@@ -38,6 +38,10 @@ impl GetInstancesHealthStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetInstancesHealthStatus as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_instances_health_status::builders::GetInstancesHealthStatusInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +141,10 @@ impl GetInstancesHealthStatusFluentBuilder {
         self.inner = self.inner.set_service_id(input);
         self
     }
+    /// <p>The ID of the service that the instance is associated with.</p>
+    pub fn get_service_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_id()
+    }
     /// Appends an item to `Instances`.
     ///
     /// To override the contents of this collection use [`set_instances`](Self::set_instances).
@@ -160,6 +168,13 @@ impl GetInstancesHealthStatusFluentBuilder {
         self.inner = self.inner.set_instances(input);
         self
     }
+    /// <p>An array that contains the IDs of all the instances that you want to get the health status for.</p>
+    /// <p>If you omit <code>Instances</code>, Cloud Map returns the health status for all the instances that are associated with the specified service.</p> <note>
+    /// <p>To get the IDs for the instances that you've registered by using a specified service, submit a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListInstances.html">ListInstances</a> request.</p>
+    /// </note>
+    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_instances()
+    }
     /// <p>The maximum number of instances that you want Cloud Map to return in the response to a <code>GetInstancesHealthStatus</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 instances.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -169,6 +184,10 @@ impl GetInstancesHealthStatusFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of instances that you want Cloud Map to return in the response to a <code>GetInstancesHealthStatus</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 instances.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>For the first <code>GetInstancesHealthStatus</code> request, omit this value.</p>
     /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another <code>GetInstancesHealthStatus</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p>
@@ -181,5 +200,10 @@ impl GetInstancesHealthStatusFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>For the first <code>GetInstancesHealthStatus</code> request, omit this value.</p>
+    /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another <code>GetInstancesHealthStatus</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

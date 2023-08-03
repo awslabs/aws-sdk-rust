@@ -60,6 +60,10 @@ impl ListVocabularyFiltersOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `vocabulary_filters`.
     ///
     /// To override the contents of this collection use [`set_vocabulary_filters`](Self::set_vocabulary_filters).
@@ -78,6 +82,12 @@ impl ListVocabularyFiltersOutputBuilder {
     ) -> Self {
         self.vocabulary_filters = input;
         self
+    }
+    /// <p>Provides information about the custom vocabulary filters that match the criteria specified in your request.</p>
+    pub fn get_vocabulary_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VocabularyFilterInfo>> {
+        &self.vocabulary_filters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

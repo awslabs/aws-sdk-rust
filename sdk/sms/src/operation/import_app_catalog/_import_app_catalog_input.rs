@@ -40,6 +40,10 @@ impl ImportAppCatalogInputBuilder {
         self.role_name = input;
         self
     }
+    /// <p>The name of the service role. If you omit this parameter, we create a service-linked role for Migration Hub in your account. Otherwise, the role that you provide must have the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/new-customer-setup.html#sms-managed">policy and trust policy</a> described in the <i>Migration Hub User Guide</i>.</p>
+    pub fn get_role_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_name
+    }
     /// Consumes the builder and constructs a [`ImportAppCatalogInput`](crate::operation::import_app_catalog::ImportAppCatalogInput).
     pub fn build(
         self,

@@ -41,6 +41,10 @@ impl RemoveActionBuilder {
         self.member_id = input;
         self
     }
+    /// <p>The unique identifier of the member to remove.</p>
+    pub fn get_member_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.member_id
+    }
     /// Consumes the builder and constructs a [`RemoveAction`](crate::types::RemoveAction).
     pub fn build(self) -> crate::types::RemoveAction {
         crate::types::RemoveAction {

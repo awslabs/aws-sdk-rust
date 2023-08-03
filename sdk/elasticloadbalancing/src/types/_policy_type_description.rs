@@ -66,6 +66,10 @@ impl PolicyTypeDescriptionBuilder {
         self.policy_type_name = input;
         self
     }
+    /// <p>The name of the policy type.</p>
+    pub fn get_policy_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_type_name
+    }
     /// <p>A description of the policy type.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -75,6 +79,10 @@ impl PolicyTypeDescriptionBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the policy type.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `policy_attribute_type_descriptions`.
     ///
@@ -97,6 +105,12 @@ impl PolicyTypeDescriptionBuilder {
     ) -> Self {
         self.policy_attribute_type_descriptions = input;
         self
+    }
+    /// <p>The description of the policy attributes associated with the policies defined by Elastic Load Balancing.</p>
+    pub fn get_policy_attribute_type_descriptions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyAttributeTypeDescription>> {
+        &self.policy_attribute_type_descriptions
     }
     /// Consumes the builder and constructs a [`PolicyTypeDescription`](crate::types::PolicyTypeDescription).
     pub fn build(self) -> crate::types::PolicyTypeDescription {

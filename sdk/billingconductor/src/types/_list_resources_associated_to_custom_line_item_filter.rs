@@ -44,6 +44,12 @@ impl ListResourcesAssociatedToCustomLineItemFilterBuilder {
         self.relationship = input;
         self
     }
+    /// <p> The type of relationship between the custom line item and the associated resource. </p>
+    pub fn get_relationship(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomLineItemRelationship> {
+        &self.relationship
+    }
     /// Consumes the builder and constructs a [`ListResourcesAssociatedToCustomLineItemFilter`](crate::types::ListResourcesAssociatedToCustomLineItemFilter).
     pub fn build(self) -> crate::types::ListResourcesAssociatedToCustomLineItemFilter {
         crate::types::ListResourcesAssociatedToCustomLineItemFilter {

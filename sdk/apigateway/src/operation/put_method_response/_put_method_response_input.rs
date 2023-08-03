@@ -93,6 +93,10 @@ impl PutMethodResponseInputBuilder {
         self.rest_api_id = input;
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rest_api_id
+    }
     /// <p>The Resource identifier for the Method resource.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -102,6 +106,10 @@ impl PutMethodResponseInputBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>The Resource identifier for the Method resource.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// <p>The HTTP verb of the Method resource.</p>
     pub fn http_method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -113,6 +121,10 @@ impl PutMethodResponseInputBuilder {
         self.http_method = input;
         self
     }
+    /// <p>The HTTP verb of the Method resource.</p>
+    pub fn get_http_method(&self) -> &::std::option::Option<::std::string::String> {
+        &self.http_method
+    }
     /// <p>The method response's status code.</p>
     pub fn status_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_code = ::std::option::Option::Some(input.into());
@@ -122,6 +134,10 @@ impl PutMethodResponseInputBuilder {
     pub fn set_status_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_code = input;
         self
+    }
+    /// <p>The method response's status code.</p>
+    pub fn get_status_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_code
     }
     /// Adds a key-value pair to `response_parameters`.
     ///
@@ -145,6 +161,12 @@ impl PutMethodResponseInputBuilder {
     ) -> Self {
         self.response_parameters = input;
         self
+    }
+    /// <p>A key-value map specifying required or optional response parameters that API Gateway can send back to the caller. A key defines a method response header name and the associated value is a Boolean flag indicating whether the method response parameter is required or not. The method response header names must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The response parameter names defined here are available in the integration response to be mapped from an integration response header expressed in <code>integration.response.header.{name}</code>, a static value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON expression from the back-end response payload in the form of <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.)</p>
+    pub fn get_response_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, bool>> {
+        &self.response_parameters
     }
     /// Adds a key-value pair to `response_models`.
     ///
@@ -170,6 +192,14 @@ impl PutMethodResponseInputBuilder {
     ) -> Self {
         self.response_models = input;
         self
+    }
+    /// <p>Specifies the Model resources used for the response's content type. Response models are represented as a key/value map, with a content type as the key and a Model name as the value.</p>
+    pub fn get_response_models(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.response_models
     }
     /// Consumes the builder and constructs a [`PutMethodResponseInput`](crate::operation::put_method_response::PutMethodResponseInput).
     pub fn build(

@@ -48,6 +48,10 @@ impl BatchGetViewErrorBuilder {
         self.view_arn = input;
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view for which Resource Explorer failed to retrieve details.</p>
+    pub fn get_view_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.view_arn
+    }
     /// <p>The description of the error for the specified view.</p>
     pub fn error_message(
         mut self,
@@ -63,6 +67,10 @@ impl BatchGetViewErrorBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>The description of the error for the specified view.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`BatchGetViewError`](crate::types::BatchGetViewError).
     pub fn build(self) -> crate::types::BatchGetViewError {

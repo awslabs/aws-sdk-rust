@@ -37,6 +37,12 @@ impl DescribeEventsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeEvents as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_events::builders::DescribeEventsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +125,10 @@ impl DescribeEventsFluentBuilder {
         self.inner = self.inner.set_source_name(input);
         self
     }
+    /// <p>The identifier of the event source for which events will be returned. If not specified, then all sources are included in the response.</p>
+    pub fn get_source_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_name()
+    }
     /// <p>The event source to retrieve events for. If no value is specified, all events are returned.</p>
     pub fn source_type(mut self, input: crate::types::SourceType) -> Self {
         self.inner = self.inner.source_type(input);
@@ -131,6 +141,10 @@ impl DescribeEventsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_source_type(input);
         self
+    }
+    /// <p>The event source to retrieve events for. If no value is specified, all events are returned.</p>
+    pub fn get_source_type(&self) -> &::std::option::Option<crate::types::SourceType> {
+        self.inner.get_source_type()
     }
     /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -145,6 +159,10 @@ impl DescribeEventsFluentBuilder {
         self.inner = self.inner.set_start_time(input);
         self
     }
+    /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_time()
+    }
     /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_time(input);
@@ -158,6 +176,10 @@ impl DescribeEventsFluentBuilder {
         self.inner = self.inner.set_end_time(input);
         self
     }
+    /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_time()
+    }
     /// <p>The number of minutes' worth of events to retrieve.</p>
     pub fn duration(mut self, input: i32) -> Self {
         self.inner = self.inner.duration(input);
@@ -167,6 +189,10 @@ impl DescribeEventsFluentBuilder {
     pub fn set_duration(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_duration(input);
         self
+    }
+    /// <p>The number of minutes' worth of events to retrieve.</p>
+    pub fn get_duration(&self) -> &::std::option::Option<i32> {
+        self.inner.get_duration()
     }
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
@@ -180,6 +206,11 @@ impl DescribeEventsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -189,5 +220,9 @@ impl DescribeEventsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

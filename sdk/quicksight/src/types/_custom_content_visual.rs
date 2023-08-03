@@ -83,6 +83,10 @@ impl CustomContentVisualBuilder {
         self.visual_id = input;
         self
     }
+    /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers.</p>
+    pub fn get_visual_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.visual_id
+    }
     /// <p>The title that is displayed on the visual.</p>
     pub fn title(mut self, input: crate::types::VisualTitleLabelOptions) -> Self {
         self.title = ::std::option::Option::Some(input);
@@ -95,6 +99,10 @@ impl CustomContentVisualBuilder {
     ) -> Self {
         self.title = input;
         self
+    }
+    /// <p>The title that is displayed on the visual.</p>
+    pub fn get_title(&self) -> &::std::option::Option<crate::types::VisualTitleLabelOptions> {
+        &self.title
     }
     /// <p>The subtitle that is displayed on the visual.</p>
     pub fn subtitle(mut self, input: crate::types::VisualSubtitleLabelOptions) -> Self {
@@ -109,6 +117,10 @@ impl CustomContentVisualBuilder {
         self.subtitle = input;
         self
     }
+    /// <p>The subtitle that is displayed on the visual.</p>
+    pub fn get_subtitle(&self) -> &::std::option::Option<crate::types::VisualSubtitleLabelOptions> {
+        &self.subtitle
+    }
     /// <p>The configuration of a <code>CustomContentVisual</code>.</p>
     pub fn chart_configuration(mut self, input: crate::types::CustomContentConfiguration) -> Self {
         self.chart_configuration = ::std::option::Option::Some(input);
@@ -121,6 +133,12 @@ impl CustomContentVisualBuilder {
     ) -> Self {
         self.chart_configuration = input;
         self
+    }
+    /// <p>The configuration of a <code>CustomContentVisual</code>.</p>
+    pub fn get_chart_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomContentConfiguration> {
+        &self.chart_configuration
     }
     /// Appends an item to `actions`.
     ///
@@ -141,6 +159,12 @@ impl CustomContentVisualBuilder {
         self.actions = input;
         self
     }
+    /// <p>The list of custom actions that are configured for a visual.</p>
+    pub fn get_actions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>> {
+        &self.actions
+    }
     /// <p>The dataset that is used to create the custom content visual. You can't create a visual without a dataset.</p>
     pub fn data_set_identifier(
         mut self,
@@ -156,6 +180,10 @@ impl CustomContentVisualBuilder {
     ) -> Self {
         self.data_set_identifier = input;
         self
+    }
+    /// <p>The dataset that is used to create the custom content visual. You can't create a visual without a dataset.</p>
+    pub fn get_data_set_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_set_identifier
     }
     /// Consumes the builder and constructs a [`CustomContentVisual`](crate::types::CustomContentVisual).
     pub fn build(self) -> crate::types::CustomContentVisual {

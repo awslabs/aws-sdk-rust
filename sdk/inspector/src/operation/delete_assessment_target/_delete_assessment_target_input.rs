@@ -47,6 +47,10 @@ impl DeleteAssessmentTargetInputBuilder {
         self.assessment_target_arn = input;
         self
     }
+    /// <p>The ARN that specifies the assessment target that you want to delete.</p>
+    pub fn get_assessment_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assessment_target_arn
+    }
     /// Consumes the builder and constructs a [`DeleteAssessmentTargetInput`](crate::operation::delete_assessment_target::DeleteAssessmentTargetInput).
     pub fn build(
         self,

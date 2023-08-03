@@ -46,6 +46,10 @@ impl DeleteImageRecipeInputBuilder {
         self.image_recipe_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the image recipe to delete.</p>
+    pub fn get_image_recipe_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_recipe_arn
+    }
     /// Consumes the builder and constructs a [`DeleteImageRecipeInput`](crate::operation::delete_image_recipe::DeleteImageRecipeInput).
     pub fn build(
         self,

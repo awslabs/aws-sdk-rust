@@ -145,6 +145,10 @@ impl GetAnnotationImportJobOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>The job's ID.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The job's destination annotation store.</p>
     pub fn destination_name(
         mut self,
@@ -161,6 +165,10 @@ impl GetAnnotationImportJobOutputBuilder {
         self.destination_name = input;
         self
     }
+    /// <p>The job's destination annotation store.</p>
+    pub fn get_destination_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_name
+    }
     /// <p>The job's service role ARN.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -171,6 +179,10 @@ impl GetAnnotationImportJobOutputBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The job's service role ARN.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>The job's status.</p>
     pub fn status(mut self, input: crate::types::JobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -180,6 +192,10 @@ impl GetAnnotationImportJobOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The job's status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
+        &self.status
     }
     /// <p>The job's status message.</p>
     pub fn status_message(
@@ -197,6 +213,10 @@ impl GetAnnotationImportJobOutputBuilder {
         self.status_message = input;
         self
     }
+    /// <p>The job's status message.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>When the job was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -209,6 +229,10 @@ impl GetAnnotationImportJobOutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>When the job was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>When the job was updated.</p>
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -223,6 +247,10 @@ impl GetAnnotationImportJobOutputBuilder {
         self.update_time = input;
         self
     }
+    /// <p>When the job was updated.</p>
+    pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_time
+    }
     /// <p>When the job completed.</p>
     pub fn completion_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.completion_time = ::std::option::Option::Some(input);
@@ -235,6 +263,10 @@ impl GetAnnotationImportJobOutputBuilder {
     ) -> Self {
         self.completion_time = input;
         self
+    }
+    /// <p>When the job completed.</p>
+    pub fn get_completion_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.completion_time
     }
     /// Appends an item to `items`.
     ///
@@ -255,6 +287,12 @@ impl GetAnnotationImportJobOutputBuilder {
         self.items = input;
         self
     }
+    /// <p>The job's imported items.</p>
+    pub fn get_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnnotationImportItemDetail>> {
+        &self.items
+    }
     /// <p>The job's left normalization setting.</p>
     pub fn run_left_normalization(mut self, input: bool) -> Self {
         self.run_left_normalization = ::std::option::Option::Some(input);
@@ -264,6 +302,10 @@ impl GetAnnotationImportJobOutputBuilder {
     pub fn set_run_left_normalization(mut self, input: ::std::option::Option<bool>) -> Self {
         self.run_left_normalization = input;
         self
+    }
+    /// <p>The job's left normalization setting.</p>
+    pub fn get_run_left_normalization(&self) -> &::std::option::Option<bool> {
+        &self.run_left_normalization
     }
     /// <p>Formatting options for a file.</p>
     pub fn format_options(mut self, input: crate::types::FormatOptions) -> Self {
@@ -277,6 +319,10 @@ impl GetAnnotationImportJobOutputBuilder {
     ) -> Self {
         self.format_options = input;
         self
+    }
+    /// <p>Formatting options for a file.</p>
+    pub fn get_format_options(&self) -> &::std::option::Option<crate::types::FormatOptions> {
+        &self.format_options
     }
     /// Adds a key-value pair to `annotation_fields`.
     ///
@@ -302,6 +348,14 @@ impl GetAnnotationImportJobOutputBuilder {
     ) -> Self {
         self.annotation_fields = input;
         self
+    }
+    /// <p> The annotation schema generated by the parsed annotation data. </p>
+    pub fn get_annotation_fields(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.annotation_fields
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

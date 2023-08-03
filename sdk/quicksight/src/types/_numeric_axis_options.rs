@@ -48,6 +48,10 @@ impl NumericAxisOptionsBuilder {
         self.scale = input;
         self
     }
+    /// <p>The scale setup of a numeric axis.</p>
+    pub fn get_scale(&self) -> &::std::option::Option<crate::types::AxisScale> {
+        &self.scale
+    }
     /// <p>The range setup of a numeric axis.</p>
     pub fn range(mut self, input: crate::types::AxisDisplayRange) -> Self {
         self.range = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl NumericAxisOptionsBuilder {
     ) -> Self {
         self.range = input;
         self
+    }
+    /// <p>The range setup of a numeric axis.</p>
+    pub fn get_range(&self) -> &::std::option::Option<crate::types::AxisDisplayRange> {
+        &self.range
     }
     /// Consumes the builder and constructs a [`NumericAxisOptions`](crate::types::NumericAxisOptions).
     pub fn build(self) -> crate::types::NumericAxisOptions {

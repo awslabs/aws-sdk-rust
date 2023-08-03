@@ -41,6 +41,10 @@ impl CancelCapacityReservationFleetsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CancelCapacityReservationFleets as a reference.
+    pub fn as_input(&self) -> &crate::operation::cancel_capacity_reservation_fleets::builders::CancelCapacityReservationFleetsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -105,6 +109,10 @@ impl CancelCapacityReservationFleetsFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// Appends an item to `CapacityReservationFleetIds`.
     ///
     /// To override the contents of this collection use [`set_capacity_reservation_fleet_ids`](Self::set_capacity_reservation_fleet_ids).
@@ -124,5 +132,11 @@ impl CancelCapacityReservationFleetsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_capacity_reservation_fleet_ids(input);
         self
+    }
+    /// <p>The IDs of the Capacity Reservation Fleets to cancel.</p>
+    pub fn get_capacity_reservation_fleet_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_capacity_reservation_fleet_ids()
     }
 }

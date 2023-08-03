@@ -46,6 +46,10 @@ impl CreateUserOutputBuilder {
         self.user = input;
         self
     }
+    /// <p>The newly-created user.</p>
+    pub fn get_user(&self) -> &::std::option::Option<crate::types::User> {
+        &self.user
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

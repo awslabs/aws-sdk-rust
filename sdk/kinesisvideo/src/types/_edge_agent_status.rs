@@ -51,6 +51,12 @@ impl EdgeAgentStatusBuilder {
         self.last_recorder_status = input;
         self
     }
+    /// <p>The latest status of a stream’s edge recording job.</p>
+    pub fn get_last_recorder_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::LastRecorderStatus> {
+        &self.last_recorder_status
+    }
     /// <p>The latest status of a stream’s edge to cloud uploader job.</p>
     pub fn last_uploader_status(mut self, input: crate::types::LastUploaderStatus) -> Self {
         self.last_uploader_status = ::std::option::Option::Some(input);
@@ -63,6 +69,12 @@ impl EdgeAgentStatusBuilder {
     ) -> Self {
         self.last_uploader_status = input;
         self
+    }
+    /// <p>The latest status of a stream’s edge to cloud uploader job.</p>
+    pub fn get_last_uploader_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::LastUploaderStatus> {
+        &self.last_uploader_status
     }
     /// Consumes the builder and constructs a [`EdgeAgentStatus`](crate::types::EdgeAgentStatus).
     pub fn build(self) -> crate::types::EdgeAgentStatus {

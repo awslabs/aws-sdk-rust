@@ -51,6 +51,12 @@ impl UpdateDocumentOutputBuilder {
         self.document_description = input;
         self
     }
+    /// <p>A description of the document that was updated.</p>
+    pub fn get_document_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::DocumentDescription> {
+        &self.document_description
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -51,6 +51,10 @@ impl EvaluationStatusBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of an execution. The valid values are In_Progress, Succeeded or Failed. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ResourceEvaluationStatus> {
+        &self.status
+    }
     /// <p>An explanation for failed execution status.</p>
     pub fn failure_reason(
         mut self,
@@ -66,6 +70,10 @@ impl EvaluationStatusBuilder {
     ) -> Self {
         self.failure_reason = input;
         self
+    }
+    /// <p>An explanation for failed execution status.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
     }
     /// Consumes the builder and constructs a [`EvaluationStatus`](crate::types::EvaluationStatus).
     pub fn build(self) -> crate::types::EvaluationStatus {

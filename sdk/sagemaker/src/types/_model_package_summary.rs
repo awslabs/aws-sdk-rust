@@ -114,6 +114,10 @@ impl ModelPackageSummaryBuilder {
         self.model_package_name = input;
         self
     }
+    /// <p>The name of the model package.</p>
+    pub fn get_model_package_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_package_name
+    }
     /// <p>If the model package is a versioned model, the model group that the versioned model belongs to.</p>
     pub fn model_package_group_name(
         mut self,
@@ -130,6 +134,10 @@ impl ModelPackageSummaryBuilder {
         self.model_package_group_name = input;
         self
     }
+    /// <p>If the model package is a versioned model, the model group that the versioned model belongs to.</p>
+    pub fn get_model_package_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_package_group_name
+    }
     /// <p>If the model package is a versioned model, the version of the model.</p>
     pub fn model_package_version(mut self, input: i32) -> Self {
         self.model_package_version = ::std::option::Option::Some(input);
@@ -139,6 +147,10 @@ impl ModelPackageSummaryBuilder {
     pub fn set_model_package_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.model_package_version = input;
         self
+    }
+    /// <p>If the model package is a versioned model, the version of the model.</p>
+    pub fn get_model_package_version(&self) -> &::std::option::Option<i32> {
+        &self.model_package_version
     }
     /// <p>The Amazon Resource Name (ARN) of the model package.</p>
     pub fn model_package_arn(
@@ -156,6 +168,10 @@ impl ModelPackageSummaryBuilder {
         self.model_package_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the model package.</p>
+    pub fn get_model_package_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_package_arn
+    }
     /// <p>A brief description of the model package.</p>
     pub fn model_package_description(
         mut self,
@@ -172,6 +188,10 @@ impl ModelPackageSummaryBuilder {
         self.model_package_description = input;
         self
     }
+    /// <p>A brief description of the model package.</p>
+    pub fn get_model_package_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_package_description
+    }
     /// <p>A timestamp that shows when the model package was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -185,6 +205,10 @@ impl ModelPackageSummaryBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>A timestamp that shows when the model package was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The overall status of the model package.</p>
     pub fn model_package_status(mut self, input: crate::types::ModelPackageStatus) -> Self {
         self.model_package_status = ::std::option::Option::Some(input);
@@ -197,6 +221,12 @@ impl ModelPackageSummaryBuilder {
     ) -> Self {
         self.model_package_status = input;
         self
+    }
+    /// <p>The overall status of the model package.</p>
+    pub fn get_model_package_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ModelPackageStatus> {
+        &self.model_package_status
     }
     /// <p>The approval status of the model. This can be one of the following values.</p>
     /// <ul>
@@ -220,6 +250,17 @@ impl ModelPackageSummaryBuilder {
     ) -> Self {
         self.model_approval_status = input;
         self
+    }
+    /// <p>The approval status of the model. This can be one of the following values.</p>
+    /// <ul>
+    /// <li> <p> <code>APPROVED</code> - The model is approved</p> </li>
+    /// <li> <p> <code>REJECTED</code> - The model is rejected.</p> </li>
+    /// <li> <p> <code>PENDING_MANUAL_APPROVAL</code> - The model is waiting for manual approval.</p> </li>
+    /// </ul>
+    pub fn get_model_approval_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ModelApprovalStatus> {
+        &self.model_approval_status
     }
     /// Consumes the builder and constructs a [`ModelPackageSummary`](crate::types::ModelPackageSummary).
     pub fn build(self) -> crate::types::ModelPackageSummary {

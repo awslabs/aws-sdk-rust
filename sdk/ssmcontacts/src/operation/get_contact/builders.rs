@@ -36,6 +36,10 @@ impl GetContactFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetContact as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_contact::builders::GetContactInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -117,5 +121,9 @@ impl GetContactFluentBuilder {
     pub fn set_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_contact_id(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
+    pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_contact_id()
     }
 }

@@ -57,6 +57,12 @@ impl HashAlgorithmOptionsBuilder {
         self.allowed_values = input;
         self
     }
+    /// <p>The set of accepted hash algorithms allowed in a code signing job.</p>
+    pub fn get_allowed_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HashAlgorithm>> {
+        &self.allowed_values
+    }
     /// <p>The default hash algorithm that is used in a code signing job.</p>
     pub fn default_value(mut self, input: crate::types::HashAlgorithm) -> Self {
         self.default_value = ::std::option::Option::Some(input);
@@ -69,6 +75,10 @@ impl HashAlgorithmOptionsBuilder {
     ) -> Self {
         self.default_value = input;
         self
+    }
+    /// <p>The default hash algorithm that is used in a code signing job.</p>
+    pub fn get_default_value(&self) -> &::std::option::Option<crate::types::HashAlgorithm> {
+        &self.default_value
     }
     /// Consumes the builder and constructs a [`HashAlgorithmOptions`](crate::types::HashAlgorithmOptions).
     pub fn build(self) -> crate::types::HashAlgorithmOptions {

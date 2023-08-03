@@ -45,6 +45,10 @@ impl GetCapacityAssignmentConfigurationInputBuilder {
         self.capacity_reservation_name = input;
         self
     }
+    /// <p>The name of the capacity reservation to retrieve the capacity assignment configuration for.</p>
+    pub fn get_capacity_reservation_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.capacity_reservation_name
+    }
     /// Consumes the builder and constructs a [`GetCapacityAssignmentConfigurationInput`](crate::operation::get_capacity_assignment_configuration::GetCapacityAssignmentConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_capacity_assignment_configuration::GetCapacityAssignmentConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

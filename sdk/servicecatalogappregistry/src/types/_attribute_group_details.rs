@@ -76,6 +76,10 @@ impl AttributeGroupDetailsBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier of the attribute group.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The Amazon resource name (ARN) that specifies the attribute group.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -85,6 +89,10 @@ impl AttributeGroupDetailsBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon resource name (ARN) that specifies the attribute group.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <important>
     /// <p> This field is no longer supported. We recommend you don't use the field when using <code>ListAttributeGroupsForApplication</code>. </p>
@@ -108,6 +116,16 @@ impl AttributeGroupDetailsBuilder {
         self.name = input;
         self
     }
+    /// <important>
+    /// <p> This field is no longer supported. We recommend you don't use the field when using <code>ListAttributeGroupsForApplication</code>. </p>
+    /// </important>
+    /// <p> The name of the attribute group. </p>
+    #[deprecated(
+        note = "This field is deprecated. We recommend not using the field when using ListAttributeGroupsForApplication."
+    )]
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The service principal that created the attribute group.</p>
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by = ::std::option::Option::Some(input.into());
@@ -117,6 +135,10 @@ impl AttributeGroupDetailsBuilder {
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_by = input;
         self
+    }
+    /// <p>The service principal that created the attribute group.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_by
     }
     /// Consumes the builder and constructs a [`AttributeGroupDetails`](crate::types::AttributeGroupDetails).
     pub fn build(self) -> crate::types::AttributeGroupDetails {

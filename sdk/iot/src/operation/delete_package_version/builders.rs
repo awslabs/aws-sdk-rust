@@ -37,6 +37,12 @@ impl DeletePackageVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeletePackageVersion as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_package_version::builders::DeletePackageVersionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl DeletePackageVersionFluentBuilder {
         self.inner = self.inner.set_package_name(input);
         self
     }
+    /// <p>The name of the associated package.</p>
+    pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_package_name()
+    }
     /// <p>The name of the target package version.</p>
     pub fn version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version_name(input.into());
@@ -137,6 +147,10 @@ impl DeletePackageVersionFluentBuilder {
         self.inner = self.inner.set_version_name(input);
         self
     }
+    /// <p>The name of the target package version.</p>
+    pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_version_name()
+    }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -146,5 +160,9 @@ impl DeletePackageVersionFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

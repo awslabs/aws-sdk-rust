@@ -40,6 +40,10 @@ impl LogConfigurationBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Indicates whether logging is enabled.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// Consumes the builder and constructs a [`LogConfiguration`](crate::types::LogConfiguration).
     pub fn build(self) -> crate::types::LogConfiguration {
         crate::types::LogConfiguration {

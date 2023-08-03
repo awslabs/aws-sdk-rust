@@ -80,6 +80,12 @@ impl SearchDataSetsOutputBuilder {
         self.data_set_summaries = input;
         self
     }
+    /// <p>A <code>DataSetSummaries</code> object that returns a summary of a dataset.</p>
+    pub fn get_data_set_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSetSummary>> {
+        &self.data_set_summaries
+    }
     /// <p>A pagination token that can be used in a subsequent request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -89,6 +95,10 @@ impl SearchDataSetsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A pagination token that can be used in a subsequent request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The HTTP status of the request.</p>
     pub fn status(mut self, input: i32) -> Self {
@@ -100,6 +110,10 @@ impl SearchDataSetsOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The HTTP status of the request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<i32> {
+        &self.status
+    }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_id = ::std::option::Option::Some(input.into());
@@ -109,6 +123,10 @@ impl SearchDataSetsOutputBuilder {
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_id = input;
         self
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -57,6 +57,10 @@ impl ListWavesRequestFiltersBuilder {
         self.wave_i_ds = input;
         self
     }
+    /// <p>Filter waves list by wave ID.</p>
+    pub fn get_wave_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.wave_i_ds
+    }
     /// <p>Filter waves list by archival status.</p>
     pub fn is_archived(mut self, input: bool) -> Self {
         self.is_archived = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl ListWavesRequestFiltersBuilder {
     pub fn set_is_archived(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_archived = input;
         self
+    }
+    /// <p>Filter waves list by archival status.</p>
+    pub fn get_is_archived(&self) -> &::std::option::Option<bool> {
+        &self.is_archived
     }
     /// Consumes the builder and constructs a [`ListWavesRequestFilters`](crate::types::ListWavesRequestFilters).
     pub fn build(self) -> crate::types::ListWavesRequestFilters {

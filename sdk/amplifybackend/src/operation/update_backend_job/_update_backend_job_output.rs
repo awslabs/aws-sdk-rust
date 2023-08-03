@@ -103,6 +103,10 @@ impl UpdateBackendJobOutputBuilder {
         self.app_id = input;
         self
     }
+    /// <p>The app ID.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// <p>The name of the backend environment.</p>
     pub fn backend_environment_name(
         mut self,
@@ -119,6 +123,10 @@ impl UpdateBackendJobOutputBuilder {
         self.backend_environment_name = input;
         self
     }
+    /// <p>The name of the backend environment.</p>
+    pub fn get_backend_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backend_environment_name
+    }
     /// <p>The time when the job was created.</p>
     pub fn create_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.create_time = ::std::option::Option::Some(input.into());
@@ -128,6 +136,10 @@ impl UpdateBackendJobOutputBuilder {
     pub fn set_create_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.create_time = input;
         self
+    }
+    /// <p>The time when the job was created.</p>
+    pub fn get_create_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.create_time
     }
     /// <p>If the request fails, this error is returned.</p>
     pub fn error(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -139,6 +151,10 @@ impl UpdateBackendJobOutputBuilder {
         self.error = input;
         self
     }
+    /// <p>If the request fails, this error is returned.</p>
+    pub fn get_error(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error
+    }
     /// <p>The ID for the job.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
@@ -148,6 +164,10 @@ impl UpdateBackendJobOutputBuilder {
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_id = input;
         self
+    }
+    /// <p>The ID for the job.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
     }
     /// <p>The name of the operation.</p>
     pub fn operation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -159,6 +179,10 @@ impl UpdateBackendJobOutputBuilder {
         self.operation = input;
         self
     }
+    /// <p>The name of the operation.</p>
+    pub fn get_operation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operation
+    }
     /// <p>The current status of the request.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -169,6 +193,10 @@ impl UpdateBackendJobOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The current status of the request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>The time when the job was last updated.</p>
     pub fn update_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.update_time = ::std::option::Option::Some(input.into());
@@ -178,6 +206,10 @@ impl UpdateBackendJobOutputBuilder {
     pub fn set_update_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.update_time = input;
         self
+    }
+    /// <p>The time when the job was last updated.</p>
+    pub fn get_update_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.update_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

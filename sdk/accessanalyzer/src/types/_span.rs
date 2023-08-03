@@ -48,6 +48,10 @@ impl SpanBuilder {
         self.start = input;
         self
     }
+    /// <p>The start position of the span (inclusive).</p>
+    pub fn get_start(&self) -> &::std::option::Option<crate::types::Position> {
+        &self.start
+    }
     /// <p>The end position of the span (exclusive).</p>
     pub fn end(mut self, input: crate::types::Position) -> Self {
         self.end = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl SpanBuilder {
     pub fn set_end(mut self, input: ::std::option::Option<crate::types::Position>) -> Self {
         self.end = input;
         self
+    }
+    /// <p>The end position of the span (exclusive).</p>
+    pub fn get_end(&self) -> &::std::option::Option<crate::types::Position> {
+        &self.end
     }
     /// Consumes the builder and constructs a [`Span`](crate::types::Span).
     pub fn build(self) -> crate::types::Span {

@@ -43,6 +43,10 @@ impl LockConfigurationBuilder {
         self.unlock_delay = input;
         self
     }
+    /// <p>Information about the retention rule unlock delay.</p>
+    pub fn get_unlock_delay(&self) -> &::std::option::Option<crate::types::UnlockDelay> {
+        &self.unlock_delay
+    }
     /// Consumes the builder and constructs a [`LockConfiguration`](crate::types::LockConfiguration).
     pub fn build(self) -> crate::types::LockConfiguration {
         crate::types::LockConfiguration {

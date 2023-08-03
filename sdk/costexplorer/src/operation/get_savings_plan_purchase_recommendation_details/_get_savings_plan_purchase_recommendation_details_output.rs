@@ -63,6 +63,10 @@ impl GetSavingsPlanPurchaseRecommendationDetailsOutputBuilder {
         self.recommendation_detail_id = input;
         self
     }
+    /// <p>The ID that is associated with the Savings Plan recommendation.</p>
+    pub fn get_recommendation_detail_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommendation_detail_id
+    }
     /// <p>Contains detailed information about a specific Savings Plan recommendation.</p>
     pub fn recommendation_detail_data(
         mut self,
@@ -78,6 +82,12 @@ impl GetSavingsPlanPurchaseRecommendationDetailsOutputBuilder {
     ) -> Self {
         self.recommendation_detail_data = input;
         self
+    }
+    /// <p>Contains detailed information about a specific Savings Plan recommendation.</p>
+    pub fn get_recommendation_detail_data(
+        &self,
+    ) -> &::std::option::Option<crate::types::RecommendationDetailData> {
+        &self.recommendation_detail_data
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

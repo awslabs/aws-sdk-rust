@@ -56,6 +56,10 @@ impl SubscriptionBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the subscription.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The type of subscription. The type can be subscription-included with Amazon EC2, Bring Your Own Subscription model (BYOS), or from the Amazon Web Services Marketplace. Certain subscriptions may use licensing from the Amazon Web Services Marketplace as well as OS licensing from Amazon EC2 or BYOS.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl SubscriptionBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of subscription. The type can be subscription-included with Amazon EC2, Bring Your Own Subscription model (BYOS), or from the Amazon Web Services Marketplace. Certain subscriptions may use licensing from the Amazon Web Services Marketplace as well as OS licensing from Amazon EC2 or BYOS.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// <p>The total amount of running instances using this subscription.</p>
     pub fn instance_count(mut self, input: i64) -> Self {
         self.instance_count = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl SubscriptionBuilder {
     pub fn set_instance_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.instance_count = input;
         self
+    }
+    /// <p>The total amount of running instances using this subscription.</p>
+    pub fn get_instance_count(&self) -> &::std::option::Option<i64> {
+        &self.instance_count
     }
     /// Consumes the builder and constructs a [`Subscription`](crate::types::Subscription).
     pub fn build(self) -> crate::types::Subscription {

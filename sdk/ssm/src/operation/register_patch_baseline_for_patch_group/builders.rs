@@ -36,6 +36,10 @@ impl RegisterPatchBaselineForPatchGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RegisterPatchBaselineForPatchGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::register_patch_baseline_for_patch_group::builders::RegisterPatchBaselineForPatchGroupInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl RegisterPatchBaselineForPatchGroupFluentBuilder {
         self.inner = self.inner.set_baseline_id(input);
         self
     }
+    /// <p>The ID of the patch baseline to register with the patch group.</p>
+    pub fn get_baseline_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_baseline_id()
+    }
     /// <p>The name of the patch group to be registered with the patch baseline.</p>
     pub fn patch_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.patch_group(input.into());
@@ -109,5 +117,9 @@ impl RegisterPatchBaselineForPatchGroupFluentBuilder {
     pub fn set_patch_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_patch_group(input);
         self
+    }
+    /// <p>The name of the patch group to be registered with the patch baseline.</p>
+    pub fn get_patch_group(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_patch_group()
     }
 }

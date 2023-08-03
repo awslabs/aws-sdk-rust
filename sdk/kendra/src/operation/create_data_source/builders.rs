@@ -39,6 +39,12 @@ impl CreateDataSourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDataSource as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_data_source::builders::CreateDataSourceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl CreateDataSourceFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>A name for the data source connector.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The identifier of the index you want to use with the data source connector.</p>
     pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.index_id(input.into());
@@ -139,6 +149,10 @@ impl CreateDataSourceFluentBuilder {
         self.inner = self.inner.set_index_id(input);
         self
     }
+    /// <p>The identifier of the index you want to use with the data source connector.</p>
+    pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_index_id()
+    }
     /// <p>The type of data source repository. For example, <code>SHAREPOINT</code>.</p>
     pub fn r#type(mut self, input: crate::types::DataSourceType) -> Self {
         self.inner = self.inner.r#type(input);
@@ -148,6 +162,10 @@ impl CreateDataSourceFluentBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DataSourceType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
+    }
+    /// <p>The type of data source repository. For example, <code>SHAREPOINT</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::DataSourceType> {
+        self.inner.get_type()
     }
     /// <p>Configuration information to connect to your data source repository.</p>
     /// <p>You can't specify the <code>Configuration</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
@@ -166,6 +184,14 @@ impl CreateDataSourceFluentBuilder {
         self.inner = self.inner.set_configuration(input);
         self
     }
+    /// <p>Configuration information to connect to your data source repository.</p>
+    /// <p>You can't specify the <code>Configuration</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
+    /// <p>The <code>Configuration</code> parameter is required for all other data sources.</p>
+    pub fn get_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataSourceConfiguration> {
+        self.inner.get_configuration()
+    }
     /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
     pub fn vpc_configuration(mut self, input: crate::types::DataSourceVpcConfiguration) -> Self {
         self.inner = self.inner.vpc_configuration(input);
@@ -179,6 +205,12 @@ impl CreateDataSourceFluentBuilder {
         self.inner = self.inner.set_vpc_configuration(input);
         self
     }
+    /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
+    pub fn get_vpc_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataSourceVpcConfiguration> {
+        self.inner.get_vpc_configuration()
+    }
     /// <p>A description for the data source connector.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -188,6 +220,10 @@ impl CreateDataSourceFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description for the data source connector.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>Sets the frequency for Amazon Kendra to check the documents in your data source repository and update the index. If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the <code>StartDataSourceSyncJob</code> API to update the index.</p>
     /// <p>Specify a <code>cron-</code> format schedule string or an empty string to indicate that the index is updated on demand.</p>
@@ -203,6 +239,12 @@ impl CreateDataSourceFluentBuilder {
         self.inner = self.inner.set_schedule(input);
         self
     }
+    /// <p>Sets the frequency for Amazon Kendra to check the documents in your data source repository and update the index. If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the <code>StartDataSourceSyncJob</code> API to update the index.</p>
+    /// <p>Specify a <code>cron-</code> format schedule string or an empty string to indicate that the index is updated on demand.</p>
+    /// <p>You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
+    pub fn get_schedule(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_schedule()
+    }
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the data source and required resources. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra.</a>.</p>
     /// <p>You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
     /// <p>The <code>RoleArn</code> parameter is required for all other data sources.</p>
@@ -216,6 +258,12 @@ impl CreateDataSourceFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the data source and required resources. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra.</a>.</p>
+    /// <p>You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
+    /// <p>The <code>RoleArn</code> parameter is required for all other data sources.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
     /// Appends an item to `Tags`.
     ///
@@ -234,6 +282,10 @@ impl CreateDataSourceFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>A list of key-value pairs that identify or categorize the data source connector. You can also use tags to help control access to the data source connector. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>A token that you provide to identify the request to create a data source connector. Multiple calls to the <code>CreateDataSource</code> API with the same client token will create only one data source connector.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -243,6 +295,10 @@ impl CreateDataSourceFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A token that you provide to identify the request to create a data source connector. Multiple calls to the <code>CreateDataSource</code> API with the same client token will create only one data source connector.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// <p>The code for a language. This allows you to support a language for all documents when creating the data source connector. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
     pub fn language_code(
@@ -259,6 +315,10 @@ impl CreateDataSourceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_language_code(input);
         self
+    }
+    /// <p>The code for a language. This allows you to support a language for all documents when creating the data source connector. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_language_code()
     }
     /// <p>Configuration information for altering document metadata and content during the document ingestion process.</p>
     /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
@@ -279,5 +339,12 @@ impl CreateDataSourceFluentBuilder {
             .inner
             .set_custom_document_enrichment_configuration(input);
         self
+    }
+    /// <p>Configuration information for altering document metadata and content during the document ingestion process.</p>
+    /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
+    pub fn get_custom_document_enrichment_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomDocumentEnrichmentConfiguration> {
+        self.inner.get_custom_document_enrichment_configuration()
     }
 }

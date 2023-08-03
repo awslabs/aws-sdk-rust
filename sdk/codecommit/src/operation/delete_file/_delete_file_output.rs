@@ -70,6 +70,10 @@ impl DeleteFileOutputBuilder {
         self.commit_id = input;
         self
     }
+    /// <p>The full commit ID of the commit that contains the change that deletes the file.</p>
+    pub fn get_commit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.commit_id
+    }
     /// <p>The blob ID removed from the tree as part of deleting the file.</p>
     pub fn blob_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.blob_id = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl DeleteFileOutputBuilder {
     pub fn set_blob_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.blob_id = input;
         self
+    }
+    /// <p>The blob ID removed from the tree as part of deleting the file.</p>
+    pub fn get_blob_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.blob_id
     }
     /// <p>The full SHA-1 pointer of the tree information for the commit that contains the delete file change.</p>
     pub fn tree_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -90,6 +98,10 @@ impl DeleteFileOutputBuilder {
         self.tree_id = input;
         self
     }
+    /// <p>The full SHA-1 pointer of the tree information for the commit that contains the delete file change.</p>
+    pub fn get_tree_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tree_id
+    }
     /// <p>The fully qualified path to the file to be deleted, including the full name and extension of that file.</p>
     pub fn file_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_path = ::std::option::Option::Some(input.into());
@@ -99,6 +111,10 @@ impl DeleteFileOutputBuilder {
     pub fn set_file_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_path = input;
         self
+    }
+    /// <p>The fully qualified path to the file to be deleted, including the full name and extension of that file.</p>
+    pub fn get_file_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_path
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

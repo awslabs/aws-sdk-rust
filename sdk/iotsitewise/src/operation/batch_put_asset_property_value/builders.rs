@@ -45,6 +45,10 @@ impl BatchPutAssetPropertyValueFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchPutAssetPropertyValue as a reference.
+    pub fn as_input(&self) -> &crate::operation::batch_put_asset_property_value::builders::BatchPutAssetPropertyValueInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -141,5 +145,11 @@ impl BatchPutAssetPropertyValueFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_entries(input);
         self
+    }
+    /// <p>The list of asset property value entries for the batch put request. You can specify up to 10 entries per request.</p>
+    pub fn get_entries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PutAssetPropertyValueEntry>> {
+        self.inner.get_entries()
     }
 }

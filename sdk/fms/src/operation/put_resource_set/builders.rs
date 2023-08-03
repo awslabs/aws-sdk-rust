@@ -37,6 +37,12 @@ impl PutResourceSetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutResourceSet as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_resource_set::builders::PutResourceSetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +136,10 @@ impl PutResourceSetFluentBuilder {
         self.inner = self.inner.set_resource_set(input);
         self
     }
+    /// <p>Details about the resource set to be created or updated.&gt;</p>
+    pub fn get_resource_set(&self) -> &::std::option::Option<crate::types::ResourceSet> {
+        self.inner.get_resource_set()
+    }
     /// Appends an item to `TagList`.
     ///
     /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
@@ -146,5 +156,9 @@ impl PutResourceSetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tag_list(input);
         self
+    }
+    /// <p>Retrieves the tags associated with the specified resource set. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing. For example, you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each Amazon Web Services resource, up to 50 tags for a resource.</p>
+    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tag_list()
     }
 }

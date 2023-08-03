@@ -59,6 +59,10 @@ impl UpdateGatewayResponseInputBuilder {
         self.rest_api_id = input;
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rest_api_id
+    }
     /// <p>The response type of the associated GatewayResponse.</p>
     pub fn response_type(mut self, input: crate::types::GatewayResponseType) -> Self {
         self.response_type = ::std::option::Option::Some(input);
@@ -71,6 +75,10 @@ impl UpdateGatewayResponseInputBuilder {
     ) -> Self {
         self.response_type = input;
         self
+    }
+    /// <p>The response type of the associated GatewayResponse.</p>
+    pub fn get_response_type(&self) -> &::std::option::Option<crate::types::GatewayResponseType> {
+        &self.response_type
     }
     /// Appends an item to `patch_operations`.
     ///
@@ -90,6 +98,12 @@ impl UpdateGatewayResponseInputBuilder {
     ) -> Self {
         self.patch_operations = input;
         self
+    }
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
+    pub fn get_patch_operations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
+        &self.patch_operations
     }
     /// Consumes the builder and constructs a [`UpdateGatewayResponseInput`](crate::operation::update_gateway_response::UpdateGatewayResponseInput).
     pub fn build(

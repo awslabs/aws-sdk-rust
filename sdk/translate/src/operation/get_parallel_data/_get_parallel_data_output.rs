@@ -92,6 +92,12 @@ impl GetParallelDataOutputBuilder {
         self.parallel_data_properties = input;
         self
     }
+    /// <p>The properties of the parallel data resource that is being retrieved.</p>
+    pub fn get_parallel_data_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::ParallelDataProperties> {
+        &self.parallel_data_properties
+    }
     /// <p>The Amazon S3 location of the most recent parallel data input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration.</p> <important>
     /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
     /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
@@ -113,6 +119,16 @@ impl GetParallelDataOutputBuilder {
         self.data_location = input;
         self
     }
+    /// <p>The Amazon S3 location of the most recent parallel data input file that was successfully imported into Amazon Translate. The location is returned as a presigned URL that has a 30-minute expiration.</p> <important>
+    /// <p>Amazon Translate doesn't scan all input files for the risk of CSV injection attacks. </p>
+    /// <p>CSV injection occurs when a .csv or .tsv file is altered so that a record contains malicious code. The record begins with a special character, such as =, +, -, or @. When the file is opened in a spreadsheet program, the program might interpret the record as a formula and run the code within it.</p>
+    /// <p>Before you download an input file from Amazon S3, ensure that you recognize the file and trust its creator.</p>
+    /// </important>
+    pub fn get_data_location(
+        &self,
+    ) -> &::std::option::Option<crate::types::ParallelDataDataLocation> {
+        &self.data_location
+    }
     /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a parallel data resource. The location is returned as a presigned URL to that has a 30-minute expiration.</p>
     pub fn auxiliary_data_location(
         mut self,
@@ -129,6 +145,12 @@ impl GetParallelDataOutputBuilder {
         self.auxiliary_data_location = input;
         self
     }
+    /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a parallel data resource. The location is returned as a presigned URL to that has a 30-minute expiration.</p>
+    pub fn get_auxiliary_data_location(
+        &self,
+    ) -> &::std::option::Option<crate::types::ParallelDataDataLocation> {
+        &self.auxiliary_data_location
+    }
     /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to update a parallel data resource. The location is returned as a presigned URL to that has a 30-minute expiration.</p>
     pub fn latest_update_attempt_auxiliary_data_location(
         mut self,
@@ -144,6 +166,12 @@ impl GetParallelDataOutputBuilder {
     ) -> Self {
         self.latest_update_attempt_auxiliary_data_location = input;
         self
+    }
+    /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to update a parallel data resource. The location is returned as a presigned URL to that has a 30-minute expiration.</p>
+    pub fn get_latest_update_attempt_auxiliary_data_location(
+        &self,
+    ) -> &::std::option::Option<crate::types::ParallelDataDataLocation> {
+        &self.latest_update_attempt_auxiliary_data_location
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

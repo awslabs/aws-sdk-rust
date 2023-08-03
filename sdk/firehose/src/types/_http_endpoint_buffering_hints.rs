@@ -52,6 +52,11 @@ impl HttpEndpointBufferingHintsBuilder {
         self.size_in_m_bs = input;
         self
     }
+    /// <p>Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is 5. </p>
+    /// <p>We recommend setting this parameter to a value greater than the amount of data you typically ingest into the delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec, the value should be 10 MB or higher. </p>
+    pub fn get_size_in_m_bs(&self) -> &::std::option::Option<i32> {
+        &self.size_in_m_bs
+    }
     /// <p>Buffer incoming data for the specified period of time, in seconds, before delivering it to the destination. The default value is 300 (5 minutes). </p>
     pub fn interval_in_seconds(mut self, input: i32) -> Self {
         self.interval_in_seconds = ::std::option::Option::Some(input);
@@ -61,6 +66,10 @@ impl HttpEndpointBufferingHintsBuilder {
     pub fn set_interval_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.interval_in_seconds = input;
         self
+    }
+    /// <p>Buffer incoming data for the specified period of time, in seconds, before delivering it to the destination. The default value is 300 (5 minutes). </p>
+    pub fn get_interval_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.interval_in_seconds
     }
     /// Consumes the builder and constructs a [`HttpEndpointBufferingHints`](crate::types::HttpEndpointBufferingHints).
     pub fn build(self) -> crate::types::HttpEndpointBufferingHints {

@@ -57,6 +57,10 @@ impl ListVersionsByFunctionOutputBuilder {
         self.next_marker = input;
         self
     }
+    /// <p>The pagination token that's included if more results are available.</p>
+    pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_marker
+    }
     /// Appends an item to `versions`.
     ///
     /// To override the contents of this collection use [`set_versions`](Self::set_versions).
@@ -75,6 +79,12 @@ impl ListVersionsByFunctionOutputBuilder {
     ) -> Self {
         self.versions = input;
         self
+    }
+    /// <p>A list of Lambda function versions.</p>
+    pub fn get_versions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FunctionConfiguration>> {
+        &self.versions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

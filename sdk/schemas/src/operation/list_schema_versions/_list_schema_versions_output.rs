@@ -56,6 +56,10 @@ impl ListSchemaVersionsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `schema_versions`.
     ///
     /// To override the contents of this collection use [`set_schema_versions`](Self::set_schema_versions).
@@ -74,6 +78,12 @@ impl ListSchemaVersionsOutputBuilder {
     ) -> Self {
         self.schema_versions = input;
         self
+    }
+    /// <p>An array of schema version summaries.</p>
+    pub fn get_schema_versions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaVersionSummary>> {
+        &self.schema_versions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

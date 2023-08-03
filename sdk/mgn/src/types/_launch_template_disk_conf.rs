@@ -59,6 +59,10 @@ impl LaunchTemplateDiskConfBuilder {
         self.volume_type = input;
         self
     }
+    /// <p>Launch template disk volume type configuration.</p>
+    pub fn get_volume_type(&self) -> &::std::option::Option<crate::types::VolumeType> {
+        &self.volume_type
+    }
     /// <p>Launch template disk iops configuration.</p>
     pub fn iops(mut self, input: i64) -> Self {
         self.iops = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl LaunchTemplateDiskConfBuilder {
         self.iops = input;
         self
     }
+    /// <p>Launch template disk iops configuration.</p>
+    pub fn get_iops(&self) -> &::std::option::Option<i64> {
+        &self.iops
+    }
     /// <p>Launch template disk throughput configuration.</p>
     pub fn throughput(mut self, input: i64) -> Self {
         self.throughput = ::std::option::Option::Some(input);
@@ -78,6 +86,10 @@ impl LaunchTemplateDiskConfBuilder {
     pub fn set_throughput(mut self, input: ::std::option::Option<i64>) -> Self {
         self.throughput = input;
         self
+    }
+    /// <p>Launch template disk throughput configuration.</p>
+    pub fn get_throughput(&self) -> &::std::option::Option<i64> {
+        &self.throughput
     }
     /// Consumes the builder and constructs a [`LaunchTemplateDiskConf`](crate::types::LaunchTemplateDiskConf).
     pub fn build(self) -> crate::types::LaunchTemplateDiskConf {

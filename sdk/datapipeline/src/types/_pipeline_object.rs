@@ -56,6 +56,10 @@ impl PipelineObjectBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the object.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the object.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl PipelineObjectBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the object.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `fields`.
     ///
@@ -84,6 +92,10 @@ impl PipelineObjectBuilder {
     ) -> Self {
         self.fields = input;
         self
+    }
+    /// <p>Key-value pairs that define the properties of the object.</p>
+    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Field>> {
+        &self.fields
     }
     /// Consumes the builder and constructs a [`PipelineObject`](crate::types::PipelineObject).
     pub fn build(self) -> crate::types::PipelineObject {

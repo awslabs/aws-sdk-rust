@@ -51,6 +51,12 @@ impl PivotTableFieldWellsBuilder {
         self.pivot_table_aggregated_field_wells = input;
         self
     }
+    /// <p>The aggregated field well for the pivot table.</p>
+    pub fn get_pivot_table_aggregated_field_wells(
+        &self,
+    ) -> &::std::option::Option<crate::types::PivotTableAggregatedFieldWells> {
+        &self.pivot_table_aggregated_field_wells
+    }
     /// Consumes the builder and constructs a [`PivotTableFieldWells`](crate::types::PivotTableFieldWells).
     pub fn build(self) -> crate::types::PivotTableFieldWells {
         crate::types::PivotTableFieldWells {

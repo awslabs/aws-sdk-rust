@@ -61,6 +61,10 @@ impl ClaimPhoneNumberOutputBuilder {
         self.phone_number_id = input;
         self
     }
+    /// <p>A unique identifier for the phone number.</p>
+    pub fn get_phone_number_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.phone_number_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
     pub fn phone_number_arn(
         mut self,
@@ -76,6 +80,10 @@ impl ClaimPhoneNumberOutputBuilder {
     ) -> Self {
         self.phone_number_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
+    pub fn get_phone_number_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.phone_number_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

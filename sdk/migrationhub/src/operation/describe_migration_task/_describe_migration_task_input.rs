@@ -55,6 +55,10 @@ impl DescribeMigrationTaskInputBuilder {
         self.progress_update_stream = input;
         self
     }
+    /// <p>The name of the ProgressUpdateStream. </p>
+    pub fn get_progress_update_stream(&self) -> &::std::option::Option<::std::string::String> {
+        &self.progress_update_stream
+    }
     /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
     pub fn migration_task_name(
         mut self,
@@ -70,6 +74,10 @@ impl DescribeMigrationTaskInputBuilder {
     ) -> Self {
         self.migration_task_name = input;
         self
+    }
+    /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
+    pub fn get_migration_task_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.migration_task_name
     }
     /// Consumes the builder and constructs a [`DescribeMigrationTaskInput`](crate::operation::describe_migration_task::DescribeMigrationTaskInput).
     pub fn build(

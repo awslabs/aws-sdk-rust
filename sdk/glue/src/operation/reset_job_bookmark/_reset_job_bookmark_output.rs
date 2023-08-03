@@ -50,6 +50,10 @@ impl ResetJobBookmarkOutputBuilder {
         self.job_bookmark_entry = input;
         self
     }
+    /// <p>The reset bookmark entry.</p>
+    pub fn get_job_bookmark_entry(&self) -> &::std::option::Option<crate::types::JobBookmarkEntry> {
+        &self.job_bookmark_entry
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

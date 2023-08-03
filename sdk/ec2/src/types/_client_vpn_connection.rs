@@ -151,6 +151,10 @@ impl ClientVpnConnectionBuilder {
         self.client_vpn_endpoint_id = input;
         self
     }
+    /// <p>The ID of the Client VPN endpoint to which the client is connected.</p>
+    pub fn get_client_vpn_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_vpn_endpoint_id
+    }
     /// <p>The current date and time.</p>
     pub fn timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timestamp = ::std::option::Option::Some(input.into());
@@ -160,6 +164,10 @@ impl ClientVpnConnectionBuilder {
     pub fn set_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timestamp = input;
         self
+    }
+    /// <p>The current date and time.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timestamp
     }
     /// <p>The ID of the client connection.</p>
     pub fn connection_id(
@@ -177,6 +185,10 @@ impl ClientVpnConnectionBuilder {
         self.connection_id = input;
         self
     }
+    /// <p>The ID of the client connection.</p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_id
+    }
     /// <p>The username of the client who established the client connection. This information is only provided if Active Directory client authentication is used.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
@@ -186,6 +198,10 @@ impl ClientVpnConnectionBuilder {
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
+    }
+    /// <p>The username of the client who established the client connection. This information is only provided if Active Directory client authentication is used.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
     }
     /// <p>The date and time the client connection was established.</p>
     pub fn connection_established_time(
@@ -203,6 +219,10 @@ impl ClientVpnConnectionBuilder {
         self.connection_established_time = input;
         self
     }
+    /// <p>The date and time the client connection was established.</p>
+    pub fn get_connection_established_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_established_time
+    }
     /// <p>The number of bytes sent by the client.</p>
     pub fn ingress_bytes(
         mut self,
@@ -219,6 +239,10 @@ impl ClientVpnConnectionBuilder {
         self.ingress_bytes = input;
         self
     }
+    /// <p>The number of bytes sent by the client.</p>
+    pub fn get_ingress_bytes(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ingress_bytes
+    }
     /// <p>The number of bytes received by the client.</p>
     pub fn egress_bytes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.egress_bytes = ::std::option::Option::Some(input.into());
@@ -228,6 +252,10 @@ impl ClientVpnConnectionBuilder {
     pub fn set_egress_bytes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.egress_bytes = input;
         self
+    }
+    /// <p>The number of bytes received by the client.</p>
+    pub fn get_egress_bytes(&self) -> &::std::option::Option<::std::string::String> {
+        &self.egress_bytes
     }
     /// <p>The number of packets sent by the client.</p>
     pub fn ingress_packets(
@@ -245,6 +273,10 @@ impl ClientVpnConnectionBuilder {
         self.ingress_packets = input;
         self
     }
+    /// <p>The number of packets sent by the client.</p>
+    pub fn get_ingress_packets(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ingress_packets
+    }
     /// <p>The number of packets received by the client.</p>
     pub fn egress_packets(
         mut self,
@@ -261,6 +293,10 @@ impl ClientVpnConnectionBuilder {
         self.egress_packets = input;
         self
     }
+    /// <p>The number of packets received by the client.</p>
+    pub fn get_egress_packets(&self) -> &::std::option::Option<::std::string::String> {
+        &self.egress_packets
+    }
     /// <p>The IP address of the client.</p>
     pub fn client_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_ip = ::std::option::Option::Some(input.into());
@@ -271,6 +307,10 @@ impl ClientVpnConnectionBuilder {
         self.client_ip = input;
         self
     }
+    /// <p>The IP address of the client.</p>
+    pub fn get_client_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_ip
+    }
     /// <p>The common name associated with the client. This is either the name of the client certificate, or the Active Directory user name.</p>
     pub fn common_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.common_name = ::std::option::Option::Some(input.into());
@@ -280,6 +320,10 @@ impl ClientVpnConnectionBuilder {
     pub fn set_common_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.common_name = input;
         self
+    }
+    /// <p>The common name associated with the client. This is either the name of the client certificate, or the Active Directory user name.</p>
+    pub fn get_common_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.common_name
     }
     /// <p>The current state of the client connection.</p>
     pub fn status(mut self, input: crate::types::ClientVpnConnectionStatus) -> Self {
@@ -293,6 +337,10 @@ impl ClientVpnConnectionBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current state of the client connection.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ClientVpnConnectionStatus> {
+        &self.status
     }
     /// <p>The date and time the client connection was terminated.</p>
     pub fn connection_end_time(
@@ -309,6 +357,10 @@ impl ClientVpnConnectionBuilder {
     ) -> Self {
         self.connection_end_time = input;
         self
+    }
+    /// <p>The date and time the client connection was terminated.</p>
+    pub fn get_connection_end_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_end_time
     }
     /// Appends an item to `posture_compliance_statuses`.
     ///
@@ -331,6 +383,12 @@ impl ClientVpnConnectionBuilder {
     ) -> Self {
         self.posture_compliance_statuses = input;
         self
+    }
+    /// <p>The statuses returned by the client connect handler for posture compliance, if applicable.</p>
+    pub fn get_posture_compliance_statuses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.posture_compliance_statuses
     }
     /// Consumes the builder and constructs a [`ClientVpnConnection`](crate::types::ClientVpnConnection).
     pub fn build(self) -> crate::types::ClientVpnConnection {

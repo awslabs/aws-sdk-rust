@@ -54,6 +54,10 @@ impl DataPathValueBuilder {
         self.field_id = input;
         self
     }
+    /// <p>The field ID of the field that needs to be sorted.</p>
+    pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_id
+    }
     /// <p>The actual value of the field that needs to be sorted.</p>
     pub fn field_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.field_value = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl DataPathValueBuilder {
     pub fn set_field_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.field_value = input;
         self
+    }
+    /// <p>The actual value of the field that needs to be sorted.</p>
+    pub fn get_field_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_value
     }
     /// Consumes the builder and constructs a [`DataPathValue`](crate::types::DataPathValue).
     pub fn build(self) -> crate::types::DataPathValue {

@@ -48,6 +48,10 @@ impl UserBuilder {
         self.user_id = input;
         self
     }
+    /// <p> A provided ID for the User. Unique within the collection.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
+    }
     /// <p> Communicates if the UserID has been updated with latest set of faces to be associated with the UserID. </p>
     pub fn user_status(mut self, input: crate::types::UserStatus) -> Self {
         self.user_status = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl UserBuilder {
     ) -> Self {
         self.user_status = input;
         self
+    }
+    /// <p> Communicates if the UserID has been updated with latest set of faces to be associated with the UserID. </p>
+    pub fn get_user_status(&self) -> &::std::option::Option<crate::types::UserStatus> {
+        &self.user_status
     }
     /// Consumes the builder and constructs a [`User`](crate::types::User).
     pub fn build(self) -> crate::types::User {

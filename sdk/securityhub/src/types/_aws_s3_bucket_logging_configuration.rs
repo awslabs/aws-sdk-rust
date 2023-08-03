@@ -54,6 +54,10 @@ impl AwsS3BucketLoggingConfigurationBuilder {
         self.destination_bucket_name = input;
         self
     }
+    /// <p>The name of the S3 bucket where log files for the S3 bucket are stored.</p>
+    pub fn get_destination_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_bucket_name
+    }
     /// <p>The prefix added to log files for the S3 bucket.</p>
     pub fn log_file_prefix(
         mut self,
@@ -69,6 +73,10 @@ impl AwsS3BucketLoggingConfigurationBuilder {
     ) -> Self {
         self.log_file_prefix = input;
         self
+    }
+    /// <p>The prefix added to log files for the S3 bucket.</p>
+    pub fn get_log_file_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_file_prefix
     }
     /// Consumes the builder and constructs a [`AwsS3BucketLoggingConfiguration`](crate::types::AwsS3BucketLoggingConfiguration).
     pub fn build(self) -> crate::types::AwsS3BucketLoggingConfiguration {

@@ -61,6 +61,10 @@ impl StartSourceNetworkRecoveryRequestNetworkEntryBuilder {
         self.source_network_id = input;
         self
     }
+    /// <p>The ID of the Source Network you want to recover.</p>
+    pub fn get_source_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_network_id
+    }
     /// <p>CloudFormation stack name to be used for recovering the network.</p>
     pub fn cfn_stack_name(
         mut self,
@@ -76,6 +80,10 @@ impl StartSourceNetworkRecoveryRequestNetworkEntryBuilder {
     ) -> Self {
         self.cfn_stack_name = input;
         self
+    }
+    /// <p>CloudFormation stack name to be used for recovering the network.</p>
+    pub fn get_cfn_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cfn_stack_name
     }
     /// Consumes the builder and constructs a [`StartSourceNetworkRecoveryRequestNetworkEntry`](crate::types::StartSourceNetworkRecoveryRequestNetworkEntry).
     pub fn build(self) -> crate::types::StartSourceNetworkRecoveryRequestNetworkEntry {

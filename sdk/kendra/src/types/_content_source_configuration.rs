@@ -68,6 +68,12 @@ impl ContentSourceConfigurationBuilder {
         self.data_source_ids = input;
         self
     }
+    /// <p>The identifier of the data sources you want to use for your Amazon Kendra experience.</p>
+    pub fn get_data_source_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.data_source_ids
+    }
     /// Appends an item to `faq_ids`.
     ///
     /// To override the contents of this collection use [`set_faq_ids`](Self::set_faq_ids).
@@ -87,6 +93,10 @@ impl ContentSourceConfigurationBuilder {
         self.faq_ids = input;
         self
     }
+    /// <p>The identifier of the FAQs that you want to use for your Amazon Kendra experience.</p>
+    pub fn get_faq_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.faq_ids
+    }
     /// <p> <code>TRUE</code> to use documents you indexed directly using the <code>BatchPutDocument</code> API.</p>
     pub fn direct_put_content(mut self, input: bool) -> Self {
         self.direct_put_content = ::std::option::Option::Some(input);
@@ -96,6 +106,10 @@ impl ContentSourceConfigurationBuilder {
     pub fn set_direct_put_content(mut self, input: ::std::option::Option<bool>) -> Self {
         self.direct_put_content = input;
         self
+    }
+    /// <p> <code>TRUE</code> to use documents you indexed directly using the <code>BatchPutDocument</code> API.</p>
+    pub fn get_direct_put_content(&self) -> &::std::option::Option<bool> {
+        &self.direct_put_content
     }
     /// Consumes the builder and constructs a [`ContentSourceConfiguration`](crate::types::ContentSourceConfiguration).
     pub fn build(self) -> crate::types::ContentSourceConfiguration {

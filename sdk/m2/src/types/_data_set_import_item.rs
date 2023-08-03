@@ -48,6 +48,10 @@ impl DataSetImportItemBuilder {
         self.data_set = input;
         self
     }
+    /// <p>The data set.</p>
+    pub fn get_data_set(&self) -> &::std::option::Option<crate::types::DataSet> {
+        &self.data_set
+    }
     /// <p>The location of the data set.</p>
     pub fn external_location(mut self, input: crate::types::ExternalLocation) -> Self {
         self.external_location = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl DataSetImportItemBuilder {
     ) -> Self {
         self.external_location = input;
         self
+    }
+    /// <p>The location of the data set.</p>
+    pub fn get_external_location(&self) -> &::std::option::Option<crate::types::ExternalLocation> {
+        &self.external_location
     }
     /// Consumes the builder and constructs a [`DataSetImportItem`](crate::types::DataSetImportItem).
     pub fn build(self) -> crate::types::DataSetImportItem {

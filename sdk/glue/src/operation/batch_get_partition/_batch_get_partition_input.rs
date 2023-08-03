@@ -65,6 +65,10 @@ impl BatchGetPartitionInputBuilder {
         self.catalog_id = input;
         self
     }
+    /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// <p>The name of the catalog database where the partitions reside.</p>
     pub fn database_name(
         mut self,
@@ -81,6 +85,10 @@ impl BatchGetPartitionInputBuilder {
         self.database_name = input;
         self
     }
+    /// <p>The name of the catalog database where the partitions reside.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>The name of the partitions' table.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
@@ -90,6 +98,10 @@ impl BatchGetPartitionInputBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
+    }
+    /// <p>The name of the partitions' table.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
     }
     /// Appends an item to `partitions_to_get`.
     ///
@@ -109,6 +121,12 @@ impl BatchGetPartitionInputBuilder {
     ) -> Self {
         self.partitions_to_get = input;
         self
+    }
+    /// <p>A list of partition values identifying the partitions to retrieve.</p>
+    pub fn get_partitions_to_get(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PartitionValueList>> {
+        &self.partitions_to_get
     }
     /// Consumes the builder and constructs a [`BatchGetPartitionInput`](crate::operation::batch_get_partition::BatchGetPartitionInput).
     pub fn build(

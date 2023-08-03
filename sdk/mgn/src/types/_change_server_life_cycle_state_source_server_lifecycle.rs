@@ -54,6 +54,13 @@ impl ChangeServerLifeCycleStateSourceServerLifecycleBuilder {
         self.state = input;
         self
     }
+    /// <p>The request to change the source server migration lifecycle state.</p>
+    pub fn get_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::ChangeServerLifeCycleStateSourceServerLifecycleState>
+    {
+        &self.state
+    }
     /// Consumes the builder and constructs a [`ChangeServerLifeCycleStateSourceServerLifecycle`](crate::types::ChangeServerLifeCycleStateSourceServerLifecycle).
     pub fn build(self) -> crate::types::ChangeServerLifeCycleStateSourceServerLifecycle {
         crate::types::ChangeServerLifeCycleStateSourceServerLifecycle { state: self.state }

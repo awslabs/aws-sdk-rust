@@ -41,6 +41,10 @@ impl AwsStepFunctionStateMachineTracingConfigurationDetailsBuilder {
         self.enabled = input;
         self
     }
+    /// <p> When set to true, X-Ray tracing is enabled. </p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// Consumes the builder and constructs a [`AwsStepFunctionStateMachineTracingConfigurationDetails`](crate::types::AwsStepFunctionStateMachineTracingConfigurationDetails).
     pub fn build(self) -> crate::types::AwsStepFunctionStateMachineTracingConfigurationDetails {
         crate::types::AwsStepFunctionStateMachineTracingConfigurationDetails {

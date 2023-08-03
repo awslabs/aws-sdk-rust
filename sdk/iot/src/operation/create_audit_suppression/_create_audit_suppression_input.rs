@@ -81,6 +81,10 @@ impl CreateAuditSuppressionInputBuilder {
         self.check_name = input;
         self
     }
+    /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
+    pub fn get_check_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.check_name
+    }
     /// <p>Information that identifies the noncompliant resource.</p>
     pub fn resource_identifier(mut self, input: crate::types::ResourceIdentifier) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input);
@@ -93,6 +97,12 @@ impl CreateAuditSuppressionInputBuilder {
     ) -> Self {
         self.resource_identifier = input;
         self
+    }
+    /// <p>Information that identifies the noncompliant resource.</p>
+    pub fn get_resource_identifier(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceIdentifier> {
+        &self.resource_identifier
     }
     /// <p> The epoch timestamp in seconds at which this suppression expires. </p>
     pub fn expiration_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -107,6 +117,10 @@ impl CreateAuditSuppressionInputBuilder {
         self.expiration_date = input;
         self
     }
+    /// <p> The epoch timestamp in seconds at which this suppression expires. </p>
+    pub fn get_expiration_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expiration_date
+    }
     /// <p> Indicates whether a suppression should exist indefinitely or not. </p>
     pub fn suppress_indefinitely(mut self, input: bool) -> Self {
         self.suppress_indefinitely = ::std::option::Option::Some(input);
@@ -117,6 +131,10 @@ impl CreateAuditSuppressionInputBuilder {
         self.suppress_indefinitely = input;
         self
     }
+    /// <p> Indicates whether a suppression should exist indefinitely or not. </p>
+    pub fn get_suppress_indefinitely(&self) -> &::std::option::Option<bool> {
+        &self.suppress_indefinitely
+    }
     /// <p> The description of the audit suppression. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -126,6 +144,10 @@ impl CreateAuditSuppressionInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p> The description of the audit suppression. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p> Each audit supression must have a unique client request token. If you try to create a new audit suppression with the same token as one that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
     pub fn client_request_token(
@@ -142,6 +164,10 @@ impl CreateAuditSuppressionInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p> Each audit supression must have a unique client request token. If you try to create a new audit suppression with the same token as one that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Consumes the builder and constructs a [`CreateAuditSuppressionInput`](crate::operation::create_audit_suppression::CreateAuditSuppressionInput).
     pub fn build(

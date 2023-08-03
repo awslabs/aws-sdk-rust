@@ -46,6 +46,10 @@ impl DeleteAttachmentInputBuilder {
         self.attachment_id = input;
         self
     }
+    /// <p>The ID of the attachment to delete.</p>
+    pub fn get_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attachment_id
+    }
     /// Consumes the builder and constructs a [`DeleteAttachmentInput`](crate::operation::delete_attachment::DeleteAttachmentInput).
     pub fn build(
         self,

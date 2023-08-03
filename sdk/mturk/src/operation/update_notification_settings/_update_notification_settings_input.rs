@@ -55,6 +55,10 @@ impl UpdateNotificationSettingsInputBuilder {
         self.hit_type_id = input;
         self
     }
+    /// <p> The ID of the HIT type whose notification specification is being updated. </p>
+    pub fn get_hit_type_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hit_type_id
+    }
     /// <p> The notification specification for the HIT type. </p>
     pub fn notification(mut self, input: crate::types::NotificationSpecification) -> Self {
         self.notification = ::std::option::Option::Some(input);
@@ -68,6 +72,12 @@ impl UpdateNotificationSettingsInputBuilder {
         self.notification = input;
         self
     }
+    /// <p> The notification specification for the HIT type. </p>
+    pub fn get_notification(
+        &self,
+    ) -> &::std::option::Option<crate::types::NotificationSpecification> {
+        &self.notification
+    }
     /// <p> Specifies whether notifications are sent for HITs of this HIT type, according to the notification specification. You must specify either the Notification parameter or the Active parameter for the call to UpdateNotificationSettings to succeed. </p>
     pub fn active(mut self, input: bool) -> Self {
         self.active = ::std::option::Option::Some(input);
@@ -77,6 +87,10 @@ impl UpdateNotificationSettingsInputBuilder {
     pub fn set_active(mut self, input: ::std::option::Option<bool>) -> Self {
         self.active = input;
         self
+    }
+    /// <p> Specifies whether notifications are sent for HITs of this HIT type, according to the notification specification. You must specify either the Notification parameter or the Active parameter for the call to UpdateNotificationSettings to succeed. </p>
+    pub fn get_active(&self) -> &::std::option::Option<bool> {
+        &self.active
     }
     /// Consumes the builder and constructs a [`UpdateNotificationSettingsInput`](crate::operation::update_notification_settings::UpdateNotificationSettingsInput).
     pub fn build(

@@ -36,6 +36,12 @@ impl ListCidrBlocksFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListCidrBlocks as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_cidr_blocks::builders::ListCidrBlocksInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -143,6 +149,10 @@ impl ListCidrBlocksFluentBuilder {
         self.inner = self.inner.set_collection_id(input);
         self
     }
+    /// <p>The UUID of the CIDR collection.</p>
+    pub fn get_collection_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_collection_id()
+    }
     /// <p>The name of the CIDR collection location.</p>
     pub fn location_name(
         mut self,
@@ -159,6 +169,10 @@ impl ListCidrBlocksFluentBuilder {
         self.inner = self.inner.set_location_name(input);
         self
     }
+    /// <p>The name of the CIDR collection location.</p>
+    pub fn get_location_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_location_name()
+    }
     /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -169,6 +183,10 @@ impl ListCidrBlocksFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>Maximum number of results you want returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -178,5 +196,9 @@ impl ListCidrBlocksFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>Maximum number of results you want returned.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

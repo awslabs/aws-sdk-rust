@@ -65,6 +65,10 @@ impl ListPricesOutputBuilder {
         self.prices = input;
         self
     }
+    /// <p>A complex type that includes all the pricing information. If you specify a TLD, this array contains only the pricing for that TLD.</p>
+    pub fn get_prices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainPrice>> {
+        &self.prices
+    }
     /// <p>If there are more prices than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>. </p>
     /// <p>Used only for all TLDs. If you specify a TLD, don't specify a <code>NextPageMarker</code>.</p>
     pub fn next_page_marker(
@@ -82,6 +86,11 @@ impl ListPricesOutputBuilder {
     ) -> Self {
         self.next_page_marker = input;
         self
+    }
+    /// <p>If there are more prices than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>. </p>
+    /// <p>Used only for all TLDs. If you specify a TLD, don't specify a <code>NextPageMarker</code>.</p>
+    pub fn get_next_page_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_page_marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

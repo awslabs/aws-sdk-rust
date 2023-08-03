@@ -176,6 +176,10 @@ impl WorldGenerationJobSummaryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the world generator job.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The Amazon Resource Name (arn) of the world template.</p>
     pub fn template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template = ::std::option::Option::Some(input.into());
@@ -185,6 +189,10 @@ impl WorldGenerationJobSummaryBuilder {
     pub fn set_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template = input;
         self
+    }
+    /// <p>The Amazon Resource Name (arn) of the world template.</p>
+    pub fn get_template(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template
     }
     /// <p>The time, in milliseconds since the epoch, when the world generator job was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -198,6 +206,10 @@ impl WorldGenerationJobSummaryBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The time, in milliseconds since the epoch, when the world generator job was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// <p>The status of the world generator job:</p>
     /// <dl>
@@ -300,6 +312,54 @@ impl WorldGenerationJobSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the world generator job:</p>
+    /// <dl>
+    /// <dt>
+    /// Pending
+    /// </dt>
+    /// <dd>
+    /// <p>The world generator job request is pending.</p>
+    /// </dd>
+    /// <dt>
+    /// Running
+    /// </dt>
+    /// <dd>
+    /// <p>The world generator job is running. </p>
+    /// </dd>
+    /// <dt>
+    /// Completed
+    /// </dt>
+    /// <dd>
+    /// <p>The world generator job completed. </p>
+    /// </dd>
+    /// <dt>
+    /// Failed
+    /// </dt>
+    /// <dd>
+    /// <p>The world generator job failed. See <code>failureCode</code> for more information. </p>
+    /// </dd>
+    /// <dt>
+    /// PartialFailed
+    /// </dt>
+    /// <dd>
+    /// <p>Some worlds did not generate.</p>
+    /// </dd>
+    /// <dt>
+    /// Canceled
+    /// </dt>
+    /// <dd>
+    /// <p>The world generator job was cancelled.</p>
+    /// </dd>
+    /// <dt>
+    /// Canceling
+    /// </dt>
+    /// <dd>
+    /// <p>The world generator job is being cancelled.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::WorldGenerationJobStatus> {
+        &self.status
+    }
     /// <p>Information about the world count.</p>
     pub fn world_count(mut self, input: crate::types::WorldCount) -> Self {
         self.world_count = ::std::option::Option::Some(input);
@@ -313,6 +373,10 @@ impl WorldGenerationJobSummaryBuilder {
         self.world_count = input;
         self
     }
+    /// <p>Information about the world count.</p>
+    pub fn get_world_count(&self) -> &::std::option::Option<crate::types::WorldCount> {
+        &self.world_count
+    }
     /// <p>The number of worlds that were generated.</p>
     pub fn succeeded_world_count(mut self, input: i32) -> Self {
         self.succeeded_world_count = ::std::option::Option::Some(input);
@@ -323,6 +387,10 @@ impl WorldGenerationJobSummaryBuilder {
         self.succeeded_world_count = input;
         self
     }
+    /// <p>The number of worlds that were generated.</p>
+    pub fn get_succeeded_world_count(&self) -> &::std::option::Option<i32> {
+        &self.succeeded_world_count
+    }
     /// <p>The number of worlds that failed.</p>
     pub fn failed_world_count(mut self, input: i32) -> Self {
         self.failed_world_count = ::std::option::Option::Some(input);
@@ -332,6 +400,10 @@ impl WorldGenerationJobSummaryBuilder {
     pub fn set_failed_world_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.failed_world_count = input;
         self
+    }
+    /// <p>The number of worlds that failed.</p>
+    pub fn get_failed_world_count(&self) -> &::std::option::Option<i32> {
+        &self.failed_world_count
     }
     /// Consumes the builder and constructs a [`WorldGenerationJobSummary`](crate::types::WorldGenerationJobSummary).
     pub fn build(self) -> crate::types::WorldGenerationJobSummary {

@@ -37,6 +37,12 @@ impl StopActivityStreamFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StopActivityStream as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::stop_activity_stream::builders::StopActivityStreamInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl StopActivityStreamFluentBuilder {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the DB cluster for the database activity stream. For example, <code>arn:aws:rds:us-east-1:12345667890:cluster:das-cluster</code>.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
+    }
     /// <p>Specifies whether or not the database activity stream is to stop as soon as possible, regardless of the maintenance window for the database.</p>
     pub fn apply_immediately(mut self, input: bool) -> Self {
         self.inner = self.inner.apply_immediately(input);
@@ -136,5 +146,9 @@ impl StopActivityStreamFluentBuilder {
     pub fn set_apply_immediately(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_apply_immediately(input);
         self
+    }
+    /// <p>Specifies whether or not the database activity stream is to stop as soon as possible, regardless of the maintenance window for the database.</p>
+    pub fn get_apply_immediately(&self) -> &::std::option::Option<bool> {
+        self.inner.get_apply_immediately()
     }
 }

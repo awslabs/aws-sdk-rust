@@ -41,6 +41,10 @@ impl GetQueryLoggingConfigInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the configuration for DNS query logging that you want to get information about.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`GetQueryLoggingConfigInput`](crate::operation::get_query_logging_config::GetQueryLoggingConfigInput).
     pub fn build(
         self,

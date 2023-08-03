@@ -39,6 +39,10 @@ impl DeleteFlowInputBuilder {
         self.flow_arn = input;
         self
     }
+    /// The ARN of the flow that you want to delete.
+    pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_arn
+    }
     /// Consumes the builder and constructs a [`DeleteFlowInput`](crate::operation::delete_flow::DeleteFlowInput).
     pub fn build(
         self,

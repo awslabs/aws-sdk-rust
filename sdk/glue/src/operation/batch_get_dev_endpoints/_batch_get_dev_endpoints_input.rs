@@ -52,6 +52,12 @@ impl BatchGetDevEndpointsInputBuilder {
         self.dev_endpoint_names = input;
         self
     }
+    /// <p>The list of <code>DevEndpoint</code> names, which might be the names returned from the <code>ListDevEndpoint</code> operation.</p>
+    pub fn get_dev_endpoint_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.dev_endpoint_names
+    }
     /// Consumes the builder and constructs a [`BatchGetDevEndpointsInput`](crate::operation::batch_get_dev_endpoints::BatchGetDevEndpointsInput).
     pub fn build(
         self,

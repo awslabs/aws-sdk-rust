@@ -78,6 +78,10 @@ impl GetHostOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the requested host.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The status of the requested host.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -87,6 +91,10 @@ impl GetHostOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the requested host.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>The provider type of the requested host, such as GitHub Enterprise Server.</p>
     pub fn provider_type(mut self, input: crate::types::ProviderType) -> Self {
@@ -100,6 +108,10 @@ impl GetHostOutputBuilder {
     ) -> Self {
         self.provider_type = input;
         self
+    }
+    /// <p>The provider type of the requested host, such as GitHub Enterprise Server.</p>
+    pub fn get_provider_type(&self) -> &::std::option::Option<crate::types::ProviderType> {
+        &self.provider_type
     }
     /// <p>The endpoint of the infrastructure represented by the requested host.</p>
     pub fn provider_endpoint(
@@ -117,6 +129,10 @@ impl GetHostOutputBuilder {
         self.provider_endpoint = input;
         self
     }
+    /// <p>The endpoint of the infrastructure represented by the requested host.</p>
+    pub fn get_provider_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provider_endpoint
+    }
     /// <p>The VPC configuration of the requested host.</p>
     pub fn vpc_configuration(mut self, input: crate::types::VpcConfiguration) -> Self {
         self.vpc_configuration = ::std::option::Option::Some(input);
@@ -129,6 +145,10 @@ impl GetHostOutputBuilder {
     ) -> Self {
         self.vpc_configuration = input;
         self
+    }
+    /// <p>The VPC configuration of the requested host.</p>
+    pub fn get_vpc_configuration(&self) -> &::std::option::Option<crate::types::VpcConfiguration> {
+        &self.vpc_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

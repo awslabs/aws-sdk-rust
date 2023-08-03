@@ -49,6 +49,12 @@ impl JoinResourceTypeEventConfigurationBuilder {
         self.lo_ra_wan = input;
         self
     }
+    /// <p>Join resource type event configuration object for enabling or disabling LoRaWAN related event topics.</p>
+    pub fn get_lo_ra_wan(
+        &self,
+    ) -> &::std::option::Option<crate::types::LoRaWanJoinResourceTypeEventConfiguration> {
+        &self.lo_ra_wan
+    }
     /// Consumes the builder and constructs a [`JoinResourceTypeEventConfiguration`](crate::types::JoinResourceTypeEventConfiguration).
     pub fn build(self) -> crate::types::JoinResourceTypeEventConfiguration {
         crate::types::JoinResourceTypeEventConfiguration {

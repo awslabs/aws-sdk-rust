@@ -72,6 +72,10 @@ impl RulesPackageBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the rules package.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the rules package.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl RulesPackageBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the rules package.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The version ID of the rules package.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -92,6 +100,10 @@ impl RulesPackageBuilder {
         self.version = input;
         self
     }
+    /// <p>The version ID of the rules package.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
+    }
     /// <p>The provider of the rules package.</p>
     pub fn provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider = ::std::option::Option::Some(input.into());
@@ -102,6 +114,10 @@ impl RulesPackageBuilder {
         self.provider = input;
         self
     }
+    /// <p>The provider of the rules package.</p>
+    pub fn get_provider(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provider
+    }
     /// <p>The description of the rules package.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -111,6 +127,10 @@ impl RulesPackageBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the rules package.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`RulesPackage`](crate::types::RulesPackage).
     pub fn build(self) -> crate::types::RulesPackage {

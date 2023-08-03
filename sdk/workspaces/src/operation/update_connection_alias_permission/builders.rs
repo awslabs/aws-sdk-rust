@@ -41,6 +41,10 @@ impl UpdateConnectionAliasPermissionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateConnectionAliasPermission as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_connection_alias_permission::builders::UpdateConnectionAliasPermissionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -105,6 +109,10 @@ impl UpdateConnectionAliasPermissionFluentBuilder {
         self.inner = self.inner.set_alias_id(input);
         self
     }
+    /// <p>The identifier of the connection alias that you want to update permissions for.</p>
+    pub fn get_alias_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_alias_id()
+    }
     /// <p>Indicates whether to share or unshare the connection alias with the specified Amazon Web Services account.</p>
     pub fn connection_alias_permission(
         mut self,
@@ -120,5 +128,11 @@ impl UpdateConnectionAliasPermissionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_connection_alias_permission(input);
         self
+    }
+    /// <p>Indicates whether to share or unshare the connection alias with the specified Amazon Web Services account.</p>
+    pub fn get_connection_alias_permission(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConnectionAliasPermission> {
+        self.inner.get_connection_alias_permission()
     }
 }

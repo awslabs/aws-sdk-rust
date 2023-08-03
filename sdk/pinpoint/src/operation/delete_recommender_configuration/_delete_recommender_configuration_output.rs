@@ -56,6 +56,12 @@ impl DeleteRecommenderConfigurationOutputBuilder {
         self.recommender_configuration_response = input;
         self
     }
+    /// <p>Provides information about Amazon Pinpoint configuration settings for retrieving and processing data from a recommender model.</p>
+    pub fn get_recommender_configuration_response(
+        &self,
+    ) -> &::std::option::Option<crate::types::RecommenderConfigurationResponse> {
+        &self.recommender_configuration_response
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

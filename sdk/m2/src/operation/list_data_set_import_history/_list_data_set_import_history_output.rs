@@ -67,6 +67,12 @@ impl ListDataSetImportHistoryOutputBuilder {
         self.data_set_import_tasks = input;
         self
     }
+    /// <p>The data set import tasks.</p>
+    pub fn get_data_set_import_tasks(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSetImportTask>> {
+        &self.data_set_import_tasks
+    }
     /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -76,6 +82,10 @@ impl ListDataSetImportHistoryOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

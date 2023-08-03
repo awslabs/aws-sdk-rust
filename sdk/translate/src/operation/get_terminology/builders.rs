@@ -36,6 +36,12 @@ impl GetTerminologyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetTerminology as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_terminology::builders::GetTerminologyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl GetTerminologyFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the custom terminology being retrieved.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The data format of the custom terminology being retrieved.</p>
     /// <p>If you don't specify this parameter, Amazon Translate returns a file with the same format as the file that was imported to create the terminology. </p>
     /// <p>If you specify this parameter when you retrieve a multi-directional terminology resource, you must specify the same format as the input file that was imported to create it. Otherwise, Amazon Translate throws an error.</p>
@@ -134,5 +144,13 @@ impl GetTerminologyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_terminology_data_format(input);
         self
+    }
+    /// <p>The data format of the custom terminology being retrieved.</p>
+    /// <p>If you don't specify this parameter, Amazon Translate returns a file with the same format as the file that was imported to create the terminology. </p>
+    /// <p>If you specify this parameter when you retrieve a multi-directional terminology resource, you must specify the same format as the input file that was imported to create it. Otherwise, Amazon Translate throws an error.</p>
+    pub fn get_terminology_data_format(
+        &self,
+    ) -> &::std::option::Option<crate::types::TerminologyDataFormat> {
+        self.inner.get_terminology_data_format()
     }
 }

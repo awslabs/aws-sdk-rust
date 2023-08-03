@@ -57,6 +57,10 @@ impl StartMigrationInputBuilder {
         self.replication_group_id = input;
         self
     }
+    /// <p>The ID of the replication group to which data should be migrated.</p>
+    pub fn get_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_group_id
+    }
     /// Appends an item to `customer_node_endpoint_list`.
     ///
     /// To override the contents of this collection use [`set_customer_node_endpoint_list`](Self::set_customer_node_endpoint_list).
@@ -78,6 +82,12 @@ impl StartMigrationInputBuilder {
     ) -> Self {
         self.customer_node_endpoint_list = input;
         self
+    }
+    /// <p>List of endpoints from which data should be migrated. For Redis (cluster mode disabled), list should have only one element.</p>
+    pub fn get_customer_node_endpoint_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomerNodeEndpoint>> {
+        &self.customer_node_endpoint_list
     }
     /// Consumes the builder and constructs a [`StartMigrationInput`](crate::operation::start_migration::StartMigrationInput).
     pub fn build(

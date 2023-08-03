@@ -53,6 +53,10 @@ impl GetMaintenanceWindowExecutionTaskInputBuilder {
         self.window_execution_id = input;
         self
     }
+    /// <p>The ID of the maintenance window execution that includes the task.</p>
+    pub fn get_window_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.window_execution_id
+    }
     /// <p>The ID of the specific task execution in the maintenance window task that should be retrieved.</p>
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_id = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl GetMaintenanceWindowExecutionTaskInputBuilder {
     pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_id = input;
         self
+    }
+    /// <p>The ID of the specific task execution in the maintenance window task that should be retrieved.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_id
     }
     /// Consumes the builder and constructs a [`GetMaintenanceWindowExecutionTaskInput`](crate::operation::get_maintenance_window_execution_task::GetMaintenanceWindowExecutionTaskInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_maintenance_window_execution_task::GetMaintenanceWindowExecutionTaskInput, ::aws_smithy_http::operation::error::BuildError>{

@@ -60,6 +60,11 @@ impl ListPoliciesGrantingServiceAccessEntryBuilder {
         self.service_namespace = input;
         self
     }
+    /// <p>The namespace of the service that was accessed.</p>
+    /// <p>To learn the service namespace of a service, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the <i>Service Authorization Reference</i>. Choose the name of the service to view details for that service. In the first paragraph, find the service prefix. For example, <code>(service prefix: a4b)</code>. For more information about service namespaces, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services service namespaces</a> in the&nbsp;<i>Amazon Web Services General Reference</i>.</p>
+    pub fn get_service_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_namespace
+    }
     /// Appends an item to `policies`.
     ///
     /// To override the contents of this collection use [`set_policies`](Self::set_policies).
@@ -78,6 +83,12 @@ impl ListPoliciesGrantingServiceAccessEntryBuilder {
     ) -> Self {
         self.policies = input;
         self
+    }
+    /// <p>The&nbsp;<code>PoliciesGrantingServiceAccess</code> object that contains details about the policy.</p>
+    pub fn get_policies(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyGrantingServiceAccess>> {
+        &self.policies
     }
     /// Consumes the builder and constructs a [`ListPoliciesGrantingServiceAccessEntry`](crate::types::ListPoliciesGrantingServiceAccessEntry).
     pub fn build(self) -> crate::types::ListPoliciesGrantingServiceAccessEntry {

@@ -36,6 +36,12 @@ impl PreviewAgentsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PreviewAgents as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::preview_agents::builders::PreviewAgentsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +141,10 @@ impl PreviewAgentsFluentBuilder {
         self.inner = self.inner.set_preview_agents_arn(input);
         self
     }
+    /// <p>The ARN of the assessment target whose agents you want to preview.</p>
+    pub fn get_preview_agents_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_preview_agents_arn()
+    }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>PreviewAgents</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -145,6 +155,10 @@ impl PreviewAgentsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>PreviewAgents</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -154,5 +168,9 @@ impl PreviewAgentsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

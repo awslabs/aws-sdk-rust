@@ -65,6 +65,12 @@ impl EnableInputBuilder {
         self.account_ids = input;
         self
     }
+    /// <p>A list of account IDs you want to enable Amazon Inspector scans for.</p>
+    pub fn get_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.account_ids
+    }
     /// Appends an item to `resource_types`.
     ///
     /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
@@ -84,6 +90,12 @@ impl EnableInputBuilder {
         self.resource_types = input;
         self
     }
+    /// <p>The resource scan types you want to enable.</p>
+    pub fn get_resource_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceScanType>> {
+        &self.resource_types
+    }
     /// <p>The idempotency token for the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -93,6 +105,10 @@ impl EnableInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>The idempotency token for the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`EnableInput`](crate::operation::enable::EnableInput).
     pub fn build(

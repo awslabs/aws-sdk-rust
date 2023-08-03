@@ -54,6 +54,10 @@ impl AddFlowSourcesOutputBuilder {
         self.flow_arn = input;
         self
     }
+    /// The ARN of the flow that these sources were added to.
+    pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_arn
+    }
     /// Appends an item to `sources`.
     ///
     /// To override the contents of this collection use [`set_sources`](Self::set_sources).
@@ -72,6 +76,10 @@ impl AddFlowSourcesOutputBuilder {
     ) -> Self {
         self.sources = input;
         self
+    }
+    /// The details of the newly added sources.
+    pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Source>> {
+        &self.sources
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

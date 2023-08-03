@@ -48,6 +48,10 @@ impl CustomerProfilesDestinationPropertiesBuilder {
         self.domain_name = input;
         self
     }
+    /// <p> The unique name of the Amazon Connect Customer Profiles domain. </p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p> The object specified in the Amazon Connect Customer Profiles flow destination. </p>
     pub fn object_type_name(
         mut self,
@@ -63,6 +67,10 @@ impl CustomerProfilesDestinationPropertiesBuilder {
     ) -> Self {
         self.object_type_name = input;
         self
+    }
+    /// <p> The object specified in the Amazon Connect Customer Profiles flow destination. </p>
+    pub fn get_object_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_type_name
     }
     /// Consumes the builder and constructs a [`CustomerProfilesDestinationProperties`](crate::types::CustomerProfilesDestinationProperties).
     pub fn build(self) -> crate::types::CustomerProfilesDestinationProperties {

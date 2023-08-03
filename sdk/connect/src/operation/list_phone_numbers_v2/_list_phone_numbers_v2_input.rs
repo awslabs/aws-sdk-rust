@@ -85,6 +85,10 @@ impl ListPhoneNumbersV2InputBuilder {
         self.target_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are claimed to. If <code>TargetArn</code> input is not provided, this API lists numbers claimed to all the Amazon Connect instances belonging to your account in the same Amazon Web Services Region as the request.</p>
+    pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_arn
+    }
     /// <p>The maximum number of results to return per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -95,6 +99,10 @@ impl ListPhoneNumbersV2InputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -104,6 +112,10 @@ impl ListPhoneNumbersV2InputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `phone_number_country_codes`.
     ///
@@ -127,6 +139,12 @@ impl ListPhoneNumbersV2InputBuilder {
         self.phone_number_country_codes = input;
         self
     }
+    /// <p>The ISO country code.</p>
+    pub fn get_phone_number_country_codes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberCountryCode>> {
+        &self.phone_number_country_codes
+    }
     /// Appends an item to `phone_number_types`.
     ///
     /// To override the contents of this collection use [`set_phone_number_types`](Self::set_phone_number_types).
@@ -146,6 +164,12 @@ impl ListPhoneNumbersV2InputBuilder {
         self.phone_number_types = input;
         self
     }
+    /// <p>The type of phone number.</p>
+    pub fn get_phone_number_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberType>> {
+        &self.phone_number_types
+    }
     /// <p>The prefix of the phone number. If provided, it must contain <code>+</code> as part of the country code.</p>
     pub fn phone_number_prefix(
         mut self,
@@ -161,6 +185,10 @@ impl ListPhoneNumbersV2InputBuilder {
     ) -> Self {
         self.phone_number_prefix = input;
         self
+    }
+    /// <p>The prefix of the phone number. If provided, it must contain <code>+</code> as part of the country code.</p>
+    pub fn get_phone_number_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.phone_number_prefix
     }
     /// Consumes the builder and constructs a [`ListPhoneNumbersV2Input`](crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Input).
     pub fn build(

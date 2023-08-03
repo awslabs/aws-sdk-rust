@@ -36,6 +36,10 @@ impl GetChunkFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetChunk as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_chunk::builders::GetChunkInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl GetChunkFluentBuilder {
         self.inner = self.inner.set_storage_job_id(input);
         self
     }
+    /// Storage job id
+    pub fn get_storage_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_storage_job_id()
+    }
     /// Chunk token
     pub fn chunk_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.chunk_token(input.into());
@@ -133,5 +141,9 @@ impl GetChunkFluentBuilder {
     pub fn set_chunk_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_chunk_token(input);
         self
+    }
+    /// Chunk token
+    pub fn get_chunk_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_chunk_token()
     }
 }

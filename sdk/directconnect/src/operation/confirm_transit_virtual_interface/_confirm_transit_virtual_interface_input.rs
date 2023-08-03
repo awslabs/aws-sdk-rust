@@ -53,6 +53,10 @@ impl ConfirmTransitVirtualInterfaceInputBuilder {
         self.virtual_interface_id = input;
         self
     }
+    /// <p>The ID of the virtual interface.</p>
+    pub fn get_virtual_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_interface_id
+    }
     /// <p>The ID of the Direct Connect gateway.</p>
     pub fn direct_connect_gateway_id(
         mut self,
@@ -68,6 +72,10 @@ impl ConfirmTransitVirtualInterfaceInputBuilder {
     ) -> Self {
         self.direct_connect_gateway_id = input;
         self
+    }
+    /// <p>The ID of the Direct Connect gateway.</p>
+    pub fn get_direct_connect_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.direct_connect_gateway_id
     }
     /// Consumes the builder and constructs a [`ConfirmTransitVirtualInterfaceInput`](crate::operation::confirm_transit_virtual_interface::ConfirmTransitVirtualInterfaceInput).
     pub fn build(

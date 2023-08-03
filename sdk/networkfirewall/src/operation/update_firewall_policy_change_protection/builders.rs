@@ -36,6 +36,10 @@ impl UpdateFirewallPolicyChangeProtectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateFirewallPolicyChangeProtection as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_firewall_policy_change_protection::builders::UpdateFirewallPolicyChangeProtectionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -104,6 +108,12 @@ impl UpdateFirewallPolicyChangeProtectionFluentBuilder {
         self.inner = self.inner.set_update_token(input);
         self
     }
+    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
+    /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
+    pub fn get_update_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_update_token()
+    }
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn firewall_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -115,6 +125,11 @@ impl UpdateFirewallPolicyChangeProtectionFluentBuilder {
     pub fn set_firewall_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_firewall_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn get_firewall_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_firewall_arn()
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
@@ -134,6 +149,11 @@ impl UpdateFirewallPolicyChangeProtectionFluentBuilder {
         self.inner = self.inner.set_firewall_name(input);
         self
     }
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn get_firewall_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_firewall_name()
+    }
     /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association. Use this setting to protect against accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
     pub fn firewall_policy_change_protection(mut self, input: bool) -> Self {
         self.inner = self.inner.firewall_policy_change_protection(input);
@@ -146,5 +166,9 @@ impl UpdateFirewallPolicyChangeProtectionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_firewall_policy_change_protection(input);
         self
+    }
+    /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association. Use this setting to protect against accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
+    pub fn get_firewall_policy_change_protection(&self) -> &::std::option::Option<bool> {
+        self.inner.get_firewall_policy_change_protection()
     }
 }

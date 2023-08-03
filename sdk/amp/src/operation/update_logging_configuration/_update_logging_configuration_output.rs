@@ -50,6 +50,10 @@ impl UpdateLoggingConfigurationOutputBuilder {
         self.status = input;
         self
     }
+    /// The status of the logging configuration.
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::LoggingConfigurationStatus> {
+        &self.status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -82,6 +82,14 @@ impl DescribeProvisionedProductInputBuilder {
         self.accept_language = input;
         self
     }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accept_language
+    }
     /// <p>The provisioned product identifier. You must provide the name or ID, but not both.</p>
     /// <p>If you do not provide a name or ID, or you provide both name and ID, an <code>InvalidParametersException</code> will occur.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -94,6 +102,11 @@ impl DescribeProvisionedProductInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The provisioned product identifier. You must provide the name or ID, but not both.</p>
+    /// <p>If you do not provide a name or ID, or you provide both name and ID, an <code>InvalidParametersException</code> will occur.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the provisioned product. You must provide the name or ID, but not both.</p>
     /// <p>If you do not provide a name or ID, or you provide both name and ID, an <code>InvalidParametersException</code> will occur.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -105,6 +118,11 @@ impl DescribeProvisionedProductInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the provisioned product. You must provide the name or ID, but not both.</p>
+    /// <p>If you do not provide a name or ID, or you provide both name and ID, an <code>InvalidParametersException</code> will occur.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`DescribeProvisionedProductInput`](crate::operation::describe_provisioned_product::DescribeProvisionedProductInput).
     pub fn build(

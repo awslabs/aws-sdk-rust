@@ -54,6 +54,10 @@ impl GetObjectMetadataInputBuilder {
         self.storage_job_id = input;
         self
     }
+    /// Backup job id for the in-progress backup.
+    pub fn get_storage_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_job_id
+    }
     /// Object token.
     pub fn object_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_token = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl GetObjectMetadataInputBuilder {
     pub fn set_object_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.object_token = input;
         self
+    }
+    /// Object token.
+    pub fn get_object_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_token
     }
     /// Consumes the builder and constructs a [`GetObjectMetadataInput`](crate::operation::get_object_metadata::GetObjectMetadataInput).
     pub fn build(

@@ -45,6 +45,10 @@ impl S3BucketSinkConfigurationBuilder {
         self.destination = input;
         self
     }
+    /// <p>The destination URL of the S3 bucket.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination
+    }
     /// Consumes the builder and constructs a [`S3BucketSinkConfiguration`](crate::types::S3BucketSinkConfiguration).
     pub fn build(self) -> crate::types::S3BucketSinkConfiguration {
         crate::types::S3BucketSinkConfiguration {

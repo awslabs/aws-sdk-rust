@@ -64,6 +64,10 @@ impl InvitationBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The ID of the account that the invitation was sent from.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The ID of the invitation. This value is used to validate the inviter account to the member account.</p>
     pub fn invitation_id(
         mut self,
@@ -79,6 +83,10 @@ impl InvitationBuilder {
     ) -> Self {
         self.invitation_id = input;
         self
+    }
+    /// <p>The ID of the invitation. This value is used to validate the inviter account to the member account.</p>
+    pub fn get_invitation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.invitation_id
     }
     /// <p>The status of the relationship between the inviter and invitee accounts.</p>
     pub fn relationship_status(
@@ -96,6 +104,10 @@ impl InvitationBuilder {
         self.relationship_status = input;
         self
     }
+    /// <p>The status of the relationship between the inviter and invitee accounts.</p>
+    pub fn get_relationship_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.relationship_status
+    }
     /// <p>The timestamp when the invitation was sent.</p>
     pub fn invited_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.invited_at = ::std::option::Option::Some(input.into());
@@ -105,6 +117,10 @@ impl InvitationBuilder {
     pub fn set_invited_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.invited_at = input;
         self
+    }
+    /// <p>The timestamp when the invitation was sent.</p>
+    pub fn get_invited_at(&self) -> &::std::option::Option<::std::string::String> {
+        &self.invited_at
     }
     /// Consumes the builder and constructs a [`Invitation`](crate::types::Invitation).
     pub fn build(self) -> crate::types::Invitation {

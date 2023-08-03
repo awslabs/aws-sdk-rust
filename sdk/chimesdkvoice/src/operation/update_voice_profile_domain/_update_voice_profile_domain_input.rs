@@ -63,6 +63,10 @@ impl UpdateVoiceProfileDomainInputBuilder {
         self.voice_profile_domain_id = input;
         self
     }
+    /// <p>The domain ID.</p>
+    pub fn get_voice_profile_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_profile_domain_id
+    }
     /// <p>The name of the voice profile domain.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl UpdateVoiceProfileDomainInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the voice profile domain.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the voice profile domain.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl UpdateVoiceProfileDomainInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the voice profile domain.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`UpdateVoiceProfileDomainInput`](crate::operation::update_voice_profile_domain::UpdateVoiceProfileDomainInput).
     pub fn build(

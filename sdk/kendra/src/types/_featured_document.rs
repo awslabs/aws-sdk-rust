@@ -40,6 +40,10 @@ impl FeaturedDocumentBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the document to feature in the search results. You can use the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Query.html">Query</a> API to search for specific documents with their document IDs included in the result items, or you can use the console.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`FeaturedDocument`](crate::types::FeaturedDocument).
     pub fn build(self) -> crate::types::FeaturedDocument {
         crate::types::FeaturedDocument { id: self.id }

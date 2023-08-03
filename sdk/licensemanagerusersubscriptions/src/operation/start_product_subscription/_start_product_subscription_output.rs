@@ -51,6 +51,12 @@ impl StartProductSubscriptionOutputBuilder {
         self.product_user_summary = input;
         self
     }
+    /// <p>Metadata that describes the start product subscription operation.</p>
+    pub fn get_product_user_summary(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProductUserSummary> {
+        &self.product_user_summary
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

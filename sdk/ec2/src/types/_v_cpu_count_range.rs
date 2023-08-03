@@ -48,6 +48,10 @@ impl VCpuCountRangeBuilder {
         self.min = input;
         self
     }
+    /// <p>The minimum number of vCPUs. If the value is <code>0</code>, there is no minimum limit.</p>
+    pub fn get_min(&self) -> &::std::option::Option<i32> {
+        &self.min
+    }
     /// <p>The maximum number of vCPUs. If this parameter is not specified, there is no maximum limit.</p>
     pub fn max(mut self, input: i32) -> Self {
         self.max = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl VCpuCountRangeBuilder {
     pub fn set_max(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max = input;
         self
+    }
+    /// <p>The maximum number of vCPUs. If this parameter is not specified, there is no maximum limit.</p>
+    pub fn get_max(&self) -> &::std::option::Option<i32> {
+        &self.max
     }
     /// Consumes the builder and constructs a [`VCpuCountRange`](crate::types::VCpuCountRange).
     pub fn build(self) -> crate::types::VCpuCountRange {

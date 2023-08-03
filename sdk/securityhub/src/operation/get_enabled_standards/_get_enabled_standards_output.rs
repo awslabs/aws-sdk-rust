@@ -69,6 +69,12 @@ impl GetEnabledStandardsOutputBuilder {
         self.standards_subscriptions = input;
         self
     }
+    /// <p>The list of <code>StandardsSubscriptions</code> objects that include information about the enabled standards.</p>
+    pub fn get_standards_subscriptions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StandardsSubscription>> {
+        &self.standards_subscriptions
+    }
     /// <p>The pagination token to use to request the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -78,6 +84,10 @@ impl GetEnabledStandardsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The pagination token to use to request the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

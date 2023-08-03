@@ -93,6 +93,10 @@ impl AgentDetailsBuilder {
         self.agent_version = input;
         self
     }
+    /// <p>Current agent version.</p>
+    pub fn get_agent_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_version
+    }
     /// <p>ID of EC2 instance agent is running on.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -102,6 +106,10 @@ impl AgentDetailsBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
+    }
+    /// <p>ID of EC2 instance agent is running on.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// <p>Type of EC2 instance agent is running on.</p>
     pub fn instance_type(
@@ -118,6 +126,10 @@ impl AgentDetailsBuilder {
     ) -> Self {
         self.instance_type = input;
         self
+    }
+    /// <p>Type of EC2 instance agent is running on.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_type
     }
     /// Appends an item to `reserved_cpu_cores`.
     ///
@@ -144,6 +156,13 @@ impl AgentDetailsBuilder {
         self.reserved_cpu_cores = input;
         self
     }
+    /// <note>
+    /// <p>This field should not be used. Use agentCpuCores instead.</p>
+    /// </note>
+    /// <p>List of CPU cores reserved for processes other than the agent running on the EC2 instance.</p>
+    pub fn get_reserved_cpu_cores(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        &self.reserved_cpu_cores
+    }
     /// Appends an item to `agent_cpu_cores`.
     ///
     /// To override the contents of this collection use [`set_agent_cpu_cores`](Self::set_agent_cpu_cores).
@@ -163,6 +182,10 @@ impl AgentDetailsBuilder {
         self.agent_cpu_cores = input;
         self
     }
+    /// <p>List of CPU cores reserved for the agent.</p>
+    pub fn get_agent_cpu_cores(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        &self.agent_cpu_cores
+    }
     /// Appends an item to `component_versions`.
     ///
     /// To override the contents of this collection use [`set_component_versions`](Self::set_component_versions).
@@ -181,6 +204,12 @@ impl AgentDetailsBuilder {
     ) -> Self {
         self.component_versions = input;
         self
+    }
+    /// <p>List of versions being used by agent components.</p>
+    pub fn get_component_versions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentVersion>> {
+        &self.component_versions
     }
     /// Consumes the builder and constructs a [`AgentDetails`](crate::types::AgentDetails).
     pub fn build(self) -> crate::types::AgentDetails {

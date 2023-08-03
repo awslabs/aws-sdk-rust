@@ -46,6 +46,10 @@ impl CreateAppOutputBuilder {
         self.app = input;
         self
     }
+    /// <p> Represents the different branches of a repository for building, deploying, and hosting an Amplify app. </p>
+    pub fn get_app(&self) -> &::std::option::Option<crate::types::App> {
+        &self.app
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

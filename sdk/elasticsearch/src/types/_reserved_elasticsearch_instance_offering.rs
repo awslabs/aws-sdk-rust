@@ -112,6 +112,12 @@ impl ReservedElasticsearchInstanceOfferingBuilder {
         self.reserved_elasticsearch_instance_offering_id = input;
         self
     }
+    /// <p>The Elasticsearch reserved instance offering identifier.</p>
+    pub fn get_reserved_elasticsearch_instance_offering_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.reserved_elasticsearch_instance_offering_id
+    }
     /// <p>The Elasticsearch instance type offered by the reserved instance offering.</p>
     pub fn elasticsearch_instance_type(
         mut self,
@@ -128,6 +134,12 @@ impl ReservedElasticsearchInstanceOfferingBuilder {
         self.elasticsearch_instance_type = input;
         self
     }
+    /// <p>The Elasticsearch instance type offered by the reserved instance offering.</p>
+    pub fn get_elasticsearch_instance_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::EsPartitionInstanceType> {
+        &self.elasticsearch_instance_type
+    }
     /// <p>The duration, in seconds, for which the offering will reserve the Elasticsearch instance.</p>
     pub fn duration(mut self, input: i32) -> Self {
         self.duration = ::std::option::Option::Some(input);
@@ -137,6 +149,10 @@ impl ReservedElasticsearchInstanceOfferingBuilder {
     pub fn set_duration(mut self, input: ::std::option::Option<i32>) -> Self {
         self.duration = input;
         self
+    }
+    /// <p>The duration, in seconds, for which the offering will reserve the Elasticsearch instance.</p>
+    pub fn get_duration(&self) -> &::std::option::Option<i32> {
+        &self.duration
     }
     /// <p>The upfront fixed charge you will pay to purchase the specific reserved Elasticsearch instance offering. </p>
     pub fn fixed_price(mut self, input: f64) -> Self {
@@ -148,6 +164,10 @@ impl ReservedElasticsearchInstanceOfferingBuilder {
         self.fixed_price = input;
         self
     }
+    /// <p>The upfront fixed charge you will pay to purchase the specific reserved Elasticsearch instance offering. </p>
+    pub fn get_fixed_price(&self) -> &::std::option::Option<f64> {
+        &self.fixed_price
+    }
     /// <p>The rate you are charged for each hour the domain that is using the offering is running.</p>
     pub fn usage_price(mut self, input: f64) -> Self {
         self.usage_price = ::std::option::Option::Some(input);
@@ -157,6 +177,10 @@ impl ReservedElasticsearchInstanceOfferingBuilder {
     pub fn set_usage_price(mut self, input: ::std::option::Option<f64>) -> Self {
         self.usage_price = input;
         self
+    }
+    /// <p>The rate you are charged for each hour the domain that is using the offering is running.</p>
+    pub fn get_usage_price(&self) -> &::std::option::Option<f64> {
+        &self.usage_price
     }
     /// <p>The currency code for the reserved Elasticsearch instance offering.</p>
     pub fn currency_code(
@@ -174,6 +198,10 @@ impl ReservedElasticsearchInstanceOfferingBuilder {
         self.currency_code = input;
         self
     }
+    /// <p>The currency code for the reserved Elasticsearch instance offering.</p>
+    pub fn get_currency_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.currency_code
+    }
     /// <p>Payment option for the reserved Elasticsearch instance offering</p>
     pub fn payment_option(
         mut self,
@@ -189,6 +217,12 @@ impl ReservedElasticsearchInstanceOfferingBuilder {
     ) -> Self {
         self.payment_option = input;
         self
+    }
+    /// <p>Payment option for the reserved Elasticsearch instance offering</p>
+    pub fn get_payment_option(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReservedElasticsearchInstancePaymentOption> {
+        &self.payment_option
     }
     /// Appends an item to `recurring_charges`.
     ///
@@ -208,6 +242,12 @@ impl ReservedElasticsearchInstanceOfferingBuilder {
     ) -> Self {
         self.recurring_charges = input;
         self
+    }
+    /// <p>The charge to your account regardless of whether you are creating any domains using the instance offering.</p>
+    pub fn get_recurring_charges(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>> {
+        &self.recurring_charges
     }
     /// Consumes the builder and constructs a [`ReservedElasticsearchInstanceOffering`](crate::types::ReservedElasticsearchInstanceOffering).
     pub fn build(self) -> crate::types::ReservedElasticsearchInstanceOffering {

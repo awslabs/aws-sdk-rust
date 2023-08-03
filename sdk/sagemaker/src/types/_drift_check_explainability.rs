@@ -51,6 +51,10 @@ impl DriftCheckExplainabilityBuilder {
         self.constraints = input;
         self
     }
+    /// <p>The drift check explainability constraints.</p>
+    pub fn get_constraints(&self) -> &::std::option::Option<crate::types::MetricsSource> {
+        &self.constraints
+    }
     /// <p>The explainability config file for the model.</p>
     pub fn config_file(mut self, input: crate::types::FileSource) -> Self {
         self.config_file = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl DriftCheckExplainabilityBuilder {
     ) -> Self {
         self.config_file = input;
         self
+    }
+    /// <p>The explainability config file for the model.</p>
+    pub fn get_config_file(&self) -> &::std::option::Option<crate::types::FileSource> {
+        &self.config_file
     }
     /// Consumes the builder and constructs a [`DriftCheckExplainability`](crate::types::DriftCheckExplainability).
     pub fn build(self) -> crate::types::DriftCheckExplainability {

@@ -59,6 +59,10 @@ impl ListCollaborationsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token value retrieved from a previous call to access the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `collaboration_list`.
     ///
     /// To override the contents of this collection use [`set_collaboration_list`](Self::set_collaboration_list).
@@ -77,6 +81,12 @@ impl ListCollaborationsOutputBuilder {
     ) -> Self {
         self.collaboration_list = input;
         self
+    }
+    /// <p>The list of collaborations.</p>
+    pub fn get_collaboration_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CollaborationSummary>> {
+        &self.collaboration_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

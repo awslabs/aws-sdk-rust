@@ -99,6 +99,10 @@ impl VoiceProfileDomainSummaryBuilder {
         self.voice_profile_domain_id = input;
         self
     }
+    /// <p>The ID of the voice profile domain summary.</p>
+    pub fn get_voice_profile_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_profile_domain_id
+    }
     /// <p>The ARN of a voice profile in a voice profile domain summary.</p>
     pub fn voice_profile_domain_arn(
         mut self,
@@ -115,6 +119,10 @@ impl VoiceProfileDomainSummaryBuilder {
         self.voice_profile_domain_arn = input;
         self
     }
+    /// <p>The ARN of a voice profile in a voice profile domain summary.</p>
+    pub fn get_voice_profile_domain_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_profile_domain_arn
+    }
     /// <p>The name of the voice profile domain summary.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -125,6 +133,10 @@ impl VoiceProfileDomainSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the voice profile domain summary.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Describes the voice profile domain summary.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -134,6 +146,10 @@ impl VoiceProfileDomainSummaryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>Describes the voice profile domain summary.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The time at which the voice profile domain summary was created.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -148,6 +164,10 @@ impl VoiceProfileDomainSummaryBuilder {
         self.created_timestamp = input;
         self
     }
+    /// <p>The time at which the voice profile domain summary was created.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
+    }
     /// <p>The time at which the voice profile domain summary was last updated.</p>
     pub fn updated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_timestamp = ::std::option::Option::Some(input);
@@ -160,6 +180,10 @@ impl VoiceProfileDomainSummaryBuilder {
     ) -> Self {
         self.updated_timestamp = input;
         self
+    }
+    /// <p>The time at which the voice profile domain summary was last updated.</p>
+    pub fn get_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_timestamp
     }
     /// Consumes the builder and constructs a [`VoiceProfileDomainSummary`](crate::types::VoiceProfileDomainSummary).
     pub fn build(self) -> crate::types::VoiceProfileDomainSummary {

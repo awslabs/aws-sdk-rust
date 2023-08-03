@@ -53,6 +53,10 @@ impl CreateEnvironmentEc2OutputBuilder {
         self.environment_id = input;
         self
     }
+    /// <p>The ID of the environment that was created.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

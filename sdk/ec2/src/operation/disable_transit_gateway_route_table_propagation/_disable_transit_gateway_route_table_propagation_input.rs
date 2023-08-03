@@ -70,6 +70,12 @@ impl DisableTransitGatewayRouteTablePropagationInputBuilder {
         self.transit_gateway_route_table_id = input;
         self
     }
+    /// <p>The ID of the propagation route table.</p>
+    pub fn get_transit_gateway_route_table_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_route_table_id
+    }
     /// <p>The ID of the attachment.</p>
     pub fn transit_gateway_attachment_id(
         mut self,
@@ -86,6 +92,12 @@ impl DisableTransitGatewayRouteTablePropagationInputBuilder {
         self.transit_gateway_attachment_id = input;
         self
     }
+    /// <p>The ID of the attachment.</p>
+    pub fn get_transit_gateway_attachment_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_attachment_id
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -95,6 +107,10 @@ impl DisableTransitGatewayRouteTablePropagationInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// <p>The ID of the route table announcement.</p>
     pub fn transit_gateway_route_table_announcement_id(
@@ -112,6 +128,12 @@ impl DisableTransitGatewayRouteTablePropagationInputBuilder {
     ) -> Self {
         self.transit_gateway_route_table_announcement_id = input;
         self
+    }
+    /// <p>The ID of the route table announcement.</p>
+    pub fn get_transit_gateway_route_table_announcement_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_route_table_announcement_id
     }
     /// Consumes the builder and constructs a [`DisableTransitGatewayRouteTablePropagationInput`](crate::operation::disable_transit_gateway_route_table_propagation::DisableTransitGatewayRouteTablePropagationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::disable_transit_gateway_route_table_propagation::DisableTransitGatewayRouteTablePropagationInput, ::aws_smithy_http::operation::error::BuildError>{

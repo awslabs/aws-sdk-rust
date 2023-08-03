@@ -47,6 +47,10 @@ impl GetDatabaseInputBuilder {
         self.catalog_id = input;
         self
     }
+    /// <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// <p>The name of the database to retrieve. For Hive compatibility, this should be all lowercase.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl GetDatabaseInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the database to retrieve. For Hive compatibility, this should be all lowercase.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`GetDatabaseInput`](crate::operation::get_database::GetDatabaseInput).
     pub fn build(

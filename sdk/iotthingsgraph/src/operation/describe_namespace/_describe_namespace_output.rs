@@ -85,6 +85,10 @@ impl DescribeNamespaceOutputBuilder {
         self.namespace_arn = input;
         self
     }
+    /// <p>The ARN of the namespace.</p>
+    pub fn get_namespace_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace_arn
+    }
     /// <p>The name of the namespace.</p>
     pub fn namespace_name(
         mut self,
@@ -100,6 +104,10 @@ impl DescribeNamespaceOutputBuilder {
     ) -> Self {
         self.namespace_name = input;
         self
+    }
+    /// <p>The name of the namespace.</p>
+    pub fn get_namespace_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace_name
     }
     /// <p>The name of the public namespace that the latest namespace version is tracking.</p>
     pub fn tracking_namespace_name(
@@ -117,6 +125,10 @@ impl DescribeNamespaceOutputBuilder {
         self.tracking_namespace_name = input;
         self
     }
+    /// <p>The name of the public namespace that the latest namespace version is tracking.</p>
+    pub fn get_tracking_namespace_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tracking_namespace_name
+    }
     /// <p>The version of the public namespace that the latest version is tracking.</p>
     pub fn tracking_namespace_version(mut self, input: i64) -> Self {
         self.tracking_namespace_version = ::std::option::Option::Some(input);
@@ -127,6 +139,10 @@ impl DescribeNamespaceOutputBuilder {
         self.tracking_namespace_version = input;
         self
     }
+    /// <p>The version of the public namespace that the latest version is tracking.</p>
+    pub fn get_tracking_namespace_version(&self) -> &::std::option::Option<i64> {
+        &self.tracking_namespace_version
+    }
     /// <p>The version of the user's namespace to describe.</p>
     pub fn namespace_version(mut self, input: i64) -> Self {
         self.namespace_version = ::std::option::Option::Some(input);
@@ -136,6 +152,10 @@ impl DescribeNamespaceOutputBuilder {
     pub fn set_namespace_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.namespace_version = input;
         self
+    }
+    /// <p>The version of the user's namespace to describe.</p>
+    pub fn get_namespace_version(&self) -> &::std::option::Option<i64> {
+        &self.namespace_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

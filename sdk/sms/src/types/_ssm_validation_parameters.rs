@@ -80,6 +80,10 @@ impl SsmValidationParametersBuilder {
         self.source = input;
         self
     }
+    /// <p>The location of the validation script.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::Source> {
+        &self.source
+    }
     /// <p>The ID of the instance. The instance must have the following tag: UserForSMSApplicationValidation=true.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl SsmValidationParametersBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
+    }
+    /// <p>The ID of the instance. The instance must have the following tag: UserForSMSApplicationValidation=true.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// <p>The type of validation script.</p>
     pub fn script_type(mut self, input: crate::types::ScriptType) -> Self {
@@ -103,6 +111,10 @@ impl SsmValidationParametersBuilder {
         self.script_type = input;
         self
     }
+    /// <p>The type of validation script.</p>
+    pub fn get_script_type(&self) -> &::std::option::Option<crate::types::ScriptType> {
+        &self.script_type
+    }
     /// <p>The command to run the validation script.</p>
     pub fn command(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.command = ::std::option::Option::Some(input.into());
@@ -113,6 +125,10 @@ impl SsmValidationParametersBuilder {
         self.command = input;
         self
     }
+    /// <p>The command to run the validation script.</p>
+    pub fn get_command(&self) -> &::std::option::Option<::std::string::String> {
+        &self.command
+    }
     /// <p>The timeout interval, in seconds.</p>
     pub fn execution_timeout_seconds(mut self, input: i32) -> Self {
         self.execution_timeout_seconds = ::std::option::Option::Some(input);
@@ -122,6 +138,10 @@ impl SsmValidationParametersBuilder {
     pub fn set_execution_timeout_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.execution_timeout_seconds = input;
         self
+    }
+    /// <p>The timeout interval, in seconds.</p>
+    pub fn get_execution_timeout_seconds(&self) -> &::std::option::Option<i32> {
+        &self.execution_timeout_seconds
     }
     /// <p>The name of the S3 bucket for output.</p>
     pub fn output_s3_bucket_name(
@@ -138,6 +158,10 @@ impl SsmValidationParametersBuilder {
     ) -> Self {
         self.output_s3_bucket_name = input;
         self
+    }
+    /// <p>The name of the S3 bucket for output.</p>
+    pub fn get_output_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_s3_bucket_name
     }
     /// Consumes the builder and constructs a [`SsmValidationParameters`](crate::types::SsmValidationParameters).
     pub fn build(self) -> crate::types::SsmValidationParameters {

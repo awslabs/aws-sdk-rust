@@ -57,6 +57,10 @@ impl GetResourceEventConfigurationInputBuilder {
         self.identifier = input;
         self
     }
+    /// <p>Resource identifier to opt in for event messaging.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
+    }
     /// <p>Identifier type of the particular resource identifier for event configuration.</p>
     pub fn identifier_type(mut self, input: crate::types::IdentifierType) -> Self {
         self.identifier_type = ::std::option::Option::Some(input);
@@ -70,6 +74,10 @@ impl GetResourceEventConfigurationInputBuilder {
         self.identifier_type = input;
         self
     }
+    /// <p>Identifier type of the particular resource identifier for event configuration.</p>
+    pub fn get_identifier_type(&self) -> &::std::option::Option<crate::types::IdentifierType> {
+        &self.identifier_type
+    }
     /// <p>Partner type of the resource if the identifier type is <code>PartnerAccountId</code>.</p>
     pub fn partner_type(mut self, input: crate::types::EventNotificationPartnerType) -> Self {
         self.partner_type = ::std::option::Option::Some(input);
@@ -82,6 +90,12 @@ impl GetResourceEventConfigurationInputBuilder {
     ) -> Self {
         self.partner_type = input;
         self
+    }
+    /// <p>Partner type of the resource if the identifier type is <code>PartnerAccountId</code>.</p>
+    pub fn get_partner_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::EventNotificationPartnerType> {
+        &self.partner_type
     }
     /// Consumes the builder and constructs a [`GetResourceEventConfigurationInput`](crate::operation::get_resource_event_configuration::GetResourceEventConfigurationInput).
     pub fn build(

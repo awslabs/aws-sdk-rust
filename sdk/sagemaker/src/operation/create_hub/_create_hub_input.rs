@@ -79,6 +79,10 @@ impl CreateHubInputBuilder {
         self.hub_name = input;
         self
     }
+    /// <p>The name of the hub to create.</p>
+    pub fn get_hub_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hub_name
+    }
     /// <p>A description of the hub.</p>
     pub fn hub_description(
         mut self,
@@ -95,6 +99,10 @@ impl CreateHubInputBuilder {
         self.hub_description = input;
         self
     }
+    /// <p>A description of the hub.</p>
+    pub fn get_hub_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hub_description
+    }
     /// <p>The display name of the hub.</p>
     pub fn hub_display_name(
         mut self,
@@ -110,6 +118,10 @@ impl CreateHubInputBuilder {
     ) -> Self {
         self.hub_display_name = input;
         self
+    }
+    /// <p>The display name of the hub.</p>
+    pub fn get_hub_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hub_display_name
     }
     /// Appends an item to `hub_search_keywords`.
     ///
@@ -133,6 +145,12 @@ impl CreateHubInputBuilder {
         self.hub_search_keywords = input;
         self
     }
+    /// <p>The searchable keywords for the hub.</p>
+    pub fn get_hub_search_keywords(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.hub_search_keywords
+    }
     /// <p>The Amazon S3 storage configuration for the hub.</p>
     pub fn s3_storage_config(mut self, input: crate::types::HubS3StorageConfig) -> Self {
         self.s3_storage_config = ::std::option::Option::Some(input);
@@ -145,6 +163,12 @@ impl CreateHubInputBuilder {
     ) -> Self {
         self.s3_storage_config = input;
         self
+    }
+    /// <p>The Amazon S3 storage configuration for the hub.</p>
+    pub fn get_s3_storage_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::HubS3StorageConfig> {
+        &self.s3_storage_config
     }
     /// Appends an item to `tags`.
     ///
@@ -164,6 +188,10 @@ impl CreateHubInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Any tags to associate with the hub.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateHubInput`](crate::operation::create_hub::CreateHubInput).
     pub fn build(

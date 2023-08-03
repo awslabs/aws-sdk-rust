@@ -36,6 +36,10 @@ impl ApplySchemaFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ApplySchema as a reference.
+    pub fn as_input(&self) -> &crate::operation::apply_schema::builders::ApplySchemaInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl ApplySchemaFluentBuilder {
         self.inner = self.inner.set_published_schema_arn(input);
         self
     }
+    /// <p>Published schema Amazon Resource Name (ARN) that needs to be copied. For more information, see <code>arns</code>.</p>
+    pub fn get_published_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_published_schema_arn()
+    }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> into which the schema is copied. For more information, see <code>arns</code>.</p>
     pub fn directory_arn(
         mut self,
@@ -139,5 +147,9 @@ impl ApplySchemaFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_directory_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> into which the schema is copied. For more information, see <code>arns</code>.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_arn()
     }
 }

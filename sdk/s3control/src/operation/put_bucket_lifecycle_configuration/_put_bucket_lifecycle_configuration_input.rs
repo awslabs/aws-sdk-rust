@@ -57,6 +57,10 @@ impl PutBucketLifecycleConfigurationInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The name of the bucket for which to set the configuration.</p>
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl PutBucketLifecycleConfigurationInputBuilder {
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket = input;
         self
+    }
+    /// <p>The name of the bucket for which to set the configuration.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
     }
     /// <p>Container for lifecycle rules. You can add as many as 1,000 rules.</p>
     pub fn lifecycle_configuration(mut self, input: crate::types::LifecycleConfiguration) -> Self {
@@ -79,6 +87,12 @@ impl PutBucketLifecycleConfigurationInputBuilder {
     ) -> Self {
         self.lifecycle_configuration = input;
         self
+    }
+    /// <p>Container for lifecycle rules. You can add as many as 1,000 rules.</p>
+    pub fn get_lifecycle_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::LifecycleConfiguration> {
+        &self.lifecycle_configuration
     }
     /// Consumes the builder and constructs a [`PutBucketLifecycleConfigurationInput`](crate::operation::put_bucket_lifecycle_configuration::PutBucketLifecycleConfigurationInput).
     pub fn build(

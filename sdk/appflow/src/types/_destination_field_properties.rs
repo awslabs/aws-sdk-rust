@@ -84,6 +84,10 @@ impl DestinationFieldPropertiesBuilder {
         self.is_creatable = input;
         self
     }
+    /// <p> Specifies if the destination field can be created by the current user. </p>
+    pub fn get_is_creatable(&self) -> &::std::option::Option<bool> {
+        &self.is_creatable
+    }
     /// <p> Specifies if the destination field can have a null value. </p>
     pub fn is_nullable(mut self, input: bool) -> Self {
         self.is_nullable = ::std::option::Option::Some(input);
@@ -93,6 +97,10 @@ impl DestinationFieldPropertiesBuilder {
     pub fn set_is_nullable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_nullable = input;
         self
+    }
+    /// <p> Specifies if the destination field can have a null value. </p>
+    pub fn get_is_nullable(&self) -> &::std::option::Option<bool> {
+        &self.is_nullable
     }
     /// <p> Specifies if the flow run can either insert new rows in the destination field if they do not already exist, or update them if they do. </p>
     pub fn is_upsertable(mut self, input: bool) -> Self {
@@ -104,6 +112,10 @@ impl DestinationFieldPropertiesBuilder {
         self.is_upsertable = input;
         self
     }
+    /// <p> Specifies if the flow run can either insert new rows in the destination field if they do not already exist, or update them if they do. </p>
+    pub fn get_is_upsertable(&self) -> &::std::option::Option<bool> {
+        &self.is_upsertable
+    }
     /// <p> Specifies whether the field can be updated during an <code>UPDATE</code> or <code>UPSERT</code> write operation. </p>
     pub fn is_updatable(mut self, input: bool) -> Self {
         self.is_updatable = ::std::option::Option::Some(input);
@@ -114,6 +126,10 @@ impl DestinationFieldPropertiesBuilder {
         self.is_updatable = input;
         self
     }
+    /// <p> Specifies whether the field can be updated during an <code>UPDATE</code> or <code>UPSERT</code> write operation. </p>
+    pub fn get_is_updatable(&self) -> &::std::option::Option<bool> {
+        &self.is_updatable
+    }
     /// <p>Specifies whether the field can use the default value during a Create operation.</p>
     pub fn is_defaulted_on_create(mut self, input: bool) -> Self {
         self.is_defaulted_on_create = ::std::option::Option::Some(input);
@@ -123,6 +139,10 @@ impl DestinationFieldPropertiesBuilder {
     pub fn set_is_defaulted_on_create(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_defaulted_on_create = input;
         self
+    }
+    /// <p>Specifies whether the field can use the default value during a Create operation.</p>
+    pub fn get_is_defaulted_on_create(&self) -> &::std::option::Option<bool> {
+        &self.is_defaulted_on_create
     }
     /// Appends an item to `supported_write_operations`.
     ///
@@ -142,6 +162,12 @@ impl DestinationFieldPropertiesBuilder {
     ) -> Self {
         self.supported_write_operations = input;
         self
+    }
+    /// <p> A list of supported write operations. For each write operation listed, this field can be used in <code>idFieldNames</code> when that write operation is present as a destination option. </p>
+    pub fn get_supported_write_operations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WriteOperationType>> {
+        &self.supported_write_operations
     }
     /// Consumes the builder and constructs a [`DestinationFieldProperties`](crate::types::DestinationFieldProperties).
     pub fn build(self) -> crate::types::DestinationFieldProperties {

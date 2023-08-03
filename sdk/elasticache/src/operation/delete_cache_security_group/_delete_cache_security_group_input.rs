@@ -56,6 +56,12 @@ impl DeleteCacheSecurityGroupInputBuilder {
         self.cache_security_group_name = input;
         self
     }
+    /// <p>The name of the cache security group to delete.</p> <note>
+    /// <p>You cannot delete the default security group.</p>
+    /// </note>
+    pub fn get_cache_security_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_security_group_name
+    }
     /// Consumes the builder and constructs a [`DeleteCacheSecurityGroupInput`](crate::operation::delete_cache_security_group::DeleteCacheSecurityGroupInput).
     pub fn build(
         self,

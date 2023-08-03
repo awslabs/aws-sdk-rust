@@ -41,6 +41,10 @@ impl CreateHsmFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateHsm as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_hsm::builders::CreateHsmInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -123,6 +127,10 @@ impl CreateHsmFluentBuilder {
         self.inner = self.inner.set_subnet_id(input);
         self
     }
+    /// <p>The identifier of the subnet in your VPC in which to place the HSM.</p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_subnet_id()
+    }
     /// <p>The SSH public key to install on the HSM.</p>
     pub fn ssh_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ssh_key(input.into());
@@ -132,6 +140,10 @@ impl CreateHsmFluentBuilder {
     pub fn set_ssh_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ssh_key(input);
         self
+    }
+    /// <p>The SSH public key to install on the HSM.</p>
+    pub fn get_ssh_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ssh_key()
     }
     /// <p>The IP address to assign to the HSM's ENI.</p>
     /// <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the subnet.</p>
@@ -145,6 +157,11 @@ impl CreateHsmFluentBuilder {
         self.inner = self.inner.set_eni_ip(input);
         self
     }
+    /// <p>The IP address to assign to the HSM's ENI.</p>
+    /// <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the subnet.</p>
+    pub fn get_eni_ip(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_eni_ip()
+    }
     /// <p>The ARN of an IAM role to enable the AWS CloudHSM service to allocate an ENI on your behalf.</p>
     pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.iam_role_arn(input.into());
@@ -155,6 +172,10 @@ impl CreateHsmFluentBuilder {
         self.inner = self.inner.set_iam_role_arn(input);
         self
     }
+    /// <p>The ARN of an IAM role to enable the AWS CloudHSM service to allocate an ENI on your behalf.</p>
+    pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_iam_role_arn()
+    }
     /// <p>The external ID from <code>IamRoleArn</code>, if present.</p>
     pub fn external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.external_id(input.into());
@@ -164,6 +185,10 @@ impl CreateHsmFluentBuilder {
     pub fn set_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_external_id(input);
         self
+    }
+    /// <p>The external ID from <code>IamRoleArn</code>, if present.</p>
+    pub fn get_external_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_external_id()
     }
     /// <p>Specifies the type of subscription for the HSM.</p>
     /// <ul>
@@ -186,6 +211,14 @@ impl CreateHsmFluentBuilder {
         self.inner = self.inner.set_subscription_type(input);
         self
     }
+    /// <p>Specifies the type of subscription for the HSM.</p>
+    /// <ul>
+    /// <li> <p> <b>PRODUCTION</b> - The HSM is being used in a production environment.</p> </li>
+    /// <li> <p> <b>TRIAL</b> - The HSM is being used in a product trial.</p> </li>
+    /// </ul>
+    pub fn get_subscription_type(&self) -> &::std::option::Option<crate::types::SubscriptionType> {
+        self.inner.get_subscription_type()
+    }
     /// <p>A user-defined token to ensure idempotence. Subsequent calls to this operation with the same token will be ignored.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -196,6 +229,10 @@ impl CreateHsmFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>A user-defined token to ensure idempotence. Subsequent calls to this operation with the same token will be ignored.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>
     pub fn syslog_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.syslog_ip(input.into());
@@ -205,5 +242,9 @@ impl CreateHsmFluentBuilder {
     pub fn set_syslog_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_syslog_ip(input);
         self
+    }
+    /// <p>The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>
+    pub fn get_syslog_ip(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_syslog_ip()
     }
 }

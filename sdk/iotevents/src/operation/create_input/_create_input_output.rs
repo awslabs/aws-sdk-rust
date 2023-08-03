@@ -49,6 +49,12 @@ impl CreateInputOutputBuilder {
         self.input_configuration = input;
         self
     }
+    /// <p>Information about the configuration of the input.</p>
+    pub fn get_input_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::InputConfiguration> {
+        &self.input_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

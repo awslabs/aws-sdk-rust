@@ -48,6 +48,10 @@ impl AcceleratorCountRequestBuilder {
         self.min = input;
         self
     }
+    /// <p>The minimum value.</p>
+    pub fn get_min(&self) -> &::std::option::Option<i32> {
+        &self.min
+    }
     /// <p>The maximum value.</p>
     pub fn max(mut self, input: i32) -> Self {
         self.max = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl AcceleratorCountRequestBuilder {
     pub fn set_max(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max = input;
         self
+    }
+    /// <p>The maximum value.</p>
+    pub fn get_max(&self) -> &::std::option::Option<i32> {
+        &self.max
     }
     /// Consumes the builder and constructs a [`AcceleratorCountRequest`](crate::types::AcceleratorCountRequest).
     pub fn build(self) -> crate::types::AcceleratorCountRequest {

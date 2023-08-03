@@ -36,6 +36,10 @@ impl DescribeOutboundCrossClusterSearchConnectionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeOutboundCrossClusterSearchConnections as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_outbound_cross_cluster_search_connections::builders::DescribeOutboundCrossClusterSearchConnectionsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -129,6 +133,18 @@ impl DescribeOutboundCrossClusterSearchConnectionsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p> A list of filters used to match properties for outbound cross-cluster search connection. Available <code><code>Filter</code></code> names for this operation are: </p>
+    /// <ul>
+    /// <li>cross-cluster-search-connection-id</li>
+    /// <li>destination-domain-info.domain-name</li>
+    /// <li>destination-domain-info.owner-id</li>
+    /// <li>destination-domain-info.region</li>
+    /// <li>source-domain-info.domain-name</li>
+    /// </ul>
+    /// <p></p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
+    }
     /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -139,6 +155,10 @@ impl DescribeOutboundCrossClusterSearchConnectionsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p> NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -148,5 +168,9 @@ impl DescribeOutboundCrossClusterSearchConnectionsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p> NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

@@ -65,6 +65,10 @@ impl CreateSignalCatalogInputBuilder {
         self.name = input;
         self
     }
+    /// <p> The name of the signal catalog to create. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A brief description of the signal catalog.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl CreateSignalCatalogInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A brief description of the signal catalog.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `nodes`.
     ///
@@ -94,6 +102,10 @@ impl CreateSignalCatalogInputBuilder {
         self.nodes = input;
         self
     }
+    /// <p> A list of information about nodes, which are a general abstraction of signals. For more information, see the API data type.</p>
+    pub fn get_nodes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Node>> {
+        &self.nodes
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -112,6 +124,10 @@ impl CreateSignalCatalogInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Metadata that can be used to manage the signal catalog.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateSignalCatalogInput`](crate::operation::create_signal_catalog::CreateSignalCatalogInput).
     pub fn build(

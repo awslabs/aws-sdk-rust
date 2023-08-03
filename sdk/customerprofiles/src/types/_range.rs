@@ -48,6 +48,10 @@ impl RangeBuilder {
         self.value = input;
         self
     }
+    /// <p>The amount of time of the specified unit.</p>
+    pub fn get_value(&self) -> &::std::option::Option<i32> {
+        &self.value
+    }
     /// <p>The unit of time.</p>
     pub fn unit(mut self, input: crate::types::Unit) -> Self {
         self.unit = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl RangeBuilder {
     pub fn set_unit(mut self, input: ::std::option::Option<crate::types::Unit>) -> Self {
         self.unit = input;
         self
+    }
+    /// <p>The unit of time.</p>
+    pub fn get_unit(&self) -> &::std::option::Option<crate::types::Unit> {
+        &self.unit
     }
     /// Consumes the builder and constructs a [`Range`](crate::types::Range).
     pub fn build(self) -> crate::types::Range {

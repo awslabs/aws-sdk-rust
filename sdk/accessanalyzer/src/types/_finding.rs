@@ -160,6 +160,10 @@ impl FindingBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the finding.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Adds a key-value pair to `principal`.
     ///
     /// To override the contents of this collection use [`set_principal`](Self::set_principal).
@@ -185,6 +189,14 @@ impl FindingBuilder {
         self.principal = input;
         self
     }
+    /// <p>The external principal that access to a resource within the zone of trust.</p>
+    pub fn get_principal(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.principal
+    }
     /// Appends an item to `action`.
     ///
     /// To override the contents of this collection use [`set_action`](Self::set_action).
@@ -204,6 +216,10 @@ impl FindingBuilder {
         self.action = input;
         self
     }
+    /// <p>The action in the analyzed policy statement that an external principal has permission to use.</p>
+    pub fn get_action(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.action
+    }
     /// <p>The resource that an external principal has access to.</p>
     pub fn resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource = ::std::option::Option::Some(input.into());
@@ -214,6 +230,10 @@ impl FindingBuilder {
         self.resource = input;
         self
     }
+    /// <p>The resource that an external principal has access to.</p>
+    pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource
+    }
     /// <p>Indicates whether the policy that generated the finding allows public access to the resource.</p>
     pub fn is_public(mut self, input: bool) -> Self {
         self.is_public = ::std::option::Option::Some(input);
@@ -223,6 +243,10 @@ impl FindingBuilder {
     pub fn set_is_public(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_public = input;
         self
+    }
+    /// <p>Indicates whether the policy that generated the finding allows public access to the resource.</p>
+    pub fn get_is_public(&self) -> &::std::option::Option<bool> {
+        &self.is_public
     }
     /// <p>The type of the resource identified in the finding.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
@@ -236,6 +260,10 @@ impl FindingBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>The type of the resource identified in the finding.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
     }
     /// Adds a key-value pair to `condition`.
     ///
@@ -262,6 +290,14 @@ impl FindingBuilder {
         self.condition = input;
         self
     }
+    /// <p>The condition in the analyzed policy statement that resulted in a finding.</p>
+    pub fn get_condition(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.condition
+    }
     /// <p>The time at which the finding was generated.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -274,6 +310,10 @@ impl FindingBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The time at which the finding was generated.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// <p>The time at which the resource was analyzed.</p>
     pub fn analyzed_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -288,6 +328,10 @@ impl FindingBuilder {
         self.analyzed_at = input;
         self
     }
+    /// <p>The time at which the resource was analyzed.</p>
+    pub fn get_analyzed_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.analyzed_at
+    }
     /// <p>The time at which the finding was updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
@@ -301,6 +345,10 @@ impl FindingBuilder {
         self.updated_at = input;
         self
     }
+    /// <p>The time at which the finding was updated.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
+    }
     /// <p>The current status of the finding.</p>
     pub fn status(mut self, input: crate::types::FindingStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -310,6 +358,10 @@ impl FindingBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::FindingStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the finding.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::FindingStatus> {
+        &self.status
     }
     /// <p>The Amazon Web Services account ID that owns the resource.</p>
     pub fn resource_owner_account(
@@ -327,6 +379,10 @@ impl FindingBuilder {
         self.resource_owner_account = input;
         self
     }
+    /// <p>The Amazon Web Services account ID that owns the resource.</p>
+    pub fn get_resource_owner_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_owner_account
+    }
     /// <p>An error.</p>
     pub fn error(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error = ::std::option::Option::Some(input.into());
@@ -336,6 +392,10 @@ impl FindingBuilder {
     pub fn set_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error = input;
         self
+    }
+    /// <p>An error.</p>
+    pub fn get_error(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error
     }
     /// Appends an item to `sources`.
     ///
@@ -355,6 +415,12 @@ impl FindingBuilder {
     ) -> Self {
         self.sources = input;
         self
+    }
+    /// <p>The sources of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
+    pub fn get_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FindingSource>> {
+        &self.sources
     }
     /// Consumes the builder and constructs a [`Finding`](crate::types::Finding).
     pub fn build(self) -> crate::types::Finding {

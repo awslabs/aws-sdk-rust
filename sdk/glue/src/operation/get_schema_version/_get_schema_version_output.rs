@@ -101,6 +101,10 @@ impl GetSchemaVersionOutputBuilder {
         self.schema_version_id = input;
         self
     }
+    /// <p>The <code>SchemaVersionId</code> of the schema version.</p>
+    pub fn get_schema_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_version_id
+    }
     /// <p>The schema definition for the schema ID.</p>
     pub fn schema_definition(
         mut self,
@@ -117,6 +121,10 @@ impl GetSchemaVersionOutputBuilder {
         self.schema_definition = input;
         self
     }
+    /// <p>The schema definition for the schema ID.</p>
+    pub fn get_schema_definition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_definition
+    }
     /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
     pub fn data_format(mut self, input: crate::types::DataFormat) -> Self {
         self.data_format = ::std::option::Option::Some(input);
@@ -130,6 +138,10 @@ impl GetSchemaVersionOutputBuilder {
         self.data_format = input;
         self
     }
+    /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
+    pub fn get_data_format(&self) -> &::std::option::Option<crate::types::DataFormat> {
+        &self.data_format
+    }
     /// <p>The Amazon Resource Name (ARN) of the schema.</p>
     pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_arn = ::std::option::Option::Some(input.into());
@@ -140,6 +152,10 @@ impl GetSchemaVersionOutputBuilder {
         self.schema_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the schema.</p>
+    pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_arn
+    }
     /// <p>The version number of the schema.</p>
     pub fn version_number(mut self, input: i64) -> Self {
         self.version_number = ::std::option::Option::Some(input);
@@ -149,6 +165,10 @@ impl GetSchemaVersionOutputBuilder {
     pub fn set_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.version_number = input;
         self
+    }
+    /// <p>The version number of the schema.</p>
+    pub fn get_version_number(&self) -> &::std::option::Option<i64> {
+        &self.version_number
     }
     /// <p>The status of the schema version. </p>
     pub fn status(mut self, input: crate::types::SchemaVersionStatus) -> Self {
@@ -163,6 +183,10 @@ impl GetSchemaVersionOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the schema version. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::SchemaVersionStatus> {
+        &self.status
+    }
     /// <p>The date and time the schema version was created.</p>
     pub fn created_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_time = ::std::option::Option::Some(input.into());
@@ -172,6 +196,10 @@ impl GetSchemaVersionOutputBuilder {
     pub fn set_created_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_time = input;
         self
+    }
+    /// <p>The date and time the schema version was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -49,6 +49,12 @@ impl AutoTuneDetailsBuilder {
         self.scheduled_auto_tune_details = input;
         self
     }
+    /// <p>Specifies details of the scheduled Auto-Tune action. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information. </p>
+    pub fn get_scheduled_auto_tune_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::ScheduledAutoTuneDetails> {
+        &self.scheduled_auto_tune_details
+    }
     /// Consumes the builder and constructs a [`AutoTuneDetails`](crate::types::AutoTuneDetails).
     pub fn build(self) -> crate::types::AutoTuneDetails {
         crate::types::AutoTuneDetails {

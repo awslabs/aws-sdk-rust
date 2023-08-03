@@ -159,6 +159,10 @@ impl CreateEnvironmentInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the runtime environment. Must be unique within the account.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The type of instance for the runtime environment.</p>
     pub fn instance_type(
         mut self,
@@ -175,6 +179,10 @@ impl CreateEnvironmentInputBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The type of instance for the runtime environment.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_type
+    }
     /// <p>The description of the runtime environment.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -184,6 +192,10 @@ impl CreateEnvironmentInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the runtime environment.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The engine type for the runtime environment.</p>
     pub fn engine_type(mut self, input: crate::types::EngineType) -> Self {
@@ -197,6 +209,10 @@ impl CreateEnvironmentInputBuilder {
     ) -> Self {
         self.engine_type = input;
         self
+    }
+    /// <p>The engine type for the runtime environment.</p>
+    pub fn get_engine_type(&self) -> &::std::option::Option<crate::types::EngineType> {
+        &self.engine_type
     }
     /// <p>The version of the engine type for the runtime environment.</p>
     pub fn engine_version(
@@ -213,6 +229,10 @@ impl CreateEnvironmentInputBuilder {
     ) -> Self {
         self.engine_version = input;
         self
+    }
+    /// <p>The version of the engine type for the runtime environment.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -232,6 +252,10 @@ impl CreateEnvironmentInputBuilder {
     ) -> Self {
         self.subnet_ids = input;
         self
+    }
+    /// <p>The list of subnets associated with the VPC for this runtime environment.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
     }
     /// Appends an item to `security_group_ids`.
     ///
@@ -255,6 +279,12 @@ impl CreateEnvironmentInputBuilder {
         self.security_group_ids = input;
         self
     }
+    /// <p>The list of security groups for the VPC associated with this runtime environment.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
+    }
     /// Appends an item to `storage_configurations`.
     ///
     /// To override the contents of this collection use [`set_storage_configurations`](Self::set_storage_configurations).
@@ -274,6 +304,12 @@ impl CreateEnvironmentInputBuilder {
         self.storage_configurations = input;
         self
     }
+    /// <p>Optional. The storage configurations for this runtime environment.</p>
+    pub fn get_storage_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StorageConfiguration>> {
+        &self.storage_configurations
+    }
     /// <p>Specifies whether the runtime environment is publicly accessible.</p>
     pub fn publicly_accessible(mut self, input: bool) -> Self {
         self.publicly_accessible = ::std::option::Option::Some(input);
@@ -283,6 +319,10 @@ impl CreateEnvironmentInputBuilder {
     pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
         self.publicly_accessible = input;
         self
+    }
+    /// <p>Specifies whether the runtime environment is publicly accessible.</p>
+    pub fn get_publicly_accessible(&self) -> &::std::option::Option<bool> {
+        &self.publicly_accessible
     }
     /// <p>The details of a high availability configuration for this runtime environment.</p>
     pub fn high_availability_config(mut self, input: crate::types::HighAvailabilityConfig) -> Self {
@@ -296,6 +336,12 @@ impl CreateEnvironmentInputBuilder {
     ) -> Self {
         self.high_availability_config = input;
         self
+    }
+    /// <p>The details of a high availability configuration for this runtime environment.</p>
+    pub fn get_high_availability_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::HighAvailabilityConfig> {
+        &self.high_availability_config
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -322,6 +368,14 @@ impl CreateEnvironmentInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags for the runtime environment.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
     pub fn preferred_maintenance_window(
         mut self,
@@ -338,6 +392,12 @@ impl CreateEnvironmentInputBuilder {
         self.preferred_maintenance_window = input;
         self
     }
+    /// <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
+    pub fn get_preferred_maintenance_window(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.preferred_maintenance_window
+    }
     /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request to create an environment. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires. </p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -348,6 +408,10 @@ impl CreateEnvironmentInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request to create an environment. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires. </p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>The identifier of a customer managed key.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -357,6 +421,10 @@ impl CreateEnvironmentInputBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p>The identifier of a customer managed key.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// Consumes the builder and constructs a [`CreateEnvironmentInput`](crate::operation::create_environment::CreateEnvironmentInput).
     pub fn build(

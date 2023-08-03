@@ -47,6 +47,13 @@ impl BatchEvaluateGeofencesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchEvaluateGeofences as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_evaluate_geofences::builders::BatchEvaluateGeofencesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -143,6 +150,10 @@ impl BatchEvaluateGeofencesFluentBuilder {
         self.inner = self.inner.set_collection_name(input);
         self
     }
+    /// <p>The geofence collection used in evaluating the position of devices against its geofences.</p>
+    pub fn get_collection_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_collection_name()
+    }
     /// Appends an item to `DevicePositionUpdates`.
     ///
     /// To override the contents of this collection use [`set_device_position_updates`](Self::set_device_position_updates).
@@ -159,5 +170,11 @@ impl BatchEvaluateGeofencesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_device_position_updates(input);
         self
+    }
+    /// <p>Contains device details for each device to be evaluated against the given geofence collection.</p>
+    pub fn get_device_position_updates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DevicePositionUpdate>> {
+        self.inner.get_device_position_updates()
     }
 }

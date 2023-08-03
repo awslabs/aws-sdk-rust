@@ -72,6 +72,12 @@ impl ListClassificationScopesOutputBuilder {
         self.classification_scopes = input;
         self
     }
+    /// <p>An array that specifies the unique identifier and name of the classification scope for the account.</p>
+    pub fn get_classification_scopes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClassificationScopeSummary>> {
+        &self.classification_scopes
+    }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -81,6 +87,10 @@ impl ListClassificationScopesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -47,6 +47,10 @@ impl GetMlTaskRunInputBuilder {
         self.transform_id = input;
         self
     }
+    /// <p>The unique identifier of the machine learning transform.</p>
+    pub fn get_transform_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transform_id
+    }
     /// <p>The unique identifier of the task run.</p>
     pub fn task_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_run_id = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl GetMlTaskRunInputBuilder {
     pub fn set_task_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_run_id = input;
         self
+    }
+    /// <p>The unique identifier of the task run.</p>
+    pub fn get_task_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_run_id
     }
     /// Consumes the builder and constructs a [`GetMlTaskRunInput`](crate::operation::get_ml_task_run::GetMlTaskRunInput).
     pub fn build(

@@ -98,6 +98,10 @@ impl DomainDescriptionTypeBuilder {
         self.user_pool_id = input;
         self
     }
+    /// <p>The user pool ID.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_pool_id
+    }
     /// <p>The Amazon Web Services ID for the user pool owner.</p>
     pub fn aws_account_id(
         mut self,
@@ -114,6 +118,10 @@ impl DomainDescriptionTypeBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The Amazon Web Services ID for the user pool owner.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The domain string. For custom domains, this is the fully-qualified domain name, such as <code>auth.example.com</code>. For Amazon Cognito prefix domains, this is the prefix alone, such as <code>auth</code>.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
@@ -124,6 +132,10 @@ impl DomainDescriptionTypeBuilder {
         self.domain = input;
         self
     }
+    /// <p>The domain string. For custom domains, this is the fully-qualified domain name, such as <code>auth.example.com</code>. For Amazon Cognito prefix domains, this is the prefix alone, such as <code>auth</code>.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
+    }
     /// <p>The Amazon S3 bucket where the static files for this domain are stored.</p>
     pub fn s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket = ::std::option::Option::Some(input.into());
@@ -133,6 +145,10 @@ impl DomainDescriptionTypeBuilder {
     pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket = input;
         self
+    }
+    /// <p>The Amazon S3 bucket where the static files for this domain are stored.</p>
+    pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon CloudFront distribution.</p>
     pub fn cloud_front_distribution(
@@ -150,6 +166,10 @@ impl DomainDescriptionTypeBuilder {
         self.cloud_front_distribution = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon CloudFront distribution.</p>
+    pub fn get_cloud_front_distribution(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cloud_front_distribution
+    }
     /// <p>The app version.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -159,6 +179,10 @@ impl DomainDescriptionTypeBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The app version.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// <p>The domain status.</p>
     pub fn status(mut self, input: crate::types::DomainStatusType) -> Self {
@@ -173,6 +197,10 @@ impl DomainDescriptionTypeBuilder {
         self.status = input;
         self
     }
+    /// <p>The domain status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DomainStatusType> {
+        &self.status
+    }
     /// <p>The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.</p>
     pub fn custom_domain_config(mut self, input: crate::types::CustomDomainConfigType) -> Self {
         self.custom_domain_config = ::std::option::Option::Some(input);
@@ -185,6 +213,12 @@ impl DomainDescriptionTypeBuilder {
     ) -> Self {
         self.custom_domain_config = input;
         self
+    }
+    /// <p>The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.</p>
+    pub fn get_custom_domain_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomDomainConfigType> {
+        &self.custom_domain_config
     }
     /// Consumes the builder and constructs a [`DomainDescriptionType`](crate::types::DomainDescriptionType).
     pub fn build(self) -> crate::types::DomainDescriptionType {

@@ -113,6 +113,10 @@ impl CountClosedWorkflowExecutionsInputBuilder {
         self.domain = input;
         self
     }
+    /// <p>The name of the domain containing the workflow executions to count.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
+    }
     /// <p>If specified, only workflow executions that meet the start time criteria of the filter are counted.</p> <note>
     /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
     /// </note>
@@ -129,6 +133,14 @@ impl CountClosedWorkflowExecutionsInputBuilder {
     ) -> Self {
         self.start_time_filter = input;
         self
+    }
+    /// <p>If specified, only workflow executions that meet the start time criteria of the filter are counted.</p> <note>
+    /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
+    /// </note>
+    pub fn get_start_time_filter(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExecutionTimeFilter> {
+        &self.start_time_filter
     }
     /// <p>If specified, only workflow executions that meet the close time criteria of the filter are counted.</p> <note>
     /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
@@ -147,6 +159,14 @@ impl CountClosedWorkflowExecutionsInputBuilder {
         self.close_time_filter = input;
         self
     }
+    /// <p>If specified, only workflow executions that meet the close time criteria of the filter are counted.</p> <note>
+    /// <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>
+    /// </note>
+    pub fn get_close_time_filter(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExecutionTimeFilter> {
+        &self.close_time_filter
+    }
     /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note>
     /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
@@ -163,6 +183,14 @@ impl CountClosedWorkflowExecutionsInputBuilder {
     ) -> Self {
         self.execution_filter = input;
         self
+    }
+    /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note>
+    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// </note>
+    pub fn get_execution_filter(
+        &self,
+    ) -> &::std::option::Option<crate::types::WorkflowExecutionFilter> {
+        &self.execution_filter
     }
     /// <p>If specified, indicates the type of the workflow executions to be counted.</p> <note>
     /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
@@ -181,6 +209,12 @@ impl CountClosedWorkflowExecutionsInputBuilder {
         self.type_filter = input;
         self
     }
+    /// <p>If specified, indicates the type of the workflow executions to be counted.</p> <note>
+    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// </note>
+    pub fn get_type_filter(&self) -> &::std::option::Option<crate::types::WorkflowTypeFilter> {
+        &self.type_filter
+    }
     /// <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note>
     /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
@@ -194,6 +228,12 @@ impl CountClosedWorkflowExecutionsInputBuilder {
     pub fn set_tag_filter(mut self, input: ::std::option::Option<crate::types::TagFilter>) -> Self {
         self.tag_filter = input;
         self
+    }
+    /// <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note>
+    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// </note>
+    pub fn get_tag_filter(&self) -> &::std::option::Option<crate::types::TagFilter> {
+        &self.tag_filter
     }
     /// <p>If specified, only workflow executions that match this close status are counted. This filter has an affect only if <code>executionStatus</code> is specified as <code>CLOSED</code>.</p> <note>
     /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
@@ -211,6 +251,14 @@ impl CountClosedWorkflowExecutionsInputBuilder {
     ) -> Self {
         self.close_status_filter = input;
         self
+    }
+    /// <p>If specified, only workflow executions that match this close status are counted. This filter has an affect only if <code>executionStatus</code> is specified as <code>CLOSED</code>.</p> <note>
+    /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
+    /// </note>
+    pub fn get_close_status_filter(
+        &self,
+    ) -> &::std::option::Option<crate::types::CloseStatusFilter> {
+        &self.close_status_filter
     }
     /// Consumes the builder and constructs a [`CountClosedWorkflowExecutionsInput`](crate::operation::count_closed_workflow_executions::CountClosedWorkflowExecutionsInput).
     pub fn build(

@@ -40,6 +40,10 @@ impl StopChannelInputBuilder {
         self.channel_id = input;
         self
     }
+    /// A request to stop a running channel
+    pub fn get_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_id
+    }
     /// Consumes the builder and constructs a [`StopChannelInput`](crate::operation::stop_channel::StopChannelInput).
     pub fn build(
         self,

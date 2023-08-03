@@ -217,6 +217,10 @@ impl CreateDevEndpointOutputBuilder {
         self.endpoint_name = input;
         self
     }
+    /// <p>The name assigned to the new <code>DevEndpoint</code>.</p>
+    pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_name
+    }
     /// <p>The current status of the new <code>DevEndpoint</code>.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -226,6 +230,10 @@ impl CreateDevEndpointOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the new <code>DevEndpoint</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Appends an item to `security_group_ids`.
     ///
@@ -249,6 +257,12 @@ impl CreateDevEndpointOutputBuilder {
         self.security_group_ids = input;
         self
     }
+    /// <p>The security groups assigned to the new <code>DevEndpoint</code>.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
+    }
     /// <p>The subnet ID assigned to the new <code>DevEndpoint</code>.</p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
@@ -259,6 +273,10 @@ impl CreateDevEndpointOutputBuilder {
         self.subnet_id = input;
         self
     }
+    /// <p>The subnet ID assigned to the new <code>DevEndpoint</code>.</p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the role assigned to the new <code>DevEndpoint</code>.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -268,6 +286,10 @@ impl CreateDevEndpointOutputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the role assigned to the new <code>DevEndpoint</code>.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The address of the YARN endpoint used by this <code>DevEndpoint</code>.</p>
     pub fn yarn_endpoint_address(
@@ -285,6 +307,10 @@ impl CreateDevEndpointOutputBuilder {
         self.yarn_endpoint_address = input;
         self
     }
+    /// <p>The address of the YARN endpoint used by this <code>DevEndpoint</code>.</p>
+    pub fn get_yarn_endpoint_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.yarn_endpoint_address
+    }
     /// <p>The Apache Zeppelin port for the remote Apache Spark interpreter.</p>
     pub fn zeppelin_remote_spark_interpreter_port(mut self, input: i32) -> Self {
         self.zeppelin_remote_spark_interpreter_port = ::std::option::Option::Some(input);
@@ -298,6 +324,10 @@ impl CreateDevEndpointOutputBuilder {
         self.zeppelin_remote_spark_interpreter_port = input;
         self
     }
+    /// <p>The Apache Zeppelin port for the remote Apache Spark interpreter.</p>
+    pub fn get_zeppelin_remote_spark_interpreter_port(&self) -> &::std::option::Option<i32> {
+        &self.zeppelin_remote_spark_interpreter_port
+    }
     /// <p>The number of Glue Data Processing Units (DPUs) allocated to this DevEndpoint.</p>
     pub fn number_of_nodes(mut self, input: i32) -> Self {
         self.number_of_nodes = ::std::option::Option::Some(input);
@@ -307,6 +337,10 @@ impl CreateDevEndpointOutputBuilder {
     pub fn set_number_of_nodes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_nodes = input;
         self
+    }
+    /// <p>The number of Glue Data Processing Units (DPUs) allocated to this DevEndpoint.</p>
+    pub fn get_number_of_nodes(&self) -> &::std::option::Option<i32> {
+        &self.number_of_nodes
     }
     /// <p>The type of predefined worker that is allocated to the development endpoint. May be a value of Standard, G.1X, or G.2X.</p>
     pub fn worker_type(mut self, input: crate::types::WorkerType) -> Self {
@@ -321,6 +355,10 @@ impl CreateDevEndpointOutputBuilder {
         self.worker_type = input;
         self
     }
+    /// <p>The type of predefined worker that is allocated to the development endpoint. May be a value of Standard, G.1X, or G.2X.</p>
+    pub fn get_worker_type(&self) -> &::std::option::Option<crate::types::WorkerType> {
+        &self.worker_type
+    }
     /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints. </p>
     /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
     pub fn glue_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -333,6 +371,11 @@ impl CreateDevEndpointOutputBuilder {
         self.glue_version = input;
         self
     }
+    /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints. </p>
+    /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
+    pub fn get_glue_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.glue_version
+    }
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated to the development endpoint.</p>
     pub fn number_of_workers(mut self, input: i32) -> Self {
         self.number_of_workers = ::std::option::Option::Some(input);
@@ -342,6 +385,10 @@ impl CreateDevEndpointOutputBuilder {
     pub fn set_number_of_workers(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_workers = input;
         self
+    }
+    /// <p>The number of workers of a defined <code>workerType</code> that are allocated to the development endpoint.</p>
+    pub fn get_number_of_workers(&self) -> &::std::option::Option<i32> {
+        &self.number_of_workers
     }
     /// <p>The Amazon Web Services Availability Zone where this <code>DevEndpoint</code> is located.</p>
     pub fn availability_zone(
@@ -359,6 +406,10 @@ impl CreateDevEndpointOutputBuilder {
         self.availability_zone = input;
         self
     }
+    /// <p>The Amazon Web Services Availability Zone where this <code>DevEndpoint</code> is located.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p>The ID of the virtual private cloud (VPC) used by this <code>DevEndpoint</code>.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -368,6 +419,10 @@ impl CreateDevEndpointOutputBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The ID of the virtual private cloud (VPC) used by this <code>DevEndpoint</code>.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// <p>The paths to one or more Python libraries in an S3 bucket that will be loaded in your <code>DevEndpoint</code>.</p>
     pub fn extra_python_libs_s3_path(
@@ -385,6 +440,10 @@ impl CreateDevEndpointOutputBuilder {
         self.extra_python_libs_s3_path = input;
         self
     }
+    /// <p>The paths to one or more Python libraries in an S3 bucket that will be loaded in your <code>DevEndpoint</code>.</p>
+    pub fn get_extra_python_libs_s3_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.extra_python_libs_s3_path
+    }
     /// <p>Path to one or more Java <code>.jar</code> files in an S3 bucket that will be loaded in your <code>DevEndpoint</code>.</p>
     pub fn extra_jars_s3_path(
         mut self,
@@ -400,6 +459,10 @@ impl CreateDevEndpointOutputBuilder {
     ) -> Self {
         self.extra_jars_s3_path = input;
         self
+    }
+    /// <p>Path to one or more Java <code>.jar</code> files in an S3 bucket that will be loaded in your <code>DevEndpoint</code>.</p>
+    pub fn get_extra_jars_s3_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.extra_jars_s3_path
     }
     /// <p>The reason for a current failure in this <code>DevEndpoint</code>.</p>
     pub fn failure_reason(
@@ -417,6 +480,10 @@ impl CreateDevEndpointOutputBuilder {
         self.failure_reason = input;
         self
     }
+    /// <p>The reason for a current failure in this <code>DevEndpoint</code>.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
+    }
     /// <p>The name of the <code>SecurityConfiguration</code> structure being used with this <code>DevEndpoint</code>.</p>
     pub fn security_configuration(
         mut self,
@@ -433,6 +500,10 @@ impl CreateDevEndpointOutputBuilder {
         self.security_configuration = input;
         self
     }
+    /// <p>The name of the <code>SecurityConfiguration</code> structure being used with this <code>DevEndpoint</code>.</p>
+    pub fn get_security_configuration(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_configuration
+    }
     /// <p>The point in time at which this <code>DevEndpoint</code> was created.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_timestamp = ::std::option::Option::Some(input);
@@ -445,6 +516,10 @@ impl CreateDevEndpointOutputBuilder {
     ) -> Self {
         self.created_timestamp = input;
         self
+    }
+    /// <p>The point in time at which this <code>DevEndpoint</code> was created.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
     }
     /// Adds a key-value pair to `arguments`.
     ///
@@ -480,6 +555,19 @@ impl CreateDevEndpointOutputBuilder {
     ) -> Self {
         self.arguments = input;
         self
+    }
+    /// <p>The map of arguments used to configure this <code>DevEndpoint</code>.</p>
+    /// <p>Valid arguments are:</p>
+    /// <ul>
+    /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>
+    /// </ul>
+    /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
+    pub fn get_arguments(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.arguments
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

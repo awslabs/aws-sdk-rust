@@ -36,6 +36,10 @@ impl GetDomainFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetDomain as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_domain::builders::GetDomainInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -117,5 +121,9 @@ impl GetDomainFluentBuilder {
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_name(input);
         self
+    }
+    /// <p>The domain name for which your want to return information about.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
     }
 }

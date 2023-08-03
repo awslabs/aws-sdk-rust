@@ -55,6 +55,10 @@ impl CapacityReservationTargetResponseBuilder {
         self.capacity_reservation_id = input;
         self
     }
+    /// <p>The ID of the targeted Capacity Reservation.</p>
+    pub fn get_capacity_reservation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.capacity_reservation_id
+    }
     /// <p>The ARN of the targeted Capacity Reservation group.</p>
     pub fn capacity_reservation_resource_group_arn(
         mut self,
@@ -70,6 +74,12 @@ impl CapacityReservationTargetResponseBuilder {
     ) -> Self {
         self.capacity_reservation_resource_group_arn = input;
         self
+    }
+    /// <p>The ARN of the targeted Capacity Reservation group.</p>
+    pub fn get_capacity_reservation_resource_group_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.capacity_reservation_resource_group_arn
     }
     /// Consumes the builder and constructs a [`CapacityReservationTargetResponse`](crate::types::CapacityReservationTargetResponse).
     pub fn build(self) -> crate::types::CapacityReservationTargetResponse {

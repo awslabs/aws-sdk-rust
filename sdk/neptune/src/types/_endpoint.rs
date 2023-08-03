@@ -57,6 +57,10 @@ impl EndpointBuilder {
         self.address = input;
         self
     }
+    /// <p>Specifies the DNS address of the DB instance.</p>
+    pub fn get_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.address
+    }
     /// <p>Specifies the port that the database engine is listening on.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl EndpointBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
+    }
+    /// <p>Specifies the port that the database engine is listening on.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
     pub fn hosted_zone_id(
@@ -82,6 +90,10 @@ impl EndpointBuilder {
     ) -> Self {
         self.hosted_zone_id = input;
         self
+    }
+    /// <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
+    pub fn get_hosted_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hosted_zone_id
     }
     /// Consumes the builder and constructs a [`Endpoint`](crate::types::Endpoint).
     pub fn build(self) -> crate::types::Endpoint {

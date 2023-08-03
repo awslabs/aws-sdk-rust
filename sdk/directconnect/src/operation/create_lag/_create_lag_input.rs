@@ -107,6 +107,10 @@ impl CreateLagInputBuilder {
         self.number_of_connections = input;
         self
     }
+    /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG. You can have a maximum of four connections when the port speed is 1G or 10G, or two when the port speed is 100G. </p>
+    pub fn get_number_of_connections(&self) -> &::std::option::Option<i32> {
+        &self.number_of_connections
+    }
     /// <p>The location for the LAG.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
@@ -116,6 +120,10 @@ impl CreateLagInputBuilder {
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
+    }
+    /// <p>The location for the LAG.</p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
     }
     /// <p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
     pub fn connections_bandwidth(
@@ -133,6 +141,10 @@ impl CreateLagInputBuilder {
         self.connections_bandwidth = input;
         self
     }
+    /// <p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
+    pub fn get_connections_bandwidth(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connections_bandwidth
+    }
     /// <p>The name of the LAG.</p>
     pub fn lag_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lag_name = ::std::option::Option::Some(input.into());
@@ -142,6 +154,10 @@ impl CreateLagInputBuilder {
     pub fn set_lag_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lag_name = input;
         self
+    }
+    /// <p>The name of the LAG.</p>
+    pub fn get_lag_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lag_name
     }
     /// <p>The ID of an existing dedicated connection to migrate to the LAG.</p>
     pub fn connection_id(
@@ -158,6 +174,10 @@ impl CreateLagInputBuilder {
     ) -> Self {
         self.connection_id = input;
         self
+    }
+    /// <p>The ID of an existing dedicated connection to migrate to the LAG.</p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_id
     }
     /// Appends an item to `tags`.
     ///
@@ -178,6 +198,10 @@ impl CreateLagInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags to associate with the LAG.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Appends an item to `child_connection_tags`.
     ///
     /// To override the contents of this collection use [`set_child_connection_tags`](Self::set_child_connection_tags).
@@ -197,6 +221,12 @@ impl CreateLagInputBuilder {
         self.child_connection_tags = input;
         self
     }
+    /// <p>The tags to associate with the automtically created LAGs.</p>
+    pub fn get_child_connection_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.child_connection_tags
+    }
     /// <p>The name of the service provider associated with the LAG.</p>
     pub fn provider_name(
         mut self,
@@ -213,6 +243,10 @@ impl CreateLagInputBuilder {
         self.provider_name = input;
         self
     }
+    /// <p>The name of the service provider associated with the LAG.</p>
+    pub fn get_provider_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provider_name
+    }
     /// <p>Indicates whether the connection will support MAC Security (MACsec).</p> <note>
     /// <p>All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
     /// </note>
@@ -226,6 +260,12 @@ impl CreateLagInputBuilder {
     pub fn set_request_mac_sec(mut self, input: ::std::option::Option<bool>) -> Self {
         self.request_mac_sec = input;
         self
+    }
+    /// <p>Indicates whether the connection will support MAC Security (MACsec).</p> <note>
+    /// <p>All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
+    /// </note>
+    pub fn get_request_mac_sec(&self) -> &::std::option::Option<bool> {
+        &self.request_mac_sec
     }
     /// Consumes the builder and constructs a [`CreateLagInput`](crate::operation::create_lag::CreateLagInput).
     pub fn build(

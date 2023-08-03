@@ -59,6 +59,10 @@ impl CreateSinkInputBuilder {
         self.name = input;
         self
     }
+    /// <p>A name for the sink.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -87,6 +91,16 @@ impl CreateSinkInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Assigns one or more tags (key-value pairs) to the link. </p>
+    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
+    /// <p>For more information about using tags to control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web Services resources using tags</a>.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateSinkInput`](crate::operation::create_sink::CreateSinkInput).
     pub fn build(

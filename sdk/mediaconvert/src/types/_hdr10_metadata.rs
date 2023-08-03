@@ -129,6 +129,10 @@ impl Hdr10MetadataBuilder {
         self
     }
     /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
+    pub fn get_blue_primary_x(&self) -> &::std::option::Option<i32> {
+        &self.blue_primary_x
+    }
+    /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
     pub fn blue_primary_y(mut self, input: i32) -> Self {
         self.blue_primary_y = ::std::option::Option::Some(input);
         self
@@ -137,6 +141,10 @@ impl Hdr10MetadataBuilder {
     pub fn set_blue_primary_y(mut self, input: ::std::option::Option<i32>) -> Self {
         self.blue_primary_y = input;
         self
+    }
+    /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
+    pub fn get_blue_primary_y(&self) -> &::std::option::Option<i32> {
+        &self.blue_primary_y
     }
     /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
     pub fn green_primary_x(mut self, input: i32) -> Self {
@@ -149,6 +157,10 @@ impl Hdr10MetadataBuilder {
         self
     }
     /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
+    pub fn get_green_primary_x(&self) -> &::std::option::Option<i32> {
+        &self.green_primary_x
+    }
+    /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
     pub fn green_primary_y(mut self, input: i32) -> Self {
         self.green_primary_y = ::std::option::Option::Some(input);
         self
@@ -157,6 +169,10 @@ impl Hdr10MetadataBuilder {
     pub fn set_green_primary_y(mut self, input: ::std::option::Option<i32>) -> Self {
         self.green_primary_y = input;
         self
+    }
+    /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
+    pub fn get_green_primary_y(&self) -> &::std::option::Option<i32> {
+        &self.green_primary_y
     }
     /// Maximum light level among all samples in the coded video sequence, in units of candelas per square meter. This setting doesn't have a default value; you must specify a value that is suitable for the content.
     pub fn max_content_light_level(mut self, input: i32) -> Self {
@@ -168,6 +184,10 @@ impl Hdr10MetadataBuilder {
         self.max_content_light_level = input;
         self
     }
+    /// Maximum light level among all samples in the coded video sequence, in units of candelas per square meter. This setting doesn't have a default value; you must specify a value that is suitable for the content.
+    pub fn get_max_content_light_level(&self) -> &::std::option::Option<i32> {
+        &self.max_content_light_level
+    }
     /// Maximum average light level of any frame in the coded video sequence, in units of candelas per square meter. This setting doesn't have a default value; you must specify a value that is suitable for the content.
     pub fn max_frame_average_light_level(mut self, input: i32) -> Self {
         self.max_frame_average_light_level = ::std::option::Option::Some(input);
@@ -177,6 +197,10 @@ impl Hdr10MetadataBuilder {
     pub fn set_max_frame_average_light_level(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_frame_average_light_level = input;
         self
+    }
+    /// Maximum average light level of any frame in the coded video sequence, in units of candelas per square meter. This setting doesn't have a default value; you must specify a value that is suitable for the content.
+    pub fn get_max_frame_average_light_level(&self) -> &::std::option::Option<i32> {
+        &self.max_frame_average_light_level
     }
     /// Nominal maximum mastering display luminance in units of of 0.0001 candelas per square meter.
     pub fn max_luminance(mut self, input: i32) -> Self {
@@ -188,6 +212,10 @@ impl Hdr10MetadataBuilder {
         self.max_luminance = input;
         self
     }
+    /// Nominal maximum mastering display luminance in units of of 0.0001 candelas per square meter.
+    pub fn get_max_luminance(&self) -> &::std::option::Option<i32> {
+        &self.max_luminance
+    }
     /// Nominal minimum mastering display luminance in units of of 0.0001 candelas per square meter
     pub fn min_luminance(mut self, input: i32) -> Self {
         self.min_luminance = ::std::option::Option::Some(input);
@@ -197,6 +225,10 @@ impl Hdr10MetadataBuilder {
     pub fn set_min_luminance(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_luminance = input;
         self
+    }
+    /// Nominal minimum mastering display luminance in units of of 0.0001 candelas per square meter
+    pub fn get_min_luminance(&self) -> &::std::option::Option<i32> {
+        &self.min_luminance
     }
     /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
     pub fn red_primary_x(mut self, input: i32) -> Self {
@@ -209,6 +241,10 @@ impl Hdr10MetadataBuilder {
         self
     }
     /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
+    pub fn get_red_primary_x(&self) -> &::std::option::Option<i32> {
+        &self.red_primary_x
+    }
+    /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
     pub fn red_primary_y(mut self, input: i32) -> Self {
         self.red_primary_y = ::std::option::Option::Some(input);
         self
@@ -217,6 +253,10 @@ impl Hdr10MetadataBuilder {
     pub fn set_red_primary_y(mut self, input: ::std::option::Option<i32>) -> Self {
         self.red_primary_y = input;
         self
+    }
+    /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
+    pub fn get_red_primary_y(&self) -> &::std::option::Option<i32> {
+        &self.red_primary_y
     }
     /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
     pub fn white_point_x(mut self, input: i32) -> Self {
@@ -229,6 +269,10 @@ impl Hdr10MetadataBuilder {
         self
     }
     /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
+    pub fn get_white_point_x(&self) -> &::std::option::Option<i32> {
+        &self.white_point_x
+    }
+    /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
     pub fn white_point_y(mut self, input: i32) -> Self {
         self.white_point_y = ::std::option::Option::Some(input);
         self
@@ -237,6 +281,10 @@ impl Hdr10MetadataBuilder {
     pub fn set_white_point_y(mut self, input: ::std::option::Option<i32>) -> Self {
         self.white_point_y = input;
         self
+    }
+    /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
+    pub fn get_white_point_y(&self) -> &::std::option::Option<i32> {
+        &self.white_point_y
     }
     /// Consumes the builder and constructs a [`Hdr10Metadata`](crate::types::Hdr10Metadata).
     pub fn build(self) -> crate::types::Hdr10Metadata {

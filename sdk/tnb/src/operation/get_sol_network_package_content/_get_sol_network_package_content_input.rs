@@ -47,6 +47,10 @@ impl GetSolNetworkPackageContentInputBuilder {
         self.nsd_info_id = input;
         self
     }
+    /// <p>ID of the network service descriptor in the network package.</p>
+    pub fn get_nsd_info_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nsd_info_id
+    }
     /// <p>The format of the package you want to download from the network package.</p>
     pub fn accept(mut self, input: crate::types::PackageContentType) -> Self {
         self.accept = ::std::option::Option::Some(input);
@@ -59,6 +63,10 @@ impl GetSolNetworkPackageContentInputBuilder {
     ) -> Self {
         self.accept = input;
         self
+    }
+    /// <p>The format of the package you want to download from the network package.</p>
+    pub fn get_accept(&self) -> &::std::option::Option<crate::types::PackageContentType> {
+        &self.accept
     }
     /// Consumes the builder and constructs a [`GetSolNetworkPackageContentInput`](crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentInput).
     pub fn build(

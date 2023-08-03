@@ -56,6 +56,10 @@ impl MaxAgeRuleBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Specify <code>true</code> to apply the rule, or <code>false</code> to disable it.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// <p>Specify the number of days to retain an application versions.</p>
     pub fn max_age_in_days(mut self, input: i32) -> Self {
         self.max_age_in_days = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl MaxAgeRuleBuilder {
         self.max_age_in_days = input;
         self
     }
+    /// <p>Specify the number of days to retain an application versions.</p>
+    pub fn get_max_age_in_days(&self) -> &::std::option::Option<i32> {
+        &self.max_age_in_days
+    }
     /// <p>Set to <code>true</code> to delete a version's source bundle from Amazon S3 when Elastic Beanstalk deletes the application version.</p>
     pub fn delete_source_from_s3(mut self, input: bool) -> Self {
         self.delete_source_from_s3 = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl MaxAgeRuleBuilder {
     pub fn set_delete_source_from_s3(mut self, input: ::std::option::Option<bool>) -> Self {
         self.delete_source_from_s3 = input;
         self
+    }
+    /// <p>Set to <code>true</code> to delete a version's source bundle from Amazon S3 when Elastic Beanstalk deletes the application version.</p>
+    pub fn get_delete_source_from_s3(&self) -> &::std::option::Option<bool> {
+        &self.delete_source_from_s3
     }
     /// Consumes the builder and constructs a [`MaxAgeRule`](crate::types::MaxAgeRule).
     pub fn build(self) -> crate::types::MaxAgeRule {

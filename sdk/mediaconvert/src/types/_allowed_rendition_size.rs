@@ -56,6 +56,10 @@ impl AllowedRenditionSizeBuilder {
         self.height = input;
         self
     }
+    /// Use Height to define the video resolution height, in pixels, for this rule.
+    pub fn get_height(&self) -> &::std::option::Option<i32> {
+        &self.height
+    }
     /// Set to ENABLED to force a rendition to be included.
     pub fn required(mut self, input: crate::types::RequiredFlag) -> Self {
         self.required = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl AllowedRenditionSizeBuilder {
         self.required = input;
         self
     }
+    /// Set to ENABLED to force a rendition to be included.
+    pub fn get_required(&self) -> &::std::option::Option<crate::types::RequiredFlag> {
+        &self.required
+    }
     /// Use Width to define the video resolution width, in pixels, for this rule.
     pub fn width(mut self, input: i32) -> Self {
         self.width = ::std::option::Option::Some(input);
@@ -78,6 +86,10 @@ impl AllowedRenditionSizeBuilder {
     pub fn set_width(mut self, input: ::std::option::Option<i32>) -> Self {
         self.width = input;
         self
+    }
+    /// Use Width to define the video resolution width, in pixels, for this rule.
+    pub fn get_width(&self) -> &::std::option::Option<i32> {
+        &self.width
     }
     /// Consumes the builder and constructs a [`AllowedRenditionSize`](crate::types::AllowedRenditionSize).
     pub fn build(self) -> crate::types::AllowedRenditionSize {

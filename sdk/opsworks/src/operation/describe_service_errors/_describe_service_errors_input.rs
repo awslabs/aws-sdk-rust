@@ -57,6 +57,10 @@ impl DescribeServiceErrorsInputBuilder {
         self.stack_id = input;
         self
     }
+    /// <p>The stack ID. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the errors associated with the specified stack.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_id
+    }
     /// <p>The instance ID. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the errors associated with the specified instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl DescribeServiceErrorsInputBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
+    }
+    /// <p>The instance ID. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the errors associated with the specified instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// Appends an item to `service_error_ids`.
     ///
@@ -88,6 +96,12 @@ impl DescribeServiceErrorsInputBuilder {
     ) -> Self {
         self.service_error_ids = input;
         self
+    }
+    /// <p>An array of service error IDs. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the specified errors. Otherwise, it returns a description of every error.</p>
+    pub fn get_service_error_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.service_error_ids
     }
     /// Consumes the builder and constructs a [`DescribeServiceErrorsInput`](crate::operation::describe_service_errors::DescribeServiceErrorsInput).
     pub fn build(

@@ -54,6 +54,10 @@ impl WaitActivityBuilder {
         self.next_activity = input;
         self
     }
+    /// <p>The unique identifier for the next activity to perform, after performing the wait activity.</p>
+    pub fn get_next_activity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_activity
+    }
     /// <p>The amount of time to wait or the date and time when the activity moves participants to the next activity in the journey.</p>
     pub fn wait_time(mut self, input: crate::types::WaitTime) -> Self {
         self.wait_time = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl WaitActivityBuilder {
     pub fn set_wait_time(mut self, input: ::std::option::Option<crate::types::WaitTime>) -> Self {
         self.wait_time = input;
         self
+    }
+    /// <p>The amount of time to wait or the date and time when the activity moves participants to the next activity in the journey.</p>
+    pub fn get_wait_time(&self) -> &::std::option::Option<crate::types::WaitTime> {
+        &self.wait_time
     }
     /// Consumes the builder and constructs a [`WaitActivity`](crate::types::WaitActivity).
     pub fn build(self) -> crate::types::WaitActivity {

@@ -76,6 +76,10 @@ impl GetCalculatedAttributeForProfileOutputBuilder {
         self.calculated_attribute_name = input;
         self
     }
+    /// <p>The unique name of the calculated attribute.</p>
+    pub fn get_calculated_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.calculated_attribute_name
+    }
     /// <p>The display name of the calculated attribute.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -85,6 +89,10 @@ impl GetCalculatedAttributeForProfileOutputBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
+    }
+    /// <p>The display name of the calculated attribute.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// <p>Indicates whether the calculated attribute’s value is based on partial data. If data is partial, it is set to true.</p>
     pub fn is_data_partial(
@@ -102,6 +110,10 @@ impl GetCalculatedAttributeForProfileOutputBuilder {
         self.is_data_partial = input;
         self
     }
+    /// <p>Indicates whether the calculated attribute’s value is based on partial data. If data is partial, it is set to true.</p>
+    pub fn get_is_data_partial(&self) -> &::std::option::Option<::std::string::String> {
+        &self.is_data_partial
+    }
     /// <p>The value of the calculated attribute.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -111,6 +123,10 @@ impl GetCalculatedAttributeForProfileOutputBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value of the calculated attribute.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

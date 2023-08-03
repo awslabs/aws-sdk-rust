@@ -64,6 +64,10 @@ impl ListInputsOutputBuilder {
         self.inputs = input;
         self
     }
+    /// Placeholder documentation for __listOfInput
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Input>> {
+        &self.inputs
+    }
     /// Placeholder documentation for __string
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl ListInputsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// Placeholder documentation for __string
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

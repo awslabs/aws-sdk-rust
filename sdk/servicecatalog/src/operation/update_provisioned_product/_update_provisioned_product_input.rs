@@ -167,6 +167,14 @@ impl UpdateProvisionedProductInputBuilder {
         self.accept_language = input;
         self
     }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accept_language
+    }
     /// <p>The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
     pub fn provisioned_product_name(
         mut self,
@@ -182,6 +190,10 @@ impl UpdateProvisionedProductInputBuilder {
     ) -> Self {
         self.provisioned_product_name = input;
         self
+    }
+    /// <p>The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
+    pub fn get_provisioned_product_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provisioned_product_name
     }
     /// <p>The identifier of the provisioned product. You must provide the name or ID, but not both.</p>
     pub fn provisioned_product_id(
@@ -199,6 +211,10 @@ impl UpdateProvisionedProductInputBuilder {
         self.provisioned_product_id = input;
         self
     }
+    /// <p>The identifier of the provisioned product. You must provide the name or ID, but not both.</p>
+    pub fn get_provisioned_product_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provisioned_product_id
+    }
     /// <p>The identifier of the product. You must provide the name or ID, but not both.</p>
     pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_id = ::std::option::Option::Some(input.into());
@@ -209,6 +225,10 @@ impl UpdateProvisionedProductInputBuilder {
         self.product_id = input;
         self
     }
+    /// <p>The identifier of the product. You must provide the name or ID, but not both.</p>
+    pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product_id
+    }
     /// <p>The name of the product. You must provide the name or ID, but not both.</p>
     pub fn product_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_name = ::std::option::Option::Some(input.into());
@@ -218,6 +238,10 @@ impl UpdateProvisionedProductInputBuilder {
     pub fn set_product_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product_name = input;
         self
+    }
+    /// <p>The name of the product. You must provide the name or ID, but not both.</p>
+    pub fn get_product_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product_name
     }
     /// <p>The identifier of the provisioning artifact.</p>
     pub fn provisioning_artifact_id(
@@ -235,6 +259,10 @@ impl UpdateProvisionedProductInputBuilder {
         self.provisioning_artifact_id = input;
         self
     }
+    /// <p>The identifier of the provisioning artifact.</p>
+    pub fn get_provisioning_artifact_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provisioning_artifact_id
+    }
     /// <p>The name of the provisioning artifact. You must provide the name or ID, but not both.</p>
     pub fn provisioning_artifact_name(
         mut self,
@@ -251,6 +279,10 @@ impl UpdateProvisionedProductInputBuilder {
         self.provisioning_artifact_name = input;
         self
     }
+    /// <p>The name of the provisioning artifact. You must provide the name or ID, but not both.</p>
+    pub fn get_provisioning_artifact_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provisioning_artifact_name
+    }
     /// <p>The path identifier. This value is optional if the product has a default path, and required if the product has more than one path. You must provide the name or ID, but not both.</p>
     pub fn path_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path_id = ::std::option::Option::Some(input.into());
@@ -261,6 +293,10 @@ impl UpdateProvisionedProductInputBuilder {
         self.path_id = input;
         self
     }
+    /// <p>The path identifier. This value is optional if the product has a default path, and required if the product has more than one path. You must provide the name or ID, but not both.</p>
+    pub fn get_path_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path_id
+    }
     /// <p>The name of the path. You must provide the name or ID, but not both.</p>
     pub fn path_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path_name = ::std::option::Option::Some(input.into());
@@ -270,6 +306,10 @@ impl UpdateProvisionedProductInputBuilder {
     pub fn set_path_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path_name = input;
         self
+    }
+    /// <p>The name of the path. You must provide the name or ID, but not both.</p>
+    pub fn get_path_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path_name
     }
     /// Appends an item to `provisioning_parameters`.
     ///
@@ -293,6 +333,12 @@ impl UpdateProvisionedProductInputBuilder {
         self.provisioning_parameters = input;
         self
     }
+    /// <p>The new parameters.</p>
+    pub fn get_provisioning_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateProvisioningParameter>> {
+        &self.provisioning_parameters
+    }
     /// <p>An object that contains information about the provisioning preferences for a stack set.</p>
     pub fn provisioning_preferences(
         mut self,
@@ -308,6 +354,12 @@ impl UpdateProvisionedProductInputBuilder {
     ) -> Self {
         self.provisioning_preferences = input;
         self
+    }
+    /// <p>An object that contains information about the provisioning preferences for a stack set.</p>
+    pub fn get_provisioning_preferences(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateProvisioningPreferences> {
+        &self.provisioning_preferences
     }
     /// Appends an item to `tags`.
     ///
@@ -328,6 +380,10 @@ impl UpdateProvisionedProductInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>One or more tags. Requires the product to have <code>RESOURCE_UPDATE</code> constraint with <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow tag updates.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The idempotency token that uniquely identifies the provisioning update request.</p>
     pub fn update_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.update_token = ::std::option::Option::Some(input.into());
@@ -337,6 +393,10 @@ impl UpdateProvisionedProductInputBuilder {
     pub fn set_update_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.update_token = input;
         self
+    }
+    /// <p>The idempotency token that uniquely identifies the provisioning update request.</p>
+    pub fn get_update_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.update_token
     }
     /// Consumes the builder and constructs a [`UpdateProvisionedProductInput`](crate::operation::update_provisioned_product::UpdateProvisionedProductInput).
     pub fn build(

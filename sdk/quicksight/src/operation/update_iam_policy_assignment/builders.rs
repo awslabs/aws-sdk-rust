@@ -36,6 +36,10 @@ impl UpdateIAMPolicyAssignmentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateIAMPolicyAssignment as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_iam_policy_assignment::builders::UpdateIamPolicyAssignmentInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl UpdateIAMPolicyAssignmentFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The ID of the Amazon Web Services account that contains the IAM policy assignment. </p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>The name of the assignment, also called a rule. The name must be unique within the Amazon Web Services account.</p>
     pub fn assignment_name(
         mut self,
@@ -148,6 +156,10 @@ impl UpdateIAMPolicyAssignmentFluentBuilder {
         self.inner = self.inner.set_assignment_name(input);
         self
     }
+    /// <p>The name of the assignment, also called a rule. The name must be unique within the Amazon Web Services account.</p>
+    pub fn get_assignment_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_assignment_name()
+    }
     /// <p>The namespace of the assignment.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace(input.into());
@@ -157,6 +169,10 @@ impl UpdateIAMPolicyAssignmentFluentBuilder {
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace(input);
         self
+    }
+    /// <p>The namespace of the assignment.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_namespace()
     }
     /// <p>The status of the assignment. Possible values are as follows:</p>
     /// <ul>
@@ -181,6 +197,15 @@ impl UpdateIAMPolicyAssignmentFluentBuilder {
         self.inner = self.inner.set_assignment_status(input);
         self
     }
+    /// <p>The status of the assignment. Possible values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li>
+    /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
+    /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
+    /// </ul>
+    pub fn get_assignment_status(&self) -> &::std::option::Option<crate::types::AssignmentStatus> {
+        self.inner.get_assignment_status()
+    }
     /// <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups specified in this assignment.</p>
     pub fn policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_arn(input.into());
@@ -190,6 +215,10 @@ impl UpdateIAMPolicyAssignmentFluentBuilder {
     pub fn set_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_arn(input);
         self
+    }
+    /// <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups specified in this assignment.</p>
+    pub fn get_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_arn()
     }
     /// Adds a key-value pair to `Identities`.
     ///
@@ -216,5 +245,13 @@ impl UpdateIAMPolicyAssignmentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_identities(input);
         self
+    }
+    /// <p>The Amazon QuickSight users, groups, or both that you want to assign the policy to.</p>
+    pub fn get_identities(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
+    > {
+        self.inner.get_identities()
     }
 }

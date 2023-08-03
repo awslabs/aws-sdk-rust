@@ -49,6 +49,12 @@ impl PatchFilterGroupBuilder {
         self.patch_filters = input;
         self
     }
+    /// <p>The set of patch filters that make up the group.</p>
+    pub fn get_patch_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchFilter>> {
+        &self.patch_filters
+    }
     /// Consumes the builder and constructs a [`PatchFilterGroup`](crate::types::PatchFilterGroup).
     pub fn build(self) -> crate::types::PatchFilterGroup {
         crate::types::PatchFilterGroup {

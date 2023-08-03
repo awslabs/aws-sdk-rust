@@ -38,6 +38,10 @@ impl DeleteUserPermissionsBoundaryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteUserPermissionsBoundary as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_user_permissions_boundary::builders::DeleteUserPermissionsBoundaryInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,5 +131,9 @@ impl DeleteUserPermissionsBoundaryFluentBuilder {
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_name(input);
         self
+    }
+    /// <p>The name (friendly name, not ARN) of the IAM user from which you want to remove the permissions boundary.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_name()
     }
 }

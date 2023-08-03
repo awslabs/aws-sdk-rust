@@ -36,6 +36,12 @@ impl PutTelemetryRecordsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutTelemetryRecords as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_telemetry_records::builders::PutTelemetryRecordsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +140,12 @@ impl PutTelemetryRecordsFluentBuilder {
         self
     }
     /// <p></p>
+    pub fn get_telemetry_records(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TelemetryRecord>> {
+        self.inner.get_telemetry_records()
+    }
+    /// <p></p>
     pub fn ec2_instance_id(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -150,6 +162,10 @@ impl PutTelemetryRecordsFluentBuilder {
         self
     }
     /// <p></p>
+    pub fn get_ec2_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ec2_instance_id()
+    }
+    /// <p></p>
     pub fn hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hostname(input.into());
         self
@@ -160,6 +176,10 @@ impl PutTelemetryRecordsFluentBuilder {
         self
     }
     /// <p></p>
+    pub fn get_hostname(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_hostname()
+    }
+    /// <p></p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
         self
@@ -168,5 +188,9 @@ impl PutTelemetryRecordsFluentBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
+    }
+    /// <p></p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
     }
 }

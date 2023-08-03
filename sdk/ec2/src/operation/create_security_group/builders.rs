@@ -41,6 +41,12 @@ impl CreateSecurityGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateSecurityGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_security_group::builders::CreateSecurityGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +141,12 @@ impl CreateSecurityGroupFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>A description for the security group.</p>
+    /// <p>Constraints: Up to 255 characters in length</p>
+    /// <p>Valid characters: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The name of the security group.</p>
     /// <p>Constraints: Up to 255 characters in length. Cannot start with <code>sg-</code>.</p>
     /// <p>Valid characters: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*</p>
@@ -149,6 +161,12 @@ impl CreateSecurityGroupFluentBuilder {
         self.inner = self.inner.set_group_name(input);
         self
     }
+    /// <p>The name of the security group.</p>
+    /// <p>Constraints: Up to 255 characters in length. Cannot start with <code>sg-</code>.</p>
+    /// <p>Valid characters: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group_name()
+    }
     /// <p>The ID of the VPC. Required for a nondefault VPC.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_id(input.into());
@@ -158,6 +176,10 @@ impl CreateSecurityGroupFluentBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpc_id(input);
         self
+    }
+    /// <p>The ID of the VPC. Required for a nondefault VPC.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpc_id()
     }
     /// Appends an item to `TagSpecifications`.
     ///
@@ -176,6 +198,12 @@ impl CreateSecurityGroupFluentBuilder {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
+    /// <p>The tags to assign to the security group.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        self.inner.get_tag_specifications()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -185,5 +213,9 @@ impl CreateSecurityGroupFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

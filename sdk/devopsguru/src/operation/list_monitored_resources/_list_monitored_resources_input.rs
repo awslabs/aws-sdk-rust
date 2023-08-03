@@ -60,6 +60,12 @@ impl ListMonitoredResourcesInputBuilder {
         self.filters = input;
         self
     }
+    /// <p> Filters to determine which monitored resources you want to retrieve. You can filter by resource type or resource permission status. </p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<crate::types::ListMonitoredResourcesFilters> {
+        &self.filters
+    }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -70,6 +76,10 @@ impl ListMonitoredResourcesInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -79,6 +89,10 @@ impl ListMonitoredResourcesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListMonitoredResourcesInput`](crate::operation::list_monitored_resources::ListMonitoredResourcesInput).
     pub fn build(

@@ -38,6 +38,12 @@ impl StopCompilationJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StopCompilationJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::stop_compilation_job::builders::StopCompilationJobInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,5 +139,9 @@ impl StopCompilationJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_compilation_job_name(input);
         self
+    }
+    /// <p>The name of the model compilation job to stop.</p>
+    pub fn get_compilation_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_compilation_job_name()
     }
 }

@@ -64,6 +64,10 @@ impl GetBucketAccelerateConfigurationOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The accelerate configuration of the bucket.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::BucketAccelerateStatus> {
+        &self.status
+    }
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub fn request_charged(mut self, input: crate::types::RequestCharged) -> Self {
         self.request_charged = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl GetBucketAccelerateConfigurationOutputBuilder {
     ) -> Self {
         self.request_charged = input;
         self
+    }
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
+    pub fn get_request_charged(&self) -> &::std::option::Option<crate::types::RequestCharged> {
+        &self.request_charged
     }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
         self._extended_request_id = Some(extended_request_id.into());

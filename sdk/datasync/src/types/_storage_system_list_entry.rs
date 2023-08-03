@@ -54,6 +54,10 @@ impl StorageSystemListEntryBuilder {
         self.storage_system_arn = input;
         self
     }
+    /// <p>The Amazon Resource Names (ARN) of an on-premises storage system that you added to DataSync Discovery.</p>
+    pub fn get_storage_system_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_system_arn
+    }
     /// <p>The name of an on-premises storage system that you added to DataSync Discovery.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl StorageSystemListEntryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of an on-premises storage system that you added to DataSync Discovery.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`StorageSystemListEntry`](crate::types::StorageSystemListEntry).
     pub fn build(self) -> crate::types::StorageSystemListEntry {

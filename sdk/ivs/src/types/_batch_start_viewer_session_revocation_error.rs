@@ -64,6 +64,10 @@ impl BatchStartViewerSessionRevocationErrorBuilder {
         self.channel_arn = input;
         self
     }
+    /// <p>Channel ARN.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
+    }
     /// <p>The ID of the viewer session to revoke.</p>
     pub fn viewer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.viewer_id = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl BatchStartViewerSessionRevocationErrorBuilder {
     pub fn set_viewer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.viewer_id = input;
         self
+    }
+    /// <p>The ID of the viewer session to revoke.</p>
+    pub fn get_viewer_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.viewer_id
     }
     /// <p>Error code.</p>
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,6 +92,10 @@ impl BatchStartViewerSessionRevocationErrorBuilder {
         self.code = input;
         self
     }
+    /// <p>Error code.</p>
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
+    }
     /// <p>Error message, determined by the application.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -93,6 +105,10 @@ impl BatchStartViewerSessionRevocationErrorBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>Error message, determined by the application.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`BatchStartViewerSessionRevocationError`](crate::types::BatchStartViewerSessionRevocationError).
     pub fn build(self) -> crate::types::BatchStartViewerSessionRevocationError {

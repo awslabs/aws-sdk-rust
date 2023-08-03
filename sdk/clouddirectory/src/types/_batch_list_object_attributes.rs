@@ -67,6 +67,10 @@ impl BatchListObjectAttributesBuilder {
         self.object_reference = input;
         self
     }
+    /// <p>Reference of the object whose attributes need to be listed.</p>
+    pub fn get_object_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
+        &self.object_reference
+    }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -77,6 +81,10 @@ impl BatchListObjectAttributesBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -86,6 +94,10 @@ impl BatchListObjectAttributesBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>Used to filter the list of object attributes that are associated with a certain facet.</p>
     pub fn facet_filter(mut self, input: crate::types::SchemaFacet) -> Self {
@@ -99,6 +111,10 @@ impl BatchListObjectAttributesBuilder {
     ) -> Self {
         self.facet_filter = input;
         self
+    }
+    /// <p>Used to filter the list of object attributes that are associated with a certain facet.</p>
+    pub fn get_facet_filter(&self) -> &::std::option::Option<crate::types::SchemaFacet> {
+        &self.facet_filter
     }
     /// Consumes the builder and constructs a [`BatchListObjectAttributes`](crate::types::BatchListObjectAttributes).
     pub fn build(self) -> crate::types::BatchListObjectAttributes {

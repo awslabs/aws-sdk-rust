@@ -182,6 +182,10 @@ impl ProvisionedProductDetailBuilder {
         self.name = input;
         self
     }
+    /// <p>The user-friendly name of the provisioned product.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The ARN of the provisioned product.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -191,6 +195,10 @@ impl ProvisionedProductDetailBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The ARN of the provisioned product.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -202,6 +210,10 @@ impl ProvisionedProductDetailBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// <p>The identifier of the provisioned product.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -211,6 +223,10 @@ impl ProvisionedProductDetailBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The identifier of the provisioned product.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The current status of the provisioned product.</p>
     /// <ul>
@@ -239,6 +255,17 @@ impl ProvisionedProductDetailBuilder {
         self.status = input;
         self
     }
+    /// <p>The current status of the provisioned product.</p>
+    /// <ul>
+    /// <li> <p> <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent operation succeeded and completed.</p> </li>
+    /// <li> <p> <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for an <code>AVAILABLE</code> status before performing operations.</p> </li>
+    /// <li> <p> <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested operation but is not exactly what was requested. For example, a request to update to a new version failed and the stack rolled back to the current version.</p> </li>
+    /// <li> <p> <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running. For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p> </li>
+    /// <li> <p> <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product, but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ProvisionedProductStatus> {
+        &self.status
+    }
     /// <p>The current status message of the provisioned product.</p>
     pub fn status_message(
         mut self,
@@ -255,6 +282,10 @@ impl ProvisionedProductDetailBuilder {
         self.status_message = input;
         self
     }
+    /// <p>The current status message of the provisioned product.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>The UTC time stamp of the creation time.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
@@ -267,6 +298,10 @@ impl ProvisionedProductDetailBuilder {
     ) -> Self {
         self.created_time = input;
         self
+    }
+    /// <p>The UTC time stamp of the creation time.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     pub fn idempotency_token(
@@ -284,6 +319,10 @@ impl ProvisionedProductDetailBuilder {
         self.idempotency_token = input;
         self
     }
+    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
+    pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.idempotency_token
+    }
     /// <p>The record identifier of the last request performed on this provisioned product.</p>
     pub fn last_record_id(
         mut self,
@@ -299,6 +338,10 @@ impl ProvisionedProductDetailBuilder {
     ) -> Self {
         self.last_record_id = input;
         self
+    }
+    /// <p>The record identifier of the last request performed on this provisioned product.</p>
+    pub fn get_last_record_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_record_id
     }
     /// <p>The record identifier of the last request performed on this provisioned product of the following types:</p>
     /// <ul>
@@ -328,6 +371,16 @@ impl ProvisionedProductDetailBuilder {
         self.last_provisioning_record_id = input;
         self
     }
+    /// <p>The record identifier of the last request performed on this provisioned product of the following types:</p>
+    /// <ul>
+    /// <li> <p> ProvisionedProduct </p> </li>
+    /// <li> <p> UpdateProvisionedProduct </p> </li>
+    /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
+    /// <li> <p> TerminateProvisionedProduct </p> </li>
+    /// </ul>
+    pub fn get_last_provisioning_record_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_provisioning_record_id
+    }
     /// <p>The record identifier of the last successful request performed on this provisioned product of the following types:</p>
     /// <ul>
     /// <li> <p> ProvisionedProduct </p> </li>
@@ -356,6 +409,18 @@ impl ProvisionedProductDetailBuilder {
         self.last_successful_provisioning_record_id = input;
         self
     }
+    /// <p>The record identifier of the last successful request performed on this provisioned product of the following types:</p>
+    /// <ul>
+    /// <li> <p> ProvisionedProduct </p> </li>
+    /// <li> <p> UpdateProvisionedProduct </p> </li>
+    /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
+    /// <li> <p> TerminateProvisionedProduct </p> </li>
+    /// </ul>
+    pub fn get_last_successful_provisioning_record_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.last_successful_provisioning_record_id
+    }
     /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
     pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_id = ::std::option::Option::Some(input.into());
@@ -365,6 +430,10 @@ impl ProvisionedProductDetailBuilder {
     pub fn set_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product_id = input;
         self
+    }
+    /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
+    pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product_id
     }
     /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
     pub fn provisioning_artifact_id(
@@ -382,6 +451,10 @@ impl ProvisionedProductDetailBuilder {
         self.provisioning_artifact_id = input;
         self
     }
+    /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
+    pub fn get_provisioning_artifact_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provisioning_artifact_id
+    }
     /// <p>The ARN of the launch role associated with the provisioned product.</p>
     pub fn launch_role_arn(
         mut self,
@@ -397,6 +470,10 @@ impl ProvisionedProductDetailBuilder {
     ) -> Self {
         self.launch_role_arn = input;
         self
+    }
+    /// <p>The ARN of the launch role associated with the provisioned product.</p>
+    pub fn get_launch_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch_role_arn
     }
     /// Consumes the builder and constructs a [`ProvisionedProductDetail`](crate::types::ProvisionedProductDetail).
     pub fn build(self) -> crate::types::ProvisionedProductDetail {

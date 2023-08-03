@@ -58,6 +58,12 @@ impl TerminateInstancesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the TerminateInstances as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::terminate_instances::builders::TerminateInstancesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -157,6 +163,13 @@ impl TerminateInstancesFluentBuilder {
         self.inner = self.inner.set_instance_ids(input);
         self
     }
+    /// <p>The IDs of the instances.</p>
+    /// <p>Constraints: Up to 1000 instance IDs. We recommend breaking up this request into smaller batches.</p>
+    pub fn get_instance_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_instance_ids()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -166,5 +179,9 @@ impl TerminateInstancesFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

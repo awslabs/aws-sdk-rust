@@ -49,6 +49,10 @@ impl DescribeAgentStatusInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The identifier for the agent status.</p>
     pub fn agent_status_id(
         mut self,
@@ -64,6 +68,10 @@ impl DescribeAgentStatusInputBuilder {
     ) -> Self {
         self.agent_status_id = input;
         self
+    }
+    /// <p>The identifier for the agent status.</p>
+    pub fn get_agent_status_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_status_id
     }
     /// Consumes the builder and constructs a [`DescribeAgentStatusInput`](crate::operation::describe_agent_status::DescribeAgentStatusInput).
     pub fn build(

@@ -47,6 +47,10 @@ impl DescribeModelInputBuilder {
         self.project_name = input;
         self
     }
+    /// <p>The project that contains the version of a model that you want to describe.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_name
+    }
     /// <p>The version of the model that you want to describe.</p>
     pub fn model_version(
         mut self,
@@ -62,6 +66,10 @@ impl DescribeModelInputBuilder {
     ) -> Self {
         self.model_version = input;
         self
+    }
+    /// <p>The version of the model that you want to describe.</p>
+    pub fn get_model_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_version
     }
     /// Consumes the builder and constructs a [`DescribeModelInput`](crate::operation::describe_model::DescribeModelInput).
     pub fn build(

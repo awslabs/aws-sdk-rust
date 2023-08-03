@@ -46,6 +46,10 @@ impl GatewayRouteVirtualServiceBuilder {
         self.virtual_service_name = input;
         self
     }
+    /// <p>The name of the virtual service that traffic is routed to.</p>
+    pub fn get_virtual_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_service_name
+    }
     /// Consumes the builder and constructs a [`GatewayRouteVirtualService`](crate::types::GatewayRouteVirtualService).
     pub fn build(self) -> crate::types::GatewayRouteVirtualService {
         crate::types::GatewayRouteVirtualService {

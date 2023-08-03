@@ -97,6 +97,10 @@ impl UpgradeDomainOutputBuilder {
         self.upgrade_id = input;
         self
     }
+    /// <p>The unique identifier of the domain upgrade.</p>
+    pub fn get_upgrade_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.upgrade_id
+    }
     /// <p>The name of the domain that was upgraded.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
@@ -106,6 +110,10 @@ impl UpgradeDomainOutputBuilder {
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
+    }
+    /// <p>The name of the domain that was upgraded.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
     }
     /// <p>OpenSearch or Elasticsearch version that the domain was upgraded to.</p>
     pub fn target_version(
@@ -123,6 +131,10 @@ impl UpgradeDomainOutputBuilder {
         self.target_version = input;
         self
     }
+    /// <p>OpenSearch or Elasticsearch version that the domain was upgraded to.</p>
+    pub fn get_target_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_version
+    }
     /// <p>When true, indicates that an upgrade eligibility check was performed.</p>
     pub fn perform_check_only(mut self, input: bool) -> Self {
         self.perform_check_only = ::std::option::Option::Some(input);
@@ -132,6 +144,10 @@ impl UpgradeDomainOutputBuilder {
     pub fn set_perform_check_only(mut self, input: ::std::option::Option<bool>) -> Self {
         self.perform_check_only = input;
         self
+    }
+    /// <p>When true, indicates that an upgrade eligibility check was performed.</p>
+    pub fn get_perform_check_only(&self) -> &::std::option::Option<bool> {
+        &self.perform_check_only
     }
     /// Adds a key-value pair to `advanced_options`.
     ///
@@ -158,6 +174,14 @@ impl UpgradeDomainOutputBuilder {
         self.advanced_options = input;
         self
     }
+    /// <p>The advanced options configuration for the domain.</p>
+    pub fn get_advanced_options(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.advanced_options
+    }
     /// <p>Container for information about a configuration change happening on a domain.</p>
     pub fn change_progress_details(mut self, input: crate::types::ChangeProgressDetails) -> Self {
         self.change_progress_details = ::std::option::Option::Some(input);
@@ -170,6 +194,12 @@ impl UpgradeDomainOutputBuilder {
     ) -> Self {
         self.change_progress_details = input;
         self
+    }
+    /// <p>Container for information about a configuration change happening on a domain.</p>
+    pub fn get_change_progress_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::ChangeProgressDetails> {
+        &self.change_progress_details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -73,6 +73,10 @@ impl CriterionBuilder {
         self.eq = input;
         self
     }
+    /// <p>An "equals" operator to match for the filter used to create the rule.</p>
+    pub fn get_eq(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.eq
+    }
     /// Appends an item to `neq`.
     ///
     /// To override the contents of this collection use [`set_neq`](Self::set_neq).
@@ -91,6 +95,10 @@ impl CriterionBuilder {
     ) -> Self {
         self.neq = input;
         self
+    }
+    /// <p>A "not equals" operator to match for the filter used to create the rule.</p>
+    pub fn get_neq(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.neq
     }
     /// Appends an item to `contains`.
     ///
@@ -111,6 +119,10 @@ impl CriterionBuilder {
         self.contains = input;
         self
     }
+    /// <p>A "contains" operator to match for the filter used to create the rule.</p>
+    pub fn get_contains(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.contains
+    }
     /// <p>An "exists" operator to match for the filter used to create the rule. </p>
     pub fn exists(mut self, input: bool) -> Self {
         self.exists = ::std::option::Option::Some(input);
@@ -120,6 +132,10 @@ impl CriterionBuilder {
     pub fn set_exists(mut self, input: ::std::option::Option<bool>) -> Self {
         self.exists = input;
         self
+    }
+    /// <p>An "exists" operator to match for the filter used to create the rule. </p>
+    pub fn get_exists(&self) -> &::std::option::Option<bool> {
+        &self.exists
     }
     /// Consumes the builder and constructs a [`Criterion`](crate::types::Criterion).
     pub fn build(self) -> crate::types::Criterion {

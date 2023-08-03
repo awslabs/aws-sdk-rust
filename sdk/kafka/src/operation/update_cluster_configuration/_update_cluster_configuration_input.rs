@@ -55,6 +55,10 @@ impl UpdateClusterConfigurationInputBuilder {
         self.cluster_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_arn
+    }
     /// <p>Represents the configuration that you want MSK to use for the brokers in a cluster.</p>
     pub fn configuration_info(mut self, input: crate::types::ConfigurationInfo) -> Self {
         self.configuration_info = ::std::option::Option::Some(input);
@@ -67,6 +71,12 @@ impl UpdateClusterConfigurationInputBuilder {
     ) -> Self {
         self.configuration_info = input;
         self
+    }
+    /// <p>Represents the configuration that you want MSK to use for the brokers in a cluster.</p>
+    pub fn get_configuration_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConfigurationInfo> {
+        &self.configuration_info
     }
     /// <p>The version of the cluster that needs to be updated.</p>
     pub fn current_version(
@@ -83,6 +93,10 @@ impl UpdateClusterConfigurationInputBuilder {
     ) -> Self {
         self.current_version = input;
         self
+    }
+    /// <p>The version of the cluster that needs to be updated.</p>
+    pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.current_version
     }
     /// Consumes the builder and constructs a [`UpdateClusterConfigurationInput`](crate::operation::update_cluster_configuration::UpdateClusterConfigurationInput).
     pub fn build(

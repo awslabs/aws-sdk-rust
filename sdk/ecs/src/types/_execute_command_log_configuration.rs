@@ -90,6 +90,12 @@ impl ExecuteCommandLogConfigurationBuilder {
         self.cloud_watch_log_group_name = input;
         self
     }
+    /// <p>The name of the CloudWatch log group to send logs to.</p> <note>
+    /// <p>The CloudWatch log group must already be created.</p>
+    /// </note>
+    pub fn get_cloud_watch_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cloud_watch_log_group_name
+    }
     /// <p>Determines whether to use encryption on the CloudWatch logs. If not specified, encryption will be off.</p>
     pub fn cloud_watch_encryption_enabled(mut self, input: bool) -> Self {
         self.cloud_watch_encryption_enabled = ::std::option::Option::Some(input);
@@ -102,6 +108,10 @@ impl ExecuteCommandLogConfigurationBuilder {
     ) -> Self {
         self.cloud_watch_encryption_enabled = input;
         self
+    }
+    /// <p>Determines whether to use encryption on the CloudWatch logs. If not specified, encryption will be off.</p>
+    pub fn get_cloud_watch_encryption_enabled(&self) -> &::std::option::Option<bool> {
+        &self.cloud_watch_encryption_enabled
     }
     /// <p>The name of the S3 bucket to send logs to.</p> <note>
     /// <p>The S3 bucket must already be created.</p>
@@ -123,6 +133,12 @@ impl ExecuteCommandLogConfigurationBuilder {
         self.s3_bucket_name = input;
         self
     }
+    /// <p>The name of the S3 bucket to send logs to.</p> <note>
+    /// <p>The S3 bucket must already be created.</p>
+    /// </note>
+    pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket_name
+    }
     /// <p>Determines whether to use encryption on the S3 logs. If not specified, encryption is not used.</p>
     pub fn s3_encryption_enabled(mut self, input: bool) -> Self {
         self.s3_encryption_enabled = ::std::option::Option::Some(input);
@@ -132,6 +148,10 @@ impl ExecuteCommandLogConfigurationBuilder {
     pub fn set_s3_encryption_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.s3_encryption_enabled = input;
         self
+    }
+    /// <p>Determines whether to use encryption on the S3 logs. If not specified, encryption is not used.</p>
+    pub fn get_s3_encryption_enabled(&self) -> &::std::option::Option<bool> {
+        &self.s3_encryption_enabled
     }
     /// <p>An optional folder in the S3 bucket to place logs in.</p>
     pub fn s3_key_prefix(
@@ -148,6 +168,10 @@ impl ExecuteCommandLogConfigurationBuilder {
     ) -> Self {
         self.s3_key_prefix = input;
         self
+    }
+    /// <p>An optional folder in the S3 bucket to place logs in.</p>
+    pub fn get_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_key_prefix
     }
     /// Consumes the builder and constructs a [`ExecuteCommandLogConfiguration`](crate::types::ExecuteCommandLogConfiguration).
     pub fn build(self) -> crate::types::ExecuteCommandLogConfiguration {

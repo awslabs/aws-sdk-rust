@@ -46,6 +46,10 @@ impl GetBatchPredictionInputBuilder {
         self.batch_prediction_id = input;
         self
     }
+    /// <p>An ID assigned to the <code>BatchPrediction</code> at creation.</p>
+    pub fn get_batch_prediction_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.batch_prediction_id
+    }
     /// Consumes the builder and constructs a [`GetBatchPredictionInput`](crate::operation::get_batch_prediction::GetBatchPredictionInput).
     pub fn build(
         self,

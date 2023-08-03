@@ -71,6 +71,11 @@ impl PutEventSelectorsOutputBuilder {
         self.trail_arn = input;
         self
     }
+    /// <p>Specifies the ARN of the trail that was updated with event selectors. The following is the format of a trail ARN.</p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    pub fn get_trail_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trail_arn
+    }
     /// Appends an item to `event_selectors`.
     ///
     /// To override the contents of this collection use [`set_event_selectors`](Self::set_event_selectors).
@@ -90,6 +95,12 @@ impl PutEventSelectorsOutputBuilder {
         self.event_selectors = input;
         self
     }
+    /// <p>Specifies the event selectors configured for your trail.</p>
+    pub fn get_event_selectors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventSelector>> {
+        &self.event_selectors
+    }
     /// Appends an item to `advanced_event_selectors`.
     ///
     /// To override the contents of this collection use [`set_advanced_event_selectors`](Self::set_advanced_event_selectors).
@@ -108,6 +119,12 @@ impl PutEventSelectorsOutputBuilder {
     ) -> Self {
         self.advanced_event_selectors = input;
         self
+    }
+    /// <p>Specifies the advanced event selectors configured for your trail.</p>
+    pub fn get_advanced_event_selectors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>> {
+        &self.advanced_event_selectors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

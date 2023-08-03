@@ -48,6 +48,10 @@ impl VirtualNodeHttpConnectionPoolBuilder {
         self.max_connections = input;
         self
     }
+    /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster.</p>
+    pub fn get_max_connections(&self) -> &::std::option::Option<i32> {
+        &self.max_connections
+    }
     /// <p>Number of overflowing requests after <code>max_connections</code> Envoy will queue to upstream cluster.</p>
     pub fn max_pending_requests(mut self, input: i32) -> Self {
         self.max_pending_requests = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl VirtualNodeHttpConnectionPoolBuilder {
     pub fn set_max_pending_requests(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_pending_requests = input;
         self
+    }
+    /// <p>Number of overflowing requests after <code>max_connections</code> Envoy will queue to upstream cluster.</p>
+    pub fn get_max_pending_requests(&self) -> &::std::option::Option<i32> {
+        &self.max_pending_requests
     }
     /// Consumes the builder and constructs a [`VirtualNodeHttpConnectionPool`](crate::types::VirtualNodeHttpConnectionPool).
     pub fn build(self) -> crate::types::VirtualNodeHttpConnectionPool {

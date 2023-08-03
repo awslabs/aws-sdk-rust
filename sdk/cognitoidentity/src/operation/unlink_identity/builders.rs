@@ -37,6 +37,12 @@ impl UnlinkIdentityFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UnlinkIdentity as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::unlink_identity::builders::UnlinkIdentityInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +125,10 @@ impl UnlinkIdentityFluentBuilder {
         self.inner = self.inner.set_identity_id(input);
         self
     }
+    /// <p>A unique identifier in the format REGION:GUID.</p>
+    pub fn get_identity_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_id()
+    }
     /// Adds a key-value pair to `Logins`.
     ///
     /// To override the contents of this collection use [`set_logins`](Self::set_logins).
@@ -142,6 +152,14 @@ impl UnlinkIdentityFluentBuilder {
         self.inner = self.inner.set_logins(input);
         self
     }
+    /// <p>A set of optional name-value pairs that map provider names to provider tokens.</p>
+    pub fn get_logins(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_logins()
+    }
     /// Appends an item to `LoginsToRemove`.
     ///
     /// To override the contents of this collection use [`set_logins_to_remove`](Self::set_logins_to_remove).
@@ -161,5 +179,11 @@ impl UnlinkIdentityFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_logins_to_remove(input);
         self
+    }
+    /// <p>Provider names to unlink from this identity.</p>
+    pub fn get_logins_to_remove(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_logins_to_remove()
     }
 }

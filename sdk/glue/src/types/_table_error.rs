@@ -48,6 +48,10 @@ impl TableErrorBuilder {
         self.table_name = input;
         self
     }
+    /// <p>The name of the table. For Hive compatibility, this must be entirely lowercase.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
+    }
     /// <p>The details about the error.</p>
     pub fn error_detail(mut self, input: crate::types::ErrorDetail) -> Self {
         self.error_detail = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl TableErrorBuilder {
     ) -> Self {
         self.error_detail = input;
         self
+    }
+    /// <p>The details about the error.</p>
+    pub fn get_error_detail(&self) -> &::std::option::Option<crate::types::ErrorDetail> {
+        &self.error_detail
     }
     /// Consumes the builder and constructs a [`TableError`](crate::types::TableError).
     pub fn build(self) -> crate::types::TableError {

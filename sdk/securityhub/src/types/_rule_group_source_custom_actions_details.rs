@@ -57,6 +57,12 @@ impl RuleGroupSourceCustomActionsDetailsBuilder {
         self.action_definition = input;
         self
     }
+    /// <p>The definition of a custom action.</p>
+    pub fn get_action_definition(
+        &self,
+    ) -> &::std::option::Option<crate::types::StatelessCustomActionDefinition> {
+        &self.action_definition
+    }
     /// <p>A descriptive name of the custom action.</p>
     pub fn action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_name = ::std::option::Option::Some(input.into());
@@ -66,6 +72,10 @@ impl RuleGroupSourceCustomActionsDetailsBuilder {
     pub fn set_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action_name = input;
         self
+    }
+    /// <p>A descriptive name of the custom action.</p>
+    pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_name
     }
     /// Consumes the builder and constructs a [`RuleGroupSourceCustomActionsDetails`](crate::types::RuleGroupSourceCustomActionsDetails).
     pub fn build(self) -> crate::types::RuleGroupSourceCustomActionsDetails {

@@ -37,6 +37,13 @@ impl UpdateSecurityProfileFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateSecurityProfile as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_security_profile::builders::UpdateSecurityProfileInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl UpdateSecurityProfileFluentBuilder {
         self.inner = self.inner.set_security_profile_name(input);
         self
     }
+    /// <p>The name of the security profile you want to update.</p>
+    pub fn get_security_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_security_profile_name()
+    }
     /// <p>A description of the security profile.</p>
     pub fn security_profile_description(
         mut self,
@@ -148,6 +159,12 @@ impl UpdateSecurityProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_security_profile_description(input);
         self
+    }
+    /// <p>A description of the security profile.</p>
+    pub fn get_security_profile_description(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_security_profile_description()
     }
     /// Appends an item to `behaviors`.
     ///
@@ -165,6 +182,10 @@ impl UpdateSecurityProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_behaviors(input);
         self
+    }
+    /// <p>Specifies the behaviors that, when violated by a device (thing), cause an alert.</p>
+    pub fn get_behaviors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Behavior>> {
+        self.inner.get_behaviors()
     }
     /// Adds a key-value pair to `alertTargets`.
     ///
@@ -188,6 +209,14 @@ impl UpdateSecurityProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_alert_targets(input);
         self
+    }
+    /// <p>Where the alerts are sent. (Alerts are always sent to the console.)</p>
+    pub fn get_alert_targets(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<crate::types::AlertTargetType, crate::types::AlertTarget>,
+    > {
+        self.inner.get_alert_targets()
     }
     /// Appends an item to `additionalMetricsToRetain`.
     ///
@@ -213,6 +242,14 @@ impl UpdateSecurityProfileFluentBuilder {
         self.inner = self.inner.set_additional_metrics_to_retain(input);
         self
     }
+    /// <p> <i>Please use <code>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>
+    /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
+    #[deprecated(note = "Use additionalMetricsToRetainV2.")]
+    pub fn get_additional_metrics_to_retain(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_additional_metrics_to_retain()
+    }
     /// Appends an item to `additionalMetricsToRetainV2`.
     ///
     /// To override the contents of this collection use [`set_additional_metrics_to_retain_v2`](Self::set_additional_metrics_to_retain_v2).
@@ -230,6 +267,12 @@ impl UpdateSecurityProfileFluentBuilder {
         self.inner = self.inner.set_additional_metrics_to_retain_v2(input);
         self
     }
+    /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's behaviors, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
+    pub fn get_additional_metrics_to_retain_v2(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricToRetain>> {
+        self.inner.get_additional_metrics_to_retain_v2()
+    }
     /// <p>If true, delete all <code>behaviors</code> defined for this security profile. If any <code>behaviors</code> are defined in the current invocation, an exception occurs.</p>
     pub fn delete_behaviors(mut self, input: bool) -> Self {
         self.inner = self.inner.delete_behaviors(input);
@@ -240,6 +283,10 @@ impl UpdateSecurityProfileFluentBuilder {
         self.inner = self.inner.set_delete_behaviors(input);
         self
     }
+    /// <p>If true, delete all <code>behaviors</code> defined for this security profile. If any <code>behaviors</code> are defined in the current invocation, an exception occurs.</p>
+    pub fn get_delete_behaviors(&self) -> &::std::option::Option<bool> {
+        self.inner.get_delete_behaviors()
+    }
     /// <p>If true, delete all <code>alertTargets</code> defined for this security profile. If any <code>alertTargets</code> are defined in the current invocation, an exception occurs.</p>
     pub fn delete_alert_targets(mut self, input: bool) -> Self {
         self.inner = self.inner.delete_alert_targets(input);
@@ -249,6 +296,10 @@ impl UpdateSecurityProfileFluentBuilder {
     pub fn set_delete_alert_targets(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_delete_alert_targets(input);
         self
+    }
+    /// <p>If true, delete all <code>alertTargets</code> defined for this security profile. If any <code>alertTargets</code> are defined in the current invocation, an exception occurs.</p>
+    pub fn get_delete_alert_targets(&self) -> &::std::option::Option<bool> {
+        self.inner.get_delete_alert_targets()
     }
     /// <p>If true, delete all <code>additionalMetricsToRetain</code> defined for this security profile. If any <code>additionalMetricsToRetain</code> are defined in the current invocation, an exception occurs.</p>
     pub fn delete_additional_metrics_to_retain(mut self, input: bool) -> Self {
@@ -263,6 +314,10 @@ impl UpdateSecurityProfileFluentBuilder {
         self.inner = self.inner.set_delete_additional_metrics_to_retain(input);
         self
     }
+    /// <p>If true, delete all <code>additionalMetricsToRetain</code> defined for this security profile. If any <code>additionalMetricsToRetain</code> are defined in the current invocation, an exception occurs.</p>
+    pub fn get_delete_additional_metrics_to_retain(&self) -> &::std::option::Option<bool> {
+        self.inner.get_delete_additional_metrics_to_retain()
+    }
     /// <p>The expected version of the security profile. A new version is generated whenever the security profile is updated. If you specify a value that is different from the actual version, a <code>VersionConflictException</code> is thrown.</p>
     pub fn expected_version(mut self, input: i64) -> Self {
         self.inner = self.inner.expected_version(input);
@@ -272,5 +327,9 @@ impl UpdateSecurityProfileFluentBuilder {
     pub fn set_expected_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_expected_version(input);
         self
+    }
+    /// <p>The expected version of the security profile. A new version is generated whenever the security profile is updated. If you specify a value that is different from the actual version, a <code>VersionConflictException</code> is thrown.</p>
+    pub fn get_expected_version(&self) -> &::std::option::Option<i64> {
+        self.inner.get_expected_version()
     }
 }

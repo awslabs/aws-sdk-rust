@@ -37,6 +37,12 @@ impl CreateGlobalClusterFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateGlobalCluster as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_global_cluster::builders::CreateGlobalClusterInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl CreateGlobalClusterFluentBuilder {
         self.inner = self.inner.set_global_cluster_identifier(input);
         self
     }
+    /// <p>The cluster identifier of the new global database cluster.</p>
+    pub fn get_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_global_cluster_identifier()
+    }
     /// <p>(<i>Optional</i>) The Amazon Resource Name (ARN) of an existing Neptune DB cluster to use as the primary cluster of the new global database.</p>
     pub fn source_db_cluster_identifier(
         mut self,
@@ -149,6 +159,12 @@ impl CreateGlobalClusterFluentBuilder {
         self.inner = self.inner.set_source_db_cluster_identifier(input);
         self
     }
+    /// <p>(<i>Optional</i>) The Amazon Resource Name (ARN) of an existing Neptune DB cluster to use as the primary cluster of the new global database.</p>
+    pub fn get_source_db_cluster_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_db_cluster_identifier()
+    }
     /// <p>The name of the database engine to be used in the global database.</p>
     /// <p>Valid values: <code>neptune</code> </p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -160,6 +176,11 @@ impl CreateGlobalClusterFluentBuilder {
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine(input);
         self
+    }
+    /// <p>The name of the database engine to be used in the global database.</p>
+    /// <p>Valid values: <code>neptune</code> </p>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_engine()
     }
     /// <p>The Neptune engine version to be used by the global database.</p>
     /// <p>Valid values: <code>1.2.0.0</code> or above.</p>
@@ -179,6 +200,11 @@ impl CreateGlobalClusterFluentBuilder {
         self.inner = self.inner.set_engine_version(input);
         self
     }
+    /// <p>The Neptune engine version to be used by the global database.</p>
+    /// <p>Valid values: <code>1.2.0.0</code> or above.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_engine_version()
+    }
     /// <p>The deletion protection setting for the new global database. The global database can't be deleted when deletion protection is enabled.</p>
     pub fn deletion_protection(mut self, input: bool) -> Self {
         self.inner = self.inner.deletion_protection(input);
@@ -189,6 +215,10 @@ impl CreateGlobalClusterFluentBuilder {
         self.inner = self.inner.set_deletion_protection(input);
         self
     }
+    /// <p>The deletion protection setting for the new global database. The global database can't be deleted when deletion protection is enabled.</p>
+    pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
+        self.inner.get_deletion_protection()
+    }
     /// <p>The storage encryption setting for the new global database cluster.</p>
     pub fn storage_encrypted(mut self, input: bool) -> Self {
         self.inner = self.inner.storage_encrypted(input);
@@ -198,5 +228,9 @@ impl CreateGlobalClusterFluentBuilder {
     pub fn set_storage_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_storage_encrypted(input);
         self
+    }
+    /// <p>The storage encryption setting for the new global database cluster.</p>
+    pub fn get_storage_encrypted(&self) -> &::std::option::Option<bool> {
+        self.inner.get_storage_encrypted()
     }
 }

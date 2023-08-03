@@ -53,6 +53,12 @@ impl ResultFrameBuilder {
         self.result_set_metadata = input;
         self
     }
+    /// <p>The result-set metadata in the result set.</p>
+    pub fn get_result_set_metadata(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResultSetMetadata> {
+        &self.result_set_metadata
+    }
     /// Appends an item to `records`.
     ///
     /// To override the contents of this collection use [`set_records`](Self::set_records).
@@ -71,6 +77,10 @@ impl ResultFrameBuilder {
     ) -> Self {
         self.records = input;
         self
+    }
+    /// <p>The records in the result set.</p>
+    pub fn get_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Record>> {
+        &self.records
     }
     /// Consumes the builder and constructs a [`ResultFrame`](crate::types::ResultFrame).
     pub fn build(self) -> crate::types::ResultFrame {

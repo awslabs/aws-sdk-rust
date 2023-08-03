@@ -58,6 +58,10 @@ impl DeleteVolumeOntapConfigurationBuilder {
         self.skip_final_backup = input;
         self
     }
+    /// <p>Set to true if you want to skip taking a final backup of the volume you are deleting.</p>
+    pub fn get_skip_final_backup(&self) -> &::std::option::Option<bool> {
+        &self.skip_final_backup
+    }
     /// Appends an item to `final_backup_tags`.
     ///
     /// To override the contents of this collection use [`set_final_backup_tags`](Self::set_final_backup_tags).
@@ -77,6 +81,12 @@ impl DeleteVolumeOntapConfigurationBuilder {
         self.final_backup_tags = input;
         self
     }
+    /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    pub fn get_final_backup_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.final_backup_tags
+    }
     /// <p>Setting this to <code>true</code> allows a SnapLock administrator to delete an FSx for ONTAP SnapLock Enterprise volume with unexpired write once, read many (WORM) files. The IAM permission <code>fsx:BypassSnaplockEnterpriseRetention</code> is also required to delete SnapLock Enterprise volumes with unexpired WORM files. The default value is <code>false</code>. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.html#snaplock-delete-volume"> Deleting a SnapLock volume </a>. </p>
     pub fn bypass_snaplock_enterprise_retention(mut self, input: bool) -> Self {
@@ -91,6 +101,11 @@ impl DeleteVolumeOntapConfigurationBuilder {
     ) -> Self {
         self.bypass_snaplock_enterprise_retention = input;
         self
+    }
+    /// <p>Setting this to <code>true</code> allows a SnapLock administrator to delete an FSx for ONTAP SnapLock Enterprise volume with unexpired write once, read many (WORM) files. The IAM permission <code>fsx:BypassSnaplockEnterpriseRetention</code> is also required to delete SnapLock Enterprise volumes with unexpired WORM files. The default value is <code>false</code>. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.html#snaplock-delete-volume"> Deleting a SnapLock volume </a>. </p>
+    pub fn get_bypass_snaplock_enterprise_retention(&self) -> &::std::option::Option<bool> {
+        &self.bypass_snaplock_enterprise_retention
     }
     /// Consumes the builder and constructs a [`DeleteVolumeOntapConfiguration`](crate::types::DeleteVolumeOntapConfiguration).
     pub fn build(self) -> crate::types::DeleteVolumeOntapConfiguration {

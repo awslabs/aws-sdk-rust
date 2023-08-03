@@ -37,6 +37,13 @@ impl GetBulkPublishDetailsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetBulkPublishDetails as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_bulk_publish_details::builders::GetBulkPublishDetailsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +139,9 @@ impl GetBulkPublishDetailsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_identity_pool_id(input);
         self
+    }
+    /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+    pub fn get_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_pool_id()
     }
 }

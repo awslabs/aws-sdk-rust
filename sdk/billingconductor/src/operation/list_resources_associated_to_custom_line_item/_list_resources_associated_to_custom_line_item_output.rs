@@ -70,6 +70,10 @@ impl ListResourcesAssociatedToCustomLineItemOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p> The custom line item ARN for which the resource associations are listed. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Appends an item to `associated_resources`.
     ///
     /// To override the contents of this collection use [`set_associated_resources`](Self::set_associated_resources).
@@ -94,6 +98,14 @@ impl ListResourcesAssociatedToCustomLineItemOutputBuilder {
         self.associated_resources = input;
         self
     }
+    /// <p> A list of <code>ListResourcesAssociatedToCustomLineItemResponseElement</code> for each resource association retrieved. </p>
+    pub fn get_associated_resources(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::ListResourcesAssociatedToCustomLineItemResponseElement>,
+    > {
+        &self.associated_resources
+    }
     /// <p> The pagination token to be used in subsequent requests to retrieve additional results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -103,6 +115,10 @@ impl ListResourcesAssociatedToCustomLineItemOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p> The pagination token to be used in subsequent requests to retrieve additional results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

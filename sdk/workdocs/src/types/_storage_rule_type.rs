@@ -48,6 +48,10 @@ impl StorageRuleTypeBuilder {
         self.storage_allocated_in_bytes = input;
         self
     }
+    /// <p>The amount of storage allocated, in bytes.</p>
+    pub fn get_storage_allocated_in_bytes(&self) -> &::std::option::Option<i64> {
+        &self.storage_allocated_in_bytes
+    }
     /// <p>The type of storage.</p>
     pub fn storage_type(mut self, input: crate::types::StorageType) -> Self {
         self.storage_type = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl StorageRuleTypeBuilder {
     ) -> Self {
         self.storage_type = input;
         self
+    }
+    /// <p>The type of storage.</p>
+    pub fn get_storage_type(&self) -> &::std::option::Option<crate::types::StorageType> {
+        &self.storage_type
     }
     /// Consumes the builder and constructs a [`StorageRuleType`](crate::types::StorageRuleType).
     pub fn build(self) -> crate::types::StorageRuleType {

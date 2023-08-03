@@ -36,6 +36,10 @@ impl UpdateSiteFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateSite as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_site::builders::UpdateSiteInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl UpdateSiteFluentBuilder {
         self.inner = self.inner.set_site_id(input);
         self
     }
+    /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
+    pub fn get_site_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_site_id()
+    }
     /// <p>The name of the site.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -127,6 +135,10 @@ impl UpdateSiteFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the site.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The description of the site.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -138,6 +150,10 @@ impl UpdateSiteFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>The description of the site.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>Notes about a site.</p>
     pub fn notes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.notes(input.into());
@@ -147,5 +163,9 @@ impl UpdateSiteFluentBuilder {
     pub fn set_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_notes(input);
         self
+    }
+    /// <p>Notes about a site.</p>
+    pub fn get_notes(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_notes()
     }
 }

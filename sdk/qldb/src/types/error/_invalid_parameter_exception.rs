@@ -75,6 +75,10 @@ impl InvalidParameterExceptionBuilder {
         self.message = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The name of the invalid parameter.</p>
     pub fn parameter_name(
         mut self,
@@ -90,6 +94,10 @@ impl InvalidParameterExceptionBuilder {
     ) -> Self {
         self.parameter_name = input;
         self
+    }
+    /// <p>The name of the invalid parameter.</p>
+    pub fn get_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_name
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

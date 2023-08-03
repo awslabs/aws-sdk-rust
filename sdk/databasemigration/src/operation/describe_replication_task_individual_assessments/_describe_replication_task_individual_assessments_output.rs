@@ -59,6 +59,10 @@ impl DescribeReplicationTaskIndividualAssessmentsOutputBuilder {
         self.marker = input;
         self
     }
+    /// <p>A pagination token returned for you to pass to a subsequent request. If you pass this token as the <code>Marker</code> value in a subsequent request, the response includes only records beyond the marker, up to the value specified in the request by <code>MaxRecords</code>.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// Appends an item to `replication_task_individual_assessments`.
     ///
     /// To override the contents of this collection use [`set_replication_task_individual_assessments`](Self::set_replication_task_individual_assessments).
@@ -84,6 +88,13 @@ impl DescribeReplicationTaskIndividualAssessmentsOutputBuilder {
     ) -> Self {
         self.replication_task_individual_assessments = input;
         self
+    }
+    /// <p>One or more individual assessments as specified by <code>Filters</code>.</p>
+    pub fn get_replication_task_individual_assessments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationTaskIndividualAssessment>>
+    {
+        &self.replication_task_individual_assessments
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

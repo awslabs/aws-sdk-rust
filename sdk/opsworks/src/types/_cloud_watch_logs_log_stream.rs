@@ -132,6 +132,10 @@ impl CloudWatchLogsLogStreamBuilder {
         self.log_group_name = input;
         self
     }
+    /// <p>Specifies the destination log group. A log group is created automatically if it doesn't already exist. Log group names can be between 1 and 512 characters long. Allowed characters include a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen), '/' (forward slash), and '.' (period).</p>
+    pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group_name
+    }
     /// <p>Specifies how the time stamp is extracted from logs. For more information, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch Logs Agent Reference</a>.</p>
     pub fn datetime_format(
         mut self,
@@ -148,6 +152,10 @@ impl CloudWatchLogsLogStreamBuilder {
         self.datetime_format = input;
         self
     }
+    /// <p>Specifies how the time stamp is extracted from logs. For more information, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch Logs Agent Reference</a>.</p>
+    pub fn get_datetime_format(&self) -> &::std::option::Option<::std::string::String> {
+        &self.datetime_format
+    }
     /// <p>Specifies the time zone of log event time stamps.</p>
     pub fn time_zone(mut self, input: crate::types::CloudWatchLogsTimeZone) -> Self {
         self.time_zone = ::std::option::Option::Some(input);
@@ -160,6 +168,10 @@ impl CloudWatchLogsLogStreamBuilder {
     ) -> Self {
         self.time_zone = input;
         self
+    }
+    /// <p>Specifies the time zone of log event time stamps.</p>
+    pub fn get_time_zone(&self) -> &::std::option::Option<crate::types::CloudWatchLogsTimeZone> {
+        &self.time_zone
     }
     /// <p>Specifies log files that you want to push to CloudWatch Logs.</p>
     /// <p> <code>File</code> can point to a specific file or multiple files (by using wild card characters such as <code>/var/log/system.log*</code>). Only the latest file is pushed to CloudWatch Logs, based on file modification time. We recommend that you use wild card characters to specify a series of files of the same type, such as <code>access_log.2014-06-01-01</code>, <code>access_log.2014-06-01-02</code>, and so on by using a pattern like <code>access_log.*</code>. Don't use a wildcard to match multiple file types, such as <code>access_log_80</code> and <code>access_log_443</code>. To specify multiple, different file types, add another log stream entry to the configuration file, so that each log file type is stored in a different log group.</p>
@@ -174,6 +186,12 @@ impl CloudWatchLogsLogStreamBuilder {
     pub fn set_file(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file = input;
         self
+    }
+    /// <p>Specifies log files that you want to push to CloudWatch Logs.</p>
+    /// <p> <code>File</code> can point to a specific file or multiple files (by using wild card characters such as <code>/var/log/system.log*</code>). Only the latest file is pushed to CloudWatch Logs, based on file modification time. We recommend that you use wild card characters to specify a series of files of the same type, such as <code>access_log.2014-06-01-01</code>, <code>access_log.2014-06-01-02</code>, and so on by using a pattern like <code>access_log.*</code>. Don't use a wildcard to match multiple file types, such as <code>access_log_80</code> and <code>access_log_443</code>. To specify multiple, different file types, add another log stream entry to the configuration file, so that each log file type is stored in a different log group.</p>
+    /// <p>Zipped files are not supported.</p>
+    pub fn get_file(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file
     }
     /// <p>Specifies the range of lines for identifying a file. The valid values are one number, or two dash-delimited numbers, such as '1', '2-5'. The default value is '1', meaning the first line is used to calculate the fingerprint. Fingerprint lines are not sent to CloudWatch Logs unless all specified lines are available.</p>
     pub fn file_fingerprint_lines(
@@ -191,6 +209,10 @@ impl CloudWatchLogsLogStreamBuilder {
         self.file_fingerprint_lines = input;
         self
     }
+    /// <p>Specifies the range of lines for identifying a file. The valid values are one number, or two dash-delimited numbers, such as '1', '2-5'. The default value is '1', meaning the first line is used to calculate the fingerprint. Fingerprint lines are not sent to CloudWatch Logs unless all specified lines are available.</p>
+    pub fn get_file_fingerprint_lines(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_fingerprint_lines
+    }
     /// <p>Specifies the pattern for identifying the start of a log message.</p>
     pub fn multi_line_start_pattern(
         mut self,
@@ -207,6 +229,10 @@ impl CloudWatchLogsLogStreamBuilder {
         self.multi_line_start_pattern = input;
         self
     }
+    /// <p>Specifies the pattern for identifying the start of a log message.</p>
+    pub fn get_multi_line_start_pattern(&self) -> &::std::option::Option<::std::string::String> {
+        &self.multi_line_start_pattern
+    }
     /// <p>Specifies where to start to read data (start_of_file or end_of_file). The default is start_of_file. This setting is only used if there is no state persisted for that log stream.</p>
     pub fn initial_position(mut self, input: crate::types::CloudWatchLogsInitialPosition) -> Self {
         self.initial_position = ::std::option::Option::Some(input);
@@ -219,6 +245,12 @@ impl CloudWatchLogsLogStreamBuilder {
     ) -> Self {
         self.initial_position = input;
         self
+    }
+    /// <p>Specifies where to start to read data (start_of_file or end_of_file). The default is start_of_file. This setting is only used if there is no state persisted for that log stream.</p>
+    pub fn get_initial_position(
+        &self,
+    ) -> &::std::option::Option<crate::types::CloudWatchLogsInitialPosition> {
+        &self.initial_position
     }
     /// <p>Specifies the encoding of the log file so that the file can be read correctly. The default is <code>utf_8</code>. Encodings supported by Python <code>codecs.decode()</code> can be used here.</p>
     pub fn encoding(mut self, input: crate::types::CloudWatchLogsEncoding) -> Self {
@@ -233,6 +265,10 @@ impl CloudWatchLogsLogStreamBuilder {
         self.encoding = input;
         self
     }
+    /// <p>Specifies the encoding of the log file so that the file can be read correctly. The default is <code>utf_8</code>. Encodings supported by Python <code>codecs.decode()</code> can be used here.</p>
+    pub fn get_encoding(&self) -> &::std::option::Option<crate::types::CloudWatchLogsEncoding> {
+        &self.encoding
+    }
     /// <p>Specifies the time duration for the batching of log events. The minimum value is 5000ms and default value is 5000ms.</p>
     pub fn buffer_duration(mut self, input: i32) -> Self {
         self.buffer_duration = ::std::option::Option::Some(input);
@@ -242,6 +278,10 @@ impl CloudWatchLogsLogStreamBuilder {
     pub fn set_buffer_duration(mut self, input: ::std::option::Option<i32>) -> Self {
         self.buffer_duration = input;
         self
+    }
+    /// <p>Specifies the time duration for the batching of log events. The minimum value is 5000ms and default value is 5000ms.</p>
+    pub fn get_buffer_duration(&self) -> &::std::option::Option<i32> {
+        &self.buffer_duration
     }
     /// <p>Specifies the max number of log events in a batch, up to 10000. The default value is 1000.</p>
     pub fn batch_count(mut self, input: i32) -> Self {
@@ -253,6 +293,10 @@ impl CloudWatchLogsLogStreamBuilder {
         self.batch_count = input;
         self
     }
+    /// <p>Specifies the max number of log events in a batch, up to 10000. The default value is 1000.</p>
+    pub fn get_batch_count(&self) -> &::std::option::Option<i32> {
+        &self.batch_count
+    }
     /// <p>Specifies the maximum size of log events in a batch, in bytes, up to 1048576 bytes. The default value is 32768 bytes. This size is calculated as the sum of all event messages in UTF-8, plus 26 bytes for each log event.</p>
     pub fn batch_size(mut self, input: i32) -> Self {
         self.batch_size = ::std::option::Option::Some(input);
@@ -262,6 +306,10 @@ impl CloudWatchLogsLogStreamBuilder {
     pub fn set_batch_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.batch_size = input;
         self
+    }
+    /// <p>Specifies the maximum size of log events in a batch, in bytes, up to 1048576 bytes. The default value is 32768 bytes. This size is calculated as the sum of all event messages in UTF-8, plus 26 bytes for each log event.</p>
+    pub fn get_batch_size(&self) -> &::std::option::Option<i32> {
+        &self.batch_size
     }
     /// Consumes the builder and constructs a [`CloudWatchLogsLogStream`](crate::types::CloudWatchLogsLogStream).
     pub fn build(self) -> crate::types::CloudWatchLogsLogStream {

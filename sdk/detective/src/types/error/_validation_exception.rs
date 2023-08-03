@@ -83,6 +83,10 @@ impl ValidationExceptionBuilder {
         self.message = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The error code associated with the validation failure.</p>
     pub fn error_code(mut self, input: crate::types::ErrorCode) -> Self {
         self.error_code = ::std::option::Option::Some(input);
@@ -92,6 +96,10 @@ impl ValidationExceptionBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::ErrorCode>) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>The error code associated with the validation failure.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<crate::types::ErrorCode> {
+        &self.error_code
     }
     /// <p> An explanation of why validation failed.</p>
     pub fn error_code_reason(
@@ -108,6 +116,10 @@ impl ValidationExceptionBuilder {
     ) -> Self {
         self.error_code_reason = input;
         self
+    }
+    /// <p> An explanation of why validation failed.</p>
+    pub fn get_error_code_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code_reason
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

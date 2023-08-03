@@ -40,6 +40,10 @@ impl GetRateBasedRuleManagedKeysFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetRateBasedRuleManagedKeys as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_rate_based_rule_managed_keys::builders::GetRateBasedRuleManagedKeysInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +134,10 @@ impl GetRateBasedRuleManagedKeysFluentBuilder {
         self.inner = self.inner.set_rule_id(input);
         self
     }
+    /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> for which you want to get a list of <code>ManagedKeys</code>. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
+    pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rule_id()
+    }
     /// <p>A null value and not currently used. Do not include this in your request.</p>
     pub fn next_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_marker(input.into());
@@ -139,5 +147,9 @@ impl GetRateBasedRuleManagedKeysFluentBuilder {
     pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_marker(input);
         self
+    }
+    /// <p>A null value and not currently used. Do not include this in your request.</p>
+    pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_marker()
     }
 }

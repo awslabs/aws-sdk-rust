@@ -40,6 +40,13 @@ impl FailoverGlobalClusterFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the FailoverGlobalCluster as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::failover_global_cluster::builders::FailoverGlobalClusterInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -144,6 +151,14 @@ impl FailoverGlobalClusterFluentBuilder {
         self.inner = self.inner.set_global_cluster_identifier(input);
         self
     }
+    /// <p>Identifier of the Aurora global database (<code>GlobalCluster</code>) that should be failed over. The identifier is the unique key assigned by the user when the Aurora global database was created. In other words, it's the name of the Aurora global database that you want to fail over.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match the identifier of an existing <code>GlobalCluster</code> (Aurora global database).</p> </li>
+    /// </ul>
+    pub fn get_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_global_cluster_identifier()
+    }
     /// <p>Identifier of the secondary Aurora DB cluster that you want to promote to primary for the Aurora global database (<code>GlobalCluster</code>.) Use the Amazon Resource Name (ARN) for the identifier so that Aurora can locate the cluster in its Amazon Web Services Region.</p>
     pub fn target_db_cluster_identifier(
         mut self,
@@ -159,5 +174,11 @@ impl FailoverGlobalClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_target_db_cluster_identifier(input);
         self
+    }
+    /// <p>Identifier of the secondary Aurora DB cluster that you want to promote to primary for the Aurora global database (<code>GlobalCluster</code>.) Use the Amazon Resource Name (ARN) for the identifier so that Aurora can locate the cluster in its Amazon Web Services Region.</p>
+    pub fn get_target_db_cluster_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_db_cluster_identifier()
     }
 }

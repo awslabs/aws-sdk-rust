@@ -39,6 +39,10 @@ impl DescribeEntitiesDetectionV2JobInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The identifier that Amazon Comprehend Medical generated for the job. The <code>StartEntitiesDetectionV2Job</code> operation returns this identifier in its response.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// Consumes the builder and constructs a [`DescribeEntitiesDetectionV2JobInput`](crate::operation::describe_entities_detection_v2_job::DescribeEntitiesDetectionV2JobInput).
     pub fn build(
         self,

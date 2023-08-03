@@ -36,6 +36,12 @@ impl GetTaskProtectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetTaskProtection as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_task_protection::builders::GetTaskProtectionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl GetTaskProtectionFluentBuilder {
         self.inner = self.inner.set_cluster(input);
         self
     }
+    /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task sets exist in.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster()
+    }
     /// Appends an item to `tasks`.
     ///
     /// To override the contents of this collection use [`set_tasks`](Self::set_tasks).
@@ -142,5 +152,9 @@ impl GetTaskProtectionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tasks(input);
         self
+    }
+    /// <p>A list of up to 100 task IDs or full ARN entries.</p>
+    pub fn get_tasks(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_tasks()
     }
 }

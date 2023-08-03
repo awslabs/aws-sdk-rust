@@ -41,6 +41,10 @@ impl GetReportDefinitionInputBuilder {
         self.report_id = input;
         self
     }
+    /// <p>ID of the report to retrieve.</p>
+    pub fn get_report_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.report_id
+    }
     /// Consumes the builder and constructs a [`GetReportDefinitionInput`](crate::operation::get_report_definition::GetReportDefinitionInput).
     pub fn build(
         self,

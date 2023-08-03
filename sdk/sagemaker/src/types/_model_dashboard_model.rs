@@ -77,6 +77,10 @@ impl ModelDashboardModelBuilder {
         self.model = input;
         self
     }
+    /// <p>A model displayed in the Model Dashboard.</p>
+    pub fn get_model(&self) -> &::std::option::Option<crate::types::Model> {
+        &self.model
+    }
     /// Appends an item to `endpoints`.
     ///
     /// To override the contents of this collection use [`set_endpoints`](Self::set_endpoints).
@@ -96,6 +100,12 @@ impl ModelDashboardModelBuilder {
         self.endpoints = input;
         self
     }
+    /// <p>The endpoints that host a model.</p>
+    pub fn get_endpoints(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelDashboardEndpoint>> {
+        &self.endpoints
+    }
     /// <p>A batch transform job. For information about SageMaker batch transform, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform.html">Use Batch Transform</a>.</p>
     pub fn last_batch_transform_job(mut self, input: crate::types::TransformJob) -> Self {
         self.last_batch_transform_job = ::std::option::Option::Some(input);
@@ -108,6 +118,12 @@ impl ModelDashboardModelBuilder {
     ) -> Self {
         self.last_batch_transform_job = input;
         self
+    }
+    /// <p>A batch transform job. For information about SageMaker batch transform, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform.html">Use Batch Transform</a>.</p>
+    pub fn get_last_batch_transform_job(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransformJob> {
+        &self.last_batch_transform_job
     }
     /// Appends an item to `monitoring_schedules`.
     ///
@@ -133,6 +149,13 @@ impl ModelDashboardModelBuilder {
         self.monitoring_schedules = input;
         self
     }
+    /// <p>The monitoring schedules for a model.</p>
+    pub fn get_monitoring_schedules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelDashboardMonitoringSchedule>>
+    {
+        &self.monitoring_schedules
+    }
     /// <p>The model card for a model.</p>
     pub fn model_card(mut self, input: crate::types::ModelDashboardModelCard) -> Self {
         self.model_card = ::std::option::Option::Some(input);
@@ -145,6 +168,10 @@ impl ModelDashboardModelBuilder {
     ) -> Self {
         self.model_card = input;
         self
+    }
+    /// <p>The model card for a model.</p>
+    pub fn get_model_card(&self) -> &::std::option::Option<crate::types::ModelDashboardModelCard> {
+        &self.model_card
     }
     /// Consumes the builder and constructs a [`ModelDashboardModel`](crate::types::ModelDashboardModel).
     pub fn build(self) -> crate::types::ModelDashboardModel {

@@ -38,6 +38,13 @@ impl ListMedicalVocabulariesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListMedicalVocabularies as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_medical_vocabularies::builders::ListMedicalVocabulariesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +144,10 @@ impl ListMedicalVocabulariesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>If your <code>ListMedicalVocabularies</code> request returns more results than can be displayed, <code>NextToken</code> is displayed in the response with an associated string. To get the next page of results, copy this string and repeat your request, including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of custom medical vocabularies to return in each page of results. If there are fewer results than the value that you specify, only the actual results are returned. If you don't specify a value, a default of 5 is used.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -146,6 +157,10 @@ impl ListMedicalVocabulariesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of custom medical vocabularies to return in each page of results. If there are fewer results than the value that you specify, only the actual results are returned. If you don't specify a value, a default of 5 is used.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>Returns only custom medical vocabularies with the specified state. Custom vocabularies are ordered by creation date, with the newest vocabulary first. If you don't include <code>StateEquals</code>, all custom medical vocabularies are returned.</p>
     pub fn state_equals(mut self, input: crate::types::VocabularyState) -> Self {
@@ -159,6 +174,10 @@ impl ListMedicalVocabulariesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_state_equals(input);
         self
+    }
+    /// <p>Returns only custom medical vocabularies with the specified state. Custom vocabularies are ordered by creation date, with the newest vocabulary first. If you don't include <code>StateEquals</code>, all custom medical vocabularies are returned.</p>
+    pub fn get_state_equals(&self) -> &::std::option::Option<crate::types::VocabularyState> {
+        self.inner.get_state_equals()
     }
     /// <p>Returns only the custom medical vocabularies that contain the specified string. The search is not case sensitive.</p>
     pub fn name_contains(
@@ -175,5 +194,9 @@ impl ListMedicalVocabulariesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_name_contains(input);
         self
+    }
+    /// <p>Returns only the custom medical vocabularies that contain the specified string. The search is not case sensitive.</p>
+    pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name_contains()
     }
 }

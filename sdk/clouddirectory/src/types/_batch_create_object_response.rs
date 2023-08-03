@@ -46,6 +46,10 @@ impl BatchCreateObjectResponseBuilder {
         self.object_identifier = input;
         self
     }
+    /// <p>The ID that is associated with the object.</p>
+    pub fn get_object_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_identifier
+    }
     /// Consumes the builder and constructs a [`BatchCreateObjectResponse`](crate::types::BatchCreateObjectResponse).
     pub fn build(self) -> crate::types::BatchCreateObjectResponse {
         crate::types::BatchCreateObjectResponse {

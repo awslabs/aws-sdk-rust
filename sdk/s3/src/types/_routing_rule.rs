@@ -48,6 +48,10 @@ impl RoutingRuleBuilder {
         self.condition = input;
         self
     }
+    /// <p>A container for describing a condition that must be met for the specified redirect to apply. For example, 1. If request is for pages in the <code>/docs</code> folder, redirect to the <code>/documents</code> folder. 2. If request results in HTTP error 4xx, redirect request to another host where you might process the error.</p>
+    pub fn get_condition(&self) -> &::std::option::Option<crate::types::Condition> {
+        &self.condition
+    }
     /// <p>Container for redirect information. You can redirect requests to another host, to another page, or with another protocol. In the event of an error, you can specify a different error code to return.</p>
     pub fn redirect(mut self, input: crate::types::Redirect) -> Self {
         self.redirect = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl RoutingRuleBuilder {
     pub fn set_redirect(mut self, input: ::std::option::Option<crate::types::Redirect>) -> Self {
         self.redirect = input;
         self
+    }
+    /// <p>Container for redirect information. You can redirect requests to another host, to another page, or with another protocol. In the event of an error, you can specify a different error code to return.</p>
+    pub fn get_redirect(&self) -> &::std::option::Option<crate::types::Redirect> {
+        &self.redirect
     }
     /// Consumes the builder and constructs a [`RoutingRule`](crate::types::RoutingRule).
     pub fn build(self) -> crate::types::RoutingRule {

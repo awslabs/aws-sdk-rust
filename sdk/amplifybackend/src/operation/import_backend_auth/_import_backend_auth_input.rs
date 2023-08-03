@@ -81,6 +81,10 @@ impl ImportBackendAuthInputBuilder {
         self.app_id = input;
         self
     }
+    /// <p>The app ID.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// <p>The name of the backend environment.</p>
     pub fn backend_environment_name(
         mut self,
@@ -96,6 +100,10 @@ impl ImportBackendAuthInputBuilder {
     ) -> Self {
         self.backend_environment_name = input;
         self
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn get_backend_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backend_environment_name
     }
     /// <p>The ID of the Amazon Cognito identity pool.</p>
     pub fn identity_pool_id(
@@ -113,6 +121,10 @@ impl ImportBackendAuthInputBuilder {
         self.identity_pool_id = input;
         self
     }
+    /// <p>The ID of the Amazon Cognito identity pool.</p>
+    pub fn get_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_pool_id
+    }
     /// <p>The ID of the Amazon Cognito native client.</p>
     pub fn native_client_id(
         mut self,
@@ -129,6 +141,10 @@ impl ImportBackendAuthInputBuilder {
         self.native_client_id = input;
         self
     }
+    /// <p>The ID of the Amazon Cognito native client.</p>
+    pub fn get_native_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.native_client_id
+    }
     /// <p>The ID of the Amazon Cognito user pool.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
@@ -138,6 +154,10 @@ impl ImportBackendAuthInputBuilder {
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
+    }
+    /// <p>The ID of the Amazon Cognito user pool.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_pool_id
     }
     /// <p>The ID of the Amazon Cognito web client.</p>
     pub fn web_client_id(
@@ -154,6 +174,10 @@ impl ImportBackendAuthInputBuilder {
     ) -> Self {
         self.web_client_id = input;
         self
+    }
+    /// <p>The ID of the Amazon Cognito web client.</p>
+    pub fn get_web_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.web_client_id
     }
     /// Consumes the builder and constructs a [`ImportBackendAuthInput`](crate::operation::import_backend_auth::ImportBackendAuthInput).
     pub fn build(

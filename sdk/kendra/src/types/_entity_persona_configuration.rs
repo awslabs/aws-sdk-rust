@@ -48,6 +48,10 @@ impl EntityPersonaConfigurationBuilder {
         self.entity_id = input;
         self
     }
+    /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_id
+    }
     /// <p>The persona that defines the specific permissions of the user or group in your IAM Identity Center identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
     pub fn persona(mut self, input: crate::types::Persona) -> Self {
         self.persona = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl EntityPersonaConfigurationBuilder {
     pub fn set_persona(mut self, input: ::std::option::Option<crate::types::Persona>) -> Self {
         self.persona = input;
         self
+    }
+    /// <p>The persona that defines the specific permissions of the user or group in your IAM Identity Center identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
+    pub fn get_persona(&self) -> &::std::option::Option<crate::types::Persona> {
+        &self.persona
     }
     /// Consumes the builder and constructs a [`EntityPersonaConfiguration`](crate::types::EntityPersonaConfiguration).
     pub fn build(self) -> crate::types::EntityPersonaConfiguration {

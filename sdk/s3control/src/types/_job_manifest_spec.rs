@@ -51,6 +51,10 @@ impl JobManifestSpecBuilder {
         self.format = input;
         self
     }
+    /// <p>Indicates which of the available formats the specified manifest uses.</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::JobManifestFormat> {
+        &self.format
+    }
     /// Appends an item to `fields`.
     ///
     /// To override the contents of this collection use [`set_fields`](Self::set_fields).
@@ -69,6 +73,12 @@ impl JobManifestSpecBuilder {
     ) -> Self {
         self.fields = input;
         self
+    }
+    /// <p>If the specified manifest object is in the <code>S3BatchOperations_CSV_20180820</code> format, this element describes which columns contain the required data.</p>
+    pub fn get_fields(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobManifestFieldName>> {
+        &self.fields
     }
     /// Consumes the builder and constructs a [`JobManifestSpec`](crate::types::JobManifestSpec).
     pub fn build(self) -> crate::types::JobManifestSpec {

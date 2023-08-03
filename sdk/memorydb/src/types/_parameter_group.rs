@@ -64,6 +64,10 @@ impl ParameterGroupBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the parameter group</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The name of the parameter group family that this parameter group is compatible with.</p>
     pub fn family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.family = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl ParameterGroupBuilder {
     pub fn set_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.family = input;
         self
+    }
+    /// <p>The name of the parameter group family that this parameter group is compatible with.</p>
+    pub fn get_family(&self) -> &::std::option::Option<::std::string::String> {
+        &self.family
     }
     /// <p>A description of the parameter group</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,6 +92,10 @@ impl ParameterGroupBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the parameter group</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The Amazon Resource Name (ARN) of the parameter group</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -93,6 +105,10 @@ impl ParameterGroupBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the parameter group</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`ParameterGroup`](crate::types::ParameterGroup).
     pub fn build(self) -> crate::types::ParameterGroup {

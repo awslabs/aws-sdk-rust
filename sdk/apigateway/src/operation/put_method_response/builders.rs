@@ -36,6 +36,12 @@ impl PutMethodResponseFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutMethodResponse as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_method_response::builders::PutMethodResponseInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl PutMethodResponseFluentBuilder {
         self.inner = self.inner.set_rest_api_id(input);
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rest_api_id()
+    }
     /// <p>The Resource identifier for the Method resource.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_id(input.into());
@@ -135,6 +145,10 @@ impl PutMethodResponseFluentBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_id(input);
         self
+    }
+    /// <p>The Resource identifier for the Method resource.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_id()
     }
     /// <p>The HTTP verb of the Method resource.</p>
     pub fn http_method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -146,6 +160,10 @@ impl PutMethodResponseFluentBuilder {
         self.inner = self.inner.set_http_method(input);
         self
     }
+    /// <p>The HTTP verb of the Method resource.</p>
+    pub fn get_http_method(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_http_method()
+    }
     /// <p>The method response's status code.</p>
     pub fn status_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.status_code(input.into());
@@ -155,6 +173,10 @@ impl PutMethodResponseFluentBuilder {
     pub fn set_status_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_status_code(input);
         self
+    }
+    /// <p>The method response's status code.</p>
+    pub fn get_status_code(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_status_code()
     }
     /// Adds a key-value pair to `responseParameters`.
     ///
@@ -176,6 +198,12 @@ impl PutMethodResponseFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_response_parameters(input);
         self
+    }
+    /// <p>A key-value map specifying required or optional response parameters that API Gateway can send back to the caller. A key defines a method response header name and the associated value is a Boolean flag indicating whether the method response parameter is required or not. The method response header names must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The response parameter names defined here are available in the integration response to be mapped from an integration response header expressed in <code>integration.response.header.{name}</code>, a static value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON expression from the back-end response payload in the form of <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.)</p>
+    pub fn get_response_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, bool>> {
+        self.inner.get_response_parameters()
     }
     /// Adds a key-value pair to `responseModels`.
     ///
@@ -199,5 +227,13 @@ impl PutMethodResponseFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_response_models(input);
         self
+    }
+    /// <p>Specifies the Model resources used for the response's content type. Response models are represented as a key/value map, with a content type as the key and a Model name as the value.</p>
+    pub fn get_response_models(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_response_models()
     }
 }

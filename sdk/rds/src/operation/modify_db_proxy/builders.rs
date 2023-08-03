@@ -36,6 +36,12 @@ impl ModifyDBProxyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyDBProxy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::modify_db_proxy::builders::ModifyDbProxyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl ModifyDBProxyFluentBuilder {
         self.inner = self.inner.set_db_proxy_name(input);
         self
     }
+    /// <p>The identifier for the <code>DBProxy</code> to modify.</p>
+    pub fn get_db_proxy_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_proxy_name()
+    }
     /// <p>The new identifier for the <code>DBProxy</code>. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
     pub fn new_db_proxy_name(
         mut self,
@@ -139,6 +149,10 @@ impl ModifyDBProxyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_new_db_proxy_name(input);
         self
+    }
+    /// <p>The new identifier for the <code>DBProxy</code>. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
+    pub fn get_new_db_proxy_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_new_db_proxy_name()
     }
     /// Appends an item to `Auth`.
     ///
@@ -157,6 +171,12 @@ impl ModifyDBProxyFluentBuilder {
         self.inner = self.inner.set_auth(input);
         self
     }
+    /// <p>The new authentication settings for the <code>DBProxy</code>.</p>
+    pub fn get_auth(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UserAuthConfig>> {
+        self.inner.get_auth()
+    }
     /// <p>Whether Transport Layer Security (TLS) encryption is required for connections to the proxy. By enabling this setting, you can enforce encrypted TLS connections to the proxy, even if the associated database doesn't use TLS.</p>
     pub fn require_tls(mut self, input: bool) -> Self {
         self.inner = self.inner.require_tls(input);
@@ -166,6 +186,10 @@ impl ModifyDBProxyFluentBuilder {
     pub fn set_require_tls(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_require_tls(input);
         self
+    }
+    /// <p>Whether Transport Layer Security (TLS) encryption is required for connections to the proxy. By enabling this setting, you can enforce encrypted TLS connections to the proxy, even if the associated database doesn't use TLS.</p>
+    pub fn get_require_tls(&self) -> &::std::option::Option<bool> {
+        self.inner.get_require_tls()
     }
     /// <p>The number of seconds that a connection to the proxy can be inactive before the proxy disconnects it. You can set this value higher or lower than the connection timeout limit for the associated database.</p>
     pub fn idle_client_timeout(mut self, input: i32) -> Self {
@@ -177,6 +201,10 @@ impl ModifyDBProxyFluentBuilder {
         self.inner = self.inner.set_idle_client_timeout(input);
         self
     }
+    /// <p>The number of seconds that a connection to the proxy can be inactive before the proxy disconnects it. You can set this value higher or lower than the connection timeout limit for the associated database.</p>
+    pub fn get_idle_client_timeout(&self) -> &::std::option::Option<i32> {
+        self.inner.get_idle_client_timeout()
+    }
     /// <p>Whether the proxy includes detailed information about SQL statements in its logs. This information helps you to debug issues involving SQL behavior or the performance and scalability of the proxy connections. The debug information includes the text of SQL statements that you submit through the proxy. Thus, only enable this setting when needed for debugging, and only when you have security measures in place to safeguard any sensitive information that appears in the logs.</p>
     pub fn debug_logging(mut self, input: bool) -> Self {
         self.inner = self.inner.debug_logging(input);
@@ -187,6 +215,10 @@ impl ModifyDBProxyFluentBuilder {
         self.inner = self.inner.set_debug_logging(input);
         self
     }
+    /// <p>Whether the proxy includes detailed information about SQL statements in its logs. This information helps you to debug issues involving SQL behavior or the performance and scalability of the proxy connections. The debug information includes the text of SQL statements that you submit through the proxy. Thus, only enable this setting when needed for debugging, and only when you have security measures in place to safeguard any sensitive information that appears in the logs.</p>
+    pub fn get_debug_logging(&self) -> &::std::option::Option<bool> {
+        self.inner.get_debug_logging()
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in Amazon Web Services Secrets Manager.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -196,6 +228,10 @@ impl ModifyDBProxyFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in Amazon Web Services Secrets Manager.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
     /// Appends an item to `SecurityGroups`.
     ///
@@ -216,5 +252,11 @@ impl ModifyDBProxyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_security_groups(input);
         self
+    }
+    /// <p>The new list of security groups for the <code>DBProxy</code>.</p>
+    pub fn get_security_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_security_groups()
     }
 }

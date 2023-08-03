@@ -72,6 +72,10 @@ impl DataSetImportSummaryBuilder {
         self.total = input;
         self
     }
+    /// <p>The total number of data set imports.</p>
+    pub fn get_total(&self) -> &::std::option::Option<i32> {
+        &self.total
+    }
     /// <p>The number of data set imports that have succeeded.</p>
     pub fn succeeded(mut self, input: i32) -> Self {
         self.succeeded = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl DataSetImportSummaryBuilder {
     pub fn set_succeeded(mut self, input: ::std::option::Option<i32>) -> Self {
         self.succeeded = input;
         self
+    }
+    /// <p>The number of data set imports that have succeeded.</p>
+    pub fn get_succeeded(&self) -> &::std::option::Option<i32> {
+        &self.succeeded
     }
     /// <p>The number of data set imports that have failed.</p>
     pub fn failed(mut self, input: i32) -> Self {
@@ -92,6 +100,10 @@ impl DataSetImportSummaryBuilder {
         self.failed = input;
         self
     }
+    /// <p>The number of data set imports that have failed.</p>
+    pub fn get_failed(&self) -> &::std::option::Option<i32> {
+        &self.failed
+    }
     /// <p>The number of data set imports that are pending.</p>
     pub fn pending(mut self, input: i32) -> Self {
         self.pending = ::std::option::Option::Some(input);
@@ -102,6 +114,10 @@ impl DataSetImportSummaryBuilder {
         self.pending = input;
         self
     }
+    /// <p>The number of data set imports that are pending.</p>
+    pub fn get_pending(&self) -> &::std::option::Option<i32> {
+        &self.pending
+    }
     /// <p>The number of data set imports that are in progress.</p>
     pub fn in_progress(mut self, input: i32) -> Self {
         self.in_progress = ::std::option::Option::Some(input);
@@ -111,6 +127,10 @@ impl DataSetImportSummaryBuilder {
     pub fn set_in_progress(mut self, input: ::std::option::Option<i32>) -> Self {
         self.in_progress = input;
         self
+    }
+    /// <p>The number of data set imports that are in progress.</p>
+    pub fn get_in_progress(&self) -> &::std::option::Option<i32> {
+        &self.in_progress
     }
     /// Consumes the builder and constructs a [`DataSetImportSummary`](crate::types::DataSetImportSummary).
     pub fn build(self) -> crate::types::DataSetImportSummary {

@@ -85,6 +85,10 @@ impl MetricSourceBuilder {
         self.s3_source_config = input;
         self
     }
+    /// <p>Contains information about the configuration of the S3 bucket that contains source files.</p>
+    pub fn get_s3_source_config(&self) -> &::std::option::Option<crate::types::S3SourceConfig> {
+        &self.s3_source_config
+    }
     /// <p>Details about an AppFlow datasource.</p>
     pub fn app_flow_config(mut self, input: crate::types::AppFlowConfig) -> Self {
         self.app_flow_config = ::std::option::Option::Some(input);
@@ -97,6 +101,10 @@ impl MetricSourceBuilder {
     ) -> Self {
         self.app_flow_config = input;
         self
+    }
+    /// <p>Details about an AppFlow datasource.</p>
+    pub fn get_app_flow_config(&self) -> &::std::option::Option<crate::types::AppFlowConfig> {
+        &self.app_flow_config
     }
     /// <p>Details about an Amazon CloudWatch monitoring datasource.</p>
     pub fn cloud_watch_config(mut self, input: crate::types::CloudWatchConfig) -> Self {
@@ -111,6 +119,10 @@ impl MetricSourceBuilder {
         self.cloud_watch_config = input;
         self
     }
+    /// <p>Details about an Amazon CloudWatch monitoring datasource.</p>
+    pub fn get_cloud_watch_config(&self) -> &::std::option::Option<crate::types::CloudWatchConfig> {
+        &self.cloud_watch_config
+    }
     /// <p>Details about an Amazon Relational Database Service (RDS) datasource.</p>
     pub fn rds_source_config(mut self, input: crate::types::RdsSourceConfig) -> Self {
         self.rds_source_config = ::std::option::Option::Some(input);
@@ -123,6 +135,10 @@ impl MetricSourceBuilder {
     ) -> Self {
         self.rds_source_config = input;
         self
+    }
+    /// <p>Details about an Amazon Relational Database Service (RDS) datasource.</p>
+    pub fn get_rds_source_config(&self) -> &::std::option::Option<crate::types::RdsSourceConfig> {
+        &self.rds_source_config
     }
     /// <p>Details about an Amazon Redshift database datasource.</p>
     pub fn redshift_source_config(mut self, input: crate::types::RedshiftSourceConfig) -> Self {
@@ -137,6 +153,12 @@ impl MetricSourceBuilder {
         self.redshift_source_config = input;
         self
     }
+    /// <p>Details about an Amazon Redshift database datasource.</p>
+    pub fn get_redshift_source_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::RedshiftSourceConfig> {
+        &self.redshift_source_config
+    }
     /// <p>Details about an Amazon Athena datasource.</p>
     pub fn athena_source_config(mut self, input: crate::types::AthenaSourceConfig) -> Self {
         self.athena_source_config = ::std::option::Option::Some(input);
@@ -149,6 +171,12 @@ impl MetricSourceBuilder {
     ) -> Self {
         self.athena_source_config = input;
         self
+    }
+    /// <p>Details about an Amazon Athena datasource.</p>
+    pub fn get_athena_source_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::AthenaSourceConfig> {
+        &self.athena_source_config
     }
     /// Consumes the builder and constructs a [`MetricSource`](crate::types::MetricSource).
     pub fn build(self) -> crate::types::MetricSource {

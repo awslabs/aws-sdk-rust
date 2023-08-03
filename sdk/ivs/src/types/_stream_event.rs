@@ -56,6 +56,10 @@ impl StreamEventBuilder {
         self.name = input;
         self
     }
+    /// <p>Name that identifies the stream event within a <code>type</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Logical group for certain events.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl StreamEventBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>Logical group for certain events.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// <p>Time when the event occurred. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     pub fn event_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -78,6 +86,10 @@ impl StreamEventBuilder {
     ) -> Self {
         self.event_time = input;
         self
+    }
+    /// <p>Time when the event occurred. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
+    pub fn get_event_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.event_time
     }
     /// Consumes the builder and constructs a [`StreamEvent`](crate::types::StreamEvent).
     pub fn build(self) -> crate::types::StreamEvent {

@@ -54,6 +54,10 @@ impl ListContactsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The pagination token to continue to the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `contacts`.
     ///
     /// To override the contents of this collection use [`set_contacts`](Self::set_contacts).
@@ -72,6 +76,10 @@ impl ListContactsOutputBuilder {
     ) -> Self {
         self.contacts = input;
         self
+    }
+    /// <p>A list of the contacts and escalation plans in your Incident Manager account.</p>
+    pub fn get_contacts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Contact>> {
+        &self.contacts
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

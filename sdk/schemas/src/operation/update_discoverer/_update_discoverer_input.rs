@@ -56,6 +56,10 @@ impl UpdateDiscovererInputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the discoverer to update.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The ID of the discoverer.</p>
     pub fn discoverer_id(
         mut self,
@@ -72,6 +76,10 @@ impl UpdateDiscovererInputBuilder {
         self.discoverer_id = input;
         self
     }
+    /// <p>The ID of the discoverer.</p>
+    pub fn get_discoverer_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.discoverer_id
+    }
     /// <p>Support discovery of schemas in events sent to the bus from another account. (default: true)</p>
     pub fn cross_account(mut self, input: bool) -> Self {
         self.cross_account = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl UpdateDiscovererInputBuilder {
     pub fn set_cross_account(mut self, input: ::std::option::Option<bool>) -> Self {
         self.cross_account = input;
         self
+    }
+    /// <p>Support discovery of schemas in events sent to the bus from another account. (default: true)</p>
+    pub fn get_cross_account(&self) -> &::std::option::Option<bool> {
+        &self.cross_account
     }
     /// Consumes the builder and constructs a [`UpdateDiscovererInput`](crate::operation::update_discoverer::UpdateDiscovererInput).
     pub fn build(

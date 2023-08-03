@@ -64,6 +64,12 @@ impl GetEntitiesInputBuilder {
         self.ids = input;
         self
     }
+    /// <p>An array of entity IDs.</p>
+    /// <p>The IDs should be in the following format.</p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
+    pub fn get_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ids
+    }
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
     pub fn namespace_version(mut self, input: i64) -> Self {
         self.namespace_version = ::std::option::Option::Some(input);
@@ -73,6 +79,10 @@ impl GetEntitiesInputBuilder {
     pub fn set_namespace_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.namespace_version = input;
         self
+    }
+    /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
+    pub fn get_namespace_version(&self) -> &::std::option::Option<i64> {
+        &self.namespace_version
     }
     /// Consumes the builder and constructs a [`GetEntitiesInput`](crate::operation::get_entities::GetEntitiesInput).
     pub fn build(

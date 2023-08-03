@@ -38,6 +38,12 @@ impl DeleteDataSourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteDataSource as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_data_source::builders::DeleteDataSourceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,5 +139,9 @@ impl DeleteDataSourceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_data_source_id(input);
         self
+    }
+    /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
+    pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_data_source_id()
     }
 }

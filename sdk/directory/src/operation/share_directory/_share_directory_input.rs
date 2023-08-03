@@ -71,6 +71,10 @@ impl ShareDirectoryInputBuilder {
         self.directory_id = input;
         self
     }
+    /// <p>Identifier of the Managed Microsoft AD directory that you want to share with other Amazon Web Services accounts.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
+    }
     /// <p>A directory share request that is sent by the directory owner to the directory consumer. The request includes a typed message to help the directory consumer administrator determine whether to approve or reject the share invitation.</p>
     pub fn share_notes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.share_notes = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl ShareDirectoryInputBuilder {
     pub fn set_share_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.share_notes = input;
         self
+    }
+    /// <p>A directory share request that is sent by the directory owner to the directory consumer. The request includes a typed message to help the directory consumer administrator determine whether to approve or reject the share invitation.</p>
+    pub fn get_share_notes(&self) -> &::std::option::Option<::std::string::String> {
+        &self.share_notes
     }
     /// <p>Identifier for the directory consumer account with whom the directory is to be shared.</p>
     pub fn share_target(mut self, input: crate::types::ShareTarget) -> Self {
@@ -94,6 +102,10 @@ impl ShareDirectoryInputBuilder {
         self.share_target = input;
         self
     }
+    /// <p>Identifier for the directory consumer account with whom the directory is to be shared.</p>
+    pub fn get_share_target(&self) -> &::std::option::Option<crate::types::ShareTarget> {
+        &self.share_target
+    }
     /// <p>The method used when sharing a directory to determine whether the directory should be shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending a directory sharing request (<code>HANDSHAKE</code>).</p>
     pub fn share_method(mut self, input: crate::types::ShareMethod) -> Self {
         self.share_method = ::std::option::Option::Some(input);
@@ -106,6 +118,10 @@ impl ShareDirectoryInputBuilder {
     ) -> Self {
         self.share_method = input;
         self
+    }
+    /// <p>The method used when sharing a directory to determine whether the directory should be shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending a directory sharing request (<code>HANDSHAKE</code>).</p>
+    pub fn get_share_method(&self) -> &::std::option::Option<crate::types::ShareMethod> {
+        &self.share_method
     }
     /// Consumes the builder and constructs a [`ShareDirectoryInput`](crate::operation::share_directory::ShareDirectoryInput).
     pub fn build(

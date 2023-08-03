@@ -46,6 +46,10 @@ impl TlsConfigInputBuilder {
         self.server_name_to_verify = input;
         self
     }
+    /// <p>If you specify a server name, API Gateway uses it to verify the hostname on the integration's certificate. The server name is also included in the TLS handshake to support Server Name Indication (SNI) or virtual hosting.</p>
+    pub fn get_server_name_to_verify(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_name_to_verify
+    }
     /// Consumes the builder and constructs a [`TlsConfigInput`](crate::types::TlsConfigInput).
     pub fn build(self) -> crate::types::TlsConfigInput {
         crate::types::TlsConfigInput {

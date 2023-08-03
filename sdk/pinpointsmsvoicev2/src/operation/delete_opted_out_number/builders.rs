@@ -38,6 +38,13 @@ impl DeleteOptedOutNumberFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteOptedOutNumber as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_opted_out_number::builders::DeleteOptedOutNumberInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +141,10 @@ impl DeleteOptedOutNumberFluentBuilder {
         self.inner = self.inner.set_opt_out_list_name(input);
         self
     }
+    /// <p>The OptOutListName or OptOutListArn to remove the phone number from.</p>
+    pub fn get_opt_out_list_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_opt_out_list_name()
+    }
     /// <p>The phone number, in E.164 format, to remove from the OptOutList.</p>
     pub fn opted_out_number(
         mut self,
@@ -149,5 +160,9 @@ impl DeleteOptedOutNumberFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_opted_out_number(input);
         self
+    }
+    /// <p>The phone number, in E.164 format, to remove from the OptOutList.</p>
+    pub fn get_opted_out_number(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_opted_out_number()
     }
 }

@@ -53,6 +53,10 @@ impl ModifyAuthenticationProfileInputBuilder {
         self.authentication_profile_name = input;
         self
     }
+    /// <p>The name of the authentication profile to replace.</p>
+    pub fn get_authentication_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authentication_profile_name
+    }
     /// <p>The new content of the authentication profile in JSON format. The maximum length of the JSON string is determined by a quota for your account.</p>
     pub fn authentication_profile_content(
         mut self,
@@ -68,6 +72,12 @@ impl ModifyAuthenticationProfileInputBuilder {
     ) -> Self {
         self.authentication_profile_content = input;
         self
+    }
+    /// <p>The new content of the authentication profile in JSON format. The maximum length of the JSON string is determined by a quota for your account.</p>
+    pub fn get_authentication_profile_content(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.authentication_profile_content
     }
     /// Consumes the builder and constructs a [`ModifyAuthenticationProfileInput`](crate::operation::modify_authentication_profile::ModifyAuthenticationProfileInput).
     pub fn build(

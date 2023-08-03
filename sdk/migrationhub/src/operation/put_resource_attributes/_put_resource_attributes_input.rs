@@ -89,6 +89,10 @@ impl PutResourceAttributesInputBuilder {
         self.progress_update_stream = input;
         self
     }
+    /// <p>The name of the ProgressUpdateStream. </p>
+    pub fn get_progress_update_stream(&self) -> &::std::option::Option<::std::string::String> {
+        &self.progress_update_stream
+    }
     /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
     pub fn migration_task_name(
         mut self,
@@ -104,6 +108,10 @@ impl PutResourceAttributesInputBuilder {
     ) -> Self {
         self.migration_task_name = input;
         self
+    }
+    /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
+    pub fn get_migration_task_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.migration_task_name
     }
     /// Appends an item to `resource_attribute_list`.
     ///
@@ -138,6 +146,19 @@ impl PutResourceAttributesInputBuilder {
         self.resource_attribute_list = input;
         self
     }
+    /// <p>Information about the resource that is being migrated. This data will be used to map the task to a resource in the Application Discovery Service repository.</p> <note>
+    /// <p>Takes the object array of <code>ResourceAttribute</code> where the <code>Type</code> field is reserved for the following values: <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN | VM_MANAGER_ID | VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH | BIOS_ID | MOTHERBOARD_SERIAL_NUMBER</code> where the identifying value can be a string up to 256 characters.</p>
+    /// </note> <important>
+    /// <ul>
+    /// <li> <p>If any "VM" related value is set for a <code>ResourceAttribute</code> object, it is required that <code>VM_MANAGER_ID</code>, as a minimum, is always set. If <code>VM_MANAGER_ID</code> is not set, then all "VM" fields will be discarded and "VM" fields will not be used for matching the migration task to a server in Application Discovery Service repository. See the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#API_PutResourceAttributes_Examples">Example</a> section below for a use case of specifying "VM" related values.</p> </li>
+    /// <li> <p> If a server you are trying to match has multiple IP or MAC addresses, you should provide as many as you know in separate type/value pairs passed to the <code>ResourceAttributeList</code> parameter to maximize the chances of matching.</p> </li>
+    /// </ul>
+    /// </important>
+    pub fn get_resource_attribute_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceAttribute>> {
+        &self.resource_attribute_list
+    }
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -147,6 +168,10 @@ impl PutResourceAttributesInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`PutResourceAttributesInput`](crate::operation::put_resource_attributes::PutResourceAttributesInput).
     pub fn build(

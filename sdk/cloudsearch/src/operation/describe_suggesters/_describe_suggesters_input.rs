@@ -57,6 +57,10 @@ impl DescribeSuggestersInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The name of the domain you want to describe.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// Appends an item to `suggester_names`.
     ///
     /// To override the contents of this collection use [`set_suggester_names`](Self::set_suggester_names).
@@ -79,6 +83,12 @@ impl DescribeSuggestersInputBuilder {
         self.suggester_names = input;
         self
     }
+    /// <p>The suggesters you want to describe.</p>
+    pub fn get_suggester_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.suggester_names
+    }
     /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
     pub fn deployed(mut self, input: bool) -> Self {
         self.deployed = ::std::option::Option::Some(input);
@@ -88,6 +98,10 @@ impl DescribeSuggestersInputBuilder {
     pub fn set_deployed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.deployed = input;
         self
+    }
+    /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
+    pub fn get_deployed(&self) -> &::std::option::Option<bool> {
+        &self.deployed
     }
     /// Consumes the builder and constructs a [`DescribeSuggestersInput`](crate::operation::describe_suggesters::DescribeSuggestersInput).
     pub fn build(

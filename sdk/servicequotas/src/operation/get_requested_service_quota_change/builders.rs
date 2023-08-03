@@ -36,6 +36,10 @@ impl GetRequestedServiceQuotaChangeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetRequestedServiceQuotaChange as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_requested_service_quota_change::builders::GetRequestedServiceQuotaChangeInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -99,5 +103,9 @@ impl GetRequestedServiceQuotaChangeFluentBuilder {
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_request_id(input);
         self
+    }
+    /// <p>The ID of the quota increase request.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_request_id()
     }
 }

@@ -36,6 +36,12 @@ impl GetPositionEstimateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetPositionEstimate as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_position_estimate::builders::GetPositionEstimateInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,12 @@ impl GetPositionEstimateFluentBuilder {
         self.inner = self.inner.set_wi_fi_access_points(input);
         self
     }
+    /// <p>Retrieves an estimated device position by resolving WLAN measurement data. The position is resolved using HERE's Wi-Fi based solver.</p>
+    pub fn get_wi_fi_access_points(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WiFiAccessPoint>> {
+        self.inner.get_wi_fi_access_points()
+    }
     /// <p>Retrieves an estimated device position by resolving measurement data from cellular radio towers. The position is resolved using HERE's cellular-based solver.</p>
     pub fn cell_towers(mut self, input: crate::types::CellTowers) -> Self {
         self.inner = self.inner.cell_towers(input);
@@ -146,6 +158,10 @@ impl GetPositionEstimateFluentBuilder {
         self.inner = self.inner.set_cell_towers(input);
         self
     }
+    /// <p>Retrieves an estimated device position by resolving measurement data from cellular radio towers. The position is resolved using HERE's cellular-based solver.</p>
+    pub fn get_cell_towers(&self) -> &::std::option::Option<crate::types::CellTowers> {
+        self.inner.get_cell_towers()
+    }
     /// <p>Retrieves an estimated device position by resolving the IP address information from the device. The position is resolved using MaxMind's IP-based solver.</p>
     pub fn ip(mut self, input: crate::types::Ip) -> Self {
         self.inner = self.inner.ip(input);
@@ -156,6 +172,10 @@ impl GetPositionEstimateFluentBuilder {
         self.inner = self.inner.set_ip(input);
         self
     }
+    /// <p>Retrieves an estimated device position by resolving the IP address information from the device. The position is resolved using MaxMind's IP-based solver.</p>
+    pub fn get_ip(&self) -> &::std::option::Option<crate::types::Ip> {
+        self.inner.get_ip()
+    }
     /// <p>Retrieves an estimated device position by resolving the global navigation satellite system (GNSS) scan data. The position is resolved using the GNSS solver powered by LoRa Cloud.</p>
     pub fn gnss(mut self, input: crate::types::Gnss) -> Self {
         self.inner = self.inner.gnss(input);
@@ -165,6 +185,10 @@ impl GetPositionEstimateFluentBuilder {
     pub fn set_gnss(mut self, input: ::std::option::Option<crate::types::Gnss>) -> Self {
         self.inner = self.inner.set_gnss(input);
         self
+    }
+    /// <p>Retrieves an estimated device position by resolving the global navigation satellite system (GNSS) scan data. The position is resolved using the GNSS solver powered by LoRa Cloud.</p>
+    pub fn get_gnss(&self) -> &::std::option::Option<crate::types::Gnss> {
+        self.inner.get_gnss()
     }
     /// <p>Optional information that specifies the time when the position information will be resolved. It uses the Unix timestamp format. If not specified, the time at which the request was received will be used.</p>
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -178,5 +202,9 @@ impl GetPositionEstimateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_timestamp(input);
         self
+    }
+    /// <p>Optional information that specifies the time when the position information will be resolved. It uses the Unix timestamp format. If not specified, the time at which the request was received will be used.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_timestamp()
     }
 }

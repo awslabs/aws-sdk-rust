@@ -39,6 +39,13 @@ impl AssociateSoftwareTokenFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateSoftwareToken as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::associate_software_token::builders::AssociateSoftwareTokenInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +136,10 @@ impl AssociateSoftwareTokenFluentBuilder {
         self.inner = self.inner.set_access_token(input);
         self
     }
+    /// <p>A valid access token that Amazon Cognito issued to the user whose software token you want to generate.</p>
+    pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_access_token()
+    }
     /// <p>The session that should be passed both ways in challenge-response calls to the service. This allows authentication of the user as part of the MFA setup process.</p>
     pub fn session(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.session(input.into());
@@ -138,5 +149,9 @@ impl AssociateSoftwareTokenFluentBuilder {
     pub fn set_session(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_session(input);
         self
+    }
+    /// <p>The session that should be passed both ways in challenge-response calls to the service. This allows authentication of the user as part of the MFA setup process.</p>
+    pub fn get_session(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_session()
     }
 }

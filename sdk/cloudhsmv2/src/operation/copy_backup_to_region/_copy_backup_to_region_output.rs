@@ -55,6 +55,13 @@ impl CopyBackupToRegionOutputBuilder {
         self.destination_backup = input;
         self
     }
+    /// <p>Information on the backup that will be copied to the destination region, including CreateTimestamp, SourceBackup, SourceCluster, and Source Region. CreateTimestamp of the destination backup will be the same as that of the source backup.</p>
+    /// <p>You will need to use the <code>sourceBackupID</code> returned in this operation to use the <code>DescribeBackups</code> operation on the backup that will be copied to the destination region.</p>
+    pub fn get_destination_backup(
+        &self,
+    ) -> &::std::option::Option<crate::types::DestinationBackup> {
+        &self.destination_backup
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

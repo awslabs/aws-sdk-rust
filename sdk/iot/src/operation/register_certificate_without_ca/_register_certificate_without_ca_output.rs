@@ -60,6 +60,10 @@ impl RegisterCertificateWithoutCaOutputBuilder {
         self.certificate_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the registered certificate.</p>
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_arn
+    }
     /// <p>The ID of the registered certificate. (The last part of the certificate ARN contains the certificate ID.</p>
     pub fn certificate_id(
         mut self,
@@ -75,6 +79,10 @@ impl RegisterCertificateWithoutCaOutputBuilder {
     ) -> Self {
         self.certificate_id = input;
         self
+    }
+    /// <p>The ID of the registered certificate. (The last part of the certificate ARN contains the certificate ID.</p>
+    pub fn get_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

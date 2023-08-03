@@ -88,6 +88,14 @@ impl AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetailsBuilder {
         self.authorization_config = input;
         self
     }
+    /// <p>The authorization configuration details for the Amazon EFS file system.</p>
+    pub fn get_authorization_config(
+        &self,
+    ) -> &::std::option::Option<
+        crate::types::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails,
+    > {
+        &self.authorization_config
+    }
     /// <p>The Amazon EFS file system identifier to use.</p>
     pub fn filesystem_id(
         mut self,
@@ -103,6 +111,10 @@ impl AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetailsBuilder {
     ) -> Self {
         self.filesystem_id = input;
         self
+    }
+    /// <p>The Amazon EFS file system identifier to use.</p>
+    pub fn get_filesystem_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filesystem_id
     }
     /// <p>The directory within the Amazon EFS file system to mount as the root directory inside the host.</p>
     pub fn root_directory(
@@ -120,6 +132,10 @@ impl AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetailsBuilder {
         self.root_directory = input;
         self
     }
+    /// <p>The directory within the Amazon EFS file system to mount as the root directory inside the host.</p>
+    pub fn get_root_directory(&self) -> &::std::option::Option<::std::string::String> {
+        &self.root_directory
+    }
     /// <p>Whether to enable encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon EFS server. </p>
     pub fn transit_encryption(
         mut self,
@@ -136,6 +152,10 @@ impl AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetailsBuilder {
         self.transit_encryption = input;
         self
     }
+    /// <p>Whether to enable encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon EFS server. </p>
+    pub fn get_transit_encryption(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transit_encryption
+    }
     /// <p>The port to use when sending encrypted data between the Amazon ECS host and the Amazon EFS server.</p>
     pub fn transit_encryption_port(mut self, input: i32) -> Self {
         self.transit_encryption_port = ::std::option::Option::Some(input);
@@ -145,6 +165,10 @@ impl AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetailsBuilder {
     pub fn set_transit_encryption_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.transit_encryption_port = input;
         self
+    }
+    /// <p>The port to use when sending encrypted data between the Amazon ECS host and the Amazon EFS server.</p>
+    pub fn get_transit_encryption_port(&self) -> &::std::option::Option<i32> {
+        &self.transit_encryption_port
     }
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails`](crate::types::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails).
     pub fn build(self) -> crate::types::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails {

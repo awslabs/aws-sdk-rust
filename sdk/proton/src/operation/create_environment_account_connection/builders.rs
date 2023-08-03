@@ -37,6 +37,10 @@ impl CreateEnvironmentAccountConnectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateEnvironmentAccountConnection as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_environment_account_connection::builders::CreateEnvironmentAccountConnectionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -101,6 +105,10 @@ impl CreateEnvironmentAccountConnectionFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment account connection that the first request created.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>The ID of the management account that accepts or rejects the environment account connection. You create and manage the Proton environment in this account. If the management account accepts the environment account connection, Proton can use the associated IAM role to provision environment infrastructure resources in the associated environment account.</p>
     pub fn management_account_id(
         mut self,
@@ -117,6 +125,10 @@ impl CreateEnvironmentAccountConnectionFluentBuilder {
         self.inner = self.inner.set_management_account_id(input);
         self
     }
+    /// <p>The ID of the management account that accepts or rejects the environment account connection. You create and manage the Proton environment in this account. If the management account accepts the environment account connection, Proton can use the associated IAM role to provision environment infrastructure resources in the associated environment account.</p>
+    pub fn get_management_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_management_account_id()
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that's created in the environment account. Proton uses this role to provision infrastructure resources in the associated environment account.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -126,6 +138,10 @@ impl CreateEnvironmentAccountConnectionFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that's created in the environment account. Proton uses this role to provision infrastructure resources in the associated environment account.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
     /// <p>The name of the Proton environment that's created in the associated management account.</p>
     pub fn environment_name(
@@ -142,6 +158,10 @@ impl CreateEnvironmentAccountConnectionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_environment_name(input);
         self
+    }
+    /// <p>The name of the Proton environment that's created in the associated management account.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_name()
     }
     /// Appends an item to `tags`.
     ///
@@ -161,6 +181,11 @@ impl CreateEnvironmentAccountConnectionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>An optional list of metadata items that you can associate with the Proton environment account connection. A tag is a key-value pair.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
     /// <p>You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in this account.</p>
@@ -182,6 +207,12 @@ impl CreateEnvironmentAccountConnectionFluentBuilder {
         self.inner = self.inner.set_component_role_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
+    /// <p>You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in this account.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
+    pub fn get_component_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_component_role_arn()
+    }
     /// <p>The Amazon Resource Name (ARN) of an IAM service role in the environment account. Proton uses this role to provision infrastructure resources using CodeBuild-based provisioning in the associated environment account.</p>
     pub fn codebuild_role_arn(
         mut self,
@@ -197,5 +228,9 @@ impl CreateEnvironmentAccountConnectionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_codebuild_role_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an IAM service role in the environment account. Proton uses this role to provision infrastructure resources using CodeBuild-based provisioning in the associated environment account.</p>
+    pub fn get_codebuild_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_codebuild_role_arn()
     }
 }

@@ -36,6 +36,10 @@ impl CreateTopicRefreshScheduleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateTopicRefreshSchedule as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_topic_refresh_schedule::builders::CreateTopicRefreshScheduleInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl CreateTopicRefreshScheduleFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The ID of the Amazon Web Services account that contains the topic you're creating a refresh schedule for.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn topic_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.topic_id(input.into());
@@ -141,6 +149,10 @@ impl CreateTopicRefreshScheduleFluentBuilder {
     pub fn set_topic_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_topic_id(input);
         self
+    }
+    /// <p>The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    pub fn get_topic_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_topic_id()
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     pub fn dataset_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -152,6 +164,10 @@ impl CreateTopicRefreshScheduleFluentBuilder {
         self.inner = self.inner.set_dataset_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
+    pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dataset_arn()
+    }
     /// <p>The name of the dataset.</p>
     pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dataset_name(input.into());
@@ -161,6 +177,10 @@ impl CreateTopicRefreshScheduleFluentBuilder {
     pub fn set_dataset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dataset_name(input);
         self
+    }
+    /// <p>The name of the dataset.</p>
+    pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dataset_name()
     }
     /// <p>The definition of a refresh schedule.</p>
     pub fn refresh_schedule(mut self, input: crate::types::TopicRefreshSchedule) -> Self {
@@ -174,5 +194,11 @@ impl CreateTopicRefreshScheduleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_refresh_schedule(input);
         self
+    }
+    /// <p>The definition of a refresh schedule.</p>
+    pub fn get_refresh_schedule(
+        &self,
+    ) -> &::std::option::Option<crate::types::TopicRefreshSchedule> {
+        self.inner.get_refresh_schedule()
     }
 }

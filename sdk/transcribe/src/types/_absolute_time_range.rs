@@ -67,6 +67,10 @@ impl AbsoluteTimeRangeBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The time, in milliseconds, when Amazon Transcribe starts searching for the specified criteria in your audio. If you include <code>StartTime</code> in your request, you must also include <code>EndTime</code>.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<i64> {
+        &self.start_time
+    }
     /// <p>The time, in milliseconds, when Amazon Transcribe stops searching for the specified criteria in your audio. If you include <code>EndTime</code> in your request, you must also include <code>StartTime</code>.</p>
     pub fn end_time(mut self, input: i64) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl AbsoluteTimeRangeBuilder {
     pub fn set_end_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>The time, in milliseconds, when Amazon Transcribe stops searching for the specified criteria in your audio. If you include <code>EndTime</code> in your request, you must also include <code>StartTime</code>.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<i64> {
+        &self.end_time
     }
     /// <p>The time, in milliseconds, from the start of your media file until the specified value. Amazon Transcribe searches for your specified criteria in this time segment.</p>
     pub fn first(mut self, input: i64) -> Self {
@@ -87,6 +95,10 @@ impl AbsoluteTimeRangeBuilder {
         self.first = input;
         self
     }
+    /// <p>The time, in milliseconds, from the start of your media file until the specified value. Amazon Transcribe searches for your specified criteria in this time segment.</p>
+    pub fn get_first(&self) -> &::std::option::Option<i64> {
+        &self.first
+    }
     /// <p>The time, in milliseconds, from the specified value until the end of your media file. Amazon Transcribe searches for your specified criteria in this time segment.</p>
     pub fn last(mut self, input: i64) -> Self {
         self.last = ::std::option::Option::Some(input);
@@ -96,6 +108,10 @@ impl AbsoluteTimeRangeBuilder {
     pub fn set_last(mut self, input: ::std::option::Option<i64>) -> Self {
         self.last = input;
         self
+    }
+    /// <p>The time, in milliseconds, from the specified value until the end of your media file. Amazon Transcribe searches for your specified criteria in this time segment.</p>
+    pub fn get_last(&self) -> &::std::option::Option<i64> {
+        &self.last
     }
     /// Consumes the builder and constructs a [`AbsoluteTimeRange`](crate::types::AbsoluteTimeRange).
     pub fn build(self) -> crate::types::AbsoluteTimeRange {

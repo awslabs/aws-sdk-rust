@@ -40,6 +40,10 @@ impl DatadogSourcePropertiesBuilder {
         self.object = input;
         self
     }
+    /// <p> The object specified in the Datadog flow source. </p>
+    pub fn get_object(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object
+    }
     /// Consumes the builder and constructs a [`DatadogSourceProperties`](crate::types::DatadogSourceProperties).
     pub fn build(self) -> crate::types::DatadogSourceProperties {
         crate::types::DatadogSourceProperties {

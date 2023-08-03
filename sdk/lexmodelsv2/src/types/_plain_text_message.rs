@@ -40,6 +40,10 @@ impl PlainTextMessageBuilder {
         self.value = input;
         self
     }
+    /// <p>The message to send to the user.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// Consumes the builder and constructs a [`PlainTextMessage`](crate::types::PlainTextMessage).
     pub fn build(self) -> crate::types::PlainTextMessage {
         crate::types::PlainTextMessage { value: self.value }

@@ -98,6 +98,10 @@ impl GranteeBuilder {
         self.display_name = input;
         self
     }
+    /// <p>Screen name of the grantee.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
+    }
     /// <p>Email address of the grantee.</p> <note>
     /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions: </p>
     /// <ul>
@@ -140,6 +144,23 @@ impl GranteeBuilder {
         self.email_address = input;
         self
     }
+    /// <p>Email address of the grantee.</p> <note>
+    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions: </p>
+    /// <ul>
+    /// <li> <p>US East (N. Virginia)</p> </li>
+    /// <li> <p>US West (N. California)</p> </li>
+    /// <li> <p> US West (Oregon)</p> </li>
+    /// <li> <p> Asia Pacific (Singapore)</p> </li>
+    /// <li> <p>Asia Pacific (Sydney)</p> </li>
+    /// <li> <p>Asia Pacific (Tokyo)</p> </li>
+    /// <li> <p>Europe (Ireland)</p> </li>
+    /// <li> <p>South America (São Paulo)</p> </li>
+    /// </ul>
+    /// <p>For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a> in the Amazon Web Services General Reference.</p>
+    /// </note>
+    pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email_address
+    }
     /// <p>The canonical user ID of the grantee.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -149,6 +170,10 @@ impl GranteeBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The canonical user ID of the grantee.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>URI of the grantee group.</p>
     pub fn uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -160,6 +185,10 @@ impl GranteeBuilder {
         self.uri = input;
         self
     }
+    /// <p>URI of the grantee group.</p>
+    pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.uri
+    }
     /// <p>Type of grantee</p>
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -169,6 +198,10 @@ impl GranteeBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::Type>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>Type of grantee</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::Type> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`Grantee`](crate::types::Grantee).
     pub fn build(self) -> crate::types::Grantee {

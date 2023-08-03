@@ -36,6 +36,10 @@ impl UpdateDomainFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDomain as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_domain::builders::UpdateDomainInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl UpdateDomainFluentBuilder {
         self.inner = self.inner.set_domain_id(input);
         self
     }
+    /// <p>The ID of the domain to be updated.</p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_id()
+    }
     /// <p>A collection of settings.</p>
     pub fn default_user_settings(mut self, input: crate::types::UserSettings) -> Self {
         self.inner = self.inner.default_user_settings(input);
@@ -130,6 +138,10 @@ impl UpdateDomainFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_default_user_settings(input);
         self
+    }
+    /// <p>A collection of settings.</p>
+    pub fn get_default_user_settings(&self) -> &::std::option::Option<crate::types::UserSettings> {
+        self.inner.get_default_user_settings()
     }
     /// <p>A collection of <code>DomainSettings</code> configuration values to update.</p>
     pub fn domain_settings_for_update(
@@ -147,6 +159,12 @@ impl UpdateDomainFluentBuilder {
         self.inner = self.inner.set_domain_settings_for_update(input);
         self
     }
+    /// <p>A collection of <code>DomainSettings</code> configuration values to update.</p>
+    pub fn get_domain_settings_for_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::DomainSettingsForUpdate> {
+        self.inner.get_domain_settings_for_update()
+    }
     /// <p>The default settings used to create a space within the Domain.</p>
     pub fn default_space_settings(mut self, input: crate::types::DefaultSpaceSettings) -> Self {
         self.inner = self.inner.default_space_settings(input);
@@ -159,6 +177,12 @@ impl UpdateDomainFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_default_space_settings(input);
         self
+    }
+    /// <p>The default settings used to create a space within the Domain.</p>
+    pub fn get_default_space_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::DefaultSpaceSettings> {
+        self.inner.get_default_space_settings()
     }
     /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided. If setting up the domain for use with RStudio, this value must be set to <code>Service</code>.</p>
     pub fn app_security_group_management(
@@ -175,5 +199,11 @@ impl UpdateDomainFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_app_security_group_management(input);
         self
+    }
+    /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided. If setting up the domain for use with RStudio, this value must be set to <code>Service</code>.</p>
+    pub fn get_app_security_group_management(
+        &self,
+    ) -> &::std::option::Option<crate::types::AppSecurityGroupManagement> {
+        self.inner.get_app_security_group_management()
     }
 }

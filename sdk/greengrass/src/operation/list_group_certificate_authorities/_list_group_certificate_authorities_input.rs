@@ -39,6 +39,10 @@ impl ListGroupCertificateAuthoritiesInputBuilder {
         self.group_id = input;
         self
     }
+    /// The ID of the Greengrass group.
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
+    }
     /// Consumes the builder and constructs a [`ListGroupCertificateAuthoritiesInput`](crate::operation::list_group_certificate_authorities::ListGroupCertificateAuthoritiesInput).
     pub fn build(
         self,

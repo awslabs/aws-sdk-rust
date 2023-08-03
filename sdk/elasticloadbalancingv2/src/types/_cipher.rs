@@ -48,6 +48,10 @@ impl CipherBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the cipher.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The priority of the cipher.</p>
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl CipherBuilder {
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
+    }
+    /// <p>The priority of the cipher.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
     }
     /// Consumes the builder and constructs a [`Cipher`](crate::types::Cipher).
     pub fn build(self) -> crate::types::Cipher {

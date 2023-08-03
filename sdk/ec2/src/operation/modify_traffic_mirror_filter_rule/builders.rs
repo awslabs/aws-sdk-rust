@@ -37,6 +37,10 @@ impl ModifyTrafficMirrorFilterRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyTrafficMirrorFilterRule as a reference.
+    pub fn as_input(&self) -> &crate::operation::modify_traffic_mirror_filter_rule::builders::ModifyTrafficMirrorFilterRuleInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,12 @@ impl ModifyTrafficMirrorFilterRuleFluentBuilder {
         self.inner = self.inner.set_traffic_mirror_filter_rule_id(input);
         self
     }
+    /// <p>The ID of the Traffic Mirror rule.</p>
+    pub fn get_traffic_mirror_filter_rule_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_traffic_mirror_filter_rule_id()
+    }
     /// <p>The type of traffic to assign to the rule.</p>
     pub fn traffic_direction(mut self, input: crate::types::TrafficDirection) -> Self {
         self.inner = self.inner.traffic_direction(input);
@@ -146,6 +156,10 @@ impl ModifyTrafficMirrorFilterRuleFluentBuilder {
         self.inner = self.inner.set_traffic_direction(input);
         self
     }
+    /// <p>The type of traffic to assign to the rule.</p>
+    pub fn get_traffic_direction(&self) -> &::std::option::Option<crate::types::TrafficDirection> {
+        self.inner.get_traffic_direction()
+    }
     /// <p>The number of the Traffic Mirror rule. This number must be unique for each Traffic Mirror rule in a given direction. The rules are processed in ascending order by rule number.</p>
     pub fn rule_number(mut self, input: i32) -> Self {
         self.inner = self.inner.rule_number(input);
@@ -155,6 +169,10 @@ impl ModifyTrafficMirrorFilterRuleFluentBuilder {
     pub fn set_rule_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_rule_number(input);
         self
+    }
+    /// <p>The number of the Traffic Mirror rule. This number must be unique for each Traffic Mirror rule in a given direction. The rules are processed in ascending order by rule number.</p>
+    pub fn get_rule_number(&self) -> &::std::option::Option<i32> {
+        self.inner.get_rule_number()
     }
     /// <p>The action to assign to the rule.</p>
     pub fn rule_action(mut self, input: crate::types::TrafficMirrorRuleAction) -> Self {
@@ -168,6 +186,10 @@ impl ModifyTrafficMirrorFilterRuleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_rule_action(input);
         self
+    }
+    /// <p>The action to assign to the rule.</p>
+    pub fn get_rule_action(&self) -> &::std::option::Option<crate::types::TrafficMirrorRuleAction> {
+        self.inner.get_rule_action()
     }
     /// <p>The destination ports that are associated with the Traffic Mirror rule.</p>
     pub fn destination_port_range(
@@ -185,6 +207,12 @@ impl ModifyTrafficMirrorFilterRuleFluentBuilder {
         self.inner = self.inner.set_destination_port_range(input);
         self
     }
+    /// <p>The destination ports that are associated with the Traffic Mirror rule.</p>
+    pub fn get_destination_port_range(
+        &self,
+    ) -> &::std::option::Option<crate::types::TrafficMirrorPortRangeRequest> {
+        self.inner.get_destination_port_range()
+    }
     /// <p>The port range to assign to the Traffic Mirror rule.</p>
     pub fn source_port_range(mut self, input: crate::types::TrafficMirrorPortRangeRequest) -> Self {
         self.inner = self.inner.source_port_range(input);
@@ -198,6 +226,12 @@ impl ModifyTrafficMirrorFilterRuleFluentBuilder {
         self.inner = self.inner.set_source_port_range(input);
         self
     }
+    /// <p>The port range to assign to the Traffic Mirror rule.</p>
+    pub fn get_source_port_range(
+        &self,
+    ) -> &::std::option::Option<crate::types::TrafficMirrorPortRangeRequest> {
+        self.inner.get_source_port_range()
+    }
     /// <p>The protocol, for example TCP, to assign to the Traffic Mirror rule.</p>
     pub fn protocol(mut self, input: i32) -> Self {
         self.inner = self.inner.protocol(input);
@@ -207,6 +241,10 @@ impl ModifyTrafficMirrorFilterRuleFluentBuilder {
     pub fn set_protocol(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_protocol(input);
         self
+    }
+    /// <p>The protocol, for example TCP, to assign to the Traffic Mirror rule.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<i32> {
+        self.inner.get_protocol()
     }
     /// <p>The destination CIDR block to assign to the Traffic Mirror rule.</p>
     pub fn destination_cidr_block(
@@ -224,6 +262,10 @@ impl ModifyTrafficMirrorFilterRuleFluentBuilder {
         self.inner = self.inner.set_destination_cidr_block(input);
         self
     }
+    /// <p>The destination CIDR block to assign to the Traffic Mirror rule.</p>
+    pub fn get_destination_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_cidr_block()
+    }
     /// <p>The source CIDR block to assign to the Traffic Mirror rule.</p>
     pub fn source_cidr_block(
         mut self,
@@ -240,6 +282,10 @@ impl ModifyTrafficMirrorFilterRuleFluentBuilder {
         self.inner = self.inner.set_source_cidr_block(input);
         self
     }
+    /// <p>The source CIDR block to assign to the Traffic Mirror rule.</p>
+    pub fn get_source_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_cidr_block()
+    }
     /// <p>The description to assign to the Traffic Mirror rule.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -249,6 +295,10 @@ impl ModifyTrafficMirrorFilterRuleFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description to assign to the Traffic Mirror rule.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `RemoveFields`.
     ///
@@ -269,6 +319,13 @@ impl ModifyTrafficMirrorFilterRuleFluentBuilder {
         self.inner = self.inner.set_remove_fields(input);
         self
     }
+    /// <p>The properties that you want to remove from the Traffic Mirror filter rule.</p>
+    /// <p>When you remove a property from a Traffic Mirror filter rule, the property is set to the default.</p>
+    pub fn get_remove_fields(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TrafficMirrorFilterRuleField>> {
+        self.inner.get_remove_fields()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -278,5 +335,9 @@ impl ModifyTrafficMirrorFilterRuleFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

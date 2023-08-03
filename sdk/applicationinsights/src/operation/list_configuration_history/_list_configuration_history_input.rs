@@ -87,6 +87,10 @@ impl ListConfigurationHistoryInputBuilder {
         self.resource_group_name = input;
         self
     }
+    /// <p>Resource group to which the application belongs. </p>
+    pub fn get_resource_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_group_name
+    }
     /// <p>The start time of the event. </p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -99,6 +103,10 @@ impl ListConfigurationHistoryInputBuilder {
     ) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>The start time of the event. </p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p>The end time of the event.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -113,6 +121,10 @@ impl ListConfigurationHistoryInputBuilder {
         self.end_time = input;
         self
     }
+    /// <p>The end time of the event.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>The status of the configuration update event. Possible values include INFO, WARN, and ERROR.</p>
     pub fn event_status(mut self, input: crate::types::ConfigurationEventStatus) -> Self {
         self.event_status = ::std::option::Option::Some(input);
@@ -126,6 +138,12 @@ impl ListConfigurationHistoryInputBuilder {
         self.event_status = input;
         self
     }
+    /// <p>The status of the configuration update event. Possible values include INFO, WARN, and ERROR.</p>
+    pub fn get_event_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConfigurationEventStatus> {
+        &self.event_status
+    }
     /// <p> The maximum number of results returned by <code>ListConfigurationHistory</code> in paginated output. When this parameter is used, <code>ListConfigurationHistory</code> returns only <code>MaxResults</code> in a single page along with a <code>NextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListConfigurationHistory</code> request with the returned <code>NextToken</code> value. If this parameter is not used, then <code>ListConfigurationHistory</code> returns all results. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -136,6 +154,10 @@ impl ListConfigurationHistoryInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p> The maximum number of results returned by <code>ListConfigurationHistory</code> in paginated output. When this parameter is used, <code>ListConfigurationHistory</code> returns only <code>MaxResults</code> in a single page along with a <code>NextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListConfigurationHistory</code> request with the returned <code>NextToken</code> value. If this parameter is not used, then <code>ListConfigurationHistory</code> returns all results. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The <code>NextToken</code> value returned from a previous paginated <code>ListConfigurationHistory</code> request where <code>MaxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>NextToken</code> value. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -145,6 +167,10 @@ impl ListConfigurationHistoryInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The <code>NextToken</code> value returned from a previous paginated <code>ListConfigurationHistory</code> request where <code>MaxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>NextToken</code> value. This value is <code>null</code> when there are no more results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListConfigurationHistoryInput`](crate::operation::list_configuration_history::ListConfigurationHistoryInput).
     pub fn build(

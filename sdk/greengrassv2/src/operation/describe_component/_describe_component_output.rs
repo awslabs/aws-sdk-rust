@@ -119,6 +119,10 @@ impl DescribeComponentOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the component.</p>
     pub fn component_name(
         mut self,
@@ -134,6 +138,10 @@ impl DescribeComponentOutputBuilder {
     ) -> Self {
         self.component_name = input;
         self
+    }
+    /// <p>The name of the component.</p>
+    pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_name
     }
     /// <p>The version of the component.</p>
     pub fn component_version(
@@ -151,6 +159,10 @@ impl DescribeComponentOutputBuilder {
         self.component_version = input;
         self
     }
+    /// <p>The version of the component.</p>
+    pub fn get_component_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_version
+    }
     /// <p>The time at which the component was created, expressed in ISO 8601 format.</p>
     pub fn creation_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_timestamp = ::std::option::Option::Some(input);
@@ -164,6 +176,10 @@ impl DescribeComponentOutputBuilder {
         self.creation_timestamp = input;
         self
     }
+    /// <p>The time at which the component was created, expressed in ISO 8601 format.</p>
+    pub fn get_creation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_timestamp
+    }
     /// <p>The publisher of the component version.</p>
     pub fn publisher(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.publisher = ::std::option::Option::Some(input.into());
@@ -174,6 +190,10 @@ impl DescribeComponentOutputBuilder {
         self.publisher = input;
         self
     }
+    /// <p>The publisher of the component version.</p>
+    pub fn get_publisher(&self) -> &::std::option::Option<::std::string::String> {
+        &self.publisher
+    }
     /// <p>The description of the component version.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -183,6 +203,10 @@ impl DescribeComponentOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the component version.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The status of the component version in IoT Greengrass V2. This status is different from the status of the component on a core device.</p>
     pub fn status(mut self, input: crate::types::CloudComponentStatus) -> Self {
@@ -196,6 +220,10 @@ impl DescribeComponentOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the component version in IoT Greengrass V2. This status is different from the status of the component on a core device.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::CloudComponentStatus> {
+        &self.status
     }
     /// Appends an item to `platforms`.
     ///
@@ -215,6 +243,12 @@ impl DescribeComponentOutputBuilder {
     ) -> Self {
         self.platforms = input;
         self
+    }
+    /// <p>The platforms that the component version supports.</p>
+    pub fn get_platforms(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentPlatform>> {
+        &self.platforms
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -240,6 +274,14 @@ impl DescribeComponentOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

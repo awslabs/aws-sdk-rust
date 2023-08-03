@@ -37,6 +37,10 @@ impl AttachPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AttachPolicy as a reference.
+    pub fn as_input(&self) -> &crate::operation::attach_policy::builders::AttachPolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl AttachPolicyFluentBuilder {
         self.inner = self.inner.set_policy_name(input);
         self
     }
+    /// <p>The name of the policy to attach.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_name()
+    }
     /// <p>The <a href="https://docs.aws.amazon.com/iot/latest/developerguide/security-iam.html">identity</a> to which the policy is attached. For example, a thing group or a certificate.</p>
     pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target(input.into());
@@ -128,5 +136,9 @@ impl AttachPolicyFluentBuilder {
     pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target(input);
         self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/iot/latest/developerguide/security-iam.html">identity</a> to which the policy is attached. For example, a thing group or a certificate.</p>
+    pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target()
     }
 }

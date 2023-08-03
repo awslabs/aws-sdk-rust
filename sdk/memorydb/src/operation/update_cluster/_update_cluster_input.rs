@@ -170,6 +170,10 @@ impl UpdateClusterInputBuilder {
         self.cluster_name = input;
         self
     }
+    /// <p>The name of the cluster to update</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_name
+    }
     /// <p>The description of the cluster to update</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -179,6 +183,10 @@ impl UpdateClusterInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the cluster to update</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `security_group_ids`.
     ///
@@ -201,6 +209,12 @@ impl UpdateClusterInputBuilder {
     ) -> Self {
         self.security_group_ids = input;
         self
+    }
+    /// <p>The SecurityGroupIds to update</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
     }
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
     /// <p>Valid values for <code>ddd</code> are:</p>
@@ -240,6 +254,21 @@ impl UpdateClusterInputBuilder {
         self.maintenance_window = input;
         self
     }
+    /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
+    /// <p>Valid values for <code>ddd</code> are:</p>
+    /// <ul>
+    /// <li> <p> <code>sun</code> </p> </li>
+    /// <li> <p> <code>mon</code> </p> </li>
+    /// <li> <p> <code>tue</code> </p> </li>
+    /// <li> <p> <code>wed</code> </p> </li>
+    /// <li> <p> <code>thu</code> </p> </li>
+    /// <li> <p> <code>fri</code> </p> </li>
+    /// <li> <p> <code>sat</code> </p> </li>
+    /// </ul>
+    /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
+    pub fn get_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
+        &self.maintenance_window
+    }
     /// <p>The SNS topic ARN to update</p>
     pub fn sns_topic_arn(
         mut self,
@@ -255,6 +284,10 @@ impl UpdateClusterInputBuilder {
     ) -> Self {
         self.sns_topic_arn = input;
         self
+    }
+    /// <p>The SNS topic ARN to update</p>
+    pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sns_topic_arn
     }
     /// <p>The status of the Amazon SNS notification topic. Notifications are sent only if the status is active.</p>
     pub fn sns_topic_status(
@@ -272,6 +305,10 @@ impl UpdateClusterInputBuilder {
         self.sns_topic_status = input;
         self
     }
+    /// <p>The status of the Amazon SNS notification topic. Notifications are sent only if the status is active.</p>
+    pub fn get_sns_topic_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sns_topic_status
+    }
     /// <p>The name of the parameter group to update</p>
     pub fn parameter_group_name(
         mut self,
@@ -287,6 +324,10 @@ impl UpdateClusterInputBuilder {
     ) -> Self {
         self.parameter_group_name = input;
         self
+    }
+    /// <p>The name of the parameter group to update</p>
+    pub fn get_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_group_name
     }
     /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your cluster.</p>
     pub fn snapshot_window(
@@ -304,6 +345,10 @@ impl UpdateClusterInputBuilder {
         self.snapshot_window = input;
         self
     }
+    /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your cluster.</p>
+    pub fn get_snapshot_window(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_window
+    }
     /// <p>The number of days for which MemoryDB retains automatic cluster snapshots before deleting them. For example, if you set SnapshotRetentionLimit to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p>
     pub fn snapshot_retention_limit(mut self, input: i32) -> Self {
         self.snapshot_retention_limit = ::std::option::Option::Some(input);
@@ -314,6 +359,10 @@ impl UpdateClusterInputBuilder {
         self.snapshot_retention_limit = input;
         self
     }
+    /// <p>The number of days for which MemoryDB retains automatic cluster snapshots before deleting them. For example, if you set SnapshotRetentionLimit to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p>
+    pub fn get_snapshot_retention_limit(&self) -> &::std::option::Option<i32> {
+        &self.snapshot_retention_limit
+    }
     /// <p>A valid node type that you want to scale this cluster up or down to.</p>
     pub fn node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_type = ::std::option::Option::Some(input.into());
@@ -323,6 +372,10 @@ impl UpdateClusterInputBuilder {
     pub fn set_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_type = input;
         self
+    }
+    /// <p>A valid node type that you want to scale this cluster up or down to.</p>
+    pub fn get_node_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_type
     }
     /// <p>The upgraded version of the engine to be run on the nodes. You can upgrade to a newer engine version, but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing cluster and create it anew with the earlier engine version.</p>
     pub fn engine_version(
@@ -340,6 +393,10 @@ impl UpdateClusterInputBuilder {
         self.engine_version = input;
         self
     }
+    /// <p>The upgraded version of the engine to be run on the nodes. You can upgrade to a newer engine version, but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing cluster and create it anew with the earlier engine version.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
+    }
     /// <p>The number of replicas that will reside in each shard</p>
     pub fn replica_configuration(
         mut self,
@@ -356,6 +413,12 @@ impl UpdateClusterInputBuilder {
         self.replica_configuration = input;
         self
     }
+    /// <p>The number of replicas that will reside in each shard</p>
+    pub fn get_replica_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReplicaConfigurationRequest> {
+        &self.replica_configuration
+    }
     /// <p>The number of shards in the cluster</p>
     pub fn shard_configuration(mut self, input: crate::types::ShardConfigurationRequest) -> Self {
         self.shard_configuration = ::std::option::Option::Some(input);
@@ -369,6 +432,12 @@ impl UpdateClusterInputBuilder {
         self.shard_configuration = input;
         self
     }
+    /// <p>The number of shards in the cluster</p>
+    pub fn get_shard_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ShardConfigurationRequest> {
+        &self.shard_configuration
+    }
     /// <p>The Access Control List that is associated with the cluster</p>
     pub fn acl_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.acl_name = ::std::option::Option::Some(input.into());
@@ -378,6 +447,10 @@ impl UpdateClusterInputBuilder {
     pub fn set_acl_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.acl_name = input;
         self
+    }
+    /// <p>The Access Control List that is associated with the cluster</p>
+    pub fn get_acl_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.acl_name
     }
     /// Consumes the builder and constructs a [`UpdateClusterInput`](crate::operation::update_cluster::UpdateClusterInput).
     pub fn build(

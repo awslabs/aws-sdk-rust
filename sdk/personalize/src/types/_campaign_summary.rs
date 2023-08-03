@@ -90,6 +90,10 @@ impl CampaignSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the campaign.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
     pub fn campaign_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.campaign_arn = ::std::option::Option::Some(input.into());
@@ -99,6 +103,10 @@ impl CampaignSummaryBuilder {
     pub fn set_campaign_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.campaign_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
+    pub fn get_campaign_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.campaign_arn
     }
     /// <p>The status of the campaign.</p>
     /// <p>A campaign can be in one of the following states:</p>
@@ -120,6 +128,15 @@ impl CampaignSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the campaign.</p>
+    /// <p>A campaign can be in one of the following states:</p>
+    /// <ul>
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>The date and time (in Unix time) that the campaign was created.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
@@ -133,6 +150,10 @@ impl CampaignSummaryBuilder {
         self.creation_date_time = input;
         self
     }
+    /// <p>The date and time (in Unix time) that the campaign was created.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
+    }
     /// <p>The date and time (in Unix time) that the campaign was last updated.</p>
     pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date_time = ::std::option::Option::Some(input);
@@ -145,6 +166,12 @@ impl CampaignSummaryBuilder {
     ) -> Self {
         self.last_updated_date_time = input;
         self
+    }
+    /// <p>The date and time (in Unix time) that the campaign was last updated.</p>
+    pub fn get_last_updated_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date_time
     }
     /// <p>If a campaign fails, the reason behind the failure.</p>
     pub fn failure_reason(
@@ -161,6 +188,10 @@ impl CampaignSummaryBuilder {
     ) -> Self {
         self.failure_reason = input;
         self
+    }
+    /// <p>If a campaign fails, the reason behind the failure.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
     }
     /// Consumes the builder and constructs a [`CampaignSummary`](crate::types::CampaignSummary).
     pub fn build(self) -> crate::types::CampaignSummary {

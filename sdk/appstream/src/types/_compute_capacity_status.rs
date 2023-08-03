@@ -64,6 +64,10 @@ impl ComputeCapacityStatusBuilder {
         self.desired = input;
         self
     }
+    /// <p>The desired number of streaming instances.</p>
+    pub fn get_desired(&self) -> &::std::option::Option<i32> {
+        &self.desired
+    }
     /// <p>The total number of simultaneous streaming instances that are running.</p>
     pub fn running(mut self, input: i32) -> Self {
         self.running = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl ComputeCapacityStatusBuilder {
     pub fn set_running(mut self, input: ::std::option::Option<i32>) -> Self {
         self.running = input;
         self
+    }
+    /// <p>The total number of simultaneous streaming instances that are running.</p>
+    pub fn get_running(&self) -> &::std::option::Option<i32> {
+        &self.running
     }
     /// <p>The number of instances in use for streaming.</p>
     pub fn in_use(mut self, input: i32) -> Self {
@@ -84,6 +92,10 @@ impl ComputeCapacityStatusBuilder {
         self.in_use = input;
         self
     }
+    /// <p>The number of instances in use for streaming.</p>
+    pub fn get_in_use(&self) -> &::std::option::Option<i32> {
+        &self.in_use
+    }
     /// <p>The number of currently available instances that can be used to stream sessions.</p>
     pub fn available(mut self, input: i32) -> Self {
         self.available = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl ComputeCapacityStatusBuilder {
     pub fn set_available(mut self, input: ::std::option::Option<i32>) -> Self {
         self.available = input;
         self
+    }
+    /// <p>The number of currently available instances that can be used to stream sessions.</p>
+    pub fn get_available(&self) -> &::std::option::Option<i32> {
+        &self.available
     }
     /// Consumes the builder and constructs a [`ComputeCapacityStatus`](crate::types::ComputeCapacityStatus).
     pub fn build(self) -> crate::types::ComputeCapacityStatus {

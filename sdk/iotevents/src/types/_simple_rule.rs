@@ -62,6 +62,10 @@ impl SimpleRuleBuilder {
         self.input_property = input;
         self
     }
+    /// <p>The value on the left side of the comparison operator. You can specify an AWS IoT Events input attribute as an input property.</p>
+    pub fn get_input_property(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_property
+    }
     /// <p>The comparison operator.</p>
     pub fn comparison_operator(mut self, input: crate::types::ComparisonOperator) -> Self {
         self.comparison_operator = ::std::option::Option::Some(input);
@@ -75,6 +79,12 @@ impl SimpleRuleBuilder {
         self.comparison_operator = input;
         self
     }
+    /// <p>The comparison operator.</p>
+    pub fn get_comparison_operator(
+        &self,
+    ) -> &::std::option::Option<crate::types::ComparisonOperator> {
+        &self.comparison_operator
+    }
     /// <p>The value on the right side of the comparison operator. You can enter a number or specify an AWS IoT Events input attribute.</p>
     pub fn threshold(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.threshold = ::std::option::Option::Some(input.into());
@@ -84,6 +94,10 @@ impl SimpleRuleBuilder {
     pub fn set_threshold(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.threshold = input;
         self
+    }
+    /// <p>The value on the right side of the comparison operator. You can enter a number or specify an AWS IoT Events input attribute.</p>
+    pub fn get_threshold(&self) -> &::std::option::Option<::std::string::String> {
+        &self.threshold
     }
     /// Consumes the builder and constructs a [`SimpleRule`](crate::types::SimpleRule).
     pub fn build(self) -> crate::types::SimpleRule {

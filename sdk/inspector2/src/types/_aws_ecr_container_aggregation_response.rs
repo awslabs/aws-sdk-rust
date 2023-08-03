@@ -88,6 +88,10 @@ impl AwsEcrContainerAggregationResponseBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>The resource ID of the container.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// <p>The SHA value of the container image.</p>
     pub fn image_sha(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_sha = ::std::option::Option::Some(input.into());
@@ -97,6 +101,10 @@ impl AwsEcrContainerAggregationResponseBuilder {
     pub fn set_image_sha(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_sha = input;
         self
+    }
+    /// <p>The SHA value of the container image.</p>
+    pub fn get_image_sha(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_sha
     }
     /// <p>The container repository.</p>
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -108,6 +116,10 @@ impl AwsEcrContainerAggregationResponseBuilder {
         self.repository = input;
         self
     }
+    /// <p>The container repository.</p>
+    pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository
+    }
     /// <p>The architecture of the container.</p>
     pub fn architecture(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.architecture = ::std::option::Option::Some(input.into());
@@ -117,6 +129,10 @@ impl AwsEcrContainerAggregationResponseBuilder {
     pub fn set_architecture(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.architecture = input;
         self
+    }
+    /// <p>The architecture of the container.</p>
+    pub fn get_architecture(&self) -> &::std::option::Option<::std::string::String> {
+        &self.architecture
     }
     /// Appends an item to `image_tags`.
     ///
@@ -137,6 +153,10 @@ impl AwsEcrContainerAggregationResponseBuilder {
         self.image_tags = input;
         self
     }
+    /// <p>The container image stags.</p>
+    pub fn get_image_tags(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.image_tags
+    }
     /// <p>The Amazon Web Services account ID of the account that owns the container.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -146,6 +166,10 @@ impl AwsEcrContainerAggregationResponseBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>The Amazon Web Services account ID of the account that owns the container.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// <p>The number of finding by severity.</p>
     pub fn severity_counts(mut self, input: crate::types::SeverityCounts) -> Self {
@@ -159,6 +183,10 @@ impl AwsEcrContainerAggregationResponseBuilder {
     ) -> Self {
         self.severity_counts = input;
         self
+    }
+    /// <p>The number of finding by severity.</p>
+    pub fn get_severity_counts(&self) -> &::std::option::Option<crate::types::SeverityCounts> {
+        &self.severity_counts
     }
     /// Consumes the builder and constructs a [`AwsEcrContainerAggregationResponse`](crate::types::AwsEcrContainerAggregationResponse).
     pub fn build(self) -> crate::types::AwsEcrContainerAggregationResponse {

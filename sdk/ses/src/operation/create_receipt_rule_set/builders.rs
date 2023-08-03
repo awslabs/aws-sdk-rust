@@ -38,6 +38,13 @@ impl CreateReceiptRuleSetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateReceiptRuleSet as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_receipt_rule_set::builders::CreateReceiptRuleSetInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -143,5 +150,14 @@ impl CreateReceiptRuleSetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_rule_set_name(input);
         self
+    }
+    /// <p>The name of the rule set to create. The name must:</p>
+    /// <ul>
+    /// <li> <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+    /// <li> <p>Start and end with a letter or number.</p> </li>
+    /// <li> <p>Contain less than 64 characters.</p> </li>
+    /// </ul>
+    pub fn get_rule_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rule_set_name()
     }
 }

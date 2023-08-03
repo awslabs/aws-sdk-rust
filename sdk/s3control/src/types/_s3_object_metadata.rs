@@ -135,6 +135,10 @@ impl S3ObjectMetadataBuilder {
         self
     }
     /// <p></p>
+    pub fn get_cache_control(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_control
+    }
+    /// <p></p>
     pub fn content_disposition(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -149,6 +153,10 @@ impl S3ObjectMetadataBuilder {
     ) -> Self {
         self.content_disposition = input;
         self
+    }
+    /// <p></p>
+    pub fn get_content_disposition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_disposition
     }
     /// <p></p>
     pub fn content_encoding(
@@ -167,6 +175,10 @@ impl S3ObjectMetadataBuilder {
         self
     }
     /// <p></p>
+    pub fn get_content_encoding(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_encoding
+    }
+    /// <p></p>
     pub fn content_language(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -181,6 +193,10 @@ impl S3ObjectMetadataBuilder {
     ) -> Self {
         self.content_language = input;
         self
+    }
+    /// <p></p>
+    pub fn get_content_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_language
     }
     /// Adds a key-value pair to `user_metadata`.
     ///
@@ -208,6 +224,14 @@ impl S3ObjectMetadataBuilder {
         self
     }
     /// <p></p>
+    pub fn get_user_metadata(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.user_metadata
+    }
+    /// <p></p>
     pub fn content_length(mut self, input: i64) -> Self {
         self.content_length = ::std::option::Option::Some(input);
         self
@@ -216,6 +240,10 @@ impl S3ObjectMetadataBuilder {
     pub fn set_content_length(mut self, input: ::std::option::Option<i64>) -> Self {
         self.content_length = input;
         self
+    }
+    /// <p></p>
+    pub fn get_content_length(&self) -> &::std::option::Option<i64> {
+        &self.content_length
     }
     /// <p></p>
     pub fn content_md5(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -228,6 +256,10 @@ impl S3ObjectMetadataBuilder {
         self
     }
     /// <p></p>
+    pub fn get_content_md5(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_md5
+    }
+    /// <p></p>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
         self
@@ -236,6 +268,10 @@ impl S3ObjectMetadataBuilder {
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
         self
+    }
+    /// <p></p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_type
     }
     /// <p></p>
     pub fn http_expires_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -251,6 +287,10 @@ impl S3ObjectMetadataBuilder {
         self
     }
     /// <p></p>
+    pub fn get_http_expires_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.http_expires_date
+    }
+    /// <p></p>
     pub fn requester_charged(mut self, input: bool) -> Self {
         self.requester_charged = ::std::option::Option::Some(input);
         self
@@ -259,6 +299,10 @@ impl S3ObjectMetadataBuilder {
     pub fn set_requester_charged(mut self, input: ::std::option::Option<bool>) -> Self {
         self.requester_charged = input;
         self
+    }
+    /// <p></p>
+    pub fn get_requester_charged(&self) -> &::std::option::Option<bool> {
+        &self.requester_charged
     }
     /// <p></p>
     pub fn sse_algorithm(mut self, input: crate::types::S3SseAlgorithm) -> Self {
@@ -272,6 +316,10 @@ impl S3ObjectMetadataBuilder {
     ) -> Self {
         self.sse_algorithm = input;
         self
+    }
+    /// <p></p>
+    pub fn get_sse_algorithm(&self) -> &::std::option::Option<crate::types::S3SseAlgorithm> {
+        &self.sse_algorithm
     }
     /// Consumes the builder and constructs a [`S3ObjectMetadata`](crate::types::S3ObjectMetadata).
     pub fn build(self) -> crate::types::S3ObjectMetadata {

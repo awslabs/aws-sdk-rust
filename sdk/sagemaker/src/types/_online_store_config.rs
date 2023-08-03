@@ -64,6 +64,12 @@ impl OnlineStoreConfigBuilder {
         self.security_config = input;
         self
     }
+    /// <p>Use to specify KMS Key ID (<code>KMSKeyId</code>) for at-rest encryption of your <code>OnlineStore</code>.</p>
+    pub fn get_security_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::OnlineStoreSecurityConfig> {
+        &self.security_config
+    }
     /// <p>Turn <code>OnlineStore</code> off by specifying <code>False</code> for the <code>EnableOnlineStore</code> flag. Turn <code>OnlineStore</code> on by specifying <code>True</code> for the <code>EnableOnlineStore</code> flag. </p>
     /// <p>The default value is <code>False</code>.</p>
     pub fn enable_online_store(mut self, input: bool) -> Self {
@@ -75,6 +81,11 @@ impl OnlineStoreConfigBuilder {
     pub fn set_enable_online_store(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_online_store = input;
         self
+    }
+    /// <p>Turn <code>OnlineStore</code> off by specifying <code>False</code> for the <code>EnableOnlineStore</code> flag. Turn <code>OnlineStore</code> on by specifying <code>True</code> for the <code>EnableOnlineStore</code> flag. </p>
+    /// <p>The default value is <code>False</code>.</p>
+    pub fn get_enable_online_store(&self) -> &::std::option::Option<bool> {
+        &self.enable_online_store
     }
     /// <p>Time to live duration, where the record is hard deleted after the expiration time is reached; <code>ExpiresAt</code> = <code>EventTime</code> + <code>TtlDuration</code>. For information on HardDelete, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_DeleteRecord.html">DeleteRecord</a> API in the Amazon SageMaker API Reference guide.</p>
     pub fn ttl_duration(mut self, input: crate::types::TtlDuration) -> Self {
@@ -88,6 +99,10 @@ impl OnlineStoreConfigBuilder {
     ) -> Self {
         self.ttl_duration = input;
         self
+    }
+    /// <p>Time to live duration, where the record is hard deleted after the expiration time is reached; <code>ExpiresAt</code> = <code>EventTime</code> + <code>TtlDuration</code>. For information on HardDelete, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_DeleteRecord.html">DeleteRecord</a> API in the Amazon SageMaker API Reference guide.</p>
+    pub fn get_ttl_duration(&self) -> &::std::option::Option<crate::types::TtlDuration> {
+        &self.ttl_duration
     }
     /// Consumes the builder and constructs a [`OnlineStoreConfig`](crate::types::OnlineStoreConfig).
     pub fn build(self) -> crate::types::OnlineStoreConfig {

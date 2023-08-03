@@ -54,6 +54,11 @@ impl SessionStickinessConfigBuilder {
         self.idle_ttl = input;
         self
     }
+    /// <p>The amount of time after which you want sessions to cease if no requests are received. Allowed values are 300–3600 seconds (5–60 minutes).</p>
+    /// <p>The value must be less than or equal to <code>MaximumTTL</code>.</p>
+    pub fn get_idle_ttl(&self) -> &::std::option::Option<i32> {
+        &self.idle_ttl
+    }
     /// <p>The maximum amount of time to consider requests from the viewer as being part of the same session. Allowed values are 300–3600 seconds (5–60 minutes).</p>
     /// <p>The value must be less than or equal to <code>IdleTTL</code>.</p>
     pub fn maximum_ttl(mut self, input: i32) -> Self {
@@ -65,6 +70,11 @@ impl SessionStickinessConfigBuilder {
     pub fn set_maximum_ttl(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum_ttl = input;
         self
+    }
+    /// <p>The maximum amount of time to consider requests from the viewer as being part of the same session. Allowed values are 300–3600 seconds (5–60 minutes).</p>
+    /// <p>The value must be less than or equal to <code>IdleTTL</code>.</p>
+    pub fn get_maximum_ttl(&self) -> &::std::option::Option<i32> {
+        &self.maximum_ttl
     }
     /// Consumes the builder and constructs a [`SessionStickinessConfig`](crate::types::SessionStickinessConfig).
     pub fn build(self) -> crate::types::SessionStickinessConfig {

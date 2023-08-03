@@ -143,6 +143,12 @@ impl CreateMediaInsightsPipelineInputBuilder {
         self.media_insights_pipeline_configuration_arn = input;
         self
     }
+    /// <p>The ARN of the pipeline's configuration.</p>
+    pub fn get_media_insights_pipeline_configuration_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.media_insights_pipeline_configuration_arn
+    }
     /// <p>The runtime configuration for the Kinesis video stream source of the media insights pipeline.</p>
     pub fn kinesis_video_stream_source_runtime_configuration(
         mut self,
@@ -158,6 +164,12 @@ impl CreateMediaInsightsPipelineInputBuilder {
     ) -> Self {
         self.kinesis_video_stream_source_runtime_configuration = input;
         self
+    }
+    /// <p>The runtime configuration for the Kinesis video stream source of the media insights pipeline.</p>
+    pub fn get_kinesis_video_stream_source_runtime_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::KinesisVideoStreamSourceRuntimeConfiguration> {
+        &self.kinesis_video_stream_source_runtime_configuration
     }
     /// Adds a key-value pair to `media_insights_runtime_metadata`.
     ///
@@ -184,6 +196,14 @@ impl CreateMediaInsightsPipelineInputBuilder {
         self.media_insights_runtime_metadata = input;
         self
     }
+    /// <p>The runtime metadata for the media insights pipeline. Consists of a key-value map of strings.</p>
+    pub fn get_media_insights_runtime_metadata(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.media_insights_runtime_metadata
+    }
     /// <p>The runtime configuration for the Kinesis video recording stream source.</p>
     pub fn kinesis_video_stream_recording_source_runtime_configuration(
         mut self,
@@ -203,6 +223,13 @@ impl CreateMediaInsightsPipelineInputBuilder {
         self.kinesis_video_stream_recording_source_runtime_configuration = input;
         self
     }
+    /// <p>The runtime configuration for the Kinesis video recording stream source.</p>
+    pub fn get_kinesis_video_stream_recording_source_runtime_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::KinesisVideoStreamRecordingSourceRuntimeConfiguration>
+    {
+        &self.kinesis_video_stream_recording_source_runtime_configuration
+    }
     /// <p>The runtime configuration for the S3 recording sink. If specified, the settings in this structure override any settings in <code>S3RecordingSinkConfiguration</code>.</p>
     pub fn s3_recording_sink_runtime_configuration(
         mut self,
@@ -218,6 +245,12 @@ impl CreateMediaInsightsPipelineInputBuilder {
     ) -> Self {
         self.s3_recording_sink_runtime_configuration = input;
         self
+    }
+    /// <p>The runtime configuration for the S3 recording sink. If specified, the settings in this structure override any settings in <code>S3RecordingSinkConfiguration</code>.</p>
+    pub fn get_s3_recording_sink_runtime_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3RecordingSinkRuntimeConfiguration> {
+        &self.s3_recording_sink_runtime_configuration
     }
     /// Appends an item to `tags`.
     ///
@@ -238,6 +271,10 @@ impl CreateMediaInsightsPipelineInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags assigned to the media insights pipeline.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The unique identifier for the media insights pipeline request.</p>
     pub fn client_request_token(
         mut self,
@@ -253,6 +290,10 @@ impl CreateMediaInsightsPipelineInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>The unique identifier for the media insights pipeline request.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Consumes the builder and constructs a [`CreateMediaInsightsPipelineInput`](crate::operation::create_media_insights_pipeline::CreateMediaInsightsPipelineInput).
     pub fn build(

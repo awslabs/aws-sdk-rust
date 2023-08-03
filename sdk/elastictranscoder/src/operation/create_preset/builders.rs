@@ -39,6 +39,10 @@ impl CreatePresetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreatePreset as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_preset::builders::CreatePresetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -121,6 +125,10 @@ impl CreatePresetFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the preset. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>A description of the preset.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -131,6 +139,10 @@ impl CreatePresetFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>A description of the preset.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The container type for the output file. Valid values include <code>flac</code>, <code>flv</code>, <code>fmp4</code>, <code>gif</code>, <code>mp3</code>, <code>mp4</code>, <code>mpg</code>, <code>mxf</code>, <code>oga</code>, <code>ogg</code>, <code>ts</code>, and <code>webm</code>.</p>
     pub fn container(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.container(input.into());
@@ -140,6 +152,10 @@ impl CreatePresetFluentBuilder {
     pub fn set_container(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_container(input);
         self
+    }
+    /// <p>The container type for the output file. Valid values include <code>flac</code>, <code>flv</code>, <code>fmp4</code>, <code>gif</code>, <code>mp3</code>, <code>mp4</code>, <code>mpg</code>, <code>mxf</code>, <code>oga</code>, <code>ogg</code>, <code>ts</code>, and <code>webm</code>.</p>
+    pub fn get_container(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_container()
     }
     /// <p>A section of the request body that specifies the video parameters.</p>
     pub fn video(mut self, input: crate::types::VideoParameters) -> Self {
@@ -154,6 +170,10 @@ impl CreatePresetFluentBuilder {
         self.inner = self.inner.set_video(input);
         self
     }
+    /// <p>A section of the request body that specifies the video parameters.</p>
+    pub fn get_video(&self) -> &::std::option::Option<crate::types::VideoParameters> {
+        self.inner.get_video()
+    }
     /// <p>A section of the request body that specifies the audio parameters.</p>
     pub fn audio(mut self, input: crate::types::AudioParameters) -> Self {
         self.inner = self.inner.audio(input);
@@ -167,6 +187,10 @@ impl CreatePresetFluentBuilder {
         self.inner = self.inner.set_audio(input);
         self
     }
+    /// <p>A section of the request body that specifies the audio parameters.</p>
+    pub fn get_audio(&self) -> &::std::option::Option<crate::types::AudioParameters> {
+        self.inner.get_audio()
+    }
     /// <p>A section of the request body that specifies the thumbnail parameters, if any.</p>
     pub fn thumbnails(mut self, input: crate::types::Thumbnails) -> Self {
         self.inner = self.inner.thumbnails(input);
@@ -179,5 +203,9 @@ impl CreatePresetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_thumbnails(input);
         self
+    }
+    /// <p>A section of the request body that specifies the thumbnail parameters, if any.</p>
+    pub fn get_thumbnails(&self) -> &::std::option::Option<crate::types::Thumbnails> {
+        self.inner.get_thumbnails()
     }
 }

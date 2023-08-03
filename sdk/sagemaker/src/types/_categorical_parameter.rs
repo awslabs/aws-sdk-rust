@@ -48,6 +48,10 @@ impl CategoricalParameterBuilder {
         self.name = input;
         self
     }
+    /// <p>The Name of the environment variable.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `value`.
     ///
     /// To override the contents of this collection use [`set_value`](Self::set_value).
@@ -66,6 +70,10 @@ impl CategoricalParameterBuilder {
     ) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The list of values you can pass.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`CategoricalParameter`](crate::types::CategoricalParameter).
     pub fn build(self) -> crate::types::CategoricalParameter {

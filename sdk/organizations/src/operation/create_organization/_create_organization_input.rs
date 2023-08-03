@@ -59,6 +59,14 @@ impl CreateOrganizationInputBuilder {
         self.feature_set = input;
         self
     }
+    /// <p>Specifies the feature set supported by the new organization. Each feature set supports different levels of functionality.</p>
+    /// <ul>
+    /// <li> <p> <code>CONSOLIDATED_BILLING</code>: All member accounts have their bills consolidated to and paid by the management account. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only">Consolidated billing</a> in the <i>Organizations User Guide.</i> </p> <p> The consolidated billing feature subset isn't available for organizations in the Amazon Web Services GovCloud (US) Region.</p> </li>
+    /// <li> <p> <code>ALL</code>: In addition to all the features supported by the consolidated billing feature set, the management account can also apply any policy type to any member account in the organization. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all">All features</a> in the <i>Organizations User Guide.</i> </p> </li>
+    /// </ul>
+    pub fn get_feature_set(&self) -> &::std::option::Option<crate::types::OrganizationFeatureSet> {
+        &self.feature_set
+    }
     /// Consumes the builder and constructs a [`CreateOrganizationInput`](crate::operation::create_organization::CreateOrganizationInput).
     pub fn build(
         self,

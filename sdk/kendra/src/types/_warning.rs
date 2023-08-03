@@ -48,6 +48,10 @@ impl WarningBuilder {
         self.message = input;
         self
     }
+    /// <p>The message that explains the problem with the query.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The code used to show the type of warning for the query.</p>
     pub fn code(mut self, input: crate::types::WarningCode) -> Self {
         self.code = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl WarningBuilder {
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::WarningCode>) -> Self {
         self.code = input;
         self
+    }
+    /// <p>The code used to show the type of warning for the query.</p>
+    pub fn get_code(&self) -> &::std::option::Option<crate::types::WarningCode> {
+        &self.code
     }
     /// Consumes the builder and constructs a [`Warning`](crate::types::Warning).
     pub fn build(self) -> crate::types::Warning {

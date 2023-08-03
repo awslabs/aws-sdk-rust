@@ -105,6 +105,10 @@ impl DescribeLocationObjectStorageOutputBuilder {
         self.location_arn = input;
         self
     }
+    /// <p>The ARN of the object storage system location.</p>
+    pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location_arn
+    }
     /// <p>The URL of the object storage system location.</p>
     pub fn location_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_uri = ::std::option::Option::Some(input.into());
@@ -114,6 +118,10 @@ impl DescribeLocationObjectStorageOutputBuilder {
     pub fn set_location_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location_uri = input;
         self
+    }
+    /// <p>The URL of the object storage system location.</p>
+    pub fn get_location_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location_uri
     }
     /// <p>The access key (for example, a user name) required to authenticate with the object storage system.</p>
     pub fn access_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -125,6 +133,10 @@ impl DescribeLocationObjectStorageOutputBuilder {
         self.access_key = input;
         self
     }
+    /// <p>The access key (for example, a user name) required to authenticate with the object storage system.</p>
+    pub fn get_access_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_key
+    }
     /// <p>The port that your object storage server accepts inbound network traffic on (for example, port 443).</p>
     pub fn server_port(mut self, input: i32) -> Self {
         self.server_port = ::std::option::Option::Some(input);
@@ -134,6 +146,10 @@ impl DescribeLocationObjectStorageOutputBuilder {
     pub fn set_server_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.server_port = input;
         self
+    }
+    /// <p>The port that your object storage server accepts inbound network traffic on (for example, port 443).</p>
+    pub fn get_server_port(&self) -> &::std::option::Option<i32> {
+        &self.server_port
     }
     /// <p>The protocol that your object storage system uses to communicate.</p>
     pub fn server_protocol(mut self, input: crate::types::ObjectStorageServerProtocol) -> Self {
@@ -147,6 +163,12 @@ impl DescribeLocationObjectStorageOutputBuilder {
     ) -> Self {
         self.server_protocol = input;
         self
+    }
+    /// <p>The protocol that your object storage system uses to communicate.</p>
+    pub fn get_server_protocol(
+        &self,
+    ) -> &::std::option::Option<crate::types::ObjectStorageServerProtocol> {
+        &self.server_protocol
     }
     /// Appends an item to `agent_arns`.
     ///
@@ -167,6 +189,10 @@ impl DescribeLocationObjectStorageOutputBuilder {
         self.agent_arns = input;
         self
     }
+    /// <p>The ARNs of the DataSync agents that can securely connect with your location.</p>
+    pub fn get_agent_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.agent_arns
+    }
     /// <p>The time that the location was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -180,6 +206,10 @@ impl DescribeLocationObjectStorageOutputBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The time that the location was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The self-signed certificate that DataSync uses to securely authenticate with your object storage system.</p>
     pub fn server_certificate(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.server_certificate = ::std::option::Option::Some(input);
@@ -192,6 +222,10 @@ impl DescribeLocationObjectStorageOutputBuilder {
     ) -> Self {
         self.server_certificate = input;
         self
+    }
+    /// <p>The self-signed certificate that DataSync uses to securely authenticate with your object storage system.</p>
+    pub fn get_server_certificate(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.server_certificate
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

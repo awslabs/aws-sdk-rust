@@ -36,6 +36,10 @@ impl DescribeIdentityProviderConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeIdentityProviderConfig as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_identity_provider_config::builders::DescribeIdentityProviderConfigInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl DescribeIdentityProviderConfigFluentBuilder {
         self.inner = self.inner.set_cluster_name(input);
         self
     }
+    /// <p>The cluster name that the identity provider configuration is associated to.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_name()
+    }
     /// <p>An object representing an identity provider configuration.</p>
     pub fn identity_provider_config(mut self, input: crate::types::IdentityProviderConfig) -> Self {
         self.inner = self.inner.identity_provider_config(input);
@@ -112,5 +120,11 @@ impl DescribeIdentityProviderConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_identity_provider_config(input);
         self
+    }
+    /// <p>An object representing an identity provider configuration.</p>
+    pub fn get_identity_provider_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::IdentityProviderConfig> {
+        self.inner.get_identity_provider_config()
     }
 }

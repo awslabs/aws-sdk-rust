@@ -88,6 +88,10 @@ impl FieldTypeDetailsBuilder {
         self.field_type = input;
         self
     }
+    /// <p> The type of field, such as string, integer, date, and so on. </p>
+    pub fn get_field_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_type
+    }
     /// Appends an item to `filter_operators`.
     ///
     /// To override the contents of this collection use [`set_filter_operators`](Self::set_filter_operators).
@@ -106,6 +110,12 @@ impl FieldTypeDetailsBuilder {
     ) -> Self {
         self.filter_operators = input;
         self
+    }
+    /// <p> The list of operators supported by a field. </p>
+    pub fn get_filter_operators(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Operator>> {
+        &self.filter_operators
     }
     /// Appends an item to `supported_values`.
     ///
@@ -129,6 +139,12 @@ impl FieldTypeDetailsBuilder {
         self.supported_values = input;
         self
     }
+    /// <p> The list of values that a field can contain. For example, a Boolean <code>fieldType</code> can have two values: "true" and "false". </p>
+    pub fn get_supported_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.supported_values
+    }
     /// <p>The regular expression pattern for the field name.</p>
     pub fn value_regex_pattern(
         mut self,
@@ -144,6 +160,10 @@ impl FieldTypeDetailsBuilder {
     ) -> Self {
         self.value_regex_pattern = input;
         self
+    }
+    /// <p>The regular expression pattern for the field name.</p>
+    pub fn get_value_regex_pattern(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value_regex_pattern
     }
     /// <p>The date format that the field supports.</p>
     pub fn supported_date_format(
@@ -161,6 +181,10 @@ impl FieldTypeDetailsBuilder {
         self.supported_date_format = input;
         self
     }
+    /// <p>The date format that the field supports.</p>
+    pub fn get_supported_date_format(&self) -> &::std::option::Option<::std::string::String> {
+        &self.supported_date_format
+    }
     /// <p>The range of values this field can hold.</p>
     pub fn field_value_range(mut self, input: crate::types::Range) -> Self {
         self.field_value_range = ::std::option::Option::Some(input);
@@ -174,6 +198,10 @@ impl FieldTypeDetailsBuilder {
         self.field_value_range = input;
         self
     }
+    /// <p>The range of values this field can hold.</p>
+    pub fn get_field_value_range(&self) -> &::std::option::Option<crate::types::Range> {
+        &self.field_value_range
+    }
     /// <p>This is the allowable length range for this field's value.</p>
     pub fn field_length_range(mut self, input: crate::types::Range) -> Self {
         self.field_length_range = ::std::option::Option::Some(input);
@@ -186,6 +214,10 @@ impl FieldTypeDetailsBuilder {
     ) -> Self {
         self.field_length_range = input;
         self
+    }
+    /// <p>This is the allowable length range for this field's value.</p>
+    pub fn get_field_length_range(&self) -> &::std::option::Option<crate::types::Range> {
+        &self.field_length_range
     }
     /// Consumes the builder and constructs a [`FieldTypeDetails`](crate::types::FieldTypeDetails).
     pub fn build(self) -> crate::types::FieldTypeDetails {

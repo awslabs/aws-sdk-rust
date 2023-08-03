@@ -39,6 +39,10 @@ impl DeleteBackupInputBuilder {
         self.backup_id = input;
         self
     }
+    /// <p>The ID of the backup to delete. Run the DescribeBackups command to get a list of backup IDs. Backup IDs are in the format <code>ServerName-yyyyMMddHHmmssSSS</code>. </p>
+    pub fn get_backup_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_id
+    }
     /// Consumes the builder and constructs a [`DeleteBackupInput`](crate::operation::delete_backup::DeleteBackupInput).
     pub fn build(
         self,

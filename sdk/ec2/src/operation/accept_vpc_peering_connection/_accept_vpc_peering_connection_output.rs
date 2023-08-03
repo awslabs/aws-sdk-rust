@@ -51,6 +51,12 @@ impl AcceptVpcPeeringConnectionOutputBuilder {
         self.vpc_peering_connection = input;
         self
     }
+    /// <p>Information about the VPC peering connection.</p>
+    pub fn get_vpc_peering_connection(
+        &self,
+    ) -> &::std::option::Option<crate::types::VpcPeeringConnection> {
+        &self.vpc_peering_connection
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

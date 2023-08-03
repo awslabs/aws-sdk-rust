@@ -122,6 +122,10 @@ impl TunnelBuilder {
         self.tunnel_id = input;
         self
     }
+    /// <p>A unique alpha-numeric ID that identifies a tunnel.</p>
+    pub fn get_tunnel_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tunnel_id
+    }
     /// <p>The Amazon Resource Name (ARN) of a tunnel.</p>
     pub fn tunnel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tunnel_arn = ::std::option::Option::Some(input.into());
@@ -132,6 +136,10 @@ impl TunnelBuilder {
         self.tunnel_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of a tunnel.</p>
+    pub fn get_tunnel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tunnel_arn
+    }
     /// <p>The status of a tunnel. Valid values are: Open and Closed.</p>
     pub fn status(mut self, input: crate::types::TunnelStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -141,6 +149,10 @@ impl TunnelBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TunnelStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of a tunnel. Valid values are: Open and Closed.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TunnelStatus> {
+        &self.status
     }
     /// <p>The connection state of the source application.</p>
     pub fn source_connection_state(mut self, input: crate::types::ConnectionState) -> Self {
@@ -155,6 +167,12 @@ impl TunnelBuilder {
         self.source_connection_state = input;
         self
     }
+    /// <p>The connection state of the source application.</p>
+    pub fn get_source_connection_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConnectionState> {
+        &self.source_connection_state
+    }
     /// <p>The connection state of the destination application.</p>
     pub fn destination_connection_state(mut self, input: crate::types::ConnectionState) -> Self {
         self.destination_connection_state = ::std::option::Option::Some(input);
@@ -168,6 +186,12 @@ impl TunnelBuilder {
         self.destination_connection_state = input;
         self
     }
+    /// <p>The connection state of the destination application.</p>
+    pub fn get_destination_connection_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConnectionState> {
+        &self.destination_connection_state
+    }
     /// <p>A description of the tunnel.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -177,6 +201,10 @@ impl TunnelBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the tunnel.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The destination configuration that specifies the thing name of the destination device and a service name that the local proxy uses to connect to the destination application.</p>
     pub fn destination_config(mut self, input: crate::types::DestinationConfig) -> Self {
@@ -191,6 +219,12 @@ impl TunnelBuilder {
         self.destination_config = input;
         self
     }
+    /// <p>The destination configuration that specifies the thing name of the destination device and a service name that the local proxy uses to connect to the destination application.</p>
+    pub fn get_destination_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::DestinationConfig> {
+        &self.destination_config
+    }
     /// <p>Timeout configuration for the tunnel.</p>
     pub fn timeout_config(mut self, input: crate::types::TimeoutConfig) -> Self {
         self.timeout_config = ::std::option::Option::Some(input);
@@ -203,6 +237,10 @@ impl TunnelBuilder {
     ) -> Self {
         self.timeout_config = input;
         self
+    }
+    /// <p>Timeout configuration for the tunnel.</p>
+    pub fn get_timeout_config(&self) -> &::std::option::Option<crate::types::TimeoutConfig> {
+        &self.timeout_config
     }
     /// Appends an item to `tags`.
     ///
@@ -223,6 +261,10 @@ impl TunnelBuilder {
         self.tags = input;
         self
     }
+    /// <p>A list of tag metadata associated with the secure tunnel.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The time when the tunnel was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -236,6 +278,10 @@ impl TunnelBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The time when the tunnel was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The last time the tunnel was updated.</p>
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_at = ::std::option::Option::Some(input);
@@ -248,6 +294,10 @@ impl TunnelBuilder {
     ) -> Self {
         self.last_updated_at = input;
         self
+    }
+    /// <p>The last time the tunnel was updated.</p>
+    pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_at
     }
     /// Consumes the builder and constructs a [`Tunnel`](crate::types::Tunnel).
     pub fn build(self) -> crate::types::Tunnel {

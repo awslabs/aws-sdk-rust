@@ -72,6 +72,10 @@ impl RestoreSnapshotTierOutputBuilder {
         self.snapshot_id = input;
         self
     }
+    /// <p>The ID of the snapshot.</p>
+    pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_id
+    }
     /// <p>The date and time when the snapshot restore process started.</p>
     pub fn restore_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.restore_start_time = ::std::option::Option::Some(input);
@@ -85,6 +89,10 @@ impl RestoreSnapshotTierOutputBuilder {
         self.restore_start_time = input;
         self
     }
+    /// <p>The date and time when the snapshot restore process started.</p>
+    pub fn get_restore_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.restore_start_time
+    }
     /// <p>For temporary restores only. The number of days for which the archived snapshot is temporarily restored.</p>
     pub fn restore_duration(mut self, input: i32) -> Self {
         self.restore_duration = ::std::option::Option::Some(input);
@@ -95,6 +103,10 @@ impl RestoreSnapshotTierOutputBuilder {
         self.restore_duration = input;
         self
     }
+    /// <p>For temporary restores only. The number of days for which the archived snapshot is temporarily restored.</p>
+    pub fn get_restore_duration(&self) -> &::std::option::Option<i32> {
+        &self.restore_duration
+    }
     /// <p>Indicates whether the snapshot is permanently restored. <code>true</code> indicates a permanent restore. <code>false</code> indicates a temporary restore.</p>
     pub fn is_permanent_restore(mut self, input: bool) -> Self {
         self.is_permanent_restore = ::std::option::Option::Some(input);
@@ -104,6 +116,10 @@ impl RestoreSnapshotTierOutputBuilder {
     pub fn set_is_permanent_restore(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_permanent_restore = input;
         self
+    }
+    /// <p>Indicates whether the snapshot is permanently restored. <code>true</code> indicates a permanent restore. <code>false</code> indicates a temporary restore.</p>
+    pub fn get_is_permanent_restore(&self) -> &::std::option::Option<bool> {
+        &self.is_permanent_restore
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

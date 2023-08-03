@@ -51,6 +51,10 @@ impl StructValueBuilder {
         self.attributes = input;
         self
     }
+    /// <p>The attributes returned in the record.</p>
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Value>> {
+        &self.attributes
+    }
     /// Consumes the builder and constructs a [`StructValue`](crate::types::StructValue).
     pub fn build(self) -> crate::types::StructValue {
         crate::types::StructValue {

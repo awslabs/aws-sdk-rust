@@ -64,6 +64,10 @@ impl ListAttachedPoliciesInputBuilder {
         self.target = input;
         self
     }
+    /// <p>The group or principal for which the policies will be listed. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
+    pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target
+    }
     /// <p>When true, recursively list attached policies.</p>
     pub fn recursive(mut self, input: bool) -> Self {
         self.recursive = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl ListAttachedPoliciesInputBuilder {
     pub fn set_recursive(mut self, input: ::std::option::Option<bool>) -> Self {
         self.recursive = input;
         self
+    }
+    /// <p>When true, recursively list attached policies.</p>
+    pub fn get_recursive(&self) -> &::std::option::Option<bool> {
+        &self.recursive
     }
     /// <p>The token to retrieve the next set of results.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,6 +92,10 @@ impl ListAttachedPoliciesInputBuilder {
         self.marker = input;
         self
     }
+    /// <p>The token to retrieve the next set of results.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// <p>The maximum number of results to be returned per request.</p>
     pub fn page_size(mut self, input: i32) -> Self {
         self.page_size = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl ListAttachedPoliciesInputBuilder {
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.page_size = input;
         self
+    }
+    /// <p>The maximum number of results to be returned per request.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        &self.page_size
     }
     /// Consumes the builder and constructs a [`ListAttachedPoliciesInput`](crate::operation::list_attached_policies::ListAttachedPoliciesInput).
     pub fn build(

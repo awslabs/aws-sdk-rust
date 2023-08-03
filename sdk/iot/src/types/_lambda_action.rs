@@ -40,6 +40,10 @@ impl LambdaActionBuilder {
         self.function_arn = input;
         self
     }
+    /// <p>The ARN of the Lambda function.</p>
+    pub fn get_function_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.function_arn
+    }
     /// Consumes the builder and constructs a [`LambdaAction`](crate::types::LambdaAction).
     pub fn build(self) -> crate::types::LambdaAction {
         crate::types::LambdaAction {

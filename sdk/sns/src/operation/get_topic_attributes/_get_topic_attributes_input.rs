@@ -41,6 +41,10 @@ impl GetTopicAttributesInputBuilder {
         self.topic_arn = input;
         self
     }
+    /// <p>The ARN of the topic whose properties you want to get.</p>
+    pub fn get_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_arn
+    }
     /// Consumes the builder and constructs a [`GetTopicAttributesInput`](crate::operation::get_topic_attributes::GetTopicAttributesInput).
     pub fn build(
         self,

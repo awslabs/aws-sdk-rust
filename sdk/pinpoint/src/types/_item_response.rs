@@ -61,6 +61,12 @@ impl ItemResponseBuilder {
         self.endpoint_item_response = input;
         self
     }
+    /// <p>The response that was received after the endpoint data was accepted.</p>
+    pub fn get_endpoint_item_response(
+        &self,
+    ) -> &::std::option::Option<crate::types::EndpointItemResponse> {
+        &self.endpoint_item_response
+    }
     /// Adds a key-value pair to `events_item_response`.
     ///
     /// To override the contents of this collection use [`set_events_item_response`](Self::set_events_item_response).
@@ -85,6 +91,14 @@ impl ItemResponseBuilder {
     ) -> Self {
         self.events_item_response = input;
         self
+    }
+    /// <p>A multipart response object that contains a key and a value for each event in the request. In each object, the event ID is the key and an EventItemResponse object is the value.</p>
+    pub fn get_events_item_response(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::EventItemResponse>,
+    > {
+        &self.events_item_response
     }
     /// Consumes the builder and constructs a [`ItemResponse`](crate::types::ItemResponse).
     pub fn build(self) -> crate::types::ItemResponse {

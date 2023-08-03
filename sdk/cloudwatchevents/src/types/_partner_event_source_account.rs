@@ -64,6 +64,10 @@ impl PartnerEventSourceAccountBuilder {
         self.account = input;
         self
     }
+    /// <p>The Amazon Web Services account ID that the partner event source was offered to.</p>
+    pub fn get_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account
+    }
     /// <p>The date and time the event source was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl PartnerEventSourceAccountBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The date and time the event source was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The date and time that the event source will expire, if the Amazon Web Services account doesn't create a matching event bus for it.</p>
     pub fn expiration_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -90,6 +98,10 @@ impl PartnerEventSourceAccountBuilder {
         self.expiration_time = input;
         self
     }
+    /// <p>The date and time that the event source will expire, if the Amazon Web Services account doesn't create a matching event bus for it.</p>
+    pub fn get_expiration_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expiration_time
+    }
     /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event bus for this event source, and that event bus is active. If it is PENDING, either you haven't yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have created a matching event bus, but the event source has since been deleted.</p>
     pub fn state(mut self, input: crate::types::EventSourceState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -102,6 +114,10 @@ impl PartnerEventSourceAccountBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event bus for this event source, and that event bus is active. If it is PENDING, either you haven't yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have created a matching event bus, but the event source has since been deleted.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::EventSourceState> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`PartnerEventSourceAccount`](crate::types::PartnerEventSourceAccount).
     pub fn build(self) -> crate::types::PartnerEventSourceAccount {

@@ -40,6 +40,10 @@ impl AccessControlListConfigurationBuilder {
         self.key_path = input;
         self
     }
+    /// <p>Path to the Amazon S3 bucket that contains the ACL files.</p>
+    pub fn get_key_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_path
+    }
     /// Consumes the builder and constructs a [`AccessControlListConfiguration`](crate::types::AccessControlListConfiguration).
     pub fn build(self) -> crate::types::AccessControlListConfiguration {
         crate::types::AccessControlListConfiguration {

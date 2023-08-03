@@ -36,6 +36,12 @@ impl GetEnabledStandardsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetEnabledStandards as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_enabled_standards::builders::GetEnabledStandardsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -147,6 +153,12 @@ impl GetEnabledStandardsFluentBuilder {
         self.inner = self.inner.set_standards_subscription_arns(input);
         self
     }
+    /// <p>The list of the standards subscription ARNs for the standards to retrieve.</p>
+    pub fn get_standards_subscription_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_standards_subscription_arns()
+    }
     /// <p>The token that is required for pagination. On your first call to the <code>GetEnabledStandards</code> operation, set the value of this parameter to <code>NULL</code>.</p>
     /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -159,6 +171,11 @@ impl GetEnabledStandardsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token that is required for pagination. On your first call to the <code>GetEnabledStandards</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -168,5 +185,9 @@ impl GetEnabledStandardsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

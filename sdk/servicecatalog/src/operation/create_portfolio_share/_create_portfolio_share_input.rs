@@ -104,6 +104,14 @@ impl CreatePortfolioShareInputBuilder {
         self.accept_language = input;
         self
     }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accept_language
+    }
     /// <p>The portfolio identifier.</p>
     pub fn portfolio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portfolio_id = ::std::option::Option::Some(input.into());
@@ -114,6 +122,10 @@ impl CreatePortfolioShareInputBuilder {
         self.portfolio_id = input;
         self
     }
+    /// <p>The portfolio identifier.</p>
+    pub fn get_portfolio_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.portfolio_id
+    }
     /// <p>The Amazon Web Services account ID. For example, <code>123456789012</code>.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -123,6 +135,10 @@ impl CreatePortfolioShareInputBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>The Amazon Web Services account ID. For example, <code>123456789012</code>.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// <p>The organization node to whom you are going to share. When you pass <code>OrganizationNode</code>, it creates <code>PortfolioShare</code> for all of the Amazon Web Services accounts that are associated to the <code>OrganizationNode</code>. The output returns a <code>PortfolioShareToken</code>, which enables the administrator to monitor the status of the <code>PortfolioShare</code> creation process.</p>
     pub fn organization_node(mut self, input: crate::types::OrganizationNode) -> Self {
@@ -137,6 +153,10 @@ impl CreatePortfolioShareInputBuilder {
         self.organization_node = input;
         self
     }
+    /// <p>The organization node to whom you are going to share. When you pass <code>OrganizationNode</code>, it creates <code>PortfolioShare</code> for all of the Amazon Web Services accounts that are associated to the <code>OrganizationNode</code>. The output returns a <code>PortfolioShareToken</code>, which enables the administrator to monitor the status of the <code>PortfolioShare</code> creation process.</p>
+    pub fn get_organization_node(&self) -> &::std::option::Option<crate::types::OrganizationNode> {
+        &self.organization_node
+    }
     /// <p>Enables or disables <code>TagOptions </code> sharing when creating the portfolio share. If this flag is not provided, TagOptions sharing is disabled.</p>
     pub fn share_tag_options(mut self, input: bool) -> Self {
         self.share_tag_options = ::std::option::Option::Some(input);
@@ -146,6 +166,10 @@ impl CreatePortfolioShareInputBuilder {
     pub fn set_share_tag_options(mut self, input: ::std::option::Option<bool>) -> Self {
         self.share_tag_options = input;
         self
+    }
+    /// <p>Enables or disables <code>TagOptions </code> sharing when creating the portfolio share. If this flag is not provided, TagOptions sharing is disabled.</p>
+    pub fn get_share_tag_options(&self) -> &::std::option::Option<bool> {
+        &self.share_tag_options
     }
     /// <p>Enables or disables <code>Principal</code> sharing when creating the portfolio share. If this flag is not provided, principal sharing is disabled. </p>
     /// <p>When you enable Principal Name Sharing for a portfolio share, the share recipient account end users with a principal that matches any of the associated IAM patterns can provision products from the portfolio. Once shared, the share recipient can view associations of <code>PrincipalType</code>: <code>IAM_PATTERN</code> on their portfolio. You can create the principals in the recipient account before or after creating the share. </p>
@@ -158,6 +182,11 @@ impl CreatePortfolioShareInputBuilder {
     pub fn set_share_principals(mut self, input: ::std::option::Option<bool>) -> Self {
         self.share_principals = input;
         self
+    }
+    /// <p>Enables or disables <code>Principal</code> sharing when creating the portfolio share. If this flag is not provided, principal sharing is disabled. </p>
+    /// <p>When you enable Principal Name Sharing for a portfolio share, the share recipient account end users with a principal that matches any of the associated IAM patterns can provision products from the portfolio. Once shared, the share recipient can view associations of <code>PrincipalType</code>: <code>IAM_PATTERN</code> on their portfolio. You can create the principals in the recipient account before or after creating the share. </p>
+    pub fn get_share_principals(&self) -> &::std::option::Option<bool> {
+        &self.share_principals
     }
     /// Consumes the builder and constructs a [`CreatePortfolioShareInput`](crate::operation::create_portfolio_share::CreatePortfolioShareInput).
     pub fn build(

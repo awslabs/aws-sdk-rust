@@ -65,6 +65,10 @@ impl Ipv6PoolBuilder {
         self.pool_id = input;
         self
     }
+    /// <p>The ID of the address pool.</p>
+    pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pool_id
+    }
     /// <p>The description for the address pool.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl Ipv6PoolBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description for the address pool.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `pool_cidr_blocks`.
     ///
@@ -94,6 +102,12 @@ impl Ipv6PoolBuilder {
         self.pool_cidr_blocks = input;
         self
     }
+    /// <p>The CIDR blocks for the address pool.</p>
+    pub fn get_pool_cidr_blocks(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PoolCidrBlock>> {
+        &self.pool_cidr_blocks
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -112,6 +126,10 @@ impl Ipv6PoolBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Any tags for the address pool.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`Ipv6Pool`](crate::types::Ipv6Pool).
     pub fn build(self) -> crate::types::Ipv6Pool {

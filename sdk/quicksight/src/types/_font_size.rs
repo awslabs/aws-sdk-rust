@@ -43,6 +43,10 @@ impl FontSizeBuilder {
         self.relative = input;
         self
     }
+    /// <p>The lexical name for the text size, proportional to its surrounding context.</p>
+    pub fn get_relative(&self) -> &::std::option::Option<crate::types::RelativeFontSize> {
+        &self.relative
+    }
     /// Consumes the builder and constructs a [`FontSize`](crate::types::FontSize).
     pub fn build(self) -> crate::types::FontSize {
         crate::types::FontSize {

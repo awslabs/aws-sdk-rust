@@ -144,6 +144,10 @@ impl ClusterConfigurationBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the cluster</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the cluster configuration</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -154,6 +158,10 @@ impl ClusterConfigurationBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the cluster configuration</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The node type used for the cluster</p>
     pub fn node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_type = ::std::option::Option::Some(input.into());
@@ -163,6 +171,10 @@ impl ClusterConfigurationBuilder {
     pub fn set_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_type = input;
         self
+    }
+    /// <p>The node type used for the cluster</p>
+    pub fn get_node_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_type
     }
     /// <p>The Redis engine version used by the cluster</p>
     pub fn engine_version(
@@ -180,6 +192,10 @@ impl ClusterConfigurationBuilder {
         self.engine_version = input;
         self
     }
+    /// <p>The Redis engine version used by the cluster</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
+    }
     /// <p>The specified maintenance window for the cluster</p>
     pub fn maintenance_window(
         mut self,
@@ -196,6 +212,10 @@ impl ClusterConfigurationBuilder {
         self.maintenance_window = input;
         self
     }
+    /// <p>The specified maintenance window for the cluster</p>
+    pub fn get_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
+        &self.maintenance_window
+    }
     /// <p>The Amazon Resource Name (ARN) of the SNS notification topic for the cluster</p>
     pub fn topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_arn = ::std::option::Option::Some(input.into());
@@ -206,6 +226,10 @@ impl ClusterConfigurationBuilder {
         self.topic_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the SNS notification topic for the cluster</p>
+    pub fn get_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_arn
+    }
     /// <p>The port used by the cluster</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -215,6 +239,10 @@ impl ClusterConfigurationBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
+    }
+    /// <p>The port used by the cluster</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// <p>The name of parameter group used by the cluster</p>
     pub fn parameter_group_name(
@@ -232,6 +260,10 @@ impl ClusterConfigurationBuilder {
         self.parameter_group_name = input;
         self
     }
+    /// <p>The name of parameter group used by the cluster</p>
+    pub fn get_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_group_name
+    }
     /// <p>The name of the subnet group used by the cluster</p>
     pub fn subnet_group_name(
         mut self,
@@ -248,6 +280,10 @@ impl ClusterConfigurationBuilder {
         self.subnet_group_name = input;
         self
     }
+    /// <p>The name of the subnet group used by the cluster</p>
+    pub fn get_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_group_name
+    }
     /// <p>The ID of the VPC the cluster belongs to</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -258,6 +294,10 @@ impl ClusterConfigurationBuilder {
         self.vpc_id = input;
         self
     }
+    /// <p>The ID of the VPC the cluster belongs to</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
+    }
     /// <p>The snapshot retention limit set by the cluster</p>
     pub fn snapshot_retention_limit(mut self, input: i32) -> Self {
         self.snapshot_retention_limit = ::std::option::Option::Some(input);
@@ -267,6 +307,10 @@ impl ClusterConfigurationBuilder {
     pub fn set_snapshot_retention_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.snapshot_retention_limit = input;
         self
+    }
+    /// <p>The snapshot retention limit set by the cluster</p>
+    pub fn get_snapshot_retention_limit(&self) -> &::std::option::Option<i32> {
+        &self.snapshot_retention_limit
     }
     /// <p>The snapshot window set by the cluster</p>
     pub fn snapshot_window(
@@ -284,6 +328,10 @@ impl ClusterConfigurationBuilder {
         self.snapshot_window = input;
         self
     }
+    /// <p>The snapshot window set by the cluster</p>
+    pub fn get_snapshot_window(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_window
+    }
     /// <p>The number of shards in the cluster</p>
     pub fn num_shards(mut self, input: i32) -> Self {
         self.num_shards = ::std::option::Option::Some(input);
@@ -293,6 +341,10 @@ impl ClusterConfigurationBuilder {
     pub fn set_num_shards(mut self, input: ::std::option::Option<i32>) -> Self {
         self.num_shards = input;
         self
+    }
+    /// <p>The number of shards in the cluster</p>
+    pub fn get_num_shards(&self) -> &::std::option::Option<i32> {
+        &self.num_shards
     }
     /// Appends an item to `shards`.
     ///
@@ -312,6 +364,10 @@ impl ClusterConfigurationBuilder {
     ) -> Self {
         self.shards = input;
         self
+    }
+    /// <p>The list of shards in the cluster</p>
+    pub fn get_shards(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ShardDetail>> {
+        &self.shards
     }
     /// Consumes the builder and constructs a [`ClusterConfiguration`](crate::types::ClusterConfiguration).
     pub fn build(self) -> crate::types::ClusterConfiguration {

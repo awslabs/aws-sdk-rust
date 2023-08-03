@@ -65,6 +65,10 @@ impl RemoveSchemaVersionMetadataInputBuilder {
         self.schema_id = input;
         self
     }
+    /// <p>A wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>
+    pub fn get_schema_id(&self) -> &::std::option::Option<crate::types::SchemaId> {
+        &self.schema_id
+    }
     /// <p>The version number of the schema.</p>
     pub fn schema_version_number(mut self, input: crate::types::SchemaVersionNumber) -> Self {
         self.schema_version_number = ::std::option::Option::Some(input);
@@ -77,6 +81,12 @@ impl RemoveSchemaVersionMetadataInputBuilder {
     ) -> Self {
         self.schema_version_number = input;
         self
+    }
+    /// <p>The version number of the schema.</p>
+    pub fn get_schema_version_number(
+        &self,
+    ) -> &::std::option::Option<crate::types::SchemaVersionNumber> {
+        &self.schema_version_number
     }
     /// <p>The unique version ID of the schema version.</p>
     pub fn schema_version_id(
@@ -94,6 +104,10 @@ impl RemoveSchemaVersionMetadataInputBuilder {
         self.schema_version_id = input;
         self
     }
+    /// <p>The unique version ID of the schema version.</p>
+    pub fn get_schema_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_version_id
+    }
     /// <p>The value of the metadata key.</p>
     pub fn metadata_key_value(mut self, input: crate::types::MetadataKeyValuePair) -> Self {
         self.metadata_key_value = ::std::option::Option::Some(input);
@@ -106,6 +120,12 @@ impl RemoveSchemaVersionMetadataInputBuilder {
     ) -> Self {
         self.metadata_key_value = input;
         self
+    }
+    /// <p>The value of the metadata key.</p>
+    pub fn get_metadata_key_value(
+        &self,
+    ) -> &::std::option::Option<crate::types::MetadataKeyValuePair> {
+        &self.metadata_key_value
     }
     /// Consumes the builder and constructs a [`RemoveSchemaVersionMetadataInput`](crate::operation::remove_schema_version_metadata::RemoveSchemaVersionMetadataInput).
     pub fn build(

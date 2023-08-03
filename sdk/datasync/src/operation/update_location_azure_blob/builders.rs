@@ -37,6 +37,13 @@ impl UpdateLocationAzureBlobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateLocationAzureBlob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_location_azure_blob::builders::UpdateLocationAzureBlobInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl UpdateLocationAzureBlobFluentBuilder {
         self.inner = self.inner.set_location_arn(input);
         self
     }
+    /// <p>Specifies the ARN of the Azure Blob Storage transfer location that you're updating.</p>
+    pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_location_arn()
+    }
     /// <p>Specifies path segments if you want to limit your transfer to a virtual directory in your container (for example, <code>/my/images</code>).</p>
     pub fn subdirectory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subdirectory(input.into());
@@ -136,6 +147,10 @@ impl UpdateLocationAzureBlobFluentBuilder {
     pub fn set_subdirectory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subdirectory(input);
         self
+    }
+    /// <p>Specifies path segments if you want to limit your transfer to a virtual directory in your container (for example, <code>/my/images</code>).</p>
+    pub fn get_subdirectory(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_subdirectory()
     }
     /// <p>Specifies the authentication method DataSync uses to access your Azure Blob Storage. DataSync can access blob storage using a shared access signature (SAS).</p>
     pub fn authentication_type(mut self, input: crate::types::AzureBlobAuthenticationType) -> Self {
@@ -150,6 +165,12 @@ impl UpdateLocationAzureBlobFluentBuilder {
         self.inner = self.inner.set_authentication_type(input);
         self
     }
+    /// <p>Specifies the authentication method DataSync uses to access your Azure Blob Storage. DataSync can access blob storage using a shared access signature (SAS).</p>
+    pub fn get_authentication_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::AzureBlobAuthenticationType> {
+        self.inner.get_authentication_type()
+    }
     /// <p>Specifies the SAS configuration that allows DataSync to access your Azure Blob Storage.</p>
     pub fn sas_configuration(mut self, input: crate::types::AzureBlobSasConfiguration) -> Self {
         self.inner = self.inner.sas_configuration(input);
@@ -162,6 +183,12 @@ impl UpdateLocationAzureBlobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sas_configuration(input);
         self
+    }
+    /// <p>Specifies the SAS configuration that allows DataSync to access your Azure Blob Storage.</p>
+    pub fn get_sas_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AzureBlobSasConfiguration> {
+        self.inner.get_sas_configuration()
     }
     /// <p>Specifies the type of blob that you want your objects or files to be when transferring them into Azure Blob Storage. Currently, DataSync only supports moving data into Azure Blob Storage as block blobs. For more information on blob types, see the <a href="https://learn.microsoft.com/en-us/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs">Azure Blob Storage documentation</a>.</p>
     pub fn blob_type(mut self, input: crate::types::AzureBlobType) -> Self {
@@ -176,6 +203,10 @@ impl UpdateLocationAzureBlobFluentBuilder {
         self.inner = self.inner.set_blob_type(input);
         self
     }
+    /// <p>Specifies the type of blob that you want your objects or files to be when transferring them into Azure Blob Storage. Currently, DataSync only supports moving data into Azure Blob Storage as block blobs. For more information on blob types, see the <a href="https://learn.microsoft.com/en-us/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs">Azure Blob Storage documentation</a>.</p>
+    pub fn get_blob_type(&self) -> &::std::option::Option<crate::types::AzureBlobType> {
+        self.inner.get_blob_type()
+    }
     /// <p>Specifies the access tier that you want your objects or files transferred into. This only applies when using the location as a transfer destination. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-access-tiers">Access tiers</a>.</p>
     pub fn access_tier(mut self, input: crate::types::AzureAccessTier) -> Self {
         self.inner = self.inner.access_tier(input);
@@ -188,6 +219,10 @@ impl UpdateLocationAzureBlobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_access_tier(input);
         self
+    }
+    /// <p>Specifies the access tier that you want your objects or files transferred into. This only applies when using the location as a transfer destination. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-access-tiers">Access tiers</a>.</p>
+    pub fn get_access_tier(&self) -> &::std::option::Option<crate::types::AzureAccessTier> {
+        self.inner.get_access_tier()
     }
     /// Appends an item to `AgentArns`.
     ///
@@ -207,5 +242,10 @@ impl UpdateLocationAzureBlobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_agent_arns(input);
         self
+    }
+    /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that can connect with your Azure Blob Storage container.</p>
+    /// <p>You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using multiple agents for your transfer</a>.</p>
+    pub fn get_agent_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_agent_arns()
     }
 }

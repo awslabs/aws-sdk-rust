@@ -48,6 +48,10 @@ impl FollowUpPromptBuilder {
         self.prompt = input;
         self
     }
+    /// <p>Prompts for information from the user. </p>
+    pub fn get_prompt(&self) -> &::std::option::Option<crate::types::Prompt> {
+        &self.prompt
+    }
     /// <p>If the user answers "no" to the question defined in the <code>prompt</code> field, Amazon Lex responds with this statement to acknowledge that the intent was canceled. </p>
     pub fn rejection_statement(mut self, input: crate::types::Statement) -> Self {
         self.rejection_statement = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl FollowUpPromptBuilder {
     ) -> Self {
         self.rejection_statement = input;
         self
+    }
+    /// <p>If the user answers "no" to the question defined in the <code>prompt</code> field, Amazon Lex responds with this statement to acknowledge that the intent was canceled. </p>
+    pub fn get_rejection_statement(&self) -> &::std::option::Option<crate::types::Statement> {
+        &self.rejection_statement
     }
     /// Consumes the builder and constructs a [`FollowUpPrompt`](crate::types::FollowUpPrompt).
     pub fn build(self) -> crate::types::FollowUpPrompt {

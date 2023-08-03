@@ -56,6 +56,10 @@ impl AwsCloudFormationStackOutputsDetailsBuilder {
         self.description = input;
         self
     }
+    /// <p>A user-defined description associated with the output. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The key associated with the output. </p>
     pub fn output_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_key = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl AwsCloudFormationStackOutputsDetailsBuilder {
         self.output_key = input;
         self
     }
+    /// <p>The key associated with the output. </p>
+    pub fn get_output_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_key
+    }
     /// <p>The value associated with the output. </p>
     pub fn output_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_value = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl AwsCloudFormationStackOutputsDetailsBuilder {
     pub fn set_output_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_value = input;
         self
+    }
+    /// <p>The value associated with the output. </p>
+    pub fn get_output_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_value
     }
     /// Consumes the builder and constructs a [`AwsCloudFormationStackOutputsDetails`](crate::types::AwsCloudFormationStackOutputsDetails).
     pub fn build(self) -> crate::types::AwsCloudFormationStackOutputsDetails {

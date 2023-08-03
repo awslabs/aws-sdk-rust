@@ -142,6 +142,10 @@ impl DescribeDatasetOutputBuilder {
         self.created_by = input;
         self
     }
+    /// <p>The identifier (user name) of the user who created the dataset.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_by
+    }
     /// <p>The date and time that the dataset was created.</p>
     pub fn create_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_date = ::std::option::Option::Some(input);
@@ -155,6 +159,10 @@ impl DescribeDatasetOutputBuilder {
         self.create_date = input;
         self
     }
+    /// <p>The date and time that the dataset was created.</p>
+    pub fn get_create_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_date
+    }
     /// <p>The name of the dataset.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -165,6 +173,10 @@ impl DescribeDatasetOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the dataset.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
     pub fn format(mut self, input: crate::types::InputFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
@@ -174,6 +186,10 @@ impl DescribeDatasetOutputBuilder {
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::InputFormat>) -> Self {
         self.format = input;
         self
+    }
+    /// <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::InputFormat> {
+        &self.format
     }
     /// <p>Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.</p>
     pub fn format_options(mut self, input: crate::types::FormatOptions) -> Self {
@@ -188,6 +204,10 @@ impl DescribeDatasetOutputBuilder {
         self.format_options = input;
         self
     }
+    /// <p>Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.</p>
+    pub fn get_format_options(&self) -> &::std::option::Option<crate::types::FormatOptions> {
+        &self.format_options
+    }
     /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.</p>
     pub fn input(mut self, input: crate::types::Input) -> Self {
         self.input = ::std::option::Option::Some(input);
@@ -197,6 +217,10 @@ impl DescribeDatasetOutputBuilder {
     pub fn set_input(mut self, input: ::std::option::Option<crate::types::Input>) -> Self {
         self.input = input;
         self
+    }
+    /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.</p>
+    pub fn get_input(&self) -> &::std::option::Option<crate::types::Input> {
+        &self.input
     }
     /// <p>The date and time that the dataset was last modified.</p>
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -210,6 +234,10 @@ impl DescribeDatasetOutputBuilder {
     ) -> Self {
         self.last_modified_date = input;
         self
+    }
+    /// <p>The date and time that the dataset was last modified.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_date
     }
     /// <p>The identifier (user name) of the user who last modified the dataset.</p>
     pub fn last_modified_by(
@@ -227,6 +255,10 @@ impl DescribeDatasetOutputBuilder {
         self.last_modified_by = input;
         self
     }
+    /// <p>The identifier (user name) of the user who last modified the dataset.</p>
+    pub fn get_last_modified_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_by
+    }
     /// <p>The location of the data for this dataset, Amazon S3 or the Glue Data Catalog.</p>
     pub fn source(mut self, input: crate::types::Source) -> Self {
         self.source = ::std::option::Option::Some(input);
@@ -236,6 +268,10 @@ impl DescribeDatasetOutputBuilder {
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::Source>) -> Self {
         self.source = input;
         self
+    }
+    /// <p>The location of the data for this dataset, Amazon S3 or the Glue Data Catalog.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::Source> {
+        &self.source
     }
     /// <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
     pub fn path_options(mut self, input: crate::types::PathOptions) -> Self {
@@ -249,6 +285,10 @@ impl DescribeDatasetOutputBuilder {
     ) -> Self {
         self.path_options = input;
         self
+    }
+    /// <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
+    pub fn get_path_options(&self) -> &::std::option::Option<crate::types::PathOptions> {
+        &self.path_options
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -275,6 +315,14 @@ impl DescribeDatasetOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Metadata tags associated with this dataset.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
@@ -284,6 +332,10 @@ impl DescribeDatasetOutputBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

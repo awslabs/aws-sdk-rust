@@ -56,6 +56,10 @@ impl DescribeEndpointsOutputBuilder {
         self.endpoints = input;
         self
     }
+    /// <p>List of endpoints.</p>
+    pub fn get_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Endpoint>> {
+        &self.endpoints
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

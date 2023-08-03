@@ -60,6 +60,10 @@ impl ListTestRecommendationsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `test_recommendations`.
     ///
     /// To override the contents of this collection use [`set_test_recommendations`](Self::set_test_recommendations).
@@ -78,6 +82,12 @@ impl ListTestRecommendationsOutputBuilder {
     ) -> Self {
         self.test_recommendations = input;
         self
+    }
+    /// <p>The test recommendations for the Resilience Hub application.</p>
+    pub fn get_test_recommendations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TestRecommendation>> {
+        &self.test_recommendations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

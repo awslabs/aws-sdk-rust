@@ -64,6 +64,10 @@ impl AwsElasticBeanstalkEnvironmentOptionSettingBuilder {
         self.namespace = input;
         self
     }
+    /// <p>The type of resource that the configuration option is associated with.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
+    }
     /// <p>The name of the option.</p>
     pub fn option_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.option_name = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl AwsElasticBeanstalkEnvironmentOptionSettingBuilder {
     pub fn set_option_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.option_name = input;
         self
+    }
+    /// <p>The name of the option.</p>
+    pub fn get_option_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.option_name
     }
     /// <p>The name of the resource.</p>
     pub fn resource_name(
@@ -90,6 +98,10 @@ impl AwsElasticBeanstalkEnvironmentOptionSettingBuilder {
         self.resource_name = input;
         self
     }
+    /// <p>The name of the resource.</p>
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_name
+    }
     /// <p>The value of the configuration setting.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -99,6 +111,10 @@ impl AwsElasticBeanstalkEnvironmentOptionSettingBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value of the configuration setting.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`AwsElasticBeanstalkEnvironmentOptionSetting`](crate::types::AwsElasticBeanstalkEnvironmentOptionSetting).
     pub fn build(self) -> crate::types::AwsElasticBeanstalkEnvironmentOptionSetting {

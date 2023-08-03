@@ -46,6 +46,10 @@ impl TerminateInstanceInAutoScalingGroupOutputBuilder {
         self.activity = input;
         self
     }
+    /// <p>A scaling activity.</p>
+    pub fn get_activity(&self) -> &::std::option::Option<crate::types::Activity> {
+        &self.activity
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

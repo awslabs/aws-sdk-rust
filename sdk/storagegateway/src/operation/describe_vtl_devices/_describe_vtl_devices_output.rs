@@ -64,6 +64,10 @@ impl DescribeVtlDevicesOutputBuilder {
         self.gateway_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_arn
+    }
     /// Appends an item to `vtl_devices`.
     ///
     /// To override the contents of this collection use [`set_vtl_devices`](Self::set_vtl_devices).
@@ -83,6 +87,12 @@ impl DescribeVtlDevicesOutputBuilder {
         self.vtl_devices = input;
         self
     }
+    /// <p>An array of VTL device objects composed of the Amazon Resource Name (ARN) of the VTL devices.</p>
+    pub fn get_vtl_devices(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VtlDevice>> {
+        &self.vtl_devices
+    }
     /// <p>An opaque string that indicates the position at which the VTL devices that were fetched for description ended. Use the marker in your next request to fetch the next set of VTL devices in the list. If there are no more VTL devices to describe, this field does not appear in the response.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -92,6 +102,10 @@ impl DescribeVtlDevicesOutputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>An opaque string that indicates the position at which the VTL devices that were fetched for description ended. Use the marker in your next request to fetch the next set of VTL devices in the list. If there are no more VTL devices to describe, this field does not appear in the response.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

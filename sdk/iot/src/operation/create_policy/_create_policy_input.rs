@@ -64,6 +64,10 @@ impl CreatePolicyInputBuilder {
         self.policy_name = input;
         self
     }
+    /// <p>The policy name.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_name
+    }
     /// <p>The JSON document that describes the policy. <b>policyDocument</b> must have a minimum length of 1, with a maximum length of 2048, excluding whitespace.</p>
     pub fn policy_document(
         mut self,
@@ -79,6 +83,10 @@ impl CreatePolicyInputBuilder {
     ) -> Self {
         self.policy_document = input;
         self
+    }
+    /// <p>The JSON document that describes the policy. <b>policyDocument</b> must have a minimum length of 1, with a maximum length of 2048, excluding whitespace.</p>
+    pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_document
     }
     /// Appends an item to `tags`.
     ///
@@ -106,6 +114,14 @@ impl CreatePolicyInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Metadata which can be used to manage the policy.</p> <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
+    /// </note>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreatePolicyInput`](crate::operation::create_policy::CreatePolicyInput).
     pub fn build(

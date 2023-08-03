@@ -54,6 +54,10 @@ impl BuiltInIntentSummaryBuilder {
         self.intent_signature = input;
         self
     }
+    /// <p>The signature of the built-in intent. Use this to specify the parent intent of a derived intent.</p>
+    pub fn get_intent_signature(&self) -> &::std::option::Option<::std::string::String> {
+        &self.intent_signature
+    }
     /// <p>The description of the intent.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl BuiltInIntentSummaryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the intent.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`BuiltInIntentSummary`](crate::types::BuiltInIntentSummary).
     pub fn build(self) -> crate::types::BuiltInIntentSummary {

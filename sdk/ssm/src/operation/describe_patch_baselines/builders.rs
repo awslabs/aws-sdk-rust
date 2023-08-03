@@ -36,6 +36,13 @@ impl DescribePatchBaselinesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribePatchBaselines as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_patch_baselines::builders::DescribePatchBaselinesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -157,6 +164,18 @@ impl DescribePatchBaselinesFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>Each element in the array is a structure containing a key-value pair.</p>
+    /// <p>Supported keys for <code>DescribePatchBaselines</code> include the following:</p>
+    /// <ul>
+    /// <li> <p> <b> <code>NAME_PREFIX</code> </b> </p> <p>Sample values: <code>AWS-</code> | <code>My-</code> </p> </li>
+    /// <li> <p> <b> <code>OWNER</code> </b> </p> <p>Sample values: <code>AWS</code> | <code>Self</code> </p> </li>
+    /// <li> <p> <b> <code>OPERATING_SYSTEM</code> </b> </p> <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code> </p> </li>
+    /// </ul>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>> {
+        self.inner.get_filters()
+    }
     /// <p>The maximum number of patch baselines to return (per page).</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -167,6 +186,10 @@ impl DescribePatchBaselinesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of patch baselines to return (per page).</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -176,5 +199,9 @@ impl DescribePatchBaselinesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

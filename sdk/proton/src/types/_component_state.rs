@@ -72,6 +72,10 @@ impl ComponentStateBuilder {
         self.service_name = input;
         self
     }
+    /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. Provided when a component is attached to a service instance.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
+    }
     /// <p>The name of the service instance that this component is attached to. Provided when a component is attached to a service instance.</p>
     pub fn service_instance_name(
         mut self,
@@ -88,6 +92,10 @@ impl ComponentStateBuilder {
         self.service_instance_name = input;
         self
     }
+    /// <p>The name of the service instance that this component is attached to. Provided when a component is attached to a service instance.</p>
+    pub fn get_service_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_instance_name
+    }
     /// <p>The service spec that the component uses to access service inputs. Provided when a component is attached to a service instance.</p>
     pub fn service_spec(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_spec = ::std::option::Option::Some(input.into());
@@ -97,6 +105,10 @@ impl ComponentStateBuilder {
     pub fn set_service_spec(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_spec = input;
         self
+    }
+    /// <p>The service spec that the component uses to access service inputs. Provided when a component is attached to a service instance.</p>
+    pub fn get_service_spec(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_spec
     }
     /// <p>The template file used.</p>
     pub fn template_file(
@@ -113,6 +125,10 @@ impl ComponentStateBuilder {
     ) -> Self {
         self.template_file = input;
         self
+    }
+    /// <p>The template file used.</p>
+    pub fn get_template_file(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_file
     }
     /// Consumes the builder and constructs a [`ComponentState`](crate::types::ComponentState).
     pub fn build(self) -> crate::types::ComponentState {

@@ -36,6 +36,10 @@ impl AssignPrivateNatGatewayAddressFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssignPrivateNatGatewayAddress as a reference.
+    pub fn as_input(&self) -> &crate::operation::assign_private_nat_gateway_address::builders::AssignPrivateNatGatewayAddressInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl AssignPrivateNatGatewayAddressFluentBuilder {
         self.inner = self.inner.set_nat_gateway_id(input);
         self
     }
+    /// <p>The ID of the NAT gateway.</p>
+    pub fn get_nat_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_nat_gateway_id()
+    }
     /// Appends an item to `PrivateIpAddresses`.
     ///
     /// To override the contents of this collection use [`set_private_ip_addresses`](Self::set_private_ip_addresses).
@@ -126,6 +134,12 @@ impl AssignPrivateNatGatewayAddressFluentBuilder {
         self.inner = self.inner.set_private_ip_addresses(input);
         self
     }
+    /// <p>The private IPv4 addresses you want to assign to the private NAT gateway.</p>
+    pub fn get_private_ip_addresses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_private_ip_addresses()
+    }
     /// <p>The number of private IP addresses to assign to the NAT gateway. You can't specify this parameter when also specifying private IP addresses.</p>
     pub fn private_ip_address_count(mut self, input: i32) -> Self {
         self.inner = self.inner.private_ip_address_count(input);
@@ -136,6 +150,10 @@ impl AssignPrivateNatGatewayAddressFluentBuilder {
         self.inner = self.inner.set_private_ip_address_count(input);
         self
     }
+    /// <p>The number of private IP addresses to assign to the NAT gateway. You can't specify this parameter when also specifying private IP addresses.</p>
+    pub fn get_private_ip_address_count(&self) -> &::std::option::Option<i32> {
+        self.inner.get_private_ip_address_count()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -145,5 +163,9 @@ impl AssignPrivateNatGatewayAddressFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

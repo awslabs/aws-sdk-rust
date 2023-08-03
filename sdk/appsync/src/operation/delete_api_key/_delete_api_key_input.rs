@@ -47,6 +47,10 @@ impl DeleteApiKeyInputBuilder {
         self.api_id = input;
         self
     }
+    /// <p>The API ID.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_id
+    }
     /// <p>The ID for the API key.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl DeleteApiKeyInputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The ID for the API key.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`DeleteApiKeyInput`](crate::operation::delete_api_key::DeleteApiKeyInput).
     pub fn build(

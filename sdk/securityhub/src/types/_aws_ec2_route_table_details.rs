@@ -95,6 +95,12 @@ impl AwsEc2RouteTableDetailsBuilder {
         self.association_set = input;
         self
     }
+    /// <p> The associations between a route table and one or more subnets or a gateway. </p>
+    pub fn get_association_set(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociationSetDetails>> {
+        &self.association_set
+    }
     /// <p> The ID of the Amazon Web Services account that owns the route table. </p>
     pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_id = ::std::option::Option::Some(input.into());
@@ -104,6 +110,10 @@ impl AwsEc2RouteTableDetailsBuilder {
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_id = input;
         self
+    }
+    /// <p> The ID of the Amazon Web Services account that owns the route table. </p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
     }
     /// Appends an item to `propagating_vgw_set`.
     ///
@@ -124,6 +134,12 @@ impl AwsEc2RouteTableDetailsBuilder {
         self.propagating_vgw_set = input;
         self
     }
+    /// <p> Describes a virtual private gateway propagating route. </p>
+    pub fn get_propagating_vgw_set(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PropagatingVgwSetDetails>> {
+        &self.propagating_vgw_set
+    }
     /// <p> The ID of the route table. </p>
     pub fn route_table_id(
         mut self,
@@ -139,6 +155,10 @@ impl AwsEc2RouteTableDetailsBuilder {
     ) -> Self {
         self.route_table_id = input;
         self
+    }
+    /// <p> The ID of the route table. </p>
+    pub fn get_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.route_table_id
     }
     /// Appends an item to `route_set`.
     ///
@@ -159,6 +179,12 @@ impl AwsEc2RouteTableDetailsBuilder {
         self.route_set = input;
         self
     }
+    /// <p> The routes in the route table. </p>
+    pub fn get_route_set(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteSetDetails>> {
+        &self.route_set
+    }
     /// <p> The ID of the virtual private cloud (VPC). </p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -168,6 +194,10 @@ impl AwsEc2RouteTableDetailsBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p> The ID of the virtual private cloud (VPC). </p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// Consumes the builder and constructs a [`AwsEc2RouteTableDetails`](crate::types::AwsEc2RouteTableDetails).
     pub fn build(self) -> crate::types::AwsEc2RouteTableDetails {

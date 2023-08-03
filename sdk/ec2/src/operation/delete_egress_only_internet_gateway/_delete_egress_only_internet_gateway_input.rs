@@ -47,6 +47,10 @@ impl DeleteEgressOnlyInternetGatewayInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>The ID of the egress-only internet gateway.</p>
     pub fn egress_only_internet_gateway_id(
         mut self,
@@ -62,6 +66,12 @@ impl DeleteEgressOnlyInternetGatewayInputBuilder {
     ) -> Self {
         self.egress_only_internet_gateway_id = input;
         self
+    }
+    /// <p>The ID of the egress-only internet gateway.</p>
+    pub fn get_egress_only_internet_gateway_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.egress_only_internet_gateway_id
     }
     /// Consumes the builder and constructs a [`DeleteEgressOnlyInternetGatewayInput`](crate::operation::delete_egress_only_internet_gateway::DeleteEgressOnlyInternetGatewayInput).
     pub fn build(

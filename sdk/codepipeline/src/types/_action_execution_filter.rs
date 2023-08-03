@@ -46,6 +46,10 @@ impl ActionExecutionFilterBuilder {
         self.pipeline_execution_id = input;
         self
     }
+    /// <p>The pipeline execution ID used to filter action execution history.</p>
+    pub fn get_pipeline_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_execution_id
+    }
     /// Consumes the builder and constructs a [`ActionExecutionFilter`](crate::types::ActionExecutionFilter).
     pub fn build(self) -> crate::types::ActionExecutionFilter {
         crate::types::ActionExecutionFilter {

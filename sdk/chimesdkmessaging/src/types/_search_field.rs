@@ -60,6 +60,10 @@ impl SearchFieldBuilder {
         self.key = input;
         self
     }
+    /// <p>An <code>enum</code> value that indicates the key to search the channel on. <code>MEMBERS</code> allows you to search channels based on memberships. You can use it with the <code>EQUALS</code> operator to get channels whose memberships are equal to the specified values, and with the <code>INCLUDES</code> operator to get channels whose memberships include the specified values.</p>
+    pub fn get_key(&self) -> &::std::option::Option<crate::types::SearchFieldKey> {
+        &self.key
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -83,6 +87,12 @@ impl SearchFieldBuilder {
         self.values = input;
         self
     }
+    /// <p>The values that you want to search for, a list of strings. The values must be <code>AppInstanceUserArns</code> specified as a list of strings.</p> <note>
+    /// <p>This operation isn't supported for <code>AppInstanceUsers</code> with large number of memberships.</p>
+    /// </note>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
+    }
     /// <p>The operator used to compare field values, currently <code>EQUALS</code> or <code>INCLUDES</code>. Use the <code>EQUALS</code> operator to find channels whose memberships equal the specified values. Use the <code>INCLUDES</code> operator to find channels whose memberships include the specified values.</p>
     pub fn operator(mut self, input: crate::types::SearchFieldOperator) -> Self {
         self.operator = ::std::option::Option::Some(input);
@@ -95,6 +105,10 @@ impl SearchFieldBuilder {
     ) -> Self {
         self.operator = input;
         self
+    }
+    /// <p>The operator used to compare field values, currently <code>EQUALS</code> or <code>INCLUDES</code>. Use the <code>EQUALS</code> operator to find channels whose memberships equal the specified values. Use the <code>INCLUDES</code> operator to find channels whose memberships include the specified values.</p>
+    pub fn get_operator(&self) -> &::std::option::Option<crate::types::SearchFieldOperator> {
+        &self.operator
     }
     /// Consumes the builder and constructs a [`SearchField`](crate::types::SearchField).
     pub fn build(self) -> crate::types::SearchField {

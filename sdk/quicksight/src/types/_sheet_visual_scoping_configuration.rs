@@ -64,6 +64,10 @@ impl SheetVisualScopingConfigurationBuilder {
         self.sheet_id = input;
         self
     }
+    /// <p>The selected sheet that the filter is applied to.</p>
+    pub fn get_sheet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sheet_id
+    }
     /// <p>The scope of the applied entities. Choose one of the following options:</p>
     /// <ul>
     /// <li> <p> <code>ALL_VISUALS</code> </p> </li>
@@ -85,6 +89,14 @@ impl SheetVisualScopingConfigurationBuilder {
         self.scope = input;
         self
     }
+    /// <p>The scope of the applied entities. Choose one of the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>ALL_VISUALS</code> </p> </li>
+    /// <li> <p> <code>SELECTED_VISUALS</code> </p> </li>
+    /// </ul>
+    pub fn get_scope(&self) -> &::std::option::Option<crate::types::FilterVisualScope> {
+        &self.scope
+    }
     /// Appends an item to `visual_ids`.
     ///
     /// To override the contents of this collection use [`set_visual_ids`](Self::set_visual_ids).
@@ -103,6 +115,10 @@ impl SheetVisualScopingConfigurationBuilder {
     ) -> Self {
         self.visual_ids = input;
         self
+    }
+    /// <p>The selected visuals that the filter is applied to.</p>
+    pub fn get_visual_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.visual_ids
     }
     /// Consumes the builder and constructs a [`SheetVisualScopingConfiguration`](crate::types::SheetVisualScopingConfiguration).
     pub fn build(self) -> crate::types::SheetVisualScopingConfiguration {

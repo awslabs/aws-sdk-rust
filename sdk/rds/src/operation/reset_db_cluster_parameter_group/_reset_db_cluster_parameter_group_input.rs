@@ -62,6 +62,12 @@ impl ResetDbClusterParameterGroupInputBuilder {
         self.db_cluster_parameter_group_name = input;
         self
     }
+    /// <p>The name of the DB cluster parameter group to reset.</p>
+    pub fn get_db_cluster_parameter_group_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_parameter_group_name
+    }
     /// <p>A value that indicates whether to reset all parameters in the DB cluster parameter group to their default values. You can't use this parameter if there is a list of parameter names specified for the <code>Parameters</code> parameter.</p>
     pub fn reset_all_parameters(mut self, input: bool) -> Self {
         self.reset_all_parameters = ::std::option::Option::Some(input);
@@ -71,6 +77,10 @@ impl ResetDbClusterParameterGroupInputBuilder {
     pub fn set_reset_all_parameters(mut self, input: ::std::option::Option<bool>) -> Self {
         self.reset_all_parameters = input;
         self
+    }
+    /// <p>A value that indicates whether to reset all parameters in the DB cluster parameter group to their default values. You can't use this parameter if there is a list of parameter names specified for the <code>Parameters</code> parameter.</p>
+    pub fn get_reset_all_parameters(&self) -> &::std::option::Option<bool> {
+        &self.reset_all_parameters
     }
     /// Appends an item to `parameters`.
     ///
@@ -90,6 +100,12 @@ impl ResetDbClusterParameterGroupInputBuilder {
     ) -> Self {
         self.parameters = input;
         self
+    }
+    /// <p>A list of parameter names in the DB cluster parameter group to reset to the default values. You can't use this parameter if the <code>ResetAllParameters</code> parameter is enabled.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+        &self.parameters
     }
     /// Consumes the builder and constructs a [`ResetDbClusterParameterGroupInput`](crate::operation::reset_db_cluster_parameter_group::ResetDbClusterParameterGroupInput).
     pub fn build(

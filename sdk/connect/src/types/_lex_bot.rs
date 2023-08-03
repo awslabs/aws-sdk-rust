@@ -48,6 +48,10 @@ impl LexBotBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the Amazon Lex bot.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Web Services Region where the Amazon Lex bot was created.</p>
     pub fn lex_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lex_region = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl LexBotBuilder {
     pub fn set_lex_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lex_region = input;
         self
+    }
+    /// <p>The Amazon Web Services Region where the Amazon Lex bot was created.</p>
+    pub fn get_lex_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lex_region
     }
     /// Consumes the builder and constructs a [`LexBot`](crate::types::LexBot).
     pub fn build(self) -> crate::types::LexBot {

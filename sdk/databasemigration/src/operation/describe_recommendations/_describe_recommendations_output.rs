@@ -57,6 +57,10 @@ impl DescribeRecommendationsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The unique pagination token returned for you to pass to a subsequent request. Fleet Advisor returns this token when the number of records in the response is greater than the <code>MaxRecords</code> value. To retrieve the next page, make the call again using the returned token and keeping all other arguments unchanged.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `recommendations`.
     ///
     /// To override the contents of this collection use [`set_recommendations`](Self::set_recommendations).
@@ -75,6 +79,12 @@ impl DescribeRecommendationsOutputBuilder {
     ) -> Self {
         self.recommendations = input;
         self
+    }
+    /// <p>The list of recommendations of target engines that Fleet Advisor created for the source database.</p>
+    pub fn get_recommendations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Recommendation>> {
+        &self.recommendations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

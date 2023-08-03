@@ -41,6 +41,10 @@ impl GetLayerVersionByArnInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the layer version.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`GetLayerVersionByArnInput`](crate::operation::get_layer_version_by_arn::GetLayerVersionByArnInput).
     pub fn build(
         self,

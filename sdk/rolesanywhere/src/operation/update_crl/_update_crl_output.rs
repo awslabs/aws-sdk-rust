@@ -46,6 +46,10 @@ impl UpdateCrlOutputBuilder {
         self.crl = input;
         self
     }
+    /// <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
+    pub fn get_crl(&self) -> &::std::option::Option<crate::types::CrlDetail> {
+        &self.crl
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

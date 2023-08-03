@@ -50,6 +50,10 @@ impl InitialCapacityConfigBuilder {
         self.worker_count = input;
         self
     }
+    /// <p>The number of workers in the initial capacity configuration.</p>
+    pub fn get_worker_count(&self) -> &::std::option::Option<i64> {
+        &self.worker_count
+    }
     /// <p>The resource configuration of the initial capacity configuration.</p>
     pub fn worker_configuration(mut self, input: crate::types::WorkerResourceConfig) -> Self {
         self.worker_configuration = ::std::option::Option::Some(input);
@@ -62,6 +66,12 @@ impl InitialCapacityConfigBuilder {
     ) -> Self {
         self.worker_configuration = input;
         self
+    }
+    /// <p>The resource configuration of the initial capacity configuration.</p>
+    pub fn get_worker_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::WorkerResourceConfig> {
+        &self.worker_configuration
     }
     /// Consumes the builder and constructs a [`InitialCapacityConfig`](crate::types::InitialCapacityConfig).
     pub fn build(self) -> crate::types::InitialCapacityConfig {

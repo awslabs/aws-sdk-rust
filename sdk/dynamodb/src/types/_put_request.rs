@@ -63,6 +63,14 @@ impl PutRequestBuilder {
         self.item = input;
         self
     }
+    /// <p>A map of attribute name to attribute values, representing the primary key of an item to be processed by <code>PutItem</code>. All of the table's primary key attributes must be specified, and their data types must match those of the table's key schema. If any attributes are present in the item that are part of an index key schema for the table, their types must match the index key schema.</p>
+    pub fn get_item(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
+    > {
+        &self.item
+    }
     /// Consumes the builder and constructs a [`PutRequest`](crate::types::PutRequest).
     pub fn build(self) -> crate::types::PutRequest {
         crate::types::PutRequest { item: self.item }

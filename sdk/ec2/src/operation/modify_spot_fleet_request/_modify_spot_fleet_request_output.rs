@@ -49,6 +49,10 @@ impl ModifySpotFleetRequestOutputBuilder {
         self.r#return = input;
         self
     }
+    /// <p>If the request succeeds, the response returns <code>true</code>. If the request fails, no response is returned, and instead an error message is returned.</p>
+    pub fn get_return(&self) -> &::std::option::Option<bool> {
+        &self.r#return
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

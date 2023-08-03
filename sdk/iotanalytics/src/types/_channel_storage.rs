@@ -60,6 +60,12 @@ impl ChannelStorageBuilder {
         self.service_managed_s3 = input;
         self
     }
+    /// <p>Used to store channel data in an S3 bucket managed by IoT Analytics. You can't change the choice of S3 storage after the data store is created.</p>
+    pub fn get_service_managed_s3(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServiceManagedChannelS3Storage> {
+        &self.service_managed_s3
+    }
     /// <p>Used to store channel data in an S3 bucket that you manage. If customer managed storage is selected, the <code>retentionPeriod</code> parameter is ignored. You can't change the choice of S3 storage after the data store is created.</p>
     pub fn customer_managed_s3(
         mut self,
@@ -75,6 +81,12 @@ impl ChannelStorageBuilder {
     ) -> Self {
         self.customer_managed_s3 = input;
         self
+    }
+    /// <p>Used to store channel data in an S3 bucket that you manage. If customer managed storage is selected, the <code>retentionPeriod</code> parameter is ignored. You can't change the choice of S3 storage after the data store is created.</p>
+    pub fn get_customer_managed_s3(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomerManagedChannelS3Storage> {
+        &self.customer_managed_s3
     }
     /// Consumes the builder and constructs a [`ChannelStorage`](crate::types::ChannelStorage).
     pub fn build(self) -> crate::types::ChannelStorage {

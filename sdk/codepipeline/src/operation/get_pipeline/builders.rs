@@ -36,6 +36,10 @@ impl GetPipelineFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetPipeline as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_pipeline::builders::GetPipelineInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl GetPipelineFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the pipeline for which you want to get information. Pipeline names must be unique in an Amazon Web Services account.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The version number of the pipeline. If you do not specify a version, defaults to the current version.</p>
     pub fn version(mut self, input: i32) -> Self {
         self.inner = self.inner.version(input);
@@ -127,5 +135,9 @@ impl GetPipelineFluentBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_version(input);
         self
+    }
+    /// <p>The version number of the pipeline. If you do not specify a version, defaults to the current version.</p>
+    pub fn get_version(&self) -> &::std::option::Option<i32> {
+        self.inner.get_version()
     }
 }

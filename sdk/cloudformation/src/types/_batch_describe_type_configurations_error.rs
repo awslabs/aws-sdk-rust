@@ -60,6 +60,10 @@ impl BatchDescribeTypeConfigurationsErrorBuilder {
         self.error_code = input;
         self
     }
+    /// <p>The error code.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
+    }
     /// <p>The error message.</p>
     pub fn error_message(
         mut self,
@@ -76,6 +80,10 @@ impl BatchDescribeTypeConfigurationsErrorBuilder {
         self.error_message = input;
         self
     }
+    /// <p>The error message.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
+    }
     /// <p>Identifying information for the configuration of a CloudFormation extension.</p>
     pub fn type_configuration_identifier(
         mut self,
@@ -91,6 +99,12 @@ impl BatchDescribeTypeConfigurationsErrorBuilder {
     ) -> Self {
         self.type_configuration_identifier = input;
         self
+    }
+    /// <p>Identifying information for the configuration of a CloudFormation extension.</p>
+    pub fn get_type_configuration_identifier(
+        &self,
+    ) -> &::std::option::Option<crate::types::TypeConfigurationIdentifier> {
+        &self.type_configuration_identifier
     }
     /// Consumes the builder and constructs a [`BatchDescribeTypeConfigurationsError`](crate::types::BatchDescribeTypeConfigurationsError).
     pub fn build(self) -> crate::types::BatchDescribeTypeConfigurationsError {

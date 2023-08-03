@@ -61,6 +61,10 @@ impl AssociateEntityToThingInputBuilder {
         self.thing_name = input;
         self
     }
+    /// <p>The name of the thing to which the entity is to be associated.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_name
+    }
     /// <p>The ID of the device to be associated with the thing.</p>
     /// <p>The ID should be in the following format.</p>
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
@@ -75,6 +79,12 @@ impl AssociateEntityToThingInputBuilder {
         self.entity_id = input;
         self
     }
+    /// <p>The ID of the device to be associated with the thing.</p>
+    /// <p>The ID should be in the following format.</p>
+    /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_id
+    }
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
     pub fn namespace_version(mut self, input: i64) -> Self {
         self.namespace_version = ::std::option::Option::Some(input);
@@ -84,6 +94,10 @@ impl AssociateEntityToThingInputBuilder {
     pub fn set_namespace_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.namespace_version = input;
         self
+    }
+    /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
+    pub fn get_namespace_version(&self) -> &::std::option::Option<i64> {
+        &self.namespace_version
     }
     /// Consumes the builder and constructs a [`AssociateEntityToThingInput`](crate::operation::associate_entity_to_thing::AssociateEntityToThingInput).
     pub fn build(

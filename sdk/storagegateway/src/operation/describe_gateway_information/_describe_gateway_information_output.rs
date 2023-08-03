@@ -217,6 +217,10 @@ impl DescribeGatewayInformationOutputBuilder {
         self.gateway_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_arn
+    }
     /// <p>The unique identifier assigned to your gateway during activation. This ID becomes part of the gateway Amazon Resource Name (ARN), which you use as input for other operations.</p>
     pub fn gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_id = ::std::option::Option::Some(input.into());
@@ -227,6 +231,10 @@ impl DescribeGatewayInformationOutputBuilder {
         self.gateway_id = input;
         self
     }
+    /// <p>The unique identifier assigned to your gateway during activation. This ID becomes part of the gateway Amazon Resource Name (ARN), which you use as input for other operations.</p>
+    pub fn get_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_id
+    }
     /// <p>The name you configured for your gateway.</p>
     pub fn gateway_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_name = ::std::option::Option::Some(input.into());
@@ -236,6 +244,10 @@ impl DescribeGatewayInformationOutputBuilder {
     pub fn set_gateway_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_name = input;
         self
+    }
+    /// <p>The name you configured for your gateway.</p>
+    pub fn get_gateway_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_name
     }
     /// <p>A value that indicates the time zone configured for the gateway.</p>
     pub fn gateway_timezone(
@@ -253,6 +265,10 @@ impl DescribeGatewayInformationOutputBuilder {
         self.gateway_timezone = input;
         self
     }
+    /// <p>A value that indicates the time zone configured for the gateway.</p>
+    pub fn get_gateway_timezone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_timezone
+    }
     /// <p>A value that indicates the operating state of the gateway.</p>
     pub fn gateway_state(
         mut self,
@@ -268,6 +284,10 @@ impl DescribeGatewayInformationOutputBuilder {
     ) -> Self {
         self.gateway_state = input;
         self
+    }
+    /// <p>A value that indicates the operating state of the gateway.</p>
+    pub fn get_gateway_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_state
     }
     /// Appends an item to `gateway_network_interfaces`.
     ///
@@ -288,6 +308,12 @@ impl DescribeGatewayInformationOutputBuilder {
         self.gateway_network_interfaces = input;
         self
     }
+    /// <p>A <code>NetworkInterface</code> array that contains descriptions of the gateway network interfaces.</p>
+    pub fn get_gateway_network_interfaces(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>> {
+        &self.gateway_network_interfaces
+    }
     /// <p>The type of the gateway.</p>
     pub fn gateway_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_type = ::std::option::Option::Some(input.into());
@@ -297,6 +323,10 @@ impl DescribeGatewayInformationOutputBuilder {
     pub fn set_gateway_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_type = input;
         self
+    }
+    /// <p>The type of the gateway.</p>
+    pub fn get_gateway_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_type
     }
     /// <p>The date on which an update to the gateway is available. This date is in the time zone of the gateway. If the gateway is not available for an update this field is not returned in the response.</p>
     pub fn next_update_availability_date(
@@ -314,6 +344,12 @@ impl DescribeGatewayInformationOutputBuilder {
         self.next_update_availability_date = input;
         self
     }
+    /// <p>The date on which an update to the gateway is available. This date is in the time zone of the gateway. If the gateway is not available for an update this field is not returned in the response.</p>
+    pub fn get_next_update_availability_date(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.next_update_availability_date
+    }
     /// <p>The date on which the last software update was applied to the gateway. If the gateway has never been updated, this field does not return a value in the response. This only only exist and returns once it have been chosen and set by the SGW service, based on the OS version of the gateway VM</p>
     pub fn last_software_update(
         mut self,
@@ -329,6 +365,10 @@ impl DescribeGatewayInformationOutputBuilder {
     ) -> Self {
         self.last_software_update = input;
         self
+    }
+    /// <p>The date on which the last software update was applied to the gateway. If the gateway has never been updated, this field does not return a value in the response. This only only exist and returns once it have been chosen and set by the SGW service, based on the OS version of the gateway VM</p>
+    pub fn get_last_software_update(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_software_update
     }
     /// <p>The ID of the Amazon EC2 instance that was used to launch the gateway.</p>
     pub fn ec2_instance_id(
@@ -346,6 +386,10 @@ impl DescribeGatewayInformationOutputBuilder {
         self.ec2_instance_id = input;
         self
     }
+    /// <p>The ID of the Amazon EC2 instance that was used to launch the gateway.</p>
+    pub fn get_ec2_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ec2_instance_id
+    }
     /// <p>The Amazon Web Services Region where the Amazon EC2 instance is located.</p>
     pub fn ec2_instance_region(
         mut self,
@@ -361,6 +405,10 @@ impl DescribeGatewayInformationOutputBuilder {
     ) -> Self {
         self.ec2_instance_region = input;
         self
+    }
+    /// <p>The Amazon Web Services Region where the Amazon EC2 instance is located.</p>
+    pub fn get_ec2_instance_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ec2_instance_region
     }
     /// Appends an item to `tags`.
     ///
@@ -381,6 +429,10 @@ impl DescribeGatewayInformationOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>A list of up to 50 tags assigned to the gateway, sorted alphabetically by key name. Each tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the <code>ListTagsForResource</code> API operation.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The configuration settings for the virtual private cloud (VPC) endpoint for your gateway.</p>
     pub fn vpc_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_endpoint = ::std::option::Option::Some(input.into());
@@ -390,6 +442,10 @@ impl DescribeGatewayInformationOutputBuilder {
     pub fn set_vpc_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_endpoint = input;
         self
+    }
+    /// <p>The configuration settings for the virtual private cloud (VPC) endpoint for your gateway.</p>
+    pub fn get_vpc_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_endpoint
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor events in the gateway. This field only only exist and returns once it have been chosen and set by the SGW service, based on the OS version of the gateway VM</p>
     pub fn cloud_watch_log_group_arn(
@@ -407,6 +463,10 @@ impl DescribeGatewayInformationOutputBuilder {
         self.cloud_watch_log_group_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor events in the gateway. This field only only exist and returns once it have been chosen and set by the SGW service, based on the OS version of the gateway VM</p>
+    pub fn get_cloud_watch_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cloud_watch_log_group_arn
+    }
     /// <p>The type of hardware or software platform on which the gateway is running.</p>
     pub fn host_environment(mut self, input: crate::types::HostEnvironment) -> Self {
         self.host_environment = ::std::option::Option::Some(input);
@@ -419,6 +479,10 @@ impl DescribeGatewayInformationOutputBuilder {
     ) -> Self {
         self.host_environment = input;
         self
+    }
+    /// <p>The type of hardware or software platform on which the gateway is running.</p>
+    pub fn get_host_environment(&self) -> &::std::option::Option<crate::types::HostEnvironment> {
+        &self.host_environment
     }
     /// <p>The type of endpoint for your gateway.</p>
     /// <p>Valid Values: <code>STANDARD</code> | <code>FIPS</code> </p>
@@ -438,6 +502,11 @@ impl DescribeGatewayInformationOutputBuilder {
         self.endpoint_type = input;
         self
     }
+    /// <p>The type of endpoint for your gateway.</p>
+    /// <p>Valid Values: <code>STANDARD</code> | <code>FIPS</code> </p>
+    pub fn get_endpoint_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_type
+    }
     /// <p>Date after which this gateway will not receive software updates for new features.</p>
     pub fn software_updates_end_date(
         mut self,
@@ -453,6 +522,10 @@ impl DescribeGatewayInformationOutputBuilder {
     ) -> Self {
         self.software_updates_end_date = input;
         self
+    }
+    /// <p>Date after which this gateway will not receive software updates for new features.</p>
+    pub fn get_software_updates_end_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.software_updates_end_date
     }
     /// <p>Date after which this gateway will not receive software updates for new features and bug fixes.</p>
     pub fn deprecation_date(
@@ -470,6 +543,10 @@ impl DescribeGatewayInformationOutputBuilder {
         self.deprecation_date = input;
         self
     }
+    /// <p>Date after which this gateway will not receive software updates for new features and bug fixes.</p>
+    pub fn get_deprecation_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deprecation_date
+    }
     /// <p>Specifies the size of the gateway's metadata cache.</p>
     pub fn gateway_capacity(mut self, input: crate::types::GatewayCapacity) -> Self {
         self.gateway_capacity = ::std::option::Option::Some(input);
@@ -482,6 +559,10 @@ impl DescribeGatewayInformationOutputBuilder {
     ) -> Self {
         self.gateway_capacity = input;
         self
+    }
+    /// <p>Specifies the size of the gateway's metadata cache.</p>
+    pub fn get_gateway_capacity(&self) -> &::std::option::Option<crate::types::GatewayCapacity> {
+        &self.gateway_capacity
     }
     /// Appends an item to `supported_gateway_capacities`.
     ///
@@ -502,6 +583,12 @@ impl DescribeGatewayInformationOutputBuilder {
         self.supported_gateway_capacities = input;
         self
     }
+    /// <p>A list of the metadata cache sizes that the gateway can support based on its current hardware specifications.</p>
+    pub fn get_supported_gateway_capacities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GatewayCapacity>> {
+        &self.supported_gateway_capacities
+    }
     /// <p>A unique identifier for the specific instance of the host platform running the gateway. This value is only available for certain host environments, and its format depends on the host environment type.</p>
     pub fn host_environment_id(
         mut self,
@@ -517,6 +604,10 @@ impl DescribeGatewayInformationOutputBuilder {
     ) -> Self {
         self.host_environment_id = input;
         self
+    }
+    /// <p>A unique identifier for the specific instance of the host platform running the gateway. This value is only available for certain host environments, and its format depends on the host environment type.</p>
+    pub fn get_host_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host_environment_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

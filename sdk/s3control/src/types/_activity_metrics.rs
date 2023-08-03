@@ -41,6 +41,10 @@ impl ActivityMetricsBuilder {
         self.is_enabled = input;
         self
     }
+    /// <p>A container that indicates whether activity metrics are enabled.</p>
+    pub fn get_is_enabled(&self) -> &::std::option::Option<bool> {
+        &self.is_enabled
+    }
     /// Consumes the builder and constructs a [`ActivityMetrics`](crate::types::ActivityMetrics).
     pub fn build(self) -> crate::types::ActivityMetrics {
         crate::types::ActivityMetrics {

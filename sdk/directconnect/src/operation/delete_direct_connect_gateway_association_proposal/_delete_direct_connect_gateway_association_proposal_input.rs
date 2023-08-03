@@ -39,6 +39,10 @@ impl DeleteDirectConnectGatewayAssociationProposalInputBuilder {
         self.proposal_id = input;
         self
     }
+    /// <p>The ID of the proposal.</p>
+    pub fn get_proposal_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.proposal_id
+    }
     /// Consumes the builder and constructs a [`DeleteDirectConnectGatewayAssociationProposalInput`](crate::operation::delete_direct_connect_gateway_association_proposal::DeleteDirectConnectGatewayAssociationProposalInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_direct_connect_gateway_association_proposal::DeleteDirectConnectGatewayAssociationProposalInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

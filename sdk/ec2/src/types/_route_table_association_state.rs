@@ -51,6 +51,12 @@ impl RouteTableAssociationStateBuilder {
         self.state = input;
         self
     }
+    /// <p>The state of the association.</p>
+    pub fn get_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::RouteTableAssociationStateCode> {
+        &self.state
+    }
     /// <p>The status message, if applicable.</p>
     pub fn status_message(
         mut self,
@@ -66,6 +72,10 @@ impl RouteTableAssociationStateBuilder {
     ) -> Self {
         self.status_message = input;
         self
+    }
+    /// <p>The status message, if applicable.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     /// Consumes the builder and constructs a [`RouteTableAssociationState`](crate::types::RouteTableAssociationState).
     pub fn build(self) -> crate::types::RouteTableAssociationState {

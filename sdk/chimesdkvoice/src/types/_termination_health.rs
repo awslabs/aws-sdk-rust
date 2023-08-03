@@ -51,6 +51,10 @@ impl TerminationHealthBuilder {
         self.timestamp = input;
         self
     }
+    /// <p>The timestamp, in ISO 8601 format.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.timestamp
+    }
     /// <p>The source IP address.</p>
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl TerminationHealthBuilder {
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source = input;
         self
+    }
+    /// <p>The source IP address.</p>
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source
     }
     /// Consumes the builder and constructs a [`TerminationHealth`](crate::types::TerminationHealth).
     pub fn build(self) -> crate::types::TerminationHealth {

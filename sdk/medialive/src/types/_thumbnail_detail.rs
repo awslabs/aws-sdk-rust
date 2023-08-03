@@ -48,6 +48,10 @@ impl ThumbnailDetailBuilder {
         self.pipeline_id = input;
         self
     }
+    /// Pipeline ID
+    pub fn get_pipeline_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_id
+    }
     /// Appends an item to `thumbnails`.
     ///
     /// To override the contents of this collection use [`set_thumbnails`](Self::set_thumbnails).
@@ -66,6 +70,12 @@ impl ThumbnailDetailBuilder {
     ) -> Self {
         self.thumbnails = input;
         self
+    }
+    /// thumbnails of a single pipeline
+    pub fn get_thumbnails(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Thumbnail>> {
+        &self.thumbnails
     }
     /// Consumes the builder and constructs a [`ThumbnailDetail`](crate::types::ThumbnailDetail).
     pub fn build(self) -> crate::types::ThumbnailDetail {

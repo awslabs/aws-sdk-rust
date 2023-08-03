@@ -90,6 +90,12 @@ impl FindingHistoryRecordBuilder {
         self.finding_identifier = input;
         self
     }
+    /// <p>Identifies which finding to get the finding history for.</p>
+    pub fn get_finding_identifier(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsSecurityFindingIdentifier> {
+        &self.finding_identifier
+    }
     /// <p> An ISO 8601-formatted timestamp that indicates when Security Hub processed the updated finding record.</p>
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. </p>
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -105,6 +111,11 @@ impl FindingHistoryRecordBuilder {
         self.update_time = input;
         self
     }
+    /// <p> An ISO 8601-formatted timestamp that indicates when Security Hub processed the updated finding record.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. </p>
+    pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_time
+    }
     /// <p> Identifies whether the event marks the creation of a new finding. A value of <code>True</code> means that the finding is newly created. A value of <code>False</code> means that the finding isn’t newly created. </p>
     pub fn finding_created(mut self, input: bool) -> Self {
         self.finding_created = ::std::option::Option::Some(input);
@@ -114,6 +125,10 @@ impl FindingHistoryRecordBuilder {
     pub fn set_finding_created(mut self, input: ::std::option::Option<bool>) -> Self {
         self.finding_created = input;
         self
+    }
+    /// <p> Identifies whether the event marks the creation of a new finding. A value of <code>True</code> means that the finding is newly created. A value of <code>False</code> means that the finding isn’t newly created. </p>
+    pub fn get_finding_created(&self) -> &::std::option::Option<bool> {
+        &self.finding_created
     }
     /// <p> Identifies the source of the event that changed the finding. For example, an integrated Amazon Web Service or third-party partner integration may call <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html"> <code>BatchImportFindings</code> </a>, or an Security Hub customer may call <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html"> <code>BatchUpdateFindings</code> </a>. </p>
     pub fn update_source(mut self, input: crate::types::FindingHistoryUpdateSource) -> Self {
@@ -127,6 +142,12 @@ impl FindingHistoryRecordBuilder {
     ) -> Self {
         self.update_source = input;
         self
+    }
+    /// <p> Identifies the source of the event that changed the finding. For example, an integrated Amazon Web Service or third-party partner integration may call <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html"> <code>BatchImportFindings</code> </a>, or an Security Hub customer may call <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html"> <code>BatchUpdateFindings</code> </a>. </p>
+    pub fn get_update_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::FindingHistoryUpdateSource> {
+        &self.update_source
     }
     /// Appends an item to `updates`.
     ///
@@ -147,6 +168,12 @@ impl FindingHistoryRecordBuilder {
         self.updates = input;
         self
     }
+    /// <p> An array of objects that provides details about the finding change event, including the Amazon Web Services Security Finding Format (ASFF) field that changed, the value of the field before the change, and the value of the field after the change. </p>
+    pub fn get_updates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FindingHistoryUpdate>> {
+        &self.updates
+    }
     /// <p> A token for pagination purposes. Provide this token in the subsequent request to <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetFindingsHistory.html"> <code>GetFindingsHistory</code> </a> to get up to an additional 100 results of history for the same finding that you specified in your initial request. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -156,6 +183,10 @@ impl FindingHistoryRecordBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p> A token for pagination purposes. Provide this token in the subsequent request to <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetFindingsHistory.html"> <code>GetFindingsHistory</code> </a> to get up to an additional 100 results of history for the same finding that you specified in your initial request. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`FindingHistoryRecord`](crate::types::FindingHistoryRecord).
     pub fn build(self) -> crate::types::FindingHistoryRecord {

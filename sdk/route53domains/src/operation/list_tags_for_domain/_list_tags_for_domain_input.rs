@@ -41,6 +41,10 @@ impl ListTagsForDomainInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The domain for which you want to get a list of tags.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// Consumes the builder and constructs a [`ListTagsForDomainInput`](crate::operation::list_tags_for_domain::ListTagsForDomainInput).
     pub fn build(
         self,

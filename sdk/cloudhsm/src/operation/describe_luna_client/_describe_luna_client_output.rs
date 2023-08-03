@@ -79,6 +79,10 @@ impl DescribeLunaClientOutputBuilder {
         self.client_arn = input;
         self
     }
+    /// <p>The ARN of the client.</p>
+    pub fn get_client_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_arn
+    }
     /// <p>The certificate installed on the HSMs used by this client.</p>
     pub fn certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate = ::std::option::Option::Some(input.into());
@@ -88,6 +92,10 @@ impl DescribeLunaClientOutputBuilder {
     pub fn set_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate = input;
         self
+    }
+    /// <p>The certificate installed on the HSMs used by this client.</p>
+    pub fn get_certificate(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate
     }
     /// <p>The certificate fingerprint.</p>
     pub fn certificate_fingerprint(
@@ -105,6 +113,10 @@ impl DescribeLunaClientOutputBuilder {
         self.certificate_fingerprint = input;
         self
     }
+    /// <p>The certificate fingerprint.</p>
+    pub fn get_certificate_fingerprint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_fingerprint
+    }
     /// <p>The date and time the client was last modified.</p>
     pub fn last_modified_timestamp(
         mut self,
@@ -121,6 +133,10 @@ impl DescribeLunaClientOutputBuilder {
         self.last_modified_timestamp = input;
         self
     }
+    /// <p>The date and time the client was last modified.</p>
+    pub fn get_last_modified_timestamp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_timestamp
+    }
     /// <p>The label of the client.</p>
     pub fn label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label = ::std::option::Option::Some(input.into());
@@ -130,6 +146,10 @@ impl DescribeLunaClientOutputBuilder {
     pub fn set_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label = input;
         self
+    }
+    /// <p>The label of the client.</p>
+    pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

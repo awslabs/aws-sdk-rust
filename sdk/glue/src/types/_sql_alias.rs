@@ -48,6 +48,10 @@ impl SqlAliasBuilder {
         self.from = input;
         self
     }
+    /// <p>A table, or a column in a table.</p>
+    pub fn get_from(&self) -> &::std::option::Option<::std::string::String> {
+        &self.from
+    }
     /// <p>A temporary name given to a table, or a column in a table.</p>
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl SqlAliasBuilder {
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alias = input;
         self
+    }
+    /// <p>A temporary name given to a table, or a column in a table.</p>
+    pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias
     }
     /// Consumes the builder and constructs a [`SqlAlias`](crate::types::SqlAlias).
     pub fn build(self) -> crate::types::SqlAlias {

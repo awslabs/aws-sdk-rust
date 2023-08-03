@@ -96,6 +96,10 @@ impl SearchAssociatedTranscriptsInputBuilder {
         self.bot_id = input;
         self
     }
+    /// <p>The unique identifier of the bot associated with the transcripts that you are searching.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
+    }
     /// <p>The version of the bot containing the transcripts that you are searching.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
@@ -106,6 +110,10 @@ impl SearchAssociatedTranscriptsInputBuilder {
         self.bot_version = input;
         self
     }
+    /// <p>The version of the bot containing the transcripts that you are searching.</p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_version
+    }
     /// <p>The identifier of the language and locale of the transcripts to search. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
@@ -115,6 +123,10 @@ impl SearchAssociatedTranscriptsInputBuilder {
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.locale_id = input;
         self
+    }
+    /// <p>The identifier of the language and locale of the transcripts to search. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
+    pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale_id
     }
     /// <p>The unique identifier of the bot recommendation associated with the transcripts to search.</p>
     pub fn bot_recommendation_id(
@@ -132,6 +144,10 @@ impl SearchAssociatedTranscriptsInputBuilder {
         self.bot_recommendation_id = input;
         self
     }
+    /// <p>The unique identifier of the bot recommendation associated with the transcripts to search.</p>
+    pub fn get_bot_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_recommendation_id
+    }
     /// <p>How SearchResults are ordered. Valid values are Ascending or Descending. The default is Descending.</p>
     pub fn search_order(mut self, input: crate::types::SearchOrder) -> Self {
         self.search_order = ::std::option::Option::Some(input);
@@ -144,6 +160,10 @@ impl SearchAssociatedTranscriptsInputBuilder {
     ) -> Self {
         self.search_order = input;
         self
+    }
+    /// <p>How SearchResults are ordered. Valid values are Ascending or Descending. The default is Descending.</p>
+    pub fn get_search_order(&self) -> &::std::option::Option<crate::types::SearchOrder> {
+        &self.search_order
     }
     /// Appends an item to `filters`.
     ///
@@ -164,6 +184,12 @@ impl SearchAssociatedTranscriptsInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>A list of filter objects.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociatedTranscriptFilter>> {
+        &self.filters
+    }
     /// <p>The maximum number of bot recommendations to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -174,6 +200,10 @@ impl SearchAssociatedTranscriptsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of bot recommendations to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>If the response from the SearchAssociatedTranscriptsRequest operation contains more results than specified in the maxResults parameter, an index is returned in the response. Use that index in the nextIndex parameter to return the next page of results.</p>
     pub fn next_index(mut self, input: i32) -> Self {
         self.next_index = ::std::option::Option::Some(input);
@@ -183,6 +213,10 @@ impl SearchAssociatedTranscriptsInputBuilder {
     pub fn set_next_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.next_index = input;
         self
+    }
+    /// <p>If the response from the SearchAssociatedTranscriptsRequest operation contains more results than specified in the maxResults parameter, an index is returned in the response. Use that index in the nextIndex parameter to return the next page of results.</p>
+    pub fn get_next_index(&self) -> &::std::option::Option<i32> {
+        &self.next_index
     }
     /// Consumes the builder and constructs a [`SearchAssociatedTranscriptsInput`](crate::operation::search_associated_transcripts::SearchAssociatedTranscriptsInput).
     pub fn build(

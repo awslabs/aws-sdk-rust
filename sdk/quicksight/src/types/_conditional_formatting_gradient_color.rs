@@ -54,6 +54,10 @@ impl ConditionalFormattingGradientColorBuilder {
         self.expression = input;
         self
     }
+    /// <p>The expression that determines the formatting configuration for gradient color.</p>
+    pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expression
+    }
     /// <p>Determines the color.</p>
     pub fn color(mut self, input: crate::types::GradientColor) -> Self {
         self.color = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl ConditionalFormattingGradientColorBuilder {
     pub fn set_color(mut self, input: ::std::option::Option<crate::types::GradientColor>) -> Self {
         self.color = input;
         self
+    }
+    /// <p>Determines the color.</p>
+    pub fn get_color(&self) -> &::std::option::Option<crate::types::GradientColor> {
+        &self.color
     }
     /// Consumes the builder and constructs a [`ConditionalFormattingGradientColor`](crate::types::ConditionalFormattingGradientColor).
     pub fn build(self) -> crate::types::ConditionalFormattingGradientColor {

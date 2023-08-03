@@ -67,6 +67,12 @@ impl UpdateResponseHeadersPolicyInputBuilder {
         self.response_headers_policy_config = input;
         self
     }
+    /// <p>A response headers policy configuration.</p>
+    pub fn get_response_headers_policy_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResponseHeadersPolicyConfig> {
+        &self.response_headers_policy_config
+    }
     /// <p>The identifier for the response headers policy that you are updating.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -76,6 +82,10 @@ impl UpdateResponseHeadersPolicyInputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The identifier for the response headers policy that you are updating.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The version of the response headers policy that you are updating.</p>
     /// <p>The version is returned in the cache policy's <code>ETag</code> field in the response to <code>GetResponseHeadersPolicyConfig</code>.</p>
@@ -88,6 +98,11 @@ impl UpdateResponseHeadersPolicyInputBuilder {
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.if_match = input;
         self
+    }
+    /// <p>The version of the response headers policy that you are updating.</p>
+    /// <p>The version is returned in the cache policy's <code>ETag</code> field in the response to <code>GetResponseHeadersPolicyConfig</code>.</p>
+    pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
+        &self.if_match
     }
     /// Consumes the builder and constructs a [`UpdateResponseHeadersPolicyInput`](crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyInput).
     pub fn build(

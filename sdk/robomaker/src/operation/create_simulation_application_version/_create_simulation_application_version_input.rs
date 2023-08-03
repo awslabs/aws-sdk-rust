@@ -63,6 +63,10 @@ impl CreateSimulationApplicationVersionInputBuilder {
         self.application = input;
         self
     }
+    /// <p>The application information for the simulation application.</p>
+    pub fn get_application(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application
+    }
     /// <p>The current revision id for the simulation application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
     pub fn current_revision_id(
         mut self,
@@ -78,6 +82,10 @@ impl CreateSimulationApplicationVersionInputBuilder {
     ) -> Self {
         self.current_revision_id = input;
         self
+    }
+    /// <p>The current revision id for the simulation application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
+    pub fn get_current_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.current_revision_id
     }
     /// Appends an item to `s3_etags`.
     ///
@@ -98,6 +106,10 @@ impl CreateSimulationApplicationVersionInputBuilder {
         self.s3_etags = input;
         self
     }
+    /// <p>The Amazon S3 eTag identifier for the zip file bundle that you use to create the simulation application.</p>
+    pub fn get_s3_etags(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.s3_etags
+    }
     /// <p>The SHA256 digest used to identify the Docker image URI used to created the simulation application.</p>
     pub fn image_digest(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_digest = ::std::option::Option::Some(input.into());
@@ -107,6 +119,10 @@ impl CreateSimulationApplicationVersionInputBuilder {
     pub fn set_image_digest(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_digest = input;
         self
+    }
+    /// <p>The SHA256 digest used to identify the Docker image URI used to created the simulation application.</p>
+    pub fn get_image_digest(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_digest
     }
     /// Consumes the builder and constructs a [`CreateSimulationApplicationVersionInput`](crate::operation::create_simulation_application_version::CreateSimulationApplicationVersionInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_simulation_application_version::CreateSimulationApplicationVersionInput, ::aws_smithy_http::operation::error::BuildError>{

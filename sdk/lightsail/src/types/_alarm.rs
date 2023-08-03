@@ -239,6 +239,10 @@ impl AlarmBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the alarm.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Name (ARN) of the alarm.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -248,6 +252,10 @@ impl AlarmBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the alarm.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The timestamp when the alarm was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -262,6 +270,10 @@ impl AlarmBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The timestamp when the alarm was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>An object that lists information about the location of the alarm.</p>
     pub fn location(mut self, input: crate::types::ResourceLocation) -> Self {
         self.location = ::std::option::Option::Some(input);
@@ -274,6 +286,10 @@ impl AlarmBuilder {
     ) -> Self {
         self.location = input;
         self
+    }
+    /// <p>An object that lists information about the location of the alarm.</p>
+    pub fn get_location(&self) -> &::std::option::Option<crate::types::ResourceLocation> {
+        &self.location
     }
     /// <p>The Lightsail resource type (e.g., <code>Alarm</code>).</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
@@ -288,6 +304,10 @@ impl AlarmBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The Lightsail resource type (e.g., <code>Alarm</code>).</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
+    }
     /// <p>The support code. Include this code in your email to support when you have questions about your Lightsail alarm. This code enables our support team to look up your Lightsail information more easily.</p>
     pub fn support_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.support_code = ::std::option::Option::Some(input.into());
@@ -297,6 +317,10 @@ impl AlarmBuilder {
     pub fn set_support_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.support_code = input;
         self
+    }
+    /// <p>The support code. Include this code in your email to support when you have questions about your Lightsail alarm. This code enables our support team to look up your Lightsail information more easily.</p>
+    pub fn get_support_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.support_code
     }
     /// <p>An object that lists information about the resource monitored by the alarm.</p>
     pub fn monitored_resource_info(mut self, input: crate::types::MonitoredResourceInfo) -> Self {
@@ -311,6 +335,12 @@ impl AlarmBuilder {
         self.monitored_resource_info = input;
         self
     }
+    /// <p>An object that lists information about the resource monitored by the alarm.</p>
+    pub fn get_monitored_resource_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::MonitoredResourceInfo> {
+        &self.monitored_resource_info
+    }
     /// <p>The arithmetic operation used when comparing the specified statistic and threshold.</p>
     pub fn comparison_operator(mut self, input: crate::types::ComparisonOperator) -> Self {
         self.comparison_operator = ::std::option::Option::Some(input);
@@ -324,6 +354,12 @@ impl AlarmBuilder {
         self.comparison_operator = input;
         self
     }
+    /// <p>The arithmetic operation used when comparing the specified statistic and threshold.</p>
+    pub fn get_comparison_operator(
+        &self,
+    ) -> &::std::option::Option<crate::types::ComparisonOperator> {
+        &self.comparison_operator
+    }
     /// <p>The number of periods over which data is compared to the specified threshold.</p>
     pub fn evaluation_periods(mut self, input: i32) -> Self {
         self.evaluation_periods = ::std::option::Option::Some(input);
@@ -333,6 +369,10 @@ impl AlarmBuilder {
     pub fn set_evaluation_periods(mut self, input: ::std::option::Option<i32>) -> Self {
         self.evaluation_periods = input;
         self
+    }
+    /// <p>The number of periods over which data is compared to the specified threshold.</p>
+    pub fn get_evaluation_periods(&self) -> &::std::option::Option<i32> {
+        &self.evaluation_periods
     }
     /// <p>The period, in seconds, over which the statistic is applied.</p>
     pub fn period(mut self, input: i32) -> Self {
@@ -344,6 +384,10 @@ impl AlarmBuilder {
         self.period = input;
         self
     }
+    /// <p>The period, in seconds, over which the statistic is applied.</p>
+    pub fn get_period(&self) -> &::std::option::Option<i32> {
+        &self.period
+    }
     /// <p>The value against which the specified statistic is compared.</p>
     pub fn threshold(mut self, input: f64) -> Self {
         self.threshold = ::std::option::Option::Some(input);
@@ -354,6 +398,10 @@ impl AlarmBuilder {
         self.threshold = input;
         self
     }
+    /// <p>The value against which the specified statistic is compared.</p>
+    pub fn get_threshold(&self) -> &::std::option::Option<f64> {
+        &self.threshold
+    }
     /// <p>The number of data points that must not within the specified threshold to trigger the alarm.</p>
     pub fn datapoints_to_alarm(mut self, input: i32) -> Self {
         self.datapoints_to_alarm = ::std::option::Option::Some(input);
@@ -363,6 +411,10 @@ impl AlarmBuilder {
     pub fn set_datapoints_to_alarm(mut self, input: ::std::option::Option<i32>) -> Self {
         self.datapoints_to_alarm = input;
         self
+    }
+    /// <p>The number of data points that must not within the specified threshold to trigger the alarm.</p>
+    pub fn get_datapoints_to_alarm(&self) -> &::std::option::Option<i32> {
+        &self.datapoints_to_alarm
     }
     /// <p>Specifies how the alarm handles missing data points.</p>
     /// <p>An alarm can treat missing data in the following ways:</p>
@@ -390,6 +442,17 @@ impl AlarmBuilder {
     ) -> Self {
         self.treat_missing_data = input;
         self
+    }
+    /// <p>Specifies how the alarm handles missing data points.</p>
+    /// <p>An alarm can treat missing data in the following ways:</p>
+    /// <ul>
+    /// <li> <p> <code>breaching</code> - Assume the missing data is not within the threshold. Missing data counts towards the number of times the metric is not within the threshold.</p> </li>
+    /// <li> <p> <code>notBreaching</code> - Assume the missing data is within the threshold. Missing data does not count towards the number of times the metric is not within the threshold.</p> </li>
+    /// <li> <p> <code>ignore</code> - Ignore the missing data. Maintains the current alarm state.</p> </li>
+    /// <li> <p> <code>missing</code> - Missing data is treated as missing.</p> </li>
+    /// </ul>
+    pub fn get_treat_missing_data(&self) -> &::std::option::Option<crate::types::TreatMissingData> {
+        &self.treat_missing_data
     }
     /// <p>The statistic for the metric associated with the alarm.</p>
     /// <p>The following statistics are available:</p>
@@ -420,6 +483,18 @@ impl AlarmBuilder {
         self.statistic = input;
         self
     }
+    /// <p>The statistic for the metric associated with the alarm.</p>
+    /// <p>The following statistics are available:</p>
+    /// <ul>
+    /// <li> <p> <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p> </li>
+    /// <li> <p> <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p> </li>
+    /// <li> <p> <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to determine the total volume of a metric.</p> </li>
+    /// <li> <p> <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your resources.</p> </li>
+    /// <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>
+    /// </ul>
+    pub fn get_statistic(&self) -> &::std::option::Option<crate::types::MetricStatistic> {
+        &self.statistic
+    }
     /// <p>The name of the metric associated with the alarm.</p>
     pub fn metric_name(mut self, input: crate::types::MetricName) -> Self {
         self.metric_name = ::std::option::Option::Some(input);
@@ -432,6 +507,10 @@ impl AlarmBuilder {
     ) -> Self {
         self.metric_name = input;
         self
+    }
+    /// <p>The name of the metric associated with the alarm.</p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<crate::types::MetricName> {
+        &self.metric_name
     }
     /// <p>The current state of the alarm.</p>
     /// <p>An alarm has the following possible states:</p>
@@ -455,6 +534,16 @@ impl AlarmBuilder {
         self.state = input;
         self
     }
+    /// <p>The current state of the alarm.</p>
+    /// <p>An alarm has the following possible states:</p>
+    /// <ul>
+    /// <li> <p> <code>ALARM</code> - The metric is outside of the defined threshold.</p> </li>
+    /// <li> <p> <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is available for the metric to determine the alarm state.</p> </li>
+    /// <li> <p> <code>OK</code> - The metric is within the defined threshold.</p> </li>
+    /// </ul>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::AlarmState> {
+        &self.state
+    }
     /// <p>The unit of the metric associated with the alarm.</p>
     pub fn unit(mut self, input: crate::types::MetricUnit) -> Self {
         self.unit = ::std::option::Option::Some(input);
@@ -464,6 +553,10 @@ impl AlarmBuilder {
     pub fn set_unit(mut self, input: ::std::option::Option<crate::types::MetricUnit>) -> Self {
         self.unit = input;
         self
+    }
+    /// <p>The unit of the metric associated with the alarm.</p>
+    pub fn get_unit(&self) -> &::std::option::Option<crate::types::MetricUnit> {
+        &self.unit
     }
     /// Appends an item to `contact_protocols`.
     ///
@@ -484,6 +577,12 @@ impl AlarmBuilder {
         self.contact_protocols = input;
         self
     }
+    /// <p>The contact protocols for the alarm, such as <code>Email</code>, <code>SMS</code> (text messaging), or both.</p>
+    pub fn get_contact_protocols(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ContactProtocol>> {
+        &self.contact_protocols
+    }
     /// Appends an item to `notification_triggers`.
     ///
     /// To override the contents of this collection use [`set_notification_triggers`](Self::set_notification_triggers).
@@ -503,6 +602,12 @@ impl AlarmBuilder {
         self.notification_triggers = input;
         self
     }
+    /// <p>The alarm states that trigger a notification.</p>
+    pub fn get_notification_triggers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmState>> {
+        &self.notification_triggers
+    }
     /// <p>Indicates whether the alarm is enabled.</p>
     pub fn notification_enabled(mut self, input: bool) -> Self {
         self.notification_enabled = ::std::option::Option::Some(input);
@@ -512,6 +617,10 @@ impl AlarmBuilder {
     pub fn set_notification_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.notification_enabled = input;
         self
+    }
+    /// <p>Indicates whether the alarm is enabled.</p>
+    pub fn get_notification_enabled(&self) -> &::std::option::Option<bool> {
+        &self.notification_enabled
     }
     /// Consumes the builder and constructs a [`Alarm`](crate::types::Alarm).
     pub fn build(self) -> crate::types::Alarm {

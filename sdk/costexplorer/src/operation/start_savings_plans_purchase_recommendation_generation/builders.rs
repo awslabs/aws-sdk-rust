@@ -38,6 +38,10 @@ impl StartSavingsPlansPurchaseRecommendationGenerationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartSavingsPlansPurchaseRecommendationGeneration as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_savings_plans_purchase_recommendation_generation::builders::StartSavingsPlansPurchaseRecommendationGenerationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<

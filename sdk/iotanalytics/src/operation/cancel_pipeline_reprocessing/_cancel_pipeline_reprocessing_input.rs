@@ -53,6 +53,10 @@ impl CancelPipelineReprocessingInputBuilder {
         self.pipeline_name = input;
         self
     }
+    /// <p>The name of pipeline for which data reprocessing is canceled.</p>
+    pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_name
+    }
     /// <p>The ID of the reprocessing task (returned by <code>StartPipelineReprocessing</code>).</p>
     pub fn reprocessing_id(
         mut self,
@@ -68,6 +72,10 @@ impl CancelPipelineReprocessingInputBuilder {
     ) -> Self {
         self.reprocessing_id = input;
         self
+    }
+    /// <p>The ID of the reprocessing task (returned by <code>StartPipelineReprocessing</code>).</p>
+    pub fn get_reprocessing_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reprocessing_id
     }
     /// Consumes the builder and constructs a [`CancelPipelineReprocessingInput`](crate::operation::cancel_pipeline_reprocessing::CancelPipelineReprocessingInput).
     pub fn build(

@@ -56,6 +56,10 @@ impl DisassociateS3ResourcesInputBuilder {
         self.member_account_id = input;
         self
     }
+    /// <p>(Discontinued) The ID of the Amazon Macie Classic member account whose resources you want to remove from being monitored by Macie Classic.</p>
+    pub fn get_member_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.member_account_id
+    }
     /// Appends an item to `associated_s3_resources`.
     ///
     /// To override the contents of this collection use [`set_associated_s3_resources`](Self::set_associated_s3_resources).
@@ -74,6 +78,12 @@ impl DisassociateS3ResourcesInputBuilder {
     ) -> Self {
         self.associated_s3_resources = input;
         self
+    }
+    /// <p>(Discontinued) The S3 resources (buckets or prefixes) that you want to remove from being monitored and classified by Amazon Macie Classic.</p>
+    pub fn get_associated_s3_resources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::S3Resource>> {
+        &self.associated_s3_resources
     }
     /// Consumes the builder and constructs a [`DisassociateS3ResourcesInput`](crate::operation::disassociate_s3_resources::DisassociateS3ResourcesInput).
     pub fn build(

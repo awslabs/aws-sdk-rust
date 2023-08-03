@@ -59,6 +59,10 @@ impl ReviewInformationBuilder {
         self.reviewed_time = input;
         self
     }
+    /// <p>The time that the reviewer took action on the document review request.</p>
+    pub fn get_reviewed_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.reviewed_time
+    }
     /// <p>The current status of the document review request.</p>
     pub fn status(mut self, input: crate::types::ReviewStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl ReviewInformationBuilder {
         self.status = input;
         self
     }
+    /// <p>The current status of the document review request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ReviewStatus> {
+        &self.status
+    }
     /// <p>The reviewer assigned to take action on the document review request.</p>
     pub fn reviewer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reviewer = ::std::option::Option::Some(input.into());
@@ -78,6 +86,10 @@ impl ReviewInformationBuilder {
     pub fn set_reviewer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reviewer = input;
         self
+    }
+    /// <p>The reviewer assigned to take action on the document review request.</p>
+    pub fn get_reviewer(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reviewer
     }
     /// Consumes the builder and constructs a [`ReviewInformation`](crate::types::ReviewInformation).
     pub fn build(self) -> crate::types::ReviewInformation {

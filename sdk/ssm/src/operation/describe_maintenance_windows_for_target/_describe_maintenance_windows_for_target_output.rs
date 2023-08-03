@@ -72,6 +72,13 @@ impl DescribeMaintenanceWindowsForTargetOutputBuilder {
         self.window_identities = input;
         self
     }
+    /// <p>Information about the maintenance window targets and tasks a managed node is associated with.</p>
+    pub fn get_window_identities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowIdentityForTarget>>
+    {
+        &self.window_identities
+    }
     /// <p>The token for the next set of items to return. (You use this token in the next call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -81,6 +88,10 @@ impl DescribeMaintenanceWindowsForTargetOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token for the next set of items to return. (You use this token in the next call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

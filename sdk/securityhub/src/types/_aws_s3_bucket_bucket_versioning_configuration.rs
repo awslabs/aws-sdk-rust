@@ -48,6 +48,10 @@ impl AwsS3BucketBucketVersioningConfigurationBuilder {
         self.is_mfa_delete_enabled = input;
         self
     }
+    /// <p>Specifies whether MFA delete is currently enabled in the S3 bucket versioning configuration. If the S3 bucket was never configured with MFA delete, then this attribute is not included.</p>
+    pub fn get_is_mfa_delete_enabled(&self) -> &::std::option::Option<bool> {
+        &self.is_mfa_delete_enabled
+    }
     /// <p>The versioning status of the S3 bucket. Valid values are <code>Enabled</code> or <code>Suspended</code>.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl AwsS3BucketBucketVersioningConfigurationBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The versioning status of the S3 bucket. Valid values are <code>Enabled</code> or <code>Suspended</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`AwsS3BucketBucketVersioningConfiguration`](crate::types::AwsS3BucketBucketVersioningConfiguration).
     pub fn build(self) -> crate::types::AwsS3BucketBucketVersioningConfiguration {

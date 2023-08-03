@@ -36,6 +36,12 @@ impl UpdateHostKeyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateHostKey as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_host_key::builders::UpdateHostKeyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl UpdateHostKeyFluentBuilder {
         self.inner = self.inner.set_server_id(input);
         self
     }
+    /// <p>The identifier of the server that contains the host key that you are updating.</p>
+    pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_server_id()
+    }
     /// <p>The identifier of the host key that you are updating.</p>
     pub fn host_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.host_key_id(input.into());
@@ -128,6 +138,10 @@ impl UpdateHostKeyFluentBuilder {
         self.inner = self.inner.set_host_key_id(input);
         self
     }
+    /// <p>The identifier of the host key that you are updating.</p>
+    pub fn get_host_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_host_key_id()
+    }
     /// <p>An updated description for the host key.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -137,5 +151,9 @@ impl UpdateHostKeyFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>An updated description for the host key.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
 }

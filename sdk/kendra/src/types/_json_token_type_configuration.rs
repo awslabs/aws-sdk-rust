@@ -54,6 +54,10 @@ impl JsonTokenTypeConfigurationBuilder {
         self.user_name_attribute_field = input;
         self
     }
+    /// <p>The user name attribute field.</p>
+    pub fn get_user_name_attribute_field(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name_attribute_field
+    }
     /// <p>The group attribute field.</p>
     pub fn group_attribute_field(
         mut self,
@@ -69,6 +73,10 @@ impl JsonTokenTypeConfigurationBuilder {
     ) -> Self {
         self.group_attribute_field = input;
         self
+    }
+    /// <p>The group attribute field.</p>
+    pub fn get_group_attribute_field(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_attribute_field
     }
     /// Consumes the builder and constructs a [`JsonTokenTypeConfiguration`](crate::types::JsonTokenTypeConfiguration).
     pub fn build(self) -> crate::types::JsonTokenTypeConfiguration {

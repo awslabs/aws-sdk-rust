@@ -36,6 +36,12 @@ impl UntagResourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UntagResource as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::untag_resource::builders::UntagResourceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl UntagResourceFluentBuilder {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the resource. For a list of supported resources, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ResourceTag.html">ResourceTag</a>. </p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
+    }
     /// Appends an item to `ResourceTagKeys`.
     ///
     /// To override the contents of this collection use [`set_resource_tag_keys`](Self::set_resource_tag_keys).
@@ -137,5 +147,11 @@ impl UntagResourceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_tag_keys(input);
         self
+    }
+    /// <p>A list of tag keys associated with tags that need to be removed from the resource. If you specify a tag key that doesn't exist, it's ignored. Although the maximum number of array members is 200, user-tag maximum is 50. The remaining are reserved for Amazon Web Services use. </p>
+    pub fn get_resource_tag_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_resource_tag_keys()
     }
 }

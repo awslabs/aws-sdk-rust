@@ -73,6 +73,10 @@ impl UpdatePartitionInputBuilder {
         self.catalog_id = input;
         self
     }
+    /// <p>The ID of the Data Catalog where the partition to be updated resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// <p>The name of the catalog database in which the table in question resides.</p>
     pub fn database_name(
         mut self,
@@ -89,6 +93,10 @@ impl UpdatePartitionInputBuilder {
         self.database_name = input;
         self
     }
+    /// <p>The name of the catalog database in which the table in question resides.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>The name of the table in which the partition to be updated is located.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
@@ -98,6 +106,10 @@ impl UpdatePartitionInputBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
+    }
+    /// <p>The name of the table in which the partition to be updated is located.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
     }
     /// Appends an item to `partition_value_list`.
     ///
@@ -121,6 +133,12 @@ impl UpdatePartitionInputBuilder {
         self.partition_value_list = input;
         self
     }
+    /// <p>List of partition key values that define the partition to update.</p>
+    pub fn get_partition_value_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.partition_value_list
+    }
     /// <p>The new partition object to update the partition to.</p>
     /// <p>The <code>Values</code> property can't be changed. If you want to change the partition key values for a partition, delete and recreate the partition.</p>
     pub fn partition_input(mut self, input: crate::types::PartitionInput) -> Self {
@@ -135,6 +153,11 @@ impl UpdatePartitionInputBuilder {
     ) -> Self {
         self.partition_input = input;
         self
+    }
+    /// <p>The new partition object to update the partition to.</p>
+    /// <p>The <code>Values</code> property can't be changed. If you want to change the partition key values for a partition, delete and recreate the partition.</p>
+    pub fn get_partition_input(&self) -> &::std::option::Option<crate::types::PartitionInput> {
+        &self.partition_input
     }
     /// Consumes the builder and constructs a [`UpdatePartitionInput`](crate::operation::update_partition::UpdatePartitionInput).
     pub fn build(

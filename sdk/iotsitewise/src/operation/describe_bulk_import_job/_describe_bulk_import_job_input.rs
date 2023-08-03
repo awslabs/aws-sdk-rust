@@ -41,6 +41,10 @@ impl DescribeBulkImportJobInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The ID of the job.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// Consumes the builder and constructs a [`DescribeBulkImportJobInput`](crate::operation::describe_bulk_import_job::DescribeBulkImportJobInput).
     pub fn build(
         self,

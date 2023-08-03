@@ -63,6 +63,10 @@ impl AttachNetworkInterfaceOutputBuilder {
         self.attachment_id = input;
         self
     }
+    /// <p>The ID of the network interface attachment.</p>
+    pub fn get_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attachment_id
+    }
     /// <p>The index of the network card.</p>
     pub fn network_card_index(mut self, input: i32) -> Self {
         self.network_card_index = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl AttachNetworkInterfaceOutputBuilder {
     pub fn set_network_card_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.network_card_index = input;
         self
+    }
+    /// <p>The index of the network card.</p>
+    pub fn get_network_card_index(&self) -> &::std::option::Option<i32> {
+        &self.network_card_index
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

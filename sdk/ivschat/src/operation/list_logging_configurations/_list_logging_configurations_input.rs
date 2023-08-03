@@ -47,6 +47,10 @@ impl ListLoggingConfigurationsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The first logging configurations to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>Maximum number of logging configurations to return. Default: 50.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -56,6 +60,10 @@ impl ListLoggingConfigurationsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>Maximum number of logging configurations to return. Default: 50.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListLoggingConfigurationsInput`](crate::operation::list_logging_configurations::ListLoggingConfigurationsInput).
     pub fn build(

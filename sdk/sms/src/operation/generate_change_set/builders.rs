@@ -36,6 +36,12 @@ impl GenerateChangeSetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GenerateChangeSet as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::generate_change_set::builders::GenerateChangeSetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl GenerateChangeSetFluentBuilder {
         self.inner = self.inner.set_app_id(input);
         self
     }
+    /// <p>The ID of the application associated with the change set.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_id()
+    }
     /// <p>The format for the change set.</p>
     pub fn changeset_format(mut self, input: crate::types::OutputFormat) -> Self {
         self.inner = self.inner.changeset_format(input);
@@ -138,5 +148,9 @@ impl GenerateChangeSetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_changeset_format(input);
         self
+    }
+    /// <p>The format for the change set.</p>
+    pub fn get_changeset_format(&self) -> &::std::option::Option<crate::types::OutputFormat> {
+        self.inner.get_changeset_format()
     }
 }

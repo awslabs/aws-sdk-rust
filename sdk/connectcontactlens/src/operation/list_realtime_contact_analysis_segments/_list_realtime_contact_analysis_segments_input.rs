@@ -63,6 +63,10 @@ impl ListRealtimeContactAnalysisSegmentsInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Connect instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The identifier of the contact.</p>
     pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_id = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl ListRealtimeContactAnalysisSegmentsInputBuilder {
     pub fn set_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contact_id = input;
         self
+    }
+    /// <p>The identifier of the contact.</p>
+    pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_id
     }
     /// <p>The maximimum number of results to return per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -83,6 +91,10 @@ impl ListRealtimeContactAnalysisSegmentsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximimum number of results to return per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -92,6 +104,10 @@ impl ListRealtimeContactAnalysisSegmentsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListRealtimeContactAnalysisSegmentsInput`](crate::operation::list_realtime_contact_analysis_segments::ListRealtimeContactAnalysisSegmentsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_realtime_contact_analysis_segments::ListRealtimeContactAnalysisSegmentsInput, ::aws_smithy_http::operation::error::BuildError>{

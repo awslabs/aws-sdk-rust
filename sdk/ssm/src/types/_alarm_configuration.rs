@@ -48,6 +48,10 @@ impl AlarmConfigurationBuilder {
         self.ignore_poll_alarm_failure = input;
         self
     }
+    /// <p>When this value is <i>true</i>, your automation or command continues to run in cases where we can’t retrieve alarm status information from CloudWatch. In cases where we successfully retrieve an alarm status of OK or INSUFFICIENT_DATA, the automation or command continues to run, regardless of this value. Default is <i>false</i>.</p>
+    pub fn get_ignore_poll_alarm_failure(&self) -> &::std::option::Option<bool> {
+        &self.ignore_poll_alarm_failure
+    }
     /// Appends an item to `alarms`.
     ///
     /// To override the contents of this collection use [`set_alarms`](Self::set_alarms).
@@ -66,6 +70,10 @@ impl AlarmConfigurationBuilder {
     ) -> Self {
         self.alarms = input;
         self
+    }
+    /// <p>The name of the CloudWatch alarm specified in the configuration.</p>
+    pub fn get_alarms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Alarm>> {
+        &self.alarms
     }
     /// Consumes the builder and constructs a [`AlarmConfiguration`](crate::types::AlarmConfiguration).
     pub fn build(self) -> crate::types::AlarmConfiguration {

@@ -55,6 +55,10 @@ impl ListDataSetsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results returned by a single call.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl ListDataSetsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token value retrieved from a previous call to access the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers).</p>
     pub fn origin(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origin = ::std::option::Option::Some(input.into());
@@ -74,6 +82,10 @@ impl ListDataSetsInputBuilder {
     pub fn set_origin(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.origin = input;
         self
+    }
+    /// <p>A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers).</p>
+    pub fn get_origin(&self) -> &::std::option::Option<::std::string::String> {
+        &self.origin
     }
     /// Consumes the builder and constructs a [`ListDataSetsInput`](crate::operation::list_data_sets::ListDataSetsInput).
     pub fn build(

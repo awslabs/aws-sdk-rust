@@ -41,6 +41,10 @@ impl AwsWafRegionalWebAclRulesListOverrideActionDetailsBuilder {
         self.r#type = input;
         self
     }
+    /// <p>Overrides the rule evaluation result in the rule group. </p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// Consumes the builder and constructs a [`AwsWafRegionalWebAclRulesListOverrideActionDetails`](crate::types::AwsWafRegionalWebAclRulesListOverrideActionDetails).
     pub fn build(self) -> crate::types::AwsWafRegionalWebAclRulesListOverrideActionDetails {
         crate::types::AwsWafRegionalWebAclRulesListOverrideActionDetails {

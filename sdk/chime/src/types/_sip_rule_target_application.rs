@@ -62,6 +62,10 @@ impl SipRuleTargetApplicationBuilder {
         self.sip_media_application_id = input;
         self
     }
+    /// <p>The SIP media application ID.</p>
+    pub fn get_sip_media_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sip_media_application_id
+    }
     /// <p>Priority of the SIP media application in the target list.</p>
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl SipRuleTargetApplicationBuilder {
         self.priority = input;
         self
     }
+    /// <p>Priority of the SIP media application in the target list.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
+    }
     /// <p>The AWS Region of the target application.</p>
     pub fn aws_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_region = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl SipRuleTargetApplicationBuilder {
     pub fn set_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_region = input;
         self
+    }
+    /// <p>The AWS Region of the target application.</p>
+    pub fn get_aws_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_region
     }
     /// Consumes the builder and constructs a [`SipRuleTargetApplication`](crate::types::SipRuleTargetApplication).
     pub fn build(self) -> crate::types::SipRuleTargetApplication {

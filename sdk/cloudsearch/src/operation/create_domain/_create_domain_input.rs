@@ -40,6 +40,10 @@ impl CreateDomainInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>A name for the domain you are creating. Allowed characters are a-z (lower-case letters), 0-9, and hyphen (-). Domain names must start with a letter or number and be at least 3 and no more than 28 characters long.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// Consumes the builder and constructs a [`CreateDomainInput`](crate::operation::create_domain::CreateDomainInput).
     pub fn build(
         self,

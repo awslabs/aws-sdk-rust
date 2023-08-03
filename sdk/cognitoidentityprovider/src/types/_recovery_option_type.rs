@@ -48,6 +48,10 @@ impl RecoveryOptionTypeBuilder {
         self.priority = input;
         self
     }
+    /// <p>A positive integer specifying priority of a method with 1 being the highest priority.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
+    }
     /// <p>The recovery method for a user.</p>
     pub fn name(mut self, input: crate::types::RecoveryOptionNameType) -> Self {
         self.name = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl RecoveryOptionTypeBuilder {
     ) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The recovery method for a user.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::RecoveryOptionNameType> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`RecoveryOptionType`](crate::types::RecoveryOptionType).
     pub fn build(self) -> crate::types::RecoveryOptionType {

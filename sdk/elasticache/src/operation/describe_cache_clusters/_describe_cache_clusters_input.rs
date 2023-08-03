@@ -84,6 +84,10 @@ impl DescribeCacheClustersInputBuilder {
         self.cache_cluster_id = input;
         self
     }
+    /// <p>The user-supplied cluster identifier. If this parameter is specified, only information about that specific cluster is returned. This parameter isn't case sensitive.</p>
+    pub fn get_cache_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_cluster_id
+    }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: minimum 20; maximum 100.</p>
@@ -98,6 +102,12 @@ impl DescribeCacheClustersInputBuilder {
         self.max_records = input;
         self
     }
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: minimum 20; maximum 100.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        &self.max_records
+    }
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -108,6 +118,10 @@ impl DescribeCacheClustersInputBuilder {
         self.marker = input;
         self
     }
+    /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// <p>An optional flag that can be included in the <code>DescribeCacheCluster</code> request to retrieve information about the individual cache nodes.</p>
     pub fn show_cache_node_info(mut self, input: bool) -> Self {
         self.show_cache_node_info = ::std::option::Option::Some(input);
@@ -117,6 +131,10 @@ impl DescribeCacheClustersInputBuilder {
     pub fn set_show_cache_node_info(mut self, input: ::std::option::Option<bool>) -> Self {
         self.show_cache_node_info = input;
         self
+    }
+    /// <p>An optional flag that can be included in the <code>DescribeCacheCluster</code> request to retrieve information about the individual cache nodes.</p>
+    pub fn get_show_cache_node_info(&self) -> &::std::option::Option<bool> {
+        &self.show_cache_node_info
     }
     /// <p>An optional flag that can be included in the <code>DescribeCacheCluster</code> request to show only nodes (API/CLI: clusters) that are not members of a replication group. In practice, this mean Memcached and single node Redis clusters.</p>
     pub fn show_cache_clusters_not_in_replication_groups(mut self, input: bool) -> Self {
@@ -130,6 +148,12 @@ impl DescribeCacheClustersInputBuilder {
     ) -> Self {
         self.show_cache_clusters_not_in_replication_groups = input;
         self
+    }
+    /// <p>An optional flag that can be included in the <code>DescribeCacheCluster</code> request to show only nodes (API/CLI: clusters) that are not members of a replication group. In practice, this mean Memcached and single node Redis clusters.</p>
+    pub fn get_show_cache_clusters_not_in_replication_groups(
+        &self,
+    ) -> &::std::option::Option<bool> {
+        &self.show_cache_clusters_not_in_replication_groups
     }
     /// Consumes the builder and constructs a [`DescribeCacheClustersInput`](crate::operation::describe_cache_clusters::DescribeCacheClustersInput).
     pub fn build(

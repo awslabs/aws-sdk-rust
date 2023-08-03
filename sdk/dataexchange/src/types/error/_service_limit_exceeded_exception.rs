@@ -83,6 +83,10 @@ impl ServiceLimitExceededExceptionBuilder {
         self.limit_name = input;
         self
     }
+    /// <p>The name of the limit that was reached.</p>
+    pub fn get_limit_name(&self) -> &::std::option::Option<crate::types::LimitName> {
+        &self.limit_name
+    }
     /// <p>The value of the exceeded limit.</p>
     pub fn limit_value(mut self, input: f64) -> Self {
         self.limit_value = ::std::option::Option::Some(input);
@@ -93,6 +97,10 @@ impl ServiceLimitExceededExceptionBuilder {
         self.limit_value = input;
         self
     }
+    /// <p>The value of the exceeded limit.</p>
+    pub fn get_limit_value(&self) -> &::std::option::Option<f64> {
+        &self.limit_value
+    }
     /// <p>The request has exceeded the quotas imposed by the service.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -102,6 +110,10 @@ impl ServiceLimitExceededExceptionBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>The request has exceeded the quotas imposed by the service.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

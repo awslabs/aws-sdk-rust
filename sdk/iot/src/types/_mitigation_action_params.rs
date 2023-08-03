@@ -109,6 +109,12 @@ impl MitigationActionParamsBuilder {
         self.update_device_certificate_params = input;
         self
     }
+    /// <p>Parameters to define a mitigation action that changes the state of the device certificate to inactive.</p>
+    pub fn get_update_device_certificate_params(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateDeviceCertificateParams> {
+        &self.update_device_certificate_params
+    }
     /// <p>Parameters to define a mitigation action that changes the state of the CA certificate to inactive.</p>
     pub fn update_ca_certificate_params(
         mut self,
@@ -124,6 +130,12 @@ impl MitigationActionParamsBuilder {
     ) -> Self {
         self.update_ca_certificate_params = input;
         self
+    }
+    /// <p>Parameters to define a mitigation action that changes the state of the CA certificate to inactive.</p>
+    pub fn get_update_ca_certificate_params(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateCaCertificateParams> {
+        &self.update_ca_certificate_params
     }
     /// <p>Parameters to define a mitigation action that moves devices associated with a certificate to one or more specified thing groups, typically for quarantine.</p>
     pub fn add_things_to_thing_group_params(
@@ -141,6 +153,12 @@ impl MitigationActionParamsBuilder {
         self.add_things_to_thing_group_params = input;
         self
     }
+    /// <p>Parameters to define a mitigation action that moves devices associated with a certificate to one or more specified thing groups, typically for quarantine.</p>
+    pub fn get_add_things_to_thing_group_params(
+        &self,
+    ) -> &::std::option::Option<crate::types::AddThingsToThingGroupParams> {
+        &self.add_things_to_thing_group_params
+    }
     /// <p>Parameters to define a mitigation action that adds a blank policy to restrict permissions.</p>
     pub fn replace_default_policy_version_params(
         mut self,
@@ -156,6 +174,12 @@ impl MitigationActionParamsBuilder {
     ) -> Self {
         self.replace_default_policy_version_params = input;
         self
+    }
+    /// <p>Parameters to define a mitigation action that adds a blank policy to restrict permissions.</p>
+    pub fn get_replace_default_policy_version_params(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReplaceDefaultPolicyVersionParams> {
+        &self.replace_default_policy_version_params
     }
     /// <p>Parameters to define a mitigation action that enables Amazon Web Services IoT Core logging at a specified level of detail.</p>
     pub fn enable_io_t_logging_params(
@@ -173,6 +197,12 @@ impl MitigationActionParamsBuilder {
         self.enable_io_t_logging_params = input;
         self
     }
+    /// <p>Parameters to define a mitigation action that enables Amazon Web Services IoT Core logging at a specified level of detail.</p>
+    pub fn get_enable_io_t_logging_params(
+        &self,
+    ) -> &::std::option::Option<crate::types::EnableIoTLoggingParams> {
+        &self.enable_io_t_logging_params
+    }
     /// <p>Parameters to define a mitigation action that publishes findings to Amazon Simple Notification Service (Amazon SNS. You can implement your own custom actions in response to the Amazon SNS messages.</p>
     pub fn publish_finding_to_sns_params(
         mut self,
@@ -188,6 +218,12 @@ impl MitigationActionParamsBuilder {
     ) -> Self {
         self.publish_finding_to_sns_params = input;
         self
+    }
+    /// <p>Parameters to define a mitigation action that publishes findings to Amazon Simple Notification Service (Amazon SNS. You can implement your own custom actions in response to the Amazon SNS messages.</p>
+    pub fn get_publish_finding_to_sns_params(
+        &self,
+    ) -> &::std::option::Option<crate::types::PublishFindingToSnsParams> {
+        &self.publish_finding_to_sns_params
     }
     /// Consumes the builder and constructs a [`MitigationActionParams`](crate::types::MitigationActionParams).
     pub fn build(self) -> crate::types::MitigationActionParams {

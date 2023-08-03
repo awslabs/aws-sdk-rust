@@ -53,6 +53,10 @@ impl GetChunkInputBuilder {
         self.storage_job_id = input;
         self
     }
+    /// Storage job id
+    pub fn get_storage_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_job_id
+    }
     /// Chunk token
     pub fn chunk_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.chunk_token = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl GetChunkInputBuilder {
     pub fn set_chunk_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.chunk_token = input;
         self
+    }
+    /// Chunk token
+    pub fn get_chunk_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.chunk_token
     }
     /// Consumes the builder and constructs a [`GetChunkInput`](crate::operation::get_chunk::GetChunkInput).
     pub fn build(

@@ -58,6 +58,12 @@ impl AgentFilterBuilder {
         self.agent_healths = input;
         self
     }
+    /// <p>The current health state of the agent. Values can be set to <b>HEALTHY</b> or <b>UNHEALTHY</b>.</p>
+    pub fn get_agent_healths(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AgentHealth>> {
+        &self.agent_healths
+    }
     /// Appends an item to `agent_health_codes`.
     ///
     /// To override the contents of this collection use [`set_agent_health_codes`](Self::set_agent_health_codes).
@@ -76,6 +82,12 @@ impl AgentFilterBuilder {
     ) -> Self {
         self.agent_health_codes = input;
         self
+    }
+    /// <p>The detailed health state of the agent. Values can be set to <b>IDLE</b>, <b>RUNNING</b>, <b>SHUTDOWN</b>, <b>UNHEALTHY</b>, <b>THROTTLED</b>, and <b>UNKNOWN</b>. </p>
+    pub fn get_agent_health_codes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AgentHealthCode>> {
+        &self.agent_health_codes
     }
     /// Consumes the builder and constructs a [`AgentFilter`](crate::types::AgentFilter).
     pub fn build(self) -> crate::types::AgentFilter {

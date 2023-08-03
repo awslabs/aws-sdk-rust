@@ -54,6 +54,10 @@ impl ArtifactBuilder {
         self.artifact_file_name = input;
         self
     }
+    /// <p> The file name for the artifact. </p>
+    pub fn get_artifact_file_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.artifact_file_name
+    }
     /// <p> The unique ID for the artifact. </p>
     pub fn artifact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.artifact_id = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl ArtifactBuilder {
     pub fn set_artifact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.artifact_id = input;
         self
+    }
+    /// <p> The unique ID for the artifact. </p>
+    pub fn get_artifact_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.artifact_id
     }
     /// Consumes the builder and constructs a [`Artifact`](crate::types::Artifact).
     pub fn build(self) -> crate::types::Artifact {

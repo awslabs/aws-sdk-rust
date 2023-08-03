@@ -69,6 +69,10 @@ impl AssignPrivateNatGatewayAddressInputBuilder {
         self.nat_gateway_id = input;
         self
     }
+    /// <p>The ID of the NAT gateway.</p>
+    pub fn get_nat_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nat_gateway_id
+    }
     /// Appends an item to `private_ip_addresses`.
     ///
     /// To override the contents of this collection use [`set_private_ip_addresses`](Self::set_private_ip_addresses).
@@ -91,6 +95,12 @@ impl AssignPrivateNatGatewayAddressInputBuilder {
         self.private_ip_addresses = input;
         self
     }
+    /// <p>The private IPv4 addresses you want to assign to the private NAT gateway.</p>
+    pub fn get_private_ip_addresses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.private_ip_addresses
+    }
     /// <p>The number of private IP addresses to assign to the NAT gateway. You can't specify this parameter when also specifying private IP addresses.</p>
     pub fn private_ip_address_count(mut self, input: i32) -> Self {
         self.private_ip_address_count = ::std::option::Option::Some(input);
@@ -101,6 +111,10 @@ impl AssignPrivateNatGatewayAddressInputBuilder {
         self.private_ip_address_count = input;
         self
     }
+    /// <p>The number of private IP addresses to assign to the NAT gateway. You can't specify this parameter when also specifying private IP addresses.</p>
+    pub fn get_private_ip_address_count(&self) -> &::std::option::Option<i32> {
+        &self.private_ip_address_count
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -110,6 +124,10 @@ impl AssignPrivateNatGatewayAddressInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`AssignPrivateNatGatewayAddressInput`](crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddressInput).
     pub fn build(

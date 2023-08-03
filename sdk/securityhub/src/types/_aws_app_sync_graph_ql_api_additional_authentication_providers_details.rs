@@ -85,6 +85,10 @@ impl AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetailsBuilder {
         self.authentication_type = input;
         self
     }
+    /// <p> The type of security configuration for your GraphQL API: API key, Identity and Access Management (IAM), OpenID Connect (OIDC), Amazon Cognito user pools, or Lambda. </p>
+    pub fn get_authentication_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authentication_type
+    }
     /// <p> The configuration for Lambda function authorization. </p>
     pub fn lambda_authorizer_config(
         mut self,
@@ -103,6 +107,13 @@ impl AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetailsBuilder {
         self.lambda_authorizer_config = input;
         self
     }
+    /// <p> The configuration for Lambda function authorization. </p>
+    pub fn get_lambda_authorizer_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails>
+    {
+        &self.lambda_authorizer_config
+    }
     /// <p> The OpenID Connect configuration. </p>
     pub fn open_id_connect_config(
         mut self,
@@ -119,6 +130,12 @@ impl AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetailsBuilder {
         self.open_id_connect_config = input;
         self
     }
+    /// <p> The OpenID Connect configuration. </p>
+    pub fn get_open_id_connect_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsAppSyncGraphQlApiOpenIdConnectConfigDetails> {
+        &self.open_id_connect_config
+    }
     /// <p> The Amazon Cognito user pools configuration. </p>
     pub fn user_pool_config(
         mut self,
@@ -134,6 +151,12 @@ impl AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetailsBuilder {
     ) -> Self {
         self.user_pool_config = input;
         self
+    }
+    /// <p> The Amazon Cognito user pools configuration. </p>
+    pub fn get_user_pool_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsAppSyncGraphQlApiUserPoolConfigDetails> {
+        &self.user_pool_config
     }
     /// Consumes the builder and constructs a [`AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails`](crate::types::AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails).
     pub fn build(

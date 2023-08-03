@@ -47,6 +47,10 @@ impl DescribeAuditFindingOutputBuilder {
         self.finding = input;
         self
     }
+    /// <p>The findings (results) of the audit.</p>
+    pub fn get_finding(&self) -> &::std::option::Option<crate::types::AuditFinding> {
+        &self.finding
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

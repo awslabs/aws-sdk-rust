@@ -48,6 +48,10 @@ impl ChefConfigurationBuilder {
         self.manage_berkshelf = input;
         self
     }
+    /// <p>Whether to enable Berkshelf.</p>
+    pub fn get_manage_berkshelf(&self) -> &::std::option::Option<bool> {
+        &self.manage_berkshelf
+    }
     /// <p>The Berkshelf version.</p>
     pub fn berkshelf_version(
         mut self,
@@ -63,6 +67,10 @@ impl ChefConfigurationBuilder {
     ) -> Self {
         self.berkshelf_version = input;
         self
+    }
+    /// <p>The Berkshelf version.</p>
+    pub fn get_berkshelf_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.berkshelf_version
     }
     /// Consumes the builder and constructs a [`ChefConfiguration`](crate::types::ChefConfiguration).
     pub fn build(self) -> crate::types::ChefConfiguration {

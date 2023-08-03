@@ -36,6 +36,12 @@ impl GetPipelineExecutionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetPipelineExecution as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_pipeline_execution::builders::GetPipelineExecutionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl GetPipelineExecutionFluentBuilder {
         self.inner = self.inner.set_pipeline_name(input);
         self
     }
+    /// <p>The name of the pipeline about which you want to get execution details.</p>
+    pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pipeline_name()
+    }
     /// <p>The ID of the pipeline execution about which you want to get execution details.</p>
     pub fn pipeline_execution_id(
         mut self,
@@ -147,5 +157,9 @@ impl GetPipelineExecutionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_pipeline_execution_id(input);
         self
+    }
+    /// <p>The ID of the pipeline execution about which you want to get execution details.</p>
+    pub fn get_pipeline_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pipeline_execution_id()
     }
 }

@@ -36,6 +36,12 @@ impl CreateBackendStorageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateBackendStorage as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_backend_storage::builders::CreateBackendStorageInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateBackendStorageFluentBuilder {
         self.inner = self.inner.set_app_id(input);
         self
     }
+    /// <p>The app ID.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_id()
+    }
     /// <p>The name of the backend environment.</p>
     pub fn backend_environment_name(
         mut self,
@@ -141,6 +151,10 @@ impl CreateBackendStorageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_backend_environment_name(input);
         self
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn get_backend_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_backend_environment_name()
     }
     /// <p>The resource configuration for creating backend storage.</p>
     pub fn resource_config(
@@ -158,6 +172,12 @@ impl CreateBackendStorageFluentBuilder {
         self.inner = self.inner.set_resource_config(input);
         self
     }
+    /// <p>The resource configuration for creating backend storage.</p>
+    pub fn get_resource_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateBackendStorageResourceConfig> {
+        self.inner.get_resource_config()
+    }
     /// <p>The name of the storage resource.</p>
     pub fn resource_name(
         mut self,
@@ -173,5 +193,9 @@ impl CreateBackendStorageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_name(input);
         self
+    }
+    /// <p>The name of the storage resource.</p>
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_name()
     }
 }

@@ -39,6 +39,10 @@ impl DescribeStudioInputBuilder {
         self.studio_id = input;
         self
     }
+    /// <p>The Amazon EMR Studio ID.</p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_id
+    }
     /// Consumes the builder and constructs a [`DescribeStudioInput`](crate::operation::describe_studio::DescribeStudioInput).
     pub fn build(
         self,

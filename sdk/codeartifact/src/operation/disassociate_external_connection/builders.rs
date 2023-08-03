@@ -36,6 +36,10 @@ impl DisassociateExternalConnectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociateExternalConnection as a reference.
+    pub fn as_input(&self) -> &crate::operation::disassociate_external_connection::builders::DisassociateExternalConnectionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl DisassociateExternalConnectionFluentBuilder {
         self.inner = self.inner.set_domain(input);
         self
     }
+    /// <p>The name of the domain that contains the repository from which to remove the external repository. </p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain()
+    }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_owner(input.into());
@@ -136,6 +144,10 @@ impl DisassociateExternalConnectionFluentBuilder {
         self.inner = self.inner.set_domain_owner(input);
         self
     }
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_owner()
+    }
     /// <p>The name of the repository from which the external connection will be removed. </p>
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository(input.into());
@@ -145,6 +157,10 @@ impl DisassociateExternalConnectionFluentBuilder {
     pub fn set_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository(input);
         self
+    }
+    /// <p>The name of the repository from which the external connection will be removed. </p>
+    pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_repository()
     }
     /// <p>The name of the external connection to be removed from the repository. </p>
     pub fn external_connection(
@@ -161,5 +177,9 @@ impl DisassociateExternalConnectionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_external_connection(input);
         self
+    }
+    /// <p>The name of the external connection to be removed from the repository. </p>
+    pub fn get_external_connection(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_external_connection()
     }
 }

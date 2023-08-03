@@ -78,6 +78,10 @@ impl TextArrayOptionsBuilder {
         self.default_value = input;
         self
     }
+    /// A value to use for the field if the field isn't specified for a document.
+    pub fn get_default_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_value
+    }
     /// <p>A list of source fields to map to the field. </p>
     pub fn source_fields(
         mut self,
@@ -94,6 +98,10 @@ impl TextArrayOptionsBuilder {
         self.source_fields = input;
         self
     }
+    /// <p>A list of source fields to map to the field. </p>
+    pub fn get_source_fields(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_fields
+    }
     /// <p>Whether the contents of the field can be returned in the search results.</p>
     pub fn return_enabled(mut self, input: bool) -> Self {
         self.return_enabled = ::std::option::Option::Some(input);
@@ -104,6 +112,10 @@ impl TextArrayOptionsBuilder {
         self.return_enabled = input;
         self
     }
+    /// <p>Whether the contents of the field can be returned in the search results.</p>
+    pub fn get_return_enabled(&self) -> &::std::option::Option<bool> {
+        &self.return_enabled
+    }
     /// <p>Whether highlights can be returned for the field.</p>
     pub fn highlight_enabled(mut self, input: bool) -> Self {
         self.highlight_enabled = ::std::option::Option::Some(input);
@@ -113,6 +125,10 @@ impl TextArrayOptionsBuilder {
     pub fn set_highlight_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.highlight_enabled = input;
         self
+    }
+    /// <p>Whether highlights can be returned for the field.</p>
+    pub fn get_highlight_enabled(&self) -> &::std::option::Option<bool> {
+        &self.highlight_enabled
     }
     /// <p>The name of an analysis scheme for a <code>text-array</code> field.</p>
     pub fn analysis_scheme(
@@ -129,6 +145,10 @@ impl TextArrayOptionsBuilder {
     ) -> Self {
         self.analysis_scheme = input;
         self
+    }
+    /// <p>The name of an analysis scheme for a <code>text-array</code> field.</p>
+    pub fn get_analysis_scheme(&self) -> &::std::option::Option<::std::string::String> {
+        &self.analysis_scheme
     }
     /// Consumes the builder and constructs a [`TextArrayOptions`](crate::types::TextArrayOptions).
     pub fn build(self) -> crate::types::TextArrayOptions {

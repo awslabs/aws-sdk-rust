@@ -48,6 +48,10 @@ impl EoCloudCoverInputBuilder {
         self.lower_bound = input;
         self
     }
+    /// <p>Lower bound for EoCloudCover.</p>
+    pub fn get_lower_bound(&self) -> &::std::option::Option<f32> {
+        &self.lower_bound
+    }
     /// <p>Upper bound for EoCloudCover.</p>
     pub fn upper_bound(mut self, input: f32) -> Self {
         self.upper_bound = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl EoCloudCoverInputBuilder {
     pub fn set_upper_bound(mut self, input: ::std::option::Option<f32>) -> Self {
         self.upper_bound = input;
         self
+    }
+    /// <p>Upper bound for EoCloudCover.</p>
+    pub fn get_upper_bound(&self) -> &::std::option::Option<f32> {
+        &self.upper_bound
     }
     /// Consumes the builder and constructs a [`EoCloudCoverInput`](crate::types::EoCloudCoverInput).
     pub fn build(self) -> crate::types::EoCloudCoverInput {

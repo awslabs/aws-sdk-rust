@@ -59,6 +59,10 @@ impl DeleteDocumentInputBuilder {
         self.authentication_token = input;
         self
     }
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authentication_token
+    }
     /// <p>The ID of the document.</p>
     pub fn document_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_id = ::std::option::Option::Some(input.into());
@@ -68,6 +72,10 @@ impl DeleteDocumentInputBuilder {
     pub fn set_document_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_id = input;
         self
+    }
+    /// <p>The ID of the document.</p>
+    pub fn get_document_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_id
     }
     /// Consumes the builder and constructs a [`DeleteDocumentInput`](crate::operation::delete_document::DeleteDocumentInput).
     pub fn build(

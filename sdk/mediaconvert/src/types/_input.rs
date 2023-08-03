@@ -259,6 +259,12 @@ impl InputBuilder {
         self.advanced_input_filter = input;
         self
     }
+    /// Use to remove noise, blocking, blurriness, or ringing from your input as a pre-filter step before encoding. The Advanced input filter removes more types of compression artifacts and is an improvement when compared to basic Deblock and Denoise filters. To remove video compression artifacts from your input and improve the video quality: Choose Enabled. Additionally, this filter can help increase the video quality of your output relative to its bitrate, since noisy inputs are more complex and require more bits to encode. To help restore loss of detail after applying the filter, you can optionally add texture or sharpening as an additional step. Jobs that use this feature incur pro-tier pricing. To not apply advanced input filtering: Choose Disabled. Note that you can still apply basic filtering with Deblock and Denoise.
+    pub fn get_advanced_input_filter(
+        &self,
+    ) -> &::std::option::Option<crate::types::AdvancedInputFilter> {
+        &self.advanced_input_filter
+    }
     /// Optional settings for Advanced input filter when you set Advanced input filter to Enabled.
     pub fn advanced_input_filter_settings(
         mut self,
@@ -274,6 +280,12 @@ impl InputBuilder {
     ) -> Self {
         self.advanced_input_filter_settings = input;
         self
+    }
+    /// Optional settings for Advanced input filter when you set Advanced input filter to Enabled.
+    pub fn get_advanced_input_filter_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::AdvancedInputFilterSettings> {
+        &self.advanced_input_filter_settings
     }
     /// Adds a key-value pair to `audio_selector_groups`.
     ///
@@ -300,6 +312,14 @@ impl InputBuilder {
         self.audio_selector_groups = input;
         self
     }
+    /// Use audio selector groups to combine multiple sidecar audio inputs so that you can assign them to a single output audio tab. Note that, if you're working with embedded audio, it's simpler to assign multiple input tracks into a single audio selector rather than use an audio selector group.
+    pub fn get_audio_selector_groups(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::AudioSelectorGroup>,
+    > {
+        &self.audio_selector_groups
+    }
     /// Adds a key-value pair to `audio_selectors`.
     ///
     /// To override the contents of this collection use [`set_audio_selectors`](Self::set_audio_selectors).
@@ -324,6 +344,14 @@ impl InputBuilder {
     ) -> Self {
         self.audio_selectors = input;
         self
+    }
+    /// Use Audio selectors to specify a track or set of tracks from the input that you will use in your outputs. You can use multiple Audio selectors per input.
+    pub fn get_audio_selectors(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::AudioSelector>,
+    > {
+        &self.audio_selectors
     }
     /// Adds a key-value pair to `caption_selectors`.
     ///
@@ -350,6 +378,14 @@ impl InputBuilder {
         self.caption_selectors = input;
         self
     }
+    /// Use captions selectors to specify the captions data from your input that you use in your outputs. You can use up to 100 captions selectors per input.
+    pub fn get_caption_selectors(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::CaptionSelector>,
+    > {
+        &self.caption_selectors
+    }
     /// Use Cropping selection to specify the video area that the service will include in the output video frame. If you specify a value here, it will override any value that you specify in the output setting Cropping selection.
     pub fn crop(mut self, input: crate::types::Rectangle) -> Self {
         self.crop = ::std::option::Option::Some(input);
@@ -359,6 +395,10 @@ impl InputBuilder {
     pub fn set_crop(mut self, input: ::std::option::Option<crate::types::Rectangle>) -> Self {
         self.crop = input;
         self
+    }
+    /// Use Cropping selection to specify the video area that the service will include in the output video frame. If you specify a value here, it will override any value that you specify in the output setting Cropping selection.
+    pub fn get_crop(&self) -> &::std::option::Option<crate::types::Rectangle> {
+        &self.crop
     }
     /// Enable Deblock to produce smoother motion in the output. Default is disabled. Only manually controllable for MPEG2 and uncompressed video inputs.
     pub fn deblock_filter(mut self, input: crate::types::InputDeblockFilter) -> Self {
@@ -373,6 +413,10 @@ impl InputBuilder {
         self.deblock_filter = input;
         self
     }
+    /// Enable Deblock to produce smoother motion in the output. Default is disabled. Only manually controllable for MPEG2 and uncompressed video inputs.
+    pub fn get_deblock_filter(&self) -> &::std::option::Option<crate::types::InputDeblockFilter> {
+        &self.deblock_filter
+    }
     /// Settings for decrypting any input files that you encrypt before you upload them to Amazon S3. MediaConvert can decrypt files only when you use AWS Key Management Service (KMS) to encrypt the data key that you use to encrypt your content.
     pub fn decryption_settings(mut self, input: crate::types::InputDecryptionSettings) -> Self {
         self.decryption_settings = ::std::option::Option::Some(input);
@@ -386,6 +430,12 @@ impl InputBuilder {
         self.decryption_settings = input;
         self
     }
+    /// Settings for decrypting any input files that you encrypt before you upload them to Amazon S3. MediaConvert can decrypt files only when you use AWS Key Management Service (KMS) to encrypt the data key that you use to encrypt your content.
+    pub fn get_decryption_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::InputDecryptionSettings> {
+        &self.decryption_settings
+    }
     /// Enable Denoise to filter noise from the input. Default is disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
     pub fn denoise_filter(mut self, input: crate::types::InputDenoiseFilter) -> Self {
         self.denoise_filter = ::std::option::Option::Some(input);
@@ -398,6 +448,10 @@ impl InputBuilder {
     ) -> Self {
         self.denoise_filter = input;
         self
+    }
+    /// Enable Denoise to filter noise from the input. Default is disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
+    pub fn get_denoise_filter(&self) -> &::std::option::Option<crate::types::InputDenoiseFilter> {
+        &self.denoise_filter
     }
     /// Use this setting only when your video source has Dolby Vision studio mastering metadata that is carried in a separate XML file. Specify the Amazon S3 location for the metadata XML file. MediaConvert uses this file to provide global and frame-level metadata for Dolby Vision preprocessing. When you specify a file here and your input also has interleaved global and frame level metadata, MediaConvert ignores the interleaved metadata and uses only the the metadata from this external XML file. Note that your IAM service role must grant MediaConvert read permissions to this file. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
     pub fn dolby_vision_metadata_xml(
@@ -415,6 +469,10 @@ impl InputBuilder {
         self.dolby_vision_metadata_xml = input;
         self
     }
+    /// Use this setting only when your video source has Dolby Vision studio mastering metadata that is carried in a separate XML file. Specify the Amazon S3 location for the metadata XML file. MediaConvert uses this file to provide global and frame-level metadata for Dolby Vision preprocessing. When you specify a file here and your input also has interleaved global and frame level metadata, MediaConvert ignores the interleaved metadata and uses only the the metadata from this external XML file. Note that your IAM service role must grant MediaConvert read permissions to this file. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+    pub fn get_dolby_vision_metadata_xml(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dolby_vision_metadata_xml
+    }
     /// Specify the source file for your transcoding job. You can use multiple inputs in a single job. The service concatenates these inputs, in the order that you specify them in the job, to create the outputs. If your input format is IMF, specify your input by providing the path to your CPL. For example, "s3://bucket/vf/cpl.xml". If the CPL is in an incomplete IMP, make sure to use *Supplemental IMPs* to specify any supplemental IMPs that contain assets referenced by the CPL.
     pub fn file_input(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_input = ::std::option::Option::Some(input.into());
@@ -424,6 +482,10 @@ impl InputBuilder {
     pub fn set_file_input(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_input = input;
         self
+    }
+    /// Specify the source file for your transcoding job. You can use multiple inputs in a single job. The service concatenates these inputs, in the order that you specify them in the job, to create the outputs. If your input format is IMF, specify your input by providing the path to your CPL. For example, "s3://bucket/vf/cpl.xml". If the CPL is in an incomplete IMP, make sure to use *Supplemental IMPs* to specify any supplemental IMPs that contain assets referenced by the CPL.
+    pub fn get_file_input(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_input
     }
     /// Specify whether to apply input filtering to improve the video quality of your input. To apply filtering depending on your input type and quality: Choose Auto. To apply no filtering: Choose Disable. To apply filtering regardless of your input type and quality: Choose Force. When you do, you must also specify a value for Filter strength.
     pub fn filter_enable(mut self, input: crate::types::InputFilterEnable) -> Self {
@@ -438,6 +500,10 @@ impl InputBuilder {
         self.filter_enable = input;
         self
     }
+    /// Specify whether to apply input filtering to improve the video quality of your input. To apply filtering depending on your input type and quality: Choose Auto. To apply no filtering: Choose Disable. To apply filtering regardless of your input type and quality: Choose Force. When you do, you must also specify a value for Filter strength.
+    pub fn get_filter_enable(&self) -> &::std::option::Option<crate::types::InputFilterEnable> {
+        &self.filter_enable
+    }
     /// Specify the strength of the input filter. To apply an automatic amount of filtering based the compression artifacts measured in your input: We recommend that you leave Filter strength blank and set Filter enable to Auto. To manually apply filtering: Enter a value from 1 to 5, where 1 is the least amount of filtering and 5 is the most. The value that you enter applies to the strength of the Deblock or Denoise filters, or to the strength of the Advanced input filter.
     pub fn filter_strength(mut self, input: i32) -> Self {
         self.filter_strength = ::std::option::Option::Some(input);
@@ -447,6 +513,10 @@ impl InputBuilder {
     pub fn set_filter_strength(mut self, input: ::std::option::Option<i32>) -> Self {
         self.filter_strength = input;
         self
+    }
+    /// Specify the strength of the input filter. To apply an automatic amount of filtering based the compression artifacts measured in your input: We recommend that you leave Filter strength blank and set Filter enable to Auto. To manually apply filtering: Enter a value from 1 to 5, where 1 is the least amount of filtering and 5 is the most. The value that you enter applies to the strength of the Deblock or Denoise filters, or to the strength of the Advanced input filter.
+    pub fn get_filter_strength(&self) -> &::std::option::Option<i32> {
+        &self.filter_strength
     }
     /// Enable the image inserter feature to include a graphic overlay on your video. Enable or disable this feature for each input individually. This setting is disabled by default.
     pub fn image_inserter(mut self, input: crate::types::ImageInserter) -> Self {
@@ -460,6 +530,10 @@ impl InputBuilder {
     ) -> Self {
         self.image_inserter = input;
         self
+    }
+    /// Enable the image inserter feature to include a graphic overlay on your video. Enable or disable this feature for each input individually. This setting is disabled by default.
+    pub fn get_image_inserter(&self) -> &::std::option::Option<crate::types::ImageInserter> {
+        &self.image_inserter
     }
     /// Appends an item to `input_clippings`.
     ///
@@ -480,6 +554,12 @@ impl InputBuilder {
         self.input_clippings = input;
         self
     }
+    /// Contains sets of start and end times that together specify a portion of the input to be used in the outputs. If you provide only a start time, the clip will be the entire input from that point to the end. If you provide only an end time, it will be the entire input up to that point. When you specify more than one input clip, the transcoding service creates the job outputs by stringing the clips together in the order you specify them.
+    pub fn get_input_clippings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputClipping>> {
+        &self.input_clippings
+    }
     /// When you have a progressive segmented frame (PsF) input, use this setting to flag the input as PsF. MediaConvert doesn't automatically detect PsF. Therefore, flagging your input as PsF results in better preservation of video quality when you do deinterlacing and frame rate conversion. If you don't specify, the default value is Auto. Auto is the correct setting for all inputs that are not PsF. Don't set this value to PsF when your input is interlaced. Doing so creates horizontal interlacing artifacts.
     pub fn input_scan_type(mut self, input: crate::types::InputScanType) -> Self {
         self.input_scan_type = ::std::option::Option::Some(input);
@@ -493,6 +573,10 @@ impl InputBuilder {
         self.input_scan_type = input;
         self
     }
+    /// When you have a progressive segmented frame (PsF) input, use this setting to flag the input as PsF. MediaConvert doesn't automatically detect PsF. Therefore, flagging your input as PsF results in better preservation of video quality when you do deinterlacing and frame rate conversion. If you don't specify, the default value is Auto. Auto is the correct setting for all inputs that are not PsF. Don't set this value to PsF when your input is interlaced. Doing so creates horizontal interlacing artifacts.
+    pub fn get_input_scan_type(&self) -> &::std::option::Option<crate::types::InputScanType> {
+        &self.input_scan_type
+    }
     /// Use Selection placement to define the video area in your output frame. The area outside of the rectangle that you specify here is black. If you specify a value here, it will override any value that you specify in the output setting Selection placement. If you specify a value here, this will override any AFD values in your input, even if you set Respond to AFD to Respond. If you specify a value here, this will ignore anything that you specify for the setting Scaling Behavior.
     pub fn position(mut self, input: crate::types::Rectangle) -> Self {
         self.position = ::std::option::Option::Some(input);
@@ -503,6 +587,10 @@ impl InputBuilder {
         self.position = input;
         self
     }
+    /// Use Selection placement to define the video area in your output frame. The area outside of the rectangle that you specify here is black. If you specify a value here, it will override any value that you specify in the output setting Selection placement. If you specify a value here, this will override any AFD values in your input, even if you set Respond to AFD to Respond. If you specify a value here, this will ignore anything that you specify for the setting Scaling Behavior.
+    pub fn get_position(&self) -> &::std::option::Option<crate::types::Rectangle> {
+        &self.position
+    }
     /// Use Program to select a specific program from within a multi-program transport stream. Note that Quad 4K is not currently supported. Default is the first program within the transport stream. If the program you specify doesn't exist, the transcoding service will use this default.
     pub fn program_number(mut self, input: i32) -> Self {
         self.program_number = ::std::option::Option::Some(input);
@@ -512,6 +600,10 @@ impl InputBuilder {
     pub fn set_program_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.program_number = input;
         self
+    }
+    /// Use Program to select a specific program from within a multi-program transport stream. Note that Quad 4K is not currently supported. Default is the first program within the transport stream. If the program you specify doesn't exist, the transcoding service will use this default.
+    pub fn get_program_number(&self) -> &::std::option::Option<i32> {
+        &self.program_number
     }
     /// Set PSI control for transport stream inputs to specify which data the demux process to scans. * Ignore PSI - Scan all PIDs for audio and video. * Use PSI - Scan only PSI data.
     pub fn psi_control(mut self, input: crate::types::InputPsiControl) -> Self {
@@ -525,6 +617,10 @@ impl InputBuilder {
     ) -> Self {
         self.psi_control = input;
         self
+    }
+    /// Set PSI control for transport stream inputs to specify which data the demux process to scans. * Ignore PSI - Scan all PIDs for audio and video. * Use PSI - Scan only PSI data.
+    pub fn get_psi_control(&self) -> &::std::option::Option<crate::types::InputPsiControl> {
+        &self.psi_control
     }
     /// Appends an item to `supplemental_imps`.
     ///
@@ -548,6 +644,12 @@ impl InputBuilder {
         self.supplemental_imps = input;
         self
     }
+    /// Provide a list of any necessary supplemental IMPs. You need supplemental IMPs if the CPL that you're using for your input is in an incomplete IMP. Specify either the supplemental IMP directories with a trailing slash or the ASSETMAP.xml files. For example ["s3://bucket/ov/", "s3://bucket/vf2/ASSETMAP.xml"]. You don't need to specify the IMP that contains your input CPL, because the service automatically detects it.
+    pub fn get_supplemental_imps(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.supplemental_imps
+    }
     /// Use this Timecode source setting, located under the input settings, to specify how the service counts input video frames. This input frame count affects only the behavior of features that apply to a single input at a time, such as input clipping and synchronizing some captions formats. Choose Embedded to use the timecodes in your input video. Choose Start at zero to start the first frame at zero. Choose Specified start to start the first frame at the timecode that you specify in the setting Start timecode. If you don't specify a value for Timecode source, the service will use Embedded by default. For more information about timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
     pub fn timecode_source(mut self, input: crate::types::InputTimecodeSource) -> Self {
         self.timecode_source = ::std::option::Option::Some(input);
@@ -560,6 +662,10 @@ impl InputBuilder {
     ) -> Self {
         self.timecode_source = input;
         self
+    }
+    /// Use this Timecode source setting, located under the input settings, to specify how the service counts input video frames. This input frame count affects only the behavior of features that apply to a single input at a time, such as input clipping and synchronizing some captions formats. Choose Embedded to use the timecodes in your input video. Choose Start at zero to start the first frame at zero. Choose Specified start to start the first frame at the timecode that you specify in the setting Start timecode. If you don't specify a value for Timecode source, the service will use Embedded by default. For more information about timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
+    pub fn get_timecode_source(&self) -> &::std::option::Option<crate::types::InputTimecodeSource> {
+        &self.timecode_source
     }
     /// Specify the timecode that you want the service to use for this input's initial frame. To use this setting, you must set the Timecode source setting, located under the input settings, to Specified start. For more information about timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
     pub fn timecode_start(
@@ -577,6 +683,10 @@ impl InputBuilder {
         self.timecode_start = input;
         self
     }
+    /// Specify the timecode that you want the service to use for this input's initial frame. To use this setting, you must set the Timecode source setting, located under the input settings, to Specified start. For more information about timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
+    pub fn get_timecode_start(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timecode_start
+    }
     /// When you include Video generator, MediaConvert creates a video input with black frames. Use this setting if you do not have a video input or if you want to add black video frames before, or after, other inputs. You can specify Video generator, or you can specify an Input file, but you cannot specify both. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/video-generator.html
     pub fn video_generator(mut self, input: crate::types::InputVideoGenerator) -> Self {
         self.video_generator = ::std::option::Option::Some(input);
@@ -590,6 +700,10 @@ impl InputBuilder {
         self.video_generator = input;
         self
     }
+    /// When you include Video generator, MediaConvert creates a video input with black frames. Use this setting if you do not have a video input or if you want to add black video frames before, or after, other inputs. You can specify Video generator, or you can specify an Input file, but you cannot specify both. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/video-generator.html
+    pub fn get_video_generator(&self) -> &::std::option::Option<crate::types::InputVideoGenerator> {
+        &self.video_generator
+    }
     /// Input video selectors contain the video settings for the input. Each of your inputs can have up to one video selector.
     pub fn video_selector(mut self, input: crate::types::VideoSelector) -> Self {
         self.video_selector = ::std::option::Option::Some(input);
@@ -602,6 +716,10 @@ impl InputBuilder {
     ) -> Self {
         self.video_selector = input;
         self
+    }
+    /// Input video selectors contain the video settings for the input. Each of your inputs can have up to one video selector.
+    pub fn get_video_selector(&self) -> &::std::option::Option<crate::types::VideoSelector> {
+        &self.video_selector
     }
     /// Consumes the builder and constructs a [`Input`](crate::types::Input).
     pub fn build(self) -> crate::types::Input {

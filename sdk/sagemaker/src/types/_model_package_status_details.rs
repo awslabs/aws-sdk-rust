@@ -65,6 +65,12 @@ impl ModelPackageStatusDetailsBuilder {
         self.validation_statuses = input;
         self
     }
+    /// <p>The validation status of the model package.</p>
+    pub fn get_validation_statuses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelPackageStatusItem>> {
+        &self.validation_statuses
+    }
     /// Appends an item to `image_scan_statuses`.
     ///
     /// To override the contents of this collection use [`set_image_scan_statuses`](Self::set_image_scan_statuses).
@@ -83,6 +89,12 @@ impl ModelPackageStatusDetailsBuilder {
     ) -> Self {
         self.image_scan_statuses = input;
         self
+    }
+    /// <p>The status of the scan of the Docker image container for the model package.</p>
+    pub fn get_image_scan_statuses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelPackageStatusItem>> {
+        &self.image_scan_statuses
     }
     /// Consumes the builder and constructs a [`ModelPackageStatusDetails`](crate::types::ModelPackageStatusDetails).
     pub fn build(self) -> crate::types::ModelPackageStatusDetails {

@@ -63,6 +63,10 @@ impl SchemaVersionSummaryBuilder {
         self.schema_arn = input;
         self
     }
+    /// <p>The ARN of the schema version.</p>
+    pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_arn
+    }
     /// <p>The name of the schema.</p>
     pub fn schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_name = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl SchemaVersionSummaryBuilder {
     pub fn set_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_name = input;
         self
+    }
+    /// <p>The name of the schema.</p>
+    pub fn get_schema_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_name
     }
     /// <p>The version number of the schema.</p>
     pub fn schema_version(
@@ -89,6 +97,10 @@ impl SchemaVersionSummaryBuilder {
         self.schema_version = input;
         self
     }
+    /// <p>The version number of the schema.</p>
+    pub fn get_schema_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_version
+    }
     /// <p>The type of schema.</p>
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -98,6 +110,10 @@ impl SchemaVersionSummaryBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::Type>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of schema.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::Type> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`SchemaVersionSummary`](crate::types::SchemaVersionSummary).
     pub fn build(self) -> crate::types::SchemaVersionSummary {

@@ -143,6 +143,10 @@ impl DescribeDashboardDefinitionOutputBuilder {
         self.dashboard_id = input;
         self
     }
+    /// <p>The ID of the dashboard described.</p>
+    pub fn get_dashboard_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dashboard_id
+    }
     /// Appends an item to `errors`.
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
@@ -162,6 +166,12 @@ impl DescribeDashboardDefinitionOutputBuilder {
         self.errors = input;
         self
     }
+    /// <p>Errors associated with this dashboard version.</p>
+    pub fn get_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DashboardError>> {
+        &self.errors
+    }
     /// <p>The display name of the dashboard.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -171,6 +181,10 @@ impl DescribeDashboardDefinitionOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The display name of the dashboard.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Status associated with the dashboard version.</p>
     /// <ul>
@@ -203,6 +217,19 @@ impl DescribeDashboardDefinitionOutputBuilder {
         self.resource_status = input;
         self
     }
+    /// <p>Status associated with the dashboard version.</p>
+    /// <ul>
+    /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li>
+    /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
+    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li>
+    /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>DELETED</code> </p> </li>
+    /// </ul>
+    pub fn get_resource_status(&self) -> &::std::option::Option<crate::types::ResourceStatus> {
+        &self.resource_status
+    }
     /// <p>The ARN of the theme of the dashboard.</p>
     pub fn theme_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.theme_arn = ::std::option::Option::Some(input.into());
@@ -212,6 +239,10 @@ impl DescribeDashboardDefinitionOutputBuilder {
     pub fn set_theme_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.theme_arn = input;
         self
+    }
+    /// <p>The ARN of the theme of the dashboard.</p>
+    pub fn get_theme_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.theme_arn
     }
     /// <p>The definition of a dashboard.</p>
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
@@ -228,6 +259,13 @@ impl DescribeDashboardDefinitionOutputBuilder {
         self.definition = input;
         self
     }
+    /// <p>The definition of a dashboard.</p>
+    /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
+    pub fn get_definition(
+        &self,
+    ) -> &::std::option::Option<crate::types::DashboardVersionDefinition> {
+        &self.definition
+    }
     /// <p>The HTTP status of the request.</p>
     pub fn status(mut self, input: i32) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -238,6 +276,10 @@ impl DescribeDashboardDefinitionOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The HTTP status of the request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<i32> {
+        &self.status
+    }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_id = ::std::option::Option::Some(input.into());
@@ -247,6 +289,10 @@ impl DescribeDashboardDefinitionOutputBuilder {
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_id = input;
         self
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
     }
     /// <p>Options for publishing the dashboard:</p>
     /// <ul>
@@ -273,6 +319,17 @@ impl DescribeDashboardDefinitionOutputBuilder {
     ) -> Self {
         self.dashboard_publish_options = input;
         self
+    }
+    /// <p>Options for publishing the dashboard:</p>
+    /// <ul>
+    /// <li> <p> <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on the published dashboard, which can be used for ad hoc (one-time) filtering. This option is <code>ENABLED</code> by default. </p> </li>
+    /// <li> <p> <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .CSV format isn't enabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p> </li>
+    /// <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p> </li>
+    /// </ul>
+    pub fn get_dashboard_publish_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::DashboardPublishOptions> {
+        &self.dashboard_publish_options
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

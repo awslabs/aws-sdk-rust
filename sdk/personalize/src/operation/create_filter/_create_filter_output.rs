@@ -46,6 +46,10 @@ impl CreateFilterOutputBuilder {
         self.filter_arn = input;
         self
     }
+    /// <p>The ARN of the new filter.</p>
+    pub fn get_filter_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filter_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

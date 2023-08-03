@@ -40,6 +40,12 @@ impl UpdateEndpointFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateEndpoint as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_endpoint::builders::UpdateEndpointInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +134,10 @@ impl UpdateEndpointFluentBuilder {
         self.inner = self.inner.set_endpoint_name(input);
         self
     }
+    /// <p>The name of the endpoint whose configuration you want to update.</p>
+    pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_endpoint_name()
+    }
     /// <p>The name of the new endpoint configuration.</p>
     pub fn endpoint_config_name(
         mut self,
@@ -144,6 +154,10 @@ impl UpdateEndpointFluentBuilder {
         self.inner = self.inner.set_endpoint_config_name(input);
         self
     }
+    /// <p>The name of the new endpoint configuration.</p>
+    pub fn get_endpoint_config_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_endpoint_config_name()
+    }
     /// <p>When updating endpoint resources, enables or disables the retention of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VariantProperty.html">variant properties</a>, such as the instance count or the variant weight. To retain the variant properties of an endpoint when updating it, set <code>RetainAllVariantProperties</code> to <code>true</code>. To use the variant properties specified in a new <code>EndpointConfig</code> call when updating an endpoint, set <code>RetainAllVariantProperties</code> to <code>false</code>. The default is <code>false</code>.</p>
     pub fn retain_all_variant_properties(mut self, input: bool) -> Self {
         self.inner = self.inner.retain_all_variant_properties(input);
@@ -153,6 +167,10 @@ impl UpdateEndpointFluentBuilder {
     pub fn set_retain_all_variant_properties(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_retain_all_variant_properties(input);
         self
+    }
+    /// <p>When updating endpoint resources, enables or disables the retention of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VariantProperty.html">variant properties</a>, such as the instance count or the variant weight. To retain the variant properties of an endpoint when updating it, set <code>RetainAllVariantProperties</code> to <code>true</code>. To use the variant properties specified in a new <code>EndpointConfig</code> call when updating an endpoint, set <code>RetainAllVariantProperties</code> to <code>false</code>. The default is <code>false</code>.</p>
+    pub fn get_retain_all_variant_properties(&self) -> &::std::option::Option<bool> {
+        self.inner.get_retain_all_variant_properties()
     }
     /// Appends an item to `ExcludeRetainedVariantProperties`.
     ///
@@ -174,6 +192,12 @@ impl UpdateEndpointFluentBuilder {
         self.inner = self.inner.set_exclude_retained_variant_properties(input);
         self
     }
+    /// <p>When you are updating endpoint resources with <code>RetainAllVariantProperties</code>, whose value is set to <code>true</code>, <code>ExcludeRetainedVariantProperties</code> specifies the list of type <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VariantProperty.html">VariantProperty</a> to override with the values provided by <code>EndpointConfig</code>. If you don't specify a value for <code>ExcludeRetainedVariantProperties</code>, no variant properties are overridden. </p>
+    pub fn get_exclude_retained_variant_properties(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VariantProperty>> {
+        self.inner.get_exclude_retained_variant_properties()
+    }
     /// <p>The deployment configuration for an endpoint, which contains the desired deployment strategy and rollback configurations.</p>
     pub fn deployment_config(mut self, input: crate::types::DeploymentConfig) -> Self {
         self.inner = self.inner.deployment_config(input);
@@ -187,6 +211,10 @@ impl UpdateEndpointFluentBuilder {
         self.inner = self.inner.set_deployment_config(input);
         self
     }
+    /// <p>The deployment configuration for an endpoint, which contains the desired deployment strategy and rollback configurations.</p>
+    pub fn get_deployment_config(&self) -> &::std::option::Option<crate::types::DeploymentConfig> {
+        self.inner.get_deployment_config()
+    }
     /// <p>Specifies whether to reuse the last deployment configuration. The default value is false (the configuration is not reused).</p>
     pub fn retain_deployment_config(mut self, input: bool) -> Self {
         self.inner = self.inner.retain_deployment_config(input);
@@ -196,5 +224,9 @@ impl UpdateEndpointFluentBuilder {
     pub fn set_retain_deployment_config(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_retain_deployment_config(input);
         self
+    }
+    /// <p>Specifies whether to reuse the last deployment configuration. The default value is false (the configuration is not reused).</p>
+    pub fn get_retain_deployment_config(&self) -> &::std::option::Option<bool> {
+        self.inner.get_retain_deployment_config()
     }
 }

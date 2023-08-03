@@ -48,6 +48,10 @@ impl DescribeEndpointInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the endpoint you want to get information about. For example, <code>"Name":"us-east-2-custom_bus_A-endpoint"</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The primary Region of the endpoint you want to get information about. For example <code>"HomeRegion": "us-east-1"</code>.</p>
     pub fn home_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.home_region = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl DescribeEndpointInputBuilder {
     pub fn set_home_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.home_region = input;
         self
+    }
+    /// <p>The primary Region of the endpoint you want to get information about. For example <code>"HomeRegion": "us-east-1"</code>.</p>
+    pub fn get_home_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.home_region
     }
     /// Consumes the builder and constructs a [`DescribeEndpointInput`](crate::operation::describe_endpoint::DescribeEndpointInput).
     pub fn build(

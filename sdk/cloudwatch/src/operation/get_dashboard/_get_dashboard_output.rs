@@ -68,6 +68,10 @@ impl GetDashboardOutputBuilder {
         self.dashboard_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
+    pub fn get_dashboard_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dashboard_arn
+    }
     /// <p>The detailed information about the dashboard, including what widgets are included and their location on the dashboard. For more information about the <code>DashboardBody</code> syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard Body Structure and Syntax</a>. </p>
     pub fn dashboard_body(
         mut self,
@@ -84,6 +88,10 @@ impl GetDashboardOutputBuilder {
         self.dashboard_body = input;
         self
     }
+    /// <p>The detailed information about the dashboard, including what widgets are included and their location on the dashboard. For more information about the <code>DashboardBody</code> syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard Body Structure and Syntax</a>. </p>
+    pub fn get_dashboard_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dashboard_body
+    }
     /// <p>The name of the dashboard.</p>
     pub fn dashboard_name(
         mut self,
@@ -99,6 +107,10 @@ impl GetDashboardOutputBuilder {
     ) -> Self {
         self.dashboard_name = input;
         self
+    }
+    /// <p>The name of the dashboard.</p>
+    pub fn get_dashboard_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dashboard_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -46,6 +46,10 @@ impl KinesisParametersBuilder {
         self.partition_key = input;
         self
     }
+    /// <p>Specifies the shard to which EventBridge Scheduler sends the event. For more information, see <a href="https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html">Amazon Kinesis Data Streams terminology and concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.</p>
+    pub fn get_partition_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.partition_key
+    }
     /// Consumes the builder and constructs a [`KinesisParameters`](crate::types::KinesisParameters).
     pub fn build(self) -> crate::types::KinesisParameters {
         crate::types::KinesisParameters {

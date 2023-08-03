@@ -51,6 +51,12 @@ impl PlayerLatencyPolicyBuilder {
         self.maximum_individual_player_latency_milliseconds = input;
         self
     }
+    /// <p>The maximum latency value that is allowed for any player, in milliseconds. All policies must have a value set for this property.</p>
+    pub fn get_maximum_individual_player_latency_milliseconds(
+        &self,
+    ) -> &::std::option::Option<i32> {
+        &self.maximum_individual_player_latency_milliseconds
+    }
     /// <p>The length of time, in seconds, that the policy is enforced while placing a new game session. A null value for this property means that the policy is enforced until the queue times out.</p>
     pub fn policy_duration_seconds(mut self, input: i32) -> Self {
         self.policy_duration_seconds = ::std::option::Option::Some(input);
@@ -60,6 +66,10 @@ impl PlayerLatencyPolicyBuilder {
     pub fn set_policy_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.policy_duration_seconds = input;
         self
+    }
+    /// <p>The length of time, in seconds, that the policy is enforced while placing a new game session. A null value for this property means that the policy is enforced until the queue times out.</p>
+    pub fn get_policy_duration_seconds(&self) -> &::std::option::Option<i32> {
+        &self.policy_duration_seconds
     }
     /// Consumes the builder and constructs a [`PlayerLatencyPolicy`](crate::types::PlayerLatencyPolicy).
     pub fn build(self) -> crate::types::PlayerLatencyPolicy {

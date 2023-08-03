@@ -37,6 +37,10 @@ impl ConfirmTopicRuleDestinationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ConfirmTopicRuleDestination as a reference.
+    pub fn as_input(&self) -> &crate::operation::confirm_topic_rule_destination::builders::ConfirmTopicRuleDestinationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +136,9 @@ impl ConfirmTopicRuleDestinationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_confirmation_token(input);
         self
+    }
+    /// <p>The token used to confirm ownership or access to the topic rule confirmation URL.</p>
+    pub fn get_confirmation_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_confirmation_token()
     }
 }

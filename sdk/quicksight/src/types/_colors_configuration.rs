@@ -49,6 +49,12 @@ impl ColorsConfigurationBuilder {
         self.custom_colors = input;
         self
     }
+    /// <p>A list of up to 50 custom colors.</p>
+    pub fn get_custom_colors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomColor>> {
+        &self.custom_colors
+    }
     /// Consumes the builder and constructs a [`ColorsConfiguration`](crate::types::ColorsConfiguration).
     pub fn build(self) -> crate::types::ColorsConfiguration {
         crate::types::ColorsConfiguration {

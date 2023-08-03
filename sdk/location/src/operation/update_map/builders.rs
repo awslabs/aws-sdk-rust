@@ -36,6 +36,10 @@ impl UpdateMapFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateMap as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_map::builders::UpdateMapInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl UpdateMapFluentBuilder {
         self.inner = self.inner.set_map_name(input);
         self
     }
+    /// <p>The name of the map resource to update.</p>
+    pub fn get_map_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_map_name()
+    }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(
         note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
@@ -139,6 +147,14 @@ impl UpdateMapFluentBuilder {
         self.inner = self.inner.set_pricing_plan(input);
         self
     }
+    /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
+    #[deprecated(
+        note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
+        since = "2022-02-01"
+    )]
+    pub fn get_pricing_plan(&self) -> &::std::option::Option<crate::types::PricingPlan> {
+        self.inner.get_pricing_plan()
+    }
     /// <p>Updates the description for the map resource.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -148,6 +164,10 @@ impl UpdateMapFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>Updates the description for the map resource.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>Updates the parts of the map configuration that can be updated, including the political view.</p>
     pub fn configuration_update(mut self, input: crate::types::MapConfigurationUpdate) -> Self {
@@ -161,5 +181,11 @@ impl UpdateMapFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_configuration_update(input);
         self
+    }
+    /// <p>Updates the parts of the map configuration that can be updated, including the political view.</p>
+    pub fn get_configuration_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::MapConfigurationUpdate> {
+        self.inner.get_configuration_update()
     }
 }

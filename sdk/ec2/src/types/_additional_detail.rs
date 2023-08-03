@@ -111,6 +111,10 @@ impl AdditionalDetailBuilder {
         self.additional_detail_type = input;
         self
     }
+    /// <p>The additional detail code.</p>
+    pub fn get_additional_detail_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.additional_detail_type
+    }
     /// <p>The path component.</p>
     pub fn component(mut self, input: crate::types::AnalysisComponent) -> Self {
         self.component = ::std::option::Option::Some(input);
@@ -124,6 +128,10 @@ impl AdditionalDetailBuilder {
         self.component = input;
         self
     }
+    /// <p>The path component.</p>
+    pub fn get_component(&self) -> &::std::option::Option<crate::types::AnalysisComponent> {
+        &self.component
+    }
     /// <p>The VPC endpoint service.</p>
     pub fn vpc_endpoint_service(mut self, input: crate::types::AnalysisComponent) -> Self {
         self.vpc_endpoint_service = ::std::option::Option::Some(input);
@@ -136,6 +144,12 @@ impl AdditionalDetailBuilder {
     ) -> Self {
         self.vpc_endpoint_service = input;
         self
+    }
+    /// <p>The VPC endpoint service.</p>
+    pub fn get_vpc_endpoint_service(
+        &self,
+    ) -> &::std::option::Option<crate::types::AnalysisComponent> {
+        &self.vpc_endpoint_service
     }
     /// Appends an item to `rule_options`.
     ///
@@ -156,6 +170,12 @@ impl AdditionalDetailBuilder {
         self.rule_options = input;
         self
     }
+    /// <p>The rule options.</p>
+    pub fn get_rule_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleOption>> {
+        &self.rule_options
+    }
     /// Appends an item to `rule_group_type_pairs`.
     ///
     /// To override the contents of this collection use [`set_rule_group_type_pairs`](Self::set_rule_group_type_pairs).
@@ -174,6 +194,12 @@ impl AdditionalDetailBuilder {
     ) -> Self {
         self.rule_group_type_pairs = input;
         self
+    }
+    /// <p>The rule group type.</p>
+    pub fn get_rule_group_type_pairs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleGroupTypePair>> {
+        &self.rule_group_type_pairs
     }
     /// Appends an item to `rule_group_rule_options_pairs`.
     ///
@@ -197,6 +223,12 @@ impl AdditionalDetailBuilder {
         self.rule_group_rule_options_pairs = input;
         self
     }
+    /// <p>The rule options.</p>
+    pub fn get_rule_group_rule_options_pairs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleGroupRuleOptionsPair>> {
+        &self.rule_group_rule_options_pairs
+    }
     /// <p>The name of the VPC endpoint service.</p>
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_name = ::std::option::Option::Some(input.into());
@@ -206,6 +238,10 @@ impl AdditionalDetailBuilder {
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_name = input;
         self
+    }
+    /// <p>The name of the VPC endpoint service.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
     }
     /// Appends an item to `load_balancers`.
     ///
@@ -225,6 +261,12 @@ impl AdditionalDetailBuilder {
     ) -> Self {
         self.load_balancers = input;
         self
+    }
+    /// <p>The load balancers.</p>
+    pub fn get_load_balancers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalysisComponent>> {
+        &self.load_balancers
     }
     /// Consumes the builder and constructs a [`AdditionalDetail`](crate::types::AdditionalDetail).
     pub fn build(self) -> crate::types::AdditionalDetail {

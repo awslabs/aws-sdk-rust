@@ -71,6 +71,12 @@ impl KernelGatewayAppSettingsBuilder {
         self.default_resource_spec = input;
         self
     }
+    /// <p>The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the KernelGateway app.</p> <note>
+    /// <p>The Amazon SageMaker Studio UI does not use the default instance type value set here. The default instance type set here is used when Apps are created using the Amazon Web Services Command Line Interface or Amazon Web Services CloudFormation and the instance type parameter value is not passed.</p>
+    /// </note>
+    pub fn get_default_resource_spec(&self) -> &::std::option::Option<crate::types::ResourceSpec> {
+        &self.default_resource_spec
+    }
     /// Appends an item to `custom_images`.
     ///
     /// To override the contents of this collection use [`set_custom_images`](Self::set_custom_images).
@@ -89,6 +95,12 @@ impl KernelGatewayAppSettingsBuilder {
     ) -> Self {
         self.custom_images = input;
         self
+    }
+    /// <p>A list of custom SageMaker images that are configured to run as a KernelGateway app.</p>
+    pub fn get_custom_images(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomImage>> {
+        &self.custom_images
     }
     /// Appends an item to `lifecycle_config_arns`.
     ///
@@ -115,6 +127,14 @@ impl KernelGatewayAppSettingsBuilder {
     ) -> Self {
         self.lifecycle_config_arns = input;
         self
+    }
+    /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the the user profile or domain.</p> <note>
+    /// <p>To remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an empty list.</p>
+    /// </note>
+    pub fn get_lifecycle_config_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.lifecycle_config_arns
     }
     /// Consumes the builder and constructs a [`KernelGatewayAppSettings`](crate::types::KernelGatewayAppSettings).
     pub fn build(self) -> crate::types::KernelGatewayAppSettings {

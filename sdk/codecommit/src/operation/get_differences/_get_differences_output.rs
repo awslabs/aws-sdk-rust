@@ -63,6 +63,12 @@ impl GetDifferencesOutputBuilder {
         self.differences = input;
         self
     }
+    /// <p>A data type object that contains information about the differences, including whether the difference is added, modified, or deleted (A, D, M).</p>
+    pub fn get_differences(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Difference>> {
+        &self.differences
+    }
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -72,6 +78,10 @@ impl GetDifferencesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

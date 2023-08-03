@@ -39,6 +39,10 @@ impl DeleteHubInputBuilder {
         self.hub_name = input;
         self
     }
+    /// <p>The name of the hub to delete.</p>
+    pub fn get_hub_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hub_name
+    }
     /// Consumes the builder and constructs a [`DeleteHubInput`](crate::operation::delete_hub::DeleteHubInput).
     pub fn build(
         self,

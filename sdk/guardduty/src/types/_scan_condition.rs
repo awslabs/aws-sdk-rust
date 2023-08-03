@@ -49,6 +49,12 @@ impl ScanConditionBuilder {
         self.map_equals = input;
         self
     }
+    /// <p>Represents an <i>mapEqual</i> <b></b> condition to be applied to a single field when triggering for malware scan.</p>
+    pub fn get_map_equals(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScanConditionPair>> {
+        &self.map_equals
+    }
     /// Consumes the builder and constructs a [`ScanCondition`](crate::types::ScanCondition).
     pub fn build(self) -> crate::types::ScanCondition {
         crate::types::ScanCondition {

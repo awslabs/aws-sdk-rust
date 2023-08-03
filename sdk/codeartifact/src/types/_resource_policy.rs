@@ -56,6 +56,10 @@ impl ResourcePolicyBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p> The ARN of the resource associated with the resource policy </p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// <p> The current revision of the resource policy. </p>
     pub fn revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl ResourcePolicyBuilder {
         self.revision = input;
         self
     }
+    /// <p> The current revision of the resource policy. </p>
+    pub fn get_revision(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision
+    }
     /// <p> The resource policy formatted in JSON. </p>
     pub fn document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl ResourcePolicyBuilder {
     pub fn set_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document = input;
         self
+    }
+    /// <p> The resource policy formatted in JSON. </p>
+    pub fn get_document(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document
     }
     /// Consumes the builder and constructs a [`ResourcePolicy`](crate::types::ResourcePolicy).
     pub fn build(self) -> crate::types::ResourcePolicy {

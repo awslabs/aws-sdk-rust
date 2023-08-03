@@ -46,6 +46,10 @@ impl DescribeFilterOutputBuilder {
         self.filter = input;
         self
     }
+    /// <p>The filter's details.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::Filter> {
+        &self.filter
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

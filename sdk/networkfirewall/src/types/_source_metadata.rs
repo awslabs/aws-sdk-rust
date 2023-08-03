@@ -48,6 +48,10 @@ impl SourceMetadataBuilder {
         self.source_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the rule group that your own rule group is copied from.</p>
+    pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_arn
+    }
     /// <p>The update token of the Amazon Web Services managed rule group that your own rule group is copied from. To determine the update token for the managed rule group, call <a href="https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeRuleGroup.html#networkfirewall-DescribeRuleGroup-response-UpdateToken">DescribeRuleGroup</a>.</p>
     pub fn source_update_token(
         mut self,
@@ -63,6 +67,10 @@ impl SourceMetadataBuilder {
     ) -> Self {
         self.source_update_token = input;
         self
+    }
+    /// <p>The update token of the Amazon Web Services managed rule group that your own rule group is copied from. To determine the update token for the managed rule group, call <a href="https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeRuleGroup.html#networkfirewall-DescribeRuleGroup-response-UpdateToken">DescribeRuleGroup</a>.</p>
+    pub fn get_source_update_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_update_token
     }
     /// Consumes the builder and constructs a [`SourceMetadata`](crate::types::SourceMetadata).
     pub fn build(self) -> crate::types::SourceMetadata {

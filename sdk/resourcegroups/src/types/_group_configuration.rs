@@ -78,6 +78,12 @@ impl GroupConfigurationBuilder {
         self.configuration = input;
         self
     }
+    /// <p>The configuration currently associated with the group and in effect.</p>
+    pub fn get_configuration(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupConfigurationItem>> {
+        &self.configuration
+    }
     /// Appends an item to `proposed_configuration`.
     ///
     /// To override the contents of this collection use [`set_proposed_configuration`](Self::set_proposed_configuration).
@@ -97,6 +103,12 @@ impl GroupConfigurationBuilder {
         self.proposed_configuration = input;
         self
     }
+    /// <p>If present, the new configuration that is in the process of being applied to the group.</p>
+    pub fn get_proposed_configuration(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupConfigurationItem>> {
+        &self.proposed_configuration
+    }
     /// <p>The current status of an attempt to update the group configuration.</p>
     pub fn status(mut self, input: crate::types::GroupConfigurationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -109,6 +121,10 @@ impl GroupConfigurationBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of an attempt to update the group configuration.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::GroupConfigurationStatus> {
+        &self.status
     }
     /// <p>If present, the reason why a request to update the group configuration failed.</p>
     pub fn failure_reason(
@@ -125,6 +141,10 @@ impl GroupConfigurationBuilder {
     ) -> Self {
         self.failure_reason = input;
         self
+    }
+    /// <p>If present, the reason why a request to update the group configuration failed.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
     }
     /// Consumes the builder and constructs a [`GroupConfiguration`](crate::types::GroupConfiguration).
     pub fn build(self) -> crate::types::GroupConfiguration {

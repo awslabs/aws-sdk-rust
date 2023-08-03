@@ -56,6 +56,14 @@ impl AwsEcsClusterConfigurationDetailsBuilder {
         self.execute_command_configuration = input;
         self
     }
+    /// <p>Contains the run command configuration for the cluster.</p>
+    pub fn get_execute_command_configuration(
+        &self,
+    ) -> &::std::option::Option<
+        crate::types::AwsEcsClusterConfigurationExecuteCommandConfigurationDetails,
+    > {
+        &self.execute_command_configuration
+    }
     /// Consumes the builder and constructs a [`AwsEcsClusterConfigurationDetails`](crate::types::AwsEcsClusterConfigurationDetails).
     pub fn build(self) -> crate::types::AwsEcsClusterConfigurationDetails {
         crate::types::AwsEcsClusterConfigurationDetails {

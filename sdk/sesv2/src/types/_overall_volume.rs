@@ -63,6 +63,10 @@ impl OverallVolumeBuilder {
         self.volume_statistics = input;
         self
     }
+    /// <p>An object that contains information about the numbers of messages that arrived in recipients' inboxes and junk mail folders.</p>
+    pub fn get_volume_statistics(&self) -> &::std::option::Option<crate::types::VolumeStatistics> {
+        &self.volume_statistics
+    }
     /// <p>The percentage of emails that were sent from the domain that were read by their recipients.</p>
     pub fn read_rate_percent(mut self, input: f64) -> Self {
         self.read_rate_percent = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl OverallVolumeBuilder {
     pub fn set_read_rate_percent(mut self, input: ::std::option::Option<f64>) -> Self {
         self.read_rate_percent = input;
         self
+    }
+    /// <p>The percentage of emails that were sent from the domain that were read by their recipients.</p>
+    pub fn get_read_rate_percent(&self) -> &::std::option::Option<f64> {
+        &self.read_rate_percent
     }
     /// Appends an item to `domain_isp_placements`.
     ///
@@ -91,6 +99,12 @@ impl OverallVolumeBuilder {
     ) -> Self {
         self.domain_isp_placements = input;
         self
+    }
+    /// <p>An object that contains inbox and junk mail placement metrics for individual email providers.</p>
+    pub fn get_domain_isp_placements(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainIspPlacement>> {
+        &self.domain_isp_placements
     }
     /// Consumes the builder and constructs a [`OverallVolume`](crate::types::OverallVolume).
     pub fn build(self) -> crate::types::OverallVolume {

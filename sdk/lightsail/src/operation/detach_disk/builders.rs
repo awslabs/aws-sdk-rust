@@ -37,6 +37,10 @@ impl DetachDiskFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DetachDisk as a reference.
+    pub fn as_input(&self) -> &crate::operation::detach_disk::builders::DetachDiskInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,5 +122,9 @@ impl DetachDiskFluentBuilder {
     pub fn set_disk_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_disk_name(input);
         self
+    }
+    /// <p>The unique name of the disk you want to detach from your instance (e.g., <code>my-disk</code>).</p>
+    pub fn get_disk_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_disk_name()
     }
 }

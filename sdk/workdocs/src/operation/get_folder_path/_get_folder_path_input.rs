@@ -86,6 +86,10 @@ impl GetFolderPathInputBuilder {
         self.authentication_token = input;
         self
     }
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authentication_token
+    }
     /// <p>The ID of the folder.</p>
     pub fn folder_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.folder_id = ::std::option::Option::Some(input.into());
@@ -95,6 +99,10 @@ impl GetFolderPathInputBuilder {
     pub fn set_folder_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.folder_id = input;
         self
+    }
+    /// <p>The ID of the folder.</p>
+    pub fn get_folder_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.folder_id
     }
     /// <p>The maximum number of levels in the hierarchy to return.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -106,6 +114,10 @@ impl GetFolderPathInputBuilder {
         self.limit = input;
         self
     }
+    /// <p>The maximum number of levels in the hierarchy to return.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
+    }
     /// <p>A comma-separated list of values. Specify "NAME" to include the names of the parent folders.</p>
     pub fn fields(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fields = ::std::option::Option::Some(input.into());
@@ -116,6 +128,10 @@ impl GetFolderPathInputBuilder {
         self.fields = input;
         self
     }
+    /// <p>A comma-separated list of values. Specify "NAME" to include the names of the parent folders.</p>
+    pub fn get_fields(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fields
+    }
     /// <p>This value is not supported.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -125,6 +141,10 @@ impl GetFolderPathInputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>This value is not supported.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// Consumes the builder and constructs a [`GetFolderPathInput`](crate::operation::get_folder_path::GetFolderPathInput).
     pub fn build(

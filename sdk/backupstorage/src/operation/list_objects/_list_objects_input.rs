@@ -93,6 +93,10 @@ impl ListObjectsInputBuilder {
         self.storage_job_id = input;
         self
     }
+    /// Storage job id
+    pub fn get_storage_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_job_id
+    }
     /// Optional, specifies the starting Object name to list from. Ignored if NextToken is not NULL
     pub fn starting_object_name(
         mut self,
@@ -108,6 +112,10 @@ impl ListObjectsInputBuilder {
     ) -> Self {
         self.starting_object_name = input;
         self
+    }
+    /// Optional, specifies the starting Object name to list from. Ignored if NextToken is not NULL
+    pub fn get_starting_object_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.starting_object_name
     }
     /// Optional, specifies the starting Object prefix to list from. Ignored if NextToken is not NULL
     pub fn starting_object_prefix(
@@ -125,6 +133,10 @@ impl ListObjectsInputBuilder {
         self.starting_object_prefix = input;
         self
     }
+    /// Optional, specifies the starting Object prefix to list from. Ignored if NextToken is not NULL
+    pub fn get_starting_object_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.starting_object_prefix
+    }
     /// Maximum objects count
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -135,6 +147,10 @@ impl ListObjectsInputBuilder {
         self.max_results = input;
         self
     }
+    /// Maximum objects count
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// Pagination token
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -144,6 +160,10 @@ impl ListObjectsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// Pagination token
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// (Optional) Created before filter
     pub fn created_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -158,6 +178,10 @@ impl ListObjectsInputBuilder {
         self.created_before = input;
         self
     }
+    /// (Optional) Created before filter
+    pub fn get_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_before
+    }
     /// (Optional) Created after filter
     pub fn created_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_after = ::std::option::Option::Some(input);
@@ -170,6 +194,10 @@ impl ListObjectsInputBuilder {
     ) -> Self {
         self.created_after = input;
         self
+    }
+    /// (Optional) Created after filter
+    pub fn get_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_after
     }
     /// Consumes the builder and constructs a [`ListObjectsInput`](crate::operation::list_objects::ListObjectsInput).
     pub fn build(

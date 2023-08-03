@@ -239,6 +239,10 @@ impl UpdateReplicationConfigurationInputBuilder {
         self.source_server_id = input;
         self
     }
+    /// <p>The ID of the Source Server for this Replication Configuration.</p>
+    pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_server_id
+    }
     /// <p>The name of the Replication Configuration.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -248,6 +252,10 @@ impl UpdateReplicationConfigurationInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the Replication Configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The subnet to be used by the replication staging area.</p>
     pub fn staging_area_subnet_id(
@@ -265,6 +273,10 @@ impl UpdateReplicationConfigurationInputBuilder {
         self.staging_area_subnet_id = input;
         self
     }
+    /// <p>The subnet to be used by the replication staging area.</p>
+    pub fn get_staging_area_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.staging_area_subnet_id
+    }
     /// <p>Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration.</p>
     pub fn associate_default_security_group(mut self, input: bool) -> Self {
         self.associate_default_security_group = ::std::option::Option::Some(input);
@@ -277,6 +289,10 @@ impl UpdateReplicationConfigurationInputBuilder {
     ) -> Self {
         self.associate_default_security_group = input;
         self
+    }
+    /// <p>Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration.</p>
+    pub fn get_associate_default_security_group(&self) -> &::std::option::Option<bool> {
+        &self.associate_default_security_group
     }
     /// Appends an item to `replication_servers_security_groups_i_ds`.
     ///
@@ -302,6 +318,12 @@ impl UpdateReplicationConfigurationInputBuilder {
         self.replication_servers_security_groups_i_ds = input;
         self
     }
+    /// <p>The security group IDs that will be used by the replication server.</p>
+    pub fn get_replication_servers_security_groups_i_ds(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.replication_servers_security_groups_i_ds
+    }
     /// <p>The instance type to be used for the replication server.</p>
     pub fn replication_server_instance_type(
         mut self,
@@ -318,6 +340,12 @@ impl UpdateReplicationConfigurationInputBuilder {
         self.replication_server_instance_type = input;
         self
     }
+    /// <p>The instance type to be used for the replication server.</p>
+    pub fn get_replication_server_instance_type(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.replication_server_instance_type
+    }
     /// <p>Whether to use a dedicated Replication Server in the replication staging area.</p>
     pub fn use_dedicated_replication_server(mut self, input: bool) -> Self {
         self.use_dedicated_replication_server = ::std::option::Option::Some(input);
@@ -330,6 +358,10 @@ impl UpdateReplicationConfigurationInputBuilder {
     ) -> Self {
         self.use_dedicated_replication_server = input;
         self
+    }
+    /// <p>Whether to use a dedicated Replication Server in the replication staging area.</p>
+    pub fn get_use_dedicated_replication_server(&self) -> &::std::option::Option<bool> {
+        &self.use_dedicated_replication_server
     }
     /// <p>The Staging Disk EBS volume type to be used during replication.</p>
     pub fn default_large_staging_disk_type(
@@ -348,6 +380,13 @@ impl UpdateReplicationConfigurationInputBuilder {
     ) -> Self {
         self.default_large_staging_disk_type = input;
         self
+    }
+    /// <p>The Staging Disk EBS volume type to be used during replication.</p>
+    pub fn get_default_large_staging_disk_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReplicationConfigurationDefaultLargeStagingDiskType>
+    {
+        &self.default_large_staging_disk_type
     }
     /// Appends an item to `replicated_disks`.
     ///
@@ -373,6 +412,13 @@ impl UpdateReplicationConfigurationInputBuilder {
         self.replicated_disks = input;
         self
     }
+    /// <p>The configuration of the disks of the Source Server to be replicated.</p>
+    pub fn get_replicated_disks(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationConfigurationReplicatedDisk>>
+    {
+        &self.replicated_disks
+    }
     /// <p>The type of EBS encryption to be used during replication.</p>
     pub fn ebs_encryption(
         mut self,
@@ -388,6 +434,12 @@ impl UpdateReplicationConfigurationInputBuilder {
     ) -> Self {
         self.ebs_encryption = input;
         self
+    }
+    /// <p>The type of EBS encryption to be used during replication.</p>
+    pub fn get_ebs_encryption(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReplicationConfigurationEbsEncryption> {
+        &self.ebs_encryption
     }
     /// <p>The ARN of the EBS encryption key to be used during replication.</p>
     pub fn ebs_encryption_key_arn(
@@ -405,6 +457,10 @@ impl UpdateReplicationConfigurationInputBuilder {
         self.ebs_encryption_key_arn = input;
         self
     }
+    /// <p>The ARN of the EBS encryption key to be used during replication.</p>
+    pub fn get_ebs_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ebs_encryption_key_arn
+    }
     /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Source Server in Mbps.</p>
     pub fn bandwidth_throttling(mut self, input: i64) -> Self {
         self.bandwidth_throttling = ::std::option::Option::Some(input);
@@ -414,6 +470,10 @@ impl UpdateReplicationConfigurationInputBuilder {
     pub fn set_bandwidth_throttling(mut self, input: ::std::option::Option<i64>) -> Self {
         self.bandwidth_throttling = input;
         self
+    }
+    /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Source Server in Mbps.</p>
+    pub fn get_bandwidth_throttling(&self) -> &::std::option::Option<i64> {
+        &self.bandwidth_throttling
     }
     /// <p>The data plane routing mechanism that will be used for replication.</p>
     pub fn data_plane_routing(
@@ -431,6 +491,12 @@ impl UpdateReplicationConfigurationInputBuilder {
         self.data_plane_routing = input;
         self
     }
+    /// <p>The data plane routing mechanism that will be used for replication.</p>
+    pub fn get_data_plane_routing(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReplicationConfigurationDataPlaneRouting> {
+        &self.data_plane_routing
+    }
     /// <p>Whether to create a Public IP for the Recovery Instance by default.</p>
     pub fn create_public_ip(mut self, input: bool) -> Self {
         self.create_public_ip = ::std::option::Option::Some(input);
@@ -440,6 +506,10 @@ impl UpdateReplicationConfigurationInputBuilder {
     pub fn set_create_public_ip(mut self, input: ::std::option::Option<bool>) -> Self {
         self.create_public_ip = input;
         self
+    }
+    /// <p>Whether to create a Public IP for the Recovery Instance by default.</p>
+    pub fn get_create_public_ip(&self) -> &::std::option::Option<bool> {
+        &self.create_public_ip
     }
     /// Adds a key-value pair to `staging_area_tags`.
     ///
@@ -466,6 +536,14 @@ impl UpdateReplicationConfigurationInputBuilder {
         self.staging_area_tags = input;
         self
     }
+    /// <p>A set of tags to be associated with all resources created in the replication staging area: EC2 replication server, EBS volumes, EBS snapshots, etc.</p>
+    pub fn get_staging_area_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.staging_area_tags
+    }
     /// Appends an item to `pit_policy`.
     ///
     /// To override the contents of this collection use [`set_pit_policy`](Self::set_pit_policy).
@@ -485,6 +563,12 @@ impl UpdateReplicationConfigurationInputBuilder {
         self.pit_policy = input;
         self
     }
+    /// <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
+    pub fn get_pit_policy(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PitPolicyRule>> {
+        &self.pit_policy
+    }
     /// <p>Whether to allow the AWS replication agent to automatically replicate newly added disks.</p>
     pub fn auto_replicate_new_disks(mut self, input: bool) -> Self {
         self.auto_replicate_new_disks = ::std::option::Option::Some(input);
@@ -494,6 +578,10 @@ impl UpdateReplicationConfigurationInputBuilder {
     pub fn set_auto_replicate_new_disks(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_replicate_new_disks = input;
         self
+    }
+    /// <p>Whether to allow the AWS replication agent to automatically replicate newly added disks.</p>
+    pub fn get_auto_replicate_new_disks(&self) -> &::std::option::Option<bool> {
+        &self.auto_replicate_new_disks
     }
     /// Consumes the builder and constructs a [`UpdateReplicationConfigurationInput`](crate::operation::update_replication_configuration::UpdateReplicationConfigurationInput).
     pub fn build(

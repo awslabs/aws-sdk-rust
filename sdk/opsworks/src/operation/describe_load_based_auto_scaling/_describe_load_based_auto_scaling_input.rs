@@ -48,6 +48,10 @@ impl DescribeLoadBasedAutoScalingInputBuilder {
         self.layer_ids = input;
         self
     }
+    /// <p>An array of layer IDs.</p>
+    pub fn get_layer_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.layer_ids
+    }
     /// Consumes the builder and constructs a [`DescribeLoadBasedAutoScalingInput`](crate::operation::describe_load_based_auto_scaling::DescribeLoadBasedAutoScalingInput).
     pub fn build(
         self,

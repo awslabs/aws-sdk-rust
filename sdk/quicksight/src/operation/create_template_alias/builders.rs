@@ -36,6 +36,12 @@ impl CreateTemplateAliasFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateTemplateAlias as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_template_alias::builders::CreateTemplateAliasInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl CreateTemplateAliasFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The ID of the Amazon Web Services account that contains the template that you creating an alias for.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>An ID for the template.</p>
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_id(input.into());
@@ -141,6 +151,10 @@ impl CreateTemplateAliasFluentBuilder {
     pub fn set_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_id(input);
         self
+    }
+    /// <p>An ID for the template.</p>
+    pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_id()
     }
     /// <p>The name that you want to give to the template alias that you're creating. Don't start the alias name with the <code>$</code> character. Alias names that start with <code>$</code> are reserved by Amazon QuickSight. </p>
     pub fn alias_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -152,6 +166,10 @@ impl CreateTemplateAliasFluentBuilder {
         self.inner = self.inner.set_alias_name(input);
         self
     }
+    /// <p>The name that you want to give to the template alias that you're creating. Don't start the alias name with the <code>$</code> character. Alias names that start with <code>$</code> are reserved by Amazon QuickSight. </p>
+    pub fn get_alias_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_alias_name()
+    }
     /// <p>The version number of the template.</p>
     pub fn template_version_number(mut self, input: i64) -> Self {
         self.inner = self.inner.template_version_number(input);
@@ -161,5 +179,9 @@ impl CreateTemplateAliasFluentBuilder {
     pub fn set_template_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_template_version_number(input);
         self
+    }
+    /// <p>The version number of the template.</p>
+    pub fn get_template_version_number(&self) -> &::std::option::Option<i64> {
+        self.inner.get_template_version_number()
     }
 }

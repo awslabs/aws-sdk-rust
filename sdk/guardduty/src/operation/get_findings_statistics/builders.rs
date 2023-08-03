@@ -36,6 +36,13 @@ impl GetFindingsStatisticsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetFindingsStatistics as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_findings_statistics::builders::GetFindingsStatisticsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl GetFindingsStatisticsFluentBuilder {
         self.inner = self.inner.set_detector_id(input);
         self
     }
+    /// <p>The ID of the detector that specifies the GuardDuty service whose findings' statistics you want to retrieve.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_detector_id()
+    }
     /// Appends an item to `FindingStatisticTypes`.
     ///
     /// To override the contents of this collection use [`set_finding_statistic_types`](Self::set_finding_statistic_types).
@@ -143,6 +154,12 @@ impl GetFindingsStatisticsFluentBuilder {
         self.inner = self.inner.set_finding_statistic_types(input);
         self
     }
+    /// <p>The types of finding statistics to retrieve.</p>
+    pub fn get_finding_statistic_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FindingStatisticType>> {
+        self.inner.get_finding_statistic_types()
+    }
     /// <p>Represents the criteria that is used for querying findings.</p>
     pub fn finding_criteria(mut self, input: crate::types::FindingCriteria) -> Self {
         self.inner = self.inner.finding_criteria(input);
@@ -155,5 +172,9 @@ impl GetFindingsStatisticsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_finding_criteria(input);
         self
+    }
+    /// <p>Represents the criteria that is used for querying findings.</p>
+    pub fn get_finding_criteria(&self) -> &::std::option::Option<crate::types::FindingCriteria> {
+        self.inner.get_finding_criteria()
     }
 }

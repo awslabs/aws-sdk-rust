@@ -56,6 +56,10 @@ impl CognitoUserPoolConfigBuilder {
         self.user_pool_id = input;
         self
     }
+    /// <p>The user pool ID.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_pool_id
+    }
     /// <p>The Amazon Web Services Region in which the user pool was created.</p>
     pub fn aws_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_region = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl CognitoUserPoolConfigBuilder {
     pub fn set_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_region = input;
         self
+    }
+    /// <p>The Amazon Web Services Region in which the user pool was created.</p>
+    pub fn get_aws_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_region
     }
     /// <p>A regular expression for validating the incoming Amazon Cognito user pool app client ID. If this value isn't set, no filtering is applied.</p>
     pub fn app_id_client_regex(
@@ -81,6 +89,10 @@ impl CognitoUserPoolConfigBuilder {
     ) -> Self {
         self.app_id_client_regex = input;
         self
+    }
+    /// <p>A regular expression for validating the incoming Amazon Cognito user pool app client ID. If this value isn't set, no filtering is applied.</p>
+    pub fn get_app_id_client_regex(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id_client_regex
     }
     /// Consumes the builder and constructs a [`CognitoUserPoolConfig`](crate::types::CognitoUserPoolConfig).
     pub fn build(self) -> crate::types::CognitoUserPoolConfig {

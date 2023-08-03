@@ -110,6 +110,10 @@ impl AssociationExecutionTargetBuilder {
         self.association_id = input;
         self
     }
+    /// <p>The association ID.</p>
+    pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_id
+    }
     /// <p>The association version.</p>
     pub fn association_version(
         mut self,
@@ -126,6 +130,10 @@ impl AssociationExecutionTargetBuilder {
         self.association_version = input;
         self
     }
+    /// <p>The association version.</p>
+    pub fn get_association_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_version
+    }
     /// <p>The execution ID.</p>
     pub fn execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_id = ::std::option::Option::Some(input.into());
@@ -136,6 +144,10 @@ impl AssociationExecutionTargetBuilder {
         self.execution_id = input;
         self
     }
+    /// <p>The execution ID.</p>
+    pub fn get_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_id
+    }
     /// <p>The resource ID, for example, the managed node ID where the association ran.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -145,6 +157,10 @@ impl AssociationExecutionTargetBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>The resource ID, for example, the managed node ID where the association ran.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// <p>The resource type, for example, EC2.</p>
     pub fn resource_type(
@@ -162,6 +178,10 @@ impl AssociationExecutionTargetBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The resource type, for example, EC2.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
+    }
     /// <p>The association execution status.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -171,6 +191,10 @@ impl AssociationExecutionTargetBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The association execution status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>Detailed information about the execution status.</p>
     pub fn detailed_status(
@@ -188,6 +212,10 @@ impl AssociationExecutionTargetBuilder {
         self.detailed_status = input;
         self
     }
+    /// <p>Detailed information about the execution status.</p>
+    pub fn get_detailed_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detailed_status
+    }
     /// <p>The date of the last execution.</p>
     pub fn last_execution_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_execution_date = ::std::option::Option::Some(input);
@@ -201,6 +229,10 @@ impl AssociationExecutionTargetBuilder {
         self.last_execution_date = input;
         self
     }
+    /// <p>The date of the last execution.</p>
+    pub fn get_last_execution_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_execution_date
+    }
     /// <p>The location where the association details are saved.</p>
     pub fn output_source(mut self, input: crate::types::OutputSource) -> Self {
         self.output_source = ::std::option::Option::Some(input);
@@ -213,6 +245,10 @@ impl AssociationExecutionTargetBuilder {
     ) -> Self {
         self.output_source = input;
         self
+    }
+    /// <p>The location where the association details are saved.</p>
+    pub fn get_output_source(&self) -> &::std::option::Option<crate::types::OutputSource> {
+        &self.output_source
     }
     /// Consumes the builder and constructs a [`AssociationExecutionTarget`](crate::types::AssociationExecutionTarget).
     pub fn build(self) -> crate::types::AssociationExecutionTarget {

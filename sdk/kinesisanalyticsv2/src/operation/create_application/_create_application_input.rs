@@ -109,6 +109,10 @@ impl CreateApplicationInputBuilder {
         self.application_name = input;
         self
     }
+    /// <p>The name of your application (for example, <code>sample-app</code>).</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// <p>A summary description of the application.</p>
     pub fn application_description(
         mut self,
@@ -125,6 +129,10 @@ impl CreateApplicationInputBuilder {
         self.application_description = input;
         self
     }
+    /// <p>A summary description of the application.</p>
+    pub fn get_application_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_description
+    }
     /// <p>The runtime environment for the application.</p>
     pub fn runtime_environment(mut self, input: crate::types::RuntimeEnvironment) -> Self {
         self.runtime_environment = ::std::option::Option::Some(input);
@@ -137,6 +145,12 @@ impl CreateApplicationInputBuilder {
     ) -> Self {
         self.runtime_environment = input;
         self
+    }
+    /// <p>The runtime environment for the application.</p>
+    pub fn get_runtime_environment(
+        &self,
+    ) -> &::std::option::Option<crate::types::RuntimeEnvironment> {
+        &self.runtime_environment
     }
     /// <p>The IAM role used by the application to access Kinesis data streams, Kinesis Data Firehose delivery streams, Amazon S3 objects, and other external resources.</p>
     pub fn service_execution_role(
@@ -154,6 +168,10 @@ impl CreateApplicationInputBuilder {
         self.service_execution_role = input;
         self
     }
+    /// <p>The IAM role used by the application to access Kinesis data streams, Kinesis Data Firehose delivery streams, Amazon S3 objects, and other external resources.</p>
+    pub fn get_service_execution_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_execution_role
+    }
     /// <p>Use this parameter to configure the application.</p>
     pub fn application_configuration(
         mut self,
@@ -169,6 +187,12 @@ impl CreateApplicationInputBuilder {
     ) -> Self {
         self.application_configuration = input;
         self
+    }
+    /// <p>Use this parameter to configure the application.</p>
+    pub fn get_application_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationConfiguration> {
+        &self.application_configuration
     }
     /// Appends an item to `cloud_watch_logging_options`.
     ///
@@ -192,6 +216,12 @@ impl CreateApplicationInputBuilder {
         self.cloud_watch_logging_options = input;
         self
     }
+    /// <p>Use this parameter to configure an Amazon CloudWatch log stream to monitor application configuration errors. </p>
+    pub fn get_cloud_watch_logging_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOption>> {
+        &self.cloud_watch_logging_options
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -211,6 +241,10 @@ impl CreateApplicationInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics For Flink application. To create a Kinesis Data Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.</p>
     pub fn application_mode(mut self, input: crate::types::ApplicationMode) -> Self {
         self.application_mode = ::std::option::Option::Some(input);
@@ -223,6 +257,10 @@ impl CreateApplicationInputBuilder {
     ) -> Self {
         self.application_mode = input;
         self
+    }
+    /// <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics For Flink application. To create a Kinesis Data Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.</p>
+    pub fn get_application_mode(&self) -> &::std::option::Option<crate::types::ApplicationMode> {
+        &self.application_mode
     }
     /// Consumes the builder and constructs a [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
     pub fn build(

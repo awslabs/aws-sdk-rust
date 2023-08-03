@@ -48,6 +48,10 @@ impl DeleteBranchInputBuilder {
         self.app_id = input;
         self
     }
+    /// <p> The unique ID for an Amplify app. </p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// <p> The name for the branch. </p>
     pub fn branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch_name = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl DeleteBranchInputBuilder {
     pub fn set_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.branch_name = input;
         self
+    }
+    /// <p> The name for the branch. </p>
+    pub fn get_branch_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.branch_name
     }
     /// Consumes the builder and constructs a [`DeleteBranchInput`](crate::operation::delete_branch::DeleteBranchInput).
     pub fn build(

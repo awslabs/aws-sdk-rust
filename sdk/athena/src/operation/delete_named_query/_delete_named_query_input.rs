@@ -46,6 +46,10 @@ impl DeleteNamedQueryInputBuilder {
         self.named_query_id = input;
         self
     }
+    /// <p>The unique ID of the query to delete.</p>
+    pub fn get_named_query_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.named_query_id
+    }
     /// Consumes the builder and constructs a [`DeleteNamedQueryInput`](crate::operation::delete_named_query::DeleteNamedQueryInput).
     pub fn build(
         self,

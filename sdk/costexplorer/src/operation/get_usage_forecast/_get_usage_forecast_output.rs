@@ -59,6 +59,10 @@ impl GetUsageForecastOutputBuilder {
         self.total = input;
         self
     }
+    /// <p>How much you're forecasted to use over the forecast period.</p>
+    pub fn get_total(&self) -> &::std::option::Option<crate::types::MetricValue> {
+        &self.total
+    }
     /// Appends an item to `forecast_results_by_time`.
     ///
     /// To override the contents of this collection use [`set_forecast_results_by_time`](Self::set_forecast_results_by_time).
@@ -77,6 +81,12 @@ impl GetUsageForecastOutputBuilder {
     ) -> Self {
         self.forecast_results_by_time = input;
         self
+    }
+    /// <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts, this is a list of days. For <code>MONTHLY</code> forecasts, this is a list of months.</p>
+    pub fn get_forecast_results_by_time(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ForecastResult>> {
+        &self.forecast_results_by_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -49,6 +49,10 @@ impl DescribeManagedEndpointInputBuilder {
         self.id = input;
         self
     }
+    /// <p>This output displays ID of the managed endpoint.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The ID of the endpoint's virtual cluster.</p>
     pub fn virtual_cluster_id(
         mut self,
@@ -64,6 +68,10 @@ impl DescribeManagedEndpointInputBuilder {
     ) -> Self {
         self.virtual_cluster_id = input;
         self
+    }
+    /// <p>The ID of the endpoint's virtual cluster.</p>
+    pub fn get_virtual_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_cluster_id
     }
     /// Consumes the builder and constructs a [`DescribeManagedEndpointInput`](crate::operation::describe_managed_endpoint::DescribeManagedEndpointInput).
     pub fn build(

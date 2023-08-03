@@ -73,6 +73,13 @@ impl DescribeDirectoriesInputBuilder {
         self.directory_ids = input;
         self
     }
+    /// <p>A list of identifiers of the directories for which to obtain the information. If this member is null, all directories that belong to the current account are returned.</p>
+    /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
+    pub fn get_directory_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.directory_ids
+    }
     /// <p>The <code>DescribeDirectoriesResult.NextToken</code> value from a previous call to <code>DescribeDirectories</code>. Pass null if this is the first call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -83,6 +90,10 @@ impl DescribeDirectoriesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The <code>DescribeDirectoriesResult.NextToken</code> value from a previous call to <code>DescribeDirectories</code>. Pass null if this is the first call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -92,6 +103,10 @@ impl DescribeDirectoriesInputBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
+    }
+    /// <p>The maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// Consumes the builder and constructs a [`DescribeDirectoriesInput`](crate::operation::describe_directories::DescribeDirectoriesInput).
     pub fn build(

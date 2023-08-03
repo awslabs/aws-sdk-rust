@@ -51,6 +51,10 @@ impl UnsuccessfulItemBuilder {
         self.error = input;
         self
     }
+    /// <p>Information about the error.</p>
+    pub fn get_error(&self) -> &::std::option::Option<crate::types::UnsuccessfulItemError> {
+        &self.error
+    }
     /// <p>The ID of the resource.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl UnsuccessfulItemBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>The ID of the resource.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// Consumes the builder and constructs a [`UnsuccessfulItem`](crate::types::UnsuccessfulItem).
     pub fn build(self) -> crate::types::UnsuccessfulItem {

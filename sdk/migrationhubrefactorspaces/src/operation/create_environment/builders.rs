@@ -37,6 +37,12 @@ impl CreateEnvironmentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateEnvironment as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_environment::builders::CreateEnvironmentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl CreateEnvironmentFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the environment.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The description of the environment.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -136,6 +146,10 @@ impl CreateEnvironmentFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the environment.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The network fabric type of the environment.</p>
     pub fn network_fabric_type(mut self, input: crate::types::NetworkFabricType) -> Self {
@@ -149,6 +163,12 @@ impl CreateEnvironmentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_network_fabric_type(input);
         self
+    }
+    /// <p>The network fabric type of the environment.</p>
+    pub fn get_network_fabric_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkFabricType> {
+        self.inner.get_network_fabric_type()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -173,6 +193,14 @@ impl CreateEnvironmentFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tags to assign to the environment. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -182,5 +210,9 @@ impl CreateEnvironmentFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

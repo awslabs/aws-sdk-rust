@@ -148,6 +148,10 @@ impl CreateOriginEndpointInputBuilder {
         self.channel_group_name = input;
         self
     }
+    /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
+    pub fn get_channel_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_group_name
+    }
     /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. </p>
     pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_name = ::std::option::Option::Some(input.into());
@@ -157,6 +161,10 @@ impl CreateOriginEndpointInputBuilder {
     pub fn set_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_name = input;
         self
+    }
+    /// <p>The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. </p>
+    pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_name
     }
     /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and must be unique for your account in the AWS Region and channel. You can't use spaces in the name. You can't change the name after you create the endpoint.</p>
     pub fn origin_endpoint_name(
@@ -174,6 +182,10 @@ impl CreateOriginEndpointInputBuilder {
         self.origin_endpoint_name = input;
         self
     }
+    /// <p>The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and must be unique for your account in the AWS Region and channel. You can't use spaces in the name. You can't change the name after you create the endpoint.</p>
+    pub fn get_origin_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.origin_endpoint_name
+    }
     /// <p>The type of container to attach to this origin endpoint. A container type is a file format that encapsulates one or more media streams, such as audio and video, into a single file. You can't change the container type after you create the endpoint.</p>
     pub fn container_type(mut self, input: crate::types::ContainerType) -> Self {
         self.container_type = ::std::option::Option::Some(input);
@@ -187,6 +199,10 @@ impl CreateOriginEndpointInputBuilder {
         self.container_type = input;
         self
     }
+    /// <p>The type of container to attach to this origin endpoint. A container type is a file format that encapsulates one or more media streams, such as audio and video, into a single file. You can't change the container type after you create the endpoint.</p>
+    pub fn get_container_type(&self) -> &::std::option::Option<crate::types::ContainerType> {
+        &self.container_type
+    }
     /// <p>The segment configuration, including the segment name, duration, and other configuration values.</p>
     pub fn segment(mut self, input: crate::types::Segment) -> Self {
         self.segment = ::std::option::Option::Some(input);
@@ -196,6 +212,10 @@ impl CreateOriginEndpointInputBuilder {
     pub fn set_segment(mut self, input: ::std::option::Option<crate::types::Segment>) -> Self {
         self.segment = input;
         self
+    }
+    /// <p>The segment configuration, including the segment name, duration, and other configuration values.</p>
+    pub fn get_segment(&self) -> &::std::option::Option<crate::types::Segment> {
+        &self.segment
     }
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -207,6 +227,10 @@ impl CreateOriginEndpointInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>Enter any descriptive text that helps you to identify the origin endpoint.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -217,6 +241,10 @@ impl CreateOriginEndpointInputBuilder {
         self.description = input;
         self
     }
+    /// <p>Enter any descriptive text that helps you to identify the origin endpoint.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The size of the window (in seconds) to create a window of the live stream that's available for on-demand viewing. Viewers can start-over or catch-up on content that falls within the window. The maximum startover window is 1,209,600 seconds (14 days).</p>
     pub fn startover_window_seconds(mut self, input: i32) -> Self {
         self.startover_window_seconds = ::std::option::Option::Some(input);
@@ -226,6 +254,10 @@ impl CreateOriginEndpointInputBuilder {
     pub fn set_startover_window_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.startover_window_seconds = input;
         self
+    }
+    /// <p>The size of the window (in seconds) to create a window of the live stream that's available for on-demand viewing. Viewers can start-over or catch-up on content that falls within the window. The maximum startover window is 1,209,600 seconds (14 days).</p>
+    pub fn get_startover_window_seconds(&self) -> &::std::option::Option<i32> {
+        &self.startover_window_seconds
     }
     /// Appends an item to `hls_manifests`.
     ///
@@ -245,6 +277,12 @@ impl CreateOriginEndpointInputBuilder {
     ) -> Self {
         self.hls_manifests = input;
         self
+    }
+    /// <p>An HTTP live streaming (HLS) manifest configuration.</p>
+    pub fn get_hls_manifests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateHlsManifestConfiguration>> {
+        &self.hls_manifests
     }
     /// Appends an item to `low_latency_hls_manifests`.
     ///
@@ -269,6 +307,14 @@ impl CreateOriginEndpointInputBuilder {
     ) -> Self {
         self.low_latency_hls_manifests = input;
         self
+    }
+    /// <p>A low-latency HLS manifest configuration.</p>
+    pub fn get_low_latency_hls_manifests(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::CreateLowLatencyHlsManifestConfiguration>,
+    > {
+        &self.low_latency_hls_manifests
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -298,6 +344,16 @@ impl CreateOriginEndpointInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A comma-separated list of tag key:value pairs that you define. For example:</p>
+    /// <p> <code>"Key1": "Value1",</code> </p>
+    /// <p> <code>"Key2": "Value2"</code> </p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateOriginEndpointInput`](crate::operation::create_origin_endpoint::CreateOriginEndpointInput).
     pub fn build(

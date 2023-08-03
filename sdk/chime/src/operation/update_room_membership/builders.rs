@@ -36,6 +36,12 @@ impl UpdateRoomMembershipFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateRoomMembership as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_room_membership::builders::UpdateRoomMembershipInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateRoomMembershipFluentBuilder {
         self.inner = self.inner.set_account_id(input);
         self
     }
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// <p>The room ID.</p>
     pub fn room_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.room_id(input.into());
@@ -136,6 +146,10 @@ impl UpdateRoomMembershipFluentBuilder {
         self.inner = self.inner.set_room_id(input);
         self
     }
+    /// <p>The room ID.</p>
+    pub fn get_room_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_room_id()
+    }
     /// <p>The member ID.</p>
     pub fn member_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.member_id(input.into());
@@ -145,6 +159,10 @@ impl UpdateRoomMembershipFluentBuilder {
     pub fn set_member_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_member_id(input);
         self
+    }
+    /// <p>The member ID.</p>
+    pub fn get_member_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_member_id()
     }
     /// <p>The role of the member.</p>
     pub fn role(mut self, input: crate::types::RoomMembershipRole) -> Self {
@@ -158,5 +176,9 @@ impl UpdateRoomMembershipFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_role(input);
         self
+    }
+    /// <p>The role of the member.</p>
+    pub fn get_role(&self) -> &::std::option::Option<crate::types::RoomMembershipRole> {
+        self.inner.get_role()
     }
 }

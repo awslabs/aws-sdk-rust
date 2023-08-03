@@ -115,6 +115,10 @@ impl DatasetGroupBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the dataset group.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
     pub fn dataset_group_arn(
         mut self,
@@ -130,6 +134,10 @@ impl DatasetGroupBuilder {
     ) -> Self {
         self.dataset_group_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
+    pub fn get_dataset_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_group_arn
     }
     /// <p>The current status of the dataset group.</p>
     /// <p>A dataset group can be in one of the following states:</p>
@@ -151,6 +159,15 @@ impl DatasetGroupBuilder {
         self.status = input;
         self
     }
+    /// <p>The current status of the dataset group.</p>
+    /// <p>A dataset group can be in one of the following states:</p>
+    /// <ul>
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// <li> <p>DELETE PENDING</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>The ARN of the IAM role that has permissions to create the dataset group.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -161,6 +178,10 @@ impl DatasetGroupBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The ARN of the IAM role that has permissions to create the dataset group.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt the datasets.</p>
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_arn = ::std::option::Option::Some(input.into());
@@ -170,6 +191,10 @@ impl DatasetGroupBuilder {
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt the datasets.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
     }
     /// <p>The creation date and time (in Unix time) of the dataset group.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -184,6 +209,10 @@ impl DatasetGroupBuilder {
         self.creation_date_time = input;
         self
     }
+    /// <p>The creation date and time (in Unix time) of the dataset group.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
+    }
     /// <p>The last update date and time (in Unix time) of the dataset group.</p>
     pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date_time = ::std::option::Option::Some(input);
@@ -196,6 +225,12 @@ impl DatasetGroupBuilder {
     ) -> Self {
         self.last_updated_date_time = input;
         self
+    }
+    /// <p>The last update date and time (in Unix time) of the dataset group.</p>
+    pub fn get_last_updated_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date_time
     }
     /// <p>If creating a dataset group fails, provides the reason why.</p>
     pub fn failure_reason(
@@ -213,6 +248,10 @@ impl DatasetGroupBuilder {
         self.failure_reason = input;
         self
     }
+    /// <p>If creating a dataset group fails, provides the reason why.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
+    }
     /// <p>The domain of a Domain dataset group.</p>
     pub fn domain(mut self, input: crate::types::Domain) -> Self {
         self.domain = ::std::option::Option::Some(input);
@@ -222,6 +261,10 @@ impl DatasetGroupBuilder {
     pub fn set_domain(mut self, input: ::std::option::Option<crate::types::Domain>) -> Self {
         self.domain = input;
         self
+    }
+    /// <p>The domain of a Domain dataset group.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<crate::types::Domain> {
+        &self.domain
     }
     /// Consumes the builder and constructs a [`DatasetGroup`](crate::types::DatasetGroup).
     pub fn build(self) -> crate::types::DatasetGroup {

@@ -40,6 +40,10 @@ impl AwsJobPresignedUrlConfigBuilder {
         self.expires_in_sec = input;
         self
     }
+    /// <p>How long (in seconds) pre-signed URLs are valid. Valid values are 60 - 3600, the default value is 1800 seconds. Pre-signed URLs are generated when a request for the job document is received.</p>
+    pub fn get_expires_in_sec(&self) -> &::std::option::Option<i64> {
+        &self.expires_in_sec
+    }
     /// Consumes the builder and constructs a [`AwsJobPresignedUrlConfig`](crate::types::AwsJobPresignedUrlConfig).
     pub fn build(self) -> crate::types::AwsJobPresignedUrlConfig {
         crate::types::AwsJobPresignedUrlConfig {

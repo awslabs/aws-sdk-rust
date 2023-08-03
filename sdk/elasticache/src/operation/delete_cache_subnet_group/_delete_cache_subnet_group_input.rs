@@ -52,6 +52,11 @@ impl DeleteCacheSubnetGroupInputBuilder {
         self.cache_subnet_group_name = input;
         self
     }
+    /// <p>The name of the cache subnet group to delete.</p>
+    /// <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p>
+    pub fn get_cache_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_subnet_group_name
+    }
     /// Consumes the builder and constructs a [`DeleteCacheSubnetGroupInput`](crate::operation::delete_cache_subnet_group::DeleteCacheSubnetGroupInput).
     pub fn build(
         self,

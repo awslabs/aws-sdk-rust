@@ -71,6 +71,12 @@ impl BatchGetAggregateResourceConfigOutputBuilder {
         self.base_configuration_items = input;
         self
     }
+    /// <p>A list that contains the current configuration of one or more resources.</p>
+    pub fn get_base_configuration_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BaseConfigurationItem>> {
+        &self.base_configuration_items
+    }
     /// Appends an item to `unprocessed_resource_identifiers`.
     ///
     /// To override the contents of this collection use [`set_unprocessed_resource_identifiers`](Self::set_unprocessed_resource_identifiers).
@@ -92,6 +98,12 @@ impl BatchGetAggregateResourceConfigOutputBuilder {
     ) -> Self {
         self.unprocessed_resource_identifiers = input;
         self
+    }
+    /// <p>A list of resource identifiers that were not processed with current scope. The list is empty if all the resources are processed.</p>
+    pub fn get_unprocessed_resource_identifiers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregateResourceIdentifier>> {
+        &self.unprocessed_resource_identifiers
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -44,6 +44,10 @@ impl UpdateLoggingConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateLoggingConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_logging_configuration::builders::UpdateLoggingConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +140,11 @@ impl UpdateLoggingConfigurationFluentBuilder {
         self.inner = self.inner.set_firewall_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn get_firewall_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_firewall_arn()
+    }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
     pub fn firewall_name(
@@ -154,6 +163,11 @@ impl UpdateLoggingConfigurationFluentBuilder {
         self.inner = self.inner.set_firewall_name(input);
         self
     }
+    /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both. </p>
+    pub fn get_firewall_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_firewall_name()
+    }
     /// <p>Defines how Network Firewall performs logging for a firewall. If you omit this setting, Network Firewall disables logging for the firewall.</p>
     pub fn logging_configuration(mut self, input: crate::types::LoggingConfiguration) -> Self {
         self.inner = self.inner.logging_configuration(input);
@@ -166,5 +180,11 @@ impl UpdateLoggingConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_logging_configuration(input);
         self
+    }
+    /// <p>Defines how Network Firewall performs logging for a firewall. If you omit this setting, Network Firewall disables logging for the firewall.</p>
+    pub fn get_logging_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::LoggingConfiguration> {
+        self.inner.get_logging_configuration()
     }
 }

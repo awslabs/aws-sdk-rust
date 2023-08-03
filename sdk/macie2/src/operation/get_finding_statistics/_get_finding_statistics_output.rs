@@ -56,6 +56,12 @@ impl GetFindingStatisticsOutputBuilder {
         self.counts_by_group = input;
         self
     }
+    /// <p>An array of objects, one for each group of findings that matches the filter criteria specified in the request.</p>
+    pub fn get_counts_by_group(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupCount>> {
+        &self.counts_by_group
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

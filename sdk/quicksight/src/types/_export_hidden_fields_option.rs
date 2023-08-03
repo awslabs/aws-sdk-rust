@@ -43,6 +43,12 @@ impl ExportHiddenFieldsOptionBuilder {
         self.availability_status = input;
         self
     }
+    /// <p>The status of the export hidden fields options of a dashbaord.</p>
+    pub fn get_availability_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::DashboardBehavior> {
+        &self.availability_status
+    }
     /// Consumes the builder and constructs a [`ExportHiddenFieldsOption`](crate::types::ExportHiddenFieldsOption).
     pub fn build(self) -> crate::types::ExportHiddenFieldsOption {
         crate::types::ExportHiddenFieldsOption {

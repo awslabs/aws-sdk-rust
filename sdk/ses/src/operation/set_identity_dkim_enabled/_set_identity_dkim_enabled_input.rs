@@ -50,6 +50,10 @@ impl SetIdentityDkimEnabledInputBuilder {
         self.identity = input;
         self
     }
+    /// <p>The identity for which DKIM signing should be enabled or disabled.</p>
+    pub fn get_identity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity
+    }
     /// <p>Sets whether DKIM signing is enabled for an identity. Set to <code>true</code> to enable DKIM signing for this identity; <code>false</code> to disable it. </p>
     pub fn dkim_enabled(mut self, input: bool) -> Self {
         self.dkim_enabled = ::std::option::Option::Some(input);
@@ -59,6 +63,10 @@ impl SetIdentityDkimEnabledInputBuilder {
     pub fn set_dkim_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dkim_enabled = input;
         self
+    }
+    /// <p>Sets whether DKIM signing is enabled for an identity. Set to <code>true</code> to enable DKIM signing for this identity; <code>false</code> to disable it. </p>
+    pub fn get_dkim_enabled(&self) -> &::std::option::Option<bool> {
+        &self.dkim_enabled
     }
     /// Consumes the builder and constructs a [`SetIdentityDkimEnabledInput`](crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledInput).
     pub fn build(

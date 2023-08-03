@@ -60,6 +60,10 @@ impl GetReservedInstancesExchangeQuoteInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// Appends an item to `reserved_instance_ids`.
     ///
     /// To override the contents of this collection use [`set_reserved_instance_ids`](Self::set_reserved_instance_ids).
@@ -82,6 +86,12 @@ impl GetReservedInstancesExchangeQuoteInputBuilder {
         self.reserved_instance_ids = input;
         self
     }
+    /// <p>The IDs of the Convertible Reserved Instances to exchange.</p>
+    pub fn get_reserved_instance_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.reserved_instance_ids
+    }
     /// Appends an item to `target_configurations`.
     ///
     /// To override the contents of this collection use [`set_target_configurations`](Self::set_target_configurations).
@@ -103,6 +113,12 @@ impl GetReservedInstancesExchangeQuoteInputBuilder {
     ) -> Self {
         self.target_configurations = input;
         self
+    }
+    /// <p>The configuration of the target Convertible Reserved Instance to exchange for your current Convertible Reserved Instances.</p>
+    pub fn get_target_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetConfigurationRequest>> {
+        &self.target_configurations
     }
     /// Consumes the builder and constructs a [`GetReservedInstancesExchangeQuoteInput`](crate::operation::get_reserved_instances_exchange_quote::GetReservedInstancesExchangeQuoteInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_reserved_instances_exchange_quote::GetReservedInstancesExchangeQuoteInput, ::aws_smithy_http::operation::error::BuildError>{

@@ -58,6 +58,10 @@ impl UpdateProfilingGroupInputBuilder {
         self.profiling_group_name = input;
         self
     }
+    /// <p>The name of the profiling group to update.</p>
+    pub fn get_profiling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profiling_group_name
+    }
     /// <p> Specifies whether profiling is enabled or disabled for a profiling group. </p>
     pub fn agent_orchestration_config(
         mut self,
@@ -73,6 +77,12 @@ impl UpdateProfilingGroupInputBuilder {
     ) -> Self {
         self.agent_orchestration_config = input;
         self
+    }
+    /// <p> Specifies whether profiling is enabled or disabled for a profiling group. </p>
+    pub fn get_agent_orchestration_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::AgentOrchestrationConfig> {
+        &self.agent_orchestration_config
     }
     /// Consumes the builder and constructs a [`UpdateProfilingGroupInput`](crate::operation::update_profiling_group::UpdateProfilingGroupInput).
     pub fn build(

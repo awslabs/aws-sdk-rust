@@ -90,6 +90,10 @@ impl GetDeliverabilityDashboardOptionsOutputBuilder {
         self.dashboard_enabled = input;
         self
     }
+    /// <p>Specifies whether the Deliverability dashboard is enabled for your Amazon Pinpoint account. If this value is <code>true</code>, the dashboard is enabled.</p>
+    pub fn get_dashboard_enabled(&self) -> &::std::option::Option<bool> {
+        &self.dashboard_enabled
+    }
     /// <p>The date, in Unix time format, when your current subscription to the Deliverability dashboard is scheduled to expire, if your subscription is scheduled to expire at the end of the current calendar month. This value is null if you have an active subscription that isn’t due to expire at the end of the month.</p>
     pub fn subscription_expiry_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.subscription_expiry_date = ::std::option::Option::Some(input);
@@ -102,6 +106,12 @@ impl GetDeliverabilityDashboardOptionsOutputBuilder {
     ) -> Self {
         self.subscription_expiry_date = input;
         self
+    }
+    /// <p>The date, in Unix time format, when your current subscription to the Deliverability dashboard is scheduled to expire, if your subscription is scheduled to expire at the end of the current calendar month. This value is null if you have an active subscription that isn’t due to expire at the end of the month.</p>
+    pub fn get_subscription_expiry_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.subscription_expiry_date
     }
     /// <p>The current status of your Deliverability dashboard subscription. If this value is <code>PENDING_EXPIRATION</code>, your subscription is scheduled to expire at the end of the current calendar month.</p>
     pub fn account_status(
@@ -118,6 +128,12 @@ impl GetDeliverabilityDashboardOptionsOutputBuilder {
     ) -> Self {
         self.account_status = input;
         self
+    }
+    /// <p>The current status of your Deliverability dashboard subscription. If this value is <code>PENDING_EXPIRATION</code>, your subscription is scheduled to expire at the end of the current calendar month.</p>
+    pub fn get_account_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeliverabilityDashboardAccountStatus> {
+        &self.account_status
     }
     /// Appends an item to `active_subscribed_domains`.
     ///
@@ -142,6 +158,13 @@ impl GetDeliverabilityDashboardOptionsOutputBuilder {
     ) -> Self {
         self.active_subscribed_domains = input;
         self
+    }
+    /// <p>An array of objects, one for each verified domain that you use to send email and currently has an active Deliverability dashboard subscription that isn’t scheduled to expire at the end of the current calendar month.</p>
+    pub fn get_active_subscribed_domains(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainDeliverabilityTrackingOption>>
+    {
+        &self.active_subscribed_domains
     }
     /// Appends an item to `pending_expiration_subscribed_domains`.
     ///
@@ -168,6 +191,13 @@ impl GetDeliverabilityDashboardOptionsOutputBuilder {
     ) -> Self {
         self.pending_expiration_subscribed_domains = input;
         self
+    }
+    /// <p>An array of objects, one for each verified domain that you use to send email and currently has an active Deliverability dashboard subscription that's scheduled to expire at the end of the current calendar month.</p>
+    pub fn get_pending_expiration_subscribed_domains(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainDeliverabilityTrackingOption>>
+    {
+        &self.pending_expiration_subscribed_domains
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

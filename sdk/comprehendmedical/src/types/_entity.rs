@@ -104,6 +104,10 @@ impl EntityBuilder {
         self.id = input;
         self
     }
+    /// <p> The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier. </p>
+    pub fn get_id(&self) -> &::std::option::Option<i32> {
+        &self.id
+    }
     /// <p> The 0-based character offset in the input text that shows where the entity begins. The offset returns the UTF-8 code point in the string. </p>
     pub fn begin_offset(mut self, input: i32) -> Self {
         self.begin_offset = ::std::option::Option::Some(input);
@@ -113,6 +117,10 @@ impl EntityBuilder {
     pub fn set_begin_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.begin_offset = input;
         self
+    }
+    /// <p> The 0-based character offset in the input text that shows where the entity begins. The offset returns the UTF-8 code point in the string. </p>
+    pub fn get_begin_offset(&self) -> &::std::option::Option<i32> {
+        &self.begin_offset
     }
     /// <p> The 0-based character offset in the input text that shows where the entity ends. The offset returns the UTF-8 code point in the string. </p>
     pub fn end_offset(mut self, input: i32) -> Self {
@@ -124,6 +132,10 @@ impl EntityBuilder {
         self.end_offset = input;
         self
     }
+    /// <p> The 0-based character offset in the input text that shows where the entity ends. The offset returns the UTF-8 code point in the string. </p>
+    pub fn get_end_offset(&self) -> &::std::option::Option<i32> {
+        &self.end_offset
+    }
     /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detection.</p>
     pub fn score(mut self, input: f32) -> Self {
         self.score = ::std::option::Option::Some(input);
@@ -133,6 +145,10 @@ impl EntityBuilder {
     pub fn set_score(mut self, input: ::std::option::Option<f32>) -> Self {
         self.score = input;
         self
+    }
+    /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detection.</p>
+    pub fn get_score(&self) -> &::std::option::Option<f32> {
+        &self.score
     }
     /// <p> The segment of input text extracted as this entity.</p>
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -144,6 +160,10 @@ impl EntityBuilder {
         self.text = input;
         self
     }
+    /// <p> The segment of input text extracted as this entity.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
+    }
     /// <p> The category of the entity.</p>
     pub fn category(mut self, input: crate::types::EntityType) -> Self {
         self.category = ::std::option::Option::Some(input);
@@ -154,6 +174,10 @@ impl EntityBuilder {
         self.category = input;
         self
     }
+    /// <p> The category of the entity.</p>
+    pub fn get_category(&self) -> &::std::option::Option<crate::types::EntityType> {
+        &self.category
+    }
     /// <p> Describes the specific type of entity with category of entities.</p>
     pub fn r#type(mut self, input: crate::types::EntitySubType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -163,6 +187,10 @@ impl EntityBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::EntitySubType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p> Describes the specific type of entity with category of entities.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::EntitySubType> {
+        &self.r#type
     }
     /// Appends an item to `traits`.
     ///
@@ -183,6 +211,10 @@ impl EntityBuilder {
         self.traits = input;
         self
     }
+    /// <p>Contextual information for the entity.</p>
+    pub fn get_traits(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Trait>> {
+        &self.traits
+    }
     /// Appends an item to `attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
@@ -201,6 +233,12 @@ impl EntityBuilder {
     ) -> Self {
         self.attributes = input;
         self
+    }
+    /// <p> The extracted attributes that relate to this entity.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+        &self.attributes
     }
     /// Consumes the builder and constructs a [`Entity`](crate::types::Entity).
     pub fn build(self) -> crate::types::Entity {

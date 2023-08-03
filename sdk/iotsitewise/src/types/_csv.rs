@@ -49,6 +49,12 @@ impl CsvBuilder {
         self.column_names = input;
         self
     }
+    /// <p>The column names specified in the .csv file.</p>
+    pub fn get_column_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnName>> {
+        &self.column_names
+    }
     /// Consumes the builder and constructs a [`Csv`](crate::types::Csv).
     pub fn build(self) -> crate::types::Csv {
         crate::types::Csv {

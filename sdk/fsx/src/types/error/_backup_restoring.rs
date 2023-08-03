@@ -75,6 +75,10 @@ impl BackupRestoringBuilder {
         self.message = input;
         self
     }
+    /// <p>A detailed error message.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The ID of a file system being restored from the backup.</p>
     pub fn file_system_id(
         mut self,
@@ -90,6 +94,10 @@ impl BackupRestoringBuilder {
     ) -> Self {
         self.file_system_id = input;
         self
+    }
+    /// <p>The ID of a file system being restored from the backup.</p>
+    pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_system_id
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

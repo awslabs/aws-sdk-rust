@@ -37,6 +37,13 @@ impl CreateManagedPrefixListFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateManagedPrefixList as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_managed_prefix_list::builders::CreateManagedPrefixListInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl CreateManagedPrefixListFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>A name for the prefix list.</p>
     /// <p>Constraints: Up to 255 characters in length. The name cannot start with <code>com.amazonaws</code>.</p>
     pub fn prefix_list_name(
@@ -145,6 +156,11 @@ impl CreateManagedPrefixListFluentBuilder {
         self.inner = self.inner.set_prefix_list_name(input);
         self
     }
+    /// <p>A name for the prefix list.</p>
+    /// <p>Constraints: Up to 255 characters in length. The name cannot start with <code>com.amazonaws</code>.</p>
+    pub fn get_prefix_list_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_prefix_list_name()
+    }
     /// Appends an item to `Entries`.
     ///
     /// To override the contents of this collection use [`set_entries`](Self::set_entries).
@@ -162,6 +178,12 @@ impl CreateManagedPrefixListFluentBuilder {
         self.inner = self.inner.set_entries(input);
         self
     }
+    /// <p>One or more entries for the prefix list.</p>
+    pub fn get_entries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AddPrefixListEntry>> {
+        self.inner.get_entries()
+    }
     /// <p>The maximum number of entries for the prefix list.</p>
     pub fn max_entries(mut self, input: i32) -> Self {
         self.inner = self.inner.max_entries(input);
@@ -171,6 +193,10 @@ impl CreateManagedPrefixListFluentBuilder {
     pub fn set_max_entries(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_entries(input);
         self
+    }
+    /// <p>The maximum number of entries for the prefix list.</p>
+    pub fn get_max_entries(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_entries()
     }
     /// Appends an item to `TagSpecifications`.
     ///
@@ -188,6 +214,12 @@ impl CreateManagedPrefixListFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
+    }
+    /// <p>The tags to apply to the prefix list during creation.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        self.inner.get_tag_specifications()
     }
     /// <p>The IP address type.</p>
     /// <p>Valid Values: <code>IPv4</code> | <code>IPv6</code> </p>
@@ -207,6 +239,11 @@ impl CreateManagedPrefixListFluentBuilder {
         self.inner = self.inner.set_address_family(input);
         self
     }
+    /// <p>The IP address type.</p>
+    /// <p>Valid Values: <code>IPv4</code> | <code>IPv6</code> </p>
+    pub fn get_address_family(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_address_family()
+    }
     /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     /// <p>Constraints: Up to 255 UTF-8 characters in length.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -218,5 +255,10 @@ impl CreateManagedPrefixListFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+    /// <p>Constraints: Up to 255 UTF-8 characters in length.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

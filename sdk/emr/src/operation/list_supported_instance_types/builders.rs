@@ -36,6 +36,10 @@ impl ListSupportedInstanceTypesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListSupportedInstanceTypes as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_supported_instance_types::builders::ListSupportedInstanceTypesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +142,10 @@ impl ListSupportedInstanceTypesFluentBuilder {
         self.inner = self.inner.set_release_label(input);
         self
     }
+    /// <p>The Amazon EMR release label determines the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-release-app-versions-6.x.html">versions of open-source application packages</a> that Amazon EMR has installed on the cluster. Release labels are in the format <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release number such as <code>emr-6.10.0</code>. For more information about Amazon EMR releases and their included application versions and features, see the <i> <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-release-components.html">Amazon EMR Release Guide</a> </i>.</p>
+    pub fn get_release_label(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_release_label()
+    }
     /// <p>The pagination token that marks the next set of results to retrieve.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -147,5 +155,9 @@ impl ListSupportedInstanceTypesFluentBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
+    }
+    /// <p>The pagination token that marks the next set of results to retrieve.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
     }
 }

@@ -78,6 +78,10 @@ impl SenderIdInformationBuilder {
         self.sender_id_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) associated with the SenderId.</p>
+    pub fn get_sender_id_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sender_id_arn
+    }
     /// <p>The alphanumeric sender ID in a specific country that you'd like to describe.</p>
     pub fn sender_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sender_id = ::std::option::Option::Some(input.into());
@@ -87,6 +91,10 @@ impl SenderIdInformationBuilder {
     pub fn set_sender_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sender_id = input;
         self
+    }
+    /// <p>The alphanumeric sender ID in a specific country that you'd like to describe.</p>
+    pub fn get_sender_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sender_id
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
     pub fn iso_country_code(
@@ -103,6 +111,10 @@ impl SenderIdInformationBuilder {
     ) -> Self {
         self.iso_country_code = input;
         self
+    }
+    /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
+    pub fn get_iso_country_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iso_country_code
     }
     /// Appends an item to `message_types`.
     ///
@@ -123,6 +135,12 @@ impl SenderIdInformationBuilder {
         self.message_types = input;
         self
     }
+    /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
+    pub fn get_message_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageType>> {
+        &self.message_types
+    }
     /// <p>The monthly leasing price, in US dollars.</p>
     pub fn monthly_leasing_price(
         mut self,
@@ -138,6 +156,10 @@ impl SenderIdInformationBuilder {
     ) -> Self {
         self.monthly_leasing_price = input;
         self
+    }
+    /// <p>The monthly leasing price, in US dollars.</p>
+    pub fn get_monthly_leasing_price(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monthly_leasing_price
     }
     /// Consumes the builder and constructs a [`SenderIdInformation`](crate::types::SenderIdInformation).
     pub fn build(self) -> crate::types::SenderIdInformation {

@@ -36,6 +36,12 @@ impl ListDataSetsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListDataSets as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_data_sets::builders::ListDataSetsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +141,10 @@ impl ListDataSetsFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The unique identifier of the application for which you want to list the associated data sets.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -144,6 +154,10 @@ impl ListDataSetsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The maximum number of objects to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -155,6 +169,10 @@ impl ListDataSetsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of objects to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The prefix of the data set name, which you can use to filter the list of data sets.</p>
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.prefix(input.into());
@@ -164,5 +182,9 @@ impl ListDataSetsFluentBuilder {
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_prefix(input);
         self
+    }
+    /// <p>The prefix of the data set name, which you can use to filter the list of data sets.</p>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_prefix()
     }
 }

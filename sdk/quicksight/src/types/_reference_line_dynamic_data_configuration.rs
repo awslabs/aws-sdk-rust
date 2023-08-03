@@ -64,6 +64,10 @@ impl ReferenceLineDynamicDataConfigurationBuilder {
         self.column = input;
         self
     }
+    /// <p>The column that the dynamic data targets.</p>
+    pub fn get_column(&self) -> &::std::option::Option<crate::types::ColumnIdentifier> {
+        &self.column
+    }
     /// <p>The aggregation function that is used in the dynamic data.</p>
     pub fn measure_aggregation_function(
         mut self,
@@ -80,6 +84,12 @@ impl ReferenceLineDynamicDataConfigurationBuilder {
         self.measure_aggregation_function = input;
         self
     }
+    /// <p>The aggregation function that is used in the dynamic data.</p>
+    pub fn get_measure_aggregation_function(
+        &self,
+    ) -> &::std::option::Option<crate::types::AggregationFunction> {
+        &self.measure_aggregation_function
+    }
     /// <p>The calculation that is used in the dynamic data.</p>
     pub fn calculation(mut self, input: crate::types::NumericalAggregationFunction) -> Self {
         self.calculation = ::std::option::Option::Some(input);
@@ -92,6 +102,12 @@ impl ReferenceLineDynamicDataConfigurationBuilder {
     ) -> Self {
         self.calculation = input;
         self
+    }
+    /// <p>The calculation that is used in the dynamic data.</p>
+    pub fn get_calculation(
+        &self,
+    ) -> &::std::option::Option<crate::types::NumericalAggregationFunction> {
+        &self.calculation
     }
     /// Consumes the builder and constructs a [`ReferenceLineDynamicDataConfiguration`](crate::types::ReferenceLineDynamicDataConfiguration).
     pub fn build(self) -> crate::types::ReferenceLineDynamicDataConfiguration {

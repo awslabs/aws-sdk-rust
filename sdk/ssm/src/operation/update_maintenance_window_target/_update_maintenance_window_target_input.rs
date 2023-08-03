@@ -98,6 +98,10 @@ impl UpdateMaintenanceWindowTargetInputBuilder {
         self.window_id = input;
         self
     }
+    /// <p>The maintenance window ID with which to modify the target.</p>
+    pub fn get_window_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.window_id
+    }
     /// <p>The target ID to modify.</p>
     pub fn window_target_id(
         mut self,
@@ -113,6 +117,10 @@ impl UpdateMaintenanceWindowTargetInputBuilder {
     ) -> Self {
         self.window_target_id = input;
         self
+    }
+    /// <p>The target ID to modify.</p>
+    pub fn get_window_target_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.window_target_id
     }
     /// Appends an item to `targets`.
     ///
@@ -133,6 +141,10 @@ impl UpdateMaintenanceWindowTargetInputBuilder {
         self.targets = input;
         self
     }
+    /// <p>The targets to add or replace.</p>
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Target>> {
+        &self.targets
+    }
     /// <p>User-provided value that will be included in any Amazon CloudWatch Events events raised while running tasks for these targets in this maintenance window.</p>
     pub fn owner_information(
         mut self,
@@ -149,6 +161,10 @@ impl UpdateMaintenanceWindowTargetInputBuilder {
         self.owner_information = input;
         self
     }
+    /// <p>User-provided value that will be included in any Amazon CloudWatch Events events raised while running tasks for these targets in this maintenance window.</p>
+    pub fn get_owner_information(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_information
+    }
     /// <p>A name for the update.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -158,6 +174,10 @@ impl UpdateMaintenanceWindowTargetInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A name for the update.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>An optional description for the update.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -169,6 +189,10 @@ impl UpdateMaintenanceWindowTargetInputBuilder {
         self.description = input;
         self
     }
+    /// <p>An optional description for the update.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>If <code>True</code>, then all fields that are required by the <code>RegisterTargetWithMaintenanceWindow</code> operation are also required for this API request. Optional fields that aren't specified are set to null.</p>
     pub fn replace(mut self, input: bool) -> Self {
         self.replace = ::std::option::Option::Some(input);
@@ -178,6 +202,10 @@ impl UpdateMaintenanceWindowTargetInputBuilder {
     pub fn set_replace(mut self, input: ::std::option::Option<bool>) -> Self {
         self.replace = input;
         self
+    }
+    /// <p>If <code>True</code>, then all fields that are required by the <code>RegisterTargetWithMaintenanceWindow</code> operation are also required for this API request. Optional fields that aren't specified are set to null.</p>
+    pub fn get_replace(&self) -> &::std::option::Option<bool> {
+        &self.replace
     }
     /// Consumes the builder and constructs a [`UpdateMaintenanceWindowTargetInput`](crate::operation::update_maintenance_window_target::UpdateMaintenanceWindowTargetInput).
     pub fn build(

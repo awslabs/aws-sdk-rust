@@ -36,6 +36,12 @@ impl CompleteMigrationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CompleteMigration as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::complete_migration::builders::CompleteMigrationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl CompleteMigrationFluentBuilder {
         self.inner = self.inner.set_replication_group_id(input);
         self
     }
+    /// <p>The ID of the replication group to which data is being migrated.</p>
+    pub fn get_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_replication_group_id()
+    }
     /// <p>Forces the migration to stop without ensuring that data is in sync. It is recommended to use this option only to abort the migration and not recommended when application wants to continue migration to ElastiCache.</p>
     pub fn force(mut self, input: bool) -> Self {
         self.inner = self.inner.force(input);
@@ -141,5 +151,9 @@ impl CompleteMigrationFluentBuilder {
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force(input);
         self
+    }
+    /// <p>Forces the migration to stop without ensuring that data is in sync. It is recommended to use this option only to abort the migration and not recommended when application wants to continue migration to ElastiCache.</p>
+    pub fn get_force(&self) -> &::std::option::Option<bool> {
+        self.inner.get_force()
     }
 }

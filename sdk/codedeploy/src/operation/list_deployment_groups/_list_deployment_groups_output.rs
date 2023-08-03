@@ -70,6 +70,10 @@ impl ListDeploymentGroupsOutputBuilder {
         self.application_name = input;
         self
     }
+    /// <p>The application name.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// Appends an item to `deployment_groups`.
     ///
     /// To override the contents of this collection use [`set_deployment_groups`](Self::set_deployment_groups).
@@ -92,6 +96,12 @@ impl ListDeploymentGroupsOutputBuilder {
         self.deployment_groups = input;
         self
     }
+    /// <p>A list of deployment group names.</p>
+    pub fn get_deployment_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.deployment_groups
+    }
     /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployment groups call to return the next set of deployment groups in the list.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -101,6 +111,10 @@ impl ListDeploymentGroupsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployment groups call to return the next set of deployment groups in the list.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

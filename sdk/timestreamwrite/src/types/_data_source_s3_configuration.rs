@@ -48,6 +48,10 @@ impl DataSourceS3ConfigurationBuilder {
         self.bucket_name = input;
         self
     }
+    /// <p>The bucket name of the customer S3 bucket.</p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_name
+    }
     /// <p> </p>
     pub fn object_key_prefix(
         mut self,
@@ -63,6 +67,10 @@ impl DataSourceS3ConfigurationBuilder {
     ) -> Self {
         self.object_key_prefix = input;
         self
+    }
+    /// <p> </p>
+    pub fn get_object_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_key_prefix
     }
     /// Consumes the builder and constructs a [`DataSourceS3Configuration`](crate::types::DataSourceS3Configuration).
     pub fn build(self) -> crate::types::DataSourceS3Configuration {

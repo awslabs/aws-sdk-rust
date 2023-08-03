@@ -45,6 +45,10 @@ impl DescribePipelineDefinitionForExecutionInputBuilder {
         self.pipeline_execution_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
+    pub fn get_pipeline_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_execution_arn
+    }
     /// Consumes the builder and constructs a [`DescribePipelineDefinitionForExecutionInput`](crate::operation::describe_pipeline_definition_for_execution::DescribePipelineDefinitionForExecutionInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_pipeline_definition_for_execution::DescribePipelineDefinitionForExecutionInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

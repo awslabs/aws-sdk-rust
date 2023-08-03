@@ -62,6 +62,10 @@ impl ImportVmImageOutputBuilder {
         self.request_id = input;
         self
     }
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the AMI that was created during the VM import process. This AMI is used as the base image for the recipe that imported the VM.</p>
     pub fn image_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_arn = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl ImportVmImageOutputBuilder {
         self.image_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the AMI that was created during the VM import process. This AMI is used as the base image for the recipe that imported the VM.</p>
+    pub fn get_image_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_arn
+    }
     /// <p>The idempotency token that was used for this request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl ImportVmImageOutputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>The idempotency token that was used for this request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

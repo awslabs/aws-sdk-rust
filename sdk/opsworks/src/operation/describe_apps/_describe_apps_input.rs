@@ -47,6 +47,10 @@ impl DescribeAppsInputBuilder {
         self.stack_id = input;
         self
     }
+    /// <p>The app stack ID. If you use this parameter, <code>DescribeApps</code> returns a description of the apps in the specified stack.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_id
+    }
     /// Appends an item to `app_ids`.
     ///
     /// To override the contents of this collection use [`set_app_ids`](Self::set_app_ids).
@@ -65,6 +69,10 @@ impl DescribeAppsInputBuilder {
     ) -> Self {
         self.app_ids = input;
         self
+    }
+    /// <p>An array of app IDs for the apps to be described. If you use this parameter, <code>DescribeApps</code> returns a description of the specified apps. Otherwise, it returns a description of every app.</p>
+    pub fn get_app_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.app_ids
     }
     /// Consumes the builder and constructs a [`DescribeAppsInput`](crate::operation::describe_apps::DescribeAppsInput).
     pub fn build(

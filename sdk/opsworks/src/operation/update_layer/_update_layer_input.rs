@@ -194,6 +194,10 @@ impl UpdateLayerInputBuilder {
         self.layer_id = input;
         self
     }
+    /// <p>The layer ID.</p>
+    pub fn get_layer_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.layer_id
+    }
     /// <p>The layer name, which is used by the console.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -203,6 +207,10 @@ impl UpdateLayerInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The layer name, which is used by the console.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS OpsWorks Stacks and by Chef. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 200 characters and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.</p>
     /// <p>The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a> </p>
@@ -215,6 +223,11 @@ impl UpdateLayerInputBuilder {
     pub fn set_shortname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.shortname = input;
         self
+    }
+    /// <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS OpsWorks Stacks and by Chef. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 200 characters and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.</p>
+    /// <p>The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a> </p>
+    pub fn get_shortname(&self) -> &::std::option::Option<::std::string::String> {
+        &self.shortname
     }
     /// Adds a key-value pair to `attributes`.
     ///
@@ -241,6 +254,14 @@ impl UpdateLayerInputBuilder {
         self.attributes = input;
         self
     }
+    /// <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<crate::types::LayerAttributesKeys, ::std::string::String>,
+    > {
+        &self.attributes
+    }
     /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <code>CloudWatchLogsLogStream</code>.</p>
     pub fn cloud_watch_logs_configuration(
         mut self,
@@ -256,6 +277,12 @@ impl UpdateLayerInputBuilder {
     ) -> Self {
         self.cloud_watch_logs_configuration = input;
         self
+    }
+    /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <code>CloudWatchLogsLogStream</code>.</p>
+    pub fn get_cloud_watch_logs_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CloudWatchLogsConfiguration> {
+        &self.cloud_watch_logs_configuration
     }
     /// <p>The ARN of an IAM profile to be used for all of the layer's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     pub fn custom_instance_profile_arn(
@@ -273,6 +300,10 @@ impl UpdateLayerInputBuilder {
         self.custom_instance_profile_arn = input;
         self
     }
+    /// <p>The ARN of an IAM profile to be used for all of the layer's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
+    pub fn get_custom_instance_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_instance_profile_arn
+    }
     /// <p>A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom JSON</a>. </p>
     pub fn custom_json(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_json = ::std::option::Option::Some(input.into());
@@ -282,6 +313,10 @@ impl UpdateLayerInputBuilder {
     pub fn set_custom_json(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_json = input;
         self
+    }
+    /// <p>A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom JSON</a>. </p>
+    pub fn get_custom_json(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_json
     }
     /// Appends an item to `custom_security_group_ids`.
     ///
@@ -305,6 +340,12 @@ impl UpdateLayerInputBuilder {
         self.custom_security_group_ids = input;
         self
     }
+    /// <p>An array containing the layer's custom security group IDs.</p>
+    pub fn get_custom_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.custom_security_group_ids
+    }
     /// Appends an item to `packages`.
     ///
     /// To override the contents of this collection use [`set_packages`](Self::set_packages).
@@ -323,6 +364,10 @@ impl UpdateLayerInputBuilder {
     ) -> Self {
         self.packages = input;
         self
+    }
+    /// <p>An array of <code>Package</code> objects that describe the layer's packages.</p>
+    pub fn get_packages(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.packages
     }
     /// Appends an item to `volume_configurations`.
     ///
@@ -343,6 +388,12 @@ impl UpdateLayerInputBuilder {
         self.volume_configurations = input;
         self
     }
+    /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
+    pub fn get_volume_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeConfiguration>> {
+        &self.volume_configurations
+    }
     /// <p>Whether to disable auto healing for the layer.</p>
     pub fn enable_auto_healing(mut self, input: bool) -> Self {
         self.enable_auto_healing = ::std::option::Option::Some(input);
@@ -352,6 +403,10 @@ impl UpdateLayerInputBuilder {
     pub fn set_enable_auto_healing(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_auto_healing = input;
         self
+    }
+    /// <p>Whether to disable auto healing for the layer.</p>
+    pub fn get_enable_auto_healing(&self) -> &::std::option::Option<bool> {
+        &self.enable_auto_healing
     }
     /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
     pub fn auto_assign_elastic_ips(mut self, input: bool) -> Self {
@@ -363,6 +418,10 @@ impl UpdateLayerInputBuilder {
         self.auto_assign_elastic_ips = input;
         self
     }
+    /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
+    pub fn get_auto_assign_elastic_ips(&self) -> &::std::option::Option<bool> {
+        &self.auto_assign_elastic_ips
+    }
     /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
     pub fn auto_assign_public_ips(mut self, input: bool) -> Self {
         self.auto_assign_public_ips = ::std::option::Option::Some(input);
@@ -372,6 +431,10 @@ impl UpdateLayerInputBuilder {
     pub fn set_auto_assign_public_ips(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_assign_public_ips = input;
         self
+    }
+    /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
+    pub fn get_auto_assign_public_ips(&self) -> &::std::option::Option<bool> {
+        &self.auto_assign_public_ips
     }
     /// <p>A <code>LayerCustomRecipes</code> object that specifies the layer's custom recipes.</p>
     pub fn custom_recipes(mut self, input: crate::types::Recipes) -> Self {
@@ -385,6 +448,10 @@ impl UpdateLayerInputBuilder {
     ) -> Self {
         self.custom_recipes = input;
         self
+    }
+    /// <p>A <code>LayerCustomRecipes</code> object that specifies the layer's custom recipes.</p>
+    pub fn get_custom_recipes(&self) -> &::std::option::Option<crate::types::Recipes> {
+        &self.custom_recipes
     }
     /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
     /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
@@ -400,6 +467,12 @@ impl UpdateLayerInputBuilder {
         self.install_updates_on_boot = input;
         self
     }
+    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
+    /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
+    /// </note>
+    pub fn get_install_updates_on_boot(&self) -> &::std::option::Option<bool> {
+        &self.install_updates_on_boot
+    }
     /// <p>Whether to use Amazon EBS-optimized instances.</p>
     pub fn use_ebs_optimized_instances(mut self, input: bool) -> Self {
         self.use_ebs_optimized_instances = ::std::option::Option::Some(input);
@@ -409,6 +482,10 @@ impl UpdateLayerInputBuilder {
     pub fn set_use_ebs_optimized_instances(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_ebs_optimized_instances = input;
         self
+    }
+    /// <p>Whether to use Amazon EBS-optimized instances.</p>
+    pub fn get_use_ebs_optimized_instances(&self) -> &::std::option::Option<bool> {
+        &self.use_ebs_optimized_instances
     }
     /// <p></p>
     pub fn lifecycle_event_configuration(
@@ -425,6 +502,12 @@ impl UpdateLayerInputBuilder {
     ) -> Self {
         self.lifecycle_event_configuration = input;
         self
+    }
+    /// <p></p>
+    pub fn get_lifecycle_event_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::LifecycleEventConfiguration> {
+        &self.lifecycle_event_configuration
     }
     /// Consumes the builder and constructs a [`UpdateLayerInput`](crate::operation::update_layer::UpdateLayerInput).
     pub fn build(

@@ -64,6 +64,10 @@ impl ListDeviceEventsInputBuilder {
         self.device_arn = input;
         self
     }
+    /// <p>The ARN of a device.</p>
+    pub fn get_device_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_arn
+    }
     /// <p>The event type to filter device events. If EventType isn't specified, this returns a list of all device events in reverse chronological order. If EventType is specified, this returns a list of device events for that EventType in reverse chronological order. </p>
     pub fn event_type(mut self, input: crate::types::DeviceEventType) -> Self {
         self.event_type = ::std::option::Option::Some(input);
@@ -77,6 +81,10 @@ impl ListDeviceEventsInputBuilder {
         self.event_type = input;
         self
     }
+    /// <p>The event type to filter device events. If EventType isn't specified, this returns a list of all device events in reverse chronological order. If EventType is specified, this returns a list of device events for that EventType in reverse chronological order. </p>
+    pub fn get_event_type(&self) -> &::std::option::Option<crate::types::DeviceEventType> {
+        &self.event_type
+    }
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults. When the end of results is reached, the response has a value of null.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -87,6 +95,10 @@ impl ListDeviceEventsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults. When the end of results is reached, the response has a value of null.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to include in the response. The default value is 50. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -96,6 +108,10 @@ impl ListDeviceEventsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to include in the response. The default value is 50. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListDeviceEventsInput`](crate::operation::list_device_events::ListDeviceEventsInput).
     pub fn build(

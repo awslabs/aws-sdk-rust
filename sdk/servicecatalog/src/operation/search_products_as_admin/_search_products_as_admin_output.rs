@@ -69,6 +69,12 @@ impl SearchProductsAsAdminOutputBuilder {
         self.product_view_details = input;
         self
     }
+    /// <p>Information about the product views.</p>
+    pub fn get_product_view_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductViewDetail>> {
+        &self.product_view_details
+    }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub fn next_page_token(
         mut self,
@@ -84,6 +90,10 @@ impl SearchProductsAsAdminOutputBuilder {
     ) -> Self {
         self.next_page_token = input;
         self
+    }
+    /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_page_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

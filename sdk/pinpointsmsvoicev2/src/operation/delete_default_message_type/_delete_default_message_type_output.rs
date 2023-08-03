@@ -68,6 +68,10 @@ impl DeleteDefaultMessageTypeOutputBuilder {
         self.configuration_set_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the configuration set.</p>
+    pub fn get_configuration_set_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_set_arn
+    }
     /// <p>The name of the configuration set.</p>
     pub fn configuration_set_name(
         mut self,
@@ -84,6 +88,10 @@ impl DeleteDefaultMessageTypeOutputBuilder {
         self.configuration_set_name = input;
         self
     }
+    /// <p>The name of the configuration set.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_set_name
+    }
     /// <p>The current message type for the configuration set.</p>
     pub fn message_type(mut self, input: crate::types::MessageType) -> Self {
         self.message_type = ::std::option::Option::Some(input);
@@ -96,6 +104,10 @@ impl DeleteDefaultMessageTypeOutputBuilder {
     ) -> Self {
         self.message_type = input;
         self
+    }
+    /// <p>The current message type for the configuration set.</p>
+    pub fn get_message_type(&self) -> &::std::option::Option<crate::types::MessageType> {
+        &self.message_type
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

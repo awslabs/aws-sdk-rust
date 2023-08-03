@@ -65,6 +65,10 @@ impl StopExperimentInputBuilder {
         self.project = input;
         self
     }
+    /// <p>The name or ARN of the project that contains the experiment to stop.</p>
+    pub fn get_project(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project
+    }
     /// <p>The name of the experiment to stop.</p>
     pub fn experiment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.experiment = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl StopExperimentInputBuilder {
     pub fn set_experiment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.experiment = input;
         self
+    }
+    /// <p>The name of the experiment to stop.</p>
+    pub fn get_experiment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.experiment
     }
     /// <p>Specify whether the experiment is to be considered <code>COMPLETED</code> or <code>CANCELLED</code> after it stops.</p>
     pub fn desired_state(mut self, input: crate::types::ExperimentStopDesiredState) -> Self {
@@ -88,6 +96,12 @@ impl StopExperimentInputBuilder {
         self.desired_state = input;
         self
     }
+    /// <p>Specify whether the experiment is to be considered <code>COMPLETED</code> or <code>CANCELLED</code> after it stops.</p>
+    pub fn get_desired_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExperimentStopDesiredState> {
+        &self.desired_state
+    }
     /// <p>A string that describes why you are stopping the experiment.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
@@ -97,6 +111,10 @@ impl StopExperimentInputBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
+    }
+    /// <p>A string that describes why you are stopping the experiment.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
     }
     /// Consumes the builder and constructs a [`StopExperimentInput`](crate::operation::stop_experiment::StopExperimentInput).
     pub fn build(

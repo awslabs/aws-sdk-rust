@@ -39,6 +39,13 @@ impl EvaluateMappingTemplateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the EvaluateMappingTemplate as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::evaluate_mapping_template::builders::EvaluateMappingTemplateInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +136,10 @@ impl EvaluateMappingTemplateFluentBuilder {
         self.inner = self.inner.set_template(input);
         self
     }
+    /// <p>The mapping template; this can be a request or response template. A <code>template</code> is required for this action.</p>
+    pub fn get_template(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template()
+    }
     /// <p>The map that holds all of the contextual information for your resolver invocation. A <code>context</code> is required for this action.</p>
     pub fn context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.context(input.into());
@@ -138,5 +149,9 @@ impl EvaluateMappingTemplateFluentBuilder {
     pub fn set_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_context(input);
         self
+    }
+    /// <p>The map that holds all of the contextual information for your resolver invocation. A <code>context</code> is required for this action.</p>
+    pub fn get_context(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_context()
     }
 }

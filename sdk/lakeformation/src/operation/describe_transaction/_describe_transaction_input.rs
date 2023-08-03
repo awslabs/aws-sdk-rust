@@ -46,6 +46,10 @@ impl DescribeTransactionInputBuilder {
         self.transaction_id = input;
         self
     }
+    /// <p>The transaction for which to return status.</p>
+    pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transaction_id
+    }
     /// Consumes the builder and constructs a [`DescribeTransactionInput`](crate::operation::describe_transaction::DescribeTransactionInput).
     pub fn build(
         self,

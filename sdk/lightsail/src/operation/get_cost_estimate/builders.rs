@@ -36,6 +36,12 @@ impl GetCostEstimateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetCostEstimate as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_cost_estimate::builders::GetCostEstimateInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl GetCostEstimateFluentBuilder {
         self.inner = self.inner.set_resource_name(input);
         self
     }
+    /// <p>The resource name.</p>
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_name()
+    }
     /// <p>The cost estimate start time.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -157,6 +167,16 @@ impl GetCostEstimateFluentBuilder {
         self.inner = self.inner.set_start_time(input);
         self
     }
+    /// <p>The cost estimate start time.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
+    /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you want to use a start time of October 1, 2018, at 8 PM UTC, specify <code>1538424000</code> as the start time.</p> </li>
+    /// </ul>
+    /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_time()
+    }
     /// <p>The cost estimate end time.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -181,5 +201,15 @@ impl GetCostEstimateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
+    }
+    /// <p>The cost estimate end time.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
+    /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you want to use an end time of October 1, 2018, at 9 PM UTC, specify <code>1538427600</code> as the end time.</p> </li>
+    /// </ul>
+    /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_time()
     }
 }

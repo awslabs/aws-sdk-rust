@@ -56,6 +56,12 @@ impl AssociateIamInstanceProfileInputBuilder {
         self.iam_instance_profile = input;
         self
     }
+    /// <p>The IAM instance profile.</p>
+    pub fn get_iam_instance_profile(
+        &self,
+    ) -> &::std::option::Option<crate::types::IamInstanceProfileSpecification> {
+        &self.iam_instance_profile
+    }
     /// <p>The ID of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -65,6 +71,10 @@ impl AssociateIamInstanceProfileInputBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
+    }
+    /// <p>The ID of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// Consumes the builder and constructs a [`AssociateIamInstanceProfileInput`](crate::operation::associate_iam_instance_profile::AssociateIamInstanceProfileInput).
     pub fn build(

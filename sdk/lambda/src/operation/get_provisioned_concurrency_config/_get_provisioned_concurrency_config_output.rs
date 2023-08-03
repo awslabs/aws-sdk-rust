@@ -89,6 +89,10 @@ impl GetProvisionedConcurrencyConfigOutputBuilder {
         self.requested_provisioned_concurrent_executions = input;
         self
     }
+    /// <p>The amount of provisioned concurrency requested.</p>
+    pub fn get_requested_provisioned_concurrent_executions(&self) -> &::std::option::Option<i32> {
+        &self.requested_provisioned_concurrent_executions
+    }
     /// <p>The amount of provisioned concurrency available.</p>
     pub fn available_provisioned_concurrent_executions(mut self, input: i32) -> Self {
         self.available_provisioned_concurrent_executions = ::std::option::Option::Some(input);
@@ -101,6 +105,10 @@ impl GetProvisionedConcurrencyConfigOutputBuilder {
     ) -> Self {
         self.available_provisioned_concurrent_executions = input;
         self
+    }
+    /// <p>The amount of provisioned concurrency available.</p>
+    pub fn get_available_provisioned_concurrent_executions(&self) -> &::std::option::Option<i32> {
+        &self.available_provisioned_concurrent_executions
     }
     /// <p>The amount of provisioned concurrency allocated. When a weighted alias is used during linear and canary deployments, this value fluctuates depending on the amount of concurrency that is provisioned for the function versions.</p>
     pub fn allocated_provisioned_concurrent_executions(mut self, input: i32) -> Self {
@@ -115,6 +123,10 @@ impl GetProvisionedConcurrencyConfigOutputBuilder {
         self.allocated_provisioned_concurrent_executions = input;
         self
     }
+    /// <p>The amount of provisioned concurrency allocated. When a weighted alias is used during linear and canary deployments, this value fluctuates depending on the amount of concurrency that is provisioned for the function versions.</p>
+    pub fn get_allocated_provisioned_concurrent_executions(&self) -> &::std::option::Option<i32> {
+        &self.allocated_provisioned_concurrent_executions
+    }
     /// <p>The status of the allocation process.</p>
     pub fn status(mut self, input: crate::types::ProvisionedConcurrencyStatusEnum) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -127,6 +139,12 @@ impl GetProvisionedConcurrencyConfigOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the allocation process.</p>
+    pub fn get_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProvisionedConcurrencyStatusEnum> {
+        &self.status
     }
     /// <p>For failed allocations, the reason that provisioned concurrency could not be allocated.</p>
     pub fn status_reason(
@@ -144,6 +162,10 @@ impl GetProvisionedConcurrencyConfigOutputBuilder {
         self.status_reason = input;
         self
     }
+    /// <p>For failed allocations, the reason that provisioned concurrency could not be allocated.</p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_reason
+    }
     /// <p>The date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a>.</p>
     pub fn last_modified(
         mut self,
@@ -159,6 +181,10 @@ impl GetProvisionedConcurrencyConfigOutputBuilder {
     ) -> Self {
         self.last_modified = input;
         self
+    }
+    /// <p>The date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a>.</p>
+    pub fn get_last_modified(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

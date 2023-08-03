@@ -50,6 +50,10 @@ impl CreateInputSecurityGroupOutputBuilder {
         self.security_group = input;
         self
     }
+    /// An Input Security Group
+    pub fn get_security_group(&self) -> &::std::option::Option<crate::types::InputSecurityGroup> {
+        &self.security_group
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

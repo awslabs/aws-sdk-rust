@@ -56,6 +56,10 @@ impl FieldTooltipItemBuilder {
         self.field_id = input;
         self
     }
+    /// <p>The unique ID of the field that is targeted by the tooltip.</p>
+    pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_id
+    }
     /// <p>The label of the tooltip item.</p>
     pub fn label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl FieldTooltipItemBuilder {
     pub fn set_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label = input;
         self
+    }
+    /// <p>The label of the tooltip item.</p>
+    pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label
     }
     /// <p>The visibility of the tooltip item.</p>
     pub fn visibility(mut self, input: crate::types::Visibility) -> Self {
@@ -78,6 +86,10 @@ impl FieldTooltipItemBuilder {
     ) -> Self {
         self.visibility = input;
         self
+    }
+    /// <p>The visibility of the tooltip item.</p>
+    pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.visibility
     }
     /// Consumes the builder and constructs a [`FieldTooltipItem`](crate::types::FieldTooltipItem).
     pub fn build(self) -> crate::types::FieldTooltipItem {

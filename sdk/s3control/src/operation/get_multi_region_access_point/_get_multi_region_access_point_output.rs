@@ -51,6 +51,12 @@ impl GetMultiRegionAccessPointOutputBuilder {
         self.access_point = input;
         self
     }
+    /// <p>A container element containing the details of the requested Multi-Region Access Point.</p>
+    pub fn get_access_point(
+        &self,
+    ) -> &::std::option::Option<crate::types::MultiRegionAccessPointReport> {
+        &self.access_point
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

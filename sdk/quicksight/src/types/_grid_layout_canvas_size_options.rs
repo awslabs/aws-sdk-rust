@@ -50,6 +50,12 @@ impl GridLayoutCanvasSizeOptionsBuilder {
         self.screen_canvas_size_options = input;
         self
     }
+    /// <p>The options that determine the sizing of the canvas used in a grid layout.</p>
+    pub fn get_screen_canvas_size_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::GridLayoutScreenCanvasSizeOptions> {
+        &self.screen_canvas_size_options
+    }
     /// Consumes the builder and constructs a [`GridLayoutCanvasSizeOptions`](crate::types::GridLayoutCanvasSizeOptions).
     pub fn build(self) -> crate::types::GridLayoutCanvasSizeOptions {
         crate::types::GridLayoutCanvasSizeOptions {

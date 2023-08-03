@@ -41,6 +41,10 @@ impl VerifyDomainDkimInputBuilder {
         self.domain = input;
         self
     }
+    /// <p>The name of the domain to be verified for Easy DKIM signing.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
+    }
     /// Consumes the builder and constructs a [`VerifyDomainDkimInput`](crate::operation::verify_domain_dkim::VerifyDomainDkimInput).
     pub fn build(
         self,

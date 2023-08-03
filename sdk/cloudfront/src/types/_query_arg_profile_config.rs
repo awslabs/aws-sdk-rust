@@ -51,6 +51,10 @@ impl QueryArgProfileConfigBuilder {
         self.forward_when_query_arg_profile_is_unknown = input;
         self
     }
+    /// <p>Flag to set if you want a request to be forwarded to the origin even if the profile specified by the field-level encryption query argument, fle-profile, is unknown.</p>
+    pub fn get_forward_when_query_arg_profile_is_unknown(&self) -> &::std::option::Option<bool> {
+        &self.forward_when_query_arg_profile_is_unknown
+    }
     /// <p>Profiles specified for query argument-profile mapping for field-level encryption.</p>
     pub fn query_arg_profiles(mut self, input: crate::types::QueryArgProfiles) -> Self {
         self.query_arg_profiles = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl QueryArgProfileConfigBuilder {
     ) -> Self {
         self.query_arg_profiles = input;
         self
+    }
+    /// <p>Profiles specified for query argument-profile mapping for field-level encryption.</p>
+    pub fn get_query_arg_profiles(&self) -> &::std::option::Option<crate::types::QueryArgProfiles> {
+        &self.query_arg_profiles
     }
     /// Consumes the builder and constructs a [`QueryArgProfileConfig`](crate::types::QueryArgProfileConfig).
     pub fn build(self) -> crate::types::QueryArgProfileConfig {

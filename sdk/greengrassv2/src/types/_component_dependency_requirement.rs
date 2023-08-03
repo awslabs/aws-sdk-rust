@@ -68,6 +68,11 @@ impl ComponentDependencyRequirementBuilder {
         self.version_requirement = input;
         self
     }
+    /// <p>The component version requirement for the component dependency.</p>
+    /// <p>IoT Greengrass V2 uses semantic version constraints. For more information, see <a href="https://semver.org/">Semantic Versioning</a>.</p>
+    pub fn get_version_requirement(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_requirement
+    }
     /// <p>The type of this dependency. Choose from the following options:</p>
     /// <ul>
     /// <li> <p> <code>SOFT</code> – The component doesn't restart if the dependency changes state.</p> </li>
@@ -90,6 +95,17 @@ impl ComponentDependencyRequirementBuilder {
     ) -> Self {
         self.dependency_type = input;
         self
+    }
+    /// <p>The type of this dependency. Choose from the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>SOFT</code> – The component doesn't restart if the dependency changes state.</p> </li>
+    /// <li> <p> <code>HARD</code> – The component restarts if the dependency changes state.</p> </li>
+    /// </ul>
+    /// <p>Default: <code>HARD</code> </p>
+    pub fn get_dependency_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ComponentDependencyType> {
+        &self.dependency_type
     }
     /// Consumes the builder and constructs a [`ComponentDependencyRequirement`](crate::types::ComponentDependencyRequirement).
     pub fn build(self) -> crate::types::ComponentDependencyRequirement {

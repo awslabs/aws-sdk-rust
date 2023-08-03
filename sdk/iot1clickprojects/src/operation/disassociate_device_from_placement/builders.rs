@@ -36,6 +36,10 @@ impl DisassociateDeviceFromPlacementFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociateDeviceFromPlacement as a reference.
+    pub fn as_input(&self) -> &crate::operation::disassociate_device_from_placement::builders::DisassociateDeviceFromPlacementInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl DisassociateDeviceFromPlacementFluentBuilder {
         self.inner = self.inner.set_project_name(input);
         self
     }
+    /// <p>The name of the project that contains the placement.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_name()
+    }
     /// <p>The name of the placement that the device should be removed from.</p>
     pub fn placement_name(
         mut self,
@@ -116,6 +124,10 @@ impl DisassociateDeviceFromPlacementFluentBuilder {
         self.inner = self.inner.set_placement_name(input);
         self
     }
+    /// <p>The name of the placement that the device should be removed from.</p>
+    pub fn get_placement_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_placement_name()
+    }
     /// <p>The device ID that should be removed from the placement.</p>
     pub fn device_template_name(
         mut self,
@@ -131,5 +143,9 @@ impl DisassociateDeviceFromPlacementFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_device_template_name(input);
         self
+    }
+    /// <p>The device ID that should be removed from the placement.</p>
+    pub fn get_device_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_template_name()
     }
 }

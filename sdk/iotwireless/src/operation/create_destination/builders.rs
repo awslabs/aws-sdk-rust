@@ -36,6 +36,12 @@ impl CreateDestinationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDestination as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_destination::builders::CreateDestinationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateDestinationFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the new resource.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The type of value in <code>Expression</code>.</p>
     pub fn expression_type(mut self, input: crate::types::ExpressionType) -> Self {
         self.inner = self.inner.expression_type(input);
@@ -139,6 +149,10 @@ impl CreateDestinationFluentBuilder {
         self.inner = self.inner.set_expression_type(input);
         self
     }
+    /// <p>The type of value in <code>Expression</code>.</p>
+    pub fn get_expression_type(&self) -> &::std::option::Option<crate::types::ExpressionType> {
+        self.inner.get_expression_type()
+    }
     /// <p>The rule name or topic rule to send messages to.</p>
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.expression(input.into());
@@ -148,6 +162,10 @@ impl CreateDestinationFluentBuilder {
     pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_expression(input);
         self
+    }
+    /// <p>The rule name or topic rule to send messages to.</p>
+    pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_expression()
     }
     /// <p>The description of the new resource.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -159,6 +177,10 @@ impl CreateDestinationFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>The description of the new resource.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The ARN of the IAM Role that authorizes the destination.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -168,6 +190,10 @@ impl CreateDestinationFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p>The ARN of the IAM Role that authorizes the destination.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
     /// Appends an item to `Tags`.
     ///
@@ -186,6 +212,10 @@ impl CreateDestinationFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tags to attach to the new destination. Tags are metadata that you can use to manage a resource.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
     pub fn client_request_token(
         mut self,
@@ -201,5 +231,9 @@ impl CreateDestinationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
+    }
+    /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
     }
 }

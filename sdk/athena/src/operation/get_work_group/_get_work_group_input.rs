@@ -39,6 +39,10 @@ impl GetWorkGroupInputBuilder {
         self.work_group = input;
         self
     }
+    /// <p>The name of the workgroup.</p>
+    pub fn get_work_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.work_group
+    }
     /// Consumes the builder and constructs a [`GetWorkGroupInput`](crate::operation::get_work_group::GetWorkGroupInput).
     pub fn build(
         self,

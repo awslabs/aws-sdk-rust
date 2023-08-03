@@ -62,6 +62,11 @@ impl RegexMatchSetSummaryBuilder {
         self.regex_match_set_id = input;
         self
     }
+    /// <p>The <code>RegexMatchSetId</code> for a <code>RegexMatchSet</code>. You use <code>RegexMatchSetId</code> to get information about a <code>RegexMatchSet</code>, update a <code>RegexMatchSet</code>, remove a <code>RegexMatchSet</code> from a <code>Rule</code>, and delete a <code>RegexMatchSet</code> from AWS WAF.</p>
+    /// <p> <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
+    pub fn get_regex_match_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.regex_match_set_id
+    }
     /// <p>A friendly name or description of the <code>RegexMatchSet</code>. You can't change <code>Name</code> after you create a <code>RegexMatchSet</code>.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -71,6 +76,10 @@ impl RegexMatchSetSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A friendly name or description of the <code>RegexMatchSet</code>. You can't change <code>Name</code> after you create a <code>RegexMatchSet</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`RegexMatchSetSummary`](crate::types::RegexMatchSetSummary).
     pub fn build(self) -> crate::types::RegexMatchSetSummary {

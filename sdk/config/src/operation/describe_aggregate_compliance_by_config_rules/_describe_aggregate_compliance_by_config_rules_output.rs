@@ -74,6 +74,13 @@ impl DescribeAggregateComplianceByConfigRulesOutputBuilder {
         self.aggregate_compliance_by_config_rules = input;
         self
     }
+    /// <p>Returns a list of AggregateComplianceByConfigRule object.</p>
+    pub fn get_aggregate_compliance_by_config_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregateComplianceByConfigRule>>
+    {
+        &self.aggregate_compliance_by_config_rules
+    }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -83,6 +90,10 @@ impl DescribeAggregateComplianceByConfigRulesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

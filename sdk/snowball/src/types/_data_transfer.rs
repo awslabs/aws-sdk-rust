@@ -64,6 +64,10 @@ impl DataTransferBuilder {
         self.bytes_transferred = input;
         self
     }
+    /// <p>The number of bytes transferred between a Snow device and Amazon S3.</p>
+    pub fn get_bytes_transferred(&self) -> &::std::option::Option<i64> {
+        &self.bytes_transferred
+    }
     /// <p>The number of objects transferred between a Snow device and Amazon S3.</p>
     pub fn objects_transferred(mut self, input: i64) -> Self {
         self.objects_transferred = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl DataTransferBuilder {
     pub fn set_objects_transferred(mut self, input: ::std::option::Option<i64>) -> Self {
         self.objects_transferred = input;
         self
+    }
+    /// <p>The number of objects transferred between a Snow device and Amazon S3.</p>
+    pub fn get_objects_transferred(&self) -> &::std::option::Option<i64> {
+        &self.objects_transferred
     }
     /// <p>The total bytes of data for a transfer between a Snow device and Amazon S3. This value is set to 0 (zero) until all the keys that will be transferred have been listed.</p>
     pub fn total_bytes(mut self, input: i64) -> Self {
@@ -84,6 +92,10 @@ impl DataTransferBuilder {
         self.total_bytes = input;
         self
     }
+    /// <p>The total bytes of data for a transfer between a Snow device and Amazon S3. This value is set to 0 (zero) until all the keys that will be transferred have been listed.</p>
+    pub fn get_total_bytes(&self) -> &::std::option::Option<i64> {
+        &self.total_bytes
+    }
     /// <p>The total number of objects for a transfer between a Snow device and Amazon S3. This value is set to 0 (zero) until all the keys that will be transferred have been listed.</p>
     pub fn total_objects(mut self, input: i64) -> Self {
         self.total_objects = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl DataTransferBuilder {
     pub fn set_total_objects(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_objects = input;
         self
+    }
+    /// <p>The total number of objects for a transfer between a Snow device and Amazon S3. This value is set to 0 (zero) until all the keys that will be transferred have been listed.</p>
+    pub fn get_total_objects(&self) -> &::std::option::Option<i64> {
+        &self.total_objects
     }
     /// Consumes the builder and constructs a [`DataTransfer`](crate::types::DataTransfer).
     pub fn build(self) -> crate::types::DataTransfer {

@@ -62,6 +62,12 @@ impl GetCompatibleKafkaVersionsOutputBuilder {
         self.compatible_kafka_versions = input;
         self
     }
+    /// <p>A list of CompatibleKafkaVersion objects.</p>
+    pub fn get_compatible_kafka_versions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CompatibleKafkaVersion>> {
+        &self.compatible_kafka_versions
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -89,6 +89,14 @@ impl DescribeProductAsAdminInputBuilder {
         self.accept_language = input;
         self
     }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accept_language
+    }
     /// <p>The product identifier.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -99,6 +107,10 @@ impl DescribeProductAsAdminInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The product identifier.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The product name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -108,6 +120,10 @@ impl DescribeProductAsAdminInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The product name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The unique identifier of the shared portfolio that the specified product is associated with.</p>
     /// <p>You can provide this parameter to retrieve the shared TagOptions associated with the product. If this parameter is provided and if TagOptions sharing is enabled in the portfolio share, the API returns both local and shared TagOptions associated with the product. Otherwise only local TagOptions will be returned. </p>
@@ -126,6 +142,11 @@ impl DescribeProductAsAdminInputBuilder {
     ) -> Self {
         self.source_portfolio_id = input;
         self
+    }
+    /// <p>The unique identifier of the shared portfolio that the specified product is associated with.</p>
+    /// <p>You can provide this parameter to retrieve the shared TagOptions associated with the product. If this parameter is provided and if TagOptions sharing is enabled in the portfolio share, the API returns both local and shared TagOptions associated with the product. Otherwise only local TagOptions will be returned. </p>
+    pub fn get_source_portfolio_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_portfolio_id
     }
     /// Consumes the builder and constructs a [`DescribeProductAsAdminInput`](crate::operation::describe_product_as_admin::DescribeProductAsAdminInput).
     pub fn build(

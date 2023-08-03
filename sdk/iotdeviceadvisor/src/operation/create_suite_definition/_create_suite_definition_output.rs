@@ -78,6 +78,10 @@ impl CreateSuiteDefinitionOutputBuilder {
         self.suite_definition_id = input;
         self
     }
+    /// <p>The UUID of the test suite created.</p>
+    pub fn get_suite_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.suite_definition_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the test suite.</p>
     pub fn suite_definition_arn(
         mut self,
@@ -93,6 +97,10 @@ impl CreateSuiteDefinitionOutputBuilder {
     ) -> Self {
         self.suite_definition_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the test suite.</p>
+    pub fn get_suite_definition_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.suite_definition_arn
     }
     /// <p>The suite definition name of the test suite. This is a required parameter.</p>
     pub fn suite_definition_name(
@@ -110,6 +118,10 @@ impl CreateSuiteDefinitionOutputBuilder {
         self.suite_definition_name = input;
         self
     }
+    /// <p>The suite definition name of the test suite. This is a required parameter.</p>
+    pub fn get_suite_definition_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.suite_definition_name
+    }
     /// <p>The timestamp of when the test suite was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -122,6 +134,10 @@ impl CreateSuiteDefinitionOutputBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The timestamp of when the test suite was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -92,6 +92,10 @@ impl LaunchConfigBuilder {
         self.package_name = input;
         self
     }
+    /// <p>The package name.</p>
+    pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_name
+    }
     /// <p>The launch file name.</p>
     pub fn launch_file(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_file = ::std::option::Option::Some(input.into());
@@ -101,6 +105,10 @@ impl LaunchConfigBuilder {
     pub fn set_launch_file(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launch_file = input;
         self
+    }
+    /// <p>The launch file name.</p>
+    pub fn get_launch_file(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch_file
     }
     /// Adds a key-value pair to `environment_variables`.
     ///
@@ -127,6 +135,14 @@ impl LaunchConfigBuilder {
         self.environment_variables = input;
         self
     }
+    /// <p>The environment variables for the application launch.</p>
+    pub fn get_environment_variables(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.environment_variables
+    }
     /// <p>The port forwarding configuration.</p>
     pub fn port_forwarding_config(mut self, input: crate::types::PortForwardingConfig) -> Self {
         self.port_forwarding_config = ::std::option::Option::Some(input);
@@ -140,6 +156,12 @@ impl LaunchConfigBuilder {
         self.port_forwarding_config = input;
         self
     }
+    /// <p>The port forwarding configuration.</p>
+    pub fn get_port_forwarding_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::PortForwardingConfig> {
+        &self.port_forwarding_config
+    }
     /// <p>Boolean indicating whether a streaming session will be configured for the application. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with your application as it is running in the simulation. You must configure and launch the component. It must have a graphical user interface. </p>
     pub fn stream_ui(mut self, input: bool) -> Self {
         self.stream_ui = ::std::option::Option::Some(input);
@@ -149,6 +171,10 @@ impl LaunchConfigBuilder {
     pub fn set_stream_ui(mut self, input: ::std::option::Option<bool>) -> Self {
         self.stream_ui = input;
         self
+    }
+    /// <p>Boolean indicating whether a streaming session will be configured for the application. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with your application as it is running in the simulation. You must configure and launch the component. It must have a graphical user interface. </p>
+    pub fn get_stream_ui(&self) -> &::std::option::Option<bool> {
+        &self.stream_ui
     }
     /// Appends an item to `command`.
     ///
@@ -170,6 +196,11 @@ impl LaunchConfigBuilder {
     ) -> Self {
         self.command = input;
         self
+    }
+    /// <p>If you've specified <code>General</code> as the value for your <code>RobotSoftwareSuite</code>, you can use this field to specify a list of commands for your container image.</p>
+    /// <p>If you've specified <code>SimulationRuntime</code> as the value for your <code>SimulationSoftwareSuite</code>, you can use this field to specify a list of commands for your container image.</p>
+    pub fn get_command(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.command
     }
     /// Consumes the builder and constructs a [`LaunchConfig`](crate::types::LaunchConfig).
     pub fn build(self) -> crate::types::LaunchConfig {

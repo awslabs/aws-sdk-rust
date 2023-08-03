@@ -56,6 +56,10 @@ impl RecordOutputBuilder {
         self.output_key = input;
         self
     }
+    /// <p>The output key.</p>
+    pub fn get_output_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_key
+    }
     /// <p>The output value.</p>
     pub fn output_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_value = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl RecordOutputBuilder {
         self.output_value = input;
         self
     }
+    /// <p>The output value.</p>
+    pub fn get_output_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_value
+    }
     /// <p>The description of the output.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl RecordOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the output.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`RecordOutput`](crate::types::RecordOutput).
     pub fn build(self) -> crate::types::RecordOutput {

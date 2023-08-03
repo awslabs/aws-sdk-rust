@@ -75,6 +75,15 @@ impl AccessConfigurationBuilder {
         self.access_type = input;
         self
     }
+    /// <p>The type of authentication used to access content from <code>HttpConfiguration::BaseUrl</code> on your source location. Accepted value: <code>S3_SIGV4</code>.</p>
+    /// <p> <code>S3_SIGV4</code> - AWS Signature Version 4 authentication for Amazon S3 hosted virtual-style access. If your source location base URL is an Amazon S3 bucket, MediaTailor can use AWS Signature Version 4 (SigV4) authentication to access the bucket where your source content is stored. Your MediaTailor source location baseURL must follow the S3 virtual hosted-style request URL format. For example, https://bucket-name.s3.Region.amazonaws.com/key-name.</p>
+    /// <p>Before you can use <code>S3_SIGV4</code>, you must meet these requirements:</p>
+    /// <p>• You must allow MediaTailor to access your S3 bucket by granting mediatailor.amazonaws.com principal access in IAM. For information about configuring access in IAM, see Access management in the IAM User Guide.</p>
+    /// <p>• The mediatailor.amazonaws.com service principal must have permissions to read all top level manifests referenced by the VodSource packaging configurations.</p>
+    /// <p>• The caller of the API must have s3:GetObject IAM permissions to read all top level manifests referenced by your MediaTailor VodSource packaging configurations.</p>
+    pub fn get_access_type(&self) -> &::std::option::Option<crate::types::AccessType> {
+        &self.access_type
+    }
     /// <p>AWS Secrets Manager access token configuration parameters.</p>
     pub fn secrets_manager_access_token_configuration(
         mut self,
@@ -90,6 +99,12 @@ impl AccessConfigurationBuilder {
     ) -> Self {
         self.secrets_manager_access_token_configuration = input;
         self
+    }
+    /// <p>AWS Secrets Manager access token configuration parameters.</p>
+    pub fn get_secrets_manager_access_token_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SecretsManagerAccessTokenConfiguration> {
+        &self.secrets_manager_access_token_configuration
     }
     /// Consumes the builder and constructs a [`AccessConfiguration`](crate::types::AccessConfiguration).
     pub fn build(self) -> crate::types::AccessConfiguration {

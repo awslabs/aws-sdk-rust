@@ -46,6 +46,10 @@ impl AssignedPrivateIpAddressBuilder {
         self.private_ip_address = input;
         self
     }
+    /// <p>The private IP address assigned to the network interface.</p>
+    pub fn get_private_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_ip_address
+    }
     /// Consumes the builder and constructs a [`AssignedPrivateIpAddress`](crate::types::AssignedPrivateIpAddress).
     pub fn build(self) -> crate::types::AssignedPrivateIpAddress {
         crate::types::AssignedPrivateIpAddress {

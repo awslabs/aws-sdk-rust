@@ -39,6 +39,10 @@ impl DescribeApplicableIndividualAssessmentsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeApplicableIndividualAssessments as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_applicable_individual_assessments::builders::DescribeApplicableIndividualAssessmentsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -115,6 +119,10 @@ impl DescribeApplicableIndividualAssessmentsFluentBuilder {
         self.inner = self.inner.set_replication_task_arn(input);
         self
     }
+    /// <p>Amazon Resource Name (ARN) of a migration task on which you want to base the default list of individual assessments.</p>
+    pub fn get_replication_task_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_replication_task_arn()
+    }
     /// <p>ARN of a replication instance on which you want to base the default list of individual assessments.</p>
     pub fn replication_instance_arn(
         mut self,
@@ -130,6 +138,10 @@ impl DescribeApplicableIndividualAssessmentsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_replication_instance_arn(input);
         self
+    }
+    /// <p>ARN of a replication instance on which you want to base the default list of individual assessments.</p>
+    pub fn get_replication_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_replication_instance_arn()
     }
     /// <p>Name of a database engine that the specified replication instance supports as a source.</p>
     pub fn source_engine_name(
@@ -147,6 +159,10 @@ impl DescribeApplicableIndividualAssessmentsFluentBuilder {
         self.inner = self.inner.set_source_engine_name(input);
         self
     }
+    /// <p>Name of a database engine that the specified replication instance supports as a source.</p>
+    pub fn get_source_engine_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_engine_name()
+    }
     /// <p>Name of a database engine that the specified replication instance supports as a target.</p>
     pub fn target_engine_name(
         mut self,
@@ -163,6 +179,10 @@ impl DescribeApplicableIndividualAssessmentsFluentBuilder {
         self.inner = self.inner.set_target_engine_name(input);
         self
     }
+    /// <p>Name of a database engine that the specified replication instance supports as a target.</p>
+    pub fn get_target_engine_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_engine_name()
+    }
     /// <p>Name of the migration type that each provided individual assessment must support.</p>
     pub fn migration_type(mut self, input: crate::types::MigrationTypeValue) -> Self {
         self.inner = self.inner.migration_type(input);
@@ -176,6 +196,10 @@ impl DescribeApplicableIndividualAssessmentsFluentBuilder {
         self.inner = self.inner.set_migration_type(input);
         self
     }
+    /// <p>Name of the migration type that each provided individual assessment must support.</p>
+    pub fn get_migration_type(&self) -> &::std::option::Option<crate::types::MigrationTypeValue> {
+        self.inner.get_migration_type()
+    }
     /// <p>Maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.inner = self.inner.max_records(input);
@@ -186,6 +210,10 @@ impl DescribeApplicableIndividualAssessmentsFluentBuilder {
         self.inner = self.inner.set_max_records(input);
         self
     }
+    /// <p>Maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_records()
+    }
     /// <p>Optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -195,5 +223,9 @@ impl DescribeApplicableIndividualAssessmentsFluentBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
+    }
+    /// <p>Optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
     }
 }

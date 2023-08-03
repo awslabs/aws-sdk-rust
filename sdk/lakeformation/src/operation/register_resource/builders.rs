@@ -41,6 +41,12 @@ impl RegisterResourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RegisterResource as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::register_resource::builders::RegisterResourceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +137,10 @@ impl RegisterResourceFluentBuilder {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the resource that you want to register.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
+    }
     /// <p>Designates an Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked Roles for Lake Formation</a>.</p>
     pub fn use_service_linked_role(mut self, input: bool) -> Self {
@@ -143,6 +153,11 @@ impl RegisterResourceFluentBuilder {
         self.inner = self.inner.set_use_service_linked_role(input);
         self
     }
+    /// <p>Designates an Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked Roles for Lake Formation</a>.</p>
+    pub fn get_use_service_linked_role(&self) -> &::std::option::Option<bool> {
+        self.inner.get_use_service_linked_role()
+    }
     /// <p>The identifier for the role that registers the resource.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -153,6 +168,10 @@ impl RegisterResourceFluentBuilder {
         self.inner = self.inner.set_role_arn(input);
         self
     }
+    /// <p>The identifier for the role that registers the resource.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
+    }
     /// <p>Whether or not the resource is a federated resource.</p>
     pub fn with_federation(mut self, input: bool) -> Self {
         self.inner = self.inner.with_federation(input);
@@ -162,5 +181,9 @@ impl RegisterResourceFluentBuilder {
     pub fn set_with_federation(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_with_federation(input);
         self
+    }
+    /// <p>Whether or not the resource is a federated resource.</p>
+    pub fn get_with_federation(&self) -> &::std::option::Option<bool> {
+        self.inner.get_with_federation()
     }
 }

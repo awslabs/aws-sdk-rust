@@ -59,6 +59,11 @@ impl ClipTimestampRangeBuilder {
         self.start_timestamp = input;
         self
     }
+    /// <p>The starting timestamp in the range of timestamps for which to return fragments. </p>
+    /// <p>Only fragments that start exactly at or after <code>StartTimestamp</code> are included in the session. Fragments that start before <code>StartTimestamp</code> and continue past it aren't included in the session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the <code>StartTimestamp</code> must be later than the stream head. </p>
+    pub fn get_start_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_timestamp
+    }
     /// <p>The end of the timestamp range for the requested media.</p>
     /// <p>This value must be within 24 hours of the specified <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code> value. If <code>FragmentSelectorType</code> for the request is <code>SERVER_TIMESTAMP</code>, this value must be in the past. </p>
     /// <p>This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting) timestamp of the fragment. Fragments that start before the <code>EndTimestamp</code> value and continue past it are included in the session. </p>
@@ -75,6 +80,12 @@ impl ClipTimestampRangeBuilder {
     ) -> Self {
         self.end_timestamp = input;
         self
+    }
+    /// <p>The end of the timestamp range for the requested media.</p>
+    /// <p>This value must be within 24 hours of the specified <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code> value. If <code>FragmentSelectorType</code> for the request is <code>SERVER_TIMESTAMP</code>, this value must be in the past. </p>
+    /// <p>This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting) timestamp of the fragment. Fragments that start before the <code>EndTimestamp</code> value and continue past it are included in the session. </p>
+    pub fn get_end_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_timestamp
     }
     /// Consumes the builder and constructs a [`ClipTimestampRange`](crate::types::ClipTimestampRange).
     pub fn build(self) -> crate::types::ClipTimestampRange {

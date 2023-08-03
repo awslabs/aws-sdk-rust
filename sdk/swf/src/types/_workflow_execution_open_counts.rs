@@ -72,6 +72,10 @@ impl WorkflowExecutionOpenCountsBuilder {
         self.open_activity_tasks = input;
         self
     }
+    /// <p>The count of activity tasks whose status is <code>OPEN</code>.</p>
+    pub fn get_open_activity_tasks(&self) -> &::std::option::Option<i32> {
+        &self.open_activity_tasks
+    }
     /// <p>The count of decision tasks whose status is OPEN. A workflow execution can have at most one open decision task.</p>
     pub fn open_decision_tasks(mut self, input: i32) -> Self {
         self.open_decision_tasks = ::std::option::Option::Some(input);
@@ -81,6 +85,10 @@ impl WorkflowExecutionOpenCountsBuilder {
     pub fn set_open_decision_tasks(mut self, input: ::std::option::Option<i32>) -> Self {
         self.open_decision_tasks = input;
         self
+    }
+    /// <p>The count of decision tasks whose status is OPEN. A workflow execution can have at most one open decision task.</p>
+    pub fn get_open_decision_tasks(&self) -> &::std::option::Option<i32> {
+        &self.open_decision_tasks
     }
     /// <p>The count of timers started by this workflow execution that have not fired yet.</p>
     pub fn open_timers(mut self, input: i32) -> Self {
@@ -92,6 +100,10 @@ impl WorkflowExecutionOpenCountsBuilder {
         self.open_timers = input;
         self
     }
+    /// <p>The count of timers started by this workflow execution that have not fired yet.</p>
+    pub fn get_open_timers(&self) -> &::std::option::Option<i32> {
+        &self.open_timers
+    }
     /// <p>The count of child workflow executions whose status is <code>OPEN</code>.</p>
     pub fn open_child_workflow_executions(mut self, input: i32) -> Self {
         self.open_child_workflow_executions = ::std::option::Option::Some(input);
@@ -102,6 +114,10 @@ impl WorkflowExecutionOpenCountsBuilder {
         self.open_child_workflow_executions = input;
         self
     }
+    /// <p>The count of child workflow executions whose status is <code>OPEN</code>.</p>
+    pub fn get_open_child_workflow_executions(&self) -> &::std::option::Option<i32> {
+        &self.open_child_workflow_executions
+    }
     /// <p>The count of Lambda tasks whose status is <code>OPEN</code>.</p>
     pub fn open_lambda_functions(mut self, input: i32) -> Self {
         self.open_lambda_functions = ::std::option::Option::Some(input);
@@ -111,6 +127,10 @@ impl WorkflowExecutionOpenCountsBuilder {
     pub fn set_open_lambda_functions(mut self, input: ::std::option::Option<i32>) -> Self {
         self.open_lambda_functions = input;
         self
+    }
+    /// <p>The count of Lambda tasks whose status is <code>OPEN</code>.</p>
+    pub fn get_open_lambda_functions(&self) -> &::std::option::Option<i32> {
+        &self.open_lambda_functions
     }
     /// Consumes the builder and constructs a [`WorkflowExecutionOpenCounts`](crate::types::WorkflowExecutionOpenCounts).
     pub fn build(self) -> crate::types::WorkflowExecutionOpenCounts {

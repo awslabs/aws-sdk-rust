@@ -37,7 +37,9 @@ impl GetReusableDelegationSetLimitInput {
                 (::std::result::Result::Err(e), ::std::option::Option::None)
             }
         };
-        crate::route53_resource_id_preprocessor::trim_resource_id(&mut self.delegation_set_id);
+        crate::route53_resource_id_preprocessor_middleware::trim_resource_id(
+            &mut self.delegation_set_id,
+        );
         let mut request = {
             fn uri_base(
                 _input: &crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimitInput,

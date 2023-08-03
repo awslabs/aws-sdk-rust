@@ -59,6 +59,14 @@ impl CreateDataLakeOrganizationConfigurationInputBuilder {
         self.auto_enable_new_account = input;
         self
     }
+    /// <p>Enable Security Lake with the specified configuration settings, to begin collecting security data for new accounts in your organization.</p>
+    pub fn get_auto_enable_new_account(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::DataLakeAutoEnableNewAccountConfiguration>,
+    > {
+        &self.auto_enable_new_account
+    }
     /// Consumes the builder and constructs a [`CreateDataLakeOrganizationConfigurationInput`](crate::operation::create_data_lake_organization_configuration::CreateDataLakeOrganizationConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_data_lake_organization_configuration::CreateDataLakeOrganizationConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

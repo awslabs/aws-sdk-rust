@@ -40,6 +40,10 @@ impl DataLakeEncryptionConfigurationBuilder {
         self.kms_key_id = input;
         self
     }
+    /// <p>The id of KMS encryption key used by Amazon Security Lake to encrypt the Security Lake object.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
+    }
     /// Consumes the builder and constructs a [`DataLakeEncryptionConfiguration`](crate::types::DataLakeEncryptionConfiguration).
     pub fn build(self) -> crate::types::DataLakeEncryptionConfiguration {
         crate::types::DataLakeEncryptionConfiguration {

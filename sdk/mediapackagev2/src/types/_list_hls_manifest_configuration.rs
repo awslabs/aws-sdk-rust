@@ -62,6 +62,10 @@ impl ListHlsManifestConfigurationBuilder {
         self.manifest_name = input;
         self
     }
+    /// <p>A short short string that's appended to the endpoint URL. The manifest name creates a unique path to this endpoint. If you don't enter a value, MediaPackage uses the default manifest name, index. MediaPackage automatically inserts the format extension, such as .m3u8. You can't use the same manifest name if you use HLS manifest and low-latency HLS manifest. The manifestName on the HLSManifest object overrides the manifestName you provided on the originEndpoint object.</p>
+    pub fn get_manifest_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.manifest_name
+    }
     /// <p>A short string that's appended to the endpoint URL. The child manifest name creates a unique path to this endpoint. If you don't enter a value, MediaPackage uses the default child manifest name, index_1. The manifestName on the HLSManifest object overrides the manifestName you provided on the originEndpoint object.</p>
     pub fn child_manifest_name(
         mut self,
@@ -78,6 +82,10 @@ impl ListHlsManifestConfigurationBuilder {
         self.child_manifest_name = input;
         self
     }
+    /// <p>A short string that's appended to the endpoint URL. The child manifest name creates a unique path to this endpoint. If you don't enter a value, MediaPackage uses the default child manifest name, index_1. The manifestName on the HLSManifest object overrides the manifestName you provided on the originEndpoint object.</p>
+    pub fn get_child_manifest_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.child_manifest_name
+    }
     /// <p>The egress domain URL for stream delivery from MediaPackage.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
@@ -87,6 +95,10 @@ impl ListHlsManifestConfigurationBuilder {
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
+    }
+    /// <p>The egress domain URL for stream delivery from MediaPackage.</p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
     }
     /// Consumes the builder and constructs a [`ListHlsManifestConfiguration`](crate::types::ListHlsManifestConfiguration).
     pub fn build(self) -> crate::types::ListHlsManifestConfiguration {

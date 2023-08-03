@@ -45,6 +45,12 @@ impl AddBridgeOutputRequestBuilder {
         self.network_output = input;
         self
     }
+    /// Add a network output to an existing bridge.
+    pub fn get_network_output(
+        &self,
+    ) -> &::std::option::Option<crate::types::AddBridgeNetworkOutputRequest> {
+        &self.network_output
+    }
     /// Consumes the builder and constructs a [`AddBridgeOutputRequest`](crate::types::AddBridgeOutputRequest).
     pub fn build(self) -> crate::types::AddBridgeOutputRequest {
         crate::types::AddBridgeOutputRequest {

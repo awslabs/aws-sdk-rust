@@ -332,6 +332,10 @@ impl OrderableDbInstanceOptionBuilder {
         self.engine = input;
         self
     }
+    /// <p>The engine type of a DB instance.</p>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine
+    }
     /// <p>The engine version of a DB instance.</p>
     pub fn engine_version(
         mut self,
@@ -347,6 +351,10 @@ impl OrderableDbInstanceOptionBuilder {
     ) -> Self {
         self.engine_version = input;
         self
+    }
+    /// <p>The engine version of a DB instance.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
     }
     /// <p>The DB instance class for a DB instance.</p>
     pub fn db_instance_class(
@@ -364,6 +372,10 @@ impl OrderableDbInstanceOptionBuilder {
         self.db_instance_class = input;
         self
     }
+    /// <p>The DB instance class for a DB instance.</p>
+    pub fn get_db_instance_class(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_instance_class
+    }
     /// <p>The license model for a DB instance.</p>
     pub fn license_model(
         mut self,
@@ -380,6 +392,10 @@ impl OrderableDbInstanceOptionBuilder {
         self.license_model = input;
         self
     }
+    /// <p>The license model for a DB instance.</p>
+    pub fn get_license_model(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_model
+    }
     /// <p>The Availability Zone group for a DB instance.</p>
     pub fn availability_zone_group(
         mut self,
@@ -395,6 +411,10 @@ impl OrderableDbInstanceOptionBuilder {
     ) -> Self {
         self.availability_zone_group = input;
         self
+    }
+    /// <p>The Availability Zone group for a DB instance.</p>
+    pub fn get_availability_zone_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone_group
     }
     /// Appends an item to `availability_zones`.
     ///
@@ -415,6 +435,12 @@ impl OrderableDbInstanceOptionBuilder {
         self.availability_zones = input;
         self
     }
+    /// <p>A list of Availability Zones for a DB instance.</p>
+    pub fn get_availability_zones(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>> {
+        &self.availability_zones
+    }
     /// <p>Indicates whether a DB instance is Multi-AZ capable.</p>
     pub fn multi_az_capable(mut self, input: bool) -> Self {
         self.multi_az_capable = ::std::option::Option::Some(input);
@@ -424,6 +450,10 @@ impl OrderableDbInstanceOptionBuilder {
     pub fn set_multi_az_capable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.multi_az_capable = input;
         self
+    }
+    /// <p>Indicates whether a DB instance is Multi-AZ capable.</p>
+    pub fn get_multi_az_capable(&self) -> &::std::option::Option<bool> {
+        &self.multi_az_capable
     }
     /// <p>Indicates whether a DB instance can have a read replica.</p>
     pub fn read_replica_capable(mut self, input: bool) -> Self {
@@ -435,6 +465,10 @@ impl OrderableDbInstanceOptionBuilder {
         self.read_replica_capable = input;
         self
     }
+    /// <p>Indicates whether a DB instance can have a read replica.</p>
+    pub fn get_read_replica_capable(&self) -> &::std::option::Option<bool> {
+        &self.read_replica_capable
+    }
     /// <p>Indicates whether a DB instance is in a VPC.</p>
     pub fn vpc(mut self, input: bool) -> Self {
         self.vpc = ::std::option::Option::Some(input);
@@ -444,6 +478,10 @@ impl OrderableDbInstanceOptionBuilder {
     pub fn set_vpc(mut self, input: ::std::option::Option<bool>) -> Self {
         self.vpc = input;
         self
+    }
+    /// <p>Indicates whether a DB instance is in a VPC.</p>
+    pub fn get_vpc(&self) -> &::std::option::Option<bool> {
+        &self.vpc
     }
     /// <p>Indicates whether a DB instance supports encrypted storage.</p>
     pub fn supports_storage_encryption(mut self, input: bool) -> Self {
@@ -455,6 +493,10 @@ impl OrderableDbInstanceOptionBuilder {
         self.supports_storage_encryption = input;
         self
     }
+    /// <p>Indicates whether a DB instance supports encrypted storage.</p>
+    pub fn get_supports_storage_encryption(&self) -> &::std::option::Option<bool> {
+        &self.supports_storage_encryption
+    }
     /// <p>Indicates the storage type for a DB instance.</p>
     pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_type = ::std::option::Option::Some(input.into());
@@ -464,6 +506,10 @@ impl OrderableDbInstanceOptionBuilder {
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_type = input;
         self
+    }
+    /// <p>Indicates the storage type for a DB instance.</p>
+    pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_type
     }
     /// <p>Indicates whether a DB instance supports provisioned IOPS.</p>
     pub fn supports_iops(mut self, input: bool) -> Self {
@@ -475,6 +521,10 @@ impl OrderableDbInstanceOptionBuilder {
         self.supports_iops = input;
         self
     }
+    /// <p>Indicates whether a DB instance supports provisioned IOPS.</p>
+    pub fn get_supports_iops(&self) -> &::std::option::Option<bool> {
+        &self.supports_iops
+    }
     /// <p>Indicates whether a DB instance supports Enhanced Monitoring at intervals from 1 to 60 seconds.</p>
     pub fn supports_enhanced_monitoring(mut self, input: bool) -> Self {
         self.supports_enhanced_monitoring = ::std::option::Option::Some(input);
@@ -484,6 +534,10 @@ impl OrderableDbInstanceOptionBuilder {
     pub fn set_supports_enhanced_monitoring(mut self, input: ::std::option::Option<bool>) -> Self {
         self.supports_enhanced_monitoring = input;
         self
+    }
+    /// <p>Indicates whether a DB instance supports Enhanced Monitoring at intervals from 1 to 60 seconds.</p>
+    pub fn get_supports_enhanced_monitoring(&self) -> &::std::option::Option<bool> {
+        &self.supports_enhanced_monitoring
     }
     /// <p>Indicates whether a DB instance supports IAM database authentication.</p>
     pub fn supports_iam_database_authentication(mut self, input: bool) -> Self {
@@ -498,6 +552,10 @@ impl OrderableDbInstanceOptionBuilder {
         self.supports_iam_database_authentication = input;
         self
     }
+    /// <p>Indicates whether a DB instance supports IAM database authentication.</p>
+    pub fn get_supports_iam_database_authentication(&self) -> &::std::option::Option<bool> {
+        &self.supports_iam_database_authentication
+    }
     /// <p>True if a DB instance supports Performance Insights, otherwise false.</p>
     pub fn supports_performance_insights(mut self, input: bool) -> Self {
         self.supports_performance_insights = ::std::option::Option::Some(input);
@@ -507,6 +565,10 @@ impl OrderableDbInstanceOptionBuilder {
     pub fn set_supports_performance_insights(mut self, input: ::std::option::Option<bool>) -> Self {
         self.supports_performance_insights = input;
         self
+    }
+    /// <p>True if a DB instance supports Performance Insights, otherwise false.</p>
+    pub fn get_supports_performance_insights(&self) -> &::std::option::Option<bool> {
+        &self.supports_performance_insights
     }
     /// <p>Minimum storage size for a DB instance.</p>
     pub fn min_storage_size(mut self, input: i32) -> Self {
@@ -518,6 +580,10 @@ impl OrderableDbInstanceOptionBuilder {
         self.min_storage_size = input;
         self
     }
+    /// <p>Minimum storage size for a DB instance.</p>
+    pub fn get_min_storage_size(&self) -> &::std::option::Option<i32> {
+        &self.min_storage_size
+    }
     /// <p>Maximum storage size for a DB instance.</p>
     pub fn max_storage_size(mut self, input: i32) -> Self {
         self.max_storage_size = ::std::option::Option::Some(input);
@@ -527,6 +593,10 @@ impl OrderableDbInstanceOptionBuilder {
     pub fn set_max_storage_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_storage_size = input;
         self
+    }
+    /// <p>Maximum storage size for a DB instance.</p>
+    pub fn get_max_storage_size(&self) -> &::std::option::Option<i32> {
+        &self.max_storage_size
     }
     /// <p>Minimum total provisioned IOPS for a DB instance.</p>
     pub fn min_iops_per_db_instance(mut self, input: i32) -> Self {
@@ -538,6 +608,10 @@ impl OrderableDbInstanceOptionBuilder {
         self.min_iops_per_db_instance = input;
         self
     }
+    /// <p>Minimum total provisioned IOPS for a DB instance.</p>
+    pub fn get_min_iops_per_db_instance(&self) -> &::std::option::Option<i32> {
+        &self.min_iops_per_db_instance
+    }
     /// <p>Maximum total provisioned IOPS for a DB instance.</p>
     pub fn max_iops_per_db_instance(mut self, input: i32) -> Self {
         self.max_iops_per_db_instance = ::std::option::Option::Some(input);
@@ -547,6 +621,10 @@ impl OrderableDbInstanceOptionBuilder {
     pub fn set_max_iops_per_db_instance(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_iops_per_db_instance = input;
         self
+    }
+    /// <p>Maximum total provisioned IOPS for a DB instance.</p>
+    pub fn get_max_iops_per_db_instance(&self) -> &::std::option::Option<i32> {
+        &self.max_iops_per_db_instance
     }
     /// <p>Minimum provisioned IOPS per GiB for a DB instance.</p>
     pub fn min_iops_per_gib(mut self, input: f64) -> Self {
@@ -558,6 +636,10 @@ impl OrderableDbInstanceOptionBuilder {
         self.min_iops_per_gib = input;
         self
     }
+    /// <p>Minimum provisioned IOPS per GiB for a DB instance.</p>
+    pub fn get_min_iops_per_gib(&self) -> &::std::option::Option<f64> {
+        &self.min_iops_per_gib
+    }
     /// <p>Maximum provisioned IOPS per GiB for a DB instance.</p>
     pub fn max_iops_per_gib(mut self, input: f64) -> Self {
         self.max_iops_per_gib = ::std::option::Option::Some(input);
@@ -567,6 +649,10 @@ impl OrderableDbInstanceOptionBuilder {
     pub fn set_max_iops_per_gib(mut self, input: ::std::option::Option<f64>) -> Self {
         self.max_iops_per_gib = input;
         self
+    }
+    /// <p>Maximum provisioned IOPS per GiB for a DB instance.</p>
+    pub fn get_max_iops_per_gib(&self) -> &::std::option::Option<f64> {
+        &self.max_iops_per_gib
     }
     /// Appends an item to `available_processor_features`.
     ///
@@ -590,6 +676,12 @@ impl OrderableDbInstanceOptionBuilder {
         self.available_processor_features = input;
         self
     }
+    /// <p>A list of the available processor features for the DB instance class of a DB instance.</p>
+    pub fn get_available_processor_features(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailableProcessorFeature>> {
+        &self.available_processor_features
+    }
     /// Appends an item to `supported_engine_modes`.
     ///
     /// To override the contents of this collection use [`set_supported_engine_modes`](Self::set_supported_engine_modes).
@@ -612,6 +704,12 @@ impl OrderableDbInstanceOptionBuilder {
         self.supported_engine_modes = input;
         self
     }
+    /// <p>A list of the supported DB engine modes.</p>
+    pub fn get_supported_engine_modes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.supported_engine_modes
+    }
     /// <p>Whether Amazon RDS can automatically scale storage for DB instances that use the specified DB instance class.</p>
     pub fn supports_storage_autoscaling(mut self, input: bool) -> Self {
         self.supports_storage_autoscaling = ::std::option::Option::Some(input);
@@ -621,6 +719,10 @@ impl OrderableDbInstanceOptionBuilder {
     pub fn set_supports_storage_autoscaling(mut self, input: ::std::option::Option<bool>) -> Self {
         self.supports_storage_autoscaling = input;
         self
+    }
+    /// <p>Whether Amazon RDS can automatically scale storage for DB instances that use the specified DB instance class.</p>
+    pub fn get_supports_storage_autoscaling(&self) -> &::std::option::Option<bool> {
+        &self.supports_storage_autoscaling
     }
     /// <p>Whether a DB instance supports Kerberos Authentication.</p>
     pub fn supports_kerberos_authentication(mut self, input: bool) -> Self {
@@ -635,6 +737,10 @@ impl OrderableDbInstanceOptionBuilder {
         self.supports_kerberos_authentication = input;
         self
     }
+    /// <p>Whether a DB instance supports Kerberos Authentication.</p>
+    pub fn get_supports_kerberos_authentication(&self) -> &::std::option::Option<bool> {
+        &self.supports_kerberos_authentication
+    }
     /// <p>Whether a DB instance supports RDS on Outposts.</p>
     /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn outpost_capable(mut self, input: bool) -> Self {
@@ -646,6 +752,11 @@ impl OrderableDbInstanceOptionBuilder {
     pub fn set_outpost_capable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.outpost_capable = input;
         self
+    }
+    /// <p>Whether a DB instance supports RDS on Outposts.</p>
+    /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i> </p>
+    pub fn get_outpost_capable(&self) -> &::std::option::Option<bool> {
+        &self.outpost_capable
     }
     /// Appends an item to `supported_activity_stream_modes`.
     ///
@@ -669,6 +780,12 @@ impl OrderableDbInstanceOptionBuilder {
         self.supported_activity_stream_modes = input;
         self
     }
+    /// <p>The list of supported modes for Database Activity Streams. Aurora PostgreSQL returns the value <code>[sync, async]</code>. Aurora MySQL and RDS for Oracle return <code>[async]</code> only. If Database Activity Streams isn't supported, the return value is an empty list.</p>
+    pub fn get_supported_activity_stream_modes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.supported_activity_stream_modes
+    }
     /// <p>A value that indicates whether you can use Aurora global databases with a specific combination of other DB engine attributes.</p>
     pub fn supports_global_databases(mut self, input: bool) -> Self {
         self.supports_global_databases = ::std::option::Option::Some(input);
@@ -678,6 +795,10 @@ impl OrderableDbInstanceOptionBuilder {
     pub fn set_supports_global_databases(mut self, input: ::std::option::Option<bool>) -> Self {
         self.supports_global_databases = input;
         self
+    }
+    /// <p>A value that indicates whether you can use Aurora global databases with a specific combination of other DB engine attributes.</p>
+    pub fn get_supports_global_databases(&self) -> &::std::option::Option<bool> {
+        &self.supports_global_databases
     }
     /// <p>Whether DB instances can be configured as a Multi-AZ DB cluster.</p>
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
@@ -690,6 +811,11 @@ impl OrderableDbInstanceOptionBuilder {
     pub fn set_supports_clusters(mut self, input: ::std::option::Option<bool>) -> Self {
         self.supports_clusters = input;
         self
+    }
+    /// <p>Whether DB instances can be configured as a Multi-AZ DB cluster.</p>
+    /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
+    pub fn get_supports_clusters(&self) -> &::std::option::Option<bool> {
+        &self.supports_clusters
     }
     /// Appends an item to `supported_network_types`.
     ///
@@ -717,6 +843,14 @@ impl OrderableDbInstanceOptionBuilder {
         self.supported_network_types = input;
         self
     }
+    /// <p>The network types supported by the DB instance (<code>IPV4</code> or <code>DUAL</code>).</p>
+    /// <p>A DB instance can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
+    pub fn get_supported_network_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.supported_network_types
+    }
     /// <p>Indicates whether a DB instance supports storage throughput.</p>
     pub fn supports_storage_throughput(mut self, input: bool) -> Self {
         self.supports_storage_throughput = ::std::option::Option::Some(input);
@@ -726,6 +860,10 @@ impl OrderableDbInstanceOptionBuilder {
     pub fn set_supports_storage_throughput(mut self, input: ::std::option::Option<bool>) -> Self {
         self.supports_storage_throughput = input;
         self
+    }
+    /// <p>Indicates whether a DB instance supports storage throughput.</p>
+    pub fn get_supports_storage_throughput(&self) -> &::std::option::Option<bool> {
+        &self.supports_storage_throughput
     }
     /// <p>Minimum storage throughput for a DB instance.</p>
     pub fn min_storage_throughput_per_db_instance(mut self, input: i32) -> Self {
@@ -740,6 +878,10 @@ impl OrderableDbInstanceOptionBuilder {
         self.min_storage_throughput_per_db_instance = input;
         self
     }
+    /// <p>Minimum storage throughput for a DB instance.</p>
+    pub fn get_min_storage_throughput_per_db_instance(&self) -> &::std::option::Option<i32> {
+        &self.min_storage_throughput_per_db_instance
+    }
     /// <p>Maximum storage throughput for a DB instance.</p>
     pub fn max_storage_throughput_per_db_instance(mut self, input: i32) -> Self {
         self.max_storage_throughput_per_db_instance = ::std::option::Option::Some(input);
@@ -752,6 +894,10 @@ impl OrderableDbInstanceOptionBuilder {
     ) -> Self {
         self.max_storage_throughput_per_db_instance = input;
         self
+    }
+    /// <p>Maximum storage throughput for a DB instance.</p>
+    pub fn get_max_storage_throughput_per_db_instance(&self) -> &::std::option::Option<i32> {
+        &self.max_storage_throughput_per_db_instance
     }
     /// <p>Minimum storage throughput to provisioned IOPS ratio for a DB instance.</p>
     pub fn min_storage_throughput_per_iops(mut self, input: f64) -> Self {
@@ -766,6 +912,10 @@ impl OrderableDbInstanceOptionBuilder {
         self.min_storage_throughput_per_iops = input;
         self
     }
+    /// <p>Minimum storage throughput to provisioned IOPS ratio for a DB instance.</p>
+    pub fn get_min_storage_throughput_per_iops(&self) -> &::std::option::Option<f64> {
+        &self.min_storage_throughput_per_iops
+    }
     /// <p>Maximum storage throughput to provisioned IOPS ratio for a DB instance.</p>
     pub fn max_storage_throughput_per_iops(mut self, input: f64) -> Self {
         self.max_storage_throughput_per_iops = ::std::option::Option::Some(input);
@@ -778,6 +928,10 @@ impl OrderableDbInstanceOptionBuilder {
     ) -> Self {
         self.max_storage_throughput_per_iops = input;
         self
+    }
+    /// <p>Maximum storage throughput to provisioned IOPS ratio for a DB instance.</p>
+    pub fn get_max_storage_throughput_per_iops(&self) -> &::std::option::Option<f64> {
+        &self.max_storage_throughput_per_iops
     }
     /// Consumes the builder and constructs a [`OrderableDbInstanceOption`](crate::types::OrderableDbInstanceOption).
     pub fn build(self) -> crate::types::OrderableDbInstanceOption {

@@ -63,6 +63,10 @@ impl UserPoolClientDescriptionBuilder {
         self.client_id = input;
         self
     }
+    /// <p>The ID of the client associated with the user pool.</p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_id
+    }
     /// <p>The user pool ID for the user pool where you want to describe the user pool client.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl UserPoolClientDescriptionBuilder {
         self.user_pool_id = input;
         self
     }
+    /// <p>The user pool ID for the user pool where you want to describe the user pool client.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_pool_id
+    }
     /// <p>The client name from the user pool client description.</p>
     pub fn client_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_name = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl UserPoolClientDescriptionBuilder {
     pub fn set_client_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_name = input;
         self
+    }
+    /// <p>The client name from the user pool client description.</p>
+    pub fn get_client_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_name
     }
     /// Consumes the builder and constructs a [`UserPoolClientDescription`](crate::types::UserPoolClientDescription).
     pub fn build(self) -> crate::types::UserPoolClientDescription {

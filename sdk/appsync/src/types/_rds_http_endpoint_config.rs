@@ -72,6 +72,10 @@ impl RdsHttpEndpointConfigBuilder {
         self.aws_region = input;
         self
     }
+    /// <p>Amazon Web Services Region for Amazon RDS HTTP endpoint.</p>
+    pub fn get_aws_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_region
+    }
     /// <p>Amazon RDS cluster Amazon Resource Name (ARN).</p>
     pub fn db_cluster_identifier(
         mut self,
@@ -87,6 +91,10 @@ impl RdsHttpEndpointConfigBuilder {
     ) -> Self {
         self.db_cluster_identifier = input;
         self
+    }
+    /// <p>Amazon RDS cluster Amazon Resource Name (ARN).</p>
+    pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_identifier
     }
     /// <p>Logical database name.</p>
     pub fn database_name(
@@ -104,6 +112,10 @@ impl RdsHttpEndpointConfigBuilder {
         self.database_name = input;
         self
     }
+    /// <p>Logical database name.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>Logical schema name.</p>
     pub fn schema(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema = ::std::option::Option::Some(input.into());
@@ -113,6 +125,10 @@ impl RdsHttpEndpointConfigBuilder {
     pub fn set_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema = input;
         self
+    }
+    /// <p>Logical schema name.</p>
+    pub fn get_schema(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema
     }
     /// <p>Amazon Web Services secret store Amazon Resource Name (ARN) for database credentials.</p>
     pub fn aws_secret_store_arn(
@@ -129,6 +145,10 @@ impl RdsHttpEndpointConfigBuilder {
     ) -> Self {
         self.aws_secret_store_arn = input;
         self
+    }
+    /// <p>Amazon Web Services secret store Amazon Resource Name (ARN) for database credentials.</p>
+    pub fn get_aws_secret_store_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_secret_store_arn
     }
     /// Consumes the builder and constructs a [`RdsHttpEndpointConfig`](crate::types::RdsHttpEndpointConfig).
     pub fn build(self) -> crate::types::RdsHttpEndpointConfig {

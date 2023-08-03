@@ -48,6 +48,10 @@ impl StopReplicationTaskInputBuilder {
         self.replication_task_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name(ARN) of the replication task to be stopped.</p>
+    pub fn get_replication_task_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_task_arn
+    }
     /// Consumes the builder and constructs a [`StopReplicationTaskInput`](crate::operation::stop_replication_task::StopReplicationTaskInput).
     pub fn build(
         self,

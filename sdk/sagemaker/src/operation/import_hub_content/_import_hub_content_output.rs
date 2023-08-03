@@ -55,6 +55,10 @@ impl ImportHubContentOutputBuilder {
         self.hub_arn = input;
         self
     }
+    /// <p>The ARN of the hub that the content was imported into.</p>
+    pub fn get_hub_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hub_arn
+    }
     /// <p>The ARN of the hub content that was imported.</p>
     pub fn hub_content_arn(
         mut self,
@@ -70,6 +74,10 @@ impl ImportHubContentOutputBuilder {
     ) -> Self {
         self.hub_content_arn = input;
         self
+    }
+    /// <p>The ARN of the hub content that was imported.</p>
+    pub fn get_hub_content_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hub_content_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

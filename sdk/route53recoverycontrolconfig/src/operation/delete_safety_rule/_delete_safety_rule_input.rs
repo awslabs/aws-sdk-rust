@@ -46,6 +46,10 @@ impl DeleteSafetyRuleInputBuilder {
         self.safety_rule_arn = input;
         self
     }
+    /// <p>The ARN of the safety rule.</p>
+    pub fn get_safety_rule_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.safety_rule_arn
+    }
     /// Consumes the builder and constructs a [`DeleteSafetyRuleInput`](crate::operation::delete_safety_rule::DeleteSafetyRuleInput).
     pub fn build(
         self,

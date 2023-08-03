@@ -37,6 +37,13 @@ impl PutPortfolioPreferencesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutPortfolioPreferences as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_portfolio_preferences::builders::PutPortfolioPreferencesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,12 @@ impl PutPortfolioPreferencesFluentBuilder {
         self.inner = self.inner.set_prioritize_business_goals(input);
         self
     }
+    /// <p> The rank of the business goals based on priority. </p>
+    pub fn get_prioritize_business_goals(
+        &self,
+    ) -> &::std::option::Option<crate::types::PrioritizeBusinessGoals> {
+        self.inner.get_prioritize_business_goals()
+    }
     /// <p> The transformation preferences for non-database applications. </p>
     pub fn application_preferences(mut self, input: crate::types::ApplicationPreferences) -> Self {
         self.inner = self.inner.application_preferences(input);
@@ -145,6 +158,12 @@ impl PutPortfolioPreferencesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_application_preferences(input);
         self
+    }
+    /// <p> The transformation preferences for non-database applications. </p>
+    pub fn get_application_preferences(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationPreferences> {
+        self.inner.get_application_preferences()
     }
     /// <p> The transformation preferences for database applications. </p>
     pub fn database_preferences(mut self, input: crate::types::DatabasePreferences) -> Self {
@@ -159,6 +178,12 @@ impl PutPortfolioPreferencesFluentBuilder {
         self.inner = self.inner.set_database_preferences(input);
         self
     }
+    /// <p> The transformation preferences for database applications. </p>
+    pub fn get_database_preferences(
+        &self,
+    ) -> &::std::option::Option<crate::types::DatabasePreferences> {
+        self.inner.get_database_preferences()
+    }
     /// <p>The classification for application component types.</p>
     pub fn application_mode(mut self, input: crate::types::ApplicationMode) -> Self {
         self.inner = self.inner.application_mode(input);
@@ -171,5 +196,9 @@ impl PutPortfolioPreferencesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_application_mode(input);
         self
+    }
+    /// <p>The classification for application component types.</p>
+    pub fn get_application_mode(&self) -> &::std::option::Option<crate::types::ApplicationMode> {
+        self.inner.get_application_mode()
     }
 }

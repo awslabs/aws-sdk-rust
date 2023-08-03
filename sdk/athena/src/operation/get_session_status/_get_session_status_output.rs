@@ -55,6 +55,10 @@ impl GetSessionStatusOutputBuilder {
         self.session_id = input;
         self
     }
+    /// <p>The session ID.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
+    }
     /// <p>Contains information about the status of the session.</p>
     pub fn status(mut self, input: crate::types::SessionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -64,6 +68,10 @@ impl GetSessionStatusOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::SessionStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Contains information about the status of the session.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::SessionStatus> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -36,6 +36,12 @@ impl CreateDashboardFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDashboard as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_dashboard::builders::CreateDashboardInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateDashboardFluentBuilder {
         self.inner = self.inner.set_project_id(input);
         self
     }
+    /// <p>The ID of the project in which to create the dashboard.</p>
+    pub fn get_project_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_id()
+    }
     /// <p>A friendly name for the dashboard.</p>
     pub fn dashboard_name(
         mut self,
@@ -141,6 +151,10 @@ impl CreateDashboardFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_dashboard_name(input);
         self
+    }
+    /// <p>A friendly name for the dashboard.</p>
+    pub fn get_dashboard_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dashboard_name()
     }
     /// <p>A description for the dashboard.</p>
     pub fn dashboard_description(
@@ -158,6 +172,10 @@ impl CreateDashboardFluentBuilder {
         self.inner = self.inner.set_dashboard_description(input);
         self
     }
+    /// <p>A description for the dashboard.</p>
+    pub fn get_dashboard_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dashboard_description()
+    }
     /// <p>The dashboard definition specified in a JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn dashboard_definition(
         mut self,
@@ -174,6 +192,10 @@ impl CreateDashboardFluentBuilder {
         self.inner = self.inner.set_dashboard_definition(input);
         self
     }
+    /// <p>The dashboard definition specified in a JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn get_dashboard_definition(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dashboard_definition()
+    }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -183,6 +205,10 @@ impl CreateDashboardFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -206,5 +232,13 @@ impl CreateDashboardFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of key-value pairs that contain metadata for the dashboard. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

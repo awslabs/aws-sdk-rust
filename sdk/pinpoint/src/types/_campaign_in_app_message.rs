@@ -72,6 +72,10 @@ impl CampaignInAppMessageBuilder {
         self.body = input;
         self
     }
+    /// <p>The message body of the notification, the email body or the text message.</p>
+    pub fn get_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.body
+    }
     /// Appends an item to `content`.
     ///
     /// To override the contents of this collection use [`set_content`](Self::set_content).
@@ -90,6 +94,12 @@ impl CampaignInAppMessageBuilder {
     ) -> Self {
         self.content = input;
         self
+    }
+    /// <p>In-app message content.</p>
+    pub fn get_content(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InAppMessageContent>> {
+        &self.content
     }
     /// Adds a key-value pair to `custom_config`.
     ///
@@ -116,6 +126,14 @@ impl CampaignInAppMessageBuilder {
         self.custom_config = input;
         self
     }
+    /// <p>Custom config to be sent to client.</p>
+    pub fn get_custom_config(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.custom_config
+    }
     /// <p>In-app message layout.</p>
     pub fn layout(mut self, input: crate::types::Layout) -> Self {
         self.layout = ::std::option::Option::Some(input);
@@ -125,6 +143,10 @@ impl CampaignInAppMessageBuilder {
     pub fn set_layout(mut self, input: ::std::option::Option<crate::types::Layout>) -> Self {
         self.layout = input;
         self
+    }
+    /// <p>In-app message layout.</p>
+    pub fn get_layout(&self) -> &::std::option::Option<crate::types::Layout> {
+        &self.layout
     }
     /// Consumes the builder and constructs a [`CampaignInAppMessage`](crate::types::CampaignInAppMessage).
     pub fn build(self) -> crate::types::CampaignInAppMessage {

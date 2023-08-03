@@ -56,6 +56,10 @@ impl CreateActionTargetInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the custom action target. Can contain up to 20 characters.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description for the custom action target.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl CreateActionTargetInputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description for the custom action target.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The ID for the custom action target. Can contain up to 20 alphanumeric characters.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl CreateActionTargetInputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The ID for the custom action target. Can contain up to 20 alphanumeric characters.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`CreateActionTargetInput`](crate::operation::create_action_target::CreateActionTargetInput).
     pub fn build(

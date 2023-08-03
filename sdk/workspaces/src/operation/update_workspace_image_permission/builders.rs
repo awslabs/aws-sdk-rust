@@ -45,6 +45,10 @@ impl UpdateWorkspaceImagePermissionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateWorkspaceImagePermission as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_workspace_image_permission::builders::UpdateWorkspaceImagePermissionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -109,6 +113,10 @@ impl UpdateWorkspaceImagePermissionFluentBuilder {
         self.inner = self.inner.set_image_id(input);
         self
     }
+    /// <p>The identifier of the image.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_image_id()
+    }
     /// <p>The permission to copy the image. This permission can be revoked only after an image has been shared.</p>
     pub fn allow_copy_image(mut self, input: bool) -> Self {
         self.inner = self.inner.allow_copy_image(input);
@@ -118,6 +126,10 @@ impl UpdateWorkspaceImagePermissionFluentBuilder {
     pub fn set_allow_copy_image(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_allow_copy_image(input);
         self
+    }
+    /// <p>The permission to copy the image. This permission can be revoked only after an image has been shared.</p>
+    pub fn get_allow_copy_image(&self) -> &::std::option::Option<bool> {
+        self.inner.get_allow_copy_image()
     }
     /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p> <important>
     /// <p>Before sharing the image, confirm that you are sharing to the correct Amazon Web Services account ID.</p>
@@ -138,5 +150,11 @@ impl UpdateWorkspaceImagePermissionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_shared_account_id(input);
         self
+    }
+    /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p> <important>
+    /// <p>Before sharing the image, confirm that you are sharing to the correct Amazon Web Services account ID.</p>
+    /// </important>
+    pub fn get_shared_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_shared_account_id()
     }
 }

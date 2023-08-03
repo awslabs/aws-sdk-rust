@@ -36,6 +36,13 @@ impl RemoveFlowMediaStreamFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RemoveFlowMediaStream as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::remove_flow_media_stream::builders::RemoveFlowMediaStreamInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl RemoveFlowMediaStreamFluentBuilder {
         self.inner = self.inner.set_flow_arn(input);
         self
     }
+    /// The Amazon Resource Name (ARN) of the flow.
+    pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_flow_arn()
+    }
     /// The name of the media stream that you want to remove.
     pub fn media_stream_name(
         mut self,
@@ -141,5 +152,9 @@ impl RemoveFlowMediaStreamFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_media_stream_name(input);
         self
+    }
+    /// The name of the media stream that you want to remove.
+    pub fn get_media_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_media_stream_name()
     }
 }

@@ -72,6 +72,10 @@ impl SubscriptionBuilder {
         self.source = input;
         self
     }
+    /// <p>The Region or Availability Zone that's the source for the subscription. For example, <code>us-east-1</code>.</p>
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source
+    }
     /// <p>The Region or Availability Zone that's the target for the subscription. For example, <code>eu-west-1</code>.</p>
     pub fn destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl SubscriptionBuilder {
         self.destination = input;
         self
     }
+    /// <p>The Region or Availability Zone that's the target for the subscription. For example, <code>eu-west-1</code>.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination
+    }
     /// <p>The metric used for the subscription.</p>
     pub fn metric(mut self, input: crate::types::MetricType) -> Self {
         self.metric = ::std::option::Option::Some(input);
@@ -91,6 +99,10 @@ impl SubscriptionBuilder {
     pub fn set_metric(mut self, input: ::std::option::Option<crate::types::MetricType>) -> Self {
         self.metric = input;
         self
+    }
+    /// <p>The metric used for the subscription.</p>
+    pub fn get_metric(&self) -> &::std::option::Option<crate::types::MetricType> {
+        &self.metric
     }
     /// <p>The statistic used for the subscription.</p>
     pub fn statistic(mut self, input: crate::types::StatisticType) -> Self {
@@ -105,6 +117,10 @@ impl SubscriptionBuilder {
         self.statistic = input;
         self
     }
+    /// <p>The statistic used for the subscription.</p>
+    pub fn get_statistic(&self) -> &::std::option::Option<crate::types::StatisticType> {
+        &self.statistic
+    }
     /// <p>The data aggregation time for the subscription.</p>
     pub fn period(mut self, input: crate::types::PeriodType) -> Self {
         self.period = ::std::option::Option::Some(input);
@@ -114,6 +130,10 @@ impl SubscriptionBuilder {
     pub fn set_period(mut self, input: ::std::option::Option<crate::types::PeriodType>) -> Self {
         self.period = input;
         self
+    }
+    /// <p>The data aggregation time for the subscription.</p>
+    pub fn get_period(&self) -> &::std::option::Option<crate::types::PeriodType> {
+        &self.period
     }
     /// Consumes the builder and constructs a [`Subscription`](crate::types::Subscription).
     pub fn build(self) -> crate::types::Subscription {

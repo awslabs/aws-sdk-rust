@@ -51,6 +51,10 @@ impl UpdateDatasourcePackagesInputBuilder {
         self.graph_arn = input;
         self
     }
+    /// <p>The ARN of the behavior graph.</p>
+    pub fn get_graph_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.graph_arn
+    }
     /// Appends an item to `datasource_packages`.
     ///
     /// To override the contents of this collection use [`set_datasource_packages`](Self::set_datasource_packages).
@@ -69,6 +73,12 @@ impl UpdateDatasourcePackagesInputBuilder {
     ) -> Self {
         self.datasource_packages = input;
         self
+    }
+    /// <p>The data source package start for the behavior graph.</p>
+    pub fn get_datasource_packages(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DatasourcePackage>> {
+        &self.datasource_packages
     }
     /// Consumes the builder and constructs a [`UpdateDatasourcePackagesInput`](crate::operation::update_datasource_packages::UpdateDatasourcePackagesInput).
     pub fn build(

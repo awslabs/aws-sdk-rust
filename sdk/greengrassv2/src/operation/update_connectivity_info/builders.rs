@@ -37,6 +37,13 @@ impl UpdateConnectivityInfoFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateConnectivityInfo as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_connectivity_info::builders::UpdateConnectivityInfoInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl UpdateConnectivityInfoFluentBuilder {
         self.inner = self.inner.set_thing_name(input);
         self
     }
+    /// <p>The name of the core device. This is also the name of the IoT thing.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_thing_name()
+    }
     /// Appends an item to `connectivityInfo`.
     ///
     /// To override the contents of this collection use [`set_connectivity_info`](Self::set_connectivity_info).
@@ -143,5 +154,11 @@ impl UpdateConnectivityInfoFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_connectivity_info(input);
         self
+    }
+    /// <p>The connectivity information for the core device.</p>
+    pub fn get_connectivity_info(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectivityInfo>> {
+        self.inner.get_connectivity_info()
     }
 }

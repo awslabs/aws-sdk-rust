@@ -36,6 +36,12 @@ impl UpdateServiceNetworkFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateServiceNetwork as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_service_network::builders::UpdateServiceNetworkInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateServiceNetworkFluentBuilder {
         self.inner = self.inner.set_service_network_identifier(input);
         self
     }
+    /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
+    pub fn get_service_network_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_network_identifier()
+    }
     /// <p>The type of IAM policy.</p>
     /// <ul>
     /// <li> <p> <code>NONE</code>: The resource does not use an IAM policy. This is the default.</p> </li>
@@ -149,5 +159,13 @@ impl UpdateServiceNetworkFluentBuilder {
     pub fn set_auth_type(mut self, input: ::std::option::Option<crate::types::AuthType>) -> Self {
         self.inner = self.inner.set_auth_type(input);
         self
+    }
+    /// <p>The type of IAM policy.</p>
+    /// <ul>
+    /// <li> <p> <code>NONE</code>: The resource does not use an IAM policy. This is the default.</p> </li>
+    /// <li> <p> <code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required.</p> </li>
+    /// </ul>
+    pub fn get_auth_type(&self) -> &::std::option::Option<crate::types::AuthType> {
+        self.inner.get_auth_type()
     }
 }

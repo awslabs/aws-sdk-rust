@@ -56,6 +56,10 @@ impl UserBuilder {
         self.user_id = input;
         self
     }
+    /// <p>The ID associated with the user.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
+    }
     /// <p>A string map of user-specific metadata. Each element in the map consists of a key-value pair. For example, <code>{"numberOfVideosWatched": "45"}</code>.</p>
     /// <p>The keys use camel case names that match the fields in the schema for the Users dataset. In the previous example, the <code>numberOfVideosWatched</code> matches the 'NUMBER_OF_VIDEOS_WATCHED' field defined in the Users schema. For categorical string data, to include multiple categories for a single user, separate each category with a pipe separator (<code>|</code>). For example, <code>\"Member|Frequent shopper\"</code>.</p>
     pub fn properties(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -67,6 +71,11 @@ impl UserBuilder {
     pub fn set_properties(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.properties = input;
         self
+    }
+    /// <p>A string map of user-specific metadata. Each element in the map consists of a key-value pair. For example, <code>{"numberOfVideosWatched": "45"}</code>.</p>
+    /// <p>The keys use camel case names that match the fields in the schema for the Users dataset. In the previous example, the <code>numberOfVideosWatched</code> matches the 'NUMBER_OF_VIDEOS_WATCHED' field defined in the Users schema. For categorical string data, to include multiple categories for a single user, separate each category with a pipe separator (<code>|</code>). For example, <code>\"Member|Frequent shopper\"</code>.</p>
+    pub fn get_properties(&self) -> &::std::option::Option<::std::string::String> {
+        &self.properties
     }
     /// Consumes the builder and constructs a [`User`](crate::types::User).
     pub fn build(self) -> crate::types::User {

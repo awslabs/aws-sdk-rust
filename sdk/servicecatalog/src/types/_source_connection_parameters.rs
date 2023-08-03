@@ -43,6 +43,10 @@ impl SourceConnectionParametersBuilder {
         self.code_star = input;
         self
     }
+    /// <p>Provides <code>ConnectionType</code> details.</p>
+    pub fn get_code_star(&self) -> &::std::option::Option<crate::types::CodeStarParameters> {
+        &self.code_star
+    }
     /// Consumes the builder and constructs a [`SourceConnectionParameters`](crate::types::SourceConnectionParameters).
     pub fn build(self) -> crate::types::SourceConnectionParameters {
         crate::types::SourceConnectionParameters {

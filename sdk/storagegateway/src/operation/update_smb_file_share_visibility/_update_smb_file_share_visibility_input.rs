@@ -47,6 +47,10 @@ impl UpdateSmbFileShareVisibilityInputBuilder {
         self.gateway_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_arn
+    }
     /// <p>The shares on this gateway appear when listing shares.</p>
     pub fn file_shares_visible(mut self, input: bool) -> Self {
         self.file_shares_visible = ::std::option::Option::Some(input);
@@ -56,6 +60,10 @@ impl UpdateSmbFileShareVisibilityInputBuilder {
     pub fn set_file_shares_visible(mut self, input: ::std::option::Option<bool>) -> Self {
         self.file_shares_visible = input;
         self
+    }
+    /// <p>The shares on this gateway appear when listing shares.</p>
+    pub fn get_file_shares_visible(&self) -> &::std::option::Option<bool> {
+        &self.file_shares_visible
     }
     /// Consumes the builder and constructs a [`UpdateSmbFileShareVisibilityInput`](crate::operation::update_smb_file_share_visibility::UpdateSmbFileShareVisibilityInput).
     pub fn build(

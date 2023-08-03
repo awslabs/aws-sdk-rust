@@ -40,6 +40,10 @@ impl SessionStatisticsBuilder {
         self.dpu_execution_in_millis = input;
         self
     }
+    /// <p>The data processing unit execution time for a session in milliseconds.</p>
+    pub fn get_dpu_execution_in_millis(&self) -> &::std::option::Option<i64> {
+        &self.dpu_execution_in_millis
+    }
     /// Consumes the builder and constructs a [`SessionStatistics`](crate::types::SessionStatistics).
     pub fn build(self) -> crate::types::SessionStatistics {
         crate::types::SessionStatistics {

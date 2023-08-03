@@ -117,6 +117,10 @@ impl ServiceTemplateBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the service template.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Name (ARN) of the service template.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -126,6 +130,10 @@ impl ServiceTemplateBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the service template.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The time when the service template was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -140,6 +148,10 @@ impl ServiceTemplateBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The time when the service template was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The time when the service template was last modified.</p>
     pub fn last_modified_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_at = ::std::option::Option::Some(input);
@@ -153,6 +165,10 @@ impl ServiceTemplateBuilder {
         self.last_modified_at = input;
         self
     }
+    /// <p>The time when the service template was last modified.</p>
+    pub fn get_last_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_at
+    }
     /// <p>The service template name as displayed in the developer interface.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -163,6 +179,10 @@ impl ServiceTemplateBuilder {
         self.display_name = input;
         self
     }
+    /// <p>The service template name as displayed in the developer interface.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
+    }
     /// <p>A description of the service template.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -172,6 +192,10 @@ impl ServiceTemplateBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the service template.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The recommended version of the service template.</p>
     pub fn recommended_version(
@@ -189,6 +213,10 @@ impl ServiceTemplateBuilder {
         self.recommended_version = input;
         self
     }
+    /// <p>The recommended version of the service template.</p>
+    pub fn get_recommended_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommended_version
+    }
     /// <p>The customer provided service template encryption key that's used to encrypt data.</p>
     pub fn encryption_key(
         mut self,
@@ -205,6 +233,10 @@ impl ServiceTemplateBuilder {
         self.encryption_key = input;
         self
     }
+    /// <p>The customer provided service template encryption key that's used to encrypt data.</p>
+    pub fn get_encryption_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encryption_key
+    }
     /// <p>If <code>pipelineProvisioning</code> is <code>true</code>, a service pipeline is included in the service template. Otherwise, a service pipeline <i>isn't</i> included in the service template.</p>
     pub fn pipeline_provisioning(mut self, input: crate::types::Provisioning) -> Self {
         self.pipeline_provisioning = ::std::option::Option::Some(input);
@@ -217,6 +249,10 @@ impl ServiceTemplateBuilder {
     ) -> Self {
         self.pipeline_provisioning = input;
         self
+    }
+    /// <p>If <code>pipelineProvisioning</code> is <code>true</code>, a service pipeline is included in the service template. Otherwise, a service pipeline <i>isn't</i> included in the service template.</p>
+    pub fn get_pipeline_provisioning(&self) -> &::std::option::Option<crate::types::Provisioning> {
+        &self.pipeline_provisioning
     }
     /// Consumes the builder and constructs a [`ServiceTemplate`](crate::types::ServiceTemplate).
     pub fn build(self) -> crate::types::ServiceTemplate {

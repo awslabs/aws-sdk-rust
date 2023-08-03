@@ -99,6 +99,10 @@ impl UpdateTopicRuleDestinationInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the topic rule destination.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The status of the topic rule destination. Valid values are:</p>
     /// <dl>
     /// <dt>
@@ -163,6 +167,36 @@ impl UpdateTopicRuleDestinationInputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the topic rule destination. Valid values are:</p>
+    /// <dl>
+    /// <dt>
+    /// IN_PROGRESS
+    /// </dt>
+    /// <dd>
+    /// <p>A topic rule destination was created but has not been confirmed. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p>
+    /// </dd>
+    /// <dt>
+    /// ENABLED
+    /// </dt>
+    /// <dd>
+    /// <p>Confirmation was completed, and traffic to this destination is allowed. You can set <code>status</code> to <code>DISABLED</code> by calling <code>UpdateTopicRuleDestination</code>.</p>
+    /// </dd>
+    /// <dt>
+    /// DISABLED
+    /// </dt>
+    /// <dd>
+    /// <p>Confirmation was completed, and traffic to this destination is not allowed. You can set <code>status</code> to <code>ENABLED</code> by calling <code>UpdateTopicRuleDestination</code>.</p>
+    /// </dd>
+    /// <dt>
+    /// ERROR
+    /// </dt>
+    /// <dd>
+    /// <p>Confirmation could not be completed, for example if the confirmation timed out. You can call <code>GetTopicRuleDestination</code> for details about the error. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TopicRuleDestinationStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`UpdateTopicRuleDestinationInput`](crate::operation::update_topic_rule_destination::UpdateTopicRuleDestinationInput).
     pub fn build(

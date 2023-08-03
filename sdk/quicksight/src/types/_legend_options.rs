@@ -87,6 +87,10 @@ impl LegendOptionsBuilder {
         self.visibility = input;
         self
     }
+    /// <p>Determines whether or not the legend is visible.</p>
+    pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.visibility
+    }
     /// <p>The custom title for the legend.</p>
     pub fn title(mut self, input: crate::types::LabelOptions) -> Self {
         self.title = ::std::option::Option::Some(input);
@@ -96,6 +100,10 @@ impl LegendOptionsBuilder {
     pub fn set_title(mut self, input: ::std::option::Option<crate::types::LabelOptions>) -> Self {
         self.title = input;
         self
+    }
+    /// <p>The custom title for the legend.</p>
+    pub fn get_title(&self) -> &::std::option::Option<crate::types::LabelOptions> {
+        &self.title
     }
     /// <p>The positions for the legend. Choose one of the following options:</p>
     /// <ul>
@@ -122,6 +130,16 @@ impl LegendOptionsBuilder {
         self.position = input;
         self
     }
+    /// <p>The positions for the legend. Choose one of the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>AUTO</code> </p> </li>
+    /// <li> <p> <code>RIGHT</code> </p> </li>
+    /// <li> <p> <code>BOTTOM</code> </p> </li>
+    /// <li> <p> <code>LEFT</code> </p> </li>
+    /// </ul>
+    pub fn get_position(&self) -> &::std::option::Option<crate::types::LegendPosition> {
+        &self.position
+    }
     /// <p>The width of the legend. If this value is omitted, a default width is used when rendering.</p>
     pub fn width(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.width = ::std::option::Option::Some(input.into());
@@ -132,6 +150,10 @@ impl LegendOptionsBuilder {
         self.width = input;
         self
     }
+    /// <p>The width of the legend. If this value is omitted, a default width is used when rendering.</p>
+    pub fn get_width(&self) -> &::std::option::Option<::std::string::String> {
+        &self.width
+    }
     /// <p>The height of the legend. If this value is omitted, a default height is used when rendering.</p>
     pub fn height(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.height = ::std::option::Option::Some(input.into());
@@ -141,6 +163,10 @@ impl LegendOptionsBuilder {
     pub fn set_height(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.height = input;
         self
+    }
+    /// <p>The height of the legend. If this value is omitted, a default height is used when rendering.</p>
+    pub fn get_height(&self) -> &::std::option::Option<::std::string::String> {
+        &self.height
     }
     /// Consumes the builder and constructs a [`LegendOptions`](crate::types::LegendOptions).
     pub fn build(self) -> crate::types::LegendOptions {

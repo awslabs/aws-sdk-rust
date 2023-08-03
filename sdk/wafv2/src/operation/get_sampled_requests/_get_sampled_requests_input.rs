@@ -82,6 +82,10 @@ impl GetSampledRequestsInputBuilder {
         self.web_acl_arn = input;
         self
     }
+    /// <p>The Amazon resource name (ARN) of the <code>WebACL</code> for which you want a sample of requests.</p>
+    pub fn get_web_acl_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.web_acl_arn
+    }
     /// <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> dimension for which you want a sample of requests.</p>
     pub fn rule_metric_name(
         mut self,
@@ -97,6 +101,10 @@ impl GetSampledRequestsInputBuilder {
     ) -> Self {
         self.rule_metric_name = input;
         self
+    }
+    /// <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> dimension for which you want a sample of requests.</p>
+    pub fn get_rule_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_metric_name
     }
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance. </p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
@@ -118,6 +126,15 @@ impl GetSampledRequestsInputBuilder {
         self.scope = input;
         self
     }
+    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance. </p>
+    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+    /// <ul>
+    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+    /// </ul>
+    pub fn get_scope(&self) -> &::std::option::Option<crate::types::Scope> {
+        &self.scope
+    }
     /// <p>The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code> to return a sample of requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours. If you specify a start time that's earlier than three hours ago, WAF sets it to three hours ago.</p>
     pub fn time_window(mut self, input: crate::types::TimeWindow) -> Self {
         self.time_window = ::std::option::Option::Some(input);
@@ -131,6 +148,10 @@ impl GetSampledRequestsInputBuilder {
         self.time_window = input;
         self
     }
+    /// <p>The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code> to return a sample of requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours. If you specify a start time that's earlier than three hours ago, WAF sets it to three hours ago.</p>
+    pub fn get_time_window(&self) -> &::std::option::Option<crate::types::TimeWindow> {
+        &self.time_window
+    }
     /// <p>The number of requests that you want WAF to return from among the first 5,000 requests that your Amazon Web Services resource received during the time range. If your resource received fewer requests than the value of <code>MaxItems</code>, <code>GetSampledRequests</code> returns information about all of them. </p>
     pub fn max_items(mut self, input: i64) -> Self {
         self.max_items = ::std::option::Option::Some(input);
@@ -140,6 +161,10 @@ impl GetSampledRequestsInputBuilder {
     pub fn set_max_items(mut self, input: ::std::option::Option<i64>) -> Self {
         self.max_items = input;
         self
+    }
+    /// <p>The number of requests that you want WAF to return from among the first 5,000 requests that your Amazon Web Services resource received during the time range. If your resource received fewer requests than the value of <code>MaxItems</code>, <code>GetSampledRequests</code> returns information about all of them. </p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i64> {
+        &self.max_items
     }
     /// Consumes the builder and constructs a [`GetSampledRequestsInput`](crate::operation::get_sampled_requests::GetSampledRequestsInput).
     pub fn build(

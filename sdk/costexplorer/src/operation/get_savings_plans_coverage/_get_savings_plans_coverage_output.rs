@@ -69,6 +69,12 @@ impl GetSavingsPlansCoverageOutputBuilder {
         self.savings_plans_coverages = input;
         self
     }
+    /// <p>The amount of spend that your Savings Plans covered.</p>
+    pub fn get_savings_plans_coverages(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SavingsPlansCoverage>> {
+        &self.savings_plans_coverages
+    }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -78,6 +84,10 @@ impl GetSavingsPlansCoverageOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

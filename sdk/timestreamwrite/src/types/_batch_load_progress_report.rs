@@ -81,6 +81,10 @@ impl BatchLoadProgressReportBuilder {
         self
     }
     /// <p></p>
+    pub fn get_records_processed(&self) -> &::std::option::Option<i64> {
+        &self.records_processed
+    }
+    /// <p></p>
     pub fn records_ingested(mut self, input: i64) -> Self {
         self.records_ingested = ::std::option::Option::Some(input);
         self
@@ -89,6 +93,10 @@ impl BatchLoadProgressReportBuilder {
     pub fn set_records_ingested(mut self, input: ::std::option::Option<i64>) -> Self {
         self.records_ingested = input;
         self
+    }
+    /// <p></p>
+    pub fn get_records_ingested(&self) -> &::std::option::Option<i64> {
+        &self.records_ingested
     }
     /// <p></p>
     pub fn parse_failures(mut self, input: i64) -> Self {
@@ -101,6 +109,10 @@ impl BatchLoadProgressReportBuilder {
         self
     }
     /// <p></p>
+    pub fn get_parse_failures(&self) -> &::std::option::Option<i64> {
+        &self.parse_failures
+    }
+    /// <p></p>
     pub fn record_ingestion_failures(mut self, input: i64) -> Self {
         self.record_ingestion_failures = ::std::option::Option::Some(input);
         self
@@ -109,6 +121,10 @@ impl BatchLoadProgressReportBuilder {
     pub fn set_record_ingestion_failures(mut self, input: ::std::option::Option<i64>) -> Self {
         self.record_ingestion_failures = input;
         self
+    }
+    /// <p></p>
+    pub fn get_record_ingestion_failures(&self) -> &::std::option::Option<i64> {
+        &self.record_ingestion_failures
     }
     /// <p></p>
     pub fn file_failures(mut self, input: i64) -> Self {
@@ -121,6 +137,10 @@ impl BatchLoadProgressReportBuilder {
         self
     }
     /// <p></p>
+    pub fn get_file_failures(&self) -> &::std::option::Option<i64> {
+        &self.file_failures
+    }
+    /// <p></p>
     pub fn bytes_metered(mut self, input: i64) -> Self {
         self.bytes_metered = ::std::option::Option::Some(input);
         self
@@ -129,6 +149,10 @@ impl BatchLoadProgressReportBuilder {
     pub fn set_bytes_metered(mut self, input: ::std::option::Option<i64>) -> Self {
         self.bytes_metered = input;
         self
+    }
+    /// <p></p>
+    pub fn get_bytes_metered(&self) -> &::std::option::Option<i64> {
+        &self.bytes_metered
     }
     /// Consumes the builder and constructs a [`BatchLoadProgressReport`](crate::types::BatchLoadProgressReport).
     pub fn build(self) -> crate::types::BatchLoadProgressReport {

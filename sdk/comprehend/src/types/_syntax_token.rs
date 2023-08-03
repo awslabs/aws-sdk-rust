@@ -72,6 +72,10 @@ impl SyntaxTokenBuilder {
         self.token_id = input;
         self
     }
+    /// <p>A unique identifier for a token.</p>
+    pub fn get_token_id(&self) -> &::std::option::Option<i32> {
+        &self.token_id
+    }
     /// <p>The word that was recognized in the source text.</p>
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.text = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl SyntaxTokenBuilder {
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.text = input;
         self
+    }
+    /// <p>The word that was recognized in the source text.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
     }
     /// <p>The zero-based offset from the beginning of the source text to the first character in the word.</p>
     pub fn begin_offset(mut self, input: i32) -> Self {
@@ -92,6 +100,10 @@ impl SyntaxTokenBuilder {
         self.begin_offset = input;
         self
     }
+    /// <p>The zero-based offset from the beginning of the source text to the first character in the word.</p>
+    pub fn get_begin_offset(&self) -> &::std::option::Option<i32> {
+        &self.begin_offset
+    }
     /// <p>The zero-based offset from the beginning of the source text to the last character in the word.</p>
     pub fn end_offset(mut self, input: i32) -> Self {
         self.end_offset = ::std::option::Option::Some(input);
@@ -101,6 +113,10 @@ impl SyntaxTokenBuilder {
     pub fn set_end_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.end_offset = input;
         self
+    }
+    /// <p>The zero-based offset from the beginning of the source text to the last character in the word.</p>
+    pub fn get_end_offset(&self) -> &::std::option::Option<i32> {
+        &self.end_offset
     }
     /// <p>Provides the part of speech label and the confidence level that Amazon Comprehend has that the part of speech was correctly identified. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide. </p>
     pub fn part_of_speech(mut self, input: crate::types::PartOfSpeechTag) -> Self {
@@ -114,6 +130,10 @@ impl SyntaxTokenBuilder {
     ) -> Self {
         self.part_of_speech = input;
         self
+    }
+    /// <p>Provides the part of speech label and the confidence level that Amazon Comprehend has that the part of speech was correctly identified. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide. </p>
+    pub fn get_part_of_speech(&self) -> &::std::option::Option<crate::types::PartOfSpeechTag> {
+        &self.part_of_speech
     }
     /// Consumes the builder and constructs a [`SyntaxToken`](crate::types::SyntaxToken).
     pub fn build(self) -> crate::types::SyntaxToken {

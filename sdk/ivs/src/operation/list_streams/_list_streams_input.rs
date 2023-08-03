@@ -58,6 +58,10 @@ impl ListStreamsInputBuilder {
         self.filter_by = input;
         self
     }
+    /// <p>Filters the stream list to match the specified criterion.</p>
+    pub fn get_filter_by(&self) -> &::std::option::Option<crate::types::StreamFilters> {
+        &self.filter_by
+    }
     /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -68,6 +72,10 @@ impl ListStreamsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>Maximum number of streams to return. Default: 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -77,6 +85,10 @@ impl ListStreamsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>Maximum number of streams to return. Default: 100.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListStreamsInput`](crate::operation::list_streams::ListStreamsInput).
     pub fn build(

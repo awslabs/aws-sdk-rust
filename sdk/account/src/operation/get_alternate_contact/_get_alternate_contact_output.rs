@@ -51,6 +51,10 @@ impl GetAlternateContactOutputBuilder {
         self.alternate_contact = input;
         self
     }
+    /// <p>A structure that contains the details for the specified alternate contact.</p>
+    pub fn get_alternate_contact(&self) -> &::std::option::Option<crate::types::AlternateContact> {
+        &self.alternate_contact
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

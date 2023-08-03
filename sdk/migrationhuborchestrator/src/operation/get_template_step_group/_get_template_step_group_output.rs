@@ -120,6 +120,10 @@ impl GetTemplateStepGroupOutputBuilder {
         self.template_id = input;
         self
     }
+    /// <p>The ID of the template.</p>
+    pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_id
+    }
     /// <p>The ID of the step group.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -129,6 +133,10 @@ impl GetTemplateStepGroupOutputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The ID of the step group.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The name of the step group.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -140,6 +148,10 @@ impl GetTemplateStepGroupOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the step group.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the step group.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -149,6 +161,10 @@ impl GetTemplateStepGroupOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the step group.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The status of the step group.</p>
     pub fn status(mut self, input: crate::types::StepGroupStatus) -> Self {
@@ -163,6 +179,10 @@ impl GetTemplateStepGroupOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the step group.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::StepGroupStatus> {
+        &self.status
+    }
     /// <p>The time at which the step group was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -176,6 +196,10 @@ impl GetTemplateStepGroupOutputBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The time at which the step group was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The time at which the step group was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -188,6 +212,10 @@ impl GetTemplateStepGroupOutputBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>The time at which the step group was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// Appends an item to `tools`.
     ///
@@ -208,6 +236,10 @@ impl GetTemplateStepGroupOutputBuilder {
         self.tools = input;
         self
     }
+    /// <p>List of AWS services utilized in a migration workflow.</p>
+    pub fn get_tools(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tool>> {
+        &self.tools
+    }
     /// Appends an item to `previous`.
     ///
     /// To override the contents of this collection use [`set_previous`](Self::set_previous).
@@ -227,6 +259,10 @@ impl GetTemplateStepGroupOutputBuilder {
         self.previous = input;
         self
     }
+    /// <p>The previous step group.</p>
+    pub fn get_previous(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.previous
+    }
     /// Appends an item to `next`.
     ///
     /// To override the contents of this collection use [`set_next`](Self::set_next).
@@ -245,6 +281,10 @@ impl GetTemplateStepGroupOutputBuilder {
     ) -> Self {
         self.next = input;
         self
+    }
+    /// <p>The next step group.</p>
+    pub fn get_next(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.next
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

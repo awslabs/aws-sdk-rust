@@ -66,6 +66,12 @@ impl AdditionalInstanceConfigurationBuilder {
         self.systems_manager_agent = input;
         self
     }
+    /// <p>Contains settings for the Systems Manager agent on your build instance.</p>
+    pub fn get_systems_manager_agent(
+        &self,
+    ) -> &::std::option::Option<crate::types::SystemsManagerAgent> {
+        &self.systems_manager_agent
+    }
     /// <p>Use this property to provide commands or a command script to run when you launch your build instance.</p>
     /// <p>The userDataOverride property replaces any commands that Image Builder might have added to ensure that Systems Manager is installed on your Linux build instance. If you override the user data, make sure that you add commands to install Systems Manager, if it is not pre-installed on your base image.</p> <note>
     /// <p>The user data is always base 64 encoded. For example, the following commands are encoded as <code>IyEvYmluL2Jhc2gKbWtkaXIgLXAgL3Zhci9iYi8KdG91Y2ggL3Zhci$</code>:</p>
@@ -93,6 +99,16 @@ impl AdditionalInstanceConfigurationBuilder {
     ) -> Self {
         self.user_data_override = input;
         self
+    }
+    /// <p>Use this property to provide commands or a command script to run when you launch your build instance.</p>
+    /// <p>The userDataOverride property replaces any commands that Image Builder might have added to ensure that Systems Manager is installed on your Linux build instance. If you override the user data, make sure that you add commands to install Systems Manager, if it is not pre-installed on your base image.</p> <note>
+    /// <p>The user data is always base 64 encoded. For example, the following commands are encoded as <code>IyEvYmluL2Jhc2gKbWtkaXIgLXAgL3Zhci9iYi8KdG91Y2ggL3Zhci$</code>:</p>
+    /// <p> <i>#!/bin/bash</i> </p>
+    /// <p>mkdir -p /var/bb/</p>
+    /// <p>touch /var</p>
+    /// </note>
+    pub fn get_user_data_override(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_data_override
     }
     /// Consumes the builder and constructs a [`AdditionalInstanceConfiguration`](crate::types::AdditionalInstanceConfiguration).
     pub fn build(self) -> crate::types::AdditionalInstanceConfiguration {

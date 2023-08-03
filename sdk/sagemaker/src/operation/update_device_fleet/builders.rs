@@ -36,6 +36,12 @@ impl UpdateDeviceFleetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDeviceFleet as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_device_fleet::builders::UpdateDeviceFleetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateDeviceFleetFluentBuilder {
         self.inner = self.inner.set_device_fleet_name(input);
         self
     }
+    /// <p>The name of the fleet.</p>
+    pub fn get_device_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_fleet_name()
+    }
     /// <p>The Amazon Resource Name (ARN) of the device.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -142,6 +152,10 @@ impl UpdateDeviceFleetFluentBuilder {
         self.inner = self.inner.set_role_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the device.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
+    }
     /// <p>Description of the fleet.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -151,6 +165,10 @@ impl UpdateDeviceFleetFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>Description of the fleet.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>Output configuration for storing sample data collected by the fleet.</p>
     pub fn output_config(mut self, input: crate::types::EdgeOutputConfig) -> Self {
@@ -165,6 +183,10 @@ impl UpdateDeviceFleetFluentBuilder {
         self.inner = self.inner.set_output_config(input);
         self
     }
+    /// <p>Output configuration for storing sample data collected by the fleet.</p>
+    pub fn get_output_config(&self) -> &::std::option::Option<crate::types::EdgeOutputConfig> {
+        self.inner.get_output_config()
+    }
     /// <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet creation. The name of the role alias generated will match this pattern: "SageMakerEdge-{DeviceFleetName}".</p>
     /// <p>For example, if your device fleet is called "demo-fleet", the name of the role alias will be "SageMakerEdge-demo-fleet".</p>
     pub fn enable_iot_role_alias(mut self, input: bool) -> Self {
@@ -176,5 +198,10 @@ impl UpdateDeviceFleetFluentBuilder {
     pub fn set_enable_iot_role_alias(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_iot_role_alias(input);
         self
+    }
+    /// <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet creation. The name of the role alias generated will match this pattern: "SageMakerEdge-{DeviceFleetName}".</p>
+    /// <p>For example, if your device fleet is called "demo-fleet", the name of the role alias will be "SageMakerEdge-demo-fleet".</p>
+    pub fn get_enable_iot_role_alias(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_iot_role_alias()
     }
 }

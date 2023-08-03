@@ -43,6 +43,12 @@ impl DeleteJobTaggingFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteJobTagging as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_job_tagging::builders::DeleteJobTaggingInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl DeleteJobTaggingFluentBuilder {
         self.inner = self.inner.set_account_id(input);
         self
     }
+    /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// <p>The ID for the S3 Batch Operations job whose tags you want to delete.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_id(input.into());
@@ -142,5 +152,9 @@ impl DeleteJobTaggingFluentBuilder {
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_id(input);
         self
+    }
+    /// <p>The ID for the S3 Batch Operations job whose tags you want to delete.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_id()
     }
 }

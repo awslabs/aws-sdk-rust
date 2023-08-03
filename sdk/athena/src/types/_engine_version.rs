@@ -54,6 +54,10 @@ impl EngineVersionBuilder {
         self.selected_engine_version = input;
         self
     }
+    /// <p>The engine version requested by the user. Possible values are determined by the output of <code>ListEngineVersions</code>, including AUTO. The default is AUTO.</p>
+    pub fn get_selected_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.selected_engine_version
+    }
     /// <p>Read only. The engine version on which the query runs. If the user requests a valid engine version other than Auto, the effective engine version is the same as the engine version that the user requested. If the user requests Auto, the effective engine version is chosen by Athena. When a request to update the engine version is made by a <code>CreateWorkGroup</code> or <code>UpdateWorkGroup</code> operation, the <code>EffectiveEngineVersion</code> field is ignored.</p>
     pub fn effective_engine_version(
         mut self,
@@ -69,6 +73,10 @@ impl EngineVersionBuilder {
     ) -> Self {
         self.effective_engine_version = input;
         self
+    }
+    /// <p>Read only. The engine version on which the query runs. If the user requests a valid engine version other than Auto, the effective engine version is the same as the engine version that the user requested. If the user requests Auto, the effective engine version is chosen by Athena. When a request to update the engine version is made by a <code>CreateWorkGroup</code> or <code>UpdateWorkGroup</code> operation, the <code>EffectiveEngineVersion</code> field is ignored.</p>
+    pub fn get_effective_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.effective_engine_version
     }
     /// Consumes the builder and constructs a [`EngineVersion`](crate::types::EngineVersion).
     pub fn build(self) -> crate::types::EngineVersion {

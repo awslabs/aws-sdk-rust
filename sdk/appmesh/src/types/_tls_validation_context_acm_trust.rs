@@ -53,6 +53,12 @@ impl TlsValidationContextAcmTrustBuilder {
         self.certificate_authority_arns = input;
         self
     }
+    /// <p>One or more ACM Amazon Resource Name (ARN)s.</p>
+    pub fn get_certificate_authority_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.certificate_authority_arns
+    }
     /// Consumes the builder and constructs a [`TlsValidationContextAcmTrust`](crate::types::TlsValidationContextAcmTrust).
     pub fn build(self) -> crate::types::TlsValidationContextAcmTrust {
         crate::types::TlsValidationContextAcmTrust {

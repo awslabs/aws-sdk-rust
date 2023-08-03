@@ -48,6 +48,10 @@ impl ListJobTemplatesInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to return in the list.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token to use to return the next set of results in the list.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl ListJobTemplatesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token to use to return the next set of results in the list.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListJobTemplatesInput`](crate::operation::list_job_templates::ListJobTemplatesInput).
     pub fn build(

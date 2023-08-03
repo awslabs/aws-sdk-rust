@@ -54,6 +54,10 @@ impl SpellCorrectedQueryBuilder {
         self.suggested_query_text = input;
         self
     }
+    /// <p>The query with the suggested spell corrections.</p>
+    pub fn get_suggested_query_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.suggested_query_text
+    }
     /// Appends an item to `corrections`.
     ///
     /// To override the contents of this collection use [`set_corrections`](Self::set_corrections).
@@ -72,6 +76,12 @@ impl SpellCorrectedQueryBuilder {
     ) -> Self {
         self.corrections = input;
         self
+    }
+    /// <p>The corrected misspelled word or words in a query.</p>
+    pub fn get_corrections(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Correction>> {
+        &self.corrections
     }
     /// Consumes the builder and constructs a [`SpellCorrectedQuery`](crate::types::SpellCorrectedQuery).
     pub fn build(self) -> crate::types::SpellCorrectedQuery {

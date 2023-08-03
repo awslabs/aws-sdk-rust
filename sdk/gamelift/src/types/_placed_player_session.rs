@@ -48,6 +48,10 @@ impl PlacedPlayerSessionBuilder {
         self.player_id = input;
         self
     }
+    /// <p>A unique identifier for a player that is associated with this player session.</p>
+    pub fn get_player_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.player_id
+    }
     /// <p>A unique identifier for a player session.</p>
     pub fn player_session_id(
         mut self,
@@ -63,6 +67,10 @@ impl PlacedPlayerSessionBuilder {
     ) -> Self {
         self.player_session_id = input;
         self
+    }
+    /// <p>A unique identifier for a player session.</p>
+    pub fn get_player_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.player_session_id
     }
     /// Consumes the builder and constructs a [`PlacedPlayerSession`](crate::types::PlacedPlayerSession).
     pub fn build(self) -> crate::types::PlacedPlayerSession {

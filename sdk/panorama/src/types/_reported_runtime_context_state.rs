@@ -69,6 +69,10 @@ impl ReportedRuntimeContextStateBuilder {
         self.desired_state = input;
         self
     }
+    /// <p>The application's desired state.</p>
+    pub fn get_desired_state(&self) -> &::std::option::Option<crate::types::DesiredState> {
+        &self.desired_state
+    }
     /// <p>The device's name.</p>
     pub fn runtime_context_name(
         mut self,
@@ -85,6 +89,10 @@ impl ReportedRuntimeContextStateBuilder {
         self.runtime_context_name = input;
         self
     }
+    /// <p>The device's name.</p>
+    pub fn get_runtime_context_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.runtime_context_name
+    }
     /// <p>The application's reported status.</p>
     pub fn device_reported_status(mut self, input: crate::types::DeviceReportedStatus) -> Self {
         self.device_reported_status = ::std::option::Option::Some(input);
@@ -98,6 +106,12 @@ impl ReportedRuntimeContextStateBuilder {
         self.device_reported_status = input;
         self
     }
+    /// <p>The application's reported status.</p>
+    pub fn get_device_reported_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeviceReportedStatus> {
+        &self.device_reported_status
+    }
     /// <p>When the device reported the application's state.</p>
     pub fn device_reported_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.device_reported_time = ::std::option::Option::Some(input);
@@ -110,6 +124,10 @@ impl ReportedRuntimeContextStateBuilder {
     ) -> Self {
         self.device_reported_time = input;
         self
+    }
+    /// <p>When the device reported the application's state.</p>
+    pub fn get_device_reported_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.device_reported_time
     }
     /// Consumes the builder and constructs a [`ReportedRuntimeContextState`](crate::types::ReportedRuntimeContextState).
     pub fn build(self) -> crate::types::ReportedRuntimeContextState {

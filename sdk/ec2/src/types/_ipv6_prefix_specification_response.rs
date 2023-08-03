@@ -40,6 +40,10 @@ impl Ipv6PrefixSpecificationResponseBuilder {
         self.ipv6_prefix = input;
         self
     }
+    /// <p>The IPv6 delegated prefixes assigned to the network interface.</p>
+    pub fn get_ipv6_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv6_prefix
+    }
     /// Consumes the builder and constructs a [`Ipv6PrefixSpecificationResponse`](crate::types::Ipv6PrefixSpecificationResponse).
     pub fn build(self) -> crate::types::Ipv6PrefixSpecificationResponse {
         crate::types::Ipv6PrefixSpecificationResponse {

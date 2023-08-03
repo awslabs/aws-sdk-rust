@@ -77,6 +77,11 @@ impl CreateBucketInputBuilder {
         self.bucket_name = input;
         self
     }
+    /// <p>The name for the bucket.</p>
+    /// <p>For more information about bucket names, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/bucket-naming-rules-in-amazon-lightsail">Bucket naming rules in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_name
+    }
     /// <p>The ID of the bundle to use for the bucket.</p>
     /// <p>A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a bucket.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketBundles.html">GetBucketBundles</a> action to get a list of bundle IDs that you can specify.</p>
@@ -92,6 +97,13 @@ impl CreateBucketInputBuilder {
     pub fn set_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bundle_id = input;
         self
+    }
+    /// <p>The ID of the bundle to use for the bucket.</p>
+    /// <p>A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a bucket.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketBundles.html">GetBucketBundles</a> action to get a list of bundle IDs that you can specify.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a> action to change the bundle after the bucket is created.</p>
+    pub fn get_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bundle_id
     }
     /// Appends an item to `tags`.
     ///
@@ -114,6 +126,11 @@ impl CreateBucketInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tag keys and optional values to add to the bucket during creation.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_TagResource.html">TagResource</a> action to tag the bucket after it's created.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>A Boolean value that indicates whether to enable versioning of objects in the bucket.</p>
     /// <p>For more information about versioning, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-managing-bucket-object-versioning">Enabling and suspending object versioning in a bucket in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
     pub fn enable_object_versioning(mut self, input: bool) -> Self {
@@ -125,6 +142,11 @@ impl CreateBucketInputBuilder {
     pub fn set_enable_object_versioning(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_object_versioning = input;
         self
+    }
+    /// <p>A Boolean value that indicates whether to enable versioning of objects in the bucket.</p>
+    /// <p>For more information about versioning, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-managing-bucket-object-versioning">Enabling and suspending object versioning in a bucket in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+    pub fn get_enable_object_versioning(&self) -> &::std::option::Option<bool> {
+        &self.enable_object_versioning
     }
     /// Consumes the builder and constructs a [`CreateBucketInput`](crate::operation::create_bucket::CreateBucketInput).
     pub fn build(

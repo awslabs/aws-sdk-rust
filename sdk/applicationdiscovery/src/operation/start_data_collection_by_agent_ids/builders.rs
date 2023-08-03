@@ -36,6 +36,10 @@ impl StartDataCollectionByAgentIdsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartDataCollectionByAgentIds as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_data_collection_by_agent_ids::builders::StartDataCollectionByAgentIdsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,5 +110,9 @@ impl StartDataCollectionByAgentIdsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_agent_ids(input);
         self
+    }
+    /// <p>The IDs of the agents from which to start collecting data. If you send a request to an agent ID that you do not have permission to contact, according to your Amazon Web Services account, the service does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple agents and you do not have permission to contact some of those agents, the system does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.</p>
+    pub fn get_agent_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_agent_ids()
     }
 }

@@ -48,6 +48,10 @@ impl ComplianceContributorCountBuilder {
         self.capped_count = input;
         self
     }
+    /// <p>The number of Amazon Web Services resources or Config rules responsible for the current compliance of the item.</p>
+    pub fn get_capped_count(&self) -> &::std::option::Option<i32> {
+        &self.capped_count
+    }
     /// <p>Indicates whether the maximum count is reached.</p>
     pub fn cap_exceeded(mut self, input: bool) -> Self {
         self.cap_exceeded = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ComplianceContributorCountBuilder {
     pub fn set_cap_exceeded(mut self, input: ::std::option::Option<bool>) -> Self {
         self.cap_exceeded = input;
         self
+    }
+    /// <p>Indicates whether the maximum count is reached.</p>
+    pub fn get_cap_exceeded(&self) -> &::std::option::Option<bool> {
+        &self.cap_exceeded
     }
     /// Consumes the builder and constructs a [`ComplianceContributorCount`](crate::types::ComplianceContributorCount).
     pub fn build(self) -> crate::types::ComplianceContributorCount {

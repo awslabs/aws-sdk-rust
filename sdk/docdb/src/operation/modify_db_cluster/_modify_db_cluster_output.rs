@@ -47,6 +47,10 @@ impl ModifyDbClusterOutputBuilder {
         self.db_cluster = input;
         self
     }
+    /// <p>Detailed information about a cluster. </p>
+    pub fn get_db_cluster(&self) -> &::std::option::Option<crate::types::DbCluster> {
+        &self.db_cluster
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

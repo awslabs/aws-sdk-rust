@@ -64,6 +64,10 @@ impl JoinBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the transform node.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `inputs`.
     ///
     /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
@@ -83,6 +87,10 @@ impl JoinBuilder {
         self.inputs = input;
         self
     }
+    /// <p>The data inputs identified by their node names.</p>
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.inputs
+    }
     /// <p>Specifies the type of join to be performed on the datasets.</p>
     pub fn join_type(mut self, input: crate::types::JoinType) -> Self {
         self.join_type = ::std::option::Option::Some(input);
@@ -92,6 +100,10 @@ impl JoinBuilder {
     pub fn set_join_type(mut self, input: ::std::option::Option<crate::types::JoinType>) -> Self {
         self.join_type = input;
         self
+    }
+    /// <p>Specifies the type of join to be performed on the datasets.</p>
+    pub fn get_join_type(&self) -> &::std::option::Option<crate::types::JoinType> {
+        &self.join_type
     }
     /// Appends an item to `columns`.
     ///
@@ -111,6 +123,10 @@ impl JoinBuilder {
     ) -> Self {
         self.columns = input;
         self
+    }
+    /// <p>A list of the two columns to be joined.</p>
+    pub fn get_columns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JoinColumn>> {
+        &self.columns
     }
     /// Consumes the builder and constructs a [`Join`](crate::types::Join).
     pub fn build(self) -> crate::types::Join {

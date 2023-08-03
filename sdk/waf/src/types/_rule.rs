@@ -77,6 +77,11 @@ impl RuleBuilder {
         self.rule_id = input;
         self
     }
+    /// <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a <code>Rule</code> (see <code>GetRule</code>), update a <code>Rule</code> (see <code>UpdateRule</code>), insert a <code>Rule</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>Rule</code> from AWS WAF (see <code>DeleteRule</code>).</p>
+    /// <p> <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
+    pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_id
+    }
     /// <p>The friendly name or description for the <code>Rule</code>. You can't change the name of a <code>Rule</code> after you create it.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -87,6 +92,10 @@ impl RuleBuilder {
         self.name = input;
         self
     }
+    /// <p>The friendly name or description for the <code>Rule</code>. You can't change the name of a <code>Rule</code> after you create it.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change <code>MetricName</code> after you create the <code>Rule</code>.</p>
     pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metric_name = ::std::option::Option::Some(input.into());
@@ -96,6 +105,10 @@ impl RuleBuilder {
     pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_name = input;
         self
+    }
+    /// <p>A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change <code>MetricName</code> after you create the <code>Rule</code>.</p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_name
     }
     /// Appends an item to `predicates`.
     ///
@@ -115,6 +128,12 @@ impl RuleBuilder {
     ) -> Self {
         self.predicates = input;
         self
+    }
+    /// <p>The <code>Predicates</code> object contains one <code>Predicate</code> element for each <code>ByteMatchSet</code>, <code>IPSet</code>, or <code>SqlInjectionMatchSet</code> object that you want to include in a <code>Rule</code>.</p>
+    pub fn get_predicates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Predicate>> {
+        &self.predicates
     }
     /// Consumes the builder and constructs a [`Rule`](crate::types::Rule).
     pub fn build(self) -> crate::types::Rule {

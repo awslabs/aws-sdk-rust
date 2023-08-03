@@ -77,6 +77,10 @@ impl GetMobileDeviceAccessEffectInputBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The WorkMail organization to simulate the access effect for.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p>Device type the simulated user will report.</p>
     pub fn device_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_type = ::std::option::Option::Some(input.into());
@@ -87,6 +91,10 @@ impl GetMobileDeviceAccessEffectInputBuilder {
         self.device_type = input;
         self
     }
+    /// <p>Device type the simulated user will report.</p>
+    pub fn get_device_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_type
+    }
     /// <p>Device model the simulated user will report.</p>
     pub fn device_model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_model = ::std::option::Option::Some(input.into());
@@ -96,6 +104,10 @@ impl GetMobileDeviceAccessEffectInputBuilder {
     pub fn set_device_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_model = input;
         self
+    }
+    /// <p>Device model the simulated user will report.</p>
+    pub fn get_device_model(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_model
     }
     /// <p>Device operating system the simulated user will report.</p>
     pub fn device_operating_system(
@@ -113,6 +125,10 @@ impl GetMobileDeviceAccessEffectInputBuilder {
         self.device_operating_system = input;
         self
     }
+    /// <p>Device operating system the simulated user will report.</p>
+    pub fn get_device_operating_system(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_operating_system
+    }
     /// <p>Device user agent the simulated user will report.</p>
     pub fn device_user_agent(
         mut self,
@@ -128,6 +144,10 @@ impl GetMobileDeviceAccessEffectInputBuilder {
     ) -> Self {
         self.device_user_agent = input;
         self
+    }
+    /// <p>Device user agent the simulated user will report.</p>
+    pub fn get_device_user_agent(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_user_agent
     }
     /// Consumes the builder and constructs a [`GetMobileDeviceAccessEffectInput`](crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffectInput).
     pub fn build(

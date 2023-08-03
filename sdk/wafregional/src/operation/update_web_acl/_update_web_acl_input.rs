@@ -75,6 +75,10 @@ impl UpdateWebAclInputBuilder {
         self.web_acl_id = input;
         self
     }
+    /// <p>The <code>WebACLId</code> of the <code>WebACL</code> that you want to update. <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
+    pub fn get_web_acl_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.web_acl_id
+    }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_token = ::std::option::Option::Some(input.into());
@@ -84,6 +88,10 @@ impl UpdateWebAclInputBuilder {
     pub fn set_change_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_token = input;
         self
+    }
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    pub fn get_change_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.change_token
     }
     /// Appends an item to `updates`.
     ///
@@ -116,6 +124,18 @@ impl UpdateWebAclInputBuilder {
         self.updates = input;
         self
     }
+    /// <p>An array of updates to make to the <code>WebACL</code>.</p>
+    /// <p>An array of <code>WebACLUpdate</code> objects that you want to insert into or delete from a <code>WebACL</code>. For more information, see the applicable data types:</p>
+    /// <ul>
+    /// <li> <p> <code>WebACLUpdate</code>: Contains <code>Action</code> and <code>ActivatedRule</code> </p> </li>
+    /// <li> <p> <code>ActivatedRule</code>: Contains <code>Action</code>, <code>OverrideAction</code>, <code>Priority</code>, <code>RuleId</code>, and <code>Type</code>. <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case, you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>. </p> </li>
+    /// <li> <p> <code>WafAction</code>: Contains <code>Type</code> </p> </li>
+    /// </ul>
+    pub fn get_updates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WebAclUpdate>> {
+        &self.updates
+    }
     /// <p>A default action for the web ACL, either ALLOW or BLOCK. AWS WAF performs the default action if a request doesn't match the criteria in any of the rules in a web ACL.</p>
     pub fn default_action(mut self, input: crate::types::WafAction) -> Self {
         self.default_action = ::std::option::Option::Some(input);
@@ -128,6 +148,10 @@ impl UpdateWebAclInputBuilder {
     ) -> Self {
         self.default_action = input;
         self
+    }
+    /// <p>A default action for the web ACL, either ALLOW or BLOCK. AWS WAF performs the default action if a request doesn't match the criteria in any of the rules in a web ACL.</p>
+    pub fn get_default_action(&self) -> &::std::option::Option<crate::types::WafAction> {
+        &self.default_action
     }
     /// Consumes the builder and constructs a [`UpdateWebAclInput`](crate::operation::update_web_acl::UpdateWebAclInput).
     pub fn build(

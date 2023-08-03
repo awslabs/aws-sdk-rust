@@ -66,6 +66,10 @@ impl DescribeAppBlockBuildersInputBuilder {
         self.names = input;
         self
     }
+    /// <p>The names of the app block builders.</p>
+    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.names
+    }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -76,6 +80,10 @@ impl DescribeAppBlockBuildersInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum size of each page of results. The maximum value is 25.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -85,6 +93,10 @@ impl DescribeAppBlockBuildersInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum size of each page of results. The maximum value is 25.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeAppBlockBuildersInput`](crate::operation::describe_app_block_builders::DescribeAppBlockBuildersInput).
     pub fn build(

@@ -36,6 +36,12 @@ impl CreateProjectFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateProject as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_project::builders::CreateProjectInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl CreateProjectFluentBuilder {
         self.inner = self.inner.set_space_name(input);
         self
     }
+    /// <p>The name of the space.</p>
+    pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_space_name()
+    }
     /// <p>The friendly name of the project that will be displayed to users.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.display_name(input.into());
@@ -128,6 +138,10 @@ impl CreateProjectFluentBuilder {
         self.inner = self.inner.set_display_name(input);
         self
     }
+    /// <p>The friendly name of the project that will be displayed to users.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_display_name()
+    }
     /// <p>The description of the project. This description will be displayed to all users of the project. We recommend providing a brief description of the project and its intended purpose.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -137,5 +151,9 @@ impl CreateProjectFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the project. This description will be displayed to all users of the project. We recommend providing a brief description of the project and its intended purpose.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
 }

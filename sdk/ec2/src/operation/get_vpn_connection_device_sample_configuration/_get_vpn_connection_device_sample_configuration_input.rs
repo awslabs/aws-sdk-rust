@@ -69,6 +69,10 @@ impl GetVpnConnectionDeviceSampleConfigurationInputBuilder {
         self.vpn_connection_id = input;
         self
     }
+    /// <p>The <code>VpnConnectionId</code> specifies the Site-to-Site VPN connection used for the sample configuration.</p>
+    pub fn get_vpn_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpn_connection_id
+    }
     /// <p>Device identifier provided by the <code>GetVpnConnectionDeviceTypes</code> API.</p>
     pub fn vpn_connection_device_type_id(
         mut self,
@@ -84,6 +88,12 @@ impl GetVpnConnectionDeviceSampleConfigurationInputBuilder {
     ) -> Self {
         self.vpn_connection_device_type_id = input;
         self
+    }
+    /// <p>Device identifier provided by the <code>GetVpnConnectionDeviceTypes</code> API.</p>
+    pub fn get_vpn_connection_device_type_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.vpn_connection_device_type_id
     }
     /// <p>The IKE version to be used in the sample configuration file for your customer gateway device. You can specify one of the following versions: <code>ikev1</code> or <code>ikev2</code>.</p>
     pub fn internet_key_exchange_version(
@@ -101,6 +111,12 @@ impl GetVpnConnectionDeviceSampleConfigurationInputBuilder {
         self.internet_key_exchange_version = input;
         self
     }
+    /// <p>The IKE version to be used in the sample configuration file for your customer gateway device. You can specify one of the following versions: <code>ikev1</code> or <code>ikev2</code>.</p>
+    pub fn get_internet_key_exchange_version(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.internet_key_exchange_version
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -110,6 +126,10 @@ impl GetVpnConnectionDeviceSampleConfigurationInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`GetVpnConnectionDeviceSampleConfigurationInput`](crate::operation::get_vpn_connection_device_sample_configuration::GetVpnConnectionDeviceSampleConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_vpn_connection_device_sample_configuration::GetVpnConnectionDeviceSampleConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{

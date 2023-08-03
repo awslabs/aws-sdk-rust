@@ -36,6 +36,12 @@ impl ListTaskTemplatesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListTaskTemplates as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_task_templates::builders::ListTaskTemplatesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl ListTaskTemplatesFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p> <important>
     /// <p>It is not expected that you set this because the value returned in the previous response is always null.</p>
     /// </important>
@@ -150,6 +160,12 @@ impl ListTaskTemplatesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p> <important>
+    /// <p>It is not expected that you set this because the value returned in the previous response is always null.</p>
+    /// </important>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The maximum number of results to return per page.</p> <important>
     /// <p>It is not expected that you set this.</p>
@@ -165,6 +181,12 @@ impl ListTaskTemplatesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return per page.</p> <important>
+    /// <p>It is not expected that you set this.</p>
+    /// </important>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.</p>
     pub fn status(mut self, input: crate::types::TaskTemplateStatus) -> Self {
         self.inner = self.inner.status(input);
@@ -178,6 +200,10 @@ impl ListTaskTemplatesFluentBuilder {
         self.inner = self.inner.set_status(input);
         self
     }
+    /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TaskTemplateStatus> {
+        self.inner.get_status()
+    }
     /// <p>The name of the task template.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -187,5 +213,9 @@ impl ListTaskTemplatesFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the task template.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
 }

@@ -40,6 +40,12 @@ impl GetXssMatchSetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetXssMatchSet as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_xss_match_set::builders::GetXssMatchSetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,5 +141,9 @@ impl GetXssMatchSetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_xss_match_set_id(input);
         self
+    }
+    /// <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to get. <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
+    pub fn get_xss_match_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_xss_match_set_id()
     }
 }

@@ -64,6 +64,12 @@ impl BatchUpdateDetectorOutputBuilder {
         self.batch_update_detector_error_entries = input;
         self
     }
+    /// <p>A list of those detector updates that resulted in errors. (If an error is listed here, the specific update did not occur.)</p>
+    pub fn get_batch_update_detector_error_entries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateDetectorErrorEntry>> {
+        &self.batch_update_detector_error_entries
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -38,6 +38,10 @@ impl RegisterDelegatedAdministratorFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RegisterDelegatedAdministrator as a reference.
+    pub fn as_input(&self) -> &crate::operation::register_delegated_administrator::builders::RegisterDelegatedAdministratorInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +132,10 @@ impl RegisterDelegatedAdministratorFluentBuilder {
         self.inner = self.inner.set_account_id(input);
         self
     }
+    /// <p>The account ID number of the member account in the organization to register as a delegated administrator.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// <p>The service principal of the Amazon Web Services service for which you want to make the member account a delegated administrator.</p>
     pub fn service_principal(
         mut self,
@@ -143,5 +151,9 @@ impl RegisterDelegatedAdministratorFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_service_principal(input);
         self
+    }
+    /// <p>The service principal of the Amazon Web Services service for which you want to make the member account a delegated administrator.</p>
+    pub fn get_service_principal(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_principal()
     }
 }

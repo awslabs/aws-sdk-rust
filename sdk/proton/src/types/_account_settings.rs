@@ -65,6 +65,10 @@ impl AccountSettingsBuilder {
         self.pipeline_service_role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Assumed by Proton for Amazon Web Services-managed provisioning, and by customer-owned automation for self-managed provisioning.</p>
+    pub fn get_pipeline_service_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_service_role_arn
+    }
     /// <p>The linked repository for pipeline provisioning. Required if you have environments configured for self-managed provisioning with services that include pipelines. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
     pub fn pipeline_provisioning_repository(
         mut self,
@@ -81,6 +85,12 @@ impl AccountSettingsBuilder {
         self.pipeline_provisioning_repository = input;
         self
     }
+    /// <p>The linked repository for pipeline provisioning. Required if you have environments configured for self-managed provisioning with services that include pipelines. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
+    pub fn get_pipeline_provisioning_repository(
+        &self,
+    ) -> &::std::option::Option<crate::types::RepositoryBranch> {
+        &self.pipeline_provisioning_repository
+    }
     /// <p>The Amazon Resource Name (ARN) of the service role that Proton uses for provisioning pipelines. Proton assumes this role for CodeBuild-based provisioning.</p>
     pub fn pipeline_codebuild_role_arn(
         mut self,
@@ -96,6 +106,10 @@ impl AccountSettingsBuilder {
     ) -> Self {
         self.pipeline_codebuild_role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the service role that Proton uses for provisioning pipelines. Proton assumes this role for CodeBuild-based provisioning.</p>
+    pub fn get_pipeline_codebuild_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_codebuild_role_arn
     }
     /// Consumes the builder and constructs a [`AccountSettings`](crate::types::AccountSettings).
     pub fn build(self) -> crate::types::AccountSettings {

@@ -48,6 +48,10 @@ impl DescribeChangeSetInputBuilder {
         self.catalog = input;
         self
     }
+    /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
+    pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog
+    }
     /// <p>Required. The unique identifier for the <code>StartChangeSet</code> request that you want to describe the details for.</p>
     pub fn change_set_id(
         mut self,
@@ -63,6 +67,10 @@ impl DescribeChangeSetInputBuilder {
     ) -> Self {
         self.change_set_id = input;
         self
+    }
+    /// <p>Required. The unique identifier for the <code>StartChangeSet</code> request that you want to describe the details for.</p>
+    pub fn get_change_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.change_set_id
     }
     /// Consumes the builder and constructs a [`DescribeChangeSetInput`](crate::operation::describe_change_set::DescribeChangeSetInput).
     pub fn build(

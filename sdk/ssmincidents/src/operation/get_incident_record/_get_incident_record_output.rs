@@ -50,6 +50,10 @@ impl GetIncidentRecordOutputBuilder {
         self.incident_record = input;
         self
     }
+    /// <p>Details the structure of the incident record.</p>
+    pub fn get_incident_record(&self) -> &::std::option::Option<crate::types::IncidentRecord> {
+        &self.incident_record
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

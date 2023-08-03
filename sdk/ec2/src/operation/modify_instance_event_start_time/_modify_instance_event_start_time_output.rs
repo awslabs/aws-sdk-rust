@@ -49,6 +49,10 @@ impl ModifyInstanceEventStartTimeOutputBuilder {
         self.event = input;
         self
     }
+    /// <p>Information about the event.</p>
+    pub fn get_event(&self) -> &::std::option::Option<crate::types::InstanceStatusEvent> {
+        &self.event
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

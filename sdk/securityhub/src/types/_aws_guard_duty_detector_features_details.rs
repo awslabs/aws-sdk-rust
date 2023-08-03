@@ -48,6 +48,10 @@ impl AwsGuardDutyDetectorFeaturesDetailsBuilder {
         self.name = input;
         self
     }
+    /// <p> Indicates the name of the feature that is activated for the detector. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p> Indicates the status of the feature that is activated for the detector. </p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl AwsGuardDutyDetectorFeaturesDetailsBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p> Indicates the status of the feature that is activated for the detector. </p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`AwsGuardDutyDetectorFeaturesDetails`](crate::types::AwsGuardDutyDetectorFeaturesDetails).
     pub fn build(self) -> crate::types::AwsGuardDutyDetectorFeaturesDetails {

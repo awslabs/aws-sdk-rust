@@ -67,6 +67,12 @@ impl ResourceScanMetadataBuilder {
         self.ecr_repository = input;
         self
     }
+    /// <p>An object that contains details about the repository an Amazon ECR image resides in.</p>
+    pub fn get_ecr_repository(
+        &self,
+    ) -> &::std::option::Option<crate::types::EcrRepositoryMetadata> {
+        &self.ecr_repository
+    }
     /// <p>An object that contains details about the container metadata for an Amazon ECR image.</p>
     pub fn ecr_image(mut self, input: crate::types::EcrContainerImageMetadata) -> Self {
         self.ecr_image = ::std::option::Option::Some(input);
@@ -80,6 +86,10 @@ impl ResourceScanMetadataBuilder {
         self.ecr_image = input;
         self
     }
+    /// <p>An object that contains details about the container metadata for an Amazon ECR image.</p>
+    pub fn get_ecr_image(&self) -> &::std::option::Option<crate::types::EcrContainerImageMetadata> {
+        &self.ecr_image
+    }
     /// <p>An object that contains metadata details for an Amazon EC2 instance.</p>
     pub fn ec2(mut self, input: crate::types::Ec2Metadata) -> Self {
         self.ec2 = ::std::option::Option::Some(input);
@@ -89,6 +99,10 @@ impl ResourceScanMetadataBuilder {
     pub fn set_ec2(mut self, input: ::std::option::Option<crate::types::Ec2Metadata>) -> Self {
         self.ec2 = input;
         self
+    }
+    /// <p>An object that contains metadata details for an Amazon EC2 instance.</p>
+    pub fn get_ec2(&self) -> &::std::option::Option<crate::types::Ec2Metadata> {
+        &self.ec2
     }
     /// <p>An object that contains metadata details for an AWS Lambda function.</p>
     pub fn lambda_function(mut self, input: crate::types::LambdaFunctionMetadata) -> Self {
@@ -102,6 +116,12 @@ impl ResourceScanMetadataBuilder {
     ) -> Self {
         self.lambda_function = input;
         self
+    }
+    /// <p>An object that contains metadata details for an AWS Lambda function.</p>
+    pub fn get_lambda_function(
+        &self,
+    ) -> &::std::option::Option<crate::types::LambdaFunctionMetadata> {
+        &self.lambda_function
     }
     /// Consumes the builder and constructs a [`ResourceScanMetadata`](crate::types::ResourceScanMetadata).
     pub fn build(self) -> crate::types::ResourceScanMetadata {

@@ -80,6 +80,10 @@ impl CoreNetworkChangeBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of change.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ChangeType> {
+        &self.r#type
+    }
     /// <p>The action to take for a core network.</p>
     pub fn action(mut self, input: crate::types::ChangeAction) -> Self {
         self.action = ::std::option::Option::Some(input);
@@ -90,6 +94,10 @@ impl CoreNetworkChangeBuilder {
         self.action = input;
         self
     }
+    /// <p>The action to take for a core network.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::ChangeAction> {
+        &self.action
+    }
     /// <p>The resource identifier.</p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
@@ -99,6 +107,10 @@ impl CoreNetworkChangeBuilder {
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identifier = input;
         self
+    }
+    /// <p>The resource identifier.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
     }
     /// <p>The previous values for a core network.</p>
     pub fn previous_values(mut self, input: crate::types::CoreNetworkChangeValues) -> Self {
@@ -113,6 +125,12 @@ impl CoreNetworkChangeBuilder {
         self.previous_values = input;
         self
     }
+    /// <p>The previous values for a core network.</p>
+    pub fn get_previous_values(
+        &self,
+    ) -> &::std::option::Option<crate::types::CoreNetworkChangeValues> {
+        &self.previous_values
+    }
     /// <p>The new value for a core network</p>
     pub fn new_values(mut self, input: crate::types::CoreNetworkChangeValues) -> Self {
         self.new_values = ::std::option::Option::Some(input);
@@ -125,6 +143,10 @@ impl CoreNetworkChangeBuilder {
     ) -> Self {
         self.new_values = input;
         self
+    }
+    /// <p>The new value for a core network</p>
+    pub fn get_new_values(&self) -> &::std::option::Option<crate::types::CoreNetworkChangeValues> {
+        &self.new_values
     }
     /// <p>Uniquely identifies the path for a change within the changeset. For example, the <code>IdentifierPath</code> for a core network segment change might be <code>"CORE_NETWORK_SEGMENT/us-east-1/devsegment"</code>.</p>
     pub fn identifier_path(
@@ -141,6 +163,10 @@ impl CoreNetworkChangeBuilder {
     ) -> Self {
         self.identifier_path = input;
         self
+    }
+    /// <p>Uniquely identifies the path for a change within the changeset. For example, the <code>IdentifierPath</code> for a core network segment change might be <code>"CORE_NETWORK_SEGMENT/us-east-1/devsegment"</code>.</p>
+    pub fn get_identifier_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier_path
     }
     /// Consumes the builder and constructs a [`CoreNetworkChange`](crate::types::CoreNetworkChange).
     pub fn build(self) -> crate::types::CoreNetworkChange {

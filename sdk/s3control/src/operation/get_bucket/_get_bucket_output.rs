@@ -62,6 +62,10 @@ impl GetBucketOutputBuilder {
         self.bucket = input;
         self
     }
+    /// <p>The Outposts bucket requested.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p></p>
     pub fn public_access_block_enabled(mut self, input: bool) -> Self {
         self.public_access_block_enabled = ::std::option::Option::Some(input);
@@ -71,6 +75,10 @@ impl GetBucketOutputBuilder {
     pub fn set_public_access_block_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.public_access_block_enabled = input;
         self
+    }
+    /// <p></p>
+    pub fn get_public_access_block_enabled(&self) -> &::std::option::Option<bool> {
+        &self.public_access_block_enabled
     }
     /// <p>The creation date of the Outposts bucket.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -84,6 +92,10 @@ impl GetBucketOutputBuilder {
     ) -> Self {
         self.creation_date = input;
         self
+    }
+    /// <p>The creation date of the Outposts bucket.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

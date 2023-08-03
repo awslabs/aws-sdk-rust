@@ -51,6 +51,12 @@ impl GetAuthorizationTokenOutputBuilder {
         self.authorization_data = input;
         self
     }
+    /// <p>An authorization token data object that corresponds to a public registry.</p>
+    pub fn get_authorization_data(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuthorizationData> {
+        &self.authorization_data
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

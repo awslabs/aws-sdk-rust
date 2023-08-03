@@ -51,6 +51,10 @@ impl DescribeRoutingProfileOutputBuilder {
         self.routing_profile = input;
         self
     }
+    /// <p>The routing profile.</p>
+    pub fn get_routing_profile(&self) -> &::std::option::Option<crate::types::RoutingProfile> {
+        &self.routing_profile
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

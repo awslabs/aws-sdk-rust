@@ -60,6 +60,10 @@ impl CloudFrontOriginAccessIdentityBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID for the origin access identity, for example, <code>E74FTE3AJFJ256A</code>. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The Amazon S3 canonical user ID for the origin access identity, used when giving the origin access identity read permission to an object in Amazon S3.</p>
     pub fn s3_canonical_user_id(
         mut self,
@@ -76,6 +80,10 @@ impl CloudFrontOriginAccessIdentityBuilder {
         self.s3_canonical_user_id = input;
         self
     }
+    /// <p>The Amazon S3 canonical user ID for the origin access identity, used when giving the origin access identity read permission to an object in Amazon S3.</p>
+    pub fn get_s3_canonical_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_canonical_user_id
+    }
     /// <p>The current configuration information for the identity.</p>
     pub fn cloud_front_origin_access_identity_config(
         mut self,
@@ -91,6 +99,12 @@ impl CloudFrontOriginAccessIdentityBuilder {
     ) -> Self {
         self.cloud_front_origin_access_identity_config = input;
         self
+    }
+    /// <p>The current configuration information for the identity.</p>
+    pub fn get_cloud_front_origin_access_identity_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::CloudFrontOriginAccessIdentityConfig> {
+        &self.cloud_front_origin_access_identity_config
     }
     /// Consumes the builder and constructs a [`CloudFrontOriginAccessIdentity`](crate::types::CloudFrontOriginAccessIdentity).
     pub fn build(self) -> crate::types::CloudFrontOriginAccessIdentity {

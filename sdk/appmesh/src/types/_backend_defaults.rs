@@ -43,6 +43,10 @@ impl BackendDefaultsBuilder {
         self.client_policy = input;
         self
     }
+    /// <p>A reference to an object that represents a client policy.</p>
+    pub fn get_client_policy(&self) -> &::std::option::Option<crate::types::ClientPolicy> {
+        &self.client_policy
+    }
     /// Consumes the builder and constructs a [`BackendDefaults`](crate::types::BackendDefaults).
     pub fn build(self) -> crate::types::BackendDefaults {
         crate::types::BackendDefaults {

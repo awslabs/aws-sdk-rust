@@ -141,6 +141,11 @@ impl AwsEc2VolumeDetailsBuilder {
         self.create_time = input;
         self
     }
+    /// <p>Indicates when the volume was created.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_create_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.create_time
+    }
     /// <p>The device name for the volume that is attached to the instance. </p>
     pub fn device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_name = ::std::option::Option::Some(input.into());
@@ -150,6 +155,10 @@ impl AwsEc2VolumeDetailsBuilder {
     pub fn set_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_name = input;
         self
+    }
+    /// <p>The device name for the volume that is attached to the instance. </p>
+    pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_name
     }
     /// <p>Specifies whether the volume is encrypted.</p>
     pub fn encrypted(mut self, input: bool) -> Self {
@@ -161,6 +170,10 @@ impl AwsEc2VolumeDetailsBuilder {
         self.encrypted = input;
         self
     }
+    /// <p>Specifies whether the volume is encrypted.</p>
+    pub fn get_encrypted(&self) -> &::std::option::Option<bool> {
+        &self.encrypted
+    }
     /// <p>The size of the volume, in GiBs.</p>
     pub fn size(mut self, input: i32) -> Self {
         self.size = ::std::option::Option::Some(input);
@@ -171,6 +184,10 @@ impl AwsEc2VolumeDetailsBuilder {
         self.size = input;
         self
     }
+    /// <p>The size of the volume, in GiBs.</p>
+    pub fn get_size(&self) -> &::std::option::Option<i32> {
+        &self.size
+    }
     /// <p>The snapshot from which the volume was created.</p>
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_id = ::std::option::Option::Some(input.into());
@@ -180,6 +197,10 @@ impl AwsEc2VolumeDetailsBuilder {
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_id = input;
         self
+    }
+    /// <p>The snapshot from which the volume was created.</p>
+    pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_id
     }
     /// <p>The volume state. Valid values are as follows:</p>
     /// <ul>
@@ -207,6 +228,18 @@ impl AwsEc2VolumeDetailsBuilder {
         self.status = input;
         self
     }
+    /// <p>The volume state. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>available</code> </p> </li>
+    /// <li> <p> <code>creating</code> </p> </li>
+    /// <li> <p> <code>deleted</code> </p> </li>
+    /// <li> <p> <code>deleting</code> </p> </li>
+    /// <li> <p> <code>error</code> </p> </li>
+    /// <li> <p> <code>in-use</code> </p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>The ARN of the KMS key that was used to protect the volume encryption key for the volume.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -216,6 +249,10 @@ impl AwsEc2VolumeDetailsBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p>The ARN of the KMS key that was used to protect the volume encryption key for the volume.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// Appends an item to `attachments`.
     ///
@@ -236,6 +273,12 @@ impl AwsEc2VolumeDetailsBuilder {
         self.attachments = input;
         self
     }
+    /// <p>The volume attachments.</p>
+    pub fn get_attachments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsEc2VolumeAttachment>> {
+        &self.attachments
+    }
     /// <p>The ID of the volume. </p>
     pub fn volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_id = ::std::option::Option::Some(input.into());
@@ -246,6 +289,10 @@ impl AwsEc2VolumeDetailsBuilder {
         self.volume_id = input;
         self
     }
+    /// <p>The ID of the volume. </p>
+    pub fn get_volume_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_id
+    }
     /// <p>The volume type. </p>
     pub fn volume_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_type = ::std::option::Option::Some(input.into());
@@ -255,6 +302,10 @@ impl AwsEc2VolumeDetailsBuilder {
     pub fn set_volume_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_type = input;
         self
+    }
+    /// <p>The volume type. </p>
+    pub fn get_volume_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_type
     }
     /// <p>Indicates whether the volume was scanned or skipped. </p>
     pub fn volume_scan_status(
@@ -271,6 +322,10 @@ impl AwsEc2VolumeDetailsBuilder {
     ) -> Self {
         self.volume_scan_status = input;
         self
+    }
+    /// <p>Indicates whether the volume was scanned or skipped. </p>
+    pub fn get_volume_scan_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_scan_status
     }
     /// Consumes the builder and constructs a [`AwsEc2VolumeDetails`](crate::types::AwsEc2VolumeDetails).
     pub fn build(self) -> crate::types::AwsEc2VolumeDetails {

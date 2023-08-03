@@ -48,6 +48,10 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetailsBuild
         self.max = input;
         self
     }
+    /// <p> The maximum amount of total local storage, in GB. </p>
+    pub fn get_max(&self) -> &::std::option::Option<f64> {
+        &self.max
+    }
     /// <p> The minimum amount of total local storage, in GB. </p>
     pub fn min(mut self, input: f64) -> Self {
         self.min = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetailsBuild
     pub fn set_min(mut self, input: ::std::option::Option<f64>) -> Self {
         self.min = input;
         self
+    }
+    /// <p> The minimum amount of total local storage, in GB. </p>
+    pub fn get_min(&self) -> &::std::option::Option<f64> {
+        &self.min
     }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsTotalLocalStorageGbDetails).
     pub fn build(

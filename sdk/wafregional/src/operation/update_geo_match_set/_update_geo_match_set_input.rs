@@ -70,6 +70,10 @@ impl UpdateGeoMatchSetInputBuilder {
         self.geo_match_set_id = input;
         self
     }
+    /// <p>The <code>GeoMatchSetId</code> of the <code>GeoMatchSet</code> that you want to update. <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
+    pub fn get_geo_match_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.geo_match_set_id
+    }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_token = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl UpdateGeoMatchSetInputBuilder {
     pub fn set_change_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_token = input;
         self
+    }
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    pub fn get_change_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.change_token
     }
     /// Appends an item to `updates`.
     ///
@@ -106,6 +114,16 @@ impl UpdateGeoMatchSetInputBuilder {
     ) -> Self {
         self.updates = input;
         self
+    }
+    /// <p>An array of <code>GeoMatchSetUpdate</code> objects that you want to insert into or delete from an <code>GeoMatchSet</code>. For more information, see the applicable data types:</p>
+    /// <ul>
+    /// <li> <p> <code>GeoMatchSetUpdate</code>: Contains <code>Action</code> and <code>GeoMatchConstraint</code> </p> </li>
+    /// <li> <p> <code>GeoMatchConstraint</code>: Contains <code>Type</code> and <code>Value</code> </p> <p>You can have only one <code>Type</code> and <code>Value</code> per <code>GeoMatchConstraint</code>. To add multiple countries, include multiple <code>GeoMatchSetUpdate</code> objects in your request.</p> </li>
+    /// </ul>
+    pub fn get_updates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GeoMatchSetUpdate>> {
+        &self.updates
     }
     /// Consumes the builder and constructs a [`UpdateGeoMatchSetInput`](crate::operation::update_geo_match_set::UpdateGeoMatchSetInput).
     pub fn build(

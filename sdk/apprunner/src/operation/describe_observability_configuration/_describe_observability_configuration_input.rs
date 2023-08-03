@@ -49,6 +49,13 @@ impl DescribeObservabilityConfigurationInputBuilder {
         self.observability_configuration_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the App Runner observability configuration that you want a description for.</p>
+    /// <p>The ARN can be a full observability configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is described.</p>
+    pub fn get_observability_configuration_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.observability_configuration_arn
+    }
     /// Consumes the builder and constructs a [`DescribeObservabilityConfigurationInput`](crate::operation::describe_observability_configuration::DescribeObservabilityConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_observability_configuration::DescribeObservabilityConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

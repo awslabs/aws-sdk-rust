@@ -61,6 +61,12 @@ impl AssociateTransitGatewayPolicyTableInputBuilder {
         self.transit_gateway_policy_table_id = input;
         self
     }
+    /// <p>The ID of the transit gateway policy table to associate with the transit gateway attachment.</p>
+    pub fn get_transit_gateway_policy_table_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_policy_table_id
+    }
     /// <p>The ID of the transit gateway attachment to associate with the policy table.</p>
     pub fn transit_gateway_attachment_id(
         mut self,
@@ -77,6 +83,12 @@ impl AssociateTransitGatewayPolicyTableInputBuilder {
         self.transit_gateway_attachment_id = input;
         self
     }
+    /// <p>The ID of the transit gateway attachment to associate with the policy table.</p>
+    pub fn get_transit_gateway_attachment_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_attachment_id
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -86,6 +98,10 @@ impl AssociateTransitGatewayPolicyTableInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`AssociateTransitGatewayPolicyTableInput`](crate::operation::associate_transit_gateway_policy_table::AssociateTransitGatewayPolicyTableInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::associate_transit_gateway_policy_table::AssociateTransitGatewayPolicyTableInput, ::aws_smithy_http::operation::error::BuildError>{

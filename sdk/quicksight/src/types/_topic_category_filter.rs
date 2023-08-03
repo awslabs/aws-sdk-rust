@@ -78,6 +78,12 @@ impl TopicCategoryFilterBuilder {
         self.category_filter_function = input;
         self
     }
+    /// <p>The category filter function. Valid values for this structure are <code>EXACT</code> and <code>CONTAINS</code>.</p>
+    pub fn get_category_filter_function(
+        &self,
+    ) -> &::std::option::Option<crate::types::CategoryFilterFunction> {
+        &self.category_filter_function
+    }
     /// <p>The category filter type. This element is used to specify whether a filter is a simple category filter or an inverse category filter.</p>
     pub fn category_filter_type(mut self, input: crate::types::CategoryFilterType) -> Self {
         self.category_filter_type = ::std::option::Option::Some(input);
@@ -90,6 +96,12 @@ impl TopicCategoryFilterBuilder {
     ) -> Self {
         self.category_filter_type = input;
         self
+    }
+    /// <p>The category filter type. This element is used to specify whether a filter is a simple category filter or an inverse category filter.</p>
+    pub fn get_category_filter_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::CategoryFilterType> {
+        &self.category_filter_type
     }
     /// <p>The constant used in a category filter.</p>
     pub fn constant(mut self, input: crate::types::TopicCategoryFilterConstant) -> Self {
@@ -104,6 +116,12 @@ impl TopicCategoryFilterBuilder {
         self.constant = input;
         self
     }
+    /// <p>The constant used in a category filter.</p>
+    pub fn get_constant(
+        &self,
+    ) -> &::std::option::Option<crate::types::TopicCategoryFilterConstant> {
+        &self.constant
+    }
     /// <p>A Boolean value that indicates if the filter is inverse.</p>
     pub fn inverse(mut self, input: bool) -> Self {
         self.inverse = ::std::option::Option::Some(input);
@@ -113,6 +131,10 @@ impl TopicCategoryFilterBuilder {
     pub fn set_inverse(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inverse = input;
         self
+    }
+    /// <p>A Boolean value that indicates if the filter is inverse.</p>
+    pub fn get_inverse(&self) -> &::std::option::Option<bool> {
+        &self.inverse
     }
     /// Consumes the builder and constructs a [`TopicCategoryFilter`](crate::types::TopicCategoryFilter).
     pub fn build(self) -> crate::types::TopicCategoryFilter {

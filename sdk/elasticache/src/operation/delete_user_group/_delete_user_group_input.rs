@@ -45,6 +45,10 @@ impl DeleteUserGroupInputBuilder {
         self.user_group_id = input;
         self
     }
+    /// <p>The ID of the user group.</p>
+    pub fn get_user_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_group_id
+    }
     /// Consumes the builder and constructs a [`DeleteUserGroupInput`](crate::operation::delete_user_group::DeleteUserGroupInput).
     pub fn build(
         self,

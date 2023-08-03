@@ -56,6 +56,10 @@ impl CapacityBuilder {
         self.used = input;
         self
     }
+    /// <p>The amount of space that's being used in a storage system resource.</p>
+    pub fn get_used(&self) -> &::std::option::Option<i64> {
+        &self.used
+    }
     /// <p>The total amount of space available in a storage system resource.</p>
     pub fn provisioned(mut self, input: i64) -> Self {
         self.provisioned = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl CapacityBuilder {
         self.provisioned = input;
         self
     }
+    /// <p>The total amount of space available in a storage system resource.</p>
+    pub fn get_provisioned(&self) -> &::std::option::Option<i64> {
+        &self.provisioned
+    }
     /// <p>The amount of space that's being used in a storage system resource without accounting for compression or deduplication.</p>
     pub fn logical_used(mut self, input: i64) -> Self {
         self.logical_used = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl CapacityBuilder {
     pub fn set_logical_used(mut self, input: ::std::option::Option<i64>) -> Self {
         self.logical_used = input;
         self
+    }
+    /// <p>The amount of space that's being used in a storage system resource without accounting for compression or deduplication.</p>
+    pub fn get_logical_used(&self) -> &::std::option::Option<i64> {
+        &self.logical_used
     }
     /// Consumes the builder and constructs a [`Capacity`](crate::types::Capacity).
     pub fn build(self) -> crate::types::Capacity {

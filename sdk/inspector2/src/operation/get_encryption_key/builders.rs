@@ -36,6 +36,12 @@ impl GetEncryptionKeyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetEncryptionKey as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_encryption_key::builders::GetEncryptionKeyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl GetEncryptionKeyFluentBuilder {
         self.inner = self.inner.set_scan_type(input);
         self
     }
+    /// <p>The scan type the key encrypts.</p>
+    pub fn get_scan_type(&self) -> &::std::option::Option<crate::types::ScanType> {
+        self.inner.get_scan_type()
+    }
     /// <p>The resource type the key encrypts.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.inner = self.inner.resource_type(input);
@@ -138,5 +148,9 @@ impl GetEncryptionKeyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
+    }
+    /// <p>The resource type the key encrypts.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        self.inner.get_resource_type()
     }
 }

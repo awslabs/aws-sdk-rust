@@ -40,6 +40,10 @@ impl DisableActionConfigurationBuilder {
         self.note = input;
         self
     }
+    /// <p>The note that you can leave when you disable the alarm.</p>
+    pub fn get_note(&self) -> &::std::option::Option<::std::string::String> {
+        &self.note
+    }
     /// Consumes the builder and constructs a [`DisableActionConfiguration`](crate::types::DisableActionConfiguration).
     pub fn build(self) -> crate::types::DisableActionConfiguration {
         crate::types::DisableActionConfiguration { note: self.note }

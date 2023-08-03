@@ -36,6 +36,10 @@ impl TerminateJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the TerminateJob as a reference.
+    pub fn as_input(&self) -> &crate::operation::terminate_job::builders::TerminateJobInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl TerminateJobFluentBuilder {
         self.inner = self.inner.set_job_id(input);
         self
     }
+    /// <p>The Batch job ID of the job to terminate.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_id()
+    }
     /// <p>A message to attach to the job that explains the reason for canceling it. This message is returned by future <code>DescribeJobs</code> operations on the job. This message is also recorded in the Batch activity logs.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reason(input.into());
@@ -127,5 +135,9 @@ impl TerminateJobFluentBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reason(input);
         self
+    }
+    /// <p>A message to attach to the job that explains the reason for canceling it. This message is returned by future <code>DescribeJobs</code> operations on the job. This message is also recorded in the Batch activity logs.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reason()
     }
 }

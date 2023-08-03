@@ -36,6 +36,10 @@ impl ListWorkersWithQualificationTypeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListWorkersWithQualificationType as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_workers_with_qualification_type::builders::ListWorkersWithQualificationTypeInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -112,6 +116,10 @@ impl ListWorkersWithQualificationTypeFluentBuilder {
         self.inner = self.inner.set_qualification_type_id(input);
         self
     }
+    /// <p>The ID of the Qualification type of the Qualifications to return.</p>
+    pub fn get_qualification_type_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_qualification_type_id()
+    }
     /// <p> The status of the Qualifications to return. Can be <code>Granted | Revoked</code>. </p>
     pub fn status(mut self, input: crate::types::QualificationStatus) -> Self {
         self.inner = self.inner.status(input);
@@ -125,6 +133,10 @@ impl ListWorkersWithQualificationTypeFluentBuilder {
         self.inner = self.inner.set_status(input);
         self
     }
+    /// <p> The status of the Qualifications to return. Can be <code>Granted | Revoked</code>. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::QualificationStatus> {
+        self.inner.get_status()
+    }
     /// <p>Pagination Token</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -135,6 +147,10 @@ impl ListWorkersWithQualificationTypeFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>Pagination Token</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p> Limit the number of results returned. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -144,5 +160,9 @@ impl ListWorkersWithQualificationTypeFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p> Limit the number of results returned. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

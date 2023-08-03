@@ -82,6 +82,17 @@ impl GetIdentityMailFromDomainAttributesOutputBuilder {
         self.mail_from_domain_attributes = input;
         self
     }
+    /// <p>A map of identities to custom MAIL FROM attributes.</p>
+    pub fn get_mail_from_domain_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::IdentityMailFromDomainAttributes,
+        >,
+    > {
+        &self.mail_from_domain_attributes
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

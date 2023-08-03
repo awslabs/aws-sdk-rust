@@ -54,6 +54,12 @@ impl SelectiveExecutionConfigBuilder {
         self.source_pipeline_execution_arn = input;
         self
     }
+    /// <p>The ARN from a reference execution of the current pipeline. Used to copy input collaterals needed for the selected steps to run. The execution status of the pipeline can be either <code>Failed</code> or <code>Success</code>.</p>
+    pub fn get_source_pipeline_execution_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.source_pipeline_execution_arn
+    }
     /// Appends an item to `selected_steps`.
     ///
     /// To override the contents of this collection use [`set_selected_steps`](Self::set_selected_steps).
@@ -72,6 +78,12 @@ impl SelectiveExecutionConfigBuilder {
     ) -> Self {
         self.selected_steps = input;
         self
+    }
+    /// <p>A list of pipeline steps to run. All step(s) in all path(s) between two selected steps should be included.</p>
+    pub fn get_selected_steps(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SelectedStep>> {
+        &self.selected_steps
     }
     /// Consumes the builder and constructs a [`SelectiveExecutionConfig`](crate::types::SelectiveExecutionConfig).
     pub fn build(self) -> crate::types::SelectiveExecutionConfig {

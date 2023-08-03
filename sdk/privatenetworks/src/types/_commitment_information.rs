@@ -65,6 +65,12 @@ impl CommitmentInformationBuilder {
         self.commitment_configuration = input;
         self
     }
+    /// <p>The duration and renewal status of the commitment period for the radio unit.</p>
+    pub fn get_commitment_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CommitmentConfiguration> {
+        &self.commitment_configuration
+    }
     /// <p>The date and time that the commitment period started.</p>
     pub fn start_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_at = ::std::option::Option::Some(input);
@@ -78,6 +84,10 @@ impl CommitmentInformationBuilder {
         self.start_at = input;
         self
     }
+    /// <p>The date and time that the commitment period started.</p>
+    pub fn get_start_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_at
+    }
     /// <p>The date and time that the commitment period ends. If you do not cancel or renew the commitment before the expiration date, you will be billed at the 60-day-commitment rate.</p>
     pub fn expires_on(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.expires_on = ::std::option::Option::Some(input);
@@ -90,6 +100,10 @@ impl CommitmentInformationBuilder {
     ) -> Self {
         self.expires_on = input;
         self
+    }
+    /// <p>The date and time that the commitment period ends. If you do not cancel or renew the commitment before the expiration date, you will be billed at the 60-day-commitment rate.</p>
+    pub fn get_expires_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expires_on
     }
     /// Consumes the builder and constructs a [`CommitmentInformation`](crate::types::CommitmentInformation).
     pub fn build(self) -> crate::types::CommitmentInformation {

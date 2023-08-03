@@ -88,6 +88,10 @@ impl StreamBuilder {
         self.channel_arn = input;
         self
     }
+    /// <p>Channel ARN for the stream.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
+    }
     /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
     pub fn stream_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_id = ::std::option::Option::Some(input.into());
@@ -98,6 +102,10 @@ impl StreamBuilder {
         self.stream_id = input;
         self
     }
+    /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
+    pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_id
+    }
     /// <p>URL of the master playlist, required by the video player to play the HLS stream.</p>
     pub fn playback_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.playback_url = ::std::option::Option::Some(input.into());
@@ -107,6 +115,10 @@ impl StreamBuilder {
     pub fn set_playback_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.playback_url = input;
         self
+    }
+    /// <p>URL of the master playlist, required by the video player to play the HLS stream.</p>
+    pub fn get_playback_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.playback_url
     }
     /// <p>Time of the stream’s start. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -121,6 +133,10 @@ impl StreamBuilder {
         self.start_time = input;
         self
     }
+    /// <p>Time of the stream’s start. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The stream’s state. Do not rely on the <code>OFFLINE</code> state, as the API may not return it; instead, a "NotBroadcasting" error will indicate that the stream is not live.</p>
     pub fn state(mut self, input: crate::types::StreamState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -130,6 +146,10 @@ impl StreamBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::StreamState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The stream’s state. Do not rely on the <code>OFFLINE</code> state, as the API may not return it; instead, a "NotBroadcasting" error will indicate that the stream is not live.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::StreamState> {
+        &self.state
     }
     /// <p>The stream’s health.</p>
     pub fn health(mut self, input: crate::types::StreamHealth) -> Self {
@@ -141,6 +161,10 @@ impl StreamBuilder {
         self.health = input;
         self
     }
+    /// <p>The stream’s health.</p>
+    pub fn get_health(&self) -> &::std::option::Option<crate::types::StreamHealth> {
+        &self.health
+    }
     /// <p>A count of concurrent views of the stream. Typically, a new view appears in <code>viewerCount</code> within 15 seconds of when video playback starts and a view is removed from <code>viewerCount</code> within 1 minute of when video playback ends. A value of -1 indicates that the request timed out; in this case, retry.</p>
     pub fn viewer_count(mut self, input: i64) -> Self {
         self.viewer_count = ::std::option::Option::Some(input);
@@ -150,6 +174,10 @@ impl StreamBuilder {
     pub fn set_viewer_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.viewer_count = input;
         self
+    }
+    /// <p>A count of concurrent views of the stream. Typically, a new view appears in <code>viewerCount</code> within 15 seconds of when video playback starts and a view is removed from <code>viewerCount</code> within 1 minute of when video playback ends. A value of -1 indicates that the request timed out; in this case, retry.</p>
+    pub fn get_viewer_count(&self) -> &::std::option::Option<i64> {
+        &self.viewer_count
     }
     /// Consumes the builder and constructs a [`Stream`](crate::types::Stream).
     pub fn build(self) -> crate::types::Stream {

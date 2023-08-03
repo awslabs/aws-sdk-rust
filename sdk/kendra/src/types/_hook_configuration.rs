@@ -67,6 +67,13 @@ impl HookConfigurationBuilder {
         self.invocation_condition = input;
         self
     }
+    /// <p>The condition used for when a Lambda function should be invoked.</p>
+    /// <p>For example, you can specify a condition that if there are empty date-time values, then Amazon Kendra should invoke a function that inserts the current date-time.</p>
+    pub fn get_invocation_condition(
+        &self,
+    ) -> &::std::option::Option<crate::types::DocumentAttributeCondition> {
+        &self.invocation_condition
+    }
     /// <p>The Amazon Resource Name (ARN) of a role with permission to run a Lambda function during ingestion. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
     pub fn lambda_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lambda_arn = ::std::option::Option::Some(input.into());
@@ -77,6 +84,10 @@ impl HookConfigurationBuilder {
         self.lambda_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of a role with permission to run a Lambda function during ingestion. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+    pub fn get_lambda_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lambda_arn
+    }
     /// <p>Stores the original, raw documents or the structured, parsed documents before and after altering them. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html#cde-data-contracts-lambda">Data contracts for Lambda functions</a>.</p>
     pub fn s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket = ::std::option::Option::Some(input.into());
@@ -86,6 +97,10 @@ impl HookConfigurationBuilder {
     pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket = input;
         self
+    }
+    /// <p>Stores the original, raw documents or the structured, parsed documents before and after altering them. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html#cde-data-contracts-lambda">Data contracts for Lambda functions</a>.</p>
+    pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket
     }
     /// Consumes the builder and constructs a [`HookConfiguration`](crate::types::HookConfiguration).
     pub fn build(self) -> crate::types::HookConfiguration {

@@ -61,6 +61,10 @@ impl DeleteApplicationCloudWatchLoggingOptionInputBuilder {
         self.application_name = input;
         self
     }
+    /// <p>The Kinesis Analytics application name.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// <p>The version ID of the Kinesis Analytics application.</p>
     pub fn current_application_version_id(mut self, input: i64) -> Self {
         self.current_application_version_id = ::std::option::Option::Some(input);
@@ -70,6 +74,10 @@ impl DeleteApplicationCloudWatchLoggingOptionInputBuilder {
     pub fn set_current_application_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.current_application_version_id = input;
         self
+    }
+    /// <p>The version ID of the Kinesis Analytics application.</p>
+    pub fn get_current_application_version_id(&self) -> &::std::option::Option<i64> {
+        &self.current_application_version_id
     }
     /// <p>The <code>CloudWatchLoggingOptionId</code> of the CloudWatch logging option to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation. </p>
     pub fn cloud_watch_logging_option_id(
@@ -86,6 +94,12 @@ impl DeleteApplicationCloudWatchLoggingOptionInputBuilder {
     ) -> Self {
         self.cloud_watch_logging_option_id = input;
         self
+    }
+    /// <p>The <code>CloudWatchLoggingOptionId</code> of the CloudWatch logging option to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation. </p>
+    pub fn get_cloud_watch_logging_option_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.cloud_watch_logging_option_id
     }
     /// Consumes the builder and constructs a [`DeleteApplicationCloudWatchLoggingOptionInput`](crate::operation::delete_application_cloud_watch_logging_option::DeleteApplicationCloudWatchLoggingOptionInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_application_cloud_watch_logging_option::DeleteApplicationCloudWatchLoggingOptionInput, ::aws_smithy_http::operation::error::BuildError>{

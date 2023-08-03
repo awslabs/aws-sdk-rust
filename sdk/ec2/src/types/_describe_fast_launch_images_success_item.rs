@@ -112,6 +112,10 @@ impl DescribeFastLaunchImagesSuccessItemBuilder {
         self.image_id = input;
         self
     }
+    /// <p>The image ID that identifies the fast-launch enabled Windows image.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_id
+    }
     /// <p>The resource type that is used for pre-provisioning the Windows AMI. Supported values include: <code>snapshot</code>.</p>
     pub fn resource_type(mut self, input: crate::types::FastLaunchResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
@@ -124,6 +128,12 @@ impl DescribeFastLaunchImagesSuccessItemBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>The resource type that is used for pre-provisioning the Windows AMI. Supported values include: <code>snapshot</code>.</p>
+    pub fn get_resource_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::FastLaunchResourceType> {
+        &self.resource_type
     }
     /// <p>A group of parameters that are used for pre-provisioning the associated Windows AMI using snapshots.</p>
     pub fn snapshot_configuration(
@@ -141,6 +151,12 @@ impl DescribeFastLaunchImagesSuccessItemBuilder {
         self.snapshot_configuration = input;
         self
     }
+    /// <p>A group of parameters that are used for pre-provisioning the associated Windows AMI using snapshots.</p>
+    pub fn get_snapshot_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::FastLaunchSnapshotConfigurationResponse> {
+        &self.snapshot_configuration
+    }
     /// <p>The launch template that the fast-launch enabled Windows AMI uses when it launches Windows instances from pre-provisioned snapshots.</p>
     pub fn launch_template(
         mut self,
@@ -157,6 +173,12 @@ impl DescribeFastLaunchImagesSuccessItemBuilder {
         self.launch_template = input;
         self
     }
+    /// <p>The launch template that the fast-launch enabled Windows AMI uses when it launches Windows instances from pre-provisioned snapshots.</p>
+    pub fn get_launch_template(
+        &self,
+    ) -> &::std::option::Option<crate::types::FastLaunchLaunchTemplateSpecificationResponse> {
+        &self.launch_template
+    }
     /// <p>The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned snapshots for Windows faster launching.</p>
     pub fn max_parallel_launches(mut self, input: i32) -> Self {
         self.max_parallel_launches = ::std::option::Option::Some(input);
@@ -167,6 +189,10 @@ impl DescribeFastLaunchImagesSuccessItemBuilder {
         self.max_parallel_launches = input;
         self
     }
+    /// <p>The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned snapshots for Windows faster launching.</p>
+    pub fn get_max_parallel_launches(&self) -> &::std::option::Option<i32> {
+        &self.max_parallel_launches
+    }
     /// <p>The owner ID for the fast-launch enabled Windows AMI.</p>
     pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_id = ::std::option::Option::Some(input.into());
@@ -176,6 +202,10 @@ impl DescribeFastLaunchImagesSuccessItemBuilder {
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_id = input;
         self
+    }
+    /// <p>The owner ID for the fast-launch enabled Windows AMI.</p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
     }
     /// <p>The current state of faster launching for the specified Windows AMI.</p>
     pub fn state(mut self, input: crate::types::FastLaunchStateCode) -> Self {
@@ -189,6 +219,10 @@ impl DescribeFastLaunchImagesSuccessItemBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The current state of faster launching for the specified Windows AMI.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::FastLaunchStateCode> {
+        &self.state
     }
     /// <p>The reason that faster launching for the Windows AMI changed to the current state.</p>
     pub fn state_transition_reason(
@@ -206,6 +240,10 @@ impl DescribeFastLaunchImagesSuccessItemBuilder {
         self.state_transition_reason = input;
         self
     }
+    /// <p>The reason that faster launching for the Windows AMI changed to the current state.</p>
+    pub fn get_state_transition_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_transition_reason
+    }
     /// <p>The time that faster launching for the Windows AMI changed to the current state.</p>
     pub fn state_transition_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.state_transition_time = ::std::option::Option::Some(input);
@@ -218,6 +256,12 @@ impl DescribeFastLaunchImagesSuccessItemBuilder {
     ) -> Self {
         self.state_transition_time = input;
         self
+    }
+    /// <p>The time that faster launching for the Windows AMI changed to the current state.</p>
+    pub fn get_state_transition_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.state_transition_time
     }
     /// Consumes the builder and constructs a [`DescribeFastLaunchImagesSuccessItem`](crate::types::DescribeFastLaunchImagesSuccessItem).
     pub fn build(self) -> crate::types::DescribeFastLaunchImagesSuccessItem {

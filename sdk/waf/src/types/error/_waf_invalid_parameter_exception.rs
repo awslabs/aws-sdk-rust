@@ -109,6 +109,10 @@ impl WafInvalidParameterExceptionBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
+    pub fn get_field(&self) -> &::std::option::Option<crate::types::ParameterExceptionField> {
+        &self.field
+    }
+    #[allow(missing_docs)] // documentation missing in model
     pub fn parameter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter = ::std::option::Option::Some(input.into());
         self
@@ -117,6 +121,10 @@ impl WafInvalidParameterExceptionBuilder {
     pub fn set_parameter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_parameter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn reason(mut self, input: crate::types::ParameterExceptionReason) -> Self {
@@ -132,6 +140,10 @@ impl WafInvalidParameterExceptionBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
+    pub fn get_reason(&self) -> &::std::option::Option<crate::types::ParameterExceptionReason> {
+        &self.reason
+    }
+    #[allow(missing_docs)] // documentation missing in model
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -140,6 +152,10 @@ impl WafInvalidParameterExceptionBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

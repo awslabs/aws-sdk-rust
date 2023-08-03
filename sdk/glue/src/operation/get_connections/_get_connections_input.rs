@@ -71,6 +71,10 @@ impl GetConnectionsInputBuilder {
         self.catalog_id = input;
         self
     }
+    /// <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// <p>A filter that controls which connections are returned.</p>
     pub fn filter(mut self, input: crate::types::GetConnectionsFilter) -> Self {
         self.filter = ::std::option::Option::Some(input);
@@ -84,6 +88,10 @@ impl GetConnectionsInputBuilder {
         self.filter = input;
         self
     }
+    /// <p>A filter that controls which connections are returned.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::GetConnectionsFilter> {
+        &self.filter
+    }
     /// <p>Allows you to retrieve the connection metadata without returning the password. For instance, the Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties.</p>
     pub fn hide_password(mut self, input: bool) -> Self {
         self.hide_password = ::std::option::Option::Some(input);
@@ -93,6 +101,10 @@ impl GetConnectionsInputBuilder {
     pub fn set_hide_password(mut self, input: ::std::option::Option<bool>) -> Self {
         self.hide_password = input;
         self
+    }
+    /// <p>Allows you to retrieve the connection metadata without returning the password. For instance, the Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties.</p>
+    pub fn get_hide_password(&self) -> &::std::option::Option<bool> {
+        &self.hide_password
     }
     /// <p>A continuation token, if this is a continuation call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -104,6 +116,10 @@ impl GetConnectionsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A continuation token, if this is a continuation call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of connections to return in one response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -113,6 +129,10 @@ impl GetConnectionsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of connections to return in one response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`GetConnectionsInput`](crate::operation::get_connections::GetConnectionsInput).
     pub fn build(

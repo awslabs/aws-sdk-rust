@@ -48,6 +48,10 @@ impl UnarchiveFindingsInputBuilder {
         self.detector_id = input;
         self
     }
+    /// <p>The ID of the detector associated with the findings to unarchive.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
+    }
     /// Appends an item to `finding_ids`.
     ///
     /// To override the contents of this collection use [`set_finding_ids`](Self::set_finding_ids).
@@ -66,6 +70,12 @@ impl UnarchiveFindingsInputBuilder {
     ) -> Self {
         self.finding_ids = input;
         self
+    }
+    /// <p>The IDs of the findings to unarchive.</p>
+    pub fn get_finding_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.finding_ids
     }
     /// Consumes the builder and constructs a [`UnarchiveFindingsInput`](crate::operation::unarchive_findings::UnarchiveFindingsInput).
     pub fn build(

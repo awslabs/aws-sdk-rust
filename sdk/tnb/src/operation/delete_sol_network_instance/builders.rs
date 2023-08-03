@@ -38,6 +38,10 @@ impl DeleteSolNetworkInstanceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteSolNetworkInstance as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_sol_network_instance::builders::DeleteSolNetworkInstanceInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,5 +137,9 @@ impl DeleteSolNetworkInstanceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ns_instance_id(input);
         self
+    }
+    /// <p>Network instance ID.</p>
+    pub fn get_ns_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ns_instance_id()
     }
 }

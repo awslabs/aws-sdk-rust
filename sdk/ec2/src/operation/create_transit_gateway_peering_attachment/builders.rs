@@ -37,6 +37,10 @@ impl CreateTransitGatewayPeeringAttachmentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateTransitGatewayPeeringAttachment as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_transit_gateway_peering_attachment::builders::CreateTransitGatewayPeeringAttachmentInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -107,6 +111,10 @@ impl CreateTransitGatewayPeeringAttachmentFluentBuilder {
         self.inner = self.inner.set_transit_gateway_id(input);
         self
     }
+    /// <p>The ID of the transit gateway.</p>
+    pub fn get_transit_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_transit_gateway_id()
+    }
     /// <p>The ID of the peer transit gateway with which to create the peering attachment.</p>
     pub fn peer_transit_gateway_id(
         mut self,
@@ -122,6 +130,10 @@ impl CreateTransitGatewayPeeringAttachmentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_peer_transit_gateway_id(input);
         self
+    }
+    /// <p>The ID of the peer transit gateway with which to create the peering attachment.</p>
+    pub fn get_peer_transit_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_peer_transit_gateway_id()
     }
     /// <p>The ID of the Amazon Web Services account that owns the peer transit gateway.</p>
     pub fn peer_account_id(
@@ -139,6 +151,10 @@ impl CreateTransitGatewayPeeringAttachmentFluentBuilder {
         self.inner = self.inner.set_peer_account_id(input);
         self
     }
+    /// <p>The ID of the Amazon Web Services account that owns the peer transit gateway.</p>
+    pub fn get_peer_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_peer_account_id()
+    }
     /// <p>The Region where the peer transit gateway is located.</p>
     pub fn peer_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.peer_region(input.into());
@@ -148,6 +164,10 @@ impl CreateTransitGatewayPeeringAttachmentFluentBuilder {
     pub fn set_peer_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_peer_region(input);
         self
+    }
+    /// <p>The Region where the peer transit gateway is located.</p>
+    pub fn get_peer_region(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_peer_region()
     }
     /// <p>Requests a transit gateway peering attachment.</p>
     pub fn options(
@@ -167,6 +187,13 @@ impl CreateTransitGatewayPeeringAttachmentFluentBuilder {
         self.inner = self.inner.set_options(input);
         self
     }
+    /// <p>Requests a transit gateway peering attachment.</p>
+    pub fn get_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateTransitGatewayPeeringAttachmentRequestOptions>
+    {
+        self.inner.get_options()
+    }
     /// Appends an item to `TagSpecifications`.
     ///
     /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
@@ -184,6 +211,12 @@ impl CreateTransitGatewayPeeringAttachmentFluentBuilder {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
+    /// <p>The tags to apply to the transit gateway peering attachment.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        self.inner.get_tag_specifications()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -193,5 +226,9 @@ impl CreateTransitGatewayPeeringAttachmentFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

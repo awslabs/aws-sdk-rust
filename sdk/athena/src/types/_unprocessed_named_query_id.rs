@@ -62,6 +62,10 @@ impl UnprocessedNamedQueryIdBuilder {
         self.named_query_id = input;
         self
     }
+    /// <p>The unique identifier of the named query.</p>
+    pub fn get_named_query_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.named_query_id
+    }
     /// <p>The error code returned when the processing request for the named query failed, if applicable.</p>
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl UnprocessedNamedQueryIdBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>The error code returned when the processing request for the named query failed, if applicable.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
     }
     /// <p>The error message returned when the processing request for the named query failed, if applicable.</p>
     pub fn error_message(
@@ -87,6 +95,10 @@ impl UnprocessedNamedQueryIdBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>The error message returned when the processing request for the named query failed, if applicable.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`UnprocessedNamedQueryId`](crate::types::UnprocessedNamedQueryId).
     pub fn build(self) -> crate::types::UnprocessedNamedQueryId {

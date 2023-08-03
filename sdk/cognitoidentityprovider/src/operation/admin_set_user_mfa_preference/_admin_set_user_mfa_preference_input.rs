@@ -81,6 +81,10 @@ impl AdminSetUserMfaPreferenceInputBuilder {
         self.sms_mfa_settings = input;
         self
     }
+    /// <p>The SMS text message MFA settings.</p>
+    pub fn get_sms_mfa_settings(&self) -> &::std::option::Option<crate::types::SmsMfaSettingsType> {
+        &self.sms_mfa_settings
+    }
     /// <p>The time-based one-time password software token MFA settings.</p>
     pub fn software_token_mfa_settings(
         mut self,
@@ -97,6 +101,12 @@ impl AdminSetUserMfaPreferenceInputBuilder {
         self.software_token_mfa_settings = input;
         self
     }
+    /// <p>The time-based one-time password software token MFA settings.</p>
+    pub fn get_software_token_mfa_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::SoftwareTokenMfaSettingsType> {
+        &self.software_token_mfa_settings
+    }
     /// <p>The user pool username or alias.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
@@ -107,6 +117,10 @@ impl AdminSetUserMfaPreferenceInputBuilder {
         self.username = input;
         self
     }
+    /// <p>The user pool username or alias.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
+    }
     /// <p>The user pool ID.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
@@ -116,6 +130,10 @@ impl AdminSetUserMfaPreferenceInputBuilder {
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
+    }
+    /// <p>The user pool ID.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_pool_id
     }
     /// Consumes the builder and constructs a [`AdminSetUserMfaPreferenceInput`](crate::operation::admin_set_user_mfa_preference::AdminSetUserMfaPreferenceInput).
     pub fn build(

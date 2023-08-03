@@ -36,6 +36,12 @@ impl BatchStopJobRunFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchStopJobRun as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_stop_job_run::builders::BatchStopJobRunInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl BatchStopJobRunFluentBuilder {
         self.inner = self.inner.set_job_name(input);
         self
     }
+    /// <p>The name of the job definition for which to stop job runs.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_name()
+    }
     /// Appends an item to `JobRunIds`.
     ///
     /// To override the contents of this collection use [`set_job_run_ids`](Self::set_job_run_ids).
@@ -142,5 +152,11 @@ impl BatchStopJobRunFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_job_run_ids(input);
         self
+    }
+    /// <p>A list of the <code>JobRunIds</code> that should be stopped for that job definition.</p>
+    pub fn get_job_run_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_job_run_ids()
     }
 }

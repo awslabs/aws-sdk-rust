@@ -52,6 +52,12 @@ impl FilterConfigurationBuilder {
         self.allowed_locations = input;
         self
     }
+    /// <p> A list of locations to allow game session placement in, in the form of Amazon Web Services Region codes such as <code>us-west-2</code>. </p>
+    pub fn get_allowed_locations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.allowed_locations
+    }
     /// Consumes the builder and constructs a [`FilterConfiguration`](crate::types::FilterConfiguration).
     pub fn build(self) -> crate::types::FilterConfiguration {
         crate::types::FilterConfiguration {

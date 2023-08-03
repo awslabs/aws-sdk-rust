@@ -59,6 +59,10 @@ impl InstanceSpecificationBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The instance to specify which volumes should be snapshotted.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>Excludes the root volume from being snapshotted.</p>
     pub fn exclude_boot_volume(mut self, input: bool) -> Self {
         self.exclude_boot_volume = ::std::option::Option::Some(input);
@@ -68,6 +72,10 @@ impl InstanceSpecificationBuilder {
     pub fn set_exclude_boot_volume(mut self, input: ::std::option::Option<bool>) -> Self {
         self.exclude_boot_volume = input;
         self
+    }
+    /// <p>Excludes the root volume from being snapshotted.</p>
+    pub fn get_exclude_boot_volume(&self) -> &::std::option::Option<bool> {
+        &self.exclude_boot_volume
     }
     /// Appends an item to `exclude_data_volume_ids`.
     ///
@@ -92,6 +100,13 @@ impl InstanceSpecificationBuilder {
     ) -> Self {
         self.exclude_data_volume_ids = input;
         self
+    }
+    /// <p>The IDs of the data (non-root) volumes to exclude from the multi-volume snapshot set. If you specify the ID of the root volume, the request fails. To exclude the root volume, use <b>ExcludeBootVolume</b>.</p>
+    /// <p>You can specify up to 40 volume IDs per request.</p>
+    pub fn get_exclude_data_volume_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.exclude_data_volume_ids
     }
     /// Consumes the builder and constructs a [`InstanceSpecification`](crate::types::InstanceSpecification).
     pub fn build(self) -> crate::types::InstanceSpecification {

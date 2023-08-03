@@ -92,6 +92,10 @@ impl BandwidthRateLimitIntervalBuilder {
         self.start_hour_of_day = input;
         self
     }
+    /// <p> The hour of the day to start the bandwidth rate limit interval. </p>
+    pub fn get_start_hour_of_day(&self) -> &::std::option::Option<i32> {
+        &self.start_hour_of_day
+    }
     /// <p> The minute of the hour to start the bandwidth rate limit interval. The interval begins at the start of that minute. To begin an interval exactly at the start of the hour, use the value <code>0</code>. </p>
     pub fn start_minute_of_hour(mut self, input: i32) -> Self {
         self.start_minute_of_hour = ::std::option::Option::Some(input);
@@ -102,6 +106,10 @@ impl BandwidthRateLimitIntervalBuilder {
         self.start_minute_of_hour = input;
         self
     }
+    /// <p> The minute of the hour to start the bandwidth rate limit interval. The interval begins at the start of that minute. To begin an interval exactly at the start of the hour, use the value <code>0</code>. </p>
+    pub fn get_start_minute_of_hour(&self) -> &::std::option::Option<i32> {
+        &self.start_minute_of_hour
+    }
     /// <p> The hour of the day to end the bandwidth rate limit interval. </p>
     pub fn end_hour_of_day(mut self, input: i32) -> Self {
         self.end_hour_of_day = ::std::option::Option::Some(input);
@@ -111,6 +119,10 @@ impl BandwidthRateLimitIntervalBuilder {
     pub fn set_end_hour_of_day(mut self, input: ::std::option::Option<i32>) -> Self {
         self.end_hour_of_day = input;
         self
+    }
+    /// <p> The hour of the day to end the bandwidth rate limit interval. </p>
+    pub fn get_end_hour_of_day(&self) -> &::std::option::Option<i32> {
+        &self.end_hour_of_day
     }
     /// <p> The minute of the hour to end the bandwidth rate limit interval. </p> <important>
     /// <p> The bandwidth rate limit interval ends at the end of the minute. To end an interval at the end of an hour, use the value <code>59</code>. </p>
@@ -125,6 +137,12 @@ impl BandwidthRateLimitIntervalBuilder {
     pub fn set_end_minute_of_hour(mut self, input: ::std::option::Option<i32>) -> Self {
         self.end_minute_of_hour = input;
         self
+    }
+    /// <p> The minute of the hour to end the bandwidth rate limit interval. </p> <important>
+    /// <p> The bandwidth rate limit interval ends at the end of the minute. To end an interval at the end of an hour, use the value <code>59</code>. </p>
+    /// </important>
+    pub fn get_end_minute_of_hour(&self) -> &::std::option::Option<i32> {
+        &self.end_minute_of_hour
     }
     /// Appends an item to `days_of_week`.
     ///
@@ -142,6 +160,10 @@ impl BandwidthRateLimitIntervalBuilder {
         self.days_of_week = input;
         self
     }
+    /// <p> The days of the week component of the bandwidth rate limit interval, represented as ordinal numbers from 0 to 6, where 0 represents Sunday and 6 represents Saturday. </p>
+    pub fn get_days_of_week(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        &self.days_of_week
+    }
     /// <p> The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set. </p>
     pub fn average_upload_rate_limit_in_bits_per_sec(mut self, input: i64) -> Self {
         self.average_upload_rate_limit_in_bits_per_sec = ::std::option::Option::Some(input);
@@ -155,6 +177,10 @@ impl BandwidthRateLimitIntervalBuilder {
         self.average_upload_rate_limit_in_bits_per_sec = input;
         self
     }
+    /// <p> The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set. </p>
+    pub fn get_average_upload_rate_limit_in_bits_per_sec(&self) -> &::std::option::Option<i64> {
+        &self.average_upload_rate_limit_in_bits_per_sec
+    }
     /// <p> The average download rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the download rate limit is not set. </p>
     pub fn average_download_rate_limit_in_bits_per_sec(mut self, input: i64) -> Self {
         self.average_download_rate_limit_in_bits_per_sec = ::std::option::Option::Some(input);
@@ -167,6 +193,10 @@ impl BandwidthRateLimitIntervalBuilder {
     ) -> Self {
         self.average_download_rate_limit_in_bits_per_sec = input;
         self
+    }
+    /// <p> The average download rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the download rate limit is not set. </p>
+    pub fn get_average_download_rate_limit_in_bits_per_sec(&self) -> &::std::option::Option<i64> {
+        &self.average_download_rate_limit_in_bits_per_sec
     }
     /// Consumes the builder and constructs a [`BandwidthRateLimitInterval`](crate::types::BandwidthRateLimitInterval).
     pub fn build(self) -> crate::types::BandwidthRateLimitInterval {

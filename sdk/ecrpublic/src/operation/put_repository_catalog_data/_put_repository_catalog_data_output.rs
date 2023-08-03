@@ -49,6 +49,10 @@ impl PutRepositoryCatalogDataOutputBuilder {
         self.catalog_data = input;
         self
     }
+    /// <p>The catalog data for the repository.</p>
+    pub fn get_catalog_data(&self) -> &::std::option::Option<crate::types::RepositoryCatalogData> {
+        &self.catalog_data
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

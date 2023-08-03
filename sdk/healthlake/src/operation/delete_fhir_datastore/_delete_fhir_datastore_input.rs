@@ -41,6 +41,10 @@ impl DeleteFhirDatastoreInputBuilder {
         self.datastore_id = input;
         self
     }
+    /// <p> The AWS-generated ID for the data store to be deleted.</p>
+    pub fn get_datastore_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.datastore_id
+    }
     /// Consumes the builder and constructs a [`DeleteFhirDatastoreInput`](crate::operation::delete_fhir_datastore::DeleteFhirDatastoreInput).
     pub fn build(
         self,

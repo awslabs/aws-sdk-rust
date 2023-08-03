@@ -45,6 +45,10 @@ impl DeleteCostCategoryDefinitionInputBuilder {
         self.cost_category_arn = input;
         self
     }
+    /// <p>The unique identifier for your Cost Category. </p>
+    pub fn get_cost_category_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cost_category_arn
+    }
     /// Consumes the builder and constructs a [`DeleteCostCategoryDefinitionInput`](crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinitionInput).
     pub fn build(
         self,

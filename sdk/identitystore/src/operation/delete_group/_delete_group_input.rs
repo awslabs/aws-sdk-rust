@@ -53,6 +53,10 @@ impl DeleteGroupInputBuilder {
         self.identity_store_id = input;
         self
     }
+    /// <p>The globally unique identifier for the identity store.</p>
+    pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_store_id
+    }
     /// <p>The identifier for a group in the identity store.</p>
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl DeleteGroupInputBuilder {
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_id = input;
         self
+    }
+    /// <p>The identifier for a group in the identity store.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
     }
     /// Consumes the builder and constructs a [`DeleteGroupInput`](crate::operation::delete_group::DeleteGroupInput).
     pub fn build(

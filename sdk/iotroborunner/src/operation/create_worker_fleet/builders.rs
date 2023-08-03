@@ -36,6 +36,12 @@ impl CreateWorkerFleetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateWorkerFleet as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_worker_fleet::builders::CreateWorkerFleetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateWorkerFleetFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// Token used for detecting replayed requests. Replayed requests will not be performed multiple times.
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// Human friendly name of the resource.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -136,6 +146,10 @@ impl CreateWorkerFleetFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// Human friendly name of the resource.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// Site ARN.
     pub fn site(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.site(input.into());
@@ -145,6 +159,10 @@ impl CreateWorkerFleetFluentBuilder {
     pub fn set_site(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_site(input);
         self
+    }
+    /// Site ARN.
+    pub fn get_site(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_site()
     }
     /// JSON blob containing additional fixed properties regarding the worker fleet
     pub fn additional_fixed_properties(
@@ -161,5 +179,9 @@ impl CreateWorkerFleetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_additional_fixed_properties(input);
         self
+    }
+    /// JSON blob containing additional fixed properties regarding the worker fleet
+    pub fn get_additional_fixed_properties(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_additional_fixed_properties()
     }
 }

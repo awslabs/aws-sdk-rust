@@ -39,6 +39,10 @@ impl DeleteClusterInputBuilder {
         self.cluster_arn = input;
         self
     }
+    /// <p>The arn of the Elastic DocumentDB cluster that is to be deleted.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_arn
+    }
     /// Consumes the builder and constructs a [`DeleteClusterInput`](crate::operation::delete_cluster::DeleteClusterInput).
     pub fn build(
         self,

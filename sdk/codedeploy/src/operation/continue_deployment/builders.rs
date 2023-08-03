@@ -36,6 +36,12 @@ impl ContinueDeploymentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ContinueDeployment as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::continue_deployment::builders::ContinueDeploymentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl ContinueDeploymentFluentBuilder {
         self.inner = self.inner.set_deployment_id(input);
         self
     }
+    /// <p> The unique ID of a blue/green deployment for which you want to start rerouting traffic to the replacement environment. </p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_deployment_id()
+    }
     /// <p> The status of the deployment's waiting period. <code>READY_WAIT</code> indicates that the deployment is ready to start shifting traffic. <code>TERMINATION_WAIT</code> indicates that the traffic is shifted, but the original target is not terminated. </p>
     pub fn deployment_wait_type(mut self, input: crate::types::DeploymentWaitType) -> Self {
         self.inner = self.inner.deployment_wait_type(input);
@@ -144,5 +154,11 @@ impl ContinueDeploymentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_deployment_wait_type(input);
         self
+    }
+    /// <p> The status of the deployment's waiting period. <code>READY_WAIT</code> indicates that the deployment is ready to start shifting traffic. <code>TERMINATION_WAIT</code> indicates that the traffic is shifted, but the original target is not terminated. </p>
+    pub fn get_deployment_wait_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeploymentWaitType> {
+        self.inner.get_deployment_wait_type()
     }
 }

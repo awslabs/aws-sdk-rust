@@ -134,6 +134,10 @@ impl DescribeProjectOutputBuilder {
         self.project_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the project.</p>
+    pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_arn
+    }
     /// <p>The name of the project.</p>
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
@@ -144,6 +148,10 @@ impl DescribeProjectOutputBuilder {
         self.project_name = input;
         self
     }
+    /// <p>The name of the project.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_name
+    }
     /// <p>The ID of the project.</p>
     pub fn project_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_id = ::std::option::Option::Some(input.into());
@@ -153,6 +161,10 @@ impl DescribeProjectOutputBuilder {
     pub fn set_project_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_id = input;
         self
+    }
+    /// <p>The ID of the project.</p>
+    pub fn get_project_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_id
     }
     /// <p>The description of the project.</p>
     pub fn project_description(
@@ -170,6 +182,10 @@ impl DescribeProjectOutputBuilder {
         self.project_description = input;
         self
     }
+    /// <p>The description of the project.</p>
+    pub fn get_project_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_description
+    }
     /// <p>Information used to provision a service catalog product. For information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
     pub fn service_catalog_provisioning_details(
         mut self,
@@ -185,6 +201,12 @@ impl DescribeProjectOutputBuilder {
     ) -> Self {
         self.service_catalog_provisioning_details = input;
         self
+    }
+    /// <p>Information used to provision a service catalog product. For information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
+    pub fn get_service_catalog_provisioning_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServiceCatalogProvisioningDetails> {
+        &self.service_catalog_provisioning_details
     }
     /// <p>Information about a provisioned service catalog product.</p>
     pub fn service_catalog_provisioned_product_details(
@@ -202,6 +224,12 @@ impl DescribeProjectOutputBuilder {
         self.service_catalog_provisioned_product_details = input;
         self
     }
+    /// <p>Information about a provisioned service catalog product.</p>
+    pub fn get_service_catalog_provisioned_product_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServiceCatalogProvisionedProductDetails> {
+        &self.service_catalog_provisioned_product_details
+    }
     /// <p>The status of the project.</p>
     pub fn project_status(mut self, input: crate::types::ProjectStatus) -> Self {
         self.project_status = ::std::option::Option::Some(input);
@@ -214,6 +242,10 @@ impl DescribeProjectOutputBuilder {
     ) -> Self {
         self.project_status = input;
         self
+    }
+    /// <p>The status of the project.</p>
+    pub fn get_project_status(&self) -> &::std::option::Option<crate::types::ProjectStatus> {
+        &self.project_status
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn created_by(mut self, input: crate::types::UserContext) -> Self {
@@ -228,6 +260,10 @@ impl DescribeProjectOutputBuilder {
         self.created_by = input;
         self
     }
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<crate::types::UserContext> {
+        &self.created_by
+    }
     /// <p>The time when the project was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -240,6 +276,10 @@ impl DescribeProjectOutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The time when the project was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The timestamp when project was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -254,6 +294,10 @@ impl DescribeProjectOutputBuilder {
         self.last_modified_time = input;
         self
     }
+    /// <p>The timestamp when project was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn last_modified_by(mut self, input: crate::types::UserContext) -> Self {
         self.last_modified_by = ::std::option::Option::Some(input);
@@ -266,6 +310,10 @@ impl DescribeProjectOutputBuilder {
     ) -> Self {
         self.last_modified_by = input;
         self
+    }
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    pub fn get_last_modified_by(&self) -> &::std::option::Option<crate::types::UserContext> {
+        &self.last_modified_by
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

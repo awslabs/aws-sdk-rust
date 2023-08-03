@@ -51,6 +51,10 @@ impl PendingMaintenanceBuilder {
         self.schedule = input;
         self
     }
+    /// <p>The maintenance schedule for the runtime engine version.</p>
+    pub fn get_schedule(&self) -> &::std::option::Option<crate::types::MaintenanceSchedule> {
+        &self.schedule
+    }
     /// <p>The specific runtime engine that the maintenance schedule applies to.</p>
     pub fn engine_version(
         mut self,
@@ -66,6 +70,10 @@ impl PendingMaintenanceBuilder {
     ) -> Self {
         self.engine_version = input;
         self
+    }
+    /// <p>The specific runtime engine that the maintenance schedule applies to.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
     }
     /// Consumes the builder and constructs a [`PendingMaintenance`](crate::types::PendingMaintenance).
     pub fn build(self) -> crate::types::PendingMaintenance {

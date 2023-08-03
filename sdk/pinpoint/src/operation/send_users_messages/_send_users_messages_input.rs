@@ -57,6 +57,10 @@ impl SendUsersMessagesInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>Specifies the configuration and other settings for a message to send to all the endpoints that are associated with a list of users.</p>
     pub fn send_users_message_request(
         mut self,
@@ -72,6 +76,12 @@ impl SendUsersMessagesInputBuilder {
     ) -> Self {
         self.send_users_message_request = input;
         self
+    }
+    /// <p>Specifies the configuration and other settings for a message to send to all the endpoints that are associated with a list of users.</p>
+    pub fn get_send_users_message_request(
+        &self,
+    ) -> &::std::option::Option<crate::types::SendUsersMessageRequest> {
+        &self.send_users_message_request
     }
     /// Consumes the builder and constructs a [`SendUsersMessagesInput`](crate::operation::send_users_messages::SendUsersMessagesInput).
     pub fn build(

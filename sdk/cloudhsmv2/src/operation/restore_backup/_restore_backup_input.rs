@@ -39,6 +39,10 @@ impl RestoreBackupInputBuilder {
         self.backup_id = input;
         self
     }
+    /// <p>The ID of the backup to be restored. To find the ID of a backup, use the <code>DescribeBackups</code> operation.</p>
+    pub fn get_backup_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_id
+    }
     /// Consumes the builder and constructs a [`RestoreBackupInput`](crate::operation::restore_backup::RestoreBackupInput).
     pub fn build(
         self,

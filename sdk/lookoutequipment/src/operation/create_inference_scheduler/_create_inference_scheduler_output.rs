@@ -70,6 +70,10 @@ impl CreateInferenceSchedulerOutputBuilder {
         self.inference_scheduler_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the inference scheduler being created. </p>
+    pub fn get_inference_scheduler_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.inference_scheduler_arn
+    }
     /// <p>The name of inference scheduler being created. </p>
     pub fn inference_scheduler_name(
         mut self,
@@ -86,6 +90,10 @@ impl CreateInferenceSchedulerOutputBuilder {
         self.inference_scheduler_name = input;
         self
     }
+    /// <p>The name of inference scheduler being created. </p>
+    pub fn get_inference_scheduler_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.inference_scheduler_name
+    }
     /// <p>Indicates the status of the <code>CreateInferenceScheduler</code> operation. </p>
     pub fn status(mut self, input: crate::types::InferenceSchedulerStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -98,6 +106,10 @@ impl CreateInferenceSchedulerOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Indicates the status of the <code>CreateInferenceScheduler</code> operation. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::InferenceSchedulerStatus> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

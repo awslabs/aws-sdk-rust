@@ -38,6 +38,10 @@ impl CreateTagsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateTags as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_tags::builders::CreateTagsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +134,12 @@ impl CreateTagsFluentBuilder {
         self.inner = self.inner.set_configuration_ids(input);
         self
     }
+    /// <p>A list of configuration items that you want to tag.</p>
+    pub fn get_configuration_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_configuration_ids()
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -148,5 +158,10 @@ impl CreateTagsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Tags that you want to associate with one or more configuration items. Specify the tags that you want to create in a <i>key</i>-<i>value</i> format. For example:</p>
+    /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

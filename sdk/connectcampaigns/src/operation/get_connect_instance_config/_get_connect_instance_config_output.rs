@@ -50,6 +50,12 @@ impl GetConnectInstanceConfigOutputBuilder {
         self.connect_instance_config = input;
         self
     }
+    /// Instance config object
+    pub fn get_connect_instance_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceConfig> {
+        &self.connect_instance_config
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

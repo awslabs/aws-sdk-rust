@@ -59,6 +59,12 @@ impl StopInstancesOutputBuilder {
         self.stopping_instances = input;
         self
     }
+    /// <p>Information about the stopped instances.</p>
+    pub fn get_stopping_instances(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceStateChange>> {
+        &self.stopping_instances
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

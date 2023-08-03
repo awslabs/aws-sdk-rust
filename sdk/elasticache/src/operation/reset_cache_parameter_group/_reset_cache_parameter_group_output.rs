@@ -57,6 +57,10 @@ impl ResetCacheParameterGroupOutputBuilder {
         self.cache_parameter_group_name = input;
         self
     }
+    /// <p>The name of the cache parameter group.</p>
+    pub fn get_cache_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_parameter_group_name
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -43,6 +43,12 @@ impl EventBuilder {
         self.revision_published = input;
         self
     }
+    /// <p>What occurs to start the revision publish action.</p>
+    pub fn get_revision_published(
+        &self,
+    ) -> &::std::option::Option<crate::types::RevisionPublished> {
+        &self.revision_published
+    }
     /// Consumes the builder and constructs a [`Event`](crate::types::Event).
     pub fn build(self) -> crate::types::Event {
         crate::types::Event {

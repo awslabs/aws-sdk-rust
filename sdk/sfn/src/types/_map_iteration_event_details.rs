@@ -48,6 +48,10 @@ impl MapIterationEventDetailsBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the iteration’s parent Map state.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The index of the array belonging to the Map state iteration.</p>
     pub fn index(mut self, input: i32) -> Self {
         self.index = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl MapIterationEventDetailsBuilder {
     pub fn set_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.index = input;
         self
+    }
+    /// <p>The index of the array belonging to the Map state iteration.</p>
+    pub fn get_index(&self) -> &::std::option::Option<i32> {
+        &self.index
     }
     /// Consumes the builder and constructs a [`MapIterationEventDetails`](crate::types::MapIterationEventDetails).
     pub fn build(self) -> crate::types::MapIterationEventDetails {

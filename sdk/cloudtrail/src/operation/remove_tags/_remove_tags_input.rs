@@ -60,6 +60,13 @@ impl RemoveTagsInputBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>Specifies the ARN of the trail, event data store, or channel from which tags should be removed.</p>
+    /// <p> Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+    /// <p>Example event data store ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code> </p>
+    /// <p>Example channel ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// Appends an item to `tags_list`.
     ///
     /// To override the contents of this collection use [`set_tags_list`](Self::set_tags_list).
@@ -78,6 +85,10 @@ impl RemoveTagsInputBuilder {
     ) -> Self {
         self.tags_list = input;
         self
+    }
+    /// <p>Specifies a list of tags to be removed.</p>
+    pub fn get_tags_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags_list
     }
     /// Consumes the builder and constructs a [`RemoveTagsInput`](crate::operation::remove_tags::RemoveTagsInput).
     pub fn build(

@@ -53,6 +53,10 @@ impl CreateQuantumTaskOutputBuilder {
         self.quantum_task_arn = input;
         self
     }
+    /// <p>The ARN of the task created by the request.</p>
+    pub fn get_quantum_task_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.quantum_task_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

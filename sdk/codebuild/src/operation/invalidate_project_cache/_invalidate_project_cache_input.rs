@@ -41,6 +41,10 @@ impl InvalidateProjectCacheInputBuilder {
         self.project_name = input;
         self
     }
+    /// <p>The name of the CodeBuild build project that the cache is reset for.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_name
+    }
     /// Consumes the builder and constructs a [`InvalidateProjectCacheInput`](crate::operation::invalidate_project_cache::InvalidateProjectCacheInput).
     pub fn build(
         self,

@@ -43,6 +43,10 @@ impl BatchSegmentJobInputBuilder {
         self.s3_data_source = input;
         self
     }
+    /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
+    pub fn get_s3_data_source(&self) -> &::std::option::Option<crate::types::S3DataConfig> {
+        &self.s3_data_source
+    }
     /// Consumes the builder and constructs a [`BatchSegmentJobInput`](crate::types::BatchSegmentJobInput).
     pub fn build(self) -> crate::types::BatchSegmentJobInput {
         crate::types::BatchSegmentJobInput {

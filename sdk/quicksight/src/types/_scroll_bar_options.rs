@@ -51,6 +51,10 @@ impl ScrollBarOptionsBuilder {
         self.visibility = input;
         self
     }
+    /// <p>The visibility of the data zoom scroll bar.</p>
+    pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.visibility
+    }
     /// <p>The visibility range for the data zoom scroll bar.</p>
     pub fn visible_range(mut self, input: crate::types::VisibleRangeOptions) -> Self {
         self.visible_range = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl ScrollBarOptionsBuilder {
     ) -> Self {
         self.visible_range = input;
         self
+    }
+    /// <p>The visibility range for the data zoom scroll bar.</p>
+    pub fn get_visible_range(&self) -> &::std::option::Option<crate::types::VisibleRangeOptions> {
+        &self.visible_range
     }
     /// Consumes the builder and constructs a [`ScrollBarOptions`](crate::types::ScrollBarOptions).
     pub fn build(self) -> crate::types::ScrollBarOptions {

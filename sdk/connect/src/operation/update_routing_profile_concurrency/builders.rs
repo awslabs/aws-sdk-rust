@@ -36,6 +36,10 @@ impl UpdateRoutingProfileConcurrencyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateRoutingProfileConcurrency as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_routing_profile_concurrency::builders::UpdateRoutingProfileConcurrencyInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl UpdateRoutingProfileConcurrencyFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>The identifier of the routing profile.</p>
     pub fn routing_profile_id(
         mut self,
@@ -115,6 +123,10 @@ impl UpdateRoutingProfileConcurrencyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_routing_profile_id(input);
         self
+    }
+    /// <p>The identifier of the routing profile.</p>
+    pub fn get_routing_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_routing_profile_id()
     }
     /// Appends an item to `MediaConcurrencies`.
     ///
@@ -132,5 +144,11 @@ impl UpdateRoutingProfileConcurrencyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_media_concurrencies(input);
         self
+    }
+    /// <p>The channels that agents can handle in the Contact Control Panel (CCP).</p>
+    pub fn get_media_concurrencies(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaConcurrency>> {
+        self.inner.get_media_concurrencies()
     }
 }

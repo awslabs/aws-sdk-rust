@@ -41,6 +41,10 @@ impl CreateReservedInstancesListingFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateReservedInstancesListing as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_reserved_instances_listing::builders::CreateReservedInstancesListingInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -105,6 +109,10 @@ impl CreateReservedInstancesListingFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of your listings. This helps avoid duplicate listings. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>The number of instances that are a part of a Reserved Instance account to be listed in the Reserved Instance Marketplace. This number should be less than or equal to the instance count associated with the Reserved Instance ID specified in this call.</p>
     pub fn instance_count(mut self, input: i32) -> Self {
         self.inner = self.inner.instance_count(input);
@@ -114,6 +122,10 @@ impl CreateReservedInstancesListingFluentBuilder {
     pub fn set_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_instance_count(input);
         self
+    }
+    /// <p>The number of instances that are a part of a Reserved Instance account to be listed in the Reserved Instance Marketplace. This number should be less than or equal to the instance count associated with the Reserved Instance ID specified in this call.</p>
+    pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
+        self.inner.get_instance_count()
     }
     /// Appends an item to `PriceSchedules`.
     ///
@@ -132,6 +144,12 @@ impl CreateReservedInstancesListingFluentBuilder {
         self.inner = self.inner.set_price_schedules(input);
         self
     }
+    /// <p>A list specifying the price of the Standard Reserved Instance for each month remaining in the Reserved Instance term.</p>
+    pub fn get_price_schedules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PriceScheduleSpecification>> {
+        self.inner.get_price_schedules()
+    }
     /// <p>The ID of the active Standard Reserved Instance.</p>
     pub fn reserved_instances_id(
         mut self,
@@ -147,5 +165,9 @@ impl CreateReservedInstancesListingFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_reserved_instances_id(input);
         self
+    }
+    /// <p>The ID of the active Standard Reserved Instance.</p>
+    pub fn get_reserved_instances_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reserved_instances_id()
     }
 }

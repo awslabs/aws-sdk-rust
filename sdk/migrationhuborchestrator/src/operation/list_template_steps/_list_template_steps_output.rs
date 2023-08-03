@@ -59,6 +59,10 @@ impl ListTemplateStepsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `template_step_summary_list`.
     ///
     /// To override the contents of this collection use [`set_template_step_summary_list`](Self::set_template_step_summary_list).
@@ -77,6 +81,12 @@ impl ListTemplateStepsOutputBuilder {
     ) -> Self {
         self.template_step_summary_list = input;
         self
+    }
+    /// <p>The list of summaries of steps in a template.</p>
+    pub fn get_template_step_summary_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateStepSummary>> {
+        &self.template_step_summary_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

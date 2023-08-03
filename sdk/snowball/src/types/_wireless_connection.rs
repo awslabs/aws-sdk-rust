@@ -40,6 +40,10 @@ impl WirelessConnectionBuilder {
         self.is_wifi_enabled = input;
         self
     }
+    /// <p>Enables the Wi-Fi adapter on an Snowcone device.</p>
+    pub fn get_is_wifi_enabled(&self) -> &::std::option::Option<bool> {
+        &self.is_wifi_enabled
+    }
     /// Consumes the builder and constructs a [`WirelessConnection`](crate::types::WirelessConnection).
     pub fn build(self) -> crate::types::WirelessConnection {
         crate::types::WirelessConnection {

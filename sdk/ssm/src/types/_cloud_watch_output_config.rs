@@ -58,6 +58,11 @@ impl CloudWatchOutputConfigBuilder {
         self.cloud_watch_log_group_name = input;
         self
     }
+    /// <p>The name of the CloudWatch Logs log group where you want to send command output. If you don't specify a group name, Amazon Web Services Systems Manager automatically creates a log group for you. The log group uses the following naming format:</p>
+    /// <p> <code>aws/ssm/<i>SystemsManagerDocumentName</i> </code> </p>
+    pub fn get_cloud_watch_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cloud_watch_log_group_name
+    }
     /// <p>Enables Systems Manager to send command output to CloudWatch Logs.</p>
     pub fn cloud_watch_output_enabled(mut self, input: bool) -> Self {
         self.cloud_watch_output_enabled = ::std::option::Option::Some(input);
@@ -67,6 +72,10 @@ impl CloudWatchOutputConfigBuilder {
     pub fn set_cloud_watch_output_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.cloud_watch_output_enabled = input;
         self
+    }
+    /// <p>Enables Systems Manager to send command output to CloudWatch Logs.</p>
+    pub fn get_cloud_watch_output_enabled(&self) -> &::std::option::Option<bool> {
+        &self.cloud_watch_output_enabled
     }
     /// Consumes the builder and constructs a [`CloudWatchOutputConfig`](crate::types::CloudWatchOutputConfig).
     pub fn build(self) -> crate::types::CloudWatchOutputConfig {

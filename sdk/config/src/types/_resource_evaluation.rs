@@ -64,6 +64,10 @@ impl ResourceEvaluationBuilder {
         self.resource_evaluation_id = input;
         self
     }
+    /// <p>The ResourceEvaluationId of a evaluation.</p>
+    pub fn get_resource_evaluation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_evaluation_id
+    }
     /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
     pub fn evaluation_mode(mut self, input: crate::types::EvaluationMode) -> Self {
         self.evaluation_mode = ::std::option::Option::Some(input);
@@ -77,6 +81,10 @@ impl ResourceEvaluationBuilder {
         self.evaluation_mode = input;
         self
     }
+    /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
+    pub fn get_evaluation_mode(&self) -> &::std::option::Option<crate::types::EvaluationMode> {
+        &self.evaluation_mode
+    }
     /// <p>The starting time of an execution.</p>
     pub fn evaluation_start_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.evaluation_start_timestamp = ::std::option::Option::Some(input);
@@ -89,6 +97,12 @@ impl ResourceEvaluationBuilder {
     ) -> Self {
         self.evaluation_start_timestamp = input;
         self
+    }
+    /// <p>The starting time of an execution.</p>
+    pub fn get_evaluation_start_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.evaluation_start_timestamp
     }
     /// Consumes the builder and constructs a [`ResourceEvaluation`](crate::types::ResourceEvaluation).
     pub fn build(self) -> crate::types::ResourceEvaluation {

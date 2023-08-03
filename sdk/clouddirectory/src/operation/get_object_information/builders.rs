@@ -36,6 +36,12 @@ impl GetObjectInformationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetObjectInformation as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_object_information::builders::GetObjectInformationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl GetObjectInformationFluentBuilder {
         self.inner = self.inner.set_directory_arn(input);
         self
     }
+    /// <p>The ARN of the directory being retrieved.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_arn()
+    }
     /// <p>A reference to the object.</p>
     pub fn object_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.inner = self.inner.object_reference(input);
@@ -145,6 +155,10 @@ impl GetObjectInformationFluentBuilder {
         self.inner = self.inner.set_object_reference(input);
         self
     }
+    /// <p>A reference to the object.</p>
+    pub fn get_object_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
+        self.inner.get_object_reference()
+    }
     /// <p>The consistency level at which to retrieve the object information.</p>
     pub fn consistency_level(mut self, input: crate::types::ConsistencyLevel) -> Self {
         self.inner = self.inner.consistency_level(input);
@@ -157,5 +171,9 @@ impl GetObjectInformationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_consistency_level(input);
         self
+    }
+    /// <p>The consistency level at which to retrieve the object information.</p>
+    pub fn get_consistency_level(&self) -> &::std::option::Option<crate::types::ConsistencyLevel> {
+        self.inner.get_consistency_level()
     }
 }

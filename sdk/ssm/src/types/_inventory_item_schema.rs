@@ -65,6 +65,10 @@ impl InventoryItemSchemaBuilder {
         self.type_name = input;
         self
     }
+    /// <p>The name of the inventory type. Default inventory item type names start with Amazon Web Services. Custom inventory type names will start with Custom. Default inventory item types include the following: <code>AWS:AWSComponent</code>, <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>, <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.</p>
+    pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.type_name
+    }
     /// <p>The schema version for the inventory item.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl InventoryItemSchemaBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The schema version for the inventory item.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Appends an item to `attributes`.
     ///
@@ -94,6 +102,12 @@ impl InventoryItemSchemaBuilder {
         self.attributes = input;
         self
     }
+    /// <p>The schema attributes for inventory. This contains data type and attribute name.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryItemAttribute>> {
+        &self.attributes
+    }
     /// <p>The alias name of the inventory type. The alias name is used for display purposes.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -103,6 +117,10 @@ impl InventoryItemSchemaBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
+    }
+    /// <p>The alias name of the inventory type. The alias name is used for display purposes.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// Consumes the builder and constructs a [`InventoryItemSchema`](crate::types::InventoryItemSchema).
     pub fn build(self) -> crate::types::InventoryItemSchema {

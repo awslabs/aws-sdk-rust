@@ -53,6 +53,12 @@ impl BatchSnoozeAlarmInputBuilder {
         self.snooze_action_requests = input;
         self
     }
+    /// <p>The list of snooze action requests. You can specify up to 10 requests per operation.</p>
+    pub fn get_snooze_action_requests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SnoozeAlarmActionRequest>> {
+        &self.snooze_action_requests
+    }
     /// Consumes the builder and constructs a [`BatchSnoozeAlarmInput`](crate::operation::batch_snooze_alarm::BatchSnoozeAlarmInput).
     pub fn build(
         self,

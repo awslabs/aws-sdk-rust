@@ -49,6 +49,10 @@ impl LocationBuilder {
         self.latitude = input;
         self
     }
+    /// <p>The latitude.</p>
+    pub fn get_latitude(&self) -> &::std::option::Option<f64> {
+        &self.latitude
+    }
     /// <p>The longitude.</p>
     pub fn longitude(mut self, input: f64) -> Self {
         self.longitude = ::std::option::Option::Some(input);
@@ -58,6 +62,10 @@ impl LocationBuilder {
     pub fn set_longitude(mut self, input: ::std::option::Option<f64>) -> Self {
         self.longitude = input;
         self
+    }
+    /// <p>The longitude.</p>
+    pub fn get_longitude(&self) -> &::std::option::Option<f64> {
+        &self.longitude
     }
     /// Consumes the builder and constructs a [`Location`](crate::types::Location).
     pub fn build(self) -> crate::types::Location {

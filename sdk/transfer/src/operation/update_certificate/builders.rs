@@ -36,6 +36,12 @@ impl UpdateCertificateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateCertificate as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_certificate::builders::UpdateCertificateInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateCertificateFluentBuilder {
         self.inner = self.inner.set_certificate_id(input);
         self
     }
+    /// <p>The identifier of the certificate object that you are updating.</p>
+    pub fn get_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_certificate_id()
+    }
     /// <p>An optional date that specifies when the certificate becomes active.</p>
     pub fn active_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.active_date(input);
@@ -144,6 +154,10 @@ impl UpdateCertificateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_active_date(input);
         self
+    }
+    /// <p>An optional date that specifies when the certificate becomes active.</p>
+    pub fn get_active_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_active_date()
     }
     /// <p>An optional date that specifies when the certificate becomes inactive.</p>
     pub fn inactive_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -158,6 +172,10 @@ impl UpdateCertificateFluentBuilder {
         self.inner = self.inner.set_inactive_date(input);
         self
     }
+    /// <p>An optional date that specifies when the certificate becomes inactive.</p>
+    pub fn get_inactive_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_inactive_date()
+    }
     /// <p>A short description to help identify the certificate.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -167,5 +185,9 @@ impl UpdateCertificateFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A short description to help identify the certificate.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
 }

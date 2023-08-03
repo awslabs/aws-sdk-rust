@@ -43,6 +43,10 @@ impl DatastoreStatisticsBuilder {
         self.size = input;
         self
     }
+    /// <p>The estimated size of the data store.</p>
+    pub fn get_size(&self) -> &::std::option::Option<crate::types::EstimatedResourceSize> {
+        &self.size
+    }
     /// Consumes the builder and constructs a [`DatastoreStatistics`](crate::types::DatastoreStatistics).
     pub fn build(self) -> crate::types::DatastoreStatistics {
         crate::types::DatastoreStatistics { size: self.size }

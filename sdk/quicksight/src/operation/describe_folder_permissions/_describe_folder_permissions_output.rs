@@ -79,6 +79,10 @@ impl DescribeFolderPermissionsOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The HTTP status of the request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<i32> {
+        &self.status
+    }
     /// <p>The ID of the folder.</p>
     pub fn folder_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.folder_id = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl DescribeFolderPermissionsOutputBuilder {
         self.folder_id = input;
         self
     }
+    /// <p>The ID of the folder.</p>
+    pub fn get_folder_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.folder_id
+    }
     /// <p>The Amazon Resource Name (ARN) for the folder.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -98,6 +106,10 @@ impl DescribeFolderPermissionsOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the folder.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Appends an item to `permissions`.
     ///
@@ -118,6 +130,12 @@ impl DescribeFolderPermissionsOutputBuilder {
         self.permissions = input;
         self
     }
+    /// <p>Information about the permissions on the folder.</p>
+    pub fn get_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
+        &self.permissions
+    }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_id = ::std::option::Option::Some(input.into());
@@ -127,6 +145,10 @@ impl DescribeFolderPermissionsOutputBuilder {
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_id = input;
         self
+    }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -71,6 +71,10 @@ impl CreateUserInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The user name.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl CreateUserInputBuilder {
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
+    }
+    /// <p>The user name.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
     }
     /// <p>The user's email address.</p>
     pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -91,6 +99,10 @@ impl CreateUserInputBuilder {
         self.email = input;
         self
     }
+    /// <p>The user's email address.</p>
+    pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email
+    }
     /// <p>The user type.</p>
     pub fn user_type(mut self, input: crate::types::UserType) -> Self {
         self.user_type = ::std::option::Option::Some(input);
@@ -100,6 +112,10 @@ impl CreateUserInputBuilder {
     pub fn set_user_type(mut self, input: ::std::option::Option<crate::types::UserType>) -> Self {
         self.user_type = input;
         self
+    }
+    /// <p>The user type.</p>
+    pub fn get_user_type(&self) -> &::std::option::Option<crate::types::UserType> {
+        &self.user_type
     }
     /// Consumes the builder and constructs a [`CreateUserInput`](crate::operation::create_user::CreateUserInput).
     pub fn build(

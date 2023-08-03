@@ -37,6 +37,10 @@ impl RejectQualificationRequestFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RejectQualificationRequest as a reference.
+    pub fn as_input(&self) -> &crate::operation::reject_qualification_request::builders::RejectQualificationRequestInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,10 @@ impl RejectQualificationRequestFluentBuilder {
         self.inner = self.inner.set_qualification_request_id(input);
         self
     }
+    /// <p> The ID of the Qualification request, as returned by the <code>ListQualificationRequests</code> operation. </p>
+    pub fn get_qualification_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_qualification_request_id()
+    }
     /// <p>A text message explaining why the request was rejected, to be shown to the Worker who made the request.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reason(input.into());
@@ -142,5 +150,9 @@ impl RejectQualificationRequestFluentBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reason(input);
         self
+    }
+    /// <p>A text message explaining why the request was rejected, to be shown to the Worker who made the request.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reason()
     }
 }

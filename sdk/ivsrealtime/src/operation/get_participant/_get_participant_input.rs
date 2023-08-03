@@ -55,6 +55,10 @@ impl GetParticipantInputBuilder {
         self.stage_arn = input;
         self
     }
+    /// <p>Stage ARN.</p>
+    pub fn get_stage_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stage_arn
+    }
     /// <p>ID of a session within the stage.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl GetParticipantInputBuilder {
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_id = input;
         self
+    }
+    /// <p>ID of a session within the stage.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
     }
     /// <p>Unique identifier for the participant. This is assigned by IVS and returned by <code>CreateParticipantToken</code>.</p>
     pub fn participant_id(
@@ -80,6 +88,10 @@ impl GetParticipantInputBuilder {
     ) -> Self {
         self.participant_id = input;
         self
+    }
+    /// <p>Unique identifier for the participant. This is assigned by IVS and returned by <code>CreateParticipantToken</code>.</p>
+    pub fn get_participant_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.participant_id
     }
     /// Consumes the builder and constructs a [`GetParticipantInput`](crate::operation::get_participant::GetParticipantInput).
     pub fn build(

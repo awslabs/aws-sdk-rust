@@ -51,6 +51,12 @@ impl CreateIdentityProviderOutputBuilder {
         self.identity_provider = input;
         self
     }
+    /// <p>The newly created IdP object.</p>
+    pub fn get_identity_provider(
+        &self,
+    ) -> &::std::option::Option<crate::types::IdentityProviderType> {
+        &self.identity_provider
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -48,6 +48,10 @@ impl ScheduledInstancesPrivateIpAddressConfigBuilder {
         self.primary = input;
         self
     }
+    /// <p>Indicates whether this is a primary IPv4 address. Otherwise, this is a secondary IPv4 address.</p>
+    pub fn get_primary(&self) -> &::std::option::Option<bool> {
+        &self.primary
+    }
     /// <p>The IPv4 address.</p>
     pub fn private_ip_address(
         mut self,
@@ -63,6 +67,10 @@ impl ScheduledInstancesPrivateIpAddressConfigBuilder {
     ) -> Self {
         self.private_ip_address = input;
         self
+    }
+    /// <p>The IPv4 address.</p>
+    pub fn get_private_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_ip_address
     }
     /// Consumes the builder and constructs a [`ScheduledInstancesPrivateIpAddressConfig`](crate::types::ScheduledInstancesPrivateIpAddressConfig).
     pub fn build(self) -> crate::types::ScheduledInstancesPrivateIpAddressConfig {

@@ -57,6 +57,10 @@ impl ListTagsForResourceOutputBuilder {
         self.next_marker = input;
         self
     }
+    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_marker
+    }
     /// <p>The collection of tagging definitions for the resource. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
     pub fn tag_info_for_resource(mut self, input: crate::types::TagInfoForResource) -> Self {
         self.tag_info_for_resource = ::std::option::Option::Some(input);
@@ -69,6 +73,12 @@ impl ListTagsForResourceOutputBuilder {
     ) -> Self {
         self.tag_info_for_resource = input;
         self
+    }
+    /// <p>The collection of tagging definitions for the resource. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
+    pub fn get_tag_info_for_resource(
+        &self,
+    ) -> &::std::option::Option<crate::types::TagInfoForResource> {
+        &self.tag_info_for_resource
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

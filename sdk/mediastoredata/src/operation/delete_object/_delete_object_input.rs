@@ -63,6 +63,16 @@ impl DeleteObjectInputBuilder {
         self.path = input;
         self
     }
+    /// <p>The path (including the file name) where the object is stored in the container. Format: <folder name>
+    /// /
+    /// <folder name>
+    /// /
+    /// <file name></file>
+    /// </folder>
+    /// </folder></p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
+    }
     /// Consumes the builder and constructs a [`DeleteObjectInput`](crate::operation::delete_object::DeleteObjectInput).
     pub fn build(
         self,

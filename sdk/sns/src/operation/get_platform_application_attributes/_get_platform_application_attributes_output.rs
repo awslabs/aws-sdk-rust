@@ -106,6 +106,23 @@ impl GetPlatformApplicationAttributesOutputBuilder {
         self.attributes = input;
         self
     }
+    /// <p>Attributes include the following:</p>
+    /// <ul>
+    /// <li> <p> <code>AppleCertificateExpiryDate</code> – The expiry date of the SSL certificate used to configure certificate-based authentication.</p> </li>
+    /// <li> <p> <code>ApplePlatformTeamID</code> – The Apple developer account ID used to configure token-based authentication.</p> </li>
+    /// <li> <p> <code>ApplePlatformBundleID</code> – The app identifier used to configure token-based authentication.</p> </li>
+    /// <li> <p> <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated event notifications should be sent.</p> </li>
+    /// <li> <p> <code>EventEndpointDeleted</code> – Topic ARN to which EndpointDeleted event notifications should be sent.</p> </li>
+    /// <li> <p> <code>EventEndpointUpdated</code> – Topic ARN to which EndpointUpdate event notifications should be sent.</p> </li>
+    /// <li> <p> <code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure event notifications should be sent upon Direct Publish delivery failure (permanent) to one of the application's endpoints.</p> </li>
+    /// </ul>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.attributes
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

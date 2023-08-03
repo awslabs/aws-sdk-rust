@@ -64,6 +64,10 @@ impl BatchGetProjectsOutputBuilder {
         self.projects = input;
         self
     }
+    /// <p>Information about the requested build projects.</p>
+    pub fn get_projects(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Project>> {
+        &self.projects
+    }
     /// Appends an item to `projects_not_found`.
     ///
     /// To override the contents of this collection use [`set_projects_not_found`](Self::set_projects_not_found).
@@ -85,6 +89,12 @@ impl BatchGetProjectsOutputBuilder {
     ) -> Self {
         self.projects_not_found = input;
         self
+    }
+    /// <p>The names of build projects for which information could not be found.</p>
+    pub fn get_projects_not_found(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.projects_not_found
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

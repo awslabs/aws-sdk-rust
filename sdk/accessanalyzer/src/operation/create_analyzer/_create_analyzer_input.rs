@@ -87,6 +87,10 @@ impl CreateAnalyzerInputBuilder {
         self.analyzer_name = input;
         self
     }
+    /// <p>The name of the analyzer to create.</p>
+    pub fn get_analyzer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.analyzer_name
+    }
     /// <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.</p>
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -96,6 +100,10 @@ impl CreateAnalyzerInputBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::Type>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::Type> {
+        &self.r#type
     }
     /// Appends an item to `archive_rules`.
     ///
@@ -115,6 +123,12 @@ impl CreateAnalyzerInputBuilder {
     ) -> Self {
         self.archive_rules = input;
         self
+    }
+    /// <p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule.</p>
+    pub fn get_archive_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InlineArchiveRule>> {
+        &self.archive_rules
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -141,6 +155,14 @@ impl CreateAnalyzerInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags to apply to the analyzer.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>A client token.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -150,6 +172,10 @@ impl CreateAnalyzerInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A client token.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateAnalyzerInput`](crate::operation::create_analyzer::CreateAnalyzerInput).
     pub fn build(

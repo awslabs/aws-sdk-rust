@@ -54,6 +54,10 @@ impl DescribeProtectionInputBuilder {
         self.protection_id = input;
         self
     }
+    /// <p>The unique identifier (ID) for the <code>Protection</code> object to describe. You must provide either the <code>ResourceArn</code> of the protected resource or the <code>ProtectionID</code> of the protection, but not both.</p>
+    pub fn get_protection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.protection_id
+    }
     /// <p>The ARN (Amazon Resource Name) of the protected Amazon Web Services resource. You must provide either the <code>ResourceArn</code> of the protected resource or the <code>ProtectionID</code> of the protection, but not both.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl DescribeProtectionInputBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
+    }
+    /// <p>The ARN (Amazon Resource Name) of the protected Amazon Web Services resource. You must provide either the <code>ResourceArn</code> of the protected resource or the <code>ProtectionID</code> of the protection, but not both.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// Consumes the builder and constructs a [`DescribeProtectionInput`](crate::operation::describe_protection::DescribeProtectionInput).
     pub fn build(

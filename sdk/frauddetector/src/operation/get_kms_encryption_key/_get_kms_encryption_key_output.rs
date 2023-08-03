@@ -47,6 +47,10 @@ impl GetKmsEncryptionKeyOutputBuilder {
         self.kms_key = input;
         self
     }
+    /// <p>The KMS encryption key.</p>
+    pub fn get_kms_key(&self) -> &::std::option::Option<crate::types::KmsKey> {
+        &self.kms_key
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

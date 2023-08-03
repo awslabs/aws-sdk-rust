@@ -56,6 +56,10 @@ impl QueryLoggingConfigBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID for a configuration for DNS query logging.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The ID of the hosted zone that CloudWatch Logs is logging queries for. </p>
     pub fn hosted_zone_id(
         mut self,
@@ -72,6 +76,10 @@ impl QueryLoggingConfigBuilder {
         self.hosted_zone_id = input;
         self
     }
+    /// <p>The ID of the hosted zone that CloudWatch Logs is logging queries for. </p>
+    pub fn get_hosted_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hosted_zone_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group that Amazon Route 53 is publishing logs to.</p>
     pub fn cloud_watch_logs_log_group_arn(
         mut self,
@@ -87,6 +95,12 @@ impl QueryLoggingConfigBuilder {
     ) -> Self {
         self.cloud_watch_logs_log_group_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group that Amazon Route 53 is publishing logs to.</p>
+    pub fn get_cloud_watch_logs_log_group_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.cloud_watch_logs_log_group_arn
     }
     /// Consumes the builder and constructs a [`QueryLoggingConfig`](crate::types::QueryLoggingConfig).
     pub fn build(self) -> crate::types::QueryLoggingConfig {

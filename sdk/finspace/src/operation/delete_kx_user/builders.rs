@@ -36,6 +36,12 @@ impl DeleteKxUserFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteKxUser as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_kx_user::builders::DeleteKxUserInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl DeleteKxUserFluentBuilder {
         self.inner = self.inner.set_user_name(input);
         self
     }
+    /// <p>A unique identifier for the user that you want to delete.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_name()
+    }
     /// <p>A unique identifier for the kdb environment.</p>
     pub fn environment_id(
         mut self,
@@ -133,5 +143,9 @@ impl DeleteKxUserFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_environment_id(input);
         self
+    }
+    /// <p>A unique identifier for the kdb environment.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_id()
     }
 }

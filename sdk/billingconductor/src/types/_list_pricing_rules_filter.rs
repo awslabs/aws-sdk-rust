@@ -49,6 +49,10 @@ impl ListPricingRulesFilterBuilder {
         self.arns = input;
         self
     }
+    /// <p>A list containing the pricing rule Amazon Resource Names (ARNs) to include in the API response.</p>
+    pub fn get_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.arns
+    }
     /// Consumes the builder and constructs a [`ListPricingRulesFilter`](crate::types::ListPricingRulesFilter).
     pub fn build(self) -> crate::types::ListPricingRulesFilter {
         crate::types::ListPricingRulesFilter { arns: self.arns }

@@ -36,6 +36,12 @@ impl UpdateWorldTemplateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateWorldTemplate as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_world_template::builders::UpdateWorldTemplateInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateWorldTemplateFluentBuilder {
         self.inner = self.inner.set_template(input);
         self
     }
+    /// <p>The Amazon Resource Name (arn) of the world template to update.</p>
+    pub fn get_template(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template()
+    }
     /// <p>The name of the template.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -135,6 +145,10 @@ impl UpdateWorldTemplateFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the template.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The world template body.</p>
     pub fn template_body(
@@ -152,6 +166,10 @@ impl UpdateWorldTemplateFluentBuilder {
         self.inner = self.inner.set_template_body(input);
         self
     }
+    /// <p>The world template body.</p>
+    pub fn get_template_body(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_body()
+    }
     /// <p>The location of the world template.</p>
     pub fn template_location(mut self, input: crate::types::TemplateLocation) -> Self {
         self.inner = self.inner.template_location(input);
@@ -164,5 +182,9 @@ impl UpdateWorldTemplateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_template_location(input);
         self
+    }
+    /// <p>The location of the world template.</p>
+    pub fn get_template_location(&self) -> &::std::option::Option<crate::types::TemplateLocation> {
+        self.inner.get_template_location()
     }
 }

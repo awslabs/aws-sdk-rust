@@ -72,6 +72,10 @@ impl FilePathBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the file.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The path to the resource with the security vulnerability.</p>
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl FilePathBuilder {
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path = input;
         self
+    }
+    /// <p>The path to the resource with the security vulnerability.</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
     }
     /// <p>The first line number of the code snippet where the security vulnerability appears in your code.</p>
     pub fn start_line(mut self, input: i32) -> Self {
@@ -92,6 +100,10 @@ impl FilePathBuilder {
         self.start_line = input;
         self
     }
+    /// <p>The first line number of the code snippet where the security vulnerability appears in your code.</p>
+    pub fn get_start_line(&self) -> &::std::option::Option<i32> {
+        &self.start_line
+    }
     /// <p>The last line number of the code snippet where the security vulnerability appears in your code.</p>
     pub fn end_line(mut self, input: i32) -> Self {
         self.end_line = ::std::option::Option::Some(input);
@@ -101,6 +113,10 @@ impl FilePathBuilder {
     pub fn set_end_line(mut self, input: ::std::option::Option<i32>) -> Self {
         self.end_line = input;
         self
+    }
+    /// <p>The last line number of the code snippet where the security vulnerability appears in your code.</p>
+    pub fn get_end_line(&self) -> &::std::option::Option<i32> {
+        &self.end_line
     }
     /// Appends an item to `code_snippet`.
     ///
@@ -120,6 +136,12 @@ impl FilePathBuilder {
     ) -> Self {
         self.code_snippet = input;
         self
+    }
+    /// <p>A list of <code>CodeLine</code> objects that describe where the security vulnerability appears in your code.</p>
+    pub fn get_code_snippet(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeLine>> {
+        &self.code_snippet
     }
     /// Consumes the builder and constructs a [`FilePath`](crate::types::FilePath).
     pub fn build(self) -> crate::types::FilePath {

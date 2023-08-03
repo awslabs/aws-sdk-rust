@@ -40,6 +40,10 @@ impl AuthorizeDBSecurityGroupIngressFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AuthorizeDBSecurityGroupIngress as a reference.
+    pub fn as_input(&self) -> &crate::operation::authorize_db_security_group_ingress::builders::AuthorizeDbSecurityGroupIngressInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -110,6 +114,10 @@ impl AuthorizeDBSecurityGroupIngressFluentBuilder {
         self.inner = self.inner.set_db_security_group_name(input);
         self
     }
+    /// <p>The name of the DB security group to add authorization to.</p>
+    pub fn get_db_security_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_security_group_name()
+    }
     /// <p>The IP range to authorize.</p>
     pub fn cidrip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cidrip(input.into());
@@ -119,6 +127,10 @@ impl AuthorizeDBSecurityGroupIngressFluentBuilder {
     pub fn set_cidrip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cidrip(input);
         self
+    }
+    /// <p>The IP range to authorize.</p>
+    pub fn get_cidrip(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cidrip()
     }
     /// <p>Name of the EC2 security group to authorize. For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise, <code>EC2SecurityGroupOwnerId</code> and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.</p>
     pub fn ec2_security_group_name(
@@ -136,6 +148,10 @@ impl AuthorizeDBSecurityGroupIngressFluentBuilder {
         self.inner = self.inner.set_ec2_security_group_name(input);
         self
     }
+    /// <p>Name of the EC2 security group to authorize. For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise, <code>EC2SecurityGroupOwnerId</code> and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.</p>
+    pub fn get_ec2_security_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ec2_security_group_name()
+    }
     /// <p>Id of the EC2 security group to authorize. For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise, <code>EC2SecurityGroupOwnerId</code> and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.</p>
     pub fn ec2_security_group_id(
         mut self,
@@ -152,6 +168,10 @@ impl AuthorizeDBSecurityGroupIngressFluentBuilder {
         self.inner = self.inner.set_ec2_security_group_id(input);
         self
     }
+    /// <p>Id of the EC2 security group to authorize. For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise, <code>EC2SecurityGroupOwnerId</code> and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.</p>
+    pub fn get_ec2_security_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ec2_security_group_id()
+    }
     /// <p>Amazon Web Services account number of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> parameter. The Amazon Web Services access key ID isn't an acceptable value. For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise, <code>EC2SecurityGroupOwnerId</code> and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.</p>
     pub fn ec2_security_group_owner_id(
         mut self,
@@ -167,5 +187,9 @@ impl AuthorizeDBSecurityGroupIngressFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ec2_security_group_owner_id(input);
         self
+    }
+    /// <p>Amazon Web Services account number of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> parameter. The Amazon Web Services access key ID isn't an acceptable value. For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise, <code>EC2SecurityGroupOwnerId</code> and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.</p>
+    pub fn get_ec2_security_group_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ec2_security_group_owner_id()
     }
 }

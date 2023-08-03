@@ -98,6 +98,10 @@ impl AwsEc2VpcPeeringConnectionVpcInfoDetailsBuilder {
         self.cidr_block = input;
         self
     }
+    /// <p>The IPv4 CIDR block for the VPC. </p>
+    pub fn get_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr_block
+    }
     /// Appends an item to `cidr_block_set`.
     ///
     /// To override the contents of this collection use [`set_cidr_block_set`](Self::set_cidr_block_set).
@@ -116,6 +120,12 @@ impl AwsEc2VpcPeeringConnectionVpcInfoDetailsBuilder {
     ) -> Self {
         self.cidr_block_set = input;
         self
+    }
+    /// <p>Information about the IPv4 CIDR blocks for the VPC. </p>
+    pub fn get_cidr_block_set(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcInfoCidrBlockSetDetails>> {
+        &self.cidr_block_set
     }
     /// Appends an item to `ipv6_cidr_block_set`.
     ///
@@ -139,6 +149,12 @@ impl AwsEc2VpcPeeringConnectionVpcInfoDetailsBuilder {
         self.ipv6_cidr_block_set = input;
         self
     }
+    /// <p>The IPv6 CIDR block for the VPC. </p>
+    pub fn get_ipv6_cidr_block_set(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcInfoIpv6CidrBlockSetDetails>> {
+        &self.ipv6_cidr_block_set
+    }
     /// <p>The ID of the Amazon Web Services account that owns the VPC. </p>
     pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_id = ::std::option::Option::Some(input.into());
@@ -148,6 +164,10 @@ impl AwsEc2VpcPeeringConnectionVpcInfoDetailsBuilder {
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_id = input;
         self
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the VPC. </p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
     }
     /// <p>Information about the VPC peering connection options for the accepter or requester VPC. </p>
     pub fn peering_options(mut self, input: crate::types::VpcInfoPeeringOptionsDetails) -> Self {
@@ -162,6 +182,12 @@ impl AwsEc2VpcPeeringConnectionVpcInfoDetailsBuilder {
         self.peering_options = input;
         self
     }
+    /// <p>Information about the VPC peering connection options for the accepter or requester VPC. </p>
+    pub fn get_peering_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::VpcInfoPeeringOptionsDetails> {
+        &self.peering_options
+    }
     /// <p>The Amazon Web Services Region in which the VPC is located. </p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
@@ -172,6 +198,10 @@ impl AwsEc2VpcPeeringConnectionVpcInfoDetailsBuilder {
         self.region = input;
         self
     }
+    /// <p>The Amazon Web Services Region in which the VPC is located. </p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
+    }
     /// <p>The ID of the VPC. </p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -181,6 +211,10 @@ impl AwsEc2VpcPeeringConnectionVpcInfoDetailsBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The ID of the VPC. </p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// Consumes the builder and constructs a [`AwsEc2VpcPeeringConnectionVpcInfoDetails`](crate::types::AwsEc2VpcPeeringConnectionVpcInfoDetails).
     pub fn build(self) -> crate::types::AwsEc2VpcPeeringConnectionVpcInfoDetails {

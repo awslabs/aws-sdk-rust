@@ -48,6 +48,10 @@ impl PixelAnomalyBuilder {
         self.total_percentage_area = input;
         self
     }
+    /// <p>The percentage area of the image that the anomaly type covers.</p>
+    pub fn get_total_percentage_area(&self) -> &::std::option::Option<f32> {
+        &self.total_percentage_area
+    }
     /// <p>A hex color value for the mask that covers an anomaly type. Each anomaly type has a different mask color. The color maps to the color of the anomaly type used in the training dataset. </p>
     pub fn color(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.color = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl PixelAnomalyBuilder {
     pub fn set_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.color = input;
         self
+    }
+    /// <p>A hex color value for the mask that covers an anomaly type. Each anomaly type has a different mask color. The color maps to the color of the anomaly type used in the training dataset. </p>
+    pub fn get_color(&self) -> &::std::option::Option<::std::string::String> {
+        &self.color
     }
     /// Consumes the builder and constructs a [`PixelAnomaly`](crate::types::PixelAnomaly).
     pub fn build(self) -> crate::types::PixelAnomaly {

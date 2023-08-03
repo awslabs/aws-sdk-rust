@@ -48,6 +48,10 @@ impl PolicyDetailsBuilder {
         self.action = input;
         self
     }
+    /// <p>The action that produced the finding.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::FindingAction> {
+        &self.action
+    }
     /// <p>The entity that performed the action that produced the finding.</p>
     pub fn actor(mut self, input: crate::types::FindingActor) -> Self {
         self.actor = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl PolicyDetailsBuilder {
     pub fn set_actor(mut self, input: ::std::option::Option<crate::types::FindingActor>) -> Self {
         self.actor = input;
         self
+    }
+    /// <p>The entity that performed the action that produced the finding.</p>
+    pub fn get_actor(&self) -> &::std::option::Option<crate::types::FindingActor> {
+        &self.actor
     }
     /// Consumes the builder and constructs a [`PolicyDetails`](crate::types::PolicyDetails).
     pub fn build(self) -> crate::types::PolicyDetails {

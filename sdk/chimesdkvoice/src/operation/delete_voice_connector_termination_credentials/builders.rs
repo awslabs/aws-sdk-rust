@@ -36,6 +36,10 @@ impl DeleteVoiceConnectorTerminationCredentialsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteVoiceConnectorTerminationCredentials as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_voice_connector_termination_credentials::builders::DeleteVoiceConnectorTerminationCredentialsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl DeleteVoiceConnectorTerminationCredentialsFluentBuilder {
         self.inner = self.inner.set_voice_connector_id(input);
         self
     }
+    /// <p>The Voice Connector ID.</p>
+    pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_voice_connector_id()
+    }
     /// Appends an item to `Usernames`.
     ///
     /// To override the contents of this collection use [`set_usernames`](Self::set_usernames).
@@ -122,5 +130,9 @@ impl DeleteVoiceConnectorTerminationCredentialsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_usernames(input);
         self
+    }
+    /// <p>The RFC2617 compliant username associated with the SIP credentials, in US-ASCII format.</p>
+    pub fn get_usernames(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_usernames()
     }
 }

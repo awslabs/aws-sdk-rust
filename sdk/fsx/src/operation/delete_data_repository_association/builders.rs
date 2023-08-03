@@ -36,6 +36,10 @@ impl DeleteDataRepositoryAssociationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteDataRepositoryAssociation as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_data_repository_association::builders::DeleteDataRepositoryAssociationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl DeleteDataRepositoryAssociationFluentBuilder {
         self.inner = self.inner.set_association_id(input);
         self
     }
+    /// <p>The ID of the data repository association that you want to delete.</p>
+    pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_association_id()
+    }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn client_request_token(
         mut self,
@@ -122,6 +130,10 @@ impl DeleteDataRepositoryAssociationFluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
+    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
+    }
     /// <p>Set to <code>true</code> to delete the data in the file system that corresponds to the data repository association.</p>
     pub fn delete_data_in_file_system(mut self, input: bool) -> Self {
         self.inner = self.inner.delete_data_in_file_system(input);
@@ -131,5 +143,9 @@ impl DeleteDataRepositoryAssociationFluentBuilder {
     pub fn set_delete_data_in_file_system(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_delete_data_in_file_system(input);
         self
+    }
+    /// <p>Set to <code>true</code> to delete the data in the file system that corresponds to the data repository association.</p>
+    pub fn get_delete_data_in_file_system(&self) -> &::std::option::Option<bool> {
+        self.inner.get_delete_data_in_file_system()
     }
 }

@@ -38,6 +38,10 @@ impl RevokeDBSecurityGroupIngressFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RevokeDBSecurityGroupIngress as a reference.
+    pub fn as_input(&self) -> &crate::operation::revoke_db_security_group_ingress::builders::RevokeDbSecurityGroupIngressInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +138,10 @@ impl RevokeDBSecurityGroupIngressFluentBuilder {
         self.inner = self.inner.set_db_security_group_name(input);
         self
     }
+    /// <p>The name of the DB security group to revoke ingress from.</p>
+    pub fn get_db_security_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_security_group_name()
+    }
     /// <p>The IP range to revoke access from. Must be a valid CIDR range. If <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code>, <code>EC2SecurityGroupId</code> and <code>EC2SecurityGroupOwnerId</code> can't be provided.</p>
     pub fn cidrip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cidrip(input.into());
@@ -143,6 +151,10 @@ impl RevokeDBSecurityGroupIngressFluentBuilder {
     pub fn set_cidrip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cidrip(input);
         self
+    }
+    /// <p>The IP range to revoke access from. Must be a valid CIDR range. If <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code>, <code>EC2SecurityGroupId</code> and <code>EC2SecurityGroupOwnerId</code> can't be provided.</p>
+    pub fn get_cidrip(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cidrip()
     }
     /// <p>The name of the EC2 security group to revoke access from. For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise, EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.</p>
     pub fn ec2_security_group_name(
@@ -160,6 +172,10 @@ impl RevokeDBSecurityGroupIngressFluentBuilder {
         self.inner = self.inner.set_ec2_security_group_name(input);
         self
     }
+    /// <p>The name of the EC2 security group to revoke access from. For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise, EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.</p>
+    pub fn get_ec2_security_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ec2_security_group_name()
+    }
     /// <p>The id of the EC2 security group to revoke access from. For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise, EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.</p>
     pub fn ec2_security_group_id(
         mut self,
@@ -176,6 +192,10 @@ impl RevokeDBSecurityGroupIngressFluentBuilder {
         self.inner = self.inner.set_ec2_security_group_id(input);
         self
     }
+    /// <p>The id of the EC2 security group to revoke access from. For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise, EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.</p>
+    pub fn get_ec2_security_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ec2_security_group_id()
+    }
     /// <p>The Amazon Web Services account number of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> parameter. The Amazon Web Services access key ID isn't an acceptable value. For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise, EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.</p>
     pub fn ec2_security_group_owner_id(
         mut self,
@@ -191,5 +211,9 @@ impl RevokeDBSecurityGroupIngressFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ec2_security_group_owner_id(input);
         self
+    }
+    /// <p>The Amazon Web Services account number of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> parameter. The Amazon Web Services access key ID isn't an acceptable value. For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise, EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.</p>
+    pub fn get_ec2_security_group_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ec2_security_group_owner_id()
     }
 }

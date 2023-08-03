@@ -71,6 +71,10 @@ impl ListSessionsOutputBuilder {
         self.ids = input;
         self
     }
+    /// <p>Returns the ID of the session. </p>
+    pub fn get_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ids
+    }
     /// Appends an item to `sessions`.
     ///
     /// To override the contents of this collection use [`set_sessions`](Self::set_sessions).
@@ -90,6 +94,10 @@ impl ListSessionsOutputBuilder {
         self.sessions = input;
         self
     }
+    /// <p>Returns the session object. </p>
+    pub fn get_sessions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Session>> {
+        &self.sessions
+    }
     /// <p>The token for the next set of results, or null if there are no more result. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -99,6 +107,10 @@ impl ListSessionsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token for the next set of results, or null if there are no more result. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -45,6 +45,12 @@ impl PerformanceInsightsReferenceMetricBuilder {
         self.metric_query = input;
         self
     }
+    /// <p>A query to be processed on the metric.</p>
+    pub fn get_metric_query(
+        &self,
+    ) -> &::std::option::Option<crate::types::PerformanceInsightsMetricQuery> {
+        &self.metric_query
+    }
     /// Consumes the builder and constructs a [`PerformanceInsightsReferenceMetric`](crate::types::PerformanceInsightsReferenceMetric).
     pub fn build(self) -> crate::types::PerformanceInsightsReferenceMetric {
         crate::types::PerformanceInsightsReferenceMetric {

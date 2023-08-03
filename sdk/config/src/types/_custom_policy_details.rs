@@ -62,6 +62,10 @@ impl CustomPolicyDetailsBuilder {
         self.policy_runtime = input;
         self
     }
+    /// <p>The runtime system for your Config Custom Policy rule. Guard is a policy-as-code language that allows you to write policies that are enforced by Config Custom Policy rules. For more information about Guard, see the <a href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>.</p>
+    pub fn get_policy_runtime(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_runtime
+    }
     /// <p>The policy definition containing the logic for your Config Custom Policy rule.</p>
     pub fn policy_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_text = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl CustomPolicyDetailsBuilder {
         self.policy_text = input;
         self
     }
+    /// <p>The policy definition containing the logic for your Config Custom Policy rule.</p>
+    pub fn get_policy_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_text
+    }
     /// <p>The boolean expression for enabling debug logging for your Config Custom Policy rule. The default value is <code>false</code>.</p>
     pub fn enable_debug_log_delivery(mut self, input: bool) -> Self {
         self.enable_debug_log_delivery = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl CustomPolicyDetailsBuilder {
     pub fn set_enable_debug_log_delivery(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_debug_log_delivery = input;
         self
+    }
+    /// <p>The boolean expression for enabling debug logging for your Config Custom Policy rule. The default value is <code>false</code>.</p>
+    pub fn get_enable_debug_log_delivery(&self) -> &::std::option::Option<bool> {
+        &self.enable_debug_log_delivery
     }
     /// Consumes the builder and constructs a [`CustomPolicyDetails`](crate::types::CustomPolicyDetails).
     pub fn build(self) -> crate::types::CustomPolicyDetails {

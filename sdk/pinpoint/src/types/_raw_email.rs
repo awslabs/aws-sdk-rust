@@ -40,6 +40,10 @@ impl RawEmailBuilder {
         self.data = input;
         self
     }
+    /// <p>The email message, represented as a raw MIME message. The entire message must be base64 encoded.</p>
+    pub fn get_data(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.data
+    }
     /// Consumes the builder and constructs a [`RawEmail`](crate::types::RawEmail).
     pub fn build(self) -> crate::types::RawEmail {
         crate::types::RawEmail { data: self.data }

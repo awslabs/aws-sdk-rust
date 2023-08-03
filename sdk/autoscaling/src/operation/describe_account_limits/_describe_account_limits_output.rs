@@ -75,6 +75,10 @@ impl DescribeAccountLimitsOutputBuilder {
         self.max_number_of_auto_scaling_groups = input;
         self
     }
+    /// <p>The maximum number of groups allowed for your account. The default is 200 groups per Region.</p>
+    pub fn get_max_number_of_auto_scaling_groups(&self) -> &::std::option::Option<i32> {
+        &self.max_number_of_auto_scaling_groups
+    }
     /// <p>The maximum number of launch configurations allowed for your account. The default is 200 launch configurations per Region.</p>
     pub fn max_number_of_launch_configurations(mut self, input: i32) -> Self {
         self.max_number_of_launch_configurations = ::std::option::Option::Some(input);
@@ -88,6 +92,10 @@ impl DescribeAccountLimitsOutputBuilder {
         self.max_number_of_launch_configurations = input;
         self
     }
+    /// <p>The maximum number of launch configurations allowed for your account. The default is 200 launch configurations per Region.</p>
+    pub fn get_max_number_of_launch_configurations(&self) -> &::std::option::Option<i32> {
+        &self.max_number_of_launch_configurations
+    }
     /// <p>The current number of groups for your account.</p>
     pub fn number_of_auto_scaling_groups(mut self, input: i32) -> Self {
         self.number_of_auto_scaling_groups = ::std::option::Option::Some(input);
@@ -97,6 +105,10 @@ impl DescribeAccountLimitsOutputBuilder {
     pub fn set_number_of_auto_scaling_groups(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_auto_scaling_groups = input;
         self
+    }
+    /// <p>The current number of groups for your account.</p>
+    pub fn get_number_of_auto_scaling_groups(&self) -> &::std::option::Option<i32> {
+        &self.number_of_auto_scaling_groups
     }
     /// <p>The current number of launch configurations for your account.</p>
     pub fn number_of_launch_configurations(mut self, input: i32) -> Self {
@@ -110,6 +122,10 @@ impl DescribeAccountLimitsOutputBuilder {
     ) -> Self {
         self.number_of_launch_configurations = input;
         self
+    }
+    /// <p>The current number of launch configurations for your account.</p>
+    pub fn get_number_of_launch_configurations(&self) -> &::std::option::Option<i32> {
+        &self.number_of_launch_configurations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

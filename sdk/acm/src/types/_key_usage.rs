@@ -40,6 +40,10 @@ impl KeyUsageBuilder {
         self.name = input;
         self
     }
+    /// <p>A string value that contains a Key Usage extension name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::KeyUsageName> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`KeyUsage`](crate::types::KeyUsage).
     pub fn build(self) -> crate::types::KeyUsage {
         crate::types::KeyUsage { name: self.name }

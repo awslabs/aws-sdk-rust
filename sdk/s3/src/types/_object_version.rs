@@ -113,6 +113,10 @@ impl ObjectVersionBuilder {
         self.e_tag = input;
         self
     }
+    /// <p>The entity tag is an MD5 hash of that version of the object.</p>
+    pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.e_tag
+    }
     /// Appends an item to `checksum_algorithm`.
     ///
     /// To override the contents of this collection use [`set_checksum_algorithm`](Self::set_checksum_algorithm).
@@ -132,6 +136,12 @@ impl ObjectVersionBuilder {
         self.checksum_algorithm = input;
         self
     }
+    /// <p>The algorithm that was used to create a checksum of the object.</p>
+    pub fn get_checksum_algorithm(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChecksumAlgorithm>> {
+        &self.checksum_algorithm
+    }
     /// <p>Size in bytes of the object.</p>
     pub fn size(mut self, input: i64) -> Self {
         self.size = ::std::option::Option::Some(input);
@@ -141,6 +151,10 @@ impl ObjectVersionBuilder {
     pub fn set_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.size = input;
         self
+    }
+    /// <p>Size in bytes of the object.</p>
+    pub fn get_size(&self) -> &::std::option::Option<i64> {
+        &self.size
     }
     /// <p>The class of storage used to store the object.</p>
     pub fn storage_class(mut self, input: crate::types::ObjectVersionStorageClass) -> Self {
@@ -155,6 +169,12 @@ impl ObjectVersionBuilder {
         self.storage_class = input;
         self
     }
+    /// <p>The class of storage used to store the object.</p>
+    pub fn get_storage_class(
+        &self,
+    ) -> &::std::option::Option<crate::types::ObjectVersionStorageClass> {
+        &self.storage_class
+    }
     /// <p>The object key.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
@@ -164,6 +184,10 @@ impl ObjectVersionBuilder {
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
+    }
+    /// <p>The object key.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
     }
     /// <p>Version ID of an object.</p>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -175,6 +199,10 @@ impl ObjectVersionBuilder {
         self.version_id = input;
         self
     }
+    /// <p>Version ID of an object.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_id
+    }
     /// <p>Specifies whether the object is (true) or is not (false) the latest version of an object.</p>
     pub fn is_latest(mut self, input: bool) -> Self {
         self.is_latest = ::std::option::Option::Some(input);
@@ -184,6 +212,10 @@ impl ObjectVersionBuilder {
     pub fn set_is_latest(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_latest = input;
         self
+    }
+    /// <p>Specifies whether the object is (true) or is not (false) the latest version of an object.</p>
+    pub fn get_is_latest(&self) -> &::std::option::Option<bool> {
+        &self.is_latest
     }
     /// <p>Date and time the object was last modified.</p>
     pub fn last_modified(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -198,6 +230,10 @@ impl ObjectVersionBuilder {
         self.last_modified = input;
         self
     }
+    /// <p>Date and time the object was last modified.</p>
+    pub fn get_last_modified(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified
+    }
     /// <p>Specifies the owner of the object.</p>
     pub fn owner(mut self, input: crate::types::Owner) -> Self {
         self.owner = ::std::option::Option::Some(input);
@@ -207,6 +243,10 @@ impl ObjectVersionBuilder {
     pub fn set_owner(mut self, input: ::std::option::Option<crate::types::Owner>) -> Self {
         self.owner = input;
         self
+    }
+    /// <p>Specifies the owner of the object.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<crate::types::Owner> {
+        &self.owner
     }
     /// <p>Specifies the restoration status of an object. Objects in certain storage classes must be restored before they can be retrieved. For more information about these storage classes and how to work with archived objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/archived-objects.html"> Working with archived objects</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn restore_status(mut self, input: crate::types::RestoreStatus) -> Self {
@@ -220,6 +260,10 @@ impl ObjectVersionBuilder {
     ) -> Self {
         self.restore_status = input;
         self
+    }
+    /// <p>Specifies the restoration status of an object. Objects in certain storage classes must be restored before they can be retrieved. For more information about these storage classes and how to work with archived objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/archived-objects.html"> Working with archived objects</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn get_restore_status(&self) -> &::std::option::Option<crate::types::RestoreStatus> {
+        &self.restore_status
     }
     /// Consumes the builder and constructs a [`ObjectVersion`](crate::types::ObjectVersion).
     pub fn build(self) -> crate::types::ObjectVersion {

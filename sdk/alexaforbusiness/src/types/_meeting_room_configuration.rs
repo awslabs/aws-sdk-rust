@@ -77,6 +77,10 @@ impl MeetingRoomConfigurationBuilder {
         self.room_utilization_metrics_enabled = input;
         self
     }
+    /// <p>Whether room utilization metrics are enabled or not.</p>
+    pub fn get_room_utilization_metrics_enabled(&self) -> &::std::option::Option<bool> {
+        &self.room_utilization_metrics_enabled
+    }
     /// <p>Settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
     pub fn end_of_meeting_reminder(mut self, input: crate::types::EndOfMeetingReminder) -> Self {
         self.end_of_meeting_reminder = ::std::option::Option::Some(input);
@@ -89,6 +93,12 @@ impl MeetingRoomConfigurationBuilder {
     ) -> Self {
         self.end_of_meeting_reminder = input;
         self
+    }
+    /// <p>Settings for the end of meeting reminder feature that are applied to a room profile. The end of meeting reminder enables Alexa to remind users when a meeting is ending. </p>
+    pub fn get_end_of_meeting_reminder(
+        &self,
+    ) -> &::std::option::Option<crate::types::EndOfMeetingReminder> {
+        &self.end_of_meeting_reminder
     }
     /// <p>Settings to automatically book the room if available for a configured duration when joining a meeting with Alexa. </p>
     pub fn instant_booking(mut self, input: crate::types::InstantBooking) -> Self {
@@ -103,6 +113,10 @@ impl MeetingRoomConfigurationBuilder {
         self.instant_booking = input;
         self
     }
+    /// <p>Settings to automatically book the room if available for a configured duration when joining a meeting with Alexa. </p>
+    pub fn get_instant_booking(&self) -> &::std::option::Option<crate::types::InstantBooking> {
+        &self.instant_booking
+    }
     /// <p>Settings for requiring a check in when a room is reserved. Alexa can cancel a room reservation if it's not checked into. This makes the room available for others. Users can check in by joining the meeting with Alexa or an AVS device, or by saying “Alexa, check in.” </p>
     pub fn require_check_in(mut self, input: crate::types::RequireCheckIn) -> Self {
         self.require_check_in = ::std::option::Option::Some(input);
@@ -116,6 +130,10 @@ impl MeetingRoomConfigurationBuilder {
         self.require_check_in = input;
         self
     }
+    /// <p>Settings for requiring a check in when a room is reserved. Alexa can cancel a room reservation if it's not checked into. This makes the room available for others. Users can check in by joining the meeting with Alexa or an AVS device, or by saying “Alexa, check in.” </p>
+    pub fn get_require_check_in(&self) -> &::std::option::Option<crate::types::RequireCheckIn> {
+        &self.require_check_in
+    }
     #[allow(missing_docs)] // documentation missing in model
     pub fn proactive_join(mut self, input: crate::types::ProactiveJoin) -> Self {
         self.proactive_join = ::std::option::Option::Some(input);
@@ -128,6 +146,10 @@ impl MeetingRoomConfigurationBuilder {
     ) -> Self {
         self.proactive_join = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_proactive_join(&self) -> &::std::option::Option<crate::types::ProactiveJoin> {
+        &self.proactive_join
     }
     /// Consumes the builder and constructs a [`MeetingRoomConfiguration`](crate::types::MeetingRoomConfiguration).
     pub fn build(self) -> crate::types::MeetingRoomConfiguration {

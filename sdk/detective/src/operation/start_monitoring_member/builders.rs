@@ -41,6 +41,13 @@ impl StartMonitoringMemberFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartMonitoringMember as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_monitoring_member::builders::StartMonitoringMemberInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +138,10 @@ impl StartMonitoringMemberFluentBuilder {
         self.inner = self.inner.set_graph_arn(input);
         self
     }
+    /// <p>The ARN of the behavior graph.</p>
+    pub fn get_graph_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_graph_arn()
+    }
     /// <p>The account ID of the member account to try to enable.</p>
     /// <p>The account must be an invited member account with a status of <code>ACCEPTED_BUT_DISABLED</code>. </p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -142,5 +153,10 @@ impl StartMonitoringMemberFluentBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_id(input);
         self
+    }
+    /// <p>The account ID of the member account to try to enable.</p>
+    /// <p>The account must be an invited member account with a status of <code>ACCEPTED_BUT_DISABLED</code>. </p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
     }
 }

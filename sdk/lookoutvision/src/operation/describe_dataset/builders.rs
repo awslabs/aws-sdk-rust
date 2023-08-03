@@ -37,6 +37,12 @@ impl DescribeDatasetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeDataset as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_dataset::builders::DescribeDatasetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl DescribeDatasetFluentBuilder {
         self.inner = self.inner.set_project_name(input);
         self
     }
+    /// <p>The name of the project that contains the dataset that you want to describe.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_name()
+    }
     /// <p>The type of the dataset to describe. Specify <code>train</code> to describe the training dataset. Specify <code>test</code> to describe the test dataset. If you have a single dataset project, specify <code>train</code> </p>
     pub fn dataset_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dataset_type(input.into());
@@ -136,5 +146,9 @@ impl DescribeDatasetFluentBuilder {
     pub fn set_dataset_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dataset_type(input);
         self
+    }
+    /// <p>The type of the dataset to describe. Specify <code>train</code> to describe the training dataset. Specify <code>test</code> to describe the test dataset. If you have a single dataset project, specify <code>train</code> </p>
+    pub fn get_dataset_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dataset_type()
     }
 }

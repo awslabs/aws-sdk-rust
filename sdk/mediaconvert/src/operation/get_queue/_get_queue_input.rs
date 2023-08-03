@@ -39,6 +39,10 @@ impl GetQueueInputBuilder {
         self.name = input;
         self
     }
+    /// The name of the queue that you want information about.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`GetQueueInput`](crate::operation::get_queue::GetQueueInput).
     pub fn build(
         self,

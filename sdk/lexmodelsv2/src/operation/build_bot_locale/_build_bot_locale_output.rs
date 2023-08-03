@@ -80,6 +80,10 @@ impl BuildBotLocaleOutputBuilder {
         self.bot_id = input;
         self
     }
+    /// <p>The identifier of the specified bot.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
+    }
     /// <p>The version of the bot that was built. This is only the draft version of the bot.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl BuildBotLocaleOutputBuilder {
         self.bot_version = input;
         self
     }
+    /// <p>The version of the bot that was built. This is only the draft version of the bot.</p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_version
+    }
     /// <p>The language and locale specified of where the bot can be used.</p>
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
@@ -99,6 +107,10 @@ impl BuildBotLocaleOutputBuilder {
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.locale_id = input;
         self
+    }
+    /// <p>The language and locale specified of where the bot can be used.</p>
+    pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale_id
     }
     /// <p>The bot's build status. When the status is <code>ReadyExpressTesting</code> you can test the bot using the utterances defined for the intents and slot types. When the status is <code>Built</code>, the bot is ready for use and can be tested using any utterance.</p>
     pub fn bot_locale_status(mut self, input: crate::types::BotLocaleStatus) -> Self {
@@ -113,6 +125,10 @@ impl BuildBotLocaleOutputBuilder {
         self.bot_locale_status = input;
         self
     }
+    /// <p>The bot's build status. When the status is <code>ReadyExpressTesting</code> you can test the bot using the utterances defined for the intents and slot types. When the status is <code>Built</code>, the bot is ready for use and can be tested using any utterance.</p>
+    pub fn get_bot_locale_status(&self) -> &::std::option::Option<crate::types::BotLocaleStatus> {
+        &self.bot_locale_status
+    }
     /// <p>A timestamp indicating the date and time that the bot was last built for this locale.</p>
     pub fn last_build_submitted_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_build_submitted_date_time = ::std::option::Option::Some(input);
@@ -125,6 +141,12 @@ impl BuildBotLocaleOutputBuilder {
     ) -> Self {
         self.last_build_submitted_date_time = input;
         self
+    }
+    /// <p>A timestamp indicating the date and time that the bot was last built for this locale.</p>
+    pub fn get_last_build_submitted_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_build_submitted_date_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

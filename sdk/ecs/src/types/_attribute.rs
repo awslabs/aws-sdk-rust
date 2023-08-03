@@ -64,6 +64,10 @@ impl AttributeBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the attribute. The <code>name</code> must contain between 1 and 128 characters. The name may contain letters (uppercase and lowercase), numbers, hyphens (-), underscores (_), forward slashes (/), back slashes (\), or periods (.).</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The value of the attribute. The <code>value</code> must contain between 1 and 128 characters. It can contain letters (uppercase and lowercase), numbers, hyphens (-), underscores (_), periods (.), at signs (@), forward slashes (/), back slashes (\), colons (:), or spaces. The value can't start or end with a space.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl AttributeBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value of the attribute. The <code>value</code> must contain between 1 and 128 characters. It can contain letters (uppercase and lowercase), numbers, hyphens (-), underscores (_), periods (.), at signs (@), forward slashes (/), back slashes (\), colons (:), or spaces. The value can't start or end with a space.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// <p>The type of the target to attach the attribute with. This parameter is required if you use the short form ID for a resource instead of the full ARN.</p>
     pub fn target_type(mut self, input: crate::types::TargetType) -> Self {
@@ -87,6 +95,10 @@ impl AttributeBuilder {
         self.target_type = input;
         self
     }
+    /// <p>The type of the target to attach the attribute with. This parameter is required if you use the short form ID for a resource instead of the full ARN.</p>
+    pub fn get_target_type(&self) -> &::std::option::Option<crate::types::TargetType> {
+        &self.target_type
+    }
     /// <p>The ID of the target. You can specify the short form ID for a resource or the full Amazon Resource Name (ARN).</p>
     pub fn target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_id = ::std::option::Option::Some(input.into());
@@ -96,6 +108,10 @@ impl AttributeBuilder {
     pub fn set_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_id = input;
         self
+    }
+    /// <p>The ID of the target. You can specify the short form ID for a resource or the full Amazon Resource Name (ARN).</p>
+    pub fn get_target_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_id
     }
     /// Consumes the builder and constructs a [`Attribute`](crate::types::Attribute).
     pub fn build(self) -> crate::types::Attribute {

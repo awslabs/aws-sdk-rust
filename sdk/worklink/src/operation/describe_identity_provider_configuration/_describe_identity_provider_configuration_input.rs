@@ -39,6 +39,10 @@ impl DescribeIdentityProviderConfigurationInputBuilder {
         self.fleet_arn = input;
         self
     }
+    /// <p>The ARN of the fleet.</p>
+    pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_arn
+    }
     /// Consumes the builder and constructs a [`DescribeIdentityProviderConfigurationInput`](crate::operation::describe_identity_provider_configuration::DescribeIdentityProviderConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_identity_provider_configuration::DescribeIdentityProviderConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

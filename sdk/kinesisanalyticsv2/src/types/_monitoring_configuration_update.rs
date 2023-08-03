@@ -61,6 +61,12 @@ impl MonitoringConfigurationUpdateBuilder {
         self.configuration_type_update = input;
         self
     }
+    /// <p>Describes updates to whether to use the default CloudWatch logging configuration for an application. You must set this property to <code>CUSTOM</code> in order to set the <code>LogLevel</code> or <code>MetricsLevel</code> parameters.</p>
+    pub fn get_configuration_type_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConfigurationType> {
+        &self.configuration_type_update
+    }
     /// <p>Describes updates to the granularity of the CloudWatch Logs for an application. The <code>Parallelism</code> level is not recommended for applications with a Parallelism over 64 due to excessive costs.</p>
     pub fn metrics_level_update(mut self, input: crate::types::MetricsLevel) -> Self {
         self.metrics_level_update = ::std::option::Option::Some(input);
@@ -74,6 +80,10 @@ impl MonitoringConfigurationUpdateBuilder {
         self.metrics_level_update = input;
         self
     }
+    /// <p>Describes updates to the granularity of the CloudWatch Logs for an application. The <code>Parallelism</code> level is not recommended for applications with a Parallelism over 64 due to excessive costs.</p>
+    pub fn get_metrics_level_update(&self) -> &::std::option::Option<crate::types::MetricsLevel> {
+        &self.metrics_level_update
+    }
     /// <p>Describes updates to the verbosity of the CloudWatch Logs for an application.</p>
     pub fn log_level_update(mut self, input: crate::types::LogLevel) -> Self {
         self.log_level_update = ::std::option::Option::Some(input);
@@ -86,6 +96,10 @@ impl MonitoringConfigurationUpdateBuilder {
     ) -> Self {
         self.log_level_update = input;
         self
+    }
+    /// <p>Describes updates to the verbosity of the CloudWatch Logs for an application.</p>
+    pub fn get_log_level_update(&self) -> &::std::option::Option<crate::types::LogLevel> {
+        &self.log_level_update
     }
     /// Consumes the builder and constructs a [`MonitoringConfigurationUpdate`](crate::types::MonitoringConfigurationUpdate).
     pub fn build(self) -> crate::types::MonitoringConfigurationUpdate {

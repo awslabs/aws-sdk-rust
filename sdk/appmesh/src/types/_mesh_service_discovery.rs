@@ -43,6 +43,10 @@ impl MeshServiceDiscoveryBuilder {
         self.ip_preference = input;
         self
     }
+    /// <p>The IP version to use to control traffic within the mesh.</p>
+    pub fn get_ip_preference(&self) -> &::std::option::Option<crate::types::IpPreference> {
+        &self.ip_preference
+    }
     /// Consumes the builder and constructs a [`MeshServiceDiscovery`](crate::types::MeshServiceDiscovery).
     pub fn build(self) -> crate::types::MeshServiceDiscovery {
         crate::types::MeshServiceDiscovery {

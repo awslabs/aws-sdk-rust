@@ -50,6 +50,12 @@ impl BatchGetLinkAttributesResponseBuilder {
         self.attributes = input;
         self
     }
+    /// <p>The attributes that are associated with the typed link.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>> {
+        &self.attributes
+    }
     /// Consumes the builder and constructs a [`BatchGetLinkAttributesResponse`](crate::types::BatchGetLinkAttributesResponse).
     pub fn build(self) -> crate::types::BatchGetLinkAttributesResponse {
         crate::types::BatchGetLinkAttributesResponse {

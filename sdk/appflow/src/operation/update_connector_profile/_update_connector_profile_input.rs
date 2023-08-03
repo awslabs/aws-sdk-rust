@@ -78,6 +78,10 @@ impl UpdateConnectorProfileInputBuilder {
         self.connector_profile_name = input;
         self
     }
+    /// <p> The name of the connector profile and is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
+    pub fn get_connector_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connector_profile_name
+    }
     /// <p> Indicates the connection mode and if it is public or private. </p>
     pub fn connection_mode(mut self, input: crate::types::ConnectionMode) -> Self {
         self.connection_mode = ::std::option::Option::Some(input);
@@ -90,6 +94,10 @@ impl UpdateConnectorProfileInputBuilder {
     ) -> Self {
         self.connection_mode = input;
         self
+    }
+    /// <p> Indicates the connection mode and if it is public or private. </p>
+    pub fn get_connection_mode(&self) -> &::std::option::Option<crate::types::ConnectionMode> {
+        &self.connection_mode
     }
     /// <p> Defines the connector-specific profile configuration and credentials. </p>
     pub fn connector_profile_config(mut self, input: crate::types::ConnectorProfileConfig) -> Self {
@@ -104,6 +112,12 @@ impl UpdateConnectorProfileInputBuilder {
         self.connector_profile_config = input;
         self
     }
+    /// <p> Defines the connector-specific profile configuration and credentials. </p>
+    pub fn get_connector_profile_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConnectorProfileConfig> {
+        &self.connector_profile_config
+    }
     /// <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>UpdateConnectorProfile</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p>
     /// <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p>
     /// <p>If you specify input parameters that differ from your first request, an error occurs. If you use a different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>UpdateConnectorProfile</code>. The token is active for 8 hours.</p>
@@ -117,6 +131,12 @@ impl UpdateConnectorProfileInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>UpdateConnectorProfile</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p>
+    /// <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p>
+    /// <p>If you specify input parameters that differ from your first request, an error occurs. If you use a different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>UpdateConnectorProfile</code>. The token is active for 8 hours.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateConnectorProfileInput`](crate::operation::update_connector_profile::UpdateConnectorProfileInput).
     pub fn build(

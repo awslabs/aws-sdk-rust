@@ -49,6 +49,12 @@ impl DeclineInvitationsInputBuilder {
         self.account_ids = input;
         self
     }
+    /// <p>The list of prospective member account IDs for which to decline an invitation.</p>
+    pub fn get_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.account_ids
+    }
     /// Consumes the builder and constructs a [`DeclineInvitationsInput`](crate::operation::decline_invitations::DeclineInvitationsInput).
     pub fn build(
         self,

@@ -128,6 +128,10 @@ impl ReplaceRootVolumeTaskBuilder {
         self.replace_root_volume_task_id = input;
         self
     }
+    /// <p>The ID of the root volume replacement task.</p>
+    pub fn get_replace_root_volume_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replace_root_volume_task_id
+    }
     /// <p>The ID of the instance for which the root volume replacement task was created.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -137,6 +141,10 @@ impl ReplaceRootVolumeTaskBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
+    }
+    /// <p>The ID of the instance for which the root volume replacement task was created.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// <p>The state of the task. The task can be in one of the following states:</p>
     /// <ul>
@@ -169,6 +177,21 @@ impl ReplaceRootVolumeTaskBuilder {
         self.task_state = input;
         self
     }
+    /// <p>The state of the task. The task can be in one of the following states:</p>
+    /// <ul>
+    /// <li> <p> <code>pending</code> - the replacement volume is being created.</p> </li>
+    /// <li> <p> <code>in-progress</code> - the original volume is being detached and the replacement volume is being attached.</p> </li>
+    /// <li> <p> <code>succeeded</code> - the replacement volume has been successfully attached to the instance and the instance is available.</p> </li>
+    /// <li> <p> <code>failing</code> - the replacement task is in the process of failing.</p> </li>
+    /// <li> <p> <code>failed</code> - the replacement task has failed but the original root volume is still attached.</p> </li>
+    /// <li> <p> <code>failing-detached</code> - the replacement task is in the process of failing. The instance might have no root volume attached.</p> </li>
+    /// <li> <p> <code>failed-detached</code> - the replacement task has failed and the instance has no root volume attached.</p> </li>
+    /// </ul>
+    pub fn get_task_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReplaceRootVolumeTaskState> {
+        &self.task_state
+    }
     /// <p>The time the task was started.</p>
     pub fn start_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_time = ::std::option::Option::Some(input.into());
@@ -178,6 +201,10 @@ impl ReplaceRootVolumeTaskBuilder {
     pub fn set_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>The time the task was started.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_time
     }
     /// <p>The time the task completed.</p>
     pub fn complete_time(
@@ -194,6 +221,10 @@ impl ReplaceRootVolumeTaskBuilder {
     ) -> Self {
         self.complete_time = input;
         self
+    }
+    /// <p>The time the task completed.</p>
+    pub fn get_complete_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.complete_time
     }
     /// Appends an item to `tags`.
     ///
@@ -214,6 +245,10 @@ impl ReplaceRootVolumeTaskBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags assigned to the task.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The ID of the AMI used to create the replacement root volume.</p>
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_id = ::std::option::Option::Some(input.into());
@@ -223,6 +258,10 @@ impl ReplaceRootVolumeTaskBuilder {
     pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_id = input;
         self
+    }
+    /// <p>The ID of the AMI used to create the replacement root volume.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_id
     }
     /// <p>The ID of the snapshot used to create the replacement root volume.</p>
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -234,6 +273,10 @@ impl ReplaceRootVolumeTaskBuilder {
         self.snapshot_id = input;
         self
     }
+    /// <p>The ID of the snapshot used to create the replacement root volume.</p>
+    pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_id
+    }
     /// <p>Indicates whether the original root volume is to be deleted after the root volume replacement task completes.</p>
     pub fn delete_replaced_root_volume(mut self, input: bool) -> Self {
         self.delete_replaced_root_volume = ::std::option::Option::Some(input);
@@ -243,6 +286,10 @@ impl ReplaceRootVolumeTaskBuilder {
     pub fn set_delete_replaced_root_volume(mut self, input: ::std::option::Option<bool>) -> Self {
         self.delete_replaced_root_volume = input;
         self
+    }
+    /// <p>Indicates whether the original root volume is to be deleted after the root volume replacement task completes.</p>
+    pub fn get_delete_replaced_root_volume(&self) -> &::std::option::Option<bool> {
+        &self.delete_replaced_root_volume
     }
     /// Consumes the builder and constructs a [`ReplaceRootVolumeTask`](crate::types::ReplaceRootVolumeTask).
     pub fn build(self) -> crate::types::ReplaceRootVolumeTask {

@@ -51,6 +51,10 @@ impl EntityFilterBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the entity search filter field. <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example, you can filter on the ID of a property that is used in a state.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::EntityFilterName> {
+        &self.name
+    }
     /// Appends an item to `value`.
     ///
     /// To override the contents of this collection use [`set_value`](Self::set_value).
@@ -69,6 +73,10 @@ impl EntityFilterBuilder {
     ) -> Self {
         self.value = input;
         self
+    }
+    /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`EntityFilter`](crate::types::EntityFilter).
     pub fn build(self) -> crate::types::EntityFilter {

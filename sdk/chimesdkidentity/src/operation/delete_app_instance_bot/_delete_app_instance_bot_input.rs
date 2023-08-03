@@ -46,6 +46,10 @@ impl DeleteAppInstanceBotInputBuilder {
         self.app_instance_bot_arn = input;
         self
     }
+    /// <p>The ARN of the <code>AppInstanceBot</code> being deleted.</p>
+    pub fn get_app_instance_bot_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_instance_bot_arn
+    }
     /// Consumes the builder and constructs a [`DeleteAppInstanceBotInput`](crate::operation::delete_app_instance_bot::DeleteAppInstanceBotInput).
     pub fn build(
         self,

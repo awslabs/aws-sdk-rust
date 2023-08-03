@@ -74,6 +74,12 @@ impl BatchDeleteInputBuilder {
         self.channel_ids = input;
         self
     }
+    /// List of channel IDs
+    pub fn get_channel_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.channel_ids
+    }
     /// Appends an item to `input_ids`.
     ///
     /// To override the contents of this collection use [`set_input_ids`](Self::set_input_ids).
@@ -92,6 +98,10 @@ impl BatchDeleteInputBuilder {
     ) -> Self {
         self.input_ids = input;
         self
+    }
+    /// List of input IDs
+    pub fn get_input_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.input_ids
     }
     /// Appends an item to `input_security_group_ids`.
     ///
@@ -115,6 +125,12 @@ impl BatchDeleteInputBuilder {
         self.input_security_group_ids = input;
         self
     }
+    /// List of input security group IDs
+    pub fn get_input_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.input_security_group_ids
+    }
     /// Appends an item to `multiplex_ids`.
     ///
     /// To override the contents of this collection use [`set_multiplex_ids`](Self::set_multiplex_ids).
@@ -136,6 +152,12 @@ impl BatchDeleteInputBuilder {
     ) -> Self {
         self.multiplex_ids = input;
         self
+    }
+    /// List of multiplex IDs
+    pub fn get_multiplex_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.multiplex_ids
     }
     /// Consumes the builder and constructs a [`BatchDeleteInput`](crate::operation::batch_delete::BatchDeleteInput).
     pub fn build(

@@ -73,6 +73,12 @@ impl DescribeReplicationConfigurationTemplatesInputBuilder {
         self.replication_configuration_template_i_ds = input;
         self
     }
+    /// <p>Request to describe Replication Configuration template by template IDs.</p>
+    pub fn get_replication_configuration_template_i_ds(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.replication_configuration_template_i_ds
+    }
     /// <p>Request to describe Replication Configuration template by max results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -83,6 +89,10 @@ impl DescribeReplicationConfigurationTemplatesInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>Request to describe Replication Configuration template by max results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>Request to describe Replication Configuration template by next token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -92,6 +102,10 @@ impl DescribeReplicationConfigurationTemplatesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Request to describe Replication Configuration template by next token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeReplicationConfigurationTemplatesInput`](crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplatesInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplatesInput, ::aws_smithy_http::operation::error::BuildError>{

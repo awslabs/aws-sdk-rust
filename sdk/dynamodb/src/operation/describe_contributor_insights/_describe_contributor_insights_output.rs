@@ -107,6 +107,10 @@ impl DescribeContributorInsightsOutputBuilder {
         self.table_name = input;
         self
     }
+    /// <p>The name of the table being described.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
+    }
     /// <p>The name of the global secondary index being described.</p>
     pub fn index_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_name = ::std::option::Option::Some(input.into());
@@ -116,6 +120,10 @@ impl DescribeContributorInsightsOutputBuilder {
     pub fn set_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.index_name = input;
         self
+    }
+    /// <p>The name of the global secondary index being described.</p>
+    pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_name
     }
     /// Appends an item to `contributor_insights_rule_list`.
     ///
@@ -139,6 +147,12 @@ impl DescribeContributorInsightsOutputBuilder {
         self.contributor_insights_rule_list = input;
         self
     }
+    /// <p>List of names of the associated contributor insights rules.</p>
+    pub fn get_contributor_insights_rule_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.contributor_insights_rule_list
+    }
     /// <p>Current status of contributor insights.</p>
     pub fn contributor_insights_status(
         mut self,
@@ -155,6 +169,12 @@ impl DescribeContributorInsightsOutputBuilder {
         self.contributor_insights_status = input;
         self
     }
+    /// <p>Current status of contributor insights.</p>
+    pub fn get_contributor_insights_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContributorInsightsStatus> {
+        &self.contributor_insights_status
+    }
     /// <p>Timestamp of the last time the status was changed.</p>
     pub fn last_update_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_update_date_time = ::std::option::Option::Some(input);
@@ -167,6 +187,12 @@ impl DescribeContributorInsightsOutputBuilder {
     ) -> Self {
         self.last_update_date_time = input;
         self
+    }
+    /// <p>Timestamp of the last time the status was changed.</p>
+    pub fn get_last_update_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_update_date_time
     }
     /// <p>Returns information about the last failure that was encountered.</p>
     /// <p>The most common exceptions for a FAILED status are:</p>
@@ -194,6 +220,17 @@ impl DescribeContributorInsightsOutputBuilder {
     ) -> Self {
         self.failure_exception = input;
         self
+    }
+    /// <p>Returns information about the last failure that was encountered.</p>
+    /// <p>The most common exceptions for a FAILED status are:</p>
+    /// <ul>
+    /// <li> <p>LimitExceededException - Per-account Amazon CloudWatch Contributor Insights rule limit reached. Please disable Contributor Insights for other tables/indexes OR disable Contributor Insights rules before retrying.</p> </li>
+    /// <li> <p>AccessDeniedException - Amazon CloudWatch Contributor Insights rules cannot be modified due to insufficient permissions.</p> </li>
+    /// <li> <p>AccessDeniedException - Failed to create service-linked role for Contributor Insights due to insufficient permissions.</p> </li>
+    /// <li> <p>InternalServerError - Failed to create Amazon CloudWatch Contributor Insights rules. Please retry request.</p> </li>
+    /// </ul>
+    pub fn get_failure_exception(&self) -> &::std::option::Option<crate::types::FailureException> {
+        &self.failure_exception
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

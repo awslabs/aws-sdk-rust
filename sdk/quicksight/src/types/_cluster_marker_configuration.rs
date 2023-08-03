@@ -43,6 +43,10 @@ impl ClusterMarkerConfigurationBuilder {
         self.cluster_marker = input;
         self
     }
+    /// <p>The cluster marker that is a part of the cluster marker configuration.</p>
+    pub fn get_cluster_marker(&self) -> &::std::option::Option<crate::types::ClusterMarker> {
+        &self.cluster_marker
+    }
     /// Consumes the builder and constructs a [`ClusterMarkerConfiguration`](crate::types::ClusterMarkerConfiguration).
     pub fn build(self) -> crate::types::ClusterMarkerConfiguration {
         crate::types::ClusterMarkerConfiguration {

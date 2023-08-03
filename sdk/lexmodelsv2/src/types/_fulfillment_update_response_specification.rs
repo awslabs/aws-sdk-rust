@@ -56,6 +56,10 @@ impl FulfillmentUpdateResponseSpecificationBuilder {
         self.frequency_in_seconds = input;
         self
     }
+    /// <p>The frequency that a message is sent to the user. When the period ends, Amazon Lex chooses a message from the message groups and plays it to the user. If the fulfillment Lambda returns before the first period ends, an update message is not played to the user.</p>
+    pub fn get_frequency_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.frequency_in_seconds
+    }
     /// Appends an item to `message_groups`.
     ///
     /// To override the contents of this collection use [`set_message_groups`](Self::set_message_groups).
@@ -75,6 +79,12 @@ impl FulfillmentUpdateResponseSpecificationBuilder {
         self.message_groups = input;
         self
     }
+    /// <p>1 - 5 message groups that contain update messages. Amazon Lex chooses one of the messages to play to the user.</p>
+    pub fn get_message_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageGroup>> {
+        &self.message_groups
+    }
     /// <p>Determines whether the user can interrupt an update message while it is playing.</p>
     pub fn allow_interrupt(mut self, input: bool) -> Self {
         self.allow_interrupt = ::std::option::Option::Some(input);
@@ -84,6 +94,10 @@ impl FulfillmentUpdateResponseSpecificationBuilder {
     pub fn set_allow_interrupt(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_interrupt = input;
         self
+    }
+    /// <p>Determines whether the user can interrupt an update message while it is playing.</p>
+    pub fn get_allow_interrupt(&self) -> &::std::option::Option<bool> {
+        &self.allow_interrupt
     }
     /// Consumes the builder and constructs a [`FulfillmentUpdateResponseSpecification`](crate::types::FulfillmentUpdateResponseSpecification).
     pub fn build(self) -> crate::types::FulfillmentUpdateResponseSpecification {

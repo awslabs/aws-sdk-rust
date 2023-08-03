@@ -36,6 +36,12 @@ impl CreateSessionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateSession as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_session::builders::CreateSessionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl CreateSessionFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The ID of the session request. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The description of the session. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -128,6 +138,10 @@ impl CreateSessionFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>The description of the session. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The IAM Role ARN </p>
     pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role(input.into());
@@ -137,6 +151,10 @@ impl CreateSessionFluentBuilder {
     pub fn set_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role(input);
         self
+    }
+    /// <p>The IAM Role ARN </p>
+    pub fn get_role(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role()
     }
     /// <p>The <code>SessionCommand</code> that runs the job. </p>
     pub fn command(mut self, input: crate::types::SessionCommand) -> Self {
@@ -151,6 +169,10 @@ impl CreateSessionFluentBuilder {
         self.inner = self.inner.set_command(input);
         self
     }
+    /// <p>The <code>SessionCommand</code> that runs the job. </p>
+    pub fn get_command(&self) -> &::std::option::Option<crate::types::SessionCommand> {
+        self.inner.get_command()
+    }
     /// <p> The number of minutes before session times out. Default for Spark ETL jobs is 48 hours (2880 minutes), the maximum session lifetime for this job type. Consult the documentation for other job types. </p>
     pub fn timeout(mut self, input: i32) -> Self {
         self.inner = self.inner.timeout(input);
@@ -161,6 +183,10 @@ impl CreateSessionFluentBuilder {
         self.inner = self.inner.set_timeout(input);
         self
     }
+    /// <p> The number of minutes before session times out. Default for Spark ETL jobs is 48 hours (2880 minutes), the maximum session lifetime for this job type. Consult the documentation for other job types. </p>
+    pub fn get_timeout(&self) -> &::std::option::Option<i32> {
+        self.inner.get_timeout()
+    }
     /// <p> The number of minutes when idle before session times out. Default for Spark ETL jobs is value of Timeout. Consult the documentation for other job types. </p>
     pub fn idle_timeout(mut self, input: i32) -> Self {
         self.inner = self.inner.idle_timeout(input);
@@ -170,6 +196,10 @@ impl CreateSessionFluentBuilder {
     pub fn set_idle_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_idle_timeout(input);
         self
+    }
+    /// <p> The number of minutes when idle before session times out. Default for Spark ETL jobs is value of Timeout. Consult the documentation for other job types. </p>
+    pub fn get_idle_timeout(&self) -> &::std::option::Option<i32> {
+        self.inner.get_idle_timeout()
     }
     /// Adds a key-value pair to `DefaultArguments`.
     ///
@@ -194,6 +224,14 @@ impl CreateSessionFluentBuilder {
         self.inner = self.inner.set_default_arguments(input);
         self
     }
+    /// <p>A map array of key-value pairs. Max is 75 pairs. </p>
+    pub fn get_default_arguments(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_default_arguments()
+    }
     /// <p>The number of connections to use for the session. </p>
     pub fn connections(mut self, input: crate::types::ConnectionsList) -> Self {
         self.inner = self.inner.connections(input);
@@ -207,6 +245,10 @@ impl CreateSessionFluentBuilder {
         self.inner = self.inner.set_connections(input);
         self
     }
+    /// <p>The number of connections to use for the session. </p>
+    pub fn get_connections(&self) -> &::std::option::Option<crate::types::ConnectionsList> {
+        self.inner.get_connections()
+    }
     /// <p>The number of Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory. </p>
     pub fn max_capacity(mut self, input: f64) -> Self {
         self.inner = self.inner.max_capacity(input);
@@ -217,6 +259,10 @@ impl CreateSessionFluentBuilder {
         self.inner = self.inner.set_max_capacity(input);
         self
     }
+    /// <p>The number of Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory. </p>
+    pub fn get_max_capacity(&self) -> &::std::option::Option<f64> {
+        self.inner.get_max_capacity()
+    }
     /// <p>The number of workers of a defined <code>WorkerType</code> to use for the session. </p>
     pub fn number_of_workers(mut self, input: i32) -> Self {
         self.inner = self.inner.number_of_workers(input);
@@ -226,6 +272,10 @@ impl CreateSessionFluentBuilder {
     pub fn set_number_of_workers(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_number_of_workers(input);
         self
+    }
+    /// <p>The number of workers of a defined <code>WorkerType</code> to use for the session. </p>
+    pub fn get_number_of_workers(&self) -> &::std::option::Option<i32> {
+        self.inner.get_number_of_workers()
     }
     /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of G.1X, G.2X, G.4X, or G.8X for Spark jobs. Accepts the value Z.2X for Ray notebooks.</p>
     /// <ul>
@@ -254,6 +304,17 @@ impl CreateSessionFluentBuilder {
         self.inner = self.inner.set_worker_type(input);
         self
     }
+    /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of G.1X, G.2X, G.4X, or G.8X for Spark jobs. Accepts the value Z.2X for Ray notebooks.</p>
+    /// <ul>
+    /// <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPUs, 16 GB of memory) with 84GB disk (approximately 34GB free), and provides 1 executor per worker. We recommend this worker type for workloads such as data transforms, joins, and queries, to offers a scalable and cost effective way to run most jobs.</p> </li>
+    /// <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPUs, 32 GB of memory) with 128GB disk (approximately 77GB free), and provides 1 executor per worker. We recommend this worker type for workloads such as data transforms, joins, and queries, to offers a scalable and cost effective way to run most jobs.</p> </li>
+    /// <li> <p>For the <code>G.4X</code> worker type, each worker maps to 4 DPU (16 vCPUs, 64 GB of memory) with 256GB disk (approximately 235GB free), and provides 1 executor per worker. We recommend this worker type for jobs whose workloads contain your most demanding transforms, aggregations, joins, and queries. This worker type is available only for Glue version 3.0 or later Spark ETL jobs in the following Amazon Web Services Regions: US East (Ohio), US East (N. Virginia), US West (Oregon), Asia Pacific (Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo), Canada (Central), Europe (Frankfurt), Europe (Ireland), and Europe (Stockholm).</p> </li>
+    /// <li> <p>For the <code>G.8X</code> worker type, each worker maps to 8 DPU (32 vCPUs, 128 GB of memory) with 512GB disk (approximately 487GB free), and provides 1 executor per worker. We recommend this worker type for jobs whose workloads contain your most demanding transforms, aggregations, joins, and queries. This worker type is available only for Glue version 3.0 or later Spark ETL jobs, in the same Amazon Web Services Regions as supported for the <code>G.4X</code> worker type.</p> </li>
+    /// <li> <p>For the <code>Z.2X</code> worker type, each worker maps to 2 M-DPU (8vCPUs, 64 GB of memory) with 128 GB disk (approximately 120GB free), and provides up to 8 Ray workers based on the autoscaler.</p> </li>
+    /// </ul>
+    pub fn get_worker_type(&self) -> &::std::option::Option<crate::types::WorkerType> {
+        self.inner.get_worker_type()
+    }
     /// <p>The name of the SecurityConfiguration structure to be used with the session </p>
     pub fn security_configuration(
         mut self,
@@ -270,6 +331,10 @@ impl CreateSessionFluentBuilder {
         self.inner = self.inner.set_security_configuration(input);
         self
     }
+    /// <p>The name of the SecurityConfiguration structure to be used with the session </p>
+    pub fn get_security_configuration(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_security_configuration()
+    }
     /// <p>The Glue version determines the versions of Apache Spark and Python that Glue supports. The GlueVersion must be greater than 2.0. </p>
     pub fn glue_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.glue_version(input.into());
@@ -279,6 +344,10 @@ impl CreateSessionFluentBuilder {
     pub fn set_glue_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_glue_version(input);
         self
+    }
+    /// <p>The Glue version determines the versions of Apache Spark and Python that Glue supports. The GlueVersion must be greater than 2.0. </p>
+    pub fn get_glue_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_glue_version()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -303,6 +372,14 @@ impl CreateSessionFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The map of key value pairs (tags) belonging to the session.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>The origin of the request. </p>
     pub fn request_origin(
         mut self,
@@ -318,5 +395,9 @@ impl CreateSessionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_request_origin(input);
         self
+    }
+    /// <p>The origin of the request. </p>
+    pub fn get_request_origin(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_request_origin()
     }
 }

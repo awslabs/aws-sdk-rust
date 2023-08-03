@@ -75,6 +75,10 @@ impl ResourceUnavailableExceptionBuilder {
         self.message = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>For a <code>ResourceUnavailableException</code> error, the type of resource that isn't available.</p>
     pub fn resource_type(
         mut self,
@@ -90,6 +94,10 @@ impl ResourceUnavailableExceptionBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>For a <code>ResourceUnavailableException</code> error, the type of resource that isn't available.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

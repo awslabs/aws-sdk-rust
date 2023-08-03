@@ -49,6 +49,12 @@ impl DetectedS3SourceConfigBuilder {
         self.file_format_descriptor = input;
         self
     }
+    /// <p>The source's file format descriptor.</p>
+    pub fn get_file_format_descriptor(
+        &self,
+    ) -> &::std::option::Option<crate::types::DetectedFileFormatDescriptor> {
+        &self.file_format_descriptor
+    }
     /// Consumes the builder and constructs a [`DetectedS3SourceConfig`](crate::types::DetectedS3SourceConfig).
     pub fn build(self) -> crate::types::DetectedS3SourceConfig {
         crate::types::DetectedS3SourceConfig {

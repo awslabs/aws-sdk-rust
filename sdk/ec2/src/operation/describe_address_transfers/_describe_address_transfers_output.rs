@@ -66,6 +66,12 @@ impl DescribeAddressTransfersOutputBuilder {
         self.address_transfers = input;
         self
     }
+    /// <p>The Elastic IP address transfer.</p>
+    pub fn get_address_transfers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AddressTransfer>> {
+        &self.address_transfers
+    }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -75,6 +81,10 @@ impl DescribeAddressTransfersOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

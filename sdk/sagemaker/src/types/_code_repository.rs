@@ -46,6 +46,10 @@ impl CodeRepositoryBuilder {
         self.repository_url = input;
         self
     }
+    /// <p>The URL of the Git repository.</p>
+    pub fn get_repository_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_url
+    }
     /// Consumes the builder and constructs a [`CodeRepository`](crate::types::CodeRepository).
     pub fn build(self) -> crate::types::CodeRepository {
         crate::types::CodeRepository {

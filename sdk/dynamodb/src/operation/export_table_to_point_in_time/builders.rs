@@ -36,6 +36,10 @@ impl ExportTableToPointInTimeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ExportTableToPointInTime as a reference.
+    pub fn as_input(&self) -> &crate::operation::export_table_to_point_in_time::builders::ExportTableToPointInTimeInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl ExportTableToPointInTimeFluentBuilder {
         self.inner = self.inner.set_table_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) associated with the table to export.</p>
+    pub fn get_table_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_table_arn()
+    }
     /// <p>Time in the past from which to export table data, counted in seconds from the start of the Unix epoch. The table export will be a snapshot of the table's state at this point in time.</p>
     pub fn export_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.export_time(input);
@@ -138,6 +146,10 @@ impl ExportTableToPointInTimeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_export_time(input);
         self
+    }
+    /// <p>Time in the past from which to export table data, counted in seconds from the start of the Unix epoch. The table export will be a snapshot of the table's state at this point in time.</p>
+    pub fn get_export_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_export_time()
     }
     /// <p>Providing a <code>ClientToken</code> makes the call to <code>ExportTableToPointInTimeInput</code> idempotent, meaning that multiple identical calls have the same effect as one single call.</p>
     /// <p>A client token is valid for 8 hours after the first request that uses it is completed. After 8 hours, any request with the same client token is treated as a new request. Do not resubmit the same request with the same client token for more than 8 hours, or the result might not be idempotent.</p>
@@ -153,6 +165,12 @@ impl ExportTableToPointInTimeFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>Providing a <code>ClientToken</code> makes the call to <code>ExportTableToPointInTimeInput</code> idempotent, meaning that multiple identical calls have the same effect as one single call.</p>
+    /// <p>A client token is valid for 8 hours after the first request that uses it is completed. After 8 hours, any request with the same client token is treated as a new request. Do not resubmit the same request with the same client token for more than 8 hours, or the result might not be idempotent.</p>
+    /// <p>If you submit a request with the same client token but a change in other parameters within the 8-hour idempotency window, DynamoDB returns an <code>ImportConflictException</code>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>The name of the Amazon S3 bucket to export the snapshot to.</p>
     pub fn s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.s3_bucket(input.into());
@@ -162,6 +180,10 @@ impl ExportTableToPointInTimeFluentBuilder {
     pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_s3_bucket(input);
         self
+    }
+    /// <p>The name of the Amazon S3 bucket to export the snapshot to.</p>
+    pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_s3_bucket()
     }
     /// <p>The ID of the Amazon Web Services account that owns the bucket the export will be stored in.</p>
     pub fn s3_bucket_owner(
@@ -179,6 +201,10 @@ impl ExportTableToPointInTimeFluentBuilder {
         self.inner = self.inner.set_s3_bucket_owner(input);
         self
     }
+    /// <p>The ID of the Amazon Web Services account that owns the bucket the export will be stored in.</p>
+    pub fn get_s3_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_s3_bucket_owner()
+    }
     /// <p>The Amazon S3 bucket prefix to use as the file name and path of the exported snapshot.</p>
     pub fn s3_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.s3_prefix(input.into());
@@ -188,6 +214,10 @@ impl ExportTableToPointInTimeFluentBuilder {
     pub fn set_s3_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_s3_prefix(input);
         self
+    }
+    /// <p>The Amazon S3 bucket prefix to use as the file name and path of the exported snapshot.</p>
+    pub fn get_s3_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_s3_prefix()
     }
     /// <p>Type of encryption used on the bucket where export data will be stored. Valid values for <code>S3SseAlgorithm</code> are:</p>
     /// <ul>
@@ -210,6 +240,14 @@ impl ExportTableToPointInTimeFluentBuilder {
         self.inner = self.inner.set_s3_sse_algorithm(input);
         self
     }
+    /// <p>Type of encryption used on the bucket where export data will be stored. Valid values for <code>S3SseAlgorithm</code> are:</p>
+    /// <ul>
+    /// <li> <p> <code>AES256</code> - server-side encryption with Amazon S3 managed keys</p> </li>
+    /// <li> <p> <code>KMS</code> - server-side encryption with KMS managed keys</p> </li>
+    /// </ul>
+    pub fn get_s3_sse_algorithm(&self) -> &::std::option::Option<crate::types::S3SseAlgorithm> {
+        self.inner.get_s3_sse_algorithm()
+    }
     /// <p>The ID of the KMS managed key used to encrypt the S3 bucket where export data will be stored (if applicable).</p>
     pub fn s3_sse_kms_key_id(
         mut self,
@@ -226,6 +264,10 @@ impl ExportTableToPointInTimeFluentBuilder {
         self.inner = self.inner.set_s3_sse_kms_key_id(input);
         self
     }
+    /// <p>The ID of the KMS managed key used to encrypt the S3 bucket where export data will be stored (if applicable).</p>
+    pub fn get_s3_sse_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_s3_sse_kms_key_id()
+    }
     /// <p>The format for the exported data. Valid values for <code>ExportFormat</code> are <code>DYNAMODB_JSON</code> or <code>ION</code>.</p>
     pub fn export_format(mut self, input: crate::types::ExportFormat) -> Self {
         self.inner = self.inner.export_format(input);
@@ -238,5 +280,9 @@ impl ExportTableToPointInTimeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_export_format(input);
         self
+    }
+    /// <p>The format for the exported data. Valid values for <code>ExportFormat</code> are <code>DYNAMODB_JSON</code> or <code>ION</code>.</p>
+    pub fn get_export_format(&self) -> &::std::option::Option<crate::types::ExportFormat> {
+        self.inner.get_export_format()
     }
 }

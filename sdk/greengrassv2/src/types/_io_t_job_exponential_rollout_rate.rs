@@ -61,6 +61,10 @@ impl IoTJobExponentialRolloutRateBuilder {
         self.base_rate_per_minute = input;
         self
     }
+    /// <p>The minimum number of devices that receive a pending job notification, per minute, when the job starts. This parameter defines the initial rollout rate of the job.</p>
+    pub fn get_base_rate_per_minute(&self) -> &::std::option::Option<i32> {
+        &self.base_rate_per_minute
+    }
     /// <p>The exponential factor to increase the rollout rate for the job.</p>
     /// <p>This parameter supports up to one digit after the decimal (for example, you can specify <code>1.5</code>, but not <code>1.55</code>).</p>
     pub fn increment_factor(mut self, input: f64) -> Self {
@@ -72,6 +76,11 @@ impl IoTJobExponentialRolloutRateBuilder {
     pub fn set_increment_factor(mut self, input: ::std::option::Option<f64>) -> Self {
         self.increment_factor = input;
         self
+    }
+    /// <p>The exponential factor to increase the rollout rate for the job.</p>
+    /// <p>This parameter supports up to one digit after the decimal (for example, you can specify <code>1.5</code>, but not <code>1.55</code>).</p>
+    pub fn get_increment_factor(&self) -> &::std::option::Option<f64> {
+        &self.increment_factor
     }
     /// <p>The criteria to increase the rollout rate for the job.</p>
     pub fn rate_increase_criteria(
@@ -88,6 +97,12 @@ impl IoTJobExponentialRolloutRateBuilder {
     ) -> Self {
         self.rate_increase_criteria = input;
         self
+    }
+    /// <p>The criteria to increase the rollout rate for the job.</p>
+    pub fn get_rate_increase_criteria(
+        &self,
+    ) -> &::std::option::Option<crate::types::IoTJobRateIncreaseCriteria> {
+        &self.rate_increase_criteria
     }
     /// Consumes the builder and constructs a [`IoTJobExponentialRolloutRate`](crate::types::IoTJobExponentialRolloutRate).
     pub fn build(self) -> crate::types::IoTJobExponentialRolloutRate {

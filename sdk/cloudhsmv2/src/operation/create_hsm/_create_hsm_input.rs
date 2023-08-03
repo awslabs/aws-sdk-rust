@@ -55,6 +55,10 @@ impl CreateHsmInputBuilder {
         self.cluster_id = input;
         self
     }
+    /// <p>The identifier (ID) of the HSM's cluster. To find the cluster ID, use <code>DescribeClusters</code>.</p>
+    pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_id
+    }
     /// <p>The Availability Zone where you are creating the HSM. To find the cluster's Availability Zones, use <code>DescribeClusters</code>.</p>
     pub fn availability_zone(
         mut self,
@@ -71,6 +75,10 @@ impl CreateHsmInputBuilder {
         self.availability_zone = input;
         self
     }
+    /// <p>The Availability Zone where you are creating the HSM. To find the cluster's Availability Zones, use <code>DescribeClusters</code>.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p>The HSM's IP address. If you specify an IP address, use an available address from the subnet that maps to the Availability Zone where you are creating the HSM. If you don't specify an IP address, one is chosen for you from that subnet.</p>
     pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_address = ::std::option::Option::Some(input.into());
@@ -80,6 +88,10 @@ impl CreateHsmInputBuilder {
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_address = input;
         self
+    }
+    /// <p>The HSM's IP address. If you specify an IP address, use an available address from the subnet that maps to the Availability Zone where you are creating the HSM. If you don't specify an IP address, one is chosen for you from that subnet.</p>
+    pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_address
     }
     /// Consumes the builder and constructs a [`CreateHsmInput`](crate::operation::create_hsm::CreateHsmInput).
     pub fn build(

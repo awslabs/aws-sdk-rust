@@ -40,6 +40,10 @@ impl StopDeliveryStreamEncryptionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StopDeliveryStreamEncryption as a reference.
+    pub fn as_input(&self) -> &crate::operation::stop_delivery_stream_encryption::builders::StopDeliveryStreamEncryptionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,5 +139,9 @@ impl StopDeliveryStreamEncryptionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_delivery_stream_name(input);
         self
+    }
+    /// <p>The name of the delivery stream for which you want to disable server-side encryption (SSE).</p>
+    pub fn get_delivery_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_delivery_stream_name()
     }
 }

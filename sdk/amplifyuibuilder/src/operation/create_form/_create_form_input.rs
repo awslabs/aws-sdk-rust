@@ -63,6 +63,10 @@ impl CreateFormInputBuilder {
         self.app_id = input;
         self
     }
+    /// <p>The unique ID of the Amplify app to associate with the form.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
     pub fn environment_name(
         mut self,
@@ -79,6 +83,10 @@ impl CreateFormInputBuilder {
         self.environment_name = input;
         self
     }
+    /// <p>The name of the backend environment that is a part of the Amplify app.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_name
+    }
     /// <p>The unique client token.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -88,6 +96,10 @@ impl CreateFormInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>The unique client token.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// <p>Represents the configuration of the form to create.</p>
     pub fn form_to_create(mut self, input: crate::types::CreateFormData) -> Self {
@@ -101,6 +113,10 @@ impl CreateFormInputBuilder {
     ) -> Self {
         self.form_to_create = input;
         self
+    }
+    /// <p>Represents the configuration of the form to create.</p>
+    pub fn get_form_to_create(&self) -> &::std::option::Option<crate::types::CreateFormData> {
+        &self.form_to_create
     }
     /// Consumes the builder and constructs a [`CreateFormInput`](crate::operation::create_form::CreateFormInput).
     pub fn build(

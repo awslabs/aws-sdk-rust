@@ -56,6 +56,10 @@ impl UnprocessedAccountBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID for the account that the request applies to.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The source of the issue or delay in processing the request.</p>
     pub fn error_code(mut self, input: crate::types::ErrorCode) -> Self {
         self.error_code = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl UnprocessedAccountBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::ErrorCode>) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>The source of the issue or delay in processing the request.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<crate::types::ErrorCode> {
+        &self.error_code
     }
     /// <p>The reason why the request hasn't been processed.</p>
     pub fn error_message(
@@ -81,6 +89,10 @@ impl UnprocessedAccountBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>The reason why the request hasn't been processed.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`UnprocessedAccount`](crate::types::UnprocessedAccount).
     pub fn build(self) -> crate::types::UnprocessedAccount {

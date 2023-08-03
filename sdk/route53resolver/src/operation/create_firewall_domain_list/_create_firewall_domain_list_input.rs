@@ -63,6 +63,10 @@ impl CreateFirewallDomainListInputBuilder {
         self.creator_request_id = input;
         self
     }
+    /// <p>A unique string that identifies the request and that allows you to retry failed requests without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp. </p>
+    pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creator_request_id
+    }
     /// <p>A name that lets you identify the domain list to manage and use it.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl CreateFirewallDomainListInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A name that lets you identify the domain list to manage and use it.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `tags`.
     ///
@@ -91,6 +99,10 @@ impl CreateFirewallDomainListInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of the tag keys and values that you want to associate with the domain list. </p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateFirewallDomainListInput`](crate::operation::create_firewall_domain_list::CreateFirewallDomainListInput).
     pub fn build(

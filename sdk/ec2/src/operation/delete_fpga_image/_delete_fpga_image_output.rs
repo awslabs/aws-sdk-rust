@@ -47,6 +47,10 @@ impl DeleteFpgaImageOutputBuilder {
         self.r#return = input;
         self
     }
+    /// <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
+    pub fn get_return(&self) -> &::std::option::Option<bool> {
+        &self.r#return
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

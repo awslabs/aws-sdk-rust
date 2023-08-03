@@ -152,6 +152,10 @@ impl EventLogEntryBuilder {
         self.id = input;
         self
     }
+    /// <p>The system-generated unique ID of the event.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the event.</p>
     pub fn event_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_name = ::std::option::Option::Some(input.into());
@@ -162,6 +166,10 @@ impl EventLogEntryBuilder {
         self.event_name = input;
         self
     }
+    /// <p>The name of the event.</p>
+    pub fn get_event_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_name
+    }
     /// <p>The type of the event.</p>
     pub fn event_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_type = ::std::option::Option::Some(input.into());
@@ -171,6 +179,10 @@ impl EventLogEntryBuilder {
     pub fn set_event_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_type = input;
         self
+    }
+    /// <p>The type of the event.</p>
+    pub fn get_event_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_type
     }
     /// <p>The category for the event.</p>
     pub fn event_category(
@@ -188,6 +200,10 @@ impl EventLogEntryBuilder {
         self.event_category = input;
         self
     }
+    /// <p>The category for the event.</p>
+    pub fn get_event_category(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_category
+    }
     /// <p>The source of the event.</p>
     pub fn event_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_source = ::std::option::Option::Some(input.into());
@@ -197,6 +213,10 @@ impl EventLogEntryBuilder {
     pub fn set_event_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_source = input;
         self
+    }
+    /// <p>The source of the event.</p>
+    pub fn get_event_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_source
     }
     /// <p>The time the event took place, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
     pub fn event_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -211,6 +231,10 @@ impl EventLogEntryBuilder {
         self.event_time = input;
         self
     }
+    /// <p>The time the event took place, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
+    pub fn get_event_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.event_time
+    }
     /// <p>The type of the event.</p>
     pub fn operation_type(mut self, input: crate::types::OperationType) -> Self {
         self.operation_type = ::std::option::Option::Some(input);
@@ -223,6 +247,10 @@ impl EventLogEntryBuilder {
     ) -> Self {
         self.operation_type = input;
         self
+    }
+    /// <p>The type of the event.</p>
+    pub fn get_operation_type(&self) -> &::std::option::Option<crate::types::OperationType> {
+        &self.operation_type
     }
     /// <p>The system-generated unique ID of the user whose actions are recorded in the event.</p>
     pub fn user_identity(mut self, input: crate::types::UserIdentity) -> Self {
@@ -237,6 +265,10 @@ impl EventLogEntryBuilder {
         self.user_identity = input;
         self
     }
+    /// <p>The system-generated unique ID of the user whose actions are recorded in the event.</p>
+    pub fn get_user_identity(&self) -> &::std::option::Option<crate::types::UserIdentity> {
+        &self.user_identity
+    }
     /// <p>Information about the project where the event occurred.</p>
     pub fn project_information(mut self, input: crate::types::ProjectInformation) -> Self {
         self.project_information = ::std::option::Option::Some(input);
@@ -250,6 +282,12 @@ impl EventLogEntryBuilder {
         self.project_information = input;
         self
     }
+    /// <p>Information about the project where the event occurred.</p>
+    pub fn get_project_information(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProjectInformation> {
+        &self.project_information
+    }
     /// <p>The system-generated unique ID of the request.</p>
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_id = ::std::option::Option::Some(input.into());
@@ -259,6 +297,10 @@ impl EventLogEntryBuilder {
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_id = input;
         self
+    }
+    /// <p>The system-generated unique ID of the request.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
     }
     /// <p>Information about the payload of the request.</p>
     pub fn request_payload(mut self, input: crate::types::EventPayload) -> Self {
@@ -273,6 +315,10 @@ impl EventLogEntryBuilder {
         self.request_payload = input;
         self
     }
+    /// <p>Information about the payload of the request.</p>
+    pub fn get_request_payload(&self) -> &::std::option::Option<crate::types::EventPayload> {
+        &self.request_payload
+    }
     /// <p>Information about the payload of the response, if any.</p>
     pub fn response_payload(mut self, input: crate::types::EventPayload) -> Self {
         self.response_payload = ::std::option::Option::Some(input);
@@ -286,6 +332,10 @@ impl EventLogEntryBuilder {
         self.response_payload = input;
         self
     }
+    /// <p>Information about the payload of the response, if any.</p>
+    pub fn get_response_payload(&self) -> &::std::option::Option<crate::types::EventPayload> {
+        &self.response_payload
+    }
     /// <p>The code of the error, if any.</p>
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
@@ -295,6 +345,10 @@ impl EventLogEntryBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>The code of the error, if any.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
     }
     /// <p>The IP address of the user whose actions are recorded in the event.</p>
     pub fn source_ip_address(
@@ -312,6 +366,10 @@ impl EventLogEntryBuilder {
         self.source_ip_address = input;
         self
     }
+    /// <p>The IP address of the user whose actions are recorded in the event.</p>
+    pub fn get_source_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_ip_address
+    }
     /// <p>The user agent whose actions are recorded in the event.</p>
     pub fn user_agent(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_agent = ::std::option::Option::Some(input.into());
@@ -321,6 +379,10 @@ impl EventLogEntryBuilder {
     pub fn set_user_agent(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_agent = input;
         self
+    }
+    /// <p>The user agent whose actions are recorded in the event.</p>
+    pub fn get_user_agent(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_agent
     }
     /// Consumes the builder and constructs a [`EventLogEntry`](crate::types::EventLogEntry).
     pub fn build(self) -> crate::types::EventLogEntry {

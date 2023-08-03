@@ -40,6 +40,10 @@ impl TargetConfigurationBuilder {
         self.target_value = input;
         self
     }
+    /// <p>Desired value to use with a target-based scaling policy. The value must be relevant for whatever metric the scaling policy is using. For example, in a policy using the metric PercentAvailableGameSessions, the target value should be the preferred size of the fleet's buffer (the percent of capacity that should be idle and ready for new game sessions).</p>
+    pub fn get_target_value(&self) -> &::std::option::Option<f64> {
+        &self.target_value
+    }
     /// Consumes the builder and constructs a [`TargetConfiguration`](crate::types::TargetConfiguration).
     pub fn build(self) -> crate::types::TargetConfiguration {
         crate::types::TargetConfiguration {

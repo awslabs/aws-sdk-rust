@@ -57,6 +57,12 @@ impl AliasRoutingConfigurationBuilder {
         self.additional_version_weights = input;
         self
     }
+    /// <p>The second version, and the percentage of traffic that's routed to it.</p>
+    pub fn get_additional_version_weights(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, f64>> {
+        &self.additional_version_weights
+    }
     /// Consumes the builder and constructs a [`AliasRoutingConfiguration`](crate::types::AliasRoutingConfiguration).
     pub fn build(self) -> crate::types::AliasRoutingConfiguration {
         crate::types::AliasRoutingConfiguration {

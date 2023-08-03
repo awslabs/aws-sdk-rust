@@ -74,6 +74,10 @@ impl DryRunProgressStatusBuilder {
         self.dry_run_id = input;
         self
     }
+    /// <p>The unique identifier of the dry run.</p>
+    pub fn get_dry_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dry_run_id
+    }
     /// <p>The current status of the dry run.</p>
     pub fn dry_run_status(
         mut self,
@@ -89,6 +93,10 @@ impl DryRunProgressStatusBuilder {
     ) -> Self {
         self.dry_run_status = input;
         self
+    }
+    /// <p>The current status of the dry run.</p>
+    pub fn get_dry_run_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dry_run_status
     }
     /// <p>The timestamp when the dry run was initiated.</p>
     pub fn creation_date(
@@ -106,6 +114,10 @@ impl DryRunProgressStatusBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>The timestamp when the dry run was initiated.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_date
+    }
     /// <p>The timestamp when the dry run was last updated.</p>
     pub fn update_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.update_date = ::std::option::Option::Some(input.into());
@@ -115,6 +127,10 @@ impl DryRunProgressStatusBuilder {
     pub fn set_update_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.update_date = input;
         self
+    }
+    /// <p>The timestamp when the dry run was last updated.</p>
+    pub fn get_update_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.update_date
     }
     /// Appends an item to `validation_failures`.
     ///
@@ -134,6 +150,12 @@ impl DryRunProgressStatusBuilder {
     ) -> Self {
         self.validation_failures = input;
         self
+    }
+    /// <p>Any validation failures that occurred as a result of the dry run.</p>
+    pub fn get_validation_failures(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationFailure>> {
+        &self.validation_failures
     }
     /// Consumes the builder and constructs a [`DryRunProgressStatus`](crate::types::DryRunProgressStatus).
     pub fn build(self) -> crate::types::DryRunProgressStatus {

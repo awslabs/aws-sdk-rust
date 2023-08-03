@@ -62,6 +62,10 @@ impl StartSimulationOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the simulation. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>A universally unique identifier (UUID) for this simulation.</p>
     pub fn execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_id = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl StartSimulationOutputBuilder {
     pub fn set_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_id = input;
         self
+    }
+    /// <p>A universally unique identifier (UUID) for this simulation.</p>
+    pub fn get_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_id
     }
     /// <p>The time when the simulation was created, expressed as the number of seconds and milliseconds in UTC since the Unix epoch (0:0:0.000, January 1, 1970).</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -84,6 +92,10 @@ impl StartSimulationOutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The time when the simulation was created, expressed as the number of seconds and milliseconds in UTC since the Unix epoch (0:0:0.000, January 1, 1970).</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

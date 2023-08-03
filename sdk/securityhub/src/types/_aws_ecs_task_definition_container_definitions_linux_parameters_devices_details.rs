@@ -62,6 +62,10 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetailsBuilde
         self.container_path = input;
         self
     }
+    /// <p>The path inside the container at which to expose the host device.</p>
+    pub fn get_container_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.container_path
+    }
     /// <p>The path for the device on the host container instance.</p>
     pub fn host_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host_path = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetailsBuilde
     pub fn set_host_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.host_path = input;
         self
+    }
+    /// <p>The path for the device on the host container instance.</p>
+    pub fn get_host_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host_path
     }
     /// Appends an item to `permissions`.
     ///
@@ -90,6 +98,12 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetailsBuilde
     ) -> Self {
         self.permissions = input;
         self
+    }
+    /// <p>The explicit permissions to provide to the container for the device. By default, the container has permissions for read, write, and <code>mknod</code> for the device.</p>
+    pub fn get_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.permissions
     }
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails).
     pub fn build(

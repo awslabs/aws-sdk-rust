@@ -51,6 +51,12 @@ impl UpdateQualificationTypeOutputBuilder {
         self.qualification_type = input;
         self
     }
+    /// <p> Contains a QualificationType data structure.</p>
+    pub fn get_qualification_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::QualificationType> {
+        &self.qualification_type
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

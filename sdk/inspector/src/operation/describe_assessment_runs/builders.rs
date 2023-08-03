@@ -36,6 +36,13 @@ impl DescribeAssessmentRunsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeAssessmentRuns as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_assessment_runs::builders::DescribeAssessmentRunsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,5 +142,11 @@ impl DescribeAssessmentRunsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_assessment_run_arns(input);
         self
+    }
+    /// <p>The ARN that specifies the assessment run that you want to describe.</p>
+    pub fn get_assessment_run_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_assessment_run_arns()
     }
 }

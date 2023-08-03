@@ -78,6 +78,12 @@ impl RadarChartSortConfigurationBuilder {
         self.category_sort = input;
         self
     }
+    /// <p>The category sort options of a radar chart.</p>
+    pub fn get_category_sort(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>> {
+        &self.category_sort
+    }
     /// <p>The category items limit for a radar chart.</p>
     pub fn category_items_limit(mut self, input: crate::types::ItemsLimitConfiguration) -> Self {
         self.category_items_limit = ::std::option::Option::Some(input);
@@ -90,6 +96,12 @@ impl RadarChartSortConfigurationBuilder {
     ) -> Self {
         self.category_items_limit = input;
         self
+    }
+    /// <p>The category items limit for a radar chart.</p>
+    pub fn get_category_items_limit(
+        &self,
+    ) -> &::std::option::Option<crate::types::ItemsLimitConfiguration> {
+        &self.category_items_limit
     }
     /// Appends an item to `color_sort`.
     ///
@@ -110,6 +122,12 @@ impl RadarChartSortConfigurationBuilder {
         self.color_sort = input;
         self
     }
+    /// <p>The color sort configuration of a radar chart.</p>
+    pub fn get_color_sort(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>> {
+        &self.color_sort
+    }
     /// <p>The color items limit of a radar chart.</p>
     pub fn color_items_limit(mut self, input: crate::types::ItemsLimitConfiguration) -> Self {
         self.color_items_limit = ::std::option::Option::Some(input);
@@ -122,6 +140,12 @@ impl RadarChartSortConfigurationBuilder {
     ) -> Self {
         self.color_items_limit = input;
         self
+    }
+    /// <p>The color items limit of a radar chart.</p>
+    pub fn get_color_items_limit(
+        &self,
+    ) -> &::std::option::Option<crate::types::ItemsLimitConfiguration> {
+        &self.color_items_limit
     }
     /// Consumes the builder and constructs a [`RadarChartSortConfiguration`](crate::types::RadarChartSortConfiguration).
     pub fn build(self) -> crate::types::RadarChartSortConfiguration {

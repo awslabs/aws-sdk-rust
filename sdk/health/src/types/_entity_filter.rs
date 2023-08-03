@@ -102,6 +102,10 @@ impl EntityFilterBuilder {
         self.event_arns = input;
         self
     }
+    /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code> </p>
+    pub fn get_event_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.event_arns
+    }
     /// Appends an item to `entity_arns`.
     ///
     /// To override the contents of this collection use [`set_entity_arns`](Self::set_entity_arns).
@@ -120,6 +124,12 @@ impl EntityFilterBuilder {
     ) -> Self {
         self.entity_arns = input;
         self
+    }
+    /// <p>A list of entity ARNs (unique identifiers).</p>
+    pub fn get_entity_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.entity_arns
     }
     /// Appends an item to `entity_values`.
     ///
@@ -143,6 +153,12 @@ impl EntityFilterBuilder {
         self.entity_values = input;
         self
     }
+    /// <p>A list of IDs for affected entities.</p>
+    pub fn get_entity_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.entity_values
+    }
     /// Appends an item to `last_updated_times`.
     ///
     /// To override the contents of this collection use [`set_last_updated_times`](Self::set_last_updated_times).
@@ -161,6 +177,12 @@ impl EntityFilterBuilder {
     ) -> Self {
         self.last_updated_times = input;
         self
+    }
+    /// <p>A list of the most recent dates and times that the entity was updated.</p>
+    pub fn get_last_updated_times(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DateTimeRange>> {
+        &self.last_updated_times
     }
     /// Appends an item to `tags`.
     ///
@@ -192,6 +214,16 @@ impl EntityFilterBuilder {
         self.tags = input;
         self
     }
+    /// <p>A map of entity tags attached to the affected entity.</p> <note>
+    /// <p>Currently, the <code>tags</code> property isn't supported.</p>
+    /// </note>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    > {
+        &self.tags
+    }
     /// Appends an item to `status_codes`.
     ///
     /// To override the contents of this collection use [`set_status_codes`](Self::set_status_codes).
@@ -210,6 +242,12 @@ impl EntityFilterBuilder {
     ) -> Self {
         self.status_codes = input;
         self
+    }
+    /// <p>A list of entity status codes (<code>IMPAIRED</code>, <code>UNIMPAIRED</code>, or <code>UNKNOWN</code>).</p>
+    pub fn get_status_codes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityStatusCode>> {
+        &self.status_codes
     }
     /// Consumes the builder and constructs a [`EntityFilter`](crate::types::EntityFilter).
     pub fn build(self) -> crate::types::EntityFilter {

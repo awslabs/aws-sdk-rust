@@ -37,6 +37,12 @@ impl GetTrustAnchorFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetTrustAnchor as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_trust_anchor::builders::GetTrustAnchorInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +138,9 @@ impl GetTrustAnchorFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_trust_anchor_id(input);
         self
+    }
+    /// <p>The unique identifier of the trust anchor.</p>
+    pub fn get_trust_anchor_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_trust_anchor_id()
     }
 }

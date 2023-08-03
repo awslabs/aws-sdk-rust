@@ -148,6 +148,10 @@ impl StartTaskContactInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The identifier of the previous chat, voice, or task contact. </p>
     pub fn previous_contact_id(
         mut self,
@@ -163,6 +167,10 @@ impl StartTaskContactInputBuilder {
     ) -> Self {
         self.previous_contact_id = input;
         self
+    }
+    /// <p>The identifier of the previous chat, voice, or task contact. </p>
+    pub fn get_previous_contact_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.previous_contact_id
     }
     /// <p>The identifier of the flow for initiating the tasks. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
     /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
@@ -181,6 +189,11 @@ impl StartTaskContactInputBuilder {
     ) -> Self {
         self.contact_flow_id = input;
         self
+    }
+    /// <p>The identifier of the flow for initiating the tasks. To see the ContactFlowId in the Amazon Connect console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
+    /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b> </p>
+    pub fn get_contact_flow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_flow_id
     }
     /// Adds a key-value pair to `attributes`.
     ///
@@ -209,6 +222,15 @@ impl StartTaskContactInputBuilder {
         self.attributes = input;
         self
     }
+    /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
+    /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.attributes
+    }
     /// <p>The name of a task that is shown to an agent in the Contact Control Panel (CCP).</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -218,6 +240,10 @@ impl StartTaskContactInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of a task that is shown to an agent in the Contact Control Panel (CCP).</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Adds a key-value pair to `references`.
     ///
@@ -244,6 +270,14 @@ impl StartTaskContactInputBuilder {
         self.references = input;
         self
     }
+    /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).</p>
+    pub fn get_references(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::Reference>,
+    > {
+        &self.references
+    }
     /// <p>A description of the task that is shown to an agent in the Contact Control Panel (CCP).</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -254,6 +288,10 @@ impl StartTaskContactInputBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the task that is shown to an agent in the Contact Control Panel (CCP).</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -263,6 +301,10 @@ impl StartTaskContactInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
     pub fn scheduled_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -276,6 +318,10 @@ impl StartTaskContactInputBuilder {
     ) -> Self {
         self.scheduled_time = input;
         self
+    }
+    /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
+    pub fn get_scheduled_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.scheduled_time
     }
     /// <p>A unique identifier for the task template.</p>
     pub fn task_template_id(
@@ -293,6 +339,10 @@ impl StartTaskContactInputBuilder {
         self.task_template_id = input;
         self
     }
+    /// <p>A unique identifier for the task template.</p>
+    pub fn get_task_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_template_id
+    }
     /// <p>The identifier for the quick connect.</p>
     pub fn quick_connect_id(
         mut self,
@@ -309,6 +359,10 @@ impl StartTaskContactInputBuilder {
         self.quick_connect_id = input;
         self
     }
+    /// <p>The identifier for the quick connect.</p>
+    pub fn get_quick_connect_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.quick_connect_id
+    }
     /// <p>The contactId that is <a href="https://docs.aws.amazon.com/connect/latest/adminguide/tasks.html#linked-tasks">related</a> to this contact.</p>
     pub fn related_contact_id(
         mut self,
@@ -324,6 +378,10 @@ impl StartTaskContactInputBuilder {
     ) -> Self {
         self.related_contact_id = input;
         self
+    }
+    /// <p>The contactId that is <a href="https://docs.aws.amazon.com/connect/latest/adminguide/tasks.html#linked-tasks">related</a> to this contact.</p>
+    pub fn get_related_contact_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.related_contact_id
     }
     /// Consumes the builder and constructs a [`StartTaskContactInput`](crate::operation::start_task_contact::StartTaskContactInput).
     pub fn build(

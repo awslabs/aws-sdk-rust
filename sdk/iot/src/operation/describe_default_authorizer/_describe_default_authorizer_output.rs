@@ -51,6 +51,12 @@ impl DescribeDefaultAuthorizerOutputBuilder {
         self.authorizer_description = input;
         self
     }
+    /// <p>The default authorizer's description.</p>
+    pub fn get_authorizer_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuthorizerDescription> {
+        &self.authorizer_description
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

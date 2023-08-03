@@ -48,6 +48,10 @@ impl ManagedPersistenceMonitoringConfigurationBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Enables managed logging and defaults to true. If set to false, managed logging will be turned off.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// <p>The KMS key ARN to encrypt the logs stored in managed log persistence.</p>
     pub fn encryption_key_arn(
         mut self,
@@ -63,6 +67,10 @@ impl ManagedPersistenceMonitoringConfigurationBuilder {
     ) -> Self {
         self.encryption_key_arn = input;
         self
+    }
+    /// <p>The KMS key ARN to encrypt the logs stored in managed log persistence.</p>
+    pub fn get_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encryption_key_arn
     }
     /// Consumes the builder and constructs a [`ManagedPersistenceMonitoringConfiguration`](crate::types::ManagedPersistenceMonitoringConfiguration).
     pub fn build(self) -> crate::types::ManagedPersistenceMonitoringConfiguration {

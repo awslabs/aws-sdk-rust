@@ -79,6 +79,10 @@ impl DescribeTypeRegistrationOutputBuilder {
         self.progress_status = input;
         self
     }
+    /// <p>The current status of the extension registration request.</p>
+    pub fn get_progress_status(&self) -> &::std::option::Option<crate::types::RegistrationStatus> {
+        &self.progress_status
+    }
     /// <p>The description of the extension registration request.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -88,6 +92,10 @@ impl DescribeTypeRegistrationOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the extension registration request.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The Amazon Resource Name (ARN) of the extension being registered.</p>
     /// <p>For registration requests with a <code>ProgressStatus</code> of other than <code>COMPLETE</code>, this will be <code>null</code>.</p>
@@ -100,6 +108,11 @@ impl DescribeTypeRegistrationOutputBuilder {
     pub fn set_type_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.type_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the extension being registered.</p>
+    /// <p>For registration requests with a <code>ProgressStatus</code> of other than <code>COMPLETE</code>, this will be <code>null</code>.</p>
+    pub fn get_type_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.type_arn
     }
     /// <p>The Amazon Resource Name (ARN) of this specific version of the extension being registered.</p>
     /// <p>For registration requests with a <code>ProgressStatus</code> of other than <code>COMPLETE</code>, this will be <code>null</code>.</p>
@@ -118,6 +131,11 @@ impl DescribeTypeRegistrationOutputBuilder {
     ) -> Self {
         self.type_version_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of this specific version of the extension being registered.</p>
+    /// <p>For registration requests with a <code>ProgressStatus</code> of other than <code>COMPLETE</code>, this will be <code>null</code>.</p>
+    pub fn get_type_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.type_version_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

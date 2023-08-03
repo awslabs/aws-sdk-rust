@@ -41,6 +41,12 @@ impl ListTrialComponentsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListTrialComponents as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_trial_components::builders::ListTrialComponentsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -148,6 +154,10 @@ impl ListTrialComponentsFluentBuilder {
         self.inner = self.inner.set_experiment_name(input);
         self
     }
+    /// <p>A filter that returns only components that are part of the specified experiment. If you specify <code>ExperimentName</code>, you can't filter by <code>SourceArn</code> or <code>TrialName</code>.</p>
+    pub fn get_experiment_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_experiment_name()
+    }
     /// <p>A filter that returns only components that are part of the specified trial. If you specify <code>TrialName</code>, you can't filter by <code>ExperimentName</code> or <code>SourceArn</code>.</p>
     pub fn trial_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.trial_name(input.into());
@@ -158,6 +168,10 @@ impl ListTrialComponentsFluentBuilder {
         self.inner = self.inner.set_trial_name(input);
         self
     }
+    /// <p>A filter that returns only components that are part of the specified trial. If you specify <code>TrialName</code>, you can't filter by <code>ExperimentName</code> or <code>SourceArn</code>.</p>
+    pub fn get_trial_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_trial_name()
+    }
     /// <p>A filter that returns only components that have the specified source Amazon Resource Name (ARN). If you specify <code>SourceArn</code>, you can't filter by <code>ExperimentName</code> or <code>TrialName</code>.</p>
     pub fn source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_arn(input.into());
@@ -167,6 +181,10 @@ impl ListTrialComponentsFluentBuilder {
     pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_arn(input);
         self
+    }
+    /// <p>A filter that returns only components that have the specified source Amazon Resource Name (ARN). If you specify <code>SourceArn</code>, you can't filter by <code>ExperimentName</code> or <code>TrialName</code>.</p>
+    pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_arn()
     }
     /// <p>A filter that returns only components created after the specified time.</p>
     pub fn created_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -181,6 +199,10 @@ impl ListTrialComponentsFluentBuilder {
         self.inner = self.inner.set_created_after(input);
         self
     }
+    /// <p>A filter that returns only components created after the specified time.</p>
+    pub fn get_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_created_after()
+    }
     /// <p>A filter that returns only components created before the specified time.</p>
     pub fn created_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.created_before(input);
@@ -193,6 +215,10 @@ impl ListTrialComponentsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_created_before(input);
         self
+    }
+    /// <p>A filter that returns only components created before the specified time.</p>
+    pub fn get_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_created_before()
     }
     /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
     pub fn sort_by(mut self, input: crate::types::SortTrialComponentsBy) -> Self {
@@ -207,6 +233,10 @@ impl ListTrialComponentsFluentBuilder {
         self.inner = self.inner.set_sort_by(input);
         self
     }
+    /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::SortTrialComponentsBy> {
+        self.inner.get_sort_by()
+    }
     /// <p>The sort order. The default value is <code>Descending</code>.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.inner = self.inner.sort_order(input);
@@ -216,6 +246,10 @@ impl ListTrialComponentsFluentBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
+    }
+    /// <p>The sort order. The default value is <code>Descending</code>.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        self.inner.get_sort_order()
     }
     /// <p>The maximum number of components to return in the response. The default value is 10.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -227,6 +261,10 @@ impl ListTrialComponentsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of components to return in the response. The default value is 10.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>If the previous call to <code>ListTrialComponents</code> didn't return the full set of components, the call returns a token for getting the next set of components.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -236,5 +274,9 @@ impl ListTrialComponentsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>If the previous call to <code>ListTrialComponents</code> didn't return the full set of components, the call returns a token for getting the next set of components.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

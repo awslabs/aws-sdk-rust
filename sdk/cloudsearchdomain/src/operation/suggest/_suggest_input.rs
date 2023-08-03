@@ -56,6 +56,10 @@ impl SuggestInputBuilder {
         self.query = input;
         self
     }
+    /// <p>Specifies the string for which you want to get suggestions.</p>
+    pub fn get_query(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query
+    }
     /// <p>Specifies the name of the suggester to use to find suggested matches.</p>
     pub fn suggester(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suggester = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl SuggestInputBuilder {
         self.suggester = input;
         self
     }
+    /// <p>Specifies the name of the suggester to use to find suggested matches.</p>
+    pub fn get_suggester(&self) -> &::std::option::Option<::std::string::String> {
+        &self.suggester
+    }
     /// <p>Specifies the maximum number of suggestions to return. </p>
     pub fn size(mut self, input: i64) -> Self {
         self.size = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl SuggestInputBuilder {
     pub fn set_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.size = input;
         self
+    }
+    /// <p>Specifies the maximum number of suggestions to return. </p>
+    pub fn get_size(&self) -> &::std::option::Option<i64> {
+        &self.size
     }
     /// Consumes the builder and constructs a [`SuggestInput`](crate::operation::suggest::SuggestInput).
     pub fn build(

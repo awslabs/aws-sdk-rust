@@ -40,6 +40,10 @@ impl Phase1IntegrityAlgorithmsRequestListValueBuilder {
         self.value = input;
         self
     }
+    /// <p>The value for the integrity algorithm.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// Consumes the builder and constructs a [`Phase1IntegrityAlgorithmsRequestListValue`](crate::types::Phase1IntegrityAlgorithmsRequestListValue).
     pub fn build(self) -> crate::types::Phase1IntegrityAlgorithmsRequestListValue {
         crate::types::Phase1IntegrityAlgorithmsRequestListValue { value: self.value }

@@ -46,6 +46,10 @@ impl IntegerDatasetParameterDefaultValuesBuilder {
         self.static_values = input;
         self
     }
+    /// <p>A list of static default values for a given integer parameter.</p>
+    pub fn get_static_values(&self) -> &::std::option::Option<::std::vec::Vec<i64>> {
+        &self.static_values
+    }
     /// Consumes the builder and constructs a [`IntegerDatasetParameterDefaultValues`](crate::types::IntegerDatasetParameterDefaultValues).
     pub fn build(self) -> crate::types::IntegerDatasetParameterDefaultValues {
         crate::types::IntegerDatasetParameterDefaultValues {

@@ -48,6 +48,10 @@ impl DeleteConfigurationSetInputBuilder {
         self.configuration_set_name = input;
         self
     }
+    /// <p>The name of the configuration set.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_set_name
+    }
     /// Consumes the builder and constructs a [`DeleteConfigurationSetInput`](crate::operation::delete_configuration_set::DeleteConfigurationSetInput).
     pub fn build(
         self,

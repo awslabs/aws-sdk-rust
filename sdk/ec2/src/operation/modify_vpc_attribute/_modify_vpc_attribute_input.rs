@@ -81,6 +81,13 @@ impl ModifyVpcAttributeInputBuilder {
         self.enable_dns_hostnames = input;
         self
     }
+    /// <p>Indicates whether the instances launched in the VPC get DNS hostnames. If enabled, instances in the VPC get DNS hostnames; otherwise, they do not.</p>
+    /// <p>You cannot modify the DNS resolution and DNS hostnames attributes in the same request. Use separate requests for each attribute. You can only enable DNS hostnames if you've enabled DNS support.</p>
+    pub fn get_enable_dns_hostnames(
+        &self,
+    ) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
+        &self.enable_dns_hostnames
+    }
     /// <p>Indicates whether the DNS resolution is supported for the VPC. If enabled, queries to the Amazon provided DNS server at the 169.254.169.253 IP address, or the reserved IP address at the base of the VPC network range "plus two" succeed. If disabled, the Amazon provided DNS service in the VPC that resolves public DNS hostnames to IP addresses is not enabled.</p>
     /// <p>You cannot modify the DNS resolution and DNS hostnames attributes in the same request. Use separate requests for each attribute.</p>
     pub fn enable_dns_support(mut self, input: crate::types::AttributeBooleanValue) -> Self {
@@ -96,6 +103,13 @@ impl ModifyVpcAttributeInputBuilder {
         self.enable_dns_support = input;
         self
     }
+    /// <p>Indicates whether the DNS resolution is supported for the VPC. If enabled, queries to the Amazon provided DNS server at the 169.254.169.253 IP address, or the reserved IP address at the base of the VPC network range "plus two" succeed. If disabled, the Amazon provided DNS service in the VPC that resolves public DNS hostnames to IP addresses is not enabled.</p>
+    /// <p>You cannot modify the DNS resolution and DNS hostnames attributes in the same request. Use separate requests for each attribute.</p>
+    pub fn get_enable_dns_support(
+        &self,
+    ) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
+        &self.enable_dns_support
+    }
     /// <p>The ID of the VPC.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -105,6 +119,10 @@ impl ModifyVpcAttributeInputBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The ID of the VPC.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// <p>Indicates whether Network Address Usage metrics are enabled for your VPC.</p>
     pub fn enable_network_address_usage_metrics(
@@ -121,6 +139,12 @@ impl ModifyVpcAttributeInputBuilder {
     ) -> Self {
         self.enable_network_address_usage_metrics = input;
         self
+    }
+    /// <p>Indicates whether Network Address Usage metrics are enabled for your VPC.</p>
+    pub fn get_enable_network_address_usage_metrics(
+        &self,
+    ) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
+        &self.enable_network_address_usage_metrics
     }
     /// Consumes the builder and constructs a [`ModifyVpcAttributeInput`](crate::operation::modify_vpc_attribute::ModifyVpcAttributeInput).
     pub fn build(

@@ -41,6 +41,10 @@ impl AwsGuardDutyDetectorDataSourcesDnsLogsDetailsBuilder {
         self.status = input;
         self
     }
+    /// <p> Describes whether DNS logs is enabled as a data source for the detector. </p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// Consumes the builder and constructs a [`AwsGuardDutyDetectorDataSourcesDnsLogsDetails`](crate::types::AwsGuardDutyDetectorDataSourcesDnsLogsDetails).
     pub fn build(self) -> crate::types::AwsGuardDutyDetectorDataSourcesDnsLogsDetails {
         crate::types::AwsGuardDutyDetectorDataSourcesDnsLogsDetails {

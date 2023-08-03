@@ -47,6 +47,10 @@ impl DescribeNodeInputBuilder {
         self.node_id = input;
         self
     }
+    /// <p>The node's ID.</p>
+    pub fn get_node_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_id
+    }
     /// <p>The account ID of the node's owner.</p>
     pub fn owner_account(
         mut self,
@@ -62,6 +66,10 @@ impl DescribeNodeInputBuilder {
     ) -> Self {
         self.owner_account = input;
         self
+    }
+    /// <p>The account ID of the node's owner.</p>
+    pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_account
     }
     /// Consumes the builder and constructs a [`DescribeNodeInput`](crate::operation::describe_node::DescribeNodeInput).
     pub fn build(

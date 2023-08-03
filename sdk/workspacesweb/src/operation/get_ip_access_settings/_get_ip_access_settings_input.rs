@@ -47,6 +47,10 @@ impl GetIpAccessSettingsInputBuilder {
         self.ip_access_settings_arn = input;
         self
     }
+    /// <p>The ARN of the IP access settings.</p>
+    pub fn get_ip_access_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_access_settings_arn
+    }
     /// Consumes the builder and constructs a [`GetIpAccessSettingsInput`](crate::operation::get_ip_access_settings::GetIpAccessSettingsInput).
     pub fn build(
         self,

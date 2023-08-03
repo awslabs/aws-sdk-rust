@@ -104,6 +104,10 @@ impl GetFunctionUrlConfigOutputBuilder {
         self.function_url = input;
         self
     }
+    /// <p>The HTTP URL endpoint for your function.</p>
+    pub fn get_function_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.function_url
+    }
     /// <p>The Amazon Resource Name (ARN) of your function.</p>
     pub fn function_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_arn = ::std::option::Option::Some(input.into());
@@ -113,6 +117,10 @@ impl GetFunctionUrlConfigOutputBuilder {
     pub fn set_function_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.function_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of your function.</p>
+    pub fn get_function_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.function_arn
     }
     /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
     pub fn auth_type(mut self, input: crate::types::FunctionUrlAuthType) -> Self {
@@ -127,6 +135,10 @@ impl GetFunctionUrlConfigOutputBuilder {
         self.auth_type = input;
         self
     }
+    /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
+    pub fn get_auth_type(&self) -> &::std::option::Option<crate::types::FunctionUrlAuthType> {
+        &self.auth_type
+    }
     /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
     pub fn cors(mut self, input: crate::types::Cors) -> Self {
         self.cors = ::std::option::Option::Some(input);
@@ -136,6 +148,10 @@ impl GetFunctionUrlConfigOutputBuilder {
     pub fn set_cors(mut self, input: ::std::option::Option<crate::types::Cors>) -> Self {
         self.cors = input;
         self
+    }
+    /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
+    pub fn get_cors(&self) -> &::std::option::Option<crate::types::Cors> {
+        &self.cors
     }
     /// <p>When the function URL was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
     pub fn creation_time(
@@ -153,6 +169,10 @@ impl GetFunctionUrlConfigOutputBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>When the function URL was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_time
+    }
     /// <p>When the function URL configuration was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
     pub fn last_modified_time(
         mut self,
@@ -168,6 +188,10 @@ impl GetFunctionUrlConfigOutputBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>When the function URL configuration was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_time
     }
     /// <p>Use one of the following options:</p>
     /// <ul>
@@ -189,6 +213,14 @@ impl GetFunctionUrlConfigOutputBuilder {
     ) -> Self {
         self.invoke_mode = input;
         self
+    }
+    /// <p>Use one of the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>BUFFERED</code> – This is the default option. Lambda invokes your function using the <code>Invoke</code> API operation. Invocation results are available when the payload is complete. The maximum payload size is 6 MB.</p> </li>
+    /// <li> <p> <code>RESPONSE_STREAM</code> – Your function streams payload results as they become available. Lambda invokes your function using the <code>InvokeWithResponseStream</code> API operation. The maximum response payload size is 20 MB, however, you can <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html">request a quota increase</a>.</p> </li>
+    /// </ul>
+    pub fn get_invoke_mode(&self) -> &::std::option::Option<crate::types::InvokeMode> {
+        &self.invoke_mode
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

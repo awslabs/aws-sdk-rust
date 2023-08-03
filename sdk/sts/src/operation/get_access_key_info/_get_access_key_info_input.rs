@@ -50,6 +50,11 @@ impl GetAccessKeyInfoInputBuilder {
         self.access_key_id = input;
         self
     }
+    /// <p>The identifier of an access key.</p>
+    /// <p>This parameter allows (through its regex pattern) a string of characters that can consist of any upper- or lowercase letter or digit.</p>
+    pub fn get_access_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_key_id
+    }
     /// Consumes the builder and constructs a [`GetAccessKeyInfoInput`](crate::operation::get_access_key_info::GetAccessKeyInfoInput).
     pub fn build(
         self,

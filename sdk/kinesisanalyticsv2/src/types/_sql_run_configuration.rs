@@ -52,6 +52,10 @@ impl SqlRunConfigurationBuilder {
         self.input_id = input;
         self
     }
+    /// <p>The input source ID. You can get this ID by calling the <code>DescribeApplication</code> operation. </p>
+    pub fn get_input_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_id
+    }
     /// <p>The point at which you want the application to start processing records from the streaming source. </p>
     pub fn input_starting_position_configuration(
         mut self,
@@ -67,6 +71,12 @@ impl SqlRunConfigurationBuilder {
     ) -> Self {
         self.input_starting_position_configuration = input;
         self
+    }
+    /// <p>The point at which you want the application to start processing records from the streaming source. </p>
+    pub fn get_input_starting_position_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::InputStartingPositionConfiguration> {
+        &self.input_starting_position_configuration
     }
     /// Consumes the builder and constructs a [`SqlRunConfiguration`](crate::types::SqlRunConfiguration).
     pub fn build(self) -> crate::types::SqlRunConfiguration {

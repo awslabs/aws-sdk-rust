@@ -156,6 +156,10 @@ impl CertificateDescriptionBuilder {
         self.certificate_arn = input;
         self
     }
+    /// <p>The ARN of the certificate.</p>
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_arn
+    }
     /// <p>The ID of the certificate.</p>
     pub fn certificate_id(
         mut self,
@@ -171,6 +175,10 @@ impl CertificateDescriptionBuilder {
     ) -> Self {
         self.certificate_id = input;
         self
+    }
+    /// <p>The ID of the certificate.</p>
+    pub fn get_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_id
     }
     /// <p>The certificate ID of the CA certificate used to sign this certificate.</p>
     pub fn ca_certificate_id(
@@ -188,6 +196,10 @@ impl CertificateDescriptionBuilder {
         self.ca_certificate_id = input;
         self
     }
+    /// <p>The certificate ID of the CA certificate used to sign this certificate.</p>
+    pub fn get_ca_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ca_certificate_id
+    }
     /// <p>The status of the certificate.</p>
     pub fn status(mut self, input: crate::types::CertificateStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -200,6 +212,10 @@ impl CertificateDescriptionBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the certificate.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::CertificateStatus> {
+        &self.status
     }
     /// <p>The certificate data, in PEM format.</p>
     pub fn certificate_pem(
@@ -217,6 +233,10 @@ impl CertificateDescriptionBuilder {
         self.certificate_pem = input;
         self
     }
+    /// <p>The certificate data, in PEM format.</p>
+    pub fn get_certificate_pem(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_pem
+    }
     /// <p>The ID of the Amazon Web Services account that owns the certificate.</p>
     pub fn owned_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owned_by = ::std::option::Option::Some(input.into());
@@ -226,6 +246,10 @@ impl CertificateDescriptionBuilder {
     pub fn set_owned_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owned_by = input;
         self
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the certificate.</p>
+    pub fn get_owned_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owned_by
     }
     /// <p>The ID of the Amazon Web Services account of the previous owner of the certificate.</p>
     pub fn previous_owned_by(
@@ -243,6 +267,10 @@ impl CertificateDescriptionBuilder {
         self.previous_owned_by = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services account of the previous owner of the certificate.</p>
+    pub fn get_previous_owned_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.previous_owned_by
+    }
     /// <p>The date and time the certificate was created.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
@@ -255,6 +283,10 @@ impl CertificateDescriptionBuilder {
     ) -> Self {
         self.creation_date = input;
         self
+    }
+    /// <p>The date and time the certificate was created.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
     }
     /// <p>The date and time the certificate was last modified.</p>
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -269,6 +301,10 @@ impl CertificateDescriptionBuilder {
         self.last_modified_date = input;
         self
     }
+    /// <p>The date and time the certificate was last modified.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_date
+    }
     /// <p>The customer version of the certificate.</p>
     pub fn customer_version(mut self, input: i32) -> Self {
         self.customer_version = ::std::option::Option::Some(input);
@@ -278,6 +314,10 @@ impl CertificateDescriptionBuilder {
     pub fn set_customer_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.customer_version = input;
         self
+    }
+    /// <p>The customer version of the certificate.</p>
+    pub fn get_customer_version(&self) -> &::std::option::Option<i32> {
+        &self.customer_version
     }
     /// <p>The transfer data.</p>
     pub fn transfer_data(mut self, input: crate::types::TransferData) -> Self {
@@ -291,6 +331,10 @@ impl CertificateDescriptionBuilder {
     ) -> Self {
         self.transfer_data = input;
         self
+    }
+    /// <p>The transfer data.</p>
+    pub fn get_transfer_data(&self) -> &::std::option::Option<crate::types::TransferData> {
+        &self.transfer_data
     }
     /// <p>The generation ID of the certificate.</p>
     pub fn generation_id(
@@ -308,6 +352,10 @@ impl CertificateDescriptionBuilder {
         self.generation_id = input;
         self
     }
+    /// <p>The generation ID of the certificate.</p>
+    pub fn get_generation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.generation_id
+    }
     /// <p>When the certificate is valid.</p>
     pub fn validity(mut self, input: crate::types::CertificateValidity) -> Self {
         self.validity = ::std::option::Option::Some(input);
@@ -320,6 +368,10 @@ impl CertificateDescriptionBuilder {
     ) -> Self {
         self.validity = input;
         self
+    }
+    /// <p>When the certificate is valid.</p>
+    pub fn get_validity(&self) -> &::std::option::Option<crate::types::CertificateValidity> {
+        &self.validity
     }
     /// <p>The mode of the certificate.</p>
     /// <p> <code>DEFAULT</code>: A certificate in <code>DEFAULT</code> mode is either generated by Amazon Web Services IoT Core or registered with an issuer certificate authority (CA) in <code>DEFAULT</code> mode. Devices with certificates in <code>DEFAULT</code> mode aren't required to send the Server Name Indication (SNI) extension when connecting to Amazon Web Services IoT Core. However, to use features such as custom domains and VPC endpoints, we recommend that you use the SNI extension when connecting to Amazon Web Services IoT Core.</p>
@@ -339,6 +391,13 @@ impl CertificateDescriptionBuilder {
     ) -> Self {
         self.certificate_mode = input;
         self
+    }
+    /// <p>The mode of the certificate.</p>
+    /// <p> <code>DEFAULT</code>: A certificate in <code>DEFAULT</code> mode is either generated by Amazon Web Services IoT Core or registered with an issuer certificate authority (CA) in <code>DEFAULT</code> mode. Devices with certificates in <code>DEFAULT</code> mode aren't required to send the Server Name Indication (SNI) extension when connecting to Amazon Web Services IoT Core. However, to use features such as custom domains and VPC endpoints, we recommend that you use the SNI extension when connecting to Amazon Web Services IoT Core.</p>
+    /// <p> <code>SNI_ONLY</code>: A certificate in <code>SNI_ONLY</code> mode is registered without an issuer CA. Devices with certificates in <code>SNI_ONLY</code> mode must send the SNI extension when connecting to Amazon Web Services IoT Core. </p>
+    /// <p>For more information about the value for SNI extension, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/transport-security.html">Transport security in IoT</a>.</p>
+    pub fn get_certificate_mode(&self) -> &::std::option::Option<crate::types::CertificateMode> {
+        &self.certificate_mode
     }
     /// Consumes the builder and constructs a [`CertificateDescription`](crate::types::CertificateDescription).
     pub fn build(self) -> crate::types::CertificateDescription {

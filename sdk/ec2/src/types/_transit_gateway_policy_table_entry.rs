@@ -62,6 +62,10 @@ impl TransitGatewayPolicyTableEntryBuilder {
         self.policy_rule_number = input;
         self
     }
+    /// <p>The rule number for the transit gateway policy table entry.</p>
+    pub fn get_policy_rule_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_rule_number
+    }
     /// <p>The policy rule associated with the transit gateway policy table.</p>
     pub fn policy_rule(mut self, input: crate::types::TransitGatewayPolicyRule) -> Self {
         self.policy_rule = ::std::option::Option::Some(input);
@@ -74,6 +78,12 @@ impl TransitGatewayPolicyTableEntryBuilder {
     ) -> Self {
         self.policy_rule = input;
         self
+    }
+    /// <p>The policy rule associated with the transit gateway policy table.</p>
+    pub fn get_policy_rule(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransitGatewayPolicyRule> {
+        &self.policy_rule
     }
     /// <p>The ID of the target route table.</p>
     pub fn target_route_table_id(
@@ -90,6 +100,10 @@ impl TransitGatewayPolicyTableEntryBuilder {
     ) -> Self {
         self.target_route_table_id = input;
         self
+    }
+    /// <p>The ID of the target route table.</p>
+    pub fn get_target_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_route_table_id
     }
     /// Consumes the builder and constructs a [`TransitGatewayPolicyTableEntry`](crate::types::TransitGatewayPolicyTableEntry).
     pub fn build(self) -> crate::types::TransitGatewayPolicyTableEntry {

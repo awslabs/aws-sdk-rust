@@ -46,6 +46,10 @@ impl ValidatePipelineInputBuilder {
         self.pipeline_configuration_body = input;
         self
     }
+    /// <p>The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with <code>\n</code>.</p>
+    pub fn get_pipeline_configuration_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_configuration_body
+    }
     /// Consumes the builder and constructs a [`ValidatePipelineInput`](crate::operation::validate_pipeline::ValidatePipelineInput).
     pub fn build(
         self,

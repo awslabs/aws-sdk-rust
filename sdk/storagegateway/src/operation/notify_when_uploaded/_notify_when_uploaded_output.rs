@@ -61,6 +61,10 @@ impl NotifyWhenUploadedOutputBuilder {
         self.file_share_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the file share.</p>
+    pub fn get_file_share_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_share_arn
+    }
     /// <p>The randomly generated ID of the notification that was sent. This ID is in UUID format.</p>
     pub fn notification_id(
         mut self,
@@ -76,6 +80,10 @@ impl NotifyWhenUploadedOutputBuilder {
     ) -> Self {
         self.notification_id = input;
         self
+    }
+    /// <p>The randomly generated ID of the notification that was sent. This ID is in UUID format.</p>
+    pub fn get_notification_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.notification_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -68,6 +68,10 @@ impl UpdateMemberDetectorsInputBuilder {
         self.detector_id = input;
         self
     }
+    /// <p>The detector ID of the administrator account.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
+    }
     /// Appends an item to `account_ids`.
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
@@ -87,6 +91,12 @@ impl UpdateMemberDetectorsInputBuilder {
         self.account_ids = input;
         self
     }
+    /// <p>A list of member account IDs to be updated.</p>
+    pub fn get_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.account_ids
+    }
     /// <p>Describes which data sources will be updated.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
     pub fn data_sources(mut self, input: crate::types::DataSourceConfigurations) -> Self {
@@ -101,6 +111,13 @@ impl UpdateMemberDetectorsInputBuilder {
     ) -> Self {
         self.data_sources = input;
         self
+    }
+    /// <p>Describes which data sources will be updated.</p>
+    #[deprecated(note = "This parameter is deprecated, use Features instead")]
+    pub fn get_data_sources(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataSourceConfigurations> {
+        &self.data_sources
     }
     /// Appends an item to `features`.
     ///
@@ -120,6 +137,12 @@ impl UpdateMemberDetectorsInputBuilder {
     ) -> Self {
         self.features = input;
         self
+    }
+    /// <p>A list of features that will be updated for the specified member accounts.</p>
+    pub fn get_features(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberFeaturesConfiguration>> {
+        &self.features
     }
     /// Consumes the builder and constructs a [`UpdateMemberDetectorsInput`](crate::operation::update_member_detectors::UpdateMemberDetectorsInput).
     pub fn build(

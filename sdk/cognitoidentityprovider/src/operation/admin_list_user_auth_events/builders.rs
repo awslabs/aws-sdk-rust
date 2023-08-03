@@ -36,6 +36,13 @@ impl AdminListUserAuthEventsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AdminListUserAuthEvents as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::admin_list_user_auth_events::builders::AdminListUserAuthEventsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +142,10 @@ impl AdminListUserAuthEventsFluentBuilder {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
+    /// <p>The user pool ID.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_pool_id()
+    }
     /// <p>The user pool username or an alias.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.username(input.into());
@@ -144,6 +155,10 @@ impl AdminListUserAuthEventsFluentBuilder {
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_username(input);
         self
+    }
+    /// <p>The user pool username or an alias.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_username()
     }
     /// <p>The maximum number of authentication events to return. Returns 60 events if you set <code>MaxResults</code> to 0, or if you don't include a <code>MaxResults</code> parameter.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -155,6 +170,10 @@ impl AdminListUserAuthEventsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of authentication events to return. Returns 60 events if you set <code>MaxResults</code> to 0, or if you don't include a <code>MaxResults</code> parameter.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>A pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -164,5 +183,9 @@ impl AdminListUserAuthEventsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>A pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

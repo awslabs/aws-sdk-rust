@@ -67,6 +67,12 @@ impl ListOfferingPromotionsOutputBuilder {
         self.offering_promotions = input;
         self
     }
+    /// <p>Information about the offering promotions.</p>
+    pub fn get_offering_promotions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OfferingPromotion>> {
+        &self.offering_promotions
+    }
     /// <p>An identifier to be used in the next call to this operation, to return the next set of items in the list.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -76,6 +82,10 @@ impl ListOfferingPromotionsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>An identifier to be used in the next call to this operation, to return the next set of items in the list.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

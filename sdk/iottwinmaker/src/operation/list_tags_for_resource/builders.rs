@@ -36,6 +36,12 @@ impl ListTagsForResourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListTagsForResource as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_tags_for_resource::builders::ListTagsForResourceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl ListTagsForResourceFluentBuilder {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
+    /// <p>The ARN of the resource.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
+    }
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -138,6 +148,11 @@ impl ListTagsForResourceFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return at one time. The default is 25.</p>
+    /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The string that specifies the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -147,5 +162,9 @@ impl ListTagsForResourceFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The string that specifies the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

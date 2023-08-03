@@ -36,6 +36,10 @@ impl DeleteGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_group::builders::DeleteGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl DeleteGroupFluentBuilder {
         self.inner = self.inner.set_organization_id(input);
         self
     }
+    /// <p>The organization that contains the group.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organization_id()
+    }
     /// <p>The identifier of the group to be deleted.</p>
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_id(input.into());
@@ -133,5 +141,9 @@ impl DeleteGroupFluentBuilder {
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group_id(input);
         self
+    }
+    /// <p>The identifier of the group to be deleted.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group_id()
     }
 }

@@ -36,6 +36,10 @@ impl DeregisterTaskFromMaintenanceWindowFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeregisterTaskFromMaintenanceWindow as a reference.
+    pub fn as_input(&self) -> &crate::operation::deregister_task_from_maintenance_window::builders::DeregisterTaskFromMaintenanceWindowInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl DeregisterTaskFromMaintenanceWindowFluentBuilder {
         self.inner = self.inner.set_window_id(input);
         self
     }
+    /// <p>The ID of the maintenance window the task should be removed from.</p>
+    pub fn get_window_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_window_id()
+    }
     /// <p>The ID of the task to remove from the maintenance window.</p>
     pub fn window_task_id(
         mut self,
@@ -115,5 +123,9 @@ impl DeregisterTaskFromMaintenanceWindowFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_window_task_id(input);
         self
+    }
+    /// <p>The ID of the task to remove from the maintenance window.</p>
+    pub fn get_window_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_window_task_id()
     }
 }

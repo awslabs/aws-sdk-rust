@@ -130,6 +130,10 @@ impl DatasetImportJobSummaryBuilder {
         self.dataset_import_job_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
+    pub fn get_dataset_import_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_import_job_arn
+    }
     /// <p>The name of the dataset import job.</p>
     pub fn dataset_import_job_name(
         mut self,
@@ -146,6 +150,10 @@ impl DatasetImportJobSummaryBuilder {
         self.dataset_import_job_name = input;
         self
     }
+    /// <p>The name of the dataset import job.</p>
+    pub fn get_dataset_import_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_import_job_name
+    }
     /// <p>The location of the training data to import and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>
     /// <p>If encryption is used, <code>DataSource</code> includes an Key Management Service (KMS) key.</p>
     pub fn data_source(mut self, input: crate::types::DataSource) -> Self {
@@ -160,6 +168,11 @@ impl DatasetImportJobSummaryBuilder {
     ) -> Self {
         self.data_source = input;
         self
+    }
+    /// <p>The location of the training data to import and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>
+    /// <p>If encryption is used, <code>DataSource</code> includes an Key Management Service (KMS) key.</p>
+    pub fn get_data_source(&self) -> &::std::option::Option<crate::types::DataSource> {
+        &self.data_source
     }
     /// <p>The status of the dataset import job. States include:</p>
     /// <ul>
@@ -183,6 +196,16 @@ impl DatasetImportJobSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the dataset import job. States include:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>If an error occurred, an informational message about the error.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -192,6 +215,10 @@ impl DatasetImportJobSummaryBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>If an error occurred, an informational message about the error.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// <p>When the dataset import job was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -205,6 +232,10 @@ impl DatasetImportJobSummaryBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>When the dataset import job was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
@@ -233,6 +264,19 @@ impl DatasetImportJobSummaryBuilder {
         self.last_modification_time = input;
         self
     }
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
+    /// <ul>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
+    /// </ul>
+    pub fn get_last_modification_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modification_time
+    }
     /// <p>The import mode of the dataset import job, FULL or INCREMENTAL.</p>
     pub fn import_mode(mut self, input: crate::types::ImportMode) -> Self {
         self.import_mode = ::std::option::Option::Some(input);
@@ -245,6 +289,10 @@ impl DatasetImportJobSummaryBuilder {
     ) -> Self {
         self.import_mode = input;
         self
+    }
+    /// <p>The import mode of the dataset import job, FULL or INCREMENTAL.</p>
+    pub fn get_import_mode(&self) -> &::std::option::Option<crate::types::ImportMode> {
+        &self.import_mode
     }
     /// Consumes the builder and constructs a [`DatasetImportJobSummary`](crate::types::DatasetImportJobSummary).
     pub fn build(self) -> crate::types::DatasetImportJobSummary {

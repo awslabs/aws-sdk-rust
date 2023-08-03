@@ -62,6 +62,14 @@ impl CreateGraphInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags to assign to the new behavior graph. You can add up to 50 tags. For each tag, you provide the tag key and the tag value. Each tag key can contain up to 128 characters. Each tag value can contain up to 256 characters.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`CreateGraphInput`](crate::operation::create_graph::CreateGraphInput).
     pub fn build(
         self,

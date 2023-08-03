@@ -49,6 +49,10 @@ impl DisassociateResolverRuleInputBuilder {
         self.vpc_id = input;
         self
     }
+    /// <p>The ID of the VPC that you want to disassociate the Resolver rule from.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
+    }
     /// <p>The ID of the Resolver rule that you want to disassociate from the specified VPC.</p>
     pub fn resolver_rule_id(
         mut self,
@@ -64,6 +68,10 @@ impl DisassociateResolverRuleInputBuilder {
     ) -> Self {
         self.resolver_rule_id = input;
         self
+    }
+    /// <p>The ID of the Resolver rule that you want to disassociate from the specified VPC.</p>
+    pub fn get_resolver_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resolver_rule_id
     }
     /// Consumes the builder and constructs a [`DisassociateResolverRuleInput`](crate::operation::disassociate_resolver_rule::DisassociateResolverRuleInput).
     pub fn build(

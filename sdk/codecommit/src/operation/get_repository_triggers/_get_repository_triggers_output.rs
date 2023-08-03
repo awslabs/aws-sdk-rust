@@ -63,6 +63,10 @@ impl GetRepositoryTriggersOutputBuilder {
         self.configuration_id = input;
         self
     }
+    /// <p>The system-generated unique ID for the trigger.</p>
+    pub fn get_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_id
+    }
     /// Appends an item to `triggers`.
     ///
     /// To override the contents of this collection use [`set_triggers`](Self::set_triggers).
@@ -81,6 +85,12 @@ impl GetRepositoryTriggersOutputBuilder {
     ) -> Self {
         self.triggers = input;
         self
+    }
+    /// <p>The JSON block of configuration information for each trigger.</p>
+    pub fn get_triggers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositoryTrigger>> {
+        &self.triggers
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

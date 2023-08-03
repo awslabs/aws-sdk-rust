@@ -54,6 +54,10 @@ impl EfsAuthorizationConfigBuilder {
         self.access_point_id = input;
         self
     }
+    /// <p>The Amazon EFS access point ID to use. If an access point is specified, the root directory value specified in the <code>EFSVolumeConfiguration</code> must either be omitted or set to <code>/</code> which enforces the path set on the EFS access point. If an access point is used, transit encryption must be enabled in the <code>EFSVolumeConfiguration</code>. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working with Amazon EFS access points</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
+    pub fn get_access_point_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_point_id
+    }
     /// <p>Whether or not to use the Batch job IAM role defined in a job definition when mounting the Amazon EFS file system. If enabled, transit encryption must be enabled in the <code>EFSVolumeConfiguration</code>. If this parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/efs-volumes.html#efs-volume-accesspoints">Using Amazon EFS access points</a> in the <i>Batch User Guide</i>. EFS IAM authorization requires that <code>TransitEncryption</code> be <code>ENABLED</code> and that a <code>JobRoleArn</code> is specified.</p>
     pub fn iam(mut self, input: crate::types::EfsAuthorizationConfigIam) -> Self {
         self.iam = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl EfsAuthorizationConfigBuilder {
     ) -> Self {
         self.iam = input;
         self
+    }
+    /// <p>Whether or not to use the Batch job IAM role defined in a job definition when mounting the Amazon EFS file system. If enabled, transit encryption must be enabled in the <code>EFSVolumeConfiguration</code>. If this parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/efs-volumes.html#efs-volume-accesspoints">Using Amazon EFS access points</a> in the <i>Batch User Guide</i>. EFS IAM authorization requires that <code>TransitEncryption</code> be <code>ENABLED</code> and that a <code>JobRoleArn</code> is specified.</p>
+    pub fn get_iam(&self) -> &::std::option::Option<crate::types::EfsAuthorizationConfigIam> {
+        &self.iam
     }
     /// Consumes the builder and constructs a [`EfsAuthorizationConfig`](crate::types::EfsAuthorizationConfig).
     pub fn build(self) -> crate::types::EfsAuthorizationConfig {

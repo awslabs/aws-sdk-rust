@@ -50,6 +50,12 @@ impl UnprocessedDataSourcesResultBuilder {
         self.malware_protection = input;
         self
     }
+    /// <p>An object that contains information on the status of all Malware Protection data sources.</p>
+    pub fn get_malware_protection(
+        &self,
+    ) -> &::std::option::Option<crate::types::MalwareProtectionConfigurationResult> {
+        &self.malware_protection
+    }
     /// Consumes the builder and constructs a [`UnprocessedDataSourcesResult`](crate::types::UnprocessedDataSourcesResult).
     pub fn build(self) -> crate::types::UnprocessedDataSourcesResult {
         crate::types::UnprocessedDataSourcesResult {

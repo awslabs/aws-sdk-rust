@@ -48,6 +48,10 @@ impl GetKeyRotationStatusOutputBuilder {
         self.key_rotation_enabled = input;
         self
     }
+    /// <p>A Boolean value that specifies whether key rotation is enabled.</p>
+    pub fn get_key_rotation_enabled(&self) -> &::std::option::Option<bool> {
+        &self.key_rotation_enabled
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

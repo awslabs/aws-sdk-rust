@@ -79,6 +79,10 @@ impl GetCredentialsOutputBuilder {
         self.db_user = input;
         self
     }
+    /// <p>A database user name that is authorized to log on to the database <code>DbName</code> using the password <code>DbPassword</code>. If the specified <code>DbUser</code> exists in the database, the new user name has the same database privileges as the the user named in <code>DbUser</code>. By default, the user is added to PUBLIC.</p>
+    pub fn get_db_user(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_user
+    }
     /// <p>A temporary password that authorizes the user name returned by <code>DbUser</code> to log on to the database <code>DbName</code>.</p>
     pub fn db_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_password = ::std::option::Option::Some(input.into());
@@ -88,6 +92,10 @@ impl GetCredentialsOutputBuilder {
     pub fn set_db_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_password = input;
         self
+    }
+    /// <p>A temporary password that authorizes the user name returned by <code>DbUser</code> to log on to the database <code>DbName</code>.</p>
+    pub fn get_db_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_password
     }
     /// <p>The date and time the password in <code>DbPassword</code> expires.</p>
     pub fn expiration(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -102,6 +110,10 @@ impl GetCredentialsOutputBuilder {
         self.expiration = input;
         self
     }
+    /// <p>The date and time the password in <code>DbPassword</code> expires.</p>
+    pub fn get_expiration(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expiration
+    }
     /// <p>The date and time of when the <code>DbUser</code> and <code>DbPassword</code> authorization refreshes.</p>
     pub fn next_refresh_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.next_refresh_time = ::std::option::Option::Some(input);
@@ -114,6 +126,10 @@ impl GetCredentialsOutputBuilder {
     ) -> Self {
         self.next_refresh_time = input;
         self
+    }
+    /// <p>The date and time of when the <code>DbUser</code> and <code>DbPassword</code> authorization refreshes.</p>
+    pub fn get_next_refresh_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.next_refresh_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

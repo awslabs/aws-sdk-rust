@@ -49,6 +49,10 @@ impl DescribeServerOutputBuilder {
         self.server = input;
         self
     }
+    /// <p>An array containing the properties of a server with the <code>ServerID</code> you specified.</p>
+    pub fn get_server(&self) -> &::std::option::Option<crate::types::DescribedServer> {
+        &self.server
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

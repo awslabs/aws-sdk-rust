@@ -94,6 +94,10 @@ impl UpdateAuthorizerInputBuilder {
         self.authorizer_name = input;
         self
     }
+    /// <p>The authorizer name.</p>
+    pub fn get_authorizer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authorizer_name
+    }
     /// <p>The ARN of the authorizer's Lambda function.</p>
     pub fn authorizer_function_arn(
         mut self,
@@ -110,6 +114,10 @@ impl UpdateAuthorizerInputBuilder {
         self.authorizer_function_arn = input;
         self
     }
+    /// <p>The ARN of the authorizer's Lambda function.</p>
+    pub fn get_authorizer_function_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authorizer_function_arn
+    }
     /// <p>The key used to extract the token from the HTTP headers. </p>
     pub fn token_key_name(
         mut self,
@@ -125,6 +133,10 @@ impl UpdateAuthorizerInputBuilder {
     ) -> Self {
         self.token_key_name = input;
         self
+    }
+    /// <p>The key used to extract the token from the HTTP headers. </p>
+    pub fn get_token_key_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.token_key_name
     }
     /// Adds a key-value pair to `token_signing_public_keys`.
     ///
@@ -151,6 +163,14 @@ impl UpdateAuthorizerInputBuilder {
         self.token_signing_public_keys = input;
         self
     }
+    /// <p>The public keys used to verify the token signature.</p>
+    pub fn get_token_signing_public_keys(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.token_signing_public_keys
+    }
     /// <p>The status of the update authorizer request.</p>
     pub fn status(mut self, input: crate::types::AuthorizerStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -164,6 +184,10 @@ impl UpdateAuthorizerInputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the update authorizer request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AuthorizerStatus> {
+        &self.status
+    }
     /// <p>When <code>true</code>, the result from the authorizer’s Lambda function is cached for the time specified in <code>refreshAfterInSeconds</code>. The cached result is used while the device reuses the same HTTP connection.</p>
     pub fn enable_caching_for_http(mut self, input: bool) -> Self {
         self.enable_caching_for_http = ::std::option::Option::Some(input);
@@ -173,6 +197,10 @@ impl UpdateAuthorizerInputBuilder {
     pub fn set_enable_caching_for_http(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_caching_for_http = input;
         self
+    }
+    /// <p>When <code>true</code>, the result from the authorizer’s Lambda function is cached for the time specified in <code>refreshAfterInSeconds</code>. The cached result is used while the device reuses the same HTTP connection.</p>
+    pub fn get_enable_caching_for_http(&self) -> &::std::option::Option<bool> {
+        &self.enable_caching_for_http
     }
     /// Consumes the builder and constructs a [`UpdateAuthorizerInput`](crate::operation::update_authorizer::UpdateAuthorizerInput).
     pub fn build(

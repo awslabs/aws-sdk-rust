@@ -92,6 +92,10 @@ impl ServiceUnavailableExceptionBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
+    }
+    #[allow(missing_docs)] // documentation missing in model
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
@@ -100,6 +104,10 @@ impl ServiceUnavailableExceptionBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// <p>The request id associated with the call responsible for the exception.</p>
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -110,6 +118,10 @@ impl ServiceUnavailableExceptionBuilder {
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_id = input;
         self
+    }
+    /// <p>The request id associated with the call responsible for the exception.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
     }
     /// <p>The number of seconds the caller should wait before retrying.</p>
     pub fn retry_after_seconds(
@@ -126,6 +138,10 @@ impl ServiceUnavailableExceptionBuilder {
     ) -> Self {
         self.retry_after_seconds = input;
         self
+    }
+    /// <p>The number of seconds the caller should wait before retrying.</p>
+    pub fn get_retry_after_seconds(&self) -> &::std::option::Option<::std::string::String> {
+        &self.retry_after_seconds
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

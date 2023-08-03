@@ -56,6 +56,10 @@ impl RegionBuilder {
         self.endpoint = input;
         self
     }
+    /// <p>The Region service endpoint.</p>
+    pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint
+    }
     /// <p>The name of the Region.</p>
     pub fn region_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region_name = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl RegionBuilder {
     pub fn set_region_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region_name = input;
         self
+    }
+    /// <p>The name of the Region.</p>
+    pub fn get_region_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region_name
     }
     /// <p>The Region opt-in status. The possible values are <code>opt-in-not-required</code>, <code>opted-in</code>, and <code>not-opted-in</code>.</p>
     pub fn opt_in_status(
@@ -81,6 +89,10 @@ impl RegionBuilder {
     ) -> Self {
         self.opt_in_status = input;
         self
+    }
+    /// <p>The Region opt-in status. The possible values are <code>opt-in-not-required</code>, <code>opted-in</code>, and <code>not-opted-in</code>.</p>
+    pub fn get_opt_in_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.opt_in_status
     }
     /// Consumes the builder and constructs a [`Region`](crate::types::Region).
     pub fn build(self) -> crate::types::Region {

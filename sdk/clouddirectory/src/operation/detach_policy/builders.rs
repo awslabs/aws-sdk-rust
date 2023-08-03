@@ -36,6 +36,10 @@ impl DetachPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DetachPolicy as a reference.
+    pub fn as_input(&self) -> &crate::operation::detach_policy::builders::DetachPolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl DetachPolicyFluentBuilder {
         self.inner = self.inner.set_directory_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_arn()
+    }
     /// <p>Reference that identifies the policy object.</p>
     pub fn policy_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.inner = self.inner.policy_reference(input);
@@ -137,6 +145,10 @@ impl DetachPolicyFluentBuilder {
         self.inner = self.inner.set_policy_reference(input);
         self
     }
+    /// <p>Reference that identifies the policy object.</p>
+    pub fn get_policy_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
+        self.inner.get_policy_reference()
+    }
     /// <p>Reference that identifies the object whose policy object will be detached.</p>
     pub fn object_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.inner = self.inner.object_reference(input);
@@ -149,5 +161,9 @@ impl DetachPolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_object_reference(input);
         self
+    }
+    /// <p>Reference that identifies the object whose policy object will be detached.</p>
+    pub fn get_object_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
+        self.inner.get_object_reference()
     }
 }

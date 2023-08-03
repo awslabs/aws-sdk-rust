@@ -127,6 +127,10 @@ impl DeleteStackInstancesInputBuilder {
         self.stack_set_name = input;
         self
     }
+    /// <p>The name or unique ID of the stack set that you want to delete stack instances for.</p>
+    pub fn get_stack_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_set_name
+    }
     /// Appends an item to `accounts`.
     ///
     /// To override the contents of this collection use [`set_accounts`](Self::set_accounts).
@@ -148,6 +152,11 @@ impl DeleteStackInstancesInputBuilder {
         self.accounts = input;
         self
     }
+    /// <p>[Self-managed permissions] The names of the Amazon Web Services accounts that you want to delete stack instances for.</p>
+    /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
+    pub fn get_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.accounts
+    }
     /// <p>[Service-managed permissions] The Organizations accounts from which to delete stack instances.</p>
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
     pub fn deployment_targets(mut self, input: crate::types::DeploymentTargets) -> Self {
@@ -162,6 +171,13 @@ impl DeleteStackInstancesInputBuilder {
     ) -> Self {
         self.deployment_targets = input;
         self
+    }
+    /// <p>[Service-managed permissions] The Organizations accounts from which to delete stack instances.</p>
+    /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
+    pub fn get_deployment_targets(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeploymentTargets> {
+        &self.deployment_targets
     }
     /// Appends an item to `regions`.
     ///
@@ -182,6 +198,10 @@ impl DeleteStackInstancesInputBuilder {
         self.regions = input;
         self
     }
+    /// <p>The Amazon Web Services Regions where you want to delete stack set instances.</p>
+    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.regions
+    }
     /// <p>Preferences for how CloudFormation performs this stack set operation.</p>
     pub fn operation_preferences(
         mut self,
@@ -198,6 +218,12 @@ impl DeleteStackInstancesInputBuilder {
         self.operation_preferences = input;
         self
     }
+    /// <p>Preferences for how CloudFormation performs this stack set operation.</p>
+    pub fn get_operation_preferences(
+        &self,
+    ) -> &::std::option::Option<crate::types::StackSetOperationPreferences> {
+        &self.operation_preferences
+    }
     /// <p>Removes the stack instances from the specified stack set, but doesn't delete the stacks. You can't reassociate a retained stack or add an existing, saved stack to a new stack set.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
     pub fn retain_stacks(mut self, input: bool) -> Self {
@@ -209,6 +235,11 @@ impl DeleteStackInstancesInputBuilder {
     pub fn set_retain_stacks(mut self, input: ::std::option::Option<bool>) -> Self {
         self.retain_stacks = input;
         self
+    }
+    /// <p>Removes the stack instances from the specified stack set, but doesn't delete the stacks. You can't reassociate a retained stack or add an existing, saved stack to a new stack set.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
+    pub fn get_retain_stacks(&self) -> &::std::option::Option<bool> {
+        &self.retain_stacks
     }
     /// <p>The unique identifier for this stack set operation.</p>
     /// <p>If you don't specify an operation ID, the SDK generates one automatically.</p>
@@ -225,6 +256,13 @@ impl DeleteStackInstancesInputBuilder {
     pub fn set_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operation_id = input;
         self
+    }
+    /// <p>The unique identifier for this stack set operation.</p>
+    /// <p>If you don't specify an operation ID, the SDK generates one automatically.</p>
+    /// <p>The operation ID also functions as an idempotency token, to ensure that CloudFormation performs the stack set operation only once, even if you retry the request multiple times. You can retry stack set operation requests to ensure that CloudFormation successfully received them.</p>
+    /// <p>Repeating this stack set operation with a new operation ID retries all stack instances whose status is <code>OUTDATED</code>.</p>
+    pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operation_id
     }
     /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
     /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
@@ -245,6 +283,15 @@ impl DeleteStackInstancesInputBuilder {
     pub fn set_call_as(mut self, input: ::std::option::Option<crate::types::CallAs>) -> Self {
         self.call_as = input;
         self
+    }
+    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <ul>
+    /// <li> <p>If you are signed in to the management account, specify <code>SELF</code>.</p> </li>
+    /// <li> <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon Web Services account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
+    /// </ul>
+    pub fn get_call_as(&self) -> &::std::option::Option<crate::types::CallAs> {
+        &self.call_as
     }
     /// Consumes the builder and constructs a [`DeleteStackInstancesInput`](crate::operation::delete_stack_instances::DeleteStackInstancesInput).
     pub fn build(

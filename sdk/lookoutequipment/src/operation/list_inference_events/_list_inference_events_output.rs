@@ -60,6 +60,10 @@ impl ListInferenceEventsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>An opaque pagination token indicating where to continue the listing of inference executions. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `inference_event_summaries`.
     ///
     /// To override the contents of this collection use [`set_inference_event_summaries`](Self::set_inference_event_summaries).
@@ -78,6 +82,12 @@ impl ListInferenceEventsOutputBuilder {
     ) -> Self {
         self.inference_event_summaries = input;
         self
+    }
+    /// <p>Provides an array of information about the individual inference events returned from the <code>ListInferenceEvents</code> operation, including scheduler used, event start time, event end time, diagnostics, and so on. </p>
+    pub fn get_inference_event_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InferenceEventSummary>> {
+        &self.inference_event_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

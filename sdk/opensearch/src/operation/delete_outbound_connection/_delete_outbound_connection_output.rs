@@ -52,6 +52,10 @@ impl DeleteOutboundConnectionOutputBuilder {
         self.connection = input;
         self
     }
+    /// <p>The deleted inbound connection.</p>
+    pub fn get_connection(&self) -> &::std::option::Option<crate::types::OutboundConnection> {
+        &self.connection
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

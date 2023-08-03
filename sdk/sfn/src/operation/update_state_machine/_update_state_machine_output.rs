@@ -68,6 +68,10 @@ impl UpdateStateMachineOutputBuilder {
         self.update_date = input;
         self
     }
+    /// <p>The date and time the state machine was updated.</p>
+    pub fn get_update_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_date
+    }
     /// <p>The revision identifier for the updated state machine.</p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
@@ -77,6 +81,10 @@ impl UpdateStateMachineOutputBuilder {
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision_id = input;
         self
+    }
+    /// <p>The revision identifier for the updated state machine.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision_id
     }
     /// <p>The Amazon Resource Name (ARN) of the published state machine version.</p>
     /// <p>If the <code>publish</code> parameter isn't set to <code>true</code>, this field returns null.</p>
@@ -95,6 +103,11 @@ impl UpdateStateMachineOutputBuilder {
     ) -> Self {
         self.state_machine_version_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the published state machine version.</p>
+    /// <p>If the <code>publish</code> parameter isn't set to <code>true</code>, this field returns null.</p>
+    pub fn get_state_machine_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_machine_version_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

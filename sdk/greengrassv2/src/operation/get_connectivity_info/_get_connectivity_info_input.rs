@@ -41,6 +41,10 @@ impl GetConnectivityInfoInputBuilder {
         self.thing_name = input;
         self
     }
+    /// <p>The name of the core device. This is also the name of the IoT thing.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_name
+    }
     /// Consumes the builder and constructs a [`GetConnectivityInfoInput`](crate::operation::get_connectivity_info::GetConnectivityInfoInput).
     pub fn build(
         self,

@@ -40,6 +40,10 @@ impl ModifyDBClusterParameterGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyDBClusterParameterGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::modify_db_cluster_parameter_group::builders::ModifyDbClusterParameterGroupInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +140,12 @@ impl ModifyDBClusterParameterGroupFluentBuilder {
         self.inner = self.inner.set_db_cluster_parameter_group_name(input);
         self
     }
+    /// <p>The name of the DB cluster parameter group to modify.</p>
+    pub fn get_db_cluster_parameter_group_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_cluster_parameter_group_name()
+    }
     /// Appends an item to `Parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
@@ -152,5 +162,11 @@ impl ModifyDBClusterParameterGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
+    }
+    /// <p>A list of parameters in the DB cluster parameter group to modify.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Parameter>> {
+        self.inner.get_parameters()
     }
 }

@@ -89,6 +89,10 @@ impl StartAppInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>A value that you provide to ensure that repeated calls to this API operation using the same parameters complete only once. A <code>ClientToken</code> is also known as an <i>idempotency token</i>. A <code>ClientToken</code> expires after 24 hours.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>The name of the simulation of the app.</p>
     pub fn simulation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.simulation = ::std::option::Option::Some(input.into());
@@ -98,6 +102,10 @@ impl StartAppInputBuilder {
     pub fn set_simulation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.simulation = input;
         self
+    }
+    /// <p>The name of the simulation of the app.</p>
+    pub fn get_simulation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.simulation
     }
     /// <p>The name of the domain of the app.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -109,6 +117,10 @@ impl StartAppInputBuilder {
         self.domain = input;
         self
     }
+    /// <p>The name of the domain of the app.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
+    }
     /// <p>The name of the app.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -119,6 +131,10 @@ impl StartAppInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the app.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the app.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -128,6 +144,10 @@ impl StartAppInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the app.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Options that apply when the app starts. These options override default behavior.</p>
     pub fn launch_overrides(mut self, input: crate::types::LaunchOverrides) -> Self {
@@ -141,6 +161,10 @@ impl StartAppInputBuilder {
     ) -> Self {
         self.launch_overrides = input;
         self
+    }
+    /// <p>Options that apply when the app starts. These options override default behavior.</p>
+    pub fn get_launch_overrides(&self) -> &::std::option::Option<crate::types::LaunchOverrides> {
+        &self.launch_overrides
     }
     /// Consumes the builder and constructs a [`StartAppInput`](crate::operation::start_app::StartAppInput).
     pub fn build(

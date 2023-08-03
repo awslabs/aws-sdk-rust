@@ -53,6 +53,12 @@ impl DescribePackageVersionOutputBuilder {
         self.package_version = input;
         self
     }
+    /// <p> A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a> object that contains information about the requested package version. </p>
+    pub fn get_package_version(
+        &self,
+    ) -> &::std::option::Option<crate::types::PackageVersionDescription> {
+        &self.package_version
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

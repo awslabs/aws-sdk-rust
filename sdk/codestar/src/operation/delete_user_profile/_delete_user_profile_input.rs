@@ -40,6 +40,10 @@ impl DeleteUserProfileInputBuilder {
         self.user_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the user to delete from AWS CodeStar.</p>
+    pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_arn
+    }
     /// Consumes the builder and constructs a [`DeleteUserProfileInput`](crate::operation::delete_user_profile::DeleteUserProfileInput).
     pub fn build(
         self,

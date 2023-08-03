@@ -53,6 +53,10 @@ impl CreateAuthenticationProfileInputBuilder {
         self.authentication_profile_name = input;
         self
     }
+    /// <p>The name of the authentication profile to be created.</p>
+    pub fn get_authentication_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authentication_profile_name
+    }
     /// <p>The content of the authentication profile in JSON format. The maximum length of the JSON string is determined by a quota for your account.</p>
     pub fn authentication_profile_content(
         mut self,
@@ -68,6 +72,12 @@ impl CreateAuthenticationProfileInputBuilder {
     ) -> Self {
         self.authentication_profile_content = input;
         self
+    }
+    /// <p>The content of the authentication profile in JSON format. The maximum length of the JSON string is determined by a quota for your account.</p>
+    pub fn get_authentication_profile_content(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.authentication_profile_content
     }
     /// Consumes the builder and constructs a [`CreateAuthenticationProfileInput`](crate::operation::create_authentication_profile::CreateAuthenticationProfileInput).
     pub fn build(

@@ -40,6 +40,10 @@ impl ChannelMembershipSummaryBuilder {
         self.member = input;
         self
     }
+    /// <p>A member's summary data.</p>
+    pub fn get_member(&self) -> &::std::option::Option<crate::types::Identity> {
+        &self.member
+    }
     /// Consumes the builder and constructs a [`ChannelMembershipSummary`](crate::types::ChannelMembershipSummary).
     pub fn build(self) -> crate::types::ChannelMembershipSummary {
         crate::types::ChannelMembershipSummary {

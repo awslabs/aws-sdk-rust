@@ -36,6 +36,12 @@ impl UpdateDataLakeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDataLake as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_data_lake::builders::UpdateDataLakeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +138,11 @@ impl UpdateDataLakeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_configurations(input);
         self
+    }
+    /// <p>Specify the Region or Regions that will contribute data to the rollup region.</p>
+    pub fn get_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataLakeConfiguration>> {
+        self.inner.get_configurations()
     }
 }

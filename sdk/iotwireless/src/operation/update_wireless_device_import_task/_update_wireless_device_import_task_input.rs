@@ -47,6 +47,10 @@ impl UpdateWirelessDeviceImportTaskInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the import task to be updated.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The Sidewalk-related parameters of the import task to be updated.</p>
     pub fn sidewalk(mut self, input: crate::types::SidewalkUpdateImportInfo) -> Self {
         self.sidewalk = ::std::option::Option::Some(input);
@@ -59,6 +63,10 @@ impl UpdateWirelessDeviceImportTaskInputBuilder {
     ) -> Self {
         self.sidewalk = input;
         self
+    }
+    /// <p>The Sidewalk-related parameters of the import task to be updated.</p>
+    pub fn get_sidewalk(&self) -> &::std::option::Option<crate::types::SidewalkUpdateImportInfo> {
+        &self.sidewalk
     }
     /// Consumes the builder and constructs a [`UpdateWirelessDeviceImportTaskInput`](crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTaskInput).
     pub fn build(

@@ -61,6 +61,12 @@ impl DisableUserInputBuilder {
         self.user_name = input;
         self
     }
+    /// <p>The email address of the user.</p> <note>
+    /// <p>Users' email addresses are case-sensitive.</p>
+    /// </note>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
+    }
     /// <p>The authentication type for the user. You must specify USERPOOL.</p>
     pub fn authentication_type(mut self, input: crate::types::AuthenticationType) -> Self {
         self.authentication_type = ::std::option::Option::Some(input);
@@ -73,6 +79,12 @@ impl DisableUserInputBuilder {
     ) -> Self {
         self.authentication_type = input;
         self
+    }
+    /// <p>The authentication type for the user. You must specify USERPOOL.</p>
+    pub fn get_authentication_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuthenticationType> {
+        &self.authentication_type
     }
     /// Consumes the builder and constructs a [`DisableUserInput`](crate::operation::disable_user::DisableUserInput).
     pub fn build(

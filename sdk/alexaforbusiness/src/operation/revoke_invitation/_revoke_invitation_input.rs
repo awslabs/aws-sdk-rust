@@ -48,6 +48,10 @@ impl RevokeInvitationInputBuilder {
         self.user_arn = input;
         self
     }
+    /// <p>The ARN of the user for whom to revoke an enrollment invitation. Required.</p>
+    pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_arn
+    }
     /// <p>The ARN of the enrollment invitation to revoke. Required.</p>
     pub fn enrollment_id(
         mut self,
@@ -63,6 +67,10 @@ impl RevokeInvitationInputBuilder {
     ) -> Self {
         self.enrollment_id = input;
         self
+    }
+    /// <p>The ARN of the enrollment invitation to revoke. Required.</p>
+    pub fn get_enrollment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.enrollment_id
     }
     /// Consumes the builder and constructs a [`RevokeInvitationInput`](crate::operation::revoke_invitation::RevokeInvitationInput).
     pub fn build(

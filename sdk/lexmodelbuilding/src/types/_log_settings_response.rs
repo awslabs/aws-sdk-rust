@@ -72,6 +72,10 @@ impl LogSettingsResponseBuilder {
         self.log_type = input;
         self
     }
+    /// <p>The type of logging that is enabled.</p>
+    pub fn get_log_type(&self) -> &::std::option::Option<crate::types::LogType> {
+        &self.log_type
+    }
     /// <p>The destination where logs are delivered.</p>
     pub fn destination(mut self, input: crate::types::Destination) -> Self {
         self.destination = ::std::option::Option::Some(input);
@@ -85,6 +89,10 @@ impl LogSettingsResponseBuilder {
         self.destination = input;
         self
     }
+    /// <p>The destination where logs are delivered.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<crate::types::Destination> {
+        &self.destination
+    }
     /// <p>The Amazon Resource Name (ARN) of the key used to encrypt audio logs in an S3 bucket.</p>
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_arn = ::std::option::Option::Some(input.into());
@@ -95,6 +103,10 @@ impl LogSettingsResponseBuilder {
         self.kms_key_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the key used to encrypt audio logs in an S3 bucket.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group or S3 bucket where the logs are delivered.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
@@ -104,6 +116,10 @@ impl LogSettingsResponseBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group or S3 bucket where the logs are delivered.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// <p>The resource prefix is the first part of the S3 object key within the S3 bucket that you specified to contain audio logs. For CloudWatch Logs it is the prefix of the log stream name within the log group that you specified. </p>
     pub fn resource_prefix(
@@ -120,6 +136,10 @@ impl LogSettingsResponseBuilder {
     ) -> Self {
         self.resource_prefix = input;
         self
+    }
+    /// <p>The resource prefix is the first part of the S3 object key within the S3 bucket that you specified to contain audio logs. For CloudWatch Logs it is the prefix of the log stream name within the log group that you specified. </p>
+    pub fn get_resource_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_prefix
     }
     /// Consumes the builder and constructs a [`LogSettingsResponse`](crate::types::LogSettingsResponse).
     pub fn build(self) -> crate::types::LogSettingsResponse {

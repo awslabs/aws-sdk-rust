@@ -36,6 +36,12 @@ impl StopCrawlerScheduleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StopCrawlerSchedule as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::stop_crawler_schedule::builders::StopCrawlerScheduleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +131,9 @@ impl StopCrawlerScheduleFluentBuilder {
     pub fn set_crawler_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_crawler_name(input);
         self
+    }
+    /// <p>Name of the crawler whose schedule state to set.</p>
+    pub fn get_crawler_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_crawler_name()
     }
 }

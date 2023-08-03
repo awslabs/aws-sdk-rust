@@ -36,6 +36,12 @@ impl DescribeLocationSmbFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeLocationSmb as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_location_smb::builders::DescribeLocationSmbInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +131,9 @@ impl DescribeLocationSmbFluentBuilder {
     pub fn set_location_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_location_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the SMB location to describe.</p>
+    pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_location_arn()
     }
 }

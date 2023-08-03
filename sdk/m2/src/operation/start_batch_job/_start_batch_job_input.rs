@@ -69,6 +69,10 @@ impl StartBatchJobInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The unique identifier of the application associated with this batch job.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The unique identifier of the batch job.</p>
     pub fn batch_job_identifier(mut self, input: crate::types::BatchJobIdentifier) -> Self {
         self.batch_job_identifier = ::std::option::Option::Some(input);
@@ -81,6 +85,12 @@ impl StartBatchJobInputBuilder {
     ) -> Self {
         self.batch_job_identifier = input;
         self
+    }
+    /// <p>The unique identifier of the batch job.</p>
+    pub fn get_batch_job_identifier(
+        &self,
+    ) -> &::std::option::Option<crate::types::BatchJobIdentifier> {
+        &self.batch_job_identifier
     }
     /// Adds a key-value pair to `job_params`.
     ///
@@ -106,6 +116,14 @@ impl StartBatchJobInputBuilder {
     ) -> Self {
         self.job_params = input;
         self
+    }
+    /// <p>The collection of batch job parameters. For details about limits for keys and values, see <a href="https://www.ibm.com/docs/en/workload-automation/9.3.0?topic=zos-coding-variables-in-jcl">Coding variables in JCL</a>.</p>
+    pub fn get_job_params(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.job_params
     }
     /// Consumes the builder and constructs a [`StartBatchJobInput`](crate::operation::start_batch_job::StartBatchJobInput).
     pub fn build(

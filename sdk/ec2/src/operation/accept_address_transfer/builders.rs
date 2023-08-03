@@ -36,6 +36,13 @@ impl AcceptAddressTransferFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AcceptAddressTransfer as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::accept_address_transfer::builders::AcceptAddressTransferInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl AcceptAddressTransferFluentBuilder {
         self.inner = self.inner.set_address(input);
         self
     }
+    /// <p>The Elastic IP address you are accepting for transfer.</p>
+    pub fn get_address(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_address()
+    }
     /// Appends an item to `TagSpecifications`.
     ///
     /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
@@ -155,6 +166,18 @@ impl AcceptAddressTransferFluentBuilder {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
+    /// <p> <code>tag</code>:<key>
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
+    /// <code>Owner</code> and the value
+    /// <code>TeamA</code>, specify
+    /// <code>tag:Owner</code> for the filter name and
+    /// <code>TeamA</code> for the filter value.
+    /// </key></p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        self.inner.get_tag_specifications()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -164,5 +187,9 @@ impl AcceptAddressTransferFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

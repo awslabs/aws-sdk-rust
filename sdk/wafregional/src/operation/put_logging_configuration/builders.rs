@@ -49,6 +49,13 @@ impl PutLoggingConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutLoggingConfiguration as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_logging_configuration::builders::PutLoggingConfigurationInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -145,5 +152,13 @@ impl PutLoggingConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_logging_configuration(input);
         self
+    }
+    /// <p>The Amazon Kinesis Data Firehose that contains the inspected traffic information, the redacted fields details, and the Amazon Resource Name (ARN) of the web ACL to monitor.</p> <note>
+    /// <p>When specifying <code>Type</code> in <code>RedactedFields</code>, you must use one of the following values: <code>URI</code>, <code>QUERY_STRING</code>, <code>HEADER</code>, or <code>METHOD</code>.</p>
+    /// </note>
+    pub fn get_logging_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::LoggingConfiguration> {
+        self.inner.get_logging_configuration()
     }
 }

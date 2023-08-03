@@ -58,6 +58,10 @@ impl AuditEventBuilder {
         self.id = input;
         self
     }
+    /// <p>The original event ID from the source event.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The content of an audit event that comes from the event, such as <code>userIdentity</code>, <code>userAgent</code>, and <code>eventSource</code>.</p>
     pub fn event_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_data = ::std::option::Option::Some(input.into());
@@ -67,6 +71,10 @@ impl AuditEventBuilder {
     pub fn set_event_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_data = input;
         self
+    }
+    /// <p>The content of an audit event that comes from the event, such as <code>userIdentity</code>, <code>userAgent</code>, and <code>eventSource</code>.</p>
+    pub fn get_event_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_data
     }
     /// <p>A checksum is a base64-SHA256 algorithm that helps you verify that CloudTrail receives the event that matches with the checksum. Calculate the checksum by running a command like the following:</p>
     /// <p> <code>printf %s <i>$eventdata</i> | openssl dgst -binary -sha256 | base64</code> </p>
@@ -85,6 +93,11 @@ impl AuditEventBuilder {
     ) -> Self {
         self.event_data_checksum = input;
         self
+    }
+    /// <p>A checksum is a base64-SHA256 algorithm that helps you verify that CloudTrail receives the event that matches with the checksum. Calculate the checksum by running a command like the following:</p>
+    /// <p> <code>printf %s <i>$eventdata</i> | openssl dgst -binary -sha256 | base64</code> </p>
+    pub fn get_event_data_checksum(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_data_checksum
     }
     /// Consumes the builder and constructs a [`AuditEvent`](crate::types::AuditEvent).
     pub fn build(self) -> crate::types::AuditEvent {

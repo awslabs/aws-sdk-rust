@@ -81,6 +81,10 @@ impl DescribeManagedPrefixListsInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -110,6 +114,15 @@ impl DescribeManagedPrefixListsInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>One or more filters.</p>
+    /// <ul>
+    /// <li> <p> <code>owner-id</code> - The ID of the prefix list owner.</p> </li>
+    /// <li> <p> <code>prefix-list-id</code> - The ID of the prefix list.</p> </li>
+    /// <li> <p> <code>prefix-list-name</code> - The name of the prefix list.</p> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
+    }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -120,6 +133,10 @@ impl DescribeManagedPrefixListsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -129,6 +146,10 @@ impl DescribeManagedPrefixListsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `prefix_list_ids`.
     ///
@@ -151,6 +172,12 @@ impl DescribeManagedPrefixListsInputBuilder {
     ) -> Self {
         self.prefix_list_ids = input;
         self
+    }
+    /// <p>One or more prefix list IDs.</p>
+    pub fn get_prefix_list_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.prefix_list_ids
     }
     /// Consumes the builder and constructs a [`DescribeManagedPrefixListsInput`](crate::operation::describe_managed_prefix_lists::DescribeManagedPrefixListsInput).
     pub fn build(

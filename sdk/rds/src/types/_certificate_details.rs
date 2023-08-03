@@ -55,6 +55,10 @@ impl CertificateDetailsBuilder {
         self.ca_identifier = input;
         self
     }
+    /// <p>The CA identifier of the CA certificate used for the DB instance's server certificate.</p>
+    pub fn get_ca_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ca_identifier
+    }
     /// <p>The expiration date of the DB instance’s server certificate.</p>
     pub fn valid_till(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.valid_till = ::std::option::Option::Some(input);
@@ -67,6 +71,10 @@ impl CertificateDetailsBuilder {
     ) -> Self {
         self.valid_till = input;
         self
+    }
+    /// <p>The expiration date of the DB instance’s server certificate.</p>
+    pub fn get_valid_till(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.valid_till
     }
     /// Consumes the builder and constructs a [`CertificateDetails`](crate::types::CertificateDetails).
     pub fn build(self) -> crate::types::CertificateDetails {

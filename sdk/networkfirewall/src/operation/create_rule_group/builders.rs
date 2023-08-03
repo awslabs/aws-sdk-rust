@@ -37,6 +37,12 @@ impl CreateRuleGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateRuleGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_rule_group::builders::CreateRuleGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl CreateRuleGroupFluentBuilder {
         self.inner = self.inner.set_rule_group_name(input);
         self
     }
+    /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
+    pub fn get_rule_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rule_group_name()
+    }
     /// <p>An object that defines the rule group rules. </p> <note>
     /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both. </p>
     /// </note>
@@ -146,6 +156,12 @@ impl CreateRuleGroupFluentBuilder {
     pub fn set_rule_group(mut self, input: ::std::option::Option<crate::types::RuleGroup>) -> Self {
         self.inner = self.inner.set_rule_group(input);
         self
+    }
+    /// <p>An object that defines the rule group rules. </p> <note>
+    /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both. </p>
+    /// </note>
+    pub fn get_rule_group(&self) -> &::std::option::Option<crate::types::RuleGroup> {
+        self.inner.get_rule_group()
     }
     /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups. </p> <note>
     /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both. </p>
@@ -163,6 +179,13 @@ impl CreateRuleGroupFluentBuilder {
         self.inner = self.inner.set_rules(input);
         self
     }
+    /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups. </p> <note>
+    /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both. </p>
+    /// </note>
+    /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call response returns a <code>RuleGroup</code> object that Network Firewall has populated from your string. </p>
+    pub fn get_rules(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rules()
+    }
     /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p>
     pub fn r#type(mut self, input: crate::types::RuleGroupType) -> Self {
         self.inner = self.inner.r#type(input);
@@ -173,6 +196,10 @@ impl CreateRuleGroupFluentBuilder {
         self.inner = self.inner.set_type(input);
         self
     }
+    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::RuleGroupType> {
+        self.inner.get_type()
+    }
     /// <p>A description of the rule group. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -182,6 +209,10 @@ impl CreateRuleGroupFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of the rule group. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation. When you update a rule group, you are limited to this capacity. When you reference a rule group from a firewall policy, Network Firewall reserves this capacity for the rule group. </p>
     /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling <code>CreateRuleGroup</code> with <code>DryRun</code> set to <code>TRUE</code>. </p> <note>
@@ -221,6 +252,24 @@ impl CreateRuleGroupFluentBuilder {
         self.inner = self.inner.set_capacity(input);
         self
     }
+    /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation. When you update a rule group, you are limited to this capacity. When you reference a rule group from a firewall policy, Network Firewall reserves this capacity for the rule group. </p>
+    /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling <code>CreateRuleGroup</code> with <code>DryRun</code> set to <code>TRUE</code>. </p> <note>
+    /// <p>You can't change or exceed this capacity when you update the rule group, so leave room for your rule group to grow. </p>
+    /// </note>
+    /// <p> <b>Capacity for a stateless rule group</b> </p>
+    /// <p>For a stateless rule group, the capacity required is the sum of the capacity requirements of the individual rules that you expect to have in the rule group. </p>
+    /// <p>To calculate the capacity requirement of a single rule, multiply the capacity requirement values of each of the rule's match settings:</p>
+    /// <ul>
+    /// <li> <p>A match setting with no criteria specified has a value of 1. </p> </li>
+    /// <li> <p>A match setting with <code>Any</code> specified has a value of 1. </p> </li>
+    /// <li> <p>All other match settings have a value equal to the number of elements provided in the setting. For example, a protocol setting ["UDP"] and a source setting ["10.0.0.0/24"] each have a value of 1. A protocol setting ["UDP","TCP"] has a value of 2. A source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"] has a value of 3. </p> </li>
+    /// </ul>
+    /// <p>A rule with no criteria specified in any of its match settings has a capacity requirement of 1. A rule with protocol setting ["UDP","TCP"], source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"], and a single specification or no specification for each of the other match settings has a capacity requirement of 6. </p>
+    /// <p> <b>Capacity for a stateful rule group</b> </p>
+    /// <p>For a stateful rule group, the minimum capacity required is the number of individual rules that you expect to have in the rule group. </p>
+    pub fn get_capacity(&self) -> &::std::option::Option<i32> {
+        self.inner.get_capacity()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -238,6 +287,10 @@ impl CreateRuleGroupFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The key:value pairs to associate with the resource.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
     /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
     /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
@@ -251,6 +304,12 @@ impl CreateRuleGroupFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
+    /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
+    /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
     /// <p>A complex type that contains settings for encryption of your rule group resources.</p>
     pub fn encryption_configuration(
@@ -268,6 +327,12 @@ impl CreateRuleGroupFluentBuilder {
         self.inner = self.inner.set_encryption_configuration(input);
         self
     }
+    /// <p>A complex type that contains settings for encryption of your rule group resources.</p>
+    pub fn get_encryption_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+        self.inner.get_encryption_configuration()
+    }
     /// <p>A complex type that contains metadata about the rule group that your own rule group is copied from. You can use the metadata to keep track of updates made to the originating rule group.</p>
     pub fn source_metadata(mut self, input: crate::types::SourceMetadata) -> Self {
         self.inner = self.inner.source_metadata(input);
@@ -280,5 +345,9 @@ impl CreateRuleGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_source_metadata(input);
         self
+    }
+    /// <p>A complex type that contains metadata about the rule group that your own rule group is copied from. You can use the metadata to keep track of updates made to the originating rule group.</p>
+    pub fn get_source_metadata(&self) -> &::std::option::Option<crate::types::SourceMetadata> {
+        self.inner.get_source_metadata()
     }
 }

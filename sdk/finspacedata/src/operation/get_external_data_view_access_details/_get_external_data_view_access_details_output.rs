@@ -57,6 +57,10 @@ impl GetExternalDataViewAccessDetailsOutputBuilder {
         self.credentials = input;
         self
     }
+    /// <p>The credentials required to access the external Dataview from the S3 location.</p>
+    pub fn get_credentials(&self) -> &::std::option::Option<crate::types::AwsCredentials> {
+        &self.credentials
+    }
     /// <p>The location where the external Dataview is stored.</p>
     pub fn s3_location(mut self, input: crate::types::S3Location) -> Self {
         self.s3_location = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl GetExternalDataViewAccessDetailsOutputBuilder {
     ) -> Self {
         self.s3_location = input;
         self
+    }
+    /// <p>The location where the external Dataview is stored.</p>
+    pub fn get_s3_location(&self) -> &::std::option::Option<crate::types::S3Location> {
+        &self.s3_location
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

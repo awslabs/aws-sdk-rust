@@ -36,6 +36,12 @@ impl DeleteAuthorizerFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteAuthorizer as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_authorizer::builders::DeleteAuthorizerInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DeleteAuthorizerFluentBuilder {
         self.inner = self.inner.set_rest_api_id(input);
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rest_api_id()
+    }
     /// <p>The identifier of the Authorizer resource.</p>
     pub fn authorizer_id(
         mut self,
@@ -141,5 +151,9 @@ impl DeleteAuthorizerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_authorizer_id(input);
         self
+    }
+    /// <p>The identifier of the Authorizer resource.</p>
+    pub fn get_authorizer_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_authorizer_id()
     }
 }

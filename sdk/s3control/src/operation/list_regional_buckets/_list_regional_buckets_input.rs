@@ -69,6 +69,10 @@ impl ListRegionalBucketsInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p></p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl ListRegionalBucketsInputBuilder {
         self
     }
     /// <p></p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
+    /// <p></p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
@@ -88,6 +96,10 @@ impl ListRegionalBucketsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p></p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The ID of the Outposts resource.</p> <note>
     /// <p>This ID is required by Amazon S3 on Outposts buckets.</p>
@@ -102,6 +114,12 @@ impl ListRegionalBucketsInputBuilder {
     pub fn set_outpost_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outpost_id = input;
         self
+    }
+    /// <p>The ID of the Outposts resource.</p> <note>
+    /// <p>This ID is required by Amazon S3 on Outposts buckets.</p>
+    /// </note>
+    pub fn get_outpost_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.outpost_id
     }
     /// Consumes the builder and constructs a [`ListRegionalBucketsInput`](crate::operation::list_regional_buckets::ListRegionalBucketsInput).
     pub fn build(

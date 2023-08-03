@@ -43,6 +43,11 @@ impl DeleteGroupInputBuilder {
         self.group_name = input;
         self
     }
+    /// <p>The name of the IAM group to delete.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
+    }
     /// Consumes the builder and constructs a [`DeleteGroupInput`](crate::operation::delete_group::DeleteGroupInput).
     pub fn build(
         self,

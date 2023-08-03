@@ -38,6 +38,13 @@ impl UpdateInstanceAttributeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateInstanceAttribute as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_instance_attribute::builders::UpdateInstanceAttributeInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +135,10 @@ impl UpdateInstanceAttributeFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>The type of attribute.</p> <note>
     /// <p>Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature, contact Amazon Web Services Support for allowlisting.</p>
     /// </note>
@@ -145,6 +156,14 @@ impl UpdateInstanceAttributeFluentBuilder {
         self.inner = self.inner.set_attribute_type(input);
         self
     }
+    /// <p>The type of attribute.</p> <note>
+    /// <p>Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature, contact Amazon Web Services Support for allowlisting.</p>
+    /// </note>
+    pub fn get_attribute_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceAttributeType> {
+        self.inner.get_attribute_type()
+    }
     /// <p>The value for the attribute. Maximum character limit is 100. </p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.value(input.into());
@@ -154,5 +173,9 @@ impl UpdateInstanceAttributeFluentBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_value(input);
         self
+    }
+    /// <p>The value for the attribute. Maximum character limit is 100. </p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_value()
     }
 }

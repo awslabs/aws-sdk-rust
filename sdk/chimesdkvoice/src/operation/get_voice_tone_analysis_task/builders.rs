@@ -36,6 +36,10 @@ impl GetVoiceToneAnalysisTaskFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetVoiceToneAnalysisTask as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_voice_tone_analysis_task::builders::GetVoiceToneAnalysisTaskInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl GetVoiceToneAnalysisTaskFluentBuilder {
         self.inner = self.inner.set_voice_connector_id(input);
         self
     }
+    /// <p>The Voice Connector ID.</p>
+    pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_voice_connector_id()
+    }
     /// <p>The ID of the voice tone anlysis task.</p>
     pub fn voice_tone_analysis_task_id(
         mut self,
@@ -148,6 +156,10 @@ impl GetVoiceToneAnalysisTaskFluentBuilder {
         self.inner = self.inner.set_voice_tone_analysis_task_id(input);
         self
     }
+    /// <p>The ID of the voice tone anlysis task.</p>
+    pub fn get_voice_tone_analysis_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_voice_tone_analysis_task_id()
+    }
     /// <p>Specifies whether the voice being analyzed is the caller (originator) or the callee (responder).</p>
     pub fn is_caller(mut self, input: bool) -> Self {
         self.inner = self.inner.is_caller(input);
@@ -157,5 +169,9 @@ impl GetVoiceToneAnalysisTaskFluentBuilder {
     pub fn set_is_caller(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_is_caller(input);
         self
+    }
+    /// <p>Specifies whether the voice being analyzed is the caller (originator) or the callee (responder).</p>
+    pub fn get_is_caller(&self) -> &::std::option::Option<bool> {
+        self.inner.get_is_caller()
     }
 }

@@ -46,6 +46,10 @@ impl CreateTaskSetOutputBuilder {
         self.task_set = input;
         self
     }
+    /// <p>Information about a set of Amazon ECS tasks in either an CodeDeploy or an <code>EXTERNAL</code> deployment. A task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic.</p>
+    pub fn get_task_set(&self) -> &::std::option::Option<crate::types::TaskSet> {
+        &self.task_set
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

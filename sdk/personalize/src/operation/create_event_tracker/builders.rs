@@ -53,6 +53,12 @@ impl CreateEventTrackerFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateEventTracker as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_event_tracker::builders::CreateEventTrackerInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -143,6 +149,10 @@ impl CreateEventTrackerFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name for the event tracker.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The Amazon Resource Name (ARN) of the dataset group that receives the event data.</p>
     pub fn dataset_group_arn(
         mut self,
@@ -158,6 +168,10 @@ impl CreateEventTrackerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_dataset_group_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the dataset group that receives the event data.</p>
+    pub fn get_dataset_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dataset_group_arn()
     }
     /// Appends an item to `tags`.
     ///
@@ -175,5 +189,9 @@ impl CreateEventTrackerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the event tracker.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

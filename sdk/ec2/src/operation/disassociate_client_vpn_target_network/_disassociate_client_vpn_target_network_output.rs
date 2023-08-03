@@ -60,6 +60,10 @@ impl DisassociateClientVpnTargetNetworkOutputBuilder {
         self.association_id = input;
         self
     }
+    /// <p>The ID of the target network association.</p>
+    pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_id
+    }
     /// <p>The current state of the target network association.</p>
     pub fn status(mut self, input: crate::types::AssociationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl DisassociateClientVpnTargetNetworkOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current state of the target network association.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AssociationStatus> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

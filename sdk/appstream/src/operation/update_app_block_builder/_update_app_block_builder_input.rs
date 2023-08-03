@@ -138,6 +138,10 @@ impl UpdateAppBlockBuilderInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The unique name for the app block builder.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the app block builder.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -148,6 +152,10 @@ impl UpdateAppBlockBuilderInputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the app block builder.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The display name of the app block builder.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -157,6 +165,10 @@ impl UpdateAppBlockBuilderInputBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
+    }
+    /// <p>The display name of the app block builder.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// <p>The platform of the app block builder.</p>
     /// <p> <code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
@@ -172,6 +184,11 @@ impl UpdateAppBlockBuilderInputBuilder {
     ) -> Self {
         self.platform = input;
         self
+    }
+    /// <p>The platform of the app block builder.</p>
+    /// <p> <code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<crate::types::PlatformType> {
+        &self.platform
     }
     /// <p>The instance type to use when launching the app block builder. The following instance types are available:</p>
     /// <ul>
@@ -203,6 +220,17 @@ impl UpdateAppBlockBuilderInputBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The instance type to use when launching the app block builder. The following instance types are available:</p>
+    /// <ul>
+    /// <li> <p>stream.standard.small</p> </li>
+    /// <li> <p>stream.standard.medium</p> </li>
+    /// <li> <p>stream.standard.large</p> </li>
+    /// <li> <p>stream.standard.xlarge</p> </li>
+    /// <li> <p>stream.standard.2xlarge</p> </li>
+    /// </ul>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_type
+    }
     /// <p>The VPC configuration for the app block builder.</p>
     /// <p>App block builders require that you specify at least two subnets in different availability zones.</p>
     pub fn vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
@@ -214,6 +242,11 @@ impl UpdateAppBlockBuilderInputBuilder {
     pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
         self.vpc_config = input;
         self
+    }
+    /// <p>The VPC configuration for the app block builder.</p>
+    /// <p>App block builders require that you specify at least two subnets in different availability zones.</p>
+    pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
+        &self.vpc_config
     }
     /// <p>Enables or disables default internet access for the app block builder.</p>
     pub fn enable_default_internet_access(mut self, input: bool) -> Self {
@@ -228,6 +261,10 @@ impl UpdateAppBlockBuilderInputBuilder {
         self.enable_default_internet_access = input;
         self
     }
+    /// <p>Enables or disables default internet access for the app block builder.</p>
+    pub fn get_enable_default_internet_access(&self) -> &::std::option::Option<bool> {
+        &self.enable_default_internet_access
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the app block builder. To assume a role, the app block builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -239,6 +276,11 @@ impl UpdateAppBlockBuilderInputBuilder {
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the app block builder. To assume a role, the app block builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iam_role_arn
     }
     /// Appends an item to `access_endpoints`.
     ///
@@ -259,6 +301,12 @@ impl UpdateAppBlockBuilderInputBuilder {
         self.access_endpoints = input;
         self
     }
+    /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the app block builder only through the specified endpoints.</p>
+    pub fn get_access_endpoints(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>> {
+        &self.access_endpoints
+    }
     /// Appends an item to `attributes_to_delete`.
     ///
     /// To override the contents of this collection use [`set_attributes_to_delete`](Self::set_attributes_to_delete).
@@ -277,6 +325,12 @@ impl UpdateAppBlockBuilderInputBuilder {
     ) -> Self {
         self.attributes_to_delete = input;
         self
+    }
+    /// <p>The attributes to delete from the app block builder.</p>
+    pub fn get_attributes_to_delete(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AppBlockBuilderAttribute>> {
+        &self.attributes_to_delete
     }
     /// Consumes the builder and constructs a [`UpdateAppBlockBuilderInput`](crate::operation::update_app_block_builder::UpdateAppBlockBuilderInput).
     pub fn build(

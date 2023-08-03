@@ -57,6 +57,12 @@ impl DescribeSupportedLanguagesOutputBuilder {
         self.supported_languages = input;
         self
     }
+    /// <p> A JSON-formatted array that contains the available ISO 639-1 language codes. </p>
+    pub fn get_supported_languages(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SupportedLanguage>> {
+        &self.supported_languages
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

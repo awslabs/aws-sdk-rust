@@ -36,6 +36,10 @@ impl PutInventoryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutInventory as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_inventory::builders::PutInventoryInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl PutInventoryFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>An managed node ID where you want to add or update inventory items.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// Appends an item to `Items`.
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
@@ -134,5 +142,11 @@ impl PutInventoryFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_items(input);
         self
+    }
+    /// <p>The inventory items that you want to add or update on managed nodes.</p>
+    pub fn get_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InventoryItem>> {
+        self.inner.get_items()
     }
 }

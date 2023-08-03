@@ -71,6 +71,10 @@ impl CreateCampaignOutputBuilder {
         self.id = input;
         self
     }
+    /// Identifier representing a Campaign
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// The resource name of an Amazon Connect campaign.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl CreateCampaignOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// The resource name of an Amazon Connect campaign.
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -105,6 +113,14 @@ impl CreateCampaignOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// Tag map with key and value.
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

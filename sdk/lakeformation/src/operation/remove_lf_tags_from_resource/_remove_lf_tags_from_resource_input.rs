@@ -55,6 +55,10 @@ impl RemoveLfTagsFromResourceInputBuilder {
         self.catalog_id = input;
         self
     }
+    /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// <p>The database, table, or column resource where you want to remove an LF-tag.</p>
     pub fn resource(mut self, input: crate::types::Resource) -> Self {
         self.resource = ::std::option::Option::Some(input);
@@ -64,6 +68,10 @@ impl RemoveLfTagsFromResourceInputBuilder {
     pub fn set_resource(mut self, input: ::std::option::Option<crate::types::Resource>) -> Self {
         self.resource = input;
         self
+    }
+    /// <p>The database, table, or column resource where you want to remove an LF-tag.</p>
+    pub fn get_resource(&self) -> &::std::option::Option<crate::types::Resource> {
+        &self.resource
     }
     /// Appends an item to `lf_tags`.
     ///
@@ -83,6 +91,10 @@ impl RemoveLfTagsFromResourceInputBuilder {
     ) -> Self {
         self.lf_tags = input;
         self
+    }
+    /// <p>The LF-tags to be removed from the resource.</p>
+    pub fn get_lf_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>> {
+        &self.lf_tags
     }
     /// Consumes the builder and constructs a [`RemoveLfTagsFromResourceInput`](crate::operation::remove_lf_tags_from_resource::RemoveLfTagsFromResourceInput).
     pub fn build(

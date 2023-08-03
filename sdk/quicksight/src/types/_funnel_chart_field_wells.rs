@@ -51,6 +51,12 @@ impl FunnelChartFieldWellsBuilder {
         self.funnel_chart_aggregated_field_wells = input;
         self
     }
+    /// <p>The field well configuration of a <code>FunnelChartVisual</code>.</p>
+    pub fn get_funnel_chart_aggregated_field_wells(
+        &self,
+    ) -> &::std::option::Option<crate::types::FunnelChartAggregatedFieldWells> {
+        &self.funnel_chart_aggregated_field_wells
+    }
     /// Consumes the builder and constructs a [`FunnelChartFieldWells`](crate::types::FunnelChartFieldWells).
     pub fn build(self) -> crate::types::FunnelChartFieldWells {
         crate::types::FunnelChartFieldWells {

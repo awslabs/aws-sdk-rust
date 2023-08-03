@@ -49,6 +49,10 @@ impl RegenerateSecurityTokenInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The bot ID.</p>
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl RegenerateSecurityTokenInputBuilder {
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_id = input;
         self
+    }
+    /// <p>The bot ID.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
     }
     /// Consumes the builder and constructs a [`RegenerateSecurityTokenInput`](crate::operation::regenerate_security_token::RegenerateSecurityTokenInput).
     pub fn build(

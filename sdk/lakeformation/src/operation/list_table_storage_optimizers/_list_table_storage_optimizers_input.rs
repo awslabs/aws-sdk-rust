@@ -79,6 +79,10 @@ impl ListTableStorageOptimizersInputBuilder {
         self.catalog_id = input;
         self
     }
+    /// <p>The Catalog ID of the table.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// <p>Name of the database where the table is present.</p>
     pub fn database_name(
         mut self,
@@ -95,6 +99,10 @@ impl ListTableStorageOptimizersInputBuilder {
         self.database_name = input;
         self
     }
+    /// <p>Name of the database where the table is present.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>Name of the table.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
@@ -104,6 +112,10 @@ impl ListTableStorageOptimizersInputBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
+    }
+    /// <p>Name of the table.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
     }
     /// <p>The specific type of storage optimizers to list. The supported value is <code>compaction</code>.</p>
     pub fn storage_optimizer_type(mut self, input: crate::types::OptimizerType) -> Self {
@@ -118,6 +130,12 @@ impl ListTableStorageOptimizersInputBuilder {
         self.storage_optimizer_type = input;
         self
     }
+    /// <p>The specific type of storage optimizers to list. The supported value is <code>compaction</code>.</p>
+    pub fn get_storage_optimizer_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::OptimizerType> {
+        &self.storage_optimizer_type
+    }
     /// <p>The number of storage optimizers to return on each call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -128,6 +146,10 @@ impl ListTableStorageOptimizersInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The number of storage optimizers to return on each call.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>A continuation token, if this is a continuation call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -137,6 +159,10 @@ impl ListTableStorageOptimizersInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A continuation token, if this is a continuation call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListTableStorageOptimizersInput`](crate::operation::list_table_storage_optimizers::ListTableStorageOptimizersInput).
     pub fn build(

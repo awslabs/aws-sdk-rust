@@ -39,6 +39,10 @@ impl ListTopicsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Token returned by the previous <code>ListTopics</code> request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Consumes the builder and constructs a [`ListTopicsInput`](crate::operation::list_topics::ListTopicsInput).
     pub fn build(
         self,

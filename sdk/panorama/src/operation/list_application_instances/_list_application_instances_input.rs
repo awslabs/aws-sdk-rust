@@ -65,6 +65,10 @@ impl ListApplicationInstancesInputBuilder {
         self.device_id = input;
         self
     }
+    /// <p>The application instances' device ID.</p>
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_id
+    }
     /// <p>Only include instances with a specific status.</p>
     pub fn status_filter(mut self, input: crate::types::StatusFilter) -> Self {
         self.status_filter = ::std::option::Option::Some(input);
@@ -78,6 +82,10 @@ impl ListApplicationInstancesInputBuilder {
         self.status_filter = input;
         self
     }
+    /// <p>Only include instances with a specific status.</p>
+    pub fn get_status_filter(&self) -> &::std::option::Option<crate::types::StatusFilter> {
+        &self.status_filter
+    }
     /// <p>The maximum number of application instances to return in one page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -88,6 +96,10 @@ impl ListApplicationInstancesInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of application instances to return in one page of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -97,6 +109,10 @@ impl ListApplicationInstancesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListApplicationInstancesInput`](crate::operation::list_application_instances::ListApplicationInstancesInput).
     pub fn build(

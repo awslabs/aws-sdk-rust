@@ -86,6 +86,10 @@ impl HostedConfigurationVersionSummaryBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The application ID.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The configuration profile ID.</p>
     pub fn configuration_profile_id(
         mut self,
@@ -102,6 +106,10 @@ impl HostedConfigurationVersionSummaryBuilder {
         self.configuration_profile_id = input;
         self
     }
+    /// <p>The configuration profile ID.</p>
+    pub fn get_configuration_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_profile_id
+    }
     /// <p>The configuration version.</p>
     pub fn version_number(mut self, input: i32) -> Self {
         self.version_number = ::std::option::Option::Some(input);
@@ -111,6 +119,10 @@ impl HostedConfigurationVersionSummaryBuilder {
     pub fn set_version_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.version_number = input;
         self
+    }
+    /// <p>The configuration version.</p>
+    pub fn get_version_number(&self) -> &::std::option::Option<i32> {
+        &self.version_number
     }
     /// <p>A description of the configuration.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -122,6 +134,10 @@ impl HostedConfigurationVersionSummaryBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the configuration.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
@@ -131,6 +147,10 @@ impl HostedConfigurationVersionSummaryBuilder {
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
         self
+    }
+    /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_type
     }
     /// <p>A user-defined label for an AppConfig hosted configuration version.</p>
     pub fn version_label(
@@ -147,6 +167,10 @@ impl HostedConfigurationVersionSummaryBuilder {
     ) -> Self {
         self.version_label = input;
         self
+    }
+    /// <p>A user-defined label for an AppConfig hosted configuration version.</p>
+    pub fn get_version_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_label
     }
     /// Consumes the builder and constructs a [`HostedConfigurationVersionSummary`](crate::types::HostedConfigurationVersionSummary).
     pub fn build(self) -> crate::types::HostedConfigurationVersionSummary {

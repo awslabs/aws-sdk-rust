@@ -59,6 +59,10 @@ impl DescribeDbInstanceAutomatedBackupsOutputBuilder {
         self.marker = input;
         self
     }
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// Appends an item to `db_instance_automated_backups`.
     ///
     /// To override the contents of this collection use [`set_db_instance_automated_backups`](Self::set_db_instance_automated_backups).
@@ -80,6 +84,12 @@ impl DescribeDbInstanceAutomatedBackupsOutputBuilder {
     ) -> Self {
         self.db_instance_automated_backups = input;
         self
+    }
+    /// <p>A list of <code>DBInstanceAutomatedBackup</code> instances.</p>
+    pub fn get_db_instance_automated_backups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DbInstanceAutomatedBackup>> {
+        &self.db_instance_automated_backups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

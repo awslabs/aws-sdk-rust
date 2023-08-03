@@ -47,6 +47,10 @@ impl DeleteFieldLevelEncryptionProfileInputBuilder {
         self.id = input;
         self
     }
+    /// <p>Request the ID of the profile you want to delete from CloudFront.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the profile to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.if_match = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl DeleteFieldLevelEncryptionProfileInputBuilder {
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.if_match = input;
         self
+    }
+    /// <p>The value of the <code>ETag</code> header that you received when retrieving the profile to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
+        &self.if_match
     }
     /// Consumes the builder and constructs a [`DeleteFieldLevelEncryptionProfileInput`](crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_field_level_encryption_profile::DeleteFieldLevelEncryptionProfileInput, ::aws_smithy_http::operation::error::BuildError>{

@@ -36,6 +36,10 @@ impl CreateIPSetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateIPSet as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_ip_set::builders::CreateIpSetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl CreateIPSetFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance. </p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
     /// <ul>
@@ -138,6 +146,15 @@ impl CreateIPSetFluentBuilder {
         self.inner = self.inner.set_scope(input);
         self
     }
+    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance. </p>
+    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+    /// <ul>
+    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+    /// </ul>
+    pub fn get_scope(&self) -> &::std::option::Option<crate::types::Scope> {
+        self.inner.get_scope()
+    }
     /// <p>A description of the IP set that helps with identification. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -147,6 +164,10 @@ impl CreateIPSetFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of the IP set that helps with identification. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The version of the IP addresses, either <code>IPV4</code> or <code>IPV6</code>. </p>
     pub fn ip_address_version(mut self, input: crate::types::IpAddressVersion) -> Self {
@@ -160,6 +181,10 @@ impl CreateIPSetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ip_address_version(input);
         self
+    }
+    /// <p>The version of the IP addresses, either <code>IPV4</code> or <code>IPV6</code>. </p>
+    pub fn get_ip_address_version(&self) -> &::std::option::Option<crate::types::IpAddressVersion> {
+        self.inner.get_ip_address_version()
     }
     /// Appends an item to `Addresses`.
     ///
@@ -208,6 +233,25 @@ impl CreateIPSetFluentBuilder {
         self.inner = self.inner.set_addresses(input);
         self
     }
+    /// <p>Contains an array of strings that specifies zero or more IP addresses or blocks of IP addresses. All addresses must be specified using Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for <code>/0</code>. </p>
+    /// <p>Example address strings: </p>
+    /// <ul>
+    /// <li> <p>To configure WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>
+    /// <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li>
+    /// <li> <p>To configure WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li>
+    /// <li> <p>To configure WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
+    /// </ul>
+    /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
+    /// <p>Example JSON <code>Addresses</code> specifications: </p>
+    /// <ul>
+    /// <li> <p>Empty array: <code>"Addresses": []</code> </p> </li>
+    /// <li> <p>Array with one address: <code>"Addresses": ["192.0.2.44/32"]</code> </p> </li>
+    /// <li> <p>Array with three addresses: <code>"Addresses": ["192.0.2.44/32", "192.0.2.0/24", "192.0.0.0/16"]</code> </p> </li>
+    /// <li> <p>INVALID specification: <code>"Addresses": [""]</code> INVALID </p> </li>
+    /// </ul>
+    pub fn get_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_addresses()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -224,5 +268,9 @@ impl CreateIPSetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>An array of key:value pairs to associate with the resource.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

@@ -48,6 +48,10 @@ impl RecordErrorBuilder {
         self.code = input;
         self
     }
+    /// <p>The numeric value of the error.</p>
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
+    }
     /// <p>The description of the error.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl RecordErrorBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the error.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`RecordError`](crate::types::RecordError).
     pub fn build(self) -> crate::types::RecordError {

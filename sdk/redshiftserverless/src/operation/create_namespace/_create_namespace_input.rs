@@ -122,6 +122,10 @@ impl CreateNamespaceInputBuilder {
         self.namespace_name = input;
         self
     }
+    /// <p>The name of the namespace.</p>
+    pub fn get_namespace_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace_name
+    }
     /// <p>The username of the administrator for the first database created in the namespace.</p>
     pub fn admin_username(
         mut self,
@@ -137,6 +141,10 @@ impl CreateNamespaceInputBuilder {
     ) -> Self {
         self.admin_username = input;
         self
+    }
+    /// <p>The username of the administrator for the first database created in the namespace.</p>
+    pub fn get_admin_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.admin_username
     }
     /// <p>The password of the administrator for the first database created in the namespace.</p>
     pub fn admin_user_password(
@@ -154,6 +162,10 @@ impl CreateNamespaceInputBuilder {
         self.admin_user_password = input;
         self
     }
+    /// <p>The password of the administrator for the first database created in the namespace.</p>
+    pub fn get_admin_user_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.admin_user_password
+    }
     /// <p>The name of the first database created in the namespace.</p>
     pub fn db_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_name = ::std::option::Option::Some(input.into());
@@ -164,6 +176,10 @@ impl CreateNamespaceInputBuilder {
         self.db_name = input;
         self
     }
+    /// <p>The name of the first database created in the namespace.</p>
+    pub fn get_db_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_name
+    }
     /// <p>The ID of the Amazon Web Services Key Management Service key used to encrypt your data.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -173,6 +189,10 @@ impl CreateNamespaceInputBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p>The ID of the Amazon Web Services Key Management Service key used to encrypt your data.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace.</p>
     pub fn default_iam_role_arn(
@@ -189,6 +209,10 @@ impl CreateNamespaceInputBuilder {
     ) -> Self {
         self.default_iam_role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace.</p>
+    pub fn get_default_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_iam_role_arn
     }
     /// Appends an item to `iam_roles`.
     ///
@@ -209,6 +233,10 @@ impl CreateNamespaceInputBuilder {
         self.iam_roles = input;
         self
     }
+    /// <p>A list of IAM roles to associate with the namespace.</p>
+    pub fn get_iam_roles(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.iam_roles
+    }
     /// Appends an item to `log_exports`.
     ///
     /// To override the contents of this collection use [`set_log_exports`](Self::set_log_exports).
@@ -228,6 +256,12 @@ impl CreateNamespaceInputBuilder {
         self.log_exports = input;
         self
     }
+    /// <p>The types of logs the namespace can export. Available export types are <code>userlog</code>, <code>connectionlog</code>, and <code>useractivitylog</code>.</p>
+    pub fn get_log_exports(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LogExport>> {
+        &self.log_exports
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -246,6 +280,10 @@ impl CreateNamespaceInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of tag instances.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateNamespaceInput`](crate::operation::create_namespace::CreateNamespaceInput).
     pub fn build(

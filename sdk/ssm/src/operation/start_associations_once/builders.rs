@@ -36,6 +36,13 @@ impl StartAssociationsOnceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartAssociationsOnce as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_associations_once::builders::StartAssociationsOnceInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,5 +142,11 @@ impl StartAssociationsOnceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_association_ids(input);
         self
+    }
+    /// <p>The association IDs that you want to run immediately and only one time.</p>
+    pub fn get_association_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_association_ids()
     }
 }

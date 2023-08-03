@@ -71,6 +71,10 @@ impl ListObjectParentPathsInputBuilder {
         self.directory_arn = input;
         self
     }
+    /// <p>The ARN of the directory to which the parent path applies.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_arn
+    }
     /// <p>The reference that identifies the object whose parent paths are listed.</p>
     pub fn object_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.object_reference = ::std::option::Option::Some(input);
@@ -84,6 +88,10 @@ impl ListObjectParentPathsInputBuilder {
         self.object_reference = input;
         self
     }
+    /// <p>The reference that identifies the object whose parent paths are listed.</p>
+    pub fn get_object_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
+        &self.object_reference
+    }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -94,6 +102,10 @@ impl ListObjectParentPathsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -103,6 +115,10 @@ impl ListObjectParentPathsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListObjectParentPathsInput`](crate::operation::list_object_parent_paths::ListObjectParentPathsInput).
     pub fn build(

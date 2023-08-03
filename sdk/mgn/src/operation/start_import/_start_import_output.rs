@@ -50,6 +50,10 @@ impl StartImportOutputBuilder {
         self.import_task = input;
         self
     }
+    /// <p>Start import response import task.</p>
+    pub fn get_import_task(&self) -> &::std::option::Option<crate::types::ImportTask> {
+        &self.import_task
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

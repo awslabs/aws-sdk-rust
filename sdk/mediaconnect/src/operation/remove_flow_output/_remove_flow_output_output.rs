@@ -55,6 +55,10 @@ impl RemoveFlowOutputOutputBuilder {
         self.flow_arn = input;
         self
     }
+    /// The ARN of the flow that is associated with the output you removed.
+    pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_arn
+    }
     /// The ARN of the output that was removed.
     pub fn output_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_arn = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl RemoveFlowOutputOutputBuilder {
     pub fn set_output_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_arn = input;
         self
+    }
+    /// The ARN of the output that was removed.
+    pub fn get_output_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

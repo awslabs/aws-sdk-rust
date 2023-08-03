@@ -73,6 +73,10 @@ impl UpdateMonitoringInputBuilder {
         self.cluster_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_arn
+    }
     /// <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
     pub fn current_version(
         mut self,
@@ -89,6 +93,10 @@ impl UpdateMonitoringInputBuilder {
         self.current_version = input;
         self
     }
+    /// <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
+    pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.current_version
+    }
     /// <p>Specifies which Apache Kafka metrics Amazon MSK gathers and sends to Amazon CloudWatch for this cluster.</p>
     pub fn enhanced_monitoring(mut self, input: crate::types::EnhancedMonitoring) -> Self {
         self.enhanced_monitoring = ::std::option::Option::Some(input);
@@ -101,6 +109,12 @@ impl UpdateMonitoringInputBuilder {
     ) -> Self {
         self.enhanced_monitoring = input;
         self
+    }
+    /// <p>Specifies which Apache Kafka metrics Amazon MSK gathers and sends to Amazon CloudWatch for this cluster.</p>
+    pub fn get_enhanced_monitoring(
+        &self,
+    ) -> &::std::option::Option<crate::types::EnhancedMonitoring> {
+        &self.enhanced_monitoring
     }
     /// <p>The settings for open monitoring.</p>
     pub fn open_monitoring(mut self, input: crate::types::OpenMonitoringInfo) -> Self {
@@ -115,6 +129,10 @@ impl UpdateMonitoringInputBuilder {
         self.open_monitoring = input;
         self
     }
+    /// <p>The settings for open monitoring.</p>
+    pub fn get_open_monitoring(&self) -> &::std::option::Option<crate::types::OpenMonitoringInfo> {
+        &self.open_monitoring
+    }
     #[allow(missing_docs)] // documentation missing in model
     pub fn logging_info(mut self, input: crate::types::LoggingInfo) -> Self {
         self.logging_info = ::std::option::Option::Some(input);
@@ -127,6 +145,10 @@ impl UpdateMonitoringInputBuilder {
     ) -> Self {
         self.logging_info = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_logging_info(&self) -> &::std::option::Option<crate::types::LoggingInfo> {
+        &self.logging_info
     }
     /// Consumes the builder and constructs a [`UpdateMonitoringInput`](crate::operation::update_monitoring::UpdateMonitoringInput).
     pub fn build(

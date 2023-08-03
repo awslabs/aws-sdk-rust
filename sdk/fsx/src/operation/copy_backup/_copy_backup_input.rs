@@ -101,6 +101,10 @@ impl CopyBackupInputBuilder {
         self.client_request_token = input;
         self
     }
+    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
+    }
     /// <p>The ID of the source backup. Specifies the ID of the backup that's being copied.</p>
     pub fn source_backup_id(
         mut self,
@@ -117,6 +121,10 @@ impl CopyBackupInputBuilder {
         self.source_backup_id = input;
         self
     }
+    /// <p>The ID of the source backup. Specifies the ID of the backup that's being copied.</p>
+    pub fn get_source_backup_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_backup_id
+    }
     /// <p>The source Amazon Web Services Region of the backup. Specifies the Amazon Web Services Region from which the backup is being copied. The source and destination Regions must be in the same Amazon Web Services partition. If you don't specify a Region, <code>SourceRegion</code> defaults to the Region where the request is sent from (in-Region copy).</p>
     pub fn source_region(
         mut self,
@@ -132,6 +140,10 @@ impl CopyBackupInputBuilder {
     ) -> Self {
         self.source_region = input;
         self
+    }
+    /// <p>The source Amazon Web Services Region of the backup. Specifies the Amazon Web Services Region from which the backup is being copied. The source and destination Regions must be in the same Amazon Web Services partition. If you don't specify a Region, <code>SourceRegion</code> defaults to the Region where the request is sent from (in-Region copy).</p>
+    pub fn get_source_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_region
     }
     /// <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on Amazon FSx file systems, as follows:</p>
     /// <ul>
@@ -157,6 +169,17 @@ impl CopyBackupInputBuilder {
         self.kms_key_id = input;
         self
     }
+    /// <p>Specifies the ID of the Key Management Service (KMS) key to use for encrypting data on Amazon FSx file systems, as follows:</p>
+    /// <ul>
+    /// <li> <p>Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types only.</p> <p> <code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon FSx service KMS key for your account.</p> </li>
+    /// <li> <p>Amazon FSx for NetApp ONTAP</p> </li>
+    /// <li> <p>Amazon FSx for OpenZFS</p> </li>
+    /// <li> <p>Amazon FSx for Windows File Server</p> </li>
+    /// </ul>
+    /// <p>If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>Key Management Service API Reference</i>.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
+    }
     /// <p>A Boolean flag indicating whether tags from the source backup should be copied to the backup copy. This value defaults to <code>false</code>.</p>
     /// <p>If you set <code>CopyTags</code> to <code>true</code> and the source backup has existing tags, you can use the <code>Tags</code> parameter to create new tags, provided that the sum of the source backup tags and the new tags doesn't exceed 50. Both sets of tags are merged. If there are tag conflicts (for example, two tags with the same key but different values), the tags created with the <code>Tags</code> parameter take precedence.</p>
     pub fn copy_tags(mut self, input: bool) -> Self {
@@ -168,6 +191,11 @@ impl CopyBackupInputBuilder {
     pub fn set_copy_tags(mut self, input: ::std::option::Option<bool>) -> Self {
         self.copy_tags = input;
         self
+    }
+    /// <p>A Boolean flag indicating whether tags from the source backup should be copied to the backup copy. This value defaults to <code>false</code>.</p>
+    /// <p>If you set <code>CopyTags</code> to <code>true</code> and the source backup has existing tags, you can use the <code>Tags</code> parameter to create new tags, provided that the sum of the source backup tags and the new tags doesn't exceed 50. Both sets of tags are merged. If there are tag conflicts (for example, two tags with the same key but different values), the tags created with the <code>Tags</code> parameter take precedence.</p>
+    pub fn get_copy_tags(&self) -> &::std::option::Option<bool> {
+        &self.copy_tags
     }
     /// Appends an item to `tags`.
     ///
@@ -187,6 +215,10 @@ impl CopyBackupInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CopyBackupInput`](crate::operation::copy_backup::CopyBackupInput).
     pub fn build(

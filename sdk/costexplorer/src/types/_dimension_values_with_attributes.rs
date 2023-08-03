@@ -56,6 +56,10 @@ impl DimensionValuesWithAttributesBuilder {
         self.value = input;
         self
     }
+    /// <p>The value of a dimension with a specific attribute.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// Adds a key-value pair to `attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
@@ -80,6 +84,14 @@ impl DimensionValuesWithAttributesBuilder {
     ) -> Self {
         self.attributes = input;
         self
+    }
+    /// <p>The attribute that applies to a specific <code>Dimension</code>.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.attributes
     }
     /// Consumes the builder and constructs a [`DimensionValuesWithAttributes`](crate::types::DimensionValuesWithAttributes).
     pub fn build(self) -> crate::types::DimensionValuesWithAttributes {

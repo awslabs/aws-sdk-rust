@@ -36,6 +36,12 @@ impl DeleteProjectFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteProject as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_project::builders::DeleteProjectInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl DeleteProjectFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The ID of the project to be deleted in AWS CodeStar.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>A user- or system-generated token that identifies the entity that requested project deletion. This token can be used to repeat the request. </p>
     pub fn client_request_token(
         mut self,
@@ -134,6 +144,10 @@ impl DeleteProjectFluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
+    /// <p>A user- or system-generated token that identifies the entity that requested project deletion. This token can be used to repeat the request. </p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
+    }
     /// <p>Whether to send a delete request for the primary stack in AWS CloudFormation originally used to generate the project and its resources. This option will delete all AWS resources for the project (except for any buckets in Amazon S3) as well as deleting the project itself. Recommended for most use cases.</p>
     pub fn delete_stack(mut self, input: bool) -> Self {
         self.inner = self.inner.delete_stack(input);
@@ -143,5 +157,9 @@ impl DeleteProjectFluentBuilder {
     pub fn set_delete_stack(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_delete_stack(input);
         self
+    }
+    /// <p>Whether to send a delete request for the primary stack in AWS CloudFormation originally used to generate the project and its resources. This option will delete all AWS resources for the project (except for any buckets in Amazon S3) as well as deleting the project itself. Recommended for most use cases.</p>
+    pub fn get_delete_stack(&self) -> &::std::option::Option<bool> {
+        self.inner.get_delete_stack()
     }
 }

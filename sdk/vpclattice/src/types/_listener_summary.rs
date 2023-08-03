@@ -88,6 +88,10 @@ impl ListenerSummaryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the listener.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The ID of the listener.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -98,6 +102,10 @@ impl ListenerSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the listener.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the listener.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -107,6 +115,10 @@ impl ListenerSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the listener.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The listener protocol.</p>
     pub fn protocol(mut self, input: crate::types::ListenerProtocol) -> Self {
@@ -121,6 +133,10 @@ impl ListenerSummaryBuilder {
         self.protocol = input;
         self
     }
+    /// <p>The listener protocol.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<crate::types::ListenerProtocol> {
+        &self.protocol
+    }
     /// <p>The listener port.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -130,6 +146,10 @@ impl ListenerSummaryBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
+    }
+    /// <p>The listener port.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// <p>The date and time that the listener was created, specified in ISO-8601 format.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -144,6 +164,10 @@ impl ListenerSummaryBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The date and time that the listener was created, specified in ISO-8601 format.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The date and time that the listener was last updated, specified in ISO-8601 format.</p>
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_at = ::std::option::Option::Some(input);
@@ -156,6 +180,10 @@ impl ListenerSummaryBuilder {
     ) -> Self {
         self.last_updated_at = input;
         self
+    }
+    /// <p>The date and time that the listener was last updated, specified in ISO-8601 format.</p>
+    pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_at
     }
     /// Consumes the builder and constructs a [`ListenerSummary`](crate::types::ListenerSummary).
     pub fn build(self) -> crate::types::ListenerSummary {

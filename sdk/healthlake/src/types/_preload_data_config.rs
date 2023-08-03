@@ -43,6 +43,10 @@ impl PreloadDataConfigBuilder {
         self.preload_data_type = input;
         self
     }
+    /// <p>The type of preloaded data. Only Synthea preloaded data is supported.</p>
+    pub fn get_preload_data_type(&self) -> &::std::option::Option<crate::types::PreloadDataType> {
+        &self.preload_data_type
+    }
     /// Consumes the builder and constructs a [`PreloadDataConfig`](crate::types::PreloadDataConfig).
     pub fn build(self) -> crate::types::PreloadDataConfig {
         crate::types::PreloadDataConfig {

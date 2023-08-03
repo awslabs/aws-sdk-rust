@@ -102,6 +102,10 @@ impl CreateJobOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN for the job.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The date and time that the job was created, in ISO 8601 format.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -115,6 +119,10 @@ impl CreateJobOutputBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The date and time that the job was created, in ISO 8601 format.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>Details about the job.</p>
     pub fn details(mut self, input: crate::types::ResponseDetails) -> Self {
         self.details = ::std::option::Option::Some(input);
@@ -127,6 +135,10 @@ impl CreateJobOutputBuilder {
     ) -> Self {
         self.details = input;
         self
+    }
+    /// <p>Details about the job.</p>
+    pub fn get_details(&self) -> &::std::option::Option<crate::types::ResponseDetails> {
+        &self.details
     }
     /// Appends an item to `errors`.
     ///
@@ -147,6 +159,10 @@ impl CreateJobOutputBuilder {
         self.errors = input;
         self
     }
+    /// <p>The errors associated with jobs.</p>
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobError>> {
+        &self.errors
+    }
     /// <p>The unique identifier for the job.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -156,6 +172,10 @@ impl CreateJobOutputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The unique identifier for the job.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The state of the job.</p>
     pub fn state(mut self, input: crate::types::State) -> Self {
@@ -167,6 +187,10 @@ impl CreateJobOutputBuilder {
         self.state = input;
         self
     }
+    /// <p>The state of the job.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::State> {
+        &self.state
+    }
     /// <p>The job type.</p>
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -176,6 +200,10 @@ impl CreateJobOutputBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::Type>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The job type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::Type> {
+        &self.r#type
     }
     /// <p>The date and time that the job was last updated, in ISO 8601 format.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -189,6 +217,10 @@ impl CreateJobOutputBuilder {
     ) -> Self {
         self.updated_at = input;
         self
+    }
+    /// <p>The date and time that the job was last updated, in ISO 8601 format.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

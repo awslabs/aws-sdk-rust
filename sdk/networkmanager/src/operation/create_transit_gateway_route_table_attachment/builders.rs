@@ -36,6 +36,10 @@ impl CreateTransitGatewayRouteTableAttachmentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateTransitGatewayRouteTableAttachment as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_transit_gateway_route_table_attachment::builders::CreateTransitGatewayRouteTableAttachmentInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl CreateTransitGatewayRouteTableAttachmentFluentBuilder {
         self.inner = self.inner.set_peering_id(input);
         self
     }
+    /// <p>The ID of the peer for the </p>
+    pub fn get_peering_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_peering_id()
+    }
     /// <p>The ARN of the transit gateway route table for the attachment request. For example, <code>"TransitGatewayRouteTableArn": "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.</p>
     pub fn transit_gateway_route_table_arn(
         mut self,
@@ -115,6 +123,12 @@ impl CreateTransitGatewayRouteTableAttachmentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_transit_gateway_route_table_arn(input);
         self
+    }
+    /// <p>The ARN of the transit gateway route table for the attachment request. For example, <code>"TransitGatewayRouteTableArn": "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.</p>
+    pub fn get_transit_gateway_route_table_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_transit_gateway_route_table_arn()
     }
     /// Appends an item to `Tags`.
     ///
@@ -133,6 +147,10 @@ impl CreateTransitGatewayRouteTableAttachmentFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The list of key-value tags associated with the request.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>The client token associated with the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -142,5 +160,9 @@ impl CreateTransitGatewayRouteTableAttachmentFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>The client token associated with the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

@@ -56,6 +56,10 @@ impl FailureBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the failed resource.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The reason for the failure.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl FailureBuilder {
         self.reason = input;
         self
     }
+    /// <p>The reason for the failure.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
+    }
     /// <p>The details of the failure.</p>
     pub fn detail(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detail = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl FailureBuilder {
     pub fn set_detail(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detail = input;
         self
+    }
+    /// <p>The details of the failure.</p>
+    pub fn get_detail(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detail
     }
     /// Consumes the builder and constructs a [`Failure`](crate::types::Failure).
     pub fn build(self) -> crate::types::Failure {

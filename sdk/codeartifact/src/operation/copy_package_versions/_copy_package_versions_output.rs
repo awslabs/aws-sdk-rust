@@ -115,6 +115,17 @@ impl CopyPackageVersionsOutputBuilder {
         self.successful_versions = input;
         self
     }
+    /// <p> A list of the package versions that were successfully copied to your repository. </p>
+    pub fn get_successful_versions(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::SuccessfulPackageVersionInfo,
+        >,
+    > {
+        &self.successful_versions
+    }
     /// Adds a key-value pair to `failed_versions`.
     ///
     /// To override the contents of this collection use [`set_failed_versions`](Self::set_failed_versions).
@@ -155,6 +166,22 @@ impl CopyPackageVersionsOutputBuilder {
     ) -> Self {
         self.failed_versions = input;
         self
+    }
+    /// <p> A map of package versions that failed to copy and their error codes. The possible error codes are in the <code>PackageVersionError</code> data type. They are: </p>
+    /// <ul>
+    /// <li> <p> <code>ALREADY_EXISTS</code> </p> </li>
+    /// <li> <p> <code>MISMATCHED_REVISION</code> </p> </li>
+    /// <li> <p> <code>MISMATCHED_STATUS</code> </p> </li>
+    /// <li> <p> <code>NOT_ALLOWED</code> </p> </li>
+    /// <li> <p> <code>NOT_FOUND</code> </p> </li>
+    /// <li> <p> <code>SKIPPED</code> </p> </li>
+    /// </ul>
+    pub fn get_failed_versions(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::PackageVersionError>,
+    > {
+        &self.failed_versions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

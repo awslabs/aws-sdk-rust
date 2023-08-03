@@ -54,6 +54,10 @@ impl DescribeFlowOutputBuilder {
         self.flow = input;
         self
     }
+    /// The settings for a flow, including its source, outputs, and entitlements.
+    pub fn get_flow(&self) -> &::std::option::Option<crate::types::Flow> {
+        &self.flow
+    }
     /// Messages that provide the state of the flow.
     pub fn messages(mut self, input: crate::types::Messages) -> Self {
         self.messages = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl DescribeFlowOutputBuilder {
     pub fn set_messages(mut self, input: ::std::option::Option<crate::types::Messages>) -> Self {
         self.messages = input;
         self
+    }
+    /// Messages that provide the state of the flow.
+    pub fn get_messages(&self) -> &::std::option::Option<crate::types::Messages> {
+        &self.messages
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

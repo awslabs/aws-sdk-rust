@@ -39,6 +39,10 @@ impl DeleteAppLaunchConfigurationInputBuilder {
         self.app_id = input;
         self
     }
+    /// <p>The ID of the application.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// Consumes the builder and constructs a [`DeleteAppLaunchConfigurationInput`](crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfigurationInput).
     pub fn build(
         self,

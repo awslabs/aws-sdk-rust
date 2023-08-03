@@ -52,6 +52,10 @@ impl AxisScaleBuilder {
         self.linear = input;
         self
     }
+    /// <p>The linear axis scale setup.</p>
+    pub fn get_linear(&self) -> &::std::option::Option<crate::types::AxisLinearScale> {
+        &self.linear
+    }
     /// <p>The logarithmic axis scale setup.</p>
     pub fn logarithmic(mut self, input: crate::types::AxisLogarithmicScale) -> Self {
         self.logarithmic = ::std::option::Option::Some(input);
@@ -64,6 +68,10 @@ impl AxisScaleBuilder {
     ) -> Self {
         self.logarithmic = input;
         self
+    }
+    /// <p>The logarithmic axis scale setup.</p>
+    pub fn get_logarithmic(&self) -> &::std::option::Option<crate::types::AxisLogarithmicScale> {
+        &self.logarithmic
     }
     /// Consumes the builder and constructs a [`AxisScale`](crate::types::AxisScale).
     pub fn build(self) -> crate::types::AxisScale {

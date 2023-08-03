@@ -37,6 +37,13 @@ impl DescribeFeatureMetadataFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeFeatureMetadata as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_feature_metadata::builders::DescribeFeatureMetadataInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl DescribeFeatureMetadataFluentBuilder {
         self.inner = self.inner.set_feature_group_name(input);
         self
     }
+    /// <p>The name or Amazon Resource Name (ARN) of the feature group containing the feature.</p>
+    pub fn get_feature_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_feature_group_name()
+    }
     /// <p>The name of the feature.</p>
     pub fn feature_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.feature_name(input.into());
@@ -142,5 +153,9 @@ impl DescribeFeatureMetadataFluentBuilder {
     pub fn set_feature_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_feature_name(input);
         self
+    }
+    /// <p>The name of the feature.</p>
+    pub fn get_feature_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_feature_name()
     }
 }

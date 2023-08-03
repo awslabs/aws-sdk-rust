@@ -48,6 +48,10 @@ impl RetryPolicyBuilder {
         self.maximum_retry_attempts = input;
         self
     }
+    /// <p>The maximum number of retry attempts to make before the request fails. Retry attempts continue until either the maximum number of attempts is made or until the duration of the <code>MaximumEventAgeInSeconds</code> is met.</p>
+    pub fn get_maximum_retry_attempts(&self) -> &::std::option::Option<i32> {
+        &self.maximum_retry_attempts
+    }
     /// <p>The maximum amount of time, in seconds, to continue to make retry attempts.</p>
     pub fn maximum_event_age_in_seconds(mut self, input: i32) -> Self {
         self.maximum_event_age_in_seconds = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl RetryPolicyBuilder {
     pub fn set_maximum_event_age_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum_event_age_in_seconds = input;
         self
+    }
+    /// <p>The maximum amount of time, in seconds, to continue to make retry attempts.</p>
+    pub fn get_maximum_event_age_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.maximum_event_age_in_seconds
     }
     /// Consumes the builder and constructs a [`RetryPolicy`](crate::types::RetryPolicy).
     pub fn build(self) -> crate::types::RetryPolicy {

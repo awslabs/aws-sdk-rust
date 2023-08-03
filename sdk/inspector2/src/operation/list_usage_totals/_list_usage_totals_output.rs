@@ -55,6 +55,10 @@ impl ListUsageTotalsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `totals`.
     ///
     /// To override the contents of this collection use [`set_totals`](Self::set_totals).
@@ -73,6 +77,10 @@ impl ListUsageTotalsOutputBuilder {
     ) -> Self {
         self.totals = input;
         self
+    }
+    /// <p>An object with details on the total usage for the requested account.</p>
+    pub fn get_totals(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageTotal>> {
+        &self.totals
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

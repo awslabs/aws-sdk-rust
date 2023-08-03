@@ -81,6 +81,11 @@ impl PublishTypeInputBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of the extension.</p>
+    /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ThirdPartyType> {
+        &self.r#type
+    }
     /// <p>The Amazon Resource Name (ARN) of the extension.</p>
     /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -93,6 +98,11 @@ impl PublishTypeInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the extension.</p>
+    /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the extension.</p>
     /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
     pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -104,6 +114,11 @@ impl PublishTypeInputBuilder {
     pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.type_name = input;
         self
+    }
+    /// <p>The name of the extension.</p>
+    /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
+    pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.type_name
     }
     /// <p>The version number to assign to this version of the extension.</p>
     /// <p>Use the following format, and adhere to semantic versioning when assigning a version number to your extension:</p>
@@ -130,6 +145,15 @@ impl PublishTypeInputBuilder {
     ) -> Self {
         self.public_version_number = input;
         self
+    }
+    /// <p>The version number to assign to this version of the extension.</p>
+    /// <p>Use the following format, and adhere to semantic versioning when assigning a version number to your extension:</p>
+    /// <p> <code>MAJOR.MINOR.PATCH</code> </p>
+    /// <p>For more information, see <a href="https://semver.org/">Semantic Versioning 2.0.0</a>.</p>
+    /// <p>If you don't specify a version number, CloudFormation increments the version number by one minor version release.</p>
+    /// <p>You cannot specify a version number the first time you publish a type. CloudFormation automatically sets the first version number to be <code>1.0.0</code>.</p>
+    pub fn get_public_version_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_version_number
     }
     /// Consumes the builder and constructs a [`PublishTypeInput`](crate::operation::publish_type::PublishTypeInput).
     pub fn build(

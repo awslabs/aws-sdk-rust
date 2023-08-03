@@ -71,6 +71,10 @@ impl RenewalSummaryBuilder {
         self.renewal_status = input;
         self
     }
+    /// <p>The status of ACM's <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> of the certificate.</p>
+    pub fn get_renewal_status(&self) -> &::std::option::Option<crate::types::RenewalStatus> {
+        &self.renewal_status
+    }
     /// Appends an item to `domain_validation_options`.
     ///
     /// To override the contents of this collection use [`set_domain_validation_options`](Self::set_domain_validation_options).
@@ -90,6 +94,12 @@ impl RenewalSummaryBuilder {
         self.domain_validation_options = input;
         self
     }
+    /// <p>Contains information about the validation of each domain name in the certificate, as it pertains to ACM's <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a>. This is different from the initial validation that occurs as a result of the <code>RequestCertificate</code> request. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
+    pub fn get_domain_validation_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainValidation>> {
+        &self.domain_validation_options
+    }
     /// <p>The reason that a renewal request was unsuccessful.</p>
     pub fn renewal_status_reason(mut self, input: crate::types::FailureReason) -> Self {
         self.renewal_status_reason = ::std::option::Option::Some(input);
@@ -103,6 +113,10 @@ impl RenewalSummaryBuilder {
         self.renewal_status_reason = input;
         self
     }
+    /// <p>The reason that a renewal request was unsuccessful.</p>
+    pub fn get_renewal_status_reason(&self) -> &::std::option::Option<crate::types::FailureReason> {
+        &self.renewal_status_reason
+    }
     /// <p>The time at which the renewal summary was last updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
@@ -115,6 +129,10 @@ impl RenewalSummaryBuilder {
     ) -> Self {
         self.updated_at = input;
         self
+    }
+    /// <p>The time at which the renewal summary was last updated.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     /// Consumes the builder and constructs a [`RenewalSummary`](crate::types::RenewalSummary).
     pub fn build(self) -> crate::types::RenewalSummary {

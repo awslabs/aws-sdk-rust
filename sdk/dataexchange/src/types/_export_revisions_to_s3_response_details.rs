@@ -68,6 +68,10 @@ impl ExportRevisionsToS3ResponseDetailsBuilder {
         self.data_set_id = input;
         self
     }
+    /// <p>The unique identifier for the data set associated with this export job.</p>
+    pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_set_id
+    }
     /// <p>Encryption configuration of the export job.</p>
     pub fn encryption(mut self, input: crate::types::ExportServerSideEncryption) -> Self {
         self.encryption = ::std::option::Option::Some(input);
@@ -80,6 +84,12 @@ impl ExportRevisionsToS3ResponseDetailsBuilder {
     ) -> Self {
         self.encryption = input;
         self
+    }
+    /// <p>Encryption configuration of the export job.</p>
+    pub fn get_encryption(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExportServerSideEncryption> {
+        &self.encryption
     }
     /// Appends an item to `revision_destinations`.
     ///
@@ -100,6 +110,12 @@ impl ExportRevisionsToS3ResponseDetailsBuilder {
         self.revision_destinations = input;
         self
     }
+    /// <p>The destination in Amazon S3 where the revision is exported.</p>
+    pub fn get_revision_destinations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RevisionDestinationEntry>> {
+        &self.revision_destinations
+    }
     /// <p>The Amazon Resource Name (ARN) of the event action.</p>
     pub fn event_action_arn(
         mut self,
@@ -115,6 +131,10 @@ impl ExportRevisionsToS3ResponseDetailsBuilder {
     ) -> Self {
         self.event_action_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the event action.</p>
+    pub fn get_event_action_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_action_arn
     }
     /// Consumes the builder and constructs a [`ExportRevisionsToS3ResponseDetails`](crate::types::ExportRevisionsToS3ResponseDetails).
     pub fn build(self) -> crate::types::ExportRevisionsToS3ResponseDetails {

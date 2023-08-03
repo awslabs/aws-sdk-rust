@@ -36,6 +36,13 @@ impl DescribeResourceGroupsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeResourceGroups as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_resource_groups::builders::DescribeResourceGroupsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,5 +142,11 @@ impl DescribeResourceGroupsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_group_arns(input);
         self
+    }
+    /// <p>The ARN that specifies the resource group that you want to describe.</p>
+    pub fn get_resource_group_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_resource_group_arns()
     }
 }

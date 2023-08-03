@@ -43,6 +43,10 @@ impl ExportingLocationBuilder {
         self.s3_exporting = input;
         self
     }
+    /// <p>Information about the S3 location where Identity Resolution Jobs write result files.</p>
+    pub fn get_s3_exporting(&self) -> &::std::option::Option<crate::types::S3ExportingLocation> {
+        &self.s3_exporting
+    }
     /// Consumes the builder and constructs a [`ExportingLocation`](crate::types::ExportingLocation).
     pub fn build(self) -> crate::types::ExportingLocation {
         crate::types::ExportingLocation {

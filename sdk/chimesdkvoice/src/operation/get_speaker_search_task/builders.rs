@@ -36,6 +36,13 @@ impl GetSpeakerSearchTaskFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetSpeakerSearchTask as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_speaker_search_task::builders::GetSpeakerSearchTaskInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl GetSpeakerSearchTaskFluentBuilder {
         self.inner = self.inner.set_voice_connector_id(input);
         self
     }
+    /// <p>The Voice Connector ID.</p>
+    pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_voice_connector_id()
+    }
     /// <p>The ID of the speaker search task.</p>
     pub fn speaker_search_task_id(
         mut self,
@@ -147,5 +158,9 @@ impl GetSpeakerSearchTaskFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_speaker_search_task_id(input);
         self
+    }
+    /// <p>The ID of the speaker search task.</p>
+    pub fn get_speaker_search_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_speaker_search_task_id()
     }
 }

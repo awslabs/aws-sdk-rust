@@ -81,6 +81,10 @@ impl UpdateGeofenceCollectionInputBuilder {
         self.collection_name = input;
         self
     }
+    /// <p>The name of the geofence collection to update.</p>
+    pub fn get_collection_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collection_name
+    }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(
         note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
@@ -102,6 +106,14 @@ impl UpdateGeofenceCollectionInputBuilder {
         self.pricing_plan = input;
         self
     }
+    /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
+    #[deprecated(
+        note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
+        since = "2022-02-01"
+    )]
+    pub fn get_pricing_plan(&self) -> &::std::option::Option<crate::types::PricingPlan> {
+        &self.pricing_plan
+    }
     /// <p>This parameter is no longer used.</p>
     #[deprecated(note = "Deprecated. No longer allowed.", since = "2022-02-01")]
     pub fn pricing_plan_data_source(
@@ -120,6 +132,11 @@ impl UpdateGeofenceCollectionInputBuilder {
         self.pricing_plan_data_source = input;
         self
     }
+    /// <p>This parameter is no longer used.</p>
+    #[deprecated(note = "Deprecated. No longer allowed.", since = "2022-02-01")]
+    pub fn get_pricing_plan_data_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pricing_plan_data_source
+    }
     /// <p>Updates the description for the geofence collection.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -129,6 +146,10 @@ impl UpdateGeofenceCollectionInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>Updates the description for the geofence collection.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`UpdateGeofenceCollectionInput`](crate::operation::update_geofence_collection::UpdateGeofenceCollectionInput).
     pub fn build(

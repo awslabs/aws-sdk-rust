@@ -66,6 +66,10 @@ impl ResourceBuilder {
         self.arn = input;
         self
     }
+    /// <p> The Amazon Resource Name (ARN) for the resource. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p> The value of the resource. </p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -75,6 +79,10 @@ impl ResourceBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p> The value of the resource. </p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// <p> The evaluation status for a resource that was assessed when collecting compliance check evidence. </p>
     /// <ul>
@@ -101,6 +109,15 @@ impl ResourceBuilder {
     ) -> Self {
         self.compliance_check = input;
         self
+    }
+    /// <p> The evaluation status for a resource that was assessed when collecting compliance check evidence. </p>
+    /// <ul>
+    /// <li> <p>Audit Manager classes the resource as non-compliant if Security Hub reports a <i>Fail</i> result, or if Config reports a <i>Non-compliant</i> result.</p> </li>
+    /// <li> <p>Audit Manager classes the resource as compliant if Security Hub reports a <i>Pass</i> result, or if Config reports a <i>Compliant</i> result.</p> </li>
+    /// <li> <p>If a compliance check isn't available or applicable, then no compliance evaluation can be made for that resource. This is the case if a resource assessment uses Config or Security Hub as the underlying data source type, but those services aren't enabled. This is also the case if the resource assessment uses an underlying data source type that doesn't support compliance checks (such as manual evidence, Amazon Web Services API calls, or CloudTrail). </p> </li>
+    /// </ul>
+    pub fn get_compliance_check(&self) -> &::std::option::Option<::std::string::String> {
+        &self.compliance_check
     }
     /// Consumes the builder and constructs a [`Resource`](crate::types::Resource).
     pub fn build(self) -> crate::types::Resource {

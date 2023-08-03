@@ -49,6 +49,10 @@ impl SubjectAlternativeNameMatchersBuilder {
         self.exact = input;
         self
     }
+    /// <p>The values sent must match the specified values exactly.</p>
+    pub fn get_exact(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.exact
+    }
     /// Consumes the builder and constructs a [`SubjectAlternativeNameMatchers`](crate::types::SubjectAlternativeNameMatchers).
     pub fn build(self) -> crate::types::SubjectAlternativeNameMatchers {
         crate::types::SubjectAlternativeNameMatchers { exact: self.exact }

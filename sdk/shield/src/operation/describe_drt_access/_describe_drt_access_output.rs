@@ -55,6 +55,10 @@ impl DescribeDrtAccessOutputBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the role the SRT used to access your Amazon Web Services account.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// Appends an item to `log_bucket_list`.
     ///
     /// To override the contents of this collection use [`set_log_bucket_list`](Self::set_log_bucket_list).
@@ -76,6 +80,12 @@ impl DescribeDrtAccessOutputBuilder {
     ) -> Self {
         self.log_bucket_list = input;
         self
+    }
+    /// <p>The list of Amazon S3 buckets accessed by the SRT.</p>
+    pub fn get_log_bucket_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.log_bucket_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -70,6 +70,10 @@ impl ListIdentitiesOutputBuilder {
         self.identity_pool_id = input;
         self
     }
+    /// <p>An identity pool ID in the format REGION:GUID.</p>
+    pub fn get_identity_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_pool_id
+    }
     /// Appends an item to `identities`.
     ///
     /// To override the contents of this collection use [`set_identities`](Self::set_identities).
@@ -89,6 +93,12 @@ impl ListIdentitiesOutputBuilder {
         self.identities = input;
         self
     }
+    /// <p>An object containing a set of identities and associated mappings.</p>
+    pub fn get_identities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IdentityDescription>> {
+        &self.identities
+    }
     /// <p>A pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -98,6 +108,10 @@ impl ListIdentitiesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

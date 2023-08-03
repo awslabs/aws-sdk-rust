@@ -90,6 +90,10 @@ impl DescribeScheduledActionsInputBuilder {
         self.auto_scaling_group_name = input;
         self
     }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auto_scaling_group_name
+    }
     /// Appends an item to `scheduled_action_names`.
     ///
     /// To override the contents of this collection use [`set_scheduled_action_names`](Self::set_scheduled_action_names).
@@ -114,6 +118,13 @@ impl DescribeScheduledActionsInputBuilder {
         self.scheduled_action_names = input;
         self
     }
+    /// <p>The names of one or more scheduled actions. If you omit this property, all scheduled actions are described. If you specify an unknown scheduled action, it is ignored with no error.</p>
+    /// <p>Array Members: Maximum number of 50 actions.</p>
+    pub fn get_scheduled_action_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.scheduled_action_names
+    }
     /// <p>The earliest scheduled start time to return. If scheduled action names are provided, this property is ignored.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -126,6 +137,10 @@ impl DescribeScheduledActionsInputBuilder {
     ) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>The earliest scheduled start time to return. If scheduled action names are provided, this property is ignored.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p>The latest scheduled start time to return. If scheduled action names are provided, this property is ignored.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -140,6 +155,10 @@ impl DescribeScheduledActionsInputBuilder {
         self.end_time = input;
         self
     }
+    /// <p>The latest scheduled start time to return. If scheduled action names are provided, this property is ignored.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -150,6 +169,10 @@ impl DescribeScheduledActionsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.max_records = ::std::option::Option::Some(input);
@@ -159,6 +182,10 @@ impl DescribeScheduledActionsInputBuilder {
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_records = input;
         self
+    }
+    /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        &self.max_records
     }
     /// Consumes the builder and constructs a [`DescribeScheduledActionsInput`](crate::operation::describe_scheduled_actions::DescribeScheduledActionsInput).
     pub fn build(

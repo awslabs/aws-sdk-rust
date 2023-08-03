@@ -36,6 +36,13 @@ impl CreateServiceInstanceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateServiceInstance as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_service_instance::builders::CreateServiceInstanceInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl CreateServiceInstanceFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the service instance to create.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The name of the service the service instance is added to.</p>
     pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_name(input.into());
@@ -136,6 +147,10 @@ impl CreateServiceInstanceFluentBuilder {
         self.inner = self.inner.set_service_name(input);
         self
     }
+    /// <p>The name of the service the service instance is added to.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_name()
+    }
     /// <p>The spec for the service instance you want to create.</p>
     pub fn spec(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.spec(input.into());
@@ -145,6 +160,10 @@ impl CreateServiceInstanceFluentBuilder {
     pub fn set_spec(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_spec(input);
         self
+    }
+    /// <p>The spec for the service instance you want to create.</p>
+    pub fn get_spec(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_spec()
     }
     /// <p>To create a new major and minor version of the service template, <i>exclude</i> <code>major Version</code>.</p>
     pub fn template_major_version(
@@ -162,6 +181,10 @@ impl CreateServiceInstanceFluentBuilder {
         self.inner = self.inner.set_template_major_version(input);
         self
     }
+    /// <p>To create a new major and minor version of the service template, <i>exclude</i> <code>major Version</code>.</p>
+    pub fn get_template_major_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_major_version()
+    }
     /// <p>To create a new minor version of the service template, include a <code>major Version</code>.</p>
     pub fn template_minor_version(
         mut self,
@@ -177,6 +200,10 @@ impl CreateServiceInstanceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_template_minor_version(input);
         self
+    }
+    /// <p>To create a new minor version of the service template, include a <code>major Version</code>.</p>
+    pub fn get_template_minor_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_template_minor_version()
     }
     /// Appends an item to `tags`.
     ///
@@ -197,6 +224,11 @@ impl CreateServiceInstanceFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>An optional list of metadata items that you can associate with the Proton service instance. A tag is a key-value pair.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>The client token of the service instance to create.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -206,5 +238,9 @@ impl CreateServiceInstanceFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>The client token of the service instance to create.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

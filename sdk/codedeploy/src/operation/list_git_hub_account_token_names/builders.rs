@@ -36,6 +36,10 @@ impl ListGitHubAccountTokenNamesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListGitHubAccountTokenNames as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_git_hub_account_token_names::builders::ListGitHubAccountTokenNamesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +129,9 @@ impl ListGitHubAccountTokenNamesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>An identifier returned from the previous <code>ListGitHubAccountTokenNames</code> call. It can be used to return the next set of names in the list. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

@@ -51,6 +51,12 @@ impl GetFirewallRuleGroupOutputBuilder {
         self.firewall_rule_group = input;
         self
     }
+    /// <p>A collection of rules used to filter DNS network traffic. </p>
+    pub fn get_firewall_rule_group(
+        &self,
+    ) -> &::std::option::Option<crate::types::FirewallRuleGroup> {
+        &self.firewall_rule_group
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -62,6 +62,10 @@ impl AcceleratorTypeOfferingBuilder {
         self.accelerator_type = input;
         self
     }
+    /// <p> The name of the Elastic Inference Accelerator type. </p>
+    pub fn get_accelerator_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accelerator_type
+    }
     /// <p> The location type for the offering. It can assume the following values: region: defines that the offering is at the regional level. availability-zone: defines that the offering is at the availability zone level. availability-zone-id: defines that the offering is at the availability zone level, defined by the availability zone id. </p>
     pub fn location_type(mut self, input: crate::types::LocationType) -> Self {
         self.location_type = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl AcceleratorTypeOfferingBuilder {
         self.location_type = input;
         self
     }
+    /// <p> The location type for the offering. It can assume the following values: region: defines that the offering is at the regional level. availability-zone: defines that the offering is at the availability zone level. availability-zone-id: defines that the offering is at the availability zone level, defined by the availability zone id. </p>
+    pub fn get_location_type(&self) -> &::std::option::Option<crate::types::LocationType> {
+        &self.location_type
+    }
     /// <p> The location for the offering. It will return either the region, availability zone or availability zone id for the offering depending on the locationType value. </p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
@@ -84,6 +92,10 @@ impl AcceleratorTypeOfferingBuilder {
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
+    }
+    /// <p> The location for the offering. It will return either the region, availability zone or availability zone id for the offering depending on the locationType value. </p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
     }
     /// Consumes the builder and constructs a [`AcceleratorTypeOffering`](crate::types::AcceleratorTypeOffering).
     pub fn build(self) -> crate::types::AcceleratorTypeOffering {

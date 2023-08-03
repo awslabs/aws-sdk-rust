@@ -39,6 +39,10 @@ impl StopThingRegistrationTaskInputBuilder {
         self.task_id = input;
         self
     }
+    /// <p>The bulk thing provisioning task ID.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_id
+    }
     /// Consumes the builder and constructs a [`StopThingRegistrationTaskInput`](crate::operation::stop_thing_registration_task::StopThingRegistrationTaskInput).
     pub fn build(
         self,

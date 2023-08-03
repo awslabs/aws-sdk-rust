@@ -58,6 +58,10 @@ impl SearchAvailablePhoneNumbersOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `available_numbers_list`.
     ///
     /// To override the contents of this collection use [`set_available_numbers_list`](Self::set_available_numbers_list).
@@ -76,6 +80,12 @@ impl SearchAvailablePhoneNumbersOutputBuilder {
     ) -> Self {
         self.available_numbers_list = input;
         self
+    }
+    /// <p>A list of available phone numbers that you can claim to your Amazon Connect instance or traffic distribution group.</p>
+    pub fn get_available_numbers_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailableNumberSummary>> {
+        &self.available_numbers_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

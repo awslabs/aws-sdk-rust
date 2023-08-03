@@ -45,6 +45,10 @@ impl RestoreKeyInputBuilder {
         self.key_identifier = input;
         self
     }
+    /// <p>The <code>KeyARN</code> of the key to be restored within Amazon Web Services Payment Cryptography.</p>
+    pub fn get_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_identifier
+    }
     /// Consumes the builder and constructs a [`RestoreKeyInput`](crate::operation::restore_key::RestoreKeyInput).
     pub fn build(
         self,

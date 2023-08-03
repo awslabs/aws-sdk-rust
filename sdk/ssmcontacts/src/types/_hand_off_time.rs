@@ -48,6 +48,10 @@ impl HandOffTimeBuilder {
         self.hour_of_day = input;
         self
     }
+    /// <p>The hour when an on-call rotation shift begins or ends.</p>
+    pub fn get_hour_of_day(&self) -> &::std::option::Option<i32> {
+        &self.hour_of_day
+    }
     /// <p>The minute when an on-call rotation shift begins or ends.</p>
     pub fn minute_of_hour(mut self, input: i32) -> Self {
         self.minute_of_hour = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl HandOffTimeBuilder {
     pub fn set_minute_of_hour(mut self, input: ::std::option::Option<i32>) -> Self {
         self.minute_of_hour = input;
         self
+    }
+    /// <p>The minute when an on-call rotation shift begins or ends.</p>
+    pub fn get_minute_of_hour(&self) -> &::std::option::Option<i32> {
+        &self.minute_of_hour
     }
     /// Consumes the builder and constructs a [`HandOffTime`](crate::types::HandOffTime).
     pub fn build(self) -> crate::types::HandOffTime {

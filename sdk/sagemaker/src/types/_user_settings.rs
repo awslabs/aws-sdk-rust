@@ -132,6 +132,10 @@ impl UserSettingsBuilder {
         self.execution_role = input;
         self
     }
+    /// <p>The execution role for the user.</p>
+    pub fn get_execution_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_role
+    }
     /// Appends an item to `security_groups`.
     ///
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
@@ -160,6 +164,15 @@ impl UserSettingsBuilder {
         self.security_groups = input;
         self
     }
+    /// <p>The security groups for the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.</p>
+    /// <p>Optional when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>PublicInternetOnly</code>.</p>
+    /// <p>Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>, unless specified as part of the <code>DefaultUserSettings</code> for the domain.</p>
+    /// <p>Amazon SageMaker adds a security group to allow NFS traffic from SageMaker Studio. Therefore, the number of security groups that you can specify is one less than the maximum number shown.</p>
+    pub fn get_security_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_groups
+    }
     /// <p>Specifies options for sharing SageMaker Studio notebooks.</p>
     pub fn sharing_settings(mut self, input: crate::types::SharingSettings) -> Self {
         self.sharing_settings = ::std::option::Option::Some(input);
@@ -172,6 +185,10 @@ impl UserSettingsBuilder {
     ) -> Self {
         self.sharing_settings = input;
         self
+    }
+    /// <p>Specifies options for sharing SageMaker Studio notebooks.</p>
+    pub fn get_sharing_settings(&self) -> &::std::option::Option<crate::types::SharingSettings> {
+        &self.sharing_settings
     }
     /// <p>The Jupyter server's app settings.</p>
     pub fn jupyter_server_app_settings(
@@ -189,6 +206,12 @@ impl UserSettingsBuilder {
         self.jupyter_server_app_settings = input;
         self
     }
+    /// <p>The Jupyter server's app settings.</p>
+    pub fn get_jupyter_server_app_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::JupyterServerAppSettings> {
+        &self.jupyter_server_app_settings
+    }
     /// <p>The kernel gateway app settings.</p>
     pub fn kernel_gateway_app_settings(
         mut self,
@@ -204,6 +227,12 @@ impl UserSettingsBuilder {
     ) -> Self {
         self.kernel_gateway_app_settings = input;
         self
+    }
+    /// <p>The kernel gateway app settings.</p>
+    pub fn get_kernel_gateway_app_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::KernelGatewayAppSettings> {
+        &self.kernel_gateway_app_settings
     }
     /// <p>The TensorBoard app settings.</p>
     pub fn tensor_board_app_settings(
@@ -221,6 +250,12 @@ impl UserSettingsBuilder {
         self.tensor_board_app_settings = input;
         self
     }
+    /// <p>The TensorBoard app settings.</p>
+    pub fn get_tensor_board_app_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::TensorBoardAppSettings> {
+        &self.tensor_board_app_settings
+    }
     /// <p>A collection of settings that configure user interaction with the <code>RStudioServerPro</code> app.</p>
     pub fn r_studio_server_pro_app_settings(
         mut self,
@@ -237,6 +272,12 @@ impl UserSettingsBuilder {
         self.r_studio_server_pro_app_settings = input;
         self
     }
+    /// <p>A collection of settings that configure user interaction with the <code>RStudioServerPro</code> app.</p>
+    pub fn get_r_studio_server_pro_app_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::RStudioServerProAppSettings> {
+        &self.r_studio_server_pro_app_settings
+    }
     /// <p>A collection of settings that configure the <code>RSessionGateway</code> app.</p>
     pub fn r_session_app_settings(mut self, input: crate::types::RSessionAppSettings) -> Self {
         self.r_session_app_settings = ::std::option::Option::Some(input);
@@ -250,6 +291,12 @@ impl UserSettingsBuilder {
         self.r_session_app_settings = input;
         self
     }
+    /// <p>A collection of settings that configure the <code>RSessionGateway</code> app.</p>
+    pub fn get_r_session_app_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::RSessionAppSettings> {
+        &self.r_session_app_settings
+    }
     /// <p>The Canvas app settings.</p>
     pub fn canvas_app_settings(mut self, input: crate::types::CanvasAppSettings) -> Self {
         self.canvas_app_settings = ::std::option::Option::Some(input);
@@ -262,6 +309,12 @@ impl UserSettingsBuilder {
     ) -> Self {
         self.canvas_app_settings = input;
         self
+    }
+    /// <p>The Canvas app settings.</p>
+    pub fn get_canvas_app_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::CanvasAppSettings> {
+        &self.canvas_app_settings
     }
     /// Consumes the builder and constructs a [`UserSettings`](crate::types::UserSettings).
     pub fn build(self) -> crate::types::UserSettings {

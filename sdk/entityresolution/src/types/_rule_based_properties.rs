@@ -60,6 +60,10 @@ impl RuleBasedPropertiesBuilder {
         self.rules = input;
         self
     }
+    /// <p>A list of Rule objects, each of which have fields <code>RuleName</code> and <code>MatchingKeys</code>.</p>
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Rule>> {
+        &self.rules
+    }
     /// <p>You can either choose <code>ONE_TO_ONE</code> or <code>MANY_TO_MANY</code> as the AttributeMatchingModel. When choosing <code>MANY_TO_MANY</code>, the system can match attribute across the sub-types of an attribute type. For example, if the value of the Email field of Profile A and the value of BusinessEmail field of Profile B matches, the two profiles are matched on the Email type. When choosing <code>ONE_TO_ONE</code> the system can only match if the sub-types are exact matches. For example, only when the value of the Email field of Profile A and the value of the Email field of Profile B matches, the two profiles are matched on the Email type.</p>
     pub fn attribute_matching_model(mut self, input: crate::types::AttributeMatchingModel) -> Self {
         self.attribute_matching_model = ::std::option::Option::Some(input);
@@ -72,6 +76,12 @@ impl RuleBasedPropertiesBuilder {
     ) -> Self {
         self.attribute_matching_model = input;
         self
+    }
+    /// <p>You can either choose <code>ONE_TO_ONE</code> or <code>MANY_TO_MANY</code> as the AttributeMatchingModel. When choosing <code>MANY_TO_MANY</code>, the system can match attribute across the sub-types of an attribute type. For example, if the value of the Email field of Profile A and the value of BusinessEmail field of Profile B matches, the two profiles are matched on the Email type. When choosing <code>ONE_TO_ONE</code> the system can only match if the sub-types are exact matches. For example, only when the value of the Email field of Profile A and the value of the Email field of Profile B matches, the two profiles are matched on the Email type.</p>
+    pub fn get_attribute_matching_model(
+        &self,
+    ) -> &::std::option::Option<crate::types::AttributeMatchingModel> {
+        &self.attribute_matching_model
     }
     /// Consumes the builder and constructs a [`RuleBasedProperties`](crate::types::RuleBasedProperties).
     pub fn build(self) -> crate::types::RuleBasedProperties {

@@ -48,6 +48,10 @@ impl KinesisFirehoseOutputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>ARN of the destination Amazon Kinesis Firehose delivery stream to write to.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the destination stream on your behalf. You need to grant the necessary permissions to this role.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl KinesisFirehoseOutputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to write to the destination stream on your behalf. You need to grant the necessary permissions to this role.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Consumes the builder and constructs a [`KinesisFirehoseOutput`](crate::types::KinesisFirehoseOutput).
     pub fn build(self) -> crate::types::KinesisFirehoseOutput {

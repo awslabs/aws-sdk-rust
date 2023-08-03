@@ -85,6 +85,12 @@ impl UpdateSourceLocationInputBuilder {
         self.access_configuration = input;
         self
     }
+    /// <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
+    pub fn get_access_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AccessConfiguration> {
+        &self.access_configuration
+    }
     /// <p>The optional configuration for the host server that serves segments.</p>
     pub fn default_segment_delivery_configuration(
         mut self,
@@ -101,6 +107,12 @@ impl UpdateSourceLocationInputBuilder {
         self.default_segment_delivery_configuration = input;
         self
     }
+    /// <p>The optional configuration for the host server that serves segments.</p>
+    pub fn get_default_segment_delivery_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DefaultSegmentDeliveryConfiguration> {
+        &self.default_segment_delivery_configuration
+    }
     /// <p>The HTTP configuration for the source location.</p>
     pub fn http_configuration(mut self, input: crate::types::HttpConfiguration) -> Self {
         self.http_configuration = ::std::option::Option::Some(input);
@@ -113,6 +125,12 @@ impl UpdateSourceLocationInputBuilder {
     ) -> Self {
         self.http_configuration = input;
         self
+    }
+    /// <p>The HTTP configuration for the source location.</p>
+    pub fn get_http_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::HttpConfiguration> {
+        &self.http_configuration
     }
     /// Appends an item to `segment_delivery_configurations`.
     ///
@@ -136,6 +154,12 @@ impl UpdateSourceLocationInputBuilder {
         self.segment_delivery_configurations = input;
         self
     }
+    /// <p>A list of the segment delivery configurations associated with this resource.</p>
+    pub fn get_segment_delivery_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SegmentDeliveryConfiguration>> {
+        &self.segment_delivery_configurations
+    }
     /// <p>The name of the source location.</p>
     pub fn source_location_name(
         mut self,
@@ -151,6 +175,10 @@ impl UpdateSourceLocationInputBuilder {
     ) -> Self {
         self.source_location_name = input;
         self
+    }
+    /// <p>The name of the source location.</p>
+    pub fn get_source_location_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_location_name
     }
     /// Consumes the builder and constructs a [`UpdateSourceLocationInput`](crate::operation::update_source_location::UpdateSourceLocationInput).
     pub fn build(

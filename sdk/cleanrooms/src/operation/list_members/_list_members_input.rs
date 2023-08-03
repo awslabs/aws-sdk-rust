@@ -61,6 +61,10 @@ impl ListMembersInputBuilder {
         self.collaboration_identifier = input;
         self
     }
+    /// <p>The identifier of the collaboration in which the members are listed.</p>
+    pub fn get_collaboration_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collaboration_identifier
+    }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl ListMembersInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token value retrieved from a previous call to access the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum size of the results that is returned per call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -80,6 +88,10 @@ impl ListMembersInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum size of the results that is returned per call.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListMembersInput`](crate::operation::list_members::ListMembersInput).
     pub fn build(

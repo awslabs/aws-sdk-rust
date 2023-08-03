@@ -55,6 +55,10 @@ impl GetConsoleScreenshotOutputBuilder {
         self.image_data = input;
         self
     }
+    /// <p>The data that comprises the image.</p>
+    pub fn get_image_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_data
+    }
     /// <p>The ID of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl GetConsoleScreenshotOutputBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
+    }
+    /// <p>The ID of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

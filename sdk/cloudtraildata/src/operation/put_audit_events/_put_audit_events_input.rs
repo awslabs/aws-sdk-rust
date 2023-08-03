@@ -64,6 +64,12 @@ impl PutAuditEventsInputBuilder {
         self.audit_events = input;
         self
     }
+    /// <p>The JSON payload of events that you want to ingest. You can also point to the JSON event payload in a file.</p>
+    pub fn get_audit_events(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AuditEvent>> {
+        &self.audit_events
+    }
     /// <p>The ARN or ID (the ARN suffix) of a channel.</p>
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_arn = ::std::option::Option::Some(input.into());
@@ -74,6 +80,10 @@ impl PutAuditEventsInputBuilder {
         self.channel_arn = input;
         self
     }
+    /// <p>The ARN or ID (the ARN suffix) of a channel.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
+    }
     /// <p>A unique identifier that is conditionally required when the channel's resource policy includes an external ID. This value can be any string, such as a passphrase or account number.</p>
     pub fn external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.external_id = ::std::option::Option::Some(input.into());
@@ -83,6 +93,10 @@ impl PutAuditEventsInputBuilder {
     pub fn set_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.external_id = input;
         self
+    }
+    /// <p>A unique identifier that is conditionally required when the channel's resource policy includes an external ID. This value can be any string, such as a passphrase or account number.</p>
+    pub fn get_external_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.external_id
     }
     /// Consumes the builder and constructs a [`PutAuditEventsInput`](crate::operation::put_audit_events::PutAuditEventsInput).
     pub fn build(

@@ -148,6 +148,10 @@ impl ContinueAsNewWorkflowExecutionDecisionAttributesBuilder {
         self.input = input;
         self
     }
+    /// <p>The input provided to the new workflow execution.</p>
+    pub fn get_input(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input
+    }
     /// <p>If set, specifies the total duration for this workflow execution. This overrides the <code>defaultExecutionStartToCloseTimeout</code> specified when registering the workflow type.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
     /// <p>An execution start-to-close timeout for this workflow execution must be specified either as a default for the workflow type or through this field. If neither this field is set nor a default execution start-to-close timeout was specified at registration time then a fault is returned.</p>
@@ -170,6 +174,15 @@ impl ContinueAsNewWorkflowExecutionDecisionAttributesBuilder {
         self.execution_start_to_close_timeout = input;
         self
     }
+    /// <p>If set, specifies the total duration for this workflow execution. This overrides the <code>defaultExecutionStartToCloseTimeout</code> specified when registering the workflow type.</p>
+    /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
+    /// <p>An execution start-to-close timeout for this workflow execution must be specified either as a default for the workflow type or through this field. If neither this field is set nor a default execution start-to-close timeout was specified at registration time then a fault is returned.</p>
+    /// </note>
+    pub fn get_execution_start_to_close_timeout(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.execution_start_to_close_timeout
+    }
     /// <p>The task list to use for the decisions of the new (continued) workflow execution.</p>
     pub fn task_list(mut self, input: crate::types::TaskList) -> Self {
         self.task_list = ::std::option::Option::Some(input);
@@ -179,6 +192,10 @@ impl ContinueAsNewWorkflowExecutionDecisionAttributesBuilder {
     pub fn set_task_list(mut self, input: ::std::option::Option<crate::types::TaskList>) -> Self {
         self.task_list = input;
         self
+    }
+    /// <p>The task list to use for the decisions of the new (continued) workflow execution.</p>
+    pub fn get_task_list(&self) -> &::std::option::Option<crate::types::TaskList> {
+        &self.task_list
     }
     /// <p> The task priority that, if set, specifies the priority for the decision tasks for this workflow execution. This overrides the defaultTaskPriority specified when registering the workflow type. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
@@ -197,6 +214,11 @@ impl ContinueAsNewWorkflowExecutionDecisionAttributesBuilder {
     ) -> Self {
         self.task_priority = input;
         self
+    }
+    /// <p> The task priority that, if set, specifies the priority for the decision tasks for this workflow execution. This overrides the defaultTaskPriority specified when registering the workflow type. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+    /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    pub fn get_task_priority(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_priority
     }
     /// <p>Specifies the maximum duration of decision tasks for the new workflow execution. This parameter overrides the <code>defaultTaskStartToCloseTimout</code> specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
@@ -219,6 +241,13 @@ impl ContinueAsNewWorkflowExecutionDecisionAttributesBuilder {
     ) -> Self {
         self.task_start_to_close_timeout = input;
         self
+    }
+    /// <p>Specifies the maximum duration of decision tasks for the new workflow execution. This parameter overrides the <code>defaultTaskStartToCloseTimout</code> specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
+    /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>
+    /// <p>A task start-to-close timeout for the new workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task start-to-close timeout was specified at registration time then a fault is returned.</p>
+    /// </note>
+    pub fn get_task_start_to_close_timeout(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_start_to_close_timeout
     }
     /// <p>If set, specifies the policy to use for the child workflow executions of the new execution if it is terminated by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This policy overrides the default child policy specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
     /// <p>The supported child policies are:</p>
@@ -249,6 +278,18 @@ impl ContinueAsNewWorkflowExecutionDecisionAttributesBuilder {
         self.child_policy = input;
         self
     }
+    /// <p>If set, specifies the policy to use for the child workflow executions of the new execution if it is terminated by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This policy overrides the default child policy specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>
+    /// <p>The supported child policies are:</p>
+    /// <ul>
+    /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
+    /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
+    /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
+    /// </ul> <note>
+    /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
+    /// </note>
+    pub fn get_child_policy(&self) -> &::std::option::Option<crate::types::ChildPolicy> {
+        &self.child_policy
+    }
     /// Appends an item to `tag_list`.
     ///
     /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
@@ -268,6 +309,10 @@ impl ContinueAsNewWorkflowExecutionDecisionAttributesBuilder {
         self.tag_list = input;
         self
     }
+    /// <p>The list of tags to associate with the new workflow execution. A maximum of 5 tags can be specified. You can list workflow executions with a specific tag by calling <code>ListOpenWorkflowExecutions</code> or <code>ListClosedWorkflowExecutions</code> and specifying a <code>TagFilter</code>.</p>
+    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tag_list
+    }
     /// <p>The version of the workflow to start.</p>
     pub fn workflow_type_version(
         mut self,
@@ -284,6 +329,10 @@ impl ContinueAsNewWorkflowExecutionDecisionAttributesBuilder {
         self.workflow_type_version = input;
         self
     }
+    /// <p>The version of the workflow to start.</p>
+    pub fn get_workflow_type_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_type_version
+    }
     /// <p>The IAM role to attach to the new (continued) execution.</p>
     pub fn lambda_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lambda_role = ::std::option::Option::Some(input.into());
@@ -293,6 +342,10 @@ impl ContinueAsNewWorkflowExecutionDecisionAttributesBuilder {
     pub fn set_lambda_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lambda_role = input;
         self
+    }
+    /// <p>The IAM role to attach to the new (continued) execution.</p>
+    pub fn get_lambda_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lambda_role
     }
     /// Consumes the builder and constructs a [`ContinueAsNewWorkflowExecutionDecisionAttributes`](crate::types::ContinueAsNewWorkflowExecutionDecisionAttributes).
     pub fn build(self) -> crate::types::ContinueAsNewWorkflowExecutionDecisionAttributes {

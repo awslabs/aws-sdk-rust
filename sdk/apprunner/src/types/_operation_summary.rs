@@ -88,6 +88,10 @@ impl OperationSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>A unique ID of this operation. It's unique in the scope of the App Runner service.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The type of operation. It indicates a specific action that occured.</p>
     pub fn r#type(mut self, input: crate::types::OperationType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -97,6 +101,10 @@ impl OperationSummaryBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::OperationType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of operation. It indicates a specific action that occured.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::OperationType> {
+        &self.r#type
     }
     /// <p>The current state of the operation.</p>
     pub fn status(mut self, input: crate::types::OperationStatus) -> Self {
@@ -111,6 +119,10 @@ impl OperationSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The current state of the operation.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::OperationStatus> {
+        &self.status
+    }
     /// <p>The Amazon Resource Name (ARN) of the resource that the operation acted on (for example, an App Runner service).</p>
     pub fn target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_arn = ::std::option::Option::Some(input.into());
@@ -120,6 +132,10 @@ impl OperationSummaryBuilder {
     pub fn set_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource that the operation acted on (for example, an App Runner service).</p>
+    pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_arn
     }
     /// <p>The time when the operation started. It's in the Unix time stamp format.</p>
     pub fn started_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -134,6 +150,10 @@ impl OperationSummaryBuilder {
         self.started_at = input;
         self
     }
+    /// <p>The time when the operation started. It's in the Unix time stamp format.</p>
+    pub fn get_started_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.started_at
+    }
     /// <p>The time when the operation ended. It's in the Unix time stamp format.</p>
     pub fn ended_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.ended_at = ::std::option::Option::Some(input);
@@ -147,6 +167,10 @@ impl OperationSummaryBuilder {
         self.ended_at = input;
         self
     }
+    /// <p>The time when the operation ended. It's in the Unix time stamp format.</p>
+    pub fn get_ended_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.ended_at
+    }
     /// <p>The time when the operation was last updated. It's in the Unix time stamp format.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
@@ -159,6 +183,10 @@ impl OperationSummaryBuilder {
     ) -> Self {
         self.updated_at = input;
         self
+    }
+    /// <p>The time when the operation was last updated. It's in the Unix time stamp format.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     /// Consumes the builder and constructs a [`OperationSummary`](crate::types::OperationSummary).
     pub fn build(self) -> crate::types::OperationSummary {

@@ -37,6 +37,13 @@ impl UpdateHostedZoneCommentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateHostedZoneComment as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_hosted_zone_comment::builders::UpdateHostedZoneCommentInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl UpdateHostedZoneCommentFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The ID for the hosted zone that you want to update the comment for.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The new comment for the hosted zone. If you don't specify a value for <code>Comment</code>, Amazon Route 53 deletes the existing value of the <code>Comment</code> element, if any.</p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.comment(input.into());
@@ -136,5 +147,9 @@ impl UpdateHostedZoneCommentFluentBuilder {
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_comment(input);
         self
+    }
+    /// <p>The new comment for the hosted zone. If you don't specify a value for <code>Comment</code>, Amazon Route 53 deletes the existing value of the <code>Comment</code> element, if any.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_comment()
     }
 }

@@ -49,6 +49,10 @@ impl TestFunctionOutputBuilder {
         self.test_result = input;
         self
     }
+    /// <p>An object that represents the result of running the function with the provided event object.</p>
+    pub fn get_test_result(&self) -> &::std::option::Option<crate::types::TestResult> {
+        &self.test_result
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

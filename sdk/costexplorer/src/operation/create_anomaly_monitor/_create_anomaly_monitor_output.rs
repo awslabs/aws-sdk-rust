@@ -47,6 +47,10 @@ impl CreateAnomalyMonitorOutputBuilder {
         self.monitor_arn = input;
         self
     }
+    /// <p>The unique identifier of your newly created cost anomaly detection monitor.</p>
+    pub fn get_monitor_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitor_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

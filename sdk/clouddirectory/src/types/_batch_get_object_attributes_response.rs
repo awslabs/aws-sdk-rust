@@ -50,6 +50,12 @@ impl BatchGetObjectAttributesResponseBuilder {
         self.attributes = input;
         self
     }
+    /// <p>The attribute values that are associated with an object.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>> {
+        &self.attributes
+    }
     /// Consumes the builder and constructs a [`BatchGetObjectAttributesResponse`](crate::types::BatchGetObjectAttributesResponse).
     pub fn build(self) -> crate::types::BatchGetObjectAttributesResponse {
         crate::types::BatchGetObjectAttributesResponse {

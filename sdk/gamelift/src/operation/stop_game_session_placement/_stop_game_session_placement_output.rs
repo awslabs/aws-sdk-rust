@@ -51,6 +51,12 @@ impl StopGameSessionPlacementOutputBuilder {
         self.game_session_placement = input;
         self
     }
+    /// <p>Object that describes the canceled game session placement, with <code>CANCELLED</code> status and an end time stamp. </p>
+    pub fn get_game_session_placement(
+        &self,
+    ) -> &::std::option::Option<crate::types::GameSessionPlacement> {
+        &self.game_session_placement
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

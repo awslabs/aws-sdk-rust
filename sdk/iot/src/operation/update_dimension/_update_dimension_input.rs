@@ -47,6 +47,10 @@ impl UpdateDimensionInputBuilder {
         self.name = input;
         self
     }
+    /// <p>A unique identifier for the dimension. Choose something that describes the type and value to make it easy to remember what it does.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `string_values`.
     ///
     /// To override the contents of this collection use [`set_string_values`](Self::set_string_values).
@@ -68,6 +72,12 @@ impl UpdateDimensionInputBuilder {
     ) -> Self {
         self.string_values = input;
         self
+    }
+    /// <p>Specifies the value or list of values for the dimension. For <code>TOPIC_FILTER</code> dimensions, this is a pattern used to match the MQTT topic (for example, "admin/#").</p>
+    pub fn get_string_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.string_values
     }
     /// Consumes the builder and constructs a [`UpdateDimensionInput`](crate::operation::update_dimension::UpdateDimensionInput).
     pub fn build(

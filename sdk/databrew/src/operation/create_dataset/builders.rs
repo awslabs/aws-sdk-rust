@@ -36,6 +36,12 @@ impl CreateDatasetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDataset as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_dataset::builders::CreateDatasetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl CreateDatasetFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the dataset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
     pub fn format(mut self, input: crate::types::InputFormat) -> Self {
         self.inner = self.inner.format(input);
@@ -127,6 +137,10 @@ impl CreateDatasetFluentBuilder {
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::InputFormat>) -> Self {
         self.inner = self.inner.set_format(input);
         self
+    }
+    /// <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::InputFormat> {
+        self.inner.get_format()
     }
     /// <p>Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.</p>
     pub fn format_options(mut self, input: crate::types::FormatOptions) -> Self {
@@ -141,6 +155,10 @@ impl CreateDatasetFluentBuilder {
         self.inner = self.inner.set_format_options(input);
         self
     }
+    /// <p>Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.</p>
+    pub fn get_format_options(&self) -> &::std::option::Option<crate::types::FormatOptions> {
+        self.inner.get_format_options()
+    }
     /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.</p>
     pub fn input(mut self, input: crate::types::Input) -> Self {
         self.inner = self.inner.input(input);
@@ -150,6 +168,10 @@ impl CreateDatasetFluentBuilder {
     pub fn set_input(mut self, input: ::std::option::Option<crate::types::Input>) -> Self {
         self.inner = self.inner.set_input(input);
         self
+    }
+    /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.</p>
+    pub fn get_input(&self) -> &::std::option::Option<crate::types::Input> {
+        self.inner.get_input()
     }
     /// <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
     pub fn path_options(mut self, input: crate::types::PathOptions) -> Self {
@@ -163,6 +185,10 @@ impl CreateDatasetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_path_options(input);
         self
+    }
+    /// <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
+    pub fn get_path_options(&self) -> &::std::option::Option<crate::types::PathOptions> {
+        self.inner.get_path_options()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -186,5 +212,13 @@ impl CreateDatasetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Metadata tags to apply to this dataset.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

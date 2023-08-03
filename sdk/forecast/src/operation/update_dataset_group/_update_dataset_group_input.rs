@@ -54,6 +54,10 @@ impl UpdateDatasetGroupInputBuilder {
         self.dataset_group_arn = input;
         self
     }
+    /// <p>The ARN of the dataset group.</p>
+    pub fn get_dataset_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_group_arn
+    }
     /// Appends an item to `dataset_arns`.
     ///
     /// To override the contents of this collection use [`set_dataset_arns`](Self::set_dataset_arns).
@@ -72,6 +76,12 @@ impl UpdateDatasetGroupInputBuilder {
     ) -> Self {
         self.dataset_arns = input;
         self
+    }
+    /// <p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the dataset group.</p>
+    pub fn get_dataset_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.dataset_arns
     }
     /// Consumes the builder and constructs a [`UpdateDatasetGroupInput`](crate::operation::update_dataset_group::UpdateDatasetGroupInput).
     pub fn build(

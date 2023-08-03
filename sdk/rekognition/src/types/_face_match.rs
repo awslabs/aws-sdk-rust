@@ -48,6 +48,10 @@ impl FaceMatchBuilder {
         self.similarity = input;
         self
     }
+    /// <p>Confidence in the match of this face with the input face.</p>
+    pub fn get_similarity(&self) -> &::std::option::Option<f32> {
+        &self.similarity
+    }
     /// <p>Describes the face properties such as the bounding box, face ID, image ID of the source image, and external image ID that you assigned.</p>
     pub fn face(mut self, input: crate::types::Face) -> Self {
         self.face = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl FaceMatchBuilder {
     pub fn set_face(mut self, input: ::std::option::Option<crate::types::Face>) -> Self {
         self.face = input;
         self
+    }
+    /// <p>Describes the face properties such as the bounding box, face ID, image ID of the source image, and external image ID that you assigned.</p>
+    pub fn get_face(&self) -> &::std::option::Option<crate::types::Face> {
+        &self.face
     }
     /// Consumes the builder and constructs a [`FaceMatch`](crate::types::FaceMatch).
     pub fn build(self) -> crate::types::FaceMatch {

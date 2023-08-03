@@ -70,6 +70,10 @@ impl ExecuteScheduledQueryInputBuilder {
         self.scheduled_query_arn = input;
         self
     }
+    /// <p>ARN of the scheduled query.</p>
+    pub fn get_scheduled_query_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scheduled_query_arn
+    }
     /// <p>The timestamp in UTC. Query will be run as if it was invoked at this timestamp. </p>
     pub fn invocation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.invocation_time = ::std::option::Option::Some(input);
@@ -83,6 +87,10 @@ impl ExecuteScheduledQueryInputBuilder {
         self.invocation_time = input;
         self
     }
+    /// <p>The timestamp in UTC. Query will be run as if it was invoked at this timestamp. </p>
+    pub fn get_invocation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.invocation_time
+    }
     /// <p>Not used. </p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -92,6 +100,10 @@ impl ExecuteScheduledQueryInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>Not used. </p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`ExecuteScheduledQueryInput`](crate::operation::execute_scheduled_query::ExecuteScheduledQueryInput).
     pub fn build(

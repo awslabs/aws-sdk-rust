@@ -75,6 +75,12 @@ impl CustomConnectorProfileCredentialsBuilder {
         self.authentication_type = input;
         self
     }
+    /// <p>The authentication type that the custom connector uses for authenticating while creating a connector profile.</p>
+    pub fn get_authentication_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuthenticationType> {
+        &self.authentication_type
+    }
     /// <p>The basic credentials that are required for the authentication of the user.</p>
     pub fn basic(mut self, input: crate::types::BasicAuthCredentials) -> Self {
         self.basic = ::std::option::Option::Some(input);
@@ -87,6 +93,10 @@ impl CustomConnectorProfileCredentialsBuilder {
     ) -> Self {
         self.basic = input;
         self
+    }
+    /// <p>The basic credentials that are required for the authentication of the user.</p>
+    pub fn get_basic(&self) -> &::std::option::Option<crate::types::BasicAuthCredentials> {
+        &self.basic
     }
     /// <p>The OAuth 2.0 credentials required for the authentication of the user.</p>
     pub fn oauth2(mut self, input: crate::types::OAuth2Credentials) -> Self {
@@ -101,6 +111,10 @@ impl CustomConnectorProfileCredentialsBuilder {
         self.oauth2 = input;
         self
     }
+    /// <p>The OAuth 2.0 credentials required for the authentication of the user.</p>
+    pub fn get_oauth2(&self) -> &::std::option::Option<crate::types::OAuth2Credentials> {
+        &self.oauth2
+    }
     /// <p>The API keys required for the authentication of the user.</p>
     pub fn api_key(mut self, input: crate::types::ApiKeyCredentials) -> Self {
         self.api_key = ::std::option::Option::Some(input);
@@ -114,6 +128,10 @@ impl CustomConnectorProfileCredentialsBuilder {
         self.api_key = input;
         self
     }
+    /// <p>The API keys required for the authentication of the user.</p>
+    pub fn get_api_key(&self) -> &::std::option::Option<crate::types::ApiKeyCredentials> {
+        &self.api_key
+    }
     /// <p>If the connector uses the custom authentication mechanism, this holds the required credentials.</p>
     pub fn custom(mut self, input: crate::types::CustomAuthCredentials) -> Self {
         self.custom = ::std::option::Option::Some(input);
@@ -126,6 +144,10 @@ impl CustomConnectorProfileCredentialsBuilder {
     ) -> Self {
         self.custom = input;
         self
+    }
+    /// <p>If the connector uses the custom authentication mechanism, this holds the required credentials.</p>
+    pub fn get_custom(&self) -> &::std::option::Option<crate::types::CustomAuthCredentials> {
+        &self.custom
     }
     /// Consumes the builder and constructs a [`CustomConnectorProfileCredentials`](crate::types::CustomConnectorProfileCredentials).
     pub fn build(self) -> crate::types::CustomConnectorProfileCredentials {

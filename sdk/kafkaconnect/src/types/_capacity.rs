@@ -53,6 +53,10 @@ impl CapacityBuilder {
         self.auto_scaling = input;
         self
     }
+    /// <p>Information about the auto scaling parameters for the connector.</p>
+    pub fn get_auto_scaling(&self) -> &::std::option::Option<crate::types::AutoScaling> {
+        &self.auto_scaling
+    }
     /// <p>Details about a fixed capacity allocated to a connector.</p>
     pub fn provisioned_capacity(mut self, input: crate::types::ProvisionedCapacity) -> Self {
         self.provisioned_capacity = ::std::option::Option::Some(input);
@@ -65,6 +69,12 @@ impl CapacityBuilder {
     ) -> Self {
         self.provisioned_capacity = input;
         self
+    }
+    /// <p>Details about a fixed capacity allocated to a connector.</p>
+    pub fn get_provisioned_capacity(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProvisionedCapacity> {
+        &self.provisioned_capacity
     }
     /// Consumes the builder and constructs a [`Capacity`](crate::types::Capacity).
     pub fn build(self) -> crate::types::Capacity {

@@ -46,6 +46,10 @@ impl DeleteEventDataStoreInputBuilder {
         self.event_data_store = input;
         self
     }
+    /// <p>The ARN (or the ID suffix of the ARN) of the event data store to delete.</p>
+    pub fn get_event_data_store(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_data_store
+    }
     /// Consumes the builder and constructs a [`DeleteEventDataStoreInput`](crate::operation::delete_event_data_store::DeleteEventDataStoreInput).
     pub fn build(
         self,

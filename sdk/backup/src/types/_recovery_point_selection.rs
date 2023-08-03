@@ -67,6 +67,12 @@ impl RecoveryPointSelectionBuilder {
         self.vault_names = input;
         self
     }
+    /// <p>These are the names of the vaults in which the selected recovery points are contained.</p>
+    pub fn get_vault_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.vault_names
+    }
     /// Appends an item to `resource_identifiers`.
     ///
     /// To override the contents of this collection use [`set_resource_identifiers`](Self::set_resource_identifiers).
@@ -89,6 +95,12 @@ impl RecoveryPointSelectionBuilder {
         self.resource_identifiers = input;
         self
     }
+    /// <p>These are the resources included in the resource selection (including type of resources and vaults).</p>
+    pub fn get_resource_identifiers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resource_identifiers
+    }
     /// <p>This is a resource filter containing FromDate: DateTime and ToDate: DateTime. Both values are required. Future DateTime values are not permitted.</p>
     /// <p>The date and time are in Unix format and Coordinated Universal Time (UTC), and it is accurate to milliseconds ((milliseconds are optional). For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn date_range(mut self, input: crate::types::DateRange) -> Self {
@@ -100,6 +112,11 @@ impl RecoveryPointSelectionBuilder {
     pub fn set_date_range(mut self, input: ::std::option::Option<crate::types::DateRange>) -> Self {
         self.date_range = input;
         self
+    }
+    /// <p>This is a resource filter containing FromDate: DateTime and ToDate: DateTime. Both values are required. Future DateTime values are not permitted.</p>
+    /// <p>The date and time are in Unix format and Coordinated Universal Time (UTC), and it is accurate to milliseconds ((milliseconds are optional). For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+    pub fn get_date_range(&self) -> &::std::option::Option<crate::types::DateRange> {
+        &self.date_range
     }
     /// Consumes the builder and constructs a [`RecoveryPointSelection`](crate::types::RecoveryPointSelection).
     pub fn build(self) -> crate::types::RecoveryPointSelection {

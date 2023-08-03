@@ -54,6 +54,10 @@ impl InstanceCredentialsBuilder {
         self.user_name = input;
         self
     }
+    /// <p>User login string.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
+    }
     /// <p>Secret string. For Windows instances, the secret is a password for use with Windows Remote Desktop. For Linux instances, it is a private key (which must be saved as a <code>.pem</code> file) for use with SSH.</p>
     pub fn secret(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl InstanceCredentialsBuilder {
     pub fn set_secret(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret = input;
         self
+    }
+    /// <p>Secret string. For Windows instances, the secret is a password for use with Windows Remote Desktop. For Linux instances, it is a private key (which must be saved as a <code>.pem</code> file) for use with SSH.</p>
+    pub fn get_secret(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret
     }
     /// Consumes the builder and constructs a [`InstanceCredentials`](crate::types::InstanceCredentials).
     pub fn build(self) -> crate::types::InstanceCredentials {

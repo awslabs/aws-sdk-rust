@@ -83,6 +83,10 @@ impl ListDevicesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of devices to return in one page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -92,6 +96,10 @@ impl ListDevicesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of devices to return in one page of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The target column to be sorted on. Default column sort is CREATED_TIME.</p>
     pub fn sort_by(mut self, input: crate::types::ListDevicesSortBy) -> Self {
@@ -106,6 +114,10 @@ impl ListDevicesInputBuilder {
         self.sort_by = input;
         self
     }
+    /// <p>The target column to be sorted on. Default column sort is CREATED_TIME.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ListDevicesSortBy> {
+        &self.sort_by
+    }
     /// <p>The sorting order for the returned list. SortOrder is DESCENDING by default based on CREATED_TIME. Otherwise, SortOrder is ASCENDING.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -116,6 +128,10 @@ impl ListDevicesInputBuilder {
         self.sort_order = input;
         self
     }
+    /// <p>The sorting order for the returned list. SortOrder is DESCENDING by default based on CREATED_TIME. Otherwise, SortOrder is ASCENDING.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.sort_order
+    }
     /// <p>Filter based on device's name. Prefixes supported.</p>
     pub fn name_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name_filter = ::std::option::Option::Some(input.into());
@@ -125,6 +141,10 @@ impl ListDevicesInputBuilder {
     pub fn set_name_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name_filter = input;
         self
+    }
+    /// <p>Filter based on device's name. Prefixes supported.</p>
+    pub fn get_name_filter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name_filter
     }
     /// <p>Filter based on a device's status.</p>
     pub fn device_aggregated_status_filter(
@@ -141,6 +161,12 @@ impl ListDevicesInputBuilder {
     ) -> Self {
         self.device_aggregated_status_filter = input;
         self
+    }
+    /// <p>Filter based on a device's status.</p>
+    pub fn get_device_aggregated_status_filter(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeviceAggregatedStatus> {
+        &self.device_aggregated_status_filter
     }
     /// Consumes the builder and constructs a [`ListDevicesInput`](crate::operation::list_devices::ListDevicesInput).
     pub fn build(

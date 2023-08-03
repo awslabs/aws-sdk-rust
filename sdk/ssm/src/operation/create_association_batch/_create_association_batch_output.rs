@@ -67,6 +67,12 @@ impl CreateAssociationBatchOutputBuilder {
         self.successful = input;
         self
     }
+    /// <p>Information about the associations that succeeded.</p>
+    pub fn get_successful(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociationDescription>> {
+        &self.successful
+    }
     /// Appends an item to `failed`.
     ///
     /// To override the contents of this collection use [`set_failed`](Self::set_failed).
@@ -85,6 +91,12 @@ impl CreateAssociationBatchOutputBuilder {
     ) -> Self {
         self.failed = input;
         self
+    }
+    /// <p>Information about the associations that failed.</p>
+    pub fn get_failed(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedCreateAssociation>> {
+        &self.failed
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

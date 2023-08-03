@@ -56,6 +56,10 @@ impl CreateVehicleErrorBuilder {
         self.vehicle_name = input;
         self
     }
+    /// <p>The ID of the vehicle with the error.</p>
+    pub fn get_vehicle_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vehicle_name
+    }
     /// <p>An HTTP error code.</p>
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl CreateVehicleErrorBuilder {
         self.code = input;
         self
     }
+    /// <p>An HTTP error code.</p>
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
+    }
     /// <p>A description of the HTTP error.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl CreateVehicleErrorBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>A description of the HTTP error.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`CreateVehicleError`](crate::types::CreateVehicleError).
     pub fn build(self) -> crate::types::CreateVehicleError {

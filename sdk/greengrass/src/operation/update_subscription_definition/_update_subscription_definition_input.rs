@@ -47,6 +47,10 @@ impl UpdateSubscriptionDefinitionInputBuilder {
         self.name = input;
         self
     }
+    /// The name of the definition.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// The ID of the subscription definition.
     pub fn subscription_definition_id(
         mut self,
@@ -62,6 +66,10 @@ impl UpdateSubscriptionDefinitionInputBuilder {
     ) -> Self {
         self.subscription_definition_id = input;
         self
+    }
+    /// The ID of the subscription definition.
+    pub fn get_subscription_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subscription_definition_id
     }
     /// Consumes the builder and constructs a [`UpdateSubscriptionDefinitionInput`](crate::operation::update_subscription_definition::UpdateSubscriptionDefinitionInput).
     pub fn build(

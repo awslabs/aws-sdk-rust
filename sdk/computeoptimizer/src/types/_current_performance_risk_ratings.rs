@@ -65,6 +65,10 @@ impl CurrentPerformanceRiskRatingsBuilder {
         self.high = input;
         self
     }
+    /// <p>A count of the applicable resource types with a high performance risk rating.</p>
+    pub fn get_high(&self) -> &::std::option::Option<i64> {
+        &self.high
+    }
     /// <p>A count of the applicable resource types with a medium performance risk rating.</p>
     pub fn medium(mut self, input: i64) -> Self {
         self.medium = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl CurrentPerformanceRiskRatingsBuilder {
     pub fn set_medium(mut self, input: ::std::option::Option<i64>) -> Self {
         self.medium = input;
         self
+    }
+    /// <p>A count of the applicable resource types with a medium performance risk rating.</p>
+    pub fn get_medium(&self) -> &::std::option::Option<i64> {
+        &self.medium
     }
     /// <p>A count of the applicable resource types with a low performance risk rating.</p>
     pub fn low(mut self, input: i64) -> Self {
@@ -85,6 +93,10 @@ impl CurrentPerformanceRiskRatingsBuilder {
         self.low = input;
         self
     }
+    /// <p>A count of the applicable resource types with a low performance risk rating.</p>
+    pub fn get_low(&self) -> &::std::option::Option<i64> {
+        &self.low
+    }
     /// <p>A count of the applicable resource types with a very low performance risk rating.</p>
     pub fn very_low(mut self, input: i64) -> Self {
         self.very_low = ::std::option::Option::Some(input);
@@ -94,6 +106,10 @@ impl CurrentPerformanceRiskRatingsBuilder {
     pub fn set_very_low(mut self, input: ::std::option::Option<i64>) -> Self {
         self.very_low = input;
         self
+    }
+    /// <p>A count of the applicable resource types with a very low performance risk rating.</p>
+    pub fn get_very_low(&self) -> &::std::option::Option<i64> {
+        &self.very_low
     }
     /// Consumes the builder and constructs a [`CurrentPerformanceRiskRatings`](crate::types::CurrentPerformanceRiskRatings).
     pub fn build(self) -> crate::types::CurrentPerformanceRiskRatings {

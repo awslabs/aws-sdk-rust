@@ -72,6 +72,13 @@ impl ListAssociationsForLicenseConfigurationOutputBuilder {
         self.license_configuration_associations = input;
         self
     }
+    /// <p>Information about the associations for the license configuration.</p>
+    pub fn get_license_configuration_associations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LicenseConfigurationAssociation>>
+    {
+        &self.license_configuration_associations
+    }
     /// <p>Token for the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -81,6 +88,10 @@ impl ListAssociationsForLicenseConfigurationOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -53,6 +53,10 @@ impl SubscribeOutputBuilder {
         self.subscription_arn = input;
         self
     }
+    /// <p>The ARN of the subscription if it is confirmed, or the string "pending confirmation" if the subscription requires confirmation. However, if the API request parameter <code>ReturnSubscriptionArn</code> is true, then the value is always the subscription ARN, even if the subscription requires confirmation.</p>
+    pub fn get_subscription_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subscription_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

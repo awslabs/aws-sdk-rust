@@ -58,6 +58,10 @@ impl OnInputLifecycleBuilder {
         self.events = input;
         self
     }
+    /// <p>Specifies the actions performed when the <code>condition</code> evaluates to TRUE.</p>
+    pub fn get_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Event>> {
+        &self.events
+    }
     /// Appends an item to `transition_events`.
     ///
     /// To override the contents of this collection use [`set_transition_events`](Self::set_transition_events).
@@ -76,6 +80,12 @@ impl OnInputLifecycleBuilder {
     ) -> Self {
         self.transition_events = input;
         self
+    }
+    /// <p>Specifies the actions performed, and the next state entered, when a <code>condition</code> evaluates to TRUE.</p>
+    pub fn get_transition_events(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TransitionEvent>> {
+        &self.transition_events
     }
     /// Consumes the builder and constructs a [`OnInputLifecycle`](crate::types::OnInputLifecycle).
     pub fn build(self) -> crate::types::OnInputLifecycle {

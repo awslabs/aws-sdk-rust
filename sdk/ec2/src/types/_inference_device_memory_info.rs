@@ -40,6 +40,10 @@ impl InferenceDeviceMemoryInfoBuilder {
         self.size_in_mi_b = input;
         self
     }
+    /// <p>The size of the memory available to the inference accelerator, in MiB.</p>
+    pub fn get_size_in_mi_b(&self) -> &::std::option::Option<i32> {
+        &self.size_in_mi_b
+    }
     /// Consumes the builder and constructs a [`InferenceDeviceMemoryInfo`](crate::types::InferenceDeviceMemoryInfo).
     pub fn build(self) -> crate::types::InferenceDeviceMemoryInfo {
         crate::types::InferenceDeviceMemoryInfo {

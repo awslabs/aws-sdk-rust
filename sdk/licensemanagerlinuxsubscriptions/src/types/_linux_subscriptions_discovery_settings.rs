@@ -63,6 +63,12 @@ impl LinuxSubscriptionsDiscoverySettingsBuilder {
         self.source_regions = input;
         self
     }
+    /// <p>The Regions in which to discover data for Linux subscriptions.</p>
+    pub fn get_source_regions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.source_regions
+    }
     /// <p>Details if you have enabled resource discovery across your accounts in Organizations.</p>
     pub fn organization_integration(
         mut self,
@@ -78,6 +84,12 @@ impl LinuxSubscriptionsDiscoverySettingsBuilder {
     ) -> Self {
         self.organization_integration = input;
         self
+    }
+    /// <p>Details if you have enabled resource discovery across your accounts in Organizations.</p>
+    pub fn get_organization_integration(
+        &self,
+    ) -> &::std::option::Option<crate::types::OrganizationIntegration> {
+        &self.organization_integration
     }
     /// Consumes the builder and constructs a [`LinuxSubscriptionsDiscoverySettings`](crate::types::LinuxSubscriptionsDiscoverySettings).
     pub fn build(self) -> crate::types::LinuxSubscriptionsDiscoverySettings {

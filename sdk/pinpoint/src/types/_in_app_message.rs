@@ -73,6 +73,12 @@ impl InAppMessageBuilder {
         self.content = input;
         self
     }
+    /// <p>In-app message content.</p>
+    pub fn get_content(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InAppMessageContent>> {
+        &self.content
+    }
     /// Adds a key-value pair to `custom_config`.
     ///
     /// To override the contents of this collection use [`set_custom_config`](Self::set_custom_config).
@@ -98,6 +104,14 @@ impl InAppMessageBuilder {
         self.custom_config = input;
         self
     }
+    /// <p>Custom config to be sent to SDK.</p>
+    pub fn get_custom_config(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.custom_config
+    }
     /// <p>The layout of the message.</p>
     pub fn layout(mut self, input: crate::types::Layout) -> Self {
         self.layout = ::std::option::Option::Some(input);
@@ -107,6 +121,10 @@ impl InAppMessageBuilder {
     pub fn set_layout(mut self, input: ::std::option::Option<crate::types::Layout>) -> Self {
         self.layout = input;
         self
+    }
+    /// <p>The layout of the message.</p>
+    pub fn get_layout(&self) -> &::std::option::Option<crate::types::Layout> {
+        &self.layout
     }
     /// Consumes the builder and constructs a [`InAppMessage`](crate::types::InAppMessage).
     pub fn build(self) -> crate::types::InAppMessage {

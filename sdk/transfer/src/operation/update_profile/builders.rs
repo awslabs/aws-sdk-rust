@@ -36,6 +36,12 @@ impl UpdateProfileFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateProfile as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_profile::builders::UpdateProfileInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl UpdateProfileFluentBuilder {
         self.inner = self.inner.set_profile_id(input);
         self
     }
+    /// <p>The identifier of the profile object that you are updating.</p>
+    pub fn get_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_profile_id()
+    }
     /// Appends an item to `CertificateIds`.
     ///
     /// To override the contents of this collection use [`set_certificate_ids`](Self::set_certificate_ids).
@@ -137,5 +147,11 @@ impl UpdateProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_certificate_ids(input);
         self
+    }
+    /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
+    pub fn get_certificate_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_certificate_ids()
     }
 }

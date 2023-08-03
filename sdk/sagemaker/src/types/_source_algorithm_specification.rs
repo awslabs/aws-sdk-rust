@@ -50,6 +50,12 @@ impl SourceAlgorithmSpecificationBuilder {
         self.source_algorithms = input;
         self
     }
+    /// <p>A list of the algorithms that were used to create a model package.</p>
+    pub fn get_source_algorithms(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceAlgorithm>> {
+        &self.source_algorithms
+    }
     /// Consumes the builder and constructs a [`SourceAlgorithmSpecification`](crate::types::SourceAlgorithmSpecification).
     pub fn build(self) -> crate::types::SourceAlgorithmSpecification {
         crate::types::SourceAlgorithmSpecification {

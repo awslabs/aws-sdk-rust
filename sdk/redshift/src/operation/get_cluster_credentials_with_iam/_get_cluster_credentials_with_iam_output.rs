@@ -79,6 +79,10 @@ impl GetClusterCredentialsWithIamOutputBuilder {
         self.db_user = input;
         self
     }
+    /// <p>A database user name that you provide when you connect to a database. The database user is mapped 1:1 to the source IAM identity. </p>
+    pub fn get_db_user(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_user
+    }
     /// <p>A temporary password that you provide when you connect to a database.</p>
     pub fn db_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_password = ::std::option::Option::Some(input.into());
@@ -88,6 +92,10 @@ impl GetClusterCredentialsWithIamOutputBuilder {
     pub fn set_db_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_password = input;
         self
+    }
+    /// <p>A temporary password that you provide when you connect to a database.</p>
+    pub fn get_db_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_password
     }
     /// <p>The time (UTC) when the temporary password expires. After this timestamp, a log in with the temporary password fails.</p>
     pub fn expiration(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -102,6 +110,10 @@ impl GetClusterCredentialsWithIamOutputBuilder {
         self.expiration = input;
         self
     }
+    /// <p>The time (UTC) when the temporary password expires. After this timestamp, a log in with the temporary password fails.</p>
+    pub fn get_expiration(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expiration
+    }
     /// <p>Reserved for future use.</p>
     pub fn next_refresh_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.next_refresh_time = ::std::option::Option::Some(input);
@@ -114,6 +126,10 @@ impl GetClusterCredentialsWithIamOutputBuilder {
     ) -> Self {
         self.next_refresh_time = input;
         self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn get_next_refresh_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.next_refresh_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -43,6 +43,10 @@ impl DateAxisOptionsBuilder {
         self.missing_date_visibility = input;
         self
     }
+    /// <p>Determines whether or not missing dates are displayed.</p>
+    pub fn get_missing_date_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.missing_date_visibility
+    }
     /// Consumes the builder and constructs a [`DateAxisOptions`](crate::types::DateAxisOptions).
     pub fn build(self) -> crate::types::DateAxisOptions {
         crate::types::DateAxisOptions {

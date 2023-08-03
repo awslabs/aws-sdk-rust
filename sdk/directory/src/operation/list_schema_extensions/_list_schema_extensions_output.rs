@@ -68,6 +68,12 @@ impl ListSchemaExtensionsOutputBuilder {
         self.schema_extensions_info = input;
         self
     }
+    /// <p>Information about the schema extensions applied to the directory.</p>
+    pub fn get_schema_extensions_info(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaExtensionInfo>> {
+        &self.schema_extensions_info
+    }
     /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>ListSchemaExtensions</code> to retrieve the next set of items.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -77,6 +83,10 @@ impl ListSchemaExtensionsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>ListSchemaExtensions</code> to retrieve the next set of items.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

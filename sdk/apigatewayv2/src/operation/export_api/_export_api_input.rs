@@ -79,6 +79,10 @@ impl ExportApiInputBuilder {
         self.api_id = input;
         self
     }
+    /// <p>The API identifier.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_id
+    }
     /// <p>The version of the API Gateway export algorithm. API Gateway uses the latest version by default. Currently, the only supported version is 1.0.</p>
     pub fn export_version(
         mut self,
@@ -95,6 +99,10 @@ impl ExportApiInputBuilder {
         self.export_version = input;
         self
     }
+    /// <p>The version of the API Gateway export algorithm. API Gateway uses the latest version by default. Currently, the only supported version is 1.0.</p>
+    pub fn get_export_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.export_version
+    }
     /// <p>Specifies whether to include <a href="https://docs.aws.amazon.com//apigateway/latest/developerguide/api-gateway-swagger-extensions.html">API Gateway extensions</a> in the exported API definition. API Gateway extensions are included by default.</p>
     pub fn include_extensions(mut self, input: bool) -> Self {
         self.include_extensions = ::std::option::Option::Some(input);
@@ -105,6 +113,10 @@ impl ExportApiInputBuilder {
         self.include_extensions = input;
         self
     }
+    /// <p>Specifies whether to include <a href="https://docs.aws.amazon.com//apigateway/latest/developerguide/api-gateway-swagger-extensions.html">API Gateway extensions</a> in the exported API definition. API Gateway extensions are included by default.</p>
+    pub fn get_include_extensions(&self) -> &::std::option::Option<bool> {
+        &self.include_extensions
+    }
     /// <p>The output type of the exported definition file. Valid values are JSON and YAML.</p>
     pub fn output_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_type = ::std::option::Option::Some(input.into());
@@ -114,6 +126,10 @@ impl ExportApiInputBuilder {
     pub fn set_output_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_type = input;
         self
+    }
+    /// <p>The output type of the exported definition file. Valid values are JSON and YAML.</p>
+    pub fn get_output_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_type
     }
     /// <p>The version of the API specification to use. OAS30, for OpenAPI 3.0, is the only supported value.</p>
     pub fn specification(
@@ -131,6 +147,10 @@ impl ExportApiInputBuilder {
         self.specification = input;
         self
     }
+    /// <p>The version of the API specification to use. OAS30, for OpenAPI 3.0, is the only supported value.</p>
+    pub fn get_specification(&self) -> &::std::option::Option<::std::string::String> {
+        &self.specification
+    }
     /// <p>The name of the API stage to export. If you don't specify this property, a representation of the latest API configuration is exported.</p>
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_name = ::std::option::Option::Some(input.into());
@@ -140,6 +160,10 @@ impl ExportApiInputBuilder {
     pub fn set_stage_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stage_name = input;
         self
+    }
+    /// <p>The name of the API stage to export. If you don't specify this property, a representation of the latest API configuration is exported.</p>
+    pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stage_name
     }
     /// Consumes the builder and constructs a [`ExportApiInput`](crate::operation::export_api::ExportApiInput).
     pub fn build(

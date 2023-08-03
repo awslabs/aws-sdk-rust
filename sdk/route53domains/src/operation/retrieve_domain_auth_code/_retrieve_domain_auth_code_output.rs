@@ -55,6 +55,10 @@ impl RetrieveDomainAuthCodeOutputBuilder {
         self.auth_code = input;
         self
     }
+    /// <p>The authorization code for the domain.</p>
+    pub fn get_auth_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auth_code
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

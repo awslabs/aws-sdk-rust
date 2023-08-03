@@ -38,6 +38,10 @@ impl PutChannelMembershipPreferencesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutChannelMembershipPreferences as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_channel_membership_preferences::builders::PutChannelMembershipPreferencesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -102,6 +106,10 @@ impl PutChannelMembershipPreferencesFluentBuilder {
         self.inner = self.inner.set_channel_arn(input);
         self
     }
+    /// <p>The ARN of the channel.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_arn()
+    }
     /// <p>The ARN of the member setting the preferences.</p>
     pub fn member_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.member_arn(input.into());
@@ -112,6 +120,10 @@ impl PutChannelMembershipPreferencesFluentBuilder {
         self.inner = self.inner.set_member_arn(input);
         self
     }
+    /// <p>The ARN of the member setting the preferences.</p>
+    pub fn get_member_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_member_arn()
+    }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.chime_bearer(input.into());
@@ -121,6 +133,10 @@ impl PutChannelMembershipPreferencesFluentBuilder {
     pub fn set_chime_bearer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_chime_bearer(input);
         self
+    }
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
+    pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_chime_bearer()
     }
     /// <p>The channel membership preferences of an <code>AppInstanceUser</code> .</p>
     pub fn preferences(mut self, input: crate::types::ChannelMembershipPreferences) -> Self {
@@ -134,5 +150,11 @@ impl PutChannelMembershipPreferencesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_preferences(input);
         self
+    }
+    /// <p>The channel membership preferences of an <code>AppInstanceUser</code> .</p>
+    pub fn get_preferences(
+        &self,
+    ) -> &::std::option::Option<crate::types::ChannelMembershipPreferences> {
+        self.inner.get_preferences()
     }
 }

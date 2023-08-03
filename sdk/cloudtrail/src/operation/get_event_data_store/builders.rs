@@ -36,6 +36,12 @@ impl GetEventDataStoreFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetEventDataStore as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_event_data_store::builders::GetEventDataStoreInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl GetEventDataStoreFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_event_data_store(input);
         self
+    }
+    /// <p>The ARN (or ID suffix of the ARN) of the event data store about which you want information.</p>
+    pub fn get_event_data_store(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_event_data_store()
     }
 }

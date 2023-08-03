@@ -71,6 +71,10 @@ impl ListRulesInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The publish status of the rule.</p>
     pub fn publish_status(mut self, input: crate::types::RulePublishStatus) -> Self {
         self.publish_status = ::std::option::Option::Some(input);
@@ -83,6 +87,10 @@ impl ListRulesInputBuilder {
     ) -> Self {
         self.publish_status = input;
         self
+    }
+    /// <p>The publish status of the rule.</p>
+    pub fn get_publish_status(&self) -> &::std::option::Option<crate::types::RulePublishStatus> {
+        &self.publish_status
     }
     /// <p>The name of the event source.</p>
     pub fn event_source_name(mut self, input: crate::types::EventSourceName) -> Self {
@@ -97,6 +105,10 @@ impl ListRulesInputBuilder {
         self.event_source_name = input;
         self
     }
+    /// <p>The name of the event source.</p>
+    pub fn get_event_source_name(&self) -> &::std::option::Option<crate::types::EventSourceName> {
+        &self.event_source_name
+    }
     /// <p>The maximum number of results to return per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -107,6 +119,10 @@ impl ListRulesInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -116,6 +132,10 @@ impl ListRulesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListRulesInput`](crate::operation::list_rules::ListRulesInput).
     pub fn build(

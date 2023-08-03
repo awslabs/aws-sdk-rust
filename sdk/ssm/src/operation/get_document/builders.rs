@@ -36,6 +36,10 @@ impl GetDocumentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetDocument as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_document::builders::GetDocumentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl GetDocumentFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the SSM document.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>An optional field specifying the version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document and can't be changed.</p>
     pub fn version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version_name(input.into());
@@ -127,6 +135,10 @@ impl GetDocumentFluentBuilder {
     pub fn set_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version_name(input);
         self
+    }
+    /// <p>An optional field specifying the version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document and can't be changed.</p>
+    pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_version_name()
     }
     /// <p>The document version for which you want information.</p>
     pub fn document_version(
@@ -144,6 +156,10 @@ impl GetDocumentFluentBuilder {
         self.inner = self.inner.set_document_version(input);
         self
     }
+    /// <p>The document version for which you want information.</p>
+    pub fn get_document_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_document_version()
+    }
     /// <p>Returns the document in the specified format. The document format can be either JSON or YAML. JSON is the default format.</p>
     pub fn document_format(mut self, input: crate::types::DocumentFormat) -> Self {
         self.inner = self.inner.document_format(input);
@@ -156,5 +172,9 @@ impl GetDocumentFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_document_format(input);
         self
+    }
+    /// <p>Returns the document in the specified format. The document format can be either JSON or YAML. JSON is the default format.</p>
+    pub fn get_document_format(&self) -> &::std::option::Option<crate::types::DocumentFormat> {
+        self.inner.get_document_format()
     }
 }

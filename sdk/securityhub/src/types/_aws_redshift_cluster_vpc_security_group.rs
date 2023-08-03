@@ -48,6 +48,10 @@ impl AwsRedshiftClusterVpcSecurityGroupBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the VPC security group.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>The identifier of the VPC security group.</p>
     pub fn vpc_security_group_id(
         mut self,
@@ -63,6 +67,10 @@ impl AwsRedshiftClusterVpcSecurityGroupBuilder {
     ) -> Self {
         self.vpc_security_group_id = input;
         self
+    }
+    /// <p>The identifier of the VPC security group.</p>
+    pub fn get_vpc_security_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_security_group_id
     }
     /// Consumes the builder and constructs a [`AwsRedshiftClusterVpcSecurityGroup`](crate::types::AwsRedshiftClusterVpcSecurityGroup).
     pub fn build(self) -> crate::types::AwsRedshiftClusterVpcSecurityGroup {

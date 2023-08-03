@@ -54,6 +54,10 @@ impl UpdateGlobalTableInputBuilder {
         self.global_table_name = input;
         self
     }
+    /// <p>The global table name.</p>
+    pub fn get_global_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_table_name
+    }
     /// Appends an item to `replica_updates`.
     ///
     /// To override the contents of this collection use [`set_replica_updates`](Self::set_replica_updates).
@@ -72,6 +76,12 @@ impl UpdateGlobalTableInputBuilder {
     ) -> Self {
         self.replica_updates = input;
         self
+    }
+    /// <p>A list of Regions that should be added or removed from the global table.</p>
+    pub fn get_replica_updates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicaUpdate>> {
+        &self.replica_updates
     }
     /// Consumes the builder and constructs a [`UpdateGlobalTableInput`](crate::operation::update_global_table::UpdateGlobalTableInput).
     pub fn build(

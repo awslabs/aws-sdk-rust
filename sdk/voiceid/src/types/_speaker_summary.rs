@@ -99,6 +99,10 @@ impl SpeakerSummaryBuilder {
         self.domain_id = input;
         self
     }
+    /// <p>The identifier of the domain that contains the speaker.</p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_id
+    }
     /// <p>The client-provided identifier for the speaker.</p>
     pub fn customer_speaker_id(
         mut self,
@@ -114,6 +118,10 @@ impl SpeakerSummaryBuilder {
     ) -> Self {
         self.customer_speaker_id = input;
         self
+    }
+    /// <p>The client-provided identifier for the speaker.</p>
+    pub fn get_customer_speaker_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.customer_speaker_id
     }
     /// <p>The service-generated identifier for the speaker. </p>
     pub fn generated_speaker_id(
@@ -131,6 +139,10 @@ impl SpeakerSummaryBuilder {
         self.generated_speaker_id = input;
         self
     }
+    /// <p>The service-generated identifier for the speaker. </p>
+    pub fn get_generated_speaker_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.generated_speaker_id
+    }
     /// <p>The current status of the speaker.</p>
     pub fn status(mut self, input: crate::types::SpeakerStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -140,6 +152,10 @@ impl SpeakerSummaryBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::SpeakerStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the speaker.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::SpeakerStatus> {
+        &self.status
     }
     /// <p>A timestamp showing the speaker's creation time. </p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -154,6 +170,10 @@ impl SpeakerSummaryBuilder {
         self.created_at = input;
         self
     }
+    /// <p>A timestamp showing the speaker's creation time. </p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>A timestamp showing the speaker's last update.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
@@ -167,6 +187,10 @@ impl SpeakerSummaryBuilder {
         self.updated_at = input;
         self
     }
+    /// <p>A timestamp showing the speaker's last update.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
+    }
     /// <p>The timestamp when the speaker was last accessed for enrollment, re-enrollment or a successful authentication. This timestamp is accurate to one hour.</p>
     pub fn last_accessed_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_accessed_at = ::std::option::Option::Some(input);
@@ -179,6 +203,10 @@ impl SpeakerSummaryBuilder {
     ) -> Self {
         self.last_accessed_at = input;
         self
+    }
+    /// <p>The timestamp when the speaker was last accessed for enrollment, re-enrollment or a successful authentication. This timestamp is accurate to one hour.</p>
+    pub fn get_last_accessed_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_accessed_at
     }
     /// Consumes the builder and constructs a [`SpeakerSummary`](crate::types::SpeakerSummary).
     pub fn build(self) -> crate::types::SpeakerSummary {

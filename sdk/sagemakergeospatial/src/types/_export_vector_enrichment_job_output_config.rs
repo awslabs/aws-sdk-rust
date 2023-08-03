@@ -43,6 +43,10 @@ impl ExportVectorEnrichmentJobOutputConfigBuilder {
         self.s3_data = input;
         self
     }
+    /// <p>The input structure for Amazon S3 data; representing the Amazon S3 location of the input data objects.</p>
+    pub fn get_s3_data(&self) -> &::std::option::Option<crate::types::VectorEnrichmentJobS3Data> {
+        &self.s3_data
+    }
     /// Consumes the builder and constructs a [`ExportVectorEnrichmentJobOutputConfig`](crate::types::ExportVectorEnrichmentJobOutputConfig).
     pub fn build(self) -> crate::types::ExportVectorEnrichmentJobOutputConfig {
         crate::types::ExportVectorEnrichmentJobOutputConfig {

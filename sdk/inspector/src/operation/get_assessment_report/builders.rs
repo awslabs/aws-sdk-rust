@@ -36,6 +36,12 @@ impl GetAssessmentReportFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetAssessmentReport as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_assessment_report::builders::GetAssessmentReportInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl GetAssessmentReportFluentBuilder {
         self.inner = self.inner.set_assessment_run_arn(input);
         self
     }
+    /// <p>The ARN that specifies the assessment run for which you want to generate a report.</p>
+    pub fn get_assessment_run_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_assessment_run_arn()
+    }
     /// <p>Specifies the file format (html or pdf) of the assessment report that you want to generate.</p>
     pub fn report_file_format(mut self, input: crate::types::ReportFileFormat) -> Self {
         self.inner = self.inner.report_file_format(input);
@@ -145,6 +155,10 @@ impl GetAssessmentReportFluentBuilder {
         self.inner = self.inner.set_report_file_format(input);
         self
     }
+    /// <p>Specifies the file format (html or pdf) of the assessment report that you want to generate.</p>
+    pub fn get_report_file_format(&self) -> &::std::option::Option<crate::types::ReportFileFormat> {
+        self.inner.get_report_file_format()
+    }
     /// <p>Specifies the type of the assessment report that you want to generate. There are two types of assessment reports: a finding report and a full report. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>. </p>
     pub fn report_type(mut self, input: crate::types::ReportType) -> Self {
         self.inner = self.inner.report_type(input);
@@ -157,5 +171,9 @@ impl GetAssessmentReportFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_report_type(input);
         self
+    }
+    /// <p>Specifies the type of the assessment report that you want to generate. There are two types of assessment reports: a finding report and a full report. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>. </p>
+    pub fn get_report_type(&self) -> &::std::option::Option<crate::types::ReportType> {
+        self.inner.get_report_type()
     }
 }

@@ -50,6 +50,10 @@ impl DeregisterIdentityProviderInputBuilder {
         self.identity_provider = input;
         self
     }
+    /// <p>An object that specifies details for the identity provider.</p>
+    pub fn get_identity_provider(&self) -> &::std::option::Option<crate::types::IdentityProvider> {
+        &self.identity_provider
+    }
     /// <p>The name of the user-based subscription product.</p>
     pub fn product(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product = ::std::option::Option::Some(input.into());
@@ -59,6 +63,10 @@ impl DeregisterIdentityProviderInputBuilder {
     pub fn set_product(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product = input;
         self
+    }
+    /// <p>The name of the user-based subscription product.</p>
+    pub fn get_product(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product
     }
     /// Consumes the builder and constructs a [`DeregisterIdentityProviderInput`](crate::operation::deregister_identity_provider::DeregisterIdentityProviderInput).
     pub fn build(

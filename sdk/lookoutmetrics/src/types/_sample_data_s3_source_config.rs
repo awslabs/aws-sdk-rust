@@ -67,6 +67,10 @@ impl SampleDataS3SourceConfigBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the role.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// Appends an item to `templated_path_list`.
     ///
     /// To override the contents of this collection use [`set_templated_path_list`](Self::set_templated_path_list).
@@ -88,6 +92,12 @@ impl SampleDataS3SourceConfigBuilder {
     ) -> Self {
         self.templated_path_list = input;
         self
+    }
+    /// <p>An array of strings containing the list of templated paths.</p>
+    pub fn get_templated_path_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.templated_path_list
     }
     /// Appends an item to `historical_data_path_list`.
     ///
@@ -111,6 +121,12 @@ impl SampleDataS3SourceConfigBuilder {
         self.historical_data_path_list = input;
         self
     }
+    /// <p>An array of strings containing the historical set of data paths.</p>
+    pub fn get_historical_data_path_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.historical_data_path_list
+    }
     /// <p>Contains information about a source file's formatting.</p>
     pub fn file_format_descriptor(mut self, input: crate::types::FileFormatDescriptor) -> Self {
         self.file_format_descriptor = ::std::option::Option::Some(input);
@@ -123,6 +139,12 @@ impl SampleDataS3SourceConfigBuilder {
     ) -> Self {
         self.file_format_descriptor = input;
         self
+    }
+    /// <p>Contains information about a source file's formatting.</p>
+    pub fn get_file_format_descriptor(
+        &self,
+    ) -> &::std::option::Option<crate::types::FileFormatDescriptor> {
+        &self.file_format_descriptor
     }
     /// Consumes the builder and constructs a [`SampleDataS3SourceConfig`](crate::types::SampleDataS3SourceConfig).
     pub fn build(self) -> crate::types::SampleDataS3SourceConfig {

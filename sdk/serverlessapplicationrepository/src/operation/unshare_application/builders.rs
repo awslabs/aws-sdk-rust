@@ -37,6 +37,12 @@ impl UnshareApplicationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UnshareApplication as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::unshare_application::builders::UnshareApplicationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl UnshareApplicationFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>The AWS Organization ID to unshare the application from.</p>
     pub fn organization_id(
         mut self,
@@ -148,5 +158,9 @@ impl UnshareApplicationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_organization_id(input);
         self
+    }
+    /// <p>The AWS Organization ID to unshare the application from.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organization_id()
     }
 }

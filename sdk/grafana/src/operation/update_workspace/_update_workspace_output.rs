@@ -49,6 +49,10 @@ impl UpdateWorkspaceOutputBuilder {
         self.workspace = input;
         self
     }
+    /// <p>A structure containing data about the workspace that was created.</p>
+    pub fn get_workspace(&self) -> &::std::option::Option<crate::types::WorkspaceDescription> {
+        &self.workspace
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

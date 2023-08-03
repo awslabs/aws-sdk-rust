@@ -49,6 +49,12 @@ impl AutoTuneDetailsBuilder {
         self.scheduled_auto_tune_details = input;
         self
     }
+    /// <p>Container for details about a scheduled Auto-Tune action.</p>
+    pub fn get_scheduled_auto_tune_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::ScheduledAutoTuneDetails> {
+        &self.scheduled_auto_tune_details
+    }
     /// Consumes the builder and constructs a [`AutoTuneDetails`](crate::types::AutoTuneDetails).
     pub fn build(self) -> crate::types::AutoTuneDetails {
         crate::types::AutoTuneDetails {

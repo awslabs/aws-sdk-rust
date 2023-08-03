@@ -46,6 +46,10 @@ impl UtteranceAudioInputSpecificationBuilder {
         self.audio_file_s3_location = input;
         self
     }
+    /// <p>Amazon S3 file pointing to the audio.</p>
+    pub fn get_audio_file_s3_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.audio_file_s3_location
+    }
     /// Consumes the builder and constructs a [`UtteranceAudioInputSpecification`](crate::types::UtteranceAudioInputSpecification).
     pub fn build(self) -> crate::types::UtteranceAudioInputSpecification {
         crate::types::UtteranceAudioInputSpecification {

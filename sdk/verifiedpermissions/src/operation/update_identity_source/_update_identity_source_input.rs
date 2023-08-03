@@ -78,6 +78,10 @@ impl UpdateIdentitySourceInputBuilder {
         self.policy_store_id = input;
         self
     }
+    /// <p>Specifies the ID of the policy store that contains the identity source that you want to update.</p>
+    pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_store_id
+    }
     /// <p>Specifies the ID of the identity source that you want to update.</p>
     pub fn identity_source_id(
         mut self,
@@ -93,6 +97,10 @@ impl UpdateIdentitySourceInputBuilder {
     ) -> Self {
         self.identity_source_id = input;
         self
+    }
+    /// <p>Specifies the ID of the identity source that you want to update.</p>
+    pub fn get_identity_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_source_id
     }
     /// <p>Specifies the details required to communicate with the identity provider (IdP) associated with this identity source.</p> <note>
     /// <p>At this time, the only valid member of this structure is a Amazon Cognito user pool configuration.</p>
@@ -113,6 +121,15 @@ impl UpdateIdentitySourceInputBuilder {
         self.update_configuration = input;
         self
     }
+    /// <p>Specifies the details required to communicate with the identity provider (IdP) associated with this identity source.</p> <note>
+    /// <p>At this time, the only valid member of this structure is a Amazon Cognito user pool configuration.</p>
+    /// <p>You must specify a <code>userPoolArn</code>, and optionally, a <code>ClientId</code>.</p>
+    /// </note>
+    pub fn get_update_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateConfiguration> {
+        &self.update_configuration
+    }
     /// <p>Specifies the data type of principals generated for identities authenticated by the identity source.</p>
     pub fn principal_entity_type(
         mut self,
@@ -128,6 +145,10 @@ impl UpdateIdentitySourceInputBuilder {
     ) -> Self {
         self.principal_entity_type = input;
         self
+    }
+    /// <p>Specifies the data type of principals generated for identities authenticated by the identity source.</p>
+    pub fn get_principal_entity_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal_entity_type
     }
     /// Consumes the builder and constructs a [`UpdateIdentitySourceInput`](crate::operation::update_identity_source::UpdateIdentitySourceInput).
     pub fn build(

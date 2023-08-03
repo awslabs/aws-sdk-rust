@@ -39,6 +39,10 @@ impl DeleteFleetInputBuilder {
         self.fleet_arn = input;
         self
     }
+    /// <p>The ARN of the fleet.</p>
+    pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_arn
+    }
     /// Consumes the builder and constructs a [`DeleteFleetInput`](crate::operation::delete_fleet::DeleteFleetInput).
     pub fn build(
         self,

@@ -48,6 +48,12 @@ impl HostBuilder {
         self.source_path = input;
         self
     }
+    /// <p>The path on the host container instance that's presented to the container. If this parameter is empty, then the Docker daemon has assigned a host path for you. If this parameter contains a file location, then the data volume persists at the specified location on the host container instance until you delete it manually. If the source path location doesn't exist on the host container instance, the Docker daemon creates it. If the location does exist, the contents of the source path folder are exported.</p> <note>
+    /// <p>This parameter isn't applicable to jobs that run on Fargate resources. Don't provide this for these jobs.</p>
+    /// </note>
+    pub fn get_source_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_path
+    }
     /// Consumes the builder and constructs a [`Host`](crate::types::Host).
     pub fn build(self) -> crate::types::Host {
         crate::types::Host {

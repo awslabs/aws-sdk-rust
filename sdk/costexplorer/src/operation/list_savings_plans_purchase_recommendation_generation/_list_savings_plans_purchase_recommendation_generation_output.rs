@@ -67,6 +67,12 @@ impl ListSavingsPlansPurchaseRecommendationGenerationOutputBuilder {
         self.generation_summary_list = input;
         self
     }
+    /// <p>The list of historical recommendation generations.</p>
+    pub fn get_generation_summary_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GenerationSummary>> {
+        &self.generation_summary_list
+    }
     /// <p>The token to retrieve the next set of results.</p>
     pub fn next_page_token(
         mut self,
@@ -82,6 +88,10 @@ impl ListSavingsPlansPurchaseRecommendationGenerationOutputBuilder {
     ) -> Self {
         self.next_page_token = input;
         self
+    }
+    /// <p>The token to retrieve the next set of results.</p>
+    pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_page_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

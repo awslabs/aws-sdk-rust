@@ -48,6 +48,10 @@ impl TargetConfigurationBuilder {
         self.instance_count = input;
         self
     }
+    /// <p>The number of instances the Convertible Reserved Instance offering can be applied to. This parameter is reserved and cannot be specified in a request</p>
+    pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
+        &self.instance_count
+    }
     /// <p>The ID of the Convertible Reserved Instance offering.</p>
     pub fn offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.offering_id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl TargetConfigurationBuilder {
     pub fn set_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.offering_id = input;
         self
+    }
+    /// <p>The ID of the Convertible Reserved Instance offering.</p>
+    pub fn get_offering_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.offering_id
     }
     /// Consumes the builder and constructs a [`TargetConfiguration`](crate::types::TargetConfiguration).
     pub fn build(self) -> crate::types::TargetConfiguration {

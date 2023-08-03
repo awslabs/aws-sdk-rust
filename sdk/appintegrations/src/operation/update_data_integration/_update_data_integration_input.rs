@@ -57,6 +57,10 @@ impl UpdateDataIntegrationInputBuilder {
         self.identifier = input;
         self
     }
+    /// <p>A unique identifier for the DataIntegration.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
+    }
     /// <p>The name of the DataIntegration.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -67,6 +71,10 @@ impl UpdateDataIntegrationInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the DataIntegration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A description of the DataIntegration.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -76,6 +84,10 @@ impl UpdateDataIntegrationInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the DataIntegration.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`UpdateDataIntegrationInput`](crate::operation::update_data_integration::UpdateDataIntegrationInput).
     pub fn build(

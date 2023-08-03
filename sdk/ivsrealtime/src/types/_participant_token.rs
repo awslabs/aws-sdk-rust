@@ -117,6 +117,10 @@ impl ParticipantTokenBuilder {
         self.participant_id = input;
         self
     }
+    /// <p>Unique identifier for this participant token, assigned by IVS.</p>
+    pub fn get_participant_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.participant_id
+    }
     /// <p>The issued client token, encrypted.</p>
     pub fn token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token = ::std::option::Option::Some(input.into());
@@ -127,6 +131,10 @@ impl ParticipantTokenBuilder {
         self.token = input;
         self
     }
+    /// <p>The issued client token, encrypted.</p>
+    pub fn get_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.token
+    }
     /// <p>Customer-assigned name to help identify the token; this can be used to link a participant to a user in the customer’s own systems. This can be any UTF-8 encoded text. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i> </p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
@@ -136,6 +144,10 @@ impl ParticipantTokenBuilder {
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
+    }
+    /// <p>Customer-assigned name to help identify the token; this can be used to link a participant to a user in the customer’s own systems. This can be any UTF-8 encoded text. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i> </p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
     }
     /// Adds a key-value pair to `attributes`.
     ///
@@ -162,6 +174,14 @@ impl ParticipantTokenBuilder {
         self.attributes = input;
         self
     }
+    /// <p>Application-provided attributes to encode into the token and attach to a stage. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i> </p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.attributes
+    }
     /// <p>Duration (in minutes), after which the participant token expires. Default: 720 (12 hours).</p>
     pub fn duration(mut self, input: i32) -> Self {
         self.duration = ::std::option::Option::Some(input);
@@ -171,6 +191,10 @@ impl ParticipantTokenBuilder {
     pub fn set_duration(mut self, input: ::std::option::Option<i32>) -> Self {
         self.duration = input;
         self
+    }
+    /// <p>Duration (in minutes), after which the participant token expires. Default: 720 (12 hours).</p>
+    pub fn get_duration(&self) -> &::std::option::Option<i32> {
+        &self.duration
     }
     /// Appends an item to `capabilities`.
     ///
@@ -191,6 +215,12 @@ impl ParticipantTokenBuilder {
         self.capabilities = input;
         self
     }
+    /// <p>Set of capabilities that the user is allowed to perform in the stage.</p>
+    pub fn get_capabilities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParticipantTokenCapability>> {
+        &self.capabilities
+    }
     /// <p>ISO 8601 timestamp (returned as a string) for when this token expires.</p>
     pub fn expiration_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.expiration_time = ::std::option::Option::Some(input);
@@ -203,6 +233,10 @@ impl ParticipantTokenBuilder {
     ) -> Self {
         self.expiration_time = input;
         self
+    }
+    /// <p>ISO 8601 timestamp (returned as a string) for when this token expires.</p>
+    pub fn get_expiration_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expiration_time
     }
     /// Consumes the builder and constructs a [`ParticipantToken`](crate::types::ParticipantToken).
     pub fn build(self) -> crate::types::ParticipantToken {

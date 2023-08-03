@@ -50,6 +50,12 @@ impl DescribeClientPropertiesInputBuilder {
         self.resource_ids = input;
         self
     }
+    /// <p>The resource identifier, in the form of directory IDs.</p>
+    pub fn get_resource_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resource_ids
+    }
     /// Consumes the builder and constructs a [`DescribeClientPropertiesInput`](crate::operation::describe_client_properties::DescribeClientPropertiesInput).
     pub fn build(
         self,

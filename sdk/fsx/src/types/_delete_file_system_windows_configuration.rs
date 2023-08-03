@@ -48,6 +48,10 @@ impl DeleteFileSystemWindowsConfigurationBuilder {
         self.skip_final_backup = input;
         self
     }
+    /// <p>By default, Amazon FSx for Windows takes a final backup on your behalf when the <code>DeleteFileSystem</code> operation is invoked. Doing this helps protect you from data loss, and we highly recommend taking the final backup. If you want to skip this backup, use this flag to do so.</p>
+    pub fn get_skip_final_backup(&self) -> &::std::option::Option<bool> {
+        &self.skip_final_backup
+    }
     /// Appends an item to `final_backup_tags`.
     ///
     /// To override the contents of this collection use [`set_final_backup_tags`](Self::set_final_backup_tags).
@@ -66,6 +70,12 @@ impl DeleteFileSystemWindowsConfigurationBuilder {
     ) -> Self {
         self.final_backup_tags = input;
         self
+    }
+    /// <p>A set of tags for your final backup.</p>
+    pub fn get_final_backup_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.final_backup_tags
     }
     /// Consumes the builder and constructs a [`DeleteFileSystemWindowsConfiguration`](crate::types::DeleteFileSystemWindowsConfiguration).
     pub fn build(self) -> crate::types::DeleteFileSystemWindowsConfiguration {

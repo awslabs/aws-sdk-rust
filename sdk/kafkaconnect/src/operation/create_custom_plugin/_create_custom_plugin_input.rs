@@ -67,6 +67,12 @@ impl CreateCustomPluginInputBuilder {
         self.content_type = input;
         self
     }
+    /// <p>The type of the plugin file.</p>
+    pub fn get_content_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::CustomPluginContentType> {
+        &self.content_type
+    }
     /// <p>A summary description of the custom plugin.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -76,6 +82,10 @@ impl CreateCustomPluginInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A summary description of the custom plugin.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Information about the location of a custom plugin.</p>
     pub fn location(mut self, input: crate::types::CustomPluginLocation) -> Self {
@@ -90,6 +100,10 @@ impl CreateCustomPluginInputBuilder {
         self.location = input;
         self
     }
+    /// <p>Information about the location of a custom plugin.</p>
+    pub fn get_location(&self) -> &::std::option::Option<crate::types::CustomPluginLocation> {
+        &self.location
+    }
     /// <p>The name of the custom plugin.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -99,6 +113,10 @@ impl CreateCustomPluginInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the custom plugin.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`CreateCustomPluginInput`](crate::operation::create_custom_plugin::CreateCustomPluginInput).
     pub fn build(

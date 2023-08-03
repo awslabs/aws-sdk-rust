@@ -71,6 +71,10 @@ impl PushMessageActivityBuilder {
         self.message_config = input;
         self
     }
+    /// <p>Specifies the time to live (TTL) value for push notifications that are sent to participants in a journey.</p>
+    pub fn get_message_config(&self) -> &::std::option::Option<crate::types::JourneyPushMessage> {
+        &self.message_config
+    }
     /// <p>The unique identifier for the next activity to perform, after the message is sent.</p>
     pub fn next_activity(
         mut self,
@@ -87,6 +91,10 @@ impl PushMessageActivityBuilder {
         self.next_activity = input;
         self
     }
+    /// <p>The unique identifier for the next activity to perform, after the message is sent.</p>
+    pub fn get_next_activity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_activity
+    }
     /// <p>The name of the push notification template to use for the message. If specified, this value must match the name of an existing message template.</p>
     pub fn template_name(
         mut self,
@@ -102,6 +110,10 @@ impl PushMessageActivityBuilder {
     ) -> Self {
         self.template_name = input;
         self
+    }
+    /// <p>The name of the push notification template to use for the message. If specified, this value must match the name of an existing message template.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
     }
     /// <p>The unique identifier for the version of the push notification template to use for the message. If specified, this value must match the identifier for an existing template version. To retrieve a list of versions and version identifiers for a template, use the
     /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
@@ -122,6 +134,12 @@ impl PushMessageActivityBuilder {
     ) -> Self {
         self.template_version = input;
         self
+    }
+    /// <p>The unique identifier for the version of the push notification template to use for the message. If specified, this value must match the identifier for an existing template version. To retrieve a list of versions and version identifiers for a template, use the
+    /// <link linkend="templates-template-name-template-type-versions">Template Versions resource.</p>
+    /// <p>If you don't specify a value for this property, Amazon Pinpoint uses the <i>active version</i> of the template. The <i>active version</i> is typically the version of a template that's been most recently reviewed and approved for use, depending on your workflow. It isn't necessarily the latest version of a template.</p>
+    pub fn get_template_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_version
     }
     /// Consumes the builder and constructs a [`PushMessageActivity`](crate::types::PushMessageActivity).
     pub fn build(self) -> crate::types::PushMessageActivity {

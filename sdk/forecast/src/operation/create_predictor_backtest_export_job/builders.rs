@@ -53,6 +53,10 @@ impl CreatePredictorBacktestExportJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreatePredictorBacktestExportJob as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_predictor_backtest_export_job::builders::CreatePredictorBacktestExportJobInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -123,6 +127,12 @@ impl CreatePredictorBacktestExportJobFluentBuilder {
         self.inner = self.inner.set_predictor_backtest_export_job_name(input);
         self
     }
+    /// <p>The name for the backtest export job.</p>
+    pub fn get_predictor_backtest_export_job_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_predictor_backtest_export_job_name()
+    }
     /// <p>The Amazon Resource Name (ARN) of the predictor that you want to export.</p>
     pub fn predictor_arn(
         mut self,
@@ -139,6 +149,10 @@ impl CreatePredictorBacktestExportJobFluentBuilder {
         self.inner = self.inner.set_predictor_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the predictor that you want to export.</p>
+    pub fn get_predictor_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_predictor_arn()
+    }
     /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional). </p>
     pub fn destination(mut self, input: crate::types::DataDestination) -> Self {
         self.inner = self.inner.destination(input);
@@ -151,6 +165,10 @@ impl CreatePredictorBacktestExportJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_destination(input);
         self
+    }
+    /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional). </p>
+    pub fn get_destination(&self) -> &::std::option::Option<crate::types::DataDestination> {
+        self.inner.get_destination()
     }
     /// Appends an item to `Tags`.
     ///
@@ -187,6 +205,19 @@ impl CreatePredictorBacktestExportJobFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>Optional metadata to help you categorize and organize your backtests. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>
+    /// <p>The following restrictions apply to tags:</p>
+    /// <ul>
+    /// <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li>
+    /// <li> <p>Maximum number of tags per resource: 50.</p> </li>
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>
+    /// <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>
+    /// </ul>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>The format of the exported data, CSV or PARQUET. The default value is CSV.</p>
     pub fn format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.format(input.into());
@@ -196,5 +227,9 @@ impl CreatePredictorBacktestExportJobFluentBuilder {
     pub fn set_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_format(input);
         self
+    }
+    /// <p>The format of the exported data, CSV or PARQUET. The default value is CSV.</p>
+    pub fn get_format(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_format()
     }
 }

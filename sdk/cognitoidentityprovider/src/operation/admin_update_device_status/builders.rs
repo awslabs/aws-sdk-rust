@@ -38,6 +38,13 @@ impl AdminUpdateDeviceStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AdminUpdateDeviceStatus as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::admin_update_device_status::builders::AdminUpdateDeviceStatusInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +135,10 @@ impl AdminUpdateDeviceStatusFluentBuilder {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
+    /// <p>The user pool ID.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_pool_id()
+    }
     /// <p>The user name.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.username(input.into());
@@ -138,6 +149,10 @@ impl AdminUpdateDeviceStatusFluentBuilder {
         self.inner = self.inner.set_username(input);
         self
     }
+    /// <p>The user name.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_username()
+    }
     /// <p>The device key.</p>
     pub fn device_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_key(input.into());
@@ -147,6 +162,10 @@ impl AdminUpdateDeviceStatusFluentBuilder {
     pub fn set_device_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_key(input);
         self
+    }
+    /// <p>The device key.</p>
+    pub fn get_device_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_key()
     }
     /// <p>The status indicating whether a device has been remembered or not.</p>
     pub fn device_remembered_status(
@@ -163,5 +182,11 @@ impl AdminUpdateDeviceStatusFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_device_remembered_status(input);
         self
+    }
+    /// <p>The status indicating whether a device has been remembered or not.</p>
+    pub fn get_device_remembered_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeviceRememberedStatusType> {
+        self.inner.get_device_remembered_status()
     }
 }

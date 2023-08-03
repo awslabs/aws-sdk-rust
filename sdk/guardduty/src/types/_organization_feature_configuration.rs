@@ -60,6 +60,10 @@ impl OrganizationFeatureConfigurationBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the feature that will be configured for the organization.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::OrgFeature> {
+        &self.name
+    }
     /// <p>The status of the feature that will be configured for the organization.</p>
     pub fn auto_enable(mut self, input: crate::types::OrgFeatureStatus) -> Self {
         self.auto_enable = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl OrganizationFeatureConfigurationBuilder {
     ) -> Self {
         self.auto_enable = input;
         self
+    }
+    /// <p>The status of the feature that will be configured for the organization.</p>
+    pub fn get_auto_enable(&self) -> &::std::option::Option<crate::types::OrgFeatureStatus> {
+        &self.auto_enable
     }
     /// Appends an item to `additional_configuration`.
     ///
@@ -96,6 +104,13 @@ impl OrganizationFeatureConfigurationBuilder {
     ) -> Self {
         self.additional_configuration = input;
         self
+    }
+    /// <p>The additional information that will be configured for the organization.</p>
+    pub fn get_additional_configuration(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OrganizationAdditionalConfiguration>>
+    {
+        &self.additional_configuration
     }
     /// Consumes the builder and constructs a [`OrganizationFeatureConfiguration`](crate::types::OrganizationFeatureConfiguration).
     pub fn build(self) -> crate::types::OrganizationFeatureConfiguration {

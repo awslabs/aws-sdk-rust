@@ -67,6 +67,12 @@ impl ListAccountAssociationsFilterBuilder {
         self.association = input;
         self
     }
+    /// <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p>
+    /// <p> <code>UNMONITORED</code>: linked accounts that are not associated to billing groups.</p>
+    /// <p> <code>Billing Group Arn</code>: linked accounts that are associated to the provided Billing Group Arn.</p>
+    pub fn get_association(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association
+    }
     /// <p>The Amazon Web Services account ID to filter on.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -76,6 +82,10 @@ impl ListAccountAssociationsFilterBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>The Amazon Web Services account ID to filter on.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// Appends an item to `account_ids`.
     ///
@@ -95,6 +105,12 @@ impl ListAccountAssociationsFilterBuilder {
     ) -> Self {
         self.account_ids = input;
         self
+    }
+    /// <p> The list of Amazon Web Services IDs to retrieve their associated billing group for a given time range. </p>
+    pub fn get_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.account_ids
     }
     /// Consumes the builder and constructs a [`ListAccountAssociationsFilter`](crate::types::ListAccountAssociationsFilter).
     pub fn build(self) -> crate::types::ListAccountAssociationsFilter {

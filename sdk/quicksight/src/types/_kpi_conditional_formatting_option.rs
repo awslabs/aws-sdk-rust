@@ -60,6 +60,12 @@ impl KpiConditionalFormattingOptionBuilder {
         self.primary_value = input;
         self
     }
+    /// <p>The conditional formatting for the primary value of a KPI visual.</p>
+    pub fn get_primary_value(
+        &self,
+    ) -> &::std::option::Option<crate::types::KpiPrimaryValueConditionalFormatting> {
+        &self.primary_value
+    }
     /// <p>The conditional formatting for the progress bar of a KPI visual.</p>
     pub fn progress_bar(
         mut self,
@@ -75,6 +81,12 @@ impl KpiConditionalFormattingOptionBuilder {
     ) -> Self {
         self.progress_bar = input;
         self
+    }
+    /// <p>The conditional formatting for the progress bar of a KPI visual.</p>
+    pub fn get_progress_bar(
+        &self,
+    ) -> &::std::option::Option<crate::types::KpiProgressBarConditionalFormatting> {
+        &self.progress_bar
     }
     /// Consumes the builder and constructs a [`KpiConditionalFormattingOption`](crate::types::KpiConditionalFormattingOption).
     pub fn build(self) -> crate::types::KpiConditionalFormattingOption {

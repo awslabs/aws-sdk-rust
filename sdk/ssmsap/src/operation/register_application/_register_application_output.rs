@@ -59,6 +59,10 @@ impl RegisterApplicationOutputBuilder {
         self.application = input;
         self
     }
+    /// <p>The application registered with AWS Systems Manager for SAP.</p>
+    pub fn get_application(&self) -> &::std::option::Option<crate::types::Application> {
+        &self.application
+    }
     /// <p>The ID of the operation.</p>
     pub fn operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operation_id = ::std::option::Option::Some(input.into());
@@ -68,6 +72,10 @@ impl RegisterApplicationOutputBuilder {
     pub fn set_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operation_id = input;
         self
+    }
+    /// <p>The ID of the operation.</p>
+    pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operation_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

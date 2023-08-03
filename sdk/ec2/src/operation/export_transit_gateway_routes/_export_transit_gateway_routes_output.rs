@@ -46,6 +46,10 @@ impl ExportTransitGatewayRoutesOutputBuilder {
         self.s3_location = input;
         self
     }
+    /// <p>The URL of the exported file in Amazon S3. For example, s3://<i>bucket_name</i>/VPCTransitGateway/TransitGatewayRouteTables/<i>file_name</i>.</p>
+    pub fn get_s3_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_location
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

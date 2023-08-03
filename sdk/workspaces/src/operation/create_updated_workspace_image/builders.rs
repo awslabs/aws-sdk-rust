@@ -43,6 +43,10 @@ impl CreateUpdatedWorkspaceImageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateUpdatedWorkspaceImage as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_updated_workspace_image::builders::CreateUpdatedWorkspaceImageInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,10 @@ impl CreateUpdatedWorkspaceImageFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the new updated WorkSpace image.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>A description of whether updates for the WorkSpace image are available.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -142,6 +150,10 @@ impl CreateUpdatedWorkspaceImageFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of whether updates for the WorkSpace image are available.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The identifier of the source WorkSpace image.</p>
     pub fn source_image_id(
@@ -158,6 +170,10 @@ impl CreateUpdatedWorkspaceImageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_source_image_id(input);
         self
+    }
+    /// <p>The identifier of the source WorkSpace image.</p>
+    pub fn get_source_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_image_id()
     }
     /// Appends an item to `Tags`.
     ///
@@ -179,5 +195,11 @@ impl CreateUpdatedWorkspaceImageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags that you want to add to the new updated WorkSpace image.</p> <note>
+    /// <p>To add tags at the same time when you're creating the updated image, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
+    /// </note>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

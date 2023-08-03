@@ -36,6 +36,12 @@ impl ListMissionProfilesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListMissionProfiles as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_mission_profiles::builders::ListMissionProfilesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl ListMissionProfilesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>Maximum number of mission profiles returned.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>Next token returned in the request of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -146,5 +156,9 @@ impl ListMissionProfilesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>Next token returned in the request of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

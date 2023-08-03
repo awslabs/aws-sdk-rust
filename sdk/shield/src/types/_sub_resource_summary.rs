@@ -66,6 +66,10 @@ impl SubResourceSummaryBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The <code>SubResource</code> type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::SubResourceType> {
+        &self.r#type
+    }
     /// <p>The unique identifier (ID) of the <code>SubResource</code>.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -75,6 +79,10 @@ impl SubResourceSummaryBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The unique identifier (ID) of the <code>SubResource</code>.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Appends an item to `attack_vectors`.
     ///
@@ -95,6 +103,12 @@ impl SubResourceSummaryBuilder {
         self.attack_vectors = input;
         self
     }
+    /// <p>The list of attack types and associated counters.</p>
+    pub fn get_attack_vectors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SummarizedAttackVector>> {
+        &self.attack_vectors
+    }
     /// Appends an item to `counters`.
     ///
     /// To override the contents of this collection use [`set_counters`](Self::set_counters).
@@ -113,6 +127,12 @@ impl SubResourceSummaryBuilder {
     ) -> Self {
         self.counters = input;
         self
+    }
+    /// <p>The counters that describe the details of the attack.</p>
+    pub fn get_counters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SummarizedCounter>> {
+        &self.counters
     }
     /// Consumes the builder and constructs a [`SubResourceSummary`](crate::types::SubResourceSummary).
     pub fn build(self) -> crate::types::SubResourceSummary {

@@ -70,6 +70,10 @@ impl AccessKeyDetailsBuilder {
         self.access_key_id = input;
         self
     }
+    /// <p>The access key ID of the user.</p>
+    pub fn get_access_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_key_id
+    }
     /// <p>The principal ID of the user.</p>
     pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_id = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl AccessKeyDetailsBuilder {
     pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal_id = input;
         self
+    }
+    /// <p>The principal ID of the user.</p>
+    pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal_id
     }
     /// <p>The name of the user.</p>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -90,6 +98,10 @@ impl AccessKeyDetailsBuilder {
         self.user_name = input;
         self
     }
+    /// <p>The name of the user.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
+    }
     /// <p>The type of the user.</p>
     pub fn user_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_type = ::std::option::Option::Some(input.into());
@@ -99,6 +111,10 @@ impl AccessKeyDetailsBuilder {
     pub fn set_user_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_type = input;
         self
+    }
+    /// <p>The type of the user.</p>
+    pub fn get_user_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_type
     }
     /// Consumes the builder and constructs a [`AccessKeyDetails`](crate::types::AccessKeyDetails).
     pub fn build(self) -> crate::types::AccessKeyDetails {

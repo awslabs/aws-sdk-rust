@@ -48,6 +48,10 @@ impl OutputNotebookS3LocationForOutputBuilder {
         self.bucket = input;
         self
     }
+    /// <p>The Amazon S3 bucket that stores the notebook execution output.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p>The key to the Amazon S3 location that stores the notebook execution output.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl OutputNotebookS3LocationForOutputBuilder {
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
+    }
+    /// <p>The key to the Amazon S3 location that stores the notebook execution output.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
     }
     /// Consumes the builder and constructs a [`OutputNotebookS3LocationForOutput`](crate::types::OutputNotebookS3LocationForOutput).
     pub fn build(self) -> crate::types::OutputNotebookS3LocationForOutput {

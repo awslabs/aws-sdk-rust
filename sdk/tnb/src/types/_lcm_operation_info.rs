@@ -47,6 +47,10 @@ impl LcmOperationInfoBuilder {
         self.ns_lcm_op_occ_id = input;
         self
     }
+    /// <p>The identifier of the network operation.</p>
+    pub fn get_ns_lcm_op_occ_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ns_lcm_op_occ_id
+    }
     /// Consumes the builder and constructs a [`LcmOperationInfo`](crate::types::LcmOperationInfo).
     pub fn build(self) -> crate::types::LcmOperationInfo {
         crate::types::LcmOperationInfo {

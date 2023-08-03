@@ -74,6 +74,10 @@ impl ListAuditMitigationActionsExecutionsInputBuilder {
         self.task_id = input;
         self
     }
+    /// <p>Specify this filter to limit results to actions for a specific audit mitigation actions task.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_id
+    }
     /// <p>Specify this filter to limit results to those with a specific status.</p>
     pub fn action_status(
         mut self,
@@ -90,6 +94,12 @@ impl ListAuditMitigationActionsExecutionsInputBuilder {
         self.action_status = input;
         self
     }
+    /// <p>Specify this filter to limit results to those with a specific status.</p>
+    pub fn get_action_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuditMitigationActionsExecutionStatus> {
+        &self.action_status
+    }
     /// <p>Specify this filter to limit results to those that were applied to a specific audit finding.</p>
     pub fn finding_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.finding_id = ::std::option::Option::Some(input.into());
@@ -99,6 +109,10 @@ impl ListAuditMitigationActionsExecutionsInputBuilder {
     pub fn set_finding_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.finding_id = input;
         self
+    }
+    /// <p>Specify this filter to limit results to those that were applied to a specific audit finding.</p>
+    pub fn get_finding_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.finding_id
     }
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -110,6 +124,10 @@ impl ListAuditMitigationActionsExecutionsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to return at one time. The default is 25.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token for the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -119,6 +137,10 @@ impl ListAuditMitigationActionsExecutionsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListAuditMitigationActionsExecutionsInput`](crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutionsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutionsInput, ::aws_smithy_http::operation::error::BuildError>{

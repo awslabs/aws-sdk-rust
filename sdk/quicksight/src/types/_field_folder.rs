@@ -48,6 +48,10 @@ impl FieldFolderBuilder {
         self.description = input;
         self
     }
+    /// <p>The description for a field folder.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// Appends an item to `columns`.
     ///
     /// To override the contents of this collection use [`set_columns`](Self::set_columns).
@@ -66,6 +70,10 @@ impl FieldFolderBuilder {
     ) -> Self {
         self.columns = input;
         self
+    }
+    /// <p>A folder has a list of columns. A column can only be in one folder.</p>
+    pub fn get_columns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.columns
     }
     /// Consumes the builder and constructs a [`FieldFolder`](crate::types::FieldFolder).
     pub fn build(self) -> crate::types::FieldFolder {

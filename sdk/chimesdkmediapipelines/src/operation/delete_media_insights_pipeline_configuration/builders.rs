@@ -36,6 +36,10 @@ impl DeleteMediaInsightsPipelineConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteMediaInsightsPipelineConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_media_insights_pipeline_configuration::builders::DeleteMediaInsightsPipelineConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -99,5 +103,9 @@ impl DeleteMediaInsightsPipelineConfigurationFluentBuilder {
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identifier(input);
         self
+    }
+    /// <p>The unique identifier of the resource to be deleted. Valid values include the name and ARN of the media insights pipeline configuration.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identifier()
     }
 }

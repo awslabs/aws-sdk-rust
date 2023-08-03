@@ -37,6 +37,10 @@ impl DenyCustomRoutingTrafficFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DenyCustomRoutingTraffic as a reference.
+    pub fn as_input(&self) -> &crate::operation::deny_custom_routing_traffic::builders::DenyCustomRoutingTrafficInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,10 @@ impl DenyCustomRoutingTrafficFluentBuilder {
         self.inner = self.inner.set_endpoint_group_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
+    pub fn get_endpoint_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_endpoint_group_arn()
+    }
     /// <p>An ID for the endpoint. For custom routing accelerators, this is the virtual private cloud (VPC) subnet ID.</p>
     pub fn endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.endpoint_id(input.into());
@@ -142,6 +150,10 @@ impl DenyCustomRoutingTrafficFluentBuilder {
     pub fn set_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_endpoint_id(input);
         self
+    }
+    /// <p>An ID for the endpoint. For custom routing accelerators, this is the virtual private cloud (VPC) subnet ID.</p>
+    pub fn get_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_endpoint_id()
     }
     /// Appends an item to `DestinationAddresses`.
     ///
@@ -163,6 +175,12 @@ impl DenyCustomRoutingTrafficFluentBuilder {
         self.inner = self.inner.set_destination_addresses(input);
         self
     }
+    /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to prevent from receiving traffic. The IP addresses must be a subset of the IP addresses allowed for the VPC subnet associated with the endpoint group.</p>
+    pub fn get_destination_addresses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_destination_addresses()
+    }
     /// Appends an item to `DestinationPorts`.
     ///
     /// To override the contents of this collection use [`set_destination_ports`](Self::set_destination_ports).
@@ -180,6 +198,10 @@ impl DenyCustomRoutingTrafficFluentBuilder {
         self.inner = self.inner.set_destination_ports(input);
         self
     }
+    /// <p>A list of specific Amazon EC2 instance ports (destination ports) in a subnet endpoint that you want to prevent from receiving traffic.</p>
+    pub fn get_destination_ports(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        self.inner.get_destination_ports()
+    }
     /// <p>Indicates whether all destination IP addresses and ports for a specified VPC subnet endpoint <i>cannot</i> receive traffic from a custom routing accelerator. The value is TRUE or FALSE. </p>
     /// <p>When set to TRUE, <i>no</i> destinations in the custom routing VPC subnet can receive traffic. Note that you cannot specify destination IP addresses and ports when the value is set to TRUE.</p>
     /// <p>When set to FALSE (or not specified), you <i>must</i> specify a list of destination IP addresses that cannot receive traffic. A list of ports is optional. If you don't specify a list of ports, the ports that can accept traffic is the same as the ports configured for the endpoint group.</p>
@@ -195,5 +217,12 @@ impl DenyCustomRoutingTrafficFluentBuilder {
     pub fn set_deny_all_traffic_to_endpoint(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_deny_all_traffic_to_endpoint(input);
         self
+    }
+    /// <p>Indicates whether all destination IP addresses and ports for a specified VPC subnet endpoint <i>cannot</i> receive traffic from a custom routing accelerator. The value is TRUE or FALSE. </p>
+    /// <p>When set to TRUE, <i>no</i> destinations in the custom routing VPC subnet can receive traffic. Note that you cannot specify destination IP addresses and ports when the value is set to TRUE.</p>
+    /// <p>When set to FALSE (or not specified), you <i>must</i> specify a list of destination IP addresses that cannot receive traffic. A list of ports is optional. If you don't specify a list of ports, the ports that can accept traffic is the same as the ports configured for the endpoint group.</p>
+    /// <p>The default value is FALSE.</p>
+    pub fn get_deny_all_traffic_to_endpoint(&self) -> &::std::option::Option<bool> {
+        self.inner.get_deny_all_traffic_to_endpoint()
     }
 }

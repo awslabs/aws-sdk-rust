@@ -63,6 +63,10 @@ impl BatchAlarmActionErrorEntryBuilder {
         self.request_id = input;
         self
     }
+    /// <p>The request ID. Each ID must be unique within each batch.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
+    }
     /// <p>The error code.</p>
     pub fn error_code(mut self, input: crate::types::ErrorCode) -> Self {
         self.error_code = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl BatchAlarmActionErrorEntryBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::ErrorCode>) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>The error code.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<crate::types::ErrorCode> {
+        &self.error_code
     }
     /// <p>A message that describes the error.</p>
     pub fn error_message(
@@ -88,6 +96,10 @@ impl BatchAlarmActionErrorEntryBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>A message that describes the error.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`BatchAlarmActionErrorEntry`](crate::types::BatchAlarmActionErrorEntry).
     pub fn build(self) -> crate::types::BatchAlarmActionErrorEntry {

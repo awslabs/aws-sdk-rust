@@ -63,6 +63,13 @@ impl UntagResourcesInputBuilder {
         self.resource_arn_list = input;
         self
     }
+    /// <p>Specifies a list of ARNs of the resources that you want to remove tags from.</p>
+    /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn get_resource_arn_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resource_arn_list
+    }
     /// Appends an item to `tag_keys`.
     ///
     /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
@@ -81,6 +88,10 @@ impl UntagResourcesInputBuilder {
     ) -> Self {
         self.tag_keys = input;
         self
+    }
+    /// <p>Specifies a list of tag keys that you want to remove from the specified resources.</p>
+    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tag_keys
     }
     /// Consumes the builder and constructs a [`UntagResourcesInput`](crate::operation::untag_resources::UntagResourcesInput).
     pub fn build(

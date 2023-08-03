@@ -64,6 +64,10 @@ impl IpOrganizationDetailsBuilder {
         self.asn = input;
         self
     }
+    /// <p>The Autonomous System Number (ASN) of the internet provider</p>
+    pub fn get_asn(&self) -> &::std::option::Option<i32> {
+        &self.asn
+    }
     /// <p>The name of the organization that registered the ASN.</p>
     pub fn asn_org(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asn_org = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl IpOrganizationDetailsBuilder {
     pub fn set_asn_org(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asn_org = input;
         self
+    }
+    /// <p>The name of the organization that registered the ASN.</p>
+    pub fn get_asn_org(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asn_org
     }
     /// <p>The ISP information for the internet provider.</p>
     pub fn isp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,6 +92,10 @@ impl IpOrganizationDetailsBuilder {
         self.isp = input;
         self
     }
+    /// <p>The ISP information for the internet provider.</p>
+    pub fn get_isp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.isp
+    }
     /// <p>The name of the internet provider.</p>
     pub fn org(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.org = ::std::option::Option::Some(input.into());
@@ -93,6 +105,10 @@ impl IpOrganizationDetailsBuilder {
     pub fn set_org(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.org = input;
         self
+    }
+    /// <p>The name of the internet provider.</p>
+    pub fn get_org(&self) -> &::std::option::Option<::std::string::String> {
+        &self.org
     }
     /// Consumes the builder and constructs a [`IpOrganizationDetails`](crate::types::IpOrganizationDetails).
     pub fn build(self) -> crate::types::IpOrganizationDetails {

@@ -62,6 +62,10 @@ impl CreateFlowLogsOutputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// Appends an item to `flow_log_ids`.
     ///
     /// To override the contents of this collection use [`set_flow_log_ids`](Self::set_flow_log_ids).
@@ -81,6 +85,12 @@ impl CreateFlowLogsOutputBuilder {
         self.flow_log_ids = input;
         self
     }
+    /// <p>The IDs of the flow logs.</p>
+    pub fn get_flow_log_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.flow_log_ids
+    }
     /// Appends an item to `unsuccessful`.
     ///
     /// To override the contents of this collection use [`set_unsuccessful`](Self::set_unsuccessful).
@@ -99,6 +109,12 @@ impl CreateFlowLogsOutputBuilder {
     ) -> Self {
         self.unsuccessful = input;
         self
+    }
+    /// <p>Information about the flow logs that could not be created successfully.</p>
+    pub fn get_unsuccessful(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulItem>> {
+        &self.unsuccessful
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

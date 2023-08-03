@@ -80,6 +80,10 @@ impl ExperimentTemplateSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the experiment template.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The description of the experiment template.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl ExperimentTemplateSummaryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the experiment template.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The time that the experiment template was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -103,6 +111,10 @@ impl ExperimentTemplateSummaryBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The time that the experiment template was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The time that the experiment template was last updated.</p>
     pub fn last_update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_update_time = ::std::option::Option::Some(input);
@@ -115,6 +127,10 @@ impl ExperimentTemplateSummaryBuilder {
     ) -> Self {
         self.last_update_time = input;
         self
+    }
+    /// <p>The time that the experiment template was last updated.</p>
+    pub fn get_last_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_update_time
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -140,6 +156,14 @@ impl ExperimentTemplateSummaryBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags for the experiment template.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`ExperimentTemplateSummary`](crate::types::ExperimentTemplateSummary).
     pub fn build(self) -> crate::types::ExperimentTemplateSummary {

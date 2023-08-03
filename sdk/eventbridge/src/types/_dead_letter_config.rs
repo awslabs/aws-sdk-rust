@@ -40,6 +40,10 @@ impl DeadLetterConfigBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the SQS queue specified as the target for the dead-letter queue.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`DeadLetterConfig`](crate::types::DeadLetterConfig).
     pub fn build(self) -> crate::types::DeadLetterConfig {
         crate::types::DeadLetterConfig { arn: self.arn }

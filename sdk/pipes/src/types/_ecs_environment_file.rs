@@ -57,6 +57,10 @@ impl EcsEnvironmentFileBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The file type to use. The only supported value is <code>s3</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::EcsEnvironmentFileType> {
+        &self.r#type
+    }
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 object containing the environment variable file.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl EcsEnvironmentFileBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon S3 object containing the environment variable file.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`EcsEnvironmentFile`](crate::types::EcsEnvironmentFile).
     pub fn build(self) -> crate::types::EcsEnvironmentFile {

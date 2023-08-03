@@ -36,6 +36,10 @@ impl UpdateContactFlowModuleContentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateContactFlowModuleContent as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_contact_flow_module_content::builders::UpdateContactFlowModuleContentInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl UpdateContactFlowModuleContentFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>The identifier of the flow module.</p>
     pub fn contact_flow_module_id(
         mut self,
@@ -116,6 +124,10 @@ impl UpdateContactFlowModuleContentFluentBuilder {
         self.inner = self.inner.set_contact_flow_module_id(input);
         self
     }
+    /// <p>The identifier of the flow module.</p>
+    pub fn get_contact_flow_module_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_contact_flow_module_id()
+    }
     /// <p>The content of the flow module.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.content(input.into());
@@ -125,5 +137,9 @@ impl UpdateContactFlowModuleContentFluentBuilder {
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_content(input);
         self
+    }
+    /// <p>The content of the flow module.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_content()
     }
 }

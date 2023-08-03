@@ -56,6 +56,10 @@ impl RejectedLogEventsInfoBuilder {
         self.too_new_log_event_start_index = input;
         self
     }
+    /// <p>The log events that are too new.</p>
+    pub fn get_too_new_log_event_start_index(&self) -> &::std::option::Option<i32> {
+        &self.too_new_log_event_start_index
+    }
     /// <p>The log events that are dated too far in the past.</p>
     pub fn too_old_log_event_end_index(mut self, input: i32) -> Self {
         self.too_old_log_event_end_index = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl RejectedLogEventsInfoBuilder {
         self.too_old_log_event_end_index = input;
         self
     }
+    /// <p>The log events that are dated too far in the past.</p>
+    pub fn get_too_old_log_event_end_index(&self) -> &::std::option::Option<i32> {
+        &self.too_old_log_event_end_index
+    }
     /// <p>The expired log events.</p>
     pub fn expired_log_event_end_index(mut self, input: i32) -> Self {
         self.expired_log_event_end_index = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl RejectedLogEventsInfoBuilder {
     pub fn set_expired_log_event_end_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.expired_log_event_end_index = input;
         self
+    }
+    /// <p>The expired log events.</p>
+    pub fn get_expired_log_event_end_index(&self) -> &::std::option::Option<i32> {
+        &self.expired_log_event_end_index
     }
     /// Consumes the builder and constructs a [`RejectedLogEventsInfo`](crate::types::RejectedLogEventsInfo).
     pub fn build(self) -> crate::types::RejectedLogEventsInfo {

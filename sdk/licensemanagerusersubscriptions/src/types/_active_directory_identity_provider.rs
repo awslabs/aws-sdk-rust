@@ -40,6 +40,10 @@ impl ActiveDirectoryIdentityProviderBuilder {
         self.directory_id = input;
         self
     }
+    /// <p>The directory ID for an Active Directory identity provider.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
+    }
     /// Consumes the builder and constructs a [`ActiveDirectoryIdentityProvider`](crate::types::ActiveDirectoryIdentityProvider).
     pub fn build(self) -> crate::types::ActiveDirectoryIdentityProvider {
         crate::types::ActiveDirectoryIdentityProvider {

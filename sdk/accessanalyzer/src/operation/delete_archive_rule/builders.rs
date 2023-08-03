@@ -36,6 +36,12 @@ impl DeleteArchiveRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteArchiveRule as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_archive_rule::builders::DeleteArchiveRuleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl DeleteArchiveRuleFluentBuilder {
         self.inner = self.inner.set_analyzer_name(input);
         self
     }
+    /// <p>The name of the analyzer that associated with the archive rule to delete.</p>
+    pub fn get_analyzer_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_analyzer_name()
+    }
     /// <p>The name of the rule to delete.</p>
     pub fn rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rule_name(input.into());
@@ -142,6 +152,10 @@ impl DeleteArchiveRuleFluentBuilder {
         self.inner = self.inner.set_rule_name(input);
         self
     }
+    /// <p>The name of the rule to delete.</p>
+    pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rule_name()
+    }
     /// <p>A client token.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -151,5 +165,9 @@ impl DeleteArchiveRuleFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A client token.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

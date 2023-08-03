@@ -64,6 +64,10 @@ impl BatchGetVariableOutputBuilder {
         self.variables = input;
         self
     }
+    /// <p>The returned variables.</p>
+    pub fn get_variables(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Variable>> {
+        &self.variables
+    }
     /// Appends an item to `errors`.
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
@@ -82,6 +86,12 @@ impl BatchGetVariableOutputBuilder {
     ) -> Self {
         self.errors = input;
         self
+    }
+    /// <p>The errors from the request.</p>
+    pub fn get_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetVariableError>> {
+        &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

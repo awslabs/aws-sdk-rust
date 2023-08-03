@@ -48,6 +48,10 @@ impl ShardConfigurationBuilder {
         self.slots = input;
         self
     }
+    /// <p>A string that specifies the keyspace for a particular node group. Keyspaces range from 0 to 16,383. The string is in the format startkey-endkey.</p>
+    pub fn get_slots(&self) -> &::std::option::Option<::std::string::String> {
+        &self.slots
+    }
     /// <p>The number of read replica nodes in this shard.</p>
     pub fn replica_count(mut self, input: i32) -> Self {
         self.replica_count = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ShardConfigurationBuilder {
     pub fn set_replica_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.replica_count = input;
         self
+    }
+    /// <p>The number of read replica nodes in this shard.</p>
+    pub fn get_replica_count(&self) -> &::std::option::Option<i32> {
+        &self.replica_count
     }
     /// Consumes the builder and constructs a [`ShardConfiguration`](crate::types::ShardConfiguration).
     pub fn build(self) -> crate::types::ShardConfiguration {

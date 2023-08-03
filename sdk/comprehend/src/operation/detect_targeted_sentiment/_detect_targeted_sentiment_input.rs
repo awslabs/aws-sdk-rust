@@ -55,6 +55,10 @@ impl DetectTargetedSentimentInputBuilder {
         self.text = input;
         self
     }
+    /// <p>A UTF-8 text string. The maximum string length is 5 KB.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
+    }
     /// <p>The language of the input documents. Currently, English is the only supported language.</p>
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
@@ -67,6 +71,10 @@ impl DetectTargetedSentimentInputBuilder {
     ) -> Self {
         self.language_code = input;
         self
+    }
+    /// <p>The language of the input documents. Currently, English is the only supported language.</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
+        &self.language_code
     }
     /// Consumes the builder and constructs a [`DetectTargetedSentimentInput`](crate::operation::detect_targeted_sentiment::DetectTargetedSentimentInput).
     pub fn build(

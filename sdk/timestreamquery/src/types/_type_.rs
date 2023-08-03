@@ -70,6 +70,10 @@ impl TypeBuilder {
         self.scalar_type = input;
         self
     }
+    /// <p>Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. </p>
+    pub fn get_scalar_type(&self) -> &::std::option::Option<crate::types::ScalarType> {
+        &self.scalar_type
+    }
     /// <p>Indicates if the column is an array.</p>
     pub fn array_column_info(mut self, input: crate::types::ColumnInfo) -> Self {
         self.array_column_info = ::std::option::Option::Some(input);
@@ -82,6 +86,10 @@ impl TypeBuilder {
     ) -> Self {
         self.array_column_info = input;
         self
+    }
+    /// <p>Indicates if the column is an array.</p>
+    pub fn get_array_column_info(&self) -> &::std::option::Option<crate::types::ColumnInfo> {
+        &self.array_column_info
     }
     /// <p>Indicates if the column is a timeseries data type.</p>
     pub fn time_series_measure_value_column_info(
@@ -98,6 +106,12 @@ impl TypeBuilder {
     ) -> Self {
         self.time_series_measure_value_column_info = input;
         self
+    }
+    /// <p>Indicates if the column is a timeseries data type.</p>
+    pub fn get_time_series_measure_value_column_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::ColumnInfo> {
+        &self.time_series_measure_value_column_info
     }
     /// Appends an item to `row_column_info`.
     ///
@@ -117,6 +131,12 @@ impl TypeBuilder {
     ) -> Self {
         self.row_column_info = input;
         self
+    }
+    /// <p>Indicates if the column is a row.</p>
+    pub fn get_row_column_info(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnInfo>> {
+        &self.row_column_info
     }
     /// Consumes the builder and constructs a [`Type`](crate::types::Type).
     pub fn build(self) -> crate::types::Type {

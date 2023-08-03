@@ -36,6 +36,13 @@ impl ImportPlaybackKeyPairFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ImportPlaybackKeyPair as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::import_playback_key_pair::builders::ImportPlaybackKeyPairInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl ImportPlaybackKeyPairFluentBuilder {
         self.inner = self.inner.set_public_key_material(input);
         self
     }
+    /// <p>The public portion of a customer-generated key pair.</p>
+    pub fn get_public_key_material(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_public_key_material()
+    }
     /// <p>Playback-key-pair name. The value does not need to be unique.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -141,6 +152,10 @@ impl ImportPlaybackKeyPairFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>Playback-key-pair name. The value does not need to be unique.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -164,5 +179,13 @@ impl ImportPlaybackKeyPairFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Any tags provided with the request are added to the playback key pair tags. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

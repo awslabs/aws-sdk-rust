@@ -68,6 +68,10 @@ impl BlockDeviceMappingBuilder {
         self.device_name = input;
         self
     }
+    /// <p>The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p>
+    pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_name
+    }
     /// <p>The virtual device name (<code>ephemeral</code>N). Instance store volumes are numbered starting from 0. An instance type with 2 available instance store volumes can specify mappings for <code>ephemeral0</code> and <code>ephemeral1</code>. The number of available instance store volumes depends on the instance type. After you connect to the instance, you must mount the volume.</p>
     /// <p>NVMe instance store volumes are automatically enumerated and assigned a device name. Including them in your block device mapping has no effect.</p>
     /// <p>Constraints: For M3 instances, you must specify instance store volumes in the block device mapping for the instance. When you launch an M3 instance, we ignore any instance store volumes specified in the block device mapping for the AMI.</p>
@@ -82,6 +86,12 @@ impl BlockDeviceMappingBuilder {
         self.virtual_name = input;
         self
     }
+    /// <p>The virtual device name (<code>ephemeral</code>N). Instance store volumes are numbered starting from 0. An instance type with 2 available instance store volumes can specify mappings for <code>ephemeral0</code> and <code>ephemeral1</code>. The number of available instance store volumes depends on the instance type. After you connect to the instance, you must mount the volume.</p>
+    /// <p>NVMe instance store volumes are automatically enumerated and assigned a device name. Including them in your block device mapping has no effect.</p>
+    /// <p>Constraints: For M3 instances, you must specify instance store volumes in the block device mapping for the instance. When you launch an M3 instance, we ignore any instance store volumes specified in the block device mapping for the AMI.</p>
+    pub fn get_virtual_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_name
+    }
     /// <p>Parameters used to automatically set up EBS volumes when the instance is launched.</p>
     pub fn ebs(mut self, input: crate::types::EbsBlockDevice) -> Self {
         self.ebs = ::std::option::Option::Some(input);
@@ -92,6 +102,10 @@ impl BlockDeviceMappingBuilder {
         self.ebs = input;
         self
     }
+    /// <p>Parameters used to automatically set up EBS volumes when the instance is launched.</p>
+    pub fn get_ebs(&self) -> &::std::option::Option<crate::types::EbsBlockDevice> {
+        &self.ebs
+    }
     /// <p>To omit the device from the block device mapping, specify an empty string. When this property is specified, the device is removed from the block device mapping regardless of the assigned value.</p>
     pub fn no_device(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.no_device = ::std::option::Option::Some(input.into());
@@ -101,6 +115,10 @@ impl BlockDeviceMappingBuilder {
     pub fn set_no_device(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.no_device = input;
         self
+    }
+    /// <p>To omit the device from the block device mapping, specify an empty string. When this property is specified, the device is removed from the block device mapping regardless of the assigned value.</p>
+    pub fn get_no_device(&self) -> &::std::option::Option<::std::string::String> {
+        &self.no_device
     }
     /// Consumes the builder and constructs a [`BlockDeviceMapping`](crate::types::BlockDeviceMapping).
     pub fn build(self) -> crate::types::BlockDeviceMapping {

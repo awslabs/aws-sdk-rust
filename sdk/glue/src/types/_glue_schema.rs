@@ -50,6 +50,12 @@ impl GlueSchemaBuilder {
         self.columns = input;
         self
     }
+    /// <p>Specifies the column definitions that make up a Glue schema.</p>
+    pub fn get_columns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueStudioSchemaColumn>> {
+        &self.columns
+    }
     /// Consumes the builder and constructs a [`GlueSchema`](crate::types::GlueSchema).
     pub fn build(self) -> crate::types::GlueSchema {
         crate::types::GlueSchema {

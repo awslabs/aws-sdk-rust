@@ -69,6 +69,10 @@ impl DescribeDashboardDefinitionInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The ID for the dashboard.</p>
     pub fn dashboard_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dashboard_id = ::std::option::Option::Some(input.into());
@@ -78,6 +82,10 @@ impl DescribeDashboardDefinitionInputBuilder {
     pub fn set_dashboard_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dashboard_id = input;
         self
+    }
+    /// <p>The ID for the dashboard.</p>
+    pub fn get_dashboard_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dashboard_id
     }
     /// <p>The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is described. </p>
     pub fn version_number(mut self, input: i64) -> Self {
@@ -89,6 +97,10 @@ impl DescribeDashboardDefinitionInputBuilder {
         self.version_number = input;
         self
     }
+    /// <p>The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is described. </p>
+    pub fn get_version_number(&self) -> &::std::option::Option<i64> {
+        &self.version_number
+    }
     /// <p>The alias name.</p>
     pub fn alias_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alias_name = ::std::option::Option::Some(input.into());
@@ -98,6 +110,10 @@ impl DescribeDashboardDefinitionInputBuilder {
     pub fn set_alias_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alias_name = input;
         self
+    }
+    /// <p>The alias name.</p>
+    pub fn get_alias_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias_name
     }
     /// Consumes the builder and constructs a [`DescribeDashboardDefinitionInput`](crate::operation::describe_dashboard_definition::DescribeDashboardDefinitionInput).
     pub fn build(

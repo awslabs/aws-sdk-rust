@@ -48,6 +48,10 @@ impl DataSetIdentifierDeclarationBuilder {
         self.identifier = input;
         self
     }
+    /// <p>The identifier of the data set, typically the data set's name.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
+    }
     /// <p>The Amazon Resource Name (ARN) of the data set.</p>
     pub fn data_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_arn = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl DataSetIdentifierDeclarationBuilder {
     pub fn set_data_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_set_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the data set.</p>
+    pub fn get_data_set_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_set_arn
     }
     /// Consumes the builder and constructs a [`DataSetIdentifierDeclaration`](crate::types::DataSetIdentifierDeclaration).
     pub fn build(self) -> crate::types::DataSetIdentifierDeclaration {

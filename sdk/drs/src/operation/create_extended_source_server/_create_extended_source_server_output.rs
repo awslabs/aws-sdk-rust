@@ -49,6 +49,10 @@ impl CreateExtendedSourceServerOutputBuilder {
         self.source_server = input;
         self
     }
+    /// <p>Created extended source server.</p>
+    pub fn get_source_server(&self) -> &::std::option::Option<crate::types::SourceServer> {
+        &self.source_server
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

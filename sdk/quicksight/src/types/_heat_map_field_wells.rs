@@ -51,6 +51,12 @@ impl HeatMapFieldWellsBuilder {
         self.heat_map_aggregated_field_wells = input;
         self
     }
+    /// <p>The aggregated field wells of a heat map.</p>
+    pub fn get_heat_map_aggregated_field_wells(
+        &self,
+    ) -> &::std::option::Option<crate::types::HeatMapAggregatedFieldWells> {
+        &self.heat_map_aggregated_field_wells
+    }
     /// Consumes the builder and constructs a [`HeatMapFieldWells`](crate::types::HeatMapFieldWells).
     pub fn build(self) -> crate::types::HeatMapFieldWells {
         crate::types::HeatMapFieldWells {

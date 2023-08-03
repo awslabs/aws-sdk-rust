@@ -56,6 +56,12 @@ impl EnvironmentInfoBuilder {
         self.availability_zone_information = input;
         self
     }
+    /// <p> A list of <code>AvailabilityZoneInfo</code> for the domain.</p>
+    pub fn get_availability_zone_information(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneInfo>> {
+        &self.availability_zone_information
+    }
     /// Consumes the builder and constructs a [`EnvironmentInfo`](crate::types::EnvironmentInfo).
     pub fn build(self) -> crate::types::EnvironmentInfo {
         crate::types::EnvironmentInfo {

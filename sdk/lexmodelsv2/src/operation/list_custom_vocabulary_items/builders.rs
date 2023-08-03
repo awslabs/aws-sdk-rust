@@ -36,6 +36,10 @@ impl ListCustomVocabularyItemsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListCustomVocabularyItems as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_custom_vocabulary_items::builders::ListCustomVocabularyItemsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +139,10 @@ impl ListCustomVocabularyItemsFluentBuilder {
         self.inner = self.inner.set_bot_id(input);
         self
     }
+    /// <p>The identifier of the version of the bot associated with this custom vocabulary.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bot_id()
+    }
     /// <p>The bot version of the bot to the list custom vocabulary request.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_version(input.into());
@@ -144,6 +152,10 @@ impl ListCustomVocabularyItemsFluentBuilder {
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bot_version(input);
         self
+    }
+    /// <p>The bot version of the bot to the list custom vocabulary request.</p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bot_version()
     }
     /// <p>The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see Supported languages (https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).</p>
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -155,6 +167,10 @@ impl ListCustomVocabularyItemsFluentBuilder {
         self.inner = self.inner.set_locale_id(input);
         self
     }
+    /// <p>The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see Supported languages (https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).</p>
+    pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_locale_id()
+    }
     /// <p>The maximum number of items returned by the list operation.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -165,6 +181,10 @@ impl ListCustomVocabularyItemsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of items returned by the list operation.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The nextToken identifier to the list custom vocabulary request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -174,5 +194,9 @@ impl ListCustomVocabularyItemsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The nextToken identifier to the list custom vocabulary request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

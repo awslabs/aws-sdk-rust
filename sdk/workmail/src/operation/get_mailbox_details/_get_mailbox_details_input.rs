@@ -54,6 +54,10 @@ impl GetMailboxDetailsInputBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The identifier for the organization that contains the user whose mailbox details are being requested.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p>The identifier for the user whose mailbox details are being requested.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl GetMailboxDetailsInputBuilder {
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
+    }
+    /// <p>The identifier for the user whose mailbox details are being requested.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
     }
     /// Consumes the builder and constructs a [`GetMailboxDetailsInput`](crate::operation::get_mailbox_details::GetMailboxDetailsInput).
     pub fn build(

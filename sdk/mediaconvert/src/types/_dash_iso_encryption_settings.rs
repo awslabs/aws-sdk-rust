@@ -58,6 +58,12 @@ impl DashIsoEncryptionSettingsBuilder {
         self.playback_device_compatibility = input;
         self
     }
+    /// This setting can improve the compatibility of your output with video players on obsolete devices. It applies only to DASH H.264 outputs with DRM encryption. Choose Unencrypted SEI only to correct problems with playback on older devices. Otherwise, keep the default setting CENC v1. If you choose Unencrypted SEI, for that output, the service will exclude the access unit delimiter and will leave the SEI NAL units unencrypted.
+    pub fn get_playback_device_compatibility(
+        &self,
+    ) -> &::std::option::Option<crate::types::DashIsoPlaybackDeviceCompatibility> {
+        &self.playback_device_compatibility
+    }
     /// If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider. If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
     pub fn speke_key_provider(mut self, input: crate::types::SpekeKeyProvider) -> Self {
         self.speke_key_provider = ::std::option::Option::Some(input);
@@ -70,6 +76,10 @@ impl DashIsoEncryptionSettingsBuilder {
     ) -> Self {
         self.speke_key_provider = input;
         self
+    }
+    /// If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider. If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
+    pub fn get_speke_key_provider(&self) -> &::std::option::Option<crate::types::SpekeKeyProvider> {
+        &self.speke_key_provider
     }
     /// Consumes the builder and constructs a [`DashIsoEncryptionSettings`](crate::types::DashIsoEncryptionSettings).
     pub fn build(self) -> crate::types::DashIsoEncryptionSettings {

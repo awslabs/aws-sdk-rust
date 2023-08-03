@@ -70,6 +70,10 @@ impl SpekeKeyProviderBuilder {
         self.certificate_arn = input;
         self
     }
+    /// If you want your key provider to encrypt the content keys that it provides to MediaConvert, set up a certificate with a master key using AWS Certificate Manager. Specify the certificate's Amazon Resource Name (ARN) here.
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_arn
+    }
     /// Specify the resource ID that your SPEKE-compliant key provider uses to identify this content.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl SpekeKeyProviderBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// Specify the resource ID that your SPEKE-compliant key provider uses to identify this content.
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// Appends an item to `system_ids`.
     ///
@@ -99,6 +107,10 @@ impl SpekeKeyProviderBuilder {
         self.system_ids = input;
         self
     }
+    /// Relates to SPEKE implementation. DRM system identifiers. DASH output groups support a max of two system ids. Other group types support one system id. See https://dashif.org/identifiers/content_protection/ for more details.
+    pub fn get_system_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.system_ids
+    }
     /// Specify the URL to the key server that your SPEKE-compliant DRM key provider uses to provide keys for encrypting your content.
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
@@ -108,6 +120,10 @@ impl SpekeKeyProviderBuilder {
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
+    }
+    /// Specify the URL to the key server that your SPEKE-compliant DRM key provider uses to provide keys for encrypting your content.
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
     }
     /// Consumes the builder and constructs a [`SpekeKeyProvider`](crate::types::SpekeKeyProvider).
     pub fn build(self) -> crate::types::SpekeKeyProvider {

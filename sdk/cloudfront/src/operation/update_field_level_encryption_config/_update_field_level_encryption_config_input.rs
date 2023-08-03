@@ -65,6 +65,12 @@ impl UpdateFieldLevelEncryptionConfigInputBuilder {
         self.field_level_encryption_config = input;
         self
     }
+    /// <p>Request to update a field-level encryption configuration.</p>
+    pub fn get_field_level_encryption_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::FieldLevelEncryptionConfig> {
+        &self.field_level_encryption_config
+    }
     /// <p>The ID of the configuration you want to update.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -75,6 +81,10 @@ impl UpdateFieldLevelEncryptionConfigInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the configuration you want to update.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the configuration identity to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.if_match = ::std::option::Option::Some(input.into());
@@ -84,6 +94,10 @@ impl UpdateFieldLevelEncryptionConfigInputBuilder {
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.if_match = input;
         self
+    }
+    /// <p>The value of the <code>ETag</code> header that you received when retrieving the configuration identity to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
+    pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
+        &self.if_match
     }
     /// Consumes the builder and constructs a [`UpdateFieldLevelEncryptionConfigInput`](crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfigInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfigInput, ::aws_smithy_http::operation::error::BuildError>{

@@ -65,6 +65,10 @@ impl ListDataIngestionJobsInputBuilder {
         self.dataset_name = input;
         self
     }
+    /// <p>The name of the dataset being used for the data ingestion job. </p>
+    pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_name
+    }
     /// <p>An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -75,6 +79,10 @@ impl ListDataIngestionJobsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p> Specifies the maximum number of data ingestion jobs to list. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl ListDataIngestionJobsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p> Specifies the maximum number of data ingestion jobs to list. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>Indicates the status of the data ingestion job. </p>
     pub fn status(mut self, input: crate::types::IngestionJobStatus) -> Self {
@@ -97,6 +109,10 @@ impl ListDataIngestionJobsInputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Indicates the status of the data ingestion job. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::IngestionJobStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`ListDataIngestionJobsInput`](crate::operation::list_data_ingestion_jobs::ListDataIngestionJobsInput).
     pub fn build(

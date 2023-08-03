@@ -48,6 +48,12 @@ impl InviteMembersInputBuilder {
         self.account_ids = input;
         self
     }
+    /// <p>The list of account IDs of the Amazon Web Services accounts to invite to Security Hub as members. </p>
+    pub fn get_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.account_ids
+    }
     /// Consumes the builder and constructs a [`InviteMembersInput`](crate::operation::invite_members::InviteMembersInput).
     pub fn build(
         self,

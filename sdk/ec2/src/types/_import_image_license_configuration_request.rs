@@ -46,6 +46,10 @@ impl ImportImageLicenseConfigurationRequestBuilder {
         self.license_configuration_arn = input;
         self
     }
+    /// <p>The ARN of a license configuration.</p>
+    pub fn get_license_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_configuration_arn
+    }
     /// Consumes the builder and constructs a [`ImportImageLicenseConfigurationRequest`](crate::types::ImportImageLicenseConfigurationRequest).
     pub fn build(self) -> crate::types::ImportImageLicenseConfigurationRequest {
         crate::types::ImportImageLicenseConfigurationRequest {

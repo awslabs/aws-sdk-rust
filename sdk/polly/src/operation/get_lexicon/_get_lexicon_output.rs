@@ -54,6 +54,10 @@ impl GetLexiconOutputBuilder {
         self.lexicon = input;
         self
     }
+    /// <p>Lexicon object that provides name and the string content of the lexicon. </p>
+    pub fn get_lexicon(&self) -> &::std::option::Option<crate::types::Lexicon> {
+        &self.lexicon
+    }
     /// <p>Metadata of the lexicon, including phonetic alphabetic used, language code, lexicon ARN, number of lexemes defined in the lexicon, and size of lexicon in bytes.</p>
     pub fn lexicon_attributes(mut self, input: crate::types::LexiconAttributes) -> Self {
         self.lexicon_attributes = ::std::option::Option::Some(input);
@@ -66,6 +70,12 @@ impl GetLexiconOutputBuilder {
     ) -> Self {
         self.lexicon_attributes = input;
         self
+    }
+    /// <p>Metadata of the lexicon, including phonetic alphabetic used, language code, lexicon ARN, number of lexemes defined in the lexicon, and size of lexicon in bytes.</p>
+    pub fn get_lexicon_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::LexiconAttributes> {
+        &self.lexicon_attributes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

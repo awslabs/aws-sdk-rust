@@ -164,6 +164,10 @@ impl LaunchBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the launch.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the launch.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -173,6 +177,10 @@ impl LaunchBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the launch.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The name or ARN of the project that contains the launch.</p>
     pub fn project(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -184,6 +192,10 @@ impl LaunchBuilder {
         self.project = input;
         self
     }
+    /// <p>The name or ARN of the project that contains the launch.</p>
+    pub fn get_project(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project
+    }
     /// <p>The current state of the launch.</p>
     pub fn status(mut self, input: crate::types::LaunchStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -193,6 +205,10 @@ impl LaunchBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::LaunchStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current state of the launch.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::LaunchStatus> {
+        &self.status
     }
     /// <p>If the launch was stopped, this is the string that was entered by the person who stopped the launch, to explain why it was stopped.</p>
     pub fn status_reason(
@@ -210,6 +226,10 @@ impl LaunchBuilder {
         self.status_reason = input;
         self
     }
+    /// <p>If the launch was stopped, this is the string that was entered by the person who stopped the launch, to explain why it was stopped.</p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_reason
+    }
     /// <p>The description of the launch.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -219,6 +239,10 @@ impl LaunchBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the launch.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The date and time that the launch is created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -233,6 +257,10 @@ impl LaunchBuilder {
         self.created_time = input;
         self
     }
+    /// <p>The date and time that the launch is created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
     /// <p>The date and time that the launch was most recently updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
@@ -246,6 +274,10 @@ impl LaunchBuilder {
         self.last_updated_time = input;
         self
     }
+    /// <p>The date and time that the launch was most recently updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
+    }
     /// <p>A structure that contains information about the start and end times of the launch.</p>
     pub fn execution(mut self, input: crate::types::LaunchExecution) -> Self {
         self.execution = ::std::option::Option::Some(input);
@@ -258,6 +290,10 @@ impl LaunchBuilder {
     ) -> Self {
         self.execution = input;
         self
+    }
+    /// <p>A structure that contains information about the start and end times of the launch.</p>
+    pub fn get_execution(&self) -> &::std::option::Option<crate::types::LaunchExecution> {
+        &self.execution
     }
     /// Appends an item to `groups`.
     ///
@@ -278,6 +314,10 @@ impl LaunchBuilder {
         self.groups = input;
         self
     }
+    /// <p>An array of structures that define the feature variations that are being used in the launch.</p>
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchGroup>> {
+        &self.groups
+    }
     /// Appends an item to `metric_monitors`.
     ///
     /// To override the contents of this collection use [`set_metric_monitors`](Self::set_metric_monitors).
@@ -297,6 +337,12 @@ impl LaunchBuilder {
         self.metric_monitors = input;
         self
     }
+    /// <p>An array of structures that define the metrics that are being used to monitor the launch performance.</p>
+    pub fn get_metric_monitors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricMonitor>> {
+        &self.metric_monitors
+    }
     /// <p>This value is used when Evidently assigns a particular user session to the launch, to help create a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>.</p>
     pub fn randomization_salt(
         mut self,
@@ -313,6 +359,10 @@ impl LaunchBuilder {
         self.randomization_salt = input;
         self
     }
+    /// <p>This value is used when Evidently assigns a particular user session to the launch, to help create a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>.</p>
+    pub fn get_randomization_salt(&self) -> &::std::option::Option<::std::string::String> {
+        &self.randomization_salt
+    }
     /// <p>The type of launch.</p>
     pub fn r#type(mut self, input: crate::types::LaunchType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -322,6 +372,10 @@ impl LaunchBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::LaunchType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of launch.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::LaunchType> {
+        &self.r#type
     }
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
     pub fn scheduled_splits_definition(
@@ -338,6 +392,12 @@ impl LaunchBuilder {
     ) -> Self {
         self.scheduled_splits_definition = input;
         self
+    }
+    /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
+    pub fn get_scheduled_splits_definition(
+        &self,
+    ) -> &::std::option::Option<crate::types::ScheduledSplitsLaunchDefinition> {
+        &self.scheduled_splits_definition
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -363,6 +423,14 @@ impl LaunchBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The list of tag keys and values associated with this launch.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`Launch`](crate::types::Launch).
     pub fn build(self) -> crate::types::Launch {

@@ -70,6 +70,12 @@ impl DescribeStateMachineFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeStateMachine as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_state_machine::builders::DescribeStateMachineInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -167,5 +173,10 @@ impl DescribeStateMachineFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_state_machine_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the state machine for which you want the information.</p>
+    /// <p>If you specify a state machine version ARN, this API returns details about that version. The version ARN is a combination of state machine ARN and the version number separated by a colon (:). For example, <code>stateMachineARN:1</code>.</p>
+    pub fn get_state_machine_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_state_machine_arn()
     }
 }

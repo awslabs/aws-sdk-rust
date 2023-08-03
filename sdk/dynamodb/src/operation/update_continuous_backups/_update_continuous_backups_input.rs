@@ -53,6 +53,10 @@ impl UpdateContinuousBackupsInputBuilder {
         self.table_name = input;
         self
     }
+    /// <p>The name of the table.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
+    }
     /// <p>Represents the settings used to enable point in time recovery.</p>
     pub fn point_in_time_recovery_specification(
         mut self,
@@ -68,6 +72,12 @@ impl UpdateContinuousBackupsInputBuilder {
     ) -> Self {
         self.point_in_time_recovery_specification = input;
         self
+    }
+    /// <p>Represents the settings used to enable point in time recovery.</p>
+    pub fn get_point_in_time_recovery_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::PointInTimeRecoverySpecification> {
+        &self.point_in_time_recovery_specification
     }
     /// Consumes the builder and constructs a [`UpdateContinuousBackupsInput`](crate::operation::update_continuous_backups::UpdateContinuousBackupsInput).
     pub fn build(

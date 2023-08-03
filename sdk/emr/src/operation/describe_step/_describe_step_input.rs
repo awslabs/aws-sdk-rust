@@ -48,6 +48,10 @@ impl DescribeStepInputBuilder {
         self.cluster_id = input;
         self
     }
+    /// <p>The identifier of the cluster with steps to describe.</p>
+    pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_id
+    }
     /// <p>The identifier of the step to describe.</p>
     pub fn step_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.step_id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl DescribeStepInputBuilder {
     pub fn set_step_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.step_id = input;
         self
+    }
+    /// <p>The identifier of the step to describe.</p>
+    pub fn get_step_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.step_id
     }
     /// Consumes the builder and constructs a [`DescribeStepInput`](crate::operation::describe_step::DescribeStepInput).
     pub fn build(

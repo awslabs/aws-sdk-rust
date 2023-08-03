@@ -39,6 +39,13 @@ impl BatchUpdatePhoneNumberFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchUpdatePhoneNumber as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_update_phone_number::builders::BatchUpdatePhoneNumberInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,5 +145,11 @@ impl BatchUpdatePhoneNumberFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_update_phone_number_request_items(input);
         self
+    }
+    /// <p>The request containing the phone number IDs and product types or calling names to update.</p>
+    pub fn get_update_phone_number_request_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdatePhoneNumberRequestItem>> {
+        self.inner.get_update_phone_number_request_items()
     }
 }

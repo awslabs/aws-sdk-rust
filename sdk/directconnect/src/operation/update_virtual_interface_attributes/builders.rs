@@ -37,6 +37,10 @@ impl UpdateVirtualInterfaceAttributesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateVirtualInterfaceAttributes as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_virtual_interface_attributes::builders::UpdateVirtualInterfaceAttributesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -107,6 +111,10 @@ impl UpdateVirtualInterfaceAttributesFluentBuilder {
         self.inner = self.inner.set_virtual_interface_id(input);
         self
     }
+    /// <p>The ID of the virtual private interface.</p>
+    pub fn get_virtual_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_virtual_interface_id()
+    }
     /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
     pub fn mtu(mut self, input: i32) -> Self {
         self.inner = self.inner.mtu(input);
@@ -117,6 +125,10 @@ impl UpdateVirtualInterfaceAttributesFluentBuilder {
         self.inner = self.inner.set_mtu(input);
         self
     }
+    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
+    pub fn get_mtu(&self) -> &::std::option::Option<i32> {
+        self.inner.get_mtu()
+    }
     /// <p>Indicates whether to enable or disable SiteLink.</p>
     pub fn enable_site_link(mut self, input: bool) -> Self {
         self.inner = self.inner.enable_site_link(input);
@@ -126,6 +138,10 @@ impl UpdateVirtualInterfaceAttributesFluentBuilder {
     pub fn set_enable_site_link(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_site_link(input);
         self
+    }
+    /// <p>Indicates whether to enable or disable SiteLink.</p>
+    pub fn get_enable_site_link(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_site_link()
     }
     /// <p>The name of the virtual private interface.</p>
     pub fn virtual_interface_name(
@@ -142,5 +158,9 @@ impl UpdateVirtualInterfaceAttributesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_virtual_interface_name(input);
         self
+    }
+    /// <p>The name of the virtual private interface.</p>
+    pub fn get_virtual_interface_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_virtual_interface_name()
     }
 }

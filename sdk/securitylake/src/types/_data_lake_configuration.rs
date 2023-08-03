@@ -76,6 +76,10 @@ impl DataLakeConfigurationBuilder {
         self.region = input;
         self
     }
+    /// <p>The Amazon Web Services Regions where Security Lake is automatically enabled.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
+    }
     /// <p>Provides encryption details of Amazon Security Lake object.</p>
     pub fn encryption_configuration(
         mut self,
@@ -91,6 +95,12 @@ impl DataLakeConfigurationBuilder {
     ) -> Self {
         self.encryption_configuration = input;
         self
+    }
+    /// <p>Provides encryption details of Amazon Security Lake object.</p>
+    pub fn get_encryption_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataLakeEncryptionConfiguration> {
+        &self.encryption_configuration
     }
     /// <p>Provides lifecycle details of Amazon Security Lake object.</p>
     pub fn lifecycle_configuration(
@@ -108,6 +118,12 @@ impl DataLakeConfigurationBuilder {
         self.lifecycle_configuration = input;
         self
     }
+    /// <p>Provides lifecycle details of Amazon Security Lake object.</p>
+    pub fn get_lifecycle_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataLakeLifecycleConfiguration> {
+        &self.lifecycle_configuration
+    }
     /// <p>Provides replication details of Amazon Security Lake object.</p>
     pub fn replication_configuration(
         mut self,
@@ -123,6 +139,12 @@ impl DataLakeConfigurationBuilder {
     ) -> Self {
         self.replication_configuration = input;
         self
+    }
+    /// <p>Provides replication details of Amazon Security Lake object.</p>
+    pub fn get_replication_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataLakeReplicationConfiguration> {
+        &self.replication_configuration
     }
     /// Consumes the builder and constructs a [`DataLakeConfiguration`](crate::types::DataLakeConfiguration).
     pub fn build(self) -> crate::types::DataLakeConfiguration {

@@ -60,6 +60,12 @@ impl GetRevocationStatusOutputBuilder {
         self.revoked_entities = input;
         self
     }
+    /// <p>A list of revoked entities (including one or more of the signing profile ARN, signing job ID, and certificate hash) supplied as input to the API.</p>
+    pub fn get_revoked_entities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.revoked_entities
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

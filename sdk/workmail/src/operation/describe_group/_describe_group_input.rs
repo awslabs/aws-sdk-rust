@@ -53,6 +53,10 @@ impl DescribeGroupInputBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The identifier for the organization under which the group exists.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p>The identifier for the group to be described.</p>
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_id = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl DescribeGroupInputBuilder {
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_id = input;
         self
+    }
+    /// <p>The identifier for the group to be described.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
     }
     /// Consumes the builder and constructs a [`DescribeGroupInput`](crate::operation::describe_group::DescribeGroupInput).
     pub fn build(

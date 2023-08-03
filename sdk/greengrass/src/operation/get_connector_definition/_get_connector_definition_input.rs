@@ -47,6 +47,10 @@ impl GetConnectorDefinitionInputBuilder {
         self.connector_definition_id = input;
         self
     }
+    /// The ID of the connector definition.
+    pub fn get_connector_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connector_definition_id
+    }
     /// Consumes the builder and constructs a [`GetConnectorDefinitionInput`](crate::operation::get_connector_definition::GetConnectorDefinitionInput).
     pub fn build(
         self,

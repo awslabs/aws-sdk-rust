@@ -95,6 +95,10 @@ impl TerminateWorkflowExecutionInputBuilder {
         self.domain = input;
         self
     }
+    /// <p>The domain of the workflow execution to terminate.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
+    }
     /// <p>The workflowId of the workflow execution to terminate.</p>
     pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_id = ::std::option::Option::Some(input.into());
@@ -104,6 +108,10 @@ impl TerminateWorkflowExecutionInputBuilder {
     pub fn set_workflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_id = input;
         self
+    }
+    /// <p>The workflowId of the workflow execution to terminate.</p>
+    pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_id
     }
     /// <p>The runId of the workflow execution to terminate.</p>
     pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -115,6 +123,10 @@ impl TerminateWorkflowExecutionInputBuilder {
         self.run_id = input;
         self
     }
+    /// <p>The runId of the workflow execution to terminate.</p>
+    pub fn get_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.run_id
+    }
     /// <p> A descriptive reason for terminating the workflow execution.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
@@ -125,6 +137,10 @@ impl TerminateWorkflowExecutionInputBuilder {
         self.reason = input;
         self
     }
+    /// <p> A descriptive reason for terminating the workflow execution.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
+    }
     /// <p> Details for terminating the workflow execution.</p>
     pub fn details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.details = ::std::option::Option::Some(input.into());
@@ -134,6 +150,10 @@ impl TerminateWorkflowExecutionInputBuilder {
     pub fn set_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.details = input;
         self
+    }
+    /// <p> Details for terminating the workflow execution.</p>
+    pub fn get_details(&self) -> &::std::option::Option<::std::string::String> {
+        &self.details
     }
     /// <p>If set, specifies the policy to use for the child workflow executions of the workflow execution being terminated. This policy overrides the child policy specified for the workflow execution at registration time or when starting the execution.</p>
     /// <p>The supported child policies are:</p>
@@ -163,6 +183,18 @@ impl TerminateWorkflowExecutionInputBuilder {
     ) -> Self {
         self.child_policy = input;
         self
+    }
+    /// <p>If set, specifies the policy to use for the child workflow executions of the workflow execution being terminated. This policy overrides the child policy specified for the workflow execution at registration time or when starting the execution.</p>
+    /// <p>The supported child policies are:</p>
+    /// <ul>
+    /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
+    /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
+    /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
+    /// </ul> <note>
+    /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
+    /// </note>
+    pub fn get_child_policy(&self) -> &::std::option::Option<crate::types::ChildPolicy> {
+        &self.child_policy
     }
     /// Consumes the builder and constructs a [`TerminateWorkflowExecutionInput`](crate::operation::terminate_workflow_execution::TerminateWorkflowExecutionInput).
     pub fn build(

@@ -40,6 +40,10 @@ impl DescribeConnectionInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the connection to retrieve.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DescribeConnectionInput`](crate::operation::describe_connection::DescribeConnectionInput).
     pub fn build(
         self,

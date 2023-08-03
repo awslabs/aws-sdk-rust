@@ -36,6 +36,12 @@ impl GetWirelessDeviceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetWirelessDevice as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_wireless_device::builders::GetWirelessDeviceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl GetWirelessDeviceFluentBuilder {
         self.inner = self.inner.set_identifier(input);
         self
     }
+    /// <p>The identifier of the wireless device to get.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identifier()
+    }
     /// <p>The type of identifier used in <code>identifier</code>.</p>
     pub fn identifier_type(mut self, input: crate::types::WirelessDeviceIdType) -> Self {
         self.inner = self.inner.identifier_type(input);
@@ -138,5 +148,11 @@ impl GetWirelessDeviceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_identifier_type(input);
         self
+    }
+    /// <p>The type of identifier used in <code>identifier</code>.</p>
+    pub fn get_identifier_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::WirelessDeviceIdType> {
+        self.inner.get_identifier_type()
     }
 }

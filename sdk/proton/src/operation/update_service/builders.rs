@@ -43,6 +43,12 @@ impl UpdateServiceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateService as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_service::builders::UpdateServiceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,6 +131,10 @@ impl UpdateServiceFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the service to edit.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The edited service description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -135,6 +145,10 @@ impl UpdateServiceFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>The edited service description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>Lists the service instances to add and the existing service instances to remain. Omit the existing service instances to delete from the list. <i>Don't</i> include edits to the existing service instances or pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-update.html">Edit a service</a> in the <i>Proton User Guide</i>.</p>
     pub fn spec(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.spec(input.into());
@@ -144,5 +158,9 @@ impl UpdateServiceFluentBuilder {
     pub fn set_spec(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_spec(input);
         self
+    }
+    /// <p>Lists the service instances to add and the existing service instances to remain. Omit the existing service instances to delete from the list. <i>Don't</i> include edits to the existing service instances or pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-update.html">Edit a service</a> in the <i>Proton User Guide</i>.</p>
+    pub fn get_spec(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_spec()
     }
 }

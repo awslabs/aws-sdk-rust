@@ -66,6 +66,13 @@ impl GetAppReplicationConfigurationOutputBuilder {
         self.server_group_replication_configurations = input;
         self
     }
+    /// <p>The replication configurations associated with server groups in this application.</p>
+    pub fn get_server_group_replication_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerGroupReplicationConfiguration>>
+    {
+        &self.server_group_replication_configurations
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

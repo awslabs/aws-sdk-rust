@@ -40,6 +40,10 @@ impl DetectedSignatureBuilder {
         self.page = input;
         self
     }
+    /// <p>The page a detected signature was found on.</p>
+    pub fn get_page(&self) -> &::std::option::Option<i32> {
+        &self.page
+    }
     /// Consumes the builder and constructs a [`DetectedSignature`](crate::types::DetectedSignature).
     pub fn build(self) -> crate::types::DetectedSignature {
         crate::types::DetectedSignature { page: self.page }

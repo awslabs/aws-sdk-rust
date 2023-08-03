@@ -66,6 +66,10 @@ impl EventInfoMapBuilder {
         self.event_id = input;
         self
     }
+    /// <p>The identifier of an Amazon Redshift event.</p>
+    pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_id
+    }
     /// Appends an item to `event_categories`.
     ///
     /// To override the contents of this collection use [`set_event_categories`](Self::set_event_categories).
@@ -88,6 +92,12 @@ impl EventInfoMapBuilder {
         self.event_categories = input;
         self
     }
+    /// <p>The category of an Amazon Redshift event.</p>
+    pub fn get_event_categories(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.event_categories
+    }
     /// <p>The description of an Amazon Redshift event.</p>
     pub fn event_description(
         mut self,
@@ -104,6 +114,10 @@ impl EventInfoMapBuilder {
         self.event_description = input;
         self
     }
+    /// <p>The description of an Amazon Redshift event.</p>
+    pub fn get_event_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_description
+    }
     /// <p>The severity of the event.</p>
     /// <p>Values: ERROR, INFO</p>
     pub fn severity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -115,6 +129,11 @@ impl EventInfoMapBuilder {
     pub fn set_severity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.severity = input;
         self
+    }
+    /// <p>The severity of the event.</p>
+    /// <p>Values: ERROR, INFO</p>
+    pub fn get_severity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.severity
     }
     /// Consumes the builder and constructs a [`EventInfoMap`](crate::types::EventInfoMap).
     pub fn build(self) -> crate::types::EventInfoMap {

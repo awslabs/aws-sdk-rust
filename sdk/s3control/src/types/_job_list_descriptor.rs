@@ -96,6 +96,10 @@ impl JobListDescriptorBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The ID for the specified job.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>The user-specified description that was included in the specified job's <code>Create Job</code> request.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl JobListDescriptorBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The user-specified description that was included in the specified job's <code>Create Job</code> request.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The operation that the specified job is configured to run on every object listed in the manifest.</p>
     pub fn operation(mut self, input: crate::types::OperationName) -> Self {
@@ -119,6 +127,10 @@ impl JobListDescriptorBuilder {
         self.operation = input;
         self
     }
+    /// <p>The operation that the specified job is configured to run on every object listed in the manifest.</p>
+    pub fn get_operation(&self) -> &::std::option::Option<crate::types::OperationName> {
+        &self.operation
+    }
     /// <p>The current priority for the specified job.</p>
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
@@ -129,6 +141,10 @@ impl JobListDescriptorBuilder {
         self.priority = input;
         self
     }
+    /// <p>The current priority for the specified job.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
+    }
     /// <p>The specified job's current status.</p>
     pub fn status(mut self, input: crate::types::JobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -138,6 +154,10 @@ impl JobListDescriptorBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The specified job's current status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
+        &self.status
     }
     /// <p>A timestamp indicating when the specified job was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -152,6 +172,10 @@ impl JobListDescriptorBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>A timestamp indicating when the specified job was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>A timestamp indicating when the specified job terminated. A job's termination date is the date and time when it succeeded, failed, or was canceled.</p>
     pub fn termination_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.termination_date = ::std::option::Option::Some(input);
@@ -165,6 +189,10 @@ impl JobListDescriptorBuilder {
         self.termination_date = input;
         self
     }
+    /// <p>A timestamp indicating when the specified job terminated. A job's termination date is the date and time when it succeeded, failed, or was canceled.</p>
+    pub fn get_termination_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.termination_date
+    }
     /// <p>Describes the total number of tasks that the specified job has run, the number of tasks that succeeded, and the number of tasks that failed.</p>
     pub fn progress_summary(mut self, input: crate::types::JobProgressSummary) -> Self {
         self.progress_summary = ::std::option::Option::Some(input);
@@ -177,6 +205,10 @@ impl JobListDescriptorBuilder {
     ) -> Self {
         self.progress_summary = input;
         self
+    }
+    /// <p>Describes the total number of tasks that the specified job has run, the number of tasks that succeeded, and the number of tasks that failed.</p>
+    pub fn get_progress_summary(&self) -> &::std::option::Option<crate::types::JobProgressSummary> {
+        &self.progress_summary
     }
     /// Consumes the builder and constructs a [`JobListDescriptor`](crate::types::JobListDescriptor).
     pub fn build(self) -> crate::types::JobListDescriptor {

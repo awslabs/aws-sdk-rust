@@ -43,6 +43,12 @@ impl DescribeFileCachesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeFileCaches as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_file_caches::builders::DescribeFileCachesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -154,6 +160,12 @@ impl DescribeFileCachesFluentBuilder {
         self.inner = self.inner.set_file_cache_ids(input);
         self
     }
+    /// <p>IDs of the caches whose descriptions you want to retrieve (String).</p>
+    pub fn get_file_cache_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_file_cache_ids()
+    }
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -164,6 +176,10 @@ impl DescribeFileCachesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -173,5 +189,9 @@ impl DescribeFileCachesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

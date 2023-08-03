@@ -70,6 +70,10 @@ impl GetUnfilteredTableMetadataOutputBuilder {
         self.table = input;
         self
     }
+    /// <p>A Table object containing the table metadata.</p>
+    pub fn get_table(&self) -> &::std::option::Option<crate::types::Table> {
+        &self.table
+    }
     /// Appends an item to `authorized_columns`.
     ///
     /// To override the contents of this collection use [`set_authorized_columns`](Self::set_authorized_columns).
@@ -92,6 +96,12 @@ impl GetUnfilteredTableMetadataOutputBuilder {
         self.authorized_columns = input;
         self
     }
+    /// <p>A list of column names that the user has been granted access to.</p>
+    pub fn get_authorized_columns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.authorized_columns
+    }
     /// <p>A Boolean value that indicates whether the partition location is registered with Lake Formation.</p>
     pub fn is_registered_with_lake_formation(mut self, input: bool) -> Self {
         self.is_registered_with_lake_formation = ::std::option::Option::Some(input);
@@ -104,6 +114,10 @@ impl GetUnfilteredTableMetadataOutputBuilder {
     ) -> Self {
         self.is_registered_with_lake_formation = input;
         self
+    }
+    /// <p>A Boolean value that indicates whether the partition location is registered with Lake Formation.</p>
+    pub fn get_is_registered_with_lake_formation(&self) -> &::std::option::Option<bool> {
+        &self.is_registered_with_lake_formation
     }
     /// Appends an item to `cell_filters`.
     ///
@@ -123,6 +137,12 @@ impl GetUnfilteredTableMetadataOutputBuilder {
     ) -> Self {
         self.cell_filters = input;
         self
+    }
+    /// <p>A list of column row filters.</p>
+    pub fn get_cell_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnRowFilter>> {
+        &self.cell_filters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

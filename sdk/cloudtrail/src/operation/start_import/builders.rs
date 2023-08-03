@@ -40,6 +40,10 @@ impl StartImportFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartImport as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_import::builders::StartImportInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +133,12 @@ impl StartImportFluentBuilder {
         self.inner = self.inner.set_destinations(input);
         self
     }
+    /// <p> The ARN of the destination event data store. Use this parameter for a new import. </p>
+    pub fn get_destinations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_destinations()
+    }
     /// <p> The source S3 bucket for the import. Use this parameter for a new import. </p>
     pub fn import_source(mut self, input: crate::types::ImportSource) -> Self {
         self.inner = self.inner.import_source(input);
@@ -141,6 +151,10 @@ impl StartImportFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_import_source(input);
         self
+    }
+    /// <p> The source S3 bucket for the import. Use this parameter for a new import. </p>
+    pub fn get_import_source(&self) -> &::std::option::Option<crate::types::ImportSource> {
+        self.inner.get_import_source()
     }
     /// <p> Use with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. When you specify a time range, CloudTrail checks the prefix and log file names to verify the names contain a date between the specified <code>StartEventTime</code> and <code>EndEventTime</code> before attempting to import events. </p>
     pub fn start_event_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -155,6 +169,10 @@ impl StartImportFluentBuilder {
         self.inner = self.inner.set_start_event_time(input);
         self
     }
+    /// <p> Use with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. When you specify a time range, CloudTrail checks the prefix and log file names to verify the names contain a date between the specified <code>StartEventTime</code> and <code>EndEventTime</code> before attempting to import events. </p>
+    pub fn get_start_event_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_event_time()
+    }
     /// <p> Use with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. When you specify a time range, CloudTrail checks the prefix and log file names to verify the names contain a date between the specified <code>StartEventTime</code> and <code>EndEventTime</code> before attempting to import events. </p>
     pub fn end_event_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_event_time(input);
@@ -168,6 +186,10 @@ impl StartImportFluentBuilder {
         self.inner = self.inner.set_end_event_time(input);
         self
     }
+    /// <p> Use with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. When you specify a time range, CloudTrail checks the prefix and log file names to verify the names contain a date between the specified <code>StartEventTime</code> and <code>EndEventTime</code> before attempting to import events. </p>
+    pub fn get_end_event_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_event_time()
+    }
     /// <p> The ID of the import. Use this parameter when you are retrying an import. </p>
     pub fn import_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.import_id(input.into());
@@ -177,5 +199,9 @@ impl StartImportFluentBuilder {
     pub fn set_import_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_import_id(input);
         self
+    }
+    /// <p> The ID of the import. Use this parameter when you are retrying an import. </p>
+    pub fn get_import_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_import_id()
     }
 }

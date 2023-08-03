@@ -64,6 +64,10 @@ impl DescribeBudgetsOutputBuilder {
         self.budgets = input;
         self
     }
+    /// <p>A list of budgets.</p>
+    pub fn get_budgets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Budget>> {
+        &self.budgets
+    }
     /// <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl DescribeBudgetsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -54,6 +54,10 @@ impl ThingGroupPropertiesBuilder {
         self.thing_group_description = input;
         self
     }
+    /// <p>The thing group description.</p>
+    pub fn get_thing_group_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_group_description
+    }
     /// <p>The thing group attributes in JSON format.</p>
     pub fn attribute_payload(mut self, input: crate::types::AttributePayload) -> Self {
         self.attribute_payload = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl ThingGroupPropertiesBuilder {
     ) -> Self {
         self.attribute_payload = input;
         self
+    }
+    /// <p>The thing group attributes in JSON format.</p>
+    pub fn get_attribute_payload(&self) -> &::std::option::Option<crate::types::AttributePayload> {
+        &self.attribute_payload
     }
     /// Consumes the builder and constructs a [`ThingGroupProperties`](crate::types::ThingGroupProperties).
     pub fn build(self) -> crate::types::ThingGroupProperties {

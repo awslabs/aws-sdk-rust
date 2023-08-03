@@ -86,6 +86,12 @@ impl StartCodegenJobDataBuilder {
         self.render_config = input;
         self
     }
+    /// <p>The code generation configuration for the codegen job.</p>
+    pub fn get_render_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::CodegenJobRenderConfig> {
+        &self.render_config
+    }
     /// <p>The data schema to use for a code generation job.</p>
     pub fn generic_data_schema(mut self, input: crate::types::CodegenJobGenericDataSchema) -> Self {
         self.generic_data_schema = ::std::option::Option::Some(input);
@@ -99,6 +105,12 @@ impl StartCodegenJobDataBuilder {
         self.generic_data_schema = input;
         self
     }
+    /// <p>The data schema to use for a code generation job.</p>
+    pub fn get_generic_data_schema(
+        &self,
+    ) -> &::std::option::Option<crate::types::CodegenJobGenericDataSchema> {
+        &self.generic_data_schema
+    }
     /// <p>Specifies whether to autogenerate forms in the code generation job.</p>
     pub fn auto_generate_forms(mut self, input: bool) -> Self {
         self.auto_generate_forms = ::std::option::Option::Some(input);
@@ -108,6 +120,10 @@ impl StartCodegenJobDataBuilder {
     pub fn set_auto_generate_forms(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_generate_forms = input;
         self
+    }
+    /// <p>Specifies whether to autogenerate forms in the code generation job.</p>
+    pub fn get_auto_generate_forms(&self) -> &::std::option::Option<bool> {
+        &self.auto_generate_forms
     }
     /// <p>The feature flags for a code generation job.</p>
     pub fn features(mut self, input: crate::types::CodegenFeatureFlags) -> Self {
@@ -121,6 +137,10 @@ impl StartCodegenJobDataBuilder {
     ) -> Self {
         self.features = input;
         self
+    }
+    /// <p>The feature flags for a code generation job.</p>
+    pub fn get_features(&self) -> &::std::option::Option<crate::types::CodegenFeatureFlags> {
+        &self.features
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -146,6 +166,14 @@ impl StartCodegenJobDataBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>One or more key-value pairs to use when tagging the code generation job data.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`StartCodegenJobData`](crate::types::StartCodegenJobData).
     pub fn build(self) -> crate::types::StartCodegenJobData {

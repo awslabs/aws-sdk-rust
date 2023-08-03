@@ -64,6 +64,10 @@ impl LambdaFunctionFailedEventAttributesBuilder {
         self.scheduled_event_id = input;
         self
     }
+    /// <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
+    pub fn get_scheduled_event_id(&self) -> &::std::option::Option<i64> {
+        &self.scheduled_event_id
+    }
     /// <p>The ID of the <code>LambdaFunctionStarted</code> event recorded when this activity task started. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
     pub fn started_event_id(mut self, input: i64) -> Self {
         self.started_event_id = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl LambdaFunctionFailedEventAttributesBuilder {
     pub fn set_started_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.started_event_id = input;
         self
+    }
+    /// <p>The ID of the <code>LambdaFunctionStarted</code> event recorded when this activity task started. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
+    pub fn get_started_event_id(&self) -> &::std::option::Option<i64> {
+        &self.started_event_id
     }
     /// <p>The reason provided for the failure.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,6 +92,10 @@ impl LambdaFunctionFailedEventAttributesBuilder {
         self.reason = input;
         self
     }
+    /// <p>The reason provided for the failure.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
+    }
     /// <p>The details of the failure.</p>
     pub fn details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.details = ::std::option::Option::Some(input.into());
@@ -93,6 +105,10 @@ impl LambdaFunctionFailedEventAttributesBuilder {
     pub fn set_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.details = input;
         self
+    }
+    /// <p>The details of the failure.</p>
+    pub fn get_details(&self) -> &::std::option::Option<::std::string::String> {
+        &self.details
     }
     /// Consumes the builder and constructs a [`LambdaFunctionFailedEventAttributes`](crate::types::LambdaFunctionFailedEventAttributes).
     pub fn build(self) -> crate::types::LambdaFunctionFailedEventAttributes {

@@ -40,6 +40,10 @@ impl GetWorkloadInputBuilder {
         self.workload_id = input;
         self
     }
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workload_id
+    }
     /// Consumes the builder and constructs a [`GetWorkloadInput`](crate::operation::get_workload::GetWorkloadInput).
     pub fn build(
         self,

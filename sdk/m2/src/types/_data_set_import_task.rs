@@ -56,6 +56,10 @@ impl DataSetImportTaskBuilder {
         self.task_id = input;
         self
     }
+    /// <p>The identifier of the data set import task.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_id
+    }
     /// <p>The status of the data set import task.</p>
     pub fn status(mut self, input: crate::types::DataSetTaskLifecycle) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl DataSetImportTaskBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the data set import task.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DataSetTaskLifecycle> {
+        &self.status
+    }
     /// <p>A summary of the data set import task.</p>
     pub fn summary(mut self, input: crate::types::DataSetImportSummary) -> Self {
         self.summary = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl DataSetImportTaskBuilder {
     ) -> Self {
         self.summary = input;
         self
+    }
+    /// <p>A summary of the data set import task.</p>
+    pub fn get_summary(&self) -> &::std::option::Option<crate::types::DataSetImportSummary> {
+        &self.summary
     }
     /// Consumes the builder and constructs a [`DataSetImportTask`](crate::types::DataSetImportTask).
     pub fn build(self) -> crate::types::DataSetImportTask {

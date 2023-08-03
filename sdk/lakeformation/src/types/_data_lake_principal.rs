@@ -46,6 +46,12 @@ impl DataLakePrincipalBuilder {
         self.data_lake_principal_identifier = input;
         self
     }
+    /// <p>An identifier for the Lake Formation principal.</p>
+    pub fn get_data_lake_principal_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.data_lake_principal_identifier
+    }
     /// Consumes the builder and constructs a [`DataLakePrincipal`](crate::types::DataLakePrincipal).
     pub fn build(self) -> crate::types::DataLakePrincipal {
         crate::types::DataLakePrincipal {

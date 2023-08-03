@@ -48,6 +48,10 @@ impl ResourcesAffectedBuilder {
         self.s3_bucket = input;
         self
     }
+    /// <p>The details of the S3 bucket that the finding applies to.</p>
+    pub fn get_s3_bucket(&self) -> &::std::option::Option<crate::types::S3Bucket> {
+        &self.s3_bucket
+    }
     /// <p>The details of the S3 object that the finding applies to.</p>
     pub fn s3_object(mut self, input: crate::types::S3Object) -> Self {
         self.s3_object = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ResourcesAffectedBuilder {
     pub fn set_s3_object(mut self, input: ::std::option::Option<crate::types::S3Object>) -> Self {
         self.s3_object = input;
         self
+    }
+    /// <p>The details of the S3 object that the finding applies to.</p>
+    pub fn get_s3_object(&self) -> &::std::option::Option<crate::types::S3Object> {
+        &self.s3_object
     }
     /// Consumes the builder and constructs a [`ResourcesAffected`](crate::types::ResourcesAffected).
     pub fn build(self) -> crate::types::ResourcesAffected {

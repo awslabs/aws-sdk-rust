@@ -79,6 +79,10 @@ impl DeregisterPackageVersionInputBuilder {
         self.owner_account = input;
         self
     }
+    /// <p>An owner account.</p>
+    pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_account
+    }
     /// <p>A package ID.</p>
     pub fn package_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_id = ::std::option::Option::Some(input.into());
@@ -88,6 +92,10 @@ impl DeregisterPackageVersionInputBuilder {
     pub fn set_package_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package_id = input;
         self
+    }
+    /// <p>A package ID.</p>
+    pub fn get_package_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_id
     }
     /// <p>A package version.</p>
     pub fn package_version(
@@ -105,6 +113,10 @@ impl DeregisterPackageVersionInputBuilder {
         self.package_version = input;
         self
     }
+    /// <p>A package version.</p>
+    pub fn get_package_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_version
+    }
     /// <p>A patch version.</p>
     pub fn patch_version(
         mut self,
@@ -121,6 +133,10 @@ impl DeregisterPackageVersionInputBuilder {
         self.patch_version = input;
         self
     }
+    /// <p>A patch version.</p>
+    pub fn get_patch_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.patch_version
+    }
     /// <p>If the version was marked latest, the new version to maker as latest.</p>
     pub fn updated_latest_patch_version(
         mut self,
@@ -136,6 +152,12 @@ impl DeregisterPackageVersionInputBuilder {
     ) -> Self {
         self.updated_latest_patch_version = input;
         self
+    }
+    /// <p>If the version was marked latest, the new version to maker as latest.</p>
+    pub fn get_updated_latest_patch_version(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.updated_latest_patch_version
     }
     /// Consumes the builder and constructs a [`DeregisterPackageVersionInput`](crate::operation::deregister_package_version::DeregisterPackageVersionInput).
     pub fn build(

@@ -37,6 +37,13 @@ impl CreateParticipantTokenFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateParticipantToken as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_participant_token::builders::CreateParticipantTokenInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl CreateParticipantTokenFluentBuilder {
         self.inner = self.inner.set_stage_arn(input);
         self
     }
+    /// <p>ARN of the stage to which this token is scoped.</p>
+    pub fn get_stage_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stage_arn()
+    }
     /// <p>Duration (in minutes), after which the token expires. Default: 720 (12 hours).</p>
     pub fn duration(mut self, input: i32) -> Self {
         self.inner = self.inner.duration(input);
@@ -137,6 +148,10 @@ impl CreateParticipantTokenFluentBuilder {
         self.inner = self.inner.set_duration(input);
         self
     }
+    /// <p>Duration (in minutes), after which the token expires. Default: 720 (12 hours).</p>
+    pub fn get_duration(&self) -> &::std::option::Option<i32> {
+        self.inner.get_duration()
+    }
     /// <p>Name that can be specified to help identify the token. This can be any UTF-8 encoded text. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i> </p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
@@ -146,6 +161,10 @@ impl CreateParticipantTokenFluentBuilder {
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_id(input);
         self
+    }
+    /// <p>Name that can be specified to help identify the token. This can be any UTF-8 encoded text. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i> </p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_id()
     }
     /// Adds a key-value pair to `attributes`.
     ///
@@ -170,6 +189,14 @@ impl CreateParticipantTokenFluentBuilder {
         self.inner = self.inner.set_attributes(input);
         self
     }
+    /// <p>Application-provided attributes to encode into the token and attach to a stage. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i> </p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_attributes()
+    }
     /// Appends an item to `capabilities`.
     ///
     /// To override the contents of this collection use [`set_capabilities`](Self::set_capabilities).
@@ -186,5 +213,11 @@ impl CreateParticipantTokenFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_capabilities(input);
         self
+    }
+    /// <p>Set of capabilities that the user is allowed to perform in the stage. Default: <code>PUBLISH, SUBSCRIBE</code>.</p>
+    pub fn get_capabilities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParticipantTokenCapability>> {
+        self.inner.get_capabilities()
     }
 }

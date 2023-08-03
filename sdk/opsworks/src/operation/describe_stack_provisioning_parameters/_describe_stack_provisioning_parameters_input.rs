@@ -39,6 +39,10 @@ impl DescribeStackProvisioningParametersInputBuilder {
         self.stack_id = input;
         self
     }
+    /// <p>The stack ID.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_id
+    }
     /// Consumes the builder and constructs a [`DescribeStackProvisioningParametersInput`](crate::operation::describe_stack_provisioning_parameters::DescribeStackProvisioningParametersInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_stack_provisioning_parameters::DescribeStackProvisioningParametersInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

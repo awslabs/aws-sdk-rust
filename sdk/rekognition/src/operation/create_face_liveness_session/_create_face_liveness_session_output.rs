@@ -46,6 +46,10 @@ impl CreateFaceLivenessSessionOutputBuilder {
         self.session_id = input;
         self
     }
+    /// <p>A unique 128-bit UUID identifying a Face Liveness session.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

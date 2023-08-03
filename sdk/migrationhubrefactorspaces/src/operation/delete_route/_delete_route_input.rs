@@ -61,6 +61,10 @@ impl DeleteRouteInputBuilder {
         self.environment_identifier = input;
         self
     }
+    /// <p>The ID of the environment to delete the route from.</p>
+    pub fn get_environment_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_identifier
+    }
     /// <p>The ID of the application to delete the route from.</p>
     pub fn application_identifier(
         mut self,
@@ -77,6 +81,10 @@ impl DeleteRouteInputBuilder {
         self.application_identifier = input;
         self
     }
+    /// <p>The ID of the application to delete the route from.</p>
+    pub fn get_application_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_identifier
+    }
     /// <p>The ID of the route to delete.</p>
     pub fn route_identifier(
         mut self,
@@ -92,6 +100,10 @@ impl DeleteRouteInputBuilder {
     ) -> Self {
         self.route_identifier = input;
         self
+    }
+    /// <p>The ID of the route to delete.</p>
+    pub fn get_route_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.route_identifier
     }
     /// Consumes the builder and constructs a [`DeleteRouteInput`](crate::operation::delete_route::DeleteRouteInput).
     pub fn build(

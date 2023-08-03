@@ -61,6 +61,10 @@ impl CreateProvisioningTemplateVersionInputBuilder {
         self.template_name = input;
         self
     }
+    /// <p>The name of the provisioning template.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
     /// <p>The JSON formatted contents of the provisioning template.</p>
     pub fn template_body(
         mut self,
@@ -77,6 +81,10 @@ impl CreateProvisioningTemplateVersionInputBuilder {
         self.template_body = input;
         self
     }
+    /// <p>The JSON formatted contents of the provisioning template.</p>
+    pub fn get_template_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_body
+    }
     /// <p>Sets a fleet provision template version as the default version.</p>
     pub fn set_as_default(mut self, input: bool) -> Self {
         self.set_as_default = ::std::option::Option::Some(input);
@@ -86,6 +94,10 @@ impl CreateProvisioningTemplateVersionInputBuilder {
     pub fn set_set_as_default(mut self, input: ::std::option::Option<bool>) -> Self {
         self.set_as_default = input;
         self
+    }
+    /// <p>Sets a fleet provision template version as the default version.</p>
+    pub fn get_set_as_default(&self) -> &::std::option::Option<bool> {
+        &self.set_as_default
     }
     /// Consumes the builder and constructs a [`CreateProvisioningTemplateVersionInput`](crate::operation::create_provisioning_template_version::CreateProvisioningTemplateVersionInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_provisioning_template_version::CreateProvisioningTemplateVersionInput, ::aws_smithy_http::operation::error::BuildError>{

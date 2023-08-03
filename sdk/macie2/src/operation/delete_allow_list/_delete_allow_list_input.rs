@@ -49,6 +49,10 @@ impl DeleteAllowListInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>Specifies whether to force deletion of the allow list, even if active classification jobs are configured to use the list.</p>
     /// <p>When you try to delete an allow list, Amazon Macie checks for classification jobs that use the list and have a status other than COMPLETE or CANCELLED. By default, Macie rejects your request if any jobs meet these criteria. To skip these checks and delete the list, set this value to true. To delete the list only if no active jobs are configured to use it, set this value to false.</p>
     pub fn ignore_job_checks(
@@ -66,6 +70,11 @@ impl DeleteAllowListInputBuilder {
     ) -> Self {
         self.ignore_job_checks = input;
         self
+    }
+    /// <p>Specifies whether to force deletion of the allow list, even if active classification jobs are configured to use the list.</p>
+    /// <p>When you try to delete an allow list, Amazon Macie checks for classification jobs that use the list and have a status other than COMPLETE or CANCELLED. By default, Macie rejects your request if any jobs meet these criteria. To skip these checks and delete the list, set this value to true. To delete the list only if no active jobs are configured to use it, set this value to false.</p>
+    pub fn get_ignore_job_checks(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ignore_job_checks
     }
     /// Consumes the builder and constructs a [`DeleteAllowListInput`](crate::operation::delete_allow_list::DeleteAllowListInput).
     pub fn build(

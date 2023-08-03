@@ -55,6 +55,10 @@ impl UpdateChannelInputBuilder {
         self.channel_name = input;
         self
     }
+    /// <p>The name of the channel.</p>
+    pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_name
+    }
     /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
     pub fn filler_slate(mut self, input: crate::types::SlateSource) -> Self {
         self.filler_slate = ::std::option::Option::Some(input);
@@ -67,6 +71,10 @@ impl UpdateChannelInputBuilder {
     ) -> Self {
         self.filler_slate = input;
         self
+    }
+    /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
+    pub fn get_filler_slate(&self) -> &::std::option::Option<crate::types::SlateSource> {
+        &self.filler_slate
     }
     /// Appends an item to `outputs`.
     ///
@@ -86,6 +94,12 @@ impl UpdateChannelInputBuilder {
     ) -> Self {
         self.outputs = input;
         self
+    }
+    /// <p>The channel's output properties.</p>
+    pub fn get_outputs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RequestOutputItem>> {
+        &self.outputs
     }
     /// Consumes the builder and constructs a [`UpdateChannelInput`](crate::operation::update_channel::UpdateChannelInput).
     pub fn build(

@@ -147,6 +147,10 @@ impl ImpactedLocationBuilder {
         self.as_name = input;
         self
     }
+    /// <p>The name of the network at an impacted location.</p>
+    pub fn get_as_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.as_name
+    }
     /// <p>The Autonomous System Number (ASN) of the network at an impacted location.</p>
     pub fn as_number(mut self, input: i64) -> Self {
         self.as_number = ::std::option::Option::Some(input);
@@ -156,6 +160,10 @@ impl ImpactedLocationBuilder {
     pub fn set_as_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.as_number = input;
         self
+    }
+    /// <p>The Autonomous System Number (ASN) of the network at an impacted location.</p>
+    pub fn get_as_number(&self) -> &::std::option::Option<i64> {
+        &self.as_number
     }
     /// <p>The name of the country where the health event is located.</p>
     pub fn country(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -167,6 +175,10 @@ impl ImpactedLocationBuilder {
         self.country = input;
         self
     }
+    /// <p>The name of the country where the health event is located.</p>
+    pub fn get_country(&self) -> &::std::option::Option<::std::string::String> {
+        &self.country
+    }
     /// <p>The subdivision location where the health event is located. The subdivision usually maps to states in most countries (including the United States). For United Kingdom, it maps to a country (England, Scotland, Wales) or province (Northern Ireland).</p>
     pub fn subdivision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subdivision = ::std::option::Option::Some(input.into());
@@ -176,6 +188,10 @@ impl ImpactedLocationBuilder {
     pub fn set_subdivision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subdivision = input;
         self
+    }
+    /// <p>The subdivision location where the health event is located. The subdivision usually maps to states in most countries (including the United States). For United Kingdom, it maps to a country (England, Scotland, Wales) or province (Northern Ireland).</p>
+    pub fn get_subdivision(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subdivision
     }
     /// <p>The metro area where the health event is located.</p>
     /// <p>Metro indicates a metropolitan region in the United States, such as the region around New York City. In non-US countries, this is a second-level subdivision. For example, in the United Kingdom, it could be a county, a London borough, a unitary authority, council area, and so on.</p>
@@ -189,6 +205,11 @@ impl ImpactedLocationBuilder {
         self.metro = input;
         self
     }
+    /// <p>The metro area where the health event is located.</p>
+    /// <p>Metro indicates a metropolitan region in the United States, such as the region around New York City. In non-US countries, this is a second-level subdivision. For example, in the United Kingdom, it could be a county, a London borough, a unitary authority, council area, and so on.</p>
+    pub fn get_metro(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metro
+    }
     /// <p>The name of the city where the health event is located.</p>
     pub fn city(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.city = ::std::option::Option::Some(input.into());
@@ -198,6 +219,10 @@ impl ImpactedLocationBuilder {
     pub fn set_city(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.city = input;
         self
+    }
+    /// <p>The name of the city where the health event is located.</p>
+    pub fn get_city(&self) -> &::std::option::Option<::std::string::String> {
+        &self.city
     }
     /// <p>The latitude where the health event is located.</p>
     pub fn latitude(mut self, input: f64) -> Self {
@@ -209,6 +234,10 @@ impl ImpactedLocationBuilder {
         self.latitude = input;
         self
     }
+    /// <p>The latitude where the health event is located.</p>
+    pub fn get_latitude(&self) -> &::std::option::Option<f64> {
+        &self.latitude
+    }
     /// <p>The longitude where the health event is located.</p>
     pub fn longitude(mut self, input: f64) -> Self {
         self.longitude = ::std::option::Option::Some(input);
@@ -219,6 +248,10 @@ impl ImpactedLocationBuilder {
         self.longitude = input;
         self
     }
+    /// <p>The longitude where the health event is located.</p>
+    pub fn get_longitude(&self) -> &::std::option::Option<f64> {
+        &self.longitude
+    }
     /// <p>The country code where the health event is located. The ISO 3166-2 codes for the country is provided, when available. </p>
     pub fn country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.country_code = ::std::option::Option::Some(input.into());
@@ -228,6 +261,10 @@ impl ImpactedLocationBuilder {
     pub fn set_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.country_code = input;
         self
+    }
+    /// <p>The country code where the health event is located. The ISO 3166-2 codes for the country is provided, when available. </p>
+    pub fn get_country_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.country_code
     }
     /// <p>The subdivision code where the health event is located. The ISO 3166-2 codes for country subdivisions is provided, when available. </p>
     pub fn subdivision_code(
@@ -245,6 +282,10 @@ impl ImpactedLocationBuilder {
         self.subdivision_code = input;
         self
     }
+    /// <p>The subdivision code where the health event is located. The ISO 3166-2 codes for country subdivisions is provided, when available. </p>
+    pub fn get_subdivision_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subdivision_code
+    }
     /// <p>The service location where the health event is located.</p>
     pub fn service_location(
         mut self,
@@ -261,6 +302,10 @@ impl ImpactedLocationBuilder {
         self.service_location = input;
         self
     }
+    /// <p>The service location where the health event is located.</p>
+    pub fn get_service_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_location
+    }
     /// <p>The status of the health event at an impacted location.</p>
     pub fn status(mut self, input: crate::types::HealthEventStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -273,6 +318,10 @@ impl ImpactedLocationBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the health event at an impacted location.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::HealthEventStatus> {
+        &self.status
     }
     /// <p>The cause of the impairment. There are two types of network impairments: Amazon Web Services network issues or internet issues. Internet issues are typically a problem with a network provider, like an internet service provider (ISP).</p>
     pub fn caused_by(mut self, input: crate::types::NetworkImpairment) -> Self {
@@ -287,6 +336,10 @@ impl ImpactedLocationBuilder {
         self.caused_by = input;
         self
     }
+    /// <p>The cause of the impairment. There are two types of network impairments: Amazon Web Services network issues or internet issues. Internet issues are typically a problem with a network provider, like an internet service provider (ISP).</p>
+    pub fn get_caused_by(&self) -> &::std::option::Option<crate::types::NetworkImpairment> {
+        &self.caused_by
+    }
     /// <p>The calculated health at a specific location.</p>
     pub fn internet_health(mut self, input: crate::types::InternetHealth) -> Self {
         self.internet_health = ::std::option::Option::Some(input);
@@ -299,6 +352,10 @@ impl ImpactedLocationBuilder {
     ) -> Self {
         self.internet_health = input;
         self
+    }
+    /// <p>The calculated health at a specific location.</p>
+    pub fn get_internet_health(&self) -> &::std::option::Option<crate::types::InternetHealth> {
+        &self.internet_health
     }
     /// Consumes the builder and constructs a [`ImpactedLocation`](crate::types::ImpactedLocation).
     pub fn build(self) -> crate::types::ImpactedLocation {

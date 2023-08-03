@@ -57,6 +57,10 @@ impl ListManagedInsightRulesInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p> The ARN of an Amazon Web Services resource that has managed Contributor Insights rules. </p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// <p> Include this value to get the next set of rules if the value was returned by the previous operation. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -67,6 +71,10 @@ impl ListManagedInsightRulesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p> Include this value to get the next set of rules if the value was returned by the previous operation. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p> The maximum number of results to return in one operation. If you omit this parameter, the default number is used. The default number is <code>100</code>. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -76,6 +84,10 @@ impl ListManagedInsightRulesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p> The maximum number of results to return in one operation. If you omit this parameter, the default number is used. The default number is <code>100</code>. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListManagedInsightRulesInput`](crate::operation::list_managed_insight_rules::ListManagedInsightRulesInput).
     pub fn build(

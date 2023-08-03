@@ -96,6 +96,10 @@ impl AgentPreviewBuilder {
         self.hostname = input;
         self
     }
+    /// <p>The hostname of the EC2 instance on which the Amazon Inspector Agent is installed.</p>
+    pub fn get_hostname(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hostname
+    }
     /// <p>The ID of the EC2 instance where the agent is installed.</p>
     pub fn agent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_id = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl AgentPreviewBuilder {
     pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agent_id = input;
         self
+    }
+    /// <p>The ID of the EC2 instance where the agent is installed.</p>
+    pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_id
     }
     /// <p>The Auto Scaling group for the EC2 instance where the agent is installed.</p>
     pub fn auto_scaling_group(
@@ -122,6 +130,10 @@ impl AgentPreviewBuilder {
         self.auto_scaling_group = input;
         self
     }
+    /// <p>The Auto Scaling group for the EC2 instance where the agent is installed.</p>
+    pub fn get_auto_scaling_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auto_scaling_group
+    }
     /// <p>The health status of the Amazon Inspector Agent.</p>
     pub fn agent_health(mut self, input: crate::types::AgentHealth) -> Self {
         self.agent_health = ::std::option::Option::Some(input);
@@ -134,6 +146,10 @@ impl AgentPreviewBuilder {
     ) -> Self {
         self.agent_health = input;
         self
+    }
+    /// <p>The health status of the Amazon Inspector Agent.</p>
+    pub fn get_agent_health(&self) -> &::std::option::Option<crate::types::AgentHealth> {
+        &self.agent_health
     }
     /// <p>The version of the Amazon Inspector Agent.</p>
     pub fn agent_version(
@@ -151,6 +167,10 @@ impl AgentPreviewBuilder {
         self.agent_version = input;
         self
     }
+    /// <p>The version of the Amazon Inspector Agent.</p>
+    pub fn get_agent_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_version
+    }
     /// <p>The operating system running on the EC2 instance on which the Amazon Inspector Agent is installed.</p>
     pub fn operating_system(
         mut self,
@@ -166,6 +186,10 @@ impl AgentPreviewBuilder {
     ) -> Self {
         self.operating_system = input;
         self
+    }
+    /// <p>The operating system running on the EC2 instance on which the Amazon Inspector Agent is installed.</p>
+    pub fn get_operating_system(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operating_system
     }
     /// <p>The kernel version of the operating system running on the EC2 instance on which the Amazon Inspector Agent is installed.</p>
     pub fn kernel_version(
@@ -183,6 +207,10 @@ impl AgentPreviewBuilder {
         self.kernel_version = input;
         self
     }
+    /// <p>The kernel version of the operating system running on the EC2 instance on which the Amazon Inspector Agent is installed.</p>
+    pub fn get_kernel_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kernel_version
+    }
     /// <p>The IP address of the EC2 instance on which the Amazon Inspector Agent is installed.</p>
     pub fn ipv4_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipv4_address = ::std::option::Option::Some(input.into());
@@ -192,6 +220,10 @@ impl AgentPreviewBuilder {
     pub fn set_ipv4_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipv4_address = input;
         self
+    }
+    /// <p>The IP address of the EC2 instance on which the Amazon Inspector Agent is installed.</p>
+    pub fn get_ipv4_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv4_address
     }
     /// Consumes the builder and constructs a [`AgentPreview`](crate::types::AgentPreview).
     pub fn build(self) -> crate::types::AgentPreview {

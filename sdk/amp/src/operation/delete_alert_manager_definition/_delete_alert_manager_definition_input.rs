@@ -48,6 +48,10 @@ impl DeleteAlertManagerDefinitionInputBuilder {
         self.workspace_id = input;
         self
     }
+    /// The ID of the workspace in which to delete the alert manager definition.
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
+    }
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl DeleteAlertManagerDefinitionInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`DeleteAlertManagerDefinitionInput`](crate::operation::delete_alert_manager_definition::DeleteAlertManagerDefinitionInput).
     pub fn build(

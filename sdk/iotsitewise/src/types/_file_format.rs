@@ -40,6 +40,10 @@ impl FileFormatBuilder {
         self.csv = input;
         self
     }
+    /// <p>The .csv file format.</p>
+    pub fn get_csv(&self) -> &::std::option::Option<crate::types::Csv> {
+        &self.csv
+    }
     /// Consumes the builder and constructs a [`FileFormat`](crate::types::FileFormat).
     pub fn build(self) -> crate::types::FileFormat {
         crate::types::FileFormat { csv: self.csv }

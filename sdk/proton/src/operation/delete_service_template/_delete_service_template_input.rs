@@ -41,6 +41,10 @@ impl DeleteServiceTemplateInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the service template to delete.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DeleteServiceTemplateInput`](crate::operation::delete_service_template::DeleteServiceTemplateInput).
     pub fn build(
         self,

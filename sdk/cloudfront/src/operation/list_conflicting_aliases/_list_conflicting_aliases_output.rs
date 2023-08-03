@@ -54,6 +54,12 @@ impl ListConflictingAliasesOutputBuilder {
         self.conflicting_aliases_list = input;
         self
     }
+    /// <p>A list of conflicting aliases.</p>
+    pub fn get_conflicting_aliases_list(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConflictingAliasesList> {
+        &self.conflicting_aliases_list
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

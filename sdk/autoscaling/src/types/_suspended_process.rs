@@ -49,6 +49,10 @@ impl SuspendedProcessBuilder {
         self.process_name = input;
         self
     }
+    /// <p>The name of the suspended process.</p>
+    pub fn get_process_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.process_name
+    }
     /// <p>The reason that the process was suspended.</p>
     pub fn suspension_reason(
         mut self,
@@ -64,6 +68,10 @@ impl SuspendedProcessBuilder {
     ) -> Self {
         self.suspension_reason = input;
         self
+    }
+    /// <p>The reason that the process was suspended.</p>
+    pub fn get_suspension_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.suspension_reason
     }
     /// Consumes the builder and constructs a [`SuspendedProcess`](crate::types::SuspendedProcess).
     pub fn build(self) -> crate::types::SuspendedProcess {

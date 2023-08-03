@@ -56,6 +56,10 @@ impl ConditionsBuilder {
         self.range = input;
         self
     }
+    /// <p>The relative time period over which data is included in the aggregation.</p>
+    pub fn get_range(&self) -> &::std::option::Option<crate::types::Range> {
+        &self.range
+    }
     /// <p>The number of profile objects used for the calculated attribute.</p>
     pub fn object_count(mut self, input: i32) -> Self {
         self.object_count = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl ConditionsBuilder {
         self.object_count = input;
         self
     }
+    /// <p>The number of profile objects used for the calculated attribute.</p>
+    pub fn get_object_count(&self) -> &::std::option::Option<i32> {
+        &self.object_count
+    }
     /// <p>The threshold for the calculated attribute.</p>
     pub fn threshold(mut self, input: crate::types::Threshold) -> Self {
         self.threshold = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl ConditionsBuilder {
     pub fn set_threshold(mut self, input: ::std::option::Option<crate::types::Threshold>) -> Self {
         self.threshold = input;
         self
+    }
+    /// <p>The threshold for the calculated attribute.</p>
+    pub fn get_threshold(&self) -> &::std::option::Option<crate::types::Threshold> {
+        &self.threshold
     }
     /// Consumes the builder and constructs a [`Conditions`](crate::types::Conditions).
     pub fn build(self) -> crate::types::Conditions {

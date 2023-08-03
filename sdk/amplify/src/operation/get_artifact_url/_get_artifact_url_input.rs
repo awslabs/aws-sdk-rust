@@ -40,6 +40,10 @@ impl GetArtifactUrlInputBuilder {
         self.artifact_id = input;
         self
     }
+    /// <p> The unique ID for an artifact. </p>
+    pub fn get_artifact_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.artifact_id
+    }
     /// Consumes the builder and constructs a [`GetArtifactUrlInput`](crate::operation::get_artifact_url::GetArtifactUrlInput).
     pub fn build(
         self,

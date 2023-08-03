@@ -68,6 +68,12 @@ impl BatchUpdateClusterOutputBuilder {
         self.processed_clusters = input;
         self
     }
+    /// <p>The list of clusters that have been updated.</p>
+    pub fn get_processed_clusters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Cluster>> {
+        &self.processed_clusters
+    }
     /// Appends an item to `unprocessed_clusters`.
     ///
     /// To override the contents of this collection use [`set_unprocessed_clusters`](Self::set_unprocessed_clusters).
@@ -86,6 +92,12 @@ impl BatchUpdateClusterOutputBuilder {
     ) -> Self {
         self.unprocessed_clusters = input;
         self
+    }
+    /// <p>The list of clusters where updates have not been applied.</p>
+    pub fn get_unprocessed_clusters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedCluster>> {
+        &self.unprocessed_clusters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

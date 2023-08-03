@@ -36,6 +36,12 @@ impl RemoveBridgeOutputFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RemoveBridgeOutput as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::remove_bridge_output::builders::RemoveBridgeOutputInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl RemoveBridgeOutputFluentBuilder {
         self.inner = self.inner.set_bridge_arn(input);
         self
     }
+    /// The ARN of the bridge that you want to update.
+    pub fn get_bridge_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bridge_arn()
+    }
     /// The name of the bridge output that you want to remove.
     pub fn output_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.output_name(input.into());
@@ -135,5 +145,9 @@ impl RemoveBridgeOutputFluentBuilder {
     pub fn set_output_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_output_name(input);
         self
+    }
+    /// The name of the bridge output that you want to remove.
+    pub fn get_output_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_output_name()
     }
 }

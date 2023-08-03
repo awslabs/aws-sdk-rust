@@ -36,6 +36,10 @@ impl GetTableFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetTable as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_table::builders::GetTableInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl GetTableFluentBuilder {
         self.inner = self.inner.set_catalog_id(input);
         self
     }
+    /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_catalog_id()
+    }
     /// <p>The name of the database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
     pub fn database_name(
         mut self,
@@ -134,6 +142,10 @@ impl GetTableFluentBuilder {
         self.inner = self.inner.set_database_name(input);
         self
     }
+    /// <p>The name of the database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_database_name()
+    }
     /// <p>The name of the table for which to retrieve the definition. For Hive compatibility, this name is entirely lowercase.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -143,6 +155,10 @@ impl GetTableFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the table for which to retrieve the definition. For Hive compatibility, this name is entirely lowercase.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The transaction ID at which to read the table contents. </p>
     pub fn transaction_id(
@@ -160,6 +176,10 @@ impl GetTableFluentBuilder {
         self.inner = self.inner.set_transaction_id(input);
         self
     }
+    /// <p>The transaction ID at which to read the table contents. </p>
+    pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_transaction_id()
+    }
     /// <p>The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
     pub fn query_as_of_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.query_as_of_time(input);
@@ -172,5 +192,9 @@ impl GetTableFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_query_as_of_time(input);
         self
+    }
+    /// <p>The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
+    pub fn get_query_as_of_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_query_as_of_time()
     }
 }

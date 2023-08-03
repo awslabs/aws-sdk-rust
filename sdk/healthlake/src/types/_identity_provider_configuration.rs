@@ -79,6 +79,12 @@ impl IdentityProviderConfigurationBuilder {
         self.authorization_strategy = input;
         self
     }
+    /// <p>The authorization strategy that you selected when you created the data store.</p>
+    pub fn get_authorization_strategy(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuthorizationStrategy> {
+        &self.authorization_strategy
+    }
     /// <p>If you enabled fine-grained authorization when you created the data store.</p>
     pub fn fine_grained_authorization_enabled(mut self, input: bool) -> Self {
         self.fine_grained_authorization_enabled = ::std::option::Option::Some(input);
@@ -91,6 +97,10 @@ impl IdentityProviderConfigurationBuilder {
     ) -> Self {
         self.fine_grained_authorization_enabled = input;
         self
+    }
+    /// <p>If you enabled fine-grained authorization when you created the data store.</p>
+    pub fn get_fine_grained_authorization_enabled(&self) -> &::std::option::Option<bool> {
+        &self.fine_grained_authorization_enabled
     }
     /// <p>The JSON metadata elements that you want to use in your identity provider configuration. Required elements are listed based on the launch specification of the SMART application. For more information on all possible elements, see <a href="https://build.fhir.org/ig/HL7/smart-app-launch/conformance.html#metadata">Metadata</a> in SMART's App Launch specification.</p>
     /// <p> <code>authorization_endpoint</code>: The URL to the OAuth2 authorization endpoint.</p>
@@ -112,6 +122,15 @@ impl IdentityProviderConfigurationBuilder {
         self.metadata = input;
         self
     }
+    /// <p>The JSON metadata elements that you want to use in your identity provider configuration. Required elements are listed based on the launch specification of the SMART application. For more information on all possible elements, see <a href="https://build.fhir.org/ig/HL7/smart-app-launch/conformance.html#metadata">Metadata</a> in SMART's App Launch specification.</p>
+    /// <p> <code>authorization_endpoint</code>: The URL to the OAuth2 authorization endpoint.</p>
+    /// <p> <code>grant_types_supported</code>: An array of grant types that are supported at the token endpoint. You must provide at least one grant type option. Valid options are <code>authorization_code</code> and <code>client_credentials</code>.</p>
+    /// <p> <code>token_endpoint</code>: The URL to the OAuth2 token endpoint.</p>
+    /// <p> <code>capabilities</code>: An array of strings of the SMART capabilities that the authorization server supports.</p>
+    /// <p> <code>code_challenge_methods_supported</code>: An array of strings of supported PKCE code challenge methods. You must include the <code>S256</code> method in the array of PKCE code challenge methods.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metadata
+    }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function that you want to use to decode the access token created by the authorization server.</p>
     pub fn idp_lambda_arn(
         mut self,
@@ -127,6 +146,10 @@ impl IdentityProviderConfigurationBuilder {
     ) -> Self {
         self.idp_lambda_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Lambda function that you want to use to decode the access token created by the authorization server.</p>
+    pub fn get_idp_lambda_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.idp_lambda_arn
     }
     /// Consumes the builder and constructs a [`IdentityProviderConfiguration`](crate::types::IdentityProviderConfiguration).
     pub fn build(self) -> crate::types::IdentityProviderConfiguration {

@@ -71,6 +71,10 @@ impl DeleteAppInputBuilder {
         self.domain_id = input;
         self
     }
+    /// <p>The domain ID.</p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_id
+    }
     /// <p>The user profile name. If this value is not set, then <code>SpaceName</code> must be set.</p>
     pub fn user_profile_name(
         mut self,
@@ -87,6 +91,10 @@ impl DeleteAppInputBuilder {
         self.user_profile_name = input;
         self
     }
+    /// <p>The user profile name. If this value is not set, then <code>SpaceName</code> must be set.</p>
+    pub fn get_user_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_profile_name
+    }
     /// <p>The type of app.</p>
     pub fn app_type(mut self, input: crate::types::AppType) -> Self {
         self.app_type = ::std::option::Option::Some(input);
@@ -96,6 +104,10 @@ impl DeleteAppInputBuilder {
     pub fn set_app_type(mut self, input: ::std::option::Option<crate::types::AppType>) -> Self {
         self.app_type = input;
         self
+    }
+    /// <p>The type of app.</p>
+    pub fn get_app_type(&self) -> &::std::option::Option<crate::types::AppType> {
+        &self.app_type
     }
     /// <p>The name of the app.</p>
     pub fn app_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -107,6 +119,10 @@ impl DeleteAppInputBuilder {
         self.app_name = input;
         self
     }
+    /// <p>The name of the app.</p>
+    pub fn get_app_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_name
+    }
     /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
     pub fn space_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.space_name = ::std::option::Option::Some(input.into());
@@ -116,6 +132,10 @@ impl DeleteAppInputBuilder {
     pub fn set_space_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.space_name = input;
         self
+    }
+    /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
+    pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.space_name
     }
     /// Consumes the builder and constructs a [`DeleteAppInput`](crate::operation::delete_app::DeleteAppInput).
     pub fn build(

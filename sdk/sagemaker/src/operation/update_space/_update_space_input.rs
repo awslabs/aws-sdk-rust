@@ -55,6 +55,10 @@ impl UpdateSpaceInputBuilder {
         self.domain_id = input;
         self
     }
+    /// <p>The ID of the associated Domain.</p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_id
+    }
     /// <p>The name of the space.</p>
     pub fn space_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.space_name = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl UpdateSpaceInputBuilder {
     pub fn set_space_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.space_name = input;
         self
+    }
+    /// <p>The name of the space.</p>
+    pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.space_name
     }
     /// <p>A collection of space settings.</p>
     pub fn space_settings(mut self, input: crate::types::SpaceSettings) -> Self {
@@ -77,6 +85,10 @@ impl UpdateSpaceInputBuilder {
     ) -> Self {
         self.space_settings = input;
         self
+    }
+    /// <p>A collection of space settings.</p>
+    pub fn get_space_settings(&self) -> &::std::option::Option<crate::types::SpaceSettings> {
+        &self.space_settings
     }
     /// Consumes the builder and constructs a [`UpdateSpaceInput`](crate::operation::update_space::UpdateSpaceInput).
     pub fn build(

@@ -65,6 +65,10 @@ impl ListGeofencesInputBuilder {
         self.collection_name = input;
         self
     }
+    /// <p>The name of the geofence collection storing the list of geofences.</p>
+    pub fn get_collection_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collection_name
+    }
     /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
     /// <p>Default value: <code>null</code> </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -77,6 +81,11 @@ impl ListGeofencesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
+    /// <p>Default value: <code>null</code> </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>An optional limit for the number of geofences returned in a single call. </p>
     /// <p>Default value: <code>100</code> </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -88,6 +97,11 @@ impl ListGeofencesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>An optional limit for the number of geofences returned in a single call. </p>
+    /// <p>Default value: <code>100</code> </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListGeofencesInput`](crate::operation::list_geofences::ListGeofencesInput).
     pub fn build(

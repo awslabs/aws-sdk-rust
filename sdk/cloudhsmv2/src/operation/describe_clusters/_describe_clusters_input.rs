@@ -94,6 +94,17 @@ impl DescribeClustersInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>One or more filters to limit the items returned in the response.</p>
+    /// <p>Use the <code>clusterIds</code> filter to return only the specified clusters. Specify clusters by their cluster identifier (ID).</p>
+    /// <p>Use the <code>vpcIds</code> filter to return only the clusters in the specified virtual private clouds (VPCs). Specify VPCs by their VPC identifier (ID).</p>
+    /// <p>Use the <code>states</code> filter to return only clusters that match the specified state.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
+    > {
+        &self.filters
+    }
     /// <p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more clusters.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -104,6 +115,10 @@ impl DescribeClustersInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more clusters.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of clusters to return in the response. When there are more clusters than the number you specify, the response contains a <code>NextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -113,6 +128,10 @@ impl DescribeClustersInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of clusters to return in the response. When there are more clusters than the number you specify, the response contains a <code>NextToken</code> value.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeClustersInput`](crate::operation::describe_clusters::DescribeClustersInput).
     pub fn build(

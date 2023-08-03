@@ -63,6 +63,12 @@ impl DescribeConfigurationRecorderStatusOutputBuilder {
         self.configuration_recorders_status = input;
         self
     }
+    /// <p>A list that contains status of the specified recorders.</p>
+    pub fn get_configuration_recorders_status(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationRecorderStatus>> {
+        &self.configuration_recorders_status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -55,6 +55,10 @@ impl ValidatePipelineOutputBuilder {
         self.is_valid = input;
         self
     }
+    /// <p>A boolean indicating whether or not the pipeline configuration is valid.</p>
+    pub fn get_is_valid(&self) -> &::std::option::Option<bool> {
+        &self.is_valid
+    }
     /// Appends an item to `errors`.
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
@@ -73,6 +77,12 @@ impl ValidatePipelineOutputBuilder {
     ) -> Self {
         self.errors = input;
         self
+    }
+    /// <p>A list of errors if the configuration is invalid.</p>
+    pub fn get_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationMessage>> {
+        &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

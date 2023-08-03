@@ -39,6 +39,10 @@ impl StartCanaryInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the canary that you want to run. To find canary names, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`StartCanaryInput`](crate::operation::start_canary::StartCanaryInput).
     pub fn build(
         self,

@@ -108,6 +108,10 @@ impl PostCommentForPullRequestOutputBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name of the repository where you posted a comment on a pull request.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>The system-generated ID of the pull request. </p>
     pub fn pull_request_id(
         mut self,
@@ -123,6 +127,10 @@ impl PostCommentForPullRequestOutputBuilder {
     ) -> Self {
         self.pull_request_id = input;
         self
+    }
+    /// <p>The system-generated ID of the pull request. </p>
+    pub fn get_pull_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pull_request_id
     }
     /// <p>The full commit ID of the commit in the source branch used to create the pull request, or in the case of an updated pull request, the full commit ID of the commit used to update the pull request.</p>
     pub fn before_commit_id(
@@ -140,6 +148,10 @@ impl PostCommentForPullRequestOutputBuilder {
         self.before_commit_id = input;
         self
     }
+    /// <p>The full commit ID of the commit in the source branch used to create the pull request, or in the case of an updated pull request, the full commit ID of the commit used to update the pull request.</p>
+    pub fn get_before_commit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.before_commit_id
+    }
     /// <p>The full commit ID of the commit in the destination branch where the pull request is merged.</p>
     pub fn after_commit_id(
         mut self,
@@ -155,6 +167,10 @@ impl PostCommentForPullRequestOutputBuilder {
     ) -> Self {
         self.after_commit_id = input;
         self
+    }
+    /// <p>The full commit ID of the commit in the destination branch where the pull request is merged.</p>
+    pub fn get_after_commit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.after_commit_id
     }
     /// <p>In the directionality of the pull request, the blob ID of the before blob.</p>
     pub fn before_blob_id(
@@ -172,6 +188,10 @@ impl PostCommentForPullRequestOutputBuilder {
         self.before_blob_id = input;
         self
     }
+    /// <p>In the directionality of the pull request, the blob ID of the before blob.</p>
+    pub fn get_before_blob_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.before_blob_id
+    }
     /// <p>In the directionality of the pull request, the blob ID of the after blob.</p>
     pub fn after_blob_id(
         mut self,
@@ -188,6 +208,10 @@ impl PostCommentForPullRequestOutputBuilder {
         self.after_blob_id = input;
         self
     }
+    /// <p>In the directionality of the pull request, the blob ID of the after blob.</p>
+    pub fn get_after_blob_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.after_blob_id
+    }
     /// <p>The location of the change where you posted your comment.</p>
     pub fn location(mut self, input: crate::types::Location) -> Self {
         self.location = ::std::option::Option::Some(input);
@@ -198,6 +222,10 @@ impl PostCommentForPullRequestOutputBuilder {
         self.location = input;
         self
     }
+    /// <p>The location of the change where you posted your comment.</p>
+    pub fn get_location(&self) -> &::std::option::Option<crate::types::Location> {
+        &self.location
+    }
     /// <p>The content of the comment you posted.</p>
     pub fn comment(mut self, input: crate::types::Comment) -> Self {
         self.comment = ::std::option::Option::Some(input);
@@ -207,6 +235,10 @@ impl PostCommentForPullRequestOutputBuilder {
     pub fn set_comment(mut self, input: ::std::option::Option<crate::types::Comment>) -> Self {
         self.comment = input;
         self
+    }
+    /// <p>The content of the comment you posted.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<crate::types::Comment> {
+        &self.comment
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

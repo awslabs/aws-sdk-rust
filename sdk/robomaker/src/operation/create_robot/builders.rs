@@ -41,6 +41,10 @@ impl CreateRobotFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateRobot as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_robot::builders::CreateRobotInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -123,6 +127,10 @@ impl CreateRobotFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name for the robot.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The target architecture of the robot.</p>
     pub fn architecture(mut self, input: crate::types::Architecture) -> Self {
         self.inner = self.inner.architecture(input);
@@ -135,6 +143,10 @@ impl CreateRobotFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_architecture(input);
         self
+    }
+    /// <p>The target architecture of the robot.</p>
+    pub fn get_architecture(&self) -> &::std::option::Option<crate::types::Architecture> {
+        self.inner.get_architecture()
     }
     /// <p>The Greengrass group id.</p>
     pub fn greengrass_group_id(
@@ -151,6 +163,10 @@ impl CreateRobotFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_greengrass_group_id(input);
         self
+    }
+    /// <p>The Greengrass group id.</p>
+    pub fn get_greengrass_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_greengrass_group_id()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -174,5 +190,13 @@ impl CreateRobotFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A map that contains tag keys and tag values that are attached to the robot.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

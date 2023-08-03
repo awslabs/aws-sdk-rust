@@ -54,6 +54,10 @@ impl StartAutomationExecutionOutputBuilder {
         self.automation_execution_id = input;
         self
     }
+    /// <p>The unique ID of a newly scheduled automation execution.</p>
+    pub fn get_automation_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.automation_execution_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

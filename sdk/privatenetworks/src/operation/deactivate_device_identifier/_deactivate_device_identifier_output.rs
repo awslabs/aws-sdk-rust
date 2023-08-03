@@ -49,6 +49,10 @@ impl DeactivateDeviceIdentifierOutputBuilder {
         self.device_identifier = input;
         self
     }
+    /// <p>Information about the device identifier.</p>
+    pub fn get_device_identifier(&self) -> &::std::option::Option<crate::types::DeviceIdentifier> {
+        &self.device_identifier
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

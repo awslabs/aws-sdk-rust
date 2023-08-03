@@ -46,6 +46,10 @@ impl DecimalDatasetParameterDefaultValuesBuilder {
         self.static_values = input;
         self
     }
+    /// <p>A list of static default values for a given decimal parameter.</p>
+    pub fn get_static_values(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+        &self.static_values
+    }
     /// Consumes the builder and constructs a [`DecimalDatasetParameterDefaultValues`](crate::types::DecimalDatasetParameterDefaultValues).
     pub fn build(self) -> crate::types::DecimalDatasetParameterDefaultValues {
         crate::types::DecimalDatasetParameterDefaultValues {

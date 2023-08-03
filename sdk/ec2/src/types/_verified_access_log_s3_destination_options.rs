@@ -64,6 +64,10 @@ impl VerifiedAccessLogS3DestinationOptionsBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Indicates whether logging is enabled.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// <p>The bucket name.</p>
     pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_name = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl VerifiedAccessLogS3DestinationOptionsBuilder {
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_name = input;
         self
+    }
+    /// <p>The bucket name.</p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_name
     }
     /// <p>The bucket prefix.</p>
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,6 +92,10 @@ impl VerifiedAccessLogS3DestinationOptionsBuilder {
         self.prefix = input;
         self
     }
+    /// <p>The bucket prefix.</p>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
+    }
     /// <p>The ID of the Amazon Web Services account that owns the Amazon S3 bucket.</p>
     pub fn bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_owner = ::std::option::Option::Some(input.into());
@@ -93,6 +105,10 @@ impl VerifiedAccessLogS3DestinationOptionsBuilder {
     pub fn set_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_owner = input;
         self
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the Amazon S3 bucket.</p>
+    pub fn get_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_owner
     }
     /// Consumes the builder and constructs a [`VerifiedAccessLogS3DestinationOptions`](crate::types::VerifiedAccessLogS3DestinationOptions).
     pub fn build(self) -> crate::types::VerifiedAccessLogS3DestinationOptions {

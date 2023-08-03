@@ -49,6 +49,10 @@ impl GetJobTemplateOutputBuilder {
         self.job_template = input;
         self
     }
+    /// A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
+    pub fn get_job_template(&self) -> &::std::option::Option<crate::types::JobTemplate> {
+        &self.job_template
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -36,6 +36,10 @@ impl DescribeHomeRegionControlsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeHomeRegionControls as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_home_region_controls::builders::DescribeHomeRegionControlsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl DescribeHomeRegionControlsFluentBuilder {
         self.inner = self.inner.set_control_id(input);
         self
     }
+    /// <p>The <code>ControlID</code> is a unique identifier string of your <code>HomeRegionControl</code> object.</p>
+    pub fn get_control_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_control_id()
+    }
     /// <p>The name of the home region you'd like to view.</p>
     pub fn home_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.home_region(input.into());
@@ -141,6 +149,10 @@ impl DescribeHomeRegionControlsFluentBuilder {
     pub fn set_home_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_home_region(input);
         self
+    }
+    /// <p>The name of the home region you'd like to view.</p>
+    pub fn get_home_region(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_home_region()
     }
     /// <p>The target parameter specifies the identifier to which the home region is applied, which is always of type <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>.</p>
     pub fn target(mut self, input: crate::types::Target) -> Self {
@@ -152,6 +164,10 @@ impl DescribeHomeRegionControlsFluentBuilder {
         self.inner = self.inner.set_target(input);
         self
     }
+    /// <p>The target parameter specifies the identifier to which the home region is applied, which is always of type <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>.</p>
+    pub fn get_target(&self) -> &::std::option::Option<crate::types::Target> {
+        self.inner.get_target()
+    }
     /// <p>The maximum number of filtering results to display per page. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -162,6 +178,10 @@ impl DescribeHomeRegionControlsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of filtering results to display per page. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>If a <code>NextToken</code> was returned by a previous call, more results are available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -171,5 +191,9 @@ impl DescribeHomeRegionControlsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>If a <code>NextToken</code> was returned by a previous call, more results are available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

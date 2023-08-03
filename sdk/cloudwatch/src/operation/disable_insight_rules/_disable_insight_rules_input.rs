@@ -50,6 +50,10 @@ impl DisableInsightRulesInputBuilder {
         self.rule_names = input;
         self
     }
+    /// <p>An array of the rule names to disable. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
+    pub fn get_rule_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.rule_names
+    }
     /// Consumes the builder and constructs a [`DisableInsightRulesInput`](crate::operation::disable_insight_rules::DisableInsightRulesInput).
     pub fn build(
         self,

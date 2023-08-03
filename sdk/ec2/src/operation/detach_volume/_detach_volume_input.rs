@@ -71,6 +71,10 @@ impl DetachVolumeInputBuilder {
         self.device = input;
         self
     }
+    /// <p>The device name.</p>
+    pub fn get_device(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device
+    }
     /// <p>Forces detachment if the previous detachment attempt did not occur cleanly (for example, logging into an instance, unmounting the volume, and detaching normally). This option can lead to data loss or a corrupted file system. Use this option only as a last resort to detach a volume from a failed instance. The instance won't have an opportunity to flush file system caches or file system metadata. If you use this option, you must perform file system check and repair procedures.</p>
     pub fn force(mut self, input: bool) -> Self {
         self.force = ::std::option::Option::Some(input);
@@ -80,6 +84,10 @@ impl DetachVolumeInputBuilder {
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force = input;
         self
+    }
+    /// <p>Forces detachment if the previous detachment attempt did not occur cleanly (for example, logging into an instance, unmounting the volume, and detaching normally). This option can lead to data loss or a corrupted file system. Use this option only as a last resort to detach a volume from a failed instance. The instance won't have an opportunity to flush file system caches or file system metadata. If you use this option, you must perform file system check and repair procedures.</p>
+    pub fn get_force(&self) -> &::std::option::Option<bool> {
+        &self.force
     }
     /// <p>The ID of the instance. If you are detaching a Multi-Attach enabled volume, you must specify an instance ID.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -91,6 +99,10 @@ impl DetachVolumeInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The ID of the instance. If you are detaching a Multi-Attach enabled volume, you must specify an instance ID.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The ID of the volume.</p>
     pub fn volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_id = ::std::option::Option::Some(input.into());
@@ -101,6 +113,10 @@ impl DetachVolumeInputBuilder {
         self.volume_id = input;
         self
     }
+    /// <p>The ID of the volume.</p>
+    pub fn get_volume_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_id
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -110,6 +126,10 @@ impl DetachVolumeInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`DetachVolumeInput`](crate::operation::detach_volume::DetachVolumeInput).
     pub fn build(

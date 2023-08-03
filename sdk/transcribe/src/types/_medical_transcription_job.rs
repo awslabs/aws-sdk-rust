@@ -202,6 +202,12 @@ impl MedicalTranscriptionJobBuilder {
         self.medical_transcription_job_name = input;
         self
     }
+    /// <p>The name of the medical transcription job. Job names are case sensitive and must be unique within an Amazon Web Services account.</p>
+    pub fn get_medical_transcription_job_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.medical_transcription_job_name
+    }
     /// <p>Provides the status of the specified medical transcription job.</p>
     /// <p>If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified in <code>TranscriptFileUri</code>. If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription job failed.</p>
     pub fn transcription_job_status(mut self, input: crate::types::TranscriptionJobStatus) -> Self {
@@ -217,6 +223,13 @@ impl MedicalTranscriptionJobBuilder {
         self.transcription_job_status = input;
         self
     }
+    /// <p>Provides the status of the specified medical transcription job.</p>
+    /// <p>If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified in <code>TranscriptFileUri</code>. If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription job failed.</p>
+    pub fn get_transcription_job_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::TranscriptionJobStatus> {
+        &self.transcription_job_status
+    }
     /// <p>The language code used to create your medical transcription job. US English (<code>en-US</code>) is the only supported language for medical transcriptions.</p>
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
@@ -230,6 +243,10 @@ impl MedicalTranscriptionJobBuilder {
         self.language_code = input;
         self
     }
+    /// <p>The language code used to create your medical transcription job. US English (<code>en-US</code>) is the only supported language for medical transcriptions.</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
+        &self.language_code
+    }
     /// <p>The sample rate, in hertz, of the audio track in your input media file.</p>
     pub fn media_sample_rate_hertz(mut self, input: i32) -> Self {
         self.media_sample_rate_hertz = ::std::option::Option::Some(input);
@@ -239,6 +256,10 @@ impl MedicalTranscriptionJobBuilder {
     pub fn set_media_sample_rate_hertz(mut self, input: ::std::option::Option<i32>) -> Self {
         self.media_sample_rate_hertz = input;
         self
+    }
+    /// <p>The sample rate, in hertz, of the audio track in your input media file.</p>
+    pub fn get_media_sample_rate_hertz(&self) -> &::std::option::Option<i32> {
+        &self.media_sample_rate_hertz
     }
     /// <p>The format of the input media file.</p>
     pub fn media_format(mut self, input: crate::types::MediaFormat) -> Self {
@@ -253,6 +274,10 @@ impl MedicalTranscriptionJobBuilder {
         self.media_format = input;
         self
     }
+    /// <p>The format of the input media file.</p>
+    pub fn get_media_format(&self) -> &::std::option::Option<crate::types::MediaFormat> {
+        &self.media_format
+    }
     /// <p>Describes the Amazon S3 location of the media file you want to use in your request.</p>
     /// <p>For information on supported media formats, refer to the <a href="https://docs.aws.amazon.com/APIReference/API_StartTranscriptionJob.html#transcribe-StartTranscriptionJob-request-MediaFormat">MediaFormat</a> parameter or the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a> section in the Amazon S3 Developer Guide.</p>
     pub fn media(mut self, input: crate::types::Media) -> Self {
@@ -264,6 +289,11 @@ impl MedicalTranscriptionJobBuilder {
     pub fn set_media(mut self, input: ::std::option::Option<crate::types::Media>) -> Self {
         self.media = input;
         self
+    }
+    /// <p>Describes the Amazon S3 location of the media file you want to use in your request.</p>
+    /// <p>For information on supported media formats, refer to the <a href="https://docs.aws.amazon.com/APIReference/API_StartTranscriptionJob.html#transcribe-StartTranscriptionJob-request-MediaFormat">MediaFormat</a> parameter or the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a> section in the Amazon S3 Developer Guide.</p>
+    pub fn get_media(&self) -> &::std::option::Option<crate::types::Media> {
+        &self.media
     }
     /// <p>Provides you with the Amazon S3 URI you can use to access your transcript.</p>
     pub fn transcript(mut self, input: crate::types::MedicalTranscript) -> Self {
@@ -277,6 +307,10 @@ impl MedicalTranscriptionJobBuilder {
     ) -> Self {
         self.transcript = input;
         self
+    }
+    /// <p>Provides you with the Amazon S3 URI you can use to access your transcript.</p>
+    pub fn get_transcript(&self) -> &::std::option::Option<crate::types::MedicalTranscript> {
+        &self.transcript
     }
     /// <p>The date and time the specified medical transcription job began processing.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.789000-07:00</code> represents a transcription job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
@@ -293,6 +327,11 @@ impl MedicalTranscriptionJobBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The date and time the specified medical transcription job began processing.</p>
+    /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.789000-07:00</code> represents a transcription job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The date and time the specified medical transcription job request was made.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents a transcription job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -308,6 +347,11 @@ impl MedicalTranscriptionJobBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The date and time the specified medical transcription job request was made.</p>
+    /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents a transcription job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The date and time the specified medical transcription job finished processing.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:33:13.922000-07:00</code> represents a transcription job that started processing at 12:33 PM UTC-7 on May 4, 2022.</p>
     pub fn completion_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -322,6 +366,11 @@ impl MedicalTranscriptionJobBuilder {
     ) -> Self {
         self.completion_time = input;
         self
+    }
+    /// <p>The date and time the specified medical transcription job finished processing.</p>
+    /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:33:13.922000-07:00</code> represents a transcription job that started processing at 12:33 PM UTC-7 on May 4, 2022.</p>
+    pub fn get_completion_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.completion_time
     }
     /// <p>If <code>TranscriptionJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why the transcription job request failed.</p>
     /// <p>The <code>FailureReason</code> field contains one of the following values:</p>
@@ -357,6 +406,19 @@ impl MedicalTranscriptionJobBuilder {
         self.failure_reason = input;
         self
     }
+    /// <p>If <code>TranscriptionJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why the transcription job request failed.</p>
+    /// <p>The <code>FailureReason</code> field contains one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>Unsupported media format</code>.</p> <p>The media format specified in <code>MediaFormat</code> isn't valid. Refer to <b>MediaFormat</b> for a list of supported formats.</p> </li>
+    /// <li> <p> <code>The media format provided does not match the detected media format</code>.</p> <p>The media format specified in <code>MediaFormat</code> doesn't match the format of the input file. Check the media format of your media file and correct the specified value.</p> </li>
+    /// <li> <p> <code>Invalid sample rate for audio file</code>.</p> <p>The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between 16,000 and 48,000 hertz.</p> </li>
+    /// <li> <p> <code>The sample rate provided does not match the detected sample rate</code>.</p> <p>The sample rate specified in <code>MediaSampleRateHertz</code> doesn't match the sample rate detected in your input media file. Check the sample rate of your media file and correct the specified value.</p> </li>
+    /// <li> <p> <code>Invalid file size: file size too large</code>.</p> <p>The size of your media file is larger than what Amazon Transcribe can process. For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.</p> </li>
+    /// <li> <p> <code>Invalid number of channels: number of channels too large</code>.</p> <p>Your audio contains more channels than Amazon Transcribe is able to process. For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.</p> </li>
+    /// </ul>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
+    }
     /// <p>Provides information on any additional settings that were included in your request. Additional settings include channel identification, alternative transcriptions, speaker partitioning, custom vocabularies, and custom vocabulary filters.</p>
     pub fn settings(mut self, input: crate::types::MedicalTranscriptionSetting) -> Self {
         self.settings = ::std::option::Option::Some(input);
@@ -369,6 +431,12 @@ impl MedicalTranscriptionJobBuilder {
     ) -> Self {
         self.settings = input;
         self
+    }
+    /// <p>Provides information on any additional settings that were included in your request. Additional settings include channel identification, alternative transcriptions, speaker partitioning, custom vocabularies, and custom vocabulary filters.</p>
+    pub fn get_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::MedicalTranscriptionSetting> {
+        &self.settings
     }
     /// <p>Indicates whether content identification was enabled for your transcription request.</p>
     pub fn content_identification_type(
@@ -386,6 +454,12 @@ impl MedicalTranscriptionJobBuilder {
         self.content_identification_type = input;
         self
     }
+    /// <p>Indicates whether content identification was enabled for your transcription request.</p>
+    pub fn get_content_identification_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::MedicalContentIdentificationType> {
+        &self.content_identification_type
+    }
     /// <p>Describes the medical specialty represented in your media.</p>
     pub fn specialty(mut self, input: crate::types::Specialty) -> Self {
         self.specialty = ::std::option::Option::Some(input);
@@ -396,6 +470,10 @@ impl MedicalTranscriptionJobBuilder {
         self.specialty = input;
         self
     }
+    /// <p>Describes the medical specialty represented in your media.</p>
+    pub fn get_specialty(&self) -> &::std::option::Option<crate::types::Specialty> {
+        &self.specialty
+    }
     /// <p>Indicates whether the input media is a dictation or a conversation, as specified in the <code>StartMedicalTranscriptionJob</code> request.</p>
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -405,6 +483,10 @@ impl MedicalTranscriptionJobBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::Type>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>Indicates whether the input media is a dictation or a conversation, as specified in the <code>StartMedicalTranscriptionJob</code> request.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::Type> {
+        &self.r#type
     }
     /// Appends an item to `tags`.
     ///
@@ -424,6 +506,10 @@ impl MedicalTranscriptionJobBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags, each in the form of a key:value pair, assigned to the specified medical transcription job.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`MedicalTranscriptionJob`](crate::types::MedicalTranscriptionJob).
     pub fn build(self) -> crate::types::MedicalTranscriptionJob {

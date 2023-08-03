@@ -73,6 +73,12 @@ impl BatchStopUpdateActionOutputBuilder {
         self.processed_update_actions = input;
         self
     }
+    /// <p>Update actions that have been processed successfully</p>
+    pub fn get_processed_update_actions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProcessedUpdateAction>> {
+        &self.processed_update_actions
+    }
     /// Appends an item to `unprocessed_update_actions`.
     ///
     /// To override the contents of this collection use [`set_unprocessed_update_actions`](Self::set_unprocessed_update_actions).
@@ -94,6 +100,12 @@ impl BatchStopUpdateActionOutputBuilder {
     ) -> Self {
         self.unprocessed_update_actions = input;
         self
+    }
+    /// <p>Update actions that haven't been processed successfully</p>
+    pub fn get_unprocessed_update_actions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedUpdateAction>> {
+        &self.unprocessed_update_actions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

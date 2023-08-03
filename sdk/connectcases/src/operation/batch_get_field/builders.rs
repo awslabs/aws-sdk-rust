@@ -36,6 +36,12 @@ impl BatchGetFieldFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchGetField as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_get_field::builders::BatchGetFieldInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl BatchGetFieldFluentBuilder {
         self.inner = self.inner.set_domain_id(input);
         self
     }
+    /// <p>The unique identifier of the Cases domain. </p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_id()
+    }
     /// Appends an item to `fields`.
     ///
     /// To override the contents of this collection use [`set_fields`](Self::set_fields).
@@ -134,5 +144,11 @@ impl BatchGetFieldFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_fields(input);
         self
+    }
+    /// <p>A list of unique field identifiers. </p>
+    pub fn get_fields(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>> {
+        self.inner.get_fields()
     }
 }

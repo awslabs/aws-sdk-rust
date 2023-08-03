@@ -54,6 +54,10 @@ impl DateIntervalBuilder {
         self.start_date_time = input;
         self
     }
+    /// <p> A JSON object containing start and date time (UTC). Date and time format is RFC 3339 : 'yyyy-MM-dd'T'HH:mm:ss.SSSZZ'. </p>
+    pub fn get_start_date_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_date_time
+    }
     /// <p> End Date Time (UTC). RFC 3339 format : 'yyyy-MM-dd'T'HH:mm:ss.SSSZZ'. </p>
     pub fn end_date_time(
         mut self,
@@ -69,6 +73,10 @@ impl DateIntervalBuilder {
     ) -> Self {
         self.end_date_time = input;
         self
+    }
+    /// <p> End Date Time (UTC). RFC 3339 format : 'yyyy-MM-dd'T'HH:mm:ss.SSSZZ'. </p>
+    pub fn get_end_date_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.end_date_time
     }
     /// Consumes the builder and constructs a [`DateInterval`](crate::types::DateInterval).
     pub fn build(self) -> crate::types::DateInterval {

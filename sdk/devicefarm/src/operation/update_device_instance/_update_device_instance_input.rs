@@ -56,6 +56,10 @@ impl UpdateDeviceInstanceInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the device instance.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The ARN of the profile that you want to associate with the device instance.</p>
     pub fn profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_arn = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl UpdateDeviceInstanceInputBuilder {
     pub fn set_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profile_arn = input;
         self
+    }
+    /// <p>The ARN of the profile that you want to associate with the device instance.</p>
+    pub fn get_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_arn
     }
     /// Appends an item to `labels`.
     ///
@@ -84,6 +92,10 @@ impl UpdateDeviceInstanceInputBuilder {
     ) -> Self {
         self.labels = input;
         self
+    }
+    /// <p>An array of strings that you want to associate with the device instance.</p>
+    pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.labels
     }
     /// Consumes the builder and constructs a [`UpdateDeviceInstanceInput`](crate::operation::update_device_instance::UpdateDeviceInstanceInput).
     pub fn build(

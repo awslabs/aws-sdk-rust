@@ -51,6 +51,11 @@ impl PutKmsEncryptionKeyInputBuilder {
         self.kms_encryption_key_arn = input;
         self
     }
+    /// <p>The KMS encryption key ARN.</p>
+    /// <p>The KMS key must be single-Region key. Amazon Fraud Detector does not support multi-Region KMS key.</p>
+    pub fn get_kms_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_encryption_key_arn
+    }
     /// Consumes the builder and constructs a [`PutKmsEncryptionKeyInput`](crate::operation::put_kms_encryption_key::PutKmsEncryptionKeyInput).
     pub fn build(
         self,

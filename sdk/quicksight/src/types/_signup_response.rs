@@ -64,6 +64,10 @@ impl SignupResponseBuilder {
         self.iam_user = input;
         self
     }
+    /// <p>A Boolean that is <code>TRUE</code> if the Amazon QuickSight uses IAM as an authentication method.</p>
+    pub fn get_iam_user(&self) -> &::std::option::Option<bool> {
+        &self.iam_user
+    }
     /// <p>The user login name for your Amazon QuickSight account.</p>
     pub fn user_login_name(
         mut self,
@@ -80,6 +84,10 @@ impl SignupResponseBuilder {
         self.user_login_name = input;
         self
     }
+    /// <p>The user login name for your Amazon QuickSight account.</p>
+    pub fn get_user_login_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_login_name
+    }
     /// <p>The name of your Amazon QuickSight account.</p>
     pub fn account_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_name = ::std::option::Option::Some(input.into());
@@ -89,6 +97,10 @@ impl SignupResponseBuilder {
     pub fn set_account_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_name = input;
         self
+    }
+    /// <p>The name of your Amazon QuickSight account.</p>
+    pub fn get_account_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_name
     }
     /// <p>The type of Active Directory that is being used to authenticate the Amazon QuickSight account. Valid values are <code>SIMPLE_AD</code>, <code>AD_CONNECTOR</code>, and <code>MICROSOFT_AD</code>.</p>
     pub fn directory_type(
@@ -105,6 +117,10 @@ impl SignupResponseBuilder {
     ) -> Self {
         self.directory_type = input;
         self
+    }
+    /// <p>The type of Active Directory that is being used to authenticate the Amazon QuickSight account. Valid values are <code>SIMPLE_AD</code>, <code>AD_CONNECTOR</code>, and <code>MICROSOFT_AD</code>.</p>
+    pub fn get_directory_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_type
     }
     /// Consumes the builder and constructs a [`SignupResponse`](crate::types::SignupResponse).
     pub fn build(self) -> crate::types::SignupResponse {

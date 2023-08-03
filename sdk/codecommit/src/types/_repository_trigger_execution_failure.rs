@@ -48,6 +48,10 @@ impl RepositoryTriggerExecutionFailureBuilder {
         self.trigger = input;
         self
     }
+    /// <p>The name of the trigger that did not run.</p>
+    pub fn get_trigger(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trigger
+    }
     /// <p>Message information about the trigger that did not run.</p>
     pub fn failure_message(
         mut self,
@@ -63,6 +67,10 @@ impl RepositoryTriggerExecutionFailureBuilder {
     ) -> Self {
         self.failure_message = input;
         self
+    }
+    /// <p>Message information about the trigger that did not run.</p>
+    pub fn get_failure_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_message
     }
     /// Consumes the builder and constructs a [`RepositoryTriggerExecutionFailure`](crate::types::RepositoryTriggerExecutionFailure).
     pub fn build(self) -> crate::types::RepositoryTriggerExecutionFailure {

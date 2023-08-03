@@ -40,6 +40,10 @@ impl DescribeConnectorInputBuilder {
         self.connector_id = input;
         self
     }
+    /// <p>The unique identifier for the connector.</p>
+    pub fn get_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connector_id
+    }
     /// Consumes the builder and constructs a [`DescribeConnectorInput`](crate::operation::describe_connector::DescribeConnectorInput).
     pub fn build(
         self,

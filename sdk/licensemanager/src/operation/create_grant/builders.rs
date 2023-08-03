@@ -36,6 +36,10 @@ impl CreateGrantFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateGrant as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_grant::builders::CreateGrantInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl CreateGrantFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>Grant name.</p>
     pub fn grant_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.grant_name(input.into());
@@ -128,6 +136,10 @@ impl CreateGrantFluentBuilder {
         self.inner = self.inner.set_grant_name(input);
         self
     }
+    /// <p>Grant name.</p>
+    pub fn get_grant_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_grant_name()
+    }
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     pub fn license_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.license_arn(input.into());
@@ -137,6 +149,10 @@ impl CreateGrantFluentBuilder {
     pub fn set_license_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_license_arn(input);
         self
+    }
+    /// <p>Amazon Resource Name (ARN) of the license.</p>
+    pub fn get_license_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_license_arn()
     }
     /// Appends an item to `Principals`.
     ///
@@ -173,6 +189,19 @@ impl CreateGrantFluentBuilder {
         self.inner = self.inner.set_principals(input);
         self
     }
+    /// <p>The grant principals. You can specify one of the following as an Amazon Resource Name (ARN):</p>
+    /// <ul>
+    /// <li> <p>An Amazon Web Services account, which includes only the account specified.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>An organizational unit (OU), which includes all accounts in the OU.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>An organization, which will include all accounts across your organization.</p> </li>
+    /// </ul>
+    pub fn get_principals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_principals()
+    }
     /// <p>Home Region of the grant.</p>
     pub fn home_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.home_region(input.into());
@@ -182,6 +211,10 @@ impl CreateGrantFluentBuilder {
     pub fn set_home_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_home_region(input);
         self
+    }
+    /// <p>Home Region of the grant.</p>
+    pub fn get_home_region(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_home_region()
     }
     /// Appends an item to `AllowedOperations`.
     ///
@@ -199,5 +232,11 @@ impl CreateGrantFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_allowed_operations(input);
         self
+    }
+    /// <p>Allowed operations for the grant.</p>
+    pub fn get_allowed_operations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>> {
+        self.inner.get_allowed_operations()
     }
 }

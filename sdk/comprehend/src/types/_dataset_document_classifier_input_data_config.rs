@@ -57,6 +57,12 @@ impl DatasetDocumentClassifierInputDataConfigBuilder {
         self.s3_uri = input;
         self
     }
+    /// <p>The Amazon S3 URI for the input data. The S3 bucket must be in the same Region as the API endpoint that you are calling. The URI can point to a single input file or it can provide the prefix for a collection of input files.</p>
+    /// <p>For example, if you use the URI <code>S3://bucketName/prefix</code>, if the prefix is a single file, Amazon Comprehend uses that file as input. If more than one file begins with the prefix, Amazon Comprehend uses all of them as input.</p>
+    /// <p>This parameter is required if you set <code>DataFormat</code> to <code>COMPREHEND_CSV</code>.</p>
+    pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_uri
+    }
     /// <p>Indicates the delimiter used to separate each label for training a multi-label classifier. The default delimiter between labels is a pipe (|). You can use a different character as a delimiter (if it's an allowed character) by specifying it under Delimiter for labels. If the training documents use a delimiter other than the default or the delimiter you specify, the labels on that line will be combined to make a single unique label, such as LABELLABELLABEL.</p>
     pub fn label_delimiter(
         mut self,
@@ -72,6 +78,10 @@ impl DatasetDocumentClassifierInputDataConfigBuilder {
     ) -> Self {
         self.label_delimiter = input;
         self
+    }
+    /// <p>Indicates the delimiter used to separate each label for training a multi-label classifier. The default delimiter between labels is a pipe (|). You can use a different character as a delimiter (if it's an allowed character) by specifying it under Delimiter for labels. If the training documents use a delimiter other than the default or the delimiter you specify, the labels on that line will be combined to make a single unique label, such as LABELLABELLABEL.</p>
+    pub fn get_label_delimiter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label_delimiter
     }
     /// Consumes the builder and constructs a [`DatasetDocumentClassifierInputDataConfig`](crate::types::DatasetDocumentClassifierInputDataConfig).
     pub fn build(self) -> crate::types::DatasetDocumentClassifierInputDataConfig {

@@ -72,6 +72,10 @@ impl ImageRecycleBinInfoBuilder {
         self.image_id = input;
         self
     }
+    /// <p>The ID of the AMI.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_id
+    }
     /// <p>The name of the AMI.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl ImageRecycleBinInfoBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the AMI.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the AMI.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl ImageRecycleBinInfoBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the AMI.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The date and time when the AMI entered the Recycle Bin.</p>
     pub fn recycle_bin_enter_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -105,6 +117,12 @@ impl ImageRecycleBinInfoBuilder {
         self.recycle_bin_enter_time = input;
         self
     }
+    /// <p>The date and time when the AMI entered the Recycle Bin.</p>
+    pub fn get_recycle_bin_enter_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.recycle_bin_enter_time
+    }
     /// <p>The date and time when the AMI is to be permanently deleted from the Recycle Bin.</p>
     pub fn recycle_bin_exit_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.recycle_bin_exit_time = ::std::option::Option::Some(input);
@@ -117,6 +135,12 @@ impl ImageRecycleBinInfoBuilder {
     ) -> Self {
         self.recycle_bin_exit_time = input;
         self
+    }
+    /// <p>The date and time when the AMI is to be permanently deleted from the Recycle Bin.</p>
+    pub fn get_recycle_bin_exit_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.recycle_bin_exit_time
     }
     /// Consumes the builder and constructs a [`ImageRecycleBinInfo`](crate::types::ImageRecycleBinInfo).
     pub fn build(self) -> crate::types::ImageRecycleBinInfo {

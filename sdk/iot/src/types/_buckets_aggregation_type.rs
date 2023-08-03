@@ -43,6 +43,10 @@ impl BucketsAggregationTypeBuilder {
         self.terms_aggregation = input;
         self
     }
+    /// <p>Performs an aggregation that will return a list of buckets. The list of buckets is a ranked list of the number of occurrences of an aggregation field value.</p>
+    pub fn get_terms_aggregation(&self) -> &::std::option::Option<crate::types::TermsAggregation> {
+        &self.terms_aggregation
+    }
     /// Consumes the builder and constructs a [`BucketsAggregationType`](crate::types::BucketsAggregationType).
     pub fn build(self) -> crate::types::BucketsAggregationType {
         crate::types::BucketsAggregationType {

@@ -54,6 +54,10 @@ impl DevEnvironmentRepositorySummaryBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name of the source repository.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>The name of the branch in a source repository cloned into the Dev Environment. </p>
     pub fn branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch_name = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl DevEnvironmentRepositorySummaryBuilder {
     pub fn set_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.branch_name = input;
         self
+    }
+    /// <p>The name of the branch in a source repository cloned into the Dev Environment. </p>
+    pub fn get_branch_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.branch_name
     }
     /// Consumes the builder and constructs a [`DevEnvironmentRepositorySummary`](crate::types::DevEnvironmentRepositorySummary).
     pub fn build(self) -> crate::types::DevEnvironmentRepositorySummary {

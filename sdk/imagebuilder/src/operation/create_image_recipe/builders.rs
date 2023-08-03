@@ -36,6 +36,12 @@ impl CreateImageRecipeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateImageRecipe as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_image_recipe::builders::CreateImageRecipeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateImageRecipeFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the image recipe.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The description of the image recipe.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -135,6 +145,10 @@ impl CreateImageRecipeFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the image recipe.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p> <note>
     /// <p>The semantic version has four nodes: <major>
@@ -182,6 +196,25 @@ impl CreateImageRecipeFluentBuilder {
         self.inner = self.inner.set_semantic_version(input);
         self
     }
+    /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p> <note>
+    /// <p>The semantic version has four nodes: <major>
+    /// .
+    /// <minor>
+    /// .
+    /// <patch>
+    /// /
+    /// <build>
+    /// . You can assign values for the first three, and can filter on all of them.
+    /// </build>
+    /// </patch>
+    /// </minor>
+    /// </major></p>
+    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+    /// </note>
+    pub fn get_semantic_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_semantic_version()
+    }
     /// Appends an item to `components`.
     ///
     /// To override the contents of this collection use [`set_components`](Self::set_components).
@@ -199,6 +232,12 @@ impl CreateImageRecipeFluentBuilder {
         self.inner = self.inner.set_components(input);
         self
     }
+    /// <p>The components included in the image recipe.</p>
+    pub fn get_components(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>> {
+        self.inner.get_components()
+    }
     /// <p>The base image of the image recipe. The value of the string can be the ARN of the base image or an AMI ID. The format for the ARN follows this example: <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>. You can provide the specific version that you want to use, or you can use a wildcard in all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI, and the AMI must be in the same Region in which you are using Image Builder.</p>
     pub fn parent_image(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.parent_image(input.into());
@@ -208,6 +247,10 @@ impl CreateImageRecipeFluentBuilder {
     pub fn set_parent_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_parent_image(input);
         self
+    }
+    /// <p>The base image of the image recipe. The value of the string can be the ARN of the base image or an AMI ID. The format for the ARN follows this example: <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>. You can provide the specific version that you want to use, or you can use a wildcard in all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI, and the AMI must be in the same Region in which you are using Image Builder.</p>
+    pub fn get_parent_image(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_parent_image()
     }
     /// Appends an item to `blockDeviceMappings`.
     ///
@@ -228,6 +271,12 @@ impl CreateImageRecipeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_block_device_mappings(input);
         self
+    }
+    /// <p>The block device mappings of the image recipe.</p>
+    pub fn get_block_device_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>> {
+        self.inner.get_block_device_mappings()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -252,6 +301,14 @@ impl CreateImageRecipeFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>The tags of the image recipe.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>The working directory used during build and test workflows.</p>
     pub fn working_directory(
         mut self,
@@ -267,6 +324,10 @@ impl CreateImageRecipeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_working_directory(input);
         self
+    }
+    /// <p>The working directory used during build and test workflows.</p>
+    pub fn get_working_directory(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_working_directory()
     }
     /// <p>Specify additional settings and launch scripts for your build instances.</p>
     pub fn additional_instance_configuration(
@@ -284,6 +345,12 @@ impl CreateImageRecipeFluentBuilder {
         self.inner = self.inner.set_additional_instance_configuration(input);
         self
     }
+    /// <p>Specify additional settings and launch scripts for your build instances.</p>
+    pub fn get_additional_instance_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AdditionalInstanceConfiguration> {
+        self.inner.get_additional_instance_configuration()
+    }
     /// <p>The idempotency token used to make this request idempotent.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -293,5 +360,9 @@ impl CreateImageRecipeFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>The idempotency token used to make this request idempotent.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

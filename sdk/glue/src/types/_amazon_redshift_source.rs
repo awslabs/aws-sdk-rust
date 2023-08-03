@@ -48,6 +48,10 @@ impl AmazonRedshiftSourceBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the Amazon Redshift source.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Specifies the data of the Amazon Reshift source node.</p>
     pub fn data(mut self, input: crate::types::AmazonRedshiftNodeData) -> Self {
         self.data = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl AmazonRedshiftSourceBuilder {
     ) -> Self {
         self.data = input;
         self
+    }
+    /// <p>Specifies the data of the Amazon Reshift source node.</p>
+    pub fn get_data(&self) -> &::std::option::Option<crate::types::AmazonRedshiftNodeData> {
+        &self.data
     }
     /// Consumes the builder and constructs a [`AmazonRedshiftSource`](crate::types::AmazonRedshiftSource).
     pub fn build(self) -> crate::types::AmazonRedshiftSource {

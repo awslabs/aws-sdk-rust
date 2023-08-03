@@ -40,6 +40,12 @@ impl PutUserPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutUserPolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_user_policy::builders::PutUserPolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,11 @@ impl PutUserPolicyFluentBuilder {
         self.inner = self.inner.set_user_name(input);
         self
     }
+    /// <p>The name of the user to associate the policy with.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_name()
+    }
     /// <p>The name of the policy document.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -135,6 +146,11 @@ impl PutUserPolicyFluentBuilder {
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_name(input);
         self
+    }
+    /// <p>The name of the policy document.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_name()
     }
     /// <p>The policy document.</p>
     /// <p>You must provide policies in JSON format in IAM. However, for CloudFormation templates formatted in YAML, you can provide the policy in JSON or YAML format. CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.</p>
@@ -165,5 +181,16 @@ impl PutUserPolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_policy_document(input);
         self
+    }
+    /// <p>The policy document.</p>
+    /// <p>You must provide policies in JSON format in IAM. However, for CloudFormation templates formatted in YAML, you can provide the policy in JSON or YAML format. CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of the following:</p>
+    /// <ul>
+    /// <li> <p>Any printable ASCII character ranging from the space character (<code>\u0020</code>) through the end of the ASCII character range</p> </li>
+    /// <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>)</p> </li>
+    /// <li> <p>The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>)</p> </li>
+    /// </ul>
+    pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_document()
     }
 }

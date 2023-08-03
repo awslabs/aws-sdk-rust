@@ -54,6 +54,10 @@ impl ListRuleGroupsOutputBuilder {
         self.next_marker = input;
         self
     }
+    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_marker
+    }
     /// Appends an item to `rule_groups`.
     ///
     /// To override the contents of this collection use [`set_rule_groups`](Self::set_rule_groups).
@@ -72,6 +76,12 @@ impl ListRuleGroupsOutputBuilder {
     ) -> Self {
         self.rule_groups = input;
         self
+    }
+    /// <p>Array of rule groups. If you specified a <code>Limit</code> in your request, this might not be the full list. </p>
+    pub fn get_rule_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleGroupSummary>> {
+        &self.rule_groups
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

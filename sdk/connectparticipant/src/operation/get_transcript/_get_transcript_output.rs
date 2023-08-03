@@ -68,6 +68,10 @@ impl GetTranscriptOutputBuilder {
         self.initial_contact_id = input;
         self
     }
+    /// <p>The initial contact ID for the contact. </p>
+    pub fn get_initial_contact_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.initial_contact_id
+    }
     /// Appends an item to `transcript`.
     ///
     /// To override the contents of this collection use [`set_transcript`](Self::set_transcript).
@@ -87,6 +91,10 @@ impl GetTranscriptOutputBuilder {
         self.transcript = input;
         self
     }
+    /// <p>The list of messages in the session.</p>
+    pub fn get_transcript(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Item>> {
+        &self.transcript
+    }
     /// <p>The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -96,6 +104,10 @@ impl GetTranscriptOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

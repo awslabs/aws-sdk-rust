@@ -84,6 +84,10 @@ impl DescribeDimensionKeysOutputBuilder {
         self.aligned_start_time = input;
         self
     }
+    /// <p>The start time for the returned dimension keys, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedStartTime</code> will be less than or equal to the value of the user-specified <code>StartTime</code>. </p>
+    pub fn get_aligned_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.aligned_start_time
+    }
     /// <p>The end time for the returned dimension keys, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedEndTime</code> will be greater than or equal to the value of the user-specified <code>Endtime</code>. </p>
     pub fn aligned_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.aligned_end_time = ::std::option::Option::Some(input);
@@ -96,6 +100,10 @@ impl DescribeDimensionKeysOutputBuilder {
     ) -> Self {
         self.aligned_end_time = input;
         self
+    }
+    /// <p>The end time for the returned dimension keys, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedEndTime</code> will be greater than or equal to the value of the user-specified <code>Endtime</code>. </p>
+    pub fn get_aligned_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.aligned_end_time
     }
     /// Appends an item to `partition_keys`.
     ///
@@ -116,6 +124,12 @@ impl DescribeDimensionKeysOutputBuilder {
         self.partition_keys = input;
         self
     }
+    /// <p>If <code>PartitionBy</code> was present in the request, <code>PartitionKeys</code> contains the breakdown of dimension keys by the specified partitions. </p>
+    pub fn get_partition_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResponsePartitionKey>> {
+        &self.partition_keys
+    }
     /// Appends an item to `keys`.
     ///
     /// To override the contents of this collection use [`set_keys`](Self::set_keys).
@@ -135,6 +149,12 @@ impl DescribeDimensionKeysOutputBuilder {
         self.keys = input;
         self
     }
+    /// <p>The dimension keys that were requested.</p>
+    pub fn get_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionKeyDescription>> {
+        &self.keys
+    }
     /// <p>A pagination token that indicates the response didn’t return all available records because <code>MaxRecords</code> was specified in the previous request. To get the remaining records, specify <code>NextToken</code> in a separate request with this value. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -144,6 +164,10 @@ impl DescribeDimensionKeysOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A pagination token that indicates the response didn’t return all available records because <code>MaxRecords</code> was specified in the previous request. To get the remaining records, specify <code>NextToken</code> in a separate request with this value. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

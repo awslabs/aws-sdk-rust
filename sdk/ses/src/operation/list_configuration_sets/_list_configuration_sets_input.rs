@@ -50,6 +50,10 @@ impl ListConfigurationSetsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token returned from a previous call to <code>ListConfigurationSets</code> to indicate the position of the configuration set in the configuration set list.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The number of configuration sets to return.</p>
     pub fn max_items(mut self, input: i32) -> Self {
         self.max_items = ::std::option::Option::Some(input);
@@ -59,6 +63,10 @@ impl ListConfigurationSetsInputBuilder {
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_items = input;
         self
+    }
+    /// <p>The number of configuration sets to return.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        &self.max_items
     }
     /// Consumes the builder and constructs a [`ListConfigurationSetsInput`](crate::operation::list_configuration_sets::ListConfigurationSetsInput).
     pub fn build(

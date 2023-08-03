@@ -51,6 +51,10 @@ impl UndeploySystemInstanceOutputBuilder {
         self.summary = input;
         self
     }
+    /// <p>An object that contains summary information about the system instance that was removed from its target.</p>
+    pub fn get_summary(&self) -> &::std::option::Option<crate::types::SystemInstanceSummary> {
+        &self.summary
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

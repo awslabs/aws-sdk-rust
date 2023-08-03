@@ -98,6 +98,12 @@ impl HlsEncryptionSettingsBuilder {
         self.constant_initialization_vector = input;
         self
     }
+    /// This is a 128-bit, 16-byte hex value represented by a 32-character text string. If this parameter is not set then the Initialization Vector will follow the segment number by default.
+    pub fn get_constant_initialization_vector(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.constant_initialization_vector
+    }
     /// Encrypts the segments with the given encryption scheme. Leave blank to disable. Selecting 'Disabled' in the web interface also disables encryption.
     pub fn encryption_method(mut self, input: crate::types::HlsEncryptionType) -> Self {
         self.encryption_method = ::std::option::Option::Some(input);
@@ -110,6 +116,10 @@ impl HlsEncryptionSettingsBuilder {
     ) -> Self {
         self.encryption_method = input;
         self
+    }
+    /// Encrypts the segments with the given encryption scheme. Leave blank to disable. Selecting 'Disabled' in the web interface also disables encryption.
+    pub fn get_encryption_method(&self) -> &::std::option::Option<crate::types::HlsEncryptionType> {
+        &self.encryption_method
     }
     /// The Initialization Vector is a 128-bit number used in conjunction with the key for encrypting blocks. If set to INCLUDE, Initialization Vector is listed in the manifest. Otherwise Initialization Vector is not in the manifest.
     pub fn initialization_vector_in_manifest(
@@ -127,6 +137,12 @@ impl HlsEncryptionSettingsBuilder {
         self.initialization_vector_in_manifest = input;
         self
     }
+    /// The Initialization Vector is a 128-bit number used in conjunction with the key for encrypting blocks. If set to INCLUDE, Initialization Vector is listed in the manifest. Otherwise Initialization Vector is not in the manifest.
+    pub fn get_initialization_vector_in_manifest(
+        &self,
+    ) -> &::std::option::Option<crate::types::HlsInitializationVectorInManifest> {
+        &self.initialization_vector_in_manifest
+    }
     /// Enable this setting to insert the EXT-X-SESSION-KEY element into the master playlist. This allows for offline Apple HLS FairPlay content protection.
     pub fn offline_encrypted(mut self, input: crate::types::HlsOfflineEncrypted) -> Self {
         self.offline_encrypted = ::std::option::Option::Some(input);
@@ -139,6 +155,12 @@ impl HlsEncryptionSettingsBuilder {
     ) -> Self {
         self.offline_encrypted = input;
         self
+    }
+    /// Enable this setting to insert the EXT-X-SESSION-KEY element into the master playlist. This allows for offline Apple HLS FairPlay content protection.
+    pub fn get_offline_encrypted(
+        &self,
+    ) -> &::std::option::Option<crate::types::HlsOfflineEncrypted> {
+        &self.offline_encrypted
     }
     /// If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider. If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
     pub fn speke_key_provider(mut self, input: crate::types::SpekeKeyProvider) -> Self {
@@ -153,6 +175,10 @@ impl HlsEncryptionSettingsBuilder {
         self.speke_key_provider = input;
         self
     }
+    /// If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider. If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead.
+    pub fn get_speke_key_provider(&self) -> &::std::option::Option<crate::types::SpekeKeyProvider> {
+        &self.speke_key_provider
+    }
     /// Use these settings to set up encryption with a static key provider.
     pub fn static_key_provider(mut self, input: crate::types::StaticKeyProvider) -> Self {
         self.static_key_provider = ::std::option::Option::Some(input);
@@ -166,6 +192,12 @@ impl HlsEncryptionSettingsBuilder {
         self.static_key_provider = input;
         self
     }
+    /// Use these settings to set up encryption with a static key provider.
+    pub fn get_static_key_provider(
+        &self,
+    ) -> &::std::option::Option<crate::types::StaticKeyProvider> {
+        &self.static_key_provider
+    }
     /// Specify whether your DRM encryption key is static or from a key provider that follows the SPEKE standard. For more information about SPEKE, see https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html.
     pub fn r#type(mut self, input: crate::types::HlsKeyProviderType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -178,6 +210,10 @@ impl HlsEncryptionSettingsBuilder {
     ) -> Self {
         self.r#type = input;
         self
+    }
+    /// Specify whether your DRM encryption key is static or from a key provider that follows the SPEKE standard. For more information about SPEKE, see https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html.
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::HlsKeyProviderType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`HlsEncryptionSettings`](crate::types::HlsEncryptionSettings).
     pub fn build(self) -> crate::types::HlsEncryptionSettings {

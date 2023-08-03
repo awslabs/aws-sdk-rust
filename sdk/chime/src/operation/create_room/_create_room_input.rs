@@ -62,6 +62,10 @@ impl CreateRoomInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The room name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl CreateRoomInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The room name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The idempotency token for the request.</p>
     pub fn client_request_token(
@@ -87,6 +95,10 @@ impl CreateRoomInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>The idempotency token for the request.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Consumes the builder and constructs a [`CreateRoomInput`](crate::operation::create_room::CreateRoomInput).
     pub fn build(

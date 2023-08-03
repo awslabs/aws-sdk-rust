@@ -59,6 +59,10 @@ impl UpdateDocumentationPartInputBuilder {
         self.rest_api_id = input;
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rest_api_id
+    }
     /// <p>The identifier of the to-be-updated documentation part.</p>
     pub fn documentation_part_id(
         mut self,
@@ -74,6 +78,10 @@ impl UpdateDocumentationPartInputBuilder {
     ) -> Self {
         self.documentation_part_id = input;
         self
+    }
+    /// <p>The identifier of the to-be-updated documentation part.</p>
+    pub fn get_documentation_part_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.documentation_part_id
     }
     /// Appends an item to `patch_operations`.
     ///
@@ -93,6 +101,12 @@ impl UpdateDocumentationPartInputBuilder {
     ) -> Self {
         self.patch_operations = input;
         self
+    }
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
+    pub fn get_patch_operations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
+        &self.patch_operations
     }
     /// Consumes the builder and constructs a [`UpdateDocumentationPartInput`](crate::operation::update_documentation_part::UpdateDocumentationPartInput).
     pub fn build(

@@ -72,6 +72,10 @@ impl GetChunkOutputBuilder {
         self.data = input;
         self
     }
+    /// Chunk data
+    pub fn get_data(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+        &self.data
+    }
     /// Data length
     pub fn length(mut self, input: i64) -> Self {
         self.length = ::std::option::Option::Some(input);
@@ -82,6 +86,10 @@ impl GetChunkOutputBuilder {
         self.length = input;
         self
     }
+    /// Data length
+    pub fn get_length(&self) -> &::std::option::Option<i64> {
+        &self.length
+    }
     /// Data checksum
     pub fn checksum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.checksum = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl GetChunkOutputBuilder {
     pub fn set_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.checksum = input;
         self
+    }
+    /// Data checksum
+    pub fn get_checksum(&self) -> &::std::option::Option<::std::string::String> {
+        &self.checksum
     }
     /// Checksum algorithm
     pub fn checksum_algorithm(mut self, input: crate::types::DataChecksumAlgorithm) -> Self {
@@ -104,6 +116,12 @@ impl GetChunkOutputBuilder {
     ) -> Self {
         self.checksum_algorithm = input;
         self
+    }
+    /// Checksum algorithm
+    pub fn get_checksum_algorithm(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataChecksumAlgorithm> {
+        &self.checksum_algorithm
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

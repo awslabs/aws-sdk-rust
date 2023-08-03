@@ -39,6 +39,13 @@ impl CreateMeetingDialOutFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateMeetingDialOut as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_meeting_dial_out::builders::CreateMeetingDialOutInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +136,10 @@ impl CreateMeetingDialOutFluentBuilder {
         self.inner = self.inner.set_meeting_id(input);
         self
     }
+    /// <p>The Amazon Chime SDK meeting ID.</p>
+    pub fn get_meeting_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_meeting_id()
+    }
     /// <p>Phone number used as the caller ID when the remote party receives a call.</p>
     pub fn from_phone_number(
         mut self,
@@ -144,6 +155,10 @@ impl CreateMeetingDialOutFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_from_phone_number(input);
         self
+    }
+    /// <p>Phone number used as the caller ID when the remote party receives a call.</p>
+    pub fn get_from_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_from_phone_number()
     }
     /// <p>Phone number called when inviting someone to a meeting.</p>
     pub fn to_phone_number(
@@ -161,6 +176,10 @@ impl CreateMeetingDialOutFluentBuilder {
         self.inner = self.inner.set_to_phone_number(input);
         self
     }
+    /// <p>Phone number called when inviting someone to a meeting.</p>
+    pub fn get_to_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_to_phone_number()
+    }
     /// <p>Token used by the Amazon Chime SDK attendee. Call the <a href="https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateAttendee.html">CreateAttendee</a> action to get a join token.</p>
     pub fn join_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.join_token(input.into());
@@ -170,5 +189,9 @@ impl CreateMeetingDialOutFluentBuilder {
     pub fn set_join_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_join_token(input);
         self
+    }
+    /// <p>Token used by the Amazon Chime SDK attendee. Call the <a href="https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateAttendee.html">CreateAttendee</a> action to get a join token.</p>
+    pub fn get_join_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_join_token()
     }
 }

@@ -73,6 +73,10 @@ impl ListRotationOverridesInputBuilder {
         self.rotation_id = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the rotation to retrieve information about.</p>
+    pub fn get_rotation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rotation_id
+    }
     /// <p>The date and time for the beginning of a time range for listing overrides.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -85,6 +89,10 @@ impl ListRotationOverridesInputBuilder {
     ) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>The date and time for the beginning of a time range for listing overrides.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p>The date and time for the end of a time range for listing overrides.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -99,6 +107,10 @@ impl ListRotationOverridesInputBuilder {
         self.end_time = input;
         self
     }
+    /// <p>The date and time for the end of a time range for listing overrides.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -109,6 +121,10 @@ impl ListRotationOverridesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token to start the list. Use this token to get the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -118,6 +134,10 @@ impl ListRotationOverridesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListRotationOverridesInput`](crate::operation::list_rotation_overrides::ListRotationOverridesInput).
     pub fn build(

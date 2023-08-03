@@ -57,6 +57,10 @@ impl RemoveProfilePermissionInputBuilder {
         self.profile_name = input;
         self
     }
+    /// <p>A human-readable name for the signing profile with permissions to be removed.</p>
+    pub fn get_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_name
+    }
     /// <p>An identifier for the current revision of the signing profile permissions.</p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
@@ -67,6 +71,10 @@ impl RemoveProfilePermissionInputBuilder {
         self.revision_id = input;
         self
     }
+    /// <p>An identifier for the current revision of the signing profile permissions.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision_id
+    }
     /// <p>A unique identifier for the cross-account permissions statement.</p>
     pub fn statement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.statement_id = ::std::option::Option::Some(input.into());
@@ -76,6 +84,10 @@ impl RemoveProfilePermissionInputBuilder {
     pub fn set_statement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.statement_id = input;
         self
+    }
+    /// <p>A unique identifier for the cross-account permissions statement.</p>
+    pub fn get_statement_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.statement_id
     }
     /// Consumes the builder and constructs a [`RemoveProfilePermissionInput`](crate::operation::remove_profile_permission::RemoveProfilePermissionInput).
     pub fn build(

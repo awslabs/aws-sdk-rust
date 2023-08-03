@@ -45,6 +45,10 @@ impl GetVoiceProfileInputBuilder {
         self.voice_profile_id = input;
         self
     }
+    /// <p>The voice profile ID.</p>
+    pub fn get_voice_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.voice_profile_id
+    }
     /// Consumes the builder and constructs a [`GetVoiceProfileInput`](crate::operation::get_voice_profile::GetVoiceProfileInput).
     pub fn build(
         self,

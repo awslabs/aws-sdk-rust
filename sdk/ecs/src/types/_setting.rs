@@ -56,6 +56,10 @@ impl SettingBuilder {
         self.name = input;
         self
     }
+    /// <p>The Amazon ECS resource name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::SettingName> {
+        &self.name
+    }
     /// <p>Determines whether the account setting is on or off for the specified resource.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl SettingBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>Determines whether the account setting is on or off for the specified resource.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// <p>The ARN of the principal. It can be a user, role, or the root user. If this field is omitted, the authenticated user is assumed.</p>
     pub fn principal_arn(
@@ -81,6 +89,10 @@ impl SettingBuilder {
     ) -> Self {
         self.principal_arn = input;
         self
+    }
+    /// <p>The ARN of the principal. It can be a user, role, or the root user. If this field is omitted, the authenticated user is assumed.</p>
+    pub fn get_principal_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal_arn
     }
     /// Consumes the builder and constructs a [`Setting`](crate::types::Setting).
     pub fn build(self) -> crate::types::Setting {

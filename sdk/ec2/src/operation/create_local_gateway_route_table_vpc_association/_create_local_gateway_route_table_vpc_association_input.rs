@@ -70,6 +70,12 @@ impl CreateLocalGatewayRouteTableVpcAssociationInputBuilder {
         self.local_gateway_route_table_id = input;
         self
     }
+    /// <p>The ID of the local gateway route table.</p>
+    pub fn get_local_gateway_route_table_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.local_gateway_route_table_id
+    }
     /// <p>The ID of the VPC.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -79,6 +85,10 @@ impl CreateLocalGatewayRouteTableVpcAssociationInputBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The ID of the VPC.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// Appends an item to `tag_specifications`.
     ///
@@ -99,6 +109,12 @@ impl CreateLocalGatewayRouteTableVpcAssociationInputBuilder {
         self.tag_specifications = input;
         self
     }
+    /// <p>The tags to assign to the local gateway route table VPC association.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        &self.tag_specifications
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -108,6 +124,10 @@ impl CreateLocalGatewayRouteTableVpcAssociationInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`CreateLocalGatewayRouteTableVpcAssociationInput`](crate::operation::create_local_gateway_route_table_vpc_association::CreateLocalGatewayRouteTableVpcAssociationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_local_gateway_route_table_vpc_association::CreateLocalGatewayRouteTableVpcAssociationInput, ::aws_smithy_http::operation::error::BuildError>{

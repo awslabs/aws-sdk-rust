@@ -151,6 +151,12 @@ impl StreamConfigurationBuilder {
         self.clipboard_mode = input;
         self
     }
+    /// <p>Allows or deactivates the use of the system clipboard to copy and paste between the streaming session and streaming client.</p>
+    pub fn get_clipboard_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::StreamingClipboardMode> {
+        &self.clipboard_mode
+    }
     /// Appends an item to `ec2_instance_types`.
     ///
     /// To override the contents of this collection use [`set_ec2_instance_types`](Self::set_ec2_instance_types).
@@ -170,6 +176,12 @@ impl StreamConfigurationBuilder {
         self.ec2_instance_types = input;
         self
     }
+    /// <p>The EC2 instance types that users can select from when launching a streaming session with this launch profile.</p>
+    pub fn get_ec2_instance_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StreamingInstanceType>> {
+        &self.ec2_instance_types
+    }
     /// <p>The length of time, in minutes, that a streaming session can be active before it is stopped or terminated. After this point, Nimble Studio automatically terminates or stops the session. The default length of time is 690 minutes, and the maximum length of time is 30 days.</p>
     pub fn max_session_length_in_minutes(mut self, input: i32) -> Self {
         self.max_session_length_in_minutes = ::std::option::Option::Some(input);
@@ -179,6 +191,10 @@ impl StreamConfigurationBuilder {
     pub fn set_max_session_length_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_session_length_in_minutes = input;
         self
+    }
+    /// <p>The length of time, in minutes, that a streaming session can be active before it is stopped or terminated. After this point, Nimble Studio automatically terminates or stops the session. The default length of time is 690 minutes, and the maximum length of time is 30 days.</p>
+    pub fn get_max_session_length_in_minutes(&self) -> &::std::option::Option<i32> {
+        &self.max_session_length_in_minutes
     }
     /// Appends an item to `streaming_image_ids`.
     ///
@@ -202,6 +218,12 @@ impl StreamConfigurationBuilder {
         self.streaming_image_ids = input;
         self
     }
+    /// <p>The streaming images that users can select from when launching a streaming session with this launch profile.</p>
+    pub fn get_streaming_image_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.streaming_image_ids
+    }
     /// <p>Integer that determines if you can start and stop your sessions and how long a session can stay in the <code>STOPPED</code> state. The default value is 0. The maximum value is 5760.</p>
     /// <p>This field is allowed only when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code> and <code>automaticTerminationMode</code> is <code>ACTIVATED</code>.</p>
     /// <p>If the value is set to 0, your sessions can’t be <code>STOPPED</code>. If you then call <code>StopStreamingSession</code>, the session fails. If the time that a session stays in the <code>READY</code> state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be terminated (instead of <code>STOPPED</code>).</p>
@@ -221,6 +243,13 @@ impl StreamConfigurationBuilder {
         self.max_stopped_session_length_in_minutes = input;
         self
     }
+    /// <p>Integer that determines if you can start and stop your sessions and how long a session can stay in the <code>STOPPED</code> state. The default value is 0. The maximum value is 5760.</p>
+    /// <p>This field is allowed only when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code> and <code>automaticTerminationMode</code> is <code>ACTIVATED</code>.</p>
+    /// <p>If the value is set to 0, your sessions can’t be <code>STOPPED</code>. If you then call <code>StopStreamingSession</code>, the session fails. If the time that a session stays in the <code>READY</code> state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be terminated (instead of <code>STOPPED</code>).</p>
+    /// <p>If the value is set to a positive number, the session can be stopped. You can call <code>StopStreamingSession</code> to stop sessions in the <code>READY</code> state. If the time that a session stays in the <code>READY</code> state exceeds the <code>maxSessionLengthInMinutes</code> value, the session will automatically be stopped (instead of terminated).</p>
+    pub fn get_max_stopped_session_length_in_minutes(&self) -> &::std::option::Option<i32> {
+        &self.max_stopped_session_length_in_minutes
+    }
     /// <p>The upload storage for a streaming session.</p>
     pub fn session_storage(
         mut self,
@@ -237,6 +266,12 @@ impl StreamConfigurationBuilder {
         self.session_storage = input;
         self
     }
+    /// <p>The upload storage for a streaming session.</p>
+    pub fn get_session_storage(
+        &self,
+    ) -> &::std::option::Option<crate::types::StreamConfigurationSessionStorage> {
+        &self.session_storage
+    }
     /// <p>Information about the streaming session backup.</p>
     pub fn session_backup(mut self, input: crate::types::StreamConfigurationSessionBackup) -> Self {
         self.session_backup = ::std::option::Option::Some(input);
@@ -250,6 +285,12 @@ impl StreamConfigurationBuilder {
         self.session_backup = input;
         self
     }
+    /// <p>Information about the streaming session backup.</p>
+    pub fn get_session_backup(
+        &self,
+    ) -> &::std::option::Option<crate::types::StreamConfigurationSessionBackup> {
+        &self.session_backup
+    }
     /// <p>Determine if a streaming session created from this launch profile can configure persistent storage. This means that <code>volumeConfiguration</code> and <code>automaticTerminationMode</code> are configured.</p>
     pub fn session_persistence_mode(mut self, input: crate::types::SessionPersistenceMode) -> Self {
         self.session_persistence_mode = ::std::option::Option::Some(input);
@@ -262,6 +303,12 @@ impl StreamConfigurationBuilder {
     ) -> Self {
         self.session_persistence_mode = input;
         self
+    }
+    /// <p>Determine if a streaming session created from this launch profile can configure persistent storage. This means that <code>volumeConfiguration</code> and <code>automaticTerminationMode</code> are configured.</p>
+    pub fn get_session_persistence_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::SessionPersistenceMode> {
+        &self.session_persistence_mode
     }
     /// <p>Custom volume configuration for the root volumes that are attached to streaming sessions.</p>
     /// <p>This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.</p>
@@ -277,6 +324,13 @@ impl StreamConfigurationBuilder {
     ) -> Self {
         self.volume_configuration = input;
         self
+    }
+    /// <p>Custom volume configuration for the root volumes that are attached to streaming sessions.</p>
+    /// <p>This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.</p>
+    pub fn get_volume_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::VolumeConfiguration> {
+        &self.volume_configuration
     }
     /// <p>Indicates if a streaming session created from this launch profile should be terminated automatically or retained without termination after being in a <code>STOPPED</code> state.</p>
     /// <ul>
@@ -303,6 +357,17 @@ impl StreamConfigurationBuilder {
     ) -> Self {
         self.automatic_termination_mode = input;
         self
+    }
+    /// <p>Indicates if a streaming session created from this launch profile should be terminated automatically or retained without termination after being in a <code>STOPPED</code> state.</p>
+    /// <ul>
+    /// <li> <p>When <code>ACTIVATED</code>, the streaming session is scheduled for termination after being in the <code>STOPPED</code> state for the time specified in <code>maxStoppedSessionLengthInMinutes</code>.</p> </li>
+    /// <li> <p>When <code>DEACTIVATED</code>, the streaming session can remain in the <code>STOPPED</code> state indefinitely.</p> </li>
+    /// </ul>
+    /// <p>This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>. When allowed, the default value for this parameter is <code>DEACTIVATED</code>.</p>
+    pub fn get_automatic_termination_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutomaticTerminationMode> {
+        &self.automatic_termination_mode
     }
     /// Consumes the builder and constructs a [`StreamConfiguration`](crate::types::StreamConfiguration).
     pub fn build(self) -> crate::types::StreamConfiguration {

@@ -49,6 +49,10 @@ impl PossibleRemediationActionsBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the possible remediation actions list.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// Appends an item to `actions`.
     ///
     /// To override the contents of this collection use [`set_actions`](Self::set_actions).
@@ -67,6 +71,12 @@ impl PossibleRemediationActionsBuilder {
     ) -> Self {
         self.actions = input;
         self
+    }
+    /// <p>Information about the actions.</p>
+    pub fn get_actions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PossibleRemediationAction>> {
+        &self.actions
     }
     /// Consumes the builder and constructs a [`PossibleRemediationActions`](crate::types::PossibleRemediationActions).
     pub fn build(self) -> crate::types::PossibleRemediationActions {

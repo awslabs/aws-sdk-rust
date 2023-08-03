@@ -36,6 +36,12 @@ impl DeleteRecipeVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteRecipeVersion as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_recipe_version::builders::DeleteRecipeVersionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DeleteRecipeVersionFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the recipe.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The version of the recipe to be deleted. You can specify a numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.</p>
     pub fn recipe_version(
         mut self,
@@ -141,5 +151,9 @@ impl DeleteRecipeVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_recipe_version(input);
         self
+    }
+    /// <p>The version of the recipe to be deleted. You can specify a numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.</p>
+    pub fn get_recipe_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_recipe_version()
     }
 }

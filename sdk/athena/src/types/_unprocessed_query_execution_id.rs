@@ -62,6 +62,10 @@ impl UnprocessedQueryExecutionIdBuilder {
         self.query_execution_id = input;
         self
     }
+    /// <p>The unique identifier of the query execution.</p>
+    pub fn get_query_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_execution_id
+    }
     /// <p>The error code returned when the query execution failed to process, if applicable.</p>
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl UnprocessedQueryExecutionIdBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>The error code returned when the query execution failed to process, if applicable.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
     }
     /// <p>The error message returned when the query execution failed to process, if applicable.</p>
     pub fn error_message(
@@ -87,6 +95,10 @@ impl UnprocessedQueryExecutionIdBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>The error message returned when the query execution failed to process, if applicable.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`UnprocessedQueryExecutionId`](crate::types::UnprocessedQueryExecutionId).
     pub fn build(self) -> crate::types::UnprocessedQueryExecutionId {

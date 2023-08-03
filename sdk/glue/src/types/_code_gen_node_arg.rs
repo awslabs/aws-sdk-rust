@@ -56,6 +56,10 @@ impl CodeGenNodeArgBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the argument or property.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The value of the argument or property.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl CodeGenNodeArgBuilder {
         self.value = input;
         self
     }
+    /// <p>The value of the argument or property.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// <p>True if the value is used as a parameter.</p>
     pub fn param(mut self, input: bool) -> Self {
         self.param = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl CodeGenNodeArgBuilder {
     pub fn set_param(mut self, input: ::std::option::Option<bool>) -> Self {
         self.param = input;
         self
+    }
+    /// <p>True if the value is used as a parameter.</p>
+    pub fn get_param(&self) -> &::std::option::Option<bool> {
+        &self.param
     }
     /// Consumes the builder and constructs a [`CodeGenNodeArg`](crate::types::CodeGenNodeArg).
     pub fn build(self) -> crate::types::CodeGenNodeArg {

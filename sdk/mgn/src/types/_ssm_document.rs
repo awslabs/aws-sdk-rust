@@ -105,6 +105,10 @@ impl SsmDocumentBuilder {
         self.action_name = input;
         self
     }
+    /// <p>User-friendly name for the AWS Systems Manager Document.</p>
+    pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_name
+    }
     /// <p>AWS Systems Manager Document name or full ARN.</p>
     pub fn ssm_document_name(
         mut self,
@@ -121,6 +125,10 @@ impl SsmDocumentBuilder {
         self.ssm_document_name = input;
         self
     }
+    /// <p>AWS Systems Manager Document name or full ARN.</p>
+    pub fn get_ssm_document_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ssm_document_name
+    }
     /// <p>AWS Systems Manager Document timeout seconds.</p>
     pub fn timeout_seconds(mut self, input: i32) -> Self {
         self.timeout_seconds = ::std::option::Option::Some(input);
@@ -131,6 +139,10 @@ impl SsmDocumentBuilder {
         self.timeout_seconds = input;
         self
     }
+    /// <p>AWS Systems Manager Document timeout seconds.</p>
+    pub fn get_timeout_seconds(&self) -> &::std::option::Option<i32> {
+        &self.timeout_seconds
+    }
     /// <p>If true, Cutover will not be enabled if the document has failed.</p>
     pub fn must_succeed_for_cutover(mut self, input: bool) -> Self {
         self.must_succeed_for_cutover = ::std::option::Option::Some(input);
@@ -140,6 +152,10 @@ impl SsmDocumentBuilder {
     pub fn set_must_succeed_for_cutover(mut self, input: ::std::option::Option<bool>) -> Self {
         self.must_succeed_for_cutover = input;
         self
+    }
+    /// <p>If true, Cutover will not be enabled if the document has failed.</p>
+    pub fn get_must_succeed_for_cutover(&self) -> &::std::option::Option<bool> {
+        &self.must_succeed_for_cutover
     }
     /// Adds a key-value pair to `parameters`.
     ///
@@ -169,6 +185,17 @@ impl SsmDocumentBuilder {
         self.parameters = input;
         self
     }
+    /// <p>AWS Systems Manager Document parameters.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            ::std::vec::Vec<crate::types::SsmParameterStoreParameter>,
+        >,
+    > {
+        &self.parameters
+    }
     /// Adds a key-value pair to `external_parameters`.
     ///
     /// To override the contents of this collection use [`set_external_parameters`](Self::set_external_parameters).
@@ -193,6 +220,14 @@ impl SsmDocumentBuilder {
     ) -> Self {
         self.external_parameters = input;
         self
+    }
+    /// <p>AWS Systems Manager Document external parameters.</p>
+    pub fn get_external_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::SsmExternalParameter>,
+    > {
+        &self.external_parameters
     }
     /// Consumes the builder and constructs a [`SsmDocument`](crate::types::SsmDocument).
     pub fn build(self) -> crate::types::SsmDocument {

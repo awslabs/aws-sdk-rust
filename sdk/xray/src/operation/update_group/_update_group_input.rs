@@ -73,6 +73,10 @@ impl UpdateGroupInputBuilder {
         self.group_name = input;
         self
     }
+    /// <p>The case-sensitive name of the group.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
+    }
     /// <p>The ARN that was generated upon creation.</p>
     pub fn group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_arn = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl UpdateGroupInputBuilder {
     pub fn set_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_arn = input;
         self
+    }
+    /// <p>The ARN that was generated upon creation.</p>
+    pub fn get_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_arn
     }
     /// <p>The updated filter expression defining criteria by which to group traces.</p>
     pub fn filter_expression(
@@ -98,6 +106,10 @@ impl UpdateGroupInputBuilder {
     ) -> Self {
         self.filter_expression = input;
         self
+    }
+    /// <p>The updated filter expression defining criteria by which to group traces.</p>
+    pub fn get_filter_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filter_expression
     }
     /// <p>The structure containing configurations related to insights.</p>
     /// <ul>
@@ -119,6 +131,16 @@ impl UpdateGroupInputBuilder {
     ) -> Self {
         self.insights_configuration = input;
         self
+    }
+    /// <p>The structure containing configurations related to insights.</p>
+    /// <ul>
+    /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li>
+    /// <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications for the group. Notifications can only be enabled on a group with InsightsEnabled set to true.</p> </li>
+    /// </ul>
+    pub fn get_insights_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::InsightsConfiguration> {
+        &self.insights_configuration
     }
     /// Consumes the builder and constructs a [`UpdateGroupInput`](crate::operation::update_group::UpdateGroupInput).
     pub fn build(

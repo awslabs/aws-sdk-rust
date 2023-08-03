@@ -49,6 +49,12 @@ impl CreateMembersInputBuilder {
         self.account_details = input;
         self
     }
+    /// <p>The list of accounts to associate with the Security Hub administrator account. For each account, the list includes the account ID and optionally the email address.</p>
+    pub fn get_account_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountDetails>> {
+        &self.account_details
+    }
     /// Consumes the builder and constructs a [`CreateMembersInput`](crate::operation::create_members::CreateMembersInput).
     pub fn build(
         self,

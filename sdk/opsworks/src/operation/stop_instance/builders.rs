@@ -37,6 +37,10 @@ impl StopInstanceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StopInstance as a reference.
+    pub fn as_input(&self) -> &crate::operation::stop_instance::builders::StopInstanceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl StopInstanceFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
+    /// <p>The instance ID.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
     /// <p>Specifies whether to force an instance to stop. If the instance's root device type is <code>ebs</code>, or EBS-backed, adding the <code>Force</code> parameter to the <code>StopInstances</code> API call disassociates the AWS OpsWorks Stacks instance from EC2, and forces deletion of <i>only</i> the OpsWorks Stacks instance. You must also delete the formerly-associated instance in EC2 after troubleshooting and replacing the AWS OpsWorks Stacks instance with a new one.</p>
     pub fn force(mut self, input: bool) -> Self {
         self.inner = self.inner.force(input);
@@ -128,5 +136,9 @@ impl StopInstanceFluentBuilder {
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force(input);
         self
+    }
+    /// <p>Specifies whether to force an instance to stop. If the instance's root device type is <code>ebs</code>, or EBS-backed, adding the <code>Force</code> parameter to the <code>StopInstances</code> API call disassociates the AWS OpsWorks Stacks instance from EC2, and forces deletion of <i>only</i> the OpsWorks Stacks instance. You must also delete the formerly-associated instance in EC2 after troubleshooting and replacing the AWS OpsWorks Stacks instance with a new one.</p>
+    pub fn get_force(&self) -> &::std::option::Option<bool> {
+        self.inner.get_force()
     }
 }

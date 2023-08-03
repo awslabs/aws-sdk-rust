@@ -78,6 +78,12 @@ impl NetworkInsightsAccessScopeBuilder {
         self.network_insights_access_scope_id = input;
         self
     }
+    /// <p>The ID of the Network Access Scope.</p>
+    pub fn get_network_insights_access_scope_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.network_insights_access_scope_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the Network Access Scope.</p>
     pub fn network_insights_access_scope_arn(
         mut self,
@@ -94,6 +100,12 @@ impl NetworkInsightsAccessScopeBuilder {
         self.network_insights_access_scope_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Network Access Scope.</p>
+    pub fn get_network_insights_access_scope_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.network_insights_access_scope_arn
+    }
     /// <p>The creation date.</p>
     pub fn created_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_date = ::std::option::Option::Some(input);
@@ -107,6 +119,10 @@ impl NetworkInsightsAccessScopeBuilder {
         self.created_date = input;
         self
     }
+    /// <p>The creation date.</p>
+    pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_date
+    }
     /// <p>The last updated date.</p>
     pub fn updated_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_date = ::std::option::Option::Some(input);
@@ -119,6 +135,10 @@ impl NetworkInsightsAccessScopeBuilder {
     ) -> Self {
         self.updated_date = input;
         self
+    }
+    /// <p>The last updated date.</p>
+    pub fn get_updated_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_date
     }
     /// Appends an item to `tags`.
     ///
@@ -138,6 +158,10 @@ impl NetworkInsightsAccessScopeBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`NetworkInsightsAccessScope`](crate::types::NetworkInsightsAccessScope).
     pub fn build(self) -> crate::types::NetworkInsightsAccessScope {

@@ -44,6 +44,10 @@ impl ModifyLoadBalancerAttributesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyLoadBalancerAttributes as a reference.
+    pub fn as_input(&self) -> &crate::operation::modify_load_balancer_attributes::builders::ModifyLoadBalancerAttributesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +144,10 @@ impl ModifyLoadBalancerAttributesFluentBuilder {
         self.inner = self.inner.set_load_balancer_name(input);
         self
     }
+    /// <p>The name of the load balancer.</p>
+    pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_load_balancer_name()
+    }
     /// <p>The attributes for the load balancer.</p>
     pub fn load_balancer_attributes(mut self, input: crate::types::LoadBalancerAttributes) -> Self {
         self.inner = self.inner.load_balancer_attributes(input);
@@ -152,5 +160,11 @@ impl ModifyLoadBalancerAttributesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_load_balancer_attributes(input);
         self
+    }
+    /// <p>The attributes for the load balancer.</p>
+    pub fn get_load_balancer_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::LoadBalancerAttributes> {
+        self.inner.get_load_balancer_attributes()
     }
 }

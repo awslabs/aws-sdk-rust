@@ -47,6 +47,10 @@ impl DeleteCalculatedAttributeDefinitionInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The unique name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The unique name of the calculated attribute.</p>
     pub fn calculated_attribute_name(
         mut self,
@@ -62,6 +66,10 @@ impl DeleteCalculatedAttributeDefinitionInputBuilder {
     ) -> Self {
         self.calculated_attribute_name = input;
         self
+    }
+    /// <p>The unique name of the calculated attribute.</p>
+    pub fn get_calculated_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.calculated_attribute_name
     }
     /// Consumes the builder and constructs a [`DeleteCalculatedAttributeDefinitionInput`](crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionInput, ::aws_smithy_http::operation::error::BuildError>{

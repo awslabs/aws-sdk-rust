@@ -74,6 +74,12 @@ impl HlsSettingsBuilder {
         self.audio_only_hls_settings = input;
         self
     }
+    /// Audio Only Hls Settings
+    pub fn get_audio_only_hls_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::AudioOnlyHlsSettings> {
+        &self.audio_only_hls_settings
+    }
     /// Fmp4 Hls Settings
     pub fn fmp4_hls_settings(mut self, input: crate::types::Fmp4HlsSettings) -> Self {
         self.fmp4_hls_settings = ::std::option::Option::Some(input);
@@ -86,6 +92,10 @@ impl HlsSettingsBuilder {
     ) -> Self {
         self.fmp4_hls_settings = input;
         self
+    }
+    /// Fmp4 Hls Settings
+    pub fn get_fmp4_hls_settings(&self) -> &::std::option::Option<crate::types::Fmp4HlsSettings> {
+        &self.fmp4_hls_settings
     }
     /// Frame Capture Hls Settings
     pub fn frame_capture_hls_settings(
@@ -103,6 +113,12 @@ impl HlsSettingsBuilder {
         self.frame_capture_hls_settings = input;
         self
     }
+    /// Frame Capture Hls Settings
+    pub fn get_frame_capture_hls_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::FrameCaptureHlsSettings> {
+        &self.frame_capture_hls_settings
+    }
     /// Standard Hls Settings
     pub fn standard_hls_settings(mut self, input: crate::types::StandardHlsSettings) -> Self {
         self.standard_hls_settings = ::std::option::Option::Some(input);
@@ -115,6 +131,12 @@ impl HlsSettingsBuilder {
     ) -> Self {
         self.standard_hls_settings = input;
         self
+    }
+    /// Standard Hls Settings
+    pub fn get_standard_hls_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::StandardHlsSettings> {
+        &self.standard_hls_settings
     }
     /// Consumes the builder and constructs a [`HlsSettings`](crate::types::HlsSettings).
     pub fn build(self) -> crate::types::HlsSettings {

@@ -55,6 +55,10 @@ impl GetContainerRecipeOutputBuilder {
         self.request_id = input;
         self
     }
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
+    }
     /// <p>The container recipe object that is returned.</p>
     pub fn container_recipe(mut self, input: crate::types::ContainerRecipe) -> Self {
         self.container_recipe = ::std::option::Option::Some(input);
@@ -67,6 +71,10 @@ impl GetContainerRecipeOutputBuilder {
     ) -> Self {
         self.container_recipe = input;
         self
+    }
+    /// <p>The container recipe object that is returned.</p>
+    pub fn get_container_recipe(&self) -> &::std::option::Option<crate::types::ContainerRecipe> {
+        &self.container_recipe
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

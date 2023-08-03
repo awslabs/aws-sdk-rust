@@ -69,6 +69,10 @@ impl DescribeSubscriptionFiltersInputBuilder {
         self.log_group_name = input;
         self
     }
+    /// <p>The name of the log group.</p>
+    pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group_name
+    }
     /// <p>The prefix to match. If you don't specify a value, no prefix filter is applied.</p>
     pub fn filter_name_prefix(
         mut self,
@@ -85,6 +89,10 @@ impl DescribeSubscriptionFiltersInputBuilder {
         self.filter_name_prefix = input;
         self
     }
+    /// <p>The prefix to match. If you don't specify a value, no prefix filter is applied.</p>
+    pub fn get_filter_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filter_name_prefix
+    }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -95,6 +103,10 @@ impl DescribeSubscriptionFiltersInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -104,6 +116,10 @@ impl DescribeSubscriptionFiltersInputBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
+    }
+    /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// Consumes the builder and constructs a [`DescribeSubscriptionFiltersInput`](crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersInput).
     pub fn build(

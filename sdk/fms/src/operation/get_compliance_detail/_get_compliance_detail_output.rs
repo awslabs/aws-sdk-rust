@@ -54,6 +54,12 @@ impl GetComplianceDetailOutputBuilder {
         self.policy_compliance_detail = input;
         self
     }
+    /// <p>Information about the resources and the policy that you specified in the <code>GetComplianceDetail</code> request.</p>
+    pub fn get_policy_compliance_detail(
+        &self,
+    ) -> &::std::option::Option<crate::types::PolicyComplianceDetail> {
+        &self.policy_compliance_detail
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

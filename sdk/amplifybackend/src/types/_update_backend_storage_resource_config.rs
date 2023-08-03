@@ -51,6 +51,12 @@ impl UpdateBackendStorageResourceConfigBuilder {
         self.permissions = input;
         self
     }
+    /// <p>The authorization configuration for the storage S3 bucket.</p>
+    pub fn get_permissions(
+        &self,
+    ) -> &::std::option::Option<crate::types::BackendStoragePermissions> {
+        &self.permissions
+    }
     /// <p>The name of the storage service.</p>
     pub fn service_name(mut self, input: crate::types::ServiceName) -> Self {
         self.service_name = ::std::option::Option::Some(input);
@@ -63,6 +69,10 @@ impl UpdateBackendStorageResourceConfigBuilder {
     ) -> Self {
         self.service_name = input;
         self
+    }
+    /// <p>The name of the storage service.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<crate::types::ServiceName> {
+        &self.service_name
     }
     /// Consumes the builder and constructs a [`UpdateBackendStorageResourceConfig`](crate::types::UpdateBackendStorageResourceConfig).
     pub fn build(self) -> crate::types::UpdateBackendStorageResourceConfig {

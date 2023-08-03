@@ -57,6 +57,12 @@ impl FindingStatisticsBuilder {
         self.count_by_severity = input;
         self
     }
+    /// <p>Represents a map of severity to count statistics for a set of findings.</p>
+    pub fn get_count_by_severity(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, i32>> {
+        &self.count_by_severity
+    }
     /// Consumes the builder and constructs a [`FindingStatistics`](crate::types::FindingStatistics).
     pub fn build(self) -> crate::types::FindingStatistics {
         crate::types::FindingStatistics {

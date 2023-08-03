@@ -56,6 +56,10 @@ impl SetLocalConsolePasswordInputBuilder {
         self.gateway_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_arn
+    }
     /// <p>The password you want to set for your VM local console.</p>
     pub fn local_console_password(
         mut self,
@@ -71,6 +75,10 @@ impl SetLocalConsolePasswordInputBuilder {
     ) -> Self {
         self.local_console_password = input;
         self
+    }
+    /// <p>The password you want to set for your VM local console.</p>
+    pub fn get_local_console_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.local_console_password
     }
     /// Consumes the builder and constructs a [`SetLocalConsolePasswordInput`](crate::operation::set_local_console_password::SetLocalConsolePasswordInput).
     pub fn build(

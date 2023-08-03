@@ -75,6 +75,10 @@ impl ImportNotebookInputBuilder {
         self.work_group = input;
         self
     }
+    /// <p>The name of the Spark enabled workgroup to import the notebook to.</p>
+    pub fn get_work_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.work_group
+    }
     /// <p>The name of the notebook to import.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -84,6 +88,10 @@ impl ImportNotebookInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the notebook to import.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The notebook content to be imported.</p>
     pub fn payload(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -95,6 +103,10 @@ impl ImportNotebookInputBuilder {
         self.payload = input;
         self
     }
+    /// <p>The notebook content to be imported.</p>
+    pub fn get_payload(&self) -> &::std::option::Option<::std::string::String> {
+        &self.payload
+    }
     /// <p>The notebook content type. Currently, the only valid type is <code>IPYNB</code>.</p>
     pub fn r#type(mut self, input: crate::types::NotebookType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -104,6 +116,10 @@ impl ImportNotebookInputBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::NotebookType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The notebook content type. Currently, the only valid type is <code>IPYNB</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::NotebookType> {
+        &self.r#type
     }
     /// <p>A unique case-sensitive string used to ensure the request to import the notebook is idempotent (executes only once).</p> <important>
     /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
@@ -124,6 +140,12 @@ impl ImportNotebookInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>A unique case-sensitive string used to ensure the request to import the notebook is idempotent (executes only once).</p> <important>
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+    /// </important>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Consumes the builder and constructs a [`ImportNotebookInput`](crate::operation::import_notebook::ImportNotebookInput).
     pub fn build(

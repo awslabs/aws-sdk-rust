@@ -58,6 +58,10 @@ impl NodeGroupUpdateStatusBuilder {
         self.node_group_id = input;
         self
     }
+    /// <p>The ID of the node group</p>
+    pub fn get_node_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_group_id
+    }
     /// Appends an item to `node_group_member_update_status`.
     ///
     /// To override the contents of this collection use [`set_node_group_member_update_status`](Self::set_node_group_member_update_status).
@@ -79,6 +83,12 @@ impl NodeGroupUpdateStatusBuilder {
     ) -> Self {
         self.node_group_member_update_status = input;
         self
+    }
+    /// <p>The status of the service update on the node group member</p>
+    pub fn get_node_group_member_update_status(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NodeGroupMemberUpdateStatus>> {
+        &self.node_group_member_update_status
     }
     /// Consumes the builder and constructs a [`NodeGroupUpdateStatus`](crate::types::NodeGroupUpdateStatus).
     pub fn build(self) -> crate::types::NodeGroupUpdateStatus {

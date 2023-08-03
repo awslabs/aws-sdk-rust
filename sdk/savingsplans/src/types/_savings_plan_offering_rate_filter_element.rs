@@ -51,6 +51,10 @@ impl SavingsPlanOfferingRateFilterElementBuilder {
         self.name = input;
         self
     }
+    /// <p>The filter name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::SavingsPlanRateFilterAttribute> {
+        &self.name
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -69,6 +73,10 @@ impl SavingsPlanOfferingRateFilterElementBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>The filter values.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`SavingsPlanOfferingRateFilterElement`](crate::types::SavingsPlanOfferingRateFilterElement).
     pub fn build(self) -> crate::types::SavingsPlanOfferingRateFilterElement {

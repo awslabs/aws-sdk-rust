@@ -46,6 +46,10 @@ impl StartReplicationInputBuilder {
         self.source_server_id = input;
         self
     }
+    /// <p>The ID of the Source Server to start replication for.</p>
+    pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_server_id
+    }
     /// Consumes the builder and constructs a [`StartReplicationInput`](crate::operation::start_replication::StartReplicationInput).
     pub fn build(
         self,

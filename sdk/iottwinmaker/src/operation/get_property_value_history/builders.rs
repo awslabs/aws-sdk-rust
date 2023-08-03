@@ -38,6 +38,13 @@ impl GetPropertyValueHistoryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetPropertyValueHistory as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_property_value_history::builders::GetPropertyValueHistoryInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +144,10 @@ impl GetPropertyValueHistoryFluentBuilder {
         self.inner = self.inner.set_workspace_id(input);
         self
     }
+    /// <p>The ID of the workspace.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workspace_id()
+    }
     /// <p>The ID of the entity.</p>
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.entity_id(input.into());
@@ -146,6 +157,10 @@ impl GetPropertyValueHistoryFluentBuilder {
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_entity_id(input);
         self
+    }
+    /// <p>The ID of the entity.</p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_entity_id()
     }
     /// <p>The name of the component.</p>
     pub fn component_name(
@@ -163,6 +178,10 @@ impl GetPropertyValueHistoryFluentBuilder {
         self.inner = self.inner.set_component_name(input);
         self
     }
+    /// <p>The name of the component.</p>
+    pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_component_name()
+    }
     /// <p>The ID of the component type.</p>
     pub fn component_type_id(
         mut self,
@@ -178,6 +197,10 @@ impl GetPropertyValueHistoryFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_component_type_id(input);
         self
+    }
+    /// <p>The ID of the component type.</p>
+    pub fn get_component_type_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_component_type_id()
     }
     /// Appends an item to `selectedProperties`.
     ///
@@ -199,6 +222,12 @@ impl GetPropertyValueHistoryFluentBuilder {
         self.inner = self.inner.set_selected_properties(input);
         self
     }
+    /// <p>A list of properties whose value histories the request retrieves.</p>
+    pub fn get_selected_properties(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_selected_properties()
+    }
     /// Appends an item to `propertyFilters`.
     ///
     /// To override the contents of this collection use [`set_property_filters`](Self::set_property_filters).
@@ -215,6 +244,12 @@ impl GetPropertyValueHistoryFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_property_filters(input);
         self
+    }
+    /// <p>A list of objects that filter the property value history request.</p>
+    pub fn get_property_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PropertyFilter>> {
+        self.inner.get_property_filters()
     }
     /// <p>The date and time of the earliest property value to return.</p>
     #[deprecated(
@@ -235,6 +270,13 @@ impl GetPropertyValueHistoryFluentBuilder {
         self.inner = self.inner.set_start_date_time(input);
         self
     }
+    /// <p>The date and time of the earliest property value to return.</p>
+    #[deprecated(
+        note = "This field is deprecated and will throw an error in the future. Use startTime instead."
+    )]
+    pub fn get_start_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_date_time()
+    }
     /// <p>The date and time of the latest property value to return.</p>
     #[deprecated(
         note = "This field is deprecated and will throw an error in the future. Use endTime instead."
@@ -254,6 +296,13 @@ impl GetPropertyValueHistoryFluentBuilder {
         self.inner = self.inner.set_end_date_time(input);
         self
     }
+    /// <p>The date and time of the latest property value to return.</p>
+    #[deprecated(
+        note = "This field is deprecated and will throw an error in the future. Use endTime instead."
+    )]
+    pub fn get_end_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_date_time()
+    }
     /// <p>An object that specifies the interpolation type and the interval over which to interpolate data.</p>
     pub fn interpolation(mut self, input: crate::types::InterpolationParameters) -> Self {
         self.inner = self.inner.interpolation(input);
@@ -267,6 +316,12 @@ impl GetPropertyValueHistoryFluentBuilder {
         self.inner = self.inner.set_interpolation(input);
         self
     }
+    /// <p>An object that specifies the interpolation type and the interval over which to interpolate data.</p>
+    pub fn get_interpolation(
+        &self,
+    ) -> &::std::option::Option<crate::types::InterpolationParameters> {
+        self.inner.get_interpolation()
+    }
     /// <p>The string that specifies the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -276,6 +331,10 @@ impl GetPropertyValueHistoryFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The string that specifies the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
@@ -288,6 +347,11 @@ impl GetPropertyValueHistoryFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return at one time. The default is 25.</p>
+    /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>The time direction to use in the result order.</p>
     pub fn order_by_time(mut self, input: crate::types::OrderByTime) -> Self {
@@ -302,6 +366,10 @@ impl GetPropertyValueHistoryFluentBuilder {
         self.inner = self.inner.set_order_by_time(input);
         self
     }
+    /// <p>The time direction to use in the result order.</p>
+    pub fn get_order_by_time(&self) -> &::std::option::Option<crate::types::OrderByTime> {
+        self.inner.get_order_by_time()
+    }
     /// <p>The ISO8601 DateTime of the earliest property value to return.</p>
     /// <p>For more information about the ISO8601 DateTime format, see the data type <a href="https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_PropertyValue.html">PropertyValue</a>.</p>
     pub fn start_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -314,6 +382,11 @@ impl GetPropertyValueHistoryFluentBuilder {
         self.inner = self.inner.set_start_time(input);
         self
     }
+    /// <p>The ISO8601 DateTime of the earliest property value to return.</p>
+    /// <p>For more information about the ISO8601 DateTime format, see the data type <a href="https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_PropertyValue.html">PropertyValue</a>.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_start_time()
+    }
     /// <p>The ISO8601 DateTime of the latest property value to return.</p>
     /// <p>For more information about the ISO8601 DateTime format, see the data type <a href="https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_PropertyValue.html">PropertyValue</a>.</p>
     pub fn end_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -325,5 +398,10 @@ impl GetPropertyValueHistoryFluentBuilder {
     pub fn set_end_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
+    }
+    /// <p>The ISO8601 DateTime of the latest property value to return.</p>
+    /// <p>For more information about the ISO8601 DateTime format, see the data type <a href="https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_PropertyValue.html">PropertyValue</a>.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_end_time()
     }
 }

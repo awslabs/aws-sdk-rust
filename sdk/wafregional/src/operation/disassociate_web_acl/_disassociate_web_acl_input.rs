@@ -60,6 +60,15 @@ impl DisassociateWebAclInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The ARN (Amazon Resource Name) of the resource from which the web ACL is being removed, either an application load balancer or Amazon API Gateway stage.</p>
+    /// <p>The ARN should be in one of the following formats:</p>
+    /// <ul>
+    /// <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li>
+    /// <li> <p>For an Amazon API Gateway stage: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code> </p> </li>
+    /// </ul>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// Consumes the builder and constructs a [`DisassociateWebAclInput`](crate::operation::disassociate_web_acl::DisassociateWebAclInput).
     pub fn build(
         self,

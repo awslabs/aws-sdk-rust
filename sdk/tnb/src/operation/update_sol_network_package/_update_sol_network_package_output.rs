@@ -53,6 +53,12 @@ impl UpdateSolNetworkPackageOutputBuilder {
         self.nsd_operational_state = input;
         self
     }
+    /// <p>Operational state of the network service descriptor in the network package.</p>
+    pub fn get_nsd_operational_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::NsdOperationalState> {
+        &self.nsd_operational_state
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

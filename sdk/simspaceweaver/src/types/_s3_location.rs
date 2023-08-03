@@ -48,6 +48,10 @@ impl S3LocationBuilder {
         self.bucket_name = input;
         self
     }
+    /// <p>The name of an Amazon S3 bucket. For more information about buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-buckets-s3.html">Creating, configuring, and working with Amazon S3 buckets</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_name
+    }
     /// <p>The key name of an object in Amazon S3. For more information about Amazon S3 objects and object keys, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/uploading-downloading-objects.html">Uploading, downloading, and working with objects in Amazon S3</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
     pub fn object_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.object_key = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl S3LocationBuilder {
     pub fn set_object_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.object_key = input;
         self
+    }
+    /// <p>The key name of an object in Amazon S3. For more information about Amazon S3 objects and object keys, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/uploading-downloading-objects.html">Uploading, downloading, and working with objects in Amazon S3</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
+    pub fn get_object_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_key
     }
     /// Consumes the builder and constructs a [`S3Location`](crate::types::S3Location).
     pub fn build(self) -> crate::types::S3Location {

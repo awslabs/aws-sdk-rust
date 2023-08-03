@@ -46,6 +46,10 @@ impl DeleteCodeRepositoryInputBuilder {
         self.code_repository_name = input;
         self
     }
+    /// <p>The name of the Git repository to delete.</p>
+    pub fn get_code_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code_repository_name
+    }
     /// Consumes the builder and constructs a [`DeleteCodeRepositoryInput`](crate::operation::delete_code_repository::DeleteCodeRepositoryInput).
     pub fn build(
         self,

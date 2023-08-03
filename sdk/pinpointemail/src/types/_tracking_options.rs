@@ -47,6 +47,10 @@ impl TrackingOptionsBuilder {
         self.custom_redirect_domain = input;
         self
     }
+    /// <p>The domain that you want to use for tracking open and click events.</p>
+    pub fn get_custom_redirect_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_redirect_domain
+    }
     /// Consumes the builder and constructs a [`TrackingOptions`](crate::types::TrackingOptions).
     pub fn build(self) -> crate::types::TrackingOptions {
         crate::types::TrackingOptions {

@@ -56,6 +56,10 @@ impl ListDeviceProfilesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `device_profile_list`.
     ///
     /// To override the contents of this collection use [`set_device_profile_list`](Self::set_device_profile_list).
@@ -74,6 +78,12 @@ impl ListDeviceProfilesOutputBuilder {
     ) -> Self {
         self.device_profile_list = input;
         self
+    }
+    /// <p>The list of device profiles.</p>
+    pub fn get_device_profile_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceProfile>> {
+        &self.device_profile_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

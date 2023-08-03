@@ -62,6 +62,10 @@ impl DeleteSchemaOutputBuilder {
         self.schema_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the schema being deleted.</p>
+    pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_arn
+    }
     /// <p>The name of the schema being deleted.</p>
     pub fn schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_name = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl DeleteSchemaOutputBuilder {
         self.schema_name = input;
         self
     }
+    /// <p>The name of the schema being deleted.</p>
+    pub fn get_schema_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_name
+    }
     /// <p>The status of the schema.</p>
     pub fn status(mut self, input: crate::types::SchemaStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl DeleteSchemaOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::SchemaStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the schema.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::SchemaStatus> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

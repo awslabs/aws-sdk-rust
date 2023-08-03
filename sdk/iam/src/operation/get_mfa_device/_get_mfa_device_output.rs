@@ -78,6 +78,10 @@ impl GetMfaDeviceOutputBuilder {
         self.user_name = input;
         self
     }
+    /// <p>The friendly name identifying the user.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
+    }
     /// <p>Serial number that uniquely identifies the MFA device. For this API, we only accept FIDO security key <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">ARNs</a>.</p>
     pub fn serial_number(
         mut self,
@@ -94,6 +98,10 @@ impl GetMfaDeviceOutputBuilder {
         self.serial_number = input;
         self
     }
+    /// <p>Serial number that uniquely identifies the MFA device. For this API, we only accept FIDO security key <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">ARNs</a>.</p>
+    pub fn get_serial_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.serial_number
+    }
     /// <p>The date that a specified user's MFA device was first enabled.</p>
     pub fn enable_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.enable_date = ::std::option::Option::Some(input);
@@ -106,6 +114,10 @@ impl GetMfaDeviceOutputBuilder {
     ) -> Self {
         self.enable_date = input;
         self
+    }
+    /// <p>The date that a specified user's MFA device was first enabled.</p>
+    pub fn get_enable_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.enable_date
     }
     /// Adds a key-value pair to `certifications`.
     ///
@@ -131,6 +143,14 @@ impl GetMfaDeviceOutputBuilder {
     ) -> Self {
         self.certifications = input;
         self
+    }
+    /// <p>The certifications of a specified user's MFA device. We currently provide FIPS-140-2, FIPS-140-3, and FIDO certification levels obtained from <a href="https://fidoalliance.org/metadata/"> FIDO Alliance Metadata Service (MDS)</a>.</p>
+    pub fn get_certifications(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.certifications
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

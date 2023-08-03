@@ -78,6 +78,10 @@ impl SignalDecoderBuilder {
         self.fully_qualified_name = input;
         self
     }
+    /// <p>The fully qualified name of a signal decoder as defined in a vehicle model.</p>
+    pub fn get_fully_qualified_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fully_qualified_name
+    }
     /// <p>The network protocol for the vehicle. For example, <code>CAN_SIGNAL</code> specifies a protocol that defines how data is communicated between electronic control units (ECUs). <code>OBD_SIGNAL</code> specifies a protocol that defines how self-diagnostic data is communicated between ECUs.</p>
     pub fn r#type(mut self, input: crate::types::SignalDecoderType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -91,6 +95,10 @@ impl SignalDecoderBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The network protocol for the vehicle. For example, <code>CAN_SIGNAL</code> specifies a protocol that defines how data is communicated between electronic control units (ECUs). <code>OBD_SIGNAL</code> specifies a protocol that defines how self-diagnostic data is communicated between ECUs.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::SignalDecoderType> {
+        &self.r#type
+    }
     /// <p>The ID of a network interface that specifies what network protocol a vehicle follows.</p>
     pub fn interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.interface_id = ::std::option::Option::Some(input.into());
@@ -100,6 +108,10 @@ impl SignalDecoderBuilder {
     pub fn set_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.interface_id = input;
         self
+    }
+    /// <p>The ID of a network interface that specifies what network protocol a vehicle follows.</p>
+    pub fn get_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.interface_id
     }
     /// <p>Information about signal decoder using the Controller Area Network (CAN) protocol.</p>
     pub fn can_signal(mut self, input: crate::types::CanSignal) -> Self {
@@ -111,6 +123,10 @@ impl SignalDecoderBuilder {
         self.can_signal = input;
         self
     }
+    /// <p>Information about signal decoder using the Controller Area Network (CAN) protocol.</p>
+    pub fn get_can_signal(&self) -> &::std::option::Option<crate::types::CanSignal> {
+        &self.can_signal
+    }
     /// <p>Information about signal decoder using the On-board diagnostic (OBD) II protocol.</p>
     pub fn obd_signal(mut self, input: crate::types::ObdSignal) -> Self {
         self.obd_signal = ::std::option::Option::Some(input);
@@ -120,6 +136,10 @@ impl SignalDecoderBuilder {
     pub fn set_obd_signal(mut self, input: ::std::option::Option<crate::types::ObdSignal>) -> Self {
         self.obd_signal = input;
         self
+    }
+    /// <p>Information about signal decoder using the On-board diagnostic (OBD) II protocol.</p>
+    pub fn get_obd_signal(&self) -> &::std::option::Option<crate::types::ObdSignal> {
+        &self.obd_signal
     }
     /// Consumes the builder and constructs a [`SignalDecoder`](crate::types::SignalDecoder).
     pub fn build(self) -> crate::types::SignalDecoder {

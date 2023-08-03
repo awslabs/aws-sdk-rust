@@ -59,6 +59,10 @@ impl ErrorHandlingConfigBuilder {
         self.fail_on_first_destination_error = input;
         self
     }
+    /// <p> Specifies if the flow should fail after the first instance of a failure when attempting to place data in the destination. </p>
+    pub fn get_fail_on_first_destination_error(&self) -> &::std::option::Option<bool> {
+        &self.fail_on_first_destination_error
+    }
     /// <p> Specifies the Amazon S3 bucket prefix. </p>
     pub fn bucket_prefix(
         mut self,
@@ -75,6 +79,10 @@ impl ErrorHandlingConfigBuilder {
         self.bucket_prefix = input;
         self
     }
+    /// <p> Specifies the Amazon S3 bucket prefix. </p>
+    pub fn get_bucket_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_prefix
+    }
     /// <p> Specifies the name of the Amazon S3 bucket. </p>
     pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_name = ::std::option::Option::Some(input.into());
@@ -84,6 +92,10 @@ impl ErrorHandlingConfigBuilder {
     pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_name = input;
         self
+    }
+    /// <p> Specifies the name of the Amazon S3 bucket. </p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_name
     }
     /// Consumes the builder and constructs a [`ErrorHandlingConfig`](crate::types::ErrorHandlingConfig).
     pub fn build(self) -> crate::types::ErrorHandlingConfig {

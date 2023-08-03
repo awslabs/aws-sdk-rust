@@ -49,6 +49,10 @@ impl DescribeMailboxExportJobInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The mailbox export job ID.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>The organization ID.</p>
     pub fn organization_id(
         mut self,
@@ -64,6 +68,10 @@ impl DescribeMailboxExportJobInputBuilder {
     ) -> Self {
         self.organization_id = input;
         self
+    }
+    /// <p>The organization ID.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
     }
     /// Consumes the builder and constructs a [`DescribeMailboxExportJobInput`](crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobInput).
     pub fn build(

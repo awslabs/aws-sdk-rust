@@ -36,6 +36,10 @@ impl ListImportsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListImports as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_imports::builders::ListImportsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl ListImportsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p> The maximum number of imports to display on a single page. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p> The ARN of the destination event data store. </p>
     pub fn destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination(input.into());
@@ -136,6 +144,10 @@ impl ListImportsFluentBuilder {
     pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination(input);
         self
+    }
+    /// <p> The ARN of the destination event data store. </p>
+    pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination()
     }
     /// <p> The status of the import. </p>
     pub fn import_status(mut self, input: crate::types::ImportStatus) -> Self {
@@ -150,6 +162,10 @@ impl ListImportsFluentBuilder {
         self.inner = self.inner.set_import_status(input);
         self
     }
+    /// <p> The status of the import. </p>
+    pub fn get_import_status(&self) -> &::std::option::Option<crate::types::ImportStatus> {
+        self.inner.get_import_status()
+    }
     /// <p> A token you can use to get the next page of import results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -159,5 +175,9 @@ impl ListImportsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p> A token you can use to get the next page of import results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

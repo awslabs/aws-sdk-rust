@@ -163,6 +163,10 @@ impl CreateEnvironmentInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the environment.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The name of the environment template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-templates.html">Environment Templates</a> in the <i>Proton User Guide</i>.</p>
     pub fn template_name(
         mut self,
@@ -178,6 +182,10 @@ impl CreateEnvironmentInputBuilder {
     ) -> Self {
         self.template_name = input;
         self
+    }
+    /// <p>The name of the environment template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-templates.html">Environment Templates</a> in the <i>Proton User Guide</i>.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
     }
     /// <p>The major version of the environment template.</p>
     pub fn template_major_version(
@@ -195,6 +203,10 @@ impl CreateEnvironmentInputBuilder {
         self.template_major_version = input;
         self
     }
+    /// <p>The major version of the environment template.</p>
+    pub fn get_template_major_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_major_version
+    }
     /// <p>The minor version of the environment template.</p>
     pub fn template_minor_version(
         mut self,
@@ -211,6 +223,10 @@ impl CreateEnvironmentInputBuilder {
         self.template_minor_version = input;
         self
     }
+    /// <p>The minor version of the environment template.</p>
+    pub fn get_template_minor_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_minor_version
+    }
     /// <p>A description of the environment that's being created and deployed.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -221,6 +237,10 @@ impl CreateEnvironmentInputBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the environment that's being created and deployed.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>A YAML formatted string that provides inputs as defined in the environment template bundle schema file. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-environments.html">Environments</a> in the <i>Proton User Guide</i>.</p>
     pub fn spec(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.spec = ::std::option::Option::Some(input.into());
@@ -230,6 +250,10 @@ impl CreateEnvironmentInputBuilder {
     pub fn set_spec(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.spec = input;
         self
+    }
+    /// <p>A YAML formatted string that provides inputs as defined in the environment template bundle schema file. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-environments.html">Environments</a> in the <i>Proton User Guide</i>.</p>
+    pub fn get_spec(&self) -> &::std::option::Option<::std::string::String> {
+        &self.spec
     }
     /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make calls to other services on your behalf.</p>
     /// <p>To use Amazon Web Services-managed provisioning for the environment, specify either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and omit the <code>provisioningRepository</code> parameter.</p>
@@ -249,6 +273,11 @@ impl CreateEnvironmentInputBuilder {
         self.proton_service_role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make calls to other services on your behalf.</p>
+    /// <p>To use Amazon Web Services-managed provisioning for the environment, specify either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and omit the <code>provisioningRepository</code> parameter.</p>
+    pub fn get_proton_service_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.proton_service_role_arn
+    }
     /// <p>The ID of the environment account connection that you provide if you're provisioning your environment infrastructure resources to an environment account. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton User guide</i>.</p>
     /// <p>To use Amazon Web Services-managed provisioning for the environment, specify either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and omit the <code>provisioningRepository</code> parameter.</p>
     pub fn environment_account_connection_id(
@@ -266,6 +295,13 @@ impl CreateEnvironmentInputBuilder {
     ) -> Self {
         self.environment_account_connection_id = input;
         self
+    }
+    /// <p>The ID of the environment account connection that you provide if you're provisioning your environment infrastructure resources to an environment account. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton User guide</i>.</p>
+    /// <p>To use Amazon Web Services-managed provisioning for the environment, specify either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and omit the <code>provisioningRepository</code> parameter.</p>
+    pub fn get_environment_account_connection_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.environment_account_connection_id
     }
     /// Appends an item to `tags`.
     ///
@@ -288,6 +324,11 @@ impl CreateEnvironmentInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>An optional list of metadata items that you can associate with the Proton environment. A tag is a key-value pair.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The linked repository that you use to host your rendered infrastructure templates for self-managed provisioning. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
     /// <p>To use self-managed provisioning for the environment, specify this parameter and omit the <code>environmentAccountConnectionId</code> and <code>protonServiceRoleArn</code> parameters.</p>
     pub fn provisioning_repository(mut self, input: crate::types::RepositoryBranchInput) -> Self {
@@ -302,6 +343,13 @@ impl CreateEnvironmentInputBuilder {
     ) -> Self {
         self.provisioning_repository = input;
         self
+    }
+    /// <p>The linked repository that you use to host your rendered infrastructure templates for self-managed provisioning. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
+    /// <p>To use self-managed provisioning for the environment, specify this parameter and omit the <code>environmentAccountConnectionId</code> and <code>protonServiceRoleArn</code> parameters.</p>
+    pub fn get_provisioning_repository(
+        &self,
+    ) -> &::std::option::Option<crate::types::RepositoryBranchInput> {
+        &self.provisioning_repository
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
     /// <p>You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with this environment.</p>
@@ -323,6 +371,12 @@ impl CreateEnvironmentInputBuilder {
         self.component_role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in this environment. It determines the scope of infrastructure that a component can provision.</p>
+    /// <p>You must specify <code>componentRoleArn</code> to allow directly defined components to be associated with this environment.</p>
+    /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
+    pub fn get_component_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_role_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure using CodeBuild-based provisioning on your behalf.</p>
     /// <p>To use CodeBuild-based provisioning for the environment or for any service instance running in the environment, specify either the <code>environmentAccountConnectionId</code> or <code>codebuildRoleArn</code> parameter.</p>
     pub fn codebuild_role_arn(
@@ -340,6 +394,11 @@ impl CreateEnvironmentInputBuilder {
     ) -> Self {
         self.codebuild_role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure using CodeBuild-based provisioning on your behalf.</p>
+    /// <p>To use CodeBuild-based provisioning for the environment or for any service instance running in the environment, specify either the <code>environmentAccountConnectionId</code> or <code>codebuildRoleArn</code> parameter.</p>
+    pub fn get_codebuild_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.codebuild_role_arn
     }
     /// Consumes the builder and constructs a [`CreateEnvironmentInput`](crate::operation::create_environment::CreateEnvironmentInput).
     pub fn build(

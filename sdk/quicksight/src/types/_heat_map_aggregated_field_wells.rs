@@ -65,6 +65,12 @@ impl HeatMapAggregatedFieldWellsBuilder {
         self.rows = input;
         self
     }
+    /// <p>The rows field well of a heat map.</p>
+    pub fn get_rows(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
+        &self.rows
+    }
     /// Appends an item to `columns`.
     ///
     /// To override the contents of this collection use [`set_columns`](Self::set_columns).
@@ -84,6 +90,12 @@ impl HeatMapAggregatedFieldWellsBuilder {
         self.columns = input;
         self
     }
+    /// <p>The columns field well of a heat map.</p>
+    pub fn get_columns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
+        &self.columns
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -102,6 +114,12 @@ impl HeatMapAggregatedFieldWellsBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>The values field well of a heat map.</p>
+    pub fn get_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`HeatMapAggregatedFieldWells`](crate::types::HeatMapAggregatedFieldWells).
     pub fn build(self) -> crate::types::HeatMapAggregatedFieldWells {

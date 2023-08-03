@@ -40,6 +40,10 @@ impl ResetTimerActionBuilder {
         self.timer_name = input;
         self
     }
+    /// <p>The name of the timer to reset.</p>
+    pub fn get_timer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timer_name
+    }
     /// Consumes the builder and constructs a [`ResetTimerAction`](crate::types::ResetTimerAction).
     pub fn build(self) -> crate::types::ResetTimerAction {
         crate::types::ResetTimerAction {

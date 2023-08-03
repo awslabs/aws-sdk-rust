@@ -48,6 +48,10 @@ impl DurationBuilder {
         self.value = input;
         self
     }
+    /// <p>A number of time units.</p>
+    pub fn get_value(&self) -> &::std::option::Option<i64> {
+        &self.value
+    }
     /// <p>A unit of time.</p>
     pub fn unit(mut self, input: crate::types::DurationUnit) -> Self {
         self.unit = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl DurationBuilder {
     pub fn set_unit(mut self, input: ::std::option::Option<crate::types::DurationUnit>) -> Self {
         self.unit = input;
         self
+    }
+    /// <p>A unit of time.</p>
+    pub fn get_unit(&self) -> &::std::option::Option<crate::types::DurationUnit> {
+        &self.unit
     }
     /// Consumes the builder and constructs a [`Duration`](crate::types::Duration).
     pub fn build(self) -> crate::types::Duration {

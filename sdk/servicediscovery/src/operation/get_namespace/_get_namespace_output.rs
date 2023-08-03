@@ -46,6 +46,10 @@ impl GetNamespaceOutputBuilder {
         self.namespace = input;
         self
     }
+    /// <p>A complex type that contains information about the specified namespace.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<crate::types::Namespace> {
+        &self.namespace
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

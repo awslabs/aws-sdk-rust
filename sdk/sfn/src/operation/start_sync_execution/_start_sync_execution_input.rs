@@ -86,6 +86,10 @@ impl StartSyncExecutionInputBuilder {
         self.state_machine_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
+    pub fn get_state_machine_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_machine_arn
+    }
     /// <p>The name of the execution.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -95,6 +99,10 @@ impl StartSyncExecutionInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the execution.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The string that contains the JSON input data for the execution, for example:</p>
     /// <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>
@@ -114,6 +122,14 @@ impl StartSyncExecutionInputBuilder {
         self.input = input;
         self
     }
+    /// <p>The string that contains the JSON input data for the execution, for example:</p>
+    /// <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>
+    /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code> </p>
+    /// </note>
+    /// <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    pub fn get_input(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input
+    }
     /// <p>Passes the X-Ray trace header. The trace header can also be passed in the request payload.</p>
     pub fn trace_header(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trace_header = ::std::option::Option::Some(input.into());
@@ -123,6 +139,10 @@ impl StartSyncExecutionInputBuilder {
     pub fn set_trace_header(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trace_header = input;
         self
+    }
+    /// <p>Passes the X-Ray trace header. The trace header can also be passed in the request payload.</p>
+    pub fn get_trace_header(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trace_header
     }
     /// Consumes the builder and constructs a [`StartSyncExecutionInput`](crate::operation::start_sync_execution::StartSyncExecutionInput).
     pub fn build(

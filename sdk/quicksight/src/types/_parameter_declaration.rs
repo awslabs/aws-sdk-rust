@@ -88,6 +88,12 @@ impl ParameterDeclarationBuilder {
         self.string_parameter_declaration = input;
         self
     }
+    /// <p>A parameter declaration for the <code>String</code> data type.</p>
+    pub fn get_string_parameter_declaration(
+        &self,
+    ) -> &::std::option::Option<crate::types::StringParameterDeclaration> {
+        &self.string_parameter_declaration
+    }
     /// <p>A parameter declaration for the <code>Decimal</code> data type.</p>
     pub fn decimal_parameter_declaration(
         mut self,
@@ -103,6 +109,12 @@ impl ParameterDeclarationBuilder {
     ) -> Self {
         self.decimal_parameter_declaration = input;
         self
+    }
+    /// <p>A parameter declaration for the <code>Decimal</code> data type.</p>
+    pub fn get_decimal_parameter_declaration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DecimalParameterDeclaration> {
+        &self.decimal_parameter_declaration
     }
     /// <p>A parameter declaration for the <code>Integer</code> data type.</p>
     pub fn integer_parameter_declaration(
@@ -120,6 +132,12 @@ impl ParameterDeclarationBuilder {
         self.integer_parameter_declaration = input;
         self
     }
+    /// <p>A parameter declaration for the <code>Integer</code> data type.</p>
+    pub fn get_integer_parameter_declaration(
+        &self,
+    ) -> &::std::option::Option<crate::types::IntegerParameterDeclaration> {
+        &self.integer_parameter_declaration
+    }
     /// <p>A parameter declaration for the <code>DateTime</code> data type.</p>
     pub fn date_time_parameter_declaration(
         mut self,
@@ -135,6 +153,12 @@ impl ParameterDeclarationBuilder {
     ) -> Self {
         self.date_time_parameter_declaration = input;
         self
+    }
+    /// <p>A parameter declaration for the <code>DateTime</code> data type.</p>
+    pub fn get_date_time_parameter_declaration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DateTimeParameterDeclaration> {
+        &self.date_time_parameter_declaration
     }
     /// Consumes the builder and constructs a [`ParameterDeclaration`](crate::types::ParameterDeclaration).
     pub fn build(self) -> crate::types::ParameterDeclaration {

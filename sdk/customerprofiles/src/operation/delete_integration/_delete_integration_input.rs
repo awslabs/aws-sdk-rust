@@ -48,6 +48,10 @@ impl DeleteIntegrationInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The unique name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The URI of the S3 bucket or any other type of data source.</p>
     pub fn uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.uri = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl DeleteIntegrationInputBuilder {
     pub fn set_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.uri = input;
         self
+    }
+    /// <p>The URI of the S3 bucket or any other type of data source.</p>
+    pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.uri
     }
     /// Consumes the builder and constructs a [`DeleteIntegrationInput`](crate::operation::delete_integration::DeleteIntegrationInput).
     pub fn build(

@@ -130,6 +130,10 @@ impl GlobalClusterBuilder {
         self.global_cluster_identifier = input;
         self
     }
+    /// <p>Contains a user-supplied global database cluster identifier. This identifier is the unique key that identifies a global database cluster.</p>
+    pub fn get_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_cluster_identifier
+    }
     /// <p>The Amazon Web Services Region-unique, immutable identifier for the global database cluster. This identifier is found in Amazon Web Services CloudTrail log entries whenever the Amazon Web Services KMS key for the DB cluster is accessed.</p>
     pub fn global_cluster_resource_id(
         mut self,
@@ -145,6 +149,10 @@ impl GlobalClusterBuilder {
     ) -> Self {
         self.global_cluster_resource_id = input;
         self
+    }
+    /// <p>The Amazon Web Services Region-unique, immutable identifier for the global database cluster. This identifier is found in Amazon Web Services CloudTrail log entries whenever the Amazon Web Services KMS key for the DB cluster is accessed.</p>
+    pub fn get_global_cluster_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_cluster_resource_id
     }
     /// <p>The Amazon Resource Name (ARN) for the global database cluster.</p>
     pub fn global_cluster_arn(
@@ -162,6 +170,10 @@ impl GlobalClusterBuilder {
         self.global_cluster_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the global database cluster.</p>
+    pub fn get_global_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_cluster_arn
+    }
     /// <p>Specifies the current state of this global database cluster.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -172,6 +184,10 @@ impl GlobalClusterBuilder {
         self.status = input;
         self
     }
+    /// <p>Specifies the current state of this global database cluster.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>The Aurora database engine used by the global database cluster.</p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
@@ -181,6 +197,10 @@ impl GlobalClusterBuilder {
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
         self
+    }
+    /// <p>The Aurora database engine used by the global database cluster.</p>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine
     }
     /// <p>Indicates the database engine version.</p>
     pub fn engine_version(
@@ -198,6 +218,10 @@ impl GlobalClusterBuilder {
         self.engine_version = input;
         self
     }
+    /// <p>Indicates the database engine version.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
+    }
     /// <p>The default database name within the new global database cluster.</p>
     pub fn database_name(
         mut self,
@@ -214,6 +238,10 @@ impl GlobalClusterBuilder {
         self.database_name = input;
         self
     }
+    /// <p>The default database name within the new global database cluster.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>The storage encryption setting for the global database cluster.</p>
     pub fn storage_encrypted(mut self, input: bool) -> Self {
         self.storage_encrypted = ::std::option::Option::Some(input);
@@ -224,6 +252,10 @@ impl GlobalClusterBuilder {
         self.storage_encrypted = input;
         self
     }
+    /// <p>The storage encryption setting for the global database cluster.</p>
+    pub fn get_storage_encrypted(&self) -> &::std::option::Option<bool> {
+        &self.storage_encrypted
+    }
     /// <p>The deletion protection setting for the new global database cluster.</p>
     pub fn deletion_protection(mut self, input: bool) -> Self {
         self.deletion_protection = ::std::option::Option::Some(input);
@@ -233,6 +265,10 @@ impl GlobalClusterBuilder {
     pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.deletion_protection = input;
         self
+    }
+    /// <p>The deletion protection setting for the new global database cluster.</p>
+    pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
+        &self.deletion_protection
     }
     /// Appends an item to `global_cluster_members`.
     ///
@@ -253,6 +289,12 @@ impl GlobalClusterBuilder {
         self.global_cluster_members = input;
         self
     }
+    /// <p>The list of primary and secondary clusters within the global database cluster.</p>
+    pub fn get_global_cluster_members(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GlobalClusterMember>> {
+        &self.global_cluster_members
+    }
     /// <p>A data object containing all properties for the current state of an in-process or pending failover process for this Aurora global database. This object is empty unless the <code>FailoverGlobalCluster</code> API operation has been called on this Aurora global database (<code>GlobalCluster</code>).</p>
     pub fn failover_state(mut self, input: crate::types::FailoverState) -> Self {
         self.failover_state = ::std::option::Option::Some(input);
@@ -265,6 +307,10 @@ impl GlobalClusterBuilder {
     ) -> Self {
         self.failover_state = input;
         self
+    }
+    /// <p>A data object containing all properties for the current state of an in-process or pending failover process for this Aurora global database. This object is empty unless the <code>FailoverGlobalCluster</code> API operation has been called on this Aurora global database (<code>GlobalCluster</code>).</p>
+    pub fn get_failover_state(&self) -> &::std::option::Option<crate::types::FailoverState> {
+        &self.failover_state
     }
     /// Consumes the builder and constructs a [`GlobalCluster`](crate::types::GlobalCluster).
     pub fn build(self) -> crate::types::GlobalCluster {

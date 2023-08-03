@@ -36,6 +36,10 @@ impl PutDataSetRefreshPropertiesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutDataSetRefreshProperties as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_data_set_refresh_properties::builders::PutDataSetRefreshPropertiesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl PutDataSetRefreshPropertiesFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>The ID of the dataset.</p>
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_set_id(input.into());
@@ -141,6 +149,10 @@ impl PutDataSetRefreshPropertiesFluentBuilder {
     pub fn set_data_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_set_id(input);
         self
+    }
+    /// <p>The ID of the dataset.</p>
+    pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_data_set_id()
     }
     /// <p>The dataset refresh properties.</p>
     pub fn data_set_refresh_properties(
@@ -157,5 +169,11 @@ impl PutDataSetRefreshPropertiesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_data_set_refresh_properties(input);
         self
+    }
+    /// <p>The dataset refresh properties.</p>
+    pub fn get_data_set_refresh_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataSetRefreshProperties> {
+        self.inner.get_data_set_refresh_properties()
     }
 }

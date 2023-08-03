@@ -56,6 +56,10 @@ impl UpdateProvisioningParameterBuilder {
         self.key = input;
         self
     }
+    /// <p>The parameter key.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>The parameter value.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl UpdateProvisioningParameterBuilder {
         self.value = input;
         self
     }
+    /// <p>The parameter value.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// <p>If set to true, <code>Value</code> is ignored and the previous parameter value is kept.</p>
     pub fn use_previous_value(mut self, input: bool) -> Self {
         self.use_previous_value = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl UpdateProvisioningParameterBuilder {
     pub fn set_use_previous_value(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_previous_value = input;
         self
+    }
+    /// <p>If set to true, <code>Value</code> is ignored and the previous parameter value is kept.</p>
+    pub fn get_use_previous_value(&self) -> &::std::option::Option<bool> {
+        &self.use_previous_value
     }
     /// Consumes the builder and constructs a [`UpdateProvisioningParameter`](crate::types::UpdateProvisioningParameter).
     pub fn build(self) -> crate::types::UpdateProvisioningParameter {

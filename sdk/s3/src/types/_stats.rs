@@ -56,6 +56,10 @@ impl StatsBuilder {
         self.bytes_scanned = input;
         self
     }
+    /// <p>The total number of object bytes scanned.</p>
+    pub fn get_bytes_scanned(&self) -> &::std::option::Option<i64> {
+        &self.bytes_scanned
+    }
     /// <p>The total number of uncompressed object bytes processed.</p>
     pub fn bytes_processed(mut self, input: i64) -> Self {
         self.bytes_processed = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl StatsBuilder {
         self.bytes_processed = input;
         self
     }
+    /// <p>The total number of uncompressed object bytes processed.</p>
+    pub fn get_bytes_processed(&self) -> &::std::option::Option<i64> {
+        &self.bytes_processed
+    }
     /// <p>The total number of bytes of records payload data returned.</p>
     pub fn bytes_returned(mut self, input: i64) -> Self {
         self.bytes_returned = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl StatsBuilder {
     pub fn set_bytes_returned(mut self, input: ::std::option::Option<i64>) -> Self {
         self.bytes_returned = input;
         self
+    }
+    /// <p>The total number of bytes of records payload data returned.</p>
+    pub fn get_bytes_returned(&self) -> &::std::option::Option<i64> {
+        &self.bytes_returned
     }
     /// Consumes the builder and constructs a [`Stats`](crate::types::Stats).
     pub fn build(self) -> crate::types::Stats {

@@ -72,6 +72,12 @@ impl ReplicationGroupUpdateBuilder {
         self.create = input;
         self
     }
+    /// <p>The parameters required for creating a replica for the table.</p>
+    pub fn get_create(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateReplicationGroupMemberAction> {
+        &self.create
+    }
     /// <p>The parameters required for updating a replica for the table.</p>
     pub fn update(mut self, input: crate::types::UpdateReplicationGroupMemberAction) -> Self {
         self.update = ::std::option::Option::Some(input);
@@ -85,6 +91,12 @@ impl ReplicationGroupUpdateBuilder {
         self.update = input;
         self
     }
+    /// <p>The parameters required for updating a replica for the table.</p>
+    pub fn get_update(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateReplicationGroupMemberAction> {
+        &self.update
+    }
     /// <p>The parameters required for deleting a replica for the table.</p>
     pub fn delete(mut self, input: crate::types::DeleteReplicationGroupMemberAction) -> Self {
         self.delete = ::std::option::Option::Some(input);
@@ -97,6 +109,12 @@ impl ReplicationGroupUpdateBuilder {
     ) -> Self {
         self.delete = input;
         self
+    }
+    /// <p>The parameters required for deleting a replica for the table.</p>
+    pub fn get_delete(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeleteReplicationGroupMemberAction> {
+        &self.delete
     }
     /// Consumes the builder and constructs a [`ReplicationGroupUpdate`](crate::types::ReplicationGroupUpdate).
     pub fn build(self) -> crate::types::ReplicationGroupUpdate {

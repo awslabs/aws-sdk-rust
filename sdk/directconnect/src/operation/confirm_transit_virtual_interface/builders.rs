@@ -37,6 +37,10 @@ impl ConfirmTransitVirtualInterfaceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ConfirmTransitVirtualInterface as a reference.
+    pub fn as_input(&self) -> &crate::operation::confirm_transit_virtual_interface::builders::ConfirmTransitVirtualInterfaceInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -107,6 +111,10 @@ impl ConfirmTransitVirtualInterfaceFluentBuilder {
         self.inner = self.inner.set_virtual_interface_id(input);
         self
     }
+    /// <p>The ID of the virtual interface.</p>
+    pub fn get_virtual_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_virtual_interface_id()
+    }
     /// <p>The ID of the Direct Connect gateway.</p>
     pub fn direct_connect_gateway_id(
         mut self,
@@ -122,5 +130,9 @@ impl ConfirmTransitVirtualInterfaceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_direct_connect_gateway_id(input);
         self
+    }
+    /// <p>The ID of the Direct Connect gateway.</p>
+    pub fn get_direct_connect_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_direct_connect_gateway_id()
     }
 }

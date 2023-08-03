@@ -74,6 +74,10 @@ impl GovernedCatalogSourceBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the data store.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The database to read from.</p>
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database = ::std::option::Option::Some(input.into());
@@ -84,6 +88,10 @@ impl GovernedCatalogSourceBuilder {
         self.database = input;
         self
     }
+    /// <p>The database to read from.</p>
+    pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database
+    }
     /// <p>The database table to read from.</p>
     pub fn table(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table = ::std::option::Option::Some(input.into());
@@ -93,6 +101,10 @@ impl GovernedCatalogSourceBuilder {
     pub fn set_table(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table = input;
         self
+    }
+    /// <p>The database table to read from.</p>
+    pub fn get_table(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table
     }
     /// <p>Partitions satisfying this predicate are deleted. Files within the retention period in these partitions are not deleted. Set to <code>""</code> – empty by default.</p>
     pub fn partition_predicate(
@@ -110,6 +122,10 @@ impl GovernedCatalogSourceBuilder {
         self.partition_predicate = input;
         self
     }
+    /// <p>Partitions satisfying this predicate are deleted. Files within the retention period in these partitions are not deleted. Set to <code>""</code> – empty by default.</p>
+    pub fn get_partition_predicate(&self) -> &::std::option::Option<::std::string::String> {
+        &self.partition_predicate
+    }
     /// <p>Specifies additional connection options.</p>
     pub fn additional_options(mut self, input: crate::types::S3SourceAdditionalOptions) -> Self {
         self.additional_options = ::std::option::Option::Some(input);
@@ -122,6 +138,12 @@ impl GovernedCatalogSourceBuilder {
     ) -> Self {
         self.additional_options = input;
         self
+    }
+    /// <p>Specifies additional connection options.</p>
+    pub fn get_additional_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3SourceAdditionalOptions> {
+        &self.additional_options
     }
     /// Consumes the builder and constructs a [`GovernedCatalogSource`](crate::types::GovernedCatalogSource).
     pub fn build(self) -> crate::types::GovernedCatalogSource {

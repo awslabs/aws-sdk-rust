@@ -38,6 +38,12 @@ impl AdvertiseByoipCidrFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AdvertiseByoipCidr as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::advertise_byoip_cidr::builders::AdvertiseByoipCidrInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,5 +133,9 @@ impl AdvertiseByoipCidrFluentBuilder {
     pub fn set_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cidr(input);
         self
+    }
+    /// <p>The address range, in CIDR notation. This must be the exact range that you provisioned. You can't advertise only a portion of the provisioned range.</p>
+    pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cidr()
     }
 }

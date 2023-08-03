@@ -37,6 +37,12 @@ impl StartQueryPlanningFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartQueryPlanning as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_query_planning::builders::StartQueryPlanningInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +136,12 @@ impl StartQueryPlanningFluentBuilder {
         self.inner = self.inner.set_query_planning_context(input);
         self
     }
+    /// <p>A structure containing information about the query plan.</p>
+    pub fn get_query_planning_context(
+        &self,
+    ) -> &::std::option::Option<crate::types::QueryPlanningContext> {
+        self.inner.get_query_planning_context()
+    }
     /// <p>A PartiQL query statement used as an input to the planner service.</p>
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_string(input.into());
@@ -139,5 +151,9 @@ impl StartQueryPlanningFluentBuilder {
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query_string(input);
         self
+    }
+    /// <p>A PartiQL query statement used as an input to the planner service.</p>
+    pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_query_string()
     }
 }

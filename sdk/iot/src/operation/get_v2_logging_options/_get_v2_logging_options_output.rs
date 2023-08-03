@@ -63,6 +63,10 @@ impl GetV2LoggingOptionsOutputBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The IAM role ARN IoT uses to write to your CloudWatch logs.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>The default log level.</p>
     pub fn default_log_level(mut self, input: crate::types::LogLevel) -> Self {
         self.default_log_level = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl GetV2LoggingOptionsOutputBuilder {
         self.default_log_level = input;
         self
     }
+    /// <p>The default log level.</p>
+    pub fn get_default_log_level(&self) -> &::std::option::Option<crate::types::LogLevel> {
+        &self.default_log_level
+    }
     /// <p>Disables all logs.</p>
     pub fn disable_all_logs(mut self, input: bool) -> Self {
         self.disable_all_logs = ::std::option::Option::Some(input);
@@ -85,6 +93,10 @@ impl GetV2LoggingOptionsOutputBuilder {
     pub fn set_disable_all_logs(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disable_all_logs = input;
         self
+    }
+    /// <p>Disables all logs.</p>
+    pub fn get_disable_all_logs(&self) -> &::std::option::Option<bool> {
+        &self.disable_all_logs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

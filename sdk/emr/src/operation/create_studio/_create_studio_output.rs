@@ -54,6 +54,10 @@ impl CreateStudioOutputBuilder {
         self.studio_id = input;
         self
     }
+    /// <p>The ID of the Amazon EMR Studio.</p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_id
+    }
     /// <p>The unique Studio access URL.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl CreateStudioOutputBuilder {
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
+    }
+    /// <p>The unique Studio access URL.</p>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

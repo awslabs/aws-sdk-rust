@@ -48,6 +48,10 @@ impl SmsMfaSettingsTypeBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Specifies whether SMS text message MFA is activated. If an MFA type is activated for a user, the user will be prompted for MFA during all sign-in attempts, unless device tracking is turned on and the device has been trusted.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// <p>Specifies whether SMS is the preferred MFA method.</p>
     pub fn preferred_mfa(mut self, input: bool) -> Self {
         self.preferred_mfa = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl SmsMfaSettingsTypeBuilder {
     pub fn set_preferred_mfa(mut self, input: ::std::option::Option<bool>) -> Self {
         self.preferred_mfa = input;
         self
+    }
+    /// <p>Specifies whether SMS is the preferred MFA method.</p>
+    pub fn get_preferred_mfa(&self) -> &::std::option::Option<bool> {
+        &self.preferred_mfa
     }
     /// Consumes the builder and constructs a [`SmsMfaSettingsType`](crate::types::SmsMfaSettingsType).
     pub fn build(self) -> crate::types::SmsMfaSettingsType {

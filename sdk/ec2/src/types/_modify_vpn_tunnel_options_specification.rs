@@ -383,6 +383,20 @@ impl ModifyVpnTunnelOptionsSpecificationBuilder {
         self.tunnel_inside_cidr = input;
         self
     }
+    /// <p>The range of inside IPv4 addresses for the tunnel. Any specified CIDR blocks must be unique across all VPN connections that use the same virtual private gateway. </p>
+    /// <p>Constraints: A size /30 CIDR block from the <code>169.254.0.0/16</code> range. The following CIDR blocks are reserved and cannot be used:</p>
+    /// <ul>
+    /// <li> <p> <code>169.254.0.0/30</code> </p> </li>
+    /// <li> <p> <code>169.254.1.0/30</code> </p> </li>
+    /// <li> <p> <code>169.254.2.0/30</code> </p> </li>
+    /// <li> <p> <code>169.254.3.0/30</code> </p> </li>
+    /// <li> <p> <code>169.254.4.0/30</code> </p> </li>
+    /// <li> <p> <code>169.254.5.0/30</code> </p> </li>
+    /// <li> <p> <code>169.254.169.252/30</code> </p> </li>
+    /// </ul>
+    pub fn get_tunnel_inside_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tunnel_inside_cidr
+    }
     /// <p>The range of inside IPv6 addresses for the tunnel. Any specified CIDR blocks must be unique across all VPN connections that use the same transit gateway.</p>
     /// <p>Constraints: A size /126 CIDR block from the local <code>fd00::/8</code> range.</p>
     pub fn tunnel_inside_ipv6_cidr(
@@ -400,6 +414,11 @@ impl ModifyVpnTunnelOptionsSpecificationBuilder {
     ) -> Self {
         self.tunnel_inside_ipv6_cidr = input;
         self
+    }
+    /// <p>The range of inside IPv6 addresses for the tunnel. Any specified CIDR blocks must be unique across all VPN connections that use the same transit gateway.</p>
+    /// <p>Constraints: A size /126 CIDR block from the local <code>fd00::/8</code> range.</p>
+    pub fn get_tunnel_inside_ipv6_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tunnel_inside_ipv6_cidr
     }
     /// <p>The pre-shared key (PSK) to establish initial authentication between the virtual private gateway and the customer gateway.</p>
     /// <p>Constraints: Allowed characters are alphanumeric characters, periods (.), and underscores (_). Must be between 8 and 64 characters in length and cannot start with zero (0).</p>
@@ -419,6 +438,11 @@ impl ModifyVpnTunnelOptionsSpecificationBuilder {
         self.pre_shared_key = input;
         self
     }
+    /// <p>The pre-shared key (PSK) to establish initial authentication between the virtual private gateway and the customer gateway.</p>
+    /// <p>Constraints: Allowed characters are alphanumeric characters, periods (.), and underscores (_). Must be between 8 and 64 characters in length and cannot start with zero (0).</p>
+    pub fn get_pre_shared_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pre_shared_key
+    }
     /// <p>The lifetime for phase 1 of the IKE negotiation, in seconds.</p>
     /// <p>Constraints: A value between 900 and 28,800.</p>
     /// <p>Default: <code>28800</code> </p>
@@ -432,6 +456,12 @@ impl ModifyVpnTunnelOptionsSpecificationBuilder {
     pub fn set_phase1_lifetime_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.phase1_lifetime_seconds = input;
         self
+    }
+    /// <p>The lifetime for phase 1 of the IKE negotiation, in seconds.</p>
+    /// <p>Constraints: A value between 900 and 28,800.</p>
+    /// <p>Default: <code>28800</code> </p>
+    pub fn get_phase1_lifetime_seconds(&self) -> &::std::option::Option<i32> {
+        &self.phase1_lifetime_seconds
     }
     /// <p>The lifetime for phase 2 of the IKE negotiation, in seconds.</p>
     /// <p>Constraints: A value between 900 and 3,600. The value must be less than the value for <code>Phase1LifetimeSeconds</code>.</p>
@@ -447,6 +477,12 @@ impl ModifyVpnTunnelOptionsSpecificationBuilder {
         self.phase2_lifetime_seconds = input;
         self
     }
+    /// <p>The lifetime for phase 2 of the IKE negotiation, in seconds.</p>
+    /// <p>Constraints: A value between 900 and 3,600. The value must be less than the value for <code>Phase1LifetimeSeconds</code>.</p>
+    /// <p>Default: <code>3600</code> </p>
+    pub fn get_phase2_lifetime_seconds(&self) -> &::std::option::Option<i32> {
+        &self.phase2_lifetime_seconds
+    }
     /// <p>The margin time, in seconds, before the phase 2 lifetime expires, during which the Amazon Web Services side of the VPN connection performs an IKE rekey. The exact time of the rekey is randomly selected based on the value for <code>RekeyFuzzPercentage</code>.</p>
     /// <p>Constraints: A value between 60 and half of <code>Phase2LifetimeSeconds</code>.</p>
     /// <p>Default: <code>540</code> </p>
@@ -460,6 +496,12 @@ impl ModifyVpnTunnelOptionsSpecificationBuilder {
     pub fn set_rekey_margin_time_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.rekey_margin_time_seconds = input;
         self
+    }
+    /// <p>The margin time, in seconds, before the phase 2 lifetime expires, during which the Amazon Web Services side of the VPN connection performs an IKE rekey. The exact time of the rekey is randomly selected based on the value for <code>RekeyFuzzPercentage</code>.</p>
+    /// <p>Constraints: A value between 60 and half of <code>Phase2LifetimeSeconds</code>.</p>
+    /// <p>Default: <code>540</code> </p>
+    pub fn get_rekey_margin_time_seconds(&self) -> &::std::option::Option<i32> {
+        &self.rekey_margin_time_seconds
     }
     /// <p>The percentage of the rekey window (determined by <code>RekeyMarginTimeSeconds</code>) during which the rekey time is randomly selected.</p>
     /// <p>Constraints: A value between 0 and 100.</p>
@@ -475,6 +517,12 @@ impl ModifyVpnTunnelOptionsSpecificationBuilder {
         self.rekey_fuzz_percentage = input;
         self
     }
+    /// <p>The percentage of the rekey window (determined by <code>RekeyMarginTimeSeconds</code>) during which the rekey time is randomly selected.</p>
+    /// <p>Constraints: A value between 0 and 100.</p>
+    /// <p>Default: <code>100</code> </p>
+    pub fn get_rekey_fuzz_percentage(&self) -> &::std::option::Option<i32> {
+        &self.rekey_fuzz_percentage
+    }
     /// <p>The number of packets in an IKE replay window.</p>
     /// <p>Constraints: A value between 64 and 2048.</p>
     /// <p>Default: <code>1024</code> </p>
@@ -489,6 +537,12 @@ impl ModifyVpnTunnelOptionsSpecificationBuilder {
         self.replay_window_size = input;
         self
     }
+    /// <p>The number of packets in an IKE replay window.</p>
+    /// <p>Constraints: A value between 64 and 2048.</p>
+    /// <p>Default: <code>1024</code> </p>
+    pub fn get_replay_window_size(&self) -> &::std::option::Option<i32> {
+        &self.replay_window_size
+    }
     /// <p>The number of seconds after which a DPD timeout occurs.</p>
     /// <p>Constraints: A value greater than or equal to 30.</p>
     /// <p>Default: <code>30</code> </p>
@@ -502,6 +556,12 @@ impl ModifyVpnTunnelOptionsSpecificationBuilder {
     pub fn set_dpd_timeout_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.dpd_timeout_seconds = input;
         self
+    }
+    /// <p>The number of seconds after which a DPD timeout occurs.</p>
+    /// <p>Constraints: A value greater than or equal to 30.</p>
+    /// <p>Default: <code>30</code> </p>
+    pub fn get_dpd_timeout_seconds(&self) -> &::std::option::Option<i32> {
+        &self.dpd_timeout_seconds
     }
     /// <p>The action to take after DPD timeout occurs. Specify <code>restart</code> to restart the IKE initiation. Specify <code>clear</code> to end the IKE session.</p>
     /// <p>Valid Values: <code>clear</code> | <code>none</code> | <code>restart</code> </p>
@@ -522,6 +582,12 @@ impl ModifyVpnTunnelOptionsSpecificationBuilder {
     ) -> Self {
         self.dpd_timeout_action = input;
         self
+    }
+    /// <p>The action to take after DPD timeout occurs. Specify <code>restart</code> to restart the IKE initiation. Specify <code>clear</code> to end the IKE session.</p>
+    /// <p>Valid Values: <code>clear</code> | <code>none</code> | <code>restart</code> </p>
+    /// <p>Default: <code>clear</code> </p>
+    pub fn get_dpd_timeout_action(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dpd_timeout_action
     }
     /// Appends an item to `phase1_encryption_algorithms`.
     ///
@@ -549,6 +615,15 @@ impl ModifyVpnTunnelOptionsSpecificationBuilder {
         self.phase1_encryption_algorithms = input;
         self
     }
+    /// <p>One or more encryption algorithms that are permitted for the VPN tunnel for phase 1 IKE negotiations.</p>
+    /// <p>Valid values: <code>AES128</code> | <code>AES256</code> | <code>AES128-GCM-16</code> | <code>AES256-GCM-16</code> </p>
+    pub fn get_phase1_encryption_algorithms(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::Phase1EncryptionAlgorithmsRequestListValue>,
+    > {
+        &self.phase1_encryption_algorithms
+    }
     /// Appends an item to `phase2_encryption_algorithms`.
     ///
     /// To override the contents of this collection use [`set_phase2_encryption_algorithms`](Self::set_phase2_encryption_algorithms).
@@ -574,6 +649,15 @@ impl ModifyVpnTunnelOptionsSpecificationBuilder {
     ) -> Self {
         self.phase2_encryption_algorithms = input;
         self
+    }
+    /// <p>One or more encryption algorithms that are permitted for the VPN tunnel for phase 2 IKE negotiations.</p>
+    /// <p>Valid values: <code>AES128</code> | <code>AES256</code> | <code>AES128-GCM-16</code> | <code>AES256-GCM-16</code> </p>
+    pub fn get_phase2_encryption_algorithms(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::Phase2EncryptionAlgorithmsRequestListValue>,
+    > {
+        &self.phase2_encryption_algorithms
     }
     /// Appends an item to `phase1_integrity_algorithms`.
     ///
@@ -601,6 +685,15 @@ impl ModifyVpnTunnelOptionsSpecificationBuilder {
         self.phase1_integrity_algorithms = input;
         self
     }
+    /// <p>One or more integrity algorithms that are permitted for the VPN tunnel for phase 1 IKE negotiations.</p>
+    /// <p>Valid values: <code>SHA1</code> | <code>SHA2-256</code> | <code>SHA2-384</code> | <code>SHA2-512</code> </p>
+    pub fn get_phase1_integrity_algorithms(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::Phase1IntegrityAlgorithmsRequestListValue>,
+    > {
+        &self.phase1_integrity_algorithms
+    }
     /// Appends an item to `phase2_integrity_algorithms`.
     ///
     /// To override the contents of this collection use [`set_phase2_integrity_algorithms`](Self::set_phase2_integrity_algorithms).
@@ -626,6 +719,15 @@ impl ModifyVpnTunnelOptionsSpecificationBuilder {
     ) -> Self {
         self.phase2_integrity_algorithms = input;
         self
+    }
+    /// <p>One or more integrity algorithms that are permitted for the VPN tunnel for phase 2 IKE negotiations.</p>
+    /// <p>Valid values: <code>SHA1</code> | <code>SHA2-256</code> | <code>SHA2-384</code> | <code>SHA2-512</code> </p>
+    pub fn get_phase2_integrity_algorithms(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::Phase2IntegrityAlgorithmsRequestListValue>,
+    > {
+        &self.phase2_integrity_algorithms
     }
     /// Appends an item to `phase1_dh_group_numbers`.
     ///
@@ -653,6 +755,14 @@ impl ModifyVpnTunnelOptionsSpecificationBuilder {
         self.phase1_dh_group_numbers = input;
         self
     }
+    /// <p>One or more Diffie-Hellman group numbers that are permitted for the VPN tunnel for phase 1 IKE negotiations.</p>
+    /// <p>Valid values: <code>2</code> | <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code> | <code>23</code> | <code>24</code> </p>
+    pub fn get_phase1_dh_group_numbers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Phase1DhGroupNumbersRequestListValue>>
+    {
+        &self.phase1_dh_group_numbers
+    }
     /// Appends an item to `phase2_dh_group_numbers`.
     ///
     /// To override the contents of this collection use [`set_phase2_dh_group_numbers`](Self::set_phase2_dh_group_numbers).
@@ -679,6 +789,14 @@ impl ModifyVpnTunnelOptionsSpecificationBuilder {
         self.phase2_dh_group_numbers = input;
         self
     }
+    /// <p>One or more Diffie-Hellman group numbers that are permitted for the VPN tunnel for phase 2 IKE negotiations.</p>
+    /// <p>Valid values: <code>2</code> | <code>5</code> | <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code> | <code>23</code> | <code>24</code> </p>
+    pub fn get_phase2_dh_group_numbers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Phase2DhGroupNumbersRequestListValue>>
+    {
+        &self.phase2_dh_group_numbers
+    }
     /// Appends an item to `ike_versions`.
     ///
     /// To override the contents of this collection use [`set_ike_versions`](Self::set_ike_versions).
@@ -700,6 +818,13 @@ impl ModifyVpnTunnelOptionsSpecificationBuilder {
         self.ike_versions = input;
         self
     }
+    /// <p>The IKE versions that are permitted for the VPN tunnel.</p>
+    /// <p>Valid values: <code>ikev1</code> | <code>ikev2</code> </p>
+    pub fn get_ike_versions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IkeVersionsRequestListValue>> {
+        &self.ike_versions
+    }
     /// <p>The action to take when the establishing the tunnel for the VPN connection. By default, your customer gateway device must initiate the IKE negotiation and bring up the tunnel. Specify <code>start</code> for Amazon Web Services to initiate the IKE negotiation.</p>
     /// <p>Valid Values: <code>add</code> | <code>start</code> </p>
     /// <p>Default: <code>add</code> </p>
@@ -720,6 +845,12 @@ impl ModifyVpnTunnelOptionsSpecificationBuilder {
         self.startup_action = input;
         self
     }
+    /// <p>The action to take when the establishing the tunnel for the VPN connection. By default, your customer gateway device must initiate the IKE negotiation and bring up the tunnel. Specify <code>start</code> for Amazon Web Services to initiate the IKE negotiation.</p>
+    /// <p>Valid Values: <code>add</code> | <code>start</code> </p>
+    /// <p>Default: <code>add</code> </p>
+    pub fn get_startup_action(&self) -> &::std::option::Option<::std::string::String> {
+        &self.startup_action
+    }
     /// <p>Options for logging VPN tunnel activity.</p>
     pub fn log_options(mut self, input: crate::types::VpnTunnelLogOptionsSpecification) -> Self {
         self.log_options = ::std::option::Option::Some(input);
@@ -733,6 +864,12 @@ impl ModifyVpnTunnelOptionsSpecificationBuilder {
         self.log_options = input;
         self
     }
+    /// <p>Options for logging VPN tunnel activity.</p>
+    pub fn get_log_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::VpnTunnelLogOptionsSpecification> {
+        &self.log_options
+    }
     /// <p>Turn on or off tunnel endpoint lifecycle control feature.</p>
     pub fn enable_tunnel_lifecycle_control(mut self, input: bool) -> Self {
         self.enable_tunnel_lifecycle_control = ::std::option::Option::Some(input);
@@ -745,6 +882,10 @@ impl ModifyVpnTunnelOptionsSpecificationBuilder {
     ) -> Self {
         self.enable_tunnel_lifecycle_control = input;
         self
+    }
+    /// <p>Turn on or off tunnel endpoint lifecycle control feature.</p>
+    pub fn get_enable_tunnel_lifecycle_control(&self) -> &::std::option::Option<bool> {
+        &self.enable_tunnel_lifecycle_control
     }
     /// Consumes the builder and constructs a [`ModifyVpnTunnelOptionsSpecification`](crate::types::ModifyVpnTunnelOptionsSpecification).
     pub fn build(self) -> crate::types::ModifyVpnTunnelOptionsSpecification {

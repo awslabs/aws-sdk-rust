@@ -49,6 +49,10 @@ impl CreateContainerServiceDeploymentOutputBuilder {
         self.container_service = input;
         self
     }
+    /// <p>An object that describes a container service.</p>
+    pub fn get_container_service(&self) -> &::std::option::Option<crate::types::ContainerService> {
+        &self.container_service
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -53,6 +53,12 @@ impl UpdateAccountSettingsOutputBuilder {
         self.account_settings_detail = input;
         self
     }
+    /// <p>OpenSearch Serverless-related settings for the current Amazon Web Services account. </p>
+    pub fn get_account_settings_detail(
+        &self,
+    ) -> &::std::option::Option<crate::types::AccountSettingsDetail> {
+        &self.account_settings_detail
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

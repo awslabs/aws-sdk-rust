@@ -36,6 +36,12 @@ impl DescribeEntityFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeEntity as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_entity::builders::DescribeEntityInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl DescribeEntityFluentBuilder {
         self.inner = self.inner.set_catalog(input);
         self
     }
+    /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
+    pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_catalog()
+    }
     /// <p>Required. The unique ID of the entity to describe.</p>
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.entity_id(input.into());
@@ -127,5 +137,9 @@ impl DescribeEntityFluentBuilder {
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_entity_id(input);
         self
+    }
+    /// <p>Required. The unique ID of the entity to describe.</p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_entity_id()
     }
 }

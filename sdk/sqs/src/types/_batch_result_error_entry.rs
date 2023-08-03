@@ -64,6 +64,10 @@ impl BatchResultErrorEntryBuilder {
         self.id = input;
         self
     }
+    /// <p>The <code>Id</code> of an entry in a batch request.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>Specifies whether the error happened due to the caller of the batch API action.</p>
     pub fn sender_fault(mut self, input: bool) -> Self {
         self.sender_fault = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl BatchResultErrorEntryBuilder {
     pub fn set_sender_fault(mut self, input: ::std::option::Option<bool>) -> Self {
         self.sender_fault = input;
         self
+    }
+    /// <p>Specifies whether the error happened due to the caller of the batch API action.</p>
+    pub fn get_sender_fault(&self) -> &::std::option::Option<bool> {
+        &self.sender_fault
     }
     /// <p>An error code representing why the action failed on this entry.</p>
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,6 +92,10 @@ impl BatchResultErrorEntryBuilder {
         self.code = input;
         self
     }
+    /// <p>An error code representing why the action failed on this entry.</p>
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
+    }
     /// <p>A message explaining why the action failed on this entry.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -93,6 +105,10 @@ impl BatchResultErrorEntryBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>A message explaining why the action failed on this entry.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`BatchResultErrorEntry`](crate::types::BatchResultErrorEntry).
     pub fn build(self) -> crate::types::BatchResultErrorEntry {

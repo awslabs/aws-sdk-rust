@@ -137,6 +137,10 @@ impl DescribeFlowDefinitionOutputBuilder {
         self.flow_definition_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the flow defintion.</p>
+    pub fn get_flow_definition_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_definition_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the flow definition.</p>
     pub fn flow_definition_name(
         mut self,
@@ -153,6 +157,10 @@ impl DescribeFlowDefinitionOutputBuilder {
         self.flow_definition_name = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the flow definition.</p>
+    pub fn get_flow_definition_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_definition_name
+    }
     /// <p>The status of the flow definition. Valid values are listed below.</p>
     pub fn flow_definition_status(mut self, input: crate::types::FlowDefinitionStatus) -> Self {
         self.flow_definition_status = ::std::option::Option::Some(input);
@@ -166,6 +174,12 @@ impl DescribeFlowDefinitionOutputBuilder {
         self.flow_definition_status = input;
         self
     }
+    /// <p>The status of the flow definition. Valid values are listed below.</p>
+    pub fn get_flow_definition_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::FlowDefinitionStatus> {
+        &self.flow_definition_status
+    }
     /// <p>The timestamp when the flow definition was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -178,6 +192,10 @@ impl DescribeFlowDefinitionOutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The timestamp when the flow definition was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>Container for configuring the source of human task requests. Used to specify if Amazon Rekognition or Amazon Textract is used as an integration source.</p>
     pub fn human_loop_request_source(
@@ -195,6 +213,12 @@ impl DescribeFlowDefinitionOutputBuilder {
         self.human_loop_request_source = input;
         self
     }
+    /// <p>Container for configuring the source of human task requests. Used to specify if Amazon Rekognition or Amazon Textract is used as an integration source.</p>
+    pub fn get_human_loop_request_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::HumanLoopRequestSource> {
+        &self.human_loop_request_source
+    }
     /// <p>An object containing information about what triggers a human review workflow.</p>
     pub fn human_loop_activation_config(
         mut self,
@@ -211,6 +235,12 @@ impl DescribeFlowDefinitionOutputBuilder {
         self.human_loop_activation_config = input;
         self
     }
+    /// <p>An object containing information about what triggers a human review workflow.</p>
+    pub fn get_human_loop_activation_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::HumanLoopActivationConfig> {
+        &self.human_loop_activation_config
+    }
     /// <p>An object containing information about who works on the task, the workforce task price, and other task details.</p>
     pub fn human_loop_config(mut self, input: crate::types::HumanLoopConfig) -> Self {
         self.human_loop_config = ::std::option::Option::Some(input);
@@ -223,6 +253,10 @@ impl DescribeFlowDefinitionOutputBuilder {
     ) -> Self {
         self.human_loop_config = input;
         self
+    }
+    /// <p>An object containing information about who works on the task, the workforce task price, and other task details.</p>
+    pub fn get_human_loop_config(&self) -> &::std::option::Option<crate::types::HumanLoopConfig> {
+        &self.human_loop_config
     }
     /// <p>An object containing information about the output file.</p>
     pub fn output_config(mut self, input: crate::types::FlowDefinitionOutputConfig) -> Self {
@@ -237,6 +271,12 @@ impl DescribeFlowDefinitionOutputBuilder {
         self.output_config = input;
         self
     }
+    /// <p>An object containing information about the output file.</p>
+    pub fn get_output_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::FlowDefinitionOutputConfig> {
+        &self.output_config
+    }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) execution role for the flow definition.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -246,6 +286,10 @@ impl DescribeFlowDefinitionOutputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) execution role for the flow definition.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The reason your flow definition failed.</p>
     pub fn failure_reason(
@@ -262,6 +306,10 @@ impl DescribeFlowDefinitionOutputBuilder {
     ) -> Self {
         self.failure_reason = input;
         self
+    }
+    /// <p>The reason your flow definition failed.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

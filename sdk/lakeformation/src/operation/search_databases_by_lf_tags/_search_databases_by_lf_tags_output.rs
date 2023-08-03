@@ -56,6 +56,10 @@ impl SearchDatabasesByLfTagsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A continuation token, present if the current list segment is not the last.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `database_list`.
     ///
     /// To override the contents of this collection use [`set_database_list`](Self::set_database_list).
@@ -74,6 +78,12 @@ impl SearchDatabasesByLfTagsOutputBuilder {
     ) -> Self {
         self.database_list = input;
         self
+    }
+    /// <p>A list of databases that meet the LF-tag conditions.</p>
+    pub fn get_database_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TaggedDatabase>> {
+        &self.database_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

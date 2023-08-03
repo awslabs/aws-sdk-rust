@@ -56,6 +56,10 @@ impl DescribeClustersOutputBuilder {
         self.marker = input;
         self
     }
+    /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// Appends an item to `clusters`.
     ///
     /// To override the contents of this collection use [`set_clusters`](Self::set_clusters).
@@ -74,6 +78,10 @@ impl DescribeClustersOutputBuilder {
     ) -> Self {
         self.clusters = input;
         self
+    }
+    /// <p>A list of <code>Cluster</code> objects, where each object describes one cluster. </p>
+    pub fn get_clusters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Cluster>> {
+        &self.clusters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

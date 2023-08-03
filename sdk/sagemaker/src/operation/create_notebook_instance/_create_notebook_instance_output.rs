@@ -54,6 +54,10 @@ impl CreateNotebookInstanceOutputBuilder {
         self.notebook_instance_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the notebook instance. </p>
+    pub fn get_notebook_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.notebook_instance_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

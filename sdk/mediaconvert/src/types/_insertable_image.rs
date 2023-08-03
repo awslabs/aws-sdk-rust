@@ -120,6 +120,10 @@ impl InsertableImageBuilder {
         self.duration = input;
         self
     }
+    /// Specify the time, in milliseconds, for the image to remain on the output video. This duration includes fade-in time but not fade-out time.
+    pub fn get_duration(&self) -> &::std::option::Option<i32> {
+        &self.duration
+    }
     /// Specify the length of time, in milliseconds, between the Start time that you specify for the image insertion and the time that the image appears at full opacity. Full opacity is the level that you specify for the opacity setting. If you don't specify a value for Fade-in, the image will appear abruptly at the overlay start time.
     pub fn fade_in(mut self, input: i32) -> Self {
         self.fade_in = ::std::option::Option::Some(input);
@@ -129,6 +133,10 @@ impl InsertableImageBuilder {
     pub fn set_fade_in(mut self, input: ::std::option::Option<i32>) -> Self {
         self.fade_in = input;
         self
+    }
+    /// Specify the length of time, in milliseconds, between the Start time that you specify for the image insertion and the time that the image appears at full opacity. Full opacity is the level that you specify for the opacity setting. If you don't specify a value for Fade-in, the image will appear abruptly at the overlay start time.
+    pub fn get_fade_in(&self) -> &::std::option::Option<i32> {
+        &self.fade_in
     }
     /// Specify the length of time, in milliseconds, between the end of the time that you have specified for the image overlay Duration and when the overlaid image has faded to total transparency. If you don't specify a value for Fade-out, the image will disappear abruptly at the end of the inserted image duration.
     pub fn fade_out(mut self, input: i32) -> Self {
@@ -140,6 +148,10 @@ impl InsertableImageBuilder {
         self.fade_out = input;
         self
     }
+    /// Specify the length of time, in milliseconds, between the end of the time that you have specified for the image overlay Duration and when the overlaid image has faded to total transparency. If you don't specify a value for Fade-out, the image will disappear abruptly at the end of the inserted image duration.
+    pub fn get_fade_out(&self) -> &::std::option::Option<i32> {
+        &self.fade_out
+    }
     /// Specify the height of the inserted image in pixels. If you specify a value that's larger than the video resolution height, the service will crop your overlaid image to fit. To use the native height of the image, keep this setting blank.
     pub fn height(mut self, input: i32) -> Self {
         self.height = ::std::option::Option::Some(input);
@@ -149,6 +161,10 @@ impl InsertableImageBuilder {
     pub fn set_height(mut self, input: ::std::option::Option<i32>) -> Self {
         self.height = input;
         self
+    }
+    /// Specify the height of the inserted image in pixels. If you specify a value that's larger than the video resolution height, the service will crop your overlaid image to fit. To use the native height of the image, keep this setting blank.
+    pub fn get_height(&self) -> &::std::option::Option<i32> {
+        &self.height
     }
     /// Specify the HTTP, HTTPS, or Amazon S3 location of the image that you want to overlay on the video. Use a PNG or TGA file.
     pub fn image_inserter_input(
@@ -166,6 +182,10 @@ impl InsertableImageBuilder {
         self.image_inserter_input = input;
         self
     }
+    /// Specify the HTTP, HTTPS, or Amazon S3 location of the image that you want to overlay on the video. Use a PNG or TGA file.
+    pub fn get_image_inserter_input(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_inserter_input
+    }
     /// Specify the distance, in pixels, between the inserted image and the left edge of the video frame. Required for any image overlay that you specify.
     pub fn image_x(mut self, input: i32) -> Self {
         self.image_x = ::std::option::Option::Some(input);
@@ -175,6 +195,10 @@ impl InsertableImageBuilder {
     pub fn set_image_x(mut self, input: ::std::option::Option<i32>) -> Self {
         self.image_x = input;
         self
+    }
+    /// Specify the distance, in pixels, between the inserted image and the left edge of the video frame. Required for any image overlay that you specify.
+    pub fn get_image_x(&self) -> &::std::option::Option<i32> {
+        &self.image_x
     }
     /// Specify the distance, in pixels, between the overlaid image and the top edge of the video frame. Required for any image overlay that you specify.
     pub fn image_y(mut self, input: i32) -> Self {
@@ -186,6 +210,10 @@ impl InsertableImageBuilder {
         self.image_y = input;
         self
     }
+    /// Specify the distance, in pixels, between the overlaid image and the top edge of the video frame. Required for any image overlay that you specify.
+    pub fn get_image_y(&self) -> &::std::option::Option<i32> {
+        &self.image_y
+    }
     /// Specify how overlapping inserted images appear. Images with higher values for Layer appear on top of images with lower values for Layer.
     pub fn layer(mut self, input: i32) -> Self {
         self.layer = ::std::option::Option::Some(input);
@@ -195,6 +223,10 @@ impl InsertableImageBuilder {
     pub fn set_layer(mut self, input: ::std::option::Option<i32>) -> Self {
         self.layer = input;
         self
+    }
+    /// Specify how overlapping inserted images appear. Images with higher values for Layer appear on top of images with lower values for Layer.
+    pub fn get_layer(&self) -> &::std::option::Option<i32> {
+        &self.layer
     }
     /// Use Opacity to specify how much of the underlying video shows through the inserted image. 0 is transparent and 100 is fully opaque. Default is 50.
     pub fn opacity(mut self, input: i32) -> Self {
@@ -206,6 +238,10 @@ impl InsertableImageBuilder {
         self.opacity = input;
         self
     }
+    /// Use Opacity to specify how much of the underlying video shows through the inserted image. 0 is transparent and 100 is fully opaque. Default is 50.
+    pub fn get_opacity(&self) -> &::std::option::Option<i32> {
+        &self.opacity
+    }
     /// Specify the timecode of the frame that you want the overlay to first appear on. This must be in timecode (HH:MM:SS:FF or HH:MM:SS;FF) format. Remember to take into account your timecode source settings.
     pub fn start_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_time = ::std::option::Option::Some(input.into());
@@ -216,6 +252,10 @@ impl InsertableImageBuilder {
         self.start_time = input;
         self
     }
+    /// Specify the timecode of the frame that you want the overlay to first appear on. This must be in timecode (HH:MM:SS:FF or HH:MM:SS;FF) format. Remember to take into account your timecode source settings.
+    pub fn get_start_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_time
+    }
     /// Specify the width of the inserted image in pixels. If you specify a value that's larger than the video resolution width, the service will crop your overlaid image to fit. To use the native width of the image, keep this setting blank.
     pub fn width(mut self, input: i32) -> Self {
         self.width = ::std::option::Option::Some(input);
@@ -225,6 +265,10 @@ impl InsertableImageBuilder {
     pub fn set_width(mut self, input: ::std::option::Option<i32>) -> Self {
         self.width = input;
         self
+    }
+    /// Specify the width of the inserted image in pixels. If you specify a value that's larger than the video resolution width, the service will crop your overlaid image to fit. To use the native width of the image, keep this setting blank.
+    pub fn get_width(&self) -> &::std::option::Option<i32> {
+        &self.width
     }
     /// Consumes the builder and constructs a [`InsertableImage`](crate::types::InsertableImage).
     pub fn build(self) -> crate::types::InsertableImage {

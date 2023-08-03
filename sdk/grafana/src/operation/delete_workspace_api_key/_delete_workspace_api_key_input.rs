@@ -49,6 +49,10 @@ impl DeleteWorkspaceApiKeyInputBuilder {
         self.key_name = input;
         self
     }
+    /// <p>The name of the API key to delete.</p>
+    pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_name
+    }
     /// <p>The ID of the workspace to delete.</p>
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl DeleteWorkspaceApiKeyInputBuilder {
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workspace_id = input;
         self
+    }
+    /// <p>The ID of the workspace to delete.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
     }
     /// Consumes the builder and constructs a [`DeleteWorkspaceApiKeyInput`](crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyInput).
     pub fn build(

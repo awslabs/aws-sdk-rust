@@ -54,6 +54,10 @@ impl PutContainerRecipePolicyOutputBuilder {
         self.request_id = input;
         self
     }
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the container recipe that this policy was applied to.</p>
     pub fn container_recipe_arn(
         mut self,
@@ -69,6 +73,10 @@ impl PutContainerRecipePolicyOutputBuilder {
     ) -> Self {
         self.container_recipe_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the container recipe that this policy was applied to.</p>
+    pub fn get_container_recipe_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.container_recipe_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

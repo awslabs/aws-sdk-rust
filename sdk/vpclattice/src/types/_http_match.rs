@@ -56,6 +56,10 @@ impl HttpMatchBuilder {
         self.method = input;
         self
     }
+    /// <p>The HTTP method type.</p>
+    pub fn get_method(&self) -> &::std::option::Option<::std::string::String> {
+        &self.method
+    }
     /// <p>The path match.</p>
     pub fn path_match(mut self, input: crate::types::PathMatch) -> Self {
         self.path_match = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl HttpMatchBuilder {
     pub fn set_path_match(mut self, input: ::std::option::Option<crate::types::PathMatch>) -> Self {
         self.path_match = input;
         self
+    }
+    /// <p>The path match.</p>
+    pub fn get_path_match(&self) -> &::std::option::Option<crate::types::PathMatch> {
+        &self.path_match
     }
     /// Appends an item to `header_matches`.
     ///
@@ -84,6 +92,12 @@ impl HttpMatchBuilder {
     ) -> Self {
         self.header_matches = input;
         self
+    }
+    /// <p>The header matches. Matches incoming requests with rule based on request header value before applying rule action.</p>
+    pub fn get_header_matches(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HeaderMatch>> {
+        &self.header_matches
     }
     /// Consumes the builder and constructs a [`HttpMatch`](crate::types::HttpMatch).
     pub fn build(self) -> crate::types::HttpMatch {

@@ -69,6 +69,10 @@ impl UpdateNodeInputBuilder {
         self.network_id = input;
         self
     }
+    /// <p>The unique identifier of the network that the node is on.</p>
+    pub fn get_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_id
+    }
     /// <p>The unique identifier of the member that owns the node.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
     pub fn member_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -81,6 +85,11 @@ impl UpdateNodeInputBuilder {
         self.member_id = input;
         self
     }
+    /// <p>The unique identifier of the member that owns the node.</p>
+    /// <p>Applies only to Hyperledger Fabric.</p>
+    pub fn get_member_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.member_id
+    }
     /// <p>The unique identifier of the node.</p>
     pub fn node_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_id = ::std::option::Option::Some(input.into());
@@ -90,6 +99,10 @@ impl UpdateNodeInputBuilder {
     pub fn set_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_id = input;
         self
+    }
+    /// <p>The unique identifier of the node.</p>
+    pub fn get_node_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_id
     }
     /// <p>Configuration properties for publishing to Amazon CloudWatch Logs.</p>
     pub fn log_publishing_configuration(
@@ -106,6 +119,12 @@ impl UpdateNodeInputBuilder {
     ) -> Self {
         self.log_publishing_configuration = input;
         self
+    }
+    /// <p>Configuration properties for publishing to Amazon CloudWatch Logs.</p>
+    pub fn get_log_publishing_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::NodeLogPublishingConfiguration> {
+        &self.log_publishing_configuration
     }
     /// Consumes the builder and constructs a [`UpdateNodeInput`](crate::operation::update_node::UpdateNodeInput).
     pub fn build(

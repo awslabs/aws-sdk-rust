@@ -81,6 +81,15 @@ impl IdentityInfoBuilder {
         self.identity_type = input;
         self
     }
+    /// <p>The email identity type. The identity type can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>EMAIL_ADDRESS</code> – The identity is an email address.</p> </li>
+    /// <li> <p> <code>DOMAIN</code> – The identity is a domain.</p> </li>
+    /// <li> <p> <code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by AWS.</p> </li>
+    /// </ul>
+    pub fn get_identity_type(&self) -> &::std::option::Option<crate::types::IdentityType> {
+        &self.identity_type
+    }
     /// <p>The address or domain of the identity.</p>
     pub fn identity_name(
         mut self,
@@ -97,6 +106,10 @@ impl IdentityInfoBuilder {
         self.identity_name = input;
         self
     }
+    /// <p>The address or domain of the identity.</p>
+    pub fn get_identity_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_name
+    }
     /// <p>Indicates whether or not you can send email from the identity.</p>
     /// <p>In Amazon Pinpoint, an identity is an email address or domain that you send email from. Before you can send email from an identity, you have to demostrate that you own the identity, and that you authorize Amazon Pinpoint to send email from that identity.</p>
     pub fn sending_enabled(mut self, input: bool) -> Self {
@@ -108,6 +121,11 @@ impl IdentityInfoBuilder {
     pub fn set_sending_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.sending_enabled = input;
         self
+    }
+    /// <p>Indicates whether or not you can send email from the identity.</p>
+    /// <p>In Amazon Pinpoint, an identity is an email address or domain that you send email from. Before you can send email from an identity, you have to demostrate that you own the identity, and that you authorize Amazon Pinpoint to send email from that identity.</p>
+    pub fn get_sending_enabled(&self) -> &::std::option::Option<bool> {
+        &self.sending_enabled
     }
     /// Consumes the builder and constructs a [`IdentityInfo`](crate::types::IdentityInfo).
     pub fn build(self) -> crate::types::IdentityInfo {

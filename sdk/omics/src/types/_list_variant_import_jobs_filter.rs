@@ -48,6 +48,10 @@ impl ListVariantImportJobsFilterBuilder {
         self.status = input;
         self
     }
+    /// <p>A status to filter on.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
+        &self.status
+    }
     /// <p>A store name to filter on.</p>
     pub fn store_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.store_name = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl ListVariantImportJobsFilterBuilder {
     pub fn set_store_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.store_name = input;
         self
+    }
+    /// <p>A store name to filter on.</p>
+    pub fn get_store_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.store_name
     }
     /// Consumes the builder and constructs a [`ListVariantImportJobsFilter`](crate::types::ListVariantImportJobsFilter).
     pub fn build(self) -> crate::types::ListVariantImportJobsFilter {

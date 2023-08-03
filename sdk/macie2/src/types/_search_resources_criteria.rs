@@ -56,6 +56,12 @@ impl SearchResourcesCriteriaBuilder {
         self.simple_criterion = input;
         self
     }
+    /// <p>A property-based condition that defines a property, operator, and one or more values for including or excluding resources from the results.</p>
+    pub fn get_simple_criterion(
+        &self,
+    ) -> &::std::option::Option<crate::types::SearchResourcesSimpleCriterion> {
+        &self.simple_criterion
+    }
     /// <p>A tag-based condition that defines an operator and tag keys, tag values, or tag key and value pairs for including or excluding resources from the results.</p>
     pub fn tag_criterion(mut self, input: crate::types::SearchResourcesTagCriterion) -> Self {
         self.tag_criterion = ::std::option::Option::Some(input);
@@ -68,6 +74,12 @@ impl SearchResourcesCriteriaBuilder {
     ) -> Self {
         self.tag_criterion = input;
         self
+    }
+    /// <p>A tag-based condition that defines an operator and tag keys, tag values, or tag key and value pairs for including or excluding resources from the results.</p>
+    pub fn get_tag_criterion(
+        &self,
+    ) -> &::std::option::Option<crate::types::SearchResourcesTagCriterion> {
+        &self.tag_criterion
     }
     /// Consumes the builder and constructs a [`SearchResourcesCriteria`](crate::types::SearchResourcesCriteria).
     pub fn build(self) -> crate::types::SearchResourcesCriteria {

@@ -59,6 +59,10 @@ impl ListCertificatesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>When the list is truncated, this value is present and contains the value to use for the <code>NextToken</code> parameter in a subsequent pagination request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `certificate_summary_list`.
     ///
     /// To override the contents of this collection use [`set_certificate_summary_list`](Self::set_certificate_summary_list).
@@ -77,6 +81,12 @@ impl ListCertificatesOutputBuilder {
     ) -> Self {
         self.certificate_summary_list = input;
         self
+    }
+    /// <p>A list of ACM certificates.</p>
+    pub fn get_certificate_summary_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CertificateSummary>> {
+        &self.certificate_summary_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

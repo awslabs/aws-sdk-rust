@@ -50,6 +50,12 @@ impl GetGlobalSettingsOutputBuilder {
         self.voice_connector = input;
         self
     }
+    /// <p>The Voice Connector settings.</p>
+    pub fn get_voice_connector(
+        &self,
+    ) -> &::std::option::Option<crate::types::VoiceConnectorSettings> {
+        &self.voice_connector
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

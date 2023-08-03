@@ -63,6 +63,14 @@ impl ActionConfigurationBuilder {
         self.configuration = input;
         self
     }
+    /// <p>The configuration data for the action.</p>
+    pub fn get_configuration(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.configuration
+    }
     /// Consumes the builder and constructs a [`ActionConfiguration`](crate::types::ActionConfiguration).
     pub fn build(self) -> crate::types::ActionConfiguration {
         crate::types::ActionConfiguration {

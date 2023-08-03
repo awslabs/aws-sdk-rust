@@ -56,6 +56,10 @@ impl CustomImageBuilder {
         self.image_name = input;
         self
     }
+    /// <p>The name of the CustomImage. Must be unique to your account.</p>
+    pub fn get_image_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_name
+    }
     /// <p>The version number of the CustomImage.</p>
     pub fn image_version_number(mut self, input: i32) -> Self {
         self.image_version_number = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl CustomImageBuilder {
     pub fn set_image_version_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.image_version_number = input;
         self
+    }
+    /// <p>The version number of the CustomImage.</p>
+    pub fn get_image_version_number(&self) -> &::std::option::Option<i32> {
+        &self.image_version_number
     }
     /// <p>The name of the AppImageConfig.</p>
     pub fn app_image_config_name(
@@ -81,6 +89,10 @@ impl CustomImageBuilder {
     ) -> Self {
         self.app_image_config_name = input;
         self
+    }
+    /// <p>The name of the AppImageConfig.</p>
+    pub fn get_app_image_config_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_image_config_name
     }
     /// Consumes the builder and constructs a [`CustomImage`](crate::types::CustomImage).
     pub fn build(self) -> crate::types::CustomImage {

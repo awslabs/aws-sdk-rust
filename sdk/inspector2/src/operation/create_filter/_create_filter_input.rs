@@ -87,6 +87,10 @@ impl CreateFilterInputBuilder {
         self.action = input;
         self
     }
+    /// <p>Defines the action that is to be applied to the findings that match the filter.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::FilterAction> {
+        &self.action
+    }
     /// <p>A description of the filter.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -96,6 +100,10 @@ impl CreateFilterInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the filter.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Defines the criteria to be used in the filter for querying findings.</p>
     pub fn filter_criteria(mut self, input: crate::types::FilterCriteria) -> Self {
@@ -110,6 +118,10 @@ impl CreateFilterInputBuilder {
         self.filter_criteria = input;
         self
     }
+    /// <p>Defines the criteria to be used in the filter for querying findings.</p>
+    pub fn get_filter_criteria(&self) -> &::std::option::Option<crate::types::FilterCriteria> {
+        &self.filter_criteria
+    }
     /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -119,6 +131,10 @@ impl CreateFilterInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -145,6 +161,14 @@ impl CreateFilterInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>A list of tags for the filter.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>The reason for creating the filter.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
@@ -154,6 +178,10 @@ impl CreateFilterInputBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
+    }
+    /// <p>The reason for creating the filter.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
     }
     /// Consumes the builder and constructs a [`CreateFilterInput`](crate::operation::create_filter::CreateFilterInput).
     pub fn build(

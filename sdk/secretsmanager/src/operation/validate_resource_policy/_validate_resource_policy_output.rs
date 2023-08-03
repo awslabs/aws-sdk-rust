@@ -60,6 +60,10 @@ impl ValidateResourcePolicyOutputBuilder {
         self.policy_validation_passed = input;
         self
     }
+    /// <p>True if your policy passes validation, otherwise false.</p>
+    pub fn get_policy_validation_passed(&self) -> &::std::option::Option<bool> {
+        &self.policy_validation_passed
+    }
     /// Appends an item to `validation_errors`.
     ///
     /// To override the contents of this collection use [`set_validation_errors`](Self::set_validation_errors).
@@ -78,6 +82,12 @@ impl ValidateResourcePolicyOutputBuilder {
     ) -> Self {
         self.validation_errors = input;
         self
+    }
+    /// <p>Validation errors if your policy didn't pass validation.</p>
+    pub fn get_validation_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationErrorsEntry>> {
+        &self.validation_errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

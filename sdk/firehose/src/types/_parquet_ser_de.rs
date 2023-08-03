@@ -80,6 +80,10 @@ impl ParquetSerDeBuilder {
         self.block_size_bytes = input;
         self
     }
+    /// <p>The Hadoop Distributed File System (HDFS) block size. This is useful if you intend to copy the data from Amazon S3 to HDFS before querying. The default is 256 MiB and the minimum is 64 MiB. Kinesis Data Firehose uses this value for padding calculations.</p>
+    pub fn get_block_size_bytes(&self) -> &::std::option::Option<i32> {
+        &self.block_size_bytes
+    }
     /// <p>The Parquet page size. Column chunks are divided into pages. A page is conceptually an indivisible unit (in terms of compression and encoding). The minimum value is 64 KiB and the default is 1 MiB.</p>
     pub fn page_size_bytes(mut self, input: i32) -> Self {
         self.page_size_bytes = ::std::option::Option::Some(input);
@@ -89,6 +93,10 @@ impl ParquetSerDeBuilder {
     pub fn set_page_size_bytes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.page_size_bytes = input;
         self
+    }
+    /// <p>The Parquet page size. Column chunks are divided into pages. A page is conceptually an indivisible unit (in terms of compression and encoding). The minimum value is 64 KiB and the default is 1 MiB.</p>
+    pub fn get_page_size_bytes(&self) -> &::std::option::Option<i32> {
+        &self.page_size_bytes
     }
     /// <p>The compression code to use over data blocks. The possible values are <code>UNCOMPRESSED</code>, <code>SNAPPY</code>, and <code>GZIP</code>, with the default being <code>SNAPPY</code>. Use <code>SNAPPY</code> for higher decompression speed. Use <code>GZIP</code> if the compression ratio is more important than speed.</p>
     pub fn compression(mut self, input: crate::types::ParquetCompression) -> Self {
@@ -103,6 +111,10 @@ impl ParquetSerDeBuilder {
         self.compression = input;
         self
     }
+    /// <p>The compression code to use over data blocks. The possible values are <code>UNCOMPRESSED</code>, <code>SNAPPY</code>, and <code>GZIP</code>, with the default being <code>SNAPPY</code>. Use <code>SNAPPY</code> for higher decompression speed. Use <code>GZIP</code> if the compression ratio is more important than speed.</p>
+    pub fn get_compression(&self) -> &::std::option::Option<crate::types::ParquetCompression> {
+        &self.compression
+    }
     /// <p>Indicates whether to enable dictionary compression.</p>
     pub fn enable_dictionary_compression(mut self, input: bool) -> Self {
         self.enable_dictionary_compression = ::std::option::Option::Some(input);
@@ -113,6 +125,10 @@ impl ParquetSerDeBuilder {
         self.enable_dictionary_compression = input;
         self
     }
+    /// <p>Indicates whether to enable dictionary compression.</p>
+    pub fn get_enable_dictionary_compression(&self) -> &::std::option::Option<bool> {
+        &self.enable_dictionary_compression
+    }
     /// <p>The maximum amount of padding to apply. This is useful if you intend to copy the data from Amazon S3 to HDFS before querying. The default is 0.</p>
     pub fn max_padding_bytes(mut self, input: i32) -> Self {
         self.max_padding_bytes = ::std::option::Option::Some(input);
@@ -122,6 +138,10 @@ impl ParquetSerDeBuilder {
     pub fn set_max_padding_bytes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_padding_bytes = input;
         self
+    }
+    /// <p>The maximum amount of padding to apply. This is useful if you intend to copy the data from Amazon S3 to HDFS before querying. The default is 0.</p>
+    pub fn get_max_padding_bytes(&self) -> &::std::option::Option<i32> {
+        &self.max_padding_bytes
     }
     /// <p>Indicates the version of row format to output. The possible values are <code>V1</code> and <code>V2</code>. The default is <code>V1</code>.</p>
     pub fn writer_version(mut self, input: crate::types::ParquetWriterVersion) -> Self {
@@ -135,6 +155,10 @@ impl ParquetSerDeBuilder {
     ) -> Self {
         self.writer_version = input;
         self
+    }
+    /// <p>Indicates the version of row format to output. The possible values are <code>V1</code> and <code>V2</code>. The default is <code>V1</code>.</p>
+    pub fn get_writer_version(&self) -> &::std::option::Option<crate::types::ParquetWriterVersion> {
+        &self.writer_version
     }
     /// Consumes the builder and constructs a [`ParquetSerDe`](crate::types::ParquetSerDe).
     pub fn build(self) -> crate::types::ParquetSerDe {

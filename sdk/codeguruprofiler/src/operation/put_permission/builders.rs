@@ -39,6 +39,12 @@ impl PutPermissionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutPermission as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_permission::builders::PutPermissionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl PutPermissionFluentBuilder {
         self.inner = self.inner.set_profiling_group_name(input);
         self
     }
+    /// <p>The name of the profiling group to grant access to.</p>
+    pub fn get_profiling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_profiling_group_name()
+    }
     /// <p> Specifies an action group that contains permissions to add to a profiling group resource. One action group is supported, <code>agentPermissions</code>, which grants permission to perform actions required by the profiling agent, <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions. </p>
     pub fn action_group(mut self, input: crate::types::ActionGroup) -> Self {
         self.inner = self.inner.action_group(input);
@@ -139,6 +149,10 @@ impl PutPermissionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_action_group(input);
         self
+    }
+    /// <p> Specifies an action group that contains permissions to add to a profiling group resource. One action group is supported, <code>agentPermissions</code>, which grants permission to perform actions required by the profiling agent, <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions. </p>
+    pub fn get_action_group(&self) -> &::std::option::Option<crate::types::ActionGroup> {
+        self.inner.get_action_group()
     }
     /// Appends an item to `principals`.
     ///
@@ -157,6 +171,10 @@ impl PutPermissionFluentBuilder {
         self.inner = self.inner.set_principals(input);
         self
     }
+    /// <p> A list ARNs for the roles and users you want to grant access to the profiling group. Wildcards are not are supported in the ARNs. </p>
+    pub fn get_principals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_principals()
+    }
     /// <p> A universally unique identifier (UUID) for the revision of the policy you are adding to the profiling group. Do not specify this when you add permissions to a profiling group for the first time. If a policy already exists on the profiling group, you must specify the <code>revisionId</code>. </p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.revision_id(input.into());
@@ -166,5 +184,9 @@ impl PutPermissionFluentBuilder {
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_revision_id(input);
         self
+    }
+    /// <p> A universally unique identifier (UUID) for the revision of the policy you are adding to the profiling group. Do not specify this when you add permissions to a profiling group for the first time. If a policy already exists on the profiling group, you must specify the <code>revisionId</code>. </p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_revision_id()
     }
 }

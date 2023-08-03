@@ -47,6 +47,10 @@ impl GetBotAliasInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the bot alias. The name is case sensitive.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The name of the bot.</p>
     pub fn bot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_name = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl GetBotAliasInputBuilder {
     pub fn set_bot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_name = input;
         self
+    }
+    /// <p>The name of the bot.</p>
+    pub fn get_bot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_name
     }
     /// Consumes the builder and constructs a [`GetBotAliasInput`](crate::operation::get_bot_alias::GetBotAliasInput).
     pub fn build(

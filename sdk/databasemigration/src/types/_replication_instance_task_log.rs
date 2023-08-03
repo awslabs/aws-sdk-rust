@@ -62,6 +62,10 @@ impl ReplicationInstanceTaskLogBuilder {
         self.replication_task_name = input;
         self
     }
+    /// <p>The name of the replication task.</p>
+    pub fn get_replication_task_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_task_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
     pub fn replication_task_arn(
         mut self,
@@ -78,6 +82,10 @@ impl ReplicationInstanceTaskLogBuilder {
         self.replication_task_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
+    pub fn get_replication_task_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_task_arn
+    }
     /// <p>The size, in bytes, of the replication task log.</p>
     pub fn replication_instance_task_log_size(mut self, input: i64) -> Self {
         self.replication_instance_task_log_size = ::std::option::Option::Some(input);
@@ -90,6 +98,10 @@ impl ReplicationInstanceTaskLogBuilder {
     ) -> Self {
         self.replication_instance_task_log_size = input;
         self
+    }
+    /// <p>The size, in bytes, of the replication task log.</p>
+    pub fn get_replication_instance_task_log_size(&self) -> &::std::option::Option<i64> {
+        &self.replication_instance_task_log_size
     }
     /// Consumes the builder and constructs a [`ReplicationInstanceTaskLog`](crate::types::ReplicationInstanceTaskLog).
     pub fn build(self) -> crate::types::ReplicationInstanceTaskLog {

@@ -37,6 +37,13 @@ impl ListTargetsForPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListTargetsForPolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_targets_for_policy::builders::ListTargetsForPolicyInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +145,10 @@ impl ListTargetsForPolicyFluentBuilder {
         self.inner = self.inner.set_policy_name(input);
         self
     }
+    /// <p>The policy name.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_name()
+    }
     /// <p>A marker used to get the next set of results.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -148,6 +159,10 @@ impl ListTargetsForPolicyFluentBuilder {
         self.inner = self.inner.set_marker(input);
         self
     }
+    /// <p>A marker used to get the next set of results.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
+    }
     /// <p>The maximum number of results to return at one time.</p>
     pub fn page_size(mut self, input: i32) -> Self {
         self.inner = self.inner.page_size(input);
@@ -157,5 +172,9 @@ impl ListTargetsForPolicyFluentBuilder {
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_page_size(input);
         self
+    }
+    /// <p>The maximum number of results to return at one time.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        self.inner.get_page_size()
     }
 }

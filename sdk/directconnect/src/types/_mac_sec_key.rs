@@ -78,6 +78,10 @@ impl MacSecKeyBuilder {
         self.secret_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key.</p>
+    pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_arn
+    }
     /// <p>The Connection Key Name (CKN) for the MAC Security secret key.</p>
     pub fn ckn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ckn = ::std::option::Option::Some(input.into());
@@ -87,6 +91,10 @@ impl MacSecKeyBuilder {
     pub fn set_ckn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ckn = input;
         self
+    }
+    /// <p>The Connection Key Name (CKN) for the MAC Security secret key.</p>
+    pub fn get_ckn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ckn
     }
     /// <p>The state of the MAC Security (MACsec) secret key.</p>
     /// <p>The possible values are:</p>
@@ -112,6 +120,17 @@ impl MacSecKeyBuilder {
         self.state = input;
         self
     }
+    /// <p>The state of the MAC Security (MACsec) secret key.</p>
+    /// <p>The possible values are:</p>
+    /// <ul>
+    /// <li> <p> <code>associating</code>: The MAC Security (MACsec) secret key is being validated and not yet associated with the connection or LAG.</p> </li>
+    /// <li> <p> <code>associated</code>: The MAC Security (MACsec) secret key is validated and associated with the connection or LAG.</p> </li>
+    /// <li> <p> <code>disassociating</code>: The MAC Security (MACsec) secret key is being disassociated from the connection or LAG</p> </li>
+    /// <li> <p> <code>disassociated</code>: The MAC Security (MACsec) secret key is no longer associated with the connection or LAG.</p> </li>
+    /// </ul>
+    pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state
+    }
     /// <p>The date that the MAC Security (MACsec) secret key takes effect. The value is displayed in UTC format.</p>
     pub fn start_on(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_on = ::std::option::Option::Some(input.into());
@@ -121,6 +140,10 @@ impl MacSecKeyBuilder {
     pub fn set_start_on(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_on = input;
         self
+    }
+    /// <p>The date that the MAC Security (MACsec) secret key takes effect. The value is displayed in UTC format.</p>
+    pub fn get_start_on(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_on
     }
     /// Consumes the builder and constructs a [`MacSecKey`](crate::types::MacSecKey).
     pub fn build(self) -> crate::types::MacSecKey {

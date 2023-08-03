@@ -48,6 +48,10 @@ impl ProblemDetailsBuilder {
         self.detail = input;
         self
     }
+    /// <p>A human-readable explanation specific to this occurrence of the problem.</p>
+    pub fn get_detail(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detail
+    }
     /// <p>A human-readable title of the problem type.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl ProblemDetailsBuilder {
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
+    }
+    /// <p>A human-readable title of the problem type.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
     }
     /// Consumes the builder and constructs a [`ProblemDetails`](crate::types::ProblemDetails).
     pub fn build(self) -> crate::types::ProblemDetails {

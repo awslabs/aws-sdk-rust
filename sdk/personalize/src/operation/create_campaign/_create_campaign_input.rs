@@ -71,6 +71,10 @@ impl CreateCampaignInputBuilder {
         self.name = input;
         self
     }
+    /// <p>A name for the new campaign. The campaign name must be unique within your account.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Name (ARN) of the solution version to deploy.</p>
     pub fn solution_version_arn(
         mut self,
@@ -87,6 +91,10 @@ impl CreateCampaignInputBuilder {
         self.solution_version_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the solution version to deploy.</p>
+    pub fn get_solution_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.solution_version_arn
+    }
     /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support. A high <code>minProvisionedTPS</code> will increase your bill. We recommend starting with 1 for <code>minProvisionedTPS</code> (the default). Track your usage using Amazon CloudWatch metrics, and increase the <code>minProvisionedTPS</code> as necessary.</p>
     pub fn min_provisioned_tps(mut self, input: i32) -> Self {
         self.min_provisioned_tps = ::std::option::Option::Some(input);
@@ -96,6 +104,10 @@ impl CreateCampaignInputBuilder {
     pub fn set_min_provisioned_tps(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_provisioned_tps = input;
         self
+    }
+    /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support. A high <code>minProvisionedTPS</code> will increase your bill. We recommend starting with 1 for <code>minProvisionedTPS</code> (the default). Track your usage using Amazon CloudWatch metrics, and increase the <code>minProvisionedTPS</code> as necessary.</p>
+    pub fn get_min_provisioned_tps(&self) -> &::std::option::Option<i32> {
+        &self.min_provisioned_tps
     }
     /// <p>The configuration details of a campaign.</p>
     pub fn campaign_config(mut self, input: crate::types::CampaignConfig) -> Self {
@@ -109,6 +121,10 @@ impl CreateCampaignInputBuilder {
     ) -> Self {
         self.campaign_config = input;
         self
+    }
+    /// <p>The configuration details of a campaign.</p>
+    pub fn get_campaign_config(&self) -> &::std::option::Option<crate::types::CampaignConfig> {
+        &self.campaign_config
     }
     /// Appends an item to `tags`.
     ///
@@ -128,6 +144,10 @@ impl CreateCampaignInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the campaign.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateCampaignInput`](crate::operation::create_campaign::CreateCampaignInput).
     pub fn build(

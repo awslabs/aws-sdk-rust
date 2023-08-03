@@ -92,6 +92,10 @@ impl StepBuilder {
         self.start_position = input;
         self
     }
+    /// <p>The starting position of a step. If the position is the first step in the leg, this position is the same as the start position of the leg.</p>
+    pub fn get_start_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+        &self.start_position
+    }
     /// Appends an item to `end_position`.
     ///
     /// To override the contents of this collection use [`set_end_position`](Self::set_end_position).
@@ -108,6 +112,10 @@ impl StepBuilder {
         self.end_position = input;
         self
     }
+    /// <p>The end position of a step. If the position the last step in the leg, this position is the same as the end position of the leg.</p>
+    pub fn get_end_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+        &self.end_position
+    }
     /// <p>The travel distance between the step's <code>StartPosition</code> and <code>EndPosition</code>.</p>
     pub fn distance(mut self, input: f64) -> Self {
         self.distance = ::std::option::Option::Some(input);
@@ -118,6 +126,10 @@ impl StepBuilder {
         self.distance = input;
         self
     }
+    /// <p>The travel distance between the step's <code>StartPosition</code> and <code>EndPosition</code>.</p>
+    pub fn get_distance(&self) -> &::std::option::Option<f64> {
+        &self.distance
+    }
     /// <p>The estimated travel time, in seconds, from the step's <code>StartPosition</code> to the <code>EndPosition</code>. . The travel mode and departure time that you specify in the request determines the calculated time.</p>
     pub fn duration_seconds(mut self, input: f64) -> Self {
         self.duration_seconds = ::std::option::Option::Some(input);
@@ -127,6 +139,10 @@ impl StepBuilder {
     pub fn set_duration_seconds(mut self, input: ::std::option::Option<f64>) -> Self {
         self.duration_seconds = input;
         self
+    }
+    /// <p>The estimated travel time, in seconds, from the step's <code>StartPosition</code> to the <code>EndPosition</code>. . The travel mode and departure time that you specify in the request determines the calculated time.</p>
+    pub fn get_duration_seconds(&self) -> &::std::option::Option<f64> {
+        &self.duration_seconds
     }
     /// <p>Represents the start position, or index, in a sequence of steps within the leg's line string geometry. For example, the index of the first step in a leg geometry is <code>0</code>. </p>
     /// <p>Included in the response for queries that set <code>IncludeLegGeometry</code> to <code>True</code>. </p>
@@ -139,6 +155,11 @@ impl StepBuilder {
     pub fn set_geometry_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.geometry_offset = input;
         self
+    }
+    /// <p>Represents the start position, or index, in a sequence of steps within the leg's line string geometry. For example, the index of the first step in a leg geometry is <code>0</code>. </p>
+    /// <p>Included in the response for queries that set <code>IncludeLegGeometry</code> to <code>True</code>. </p>
+    pub fn get_geometry_offset(&self) -> &::std::option::Option<i32> {
+        &self.geometry_offset
     }
     /// Consumes the builder and constructs a [`Step`](crate::types::Step).
     pub fn build(self) -> crate::types::Step {

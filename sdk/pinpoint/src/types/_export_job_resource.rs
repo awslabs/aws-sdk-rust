@@ -72,6 +72,10 @@ impl ExportJobResourceBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorized Amazon Pinpoint to access the Amazon S3 location where the endpoint definitions were exported to.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>The URL of the location in an Amazon Simple Storage Service (Amazon S3) bucket where the endpoint definitions were exported to. This location is typically a folder that contains multiple files. The URL should be in the following format: s3://<replaceable>
     /// bucket-name
     /// </replaceable>/<replaceable>
@@ -96,6 +100,14 @@ impl ExportJobResourceBuilder {
         self.s3_url_prefix = input;
         self
     }
+    /// <p>The URL of the location in an Amazon Simple Storage Service (Amazon S3) bucket where the endpoint definitions were exported to. This location is typically a folder that contains multiple files. The URL should be in the following format: s3://<replaceable>
+    /// bucket-name
+    /// </replaceable>/<replaceable>
+    /// folder-name
+    /// </replaceable>/.</p>
+    pub fn get_s3_url_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_url_prefix
+    }
     /// <p>The identifier for the segment that the endpoint definitions were exported from. If this value isn't present, Amazon Pinpoint exported definitions for all the endpoints that are associated with the application.</p>
     pub fn segment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.segment_id = ::std::option::Option::Some(input.into());
@@ -106,6 +118,10 @@ impl ExportJobResourceBuilder {
         self.segment_id = input;
         self
     }
+    /// <p>The identifier for the segment that the endpoint definitions were exported from. If this value isn't present, Amazon Pinpoint exported definitions for all the endpoints that are associated with the application.</p>
+    pub fn get_segment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.segment_id
+    }
     /// <p>The version of the segment that the endpoint definitions were exported from.</p>
     pub fn segment_version(mut self, input: i32) -> Self {
         self.segment_version = ::std::option::Option::Some(input);
@@ -115,6 +131,10 @@ impl ExportJobResourceBuilder {
     pub fn set_segment_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.segment_version = input;
         self
+    }
+    /// <p>The version of the segment that the endpoint definitions were exported from.</p>
+    pub fn get_segment_version(&self) -> &::std::option::Option<i32> {
+        &self.segment_version
     }
     /// Consumes the builder and constructs a [`ExportJobResource`](crate::types::ExportJobResource).
     pub fn build(self) -> crate::types::ExportJobResource {

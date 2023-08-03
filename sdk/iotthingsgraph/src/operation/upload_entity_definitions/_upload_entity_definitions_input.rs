@@ -60,6 +60,10 @@ impl UploadEntityDefinitionsInputBuilder {
         self.document = input;
         self
     }
+    /// <p>The <code>DefinitionDocument</code> that defines the updated entities.</p>
+    pub fn get_document(&self) -> &::std::option::Option<crate::types::DefinitionDocument> {
+        &self.document
+    }
     /// <p>A Boolean that specifies whether to synchronize with the latest version of the public namespace. If set to <code>true</code>, the upload will create a new namespace version.</p>
     pub fn sync_with_public_namespace(mut self, input: bool) -> Self {
         self.sync_with_public_namespace = ::std::option::Option::Some(input);
@@ -70,6 +74,10 @@ impl UploadEntityDefinitionsInputBuilder {
         self.sync_with_public_namespace = input;
         self
     }
+    /// <p>A Boolean that specifies whether to synchronize with the latest version of the public namespace. If set to <code>true</code>, the upload will create a new namespace version.</p>
+    pub fn get_sync_with_public_namespace(&self) -> &::std::option::Option<bool> {
+        &self.sync_with_public_namespace
+    }
     /// <p>A Boolean that specifies whether to deprecate all entities in the latest version before uploading the new <code>DefinitionDocument</code>. If set to <code>true</code>, the upload will create a new namespace version.</p>
     pub fn deprecate_existing_entities(mut self, input: bool) -> Self {
         self.deprecate_existing_entities = ::std::option::Option::Some(input);
@@ -79,6 +87,10 @@ impl UploadEntityDefinitionsInputBuilder {
     pub fn set_deprecate_existing_entities(mut self, input: ::std::option::Option<bool>) -> Self {
         self.deprecate_existing_entities = input;
         self
+    }
+    /// <p>A Boolean that specifies whether to deprecate all entities in the latest version before uploading the new <code>DefinitionDocument</code>. If set to <code>true</code>, the upload will create a new namespace version.</p>
+    pub fn get_deprecate_existing_entities(&self) -> &::std::option::Option<bool> {
+        &self.deprecate_existing_entities
     }
     /// Consumes the builder and constructs a [`UploadEntityDefinitionsInput`](crate::operation::upload_entity_definitions::UploadEntityDefinitionsInput).
     pub fn build(

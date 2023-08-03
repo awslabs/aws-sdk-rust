@@ -144,6 +144,10 @@ impl BatchLoadTaskDescriptionBuilder {
         self.task_id = input;
         self
     }
+    /// <p>The ID of the batch load task.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_id
+    }
     /// <p></p>
     pub fn error_message(
         mut self,
@@ -159,6 +163,10 @@ impl BatchLoadTaskDescriptionBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p></p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// <p>Configuration details about the data source for a batch load task.</p>
     pub fn data_source_configuration(
@@ -176,6 +184,12 @@ impl BatchLoadTaskDescriptionBuilder {
         self.data_source_configuration = input;
         self
     }
+    /// <p>Configuration details about the data source for a batch load task.</p>
+    pub fn get_data_source_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataSourceConfiguration> {
+        &self.data_source_configuration
+    }
     /// <p></p>
     pub fn progress_report(mut self, input: crate::types::BatchLoadProgressReport) -> Self {
         self.progress_report = ::std::option::Option::Some(input);
@@ -188,6 +202,12 @@ impl BatchLoadTaskDescriptionBuilder {
     ) -> Self {
         self.progress_report = input;
         self
+    }
+    /// <p></p>
+    pub fn get_progress_report(
+        &self,
+    ) -> &::std::option::Option<crate::types::BatchLoadProgressReport> {
+        &self.progress_report
     }
     /// <p>Report configuration for a batch load task. This contains details about where error reports are stored.</p>
     pub fn report_configuration(mut self, input: crate::types::ReportConfiguration) -> Self {
@@ -202,6 +222,12 @@ impl BatchLoadTaskDescriptionBuilder {
         self.report_configuration = input;
         self
     }
+    /// <p>Report configuration for a batch load task. This contains details about where error reports are stored.</p>
+    pub fn get_report_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReportConfiguration> {
+        &self.report_configuration
+    }
     /// <p>Data model configuration for a batch load task. This contains details about where a data model for a batch load task is stored.</p>
     pub fn data_model_configuration(mut self, input: crate::types::DataModelConfiguration) -> Self {
         self.data_model_configuration = ::std::option::Option::Some(input);
@@ -214,6 +240,12 @@ impl BatchLoadTaskDescriptionBuilder {
     ) -> Self {
         self.data_model_configuration = input;
         self
+    }
+    /// <p>Data model configuration for a batch load task. This contains details about where a data model for a batch load task is stored.</p>
+    pub fn get_data_model_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataModelConfiguration> {
+        &self.data_model_configuration
     }
     /// <p></p>
     pub fn target_database_name(
@@ -232,6 +264,10 @@ impl BatchLoadTaskDescriptionBuilder {
         self
     }
     /// <p></p>
+    pub fn get_target_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_database_name
+    }
+    /// <p></p>
     pub fn target_table_name(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -247,6 +283,10 @@ impl BatchLoadTaskDescriptionBuilder {
         self.target_table_name = input;
         self
     }
+    /// <p></p>
+    pub fn get_target_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_table_name
+    }
     /// <p>Status of the batch load task.</p>
     pub fn task_status(mut self, input: crate::types::BatchLoadStatus) -> Self {
         self.task_status = ::std::option::Option::Some(input);
@@ -260,6 +300,10 @@ impl BatchLoadTaskDescriptionBuilder {
         self.task_status = input;
         self
     }
+    /// <p>Status of the batch load task.</p>
+    pub fn get_task_status(&self) -> &::std::option::Option<crate::types::BatchLoadStatus> {
+        &self.task_status
+    }
     /// <p></p>
     pub fn record_version(mut self, input: i64) -> Self {
         self.record_version = ::std::option::Option::Some(input);
@@ -269,6 +313,10 @@ impl BatchLoadTaskDescriptionBuilder {
     pub fn set_record_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.record_version = input;
         self
+    }
+    /// <p></p>
+    pub fn get_record_version(&self) -> &::std::option::Option<i64> {
+        &self.record_version
     }
     /// <p>The time when the Timestream batch load task was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -283,6 +331,10 @@ impl BatchLoadTaskDescriptionBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The time when the Timestream batch load task was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The time when the Timestream batch load task was last updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
@@ -296,6 +348,10 @@ impl BatchLoadTaskDescriptionBuilder {
         self.last_updated_time = input;
         self
     }
+    /// <p>The time when the Timestream batch load task was last updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
+    }
     /// <p> </p>
     pub fn resumable_until(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.resumable_until = ::std::option::Option::Some(input);
@@ -308,6 +364,10 @@ impl BatchLoadTaskDescriptionBuilder {
     ) -> Self {
         self.resumable_until = input;
         self
+    }
+    /// <p> </p>
+    pub fn get_resumable_until(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.resumable_until
     }
     /// Consumes the builder and constructs a [`BatchLoadTaskDescription`](crate::types::BatchLoadTaskDescription).
     pub fn build(self) -> crate::types::BatchLoadTaskDescription {

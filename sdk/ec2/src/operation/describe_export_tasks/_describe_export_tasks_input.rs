@@ -61,6 +61,12 @@ impl DescribeExportTasksInputBuilder {
         self.export_task_ids = input;
         self
     }
+    /// <p>The export task IDs.</p>
+    pub fn get_export_task_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.export_task_ids
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -79,6 +85,10 @@ impl DescribeExportTasksInputBuilder {
     ) -> Self {
         self.filters = input;
         self
+    }
+    /// <p>the filters for the export tasks.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
     }
     /// Consumes the builder and constructs a [`DescribeExportTasksInput`](crate::operation::describe_export_tasks::DescribeExportTasksInput).
     pub fn build(

@@ -36,6 +36,12 @@ impl StartResourceScanFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartResourceScan as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_resource_scan::builders::StartResourceScanInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl StartResourceScanFluentBuilder {
         self.inner = self.inner.set_analyzer_arn(input);
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to use to scan the policies applied to the specified resource.</p>
+    pub fn get_analyzer_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_analyzer_arn()
+    }
     /// <p>The ARN of the resource to scan.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
@@ -135,6 +145,10 @@ impl StartResourceScanFluentBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
+    }
+    /// <p>The ARN of the resource to scan.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
     }
     /// <p>The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the owning account is the account in which the resource was created.</p>
     pub fn resource_owner_account(
@@ -151,5 +165,9 @@ impl StartResourceScanFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_owner_account(input);
         self
+    }
+    /// <p>The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the owning account is the account in which the resource was created.</p>
+    pub fn get_resource_owner_account(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_owner_account()
     }
 }

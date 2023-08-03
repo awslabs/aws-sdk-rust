@@ -64,6 +64,10 @@ impl MoveByoipCidrToIpamInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>The BYOIP CIDR.</p>
     pub fn cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cidr = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl MoveByoipCidrToIpamInputBuilder {
         self.cidr = input;
         self
     }
+    /// <p>The BYOIP CIDR.</p>
+    pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr
+    }
     /// <p>The IPAM pool ID.</p>
     pub fn ipam_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_pool_id = ::std::option::Option::Some(input.into());
@@ -83,6 +91,10 @@ impl MoveByoipCidrToIpamInputBuilder {
     pub fn set_ipam_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipam_pool_id = input;
         self
+    }
+    /// <p>The IPAM pool ID.</p>
+    pub fn get_ipam_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipam_pool_id
     }
     /// <p>The Amazon Web Services account ID of the owner of the IPAM pool.</p>
     pub fn ipam_pool_owner(
@@ -99,6 +111,10 @@ impl MoveByoipCidrToIpamInputBuilder {
     ) -> Self {
         self.ipam_pool_owner = input;
         self
+    }
+    /// <p>The Amazon Web Services account ID of the owner of the IPAM pool.</p>
+    pub fn get_ipam_pool_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipam_pool_owner
     }
     /// Consumes the builder and constructs a [`MoveByoipCidrToIpamInput`](crate::operation::move_byoip_cidr_to_ipam::MoveByoipCidrToIpamInput).
     pub fn build(

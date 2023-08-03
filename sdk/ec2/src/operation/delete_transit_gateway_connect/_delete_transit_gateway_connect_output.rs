@@ -51,6 +51,12 @@ impl DeleteTransitGatewayConnectOutputBuilder {
         self.transit_gateway_connect = input;
         self
     }
+    /// <p>Information about the deleted Connect attachment.</p>
+    pub fn get_transit_gateway_connect(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransitGatewayConnect> {
+        &self.transit_gateway_connect
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

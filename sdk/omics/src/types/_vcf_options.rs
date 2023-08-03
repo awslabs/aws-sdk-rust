@@ -48,6 +48,10 @@ impl VcfOptionsBuilder {
         self.ignore_qual_field = input;
         self
     }
+    /// <p>The file's ignore qual field setting.</p>
+    pub fn get_ignore_qual_field(&self) -> &::std::option::Option<bool> {
+        &self.ignore_qual_field
+    }
     /// <p>The file's ignore filter field setting.</p>
     pub fn ignore_filter_field(mut self, input: bool) -> Self {
         self.ignore_filter_field = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl VcfOptionsBuilder {
     pub fn set_ignore_filter_field(mut self, input: ::std::option::Option<bool>) -> Self {
         self.ignore_filter_field = input;
         self
+    }
+    /// <p>The file's ignore filter field setting.</p>
+    pub fn get_ignore_filter_field(&self) -> &::std::option::Option<bool> {
+        &self.ignore_filter_field
     }
     /// Consumes the builder and constructs a [`VcfOptions`](crate::types::VcfOptions).
     pub fn build(self) -> crate::types::VcfOptions {

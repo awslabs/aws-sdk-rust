@@ -60,6 +60,12 @@ impl BatchEnableStandardsOutputBuilder {
         self.standards_subscriptions = input;
         self
     }
+    /// <p>The details of the standards subscriptions that were enabled.</p>
+    pub fn get_standards_subscriptions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StandardsSubscription>> {
+        &self.standards_subscriptions
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

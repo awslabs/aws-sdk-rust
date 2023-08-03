@@ -97,6 +97,10 @@ impl CreateGrantVersionInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
     pub fn grant_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grant_arn = ::std::option::Option::Some(input.into());
@@ -107,6 +111,10 @@ impl CreateGrantVersionInputBuilder {
         self.grant_arn = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the grant.</p>
+    pub fn get_grant_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grant_arn
+    }
     /// <p>Grant name.</p>
     pub fn grant_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grant_name = ::std::option::Option::Some(input.into());
@@ -116,6 +124,10 @@ impl CreateGrantVersionInputBuilder {
     pub fn set_grant_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.grant_name = input;
         self
+    }
+    /// <p>Grant name.</p>
+    pub fn get_grant_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grant_name
     }
     /// Appends an item to `allowed_operations`.
     ///
@@ -136,6 +148,12 @@ impl CreateGrantVersionInputBuilder {
         self.allowed_operations = input;
         self
     }
+    /// <p>Allowed operations for the grant.</p>
+    pub fn get_allowed_operations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>> {
+        &self.allowed_operations
+    }
     /// <p>Grant status.</p>
     pub fn status(mut self, input: crate::types::GrantStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -145,6 +163,10 @@ impl CreateGrantVersionInputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::GrantStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Grant status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::GrantStatus> {
+        &self.status
     }
     /// <p>Grant status reason.</p>
     pub fn status_reason(
@@ -162,6 +184,10 @@ impl CreateGrantVersionInputBuilder {
         self.status_reason = input;
         self
     }
+    /// <p>Grant status reason.</p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_reason
+    }
     /// <p>Current version of the grant.</p>
     pub fn source_version(
         mut self,
@@ -178,6 +204,10 @@ impl CreateGrantVersionInputBuilder {
         self.source_version = input;
         self
     }
+    /// <p>Current version of the grant.</p>
+    pub fn get_source_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_version
+    }
     /// <p>The options specified for the grant.</p>
     pub fn options(mut self, input: crate::types::Options) -> Self {
         self.options = ::std::option::Option::Some(input);
@@ -187,6 +217,10 @@ impl CreateGrantVersionInputBuilder {
     pub fn set_options(mut self, input: ::std::option::Option<crate::types::Options>) -> Self {
         self.options = input;
         self
+    }
+    /// <p>The options specified for the grant.</p>
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::Options> {
+        &self.options
     }
     /// Consumes the builder and constructs a [`CreateGrantVersionInput`](crate::operation::create_grant_version::CreateGrantVersionInput).
     pub fn build(

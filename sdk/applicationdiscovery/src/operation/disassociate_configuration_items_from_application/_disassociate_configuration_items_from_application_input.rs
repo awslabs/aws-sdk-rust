@@ -53,6 +53,12 @@ impl DisassociateConfigurationItemsFromApplicationInputBuilder {
         self.application_configuration_id = input;
         self
     }
+    /// <p>Configuration ID of an application from which each item is disassociated.</p>
+    pub fn get_application_configuration_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.application_configuration_id
+    }
     /// Appends an item to `configuration_ids`.
     ///
     /// To override the contents of this collection use [`set_configuration_ids`](Self::set_configuration_ids).
@@ -74,6 +80,12 @@ impl DisassociateConfigurationItemsFromApplicationInputBuilder {
     ) -> Self {
         self.configuration_ids = input;
         self
+    }
+    /// <p>Configuration ID of each item to be disassociated from an application.</p>
+    pub fn get_configuration_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.configuration_ids
     }
     /// Consumes the builder and constructs a [`DisassociateConfigurationItemsFromApplicationInput`](crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationInput, ::aws_smithy_http::operation::error::BuildError>{

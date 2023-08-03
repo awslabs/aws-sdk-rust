@@ -55,6 +55,10 @@ impl DescribeChannelModeratedByAppInstanceUserInputBuilder {
         self.channel_arn = input;
         self
     }
+    /// <p>The ARN of the moderated channel.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
+    }
     /// <p>The ARN of the <code>AppInstanceUser</code> in the moderated channel.</p>
     pub fn app_instance_user_arn(
         mut self,
@@ -71,6 +75,10 @@ impl DescribeChannelModeratedByAppInstanceUserInputBuilder {
         self.app_instance_user_arn = input;
         self
     }
+    /// <p>The ARN of the <code>AppInstanceUser</code> in the moderated channel.</p>
+    pub fn get_app_instance_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_instance_user_arn
+    }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.chime_bearer = ::std::option::Option::Some(input.into());
@@ -80,6 +88,10 @@ impl DescribeChannelModeratedByAppInstanceUserInputBuilder {
     pub fn set_chime_bearer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.chime_bearer = input;
         self
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
+        &self.chime_bearer
     }
     /// Consumes the builder and constructs a [`DescribeChannelModeratedByAppInstanceUserInput`](crate::operation::describe_channel_moderated_by_app_instance_user::DescribeChannelModeratedByAppInstanceUserInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_channel_moderated_by_app_instance_user::DescribeChannelModeratedByAppInstanceUserInput, ::aws_smithy_http::operation::error::BuildError>{

@@ -57,6 +57,10 @@ impl ListSpeechSynthesisTasksInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>Maximum number of speech synthesis tasks returned in a List operation.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The pagination token to use in the next request to continue the listing of speech synthesis tasks. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -67,6 +71,10 @@ impl ListSpeechSynthesisTasksInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The pagination token to use in the next request to continue the listing of speech synthesis tasks. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>Status of the speech synthesis tasks returned in a List operation</p>
     pub fn status(mut self, input: crate::types::TaskStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -76,6 +84,10 @@ impl ListSpeechSynthesisTasksInputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TaskStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Status of the speech synthesis tasks returned in a List operation</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TaskStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`ListSpeechSynthesisTasksInput`](crate::operation::list_speech_synthesis_tasks::ListSpeechSynthesisTasksInput).
     pub fn build(

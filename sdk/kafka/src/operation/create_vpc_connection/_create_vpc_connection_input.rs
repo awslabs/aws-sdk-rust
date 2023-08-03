@@ -95,6 +95,10 @@ impl CreateVpcConnectionInputBuilder {
         self.target_cluster_arn = input;
         self
     }
+    /// <p>The cluster Amazon Resource Name (ARN) for the VPC connection.</p>
+    pub fn get_target_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_cluster_arn
+    }
     /// <p>The authentication type of VPC connection.</p>
     pub fn authentication(
         mut self,
@@ -111,6 +115,10 @@ impl CreateVpcConnectionInputBuilder {
         self.authentication = input;
         self
     }
+    /// <p>The authentication type of VPC connection.</p>
+    pub fn get_authentication(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authentication
+    }
     /// <p>The VPC ID of VPC connection.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -120,6 +128,10 @@ impl CreateVpcConnectionInputBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The VPC ID of VPC connection.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// Appends an item to `client_subnets`.
     ///
@@ -143,6 +155,12 @@ impl CreateVpcConnectionInputBuilder {
         self.client_subnets = input;
         self
     }
+    /// <p>The list of client subnets.</p>
+    pub fn get_client_subnets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.client_subnets
+    }
     /// Appends an item to `security_groups`.
     ///
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
@@ -164,6 +182,12 @@ impl CreateVpcConnectionInputBuilder {
     ) -> Self {
         self.security_groups = input;
         self
+    }
+    /// <p>The list of security groups.</p>
+    pub fn get_security_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_groups
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -189,6 +213,14 @@ impl CreateVpcConnectionInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A map of tags for the VPC connection.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateVpcConnectionInput`](crate::operation::create_vpc_connection::CreateVpcConnectionInput).
     pub fn build(

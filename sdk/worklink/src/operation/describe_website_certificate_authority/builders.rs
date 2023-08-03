@@ -39,6 +39,10 @@ impl DescribeWebsiteCertificateAuthorityFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeWebsiteCertificateAuthority as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_website_certificate_authority::builders::DescribeWebsiteCertificateAuthorityInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -103,6 +107,10 @@ impl DescribeWebsiteCertificateAuthorityFluentBuilder {
         self.inner = self.inner.set_fleet_arn(input);
         self
     }
+    /// <p>The ARN of the fleet.</p>
+    pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_fleet_arn()
+    }
     /// <p>A unique identifier for the certificate authority.</p>
     pub fn website_ca_id(
         mut self,
@@ -118,5 +126,9 @@ impl DescribeWebsiteCertificateAuthorityFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_website_ca_id(input);
         self
+    }
+    /// <p>A unique identifier for the certificate authority.</p>
+    pub fn get_website_ca_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_website_ca_id()
     }
 }

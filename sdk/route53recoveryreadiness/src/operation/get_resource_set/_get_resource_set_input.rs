@@ -45,6 +45,10 @@ impl GetResourceSetInputBuilder {
         self.resource_set_name = input;
         self
     }
+    /// <p>Name of a resource set.</p>
+    pub fn get_resource_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_set_name
+    }
     /// Consumes the builder and constructs a [`GetResourceSetInput`](crate::operation::get_resource_set::GetResourceSetInput).
     pub fn build(
         self,

@@ -60,6 +60,10 @@ impl AssociationOverviewBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the association. Status can be: Pending, Success, or Failed.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>A detailed status of the association.</p>
     pub fn detailed_status(
         mut self,
@@ -75,6 +79,10 @@ impl AssociationOverviewBuilder {
     ) -> Self {
         self.detailed_status = input;
         self
+    }
+    /// <p>A detailed status of the association.</p>
+    pub fn get_detailed_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detailed_status
     }
     /// Adds a key-value pair to `association_status_aggregated_count`.
     ///
@@ -98,6 +106,12 @@ impl AssociationOverviewBuilder {
     ) -> Self {
         self.association_status_aggregated_count = input;
         self
+    }
+    /// <p>Returns the number of targets for the association status. For example, if you created an association with two managed nodes, and one of them was successful, this would return the count of managed nodes by status.</p>
+    pub fn get_association_status_aggregated_count(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, i32>> {
+        &self.association_status_aggregated_count
     }
     /// Consumes the builder and constructs a [`AssociationOverview`](crate::types::AssociationOverview).
     pub fn build(self) -> crate::types::AssociationOverview {

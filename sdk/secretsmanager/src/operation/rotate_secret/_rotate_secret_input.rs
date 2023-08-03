@@ -85,6 +85,11 @@ impl RotateSecretInputBuilder {
         self.secret_id = input;
         self
     }
+    /// <p>The ARN or name of the secret to rotate.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
+    pub fn get_secret_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_id
+    }
     /// <p>A unique identifier for the new version of the secret that helps ensure idempotency. Secrets Manager uses this value to prevent the accidental creation of duplicate versions if there are failures and retries during rotation. This value becomes the <code>VersionId</code> of the new version.</p>
     /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that in the request for this parameter. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for new versions and include that value in the request.</p>
     /// <p>You only need to specify this value if you implement your own retry logic and you want to ensure that Secrets Manager doesn't attempt to create a secret version twice. We recommend that you generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to ensure uniqueness within the specified secret. </p>
@@ -105,6 +110,12 @@ impl RotateSecretInputBuilder {
         self.client_request_token = input;
         self
     }
+    /// <p>A unique identifier for the new version of the secret that helps ensure idempotency. Secrets Manager uses this value to prevent the accidental creation of duplicate versions if there are failures and retries during rotation. This value becomes the <code>VersionId</code> of the new version.</p>
+    /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that in the request for this parameter. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for new versions and include that value in the request.</p>
+    /// <p>You only need to specify this value if you implement your own retry logic and you want to ensure that Secrets Manager doesn't attempt to create a secret version twice. We recommend that you generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to ensure uniqueness within the specified secret. </p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
+    }
     /// <p>For secrets that use a Lambda rotation function to rotate, the ARN of the Lambda rotation function. </p>
     /// <p>For secrets that use <i>managed rotation</i>, omit this field. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_managed.html">Managed rotation</a> in the <i>Secrets Manager User Guide</i>.</p>
     pub fn rotation_lambda_arn(
@@ -123,6 +134,11 @@ impl RotateSecretInputBuilder {
         self.rotation_lambda_arn = input;
         self
     }
+    /// <p>For secrets that use a Lambda rotation function to rotate, the ARN of the Lambda rotation function. </p>
+    /// <p>For secrets that use <i>managed rotation</i>, omit this field. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_managed.html">Managed rotation</a> in the <i>Secrets Manager User Guide</i>.</p>
+    pub fn get_rotation_lambda_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rotation_lambda_arn
+    }
     /// <p>A structure that defines the rotation configuration for this secret.</p>
     pub fn rotation_rules(mut self, input: crate::types::RotationRulesType) -> Self {
         self.rotation_rules = ::std::option::Option::Some(input);
@@ -135,6 +151,10 @@ impl RotateSecretInputBuilder {
     ) -> Self {
         self.rotation_rules = input;
         self
+    }
+    /// <p>A structure that defines the rotation configuration for this secret.</p>
+    pub fn get_rotation_rules(&self) -> &::std::option::Option<crate::types::RotationRulesType> {
+        &self.rotation_rules
     }
     /// <p>Specifies whether to rotate the secret immediately or wait until the next scheduled rotation window. The rotation schedule is defined in <code>RotateSecretRequest$RotationRules</code>.</p>
     /// <p>For secrets that use a Lambda rotation function to rotate, if you don't immediately rotate the secret, Secrets Manager tests the rotation configuration by running the <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html"> <code>testSecret</code> step</a> of the Lambda rotation function. The test creates an <code>AWSPENDING</code> version of the secret and then removes it.</p>
@@ -149,6 +169,12 @@ impl RotateSecretInputBuilder {
     pub fn set_rotate_immediately(mut self, input: ::std::option::Option<bool>) -> Self {
         self.rotate_immediately = input;
         self
+    }
+    /// <p>Specifies whether to rotate the secret immediately or wait until the next scheduled rotation window. The rotation schedule is defined in <code>RotateSecretRequest$RotationRules</code>.</p>
+    /// <p>For secrets that use a Lambda rotation function to rotate, if you don't immediately rotate the secret, Secrets Manager tests the rotation configuration by running the <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html"> <code>testSecret</code> step</a> of the Lambda rotation function. The test creates an <code>AWSPENDING</code> version of the secret and then removes it.</p>
+    /// <p>By default, Secrets Manager rotates the secret immediately.</p>
+    pub fn get_rotate_immediately(&self) -> &::std::option::Option<bool> {
+        &self.rotate_immediately
     }
     /// Consumes the builder and constructs a [`RotateSecretInput`](crate::operation::rotate_secret::RotateSecretInput).
     pub fn build(

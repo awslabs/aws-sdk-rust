@@ -58,6 +58,12 @@ impl DescribeExpressionsOutputBuilder {
         self.expressions = input;
         self
     }
+    /// <p>The expressions configured for the domain.</p>
+    pub fn get_expressions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExpressionStatus>> {
+        &self.expressions
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

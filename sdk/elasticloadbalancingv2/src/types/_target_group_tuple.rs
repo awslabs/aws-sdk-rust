@@ -54,6 +54,10 @@ impl TargetGroupTupleBuilder {
         self.target_group_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the target group.</p>
+    pub fn get_target_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_group_arn
+    }
     /// <p>The weight. The range is 0 to 999.</p>
     pub fn weight(mut self, input: i32) -> Self {
         self.weight = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl TargetGroupTupleBuilder {
     pub fn set_weight(mut self, input: ::std::option::Option<i32>) -> Self {
         self.weight = input;
         self
+    }
+    /// <p>The weight. The range is 0 to 999.</p>
+    pub fn get_weight(&self) -> &::std::option::Option<i32> {
+        &self.weight
     }
     /// Consumes the builder and constructs a [`TargetGroupTuple`](crate::types::TargetGroupTuple).
     pub fn build(self) -> crate::types::TargetGroupTuple {

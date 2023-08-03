@@ -46,6 +46,10 @@ impl KmsEncryptionConfigBuilder {
         self.awskms_key_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the encryption key. Must belong to the same Amazon Web Services Region as the destination Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
+    pub fn get_awskms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.awskms_key_arn
+    }
     /// Consumes the builder and constructs a [`KmsEncryptionConfig`](crate::types::KmsEncryptionConfig).
     pub fn build(self) -> crate::types::KmsEncryptionConfig {
         crate::types::KmsEncryptionConfig {

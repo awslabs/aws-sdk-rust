@@ -37,6 +37,13 @@ impl DeleteDetectorVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteDetectorVersion as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_detector_version::builders::DeleteDetectorVersionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl DeleteDetectorVersionFluentBuilder {
         self.inner = self.inner.set_detector_id(input);
         self
     }
+    /// <p>The ID of the parent detector for the detector version to delete.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_detector_id()
+    }
     /// <p>The ID of the detector version to delete.</p>
     pub fn detector_version_id(
         mut self,
@@ -142,5 +153,9 @@ impl DeleteDetectorVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_detector_version_id(input);
         self
+    }
+    /// <p>The ID of the detector version to delete.</p>
+    pub fn get_detector_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_detector_version_id()
     }
 }

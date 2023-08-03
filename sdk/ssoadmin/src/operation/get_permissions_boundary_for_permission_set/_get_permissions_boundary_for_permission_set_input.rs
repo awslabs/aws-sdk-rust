@@ -47,6 +47,10 @@ impl GetPermissionsBoundaryForPermissionSetInputBuilder {
         self.instance_arn = input;
         self
     }
+    /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
+    pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_arn
+    }
     /// <p>The ARN of the <code>PermissionSet</code>.</p>
     pub fn permission_set_arn(
         mut self,
@@ -62,6 +66,10 @@ impl GetPermissionsBoundaryForPermissionSetInputBuilder {
     ) -> Self {
         self.permission_set_arn = input;
         self
+    }
+    /// <p>The ARN of the <code>PermissionSet</code>.</p>
+    pub fn get_permission_set_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.permission_set_arn
     }
     /// Consumes the builder and constructs a [`GetPermissionsBoundaryForPermissionSetInput`](crate::operation::get_permissions_boundary_for_permission_set::GetPermissionsBoundaryForPermissionSetInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_permissions_boundary_for_permission_set::GetPermissionsBoundaryForPermissionSetInput, ::aws_smithy_http::operation::error::BuildError>{

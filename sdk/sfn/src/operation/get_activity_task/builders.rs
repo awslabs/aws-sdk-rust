@@ -41,6 +41,12 @@ impl GetActivityTaskFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetActivityTask as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_activity_task::builders::GetActivityTaskInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +137,10 @@ impl GetActivityTaskFluentBuilder {
         self.inner = self.inner.set_activity_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from (assigned when you create the task using <code>CreateActivity</code>.)</p>
+    pub fn get_activity_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_activity_arn()
+    }
     /// <p>You can provide an arbitrary name in order to identify the worker that the task is assigned to. This name is used when it is logged in the execution history.</p>
     pub fn worker_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.worker_name(input.into());
@@ -140,5 +150,9 @@ impl GetActivityTaskFluentBuilder {
     pub fn set_worker_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_worker_name(input);
         self
+    }
+    /// <p>You can provide an arbitrary name in order to identify the worker that the task is assigned to. This name is used when it is logged in the execution history.</p>
+    pub fn get_worker_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_worker_name()
     }
 }

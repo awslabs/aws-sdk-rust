@@ -39,6 +39,10 @@ impl EnableOrganizationAdminAccountInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account identifier of the account to designate as the Detective administrator account for the organization.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// Consumes the builder and constructs a [`EnableOrganizationAdminAccountInput`](crate::operation::enable_organization_admin_account::EnableOrganizationAdminAccountInput).
     pub fn build(
         self,

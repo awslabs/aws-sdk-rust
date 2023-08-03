@@ -36,6 +36,12 @@ impl BatchPutMetricsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchPutMetrics as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_put_metrics::builders::BatchPutMetricsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl BatchPutMetricsFluentBuilder {
         self.inner = self.inner.set_trial_component_name(input);
         self
     }
+    /// <p>The name of the Trial Component to associate with the metrics.</p>
+    pub fn get_trial_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_trial_component_name()
+    }
     /// Appends an item to `MetricData`.
     ///
     /// To override the contents of this collection use [`set_metric_data`](Self::set_metric_data).
@@ -148,5 +158,11 @@ impl BatchPutMetricsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_metric_data(input);
         self
+    }
+    /// <p>A list of raw metric values to put.</p>
+    pub fn get_metric_data(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RawMetricData>> {
+        self.inner.get_metric_data()
     }
 }

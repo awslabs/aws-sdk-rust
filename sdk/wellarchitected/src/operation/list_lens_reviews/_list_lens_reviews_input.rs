@@ -66,6 +66,10 @@ impl ListLensReviewsInputBuilder {
         self.workload_id = input;
         self
     }
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workload_id
+    }
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
     pub fn milestone_number(mut self, input: i32) -> Self {
@@ -78,6 +82,11 @@ impl ListLensReviewsInputBuilder {
         self.milestone_number = input;
         self
     }
+    /// <p>The milestone number.</p>
+    /// <p>A workload can have a maximum of 100 milestones.</p>
+    pub fn get_milestone_number(&self) -> &::std::option::Option<i32> {
+        &self.milestone_number
+    }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -88,6 +97,10 @@ impl ListLensReviewsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to use to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return for this request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -97,6 +110,10 @@ impl ListLensReviewsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return for this request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListLensReviewsInput`](crate::operation::list_lens_reviews::ListLensReviewsInput).
     pub fn build(

@@ -36,6 +36,10 @@ impl ModifyReplicationSubnetGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyReplicationSubnetGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::modify_replication_subnet_group::builders::ModifyReplicationSubnetGroupInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,12 @@ impl ModifyReplicationSubnetGroupFluentBuilder {
         self.inner = self.inner.set_replication_subnet_group_identifier(input);
         self
     }
+    /// <p>The name of the replication instance subnet group.</p>
+    pub fn get_replication_subnet_group_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_replication_subnet_group_identifier()
+    }
     /// <p>A description for the replication instance subnet group.</p>
     pub fn replication_subnet_group_description(
         mut self,
@@ -150,6 +160,12 @@ impl ModifyReplicationSubnetGroupFluentBuilder {
         self.inner = self.inner.set_replication_subnet_group_description(input);
         self
     }
+    /// <p>A description for the replication instance subnet group.</p>
+    pub fn get_replication_subnet_group_description(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_replication_subnet_group_description()
+    }
     /// Appends an item to `SubnetIds`.
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
@@ -166,5 +182,9 @@ impl ModifyReplicationSubnetGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_subnet_ids(input);
         self
+    }
+    /// <p>A list of subnet IDs.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_subnet_ids()
     }
 }

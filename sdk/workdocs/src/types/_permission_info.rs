@@ -48,6 +48,10 @@ impl PermissionInfoBuilder {
         self.role = input;
         self
     }
+    /// <p>The role of the user.</p>
+    pub fn get_role(&self) -> &::std::option::Option<crate::types::RoleType> {
+        &self.role
+    }
     /// <p>The type of permissions.</p>
     pub fn r#type(mut self, input: crate::types::RolePermissionType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl PermissionInfoBuilder {
     ) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of permissions.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::RolePermissionType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`PermissionInfo`](crate::types::PermissionInfo).
     pub fn build(self) -> crate::types::PermissionInfo {

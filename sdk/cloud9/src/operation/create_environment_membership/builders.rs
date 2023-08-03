@@ -36,6 +36,10 @@ impl CreateEnvironmentMembershipFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateEnvironmentMembership as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_environment_membership::builders::CreateEnvironmentMembershipInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl CreateEnvironmentMembershipFluentBuilder {
         self.inner = self.inner.set_environment_id(input);
         self
     }
+    /// <p>The ID of the environment that contains the environment member you want to add.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_id()
+    }
     /// <p>The Amazon Resource Name (ARN) of the environment member you want to add.</p>
     pub fn user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_arn(input.into());
@@ -141,6 +149,10 @@ impl CreateEnvironmentMembershipFluentBuilder {
     pub fn set_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the environment member you want to add.</p>
+    pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_arn()
     }
     /// <p>The type of environment member permissions you want to associate with this environment member. Available values include:</p>
     /// <ul>
@@ -162,5 +174,13 @@ impl CreateEnvironmentMembershipFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_permissions(input);
         self
+    }
+    /// <p>The type of environment member permissions you want to associate with this environment member. Available values include:</p>
+    /// <ul>
+    /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
+    /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
+    /// </ul>
+    pub fn get_permissions(&self) -> &::std::option::Option<crate::types::MemberPermissions> {
+        self.inner.get_permissions()
     }
 }

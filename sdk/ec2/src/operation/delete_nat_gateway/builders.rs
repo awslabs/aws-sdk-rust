@@ -36,6 +36,12 @@ impl DeleteNatGatewayFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteNatGateway as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_nat_gateway::builders::DeleteNatGatewayInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DeleteNatGatewayFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>The ID of the NAT gateway.</p>
     pub fn nat_gateway_id(
         mut self,
@@ -141,5 +151,9 @@ impl DeleteNatGatewayFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_nat_gateway_id(input);
         self
+    }
+    /// <p>The ID of the NAT gateway.</p>
+    pub fn get_nat_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_nat_gateway_id()
     }
 }

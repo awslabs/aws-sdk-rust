@@ -50,6 +50,10 @@ impl GetMetricPolicyOutputBuilder {
         self.metric_policy = input;
         self
     }
+    /// <p>The metric policy that is associated with the specific container.</p>
+    pub fn get_metric_policy(&self) -> &::std::option::Option<crate::types::MetricPolicy> {
+        &self.metric_policy
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

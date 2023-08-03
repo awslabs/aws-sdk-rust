@@ -45,6 +45,12 @@ impl TtmlDestinationSettingsBuilder {
         self.style_control = input;
         self
     }
+    /// This field is not currently supported and will not affect the output styling. Leave the default value.
+    pub fn get_style_control(
+        &self,
+    ) -> &::std::option::Option<crate::types::TtmlDestinationStyleControl> {
+        &self.style_control
+    }
     /// Consumes the builder and constructs a [`TtmlDestinationSettings`](crate::types::TtmlDestinationSettings).
     pub fn build(self) -> crate::types::TtmlDestinationSettings {
         crate::types::TtmlDestinationSettings {

@@ -55,6 +55,10 @@ impl GetMetricDataV2OutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `metric_results`.
     ///
     /// To override the contents of this collection use [`set_metric_results`](Self::set_metric_results).
@@ -73,6 +77,12 @@ impl GetMetricDataV2OutputBuilder {
     ) -> Self {
         self.metric_results = input;
         self
+    }
+    /// <p>Information about the metrics requested in the API request If no grouping is specified, a summary of metric data is returned. </p>
+    pub fn get_metric_results(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricResultV2>> {
+        &self.metric_results
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

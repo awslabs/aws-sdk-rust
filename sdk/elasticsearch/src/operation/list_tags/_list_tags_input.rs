@@ -40,6 +40,10 @@ impl ListTagsInputBuilder {
         self.arn = input;
         self
     }
+    /// <p> Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`ListTagsInput`](crate::operation::list_tags::ListTagsInput).
     pub fn build(
         self,

@@ -48,6 +48,10 @@ impl InputLogEventBuilder {
         self.timestamp = input;
         self
     }
+    /// <p>The time the event occurred, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<i64> {
+        &self.timestamp
+    }
     /// <p>The raw event message. Each log event can be no larger than 256 KB.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl InputLogEventBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>The raw event message. Each log event can be no larger than 256 KB.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`InputLogEvent`](crate::types::InputLogEvent).
     pub fn build(self) -> crate::types::InputLogEvent {

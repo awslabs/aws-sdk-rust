@@ -51,6 +51,10 @@ impl RobotSoftwareSuiteBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the robot software suite (ROS distribution).</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::RobotSoftwareSuiteType> {
+        &self.name
+    }
     /// <p>The version of the robot software suite (ROS distribution).</p>
     pub fn version(mut self, input: crate::types::RobotSoftwareSuiteVersionType) -> Self {
         self.version = ::std::option::Option::Some(input);
@@ -63,6 +67,12 @@ impl RobotSoftwareSuiteBuilder {
     ) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The version of the robot software suite (ROS distribution).</p>
+    pub fn get_version(
+        &self,
+    ) -> &::std::option::Option<crate::types::RobotSoftwareSuiteVersionType> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`RobotSoftwareSuite`](crate::types::RobotSoftwareSuite).
     pub fn build(self) -> crate::types::RobotSoftwareSuite {

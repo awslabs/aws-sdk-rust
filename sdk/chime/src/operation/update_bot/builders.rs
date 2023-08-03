@@ -36,6 +36,10 @@ impl UpdateBotFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateBot as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_bot::builders::UpdateBotInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl UpdateBotFluentBuilder {
         self.inner = self.inner.set_account_id(input);
         self
     }
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// <p>The bot ID.</p>
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_id(input.into());
@@ -128,6 +136,10 @@ impl UpdateBotFluentBuilder {
         self.inner = self.inner.set_bot_id(input);
         self
     }
+    /// <p>The bot ID.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bot_id()
+    }
     /// <p>When true, stops the specified bot from running in your account.</p>
     pub fn disabled(mut self, input: bool) -> Self {
         self.inner = self.inner.disabled(input);
@@ -137,5 +149,9 @@ impl UpdateBotFluentBuilder {
     pub fn set_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_disabled(input);
         self
+    }
+    /// <p>When true, stops the specified bot from running in your account.</p>
+    pub fn get_disabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_disabled()
     }
 }

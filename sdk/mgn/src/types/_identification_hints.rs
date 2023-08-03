@@ -72,6 +72,10 @@ impl IdentificationHintsBuilder {
         self.fqdn = input;
         self
     }
+    /// <p>FQDN address identification hint.</p>
+    pub fn get_fqdn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fqdn
+    }
     /// <p>Hostname identification hint.</p>
     pub fn hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hostname = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl IdentificationHintsBuilder {
         self.hostname = input;
         self
     }
+    /// <p>Hostname identification hint.</p>
+    pub fn get_hostname(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hostname
+    }
     /// <p>vmWare UUID identification hint.</p>
     pub fn vm_ware_uuid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vm_ware_uuid = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl IdentificationHintsBuilder {
     pub fn set_vm_ware_uuid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vm_ware_uuid = input;
         self
+    }
+    /// <p>vmWare UUID identification hint.</p>
+    pub fn get_vm_ware_uuid(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vm_ware_uuid
     }
     /// <p>AWS Instance ID identification hint.</p>
     pub fn aws_instance_id(
@@ -108,6 +120,10 @@ impl IdentificationHintsBuilder {
         self.aws_instance_id = input;
         self
     }
+    /// <p>AWS Instance ID identification hint.</p>
+    pub fn get_aws_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_instance_id
+    }
     /// <p>vCenter VM path identification hint.</p>
     pub fn vm_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vm_path = ::std::option::Option::Some(input.into());
@@ -117,6 +133,10 @@ impl IdentificationHintsBuilder {
     pub fn set_vm_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vm_path = input;
         self
+    }
+    /// <p>vCenter VM path identification hint.</p>
+    pub fn get_vm_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vm_path
     }
     /// Consumes the builder and constructs a [`IdentificationHints`](crate::types::IdentificationHints).
     pub fn build(self) -> crate::types::IdentificationHints {

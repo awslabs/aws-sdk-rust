@@ -36,6 +36,12 @@ impl UpdateUsagePlanFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateUsagePlan as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_usage_plan::builders::UpdateUsagePlanInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateUsagePlanFluentBuilder {
         self.inner = self.inner.set_usage_plan_id(input);
         self
     }
+    /// <p>The Id of the to-be-updated usage plan.</p>
+    pub fn get_usage_plan_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_usage_plan_id()
+    }
     /// Appends an item to `patchOperations`.
     ///
     /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
@@ -148,5 +158,11 @@ impl UpdateUsagePlanFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_patch_operations(input);
         self
+    }
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
+    pub fn get_patch_operations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
+        self.inner.get_patch_operations()
     }
 }

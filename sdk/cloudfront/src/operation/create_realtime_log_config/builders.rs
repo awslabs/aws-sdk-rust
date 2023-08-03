@@ -39,6 +39,13 @@ impl CreateRealtimeLogConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateRealtimeLogConfig as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_realtime_log_config::builders::CreateRealtimeLogConfigInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +143,12 @@ impl CreateRealtimeLogConfigFluentBuilder {
         self.inner = self.inner.set_end_points(input);
         self
     }
+    /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
+    pub fn get_end_points(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EndPoint>> {
+        self.inner.get_end_points()
+    }
     /// Appends an item to `Fields`.
     ///
     /// To override the contents of this collection use [`set_fields`](Self::set_fields).
@@ -155,6 +168,11 @@ impl CreateRealtimeLogConfigFluentBuilder {
         self.inner = self.inner.set_fields(input);
         self
     }
+    /// <p>A list of fields to include in each real-time log record.</p>
+    /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_fields()
+    }
     /// <p>A unique name to identify this real-time log configuration.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -165,6 +183,10 @@ impl CreateRealtimeLogConfigFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>A unique name to identify this real-time log configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer requests that are represented in the real-time log data. You must provide an integer between 1 and 100, inclusive.</p>
     pub fn sampling_rate(mut self, input: i64) -> Self {
         self.inner = self.inner.sampling_rate(input);
@@ -174,5 +196,9 @@ impl CreateRealtimeLogConfigFluentBuilder {
     pub fn set_sampling_rate(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_sampling_rate(input);
         self
+    }
+    /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer requests that are represented in the real-time log data. You must provide an integer between 1 and 100, inclusive.</p>
+    pub fn get_sampling_rate(&self) -> &::std::option::Option<i64> {
+        self.inner.get_sampling_rate()
     }
 }

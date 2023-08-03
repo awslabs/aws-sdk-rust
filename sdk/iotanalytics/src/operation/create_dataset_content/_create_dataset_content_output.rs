@@ -47,6 +47,10 @@ impl CreateDatasetContentOutputBuilder {
         self.version_id = input;
         self
     }
+    /// <p>The version ID of the dataset contents that are being created.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

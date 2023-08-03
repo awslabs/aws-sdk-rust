@@ -51,6 +51,10 @@ impl QueryStringCacheKeysBuilder {
         self.quantity = input;
         self
     }
+    /// <p>The number of <code>whitelisted</code> query string parameters for a cache behavior.</p>
+    pub fn get_quantity(&self) -> &::std::option::Option<i32> {
+        &self.quantity
+    }
     /// Appends an item to `items`.
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
@@ -69,6 +73,10 @@ impl QueryStringCacheKeysBuilder {
     ) -> Self {
         self.items = input;
         self
+    }
+    /// <p>A list that contains the query string parameters that you want CloudFront to use as a basis for caching for a cache behavior. If <code>Quantity</code> is 0, you can omit <code>Items</code>.</p>
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.items
     }
     /// Consumes the builder and constructs a [`QueryStringCacheKeys`](crate::types::QueryStringCacheKeys).
     pub fn build(self) -> crate::types::QueryStringCacheKeys {

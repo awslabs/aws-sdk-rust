@@ -41,6 +41,10 @@ impl GetRetainedMessageInputBuilder {
         self.topic = input;
         self
     }
+    /// <p>The topic name of the retained message to retrieve.</p>
+    pub fn get_topic(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic
+    }
     /// Consumes the builder and constructs a [`GetRetainedMessageInput`](crate::operation::get_retained_message::GetRetainedMessageInput).
     pub fn build(
         self,

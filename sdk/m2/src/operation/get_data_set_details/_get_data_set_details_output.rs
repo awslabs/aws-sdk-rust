@@ -109,6 +109,10 @@ impl GetDataSetDetailsOutputBuilder {
         self.data_set_name = input;
         self
     }
+    /// <p>The name of the data set.</p>
+    pub fn get_data_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_set_name
+    }
     /// <p>The type of data set. The only supported value is VSAM.</p>
     pub fn data_set_org(mut self, input: crate::types::DatasetDetailOrgAttributes) -> Self {
         self.data_set_org = ::std::option::Option::Some(input);
@@ -122,6 +126,12 @@ impl GetDataSetDetailsOutputBuilder {
         self.data_set_org = input;
         self
     }
+    /// <p>The type of data set. The only supported value is VSAM.</p>
+    pub fn get_data_set_org(
+        &self,
+    ) -> &::std::option::Option<crate::types::DatasetDetailOrgAttributes> {
+        &self.data_set_org
+    }
     /// <p>The length of records in the data set.</p>
     pub fn record_length(mut self, input: i32) -> Self {
         self.record_length = ::std::option::Option::Some(input);
@@ -131,6 +141,10 @@ impl GetDataSetDetailsOutputBuilder {
     pub fn set_record_length(mut self, input: ::std::option::Option<i32>) -> Self {
         self.record_length = input;
         self
+    }
+    /// <p>The length of records in the data set.</p>
+    pub fn get_record_length(&self) -> &::std::option::Option<i32> {
+        &self.record_length
     }
     /// <p>The location where the data set is stored.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -142,6 +156,10 @@ impl GetDataSetDetailsOutputBuilder {
         self.location = input;
         self
     }
+    /// <p>The location where the data set is stored.</p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
+    }
     /// <p>The size of the block on disk. </p>
     pub fn blocksize(mut self, input: i32) -> Self {
         self.blocksize = ::std::option::Option::Some(input);
@@ -151,6 +169,10 @@ impl GetDataSetDetailsOutputBuilder {
     pub fn set_blocksize(mut self, input: ::std::option::Option<i32>) -> Self {
         self.blocksize = input;
         self
+    }
+    /// <p>The size of the block on disk. </p>
+    pub fn get_blocksize(&self) -> &::std::option::Option<i32> {
+        &self.blocksize
     }
     /// <p>The timestamp when the data set was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -165,6 +187,10 @@ impl GetDataSetDetailsOutputBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The timestamp when the data set was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The last time the data set was updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
@@ -178,6 +204,10 @@ impl GetDataSetDetailsOutputBuilder {
         self.last_updated_time = input;
         self
     }
+    /// <p>The last time the data set was updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
+    }
     /// <p>The last time the data set was referenced.</p>
     pub fn last_referenced_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_referenced_time = ::std::option::Option::Some(input);
@@ -190,6 +220,10 @@ impl GetDataSetDetailsOutputBuilder {
     ) -> Self {
         self.last_referenced_time = input;
         self
+    }
+    /// <p>The last time the data set was referenced.</p>
+    pub fn get_last_referenced_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_referenced_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

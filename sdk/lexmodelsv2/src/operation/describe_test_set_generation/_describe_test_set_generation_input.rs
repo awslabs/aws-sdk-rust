@@ -45,6 +45,10 @@ impl DescribeTestSetGenerationInputBuilder {
         self.test_set_generation_id = input;
         self
     }
+    /// <p>The unique identifier of the test set generation.</p>
+    pub fn get_test_set_generation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.test_set_generation_id
+    }
     /// Consumes the builder and constructs a [`DescribeTestSetGenerationInput`](crate::operation::describe_test_set_generation::DescribeTestSetGenerationInput).
     pub fn build(
         self,

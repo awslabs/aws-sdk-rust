@@ -75,6 +75,12 @@ impl GetDevicePoolCompatibilityOutputBuilder {
         self.compatible_devices = input;
         self
     }
+    /// <p>Information about compatible devices.</p>
+    pub fn get_compatible_devices(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DevicePoolCompatibilityResult>> {
+        &self.compatible_devices
+    }
     /// Appends an item to `incompatible_devices`.
     ///
     /// To override the contents of this collection use [`set_incompatible_devices`](Self::set_incompatible_devices).
@@ -96,6 +102,12 @@ impl GetDevicePoolCompatibilityOutputBuilder {
     ) -> Self {
         self.incompatible_devices = input;
         self
+    }
+    /// <p>Information about incompatible devices.</p>
+    pub fn get_incompatible_devices(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DevicePoolCompatibilityResult>> {
+        &self.incompatible_devices
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

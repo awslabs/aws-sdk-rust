@@ -498,6 +498,10 @@ impl DbInstanceBuilder {
         self.db_instance_identifier = input;
         self
     }
+    /// <p>Contains a user-supplied database identifier. This identifier is the unique key that identifies a DB instance.</p>
+    pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_instance_identifier
+    }
     /// <p>Contains the name of the compute and memory capacity class of the DB instance.</p>
     pub fn db_instance_class(
         mut self,
@@ -514,6 +518,10 @@ impl DbInstanceBuilder {
         self.db_instance_class = input;
         self
     }
+    /// <p>Contains the name of the compute and memory capacity class of the DB instance.</p>
+    pub fn get_db_instance_class(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_instance_class
+    }
     /// <p>Provides the name of the database engine to be used for this DB instance.</p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
@@ -523,6 +531,10 @@ impl DbInstanceBuilder {
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
         self
+    }
+    /// <p>Provides the name of the database engine to be used for this DB instance.</p>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine
     }
     /// <p>Specifies the current state of this database.</p>
     pub fn db_instance_status(
@@ -540,6 +552,10 @@ impl DbInstanceBuilder {
         self.db_instance_status = input;
         self
     }
+    /// <p>Specifies the current state of this database.</p>
+    pub fn get_db_instance_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_instance_status
+    }
     /// <p>Not supported by Neptune.</p>
     pub fn master_username(
         mut self,
@@ -556,6 +572,10 @@ impl DbInstanceBuilder {
         self.master_username = input;
         self
     }
+    /// <p>Not supported by Neptune.</p>
+    pub fn get_master_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.master_username
+    }
     /// <p>The database name.</p>
     pub fn db_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_name = ::std::option::Option::Some(input.into());
@@ -565,6 +585,10 @@ impl DbInstanceBuilder {
     pub fn set_db_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_name = input;
         self
+    }
+    /// <p>The database name.</p>
+    pub fn get_db_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_name
     }
     /// <p>Specifies the connection endpoint.</p>
     pub fn endpoint(mut self, input: crate::types::Endpoint) -> Self {
@@ -576,6 +600,10 @@ impl DbInstanceBuilder {
         self.endpoint = input;
         self
     }
+    /// <p>Specifies the connection endpoint.</p>
+    pub fn get_endpoint(&self) -> &::std::option::Option<crate::types::Endpoint> {
+        &self.endpoint
+    }
     /// <p>Not supported by Neptune.</p>
     pub fn allocated_storage(mut self, input: i32) -> Self {
         self.allocated_storage = ::std::option::Option::Some(input);
@@ -585,6 +613,10 @@ impl DbInstanceBuilder {
     pub fn set_allocated_storage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.allocated_storage = input;
         self
+    }
+    /// <p>Not supported by Neptune.</p>
+    pub fn get_allocated_storage(&self) -> &::std::option::Option<i32> {
+        &self.allocated_storage
     }
     /// <p>Provides the date and time the DB instance was created.</p>
     pub fn instance_create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -598,6 +630,10 @@ impl DbInstanceBuilder {
     ) -> Self {
         self.instance_create_time = input;
         self
+    }
+    /// <p>Provides the date and time the DB instance was created.</p>
+    pub fn get_instance_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.instance_create_time
     }
     /// <p> Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
     pub fn preferred_backup_window(
@@ -615,6 +651,10 @@ impl DbInstanceBuilder {
         self.preferred_backup_window = input;
         self
     }
+    /// <p> Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
+    pub fn get_preferred_backup_window(&self) -> &::std::option::Option<::std::string::String> {
+        &self.preferred_backup_window
+    }
     /// <p>Specifies the number of days for which automatic DB snapshots are retained.</p>
     pub fn backup_retention_period(mut self, input: i32) -> Self {
         self.backup_retention_period = ::std::option::Option::Some(input);
@@ -624,6 +664,10 @@ impl DbInstanceBuilder {
     pub fn set_backup_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.backup_retention_period = input;
         self
+    }
+    /// <p>Specifies the number of days for which automatic DB snapshots are retained.</p>
+    pub fn get_backup_retention_period(&self) -> &::std::option::Option<i32> {
+        &self.backup_retention_period
     }
     /// Appends an item to `db_security_groups`.
     ///
@@ -644,6 +688,12 @@ impl DbInstanceBuilder {
         self.db_security_groups = input;
         self
     }
+    /// <p> Provides List of DB security group elements containing only <code>DBSecurityGroup.Name</code> and <code>DBSecurityGroup.Status</code> subelements.</p>
+    pub fn get_db_security_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DbSecurityGroupMembership>> {
+        &self.db_security_groups
+    }
     /// Appends an item to `vpc_security_groups`.
     ///
     /// To override the contents of this collection use [`set_vpc_security_groups`](Self::set_vpc_security_groups).
@@ -662,6 +712,12 @@ impl DbInstanceBuilder {
     ) -> Self {
         self.vpc_security_groups = input;
         self
+    }
+    /// <p>Provides a list of VPC security group elements that the DB instance belongs to.</p>
+    pub fn get_vpc_security_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>> {
+        &self.vpc_security_groups
     }
     /// Appends an item to `db_parameter_groups`.
     ///
@@ -682,6 +738,12 @@ impl DbInstanceBuilder {
         self.db_parameter_groups = input;
         self
     }
+    /// <p>Provides the list of DB parameter groups applied to this DB instance.</p>
+    pub fn get_db_parameter_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DbParameterGroupStatus>> {
+        &self.db_parameter_groups
+    }
     /// <p>Specifies the name of the Availability Zone the DB instance is located in.</p>
     pub fn availability_zone(
         mut self,
@@ -698,6 +760,10 @@ impl DbInstanceBuilder {
         self.availability_zone = input;
         self
     }
+    /// <p>Specifies the name of the Availability Zone the DB instance is located in.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p>Specifies information on the subnet group associated with the DB instance, including the name, description, and subnets in the subnet group.</p>
     pub fn db_subnet_group(mut self, input: crate::types::DbSubnetGroup) -> Self {
         self.db_subnet_group = ::std::option::Option::Some(input);
@@ -710,6 +776,10 @@ impl DbInstanceBuilder {
     ) -> Self {
         self.db_subnet_group = input;
         self
+    }
+    /// <p>Specifies information on the subnet group associated with the DB instance, including the name, description, and subnets in the subnet group.</p>
+    pub fn get_db_subnet_group(&self) -> &::std::option::Option<crate::types::DbSubnetGroup> {
+        &self.db_subnet_group
     }
     /// <p>Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     pub fn preferred_maintenance_window(
@@ -727,6 +797,12 @@ impl DbInstanceBuilder {
         self.preferred_maintenance_window = input;
         self
     }
+    /// <p>Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
+    pub fn get_preferred_maintenance_window(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.preferred_maintenance_window
+    }
     /// <p>Specifies that changes to the DB instance are pending. This element is only included when changes are pending. Specific changes are identified by subelements.</p>
     pub fn pending_modified_values(mut self, input: crate::types::PendingModifiedValues) -> Self {
         self.pending_modified_values = ::std::option::Option::Some(input);
@@ -739,6 +815,12 @@ impl DbInstanceBuilder {
     ) -> Self {
         self.pending_modified_values = input;
         self
+    }
+    /// <p>Specifies that changes to the DB instance are pending. This element is only included when changes are pending. Specific changes are identified by subelements.</p>
+    pub fn get_pending_modified_values(
+        &self,
+    ) -> &::std::option::Option<crate::types::PendingModifiedValues> {
+        &self.pending_modified_values
     }
     /// <p>Specifies the latest time to which a database can be restored with point-in-time restore.</p>
     pub fn latest_restorable_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -753,6 +835,12 @@ impl DbInstanceBuilder {
         self.latest_restorable_time = input;
         self
     }
+    /// <p>Specifies the latest time to which a database can be restored with point-in-time restore.</p>
+    pub fn get_latest_restorable_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.latest_restorable_time
+    }
     /// <p>Specifies if the DB instance is a Multi-AZ deployment.</p>
     pub fn multi_az(mut self, input: bool) -> Self {
         self.multi_az = ::std::option::Option::Some(input);
@@ -762,6 +850,10 @@ impl DbInstanceBuilder {
     pub fn set_multi_az(mut self, input: ::std::option::Option<bool>) -> Self {
         self.multi_az = input;
         self
+    }
+    /// <p>Specifies if the DB instance is a Multi-AZ deployment.</p>
+    pub fn get_multi_az(&self) -> &::std::option::Option<bool> {
+        &self.multi_az
     }
     /// <p>Indicates the database engine version.</p>
     pub fn engine_version(
@@ -779,6 +871,10 @@ impl DbInstanceBuilder {
         self.engine_version = input;
         self
     }
+    /// <p>Indicates the database engine version.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
+    }
     /// <p>Indicates that minor version patches are applied automatically.</p>
     pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
         self.auto_minor_version_upgrade = ::std::option::Option::Some(input);
@@ -788,6 +884,10 @@ impl DbInstanceBuilder {
     pub fn set_auto_minor_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_minor_version_upgrade = input;
         self
+    }
+    /// <p>Indicates that minor version patches are applied automatically.</p>
+    pub fn get_auto_minor_version_upgrade(&self) -> &::std::option::Option<bool> {
+        &self.auto_minor_version_upgrade
     }
     /// <p>Contains the identifier of the source DB instance if this DB instance is a Read Replica.</p>
     pub fn read_replica_source_db_instance_identifier(
@@ -804,6 +904,12 @@ impl DbInstanceBuilder {
     ) -> Self {
         self.read_replica_source_db_instance_identifier = input;
         self
+    }
+    /// <p>Contains the identifier of the source DB instance if this DB instance is a Read Replica.</p>
+    pub fn get_read_replica_source_db_instance_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.read_replica_source_db_instance_identifier
     }
     /// Appends an item to `read_replica_db_instance_identifiers`.
     ///
@@ -829,6 +935,12 @@ impl DbInstanceBuilder {
         self.read_replica_db_instance_identifiers = input;
         self
     }
+    /// <p>Contains one or more identifiers of the Read Replicas associated with this DB instance.</p>
+    pub fn get_read_replica_db_instance_identifiers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.read_replica_db_instance_identifiers
+    }
     /// Appends an item to `read_replica_db_cluster_identifiers`.
     ///
     /// To override the contents of this collection use [`set_read_replica_db_cluster_identifiers`](Self::set_read_replica_db_cluster_identifiers).
@@ -851,6 +963,12 @@ impl DbInstanceBuilder {
         self.read_replica_db_cluster_identifiers = input;
         self
     }
+    /// <p>Contains one or more identifiers of DB clusters that are Read Replicas of this DB instance.</p>
+    pub fn get_read_replica_db_cluster_identifiers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.read_replica_db_cluster_identifiers
+    }
     /// <p>License model information for this DB instance.</p>
     pub fn license_model(
         mut self,
@@ -867,6 +985,10 @@ impl DbInstanceBuilder {
         self.license_model = input;
         self
     }
+    /// <p>License model information for this DB instance.</p>
+    pub fn get_license_model(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_model
+    }
     /// <p>Specifies the Provisioned IOPS (I/O operations per second) value.</p>
     pub fn iops(mut self, input: i32) -> Self {
         self.iops = ::std::option::Option::Some(input);
@@ -876,6 +998,10 @@ impl DbInstanceBuilder {
     pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
         self.iops = input;
         self
+    }
+    /// <p>Specifies the Provisioned IOPS (I/O operations per second) value.</p>
+    pub fn get_iops(&self) -> &::std::option::Option<i32> {
+        &self.iops
     }
     /// Appends an item to `option_group_memberships`.
     ///
@@ -897,6 +1023,12 @@ impl DbInstanceBuilder {
         self
     }
     /// <p> <i>(Not supported by Neptune)</i> </p>
+    pub fn get_option_group_memberships(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OptionGroupMembership>> {
+        &self.option_group_memberships
+    }
+    /// <p> <i>(Not supported by Neptune)</i> </p>
     pub fn character_set_name(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -911,6 +1043,10 @@ impl DbInstanceBuilder {
     ) -> Self {
         self.character_set_name = input;
         self
+    }
+    /// <p> <i>(Not supported by Neptune)</i> </p>
+    pub fn get_character_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.character_set_name
     }
     /// <p>If present, specifies the name of the secondary Availability Zone for a DB instance with multi-AZ support.</p>
     pub fn secondary_availability_zone(
@@ -928,6 +1064,10 @@ impl DbInstanceBuilder {
         self.secondary_availability_zone = input;
         self
     }
+    /// <p>If present, specifies the name of the secondary Availability Zone for a DB instance with multi-AZ support.</p>
+    pub fn get_secondary_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secondary_availability_zone
+    }
     /// <p>This flag should no longer be used.</p>
     #[deprecated]
     pub fn publicly_accessible(mut self, input: bool) -> Self {
@@ -939,6 +1079,11 @@ impl DbInstanceBuilder {
     pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
         self.publicly_accessible = input;
         self
+    }
+    /// <p>This flag should no longer be used.</p>
+    #[deprecated]
+    pub fn get_publicly_accessible(&self) -> &::std::option::Option<bool> {
+        &self.publicly_accessible
     }
     /// Appends an item to `status_infos`.
     ///
@@ -959,6 +1104,12 @@ impl DbInstanceBuilder {
         self.status_infos = input;
         self
     }
+    /// <p>The status of a Read Replica. If the instance is not a Read Replica, this is blank.</p>
+    pub fn get_status_infos(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DbInstanceStatusInfo>> {
+        &self.status_infos
+    }
     /// <p>Specifies the storage type associated with DB instance.</p>
     pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_type = ::std::option::Option::Some(input.into());
@@ -968,6 +1119,10 @@ impl DbInstanceBuilder {
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_type = input;
         self
+    }
+    /// <p>Specifies the storage type associated with DB instance.</p>
+    pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_type
     }
     /// <p>The ARN from the key store with which the instance is associated for TDE encryption.</p>
     pub fn tde_credential_arn(
@@ -985,6 +1140,10 @@ impl DbInstanceBuilder {
         self.tde_credential_arn = input;
         self
     }
+    /// <p>The ARN from the key store with which the instance is associated for TDE encryption.</p>
+    pub fn get_tde_credential_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tde_credential_arn
+    }
     /// <p>Specifies the port that the DB instance listens on. If the DB instance is part of a DB cluster, this can be a different port than the DB cluster port.</p>
     pub fn db_instance_port(mut self, input: i32) -> Self {
         self.db_instance_port = ::std::option::Option::Some(input);
@@ -994,6 +1153,10 @@ impl DbInstanceBuilder {
     pub fn set_db_instance_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.db_instance_port = input;
         self
+    }
+    /// <p>Specifies the port that the DB instance listens on. If the DB instance is part of a DB cluster, this can be a different port than the DB cluster port.</p>
+    pub fn get_db_instance_port(&self) -> &::std::option::Option<i32> {
+        &self.db_instance_port
     }
     /// <p>If the DB instance is a member of a DB cluster, contains the name of the DB cluster that the DB instance is a member of.</p>
     pub fn db_cluster_identifier(
@@ -1011,6 +1174,10 @@ impl DbInstanceBuilder {
         self.db_cluster_identifier = input;
         self
     }
+    /// <p>If the DB instance is a member of a DB cluster, contains the name of the DB cluster that the DB instance is a member of.</p>
+    pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_identifier
+    }
     /// <p>Not supported: The encryption for DB instances is managed by the DB cluster.</p>
     pub fn storage_encrypted(mut self, input: bool) -> Self {
         self.storage_encrypted = ::std::option::Option::Some(input);
@@ -1021,6 +1188,10 @@ impl DbInstanceBuilder {
         self.storage_encrypted = input;
         self
     }
+    /// <p>Not supported: The encryption for DB instances is managed by the DB cluster.</p>
+    pub fn get_storage_encrypted(&self) -> &::std::option::Option<bool> {
+        &self.storage_encrypted
+    }
     /// <p> Not supported: The encryption for DB instances is managed by the DB cluster.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -1030,6 +1201,10 @@ impl DbInstanceBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p> Not supported: The encryption for DB instances is managed by the DB cluster.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// <p>The Amazon Region-unique, immutable identifier for the DB instance. This identifier is found in Amazon CloudTrail log entries whenever the Amazon KMS key for the DB instance is accessed.</p>
     pub fn dbi_resource_id(
@@ -1047,6 +1222,10 @@ impl DbInstanceBuilder {
         self.dbi_resource_id = input;
         self
     }
+    /// <p>The Amazon Region-unique, immutable identifier for the DB instance. This identifier is found in Amazon CloudTrail log entries whenever the Amazon KMS key for the DB instance is accessed.</p>
+    pub fn get_dbi_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dbi_resource_id
+    }
     /// <p>The identifier of the CA certificate for this DB instance.</p>
     pub fn ca_certificate_identifier(
         mut self,
@@ -1062,6 +1241,10 @@ impl DbInstanceBuilder {
     ) -> Self {
         self.ca_certificate_identifier = input;
         self
+    }
+    /// <p>The identifier of the CA certificate for this DB instance.</p>
+    pub fn get_ca_certificate_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ca_certificate_identifier
     }
     /// Appends an item to `domain_memberships`.
     ///
@@ -1082,6 +1265,12 @@ impl DbInstanceBuilder {
         self.domain_memberships = input;
         self
     }
+    /// <p>Not supported</p>
+    pub fn get_domain_memberships(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainMembership>> {
+        &self.domain_memberships
+    }
     /// <p>Specifies whether tags are copied from the DB instance to snapshots of the DB instance.</p>
     pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
         self.copy_tags_to_snapshot = ::std::option::Option::Some(input);
@@ -1092,6 +1281,10 @@ impl DbInstanceBuilder {
         self.copy_tags_to_snapshot = input;
         self
     }
+    /// <p>Specifies whether tags are copied from the DB instance to snapshots of the DB instance.</p>
+    pub fn get_copy_tags_to_snapshot(&self) -> &::std::option::Option<bool> {
+        &self.copy_tags_to_snapshot
+    }
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance.</p>
     pub fn monitoring_interval(mut self, input: i32) -> Self {
         self.monitoring_interval = ::std::option::Option::Some(input);
@@ -1101,6 +1294,10 @@ impl DbInstanceBuilder {
     pub fn set_monitoring_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.monitoring_interval = input;
         self
+    }
+    /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance.</p>
+    pub fn get_monitoring_interval(&self) -> &::std::option::Option<i32> {
+        &self.monitoring_interval
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch Logs log stream that receives the Enhanced Monitoring metrics data for the DB instance.</p>
     pub fn enhanced_monitoring_resource_arn(
@@ -1118,6 +1315,12 @@ impl DbInstanceBuilder {
         self.enhanced_monitoring_resource_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch Logs log stream that receives the Enhanced Monitoring metrics data for the DB instance.</p>
+    pub fn get_enhanced_monitoring_resource_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.enhanced_monitoring_resource_arn
+    }
     /// <p>The ARN for the IAM role that permits Neptune to send Enhanced Monitoring metrics to Amazon CloudWatch Logs.</p>
     pub fn monitoring_role_arn(
         mut self,
@@ -1134,6 +1337,10 @@ impl DbInstanceBuilder {
         self.monitoring_role_arn = input;
         self
     }
+    /// <p>The ARN for the IAM role that permits Neptune to send Enhanced Monitoring metrics to Amazon CloudWatch Logs.</p>
+    pub fn get_monitoring_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitoring_role_arn
+    }
     /// <p>A value that specifies the order in which a Read Replica is promoted to the primary instance after a failure of the existing primary instance. </p>
     pub fn promotion_tier(mut self, input: i32) -> Self {
         self.promotion_tier = ::std::option::Option::Some(input);
@@ -1143,6 +1350,10 @@ impl DbInstanceBuilder {
     pub fn set_promotion_tier(mut self, input: ::std::option::Option<i32>) -> Self {
         self.promotion_tier = input;
         self
+    }
+    /// <p>A value that specifies the order in which a Read Replica is promoted to the primary instance after a failure of the existing primary instance. </p>
+    pub fn get_promotion_tier(&self) -> &::std::option::Option<i32> {
+        &self.promotion_tier
     }
     /// <p>The Amazon Resource Name (ARN) for the DB instance.</p>
     pub fn db_instance_arn(
@@ -1160,6 +1371,10 @@ impl DbInstanceBuilder {
         self.db_instance_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the DB instance.</p>
+    pub fn get_db_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_instance_arn
+    }
     /// <p>Not supported.</p>
     pub fn timezone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timezone = ::std::option::Option::Some(input.into());
@@ -1169,6 +1384,10 @@ impl DbInstanceBuilder {
     pub fn set_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timezone = input;
         self
+    }
+    /// <p>Not supported.</p>
+    pub fn get_timezone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timezone
     }
     /// <p>True if Amazon Identity and Access Management (IAM) authentication is enabled, and otherwise false.</p>
     pub fn iam_database_authentication_enabled(mut self, input: bool) -> Self {
@@ -1183,6 +1402,10 @@ impl DbInstanceBuilder {
         self.iam_database_authentication_enabled = input;
         self
     }
+    /// <p>True if Amazon Identity and Access Management (IAM) authentication is enabled, and otherwise false.</p>
+    pub fn get_iam_database_authentication_enabled(&self) -> &::std::option::Option<bool> {
+        &self.iam_database_authentication_enabled
+    }
     /// <p> <i>(Not supported by Neptune)</i> </p>
     pub fn performance_insights_enabled(mut self, input: bool) -> Self {
         self.performance_insights_enabled = ::std::option::Option::Some(input);
@@ -1192,6 +1415,10 @@ impl DbInstanceBuilder {
     pub fn set_performance_insights_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.performance_insights_enabled = input;
         self
+    }
+    /// <p> <i>(Not supported by Neptune)</i> </p>
+    pub fn get_performance_insights_enabled(&self) -> &::std::option::Option<bool> {
+        &self.performance_insights_enabled
     }
     /// <p> <i>(Not supported by Neptune)</i> </p>
     pub fn performance_insights_kms_key_id(
@@ -1208,6 +1435,12 @@ impl DbInstanceBuilder {
     ) -> Self {
         self.performance_insights_kms_key_id = input;
         self
+    }
+    /// <p> <i>(Not supported by Neptune)</i> </p>
+    pub fn get_performance_insights_kms_key_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.performance_insights_kms_key_id
     }
     /// Appends an item to `enabled_cloudwatch_logs_exports`.
     ///
@@ -1231,6 +1464,12 @@ impl DbInstanceBuilder {
         self.enabled_cloudwatch_logs_exports = input;
         self
     }
+    /// <p>A list of log types that this DB instance is configured to export to CloudWatch Logs.</p>
+    pub fn get_enabled_cloudwatch_logs_exports(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.enabled_cloudwatch_logs_exports
+    }
     /// <p>Indicates whether or not the DB instance has deletion protection enabled. The instance can't be deleted when deletion protection is enabled. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting a DB Instance</a>.</p>
     pub fn deletion_protection(mut self, input: bool) -> Self {
         self.deletion_protection = ::std::option::Option::Some(input);
@@ -1240,6 +1479,10 @@ impl DbInstanceBuilder {
     pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.deletion_protection = input;
         self
+    }
+    /// <p>Indicates whether or not the DB instance has deletion protection enabled. The instance can't be deleted when deletion protection is enabled. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting a DB Instance</a>.</p>
+    pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
+        &self.deletion_protection
     }
     /// Consumes the builder and constructs a [`DbInstance`](crate::types::DbInstance).
     pub fn build(self) -> crate::types::DbInstance {

@@ -40,6 +40,10 @@ impl GetJobUnlockCodeInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The ID for the job that you want to get the <code>UnlockCode</code> value for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// Consumes the builder and constructs a [`GetJobUnlockCodeInput`](crate::operation::get_job_unlock_code::GetJobUnlockCodeInput).
     pub fn build(
         self,

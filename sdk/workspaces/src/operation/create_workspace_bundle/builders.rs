@@ -36,6 +36,13 @@ impl CreateWorkspaceBundleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateWorkspaceBundle as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_workspace_bundle::builders::CreateWorkspaceBundleInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl CreateWorkspaceBundleFluentBuilder {
         self.inner = self.inner.set_bundle_name(input);
         self
     }
+    /// <p>The name of the bundle.</p>
+    pub fn get_bundle_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bundle_name()
+    }
     /// <p>The description of the bundle.</p>
     pub fn bundle_description(
         mut self,
@@ -142,6 +153,10 @@ impl CreateWorkspaceBundleFluentBuilder {
         self.inner = self.inner.set_bundle_description(input);
         self
     }
+    /// <p>The description of the bundle.</p>
+    pub fn get_bundle_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bundle_description()
+    }
     /// <p>The identifier of the image that is used to create the bundle.</p>
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.image_id(input.into());
@@ -151,6 +166,10 @@ impl CreateWorkspaceBundleFluentBuilder {
     pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_image_id(input);
         self
+    }
+    /// <p>The identifier of the image that is used to create the bundle.</p>
+    pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_image_id()
     }
     /// <p>Describes the compute type of the bundle.</p>
     pub fn compute_type(mut self, input: crate::types::ComputeType) -> Self {
@@ -165,6 +184,10 @@ impl CreateWorkspaceBundleFluentBuilder {
         self.inner = self.inner.set_compute_type(input);
         self
     }
+    /// <p>Describes the compute type of the bundle.</p>
+    pub fn get_compute_type(&self) -> &::std::option::Option<crate::types::ComputeType> {
+        self.inner.get_compute_type()
+    }
     /// <p>Describes the user volume for a WorkSpace bundle.</p>
     pub fn user_storage(mut self, input: crate::types::UserStorage) -> Self {
         self.inner = self.inner.user_storage(input);
@@ -178,6 +201,10 @@ impl CreateWorkspaceBundleFluentBuilder {
         self.inner = self.inner.set_user_storage(input);
         self
     }
+    /// <p>Describes the user volume for a WorkSpace bundle.</p>
+    pub fn get_user_storage(&self) -> &::std::option::Option<crate::types::UserStorage> {
+        self.inner.get_user_storage()
+    }
     /// <p>Describes the root volume for a WorkSpace bundle.</p>
     pub fn root_storage(mut self, input: crate::types::RootStorage) -> Self {
         self.inner = self.inner.root_storage(input);
@@ -190,6 +217,10 @@ impl CreateWorkspaceBundleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_root_storage(input);
         self
+    }
+    /// <p>Describes the root volume for a WorkSpace bundle.</p>
+    pub fn get_root_storage(&self) -> &::std::option::Option<crate::types::RootStorage> {
+        self.inner.get_root_storage()
     }
     /// Appends an item to `Tags`.
     ///
@@ -211,5 +242,11 @@ impl CreateWorkspaceBundleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags associated with the bundle.</p> <note>
+    /// <p>To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
+    /// </note>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

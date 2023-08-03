@@ -64,6 +64,10 @@ impl CodeGenNodeBuilder {
         self.id = input;
         self
     }
+    /// <p>A node identifier that is unique within the node's graph.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The type of node that this is.</p>
     pub fn node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_type = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl CodeGenNodeBuilder {
     pub fn set_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_type = input;
         self
+    }
+    /// <p>The type of node that this is.</p>
+    pub fn get_node_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.node_type
     }
     /// Appends an item to `args`.
     ///
@@ -93,6 +101,12 @@ impl CodeGenNodeBuilder {
         self.args = input;
         self
     }
+    /// <p>Properties of the node, in the form of name-value pairs.</p>
+    pub fn get_args(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeGenNodeArg>> {
+        &self.args
+    }
     /// <p>The line number of the node.</p>
     pub fn line_number(mut self, input: i32) -> Self {
         self.line_number = ::std::option::Option::Some(input);
@@ -102,6 +116,10 @@ impl CodeGenNodeBuilder {
     pub fn set_line_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.line_number = input;
         self
+    }
+    /// <p>The line number of the node.</p>
+    pub fn get_line_number(&self) -> &::std::option::Option<i32> {
+        &self.line_number
     }
     /// Consumes the builder and constructs a [`CodeGenNode`](crate::types::CodeGenNode).
     pub fn build(self) -> crate::types::CodeGenNode {

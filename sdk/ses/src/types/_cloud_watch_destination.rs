@@ -59,6 +59,13 @@ impl CloudWatchDestinationBuilder {
         self.dimension_configurations = input;
         self
     }
+    /// <p>A list of dimensions upon which to categorize your emails when you publish email sending events to Amazon CloudWatch.</p>
+    pub fn get_dimension_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudWatchDimensionConfiguration>>
+    {
+        &self.dimension_configurations
+    }
     /// Consumes the builder and constructs a [`CloudWatchDestination`](crate::types::CloudWatchDestination).
     pub fn build(self) -> crate::types::CloudWatchDestination {
         crate::types::CloudWatchDestination {

@@ -48,6 +48,10 @@ impl OptionRestrictionRegexBuilder {
         self.pattern = input;
         self
     }
+    /// <p>The regular expression pattern that a string configuration option value with this restriction must match.</p>
+    pub fn get_pattern(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pattern
+    }
     /// <p>A unique name representing this regular expression.</p>
     pub fn label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl OptionRestrictionRegexBuilder {
     pub fn set_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label = input;
         self
+    }
+    /// <p>A unique name representing this regular expression.</p>
+    pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label
     }
     /// Consumes the builder and constructs a [`OptionRestrictionRegex`](crate::types::OptionRestrictionRegex).
     pub fn build(self) -> crate::types::OptionRestrictionRegex {

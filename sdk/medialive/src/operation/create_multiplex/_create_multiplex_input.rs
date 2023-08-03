@@ -92,6 +92,12 @@ impl CreateMultiplexInputBuilder {
         self.availability_zones = input;
         self
     }
+    /// A list of availability zones for the multiplex. You must specify exactly two.
+    pub fn get_availability_zones(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.availability_zones
+    }
     /// Configuration for a multiplex event.
     pub fn multiplex_settings(mut self, input: crate::types::MultiplexSettings) -> Self {
         self.multiplex_settings = ::std::option::Option::Some(input);
@@ -105,6 +111,12 @@ impl CreateMultiplexInputBuilder {
         self.multiplex_settings = input;
         self
     }
+    /// Configuration for a multiplex event.
+    pub fn get_multiplex_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::MultiplexSettings> {
+        &self.multiplex_settings
+    }
     /// Name of multiplex.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -115,6 +127,10 @@ impl CreateMultiplexInputBuilder {
         self.name = input;
         self
     }
+    /// Name of multiplex.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Unique request ID. This prevents retries from creating multiple resources.
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_id = ::std::option::Option::Some(input.into());
@@ -124,6 +140,10 @@ impl CreateMultiplexInputBuilder {
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_id = input;
         self
+    }
+    /// Unique request ID. This prevents retries from creating multiple resources.
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -149,6 +169,14 @@ impl CreateMultiplexInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// A collection of key-value pairs.
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateMultiplexInput`](crate::operation::create_multiplex::CreateMultiplexInput).
     pub fn build(

@@ -36,6 +36,10 @@ impl StartEarthObservationJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartEarthObservationJob as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_earth_observation_job::builders::StartEarthObservationJobInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl StartEarthObservationJobFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the Earth Observation job.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -136,6 +144,10 @@ impl StartEarthObservationJobFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>The Key Management Service key ID for server-side encryption.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
@@ -145,6 +157,10 @@ impl StartEarthObservationJobFluentBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
         self
+    }
+    /// <p>The Key Management Service key ID for server-side encryption.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key_id()
     }
     /// <p>Input configuration information for the Earth Observation job.</p>
     pub fn input_config(mut self, input: crate::types::InputConfigInput) -> Self {
@@ -159,6 +175,10 @@ impl StartEarthObservationJobFluentBuilder {
         self.inner = self.inner.set_input_config(input);
         self
     }
+    /// <p>Input configuration information for the Earth Observation job.</p>
+    pub fn get_input_config(&self) -> &::std::option::Option<crate::types::InputConfigInput> {
+        self.inner.get_input_config()
+    }
     /// <p>An object containing information about the job configuration.</p>
     pub fn job_config(mut self, input: crate::types::JobConfigInput) -> Self {
         self.inner = self.inner.job_config(input);
@@ -171,6 +191,10 @@ impl StartEarthObservationJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_job_config(input);
         self
+    }
+    /// <p>An object containing information about the job configuration.</p>
+    pub fn get_job_config(&self) -> &::std::option::Option<crate::types::JobConfigInput> {
+        self.inner.get_job_config()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
     pub fn execution_role_arn(
@@ -187,6 +211,10 @@ impl StartEarthObservationJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_execution_role_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
+    pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_execution_role_arn()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -210,5 +238,13 @@ impl StartEarthObservationJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Each tag consists of a key and a value.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

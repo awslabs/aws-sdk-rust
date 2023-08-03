@@ -58,6 +58,11 @@ impl AssetBundleImportSourceBuilder {
         self.body = input;
         self
     }
+    /// <p>The bytes of the base64 encoded asset bundle import zip file. This file can't exceed 20 MB.</p>
+    /// <p>If you are calling the API operations from the Amazon Web Services SDK for Java, JavaScript, Python, or PHP, the SDK encodes base64 automatically to allow the direct setting of the zip file's bytes. If you are using an SDK for a different language or receiving related errors, try to base64 encode your data.</p>
+    pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.body
+    }
     /// <p>The Amazon S3 URI for an asset bundle import file that exists in an Amazon S3 bucket that the caller has read access to. The file must be a zip format file and can't exceed 20 MB.</p>
     pub fn s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_uri = ::std::option::Option::Some(input.into());
@@ -67,6 +72,10 @@ impl AssetBundleImportSourceBuilder {
     pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_uri = input;
         self
+    }
+    /// <p>The Amazon S3 URI for an asset bundle import file that exists in an Amazon S3 bucket that the caller has read access to. The file must be a zip format file and can't exceed 20 MB.</p>
+    pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_uri
     }
     /// Consumes the builder and constructs a [`AssetBundleImportSource`](crate::types::AssetBundleImportSource).
     pub fn build(self) -> crate::types::AssetBundleImportSource {

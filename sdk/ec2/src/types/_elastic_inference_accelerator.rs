@@ -50,6 +50,10 @@ impl ElasticInferenceAcceleratorBuilder {
         self.r#type = input;
         self
     }
+    /// <p> The type of elastic inference accelerator. The possible values are <code>eia1.medium</code>, <code>eia1.large</code>, <code>eia1.xlarge</code>, <code>eia2.medium</code>, <code>eia2.large</code>, and <code>eia2.xlarge</code>. </p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// <p> The number of elastic inference accelerators to attach to the instance. </p>
     /// <p>Default: 1</p>
     pub fn count(mut self, input: i32) -> Self {
@@ -61,6 +65,11 @@ impl ElasticInferenceAcceleratorBuilder {
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count = input;
         self
+    }
+    /// <p> The number of elastic inference accelerators to attach to the instance. </p>
+    /// <p>Default: 1</p>
+    pub fn get_count(&self) -> &::std::option::Option<i32> {
+        &self.count
     }
     /// Consumes the builder and constructs a [`ElasticInferenceAccelerator`](crate::types::ElasticInferenceAccelerator).
     pub fn build(self) -> crate::types::ElasticInferenceAccelerator {

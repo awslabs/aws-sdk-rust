@@ -152,6 +152,10 @@ impl DescribeNotificationRuleOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the notification rule.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -161,6 +165,10 @@ impl DescribeNotificationRuleOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the notification rule.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `event_types`.
     ///
@@ -181,6 +189,12 @@ impl DescribeNotificationRuleOutputBuilder {
         self.event_types = input;
         self
     }
+    /// <p>A list of the event types associated with the notification rule.</p>
+    pub fn get_event_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventTypeSummary>> {
+        &self.event_types
+    }
     /// <p>The Amazon Resource Name (ARN) of the resource associated with the notification rule.</p>
     pub fn resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource = ::std::option::Option::Some(input.into());
@@ -190,6 +204,10 @@ impl DescribeNotificationRuleOutputBuilder {
     pub fn set_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resource associated with the notification rule.</p>
+    pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource
     }
     /// Appends an item to `targets`.
     ///
@@ -210,6 +228,12 @@ impl DescribeNotificationRuleOutputBuilder {
         self.targets = input;
         self
     }
+    /// <p>A list of the Chatbot topics and Chatbot clients associated with the notification rule.</p>
+    pub fn get_targets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetSummary>> {
+        &self.targets
+    }
     /// <p>The level of detail included in the notifications for this resource. BASIC will include only the contents of the event as it would appear in Amazon CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
     pub fn detail_type(mut self, input: crate::types::DetailType) -> Self {
         self.detail_type = ::std::option::Option::Some(input);
@@ -223,6 +247,10 @@ impl DescribeNotificationRuleOutputBuilder {
         self.detail_type = input;
         self
     }
+    /// <p>The level of detail included in the notifications for this resource. BASIC will include only the contents of the event as it would appear in Amazon CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
+    pub fn get_detail_type(&self) -> &::std::option::Option<crate::types::DetailType> {
+        &self.detail_type
+    }
     /// <p>The name or email alias of the person who created the notification rule.</p>
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by = ::std::option::Option::Some(input.into());
@@ -232,6 +260,10 @@ impl DescribeNotificationRuleOutputBuilder {
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_by = input;
         self
+    }
+    /// <p>The name or email alias of the person who created the notification rule.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_by
     }
     /// <p>The status of the notification rule. Valid statuses are on (sending notifications) or off (not sending notifications).</p>
     pub fn status(mut self, input: crate::types::NotificationRuleStatus) -> Self {
@@ -246,6 +278,10 @@ impl DescribeNotificationRuleOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the notification rule. Valid statuses are on (sending notifications) or off (not sending notifications).</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::NotificationRuleStatus> {
+        &self.status
+    }
     /// <p>The date and time the notification rule was created, in timestamp format.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_timestamp = ::std::option::Option::Some(input);
@@ -259,6 +295,10 @@ impl DescribeNotificationRuleOutputBuilder {
         self.created_timestamp = input;
         self
     }
+    /// <p>The date and time the notification rule was created, in timestamp format.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
+    }
     /// <p>The date and time the notification rule was most recently updated, in timestamp format.</p>
     pub fn last_modified_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_timestamp = ::std::option::Option::Some(input);
@@ -271,6 +311,12 @@ impl DescribeNotificationRuleOutputBuilder {
     ) -> Self {
         self.last_modified_timestamp = input;
         self
+    }
+    /// <p>The date and time the notification rule was most recently updated, in timestamp format.</p>
+    pub fn get_last_modified_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_timestamp
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -296,6 +342,14 @@ impl DescribeNotificationRuleOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags associated with the notification rule.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

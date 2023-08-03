@@ -56,6 +56,12 @@ impl ListTagsForResourceOutputBuilder {
         self.resource_tags = input;
         self
     }
+    /// <p>A list of tag key value pairs that are associated with the resource. </p>
+    pub fn get_resource_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>> {
+        &self.resource_tags
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -43,6 +43,10 @@ impl ForwardingConfigBuilder {
         self.state = input;
         self
     }
+    /// <p>The forwarding state for the given property. </p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ForwardingConfigState> {
+        &self.state
+    }
     /// Consumes the builder and constructs a [`ForwardingConfig`](crate::types::ForwardingConfig).
     pub fn build(self) -> crate::types::ForwardingConfig {
         crate::types::ForwardingConfig { state: self.state }

@@ -67,6 +67,10 @@ impl GetReplicationRunsOutputBuilder {
         self.replication_job = input;
         self
     }
+    /// <p>Information about the replication job.</p>
+    pub fn get_replication_job(&self) -> &::std::option::Option<crate::types::ReplicationJob> {
+        &self.replication_job
+    }
     /// Appends an item to `replication_run_list`.
     ///
     /// To override the contents of this collection use [`set_replication_run_list`](Self::set_replication_run_list).
@@ -86,6 +90,12 @@ impl GetReplicationRunsOutputBuilder {
         self.replication_run_list = input;
         self
     }
+    /// <p>Information about the replication runs.</p>
+    pub fn get_replication_run_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationRun>> {
+        &self.replication_run_list
+    }
     /// <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -95,6 +105,10 @@ impl GetReplicationRunsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

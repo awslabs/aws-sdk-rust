@@ -50,6 +50,12 @@ impl KpiSortConfigurationBuilder {
         self.trend_group_sort = input;
         self
     }
+    /// <p>The sort configuration of the trend group fields.</p>
+    pub fn get_trend_group_sort(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>> {
+        &self.trend_group_sort
+    }
     /// Consumes the builder and constructs a [`KpiSortConfiguration`](crate::types::KpiSortConfiguration).
     pub fn build(self) -> crate::types::KpiSortConfiguration {
         crate::types::KpiSortConfiguration {

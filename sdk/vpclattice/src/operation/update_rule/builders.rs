@@ -36,6 +36,10 @@ impl UpdateRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateRule as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_rule::builders::UpdateRuleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl UpdateRuleFluentBuilder {
         self.inner = self.inner.set_service_identifier(input);
         self
     }
+    /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    pub fn get_service_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_identifier()
+    }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
     pub fn listener_identifier(
         mut self,
@@ -139,6 +147,10 @@ impl UpdateRuleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_listener_identifier(input);
         self
+    }
+    /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
+    pub fn get_listener_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_listener_identifier()
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the rule.</p>
     pub fn rule_identifier(
@@ -156,6 +168,10 @@ impl UpdateRuleFluentBuilder {
         self.inner = self.inner.set_rule_identifier(input);
         self
     }
+    /// <p>The ID or Amazon Resource Name (ARN) of the rule.</p>
+    pub fn get_rule_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rule_identifier()
+    }
     /// <p>The rule match.</p>
     pub fn r#match(mut self, input: crate::types::RuleMatch) -> Self {
         self.inner = self.inner.r#match(input);
@@ -165,6 +181,10 @@ impl UpdateRuleFluentBuilder {
     pub fn set_match(mut self, input: ::std::option::Option<crate::types::RuleMatch>) -> Self {
         self.inner = self.inner.set_match(input);
         self
+    }
+    /// <p>The rule match.</p>
+    pub fn get_match(&self) -> &::std::option::Option<crate::types::RuleMatch> {
+        self.inner.get_match()
     }
     /// <p>The rule priority. A listener can't have multiple rules with the same priority.</p>
     pub fn priority(mut self, input: i32) -> Self {
@@ -176,6 +196,10 @@ impl UpdateRuleFluentBuilder {
         self.inner = self.inner.set_priority(input);
         self
     }
+    /// <p>The rule priority. A listener can't have multiple rules with the same priority.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        self.inner.get_priority()
+    }
     /// <p>Information about the action for the specified listener rule.</p>
     pub fn action(mut self, input: crate::types::RuleAction) -> Self {
         self.inner = self.inner.action(input);
@@ -185,5 +209,9 @@ impl UpdateRuleFluentBuilder {
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::RuleAction>) -> Self {
         self.inner = self.inner.set_action(input);
         self
+    }
+    /// <p>Information about the action for the specified listener rule.</p>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::RuleAction> {
+        self.inner.get_action()
     }
 }

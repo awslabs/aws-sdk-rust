@@ -74,6 +74,12 @@ impl ParameterRangeBuilder {
         self.integer_parameter_range_specification = input;
         self
     }
+    /// <p>A <code>IntegerParameterRangeSpecification</code> object that defines the possible values for an integer hyperparameter.</p>
+    pub fn get_integer_parameter_range_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::IntegerParameterRangeSpecification> {
+        &self.integer_parameter_range_specification
+    }
     /// <p>A <code>ContinuousParameterRangeSpecification</code> object that defines the possible values for a continuous hyperparameter.</p>
     pub fn continuous_parameter_range_specification(
         mut self,
@@ -90,6 +96,12 @@ impl ParameterRangeBuilder {
         self.continuous_parameter_range_specification = input;
         self
     }
+    /// <p>A <code>ContinuousParameterRangeSpecification</code> object that defines the possible values for a continuous hyperparameter.</p>
+    pub fn get_continuous_parameter_range_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContinuousParameterRangeSpecification> {
+        &self.continuous_parameter_range_specification
+    }
     /// <p>A <code>CategoricalParameterRangeSpecification</code> object that defines the possible values for a categorical hyperparameter.</p>
     pub fn categorical_parameter_range_specification(
         mut self,
@@ -105,6 +117,12 @@ impl ParameterRangeBuilder {
     ) -> Self {
         self.categorical_parameter_range_specification = input;
         self
+    }
+    /// <p>A <code>CategoricalParameterRangeSpecification</code> object that defines the possible values for a categorical hyperparameter.</p>
+    pub fn get_categorical_parameter_range_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::CategoricalParameterRangeSpecification> {
+        &self.categorical_parameter_range_specification
     }
     /// Consumes the builder and constructs a [`ParameterRange`](crate::types::ParameterRange).
     pub fn build(self) -> crate::types::ParameterRange {

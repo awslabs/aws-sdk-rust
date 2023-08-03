@@ -36,6 +36,13 @@ impl PutAccessControlRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutAccessControlRule as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_access_control_rule::builders::PutAccessControlRuleInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl PutAccessControlRuleFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The rule name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The rule effect.</p>
     pub fn effect(mut self, input: crate::types::AccessControlRuleEffect) -> Self {
         self.inner = self.inner.effect(input);
@@ -139,6 +150,10 @@ impl PutAccessControlRuleFluentBuilder {
         self.inner = self.inner.set_effect(input);
         self
     }
+    /// <p>The rule effect.</p>
+    pub fn get_effect(&self) -> &::std::option::Option<crate::types::AccessControlRuleEffect> {
+        self.inner.get_effect()
+    }
     /// <p>The rule description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -148,6 +163,10 @@ impl PutAccessControlRuleFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The rule description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `IpRanges`.
     ///
@@ -165,6 +184,10 @@ impl PutAccessControlRuleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ip_ranges(input);
         self
+    }
+    /// <p>IPv4 CIDR ranges to include in the rule.</p>
+    pub fn get_ip_ranges(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_ip_ranges()
     }
     /// Appends an item to `NotIpRanges`.
     ///
@@ -186,6 +209,12 @@ impl PutAccessControlRuleFluentBuilder {
         self.inner = self.inner.set_not_ip_ranges(input);
         self
     }
+    /// <p>IPv4 CIDR ranges to exclude from the rule.</p>
+    pub fn get_not_ip_ranges(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_not_ip_ranges()
+    }
     /// Appends an item to `Actions`.
     ///
     /// To override the contents of this collection use [`set_actions`](Self::set_actions).
@@ -202,6 +231,10 @@ impl PutAccessControlRuleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_actions(input);
         self
+    }
+    /// <p>Access protocol actions to include in the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+    pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_actions()
     }
     /// Appends an item to `NotActions`.
     ///
@@ -220,6 +253,12 @@ impl PutAccessControlRuleFluentBuilder {
         self.inner = self.inner.set_not_actions(input);
         self
     }
+    /// <p>Access protocol actions to exclude from the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+    pub fn get_not_actions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_not_actions()
+    }
     /// Appends an item to `UserIds`.
     ///
     /// To override the contents of this collection use [`set_user_ids`](Self::set_user_ids).
@@ -236,6 +275,10 @@ impl PutAccessControlRuleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_user_ids(input);
         self
+    }
+    /// <p>User IDs to include in the rule.</p>
+    pub fn get_user_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_user_ids()
     }
     /// Appends an item to `NotUserIds`.
     ///
@@ -254,6 +297,12 @@ impl PutAccessControlRuleFluentBuilder {
         self.inner = self.inner.set_not_user_ids(input);
         self
     }
+    /// <p>User IDs to exclude from the rule.</p>
+    pub fn get_not_user_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_not_user_ids()
+    }
     /// <p>The identifier of the organization.</p>
     pub fn organization_id(
         mut self,
@@ -269,6 +318,10 @@ impl PutAccessControlRuleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_organization_id(input);
         self
+    }
+    /// <p>The identifier of the organization.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organization_id()
     }
     /// Appends an item to `ImpersonationRoleIds`.
     ///
@@ -290,6 +343,12 @@ impl PutAccessControlRuleFluentBuilder {
         self.inner = self.inner.set_impersonation_role_ids(input);
         self
     }
+    /// <p>Impersonation role IDs to include in the rule.</p>
+    pub fn get_impersonation_role_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_impersonation_role_ids()
+    }
     /// Appends an item to `NotImpersonationRoleIds`.
     ///
     /// To override the contents of this collection use [`set_not_impersonation_role_ids`](Self::set_not_impersonation_role_ids).
@@ -309,5 +368,11 @@ impl PutAccessControlRuleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_not_impersonation_role_ids(input);
         self
+    }
+    /// <p>Impersonation role IDs to exclude from the rule.</p>
+    pub fn get_not_impersonation_role_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_not_impersonation_role_ids()
     }
 }

@@ -68,6 +68,12 @@ impl AwsEksClusterResourcesVpcConfigDetailsBuilder {
         self.security_group_ids = input;
         self
     }
+    /// <p>The security groups that are associated with the cross-account elastic network interfaces that are used to allow communication between your nodes and the Amazon EKS control plane.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
+    }
     /// Appends an item to `subnet_ids`.
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
@@ -87,6 +93,10 @@ impl AwsEksClusterResourcesVpcConfigDetailsBuilder {
         self.subnet_ids = input;
         self
     }
+    /// <p>The subnets that are associated with the cluster.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
+    }
     /// <p> Indicates whether the Amazon EKS public API server endpoint is turned on. If the Amazon EKS public API server endpoint is turned off, your cluster's Kubernetes API server can only receive requests that originate from within the cluster VPC. </p>
     pub fn endpoint_public_access(mut self, input: bool) -> Self {
         self.endpoint_public_access = ::std::option::Option::Some(input);
@@ -96,6 +106,10 @@ impl AwsEksClusterResourcesVpcConfigDetailsBuilder {
     pub fn set_endpoint_public_access(mut self, input: ::std::option::Option<bool>) -> Self {
         self.endpoint_public_access = input;
         self
+    }
+    /// <p> Indicates whether the Amazon EKS public API server endpoint is turned on. If the Amazon EKS public API server endpoint is turned off, your cluster's Kubernetes API server can only receive requests that originate from within the cluster VPC. </p>
+    pub fn get_endpoint_public_access(&self) -> &::std::option::Option<bool> {
+        &self.endpoint_public_access
     }
     /// Consumes the builder and constructs a [`AwsEksClusterResourcesVpcConfigDetails`](crate::types::AwsEksClusterResourcesVpcConfigDetails).
     pub fn build(self) -> crate::types::AwsEksClusterResourcesVpcConfigDetails {

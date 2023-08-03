@@ -43,6 +43,10 @@ impl LoRaWanStartFuotaTaskBuilder {
         self.start_time = input;
         self
     }
+    /// <p>Start time of a FUOTA task.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// Consumes the builder and constructs a [`LoRaWanStartFuotaTask`](crate::types::LoRaWanStartFuotaTask).
     pub fn build(self) -> crate::types::LoRaWanStartFuotaTask {
         crate::types::LoRaWanStartFuotaTask {

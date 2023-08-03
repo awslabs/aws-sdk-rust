@@ -96,6 +96,10 @@ impl GetRandomPasswordInputBuilder {
         self.password_length = input;
         self
     }
+    /// <p>The length of the password. If you don't include this parameter, the default length is 32 characters.</p>
+    pub fn get_password_length(&self) -> &::std::option::Option<i64> {
+        &self.password_length
+    }
     /// <p>A string of the characters that you don't want in the password.</p>
     pub fn exclude_characters(
         mut self,
@@ -112,6 +116,10 @@ impl GetRandomPasswordInputBuilder {
         self.exclude_characters = input;
         self
     }
+    /// <p>A string of the characters that you don't want in the password.</p>
+    pub fn get_exclude_characters(&self) -> &::std::option::Option<::std::string::String> {
+        &self.exclude_characters
+    }
     /// <p>Specifies whether to exclude numbers from the password. If you don't include this switch, the password can contain numbers.</p>
     pub fn exclude_numbers(mut self, input: bool) -> Self {
         self.exclude_numbers = ::std::option::Option::Some(input);
@@ -121,6 +129,10 @@ impl GetRandomPasswordInputBuilder {
     pub fn set_exclude_numbers(mut self, input: ::std::option::Option<bool>) -> Self {
         self.exclude_numbers = input;
         self
+    }
+    /// <p>Specifies whether to exclude numbers from the password. If you don't include this switch, the password can contain numbers.</p>
+    pub fn get_exclude_numbers(&self) -> &::std::option::Option<bool> {
+        &self.exclude_numbers
     }
     /// <p>Specifies whether to exclude the following punctuation characters from the password: <code>! " # $ % &amp; ' ( ) * + , - . / : ; &lt; = &gt; ? @ [ \ ] ^ _ ` { | } ~</code>. If you don't include this switch, the password can contain punctuation.</p>
     pub fn exclude_punctuation(mut self, input: bool) -> Self {
@@ -132,6 +144,10 @@ impl GetRandomPasswordInputBuilder {
         self.exclude_punctuation = input;
         self
     }
+    /// <p>Specifies whether to exclude the following punctuation characters from the password: <code>! " # $ % &amp; ' ( ) * + , - . / : ; &lt; = &gt; ? @ [ \ ] ^ _ ` { | } ~</code>. If you don't include this switch, the password can contain punctuation.</p>
+    pub fn get_exclude_punctuation(&self) -> &::std::option::Option<bool> {
+        &self.exclude_punctuation
+    }
     /// <p>Specifies whether to exclude uppercase letters from the password. If you don't include this switch, the password can contain uppercase letters.</p>
     pub fn exclude_uppercase(mut self, input: bool) -> Self {
         self.exclude_uppercase = ::std::option::Option::Some(input);
@@ -141,6 +157,10 @@ impl GetRandomPasswordInputBuilder {
     pub fn set_exclude_uppercase(mut self, input: ::std::option::Option<bool>) -> Self {
         self.exclude_uppercase = input;
         self
+    }
+    /// <p>Specifies whether to exclude uppercase letters from the password. If you don't include this switch, the password can contain uppercase letters.</p>
+    pub fn get_exclude_uppercase(&self) -> &::std::option::Option<bool> {
+        &self.exclude_uppercase
     }
     /// <p>Specifies whether to exclude lowercase letters from the password. If you don't include this switch, the password can contain lowercase letters.</p>
     pub fn exclude_lowercase(mut self, input: bool) -> Self {
@@ -152,6 +172,10 @@ impl GetRandomPasswordInputBuilder {
         self.exclude_lowercase = input;
         self
     }
+    /// <p>Specifies whether to exclude lowercase letters from the password. If you don't include this switch, the password can contain lowercase letters.</p>
+    pub fn get_exclude_lowercase(&self) -> &::std::option::Option<bool> {
+        &self.exclude_lowercase
+    }
     /// <p>Specifies whether to include the space character. If you include this switch, the password can contain space characters.</p>
     pub fn include_space(mut self, input: bool) -> Self {
         self.include_space = ::std::option::Option::Some(input);
@@ -162,6 +186,10 @@ impl GetRandomPasswordInputBuilder {
         self.include_space = input;
         self
     }
+    /// <p>Specifies whether to include the space character. If you include this switch, the password can contain space characters.</p>
+    pub fn get_include_space(&self) -> &::std::option::Option<bool> {
+        &self.include_space
+    }
     /// <p>Specifies whether to include at least one upper and lowercase letter, one number, and one punctuation. If you don't include this switch, the password contains at least one of every character type.</p>
     pub fn require_each_included_type(mut self, input: bool) -> Self {
         self.require_each_included_type = ::std::option::Option::Some(input);
@@ -171,6 +199,10 @@ impl GetRandomPasswordInputBuilder {
     pub fn set_require_each_included_type(mut self, input: ::std::option::Option<bool>) -> Self {
         self.require_each_included_type = input;
         self
+    }
+    /// <p>Specifies whether to include at least one upper and lowercase letter, one number, and one punctuation. If you don't include this switch, the password contains at least one of every character type.</p>
+    pub fn get_require_each_included_type(&self) -> &::std::option::Option<bool> {
+        &self.require_each_included_type
     }
     /// Consumes the builder and constructs a [`GetRandomPasswordInput`](crate::operation::get_random_password::GetRandomPasswordInput).
     pub fn build(

@@ -40,6 +40,12 @@ impl UntagResourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UntagResource as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::untag_resource::builders::UntagResourceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -122,6 +128,10 @@ impl UntagResourceFluentBuilder {
         self.inner = self.inner.set_workload_arn(input);
         self
     }
+    /// <p>The ARN for the workload.</p>
+    pub fn get_workload_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workload_arn()
+    }
     /// Appends an item to `TagKeys`.
     ///
     /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
@@ -138,5 +148,9 @@ impl UntagResourceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tag_keys(input);
         self
+    }
+    /// <p>A list of tag keys. Existing tags of the resource whose keys are members of this list are removed from the resource.</p>
+    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_tag_keys()
     }
 }

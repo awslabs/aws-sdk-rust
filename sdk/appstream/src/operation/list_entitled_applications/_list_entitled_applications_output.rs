@@ -69,6 +69,12 @@ impl ListEntitledApplicationsOutputBuilder {
         self.entitled_applications = input;
         self
     }
+    /// <p>The entitled applications.</p>
+    pub fn get_entitled_applications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EntitledApplication>> {
+        &self.entitled_applications
+    }
     /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -78,6 +84,10 @@ impl ListEntitledApplicationsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -63,6 +63,12 @@ impl BatchGetFieldOutputBuilder {
         self.fields = input;
         self
     }
+    /// <p>A list of detailed field information. </p>
+    pub fn get_fields(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GetFieldResponse>> {
+        &self.fields
+    }
     /// Appends an item to `errors`.
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
@@ -81,6 +87,10 @@ impl BatchGetFieldOutputBuilder {
     ) -> Self {
         self.errors = input;
         self
+    }
+    /// <p>A list of field errors. </p>
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldError>> {
+        &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

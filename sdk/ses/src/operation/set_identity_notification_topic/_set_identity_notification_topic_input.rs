@@ -68,6 +68,13 @@ impl SetIdentityNotificationTopicInputBuilder {
         self.identity = input;
         self
     }
+    /// <p>The identity (email address or domain) that you want to set the Amazon SNS topic for.</p> <important>
+    /// <p>You can only specify a verified identity for this parameter.</p>
+    /// </important>
+    /// <p>You can specify an identity by using its name or by using its Amazon Resource Name (ARN). The following examples are all valid identities: <code>sender@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+    pub fn get_identity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity
+    }
     /// <p>The type of notifications that will be published to the specified Amazon SNS topic.</p>
     pub fn notification_type(mut self, input: crate::types::NotificationType) -> Self {
         self.notification_type = ::std::option::Option::Some(input);
@@ -81,6 +88,10 @@ impl SetIdentityNotificationTopicInputBuilder {
         self.notification_type = input;
         self
     }
+    /// <p>The type of notifications that will be published to the specified Amazon SNS topic.</p>
+    pub fn get_notification_type(&self) -> &::std::option::Option<crate::types::NotificationType> {
+        &self.notification_type
+    }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic. If the parameter is omitted from the request or a null value is passed, <code>SnsTopic</code> is cleared and publishing is disabled.</p>
     pub fn sns_topic(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sns_topic = ::std::option::Option::Some(input.into());
@@ -90,6 +101,10 @@ impl SetIdentityNotificationTopicInputBuilder {
     pub fn set_sns_topic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sns_topic = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic. If the parameter is omitted from the request or a null value is passed, <code>SnsTopic</code> is cleared and publishing is disabled.</p>
+    pub fn get_sns_topic(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sns_topic
     }
     /// Consumes the builder and constructs a [`SetIdentityNotificationTopicInput`](crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicInput).
     pub fn build(

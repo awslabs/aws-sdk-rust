@@ -61,6 +61,10 @@ impl AttachToIndexInputBuilder {
         self.directory_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the directory where the object and index exist.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_arn
+    }
     /// <p>A reference to the index that you are attaching the object to.</p>
     pub fn index_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.index_reference = ::std::option::Option::Some(input);
@@ -74,6 +78,10 @@ impl AttachToIndexInputBuilder {
         self.index_reference = input;
         self
     }
+    /// <p>A reference to the index that you are attaching the object to.</p>
+    pub fn get_index_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
+        &self.index_reference
+    }
     /// <p>A reference to the object that you are attaching to the index.</p>
     pub fn target_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.target_reference = ::std::option::Option::Some(input);
@@ -86,6 +94,10 @@ impl AttachToIndexInputBuilder {
     ) -> Self {
         self.target_reference = input;
         self
+    }
+    /// <p>A reference to the object that you are attaching to the index.</p>
+    pub fn get_target_reference(&self) -> &::std::option::Option<crate::types::ObjectReference> {
+        &self.target_reference
     }
     /// Consumes the builder and constructs a [`AttachToIndexInput`](crate::operation::attach_to_index::AttachToIndexInput).
     pub fn build(

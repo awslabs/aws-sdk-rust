@@ -67,6 +67,12 @@ impl JobResourceBuilder {
         self.s3_resources = input;
         self
     }
+    /// <p>An array of <code>S3Resource</code> objects.</p>
+    pub fn get_s3_resources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::S3Resource>> {
+        &self.s3_resources
+    }
     /// Appends an item to `lambda_resources`.
     ///
     /// To override the contents of this collection use [`set_lambda_resources`](Self::set_lambda_resources).
@@ -86,6 +92,12 @@ impl JobResourceBuilder {
         self.lambda_resources = input;
         self
     }
+    /// <p>The Python-language Lambda functions for this job.</p>
+    pub fn get_lambda_resources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LambdaResource>> {
+        &self.lambda_resources
+    }
     /// Appends an item to `ec2_ami_resources`.
     ///
     /// To override the contents of this collection use [`set_ec2_ami_resources`](Self::set_ec2_ami_resources).
@@ -104,6 +116,12 @@ impl JobResourceBuilder {
     ) -> Self {
         self.ec2_ami_resources = input;
         self
+    }
+    /// <p>The Amazon Machine Images (AMIs) associated with this job.</p>
+    pub fn get_ec2_ami_resources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Ec2AmiResource>> {
+        &self.ec2_ami_resources
     }
     /// Consumes the builder and constructs a [`JobResource`](crate::types::JobResource).
     pub fn build(self) -> crate::types::JobResource {

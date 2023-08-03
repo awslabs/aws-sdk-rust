@@ -40,6 +40,10 @@ impl DeleteAnomalyMonitorInputBuilder {
         self.monitor_arn = input;
         self
     }
+    /// <p>The unique identifier of the cost anomaly monitor that you want to delete. </p>
+    pub fn get_monitor_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitor_arn
+    }
     /// Consumes the builder and constructs a [`DeleteAnomalyMonitorInput`](crate::operation::delete_anomaly_monitor::DeleteAnomalyMonitorInput).
     pub fn build(
         self,

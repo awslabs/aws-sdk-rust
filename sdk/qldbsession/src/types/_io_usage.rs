@@ -48,6 +48,10 @@ impl IoUsageBuilder {
         self.read_i_os = input;
         self
     }
+    /// <p>The number of read I/O requests that the command made.</p>
+    pub fn get_read_i_os(&self) -> &::std::option::Option<i64> {
+        &self.read_i_os
+    }
     /// <p>The number of write I/O requests that the command made.</p>
     pub fn write_i_os(mut self, input: i64) -> Self {
         self.write_i_os = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl IoUsageBuilder {
     pub fn set_write_i_os(mut self, input: ::std::option::Option<i64>) -> Self {
         self.write_i_os = input;
         self
+    }
+    /// <p>The number of write I/O requests that the command made.</p>
+    pub fn get_write_i_os(&self) -> &::std::option::Option<i64> {
+        &self.write_i_os
     }
     /// Consumes the builder and constructs a [`IoUsage`](crate::types::IoUsage).
     pub fn build(self) -> crate::types::IoUsage {

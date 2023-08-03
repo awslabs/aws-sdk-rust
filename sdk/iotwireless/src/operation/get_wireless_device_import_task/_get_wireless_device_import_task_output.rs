@@ -126,6 +126,10 @@ impl GetWirelessDeviceImportTaskOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the import task for which information is retrieved.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The ARN (Amazon Resource Name) of the import task.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -135,6 +139,10 @@ impl GetWirelessDeviceImportTaskOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The ARN (Amazon Resource Name) of the import task.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The name of the destination that's assigned to the wireless devices in the import task.</p>
     pub fn destination_name(
@@ -152,6 +160,10 @@ impl GetWirelessDeviceImportTaskOutputBuilder {
         self.destination_name = input;
         self
     }
+    /// <p>The name of the destination that's assigned to the wireless devices in the import task.</p>
+    pub fn get_destination_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_name
+    }
     /// <p>The Sidewalk-related information about an import task.</p>
     pub fn sidewalk(mut self, input: crate::types::SidewalkGetStartImportInfo) -> Self {
         self.sidewalk = ::std::option::Option::Some(input);
@@ -164,6 +176,10 @@ impl GetWirelessDeviceImportTaskOutputBuilder {
     ) -> Self {
         self.sidewalk = input;
         self
+    }
+    /// <p>The Sidewalk-related information about an import task.</p>
+    pub fn get_sidewalk(&self) -> &::std::option::Option<crate::types::SidewalkGetStartImportInfo> {
+        &self.sidewalk
     }
     /// <p>The time at which the import task was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -178,6 +194,10 @@ impl GetWirelessDeviceImportTaskOutputBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The time at which the import task was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The import task status.</p>
     pub fn status(mut self, input: crate::types::ImportTaskStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -190,6 +210,10 @@ impl GetWirelessDeviceImportTaskOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The import task status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ImportTaskStatus> {
+        &self.status
     }
     /// <p>The reason for the provided status information, such as a validation error that causes the import task to fail.</p>
     pub fn status_reason(
@@ -207,6 +231,10 @@ impl GetWirelessDeviceImportTaskOutputBuilder {
         self.status_reason = input;
         self
     }
+    /// <p>The reason for the provided status information, such as a validation error that causes the import task to fail.</p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_reason
+    }
     /// <p>The number of devices in the import task that are waiting for the control log to start processing.</p>
     pub fn initialized_imported_device_count(mut self, input: i64) -> Self {
         self.initialized_imported_device_count = ::std::option::Option::Some(input);
@@ -220,6 +248,10 @@ impl GetWirelessDeviceImportTaskOutputBuilder {
         self.initialized_imported_device_count = input;
         self
     }
+    /// <p>The number of devices in the import task that are waiting for the control log to start processing.</p>
+    pub fn get_initialized_imported_device_count(&self) -> &::std::option::Option<i64> {
+        &self.initialized_imported_device_count
+    }
     /// <p>The number of devices in the import task that are waiting in the import task queue to be onboarded.</p>
     pub fn pending_imported_device_count(mut self, input: i64) -> Self {
         self.pending_imported_device_count = ::std::option::Option::Some(input);
@@ -229,6 +261,10 @@ impl GetWirelessDeviceImportTaskOutputBuilder {
     pub fn set_pending_imported_device_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.pending_imported_device_count = input;
         self
+    }
+    /// <p>The number of devices in the import task that are waiting in the import task queue to be onboarded.</p>
+    pub fn get_pending_imported_device_count(&self) -> &::std::option::Option<i64> {
+        &self.pending_imported_device_count
     }
     /// <p>The number of devices in the import task that have been onboarded to the import task.</p>
     pub fn onboarded_imported_device_count(mut self, input: i64) -> Self {
@@ -243,6 +279,10 @@ impl GetWirelessDeviceImportTaskOutputBuilder {
         self.onboarded_imported_device_count = input;
         self
     }
+    /// <p>The number of devices in the import task that have been onboarded to the import task.</p>
+    pub fn get_onboarded_imported_device_count(&self) -> &::std::option::Option<i64> {
+        &self.onboarded_imported_device_count
+    }
     /// <p>The number of devices in the import task that failed to onboard to the import task.</p>
     pub fn failed_imported_device_count(mut self, input: i64) -> Self {
         self.failed_imported_device_count = ::std::option::Option::Some(input);
@@ -252,6 +292,10 @@ impl GetWirelessDeviceImportTaskOutputBuilder {
     pub fn set_failed_imported_device_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.failed_imported_device_count = input;
         self
+    }
+    /// <p>The number of devices in the import task that failed to onboard to the import task.</p>
+    pub fn get_failed_imported_device_count(&self) -> &::std::option::Option<i64> {
+        &self.failed_imported_device_count
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

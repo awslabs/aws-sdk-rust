@@ -57,6 +57,10 @@ impl ParticipantsBuilder {
         self.users = input;
         self
     }
+    /// <p>The list of users.</p>
+    pub fn get_users(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserMetadata>> {
+        &self.users
+    }
     /// Appends an item to `groups`.
     ///
     /// To override the contents of this collection use [`set_groups`](Self::set_groups).
@@ -75,6 +79,12 @@ impl ParticipantsBuilder {
     ) -> Self {
         self.groups = input;
         self
+    }
+    /// <p>The list of user groups.</p>
+    pub fn get_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupMetadata>> {
+        &self.groups
     }
     /// Consumes the builder and constructs a [`Participants`](crate::types::Participants).
     pub fn build(self) -> crate::types::Participants {

@@ -71,6 +71,10 @@ impl PredictedIntentBuilder {
         self.intent_name = input;
         self
     }
+    /// <p>The name of the intent that Amazon Lex suggests satisfies the user's intent.</p>
+    pub fn get_intent_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.intent_name
+    }
     /// <p>Indicates how confident Amazon Lex is that an intent satisfies the user's intent.</p>
     pub fn nlu_intent_confidence(mut self, input: crate::types::IntentConfidence) -> Self {
         self.nlu_intent_confidence = ::std::option::Option::Some(input);
@@ -83,6 +87,12 @@ impl PredictedIntentBuilder {
     ) -> Self {
         self.nlu_intent_confidence = input;
         self
+    }
+    /// <p>Indicates how confident Amazon Lex is that an intent satisfies the user's intent.</p>
+    pub fn get_nlu_intent_confidence(
+        &self,
+    ) -> &::std::option::Option<crate::types::IntentConfidence> {
+        &self.nlu_intent_confidence
     }
     /// Adds a key-value pair to `slots`.
     ///
@@ -108,6 +118,14 @@ impl PredictedIntentBuilder {
     ) -> Self {
         self.slots = input;
         self
+    }
+    /// <p>The slot and slot values associated with the predicted intent.</p>
+    pub fn get_slots(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.slots
     }
     /// Consumes the builder and constructs a [`PredictedIntent`](crate::types::PredictedIntent).
     pub fn build(self) -> crate::types::PredictedIntent {

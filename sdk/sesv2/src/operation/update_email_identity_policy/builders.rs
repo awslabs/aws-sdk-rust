@@ -40,6 +40,10 @@ impl UpdateEmailIdentityPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateEmailIdentityPolicy as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_email_identity_policy::builders::UpdateEmailIdentityPolicyInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +140,10 @@ impl UpdateEmailIdentityPolicyFluentBuilder {
         self.inner = self.inner.set_email_identity(input);
         self
     }
+    /// <p>The email identity.</p>
+    pub fn get_email_identity(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_email_identity()
+    }
     /// <p>The name of the policy.</p>
     /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -148,6 +156,11 @@ impl UpdateEmailIdentityPolicyFluentBuilder {
         self.inner = self.inner.set_policy_name(input);
         self
     }
+    /// <p>The name of the policy.</p>
+    /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_name()
+    }
     /// <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
     /// <p> For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer Guide</a>.</p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -159,5 +172,10 @@ impl UpdateEmailIdentityPolicyFluentBuilder {
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy(input);
         self
+    }
+    /// <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
+    /// <p> For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer Guide</a>.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy()
     }
 }

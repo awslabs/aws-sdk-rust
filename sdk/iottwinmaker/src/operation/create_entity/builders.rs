@@ -36,6 +36,10 @@ impl CreateEntityFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateEntity as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_entity::builders::CreateEntityInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl CreateEntityFluentBuilder {
         self.inner = self.inner.set_workspace_id(input);
         self
     }
+    /// <p>The ID of the workspace that contains the entity.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workspace_id()
+    }
     /// <p>The ID of the entity.</p>
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.entity_id(input.into());
@@ -127,6 +135,10 @@ impl CreateEntityFluentBuilder {
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_entity_id(input);
         self
+    }
+    /// <p>The ID of the entity.</p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_entity_id()
     }
     /// <p>The name of the entity.</p>
     pub fn entity_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -138,6 +150,10 @@ impl CreateEntityFluentBuilder {
         self.inner = self.inner.set_entity_name(input);
         self
     }
+    /// <p>The name of the entity.</p>
+    pub fn get_entity_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_entity_name()
+    }
     /// <p>The description of the entity.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -147,6 +163,10 @@ impl CreateEntityFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the entity.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Adds a key-value pair to `components`.
     ///
@@ -171,6 +191,14 @@ impl CreateEntityFluentBuilder {
         self.inner = self.inner.set_components(input);
         self
     }
+    /// <p>An object that maps strings to the components in the entity. Each string in the mapping must be unique to this object.</p>
+    pub fn get_components(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::ComponentRequest>,
+    > {
+        self.inner.get_components()
+    }
     /// <p>The ID of the entity's parent entity.</p>
     pub fn parent_entity_id(
         mut self,
@@ -186,6 +214,10 @@ impl CreateEntityFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_parent_entity_id(input);
         self
+    }
+    /// <p>The ID of the entity's parent entity.</p>
+    pub fn get_parent_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_parent_entity_id()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -209,5 +241,13 @@ impl CreateEntityFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Metadata that you can use to manage the entity.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

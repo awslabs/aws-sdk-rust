@@ -62,6 +62,10 @@ impl SendPipelineExecutionStepSuccessInputBuilder {
         self.callback_token = input;
         self
     }
+    /// <p>The pipeline generated token from the Amazon SQS queue.</p>
+    pub fn get_callback_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.callback_token
+    }
     /// Appends an item to `output_parameters`.
     ///
     /// To override the contents of this collection use [`set_output_parameters`](Self::set_output_parameters).
@@ -81,6 +85,12 @@ impl SendPipelineExecutionStepSuccessInputBuilder {
         self.output_parameters = input;
         self
     }
+    /// <p>A list of the output parameters of the callback step.</p>
+    pub fn get_output_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OutputParameter>> {
+        &self.output_parameters
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
     pub fn client_request_token(
         mut self,
@@ -96,6 +106,10 @@ impl SendPipelineExecutionStepSuccessInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Consumes the builder and constructs a [`SendPipelineExecutionStepSuccessInput`](crate::operation::send_pipeline_execution_step_success::SendPipelineExecutionStepSuccessInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::send_pipeline_execution_step_success::SendPipelineExecutionStepSuccessInput, ::aws_smithy_http::operation::error::BuildError>{

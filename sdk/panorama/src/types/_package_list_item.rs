@@ -80,6 +80,10 @@ impl PackageListItemBuilder {
         self.package_id = input;
         self
     }
+    /// <p>The package's ID.</p>
+    pub fn get_package_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_id
+    }
     /// <p>The package's name.</p>
     pub fn package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_name = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl PackageListItemBuilder {
         self.package_name = input;
         self
     }
+    /// <p>The package's name.</p>
+    pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package_name
+    }
     /// <p>The package's ARN.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -99,6 +107,10 @@ impl PackageListItemBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The package's ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>When the package was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -112,6 +124,10 @@ impl PackageListItemBuilder {
     ) -> Self {
         self.created_time = input;
         self
+    }
+    /// <p>When the package was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -137,6 +153,14 @@ impl PackageListItemBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The package's tags.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`PackageListItem`](crate::types::PackageListItem).
     pub fn build(self) -> crate::types::PackageListItem {

@@ -57,6 +57,10 @@ impl AwsAmazonMqBrokerMaintenanceWindowStartTimeDetailsBuilder {
         self.day_of_week = input;
         self
     }
+    /// <p> The day of the week on which the maintenance window falls. </p>
+    pub fn get_day_of_week(&self) -> &::std::option::Option<::std::string::String> {
+        &self.day_of_week
+    }
     /// <p> The time, in 24-hour format, on which the maintenance window falls. </p>
     pub fn time_of_day(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.time_of_day = ::std::option::Option::Some(input.into());
@@ -67,6 +71,10 @@ impl AwsAmazonMqBrokerMaintenanceWindowStartTimeDetailsBuilder {
         self.time_of_day = input;
         self
     }
+    /// <p> The time, in 24-hour format, on which the maintenance window falls. </p>
+    pub fn get_time_of_day(&self) -> &::std::option::Option<::std::string::String> {
+        &self.time_of_day
+    }
     /// <p> The time zone in either the Country/City format or the UTC offset format. UTC is the default format. </p>
     pub fn time_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.time_zone = ::std::option::Option::Some(input.into());
@@ -76,6 +84,10 @@ impl AwsAmazonMqBrokerMaintenanceWindowStartTimeDetailsBuilder {
     pub fn set_time_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.time_zone = input;
         self
+    }
+    /// <p> The time zone in either the Country/City format or the UTC offset format. UTC is the default format. </p>
+    pub fn get_time_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.time_zone
     }
     /// Consumes the builder and constructs a [`AwsAmazonMqBrokerMaintenanceWindowStartTimeDetails`](crate::types::AwsAmazonMqBrokerMaintenanceWindowStartTimeDetails).
     pub fn build(self) -> crate::types::AwsAmazonMqBrokerMaintenanceWindowStartTimeDetails {

@@ -59,6 +59,12 @@ impl EffectiveDeploymentStatusDetailsBuilder {
         self.error_stack = input;
         self
     }
+    /// <p>Contains an ordered list of short error codes that range from the most generic error to the most specific one. The error codes describe the reason for failure whenever the <code>coreDeviceExecutionStatus</code> is in a failed state. The response will be an empty list if there is no error.</p>
+    pub fn get_error_stack(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.error_stack
+    }
     /// Appends an item to `error_types`.
     ///
     /// To override the contents of this collection use [`set_error_types`](Self::set_error_types).
@@ -77,6 +83,12 @@ impl EffectiveDeploymentStatusDetailsBuilder {
     ) -> Self {
         self.error_types = input;
         self
+    }
+    /// <p>Contains tags which describe the error. You can use the error types to classify errors to assist with remediating the failure. The response will be an empty list if there is no error.</p>
+    pub fn get_error_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.error_types
     }
     /// Consumes the builder and constructs a [`EffectiveDeploymentStatusDetails`](crate::types::EffectiveDeploymentStatusDetails).
     pub fn build(self) -> crate::types::EffectiveDeploymentStatusDetails {

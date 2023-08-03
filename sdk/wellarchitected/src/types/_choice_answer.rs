@@ -64,6 +64,10 @@ impl ChoiceAnswerBuilder {
         self.choice_id = input;
         self
     }
+    /// <p>The ID of a choice.</p>
+    pub fn get_choice_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.choice_id
+    }
     /// <p>The status of a choice.</p>
     pub fn status(mut self, input: crate::types::ChoiceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl ChoiceAnswerBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ChoiceStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of a choice.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ChoiceStatus> {
+        &self.status
     }
     /// <p>The reason why a choice is non-applicable to a question in your workload.</p>
     pub fn reason(mut self, input: crate::types::ChoiceReason) -> Self {
@@ -84,6 +92,10 @@ impl ChoiceAnswerBuilder {
         self.reason = input;
         self
     }
+    /// <p>The reason why a choice is non-applicable to a question in your workload.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<crate::types::ChoiceReason> {
+        &self.reason
+    }
     /// <p>The notes associated with a choice.</p>
     pub fn notes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notes = ::std::option::Option::Some(input.into());
@@ -93,6 +105,10 @@ impl ChoiceAnswerBuilder {
     pub fn set_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notes = input;
         self
+    }
+    /// <p>The notes associated with a choice.</p>
+    pub fn get_notes(&self) -> &::std::option::Option<::std::string::String> {
+        &self.notes
     }
     /// Consumes the builder and constructs a [`ChoiceAnswer`](crate::types::ChoiceAnswer).
     pub fn build(self) -> crate::types::ChoiceAnswer {

@@ -68,6 +68,12 @@ impl DimensionFieldBuilder {
         self.numerical_dimension_field = input;
         self
     }
+    /// <p>The dimension type field with numerical type columns.</p>
+    pub fn get_numerical_dimension_field(
+        &self,
+    ) -> &::std::option::Option<crate::types::NumericalDimensionField> {
+        &self.numerical_dimension_field
+    }
     /// <p>The dimension type field with categorical type columns.</p>
     pub fn categorical_dimension_field(
         mut self,
@@ -84,6 +90,12 @@ impl DimensionFieldBuilder {
         self.categorical_dimension_field = input;
         self
     }
+    /// <p>The dimension type field with categorical type columns.</p>
+    pub fn get_categorical_dimension_field(
+        &self,
+    ) -> &::std::option::Option<crate::types::CategoricalDimensionField> {
+        &self.categorical_dimension_field
+    }
     /// <p>The dimension type field with date type columns.</p>
     pub fn date_dimension_field(mut self, input: crate::types::DateDimensionField) -> Self {
         self.date_dimension_field = ::std::option::Option::Some(input);
@@ -96,6 +108,12 @@ impl DimensionFieldBuilder {
     ) -> Self {
         self.date_dimension_field = input;
         self
+    }
+    /// <p>The dimension type field with date type columns.</p>
+    pub fn get_date_dimension_field(
+        &self,
+    ) -> &::std::option::Option<crate::types::DateDimensionField> {
+        &self.date_dimension_field
     }
     /// Consumes the builder and constructs a [`DimensionField`](crate::types::DimensionField).
     pub fn build(self) -> crate::types::DimensionField {

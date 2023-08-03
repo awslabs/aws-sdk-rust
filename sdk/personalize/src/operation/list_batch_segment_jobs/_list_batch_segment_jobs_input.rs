@@ -62,6 +62,10 @@ impl ListBatchSegmentJobsInputBuilder {
         self.solution_version_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the solution version that the batch segment jobs used to generate batch segments.</p>
+    pub fn get_solution_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.solution_version_arn
+    }
     /// <p>The token to request the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl ListBatchSegmentJobsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to request the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of batch segment job results to return in each page. The default value is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl ListBatchSegmentJobsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of batch segment job results to return in each page. The default value is 100.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListBatchSegmentJobsInput`](crate::operation::list_batch_segment_jobs::ListBatchSegmentJobsInput).
     pub fn build(

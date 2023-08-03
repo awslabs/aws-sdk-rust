@@ -102,6 +102,10 @@ impl AwsEcrContainerImageDetailsBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name of the repository the Amazon ECR container image resides in.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// Appends an item to `image_tags`.
     ///
     /// To override the contents of this collection use [`set_image_tags`](Self::set_image_tags).
@@ -121,6 +125,10 @@ impl AwsEcrContainerImageDetailsBuilder {
         self.image_tags = input;
         self
     }
+    /// <p>The image tags attached to the Amazon ECR container image.</p>
+    pub fn get_image_tags(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.image_tags
+    }
     /// <p>The date and time the Amazon ECR container image was pushed.</p>
     pub fn pushed_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.pushed_at = ::std::option::Option::Some(input);
@@ -134,6 +142,10 @@ impl AwsEcrContainerImageDetailsBuilder {
         self.pushed_at = input;
         self
     }
+    /// <p>The date and time the Amazon ECR container image was pushed.</p>
+    pub fn get_pushed_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.pushed_at
+    }
     /// <p>The image author of the Amazon ECR container image.</p>
     pub fn author(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.author = ::std::option::Option::Some(input.into());
@@ -143,6 +155,10 @@ impl AwsEcrContainerImageDetailsBuilder {
     pub fn set_author(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.author = input;
         self
+    }
+    /// <p>The image author of the Amazon ECR container image.</p>
+    pub fn get_author(&self) -> &::std::option::Option<::std::string::String> {
+        &self.author
     }
     /// <p>The architecture of the Amazon ECR container image.</p>
     pub fn architecture(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -154,6 +170,10 @@ impl AwsEcrContainerImageDetailsBuilder {
         self.architecture = input;
         self
     }
+    /// <p>The architecture of the Amazon ECR container image.</p>
+    pub fn get_architecture(&self) -> &::std::option::Option<::std::string::String> {
+        &self.architecture
+    }
     /// <p>The image hash of the Amazon ECR container image.</p>
     pub fn image_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_hash = ::std::option::Option::Some(input.into());
@@ -163,6 +183,10 @@ impl AwsEcrContainerImageDetailsBuilder {
     pub fn set_image_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_hash = input;
         self
+    }
+    /// <p>The image hash of the Amazon ECR container image.</p>
+    pub fn get_image_hash(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_hash
     }
     /// <p>The registry for the Amazon ECR container image.</p>
     pub fn registry(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -174,6 +198,10 @@ impl AwsEcrContainerImageDetailsBuilder {
         self.registry = input;
         self
     }
+    /// <p>The registry for the Amazon ECR container image.</p>
+    pub fn get_registry(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry
+    }
     /// <p>The platform of the Amazon ECR container image.</p>
     pub fn platform(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform = ::std::option::Option::Some(input.into());
@@ -183,6 +211,10 @@ impl AwsEcrContainerImageDetailsBuilder {
     pub fn set_platform(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform = input;
         self
+    }
+    /// <p>The platform of the Amazon ECR container image.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform
     }
     /// Consumes the builder and constructs a [`AwsEcrContainerImageDetails`](crate::types::AwsEcrContainerImageDetails).
     pub fn build(self) -> crate::types::AwsEcrContainerImageDetails {

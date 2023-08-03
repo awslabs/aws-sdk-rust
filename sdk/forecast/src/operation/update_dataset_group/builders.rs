@@ -38,6 +38,12 @@ impl UpdateDatasetGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDatasetGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_dataset_group::builders::UpdateDatasetGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +140,10 @@ impl UpdateDatasetGroupFluentBuilder {
         self.inner = self.inner.set_dataset_group_arn(input);
         self
     }
+    /// <p>The ARN of the dataset group.</p>
+    pub fn get_dataset_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dataset_group_arn()
+    }
     /// Appends an item to `DatasetArns`.
     ///
     /// To override the contents of this collection use [`set_dataset_arns`](Self::set_dataset_arns).
@@ -150,5 +160,11 @@ impl UpdateDatasetGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_dataset_arns(input);
         self
+    }
+    /// <p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the dataset group.</p>
+    pub fn get_dataset_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_dataset_arns()
     }
 }

@@ -63,6 +63,12 @@ impl ListExecutionsOutputBuilder {
         self.executions = input;
         self
     }
+    /// <p>A list of executions. Each execution contains the task ID, the device that the task is executing on, the execution ID, and the status of the execution.</p>
+    pub fn get_executions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExecutionSummary>> {
+        &self.executions
+    }
     /// <p>A pagination token to continue to the next page of executions.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -72,6 +78,10 @@ impl ListExecutionsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A pagination token to continue to the next page of executions.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

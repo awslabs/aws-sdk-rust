@@ -70,6 +70,10 @@ impl AdminScopeBuilder {
         self.account_scope = input;
         self
     }
+    /// <p>Defines the accounts that the specified Firewall Manager administrator can apply policies to.</p>
+    pub fn get_account_scope(&self) -> &::std::option::Option<crate::types::AccountScope> {
+        &self.account_scope
+    }
     /// <p>Defines the Organizations organizational units that the specified Firewall Manager administrator can apply policies to. For more information about OUs in Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_ous.html">Managing organizational units (OUs) </a> in the <i>Organizations User Guide</i>.</p>
     pub fn organizational_unit_scope(
         mut self,
@@ -86,6 +90,12 @@ impl AdminScopeBuilder {
         self.organizational_unit_scope = input;
         self
     }
+    /// <p>Defines the Organizations organizational units that the specified Firewall Manager administrator can apply policies to. For more information about OUs in Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_ous.html">Managing organizational units (OUs) </a> in the <i>Organizations User Guide</i>.</p>
+    pub fn get_organizational_unit_scope(
+        &self,
+    ) -> &::std::option::Option<crate::types::OrganizationalUnitScope> {
+        &self.organizational_unit_scope
+    }
     /// <p>Defines the Amazon Web Services Regions that the specified Firewall Manager administrator can perform actions in.</p>
     pub fn region_scope(mut self, input: crate::types::RegionScope) -> Self {
         self.region_scope = ::std::option::Option::Some(input);
@@ -99,6 +109,10 @@ impl AdminScopeBuilder {
         self.region_scope = input;
         self
     }
+    /// <p>Defines the Amazon Web Services Regions that the specified Firewall Manager administrator can perform actions in.</p>
+    pub fn get_region_scope(&self) -> &::std::option::Option<crate::types::RegionScope> {
+        &self.region_scope
+    }
     /// <p>Defines the Firewall Manager policy types that the specified Firewall Manager administrator can create and manage.</p>
     pub fn policy_type_scope(mut self, input: crate::types::PolicyTypeScope) -> Self {
         self.policy_type_scope = ::std::option::Option::Some(input);
@@ -111,6 +125,10 @@ impl AdminScopeBuilder {
     ) -> Self {
         self.policy_type_scope = input;
         self
+    }
+    /// <p>Defines the Firewall Manager policy types that the specified Firewall Manager administrator can create and manage.</p>
+    pub fn get_policy_type_scope(&self) -> &::std::option::Option<crate::types::PolicyTypeScope> {
+        &self.policy_type_scope
     }
     /// Consumes the builder and constructs a [`AdminScope`](crate::types::AdminScope).
     pub fn build(self) -> crate::types::AdminScope {

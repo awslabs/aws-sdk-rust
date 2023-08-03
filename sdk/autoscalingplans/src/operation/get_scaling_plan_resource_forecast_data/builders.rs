@@ -37,6 +37,10 @@ impl GetScalingPlanResourceForecastDataFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetScalingPlanResourceForecastData as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_scaling_plan_resource_forecast_data::builders::GetScalingPlanResourceForecastDataInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -107,6 +111,10 @@ impl GetScalingPlanResourceForecastDataFluentBuilder {
         self.inner = self.inner.set_scaling_plan_name(input);
         self
     }
+    /// <p>The name of the scaling plan.</p>
+    pub fn get_scaling_plan_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_scaling_plan_name()
+    }
     /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
     pub fn scaling_plan_version(mut self, input: i64) -> Self {
         self.inner = self.inner.scaling_plan_version(input);
@@ -116,6 +124,10 @@ impl GetScalingPlanResourceForecastDataFluentBuilder {
     pub fn set_scaling_plan_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_scaling_plan_version(input);
         self
+    }
+    /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
+    pub fn get_scaling_plan_version(&self) -> &::std::option::Option<i64> {
+        self.inner.get_scaling_plan_version()
     }
     /// <p>The namespace of the AWS service. The only valid value is <code>autoscaling</code>. </p>
     pub fn service_namespace(mut self, input: crate::types::ServiceNamespace) -> Self {
@@ -130,6 +142,10 @@ impl GetScalingPlanResourceForecastDataFluentBuilder {
         self.inner = self.inner.set_service_namespace(input);
         self
     }
+    /// <p>The namespace of the AWS service. The only valid value is <code>autoscaling</code>. </p>
+    pub fn get_service_namespace(&self) -> &::std::option::Option<crate::types::ServiceNamespace> {
+        self.inner.get_service_namespace()
+    }
     /// <p>The ID of the resource. This string consists of a prefix (<code>autoScalingGroup</code>) followed by the name of a specified Auto Scaling group (<code>my-asg</code>). Example: <code>autoScalingGroup/my-asg</code>. </p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_id(input.into());
@@ -139,6 +155,10 @@ impl GetScalingPlanResourceForecastDataFluentBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_id(input);
         self
+    }
+    /// <p>The ID of the resource. This string consists of a prefix (<code>autoScalingGroup</code>) followed by the name of a specified Auto Scaling group (<code>my-asg</code>). Example: <code>autoScalingGroup/my-asg</code>. </p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_id()
     }
     /// <p>The scalable dimension for the resource. The only valid value is <code>autoscaling:autoScalingGroup:DesiredCapacity</code>. </p>
     pub fn scalable_dimension(mut self, input: crate::types::ScalableDimension) -> Self {
@@ -152,6 +172,12 @@ impl GetScalingPlanResourceForecastDataFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_scalable_dimension(input);
         self
+    }
+    /// <p>The scalable dimension for the resource. The only valid value is <code>autoscaling:autoScalingGroup:DesiredCapacity</code>. </p>
+    pub fn get_scalable_dimension(
+        &self,
+    ) -> &::std::option::Option<crate::types::ScalableDimension> {
+        self.inner.get_scalable_dimension()
     }
     /// <p>The type of forecast data to get.</p>
     /// <ul>
@@ -178,6 +204,16 @@ impl GetScalingPlanResourceForecastDataFluentBuilder {
         self.inner = self.inner.set_forecast_data_type(input);
         self
     }
+    /// <p>The type of forecast data to get.</p>
+    /// <ul>
+    /// <li> <p> <code>LoadForecast</code>: The load metric forecast. </p> </li>
+    /// <li> <p> <code>CapacityForecast</code>: The capacity forecast. </p> </li>
+    /// <li> <p> <code>ScheduledActionMinCapacity</code>: The minimum capacity for each scheduled scaling action. This data is calculated as the larger of two values: the capacity forecast or the minimum capacity in the scaling instruction.</p> </li>
+    /// <li> <p> <code>ScheduledActionMaxCapacity</code>: The maximum capacity for each scheduled scaling action. The calculation used is determined by the predictive scaling maximum capacity behavior setting in the scaling instruction.</p> </li>
+    /// </ul>
+    pub fn get_forecast_data_type(&self) -> &::std::option::Option<crate::types::ForecastDataType> {
+        self.inner.get_forecast_data_type()
+    }
     /// <p>The inclusive start time of the time range for the forecast data to get. The date and time can be at most 56 days before the current date and time. </p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
@@ -190,6 +226,10 @@ impl GetScalingPlanResourceForecastDataFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
+    }
+    /// <p>The inclusive start time of the time range for the forecast data to get. The date and time can be at most 56 days before the current date and time. </p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_time()
     }
     /// <p>The exclusive end time of the time range for the forecast data to get. The maximum time duration between the start and end time is seven days. </p>
     /// <p>Although this parameter can accept a date and time that is more than two days in the future, the availability of forecast data has limits. AWS Auto Scaling only issues forecasts for periods of two days in advance.</p>
@@ -205,5 +245,10 @@ impl GetScalingPlanResourceForecastDataFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
+    }
+    /// <p>The exclusive end time of the time range for the forecast data to get. The maximum time duration between the start and end time is seven days. </p>
+    /// <p>Although this parameter can accept a date and time that is more than two days in the future, the availability of forecast data has limits. AWS Auto Scaling only issues forecasts for periods of two days in advance.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_time()
     }
 }

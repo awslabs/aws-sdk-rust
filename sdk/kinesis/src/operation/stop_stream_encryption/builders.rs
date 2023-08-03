@@ -41,6 +41,12 @@ impl StopStreamEncryptionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StopStreamEncryption as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::stop_stream_encryption::builders::StopStreamEncryptionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +137,10 @@ impl StopStreamEncryptionFluentBuilder {
         self.inner = self.inner.set_stream_name(input);
         self
     }
+    /// <p>The name of the stream on which to stop encrypting records.</p>
+    pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_name()
+    }
     /// <p>The encryption type. The only valid value is <code>KMS</code>.</p>
     pub fn encryption_type(mut self, input: crate::types::EncryptionType) -> Self {
         self.inner = self.inner.encryption_type(input);
@@ -143,6 +153,10 @@ impl StopStreamEncryptionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_encryption_type(input);
         self
+    }
+    /// <p>The encryption type. The only valid value is <code>KMS</code>.</p>
+    pub fn get_encryption_type(&self) -> &::std::option::Option<crate::types::EncryptionType> {
+        self.inner.get_encryption_type()
     }
     /// <p>The GUID for the customer-managed Amazon Web Services KMS key to use for encryption. This value can be a globally unique identifier, a fully specified Amazon Resource Name (ARN) to either an alias or a key, or an alias name prefixed by "alias/".You can also use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>.</p>
     /// <ul>
@@ -168,6 +182,17 @@ impl StopStreamEncryptionFluentBuilder {
         self.inner = self.inner.set_key_id(input);
         self
     }
+    /// <p>The GUID for the customer-managed Amazon Web Services KMS key to use for encryption. This value can be a globally unique identifier, a fully specified Amazon Resource Name (ARN) to either an alias or a key, or an alias name prefixed by "alias/".You can also use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>.</p>
+    /// <ul>
+    /// <li> <p>Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p> </li>
+    /// <li> <p>Alias ARN example: <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code> </p> </li>
+    /// <li> <p>Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code> </p> </li>
+    /// <li> <p>Alias name example: <code>alias/MyAliasName</code> </p> </li>
+    /// <li> <p>Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code> </p> </li>
+    /// </ul>
+    pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_key_id()
+    }
     /// <p>The ARN of the stream.</p>
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stream_arn(input.into());
@@ -177,5 +202,9 @@ impl StopStreamEncryptionFluentBuilder {
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stream_arn(input);
         self
+    }
+    /// <p>The ARN of the stream.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_arn()
     }
 }

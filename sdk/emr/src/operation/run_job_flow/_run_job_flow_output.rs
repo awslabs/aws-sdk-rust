@@ -55,6 +55,10 @@ impl RunJobFlowOutputBuilder {
         self.job_flow_id = input;
         self
     }
+    /// <p>A unique identifier for the job flow.</p>
+    pub fn get_job_flow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_flow_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_arn = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl RunJobFlowOutputBuilder {
     pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

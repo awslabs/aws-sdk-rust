@@ -45,6 +45,10 @@ impl DescribeExplainabilityExportInputBuilder {
         self.explainability_export_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
+    pub fn get_explainability_export_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.explainability_export_arn
+    }
     /// Consumes the builder and constructs a [`DescribeExplainabilityExportInput`](crate::operation::describe_explainability_export::DescribeExplainabilityExportInput).
     pub fn build(
         self,

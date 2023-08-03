@@ -36,6 +36,10 @@ impl StartDevEnvironmentSessionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartDevEnvironmentSession as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_dev_environment_session::builders::StartDevEnvironmentSessionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl StartDevEnvironmentSessionFluentBuilder {
         self.inner = self.inner.set_space_name(input);
         self
     }
+    /// <p>The name of the space.</p>
+    pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_space_name()
+    }
     /// <p>The name of the project in the space.</p>
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.project_name(input.into());
@@ -136,6 +144,10 @@ impl StartDevEnvironmentSessionFluentBuilder {
         self.inner = self.inner.set_project_name(input);
         self
     }
+    /// <p>The name of the project in the space.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_name()
+    }
     /// <p>The system-generated unique ID of the Dev Environment.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
@@ -145,6 +157,10 @@ impl StartDevEnvironmentSessionFluentBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
+    }
+    /// <p>The system-generated unique ID of the Dev Environment.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
     }
     /// <p>Information about the configuration of a Dev Environment session.</p>
     pub fn session_configuration(
@@ -161,5 +177,11 @@ impl StartDevEnvironmentSessionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_session_configuration(input);
         self
+    }
+    /// <p>Information about the configuration of a Dev Environment session.</p>
+    pub fn get_session_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DevEnvironmentSessionConfiguration> {
+        self.inner.get_session_configuration()
     }
 }

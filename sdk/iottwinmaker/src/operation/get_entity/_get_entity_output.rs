@@ -142,6 +142,10 @@ impl GetEntityOutputBuilder {
         self.entity_id = input;
         self
     }
+    /// <p>The ID of the entity.</p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_id
+    }
     /// <p>The name of the entity.</p>
     pub fn entity_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_name = ::std::option::Option::Some(input.into());
@@ -151,6 +155,10 @@ impl GetEntityOutputBuilder {
     pub fn set_entity_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entity_name = input;
         self
+    }
+    /// <p>The name of the entity.</p>
+    pub fn get_entity_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_name
     }
     /// <p>The ARN of the entity.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -162,6 +170,10 @@ impl GetEntityOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the entity.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The current status of the entity.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -171,6 +183,10 @@ impl GetEntityOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the entity.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.status
     }
     /// <p>The ID of the workspace.</p>
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -182,6 +198,10 @@ impl GetEntityOutputBuilder {
         self.workspace_id = input;
         self
     }
+    /// <p>The ID of the workspace.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
+    }
     /// <p>The description of the entity.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -191,6 +211,10 @@ impl GetEntityOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the entity.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Adds a key-value pair to `components`.
     ///
@@ -217,6 +241,14 @@ impl GetEntityOutputBuilder {
         self.components = input;
         self
     }
+    /// <p>An object that maps strings to the components in the entity. Each string in the mapping must be unique to this object.</p>
+    pub fn get_components(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::ComponentResponse>,
+    > {
+        &self.components
+    }
     /// <p>The ID of the parent entity for this entity.</p>
     pub fn parent_entity_id(
         mut self,
@@ -233,6 +265,10 @@ impl GetEntityOutputBuilder {
         self.parent_entity_id = input;
         self
     }
+    /// <p>The ID of the parent entity for this entity.</p>
+    pub fn get_parent_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent_entity_id
+    }
     /// <p>A Boolean value that specifies whether the entity has associated child entities.</p>
     pub fn has_child_entities(mut self, input: bool) -> Self {
         self.has_child_entities = ::std::option::Option::Some(input);
@@ -242,6 +278,10 @@ impl GetEntityOutputBuilder {
     pub fn set_has_child_entities(mut self, input: ::std::option::Option<bool>) -> Self {
         self.has_child_entities = input;
         self
+    }
+    /// <p>A Boolean value that specifies whether the entity has associated child entities.</p>
+    pub fn get_has_child_entities(&self) -> &::std::option::Option<bool> {
+        &self.has_child_entities
     }
     /// <p>The date and time when the entity was created.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -256,6 +296,10 @@ impl GetEntityOutputBuilder {
         self.creation_date_time = input;
         self
     }
+    /// <p>The date and time when the entity was created.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
+    }
     /// <p>The date and time when the entity was last updated.</p>
     pub fn update_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_date_time = ::std::option::Option::Some(input);
@@ -269,6 +313,10 @@ impl GetEntityOutputBuilder {
         self.update_date_time = input;
         self
     }
+    /// <p>The date and time when the entity was last updated.</p>
+    pub fn get_update_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_date_time
+    }
     /// <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
     pub fn sync_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sync_source = ::std::option::Option::Some(input.into());
@@ -278,6 +326,10 @@ impl GetEntityOutputBuilder {
     pub fn set_sync_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sync_source = input;
         self
+    }
+    /// <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
+    pub fn get_sync_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sync_source
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

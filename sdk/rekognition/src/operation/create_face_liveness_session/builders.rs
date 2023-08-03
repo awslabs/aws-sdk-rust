@@ -36,6 +36,10 @@ impl CreateFaceLivenessSessionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateFaceLivenessSession as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_face_liveness_session::builders::CreateFaceLivenessSessionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl CreateFaceLivenessSessionFluentBuilder {
         self.inner = self.inner.set_kms_key_id(input);
         self
     }
+    /// <p> The identifier for your AWS Key Management Service key (AWS KMS key). Used to encrypt audit images and reference images.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key_id()
+    }
     /// <p>A session settings object. It contains settings for the operation to be performed. For Face Liveness, it accepts <code>OutputConfig</code> and <code>AuditImagesLimit</code>.</p>
     pub fn settings(
         mut self,
@@ -142,6 +150,12 @@ impl CreateFaceLivenessSessionFluentBuilder {
         self.inner = self.inner.set_settings(input);
         self
     }
+    /// <p>A session settings object. It contains settings for the operation to be performed. For Face Liveness, it accepts <code>OutputConfig</code> and <code>AuditImagesLimit</code>.</p>
+    pub fn get_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateFaceLivenessSessionRequestSettings> {
+        self.inner.get_settings()
+    }
     /// <p>Idempotent token is used to recognize the Face Liveness request. If the same token is used with multiple <code>CreateFaceLivenessSession</code> requests, the same session is returned. This token is employed to avoid unintentionally creating the same session multiple times.</p>
     pub fn client_request_token(
         mut self,
@@ -157,5 +171,9 @@ impl CreateFaceLivenessSessionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
+    }
+    /// <p>Idempotent token is used to recognize the Face Liveness request. If the same token is used with multiple <code>CreateFaceLivenessSession</code> requests, the same session is returned. This token is employed to avoid unintentionally creating the same session multiple times.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
     }
 }

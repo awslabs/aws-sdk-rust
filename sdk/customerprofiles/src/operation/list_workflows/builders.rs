@@ -36,6 +36,12 @@ impl ListWorkflowsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListWorkflows as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_workflows::builders::ListWorkflowsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl ListWorkflowsFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p>The unique name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
     /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
     pub fn workflow_type(mut self, input: crate::types::WorkflowType) -> Self {
         self.inner = self.inner.workflow_type(input);
@@ -131,6 +141,10 @@ impl ListWorkflowsFluentBuilder {
         self.inner = self.inner.set_workflow_type(input);
         self
     }
+    /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
+    pub fn get_workflow_type(&self) -> &::std::option::Option<crate::types::WorkflowType> {
+        self.inner.get_workflow_type()
+    }
     /// <p>Status of workflow execution.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.inner = self.inner.status(input);
@@ -140,6 +154,10 @@ impl ListWorkflowsFluentBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.inner = self.inner.set_status(input);
         self
+    }
+    /// <p>Status of workflow execution.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        self.inner.get_status()
     }
     /// <p>Retrieve workflows started after timestamp.</p>
     pub fn query_start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -154,6 +172,10 @@ impl ListWorkflowsFluentBuilder {
         self.inner = self.inner.set_query_start_date(input);
         self
     }
+    /// <p>Retrieve workflows started after timestamp.</p>
+    pub fn get_query_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_query_start_date()
+    }
     /// <p>Retrieve workflows ended after timestamp.</p>
     pub fn query_end_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.query_end_date(input);
@@ -167,6 +189,10 @@ impl ListWorkflowsFluentBuilder {
         self.inner = self.inner.set_query_end_date(input);
         self
     }
+    /// <p>Retrieve workflows ended after timestamp.</p>
+    pub fn get_query_end_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_query_end_date()
+    }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -177,6 +203,10 @@ impl ListWorkflowsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -186,5 +216,9 @@ impl ListWorkflowsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

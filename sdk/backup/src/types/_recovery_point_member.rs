@@ -70,6 +70,10 @@ impl RecoveryPointMemberBuilder {
         self.recovery_point_arn = input;
         self
     }
+    /// <p>This is the Amazon Resource Name (ARN) of the parent (composite) recovery point.</p>
+    pub fn get_recovery_point_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recovery_point_arn
+    }
     /// <p>This is the Amazon Resource Name (ARN) that uniquely identifies a saved resource.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl RecoveryPointMemberBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
+    }
+    /// <p>This is the Amazon Resource Name (ARN) that uniquely identifies a saved resource.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
     }
     /// <p>This is the Amazon Web Services resource type that is saved as a recovery point.</p>
     pub fn resource_type(
@@ -96,6 +104,10 @@ impl RecoveryPointMemberBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>This is the Amazon Web Services resource type that is saved as a recovery point.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
+    }
     /// <p>This is the name of the backup vault (the logical container in which backups are stored).</p>
     pub fn backup_vault_name(
         mut self,
@@ -111,6 +123,10 @@ impl RecoveryPointMemberBuilder {
     ) -> Self {
         self.backup_vault_name = input;
         self
+    }
+    /// <p>This is the name of the backup vault (the logical container in which backups are stored).</p>
+    pub fn get_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_vault_name
     }
     /// Consumes the builder and constructs a [`RecoveryPointMember`](crate::types::RecoveryPointMember).
     pub fn build(self) -> crate::types::RecoveryPointMember {

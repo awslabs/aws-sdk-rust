@@ -72,6 +72,10 @@ impl ComponentCandidateBuilder {
         self.component_name = input;
         self
     }
+    /// <p>The name of the component.</p>
+    pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_name
+    }
     /// <p>The version of the component.</p>
     pub fn component_version(
         mut self,
@@ -87,6 +91,10 @@ impl ComponentCandidateBuilder {
     ) -> Self {
         self.component_version = input;
         self
+    }
+    /// <p>The version of the component.</p>
+    pub fn get_component_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_version
     }
     /// Adds a key-value pair to `version_requirements`.
     ///
@@ -114,6 +122,15 @@ impl ComponentCandidateBuilder {
     ) -> Self {
         self.version_requirements = input;
         self
+    }
+    /// <p>The version requirements for the component's dependencies. Greengrass core devices get the version requirements from component recipes.</p>
+    /// <p>IoT Greengrass V2 uses semantic version constraints. For more information, see <a href="https://semver.org/">Semantic Versioning</a>.</p>
+    pub fn get_version_requirements(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.version_requirements
     }
     /// Consumes the builder and constructs a [`ComponentCandidate`](crate::types::ComponentCandidate).
     pub fn build(self) -> crate::types::ComponentCandidate {

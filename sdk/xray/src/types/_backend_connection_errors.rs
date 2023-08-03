@@ -81,6 +81,10 @@ impl BackendConnectionErrorsBuilder {
         self
     }
     /// <p></p>
+    pub fn get_timeout_count(&self) -> &::std::option::Option<i32> {
+        &self.timeout_count
+    }
+    /// <p></p>
     pub fn connection_refused_count(mut self, input: i32) -> Self {
         self.connection_refused_count = ::std::option::Option::Some(input);
         self
@@ -89,6 +93,10 @@ impl BackendConnectionErrorsBuilder {
     pub fn set_connection_refused_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.connection_refused_count = input;
         self
+    }
+    /// <p></p>
+    pub fn get_connection_refused_count(&self) -> &::std::option::Option<i32> {
+        &self.connection_refused_count
     }
     /// <p></p>
     pub fn http_code4_xx_count(mut self, input: i32) -> Self {
@@ -101,6 +109,10 @@ impl BackendConnectionErrorsBuilder {
         self
     }
     /// <p></p>
+    pub fn get_http_code4_xx_count(&self) -> &::std::option::Option<i32> {
+        &self.http_code4_xx_count
+    }
+    /// <p></p>
     pub fn http_code5_xx_count(mut self, input: i32) -> Self {
         self.http_code5_xx_count = ::std::option::Option::Some(input);
         self
@@ -109,6 +121,10 @@ impl BackendConnectionErrorsBuilder {
     pub fn set_http_code5_xx_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.http_code5_xx_count = input;
         self
+    }
+    /// <p></p>
+    pub fn get_http_code5_xx_count(&self) -> &::std::option::Option<i32> {
+        &self.http_code5_xx_count
     }
     /// <p></p>
     pub fn unknown_host_count(mut self, input: i32) -> Self {
@@ -121,6 +137,10 @@ impl BackendConnectionErrorsBuilder {
         self
     }
     /// <p></p>
+    pub fn get_unknown_host_count(&self) -> &::std::option::Option<i32> {
+        &self.unknown_host_count
+    }
+    /// <p></p>
     pub fn other_count(mut self, input: i32) -> Self {
         self.other_count = ::std::option::Option::Some(input);
         self
@@ -129,6 +149,10 @@ impl BackendConnectionErrorsBuilder {
     pub fn set_other_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.other_count = input;
         self
+    }
+    /// <p></p>
+    pub fn get_other_count(&self) -> &::std::option::Option<i32> {
+        &self.other_count
     }
     /// Consumes the builder and constructs a [`BackendConnectionErrors`](crate::types::BackendConnectionErrors).
     pub fn build(self) -> crate::types::BackendConnectionErrors {

@@ -48,6 +48,10 @@ impl EventBridgeParametersBuilder {
         self.detail_type = input;
         self
     }
+    /// <p>A free-form string, with a maximum of 128 characters, used to decide what fields to expect in the event detail.</p>
+    pub fn get_detail_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detail_type
+    }
     /// <p>The source of the event.</p>
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl EventBridgeParametersBuilder {
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source = input;
         self
+    }
+    /// <p>The source of the event.</p>
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source
     }
     /// Consumes the builder and constructs a [`EventBridgeParameters`](crate::types::EventBridgeParameters).
     pub fn build(self) -> crate::types::EventBridgeParameters {

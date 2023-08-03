@@ -64,6 +64,10 @@ impl ErrorsListItemBuilder {
         self.page = input;
         self
     }
+    /// <p>Page number where the error occurred.</p>
+    pub fn get_page(&self) -> &::std::option::Option<i32> {
+        &self.page
+    }
     /// <p>Error code for the cause of the error.</p>
     pub fn error_code(mut self, input: crate::types::PageBasedErrorCode) -> Self {
         self.error_code = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl ErrorsListItemBuilder {
     ) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>Error code for the cause of the error.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<crate::types::PageBasedErrorCode> {
+        &self.error_code
     }
     /// <p>Text message explaining the reason for the error.</p>
     pub fn error_message(
@@ -92,6 +100,10 @@ impl ErrorsListItemBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>Text message explaining the reason for the error.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`ErrorsListItem`](crate::types::ErrorsListItem).
     pub fn build(self) -> crate::types::ErrorsListItem {

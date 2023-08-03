@@ -69,6 +69,10 @@ impl FeaturizationBuilder {
         self.attribute_name = input;
         self
     }
+    /// <p>The name of the schema attribute that specifies the data field to be featurized. Amazon Forecast supports the target field of the <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code> datasets. For example, for the <code>RETAIL</code> domain, the target is <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is <code>target_value</code>. For more information, see <code>howitworks-missing-values</code>.</p>
+    pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attribute_name
+    }
     /// Appends an item to `featurization_pipeline`.
     ///
     /// To override the contents of this collection use [`set_featurization_pipeline`](Self::set_featurization_pipeline).
@@ -87,6 +91,12 @@ impl FeaturizationBuilder {
     ) -> Self {
         self.featurization_pipeline = input;
         self
+    }
+    /// <p>An array of one <code>FeaturizationMethod</code> object that specifies the feature transformation method.</p>
+    pub fn get_featurization_pipeline(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FeaturizationMethod>> {
+        &self.featurization_pipeline
     }
     /// Consumes the builder and constructs a [`Featurization`](crate::types::Featurization).
     pub fn build(self) -> crate::types::Featurization {

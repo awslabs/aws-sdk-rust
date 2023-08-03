@@ -49,6 +49,10 @@ impl GetDevicesInPlacementInputBuilder {
         self.project_name = input;
         self
     }
+    /// <p>The name of the project containing the placement.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_name
+    }
     /// <p>The name of the placement to get the devices from.</p>
     pub fn placement_name(
         mut self,
@@ -64,6 +68,10 @@ impl GetDevicesInPlacementInputBuilder {
     ) -> Self {
         self.placement_name = input;
         self
+    }
+    /// <p>The name of the placement to get the devices from.</p>
+    pub fn get_placement_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.placement_name
     }
     /// Consumes the builder and constructs a [`GetDevicesInPlacementInput`](crate::operation::get_devices_in_placement::GetDevicesInPlacementInput).
     pub fn build(

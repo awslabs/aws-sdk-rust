@@ -54,6 +54,10 @@ impl CreateWhatIfForecastOutputBuilder {
         self.what_if_forecast_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the what-if forecast.</p>
+    pub fn get_what_if_forecast_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.what_if_forecast_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

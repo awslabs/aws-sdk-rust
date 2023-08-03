@@ -48,6 +48,10 @@ impl CidrBlockSummaryBuilder {
         self.cidr_block = input;
         self
     }
+    /// <p>Value for the CIDR block.</p>
+    pub fn get_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr_block
+    }
     /// <p>The location name of the CIDR block.</p>
     pub fn location_name(
         mut self,
@@ -63,6 +67,10 @@ impl CidrBlockSummaryBuilder {
     ) -> Self {
         self.location_name = input;
         self
+    }
+    /// <p>The location name of the CIDR block.</p>
+    pub fn get_location_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location_name
     }
     /// Consumes the builder and constructs a [`CidrBlockSummary`](crate::types::CidrBlockSummary).
     pub fn build(self) -> crate::types::CidrBlockSummary {

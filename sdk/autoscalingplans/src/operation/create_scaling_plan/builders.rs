@@ -36,6 +36,12 @@ impl CreateScalingPlanFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateScalingPlan as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_scaling_plan::builders::CreateScalingPlanInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl CreateScalingPlanFluentBuilder {
         self.inner = self.inner.set_scaling_plan_name(input);
         self
     }
+    /// <p>The name of the scaling plan. Names cannot contain vertical bars, colons, or forward slashes.</p>
+    pub fn get_scaling_plan_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_scaling_plan_name()
+    }
     /// <p>A CloudFormation stack or set of tags. You can create one scaling plan per application source.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html">ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
     pub fn application_source(mut self, input: crate::types::ApplicationSource) -> Self {
@@ -146,6 +156,13 @@ impl CreateScalingPlanFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_application_source(input);
         self
+    }
+    /// <p>A CloudFormation stack or set of tags. You can create one scaling plan per application source.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html">ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
+    pub fn get_application_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationSource> {
+        self.inner.get_application_source()
     }
     /// Appends an item to `ScalingInstructions`.
     ///
@@ -165,5 +182,12 @@ impl CreateScalingPlanFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_scaling_instructions(input);
         self
+    }
+    /// <p>The scaling instructions.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.</p>
+    pub fn get_scaling_instructions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScalingInstruction>> {
+        self.inner.get_scaling_instructions()
     }
 }

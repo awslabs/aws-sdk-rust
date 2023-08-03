@@ -102,6 +102,10 @@ impl UpdateAlarmModelInputBuilder {
         self.alarm_model_name = input;
         self
     }
+    /// <p>The name of the alarm model.</p>
+    pub fn get_alarm_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alarm_model_name
+    }
     /// <p>The description of the alarm model.</p>
     pub fn alarm_model_description(
         mut self,
@@ -118,6 +122,10 @@ impl UpdateAlarmModelInputBuilder {
         self.alarm_model_description = input;
         self
     }
+    /// <p>The description of the alarm model.</p>
+    pub fn get_alarm_model_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alarm_model_description
+    }
     /// <p>The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -127,6 +135,10 @@ impl UpdateAlarmModelInputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>A non-negative integer that reflects the severity level of the alarm.</p>
     pub fn severity(mut self, input: i32) -> Self {
@@ -138,6 +150,10 @@ impl UpdateAlarmModelInputBuilder {
         self.severity = input;
         self
     }
+    /// <p>A non-negative integer that reflects the severity level of the alarm.</p>
+    pub fn get_severity(&self) -> &::std::option::Option<i32> {
+        &self.severity
+    }
     /// <p>Defines when your alarm is invoked.</p>
     pub fn alarm_rule(mut self, input: crate::types::AlarmRule) -> Self {
         self.alarm_rule = ::std::option::Option::Some(input);
@@ -147,6 +163,10 @@ impl UpdateAlarmModelInputBuilder {
     pub fn set_alarm_rule(mut self, input: ::std::option::Option<crate::types::AlarmRule>) -> Self {
         self.alarm_rule = input;
         self
+    }
+    /// <p>Defines when your alarm is invoked.</p>
+    pub fn get_alarm_rule(&self) -> &::std::option::Option<crate::types::AlarmRule> {
+        &self.alarm_rule
     }
     /// <p>Contains information about one or more notification actions.</p>
     pub fn alarm_notification(mut self, input: crate::types::AlarmNotification) -> Self {
@@ -161,6 +181,12 @@ impl UpdateAlarmModelInputBuilder {
         self.alarm_notification = input;
         self
     }
+    /// <p>Contains information about one or more notification actions.</p>
+    pub fn get_alarm_notification(
+        &self,
+    ) -> &::std::option::Option<crate::types::AlarmNotification> {
+        &self.alarm_notification
+    }
     /// <p>Contains information about one or more alarm actions.</p>
     pub fn alarm_event_actions(mut self, input: crate::types::AlarmEventActions) -> Self {
         self.alarm_event_actions = ::std::option::Option::Some(input);
@@ -174,6 +200,12 @@ impl UpdateAlarmModelInputBuilder {
         self.alarm_event_actions = input;
         self
     }
+    /// <p>Contains information about one or more alarm actions.</p>
+    pub fn get_alarm_event_actions(
+        &self,
+    ) -> &::std::option::Option<crate::types::AlarmEventActions> {
+        &self.alarm_event_actions
+    }
     /// <p>Contains the configuration information of alarm state changes.</p>
     pub fn alarm_capabilities(mut self, input: crate::types::AlarmCapabilities) -> Self {
         self.alarm_capabilities = ::std::option::Option::Some(input);
@@ -186,6 +218,12 @@ impl UpdateAlarmModelInputBuilder {
     ) -> Self {
         self.alarm_capabilities = input;
         self
+    }
+    /// <p>Contains the configuration information of alarm state changes.</p>
+    pub fn get_alarm_capabilities(
+        &self,
+    ) -> &::std::option::Option<crate::types::AlarmCapabilities> {
+        &self.alarm_capabilities
     }
     /// Consumes the builder and constructs a [`UpdateAlarmModelInput`](crate::operation::update_alarm_model::UpdateAlarmModelInput).
     pub fn build(

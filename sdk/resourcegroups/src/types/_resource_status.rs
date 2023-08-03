@@ -43,6 +43,10 @@ impl ResourceStatusBuilder {
         self.name = input;
         self
     }
+    /// <p>The current status.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::ResourceStatusValue> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`ResourceStatus`](crate::types::ResourceStatus).
     pub fn build(self) -> crate::types::ResourceStatus {
         crate::types::ResourceStatus { name: self.name }

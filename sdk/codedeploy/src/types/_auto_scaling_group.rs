@@ -48,6 +48,10 @@ impl AutoScalingGroupBuilder {
         self.name = input;
         self
     }
+    /// <p>The Auto Scaling group name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>An Auto Scaling lifecycle event hook name.</p>
     pub fn hook(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hook = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl AutoScalingGroupBuilder {
     pub fn set_hook(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hook = input;
         self
+    }
+    /// <p>An Auto Scaling lifecycle event hook name.</p>
+    pub fn get_hook(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hook
     }
     /// Consumes the builder and constructs a [`AutoScalingGroup`](crate::types::AutoScalingGroup).
     pub fn build(self) -> crate::types::AutoScalingGroup {

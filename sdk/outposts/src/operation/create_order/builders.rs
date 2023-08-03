@@ -36,6 +36,10 @@ impl CreateOrderFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateOrder as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_order::builders::CreateOrderInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl CreateOrderFluentBuilder {
         self.inner = self.inner.set_outpost_identifier(input);
         self
     }
+    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
+    pub fn get_outpost_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_outpost_identifier()
+    }
     /// Appends an item to `LineItems`.
     ///
     /// To override the contents of this collection use [`set_line_items`](Self::set_line_items).
@@ -141,6 +149,12 @@ impl CreateOrderFluentBuilder {
         self.inner = self.inner.set_line_items(input);
         self
     }
+    /// <p>The line items that make up the order.</p>
+    pub fn get_line_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LineItemRequest>> {
+        self.inner.get_line_items()
+    }
     /// <p>The payment option.</p>
     pub fn payment_option(mut self, input: crate::types::PaymentOption) -> Self {
         self.inner = self.inner.payment_option(input);
@@ -154,6 +168,10 @@ impl CreateOrderFluentBuilder {
         self.inner = self.inner.set_payment_option(input);
         self
     }
+    /// <p>The payment option.</p>
+    pub fn get_payment_option(&self) -> &::std::option::Option<crate::types::PaymentOption> {
+        self.inner.get_payment_option()
+    }
     /// <p>The payment terms.</p>
     pub fn payment_term(mut self, input: crate::types::PaymentTerm) -> Self {
         self.inner = self.inner.payment_term(input);
@@ -166,5 +184,9 @@ impl CreateOrderFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_payment_term(input);
         self
+    }
+    /// <p>The payment terms.</p>
+    pub fn get_payment_term(&self) -> &::std::option::Option<crate::types::PaymentTerm> {
+        self.inner.get_payment_term()
     }
 }

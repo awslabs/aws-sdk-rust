@@ -48,6 +48,10 @@ impl MessageBuilder {
         self.message_id = input;
         self
     }
+    /// <p>The ID you want to assign to the message. Each <code>messageId</code> must be unique within each batch sent.</p>
+    pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message_id
+    }
     /// <p>The payload of the message. This can be a JSON string or a base64-encoded string representing binary data, in which case you must decode it by means of a pipeline activity.</p>
     pub fn payload(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.payload = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl MessageBuilder {
     pub fn set_payload(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.payload = input;
         self
+    }
+    /// <p>The payload of the message. This can be a JSON string or a base64-encoded string representing binary data, in which case you must decode it by means of a pipeline activity.</p>
+    pub fn get_payload(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.payload
     }
     /// Consumes the builder and constructs a [`Message`](crate::types::Message).
     pub fn build(self) -> crate::types::Message {

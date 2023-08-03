@@ -49,6 +49,10 @@ impl DeleteExpressionInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The name of the <code><code>Expression</code></code> to delete.</p>
     pub fn expression_name(
         mut self,
@@ -64,6 +68,10 @@ impl DeleteExpressionInputBuilder {
     ) -> Self {
         self.expression_name = input;
         self
+    }
+    /// <p>The name of the <code><code>Expression</code></code> to delete.</p>
+    pub fn get_expression_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expression_name
     }
     /// Consumes the builder and constructs a [`DeleteExpressionInput`](crate::operation::delete_expression::DeleteExpressionInput).
     pub fn build(

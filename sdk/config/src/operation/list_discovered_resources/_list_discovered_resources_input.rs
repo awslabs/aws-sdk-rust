@@ -85,6 +85,10 @@ impl ListDiscoveredResourcesInputBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The type of resources that you want Config to list in the response.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
+    }
     /// Appends an item to `resource_ids`.
     ///
     /// To override the contents of this collection use [`set_resource_ids`](Self::set_resource_ids).
@@ -104,6 +108,12 @@ impl ListDiscoveredResourcesInputBuilder {
         self.resource_ids = input;
         self
     }
+    /// <p>The IDs of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered. You can list a minimum of 1 resourceID and a maximum of 20 resourceIds.</p>
+    pub fn get_resource_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resource_ids
+    }
     /// <p>The custom name of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered.</p>
     pub fn resource_name(
         mut self,
@@ -120,6 +130,10 @@ impl ListDiscoveredResourcesInputBuilder {
         self.resource_name = input;
         self
     }
+    /// <p>The custom name of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered.</p>
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_name
+    }
     /// <p>The maximum number of resource identifiers returned on each page. The default is 100. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -129,6 +143,10 @@ impl ListDiscoveredResourcesInputBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
+    }
+    /// <p>The maximum number of resource identifiers returned on each page. The default is 100. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// <p>Specifies whether Config includes deleted resources in the results. By default, deleted resources are not included.</p>
     pub fn include_deleted_resources(mut self, input: bool) -> Self {
@@ -140,6 +158,10 @@ impl ListDiscoveredResourcesInputBuilder {
         self.include_deleted_resources = input;
         self
     }
+    /// <p>Specifies whether Config includes deleted resources in the results. By default, deleted resources are not included.</p>
+    pub fn get_include_deleted_resources(&self) -> &::std::option::Option<bool> {
+        &self.include_deleted_resources
+    }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -149,6 +171,10 @@ impl ListDiscoveredResourcesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListDiscoveredResourcesInput`](crate::operation::list_discovered_resources::ListDiscoveredResourcesInput).
     pub fn build(

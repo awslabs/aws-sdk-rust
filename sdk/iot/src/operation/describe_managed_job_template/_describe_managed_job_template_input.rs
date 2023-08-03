@@ -53,6 +53,10 @@ impl DescribeManagedJobTemplateInputBuilder {
         self.template_name = input;
         self
     }
+    /// <p>The unique name of a managed job template, which is required.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
     /// <p>An optional parameter to specify version of a managed template. If not specified, the pre-defined default version is returned.</p>
     pub fn template_version(
         mut self,
@@ -68,6 +72,10 @@ impl DescribeManagedJobTemplateInputBuilder {
     ) -> Self {
         self.template_version = input;
         self
+    }
+    /// <p>An optional parameter to specify version of a managed template. If not specified, the pre-defined default version is returned.</p>
+    pub fn get_template_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_version
     }
     /// Consumes the builder and constructs a [`DescribeManagedJobTemplateInput`](crate::operation::describe_managed_job_template::DescribeManagedJobTemplateInput).
     pub fn build(

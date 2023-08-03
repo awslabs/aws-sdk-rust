@@ -56,6 +56,10 @@ impl DestinationBuilder {
         self.bucket_name = input;
         self
     }
+    /// <p>The name of the Amazon S3 bucket to export findings to.</p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_name
+    }
     /// <p>The prefix of the Amazon S3 bucket used to export findings.</p>
     pub fn key_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_prefix = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl DestinationBuilder {
         self.key_prefix = input;
         self
     }
+    /// <p>The prefix of the Amazon S3 bucket used to export findings.</p>
+    pub fn get_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_prefix
+    }
     /// <p>The ARN of the KMS key used to encrypt data when exporting findings.</p>
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_arn = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl DestinationBuilder {
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_arn = input;
         self
+    }
+    /// <p>The ARN of the KMS key used to encrypt data when exporting findings.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
     }
     /// Consumes the builder and constructs a [`Destination`](crate::types::Destination).
     pub fn build(self) -> crate::types::Destination {

@@ -57,6 +57,12 @@ impl ScopeBuilder {
         self.aws_accounts = input;
         self
     }
+    /// <p> The Amazon Web Services accounts that are included in the scope of the assessment. </p>
+    pub fn get_aws_accounts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsAccount>> {
+        &self.aws_accounts
+    }
     /// Appends an item to `aws_services`.
     ///
     /// To override the contents of this collection use [`set_aws_services`](Self::set_aws_services).
@@ -75,6 +81,12 @@ impl ScopeBuilder {
     ) -> Self {
         self.aws_services = input;
         self
+    }
+    /// <p> The Amazon Web Services services that are included in the scope of the assessment. </p>
+    pub fn get_aws_services(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsService>> {
+        &self.aws_services
     }
     /// Consumes the builder and constructs a [`Scope`](crate::types::Scope).
     pub fn build(self) -> crate::types::Scope {

@@ -80,6 +80,10 @@ impl ProjectSummaryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the project.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the project being summarized.</p>
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.project_name = ::std::option::Option::Some(input.into());
@@ -89,6 +93,10 @@ impl ProjectSummaryBuilder {
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_name = input;
         self
+    }
+    /// <p>The name of the project being summarized.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_name
     }
     /// <p>The date when the project was originally created, in UNIX epoch time format.</p>
     pub fn created_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -103,6 +111,10 @@ impl ProjectSummaryBuilder {
         self.created_date = input;
         self
     }
+    /// <p>The date when the project was originally created, in UNIX epoch time format.</p>
+    pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_date
+    }
     /// <p>The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
     pub fn updated_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_date = ::std::option::Option::Some(input);
@@ -115,6 +127,10 @@ impl ProjectSummaryBuilder {
     ) -> Self {
         self.updated_date = input;
         self
+    }
+    /// <p>The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
+    pub fn get_updated_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_date
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -140,6 +156,14 @@ impl ProjectSummaryBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags (metadata key/value pairs) associated with the project.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`ProjectSummary`](crate::types::ProjectSummary).
     pub fn build(self) -> crate::types::ProjectSummary {

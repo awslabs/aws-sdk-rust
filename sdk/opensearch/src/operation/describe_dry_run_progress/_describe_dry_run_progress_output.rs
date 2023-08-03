@@ -69,6 +69,12 @@ impl DescribeDryRunProgressOutputBuilder {
         self.dry_run_progress_status = input;
         self
     }
+    /// <p>The current status of the dry run, including any validation errors.</p>
+    pub fn get_dry_run_progress_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::DryRunProgressStatus> {
+        &self.dry_run_progress_status
+    }
     /// <p>Details about the changes you're planning to make on the domain.</p>
     pub fn dry_run_config(mut self, input: crate::types::DomainStatus) -> Self {
         self.dry_run_config = ::std::option::Option::Some(input);
@@ -82,6 +88,10 @@ impl DescribeDryRunProgressOutputBuilder {
         self.dry_run_config = input;
         self
     }
+    /// <p>Details about the changes you're planning to make on the domain.</p>
+    pub fn get_dry_run_config(&self) -> &::std::option::Option<crate::types::DomainStatus> {
+        &self.dry_run_config
+    }
     /// <p>The results of the dry run. </p>
     pub fn dry_run_results(mut self, input: crate::types::DryRunResults) -> Self {
         self.dry_run_results = ::std::option::Option::Some(input);
@@ -94,6 +104,10 @@ impl DescribeDryRunProgressOutputBuilder {
     ) -> Self {
         self.dry_run_results = input;
         self
+    }
+    /// <p>The results of the dry run. </p>
+    pub fn get_dry_run_results(&self) -> &::std::option::Option<crate::types::DryRunResults> {
+        &self.dry_run_results
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -40,6 +40,10 @@ impl RenderableTaskBuilder {
         self.input = input;
         self
     }
+    /// <p>A JSON object that contains values for the variables defined in the template. It is made available to the template under the substitution variable <code>task.input</code>. For example, if you define a variable <code>task.input.text</code> in your template, you can supply the variable in the JSON object as <code>"text": "sample text"</code>.</p>
+    pub fn get_input(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input
+    }
     /// Consumes the builder and constructs a [`RenderableTask`](crate::types::RenderableTask).
     pub fn build(self) -> crate::types::RenderableTask {
         crate::types::RenderableTask { input: self.input }

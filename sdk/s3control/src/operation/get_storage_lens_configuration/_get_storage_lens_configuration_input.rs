@@ -47,6 +47,10 @@ impl GetStorageLensConfigurationInputBuilder {
         self.config_id = input;
         self
     }
+    /// <p>The ID of the Amazon S3 Storage Lens configuration.</p>
+    pub fn get_config_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.config_id
+    }
     /// <p>The account ID of the requester.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl GetStorageLensConfigurationInputBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>The account ID of the requester.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// Consumes the builder and constructs a [`GetStorageLensConfigurationInput`](crate::operation::get_storage_lens_configuration::GetStorageLensConfigurationInput).
     pub fn build(

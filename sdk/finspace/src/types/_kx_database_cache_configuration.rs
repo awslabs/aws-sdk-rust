@@ -60,6 +60,13 @@ impl KxDatabaseCacheConfigurationBuilder {
         self.cache_type = input;
         self
     }
+    /// <p>The type of disk cache. This parameter is used to map the database path to cache storage. The valid values are:</p>
+    /// <ul>
+    /// <li> <p>CACHE_1000 – This type provides at least 1000 MB/s disk access throughput. </p> </li>
+    /// </ul>
+    pub fn get_cache_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_type
+    }
     /// Appends an item to `db_paths`.
     ///
     /// To override the contents of this collection use [`set_db_paths`](Self::set_db_paths).
@@ -78,6 +85,10 @@ impl KxDatabaseCacheConfigurationBuilder {
     ) -> Self {
         self.db_paths = input;
         self
+    }
+    /// <p>Specifies the portions of database that will be loaded into the cache for access.</p>
+    pub fn get_db_paths(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.db_paths
     }
     /// Consumes the builder and constructs a [`KxDatabaseCacheConfiguration`](crate::types::KxDatabaseCacheConfiguration).
     pub fn build(self) -> crate::types::KxDatabaseCacheConfiguration {

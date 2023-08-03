@@ -184,6 +184,10 @@ impl LoRaWanDeviceProfileBuilder {
         self.supports_class_b = input;
         self
     }
+    /// <p>The SupportsClassB value.</p>
+    pub fn get_supports_class_b(&self) -> &::std::option::Option<bool> {
+        &self.supports_class_b
+    }
     /// <p>The ClassBTimeout value.</p>
     pub fn class_b_timeout(mut self, input: i32) -> Self {
         self.class_b_timeout = ::std::option::Option::Some(input);
@@ -193,6 +197,10 @@ impl LoRaWanDeviceProfileBuilder {
     pub fn set_class_b_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.class_b_timeout = input;
         self
+    }
+    /// <p>The ClassBTimeout value.</p>
+    pub fn get_class_b_timeout(&self) -> &::std::option::Option<i32> {
+        &self.class_b_timeout
     }
     /// <p>The PingSlotPeriod value.</p>
     pub fn ping_slot_period(mut self, input: i32) -> Self {
@@ -204,6 +212,10 @@ impl LoRaWanDeviceProfileBuilder {
         self.ping_slot_period = input;
         self
     }
+    /// <p>The PingSlotPeriod value.</p>
+    pub fn get_ping_slot_period(&self) -> &::std::option::Option<i32> {
+        &self.ping_slot_period
+    }
     /// <p>The PingSlotDR value.</p>
     pub fn ping_slot_dr(mut self, input: i32) -> Self {
         self.ping_slot_dr = ::std::option::Option::Some(input);
@@ -213,6 +225,10 @@ impl LoRaWanDeviceProfileBuilder {
     pub fn set_ping_slot_dr(mut self, input: ::std::option::Option<i32>) -> Self {
         self.ping_slot_dr = input;
         self
+    }
+    /// <p>The PingSlotDR value.</p>
+    pub fn get_ping_slot_dr(&self) -> &::std::option::Option<i32> {
+        &self.ping_slot_dr
     }
     /// <p>The PingSlotFreq value.</p>
     pub fn ping_slot_freq(mut self, input: i32) -> Self {
@@ -224,6 +240,10 @@ impl LoRaWanDeviceProfileBuilder {
         self.ping_slot_freq = input;
         self
     }
+    /// <p>The PingSlotFreq value.</p>
+    pub fn get_ping_slot_freq(&self) -> &::std::option::Option<i32> {
+        &self.ping_slot_freq
+    }
     /// <p>The SupportsClassC value.</p>
     pub fn supports_class_c(mut self, input: bool) -> Self {
         self.supports_class_c = ::std::option::Option::Some(input);
@@ -233,6 +253,10 @@ impl LoRaWanDeviceProfileBuilder {
     pub fn set_supports_class_c(mut self, input: ::std::option::Option<bool>) -> Self {
         self.supports_class_c = input;
         self
+    }
+    /// <p>The SupportsClassC value.</p>
+    pub fn get_supports_class_c(&self) -> &::std::option::Option<bool> {
+        &self.supports_class_c
     }
     /// <p>The ClassCTimeout value.</p>
     pub fn class_c_timeout(mut self, input: i32) -> Self {
@@ -244,6 +268,10 @@ impl LoRaWanDeviceProfileBuilder {
         self.class_c_timeout = input;
         self
     }
+    /// <p>The ClassCTimeout value.</p>
+    pub fn get_class_c_timeout(&self) -> &::std::option::Option<i32> {
+        &self.class_c_timeout
+    }
     /// <p>The MAC version (such as OTAA 1.1 or OTAA 1.0.3) to use with this device profile.</p>
     pub fn mac_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mac_version = ::std::option::Option::Some(input.into());
@@ -253,6 +281,10 @@ impl LoRaWanDeviceProfileBuilder {
     pub fn set_mac_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mac_version = input;
         self
+    }
+    /// <p>The MAC version (such as OTAA 1.1 or OTAA 1.0.3) to use with this device profile.</p>
+    pub fn get_mac_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mac_version
     }
     /// <p>The version of regional parameters.</p>
     pub fn reg_params_revision(
@@ -270,6 +302,10 @@ impl LoRaWanDeviceProfileBuilder {
         self.reg_params_revision = input;
         self
     }
+    /// <p>The version of regional parameters.</p>
+    pub fn get_reg_params_revision(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reg_params_revision
+    }
     /// <p>The RXDelay1 value.</p>
     pub fn rx_delay1(mut self, input: i32) -> Self {
         self.rx_delay1 = ::std::option::Option::Some(input);
@@ -279,6 +315,10 @@ impl LoRaWanDeviceProfileBuilder {
     pub fn set_rx_delay1(mut self, input: ::std::option::Option<i32>) -> Self {
         self.rx_delay1 = input;
         self
+    }
+    /// <p>The RXDelay1 value.</p>
+    pub fn get_rx_delay1(&self) -> &::std::option::Option<i32> {
+        &self.rx_delay1
     }
     /// <p>The RXDROffset1 value.</p>
     pub fn rx_dr_offset1(mut self, input: i32) -> Self {
@@ -290,6 +330,10 @@ impl LoRaWanDeviceProfileBuilder {
         self.rx_dr_offset1 = input;
         self
     }
+    /// <p>The RXDROffset1 value.</p>
+    pub fn get_rx_dr_offset1(&self) -> &::std::option::Option<i32> {
+        &self.rx_dr_offset1
+    }
     /// <p>The RXDataRate2 value.</p>
     pub fn rx_data_rate2(mut self, input: i32) -> Self {
         self.rx_data_rate2 = ::std::option::Option::Some(input);
@@ -300,6 +344,10 @@ impl LoRaWanDeviceProfileBuilder {
         self.rx_data_rate2 = input;
         self
     }
+    /// <p>The RXDataRate2 value.</p>
+    pub fn get_rx_data_rate2(&self) -> &::std::option::Option<i32> {
+        &self.rx_data_rate2
+    }
     /// <p>The RXFreq2 value.</p>
     pub fn rx_freq2(mut self, input: i32) -> Self {
         self.rx_freq2 = ::std::option::Option::Some(input);
@@ -309,6 +357,10 @@ impl LoRaWanDeviceProfileBuilder {
     pub fn set_rx_freq2(mut self, input: ::std::option::Option<i32>) -> Self {
         self.rx_freq2 = input;
         self
+    }
+    /// <p>The RXFreq2 value.</p>
+    pub fn get_rx_freq2(&self) -> &::std::option::Option<i32> {
+        &self.rx_freq2
     }
     /// Appends an item to `factory_preset_freqs_list`.
     ///
@@ -329,6 +381,10 @@ impl LoRaWanDeviceProfileBuilder {
         self.factory_preset_freqs_list = input;
         self
     }
+    /// <p>The list of values that make up the FactoryPresetFreqs value.</p>
+    pub fn get_factory_preset_freqs_list(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        &self.factory_preset_freqs_list
+    }
     /// <p>The MaxEIRP value.</p>
     pub fn max_eirp(mut self, input: i32) -> Self {
         self.max_eirp = ::std::option::Option::Some(input);
@@ -338,6 +394,10 @@ impl LoRaWanDeviceProfileBuilder {
     pub fn set_max_eirp(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_eirp = input;
         self
+    }
+    /// <p>The MaxEIRP value.</p>
+    pub fn get_max_eirp(&self) -> &::std::option::Option<i32> {
+        &self.max_eirp
     }
     /// <p>The MaxDutyCycle value.</p>
     pub fn max_duty_cycle(mut self, input: i32) -> Self {
@@ -349,6 +409,10 @@ impl LoRaWanDeviceProfileBuilder {
         self.max_duty_cycle = input;
         self
     }
+    /// <p>The MaxDutyCycle value.</p>
+    pub fn get_max_duty_cycle(&self) -> &::std::option::Option<i32> {
+        &self.max_duty_cycle
+    }
     /// <p>The frequency band (RFRegion) value.</p>
     pub fn rf_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rf_region = ::std::option::Option::Some(input.into());
@@ -358,6 +422,10 @@ impl LoRaWanDeviceProfileBuilder {
     pub fn set_rf_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rf_region = input;
         self
+    }
+    /// <p>The frequency band (RFRegion) value.</p>
+    pub fn get_rf_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rf_region
     }
     /// <p>The SupportsJoin value.</p>
     pub fn supports_join(mut self, input: bool) -> Self {
@@ -369,6 +437,10 @@ impl LoRaWanDeviceProfileBuilder {
         self.supports_join = input;
         self
     }
+    /// <p>The SupportsJoin value.</p>
+    pub fn get_supports_join(&self) -> &::std::option::Option<bool> {
+        &self.supports_join
+    }
     /// <p>The Supports32BitFCnt value.</p>
     pub fn supports32_bit_f_cnt(mut self, input: bool) -> Self {
         self.supports32_bit_f_cnt = ::std::option::Option::Some(input);
@@ -378,6 +450,10 @@ impl LoRaWanDeviceProfileBuilder {
     pub fn set_supports32_bit_f_cnt(mut self, input: ::std::option::Option<bool>) -> Self {
         self.supports32_bit_f_cnt = input;
         self
+    }
+    /// <p>The Supports32BitFCnt value.</p>
+    pub fn get_supports32_bit_f_cnt(&self) -> &::std::option::Option<bool> {
+        &self.supports32_bit_f_cnt
     }
     /// Consumes the builder and constructs a [`LoRaWanDeviceProfile`](crate::types::LoRaWanDeviceProfile).
     pub fn build(self) -> crate::types::LoRaWanDeviceProfile {

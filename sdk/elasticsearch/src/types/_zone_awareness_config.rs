@@ -40,6 +40,10 @@ impl ZoneAwarenessConfigBuilder {
         self.availability_zone_count = input;
         self
     }
+    /// <p>An integer value to indicate the number of availability zones for a domain when zone awareness is enabled. This should be equal to number of subnets if VPC endpoints is enabled</p>
+    pub fn get_availability_zone_count(&self) -> &::std::option::Option<i32> {
+        &self.availability_zone_count
+    }
     /// Consumes the builder and constructs a [`ZoneAwarenessConfig`](crate::types::ZoneAwarenessConfig).
     pub fn build(self) -> crate::types::ZoneAwarenessConfig {
         crate::types::ZoneAwarenessConfig {

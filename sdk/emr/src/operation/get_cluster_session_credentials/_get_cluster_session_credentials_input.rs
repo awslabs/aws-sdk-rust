@@ -47,6 +47,10 @@ impl GetClusterSessionCredentialsInputBuilder {
         self.cluster_id = input;
         self
     }
+    /// <p>The unique identifier of the cluster.</p>
+    pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the runtime role for interactive workload submission on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>.</p>
     pub fn execution_role_arn(
         mut self,
@@ -62,6 +66,10 @@ impl GetClusterSessionCredentialsInputBuilder {
     ) -> Self {
         self.execution_role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the runtime role for interactive workload submission on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>.</p>
+    pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_role_arn
     }
     /// Consumes the builder and constructs a [`GetClusterSessionCredentialsInput`](crate::operation::get_cluster_session_credentials::GetClusterSessionCredentialsInput).
     pub fn build(

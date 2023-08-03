@@ -45,6 +45,10 @@ impl StopTrainingEntityRecognizerInputBuilder {
         self.entity_recognizer_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer currently being trained.</p>
+    pub fn get_entity_recognizer_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_recognizer_arn
+    }
     /// Consumes the builder and constructs a [`StopTrainingEntityRecognizerInput`](crate::operation::stop_training_entity_recognizer::StopTrainingEntityRecognizerInput).
     pub fn build(
         self,

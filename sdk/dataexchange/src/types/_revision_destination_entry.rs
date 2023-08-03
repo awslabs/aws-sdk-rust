@@ -56,6 +56,10 @@ impl RevisionDestinationEntryBuilder {
         self.bucket = input;
         self
     }
+    /// <p>The Amazon S3 bucket that is the destination for the assets in the revision.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p>A string representing the pattern for generated names of the individual assets in the revision. For more information about key patterns, see <a href="https://docs.aws.amazon.com/data-exchange/latest/userguide/jobs.html#revision-export-keypatterns">Key patterns when exporting revisions</a>.</p>
     pub fn key_pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_pattern = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl RevisionDestinationEntryBuilder {
         self.key_pattern = input;
         self
     }
+    /// <p>A string representing the pattern for generated names of the individual assets in the revision. For more information about key patterns, see <a href="https://docs.aws.amazon.com/data-exchange/latest/userguide/jobs.html#revision-export-keypatterns">Key patterns when exporting revisions</a>.</p>
+    pub fn get_key_pattern(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_pattern
+    }
     /// <p>The unique identifier for the revision.</p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl RevisionDestinationEntryBuilder {
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision_id = input;
         self
+    }
+    /// <p>The unique identifier for the revision.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision_id
     }
     /// Consumes the builder and constructs a [`RevisionDestinationEntry`](crate::types::RevisionDestinationEntry).
     pub fn build(self) -> crate::types::RevisionDestinationEntry {

@@ -67,6 +67,10 @@ impl ServerStrategyBuilder {
         self.recommendation = input;
         self
     }
+    /// <p> Strategy recommendation for the server. </p>
+    pub fn get_recommendation(&self) -> &::std::option::Option<crate::types::RecommendationSet> {
+        &self.recommendation
+    }
     /// <p> The recommendation status of the strategy for the server. </p>
     pub fn status(mut self, input: crate::types::StrategyRecommendation) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -79,6 +83,10 @@ impl ServerStrategyBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p> The recommendation status of the strategy for the server. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::StrategyRecommendation> {
+        &self.status
     }
     /// <p> The number of application components with this strategy recommendation running on the server. </p>
     pub fn number_of_application_components(mut self, input: i32) -> Self {
@@ -93,6 +101,10 @@ impl ServerStrategyBuilder {
         self.number_of_application_components = input;
         self
     }
+    /// <p> The number of application components with this strategy recommendation running on the server. </p>
+    pub fn get_number_of_application_components(&self) -> &::std::option::Option<i32> {
+        &self.number_of_application_components
+    }
     /// <p> Set to true if the recommendation is set as preferred. </p>
     pub fn is_preferred(mut self, input: bool) -> Self {
         self.is_preferred = ::std::option::Option::Some(input);
@@ -102,6 +114,10 @@ impl ServerStrategyBuilder {
     pub fn set_is_preferred(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_preferred = input;
         self
+    }
+    /// <p> Set to true if the recommendation is set as preferred. </p>
+    pub fn get_is_preferred(&self) -> &::std::option::Option<bool> {
+        &self.is_preferred
     }
     /// Consumes the builder and constructs a [`ServerStrategy`](crate::types::ServerStrategy).
     pub fn build(self) -> crate::types::ServerStrategy {

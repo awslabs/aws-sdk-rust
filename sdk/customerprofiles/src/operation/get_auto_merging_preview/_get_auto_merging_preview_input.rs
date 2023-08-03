@@ -65,6 +65,10 @@ impl GetAutoMergingPreviewInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The unique name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>A list of matching attributes that represent matching criteria.</p>
     pub fn consolidation(mut self, input: crate::types::Consolidation) -> Self {
         self.consolidation = ::std::option::Option::Some(input);
@@ -77,6 +81,10 @@ impl GetAutoMergingPreviewInputBuilder {
     ) -> Self {
         self.consolidation = input;
         self
+    }
+    /// <p>A list of matching attributes that represent matching criteria.</p>
+    pub fn get_consolidation(&self) -> &::std::option::Option<crate::types::Consolidation> {
+        &self.consolidation
     }
     /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
     pub fn conflict_resolution(mut self, input: crate::types::ConflictResolution) -> Self {
@@ -91,6 +99,12 @@ impl GetAutoMergingPreviewInputBuilder {
         self.conflict_resolution = input;
         self
     }
+    /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
+    pub fn get_conflict_resolution(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConflictResolution> {
+        &self.conflict_resolution
+    }
     /// <p>Minimum confidence score required for profiles within a matching group to be merged during the auto-merge process.</p>
     pub fn min_allowed_confidence_score_for_merging(mut self, input: f64) -> Self {
         self.min_allowed_confidence_score_for_merging = ::std::option::Option::Some(input);
@@ -103,6 +117,10 @@ impl GetAutoMergingPreviewInputBuilder {
     ) -> Self {
         self.min_allowed_confidence_score_for_merging = input;
         self
+    }
+    /// <p>Minimum confidence score required for profiles within a matching group to be merged during the auto-merge process.</p>
+    pub fn get_min_allowed_confidence_score_for_merging(&self) -> &::std::option::Option<f64> {
+        &self.min_allowed_confidence_score_for_merging
     }
     /// Consumes the builder and constructs a [`GetAutoMergingPreviewInput`](crate::operation::get_auto_merging_preview::GetAutoMergingPreviewInput).
     pub fn build(

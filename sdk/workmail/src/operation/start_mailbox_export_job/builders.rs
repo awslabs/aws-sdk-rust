@@ -36,6 +36,13 @@ impl StartMailboxExportJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartMailboxExportJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_mailbox_export_job::builders::StartMailboxExportJobInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl StartMailboxExportJobFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>The idempotency token for the client request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>The identifier associated with the organization.</p>
     pub fn organization_id(
         mut self,
@@ -142,6 +153,10 @@ impl StartMailboxExportJobFluentBuilder {
         self.inner = self.inner.set_organization_id(input);
         self
     }
+    /// <p>The identifier associated with the organization.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organization_id()
+    }
     /// <p>The identifier of the user or resource associated with the mailbox.</p>
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.entity_id(input.into());
@@ -151,6 +166,10 @@ impl StartMailboxExportJobFluentBuilder {
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_entity_id(input);
         self
+    }
+    /// <p>The identifier of the user or resource associated with the mailbox.</p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_entity_id()
     }
     /// <p>The mailbox export job description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -162,6 +181,10 @@ impl StartMailboxExportJobFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>The mailbox export job description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the S3 bucket.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -172,6 +195,10 @@ impl StartMailboxExportJobFluentBuilder {
         self.inner = self.inner.set_role_arn(input);
         self
     }
+    /// <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the S3 bucket.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
+    }
     /// <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS) key that encrypts the exported mailbox content.</p>
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_arn(input.into());
@@ -181,6 +208,10 @@ impl StartMailboxExportJobFluentBuilder {
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS) key that encrypts the exported mailbox content.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key_arn()
     }
     /// <p>The name of the S3 bucket.</p>
     pub fn s3_bucket_name(
@@ -198,6 +229,10 @@ impl StartMailboxExportJobFluentBuilder {
         self.inner = self.inner.set_s3_bucket_name(input);
         self
     }
+    /// <p>The name of the S3 bucket.</p>
+    pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_s3_bucket_name()
+    }
     /// <p>The S3 bucket prefix.</p>
     pub fn s3_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.s3_prefix(input.into());
@@ -207,5 +242,9 @@ impl StartMailboxExportJobFluentBuilder {
     pub fn set_s3_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_s3_prefix(input);
         self
+    }
+    /// <p>The S3 bucket prefix.</p>
+    pub fn get_s3_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_s3_prefix()
     }
 }

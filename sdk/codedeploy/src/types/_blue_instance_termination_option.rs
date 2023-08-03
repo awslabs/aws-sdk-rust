@@ -71,6 +71,14 @@ impl BlueInstanceTerminationOptionBuilder {
         self.action = input;
         self
     }
+    /// <p>The action to take on instances in the original environment after a successful blue/green deployment.</p>
+    /// <ul>
+    /// <li> <p> <code>TERMINATE</code>: Instances are terminated after a specified wait time.</p> </li>
+    /// <li> <p> <code>KEEP_ALIVE</code>: Instances are left running after they are deregistered from the load balancer and removed from the deployment group.</p> </li>
+    /// </ul>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::InstanceAction> {
+        &self.action
+    }
     /// <p>For an Amazon EC2 deployment, the number of minutes to wait after a successful blue/green deployment before terminating instances from the original environment.</p>
     /// <p> For an Amazon ECS deployment, the number of minutes before deleting the original (blue) task set. During an Amazon ECS deployment, CodeDeploy shifts traffic from the original (blue) task set to a replacement (green) task set. </p>
     /// <p> The maximum setting is 2880 minutes (2 days). </p>
@@ -87,6 +95,12 @@ impl BlueInstanceTerminationOptionBuilder {
     ) -> Self {
         self.termination_wait_time_in_minutes = input;
         self
+    }
+    /// <p>For an Amazon EC2 deployment, the number of minutes to wait after a successful blue/green deployment before terminating instances from the original environment.</p>
+    /// <p> For an Amazon ECS deployment, the number of minutes before deleting the original (blue) task set. During an Amazon ECS deployment, CodeDeploy shifts traffic from the original (blue) task set to a replacement (green) task set. </p>
+    /// <p> The maximum setting is 2880 minutes (2 days). </p>
+    pub fn get_termination_wait_time_in_minutes(&self) -> &::std::option::Option<i32> {
+        &self.termination_wait_time_in_minutes
     }
     /// Consumes the builder and constructs a [`BlueInstanceTerminationOption`](crate::types::BlueInstanceTerminationOption).
     pub fn build(self) -> crate::types::BlueInstanceTerminationOption {

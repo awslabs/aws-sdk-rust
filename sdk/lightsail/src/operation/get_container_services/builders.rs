@@ -36,6 +36,12 @@ impl GetContainerServicesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetContainerServices as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_container_services::builders::GetContainerServicesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,5 +133,10 @@ impl GetContainerServicesFluentBuilder {
     pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_name(input);
         self
+    }
+    /// <p>The name of the container service for which to return information.</p>
+    /// <p>When omitted, the response includes all of your container services in the Amazon Web Services Region where the request is made.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_name()
     }
 }

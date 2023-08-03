@@ -42,6 +42,12 @@ impl UpdateDatasetEntriesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDatasetEntries as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_dataset_entries::builders::UpdateDatasetEntriesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateDatasetEntriesFluentBuilder {
         self.inner = self.inner.set_project_name(input);
         self
     }
+    /// <p>The name of the project that contains the dataset that you want to update.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_name()
+    }
     /// <p>The type of the dataset that you want to update. Specify <code>train</code> to update the training dataset. Specify <code>test</code> to update the test dataset. If you have a single dataset project, specify <code>train</code>.</p>
     pub fn dataset_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dataset_type(input.into());
@@ -142,6 +152,10 @@ impl UpdateDatasetEntriesFluentBuilder {
         self.inner = self.inner.set_dataset_type(input);
         self
     }
+    /// <p>The type of the dataset that you want to update. Specify <code>train</code> to update the training dataset. Specify <code>test</code> to update the test dataset. If you have a single dataset project, specify <code>train</code>.</p>
+    pub fn get_dataset_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dataset_type()
+    }
     /// <p>The entries to add to the dataset.</p>
     pub fn changes(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.changes(input);
@@ -151,6 +165,10 @@ impl UpdateDatasetEntriesFluentBuilder {
     pub fn set_changes(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.inner = self.inner.set_changes(input);
         self
+    }
+    /// <p>The entries to add to the dataset.</p>
+    pub fn get_changes(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        self.inner.get_changes()
     }
     /// <p>ClientToken is an idempotency token that ensures a call to <code>UpdateDatasetEntries</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>UpdateDatasetEntries</code>. In this case, safely retry your call to <code>UpdateDatasetEntries</code> by using the same <code>ClientToken</code> parameter value.</p>
     /// <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple updates with the same dataset entries. You'll need to provide your own value for other use cases. </p>
@@ -165,5 +183,11 @@ impl UpdateDatasetEntriesFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>ClientToken is an idempotency token that ensures a call to <code>UpdateDatasetEntries</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>UpdateDatasetEntries</code>. In this case, safely retry your call to <code>UpdateDatasetEntries</code> by using the same <code>ClientToken</code> parameter value.</p>
+    /// <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple updates with the same dataset entries. You'll need to provide your own value for other use cases. </p>
+    /// <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>UpdateDatasetEntries</code>. An idempotency token is active for 8 hours. </p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

@@ -77,6 +77,10 @@ impl TimestreamActionBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The ARN of the role that grants permission to write to the Amazon Timestream database table.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>The name of an Amazon Timestream database.</p>
     pub fn database_name(
         mut self,
@@ -93,6 +97,10 @@ impl TimestreamActionBuilder {
         self.database_name = input;
         self
     }
+    /// <p>The name of an Amazon Timestream database.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>The name of the database table into which to write the measure records.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
@@ -102,6 +110,10 @@ impl TimestreamActionBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
+    }
+    /// <p>The name of the database table into which to write the measure records.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
     }
     /// Appends an item to `dimensions`.
     ///
@@ -122,6 +134,12 @@ impl TimestreamActionBuilder {
         self.dimensions = input;
         self
     }
+    /// <p>Metadata attributes of the time series that are written in each measure record.</p>
+    pub fn get_dimensions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TimestreamDimension>> {
+        &self.dimensions
+    }
     /// <p>Specifies an application-defined value to replace the default value assigned to the Timestream record's timestamp in the <code>time</code> column.</p>
     /// <p>You can use this property to specify the value and the precision of the Timestream record's timestamp. You can specify a value from the message payload or a value computed by a substitution template.</p>
     /// <p>If omitted, the topic rule action assigns the timestamp, in milliseconds, at the time it processed the rule. </p>
@@ -138,6 +156,12 @@ impl TimestreamActionBuilder {
     ) -> Self {
         self.timestamp = input;
         self
+    }
+    /// <p>Specifies an application-defined value to replace the default value assigned to the Timestream record's timestamp in the <code>time</code> column.</p>
+    /// <p>You can use this property to specify the value and the precision of the Timestream record's timestamp. You can specify a value from the message payload or a value computed by a substitution template.</p>
+    /// <p>If omitted, the topic rule action assigns the timestamp, in milliseconds, at the time it processed the rule. </p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<crate::types::TimestreamTimestamp> {
+        &self.timestamp
     }
     /// Consumes the builder and constructs a [`TimestreamAction`](crate::types::TimestreamAction).
     pub fn build(self) -> crate::types::TimestreamAction {

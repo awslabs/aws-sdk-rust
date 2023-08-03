@@ -65,6 +65,10 @@ impl InactiveQueryExceptionBuilder {
         self.message = input;
         self
     }
+    /// <p>Brief description of the exception returned by the request.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);

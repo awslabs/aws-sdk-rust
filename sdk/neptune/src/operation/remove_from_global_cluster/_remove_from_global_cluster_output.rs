@@ -55,6 +55,11 @@ impl RemoveFromGlobalClusterOutputBuilder {
         self.global_cluster = input;
         self
     }
+    /// <p>Contains the details of an Amazon Neptune global database.</p>
+    /// <p>This data type is used as a response element for the <code>CreateGlobalCluster</code>, <code>DescribeGlobalClusters</code>, <code>ModifyGlobalCluster</code>, <code>DeleteGlobalCluster</code>, <code>FailoverGlobalCluster</code>, and <code>RemoveFromGlobalCluster</code> actions.</p>
+    pub fn get_global_cluster(&self) -> &::std::option::Option<crate::types::GlobalCluster> {
+        &self.global_cluster
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

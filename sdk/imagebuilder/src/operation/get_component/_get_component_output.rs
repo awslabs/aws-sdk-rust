@@ -54,6 +54,10 @@ impl GetComponentOutputBuilder {
         self.request_id = input;
         self
     }
+    /// <p>The request ID that uniquely identifies this request.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
+    }
     /// <p>The component object associated with the specified ARN.</p>
     pub fn component(mut self, input: crate::types::Component) -> Self {
         self.component = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl GetComponentOutputBuilder {
     pub fn set_component(mut self, input: ::std::option::Option<crate::types::Component>) -> Self {
         self.component = input;
         self
+    }
+    /// <p>The component object associated with the specified ARN.</p>
+    pub fn get_component(&self) -> &::std::option::Option<crate::types::Component> {
+        &self.component
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

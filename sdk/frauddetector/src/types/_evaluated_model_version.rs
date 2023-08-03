@@ -67,6 +67,10 @@ impl EvaluatedModelVersionBuilder {
         self.model_id = input;
         self
     }
+    /// <p> The model ID. </p>
+    pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_id
+    }
     /// <p> The model version. </p>
     pub fn model_version(
         mut self,
@@ -83,6 +87,10 @@ impl EvaluatedModelVersionBuilder {
         self.model_version = input;
         self
     }
+    /// <p> The model version. </p>
+    pub fn get_model_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_version
+    }
     /// <p>The model type. </p>
     /// <p>Valid values: <code>ONLINE_FRAUD_INSIGHTS</code> | <code>TRANSACTION_FRAUD_INSIGHTS</code> </p>
     pub fn model_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -94,6 +102,11 @@ impl EvaluatedModelVersionBuilder {
     pub fn set_model_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_type = input;
         self
+    }
+    /// <p>The model type. </p>
+    /// <p>Valid values: <code>ONLINE_FRAUD_INSIGHTS</code> | <code>TRANSACTION_FRAUD_INSIGHTS</code> </p>
+    pub fn get_model_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_type
     }
     /// Appends an item to `evaluations`.
     ///
@@ -113,6 +126,12 @@ impl EvaluatedModelVersionBuilder {
     ) -> Self {
         self.evaluations = input;
         self
+    }
+    /// <p> Evaluations generated for the model version. </p>
+    pub fn get_evaluations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelVersionEvaluation>> {
+        &self.evaluations
     }
     /// Consumes the builder and constructs a [`EvaluatedModelVersion`](crate::types::EvaluatedModelVersion).
     pub fn build(self) -> crate::types::EvaluatedModelVersion {

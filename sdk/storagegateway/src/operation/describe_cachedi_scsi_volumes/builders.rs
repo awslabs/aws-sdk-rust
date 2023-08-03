@@ -37,6 +37,10 @@ impl DescribeCachediSCSIVolumesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeCachediSCSIVolumes as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_cachedi_scsi_volumes::builders::DescribeCachediScsiVolumesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,5 +137,11 @@ impl DescribeCachediSCSIVolumesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_volume_ar_ns(input);
         self
+    }
+    /// <p>An array of strings where each string represents the Amazon Resource Name (ARN) of a cached volume. All of the specified cached volumes must be from the same gateway. Use <code>ListVolumes</code> to get volume ARNs for a gateway.</p>
+    pub fn get_volume_ar_ns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_volume_ar_ns()
     }
 }

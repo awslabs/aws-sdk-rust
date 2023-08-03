@@ -62,6 +62,10 @@ impl RegistrationConfigBuilder {
         self.template_body = input;
         self
     }
+    /// <p>The template body.</p>
+    pub fn get_template_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_body
+    }
     /// <p>The ARN of the role.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl RegistrationConfigBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The ARN of the role.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The name of the provisioning template.</p>
     pub fn template_name(
@@ -87,6 +95,10 @@ impl RegistrationConfigBuilder {
     ) -> Self {
         self.template_name = input;
         self
+    }
+    /// <p>The name of the provisioning template.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
     }
     /// Consumes the builder and constructs a [`RegistrationConfig`](crate::types::RegistrationConfig).
     pub fn build(self) -> crate::types::RegistrationConfig {

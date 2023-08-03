@@ -81,6 +81,10 @@ impl CreateDomainNameInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The domain name.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// Appends an item to `domain_name_configurations`.
     ///
     /// To override the contents of this collection use [`set_domain_name_configurations`](Self::set_domain_name_configurations).
@@ -103,6 +107,12 @@ impl CreateDomainNameInputBuilder {
         self.domain_name_configurations = input;
         self
     }
+    /// <p>The domain name configurations.</p>
+    pub fn get_domain_name_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainNameConfiguration>> {
+        &self.domain_name_configurations
+    }
     /// <p>The mutual TLS authentication configuration for a custom domain name.</p>
     pub fn mutual_tls_authentication(
         mut self,
@@ -118,6 +128,12 @@ impl CreateDomainNameInputBuilder {
     ) -> Self {
         self.mutual_tls_authentication = input;
         self
+    }
+    /// <p>The mutual TLS authentication configuration for a custom domain name.</p>
+    pub fn get_mutual_tls_authentication(
+        &self,
+    ) -> &::std::option::Option<crate::types::MutualTlsAuthenticationInput> {
+        &self.mutual_tls_authentication
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -143,6 +159,14 @@ impl CreateDomainNameInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The collection of tags associated with a domain name.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateDomainNameInput`](crate::operation::create_domain_name::CreateDomainNameInput).
     pub fn build(

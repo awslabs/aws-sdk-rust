@@ -68,6 +68,10 @@ impl CreateSignalingChannelInputBuilder {
         self.channel_name = input;
         self
     }
+    /// <p>A name for the signaling channel that you are creating. It must be unique for each Amazon Web Services account and Amazon Web Services Region.</p>
+    pub fn get_channel_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_name
+    }
     /// <p>A type of the signaling channel that you are creating. Currently, <code>SINGLE_MASTER</code> is the only supported channel type. </p>
     pub fn channel_type(mut self, input: crate::types::ChannelType) -> Self {
         self.channel_type = ::std::option::Option::Some(input);
@@ -80,6 +84,10 @@ impl CreateSignalingChannelInputBuilder {
     ) -> Self {
         self.channel_type = input;
         self
+    }
+    /// <p>A type of the signaling channel that you are creating. Currently, <code>SINGLE_MASTER</code> is the only supported channel type. </p>
+    pub fn get_channel_type(&self) -> &::std::option::Option<crate::types::ChannelType> {
+        &self.channel_type
     }
     /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type. </p>
     pub fn single_master_configuration(
@@ -96,6 +104,12 @@ impl CreateSignalingChannelInputBuilder {
     ) -> Self {
         self.single_master_configuration = input;
         self
+    }
+    /// <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type. </p>
+    pub fn get_single_master_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SingleMasterConfiguration> {
+        &self.single_master_configuration
     }
     /// Appends an item to `tags`.
     ///
@@ -115,6 +129,10 @@ impl CreateSignalingChannelInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A set of tags (key-value pairs) that you want to associate with this channel.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateSignalingChannelInput`](crate::operation::create_signaling_channel::CreateSignalingChannelInput).
     pub fn build(

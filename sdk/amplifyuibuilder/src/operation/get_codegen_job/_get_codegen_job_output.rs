@@ -46,6 +46,10 @@ impl GetCodegenJobOutputBuilder {
         self.job = input;
         self
     }
+    /// <p>The configuration settings for the code generation job.</p>
+    pub fn get_job(&self) -> &::std::option::Option<crate::types::CodegenJob> {
+        &self.job
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -90,6 +90,10 @@ impl Ec2InstanceAggregationBuilder {
         self.amis = input;
         self
     }
+    /// <p>The AMI IDs associated with the Amazon EC2 instances to aggregate findings for.</p>
+    pub fn get_amis(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.amis
+    }
     /// Appends an item to `operating_systems`.
     ///
     /// To override the contents of this collection use [`set_operating_systems`](Self::set_operating_systems).
@@ -108,6 +112,12 @@ impl Ec2InstanceAggregationBuilder {
     ) -> Self {
         self.operating_systems = input;
         self
+    }
+    /// <p>The operating system types to aggregate findings for. Valid values must be uppercase and underscore separated, examples are <code>ORACLE_LINUX_7</code> and <code>ALPINE_LINUX_3_8</code>.</p>
+    pub fn get_operating_systems(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.operating_systems
     }
     /// Appends an item to `instance_ids`.
     ///
@@ -128,6 +138,12 @@ impl Ec2InstanceAggregationBuilder {
         self.instance_ids = input;
         self
     }
+    /// <p>The Amazon EC2 instance IDs to aggregate findings for.</p>
+    pub fn get_instance_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.instance_ids
+    }
     /// Appends an item to `instance_tags`.
     ///
     /// To override the contents of this collection use [`set_instance_tags`](Self::set_instance_tags).
@@ -147,6 +163,12 @@ impl Ec2InstanceAggregationBuilder {
         self.instance_tags = input;
         self
     }
+    /// <p>The Amazon EC2 instance tags to aggregate findings for.</p>
+    pub fn get_instance_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MapFilter>> {
+        &self.instance_tags
+    }
     /// <p>The order to sort results by.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -156,6 +178,10 @@ impl Ec2InstanceAggregationBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.sort_order = input;
         self
+    }
+    /// <p>The order to sort results by.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.sort_order
     }
     /// <p>The value to sort results by.</p>
     pub fn sort_by(mut self, input: crate::types::Ec2InstanceSortBy) -> Self {
@@ -169,6 +195,10 @@ impl Ec2InstanceAggregationBuilder {
     ) -> Self {
         self.sort_by = input;
         self
+    }
+    /// <p>The value to sort results by.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::Ec2InstanceSortBy> {
+        &self.sort_by
     }
     /// Consumes the builder and constructs a [`Ec2InstanceAggregation`](crate::types::Ec2InstanceAggregation).
     pub fn build(self) -> crate::types::Ec2InstanceAggregation {

@@ -56,6 +56,10 @@ impl SetStatusInputBuilder {
         self.pipeline_id = input;
         self
     }
+    /// <p>The ID of the pipeline that contains the objects.</p>
+    pub fn get_pipeline_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_id
+    }
     /// Appends an item to `object_ids`.
     ///
     /// To override the contents of this collection use [`set_object_ids`](Self::set_object_ids).
@@ -75,6 +79,10 @@ impl SetStatusInputBuilder {
         self.object_ids = input;
         self
     }
+    /// <p>The IDs of the objects. The corresponding objects can be either physical or components, but not a mix of both types.</p>
+    pub fn get_object_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.object_ids
+    }
     /// <p>The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -84,6 +92,10 @@ impl SetStatusInputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`SetStatusInput`](crate::operation::set_status::SetStatusInput).
     pub fn build(

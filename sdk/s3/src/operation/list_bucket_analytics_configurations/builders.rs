@@ -45,6 +45,10 @@ impl ListBucketAnalyticsConfigurationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListBucketAnalyticsConfigurations as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_bucket_analytics_configurations::builders::ListBucketAnalyticsConfigurationsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -109,6 +113,10 @@ impl ListBucketAnalyticsConfigurationsFluentBuilder {
         self.inner = self.inner.set_bucket(input);
         self
     }
+    /// <p>The name of the bucket from which analytics configurations are retrieved.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bucket()
+    }
     /// <p>The <code>ContinuationToken</code> that represents a placeholder from where this request should begin.</p>
     pub fn continuation_token(
         mut self,
@@ -125,6 +133,10 @@ impl ListBucketAnalyticsConfigurationsFluentBuilder {
         self.inner = self.inner.set_continuation_token(input);
         self
     }
+    /// <p>The <code>ContinuationToken</code> that represents a placeholder from where this request should begin.</p>
+    pub fn get_continuation_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_continuation_token()
+    }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(
         mut self,
@@ -140,5 +152,9 @@ impl ListBucketAnalyticsConfigurationsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_expected_bucket_owner(input);
         self
+    }
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
+    pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_expected_bucket_owner()
     }
 }

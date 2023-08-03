@@ -48,6 +48,10 @@ impl RegionBuilder {
         self.region_name = input;
         self
     }
+    /// <p>The Region code of a given Region (for example, <code>us-east-1</code>).</p>
+    pub fn get_region_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region_name
+    }
     /// <p>One of potential statuses a Region can undergo (Enabled, Enabling, Disabled, Disabling, Enabled_By_Default).</p>
     pub fn region_opt_status(mut self, input: crate::types::RegionOptStatus) -> Self {
         self.region_opt_status = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl RegionBuilder {
     ) -> Self {
         self.region_opt_status = input;
         self
+    }
+    /// <p>One of potential statuses a Region can undergo (Enabled, Enabling, Disabled, Disabling, Enabled_By_Default).</p>
+    pub fn get_region_opt_status(&self) -> &::std::option::Option<crate::types::RegionOptStatus> {
+        &self.region_opt_status
     }
     /// Consumes the builder and constructs a [`Region`](crate::types::Region).
     pub fn build(self) -> crate::types::Region {

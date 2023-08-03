@@ -48,6 +48,12 @@ impl CreateAppInputBuilder {
         self.create_application_request = input;
         self
     }
+    /// <p>Specifies the display name of an application and the tags to associate with the application.</p>
+    pub fn get_create_application_request(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateApplicationRequest> {
+        &self.create_application_request
+    }
     /// Consumes the builder and constructs a [`CreateAppInput`](crate::operation::create_app::CreateAppInput).
     pub fn build(
         self,

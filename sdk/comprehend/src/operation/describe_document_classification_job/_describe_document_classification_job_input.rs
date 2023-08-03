@@ -39,6 +39,10 @@ impl DescribeDocumentClassificationJobInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The identifier that Amazon Comprehend generated for the job. The <code>StartDocumentClassificationJob</code> operation returns this identifier in its response.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// Consumes the builder and constructs a [`DescribeDocumentClassificationJobInput`](crate::operation::describe_document_classification_job::DescribeDocumentClassificationJobInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_document_classification_job::DescribeDocumentClassificationJobInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

@@ -57,6 +57,12 @@ impl DeleteApnsVoipChannelOutputBuilder {
         self.apns_voip_channel_response = input;
         self
     }
+    /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
+    pub fn get_apns_voip_channel_response(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApnsVoipChannelResponse> {
+        &self.apns_voip_channel_response
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

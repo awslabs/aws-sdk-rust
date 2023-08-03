@@ -39,6 +39,10 @@ impl StartJobRunInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the job to be run.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`StartJobRunInput`](crate::operation::start_job_run::StartJobRunInput).
     pub fn build(
         self,

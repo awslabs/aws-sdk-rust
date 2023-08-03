@@ -74,6 +74,10 @@ impl DocumentParameterBuilder {
         self.key = input;
         self
     }
+    /// <p>Key of the map field containing the patterns that need to be replaced in a managed template job document schema.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>Description of the map field containing the patterns that need to be replaced in a managed template job document schema.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -83,6 +87,10 @@ impl DocumentParameterBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>Description of the map field containing the patterns that need to be replaced in a managed template job document schema.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>A regular expression of the patterns that need to be replaced in a managed template job document schema.</p>
     pub fn regex(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -94,6 +102,10 @@ impl DocumentParameterBuilder {
         self.regex = input;
         self
     }
+    /// <p>A regular expression of the patterns that need to be replaced in a managed template job document schema.</p>
+    pub fn get_regex(&self) -> &::std::option::Option<::std::string::String> {
+        &self.regex
+    }
     /// <p>An example illustrating a pattern that need to be replaced in a managed template job document schema.</p>
     pub fn example(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.example = ::std::option::Option::Some(input.into());
@@ -104,6 +116,10 @@ impl DocumentParameterBuilder {
         self.example = input;
         self
     }
+    /// <p>An example illustrating a pattern that need to be replaced in a managed template job document schema.</p>
+    pub fn get_example(&self) -> &::std::option::Option<::std::string::String> {
+        &self.example
+    }
     /// <p>Specifies whether a pattern that needs to be replaced in a managed template job document schema is optional or required.</p>
     pub fn optional(mut self, input: bool) -> Self {
         self.optional = ::std::option::Option::Some(input);
@@ -113,6 +129,10 @@ impl DocumentParameterBuilder {
     pub fn set_optional(mut self, input: ::std::option::Option<bool>) -> Self {
         self.optional = input;
         self
+    }
+    /// <p>Specifies whether a pattern that needs to be replaced in a managed template job document schema is optional or required.</p>
+    pub fn get_optional(&self) -> &::std::option::Option<bool> {
+        &self.optional
     }
     /// Consumes the builder and constructs a [`DocumentParameter`](crate::types::DocumentParameter).
     pub fn build(self) -> crate::types::DocumentParameter {

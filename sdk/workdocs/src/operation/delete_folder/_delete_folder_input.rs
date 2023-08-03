@@ -59,6 +59,10 @@ impl DeleteFolderInputBuilder {
         self.authentication_token = input;
         self
     }
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authentication_token
+    }
     /// <p>The ID of the folder.</p>
     pub fn folder_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.folder_id = ::std::option::Option::Some(input.into());
@@ -68,6 +72,10 @@ impl DeleteFolderInputBuilder {
     pub fn set_folder_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.folder_id = input;
         self
+    }
+    /// <p>The ID of the folder.</p>
+    pub fn get_folder_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.folder_id
     }
     /// Consumes the builder and constructs a [`DeleteFolderInput`](crate::operation::delete_folder::DeleteFolderInput).
     pub fn build(

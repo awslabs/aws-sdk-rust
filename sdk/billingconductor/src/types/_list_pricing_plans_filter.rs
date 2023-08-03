@@ -49,6 +49,10 @@ impl ListPricingPlansFilterBuilder {
         self.arns = input;
         self
     }
+    /// <p>A list of pricing plan Amazon Resource Names (ARNs) to retrieve information.</p>
+    pub fn get_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.arns
+    }
     /// Consumes the builder and constructs a [`ListPricingPlansFilter`](crate::types::ListPricingPlansFilter).
     pub fn build(self) -> crate::types::ListPricingPlansFilter {
         crate::types::ListPricingPlansFilter { arns: self.arns }

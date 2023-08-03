@@ -81,6 +81,10 @@ impl ListInferenceExecutionsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>An opaque pagination token indicating where to continue the listing of inference executions.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>Specifies the maximum number of inference executions to list. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -90,6 +94,10 @@ impl ListInferenceExecutionsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>Specifies the maximum number of inference executions to list. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The name of the inference scheduler for the inference execution listed. </p>
     pub fn inference_scheduler_name(
@@ -107,6 +115,10 @@ impl ListInferenceExecutionsInputBuilder {
         self.inference_scheduler_name = input;
         self
     }
+    /// <p>The name of the inference scheduler for the inference execution listed. </p>
+    pub fn get_inference_scheduler_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.inference_scheduler_name
+    }
     /// <p>The time reference in the inferenced dataset after which Amazon Lookout for Equipment started the inference execution. </p>
     pub fn data_start_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.data_start_time_after = ::std::option::Option::Some(input);
@@ -119,6 +131,12 @@ impl ListInferenceExecutionsInputBuilder {
     ) -> Self {
         self.data_start_time_after = input;
         self
+    }
+    /// <p>The time reference in the inferenced dataset after which Amazon Lookout for Equipment started the inference execution. </p>
+    pub fn get_data_start_time_after(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.data_start_time_after
     }
     /// <p>The time reference in the inferenced dataset before which Amazon Lookout for Equipment stopped the inference execution. </p>
     pub fn data_end_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -133,6 +151,10 @@ impl ListInferenceExecutionsInputBuilder {
         self.data_end_time_before = input;
         self
     }
+    /// <p>The time reference in the inferenced dataset before which Amazon Lookout for Equipment stopped the inference execution. </p>
+    pub fn get_data_end_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.data_end_time_before
+    }
     /// <p>The status of the inference execution. </p>
     pub fn status(mut self, input: crate::types::InferenceExecutionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -145,6 +167,10 @@ impl ListInferenceExecutionsInputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the inference execution. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::InferenceExecutionStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`ListInferenceExecutionsInput`](crate::operation::list_inference_executions::ListInferenceExecutionsInput).
     pub fn build(

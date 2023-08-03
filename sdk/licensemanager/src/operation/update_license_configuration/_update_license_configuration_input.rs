@@ -117,6 +117,10 @@ impl UpdateLicenseConfigurationInputBuilder {
         self.license_configuration_arn = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
+    pub fn get_license_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_configuration_arn
+    }
     /// <p>New status of the license configuration.</p>
     pub fn license_configuration_status(
         mut self,
@@ -132,6 +136,12 @@ impl UpdateLicenseConfigurationInputBuilder {
     ) -> Self {
         self.license_configuration_status = input;
         self
+    }
+    /// <p>New status of the license configuration.</p>
+    pub fn get_license_configuration_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::LicenseConfigurationStatus> {
+        &self.license_configuration_status
     }
     /// Appends an item to `license_rules`.
     ///
@@ -155,6 +165,12 @@ impl UpdateLicenseConfigurationInputBuilder {
         self.license_rules = input;
         self
     }
+    /// <p>New license rule. The only rule that you can add after you create a license configuration is licenseAffinityToHost.</p>
+    pub fn get_license_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.license_rules
+    }
     /// <p>New number of licenses managed by the license configuration.</p>
     pub fn license_count(mut self, input: i64) -> Self {
         self.license_count = ::std::option::Option::Some(input);
@@ -164,6 +180,10 @@ impl UpdateLicenseConfigurationInputBuilder {
     pub fn set_license_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.license_count = input;
         self
+    }
+    /// <p>New number of licenses managed by the license configuration.</p>
+    pub fn get_license_count(&self) -> &::std::option::Option<i64> {
+        &self.license_count
     }
     /// <p>New hard limit of the number of available licenses.</p>
     pub fn license_count_hard_limit(mut self, input: bool) -> Self {
@@ -175,6 +195,10 @@ impl UpdateLicenseConfigurationInputBuilder {
         self.license_count_hard_limit = input;
         self
     }
+    /// <p>New hard limit of the number of available licenses.</p>
+    pub fn get_license_count_hard_limit(&self) -> &::std::option::Option<bool> {
+        &self.license_count_hard_limit
+    }
     /// <p>New name of the license configuration.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -185,6 +209,10 @@ impl UpdateLicenseConfigurationInputBuilder {
         self.name = input;
         self
     }
+    /// <p>New name of the license configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>New description of the license configuration.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -194,6 +222,10 @@ impl UpdateLicenseConfigurationInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>New description of the license configuration.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `product_information_list`.
     ///
@@ -214,6 +246,12 @@ impl UpdateLicenseConfigurationInputBuilder {
         self.product_information_list = input;
         self
     }
+    /// <p>New product information.</p>
+    pub fn get_product_information_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductInformation>> {
+        &self.product_information_list
+    }
     /// <p>When true, disassociates a resource when software is uninstalled.</p>
     pub fn disassociate_when_not_found(mut self, input: bool) -> Self {
         self.disassociate_when_not_found = ::std::option::Option::Some(input);
@@ -223,6 +261,10 @@ impl UpdateLicenseConfigurationInputBuilder {
     pub fn set_disassociate_when_not_found(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disassociate_when_not_found = input;
         self
+    }
+    /// <p>When true, disassociates a resource when software is uninstalled.</p>
+    pub fn get_disassociate_when_not_found(&self) -> &::std::option::Option<bool> {
+        &self.disassociate_when_not_found
     }
     /// Consumes the builder and constructs a [`UpdateLicenseConfigurationInput`](crate::operation::update_license_configuration::UpdateLicenseConfigurationInput).
     pub fn build(

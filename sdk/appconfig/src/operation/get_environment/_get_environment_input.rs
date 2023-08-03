@@ -53,6 +53,10 @@ impl GetEnvironmentInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The ID of the application that includes the environment you want to get.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The ID of the environment that you want to get.</p>
     pub fn environment_id(
         mut self,
@@ -68,6 +72,10 @@ impl GetEnvironmentInputBuilder {
     ) -> Self {
         self.environment_id = input;
         self
+    }
+    /// <p>The ID of the environment that you want to get.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
     }
     /// Consumes the builder and constructs a [`GetEnvironmentInput`](crate::operation::get_environment::GetEnvironmentInput).
     pub fn build(

@@ -36,6 +36,10 @@ impl StopEventDataStoreIngestionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StopEventDataStoreIngestion as a reference.
+    pub fn as_input(&self) -> &crate::operation::stop_event_data_store_ingestion::builders::StopEventDataStoreIngestionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +135,9 @@ impl StopEventDataStoreIngestionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_event_data_store(input);
         self
+    }
+    /// <p>The ARN (or ID suffix of the ARN) of the event data store for which you want to stop ingestion.</p>
+    pub fn get_event_data_store(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_event_data_store()
     }
 }

@@ -39,6 +39,10 @@ impl DeleteStageInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>ARN of the stage to be deleted.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`DeleteStageInput`](crate::operation::delete_stage::DeleteStageInput).
     pub fn build(
         self,

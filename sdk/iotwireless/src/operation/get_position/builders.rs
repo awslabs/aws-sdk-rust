@@ -39,6 +39,10 @@ impl GetPositionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetPosition as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_position::builders::GetPositionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl GetPositionFluentBuilder {
         self.inner = self.inner.set_resource_identifier(input);
         self
     }
+    /// <p>Resource identifier used to retrieve the position information.</p>
+    pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_identifier()
+    }
     /// <p>Resource type of the resource for which position information is retrieved.</p>
     pub fn resource_type(mut self, input: crate::types::PositionResourceType) -> Self {
         self.inner = self.inner.resource_type(input);
@@ -139,5 +147,9 @@ impl GetPositionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
+    }
+    /// <p>Resource type of the resource for which position information is retrieved.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::PositionResourceType> {
+        self.inner.get_resource_type()
     }
 }

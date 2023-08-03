@@ -126,6 +126,10 @@ impl ListUploadsInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the project for which you want to list uploads.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The type of upload.</p>
     /// <p>Must be one of the following values:</p>
     /// <ul>
@@ -206,6 +210,45 @@ impl ListUploadsInputBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of upload.</p>
+    /// <p>Must be one of the following values:</p>
+    /// <ul>
+    /// <li> <p>ANDROID_APP</p> </li>
+    /// <li> <p>IOS_APP</p> </li>
+    /// <li> <p>WEB_APP</p> </li>
+    /// <li> <p>EXTERNAL_DATA</p> </li>
+    /// <li> <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_PYTHON_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_NODE_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_RUBY_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_WEB_NODE_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p> </li>
+    /// <li> <p>CALABASH_TEST_PACKAGE</p> </li>
+    /// <li> <p>INSTRUMENTATION_TEST_PACKAGE</p> </li>
+    /// <li> <p>UIAUTOMATION_TEST_PACKAGE</p> </li>
+    /// <li> <p>UIAUTOMATOR_TEST_PACKAGE</p> </li>
+    /// <li> <p>XCTEST_TEST_PACKAGE</p> </li>
+    /// <li> <p>XCTEST_UI_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_PYTHON_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_NODE_TEST_SPEC</p> </li>
+    /// <li> <p> APPIUM_RUBY_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_WEB_PYTHON_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_WEB_NODE_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_WEB_RUBY_TEST_SPEC</p> </li>
+    /// <li> <p>INSTRUMENTATION_TEST_SPEC</p> </li>
+    /// <li> <p>XCTEST_UI_TEST_SPEC</p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::UploadType> {
+        &self.r#type
+    }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -215,6 +258,10 @@ impl ListUploadsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListUploadsInput`](crate::operation::list_uploads::ListUploadsInput).
     pub fn build(

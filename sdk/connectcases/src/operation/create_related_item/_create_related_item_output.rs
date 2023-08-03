@@ -61,6 +61,10 @@ impl CreateRelatedItemOutputBuilder {
         self.related_item_id = input;
         self
     }
+    /// <p>The unique identifier of the related item.</p>
+    pub fn get_related_item_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.related_item_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the related item.</p>
     pub fn related_item_arn(
         mut self,
@@ -76,6 +80,10 @@ impl CreateRelatedItemOutputBuilder {
     ) -> Self {
         self.related_item_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the related item.</p>
+    pub fn get_related_item_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.related_item_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

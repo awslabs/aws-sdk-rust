@@ -54,6 +54,10 @@ impl ListLayersOutputBuilder {
         self.next_marker = input;
         self
     }
+    /// <p>A pagination token returned when the response doesn't contain all layers.</p>
+    pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_marker
+    }
     /// Appends an item to `layers`.
     ///
     /// To override the contents of this collection use [`set_layers`](Self::set_layers).
@@ -72,6 +76,12 @@ impl ListLayersOutputBuilder {
     ) -> Self {
         self.layers = input;
         self
+    }
+    /// <p>A list of function layers.</p>
+    pub fn get_layers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LayersListItem>> {
+        &self.layers
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

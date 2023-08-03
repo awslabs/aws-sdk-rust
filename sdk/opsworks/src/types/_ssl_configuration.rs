@@ -56,6 +56,10 @@ impl SslConfigurationBuilder {
         self.certificate = input;
         self
     }
+    /// <p>The contents of the certificate's domain.crt file.</p>
+    pub fn get_certificate(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate
+    }
     /// <p>The private key; the contents of the certificate's domain.kex file.</p>
     pub fn private_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.private_key = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl SslConfigurationBuilder {
         self.private_key = input;
         self
     }
+    /// <p>The private key; the contents of the certificate's domain.kex file.</p>
+    pub fn get_private_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_key
+    }
     /// <p>Optional. Can be used to specify an intermediate certificate authority key or client authentication.</p>
     pub fn chain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.chain = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl SslConfigurationBuilder {
     pub fn set_chain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.chain = input;
         self
+    }
+    /// <p>Optional. Can be used to specify an intermediate certificate authority key or client authentication.</p>
+    pub fn get_chain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.chain
     }
     /// Consumes the builder and constructs a [`SslConfiguration`](crate::types::SslConfiguration).
     pub fn build(self) -> crate::types::SslConfiguration {

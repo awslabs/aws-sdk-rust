@@ -117,6 +117,10 @@ impl ListAutoMlJobsInputBuilder {
         self
     }
     /// <p>Request a list of jobs, using a filter for time.</p>
+    pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time_after
+    }
+    /// <p>Request a list of jobs, using a filter for time.</p>
     pub fn creation_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time_before = ::std::option::Option::Some(input);
         self
@@ -128,6 +132,10 @@ impl ListAutoMlJobsInputBuilder {
     ) -> Self {
         self.creation_time_before = input;
         self
+    }
+    /// <p>Request a list of jobs, using a filter for time.</p>
+    pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time_before
     }
     /// <p>Request a list of jobs, using a filter for time.</p>
     pub fn last_modified_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -143,6 +151,12 @@ impl ListAutoMlJobsInputBuilder {
         self
     }
     /// <p>Request a list of jobs, using a filter for time.</p>
+    pub fn get_last_modified_time_after(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time_after
+    }
+    /// <p>Request a list of jobs, using a filter for time.</p>
     pub fn last_modified_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time_before = ::std::option::Option::Some(input);
         self
@@ -154,6 +168,12 @@ impl ListAutoMlJobsInputBuilder {
     ) -> Self {
         self.last_modified_time_before = input;
         self
+    }
+    /// <p>Request a list of jobs, using a filter for time.</p>
+    pub fn get_last_modified_time_before(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time_before
     }
     /// <p>Request a list of jobs, using a search filter for name.</p>
     pub fn name_contains(
@@ -171,6 +191,10 @@ impl ListAutoMlJobsInputBuilder {
         self.name_contains = input;
         self
     }
+    /// <p>Request a list of jobs, using a search filter for name.</p>
+    pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name_contains
+    }
     /// <p>Request a list of jobs, using a filter for status.</p>
     pub fn status_equals(mut self, input: crate::types::AutoMlJobStatus) -> Self {
         self.status_equals = ::std::option::Option::Some(input);
@@ -183,6 +207,10 @@ impl ListAutoMlJobsInputBuilder {
     ) -> Self {
         self.status_equals = input;
         self
+    }
+    /// <p>Request a list of jobs, using a filter for status.</p>
+    pub fn get_status_equals(&self) -> &::std::option::Option<crate::types::AutoMlJobStatus> {
+        &self.status_equals
     }
     /// <p>The sort order for the results. The default is <code>Descending</code>.</p>
     pub fn sort_order(mut self, input: crate::types::AutoMlSortOrder) -> Self {
@@ -197,6 +225,10 @@ impl ListAutoMlJobsInputBuilder {
         self.sort_order = input;
         self
     }
+    /// <p>The sort order for the results. The default is <code>Descending</code>.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::AutoMlSortOrder> {
+        &self.sort_order
+    }
     /// <p>The parameter by which to sort the results. The default is <code>Name</code>.</p>
     pub fn sort_by(mut self, input: crate::types::AutoMlSortBy) -> Self {
         self.sort_by = ::std::option::Option::Some(input);
@@ -206,6 +238,10 @@ impl ListAutoMlJobsInputBuilder {
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::AutoMlSortBy>) -> Self {
         self.sort_by = input;
         self
+    }
+    /// <p>The parameter by which to sort the results. The default is <code>Name</code>.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::AutoMlSortBy> {
+        &self.sort_by
     }
     /// <p>Request a list of jobs up to a specified limit.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -217,6 +253,10 @@ impl ListAutoMlJobsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>Request a list of jobs up to a specified limit.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -226,6 +266,10 @@ impl ListAutoMlJobsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListAutoMlJobsInput`](crate::operation::list_auto_ml_jobs::ListAutoMlJobsInput).
     pub fn build(

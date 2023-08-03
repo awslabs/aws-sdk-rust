@@ -39,6 +39,12 @@ impl GetJobManifestFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetJobManifest as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_job_manifest::builders::GetJobManifestInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,5 +134,9 @@ impl GetJobManifestFluentBuilder {
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_id(input);
         self
+    }
+    /// <p>The ID for a job that you want to get the manifest file for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_id()
     }
 }

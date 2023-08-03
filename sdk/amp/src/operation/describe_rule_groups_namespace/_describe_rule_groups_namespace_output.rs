@@ -56,6 +56,12 @@ impl DescribeRuleGroupsNamespaceOutputBuilder {
         self.rule_groups_namespace = input;
         self
     }
+    /// The selected rule groups namespace.
+    pub fn get_rule_groups_namespace(
+        &self,
+    ) -> &::std::option::Option<crate::types::RuleGroupsNamespaceDescription> {
+        &self.rule_groups_namespace
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

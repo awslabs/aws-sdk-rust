@@ -71,6 +71,10 @@ impl ListDocumentMetadataHistoryInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the change template.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The version of the change template.</p>
     pub fn document_version(
         mut self,
@@ -87,6 +91,10 @@ impl ListDocumentMetadataHistoryInputBuilder {
         self.document_version = input;
         self
     }
+    /// <p>The version of the change template.</p>
+    pub fn get_document_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_version
+    }
     /// <p>The type of data for which details are being requested. Currently, the only supported value is <code>DocumentReviews</code>.</p>
     pub fn metadata(mut self, input: crate::types::DocumentMetadataEnum) -> Self {
         self.metadata = ::std::option::Option::Some(input);
@@ -100,6 +108,10 @@ impl ListDocumentMetadataHistoryInputBuilder {
         self.metadata = input;
         self
     }
+    /// <p>The type of data for which details are being requested. Currently, the only supported value is <code>DocumentReviews</code>.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<crate::types::DocumentMetadataEnum> {
+        &self.metadata
+    }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -110,6 +122,10 @@ impl ListDocumentMetadataHistoryInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -119,6 +135,10 @@ impl ListDocumentMetadataHistoryInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListDocumentMetadataHistoryInput`](crate::operation::list_document_metadata_history::ListDocumentMetadataHistoryInput).
     pub fn build(

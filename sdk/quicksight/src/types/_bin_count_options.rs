@@ -40,6 +40,10 @@ impl BinCountOptionsBuilder {
         self.value = input;
         self
     }
+    /// <p>The options that determine the bin count value.</p>
+    pub fn get_value(&self) -> &::std::option::Option<i32> {
+        &self.value
+    }
     /// Consumes the builder and constructs a [`BinCountOptions`](crate::types::BinCountOptions).
     pub fn build(self) -> crate::types::BinCountOptions {
         crate::types::BinCountOptions { value: self.value }

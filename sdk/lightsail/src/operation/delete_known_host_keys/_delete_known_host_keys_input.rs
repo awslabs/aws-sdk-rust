@@ -47,6 +47,10 @@ impl DeleteKnownHostKeysInputBuilder {
         self.instance_name = input;
         self
     }
+    /// <p>The name of the instance for which you want to reset the host key or certificate.</p>
+    pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_name
+    }
     /// Consumes the builder and constructs a [`DeleteKnownHostKeysInput`](crate::operation::delete_known_host_keys::DeleteKnownHostKeysInput).
     pub fn build(
         self,

@@ -36,6 +36,10 @@ impl ListContactsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListContacts as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_contacts::builders::ListContactsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +133,10 @@ impl ListContactsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The pagination token to continue to the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of contacts and escalation plans per page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -138,6 +146,10 @@ impl ListContactsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of contacts and escalation plans per page of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>Used to list only contacts who's aliases start with the specified prefix.</p>
     pub fn alias_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -149,6 +161,10 @@ impl ListContactsFluentBuilder {
         self.inner = self.inner.set_alias_prefix(input);
         self
     }
+    /// <p>Used to list only contacts who's aliases start with the specified prefix.</p>
+    pub fn get_alias_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_alias_prefix()
+    }
     /// <p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
     pub fn r#type(mut self, input: crate::types::ContactType) -> Self {
         self.inner = self.inner.r#type(input);
@@ -158,5 +174,9 @@ impl ListContactsFluentBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ContactType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
+    }
+    /// <p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ContactType> {
+        self.inner.get_type()
     }
 }

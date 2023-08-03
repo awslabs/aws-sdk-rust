@@ -78,6 +78,10 @@ impl BotMemberBuilder {
         self.bot_member_id = input;
         self
     }
+    /// <p>The unique ID of a bot that is a member of this network of bots.</p>
+    pub fn get_bot_member_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_member_id
+    }
     /// <p>The unique name of a bot that is a member of this network of bots.</p>
     pub fn bot_member_name(
         mut self,
@@ -93,6 +97,10 @@ impl BotMemberBuilder {
     ) -> Self {
         self.bot_member_name = input;
         self
+    }
+    /// <p>The unique name of a bot that is a member of this network of bots.</p>
+    pub fn get_bot_member_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_member_name
     }
     /// <p>The alias ID of a bot that is a member of this network of bots.</p>
     pub fn bot_member_alias_id(
@@ -110,6 +118,10 @@ impl BotMemberBuilder {
         self.bot_member_alias_id = input;
         self
     }
+    /// <p>The alias ID of a bot that is a member of this network of bots.</p>
+    pub fn get_bot_member_alias_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_member_alias_id
+    }
     /// <p>The alias name of a bot that is a member of this network of bots.</p>
     pub fn bot_member_alias_name(
         mut self,
@@ -126,6 +138,10 @@ impl BotMemberBuilder {
         self.bot_member_alias_name = input;
         self
     }
+    /// <p>The alias name of a bot that is a member of this network of bots.</p>
+    pub fn get_bot_member_alias_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_member_alias_name
+    }
     /// <p>The version of a bot that is a member of this network of bots.</p>
     pub fn bot_member_version(
         mut self,
@@ -141,6 +157,10 @@ impl BotMemberBuilder {
     ) -> Self {
         self.bot_member_version = input;
         self
+    }
+    /// <p>The version of a bot that is a member of this network of bots.</p>
+    pub fn get_bot_member_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_member_version
     }
     /// Consumes the builder and constructs a [`BotMember`](crate::types::BotMember).
     pub fn build(self) -> crate::types::BotMember {

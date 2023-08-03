@@ -57,6 +57,10 @@ impl ListCreatedArtifactsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If there are more created artifacts than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `created_artifact_list`.
     ///
     /// To override the contents of this collection use [`set_created_artifact_list`](Self::set_created_artifact_list).
@@ -75,6 +79,12 @@ impl ListCreatedArtifactsOutputBuilder {
     ) -> Self {
         self.created_artifact_list = input;
         self
+    }
+    /// <p>List of created artifacts up to the maximum number of results specified in the request.</p>
+    pub fn get_created_artifact_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CreatedArtifact>> {
+        &self.created_artifact_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

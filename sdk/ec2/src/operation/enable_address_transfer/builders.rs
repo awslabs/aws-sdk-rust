@@ -36,6 +36,13 @@ impl EnableAddressTransferFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the EnableAddressTransfer as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::enable_address_transfer::builders::EnableAddressTransferInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl EnableAddressTransferFluentBuilder {
         self.inner = self.inner.set_allocation_id(input);
         self
     }
+    /// <p>The allocation ID of an Elastic IP address.</p>
+    pub fn get_allocation_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_allocation_id()
+    }
     /// <p>The ID of the account that you want to transfer the Elastic IP address to.</p>
     pub fn transfer_account_id(
         mut self,
@@ -148,6 +159,10 @@ impl EnableAddressTransferFluentBuilder {
         self.inner = self.inner.set_transfer_account_id(input);
         self
     }
+    /// <p>The ID of the account that you want to transfer the Elastic IP address to.</p>
+    pub fn get_transfer_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_transfer_account_id()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -157,5 +172,9 @@ impl EnableAddressTransferFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

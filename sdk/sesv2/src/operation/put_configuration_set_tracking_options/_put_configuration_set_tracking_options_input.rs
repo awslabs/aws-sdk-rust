@@ -54,6 +54,10 @@ impl PutConfigurationSetTrackingOptionsInputBuilder {
         self.configuration_set_name = input;
         self
     }
+    /// <p>The name of the configuration set.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_set_name
+    }
     /// <p>The domain to use to track open and click events.</p>
     pub fn custom_redirect_domain(
         mut self,
@@ -69,6 +73,10 @@ impl PutConfigurationSetTrackingOptionsInputBuilder {
     ) -> Self {
         self.custom_redirect_domain = input;
         self
+    }
+    /// <p>The domain to use to track open and click events.</p>
+    pub fn get_custom_redirect_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_redirect_domain
     }
     /// Consumes the builder and constructs a [`PutConfigurationSetTrackingOptionsInput`](crate::operation::put_configuration_set_tracking_options::PutConfigurationSetTrackingOptionsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_configuration_set_tracking_options::PutConfigurationSetTrackingOptionsInput, ::aws_smithy_http::operation::error::BuildError>{

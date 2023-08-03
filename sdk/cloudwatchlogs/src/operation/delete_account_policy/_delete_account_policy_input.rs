@@ -49,6 +49,10 @@ impl DeleteAccountPolicyInputBuilder {
         self.policy_name = input;
         self
     }
+    /// <p>The name of the policy to delete.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_name
+    }
     /// <p>The type of policy to delete. Currently, the only valid value is <code>DATA_PROTECTION_POLICY</code>.</p>
     pub fn policy_type(mut self, input: crate::types::PolicyType) -> Self {
         self.policy_type = ::std::option::Option::Some(input);
@@ -61,6 +65,10 @@ impl DeleteAccountPolicyInputBuilder {
     ) -> Self {
         self.policy_type = input;
         self
+    }
+    /// <p>The type of policy to delete. Currently, the only valid value is <code>DATA_PROTECTION_POLICY</code>.</p>
+    pub fn get_policy_type(&self) -> &::std::option::Option<crate::types::PolicyType> {
+        &self.policy_type
     }
     /// Consumes the builder and constructs a [`DeleteAccountPolicyInput`](crate::operation::delete_account_policy::DeleteAccountPolicyInput).
     pub fn build(

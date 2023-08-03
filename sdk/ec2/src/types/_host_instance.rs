@@ -56,6 +56,10 @@ impl HostInstanceBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The ID of instance that is running on the Dedicated Host.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The instance type (for example, <code>m3.medium</code>) of the running instance.</p>
     pub fn instance_type(
         mut self,
@@ -72,6 +76,10 @@ impl HostInstanceBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The instance type (for example, <code>m3.medium</code>) of the running instance.</p>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_type
+    }
     /// <p>The ID of the Amazon Web Services account that owns the instance.</p>
     pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_id = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl HostInstanceBuilder {
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_id = input;
         self
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the instance.</p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
     }
     /// Consumes the builder and constructs a [`HostInstance`](crate::types::HostInstance).
     pub fn build(self) -> crate::types::HostInstance {

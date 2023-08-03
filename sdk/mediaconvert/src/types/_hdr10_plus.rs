@@ -48,6 +48,10 @@ impl Hdr10PlusBuilder {
         self.mastering_monitor_nits = input;
         self
     }
+    /// Specify the HDR10+ mastering display normalized peak luminance, in nits. This is the normalized actual peak luminance of the mastering display, as defined by ST 2094-40.
+    pub fn get_mastering_monitor_nits(&self) -> &::std::option::Option<i32> {
+        &self.mastering_monitor_nits
+    }
     /// Specify the HDR10+ target display nominal peak luminance, in nits. This is the nominal maximum luminance of the target display as defined by ST 2094-40.
     pub fn target_monitor_nits(mut self, input: i32) -> Self {
         self.target_monitor_nits = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl Hdr10PlusBuilder {
     pub fn set_target_monitor_nits(mut self, input: ::std::option::Option<i32>) -> Self {
         self.target_monitor_nits = input;
         self
+    }
+    /// Specify the HDR10+ target display nominal peak luminance, in nits. This is the nominal maximum luminance of the target display as defined by ST 2094-40.
+    pub fn get_target_monitor_nits(&self) -> &::std::option::Option<i32> {
+        &self.target_monitor_nits
     }
     /// Consumes the builder and constructs a [`Hdr10Plus`](crate::types::Hdr10Plus).
     pub fn build(self) -> crate::types::Hdr10Plus {

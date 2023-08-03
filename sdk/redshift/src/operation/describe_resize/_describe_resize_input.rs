@@ -50,6 +50,11 @@ impl DescribeResizeInputBuilder {
         self.cluster_identifier = input;
         self
     }
+    /// <p>The unique identifier of a cluster whose resize progress you are requesting. This parameter is case-sensitive.</p>
+    /// <p>By default, resize operations for all clusters defined for an Amazon Web Services account are returned.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_identifier
+    }
     /// Consumes the builder and constructs a [`DescribeResizeInput`](crate::operation::describe_resize::DescribeResizeInput).
     pub fn build(
         self,

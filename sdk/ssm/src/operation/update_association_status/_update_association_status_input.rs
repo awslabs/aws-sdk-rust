@@ -57,6 +57,10 @@ impl UpdateAssociationStatusInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the SSM document.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The managed node ID.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl UpdateAssociationStatusInputBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
+    }
+    /// <p>The managed node ID.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// <p>The association status.</p>
     pub fn association_status(mut self, input: crate::types::AssociationStatus) -> Self {
@@ -79,6 +87,12 @@ impl UpdateAssociationStatusInputBuilder {
     ) -> Self {
         self.association_status = input;
         self
+    }
+    /// <p>The association status.</p>
+    pub fn get_association_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::AssociationStatus> {
+        &self.association_status
     }
     /// Consumes the builder and constructs a [`UpdateAssociationStatusInput`](crate::operation::update_association_status::UpdateAssociationStatusInput).
     pub fn build(

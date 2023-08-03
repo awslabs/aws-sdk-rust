@@ -45,6 +45,10 @@ impl RebootInstanceInputBuilder {
         self.instance_name = input;
         self
     }
+    /// <p>The name of the instance to reboot.</p>
+    pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_name
+    }
     /// Consumes the builder and constructs a [`RebootInstanceInput`](crate::operation::reboot_instance::RebootInstanceInput).
     pub fn build(
         self,

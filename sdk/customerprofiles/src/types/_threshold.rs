@@ -48,6 +48,10 @@ impl ThresholdBuilder {
         self.value = input;
         self
     }
+    /// <p>The value of the threshold.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// <p>The operator of the threshold.</p>
     pub fn operator(mut self, input: crate::types::Operator) -> Self {
         self.operator = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ThresholdBuilder {
     pub fn set_operator(mut self, input: ::std::option::Option<crate::types::Operator>) -> Self {
         self.operator = input;
         self
+    }
+    /// <p>The operator of the threshold.</p>
+    pub fn get_operator(&self) -> &::std::option::Option<crate::types::Operator> {
+        &self.operator
     }
     /// Consumes the builder and constructs a [`Threshold`](crate::types::Threshold).
     pub fn build(self) -> crate::types::Threshold {

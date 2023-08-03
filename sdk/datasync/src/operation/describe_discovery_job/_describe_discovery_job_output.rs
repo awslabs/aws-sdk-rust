@@ -93,6 +93,10 @@ impl DescribeDiscoveryJobOutputBuilder {
         self.storage_system_arn = input;
         self
     }
+    /// <p>The ARN of the on-premises storage system you're running the discovery job on.</p>
+    pub fn get_storage_system_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_system_arn
+    }
     /// <p>The ARN of the discovery job.</p>
     pub fn discovery_job_arn(
         mut self,
@@ -109,6 +113,10 @@ impl DescribeDiscoveryJobOutputBuilder {
         self.discovery_job_arn = input;
         self
     }
+    /// <p>The ARN of the discovery job.</p>
+    pub fn get_discovery_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.discovery_job_arn
+    }
     /// <p>The number of minutes that the discovery job runs.</p>
     pub fn collection_duration_minutes(mut self, input: i32) -> Self {
         self.collection_duration_minutes = ::std::option::Option::Some(input);
@@ -118,6 +126,10 @@ impl DescribeDiscoveryJobOutputBuilder {
     pub fn set_collection_duration_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.collection_duration_minutes = input;
         self
+    }
+    /// <p>The number of minutes that the discovery job runs.</p>
+    pub fn get_collection_duration_minutes(&self) -> &::std::option::Option<i32> {
+        &self.collection_duration_minutes
     }
     /// <p>Indicates the status of a discovery job. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-statuses.html#discovery-job-statuses-table">Discovery job statuses</a>.</p>
     pub fn status(mut self, input: crate::types::DiscoveryJobStatus) -> Self {
@@ -132,6 +144,10 @@ impl DescribeDiscoveryJobOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>Indicates the status of a discovery job. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-statuses.html#discovery-job-statuses-table">Discovery job statuses</a>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DiscoveryJobStatus> {
+        &self.status
+    }
     /// <p>The time when the discovery job started.</p>
     pub fn job_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.job_start_time = ::std::option::Option::Some(input);
@@ -145,6 +161,10 @@ impl DescribeDiscoveryJobOutputBuilder {
         self.job_start_time = input;
         self
     }
+    /// <p>The time when the discovery job started.</p>
+    pub fn get_job_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.job_start_time
+    }
     /// <p>The time when the discovery job ended.</p>
     pub fn job_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.job_end_time = ::std::option::Option::Some(input);
@@ -157,6 +177,10 @@ impl DescribeDiscoveryJobOutputBuilder {
     ) -> Self {
         self.job_end_time = input;
         self
+    }
+    /// <p>The time when the discovery job ended.</p>
+    pub fn get_job_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.job_end_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

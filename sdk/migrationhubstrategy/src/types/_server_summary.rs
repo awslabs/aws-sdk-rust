@@ -51,6 +51,10 @@ impl ServerSummaryBuilder {
         self.server_os_type = input;
         self
     }
+    /// <p> Type of operating system for the servers. </p>
+    pub fn get_server_os_type(&self) -> &::std::option::Option<crate::types::ServerOsType> {
+        &self.server_os_type
+    }
     /// <p> Number of servers. </p>
     pub fn count(mut self, input: i32) -> Self {
         self.count = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl ServerSummaryBuilder {
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count = input;
         self
+    }
+    /// <p> Number of servers. </p>
+    pub fn get_count(&self) -> &::std::option::Option<i32> {
+        &self.count
     }
     /// Consumes the builder and constructs a [`ServerSummary`](crate::types::ServerSummary).
     pub fn build(self) -> crate::types::ServerSummary {

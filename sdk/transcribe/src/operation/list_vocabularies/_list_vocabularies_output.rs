@@ -66,6 +66,10 @@ impl ListVocabulariesOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>Lists all custom vocabularies that have the status specified in your request. Vocabularies are ordered by creation date, with the newest vocabulary first.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::VocabularyState> {
+        &self.status
+    }
     /// <p>If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -75,6 +79,10 @@ impl ListVocabulariesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `vocabularies`.
     ///
@@ -94,6 +102,12 @@ impl ListVocabulariesOutputBuilder {
     ) -> Self {
         self.vocabularies = input;
         self
+    }
+    /// <p>Provides information about the custom vocabularies that match the criteria specified in your request.</p>
+    pub fn get_vocabularies(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VocabularyInfo>> {
+        &self.vocabularies
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

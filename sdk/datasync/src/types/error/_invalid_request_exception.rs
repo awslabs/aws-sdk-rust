@@ -84,6 +84,10 @@ impl InvalidRequestExceptionBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
+    #[allow(missing_docs)] // documentation missing in model
     pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_code = ::std::option::Option::Some(input.into());
         self
@@ -92,6 +96,10 @@ impl InvalidRequestExceptionBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_code
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn datasync_error_code(
@@ -108,6 +116,10 @@ impl InvalidRequestExceptionBuilder {
     ) -> Self {
         self.datasync_error_code = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_datasync_error_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.datasync_error_code
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

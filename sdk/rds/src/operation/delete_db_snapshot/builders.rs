@@ -38,6 +38,12 @@ impl DeleteDBSnapshotFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteDBSnapshot as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_db_snapshot::builders::DeleteDbSnapshotInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,5 +141,10 @@ impl DeleteDBSnapshotFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_db_snapshot_identifier(input);
         self
+    }
+    /// <p>The DB snapshot identifier.</p>
+    /// <p>Constraints: Must be the name of an existing DB snapshot in the <code>available</code> state.</p>
+    pub fn get_db_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_snapshot_identifier()
     }
 }

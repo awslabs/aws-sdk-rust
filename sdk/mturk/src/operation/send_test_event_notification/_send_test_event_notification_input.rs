@@ -50,6 +50,12 @@ impl SendTestEventNotificationInputBuilder {
         self.notification = input;
         self
     }
+    /// <p> The notification specification to test. This value is identical to the value you would provide to the UpdateNotificationSettings operation when you establish the notification specification for a HIT type. </p>
+    pub fn get_notification(
+        &self,
+    ) -> &::std::option::Option<crate::types::NotificationSpecification> {
+        &self.notification
+    }
     /// <p> The event to simulate to test the notification specification. This event is included in the test message even if the notification specification does not include the event type. The notification specification does not filter out the test event. </p>
     pub fn test_event_type(mut self, input: crate::types::EventType) -> Self {
         self.test_event_type = ::std::option::Option::Some(input);
@@ -62,6 +68,10 @@ impl SendTestEventNotificationInputBuilder {
     ) -> Self {
         self.test_event_type = input;
         self
+    }
+    /// <p> The event to simulate to test the notification specification. This event is included in the test message even if the notification specification does not include the event type. The notification specification does not filter out the test event. </p>
+    pub fn get_test_event_type(&self) -> &::std::option::Option<crate::types::EventType> {
+        &self.test_event_type
     }
     /// Consumes the builder and constructs a [`SendTestEventNotificationInput`](crate::operation::send_test_event_notification::SendTestEventNotificationInput).
     pub fn build(

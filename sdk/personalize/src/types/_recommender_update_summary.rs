@@ -87,6 +87,12 @@ impl RecommenderUpdateSummaryBuilder {
         self.recommender_config = input;
         self
     }
+    /// <p>The configuration details of the recommender update.</p>
+    pub fn get_recommender_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::RecommenderConfig> {
+        &self.recommender_config
+    }
     /// <p>The date and time (in Unix format) that the recommender update was created.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
@@ -100,6 +106,10 @@ impl RecommenderUpdateSummaryBuilder {
         self.creation_date_time = input;
         self
     }
+    /// <p>The date and time (in Unix format) that the recommender update was created.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
+    }
     /// <p>The date and time (in Unix time) that the recommender update was last updated.</p>
     pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date_time = ::std::option::Option::Some(input);
@@ -112,6 +122,12 @@ impl RecommenderUpdateSummaryBuilder {
     ) -> Self {
         self.last_updated_date_time = input;
         self
+    }
+    /// <p>The date and time (in Unix time) that the recommender update was last updated.</p>
+    pub fn get_last_updated_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date_time
     }
     /// <p>The status of the recommender update.</p>
     /// <p>A recommender can be in one of the following states:</p>
@@ -135,6 +151,16 @@ impl RecommenderUpdateSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the recommender update.</p>
+    /// <p>A recommender can be in one of the following states:</p>
+    /// <ul>
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// <li> <p>STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li>
+    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>If a recommender update fails, the reason behind the failure.</p>
     pub fn failure_reason(
         mut self,
@@ -150,6 +176,10 @@ impl RecommenderUpdateSummaryBuilder {
     ) -> Self {
         self.failure_reason = input;
         self
+    }
+    /// <p>If a recommender update fails, the reason behind the failure.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
     }
     /// Consumes the builder and constructs a [`RecommenderUpdateSummary`](crate::types::RecommenderUpdateSummary).
     pub fn build(self) -> crate::types::RecommenderUpdateSummary {

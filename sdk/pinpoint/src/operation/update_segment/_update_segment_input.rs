@@ -63,6 +63,10 @@ impl UpdateSegmentInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The unique identifier for the segment.</p>
     pub fn segment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.segment_id = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl UpdateSegmentInputBuilder {
     pub fn set_segment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.segment_id = input;
         self
+    }
+    /// <p>The unique identifier for the segment.</p>
+    pub fn get_segment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.segment_id
     }
     /// <p>Specifies the configuration, dimension, and other settings for a segment. A WriteSegmentRequest object can include a Dimensions object or a SegmentGroups object, but not both.</p>
     pub fn write_segment_request(mut self, input: crate::types::WriteSegmentRequest) -> Self {
@@ -85,6 +93,12 @@ impl UpdateSegmentInputBuilder {
     ) -> Self {
         self.write_segment_request = input;
         self
+    }
+    /// <p>Specifies the configuration, dimension, and other settings for a segment. A WriteSegmentRequest object can include a Dimensions object or a SegmentGroups object, but not both.</p>
+    pub fn get_write_segment_request(
+        &self,
+    ) -> &::std::option::Option<crate::types::WriteSegmentRequest> {
+        &self.write_segment_request
     }
     /// Consumes the builder and constructs a [`UpdateSegmentInput`](crate::operation::update_segment::UpdateSegmentInput).
     pub fn build(

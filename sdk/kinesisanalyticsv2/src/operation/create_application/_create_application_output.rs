@@ -50,6 +50,12 @@ impl CreateApplicationOutputBuilder {
         self.application_detail = input;
         self
     }
+    /// <p>In response to your <code>CreateApplication</code> request, Kinesis Data Analytics returns a response with details of the application it created.</p>
+    pub fn get_application_detail(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationDetail> {
+        &self.application_detail
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

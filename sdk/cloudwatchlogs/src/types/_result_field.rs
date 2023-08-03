@@ -49,6 +49,10 @@ impl ResultFieldBuilder {
         self.field = input;
         self
     }
+    /// <p>The log event field.</p>
+    pub fn get_field(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field
+    }
     /// <p>The value of this field.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl ResultFieldBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value of this field.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`ResultField`](crate::types::ResultField).
     pub fn build(self) -> crate::types::ResultField {

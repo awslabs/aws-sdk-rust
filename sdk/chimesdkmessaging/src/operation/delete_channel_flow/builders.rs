@@ -38,6 +38,12 @@ impl DeleteChannelFlowFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteChannelFlow as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_channel_flow::builders::DeleteChannelFlowInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,5 +139,9 @@ impl DeleteChannelFlowFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_channel_flow_arn(input);
         self
+    }
+    /// <p>The ARN of the channel flow.</p>
+    pub fn get_channel_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_flow_arn()
     }
 }

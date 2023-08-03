@@ -141,6 +141,12 @@ impl LaunchConfigurationTemplateBuilder {
         self.launch_configuration_template_id = input;
         self
     }
+    /// <p>ID of the Launch Configuration Template.</p>
+    pub fn get_launch_configuration_template_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.launch_configuration_template_id
+    }
     /// <p>ARN of the Launch Configuration Template.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -150,6 +156,10 @@ impl LaunchConfigurationTemplateBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>ARN of the Launch Configuration Template.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -176,6 +186,14 @@ impl LaunchConfigurationTemplateBuilder {
         self.tags = input;
         self
     }
+    /// <p>Tags of the Launch Configuration Template.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>Launch disposition.</p>
     pub fn launch_disposition(mut self, input: crate::types::LaunchDisposition) -> Self {
         self.launch_disposition = ::std::option::Option::Some(input);
@@ -188,6 +206,12 @@ impl LaunchConfigurationTemplateBuilder {
     ) -> Self {
         self.launch_disposition = input;
         self
+    }
+    /// <p>Launch disposition.</p>
+    pub fn get_launch_disposition(
+        &self,
+    ) -> &::std::option::Option<crate::types::LaunchDisposition> {
+        &self.launch_disposition
     }
     /// <p>Target instance type right-sizing method.</p>
     pub fn target_instance_type_right_sizing_method(
@@ -205,6 +229,12 @@ impl LaunchConfigurationTemplateBuilder {
         self.target_instance_type_right_sizing_method = input;
         self
     }
+    /// <p>Target instance type right-sizing method.</p>
+    pub fn get_target_instance_type_right_sizing_method(
+        &self,
+    ) -> &::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod> {
+        &self.target_instance_type_right_sizing_method
+    }
     /// <p>Copy private IP.</p>
     pub fn copy_private_ip(mut self, input: bool) -> Self {
         self.copy_private_ip = ::std::option::Option::Some(input);
@@ -214,6 +244,10 @@ impl LaunchConfigurationTemplateBuilder {
     pub fn set_copy_private_ip(mut self, input: ::std::option::Option<bool>) -> Self {
         self.copy_private_ip = input;
         self
+    }
+    /// <p>Copy private IP.</p>
+    pub fn get_copy_private_ip(&self) -> &::std::option::Option<bool> {
+        &self.copy_private_ip
     }
     /// <p>Copy tags.</p>
     pub fn copy_tags(mut self, input: bool) -> Self {
@@ -225,6 +259,10 @@ impl LaunchConfigurationTemplateBuilder {
         self.copy_tags = input;
         self
     }
+    /// <p>Copy tags.</p>
+    pub fn get_copy_tags(&self) -> &::std::option::Option<bool> {
+        &self.copy_tags
+    }
     /// <p>Licensing.</p>
     pub fn licensing(mut self, input: crate::types::Licensing) -> Self {
         self.licensing = ::std::option::Option::Some(input);
@@ -234,6 +272,10 @@ impl LaunchConfigurationTemplateBuilder {
     pub fn set_licensing(mut self, input: ::std::option::Option<crate::types::Licensing>) -> Self {
         self.licensing = input;
         self
+    }
+    /// <p>Licensing.</p>
+    pub fn get_licensing(&self) -> &::std::option::Option<crate::types::Licensing> {
+        &self.licensing
     }
     /// <p>S3 bucket ARN to export Source Network templates.</p>
     pub fn export_bucket_arn(
@@ -250,6 +292,10 @@ impl LaunchConfigurationTemplateBuilder {
     ) -> Self {
         self.export_bucket_arn = input;
         self
+    }
+    /// <p>S3 bucket ARN to export Source Network templates.</p>
+    pub fn get_export_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.export_bucket_arn
     }
     /// Consumes the builder and constructs a [`LaunchConfigurationTemplate`](crate::types::LaunchConfigurationTemplate).
     pub fn build(self) -> crate::types::LaunchConfigurationTemplate {

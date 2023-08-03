@@ -47,6 +47,10 @@ impl DeviceMethodBuilder {
         self.device_type = input;
         self
     }
+    /// <p>The type of the device, such as "button".</p>
+    pub fn get_device_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_type
+    }
     /// <p>The name of the method applicable to the deviceType.</p>
     pub fn method_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.method_name = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl DeviceMethodBuilder {
     pub fn set_method_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.method_name = input;
         self
+    }
+    /// <p>The name of the method applicable to the deviceType.</p>
+    pub fn get_method_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.method_name
     }
     /// Consumes the builder and constructs a [`DeviceMethod`](crate::types::DeviceMethod).
     pub fn build(self) -> crate::types::DeviceMethod {

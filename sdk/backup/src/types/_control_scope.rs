@@ -80,6 +80,12 @@ impl ControlScopeBuilder {
         self.compliance_resource_ids = input;
         self
     }
+    /// <p>The ID of the only Amazon Web Services resource that you want your control scope to contain.</p>
+    pub fn get_compliance_resource_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.compliance_resource_ids
+    }
     /// Appends an item to `compliance_resource_types`.
     ///
     /// To override the contents of this collection use [`set_compliance_resource_types`](Self::set_compliance_resource_types).
@@ -101,6 +107,12 @@ impl ControlScopeBuilder {
     ) -> Self {
         self.compliance_resource_types = input;
         self
+    }
+    /// <p>Describes whether the control scope includes one or more types of resources, such as <code>EFS</code> or <code>RDS</code>.</p>
+    pub fn get_compliance_resource_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.compliance_resource_types
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -126,6 +138,14 @@ impl ControlScopeBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tag key-value pair applied to those Amazon Web Services resources that you want to trigger an evaluation for a rule. A maximum of one key-value pair can be provided. The tag value is optional, but it cannot be an empty string. The structure to assign a tag is: <code>[{"Key":"string","Value":"string"}]</code>.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`ControlScope`](crate::types::ControlScope).
     pub fn build(self) -> crate::types::ControlScope {

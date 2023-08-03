@@ -115,6 +115,10 @@ impl SemanticTypeBuilder {
         self.type_name = input;
         self
     }
+    /// <p>The semantic type name.</p>
+    pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.type_name
+    }
     /// <p>The semantic type sub type name.</p>
     pub fn sub_type_name(
         mut self,
@@ -130,6 +134,10 @@ impl SemanticTypeBuilder {
     ) -> Self {
         self.sub_type_name = input;
         self
+    }
+    /// <p>The semantic type sub type name.</p>
+    pub fn get_sub_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sub_type_name
     }
     /// Adds a key-value pair to `type_parameters`.
     ///
@@ -156,6 +164,14 @@ impl SemanticTypeBuilder {
         self.type_parameters = input;
         self
     }
+    /// <p>The semantic type parameters.</p>
+    pub fn get_type_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.type_parameters
+    }
     /// <p>The semantic type truthy cell value.</p>
     pub fn truthy_cell_value(
         mut self,
@@ -171,6 +187,10 @@ impl SemanticTypeBuilder {
     ) -> Self {
         self.truthy_cell_value = input;
         self
+    }
+    /// <p>The semantic type truthy cell value.</p>
+    pub fn get_truthy_cell_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.truthy_cell_value
     }
     /// Appends an item to `truthy_cell_value_synonyms`.
     ///
@@ -194,6 +214,12 @@ impl SemanticTypeBuilder {
         self.truthy_cell_value_synonyms = input;
         self
     }
+    /// <p>The other names or aliases for the true cell value.</p>
+    pub fn get_truthy_cell_value_synonyms(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.truthy_cell_value_synonyms
+    }
     /// <p>The semantic type falsey cell value.</p>
     pub fn falsey_cell_value(
         mut self,
@@ -209,6 +235,10 @@ impl SemanticTypeBuilder {
     ) -> Self {
         self.falsey_cell_value = input;
         self
+    }
+    /// <p>The semantic type falsey cell value.</p>
+    pub fn get_falsey_cell_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.falsey_cell_value
     }
     /// Appends an item to `falsey_cell_value_synonyms`.
     ///
@@ -231,6 +261,12 @@ impl SemanticTypeBuilder {
     ) -> Self {
         self.falsey_cell_value_synonyms = input;
         self
+    }
+    /// <p>The other names or aliases for the false cell value.</p>
+    pub fn get_falsey_cell_value_synonyms(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.falsey_cell_value_synonyms
     }
     /// Consumes the builder and constructs a [`SemanticType`](crate::types::SemanticType).
     pub fn build(self) -> crate::types::SemanticType {

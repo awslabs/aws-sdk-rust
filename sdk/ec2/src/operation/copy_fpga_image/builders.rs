@@ -36,6 +36,12 @@ impl CopyFpgaImageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CopyFpgaImage as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::copy_fpga_image::builders::CopyFpgaImageInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl CopyFpgaImageFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>The ID of the source AFI.</p>
     pub fn source_fpga_image_id(
         mut self,
@@ -134,6 +144,10 @@ impl CopyFpgaImageFluentBuilder {
         self.inner = self.inner.set_source_fpga_image_id(input);
         self
     }
+    /// <p>The ID of the source AFI.</p>
+    pub fn get_source_fpga_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_fpga_image_id()
+    }
     /// <p>The description for the new AFI.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -144,6 +158,10 @@ impl CopyFpgaImageFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>The description for the new AFI.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The name for the new AFI. The default is the name of the source AFI.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -153,6 +171,10 @@ impl CopyFpgaImageFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name for the new AFI. The default is the name of the source AFI.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The Region that contains the source AFI.</p>
     pub fn source_region(
@@ -170,6 +192,10 @@ impl CopyFpgaImageFluentBuilder {
         self.inner = self.inner.set_source_region(input);
         self
     }
+    /// <p>The Region that contains the source AFI.</p>
+    pub fn get_source_region(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_region()
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -179,5 +205,9 @@ impl CopyFpgaImageFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

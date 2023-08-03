@@ -63,6 +63,14 @@ impl ReferenceSetsBuilder {
         self.ip_set_references = input;
         self
     }
+    /// <p>The list of IP set references.</p>
+    pub fn get_ip_set_references(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::IpSetReference>,
+    > {
+        &self.ip_set_references
+    }
     /// Consumes the builder and constructs a [`ReferenceSets`](crate::types::ReferenceSets).
     pub fn build(self) -> crate::types::ReferenceSets {
         crate::types::ReferenceSets {

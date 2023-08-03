@@ -40,6 +40,10 @@ impl GetReplicationSetInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the replication set you want to retrieve.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`GetReplicationSetInput`](crate::operation::get_replication_set::GetReplicationSetInput).
     pub fn build(
         self,

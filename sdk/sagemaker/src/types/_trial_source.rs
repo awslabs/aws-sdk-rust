@@ -48,6 +48,10 @@ impl TrialSourceBuilder {
         self.source_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the source.</p>
+    pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_arn
+    }
     /// <p>The source job type.</p>
     pub fn source_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_type = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl TrialSourceBuilder {
     pub fn set_source_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_type = input;
         self
+    }
+    /// <p>The source job type.</p>
+    pub fn get_source_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_type
     }
     /// Consumes the builder and constructs a [`TrialSource`](crate::types::TrialSource).
     pub fn build(self) -> crate::types::TrialSource {

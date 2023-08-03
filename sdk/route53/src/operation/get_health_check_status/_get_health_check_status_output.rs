@@ -65,6 +65,12 @@ impl GetHealthCheckStatusOutputBuilder {
         self.health_check_observations = input;
         self
     }
+    /// <p>A list that contains one <code>HealthCheckObservation</code> element for each Amazon Route 53 health checker that is reporting a status about the health check endpoint.</p>
+    pub fn get_health_check_observations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HealthCheckObservation>> {
+        &self.health_check_observations
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -125,6 +125,10 @@ impl EventBuilder {
         self.event_id = input;
         self
     }
+    /// <p>An ID associated with the event. If an event ID is not provided, Amazon Personalize generates a unique ID for the event. An event ID is not used as an input to the model. Amazon Personalize uses the event ID to distinquish unique events. Any subsequent events after the first with the same event ID are not used in model training.</p>
+    pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_id
+    }
     /// <p>The type of event, such as click or download. This property corresponds to the <code>EVENT_TYPE</code> field of your Interactions schema and depends on the types of events you are tracking.</p>
     pub fn event_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_type = ::std::option::Option::Some(input.into());
@@ -134,6 +138,10 @@ impl EventBuilder {
     pub fn set_event_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_type = input;
         self
+    }
+    /// <p>The type of event, such as click or download. This property corresponds to the <code>EVENT_TYPE</code> field of your Interactions schema and depends on the types of events you are tracking.</p>
+    pub fn get_event_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_type
     }
     /// <p>The event value that corresponds to the <code>EVENT_VALUE</code> field of the Interactions schema.</p>
     pub fn event_value(mut self, input: f32) -> Self {
@@ -145,6 +153,10 @@ impl EventBuilder {
         self.event_value = input;
         self
     }
+    /// <p>The event value that corresponds to the <code>EVENT_VALUE</code> field of the Interactions schema.</p>
+    pub fn get_event_value(&self) -> &::std::option::Option<f32> {
+        &self.event_value
+    }
     /// <p>The item ID key that corresponds to the <code>ITEM_ID</code> field of the Interactions schema.</p>
     pub fn item_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.item_id = ::std::option::Option::Some(input.into());
@@ -154,6 +166,10 @@ impl EventBuilder {
     pub fn set_item_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.item_id = input;
         self
+    }
+    /// <p>The item ID key that corresponds to the <code>ITEM_ID</code> field of the Interactions schema.</p>
+    pub fn get_item_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.item_id
     }
     /// <p>A string map of event-specific data that you might choose to record. For example, if a user rates a movie on your site, other than movie ID (<code>itemId</code>) and rating (<code>eventValue</code>) , you might also send the number of movie ratings made by the user.</p>
     /// <p>Each item in the map consists of a key-value pair. For example,</p>
@@ -171,6 +187,13 @@ impl EventBuilder {
         self.properties = input;
         self
     }
+    /// <p>A string map of event-specific data that you might choose to record. For example, if a user rates a movie on your site, other than movie ID (<code>itemId</code>) and rating (<code>eventValue</code>) , you might also send the number of movie ratings made by the user.</p>
+    /// <p>Each item in the map consists of a key-value pair. For example,</p>
+    /// <p> <code>{"numberOfRatings": "12"}</code> </p>
+    /// <p>The keys use camel case names that match the fields in the Interactions schema. In the above example, the <code>numberOfRatings</code> would match the 'NUMBER_OF_RATINGS' field defined in the Interactions schema.</p>
+    pub fn get_properties(&self) -> &::std::option::Option<::std::string::String> {
+        &self.properties
+    }
     /// <p>The timestamp (in Unix time) on the client side when the event occurred.</p>
     pub fn sent_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.sent_at = ::std::option::Option::Some(input);
@@ -183,6 +206,10 @@ impl EventBuilder {
     ) -> Self {
         self.sent_at = input;
         self
+    }
+    /// <p>The timestamp (in Unix time) on the client side when the event occurred.</p>
+    pub fn get_sent_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.sent_at
     }
     /// <p>The ID of the list of recommendations that contains the item the user interacted with. Provide a <code>recommendationId</code> to have Amazon Personalize implicitly record the recommendations you show your user as impressions data. Or provide a <code>recommendationId</code> if you use a metric attribution to measure the impact of recommendations. </p>
     /// <p> For more information on recording impressions data, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data">Recording impressions data</a>. For more information on creating a metric attribution see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of recommendations</a>. </p>
@@ -201,6 +228,11 @@ impl EventBuilder {
     ) -> Self {
         self.recommendation_id = input;
         self
+    }
+    /// <p>The ID of the list of recommendations that contains the item the user interacted with. Provide a <code>recommendationId</code> to have Amazon Personalize implicitly record the recommendations you show your user as impressions data. Or provide a <code>recommendationId</code> if you use a metric attribution to measure the impact of recommendations. </p>
+    /// <p> For more information on recording impressions data, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data">Recording impressions data</a>. For more information on creating a metric attribution see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of recommendations</a>. </p>
+    pub fn get_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommendation_id
     }
     /// Appends an item to `impression`.
     ///
@@ -221,6 +253,10 @@ impl EventBuilder {
         self.impression = input;
         self
     }
+    /// <p>A list of item IDs that represents the sequence of items you have shown the user. For example, <code>["itemId1", "itemId2", "itemId3"]</code>. Provide a list of items to manually record impressions data for an event. For more information on recording impressions data, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data">Recording impressions data</a>. </p>
+    pub fn get_impression(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.impression
+    }
     /// <p>Contains information about the metric attribution associated with an event. For more information about metric attributions, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of recommendations</a>.</p>
     pub fn metric_attribution(mut self, input: crate::types::MetricAttribution) -> Self {
         self.metric_attribution = ::std::option::Option::Some(input);
@@ -233,6 +269,12 @@ impl EventBuilder {
     ) -> Self {
         self.metric_attribution = input;
         self
+    }
+    /// <p>Contains information about the metric attribution associated with an event. For more information about metric attributions, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of recommendations</a>.</p>
+    pub fn get_metric_attribution(
+        &self,
+    ) -> &::std::option::Option<crate::types::MetricAttribution> {
+        &self.metric_attribution
     }
     /// Consumes the builder and constructs a [`Event`](crate::types::Event).
     pub fn build(self) -> crate::types::Event {

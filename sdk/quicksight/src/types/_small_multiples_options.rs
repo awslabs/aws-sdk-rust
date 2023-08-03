@@ -78,6 +78,11 @@ impl SmallMultiplesOptionsBuilder {
         self.max_visible_rows = input;
         self
     }
+    /// <p>Sets the maximum number of visible rows to display in the grid of small multiples panels.</p>
+    /// <p>The default value is <code>Auto</code>, which automatically adjusts the rows in the grid to fit the overall layout and size of the given chart.</p>
+    pub fn get_max_visible_rows(&self) -> &::std::option::Option<i64> {
+        &self.max_visible_rows
+    }
     /// <p>Sets the maximum number of visible columns to display in the grid of small multiples panels.</p>
     /// <p>The default is <code>Auto</code>, which automatically adjusts the columns in the grid to fit the overall layout and size of the given chart.</p>
     pub fn max_visible_columns(mut self, input: i64) -> Self {
@@ -89,6 +94,11 @@ impl SmallMultiplesOptionsBuilder {
     pub fn set_max_visible_columns(mut self, input: ::std::option::Option<i64>) -> Self {
         self.max_visible_columns = input;
         self
+    }
+    /// <p>Sets the maximum number of visible columns to display in the grid of small multiples panels.</p>
+    /// <p>The default is <code>Auto</code>, which automatically adjusts the columns in the grid to fit the overall layout and size of the given chart.</p>
+    pub fn get_max_visible_columns(&self) -> &::std::option::Option<i64> {
+        &self.max_visible_columns
     }
     /// <p>Configures the display options for each small multiples panel.</p>
     pub fn panel_configuration(mut self, input: crate::types::PanelConfiguration) -> Self {
@@ -103,6 +113,12 @@ impl SmallMultiplesOptionsBuilder {
         self.panel_configuration = input;
         self
     }
+    /// <p>Configures the display options for each small multiples panel.</p>
+    pub fn get_panel_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::PanelConfiguration> {
+        &self.panel_configuration
+    }
     /// <p>The properties of a small multiples X axis.</p>
     pub fn x_axis(mut self, input: crate::types::SmallMultiplesAxisProperties) -> Self {
         self.x_axis = ::std::option::Option::Some(input);
@@ -116,6 +132,10 @@ impl SmallMultiplesOptionsBuilder {
         self.x_axis = input;
         self
     }
+    /// <p>The properties of a small multiples X axis.</p>
+    pub fn get_x_axis(&self) -> &::std::option::Option<crate::types::SmallMultiplesAxisProperties> {
+        &self.x_axis
+    }
     /// <p>The properties of a small multiples Y axis.</p>
     pub fn y_axis(mut self, input: crate::types::SmallMultiplesAxisProperties) -> Self {
         self.y_axis = ::std::option::Option::Some(input);
@@ -128,6 +148,10 @@ impl SmallMultiplesOptionsBuilder {
     ) -> Self {
         self.y_axis = input;
         self
+    }
+    /// <p>The properties of a small multiples Y axis.</p>
+    pub fn get_y_axis(&self) -> &::std::option::Option<crate::types::SmallMultiplesAxisProperties> {
+        &self.y_axis
     }
     /// Consumes the builder and constructs a [`SmallMultiplesOptions`](crate::types::SmallMultiplesOptions).
     pub fn build(self) -> crate::types::SmallMultiplesOptions {

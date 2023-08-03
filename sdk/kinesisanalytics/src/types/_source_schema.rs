@@ -59,6 +59,10 @@ impl SourceSchemaBuilder {
         self.record_format = input;
         self
     }
+    /// <p>Specifies the format of the records on the streaming source.</p>
+    pub fn get_record_format(&self) -> &::std::option::Option<crate::types::RecordFormat> {
+        &self.record_format
+    }
     /// <p>Specifies the encoding of the records in the streaming source. For example, UTF-8.</p>
     pub fn record_encoding(
         mut self,
@@ -74,6 +78,10 @@ impl SourceSchemaBuilder {
     ) -> Self {
         self.record_encoding = input;
         self
+    }
+    /// <p>Specifies the encoding of the records in the streaming source. For example, UTF-8.</p>
+    pub fn get_record_encoding(&self) -> &::std::option::Option<::std::string::String> {
+        &self.record_encoding
     }
     /// Appends an item to `record_columns`.
     ///
@@ -93,6 +101,12 @@ impl SourceSchemaBuilder {
     ) -> Self {
         self.record_columns = input;
         self
+    }
+    /// <p>A list of <code>RecordColumn</code> objects.</p>
+    pub fn get_record_columns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecordColumn>> {
+        &self.record_columns
     }
     /// Consumes the builder and constructs a [`SourceSchema`](crate::types::SourceSchema).
     pub fn build(self) -> crate::types::SourceSchema {

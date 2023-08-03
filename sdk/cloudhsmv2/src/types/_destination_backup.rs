@@ -67,6 +67,10 @@ impl DestinationBackupBuilder {
         self.create_timestamp = input;
         self
     }
+    /// <p>The date and time when both the source backup was created.</p>
+    pub fn get_create_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_timestamp
+    }
     /// <p>The AWS region that contains the source backup from which the new backup was copied.</p>
     pub fn source_region(
         mut self,
@@ -82,6 +86,10 @@ impl DestinationBackupBuilder {
     ) -> Self {
         self.source_region = input;
         self
+    }
+    /// <p>The AWS region that contains the source backup from which the new backup was copied.</p>
+    pub fn get_source_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_region
     }
     /// <p>The identifier (ID) of the source backup from which the new backup was copied.</p>
     pub fn source_backup(
@@ -99,6 +107,10 @@ impl DestinationBackupBuilder {
         self.source_backup = input;
         self
     }
+    /// <p>The identifier (ID) of the source backup from which the new backup was copied.</p>
+    pub fn get_source_backup(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_backup
+    }
     /// <p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>
     pub fn source_cluster(
         mut self,
@@ -114,6 +126,10 @@ impl DestinationBackupBuilder {
     ) -> Self {
         self.source_cluster = input;
         self
+    }
+    /// <p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>
+    pub fn get_source_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_cluster
     }
     /// Consumes the builder and constructs a [`DestinationBackup`](crate::types::DestinationBackup).
     pub fn build(self) -> crate::types::DestinationBackup {

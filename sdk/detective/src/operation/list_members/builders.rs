@@ -38,6 +38,10 @@ impl ListMembersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListMembers as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_members::builders::ListMembersInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +133,10 @@ impl ListMembersFluentBuilder {
         self.inner = self.inner.set_graph_arn(input);
         self
     }
+    /// <p>The ARN of the behavior graph for which to retrieve the list of member accounts.</p>
+    pub fn get_graph_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_graph_arn()
+    }
     /// <p>For requests to retrieve the next page of member account results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -139,6 +147,10 @@ impl ListMembersFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>For requests to retrieve the next page of member account results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of member accounts to include in the response. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -148,5 +160,9 @@ impl ListMembersFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of member accounts to include in the response. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

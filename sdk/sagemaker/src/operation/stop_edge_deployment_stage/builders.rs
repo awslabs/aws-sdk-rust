@@ -37,6 +37,13 @@ impl StopEdgeDeploymentStageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StopEdgeDeploymentStage as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::stop_edge_deployment_stage::builders::StopEdgeDeploymentStageInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl StopEdgeDeploymentStageFluentBuilder {
         self.inner = self.inner.set_edge_deployment_plan_name(input);
         self
     }
+    /// <p>The name of the edge deployment plan to stop.</p>
+    pub fn get_edge_deployment_plan_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_edge_deployment_plan_name()
+    }
     /// <p>The name of the stage to stop.</p>
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stage_name(input.into());
@@ -142,5 +153,9 @@ impl StopEdgeDeploymentStageFluentBuilder {
     pub fn set_stage_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stage_name(input);
         self
+    }
+    /// <p>The name of the stage to stop.</p>
+    pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stage_name()
     }
 }

@@ -76,6 +76,10 @@ impl CreateTrustAnchorInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the trust anchor.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The trust anchor type and its related certificate data.</p>
     pub fn source(mut self, input: crate::types::Source) -> Self {
         self.source = ::std::option::Option::Some(input);
@@ -86,6 +90,10 @@ impl CreateTrustAnchorInputBuilder {
         self.source = input;
         self
     }
+    /// <p>The trust anchor type and its related certificate data.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::Source> {
+        &self.source
+    }
     /// <p>Specifies whether the trust anchor is enabled.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -95,6 +103,10 @@ impl CreateTrustAnchorInputBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    /// <p>Specifies whether the trust anchor is enabled.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// Appends an item to `tags`.
     ///
@@ -115,6 +127,10 @@ impl CreateTrustAnchorInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags to attach to the trust anchor.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Appends an item to `notification_settings`.
     ///
     /// To override the contents of this collection use [`set_notification_settings`](Self::set_notification_settings).
@@ -133,6 +149,12 @@ impl CreateTrustAnchorInputBuilder {
     ) -> Self {
         self.notification_settings = input;
         self
+    }
+    /// <p>A list of notification settings to be associated to the trust anchor.</p>
+    pub fn get_notification_settings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationSetting>> {
+        &self.notification_settings
     }
     /// Consumes the builder and constructs a [`CreateTrustAnchorInput`](crate::operation::create_trust_anchor::CreateTrustAnchorInput).
     pub fn build(

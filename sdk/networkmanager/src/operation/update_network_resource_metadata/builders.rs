@@ -36,6 +36,10 @@ impl UpdateNetworkResourceMetadataFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateNetworkResourceMetadata as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_network_resource_metadata::builders::UpdateNetworkResourceMetadataInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl UpdateNetworkResourceMetadataFluentBuilder {
         self.inner = self.inner.set_global_network_id(input);
         self
     }
+    /// <p>The ID of the global network.</p>
+    pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_global_network_id()
+    }
     /// <p>The ARN of the resource.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
@@ -141,6 +149,10 @@ impl UpdateNetworkResourceMetadataFluentBuilder {
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
+    }
+    /// <p>The ARN of the resource.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
     }
     /// Adds a key-value pair to `Metadata`.
     ///
@@ -164,5 +176,13 @@ impl UpdateNetworkResourceMetadataFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_metadata(input);
         self
+    }
+    /// <p>The resource metadata.</p>
+    pub fn get_metadata(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_metadata()
     }
 }

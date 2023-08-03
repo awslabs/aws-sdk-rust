@@ -40,6 +40,10 @@ impl AntennaDemodDecodeDetailsBuilder {
         self.output_node = input;
         self
     }
+    /// <p>Name of an antenna demod decode output node used in a contact.</p>
+    pub fn get_output_node(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_node
+    }
     /// Consumes the builder and constructs a [`AntennaDemodDecodeDetails`](crate::types::AntennaDemodDecodeDetails).
     pub fn build(self) -> crate::types::AntennaDemodDecodeDetails {
         crate::types::AntennaDemodDecodeDetails {

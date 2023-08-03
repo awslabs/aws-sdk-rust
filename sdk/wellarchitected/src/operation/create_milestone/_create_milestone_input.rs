@@ -64,6 +64,10 @@ impl CreateMilestoneInputBuilder {
         self.workload_id = input;
         self
     }
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workload_id
+    }
     /// <p>The name of the milestone in a workload.</p>
     /// <p>Milestone names must be unique within a workload.</p>
     pub fn milestone_name(
@@ -81,6 +85,11 @@ impl CreateMilestoneInputBuilder {
     ) -> Self {
         self.milestone_name = input;
         self
+    }
+    /// <p>The name of the milestone in a workload.</p>
+    /// <p>Milestone names must be unique within a workload.</p>
+    pub fn get_milestone_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.milestone_name
     }
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
@@ -103,6 +112,13 @@ impl CreateMilestoneInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
+    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
+    /// </important>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Consumes the builder and constructs a [`CreateMilestoneInput`](crate::operation::create_milestone::CreateMilestoneInput).
     pub fn build(

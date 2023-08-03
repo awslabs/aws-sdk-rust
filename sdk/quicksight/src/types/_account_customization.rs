@@ -54,6 +54,10 @@ impl AccountCustomizationBuilder {
         self.default_theme = input;
         self
     }
+    /// <p>The default theme for this Amazon QuickSight subscription.</p>
+    pub fn get_default_theme(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_theme
+    }
     /// <p>The default email customization template.</p>
     pub fn default_email_customization_template(
         mut self,
@@ -69,6 +73,12 @@ impl AccountCustomizationBuilder {
     ) -> Self {
         self.default_email_customization_template = input;
         self
+    }
+    /// <p>The default email customization template.</p>
+    pub fn get_default_email_customization_template(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.default_email_customization_template
     }
     /// Consumes the builder and constructs a [`AccountCustomization`](crate::types::AccountCustomization).
     pub fn build(self) -> crate::types::AccountCustomization {

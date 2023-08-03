@@ -48,6 +48,10 @@ impl ValidationWarningBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the object that contains the validation warning.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Appends an item to `warnings`.
     ///
     /// To override the contents of this collection use [`set_warnings`](Self::set_warnings).
@@ -66,6 +70,10 @@ impl ValidationWarningBuilder {
     ) -> Self {
         self.warnings = input;
         self
+    }
+    /// <p>A description of the validation warning.</p>
+    pub fn get_warnings(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.warnings
     }
     /// Consumes the builder and constructs a [`ValidationWarning`](crate::types::ValidationWarning).
     pub fn build(self) -> crate::types::ValidationWarning {

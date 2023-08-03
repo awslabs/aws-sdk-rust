@@ -51,6 +51,10 @@ impl ModelEndpointDataBlobBuilder {
         self.byte_buffer = input;
         self
     }
+    /// <p>The byte buffer of the Amazon SageMaker model endpoint input data blob.</p>
+    pub fn get_byte_buffer(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.byte_buffer
+    }
     /// <p>The content type of the Amazon SageMaker model endpoint input data blob. </p>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl ModelEndpointDataBlobBuilder {
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
         self
+    }
+    /// <p>The content type of the Amazon SageMaker model endpoint input data blob. </p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_type
     }
     /// Consumes the builder and constructs a [`ModelEndpointDataBlob`](crate::types::ModelEndpointDataBlob).
     pub fn build(self) -> crate::types::ModelEndpointDataBlob {

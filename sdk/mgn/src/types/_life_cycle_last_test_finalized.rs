@@ -46,6 +46,10 @@ impl LifeCycleLastTestFinalizedBuilder {
         self.api_call_date_time = input;
         self
     }
+    /// <p>Lifecycle Test failed API call date and time.</p>
+    pub fn get_api_call_date_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_call_date_time
+    }
     /// Consumes the builder and constructs a [`LifeCycleLastTestFinalized`](crate::types::LifeCycleLastTestFinalized).
     pub fn build(self) -> crate::types::LifeCycleLastTestFinalized {
         crate::types::LifeCycleLastTestFinalized {

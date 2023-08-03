@@ -110,6 +110,10 @@ impl UpdateDataSourceInputBuilder {
         self.aws_account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account. </p>
     pub fn data_source_id(
         mut self,
@@ -126,6 +130,10 @@ impl UpdateDataSourceInputBuilder {
         self.data_source_id = input;
         self
     }
+    /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account. </p>
+    pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source_id
+    }
     /// <p>A display name for the data source.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -135,6 +143,10 @@ impl UpdateDataSourceInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>A display name for the data source.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The parameters that Amazon QuickSight uses to connect to your underlying source.</p>
     pub fn data_source_parameters(mut self, input: crate::types::DataSourceParameters) -> Self {
@@ -149,6 +161,12 @@ impl UpdateDataSourceInputBuilder {
         self.data_source_parameters = input;
         self
     }
+    /// <p>The parameters that Amazon QuickSight uses to connect to your underlying source.</p>
+    pub fn get_data_source_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataSourceParameters> {
+        &self.data_source_parameters
+    }
     /// <p>The credentials that Amazon QuickSight that uses to connect to your underlying source. Currently, only credentials based on user name and password are supported.</p>
     pub fn credentials(mut self, input: crate::types::DataSourceCredentials) -> Self {
         self.credentials = ::std::option::Option::Some(input);
@@ -161,6 +179,10 @@ impl UpdateDataSourceInputBuilder {
     ) -> Self {
         self.credentials = input;
         self
+    }
+    /// <p>The credentials that Amazon QuickSight that uses to connect to your underlying source. Currently, only credentials based on user name and password are supported.</p>
+    pub fn get_credentials(&self) -> &::std::option::Option<crate::types::DataSourceCredentials> {
+        &self.credentials
     }
     /// <p>Use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to your underlying source.</p>
     pub fn vpc_connection_properties(
@@ -178,6 +200,12 @@ impl UpdateDataSourceInputBuilder {
         self.vpc_connection_properties = input;
         self
     }
+    /// <p>Use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to your underlying source.</p>
+    pub fn get_vpc_connection_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::VpcConnectionProperties> {
+        &self.vpc_connection_properties
+    }
     /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying source.</p>
     pub fn ssl_properties(mut self, input: crate::types::SslProperties) -> Self {
         self.ssl_properties = ::std::option::Option::Some(input);
@@ -190,6 +218,10 @@ impl UpdateDataSourceInputBuilder {
     ) -> Self {
         self.ssl_properties = input;
         self
+    }
+    /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying source.</p>
+    pub fn get_ssl_properties(&self) -> &::std::option::Option<crate::types::SslProperties> {
+        &self.ssl_properties
     }
     /// Consumes the builder and constructs a [`UpdateDataSourceInput`](crate::operation::update_data_source::UpdateDataSourceInput).
     pub fn build(

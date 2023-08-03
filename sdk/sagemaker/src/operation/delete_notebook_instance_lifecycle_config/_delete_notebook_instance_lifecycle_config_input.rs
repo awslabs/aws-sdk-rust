@@ -46,6 +46,12 @@ impl DeleteNotebookInstanceLifecycleConfigInputBuilder {
         self.notebook_instance_lifecycle_config_name = input;
         self
     }
+    /// <p>The name of the lifecycle configuration to delete.</p>
+    pub fn get_notebook_instance_lifecycle_config_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.notebook_instance_lifecycle_config_name
+    }
     /// Consumes the builder and constructs a [`DeleteNotebookInstanceLifecycleConfigInput`](crate::operation::delete_notebook_instance_lifecycle_config::DeleteNotebookInstanceLifecycleConfigInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_notebook_instance_lifecycle_config::DeleteNotebookInstanceLifecycleConfigInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

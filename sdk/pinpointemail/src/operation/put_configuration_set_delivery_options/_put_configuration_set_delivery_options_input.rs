@@ -62,6 +62,10 @@ impl PutConfigurationSetDeliveryOptionsInputBuilder {
         self.configuration_set_name = input;
         self
     }
+    /// <p>The name of the configuration set that you want to associate with a dedicated IP pool.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_set_name
+    }
     /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.</p>
     pub fn tls_policy(mut self, input: crate::types::TlsPolicy) -> Self {
         self.tls_policy = ::std::option::Option::Some(input);
@@ -71,6 +75,10 @@ impl PutConfigurationSetDeliveryOptionsInputBuilder {
     pub fn set_tls_policy(mut self, input: ::std::option::Option<crate::types::TlsPolicy>) -> Self {
         self.tls_policy = input;
         self
+    }
+    /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.</p>
+    pub fn get_tls_policy(&self) -> &::std::option::Option<crate::types::TlsPolicy> {
+        &self.tls_policy
     }
     /// <p>The name of the dedicated IP pool that you want to associate with the configuration set.</p>
     pub fn sending_pool_name(
@@ -87,6 +95,10 @@ impl PutConfigurationSetDeliveryOptionsInputBuilder {
     ) -> Self {
         self.sending_pool_name = input;
         self
+    }
+    /// <p>The name of the dedicated IP pool that you want to associate with the configuration set.</p>
+    pub fn get_sending_pool_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sending_pool_name
     }
     /// Consumes the builder and constructs a [`PutConfigurationSetDeliveryOptionsInput`](crate::operation::put_configuration_set_delivery_options::PutConfigurationSetDeliveryOptionsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_configuration_set_delivery_options::PutConfigurationSetDeliveryOptionsInput, ::aws_smithy_http::operation::error::BuildError>{

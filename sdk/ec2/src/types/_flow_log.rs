@@ -169,6 +169,10 @@ impl FlowLogBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The date and time the flow log was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>Information about the error that occurred. <code>Rate limited</code> indicates that CloudWatch Logs throttling has been applied for one or more network interfaces, or that you've reached the limit on the number of log groups that you can create. <code>Access error</code> indicates that the IAM role associated with the flow log does not have sufficient permissions to publish to CloudWatch Logs. <code>Unknown error</code> indicates an internal error.</p>
     pub fn deliver_logs_error_message(
         mut self,
@@ -184,6 +188,10 @@ impl FlowLogBuilder {
     ) -> Self {
         self.deliver_logs_error_message = input;
         self
+    }
+    /// <p>Information about the error that occurred. <code>Rate limited</code> indicates that CloudWatch Logs throttling has been applied for one or more network interfaces, or that you've reached the limit on the number of log groups that you can create. <code>Access error</code> indicates that the IAM role associated with the flow log does not have sufficient permissions to publish to CloudWatch Logs. <code>Unknown error</code> indicates an internal error.</p>
+    pub fn get_deliver_logs_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deliver_logs_error_message
     }
     /// <p>The ARN of the IAM role allows the service to publish logs to CloudWatch Logs.</p>
     pub fn deliver_logs_permission_arn(
@@ -201,6 +209,10 @@ impl FlowLogBuilder {
         self.deliver_logs_permission_arn = input;
         self
     }
+    /// <p>The ARN of the IAM role allows the service to publish logs to CloudWatch Logs.</p>
+    pub fn get_deliver_logs_permission_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deliver_logs_permission_arn
+    }
     /// <p>The ARN of the IAM role that allows the service to publish flow logs across accounts.</p>
     pub fn deliver_cross_account_role(
         mut self,
@@ -216,6 +228,10 @@ impl FlowLogBuilder {
     ) -> Self {
         self.deliver_cross_account_role = input;
         self
+    }
+    /// <p>The ARN of the IAM role that allows the service to publish flow logs across accounts.</p>
+    pub fn get_deliver_cross_account_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deliver_cross_account_role
     }
     /// <p>The status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).</p>
     pub fn deliver_logs_status(
@@ -233,6 +249,10 @@ impl FlowLogBuilder {
         self.deliver_logs_status = input;
         self
     }
+    /// <p>The status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).</p>
+    pub fn get_deliver_logs_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deliver_logs_status
+    }
     /// <p>The ID of the flow log.</p>
     pub fn flow_log_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_log_id = ::std::option::Option::Some(input.into());
@@ -242,6 +262,10 @@ impl FlowLogBuilder {
     pub fn set_flow_log_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_log_id = input;
         self
+    }
+    /// <p>The ID of the flow log.</p>
+    pub fn get_flow_log_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_log_id
     }
     /// <p>The status of the flow log (<code>ACTIVE</code>).</p>
     pub fn flow_log_status(
@@ -259,6 +283,10 @@ impl FlowLogBuilder {
         self.flow_log_status = input;
         self
     }
+    /// <p>The status of the flow log (<code>ACTIVE</code>).</p>
+    pub fn get_flow_log_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_log_status
+    }
     /// <p>The name of the flow log group.</p>
     pub fn log_group_name(
         mut self,
@@ -275,6 +303,10 @@ impl FlowLogBuilder {
         self.log_group_name = input;
         self
     }
+    /// <p>The name of the flow log group.</p>
+    pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group_name
+    }
     /// <p>The ID of the resource being monitored.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -284,6 +316,10 @@ impl FlowLogBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>The ID of the resource being monitored.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// <p>The type of traffic captured for the flow log.</p>
     pub fn traffic_type(mut self, input: crate::types::TrafficType) -> Self {
@@ -298,6 +334,10 @@ impl FlowLogBuilder {
         self.traffic_type = input;
         self
     }
+    /// <p>The type of traffic captured for the flow log.</p>
+    pub fn get_traffic_type(&self) -> &::std::option::Option<crate::types::TrafficType> {
+        &self.traffic_type
+    }
     /// <p>The type of destination for the flow log data.</p>
     pub fn log_destination_type(mut self, input: crate::types::LogDestinationType) -> Self {
         self.log_destination_type = ::std::option::Option::Some(input);
@@ -310,6 +350,12 @@ impl FlowLogBuilder {
     ) -> Self {
         self.log_destination_type = input;
         self
+    }
+    /// <p>The type of destination for the flow log data.</p>
+    pub fn get_log_destination_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::LogDestinationType> {
+        &self.log_destination_type
     }
     /// <p>The Amazon Resource Name (ARN) of the destination for the flow log data.</p>
     pub fn log_destination(
@@ -327,6 +373,10 @@ impl FlowLogBuilder {
         self.log_destination = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the destination for the flow log data.</p>
+    pub fn get_log_destination(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_destination
+    }
     /// <p>The format of the flow log record.</p>
     pub fn log_format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_format = ::std::option::Option::Some(input.into());
@@ -336,6 +386,10 @@ impl FlowLogBuilder {
     pub fn set_log_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_format = input;
         self
+    }
+    /// <p>The format of the flow log record.</p>
+    pub fn get_log_format(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_format
     }
     /// Appends an item to `tags`.
     ///
@@ -356,6 +410,10 @@ impl FlowLogBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags for the flow log.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The maximum interval of time, in seconds, during which a flow of packets is captured and aggregated into a flow log record.</p>
     /// <p>When a network interface is attached to a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based instance</a>, the aggregation interval is always 60 seconds (1 minute) or less, regardless of the specified value.</p>
     /// <p>Valid Values: <code>60</code> | <code>600</code> </p>
@@ -370,6 +428,12 @@ impl FlowLogBuilder {
         self.max_aggregation_interval = input;
         self
     }
+    /// <p>The maximum interval of time, in seconds, during which a flow of packets is captured and aggregated into a flow log record.</p>
+    /// <p>When a network interface is attached to a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based instance</a>, the aggregation interval is always 60 seconds (1 minute) or less, regardless of the specified value.</p>
+    /// <p>Valid Values: <code>60</code> | <code>600</code> </p>
+    pub fn get_max_aggregation_interval(&self) -> &::std::option::Option<i32> {
+        &self.max_aggregation_interval
+    }
     /// <p>The destination options.</p>
     pub fn destination_options(mut self, input: crate::types::DestinationOptionsResponse) -> Self {
         self.destination_options = ::std::option::Option::Some(input);
@@ -382,6 +446,12 @@ impl FlowLogBuilder {
     ) -> Self {
         self.destination_options = input;
         self
+    }
+    /// <p>The destination options.</p>
+    pub fn get_destination_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::DestinationOptionsResponse> {
+        &self.destination_options
     }
     /// Consumes the builder and constructs a [`FlowLog`](crate::types::FlowLog).
     pub fn build(self) -> crate::types::FlowLog {

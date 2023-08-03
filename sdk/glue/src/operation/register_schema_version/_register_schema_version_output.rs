@@ -70,6 +70,10 @@ impl RegisterSchemaVersionOutputBuilder {
         self.schema_version_id = input;
         self
     }
+    /// <p>The unique ID that represents the version of this schema.</p>
+    pub fn get_schema_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_version_id
+    }
     /// <p>The version of this schema (for sync flow only, in case this is the first version).</p>
     pub fn version_number(mut self, input: i64) -> Self {
         self.version_number = ::std::option::Option::Some(input);
@@ -79,6 +83,10 @@ impl RegisterSchemaVersionOutputBuilder {
     pub fn set_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.version_number = input;
         self
+    }
+    /// <p>The version of this schema (for sync flow only, in case this is the first version).</p>
+    pub fn get_version_number(&self) -> &::std::option::Option<i64> {
+        &self.version_number
     }
     /// <p>The status of the schema version.</p>
     pub fn status(mut self, input: crate::types::SchemaVersionStatus) -> Self {
@@ -92,6 +100,10 @@ impl RegisterSchemaVersionOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the schema version.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::SchemaVersionStatus> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

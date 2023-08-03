@@ -63,6 +63,10 @@ impl DescribeVoicesInputBuilder {
         self.engine = input;
         self
     }
+    /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon Polly when processing input text for speech synthesis. </p>
+    pub fn get_engine(&self) -> &::std::option::Option<crate::types::Engine> {
+        &self.engine
+    }
     /// <p> The language identification tag (ISO 639 code for the language name-ISO 3166 country code) for filtering the list of voices returned. If you don't specify this optional parameter, all available voices are returned. </p>
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl DescribeVoicesInputBuilder {
     ) -> Self {
         self.language_code = input;
         self
+    }
+    /// <p> The language identification tag (ISO 639 code for the language name-ISO 3166 country code) for filtering the list of voices returned. If you don't specify this optional parameter, all available voices are returned. </p>
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
+        &self.language_code
     }
     /// <p>Boolean value indicating whether to return any bilingual voices that use the specified language as an additional language. For instance, if you request all languages that use US English (es-US), and there is an Italian voice that speaks both Italian (it-IT) and US English, that voice will be included if you specify <code>yes</code> but not if you specify <code>no</code>.</p>
     pub fn include_additional_language_codes(mut self, input: bool) -> Self {
@@ -89,6 +97,10 @@ impl DescribeVoicesInputBuilder {
         self.include_additional_language_codes = input;
         self
     }
+    /// <p>Boolean value indicating whether to return any bilingual voices that use the specified language as an additional language. For instance, if you request all languages that use US English (es-US), and there is an Italian voice that speaks both Italian (it-IT) and US English, that voice will be included if you specify <code>yes</code> but not if you specify <code>no</code>.</p>
+    pub fn get_include_additional_language_codes(&self) -> &::std::option::Option<bool> {
+        &self.include_additional_language_codes
+    }
     /// <p>An opaque pagination token returned from the previous <code>DescribeVoices</code> operation. If present, this indicates where to continue the listing.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -98,6 +110,10 @@ impl DescribeVoicesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>An opaque pagination token returned from the previous <code>DescribeVoices</code> operation. If present, this indicates where to continue the listing.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeVoicesInput`](crate::operation::describe_voices::DescribeVoicesInput).
     pub fn build(

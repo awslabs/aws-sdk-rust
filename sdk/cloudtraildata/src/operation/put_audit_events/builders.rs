@@ -36,6 +36,12 @@ impl PutAuditEventsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutAuditEvents as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_audit_events::builders::PutAuditEventsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,12 @@ impl PutAuditEventsFluentBuilder {
         self.inner = self.inner.set_audit_events(input);
         self
     }
+    /// <p>The JSON payload of events that you want to ingest. You can also point to the JSON event payload in a file.</p>
+    pub fn get_audit_events(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AuditEvent>> {
+        self.inner.get_audit_events()
+    }
     /// <p>The ARN or ID (the ARN suffix) of a channel.</p>
     pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.channel_arn(input.into());
@@ -143,6 +155,10 @@ impl PutAuditEventsFluentBuilder {
         self.inner = self.inner.set_channel_arn(input);
         self
     }
+    /// <p>The ARN or ID (the ARN suffix) of a channel.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_arn()
+    }
     /// <p>A unique identifier that is conditionally required when the channel's resource policy includes an external ID. This value can be any string, such as a passphrase or account number.</p>
     pub fn external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.external_id(input.into());
@@ -152,5 +168,9 @@ impl PutAuditEventsFluentBuilder {
     pub fn set_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_external_id(input);
         self
+    }
+    /// <p>A unique identifier that is conditionally required when the channel's resource policy includes an external ID. This value can be any string, such as a passphrase or account number.</p>
+    pub fn get_external_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_external_id()
     }
 }

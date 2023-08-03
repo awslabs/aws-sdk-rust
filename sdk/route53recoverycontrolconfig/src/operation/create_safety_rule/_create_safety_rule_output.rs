@@ -58,6 +58,10 @@ impl CreateSafetyRuleOutputBuilder {
         self.assertion_rule = input;
         self
     }
+    /// <p>The assertion rule created.</p>
+    pub fn get_assertion_rule(&self) -> &::std::option::Option<crate::types::AssertionRule> {
+        &self.assertion_rule
+    }
     /// <p>The gating rule created.</p>
     pub fn gating_rule(mut self, input: crate::types::GatingRule) -> Self {
         self.gating_rule = ::std::option::Option::Some(input);
@@ -70,6 +74,10 @@ impl CreateSafetyRuleOutputBuilder {
     ) -> Self {
         self.gating_rule = input;
         self
+    }
+    /// <p>The gating rule created.</p>
+    pub fn get_gating_rule(&self) -> &::std::option::Option<crate::types::GatingRule> {
+        &self.gating_rule
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

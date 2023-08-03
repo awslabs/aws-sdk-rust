@@ -145,6 +145,10 @@ impl DataSourceBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the data source.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn data_source_id(
         mut self,
@@ -161,6 +165,10 @@ impl DataSourceBuilder {
         self.data_source_id = input;
         self
     }
+    /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    pub fn get_data_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source_id
+    }
     /// <p>A display name for the data source.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -171,6 +179,10 @@ impl DataSourceBuilder {
         self.name = input;
         self
     }
+    /// <p>A display name for the data source.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The type of the data source. This type indicates which database engine the data source connects to.</p>
     pub fn r#type(mut self, input: crate::types::DataSourceType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -180,6 +192,10 @@ impl DataSourceBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DataSourceType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of the data source. This type indicates which database engine the data source connects to.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::DataSourceType> {
+        &self.r#type
     }
     /// <p>The HTTP status of the request.</p>
     pub fn status(mut self, input: crate::types::ResourceStatus) -> Self {
@@ -194,6 +210,10 @@ impl DataSourceBuilder {
         self.status = input;
         self
     }
+    /// <p>The HTTP status of the request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ResourceStatus> {
+        &self.status
+    }
     /// <p>The time that this data source was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
@@ -206,6 +226,10 @@ impl DataSourceBuilder {
     ) -> Self {
         self.created_time = input;
         self
+    }
+    /// <p>The time that this data source was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
     }
     /// <p>The last time that this data source was updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -220,6 +244,10 @@ impl DataSourceBuilder {
         self.last_updated_time = input;
         self
     }
+    /// <p>The last time that this data source was updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
+    }
     /// <p>The parameters that Amazon QuickSight uses to connect to your underlying source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
     pub fn data_source_parameters(mut self, input: crate::types::DataSourceParameters) -> Self {
         self.data_source_parameters = ::std::option::Option::Some(input);
@@ -232,6 +260,12 @@ impl DataSourceBuilder {
     ) -> Self {
         self.data_source_parameters = input;
         self
+    }
+    /// <p>The parameters that Amazon QuickSight uses to connect to your underlying source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
+    pub fn get_data_source_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataSourceParameters> {
+        &self.data_source_parameters
     }
     /// Appends an item to `alternate_data_source_parameters`.
     ///
@@ -255,6 +289,12 @@ impl DataSourceBuilder {
         self.alternate_data_source_parameters = input;
         self
     }
+    /// <p>A set of alternate data source parameters that you want to share for the credentials stored with this data source. The credentials are applied in tandem with the data source parameters when you copy a data source by using a create or update request. The API operation compares the <code>DataSourceParameters</code> structure that's in the request with the structures in the <code>AlternateDataSourceParameters</code> allow list. If the structures are an exact match, the request is allowed to use the credentials from this existing data source. If the <code>AlternateDataSourceParameters</code> list is null, the <code>Credentials</code> originally used with this <code>DataSourceParameters</code> are automatically allowed.</p>
+    pub fn get_alternate_data_source_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceParameters>> {
+        &self.alternate_data_source_parameters
+    }
     /// <p>The VPC connection information. You need to use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to your underlying source.</p>
     pub fn vpc_connection_properties(
         mut self,
@@ -271,6 +311,12 @@ impl DataSourceBuilder {
         self.vpc_connection_properties = input;
         self
     }
+    /// <p>The VPC connection information. You need to use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to your underlying source.</p>
+    pub fn get_vpc_connection_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::VpcConnectionProperties> {
+        &self.vpc_connection_properties
+    }
     /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying source.</p>
     pub fn ssl_properties(mut self, input: crate::types::SslProperties) -> Self {
         self.ssl_properties = ::std::option::Option::Some(input);
@@ -283,6 +329,10 @@ impl DataSourceBuilder {
     ) -> Self {
         self.ssl_properties = input;
         self
+    }
+    /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying source.</p>
+    pub fn get_ssl_properties(&self) -> &::std::option::Option<crate::types::SslProperties> {
+        &self.ssl_properties
     }
     /// <p>Error information from the last update or the creation of the data source.</p>
     pub fn error_info(mut self, input: crate::types::DataSourceErrorInfo) -> Self {
@@ -297,6 +347,10 @@ impl DataSourceBuilder {
         self.error_info = input;
         self
     }
+    /// <p>Error information from the last update or the creation of the data source.</p>
+    pub fn get_error_info(&self) -> &::std::option::Option<crate::types::DataSourceErrorInfo> {
+        &self.error_info
+    }
     /// <p>The Amazon Resource Name (ARN) of the secret associated with the data source in Amazon Secrets Manager.</p>
     pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_arn = ::std::option::Option::Some(input.into());
@@ -306,6 +360,10 @@ impl DataSourceBuilder {
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the secret associated with the data source in Amazon Secrets Manager.</p>
+    pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_arn
     }
     /// Consumes the builder and constructs a [`DataSource`](crate::types::DataSource).
     pub fn build(self) -> crate::types::DataSource {

@@ -56,6 +56,10 @@ impl CoreNetworkSegmentBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of a core network segment.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `edge_locations`.
     ///
     /// To override the contents of this collection use [`set_edge_locations`](Self::set_edge_locations).
@@ -78,6 +82,12 @@ impl CoreNetworkSegmentBuilder {
         self.edge_locations = input;
         self
     }
+    /// <p>The Regions where the edges are located.</p>
+    pub fn get_edge_locations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.edge_locations
+    }
     /// Appends an item to `shared_segments`.
     ///
     /// To override the contents of this collection use [`set_shared_segments`](Self::set_shared_segments).
@@ -99,6 +109,12 @@ impl CoreNetworkSegmentBuilder {
     ) -> Self {
         self.shared_segments = input;
         self
+    }
+    /// <p>The shared segments of a core network.</p>
+    pub fn get_shared_segments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.shared_segments
     }
     /// Consumes the builder and constructs a [`CoreNetworkSegment`](crate::types::CoreNetworkSegment).
     pub fn build(self) -> crate::types::CoreNetworkSegment {

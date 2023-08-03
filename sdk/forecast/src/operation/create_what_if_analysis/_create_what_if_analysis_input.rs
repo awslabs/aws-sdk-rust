@@ -82,6 +82,10 @@ impl CreateWhatIfAnalysisInputBuilder {
         self.what_if_analysis_name = input;
         self
     }
+    /// <p>The name of the what-if analysis. Each name must be unique.</p>
+    pub fn get_what_if_analysis_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.what_if_analysis_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the baseline forecast.</p>
     pub fn forecast_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.forecast_arn = ::std::option::Option::Some(input.into());
@@ -91,6 +95,10 @@ impl CreateWhatIfAnalysisInputBuilder {
     pub fn set_forecast_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.forecast_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the baseline forecast.</p>
+    pub fn get_forecast_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.forecast_arn
     }
     /// <p>Defines the set of time series that are used in the what-if analysis with a <code>TimeSeriesIdentifiers</code> object. What-if analyses are performed only for the time series in this object.</p>
     /// <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
@@ -117,6 +125,18 @@ impl CreateWhatIfAnalysisInputBuilder {
         self.time_series_selector = input;
         self
     }
+    /// <p>Defines the set of time series that are used in the what-if analysis with a <code>TimeSeriesIdentifiers</code> object. What-if analyses are performed only for the time series in this object.</p>
+    /// <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
+    /// <ul>
+    /// <li> <p> <code>DataSource</code> </p> </li>
+    /// <li> <p> <code>Format</code> </p> </li>
+    /// <li> <p> <code>Schema</code> </p> </li>
+    /// </ul>
+    pub fn get_time_series_selector(
+        &self,
+    ) -> &::std::option::Option<crate::types::TimeSeriesSelector> {
+        &self.time_series_selector
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -135,6 +155,10 @@ impl CreateWhatIfAnalysisInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the what if forecast.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateWhatIfAnalysisInput`](crate::operation::create_what_if_analysis::CreateWhatIfAnalysisInput).
     pub fn build(

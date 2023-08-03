@@ -72,6 +72,10 @@ impl OpenSearchActionBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The IAM role ARN that has access to OpenSearch.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>The endpoint of your OpenSearch domain.</p>
     pub fn endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl OpenSearchActionBuilder {
     pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint = input;
         self
+    }
+    /// <p>The endpoint of your OpenSearch domain.</p>
+    pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint
     }
     /// <p>The OpenSearch index where you want to store your data.</p>
     pub fn index(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -92,6 +100,10 @@ impl OpenSearchActionBuilder {
         self.index = input;
         self
     }
+    /// <p>The OpenSearch index where you want to store your data.</p>
+    pub fn get_index(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index
+    }
     /// <p>The type of document you are storing.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -102,6 +114,10 @@ impl OpenSearchActionBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of document you are storing.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// <p>The unique identifier for the document you are storing.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -111,6 +127,10 @@ impl OpenSearchActionBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The unique identifier for the document you are storing.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`OpenSearchAction`](crate::types::OpenSearchAction).
     pub fn build(self) -> crate::types::OpenSearchAction {

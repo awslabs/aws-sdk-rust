@@ -70,6 +70,10 @@ impl PivotTableCellConditionalFormattingBuilder {
         self.field_id = input;
         self
     }
+    /// <p>The field ID of the cell for conditional formatting.</p>
+    pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_id
+    }
     /// <p>The text format of the cell for conditional formatting.</p>
     pub fn text_format(mut self, input: crate::types::TextConditionalFormat) -> Self {
         self.text_format = ::std::option::Option::Some(input);
@@ -83,6 +87,10 @@ impl PivotTableCellConditionalFormattingBuilder {
         self.text_format = input;
         self
     }
+    /// <p>The text format of the cell for conditional formatting.</p>
+    pub fn get_text_format(&self) -> &::std::option::Option<crate::types::TextConditionalFormat> {
+        &self.text_format
+    }
     /// <p>The scope of the cell for conditional formatting.</p>
     pub fn scope(mut self, input: crate::types::PivotTableConditionalFormattingScope) -> Self {
         self.scope = ::std::option::Option::Some(input);
@@ -95,6 +103,12 @@ impl PivotTableCellConditionalFormattingBuilder {
     ) -> Self {
         self.scope = input;
         self
+    }
+    /// <p>The scope of the cell for conditional formatting.</p>
+    pub fn get_scope(
+        &self,
+    ) -> &::std::option::Option<crate::types::PivotTableConditionalFormattingScope> {
+        &self.scope
     }
     /// Appends an item to `scopes`.
     ///
@@ -116,6 +130,13 @@ impl PivotTableCellConditionalFormattingBuilder {
     ) -> Self {
         self.scopes = input;
         self
+    }
+    /// <p>A list of cell scopes for conditional formatting.</p>
+    pub fn get_scopes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PivotTableConditionalFormattingScope>>
+    {
+        &self.scopes
     }
     /// Consumes the builder and constructs a [`PivotTableCellConditionalFormatting`](crate::types::PivotTableCellConditionalFormatting).
     pub fn build(self) -> crate::types::PivotTableCellConditionalFormatting {

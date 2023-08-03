@@ -46,6 +46,10 @@ impl DeleteProjectOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The current status of the delete project operation.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ProjectStatus> {
+        &self.status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

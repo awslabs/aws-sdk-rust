@@ -54,6 +54,10 @@ impl ApplySecurityGroupsToLoadBalancerInputBuilder {
         self.load_balancer_name = input;
         self
     }
+    /// <p>The name of the load balancer.</p>
+    pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.load_balancer_name
+    }
     /// Appends an item to `security_groups`.
     ///
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
@@ -75,6 +79,12 @@ impl ApplySecurityGroupsToLoadBalancerInputBuilder {
     ) -> Self {
         self.security_groups = input;
         self
+    }
+    /// <p>The IDs of the security groups to associate with the load balancer. Note that you cannot specify the name of the security group.</p>
+    pub fn get_security_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_groups
     }
     /// Consumes the builder and constructs a [`ApplySecurityGroupsToLoadBalancerInput`](crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancerInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancerInput, ::aws_smithy_http::operation::error::BuildError>{

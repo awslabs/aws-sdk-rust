@@ -36,6 +36,10 @@ impl PutEmailIdentityDkimAttributesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutEmailIdentityDkimAttributes as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_email_identity_dkim_attributes::builders::PutEmailIdentityDkimAttributesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl PutEmailIdentityDkimAttributesFluentBuilder {
         self.inner = self.inner.set_email_identity(input);
         self
     }
+    /// <p>The email identity.</p>
+    pub fn get_email_identity(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_email_identity()
+    }
     /// <p>Sets the DKIM signing configuration for the identity.</p>
     /// <p>When you set this value <code>true</code>, then the messages that are sent from the identity are signed using DKIM. If you set this value to <code>false</code>, your messages are sent without DKIM signing.</p>
     pub fn signing_enabled(mut self, input: bool) -> Self {
@@ -117,5 +125,10 @@ impl PutEmailIdentityDkimAttributesFluentBuilder {
     pub fn set_signing_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_signing_enabled(input);
         self
+    }
+    /// <p>Sets the DKIM signing configuration for the identity.</p>
+    /// <p>When you set this value <code>true</code>, then the messages that are sent from the identity are signed using DKIM. If you set this value to <code>false</code>, your messages are sent without DKIM signing.</p>
+    pub fn get_signing_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_signing_enabled()
     }
 }

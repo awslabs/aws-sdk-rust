@@ -118,6 +118,10 @@ impl GetAssetOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN for the asset.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>Details about the asset.</p>
     pub fn asset_details(mut self, input: crate::types::AssetDetails) -> Self {
         self.asset_details = ::std::option::Option::Some(input);
@@ -131,6 +135,10 @@ impl GetAssetOutputBuilder {
         self.asset_details = input;
         self
     }
+    /// <p>Details about the asset.</p>
+    pub fn get_asset_details(&self) -> &::std::option::Option<crate::types::AssetDetails> {
+        &self.asset_details
+    }
     /// <p>The type of asset that is added to a data set.</p>
     pub fn asset_type(mut self, input: crate::types::AssetType) -> Self {
         self.asset_type = ::std::option::Option::Some(input);
@@ -140,6 +148,10 @@ impl GetAssetOutputBuilder {
     pub fn set_asset_type(mut self, input: ::std::option::Option<crate::types::AssetType>) -> Self {
         self.asset_type = input;
         self
+    }
+    /// <p>The type of asset that is added to a data set.</p>
+    pub fn get_asset_type(&self) -> &::std::option::Option<crate::types::AssetType> {
+        &self.asset_type
     }
     /// <p>The date and time that the asset was created, in ISO 8601 format.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -154,6 +166,10 @@ impl GetAssetOutputBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The date and time that the asset was created, in ISO 8601 format.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The unique identifier for the data set associated with this asset.</p>
     pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_id = ::std::option::Option::Some(input.into());
@@ -163,6 +179,10 @@ impl GetAssetOutputBuilder {
     pub fn set_data_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_set_id = input;
         self
+    }
+    /// <p>The unique identifier for the data set associated with this asset.</p>
+    pub fn get_data_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_set_id
     }
     /// <p>The unique identifier for the asset.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -174,6 +194,10 @@ impl GetAssetOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier for the asset.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target Amazon S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name. When importing from AWS Lake Formation, the static values of "Database(s) included in the LF-tag policy" or "Table(s) included in the LF-tag policy" are used as the asset name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -183,6 +207,10 @@ impl GetAssetOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target Amazon S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name. When importing from AWS Lake Formation, the static values of "Database(s) included in the LF-tag policy" or "Table(s) included in the LF-tag policy" are used as the asset name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The unique identifier for the revision associated with this asset.</p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -194,6 +222,10 @@ impl GetAssetOutputBuilder {
         self.revision_id = input;
         self
     }
+    /// <p>The unique identifier for the revision associated with this asset.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision_id
+    }
     /// <p>The asset ID of the owned asset corresponding to the entitled asset being viewed. This parameter is returned when an asset owner is viewing the entitled copy of its owned asset.</p>
     pub fn source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_id = ::std::option::Option::Some(input.into());
@@ -203,6 +235,10 @@ impl GetAssetOutputBuilder {
     pub fn set_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_id = input;
         self
+    }
+    /// <p>The asset ID of the owned asset corresponding to the entitled asset being viewed. This parameter is returned when an asset owner is viewing the entitled copy of its owned asset.</p>
+    pub fn get_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_id
     }
     /// <p>The date and time that the asset was last updated, in ISO 8601 format.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -216,6 +252,10 @@ impl GetAssetOutputBuilder {
     ) -> Self {
         self.updated_at = input;
         self
+    }
+    /// <p>The date and time that the asset was last updated, in ISO 8601 format.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

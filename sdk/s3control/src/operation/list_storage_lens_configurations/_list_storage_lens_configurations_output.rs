@@ -58,6 +58,10 @@ impl ListStorageLensConfigurationsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If the request produced more than the maximum number of S3 Storage Lens configuration results, you can pass this value into a subsequent request to retrieve the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `storage_lens_configuration_list`.
     ///
     /// To override the contents of this collection use [`set_storage_lens_configuration_list`](Self::set_storage_lens_configuration_list).
@@ -81,6 +85,13 @@ impl ListStorageLensConfigurationsOutputBuilder {
     ) -> Self {
         self.storage_lens_configuration_list = input;
         self
+    }
+    /// <p>A list of S3 Storage Lens configurations.</p>
+    pub fn get_storage_lens_configuration_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ListStorageLensConfigurationEntry>>
+    {
+        &self.storage_lens_configuration_list
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

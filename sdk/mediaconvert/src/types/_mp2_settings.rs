@@ -56,6 +56,10 @@ impl Mp2SettingsBuilder {
         self.bitrate = input;
         self
     }
+    /// Specify the average bitrate in bits per second.
+    pub fn get_bitrate(&self) -> &::std::option::Option<i32> {
+        &self.bitrate
+    }
     /// Set Channels to specify the number of channels in this output audio track. Choosing Mono in will give you 1 output channel; choosing Stereo will give you 2. In the API, valid values are 1 and 2.
     pub fn channels(mut self, input: i32) -> Self {
         self.channels = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl Mp2SettingsBuilder {
         self.channels = input;
         self
     }
+    /// Set Channels to specify the number of channels in this output audio track. Choosing Mono in will give you 1 output channel; choosing Stereo will give you 2. In the API, valid values are 1 and 2.
+    pub fn get_channels(&self) -> &::std::option::Option<i32> {
+        &self.channels
+    }
     /// Sample rate in hz.
     pub fn sample_rate(mut self, input: i32) -> Self {
         self.sample_rate = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl Mp2SettingsBuilder {
     pub fn set_sample_rate(mut self, input: ::std::option::Option<i32>) -> Self {
         self.sample_rate = input;
         self
+    }
+    /// Sample rate in hz.
+    pub fn get_sample_rate(&self) -> &::std::option::Option<i32> {
+        &self.sample_rate
     }
     /// Consumes the builder and constructs a [`Mp2Settings`](crate::types::Mp2Settings).
     pub fn build(self) -> crate::types::Mp2Settings {

@@ -36,6 +36,13 @@ impl DescribeStorageSystemFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeStorageSystem as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_storage_system::builders::DescribeStorageSystemInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +138,9 @@ impl DescribeStorageSystemFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_storage_system_arn(input);
         self
+    }
+    /// <p>Specifies the Amazon Resource Name (ARN) of an on-premises storage system that you're using with DataSync Discovery.</p>
+    pub fn get_storage_system_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_storage_system_arn()
     }
 }

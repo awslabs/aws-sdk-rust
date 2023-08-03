@@ -48,6 +48,10 @@ impl EventSubscriptionBuilder {
         self.event = input;
         self
     }
+    /// <p>The event for which Amazon Simple Notification Service (SNS) notifications are sent.</p>
+    pub fn get_event(&self) -> &::std::option::Option<crate::types::InspectorEvent> {
+        &self.event
+    }
     /// <p>The time at which <code>SubscribeToEvent</code> is called.</p>
     pub fn subscribed_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.subscribed_at = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl EventSubscriptionBuilder {
     ) -> Self {
         self.subscribed_at = input;
         self
+    }
+    /// <p>The time at which <code>SubscribeToEvent</code> is called.</p>
+    pub fn get_subscribed_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.subscribed_at
     }
     /// Consumes the builder and constructs a [`EventSubscription`](crate::types::EventSubscription).
     pub fn build(self) -> crate::types::EventSubscription {

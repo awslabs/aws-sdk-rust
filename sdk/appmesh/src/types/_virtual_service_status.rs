@@ -43,6 +43,10 @@ impl VirtualServiceStatusBuilder {
         self.status = input;
         self
     }
+    /// <p>The current status of the virtual service.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::VirtualServiceStatusCode> {
+        &self.status
+    }
     /// Consumes the builder and constructs a [`VirtualServiceStatus`](crate::types::VirtualServiceStatus).
     pub fn build(self) -> crate::types::VirtualServiceStatus {
         crate::types::VirtualServiceStatus {

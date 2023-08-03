@@ -66,6 +66,10 @@ impl PutImageScanningConfigurationOutputBuilder {
         self.registry_id = input;
         self
     }
+    /// <p>The registry ID associated with the request.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_id
+    }
     /// <p>The repository name associated with the request.</p>
     pub fn repository_name(
         mut self,
@@ -82,6 +86,10 @@ impl PutImageScanningConfigurationOutputBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The repository name associated with the request.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>The image scanning configuration setting for the repository.</p>
     pub fn image_scanning_configuration(
         mut self,
@@ -97,6 +105,12 @@ impl PutImageScanningConfigurationOutputBuilder {
     ) -> Self {
         self.image_scanning_configuration = input;
         self
+    }
+    /// <p>The image scanning configuration setting for the repository.</p>
+    pub fn get_image_scanning_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImageScanningConfiguration> {
+        &self.image_scanning_configuration
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

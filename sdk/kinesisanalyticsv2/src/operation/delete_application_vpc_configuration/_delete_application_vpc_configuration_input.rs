@@ -69,6 +69,10 @@ impl DeleteApplicationVpcConfigurationInputBuilder {
         self.application_name = input;
         self
     }
+    /// <p>The name of an existing application.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// <p>The current application version ID. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
     pub fn current_application_version_id(mut self, input: i64) -> Self {
         self.current_application_version_id = ::std::option::Option::Some(input);
@@ -78,6 +82,10 @@ impl DeleteApplicationVpcConfigurationInputBuilder {
     pub fn set_current_application_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.current_application_version_id = input;
         self
+    }
+    /// <p>The current application version ID. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
+    pub fn get_current_application_version_id(&self) -> &::std::option::Option<i64> {
+        &self.current_application_version_id
     }
     /// <p>The ID of the VPC configuration to delete.</p>
     pub fn vpc_configuration_id(
@@ -95,6 +103,10 @@ impl DeleteApplicationVpcConfigurationInputBuilder {
         self.vpc_configuration_id = input;
         self
     }
+    /// <p>The ID of the VPC configuration to delete.</p>
+    pub fn get_vpc_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_configuration_id
+    }
     /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
     pub fn conditional_token(
         mut self,
@@ -110,6 +122,10 @@ impl DeleteApplicationVpcConfigurationInputBuilder {
     ) -> Self {
         self.conditional_token = input;
         self
+    }
+    /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
+    pub fn get_conditional_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.conditional_token
     }
     /// Consumes the builder and constructs a [`DeleteApplicationVpcConfigurationInput`](crate::operation::delete_application_vpc_configuration::DeleteApplicationVpcConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_application_vpc_configuration::DeleteApplicationVpcConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{

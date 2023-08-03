@@ -47,6 +47,10 @@ impl GetAccessKeyInfoOutputBuilder {
         self.account = input;
         self
     }
+    /// <p>The number used to identify the Amazon Web Services account.</p>
+    pub fn get_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -46,6 +46,12 @@ impl CacheHitResultBuilder {
         self.source_pipeline_execution_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
+    pub fn get_source_pipeline_execution_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.source_pipeline_execution_arn
+    }
     /// Consumes the builder and constructs a [`CacheHitResult`](crate::types::CacheHitResult).
     pub fn build(self) -> crate::types::CacheHitResult {
         crate::types::CacheHitResult {

@@ -105,6 +105,10 @@ impl CallAnalyticsJobSummaryBuilder {
         self.call_analytics_job_name = input;
         self
     }
+    /// <p>The name of the Call Analytics job. Job names are case sensitive and must be unique within an Amazon Web Services account.</p>
+    pub fn get_call_analytics_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.call_analytics_job_name
+    }
     /// <p>The date and time the specified Call Analytics job request was made.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents a transcription job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -119,6 +123,11 @@ impl CallAnalyticsJobSummaryBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The date and time the specified Call Analytics job request was made.</p>
+    /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents a transcription job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The date and time your Call Analytics job began processing.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.789000-07:00</code> represents a transcription job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
@@ -135,6 +144,11 @@ impl CallAnalyticsJobSummaryBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The date and time your Call Analytics job began processing.</p>
+    /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.789000-07:00</code> represents a transcription job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The date and time the specified Call Analytics job finished processing.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:33:13.922000-07:00</code> represents a transcription job that started processing at 12:33 PM UTC-7 on May 4, 2022.</p>
     pub fn completion_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -150,6 +164,11 @@ impl CallAnalyticsJobSummaryBuilder {
         self.completion_time = input;
         self
     }
+    /// <p>The date and time the specified Call Analytics job finished processing.</p>
+    /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:33:13.922000-07:00</code> represents a transcription job that started processing at 12:33 PM UTC-7 on May 4, 2022.</p>
+    pub fn get_completion_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.completion_time
+    }
     /// <p>The language code used to create your Call Analytics transcription.</p>
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
@@ -162,6 +181,10 @@ impl CallAnalyticsJobSummaryBuilder {
     ) -> Self {
         self.language_code = input;
         self
+    }
+    /// <p>The language code used to create your Call Analytics transcription.</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
+        &self.language_code
     }
     /// <p>Provides the status of your Call Analytics job.</p>
     /// <p>If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified in <code>TranscriptFileUri</code> (or <code>RedactedTranscriptFileUri</code>, if you requested transcript redaction). If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription job failed.</p>
@@ -181,6 +204,13 @@ impl CallAnalyticsJobSummaryBuilder {
         self.call_analytics_job_status = input;
         self
     }
+    /// <p>Provides the status of your Call Analytics job.</p>
+    /// <p>If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified in <code>TranscriptFileUri</code> (or <code>RedactedTranscriptFileUri</code>, if you requested transcript redaction). If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription job failed.</p>
+    pub fn get_call_analytics_job_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::CallAnalyticsJobStatus> {
+        &self.call_analytics_job_status
+    }
     /// <p>If <code>CallAnalyticsJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why the Call Analytics job failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.</p>
     pub fn failure_reason(
         mut self,
@@ -196,6 +226,10 @@ impl CallAnalyticsJobSummaryBuilder {
     ) -> Self {
         self.failure_reason = input;
         self
+    }
+    /// <p>If <code>CallAnalyticsJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why the Call Analytics job failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
     }
     /// Consumes the builder and constructs a [`CallAnalyticsJobSummary`](crate::types::CallAnalyticsJobSummary).
     pub fn build(self) -> crate::types::CallAnalyticsJobSummary {

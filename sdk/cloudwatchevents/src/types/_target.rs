@@ -178,6 +178,10 @@ impl TargetBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the target. We recommend using a memorable and unique string.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The Amazon Resource Name (ARN) of the target.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -187,6 +191,10 @@ impl TargetBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the target.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to be used for this target when the rule is triggered. If one rule triggers multiple targets, you can use a different IAM role for each target.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -198,6 +206,10 @@ impl TargetBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to be used for this target when the rule is triggered. If one rule triggers multiple targets, you can use a different IAM role for each target.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange Format</a>.</p>
     pub fn input(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input = ::std::option::Option::Some(input.into());
@@ -208,6 +220,10 @@ impl TargetBuilder {
         self.input = input;
         self
     }
+    /// <p>Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange Format</a>.</p>
+    pub fn get_input(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input
+    }
     /// <p>The value of the JSONPath that is used for extracting part of the matched event when passing it to the target. You must use JSON dot notation, not bracket notation. For more information about JSON paths, see <a href="http://goessner.net/articles/JsonPath/">JSONPath</a>.</p>
     pub fn input_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_path = ::std::option::Option::Some(input.into());
@@ -217,6 +233,10 @@ impl TargetBuilder {
     pub fn set_input_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_path = input;
         self
+    }
+    /// <p>The value of the JSONPath that is used for extracting part of the matched event when passing it to the target. You must use JSON dot notation, not bracket notation. For more information about JSON paths, see <a href="http://goessner.net/articles/JsonPath/">JSONPath</a>.</p>
+    pub fn get_input_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_path
     }
     /// <p>Settings to enable you to provide custom input to a target based on certain event data. You can extract one or more key-value pairs from the event and then use that data to send customized input to the target.</p>
     pub fn input_transformer(mut self, input: crate::types::InputTransformer) -> Self {
@@ -231,6 +251,10 @@ impl TargetBuilder {
         self.input_transformer = input;
         self
     }
+    /// <p>Settings to enable you to provide custom input to a target based on certain event data. You can extract one or more key-value pairs from the event and then use that data to send customized input to the target.</p>
+    pub fn get_input_transformer(&self) -> &::std::option::Option<crate::types::InputTransformer> {
+        &self.input_transformer
+    }
     /// <p>The custom parameter you can use to control the shard assignment, when the target is a Kinesis data stream. If you do not include this parameter, the default is to use the <code>eventId</code> as the partition key.</p>
     pub fn kinesis_parameters(mut self, input: crate::types::KinesisParameters) -> Self {
         self.kinesis_parameters = ::std::option::Option::Some(input);
@@ -243,6 +267,12 @@ impl TargetBuilder {
     ) -> Self {
         self.kinesis_parameters = input;
         self
+    }
+    /// <p>The custom parameter you can use to control the shard assignment, when the target is a Kinesis data stream. If you do not include this parameter, the default is to use the <code>eventId</code> as the partition key.</p>
+    pub fn get_kinesis_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::KinesisParameters> {
+        &self.kinesis_parameters
     }
     /// <p>Parameters used when you are using the rule to invoke Amazon EC2 Run Command.</p>
     pub fn run_command_parameters(mut self, input: crate::types::RunCommandParameters) -> Self {
@@ -257,6 +287,12 @@ impl TargetBuilder {
         self.run_command_parameters = input;
         self
     }
+    /// <p>Parameters used when you are using the rule to invoke Amazon EC2 Run Command.</p>
+    pub fn get_run_command_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::RunCommandParameters> {
+        &self.run_command_parameters
+    }
     /// <p>Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS task. For more information about Amazon ECS tasks, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task Definitions </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
     pub fn ecs_parameters(mut self, input: crate::types::EcsParameters) -> Self {
         self.ecs_parameters = ::std::option::Option::Some(input);
@@ -270,6 +306,10 @@ impl TargetBuilder {
         self.ecs_parameters = input;
         self
     }
+    /// <p>Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS task. For more information about Amazon ECS tasks, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task Definitions </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
+    pub fn get_ecs_parameters(&self) -> &::std::option::Option<crate::types::EcsParameters> {
+        &self.ecs_parameters
+    }
     /// <p>If the event target is an Batch job, this contains the job definition, job name, and other parameters. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in the <i>Batch User Guide</i>.</p>
     pub fn batch_parameters(mut self, input: crate::types::BatchParameters) -> Self {
         self.batch_parameters = ::std::option::Option::Some(input);
@@ -282,6 +322,10 @@ impl TargetBuilder {
     ) -> Self {
         self.batch_parameters = input;
         self
+    }
+    /// <p>If the event target is an Batch job, this contains the job definition, job name, and other parameters. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in the <i>Batch User Guide</i>.</p>
+    pub fn get_batch_parameters(&self) -> &::std::option::Option<crate::types::BatchParameters> {
+        &self.batch_parameters
     }
     /// <p>Contains the message group ID to use when the target is a FIFO queue.</p>
     /// <p>If you specify an SQS FIFO queue as a target, the queue must have content-based deduplication enabled.</p>
@@ -298,6 +342,11 @@ impl TargetBuilder {
         self.sqs_parameters = input;
         self
     }
+    /// <p>Contains the message group ID to use when the target is a FIFO queue.</p>
+    /// <p>If you specify an SQS FIFO queue as a target, the queue must have content-based deduplication enabled.</p>
+    pub fn get_sqs_parameters(&self) -> &::std::option::Option<crate::types::SqsParameters> {
+        &self.sqs_parameters
+    }
     /// <p>Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge ApiDestination.</p>
     /// <p>If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this parameter to specify headers, path parameters, and query string keys/values as part of your target invoking request. If you're using ApiDestinations, the corresponding Connection can also have these values configured. In case of any conflicting keys, values from the Connection take precedence.</p>
     pub fn http_parameters(mut self, input: crate::types::HttpParameters) -> Self {
@@ -313,6 +362,11 @@ impl TargetBuilder {
         self.http_parameters = input;
         self
     }
+    /// <p>Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge ApiDestination.</p>
+    /// <p>If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this parameter to specify headers, path parameters, and query string keys/values as part of your target invoking request. If you're using ApiDestinations, the corresponding Connection can also have these values configured. In case of any conflicting keys, values from the Connection take precedence.</p>
+    pub fn get_http_parameters(&self) -> &::std::option::Option<crate::types::HttpParameters> {
+        &self.http_parameters
+    }
     /// <p>Contains the Amazon Redshift Data API parameters to use when the target is a Amazon Redshift cluster.</p>
     /// <p>If you specify a Amazon Redshift Cluster as a Target, you can use this to specify parameters to invoke the Amazon Redshift Data API ExecuteStatement based on EventBridge events.</p>
     pub fn redshift_data_parameters(mut self, input: crate::types::RedshiftDataParameters) -> Self {
@@ -327,6 +381,13 @@ impl TargetBuilder {
     ) -> Self {
         self.redshift_data_parameters = input;
         self
+    }
+    /// <p>Contains the Amazon Redshift Data API parameters to use when the target is a Amazon Redshift cluster.</p>
+    /// <p>If you specify a Amazon Redshift Cluster as a Target, you can use this to specify parameters to invoke the Amazon Redshift Data API ExecuteStatement based on EventBridge events.</p>
+    pub fn get_redshift_data_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::RedshiftDataParameters> {
+        &self.redshift_data_parameters
     }
     /// <p>Contains the SageMaker Model Building Pipeline parameters to start execution of a SageMaker Model Building Pipeline.</p>
     /// <p>If you specify a SageMaker Model Building Pipeline as a target, you can use this to specify parameters to start a pipeline execution based on EventBridge events.</p>
@@ -346,6 +407,13 @@ impl TargetBuilder {
         self.sage_maker_pipeline_parameters = input;
         self
     }
+    /// <p>Contains the SageMaker Model Building Pipeline parameters to start execution of a SageMaker Model Building Pipeline.</p>
+    /// <p>If you specify a SageMaker Model Building Pipeline as a target, you can use this to specify parameters to start a pipeline execution based on EventBridge events.</p>
+    pub fn get_sage_maker_pipeline_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::SageMakerPipelineParameters> {
+        &self.sage_maker_pipeline_parameters
+    }
     /// <p>The <code>DeadLetterConfig</code> that defines the target queue to send dead-letter queue events to.</p>
     pub fn dead_letter_config(mut self, input: crate::types::DeadLetterConfig) -> Self {
         self.dead_letter_config = ::std::option::Option::Some(input);
@@ -359,6 +427,10 @@ impl TargetBuilder {
         self.dead_letter_config = input;
         self
     }
+    /// <p>The <code>DeadLetterConfig</code> that defines the target queue to send dead-letter queue events to.</p>
+    pub fn get_dead_letter_config(&self) -> &::std::option::Option<crate::types::DeadLetterConfig> {
+        &self.dead_letter_config
+    }
     /// <p>The <code>RetryPolicy</code> object that contains the retry policy configuration to use for the dead-letter queue.</p>
     pub fn retry_policy(mut self, input: crate::types::RetryPolicy) -> Self {
         self.retry_policy = ::std::option::Option::Some(input);
@@ -371,6 +443,10 @@ impl TargetBuilder {
     ) -> Self {
         self.retry_policy = input;
         self
+    }
+    /// <p>The <code>RetryPolicy</code> object that contains the retry policy configuration to use for the dead-letter queue.</p>
+    pub fn get_retry_policy(&self) -> &::std::option::Option<crate::types::RetryPolicy> {
+        &self.retry_policy
     }
     /// Consumes the builder and constructs a [`Target`](crate::types::Target).
     pub fn build(self) -> crate::types::Target {

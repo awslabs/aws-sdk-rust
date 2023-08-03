@@ -36,6 +36,10 @@ impl DescribeAddressesAttributeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeAddressesAttribute as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_addresses_attribute::builders::DescribeAddressesAttributeInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -142,6 +146,12 @@ impl DescribeAddressesAttributeFluentBuilder {
         self.inner = self.inner.set_allocation_ids(input);
         self
     }
+    /// <p>[EC2-VPC] The allocation IDs.</p>
+    pub fn get_allocation_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_allocation_ids()
+    }
     /// <p>The attribute of the IP address.</p>
     pub fn attribute(mut self, input: crate::types::AddressAttributeName) -> Self {
         self.inner = self.inner.attribute(input);
@@ -155,6 +165,10 @@ impl DescribeAddressesAttributeFluentBuilder {
         self.inner = self.inner.set_attribute(input);
         self
     }
+    /// <p>The attribute of the IP address.</p>
+    pub fn get_attribute(&self) -> &::std::option::Option<crate::types::AddressAttributeName> {
+        self.inner.get_attribute()
+    }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -164,6 +178,10 @@ impl DescribeAddressesAttributeFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -175,6 +193,10 @@ impl DescribeAddressesAttributeFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -184,5 +206,9 @@ impl DescribeAddressesAttributeFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

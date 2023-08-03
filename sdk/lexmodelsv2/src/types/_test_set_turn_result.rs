@@ -51,6 +51,10 @@ impl TestSetTurnResultBuilder {
         self.agent = input;
         self
     }
+    /// <p>Contains information about the agent messages in the turn.</p>
+    pub fn get_agent(&self) -> &::std::option::Option<crate::types::AgentTurnResult> {
+        &self.agent
+    }
     /// <p>Contains information about the user messages in the turn.</p>
     pub fn user(mut self, input: crate::types::UserTurnResult) -> Self {
         self.user = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl TestSetTurnResultBuilder {
     pub fn set_user(mut self, input: ::std::option::Option<crate::types::UserTurnResult>) -> Self {
         self.user = input;
         self
+    }
+    /// <p>Contains information about the user messages in the turn.</p>
+    pub fn get_user(&self) -> &::std::option::Option<crate::types::UserTurnResult> {
+        &self.user
     }
     /// Consumes the builder and constructs a [`TestSetTurnResult`](crate::types::TestSetTurnResult).
     pub fn build(self) -> crate::types::TestSetTurnResult {

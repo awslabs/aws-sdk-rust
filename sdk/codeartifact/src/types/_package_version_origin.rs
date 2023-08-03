@@ -51,6 +51,10 @@ impl PackageVersionOriginBuilder {
         self.domain_entry_point = input;
         self
     }
+    /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainEntryPoint.html">DomainEntryPoint</a> object that contains information about from which repository or external connection the package version was added to the domain.</p>
+    pub fn get_domain_entry_point(&self) -> &::std::option::Option<crate::types::DomainEntryPoint> {
+        &self.domain_entry_point
+    }
     /// <p>Describes how the package version was originally added to the domain. An <code>INTERNAL</code> origin type means the package version was published directly to a repository in the domain. An <code>EXTERNAL</code> origin type means the package version was ingested from an external connection.</p>
     pub fn origin_type(mut self, input: crate::types::PackageVersionOriginType) -> Self {
         self.origin_type = ::std::option::Option::Some(input);
@@ -63,6 +67,12 @@ impl PackageVersionOriginBuilder {
     ) -> Self {
         self.origin_type = input;
         self
+    }
+    /// <p>Describes how the package version was originally added to the domain. An <code>INTERNAL</code> origin type means the package version was published directly to a repository in the domain. An <code>EXTERNAL</code> origin type means the package version was ingested from an external connection.</p>
+    pub fn get_origin_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::PackageVersionOriginType> {
+        &self.origin_type
     }
     /// Consumes the builder and constructs a [`PackageVersionOrigin`](crate::types::PackageVersionOrigin).
     pub fn build(self) -> crate::types::PackageVersionOrigin {

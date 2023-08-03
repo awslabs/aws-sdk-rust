@@ -62,6 +62,10 @@ impl AwsEc2NetworkAclAssociationBuilder {
         self.network_acl_association_id = input;
         self
     }
+    /// <p>The identifier of the association between the network ACL and the subnet.</p>
+    pub fn get_network_acl_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_acl_association_id
+    }
     /// <p>The identifier of the network ACL.</p>
     pub fn network_acl_id(
         mut self,
@@ -78,6 +82,10 @@ impl AwsEc2NetworkAclAssociationBuilder {
         self.network_acl_id = input;
         self
     }
+    /// <p>The identifier of the network ACL.</p>
+    pub fn get_network_acl_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_acl_id
+    }
     /// <p>The identifier of the subnet that is associated with the network ACL.</p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
@@ -87,6 +95,10 @@ impl AwsEc2NetworkAclAssociationBuilder {
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_id = input;
         self
+    }
+    /// <p>The identifier of the subnet that is associated with the network ACL.</p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_id
     }
     /// Consumes the builder and constructs a [`AwsEc2NetworkAclAssociation`](crate::types::AwsEc2NetworkAclAssociation).
     pub fn build(self) -> crate::types::AwsEc2NetworkAclAssociation {

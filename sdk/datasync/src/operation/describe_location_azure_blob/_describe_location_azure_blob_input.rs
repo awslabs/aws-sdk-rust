@@ -39,6 +39,10 @@ impl DescribeLocationAzureBlobInputBuilder {
         self.location_arn = input;
         self
     }
+    /// <p>Specifies the Amazon Resource Name (ARN) of your Azure Blob Storage transfer location.</p>
+    pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location_arn
+    }
     /// Consumes the builder and constructs a [`DescribeLocationAzureBlobInput`](crate::operation::describe_location_azure_blob::DescribeLocationAzureBlobInput).
     pub fn build(
         self,

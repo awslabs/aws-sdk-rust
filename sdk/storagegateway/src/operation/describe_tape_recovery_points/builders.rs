@@ -37,6 +37,10 @@ impl DescribeTapeRecoveryPointsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeTapeRecoveryPoints as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_tape_recovery_points::builders::DescribeTapeRecoveryPointsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,10 @@ impl DescribeTapeRecoveryPointsFluentBuilder {
         self.inner = self.inner.set_gateway_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_gateway_arn()
+    }
     /// <p>An opaque string that indicates the position at which to begin describing the virtual tape recovery points.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -143,6 +151,10 @@ impl DescribeTapeRecoveryPointsFluentBuilder {
         self.inner = self.inner.set_marker(input);
         self
     }
+    /// <p>An opaque string that indicates the position at which to begin describing the virtual tape recovery points.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
+    }
     /// <p>Specifies that the number of virtual tape recovery points that are described be limited to the specified number.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -152,5 +164,9 @@ impl DescribeTapeRecoveryPointsFluentBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
+    }
+    /// <p>Specifies that the number of virtual tape recovery points that are described be limited to the specified number.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
     }
 }

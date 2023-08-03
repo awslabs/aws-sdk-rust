@@ -123,6 +123,10 @@ impl AuditFindingBuilder {
         self.finding_id = input;
         self
     }
+    /// <p>A unique identifier for this set of audit findings. This identifier is used to apply mitigation tasks to one or more sets of findings.</p>
+    pub fn get_finding_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.finding_id
+    }
     /// <p>The ID of the audit that generated this result (finding).</p>
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_id = ::std::option::Option::Some(input.into());
@@ -133,6 +137,10 @@ impl AuditFindingBuilder {
         self.task_id = input;
         self
     }
+    /// <p>The ID of the audit that generated this result (finding).</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_id
+    }
     /// <p>The audit check that generated this result.</p>
     pub fn check_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.check_name = ::std::option::Option::Some(input.into());
@@ -142,6 +150,10 @@ impl AuditFindingBuilder {
     pub fn set_check_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.check_name = input;
         self
+    }
+    /// <p>The audit check that generated this result.</p>
+    pub fn get_check_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.check_name
     }
     /// <p>The time the audit started.</p>
     pub fn task_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -156,6 +168,10 @@ impl AuditFindingBuilder {
         self.task_start_time = input;
         self
     }
+    /// <p>The time the audit started.</p>
+    pub fn get_task_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.task_start_time
+    }
     /// <p>The time the result (finding) was discovered.</p>
     pub fn finding_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.finding_time = ::std::option::Option::Some(input);
@@ -168,6 +184,10 @@ impl AuditFindingBuilder {
     ) -> Self {
         self.finding_time = input;
         self
+    }
+    /// <p>The time the result (finding) was discovered.</p>
+    pub fn get_finding_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.finding_time
     }
     /// <p>The severity of the result (finding).</p>
     pub fn severity(mut self, input: crate::types::AuditFindingSeverity) -> Self {
@@ -182,6 +202,10 @@ impl AuditFindingBuilder {
         self.severity = input;
         self
     }
+    /// <p>The severity of the result (finding).</p>
+    pub fn get_severity(&self) -> &::std::option::Option<crate::types::AuditFindingSeverity> {
+        &self.severity
+    }
     /// <p>The resource that was found to be noncompliant with the audit check.</p>
     pub fn non_compliant_resource(mut self, input: crate::types::NonCompliantResource) -> Self {
         self.non_compliant_resource = ::std::option::Option::Some(input);
@@ -194,6 +218,12 @@ impl AuditFindingBuilder {
     ) -> Self {
         self.non_compliant_resource = input;
         self
+    }
+    /// <p>The resource that was found to be noncompliant with the audit check.</p>
+    pub fn get_non_compliant_resource(
+        &self,
+    ) -> &::std::option::Option<crate::types::NonCompliantResource> {
+        &self.non_compliant_resource
     }
     /// Appends an item to `related_resources`.
     ///
@@ -214,6 +244,12 @@ impl AuditFindingBuilder {
         self.related_resources = input;
         self
     }
+    /// <p>The list of related resources.</p>
+    pub fn get_related_resources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RelatedResource>> {
+        &self.related_resources
+    }
     /// <p>The reason the resource was noncompliant.</p>
     pub fn reason_for_non_compliance(
         mut self,
@@ -229,6 +265,10 @@ impl AuditFindingBuilder {
     ) -> Self {
         self.reason_for_non_compliance = input;
         self
+    }
+    /// <p>The reason the resource was noncompliant.</p>
+    pub fn get_reason_for_non_compliance(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason_for_non_compliance
     }
     /// <p>A code that indicates the reason that the resource was noncompliant.</p>
     pub fn reason_for_non_compliance_code(
@@ -246,6 +286,12 @@ impl AuditFindingBuilder {
         self.reason_for_non_compliance_code = input;
         self
     }
+    /// <p>A code that indicates the reason that the resource was noncompliant.</p>
+    pub fn get_reason_for_non_compliance_code(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.reason_for_non_compliance_code
+    }
     /// <p> Indicates whether the audit finding was suppressed or not during reporting. </p>
     pub fn is_suppressed(mut self, input: bool) -> Self {
         self.is_suppressed = ::std::option::Option::Some(input);
@@ -255,6 +301,10 @@ impl AuditFindingBuilder {
     pub fn set_is_suppressed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_suppressed = input;
         self
+    }
+    /// <p> Indicates whether the audit finding was suppressed or not during reporting. </p>
+    pub fn get_is_suppressed(&self) -> &::std::option::Option<bool> {
+        &self.is_suppressed
     }
     /// Consumes the builder and constructs a [`AuditFinding`](crate::types::AuditFinding).
     pub fn build(self) -> crate::types::AuditFinding {

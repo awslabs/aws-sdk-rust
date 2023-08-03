@@ -91,6 +91,10 @@ impl UpdateLaunchInputBuilder {
         self.project = input;
         self
     }
+    /// <p>The name or ARN of the project that contains the launch that you want to update.</p>
+    pub fn get_project(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project
+    }
     /// <p>The name of the launch that is to be updated.</p>
     pub fn launch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch = ::std::option::Option::Some(input.into());
@@ -101,6 +105,10 @@ impl UpdateLaunchInputBuilder {
         self.launch = input;
         self
     }
+    /// <p>The name of the launch that is to be updated.</p>
+    pub fn get_launch(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch
+    }
     /// <p>An optional description for the launch.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -110,6 +118,10 @@ impl UpdateLaunchInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>An optional description for the launch.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `groups`.
     ///
@@ -130,6 +142,12 @@ impl UpdateLaunchInputBuilder {
         self.groups = input;
         self
     }
+    /// <p>An array of structures that contains the feature and variations that are to be used for the launch.</p>
+    pub fn get_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchGroupConfig>> {
+        &self.groups
+    }
     /// Appends an item to `metric_monitors`.
     ///
     /// To override the contents of this collection use [`set_metric_monitors`](Self::set_metric_monitors).
@@ -149,6 +167,12 @@ impl UpdateLaunchInputBuilder {
         self.metric_monitors = input;
         self
     }
+    /// <p>An array of structures that define the metrics that will be used to monitor the launch performance.</p>
+    pub fn get_metric_monitors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricMonitorConfig>> {
+        &self.metric_monitors
+    }
     /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationSalt</code>.</p>
     pub fn randomization_salt(
         mut self,
@@ -165,6 +189,10 @@ impl UpdateLaunchInputBuilder {
         self.randomization_salt = input;
         self
     }
+    /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationSalt</code>.</p>
+    pub fn get_randomization_salt(&self) -> &::std::option::Option<::std::string::String> {
+        &self.randomization_salt
+    }
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
     pub fn scheduled_splits_config(
         mut self,
@@ -180,6 +208,12 @@ impl UpdateLaunchInputBuilder {
     ) -> Self {
         self.scheduled_splits_config = input;
         self
+    }
+    /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
+    pub fn get_scheduled_splits_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ScheduledSplitsLaunchConfig> {
+        &self.scheduled_splits_config
     }
     /// Consumes the builder and constructs a [`UpdateLaunchInput`](crate::operation::update_launch::UpdateLaunchInput).
     pub fn build(

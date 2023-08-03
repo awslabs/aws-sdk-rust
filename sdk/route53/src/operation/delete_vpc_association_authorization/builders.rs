@@ -38,6 +38,10 @@ impl DeleteVPCAssociationAuthorizationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteVPCAssociationAuthorization as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_vpc_association_authorization::builders::DeleteVpcAssociationAuthorizationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -108,6 +112,10 @@ impl DeleteVPCAssociationAuthorizationFluentBuilder {
         self.inner = self.inner.set_hosted_zone_id(input);
         self
     }
+    /// <p>When removing authorization to associate a VPC that was created by one Amazon Web Services account with a hosted zone that was created with a different Amazon Web Services account, the ID of the hosted zone.</p>
+    pub fn get_hosted_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_hosted_zone_id()
+    }
     /// <p>When removing authorization to associate a VPC that was created by one Amazon Web Services account with a hosted zone that was created with a different Amazon Web Services account, a complex type that includes the ID and region of the VPC.</p>
     pub fn vpc(mut self, input: crate::types::Vpc) -> Self {
         self.inner = self.inner.vpc(input);
@@ -117,5 +125,9 @@ impl DeleteVPCAssociationAuthorizationFluentBuilder {
     pub fn set_vpc(mut self, input: ::std::option::Option<crate::types::Vpc>) -> Self {
         self.inner = self.inner.set_vpc(input);
         self
+    }
+    /// <p>When removing authorization to associate a VPC that was created by one Amazon Web Services account with a hosted zone that was created with a different Amazon Web Services account, a complex type that includes the ID and region of the VPC.</p>
+    pub fn get_vpc(&self) -> &::std::option::Option<crate::types::Vpc> {
+        self.inner.get_vpc()
     }
 }

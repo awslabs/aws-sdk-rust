@@ -36,6 +36,10 @@ impl DescribeNetworkInsightsPathsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeNetworkInsightsPaths as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_network_insights_paths::builders::DescribeNetworkInsightsPathsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -142,6 +146,12 @@ impl DescribeNetworkInsightsPathsFluentBuilder {
         self.inner = self.inner.set_network_insights_path_ids(input);
         self
     }
+    /// <p>The IDs of the paths.</p>
+    pub fn get_network_insights_path_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_network_insights_path_ids()
+    }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -185,6 +195,23 @@ impl DescribeNetworkInsightsPathsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>The filters. The following are the possible values:</p>
+    /// <ul>
+    /// <li> <p>destination - The ID of the resource.</p> </li>
+    /// <li> <p>filter-at-source.source-address - The source IPv4 address at the source.</p> </li>
+    /// <li> <p>filter-at-source.source-port-range - The source port range at the source.</p> </li>
+    /// <li> <p>filter-at-source.destination-address - The destination IPv4 address at the source.</p> </li>
+    /// <li> <p>filter-at-source.destination-port-range - The destination port range at the source.</p> </li>
+    /// <li> <p>filter-at-destination.source-address - The source IPv4 address at the destination.</p> </li>
+    /// <li> <p>filter-at-destination.source-port-range - The source port range at the destination.</p> </li>
+    /// <li> <p>filter-at-destination.destination-address - The destination IPv4 address at the destination.</p> </li>
+    /// <li> <p>filter-at-destination.destination-port-range - The destination port range at the destination.</p> </li>
+    /// <li> <p>protocol - The protocol.</p> </li>
+    /// <li> <p>source - The ID of the resource.</p> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
+    }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -194,6 +221,10 @@ impl DescribeNetworkInsightsPathsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -205,6 +236,10 @@ impl DescribeNetworkInsightsPathsFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -214,5 +249,9 @@ impl DescribeNetworkInsightsPathsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

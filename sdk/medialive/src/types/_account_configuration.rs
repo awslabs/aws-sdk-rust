@@ -40,6 +40,10 @@ impl AccountConfigurationBuilder {
         self.kms_key_id = input;
         self
     }
+    /// Specifies the KMS key to use for all features that use key encryption. Specify the ARN of a KMS key that you have created. Or leave blank to use the key that MediaLive creates and manages for you.
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
+    }
     /// Consumes the builder and constructs a [`AccountConfiguration`](crate::types::AccountConfiguration).
     pub fn build(self) -> crate::types::AccountConfiguration {
         crate::types::AccountConfiguration {

@@ -50,6 +50,10 @@ impl GetContentSummaryOutputBuilder {
         self.content_summary = input;
         self
     }
+    /// <p>The content summary.</p>
+    pub fn get_content_summary(&self) -> &::std::option::Option<crate::types::ContentSummary> {
+        &self.content_summary
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

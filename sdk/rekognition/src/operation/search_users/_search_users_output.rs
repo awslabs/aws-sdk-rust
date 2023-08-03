@@ -79,6 +79,12 @@ impl SearchUsersOutputBuilder {
         self.user_matches = input;
         self
     }
+    /// <p>An array of UserMatch objects that matched the input face along with the confidence in the match. Array will be empty if there are no matches.</p>
+    pub fn get_user_matches(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UserMatch>> {
+        &self.user_matches
+    }
     /// <p>Version number of the face detection model associated with the input CollectionId.</p>
     pub fn face_model_version(
         mut self,
@@ -95,6 +101,10 @@ impl SearchUsersOutputBuilder {
         self.face_model_version = input;
         self
     }
+    /// <p>Version number of the face detection model associated with the input CollectionId.</p>
+    pub fn get_face_model_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.face_model_version
+    }
     /// <p>Contains the ID of a face that was used to search for matches in a collection.</p>
     pub fn searched_face(mut self, input: crate::types::SearchedFace) -> Self {
         self.searched_face = ::std::option::Option::Some(input);
@@ -108,6 +118,10 @@ impl SearchUsersOutputBuilder {
         self.searched_face = input;
         self
     }
+    /// <p>Contains the ID of a face that was used to search for matches in a collection.</p>
+    pub fn get_searched_face(&self) -> &::std::option::Option<crate::types::SearchedFace> {
+        &self.searched_face
+    }
     /// <p>Contains the ID of the UserID that was used to search for matches in a collection.</p>
     pub fn searched_user(mut self, input: crate::types::SearchedUser) -> Self {
         self.searched_user = ::std::option::Option::Some(input);
@@ -120,6 +134,10 @@ impl SearchUsersOutputBuilder {
     ) -> Self {
         self.searched_user = input;
         self
+    }
+    /// <p>Contains the ID of the UserID that was used to search for matches in a collection.</p>
+    pub fn get_searched_user(&self) -> &::std::option::Option<crate::types::SearchedUser> {
+        &self.searched_user
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

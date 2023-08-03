@@ -94,6 +94,10 @@ impl UpdateProjectVisibilityOutputBuilder {
         self.project_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the build project.</p>
+    pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_arn
+    }
     /// <p>Contains the project identifier used with the public build APIs. </p>
     pub fn public_project_alias(
         mut self,
@@ -109,6 +113,10 @@ impl UpdateProjectVisibilityOutputBuilder {
     ) -> Self {
         self.public_project_alias = input;
         self
+    }
+    /// <p>Contains the project identifier used with the public build APIs. </p>
+    pub fn get_public_project_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_project_alias
     }
     /// <p>Specifies the visibility of the project's builds. Possible values are:</p>
     /// <dl>
@@ -150,6 +158,26 @@ impl UpdateProjectVisibilityOutputBuilder {
     ) -> Self {
         self.project_visibility = input;
         self
+    }
+    /// <p>Specifies the visibility of the project's builds. Possible values are:</p>
+    /// <dl>
+    /// <dt>
+    /// PUBLIC_READ
+    /// </dt>
+    /// <dd>
+    /// <p>The project builds are visible to the public.</p>
+    /// </dd>
+    /// <dt>
+    /// PRIVATE
+    /// </dt>
+    /// <dd>
+    /// <p>The project builds are not visible to the public.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_project_visibility(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProjectVisibilityType> {
+        &self.project_visibility
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

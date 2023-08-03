@@ -63,6 +63,10 @@ impl UpdateVariableInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the variable.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The new default value of the variable.</p>
     pub fn default_value(
         mut self,
@@ -79,6 +83,10 @@ impl UpdateVariableInputBuilder {
         self.default_value = input;
         self
     }
+    /// <p>The new default value of the variable.</p>
+    pub fn get_default_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_value
+    }
     /// <p>The new description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -88,6 +96,10 @@ impl UpdateVariableInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The new description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>.</p>
     pub fn variable_type(
@@ -104,6 +116,10 @@ impl UpdateVariableInputBuilder {
     ) -> Self {
         self.variable_type = input;
         self
+    }
+    /// <p>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>.</p>
+    pub fn get_variable_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.variable_type
     }
     /// Consumes the builder and constructs a [`UpdateVariableInput`](crate::operation::update_variable::UpdateVariableInput).
     pub fn build(

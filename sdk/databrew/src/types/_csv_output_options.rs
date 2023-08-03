@@ -40,6 +40,10 @@ impl CsvOutputOptionsBuilder {
         self.delimiter = input;
         self
     }
+    /// <p>A single character that specifies the delimiter used to create CSV job output.</p>
+    pub fn get_delimiter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delimiter
+    }
     /// Consumes the builder and constructs a [`CsvOutputOptions`](crate::types::CsvOutputOptions).
     pub fn build(self) -> crate::types::CsvOutputOptions {
         crate::types::CsvOutputOptions {

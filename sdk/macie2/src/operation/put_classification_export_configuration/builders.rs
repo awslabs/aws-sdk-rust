@@ -36,6 +36,10 @@ impl PutClassificationExportConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutClassificationExportConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_classification_export_configuration::builders::PutClassificationExportConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -102,5 +106,11 @@ impl PutClassificationExportConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
+    }
+    /// <p>The location to store data classification results in, and the encryption settings to use when storing results in that location.</p>
+    pub fn get_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ClassificationExportConfiguration> {
+        self.inner.get_configuration()
     }
 }

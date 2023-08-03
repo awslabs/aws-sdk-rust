@@ -95,6 +95,14 @@ impl GetBuilder {
         self.key = input;
         self
     }
+    /// <p>A map of attribute names to <code>AttributeValue</code> objects that specifies the primary key of the item to retrieve.</p>
+    pub fn get_key(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
+    > {
+        &self.key
+    }
     /// <p>The name of the table from which to retrieve the specified item.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
@@ -104,6 +112,10 @@ impl GetBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
+    }
+    /// <p>The name of the table from which to retrieve the specified item.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
     }
     /// <p>A string that identifies one or more attributes of the specified item to retrieve from the table. The attributes in the expression must be separated by commas. If no attribute names are specified, then all attributes of the specified item are returned. If any of the requested attributes are not found, they do not appear in the result.</p>
     pub fn projection_expression(
@@ -120,6 +132,10 @@ impl GetBuilder {
     ) -> Self {
         self.projection_expression = input;
         self
+    }
+    /// <p>A string that identifies one or more attributes of the specified item to retrieve from the table. The attributes in the expression must be separated by commas. If no attribute names are specified, then all attributes of the specified item are returned. If any of the requested attributes are not found, they do not appear in the result.</p>
+    pub fn get_projection_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.projection_expression
     }
     /// Adds a key-value pair to `expression_attribute_names`.
     ///
@@ -145,6 +161,14 @@ impl GetBuilder {
     ) -> Self {
         self.expression_attribute_names = input;
         self
+    }
+    /// <p>One or more substitution tokens for attribute names in the ProjectionExpression parameter.</p>
+    pub fn get_expression_attribute_names(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.expression_attribute_names
     }
     /// Consumes the builder and constructs a [`Get`](crate::types::Get).
     pub fn build(self) -> crate::types::Get {

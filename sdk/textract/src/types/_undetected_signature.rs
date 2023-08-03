@@ -40,6 +40,10 @@ impl UndetectedSignatureBuilder {
         self.page = input;
         self
     }
+    /// <p>The page where a signature was expected but not found.</p>
+    pub fn get_page(&self) -> &::std::option::Option<i32> {
+        &self.page
+    }
     /// Consumes the builder and constructs a [`UndetectedSignature`](crate::types::UndetectedSignature).
     pub fn build(self) -> crate::types::UndetectedSignature {
         crate::types::UndetectedSignature { page: self.page }

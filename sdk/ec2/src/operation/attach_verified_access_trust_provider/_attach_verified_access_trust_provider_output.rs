@@ -67,6 +67,12 @@ impl AttachVerifiedAccessTrustProviderOutputBuilder {
         self.verified_access_trust_provider = input;
         self
     }
+    /// <p>The ID of the Verified Access trust provider.</p>
+    pub fn get_verified_access_trust_provider(
+        &self,
+    ) -> &::std::option::Option<crate::types::VerifiedAccessTrustProvider> {
+        &self.verified_access_trust_provider
+    }
     /// <p>The ID of the Verified Access instance.</p>
     pub fn verified_access_instance(mut self, input: crate::types::VerifiedAccessInstance) -> Self {
         self.verified_access_instance = ::std::option::Option::Some(input);
@@ -79,6 +85,12 @@ impl AttachVerifiedAccessTrustProviderOutputBuilder {
     ) -> Self {
         self.verified_access_instance = input;
         self
+    }
+    /// <p>The ID of the Verified Access instance.</p>
+    pub fn get_verified_access_instance(
+        &self,
+    ) -> &::std::option::Option<crate::types::VerifiedAccessInstance> {
+        &self.verified_access_instance
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

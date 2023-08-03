@@ -74,6 +74,10 @@ impl CreateKeyspaceInputBuilder {
         self.keyspace_name = input;
         self
     }
+    /// <p>The name of the keyspace to be created.</p>
+    pub fn get_keyspace_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.keyspace_name
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -94,6 +98,11 @@ impl CreateKeyspaceInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of key-value pair tags to be attached to the keyspace.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// <p> The replication specification of the keyspace includes:</p>
     /// <ul>
@@ -118,6 +127,16 @@ impl CreateKeyspaceInputBuilder {
     ) -> Self {
         self.replication_specification = input;
         self
+    }
+    /// <p> The replication specification of the keyspace includes:</p>
+    /// <ul>
+    /// <li> <p> <code>replicationStrategy</code> - the required value is <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>.</p> </li>
+    /// <li> <p> <code>regionList</code> - if the <code>replicationStrategy</code> is <code>MULTI_REGION</code>, the <code>regionList</code> requires the current Region and at least one additional Amazon Web Services Region where the keyspace is going to be replicated in. The maximum number of supported replication Regions including the current Region is six.</p> </li>
+    /// </ul>
+    pub fn get_replication_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReplicationSpecification> {
+        &self.replication_specification
     }
     /// Consumes the builder and constructs a [`CreateKeyspaceInput`](crate::operation::create_keyspace::CreateKeyspaceInput).
     pub fn build(

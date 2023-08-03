@@ -70,6 +70,10 @@ impl ModifyTransitGatewayInputBuilder {
         self.transit_gateway_id = input;
         self
     }
+    /// <p>The ID of the transit gateway.</p>
+    pub fn get_transit_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_id
+    }
     /// <p>The description for the transit gateway.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl ModifyTransitGatewayInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description for the transit gateway.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The options to modify.</p>
     pub fn options(mut self, input: crate::types::ModifyTransitGatewayOptions) -> Self {
@@ -93,6 +101,10 @@ impl ModifyTransitGatewayInputBuilder {
         self.options = input;
         self
     }
+    /// <p>The options to modify.</p>
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::ModifyTransitGatewayOptions> {
+        &self.options
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -102,6 +114,10 @@ impl ModifyTransitGatewayInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`ModifyTransitGatewayInput`](crate::operation::modify_transit_gateway::ModifyTransitGatewayInput).
     pub fn build(

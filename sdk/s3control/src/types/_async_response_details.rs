@@ -58,6 +58,12 @@ impl AsyncResponseDetailsBuilder {
         self.multi_region_access_point_details = input;
         self
     }
+    /// <p>The details for the Multi-Region Access Point.</p>
+    pub fn get_multi_region_access_point_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::MultiRegionAccessPointsAsyncResponse> {
+        &self.multi_region_access_point_details
+    }
     /// <p>Error details for an asynchronous request.</p>
     pub fn error_details(mut self, input: crate::types::AsyncErrorDetails) -> Self {
         self.error_details = ::std::option::Option::Some(input);
@@ -70,6 +76,10 @@ impl AsyncResponseDetailsBuilder {
     ) -> Self {
         self.error_details = input;
         self
+    }
+    /// <p>Error details for an asynchronous request.</p>
+    pub fn get_error_details(&self) -> &::std::option::Option<crate::types::AsyncErrorDetails> {
+        &self.error_details
     }
     /// Consumes the builder and constructs a [`AsyncResponseDetails`](crate::types::AsyncResponseDetails).
     pub fn build(self) -> crate::types::AsyncResponseDetails {

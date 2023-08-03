@@ -43,6 +43,12 @@ impl UpdateChannelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateChannel as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_channel::builders::UpdateChannelInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,6 +131,10 @@ impl UpdateChannelFluentBuilder {
         self.inner = self.inner.set_channel_arn(input);
         self
     }
+    /// <p>The ARN of the channel.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_arn()
+    }
     /// <p>The name of the channel.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -134,6 +144,10 @@ impl UpdateChannelFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the channel.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The mode of the update request.</p>
     pub fn mode(mut self, input: crate::types::ChannelMode) -> Self {
@@ -145,6 +159,10 @@ impl UpdateChannelFluentBuilder {
         self.inner = self.inner.set_mode(input);
         self
     }
+    /// <p>The mode of the update request.</p>
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::ChannelMode> {
+        self.inner.get_mode()
+    }
     /// <p>The metadata for the update request.</p>
     pub fn metadata(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.metadata(input.into());
@@ -155,6 +173,10 @@ impl UpdateChannelFluentBuilder {
         self.inner = self.inner.set_metadata(input);
         self
     }
+    /// <p>The metadata for the update request.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_metadata()
+    }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.chime_bearer(input.into());
@@ -164,5 +186,9 @@ impl UpdateChannelFluentBuilder {
     pub fn set_chime_bearer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_chime_bearer(input);
         self
+    }
+    /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_chime_bearer()
     }
 }

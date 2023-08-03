@@ -83,6 +83,10 @@ impl TableSideBorderOptionsBuilder {
         self.inner_vertical = input;
         self
     }
+    /// <p>The table border options of the inner vertical border.</p>
+    pub fn get_inner_vertical(&self) -> &::std::option::Option<crate::types::TableBorderOptions> {
+        &self.inner_vertical
+    }
     /// <p>The table border options of the inner horizontal border.</p>
     pub fn inner_horizontal(mut self, input: crate::types::TableBorderOptions) -> Self {
         self.inner_horizontal = ::std::option::Option::Some(input);
@@ -95,6 +99,10 @@ impl TableSideBorderOptionsBuilder {
     ) -> Self {
         self.inner_horizontal = input;
         self
+    }
+    /// <p>The table border options of the inner horizontal border.</p>
+    pub fn get_inner_horizontal(&self) -> &::std::option::Option<crate::types::TableBorderOptions> {
+        &self.inner_horizontal
     }
     /// <p>The table border options of the left border.</p>
     pub fn left(mut self, input: crate::types::TableBorderOptions) -> Self {
@@ -109,6 +117,10 @@ impl TableSideBorderOptionsBuilder {
         self.left = input;
         self
     }
+    /// <p>The table border options of the left border.</p>
+    pub fn get_left(&self) -> &::std::option::Option<crate::types::TableBorderOptions> {
+        &self.left
+    }
     /// <p>The table border options of the right border.</p>
     pub fn right(mut self, input: crate::types::TableBorderOptions) -> Self {
         self.right = ::std::option::Option::Some(input);
@@ -121,6 +133,10 @@ impl TableSideBorderOptionsBuilder {
     ) -> Self {
         self.right = input;
         self
+    }
+    /// <p>The table border options of the right border.</p>
+    pub fn get_right(&self) -> &::std::option::Option<crate::types::TableBorderOptions> {
+        &self.right
     }
     /// <p>The table border options of the top border.</p>
     pub fn top(mut self, input: crate::types::TableBorderOptions) -> Self {
@@ -135,6 +151,10 @@ impl TableSideBorderOptionsBuilder {
         self.top = input;
         self
     }
+    /// <p>The table border options of the top border.</p>
+    pub fn get_top(&self) -> &::std::option::Option<crate::types::TableBorderOptions> {
+        &self.top
+    }
     /// <p>The table border options of the bottom border.</p>
     pub fn bottom(mut self, input: crate::types::TableBorderOptions) -> Self {
         self.bottom = ::std::option::Option::Some(input);
@@ -147,6 +167,10 @@ impl TableSideBorderOptionsBuilder {
     ) -> Self {
         self.bottom = input;
         self
+    }
+    /// <p>The table border options of the bottom border.</p>
+    pub fn get_bottom(&self) -> &::std::option::Option<crate::types::TableBorderOptions> {
+        &self.bottom
     }
     /// Consumes the builder and constructs a [`TableSideBorderOptions`](crate::types::TableSideBorderOptions).
     pub fn build(self) -> crate::types::TableSideBorderOptions {

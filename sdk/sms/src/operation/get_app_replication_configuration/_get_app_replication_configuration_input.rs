@@ -39,6 +39,10 @@ impl GetAppReplicationConfigurationInputBuilder {
         self.app_id = input;
         self
     }
+    /// <p>The ID of the application.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// Consumes the builder and constructs a [`GetAppReplicationConfigurationInput`](crate::operation::get_app_replication_configuration::GetAppReplicationConfigurationInput).
     pub fn build(
         self,

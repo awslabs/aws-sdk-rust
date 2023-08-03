@@ -49,6 +49,10 @@ impl TestResultBuilder {
         self.groups = input;
         self
     }
+    /// <p>Show each group of test results.</p>
+    pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupResult>> {
+        &self.groups
+    }
     /// Consumes the builder and constructs a [`TestResult`](crate::types::TestResult).
     pub fn build(self) -> crate::types::TestResult {
         crate::types::TestResult {

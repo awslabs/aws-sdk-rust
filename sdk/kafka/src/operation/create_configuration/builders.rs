@@ -36,6 +36,12 @@ impl CreateConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateConfiguration as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_configuration::builders::CreateConfigurationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateConfigurationFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>The description of the configuration.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// Appends an item to `KafkaVersions`.
     ///
     /// To override the contents of this collection use [`set_kafka_versions`](Self::set_kafka_versions).
@@ -146,6 +156,12 @@ impl CreateConfigurationFluentBuilder {
         self.inner = self.inner.set_kafka_versions(input);
         self
     }
+    /// <p>The versions of Apache Kafka with which you can use this MSK configuration.</p>
+    pub fn get_kafka_versions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_kafka_versions()
+    }
     /// <p>The name of the configuration.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -155,6 +171,10 @@ impl CreateConfigurationFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>Contents of the <filename>
     /// server.properties
@@ -176,5 +196,13 @@ impl CreateConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_server_properties(input);
         self
+    }
+    /// <p>Contents of the <filename>
+    /// server.properties
+    /// </filename> file. When using the API, you must ensure that the contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>
+    /// server.properties
+    /// </filename> can be in plaintext.</p>
+    pub fn get_server_properties(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        self.inner.get_server_properties()
     }
 }

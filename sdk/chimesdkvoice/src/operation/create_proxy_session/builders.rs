@@ -36,6 +36,12 @@ impl CreateProxySessionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateProxySession as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_proxy_session::builders::CreateProxySessionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl CreateProxySessionFluentBuilder {
         self.inner = self.inner.set_voice_connector_id(input);
         self
     }
+    /// <p>The Voice Connector ID.</p>
+    pub fn get_voice_connector_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_voice_connector_id()
+    }
     /// Appends an item to `ParticipantPhoneNumbers`.
     ///
     /// To override the contents of this collection use [`set_participant_phone_numbers`](Self::set_participant_phone_numbers).
@@ -152,6 +162,12 @@ impl CreateProxySessionFluentBuilder {
         self.inner = self.inner.set_participant_phone_numbers(input);
         self
     }
+    /// <p>The participant phone numbers.</p>
+    pub fn get_participant_phone_numbers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_participant_phone_numbers()
+    }
     /// <p>The name of the proxy session.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -162,6 +178,10 @@ impl CreateProxySessionFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the proxy session.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The number of minutes allowed for the proxy session.</p>
     pub fn expiry_minutes(mut self, input: i32) -> Self {
         self.inner = self.inner.expiry_minutes(input);
@@ -171,6 +191,10 @@ impl CreateProxySessionFluentBuilder {
     pub fn set_expiry_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_expiry_minutes(input);
         self
+    }
+    /// <p>The number of minutes allowed for the proxy session.</p>
+    pub fn get_expiry_minutes(&self) -> &::std::option::Option<i32> {
+        self.inner.get_expiry_minutes()
     }
     /// Appends an item to `Capabilities`.
     ///
@@ -189,6 +213,12 @@ impl CreateProxySessionFluentBuilder {
         self.inner = self.inner.set_capabilities(input);
         self
     }
+    /// <p>The proxy session's capabilities.</p>
+    pub fn get_capabilities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Capability>> {
+        self.inner.get_capabilities()
+    }
     /// <p>The preference for proxy phone number reuse, or stickiness, between the same participants across sessions.</p>
     pub fn number_selection_behavior(
         mut self,
@@ -205,6 +235,12 @@ impl CreateProxySessionFluentBuilder {
         self.inner = self.inner.set_number_selection_behavior(input);
         self
     }
+    /// <p>The preference for proxy phone number reuse, or stickiness, between the same participants across sessions.</p>
+    pub fn get_number_selection_behavior(
+        &self,
+    ) -> &::std::option::Option<crate::types::NumberSelectionBehavior> {
+        self.inner.get_number_selection_behavior()
+    }
     /// <p>The preference for matching the country or area code of the proxy phone number with that of the first participant.</p>
     pub fn geo_match_level(mut self, input: crate::types::GeoMatchLevel) -> Self {
         self.inner = self.inner.geo_match_level(input);
@@ -218,6 +254,10 @@ impl CreateProxySessionFluentBuilder {
         self.inner = self.inner.set_geo_match_level(input);
         self
     }
+    /// <p>The preference for matching the country or area code of the proxy phone number with that of the first participant.</p>
+    pub fn get_geo_match_level(&self) -> &::std::option::Option<crate::types::GeoMatchLevel> {
+        self.inner.get_geo_match_level()
+    }
     /// <p>The country and area code for the proxy phone number.</p>
     pub fn geo_match_params(mut self, input: crate::types::GeoMatchParams) -> Self {
         self.inner = self.inner.geo_match_params(input);
@@ -230,5 +270,9 @@ impl CreateProxySessionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_geo_match_params(input);
         self
+    }
+    /// <p>The country and area code for the proxy phone number.</p>
+    pub fn get_geo_match_params(&self) -> &::std::option::Option<crate::types::GeoMatchParams> {
+        self.inner.get_geo_match_params()
     }
 }

@@ -92,6 +92,10 @@ impl PhysicalResourceIdBuilder {
         self.identifier = input;
         self
     }
+    /// <p>The identifier of the physical resource.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
+    }
     /// <p>Specifies the type of physical resource identifier.</p>
     /// <dl>
     /// <dt>
@@ -133,6 +137,24 @@ impl PhysicalResourceIdBuilder {
         self.r#type = input;
         self
     }
+    /// <p>Specifies the type of physical resource identifier.</p>
+    /// <dl>
+    /// <dt>
+    /// Arn
+    /// </dt>
+    /// <dd>
+    /// <p>The resource identifier is an Amazon Resource Name (ARN) .</p>
+    /// </dd>
+    /// <dt>
+    /// Native
+    /// </dt>
+    /// <dd>
+    /// <p>The resource identifier is an Resilience Hub-native identifier.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::PhysicalIdentifierType> {
+        &self.r#type
+    }
     /// <p>The Amazon Web Services Region that the physical resource is located in.</p>
     pub fn aws_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_region = ::std::option::Option::Some(input.into());
@@ -142,6 +164,10 @@ impl PhysicalResourceIdBuilder {
     pub fn set_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_region = input;
         self
+    }
+    /// <p>The Amazon Web Services Region that the physical resource is located in.</p>
+    pub fn get_aws_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_region
     }
     /// <p>The Amazon Web Services account that owns the physical resource.</p>
     pub fn aws_account_id(
@@ -158,6 +184,10 @@ impl PhysicalResourceIdBuilder {
     ) -> Self {
         self.aws_account_id = input;
         self
+    }
+    /// <p>The Amazon Web Services account that owns the physical resource.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
     }
     /// Consumes the builder and constructs a [`PhysicalResourceId`](crate::types::PhysicalResourceId).
     pub fn build(self) -> crate::types::PhysicalResourceId {

@@ -43,6 +43,10 @@ impl PublishBatchFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PublishBatch as a reference.
+    pub fn as_input(&self) -> &crate::operation::publish_batch::builders::PublishBatchInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,6 +129,10 @@ impl PublishBatchFluentBuilder {
         self.inner = self.inner.set_topic_arn(input);
         self
     }
+    /// <p>The Amazon resource name (ARN) of the topic you want to batch publish to.</p>
+    pub fn get_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_topic_arn()
+    }
     /// Appends an item to `PublishBatchRequestEntries`.
     ///
     /// To override the contents of this collection use [`set_publish_batch_request_entries`](Self::set_publish_batch_request_entries).
@@ -144,5 +152,11 @@ impl PublishBatchFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_publish_batch_request_entries(input);
         self
+    }
+    /// <p>A list of <code>PublishBatch</code> request entries to be sent to the SNS topic.</p>
+    pub fn get_publish_batch_request_entries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PublishBatchRequestEntry>> {
+        self.inner.get_publish_batch_request_entries()
     }
 }

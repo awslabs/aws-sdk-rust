@@ -49,6 +49,10 @@ impl AddCommunicationToCaseOutputBuilder {
         self.result = input;
         self
     }
+    /// <p>True if <code>AddCommunicationToCase</code> succeeds. Otherwise, returns an error.</p>
+    pub fn get_result(&self) -> &::std::option::Option<bool> {
+        &self.result
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

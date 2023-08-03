@@ -80,6 +80,10 @@ impl FederatedResourceAlreadyExistsExceptionBuilder {
         self.message = input;
         self
     }
+    /// <p>The message describing the problem.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The associated Glue resource already exists.</p>
     pub fn associated_glue_resource(
         mut self,
@@ -95,6 +99,10 @@ impl FederatedResourceAlreadyExistsExceptionBuilder {
     ) -> Self {
         self.associated_glue_resource = input;
         self
+    }
+    /// <p>The associated Glue resource already exists.</p>
+    pub fn get_associated_glue_resource(&self) -> &::std::option::Option<::std::string::String> {
+        &self.associated_glue_resource
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

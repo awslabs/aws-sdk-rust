@@ -43,6 +43,12 @@ impl AudioConcatenationConfigurationBuilder {
         self.state = input;
         self
     }
+    /// <p>Enables or disables the configuration object.</p>
+    pub fn get_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::AudioArtifactsConcatenationState> {
+        &self.state
+    }
     /// Consumes the builder and constructs a [`AudioConcatenationConfiguration`](crate::types::AudioConcatenationConfiguration).
     pub fn build(self) -> crate::types::AudioConcatenationConfiguration {
         crate::types::AudioConcatenationConfiguration { state: self.state }

@@ -56,6 +56,10 @@ impl ListAttachedLinksItemBuilder {
         self.label = input;
         self
     }
+    /// <p>The label that was assigned to this link at creation, with the variables resolved to their actual values.</p>
+    pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label
+    }
     /// <p>The ARN of the link.</p>
     pub fn link_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.link_arn = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl ListAttachedLinksItemBuilder {
     pub fn set_link_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.link_arn = input;
         self
+    }
+    /// <p>The ARN of the link.</p>
+    pub fn get_link_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.link_arn
     }
     /// Appends an item to `resource_types`.
     ///
@@ -87,6 +95,12 @@ impl ListAttachedLinksItemBuilder {
     ) -> Self {
         self.resource_types = input;
         self
+    }
+    /// <p>The resource types supported by this link.</p>
+    pub fn get_resource_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resource_types
     }
     /// Consumes the builder and constructs a [`ListAttachedLinksItem`](crate::types::ListAttachedLinksItem).
     pub fn build(self) -> crate::types::ListAttachedLinksItem {

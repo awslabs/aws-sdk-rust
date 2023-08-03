@@ -71,6 +71,15 @@ impl ReferenceLineStyleConfigurationBuilder {
         self.pattern = input;
         self
     }
+    /// <p>The pattern type of the line style. Choose one of the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>SOLID</code> </p> </li>
+    /// <li> <p> <code>DASHED</code> </p> </li>
+    /// <li> <p> <code>DOTTED</code> </p> </li>
+    /// </ul>
+    pub fn get_pattern(&self) -> &::std::option::Option<crate::types::ReferenceLinePatternType> {
+        &self.pattern
+    }
     /// <p>The hex color of the reference line.</p>
     pub fn color(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.color = ::std::option::Option::Some(input.into());
@@ -80,6 +89,10 @@ impl ReferenceLineStyleConfigurationBuilder {
     pub fn set_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.color = input;
         self
+    }
+    /// <p>The hex color of the reference line.</p>
+    pub fn get_color(&self) -> &::std::option::Option<::std::string::String> {
+        &self.color
     }
     /// Consumes the builder and constructs a [`ReferenceLineStyleConfiguration`](crate::types::ReferenceLineStyleConfiguration).
     pub fn build(self) -> crate::types::ReferenceLineStyleConfiguration {

@@ -39,6 +39,10 @@ impl GetClassifierInputBuilder {
         self.name = input;
         self
     }
+    /// <p>Name of the classifier to retrieve.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`GetClassifierInput`](crate::operation::get_classifier::GetClassifierInput).
     pub fn build(
         self,

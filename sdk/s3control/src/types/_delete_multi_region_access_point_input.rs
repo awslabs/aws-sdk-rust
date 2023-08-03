@@ -40,6 +40,10 @@ impl DeleteMultiRegionAccessPointInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the Multi-Region Access Point associated with this request.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DeleteMultiRegionAccessPointInput`](crate::types::DeleteMultiRegionAccessPointInput).
     pub fn build(self) -> crate::types::DeleteMultiRegionAccessPointInput {
         crate::types::DeleteMultiRegionAccessPointInput { name: self.name }

@@ -36,6 +36,10 @@ impl UpdateAccountConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAccountConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_account_configuration::builders::UpdateAccountConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,5 +132,9 @@ impl UpdateAccountConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_encryption_config(input);
         self
+    }
+    /// <p>The KMS key ARN you want to use for encryption. Defaults to service-side encryption if missing.</p>
+    pub fn get_encryption_config(&self) -> &::std::option::Option<crate::types::EncryptionConfig> {
+        self.inner.get_encryption_config()
     }
 }

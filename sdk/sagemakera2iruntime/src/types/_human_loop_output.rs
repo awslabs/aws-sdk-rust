@@ -46,6 +46,10 @@ impl HumanLoopOutputBuilder {
         self.output_s3_uri = input;
         self
     }
+    /// <p>The location of the Amazon S3 object where Amazon Augmented AI stores your human loop output.</p>
+    pub fn get_output_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_s3_uri
+    }
     /// Consumes the builder and constructs a [`HumanLoopOutput`](crate::types::HumanLoopOutput).
     pub fn build(self) -> crate::types::HumanLoopOutput {
         crate::types::HumanLoopOutput {

@@ -37,6 +37,10 @@ impl AddTagsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AddTags as a reference.
+    pub fn as_input(&self) -> &crate::operation::add_tags::builders::AddTagsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +133,12 @@ impl AddTagsFluentBuilder {
         self.inner = self.inner.set_resource_arns(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the resource.</p>
+    pub fn get_resource_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_resource_arns()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -145,5 +155,9 @@ impl AddTagsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

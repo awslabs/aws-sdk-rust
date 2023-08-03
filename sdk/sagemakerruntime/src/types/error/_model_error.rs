@@ -91,6 +91,10 @@ impl ModelErrorBuilder {
         self.message = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p> Original status code. </p>
     pub fn original_status_code(mut self, input: i32) -> Self {
         self.original_status_code = ::std::option::Option::Some(input);
@@ -100,6 +104,10 @@ impl ModelErrorBuilder {
     pub fn set_original_status_code(mut self, input: ::std::option::Option<i32>) -> Self {
         self.original_status_code = input;
         self
+    }
+    /// <p> Original status code. </p>
+    pub fn get_original_status_code(&self) -> &::std::option::Option<i32> {
+        &self.original_status_code
     }
     /// <p> Original message. </p>
     pub fn original_message(
@@ -117,6 +125,10 @@ impl ModelErrorBuilder {
         self.original_message = input;
         self
     }
+    /// <p> Original message. </p>
+    pub fn get_original_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.original_message
+    }
     /// <p> The Amazon Resource Name (ARN) of the log stream. </p>
     pub fn log_stream_arn(
         mut self,
@@ -132,6 +144,10 @@ impl ModelErrorBuilder {
     ) -> Self {
         self.log_stream_arn = input;
         self
+    }
+    /// <p> The Amazon Resource Name (ARN) of the log stream. </p>
+    pub fn get_log_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_stream_arn
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

@@ -100,6 +100,10 @@ impl TableConfigurationBuilder {
         self.field_wells = input;
         self
     }
+    /// <p>The field wells of the visual.</p>
+    pub fn get_field_wells(&self) -> &::std::option::Option<crate::types::TableFieldWells> {
+        &self.field_wells
+    }
     /// <p>The sort configuration for a <code>TableVisual</code>.</p>
     pub fn sort_configuration(mut self, input: crate::types::TableSortConfiguration) -> Self {
         self.sort_configuration = ::std::option::Option::Some(input);
@@ -112,6 +116,12 @@ impl TableConfigurationBuilder {
     ) -> Self {
         self.sort_configuration = input;
         self
+    }
+    /// <p>The sort configuration for a <code>TableVisual</code>.</p>
+    pub fn get_sort_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::TableSortConfiguration> {
+        &self.sort_configuration
     }
     /// <p>The table options for a table visual.</p>
     pub fn table_options(mut self, input: crate::types::TableOptions) -> Self {
@@ -126,6 +136,10 @@ impl TableConfigurationBuilder {
         self.table_options = input;
         self
     }
+    /// <p>The table options for a table visual.</p>
+    pub fn get_table_options(&self) -> &::std::option::Option<crate::types::TableOptions> {
+        &self.table_options
+    }
     /// <p>The total options for a table visual.</p>
     pub fn total_options(mut self, input: crate::types::TotalOptions) -> Self {
         self.total_options = ::std::option::Option::Some(input);
@@ -139,6 +153,10 @@ impl TableConfigurationBuilder {
         self.total_options = input;
         self
     }
+    /// <p>The total options for a table visual.</p>
+    pub fn get_total_options(&self) -> &::std::option::Option<crate::types::TotalOptions> {
+        &self.total_options
+    }
     /// <p>The field options for a table visual.</p>
     pub fn field_options(mut self, input: crate::types::TableFieldOptions) -> Self {
         self.field_options = ::std::option::Option::Some(input);
@@ -151,6 +169,10 @@ impl TableConfigurationBuilder {
     ) -> Self {
         self.field_options = input;
         self
+    }
+    /// <p>The field options for a table visual.</p>
+    pub fn get_field_options(&self) -> &::std::option::Option<crate::types::TableFieldOptions> {
+        &self.field_options
     }
     /// <p>The paginated report options for a table visual.</p>
     pub fn paginated_report_options(
@@ -167,6 +189,12 @@ impl TableConfigurationBuilder {
     ) -> Self {
         self.paginated_report_options = input;
         self
+    }
+    /// <p>The paginated report options for a table visual.</p>
+    pub fn get_paginated_report_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::TablePaginatedReportOptions> {
+        &self.paginated_report_options
     }
     /// Appends an item to `table_inline_visualizations`.
     ///
@@ -189,6 +217,12 @@ impl TableConfigurationBuilder {
     ) -> Self {
         self.table_inline_visualizations = input;
         self
+    }
+    /// <p>A collection of inline visualizations to display within a chart.</p>
+    pub fn get_table_inline_visualizations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TableInlineVisualization>> {
+        &self.table_inline_visualizations
     }
     /// Consumes the builder and constructs a [`TableConfiguration`](crate::types::TableConfiguration).
     pub fn build(self) -> crate::types::TableConfiguration {

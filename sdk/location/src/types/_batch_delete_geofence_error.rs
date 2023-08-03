@@ -48,6 +48,10 @@ impl BatchDeleteGeofenceErrorBuilder {
         self.geofence_id = input;
         self
     }
+    /// <p>The geofence associated with the error message.</p>
+    pub fn get_geofence_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.geofence_id
+    }
     /// <p>Contains details associated to the batch error.</p>
     pub fn error(mut self, input: crate::types::BatchItemError) -> Self {
         self.error = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl BatchDeleteGeofenceErrorBuilder {
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::BatchItemError>) -> Self {
         self.error = input;
         self
+    }
+    /// <p>Contains details associated to the batch error.</p>
+    pub fn get_error(&self) -> &::std::option::Option<crate::types::BatchItemError> {
+        &self.error
     }
     /// Consumes the builder and constructs a [`BatchDeleteGeofenceError`](crate::types::BatchDeleteGeofenceError).
     pub fn build(self) -> crate::types::BatchDeleteGeofenceError {

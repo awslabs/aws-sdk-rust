@@ -41,6 +41,10 @@ impl DeleteLanguageModelInputBuilder {
         self.model_name = input;
         self
     }
+    /// <p>The name of the custom language model you want to delete. Model names are case sensitive.</p>
+    pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_name
+    }
     /// Consumes the builder and constructs a [`DeleteLanguageModelInput`](crate::operation::delete_language_model::DeleteLanguageModelInput).
     pub fn build(
         self,

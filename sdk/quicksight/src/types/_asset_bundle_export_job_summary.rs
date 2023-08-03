@@ -83,6 +83,12 @@ impl AssetBundleExportJobSummaryBuilder {
         self.job_status = input;
         self
     }
+    /// <p>The current status of the export job.</p>
+    pub fn get_job_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::AssetBundleExportJobStatus> {
+        &self.job_status
+    }
     /// <p>The ARN of the export job.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -92,6 +98,10 @@ impl AssetBundleExportJobSummaryBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The ARN of the export job.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The time that the export job was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -105,6 +115,10 @@ impl AssetBundleExportJobSummaryBuilder {
     ) -> Self {
         self.created_time = input;
         self
+    }
+    /// <p>The time that the export job was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
     }
     /// <p>The ID of the export job.</p>
     pub fn asset_bundle_export_job_id(
@@ -122,6 +136,10 @@ impl AssetBundleExportJobSummaryBuilder {
         self.asset_bundle_export_job_id = input;
         self
     }
+    /// <p>The ID of the export job.</p>
+    pub fn get_asset_bundle_export_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_bundle_export_job_id
+    }
     /// <p>The flag that determines the inclusion of resource dependencies in the returned asset bundle.</p>
     pub fn include_all_dependencies(mut self, input: bool) -> Self {
         self.include_all_dependencies = ::std::option::Option::Some(input);
@@ -131,6 +149,10 @@ impl AssetBundleExportJobSummaryBuilder {
     pub fn set_include_all_dependencies(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_all_dependencies = input;
         self
+    }
+    /// <p>The flag that determines the inclusion of resource dependencies in the returned asset bundle.</p>
+    pub fn get_include_all_dependencies(&self) -> &::std::option::Option<bool> {
+        &self.include_all_dependencies
     }
     /// <p>The format for the export job.</p>
     pub fn export_format(mut self, input: crate::types::AssetBundleExportFormat) -> Self {
@@ -144,6 +166,12 @@ impl AssetBundleExportJobSummaryBuilder {
     ) -> Self {
         self.export_format = input;
         self
+    }
+    /// <p>The format for the export job.</p>
+    pub fn get_export_format(
+        &self,
+    ) -> &::std::option::Option<crate::types::AssetBundleExportFormat> {
+        &self.export_format
     }
     /// Consumes the builder and constructs a [`AssetBundleExportJobSummary`](crate::types::AssetBundleExportJobSummary).
     pub fn build(self) -> crate::types::AssetBundleExportJobSummary {

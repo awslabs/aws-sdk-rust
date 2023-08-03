@@ -89,6 +89,10 @@ impl GetNetworkRoutesOutputBuilder {
         self.route_table_arn = input;
         self
     }
+    /// <p>The ARN of the route table.</p>
+    pub fn get_route_table_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.route_table_arn
+    }
     /// <p>Describes a core network segment edge.</p>
     pub fn core_network_segment_edge(
         mut self,
@@ -105,6 +109,12 @@ impl GetNetworkRoutesOutputBuilder {
         self.core_network_segment_edge = input;
         self
     }
+    /// <p>Describes a core network segment edge.</p>
+    pub fn get_core_network_segment_edge(
+        &self,
+    ) -> &::std::option::Option<crate::types::CoreNetworkSegmentEdgeIdentifier> {
+        &self.core_network_segment_edge
+    }
     /// <p>The route table type.</p>
     pub fn route_table_type(mut self, input: crate::types::RouteTableType) -> Self {
         self.route_table_type = ::std::option::Option::Some(input);
@@ -118,6 +128,10 @@ impl GetNetworkRoutesOutputBuilder {
         self.route_table_type = input;
         self
     }
+    /// <p>The route table type.</p>
+    pub fn get_route_table_type(&self) -> &::std::option::Option<crate::types::RouteTableType> {
+        &self.route_table_type
+    }
     /// <p>The route table creation time.</p>
     pub fn route_table_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.route_table_timestamp = ::std::option::Option::Some(input);
@@ -130,6 +144,12 @@ impl GetNetworkRoutesOutputBuilder {
     ) -> Self {
         self.route_table_timestamp = input;
         self
+    }
+    /// <p>The route table creation time.</p>
+    pub fn get_route_table_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.route_table_timestamp
     }
     /// Appends an item to `network_routes`.
     ///
@@ -149,6 +169,12 @@ impl GetNetworkRoutesOutputBuilder {
     ) -> Self {
         self.network_routes = input;
         self
+    }
+    /// <p>The network routes.</p>
+    pub fn get_network_routes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkRoute>> {
+        &self.network_routes
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

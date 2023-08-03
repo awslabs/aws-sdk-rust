@@ -54,6 +54,10 @@ impl PrivateIpBuilder {
         self.private_dns_name = input;
         self
     }
+    /// <p>The DNS name of the private IP address.</p>
+    pub fn get_private_dns_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_dns_name
+    }
     /// <p>The full IP address of the network inteface.</p>
     pub fn private_ip_address(
         mut self,
@@ -69,6 +73,10 @@ impl PrivateIpBuilder {
     ) -> Self {
         self.private_ip_address = input;
         self
+    }
+    /// <p>The full IP address of the network inteface.</p>
+    pub fn get_private_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.private_ip_address
     }
     /// Consumes the builder and constructs a [`PrivateIp`](crate::types::PrivateIp).
     pub fn build(self) -> crate::types::PrivateIp {

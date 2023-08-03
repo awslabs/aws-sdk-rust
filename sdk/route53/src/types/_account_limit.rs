@@ -79,6 +79,17 @@ impl AccountLimitBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The limit that you requested. Valid values include the following:</p>
+    /// <ul>
+    /// <li> <p> <b>MAX_HEALTH_CHECKS_BY_OWNER</b>: The maximum number of health checks that you can create using the current account.</p> </li>
+    /// <li> <p> <b>MAX_HOSTED_ZONES_BY_OWNER</b>: The maximum number of hosted zones that you can create using the current account.</p> </li>
+    /// <li> <p> <b>MAX_REUSABLE_DELEGATION_SETS_BY_OWNER</b>: The maximum number of reusable delegation sets that you can create using the current account.</p> </li>
+    /// <li> <p> <b>MAX_TRAFFIC_POLICIES_BY_OWNER</b>: The maximum number of traffic policies that you can create using the current account.</p> </li>
+    /// <li> <p> <b>MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER</b>: The maximum number of traffic policy instances that you can create using the current account. (Traffic policy instances are referred to as traffic flow policy records in the Amazon Route 53 console.)</p> </li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::AccountLimitType> {
+        &self.r#type
+    }
     /// <p>The current value for the limit that is specified by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AccountLimit.html#Route53-Type-AccountLimit-Type">Type</a>.</p>
     pub fn value(mut self, input: i64) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -88,6 +99,10 @@ impl AccountLimitBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<i64>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The current value for the limit that is specified by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AccountLimit.html#Route53-Type-AccountLimit-Type">Type</a>.</p>
+    pub fn get_value(&self) -> &::std::option::Option<i64> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`AccountLimit`](crate::types::AccountLimit).
     pub fn build(self) -> crate::types::AccountLimit {

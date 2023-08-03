@@ -188,6 +188,10 @@ impl JobDescriptorBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The ID for the specified job.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>Indicates whether confirmation is required before Amazon S3 begins running the specified job. Confirmation is required only for jobs created through the Amazon S3 console.</p>
     pub fn confirmation_required(mut self, input: bool) -> Self {
         self.confirmation_required = ::std::option::Option::Some(input);
@@ -197,6 +201,10 @@ impl JobDescriptorBuilder {
     pub fn set_confirmation_required(mut self, input: ::std::option::Option<bool>) -> Self {
         self.confirmation_required = input;
         self
+    }
+    /// <p>Indicates whether confirmation is required before Amazon S3 begins running the specified job. Confirmation is required only for jobs created through the Amazon S3 console.</p>
+    pub fn get_confirmation_required(&self) -> &::std::option::Option<bool> {
+        &self.confirmation_required
     }
     /// <p>The description for this job, if one was provided in this job's <code>Create Job</code> request.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -208,6 +216,10 @@ impl JobDescriptorBuilder {
         self.description = input;
         self
     }
+    /// <p>The description for this job, if one was provided in this job's <code>Create Job</code> request.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The Amazon Resource Name (ARN) for this job.</p>
     pub fn job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_arn = ::std::option::Option::Some(input.into());
@@ -217,6 +229,10 @@ impl JobDescriptorBuilder {
     pub fn set_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for this job.</p>
+    pub fn get_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_arn
     }
     /// <p>The current status of the specified job.</p>
     pub fn status(mut self, input: crate::types::JobStatus) -> Self {
@@ -228,6 +244,10 @@ impl JobDescriptorBuilder {
         self.status = input;
         self
     }
+    /// <p>The current status of the specified job.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
+        &self.status
+    }
     /// <p>The configuration information for the specified job's manifest object.</p>
     pub fn manifest(mut self, input: crate::types::JobManifest) -> Self {
         self.manifest = ::std::option::Option::Some(input);
@@ -237,6 +257,10 @@ impl JobDescriptorBuilder {
     pub fn set_manifest(mut self, input: ::std::option::Option<crate::types::JobManifest>) -> Self {
         self.manifest = input;
         self
+    }
+    /// <p>The configuration information for the specified job's manifest object.</p>
+    pub fn get_manifest(&self) -> &::std::option::Option<crate::types::JobManifest> {
+        &self.manifest
     }
     /// <p>The operation that the specified job is configured to run on the objects listed in the manifest.</p>
     pub fn operation(mut self, input: crate::types::JobOperation) -> Self {
@@ -251,6 +275,10 @@ impl JobDescriptorBuilder {
         self.operation = input;
         self
     }
+    /// <p>The operation that the specified job is configured to run on the objects listed in the manifest.</p>
+    pub fn get_operation(&self) -> &::std::option::Option<crate::types::JobOperation> {
+        &self.operation
+    }
     /// <p>The priority of the specified job.</p>
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
@@ -260,6 +288,10 @@ impl JobDescriptorBuilder {
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
+    }
+    /// <p>The priority of the specified job.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
     }
     /// <p>Describes the total number of tasks that the specified job has run, the number of tasks that succeeded, and the number of tasks that failed.</p>
     pub fn progress_summary(mut self, input: crate::types::JobProgressSummary) -> Self {
@@ -273,6 +305,10 @@ impl JobDescriptorBuilder {
     ) -> Self {
         self.progress_summary = input;
         self
+    }
+    /// <p>Describes the total number of tasks that the specified job has run, the number of tasks that succeeded, and the number of tasks that failed.</p>
+    pub fn get_progress_summary(&self) -> &::std::option::Option<crate::types::JobProgressSummary> {
+        &self.progress_summary
     }
     /// <p>The reason for updating the job.</p>
     pub fn status_update_reason(
@@ -289,6 +325,10 @@ impl JobDescriptorBuilder {
     ) -> Self {
         self.status_update_reason = input;
         self
+    }
+    /// <p>The reason for updating the job.</p>
+    pub fn get_status_update_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_update_reason
     }
     /// Appends an item to `failure_reasons`.
     ///
@@ -309,6 +349,12 @@ impl JobDescriptorBuilder {
         self.failure_reasons = input;
         self
     }
+    /// <p>If the specified job failed, this field contains information describing the failure.</p>
+    pub fn get_failure_reasons(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobFailure>> {
+        &self.failure_reasons
+    }
     /// <p>Contains the configuration information for the job-completion report if you requested one in the <code>Create Job</code> request.</p>
     pub fn report(mut self, input: crate::types::JobReport) -> Self {
         self.report = ::std::option::Option::Some(input);
@@ -318,6 +364,10 @@ impl JobDescriptorBuilder {
     pub fn set_report(mut self, input: ::std::option::Option<crate::types::JobReport>) -> Self {
         self.report = input;
         self
+    }
+    /// <p>Contains the configuration information for the job-completion report if you requested one in the <code>Create Job</code> request.</p>
+    pub fn get_report(&self) -> &::std::option::Option<crate::types::JobReport> {
+        &self.report
     }
     /// <p>A timestamp indicating when this job was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -332,6 +382,10 @@ impl JobDescriptorBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>A timestamp indicating when this job was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>A timestamp indicating when this job terminated. A job's termination date is the date and time when it succeeded, failed, or was canceled.</p>
     pub fn termination_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.termination_date = ::std::option::Option::Some(input);
@@ -345,6 +399,10 @@ impl JobDescriptorBuilder {
         self.termination_date = input;
         self
     }
+    /// <p>A timestamp indicating when this job terminated. A job's termination date is the date and time when it succeeded, failed, or was canceled.</p>
+    pub fn get_termination_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.termination_date
+    }
     /// <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role assigned to run the tasks for this job.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -354,6 +412,10 @@ impl JobDescriptorBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role assigned to run the tasks for this job.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The timestamp when this job was suspended, if it has been suspended.</p>
     pub fn suspended_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -367,6 +429,10 @@ impl JobDescriptorBuilder {
     ) -> Self {
         self.suspended_date = input;
         self
+    }
+    /// <p>The timestamp when this job was suspended, if it has been suspended.</p>
+    pub fn get_suspended_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.suspended_date
     }
     /// <p>The reason why the specified job was suspended. A job is only suspended if you create it through the Amazon S3 console. When you create the job, it enters the <code>Suspended</code> state to await confirmation before running. After you confirm the job, it automatically exits the <code>Suspended</code> state.</p>
     pub fn suspended_cause(
@@ -384,6 +450,10 @@ impl JobDescriptorBuilder {
         self.suspended_cause = input;
         self
     }
+    /// <p>The reason why the specified job was suspended. A job is only suspended if you create it through the Amazon S3 console. When you create the job, it enters the <code>Suspended</code> state to await confirmation before running. After you confirm the job, it automatically exits the <code>Suspended</code> state.</p>
+    pub fn get_suspended_cause(&self) -> &::std::option::Option<::std::string::String> {
+        &self.suspended_cause
+    }
     /// <p>The manifest generator that was used to generate a job manifest for this job.</p>
     pub fn manifest_generator(mut self, input: crate::types::JobManifestGenerator) -> Self {
         self.manifest_generator = ::std::option::Option::Some(input);
@@ -396,6 +466,12 @@ impl JobDescriptorBuilder {
     ) -> Self {
         self.manifest_generator = input;
         self
+    }
+    /// <p>The manifest generator that was used to generate a job manifest for this job.</p>
+    pub fn get_manifest_generator(
+        &self,
+    ) -> &::std::option::Option<crate::types::JobManifestGenerator> {
+        &self.manifest_generator
     }
     /// <p>The attribute of the JobDescriptor containing details about the job's generated manifest.</p>
     pub fn generated_manifest_descriptor(
@@ -412,6 +488,12 @@ impl JobDescriptorBuilder {
     ) -> Self {
         self.generated_manifest_descriptor = input;
         self
+    }
+    /// <p>The attribute of the JobDescriptor containing details about the job's generated manifest.</p>
+    pub fn get_generated_manifest_descriptor(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3GeneratedManifestDescriptor> {
+        &self.generated_manifest_descriptor
     }
     /// Consumes the builder and constructs a [`JobDescriptor`](crate::types::JobDescriptor).
     pub fn build(self) -> crate::types::JobDescriptor {

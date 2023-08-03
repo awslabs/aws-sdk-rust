@@ -55,6 +55,10 @@ impl GetConfigInputBuilder {
         self.client_arn = input;
         self
     }
+    /// <p>The ARN of the client.</p>
+    pub fn get_client_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_arn
+    }
     /// <p>The client version.</p>
     pub fn client_version(mut self, input: crate::types::ClientVersion) -> Self {
         self.client_version = ::std::option::Option::Some(input);
@@ -67,6 +71,10 @@ impl GetConfigInputBuilder {
     ) -> Self {
         self.client_version = input;
         self
+    }
+    /// <p>The client version.</p>
+    pub fn get_client_version(&self) -> &::std::option::Option<crate::types::ClientVersion> {
+        &self.client_version
     }
     /// Appends an item to `hapg_list`.
     ///
@@ -86,6 +94,10 @@ impl GetConfigInputBuilder {
     ) -> Self {
         self.hapg_list = input;
         self
+    }
+    /// <p>A list of ARNs that identify the high-availability partition groups that are associated with the client.</p>
+    pub fn get_hapg_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.hapg_list
     }
     /// Consumes the builder and constructs a [`GetConfigInput`](crate::operation::get_config::GetConfigInput).
     pub fn build(

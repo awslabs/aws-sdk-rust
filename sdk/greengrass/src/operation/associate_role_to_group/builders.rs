@@ -36,6 +36,13 @@ impl AssociateRoleToGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateRoleToGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::associate_role_to_group::builders::AssociateRoleToGroupInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl AssociateRoleToGroupFluentBuilder {
         self.inner = self.inner.set_group_id(input);
         self
     }
+    /// The ID of the Greengrass group.
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_group_id()
+    }
     /// The ARN of the role you wish to associate with this group. The existence of the role is not validated.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -135,5 +146,9 @@ impl AssociateRoleToGroupFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// The ARN of the role you wish to associate with this group. The existence of the role is not validated.
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
 }

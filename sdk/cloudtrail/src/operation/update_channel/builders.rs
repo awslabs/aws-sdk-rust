@@ -36,6 +36,12 @@ impl UpdateChannelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateChannel as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_channel::builders::UpdateChannelInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl UpdateChannelFluentBuilder {
         self.inner = self.inner.set_channel(input);
         self
     }
+    /// <p>The ARN or ID (the ARN suffix) of the channel that you want to update.</p>
+    pub fn get_channel(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel()
+    }
     /// Appends an item to `Destinations`.
     ///
     /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
@@ -135,6 +145,12 @@ impl UpdateChannelFluentBuilder {
         self.inner = self.inner.set_destinations(input);
         self
     }
+    /// <p>The ARNs of event data stores that you want to log events arriving through the channel.</p>
+    pub fn get_destinations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Destination>> {
+        self.inner.get_destinations()
+    }
     /// <p> Changes the name of the channel. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -144,5 +160,9 @@ impl UpdateChannelFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p> Changes the name of the channel. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
 }

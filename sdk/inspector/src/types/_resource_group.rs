@@ -56,6 +56,10 @@ impl ResourceGroupBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN of the resource group.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -75,6 +79,12 @@ impl ResourceGroupBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags (key and value pairs) of the resource group. This data type property is used in the <code>CreateResourceGroup</code> action.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceGroupTag>> {
+        &self.tags
+    }
     /// <p>The time at which resource group is created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -87,6 +97,10 @@ impl ResourceGroupBuilder {
     ) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The time at which resource group is created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// Consumes the builder and constructs a [`ResourceGroup`](crate::types::ResourceGroup).
     pub fn build(self) -> crate::types::ResourceGroup {

@@ -37,6 +37,10 @@ impl CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_local_gateway_route_table_virtual_interface_group_association::builders::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -107,6 +111,12 @@ impl CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationFluentBuilder {
         self.inner = self.inner.set_local_gateway_route_table_id(input);
         self
     }
+    /// <p> The ID of the local gateway route table. </p>
+    pub fn get_local_gateway_route_table_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_local_gateway_route_table_id()
+    }
     /// <p> The ID of the local gateway route table virtual interface group association. </p>
     pub fn local_gateway_virtual_interface_group_id(
         mut self,
@@ -127,6 +137,12 @@ impl CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationFluentBuilder {
             .set_local_gateway_virtual_interface_group_id(input);
         self
     }
+    /// <p> The ID of the local gateway route table virtual interface group association. </p>
+    pub fn get_local_gateway_virtual_interface_group_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_local_gateway_virtual_interface_group_id()
+    }
     /// Appends an item to `TagSpecifications`.
     ///
     /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
@@ -144,6 +160,12 @@ impl CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationFluentBuilder {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
+    /// <p> The tags assigned to the local gateway route table virtual interface group association. </p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        self.inner.get_tag_specifications()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -153,5 +175,9 @@ impl CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

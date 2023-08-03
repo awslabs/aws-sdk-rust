@@ -57,6 +57,10 @@ impl GetDownloadUrlForLayerInputBuilder {
         self.registry_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the image layer to download. If you do not specify a registry, the default registry is assumed.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_id
+    }
     /// <p>The name of the repository that is associated with the image layer to download.</p>
     pub fn repository_name(
         mut self,
@@ -73,6 +77,10 @@ impl GetDownloadUrlForLayerInputBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name of the repository that is associated with the image layer to download.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>The digest of the image layer to download.</p>
     pub fn layer_digest(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.layer_digest = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl GetDownloadUrlForLayerInputBuilder {
     pub fn set_layer_digest(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.layer_digest = input;
         self
+    }
+    /// <p>The digest of the image layer to download.</p>
+    pub fn get_layer_digest(&self) -> &::std::option::Option<::std::string::String> {
+        &self.layer_digest
     }
     /// Consumes the builder and constructs a [`GetDownloadUrlForLayerInput`](crate::operation::get_download_url_for_layer::GetDownloadUrlForLayerInput).
     pub fn build(

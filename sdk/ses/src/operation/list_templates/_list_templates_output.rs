@@ -64,6 +64,12 @@ impl ListTemplatesOutputBuilder {
         self.templates_metadata = input;
         self
     }
+    /// <p>An array the contains the name and creation time stamp for each template in your Amazon SES account.</p>
+    pub fn get_templates_metadata(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateMetadata>> {
+        &self.templates_metadata
+    }
     /// <p>A token indicating that there are additional email templates available to be listed. Pass this token to a subsequent call to <code>ListTemplates</code> to retrieve the next 50 email templates.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -73,6 +79,10 @@ impl ListTemplatesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token indicating that there are additional email templates available to be listed. Pass this token to a subsequent call to <code>ListTemplates</code> to retrieve the next 50 email templates.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

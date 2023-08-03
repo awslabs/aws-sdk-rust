@@ -36,6 +36,12 @@ impl StartProtectedQueryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartProtectedQuery as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_protected_query::builders::StartProtectedQueryInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl StartProtectedQueryFluentBuilder {
         self.inner = self.inner.set_type(input);
         self
     }
+    /// <p>The type of the protected query to be started.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ProtectedQueryType> {
+        self.inner.get_type()
+    }
     /// <p>A unique identifier for the membership to run this query against. Currently accepts a membership ID.</p>
     pub fn membership_identifier(
         mut self,
@@ -145,6 +155,10 @@ impl StartProtectedQueryFluentBuilder {
         self.inner = self.inner.set_membership_identifier(input);
         self
     }
+    /// <p>A unique identifier for the membership to run this query against. Currently accepts a membership ID.</p>
+    pub fn get_membership_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_membership_identifier()
+    }
     /// <p>The protected SQL query parameters.</p>
     pub fn sql_parameters(mut self, input: crate::types::ProtectedQuerySqlParameters) -> Self {
         self.inner = self.inner.sql_parameters(input);
@@ -157,6 +171,12 @@ impl StartProtectedQueryFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sql_parameters(input);
         self
+    }
+    /// <p>The protected SQL query parameters.</p>
+    pub fn get_sql_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProtectedQuerySqlParameters> {
+        self.inner.get_sql_parameters()
     }
     /// <p>The details needed to write the query results.</p>
     pub fn result_configuration(
@@ -173,5 +193,11 @@ impl StartProtectedQueryFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_result_configuration(input);
         self
+    }
+    /// <p>The details needed to write the query results.</p>
+    pub fn get_result_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProtectedQueryResultConfiguration> {
+        self.inner.get_result_configuration()
     }
 }

@@ -55,6 +55,10 @@ impl ExportThemesInputBuilder {
         self.app_id = input;
         self
     }
+    /// <p>The unique ID of the Amplify app to export the themes to.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
     pub fn environment_name(
         mut self,
@@ -71,6 +75,10 @@ impl ExportThemesInputBuilder {
         self.environment_name = input;
         self
     }
+    /// <p>The name of the backend environment that is part of the Amplify app.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_name
+    }
     /// <p>The token to request the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -80,6 +88,10 @@ impl ExportThemesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token to request the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ExportThemesInput`](crate::operation::export_themes::ExportThemesInput).
     pub fn build(

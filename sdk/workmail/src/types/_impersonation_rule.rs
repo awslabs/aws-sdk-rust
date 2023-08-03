@@ -86,6 +86,10 @@ impl ImpersonationRuleBuilder {
         self.impersonation_rule_id = input;
         self
     }
+    /// <p>The identifier of the rule.</p>
+    pub fn get_impersonation_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.impersonation_rule_id
+    }
     /// <p>The rule name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -95,6 +99,10 @@ impl ImpersonationRuleBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The rule name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The rule description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -106,6 +114,10 @@ impl ImpersonationRuleBuilder {
         self.description = input;
         self
     }
+    /// <p>The rule description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The effect of the rule when it matches the input. Allowed effect values are <code>ALLOW</code> or <code>DENY</code>.</p>
     pub fn effect(mut self, input: crate::types::AccessEffect) -> Self {
         self.effect = ::std::option::Option::Some(input);
@@ -115,6 +127,10 @@ impl ImpersonationRuleBuilder {
     pub fn set_effect(mut self, input: ::std::option::Option<crate::types::AccessEffect>) -> Self {
         self.effect = input;
         self
+    }
+    /// <p>The effect of the rule when it matches the input. Allowed effect values are <code>ALLOW</code> or <code>DENY</code>.</p>
+    pub fn get_effect(&self) -> &::std::option::Option<crate::types::AccessEffect> {
+        &self.effect
     }
     /// Appends an item to `target_users`.
     ///
@@ -134,6 +150,12 @@ impl ImpersonationRuleBuilder {
     ) -> Self {
         self.target_users = input;
         self
+    }
+    /// <p>A list of user IDs that match the rule.</p>
+    pub fn get_target_users(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.target_users
     }
     /// Appends an item to `not_target_users`.
     ///
@@ -156,6 +178,12 @@ impl ImpersonationRuleBuilder {
     ) -> Self {
         self.not_target_users = input;
         self
+    }
+    /// <p>A list of user IDs that don't match the rule.</p>
+    pub fn get_not_target_users(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.not_target_users
     }
     /// Consumes the builder and constructs a [`ImpersonationRule`](crate::types::ImpersonationRule).
     pub fn build(self) -> crate::types::ImpersonationRule {

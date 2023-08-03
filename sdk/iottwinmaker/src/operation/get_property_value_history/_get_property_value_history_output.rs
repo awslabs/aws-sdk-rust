@@ -66,6 +66,12 @@ impl GetPropertyValueHistoryOutputBuilder {
         self.property_values = input;
         self
     }
+    /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
+    pub fn get_property_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PropertyValueHistory>> {
+        &self.property_values
+    }
     /// <p>The string that specifies the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -75,6 +81,10 @@ impl GetPropertyValueHistoryOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The string that specifies the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

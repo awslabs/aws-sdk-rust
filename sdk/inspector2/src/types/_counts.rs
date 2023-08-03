@@ -48,6 +48,10 @@ impl CountsBuilder {
         self.count = input;
         self
     }
+    /// <p>The number of resources.</p>
+    pub fn get_count(&self) -> &::std::option::Option<i64> {
+        &self.count
+    }
     /// <p>The key associated with this group</p>
     pub fn group_key(mut self, input: crate::types::GroupKey) -> Self {
         self.group_key = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl CountsBuilder {
     pub fn set_group_key(mut self, input: ::std::option::Option<crate::types::GroupKey>) -> Self {
         self.group_key = input;
         self
+    }
+    /// <p>The key associated with this group</p>
+    pub fn get_group_key(&self) -> &::std::option::Option<crate::types::GroupKey> {
+        &self.group_key
     }
     /// Consumes the builder and constructs a [`Counts`](crate::types::Counts).
     pub fn build(self) -> crate::types::Counts {

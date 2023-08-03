@@ -66,6 +66,12 @@ impl BatchGetFreeTrialInfoOutputBuilder {
         self.accounts = input;
         self
     }
+    /// <p>An array of objects that provide Amazon Inspector free trial details for each of the requested accounts. </p>
+    pub fn get_accounts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FreeTrialAccountInfo>> {
+        &self.accounts
+    }
     /// Appends an item to `failed_accounts`.
     ///
     /// To override the contents of this collection use [`set_failed_accounts`](Self::set_failed_accounts).
@@ -84,6 +90,12 @@ impl BatchGetFreeTrialInfoOutputBuilder {
     ) -> Self {
         self.failed_accounts = input;
         self
+    }
+    /// <p>An array of objects detailing any accounts that free trial data could not be returned for.</p>
+    pub fn get_failed_accounts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FreeTrialInfoError>> {
+        &self.failed_accounts
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

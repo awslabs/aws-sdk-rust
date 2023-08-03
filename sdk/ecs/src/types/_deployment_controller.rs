@@ -127,6 +127,31 @@ impl DeploymentControllerBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The deployment controller type to use.</p>
+    /// <p>There are three deployment controller types available:</p>
+    /// <dl>
+    /// <dt>
+    /// ECS
+    /// </dt>
+    /// <dd>
+    /// <p>The rolling update (<code>ECS</code>) deployment type involves replacing the current running version of the container with the latest version. The number of containers Amazon ECS adds or removes from the service during a rolling update is controlled by adjusting the minimum and maximum number of healthy tasks allowed during a service deployment, as specified in the <code>DeploymentConfiguration</code>.</p>
+    /// </dd>
+    /// <dt>
+    /// CODE_DEPLOY
+    /// </dt>
+    /// <dd>
+    /// <p>The blue/green (<code>CODE_DEPLOY</code>) deployment type uses the blue/green deployment model powered by CodeDeploy, which allows you to verify a new deployment of a service before sending production traffic to it.</p>
+    /// </dd>
+    /// <dt>
+    /// EXTERNAL
+    /// </dt>
+    /// <dd>
+    /// <p>The external (<code>EXTERNAL</code>) deployment type enables you to use any third-party deployment controller for full control over the deployment process for an Amazon ECS service.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::DeploymentControllerType> {
+        &self.r#type
+    }
     /// Consumes the builder and constructs a [`DeploymentController`](crate::types::DeploymentController).
     pub fn build(self) -> crate::types::DeploymentController {
         crate::types::DeploymentController {

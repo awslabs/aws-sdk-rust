@@ -62,6 +62,10 @@ impl StartBulkDeploymentOutputBuilder {
         self.bulk_deployment_arn = input;
         self
     }
+    /// The ARN of the bulk deployment.
+    pub fn get_bulk_deployment_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bulk_deployment_arn
+    }
     /// The ID of the bulk deployment.
     pub fn bulk_deployment_id(
         mut self,
@@ -77,6 +81,10 @@ impl StartBulkDeploymentOutputBuilder {
     ) -> Self {
         self.bulk_deployment_id = input;
         self
+    }
+    /// The ID of the bulk deployment.
+    pub fn get_bulk_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bulk_deployment_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

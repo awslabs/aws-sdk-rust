@@ -106,6 +106,10 @@ impl LambdaFunctionRecipeSourceBuilder {
         self.lambda_arn = input;
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda function. The ARN must include the version of the function to import. You can't use version aliases like <code>$LATEST</code>.</p>
+    pub fn get_lambda_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lambda_arn
+    }
     /// <p>The name of the component.</p>
     /// <p>Defaults to the name of the Lambda function.</p>
     pub fn component_name(
@@ -123,6 +127,11 @@ impl LambdaFunctionRecipeSourceBuilder {
     ) -> Self {
         self.component_name = input;
         self
+    }
+    /// <p>The name of the component.</p>
+    /// <p>Defaults to the name of the Lambda function.</p>
+    pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_name
     }
     /// <p>The version of the component.</p>
     /// <p>Defaults to the version of the Lambda function as a semantic version. For example, if your function version is <code>3</code>, the component version becomes <code>3.0.0</code>.</p>
@@ -142,6 +151,11 @@ impl LambdaFunctionRecipeSourceBuilder {
         self.component_version = input;
         self
     }
+    /// <p>The version of the component.</p>
+    /// <p>Defaults to the version of the Lambda function as a semantic version. For example, if your function version is <code>3</code>, the component version becomes <code>3.0.0</code>.</p>
+    pub fn get_component_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_version
+    }
     /// Appends an item to `component_platforms`.
     ///
     /// To override the contents of this collection use [`set_component_platforms`](Self::set_component_platforms).
@@ -160,6 +174,12 @@ impl LambdaFunctionRecipeSourceBuilder {
     ) -> Self {
         self.component_platforms = input;
         self
+    }
+    /// <p>The platforms that the component version supports.</p>
+    pub fn get_component_platforms(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentPlatform>> {
+        &self.component_platforms
     }
     /// Adds a key-value pair to `component_dependencies`.
     ///
@@ -189,6 +209,17 @@ impl LambdaFunctionRecipeSourceBuilder {
         self.component_dependencies = input;
         self
     }
+    /// <p>The component versions on which this Lambda function component depends.</p>
+    pub fn get_component_dependencies(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::ComponentDependencyRequirement,
+        >,
+    > {
+        &self.component_dependencies
+    }
     /// <p>The system and runtime parameters for the Lambda function as it runs on the Greengrass core device.</p>
     pub fn component_lambda_parameters(
         mut self,
@@ -204,6 +235,12 @@ impl LambdaFunctionRecipeSourceBuilder {
     ) -> Self {
         self.component_lambda_parameters = input;
         self
+    }
+    /// <p>The system and runtime parameters for the Lambda function as it runs on the Greengrass core device.</p>
+    pub fn get_component_lambda_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::LambdaExecutionParameters> {
+        &self.component_lambda_parameters
     }
     /// Consumes the builder and constructs a [`LambdaFunctionRecipeSource`](crate::types::LambdaFunctionRecipeSource).
     pub fn build(self) -> crate::types::LambdaFunctionRecipeSource {

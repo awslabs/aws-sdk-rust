@@ -36,6 +36,12 @@ impl DeleteProfileKeyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteProfileKey as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_profile_key::builders::DeleteProfileKeyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DeleteProfileKeyFluentBuilder {
         self.inner = self.inner.set_profile_id(input);
         self
     }
+    /// <p>The unique identifier of a customer profile.</p>
+    pub fn get_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_profile_id()
+    }
     /// <p>A searchable identifier of a customer profile.</p>
     pub fn key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key_name(input.into());
@@ -135,6 +145,10 @@ impl DeleteProfileKeyFluentBuilder {
     pub fn set_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key_name(input);
         self
+    }
+    /// <p>A searchable identifier of a customer profile.</p>
+    pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_key_name()
     }
     /// Appends an item to `Values`.
     ///
@@ -153,6 +167,10 @@ impl DeleteProfileKeyFluentBuilder {
         self.inner = self.inner.set_values(input);
         self
     }
+    /// <p>A list of key values.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_values()
+    }
     /// <p>The unique name of the domain.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_name(input.into());
@@ -162,5 +180,9 @@ impl DeleteProfileKeyFluentBuilder {
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_name(input);
         self
+    }
+    /// <p>The unique name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
     }
 }

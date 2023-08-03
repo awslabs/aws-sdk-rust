@@ -56,6 +56,10 @@ impl FreeTrialInfoErrorBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The account associated with the Amazon Inspector free trial information.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The error code.</p>
     pub fn code(mut self, input: crate::types::FreeTrialInfoErrorCode) -> Self {
         self.code = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl FreeTrialInfoErrorBuilder {
         self.code = input;
         self
     }
+    /// <p>The error code.</p>
+    pub fn get_code(&self) -> &::std::option::Option<crate::types::FreeTrialInfoErrorCode> {
+        &self.code
+    }
     /// <p>The error message returned.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -78,6 +86,10 @@ impl FreeTrialInfoErrorBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>The error message returned.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`FreeTrialInfoError`](crate::types::FreeTrialInfoError).
     pub fn build(self) -> crate::types::FreeTrialInfoError {

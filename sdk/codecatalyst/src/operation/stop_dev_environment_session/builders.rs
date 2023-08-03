@@ -36,6 +36,10 @@ impl StopDevEnvironmentSessionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StopDevEnvironmentSession as a reference.
+    pub fn as_input(&self) -> &crate::operation::stop_dev_environment_session::builders::StopDevEnvironmentSessionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl StopDevEnvironmentSessionFluentBuilder {
         self.inner = self.inner.set_space_name(input);
         self
     }
+    /// <p>The name of the space.</p>
+    pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_space_name()
+    }
     /// <p>The name of the project in the space.</p>
     pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.project_name(input.into());
@@ -135,6 +143,10 @@ impl StopDevEnvironmentSessionFluentBuilder {
     pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_project_name(input);
         self
+    }
+    /// <p>The name of the project in the space.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_name()
     }
     /// <p>The system-generated unique ID of the Dev Environment. To obtain this ID, use <code>ListDevEnvironments</code>.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -146,6 +158,10 @@ impl StopDevEnvironmentSessionFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The system-generated unique ID of the Dev Environment. To obtain this ID, use <code>ListDevEnvironments</code>.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The system-generated unique ID of the Dev Environment session. This ID is returned by <code>StartDevEnvironmentSession</code>.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.session_id(input.into());
@@ -155,5 +171,9 @@ impl StopDevEnvironmentSessionFluentBuilder {
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_session_id(input);
         self
+    }
+    /// <p>The system-generated unique ID of the Dev Environment session. This ID is returned by <code>StartDevEnvironmentSession</code>.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_session_id()
     }
 }

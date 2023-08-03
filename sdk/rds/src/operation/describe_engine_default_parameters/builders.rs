@@ -36,6 +36,10 @@ impl DescribeEngineDefaultParametersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeEngineDefaultParameters as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_engine_default_parameters::builders::DescribeEngineDefaultParametersInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -210,6 +214,59 @@ impl DescribeEngineDefaultParametersFluentBuilder {
         self.inner = self.inner.set_db_parameter_group_family(input);
         self
     }
+    /// <p>The name of the DB parameter group family.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li> <p> <code>aurora-mysql5.7</code> </p> </li>
+    /// <li> <p> <code>aurora-mysql8.0</code> </p> </li>
+    /// <li> <p> <code>aurora-postgresql10</code> </p> </li>
+    /// <li> <p> <code>aurora-postgresql11</code> </p> </li>
+    /// <li> <p> <code>aurora-postgresql12</code> </p> </li>
+    /// <li> <p> <code>aurora-postgresql13</code> </p> </li>
+    /// <li> <p> <code>aurora-postgresql14</code> </p> </li>
+    /// <li> <p> <code>custom-oracle-ee-19</code> </p> </li>
+    /// <li> <p> <code>mariadb10.2</code> </p> </li>
+    /// <li> <p> <code>mariadb10.3</code> </p> </li>
+    /// <li> <p> <code>mariadb10.4</code> </p> </li>
+    /// <li> <p> <code>mariadb10.5</code> </p> </li>
+    /// <li> <p> <code>mariadb10.6</code> </p> </li>
+    /// <li> <p> <code>mysql5.7</code> </p> </li>
+    /// <li> <p> <code>mysql8.0</code> </p> </li>
+    /// <li> <p> <code>oracle-ee-19</code> </p> </li>
+    /// <li> <p> <code>oracle-ee-cdb-19</code> </p> </li>
+    /// <li> <p> <code>oracle-ee-cdb-21</code> </p> </li>
+    /// <li> <p> <code>oracle-se2-19</code> </p> </li>
+    /// <li> <p> <code>oracle-se2-cdb-19</code> </p> </li>
+    /// <li> <p> <code>oracle-se2-cdb-21</code> </p> </li>
+    /// <li> <p> <code>postgres10</code> </p> </li>
+    /// <li> <p> <code>postgres11</code> </p> </li>
+    /// <li> <p> <code>postgres12</code> </p> </li>
+    /// <li> <p> <code>postgres13</code> </p> </li>
+    /// <li> <p> <code>postgres14</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ee-11.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ee-12.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ee-13.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ee-14.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ee-15.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ex-11.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ex-12.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ex-13.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ex-14.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ex-15.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-se-11.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-se-12.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-se-13.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-se-14.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-se-15.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-web-11.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-web-12.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-web-13.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-web-14.0</code> </p> </li>
+    /// <li> <p> <code>sqlserver-web-15.0</code> </p> </li>
+    /// </ul>
+    pub fn get_db_parameter_group_family(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_parameter_group_family()
+    }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -227,6 +284,10 @@ impl DescribeEngineDefaultParametersFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>This parameter isn't currently supported.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
+    }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
@@ -241,6 +302,12 @@ impl DescribeEngineDefaultParametersFluentBuilder {
         self.inner = self.inner.set_max_records(input);
         self
     }
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_records()
+    }
     /// <p>An optional pagination token provided by a previous <code>DescribeEngineDefaultParameters</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -250,5 +317,9 @@ impl DescribeEngineDefaultParametersFluentBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
+    }
+    /// <p>An optional pagination token provided by a previous <code>DescribeEngineDefaultParameters</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
     }
 }

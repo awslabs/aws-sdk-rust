@@ -38,6 +38,12 @@ impl UntagDeliveryStreamFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UntagDeliveryStream as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::untag_delivery_stream::builders::UntagDeliveryStreamInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +140,10 @@ impl UntagDeliveryStreamFluentBuilder {
         self.inner = self.inner.set_delivery_stream_name(input);
         self
     }
+    /// <p>The name of the delivery stream.</p>
+    pub fn get_delivery_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_delivery_stream_name()
+    }
     /// Appends an item to `TagKeys`.
     ///
     /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
@@ -150,5 +160,9 @@ impl UntagDeliveryStreamFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tag_keys(input);
         self
+    }
+    /// <p>A list of tag keys. Each corresponding tag is removed from the delivery stream.</p>
+    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_tag_keys()
     }
 }

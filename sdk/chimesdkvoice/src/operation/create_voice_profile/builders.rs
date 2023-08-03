@@ -39,6 +39,12 @@ impl CreateVoiceProfileFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateVoiceProfile as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_voice_profile::builders::CreateVoiceProfileInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,5 +140,9 @@ impl CreateVoiceProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_speaker_search_task_id(input);
         self
+    }
+    /// <p>The ID of the speaker search task.</p>
+    pub fn get_speaker_search_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_speaker_search_task_id()
     }
 }

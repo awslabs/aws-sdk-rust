@@ -97,6 +97,10 @@ impl BucketCriteriaAdditionalPropertiesBuilder {
         self.eq = input;
         self
     }
+    /// <p>The value for the property matches (equals) the specified value. If you specify multiple values, Amazon Macie uses OR logic to join the values.</p>
+    pub fn get_eq(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.eq
+    }
     /// <p>The value for the property is greater than the specified value.</p>
     pub fn gt(mut self, input: i64) -> Self {
         self.gt = ::std::option::Option::Some(input);
@@ -106,6 +110,10 @@ impl BucketCriteriaAdditionalPropertiesBuilder {
     pub fn set_gt(mut self, input: ::std::option::Option<i64>) -> Self {
         self.gt = input;
         self
+    }
+    /// <p>The value for the property is greater than the specified value.</p>
+    pub fn get_gt(&self) -> &::std::option::Option<i64> {
+        &self.gt
     }
     /// <p>The value for the property is greater than or equal to the specified value.</p>
     pub fn gte(mut self, input: i64) -> Self {
@@ -117,6 +125,10 @@ impl BucketCriteriaAdditionalPropertiesBuilder {
         self.gte = input;
         self
     }
+    /// <p>The value for the property is greater than or equal to the specified value.</p>
+    pub fn get_gte(&self) -> &::std::option::Option<i64> {
+        &self.gte
+    }
     /// <p>The value for the property is less than the specified value.</p>
     pub fn lt(mut self, input: i64) -> Self {
         self.lt = ::std::option::Option::Some(input);
@@ -127,6 +139,10 @@ impl BucketCriteriaAdditionalPropertiesBuilder {
         self.lt = input;
         self
     }
+    /// <p>The value for the property is less than the specified value.</p>
+    pub fn get_lt(&self) -> &::std::option::Option<i64> {
+        &self.lt
+    }
     /// <p>The value for the property is less than or equal to the specified value.</p>
     pub fn lte(mut self, input: i64) -> Self {
         self.lte = ::std::option::Option::Some(input);
@@ -136,6 +152,10 @@ impl BucketCriteriaAdditionalPropertiesBuilder {
     pub fn set_lte(mut self, input: ::std::option::Option<i64>) -> Self {
         self.lte = input;
         self
+    }
+    /// <p>The value for the property is less than or equal to the specified value.</p>
+    pub fn get_lte(&self) -> &::std::option::Option<i64> {
+        &self.lte
     }
     /// Appends an item to `neq`.
     ///
@@ -156,6 +176,10 @@ impl BucketCriteriaAdditionalPropertiesBuilder {
         self.neq = input;
         self
     }
+    /// <p>The value for the property doesn't match (doesn't equal) the specified value. If you specify multiple values, Amazon Macie uses OR logic to join the values.</p>
+    pub fn get_neq(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.neq
+    }
     /// <p>The name of the bucket begins with the specified value.</p>
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.prefix = ::std::option::Option::Some(input.into());
@@ -165,6 +189,10 @@ impl BucketCriteriaAdditionalPropertiesBuilder {
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix = input;
         self
+    }
+    /// <p>The name of the bucket begins with the specified value.</p>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
     }
     /// Consumes the builder and constructs a [`BucketCriteriaAdditionalProperties`](crate::types::BucketCriteriaAdditionalProperties).
     pub fn build(self) -> crate::types::BucketCriteriaAdditionalProperties {

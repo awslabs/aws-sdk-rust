@@ -51,6 +51,10 @@ impl DescribeFargateProfileOutputBuilder {
         self.fargate_profile = input;
         self
     }
+    /// <p>The full description of your Fargate profile.</p>
+    pub fn get_fargate_profile(&self) -> &::std::option::Option<crate::types::FargateProfile> {
+        &self.fargate_profile
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

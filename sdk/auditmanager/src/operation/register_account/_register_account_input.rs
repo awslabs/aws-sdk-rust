@@ -47,6 +47,10 @@ impl RegisterAccountInputBuilder {
         self.kms_key = input;
         self
     }
+    /// <p> The KMS key details. </p>
+    pub fn get_kms_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key
+    }
     /// <p> The delegated administrator account for Audit Manager. </p>
     pub fn delegated_admin_account(
         mut self,
@@ -62,6 +66,10 @@ impl RegisterAccountInputBuilder {
     ) -> Self {
         self.delegated_admin_account = input;
         self
+    }
+    /// <p> The delegated administrator account for Audit Manager. </p>
+    pub fn get_delegated_admin_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delegated_admin_account
     }
     /// Consumes the builder and constructs a [`RegisterAccountInput`](crate::operation::register_account::RegisterAccountInput).
     pub fn build(

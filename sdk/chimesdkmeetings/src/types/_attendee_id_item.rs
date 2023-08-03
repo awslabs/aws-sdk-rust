@@ -40,6 +40,10 @@ impl AttendeeIdItemBuilder {
         self.attendee_id = input;
         self
     }
+    /// <p>A list of one or more attendee IDs.</p>
+    pub fn get_attendee_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attendee_id
+    }
     /// Consumes the builder and constructs a [`AttendeeIdItem`](crate::types::AttendeeIdItem).
     pub fn build(self) -> crate::types::AttendeeIdItem {
         crate::types::AttendeeIdItem {

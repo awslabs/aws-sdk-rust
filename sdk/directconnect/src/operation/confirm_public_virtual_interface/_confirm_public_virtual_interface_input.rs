@@ -45,6 +45,10 @@ impl ConfirmPublicVirtualInterfaceInputBuilder {
         self.virtual_interface_id = input;
         self
     }
+    /// <p>The ID of the virtual interface.</p>
+    pub fn get_virtual_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_interface_id
+    }
     /// Consumes the builder and constructs a [`ConfirmPublicVirtualInterfaceInput`](crate::operation::confirm_public_virtual_interface::ConfirmPublicVirtualInterfaceInput).
     pub fn build(
         self,

@@ -36,6 +36,10 @@ impl StartNetworkInsightsAnalysisFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartNetworkInsightsAnalysis as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_network_insights_analysis::builders::StartNetworkInsightsAnalysisInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl StartNetworkInsightsAnalysisFluentBuilder {
         self.inner = self.inner.set_network_insights_path_id(input);
         self
     }
+    /// <p>The ID of the path.</p>
+    pub fn get_network_insights_path_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_network_insights_path_id()
+    }
     /// Appends an item to `AdditionalAccounts`.
     ///
     /// To override the contents of this collection use [`set_additional_accounts`](Self::set_additional_accounts).
@@ -151,6 +159,12 @@ impl StartNetworkInsightsAnalysisFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_additional_accounts(input);
         self
+    }
+    /// <p>The member accounts that contain resources that the path can traverse.</p>
+    pub fn get_additional_accounts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_additional_accounts()
     }
     /// Appends an item to `FilterInArns`.
     ///
@@ -172,6 +186,12 @@ impl StartNetworkInsightsAnalysisFluentBuilder {
         self.inner = self.inner.set_filter_in_arns(input);
         self
     }
+    /// <p>The Amazon Resource Names (ARN) of the resources that the path must traverse.</p>
+    pub fn get_filter_in_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_filter_in_arns()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -181,6 +201,10 @@ impl StartNetworkInsightsAnalysisFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
     /// Appends an item to `TagSpecifications`.
     ///
@@ -199,6 +223,12 @@ impl StartNetworkInsightsAnalysisFluentBuilder {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
+    /// <p>The tags to apply.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        self.inner.get_tag_specifications()
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -208,5 +238,9 @@ impl StartNetworkInsightsAnalysisFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

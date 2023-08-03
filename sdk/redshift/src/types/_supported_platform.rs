@@ -40,6 +40,10 @@ impl SupportedPlatformBuilder {
         self.name = input;
         self
     }
+    /// <p></p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`SupportedPlatform`](crate::types::SupportedPlatform).
     pub fn build(self) -> crate::types::SupportedPlatform {
         crate::types::SupportedPlatform { name: self.name }

@@ -78,6 +78,10 @@ impl RecommendationDataBuilder {
         self.recommendation_id = input;
         self
     }
+    /// <p>The identifier of the recommendation.</p>
+    pub fn get_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommendation_id
+    }
     /// <p>The recommended document.</p>
     pub fn document(mut self, input: crate::types::Document) -> Self {
         self.document = ::std::option::Option::Some(input);
@@ -88,6 +92,10 @@ impl RecommendationDataBuilder {
         self.document = input;
         self
     }
+    /// <p>The recommended document.</p>
+    pub fn get_document(&self) -> &::std::option::Option<crate::types::Document> {
+        &self.document
+    }
     /// <p>The relevance score of the recommendation.</p>
     pub fn relevance_score(mut self, input: f64) -> Self {
         self.relevance_score = ::std::option::Option::Some(input);
@@ -97,6 +105,10 @@ impl RecommendationDataBuilder {
     pub fn set_relevance_score(mut self, input: ::std::option::Option<f64>) -> Self {
         self.relevance_score = input;
         self
+    }
+    /// <p>The relevance score of the recommendation.</p>
+    pub fn get_relevance_score(&self) -> &::std::option::Option<f64> {
+        &self.relevance_score
     }
     /// <p>The relevance level of the recommendation.</p>
     pub fn relevance_level(mut self, input: crate::types::RelevanceLevel) -> Self {
@@ -111,6 +123,10 @@ impl RecommendationDataBuilder {
         self.relevance_level = input;
         self
     }
+    /// <p>The relevance level of the recommendation.</p>
+    pub fn get_relevance_level(&self) -> &::std::option::Option<crate::types::RelevanceLevel> {
+        &self.relevance_level
+    }
     /// <p>The type of recommendation.</p>
     pub fn r#type(mut self, input: crate::types::RecommendationType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -123,6 +139,10 @@ impl RecommendationDataBuilder {
     ) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of recommendation.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::RecommendationType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`RecommendationData`](crate::types::RecommendationData).
     pub fn build(self) -> crate::types::RecommendationData {

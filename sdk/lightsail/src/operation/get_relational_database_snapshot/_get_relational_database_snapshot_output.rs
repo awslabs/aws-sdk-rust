@@ -56,6 +56,12 @@ impl GetRelationalDatabaseSnapshotOutputBuilder {
         self.relational_database_snapshot = input;
         self
     }
+    /// <p>An object describing the specified database snapshot.</p>
+    pub fn get_relational_database_snapshot(
+        &self,
+    ) -> &::std::option::Option<crate::types::RelationalDatabaseSnapshot> {
+        &self.relational_database_snapshot
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -114,6 +114,12 @@ impl ClusterPendingModifiedValuesBuilder {
         self.pending_cloudwatch_logs_exports = input;
         self
     }
+    /// <p>A list of the log types whose configuration is still pending. In other words, these log types are in the process of being activated or deactivated.</p>
+    pub fn get_pending_cloudwatch_logs_exports(
+        &self,
+    ) -> &::std::option::Option<crate::types::PendingCloudwatchLogsExports> {
+        &self.pending_cloudwatch_logs_exports
+    }
     /// <p>The DBClusterIdentifier value for the DB cluster.</p>
     pub fn db_cluster_identifier(
         mut self,
@@ -129,6 +135,10 @@ impl ClusterPendingModifiedValuesBuilder {
     ) -> Self {
         self.db_cluster_identifier = input;
         self
+    }
+    /// <p>The DBClusterIdentifier value for the DB cluster.</p>
+    pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_identifier
     }
     /// <p>The master credentials for the DB cluster.</p>
     pub fn master_user_password(
@@ -146,6 +156,10 @@ impl ClusterPendingModifiedValuesBuilder {
         self.master_user_password = input;
         self
     }
+    /// <p>The master credentials for the DB cluster.</p>
+    pub fn get_master_user_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.master_user_password
+    }
     /// <p>A value that indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
     pub fn iam_database_authentication_enabled(mut self, input: bool) -> Self {
         self.iam_database_authentication_enabled = ::std::option::Option::Some(input);
@@ -158,6 +172,10 @@ impl ClusterPendingModifiedValuesBuilder {
     ) -> Self {
         self.iam_database_authentication_enabled = input;
         self
+    }
+    /// <p>A value that indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
+    pub fn get_iam_database_authentication_enabled(&self) -> &::std::option::Option<bool> {
+        &self.iam_database_authentication_enabled
     }
     /// <p>The database engine version.</p>
     pub fn engine_version(
@@ -175,6 +193,10 @@ impl ClusterPendingModifiedValuesBuilder {
         self.engine_version = input;
         self
     }
+    /// <p>The database engine version.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
+    }
     /// <p>The number of days for which automatic DB snapshots are retained.</p>
     pub fn backup_retention_period(mut self, input: i32) -> Self {
         self.backup_retention_period = ::std::option::Option::Some(input);
@@ -184,6 +206,10 @@ impl ClusterPendingModifiedValuesBuilder {
     pub fn set_backup_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.backup_retention_period = input;
         self
+    }
+    /// <p>The number of days for which automatic DB snapshots are retained.</p>
+    pub fn get_backup_retention_period(&self) -> &::std::option::Option<i32> {
+        &self.backup_retention_period
     }
     /// <p>The allocated storage size in gibibytes (GiB) for all database engines except Amazon Aurora. For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage size isn't fixed, but instead automatically adjusts as needed.</p>
     pub fn allocated_storage(mut self, input: i32) -> Self {
@@ -195,6 +221,10 @@ impl ClusterPendingModifiedValuesBuilder {
         self.allocated_storage = input;
         self
     }
+    /// <p>The allocated storage size in gibibytes (GiB) for all database engines except Amazon Aurora. For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage size isn't fixed, but instead automatically adjusts as needed.</p>
+    pub fn get_allocated_storage(&self) -> &::std::option::Option<i32> {
+        &self.allocated_storage
+    }
     /// <p>The Provisioned IOPS (I/O operations per second) value. This setting is only for non-Aurora Multi-AZ DB clusters.</p>
     pub fn iops(mut self, input: i32) -> Self {
         self.iops = ::std::option::Option::Some(input);
@@ -205,6 +235,10 @@ impl ClusterPendingModifiedValuesBuilder {
         self.iops = input;
         self
     }
+    /// <p>The Provisioned IOPS (I/O operations per second) value. This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub fn get_iops(&self) -> &::std::option::Option<i32> {
+        &self.iops
+    }
     /// <p>The storage type for the DB cluster.</p>
     pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_type = ::std::option::Option::Some(input.into());
@@ -214,6 +248,10 @@ impl ClusterPendingModifiedValuesBuilder {
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_type = input;
         self
+    }
+    /// <p>The storage type for the DB cluster.</p>
+    pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_type
     }
     /// Consumes the builder and constructs a [`ClusterPendingModifiedValues`](crate::types::ClusterPendingModifiedValues).
     pub fn build(self) -> crate::types::ClusterPendingModifiedValues {

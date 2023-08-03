@@ -61,6 +61,10 @@ impl CreateApplicationOutputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The unique Id of the web application.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The ARN of the web application.</p>
     pub fn application_arn(
         mut self,
@@ -76,6 +80,10 @@ impl CreateApplicationOutputBuilder {
     ) -> Self {
         self.application_arn = input;
         self
+    }
+    /// <p>The ARN of the web application.</p>
+    pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

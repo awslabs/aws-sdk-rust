@@ -36,6 +36,12 @@ impl CreateClusterFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateCluster as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_cluster::builders::CreateClusterInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -121,6 +127,12 @@ impl CreateClusterFluentBuilder {
         self.inner = self.inner.set_broker_node_group_info(input);
         self
     }
+    /// <p>Information about the broker nodes in the cluster.</p>
+    pub fn get_broker_node_group_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::BrokerNodeGroupInfo> {
+        self.inner.get_broker_node_group_info()
+    }
     /// <p>Includes all client authentication related information.</p>
     pub fn client_authentication(mut self, input: crate::types::ClientAuthentication) -> Self {
         self.inner = self.inner.client_authentication(input);
@@ -134,6 +146,12 @@ impl CreateClusterFluentBuilder {
         self.inner = self.inner.set_client_authentication(input);
         self
     }
+    /// <p>Includes all client authentication related information.</p>
+    pub fn get_client_authentication(
+        &self,
+    ) -> &::std::option::Option<crate::types::ClientAuthentication> {
+        self.inner.get_client_authentication()
+    }
     /// <p>The name of the cluster.</p>
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_name(input.into());
@@ -143,6 +161,10 @@ impl CreateClusterFluentBuilder {
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_name(input);
         self
+    }
+    /// <p>The name of the cluster.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_name()
     }
     /// <p>Represents the configuration that you want MSK to use for the brokers in a cluster.</p>
     pub fn configuration_info(mut self, input: crate::types::ConfigurationInfo) -> Self {
@@ -157,6 +179,12 @@ impl CreateClusterFluentBuilder {
         self.inner = self.inner.set_configuration_info(input);
         self
     }
+    /// <p>Represents the configuration that you want MSK to use for the brokers in a cluster.</p>
+    pub fn get_configuration_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConfigurationInfo> {
+        self.inner.get_configuration_info()
+    }
     /// <p>Includes all encryption-related information.</p>
     pub fn encryption_info(mut self, input: crate::types::EncryptionInfo) -> Self {
         self.inner = self.inner.encryption_info(input);
@@ -169,6 +197,10 @@ impl CreateClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_encryption_info(input);
         self
+    }
+    /// <p>Includes all encryption-related information.</p>
+    pub fn get_encryption_info(&self) -> &::std::option::Option<crate::types::EncryptionInfo> {
+        self.inner.get_encryption_info()
     }
     /// <p>Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.</p>
     pub fn enhanced_monitoring(mut self, input: crate::types::EnhancedMonitoring) -> Self {
@@ -183,6 +215,12 @@ impl CreateClusterFluentBuilder {
         self.inner = self.inner.set_enhanced_monitoring(input);
         self
     }
+    /// <p>Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.</p>
+    pub fn get_enhanced_monitoring(
+        &self,
+    ) -> &::std::option::Option<crate::types::EnhancedMonitoring> {
+        self.inner.get_enhanced_monitoring()
+    }
     /// <p>The settings for open monitoring.</p>
     pub fn open_monitoring(mut self, input: crate::types::OpenMonitoringInfo) -> Self {
         self.inner = self.inner.open_monitoring(input);
@@ -195,6 +233,10 @@ impl CreateClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_open_monitoring(input);
         self
+    }
+    /// <p>The settings for open monitoring.</p>
+    pub fn get_open_monitoring(&self) -> &::std::option::Option<crate::types::OpenMonitoringInfo> {
+        self.inner.get_open_monitoring()
     }
     /// <p>The version of Apache Kafka.</p>
     pub fn kafka_version(
@@ -212,6 +254,10 @@ impl CreateClusterFluentBuilder {
         self.inner = self.inner.set_kafka_version(input);
         self
     }
+    /// <p>The version of Apache Kafka.</p>
+    pub fn get_kafka_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kafka_version()
+    }
     #[allow(missing_docs)] // documentation missing in model
     pub fn logging_info(mut self, input: crate::types::LoggingInfo) -> Self {
         self.inner = self.inner.logging_info(input);
@@ -225,6 +271,10 @@ impl CreateClusterFluentBuilder {
         self.inner = self.inner.set_logging_info(input);
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_logging_info(&self) -> &::std::option::Option<crate::types::LoggingInfo> {
+        self.inner.get_logging_info()
+    }
     /// <p>The number of broker nodes in the cluster.</p>
     pub fn number_of_broker_nodes(mut self, input: i32) -> Self {
         self.inner = self.inner.number_of_broker_nodes(input);
@@ -234,6 +284,10 @@ impl CreateClusterFluentBuilder {
     pub fn set_number_of_broker_nodes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_number_of_broker_nodes(input);
         self
+    }
+    /// <p>The number of broker nodes in the cluster.</p>
+    pub fn get_number_of_broker_nodes(&self) -> &::std::option::Option<i32> {
+        self.inner.get_number_of_broker_nodes()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -258,6 +312,14 @@ impl CreateClusterFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>Create tags when creating the cluster.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>This controls storage mode for supported storage tiers.</p>
     pub fn storage_mode(mut self, input: crate::types::StorageMode) -> Self {
         self.inner = self.inner.storage_mode(input);
@@ -270,5 +332,9 @@ impl CreateClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_storage_mode(input);
         self
+    }
+    /// <p>This controls storage mode for supported storage tiers.</p>
+    pub fn get_storage_mode(&self) -> &::std::option::Option<crate::types::StorageMode> {
+        self.inner.get_storage_mode()
     }
 }

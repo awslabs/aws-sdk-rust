@@ -78,6 +78,10 @@ impl CustomRoutingEndpointGroupBuilder {
         self.endpoint_group_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
+    pub fn get_endpoint_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_group_arn
+    }
     /// <p>The Amazon Web Services Region where the endpoint group is located.</p>
     pub fn endpoint_group_region(
         mut self,
@@ -93,6 +97,10 @@ impl CustomRoutingEndpointGroupBuilder {
     ) -> Self {
         self.endpoint_group_region = input;
         self
+    }
+    /// <p>The Amazon Web Services Region where the endpoint group is located.</p>
+    pub fn get_endpoint_group_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_group_region
     }
     /// Appends an item to `destination_descriptions`.
     ///
@@ -118,6 +126,13 @@ impl CustomRoutingEndpointGroupBuilder {
         self.destination_descriptions = input;
         self
     }
+    /// <p>For a custom routing accelerator, describes the port range and protocol for all endpoints (virtual private cloud subnets) in an endpoint group to accept client traffic on.</p>
+    pub fn get_destination_descriptions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingDestinationDescription>>
+    {
+        &self.destination_descriptions
+    }
     /// Appends an item to `endpoint_descriptions`.
     ///
     /// To override the contents of this collection use [`set_endpoint_descriptions`](Self::set_endpoint_descriptions).
@@ -141,6 +156,13 @@ impl CustomRoutingEndpointGroupBuilder {
     ) -> Self {
         self.endpoint_descriptions = input;
         self
+    }
+    /// <p>For a custom routing accelerator, describes the endpoints (virtual private cloud subnets) in an endpoint group to accept client traffic on.</p>
+    pub fn get_endpoint_descriptions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomRoutingEndpointDescription>>
+    {
+        &self.endpoint_descriptions
     }
     /// Consumes the builder and constructs a [`CustomRoutingEndpointGroup`](crate::types::CustomRoutingEndpointGroup).
     pub fn build(self) -> crate::types::CustomRoutingEndpointGroup {

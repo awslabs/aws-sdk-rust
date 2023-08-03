@@ -37,6 +37,13 @@ impl StartTestSetGenerationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartTestSetGeneration as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_test_set_generation::builders::StartTestSetGenerationInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl StartTestSetGenerationFluentBuilder {
         self.inner = self.inner.set_test_set_name(input);
         self
     }
+    /// <p>The test set name for the test set generation request.</p>
+    pub fn get_test_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_test_set_name()
+    }
     /// <p>The test set description for the test set generation request.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -142,6 +153,10 @@ impl StartTestSetGenerationFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The test set description for the test set generation request.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The Amazon S3 storage location for the test set generation.</p>
     pub fn storage_location(mut self, input: crate::types::TestSetStorageLocation) -> Self {
@@ -155,6 +170,12 @@ impl StartTestSetGenerationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_storage_location(input);
         self
+    }
+    /// <p>The Amazon S3 storage location for the test set generation.</p>
+    pub fn get_storage_location(
+        &self,
+    ) -> &::std::option::Option<crate::types::TestSetStorageLocation> {
+        self.inner.get_storage_location()
     }
     /// <p>The data source for the test set generation.</p>
     pub fn generation_data_source(
@@ -172,6 +193,12 @@ impl StartTestSetGenerationFluentBuilder {
         self.inner = self.inner.set_generation_data_source(input);
         self
     }
+    /// <p>The data source for the test set generation.</p>
+    pub fn get_generation_data_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::TestSetGenerationDataSource> {
+        self.inner.get_generation_data_source()
+    }
     /// <p>The roleARN used for any operation in the test set to access resources in the Amazon Web Services account.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -181,6 +208,10 @@ impl StartTestSetGenerationFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p>The roleARN used for any operation in the test set to access resources in the Amazon Web Services account.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
     /// Adds a key-value pair to `testSetTags`.
     ///
@@ -204,5 +235,13 @@ impl StartTestSetGenerationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_test_set_tags(input);
         self
+    }
+    /// <p>A list of tags to add to the test set. You can only add tags when you import/generate a new test set. You can't use the <code>UpdateTestSet</code> operation to update tags. To update tags, use the <code>TagResource</code> operation.</p>
+    pub fn get_test_set_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_test_set_tags()
     }
 }

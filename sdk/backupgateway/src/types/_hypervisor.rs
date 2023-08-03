@@ -73,6 +73,10 @@ impl HypervisorBuilder {
         self.host = input;
         self
     }
+    /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
+    pub fn get_host(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host
+    }
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
     pub fn hypervisor_arn(
         mut self,
@@ -89,6 +93,10 @@ impl HypervisorBuilder {
         self.hypervisor_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
+    pub fn get_hypervisor_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hypervisor_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service used to encrypt the hypervisor.</p>
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_arn = ::std::option::Option::Some(input.into());
@@ -99,6 +107,10 @@ impl HypervisorBuilder {
         self.kms_key_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Key Management Service used to encrypt the hypervisor.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
+    }
     /// <p>The name of the hypervisor.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -108,6 +120,10 @@ impl HypervisorBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the hypervisor.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The state of the hypervisor.</p>
     pub fn state(mut self, input: crate::types::HypervisorState) -> Self {
@@ -121,6 +137,10 @@ impl HypervisorBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the hypervisor.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::HypervisorState> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`Hypervisor`](crate::types::Hypervisor).
     pub fn build(self) -> crate::types::Hypervisor {

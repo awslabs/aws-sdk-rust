@@ -71,6 +71,12 @@ impl UserTurnInputSpecificationBuilder {
         self.utterance_input = input;
         self
     }
+    /// <p>The utterance input in the user turn.</p>
+    pub fn get_utterance_input(
+        &self,
+    ) -> &::std::option::Option<crate::types::UtteranceInputSpecification> {
+        &self.utterance_input
+    }
     /// Adds a key-value pair to `request_attributes`.
     ///
     /// To override the contents of this collection use [`set_request_attributes`](Self::set_request_attributes).
@@ -96,6 +102,14 @@ impl UserTurnInputSpecificationBuilder {
         self.request_attributes = input;
         self
     }
+    /// <p>Request attributes of the user turn.</p>
+    pub fn get_request_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.request_attributes
+    }
     /// <p>Contains information about the session state in the input.</p>
     pub fn session_state(mut self, input: crate::types::InputSessionStateSpecification) -> Self {
         self.session_state = ::std::option::Option::Some(input);
@@ -108,6 +122,12 @@ impl UserTurnInputSpecificationBuilder {
     ) -> Self {
         self.session_state = input;
         self
+    }
+    /// <p>Contains information about the session state in the input.</p>
+    pub fn get_session_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::InputSessionStateSpecification> {
+        &self.session_state
     }
     /// Consumes the builder and constructs a [`UserTurnInputSpecification`](crate::types::UserTurnInputSpecification).
     pub fn build(self) -> crate::types::UserTurnInputSpecification {

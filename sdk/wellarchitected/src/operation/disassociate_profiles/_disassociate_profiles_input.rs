@@ -49,6 +49,10 @@ impl DisassociateProfilesInputBuilder {
         self.workload_id = input;
         self
     }
+    /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    pub fn get_workload_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workload_id
+    }
     /// Appends an item to `profile_arns`.
     ///
     /// To override the contents of this collection use [`set_profile_arns`](Self::set_profile_arns).
@@ -67,6 +71,12 @@ impl DisassociateProfilesInputBuilder {
     ) -> Self {
         self.profile_arns = input;
         self
+    }
+    /// <p>The list of profile ARNs to disassociate from the workload.</p>
+    pub fn get_profile_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.profile_arns
     }
     /// Consumes the builder and constructs a [`DisassociateProfilesInput`](crate::operation::disassociate_profiles::DisassociateProfilesInput).
     pub fn build(

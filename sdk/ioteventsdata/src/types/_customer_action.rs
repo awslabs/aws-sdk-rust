@@ -132,6 +132,18 @@ impl CustomerActionBuilder {
         self.action_name = input;
         self
     }
+    /// <p>The name of the action. The action name can be one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>SNOOZE</code> - When you snooze the alarm, the alarm state changes to <code>SNOOZE_DISABLED</code>.</p> </li>
+    /// <li> <p> <code>ENABLE</code> - When you enable the alarm, the alarm state changes to <code>NORMAL</code>.</p> </li>
+    /// <li> <p> <code>DISABLE</code> - When you disable the alarm, the alarm state changes to <code>DISABLED</code>.</p> </li>
+    /// <li> <p> <code>ACKNOWLEDGE</code> - When you acknowledge the alarm, the alarm state changes to <code>ACKNOWLEDGED</code>.</p> </li>
+    /// <li> <p> <code>RESET</code> - When you reset the alarm, the alarm state changes to <code>NORMAL</code>.</p> </li>
+    /// </ul>
+    /// <p>For more information, see the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_AlarmState.html">AlarmState</a> API.</p>
+    pub fn get_action_name(&self) -> &::std::option::Option<crate::types::CustomerActionName> {
+        &self.action_name
+    }
     /// <p>Contains the configuration information of a snooze action.</p>
     pub fn snooze_action_configuration(
         mut self,
@@ -147,6 +159,12 @@ impl CustomerActionBuilder {
     ) -> Self {
         self.snooze_action_configuration = input;
         self
+    }
+    /// <p>Contains the configuration information of a snooze action.</p>
+    pub fn get_snooze_action_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SnoozeActionConfiguration> {
+        &self.snooze_action_configuration
     }
     /// <p>Contains the configuration information of an enable action.</p>
     pub fn enable_action_configuration(
@@ -164,6 +182,12 @@ impl CustomerActionBuilder {
         self.enable_action_configuration = input;
         self
     }
+    /// <p>Contains the configuration information of an enable action.</p>
+    pub fn get_enable_action_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::EnableActionConfiguration> {
+        &self.enable_action_configuration
+    }
     /// <p>Contains the configuration information of a disable action.</p>
     pub fn disable_action_configuration(
         mut self,
@@ -179,6 +203,12 @@ impl CustomerActionBuilder {
     ) -> Self {
         self.disable_action_configuration = input;
         self
+    }
+    /// <p>Contains the configuration information of a disable action.</p>
+    pub fn get_disable_action_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DisableActionConfiguration> {
+        &self.disable_action_configuration
     }
     /// <p>Contains the configuration information of an acknowledge action.</p>
     pub fn acknowledge_action_configuration(
@@ -196,6 +226,12 @@ impl CustomerActionBuilder {
         self.acknowledge_action_configuration = input;
         self
     }
+    /// <p>Contains the configuration information of an acknowledge action.</p>
+    pub fn get_acknowledge_action_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::AcknowledgeActionConfiguration> {
+        &self.acknowledge_action_configuration
+    }
     /// <p>Contains the configuration information of a reset action.</p>
     pub fn reset_action_configuration(
         mut self,
@@ -211,6 +247,12 @@ impl CustomerActionBuilder {
     ) -> Self {
         self.reset_action_configuration = input;
         self
+    }
+    /// <p>Contains the configuration information of a reset action.</p>
+    pub fn get_reset_action_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResetActionConfiguration> {
+        &self.reset_action_configuration
     }
     /// Consumes the builder and constructs a [`CustomerAction`](crate::types::CustomerAction).
     pub fn build(self) -> crate::types::CustomerAction {

@@ -56,6 +56,10 @@ impl AwsAccountBuilder {
         self.id = input;
         self
     }
+    /// <p> The identifier for the Amazon Web Services account. </p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p> The email address that's associated with the Amazon Web Services account. </p>
     pub fn email_address(
         mut self,
@@ -72,6 +76,10 @@ impl AwsAccountBuilder {
         self.email_address = input;
         self
     }
+    /// <p> The email address that's associated with the Amazon Web Services account. </p>
+    pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email_address
+    }
     /// <p> The name of the Amazon Web Services account. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -81,6 +89,10 @@ impl AwsAccountBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p> The name of the Amazon Web Services account. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`AwsAccount`](crate::types::AwsAccount).
     pub fn build(self) -> crate::types::AwsAccount {

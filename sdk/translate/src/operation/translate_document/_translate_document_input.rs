@@ -76,6 +76,10 @@ impl TranslateDocumentInputBuilder {
         self.document = input;
         self
     }
+    /// <p>The content and content type for the document to be translated. The document size must not exceed 100 KB.</p>
+    pub fn get_document(&self) -> &::std::option::Option<crate::types::Document> {
+        &self.document
+    }
     /// Appends an item to `terminology_names`.
     ///
     /// To override the contents of this collection use [`set_terminology_names`](Self::set_terminology_names).
@@ -102,6 +106,14 @@ impl TranslateDocumentInputBuilder {
         self.terminology_names = input;
         self
     }
+    /// <p>The name of a terminology list file to add to the translation job. This file provides source terms and the desired translation for each term. A terminology list can contain a maximum of 256 terms. You can use one custom terminology resource in your translation request.</p>
+    /// <p>Use the <code>ListTerminologies</code> operation to get the available terminology lists.</p>
+    /// <p>For more information about custom terminology lists, see <a href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom terminology</a>.</p>
+    pub fn get_terminology_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.terminology_names
+    }
     /// <p>The language code for the language of the source text. Do not use <code>auto</code>, because <code>TranslateDocument</code> does not support language auto-detection. For a list of supported language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
     pub fn source_language_code(
         mut self,
@@ -117,6 +129,10 @@ impl TranslateDocumentInputBuilder {
     ) -> Self {
         self.source_language_code = input;
         self
+    }
+    /// <p>The language code for the language of the source text. Do not use <code>auto</code>, because <code>TranslateDocument</code> does not support language auto-detection. For a list of supported language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
+    pub fn get_source_language_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_language_code
     }
     /// <p>The language code requested for the translated document. For a list of supported language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
     pub fn target_language_code(
@@ -134,6 +150,10 @@ impl TranslateDocumentInputBuilder {
         self.target_language_code = input;
         self
     }
+    /// <p>The language code requested for the translated document. For a list of supported language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
+    pub fn get_target_language_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_language_code
+    }
     /// <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
     pub fn settings(mut self, input: crate::types::TranslationSettings) -> Self {
         self.settings = ::std::option::Option::Some(input);
@@ -146,6 +166,10 @@ impl TranslateDocumentInputBuilder {
     ) -> Self {
         self.settings = input;
         self
+    }
+    /// <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
+    pub fn get_settings(&self) -> &::std::option::Option<crate::types::TranslationSettings> {
+        &self.settings
     }
     /// Consumes the builder and constructs a [`TranslateDocumentInput`](crate::operation::translate_document::TranslateDocumentInput).
     pub fn build(

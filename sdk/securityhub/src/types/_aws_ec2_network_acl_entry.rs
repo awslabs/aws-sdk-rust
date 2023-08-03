@@ -96,6 +96,10 @@ impl AwsEc2NetworkAclEntryBuilder {
         self.cidr_block = input;
         self
     }
+    /// <p>The IPV4 network range for which to deny or allow access.</p>
+    pub fn get_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr_block
+    }
     /// <p>Whether the rule is an egress rule. An egress rule is a rule that applies to traffic that leaves the subnet.</p>
     pub fn egress(mut self, input: bool) -> Self {
         self.egress = ::std::option::Option::Some(input);
@@ -105,6 +109,10 @@ impl AwsEc2NetworkAclEntryBuilder {
     pub fn set_egress(mut self, input: ::std::option::Option<bool>) -> Self {
         self.egress = input;
         self
+    }
+    /// <p>Whether the rule is an egress rule. An egress rule is a rule that applies to traffic that leaves the subnet.</p>
+    pub fn get_egress(&self) -> &::std::option::Option<bool> {
+        &self.egress
     }
     /// <p>The Internet Control Message Protocol (ICMP) type and code for which to deny or allow access.</p>
     pub fn icmp_type_code(mut self, input: crate::types::IcmpTypeCode) -> Self {
@@ -118,6 +126,10 @@ impl AwsEc2NetworkAclEntryBuilder {
     ) -> Self {
         self.icmp_type_code = input;
         self
+    }
+    /// <p>The Internet Control Message Protocol (ICMP) type and code for which to deny or allow access.</p>
+    pub fn get_icmp_type_code(&self) -> &::std::option::Option<crate::types::IcmpTypeCode> {
+        &self.icmp_type_code
     }
     /// <p>The IPV6 network range for which to deny or allow access.</p>
     pub fn ipv6_cidr_block(
@@ -135,6 +147,10 @@ impl AwsEc2NetworkAclEntryBuilder {
         self.ipv6_cidr_block = input;
         self
     }
+    /// <p>The IPV6 network range for which to deny or allow access.</p>
+    pub fn get_ipv6_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv6_cidr_block
+    }
     /// <p>For TCP or UDP protocols, the range of ports that the rule applies to.</p>
     pub fn port_range(mut self, input: crate::types::PortRangeFromTo) -> Self {
         self.port_range = ::std::option::Option::Some(input);
@@ -148,6 +164,10 @@ impl AwsEc2NetworkAclEntryBuilder {
         self.port_range = input;
         self
     }
+    /// <p>For TCP or UDP protocols, the range of ports that the rule applies to.</p>
+    pub fn get_port_range(&self) -> &::std::option::Option<crate::types::PortRangeFromTo> {
+        &self.port_range
+    }
     /// <p>The protocol that the rule applies to. To deny or allow access to all protocols, use the value <code>-1</code>.</p>
     pub fn protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.protocol = ::std::option::Option::Some(input.into());
@@ -157,6 +177,10 @@ impl AwsEc2NetworkAclEntryBuilder {
     pub fn set_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.protocol = input;
         self
+    }
+    /// <p>The protocol that the rule applies to. To deny or allow access to all protocols, use the value <code>-1</code>.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<::std::string::String> {
+        &self.protocol
     }
     /// <p>Whether the rule is used to allow access or deny access.</p>
     pub fn rule_action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -168,6 +192,10 @@ impl AwsEc2NetworkAclEntryBuilder {
         self.rule_action = input;
         self
     }
+    /// <p>Whether the rule is used to allow access or deny access.</p>
+    pub fn get_rule_action(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_action
+    }
     /// <p>The rule number. The rules are processed in order by their number.</p>
     pub fn rule_number(mut self, input: i32) -> Self {
         self.rule_number = ::std::option::Option::Some(input);
@@ -177,6 +205,10 @@ impl AwsEc2NetworkAclEntryBuilder {
     pub fn set_rule_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.rule_number = input;
         self
+    }
+    /// <p>The rule number. The rules are processed in order by their number.</p>
+    pub fn get_rule_number(&self) -> &::std::option::Option<i32> {
+        &self.rule_number
     }
     /// Consumes the builder and constructs a [`AwsEc2NetworkAclEntry`](crate::types::AwsEc2NetworkAclEntry).
     pub fn build(self) -> crate::types::AwsEc2NetworkAclEntry {

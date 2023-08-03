@@ -36,6 +36,10 @@ impl DescribeFleetAdvisorLsaAnalysisFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeFleetAdvisorLsaAnalysis as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_fleet_advisor_lsa_analysis::builders::DescribeFleetAdvisorLsaAnalysisInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl DescribeFleetAdvisorLsaAnalysisFluentBuilder {
         self.inner = self.inner.set_max_records(input);
         self
     }
+    /// <p>Sets the maximum number of records returned in the response.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_records()
+    }
     /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -115,5 +123,9 @@ impl DescribeFleetAdvisorLsaAnalysisFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

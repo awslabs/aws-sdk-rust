@@ -36,6 +36,12 @@ impl UpdateOutpostFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateOutpost as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_outpost::builders::UpdateOutpostInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl UpdateOutpostFluentBuilder {
         self.inner = self.inner.set_outpost_id(input);
         self
     }
+    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
+    pub fn get_outpost_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_outpost_id()
+    }
     /// <p>The name of the Outpost.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -128,6 +138,10 @@ impl UpdateOutpostFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the Outpost.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The description of the Outpost.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -137,6 +151,10 @@ impl UpdateOutpostFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the Outpost.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p> The type of hardware for this Outpost. </p>
     pub fn supported_hardware_type(mut self, input: crate::types::SupportedHardwareType) -> Self {
@@ -150,5 +168,11 @@ impl UpdateOutpostFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_supported_hardware_type(input);
         self
+    }
+    /// <p> The type of hardware for this Outpost. </p>
+    pub fn get_supported_hardware_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::SupportedHardwareType> {
+        self.inner.get_supported_hardware_type()
     }
 }

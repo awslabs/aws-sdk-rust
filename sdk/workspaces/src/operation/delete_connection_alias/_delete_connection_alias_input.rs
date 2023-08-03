@@ -41,6 +41,10 @@ impl DeleteConnectionAliasInputBuilder {
         self.alias_id = input;
         self
     }
+    /// <p>The identifier of the connection alias to delete.</p>
+    pub fn get_alias_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias_id
+    }
     /// Consumes the builder and constructs a [`DeleteConnectionAliasInput`](crate::operation::delete_connection_alias::DeleteConnectionAliasInput).
     pub fn build(
         self,

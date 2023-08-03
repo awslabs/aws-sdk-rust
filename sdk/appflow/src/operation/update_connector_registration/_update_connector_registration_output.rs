@@ -52,6 +52,10 @@ impl UpdateConnectorRegistrationOutputBuilder {
         self.connector_arn = input;
         self
     }
+    /// <p>The ARN of the connector being updated.</p>
+    pub fn get_connector_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connector_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

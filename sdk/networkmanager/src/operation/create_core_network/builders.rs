@@ -36,6 +36,12 @@ impl CreateCoreNetworkFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateCoreNetwork as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_core_network::builders::CreateCoreNetworkInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl CreateCoreNetworkFluentBuilder {
         self.inner = self.inner.set_global_network_id(input);
         self
     }
+    /// <p>The ID of the global network that a core network will be a part of. </p>
+    pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_global_network_id()
+    }
     /// <p>The description of a core network.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -141,6 +151,10 @@ impl CreateCoreNetworkFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of a core network.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `Tags`.
     ///
@@ -159,6 +173,10 @@ impl CreateCoreNetworkFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>Key-value tags associated with a core network request.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>The policy document for creating a core network.</p>
     pub fn policy_document(
         mut self,
@@ -175,6 +193,10 @@ impl CreateCoreNetworkFluentBuilder {
         self.inner = self.inner.set_policy_document(input);
         self
     }
+    /// <p>The policy document for creating a core network.</p>
+    pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_document()
+    }
     /// <p>The client token associated with a core network request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -184,5 +206,9 @@ impl CreateCoreNetworkFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>The client token associated with a core network request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

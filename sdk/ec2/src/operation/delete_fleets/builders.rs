@@ -45,6 +45,10 @@ impl DeleteFleetsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteFleets as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_fleets::builders::DeleteFleetsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl DeleteFleetsFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// Appends an item to `FleetIds`.
     ///
     /// To override the contents of this collection use [`set_fleet_ids`](Self::set_fleet_ids).
@@ -144,6 +152,10 @@ impl DeleteFleetsFluentBuilder {
         self.inner = self.inner.set_fleet_ids(input);
         self
     }
+    /// <p>The IDs of the EC2 Fleets.</p>
+    pub fn get_fleet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_fleet_ids()
+    }
     /// <p>Indicates whether to terminate the associated instances when the EC2 Fleet is deleted. The default is to terminate the instances.</p>
     /// <p>To let the instances continue to run after the EC2 Fleet is deleted, specify <code>no-terminate-instances</code>. Supported only for fleets of type <code>maintain</code> and <code>request</code>.</p>
     /// <p>For <code>instant</code> fleets, you cannot specify <code>NoTerminateInstances</code>. A deleted <code>instant</code> fleet with running instances is not supported.</p>
@@ -157,5 +169,11 @@ impl DeleteFleetsFluentBuilder {
     pub fn set_terminate_instances(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_terminate_instances(input);
         self
+    }
+    /// <p>Indicates whether to terminate the associated instances when the EC2 Fleet is deleted. The default is to terminate the instances.</p>
+    /// <p>To let the instances continue to run after the EC2 Fleet is deleted, specify <code>no-terminate-instances</code>. Supported only for fleets of type <code>maintain</code> and <code>request</code>.</p>
+    /// <p>For <code>instant</code> fleets, you cannot specify <code>NoTerminateInstances</code>. A deleted <code>instant</code> fleet with running instances is not supported.</p>
+    pub fn get_terminate_instances(&self) -> &::std::option::Option<bool> {
+        self.inner.get_terminate_instances()
     }
 }

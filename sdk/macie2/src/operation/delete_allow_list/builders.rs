@@ -36,6 +36,12 @@ impl DeleteAllowListFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteAllowList as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_allow_list::builders::DeleteAllowListInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DeleteAllowListFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>Specifies whether to force deletion of the allow list, even if active classification jobs are configured to use the list.</p>
     /// <p>When you try to delete an allow list, Amazon Macie checks for classification jobs that use the list and have a status other than COMPLETE or CANCELLED. By default, Macie rejects your request if any jobs meet these criteria. To skip these checks and delete the list, set this value to true. To delete the list only if no active jobs are configured to use it, set this value to false.</p>
     pub fn ignore_job_checks(
@@ -143,5 +153,10 @@ impl DeleteAllowListFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ignore_job_checks(input);
         self
+    }
+    /// <p>Specifies whether to force deletion of the allow list, even if active classification jobs are configured to use the list.</p>
+    /// <p>When you try to delete an allow list, Amazon Macie checks for classification jobs that use the list and have a status other than COMPLETE or CANCELLED. By default, Macie rejects your request if any jobs meet these criteria. To skip these checks and delete the list, set this value to true. To delete the list only if no active jobs are configured to use it, set this value to false.</p>
+    pub fn get_ignore_job_checks(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ignore_job_checks()
     }
 }

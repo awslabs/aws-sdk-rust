@@ -87,6 +87,10 @@ impl CreateIntegrationWorkflowInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The unique name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
     pub fn workflow_type(mut self, input: crate::types::WorkflowType) -> Self {
         self.workflow_type = ::std::option::Option::Some(input);
@@ -100,6 +104,10 @@ impl CreateIntegrationWorkflowInputBuilder {
         self.workflow_type = input;
         self
     }
+    /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
+    pub fn get_workflow_type(&self) -> &::std::option::Option<crate::types::WorkflowType> {
+        &self.workflow_type
+    }
     /// <p>Configuration data for integration workflow.</p>
     pub fn integration_config(mut self, input: crate::types::IntegrationConfig) -> Self {
         self.integration_config = ::std::option::Option::Some(input);
@@ -112,6 +120,12 @@ impl CreateIntegrationWorkflowInputBuilder {
     ) -> Self {
         self.integration_config = input;
         self
+    }
+    /// <p>Configuration data for integration workflow.</p>
+    pub fn get_integration_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::IntegrationConfig> {
+        &self.integration_config
     }
     /// <p>The name of the profile object type.</p>
     pub fn object_type_name(
@@ -129,6 +143,10 @@ impl CreateIntegrationWorkflowInputBuilder {
         self.object_type_name = input;
         self
     }
+    /// <p>The name of the profile object type.</p>
+    pub fn get_object_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_type_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Customer Profiles assumes this role to create resources on your behalf as part of workflow execution.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -138,6 +156,10 @@ impl CreateIntegrationWorkflowInputBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role. Customer Profiles assumes this role to create resources on your behalf as part of workflow execution.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -163,6 +185,14 @@ impl CreateIntegrationWorkflowInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateIntegrationWorkflowInput`](crate::operation::create_integration_workflow::CreateIntegrationWorkflowInput).
     pub fn build(

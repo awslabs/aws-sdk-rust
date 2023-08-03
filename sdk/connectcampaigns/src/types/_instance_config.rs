@@ -62,6 +62,10 @@ impl InstanceConfigBuilder {
         self.connect_instance_id = input;
         self
     }
+    /// Amazon Connect Instance Id
+    pub fn get_connect_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connect_instance_id
+    }
     /// Service linked role arn
     pub fn service_linked_role_arn(
         mut self,
@@ -78,6 +82,10 @@ impl InstanceConfigBuilder {
         self.service_linked_role_arn = input;
         self
     }
+    /// Service linked role arn
+    pub fn get_service_linked_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_linked_role_arn
+    }
     /// Encryption config for Connect Instance. Note that sensitive data will always be encrypted. If disabled, service will perform encryption with its own key. If enabled, a KMS key id needs to be provided and KMS charges will apply. KMS is only type supported
     pub fn encryption_config(mut self, input: crate::types::EncryptionConfig) -> Self {
         self.encryption_config = ::std::option::Option::Some(input);
@@ -90,6 +98,10 @@ impl InstanceConfigBuilder {
     ) -> Self {
         self.encryption_config = input;
         self
+    }
+    /// Encryption config for Connect Instance. Note that sensitive data will always be encrypted. If disabled, service will perform encryption with its own key. If enabled, a KMS key id needs to be provided and KMS charges will apply. KMS is only type supported
+    pub fn get_encryption_config(&self) -> &::std::option::Option<crate::types::EncryptionConfig> {
+        &self.encryption_config
     }
     /// Consumes the builder and constructs a [`InstanceConfig`](crate::types::InstanceConfig).
     pub fn build(self) -> crate::types::InstanceConfig {

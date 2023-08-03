@@ -67,6 +67,12 @@ impl DeleteParametersOutputBuilder {
         self.deleted_parameters = input;
         self
     }
+    /// <p>The names of the deleted parameters.</p>
+    pub fn get_deleted_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.deleted_parameters
+    }
     /// Appends an item to `invalid_parameters`.
     ///
     /// To override the contents of this collection use [`set_invalid_parameters`](Self::set_invalid_parameters).
@@ -88,6 +94,12 @@ impl DeleteParametersOutputBuilder {
     ) -> Self {
         self.invalid_parameters = input;
         self
+    }
+    /// <p>The names of parameters that weren't deleted because the parameters aren't valid.</p>
+    pub fn get_invalid_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.invalid_parameters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

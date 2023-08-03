@@ -47,6 +47,10 @@ impl DescribeStorageSystemInputBuilder {
         self.storage_system_arn = input;
         self
     }
+    /// <p>Specifies the Amazon Resource Name (ARN) of an on-premises storage system that you're using with DataSync Discovery.</p>
+    pub fn get_storage_system_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_system_arn
+    }
     /// Consumes the builder and constructs a [`DescribeStorageSystemInput`](crate::operation::describe_storage_system::DescribeStorageSystemInput).
     pub fn build(
         self,

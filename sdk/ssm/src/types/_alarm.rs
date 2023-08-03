@@ -40,6 +40,10 @@ impl AlarmBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of your CloudWatch alarm.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`Alarm`](crate::types::Alarm).
     pub fn build(self) -> crate::types::Alarm {
         crate::types::Alarm { name: self.name }

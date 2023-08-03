@@ -65,6 +65,12 @@ impl ListHubContentsOutputBuilder {
         self.hub_content_summaries = input;
         self
     }
+    /// <p>The summaries of the listed hub content.</p>
+    pub fn get_hub_content_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HubContentInfo>> {
+        &self.hub_content_summaries
+    }
     /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of hub content, use it in the subsequent request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -74,6 +80,10 @@ impl ListHubContentsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of hub content, use it in the subsequent request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

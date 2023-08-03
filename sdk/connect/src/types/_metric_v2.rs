@@ -64,6 +64,12 @@ impl MetricV2Builder {
         self.name = input;
         self
     }
+    /// <p>The name of the metric.</p> <important>
+    /// <p>This parameter is required. The following Required = No is incorrect.</p>
+    /// </important>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `threshold`.
     ///
     /// To override the contents of this collection use [`set_threshold`](Self::set_threshold).
@@ -83,6 +89,12 @@ impl MetricV2Builder {
         self.threshold = input;
         self
     }
+    /// <p>Contains information about the threshold for service level metrics.</p>
+    pub fn get_threshold(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ThresholdV2>> {
+        &self.threshold
+    }
     /// Appends an item to `metric_filters`.
     ///
     /// To override the contents of this collection use [`set_metric_filters`](Self::set_metric_filters).
@@ -101,6 +113,12 @@ impl MetricV2Builder {
     ) -> Self {
         self.metric_filters = input;
         self
+    }
+    /// <p>Contains the filters to be used when returning data.</p>
+    pub fn get_metric_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricFilterV2>> {
+        &self.metric_filters
     }
     /// Consumes the builder and constructs a [`MetricV2`](crate::types::MetricV2).
     pub fn build(self) -> crate::types::MetricV2 {

@@ -57,6 +57,10 @@ impl ConfirmProductInstanceInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The ID of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The product code. This must be a product code that you own.</p>
     pub fn product_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_code = ::std::option::Option::Some(input.into());
@@ -67,6 +71,10 @@ impl ConfirmProductInstanceInputBuilder {
         self.product_code = input;
         self
     }
+    /// <p>The product code. This must be a product code that you own.</p>
+    pub fn get_product_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product_code
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -76,6 +84,10 @@ impl ConfirmProductInstanceInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`ConfirmProductInstanceInput`](crate::operation::confirm_product_instance::ConfirmProductInstanceInput).
     pub fn build(

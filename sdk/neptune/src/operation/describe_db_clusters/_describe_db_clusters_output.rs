@@ -55,6 +55,10 @@ impl DescribeDbClustersOutputBuilder {
         self.marker = input;
         self
     }
+    /// <p>A pagination token that can be used in a subsequent DescribeDBClusters request.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// Appends an item to `db_clusters`.
     ///
     /// To override the contents of this collection use [`set_db_clusters`](Self::set_db_clusters).
@@ -73,6 +77,12 @@ impl DescribeDbClustersOutputBuilder {
     ) -> Self {
         self.db_clusters = input;
         self
+    }
+    /// <p>Contains a list of DB clusters for the user.</p>
+    pub fn get_db_clusters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DbCluster>> {
+        &self.db_clusters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

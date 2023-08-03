@@ -73,6 +73,10 @@ impl UpdateDataRetentionInputBuilder {
         self.stream_name = input;
         self
     }
+    /// <p>The name of the stream whose retention period you want to change.</p>
+    pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the stream whose retention period you want to change.</p>
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_arn = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl UpdateDataRetentionInputBuilder {
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the stream whose retention period you want to change.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_arn
     }
     /// <p>The version of the stream whose retention period you want to change. To get the version, call either the <code>DescribeStream</code> or the <code>ListStreams</code> API.</p>
     pub fn current_version(
@@ -99,6 +107,10 @@ impl UpdateDataRetentionInputBuilder {
         self.current_version = input;
         self
     }
+    /// <p>The version of the stream whose retention period you want to change. To get the version, call either the <code>DescribeStream</code> or the <code>ListStreams</code> API.</p>
+    pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.current_version
+    }
     /// <p>Indicates whether you want to increase or decrease the retention period.</p>
     pub fn operation(mut self, input: crate::types::UpdateDataRetentionOperation) -> Self {
         self.operation = ::std::option::Option::Some(input);
@@ -112,6 +124,12 @@ impl UpdateDataRetentionInputBuilder {
         self.operation = input;
         self
     }
+    /// <p>Indicates whether you want to increase or decrease the retention period.</p>
+    pub fn get_operation(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateDataRetentionOperation> {
+        &self.operation
+    }
     /// <p>The retention period, in hours. The value you specify replaces the current value. The maximum value for this parameter is 87600 (ten years).</p>
     pub fn data_retention_change_in_hours(mut self, input: i32) -> Self {
         self.data_retention_change_in_hours = ::std::option::Option::Some(input);
@@ -121,6 +139,10 @@ impl UpdateDataRetentionInputBuilder {
     pub fn set_data_retention_change_in_hours(mut self, input: ::std::option::Option<i32>) -> Self {
         self.data_retention_change_in_hours = input;
         self
+    }
+    /// <p>The retention period, in hours. The value you specify replaces the current value. The maximum value for this parameter is 87600 (ten years).</p>
+    pub fn get_data_retention_change_in_hours(&self) -> &::std::option::Option<i32> {
+        &self.data_retention_change_in_hours
     }
     /// Consumes the builder and constructs a [`UpdateDataRetentionInput`](crate::operation::update_data_retention::UpdateDataRetentionInput).
     pub fn build(

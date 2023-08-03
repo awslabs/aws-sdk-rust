@@ -105,6 +105,10 @@ impl GetFieldResponseBuilder {
         self.field_id = input;
         self
     }
+    /// <p>Unique identifier of the field.</p>
+    pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_id
+    }
     /// <p>Name of the field.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -114,6 +118,10 @@ impl GetFieldResponseBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>Name of the field.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The Amazon Resource Name (ARN) of the field.</p>
     pub fn field_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -125,6 +133,10 @@ impl GetFieldResponseBuilder {
         self.field_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the field.</p>
+    pub fn get_field_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_arn
+    }
     /// <p>Description of the field.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -135,6 +147,10 @@ impl GetFieldResponseBuilder {
         self.description = input;
         self
     }
+    /// <p>Description of the field.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>Type of the field.</p>
     pub fn r#type(mut self, input: crate::types::FieldType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -144,6 +160,10 @@ impl GetFieldResponseBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::FieldType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>Type of the field.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::FieldType> {
+        &self.r#type
     }
     /// <p>Namespace of the field.</p>
     pub fn namespace(mut self, input: crate::types::FieldNamespace) -> Self {
@@ -157,6 +177,10 @@ impl GetFieldResponseBuilder {
     ) -> Self {
         self.namespace = input;
         self
+    }
+    /// <p>Namespace of the field.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<crate::types::FieldNamespace> {
+        &self.namespace
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -185,6 +209,17 @@ impl GetFieldResponseBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            ::std::option::Option<::std::string::String>,
+        >,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`GetFieldResponse`](crate::types::GetFieldResponse).
     pub fn build(self) -> crate::types::GetFieldResponse {

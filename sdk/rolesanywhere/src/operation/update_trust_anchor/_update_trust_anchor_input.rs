@@ -62,6 +62,10 @@ impl UpdateTrustAnchorInputBuilder {
         self.trust_anchor_id = input;
         self
     }
+    /// <p>The unique identifier of the trust anchor.</p>
+    pub fn get_trust_anchor_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trust_anchor_id
+    }
     /// <p>The name of the trust anchor.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl UpdateTrustAnchorInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the trust anchor.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The trust anchor type and its related certificate data.</p>
     pub fn source(mut self, input: crate::types::Source) -> Self {
         self.source = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl UpdateTrustAnchorInputBuilder {
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::Source>) -> Self {
         self.source = input;
         self
+    }
+    /// <p>The trust anchor type and its related certificate data.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::Source> {
+        &self.source
     }
     /// Consumes the builder and constructs a [`UpdateTrustAnchorInput`](crate::operation::update_trust_anchor::UpdateTrustAnchorInput).
     pub fn build(

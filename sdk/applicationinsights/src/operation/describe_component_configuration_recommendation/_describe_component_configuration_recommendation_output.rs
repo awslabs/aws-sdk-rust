@@ -52,6 +52,10 @@ impl DescribeComponentConfigurationRecommendationOutputBuilder {
         self.component_configuration = input;
         self
     }
+    /// <p>The recommended configuration settings of the component. The value is the escaped JSON of the configuration.</p>
+    pub fn get_component_configuration(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

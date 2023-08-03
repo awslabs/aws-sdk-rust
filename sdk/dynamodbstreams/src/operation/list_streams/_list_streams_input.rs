@@ -56,6 +56,10 @@ impl ListStreamsInputBuilder {
         self.table_name = input;
         self
     }
+    /// <p>If this parameter is provided, then only the streams associated with this table name are returned.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
+    }
     /// <p>The maximum number of streams to return. The upper limit is 100.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl ListStreamsInputBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
+    }
+    /// <p>The maximum number of streams to return. The upper limit is 100.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// <p>The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation. </p>
     pub fn exclusive_start_stream_arn(
@@ -81,6 +89,10 @@ impl ListStreamsInputBuilder {
     ) -> Self {
         self.exclusive_start_stream_arn = input;
         self
+    }
+    /// <p>The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedStreamArn</code> in the previous operation. </p>
+    pub fn get_exclusive_start_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.exclusive_start_stream_arn
     }
     /// Consumes the builder and constructs a [`ListStreamsInput`](crate::operation::list_streams::ListStreamsInput).
     pub fn build(

@@ -81,6 +81,10 @@ impl DescribeBackupsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more backups.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of backups to return in the response. When there are more backups than the number you specify, the response contains a <code>NextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -90,6 +94,10 @@ impl DescribeBackupsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of backups to return in the response. When there are more backups than the number you specify, the response contains a <code>NextToken</code> value.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Adds a key-value pair to `filters`.
     ///
@@ -129,6 +137,19 @@ impl DescribeBackupsInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>One or more filters to limit the items returned in the response.</p>
+    /// <p>Use the <code>backupIds</code> filter to return only the specified backups. Specify backups by their backup identifier (ID).</p>
+    /// <p>Use the <code>sourceBackupIds</code> filter to return only the backups created from a source backup. The <code>sourceBackupID</code> of a source backup is returned by the <code>CopyBackupToRegion</code> operation.</p>
+    /// <p>Use the <code>clusterIds</code> filter to return only the backups for the specified clusters. Specify clusters by their cluster identifier (ID).</p>
+    /// <p>Use the <code>states</code> filter to return only backups that match the specified state.</p>
+    /// <p>Use the <code>neverExpires</code> filter to return backups filtered by the value in the <code>neverExpires</code> parameter. <code>True</code> returns all backups exempt from the backup retention policy. <code>False</code> returns all backups with a backup retention policy defined at the cluster.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
+    > {
+        &self.filters
+    }
     /// <p>Designates whether or not to sort the return backups by ascending chronological order of generation.</p>
     pub fn sort_ascending(mut self, input: bool) -> Self {
         self.sort_ascending = ::std::option::Option::Some(input);
@@ -138,6 +159,10 @@ impl DescribeBackupsInputBuilder {
     pub fn set_sort_ascending(mut self, input: ::std::option::Option<bool>) -> Self {
         self.sort_ascending = input;
         self
+    }
+    /// <p>Designates whether or not to sort the return backups by ascending chronological order of generation.</p>
+    pub fn get_sort_ascending(&self) -> &::std::option::Option<bool> {
+        &self.sort_ascending
     }
     /// Consumes the builder and constructs a [`DescribeBackupsInput`](crate::operation::describe_backups::DescribeBackupsInput).
     pub fn build(

@@ -199,6 +199,10 @@ impl CreateOpsItemInputBuilder {
         self.description = input;
         self
     }
+    /// <p>Information about the OpsItem. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The type of OpsItem to create. Systems Manager supports the following types of OpsItems:</p>
     /// <ul>
     /// <li> <p> <code>/aws/issue</code> </p> <p>This type of OpsItem is used for default OpsItems created by OpsCenter. </p> </li>
@@ -224,6 +228,15 @@ impl CreateOpsItemInputBuilder {
     ) -> Self {
         self.ops_item_type = input;
         self
+    }
+    /// <p>The type of OpsItem to create. Systems Manager supports the following types of OpsItems:</p>
+    /// <ul>
+    /// <li> <p> <code>/aws/issue</code> </p> <p>This type of OpsItem is used for default OpsItems created by OpsCenter. </p> </li>
+    /// <li> <p> <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests. </p> </li>
+    /// <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li>
+    /// </ul>
+    pub fn get_ops_item_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ops_item_type
     }
     /// Adds a key-value pair to `operational_data`.
     ///
@@ -258,6 +271,18 @@ impl CreateOpsItemInputBuilder {
         self.operational_data = input;
         self
     }
+    /// <p>Operational data is custom data that provides useful reference details about the OpsItem. For example, you can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size of 20 KB.</p> <important>
+    /// <p>Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>, <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>, <code>/ssm</code>.</p>
+    /// </important>
+    /// <p>You can choose to make the data searchable by other users in the account or you can restrict search access. Searchable data means that all users with access to the OpsItem Overview page (as provided by the <code>DescribeOpsItems</code> API operation) can view and search on the specified data. Operational data that isn't searchable is only viewable by users who have access to the OpsItem (as provided by the <code>GetOpsItem</code> API operation).</p>
+    /// <p>Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view Amazon Web Services CLI example commands that use these keys, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-manually-create-OpsItems.html">Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    pub fn get_operational_data(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::OpsItemDataValue>,
+    > {
+        &self.operational_data
+    }
     /// Appends an item to `notifications`.
     ///
     /// To override the contents of this collection use [`set_notifications`](Self::set_notifications).
@@ -277,6 +302,12 @@ impl CreateOpsItemInputBuilder {
         self.notifications = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of an SNS topic where notifications are sent when this OpsItem is edited or changed.</p>
+    pub fn get_notifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::OpsItemNotification>> {
+        &self.notifications
+    }
     /// <p>The importance of this OpsItem in relation to other OpsItems in the system.</p>
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
@@ -286,6 +317,10 @@ impl CreateOpsItemInputBuilder {
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
+    }
+    /// <p>The importance of this OpsItem in relation to other OpsItems in the system.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
     }
     /// Appends an item to `related_ops_items`.
     ///
@@ -306,6 +341,12 @@ impl CreateOpsItemInputBuilder {
         self.related_ops_items = input;
         self
     }
+    /// <p>One or more OpsItems that share something in common with the current OpsItems. For example, related OpsItems can include OpsItems with similar error messages, impacted resources, or statuses for the impacted resource.</p>
+    pub fn get_related_ops_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RelatedOpsItem>> {
+        &self.related_ops_items
+    }
     /// <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> <note>
     /// <p>The source name can't contain the following strings: <code>aws</code>, <code>amazon</code>, and <code>amzn</code>. </p>
     /// </note>
@@ -320,6 +361,12 @@ impl CreateOpsItemInputBuilder {
         self.source = input;
         self
     }
+    /// <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> <note>
+    /// <p>The source name can't contain the following strings: <code>aws</code>, <code>amazon</code>, and <code>amzn</code>. </p>
+    /// </note>
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source
+    }
     /// <p>A short heading that describes the nature of the OpsItem and the impacted resource.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
@@ -329,6 +376,10 @@ impl CreateOpsItemInputBuilder {
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
+    }
+    /// <p>A short heading that describes the nature of the OpsItem and the impacted resource.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
     }
     /// Appends an item to `tags`.
     ///
@@ -357,6 +408,14 @@ impl CreateOpsItemInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Optional metadata that you assign to a resource.</p>
+    /// <p>Tags use a key-value pair. For example:</p>
+    /// <p> <code>Key=Department,Value=Finance</code> </p> <important>
+    /// <p>To add tags to a new OpsItem, a user must have IAM permissions for both the <code>ssm:CreateOpsItems</code> operation and the <code>ssm:AddTagsToResource</code> operation. To add tags to an existing OpsItem, use the <code>AddTagsToResource</code> operation.</p>
+    /// </important>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>Specify a category to assign to an OpsItem. </p>
     pub fn category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.category = ::std::option::Option::Some(input.into());
@@ -367,6 +426,10 @@ impl CreateOpsItemInputBuilder {
         self.category = input;
         self
     }
+    /// <p>Specify a category to assign to an OpsItem. </p>
+    pub fn get_category(&self) -> &::std::option::Option<::std::string::String> {
+        &self.category
+    }
     /// <p>Specify a severity to assign to an OpsItem.</p>
     pub fn severity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.severity = ::std::option::Option::Some(input.into());
@@ -376,6 +439,10 @@ impl CreateOpsItemInputBuilder {
     pub fn set_severity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.severity = input;
         self
+    }
+    /// <p>Specify a severity to assign to an OpsItem.</p>
+    pub fn get_severity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.severity
     }
     /// <p>The time a runbook workflow started. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
     pub fn actual_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -390,6 +457,10 @@ impl CreateOpsItemInputBuilder {
         self.actual_start_time = input;
         self
     }
+    /// <p>The time a runbook workflow started. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
+    pub fn get_actual_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.actual_start_time
+    }
     /// <p>The time a runbook workflow ended. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
     pub fn actual_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.actual_end_time = ::std::option::Option::Some(input);
@@ -402,6 +473,10 @@ impl CreateOpsItemInputBuilder {
     ) -> Self {
         self.actual_end_time = input;
         self
+    }
+    /// <p>The time a runbook workflow ended. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
+    pub fn get_actual_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.actual_end_time
     }
     /// <p>The time specified in a change request for a runbook workflow to start. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
     pub fn planned_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -416,6 +491,10 @@ impl CreateOpsItemInputBuilder {
         self.planned_start_time = input;
         self
     }
+    /// <p>The time specified in a change request for a runbook workflow to start. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
+    pub fn get_planned_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.planned_start_time
+    }
     /// <p>The time specified in a change request for a runbook workflow to end. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
     pub fn planned_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.planned_end_time = ::std::option::Option::Some(input);
@@ -429,6 +508,10 @@ impl CreateOpsItemInputBuilder {
         self.planned_end_time = input;
         self
     }
+    /// <p>The time specified in a change request for a runbook workflow to end. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
+    pub fn get_planned_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.planned_end_time
+    }
     /// <p>The target Amazon Web Services account where you want to create an OpsItem. To make this call, your account must be configured to work with OpsItems across accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-setup.html">Set up OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -438,6 +521,10 @@ impl CreateOpsItemInputBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>The target Amazon Web Services account where you want to create an OpsItem. To make this call, your account must be configured to work with OpsItems across accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-setup.html">Set up OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// Consumes the builder and constructs a [`CreateOpsItemInput`](crate::operation::create_ops_item::CreateOpsItemInput).
     pub fn build(

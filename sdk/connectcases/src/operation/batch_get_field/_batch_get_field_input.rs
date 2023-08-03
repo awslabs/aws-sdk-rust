@@ -47,6 +47,10 @@ impl BatchGetFieldInputBuilder {
         self.domain_id = input;
         self
     }
+    /// <p>The unique identifier of the Cases domain. </p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_id
+    }
     /// Appends an item to `fields`.
     ///
     /// To override the contents of this collection use [`set_fields`](Self::set_fields).
@@ -65,6 +69,12 @@ impl BatchGetFieldInputBuilder {
     ) -> Self {
         self.fields = input;
         self
+    }
+    /// <p>A list of unique field identifiers. </p>
+    pub fn get_fields(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>> {
+        &self.fields
     }
     /// Consumes the builder and constructs a [`BatchGetFieldInput`](crate::operation::batch_get_field::BatchGetFieldInput).
     pub fn build(

@@ -58,6 +58,12 @@ impl AddAttributesToFindingsInputBuilder {
         self.finding_arns = input;
         self
     }
+    /// <p>The ARNs that specify the findings that you want to assign attributes to.</p>
+    pub fn get_finding_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.finding_arns
+    }
     /// Appends an item to `attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
@@ -76,6 +82,12 @@ impl AddAttributesToFindingsInputBuilder {
     ) -> Self {
         self.attributes = input;
         self
+    }
+    /// <p>The array of attributes that you want to assign to specified findings.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Attribute>> {
+        &self.attributes
     }
     /// Consumes the builder and constructs a [`AddAttributesToFindingsInput`](crate::operation::add_attributes_to_findings::AddAttributesToFindingsInput).
     pub fn build(

@@ -54,6 +54,10 @@ impl ShipmentInformationBuilder {
         self.shipment_tracking_number = input;
         self
     }
+    /// <p> The tracking number of the shipment. </p>
+    pub fn get_shipment_tracking_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.shipment_tracking_number
+    }
     /// <p> The carrier of the shipment. </p>
     pub fn shipment_carrier(mut self, input: crate::types::ShipmentCarrier) -> Self {
         self.shipment_carrier = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl ShipmentInformationBuilder {
     ) -> Self {
         self.shipment_carrier = input;
         self
+    }
+    /// <p> The carrier of the shipment. </p>
+    pub fn get_shipment_carrier(&self) -> &::std::option::Option<crate::types::ShipmentCarrier> {
+        &self.shipment_carrier
     }
     /// Consumes the builder and constructs a [`ShipmentInformation`](crate::types::ShipmentInformation).
     pub fn build(self) -> crate::types::ShipmentInformation {

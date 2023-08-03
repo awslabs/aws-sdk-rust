@@ -58,6 +58,12 @@ impl PutStoredQueryInputBuilder {
         self.stored_query = input;
         self
     }
+    /// <p>A list of <code>StoredQuery</code> objects. The mandatory fields are <code>QueryName</code> and <code>Expression</code>.</p> <note>
+    /// <p>When you are creating a query, you must provide a query name and an expression. When you are updating a query, you must provide a query name but updating the description is optional.</p>
+    /// </note>
+    pub fn get_stored_query(&self) -> &::std::option::Option<crate::types::StoredQuery> {
+        &self.stored_query
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -76,6 +82,10 @@ impl PutStoredQueryInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of <code>Tags</code> object.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`PutStoredQueryInput`](crate::operation::put_stored_query::PutStoredQueryInput).
     pub fn build(

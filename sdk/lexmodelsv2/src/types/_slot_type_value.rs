@@ -51,6 +51,10 @@ impl SlotTypeValueBuilder {
         self.sample_value = input;
         self
     }
+    /// <p>The value of the slot type entry.</p>
+    pub fn get_sample_value(&self) -> &::std::option::Option<crate::types::SampleValue> {
+        &self.sample_value
+    }
     /// Appends an item to `synonyms`.
     ///
     /// To override the contents of this collection use [`set_synonyms`](Self::set_synonyms).
@@ -69,6 +73,12 @@ impl SlotTypeValueBuilder {
     ) -> Self {
         self.synonyms = input;
         self
+    }
+    /// <p>Additional values related to the slot type entry.</p>
+    pub fn get_synonyms(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SampleValue>> {
+        &self.synonyms
     }
     /// Consumes the builder and constructs a [`SlotTypeValue`](crate::types::SlotTypeValue).
     pub fn build(self) -> crate::types::SlotTypeValue {

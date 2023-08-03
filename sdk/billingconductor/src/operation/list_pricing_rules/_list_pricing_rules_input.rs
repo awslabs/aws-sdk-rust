@@ -70,6 +70,10 @@ impl ListPricingRulesInputBuilder {
         self.billing_period = input;
         self
     }
+    /// <p> The preferred billing period to get the pricing plan. </p>
+    pub fn get_billing_period(&self) -> &::std::option::Option<::std::string::String> {
+        &self.billing_period
+    }
     /// <p> A <code>DescribePricingRuleFilter</code> that specifies the Amazon Resource Name (ARNs) of pricing rules to retrieve pricing rules information. </p>
     pub fn filters(mut self, input: crate::types::ListPricingRulesFilter) -> Self {
         self.filters = ::std::option::Option::Some(input);
@@ -83,6 +87,10 @@ impl ListPricingRulesInputBuilder {
         self.filters = input;
         self
     }
+    /// <p> A <code>DescribePricingRuleFilter</code> that specifies the Amazon Resource Name (ARNs) of pricing rules to retrieve pricing rules information. </p>
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::ListPricingRulesFilter> {
+        &self.filters
+    }
     /// <p> The maximum number of pricing rules to retrieve. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -93,6 +101,10 @@ impl ListPricingRulesInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p> The maximum number of pricing rules to retrieve. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p> The pagination token that's used on subsequent call to get pricing rules. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -102,6 +114,10 @@ impl ListPricingRulesInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p> The pagination token that's used on subsequent call to get pricing rules. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListPricingRulesInput`](crate::operation::list_pricing_rules::ListPricingRulesInput).
     pub fn build(

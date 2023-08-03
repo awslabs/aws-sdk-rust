@@ -55,6 +55,10 @@ impl DescribeInsightRulesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If this parameter is present, it is a token that marks the start of the next batch of returned results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `insight_rules`.
     ///
     /// To override the contents of this collection use [`set_insight_rules`](Self::set_insight_rules).
@@ -73,6 +77,12 @@ impl DescribeInsightRulesOutputBuilder {
     ) -> Self {
         self.insight_rules = input;
         self
+    }
+    /// <p>The rules returned by the operation.</p>
+    pub fn get_insight_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightRule>> {
+        &self.insight_rules
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

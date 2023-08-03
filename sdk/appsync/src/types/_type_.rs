@@ -72,6 +72,10 @@ impl TypeBuilder {
         self.name = input;
         self
     }
+    /// <p>The type name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The type description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl TypeBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The type description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The type Amazon Resource Name (ARN).</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -92,6 +100,10 @@ impl TypeBuilder {
         self.arn = input;
         self
     }
+    /// <p>The type Amazon Resource Name (ARN).</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The type definition.</p>
     pub fn definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.definition = ::std::option::Option::Some(input.into());
@@ -101,6 +113,10 @@ impl TypeBuilder {
     pub fn set_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.definition = input;
         self
+    }
+    /// <p>The type definition.</p>
+    pub fn get_definition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.definition
     }
     /// <p>The type format: SDL or JSON.</p>
     pub fn format(mut self, input: crate::types::TypeDefinitionFormat) -> Self {
@@ -114,6 +130,10 @@ impl TypeBuilder {
     ) -> Self {
         self.format = input;
         self
+    }
+    /// <p>The type format: SDL or JSON.</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::TypeDefinitionFormat> {
+        &self.format
     }
     /// Consumes the builder and constructs a [`Type`](crate::types::Type).
     pub fn build(self) -> crate::types::Type {

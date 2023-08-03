@@ -65,6 +65,10 @@ impl DeleteMethodResponseInputBuilder {
         self.rest_api_id = input;
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rest_api_id
+    }
     /// <p>The Resource identifier for the MethodResponse resource.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl DeleteMethodResponseInputBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>The Resource identifier for the MethodResponse resource.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// <p>The HTTP verb of the Method resource.</p>
     pub fn http_method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -85,6 +93,10 @@ impl DeleteMethodResponseInputBuilder {
         self.http_method = input;
         self
     }
+    /// <p>The HTTP verb of the Method resource.</p>
+    pub fn get_http_method(&self) -> &::std::option::Option<::std::string::String> {
+        &self.http_method
+    }
     /// <p>The status code identifier for the MethodResponse resource.</p>
     pub fn status_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_code = ::std::option::Option::Some(input.into());
@@ -94,6 +106,10 @@ impl DeleteMethodResponseInputBuilder {
     pub fn set_status_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_code = input;
         self
+    }
+    /// <p>The status code identifier for the MethodResponse resource.</p>
+    pub fn get_status_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_code
     }
     /// Consumes the builder and constructs a [`DeleteMethodResponseInput`](crate::operation::delete_method_response::DeleteMethodResponseInput).
     pub fn build(

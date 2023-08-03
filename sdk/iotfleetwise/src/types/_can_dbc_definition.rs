@@ -70,6 +70,10 @@ impl CanDbcDefinitionBuilder {
         self.network_interface = input;
         self
     }
+    /// <p>Contains information about a network interface.</p>
+    pub fn get_network_interface(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_interface
+    }
     /// Appends an item to `can_dbc_files`.
     ///
     /// To override the contents of this collection use [`set_can_dbc_files`](Self::set_can_dbc_files).
@@ -88,6 +92,12 @@ impl CanDbcDefinitionBuilder {
     ) -> Self {
         self.can_dbc_files = input;
         self
+    }
+    /// <p>A list of DBC files. You can upload only one DBC file for each network interface and specify up to five (inclusive) files in the list.</p>
+    pub fn get_can_dbc_files(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>> {
+        &self.can_dbc_files
     }
     /// Adds a key-value pair to `signals_map`.
     ///
@@ -113,6 +123,14 @@ impl CanDbcDefinitionBuilder {
     ) -> Self {
         self.signals_map = input;
         self
+    }
+    /// <p>Pairs every signal specified in your vehicle model with a signal decoder.</p>
+    pub fn get_signals_map(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.signals_map
     }
     /// Consumes the builder and constructs a [`CanDbcDefinition`](crate::types::CanDbcDefinition).
     pub fn build(self) -> crate::types::CanDbcDefinition {

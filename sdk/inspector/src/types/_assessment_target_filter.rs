@@ -46,6 +46,12 @@ impl AssessmentTargetFilterBuilder {
         self.assessment_target_name_pattern = input;
         self
     }
+    /// <p>For a record to match a filter, an explicit value or a string that contains a wildcard that is specified for this data type property must match the value of the <b>assessmentTargetName</b> property of the <code>AssessmentTarget</code> data type.</p>
+    pub fn get_assessment_target_name_pattern(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.assessment_target_name_pattern
+    }
     /// Consumes the builder and constructs a [`AssessmentTargetFilter`](crate::types::AssessmentTargetFilter).
     pub fn build(self) -> crate::types::AssessmentTargetFilter {
         crate::types::AssessmentTargetFilter {

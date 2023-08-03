@@ -54,6 +54,10 @@ impl SharedImagePermissionsBuilder {
         self.shared_account_id = input;
         self
     }
+    /// <p>The 12-digit identifier of the AWS account with which the image is shared.</p>
+    pub fn get_shared_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.shared_account_id
+    }
     /// <p>Describes the permissions for a shared image.</p>
     pub fn image_permissions(mut self, input: crate::types::ImagePermissions) -> Self {
         self.image_permissions = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl SharedImagePermissionsBuilder {
     ) -> Self {
         self.image_permissions = input;
         self
+    }
+    /// <p>Describes the permissions for a shared image.</p>
+    pub fn get_image_permissions(&self) -> &::std::option::Option<crate::types::ImagePermissions> {
+        &self.image_permissions
     }
     /// Consumes the builder and constructs a [`SharedImagePermissions`](crate::types::SharedImagePermissions).
     pub fn build(self) -> crate::types::SharedImagePermissions {

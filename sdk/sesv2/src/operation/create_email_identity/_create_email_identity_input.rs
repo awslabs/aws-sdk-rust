@@ -76,6 +76,10 @@ impl CreateEmailIdentityInputBuilder {
         self.email_identity = input;
         self
     }
+    /// <p>The email address or domain to verify.</p>
+    pub fn get_email_identity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email_identity
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -95,6 +99,10 @@ impl CreateEmailIdentityInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>An array of objects that define the tags (keys and values) to associate with the email identity.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>If your request includes this object, Amazon SES configures the identity to use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, or, configures the key length to be used for <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
     /// <p>You can only specify this object if the email identity is a domain, as opposed to an address.</p>
     pub fn dkim_signing_attributes(mut self, input: crate::types::DkimSigningAttributes) -> Self {
@@ -109,6 +117,13 @@ impl CreateEmailIdentityInputBuilder {
     ) -> Self {
         self.dkim_signing_attributes = input;
         self
+    }
+    /// <p>If your request includes this object, Amazon SES configures the identity to use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, or, configures the key length to be used for <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
+    /// <p>You can only specify this object if the email identity is a domain, as opposed to an address.</p>
+    pub fn get_dkim_signing_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::DkimSigningAttributes> {
+        &self.dkim_signing_attributes
     }
     /// <p>The configuration set to use by default when sending from this identity. Note that any configuration set defined in the email sending request takes precedence. </p>
     pub fn configuration_set_name(
@@ -125,6 +140,10 @@ impl CreateEmailIdentityInputBuilder {
     ) -> Self {
         self.configuration_set_name = input;
         self
+    }
+    /// <p>The configuration set to use by default when sending from this identity. Note that any configuration set defined in the email sending request takes precedence. </p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_set_name
     }
     /// Consumes the builder and constructs a [`CreateEmailIdentityInput`](crate::operation::create_email_identity::CreateEmailIdentityInput).
     pub fn build(

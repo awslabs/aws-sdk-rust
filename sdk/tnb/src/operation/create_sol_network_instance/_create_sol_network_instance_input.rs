@@ -81,6 +81,10 @@ impl CreateSolNetworkInstanceInputBuilder {
         self.nsd_info_id = input;
         self
     }
+    /// <p>ID for network service descriptor.</p>
+    pub fn get_nsd_info_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nsd_info_id
+    }
     /// <p>Network instance name.</p>
     pub fn ns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ns_name = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl CreateSolNetworkInstanceInputBuilder {
     pub fn set_ns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ns_name = input;
         self
+    }
+    /// <p>Network instance name.</p>
+    pub fn get_ns_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ns_name
     }
     /// <p>Network instance description.</p>
     pub fn ns_description(
@@ -106,6 +114,10 @@ impl CreateSolNetworkInstanceInputBuilder {
     ) -> Self {
         self.ns_description = input;
         self
+    }
+    /// <p>Network instance description.</p>
+    pub fn get_ns_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ns_description
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -131,6 +143,14 @@ impl CreateSolNetworkInstanceInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateSolNetworkInstanceInput`](crate::operation::create_sol_network_instance::CreateSolNetworkInstanceInput).
     pub fn build(

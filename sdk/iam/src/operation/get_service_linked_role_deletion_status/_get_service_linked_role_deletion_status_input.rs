@@ -73,6 +73,17 @@ impl GetServiceLinkedRoleDeletionStatusInputBuilder {
         self.deletion_task_id = input;
         self
     }
+    /// <p>The deletion task identifier. This identifier is returned by the <code>DeleteServiceLinkedRole</code> operation in the format <code>task/aws-service-role/
+    /// <service-principal-name>
+    /// /
+    /// <role-name>
+    /// /
+    /// <task-uuid></task-uuid>
+    /// </role-name>
+    /// </service-principal-name></code>.</p>
+    pub fn get_deletion_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deletion_task_id
+    }
     /// Consumes the builder and constructs a [`GetServiceLinkedRoleDeletionStatusInput`](crate::operation::get_service_linked_role_deletion_status::GetServiceLinkedRoleDeletionStatusInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_service_linked_role_deletion_status::GetServiceLinkedRoleDeletionStatusInput, ::aws_smithy_http::operation::error::BuildError>{
         ::std::result::Result::Ok(

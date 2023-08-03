@@ -64,6 +64,10 @@ impl BatchDetectKeyPhrasesInputBuilder {
         self.text_list = input;
         self
     }
+    /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB.</p>
+    pub fn get_text_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.text_list
+    }
     /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl BatchDetectKeyPhrasesInputBuilder {
     ) -> Self {
         self.language_code = input;
         self
+    }
+    /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
+        &self.language_code
     }
     /// Consumes the builder and constructs a [`BatchDetectKeyPhrasesInput`](crate::operation::batch_detect_key_phrases::BatchDetectKeyPhrasesInput).
     pub fn build(

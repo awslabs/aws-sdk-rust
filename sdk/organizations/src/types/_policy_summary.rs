@@ -88,6 +88,11 @@ impl PolicySummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier (ID) of the policy.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The Amazon Resource Name (ARN) of the policy.</p>
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -99,6 +104,11 @@ impl PolicySummaryBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the policy.</p>
+    /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The friendly name of the policy.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
@@ -112,6 +122,11 @@ impl PolicySummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The friendly name of the policy.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the policy.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -121,6 +136,10 @@ impl PolicySummaryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the policy.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The type of policy.</p>
     pub fn r#type(mut self, input: crate::types::PolicyType) -> Self {
@@ -132,6 +151,10 @@ impl PolicySummaryBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of policy.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::PolicyType> {
+        &self.r#type
+    }
     /// <p>A boolean value that indicates whether the specified policy is an Amazon Web Services managed policy. If true, then you can attach the policy to roots, OUs, or accounts, but you cannot edit it.</p>
     pub fn aws_managed(mut self, input: bool) -> Self {
         self.aws_managed = ::std::option::Option::Some(input);
@@ -141,6 +164,10 @@ impl PolicySummaryBuilder {
     pub fn set_aws_managed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.aws_managed = input;
         self
+    }
+    /// <p>A boolean value that indicates whether the specified policy is an Amazon Web Services managed policy. If true, then you can attach the policy to roots, OUs, or accounts, but you cannot edit it.</p>
+    pub fn get_aws_managed(&self) -> &::std::option::Option<bool> {
+        &self.aws_managed
     }
     /// Consumes the builder and constructs a [`PolicySummary`](crate::types::PolicySummary).
     pub fn build(self) -> crate::types::PolicySummary {

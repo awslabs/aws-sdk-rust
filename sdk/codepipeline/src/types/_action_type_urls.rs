@@ -70,6 +70,10 @@ impl ActionTypeUrlsBuilder {
         self.configuration_url = input;
         self
     }
+    /// <p>The URL returned to the CodePipeline console that contains a link to the page where customers can configure the external action.</p>
+    pub fn get_configuration_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_url
+    }
     /// <p>The URL returned to the CodePipeline console that provides a deep link to the resources of the external system, such as a status page. This link is provided as part of the action display in the pipeline.</p>
     pub fn entity_url_template(
         mut self,
@@ -85,6 +89,10 @@ impl ActionTypeUrlsBuilder {
     ) -> Self {
         self.entity_url_template = input;
         self
+    }
+    /// <p>The URL returned to the CodePipeline console that provides a deep link to the resources of the external system, such as a status page. This link is provided as part of the action display in the pipeline.</p>
+    pub fn get_entity_url_template(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_url_template
     }
     /// <p>The link to an execution page for the action type in progress. For example, for a CodeDeploy action, this link is shown on the pipeline view page in the CodePipeline console, and it links to a CodeDeploy status page.</p>
     pub fn execution_url_template(
@@ -102,6 +110,10 @@ impl ActionTypeUrlsBuilder {
         self.execution_url_template = input;
         self
     }
+    /// <p>The link to an execution page for the action type in progress. For example, for a CodeDeploy action, this link is shown on the pipeline view page in the CodePipeline console, and it links to a CodeDeploy status page.</p>
+    pub fn get_execution_url_template(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_url_template
+    }
     /// <p>The URL returned to the CodePipeline console that contains a link to the page where customers can update or change the configuration of the external action.</p>
     pub fn revision_url_template(
         mut self,
@@ -117,6 +129,10 @@ impl ActionTypeUrlsBuilder {
     ) -> Self {
         self.revision_url_template = input;
         self
+    }
+    /// <p>The URL returned to the CodePipeline console that contains a link to the page where customers can update or change the configuration of the external action.</p>
+    pub fn get_revision_url_template(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision_url_template
     }
     /// Consumes the builder and constructs a [`ActionTypeUrls`](crate::types::ActionTypeUrls).
     pub fn build(self) -> crate::types::ActionTypeUrls {

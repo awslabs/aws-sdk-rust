@@ -56,6 +56,10 @@ impl AppInstanceAdminBuilder {
         self.admin = input;
         self
     }
+    /// <p>The <code>AppInstanceAdmin</code> data.</p>
+    pub fn get_admin(&self) -> &::std::option::Option<crate::types::Identity> {
+        &self.admin
+    }
     /// <p>The ARN of the <code>AppInstance</code> for which the user is an administrator.</p>
     pub fn app_instance_arn(
         mut self,
@@ -72,6 +76,10 @@ impl AppInstanceAdminBuilder {
         self.app_instance_arn = input;
         self
     }
+    /// <p>The ARN of the <code>AppInstance</code> for which the user is an administrator.</p>
+    pub fn get_app_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_instance_arn
+    }
     /// <p>The time at which an administrator was created.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_timestamp = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl AppInstanceAdminBuilder {
     ) -> Self {
         self.created_timestamp = input;
         self
+    }
+    /// <p>The time at which an administrator was created.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
     }
     /// Consumes the builder and constructs a [`AppInstanceAdmin`](crate::types::AppInstanceAdmin).
     pub fn build(self) -> crate::types::AppInstanceAdmin {

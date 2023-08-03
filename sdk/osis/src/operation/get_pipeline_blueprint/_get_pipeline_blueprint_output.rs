@@ -50,6 +50,10 @@ impl GetPipelineBlueprintOutputBuilder {
         self.blueprint = input;
         self
     }
+    /// <p>The requested blueprint in YAML format.</p>
+    pub fn get_blueprint(&self) -> &::std::option::Option<crate::types::PipelineBlueprint> {
+        &self.blueprint
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

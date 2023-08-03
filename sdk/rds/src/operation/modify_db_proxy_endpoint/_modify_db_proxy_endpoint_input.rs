@@ -64,6 +64,10 @@ impl ModifyDbProxyEndpointInputBuilder {
         self.db_proxy_endpoint_name = input;
         self
     }
+    /// <p>The name of the DB proxy sociated with the DB proxy endpoint that you want to modify.</p>
+    pub fn get_db_proxy_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_proxy_endpoint_name
+    }
     /// <p>The new identifier for the <code>DBProxyEndpoint</code>. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
     pub fn new_db_proxy_endpoint_name(
         mut self,
@@ -79,6 +83,10 @@ impl ModifyDbProxyEndpointInputBuilder {
     ) -> Self {
         self.new_db_proxy_endpoint_name = input;
         self
+    }
+    /// <p>The new identifier for the <code>DBProxyEndpoint</code>. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
+    pub fn get_new_db_proxy_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.new_db_proxy_endpoint_name
     }
     /// Appends an item to `vpc_security_group_ids`.
     ///
@@ -101,6 +109,12 @@ impl ModifyDbProxyEndpointInputBuilder {
     ) -> Self {
         self.vpc_security_group_ids = input;
         self
+    }
+    /// <p>The VPC security group IDs for the DB proxy endpoint. When the DB proxy endpoint uses a different VPC than the original proxy, you also specify a different set of security group IDs than for the original proxy.</p>
+    pub fn get_vpc_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.vpc_security_group_ids
     }
     /// Consumes the builder and constructs a [`ModifyDbProxyEndpointInput`](crate::operation::modify_db_proxy_endpoint::ModifyDbProxyEndpointInput).
     pub fn build(

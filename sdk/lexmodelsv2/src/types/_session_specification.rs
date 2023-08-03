@@ -154,6 +154,10 @@ impl SessionSpecificationBuilder {
         self.bot_alias_id = input;
         self
     }
+    /// <p>The identifier of the alias of the bot that the session was held with.</p>
+    pub fn get_bot_alias_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_alias_id
+    }
     /// <p>The version of the bot that the session was held with.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
@@ -163,6 +167,10 @@ impl SessionSpecificationBuilder {
     pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_version = input;
         self
+    }
+    /// <p>The version of the bot that the session was held with.</p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_version
     }
     /// <p>The locale of the bot that the session was held with.</p>
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -174,6 +182,10 @@ impl SessionSpecificationBuilder {
         self.locale_id = input;
         self
     }
+    /// <p>The locale of the bot that the session was held with.</p>
+    pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale_id
+    }
     /// <p>The channel that is integrated with the bot that the session was held with.</p>
     pub fn channel(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel = ::std::option::Option::Some(input.into());
@@ -184,6 +196,10 @@ impl SessionSpecificationBuilder {
         self.channel = input;
         self
     }
+    /// <p>The channel that is integrated with the bot that the session was held with.</p>
+    pub fn get_channel(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel
+    }
     /// <p>The identifier of the session.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
@@ -193,6 +209,10 @@ impl SessionSpecificationBuilder {
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_id = input;
         self
+    }
+    /// <p>The identifier of the session.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
     }
     /// <p>The date and time when the conversation began. A conversation is defined as a unique combination of a <code>sessionId</code> and an <code>originatingRequestId</code>.</p>
     pub fn conversation_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -207,6 +227,12 @@ impl SessionSpecificationBuilder {
         self.conversation_start_time = input;
         self
     }
+    /// <p>The date and time when the conversation began. A conversation is defined as a unique combination of a <code>sessionId</code> and an <code>originatingRequestId</code>.</p>
+    pub fn get_conversation_start_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.conversation_start_time
+    }
     /// <p>The date and time when the conversation ended. A conversation is defined as a unique combination of a <code>sessionId</code> and an <code>originatingRequestId</code>.</p>
     pub fn conversation_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.conversation_end_time = ::std::option::Option::Some(input);
@@ -220,6 +246,12 @@ impl SessionSpecificationBuilder {
         self.conversation_end_time = input;
         self
     }
+    /// <p>The date and time when the conversation ended. A conversation is defined as a unique combination of a <code>sessionId</code> and an <code>originatingRequestId</code>.</p>
+    pub fn get_conversation_end_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.conversation_end_time
+    }
     /// <p>The duration of the conversation in seconds. A conversation is defined as a unique combination of a <code>sessionId</code> and an <code>originatingRequestId</code>.</p>
     pub fn conversation_duration_seconds(mut self, input: i64) -> Self {
         self.conversation_duration_seconds = ::std::option::Option::Some(input);
@@ -229,6 +261,10 @@ impl SessionSpecificationBuilder {
     pub fn set_conversation_duration_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
         self.conversation_duration_seconds = input;
         self
+    }
+    /// <p>The duration of the conversation in seconds. A conversation is defined as a unique combination of a <code>sessionId</code> and an <code>originatingRequestId</code>.</p>
+    pub fn get_conversation_duration_seconds(&self) -> &::std::option::Option<i64> {
+        &self.conversation_duration_seconds
     }
     /// <p>The final state of the conversation. A conversation is defined as a unique combination of a <code>sessionId</code> and an <code>originatingRequestId</code>.</p>
     pub fn conversation_end_state(mut self, input: crate::types::ConversationEndState) -> Self {
@@ -242,6 +278,12 @@ impl SessionSpecificationBuilder {
     ) -> Self {
         self.conversation_end_state = input;
         self
+    }
+    /// <p>The final state of the conversation. A conversation is defined as a unique combination of a <code>sessionId</code> and an <code>originatingRequestId</code>.</p>
+    pub fn get_conversation_end_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConversationEndState> {
+        &self.conversation_end_state
     }
     /// <p>The mode of the session. The possible values are as follows:</p>
     /// <ul>
@@ -268,6 +310,16 @@ impl SessionSpecificationBuilder {
         self.mode = input;
         self
     }
+    /// <p>The mode of the session. The possible values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>Speech</code> – The session was spoken.</p> </li>
+    /// <li> <p> <code>Text</code> – The session was written.</p> </li>
+    /// <li> <p> <code>DTMF</code> – The session used a touch-tone keypad (Dual Tone Multi-Frequency).</p> </li>
+    /// <li> <p> <code>MultiMode</code> – The session used multiple modes.</p> </li>
+    /// </ul>
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::AnalyticsModality> {
+        &self.mode
+    }
     /// <p>The number of turns that the session took.</p>
     pub fn number_of_turns(mut self, input: i64) -> Self {
         self.number_of_turns = ::std::option::Option::Some(input);
@@ -277,6 +329,10 @@ impl SessionSpecificationBuilder {
     pub fn set_number_of_turns(mut self, input: ::std::option::Option<i64>) -> Self {
         self.number_of_turns = input;
         self
+    }
+    /// <p>The number of turns that the session took.</p>
+    pub fn get_number_of_turns(&self) -> &::std::option::Option<i64> {
+        &self.number_of_turns
     }
     /// Appends an item to `invoked_intent_samples`.
     ///
@@ -297,6 +353,12 @@ impl SessionSpecificationBuilder {
         self.invoked_intent_samples = input;
         self
     }
+    /// <p>A list of objects containing the name of an intent that was invoked.</p>
+    pub fn get_invoked_intent_samples(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InvokedIntentSample>> {
+        &self.invoked_intent_samples
+    }
     /// <p>The identifier of the first request in a session.</p>
     pub fn originating_request_id(
         mut self,
@@ -312,6 +374,10 @@ impl SessionSpecificationBuilder {
     ) -> Self {
         self.originating_request_id = input;
         self
+    }
+    /// <p>The identifier of the first request in a session.</p>
+    pub fn get_originating_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.originating_request_id
     }
     /// Consumes the builder and constructs a [`SessionSpecification`](crate::types::SessionSpecification).
     pub fn build(self) -> crate::types::SessionSpecification {

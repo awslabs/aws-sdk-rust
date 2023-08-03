@@ -71,6 +71,10 @@ impl ListAppliedSchemaArnsInputBuilder {
         self.directory_arn = input;
         self
     }
+    /// <p>The ARN of the directory you are listing.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_arn
+    }
     /// <p>The response for <code>ListAppliedSchemaArns</code> when this parameter is used will list all minor version ARNs for a major version.</p>
     pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_arn = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl ListAppliedSchemaArnsInputBuilder {
     pub fn set_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_arn = input;
         self
+    }
+    /// <p>The response for <code>ListAppliedSchemaArns</code> when this parameter is used will list all minor version ARNs for a major version.</p>
+    pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_arn
     }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -91,6 +99,10 @@ impl ListAppliedSchemaArnsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to retrieve.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -100,6 +112,10 @@ impl ListAppliedSchemaArnsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to retrieve.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListAppliedSchemaArnsInput`](crate::operation::list_applied_schema_arns::ListAppliedSchemaArnsInput).
     pub fn build(

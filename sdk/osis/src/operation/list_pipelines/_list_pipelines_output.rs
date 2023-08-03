@@ -54,6 +54,10 @@ impl ListPipelinesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `pipelines`.
     ///
     /// To override the contents of this collection use [`set_pipelines`](Self::set_pipelines).
@@ -72,6 +76,12 @@ impl ListPipelinesOutputBuilder {
     ) -> Self {
         self.pipelines = input;
         self
+    }
+    /// <p>A list of all existing Data Prepper pipelines.</p>
+    pub fn get_pipelines(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineSummary>> {
+        &self.pipelines
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

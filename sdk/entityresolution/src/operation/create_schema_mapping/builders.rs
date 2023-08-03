@@ -36,6 +36,12 @@ impl CreateSchemaMappingFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateSchemaMapping as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_schema_mapping::builders::CreateSchemaMappingInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateSchemaMappingFluentBuilder {
         self.inner = self.inner.set_schema_name(input);
         self
     }
+    /// <p>The name of the schema. There cannot be multiple <code>SchemaMappings</code> with the same name.</p>
+    pub fn get_schema_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_schema_name()
+    }
     /// <p>A description of the schema.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -135,6 +145,10 @@ impl CreateSchemaMappingFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of the schema.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `mappedInputFields`.
     ///
@@ -152,6 +166,12 @@ impl CreateSchemaMappingFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_mapped_input_fields(input);
         self
+    }
+    /// <p>A list of <code>MappedInputFields</code>. Each <code>MappedInputField</code> corresponds to a column the source data table, and contains column name plus additional information that Entity Resolution uses for matching.</p>
+    pub fn get_mapped_input_fields(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaInputAttribute>> {
+        self.inner.get_mapped_input_fields()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -175,5 +195,13 @@ impl CreateSchemaMappingFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

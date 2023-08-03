@@ -188,6 +188,23 @@ impl ComponentVersionBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the component.</p> <note>
+    /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
+    /// <ol>
+    /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li>
+    /// <li> <p>Version ARNs have only the first three nodes: <major>
+    /// .
+    /// <minor>
+    /// .
+    /// <patch></patch>
+    /// </minor>
+    /// </major></p> </li>
+    /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li>
+    /// </ol>
+    /// </note>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the component.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -197,6 +214,10 @@ impl ComponentVersionBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the component.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The semantic version of the component.</p> <note>
     /// <p>The semantic version has four nodes: <major>
@@ -240,6 +261,26 @@ impl ComponentVersionBuilder {
         self.version = input;
         self
     }
+    /// <p>The semantic version of the component.</p> <note>
+    /// <p>The semantic version has four nodes: <major>
+    /// .
+    /// <minor>
+    /// .
+    /// <patch>
+    /// /
+    /// <build>
+    /// . You can assign values for the first three, and can filter on all of them.
+    /// </build>
+    /// </patch>
+    /// </minor>
+    /// </major></p>
+    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
+    /// </note>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
+    }
     /// <p>The description of the component.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -250,6 +291,10 @@ impl ComponentVersionBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the component.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The platform of the component.</p>
     pub fn platform(mut self, input: crate::types::Platform) -> Self {
         self.platform = ::std::option::Option::Some(input);
@@ -259,6 +304,10 @@ impl ComponentVersionBuilder {
     pub fn set_platform(mut self, input: ::std::option::Option<crate::types::Platform>) -> Self {
         self.platform = input;
         self
+    }
+    /// <p>The platform of the component.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<crate::types::Platform> {
+        &self.platform
     }
     /// Appends an item to `supported_os_versions`.
     ///
@@ -282,6 +331,12 @@ impl ComponentVersionBuilder {
         self.supported_os_versions = input;
         self
     }
+    /// <p>he operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
+    pub fn get_supported_os_versions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.supported_os_versions
+    }
     /// <p>The type of the component denotes whether the component is used to build the image or only to test it.</p>
     pub fn r#type(mut self, input: crate::types::ComponentType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -291,6 +346,10 @@ impl ComponentVersionBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ComponentType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of the component denotes whether the component is used to build the image or only to test it.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ComponentType> {
+        &self.r#type
     }
     /// <p>The owner of the component.</p>
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -302,6 +361,10 @@ impl ComponentVersionBuilder {
         self.owner = input;
         self
     }
+    /// <p>The owner of the component.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner
+    }
     /// <p>The date that the component was created.</p>
     pub fn date_created(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.date_created = ::std::option::Option::Some(input.into());
@@ -311,6 +374,10 @@ impl ComponentVersionBuilder {
     pub fn set_date_created(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.date_created = input;
         self
+    }
+    /// <p>The date that the component was created.</p>
+    pub fn get_date_created(&self) -> &::std::option::Option<::std::string::String> {
+        &self.date_created
     }
     /// Consumes the builder and constructs a [`ComponentVersion`](crate::types::ComponentVersion).
     pub fn build(self) -> crate::types::ComponentVersion {

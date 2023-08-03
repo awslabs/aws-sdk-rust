@@ -36,6 +36,10 @@ impl EvaluateCodeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the EvaluateCode as a reference.
+    pub fn as_input(&self) -> &crate::operation::evaluate_code::builders::EvaluateCodeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -121,6 +125,10 @@ impl EvaluateCodeFluentBuilder {
         self.inner = self.inner.set_runtime(input);
         self
     }
+    /// <p>The runtime to be used when evaluating the code. Currently, only the <code>APPSYNC_JS</code> runtime is supported.</p>
+    pub fn get_runtime(&self) -> &::std::option::Option<crate::types::AppSyncRuntime> {
+        self.inner.get_runtime()
+    }
     /// <p>The code definition to be evaluated. Note that <code>code</code> and <code>runtime</code> are both required for this action. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.code(input.into());
@@ -130,6 +138,10 @@ impl EvaluateCodeFluentBuilder {
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_code(input);
         self
+    }
+    /// <p>The code definition to be evaluated. Note that <code>code</code> and <code>runtime</code> are both required for this action. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_code()
     }
     /// <p>The map that holds all of the contextual information for your resolver invocation. A <code>context</code> is required for this action.</p>
     pub fn context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -141,6 +153,10 @@ impl EvaluateCodeFluentBuilder {
         self.inner = self.inner.set_context(input);
         self
     }
+    /// <p>The map that holds all of the contextual information for your resolver invocation. A <code>context</code> is required for this action.</p>
+    pub fn get_context(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_context()
+    }
     /// <p>The function within the code to be evaluated. If provided, the valid values are <code>request</code> and <code>response</code>.</p>
     pub fn function(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.function(input.into());
@@ -150,5 +166,9 @@ impl EvaluateCodeFluentBuilder {
     pub fn set_function(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_function(input);
         self
+    }
+    /// <p>The function within the code to be evaluated. If provided, the valid values are <code>request</code> and <code>response</code>.</p>
+    pub fn get_function(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_function()
     }
 }

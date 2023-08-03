@@ -66,6 +66,12 @@ impl AnalysisRuleListBuilder {
         self.join_columns = input;
         self
     }
+    /// <p>Columns that can be used to join a configured table with the table of the member who can query and other members' configured tables.</p>
+    pub fn get_join_columns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.join_columns
+    }
     /// Appends an item to `allowed_join_operators`.
     ///
     /// To override the contents of this collection use [`set_allowed_join_operators`](Self::set_allowed_join_operators).
@@ -85,6 +91,12 @@ impl AnalysisRuleListBuilder {
         self.allowed_join_operators = input;
         self
     }
+    /// <p>Which logical operators (if any) are to be used in an INNER JOIN match condition. Default is <code>AND</code>.</p>
+    pub fn get_allowed_join_operators(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JoinOperator>> {
+        &self.allowed_join_operators
+    }
     /// Appends an item to `list_columns`.
     ///
     /// To override the contents of this collection use [`set_list_columns`](Self::set_list_columns).
@@ -103,6 +115,12 @@ impl AnalysisRuleListBuilder {
     ) -> Self {
         self.list_columns = input;
         self
+    }
+    /// <p>Columns that can be listed in the output.</p>
+    pub fn get_list_columns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.list_columns
     }
     /// Consumes the builder and constructs a [`AnalysisRuleList`](crate::types::AnalysisRuleList).
     pub fn build(self) -> crate::types::AnalysisRuleList {

@@ -48,6 +48,10 @@ impl NormalizedValueBuilder {
         self.value = input;
         self
     }
+    /// <p>The value of the date, written as Year-Month-DayTHour:Minute:Second.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
+    }
     /// <p>The normalized type of the value detected. In this case, DATE.</p>
     pub fn value_type(mut self, input: crate::types::ValueType) -> Self {
         self.value_type = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl NormalizedValueBuilder {
     pub fn set_value_type(mut self, input: ::std::option::Option<crate::types::ValueType>) -> Self {
         self.value_type = input;
         self
+    }
+    /// <p>The normalized type of the value detected. In this case, DATE.</p>
+    pub fn get_value_type(&self) -> &::std::option::Option<crate::types::ValueType> {
+        &self.value_type
     }
     /// Consumes the builder and constructs a [`NormalizedValue`](crate::types::NormalizedValue).
     pub fn build(self) -> crate::types::NormalizedValue {

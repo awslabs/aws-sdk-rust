@@ -42,6 +42,12 @@ impl CreateDatasetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDataset as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_dataset::builders::CreateDatasetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl CreateDatasetFluentBuilder {
         self.inner = self.inner.set_dataset_source(input);
         self
     }
+    /// <p> The source files for the dataset. You can specify the ARN of an existing dataset or specify the Amazon S3 bucket location of an Amazon Sagemaker format manifest file. If you don't specify <code>datasetSource</code>, an empty dataset is created. To add labeled images to the dataset, You can use the console or call <code>UpdateDatasetEntries</code>. </p>
+    pub fn get_dataset_source(&self) -> &::std::option::Option<crate::types::DatasetSource> {
+        self.inner.get_dataset_source()
+    }
     /// <p> The type of the dataset. Specify <code>train</code> to create a training dataset. Specify <code>test</code> to create a test dataset. </p>
     pub fn dataset_type(mut self, input: crate::types::DatasetType) -> Self {
         self.inner = self.inner.dataset_type(input);
@@ -140,6 +150,10 @@ impl CreateDatasetFluentBuilder {
         self.inner = self.inner.set_dataset_type(input);
         self
     }
+    /// <p> The type of the dataset. Specify <code>train</code> to create a training dataset. Specify <code>test</code> to create a test dataset. </p>
+    pub fn get_dataset_type(&self) -> &::std::option::Option<crate::types::DatasetType> {
+        self.inner.get_dataset_type()
+    }
     /// <p> The ARN of the Amazon Rekognition Custom Labels project to which you want to asssign the dataset. </p>
     pub fn project_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.project_arn(input.into());
@@ -149,5 +163,9 @@ impl CreateDatasetFluentBuilder {
     pub fn set_project_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_project_arn(input);
         self
+    }
+    /// <p> The ARN of the Amazon Rekognition Custom Labels project to which you want to asssign the dataset. </p>
+    pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_arn()
     }
 }

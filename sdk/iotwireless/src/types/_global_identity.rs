@@ -48,6 +48,10 @@ impl GlobalIdentityBuilder {
         self.lac = input;
         self
     }
+    /// <p>Location area code of the global identity.</p>
+    pub fn get_lac(&self) -> &::std::option::Option<i32> {
+        &self.lac
+    }
     /// <p>GERAN (GSM EDGE Radio Access Network) cell global identifier.</p>
     pub fn geran_cid(mut self, input: i32) -> Self {
         self.geran_cid = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl GlobalIdentityBuilder {
     pub fn set_geran_cid(mut self, input: ::std::option::Option<i32>) -> Self {
         self.geran_cid = input;
         self
+    }
+    /// <p>GERAN (GSM EDGE Radio Access Network) cell global identifier.</p>
+    pub fn get_geran_cid(&self) -> &::std::option::Option<i32> {
+        &self.geran_cid
     }
     /// Consumes the builder and constructs a [`GlobalIdentity`](crate::types::GlobalIdentity).
     pub fn build(self) -> crate::types::GlobalIdentity {

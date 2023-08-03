@@ -92,6 +92,10 @@ impl ConflictExceptionBuilder {
         self.message = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Identifier of the resource in use
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -101,6 +105,10 @@ impl ConflictExceptionBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// Identifier of the resource in use
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// Type of the resource in use
     pub fn resource_type(
@@ -117,6 +125,10 @@ impl ConflictExceptionBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// Type of the resource in use
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
     }
     /// Appends an item to `dependent_entities`.
     ///
@@ -136,6 +148,12 @@ impl ConflictExceptionBuilder {
     ) -> Self {
         self.dependent_entities = input;
         self
+    }
+    /// List of dependent entities containing information on relation type and resourceArns linked to the resource in use
+    pub fn get_dependent_entities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DependentEntity>> {
+        &self.dependent_entities
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

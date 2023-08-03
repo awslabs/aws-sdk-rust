@@ -104,6 +104,10 @@ impl DistributionConfigurationBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the distribution configuration.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the distribution configuration.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -114,6 +118,10 @@ impl DistributionConfigurationBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the distribution configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the distribution configuration.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -123,6 +131,10 @@ impl DistributionConfigurationBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the distribution configuration.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `distributions`.
     ///
@@ -143,6 +155,12 @@ impl DistributionConfigurationBuilder {
         self.distributions = input;
         self
     }
+    /// <p>The distribution objects that apply Region-specific settings for the deployment of the image to targeted Regions.</p>
+    pub fn get_distributions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Distribution>> {
+        &self.distributions
+    }
     /// <p>The maximum duration in minutes for this distribution configuration.</p>
     pub fn timeout_minutes(mut self, input: i32) -> Self {
         self.timeout_minutes = ::std::option::Option::Some(input);
@@ -152,6 +170,10 @@ impl DistributionConfigurationBuilder {
     pub fn set_timeout_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.timeout_minutes = input;
         self
+    }
+    /// <p>The maximum duration in minutes for this distribution configuration.</p>
+    pub fn get_timeout_minutes(&self) -> &::std::option::Option<i32> {
+        &self.timeout_minutes
     }
     /// <p>The date on which this distribution configuration was created.</p>
     pub fn date_created(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -163,6 +185,10 @@ impl DistributionConfigurationBuilder {
         self.date_created = input;
         self
     }
+    /// <p>The date on which this distribution configuration was created.</p>
+    pub fn get_date_created(&self) -> &::std::option::Option<::std::string::String> {
+        &self.date_created
+    }
     /// <p>The date on which this distribution configuration was last updated.</p>
     pub fn date_updated(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.date_updated = ::std::option::Option::Some(input.into());
@@ -172,6 +198,10 @@ impl DistributionConfigurationBuilder {
     pub fn set_date_updated(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.date_updated = input;
         self
+    }
+    /// <p>The date on which this distribution configuration was last updated.</p>
+    pub fn get_date_updated(&self) -> &::std::option::Option<::std::string::String> {
+        &self.date_updated
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -197,6 +227,14 @@ impl DistributionConfigurationBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags of the distribution configuration.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`DistributionConfiguration`](crate::types::DistributionConfiguration).
     pub fn build(self) -> crate::types::DistributionConfiguration {

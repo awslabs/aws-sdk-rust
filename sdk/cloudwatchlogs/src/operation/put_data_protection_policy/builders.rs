@@ -42,6 +42,13 @@ impl PutDataProtectionPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutDataProtectionPolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_data_protection_policy::builders::PutDataProtectionPolicyInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +145,10 @@ impl PutDataProtectionPolicyFluentBuilder {
         self.inner = self.inner.set_log_group_identifier(input);
         self
     }
+    /// <p>Specify either the log group name or log group ARN.</p>
+    pub fn get_log_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_log_group_identifier()
+    }
     /// <p>Specify the data protection policy, in JSON.</p>
     /// <p>This policy must include two JSON blocks:</p>
     /// <ul>
@@ -173,5 +184,19 @@ impl PutDataProtectionPolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_policy_document(input);
         self
+    }
+    /// <p>Specify the data protection policy, in JSON.</p>
+    /// <p>This policy must include two JSON blocks:</p>
+    /// <ul>
+    /// <li> <p>The first block must include both a <code>DataIdentifer</code> array and an <code>Operation</code> property with an <code>Audit</code> action. The <code>DataIdentifer</code> array lists the types of sensitive data that you want to mask. For more information about the available options, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data-types.html">Types of data that you can mask</a>.</p> <p>The <code>Operation</code> property with an <code>Audit</code> action is required to find the sensitive data terms. This <code>Audit</code> action must contain a <code>FindingsDestination</code> object. You can optionally use that <code>FindingsDestination</code> object to list one or more destinations to send audit findings to. If you specify destinations such as log groups, Kinesis Data Firehose streams, and S3 buckets, they must already exist.</p> </li>
+    /// <li> <p>The second block must include both a <code>DataIdentifer</code> array and an <code>Operation</code> property with an <code>Deidentify</code> action. The <code>DataIdentifer</code> array must exactly match the <code>DataIdentifer</code> array in the first block of the policy.</p> <p>The <code>Operation</code> property with the <code>Deidentify</code> action is what actually masks the data, and it must contain the <code> "MaskConfig": {}</code> object. The <code> "MaskConfig": {}</code> object must be empty.</p> </li>
+    /// </ul>
+    /// <p>For an example data protection policy, see the <b>Examples</b> section on this page.</p> <important>
+    /// <p>The contents of the two <code>DataIdentifer</code> arrays must match exactly.</p>
+    /// </important>
+    /// <p>In addition to the two JSON blocks, the <code>policyDocument</code> can also include <code>Name</code>, <code>Description</code>, and <code>Version</code> fields. The <code>Name</code> is used as a dimension when CloudWatch Logs reports audit findings metrics to CloudWatch.</p>
+    /// <p>The JSON specified in <code>policyDocument</code> can be up to 30,720 characters.</p>
+    pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_document()
     }
 }

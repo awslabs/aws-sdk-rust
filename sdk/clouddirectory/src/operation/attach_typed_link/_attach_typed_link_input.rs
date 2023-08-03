@@ -80,6 +80,10 @@ impl AttachTypedLinkInputBuilder {
         self.directory_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the directory where you want to attach the typed link.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_arn
+    }
     /// <p>Identifies the source object that the typed link will attach to.</p>
     pub fn source_object_reference(mut self, input: crate::types::ObjectReference) -> Self {
         self.source_object_reference = ::std::option::Option::Some(input);
@@ -92,6 +96,12 @@ impl AttachTypedLinkInputBuilder {
     ) -> Self {
         self.source_object_reference = input;
         self
+    }
+    /// <p>Identifies the source object that the typed link will attach to.</p>
+    pub fn get_source_object_reference(
+        &self,
+    ) -> &::std::option::Option<crate::types::ObjectReference> {
+        &self.source_object_reference
     }
     /// <p>Identifies the target object that the typed link will attach to.</p>
     pub fn target_object_reference(mut self, input: crate::types::ObjectReference) -> Self {
@@ -106,6 +116,12 @@ impl AttachTypedLinkInputBuilder {
         self.target_object_reference = input;
         self
     }
+    /// <p>Identifies the target object that the typed link will attach to.</p>
+    pub fn get_target_object_reference(
+        &self,
+    ) -> &::std::option::Option<crate::types::ObjectReference> {
+        &self.target_object_reference
+    }
     /// <p>Identifies the typed link facet that is associated with the typed link.</p>
     pub fn typed_link_facet(mut self, input: crate::types::TypedLinkSchemaAndFacetName) -> Self {
         self.typed_link_facet = ::std::option::Option::Some(input);
@@ -118,6 +134,12 @@ impl AttachTypedLinkInputBuilder {
     ) -> Self {
         self.typed_link_facet = input;
         self
+    }
+    /// <p>Identifies the typed link facet that is associated with the typed link.</p>
+    pub fn get_typed_link_facet(
+        &self,
+    ) -> &::std::option::Option<crate::types::TypedLinkSchemaAndFacetName> {
+        &self.typed_link_facet
     }
     /// Appends an item to `attributes`.
     ///
@@ -137,6 +159,12 @@ impl AttachTypedLinkInputBuilder {
     ) -> Self {
         self.attributes = input;
         self
+    }
+    /// <p>A set of attributes that are associated with the typed link.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeNameAndValue>> {
+        &self.attributes
     }
     /// Consumes the builder and constructs a [`AttachTypedLinkInput`](crate::operation::attach_typed_link::AttachTypedLinkInput).
     pub fn build(

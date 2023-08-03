@@ -154,6 +154,10 @@ impl PendingModifiedValuesBuilder {
         self.db_instance_class = input;
         self
     }
+    /// <p> Contains the new <code>DBInstanceClass</code> for the DB instance that will be applied or is currently being applied.</p>
+    pub fn get_db_instance_class(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_instance_class
+    }
     /// <p> Contains the new <code>AllocatedStorage</code> size for the DB instance that will be applied or is currently being applied.</p>
     pub fn allocated_storage(mut self, input: i32) -> Self {
         self.allocated_storage = ::std::option::Option::Some(input);
@@ -163,6 +167,10 @@ impl PendingModifiedValuesBuilder {
     pub fn set_allocated_storage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.allocated_storage = input;
         self
+    }
+    /// <p> Contains the new <code>AllocatedStorage</code> size for the DB instance that will be applied or is currently being applied.</p>
+    pub fn get_allocated_storage(&self) -> &::std::option::Option<i32> {
+        &self.allocated_storage
     }
     /// <p>Not supported by Neptune.</p>
     pub fn master_user_password(
@@ -180,6 +188,10 @@ impl PendingModifiedValuesBuilder {
         self.master_user_password = input;
         self
     }
+    /// <p>Not supported by Neptune.</p>
+    pub fn get_master_user_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.master_user_password
+    }
     /// <p>Specifies the pending port for the DB instance.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -189,6 +201,10 @@ impl PendingModifiedValuesBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
+    }
+    /// <p>Specifies the pending port for the DB instance.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// <p>Specifies the pending number of days for which automated backups are retained.</p>
     pub fn backup_retention_period(mut self, input: i32) -> Self {
@@ -200,6 +216,10 @@ impl PendingModifiedValuesBuilder {
         self.backup_retention_period = input;
         self
     }
+    /// <p>Specifies the pending number of days for which automated backups are retained.</p>
+    pub fn get_backup_retention_period(&self) -> &::std::option::Option<i32> {
+        &self.backup_retention_period
+    }
     /// <p>Indicates that the Single-AZ DB instance is to change to a Multi-AZ deployment.</p>
     pub fn multi_az(mut self, input: bool) -> Self {
         self.multi_az = ::std::option::Option::Some(input);
@@ -209,6 +229,10 @@ impl PendingModifiedValuesBuilder {
     pub fn set_multi_az(mut self, input: ::std::option::Option<bool>) -> Self {
         self.multi_az = input;
         self
+    }
+    /// <p>Indicates that the Single-AZ DB instance is to change to a Multi-AZ deployment.</p>
+    pub fn get_multi_az(&self) -> &::std::option::Option<bool> {
+        &self.multi_az
     }
     /// <p>Indicates the database engine version.</p>
     pub fn engine_version(
@@ -226,6 +250,10 @@ impl PendingModifiedValuesBuilder {
         self.engine_version = input;
         self
     }
+    /// <p>Indicates the database engine version.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
+    }
     /// <p>Not supported by Neptune.</p>
     pub fn license_model(
         mut self,
@@ -242,6 +270,10 @@ impl PendingModifiedValuesBuilder {
         self.license_model = input;
         self
     }
+    /// <p>Not supported by Neptune.</p>
+    pub fn get_license_model(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_model
+    }
     /// <p>Specifies the new Provisioned IOPS value for the DB instance that will be applied or is currently being applied.</p>
     pub fn iops(mut self, input: i32) -> Self {
         self.iops = ::std::option::Option::Some(input);
@@ -251,6 +283,10 @@ impl PendingModifiedValuesBuilder {
     pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
         self.iops = input;
         self
+    }
+    /// <p>Specifies the new Provisioned IOPS value for the DB instance that will be applied or is currently being applied.</p>
+    pub fn get_iops(&self) -> &::std::option::Option<i32> {
+        &self.iops
     }
     /// <p> Contains the new <code>DBInstanceIdentifier</code> for the DB instance that will be applied or is currently being applied.</p>
     pub fn db_instance_identifier(
@@ -268,6 +304,10 @@ impl PendingModifiedValuesBuilder {
         self.db_instance_identifier = input;
         self
     }
+    /// <p> Contains the new <code>DBInstanceIdentifier</code> for the DB instance that will be applied or is currently being applied.</p>
+    pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_instance_identifier
+    }
     /// <p>Specifies the storage type to be associated with the DB instance.</p>
     pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_type = ::std::option::Option::Some(input.into());
@@ -277,6 +317,10 @@ impl PendingModifiedValuesBuilder {
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_type = input;
         self
+    }
+    /// <p>Specifies the storage type to be associated with the DB instance.</p>
+    pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_type
     }
     /// <p>Specifies the identifier of the CA certificate for the DB instance.</p>
     pub fn ca_certificate_identifier(
@@ -294,6 +338,10 @@ impl PendingModifiedValuesBuilder {
         self.ca_certificate_identifier = input;
         self
     }
+    /// <p>Specifies the identifier of the CA certificate for the DB instance.</p>
+    pub fn get_ca_certificate_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ca_certificate_identifier
+    }
     /// <p>The new DB subnet group for the DB instance.</p>
     pub fn db_subnet_group_name(
         mut self,
@@ -310,6 +358,10 @@ impl PendingModifiedValuesBuilder {
         self.db_subnet_group_name = input;
         self
     }
+    /// <p>The new DB subnet group for the DB instance.</p>
+    pub fn get_db_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_subnet_group_name
+    }
     /// <p>This <code>PendingCloudwatchLogsExports</code> structure specifies pending changes to which CloudWatch logs are enabled and which are disabled.</p>
     pub fn pending_cloudwatch_logs_exports(
         mut self,
@@ -325,6 +377,12 @@ impl PendingModifiedValuesBuilder {
     ) -> Self {
         self.pending_cloudwatch_logs_exports = input;
         self
+    }
+    /// <p>This <code>PendingCloudwatchLogsExports</code> structure specifies pending changes to which CloudWatch logs are enabled and which are disabled.</p>
+    pub fn get_pending_cloudwatch_logs_exports(
+        &self,
+    ) -> &::std::option::Option<crate::types::PendingCloudwatchLogsExports> {
+        &self.pending_cloudwatch_logs_exports
     }
     /// Consumes the builder and constructs a [`PendingModifiedValues`](crate::types::PendingModifiedValues).
     pub fn build(self) -> crate::types::PendingModifiedValues {

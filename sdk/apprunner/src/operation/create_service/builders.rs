@@ -37,6 +37,12 @@ impl CreateServiceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateService as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_service::builders::CreateServiceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +125,10 @@ impl CreateServiceFluentBuilder {
         self.inner = self.inner.set_service_name(input);
         self
     }
+    /// <p>A name for the App Runner service. It must be unique across all the running App Runner services in your Amazon Web Services account in the Amazon Web Services Region.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_name()
+    }
     /// <p>The source to deploy to the App Runner service. It can be a code or an image repository.</p>
     pub fn source_configuration(mut self, input: crate::types::SourceConfiguration) -> Self {
         self.inner = self.inner.source_configuration(input);
@@ -132,6 +142,12 @@ impl CreateServiceFluentBuilder {
         self.inner = self.inner.set_source_configuration(input);
         self
     }
+    /// <p>The source to deploy to the App Runner service. It can be a code or an image repository.</p>
+    pub fn get_source_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SourceConfiguration> {
+        self.inner.get_source_configuration()
+    }
     /// <p>The runtime configuration of instances (scaling units) of your service.</p>
     pub fn instance_configuration(mut self, input: crate::types::InstanceConfiguration) -> Self {
         self.inner = self.inner.instance_configuration(input);
@@ -144,6 +160,12 @@ impl CreateServiceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_instance_configuration(input);
         self
+    }
+    /// <p>The runtime configuration of instances (scaling units) of your service.</p>
+    pub fn get_instance_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceConfiguration> {
+        self.inner.get_instance_configuration()
     }
     /// Appends an item to `Tags`.
     ///
@@ -162,6 +184,10 @@ impl CreateServiceFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>An optional list of metadata items that you can associate with the App Runner service resource. A tag is a key-value pair.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>An optional custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default, App Runner uses an Amazon Web Services managed key.</p>
     pub fn encryption_configuration(
         mut self,
@@ -178,6 +204,12 @@ impl CreateServiceFluentBuilder {
         self.inner = self.inner.set_encryption_configuration(input);
         self
     }
+    /// <p>An optional custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default, App Runner uses an Amazon Web Services managed key.</p>
+    pub fn get_encryption_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+        self.inner.get_encryption_configuration()
+    }
     /// <p>The settings for the health check that App Runner performs to monitor the health of the App Runner service.</p>
     pub fn health_check_configuration(
         mut self,
@@ -193,6 +225,12 @@ impl CreateServiceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_health_check_configuration(input);
         self
+    }
+    /// <p>The settings for the health check that App Runner performs to monitor the health of the App Runner service.</p>
+    pub fn get_health_check_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::HealthCheckConfiguration> {
+        self.inner.get_health_check_configuration()
     }
     /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service. If not provided, App Runner associates the latest revision of a default auto scaling configuration.</p>
     /// <p>Specify an ARN with a name and a revision number to associate that revision. For example: <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability/3</code> </p>
@@ -214,6 +252,14 @@ impl CreateServiceFluentBuilder {
         self.inner = self.inner.set_auto_scaling_configuration_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service. If not provided, App Runner associates the latest revision of a default auto scaling configuration.</p>
+    /// <p>Specify an ARN with a name and a revision number to associate that revision. For example: <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability/3</code> </p>
+    /// <p>Specify just the name to associate the latest revision. For example: <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability</code> </p>
+    pub fn get_auto_scaling_configuration_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_auto_scaling_configuration_arn()
+    }
     /// <p>Configuration settings related to network traffic of the web application that the App Runner service runs.</p>
     pub fn network_configuration(mut self, input: crate::types::NetworkConfiguration) -> Self {
         self.inner = self.inner.network_configuration(input);
@@ -226,6 +272,12 @@ impl CreateServiceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_network_configuration(input);
         self
+    }
+    /// <p>Configuration settings related to network traffic of the web application that the App Runner service runs.</p>
+    pub fn get_network_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkConfiguration> {
+        self.inner.get_network_configuration()
     }
     /// <p>The observability configuration of your service.</p>
     pub fn observability_configuration(
@@ -242,5 +294,11 @@ impl CreateServiceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_observability_configuration(input);
         self
+    }
+    /// <p>The observability configuration of your service.</p>
+    pub fn get_observability_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServiceObservabilityConfiguration> {
+        self.inner.get_observability_configuration()
     }
 }

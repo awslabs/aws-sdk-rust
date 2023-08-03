@@ -87,6 +87,10 @@ impl ListComponentsInputBuilder {
         self.owner = input;
         self
     }
+    /// <p>Filters results based on the type of owner for the component. By default, this request returns a list of components that your account owns. To see results for other types of owners, you can specify components that Amazon manages, third party components, or components that other accounts have shared with you.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<crate::types::Ownership> {
+        &self.owner
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -122,6 +126,18 @@ impl ListComponentsInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>Use the following filters to streamline results:</p>
+    /// <ul>
+    /// <li> <p> <code>description</code> </p> </li>
+    /// <li> <p> <code>name</code> </p> </li>
+    /// <li> <p> <code>platform</code> </p> </li>
+    /// <li> <p> <code>supportedOsVersion</code> </p> </li>
+    /// <li> <p> <code>type</code> </p> </li>
+    /// <li> <p> <code>version</code> </p> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
+    }
     /// <p>Returns the list of components for the specified name.</p>
     pub fn by_name(mut self, input: bool) -> Self {
         self.by_name = ::std::option::Option::Some(input);
@@ -131,6 +147,10 @@ impl ListComponentsInputBuilder {
     pub fn set_by_name(mut self, input: ::std::option::Option<bool>) -> Self {
         self.by_name = input;
         self
+    }
+    /// <p>Returns the list of components for the specified name.</p>
+    pub fn get_by_name(&self) -> &::std::option::Option<bool> {
+        &self.by_name
     }
     /// <p>The maximum items to return in a request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -142,6 +162,10 @@ impl ListComponentsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum items to return in a request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -151,6 +175,10 @@ impl ListComponentsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListComponentsInput`](crate::operation::list_components::ListComponentsInput).
     pub fn build(

@@ -70,6 +70,10 @@ impl NetworkResourceUtilizationBuilder {
         self.network_in_bytes_per_second = input;
         self
     }
+    /// <p>The network inbound throughput utilization measured in Bytes per second (Bps). </p>
+    pub fn get_network_in_bytes_per_second(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_in_bytes_per_second
+    }
     /// <p>The network outbound throughput utilization measured in Bytes per second (Bps). </p>
     pub fn network_out_bytes_per_second(
         mut self,
@@ -85,6 +89,12 @@ impl NetworkResourceUtilizationBuilder {
     ) -> Self {
         self.network_out_bytes_per_second = input;
         self
+    }
+    /// <p>The network outbound throughput utilization measured in Bytes per second (Bps). </p>
+    pub fn get_network_out_bytes_per_second(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.network_out_bytes_per_second
     }
     /// <p>The network inbound packets that are measured in packets per second. </p>
     pub fn network_packets_in_per_second(
@@ -102,6 +112,12 @@ impl NetworkResourceUtilizationBuilder {
         self.network_packets_in_per_second = input;
         self
     }
+    /// <p>The network inbound packets that are measured in packets per second. </p>
+    pub fn get_network_packets_in_per_second(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.network_packets_in_per_second
+    }
     /// <p>The network outbound packets that are measured in packets per second. </p>
     pub fn network_packets_out_per_second(
         mut self,
@@ -117,6 +133,12 @@ impl NetworkResourceUtilizationBuilder {
     ) -> Self {
         self.network_packets_out_per_second = input;
         self
+    }
+    /// <p>The network outbound packets that are measured in packets per second. </p>
+    pub fn get_network_packets_out_per_second(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.network_packets_out_per_second
     }
     /// Consumes the builder and constructs a [`NetworkResourceUtilization`](crate::types::NetworkResourceUtilization).
     pub fn build(self) -> crate::types::NetworkResourceUtilization {

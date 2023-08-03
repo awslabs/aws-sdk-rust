@@ -45,6 +45,10 @@ impl GetRecommenderConfigurationInputBuilder {
         self.recommender_id = input;
         self
     }
+    /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
+    pub fn get_recommender_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommender_id
+    }
     /// Consumes the builder and constructs a [`GetRecommenderConfigurationInput`](crate::operation::get_recommender_configuration::GetRecommenderConfigurationInput).
     pub fn build(
         self,

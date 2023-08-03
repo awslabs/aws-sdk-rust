@@ -68,6 +68,11 @@ impl PendingCreateStandbyWorkspacesRequestBuilder {
         self.user_name = input;
         self
     }
+    /// <p>Describes the standby WorkSpace that was created.</p>
+    /// <p>Because this operation is asynchronous, the identifier returned is not immediately available for use with other operations. For example, if you call <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html"> DescribeWorkspaces</a> before the WorkSpace is created, the information returned can be incomplete. </p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
+    }
     /// <p>The identifier of the directory for the standby WorkSpace.</p>
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
@@ -77,6 +82,10 @@ impl PendingCreateStandbyWorkspacesRequestBuilder {
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.directory_id = input;
         self
+    }
+    /// <p>The identifier of the directory for the standby WorkSpace.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
     }
     /// <p>The operational state of the standby WorkSpace.</p>
     pub fn state(mut self, input: crate::types::WorkspaceState) -> Self {
@@ -88,6 +97,10 @@ impl PendingCreateStandbyWorkspacesRequestBuilder {
         self.state = input;
         self
     }
+    /// <p>The operational state of the standby WorkSpace.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::WorkspaceState> {
+        &self.state
+    }
     /// <p>The identifier of the standby WorkSpace.</p>
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
@@ -97,6 +110,10 @@ impl PendingCreateStandbyWorkspacesRequestBuilder {
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workspace_id = input;
         self
+    }
+    /// <p>The identifier of the standby WorkSpace.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
     }
     /// Consumes the builder and constructs a [`PendingCreateStandbyWorkspacesRequest`](crate::types::PendingCreateStandbyWorkspacesRequest).
     pub fn build(self) -> crate::types::PendingCreateStandbyWorkspacesRequest {

@@ -54,6 +54,10 @@ impl ConditionParameterBuilder {
         self.condition_key = input;
         self
     }
+    /// <p>The key in a key-value pair. For example, in the tag <code>Department: Accounting</code>, <code>Department</code> is the key.</p>
+    pub fn get_condition_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.condition_key
+    }
     /// <p>The value in a key-value pair. For example, in the tag <code>Department: Accounting</code>, <code>Accounting</code> is the value.</p>
     pub fn condition_value(
         mut self,
@@ -69,6 +73,10 @@ impl ConditionParameterBuilder {
     ) -> Self {
         self.condition_value = input;
         self
+    }
+    /// <p>The value in a key-value pair. For example, in the tag <code>Department: Accounting</code>, <code>Accounting</code> is the value.</p>
+    pub fn get_condition_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.condition_value
     }
     /// Consumes the builder and constructs a [`ConditionParameter`](crate::types::ConditionParameter).
     pub fn build(self) -> crate::types::ConditionParameter {

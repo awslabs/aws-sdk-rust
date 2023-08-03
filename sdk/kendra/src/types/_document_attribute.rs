@@ -48,6 +48,10 @@ impl DocumentAttributeBuilder {
         self.key = input;
         self
     }
+    /// <p>The identifier for the attribute.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>The value of the attribute.</p>
     pub fn value(mut self, input: crate::types::DocumentAttributeValue) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl DocumentAttributeBuilder {
     ) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value of the attribute.</p>
+    pub fn get_value(&self) -> &::std::option::Option<crate::types::DocumentAttributeValue> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`DocumentAttribute`](crate::types::DocumentAttribute).
     pub fn build(self) -> crate::types::DocumentAttribute {

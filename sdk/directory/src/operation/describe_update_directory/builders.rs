@@ -37,6 +37,13 @@ impl DescribeUpdateDirectoryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeUpdateDirectory as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_update_directory::builders::DescribeUpdateDirectoryInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +143,10 @@ impl DescribeUpdateDirectoryFluentBuilder {
         self.inner = self.inner.set_directory_id(input);
         self
     }
+    /// <p> The unique identifier of the directory. </p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_id()
+    }
     /// <p> The type of updates you want to describe for the directory. </p>
     pub fn update_type(mut self, input: crate::types::UpdateType) -> Self {
         self.inner = self.inner.update_type(input);
@@ -149,6 +160,10 @@ impl DescribeUpdateDirectoryFluentBuilder {
         self.inner = self.inner.set_update_type(input);
         self
     }
+    /// <p> The type of updates you want to describe for the directory. </p>
+    pub fn get_update_type(&self) -> &::std::option::Option<crate::types::UpdateType> {
+        self.inner.get_update_type()
+    }
     /// <p> The name of the Region. </p>
     pub fn region_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.region_name(input.into());
@@ -159,6 +174,10 @@ impl DescribeUpdateDirectoryFluentBuilder {
         self.inner = self.inner.set_region_name(input);
         self
     }
+    /// <p> The name of the Region. </p>
+    pub fn get_region_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_region_name()
+    }
     /// <p> The <code>DescribeUpdateDirectoryResult</code>. NextToken value from a previous call to <code>DescribeUpdateDirectory</code>. Pass null if this is the first call. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -168,5 +187,9 @@ impl DescribeUpdateDirectoryFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p> The <code>DescribeUpdateDirectoryResult</code>. NextToken value from a previous call to <code>DescribeUpdateDirectory</code>. Pass null if this is the first call. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

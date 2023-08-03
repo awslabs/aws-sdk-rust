@@ -41,6 +41,12 @@ impl GetSegmentDetectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetSegmentDetection as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_segment_detection::builders::GetSegmentDetectionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -142,6 +148,10 @@ impl GetSegmentDetectionFluentBuilder {
         self.inner = self.inner.set_job_id(input);
         self
     }
+    /// <p>Job identifier for the text detection operation for which you want results returned. You get the job identifer from an initial call to <code>StartSegmentDetection</code>.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_id()
+    }
     /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -152,6 +162,10 @@ impl GetSegmentDetectionFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of text.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -161,5 +175,9 @@ impl GetSegmentDetectionFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of text.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

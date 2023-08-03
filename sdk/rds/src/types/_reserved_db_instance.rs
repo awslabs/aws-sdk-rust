@@ -171,6 +171,10 @@ impl ReservedDbInstanceBuilder {
         self.reserved_db_instance_id = input;
         self
     }
+    /// <p>The unique identifier for the reservation.</p>
+    pub fn get_reserved_db_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reserved_db_instance_id
+    }
     /// <p>The offering identifier.</p>
     pub fn reserved_db_instances_offering_id(
         mut self,
@@ -186,6 +190,12 @@ impl ReservedDbInstanceBuilder {
     ) -> Self {
         self.reserved_db_instances_offering_id = input;
         self
+    }
+    /// <p>The offering identifier.</p>
+    pub fn get_reserved_db_instances_offering_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.reserved_db_instances_offering_id
     }
     /// <p>The DB instance class for the reserved DB instance.</p>
     pub fn db_instance_class(
@@ -203,6 +213,10 @@ impl ReservedDbInstanceBuilder {
         self.db_instance_class = input;
         self
     }
+    /// <p>The DB instance class for the reserved DB instance.</p>
+    pub fn get_db_instance_class(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_instance_class
+    }
     /// <p>The time the reservation started.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -216,6 +230,10 @@ impl ReservedDbInstanceBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The time the reservation started.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The duration of the reservation in seconds.</p>
     pub fn duration(mut self, input: i32) -> Self {
         self.duration = ::std::option::Option::Some(input);
@@ -225,6 +243,10 @@ impl ReservedDbInstanceBuilder {
     pub fn set_duration(mut self, input: ::std::option::Option<i32>) -> Self {
         self.duration = input;
         self
+    }
+    /// <p>The duration of the reservation in seconds.</p>
+    pub fn get_duration(&self) -> &::std::option::Option<i32> {
+        &self.duration
     }
     /// <p>The fixed price charged for this reserved DB instance.</p>
     pub fn fixed_price(mut self, input: f64) -> Self {
@@ -236,6 +258,10 @@ impl ReservedDbInstanceBuilder {
         self.fixed_price = input;
         self
     }
+    /// <p>The fixed price charged for this reserved DB instance.</p>
+    pub fn get_fixed_price(&self) -> &::std::option::Option<f64> {
+        &self.fixed_price
+    }
     /// <p>The hourly price charged for this reserved DB instance.</p>
     pub fn usage_price(mut self, input: f64) -> Self {
         self.usage_price = ::std::option::Option::Some(input);
@@ -245,6 +271,10 @@ impl ReservedDbInstanceBuilder {
     pub fn set_usage_price(mut self, input: ::std::option::Option<f64>) -> Self {
         self.usage_price = input;
         self
+    }
+    /// <p>The hourly price charged for this reserved DB instance.</p>
+    pub fn get_usage_price(&self) -> &::std::option::Option<f64> {
+        &self.usage_price
     }
     /// <p>The currency code for the reserved DB instance.</p>
     pub fn currency_code(
@@ -262,6 +292,10 @@ impl ReservedDbInstanceBuilder {
         self.currency_code = input;
         self
     }
+    /// <p>The currency code for the reserved DB instance.</p>
+    pub fn get_currency_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.currency_code
+    }
     /// <p>The number of reserved DB instances.</p>
     pub fn db_instance_count(mut self, input: i32) -> Self {
         self.db_instance_count = ::std::option::Option::Some(input);
@@ -271,6 +305,10 @@ impl ReservedDbInstanceBuilder {
     pub fn set_db_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.db_instance_count = input;
         self
+    }
+    /// <p>The number of reserved DB instances.</p>
+    pub fn get_db_instance_count(&self) -> &::std::option::Option<i32> {
+        &self.db_instance_count
     }
     /// <p>The description of the reserved DB instance.</p>
     pub fn product_description(
@@ -288,6 +326,10 @@ impl ReservedDbInstanceBuilder {
         self.product_description = input;
         self
     }
+    /// <p>The description of the reserved DB instance.</p>
+    pub fn get_product_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product_description
+    }
     /// <p>The offering type of this reserved DB instance.</p>
     pub fn offering_type(
         mut self,
@@ -304,6 +346,10 @@ impl ReservedDbInstanceBuilder {
         self.offering_type = input;
         self
     }
+    /// <p>The offering type of this reserved DB instance.</p>
+    pub fn get_offering_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.offering_type
+    }
     /// <p>Indicates if the reservation applies to Multi-AZ deployments.</p>
     pub fn multi_az(mut self, input: bool) -> Self {
         self.multi_az = ::std::option::Option::Some(input);
@@ -314,6 +360,10 @@ impl ReservedDbInstanceBuilder {
         self.multi_az = input;
         self
     }
+    /// <p>Indicates if the reservation applies to Multi-AZ deployments.</p>
+    pub fn get_multi_az(&self) -> &::std::option::Option<bool> {
+        &self.multi_az
+    }
     /// <p>The state of the reserved DB instance.</p>
     pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state = ::std::option::Option::Some(input.into());
@@ -323,6 +373,10 @@ impl ReservedDbInstanceBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the reserved DB instance.</p>
+    pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state
     }
     /// Appends an item to `recurring_charges`.
     ///
@@ -343,6 +397,12 @@ impl ReservedDbInstanceBuilder {
         self.recurring_charges = input;
         self
     }
+    /// <p>The recurring price charged to run this reserved DB instance.</p>
+    pub fn get_recurring_charges(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecurringCharge>> {
+        &self.recurring_charges
+    }
     /// <p>The Amazon Resource Name (ARN) for the reserved DB instance.</p>
     pub fn reserved_db_instance_arn(
         mut self,
@@ -359,6 +419,10 @@ impl ReservedDbInstanceBuilder {
         self.reserved_db_instance_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the reserved DB instance.</p>
+    pub fn get_reserved_db_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reserved_db_instance_arn
+    }
     /// <p>The unique identifier for the lease associated with the reserved DB instance.</p> <note>
     /// <p>Amazon Web Services Support might request the lease ID for an issue related to a reserved DB instance.</p>
     /// </note>
@@ -372,6 +436,12 @@ impl ReservedDbInstanceBuilder {
     pub fn set_lease_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lease_id = input;
         self
+    }
+    /// <p>The unique identifier for the lease associated with the reserved DB instance.</p> <note>
+    /// <p>Amazon Web Services Support might request the lease ID for an issue related to a reserved DB instance.</p>
+    /// </note>
+    pub fn get_lease_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lease_id
     }
     /// Consumes the builder and constructs a [`ReservedDbInstance`](crate::types::ReservedDbInstance).
     pub fn build(self) -> crate::types::ReservedDbInstance {

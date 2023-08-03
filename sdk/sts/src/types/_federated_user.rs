@@ -54,6 +54,10 @@ impl FederatedUserBuilder {
         self.federated_user_id = input;
         self
     }
+    /// <p>The string that identifies the federated user associated with the credentials, similar to the unique ID of an IAM user.</p>
+    pub fn get_federated_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.federated_user_id
+    }
     /// <p>The ARN that specifies the federated user that is associated with the credentials. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>. </p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl FederatedUserBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The ARN that specifies the federated user that is associated with the credentials. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`FederatedUser`](crate::types::FederatedUser).
     pub fn build(self) -> crate::types::FederatedUser {

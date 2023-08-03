@@ -51,6 +51,10 @@ impl EncryptionKeyBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of encryption key used by Amazon Translate to encrypt this object.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::EncryptionKeyType> {
+        &self.r#type
+    }
     /// <p>The Amazon Resource Name (ARN) of the encryption key being used to encrypt this object.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl EncryptionKeyBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the encryption key being used to encrypt this object.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`EncryptionKey`](crate::types::EncryptionKey).
     pub fn build(self) -> crate::types::EncryptionKey {

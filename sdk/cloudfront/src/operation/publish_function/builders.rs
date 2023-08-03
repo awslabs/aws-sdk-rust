@@ -38,6 +38,12 @@ impl PublishFunctionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PublishFunction as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::publish_function::builders::PublishFunctionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +134,10 @@ impl PublishFunctionFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the function that you are publishing.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The current version (<code>ETag</code> value) of the function that you are publishing, which you can get using <code>DescribeFunction</code>.</p>
     pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.if_match(input.into());
@@ -137,5 +147,9 @@ impl PublishFunctionFluentBuilder {
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_if_match(input);
         self
+    }
+    /// <p>The current version (<code>ETag</code> value) of the function that you are publishing, which you can get using <code>DescribeFunction</code>.</p>
+    pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_if_match()
     }
 }

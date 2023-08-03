@@ -97,6 +97,10 @@ impl DbProxyTargetBuilder {
         self.target_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the RDS DB instance or Aurora DB cluster.</p>
+    pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_arn
+    }
     /// <p>The writer endpoint for the RDS DB instance or Aurora DB cluster.</p>
     pub fn endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint = ::std::option::Option::Some(input.into());
@@ -106,6 +110,10 @@ impl DbProxyTargetBuilder {
     pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint = input;
         self
+    }
+    /// <p>The writer endpoint for the RDS DB instance or Aurora DB cluster.</p>
+    pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint
     }
     /// <p>The DB cluster identifier when the target represents an Aurora DB cluster. This field is blank when the target represents an RDS DB instance.</p>
     pub fn tracked_cluster_id(
@@ -123,6 +131,10 @@ impl DbProxyTargetBuilder {
         self.tracked_cluster_id = input;
         self
     }
+    /// <p>The DB cluster identifier when the target represents an Aurora DB cluster. This field is blank when the target represents an RDS DB instance.</p>
+    pub fn get_tracked_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tracked_cluster_id
+    }
     /// <p>The identifier representing the target. It can be the instance identifier for an RDS DB instance, or the cluster identifier for an Aurora DB cluster.</p>
     pub fn rds_resource_id(
         mut self,
@@ -139,6 +151,10 @@ impl DbProxyTargetBuilder {
         self.rds_resource_id = input;
         self
     }
+    /// <p>The identifier representing the target. It can be the instance identifier for an RDS DB instance, or the cluster identifier for an Aurora DB cluster.</p>
+    pub fn get_rds_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rds_resource_id
+    }
     /// <p>The port that the RDS Proxy uses to connect to the target RDS DB instance or Aurora DB cluster.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -148,6 +164,10 @@ impl DbProxyTargetBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
+    }
+    /// <p>The port that the RDS Proxy uses to connect to the target RDS DB instance or Aurora DB cluster.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// <p>Specifies the kind of database, such as an RDS DB instance or an Aurora DB cluster, that the target represents.</p>
     pub fn r#type(mut self, input: crate::types::TargetType) -> Self {
@@ -159,6 +179,10 @@ impl DbProxyTargetBuilder {
         self.r#type = input;
         self
     }
+    /// <p>Specifies the kind of database, such as an RDS DB instance or an Aurora DB cluster, that the target represents.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::TargetType> {
+        &self.r#type
+    }
     /// <p>A value that indicates whether the target of the proxy can be used for read/write or read-only operations.</p>
     pub fn role(mut self, input: crate::types::TargetRole) -> Self {
         self.role = ::std::option::Option::Some(input);
@@ -168,6 +192,10 @@ impl DbProxyTargetBuilder {
     pub fn set_role(mut self, input: ::std::option::Option<crate::types::TargetRole>) -> Self {
         self.role = input;
         self
+    }
+    /// <p>A value that indicates whether the target of the proxy can be used for read/write or read-only operations.</p>
+    pub fn get_role(&self) -> &::std::option::Option<crate::types::TargetRole> {
+        &self.role
     }
     /// <p>Information about the connection health of the RDS Proxy target.</p>
     pub fn target_health(mut self, input: crate::types::TargetHealth) -> Self {
@@ -181,6 +209,10 @@ impl DbProxyTargetBuilder {
     ) -> Self {
         self.target_health = input;
         self
+    }
+    /// <p>Information about the connection health of the RDS Proxy target.</p>
+    pub fn get_target_health(&self) -> &::std::option::Option<crate::types::TargetHealth> {
+        &self.target_health
     }
     /// Consumes the builder and constructs a [`DbProxyTarget`](crate::types::DbProxyTarget).
     pub fn build(self) -> crate::types::DbProxyTarget {

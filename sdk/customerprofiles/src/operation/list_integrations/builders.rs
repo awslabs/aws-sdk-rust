@@ -36,6 +36,12 @@ impl ListIntegrationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListIntegrations as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_integrations::builders::ListIntegrationsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl ListIntegrationsFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p>The unique name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
     /// <p>The pagination token from the previous ListIntegrations API call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -135,6 +145,10 @@ impl ListIntegrationsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The pagination token from the previous ListIntegrations API call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The maximum number of objects returned per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -146,6 +160,10 @@ impl ListIntegrationsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of objects returned per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>Boolean to indicate if hidden integration should be returned. Defaults to <code>False</code>.</p>
     pub fn include_hidden(mut self, input: bool) -> Self {
         self.inner = self.inner.include_hidden(input);
@@ -155,5 +173,9 @@ impl ListIntegrationsFluentBuilder {
     pub fn set_include_hidden(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_hidden(input);
         self
+    }
+    /// <p>Boolean to indicate if hidden integration should be returned. Defaults to <code>False</code>.</p>
+    pub fn get_include_hidden(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_hidden()
     }
 }

@@ -48,6 +48,10 @@ impl TestSegmentPatternInputBuilder {
         self.pattern = input;
         self
     }
+    /// <p>The pattern to test.</p>
+    pub fn get_pattern(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pattern
+    }
     /// <p>A sample <code>evaluationContext</code> JSON block to test against the specified pattern.</p>
     pub fn payload(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.payload = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl TestSegmentPatternInputBuilder {
     pub fn set_payload(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.payload = input;
         self
+    }
+    /// <p>A sample <code>evaluationContext</code> JSON block to test against the specified pattern.</p>
+    pub fn get_payload(&self) -> &::std::option::Option<::std::string::String> {
+        &self.payload
     }
     /// Consumes the builder and constructs a [`TestSegmentPatternInput`](crate::operation::test_segment_pattern::TestSegmentPatternInput).
     pub fn build(

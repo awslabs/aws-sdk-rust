@@ -68,6 +68,15 @@ impl BucketStateBuilder {
         self.code = input;
         self
     }
+    /// <p>The state code of the bucket.</p>
+    /// <p>The following codes are possible:</p>
+    /// <ul>
+    /// <li> <p> <code>OK</code> - The bucket is in a running state.</p> </li>
+    /// <li> <p> <code>Unknown</code> - Creation of the bucket might have timed-out. You might want to delete the bucket and create a new one.</p> </li>
+    /// </ul>
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
+    }
     /// <p>A message that describes the state of the bucket.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -77,6 +86,10 @@ impl BucketStateBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>A message that describes the state of the bucket.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`BucketState`](crate::types::BucketState).
     pub fn build(self) -> crate::types::BucketState {

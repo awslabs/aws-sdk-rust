@@ -79,6 +79,14 @@ impl InputSessionStateSpecificationBuilder {
         self.session_attributes = input;
         self
     }
+    /// <p>Session attributes for the session state.</p>
+    pub fn get_session_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.session_attributes
+    }
     /// Appends an item to `active_contexts`.
     ///
     /// To override the contents of this collection use [`set_active_contexts`](Self::set_active_contexts).
@@ -98,6 +106,12 @@ impl InputSessionStateSpecificationBuilder {
         self.active_contexts = input;
         self
     }
+    /// <p>Active contexts for the session state.</p>
+    pub fn get_active_contexts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>> {
+        &self.active_contexts
+    }
     /// <p>Runtime hints for the session state.</p>
     pub fn runtime_hints(mut self, input: crate::types::RuntimeHints) -> Self {
         self.runtime_hints = ::std::option::Option::Some(input);
@@ -110,6 +124,10 @@ impl InputSessionStateSpecificationBuilder {
     ) -> Self {
         self.runtime_hints = input;
         self
+    }
+    /// <p>Runtime hints for the session state.</p>
+    pub fn get_runtime_hints(&self) -> &::std::option::Option<crate::types::RuntimeHints> {
+        &self.runtime_hints
     }
     /// Consumes the builder and constructs a [`InputSessionStateSpecification`](crate::types::InputSessionStateSpecification).
     pub fn build(self) -> crate::types::InputSessionStateSpecification {

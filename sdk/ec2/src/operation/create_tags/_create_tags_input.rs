@@ -57,6 +57,10 @@ impl CreateTagsInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// Appends an item to `resources`.
     ///
     /// To override the contents of this collection use [`set_resources`](Self::set_resources).
@@ -78,6 +82,11 @@ impl CreateTagsInputBuilder {
         self.resources = input;
         self
     }
+    /// <p>The IDs of the resources, separated by spaces.</p>
+    /// <p>Constraints: Up to 1000 resource IDs. We recommend breaking up this request into smaller batches.</p>
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resources
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -96,6 +105,10 @@ impl CreateTagsInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags. The <code>value</code> parameter is required, but if you don't want the tag to have a value, specify the parameter with no value, and we set the value to an empty string.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateTagsInput`](crate::operation::create_tags::CreateTagsInput).
     pub fn build(

@@ -58,6 +58,10 @@ impl AwsRdsDbClusterAssociatedRoleBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The ARN of the IAM role.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>The status of the association between the IAM role and the DB cluster. Valid values are as follows:</p>
     /// <ul>
     /// <li> <p> <code>ACTIVE</code> </p> </li>
@@ -77,6 +81,15 @@ impl AwsRdsDbClusterAssociatedRoleBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the association between the IAM role and the DB cluster. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>INVALID</code> </p> </li>
+    /// <li> <p> <code>PENDING</code> </p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`AwsRdsDbClusterAssociatedRole`](crate::types::AwsRdsDbClusterAssociatedRole).
     pub fn build(self) -> crate::types::AwsRdsDbClusterAssociatedRole {

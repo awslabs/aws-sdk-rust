@@ -63,6 +63,10 @@ impl GetDocumentInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the SSM document.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>An optional field specifying the version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document and can't be changed.</p>
     pub fn version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_name = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl GetDocumentInputBuilder {
     pub fn set_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_name = input;
         self
+    }
+    /// <p>An optional field specifying the version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document and can't be changed.</p>
+    pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_name
     }
     /// <p>The document version for which you want information.</p>
     pub fn document_version(
@@ -89,6 +97,10 @@ impl GetDocumentInputBuilder {
         self.document_version = input;
         self
     }
+    /// <p>The document version for which you want information.</p>
+    pub fn get_document_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_version
+    }
     /// <p>Returns the document in the specified format. The document format can be either JSON or YAML. JSON is the default format.</p>
     pub fn document_format(mut self, input: crate::types::DocumentFormat) -> Self {
         self.document_format = ::std::option::Option::Some(input);
@@ -101,6 +113,10 @@ impl GetDocumentInputBuilder {
     ) -> Self {
         self.document_format = input;
         self
+    }
+    /// <p>Returns the document in the specified format. The document format can be either JSON or YAML. JSON is the default format.</p>
+    pub fn get_document_format(&self) -> &::std::option::Option<crate::types::DocumentFormat> {
+        &self.document_format
     }
     /// Consumes the builder and constructs a [`GetDocumentInput`](crate::operation::get_document::GetDocumentInput).
     pub fn build(

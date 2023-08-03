@@ -72,6 +72,10 @@ impl FieldValidationMessageBuilder {
         self.field_name = input;
         self
     }
+    /// <p>The field name.</p>
+    pub fn get_field_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_name
+    }
     /// <p>The message ID.</p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl FieldValidationMessageBuilder {
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identifier = input;
         self
+    }
+    /// <p>The message ID.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
     }
     /// <p>The message title.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -92,6 +100,10 @@ impl FieldValidationMessageBuilder {
         self.title = input;
         self
     }
+    /// <p>The message title.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
+    }
     /// <p>The message content.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
@@ -102,6 +114,10 @@ impl FieldValidationMessageBuilder {
         self.content = input;
         self
     }
+    /// <p>The message content.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
+    }
     /// <p>The message type.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -111,6 +127,10 @@ impl FieldValidationMessageBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The message type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`FieldValidationMessage`](crate::types::FieldValidationMessage).
     pub fn build(self) -> crate::types::FieldValidationMessage {

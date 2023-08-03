@@ -36,6 +36,10 @@ impl AssociateOpsItemRelatedItemFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateOpsItemRelatedItem as a reference.
+    pub fn as_input(&self) -> &crate::operation::associate_ops_item_related_item::builders::AssociateOpsItemRelatedItemInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl AssociateOpsItemRelatedItemFluentBuilder {
         self.inner = self.inner.set_ops_item_id(input);
         self
     }
+    /// <p>The ID of the OpsItem to which you want to associate a resource as a related item.</p>
+    pub fn get_ops_item_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ops_item_id()
+    }
     /// <p>The type of association that you want to create between an OpsItem and a resource. OpsCenter supports <code>IsParentOf</code> and <code>RelatesTo</code> association types.</p>
     pub fn association_type(
         mut self,
@@ -141,6 +149,10 @@ impl AssociateOpsItemRelatedItemFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_association_type(input);
         self
+    }
+    /// <p>The type of association that you want to create between an OpsItem and a resource. OpsCenter supports <code>IsParentOf</code> and <code>RelatesTo</code> association types.</p>
+    pub fn get_association_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_association_type()
     }
     /// <p>The type of resource that you want to associate with an OpsItem. OpsCenter supports the following types:</p>
     /// <p> <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident. </p>
@@ -162,6 +174,12 @@ impl AssociateOpsItemRelatedItemFluentBuilder {
         self.inner = self.inner.set_resource_type(input);
         self
     }
+    /// <p>The type of resource that you want to associate with an OpsItem. OpsCenter supports the following types:</p>
+    /// <p> <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident. </p>
+    /// <p> <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_type()
+    }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services resource that you want to associate with the OpsItem.</p>
     pub fn resource_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_uri(input.into());
@@ -171,5 +189,9 @@ impl AssociateOpsItemRelatedItemFluentBuilder {
     pub fn set_resource_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_uri(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services resource that you want to associate with the OpsItem.</p>
+    pub fn get_resource_uri(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_uri()
     }
 }

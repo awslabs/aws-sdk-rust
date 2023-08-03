@@ -36,6 +36,10 @@ impl UpdatePortalFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdatePortal as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_portal::builders::UpdatePortalInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl UpdatePortalFluentBuilder {
         self.inner = self.inner.set_portal_id(input);
         self
     }
+    /// <p>The ID of the portal to update.</p>
+    pub fn get_portal_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_portal_id()
+    }
     /// <p>A new friendly name for the portal.</p>
     pub fn portal_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.portal_name(input.into());
@@ -127,6 +135,10 @@ impl UpdatePortalFluentBuilder {
     pub fn set_portal_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_portal_name(input);
         self
+    }
+    /// <p>A new friendly name for the portal.</p>
+    pub fn get_portal_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_portal_name()
     }
     /// <p>A new description for the portal.</p>
     pub fn portal_description(
@@ -144,6 +156,10 @@ impl UpdatePortalFluentBuilder {
         self.inner = self.inner.set_portal_description(input);
         self
     }
+    /// <p>A new description for the portal.</p>
+    pub fn get_portal_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_portal_description()
+    }
     /// <p>The Amazon Web Services administrator's contact email address.</p>
     pub fn portal_contact_email(
         mut self,
@@ -159,6 +175,10 @@ impl UpdatePortalFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_portal_contact_email(input);
         self
+    }
+    /// <p>The Amazon Web Services administrator's contact email address.</p>
+    pub fn get_portal_contact_email(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_portal_contact_email()
     }
     /// <p>Contains an image that is one of the following:</p>
     /// <ul>
@@ -181,6 +201,14 @@ impl UpdatePortalFluentBuilder {
         self.inner = self.inner.set_portal_logo_image(input);
         self
     }
+    /// <p>Contains an image that is one of the following:</p>
+    /// <ul>
+    /// <li> <p>An image file. Choose this option to upload a new image.</p> </li>
+    /// <li> <p>The ID of an existing image. Choose this option to keep an existing image.</p> </li>
+    /// </ul>
+    pub fn get_portal_logo_image(&self) -> &::std::option::Option<crate::types::Image> {
+        self.inner.get_portal_logo_image()
+    }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -191,6 +219,10 @@ impl UpdatePortalFluentBuilder {
         self.inner = self.inner.set_role_arn(input);
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
+    }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -200,6 +232,10 @@ impl UpdatePortalFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// <p>The email address that sends alarm notifications.</p>
     pub fn notification_sender_email(
@@ -217,6 +253,10 @@ impl UpdatePortalFluentBuilder {
         self.inner = self.inner.set_notification_sender_email(input);
         self
     }
+    /// <p>The email address that sends alarm notifications.</p>
+    pub fn get_notification_sender_email(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_notification_sender_email()
+    }
     /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
     pub fn alarms(mut self, input: crate::types::Alarms) -> Self {
         self.inner = self.inner.alarms(input);
@@ -226,5 +266,9 @@ impl UpdatePortalFluentBuilder {
     pub fn set_alarms(mut self, input: ::std::option::Option<crate::types::Alarms>) -> Self {
         self.inner = self.inner.set_alarms(input);
         self
+    }
+    /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
+    pub fn get_alarms(&self) -> &::std::option::Option<crate::types::Alarms> {
+        self.inner.get_alarms()
     }
 }

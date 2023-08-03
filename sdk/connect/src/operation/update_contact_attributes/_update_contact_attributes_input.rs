@@ -73,6 +73,10 @@ impl UpdateContactAttributesInputBuilder {
         self.initial_contact_id = input;
         self
     }
+    /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
+    pub fn get_initial_contact_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.initial_contact_id
+    }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl UpdateContactAttributesInputBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
+    }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// Adds a key-value pair to `attributes`.
     ///
@@ -109,6 +117,15 @@ impl UpdateContactAttributesInputBuilder {
     ) -> Self {
         self.attributes = input;
         self
+    }
+    /// <p>The Amazon Connect attributes. These attributes can be accessed in flows just like any other contact attributes.</p>
+    /// <p>You can have up to 32,768 UTF-8 bytes across all attributes for a contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.attributes
     }
     /// Consumes the builder and constructs a [`UpdateContactAttributesInput`](crate::operation::update_contact_attributes::UpdateContactAttributesInput).
     pub fn build(

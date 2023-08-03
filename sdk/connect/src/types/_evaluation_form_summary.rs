@@ -126,6 +126,10 @@ impl EvaluationFormSummaryBuilder {
         self.evaluation_form_id = input;
         self
     }
+    /// <p>The unique identifier for the evaluation form.</p>
+    pub fn get_evaluation_form_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evaluation_form_id
+    }
     /// <p>The Amazon Resource Name (ARN) for the evaluation form resource.</p>
     pub fn evaluation_form_arn(
         mut self,
@@ -142,6 +146,10 @@ impl EvaluationFormSummaryBuilder {
         self.evaluation_form_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the evaluation form resource.</p>
+    pub fn get_evaluation_form_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evaluation_form_arn
+    }
     /// <p>A title of the evaluation form.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
@@ -151,6 +159,10 @@ impl EvaluationFormSummaryBuilder {
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
+    }
+    /// <p>A title of the evaluation form.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
     }
     /// <p>The timestamp for when the evaluation form was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -165,6 +177,10 @@ impl EvaluationFormSummaryBuilder {
         self.created_time = input;
         self
     }
+    /// <p>The timestamp for when the evaluation form was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
+    }
     /// <p>The Amazon Resource Name (ARN) of the user who created the evaluation form.</p>
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by = ::std::option::Option::Some(input.into());
@@ -174,6 +190,10 @@ impl EvaluationFormSummaryBuilder {
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_by = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the user who created the evaluation form.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_by
     }
     /// <p>The timestamp for when the evaluation form was last updated.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -187,6 +207,10 @@ impl EvaluationFormSummaryBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>The timestamp for when the evaluation form was last updated.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the evaluation form.</p>
     pub fn last_modified_by(
@@ -204,6 +228,10 @@ impl EvaluationFormSummaryBuilder {
         self.last_modified_by = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the user who last updated the evaluation form.</p>
+    pub fn get_last_modified_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_by
+    }
     /// <p>The timestamp for when the evaluation form was last activated.</p>
     pub fn last_activated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_activated_time = ::std::option::Option::Some(input);
@@ -216,6 +244,10 @@ impl EvaluationFormSummaryBuilder {
     ) -> Self {
         self.last_activated_time = input;
         self
+    }
+    /// <p>The timestamp for when the evaluation form was last activated.</p>
+    pub fn get_last_activated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_activated_time
     }
     /// <p> The Amazon Resource Name (ARN) of the user who last activated the evaluation form.</p>
     pub fn last_activated_by(
@@ -233,6 +265,10 @@ impl EvaluationFormSummaryBuilder {
         self.last_activated_by = input;
         self
     }
+    /// <p> The Amazon Resource Name (ARN) of the user who last activated the evaluation form.</p>
+    pub fn get_last_activated_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_activated_by
+    }
     /// <p>The version number of the latest evaluation form version.</p>
     pub fn latest_version(mut self, input: i32) -> Self {
         self.latest_version = ::std::option::Option::Some(input);
@@ -243,6 +279,10 @@ impl EvaluationFormSummaryBuilder {
         self.latest_version = input;
         self
     }
+    /// <p>The version number of the latest evaluation form version.</p>
+    pub fn get_latest_version(&self) -> &::std::option::Option<i32> {
+        &self.latest_version
+    }
     /// <p>The version of the active evaluation form version.</p>
     pub fn active_version(mut self, input: i32) -> Self {
         self.active_version = ::std::option::Option::Some(input);
@@ -252,6 +292,10 @@ impl EvaluationFormSummaryBuilder {
     pub fn set_active_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.active_version = input;
         self
+    }
+    /// <p>The version of the active evaluation form version.</p>
+    pub fn get_active_version(&self) -> &::std::option::Option<i32> {
+        &self.active_version
     }
     /// Consumes the builder and constructs a [`EvaluationFormSummary`](crate::types::EvaluationFormSummary).
     pub fn build(self) -> crate::types::EvaluationFormSummary {

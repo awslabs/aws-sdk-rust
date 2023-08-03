@@ -37,6 +37,10 @@ impl UpdateDirectConnectGatewayAssociationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDirectConnectGatewayAssociation as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_direct_connect_gateway_association::builders::UpdateDirectConnectGatewayAssociationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -107,6 +111,10 @@ impl UpdateDirectConnectGatewayAssociationFluentBuilder {
         self.inner = self.inner.set_association_id(input);
         self
     }
+    /// <p>The ID of the Direct Connect gateway association.</p>
+    pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_association_id()
+    }
     /// Appends an item to `addAllowedPrefixesToDirectConnectGateway`.
     ///
     /// To override the contents of this collection use [`set_add_allowed_prefixes_to_direct_connect_gateway`](Self::set_add_allowed_prefixes_to_direct_connect_gateway).
@@ -131,6 +139,13 @@ impl UpdateDirectConnectGatewayAssociationFluentBuilder {
             .set_add_allowed_prefixes_to_direct_connect_gateway(input);
         self
     }
+    /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway.</p>
+    pub fn get_add_allowed_prefixes_to_direct_connect_gateway(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>> {
+        self.inner
+            .get_add_allowed_prefixes_to_direct_connect_gateway()
+    }
     /// Appends an item to `removeAllowedPrefixesToDirectConnectGateway`.
     ///
     /// To override the contents of this collection use [`set_remove_allowed_prefixes_to_direct_connect_gateway`](Self::set_remove_allowed_prefixes_to_direct_connect_gateway).
@@ -154,5 +169,12 @@ impl UpdateDirectConnectGatewayAssociationFluentBuilder {
             .inner
             .set_remove_allowed_prefixes_to_direct_connect_gateway(input);
         self
+    }
+    /// <p>The Amazon VPC prefixes to no longer advertise to the Direct Connect gateway.</p>
+    pub fn get_remove_allowed_prefixes_to_direct_connect_gateway(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>> {
+        self.inner
+            .get_remove_allowed_prefixes_to_direct_connect_gateway()
     }
 }

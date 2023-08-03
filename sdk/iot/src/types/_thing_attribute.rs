@@ -80,6 +80,10 @@ impl ThingAttributeBuilder {
         self.thing_name = input;
         self
     }
+    /// <p>The name of the thing.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_name
+    }
     /// <p>The name of the thing type, if the thing has been associated with a type.</p>
     pub fn thing_type_name(
         mut self,
@@ -96,6 +100,10 @@ impl ThingAttributeBuilder {
         self.thing_type_name = input;
         self
     }
+    /// <p>The name of the thing type, if the thing has been associated with a type.</p>
+    pub fn get_thing_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_type_name
+    }
     /// <p>The thing ARN.</p>
     pub fn thing_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_arn = ::std::option::Option::Some(input.into());
@@ -105,6 +113,10 @@ impl ThingAttributeBuilder {
     pub fn set_thing_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_arn = input;
         self
+    }
+    /// <p>The thing ARN.</p>
+    pub fn get_thing_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_arn
     }
     /// Adds a key-value pair to `attributes`.
     ///
@@ -131,6 +143,14 @@ impl ThingAttributeBuilder {
         self.attributes = input;
         self
     }
+    /// <p>A list of thing attributes which are name-value pairs.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.attributes
+    }
     /// <p>The version of the thing record in the registry.</p>
     pub fn version(mut self, input: i64) -> Self {
         self.version = ::std::option::Option::Some(input);
@@ -140,6 +160,10 @@ impl ThingAttributeBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The version of the thing record in the registry.</p>
+    pub fn get_version(&self) -> &::std::option::Option<i64> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`ThingAttribute`](crate::types::ThingAttribute).
     pub fn build(self) -> crate::types::ThingAttribute {

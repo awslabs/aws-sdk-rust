@@ -57,6 +57,10 @@ impl ListTemplateStepGroupsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results that can be returned.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -67,6 +71,10 @@ impl ListTemplateStepGroupsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The ID of the template.</p>
     pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_id = ::std::option::Option::Some(input.into());
@@ -76,6 +84,10 @@ impl ListTemplateStepGroupsInputBuilder {
     pub fn set_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_id = input;
         self
+    }
+    /// <p>The ID of the template.</p>
+    pub fn get_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_id
     }
     /// Consumes the builder and constructs a [`ListTemplateStepGroupsInput`](crate::operation::list_template_step_groups::ListTemplateStepGroupsInput).
     pub fn build(

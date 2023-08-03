@@ -134,6 +134,10 @@ impl DescribeContextOutputBuilder {
         self.context_name = input;
         self
     }
+    /// <p>The name of the context.</p>
+    pub fn get_context_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.context_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the context.</p>
     pub fn context_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.context_arn = ::std::option::Option::Some(input.into());
@@ -143,6 +147,10 @@ impl DescribeContextOutputBuilder {
     pub fn set_context_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.context_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the context.</p>
+    pub fn get_context_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.context_arn
     }
     /// <p>The source of the context.</p>
     pub fn source(mut self, input: crate::types::ContextSource) -> Self {
@@ -154,6 +162,10 @@ impl DescribeContextOutputBuilder {
         self.source = input;
         self
     }
+    /// <p>The source of the context.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::ContextSource> {
+        &self.source
+    }
     /// <p>The type of the context.</p>
     pub fn context_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.context_type = ::std::option::Option::Some(input.into());
@@ -164,6 +176,10 @@ impl DescribeContextOutputBuilder {
         self.context_type = input;
         self
     }
+    /// <p>The type of the context.</p>
+    pub fn get_context_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.context_type
+    }
     /// <p>The description of the context.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -173,6 +189,10 @@ impl DescribeContextOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the context.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Adds a key-value pair to `properties`.
     ///
@@ -199,6 +219,14 @@ impl DescribeContextOutputBuilder {
         self.properties = input;
         self
     }
+    /// <p>A list of the context's properties.</p>
+    pub fn get_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.properties
+    }
     /// <p>When the context was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -211,6 +239,10 @@ impl DescribeContextOutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>When the context was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn created_by(mut self, input: crate::types::UserContext) -> Self {
@@ -225,6 +257,10 @@ impl DescribeContextOutputBuilder {
         self.created_by = input;
         self
     }
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<crate::types::UserContext> {
+        &self.created_by
+    }
     /// <p>When the context was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -238,6 +274,10 @@ impl DescribeContextOutputBuilder {
         self.last_modified_time = input;
         self
     }
+    /// <p>When the context was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn last_modified_by(mut self, input: crate::types::UserContext) -> Self {
         self.last_modified_by = ::std::option::Option::Some(input);
@@ -250,6 +290,10 @@ impl DescribeContextOutputBuilder {
     ) -> Self {
         self.last_modified_by = input;
         self
+    }
+    /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
+    pub fn get_last_modified_by(&self) -> &::std::option::Option<crate::types::UserContext> {
+        &self.last_modified_by
     }
     /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
     pub fn lineage_group_arn(
@@ -266,6 +310,10 @@ impl DescribeContextOutputBuilder {
     ) -> Self {
         self.lineage_group_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
+    pub fn get_lineage_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lineage_group_arn
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

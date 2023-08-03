@@ -48,6 +48,10 @@ impl WebhookFilterRuleBuilder {
         self.json_path = input;
         self
     }
+    /// <p>A JsonPath expression that is applied to the body/payload of the webhook. The value selected by the JsonPath expression must match the value specified in the <code>MatchEquals</code> field. Otherwise, the request is ignored. For more information, see <a href="https://github.com/json-path/JsonPath">Java JsonPath implementation</a> in GitHub.</p>
+    pub fn get_json_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.json_path
+    }
     /// <p>The value selected by the <code>JsonPath</code> expression must match what is supplied in the <code>MatchEquals</code> field. Otherwise, the request is ignored. Properties from the target action configuration can be included as placeholders in this value by surrounding the action configuration key with curly brackets. For example, if the value supplied here is "refs/heads/{Branch}" and the target action has an action configuration property called "Branch" with a value of "main", the <code>MatchEquals</code> value is evaluated as "refs/heads/main". For a list of action configuration properties for built-in action types, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Pipeline Structure Reference Action Requirements</a>.</p>
     pub fn match_equals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.match_equals = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl WebhookFilterRuleBuilder {
     pub fn set_match_equals(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.match_equals = input;
         self
+    }
+    /// <p>The value selected by the <code>JsonPath</code> expression must match what is supplied in the <code>MatchEquals</code> field. Otherwise, the request is ignored. Properties from the target action configuration can be included as placeholders in this value by surrounding the action configuration key with curly brackets. For example, if the value supplied here is "refs/heads/{Branch}" and the target action has an action configuration property called "Branch" with a value of "main", the <code>MatchEquals</code> value is evaluated as "refs/heads/main". For a list of action configuration properties for built-in action types, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Pipeline Structure Reference Action Requirements</a>.</p>
+    pub fn get_match_equals(&self) -> &::std::option::Option<::std::string::String> {
+        &self.match_equals
     }
     /// Consumes the builder and constructs a [`WebhookFilterRule`](crate::types::WebhookFilterRule).
     pub fn build(self) -> crate::types::WebhookFilterRule {

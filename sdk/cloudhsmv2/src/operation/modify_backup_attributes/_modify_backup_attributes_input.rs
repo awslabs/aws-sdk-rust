@@ -49,6 +49,10 @@ impl ModifyBackupAttributesInputBuilder {
         self.backup_id = input;
         self
     }
+    /// <p>The identifier (ID) of the backup to modify. To find the ID of a backup, use the <code>DescribeBackups</code> operation.</p>
+    pub fn get_backup_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_id
+    }
     /// <p>Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code> exempts a backup from the retention policy. <code>False</code> means the service applies the backup retention policy defined at the cluster.</p>
     pub fn never_expires(mut self, input: bool) -> Self {
         self.never_expires = ::std::option::Option::Some(input);
@@ -58,6 +62,10 @@ impl ModifyBackupAttributesInputBuilder {
     pub fn set_never_expires(mut self, input: ::std::option::Option<bool>) -> Self {
         self.never_expires = input;
         self
+    }
+    /// <p>Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code> exempts a backup from the retention policy. <code>False</code> means the service applies the backup retention policy defined at the cluster.</p>
+    pub fn get_never_expires(&self) -> &::std::option::Option<bool> {
+        &self.never_expires
     }
     /// Consumes the builder and constructs a [`ModifyBackupAttributesInput`](crate::operation::modify_backup_attributes::ModifyBackupAttributesInput).
     pub fn build(

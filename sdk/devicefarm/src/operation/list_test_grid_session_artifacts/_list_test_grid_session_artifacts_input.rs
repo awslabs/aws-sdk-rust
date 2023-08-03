@@ -63,6 +63,10 @@ impl ListTestGridSessionArtifactsInputBuilder {
         self.session_arn = input;
         self
     }
+    /// <p>The ARN of a <code>TestGridSession</code>. </p>
+    pub fn get_session_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_arn
+    }
     /// <p>Limit results to a specified type of artifact.</p>
     pub fn r#type(mut self, input: crate::types::TestGridSessionArtifactCategory) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -76,6 +80,12 @@ impl ListTestGridSessionArtifactsInputBuilder {
         self.r#type = input;
         self
     }
+    /// <p>Limit results to a specified type of artifact.</p>
+    pub fn get_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::TestGridSessionArtifactCategory> {
+        &self.r#type
+    }
     /// <p>The maximum number of results to be returned by a request.</p>
     pub fn max_result(mut self, input: i32) -> Self {
         self.max_result = ::std::option::Option::Some(input);
@@ -86,6 +96,10 @@ impl ListTestGridSessionArtifactsInputBuilder {
         self.max_result = input;
         self
     }
+    /// <p>The maximum number of results to be returned by a request.</p>
+    pub fn get_max_result(&self) -> &::std::option::Option<i32> {
+        &self.max_result
+    }
     /// <p>Pagination token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -95,6 +109,10 @@ impl ListTestGridSessionArtifactsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListTestGridSessionArtifactsInput`](crate::operation::list_test_grid_session_artifacts::ListTestGridSessionArtifactsInput).
     pub fn build(

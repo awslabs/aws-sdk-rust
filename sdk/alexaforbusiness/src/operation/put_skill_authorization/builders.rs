@@ -37,6 +37,13 @@ impl PutSkillAuthorizationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutSkillAuthorization as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_skill_authorization::builders::PutSkillAuthorizationInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +147,14 @@ impl PutSkillAuthorizationFluentBuilder {
         self.inner = self.inner.set_authorization_result(input);
         self
     }
+    /// <p>The authorization result specific to OAUTH code grant output. "Code” must be populated in the AuthorizationResult map to establish the authorization.</p>
+    pub fn get_authorization_result(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_authorization_result()
+    }
     /// <p>The unique identifier of a skill.</p>
     pub fn skill_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.skill_id(input.into());
@@ -150,6 +165,10 @@ impl PutSkillAuthorizationFluentBuilder {
         self.inner = self.inner.set_skill_id(input);
         self
     }
+    /// <p>The unique identifier of a skill.</p>
+    pub fn get_skill_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_skill_id()
+    }
     /// <p>The room that the skill is authorized for.</p>
     pub fn room_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.room_arn(input.into());
@@ -159,5 +178,9 @@ impl PutSkillAuthorizationFluentBuilder {
     pub fn set_room_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_room_arn(input);
         self
+    }
+    /// <p>The room that the skill is authorized for.</p>
+    pub fn get_room_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_room_arn()
     }
 }

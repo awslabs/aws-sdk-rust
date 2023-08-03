@@ -60,6 +60,10 @@ impl GetBucketsAggregationOutputBuilder {
         self.total_count = input;
         self
     }
+    /// <p>The total number of things that fit the query string criteria.</p>
+    pub fn get_total_count(&self) -> &::std::option::Option<i32> {
+        &self.total_count
+    }
     /// Appends an item to `buckets`.
     ///
     /// To override the contents of this collection use [`set_buckets`](Self::set_buckets).
@@ -82,6 +86,12 @@ impl GetBucketsAggregationOutputBuilder {
     ) -> Self {
         self.buckets = input;
         self
+    }
+    /// <p>The main part of the response with a list of buckets. Each bucket contains a <code>keyValue</code> and a <code>count</code>.</p>
+    /// <p> <code>keyValue</code>: The aggregation field value counted for the particular bucket.</p>
+    /// <p> <code>count</code>: The number of documents that have that value.</p>
+    pub fn get_buckets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Bucket>> {
+        &self.buckets
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

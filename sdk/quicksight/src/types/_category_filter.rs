@@ -59,6 +59,10 @@ impl CategoryFilterBuilder {
         self.filter_id = input;
         self
     }
+    /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
+    pub fn get_filter_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filter_id
+    }
     /// <p>The column that the filter is applied to.</p>
     pub fn column(mut self, input: crate::types::ColumnIdentifier) -> Self {
         self.column = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl CategoryFilterBuilder {
         self.column = input;
         self
     }
+    /// <p>The column that the filter is applied to.</p>
+    pub fn get_column(&self) -> &::std::option::Option<crate::types::ColumnIdentifier> {
+        &self.column
+    }
     /// <p>The configuration for a <code>CategoryFilter</code>.</p>
     pub fn configuration(mut self, input: crate::types::CategoryFilterConfiguration) -> Self {
         self.configuration = ::std::option::Option::Some(input);
@@ -84,6 +92,12 @@ impl CategoryFilterBuilder {
     ) -> Self {
         self.configuration = input;
         self
+    }
+    /// <p>The configuration for a <code>CategoryFilter</code>.</p>
+    pub fn get_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CategoryFilterConfiguration> {
+        &self.configuration
     }
     /// Consumes the builder and constructs a [`CategoryFilter`](crate::types::CategoryFilter).
     pub fn build(self) -> crate::types::CategoryFilter {

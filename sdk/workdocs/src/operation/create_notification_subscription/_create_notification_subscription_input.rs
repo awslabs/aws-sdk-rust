@@ -69,6 +69,10 @@ impl CreateNotificationSubscriptionInputBuilder {
         self.organization_id = input;
         self
     }
+    /// <p>The ID of the organization.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p>The endpoint to receive the notifications. If the protocol is HTTPS, the endpoint is a URL that begins with <code>https</code>.</p>
     pub fn endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint = ::std::option::Option::Some(input.into());
@@ -78,6 +82,10 @@ impl CreateNotificationSubscriptionInputBuilder {
     pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint = input;
         self
+    }
+    /// <p>The endpoint to receive the notifications. If the protocol is HTTPS, the endpoint is a URL that begins with <code>https</code>.</p>
+    pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint
     }
     /// <p>The protocol to use. The supported value is https, which delivers JSON-encoded messages using HTTPS POST.</p>
     pub fn protocol(mut self, input: crate::types::SubscriptionProtocolType) -> Self {
@@ -92,6 +100,10 @@ impl CreateNotificationSubscriptionInputBuilder {
         self.protocol = input;
         self
     }
+    /// <p>The protocol to use. The supported value is https, which delivers JSON-encoded messages using HTTPS POST.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<crate::types::SubscriptionProtocolType> {
+        &self.protocol
+    }
     /// <p>The notification type.</p>
     pub fn subscription_type(mut self, input: crate::types::SubscriptionType) -> Self {
         self.subscription_type = ::std::option::Option::Some(input);
@@ -104,6 +116,10 @@ impl CreateNotificationSubscriptionInputBuilder {
     ) -> Self {
         self.subscription_type = input;
         self
+    }
+    /// <p>The notification type.</p>
+    pub fn get_subscription_type(&self) -> &::std::option::Option<crate::types::SubscriptionType> {
+        &self.subscription_type
     }
     /// Consumes the builder and constructs a [`CreateNotificationSubscriptionInput`](crate::operation::create_notification_subscription::CreateNotificationSubscriptionInput).
     pub fn build(

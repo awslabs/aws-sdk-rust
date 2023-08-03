@@ -38,6 +38,12 @@ impl AssignIpv6AddressesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssignIpv6Addresses as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::assign_ipv6_addresses::builders::AssignIpv6AddressesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +134,10 @@ impl AssignIpv6AddressesFluentBuilder {
         self.inner = self.inner.set_ipv6_address_count(input);
         self
     }
+    /// <p>The number of additional IPv6 addresses to assign to the network interface. The specified number of IPv6 addresses are assigned in addition to the existing IPv6 addresses that are already assigned to the network interface. Amazon EC2 automatically selects the IPv6 addresses from the subnet range. You can't use this option if specifying specific IPv6 addresses.</p>
+    pub fn get_ipv6_address_count(&self) -> &::std::option::Option<i32> {
+        self.inner.get_ipv6_address_count()
+    }
     /// Appends an item to `Ipv6Addresses`.
     ///
     /// To override the contents of this collection use [`set_ipv6_addresses`](Self::set_ipv6_addresses).
@@ -148,6 +158,12 @@ impl AssignIpv6AddressesFluentBuilder {
         self.inner = self.inner.set_ipv6_addresses(input);
         self
     }
+    /// <p>The IPv6 addresses to be assigned to the network interface. You can't use this option if you're specifying a number of IPv6 addresses.</p>
+    pub fn get_ipv6_addresses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_ipv6_addresses()
+    }
     /// <p>The number of IPv6 prefixes that Amazon Web Services automatically assigns to the network interface. You cannot use this option if you use the <code>Ipv6Prefixes</code> option.</p>
     pub fn ipv6_prefix_count(mut self, input: i32) -> Self {
         self.inner = self.inner.ipv6_prefix_count(input);
@@ -157,6 +173,10 @@ impl AssignIpv6AddressesFluentBuilder {
     pub fn set_ipv6_prefix_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_ipv6_prefix_count(input);
         self
+    }
+    /// <p>The number of IPv6 prefixes that Amazon Web Services automatically assigns to the network interface. You cannot use this option if you use the <code>Ipv6Prefixes</code> option.</p>
+    pub fn get_ipv6_prefix_count(&self) -> &::std::option::Option<i32> {
+        self.inner.get_ipv6_prefix_count()
     }
     /// Appends an item to `Ipv6Prefixes`.
     ///
@@ -178,6 +198,12 @@ impl AssignIpv6AddressesFluentBuilder {
         self.inner = self.inner.set_ipv6_prefixes(input);
         self
     }
+    /// <p>One or more IPv6 prefixes assigned to the network interface. You cannot use this option if you use the <code>Ipv6PrefixCount</code> option.</p>
+    pub fn get_ipv6_prefixes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_ipv6_prefixes()
+    }
     /// <p>The ID of the network interface.</p>
     pub fn network_interface_id(
         mut self,
@@ -193,5 +219,9 @@ impl AssignIpv6AddressesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_network_interface_id(input);
         self
+    }
+    /// <p>The ID of the network interface.</p>
+    pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_network_interface_id()
     }
 }

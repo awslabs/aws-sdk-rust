@@ -41,6 +41,12 @@ impl StartProjectVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartProjectVersion as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_project_version::builders::StartProjectVersionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl StartProjectVersionFluentBuilder {
         self.inner = self.inner.set_project_version_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name(ARN) of the model version that you want to start.</p>
+    pub fn get_project_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_version_arn()
+    }
     /// <p>The minimum number of inference units to use. A single inference unit represents 1 hour of processing. </p>
     /// <p>For information about the number of transactions per second (TPS) that an inference unit can support, see <i>Running a trained Amazon Rekognition Custom Labels model</i> in the Amazon Rekognition Custom Labels Guide. </p>
     /// <p>Use a higher number to increase the TPS throughput of your model. You are charged for the number of inference units that you use. </p>
@@ -151,6 +161,12 @@ impl StartProjectVersionFluentBuilder {
         self.inner = self.inner.set_min_inference_units(input);
         self
     }
+    /// <p>The minimum number of inference units to use. A single inference unit represents 1 hour of processing. </p>
+    /// <p>For information about the number of transactions per second (TPS) that an inference unit can support, see <i>Running a trained Amazon Rekognition Custom Labels model</i> in the Amazon Rekognition Custom Labels Guide. </p>
+    /// <p>Use a higher number to increase the TPS throughput of your model. You are charged for the number of inference units that you use. </p>
+    pub fn get_min_inference_units(&self) -> &::std::option::Option<i32> {
+        self.inner.get_min_inference_units()
+    }
     /// <p>The maximum number of inference units to use for auto-scaling the model. If you don't specify a value, Amazon Rekognition Custom Labels doesn't auto-scale the model.</p>
     pub fn max_inference_units(mut self, input: i32) -> Self {
         self.inner = self.inner.max_inference_units(input);
@@ -160,5 +176,9 @@ impl StartProjectVersionFluentBuilder {
     pub fn set_max_inference_units(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_inference_units(input);
         self
+    }
+    /// <p>The maximum number of inference units to use for auto-scaling the model. If you don't specify a value, Amazon Rekognition Custom Labels doesn't auto-scale the model.</p>
+    pub fn get_max_inference_units(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_inference_units()
     }
 }

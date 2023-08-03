@@ -48,6 +48,10 @@ impl NegativeFormatBuilder {
         self.prefix = input;
         self
     }
+    /// <p>The prefix for a negative format.</p>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
+    }
     /// <p>The suffix for a negative format.</p>
     pub fn suffix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.suffix = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl NegativeFormatBuilder {
     pub fn set_suffix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.suffix = input;
         self
+    }
+    /// <p>The suffix for a negative format.</p>
+    pub fn get_suffix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.suffix
     }
     /// Consumes the builder and constructs a [`NegativeFormat`](crate::types::NegativeFormat).
     pub fn build(self) -> crate::types::NegativeFormat {

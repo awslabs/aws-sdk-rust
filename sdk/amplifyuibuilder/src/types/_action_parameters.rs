@@ -115,6 +115,10 @@ impl ActionParametersBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of navigation action. Valid values are <code>url</code> and <code>anchor</code>. This value is required for a navigation action.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ComponentProperty> {
+        &self.r#type
+    }
     /// <p>The URL to the location to open. Specify this value for a navigation action.</p>
     pub fn url(mut self, input: crate::types::ComponentProperty) -> Self {
         self.url = ::std::option::Option::Some(input);
@@ -127,6 +131,10 @@ impl ActionParametersBuilder {
     ) -> Self {
         self.url = input;
         self
+    }
+    /// <p>The URL to the location to open. Specify this value for a navigation action.</p>
+    pub fn get_url(&self) -> &::std::option::Option<crate::types::ComponentProperty> {
+        &self.url
     }
     /// <p>The HTML anchor link to the location to open. Specify this value for a navigation action.</p>
     pub fn anchor(mut self, input: crate::types::ComponentProperty) -> Self {
@@ -141,6 +149,10 @@ impl ActionParametersBuilder {
         self.anchor = input;
         self
     }
+    /// <p>The HTML anchor link to the location to open. Specify this value for a navigation action.</p>
+    pub fn get_anchor(&self) -> &::std::option::Option<crate::types::ComponentProperty> {
+        &self.anchor
+    }
     /// <p>The element within the same component to modify when the action occurs.</p>
     pub fn target(mut self, input: crate::types::ComponentProperty) -> Self {
         self.target = ::std::option::Option::Some(input);
@@ -153,6 +165,10 @@ impl ActionParametersBuilder {
     ) -> Self {
         self.target = input;
         self
+    }
+    /// <p>The element within the same component to modify when the action occurs.</p>
+    pub fn get_target(&self) -> &::std::option::Option<crate::types::ComponentProperty> {
+        &self.target
     }
     /// <p>Specifies whether the user should be signed out globally. Specify this value for an auth sign out action.</p>
     pub fn global(mut self, input: crate::types::ComponentProperty) -> Self {
@@ -167,6 +183,10 @@ impl ActionParametersBuilder {
         self.global = input;
         self
     }
+    /// <p>Specifies whether the user should be signed out globally. Specify this value for an auth sign out action.</p>
+    pub fn get_global(&self) -> &::std::option::Option<crate::types::ComponentProperty> {
+        &self.global
+    }
     /// <p>The name of the data model. Use when the action performs an operation on an Amplify DataStore model.</p>
     pub fn model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model = ::std::option::Option::Some(input.into());
@@ -177,6 +197,10 @@ impl ActionParametersBuilder {
         self.model = input;
         self
     }
+    /// <p>The name of the data model. Use when the action performs an operation on an Amplify DataStore model.</p>
+    pub fn get_model(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model
+    }
     /// <p>The unique ID of the component that the <code>ActionParameters</code> apply to.</p>
     pub fn id(mut self, input: crate::types::ComponentProperty) -> Self {
         self.id = ::std::option::Option::Some(input);
@@ -186,6 +210,10 @@ impl ActionParametersBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<crate::types::ComponentProperty>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The unique ID of the component that the <code>ActionParameters</code> apply to.</p>
+    pub fn get_id(&self) -> &::std::option::Option<crate::types::ComponentProperty> {
+        &self.id
     }
     /// Adds a key-value pair to `fields`.
     ///
@@ -212,6 +240,14 @@ impl ActionParametersBuilder {
         self.fields = input;
         self
     }
+    /// <p>A dictionary of key-value pairs mapping Amplify Studio properties to fields in a data model. Use when the action performs an operation on an Amplify DataStore model.</p>
+    pub fn get_fields(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>,
+    > {
+        &self.fields
+    }
     /// <p>A key-value pair that specifies the state property name and its initial value.</p>
     pub fn state(mut self, input: crate::types::MutationActionSetStateParameter) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -224,6 +260,12 @@ impl ActionParametersBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>A key-value pair that specifies the state property name and its initial value.</p>
+    pub fn get_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::MutationActionSetStateParameter> {
+        &self.state
     }
     /// Consumes the builder and constructs a [`ActionParameters`](crate::types::ActionParameters).
     pub fn build(self) -> crate::types::ActionParameters {

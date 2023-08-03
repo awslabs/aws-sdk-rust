@@ -48,6 +48,12 @@ impl PutReplicationConfigurationInputBuilder {
         self.replication_configuration = input;
         self
     }
+    /// <p>An object representing the replication configuration for a registry.</p>
+    pub fn get_replication_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReplicationConfiguration> {
+        &self.replication_configuration
+    }
     /// Consumes the builder and constructs a [`PutReplicationConfigurationInput`](crate::operation::put_replication_configuration::PutReplicationConfigurationInput).
     pub fn build(
         self,

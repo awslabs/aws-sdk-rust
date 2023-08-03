@@ -56,6 +56,13 @@ impl RequestBodyAssociatedResourceTypeConfigBuilder {
         self.default_size_inspection_limit = input;
         self
     }
+    /// <p>Specifies the maximum size of the web request body component that an associated CloudFront distribution should send to WAF for inspection. This applies to statements in the web ACL that inspect the body or JSON body. </p>
+    /// <p>Default: <code>16 KB (16,384 kilobytes)</code> </p>
+    pub fn get_default_size_inspection_limit(
+        &self,
+    ) -> &::std::option::Option<crate::types::SizeInspectionLimit> {
+        &self.default_size_inspection_limit
+    }
     /// Consumes the builder and constructs a [`RequestBodyAssociatedResourceTypeConfig`](crate::types::RequestBodyAssociatedResourceTypeConfig).
     pub fn build(self) -> crate::types::RequestBodyAssociatedResourceTypeConfig {
         crate::types::RequestBodyAssociatedResourceTypeConfig {

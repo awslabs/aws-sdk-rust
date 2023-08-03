@@ -64,6 +64,10 @@ impl DescribeMaintenanceWindowTasksInputBuilder {
         self.window_id = input;
         self
     }
+    /// <p>The ID of the maintenance window whose tasks should be retrieved.</p>
+    pub fn get_window_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.window_id
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -83,6 +87,12 @@ impl DescribeMaintenanceWindowTasksInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>Optional filters used to narrow down the scope of the returned tasks. The supported filter keys are <code>WindowTaskId</code>, <code>TaskArn</code>, <code>Priority</code>, and <code>TaskType</code>.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>> {
+        &self.filters
+    }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -93,6 +103,10 @@ impl DescribeMaintenanceWindowTasksInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -102,6 +116,10 @@ impl DescribeMaintenanceWindowTasksInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeMaintenanceWindowTasksInput`](crate::operation::describe_maintenance_window_tasks::DescribeMaintenanceWindowTasksInput).
     pub fn build(

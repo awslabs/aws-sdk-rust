@@ -81,6 +81,10 @@ impl DescribeCollectionOutputBuilder {
         self.face_count = input;
         self
     }
+    /// <p>The number of faces that are indexed into the collection. To index faces into a collection, use <code>IndexFaces</code>.</p>
+    pub fn get_face_count(&self) -> &::std::option::Option<i64> {
+        &self.face_count
+    }
     /// <p>The version of the face model that's used by the collection for face detection.</p>
     /// <p>For more information, see Model versioning in the Amazon Rekognition Developer Guide.</p>
     pub fn face_model_version(
@@ -99,6 +103,11 @@ impl DescribeCollectionOutputBuilder {
         self.face_model_version = input;
         self
     }
+    /// <p>The version of the face model that's used by the collection for face detection.</p>
+    /// <p>For more information, see Model versioning in the Amazon Rekognition Developer Guide.</p>
+    pub fn get_face_model_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.face_model_version
+    }
     /// <p>The Amazon Resource Name (ARN) of the collection.</p>
     pub fn collection_arn(
         mut self,
@@ -115,6 +124,10 @@ impl DescribeCollectionOutputBuilder {
         self.collection_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the collection.</p>
+    pub fn get_collection_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collection_arn
+    }
     /// <p>The number of milliseconds since the Unix epoch time until the creation of the collection. The Unix epoch time is 00:00:00 Coordinated Universal Time (UTC), Thursday, 1 January 1970.</p>
     pub fn creation_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_timestamp = ::std::option::Option::Some(input);
@@ -128,6 +141,10 @@ impl DescribeCollectionOutputBuilder {
         self.creation_timestamp = input;
         self
     }
+    /// <p>The number of milliseconds since the Unix epoch time until the creation of the collection. The Unix epoch time is 00:00:00 Coordinated Universal Time (UTC), Thursday, 1 January 1970.</p>
+    pub fn get_creation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_timestamp
+    }
     /// <p>The number of UserIDs assigned to the specified colleciton.</p>
     pub fn user_count(mut self, input: i64) -> Self {
         self.user_count = ::std::option::Option::Some(input);
@@ -137,6 +154,10 @@ impl DescribeCollectionOutputBuilder {
     pub fn set_user_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.user_count = input;
         self
+    }
+    /// <p>The number of UserIDs assigned to the specified colleciton.</p>
+    pub fn get_user_count(&self) -> &::std::option::Option<i64> {
+        &self.user_count
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

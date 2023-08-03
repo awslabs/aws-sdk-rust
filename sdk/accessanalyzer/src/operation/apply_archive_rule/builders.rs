@@ -36,6 +36,12 @@ impl ApplyArchiveRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ApplyArchiveRule as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::apply_archive_rule::builders::ApplyArchiveRuleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl ApplyArchiveRuleFluentBuilder {
         self.inner = self.inner.set_analyzer_arn(input);
         self
     }
+    /// <p>The Amazon resource name (ARN) of the analyzer.</p>
+    pub fn get_analyzer_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_analyzer_arn()
+    }
     /// <p>The name of the rule to apply.</p>
     pub fn rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rule_name(input.into());
@@ -136,6 +146,10 @@ impl ApplyArchiveRuleFluentBuilder {
         self.inner = self.inner.set_rule_name(input);
         self
     }
+    /// <p>The name of the rule to apply.</p>
+    pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rule_name()
+    }
     /// <p>A client token.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -145,5 +159,9 @@ impl ApplyArchiveRuleFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>A client token.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

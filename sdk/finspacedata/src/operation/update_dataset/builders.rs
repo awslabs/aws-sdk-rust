@@ -36,6 +36,12 @@ impl UpdateDatasetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDataset as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_dataset::builders::UpdateDatasetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl UpdateDatasetFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>The unique identifier for the Dataset to update.</p>
     pub fn dataset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dataset_id(input.into());
@@ -127,6 +137,10 @@ impl UpdateDatasetFluentBuilder {
     pub fn set_dataset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dataset_id(input);
         self
+    }
+    /// <p>The unique identifier for the Dataset to update.</p>
+    pub fn get_dataset_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dataset_id()
     }
     /// <p>A display title for the Dataset.</p>
     pub fn dataset_title(
@@ -143,6 +157,10 @@ impl UpdateDatasetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_dataset_title(input);
         self
+    }
+    /// <p>A display title for the Dataset.</p>
+    pub fn get_dataset_title(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dataset_title()
     }
     /// <p>The format in which the Dataset data is structured.</p>
     /// <ul>
@@ -162,6 +180,14 @@ impl UpdateDatasetFluentBuilder {
         self.inner = self.inner.set_kind(input);
         self
     }
+    /// <p>The format in which the Dataset data is structured.</p>
+    /// <ul>
+    /// <li> <p> <code>TABULAR</code> – Data is structured in a tabular format.</p> </li>
+    /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li>
+    /// </ul>
+    pub fn get_kind(&self) -> &::std::option::Option<crate::types::DatasetKind> {
+        self.inner.get_kind()
+    }
     /// <p>A description for the Dataset.</p>
     pub fn dataset_description(
         mut self,
@@ -178,6 +204,10 @@ impl UpdateDatasetFluentBuilder {
         self.inner = self.inner.set_dataset_description(input);
         self
     }
+    /// <p>A description for the Dataset.</p>
+    pub fn get_dataset_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dataset_description()
+    }
     /// <p>The unique resource identifier for a Dataset.</p>
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.alias(input.into());
@@ -187,6 +217,10 @@ impl UpdateDatasetFluentBuilder {
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_alias(input);
         self
+    }
+    /// <p>The unique resource identifier for a Dataset.</p>
+    pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_alias()
     }
     /// <p>Definition for a schema on a tabular Dataset.</p>
     pub fn schema_definition(mut self, input: crate::types::SchemaUnion) -> Self {
@@ -200,5 +234,9 @@ impl UpdateDatasetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_schema_definition(input);
         self
+    }
+    /// <p>Definition for a schema on a tabular Dataset.</p>
+    pub fn get_schema_definition(&self) -> &::std::option::Option<crate::types::SchemaUnion> {
+        self.inner.get_schema_definition()
     }
 }

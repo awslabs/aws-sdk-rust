@@ -53,6 +53,10 @@ impl StopEngagementInputBuilder {
         self.engagement_id = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
+    pub fn get_engagement_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engagement_id
+    }
     /// <p>The reason that you're stopping the engagement.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl StopEngagementInputBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
+    }
+    /// <p>The reason that you're stopping the engagement.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
     }
     /// Consumes the builder and constructs a [`StopEngagementInput`](crate::operation::stop_engagement::StopEngagementInput).
     pub fn build(

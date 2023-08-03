@@ -102,6 +102,10 @@ impl ServiceSoftwareOptionsBuilder {
         self.current_version = input;
         self
     }
+    /// <p>The current service software version that is present on the domain.</p>
+    pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.current_version
+    }
     /// <p>The new service software version if one is available.</p>
     pub fn new_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.new_version = ::std::option::Option::Some(input.into());
@@ -111,6 +115,10 @@ impl ServiceSoftwareOptionsBuilder {
     pub fn set_new_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.new_version = input;
         self
+    }
+    /// <p>The new service software version if one is available.</p>
+    pub fn get_new_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.new_version
     }
     /// <p><code>True</code> if you are able to update you service software version. <code>False</code> if you are not able to update your service software version. </p>
     pub fn update_available(mut self, input: bool) -> Self {
@@ -122,6 +130,10 @@ impl ServiceSoftwareOptionsBuilder {
         self.update_available = input;
         self
     }
+    /// <p><code>True</code> if you are able to update you service software version. <code>False</code> if you are not able to update your service software version. </p>
+    pub fn get_update_available(&self) -> &::std::option::Option<bool> {
+        &self.update_available
+    }
     /// <p><code>True</code> if you are able to cancel your service software version update. <code>False</code> if you are not able to cancel your service software version. </p>
     pub fn cancellable(mut self, input: bool) -> Self {
         self.cancellable = ::std::option::Option::Some(input);
@@ -131,6 +143,10 @@ impl ServiceSoftwareOptionsBuilder {
     pub fn set_cancellable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.cancellable = input;
         self
+    }
+    /// <p><code>True</code> if you are able to cancel your service software version update. <code>False</code> if you are not able to cancel your service software version. </p>
+    pub fn get_cancellable(&self) -> &::std::option::Option<bool> {
+        &self.cancellable
     }
     /// <p>The status of your service software update. This field can take the following values: <code>ELIGIBLE</code>, <code>PENDING_UPDATE</code>, <code>IN_PROGRESS</code>, <code>COMPLETED</code>, and <code>NOT_ELIGIBLE</code>.</p>
     pub fn update_status(mut self, input: crate::types::DeploymentStatus) -> Self {
@@ -145,6 +161,10 @@ impl ServiceSoftwareOptionsBuilder {
         self.update_status = input;
         self
     }
+    /// <p>The status of your service software update. This field can take the following values: <code>ELIGIBLE</code>, <code>PENDING_UPDATE</code>, <code>IN_PROGRESS</code>, <code>COMPLETED</code>, and <code>NOT_ELIGIBLE</code>.</p>
+    pub fn get_update_status(&self) -> &::std::option::Option<crate::types::DeploymentStatus> {
+        &self.update_status
+    }
     /// <p>The description of the <code>UpdateStatus</code>.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -154,6 +174,10 @@ impl ServiceSoftwareOptionsBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the <code>UpdateStatus</code>.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Timestamp, in Epoch time, until which you can manually request a service software update. After this date, we automatically update your service software.</p>
     pub fn automated_update_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -168,6 +192,12 @@ impl ServiceSoftwareOptionsBuilder {
         self.automated_update_date = input;
         self
     }
+    /// <p>Timestamp, in Epoch time, until which you can manually request a service software update. After this date, we automatically update your service software.</p>
+    pub fn get_automated_update_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.automated_update_date
+    }
     /// <p><code>True</code> if a service software is never automatically updated. <code>False</code> if a service software is automatically updated after <code>AutomatedUpdateDate</code>. </p>
     pub fn optional_deployment(mut self, input: bool) -> Self {
         self.optional_deployment = ::std::option::Option::Some(input);
@@ -177,6 +207,10 @@ impl ServiceSoftwareOptionsBuilder {
     pub fn set_optional_deployment(mut self, input: ::std::option::Option<bool>) -> Self {
         self.optional_deployment = input;
         self
+    }
+    /// <p><code>True</code> if a service software is never automatically updated. <code>False</code> if a service software is automatically updated after <code>AutomatedUpdateDate</code>. </p>
+    pub fn get_optional_deployment(&self) -> &::std::option::Option<bool> {
+        &self.optional_deployment
     }
     /// Consumes the builder and constructs a [`ServiceSoftwareOptions`](crate::types::ServiceSoftwareOptions).
     pub fn build(self) -> crate::types::ServiceSoftwareOptions {

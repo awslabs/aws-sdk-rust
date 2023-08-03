@@ -36,6 +36,12 @@ impl AddProfilePermissionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AddProfilePermission as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::add_profile_permission::builders::AddProfilePermissionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl AddProfilePermissionFluentBuilder {
         self.inner = self.inner.set_profile_name(input);
         self
     }
+    /// <p>The human-readable name of the signing profile.</p>
+    pub fn get_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_profile_name()
+    }
     /// <p>The version of the signing profile.</p>
     pub fn profile_version(
         mut self,
@@ -142,6 +152,10 @@ impl AddProfilePermissionFluentBuilder {
         self.inner = self.inner.set_profile_version(input);
         self
     }
+    /// <p>The version of the signing profile.</p>
+    pub fn get_profile_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_profile_version()
+    }
     /// <p>The AWS Signer action permitted as part of cross-account permissions.</p>
     pub fn action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.action(input.into());
@@ -151,6 +165,10 @@ impl AddProfilePermissionFluentBuilder {
     pub fn set_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_action(input);
         self
+    }
+    /// <p>The AWS Signer action permitted as part of cross-account permissions.</p>
+    pub fn get_action(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_action()
     }
     /// <p>The AWS principal receiving cross-account permissions. This may be an IAM role or another AWS account ID.</p>
     pub fn principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -162,6 +180,10 @@ impl AddProfilePermissionFluentBuilder {
         self.inner = self.inner.set_principal(input);
         self
     }
+    /// <p>The AWS principal receiving cross-account permissions. This may be an IAM role or another AWS account ID.</p>
+    pub fn get_principal(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_principal()
+    }
     /// <p>A unique identifier for the current profile revision.</p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.revision_id(input.into());
@@ -172,6 +194,10 @@ impl AddProfilePermissionFluentBuilder {
         self.inner = self.inner.set_revision_id(input);
         self
     }
+    /// <p>A unique identifier for the current profile revision.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_revision_id()
+    }
     /// <p>A unique identifier for the cross-account permission statement.</p>
     pub fn statement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.statement_id(input.into());
@@ -181,5 +207,9 @@ impl AddProfilePermissionFluentBuilder {
     pub fn set_statement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_statement_id(input);
         self
+    }
+    /// <p>A unique identifier for the cross-account permission statement.</p>
+    pub fn get_statement_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_statement_id()
     }
 }

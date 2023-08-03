@@ -56,6 +56,12 @@ impl ModifyDefaultCreditSpecificationOutputBuilder {
         self.instance_family_credit_specification = input;
         self
     }
+    /// <p>The default credit option for CPU usage of the instance family.</p>
+    pub fn get_instance_family_credit_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceFamilyCreditSpecification> {
+        &self.instance_family_credit_specification
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

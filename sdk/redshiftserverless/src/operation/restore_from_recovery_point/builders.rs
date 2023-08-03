@@ -36,6 +36,10 @@ impl RestoreFromRecoveryPointFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RestoreFromRecoveryPoint as a reference.
+    pub fn as_input(&self) -> &crate::operation::restore_from_recovery_point::builders::RestoreFromRecoveryPointInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl RestoreFromRecoveryPointFluentBuilder {
         self.inner = self.inner.set_recovery_point_id(input);
         self
     }
+    /// <p>The unique identifier of the recovery point to restore from.</p>
+    pub fn get_recovery_point_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_recovery_point_id()
+    }
     /// <p>The name of the namespace to restore data into.</p>
     pub fn namespace_name(
         mut self,
@@ -148,6 +156,10 @@ impl RestoreFromRecoveryPointFluentBuilder {
         self.inner = self.inner.set_namespace_name(input);
         self
     }
+    /// <p>The name of the namespace to restore data into.</p>
+    pub fn get_namespace_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_namespace_name()
+    }
     /// <p>The name of the workgroup used to restore data.</p>
     pub fn workgroup_name(
         mut self,
@@ -163,5 +175,9 @@ impl RestoreFromRecoveryPointFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_workgroup_name(input);
         self
+    }
+    /// <p>The name of the workgroup used to restore data.</p>
+    pub fn get_workgroup_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workgroup_name()
     }
 }

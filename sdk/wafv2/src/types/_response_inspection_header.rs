@@ -66,6 +66,11 @@ impl ResponseInspectionHeaderBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the header to match against. The name must be an exact match, including case.</p>
+    /// <p>JSON example: <code>"Name": [ "RequestResult" ]</code> </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `success_values`.
     ///
     /// To override the contents of this collection use [`set_success_values`](Self::set_success_values).
@@ -90,6 +95,13 @@ impl ResponseInspectionHeaderBuilder {
         self.success_values = input;
         self
     }
+    /// <p>Values in the response header with the specified name that indicate a successful login or account creation attempt. To be counted as a success, the value must be an exact match, including case. Each value must be unique among the success and failure values. </p>
+    /// <p>JSON examples: <code>"SuccessValues": [ "LoginPassed", "Successful login" ]</code> and <code>"SuccessValues": [ "AccountCreated", "Successful account creation" ]</code> </p>
+    pub fn get_success_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.success_values
+    }
     /// Appends an item to `failure_values`.
     ///
     /// To override the contents of this collection use [`set_failure_values`](Self::set_failure_values).
@@ -113,6 +125,13 @@ impl ResponseInspectionHeaderBuilder {
     ) -> Self {
         self.failure_values = input;
         self
+    }
+    /// <p>Values in the response header with the specified name that indicate a failed login or account creation attempt. To be counted as a failure, the value must be an exact match, including case. Each value must be unique among the success and failure values. </p>
+    /// <p>JSON examples: <code>"FailureValues": [ "LoginFailed", "Failed login" ]</code> and <code>"FailureValues": [ "AccountCreationFailed" ]</code> </p>
+    pub fn get_failure_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.failure_values
     }
     /// Consumes the builder and constructs a [`ResponseInspectionHeader`](crate::types::ResponseInspectionHeader).
     pub fn build(self) -> crate::types::ResponseInspectionHeader {

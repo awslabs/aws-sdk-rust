@@ -38,6 +38,10 @@ impl PutKeywordFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutKeyword as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_keyword::builders::PutKeywordInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl PutKeywordFluentBuilder {
         self.inner = self.inner.set_origination_identity(input);
         self
     }
+    /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> get the values for PhoneNumberId and PhoneNumberArn while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
+    pub fn get_origination_identity(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_origination_identity()
+    }
     /// <p>The new keyword to add.</p>
     pub fn keyword(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.keyword(input.into());
@@ -135,6 +143,10 @@ impl PutKeywordFluentBuilder {
     pub fn set_keyword(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_keyword(input);
         self
+    }
+    /// <p>The new keyword to add.</p>
+    pub fn get_keyword(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_keyword()
     }
     /// <p>The message associated with the keyword.</p>
     /// <ul>
@@ -162,6 +174,15 @@ impl PutKeywordFluentBuilder {
         self.inner = self.inner.set_keyword_message(input);
         self
     }
+    /// <p>The message associated with the keyword.</p>
+    /// <ul>
+    /// <li> <p>AUTOMATIC_RESPONSE: A message is sent to the recipient.</p> </li>
+    /// <li> <p>OPT_OUT: Keeps the recipient from receiving future messages.</p> </li>
+    /// <li> <p>OPT_IN: The recipient wants to receive future messages.</p> </li>
+    /// </ul>
+    pub fn get_keyword_message(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_keyword_message()
+    }
     /// <p>The action to perform for the new keyword when it is received.</p>
     pub fn keyword_action(mut self, input: crate::types::KeywordAction) -> Self {
         self.inner = self.inner.keyword_action(input);
@@ -174,5 +195,9 @@ impl PutKeywordFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_keyword_action(input);
         self
+    }
+    /// <p>The action to perform for the new keyword when it is received.</p>
+    pub fn get_keyword_action(&self) -> &::std::option::Option<crate::types::KeywordAction> {
+        self.inner.get_keyword_action()
     }
 }

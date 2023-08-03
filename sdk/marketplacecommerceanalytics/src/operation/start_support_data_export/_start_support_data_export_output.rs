@@ -55,6 +55,10 @@ impl StartSupportDataExportOutputBuilder {
         self.data_set_request_id = input;
         self
     }
+    /// A unique identifier representing a specific request to the StartSupportDataExport operation. This identifier can be used to correlate a request with notifications from the SNS topic.
+    pub fn get_data_set_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_set_request_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

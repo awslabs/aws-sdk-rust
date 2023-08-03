@@ -133,6 +133,10 @@ impl CreateServiceInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the service.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the service.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -142,6 +146,10 @@ impl CreateServiceInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the service.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The ID of the environment in which the service is created.</p>
     pub fn environment_identifier(
@@ -159,6 +167,10 @@ impl CreateServiceInputBuilder {
         self.environment_identifier = input;
         self
     }
+    /// <p>The ID of the environment in which the service is created.</p>
+    pub fn get_environment_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_identifier
+    }
     /// <p>The ID of the application which the service is created.</p>
     pub fn application_identifier(
         mut self,
@@ -175,6 +187,10 @@ impl CreateServiceInputBuilder {
         self.application_identifier = input;
         self
     }
+    /// <p>The ID of the application which the service is created.</p>
+    pub fn get_application_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_identifier
+    }
     /// <p>The ID of the VPC.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -184,6 +200,10 @@ impl CreateServiceInputBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The ID of the VPC.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// <p>The type of endpoint to use for the service. The type can be a URL in a VPC or an Lambda function.</p>
     pub fn endpoint_type(mut self, input: crate::types::ServiceEndpointType) -> Self {
@@ -198,6 +218,10 @@ impl CreateServiceInputBuilder {
         self.endpoint_type = input;
         self
     }
+    /// <p>The type of endpoint to use for the service. The type can be a URL in a VPC or an Lambda function.</p>
+    pub fn get_endpoint_type(&self) -> &::std::option::Option<crate::types::ServiceEndpointType> {
+        &self.endpoint_type
+    }
     /// <p>The configuration for the URL endpoint type. When creating a route to a service, Refactor Spaces automatically resolves the address in the <code>UrlEndpointInput</code> object URL when the Domain Name System (DNS) time-to-live (TTL) expires, or every 60 seconds for TTLs less than 60 seconds.</p>
     pub fn url_endpoint(mut self, input: crate::types::UrlEndpointInput) -> Self {
         self.url_endpoint = ::std::option::Option::Some(input);
@@ -211,6 +235,10 @@ impl CreateServiceInputBuilder {
         self.url_endpoint = input;
         self
     }
+    /// <p>The configuration for the URL endpoint type. When creating a route to a service, Refactor Spaces automatically resolves the address in the <code>UrlEndpointInput</code> object URL when the Domain Name System (DNS) time-to-live (TTL) expires, or every 60 seconds for TTLs less than 60 seconds.</p>
+    pub fn get_url_endpoint(&self) -> &::std::option::Option<crate::types::UrlEndpointInput> {
+        &self.url_endpoint
+    }
     /// <p>The configuration for the Lambda endpoint type.</p>
     pub fn lambda_endpoint(mut self, input: crate::types::LambdaEndpointInput) -> Self {
         self.lambda_endpoint = ::std::option::Option::Some(input);
@@ -223,6 +251,10 @@ impl CreateServiceInputBuilder {
     ) -> Self {
         self.lambda_endpoint = input;
         self
+    }
+    /// <p>The configuration for the Lambda endpoint type.</p>
+    pub fn get_lambda_endpoint(&self) -> &::std::option::Option<crate::types::LambdaEndpointInput> {
+        &self.lambda_endpoint
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -249,6 +281,14 @@ impl CreateServiceInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags to assign to the service. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -258,6 +298,10 @@ impl CreateServiceInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateServiceInput`](crate::operation::create_service::CreateServiceInput).
     pub fn build(

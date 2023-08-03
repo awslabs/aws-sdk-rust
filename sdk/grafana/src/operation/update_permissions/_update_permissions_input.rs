@@ -61,6 +61,12 @@ impl UpdatePermissionsInputBuilder {
         self.update_instruction_batch = input;
         self
     }
+    /// <p>An array of structures that contain the permission updates to make.</p>
+    pub fn get_update_instruction_batch(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateInstruction>> {
+        &self.update_instruction_batch
+    }
     /// <p>The ID of the workspace to update.</p>
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workspace_id = ::std::option::Option::Some(input.into());
@@ -70,6 +76,10 @@ impl UpdatePermissionsInputBuilder {
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workspace_id = input;
         self
+    }
+    /// <p>The ID of the workspace to update.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
     }
     /// Consumes the builder and constructs a [`UpdatePermissionsInput`](crate::operation::update_permissions::UpdatePermissionsInput).
     pub fn build(

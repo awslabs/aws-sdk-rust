@@ -58,6 +58,10 @@ impl UpdatePipelineInputBuilder {
         self.pipeline_name = input;
         self
     }
+    /// <p>The name of the pipeline to update.</p>
+    pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_name
+    }
     /// Appends an item to `pipeline_activities`.
     ///
     /// To override the contents of this collection use [`set_pipeline_activities`](Self::set_pipeline_activities).
@@ -80,6 +84,14 @@ impl UpdatePipelineInputBuilder {
     ) -> Self {
         self.pipeline_activities = input;
         self
+    }
+    /// <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on your messages, such as removing, renaming or adding message attributes; filtering messages based on attribute values; invoking your Lambda functions on messages for advanced processing; or performing mathematical transformations to normalize device data.</p>
+    /// <p>The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must contain only one activity. For example:</p>
+    /// <p> <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ... ]</code> </p>
+    pub fn get_pipeline_activities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineActivity>> {
+        &self.pipeline_activities
     }
     /// Consumes the builder and constructs a [`UpdatePipelineInput`](crate::operation::update_pipeline::UpdatePipelineInput).
     pub fn build(

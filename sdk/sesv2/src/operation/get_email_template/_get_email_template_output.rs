@@ -62,6 +62,10 @@ impl GetEmailTemplateOutputBuilder {
         self.template_name = input;
         self
     }
+    /// <p>The name of the template.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
     /// <p>The content of the email template, composed of a subject line, an HTML part, and a text-only part.</p>
     pub fn template_content(mut self, input: crate::types::EmailTemplateContent) -> Self {
         self.template_content = ::std::option::Option::Some(input);
@@ -74,6 +78,12 @@ impl GetEmailTemplateOutputBuilder {
     ) -> Self {
         self.template_content = input;
         self
+    }
+    /// <p>The content of the email template, composed of a subject line, an HTML part, and a text-only part.</p>
+    pub fn get_template_content(
+        &self,
+    ) -> &::std::option::Option<crate::types::EmailTemplateContent> {
+        &self.template_content
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

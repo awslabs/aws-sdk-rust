@@ -48,6 +48,10 @@ impl InputChannelLevelBuilder {
         self.gain = input;
         self
     }
+    /// Remixing value. Units are in dB and acceptable values are within the range from -60 (mute) and 6 dB.
+    pub fn get_gain(&self) -> &::std::option::Option<i32> {
+        &self.gain
+    }
     /// The index of the input channel used as a source.
     pub fn input_channel(mut self, input: i32) -> Self {
         self.input_channel = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl InputChannelLevelBuilder {
     pub fn set_input_channel(mut self, input: ::std::option::Option<i32>) -> Self {
         self.input_channel = input;
         self
+    }
+    /// The index of the input channel used as a source.
+    pub fn get_input_channel(&self) -> &::std::option::Option<i32> {
+        &self.input_channel
     }
     /// Consumes the builder and constructs a [`InputChannelLevel`](crate::types::InputChannelLevel).
     pub fn build(self) -> crate::types::InputChannelLevel {

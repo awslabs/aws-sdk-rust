@@ -36,6 +36,10 @@ impl DeregisterTargetFromMaintenanceWindowFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeregisterTargetFromMaintenanceWindow as a reference.
+    pub fn as_input(&self) -> &crate::operation::deregister_target_from_maintenance_window::builders::DeregisterTargetFromMaintenanceWindowInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl DeregisterTargetFromMaintenanceWindowFluentBuilder {
         self.inner = self.inner.set_window_id(input);
         self
     }
+    /// <p>The ID of the maintenance window the target should be removed from.</p>
+    pub fn get_window_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_window_id()
+    }
     /// <p>The ID of the target definition to remove.</p>
     pub fn window_target_id(
         mut self,
@@ -116,6 +124,10 @@ impl DeregisterTargetFromMaintenanceWindowFluentBuilder {
         self.inner = self.inner.set_window_target_id(input);
         self
     }
+    /// <p>The ID of the target definition to remove.</p>
+    pub fn get_window_target_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_window_target_id()
+    }
     /// <p>The system checks if the target is being referenced by a task. If the target is being referenced, the system returns an error and doesn't deregister the target from the maintenance window.</p>
     pub fn safe(mut self, input: bool) -> Self {
         self.inner = self.inner.safe(input);
@@ -125,5 +137,9 @@ impl DeregisterTargetFromMaintenanceWindowFluentBuilder {
     pub fn set_safe(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_safe(input);
         self
+    }
+    /// <p>The system checks if the target is being referenced by a task. If the target is being referenced, the system returns an error and doesn't deregister the target from the maintenance window.</p>
+    pub fn get_safe(&self) -> &::std::option::Option<bool> {
+        self.inner.get_safe()
     }
 }

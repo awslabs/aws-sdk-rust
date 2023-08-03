@@ -48,6 +48,10 @@ impl DeleteInputSecurityGroupInputBuilder {
         self.input_security_group_id = input;
         self
     }
+    /// The Input Security Group to delete
+    pub fn get_input_security_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_security_group_id
+    }
     /// Consumes the builder and constructs a [`DeleteInputSecurityGroupInput`](crate::operation::delete_input_security_group::DeleteInputSecurityGroupInput).
     pub fn build(
         self,

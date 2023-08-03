@@ -53,6 +53,12 @@ impl PutRegistryCatalogDataOutputBuilder {
         self.registry_catalog_data = input;
         self
     }
+    /// <p>The catalog data for the public registry.</p>
+    pub fn get_registry_catalog_data(
+        &self,
+    ) -> &::std::option::Option<crate::types::RegistryCatalogData> {
+        &self.registry_catalog_data
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

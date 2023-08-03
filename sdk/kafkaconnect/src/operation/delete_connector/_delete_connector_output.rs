@@ -60,6 +60,10 @@ impl DeleteConnectorOutputBuilder {
         self.connector_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the connector that you requested to delete.</p>
+    pub fn get_connector_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connector_arn
+    }
     /// <p>The state of the connector that you requested to delete.</p>
     pub fn connector_state(mut self, input: crate::types::ConnectorState) -> Self {
         self.connector_state = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl DeleteConnectorOutputBuilder {
     ) -> Self {
         self.connector_state = input;
         self
+    }
+    /// <p>The state of the connector that you requested to delete.</p>
+    pub fn get_connector_state(&self) -> &::std::option::Option<crate::types::ConnectorState> {
+        &self.connector_state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

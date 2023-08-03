@@ -40,6 +40,12 @@ impl ListIdentityPoliciesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListIdentityPolicies as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_identity_policies::builders::ListIdentityPoliciesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,10 @@ impl ListIdentityPoliciesFluentBuilder {
     pub fn set_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity(input);
         self
+    }
+    /// <p>The identity that is associated with the policy for which the policies will be listed. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+    /// <p>To successfully call this API, you must own the identity.</p>
+    pub fn get_identity(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity()
     }
 }

@@ -40,6 +40,10 @@ impl SoftwareTokenMfaConfigTypeBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Specifies whether software token MFA is activated.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// Consumes the builder and constructs a [`SoftwareTokenMfaConfigType`](crate::types::SoftwareTokenMfaConfigType).
     pub fn build(self) -> crate::types::SoftwareTokenMfaConfigType {
         crate::types::SoftwareTokenMfaConfigType {

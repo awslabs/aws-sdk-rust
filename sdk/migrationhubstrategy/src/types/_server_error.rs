@@ -45,6 +45,12 @@ impl ServerErrorBuilder {
         self.server_error_category = input;
         self
     }
+    /// <p>The error category of server analysis.</p>
+    pub fn get_server_error_category(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServerErrorCategory> {
+        &self.server_error_category
+    }
     /// Consumes the builder and constructs a [`ServerError`](crate::types::ServerError).
     pub fn build(self) -> crate::types::ServerError {
         crate::types::ServerError {

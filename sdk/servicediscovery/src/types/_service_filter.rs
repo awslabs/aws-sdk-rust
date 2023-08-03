@@ -65,6 +65,10 @@ impl ServiceFilterBuilder {
         self.name = input;
         self
     }
+    /// <p>Specify <code>NAMESPACE_ID</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::ServiceFilterName> {
+        &self.name
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -84,6 +88,10 @@ impl ServiceFilterBuilder {
         self.values = input;
         self
     }
+    /// <p>The values that are applicable to the value that you specify for <code>Condition</code> to filter the list of services.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
+    }
     /// <p>The operator that you want to use to determine whether a service is returned by <code>ListServices</code>. Valid values for <code>Condition</code> include the following:</p>
     /// <ul>
     /// <li> <p> <code>EQ</code>: When you specify <code>EQ</code>, specify one namespace ID for <code>Values</code>. <code>EQ</code> is the default condition and can be omitted.</p> </li>
@@ -102,6 +110,13 @@ impl ServiceFilterBuilder {
     ) -> Self {
         self.condition = input;
         self
+    }
+    /// <p>The operator that you want to use to determine whether a service is returned by <code>ListServices</code>. Valid values for <code>Condition</code> include the following:</p>
+    /// <ul>
+    /// <li> <p> <code>EQ</code>: When you specify <code>EQ</code>, specify one namespace ID for <code>Values</code>. <code>EQ</code> is the default condition and can be omitted.</p> </li>
+    /// </ul>
+    pub fn get_condition(&self) -> &::std::option::Option<crate::types::FilterCondition> {
+        &self.condition
     }
     /// Consumes the builder and constructs a [`ServiceFilter`](crate::types::ServiceFilter).
     pub fn build(self) -> crate::types::ServiceFilter {

@@ -67,6 +67,10 @@ impl GetEventSelectorsOutputBuilder {
         self.trail_arn = input;
         self
     }
+    /// <p>The specified trail ARN that has the event selectors.</p>
+    pub fn get_trail_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trail_arn
+    }
     /// Appends an item to `event_selectors`.
     ///
     /// To override the contents of this collection use [`set_event_selectors`](Self::set_event_selectors).
@@ -86,6 +90,12 @@ impl GetEventSelectorsOutputBuilder {
         self.event_selectors = input;
         self
     }
+    /// <p>The event selectors that are configured for the trail.</p>
+    pub fn get_event_selectors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventSelector>> {
+        &self.event_selectors
+    }
     /// Appends an item to `advanced_event_selectors`.
     ///
     /// To override the contents of this collection use [`set_advanced_event_selectors`](Self::set_advanced_event_selectors).
@@ -104,6 +114,12 @@ impl GetEventSelectorsOutputBuilder {
     ) -> Self {
         self.advanced_event_selectors = input;
         self
+    }
+    /// <p> The advanced event selectors that are configured for the trail. </p>
+    pub fn get_advanced_event_selectors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>> {
+        &self.advanced_event_selectors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -72,6 +72,10 @@ impl TrafficPolicySummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID that Amazon Route 53 assigned to the traffic policy when you created it.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name that you specified for the traffic policy when you created it.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl TrafficPolicySummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name that you specified for the traffic policy when you created it.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy to create a traffic policy instance.</p>
     pub fn r#type(mut self, input: crate::types::RrType) -> Self {
@@ -92,6 +100,10 @@ impl TrafficPolicySummaryBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy to create a traffic policy instance.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::RrType> {
+        &self.r#type
+    }
     /// <p>The version number of the latest version of the traffic policy.</p>
     pub fn latest_version(mut self, input: i32) -> Self {
         self.latest_version = ::std::option::Option::Some(input);
@@ -102,6 +114,10 @@ impl TrafficPolicySummaryBuilder {
         self.latest_version = input;
         self
     }
+    /// <p>The version number of the latest version of the traffic policy.</p>
+    pub fn get_latest_version(&self) -> &::std::option::Option<i32> {
+        &self.latest_version
+    }
     /// <p>The number of traffic policies that are associated with the current Amazon Web Services account.</p>
     pub fn traffic_policy_count(mut self, input: i32) -> Self {
         self.traffic_policy_count = ::std::option::Option::Some(input);
@@ -111,6 +127,10 @@ impl TrafficPolicySummaryBuilder {
     pub fn set_traffic_policy_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.traffic_policy_count = input;
         self
+    }
+    /// <p>The number of traffic policies that are associated with the current Amazon Web Services account.</p>
+    pub fn get_traffic_policy_count(&self) -> &::std::option::Option<i32> {
+        &self.traffic_policy_count
     }
     /// Consumes the builder and constructs a [`TrafficPolicySummary`](crate::types::TrafficPolicySummary).
     pub fn build(self) -> crate::types::TrafficPolicySummary {

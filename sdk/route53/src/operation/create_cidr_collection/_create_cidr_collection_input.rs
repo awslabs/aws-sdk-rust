@@ -48,6 +48,10 @@ impl CreateCidrCollectionInputBuilder {
         self.name = input;
         self
     }
+    /// <p>A unique identifier for the account that can be used to reference the collection from other API calls.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A client-specific token that allows requests to be securely retried so that the intended outcome will only occur once, retries receive a similar response, and there are no additional edge cases to handle.</p>
     pub fn caller_reference(
         mut self,
@@ -63,6 +67,10 @@ impl CreateCidrCollectionInputBuilder {
     ) -> Self {
         self.caller_reference = input;
         self
+    }
+    /// <p>A client-specific token that allows requests to be securely retried so that the intended outcome will only occur once, retries receive a similar response, and there are no additional edge cases to handle.</p>
+    pub fn get_caller_reference(&self) -> &::std::option::Option<::std::string::String> {
+        &self.caller_reference
     }
     /// Consumes the builder and constructs a [`CreateCidrCollectionInput`](crate::operation::create_cidr_collection::CreateCidrCollectionInput).
     pub fn build(

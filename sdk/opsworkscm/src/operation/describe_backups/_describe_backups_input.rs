@@ -63,6 +63,10 @@ impl DescribeBackupsInputBuilder {
         self.backup_id = input;
         self
     }
+    /// <p>Describes a single backup. </p>
+    pub fn get_backup_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_id
+    }
     /// <p>Returns backups for the server with the specified ServerName. </p>
     pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_name = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl DescribeBackupsInputBuilder {
     pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_name = input;
         self
+    }
+    /// <p>Returns backups for the server with the specified ServerName. </p>
+    pub fn get_server_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_name
     }
     /// <p>This is not currently implemented for <code>DescribeBackups</code> requests.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,6 +92,10 @@ impl DescribeBackupsInputBuilder {
         self
     }
     /// <p>This is not currently implemented for <code>DescribeBackups</code> requests.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
+    /// <p>This is not currently implemented for <code>DescribeBackups</code> requests.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
@@ -92,6 +104,10 @@ impl DescribeBackupsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>This is not currently implemented for <code>DescribeBackups</code> requests.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeBackupsInput`](crate::operation::describe_backups::DescribeBackupsInput).
     pub fn build(

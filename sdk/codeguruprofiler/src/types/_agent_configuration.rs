@@ -78,6 +78,10 @@ impl AgentConfigurationBuilder {
         self.should_profile = input;
         self
     }
+    /// <p> A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to <code>true</code> to enable profiling. </p>
+    pub fn get_should_profile(&self) -> &::std::option::Option<bool> {
+        &self.should_profile
+    }
     /// <p> How long a profiling agent should send profiling data using <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a>. For example, if this is set to 300, the profiling agent calls <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a> every 5 minutes to submit the profiled data collected during that period. </p>
     pub fn period_in_seconds(mut self, input: i32) -> Self {
         self.period_in_seconds = ::std::option::Option::Some(input);
@@ -87,6 +91,10 @@ impl AgentConfigurationBuilder {
     pub fn set_period_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.period_in_seconds = input;
         self
+    }
+    /// <p> How long a profiling agent should send profiling data using <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a>. For example, if this is set to 300, the profiling agent calls <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a> every 5 minutes to submit the profiled data collected during that period. </p>
+    pub fn get_period_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.period_in_seconds
     }
     /// Adds a key-value pair to `agent_parameters`.
     ///
@@ -126,6 +134,21 @@ impl AgentConfigurationBuilder {
     ) -> Self {
         self.agent_parameters = input;
         self
+    }
+    /// <p> Parameters used by the profiler. The valid parameters are: </p>
+    /// <ul>
+    /// <li> <p> <code>MaxStackDepth</code> - The maximum depth of the stacks in the code that is represented in the profile. For example, if CodeGuru Profiler finds a method <code>A</code>, which calls method <code>B</code>, which calls method <code>C</code>, which calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is set to 2, then the profiler evaluates <code>A</code> and <code>B</code>. </p> </li>
+    /// <li> <p> <code>MemoryUsageLimitPercent</code> - The percentage of memory that is used by the profiler.</p> </li>
+    /// <li> <p> <code>MinimumTimeForReportingInMilliseconds</code> - The minimum time in milliseconds between sending reports. </p> </li>
+    /// <li> <p> <code>ReportingIntervalInMilliseconds</code> - The reporting interval in milliseconds used to report profiles. </p> </li>
+    /// <li> <p> <code>SamplingIntervalInMilliseconds</code> - The sampling interval in milliseconds that is used to profile samples. </p> </li>
+    /// </ul>
+    pub fn get_agent_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<crate::types::AgentParameterField, ::std::string::String>,
+    > {
+        &self.agent_parameters
     }
     /// Consumes the builder and constructs a [`AgentConfiguration`](crate::types::AgentConfiguration).
     pub fn build(self) -> crate::types::AgentConfiguration {

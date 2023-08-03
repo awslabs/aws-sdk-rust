@@ -39,6 +39,10 @@ impl DeleteAccountInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// Consumes the builder and constructs a [`DeleteAccountInput`](crate::operation::delete_account::DeleteAccountInput).
     pub fn build(
         self,

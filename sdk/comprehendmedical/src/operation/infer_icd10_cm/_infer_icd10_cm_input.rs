@@ -39,6 +39,10 @@ impl InferIcd10CmInputBuilder {
         self.text = input;
         self
     }
+    /// <p>The input text used for analysis.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text
+    }
     /// Consumes the builder and constructs a [`InferIcd10CmInput`](crate::operation::infer_icd10_cm::InferIcd10CmInput).
     pub fn build(
         self,

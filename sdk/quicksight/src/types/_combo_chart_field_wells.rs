@@ -51,6 +51,12 @@ impl ComboChartFieldWellsBuilder {
         self.combo_chart_aggregated_field_wells = input;
         self
     }
+    /// <p>The aggregated field wells of a combo chart. Combo charts only have aggregated field wells. Columns in a combo chart are aggregated by category.</p>
+    pub fn get_combo_chart_aggregated_field_wells(
+        &self,
+    ) -> &::std::option::Option<crate::types::ComboChartAggregatedFieldWells> {
+        &self.combo_chart_aggregated_field_wells
+    }
     /// Consumes the builder and constructs a [`ComboChartFieldWells`](crate::types::ComboChartFieldWells).
     pub fn build(self) -> crate::types::ComboChartFieldWells {
         crate::types::ComboChartFieldWells {

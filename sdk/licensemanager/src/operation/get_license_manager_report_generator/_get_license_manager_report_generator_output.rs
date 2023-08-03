@@ -49,6 +49,10 @@ impl GetLicenseManagerReportGeneratorOutputBuilder {
         self.report_generator = input;
         self
     }
+    /// <p>A report generator that creates periodic reports about your license configurations.</p>
+    pub fn get_report_generator(&self) -> &::std::option::Option<crate::types::ReportGenerator> {
+        &self.report_generator
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -87,6 +87,10 @@ impl UpdateTemplateSyncConfigInputBuilder {
         self.template_name = input;
         self
     }
+    /// <p>The synced template name.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
     /// <p>The synced template type.</p>
     pub fn template_type(mut self, input: crate::types::TemplateType) -> Self {
         self.template_type = ::std::option::Option::Some(input);
@@ -100,6 +104,10 @@ impl UpdateTemplateSyncConfigInputBuilder {
         self.template_type = input;
         self
     }
+    /// <p>The synced template type.</p>
+    pub fn get_template_type(&self) -> &::std::option::Option<crate::types::TemplateType> {
+        &self.template_type
+    }
     /// <p>The repository provider.</p>
     pub fn repository_provider(mut self, input: crate::types::RepositoryProvider) -> Self {
         self.repository_provider = ::std::option::Option::Some(input);
@@ -112,6 +120,12 @@ impl UpdateTemplateSyncConfigInputBuilder {
     ) -> Self {
         self.repository_provider = input;
         self
+    }
+    /// <p>The repository provider.</p>
+    pub fn get_repository_provider(
+        &self,
+    ) -> &::std::option::Option<crate::types::RepositoryProvider> {
+        &self.repository_provider
     }
     /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
     pub fn repository_name(
@@ -129,6 +143,10 @@ impl UpdateTemplateSyncConfigInputBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>The repository branch for your template.</p>
     pub fn branch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch = ::std::option::Option::Some(input.into());
@@ -139,6 +157,10 @@ impl UpdateTemplateSyncConfigInputBuilder {
         self.branch = input;
         self
     }
+    /// <p>The repository branch for your template.</p>
+    pub fn get_branch(&self) -> &::std::option::Option<::std::string::String> {
+        &self.branch
+    }
     /// <p>A subdirectory path to your template bundle version. When included, limits the template bundle search to this repository directory.</p>
     pub fn subdirectory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subdirectory = ::std::option::Option::Some(input.into());
@@ -148,6 +170,10 @@ impl UpdateTemplateSyncConfigInputBuilder {
     pub fn set_subdirectory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subdirectory = input;
         self
+    }
+    /// <p>A subdirectory path to your template bundle version. When included, limits the template bundle search to this repository directory.</p>
+    pub fn get_subdirectory(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subdirectory
     }
     /// Consumes the builder and constructs a [`UpdateTemplateSyncConfigInput`](crate::operation::update_template_sync_config::UpdateTemplateSyncConfigInput).
     pub fn build(

@@ -88,6 +88,10 @@ impl RecommendationBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The resource affected by the recommendation, with values like <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// <p>The recommendation type, with values like <code>DKIM</code>, <code>SPF</code>, <code>DMARC</code> or <code>BIMI</code>.</p>
     pub fn r#type(mut self, input: crate::types::RecommendationType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -101,6 +105,10 @@ impl RecommendationBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The recommendation type, with values like <code>DKIM</code>, <code>SPF</code>, <code>DMARC</code> or <code>BIMI</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::RecommendationType> {
+        &self.r#type
+    }
     /// <p>The recommendation description / disambiguator - e.g. <code>DKIM1</code> and <code>DKIM2</code> are different recommendations about your DKIM setup.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -110,6 +118,10 @@ impl RecommendationBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The recommendation description / disambiguator - e.g. <code>DKIM1</code> and <code>DKIM2</code> are different recommendations about your DKIM setup.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The recommendation status, with values like <code>OPEN</code> or <code>FIXED</code>.</p>
     pub fn status(mut self, input: crate::types::RecommendationStatus) -> Self {
@@ -124,6 +136,10 @@ impl RecommendationBuilder {
         self.status = input;
         self
     }
+    /// <p>The recommendation status, with values like <code>OPEN</code> or <code>FIXED</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::RecommendationStatus> {
+        &self.status
+    }
     /// <p>The first time this issue was encountered and the recommendation was generated.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_timestamp = ::std::option::Option::Some(input);
@@ -136,6 +152,10 @@ impl RecommendationBuilder {
     ) -> Self {
         self.created_timestamp = input;
         self
+    }
+    /// <p>The first time this issue was encountered and the recommendation was generated.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
     }
     /// <p>The last time the recommendation was updated.</p>
     pub fn last_updated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -150,6 +170,12 @@ impl RecommendationBuilder {
         self.last_updated_timestamp = input;
         self
     }
+    /// <p>The last time the recommendation was updated.</p>
+    pub fn get_last_updated_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_timestamp
+    }
     /// <p>The recommendation impact, with values like <code>HIGH</code> or <code>LOW</code>.</p>
     pub fn impact(mut self, input: crate::types::RecommendationImpact) -> Self {
         self.impact = ::std::option::Option::Some(input);
@@ -162,6 +188,10 @@ impl RecommendationBuilder {
     ) -> Self {
         self.impact = input;
         self
+    }
+    /// <p>The recommendation impact, with values like <code>HIGH</code> or <code>LOW</code>.</p>
+    pub fn get_impact(&self) -> &::std::option::Option<crate::types::RecommendationImpact> {
+        &self.impact
     }
     /// Consumes the builder and constructs a [`Recommendation`](crate::types::Recommendation).
     pub fn build(self) -> crate::types::Recommendation {

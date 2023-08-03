@@ -48,6 +48,10 @@ impl DashEncryptionBuilder {
         self.key_rotation_interval_seconds = input;
         self
     }
+    /// Time (in seconds) between each encryption key rotation.
+    pub fn get_key_rotation_interval_seconds(&self) -> &::std::option::Option<i32> {
+        &self.key_rotation_interval_seconds
+    }
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
     pub fn speke_key_provider(mut self, input: crate::types::SpekeKeyProvider) -> Self {
         self.speke_key_provider = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl DashEncryptionBuilder {
     ) -> Self {
         self.speke_key_provider = input;
         self
+    }
+    /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
+    pub fn get_speke_key_provider(&self) -> &::std::option::Option<crate::types::SpekeKeyProvider> {
+        &self.speke_key_provider
     }
     /// Consumes the builder and constructs a [`DashEncryption`](crate::types::DashEncryption).
     pub fn build(self) -> crate::types::DashEncryption {

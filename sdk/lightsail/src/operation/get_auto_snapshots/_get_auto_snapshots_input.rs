@@ -46,6 +46,10 @@ impl GetAutoSnapshotsInputBuilder {
         self.resource_name = input;
         self
     }
+    /// <p>The name of the source instance or disk from which to get automatic snapshot information.</p>
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_name
+    }
     /// Consumes the builder and constructs a [`GetAutoSnapshotsInput`](crate::operation::get_auto_snapshots::GetAutoSnapshotsInput).
     pub fn build(
         self,

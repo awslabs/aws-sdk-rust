@@ -47,6 +47,10 @@ impl DeleteCustomDbEngineVersionInputBuilder {
         self.engine = input;
         self
     }
+    /// <p>The database engine. The only supported engines are <code>custom-oracle-ee</code> and <code>custom-oracle-ee-cdb</code>.</p>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine
+    }
     /// <p>The custom engine version (CEV) for your DB instance. This option is required for RDS Custom, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Amazon Web Services Region.</p>
     pub fn engine_version(
         mut self,
@@ -62,6 +66,10 @@ impl DeleteCustomDbEngineVersionInputBuilder {
     ) -> Self {
         self.engine_version = input;
         self
+    }
+    /// <p>The custom engine version (CEV) for your DB instance. This option is required for RDS Custom, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Amazon Web Services Region.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
     }
     /// Consumes the builder and constructs a [`DeleteCustomDbEngineVersionInput`](crate::operation::delete_custom_db_engine_version::DeleteCustomDbEngineVersionInput).
     pub fn build(

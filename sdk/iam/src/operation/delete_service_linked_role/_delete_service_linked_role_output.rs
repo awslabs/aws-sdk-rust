@@ -82,6 +82,17 @@ impl DeleteServiceLinkedRoleOutputBuilder {
         self.deletion_task_id = input;
         self
     }
+    /// <p>The deletion task identifier that you can use to check the status of the deletion. This identifier is returned in the format <code>task/aws-service-role/
+    /// <service-principal-name>
+    /// /
+    /// <role-name>
+    /// /
+    /// <task-uuid></task-uuid>
+    /// </role-name>
+    /// </service-principal-name></code>.</p>
+    pub fn get_deletion_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deletion_task_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

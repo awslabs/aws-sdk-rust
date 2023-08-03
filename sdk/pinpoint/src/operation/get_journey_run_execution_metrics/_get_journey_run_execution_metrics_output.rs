@@ -56,6 +56,12 @@ impl GetJourneyRunExecutionMetricsOutputBuilder {
         self.journey_run_execution_metrics_response = input;
         self
     }
+    /// <p>Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey run, and provides information about that query.</p>
+    pub fn get_journey_run_execution_metrics_response(
+        &self,
+    ) -> &::std::option::Option<crate::types::JourneyRunExecutionMetricsResponse> {
+        &self.journey_run_execution_metrics_response
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

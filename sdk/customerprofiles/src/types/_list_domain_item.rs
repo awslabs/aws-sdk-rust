@@ -72,6 +72,10 @@ impl ListDomainItemBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The unique name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The timestamp of when the domain was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -85,6 +89,10 @@ impl ListDomainItemBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The timestamp of when the domain was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The timestamp of when the domain was most recently edited.</p>
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_at = ::std::option::Option::Some(input);
@@ -97,6 +105,10 @@ impl ListDomainItemBuilder {
     ) -> Self {
         self.last_updated_at = input;
         self
+    }
+    /// <p>The timestamp of when the domain was most recently edited.</p>
+    pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_at
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -122,6 +134,14 @@ impl ListDomainItemBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`ListDomainItem`](crate::types::ListDomainItem).
     pub fn build(self) -> crate::types::ListDomainItem {

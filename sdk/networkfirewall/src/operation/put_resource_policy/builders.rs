@@ -43,6 +43,12 @@ impl PutResourcePolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutResourcePolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_resource_policy::builders::PutResourcePolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl PutResourcePolicyFluentBuilder {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the account that you want to share rule groups and firewall policies with.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
+    }
     /// <p>The IAM policy statement that lists the accounts that you want to share your rule group or firewall policy with and the operations that you want the accounts to be able to perform. </p>
     /// <p>For a rule group resource, you can specify the following operations in the Actions section of the statement:</p>
     /// <ul>
@@ -166,5 +176,21 @@ impl PutResourcePolicyFluentBuilder {
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy(input);
         self
+    }
+    /// <p>The IAM policy statement that lists the accounts that you want to share your rule group or firewall policy with and the operations that you want the accounts to be able to perform. </p>
+    /// <p>For a rule group resource, you can specify the following operations in the Actions section of the statement:</p>
+    /// <ul>
+    /// <li> <p>network-firewall:CreateFirewallPolicy</p> </li>
+    /// <li> <p>network-firewall:UpdateFirewallPolicy</p> </li>
+    /// <li> <p>network-firewall:ListRuleGroups</p> </li>
+    /// </ul>
+    /// <p>For a firewall policy resource, you can specify the following operations in the Actions section of the statement:</p>
+    /// <ul>
+    /// <li> <p>network-firewall:AssociateFirewallPolicy</p> </li>
+    /// <li> <p>network-firewall:ListFirewallPolicies</p> </li>
+    /// </ul>
+    /// <p>In the Resource section of the statement, you specify the ARNs for the rule groups and firewall policies that you want to share with the account that you specified in <code>Arn</code>.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy()
     }
 }

@@ -64,6 +64,10 @@ impl HlsCaptionLanguageMappingBuilder {
         self.caption_channel = input;
         self
     }
+    /// Caption channel.
+    pub fn get_caption_channel(&self) -> &::std::option::Option<i32> {
+        &self.caption_channel
+    }
     /// Specify the language for this captions channel, using the ISO 639-2 or ISO 639-3 three-letter language code
     pub fn custom_language_code(
         mut self,
@@ -80,6 +84,10 @@ impl HlsCaptionLanguageMappingBuilder {
         self.custom_language_code = input;
         self
     }
+    /// Specify the language for this captions channel, using the ISO 639-2 or ISO 639-3 three-letter language code
+    pub fn get_custom_language_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_language_code
+    }
     /// Specify the language, using the ISO 639-2 three-letter code listed at https://www.loc.gov/standards/iso639-2/php/code_list.php.
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
@@ -92,6 +100,10 @@ impl HlsCaptionLanguageMappingBuilder {
     ) -> Self {
         self.language_code = input;
         self
+    }
+    /// Specify the language, using the ISO 639-2 three-letter code listed at https://www.loc.gov/standards/iso639-2/php/code_list.php.
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
+        &self.language_code
     }
     /// Caption language description.
     pub fn language_description(
@@ -108,6 +120,10 @@ impl HlsCaptionLanguageMappingBuilder {
     ) -> Self {
         self.language_description = input;
         self
+    }
+    /// Caption language description.
+    pub fn get_language_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.language_description
     }
     /// Consumes the builder and constructs a [`HlsCaptionLanguageMapping`](crate::types::HlsCaptionLanguageMapping).
     pub fn build(self) -> crate::types::HlsCaptionLanguageMapping {

@@ -59,6 +59,12 @@ impl DescribeManagedProductsByVendorOutputBuilder {
         self.managed_products = input;
         self
     }
+    /// <p>High-level information for the managed rule groups owned by the specified vendor. </p>
+    pub fn get_managed_products(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedProductDescriptor>> {
+        &self.managed_products
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

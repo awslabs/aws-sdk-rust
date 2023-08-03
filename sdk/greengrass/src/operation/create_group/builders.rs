@@ -36,6 +36,10 @@ impl CreateGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateGroup as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_group::builders::CreateGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl CreateGroupFluentBuilder {
         self.inner = self.inner.set_amzn_client_token(input);
         self
     }
+    /// A client token used to correlate requests and responses.
+    pub fn get_amzn_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_amzn_client_token()
+    }
     /// Information about the initial version of the group.
     pub fn initial_version(mut self, input: crate::types::GroupVersion) -> Self {
         self.inner = self.inner.initial_version(input);
@@ -137,6 +145,10 @@ impl CreateGroupFluentBuilder {
         self.inner = self.inner.set_initial_version(input);
         self
     }
+    /// Information about the initial version of the group.
+    pub fn get_initial_version(&self) -> &::std::option::Option<crate::types::GroupVersion> {
+        self.inner.get_initial_version()
+    }
     /// The name of the group.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -146,6 +158,10 @@ impl CreateGroupFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// The name of the group.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -169,5 +185,13 @@ impl CreateGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// Tag(s) to add to the new resource.
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

@@ -113,6 +113,10 @@ impl RackPhysicalPropertiesBuilder {
         self.power_draw_kva = input;
         self
     }
+    /// <p>The power draw available at the hardware placement position for the rack. </p>
+    pub fn get_power_draw_kva(&self) -> &::std::option::Option<crate::types::PowerDrawKva> {
+        &self.power_draw_kva
+    }
     /// <p>The power option that you can provide for hardware.</p>
     pub fn power_phase(mut self, input: crate::types::PowerPhase) -> Self {
         self.power_phase = ::std::option::Option::Some(input);
@@ -125,6 +129,10 @@ impl RackPhysicalPropertiesBuilder {
     ) -> Self {
         self.power_phase = input;
         self
+    }
+    /// <p>The power option that you can provide for hardware.</p>
+    pub fn get_power_phase(&self) -> &::std::option::Option<crate::types::PowerPhase> {
+        &self.power_phase
     }
     /// <p>The power connector for the hardware. </p>
     pub fn power_connector(mut self, input: crate::types::PowerConnector) -> Self {
@@ -139,6 +147,10 @@ impl RackPhysicalPropertiesBuilder {
         self.power_connector = input;
         self
     }
+    /// <p>The power connector for the hardware. </p>
+    pub fn get_power_connector(&self) -> &::std::option::Option<crate::types::PowerConnector> {
+        &self.power_connector
+    }
     /// <p>The position of the power feed.</p>
     pub fn power_feed_drop(mut self, input: crate::types::PowerFeedDrop) -> Self {
         self.power_feed_drop = ::std::option::Option::Some(input);
@@ -151,6 +163,10 @@ impl RackPhysicalPropertiesBuilder {
     ) -> Self {
         self.power_feed_drop = input;
         self
+    }
+    /// <p>The position of the power feed.</p>
+    pub fn get_power_feed_drop(&self) -> &::std::option::Option<crate::types::PowerFeedDrop> {
+        &self.power_feed_drop
     }
     /// <p>The uplink speed the rack supports for the connection to the Region. </p>
     pub fn uplink_gbps(mut self, input: crate::types::UplinkGbps) -> Self {
@@ -165,6 +181,10 @@ impl RackPhysicalPropertiesBuilder {
         self.uplink_gbps = input;
         self
     }
+    /// <p>The uplink speed the rack supports for the connection to the Region. </p>
+    pub fn get_uplink_gbps(&self) -> &::std::option::Option<crate::types::UplinkGbps> {
+        &self.uplink_gbps
+    }
     /// <p>The number of uplinks each Outpost network device.</p>
     pub fn uplink_count(mut self, input: crate::types::UplinkCount) -> Self {
         self.uplink_count = ::std::option::Option::Some(input);
@@ -177,6 +197,10 @@ impl RackPhysicalPropertiesBuilder {
     ) -> Self {
         self.uplink_count = input;
         self
+    }
+    /// <p>The number of uplinks each Outpost network device.</p>
+    pub fn get_uplink_count(&self) -> &::std::option::Option<crate::types::UplinkCount> {
+        &self.uplink_count
     }
     /// <p>The type of fiber used to attach the Outpost to the network. </p>
     pub fn fiber_optic_cable_type(mut self, input: crate::types::FiberOpticCableType) -> Self {
@@ -191,6 +215,12 @@ impl RackPhysicalPropertiesBuilder {
         self.fiber_optic_cable_type = input;
         self
     }
+    /// <p>The type of fiber used to attach the Outpost to the network. </p>
+    pub fn get_fiber_optic_cable_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::FiberOpticCableType> {
+        &self.fiber_optic_cable_type
+    }
     /// <p>The type of optical standard used to attach the Outpost to the network. This field is dependent on uplink speed, fiber type, and distance to the upstream device. For more information about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a> in the Amazon Web Services Outposts User Guide. </p>
     pub fn optical_standard(mut self, input: crate::types::OpticalStandard) -> Self {
         self.optical_standard = ::std::option::Option::Some(input);
@@ -203,6 +233,10 @@ impl RackPhysicalPropertiesBuilder {
     ) -> Self {
         self.optical_standard = input;
         self
+    }
+    /// <p>The type of optical standard used to attach the Outpost to the network. This field is dependent on uplink speed, fiber type, and distance to the upstream device. For more information about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a> in the Amazon Web Services Outposts User Guide. </p>
+    pub fn get_optical_standard(&self) -> &::std::option::Option<crate::types::OpticalStandard> {
+        &self.optical_standard
     }
     /// <p>The maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000 lbs (907 kg). </p>
     pub fn maximum_supported_weight_lbs(
@@ -219,6 +253,12 @@ impl RackPhysicalPropertiesBuilder {
     ) -> Self {
         self.maximum_supported_weight_lbs = input;
         self
+    }
+    /// <p>The maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000 lbs (907 kg). </p>
+    pub fn get_maximum_supported_weight_lbs(
+        &self,
+    ) -> &::std::option::Option<crate::types::MaximumSupportedWeightLbs> {
+        &self.maximum_supported_weight_lbs
     }
     /// Consumes the builder and constructs a [`RackPhysicalProperties`](crate::types::RackPhysicalProperties).
     pub fn build(self) -> crate::types::RackPhysicalProperties {

@@ -56,6 +56,10 @@ impl LandmarkBuilder {
         self.r#type = input;
         self
     }
+    /// <p>Type of landmark.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::LandmarkType> {
+        &self.r#type
+    }
     /// <p>The x-coordinate of the landmark expressed as a ratio of the width of the image. The x-coordinate is measured from the left-side of the image. For example, if the image is 700 pixels wide and the x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>
     pub fn x(mut self, input: f32) -> Self {
         self.x = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl LandmarkBuilder {
         self.x = input;
         self
     }
+    /// <p>The x-coordinate of the landmark expressed as a ratio of the width of the image. The x-coordinate is measured from the left-side of the image. For example, if the image is 700 pixels wide and the x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>
+    pub fn get_x(&self) -> &::std::option::Option<f32> {
+        &self.x
+    }
     /// <p>The y-coordinate of the landmark expressed as a ratio of the height of the image. The y-coordinate is measured from the top of the image. For example, if the image height is 200 pixels and the y-coordinate of the landmark is at 50 pixels, this value is 0.25.</p>
     pub fn y(mut self, input: f32) -> Self {
         self.y = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl LandmarkBuilder {
     pub fn set_y(mut self, input: ::std::option::Option<f32>) -> Self {
         self.y = input;
         self
+    }
+    /// <p>The y-coordinate of the landmark expressed as a ratio of the height of the image. The y-coordinate is measured from the top of the image. For example, if the image height is 200 pixels and the y-coordinate of the landmark is at 50 pixels, this value is 0.25.</p>
+    pub fn get_y(&self) -> &::std::option::Option<f32> {
+        &self.y
     }
     /// Consumes the builder and constructs a [`Landmark`](crate::types::Landmark).
     pub fn build(self) -> crate::types::Landmark {

@@ -38,6 +38,12 @@ impl DeleteCertificateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteCertificate as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_certificate::builders::DeleteCertificateInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,5 +143,11 @@ impl DeleteCertificateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_certificate_arn(input);
         self
+    }
+    /// <p>String that contains the ARN of the ACM certificate to be deleted. This must be of the form:</p>
+    /// <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_certificate_arn()
     }
 }

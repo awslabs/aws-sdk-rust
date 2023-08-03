@@ -36,6 +36,10 @@ impl GetComplianceDetailsByResourceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetComplianceDetailsByResource as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_compliance_details_by_resource::builders::GetComplianceDetailsByResourceInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -112,6 +116,10 @@ impl GetComplianceDetailsByResourceFluentBuilder {
         self.inner = self.inner.set_resource_type(input);
         self
     }
+    /// <p>The type of the Amazon Web Services resource for which you want compliance information.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_type()
+    }
     /// <p>The ID of the Amazon Web Services resource for which you want compliance information.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_id(input.into());
@@ -121,6 +129,10 @@ impl GetComplianceDetailsByResourceFluentBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_id(input);
         self
+    }
+    /// <p>The ID of the Amazon Web Services resource for which you want compliance information.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_id()
     }
     /// Appends an item to `ComplianceTypes`.
     ///
@@ -141,6 +153,13 @@ impl GetComplianceDetailsByResourceFluentBuilder {
         self.inner = self.inner.set_compliance_types(input);
         self
     }
+    /// <p>Filters the results by compliance.</p>
+    /// <p> <code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule cannot be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a <code>ComplianceType</code> for filtering results.</p>
+    pub fn get_compliance_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComplianceType>> {
+        self.inner.get_compliance_types()
+    }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -150,6 +169,10 @@ impl GetComplianceDetailsByResourceFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The unique ID of Amazon Web Services resource execution for which you want to retrieve evaluation results. </p> <note>
     /// <p>You need to only provide either a <code>ResourceEvaluationID</code> or a <code>ResourceID </code>and <code>ResourceType</code>.</p>
@@ -170,5 +193,11 @@ impl GetComplianceDetailsByResourceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_evaluation_id(input);
         self
+    }
+    /// <p>The unique ID of Amazon Web Services resource execution for which you want to retrieve evaluation results. </p> <note>
+    /// <p>You need to only provide either a <code>ResourceEvaluationID</code> or a <code>ResourceID </code>and <code>ResourceType</code>.</p>
+    /// </note>
+    pub fn get_resource_evaluation_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_evaluation_id()
     }
 }

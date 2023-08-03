@@ -79,6 +79,14 @@ impl RecommenderConfigBuilder {
         self.item_exploration_config = input;
         self
     }
+    /// <p>Specifies the exploration configuration hyperparameters, including <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure the amount of item exploration Amazon Personalize uses when recommending items. Provide <code>itemExplorationConfig</code> data only if your recommenders generate personalized recommendations for a user (not popular items or similar items).</p>
+    pub fn get_item_exploration_config(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.item_exploration_config
+    }
     /// <p>Specifies the requested minimum provisioned recommendation requests per second that Amazon Personalize will support. A high <code>minRecommendationRequestsPerSecond</code> will increase your bill. We recommend starting with 1 for <code>minRecommendationRequestsPerSecond</code> (the default). Track your usage using Amazon CloudWatch metrics, and increase the <code>minRecommendationRequestsPerSecond</code> as necessary.</p>
     pub fn min_recommendation_requests_per_second(mut self, input: i32) -> Self {
         self.min_recommendation_requests_per_second = ::std::option::Option::Some(input);
@@ -92,6 +100,10 @@ impl RecommenderConfigBuilder {
         self.min_recommendation_requests_per_second = input;
         self
     }
+    /// <p>Specifies the requested minimum provisioned recommendation requests per second that Amazon Personalize will support. A high <code>minRecommendationRequestsPerSecond</code> will increase your bill. We recommend starting with 1 for <code>minRecommendationRequestsPerSecond</code> (the default). Track your usage using Amazon CloudWatch metrics, and increase the <code>minRecommendationRequestsPerSecond</code> as necessary.</p>
+    pub fn get_min_recommendation_requests_per_second(&self) -> &::std::option::Option<i32> {
+        &self.min_recommendation_requests_per_second
+    }
     /// <p> Specifies the training data configuration to use when creating a domain recommender. </p>
     pub fn training_data_config(mut self, input: crate::types::TrainingDataConfig) -> Self {
         self.training_data_config = ::std::option::Option::Some(input);
@@ -104,6 +116,12 @@ impl RecommenderConfigBuilder {
     ) -> Self {
         self.training_data_config = input;
         self
+    }
+    /// <p> Specifies the training data configuration to use when creating a domain recommender. </p>
+    pub fn get_training_data_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::TrainingDataConfig> {
+        &self.training_data_config
     }
     /// Consumes the builder and constructs a [`RecommenderConfig`](crate::types::RecommenderConfig).
     pub fn build(self) -> crate::types::RecommenderConfig {

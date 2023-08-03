@@ -66,6 +66,10 @@ impl AwsWafv2CustomResponseDetailsBuilder {
         self.custom_response_body_key = input;
         self
     }
+    /// <p> References the response body that you want WAF to return to the web request client. You can define a custom response for a rule action or a default web ACL action that is set to block. </p>
+    pub fn get_custom_response_body_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_response_body_key
+    }
     /// <p> The HTTP status code to return to the client. For a list of status codes that you can use in your custom responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html">Supported status codes for custom response</a> in the <i>WAF Developer Guide.</i> </p>
     pub fn response_code(mut self, input: i32) -> Self {
         self.response_code = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl AwsWafv2CustomResponseDetailsBuilder {
     pub fn set_response_code(mut self, input: ::std::option::Option<i32>) -> Self {
         self.response_code = input;
         self
+    }
+    /// <p> The HTTP status code to return to the client. For a list of status codes that you can use in your custom responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html">Supported status codes for custom response</a> in the <i>WAF Developer Guide.</i> </p>
+    pub fn get_response_code(&self) -> &::std::option::Option<i32> {
+        &self.response_code
     }
     /// Appends an item to `response_headers`.
     ///
@@ -94,6 +102,12 @@ impl AwsWafv2CustomResponseDetailsBuilder {
     ) -> Self {
         self.response_headers = input;
         self
+    }
+    /// <p> The HTTP headers to use in the response. </p>
+    pub fn get_response_headers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsWafv2CustomHttpHeader>> {
+        &self.response_headers
     }
     /// Consumes the builder and constructs a [`AwsWafv2CustomResponseDetails`](crate::types::AwsWafv2CustomResponseDetails).
     pub fn build(self) -> crate::types::AwsWafv2CustomResponseDetails {

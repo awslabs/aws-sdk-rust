@@ -39,6 +39,10 @@ impl DeletePackagingConfigurationInputBuilder {
         self.id = input;
         self
     }
+    /// The ID of the MediaPackage VOD PackagingConfiguration resource to delete.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`DeletePackagingConfigurationInput`](crate::operation::delete_packaging_configuration::DeletePackagingConfigurationInput).
     pub fn build(
         self,

@@ -49,6 +49,12 @@ impl BadRequestDetailBuilder {
         self.code_errors = input;
         self
     }
+    /// <p>Contains the list of errors in the request.</p>
+    pub fn get_code_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeError>> {
+        &self.code_errors
+    }
     /// Consumes the builder and constructs a [`BadRequestDetail`](crate::types::BadRequestDetail).
     pub fn build(self) -> crate::types::BadRequestDetail {
         crate::types::BadRequestDetail {

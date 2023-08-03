@@ -112,6 +112,10 @@ impl TestInvokeAuthorizerOutputBuilder {
         self.client_status = input;
         self
     }
+    /// <p>The HTTP status code that the client would have received. Value is 0 if the authorizer succeeded.</p>
+    pub fn get_client_status(&self) -> &::std::option::Option<i32> {
+        &self.client_status
+    }
     /// <p>The API Gateway execution log for the test authorizer request.</p>
     pub fn log(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log = ::std::option::Option::Some(input.into());
@@ -121,6 +125,10 @@ impl TestInvokeAuthorizerOutputBuilder {
     pub fn set_log(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log = input;
         self
+    }
+    /// <p>The API Gateway execution log for the test authorizer request.</p>
+    pub fn get_log(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log
     }
     /// <p>The execution latency of the test authorizer request.</p>
     pub fn latency(mut self, input: i64) -> Self {
@@ -132,6 +140,10 @@ impl TestInvokeAuthorizerOutputBuilder {
         self.latency = input;
         self
     }
+    /// <p>The execution latency of the test authorizer request.</p>
+    pub fn get_latency(&self) -> &::std::option::Option<i64> {
+        &self.latency
+    }
     /// <p>The principal identity returned by the Authorizer</p>
     pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.principal_id = ::std::option::Option::Some(input.into());
@@ -142,6 +154,10 @@ impl TestInvokeAuthorizerOutputBuilder {
         self.principal_id = input;
         self
     }
+    /// <p>The principal identity returned by the Authorizer</p>
+    pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal_id
+    }
     /// <p>The JSON policy document returned by the Authorizer</p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
@@ -151,6 +167,10 @@ impl TestInvokeAuthorizerOutputBuilder {
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy = input;
         self
+    }
+    /// <p>The JSON policy document returned by the Authorizer</p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy
     }
     /// Adds a key-value pair to `authorization`.
     ///
@@ -180,6 +200,14 @@ impl TestInvokeAuthorizerOutputBuilder {
         self.authorization = input;
         self
     }
+    /// <p>The authorization response.</p>
+    pub fn get_authorization(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
+    > {
+        &self.authorization
+    }
     /// Adds a key-value pair to `claims`.
     ///
     /// To override the contents of this collection use [`set_claims`](Self::set_claims).
@@ -204,6 +232,14 @@ impl TestInvokeAuthorizerOutputBuilder {
     ) -> Self {
         self.claims = input;
         self
+    }
+    /// <p>The open identity claims, with any supported custom attributes, returned from the Cognito Your User Pool configured for the API.</p>
+    pub fn get_claims(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.claims
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

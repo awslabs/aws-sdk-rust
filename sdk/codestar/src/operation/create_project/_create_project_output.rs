@@ -70,6 +70,10 @@ impl CreateProjectOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the project.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The Amazon Resource Name (ARN) of the created project.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl CreateProjectOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the created project.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>A user- or system-generated token that identifies the entity that requested project creation.</p>
     pub fn client_request_token(
@@ -96,6 +104,10 @@ impl CreateProjectOutputBuilder {
         self.client_request_token = input;
         self
     }
+    /// <p>A user- or system-generated token that identifies the entity that requested project creation.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
+    }
     /// <p>Reserved for future use.</p>
     pub fn project_template_id(
         mut self,
@@ -111,6 +123,10 @@ impl CreateProjectOutputBuilder {
     ) -> Self {
         self.project_template_id = input;
         self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn get_project_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_template_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

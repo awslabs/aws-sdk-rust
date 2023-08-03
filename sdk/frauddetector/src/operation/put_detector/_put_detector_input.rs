@@ -63,6 +63,10 @@ impl PutDetectorInputBuilder {
         self.detector_id = input;
         self
     }
+    /// <p>The detector ID. </p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
+    }
     /// <p>The description of the detector.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl PutDetectorInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the detector.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The name of the event type.</p>
     pub fn event_type_name(
@@ -88,6 +96,10 @@ impl PutDetectorInputBuilder {
     ) -> Self {
         self.event_type_name = input;
         self
+    }
+    /// <p>The name of the event type.</p>
+    pub fn get_event_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_type_name
     }
     /// Appends an item to `tags`.
     ///
@@ -107,6 +119,10 @@ impl PutDetectorInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A collection of key and value pairs.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`PutDetectorInput`](crate::operation::put_detector::PutDetectorInput).
     pub fn build(

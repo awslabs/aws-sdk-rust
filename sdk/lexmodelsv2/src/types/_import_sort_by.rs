@@ -51,6 +51,10 @@ impl ImportSortByBuilder {
         self.attribute = input;
         self
     }
+    /// <p>The export field to use for sorting.</p>
+    pub fn get_attribute(&self) -> &::std::option::Option<crate::types::ImportSortAttribute> {
+        &self.attribute
+    }
     /// <p>The order to sort the list.</p>
     pub fn order(mut self, input: crate::types::SortOrder) -> Self {
         self.order = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl ImportSortByBuilder {
     pub fn set_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.order = input;
         self
+    }
+    /// <p>The order to sort the list.</p>
+    pub fn get_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.order
     }
     /// Consumes the builder and constructs a [`ImportSortBy`](crate::types::ImportSortBy).
     pub fn build(self) -> crate::types::ImportSortBy {

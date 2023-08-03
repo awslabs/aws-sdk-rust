@@ -40,6 +40,10 @@ impl VirtualNodeGrpcConnectionPoolBuilder {
         self.max_requests = input;
         self
     }
+    /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
+    pub fn get_max_requests(&self) -> &::std::option::Option<i32> {
+        &self.max_requests
+    }
     /// Consumes the builder and constructs a [`VirtualNodeGrpcConnectionPool`](crate::types::VirtualNodeGrpcConnectionPool).
     pub fn build(self) -> crate::types::VirtualNodeGrpcConnectionPool {
         crate::types::VirtualNodeGrpcConnectionPool {

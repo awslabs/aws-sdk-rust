@@ -56,6 +56,10 @@ impl ContinuousHyperParameterRangeBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the hyperparameter.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The minimum allowable value for the hyperparameter.</p>
     pub fn min_value(mut self, input: f64) -> Self {
         self.min_value = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl ContinuousHyperParameterRangeBuilder {
         self.min_value = input;
         self
     }
+    /// <p>The minimum allowable value for the hyperparameter.</p>
+    pub fn get_min_value(&self) -> &::std::option::Option<f64> {
+        &self.min_value
+    }
     /// <p>The maximum allowable value for the hyperparameter.</p>
     pub fn max_value(mut self, input: f64) -> Self {
         self.max_value = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl ContinuousHyperParameterRangeBuilder {
     pub fn set_max_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.max_value = input;
         self
+    }
+    /// <p>The maximum allowable value for the hyperparameter.</p>
+    pub fn get_max_value(&self) -> &::std::option::Option<f64> {
+        &self.max_value
     }
     /// Consumes the builder and constructs a [`ContinuousHyperParameterRange`](crate::types::ContinuousHyperParameterRange).
     pub fn build(self) -> crate::types::ContinuousHyperParameterRange {

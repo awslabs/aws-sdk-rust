@@ -54,6 +54,10 @@ impl GetDataSetDetailsInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The unique identifier of the application that this data set is associated with.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The name of the data set.</p>
     pub fn data_set_name(
         mut self,
@@ -69,6 +73,10 @@ impl GetDataSetDetailsInputBuilder {
     ) -> Self {
         self.data_set_name = input;
         self
+    }
+    /// <p>The name of the data set.</p>
+    pub fn get_data_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_set_name
     }
     /// Consumes the builder and constructs a [`GetDataSetDetailsInput`](crate::operation::get_data_set_details::GetDataSetDetailsInput).
     pub fn build(

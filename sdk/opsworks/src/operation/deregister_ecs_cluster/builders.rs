@@ -37,6 +37,12 @@ impl DeregisterEcsClusterFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeregisterEcsCluster as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::deregister_ecs_cluster::builders::DeregisterEcsClusterInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +138,9 @@ impl DeregisterEcsClusterFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ecs_cluster_arn(input);
         self
+    }
+    /// <p>The cluster's Amazon Resource Number (ARN).</p>
+    pub fn get_ecs_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ecs_cluster_arn()
     }
 }

@@ -36,6 +36,13 @@ impl UpdateAppInstanceUserFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAppInstanceUser as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_app_instance_user::builders::UpdateAppInstanceUserInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl UpdateAppInstanceUserFluentBuilder {
         self.inner = self.inner.set_app_instance_user_arn(input);
         self
     }
+    /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    pub fn get_app_instance_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_instance_user_arn()
+    }
     /// <p>The name of the <code>AppInstanceUser</code>.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -142,6 +153,10 @@ impl UpdateAppInstanceUserFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the <code>AppInstanceUser</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The metadata of the <code>AppInstanceUser</code>.</p>
     pub fn metadata(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.metadata(input.into());
@@ -151,5 +166,9 @@ impl UpdateAppInstanceUserFluentBuilder {
     pub fn set_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_metadata(input);
         self
+    }
+    /// <p>The metadata of the <code>AppInstanceUser</code>.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_metadata()
     }
 }

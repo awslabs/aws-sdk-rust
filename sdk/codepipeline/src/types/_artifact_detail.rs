@@ -48,6 +48,10 @@ impl ArtifactDetailBuilder {
         self.name = input;
         self
     }
+    /// <p>The artifact object name for the action execution.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon S3 artifact location for the action execution.</p>
     pub fn s3location(mut self, input: crate::types::S3Location) -> Self {
         self.s3location = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl ArtifactDetailBuilder {
     ) -> Self {
         self.s3location = input;
         self
+    }
+    /// <p>The Amazon S3 artifact location for the action execution.</p>
+    pub fn get_s3location(&self) -> &::std::option::Option<crate::types::S3Location> {
+        &self.s3location
     }
     /// Consumes the builder and constructs a [`ArtifactDetail`](crate::types::ArtifactDetail).
     pub fn build(self) -> crate::types::ArtifactDetail {

@@ -264,6 +264,10 @@ impl DescribedServerBuilder {
         self.arn = input;
         self
     }
+    /// <p>Specifies the unique Amazon Resource Name (ARN) of the server.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>Specifies the ARN of the Amazon Web ServicesCertificate Manager (ACM) certificate. Required when <code>Protocols</code> is set to <code>FTPS</code>.</p>
     pub fn certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate = ::std::option::Option::Some(input.into());
@@ -273,6 +277,10 @@ impl DescribedServerBuilder {
     pub fn set_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate = input;
         self
+    }
+    /// <p>Specifies the ARN of the Amazon Web ServicesCertificate Manager (ACM) certificate. Required when <code>Protocols</code> is set to <code>FTPS</code>.</p>
+    pub fn get_certificate(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate
     }
     /// <p>The protocol settings that are configured for your server.</p>
     /// <ul>
@@ -299,6 +307,16 @@ impl DescribedServerBuilder {
         self.protocol_details = input;
         self
     }
+    /// <p>The protocol settings that are configured for your server.</p>
+    /// <ul>
+    /// <li> <p> To indicate passive mode (for FTP and FTPS protocols), use the <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer. </p> </li>
+    /// <li> <p>To ignore the error that is generated when the client attempts to use the <code>SETSTAT</code> command on a file that you are uploading to an Amazon S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer Family server ignore the <code>SETSTAT</code> command and upload files without needing to make any changes to your SFTP client, set the value to <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon CloudWatch Logs, so that you can determine when the client is making a <code>SETSTAT</code> call.</p> </li>
+    /// <li> <p>To determine whether your Transfer Family server resumes recent, negotiated sessions through a unique session ID, use the <code>TlsSessionResumptionMode</code> parameter.</p> </li>
+    /// <li> <p> <code>As2Transports</code> indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p> </li>
+    /// </ul>
+    pub fn get_protocol_details(&self) -> &::std::option::Option<crate::types::ProtocolDetails> {
+        &self.protocol_details
+    }
     /// <p>Specifies the domain of the storage system that is used for file transfers.</p>
     pub fn domain(mut self, input: crate::types::Domain) -> Self {
         self.domain = ::std::option::Option::Some(input);
@@ -308,6 +326,10 @@ impl DescribedServerBuilder {
     pub fn set_domain(mut self, input: ::std::option::Option<crate::types::Domain>) -> Self {
         self.domain = input;
         self
+    }
+    /// <p>Specifies the domain of the storage system that is used for file transfers.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<crate::types::Domain> {
+        &self.domain
     }
     /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make your endpoint accessible only to resources within your VPC, or you can attach Elastic IP addresses and make your endpoint accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.</p>
     pub fn endpoint_details(mut self, input: crate::types::EndpointDetails) -> Self {
@@ -322,6 +344,10 @@ impl DescribedServerBuilder {
         self.endpoint_details = input;
         self
     }
+    /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make your endpoint accessible only to resources within your VPC, or you can attach Elastic IP addresses and make your endpoint accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.</p>
+    pub fn get_endpoint_details(&self) -> &::std::option::Option<crate::types::EndpointDetails> {
+        &self.endpoint_details
+    }
     /// <p>Defines the type of endpoint that your server is connected to. If your server is connected to a VPC endpoint, your server isn't accessible over the public internet.</p>
     pub fn endpoint_type(mut self, input: crate::types::EndpointType) -> Self {
         self.endpoint_type = ::std::option::Option::Some(input);
@@ -334,6 +360,10 @@ impl DescribedServerBuilder {
     ) -> Self {
         self.endpoint_type = input;
         self
+    }
+    /// <p>Defines the type of endpoint that your server is connected to. If your server is connected to a VPC endpoint, your server isn't accessible over the public internet.</p>
+    pub fn get_endpoint_type(&self) -> &::std::option::Option<crate::types::EndpointType> {
+        &self.endpoint_type
     }
     /// <p>Specifies the Base64-encoded SHA256 fingerprint of the server's host key. This value is equivalent to the output of the <code>ssh-keygen -l -f my-new-server-key</code> command.</p>
     pub fn host_key_fingerprint(
@@ -351,6 +381,10 @@ impl DescribedServerBuilder {
         self.host_key_fingerprint = input;
         self
     }
+    /// <p>Specifies the Base64-encoded SHA256 fingerprint of the server's host key. This value is equivalent to the output of the <code>ssh-keygen -l -f my-new-server-key</code> command.</p>
+    pub fn get_host_key_fingerprint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host_key_fingerprint
+    }
     /// <p>Specifies information to call a customer-supplied authentication API. This field is not populated when the <code>IdentityProviderType</code> of a server is <code>AWS_DIRECTORY_SERVICE</code> or <code>SERVICE_MANAGED</code>.</p>
     pub fn identity_provider_details(
         mut self,
@@ -366,6 +400,12 @@ impl DescribedServerBuilder {
     ) -> Self {
         self.identity_provider_details = input;
         self
+    }
+    /// <p>Specifies information to call a customer-supplied authentication API. This field is not populated when the <code>IdentityProviderType</code> of a server is <code>AWS_DIRECTORY_SERVICE</code> or <code>SERVICE_MANAGED</code>.</p>
+    pub fn get_identity_provider_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::IdentityProviderDetails> {
+        &self.identity_provider_details
     }
     /// <p>The mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Transfer Family service.</p>
     /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Directory Service for Microsoft Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connector. This option also requires you to provide a Directory ID by using the <code>IdentityProviderDetails</code> parameter.</p>
@@ -386,6 +426,15 @@ impl DescribedServerBuilder {
         self.identity_provider_type = input;
         self
     }
+    /// <p>The mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Transfer Family service.</p>
+    /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Directory Service for Microsoft Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connector. This option also requires you to provide a Directory ID by using the <code>IdentityProviderDetails</code> parameter.</p>
+    /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an Amazon API Gateway endpoint URL to call for authentication by using the <code>IdentityProviderDetails</code> parameter.</p>
+    /// <p>Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code> data type.</p>
+    pub fn get_identity_provider_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::IdentityProviderType> {
+        &self.identity_provider_type
+    }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity in your CloudWatch logs.</p>
     pub fn logging_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.logging_role = ::std::option::Option::Some(input.into());
@@ -395,6 +444,10 @@ impl DescribedServerBuilder {
     pub fn set_logging_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.logging_role = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity in your CloudWatch logs.</p>
+    pub fn get_logging_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.logging_role
     }
     /// <p>Specifies a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
     /// <p>The SFTP protocol does not support post-authentication display banners.</p>
@@ -416,6 +469,14 @@ impl DescribedServerBuilder {
         self.post_authentication_login_banner = input;
         self
     }
+    /// <p>Specifies a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
+    /// <p>The SFTP protocol does not support post-authentication display banners.</p>
+    /// </note>
+    pub fn get_post_authentication_login_banner(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.post_authentication_login_banner
+    }
     /// <p>Specifies a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system:</p>
     /// <p> <code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code> </p>
     pub fn pre_authentication_login_banner(
@@ -433,6 +494,13 @@ impl DescribedServerBuilder {
     ) -> Self {
         self.pre_authentication_login_banner = input;
         self
+    }
+    /// <p>Specifies a string to display when users connect to a server. This string is displayed before the user authenticates. For example, the following banner displays details about using the system:</p>
+    /// <p> <code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code> </p>
+    pub fn get_pre_authentication_login_banner(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.pre_authentication_login_banner
     }
     /// Appends an item to `protocols`.
     ///
@@ -481,6 +549,24 @@ impl DescribedServerBuilder {
         self.protocols = input;
         self
     }
+    /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to your server's endpoint. The available protocols are:</p>
+    /// <ul>
+    /// <li> <p> <code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over SSH</p> </li>
+    /// <li> <p> <code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS encryption</p> </li>
+    /// <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer</p> </li>
+    /// <li> <p> <code>AS2</code> (Applicability Statement 2): used for transporting structured business-to-business data</p> </li>
+    /// </ul> <note>
+    /// <ul>
+    /// <li> <p>If you select <code>FTPS</code>, you must choose a certificate stored in Certificate Manager (ACM) which is used to identify your server when clients connect to it over FTPS.</p> </li>
+    /// <li> <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be either <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or <code>API_GATEWAY</code>.</p> </li>
+    /// <li> <p>If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.</p> </li>
+    /// <li> <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set any of the supported identity types: <code>SERVICE_MANAGED</code>, <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or <code>API_GATEWAY</code>.</p> </li>
+    /// <li> <p>If <code>Protocol</code> includes <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>, and domain must be Amazon S3.</p> </li>
+    /// </ul>
+    /// </note>
+    pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Protocol>> {
+        &self.protocols
+    }
     /// <p>Specifies the name of the security policy that is attached to the server.</p>
     pub fn security_policy_name(
         mut self,
@@ -497,6 +583,10 @@ impl DescribedServerBuilder {
         self.security_policy_name = input;
         self
     }
+    /// <p>Specifies the name of the security policy that is attached to the server.</p>
+    pub fn get_security_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_policy_name
+    }
     /// <p>Specifies the unique system-assigned identifier for a server that you instantiate.</p>
     pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_id = ::std::option::Option::Some(input.into());
@@ -506,6 +596,10 @@ impl DescribedServerBuilder {
     pub fn set_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_id = input;
         self
+    }
+    /// <p>Specifies the unique system-assigned identifier for a server that you instantiate.</p>
+    pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_id
     }
     /// <p>The condition of the server that was described. A value of <code>ONLINE</code> indicates that the server can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p>
     /// <p>The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an intermediate state, either not fully able to respond, or not fully offline. The values of <code>START_FAILED</code> or <code>STOP_FAILED</code> can indicate an error condition.</p>
@@ -518,6 +612,11 @@ impl DescribedServerBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::State>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The condition of the server that was described. A value of <code>ONLINE</code> indicates that the server can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p>
+    /// <p>The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an intermediate state, either not fully able to respond, or not fully offline. The values of <code>START_FAILED</code> or <code>STOP_FAILED</code> can indicate an error condition.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::State> {
+        &self.state
     }
     /// Appends an item to `tags`.
     ///
@@ -538,6 +637,10 @@ impl DescribedServerBuilder {
         self.tags = input;
         self
     }
+    /// <p>Specifies the key-value pairs that you can use to search for and group servers that were assigned to the server that was described.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>Specifies the number of users that are assigned to a server you specified with the <code>ServerId</code>.</p>
     pub fn user_count(mut self, input: i32) -> Self {
         self.user_count = ::std::option::Option::Some(input);
@@ -547,6 +650,10 @@ impl DescribedServerBuilder {
     pub fn set_user_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.user_count = input;
         self
+    }
+    /// <p>Specifies the number of users that are assigned to a server you specified with the <code>ServerId</code>.</p>
+    pub fn get_user_count(&self) -> &::std::option::Option<i32> {
+        &self.user_count
     }
     /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
     /// <p>In addition to a workflow to execute when a file is uploaded completely, <code>WorkflowDetails</code> can also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs when the server session disconnects while the file is still being uploaded.</p>
@@ -562,6 +669,11 @@ impl DescribedServerBuilder {
     ) -> Self {
         self.workflow_details = input;
         self
+    }
+    /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
+    /// <p>In addition to a workflow to execute when a file is uploaded completely, <code>WorkflowDetails</code> can also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs when the server session disconnects while the file is still being uploaded.</p>
+    pub fn get_workflow_details(&self) -> &::std::option::Option<crate::types::WorkflowDetails> {
+        &self.workflow_details
     }
     /// Appends an item to `structured_log_destinations`.
     ///
@@ -594,6 +706,17 @@ impl DescribedServerBuilder {
     ) -> Self {
         self.structured_log_destinations = input;
         self
+    }
+    /// <p>Specifies the log groups to which your server logs are sent.</p>
+    /// <p>To specify a log group, you must provide the ARN for an existing log group. In this case, the format of the log group is as follows:</p>
+    /// <p> <code>arn:aws:logs:region-name:amazon-account-id:log-group:log-group-name:*</code> </p>
+    /// <p>For example, <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code> </p>
+    /// <p>If you have previously specified a log group for a server, you can clear it, and in effect turn off structured logging, by providing an empty value for this parameter in an <code>update-server</code> call. For example:</p>
+    /// <p> <code>update-server --server-id s-1234567890abcdef0 --structured-log-destinations</code> </p>
+    pub fn get_structured_log_destinations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.structured_log_destinations
     }
     /// Consumes the builder and constructs a [`DescribedServer`](crate::types::DescribedServer).
     pub fn build(self) -> crate::types::DescribedServer {

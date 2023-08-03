@@ -43,6 +43,10 @@ impl DeleteProgressUpdateStreamFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteProgressUpdateStream as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_progress_update_stream::builders::DeleteProgressUpdateStreamInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -139,6 +143,10 @@ impl DeleteProgressUpdateStreamFluentBuilder {
         self.inner = self.inner.set_progress_update_stream_name(input);
         self
     }
+    /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
+    pub fn get_progress_update_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_progress_update_stream_name()
+    }
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -148,5 +156,9 @@ impl DeleteProgressUpdateStreamFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

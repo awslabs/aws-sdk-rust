@@ -36,6 +36,13 @@ impl CreateOutpostResolverFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateOutpostResolver as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_outpost_resolver::builders::CreateOutpostResolverInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +141,11 @@ impl CreateOutpostResolverFluentBuilder {
         self.inner = self.inner.set_creator_request_id(input);
         self
     }
+    /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. </p>
+    /// <p> <code>CreatorRequestId</code> can be any unique string, for example, a date/time stamp.</p>
+    pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_creator_request_id()
+    }
     /// <p>A friendly name that lets you easily find a configuration in the Resolver dashboard in the Route&nbsp;53 console.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -144,6 +156,10 @@ impl CreateOutpostResolverFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>A friendly name that lets you easily find a configuration in the Resolver dashboard in the Route&nbsp;53 console.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>Number of Amazon EC2 instances for the Resolver on Outpost. The default and minimal value is 4.</p>
     pub fn instance_count(mut self, input: i32) -> Self {
         self.inner = self.inner.instance_count(input);
@@ -153,6 +169,10 @@ impl CreateOutpostResolverFluentBuilder {
     pub fn set_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_instance_count(input);
         self
+    }
+    /// <p>Number of Amazon EC2 instances for the Resolver on Outpost. The default and minimal value is 4.</p>
+    pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
+        self.inner.get_instance_count()
     }
     /// <p> The Amazon EC2 instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>. </p>
     pub fn preferred_instance_type(
@@ -170,6 +190,10 @@ impl CreateOutpostResolverFluentBuilder {
         self.inner = self.inner.set_preferred_instance_type(input);
         self
     }
+    /// <p> The Amazon EC2 instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>. </p>
+    pub fn get_preferred_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_preferred_instance_type()
+    }
     /// <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the <code>PreferredInstanceType</code>.</p>
     pub fn outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.outpost_arn(input.into());
@@ -179,6 +203,10 @@ impl CreateOutpostResolverFluentBuilder {
     pub fn set_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_outpost_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the <code>PreferredInstanceType</code>.</p>
+    pub fn get_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_outpost_arn()
     }
     /// Appends an item to `Tags`.
     ///
@@ -196,5 +224,9 @@ impl CreateOutpostResolverFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p> A string that helps identify the Route&nbsp;53 Resolvers on Outpost. </p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

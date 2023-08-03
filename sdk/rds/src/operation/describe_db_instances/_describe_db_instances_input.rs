@@ -108,6 +108,14 @@ impl DescribeDbInstancesInputBuilder {
         self.db_instance_identifier = input;
         self
     }
+    /// <p>The user-supplied instance identifier or the Amazon Resource Name (ARN) of the DB instance. If this parameter is specified, information from only the specific DB instance is returned. This parameter isn't case-sensitive.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>If supplied, must match the identifier of an existing DB instance.</p> </li>
+    /// </ul>
+    pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_instance_identifier
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -143,6 +151,18 @@ impl DescribeDbInstancesInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>A filter that specifies one or more DB instances to describe.</p>
+    /// <p>Supported Filters:</p>
+    /// <ul>
+    /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes information about the DB instances associated with the DB clusters identified by these ARNs.</p> </li>
+    /// <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs). The results list only includes information about the DB instances identified by these ARNs.</p> </li>
+    /// <li> <p> <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The results list only includes information about the DB instances identified by these DB instance resource identifiers.</p> </li>
+    /// <li> <p> <code>domain</code> - Accepts Active Directory directory IDs. The results list only includes information about the DB instances associated with these domains.</p> </li>
+    /// <li> <p> <code>engine</code> - Accepts engine names. The results list only includes information about the DB instances for these engines.</p> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
+    }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
@@ -157,6 +177,12 @@ impl DescribeDbInstancesInputBuilder {
         self.max_records = input;
         self
     }
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        &self.max_records
+    }
     /// <p>An optional pagination token provided by a previous <code>DescribeDBInstances</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -166,6 +192,10 @@ impl DescribeDbInstancesInputBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
+    }
+    /// <p>An optional pagination token provided by a previous <code>DescribeDBInstances</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
     }
     /// Consumes the builder and constructs a [`DescribeDbInstancesInput`](crate::operation::describe_db_instances::DescribeDbInstancesInput).
     pub fn build(

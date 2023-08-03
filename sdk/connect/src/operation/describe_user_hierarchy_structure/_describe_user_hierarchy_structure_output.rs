@@ -49,6 +49,12 @@ impl DescribeUserHierarchyStructureOutputBuilder {
         self.hierarchy_structure = input;
         self
     }
+    /// <p>Information about the hierarchy structure.</p>
+    pub fn get_hierarchy_structure(
+        &self,
+    ) -> &::std::option::Option<crate::types::HierarchyStructure> {
+        &self.hierarchy_structure
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

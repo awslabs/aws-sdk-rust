@@ -115,6 +115,10 @@ impl UpdateLocationSmbInputBuilder {
         self.location_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the SMB location to update.</p>
+    pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location_arn
+    }
     /// <p>The subdirectory in the SMB file system that is used to read data from the SMB source location or write data to the SMB destination. The SMB path should be a path that's exported by the SMB server, or a subdirectory of that path. The path should be such that it can be mounted by other SMB clients in your network.</p> <note>
     /// <p> <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.</p>
     /// </note>
@@ -141,6 +145,18 @@ impl UpdateLocationSmbInputBuilder {
         self.subdirectory = input;
         self
     }
+    /// <p>The subdirectory in the SMB file system that is used to read data from the SMB source location or write data to the SMB destination. The SMB path should be a path that's exported by the SMB server, or a subdirectory of that path. The path should be such that it can be mounted by other SMB clients in your network.</p> <note>
+    /// <p> <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.</p>
+    /// </note>
+    /// <p>To transfer all the data in the folder that you specified, DataSync must have permissions to mount the SMB share and to access all the data in that share. To ensure this, do either of the following:</p>
+    /// <ul>
+    /// <li> <p>Ensure that the user/password specified belongs to the user who can mount the share and who has the appropriate permissions for all of the files and directories that you want DataSync to access.</p> </li>
+    /// <li> <p>Use credentials of a member of the Backup Operators group to mount the share. </p> </li>
+    /// </ul>
+    /// <p>Doing either of these options enables the agent to access the data. For the agent to access directories, you must also enable all execute access.</p>
+    pub fn get_subdirectory(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subdirectory
+    }
     /// <p>The user who can mount the share has the permissions to access files and folders in the SMB share.</p>
     pub fn user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user = ::std::option::Option::Some(input.into());
@@ -150,6 +166,10 @@ impl UpdateLocationSmbInputBuilder {
     pub fn set_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user = input;
         self
+    }
+    /// <p>The user who can mount the share has the permissions to access files and folders in the SMB share.</p>
+    pub fn get_user(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user
     }
     /// <p>The name of the Windows domain that the SMB server belongs to.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -161,6 +181,10 @@ impl UpdateLocationSmbInputBuilder {
         self.domain = input;
         self
     }
+    /// <p>The name of the Windows domain that the SMB server belongs to.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
+    }
     /// <p>The password of the user who can mount the share has the permissions to access files and folders in the SMB share.</p>
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
@@ -170,6 +194,10 @@ impl UpdateLocationSmbInputBuilder {
     pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.password = input;
         self
+    }
+    /// <p>The password of the user who can mount the share has the permissions to access files and folders in the SMB share.</p>
+    pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
+        &self.password
     }
     /// Appends an item to `agent_arns`.
     ///
@@ -190,6 +218,10 @@ impl UpdateLocationSmbInputBuilder {
         self.agent_arns = input;
         self
     }
+    /// <p>The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block (SMB) location.</p>
+    pub fn get_agent_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.agent_arns
+    }
     /// <p>Specifies the version of the Server Message Block (SMB) protocol that DataSync uses to access an SMB file server.</p>
     pub fn mount_options(mut self, input: crate::types::SmbMountOptions) -> Self {
         self.mount_options = ::std::option::Option::Some(input);
@@ -202,6 +234,10 @@ impl UpdateLocationSmbInputBuilder {
     ) -> Self {
         self.mount_options = input;
         self
+    }
+    /// <p>Specifies the version of the Server Message Block (SMB) protocol that DataSync uses to access an SMB file server.</p>
+    pub fn get_mount_options(&self) -> &::std::option::Option<crate::types::SmbMountOptions> {
+        &self.mount_options
     }
     /// Consumes the builder and constructs a [`UpdateLocationSmbInput`](crate::operation::update_location_smb::UpdateLocationSmbInput).
     pub fn build(

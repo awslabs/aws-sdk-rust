@@ -64,6 +64,10 @@ impl ServerSideEncryptionUpdateDetailsBuilder {
         self.old_kms_key_id = input;
         self
     }
+    /// <p>The previous KMS key ID the domain was encrypted with, before ServerSideEncryptionConfiguration was updated to a new KMS key ID.</p>
+    pub fn get_old_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.old_kms_key_id
+    }
     /// <p>Status of the server-side encryption update. During an update, if there is an issue with the domain's current or old KMS key ID, such as an inaccessible or disabled key, then the status is FAILED. In order to resolve this, the key needs to be made accessible, and then an UpdateDomain call with the existing server-side encryption configuration will re-attempt this update process.</p>
     pub fn update_status(mut self, input: crate::types::ServerSideEncryptionUpdateStatus) -> Self {
         self.update_status = ::std::option::Option::Some(input);
@@ -77,6 +81,12 @@ impl ServerSideEncryptionUpdateDetailsBuilder {
         self.update_status = input;
         self
     }
+    /// <p>Status of the server-side encryption update. During an update, if there is an issue with the domain's current or old KMS key ID, such as an inaccessible or disabled key, then the status is FAILED. In order to resolve this, the key needs to be made accessible, and then an UpdateDomain call with the existing server-side encryption configuration will re-attempt this update process.</p>
+    pub fn get_update_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServerSideEncryptionUpdateStatus> {
+        &self.update_status
+    }
     /// <p>Message explaining the current UpdateStatus. When the UpdateStatus is FAILED, this message explains the cause of the failure.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -86,6 +96,10 @@ impl ServerSideEncryptionUpdateDetailsBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>Message explaining the current UpdateStatus. When the UpdateStatus is FAILED, this message explains the cause of the failure.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`ServerSideEncryptionUpdateDetails`](crate::types::ServerSideEncryptionUpdateDetails).
     pub fn build(self) -> crate::types::ServerSideEncryptionUpdateDetails {

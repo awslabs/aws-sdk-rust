@@ -78,6 +78,10 @@ impl DeviceSummaryBuilder {
         self.managed_device_id = input;
         self
     }
+    /// <p>The ID of the device.</p>
+    pub fn get_managed_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.managed_device_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the device.</p>
     pub fn managed_device_arn(
         mut self,
@@ -94,6 +98,10 @@ impl DeviceSummaryBuilder {
         self.managed_device_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the device.</p>
+    pub fn get_managed_device_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.managed_device_arn
+    }
     /// <p>The ID of the job used to order the device.</p>
     pub fn associated_with_job(
         mut self,
@@ -109,6 +117,10 @@ impl DeviceSummaryBuilder {
     ) -> Self {
         self.associated_with_job = input;
         self
+    }
+    /// <p>The ID of the job used to order the device.</p>
+    pub fn get_associated_with_job(&self) -> &::std::option::Option<::std::string::String> {
+        &self.associated_with_job
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -134,6 +146,14 @@ impl DeviceSummaryBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`DeviceSummary`](crate::types::DeviceSummary).
     pub fn build(self) -> crate::types::DeviceSummary {

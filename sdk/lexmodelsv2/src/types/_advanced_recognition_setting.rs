@@ -49,6 +49,12 @@ impl AdvancedRecognitionSettingBuilder {
         self.audio_recognition_strategy = input;
         self
     }
+    /// <p>Enables using the slot values as a custom vocabulary for recognizing user utterances.</p>
+    pub fn get_audio_recognition_strategy(
+        &self,
+    ) -> &::std::option::Option<crate::types::AudioRecognitionStrategy> {
+        &self.audio_recognition_strategy
+    }
     /// Consumes the builder and constructs a [`AdvancedRecognitionSetting`](crate::types::AdvancedRecognitionSetting).
     pub fn build(self) -> crate::types::AdvancedRecognitionSetting {
         crate::types::AdvancedRecognitionSetting {

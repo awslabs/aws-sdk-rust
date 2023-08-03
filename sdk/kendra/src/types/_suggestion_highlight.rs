@@ -48,6 +48,10 @@ impl SuggestionHighlightBuilder {
         self.begin_offset = input;
         self
     }
+    /// <p>The zero-based location in the response string where the highlight starts.</p>
+    pub fn get_begin_offset(&self) -> &::std::option::Option<i32> {
+        &self.begin_offset
+    }
     /// <p>The zero-based location in the response string where the highlight ends.</p>
     pub fn end_offset(mut self, input: i32) -> Self {
         self.end_offset = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl SuggestionHighlightBuilder {
     pub fn set_end_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.end_offset = input;
         self
+    }
+    /// <p>The zero-based location in the response string where the highlight ends.</p>
+    pub fn get_end_offset(&self) -> &::std::option::Option<i32> {
+        &self.end_offset
     }
     /// Consumes the builder and constructs a [`SuggestionHighlight`](crate::types::SuggestionHighlight).
     pub fn build(self) -> crate::types::SuggestionHighlight {

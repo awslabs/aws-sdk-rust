@@ -40,6 +40,10 @@ impl ClipRangeBuilder {
         self.end_offset_millis = input;
         self
     }
+    /// <p>The end offset of the clip range, in milliseconds, starting from the beginning of the VOD source associated with the program.</p>
+    pub fn get_end_offset_millis(&self) -> &::std::option::Option<i64> {
+        &self.end_offset_millis
+    }
     /// Consumes the builder and constructs a [`ClipRange`](crate::types::ClipRange).
     pub fn build(self) -> crate::types::ClipRange {
         crate::types::ClipRange {

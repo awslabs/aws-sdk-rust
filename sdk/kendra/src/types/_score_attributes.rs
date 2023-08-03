@@ -43,6 +43,10 @@ impl ScoreAttributesBuilder {
         self.score_confidence = input;
         self
     }
+    /// <p>A relative ranking for how relevant the response is to the query.</p>
+    pub fn get_score_confidence(&self) -> &::std::option::Option<crate::types::ScoreConfidence> {
+        &self.score_confidence
+    }
     /// Consumes the builder and constructs a [`ScoreAttributes`](crate::types::ScoreAttributes).
     pub fn build(self) -> crate::types::ScoreAttributes {
         crate::types::ScoreAttributes {

@@ -47,6 +47,10 @@ impl IdentityBuilder {
         self.source_ip = input;
         self
     }
+    /// <p>The source IP address of the TCP connection making the request to API Gateway.</p>
+    pub fn get_source_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_ip
+    }
     /// <p>The User Agent of the API caller.</p>
     pub fn user_agent(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_agent = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl IdentityBuilder {
     pub fn set_user_agent(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_agent = input;
         self
+    }
+    /// <p>The User Agent of the API caller.</p>
+    pub fn get_user_agent(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_agent
     }
     /// Consumes the builder and constructs a [`Identity`](crate::types::Identity).
     pub fn build(self) -> crate::types::Identity {

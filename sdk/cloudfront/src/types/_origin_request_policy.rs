@@ -67,6 +67,10 @@ impl OriginRequestPolicyBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier for the origin request policy.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The date and time when the origin request policy was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -79,6 +83,10 @@ impl OriginRequestPolicyBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>The date and time when the origin request policy was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// <p>The origin request policy configuration.</p>
     pub fn origin_request_policy_config(
@@ -95,6 +103,12 @@ impl OriginRequestPolicyBuilder {
     ) -> Self {
         self.origin_request_policy_config = input;
         self
+    }
+    /// <p>The origin request policy configuration.</p>
+    pub fn get_origin_request_policy_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::OriginRequestPolicyConfig> {
+        &self.origin_request_policy_config
     }
     /// Consumes the builder and constructs a [`OriginRequestPolicy`](crate::types::OriginRequestPolicy).
     pub fn build(self) -> crate::types::OriginRequestPolicy {

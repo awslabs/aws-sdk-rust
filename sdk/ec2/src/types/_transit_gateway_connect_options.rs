@@ -43,6 +43,10 @@ impl TransitGatewayConnectOptionsBuilder {
         self.protocol = input;
         self
     }
+    /// <p>The tunnel protocol.</p>
+    pub fn get_protocol(&self) -> &::std::option::Option<crate::types::ProtocolValue> {
+        &self.protocol
+    }
     /// Consumes the builder and constructs a [`TransitGatewayConnectOptions`](crate::types::TransitGatewayConnectOptions).
     pub fn build(self) -> crate::types::TransitGatewayConnectOptions {
         crate::types::TransitGatewayConnectOptions {

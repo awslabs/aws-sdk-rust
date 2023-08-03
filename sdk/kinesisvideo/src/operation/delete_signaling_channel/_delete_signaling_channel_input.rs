@@ -49,6 +49,10 @@ impl DeleteSignalingChannelInputBuilder {
         self.channel_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the signaling channel that you want to delete.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_arn
+    }
     /// <p>The current version of the signaling channel that you want to delete. You can obtain the current version by invoking the <code>DescribeSignalingChannel</code> or <code>ListSignalingChannels</code> API operations.</p>
     pub fn current_version(
         mut self,
@@ -64,6 +68,10 @@ impl DeleteSignalingChannelInputBuilder {
     ) -> Self {
         self.current_version = input;
         self
+    }
+    /// <p>The current version of the signaling channel that you want to delete. You can obtain the current version by invoking the <code>DescribeSignalingChannel</code> or <code>ListSignalingChannels</code> API operations.</p>
+    pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.current_version
     }
     /// Consumes the builder and constructs a [`DeleteSignalingChannelInput`](crate::operation::delete_signaling_channel::DeleteSignalingChannelInput).
     pub fn build(

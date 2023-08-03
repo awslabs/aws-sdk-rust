@@ -90,6 +90,12 @@ impl TransitGatewayPropagationBuilder {
         self.transit_gateway_attachment_id = input;
         self
     }
+    /// <p>The ID of the attachment.</p>
+    pub fn get_transit_gateway_attachment_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_attachment_id
+    }
     /// <p>The ID of the resource.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -99,6 +105,10 @@ impl TransitGatewayPropagationBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>The ID of the resource.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// <p>The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated.</p>
     pub fn resource_type(
@@ -116,6 +126,12 @@ impl TransitGatewayPropagationBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated.</p>
+    pub fn get_resource_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransitGatewayAttachmentResourceType> {
+        &self.resource_type
+    }
     /// <p>The ID of the transit gateway route table.</p>
     pub fn transit_gateway_route_table_id(
         mut self,
@@ -132,6 +148,12 @@ impl TransitGatewayPropagationBuilder {
         self.transit_gateway_route_table_id = input;
         self
     }
+    /// <p>The ID of the transit gateway route table.</p>
+    pub fn get_transit_gateway_route_table_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_route_table_id
+    }
     /// <p>The state.</p>
     pub fn state(mut self, input: crate::types::TransitGatewayPropagationState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -144,6 +166,12 @@ impl TransitGatewayPropagationBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state.</p>
+    pub fn get_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransitGatewayPropagationState> {
+        &self.state
     }
     /// <p>The ID of the transit gateway route table announcement.</p>
     pub fn transit_gateway_route_table_announcement_id(
@@ -161,6 +189,12 @@ impl TransitGatewayPropagationBuilder {
     ) -> Self {
         self.transit_gateway_route_table_announcement_id = input;
         self
+    }
+    /// <p>The ID of the transit gateway route table announcement.</p>
+    pub fn get_transit_gateway_route_table_announcement_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_route_table_announcement_id
     }
     /// Consumes the builder and constructs a [`TransitGatewayPropagation`](crate::types::TransitGatewayPropagation).
     pub fn build(self) -> crate::types::TransitGatewayPropagation {

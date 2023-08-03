@@ -40,6 +40,12 @@ impl RegisterUsageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RegisterUsage as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::register_usage::builders::RegisterUsageInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -122,6 +128,10 @@ impl RegisterUsageFluentBuilder {
         self.inner = self.inner.set_product_code(input);
         self
     }
+    /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
+    pub fn get_product_code(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_product_code()
+    }
     /// <p>Public Key Version provided by AWS Marketplace</p>
     pub fn public_key_version(mut self, input: i32) -> Self {
         self.inner = self.inner.public_key_version(input);
@@ -132,6 +142,10 @@ impl RegisterUsageFluentBuilder {
         self.inner = self.inner.set_public_key_version(input);
         self
     }
+    /// <p>Public Key Version provided by AWS Marketplace</p>
+    pub fn get_public_key_version(&self) -> &::std::option::Option<i32> {
+        self.inner.get_public_key_version()
+    }
     /// <p>(Optional) To scope down the registration to a specific running software instance and guard against replay attacks.</p>
     pub fn nonce(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.nonce(input.into());
@@ -141,5 +155,9 @@ impl RegisterUsageFluentBuilder {
     pub fn set_nonce(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_nonce(input);
         self
+    }
+    /// <p>(Optional) To scope down the registration to a specific running software instance and guard against replay attacks.</p>
+    pub fn get_nonce(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_nonce()
     }
 }

@@ -46,6 +46,10 @@ impl DecodeConfigBuilder {
         self.unvalidated_json = input;
         self
     }
+    /// <p>Unvalidated JSON of a decode <code>Config</code>.</p>
+    pub fn get_unvalidated_json(&self) -> &::std::option::Option<::std::string::String> {
+        &self.unvalidated_json
+    }
     /// Consumes the builder and constructs a [`DecodeConfig`](crate::types::DecodeConfig).
     pub fn build(self) -> crate::types::DecodeConfig {
         crate::types::DecodeConfig {

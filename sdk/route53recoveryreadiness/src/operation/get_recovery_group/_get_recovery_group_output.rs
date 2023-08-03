@@ -88,6 +88,10 @@ impl GetRecoveryGroupOutputBuilder {
         self.cells = input;
         self
     }
+    /// <p>A list of a cell's Amazon Resource Names (ARNs).</p>
+    pub fn get_cells(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.cells
+    }
     /// <p>The Amazon Resource Name (ARN) for the recovery group.</p>
     pub fn recovery_group_arn(
         mut self,
@@ -104,6 +108,10 @@ impl GetRecoveryGroupOutputBuilder {
         self.recovery_group_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the recovery group.</p>
+    pub fn get_recovery_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recovery_group_arn
+    }
     /// <p>The name of the recovery group.</p>
     pub fn recovery_group_name(
         mut self,
@@ -119,6 +127,10 @@ impl GetRecoveryGroupOutputBuilder {
     ) -> Self {
         self.recovery_group_name = input;
         self
+    }
+    /// <p>The name of the recovery group.</p>
+    pub fn get_recovery_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recovery_group_name
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -144,6 +156,14 @@ impl GetRecoveryGroupOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags associated with the recovery group.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

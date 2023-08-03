@@ -59,6 +59,10 @@ impl ListLabelGroupsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `label_group_summaries`.
     ///
     /// To override the contents of this collection use [`set_label_group_summaries`](Self::set_label_group_summaries).
@@ -77,6 +81,12 @@ impl ListLabelGroupsOutputBuilder {
     ) -> Self {
         self.label_group_summaries = input;
         self
+    }
+    /// <p> A summary of the label groups. </p>
+    pub fn get_label_group_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LabelGroupSummary>> {
+        &self.label_group_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

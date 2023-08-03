@@ -54,6 +54,10 @@ impl BatchGetApplicationRevisionsInputBuilder {
         self.application_name = input;
         self
     }
+    /// <p>The name of an CodeDeploy application about which to get revision information.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// Appends an item to `revisions`.
     ///
     /// To override the contents of this collection use [`set_revisions`](Self::set_revisions).
@@ -72,6 +76,12 @@ impl BatchGetApplicationRevisionsInputBuilder {
     ) -> Self {
         self.revisions = input;
         self
+    }
+    /// <p>An array of <code>RevisionLocation</code> objects that specify information to get about the application revisions, including type and location. The maximum number of <code>RevisionLocation</code> objects you can specify is 25.</p>
+    pub fn get_revisions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RevisionLocation>> {
+        &self.revisions
     }
     /// Consumes the builder and constructs a [`BatchGetApplicationRevisionsInput`](crate::operation::batch_get_application_revisions::BatchGetApplicationRevisionsInput).
     pub fn build(

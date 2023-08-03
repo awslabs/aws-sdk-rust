@@ -39,6 +39,10 @@ impl DescribeChannelInputBuilder {
         self.id = input;
         self
     }
+    /// The ID of a Channel.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`DescribeChannelInput`](crate::operation::describe_channel::DescribeChannelInput).
     pub fn build(
         self,

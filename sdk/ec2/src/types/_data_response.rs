@@ -88,6 +88,10 @@ impl DataResponseBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID passed in the <code>DataQuery</code>.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The Region or Availability Zone that's the source for the data query. For example, <code>us-east-1</code>.</p>
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source = ::std::option::Option::Some(input.into());
@@ -97,6 +101,10 @@ impl DataResponseBuilder {
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source = input;
         self
+    }
+    /// <p>The Region or Availability Zone that's the source for the data query. For example, <code>us-east-1</code>.</p>
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source
     }
     /// <p>The Region or Availability Zone that's the destination for the data query. For example, <code>eu-west-1</code>.</p>
     pub fn destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -108,6 +116,10 @@ impl DataResponseBuilder {
         self.destination = input;
         self
     }
+    /// <p>The Region or Availability Zone that's the destination for the data query. For example, <code>eu-west-1</code>.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination
+    }
     /// <p>The metric used for the network performance request. Only <code>aggregate-latency</code> is supported, which shows network latency during a specified period. </p>
     pub fn metric(mut self, input: crate::types::MetricType) -> Self {
         self.metric = ::std::option::Option::Some(input);
@@ -117,6 +129,10 @@ impl DataResponseBuilder {
     pub fn set_metric(mut self, input: ::std::option::Option<crate::types::MetricType>) -> Self {
         self.metric = input;
         self
+    }
+    /// <p>The metric used for the network performance request. Only <code>aggregate-latency</code> is supported, which shows network latency during a specified period. </p>
+    pub fn get_metric(&self) -> &::std::option::Option<crate::types::MetricType> {
+        &self.metric
     }
     /// <p>The statistic used for the network performance request.</p>
     pub fn statistic(mut self, input: crate::types::StatisticType) -> Self {
@@ -131,6 +147,10 @@ impl DataResponseBuilder {
         self.statistic = input;
         self
     }
+    /// <p>The statistic used for the network performance request.</p>
+    pub fn get_statistic(&self) -> &::std::option::Option<crate::types::StatisticType> {
+        &self.statistic
+    }
     /// <p>The period used for the network performance request.</p>
     pub fn period(mut self, input: crate::types::PeriodType) -> Self {
         self.period = ::std::option::Option::Some(input);
@@ -140,6 +160,10 @@ impl DataResponseBuilder {
     pub fn set_period(mut self, input: ::std::option::Option<crate::types::PeriodType>) -> Self {
         self.period = input;
         self
+    }
+    /// <p>The period used for the network performance request.</p>
+    pub fn get_period(&self) -> &::std::option::Option<crate::types::PeriodType> {
+        &self.period
     }
     /// Appends an item to `metric_points`.
     ///
@@ -159,6 +183,12 @@ impl DataResponseBuilder {
     ) -> Self {
         self.metric_points = input;
         self
+    }
+    /// <p>A list of <code>MetricPoint</code> objects.</p>
+    pub fn get_metric_points(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricPoint>> {
+        &self.metric_points
     }
     /// Consumes the builder and constructs a [`DataResponse`](crate::types::DataResponse).
     pub fn build(self) -> crate::types::DataResponse {

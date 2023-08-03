@@ -49,6 +49,10 @@ impl AssociateTrustStoreInputBuilder {
         self.portal_arn = input;
         self
     }
+    /// <p>The ARN of the web portal.</p>
+    pub fn get_portal_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.portal_arn
+    }
     /// <p>The ARN of the trust store.</p>
     pub fn trust_store_arn(
         mut self,
@@ -64,6 +68,10 @@ impl AssociateTrustStoreInputBuilder {
     ) -> Self {
         self.trust_store_arn = input;
         self
+    }
+    /// <p>The ARN of the trust store.</p>
+    pub fn get_trust_store_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trust_store_arn
     }
     /// Consumes the builder and constructs a [`AssociateTrustStoreInput`](crate::operation::associate_trust_store::AssociateTrustStoreInput).
     pub fn build(

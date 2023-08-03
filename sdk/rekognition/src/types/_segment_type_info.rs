@@ -48,6 +48,10 @@ impl SegmentTypeInfoBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of a segment (technical cue or shot detection).</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::SegmentType> {
+        &self.r#type
+    }
     /// <p>The version of the model used to detect segments.</p>
     pub fn model_version(
         mut self,
@@ -63,6 +67,10 @@ impl SegmentTypeInfoBuilder {
     ) -> Self {
         self.model_version = input;
         self
+    }
+    /// <p>The version of the model used to detect segments.</p>
+    pub fn get_model_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_version
     }
     /// Consumes the builder and constructs a [`SegmentTypeInfo`](crate::types::SegmentTypeInfo).
     pub fn build(self) -> crate::types::SegmentTypeInfo {

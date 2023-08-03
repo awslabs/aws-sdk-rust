@@ -41,6 +41,10 @@ impl AssociateSkillWithUsersInputBuilder {
         self.skill_id = input;
         self
     }
+    /// <p>The private skill ID you want to make available to enrolled users.</p>
+    pub fn get_skill_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.skill_id
+    }
     /// Consumes the builder and constructs a [`AssociateSkillWithUsersInput`](crate::operation::associate_skill_with_users::AssociateSkillWithUsersInput).
     pub fn build(
         self,

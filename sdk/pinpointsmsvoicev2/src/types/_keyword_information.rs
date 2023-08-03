@@ -56,6 +56,10 @@ impl KeywordInformationBuilder {
         self.keyword = input;
         self
     }
+    /// <p>The keyword as a string.</p>
+    pub fn get_keyword(&self) -> &::std::option::Option<::std::string::String> {
+        &self.keyword
+    }
     /// <p>A custom message that can be used with the keyword.</p>
     pub fn keyword_message(
         mut self,
@@ -72,6 +76,10 @@ impl KeywordInformationBuilder {
         self.keyword_message = input;
         self
     }
+    /// <p>A custom message that can be used with the keyword.</p>
+    pub fn get_keyword_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.keyword_message
+    }
     /// <p>The action to perform for the keyword.</p>
     pub fn keyword_action(mut self, input: crate::types::KeywordAction) -> Self {
         self.keyword_action = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl KeywordInformationBuilder {
     ) -> Self {
         self.keyword_action = input;
         self
+    }
+    /// <p>The action to perform for the keyword.</p>
+    pub fn get_keyword_action(&self) -> &::std::option::Option<crate::types::KeywordAction> {
+        &self.keyword_action
     }
     /// Consumes the builder and constructs a [`KeywordInformation`](crate::types::KeywordInformation).
     pub fn build(self) -> crate::types::KeywordInformation {

@@ -63,6 +63,10 @@ impl CreatePlayerSessionInputBuilder {
         self.game_session_id = input;
         self
     }
+    /// <p>A unique identifier for the game session to add a player to.</p>
+    pub fn get_game_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.game_session_id
+    }
     /// <p>A unique identifier for a player. Player IDs are developer-defined.</p>
     pub fn player_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.player_id = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl CreatePlayerSessionInputBuilder {
         self.player_id = input;
         self
     }
+    /// <p>A unique identifier for a player. Player IDs are developer-defined.</p>
+    pub fn get_player_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.player_id
+    }
     /// <p>Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game.</p>
     pub fn player_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.player_data = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl CreatePlayerSessionInputBuilder {
     pub fn set_player_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.player_data = input;
         self
+    }
+    /// <p>Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game.</p>
+    pub fn get_player_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.player_data
     }
     /// Consumes the builder and constructs a [`CreatePlayerSessionInput`](crate::operation::create_player_session::CreatePlayerSessionInput).
     pub fn build(

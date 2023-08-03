@@ -36,6 +36,12 @@ impl DeleteDestinationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteDestination as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_destination::builders::DeleteDestinationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +131,9 @@ impl DeleteDestinationFluentBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
+    }
+    /// Destination ARN.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
     }
 }

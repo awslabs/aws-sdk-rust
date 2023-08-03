@@ -63,6 +63,10 @@ impl ListTagsForStreamOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If you specify this parameter and the result of a <code>ListTags</code> call is truncated, the response includes a token that you can use in the next request to fetch the next set of tags.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -87,6 +91,14 @@ impl ListTagsForStreamOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A map of tag keys and values associated with the specified stream.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

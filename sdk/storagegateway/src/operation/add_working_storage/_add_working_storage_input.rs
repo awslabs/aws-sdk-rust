@@ -52,6 +52,10 @@ impl AddWorkingStorageInputBuilder {
         self.gateway_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_arn
+    }
     /// Appends an item to `disk_ids`.
     ///
     /// To override the contents of this collection use [`set_disk_ids`](Self::set_disk_ids).
@@ -70,6 +74,10 @@ impl AddWorkingStorageInputBuilder {
     ) -> Self {
         self.disk_ids = input;
         self
+    }
+    /// <p>An array of strings that identify disks that are to be configured as working storage. Each string has a minimum length of 1 and maximum length of 300. You can get the disk IDs from the <code>ListLocalDisks</code> API.</p>
+    pub fn get_disk_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.disk_ids
     }
     /// Consumes the builder and constructs a [`AddWorkingStorageInput`](crate::operation::add_working_storage::AddWorkingStorageInput).
     pub fn build(

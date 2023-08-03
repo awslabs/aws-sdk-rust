@@ -80,6 +80,10 @@ impl DescribeInstancePatchesInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The ID of the managed node whose patch state information should be retrieved.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -113,6 +117,19 @@ impl DescribeInstancePatchesInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>Each element in the array is a structure containing a key-value pair.</p>
+    /// <p>Supported keys for <code>DescribeInstancePatches</code>include the following:</p>
+    /// <ul>
+    /// <li> <p> <b> <code>Classification</code> </b> </p> <p>Sample values: <code>Security</code> | <code>SecurityUpdates</code> </p> </li>
+    /// <li> <p> <b> <code>KBId</code> </b> </p> <p>Sample values: <code>KB4480056</code> | <code>java-1.7.0-openjdk.x86_64</code> </p> </li>
+    /// <li> <p> <b> <code>Severity</code> </b> </p> <p>Sample values: <code>Important</code> | <code>Medium</code> | <code>Low</code> </p> </li>
+    /// <li> <p> <b> <code>State</code> </b> </p> <p>Sample values: <code>Installed</code> | <code>InstalledOther</code> | <code>InstalledPendingReboot</code> </p> </li>
+    /// </ul>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOrchestratorFilter>> {
+        &self.filters
+    }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -123,6 +140,10 @@ impl DescribeInstancePatchesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of patches to return (per page).</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -132,6 +153,10 @@ impl DescribeInstancePatchesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of patches to return (per page).</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeInstancePatchesInput`](crate::operation::describe_instance_patches::DescribeInstancePatchesInput).
     pub fn build(

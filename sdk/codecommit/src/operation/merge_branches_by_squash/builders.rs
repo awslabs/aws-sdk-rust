@@ -36,6 +36,13 @@ impl MergeBranchesBySquashFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the MergeBranchesBySquash as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::merge_branches_by_squash::builders::MergeBranchesBySquashInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +139,10 @@ impl MergeBranchesBySquashFluentBuilder {
         self.inner = self.inner.set_repository_name(input);
         self
     }
+    /// <p>The name of the repository where you want to merge two branches.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_repository_name()
+    }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
     pub fn source_commit_specifier(
         mut self,
@@ -149,6 +160,10 @@ impl MergeBranchesBySquashFluentBuilder {
         self
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    pub fn get_source_commit_specifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_commit_specifier()
+    }
+    /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
     pub fn destination_commit_specifier(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -163,6 +178,12 @@ impl MergeBranchesBySquashFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_destination_commit_specifier(input);
         self
+    }
+    /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    pub fn get_destination_commit_specifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_commit_specifier()
     }
     /// <p>The branch where the merge is applied. </p>
     pub fn target_branch(
@@ -180,6 +201,10 @@ impl MergeBranchesBySquashFluentBuilder {
         self.inner = self.inner.set_target_branch(input);
         self
     }
+    /// <p>The branch where the merge is applied. </p>
+    pub fn get_target_branch(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_branch()
+    }
     /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
     pub fn conflict_detail_level(
         mut self,
@@ -195,6 +220,12 @@ impl MergeBranchesBySquashFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_conflict_detail_level(input);
         self
+    }
+    /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
+    pub fn get_conflict_detail_level(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConflictDetailLevelTypeEnum> {
+        self.inner.get_conflict_detail_level()
     }
     /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
     pub fn conflict_resolution_strategy(
@@ -212,6 +243,12 @@ impl MergeBranchesBySquashFluentBuilder {
         self.inner = self.inner.set_conflict_resolution_strategy(input);
         self
     }
+    /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
+    pub fn get_conflict_resolution_strategy(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConflictResolutionStrategyTypeEnum> {
+        self.inner.get_conflict_resolution_strategy()
+    }
     /// <p>The name of the author who created the commit. This information is used as both the author and committer for the commit.</p>
     pub fn author_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.author_name(input.into());
@@ -222,6 +259,10 @@ impl MergeBranchesBySquashFluentBuilder {
         self.inner = self.inner.set_author_name(input);
         self
     }
+    /// <p>The name of the author who created the commit. This information is used as both the author and committer for the commit.</p>
+    pub fn get_author_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_author_name()
+    }
     /// <p>The email address of the person merging the branches. This information is used in the commit information for the merge.</p>
     pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.email(input.into());
@@ -231,6 +272,10 @@ impl MergeBranchesBySquashFluentBuilder {
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_email(input);
         self
+    }
+    /// <p>The email address of the person merging the branches. This information is used in the commit information for the merge.</p>
+    pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_email()
     }
     /// <p>The commit message for the merge.</p>
     pub fn commit_message(
@@ -248,6 +293,10 @@ impl MergeBranchesBySquashFluentBuilder {
         self.inner = self.inner.set_commit_message(input);
         self
     }
+    /// <p>The commit message for the merge.</p>
+    pub fn get_commit_message(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_commit_message()
+    }
     /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If this is specified as true, a .gitkeep file is created for empty folders. The default is false.</p>
     pub fn keep_empty_folders(mut self, input: bool) -> Self {
         self.inner = self.inner.keep_empty_folders(input);
@@ -257,6 +306,10 @@ impl MergeBranchesBySquashFluentBuilder {
     pub fn set_keep_empty_folders(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_keep_empty_folders(input);
         self
+    }
+    /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If this is specified as true, a .gitkeep file is created for empty folders. The default is false.</p>
+    pub fn get_keep_empty_folders(&self) -> &::std::option::Option<bool> {
+        self.inner.get_keep_empty_folders()
     }
     /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.</p>
     pub fn conflict_resolution(mut self, input: crate::types::ConflictResolution) -> Self {
@@ -270,5 +323,11 @@ impl MergeBranchesBySquashFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_conflict_resolution(input);
         self
+    }
+    /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.</p>
+    pub fn get_conflict_resolution(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConflictResolution> {
+        self.inner.get_conflict_resolution()
     }
 }

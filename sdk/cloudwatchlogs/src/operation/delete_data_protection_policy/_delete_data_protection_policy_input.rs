@@ -45,6 +45,10 @@ impl DeleteDataProtectionPolicyInputBuilder {
         self.log_group_identifier = input;
         self
     }
+    /// <p>The name or ARN of the log group that you want to delete the data protection policy for.</p>
+    pub fn get_log_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group_identifier
+    }
     /// Consumes the builder and constructs a [`DeleteDataProtectionPolicyInput`](crate::operation::delete_data_protection_policy::DeleteDataProtectionPolicyInput).
     pub fn build(
         self,

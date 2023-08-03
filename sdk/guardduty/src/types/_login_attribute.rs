@@ -64,6 +64,10 @@ impl LoginAttributeBuilder {
         self.user = input;
         self
     }
+    /// <p>Indicates the user name which attempted to log in.</p>
+    pub fn get_user(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user
+    }
     /// <p>Indicates the application name used to attempt log in.</p>
     pub fn application(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl LoginAttributeBuilder {
     pub fn set_application(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application = input;
         self
+    }
+    /// <p>Indicates the application name used to attempt log in.</p>
+    pub fn get_application(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application
     }
     /// <p>Represents the sum of failed (unsuccessful) login attempts made to establish a connection to the database instance.</p>
     pub fn failed_login_attempts(mut self, input: i32) -> Self {
@@ -84,6 +92,10 @@ impl LoginAttributeBuilder {
         self.failed_login_attempts = input;
         self
     }
+    /// <p>Represents the sum of failed (unsuccessful) login attempts made to establish a connection to the database instance.</p>
+    pub fn get_failed_login_attempts(&self) -> &::std::option::Option<i32> {
+        &self.failed_login_attempts
+    }
     /// <p>Represents the sum of successful connections (a correct combination of login attributes) made to the database instance by the actor.</p>
     pub fn successful_login_attempts(mut self, input: i32) -> Self {
         self.successful_login_attempts = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl LoginAttributeBuilder {
     pub fn set_successful_login_attempts(mut self, input: ::std::option::Option<i32>) -> Self {
         self.successful_login_attempts = input;
         self
+    }
+    /// <p>Represents the sum of successful connections (a correct combination of login attributes) made to the database instance by the actor.</p>
+    pub fn get_successful_login_attempts(&self) -> &::std::option::Option<i32> {
+        &self.successful_login_attempts
     }
     /// Consumes the builder and constructs a [`LoginAttribute`](crate::types::LoginAttribute).
     pub fn build(self) -> crate::types::LoginAttribute {

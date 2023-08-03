@@ -36,6 +36,12 @@ impl CreatePackageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreatePackage as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_package::builders::CreatePackageInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl CreatePackageFluentBuilder {
         self.inner = self.inner.set_package_name(input);
         self
     }
+    /// <p>Unique name for the package.</p>
+    pub fn get_package_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_package_name()
+    }
     /// <p>The type of package.</p>
     pub fn package_type(mut self, input: crate::types::PackageType) -> Self {
         self.inner = self.inner.package_type(input);
@@ -130,6 +140,10 @@ impl CreatePackageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_package_type(input);
         self
+    }
+    /// <p>The type of package.</p>
+    pub fn get_package_type(&self) -> &::std::option::Option<crate::types::PackageType> {
+        self.inner.get_package_type()
     }
     /// <p>Description of the package.</p>
     pub fn package_description(
@@ -147,6 +161,10 @@ impl CreatePackageFluentBuilder {
         self.inner = self.inner.set_package_description(input);
         self
     }
+    /// <p>Description of the package.</p>
+    pub fn get_package_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_package_description()
+    }
     /// <p>The Amazon S3 location from which to import the package.</p>
     pub fn package_source(mut self, input: crate::types::PackageSource) -> Self {
         self.inner = self.inner.package_source(input);
@@ -159,5 +177,9 @@ impl CreatePackageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_package_source(input);
         self
+    }
+    /// <p>The Amazon S3 location from which to import the package.</p>
+    pub fn get_package_source(&self) -> &::std::option::Option<crate::types::PackageSource> {
+        self.inner.get_package_source()
     }
 }

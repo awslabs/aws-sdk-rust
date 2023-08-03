@@ -54,6 +54,10 @@ impl ResourceLocationBuilder {
         self.availability_zone = input;
         self
     }
+    /// <p>The Availability Zone. Follows the format <code>us-east-2a</code> (case-sensitive).</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p>The Amazon Web Services Region name.</p>
     pub fn region_name(mut self, input: crate::types::RegionName) -> Self {
         self.region_name = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl ResourceLocationBuilder {
     ) -> Self {
         self.region_name = input;
         self
+    }
+    /// <p>The Amazon Web Services Region name.</p>
+    pub fn get_region_name(&self) -> &::std::option::Option<crate::types::RegionName> {
+        &self.region_name
     }
     /// Consumes the builder and constructs a [`ResourceLocation`](crate::types::ResourceLocation).
     pub fn build(self) -> crate::types::ResourceLocation {

@@ -54,6 +54,10 @@ impl DeleteContainerImageInputBuilder {
         self.service_name = input;
         self
     }
+    /// <p>The name of the container service for which to delete a registered container image.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
+    }
     /// <p>The name of the container image to delete from the container service.</p>
     /// <p>Use the <code>GetContainerImages</code> action to get the name of the container images that are registered to a container service.</p> <note>
     /// <p>Container images sourced from your Lightsail container service, that are registered and stored on your service, start with a colon (<code>:</code>). For example, <code>:container-service-1.mystaticwebsite.1</code>. Container images sourced from a public registry like Docker Hub don't start with a colon. For example, <code>nginx:latest</code> or <code>nginx</code>.</p>
@@ -69,6 +73,13 @@ impl DeleteContainerImageInputBuilder {
     pub fn set_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image = input;
         self
+    }
+    /// <p>The name of the container image to delete from the container service.</p>
+    /// <p>Use the <code>GetContainerImages</code> action to get the name of the container images that are registered to a container service.</p> <note>
+    /// <p>Container images sourced from your Lightsail container service, that are registered and stored on your service, start with a colon (<code>:</code>). For example, <code>:container-service-1.mystaticwebsite.1</code>. Container images sourced from a public registry like Docker Hub don't start with a colon. For example, <code>nginx:latest</code> or <code>nginx</code>.</p>
+    /// </note>
+    pub fn get_image(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image
     }
     /// Consumes the builder and constructs a [`DeleteContainerImageInput`](crate::operation::delete_container_image::DeleteContainerImageInput).
     pub fn build(

@@ -36,6 +36,10 @@ impl DescribeDeviceEc2InstancesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeDeviceEc2Instances as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_device_ec2_instances::builders::DescribeDeviceEc2InstancesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl DescribeDeviceEc2InstancesFluentBuilder {
         self.inner = self.inner.set_managed_device_id(input);
         self
     }
+    /// <p>The ID of the managed device.</p>
+    pub fn get_managed_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_managed_device_id()
+    }
     /// Appends an item to `instanceIds`.
     ///
     /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
@@ -148,5 +156,11 @@ impl DescribeDeviceEc2InstancesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_instance_ids(input);
         self
+    }
+    /// <p>A list of instance IDs associated with the managed device.</p>
+    pub fn get_instance_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_instance_ids()
     }
 }

@@ -70,6 +70,12 @@ impl ListIndicesOutputBuilder {
         self.index_configuration_summary_items = input;
         self
     }
+    /// <p>An array of summary information on the configuration of one or more indexes.</p>
+    pub fn get_index_configuration_summary_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IndexConfigurationSummary>> {
+        &self.index_configuration_summary_items
+    }
     /// <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of indexes.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -79,6 +85,10 @@ impl ListIndicesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of indexes.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

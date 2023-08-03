@@ -36,6 +36,12 @@ impl ListAssetPropertiesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListAssetProperties as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_asset_properties::builders::ListAssetPropertiesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl ListAssetPropertiesFluentBuilder {
         self.inner = self.inner.set_asset_id(input);
         self
     }
+    /// <p>The ID of the asset.</p>
+    pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_asset_id()
+    }
     /// <p>The token to be used for the next set of paginated results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -147,6 +157,10 @@ impl ListAssetPropertiesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return for each paginated request. If not specified, the default value is 50.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -156,6 +170,10 @@ impl ListAssetPropertiesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return for each paginated request. If not specified, the default value is 50.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p> Filters the requested list of asset properties. You can choose one of the following options:</p>
     /// <ul>
@@ -179,5 +197,14 @@ impl ListAssetPropertiesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_filter(input);
         self
+    }
+    /// <p> Filters the requested list of asset properties. You can choose one of the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>ALL</code> – The list includes all asset properties for a given asset model ID. </p> </li>
+    /// <li> <p> <code>BASE</code> – The list includes only base asset properties for a given asset model ID. </p> </li>
+    /// </ul>
+    /// <p>Default: <code>BASE</code> </p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::ListAssetPropertiesFilter> {
+        self.inner.get_filter()
     }
 }

@@ -65,6 +65,12 @@ impl ListEventTrackersOutputBuilder {
         self.event_trackers = input;
         self
     }
+    /// <p>A list of event trackers.</p>
+    pub fn get_event_trackers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventTrackerSummary>> {
+        &self.event_trackers
+    }
     /// <p>A token for getting the next set of event trackers (if they exist).</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -74,6 +80,10 @@ impl ListEventTrackersOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token for getting the next set of event trackers (if they exist).</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

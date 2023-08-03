@@ -127,6 +127,10 @@ impl AvcIntraSettingsBuilder {
         self.avc_intra_class = input;
         self
     }
+    /// Specify the AVC-Intra class of your output. The AVC-Intra class selection determines the output video bit rate depending on the frame rate of the output. Outputs with higher class values have higher bitrates and improved image quality. Note that for Class 4K/2K, MediaConvert supports only 4:2:2 chroma subsampling.
+    pub fn get_avc_intra_class(&self) -> &::std::option::Option<crate::types::AvcIntraClass> {
+        &self.avc_intra_class
+    }
     /// Optional when you set AVC-Intra class to Class 4K/2K. When you set AVC-Intra class to a different value, this object isn't allowed.
     pub fn avc_intra_uhd_settings(mut self, input: crate::types::AvcIntraUhdSettings) -> Self {
         self.avc_intra_uhd_settings = ::std::option::Option::Some(input);
@@ -140,6 +144,12 @@ impl AvcIntraSettingsBuilder {
         self.avc_intra_uhd_settings = input;
         self
     }
+    /// Optional when you set AVC-Intra class to Class 4K/2K. When you set AVC-Intra class to a different value, this object isn't allowed.
+    pub fn get_avc_intra_uhd_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::AvcIntraUhdSettings> {
+        &self.avc_intra_uhd_settings
+    }
     /// If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction.
     pub fn framerate_control(mut self, input: crate::types::AvcIntraFramerateControl) -> Self {
         self.framerate_control = ::std::option::Option::Some(input);
@@ -152,6 +162,12 @@ impl AvcIntraSettingsBuilder {
     ) -> Self {
         self.framerate_control = input;
         self
+    }
+    /// If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction.
+    pub fn get_framerate_control(
+        &self,
+    ) -> &::std::option::Option<crate::types::AvcIntraFramerateControl> {
+        &self.framerate_control
     }
     /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96.
     pub fn framerate_conversion_algorithm(
@@ -169,6 +185,12 @@ impl AvcIntraSettingsBuilder {
         self.framerate_conversion_algorithm = input;
         self
     }
+    /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96.
+    pub fn get_framerate_conversion_algorithm(
+        &self,
+    ) -> &::std::option::Option<crate::types::AvcIntraFramerateConversionAlgorithm> {
+        &self.framerate_conversion_algorithm
+    }
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub fn framerate_denominator(mut self, input: i32) -> Self {
         self.framerate_denominator = ::std::option::Option::Some(input);
@@ -179,6 +201,10 @@ impl AvcIntraSettingsBuilder {
         self.framerate_denominator = input;
         self
     }
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    pub fn get_framerate_denominator(&self) -> &::std::option::Option<i32> {
+        &self.framerate_denominator
+    }
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub fn framerate_numerator(mut self, input: i32) -> Self {
         self.framerate_numerator = ::std::option::Option::Some(input);
@@ -188,6 +214,10 @@ impl AvcIntraSettingsBuilder {
     pub fn set_framerate_numerator(mut self, input: ::std::option::Option<i32>) -> Self {
         self.framerate_numerator = input;
         self
+    }
+    /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+    pub fn get_framerate_numerator(&self) -> &::std::option::Option<i32> {
+        &self.framerate_numerator
     }
     /// Choose the scan line type for the output. Keep the default value, Progressive to create a progressive output, regardless of the scan type of your input. Use Top field first or Bottom field first to create an output that's interlaced with the same field polarity throughout. Use Follow, default top or Follow, default bottom to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
     pub fn interlace_mode(mut self, input: crate::types::AvcIntraInterlaceMode) -> Self {
@@ -201,6 +231,12 @@ impl AvcIntraSettingsBuilder {
     ) -> Self {
         self.interlace_mode = input;
         self
+    }
+    /// Choose the scan line type for the output. Keep the default value, Progressive to create a progressive output, regardless of the scan type of your input. Use Top field first or Bottom field first to create an output that's interlaced with the same field polarity throughout. Use Follow, default top or Follow, default bottom to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
+    pub fn get_interlace_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::AvcIntraInterlaceMode> {
+        &self.interlace_mode
     }
     /// Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this situation, choose Optimized interlacing to create a better quality interlaced output. In this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the default value, Basic interlacing, for all other output frame rates. With basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you must set Telecine to None or Soft. You can't use optimized interlacing for hard telecine outputs. You must also set Interlace mode to a value other than Progressive.
     pub fn scan_type_conversion_mode(
@@ -218,6 +254,12 @@ impl AvcIntraSettingsBuilder {
         self.scan_type_conversion_mode = input;
         self
     }
+    /// Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this situation, choose Optimized interlacing to create a better quality interlaced output. In this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the default value, Basic interlacing, for all other output frame rates. With basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you must set Telecine to None or Soft. You can't use optimized interlacing for hard telecine outputs. You must also set Interlace mode to a value other than Progressive.
+    pub fn get_scan_type_conversion_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::AvcIntraScanTypeConversionMode> {
+        &self.scan_type_conversion_mode
+    }
     /// Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the duration of your video. Required settings: You must also set Framerate to 25.
     pub fn slow_pal(mut self, input: crate::types::AvcIntraSlowPal) -> Self {
         self.slow_pal = ::std::option::Option::Some(input);
@@ -231,6 +273,10 @@ impl AvcIntraSettingsBuilder {
         self.slow_pal = input;
         self
     }
+    /// Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the duration of your video. Required settings: You must also set Framerate to 25.
+    pub fn get_slow_pal(&self) -> &::std::option::Option<crate::types::AvcIntraSlowPal> {
+        &self.slow_pal
+    }
     /// When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is interlaced, you can optionally enable hard telecine to create a smoother picture. When you keep the default value, None, MediaConvert does a standard frame rate conversion to 29.97 without doing anything with the field polarity to create a smoother picture.
     pub fn telecine(mut self, input: crate::types::AvcIntraTelecine) -> Self {
         self.telecine = ::std::option::Option::Some(input);
@@ -243,6 +289,10 @@ impl AvcIntraSettingsBuilder {
     ) -> Self {
         self.telecine = input;
         self
+    }
+    /// When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is interlaced, you can optionally enable hard telecine to create a smoother picture. When you keep the default value, None, MediaConvert does a standard frame rate conversion to 29.97 without doing anything with the field polarity to create a smoother picture.
+    pub fn get_telecine(&self) -> &::std::option::Option<crate::types::AvcIntraTelecine> {
+        &self.telecine
     }
     /// Consumes the builder and constructs a [`AvcIntraSettings`](crate::types::AvcIntraSettings).
     pub fn build(self) -> crate::types::AvcIntraSettings {

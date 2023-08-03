@@ -54,6 +54,10 @@ impl SparkSqlJobDriverBuilder {
         self.entry_point = input;
         self
     }
+    /// <p>The SQL file to be executed.</p>
+    pub fn get_entry_point(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entry_point
+    }
     /// <p>The Spark parameters to be included in the Spark SQL command.</p>
     pub fn spark_sql_parameters(
         mut self,
@@ -69,6 +73,10 @@ impl SparkSqlJobDriverBuilder {
     ) -> Self {
         self.spark_sql_parameters = input;
         self
+    }
+    /// <p>The Spark parameters to be included in the Spark SQL command.</p>
+    pub fn get_spark_sql_parameters(&self) -> &::std::option::Option<::std::string::String> {
+        &self.spark_sql_parameters
     }
     /// Consumes the builder and constructs a [`SparkSqlJobDriver`](crate::types::SparkSqlJobDriver).
     pub fn build(self) -> crate::types::SparkSqlJobDriver {

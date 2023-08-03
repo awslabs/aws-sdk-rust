@@ -37,6 +37,12 @@ impl ListIdentitiesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListIdentities as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_identities::builders::ListIdentitiesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl ListIdentitiesFluentBuilder {
         self.inner = self.inner.set_identity_type(input);
         self
     }
+    /// <p>The type of the identities to list. Possible values are "EmailAddress" and "Domain". If this parameter is omitted, then all identities will be listed.</p>
+    pub fn get_identity_type(&self) -> &::std::option::Option<crate::types::IdentityType> {
+        self.inner.get_identity_type()
+    }
     /// <p>The token to use for pagination.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -143,6 +153,10 @@ impl ListIdentitiesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token to use for pagination.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of identities per page. Possible values are 1-1000 inclusive.</p>
     pub fn max_items(mut self, input: i32) -> Self {
         self.inner = self.inner.max_items(input);
@@ -152,5 +166,9 @@ impl ListIdentitiesFluentBuilder {
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_items(input);
         self
+    }
+    /// <p>The maximum number of identities per page. Possible values are 1-1000 inclusive.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_items()
     }
 }

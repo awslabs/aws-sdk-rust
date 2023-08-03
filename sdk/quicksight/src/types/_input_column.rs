@@ -48,6 +48,10 @@ impl InputColumnBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of this column in the underlying data source.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The data type of the column.</p>
     pub fn r#type(mut self, input: crate::types::InputColumnDataType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl InputColumnBuilder {
     ) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The data type of the column.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::InputColumnDataType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`InputColumn`](crate::types::InputColumn).
     pub fn build(self) -> crate::types::InputColumn {

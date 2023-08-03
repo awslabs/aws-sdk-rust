@@ -36,6 +36,12 @@ impl BatchGetReportsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchGetReports as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_get_reports::builders::BatchGetReportsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +138,11 @@ impl BatchGetReportsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_report_arns(input);
         self
+    }
+    /// <p> An array of ARNs that identify the <code>Report</code> objects to return. </p>
+    pub fn get_report_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_report_arns()
     }
 }

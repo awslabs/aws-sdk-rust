@@ -67,6 +67,10 @@ impl GetMatchIdInputBuilder {
         self.workflow_name = input;
         self
     }
+    /// <p>The name of the workflow.</p>
+    pub fn get_workflow_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_name
+    }
     /// Adds a key-value pair to `record`.
     ///
     /// To override the contents of this collection use [`set_record`](Self::set_record).
@@ -91,6 +95,14 @@ impl GetMatchIdInputBuilder {
     ) -> Self {
         self.record = input;
         self
+    }
+    /// <p>The record to fetch the Match ID for.</p>
+    pub fn get_record(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.record
     }
     /// Consumes the builder and constructs a [`GetMatchIdInput`](crate::operation::get_match_id::GetMatchIdInput).
     pub fn build(

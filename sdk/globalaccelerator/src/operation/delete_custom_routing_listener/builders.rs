@@ -36,6 +36,10 @@ impl DeleteCustomRoutingListenerFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteCustomRoutingListener as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_custom_routing_listener::builders::DeleteCustomRoutingListenerInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +129,9 @@ impl DeleteCustomRoutingListenerFluentBuilder {
     pub fn set_listener_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_listener_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the listener to delete.</p>
+    pub fn get_listener_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_listener_arn()
     }
 }

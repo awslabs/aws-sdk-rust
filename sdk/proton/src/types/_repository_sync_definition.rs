@@ -64,6 +64,10 @@ impl RepositorySyncDefinitionBuilder {
         self.target = input;
         self
     }
+    /// <p>The resource that is synced to.</p>
+    pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target
+    }
     /// <p>The resource that is synced from.</p>
     pub fn parent(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl RepositorySyncDefinitionBuilder {
     pub fn set_parent(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parent = input;
         self
+    }
+    /// <p>The resource that is synced from.</p>
+    pub fn get_parent(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent
     }
     /// <p>The repository branch.</p>
     pub fn branch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,6 +92,10 @@ impl RepositorySyncDefinitionBuilder {
         self.branch = input;
         self
     }
+    /// <p>The repository branch.</p>
+    pub fn get_branch(&self) -> &::std::option::Option<::std::string::String> {
+        &self.branch
+    }
     /// <p>The directory in the repository.</p>
     pub fn directory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory = ::std::option::Option::Some(input.into());
@@ -93,6 +105,10 @@ impl RepositorySyncDefinitionBuilder {
     pub fn set_directory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.directory = input;
         self
+    }
+    /// <p>The directory in the repository.</p>
+    pub fn get_directory(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory
     }
     /// Consumes the builder and constructs a [`RepositorySyncDefinition`](crate::types::RepositorySyncDefinition).
     pub fn build(self) -> crate::types::RepositorySyncDefinition {

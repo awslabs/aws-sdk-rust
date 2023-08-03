@@ -49,6 +49,12 @@ impl HyperParameterTuningJobStrategyConfigBuilder {
         self.hyperband_strategy_config = input;
         self
     }
+    /// <p>The configuration for the object that specifies the <code>Hyperband</code> strategy. This parameter is only supported for the <code>Hyperband</code> selection for <code>Strategy</code> within the <code>HyperParameterTuningJobConfig</code> API.</p>
+    pub fn get_hyperband_strategy_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::HyperbandStrategyConfig> {
+        &self.hyperband_strategy_config
+    }
     /// Consumes the builder and constructs a [`HyperParameterTuningJobStrategyConfig`](crate::types::HyperParameterTuningJobStrategyConfig).
     pub fn build(self) -> crate::types::HyperParameterTuningJobStrategyConfig {
         crate::types::HyperParameterTuningJobStrategyConfig {

@@ -38,6 +38,12 @@ impl ExecuteCommandFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ExecuteCommand as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::execute_command::builders::ExecuteCommandInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -120,6 +126,10 @@ impl ExecuteCommandFluentBuilder {
         self.inner = self.inner.set_cluster(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) or short name of the cluster the task is running in. If you do not specify a cluster, the default cluster is assumed.</p>
+    pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster()
+    }
     /// <p>The name of the container to execute the command on. A container name only needs to be specified for tasks containing multiple containers.</p>
     pub fn container(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.container(input.into());
@@ -129,6 +139,10 @@ impl ExecuteCommandFluentBuilder {
     pub fn set_container(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_container(input);
         self
+    }
+    /// <p>The name of the container to execute the command on. A container name only needs to be specified for tasks containing multiple containers.</p>
+    pub fn get_container(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_container()
     }
     /// <p>The command to run on the container.</p>
     pub fn command(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -140,6 +154,10 @@ impl ExecuteCommandFluentBuilder {
         self.inner = self.inner.set_command(input);
         self
     }
+    /// <p>The command to run on the container.</p>
+    pub fn get_command(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_command()
+    }
     /// <p>Use this flag to run your command in interactive mode.</p>
     pub fn interactive(mut self, input: bool) -> Self {
         self.inner = self.inner.interactive(input);
@@ -150,6 +168,10 @@ impl ExecuteCommandFluentBuilder {
         self.inner = self.inner.set_interactive(input);
         self
     }
+    /// <p>Use this flag to run your command in interactive mode.</p>
+    pub fn get_interactive(&self) -> &::std::option::Option<bool> {
+        self.inner.get_interactive()
+    }
     /// <p>The Amazon Resource Name (ARN) or ID of the task the container is part of.</p>
     pub fn task(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.task(input.into());
@@ -159,5 +181,9 @@ impl ExecuteCommandFluentBuilder {
     pub fn set_task(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_task(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) or ID of the task the container is part of.</p>
+    pub fn get_task(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_task()
     }
 }

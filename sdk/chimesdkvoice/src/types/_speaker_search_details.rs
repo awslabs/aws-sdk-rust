@@ -57,6 +57,12 @@ impl SpeakerSearchDetailsBuilder {
         self.results = input;
         self
     }
+    /// <p>The result value in the speaker search details.</p>
+    pub fn get_results(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SpeakerSearchResult>> {
+        &self.results
+    }
     /// <p>The status of a voice print generation operation, <code>VoiceprintGenerationSuccess</code> or <code>VoiceprintGenerationFailure</code>..</p>
     pub fn voiceprint_generation_status(
         mut self,
@@ -72,6 +78,12 @@ impl SpeakerSearchDetailsBuilder {
     ) -> Self {
         self.voiceprint_generation_status = input;
         self
+    }
+    /// <p>The status of a voice print generation operation, <code>VoiceprintGenerationSuccess</code> or <code>VoiceprintGenerationFailure</code>..</p>
+    pub fn get_voiceprint_generation_status(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.voiceprint_generation_status
     }
     /// Consumes the builder and constructs a [`SpeakerSearchDetails`](crate::types::SpeakerSearchDetails).
     pub fn build(self) -> crate::types::SpeakerSearchDetails {

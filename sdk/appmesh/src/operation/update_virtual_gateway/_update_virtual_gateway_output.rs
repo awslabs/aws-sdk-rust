@@ -50,6 +50,10 @@ impl UpdateVirtualGatewayOutputBuilder {
         self.virtual_gateway = input;
         self
     }
+    /// <p>A full description of the virtual gateway that was updated.</p>
+    pub fn get_virtual_gateway(&self) -> &::std::option::Option<crate::types::VirtualGatewayData> {
+        &self.virtual_gateway
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

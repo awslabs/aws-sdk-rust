@@ -149,6 +149,10 @@ impl BuildSummaryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The batch build ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>When the build was started, expressed in Unix time format.</p>
     pub fn requested_on(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.requested_on = ::std::option::Option::Some(input);
@@ -161,6 +165,10 @@ impl BuildSummaryBuilder {
     ) -> Self {
         self.requested_on = input;
         self
+    }
+    /// <p>When the build was started, expressed in Unix time format.</p>
+    pub fn get_requested_on(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.requested_on
     }
     /// <p>The status of the build group.</p>
     /// <dl>
@@ -251,6 +259,48 @@ impl BuildSummaryBuilder {
         self.build_status = input;
         self
     }
+    /// <p>The status of the build group.</p>
+    /// <dl>
+    /// <dt>
+    /// FAILED
+    /// </dt>
+    /// <dd>
+    /// <p>The build group failed.</p>
+    /// </dd>
+    /// <dt>
+    /// FAULT
+    /// </dt>
+    /// <dd>
+    /// <p>The build group faulted.</p>
+    /// </dd>
+    /// <dt>
+    /// IN_PROGRESS
+    /// </dt>
+    /// <dd>
+    /// <p>The build group is still in progress.</p>
+    /// </dd>
+    /// <dt>
+    /// STOPPED
+    /// </dt>
+    /// <dd>
+    /// <p>The build group stopped.</p>
+    /// </dd>
+    /// <dt>
+    /// SUCCEEDED
+    /// </dt>
+    /// <dd>
+    /// <p>The build group succeeded.</p>
+    /// </dd>
+    /// <dt>
+    /// TIMED_OUT
+    /// </dt>
+    /// <dd>
+    /// <p>The build group timed out.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_build_status(&self) -> &::std::option::Option<crate::types::StatusType> {
+        &self.build_status
+    }
     /// <p>A <code>ResolvedArtifact</code> object that represents the primary build artifacts for the build group.</p>
     pub fn primary_artifact(mut self, input: crate::types::ResolvedArtifact) -> Self {
         self.primary_artifact = ::std::option::Option::Some(input);
@@ -263,6 +313,10 @@ impl BuildSummaryBuilder {
     ) -> Self {
         self.primary_artifact = input;
         self
+    }
+    /// <p>A <code>ResolvedArtifact</code> object that represents the primary build artifacts for the build group.</p>
+    pub fn get_primary_artifact(&self) -> &::std::option::Option<crate::types::ResolvedArtifact> {
+        &self.primary_artifact
     }
     /// Appends an item to `secondary_artifacts`.
     ///
@@ -282,6 +336,12 @@ impl BuildSummaryBuilder {
     ) -> Self {
         self.secondary_artifacts = input;
         self
+    }
+    /// <p>An array of <code>ResolvedArtifact</code> objects that represents the secondary build artifacts for the build group.</p>
+    pub fn get_secondary_artifacts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResolvedArtifact>> {
+        &self.secondary_artifacts
     }
     /// Consumes the builder and constructs a [`BuildSummary`](crate::types::BuildSummary).
     pub fn build(self) -> crate::types::BuildSummary {

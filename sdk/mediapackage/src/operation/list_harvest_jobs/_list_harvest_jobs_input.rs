@@ -69,6 +69,10 @@ impl ListHarvestJobsInputBuilder {
         self.include_channel_id = input;
         self
     }
+    /// When specified, the request will return only HarvestJobs associated with the given Channel ID.
+    pub fn get_include_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.include_channel_id
+    }
     /// When specified, the request will return only HarvestJobs in the given status.
     pub fn include_status(
         mut self,
@@ -85,6 +89,10 @@ impl ListHarvestJobsInputBuilder {
         self.include_status = input;
         self
     }
+    /// When specified, the request will return only HarvestJobs in the given status.
+    pub fn get_include_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.include_status
+    }
     /// The upper bound on the number of records to return.
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -95,6 +103,10 @@ impl ListHarvestJobsInputBuilder {
         self.max_results = input;
         self
     }
+    /// The upper bound on the number of records to return.
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// A token used to resume pagination from the end of a previous request.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -104,6 +116,10 @@ impl ListHarvestJobsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// A token used to resume pagination from the end of a previous request.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListHarvestJobsInput`](crate::operation::list_harvest_jobs::ListHarvestJobsInput).
     pub fn build(

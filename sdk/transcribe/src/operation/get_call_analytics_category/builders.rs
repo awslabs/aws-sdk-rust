@@ -37,6 +37,10 @@ impl GetCallAnalyticsCategoryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetCallAnalyticsCategory as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_call_analytics_category::builders::GetCallAnalyticsCategoryInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +136,9 @@ impl GetCallAnalyticsCategoryFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_category_name(input);
         self
+    }
+    /// <p>The name of the Call Analytics category you want information about. Category names are case sensitive.</p>
+    pub fn get_category_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_category_name()
     }
 }

@@ -39,6 +39,10 @@ impl GetUserInputBuilder {
         self.user_id = input;
         self
     }
+    /// <p>The unique identifier of the user to get data for.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
+    }
     /// Consumes the builder and constructs a [`GetUserInput`](crate::operation::get_user::GetUserInput).
     pub fn build(
         self,

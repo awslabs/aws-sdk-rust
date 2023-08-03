@@ -52,6 +52,12 @@ impl PutAccountConfigurationInputBuilder {
         self.expiry_events = input;
         self
     }
+    /// <p>Specifies expiration events associated with an account.</p>
+    pub fn get_expiry_events(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExpiryEventsConfiguration> {
+        &self.expiry_events
+    }
     /// <p>Customer-chosen string used to distinguish between calls to <code>PutAccountConfiguration</code>. Idempotency tokens time out after one hour. If you call <code>PutAccountConfiguration</code> multiple times with the same unexpired idempotency token, ACM treats it as the same request and returns the original result. If you change the idempotency token for each call, ACM treats each call as a new request.</p>
     pub fn idempotency_token(
         mut self,
@@ -67,6 +73,10 @@ impl PutAccountConfigurationInputBuilder {
     ) -> Self {
         self.idempotency_token = input;
         self
+    }
+    /// <p>Customer-chosen string used to distinguish between calls to <code>PutAccountConfiguration</code>. Idempotency tokens time out after one hour. If you call <code>PutAccountConfiguration</code> multiple times with the same unexpired idempotency token, ACM treats it as the same request and returns the original result. If you change the idempotency token for each call, ACM treats each call as a new request.</p>
+    pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.idempotency_token
     }
     /// Consumes the builder and constructs a [`PutAccountConfigurationInput`](crate::operation::put_account_configuration::PutAccountConfigurationInput).
     pub fn build(

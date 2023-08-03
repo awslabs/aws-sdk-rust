@@ -54,6 +54,10 @@ impl MigrateWorkspaceInputBuilder {
         self.source_workspace_id = input;
         self
     }
+    /// <p>The identifier of the WorkSpace to migrate from.</p>
+    pub fn get_source_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_workspace_id
+    }
     /// <p>The identifier of the target bundle type to migrate the WorkSpace to.</p>
     pub fn bundle_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bundle_id = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl MigrateWorkspaceInputBuilder {
     pub fn set_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bundle_id = input;
         self
+    }
+    /// <p>The identifier of the target bundle type to migrate the WorkSpace to.</p>
+    pub fn get_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bundle_id
     }
     /// Consumes the builder and constructs a [`MigrateWorkspaceInput`](crate::operation::migrate_workspace::MigrateWorkspaceInput).
     pub fn build(

@@ -55,6 +55,10 @@ impl ListComponentOutputsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token that indicates the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `outputs`.
     ///
     /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
@@ -73,6 +77,10 @@ impl ListComponentOutputsOutputBuilder {
     ) -> Self {
         self.outputs = input;
         self
+    }
+    /// <p>An array of component Infrastructure as Code (IaC) outputs.</p>
+    pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Output>> {
+        &self.outputs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -51,6 +51,10 @@ impl DeleteRepositoryInputBuilder {
         self.provider = input;
         self
     }
+    /// <p>The repository provider.</p>
+    pub fn get_provider(&self) -> &::std::option::Option<crate::types::RepositoryProvider> {
+        &self.provider
+    }
     /// <p>The repository name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl DeleteRepositoryInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The repository name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`DeleteRepositoryInput`](crate::operation::delete_repository::DeleteRepositoryInput).
     pub fn build(

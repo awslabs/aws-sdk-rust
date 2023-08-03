@@ -77,6 +77,11 @@ impl RootBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier (ID) for the root.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The Amazon Resource Name (ARN) of the root.</p>
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -89,6 +94,11 @@ impl RootBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the root.</p>
+    /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The friendly name of the root.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -100,6 +110,11 @@ impl RootBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The friendly name of the root.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `policy_types`.
     ///
@@ -123,6 +138,14 @@ impl RootBuilder {
     ) -> Self {
         self.policy_types = input;
         self
+    }
+    /// <p>The types of policies that are currently enabled for the root and therefore can be attached to the root or to its OUs or accounts.</p> <note>
+    /// <p>Even if a policy type is shown as available in the organization, you can separately enable and disable them at the root level by using <code>EnablePolicyType</code> and <code>DisablePolicyType</code>. Use <code>DescribeOrganization</code> to see the availability of the policy types in that organization.</p>
+    /// </note>
+    pub fn get_policy_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyTypeSummary>> {
+        &self.policy_types
     }
     /// Consumes the builder and constructs a [`Root`](crate::types::Root).
     pub fn build(self) -> crate::types::Root {

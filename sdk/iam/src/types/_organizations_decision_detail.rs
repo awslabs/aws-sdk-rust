@@ -40,6 +40,10 @@ impl OrganizationsDecisionDetailBuilder {
         self.allowed_by_organizations = input;
         self
     }
+    /// <p>Specifies whether the simulated operation is allowed by the Organizations service control policies that impact the simulated user's account.</p>
+    pub fn get_allowed_by_organizations(&self) -> &::std::option::Option<bool> {
+        &self.allowed_by_organizations
+    }
     /// Consumes the builder and constructs a [`OrganizationsDecisionDetail`](crate::types::OrganizationsDecisionDetail).
     pub fn build(self) -> crate::types::OrganizationsDecisionDetail {
         crate::types::OrganizationsDecisionDetail {

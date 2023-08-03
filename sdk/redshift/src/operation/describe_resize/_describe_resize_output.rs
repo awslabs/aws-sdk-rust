@@ -188,6 +188,10 @@ impl DescribeResizeOutputBuilder {
         self.target_node_type = input;
         self
     }
+    /// <p>The node type that the cluster will have after the resize operation is complete.</p>
+    pub fn get_target_node_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_node_type
+    }
     /// <p>The number of nodes that the cluster will have after the resize operation is complete.</p>
     pub fn target_number_of_nodes(mut self, input: i32) -> Self {
         self.target_number_of_nodes = ::std::option::Option::Some(input);
@@ -197,6 +201,10 @@ impl DescribeResizeOutputBuilder {
     pub fn set_target_number_of_nodes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.target_number_of_nodes = input;
         self
+    }
+    /// <p>The number of nodes that the cluster will have after the resize operation is complete.</p>
+    pub fn get_target_number_of_nodes(&self) -> &::std::option::Option<i32> {
+        &self.target_number_of_nodes
     }
     /// <p>The cluster type after the resize operation is complete.</p>
     /// <p>Valid Values: <code>multi-node</code> | <code>single-node</code> </p>
@@ -216,6 +224,11 @@ impl DescribeResizeOutputBuilder {
         self.target_cluster_type = input;
         self
     }
+    /// <p>The cluster type after the resize operation is complete.</p>
+    /// <p>Valid Values: <code>multi-node</code> | <code>single-node</code> </p>
+    pub fn get_target_cluster_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_cluster_type
+    }
     /// <p>The status of the resize operation.</p>
     /// <p>Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code> | <code>CANCELLING</code> </p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -227,6 +240,11 @@ impl DescribeResizeOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the resize operation.</p>
+    /// <p>Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code> | <code>CANCELLING</code> </p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Appends an item to `import_tables_completed`.
     ///
@@ -252,6 +270,13 @@ impl DescribeResizeOutputBuilder {
         self.import_tables_completed = input;
         self
     }
+    /// <p>The names of tables that have been completely imported .</p>
+    /// <p>Valid Values: List of table names.</p>
+    pub fn get_import_tables_completed(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.import_tables_completed
+    }
     /// Appends an item to `import_tables_in_progress`.
     ///
     /// To override the contents of this collection use [`set_import_tables_in_progress`](Self::set_import_tables_in_progress).
@@ -275,6 +300,13 @@ impl DescribeResizeOutputBuilder {
     ) -> Self {
         self.import_tables_in_progress = input;
         self
+    }
+    /// <p>The names of tables that are being currently imported.</p>
+    /// <p>Valid Values: List of table names.</p>
+    pub fn get_import_tables_in_progress(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.import_tables_in_progress
     }
     /// Appends an item to `import_tables_not_started`.
     ///
@@ -300,6 +332,13 @@ impl DescribeResizeOutputBuilder {
         self.import_tables_not_started = input;
         self
     }
+    /// <p>The names of tables that have not been yet imported.</p>
+    /// <p>Valid Values: List of table names</p>
+    pub fn get_import_tables_not_started(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.import_tables_not_started
+    }
     /// <p>The average rate of the resize operation over the last few minutes, measured in megabytes per second. After the resize operation completes, this value shows the average rate of the entire resize operation.</p>
     pub fn avg_resize_rate_in_mega_bytes_per_second(mut self, input: f64) -> Self {
         self.avg_resize_rate_in_mega_bytes_per_second = ::std::option::Option::Some(input);
@@ -312,6 +351,10 @@ impl DescribeResizeOutputBuilder {
     ) -> Self {
         self.avg_resize_rate_in_mega_bytes_per_second = input;
         self
+    }
+    /// <p>The average rate of the resize operation over the last few minutes, measured in megabytes per second. After the resize operation completes, this value shows the average rate of the entire resize operation.</p>
+    pub fn get_avg_resize_rate_in_mega_bytes_per_second(&self) -> &::std::option::Option<f64> {
+        &self.avg_resize_rate_in_mega_bytes_per_second
     }
     /// <p>The estimated total amount of data, in megabytes, on the cluster before the resize operation began.</p>
     pub fn total_resize_data_in_mega_bytes(mut self, input: i64) -> Self {
@@ -326,6 +369,10 @@ impl DescribeResizeOutputBuilder {
         self.total_resize_data_in_mega_bytes = input;
         self
     }
+    /// <p>The estimated total amount of data, in megabytes, on the cluster before the resize operation began.</p>
+    pub fn get_total_resize_data_in_mega_bytes(&self) -> &::std::option::Option<i64> {
+        &self.total_resize_data_in_mega_bytes
+    }
     /// <p>While the resize operation is in progress, this value shows the current amount of data, in megabytes, that has been processed so far. When the resize operation is complete, this value shows the total amount of data, in megabytes, on the cluster, which may be more or less than TotalResizeDataInMegaBytes (the estimated total amount of data before resize).</p>
     pub fn progress_in_mega_bytes(mut self, input: i64) -> Self {
         self.progress_in_mega_bytes = ::std::option::Option::Some(input);
@@ -336,6 +383,10 @@ impl DescribeResizeOutputBuilder {
         self.progress_in_mega_bytes = input;
         self
     }
+    /// <p>While the resize operation is in progress, this value shows the current amount of data, in megabytes, that has been processed so far. When the resize operation is complete, this value shows the total amount of data, in megabytes, on the cluster, which may be more or less than TotalResizeDataInMegaBytes (the estimated total amount of data before resize).</p>
+    pub fn get_progress_in_mega_bytes(&self) -> &::std::option::Option<i64> {
+        &self.progress_in_mega_bytes
+    }
     /// <p>The amount of seconds that have elapsed since the resize operation began. After the resize operation completes, this value shows the total actual time, in seconds, for the resize operation.</p>
     pub fn elapsed_time_in_seconds(mut self, input: i64) -> Self {
         self.elapsed_time_in_seconds = ::std::option::Option::Some(input);
@@ -345,6 +396,10 @@ impl DescribeResizeOutputBuilder {
     pub fn set_elapsed_time_in_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
         self.elapsed_time_in_seconds = input;
         self
+    }
+    /// <p>The amount of seconds that have elapsed since the resize operation began. After the resize operation completes, this value shows the total actual time, in seconds, for the resize operation.</p>
+    pub fn get_elapsed_time_in_seconds(&self) -> &::std::option::Option<i64> {
+        &self.elapsed_time_in_seconds
     }
     /// <p>The estimated time remaining, in seconds, until the resize operation is complete. This value is calculated based on the average resize rate and the estimated amount of data remaining to be processed. Once the resize operation is complete, this value will be 0.</p>
     pub fn estimated_time_to_completion_in_seconds(mut self, input: i64) -> Self {
@@ -359,6 +414,10 @@ impl DescribeResizeOutputBuilder {
         self.estimated_time_to_completion_in_seconds = input;
         self
     }
+    /// <p>The estimated time remaining, in seconds, until the resize operation is complete. This value is calculated based on the average resize rate and the estimated amount of data remaining to be processed. Once the resize operation is complete, this value will be 0.</p>
+    pub fn get_estimated_time_to_completion_in_seconds(&self) -> &::std::option::Option<i64> {
+        &self.estimated_time_to_completion_in_seconds
+    }
     /// <p>An enum with possible values of <code>ClassicResize</code> and <code>ElasticResize</code>. These values describe the type of resize operation being performed. </p>
     pub fn resize_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resize_type = ::std::option::Option::Some(input.into());
@@ -369,6 +428,10 @@ impl DescribeResizeOutputBuilder {
         self.resize_type = input;
         self
     }
+    /// <p>An enum with possible values of <code>ClassicResize</code> and <code>ElasticResize</code>. These values describe the type of resize operation being performed. </p>
+    pub fn get_resize_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resize_type
+    }
     /// <p>An optional string to provide additional details about the resize action.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -378,6 +441,10 @@ impl DescribeResizeOutputBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>An optional string to provide additional details about the resize action.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// <p>The type of encryption for the cluster after the resize is complete.</p>
     /// <p>Possible values are <code>KMS</code> and <code>None</code>. </p>
@@ -397,6 +464,11 @@ impl DescribeResizeOutputBuilder {
         self.target_encryption_type = input;
         self
     }
+    /// <p>The type of encryption for the cluster after the resize is complete.</p>
+    /// <p>Possible values are <code>KMS</code> and <code>None</code>. </p>
+    pub fn get_target_encryption_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_encryption_type
+    }
     /// <p>The percent of data transferred from source cluster to target cluster.</p>
     pub fn data_transfer_progress_percent(mut self, input: f64) -> Self {
         self.data_transfer_progress_percent = ::std::option::Option::Some(input);
@@ -406,6 +478,10 @@ impl DescribeResizeOutputBuilder {
     pub fn set_data_transfer_progress_percent(mut self, input: ::std::option::Option<f64>) -> Self {
         self.data_transfer_progress_percent = input;
         self
+    }
+    /// <p>The percent of data transferred from source cluster to target cluster.</p>
+    pub fn get_data_transfer_progress_percent(&self) -> &::std::option::Option<f64> {
+        &self.data_transfer_progress_percent
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

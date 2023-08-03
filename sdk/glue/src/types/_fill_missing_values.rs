@@ -64,6 +64,10 @@ impl FillMissingValuesBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the transform node.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `inputs`.
     ///
     /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
@@ -83,6 +87,10 @@ impl FillMissingValuesBuilder {
         self.inputs = input;
         self
     }
+    /// <p>The data inputs identified by their node names.</p>
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.inputs
+    }
     /// <p>A JSON path to a variable in the data structure for the dataset that is imputed.</p>
     pub fn imputed_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.imputed_path = ::std::option::Option::Some(input.into());
@@ -93,6 +101,10 @@ impl FillMissingValuesBuilder {
         self.imputed_path = input;
         self
     }
+    /// <p>A JSON path to a variable in the data structure for the dataset that is imputed.</p>
+    pub fn get_imputed_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.imputed_path
+    }
     /// <p>A JSON path to a variable in the data structure for the dataset that is filled.</p>
     pub fn filled_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filled_path = ::std::option::Option::Some(input.into());
@@ -102,6 +114,10 @@ impl FillMissingValuesBuilder {
     pub fn set_filled_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.filled_path = input;
         self
+    }
+    /// <p>A JSON path to a variable in the data structure for the dataset that is filled.</p>
+    pub fn get_filled_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filled_path
     }
     /// Consumes the builder and constructs a [`FillMissingValues`](crate::types::FillMissingValues).
     pub fn build(self) -> crate::types::FillMissingValues {

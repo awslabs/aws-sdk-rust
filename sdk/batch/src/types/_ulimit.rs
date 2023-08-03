@@ -58,6 +58,10 @@ impl UlimitBuilder {
         self.hard_limit = input;
         self
     }
+    /// <p>The hard limit for the <code>ulimit</code> type.</p>
+    pub fn get_hard_limit(&self) -> &::std::option::Option<i32> {
+        &self.hard_limit
+    }
     /// <p>The <code>type</code> of the <code>ulimit</code>.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -68,6 +72,10 @@ impl UlimitBuilder {
         self.name = input;
         self
     }
+    /// <p>The <code>type</code> of the <code>ulimit</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The soft limit for the <code>ulimit</code> type.</p>
     pub fn soft_limit(mut self, input: i32) -> Self {
         self.soft_limit = ::std::option::Option::Some(input);
@@ -77,6 +85,10 @@ impl UlimitBuilder {
     pub fn set_soft_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.soft_limit = input;
         self
+    }
+    /// <p>The soft limit for the <code>ulimit</code> type.</p>
+    pub fn get_soft_limit(&self) -> &::std::option::Option<i32> {
+        &self.soft_limit
     }
     /// Consumes the builder and constructs a [`Ulimit`](crate::types::Ulimit).
     pub fn build(self) -> crate::types::Ulimit {

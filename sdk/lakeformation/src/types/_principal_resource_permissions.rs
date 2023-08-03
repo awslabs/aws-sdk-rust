@@ -79,6 +79,10 @@ impl PrincipalResourcePermissionsBuilder {
         self.principal = input;
         self
     }
+    /// <p>The Data Lake principal to be granted or revoked permissions.</p>
+    pub fn get_principal(&self) -> &::std::option::Option<crate::types::DataLakePrincipal> {
+        &self.principal
+    }
     /// <p>The resource where permissions are to be granted or revoked.</p>
     pub fn resource(mut self, input: crate::types::Resource) -> Self {
         self.resource = ::std::option::Option::Some(input);
@@ -88,6 +92,10 @@ impl PrincipalResourcePermissionsBuilder {
     pub fn set_resource(mut self, input: ::std::option::Option<crate::types::Resource>) -> Self {
         self.resource = input;
         self
+    }
+    /// <p>The resource where permissions are to be granted or revoked.</p>
+    pub fn get_resource(&self) -> &::std::option::Option<crate::types::Resource> {
+        &self.resource
     }
     /// Appends an item to `permissions`.
     ///
@@ -108,6 +116,12 @@ impl PrincipalResourcePermissionsBuilder {
         self.permissions = input;
         self
     }
+    /// <p>The permissions to be granted or revoked on the resource.</p>
+    pub fn get_permissions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
+        &self.permissions
+    }
     /// Appends an item to `permissions_with_grant_option`.
     ///
     /// To override the contents of this collection use [`set_permissions_with_grant_option`](Self::set_permissions_with_grant_option).
@@ -127,6 +141,12 @@ impl PrincipalResourcePermissionsBuilder {
         self.permissions_with_grant_option = input;
         self
     }
+    /// <p>Indicates whether to grant the ability to grant permissions (as a subset of permissions granted).</p>
+    pub fn get_permissions_with_grant_option(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
+        &self.permissions_with_grant_option
+    }
     /// <p>This attribute can be used to return any additional details of <code>PrincipalResourcePermissions</code>. Currently returns only as a RAM resource share ARN.</p>
     pub fn additional_details(mut self, input: crate::types::DetailsMap) -> Self {
         self.additional_details = ::std::option::Option::Some(input);
@@ -139,6 +159,10 @@ impl PrincipalResourcePermissionsBuilder {
     ) -> Self {
         self.additional_details = input;
         self
+    }
+    /// <p>This attribute can be used to return any additional details of <code>PrincipalResourcePermissions</code>. Currently returns only as a RAM resource share ARN.</p>
+    pub fn get_additional_details(&self) -> &::std::option::Option<crate::types::DetailsMap> {
+        &self.additional_details
     }
     /// Consumes the builder and constructs a [`PrincipalResourcePermissions`](crate::types::PrincipalResourcePermissions).
     pub fn build(self) -> crate::types::PrincipalResourcePermissions {

@@ -83,6 +83,14 @@ impl RulesSourceListBuilder {
         self.targets = input;
         self
     }
+    /// <p>The domains that you want to inspect for in your traffic flows. Valid domain specifications are the following:</p>
+    /// <ul>
+    /// <li> <p>Explicit names. For example, <code>abc.example.com</code> matches only the domain <code>abc.example.com</code>.</p> </li>
+    /// <li> <p>Names that use a domain wildcard, which you indicate with an initial '<code>.</code>'. For example,<code>.example.com</code> matches <code>example.com</code> and matches all subdomains of <code>example.com</code>, such as <code>abc.example.com</code> and <code>www.example.com</code>. </p> </li>
+    /// </ul>
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.targets
+    }
     /// Appends an item to `target_types`.
     ///
     /// To override the contents of this collection use [`set_target_types`](Self::set_target_types).
@@ -102,6 +110,12 @@ impl RulesSourceListBuilder {
         self.target_types = input;
         self
     }
+    /// <p>The protocols you want to inspect. Specify <code>TLS_SNI</code> for <code>HTTPS</code>. Specify <code>HTTP_HOST</code> for <code>HTTP</code>. You can specify either or both. </p>
+    pub fn get_target_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetType>> {
+        &self.target_types
+    }
     /// <p>Whether you want to allow or deny access to the domains in your target list.</p>
     pub fn generated_rules_type(mut self, input: crate::types::GeneratedRulesType) -> Self {
         self.generated_rules_type = ::std::option::Option::Some(input);
@@ -114,6 +128,12 @@ impl RulesSourceListBuilder {
     ) -> Self {
         self.generated_rules_type = input;
         self
+    }
+    /// <p>Whether you want to allow or deny access to the domains in your target list.</p>
+    pub fn get_generated_rules_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::GeneratedRulesType> {
+        &self.generated_rules_type
     }
     /// Consumes the builder and constructs a [`RulesSourceList`](crate::types::RulesSourceList).
     pub fn build(self) -> crate::types::RulesSourceList {

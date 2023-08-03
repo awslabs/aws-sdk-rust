@@ -58,6 +58,10 @@ impl PutSipMediaApplicationAlexaSkillConfigurationInputBuilder {
         self.sip_media_application_id = input;
         self
     }
+    /// <p>The SIP media application ID.</p>
+    pub fn get_sip_media_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sip_media_application_id
+    }
     /// <p>The Alexa Skill configuration.</p>
     pub fn sip_media_application_alexa_skill_configuration(
         mut self,
@@ -73,6 +77,12 @@ impl PutSipMediaApplicationAlexaSkillConfigurationInputBuilder {
     ) -> Self {
         self.sip_media_application_alexa_skill_configuration = input;
         self
+    }
+    /// <p>The Alexa Skill configuration.</p>
+    pub fn get_sip_media_application_alexa_skill_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SipMediaApplicationAlexaSkillConfiguration> {
+        &self.sip_media_application_alexa_skill_configuration
     }
     /// Consumes the builder and constructs a [`PutSipMediaApplicationAlexaSkillConfigurationInput`](crate::operation::put_sip_media_application_alexa_skill_configuration::PutSipMediaApplicationAlexaSkillConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_sip_media_application_alexa_skill_configuration::PutSipMediaApplicationAlexaSkillConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{

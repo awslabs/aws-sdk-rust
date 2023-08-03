@@ -36,6 +36,12 @@ impl DeleteSegmentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteSegment as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_segment::builders::DeleteSegmentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -117,5 +123,9 @@ impl DeleteSegmentFluentBuilder {
     pub fn set_segment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_segment(input);
         self
+    }
+    /// <p>Specifies the segment to delete.</p>
+    pub fn get_segment(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_segment()
     }
 }

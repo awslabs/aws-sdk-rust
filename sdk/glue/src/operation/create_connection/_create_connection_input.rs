@@ -64,6 +64,10 @@ impl CreateConnectionInputBuilder {
         self.catalog_id = input;
         self
     }
+    /// <p>The ID of the Data Catalog in which to create the connection. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// <p>A <code>ConnectionInput</code> object defining the connection to create.</p>
     pub fn connection_input(mut self, input: crate::types::ConnectionInput) -> Self {
         self.connection_input = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl CreateConnectionInputBuilder {
     ) -> Self {
         self.connection_input = input;
         self
+    }
+    /// <p>A <code>ConnectionInput</code> object defining the connection to create.</p>
+    pub fn get_connection_input(&self) -> &::std::option::Option<crate::types::ConnectionInput> {
+        &self.connection_input
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -101,6 +109,14 @@ impl CreateConnectionInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags you assign to the connection.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateConnectionInput`](crate::operation::create_connection::CreateConnectionInput).
     pub fn build(

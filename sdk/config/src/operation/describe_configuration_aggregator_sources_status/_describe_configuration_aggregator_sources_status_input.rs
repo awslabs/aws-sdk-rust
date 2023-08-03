@@ -83,6 +83,12 @@ impl DescribeConfigurationAggregatorSourcesStatusInputBuilder {
         self.configuration_aggregator_name = input;
         self
     }
+    /// <p>The name of the configuration aggregator.</p>
+    pub fn get_configuration_aggregator_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_aggregator_name
+    }
     /// Appends an item to `update_status`.
     ///
     /// To override the contents of this collection use [`set_update_status`](Self::set_update_status).
@@ -112,6 +118,17 @@ impl DescribeConfigurationAggregatorSourcesStatusInputBuilder {
         self.update_status = input;
         self
     }
+    /// <p>Filters the status type.</p>
+    /// <ul>
+    /// <li> <p>Valid value FAILED indicates errors while moving data.</p> </li>
+    /// <li> <p>Valid value SUCCEEDED indicates the data was successfully moved.</p> </li>
+    /// <li> <p>Valid value OUTDATED indicates the data is not the most recent.</p> </li>
+    /// </ul>
+    pub fn get_update_status(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregatedSourceStatusType>> {
+        &self.update_status
+    }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -122,6 +139,10 @@ impl DescribeConfigurationAggregatorSourcesStatusInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of AggregatorSourceStatus returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -131,6 +152,10 @@ impl DescribeConfigurationAggregatorSourcesStatusInputBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
+    }
+    /// <p>The maximum number of AggregatorSourceStatus returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// Consumes the builder and constructs a [`DescribeConfigurationAggregatorSourcesStatusInput`](crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusInput, ::aws_smithy_http::operation::error::BuildError>{

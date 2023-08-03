@@ -69,6 +69,12 @@ impl AwsWafRuleGroupRulesDetailsBuilder {
         self.action = input;
         self
     }
+    /// <p>Provides information about what action WAF should take on a web request when it matches the criteria defined in the rule. </p>
+    pub fn get_action(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsWafRuleGroupRulesActionDetails> {
+        &self.action
+    }
     /// <p>If you define more than one rule in a web ACL, WAF evaluates each request against the rules in order based on the value of <code>Priority</code>.</p>
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
@@ -78,6 +84,10 @@ impl AwsWafRuleGroupRulesDetailsBuilder {
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
+    }
+    /// <p>If you define more than one rule in a web ACL, WAF evaluates each request against the rules in order based on the value of <code>Priority</code>.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
     }
     /// <p>The rule ID for a rule. </p>
     pub fn rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -89,6 +99,10 @@ impl AwsWafRuleGroupRulesDetailsBuilder {
         self.rule_id = input;
         self
     }
+    /// <p>The rule ID for a rule. </p>
+    pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_id
+    }
     /// <p>The type of rule. </p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -98,6 +112,10 @@ impl AwsWafRuleGroupRulesDetailsBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of rule. </p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`AwsWafRuleGroupRulesDetails`](crate::types::AwsWafRuleGroupRulesDetails).
     pub fn build(self) -> crate::types::AwsWafRuleGroupRulesDetails {

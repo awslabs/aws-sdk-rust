@@ -36,6 +36,10 @@ impl UpdateBrokerFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateBroker as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_broker::builders::UpdateBrokerInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -121,6 +125,12 @@ impl UpdateBrokerFluentBuilder {
         self.inner = self.inner.set_authentication_strategy(input);
         self
     }
+    /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
+    pub fn get_authentication_strategy(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuthenticationStrategy> {
+        self.inner.get_authentication_strategy()
+    }
     /// <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot.</p>
     pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
         self.inner = self.inner.auto_minor_version_upgrade(input);
@@ -131,6 +141,10 @@ impl UpdateBrokerFluentBuilder {
         self.inner = self.inner.set_auto_minor_version_upgrade(input);
         self
     }
+    /// <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot.</p>
+    pub fn get_auto_minor_version_upgrade(&self) -> &::std::option::Option<bool> {
+        self.inner.get_auto_minor_version_upgrade()
+    }
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     pub fn broker_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.broker_id(input.into());
@@ -140,6 +154,10 @@ impl UpdateBrokerFluentBuilder {
     pub fn set_broker_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_broker_id(input);
         self
+    }
+    /// <p>The unique ID that Amazon MQ generates for the broker.</p>
+    pub fn get_broker_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_broker_id()
     }
     /// <p>A list of information about the configuration.</p>
     pub fn configuration(mut self, input: crate::types::ConfigurationId) -> Self {
@@ -153,6 +171,10 @@ impl UpdateBrokerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
+    }
+    /// <p>A list of information about the configuration.</p>
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ConfigurationId> {
+        self.inner.get_configuration()
     }
     /// <p>The broker engine version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
     pub fn engine_version(
@@ -170,6 +192,10 @@ impl UpdateBrokerFluentBuilder {
         self.inner = self.inner.set_engine_version(input);
         self
     }
+    /// <p>The broker engine version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_engine_version()
+    }
     /// <p>The broker's host instance type to upgrade to. For a list of supported instance types, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker.html#broker-instance-types">Broker instance types</a>.</p>
     pub fn host_instance_type(
         mut self,
@@ -186,6 +212,10 @@ impl UpdateBrokerFluentBuilder {
         self.inner = self.inner.set_host_instance_type(input);
         self
     }
+    /// <p>The broker's host instance type to upgrade to. For a list of supported instance types, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker.html#broker-instance-types">Broker instance types</a>.</p>
+    pub fn get_host_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_host_instance_type()
+    }
     /// <p>Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not apply to RabbitMQ brokers.</p>
     pub fn ldap_server_metadata(mut self, input: crate::types::LdapServerMetadataInput) -> Self {
         self.inner = self.inner.ldap_server_metadata(input);
@@ -199,6 +229,12 @@ impl UpdateBrokerFluentBuilder {
         self.inner = self.inner.set_ldap_server_metadata(input);
         self
     }
+    /// <p>Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not apply to RabbitMQ brokers.</p>
+    pub fn get_ldap_server_metadata(
+        &self,
+    ) -> &::std::option::Option<crate::types::LdapServerMetadataInput> {
+        self.inner.get_ldap_server_metadata()
+    }
     /// <p>Enables Amazon CloudWatch logging for brokers.</p>
     pub fn logs(mut self, input: crate::types::Logs) -> Self {
         self.inner = self.inner.logs(input);
@@ -208,6 +244,10 @@ impl UpdateBrokerFluentBuilder {
     pub fn set_logs(mut self, input: ::std::option::Option<crate::types::Logs>) -> Self {
         self.inner = self.inner.set_logs(input);
         self
+    }
+    /// <p>Enables Amazon CloudWatch logging for brokers.</p>
+    pub fn get_logs(&self) -> &::std::option::Option<crate::types::Logs> {
+        self.inner.get_logs()
     }
     /// <p>The parameters that determine the WeeklyStartTime.</p>
     pub fn maintenance_window_start_time(mut self, input: crate::types::WeeklyStartTime) -> Self {
@@ -221,6 +261,12 @@ impl UpdateBrokerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_maintenance_window_start_time(input);
         self
+    }
+    /// <p>The parameters that determine the WeeklyStartTime.</p>
+    pub fn get_maintenance_window_start_time(
+        &self,
+    ) -> &::std::option::Option<crate::types::WeeklyStartTime> {
+        self.inner.get_maintenance_window_start_time()
     }
     /// Appends an item to `SecurityGroups`.
     ///
@@ -242,6 +288,12 @@ impl UpdateBrokerFluentBuilder {
         self.inner = self.inner.set_security_groups(input);
         self
     }
+    /// <p>The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.</p>
+    pub fn get_security_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_security_groups()
+    }
     /// <p>Defines whether this broker is a part of a data replication pair.</p>
     pub fn data_replication_mode(mut self, input: crate::types::DataReplicationMode) -> Self {
         self.inner = self.inner.data_replication_mode(input);
@@ -254,5 +306,11 @@ impl UpdateBrokerFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_data_replication_mode(input);
         self
+    }
+    /// <p>Defines whether this broker is a part of a data replication pair.</p>
+    pub fn get_data_replication_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataReplicationMode> {
+        self.inner.get_data_replication_mode()
     }
 }

@@ -47,6 +47,10 @@ impl DeleteQueuedSavingsPlanInputBuilder {
         self.savings_plan_id = input;
         self
     }
+    /// <p>The ID of the Savings Plan.</p>
+    pub fn get_savings_plan_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.savings_plan_id
+    }
     /// Consumes the builder and constructs a [`DeleteQueuedSavingsPlanInput`](crate::operation::delete_queued_savings_plan::DeleteQueuedSavingsPlanInput).
     pub fn build(
         self,

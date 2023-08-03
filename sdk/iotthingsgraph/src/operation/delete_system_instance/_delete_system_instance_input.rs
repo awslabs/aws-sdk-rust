@@ -40,6 +40,10 @@ impl DeleteSystemInstanceInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the system instance to be deleted.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`DeleteSystemInstanceInput`](crate::operation::delete_system_instance::DeleteSystemInstanceInput).
     pub fn build(
         self,

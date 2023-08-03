@@ -77,6 +77,12 @@ impl GetAggregateDiscoveredResourceCountsInputBuilder {
         self.configuration_aggregator_name = input;
         self
     }
+    /// <p>The name of the configuration aggregator.</p>
+    pub fn get_configuration_aggregator_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_aggregator_name
+    }
     /// <p>Filters the results based on the <code>ResourceCountFilters</code> object.</p>
     pub fn filters(mut self, input: crate::types::ResourceCountFilters) -> Self {
         self.filters = ::std::option::Option::Some(input);
@@ -89,6 +95,10 @@ impl GetAggregateDiscoveredResourceCountsInputBuilder {
     ) -> Self {
         self.filters = input;
         self
+    }
+    /// <p>Filters the results based on the <code>ResourceCountFilters</code> object.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::ResourceCountFilters> {
+        &self.filters
     }
     /// <p>The key to group the resource counts.</p>
     pub fn group_by_key(mut self, input: crate::types::ResourceCountGroupKey) -> Self {
@@ -103,6 +113,10 @@ impl GetAggregateDiscoveredResourceCountsInputBuilder {
         self.group_by_key = input;
         self
     }
+    /// <p>The key to group the resource counts.</p>
+    pub fn get_group_by_key(&self) -> &::std::option::Option<crate::types::ResourceCountGroupKey> {
+        &self.group_by_key
+    }
     /// <p>The maximum number of <code>GroupedResourceCount</code> objects returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -113,6 +127,10 @@ impl GetAggregateDiscoveredResourceCountsInputBuilder {
         self.limit = input;
         self
     }
+    /// <p>The maximum number of <code>GroupedResourceCount</code> objects returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
+    }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -122,6 +140,10 @@ impl GetAggregateDiscoveredResourceCountsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`GetAggregateDiscoveredResourceCountsInput`](crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsInput, ::aws_smithy_http::operation::error::BuildError>{

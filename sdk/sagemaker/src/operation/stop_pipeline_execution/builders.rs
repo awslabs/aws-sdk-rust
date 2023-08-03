@@ -42,6 +42,13 @@ impl StopPipelineExecutionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StopPipelineExecution as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::stop_pipeline_execution::builders::StopPipelineExecutionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +145,10 @@ impl StopPipelineExecutionFluentBuilder {
         self.inner = self.inner.set_pipeline_execution_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
+    pub fn get_pipeline_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pipeline_execution_arn()
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once.</p>
     pub fn client_request_token(
         mut self,
@@ -153,5 +164,9 @@ impl StopPipelineExecutionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
     }
 }

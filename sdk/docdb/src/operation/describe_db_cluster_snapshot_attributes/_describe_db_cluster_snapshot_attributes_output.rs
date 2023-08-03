@@ -56,6 +56,12 @@ impl DescribeDbClusterSnapshotAttributesOutputBuilder {
         self.db_cluster_snapshot_attributes_result = input;
         self
     }
+    /// <p>Detailed information about the attributes that are associated with a cluster snapshot.</p>
+    pub fn get_db_cluster_snapshot_attributes_result(
+        &self,
+    ) -> &::std::option::Option<crate::types::DbClusterSnapshotAttributesResult> {
+        &self.db_cluster_snapshot_attributes_result
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

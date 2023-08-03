@@ -166,6 +166,10 @@ impl DomainSuggestionBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>A suggested domain name.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>Whether the domain name is available for registering.</p> <note>
     /// <p>You can register only the domains that are designated as <code>AVAILABLE</code>.</p>
     /// </note>
@@ -293,6 +297,69 @@ impl DomainSuggestionBuilder {
     pub fn set_availability(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability = input;
         self
+    }
+    /// <p>Whether the domain name is available for registering.</p> <note>
+    /// <p>You can register only the domains that are designated as <code>AVAILABLE</code>.</p>
+    /// </note>
+    /// <p>Valid values:</p>
+    /// <dl>
+    /// <dt>
+    /// AVAILABLE
+    /// </dt>
+    /// <dd>
+    /// <p>The domain name is available.</p>
+    /// </dd>
+    /// <dt>
+    /// AVAILABLE_RESERVED
+    /// </dt>
+    /// <dd>
+    /// <p>The domain name is reserved under specific conditions.</p>
+    /// </dd>
+    /// <dt>
+    /// AVAILABLE_PREORDER
+    /// </dt>
+    /// <dd>
+    /// <p>The domain name is available and can be preordered.</p>
+    /// </dd>
+    /// <dt>
+    /// DONT_KNOW
+    /// </dt>
+    /// <dd>
+    /// <p>The TLD registry didn't reply with a definitive answer about whether the domain name is available. Route 53 can return this response for a variety of reasons, for example, the registry is performing maintenance. Try again later.</p>
+    /// </dd>
+    /// <dt>
+    /// PENDING
+    /// </dt>
+    /// <dd>
+    /// <p>The TLD registry didn't return a response in the expected amount of time. When the response is delayed, it usually takes just a few extra seconds. You can resubmit the request immediately.</p>
+    /// </dd>
+    /// <dt>
+    /// RESERVED
+    /// </dt>
+    /// <dd>
+    /// <p>The domain name has been reserved for another person or organization.</p>
+    /// </dd>
+    /// <dt>
+    /// UNAVAILABLE
+    /// </dt>
+    /// <dd>
+    /// <p>The domain name is not available.</p>
+    /// </dd>
+    /// <dt>
+    /// UNAVAILABLE_PREMIUM
+    /// </dt>
+    /// <dd>
+    /// <p>The domain name is not available.</p>
+    /// </dd>
+    /// <dt>
+    /// UNAVAILABLE_RESTRICTED
+    /// </dt>
+    /// <dd>
+    /// <p>The domain name is forbidden.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_availability(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability
     }
     /// Consumes the builder and constructs a [`DomainSuggestion`](crate::types::DomainSuggestion).
     pub fn build(self) -> crate::types::DomainSuggestion {

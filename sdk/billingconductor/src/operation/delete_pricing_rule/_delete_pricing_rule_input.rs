@@ -40,6 +40,10 @@ impl DeletePricingRuleInputBuilder {
         self.arn = input;
         self
     }
+    /// <p> The Amazon Resource Name (ARN) of the pricing rule that you are deleting. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`DeletePricingRuleInput`](crate::operation::delete_pricing_rule::DeletePricingRuleInput).
     pub fn build(
         self,

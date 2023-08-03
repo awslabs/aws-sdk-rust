@@ -51,6 +51,12 @@ impl TimeSeriesSelectorBuilder {
         self.time_series_identifiers = input;
         self
     }
+    /// <p>Details about the import file that contains the time series for which you want to create forecasts.</p>
+    pub fn get_time_series_identifiers(
+        &self,
+    ) -> &::std::option::Option<crate::types::TimeSeriesIdentifiers> {
+        &self.time_series_identifiers
+    }
     /// Consumes the builder and constructs a [`TimeSeriesSelector`](crate::types::TimeSeriesSelector).
     pub fn build(self) -> crate::types::TimeSeriesSelector {
         crate::types::TimeSeriesSelector {

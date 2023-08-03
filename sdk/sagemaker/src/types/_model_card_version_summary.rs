@@ -98,6 +98,10 @@ impl ModelCardVersionSummaryBuilder {
         self.model_card_name = input;
         self
     }
+    /// <p>The name of the model card.</p>
+    pub fn get_model_card_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_card_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the model card.</p>
     pub fn model_card_arn(
         mut self,
@@ -113,6 +117,10 @@ impl ModelCardVersionSummaryBuilder {
     ) -> Self {
         self.model_card_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the model card.</p>
+    pub fn get_model_card_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_card_arn
     }
     /// <p>The approval status of the model card version within your organization. Different organizations might have different criteria for model card review and approval.</p>
     /// <ul>
@@ -139,6 +147,16 @@ impl ModelCardVersionSummaryBuilder {
         self.model_card_status = input;
         self
     }
+    /// <p>The approval status of the model card version within your organization. Different organizations might have different criteria for model card review and approval.</p>
+    /// <ul>
+    /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li>
+    /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li>
+    /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
+    /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
+    /// </ul>
+    pub fn get_model_card_status(&self) -> &::std::option::Option<crate::types::ModelCardStatus> {
+        &self.model_card_status
+    }
     /// <p>A version of the model card.</p>
     pub fn model_card_version(mut self, input: i32) -> Self {
         self.model_card_version = ::std::option::Option::Some(input);
@@ -148,6 +166,10 @@ impl ModelCardVersionSummaryBuilder {
     pub fn set_model_card_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.model_card_version = input;
         self
+    }
+    /// <p>A version of the model card.</p>
+    pub fn get_model_card_version(&self) -> &::std::option::Option<i32> {
+        &self.model_card_version
     }
     /// <p>The date and time that the model card version was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -162,6 +184,10 @@ impl ModelCardVersionSummaryBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The date and time that the model card version was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The time date and time that the model card version was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -174,6 +200,10 @@ impl ModelCardVersionSummaryBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>The time date and time that the model card version was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// Consumes the builder and constructs a [`ModelCardVersionSummary`](crate::types::ModelCardVersionSummary).
     pub fn build(self) -> crate::types::ModelCardVersionSummary {

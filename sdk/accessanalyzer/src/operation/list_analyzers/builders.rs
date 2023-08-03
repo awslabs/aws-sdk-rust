@@ -36,6 +36,12 @@ impl ListAnalyzersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListAnalyzers as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_analyzers::builders::ListAnalyzersInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl ListAnalyzersFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A token used for pagination of results returned.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -139,6 +149,10 @@ impl ListAnalyzersFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The type of analyzer.</p>
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
         self.inner = self.inner.r#type(input);
@@ -148,5 +162,9 @@ impl ListAnalyzersFluentBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::Type>) -> Self {
         self.inner = self.inner.set_type(input);
         self
+    }
+    /// <p>The type of analyzer.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::Type> {
+        self.inner.get_type()
     }
 }

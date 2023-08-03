@@ -66,6 +66,10 @@ impl KxDatabaseConfigurationBuilder {
         self.database_name = input;
         self
     }
+    /// <p>The name of the kdb database. When this parameter is specified in the structure, S3 with the whole database is included by default.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// Appends an item to `cache_configurations`.
     ///
     /// To override the contents of this collection use [`set_cache_configurations`](Self::set_cache_configurations).
@@ -88,6 +92,12 @@ impl KxDatabaseConfigurationBuilder {
         self.cache_configurations = input;
         self
     }
+    /// <p>Configuration details for the disk cache used to increase performance reading from a kdb database mounted to the cluster.</p>
+    pub fn get_cache_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseCacheConfiguration>> {
+        &self.cache_configurations
+    }
     /// <p>A unique identifier of the changeset that is associated with the cluster.</p>
     pub fn changeset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.changeset_id = ::std::option::Option::Some(input.into());
@@ -97,6 +107,10 @@ impl KxDatabaseConfigurationBuilder {
     pub fn set_changeset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.changeset_id = input;
         self
+    }
+    /// <p>A unique identifier of the changeset that is associated with the cluster.</p>
+    pub fn get_changeset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.changeset_id
     }
     /// Consumes the builder and constructs a [`KxDatabaseConfiguration`](crate::types::KxDatabaseConfiguration).
     pub fn build(self) -> crate::types::KxDatabaseConfiguration {

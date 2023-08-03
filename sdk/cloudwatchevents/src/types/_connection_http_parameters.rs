@@ -77,6 +77,12 @@ impl ConnectionHttpParametersBuilder {
         self.header_parameters = input;
         self
     }
+    /// <p>Contains additional header parameters for the connection.</p>
+    pub fn get_header_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectionHeaderParameter>> {
+        &self.header_parameters
+    }
     /// Appends an item to `query_string_parameters`.
     ///
     /// To override the contents of this collection use [`set_query_string_parameters`](Self::set_query_string_parameters).
@@ -99,6 +105,12 @@ impl ConnectionHttpParametersBuilder {
         self.query_string_parameters = input;
         self
     }
+    /// <p>Contains additional query string parameters for the connection.</p>
+    pub fn get_query_string_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectionQueryStringParameter>> {
+        &self.query_string_parameters
+    }
     /// Appends an item to `body_parameters`.
     ///
     /// To override the contents of this collection use [`set_body_parameters`](Self::set_body_parameters).
@@ -117,6 +129,12 @@ impl ConnectionHttpParametersBuilder {
     ) -> Self {
         self.body_parameters = input;
         self
+    }
+    /// <p>Contains additional body string parameters for the connection.</p>
+    pub fn get_body_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectionBodyParameter>> {
+        &self.body_parameters
     }
     /// Consumes the builder and constructs a [`ConnectionHttpParameters`](crate::types::ConnectionHttpParameters).
     pub fn build(self) -> crate::types::ConnectionHttpParameters {

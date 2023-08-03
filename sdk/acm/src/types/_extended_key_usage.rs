@@ -73,6 +73,10 @@ impl ExtendedKeyUsageBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of an Extended Key Usage value.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::ExtendedKeyUsageName> {
+        &self.name
+    }
     /// <p>An object identifier (OID) for the extension value. OIDs are strings of numbers separated by periods. The following OIDs are defined in RFC 3280 and RFC 5280. </p>
     /// <ul>
     /// <li> <p> <code>1.3.6.1.5.5.7.3.1 (TLS_WEB_SERVER_AUTHENTICATION)</code> </p> </li>
@@ -104,6 +108,21 @@ impl ExtendedKeyUsageBuilder {
     pub fn set_oid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.oid = input;
         self
+    }
+    /// <p>An object identifier (OID) for the extension value. OIDs are strings of numbers separated by periods. The following OIDs are defined in RFC 3280 and RFC 5280. </p>
+    /// <ul>
+    /// <li> <p> <code>1.3.6.1.5.5.7.3.1 (TLS_WEB_SERVER_AUTHENTICATION)</code> </p> </li>
+    /// <li> <p> <code>1.3.6.1.5.5.7.3.2 (TLS_WEB_CLIENT_AUTHENTICATION)</code> </p> </li>
+    /// <li> <p> <code>1.3.6.1.5.5.7.3.3 (CODE_SIGNING)</code> </p> </li>
+    /// <li> <p> <code>1.3.6.1.5.5.7.3.4 (EMAIL_PROTECTION)</code> </p> </li>
+    /// <li> <p> <code>1.3.6.1.5.5.7.3.8 (TIME_STAMPING)</code> </p> </li>
+    /// <li> <p> <code>1.3.6.1.5.5.7.3.9 (OCSP_SIGNING)</code> </p> </li>
+    /// <li> <p> <code>1.3.6.1.5.5.7.3.5 (IPSEC_END_SYSTEM)</code> </p> </li>
+    /// <li> <p> <code>1.3.6.1.5.5.7.3.6 (IPSEC_TUNNEL)</code> </p> </li>
+    /// <li> <p> <code>1.3.6.1.5.5.7.3.7 (IPSEC_USER)</code> </p> </li>
+    /// </ul>
+    pub fn get_oid(&self) -> &::std::option::Option<::std::string::String> {
+        &self.oid
     }
     /// Consumes the builder and constructs a [`ExtendedKeyUsage`](crate::types::ExtendedKeyUsage).
     pub fn build(self) -> crate::types::ExtendedKeyUsage {

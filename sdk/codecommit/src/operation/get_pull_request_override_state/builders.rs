@@ -36,6 +36,10 @@ impl GetPullRequestOverrideStateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetPullRequestOverrideState as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_pull_request_override_state::builders::GetPullRequestOverrideStateInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl GetPullRequestOverrideStateFluentBuilder {
         self.inner = self.inner.set_pull_request_id(input);
         self
     }
+    /// <p>The ID of the pull request for which you want to get information about whether approval rules have been set aside (overridden).</p>
+    pub fn get_pull_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pull_request_id()
+    }
     /// <p>The system-generated ID of the revision for the pull request. To retrieve the most recent revision ID, use <code>GetPullRequest</code>.</p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.revision_id(input.into());
@@ -141,5 +149,9 @@ impl GetPullRequestOverrideStateFluentBuilder {
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_revision_id(input);
         self
+    }
+    /// <p>The system-generated ID of the revision for the pull request. To retrieve the most recent revision ID, use <code>GetPullRequest</code>.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_revision_id()
     }
 }

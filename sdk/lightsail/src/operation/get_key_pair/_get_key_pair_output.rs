@@ -46,6 +46,10 @@ impl GetKeyPairOutputBuilder {
         self.key_pair = input;
         self
     }
+    /// <p>An array of key-value pairs containing information about the key pair.</p>
+    pub fn get_key_pair(&self) -> &::std::option::Option<crate::types::KeyPair> {
+        &self.key_pair
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

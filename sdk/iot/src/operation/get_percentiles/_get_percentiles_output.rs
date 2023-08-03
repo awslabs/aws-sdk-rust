@@ -55,6 +55,12 @@ impl GetPercentilesOutputBuilder {
         self.percentiles = input;
         self
     }
+    /// <p>The percentile values of the aggregated fields.</p>
+    pub fn get_percentiles(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PercentPair>> {
+        &self.percentiles
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

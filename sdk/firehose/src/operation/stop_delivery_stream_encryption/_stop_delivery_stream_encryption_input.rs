@@ -45,6 +45,10 @@ impl StopDeliveryStreamEncryptionInputBuilder {
         self.delivery_stream_name = input;
         self
     }
+    /// <p>The name of the delivery stream for which you want to disable server-side encryption (SSE).</p>
+    pub fn get_delivery_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delivery_stream_name
+    }
     /// Consumes the builder and constructs a [`StopDeliveryStreamEncryptionInput`](crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionInput).
     pub fn build(
         self,

@@ -69,6 +69,12 @@ impl ListVpcEndpointsOutputBuilder {
         self.vpc_endpoint_summary_list = input;
         self
     }
+    /// <p>Information about each endpoint.</p>
+    pub fn get_vpc_endpoint_summary_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcEndpointSummary>> {
+        &self.vpc_endpoint_summary_list
+    }
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -78,6 +84,10 @@ impl ListVpcEndpointsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

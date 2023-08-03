@@ -45,6 +45,10 @@ impl MergeShardsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the MergeShards as a reference.
+    pub fn as_input(&self) -> &crate::operation::merge_shards::builders::MergeShardsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl MergeShardsFluentBuilder {
         self.inner = self.inner.set_stream_name(input);
         self
     }
+    /// <p>The name of the stream for the merge.</p>
+    pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_name()
+    }
     /// <p>The shard ID of the shard to combine with the adjacent shard for the merge.</p>
     pub fn shard_to_merge(
         mut self,
@@ -142,6 +150,10 @@ impl MergeShardsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_shard_to_merge(input);
         self
+    }
+    /// <p>The shard ID of the shard to combine with the adjacent shard for the merge.</p>
+    pub fn get_shard_to_merge(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_shard_to_merge()
     }
     /// <p>The shard ID of the adjacent shard for the merge.</p>
     pub fn adjacent_shard_to_merge(
@@ -159,6 +171,10 @@ impl MergeShardsFluentBuilder {
         self.inner = self.inner.set_adjacent_shard_to_merge(input);
         self
     }
+    /// <p>The shard ID of the adjacent shard for the merge.</p>
+    pub fn get_adjacent_shard_to_merge(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_adjacent_shard_to_merge()
+    }
     /// <p>The ARN of the stream.</p>
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stream_arn(input.into());
@@ -168,5 +184,9 @@ impl MergeShardsFluentBuilder {
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stream_arn(input);
         self
+    }
+    /// <p>The ARN of the stream.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_arn()
     }
 }

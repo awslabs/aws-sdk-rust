@@ -86,6 +86,10 @@ impl S3LocationBuilder {
         self.bucket = input;
         self
     }
+    /// <p>The name of the Amazon S3 bucket where the application revision is stored.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p>The name of the Amazon S3 object that represents the bundled artifacts for the application revision.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
@@ -95,6 +99,10 @@ impl S3LocationBuilder {
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
+    }
+    /// <p>The name of the Amazon S3 object that represents the bundled artifacts for the application revision.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
     }
     /// <p>The file type of the application revision. Must be one of the following:</p>
     /// <ul>
@@ -119,6 +127,15 @@ impl S3LocationBuilder {
         self.bundle_type = input;
         self
     }
+    /// <p>The file type of the application revision. Must be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>tar</code>: A tar archive file.</p> </li>
+    /// <li> <p> <code>tgz</code>: A compressed tar archive file.</p> </li>
+    /// <li> <p> <code>zip</code>: A zip archive file.</p> </li>
+    /// </ul>
+    pub fn get_bundle_type(&self) -> &::std::option::Option<crate::types::BundleType> {
+        &self.bundle_type
+    }
     /// <p>A specific version of the Amazon S3 object that represents the bundled artifacts for the application revision.</p>
     /// <p>If the version is not specified, the system uses the most recent version by default.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -131,6 +148,11 @@ impl S3LocationBuilder {
         self.version = input;
         self
     }
+    /// <p>A specific version of the Amazon S3 object that represents the bundled artifacts for the application revision.</p>
+    /// <p>If the version is not specified, the system uses the most recent version by default.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
+    }
     /// <p>The ETag of the Amazon S3 object that represents the bundled artifacts for the application revision.</p>
     /// <p>If the ETag is not specified as an input parameter, ETag validation of the object is skipped.</p>
     pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -142,6 +164,11 @@ impl S3LocationBuilder {
     pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.e_tag = input;
         self
+    }
+    /// <p>The ETag of the Amazon S3 object that represents the bundled artifacts for the application revision.</p>
+    /// <p>If the ETag is not specified as an input parameter, ETag validation of the object is skipped.</p>
+    pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.e_tag
     }
     /// Consumes the builder and constructs a [`S3Location`](crate::types::S3Location).
     pub fn build(self) -> crate::types::S3Location {

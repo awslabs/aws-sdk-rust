@@ -54,6 +54,10 @@ impl SeriesItemBuilder {
         self.field_series_item = input;
         self
     }
+    /// <p>The field series item configuration of a line chart.</p>
+    pub fn get_field_series_item(&self) -> &::std::option::Option<crate::types::FieldSeriesItem> {
+        &self.field_series_item
+    }
     /// <p>The data field series item configuration of a line chart.</p>
     pub fn data_field_series_item(mut self, input: crate::types::DataFieldSeriesItem) -> Self {
         self.data_field_series_item = ::std::option::Option::Some(input);
@@ -66,6 +70,12 @@ impl SeriesItemBuilder {
     ) -> Self {
         self.data_field_series_item = input;
         self
+    }
+    /// <p>The data field series item configuration of a line chart.</p>
+    pub fn get_data_field_series_item(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataFieldSeriesItem> {
+        &self.data_field_series_item
     }
     /// Consumes the builder and constructs a [`SeriesItem`](crate::types::SeriesItem).
     pub fn build(self) -> crate::types::SeriesItem {

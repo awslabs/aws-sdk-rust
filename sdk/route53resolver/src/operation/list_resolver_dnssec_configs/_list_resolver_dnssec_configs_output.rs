@@ -62,6 +62,11 @@ impl ListResolverDnssecConfigsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If a response includes the last of the DNSSEC configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p>
+    /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListResolverDnssecConfigs.html">ListResolverDnssecConfigs</a> request. Get the value of <code>NextToken</code> that Amazon Route 53 returned in the previous response and include it in <code>NextToken</code> in the next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `resolver_dnssec_configs`.
     ///
     /// To override the contents of this collection use [`set_resolver_dnssec_configs`](Self::set_resolver_dnssec_configs).
@@ -80,6 +85,12 @@ impl ListResolverDnssecConfigsOutputBuilder {
     ) -> Self {
         self.resolver_dnssec_configs = input;
         self
+    }
+    /// <p>An array that contains one <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html">ResolverDnssecConfig</a> element for each configuration for DNSSEC validation that is associated with the current Amazon Web Services account.</p>
+    pub fn get_resolver_dnssec_configs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResolverDnssecConfig>> {
+        &self.resolver_dnssec_configs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

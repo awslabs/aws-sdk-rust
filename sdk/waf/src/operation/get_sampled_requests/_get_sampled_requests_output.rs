@@ -73,6 +73,12 @@ impl GetSampledRequestsOutputBuilder {
         self.sampled_requests = input;
         self
     }
+    /// <p>A complex type that contains detailed information about each of the requests in the sample.</p>
+    pub fn get_sampled_requests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SampledHttpRequest>> {
+        &self.sampled_requests
+    }
     /// <p>The total number of requests from which <code>GetSampledRequests</code> got a sample of <code>MaxItems</code> requests. If <code>PopulationSize</code> is less than <code>MaxItems</code>, the sample includes every request that your AWS resource received during the specified time range.</p>
     pub fn population_size(mut self, input: i64) -> Self {
         self.population_size = ::std::option::Option::Some(input);
@@ -82,6 +88,10 @@ impl GetSampledRequestsOutputBuilder {
     pub fn set_population_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.population_size = input;
         self
+    }
+    /// <p>The total number of requests from which <code>GetSampledRequests</code> got a sample of <code>MaxItems</code> requests. If <code>PopulationSize</code> is less than <code>MaxItems</code>, the sample includes every request that your AWS resource received during the specified time range.</p>
+    pub fn get_population_size(&self) -> &::std::option::Option<i64> {
+        &self.population_size
     }
     /// <p>Usually, <code>TimeWindow</code> is the time range that you specified in the <code>GetSampledRequests</code> request. However, if your AWS resource received more than 5,000 requests during the time range that you specified in the request, <code>GetSampledRequests</code> returns the time range for the first 5,000 requests. Times are in Coordinated Universal Time (UTC) format.</p>
     pub fn time_window(mut self, input: crate::types::TimeWindow) -> Self {
@@ -95,6 +105,10 @@ impl GetSampledRequestsOutputBuilder {
     ) -> Self {
         self.time_window = input;
         self
+    }
+    /// <p>Usually, <code>TimeWindow</code> is the time range that you specified in the <code>GetSampledRequests</code> request. However, if your AWS resource received more than 5,000 requests during the time range that you specified in the request, <code>GetSampledRequests</code> returns the time range for the first 5,000 requests. Times are in Coordinated Universal Time (UTC) format.</p>
+    pub fn get_time_window(&self) -> &::std::option::Option<crate::types::TimeWindow> {
+        &self.time_window
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

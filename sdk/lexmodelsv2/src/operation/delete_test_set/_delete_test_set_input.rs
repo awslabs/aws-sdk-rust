@@ -39,6 +39,10 @@ impl DeleteTestSetInputBuilder {
         self.test_set_id = input;
         self
     }
+    /// <p>The test set Id of the test set to be deleted.</p>
+    pub fn get_test_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.test_set_id
+    }
     /// Consumes the builder and constructs a [`DeleteTestSetInput`](crate::operation::delete_test_set::DeleteTestSetInput).
     pub fn build(
         self,

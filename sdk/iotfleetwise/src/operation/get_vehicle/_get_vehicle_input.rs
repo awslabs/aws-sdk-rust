@@ -39,6 +39,10 @@ impl GetVehicleInputBuilder {
         self.vehicle_name = input;
         self
     }
+    /// <p> The ID of the vehicle to retrieve information about. </p>
+    pub fn get_vehicle_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vehicle_name
+    }
     /// Consumes the builder and constructs a [`GetVehicleInput`](crate::operation::get_vehicle::GetVehicleInput).
     pub fn build(
         self,

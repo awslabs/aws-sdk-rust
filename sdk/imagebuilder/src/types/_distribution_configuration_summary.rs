@@ -96,6 +96,10 @@ impl DistributionConfigurationSummaryBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the distribution configuration.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the distribution configuration.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl DistributionConfigurationSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the distribution configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The description of the distribution configuration.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -116,6 +124,10 @@ impl DistributionConfigurationSummaryBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the distribution configuration.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The date on which the distribution configuration was created.</p>
     pub fn date_created(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.date_created = ::std::option::Option::Some(input.into());
@@ -126,6 +138,10 @@ impl DistributionConfigurationSummaryBuilder {
         self.date_created = input;
         self
     }
+    /// <p>The date on which the distribution configuration was created.</p>
+    pub fn get_date_created(&self) -> &::std::option::Option<::std::string::String> {
+        &self.date_created
+    }
     /// <p>The date on which the distribution configuration was updated.</p>
     pub fn date_updated(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.date_updated = ::std::option::Option::Some(input.into());
@@ -135,6 +151,10 @@ impl DistributionConfigurationSummaryBuilder {
     pub fn set_date_updated(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.date_updated = input;
         self
+    }
+    /// <p>The date on which the distribution configuration was updated.</p>
+    pub fn get_date_updated(&self) -> &::std::option::Option<::std::string::String> {
+        &self.date_updated
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -161,6 +181,14 @@ impl DistributionConfigurationSummaryBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags associated with the distribution configuration.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// Appends an item to `regions`.
     ///
     /// To override the contents of this collection use [`set_regions`](Self::set_regions).
@@ -179,6 +207,10 @@ impl DistributionConfigurationSummaryBuilder {
     ) -> Self {
         self.regions = input;
         self
+    }
+    /// <p>A list of Regions where the container image is distributed to.</p>
+    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.regions
     }
     /// Consumes the builder and constructs a [`DistributionConfigurationSummary`](crate::types::DistributionConfigurationSummary).
     pub fn build(self) -> crate::types::DistributionConfigurationSummary {

@@ -141,6 +141,10 @@ impl GetEmailIdentityOutputBuilder {
         self.identity_type = input;
         self
     }
+    /// <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type is not supported.</p>
+    pub fn get_identity_type(&self) -> &::std::option::Option<crate::types::IdentityType> {
+        &self.identity_type
+    }
     /// <p>The feedback forwarding configuration for the identity.</p>
     /// <p>If the value is <code>true</code>, you receive email notifications when bounce or complaint events occur. These notifications are sent to the address that you specified in the <code>Return-Path</code> header of the original email.</p>
     /// <p>You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications (for example, by setting up an event destination), you receive an email notification when these events occur (even if this setting is disabled).</p>
@@ -155,6 +159,12 @@ impl GetEmailIdentityOutputBuilder {
         self.feedback_forwarding_status = input;
         self
     }
+    /// <p>The feedback forwarding configuration for the identity.</p>
+    /// <p>If the value is <code>true</code>, you receive email notifications when bounce or complaint events occur. These notifications are sent to the address that you specified in the <code>Return-Path</code> header of the original email.</p>
+    /// <p>You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications (for example, by setting up an event destination), you receive an email notification when these events occur (even if this setting is disabled).</p>
+    pub fn get_feedback_forwarding_status(&self) -> &::std::option::Option<bool> {
+        &self.feedback_forwarding_status
+    }
     /// <p>Specifies whether or not the identity is verified. You can only send email from verified email addresses or domains. For more information about verifying identities, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint User Guide</a>.</p>
     pub fn verified_for_sending_status(mut self, input: bool) -> Self {
         self.verified_for_sending_status = ::std::option::Option::Some(input);
@@ -164,6 +174,10 @@ impl GetEmailIdentityOutputBuilder {
     pub fn set_verified_for_sending_status(mut self, input: ::std::option::Option<bool>) -> Self {
         self.verified_for_sending_status = input;
         self
+    }
+    /// <p>Specifies whether or not the identity is verified. You can only send email from verified email addresses or domains. For more information about verifying identities, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint User Guide</a>.</p>
+    pub fn get_verified_for_sending_status(&self) -> &::std::option::Option<bool> {
+        &self.verified_for_sending_status
     }
     /// <p>An object that contains information about the DKIM attributes for the identity.</p>
     pub fn dkim_attributes(mut self, input: crate::types::DkimAttributes) -> Self {
@@ -178,6 +192,10 @@ impl GetEmailIdentityOutputBuilder {
         self.dkim_attributes = input;
         self
     }
+    /// <p>An object that contains information about the DKIM attributes for the identity.</p>
+    pub fn get_dkim_attributes(&self) -> &::std::option::Option<crate::types::DkimAttributes> {
+        &self.dkim_attributes
+    }
     /// <p>An object that contains information about the Mail-From attributes for the email identity.</p>
     pub fn mail_from_attributes(mut self, input: crate::types::MailFromAttributes) -> Self {
         self.mail_from_attributes = ::std::option::Option::Some(input);
@@ -190,6 +208,12 @@ impl GetEmailIdentityOutputBuilder {
     ) -> Self {
         self.mail_from_attributes = input;
         self
+    }
+    /// <p>An object that contains information about the Mail-From attributes for the email identity.</p>
+    pub fn get_mail_from_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::MailFromAttributes> {
+        &self.mail_from_attributes
     }
     /// Adds a key-value pair to `policies`.
     ///
@@ -216,6 +240,14 @@ impl GetEmailIdentityOutputBuilder {
         self.policies = input;
         self
     }
+    /// <p>A map of policy names to policies.</p>
+    pub fn get_policies(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.policies
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -235,6 +267,10 @@ impl GetEmailIdentityOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p>An array of objects that define the tags (keys and values) that are associated with the email identity.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The configuration set used by default when sending from this identity.</p>
     pub fn configuration_set_name(
         mut self,
@@ -250,6 +286,10 @@ impl GetEmailIdentityOutputBuilder {
     ) -> Self {
         self.configuration_set_name = input;
         self
+    }
+    /// <p>The configuration set used by default when sending from this identity.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_set_name
     }
     /// <p>The verification status of the identity. The status can be one of the following:</p>
     /// <ul>
@@ -277,6 +317,19 @@ impl GetEmailIdentityOutputBuilder {
     ) -> Self {
         self.verification_status = input;
         self
+    }
+    /// <p>The verification status of the identity. The status can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet been able to verify the identity.</p> </li>
+    /// <li> <p> <code>SUCCESS</code> – The verification process completed successfully.</p> </li>
+    /// <li> <p> <code>FAILED</code> – The verification process failed.</p> </li>
+    /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the verification status of the identity.</p> </li>
+    /// <li> <p> <code>NOT_STARTED</code> – The verification process hasn't been initiated for the identity.</p> </li>
+    /// </ul>
+    pub fn get_verification_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::VerificationStatus> {
+        &self.verification_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

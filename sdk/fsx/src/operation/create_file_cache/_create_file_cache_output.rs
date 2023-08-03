@@ -50,6 +50,10 @@ impl CreateFileCacheOutputBuilder {
         self.file_cache = input;
         self
     }
+    /// <p>A description of the cache that was created.</p>
+    pub fn get_file_cache(&self) -> &::std::option::Option<crate::types::FileCacheCreating> {
+        &self.file_cache
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

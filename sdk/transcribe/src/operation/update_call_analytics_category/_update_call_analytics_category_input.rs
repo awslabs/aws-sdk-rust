@@ -61,6 +61,10 @@ impl UpdateCallAnalyticsCategoryInputBuilder {
         self.category_name = input;
         self
     }
+    /// <p>The name of the Call Analytics category you want to update. Category names are case sensitive.</p>
+    pub fn get_category_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.category_name
+    }
     /// Appends an item to `rules`.
     ///
     /// To override the contents of this collection use [`set_rules`](Self::set_rules).
@@ -80,6 +84,10 @@ impl UpdateCallAnalyticsCategoryInputBuilder {
         self.rules = input;
         self
     }
+    /// <p>The rules used for the updated Call Analytics category. The rules you provide in this field replace the ones that are currently being used in the specified category.</p>
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Rule>> {
+        &self.rules
+    }
     /// <p>Choose whether you want to update a real-time or a post-call category. The input type you specify must match the input type specified when the category was created. For example, if you created a category with the <code>POST_CALL</code> input type, you must use <code>POST_CALL</code> as the input type when updating this category.</p>
     pub fn input_type(mut self, input: crate::types::InputType) -> Self {
         self.input_type = ::std::option::Option::Some(input);
@@ -89,6 +97,10 @@ impl UpdateCallAnalyticsCategoryInputBuilder {
     pub fn set_input_type(mut self, input: ::std::option::Option<crate::types::InputType>) -> Self {
         self.input_type = input;
         self
+    }
+    /// <p>Choose whether you want to update a real-time or a post-call category. The input type you specify must match the input type specified when the category was created. For example, if you created a category with the <code>POST_CALL</code> input type, you must use <code>POST_CALL</code> as the input type when updating this category.</p>
+    pub fn get_input_type(&self) -> &::std::option::Option<crate::types::InputType> {
+        &self.input_type
     }
     /// Consumes the builder and constructs a [`UpdateCallAnalyticsCategoryInput`](crate::operation::update_call_analytics_category::UpdateCallAnalyticsCategoryInput).
     pub fn build(

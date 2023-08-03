@@ -50,6 +50,12 @@ impl VotingPolicyBuilder {
         self.approval_threshold_policy = input;
         self
     }
+    /// <p>Defines the rules for the network for voting on proposals, such as the percentage of <code>YES</code> votes required for the proposal to be approved and the duration of the proposal. The policy applies to all proposals and is specified when the network is created.</p>
+    pub fn get_approval_threshold_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApprovalThresholdPolicy> {
+        &self.approval_threshold_policy
+    }
     /// Consumes the builder and constructs a [`VotingPolicy`](crate::types::VotingPolicy).
     pub fn build(self) -> crate::types::VotingPolicy {
         crate::types::VotingPolicy {

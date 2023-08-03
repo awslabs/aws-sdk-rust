@@ -56,6 +56,10 @@ impl ResourceRecordBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the DNS record to create in your domain. This is supplied by ACM.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The type of DNS record. Currently this can be <code>CNAME</code>.</p>
     pub fn r#type(mut self, input: crate::types::RecordType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl ResourceRecordBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of DNS record. Currently this can be <code>CNAME</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::RecordType> {
+        &self.r#type
+    }
     /// <p>The value of the CNAME record to add to your DNS database. This is supplied by ACM.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl ResourceRecordBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value of the CNAME record to add to your DNS database. This is supplied by ACM.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// Consumes the builder and constructs a [`ResourceRecord`](crate::types::ResourceRecord).
     pub fn build(self) -> crate::types::ResourceRecord {

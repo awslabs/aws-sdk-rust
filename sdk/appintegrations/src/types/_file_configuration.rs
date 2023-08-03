@@ -65,6 +65,10 @@ impl FileConfigurationBuilder {
         self.folders = input;
         self
     }
+    /// <p>Identifiers for the source folders to pull all files from recursively.</p>
+    pub fn get_folders(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.folders
+    }
     /// Adds a key-value pair to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -92,6 +96,14 @@ impl FileConfigurationBuilder {
     ) -> Self {
         self.filters = input;
         self
+    }
+    /// <p>Restrictions for what files should be pulled from the source.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
+    > {
+        &self.filters
     }
     /// Consumes the builder and constructs a [`FileConfiguration`](crate::types::FileConfiguration).
     pub fn build(self) -> crate::types::FileConfiguration {

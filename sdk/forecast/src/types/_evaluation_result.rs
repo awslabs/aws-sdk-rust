@@ -54,6 +54,10 @@ impl EvaluationResultBuilder {
         self.algorithm_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the algorithm that was evaluated.</p>
+    pub fn get_algorithm_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.algorithm_arn
+    }
     /// Appends an item to `test_windows`.
     ///
     /// To override the contents of this collection use [`set_test_windows`](Self::set_test_windows).
@@ -72,6 +76,12 @@ impl EvaluationResultBuilder {
     ) -> Self {
         self.test_windows = input;
         self
+    }
+    /// <p>The array of test windows used for evaluating the algorithm. The <code>NumberOfBacktestWindows</code> from the <code>EvaluationParameters</code> object determines the number of windows in the array.</p>
+    pub fn get_test_windows(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::WindowSummary>> {
+        &self.test_windows
     }
     /// Consumes the builder and constructs a [`EvaluationResult`](crate::types::EvaluationResult).
     pub fn build(self) -> crate::types::EvaluationResult {

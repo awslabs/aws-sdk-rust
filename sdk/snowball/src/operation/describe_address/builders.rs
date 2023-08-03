@@ -36,6 +36,12 @@ impl DescribeAddressFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeAddress as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_address::builders::DescribeAddressInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +131,9 @@ impl DescribeAddressFluentBuilder {
     pub fn set_address_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_address_id(input);
         self
+    }
+    /// <p>The automatically generated ID for a specific address.</p>
+    pub fn get_address_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_address_id()
     }
 }

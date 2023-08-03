@@ -339,6 +339,10 @@ impl FleetBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the fleet.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the fleet.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -348,6 +352,10 @@ impl FleetBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the fleet.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The fleet name to display.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -359,6 +367,10 @@ impl FleetBuilder {
         self.display_name = input;
         self
     }
+    /// <p>The fleet name to display.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
+    }
     /// <p>The description to display.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -368,6 +380,10 @@ impl FleetBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description to display.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The name of the image used to create the fleet.</p>
     pub fn image_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -379,6 +395,10 @@ impl FleetBuilder {
         self.image_name = input;
         self
     }
+    /// <p>The name of the image used to create the fleet.</p>
+    pub fn get_image_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_name
+    }
     /// <p>The ARN for the public, private, or shared image.</p>
     pub fn image_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_arn = ::std::option::Option::Some(input.into());
@@ -388,6 +408,10 @@ impl FleetBuilder {
     pub fn set_image_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_arn = input;
         self
+    }
+    /// <p>The ARN for the public, private, or shared image.</p>
+    pub fn get_image_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_arn
     }
     /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>
     /// <ul>
@@ -475,6 +499,45 @@ impl FleetBuilder {
         self.instance_type = input;
         self
     }
+    /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>
+    /// <ul>
+    /// <li> <p>stream.standard.small</p> </li>
+    /// <li> <p>stream.standard.medium</p> </li>
+    /// <li> <p>stream.standard.large</p> </li>
+    /// <li> <p>stream.compute.large</p> </li>
+    /// <li> <p>stream.compute.xlarge</p> </li>
+    /// <li> <p>stream.compute.2xlarge</p> </li>
+    /// <li> <p>stream.compute.4xlarge</p> </li>
+    /// <li> <p>stream.compute.8xlarge</p> </li>
+    /// <li> <p>stream.memory.large</p> </li>
+    /// <li> <p>stream.memory.xlarge</p> </li>
+    /// <li> <p>stream.memory.2xlarge</p> </li>
+    /// <li> <p>stream.memory.4xlarge</p> </li>
+    /// <li> <p>stream.memory.8xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.large</p> </li>
+    /// <li> <p>stream.memory.z1d.xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.large</p> </li>
+    /// <li> <p>stream.graphics-design.xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.2xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.4xlarge</p> </li>
+    /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
+    /// </ul>
+    pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_type
+    }
     /// <p>The fleet type.</p>
     /// <dl>
     /// <dt>
@@ -513,6 +576,24 @@ impl FleetBuilder {
         self.fleet_type = input;
         self
     }
+    /// <p>The fleet type.</p>
+    /// <dl>
+    /// <dt>
+    /// ALWAYS_ON
+    /// </dt>
+    /// <dd>
+    /// <p>Provides users with instant-on access to their apps. You are charged for all running instances in your fleet, even if no users are streaming apps.</p>
+    /// </dd>
+    /// <dt>
+    /// ON_DEMAND
+    /// </dt>
+    /// <dd>
+    /// <p>Provide users with access to applications after they connect, which takes one to two minutes. You are charged for instance streaming when users are connected and a small hourly fee for instances that are not streaming apps.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_fleet_type(&self) -> &::std::option::Option<crate::types::FleetType> {
+        &self.fleet_type
+    }
     /// <p>The capacity status for the fleet.</p>
     pub fn compute_capacity_status(mut self, input: crate::types::ComputeCapacityStatus) -> Self {
         self.compute_capacity_status = ::std::option::Option::Some(input);
@@ -526,6 +607,12 @@ impl FleetBuilder {
         self.compute_capacity_status = input;
         self
     }
+    /// <p>The capacity status for the fleet.</p>
+    pub fn get_compute_capacity_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ComputeCapacityStatus> {
+        &self.compute_capacity_status
+    }
     /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance. </p>
     /// <p>Specify a value between 600 and 360000.</p>
     pub fn max_user_duration_in_seconds(mut self, input: i32) -> Self {
@@ -537,6 +624,11 @@ impl FleetBuilder {
     pub fn set_max_user_duration_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_user_duration_in_seconds = input;
         self
+    }
+    /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance. </p>
+    /// <p>Specify a value between 600 and 360000.</p>
+    pub fn get_max_user_duration_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.max_user_duration_in_seconds
     }
     /// <p>The amount of time that a streaming session remains active after users disconnect. If they try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session. Otherwise, they are connected to a new session with a new streaming instance.</p>
     /// <p>Specify a value between 60 and 360000.</p>
@@ -550,6 +642,11 @@ impl FleetBuilder {
         self.disconnect_timeout_in_seconds = input;
         self
     }
+    /// <p>The amount of time that a streaming session remains active after users disconnect. If they try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session. Otherwise, they are connected to a new session with a new streaming instance.</p>
+    /// <p>Specify a value between 60 and 360000.</p>
+    pub fn get_disconnect_timeout_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.disconnect_timeout_in_seconds
+    }
     /// <p>The current state for the fleet.</p>
     pub fn state(mut self, input: crate::types::FleetState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -560,6 +657,10 @@ impl FleetBuilder {
         self.state = input;
         self
     }
+    /// <p>The current state for the fleet.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::FleetState> {
+        &self.state
+    }
     /// <p>The VPC configuration for the fleet.</p>
     pub fn vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
         self.vpc_config = ::std::option::Option::Some(input);
@@ -569,6 +670,10 @@ impl FleetBuilder {
     pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
         self.vpc_config = input;
         self
+    }
+    /// <p>The VPC configuration for the fleet.</p>
+    pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
+        &self.vpc_config
     }
     /// <p>The time the fleet was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -582,6 +687,10 @@ impl FleetBuilder {
     ) -> Self {
         self.created_time = input;
         self
+    }
+    /// <p>The time the fleet was created.</p>
+    pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_time
     }
     /// Appends an item to `fleet_errors`.
     ///
@@ -602,6 +711,12 @@ impl FleetBuilder {
         self.fleet_errors = input;
         self
     }
+    /// <p>The fleet errors.</p>
+    pub fn get_fleet_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetError>> {
+        &self.fleet_errors
+    }
     /// <p>Indicates whether default internet access is enabled for the fleet.</p>
     pub fn enable_default_internet_access(mut self, input: bool) -> Self {
         self.enable_default_internet_access = ::std::option::Option::Some(input);
@@ -615,6 +730,10 @@ impl FleetBuilder {
         self.enable_default_internet_access = input;
         self
     }
+    /// <p>Indicates whether default internet access is enabled for the fleet.</p>
+    pub fn get_enable_default_internet_access(&self) -> &::std::option::Option<bool> {
+        &self.enable_default_internet_access
+    }
     /// <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. </p>
     pub fn domain_join_info(mut self, input: crate::types::DomainJoinInfo) -> Self {
         self.domain_join_info = ::std::option::Option::Some(input);
@@ -627,6 +746,10 @@ impl FleetBuilder {
     ) -> Self {
         self.domain_join_info = input;
         self
+    }
+    /// <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. </p>
+    pub fn get_domain_join_info(&self) -> &::std::option::Option<crate::types::DomainJoinInfo> {
+        &self.domain_join_info
     }
     /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If users try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p>
     /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note>
@@ -647,6 +770,13 @@ impl FleetBuilder {
         self.idle_disconnect_timeout_in_seconds = input;
         self
     }
+    /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If users try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p>
+    /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note>
+    /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>
+    /// </note>
+    pub fn get_idle_disconnect_timeout_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.idle_disconnect_timeout_in_seconds
+    }
     /// <p>The ARN of the IAM role that is applied to the fleet. To assume a role, the fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -658,6 +788,11 @@ impl FleetBuilder {
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_role_arn = input;
         self
+    }
+    /// <p>The ARN of the IAM role that is applied to the fleet. To assume a role, the fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iam_role_arn
     }
     /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
     /// <p>The default value is <code>APP</code>.</p>
@@ -674,6 +809,11 @@ impl FleetBuilder {
         self.stream_view = input;
         self
     }
+    /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
+    /// <p>The default value is <code>APP</code>.</p>
+    pub fn get_stream_view(&self) -> &::std::option::Option<crate::types::StreamView> {
+        &self.stream_view
+    }
     /// <p>The platform of the fleet.</p>
     pub fn platform(mut self, input: crate::types::PlatformType) -> Self {
         self.platform = ::std::option::Option::Some(input);
@@ -687,6 +827,10 @@ impl FleetBuilder {
         self.platform = input;
         self
     }
+    /// <p>The platform of the fleet.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<crate::types::PlatformType> {
+        &self.platform
+    }
     /// <p>The maximum number of concurrent sessions for the fleet.</p>
     pub fn max_concurrent_sessions(mut self, input: i32) -> Self {
         self.max_concurrent_sessions = ::std::option::Option::Some(input);
@@ -696,6 +840,10 @@ impl FleetBuilder {
     pub fn set_max_concurrent_sessions(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_concurrent_sessions = input;
         self
+    }
+    /// <p>The maximum number of concurrent sessions for the fleet.</p>
+    pub fn get_max_concurrent_sessions(&self) -> &::std::option::Option<i32> {
+        &self.max_concurrent_sessions
     }
     /// Appends an item to `usb_device_filter_strings`.
     ///
@@ -719,6 +867,12 @@ impl FleetBuilder {
         self.usb_device_filter_strings = input;
         self
     }
+    /// <p>The USB device filter strings associated with the fleet.</p>
+    pub fn get_usb_device_filter_strings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.usb_device_filter_strings
+    }
     /// <p>The S3 location of the session scripts configuration zip file. This only applies to Elastic fleets.</p>
     pub fn session_script_s3_location(mut self, input: crate::types::S3Location) -> Self {
         self.session_script_s3_location = ::std::option::Option::Some(input);
@@ -731,6 +885,12 @@ impl FleetBuilder {
     ) -> Self {
         self.session_script_s3_location = input;
         self
+    }
+    /// <p>The S3 location of the session scripts configuration zip file. This only applies to Elastic fleets.</p>
+    pub fn get_session_script_s3_location(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3Location> {
+        &self.session_script_s3_location
     }
     /// Consumes the builder and constructs a [`Fleet`](crate::types::Fleet).
     pub fn build(self) -> crate::types::Fleet {

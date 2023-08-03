@@ -40,6 +40,10 @@ impl HyperParameterTuningJobConsumedResourcesBuilder {
         self.runtime_in_seconds = input;
         self
     }
+    /// <p>The wall clock runtime in seconds used by your hyperparameter tuning job.</p>
+    pub fn get_runtime_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.runtime_in_seconds
+    }
     /// Consumes the builder and constructs a [`HyperParameterTuningJobConsumedResources`](crate::types::HyperParameterTuningJobConsumedResources).
     pub fn build(self) -> crate::types::HyperParameterTuningJobConsumedResources {
         crate::types::HyperParameterTuningJobConsumedResources {

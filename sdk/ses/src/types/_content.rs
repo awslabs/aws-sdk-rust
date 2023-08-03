@@ -49,6 +49,10 @@ impl ContentBuilder {
         self.data = input;
         self
     }
+    /// <p>The textual data of the content.</p>
+    pub fn get_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data
+    }
     /// <p>The character set of the content.</p>
     pub fn charset(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.charset = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl ContentBuilder {
     pub fn set_charset(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.charset = input;
         self
+    }
+    /// <p>The character set of the content.</p>
+    pub fn get_charset(&self) -> &::std::option::Option<::std::string::String> {
+        &self.charset
     }
     /// Consumes the builder and constructs a [`Content`](crate::types::Content).
     pub fn build(self) -> crate::types::Content {

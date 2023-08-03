@@ -40,6 +40,13 @@ impl GetSizeConstraintSetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetSizeConstraintSet as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_size_constraint_set::builders::GetSizeConstraintSetInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,5 +142,9 @@ impl GetSizeConstraintSetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_size_constraint_set_id(input);
         self
+    }
+    /// <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to get. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
+    pub fn get_size_constraint_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_size_constraint_set_id()
     }
 }

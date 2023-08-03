@@ -126,6 +126,10 @@ impl ScalingPlanBuilder {
         self.scaling_plan_name = input;
         self
     }
+    /// <p>The name of the scaling plan.</p>
+    pub fn get_scaling_plan_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scaling_plan_name
+    }
     /// <p>The version number of the scaling plan.</p>
     pub fn scaling_plan_version(mut self, input: i64) -> Self {
         self.scaling_plan_version = ::std::option::Option::Some(input);
@@ -135,6 +139,10 @@ impl ScalingPlanBuilder {
     pub fn set_scaling_plan_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.scaling_plan_version = input;
         self
+    }
+    /// <p>The version number of the scaling plan.</p>
+    pub fn get_scaling_plan_version(&self) -> &::std::option::Option<i64> {
+        &self.scaling_plan_version
     }
     /// <p>A CloudFormation stack or a set of tags. You can create one scaling plan per application source.</p>
     pub fn application_source(mut self, input: crate::types::ApplicationSource) -> Self {
@@ -148,6 +156,12 @@ impl ScalingPlanBuilder {
     ) -> Self {
         self.application_source = input;
         self
+    }
+    /// <p>A CloudFormation stack or a set of tags. You can create one scaling plan per application source.</p>
+    pub fn get_application_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationSource> {
+        &self.application_source
     }
     /// Appends an item to `scaling_instructions`.
     ///
@@ -167,6 +181,12 @@ impl ScalingPlanBuilder {
     ) -> Self {
         self.scaling_instructions = input;
         self
+    }
+    /// <p>The scaling instructions.</p>
+    pub fn get_scaling_instructions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ScalingInstruction>> {
+        &self.scaling_instructions
     }
     /// <p>The status of the scaling plan.</p>
     /// <ul>
@@ -201,6 +221,20 @@ impl ScalingPlanBuilder {
         self.status_code = input;
         self
     }
+    /// <p>The status of the scaling plan.</p>
+    /// <ul>
+    /// <li> <p> <code>Active</code> - The scaling plan is active.</p> </li>
+    /// <li> <p> <code>ActiveWithProblems</code> - The scaling plan is active, but the scaling configuration for one or more resources could not be applied.</p> </li>
+    /// <li> <p> <code>CreationInProgress</code> - The scaling plan is being created.</p> </li>
+    /// <li> <p> <code>CreationFailed</code> - The scaling plan could not be created.</p> </li>
+    /// <li> <p> <code>DeletionInProgress</code> - The scaling plan is being deleted.</p> </li>
+    /// <li> <p> <code>DeletionFailed</code> - The scaling plan could not be deleted.</p> </li>
+    /// <li> <p> <code>UpdateInProgress</code> - The scaling plan is being updated.</p> </li>
+    /// <li> <p> <code>UpdateFailed</code> - The scaling plan could not be updated.</p> </li>
+    /// </ul>
+    pub fn get_status_code(&self) -> &::std::option::Option<crate::types::ScalingPlanStatusCode> {
+        &self.status_code
+    }
     /// <p>A simple message about the current status of the scaling plan.</p>
     pub fn status_message(
         mut self,
@@ -217,6 +251,10 @@ impl ScalingPlanBuilder {
         self.status_message = input;
         self
     }
+    /// <p>A simple message about the current status of the scaling plan.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>The Unix time stamp when the scaling plan entered the current status.</p>
     pub fn status_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.status_start_time = ::std::option::Option::Some(input);
@@ -230,6 +268,10 @@ impl ScalingPlanBuilder {
         self.status_start_time = input;
         self
     }
+    /// <p>The Unix time stamp when the scaling plan entered the current status.</p>
+    pub fn get_status_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.status_start_time
+    }
     /// <p>The Unix time stamp when the scaling plan was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -242,6 +284,10 @@ impl ScalingPlanBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The Unix time stamp when the scaling plan was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// Consumes the builder and constructs a [`ScalingPlan`](crate::types::ScalingPlan).
     pub fn build(self) -> crate::types::ScalingPlan {

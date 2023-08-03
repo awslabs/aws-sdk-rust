@@ -40,6 +40,10 @@ impl DeleteResourceSetInputBuilder {
         self.identifier = input;
         self
     }
+    /// <p>A unique identifier for the resource set, used in a request to refer to the resource set.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
+    }
     /// Consumes the builder and constructs a [`DeleteResourceSetInput`](crate::operation::delete_resource_set::DeleteResourceSetInput).
     pub fn build(
         self,

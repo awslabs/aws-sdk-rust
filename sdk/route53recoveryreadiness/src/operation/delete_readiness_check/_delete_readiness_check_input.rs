@@ -46,6 +46,10 @@ impl DeleteReadinessCheckInputBuilder {
         self.readiness_check_name = input;
         self
     }
+    /// <p>Name of a readiness check.</p>
+    pub fn get_readiness_check_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.readiness_check_name
+    }
     /// Consumes the builder and constructs a [`DeleteReadinessCheckInput`](crate::operation::delete_readiness_check::DeleteReadinessCheckInput).
     pub fn build(
         self,

@@ -56,6 +56,12 @@ impl UpdateUserAccessLoggingSettingsOutputBuilder {
         self.user_access_logging_settings = input;
         self
     }
+    /// <p>The user access logging settings.</p>
+    pub fn get_user_access_logging_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::UserAccessLoggingSettings> {
+        &self.user_access_logging_settings
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

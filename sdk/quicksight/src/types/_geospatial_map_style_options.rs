@@ -43,6 +43,10 @@ impl GeospatialMapStyleOptionsBuilder {
         self.base_map_style = input;
         self
     }
+    /// <p>The base map style of the geospatial map.</p>
+    pub fn get_base_map_style(&self) -> &::std::option::Option<crate::types::BaseMapStyleType> {
+        &self.base_map_style
+    }
     /// Consumes the builder and constructs a [`GeospatialMapStyleOptions`](crate::types::GeospatialMapStyleOptions).
     pub fn build(self) -> crate::types::GeospatialMapStyleOptions {
         crate::types::GeospatialMapStyleOptions {

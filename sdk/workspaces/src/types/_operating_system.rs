@@ -43,6 +43,10 @@ impl OperatingSystemBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The operating system.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::OperatingSystemType> {
+        &self.r#type
+    }
     /// Consumes the builder and constructs a [`OperatingSystem`](crate::types::OperatingSystem).
     pub fn build(self) -> crate::types::OperatingSystem {
         crate::types::OperatingSystem {

@@ -36,6 +36,10 @@ impl PutGeofenceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutGeofence as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_geofence::builders::PutGeofenceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl PutGeofenceFluentBuilder {
         self.inner = self.inner.set_collection_name(input);
         self
     }
+    /// <p>The geofence collection to store the geofence in.</p>
+    pub fn get_collection_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_collection_name()
+    }
     /// <p>An identifier for the geofence. For example, <code>ExampleGeofence-1</code>.</p>
     pub fn geofence_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.geofence_id(input.into());
@@ -133,6 +141,10 @@ impl PutGeofenceFluentBuilder {
     pub fn set_geofence_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_geofence_id(input);
         self
+    }
+    /// <p>An identifier for the geofence. For example, <code>ExampleGeofence-1</code>.</p>
+    pub fn get_geofence_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_geofence_id()
     }
     /// <p>Contains the details to specify the position of the geofence. Can be either a polygon or a circle. Including both will return a validation error.</p> <note>
     /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html"> geofence polygon</a> can have a maximum of 1,000 vertices.</p>
@@ -150,6 +162,12 @@ impl PutGeofenceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_geometry(input);
         self
+    }
+    /// <p>Contains the details to specify the position of the geofence. Can be either a polygon or a circle. Including both will return a validation error.</p> <note>
+    /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html"> geofence polygon</a> can have a maximum of 1,000 vertices.</p>
+    /// </note>
+    pub fn get_geometry(&self) -> &::std::option::Option<crate::types::GeofenceGeometry> {
+        self.inner.get_geometry()
     }
     /// Adds a key-value pair to `GeofenceProperties`.
     ///
@@ -175,5 +193,14 @@ impl PutGeofenceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_geofence_properties(input);
         self
+    }
+    /// <p>Associates one of more properties with the geofence. A property is a key-value pair stored with the geofence and added to any geofence event triggered with that geofence.</p>
+    /// <p>Format: <code>"key" : "value"</code> </p>
+    pub fn get_geofence_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_geofence_properties()
     }
 }

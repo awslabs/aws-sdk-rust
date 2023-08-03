@@ -38,6 +38,12 @@ impl UpdateImagePipelineFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateImagePipeline as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_image_pipeline::builders::UpdateImagePipelineInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +140,10 @@ impl UpdateImagePipelineFluentBuilder {
         self.inner = self.inner.set_image_pipeline_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to update.</p>
+    pub fn get_image_pipeline_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_image_pipeline_arn()
+    }
     /// <p>The description of the image pipeline.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -143,6 +153,10 @@ impl UpdateImagePipelineFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the image pipeline.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The Amazon Resource Name (ARN) of the image recipe that will be used to configure images updated by this image pipeline.</p>
     pub fn image_recipe_arn(
@@ -160,6 +174,10 @@ impl UpdateImagePipelineFluentBuilder {
         self.inner = self.inner.set_image_recipe_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the image recipe that will be used to configure images updated by this image pipeline.</p>
+    pub fn get_image_recipe_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_image_recipe_arn()
+    }
     /// <p>The Amazon Resource Name (ARN) of the container pipeline to update.</p>
     pub fn container_recipe_arn(
         mut self,
@@ -175,6 +193,10 @@ impl UpdateImagePipelineFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_container_recipe_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the container pipeline to update.</p>
+    pub fn get_container_recipe_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_container_recipe_arn()
     }
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that Image Builder uses to build images that this image pipeline has updated.</p>
     pub fn infrastructure_configuration_arn(
@@ -192,6 +214,12 @@ impl UpdateImagePipelineFluentBuilder {
         self.inner = self.inner.set_infrastructure_configuration_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that Image Builder uses to build images that this image pipeline has updated.</p>
+    pub fn get_infrastructure_configuration_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_infrastructure_configuration_arn()
+    }
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that Image Builder uses to configure and distribute images that this image pipeline has updated.</p>
     pub fn distribution_configuration_arn(
         mut self,
@@ -207,6 +235,12 @@ impl UpdateImagePipelineFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_distribution_configuration_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that Image Builder uses to configure and distribute images that this image pipeline has updated.</p>
+    pub fn get_distribution_configuration_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_distribution_configuration_arn()
     }
     /// <p>The image test configuration of the image pipeline.</p>
     pub fn image_tests_configuration(
@@ -224,6 +258,12 @@ impl UpdateImagePipelineFluentBuilder {
         self.inner = self.inner.set_image_tests_configuration(input);
         self
     }
+    /// <p>The image test configuration of the image pipeline.</p>
+    pub fn get_image_tests_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImageTestsConfiguration> {
+        self.inner.get_image_tests_configuration()
+    }
     /// <p>Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
     pub fn enhanced_image_metadata_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.enhanced_image_metadata_enabled(input);
@@ -237,6 +277,10 @@ impl UpdateImagePipelineFluentBuilder {
         self.inner = self.inner.set_enhanced_image_metadata_enabled(input);
         self
     }
+    /// <p>Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
+    pub fn get_enhanced_image_metadata_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enhanced_image_metadata_enabled()
+    }
     /// <p>The schedule of the image pipeline.</p>
     pub fn schedule(mut self, input: crate::types::Schedule) -> Self {
         self.inner = self.inner.schedule(input);
@@ -246,6 +290,10 @@ impl UpdateImagePipelineFluentBuilder {
     pub fn set_schedule(mut self, input: ::std::option::Option<crate::types::Schedule>) -> Self {
         self.inner = self.inner.set_schedule(input);
         self
+    }
+    /// <p>The schedule of the image pipeline.</p>
+    pub fn get_schedule(&self) -> &::std::option::Option<crate::types::Schedule> {
+        self.inner.get_schedule()
     }
     /// <p>The status of the image pipeline.</p>
     pub fn status(mut self, input: crate::types::PipelineStatus) -> Self {
@@ -260,6 +308,10 @@ impl UpdateImagePipelineFluentBuilder {
         self.inner = self.inner.set_status(input);
         self
     }
+    /// <p>The status of the image pipeline.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::PipelineStatus> {
+        self.inner.get_status()
+    }
     /// <p>The idempotency token used to make this request idempotent.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -269,6 +321,10 @@ impl UpdateImagePipelineFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>The idempotency token used to make this request idempotent.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// <p>Contains settings for vulnerability scans.</p>
     pub fn image_scanning_configuration(
@@ -285,5 +341,11 @@ impl UpdateImagePipelineFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_image_scanning_configuration(input);
         self
+    }
+    /// <p>Contains settings for vulnerability scans.</p>
+    pub fn get_image_scanning_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImageScanningConfiguration> {
+        self.inner.get_image_scanning_configuration()
     }
 }

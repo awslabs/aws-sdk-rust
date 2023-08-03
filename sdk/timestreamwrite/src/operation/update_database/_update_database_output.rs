@@ -46,6 +46,10 @@ impl UpdateDatabaseOutputBuilder {
         self.database = input;
         self
     }
+    /// <p>A top-level container for a table. Databases and tables are the fundamental management concepts in Amazon Timestream. All tables in a database are encrypted with the same KMS key.</p>
+    pub fn get_database(&self) -> &::std::option::Option<crate::types::Database> {
+        &self.database
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

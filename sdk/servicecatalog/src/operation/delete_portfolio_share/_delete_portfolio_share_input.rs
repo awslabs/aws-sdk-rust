@@ -86,6 +86,14 @@ impl DeletePortfolioShareInputBuilder {
         self.accept_language = input;
         self
     }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accept_language
+    }
     /// <p>The portfolio identifier.</p>
     pub fn portfolio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portfolio_id = ::std::option::Option::Some(input.into());
@@ -96,6 +104,10 @@ impl DeletePortfolioShareInputBuilder {
         self.portfolio_id = input;
         self
     }
+    /// <p>The portfolio identifier.</p>
+    pub fn get_portfolio_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.portfolio_id
+    }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -105,6 +117,10 @@ impl DeletePortfolioShareInputBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
+    }
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
     }
     /// <p>The organization node to whom you are going to stop sharing.</p>
     pub fn organization_node(mut self, input: crate::types::OrganizationNode) -> Self {
@@ -118,6 +134,10 @@ impl DeletePortfolioShareInputBuilder {
     ) -> Self {
         self.organization_node = input;
         self
+    }
+    /// <p>The organization node to whom you are going to stop sharing.</p>
+    pub fn get_organization_node(&self) -> &::std::option::Option<crate::types::OrganizationNode> {
+        &self.organization_node
     }
     /// Consumes the builder and constructs a [`DeletePortfolioShareInput`](crate::operation::delete_portfolio_share::DeletePortfolioShareInput).
     pub fn build(

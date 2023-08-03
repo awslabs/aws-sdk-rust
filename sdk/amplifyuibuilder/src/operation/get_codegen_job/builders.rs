@@ -36,6 +36,12 @@ impl GetCodegenJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetCodegenJob as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_codegen_job::builders::GetCodegenJobInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl GetCodegenJobFluentBuilder {
         self.inner = self.inner.set_app_id(input);
         self
     }
+    /// <p>The unique ID of the Amplify app associated with the code generation job.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_id()
+    }
     /// <p>The name of the backend environment that is a part of the Amplify app associated with the code generation job.</p>
     pub fn environment_name(
         mut self,
@@ -134,6 +144,10 @@ impl GetCodegenJobFluentBuilder {
         self.inner = self.inner.set_environment_name(input);
         self
     }
+    /// <p>The name of the backend environment that is a part of the Amplify app associated with the code generation job.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_name()
+    }
     /// <p>The unique ID of the code generation job.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
@@ -143,5 +157,9 @@ impl GetCodegenJobFluentBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
+    }
+    /// <p>The unique ID of the code generation job.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
     }
 }

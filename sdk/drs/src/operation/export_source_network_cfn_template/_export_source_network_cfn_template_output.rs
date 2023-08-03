@@ -52,6 +52,10 @@ impl ExportSourceNetworkCfnTemplateOutputBuilder {
         self.s3_destination_url = input;
         self
     }
+    /// <p>S3 bucket URL where the Source Network CloudFormation template was exported to.</p>
+    pub fn get_s3_destination_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_destination_url
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

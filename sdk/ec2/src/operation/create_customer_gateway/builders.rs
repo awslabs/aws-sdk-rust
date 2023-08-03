@@ -38,6 +38,13 @@ impl CreateCustomerGatewayFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateCustomerGateway as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_customer_gateway::builders::CreateCustomerGatewayInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +137,11 @@ impl CreateCustomerGatewayFluentBuilder {
         self.inner = self.inner.set_bgp_asn(input);
         self
     }
+    /// <p>For devices that support BGP, the customer gateway's BGP ASN.</p>
+    /// <p>Default: 65000</p>
+    pub fn get_bgp_asn(&self) -> &::std::option::Option<i32> {
+        self.inner.get_bgp_asn()
+    }
     /// <p> <i>This member has been deprecated.</i> The Internet-routable IP address for the customer gateway's outside interface. The address must be static.</p>
     pub fn public_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.public_ip(input.into());
@@ -139,6 +151,10 @@ impl CreateCustomerGatewayFluentBuilder {
     pub fn set_public_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_public_ip(input);
         self
+    }
+    /// <p> <i>This member has been deprecated.</i> The Internet-routable IP address for the customer gateway's outside interface. The address must be static.</p>
+    pub fn get_public_ip(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_public_ip()
     }
     /// <p>The Amazon Resource Name (ARN) for the customer gateway certificate.</p>
     pub fn certificate_arn(
@@ -156,6 +172,10 @@ impl CreateCustomerGatewayFluentBuilder {
         self.inner = self.inner.set_certificate_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the customer gateway certificate.</p>
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_certificate_arn()
+    }
     /// <p>The type of VPN connection that this customer gateway supports (<code>ipsec.1</code>).</p>
     pub fn r#type(mut self, input: crate::types::GatewayType) -> Self {
         self.inner = self.inner.r#type(input);
@@ -165,6 +185,10 @@ impl CreateCustomerGatewayFluentBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::GatewayType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
+    }
+    /// <p>The type of VPN connection that this customer gateway supports (<code>ipsec.1</code>).</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::GatewayType> {
+        self.inner.get_type()
     }
     /// Appends an item to `TagSpecifications`.
     ///
@@ -183,6 +207,12 @@ impl CreateCustomerGatewayFluentBuilder {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
+    /// <p>The tags to apply to the customer gateway.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        self.inner.get_tag_specifications()
+    }
     /// <p>A name for the customer gateway device.</p>
     /// <p>Length Constraints: Up to 255 characters.</p>
     pub fn device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -195,6 +225,11 @@ impl CreateCustomerGatewayFluentBuilder {
         self.inner = self.inner.set_device_name(input);
         self
     }
+    /// <p>A name for the customer gateway device.</p>
+    /// <p>Length Constraints: Up to 255 characters.</p>
+    pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_name()
+    }
     /// <p> IPv4 address for the customer gateway device's outside interface. The address must be static. </p>
     pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ip_address(input.into());
@@ -205,6 +240,10 @@ impl CreateCustomerGatewayFluentBuilder {
         self.inner = self.inner.set_ip_address(input);
         self
     }
+    /// <p> IPv4 address for the customer gateway device's outside interface. The address must be static. </p>
+    pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ip_address()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -214,5 +253,9 @@ impl CreateCustomerGatewayFluentBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

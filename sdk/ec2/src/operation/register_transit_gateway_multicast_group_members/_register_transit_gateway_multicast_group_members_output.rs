@@ -56,6 +56,12 @@ impl RegisterTransitGatewayMulticastGroupMembersOutputBuilder {
         self.registered_multicast_group_members = input;
         self
     }
+    /// <p>Information about the registered transit gateway multicast group members.</p>
+    pub fn get_registered_multicast_group_members(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransitGatewayMulticastRegisteredGroupMembers> {
+        &self.registered_multicast_group_members
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

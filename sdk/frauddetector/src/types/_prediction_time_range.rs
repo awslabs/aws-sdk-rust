@@ -48,6 +48,10 @@ impl PredictionTimeRangeBuilder {
         self.start_time = input;
         self
     }
+    /// <p> The start time of the time period for when the predictions were generated. </p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_time
+    }
     /// <p> The end time of the time period for when the predictions were generated. </p>
     pub fn end_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.end_time = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl PredictionTimeRangeBuilder {
     pub fn set_end_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p> The end time of the time period for when the predictions were generated. </p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.end_time
     }
     /// Consumes the builder and constructs a [`PredictionTimeRange`](crate::types::PredictionTimeRange).
     pub fn build(self) -> crate::types::PredictionTimeRange {

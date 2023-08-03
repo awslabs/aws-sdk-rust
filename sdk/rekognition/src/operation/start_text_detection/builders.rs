@@ -38,6 +38,12 @@ impl StartTextDetectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartTextDetection as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_text_detection::builders::StartTextDetectionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +134,10 @@ impl StartTextDetectionFluentBuilder {
         self.inner = self.inner.set_video(input);
         self
     }
+    /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
+    pub fn get_video(&self) -> &::std::option::Option<crate::types::Video> {
+        self.inner.get_video()
+    }
     /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartTextDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentaly started more than once.</p>
     pub fn client_request_token(
         mut self,
@@ -144,6 +154,10 @@ impl StartTextDetectionFluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
+    /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartTextDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentaly started more than once.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
+    }
     /// <p>The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video.html">Calling Amazon Rekognition Video operations</a>. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video-roles.html#api-video-roles-all-topics">Giving access to multiple Amazon SNS topics</a>.</p>
     pub fn notification_channel(mut self, input: crate::types::NotificationChannel) -> Self {
         self.inner = self.inner.notification_channel(input);
@@ -157,6 +171,12 @@ impl StartTextDetectionFluentBuilder {
         self.inner = self.inner.set_notification_channel(input);
         self
     }
+    /// <p>The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video.html">Calling Amazon Rekognition Video operations</a>. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video-roles.html#api-video-roles-all-topics">Giving access to multiple Amazon SNS topics</a>.</p>
+    pub fn get_notification_channel(
+        &self,
+    ) -> &::std::option::Option<crate::types::NotificationChannel> {
+        self.inner.get_notification_channel()
+    }
     /// <p>An identifier returned in the completion status published by your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
     pub fn job_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_tag(input.into());
@@ -166,6 +186,10 @@ impl StartTextDetectionFluentBuilder {
     pub fn set_job_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_tag(input);
         self
+    }
+    /// <p>An identifier returned in the completion status published by your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+    pub fn get_job_tag(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_tag()
     }
     /// <p>Optional parameters that let you set criteria the text must meet to be included in your response.</p>
     pub fn filters(mut self, input: crate::types::StartTextDetectionFilters) -> Self {
@@ -179,5 +203,9 @@ impl StartTextDetectionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
+    }
+    /// <p>Optional parameters that let you set criteria the text must meet to be included in your response.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::StartTextDetectionFilters> {
+        self.inner.get_filters()
     }
 }

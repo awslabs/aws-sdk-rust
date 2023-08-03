@@ -36,6 +36,12 @@ impl UpdateProtectedQueryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateProtectedQuery as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_protected_query::builders::UpdateProtectedQueryInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateProtectedQueryFluentBuilder {
         self.inner = self.inner.set_membership_identifier(input);
         self
     }
+    /// <p>The identifier for a member of a protected query instance.</p>
+    pub fn get_membership_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_membership_identifier()
+    }
     /// <p>The identifier for a protected query instance.</p>
     pub fn protected_query_identifier(
         mut self,
@@ -148,6 +158,10 @@ impl UpdateProtectedQueryFluentBuilder {
         self.inner = self.inner.set_protected_query_identifier(input);
         self
     }
+    /// <p>The identifier for a protected query instance.</p>
+    pub fn get_protected_query_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_protected_query_identifier()
+    }
     /// <p>The target status of a query. Used to update the execution status of a currently running query.</p>
     pub fn target_status(mut self, input: crate::types::TargetProtectedQueryStatus) -> Self {
         self.inner = self.inner.target_status(input);
@@ -160,5 +174,11 @@ impl UpdateProtectedQueryFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_target_status(input);
         self
+    }
+    /// <p>The target status of a query. Used to update the execution status of a currently running query.</p>
+    pub fn get_target_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::TargetProtectedQueryStatus> {
+        self.inner.get_target_status()
     }
 }

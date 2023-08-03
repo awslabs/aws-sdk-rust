@@ -57,6 +57,12 @@ impl DescribeUserProfilesOutputBuilder {
         self.user_profiles = input;
         self
     }
+    /// <p>A <code>Users</code> object that describes the specified users.</p>
+    pub fn get_user_profiles(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UserProfile>> {
+        &self.user_profiles
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

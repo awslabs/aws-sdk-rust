@@ -116,6 +116,10 @@ impl AllocateIpamPoolCidrInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>The ID of the IPAM pool from which you would like to allocate a CIDR.</p>
     pub fn ipam_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipam_pool_id = ::std::option::Option::Some(input.into());
@@ -125,6 +129,10 @@ impl AllocateIpamPoolCidrInputBuilder {
     pub fn set_ipam_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipam_pool_id = input;
         self
+    }
+    /// <p>The ID of the IPAM pool from which you would like to allocate a CIDR.</p>
+    pub fn get_ipam_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipam_pool_id
     }
     /// <p>The CIDR you would like to allocate from the IPAM pool. Note the following:</p>
     /// <ul>
@@ -146,6 +154,15 @@ impl AllocateIpamPoolCidrInputBuilder {
         self.cidr = input;
         self
     }
+    /// <p>The CIDR you would like to allocate from the IPAM pool. Note the following:</p>
+    /// <ul>
+    /// <li> <p>If there is no DefaultNetmaskLength allocation rule set on the pool, you must specify either the NetmaskLength or the CIDR.</p> </li>
+    /// <li> <p>If the DefaultNetmaskLength allocation rule is set on the pool, you can specify either the NetmaskLength or the CIDR and the DefaultNetmaskLength allocation rule will be ignored.</p> </li>
+    /// </ul>
+    /// <p>Possible values: Any available IPv4 or IPv6 CIDR.</p>
+    pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr
+    }
     /// <p>The netmask length of the CIDR you would like to allocate from the IPAM pool. Note the following:</p>
     /// <ul>
     /// <li> <p>If there is no DefaultNetmaskLength allocation rule set on the pool, you must specify either the NetmaskLength or the CIDR.</p> </li>
@@ -166,6 +183,15 @@ impl AllocateIpamPoolCidrInputBuilder {
         self.netmask_length = input;
         self
     }
+    /// <p>The netmask length of the CIDR you would like to allocate from the IPAM pool. Note the following:</p>
+    /// <ul>
+    /// <li> <p>If there is no DefaultNetmaskLength allocation rule set on the pool, you must specify either the NetmaskLength or the CIDR.</p> </li>
+    /// <li> <p>If the DefaultNetmaskLength allocation rule is set on the pool, you can specify either the NetmaskLength or the CIDR and the DefaultNetmaskLength allocation rule will be ignored.</p> </li>
+    /// </ul>
+    /// <p>Possible netmask lengths for IPv4 addresses are 0 - 32. Possible netmask lengths for IPv6 addresses are 0 - 128.</p>
+    pub fn get_netmask_length(&self) -> &::std::option::Option<i32> {
+        &self.netmask_length
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -175,6 +201,10 @@ impl AllocateIpamPoolCidrInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// <p>A description for the allocation.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -186,6 +216,10 @@ impl AllocateIpamPoolCidrInputBuilder {
         self.description = input;
         self
     }
+    /// <p>A description for the allocation.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>A preview of the next available CIDR in a pool.</p>
     pub fn preview_next_cidr(mut self, input: bool) -> Self {
         self.preview_next_cidr = ::std::option::Option::Some(input);
@@ -195,6 +229,10 @@ impl AllocateIpamPoolCidrInputBuilder {
     pub fn set_preview_next_cidr(mut self, input: ::std::option::Option<bool>) -> Self {
         self.preview_next_cidr = input;
         self
+    }
+    /// <p>A preview of the next available CIDR in a pool.</p>
+    pub fn get_preview_next_cidr(&self) -> &::std::option::Option<bool> {
+        &self.preview_next_cidr
     }
     /// Appends an item to `disallowed_cidrs`.
     ///
@@ -217,6 +255,12 @@ impl AllocateIpamPoolCidrInputBuilder {
     ) -> Self {
         self.disallowed_cidrs = input;
         self
+    }
+    /// <p>Exclude a particular CIDR range from being returned by the pool. Disallowed CIDRs are only allowed if using netmask length for allocation.</p>
+    pub fn get_disallowed_cidrs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.disallowed_cidrs
     }
     /// Consumes the builder and constructs a [`AllocateIpamPoolCidrInput`](crate::operation::allocate_ipam_pool_cidr::AllocateIpamPoolCidrInput).
     pub fn build(

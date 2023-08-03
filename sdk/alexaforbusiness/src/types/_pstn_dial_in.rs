@@ -64,6 +64,10 @@ impl PstnDialInBuilder {
         self.country_code = input;
         self
     }
+    /// <p>The zip code.</p>
+    pub fn get_country_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.country_code
+    }
     /// <p>The phone number to call to join the conference.</p>
     pub fn phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.phone_number = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl PstnDialInBuilder {
     pub fn set_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.phone_number = input;
         self
+    }
+    /// <p>The phone number to call to join the conference.</p>
+    pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.phone_number
     }
     /// <p>The delay duration before Alexa enters the conference ID with dual-tone multi-frequency (DTMF). Each number on the dial pad corresponds to a DTMF tone, which is how we send data over the telephone network.</p>
     pub fn one_click_id_delay(
@@ -90,6 +98,10 @@ impl PstnDialInBuilder {
         self.one_click_id_delay = input;
         self
     }
+    /// <p>The delay duration before Alexa enters the conference ID with dual-tone multi-frequency (DTMF). Each number on the dial pad corresponds to a DTMF tone, which is how we send data over the telephone network.</p>
+    pub fn get_one_click_id_delay(&self) -> &::std::option::Option<::std::string::String> {
+        &self.one_click_id_delay
+    }
     /// <p>The delay duration before Alexa enters the conference pin with dual-tone multi-frequency (DTMF). Each number on the dial pad corresponds to a DTMF tone, which is how we send data over the telephone network.</p>
     pub fn one_click_pin_delay(
         mut self,
@@ -105,6 +117,10 @@ impl PstnDialInBuilder {
     ) -> Self {
         self.one_click_pin_delay = input;
         self
+    }
+    /// <p>The delay duration before Alexa enters the conference pin with dual-tone multi-frequency (DTMF). Each number on the dial pad corresponds to a DTMF tone, which is how we send data over the telephone network.</p>
+    pub fn get_one_click_pin_delay(&self) -> &::std::option::Option<::std::string::String> {
+        &self.one_click_pin_delay
     }
     /// Consumes the builder and constructs a [`PstnDialIn`](crate::types::PstnDialIn).
     pub fn build(self) -> crate::types::PstnDialIn {

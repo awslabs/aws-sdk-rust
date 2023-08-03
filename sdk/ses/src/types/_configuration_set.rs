@@ -57,6 +57,14 @@ impl ConfigurationSetBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the configuration set. The name must meet the following requirements:</p>
+    /// <ul>
+    /// <li> <p>Contain only letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
+    /// <li> <p>Contain 64 characters or fewer.</p> </li>
+    /// </ul>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`ConfigurationSet`](crate::types::ConfigurationSet).
     pub fn build(self) -> crate::types::ConfigurationSet {
         crate::types::ConfigurationSet { name: self.name }

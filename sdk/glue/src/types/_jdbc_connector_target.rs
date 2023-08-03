@@ -104,6 +104,10 @@ impl JdbcConnectorTargetBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the data target.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `inputs`.
     ///
     /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
@@ -123,6 +127,10 @@ impl JdbcConnectorTargetBuilder {
         self.inputs = input;
         self
     }
+    /// <p>The nodes that are inputs to the data target.</p>
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.inputs
+    }
     /// <p>The name of the connection that is associated with the connector.</p>
     pub fn connection_name(
         mut self,
@@ -138,6 +146,10 @@ impl JdbcConnectorTargetBuilder {
     ) -> Self {
         self.connection_name = input;
         self
+    }
+    /// <p>The name of the connection that is associated with the connector.</p>
+    pub fn get_connection_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_name
     }
     /// <p>The name of the table in the data target.</p>
     pub fn connection_table(
@@ -155,6 +167,10 @@ impl JdbcConnectorTargetBuilder {
         self.connection_table = input;
         self
     }
+    /// <p>The name of the table in the data target.</p>
+    pub fn get_connection_table(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_table
+    }
     /// <p>The name of a connector that will be used.</p>
     pub fn connector_name(
         mut self,
@@ -171,6 +187,10 @@ impl JdbcConnectorTargetBuilder {
         self.connector_name = input;
         self
     }
+    /// <p>The name of a connector that will be used.</p>
+    pub fn get_connector_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connector_name
+    }
     /// <p>The type of connection, such as marketplace.jdbc or custom.jdbc, designating a connection to a JDBC data target.</p>
     pub fn connection_type(
         mut self,
@@ -186,6 +206,10 @@ impl JdbcConnectorTargetBuilder {
     ) -> Self {
         self.connection_type = input;
         self
+    }
+    /// <p>The type of connection, such as marketplace.jdbc or custom.jdbc, designating a connection to a JDBC data target.</p>
+    pub fn get_connection_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_type
     }
     /// Adds a key-value pair to `additional_options`.
     ///
@@ -212,6 +236,14 @@ impl JdbcConnectorTargetBuilder {
         self.additional_options = input;
         self
     }
+    /// <p>Additional connection options for the connector.</p>
+    pub fn get_additional_options(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.additional_options
+    }
     /// Appends an item to `output_schemas`.
     ///
     /// To override the contents of this collection use [`set_output_schemas`](Self::set_output_schemas).
@@ -230,6 +262,12 @@ impl JdbcConnectorTargetBuilder {
     ) -> Self {
         self.output_schemas = input;
         self
+    }
+    /// <p>Specifies the data schema for the JDBC target.</p>
+    pub fn get_output_schemas(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>> {
+        &self.output_schemas
     }
     /// Consumes the builder and constructs a [`JdbcConnectorTarget`](crate::types::JdbcConnectorTarget).
     pub fn build(self) -> crate::types::JdbcConnectorTarget {

@@ -129,6 +129,10 @@ impl GetExperimentResultsInputBuilder {
         self.project = input;
         self
     }
+    /// <p>The name or ARN of the project that contains the experiment that you want to see the results of.</p>
+    pub fn get_project(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project
+    }
     /// <p>The name of the experiment to retrieve the results of.</p>
     pub fn experiment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.experiment = ::std::option::Option::Some(input.into());
@@ -138,6 +142,10 @@ impl GetExperimentResultsInputBuilder {
     pub fn set_experiment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.experiment = input;
         self
+    }
+    /// <p>The name of the experiment to retrieve the results of.</p>
+    pub fn get_experiment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.experiment
     }
     /// <p>The date and time that the experiment started.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -152,6 +160,10 @@ impl GetExperimentResultsInputBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The date and time that the experiment started.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The date and time that the experiment ended, if it is completed. This must be no longer than 30 days after the experiment start time.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -164,6 +176,10 @@ impl GetExperimentResultsInputBuilder {
     ) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>The date and time that the experiment ended, if it is completed. This must be no longer than 30 days after the experiment start time.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// Appends an item to `metric_names`.
     ///
@@ -183,6 +199,12 @@ impl GetExperimentResultsInputBuilder {
     ) -> Self {
         self.metric_names = input;
         self
+    }
+    /// <p>The names of the experiment metrics that you want to see the results of.</p>
+    pub fn get_metric_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.metric_names
     }
     /// Appends an item to `treatment_names`.
     ///
@@ -206,6 +228,12 @@ impl GetExperimentResultsInputBuilder {
         self.treatment_names = input;
         self
     }
+    /// <p>The names of the experiment treatments that you want to see the results for.</p>
+    pub fn get_treatment_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.treatment_names
+    }
     /// <p>The statistic used to calculate experiment results. Currently the only valid value is <code>mean</code>, which uses the mean of the collected values as the statistic.</p>
     pub fn base_stat(mut self, input: crate::types::ExperimentBaseStat) -> Self {
         self.base_stat = ::std::option::Option::Some(input);
@@ -218,6 +246,10 @@ impl GetExperimentResultsInputBuilder {
     ) -> Self {
         self.base_stat = input;
         self
+    }
+    /// <p>The statistic used to calculate experiment results. Currently the only valid value is <code>mean</code>, which uses the mean of the collected values as the statistic.</p>
+    pub fn get_base_stat(&self) -> &::std::option::Option<crate::types::ExperimentBaseStat> {
+        &self.base_stat
     }
     /// Appends an item to `result_stats`.
     ///
@@ -250,6 +282,18 @@ impl GetExperimentResultsInputBuilder {
         self.result_stats = input;
         self
     }
+    /// <p>The statistics that you want to see in the returned results.</p>
+    /// <ul>
+    /// <li> <p> <code>PValue</code> specifies to use p-values for the results. A p-value is used in hypothesis testing to measure how often you are willing to make a mistake in rejecting the null hypothesis. A general practice is to reject the null hypothesis and declare that the results are statistically significant when the p-value is less than 0.05.</p> </li>
+    /// <li> <p> <code>ConfidenceInterval</code> specifies a confidence interval for the results. The confidence interval represents the range of values for the chosen metric that is likely to contain the true difference between the <code>baseStat</code> of a variation and the baseline. Evidently returns the 95% confidence interval. </p> </li>
+    /// <li> <p> <code>TreatmentEffect</code> is the difference in the statistic specified by the <code>baseStat</code> parameter between each variation and the default variation. </p> </li>
+    /// <li> <p> <code>BaseStat</code> returns the statistical values collected for the metric for each variation. The statistic uses the same statistic specified in the <code>baseStat</code> parameter. Therefore, if <code>baseStat</code> is <code>mean</code>, this returns the mean of the values collected for each variation.</p> </li>
+    /// </ul>
+    pub fn get_result_stats(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExperimentResultRequestType>> {
+        &self.result_stats
+    }
     /// Appends an item to `report_names`.
     ///
     /// To override the contents of this collection use [`set_report_names`](Self::set_report_names).
@@ -269,6 +313,12 @@ impl GetExperimentResultsInputBuilder {
         self.report_names = input;
         self
     }
+    /// <p>The names of the report types that you want to see. Currently, <code>BayesianInference</code> is the only valid value.</p>
+    pub fn get_report_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExperimentReportName>> {
+        &self.report_names
+    }
     /// <p>In seconds, the amount of time to aggregate results together. </p>
     pub fn period(mut self, input: i64) -> Self {
         self.period = ::std::option::Option::Some(input);
@@ -278,6 +328,10 @@ impl GetExperimentResultsInputBuilder {
     pub fn set_period(mut self, input: ::std::option::Option<i64>) -> Self {
         self.period = input;
         self
+    }
+    /// <p>In seconds, the amount of time to aggregate results together. </p>
+    pub fn get_period(&self) -> &::std::option::Option<i64> {
+        &self.period
     }
     /// Consumes the builder and constructs a [`GetExperimentResultsInput`](crate::operation::get_experiment_results::GetExperimentResultsInput).
     pub fn build(

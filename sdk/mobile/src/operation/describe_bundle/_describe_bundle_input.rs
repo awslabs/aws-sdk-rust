@@ -40,6 +40,10 @@ impl DescribeBundleInputBuilder {
         self.bundle_id = input;
         self
     }
+    /// <p> Unique bundle identifier. </p>
+    pub fn get_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bundle_id
+    }
     /// Consumes the builder and constructs a [`DescribeBundleInput`](crate::operation::describe_bundle::DescribeBundleInput).
     pub fn build(
         self,

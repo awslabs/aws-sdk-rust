@@ -119,6 +119,10 @@ impl RestoreTableFromSnapshotInputBuilder {
         self.namespace_name = input;
         self
     }
+    /// <p>The namespace of the snapshot to restore from.</p>
+    pub fn get_namespace_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace_name
+    }
     /// <p>The workgroup to restore the table to.</p>
     pub fn workgroup_name(
         mut self,
@@ -134,6 +138,10 @@ impl RestoreTableFromSnapshotInputBuilder {
     ) -> Self {
         self.workgroup_name = input;
         self
+    }
+    /// <p>The workgroup to restore the table to.</p>
+    pub fn get_workgroup_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workgroup_name
     }
     /// <p>The name of the snapshot to restore the table from.</p>
     pub fn snapshot_name(
@@ -151,6 +159,10 @@ impl RestoreTableFromSnapshotInputBuilder {
         self.snapshot_name = input;
         self
     }
+    /// <p>The name of the snapshot to restore the table from.</p>
+    pub fn get_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_name
+    }
     /// <p>The name of the source database that contains the table being restored.</p>
     pub fn source_database_name(
         mut self,
@@ -166,6 +178,10 @@ impl RestoreTableFromSnapshotInputBuilder {
     ) -> Self {
         self.source_database_name = input;
         self
+    }
+    /// <p>The name of the source database that contains the table being restored.</p>
+    pub fn get_source_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_database_name
     }
     /// <p>The name of the source schema that contains the table being restored.</p>
     pub fn source_schema_name(
@@ -183,6 +199,10 @@ impl RestoreTableFromSnapshotInputBuilder {
         self.source_schema_name = input;
         self
     }
+    /// <p>The name of the source schema that contains the table being restored.</p>
+    pub fn get_source_schema_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_schema_name
+    }
     /// <p>The name of the source table being restored.</p>
     pub fn source_table_name(
         mut self,
@@ -198,6 +218,10 @@ impl RestoreTableFromSnapshotInputBuilder {
     ) -> Self {
         self.source_table_name = input;
         self
+    }
+    /// <p>The name of the source table being restored.</p>
+    pub fn get_source_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_table_name
     }
     /// <p>The name of the database to restore the table to.</p>
     pub fn target_database_name(
@@ -215,6 +239,10 @@ impl RestoreTableFromSnapshotInputBuilder {
         self.target_database_name = input;
         self
     }
+    /// <p>The name of the database to restore the table to.</p>
+    pub fn get_target_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_database_name
+    }
     /// <p>The name of the schema to restore the table to.</p>
     pub fn target_schema_name(
         mut self,
@@ -230,6 +258,10 @@ impl RestoreTableFromSnapshotInputBuilder {
     ) -> Self {
         self.target_schema_name = input;
         self
+    }
+    /// <p>The name of the schema to restore the table to.</p>
+    pub fn get_target_schema_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_schema_name
     }
     /// <p>The name of the table to create from the restore operation.</p>
     pub fn new_table_name(
@@ -247,6 +279,10 @@ impl RestoreTableFromSnapshotInputBuilder {
         self.new_table_name = input;
         self
     }
+    /// <p>The name of the table to create from the restore operation.</p>
+    pub fn get_new_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.new_table_name
+    }
     /// <p>Indicates whether name identifiers for database, schema, and table are case sensitive. If true, the names are case sensitive. If false, the names are not case sensitive. The default is false.</p>
     pub fn activate_case_sensitive_identifier(mut self, input: bool) -> Self {
         self.activate_case_sensitive_identifier = ::std::option::Option::Some(input);
@@ -259,6 +295,10 @@ impl RestoreTableFromSnapshotInputBuilder {
     ) -> Self {
         self.activate_case_sensitive_identifier = input;
         self
+    }
+    /// <p>Indicates whether name identifiers for database, schema, and table are case sensitive. If true, the names are case sensitive. If false, the names are not case sensitive. The default is false.</p>
+    pub fn get_activate_case_sensitive_identifier(&self) -> &::std::option::Option<bool> {
+        &self.activate_case_sensitive_identifier
     }
     /// Consumes the builder and constructs a [`RestoreTableFromSnapshotInput`](crate::operation::restore_table_from_snapshot::RestoreTableFromSnapshotInput).
     pub fn build(

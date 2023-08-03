@@ -64,6 +64,12 @@ impl ListRecoveryPointsByLegalHoldOutputBuilder {
         self.recovery_points = input;
         self
     }
+    /// <p>This is a list of the recovery points returned by <code>ListRecoveryPointsByLegalHold</code>.</p>
+    pub fn get_recovery_points(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecoveryPointMember>> {
+        &self.recovery_points
+    }
     /// <p>This return is the next item following a partial list of returned resources.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -73,6 +79,10 @@ impl ListRecoveryPointsByLegalHoldOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>This return is the next item following a partial list of returned resources.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

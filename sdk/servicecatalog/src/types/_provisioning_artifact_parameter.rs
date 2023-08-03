@@ -88,6 +88,10 @@ impl ProvisioningArtifactParameterBuilder {
         self.parameter_key = input;
         self
     }
+    /// <p>The parameter key.</p>
+    pub fn get_parameter_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_key
+    }
     /// <p>The default value.</p>
     pub fn default_value(
         mut self,
@@ -103,6 +107,10 @@ impl ProvisioningArtifactParameterBuilder {
     ) -> Self {
         self.default_value = input;
         self
+    }
+    /// <p>The default value.</p>
+    pub fn get_default_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_value
     }
     /// <p>The parameter type.</p>
     pub fn parameter_type(
@@ -120,6 +128,10 @@ impl ProvisioningArtifactParameterBuilder {
         self.parameter_type = input;
         self
     }
+    /// <p>The parameter type.</p>
+    pub fn get_parameter_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_type
+    }
     /// <p>If this value is true, the value for this parameter is obfuscated from view when the parameter is retrieved. This parameter is used to hide sensitive information.</p>
     pub fn is_no_echo(mut self, input: bool) -> Self {
         self.is_no_echo = ::std::option::Option::Some(input);
@@ -130,6 +142,10 @@ impl ProvisioningArtifactParameterBuilder {
         self.is_no_echo = input;
         self
     }
+    /// <p>If this value is true, the value for this parameter is obfuscated from view when the parameter is retrieved. This parameter is used to hide sensitive information.</p>
+    pub fn get_is_no_echo(&self) -> &::std::option::Option<bool> {
+        &self.is_no_echo
+    }
     /// <p>The description of the parameter.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -139,6 +155,10 @@ impl ProvisioningArtifactParameterBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the parameter.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Constraints that the administrator has put on a parameter.</p>
     pub fn parameter_constraints(mut self, input: crate::types::ParameterConstraints) -> Self {
@@ -152,6 +172,12 @@ impl ProvisioningArtifactParameterBuilder {
     ) -> Self {
         self.parameter_constraints = input;
         self
+    }
+    /// <p>Constraints that the administrator has put on a parameter.</p>
+    pub fn get_parameter_constraints(
+        &self,
+    ) -> &::std::option::Option<crate::types::ParameterConstraints> {
+        &self.parameter_constraints
     }
     /// Consumes the builder and constructs a [`ProvisioningArtifactParameter`](crate::types::ProvisioningArtifactParameter).
     pub fn build(self) -> crate::types::ProvisioningArtifactParameter {

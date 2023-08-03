@@ -73,6 +73,10 @@ impl ClusterDbRevisionBuilder {
         self.cluster_identifier = input;
         self
     }
+    /// <p>The unique identifier of the cluster.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_identifier
+    }
     /// <p>A string representing the current cluster version.</p>
     pub fn current_database_revision(
         mut self,
@@ -89,6 +93,10 @@ impl ClusterDbRevisionBuilder {
         self.current_database_revision = input;
         self
     }
+    /// <p>A string representing the current cluster version.</p>
+    pub fn get_current_database_revision(&self) -> &::std::option::Option<::std::string::String> {
+        &self.current_database_revision
+    }
     /// <p>The date on which the database revision was released.</p>
     pub fn database_revision_release_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.database_revision_release_date = ::std::option::Option::Some(input);
@@ -101,6 +109,12 @@ impl ClusterDbRevisionBuilder {
     ) -> Self {
         self.database_revision_release_date = input;
         self
+    }
+    /// <p>The date on which the database revision was released.</p>
+    pub fn get_database_revision_release_date(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.database_revision_release_date
     }
     /// Appends an item to `revision_targets`.
     ///
@@ -120,6 +134,12 @@ impl ClusterDbRevisionBuilder {
     ) -> Self {
         self.revision_targets = input;
         self
+    }
+    /// <p>A list of <code>RevisionTarget</code> objects, where each object describes the database revision that a cluster can be updated to.</p>
+    pub fn get_revision_targets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RevisionTarget>> {
+        &self.revision_targets
     }
     /// Consumes the builder and constructs a [`ClusterDbRevision`](crate::types::ClusterDbRevision).
     pub fn build(self) -> crate::types::ClusterDbRevision {

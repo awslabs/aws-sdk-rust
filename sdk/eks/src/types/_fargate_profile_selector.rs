@@ -56,6 +56,10 @@ impl FargateProfileSelectorBuilder {
         self.namespace = input;
         self
     }
+    /// <p>The Kubernetes namespace that the selector should match.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
+    }
     /// Adds a key-value pair to `labels`.
     ///
     /// To override the contents of this collection use [`set_labels`](Self::set_labels).
@@ -80,6 +84,14 @@ impl FargateProfileSelectorBuilder {
     ) -> Self {
         self.labels = input;
         self
+    }
+    /// <p>The Kubernetes labels that the selector should match. A pod must contain all of the labels that are specified in the selector for it to be considered a match.</p>
+    pub fn get_labels(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.labels
     }
     /// Consumes the builder and constructs a [`FargateProfileSelector`](crate::types::FargateProfileSelector).
     pub fn build(self) -> crate::types::FargateProfileSelector {

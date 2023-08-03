@@ -156,6 +156,10 @@ impl RuleGroupBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A unique identifier for the rule group. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -165,6 +169,10 @@ impl RuleGroupBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>A unique identifier for the rule group. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The web ACL capacity units (WCUs) required for this rule group.</p>
     /// <p>When you create your own rule group, you define this, and you cannot change it after creation. When you add or modify the rules in a rule group, WAF enforces this limit. You can check the capacity for a set of rules using <code>CheckCapacity</code>.</p>
@@ -180,6 +188,12 @@ impl RuleGroupBuilder {
         self.capacity = input;
         self
     }
+    /// <p>The web ACL capacity units (WCUs) required for this rule group.</p>
+    /// <p>When you create your own rule group, you define this, and you cannot change it after creation. When you add or modify the rules in a rule group, WAF enforces this limit. You can check the capacity for a set of rules using <code>CheckCapacity</code>.</p>
+    /// <p>WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-waf-capacity-units.html">WAF web ACL capacity units (WCU)</a> in the <i>WAF Developer Guide</i>. </p>
+    pub fn get_capacity(&self) -> &::std::option::Option<i64> {
+        &self.capacity
+    }
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -190,6 +204,10 @@ impl RuleGroupBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the entity.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>A description of the rule group that helps with identification. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -199,6 +217,10 @@ impl RuleGroupBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the rule group that helps with identification. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `rules`.
     ///
@@ -219,6 +241,10 @@ impl RuleGroupBuilder {
         self.rules = input;
         self
     }
+    /// <p>The <code>Rule</code> statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Rule>> {
+        &self.rules
+    }
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
     pub fn visibility_config(mut self, input: crate::types::VisibilityConfig) -> Self {
         self.visibility_config = ::std::option::Option::Some(input);
@@ -231,6 +257,10 @@ impl RuleGroupBuilder {
     ) -> Self {
         self.visibility_config = input;
         self
+    }
+    /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
+    pub fn get_visibility_config(&self) -> &::std::option::Option<crate::types::VisibilityConfig> {
+        &self.visibility_config
     }
     /// <p>The label namespace prefix for this rule group. All labels added by rules in this rule group have this prefix. </p>
     /// <ul>
@@ -268,6 +298,20 @@ impl RuleGroupBuilder {
         self.label_namespace = input;
         self
     }
+    /// <p>The label namespace prefix for this rule group. All labels added by rules in this rule group have this prefix. </p>
+    /// <ul>
+    /// <li> <p>The syntax for the label namespace prefix for your rule groups is the following: </p> <p> <code>awswaf:
+    /// <account id>
+    /// :rulegroup:
+    /// <rule group name>
+    /// :
+    /// </rule>
+    /// </account></code> </p> </li>
+    /// <li> <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p> <p> <code><label namespace>:<label from rule></label></label></code> </p> </li>
+    /// </ul>
+    pub fn get_label_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label_namespace
+    }
     /// Adds a key-value pair to `custom_response_bodies`.
     ///
     /// To override the contents of this collection use [`set_custom_response_bodies`](Self::set_custom_response_bodies).
@@ -297,6 +341,16 @@ impl RuleGroupBuilder {
         self.custom_response_bodies = input;
         self
     }
+    /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the rule group, and then use them in the rules that you define in the rule group. </p>
+    /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
+    /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
+    pub fn get_custom_response_bodies(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::CustomResponseBody>,
+    > {
+        &self.custom_response_bodies
+    }
     /// Appends an item to `available_labels`.
     ///
     /// To override the contents of this collection use [`set_available_labels`](Self::set_available_labels).
@@ -316,6 +370,12 @@ impl RuleGroupBuilder {
         self.available_labels = input;
         self
     }
+    /// <p>The labels that one or more rules in this rule group add to matching web requests. These labels are defined in the <code>RuleLabels</code> for a <code>Rule</code>.</p>
+    pub fn get_available_labels(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>> {
+        &self.available_labels
+    }
     /// Appends an item to `consumed_labels`.
     ///
     /// To override the contents of this collection use [`set_consumed_labels`](Self::set_consumed_labels).
@@ -334,6 +394,12 @@ impl RuleGroupBuilder {
     ) -> Self {
         self.consumed_labels = input;
         self
+    }
+    /// <p>The labels that one or more rules in this rule group match against in label match statements. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <code>Statement</code> definition of a rule. </p>
+    pub fn get_consumed_labels(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>> {
+        &self.consumed_labels
     }
     /// Consumes the builder and constructs a [`RuleGroup`](crate::types::RuleGroup).
     pub fn build(self) -> crate::types::RuleGroup {

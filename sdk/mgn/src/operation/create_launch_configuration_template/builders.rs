@@ -36,6 +36,10 @@ impl CreateLaunchConfigurationTemplateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateLaunchConfigurationTemplate as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_launch_configuration_template::builders::CreateLaunchConfigurationTemplateInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -103,6 +107,12 @@ impl CreateLaunchConfigurationTemplateFluentBuilder {
         self.inner = self.inner.set_post_launch_actions(input);
         self
     }
+    /// <p>Launch configuration template post launch actions.</p>
+    pub fn get_post_launch_actions(
+        &self,
+    ) -> &::std::option::Option<crate::types::PostLaunchActions> {
+        self.inner.get_post_launch_actions()
+    }
     /// <p>Enable map auto tagging.</p>
     pub fn enable_map_auto_tagging(mut self, input: bool) -> Self {
         self.inner = self.inner.enable_map_auto_tagging(input);
@@ -112,6 +122,10 @@ impl CreateLaunchConfigurationTemplateFluentBuilder {
     pub fn set_enable_map_auto_tagging(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_map_auto_tagging(input);
         self
+    }
+    /// <p>Enable map auto tagging.</p>
+    pub fn get_enable_map_auto_tagging(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_map_auto_tagging()
     }
     /// <p>Launch configuration template map auto tagging MPE ID.</p>
     pub fn map_auto_tagging_mpe_id(
@@ -128,6 +142,10 @@ impl CreateLaunchConfigurationTemplateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_map_auto_tagging_mpe_id(input);
         self
+    }
+    /// <p>Launch configuration template map auto tagging MPE ID.</p>
+    pub fn get_map_auto_tagging_mpe_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_map_auto_tagging_mpe_id()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -152,6 +170,14 @@ impl CreateLaunchConfigurationTemplateFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>Request to associate tags during creation of a Launch Configuration Template.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>Launch disposition.</p>
     pub fn launch_disposition(mut self, input: crate::types::LaunchDisposition) -> Self {
         self.inner = self.inner.launch_disposition(input);
@@ -164,6 +190,12 @@ impl CreateLaunchConfigurationTemplateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_launch_disposition(input);
         self
+    }
+    /// <p>Launch disposition.</p>
+    pub fn get_launch_disposition(
+        &self,
+    ) -> &::std::option::Option<crate::types::LaunchDisposition> {
+        self.inner.get_launch_disposition()
     }
     /// <p>Target instance type right-sizing method.</p>
     pub fn target_instance_type_right_sizing_method(
@@ -183,6 +215,12 @@ impl CreateLaunchConfigurationTemplateFluentBuilder {
             .set_target_instance_type_right_sizing_method(input);
         self
     }
+    /// <p>Target instance type right-sizing method.</p>
+    pub fn get_target_instance_type_right_sizing_method(
+        &self,
+    ) -> &::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod> {
+        self.inner.get_target_instance_type_right_sizing_method()
+    }
     /// <p>Copy private Ip.</p>
     pub fn copy_private_ip(mut self, input: bool) -> Self {
         self.inner = self.inner.copy_private_ip(input);
@@ -192,6 +230,10 @@ impl CreateLaunchConfigurationTemplateFluentBuilder {
     pub fn set_copy_private_ip(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_copy_private_ip(input);
         self
+    }
+    /// <p>Copy private Ip.</p>
+    pub fn get_copy_private_ip(&self) -> &::std::option::Option<bool> {
+        self.inner.get_copy_private_ip()
     }
     /// <p>Associate public Ip address.</p>
     pub fn associate_public_ip_address(mut self, input: bool) -> Self {
@@ -203,6 +245,10 @@ impl CreateLaunchConfigurationTemplateFluentBuilder {
         self.inner = self.inner.set_associate_public_ip_address(input);
         self
     }
+    /// <p>Associate public Ip address.</p>
+    pub fn get_associate_public_ip_address(&self) -> &::std::option::Option<bool> {
+        self.inner.get_associate_public_ip_address()
+    }
     /// <p>Copy tags.</p>
     pub fn copy_tags(mut self, input: bool) -> Self {
         self.inner = self.inner.copy_tags(input);
@@ -212,6 +258,10 @@ impl CreateLaunchConfigurationTemplateFluentBuilder {
     pub fn set_copy_tags(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_copy_tags(input);
         self
+    }
+    /// <p>Copy tags.</p>
+    pub fn get_copy_tags(&self) -> &::std::option::Option<bool> {
+        self.inner.get_copy_tags()
     }
     /// <p>Configure Licensing.</p>
     pub fn licensing(mut self, input: crate::types::Licensing) -> Self {
@@ -223,6 +273,10 @@ impl CreateLaunchConfigurationTemplateFluentBuilder {
         self.inner = self.inner.set_licensing(input);
         self
     }
+    /// <p>Configure Licensing.</p>
+    pub fn get_licensing(&self) -> &::std::option::Option<crate::types::Licensing> {
+        self.inner.get_licensing()
+    }
     /// <p>Launch configuration template boot mode.</p>
     pub fn boot_mode(mut self, input: crate::types::BootMode) -> Self {
         self.inner = self.inner.boot_mode(input);
@@ -233,6 +287,10 @@ impl CreateLaunchConfigurationTemplateFluentBuilder {
         self.inner = self.inner.set_boot_mode(input);
         self
     }
+    /// <p>Launch configuration template boot mode.</p>
+    pub fn get_boot_mode(&self) -> &::std::option::Option<crate::types::BootMode> {
+        self.inner.get_boot_mode()
+    }
     /// <p>Small volume maximum size.</p>
     pub fn small_volume_max_size(mut self, input: i64) -> Self {
         self.inner = self.inner.small_volume_max_size(input);
@@ -242,6 +300,10 @@ impl CreateLaunchConfigurationTemplateFluentBuilder {
     pub fn set_small_volume_max_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_small_volume_max_size(input);
         self
+    }
+    /// <p>Small volume maximum size.</p>
+    pub fn get_small_volume_max_size(&self) -> &::std::option::Option<i64> {
+        self.inner.get_small_volume_max_size()
     }
     /// <p>Small volume config.</p>
     pub fn small_volume_conf(mut self, input: crate::types::LaunchTemplateDiskConf) -> Self {
@@ -256,6 +318,12 @@ impl CreateLaunchConfigurationTemplateFluentBuilder {
         self.inner = self.inner.set_small_volume_conf(input);
         self
     }
+    /// <p>Small volume config.</p>
+    pub fn get_small_volume_conf(
+        &self,
+    ) -> &::std::option::Option<crate::types::LaunchTemplateDiskConf> {
+        self.inner.get_small_volume_conf()
+    }
     /// <p>Large volume config.</p>
     pub fn large_volume_conf(mut self, input: crate::types::LaunchTemplateDiskConf) -> Self {
         self.inner = self.inner.large_volume_conf(input);
@@ -268,5 +336,11 @@ impl CreateLaunchConfigurationTemplateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_large_volume_conf(input);
         self
+    }
+    /// <p>Large volume config.</p>
+    pub fn get_large_volume_conf(
+        &self,
+    ) -> &::std::option::Option<crate::types::LaunchTemplateDiskConf> {
+        self.inner.get_large_volume_conf()
     }
 }

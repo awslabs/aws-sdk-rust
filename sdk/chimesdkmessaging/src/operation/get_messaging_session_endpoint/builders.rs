@@ -36,6 +36,10 @@ impl GetMessagingSessionEndpointFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetMessagingSessionEndpoint as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_messaging_session_endpoint::builders::GetMessagingSessionEndpointInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(

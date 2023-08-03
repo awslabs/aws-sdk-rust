@@ -48,6 +48,10 @@ impl CreateMlModelOutputBuilder {
         self.ml_model_id = input;
         self
     }
+    /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelId</code> in the request. </p>
+    pub fn get_ml_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ml_model_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -116,6 +116,20 @@ impl DescribePlacementGroupsInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>The filters.</p>
+    /// <ul>
+    /// <li> <p> <code>group-name</code> - The name of the placement group.</p> </li>
+    /// <li> <p> <code>group-arn</code> - The Amazon Resource Name (ARN) of the placement group.</p> </li>
+    /// <li> <p> <code>spread-level</code> - The spread level for the placement group (<code>host</code> | <code>rack</code>). </p> </li>
+    /// <li> <p> <code>state</code> - The state of the placement group (<code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p> </li>
+    /// <li> <p> <code>strategy</code> - The strategy of the placement group (<code>cluster</code> | <code>spread</code> | <code>partition</code>).</p> </li>
+    /// <li> <p> <code>tag:
+    /// <key></key></code> - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p> </li>
+    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources that have a tag with a specific key, regardless of the tag value.</p> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -125,6 +139,10 @@ impl DescribePlacementGroupsInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Appends an item to `group_names`.
     ///
@@ -147,6 +165,13 @@ impl DescribePlacementGroupsInputBuilder {
         self.group_names = input;
         self
     }
+    /// <p>The names of the placement groups.</p>
+    /// <p>Default: Describes all your placement groups, or only those otherwise specified.</p>
+    pub fn get_group_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.group_names
+    }
     /// Appends an item to `group_ids`.
     ///
     /// To override the contents of this collection use [`set_group_ids`](Self::set_group_ids).
@@ -165,6 +190,10 @@ impl DescribePlacementGroupsInputBuilder {
     ) -> Self {
         self.group_ids = input;
         self
+    }
+    /// <p>The IDs of the placement groups.</p>
+    pub fn get_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.group_ids
     }
     /// Consumes the builder and constructs a [`DescribePlacementGroupsInput`](crate::operation::describe_placement_groups::DescribePlacementGroupsInput).
     pub fn build(

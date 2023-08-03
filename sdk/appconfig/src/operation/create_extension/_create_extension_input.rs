@@ -112,6 +112,10 @@ impl CreateExtensionInputBuilder {
         self.name = input;
         self
     }
+    /// <p>A name for the extension. Each extension name in your account must be unique. Extension versions use the same name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Information about the extension.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -121,6 +125,10 @@ impl CreateExtensionInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>Information about the extension.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Adds a key-value pair to `actions`.
     ///
@@ -150,6 +158,17 @@ impl CreateExtensionInputBuilder {
         self.actions = input;
         self
     }
+    /// <p>The actions defined in the extension.</p>
+    pub fn get_actions(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::ActionPoint,
+            ::std::vec::Vec<crate::types::Action>,
+        >,
+    > {
+        &self.actions
+    }
     /// Adds a key-value pair to `parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
@@ -174,6 +193,14 @@ impl CreateExtensionInputBuilder {
     ) -> Self {
         self.parameters = input;
         self
+    }
+    /// <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::Parameter>,
+    > {
+        &self.parameters
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -200,6 +227,14 @@ impl CreateExtensionInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Adds one or more tags for the specified extension. Tags are metadata that help you categorize resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you define. </p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>You can omit this field when you create an extension. When you create a new version, specify the most recent current version number. For example, you create version 3, enter 2 for this field.</p>
     pub fn latest_version_number(mut self, input: i32) -> Self {
         self.latest_version_number = ::std::option::Option::Some(input);
@@ -209,6 +244,10 @@ impl CreateExtensionInputBuilder {
     pub fn set_latest_version_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.latest_version_number = input;
         self
+    }
+    /// <p>You can omit this field when you create an extension. When you create a new version, specify the most recent current version number. For example, you create version 3, enter 2 for this field.</p>
+    pub fn get_latest_version_number(&self) -> &::std::option::Option<i32> {
+        &self.latest_version_number
     }
     /// Consumes the builder and constructs a [`CreateExtensionInput`](crate::operation::create_extension::CreateExtensionInput).
     pub fn build(

@@ -49,6 +49,12 @@ impl DescribeDatasetOutputBuilder {
         self.dataset_description = input;
         self
     }
+    /// <p>The description of the requested dataset. </p>
+    pub fn get_dataset_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::DatasetDescription> {
+        &self.dataset_description
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

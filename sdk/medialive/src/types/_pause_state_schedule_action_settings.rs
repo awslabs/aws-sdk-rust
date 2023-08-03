@@ -50,6 +50,12 @@ impl PauseStateScheduleActionSettingsBuilder {
         self.pipelines = input;
         self
     }
+    /// Placeholder documentation for __listOfPipelinePauseStateSettings
+    pub fn get_pipelines(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelinePauseStateSettings>> {
+        &self.pipelines
+    }
     /// Consumes the builder and constructs a [`PauseStateScheduleActionSettings`](crate::types::PauseStateScheduleActionSettings).
     pub fn build(self) -> crate::types::PauseStateScheduleActionSettings {
         crate::types::PauseStateScheduleActionSettings {

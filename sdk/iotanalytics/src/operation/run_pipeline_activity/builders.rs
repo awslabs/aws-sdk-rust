@@ -36,6 +36,12 @@ impl RunPipelineActivityFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RunPipelineActivity as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::run_pipeline_activity::builders::RunPipelineActivityInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl RunPipelineActivityFluentBuilder {
         self.inner = self.inner.set_pipeline_activity(input);
         self
     }
+    /// <p>The pipeline activity that is run. This must not be a channel activity or a data store activity because these activities are used in a pipeline only to load the original message and to store the (possibly) transformed message. If a Lambda activity is specified, only short-running Lambda functions (those with a timeout of less than 30 seconds or less) can be used.</p>
+    pub fn get_pipeline_activity(&self) -> &::std::option::Option<crate::types::PipelineActivity> {
+        self.inner.get_pipeline_activity()
+    }
     /// Appends an item to `payloads`.
     ///
     /// To override the contents of this collection use [`set_payloads`](Self::set_payloads).
@@ -145,5 +155,11 @@ impl RunPipelineActivityFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_payloads(input);
         self
+    }
+    /// <p>The sample message payloads on which the pipeline activity is run.</p>
+    pub fn get_payloads(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>> {
+        self.inner.get_payloads()
     }
 }

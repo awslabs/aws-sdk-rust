@@ -36,6 +36,12 @@ impl DescribeDeviceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeDevice as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_device::builders::DescribeDeviceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -123,5 +129,9 @@ impl DescribeDeviceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_managed_device_id(input);
         self
+    }
+    /// <p>The ID of the device that you are checking the information of.</p>
+    pub fn get_managed_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_managed_device_id()
     }
 }

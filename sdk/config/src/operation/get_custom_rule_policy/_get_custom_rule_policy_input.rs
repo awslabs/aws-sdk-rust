@@ -47,6 +47,10 @@ impl GetCustomRulePolicyInputBuilder {
         self.config_rule_name = input;
         self
     }
+    /// <p>The name of your Config Custom Policy rule.</p>
+    pub fn get_config_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.config_rule_name
+    }
     /// Consumes the builder and constructs a [`GetCustomRulePolicyInput`](crate::operation::get_custom_rule_policy::GetCustomRulePolicyInput).
     pub fn build(
         self,

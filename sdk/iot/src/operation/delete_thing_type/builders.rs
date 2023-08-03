@@ -37,6 +37,12 @@ impl DeleteThingTypeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteThingType as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_thing_type::builders::DeleteThingTypeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +138,9 @@ impl DeleteThingTypeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_thing_type_name(input);
         self
+    }
+    /// <p>The name of the thing type.</p>
+    pub fn get_thing_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_thing_type_name()
     }
 }

@@ -172,6 +172,11 @@ impl ListPartsOutputBuilder {
         self.abort_date = input;
         self
     }
+    /// <p>If the bucket has a lifecycle rule configured with an action to abort incomplete multipart uploads and the prefix in the lifecycle rule matches the object name in the request, then the response includes this header indicating when the initiated multipart upload will become eligible for abort operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Configuration</a>.</p>
+    /// <p>The response will also include the <code>x-amz-abort-rule-id</code> header that will provide the ID of the lifecycle configuration rule that defines this action.</p>
+    pub fn get_abort_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.abort_date
+    }
     /// <p>This header is returned along with the <code>x-amz-abort-date</code> header. It identifies applicable lifecycle configuration rule that defines the action to abort incomplete multipart uploads.</p>
     pub fn abort_rule_id(
         mut self,
@@ -188,6 +193,10 @@ impl ListPartsOutputBuilder {
         self.abort_rule_id = input;
         self
     }
+    /// <p>This header is returned along with the <code>x-amz-abort-date</code> header. It identifies applicable lifecycle configuration rule that defines the action to abort incomplete multipart uploads.</p>
+    pub fn get_abort_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.abort_rule_id
+    }
     /// <p>The name of the bucket to which the multipart upload was initiated. Does not return the access point ARN or access point alias if used.</p>
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
@@ -197,6 +206,10 @@ impl ListPartsOutputBuilder {
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket = input;
         self
+    }
+    /// <p>The name of the bucket to which the multipart upload was initiated. Does not return the access point ARN or access point alias if used.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
     }
     /// <p>Object key for which the multipart upload was initiated.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -208,6 +221,10 @@ impl ListPartsOutputBuilder {
         self.key = input;
         self
     }
+    /// <p>Object key for which the multipart upload was initiated.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>Upload ID identifying the multipart upload whose parts are being listed.</p>
     pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upload_id = ::std::option::Option::Some(input.into());
@@ -217,6 +234,10 @@ impl ListPartsOutputBuilder {
     pub fn set_upload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.upload_id = input;
         self
+    }
+    /// <p>Upload ID identifying the multipart upload whose parts are being listed.</p>
+    pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.upload_id
     }
     /// <p>When a list is truncated, this element specifies the last part in the list, as well as the value to use for the part-number-marker request parameter in a subsequent request.</p>
     pub fn part_number_marker(
@@ -234,6 +255,10 @@ impl ListPartsOutputBuilder {
         self.part_number_marker = input;
         self
     }
+    /// <p>When a list is truncated, this element specifies the last part in the list, as well as the value to use for the part-number-marker request parameter in a subsequent request.</p>
+    pub fn get_part_number_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.part_number_marker
+    }
     /// <p>When a list is truncated, this element specifies the last part in the list, as well as the value to use for the <code>part-number-marker</code> request parameter in a subsequent request.</p>
     pub fn next_part_number_marker(
         mut self,
@@ -250,6 +275,10 @@ impl ListPartsOutputBuilder {
         self.next_part_number_marker = input;
         self
     }
+    /// <p>When a list is truncated, this element specifies the last part in the list, as well as the value to use for the <code>part-number-marker</code> request parameter in a subsequent request.</p>
+    pub fn get_next_part_number_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_part_number_marker
+    }
     /// <p>Maximum number of parts that were allowed in the response.</p>
     pub fn max_parts(mut self, input: i32) -> Self {
         self.max_parts = ::std::option::Option::Some(input);
@@ -260,6 +289,10 @@ impl ListPartsOutputBuilder {
         self.max_parts = input;
         self
     }
+    /// <p>Maximum number of parts that were allowed in the response.</p>
+    pub fn get_max_parts(&self) -> &::std::option::Option<i32> {
+        &self.max_parts
+    }
     /// <p> Indicates whether the returned list of parts is truncated. A true value indicates that the list was truncated. A list can be truncated if the number of parts exceeds the limit returned in the MaxParts element.</p>
     pub fn is_truncated(mut self, input: bool) -> Self {
         self.is_truncated = ::std::option::Option::Some(input);
@@ -269,6 +302,10 @@ impl ListPartsOutputBuilder {
     pub fn set_is_truncated(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_truncated = input;
         self
+    }
+    /// <p> Indicates whether the returned list of parts is truncated. A true value indicates that the list was truncated. A list can be truncated if the number of parts exceeds the limit returned in the MaxParts element.</p>
+    pub fn get_is_truncated(&self) -> &::std::option::Option<bool> {
+        &self.is_truncated
     }
     /// Appends an item to `parts`.
     ///
@@ -289,6 +326,10 @@ impl ListPartsOutputBuilder {
         self.parts = input;
         self
     }
+    /// <p> Container for elements related to a particular part. A response can contain zero or more <code>Part</code> elements.</p>
+    pub fn get_parts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Part>> {
+        &self.parts
+    }
     /// <p>Container element that identifies who initiated the multipart upload. If the initiator is an Amazon Web Services account, this element provides the same information as the <code>Owner</code> element. If the initiator is an IAM User, this element provides the user ARN and display name.</p>
     pub fn initiator(mut self, input: crate::types::Initiator) -> Self {
         self.initiator = ::std::option::Option::Some(input);
@@ -299,6 +340,10 @@ impl ListPartsOutputBuilder {
         self.initiator = input;
         self
     }
+    /// <p>Container element that identifies who initiated the multipart upload. If the initiator is an Amazon Web Services account, this element provides the same information as the <code>Owner</code> element. If the initiator is an IAM User, this element provides the user ARN and display name.</p>
+    pub fn get_initiator(&self) -> &::std::option::Option<crate::types::Initiator> {
+        &self.initiator
+    }
     /// <p> Container element that identifies the object owner, after the object is created. If multipart upload is initiated by an IAM user, this element provides the parent account ID and display name.</p>
     pub fn owner(mut self, input: crate::types::Owner) -> Self {
         self.owner = ::std::option::Option::Some(input);
@@ -308,6 +353,10 @@ impl ListPartsOutputBuilder {
     pub fn set_owner(mut self, input: ::std::option::Option<crate::types::Owner>) -> Self {
         self.owner = input;
         self
+    }
+    /// <p> Container element that identifies the object owner, after the object is created. If multipart upload is initiated by an IAM user, this element provides the parent account ID and display name.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<crate::types::Owner> {
+        &self.owner
     }
     /// <p>Class of storage (STANDARD or REDUCED_REDUNDANCY) used to store the uploaded object.</p>
     pub fn storage_class(mut self, input: crate::types::StorageClass) -> Self {
@@ -322,6 +371,10 @@ impl ListPartsOutputBuilder {
         self.storage_class = input;
         self
     }
+    /// <p>Class of storage (STANDARD or REDUCED_REDUNDANCY) used to store the uploaded object.</p>
+    pub fn get_storage_class(&self) -> &::std::option::Option<crate::types::StorageClass> {
+        &self.storage_class
+    }
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub fn request_charged(mut self, input: crate::types::RequestCharged) -> Self {
         self.request_charged = ::std::option::Option::Some(input);
@@ -335,6 +388,10 @@ impl ListPartsOutputBuilder {
         self.request_charged = input;
         self
     }
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
+    pub fn get_request_charged(&self) -> &::std::option::Option<crate::types::RequestCharged> {
+        &self.request_charged
+    }
     /// <p>The algorithm that was used to create a checksum of the object.</p>
     pub fn checksum_algorithm(mut self, input: crate::types::ChecksumAlgorithm) -> Self {
         self.checksum_algorithm = ::std::option::Option::Some(input);
@@ -347,6 +404,12 @@ impl ListPartsOutputBuilder {
     ) -> Self {
         self.checksum_algorithm = input;
         self
+    }
+    /// <p>The algorithm that was used to create a checksum of the object.</p>
+    pub fn get_checksum_algorithm(
+        &self,
+    ) -> &::std::option::Option<crate::types::ChecksumAlgorithm> {
+        &self.checksum_algorithm
     }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
         self._extended_request_id = Some(extended_request_id.into());

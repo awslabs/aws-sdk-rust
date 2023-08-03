@@ -48,6 +48,10 @@ impl QueryStringNamesBuilder {
         self.quantity = input;
         self
     }
+    /// <p>The number of query string names in the <code>Items</code> list.</p>
+    pub fn get_quantity(&self) -> &::std::option::Option<i32> {
+        &self.quantity
+    }
     /// Appends an item to `items`.
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
@@ -66,6 +70,10 @@ impl QueryStringNamesBuilder {
     ) -> Self {
         self.items = input;
         self
+    }
+    /// <p>A list of query string names.</p>
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.items
     }
     /// Consumes the builder and constructs a [`QueryStringNames`](crate::types::QueryStringNames).
     pub fn build(self) -> crate::types::QueryStringNames {

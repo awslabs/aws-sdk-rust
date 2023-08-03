@@ -48,6 +48,10 @@ impl MessageMetadataBuilder {
         self.message_id = input;
         self
     }
+    /// <p>The identifier of the message that contains the metadata information. </p>
+    pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message_id
+    }
     /// Appends an item to `receipts`.
     ///
     /// To override the contents of this collection use [`set_receipts`](Self::set_receipts).
@@ -66,6 +70,10 @@ impl MessageMetadataBuilder {
     ) -> Self {
         self.receipts = input;
         self
+    }
+    /// <p>The list of receipt information for a message for different recipients.</p>
+    pub fn get_receipts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Receipt>> {
+        &self.receipts
     }
     /// Consumes the builder and constructs a [`MessageMetadata`](crate::types::MessageMetadata).
     pub fn build(self) -> crate::types::MessageMetadata {

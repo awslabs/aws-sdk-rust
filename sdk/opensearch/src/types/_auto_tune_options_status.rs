@@ -51,6 +51,10 @@ impl AutoTuneOptionsStatusBuilder {
         self.options = input;
         self
     }
+    /// <p>Auto-Tune settings for updating a domain.</p>
+    pub fn get_options(&self) -> &::std::option::Option<crate::types::AutoTuneOptions> {
+        &self.options
+    }
     /// <p>The current status of Auto-Tune for a domain.</p>
     pub fn status(mut self, input: crate::types::AutoTuneStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl AutoTuneOptionsStatusBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of Auto-Tune for a domain.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AutoTuneStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`AutoTuneOptionsStatus`](crate::types::AutoTuneOptionsStatus).
     pub fn build(self) -> crate::types::AutoTuneOptionsStatus {

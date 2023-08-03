@@ -45,6 +45,10 @@ impl CreateCrossAccountAuthorizationInputBuilder {
         self.cross_account_authorization = input;
         self
     }
+    /// <p>The cross-account authorization.</p>
+    pub fn get_cross_account_authorization(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cross_account_authorization
+    }
     /// Consumes the builder and constructs a [`CreateCrossAccountAuthorizationInput`](crate::operation::create_cross_account_authorization::CreateCrossAccountAuthorizationInput).
     pub fn build(
         self,

@@ -96,6 +96,10 @@ impl TableMetadataBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the table.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The time that the table was created.</p>
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
@@ -108,6 +112,10 @@ impl TableMetadataBuilder {
     ) -> Self {
         self.create_time = input;
         self
+    }
+    /// <p>The time that the table was created.</p>
+    pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_time
     }
     /// <p>The last time the table was accessed.</p>
     pub fn last_access_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -122,6 +130,10 @@ impl TableMetadataBuilder {
         self.last_access_time = input;
         self
     }
+    /// <p>The last time the table was accessed.</p>
+    pub fn get_last_access_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_access_time
+    }
     /// <p>The type of table. In Athena, only <code>EXTERNAL_TABLE</code> is supported.</p>
     pub fn table_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_type = ::std::option::Option::Some(input.into());
@@ -131,6 +143,10 @@ impl TableMetadataBuilder {
     pub fn set_table_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_type = input;
         self
+    }
+    /// <p>The type of table. In Athena, only <code>EXTERNAL_TABLE</code> is supported.</p>
+    pub fn get_table_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_type
     }
     /// Appends an item to `columns`.
     ///
@@ -151,6 +167,10 @@ impl TableMetadataBuilder {
         self.columns = input;
         self
     }
+    /// <p>A list of the columns in the table.</p>
+    pub fn get_columns(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Column>> {
+        &self.columns
+    }
     /// Appends an item to `partition_keys`.
     ///
     /// To override the contents of this collection use [`set_partition_keys`](Self::set_partition_keys).
@@ -169,6 +189,12 @@ impl TableMetadataBuilder {
     ) -> Self {
         self.partition_keys = input;
         self
+    }
+    /// <p>A list of the partition keys in the table.</p>
+    pub fn get_partition_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Column>> {
+        &self.partition_keys
     }
     /// Adds a key-value pair to `parameters`.
     ///
@@ -194,6 +220,14 @@ impl TableMetadataBuilder {
     ) -> Self {
         self.parameters = input;
         self
+    }
+    /// <p>A set of custom key/value pairs for table properties.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.parameters
     }
     /// Consumes the builder and constructs a [`TableMetadata`](crate::types::TableMetadata).
     pub fn build(self) -> crate::types::TableMetadata {

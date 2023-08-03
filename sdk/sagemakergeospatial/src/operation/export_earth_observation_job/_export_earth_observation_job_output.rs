@@ -88,6 +88,10 @@ impl ExportEarthObservationJobOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The output Amazon Resource Name (ARN) of the Earth Observation job being exported.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The creation time.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -101,6 +105,10 @@ impl ExportEarthObservationJobOutputBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The creation time.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The status of the results of the Earth Observation job being exported.</p>
     pub fn export_status(mut self, input: crate::types::EarthObservationJobExportStatus) -> Self {
         self.export_status = ::std::option::Option::Some(input);
@@ -113,6 +121,12 @@ impl ExportEarthObservationJobOutputBuilder {
     ) -> Self {
         self.export_status = input;
         self
+    }
+    /// <p>The status of the results of the Earth Observation job being exported.</p>
+    pub fn get_export_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::EarthObservationJobExportStatus> {
+        &self.export_status
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
     pub fn execution_role_arn(
@@ -130,6 +144,10 @@ impl ExportEarthObservationJobOutputBuilder {
         self.execution_role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
+    pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_role_arn
+    }
     /// <p>An object containing information about the output file.</p>
     pub fn output_config(mut self, input: crate::types::OutputConfigInput) -> Self {
         self.output_config = ::std::option::Option::Some(input);
@@ -143,6 +161,10 @@ impl ExportEarthObservationJobOutputBuilder {
         self.output_config = input;
         self
     }
+    /// <p>An object containing information about the output file.</p>
+    pub fn get_output_config(&self) -> &::std::option::Option<crate::types::OutputConfigInput> {
+        &self.output_config
+    }
     /// <p>The source images provided to the Earth Observation job being exported.</p>
     pub fn export_source_images(mut self, input: bool) -> Self {
         self.export_source_images = ::std::option::Option::Some(input);
@@ -152,6 +174,10 @@ impl ExportEarthObservationJobOutputBuilder {
     pub fn set_export_source_images(mut self, input: ::std::option::Option<bool>) -> Self {
         self.export_source_images = input;
         self
+    }
+    /// <p>The source images provided to the Earth Observation job being exported.</p>
+    pub fn get_export_source_images(&self) -> &::std::option::Option<bool> {
+        &self.export_source_images
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

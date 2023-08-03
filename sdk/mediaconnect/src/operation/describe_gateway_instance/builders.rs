@@ -37,6 +37,13 @@ impl DescribeGatewayInstanceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeGatewayInstance as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_gateway_instance::builders::DescribeGatewayInstanceInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +139,9 @@ impl DescribeGatewayInstanceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_gateway_instance_arn(input);
         self
+    }
+    /// The Amazon Resource Name (ARN) of the gateway instance that you want to describe.
+    pub fn get_gateway_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_gateway_instance_arn()
     }
 }

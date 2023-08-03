@@ -58,6 +58,10 @@ impl TagValuesBuilder {
         self.key = input;
         self
     }
+    /// <p>The key for the tag.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -77,6 +81,10 @@ impl TagValuesBuilder {
         self.values = input;
         self
     }
+    /// <p>The specific value of the tag.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
+    }
     /// Appends an item to `match_options`.
     ///
     /// To override the contents of this collection use [`set_match_options`](Self::set_match_options).
@@ -95,6 +103,12 @@ impl TagValuesBuilder {
     ) -> Self {
         self.match_options = input;
         self
+    }
+    /// <p>The match options that you can use to filter your results. <code>MatchOptions</code> is only applicable for actions related to Cost Category. The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+    pub fn get_match_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MatchOption>> {
+        &self.match_options
     }
     /// Consumes the builder and constructs a [`TagValues`](crate::types::TagValues).
     pub fn build(self) -> crate::types::TagValues {

@@ -36,6 +36,10 @@ impl RestoreManagedPrefixListVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RestoreManagedPrefixListVersion as a reference.
+    pub fn as_input(&self) -> &crate::operation::restore_managed_prefix_list_version::builders::RestoreManagedPrefixListVersionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl RestoreManagedPrefixListVersionFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>The ID of the prefix list.</p>
     pub fn prefix_list_id(
         mut self,
@@ -116,6 +124,10 @@ impl RestoreManagedPrefixListVersionFluentBuilder {
         self.inner = self.inner.set_prefix_list_id(input);
         self
     }
+    /// <p>The ID of the prefix list.</p>
+    pub fn get_prefix_list_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_prefix_list_id()
+    }
     /// <p>The version to restore.</p>
     pub fn previous_version(mut self, input: i64) -> Self {
         self.inner = self.inner.previous_version(input);
@@ -126,6 +138,10 @@ impl RestoreManagedPrefixListVersionFluentBuilder {
         self.inner = self.inner.set_previous_version(input);
         self
     }
+    /// <p>The version to restore.</p>
+    pub fn get_previous_version(&self) -> &::std::option::Option<i64> {
+        self.inner.get_previous_version()
+    }
     /// <p>The current version number for the prefix list.</p>
     pub fn current_version(mut self, input: i64) -> Self {
         self.inner = self.inner.current_version(input);
@@ -135,5 +151,9 @@ impl RestoreManagedPrefixListVersionFluentBuilder {
     pub fn set_current_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_current_version(input);
         self
+    }
+    /// <p>The current version number for the prefix list.</p>
+    pub fn get_current_version(&self) -> &::std::option::Option<i64> {
+        self.inner.get_current_version()
     }
 }

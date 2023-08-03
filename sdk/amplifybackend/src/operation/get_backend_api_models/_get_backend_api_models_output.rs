@@ -63,6 +63,10 @@ impl GetBackendApiModelsOutputBuilder {
         self.models = input;
         self
     }
+    /// <p>Stringified JSON of the datastore model.</p>
+    pub fn get_models(&self) -> &::std::option::Option<::std::string::String> {
+        &self.models
+    }
     /// <p>The current status of the request.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl GetBackendApiModelsOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.status
     }
     /// <p>Stringified JSON of the model introspection schema for an existing backend API resource.</p>
     pub fn model_introspection_schema(
@@ -88,6 +96,10 @@ impl GetBackendApiModelsOutputBuilder {
     ) -> Self {
         self.model_introspection_schema = input;
         self
+    }
+    /// <p>Stringified JSON of the model introspection schema for an existing backend API resource.</p>
+    pub fn get_model_introspection_schema(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_introspection_schema
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

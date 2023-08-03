@@ -56,6 +56,10 @@ impl DisassociateFileSystemAliasesOutputBuilder {
         self.aliases = input;
         self
     }
+    /// <p>An array of one or more DNS aliases that Amazon FSx is attempting to disassociate from the file system.</p>
+    pub fn get_aliases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Alias>> {
+        &self.aliases
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

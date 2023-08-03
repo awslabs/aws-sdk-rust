@@ -207,6 +207,10 @@ impl ClusterBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the cluster.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -216,6 +220,10 @@ impl ClusterBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The Unix epoch timestamp in seconds for when the cluster was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -230,6 +238,10 @@ impl ClusterBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The Unix epoch timestamp in seconds for when the cluster was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The Kubernetes server version for the cluster.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -239,6 +251,10 @@ impl ClusterBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The Kubernetes server version for the cluster.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// <p>The endpoint for your Kubernetes API server.</p>
     pub fn endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -250,6 +266,10 @@ impl ClusterBuilder {
         self.endpoint = input;
         self
     }
+    /// <p>The endpoint for your Kubernetes API server.</p>
+    pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make calls to Amazon Web Services API operations on your behalf.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -259,6 +279,10 @@ impl ClusterBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make calls to Amazon Web Services API operations on your behalf.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The VPC configuration used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub fn resources_vpc_config(mut self, input: crate::types::VpcConfigResponse) -> Self {
@@ -272,6 +296,12 @@ impl ClusterBuilder {
     ) -> Self {
         self.resources_vpc_config = input;
         self
+    }
+    /// <p>The VPC configuration used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
+    pub fn get_resources_vpc_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::VpcConfigResponse> {
+        &self.resources_vpc_config
     }
     /// <p>The Kubernetes network configuration for the cluster.</p>
     pub fn kubernetes_network_config(
@@ -289,6 +319,12 @@ impl ClusterBuilder {
         self.kubernetes_network_config = input;
         self
     }
+    /// <p>The Kubernetes network configuration for the cluster.</p>
+    pub fn get_kubernetes_network_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::KubernetesNetworkConfigResponse> {
+        &self.kubernetes_network_config
+    }
     /// <p>The logging configuration for your cluster.</p>
     pub fn logging(mut self, input: crate::types::Logging) -> Self {
         self.logging = ::std::option::Option::Some(input);
@@ -298,6 +334,10 @@ impl ClusterBuilder {
     pub fn set_logging(mut self, input: ::std::option::Option<crate::types::Logging>) -> Self {
         self.logging = input;
         self
+    }
+    /// <p>The logging configuration for your cluster.</p>
+    pub fn get_logging(&self) -> &::std::option::Option<crate::types::Logging> {
+        &self.logging
     }
     /// <p>The identity provider information for the cluster.</p>
     pub fn identity(mut self, input: crate::types::Identity) -> Self {
@@ -309,6 +349,10 @@ impl ClusterBuilder {
         self.identity = input;
         self
     }
+    /// <p>The identity provider information for the cluster.</p>
+    pub fn get_identity(&self) -> &::std::option::Option<crate::types::Identity> {
+        &self.identity
+    }
     /// <p>The current status of the cluster.</p>
     pub fn status(mut self, input: crate::types::ClusterStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -318,6 +362,10 @@ impl ClusterBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ClusterStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the cluster.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ClusterStatus> {
+        &self.status
     }
     /// <p>The <code>certificate-authority-data</code> for your cluster.</p>
     pub fn certificate_authority(mut self, input: crate::types::Certificate) -> Self {
@@ -331,6 +379,10 @@ impl ClusterBuilder {
     ) -> Self {
         self.certificate_authority = input;
         self
+    }
+    /// <p>The <code>certificate-authority-data</code> for your cluster.</p>
+    pub fn get_certificate_authority(&self) -> &::std::option::Option<crate::types::Certificate> {
+        &self.certificate_authority
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(
@@ -348,6 +400,10 @@ impl ClusterBuilder {
         self.client_request_token = input;
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
+    }
     /// <p>The platform version of your Amazon EKS cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform Versions</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
     pub fn platform_version(
         mut self,
@@ -363,6 +419,10 @@ impl ClusterBuilder {
     ) -> Self {
         self.platform_version = input;
         self
+    }
+    /// <p>The platform version of your Amazon EKS cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform Versions</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
+    pub fn get_platform_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform_version
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -389,6 +449,14 @@ impl ClusterBuilder {
         self.tags = input;
         self
     }
+    /// <p>The metadata that you apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Cluster tags do not propagate to any other resources associated with the cluster.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// Appends an item to `encryption_config`.
     ///
     /// To override the contents of this collection use [`set_encryption_config`](Self::set_encryption_config).
@@ -408,6 +476,12 @@ impl ClusterBuilder {
         self.encryption_config = input;
         self
     }
+    /// <p>The encryption configuration for the cluster.</p>
+    pub fn get_encryption_config(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EncryptionConfig>> {
+        &self.encryption_config
+    }
     /// <p>The configuration used to connect to a cluster for registration.</p>
     pub fn connector_config(mut self, input: crate::types::ConnectorConfigResponse) -> Self {
         self.connector_config = ::std::option::Option::Some(input);
@@ -421,6 +495,12 @@ impl ClusterBuilder {
         self.connector_config = input;
         self
     }
+    /// <p>The configuration used to connect to a cluster for registration.</p>
+    pub fn get_connector_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConnectorConfigResponse> {
+        &self.connector_config
+    }
     /// <p>The ID of your local Amazon EKS cluster on an Amazon Web Services Outpost. This property isn't available for an Amazon EKS cluster on the Amazon Web Services cloud.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -431,6 +511,10 @@ impl ClusterBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of your local Amazon EKS cluster on an Amazon Web Services Outpost. This property isn't available for an Amazon EKS cluster on the Amazon Web Services cloud.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>An object representing the health of your local Amazon EKS cluster on an Amazon Web Services Outpost. This object isn't available for clusters on the Amazon Web Services cloud.</p>
     pub fn health(mut self, input: crate::types::ClusterHealth) -> Self {
         self.health = ::std::option::Option::Some(input);
@@ -440,6 +524,10 @@ impl ClusterBuilder {
     pub fn set_health(mut self, input: ::std::option::Option<crate::types::ClusterHealth>) -> Self {
         self.health = input;
         self
+    }
+    /// <p>An object representing the health of your local Amazon EKS cluster on an Amazon Web Services Outpost. This object isn't available for clusters on the Amazon Web Services cloud.</p>
+    pub fn get_health(&self) -> &::std::option::Option<crate::types::ClusterHealth> {
+        &self.health
     }
     /// <p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. This object isn't available for clusters on the Amazon Web Services cloud.</p>
     pub fn outpost_config(mut self, input: crate::types::OutpostConfigResponse) -> Self {
@@ -453,6 +541,12 @@ impl ClusterBuilder {
     ) -> Self {
         self.outpost_config = input;
         self
+    }
+    /// <p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. This object isn't available for clusters on the Amazon Web Services cloud.</p>
+    pub fn get_outpost_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::OutpostConfigResponse> {
+        &self.outpost_config
     }
     /// Consumes the builder and constructs a [`Cluster`](crate::types::Cluster).
     pub fn build(self) -> crate::types::Cluster {

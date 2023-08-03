@@ -36,6 +36,10 @@ impl ListStreamingSessionBackupsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListStreamingSessionBackups as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_streaming_session_backups::builders::ListStreamingSessionBackupsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl ListStreamingSessionBackupsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token for the next set of results, or null if there are no more results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The user ID of the user that owns the streaming session.</p>
     pub fn owned_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.owned_by(input.into());
@@ -142,6 +150,10 @@ impl ListStreamingSessionBackupsFluentBuilder {
         self.inner = self.inner.set_owned_by(input);
         self
     }
+    /// <p>The user ID of the user that owns the streaming session.</p>
+    pub fn get_owned_by(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_owned_by()
+    }
     /// <p>The studio ID. </p>
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.studio_id(input.into());
@@ -151,5 +163,9 @@ impl ListStreamingSessionBackupsFluentBuilder {
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_studio_id(input);
         self
+    }
+    /// <p>The studio ID. </p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_studio_id()
     }
 }

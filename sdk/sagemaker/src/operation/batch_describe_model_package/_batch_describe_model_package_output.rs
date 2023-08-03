@@ -106,6 +106,17 @@ impl BatchDescribeModelPackageOutputBuilder {
         self.model_package_summaries = input;
         self
     }
+    /// <p>The summaries for the model package versions</p>
+    pub fn get_model_package_summaries(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::BatchDescribeModelPackageSummary,
+        >,
+    > {
+        &self.model_package_summaries
+    }
     /// Adds a key-value pair to `batch_describe_model_package_error_map`.
     ///
     /// To override the contents of this collection use [`set_batch_describe_model_package_error_map`](Self::set_batch_describe_model_package_error_map).
@@ -135,6 +146,17 @@ impl BatchDescribeModelPackageOutputBuilder {
     ) -> Self {
         self.batch_describe_model_package_error_map = input;
         self
+    }
+    /// <p>A map of the resource and BatchDescribeModelPackageError objects reporting the error associated with describing the model package.</p>
+    pub fn get_batch_describe_model_package_error_map(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::BatchDescribeModelPackageError,
+        >,
+    > {
+        &self.batch_describe_model_package_error_map
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

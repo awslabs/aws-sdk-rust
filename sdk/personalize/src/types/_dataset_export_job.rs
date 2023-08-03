@@ -126,6 +126,10 @@ impl DatasetExportJobBuilder {
         self.job_name = input;
         self
     }
+    /// <p>The name of the export job.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the dataset export job.</p>
     pub fn dataset_export_job_arn(
         mut self,
@@ -142,6 +146,10 @@ impl DatasetExportJobBuilder {
         self.dataset_export_job_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the dataset export job.</p>
+    pub fn get_dataset_export_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_export_job_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the dataset to export.</p>
     pub fn dataset_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_arn = ::std::option::Option::Some(input.into());
@@ -151,6 +159,10 @@ impl DatasetExportJobBuilder {
     pub fn set_dataset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the dataset to export.</p>
+    pub fn get_dataset_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_arn
     }
     /// <p>The data to export, based on how you imported the data. You can choose to export <code>BULK</code> data that you imported using a dataset import job, <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>. </p>
     pub fn ingestion_mode(mut self, input: crate::types::IngestionMode) -> Self {
@@ -165,6 +177,10 @@ impl DatasetExportJobBuilder {
         self.ingestion_mode = input;
         self
     }
+    /// <p>The data to export, based on how you imported the data. You can choose to export <code>BULK</code> data that you imported using a dataset import job, <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>. </p>
+    pub fn get_ingestion_mode(&self) -> &::std::option::Option<crate::types::IngestionMode> {
+        &self.ingestion_mode
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -174,6 +190,10 @@ impl DatasetExportJobBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The status of the dataset export job.</p>
     /// <p>A dataset export job can be in one of the following states:</p>
@@ -193,6 +213,14 @@ impl DatasetExportJobBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the dataset export job.</p>
+    /// <p>A dataset export job can be in one of the following states:</p>
+    /// <ul>
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>The path to the Amazon S3 bucket where the job's output is stored. For example:</p>
     /// <p> <code>s3://bucket-name/folder-name/</code> </p>
     pub fn job_output(mut self, input: crate::types::DatasetExportJobOutput) -> Self {
@@ -208,6 +236,11 @@ impl DatasetExportJobBuilder {
         self.job_output = input;
         self
     }
+    /// <p>The path to the Amazon S3 bucket where the job's output is stored. For example:</p>
+    /// <p> <code>s3://bucket-name/folder-name/</code> </p>
+    pub fn get_job_output(&self) -> &::std::option::Option<crate::types::DatasetExportJobOutput> {
+        &self.job_output
+    }
     /// <p>The creation date and time (in Unix time) of the dataset export job.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input);
@@ -221,6 +254,10 @@ impl DatasetExportJobBuilder {
         self.creation_date_time = input;
         self
     }
+    /// <p>The creation date and time (in Unix time) of the dataset export job.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
+    }
     /// <p>The date and time (in Unix time) the status of the dataset export job was last updated.</p>
     pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date_time = ::std::option::Option::Some(input);
@@ -233,6 +270,12 @@ impl DatasetExportJobBuilder {
     ) -> Self {
         self.last_updated_date_time = input;
         self
+    }
+    /// <p>The date and time (in Unix time) the status of the dataset export job was last updated.</p>
+    pub fn get_last_updated_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date_time
     }
     /// <p>If a dataset export job fails, provides the reason why.</p>
     pub fn failure_reason(
@@ -249,6 +292,10 @@ impl DatasetExportJobBuilder {
     ) -> Self {
         self.failure_reason = input;
         self
+    }
+    /// <p>If a dataset export job fails, provides the reason why.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
     }
     /// Consumes the builder and constructs a [`DatasetExportJob`](crate::types::DatasetExportJob).
     pub fn build(self) -> crate::types::DatasetExportJob {

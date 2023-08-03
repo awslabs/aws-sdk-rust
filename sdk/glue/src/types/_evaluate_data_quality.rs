@@ -85,6 +85,10 @@ impl EvaluateDataQualityBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the data quality evaluation.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `inputs`.
     ///
     /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
@@ -104,6 +108,10 @@ impl EvaluateDataQualityBuilder {
         self.inputs = input;
         self
     }
+    /// <p>The inputs of your data quality evaluation.</p>
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.inputs
+    }
     /// <p>The ruleset for your data quality evaluation.</p>
     pub fn ruleset(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ruleset = ::std::option::Option::Some(input.into());
@@ -113,6 +121,10 @@ impl EvaluateDataQualityBuilder {
     pub fn set_ruleset(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ruleset = input;
         self
+    }
+    /// <p>The ruleset for your data quality evaluation.</p>
+    pub fn get_ruleset(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ruleset
     }
     /// <p>The output of your data quality evaluation.</p>
     pub fn output(mut self, input: crate::types::DqTransformOutput) -> Self {
@@ -127,6 +139,10 @@ impl EvaluateDataQualityBuilder {
         self.output = input;
         self
     }
+    /// <p>The output of your data quality evaluation.</p>
+    pub fn get_output(&self) -> &::std::option::Option<crate::types::DqTransformOutput> {
+        &self.output
+    }
     /// <p>Options to configure how your results are published.</p>
     pub fn publishing_options(mut self, input: crate::types::DqResultsPublishingOptions) -> Self {
         self.publishing_options = ::std::option::Option::Some(input);
@@ -139,6 +155,12 @@ impl EvaluateDataQualityBuilder {
     ) -> Self {
         self.publishing_options = input;
         self
+    }
+    /// <p>Options to configure how your results are published.</p>
+    pub fn get_publishing_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::DqResultsPublishingOptions> {
+        &self.publishing_options
     }
     /// <p>Options to configure how your job will stop if your data quality evaluation fails.</p>
     pub fn stop_job_on_failure_options(
@@ -155,6 +177,12 @@ impl EvaluateDataQualityBuilder {
     ) -> Self {
         self.stop_job_on_failure_options = input;
         self
+    }
+    /// <p>Options to configure how your job will stop if your data quality evaluation fails.</p>
+    pub fn get_stop_job_on_failure_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::DqStopJobOnFailureOptions> {
+        &self.stop_job_on_failure_options
     }
     /// Consumes the builder and constructs a [`EvaluateDataQuality`](crate::types::EvaluateDataQuality).
     pub fn build(self) -> crate::types::EvaluateDataQuality {

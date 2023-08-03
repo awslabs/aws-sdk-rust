@@ -134,6 +134,10 @@ impl ResourceShareAssociationBuilder {
         self.resource_share_arn = input;
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share.</p>
+    pub fn get_resource_share_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_share_arn
+    }
     /// <p>The name of the resource share.</p>
     pub fn resource_share_name(
         mut self,
@@ -149,6 +153,10 @@ impl ResourceShareAssociationBuilder {
     ) -> Self {
         self.resource_share_name = input;
         self
+    }
+    /// <p>The name of the resource share.</p>
+    pub fn get_resource_share_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_share_name
     }
     /// <p>The associated entity. This can be either of the following:</p>
     /// <ul>
@@ -188,6 +196,21 @@ impl ResourceShareAssociationBuilder {
         self.associated_entity = input;
         self
     }
+    /// <p>The associated entity. This can be either of the following:</p>
+    /// <ul>
+    /// <li> <p>For a resource association, this is the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource.</p> </li>
+    /// <li> <p>For principal associations, this is one of the following:</p>
+    /// <ul>
+    /// <li> <p>The ID of an Amazon Web Services account</p> </li>
+    /// <li> <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an organization in Organizations</p> </li>
+    /// <li> <p>The ARN of an organizational unit (OU) in Organizations</p> </li>
+    /// <li> <p>The ARN of an IAM role</p> </li>
+    /// <li> <p>The ARN of an IAM user</p> </li>
+    /// </ul> </li>
+    /// </ul>
+    pub fn get_associated_entity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.associated_entity
+    }
     /// <p>The type of entity included in this association.</p>
     pub fn association_type(mut self, input: crate::types::ResourceShareAssociationType) -> Self {
         self.association_type = ::std::option::Option::Some(input);
@@ -201,6 +224,12 @@ impl ResourceShareAssociationBuilder {
         self.association_type = input;
         self
     }
+    /// <p>The type of entity included in this association.</p>
+    pub fn get_association_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceShareAssociationType> {
+        &self.association_type
+    }
     /// <p>The current status of the association.</p>
     pub fn status(mut self, input: crate::types::ResourceShareAssociationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -213,6 +242,12 @@ impl ResourceShareAssociationBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the association.</p>
+    pub fn get_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceShareAssociationStatus> {
+        &self.status
     }
     /// <p>A message about the status of the association.</p>
     pub fn status_message(
@@ -230,6 +265,10 @@ impl ResourceShareAssociationBuilder {
         self.status_message = input;
         self
     }
+    /// <p>A message about the status of the association.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>The date and time when the association was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -242,6 +281,10 @@ impl ResourceShareAssociationBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The date and time when the association was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The date and time when the association was last updated.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -256,6 +299,10 @@ impl ResourceShareAssociationBuilder {
         self.last_updated_time = input;
         self
     }
+    /// <p>The date and time when the association was last updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
+    }
     /// <p>Indicates whether the principal belongs to the same organization in Organizations as the Amazon Web Services account that owns the resource share.</p>
     pub fn external(mut self, input: bool) -> Self {
         self.external = ::std::option::Option::Some(input);
@@ -265,6 +312,10 @@ impl ResourceShareAssociationBuilder {
     pub fn set_external(mut self, input: ::std::option::Option<bool>) -> Self {
         self.external = input;
         self
+    }
+    /// <p>Indicates whether the principal belongs to the same organization in Organizations as the Amazon Web Services account that owns the resource share.</p>
+    pub fn get_external(&self) -> &::std::option::Option<bool> {
+        &self.external
     }
     /// Consumes the builder and constructs a [`ResourceShareAssociation`](crate::types::ResourceShareAssociation).
     pub fn build(self) -> crate::types::ResourceShareAssociation {

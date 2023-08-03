@@ -36,6 +36,10 @@ impl ListAliasesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListAliases as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_aliases::builders::ListAliasesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl ListAliasesFluentBuilder {
         self.inner = self.inner.set_image_name(input);
         self
     }
+    /// <p>The name of the image.</p>
+    pub fn get_image_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_image_name()
+    }
     /// <p>The alias of the image version.</p>
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.alias(input.into());
@@ -136,6 +144,10 @@ impl ListAliasesFluentBuilder {
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_alias(input);
         self
+    }
+    /// <p>The alias of the image version.</p>
+    pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_alias()
     }
     /// <p>The version of the image. If image version is not specified, the aliases of all versions of the image are listed.</p>
     pub fn version(mut self, input: i32) -> Self {
@@ -147,6 +159,10 @@ impl ListAliasesFluentBuilder {
         self.inner = self.inner.set_version(input);
         self
     }
+    /// <p>The version of the image. If image version is not specified, the aliases of all versions of the image are listed.</p>
+    pub fn get_version(&self) -> &::std::option::Option<i32> {
+        self.inner.get_version()
+    }
     /// <p>The maximum number of aliases to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -157,6 +173,10 @@ impl ListAliasesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of aliases to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>If the previous call to <code>ListAliases</code> didn't return the full set of aliases, the call returns a token for retrieving the next set of aliases.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -166,5 +186,9 @@ impl ListAliasesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>If the previous call to <code>ListAliases</code> didn't return the full set of aliases, the call returns a token for retrieving the next set of aliases.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

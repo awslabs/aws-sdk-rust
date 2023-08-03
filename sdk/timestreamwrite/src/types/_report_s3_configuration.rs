@@ -65,6 +65,10 @@ impl ReportS3ConfigurationBuilder {
         self
     }
     /// <p></p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_name
+    }
+    /// <p></p>
     pub fn object_key_prefix(
         mut self,
         input: impl ::std::convert::Into<::std::string::String>,
@@ -81,6 +85,10 @@ impl ReportS3ConfigurationBuilder {
         self
     }
     /// <p></p>
+    pub fn get_object_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_key_prefix
+    }
+    /// <p></p>
     pub fn encryption_option(mut self, input: crate::types::S3EncryptionOption) -> Self {
         self.encryption_option = ::std::option::Option::Some(input);
         self
@@ -94,6 +102,12 @@ impl ReportS3ConfigurationBuilder {
         self
     }
     /// <p></p>
+    pub fn get_encryption_option(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3EncryptionOption> {
+        &self.encryption_option
+    }
+    /// <p></p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
         self
@@ -102,6 +116,10 @@ impl ReportS3ConfigurationBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p></p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// Consumes the builder and constructs a [`ReportS3Configuration`](crate::types::ReportS3Configuration).
     pub fn build(self) -> crate::types::ReportS3Configuration {

@@ -114,6 +114,10 @@ impl NotifyObjectCompleteInputBuilder {
         self.backup_job_id = input;
         self
     }
+    /// Backup job Id for the in-progress backup
+    pub fn get_backup_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_job_id
+    }
     /// Upload Id for the in-progress upload
     pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upload_id = ::std::option::Option::Some(input.into());
@@ -123,6 +127,10 @@ impl NotifyObjectCompleteInputBuilder {
     pub fn set_upload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.upload_id = input;
         self
+    }
+    /// Upload Id for the in-progress upload
+    pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.upload_id
     }
     /// Object checksum
     pub fn object_checksum(
@@ -140,6 +148,10 @@ impl NotifyObjectCompleteInputBuilder {
         self.object_checksum = input;
         self
     }
+    /// Object checksum
+    pub fn get_object_checksum(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_checksum
+    }
     /// Checksum algorithm
     pub fn object_checksum_algorithm(
         mut self,
@@ -155,6 +167,12 @@ impl NotifyObjectCompleteInputBuilder {
     ) -> Self {
         self.object_checksum_algorithm = input;
         self
+    }
+    /// Checksum algorithm
+    pub fn get_object_checksum_algorithm(
+        &self,
+    ) -> &::std::option::Option<crate::types::SummaryChecksumAlgorithm> {
+        &self.object_checksum_algorithm
     }
     /// Optional metadata associated with an Object. Maximum string length is 256 bytes.
     pub fn metadata_string(
@@ -172,6 +190,10 @@ impl NotifyObjectCompleteInputBuilder {
         self.metadata_string = input;
         self
     }
+    /// Optional metadata associated with an Object. Maximum string length is 256 bytes.
+    pub fn get_metadata_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metadata_string
+    }
     /// Optional metadata associated with an Object. Maximum length is 4MB.
     pub fn metadata_blob(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
         self.metadata_blob = ::std::option::Option::Some(input);
@@ -185,6 +207,12 @@ impl NotifyObjectCompleteInputBuilder {
         self.metadata_blob = input;
         self
     }
+    /// Optional metadata associated with an Object. Maximum length is 4MB.
+    pub fn get_metadata_blob(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+        &self.metadata_blob
+    }
     /// The size of MetadataBlob.
     pub fn metadata_blob_length(mut self, input: i64) -> Self {
         self.metadata_blob_length = ::std::option::Option::Some(input);
@@ -194,6 +222,10 @@ impl NotifyObjectCompleteInputBuilder {
     pub fn set_metadata_blob_length(mut self, input: ::std::option::Option<i64>) -> Self {
         self.metadata_blob_length = input;
         self
+    }
+    /// The size of MetadataBlob.
+    pub fn get_metadata_blob_length(&self) -> &::std::option::Option<i64> {
+        &self.metadata_blob_length
     }
     /// Checksum of MetadataBlob.
     pub fn metadata_blob_checksum(
@@ -211,6 +243,10 @@ impl NotifyObjectCompleteInputBuilder {
         self.metadata_blob_checksum = input;
         self
     }
+    /// Checksum of MetadataBlob.
+    pub fn get_metadata_blob_checksum(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metadata_blob_checksum
+    }
     /// Checksum algorithm.
     pub fn metadata_blob_checksum_algorithm(
         mut self,
@@ -226,6 +262,12 @@ impl NotifyObjectCompleteInputBuilder {
     ) -> Self {
         self.metadata_blob_checksum_algorithm = input;
         self
+    }
+    /// Checksum algorithm.
+    pub fn get_metadata_blob_checksum_algorithm(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataChecksumAlgorithm> {
+        &self.metadata_blob_checksum_algorithm
     }
     /// Consumes the builder and constructs a [`NotifyObjectCompleteInput`](crate::operation::notify_object_complete::NotifyObjectCompleteInput).
     pub fn build(

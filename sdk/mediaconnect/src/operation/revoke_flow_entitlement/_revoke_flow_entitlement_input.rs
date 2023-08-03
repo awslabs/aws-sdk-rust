@@ -55,6 +55,10 @@ impl RevokeFlowEntitlementInputBuilder {
         self.entitlement_arn = input;
         self
     }
+    /// The ARN of the entitlement that you want to revoke.
+    pub fn get_entitlement_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entitlement_arn
+    }
     /// The flow that you want to revoke an entitlement from.
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_arn = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl RevokeFlowEntitlementInputBuilder {
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_arn = input;
         self
+    }
+    /// The flow that you want to revoke an entitlement from.
+    pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_arn
     }
     /// Consumes the builder and constructs a [`RevokeFlowEntitlementInput`](crate::operation::revoke_flow_entitlement::RevokeFlowEntitlementInput).
     pub fn build(

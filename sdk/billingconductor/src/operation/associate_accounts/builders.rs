@@ -36,6 +36,12 @@ impl AssociateAccountsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateAccounts as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::associate_accounts::builders::AssociateAccountsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl AssociateAccountsFluentBuilder {
         self.inner = self.inner.set_arn(input);
         self
     }
+    /// <p> The Amazon Resource Name (ARN) of the billing group that associates the array of account IDs. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
+    }
     /// Appends an item to `AccountIds`.
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
@@ -142,5 +152,11 @@ impl AssociateAccountsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
+    }
+    /// <p> The associating array of account IDs. </p>
+    pub fn get_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_account_ids()
     }
 }

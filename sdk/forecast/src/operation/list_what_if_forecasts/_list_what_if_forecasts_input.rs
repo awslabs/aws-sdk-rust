@@ -79,6 +79,10 @@ impl ListWhatIfForecastsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next  request. Tokens expire after 24 hours.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The number of items to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -88,6 +92,10 @@ impl ListWhatIfForecastsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The number of items to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Appends an item to `filters`.
     ///
@@ -129,6 +137,21 @@ impl ListWhatIfForecastsInputBuilder {
     ) -> Self {
         self.filters = input;
         self
+    }
+    /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the what-if forecast export jobs that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
+    /// <p> <b>Filter properties</b> </p>
+    /// <ul>
+    /// <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the forecast export jobs that match the statement, specify <code>IS</code>. To exclude matching forecast export jobs, specify <code>IS_NOT</code>.</p> </li>
+    /// <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>WhatIfForecastArn</code> and <code>Status</code>.</p> </li>
+    /// <li> <p> <code>Value</code> - The value to match.</p> </li>
+    /// </ul>
+    /// <p>For example, to list all jobs that export a forecast named <i>electricityWhatIfForecast</i>, specify the following filter:</p>
+    /// <p> <code>"Filters": [ { "Condition": "IS", "Key": "WhatIfForecastArn", "Value": "arn:aws:forecast:us-west-2:
+    /// <acct-id>
+    /// :forecast/electricityWhatIfForecast" } ]
+    /// </acct-id></code> </p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
     }
     /// Consumes the builder and constructs a [`ListWhatIfForecastsInput`](crate::operation::list_what_if_forecasts::ListWhatIfForecastsInput).
     pub fn build(

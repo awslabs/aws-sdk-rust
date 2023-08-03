@@ -66,6 +66,10 @@ impl DescribeTrustsInputBuilder {
         self.directory_id = input;
         self
     }
+    /// <p>The Directory ID of the Amazon Web Services directory that is a part of the requested trust relationship.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
+    }
     /// Appends an item to `trust_ids`.
     ///
     /// To override the contents of this collection use [`set_trust_ids`](Self::set_trust_ids).
@@ -87,6 +91,11 @@ impl DescribeTrustsInputBuilder {
         self.trust_ids = input;
         self
     }
+    /// <p>A list of identifiers of the trust relationships for which to obtain the information. If this member is null, all trust relationships that belong to the current account are returned.</p>
+    /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
+    pub fn get_trust_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.trust_ids
+    }
     /// <p>The <i>DescribeTrustsResult.NextToken</i> value from a previous call to <code>DescribeTrusts</code>. Pass null if this is the first call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -97,6 +106,10 @@ impl DescribeTrustsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The <i>DescribeTrustsResult.NextToken</i> value from a previous call to <code>DescribeTrusts</code>. Pass null if this is the first call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of objects to return.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -106,6 +119,10 @@ impl DescribeTrustsInputBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
+    }
+    /// <p>The maximum number of objects to return.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// Consumes the builder and constructs a [`DescribeTrustsInput`](crate::operation::describe_trusts::DescribeTrustsInput).
     pub fn build(

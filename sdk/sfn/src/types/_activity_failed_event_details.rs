@@ -54,6 +54,10 @@ impl ActivityFailedEventDetailsBuilder {
         self.error = input;
         self
     }
+    /// <p>The error code of the failure.</p>
+    pub fn get_error(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error
+    }
     /// <p>A more detailed explanation of the cause of the failure.</p>
     pub fn cause(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cause = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl ActivityFailedEventDetailsBuilder {
     pub fn set_cause(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cause = input;
         self
+    }
+    /// <p>A more detailed explanation of the cause of the failure.</p>
+    pub fn get_cause(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cause
     }
     /// Consumes the builder and constructs a [`ActivityFailedEventDetails`](crate::types::ActivityFailedEventDetails).
     pub fn build(self) -> crate::types::ActivityFailedEventDetails {

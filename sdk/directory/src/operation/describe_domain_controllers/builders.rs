@@ -36,6 +36,10 @@ impl DescribeDomainControllersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeDomainControllers as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_domain_controllers::builders::DescribeDomainControllersInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +139,10 @@ impl DescribeDomainControllersFluentBuilder {
         self.inner = self.inner.set_directory_id(input);
         self
     }
+    /// <p>Identifier of the directory for which to retrieve the domain controller information.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_id()
+    }
     /// Appends an item to `DomainControllerIds`.
     ///
     /// To override the contents of this collection use [`set_domain_controller_ids`](Self::set_domain_controller_ids).
@@ -155,6 +163,12 @@ impl DescribeDomainControllersFluentBuilder {
         self.inner = self.inner.set_domain_controller_ids(input);
         self
     }
+    /// <p>A list of identifiers for the domain controllers whose information will be provided.</p>
+    pub fn get_domain_controller_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_domain_controller_ids()
+    }
     /// <p>The <i>DescribeDomainControllers.NextToken</i> value from a previous call to <code>DescribeDomainControllers</code>. Pass null if this is the first call. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -165,6 +179,10 @@ impl DescribeDomainControllersFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The <i>DescribeDomainControllers.NextToken</i> value from a previous call to <code>DescribeDomainControllers</code>. Pass null if this is the first call. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of items to return.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -174,5 +192,9 @@ impl DescribeDomainControllersFluentBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
+    }
+    /// <p>The maximum number of items to return.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
     }
 }

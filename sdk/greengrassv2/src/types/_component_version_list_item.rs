@@ -62,6 +62,10 @@ impl ComponentVersionListItemBuilder {
         self.component_name = input;
         self
     }
+    /// <p>The name of the component.</p>
+    pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_name
+    }
     /// <p>The version of the component.</p>
     pub fn component_version(
         mut self,
@@ -78,6 +82,10 @@ impl ComponentVersionListItemBuilder {
         self.component_version = input;
         self
     }
+    /// <p>The version of the component.</p>
+    pub fn get_component_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_version
+    }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -87,6 +95,10 @@ impl ComponentVersionListItemBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Consumes the builder and constructs a [`ComponentVersionListItem`](crate::types::ComponentVersionListItem).
     pub fn build(self) -> crate::types::ComponentVersionListItem {

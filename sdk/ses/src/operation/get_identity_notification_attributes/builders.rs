@@ -38,6 +38,10 @@ impl GetIdentityNotificationAttributesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetIdentityNotificationAttributes as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_identity_notification_attributes::builders::GetIdentityNotificationAttributesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -108,5 +112,9 @@ impl GetIdentityNotificationAttributesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_identities(input);
         self
+    }
+    /// <p>A list of one or more identities. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
+    pub fn get_identities(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_identities()
     }
 }

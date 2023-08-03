@@ -61,6 +61,10 @@ impl GetSnapshotInputBuilder {
         self.snapshot_name = input;
         self
     }
+    /// <p>The name of the snapshot to return.</p>
+    pub fn get_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_name
+    }
     /// <p>The owner Amazon Web Services account of a snapshot shared with another user.</p>
     pub fn owner_account(
         mut self,
@@ -77,6 +81,10 @@ impl GetSnapshotInputBuilder {
         self.owner_account = input;
         self
     }
+    /// <p>The owner Amazon Web Services account of a snapshot shared with another user.</p>
+    pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_account
+    }
     /// <p>The Amazon Resource Name (ARN) of the snapshot to return.</p>
     pub fn snapshot_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_arn = ::std::option::Option::Some(input.into());
@@ -86,6 +94,10 @@ impl GetSnapshotInputBuilder {
     pub fn set_snapshot_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the snapshot to return.</p>
+    pub fn get_snapshot_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_arn
     }
     /// Consumes the builder and constructs a [`GetSnapshotInput`](crate::operation::get_snapshot::GetSnapshotInput).
     pub fn build(

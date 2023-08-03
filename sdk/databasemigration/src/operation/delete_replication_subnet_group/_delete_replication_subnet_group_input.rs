@@ -46,6 +46,12 @@ impl DeleteReplicationSubnetGroupInputBuilder {
         self.replication_subnet_group_identifier = input;
         self
     }
+    /// <p>The subnet group name of the replication instance.</p>
+    pub fn get_replication_subnet_group_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.replication_subnet_group_identifier
+    }
     /// Consumes the builder and constructs a [`DeleteReplicationSubnetGroupInput`](crate::operation::delete_replication_subnet_group::DeleteReplicationSubnetGroupInput).
     pub fn build(
         self,

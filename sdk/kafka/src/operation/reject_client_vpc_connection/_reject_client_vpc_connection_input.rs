@@ -47,6 +47,10 @@ impl RejectClientVpcConnectionInputBuilder {
         self.cluster_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_arn
+    }
     /// <p>The VPC connection ARN.</p>
     pub fn vpc_connection_arn(
         mut self,
@@ -62,6 +66,10 @@ impl RejectClientVpcConnectionInputBuilder {
     ) -> Self {
         self.vpc_connection_arn = input;
         self
+    }
+    /// <p>The VPC connection ARN.</p>
+    pub fn get_vpc_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_connection_arn
     }
     /// Consumes the builder and constructs a [`RejectClientVpcConnectionInput`](crate::operation::reject_client_vpc_connection::RejectClientVpcConnectionInput).
     pub fn build(

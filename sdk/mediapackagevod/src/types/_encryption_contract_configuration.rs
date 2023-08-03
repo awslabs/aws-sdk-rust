@@ -51,6 +51,12 @@ impl EncryptionContractConfigurationBuilder {
         self.preset_speke20_audio = input;
         self
     }
+    /// A collection of audio encryption presets.
+    pub fn get_preset_speke20_audio(
+        &self,
+    ) -> &::std::option::Option<crate::types::PresetSpeke20Audio> {
+        &self.preset_speke20_audio
+    }
     /// A collection of video encryption presets.
     pub fn preset_speke20_video(mut self, input: crate::types::PresetSpeke20Video) -> Self {
         self.preset_speke20_video = ::std::option::Option::Some(input);
@@ -63,6 +69,12 @@ impl EncryptionContractConfigurationBuilder {
     ) -> Self {
         self.preset_speke20_video = input;
         self
+    }
+    /// A collection of video encryption presets.
+    pub fn get_preset_speke20_video(
+        &self,
+    ) -> &::std::option::Option<crate::types::PresetSpeke20Video> {
+        &self.preset_speke20_video
     }
     /// Consumes the builder and constructs a [`EncryptionContractConfiguration`](crate::types::EncryptionContractConfiguration).
     pub fn build(self) -> crate::types::EncryptionContractConfiguration {

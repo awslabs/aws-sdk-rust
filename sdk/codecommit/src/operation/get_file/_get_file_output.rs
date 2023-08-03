@@ -90,6 +90,10 @@ impl GetFileOutputBuilder {
         self.commit_id = input;
         self
     }
+    /// <p>The full commit ID of the commit that contains the content returned by GetFile.</p>
+    pub fn get_commit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.commit_id
+    }
     /// <p>The blob ID of the object that represents the file content.</p>
     pub fn blob_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.blob_id = ::std::option::Option::Some(input.into());
@@ -100,6 +104,10 @@ impl GetFileOutputBuilder {
         self.blob_id = input;
         self
     }
+    /// <p>The blob ID of the object that represents the file content.</p>
+    pub fn get_blob_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.blob_id
+    }
     /// <p>The fully qualified path to the specified file. Returns the name and extension of the file.</p>
     pub fn file_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_path = ::std::option::Option::Some(input.into());
@@ -109,6 +117,10 @@ impl GetFileOutputBuilder {
     pub fn set_file_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_path = input;
         self
+    }
+    /// <p>The fully qualified path to the specified file. Returns the name and extension of the file.</p>
+    pub fn get_file_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_path
     }
     /// <p>The extrapolated file mode permissions of the blob. Valid values include strings such as EXECUTABLE and not numeric values.</p> <note>
     /// <p>The file mode permissions returned by this API are not the standard file mode permission values, such as 100644, but rather extrapolated values. See the supported return values.</p>
@@ -127,6 +139,12 @@ impl GetFileOutputBuilder {
         self.file_mode = input;
         self
     }
+    /// <p>The extrapolated file mode permissions of the blob. Valid values include strings such as EXECUTABLE and not numeric values.</p> <note>
+    /// <p>The file mode permissions returned by this API are not the standard file mode permission values, such as 100644, but rather extrapolated values. See the supported return values.</p>
+    /// </note>
+    pub fn get_file_mode(&self) -> &::std::option::Option<crate::types::FileModeTypeEnum> {
+        &self.file_mode
+    }
     /// <p>The size of the contents of the file, in bytes.</p>
     pub fn file_size(mut self, input: i64) -> Self {
         self.file_size = ::std::option::Option::Some(input);
@@ -136,6 +154,10 @@ impl GetFileOutputBuilder {
     pub fn set_file_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.file_size = input;
         self
+    }
+    /// <p>The size of the contents of the file, in bytes.</p>
+    pub fn get_file_size(&self) -> &::std::option::Option<i64> {
+        &self.file_size
     }
     /// <p>The base-64 encoded binary data object that represents the content of the file.</p>
     pub fn file_content(mut self, input: ::aws_smithy_types::Blob) -> Self {
@@ -149,6 +171,10 @@ impl GetFileOutputBuilder {
     ) -> Self {
         self.file_content = input;
         self
+    }
+    /// <p>The base-64 encoded binary data object that represents the content of the file.</p>
+    pub fn get_file_content(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.file_content
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

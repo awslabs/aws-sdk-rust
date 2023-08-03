@@ -48,6 +48,10 @@ impl AutoRollbackConfigurationBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Indicates whether a defined automatic rollback configuration is currently enabled.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// Appends an item to `events`.
     ///
     /// To override the contents of this collection use [`set_events`](Self::set_events).
@@ -66,6 +70,12 @@ impl AutoRollbackConfigurationBuilder {
     ) -> Self {
         self.events = input;
         self
+    }
+    /// <p>The event type or types that trigger a rollback.</p>
+    pub fn get_events(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoRollbackEvent>> {
+        &self.events
     }
     /// Consumes the builder and constructs a [`AutoRollbackConfiguration`](crate::types::AutoRollbackConfiguration).
     pub fn build(self) -> crate::types::AutoRollbackConfiguration {

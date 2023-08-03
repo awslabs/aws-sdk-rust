@@ -54,6 +54,10 @@ impl ListFaqsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of FAQs.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `faq_summary_items`.
     ///
     /// To override the contents of this collection use [`set_faq_summary_items`](Self::set_faq_summary_items).
@@ -72,6 +76,12 @@ impl ListFaqsOutputBuilder {
     ) -> Self {
         self.faq_summary_items = input;
         self
+    }
+    /// <p>information about the FAQs associated with the specified index.</p>
+    pub fn get_faq_summary_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FaqSummary>> {
+        &self.faq_summary_items
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

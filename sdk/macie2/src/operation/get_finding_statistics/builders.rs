@@ -36,6 +36,12 @@ impl GetFindingStatisticsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetFindingStatistics as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_finding_statistics::builders::GetFindingStatisticsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl GetFindingStatisticsFluentBuilder {
         self.inner = self.inner.set_finding_criteria(input);
         self
     }
+    /// <p>The criteria to use to filter the query results.</p>
+    pub fn get_finding_criteria(&self) -> &::std::option::Option<crate::types::FindingCriteria> {
+        self.inner.get_finding_criteria()
+    }
     /// <p>The finding property to use to group the query results. Valid values are:</p>
     /// <ul>
     /// <li><p>classificationDetails.jobId - The unique identifier for the classification job that produced the finding.</p></li>
@@ -151,6 +161,16 @@ impl GetFindingStatisticsFluentBuilder {
         self.inner = self.inner.set_group_by(input);
         self
     }
+    /// <p>The finding property to use to group the query results. Valid values are:</p>
+    /// <ul>
+    /// <li><p>classificationDetails.jobId - The unique identifier for the classification job that produced the finding.</p></li>
+    /// <li><p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the finding applies to.</p></li>
+    /// <li><p>severity.description - The severity level of the finding, such as High or Medium.</p></li>
+    /// <li><p>type - The type of finding, such as Policy:IAMUser/S3BucketPublic and SensitiveData:S3Object/Personal.</p></li>
+    /// </ul>
+    pub fn get_group_by(&self) -> &::std::option::Option<crate::types::GroupBy> {
+        self.inner.get_group_by()
+    }
     /// <p>The maximum number of items to include in each page of the response.</p>
     pub fn size(mut self, input: i32) -> Self {
         self.inner = self.inner.size(input);
@@ -160,6 +180,10 @@ impl GetFindingStatisticsFluentBuilder {
     pub fn set_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_size(input);
         self
+    }
+    /// <p>The maximum number of items to include in each page of the response.</p>
+    pub fn get_size(&self) -> &::std::option::Option<i32> {
+        self.inner.get_size()
     }
     /// <p>The criteria to use to sort the query results.</p>
     pub fn sort_criteria(mut self, input: crate::types::FindingStatisticsSortCriteria) -> Self {
@@ -173,5 +197,11 @@ impl GetFindingStatisticsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sort_criteria(input);
         self
+    }
+    /// <p>The criteria to use to sort the query results.</p>
+    pub fn get_sort_criteria(
+        &self,
+    ) -> &::std::option::Option<crate::types::FindingStatisticsSortCriteria> {
+        self.inner.get_sort_criteria()
     }
 }

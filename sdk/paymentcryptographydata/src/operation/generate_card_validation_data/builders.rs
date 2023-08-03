@@ -44,6 +44,10 @@ impl GenerateCardValidationDataFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GenerateCardValidationData as a reference.
+    pub fn as_input(&self) -> &crate::operation::generate_card_validation_data::builders::GenerateCardValidationDataInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +144,10 @@ impl GenerateCardValidationDataFluentBuilder {
         self.inner = self.inner.set_key_identifier(input);
         self
     }
+    /// <p>The <code>keyARN</code> of the CVK encryption key that Amazon Web Services Payment Cryptography uses to generate card data.</p>
+    pub fn get_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_key_identifier()
+    }
     /// <p>The Primary Account Number (PAN), a unique identifier for a payment credit or debit card that associates the card with a specific account holder.</p>
     pub fn primary_account_number(
         mut self,
@@ -156,6 +164,10 @@ impl GenerateCardValidationDataFluentBuilder {
         self.inner = self.inner.set_primary_account_number(input);
         self
     }
+    /// <p>The Primary Account Number (PAN), a unique identifier for a payment credit or debit card that associates the card with a specific account holder.</p>
+    pub fn get_primary_account_number(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_primary_account_number()
+    }
     /// <p>The algorithm for generating CVV or CSC values for the card within Amazon Web Services Payment Cryptography.</p>
     pub fn generation_attributes(mut self, input: crate::types::CardGenerationAttributes) -> Self {
         self.inner = self.inner.generation_attributes(input);
@@ -169,6 +181,12 @@ impl GenerateCardValidationDataFluentBuilder {
         self.inner = self.inner.set_generation_attributes(input);
         self
     }
+    /// <p>The algorithm for generating CVV or CSC values for the card within Amazon Web Services Payment Cryptography.</p>
+    pub fn get_generation_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::CardGenerationAttributes> {
+        self.inner.get_generation_attributes()
+    }
     /// <p>The length of the CVV or CSC to be generated. The default value is 3.</p>
     pub fn validation_data_length(mut self, input: i32) -> Self {
         self.inner = self.inner.validation_data_length(input);
@@ -178,5 +196,9 @@ impl GenerateCardValidationDataFluentBuilder {
     pub fn set_validation_data_length(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_validation_data_length(input);
         self
+    }
+    /// <p>The length of the CVV or CSC to be generated. The default value is 3.</p>
+    pub fn get_validation_data_length(&self) -> &::std::option::Option<i32> {
+        self.inner.get_validation_data_length()
     }
 }

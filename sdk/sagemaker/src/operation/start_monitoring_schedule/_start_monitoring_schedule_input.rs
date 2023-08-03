@@ -47,6 +47,10 @@ impl StartMonitoringScheduleInputBuilder {
         self.monitoring_schedule_name = input;
         self
     }
+    /// <p>The name of the schedule to start.</p>
+    pub fn get_monitoring_schedule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.monitoring_schedule_name
+    }
     /// Consumes the builder and constructs a [`StartMonitoringScheduleInput`](crate::operation::start_monitoring_schedule::StartMonitoringScheduleInput).
     pub fn build(
         self,

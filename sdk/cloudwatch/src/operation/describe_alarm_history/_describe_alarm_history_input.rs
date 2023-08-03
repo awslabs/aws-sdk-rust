@@ -96,6 +96,10 @@ impl DescribeAlarmHistoryInputBuilder {
         self.alarm_name = input;
         self
     }
+    /// <p>The name of the alarm.</p>
+    pub fn get_alarm_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alarm_name
+    }
     /// Appends an item to `alarm_types`.
     ///
     /// To override the contents of this collection use [`set_alarm_types`](Self::set_alarm_types).
@@ -115,6 +119,12 @@ impl DescribeAlarmHistoryInputBuilder {
         self.alarm_types = input;
         self
     }
+    /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned.</p>
+    pub fn get_alarm_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmType>> {
+        &self.alarm_types
+    }
     /// <p>The type of alarm histories to retrieve.</p>
     pub fn history_item_type(mut self, input: crate::types::HistoryItemType) -> Self {
         self.history_item_type = ::std::option::Option::Some(input);
@@ -127,6 +137,10 @@ impl DescribeAlarmHistoryInputBuilder {
     ) -> Self {
         self.history_item_type = input;
         self
+    }
+    /// <p>The type of alarm histories to retrieve.</p>
+    pub fn get_history_item_type(&self) -> &::std::option::Option<crate::types::HistoryItemType> {
+        &self.history_item_type
     }
     /// <p>The starting date to retrieve alarm history.</p>
     pub fn start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -141,6 +155,10 @@ impl DescribeAlarmHistoryInputBuilder {
         self.start_date = input;
         self
     }
+    /// <p>The starting date to retrieve alarm history.</p>
+    pub fn get_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_date
+    }
     /// <p>The ending date to retrieve alarm history.</p>
     pub fn end_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_date = ::std::option::Option::Some(input);
@@ -154,6 +172,10 @@ impl DescribeAlarmHistoryInputBuilder {
         self.end_date = input;
         self
     }
+    /// <p>The ending date to retrieve alarm history.</p>
+    pub fn get_end_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_date
+    }
     /// <p>The maximum number of alarm history records to retrieve.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.max_records = ::std::option::Option::Some(input);
@@ -163,6 +185,10 @@ impl DescribeAlarmHistoryInputBuilder {
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_records = input;
         self
+    }
+    /// <p>The maximum number of alarm history records to retrieve.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        &self.max_records
     }
     /// <p>The token returned by a previous call to indicate that there is more data available.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -174,6 +200,10 @@ impl DescribeAlarmHistoryInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token returned by a previous call to indicate that there is more data available.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>Specified whether to return the newest or oldest alarm history first. Specify <code>TimestampDescending</code> to have the newest event history returned first, and specify <code>TimestampAscending</code> to have the oldest history returned first.</p>
     pub fn scan_by(mut self, input: crate::types::ScanBy) -> Self {
         self.scan_by = ::std::option::Option::Some(input);
@@ -183,6 +213,10 @@ impl DescribeAlarmHistoryInputBuilder {
     pub fn set_scan_by(mut self, input: ::std::option::Option<crate::types::ScanBy>) -> Self {
         self.scan_by = input;
         self
+    }
+    /// <p>Specified whether to return the newest or oldest alarm history first. Specify <code>TimestampDescending</code> to have the newest event history returned first, and specify <code>TimestampAscending</code> to have the oldest history returned first.</p>
+    pub fn get_scan_by(&self) -> &::std::option::Option<crate::types::ScanBy> {
+        &self.scan_by
     }
     /// Consumes the builder and constructs a [`DescribeAlarmHistoryInput`](crate::operation::describe_alarm_history::DescribeAlarmHistoryInput).
     pub fn build(

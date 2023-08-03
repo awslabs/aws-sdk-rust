@@ -43,6 +43,10 @@ impl SectionAfterPageBreakBuilder {
         self.status = input;
         self
     }
+    /// <p>The option that enables or disables a page break at the end of a section.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::SectionPageBreakStatus> {
+        &self.status
+    }
     /// Consumes the builder and constructs a [`SectionAfterPageBreak`](crate::types::SectionAfterPageBreak).
     pub fn build(self) -> crate::types::SectionAfterPageBreak {
         crate::types::SectionAfterPageBreak {

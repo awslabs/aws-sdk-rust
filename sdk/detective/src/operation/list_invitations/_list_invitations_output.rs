@@ -63,6 +63,12 @@ impl ListInvitationsOutputBuilder {
         self.invitations = input;
         self
     }
+    /// <p>The list of behavior graphs for which the member account has open or accepted invitations.</p>
+    pub fn get_invitations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberDetail>> {
+        &self.invitations
+    }
     /// <p>If there are more behavior graphs remaining in the results, then this is the pagination token to use to request the next page of behavior graphs.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -72,6 +78,10 @@ impl ListInvitationsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If there are more behavior graphs remaining in the results, then this is the pagination token to use to request the next page of behavior graphs.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -46,6 +46,10 @@ impl VirtualRouterServiceProviderBuilder {
         self.virtual_router_name = input;
         self
     }
+    /// <p>The name of the virtual router that is acting as a service provider.</p>
+    pub fn get_virtual_router_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_router_name
+    }
     /// Consumes the builder and constructs a [`VirtualRouterServiceProvider`](crate::types::VirtualRouterServiceProvider).
     pub fn build(self) -> crate::types::VirtualRouterServiceProvider {
         crate::types::VirtualRouterServiceProvider {

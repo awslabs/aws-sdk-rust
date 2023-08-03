@@ -37,6 +37,13 @@ impl StopAutomationExecutionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StopAutomationExecution as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::stop_automation_execution::builders::StopAutomationExecutionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl StopAutomationExecutionFluentBuilder {
         self.inner = self.inner.set_automation_execution_id(input);
         self
     }
+    /// <p>The execution ID of the Automation to stop.</p>
+    pub fn get_automation_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_automation_execution_id()
+    }
     /// <p>The stop request type. Valid types include the following: Cancel and Complete. The default type is Cancel.</p>
     pub fn r#type(mut self, input: crate::types::StopType) -> Self {
         self.inner = self.inner.r#type(input);
@@ -142,5 +153,9 @@ impl StopAutomationExecutionFluentBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::StopType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
+    }
+    /// <p>The stop request type. Valid types include the following: Cancel and Complete. The default type is Cancel.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::StopType> {
+        self.inner.get_type()
     }
 }

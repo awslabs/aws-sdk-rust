@@ -36,6 +36,12 @@ impl GetKxChangesetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetKxChangeset as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_kx_changeset::builders::GetKxChangesetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl GetKxChangesetFluentBuilder {
         self.inner = self.inner.set_environment_id(input);
         self
     }
+    /// <p>A unique identifier for the kdb environment.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_id()
+    }
     /// <p>The name of the kdb database.</p>
     pub fn database_name(
         mut self,
@@ -148,6 +158,10 @@ impl GetKxChangesetFluentBuilder {
         self.inner = self.inner.set_database_name(input);
         self
     }
+    /// <p>The name of the kdb database.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_database_name()
+    }
     /// <p>A unique identifier of the changeset for which you want to retrieve data.</p>
     pub fn changeset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.changeset_id(input.into());
@@ -157,5 +171,9 @@ impl GetKxChangesetFluentBuilder {
     pub fn set_changeset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_changeset_id(input);
         self
+    }
+    /// <p>A unique identifier of the changeset for which you want to retrieve data.</p>
+    pub fn get_changeset_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_changeset_id()
     }
 }

@@ -39,6 +39,10 @@ impl DeleteMatchmakingConfigurationInputBuilder {
         self.name = input;
         self
     }
+    /// <p>A unique identifier for the matchmaking configuration. You can use either the configuration name or ARN value.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DeleteMatchmakingConfigurationInput`](crate::operation::delete_matchmaking_configuration::DeleteMatchmakingConfigurationInput).
     pub fn build(
         self,

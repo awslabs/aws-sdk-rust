@@ -36,6 +36,12 @@ impl DeleteDatasetContentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteDatasetContent as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_dataset_content::builders::DeleteDatasetContentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DeleteDatasetContentFluentBuilder {
         self.inner = self.inner.set_dataset_name(input);
         self
     }
+    /// <p>The name of the dataset whose content is deleted.</p>
+    pub fn get_dataset_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dataset_name()
+    }
     /// <p>The version of the dataset whose content is deleted. You can also use the strings "$LATEST" or "$LATEST_SUCCEEDED" to delete the latest or latest successfully completed data set. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version_id(input.into());
@@ -135,5 +145,9 @@ impl DeleteDatasetContentFluentBuilder {
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version_id(input);
         self
+    }
+    /// <p>The version of the dataset whose content is deleted. You can also use the strings "$LATEST" or "$LATEST_SUCCEEDED" to delete the latest or latest successfully completed data set. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_version_id()
     }
 }

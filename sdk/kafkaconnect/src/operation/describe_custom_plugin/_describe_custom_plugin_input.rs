@@ -46,6 +46,10 @@ impl DescribeCustomPluginInputBuilder {
         self.custom_plugin_arn = input;
         self
     }
+    /// <p>Returns information about a custom plugin.</p>
+    pub fn get_custom_plugin_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_plugin_arn
+    }
     /// Consumes the builder and constructs a [`DescribeCustomPluginInput`](crate::operation::describe_custom_plugin::DescribeCustomPluginInput).
     pub fn build(
         self,

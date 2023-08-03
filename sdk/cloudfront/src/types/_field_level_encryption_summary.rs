@@ -77,6 +77,10 @@ impl FieldLevelEncryptionSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique ID of a field-level encryption item.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The last time that the summary of field-level encryption items was modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -90,6 +94,10 @@ impl FieldLevelEncryptionSummaryBuilder {
         self.last_modified_time = input;
         self
     }
+    /// <p>The last time that the summary of field-level encryption items was modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
     /// <p>An optional comment about the field-level encryption item. The comment cannot be longer than 128 characters.</p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment = ::std::option::Option::Some(input.into());
@@ -99,6 +107,10 @@ impl FieldLevelEncryptionSummaryBuilder {
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comment = input;
         self
+    }
+    /// <p>An optional comment about the field-level encryption item. The comment cannot be longer than 128 characters.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comment
     }
     /// <p>A summary of a query argument-profile mapping.</p>
     pub fn query_arg_profile_config(mut self, input: crate::types::QueryArgProfileConfig) -> Self {
@@ -112,6 +124,12 @@ impl FieldLevelEncryptionSummaryBuilder {
     ) -> Self {
         self.query_arg_profile_config = input;
         self
+    }
+    /// <p>A summary of a query argument-profile mapping.</p>
+    pub fn get_query_arg_profile_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::QueryArgProfileConfig> {
+        &self.query_arg_profile_config
     }
     /// <p>A summary of a content type-profile mapping.</p>
     pub fn content_type_profile_config(
@@ -128,6 +146,12 @@ impl FieldLevelEncryptionSummaryBuilder {
     ) -> Self {
         self.content_type_profile_config = input;
         self
+    }
+    /// <p>A summary of a content type-profile mapping.</p>
+    pub fn get_content_type_profile_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContentTypeProfileConfig> {
+        &self.content_type_profile_config
     }
     /// Consumes the builder and constructs a [`FieldLevelEncryptionSummary`](crate::types::FieldLevelEncryptionSummary).
     pub fn build(self) -> crate::types::FieldLevelEncryptionSummary {

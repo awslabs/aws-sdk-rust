@@ -97,6 +97,12 @@ impl SlotValueElicitationSettingBuilder {
         self.default_value_specification = input;
         self
     }
+    /// <p>A list of default values for a slot. Default values are used when Amazon Lex hasn't determined a value for a slot. You can specify default values from context variables, session attributes, and defined values.</p>
+    pub fn get_default_value_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::SlotDefaultValueSpecification> {
+        &self.default_value_specification
+    }
     /// <p>Specifies whether the slot is required or optional.</p>
     pub fn slot_constraint(mut self, input: crate::types::SlotConstraint) -> Self {
         self.slot_constraint = ::std::option::Option::Some(input);
@@ -110,6 +116,10 @@ impl SlotValueElicitationSettingBuilder {
         self.slot_constraint = input;
         self
     }
+    /// <p>Specifies whether the slot is required or optional.</p>
+    pub fn get_slot_constraint(&self) -> &::std::option::Option<crate::types::SlotConstraint> {
+        &self.slot_constraint
+    }
     /// <p>The prompt that Amazon Lex uses to elicit the slot value from the user.</p>
     pub fn prompt_specification(mut self, input: crate::types::PromptSpecification) -> Self {
         self.prompt_specification = ::std::option::Option::Some(input);
@@ -122,6 +132,12 @@ impl SlotValueElicitationSettingBuilder {
     ) -> Self {
         self.prompt_specification = input;
         self
+    }
+    /// <p>The prompt that Amazon Lex uses to elicit the slot value from the user.</p>
+    pub fn get_prompt_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::PromptSpecification> {
+        &self.prompt_specification
     }
     /// Appends an item to `sample_utterances`.
     ///
@@ -142,6 +158,12 @@ impl SlotValueElicitationSettingBuilder {
         self.sample_utterances = input;
         self
     }
+    /// <p>If you know a specific pattern that users might respond to an Amazon Lex request for a slot value, you can provide those utterances to improve accuracy. This is optional. In most cases, Amazon Lex is capable of understanding user utterances.</p>
+    pub fn get_sample_utterances(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SampleUtterance>> {
+        &self.sample_utterances
+    }
     /// <p>Specifies the prompts that Amazon Lex uses while a bot is waiting for customer input. </p>
     pub fn wait_and_continue_specification(
         mut self,
@@ -158,6 +180,12 @@ impl SlotValueElicitationSettingBuilder {
         self.wait_and_continue_specification = input;
         self
     }
+    /// <p>Specifies the prompts that Amazon Lex uses while a bot is waiting for customer input. </p>
+    pub fn get_wait_and_continue_specification(
+        &self,
+    ) -> &::std::option::Option<crate::types::WaitAndContinueSpecification> {
+        &self.wait_and_continue_specification
+    }
     /// <p>Specifies the settings that Amazon Lex uses when a slot value is successfully entered by a user.</p>
     pub fn slot_capture_setting(mut self, input: crate::types::SlotCaptureSetting) -> Self {
         self.slot_capture_setting = ::std::option::Option::Some(input);
@@ -170,6 +198,12 @@ impl SlotValueElicitationSettingBuilder {
     ) -> Self {
         self.slot_capture_setting = input;
         self
+    }
+    /// <p>Specifies the settings that Amazon Lex uses when a slot value is successfully entered by a user.</p>
+    pub fn get_slot_capture_setting(
+        &self,
+    ) -> &::std::option::Option<crate::types::SlotCaptureSetting> {
+        &self.slot_capture_setting
     }
     /// Consumes the builder and constructs a [`SlotValueElicitationSetting`](crate::types::SlotValueElicitationSetting).
     pub fn build(self) -> crate::types::SlotValueElicitationSetting {

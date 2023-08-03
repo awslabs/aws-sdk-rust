@@ -37,6 +37,10 @@ impl UpdateConfigurationSetReputationMetricsEnabledFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateConfigurationSetReputationMetricsEnabled as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_configuration_set_reputation_metrics_enabled::builders::UpdateConfigurationSetReputationMetricsEnabledInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -107,6 +111,10 @@ impl UpdateConfigurationSetReputationMetricsEnabledFluentBuilder {
         self.inner = self.inner.set_configuration_set_name(input);
         self
     }
+    /// <p>The name of the configuration set that you want to update.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration_set_name()
+    }
     /// <p>Describes whether or not Amazon SES will publish reputation metrics for the configuration set, such as bounce and complaint rates, to Amazon CloudWatch.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.enabled(input);
@@ -116,5 +124,9 @@ impl UpdateConfigurationSetReputationMetricsEnabledFluentBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enabled(input);
         self
+    }
+    /// <p>Describes whether or not Amazon SES will publish reputation metrics for the configuration set, such as bounce and complaint rates, to Amazon CloudWatch.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enabled()
     }
 }

@@ -50,6 +50,10 @@ impl CreateSecurityConfigurationInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name for the new security configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The encryption configuration for the new security configuration.</p>
     pub fn encryption_configuration(
         mut self,
@@ -65,6 +69,12 @@ impl CreateSecurityConfigurationInputBuilder {
     ) -> Self {
         self.encryption_configuration = input;
         self
+    }
+    /// <p>The encryption configuration for the new security configuration.</p>
+    pub fn get_encryption_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+        &self.encryption_configuration
     }
     /// Consumes the builder and constructs a [`CreateSecurityConfigurationInput`](crate::operation::create_security_configuration::CreateSecurityConfigurationInput).
     pub fn build(

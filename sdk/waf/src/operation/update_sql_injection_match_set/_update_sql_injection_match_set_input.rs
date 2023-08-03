@@ -73,6 +73,10 @@ impl UpdateSqlInjectionMatchSetInputBuilder {
         self.sql_injection_match_set_id = input;
         self
     }
+    /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to update. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
+    pub fn get_sql_injection_match_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sql_injection_match_set_id
+    }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_token = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl UpdateSqlInjectionMatchSetInputBuilder {
     pub fn set_change_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_token = input;
         self
+    }
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    pub fn get_change_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.change_token
     }
     /// Appends an item to `updates`.
     ///
@@ -111,6 +119,17 @@ impl UpdateSqlInjectionMatchSetInputBuilder {
     ) -> Self {
         self.updates = input;
         self
+    }
+    /// <p>An array of <code>SqlInjectionMatchSetUpdate</code> objects that you want to insert into or delete from a <code>SqlInjectionMatchSet</code>. For more information, see the applicable data types:</p>
+    /// <ul>
+    /// <li> <p> <code>SqlInjectionMatchSetUpdate</code>: Contains <code>Action</code> and <code>SqlInjectionMatchTuple</code> </p> </li>
+    /// <li> <p> <code>SqlInjectionMatchTuple</code>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>
+    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
+    /// </ul>
+    pub fn get_updates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SqlInjectionMatchSetUpdate>> {
+        &self.updates
     }
     /// Consumes the builder and constructs a [`UpdateSqlInjectionMatchSetInput`](crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetInput).
     pub fn build(

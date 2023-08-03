@@ -59,6 +59,10 @@ impl SegmentOverrideBuilder {
         self.segment = input;
         self
     }
+    /// <p>The ARN of the segment to use.</p>
+    pub fn get_segment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.segment
+    }
     /// <p>A number indicating the order to use to evaluate segment overrides, if there are more than one. Segment overrides with lower numbers are evaluated first.</p>
     pub fn evaluation_order(mut self, input: i64) -> Self {
         self.evaluation_order = ::std::option::Option::Some(input);
@@ -68,6 +72,10 @@ impl SegmentOverrideBuilder {
     pub fn set_evaluation_order(mut self, input: ::std::option::Option<i64>) -> Self {
         self.evaluation_order = input;
         self
+    }
+    /// <p>A number indicating the order to use to evaluate segment overrides, if there are more than one. Segment overrides with lower numbers are evaluated first.</p>
+    pub fn get_evaluation_order(&self) -> &::std::option::Option<i64> {
+        &self.evaluation_order
     }
     /// Adds a key-value pair to `weights`.
     ///
@@ -87,6 +95,12 @@ impl SegmentOverrideBuilder {
     ) -> Self {
         self.weights = input;
         self
+    }
+    /// <p>The traffic allocation percentages among the feature variations to assign to this segment. This is a set of key-value pairs. The keys are variation names. The values represent the amount of traffic to allocate to that variation for this segment. This is expressed in thousandths of a percent, so a weight of 50000 represents 50% of traffic.</p>
+    pub fn get_weights(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, i64>> {
+        &self.weights
     }
     /// Consumes the builder and constructs a [`SegmentOverride`](crate::types::SegmentOverride).
     pub fn build(self) -> crate::types::SegmentOverride {

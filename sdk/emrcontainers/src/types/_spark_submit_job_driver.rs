@@ -66,6 +66,10 @@ impl SparkSubmitJobDriverBuilder {
         self.entry_point = input;
         self
     }
+    /// <p>The entry point of job application.</p>
+    pub fn get_entry_point(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entry_point
+    }
     /// Appends an item to `entry_point_arguments`.
     ///
     /// To override the contents of this collection use [`set_entry_point_arguments`](Self::set_entry_point_arguments).
@@ -88,6 +92,12 @@ impl SparkSubmitJobDriverBuilder {
         self.entry_point_arguments = input;
         self
     }
+    /// <p>The arguments for job application.</p>
+    pub fn get_entry_point_arguments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.entry_point_arguments
+    }
     /// <p>The Spark submit parameters that are used for job runs.</p>
     pub fn spark_submit_parameters(
         mut self,
@@ -103,6 +113,10 @@ impl SparkSubmitJobDriverBuilder {
     ) -> Self {
         self.spark_submit_parameters = input;
         self
+    }
+    /// <p>The Spark submit parameters that are used for job runs.</p>
+    pub fn get_spark_submit_parameters(&self) -> &::std::option::Option<::std::string::String> {
+        &self.spark_submit_parameters
     }
     /// Consumes the builder and constructs a [`SparkSubmitJobDriver`](crate::types::SparkSubmitJobDriver).
     pub fn build(self) -> crate::types::SparkSubmitJobDriver {

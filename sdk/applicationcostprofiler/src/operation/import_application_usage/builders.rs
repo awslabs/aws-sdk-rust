@@ -37,6 +37,13 @@ impl ImportApplicationUsageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ImportApplicationUsage as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::import_application_usage::builders::ImportApplicationUsageInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,5 +136,9 @@ impl ImportApplicationUsageFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_source_s3_location(input);
         self
+    }
+    /// <p>Amazon S3 location to import application usage data from.</p>
+    pub fn get_source_s3_location(&self) -> &::std::option::Option<crate::types::SourceS3Location> {
+        self.inner.get_source_s3_location()
     }
 }

@@ -48,6 +48,10 @@ impl GetThreatIntelSetInputBuilder {
         self.detector_id = input;
         self
     }
+    /// <p>The unique ID of the detector that the threatIntelSet is associated with.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
+    }
     /// <p>The unique ID of the threatIntelSet that you want to get.</p>
     pub fn threat_intel_set_id(
         mut self,
@@ -63,6 +67,10 @@ impl GetThreatIntelSetInputBuilder {
     ) -> Self {
         self.threat_intel_set_id = input;
         self
+    }
+    /// <p>The unique ID of the threatIntelSet that you want to get.</p>
+    pub fn get_threat_intel_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.threat_intel_set_id
     }
     /// Consumes the builder and constructs a [`GetThreatIntelSetInput`](crate::operation::get_threat_intel_set::GetThreatIntelSetInput).
     pub fn build(

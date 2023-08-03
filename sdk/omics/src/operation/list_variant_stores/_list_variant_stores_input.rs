@@ -64,6 +64,10 @@ impl ListVariantStoresInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of stores to return in one page of results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// Appends an item to `ids`.
     ///
     /// To override the contents of this collection use [`set_ids`](Self::set_ids).
@@ -83,6 +87,10 @@ impl ListVariantStoresInputBuilder {
         self.ids = input;
         self
     }
+    /// <p>A list of store IDs.</p>
+    pub fn get_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ids
+    }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -92,6 +100,10 @@ impl ListVariantStoresInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>A filter to apply to the list.</p>
     pub fn filter(mut self, input: crate::types::ListVariantStoresFilter) -> Self {
@@ -105,6 +117,10 @@ impl ListVariantStoresInputBuilder {
     ) -> Self {
         self.filter = input;
         self
+    }
+    /// <p>A filter to apply to the list.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::ListVariantStoresFilter> {
+        &self.filter
     }
     /// Consumes the builder and constructs a [`ListVariantStoresInput`](crate::operation::list_variant_stores::ListVariantStoresInput).
     pub fn build(

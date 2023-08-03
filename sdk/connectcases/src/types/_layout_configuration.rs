@@ -46,6 +46,10 @@ impl LayoutConfigurationBuilder {
         self.default_layout = input;
         self
     }
+    /// <p> Unique identifier of a layout. </p>
+    pub fn get_default_layout(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_layout
+    }
     /// Consumes the builder and constructs a [`LayoutConfiguration`](crate::types::LayoutConfiguration).
     pub fn build(self) -> crate::types::LayoutConfiguration {
         crate::types::LayoutConfiguration {

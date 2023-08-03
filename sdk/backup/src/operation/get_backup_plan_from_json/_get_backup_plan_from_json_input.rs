@@ -47,6 +47,10 @@ impl GetBackupPlanFromJsonInputBuilder {
         self.backup_plan_template_json = input;
         self
     }
+    /// <p>A customer-supplied backup plan document in JSON format.</p>
+    pub fn get_backup_plan_template_json(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_plan_template_json
+    }
     /// Consumes the builder and constructs a [`GetBackupPlanFromJsonInput`](crate::operation::get_backup_plan_from_json::GetBackupPlanFromJsonInput).
     pub fn build(
         self,

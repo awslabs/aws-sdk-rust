@@ -88,6 +88,10 @@ impl OtaUpdateFileBuilder {
         self.file_name = input;
         self
     }
+    /// <p>The name of the file.</p>
+    pub fn get_file_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_name
+    }
     /// <p>An integer value you can include in the job document to allow your devices to identify the type of file received from the cloud.</p>
     pub fn file_type(mut self, input: i32) -> Self {
         self.file_type = ::std::option::Option::Some(input);
@@ -98,6 +102,10 @@ impl OtaUpdateFileBuilder {
         self.file_type = input;
         self
     }
+    /// <p>An integer value you can include in the job document to allow your devices to identify the type of file received from the cloud.</p>
+    pub fn get_file_type(&self) -> &::std::option::Option<i32> {
+        &self.file_type
+    }
     /// <p>The file version.</p>
     pub fn file_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_version = ::std::option::Option::Some(input.into());
@@ -107,6 +115,10 @@ impl OtaUpdateFileBuilder {
     pub fn set_file_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_version = input;
         self
+    }
+    /// <p>The file version.</p>
+    pub fn get_file_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_version
     }
     /// <p>The location of the updated firmware.</p>
     pub fn file_location(mut self, input: crate::types::FileLocation) -> Self {
@@ -121,6 +133,10 @@ impl OtaUpdateFileBuilder {
         self.file_location = input;
         self
     }
+    /// <p>The location of the updated firmware.</p>
+    pub fn get_file_location(&self) -> &::std::option::Option<crate::types::FileLocation> {
+        &self.file_location
+    }
     /// <p>The code signing method of the file.</p>
     pub fn code_signing(mut self, input: crate::types::CodeSigning) -> Self {
         self.code_signing = ::std::option::Option::Some(input);
@@ -133,6 +149,10 @@ impl OtaUpdateFileBuilder {
     ) -> Self {
         self.code_signing = input;
         self
+    }
+    /// <p>The code signing method of the file.</p>
+    pub fn get_code_signing(&self) -> &::std::option::Option<crate::types::CodeSigning> {
+        &self.code_signing
     }
     /// Adds a key-value pair to `attributes`.
     ///
@@ -158,6 +178,14 @@ impl OtaUpdateFileBuilder {
     ) -> Self {
         self.attributes = input;
         self
+    }
+    /// <p>A list of name/attribute pairs.</p>
+    pub fn get_attributes(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.attributes
     }
     /// Consumes the builder and constructs a [`OtaUpdateFile`](crate::types::OtaUpdateFile).
     pub fn build(self) -> crate::types::OtaUpdateFile {

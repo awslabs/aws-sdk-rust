@@ -55,6 +55,12 @@ impl StartNetworkInsightsAnalysisOutputBuilder {
         self.network_insights_analysis = input;
         self
     }
+    /// <p>Information about the network insights analysis.</p>
+    pub fn get_network_insights_analysis(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkInsightsAnalysis> {
+        &self.network_insights_analysis
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -48,6 +48,10 @@ impl IngressVpcConfigurationBuilder {
         self.vpc_id = input;
         self
     }
+    /// <p>The ID of the VPC that is used for the VPC endpoint.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
+    }
     /// <p>The ID of the VPC endpoint that your App Runner service connects to. </p>
     pub fn vpc_endpoint_id(
         mut self,
@@ -63,6 +67,10 @@ impl IngressVpcConfigurationBuilder {
     ) -> Self {
         self.vpc_endpoint_id = input;
         self
+    }
+    /// <p>The ID of the VPC endpoint that your App Runner service connects to. </p>
+    pub fn get_vpc_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_endpoint_id
     }
     /// Consumes the builder and constructs a [`IngressVpcConfiguration`](crate::types::IngressVpcConfiguration).
     pub fn build(self) -> crate::types::IngressVpcConfiguration {

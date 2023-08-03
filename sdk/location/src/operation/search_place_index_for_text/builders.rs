@@ -40,6 +40,13 @@ impl SearchPlaceIndexForTextFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SearchPlaceIndexForText as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::search_place_index_for_text::builders::SearchPlaceIndexForTextInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +137,10 @@ impl SearchPlaceIndexForTextFluentBuilder {
         self.inner = self.inner.set_index_name(input);
         self
     }
+    /// <p>The name of the place index resource you want to use for the search.</p>
+    pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_index_name()
+    }
     /// <p>The address, name, city, or region to be used in the search in free-form text format. For example, <code>123 Any Street</code>.</p>
     pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.text(input.into());
@@ -139,6 +150,10 @@ impl SearchPlaceIndexForTextFluentBuilder {
     pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_text(input);
         self
+    }
+    /// <p>The address, name, city, or region to be used in the search in free-form text format. For example, <code>123 Any Street</code>.</p>
+    pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_text()
     }
     /// Appends an item to `BiasPosition`.
     ///
@@ -162,6 +177,14 @@ impl SearchPlaceIndexForTextFluentBuilder {
         self.inner = self.inner.set_bias_position(input);
         self
     }
+    /// <p>An optional parameter that indicates a preference for places that are closer to a specified position.</p>
+    /// <p> If provided, this parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
+    /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p> <note>
+    /// <p> <code>BiasPosition</code> and <code>FilterBBox</code> are mutually exclusive. Specifying both options results in an error. </p>
+    /// </note>
+    pub fn get_bias_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+        self.inner.get_bias_position()
+    }
     /// Appends an item to `FilterBBox`.
     ///
     /// To override the contents of this collection use [`set_filter_b_box`](Self::set_filter_b_box).
@@ -183,6 +206,14 @@ impl SearchPlaceIndexForTextFluentBuilder {
     pub fn set_filter_b_box(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.inner = self.inner.set_filter_b_box(input);
         self
+    }
+    /// <p>An optional parameter that limits the search results by returning only places that are within the provided bounding box.</p>
+    /// <p> If provided, this parameter must contain a total of four consecutive numbers in two pairs. The first pair of numbers represents the X and Y coordinates (longitude and latitude, respectively) of the southwest corner of the bounding box; the second pair of numbers represents the X and Y coordinates (longitude and latitude, respectively) of the northeast corner of the bounding box.</p>
+    /// <p>For example, <code>[-12.7935, -37.4835, -12.0684, -36.9542]</code> represents a bounding box where the southwest corner has longitude <code>-12.7935</code> and latitude <code>-37.4835</code>, and the northeast corner has longitude <code>-12.0684</code> and latitude <code>-36.9542</code>.</p> <note>
+    /// <p> <code>FilterBBox</code> and <code>BiasPosition</code> are mutually exclusive. Specifying both options results in an error. </p>
+    /// </note>
+    pub fn get_filter_b_box(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
+        self.inner.get_filter_b_box()
     }
     /// Appends an item to `FilterCountries`.
     ///
@@ -210,6 +241,15 @@ impl SearchPlaceIndexForTextFluentBuilder {
         self.inner = self.inner.set_filter_countries(input);
         self
     }
+    /// <p>An optional parameter that limits the search results by returning only places that are in a specified list of countries.</p>
+    /// <ul>
+    /// <li> <p>Valid values include <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit country codes. For example, Australia uses three upper-case characters: <code>AUS</code>.</p> </li>
+    /// </ul>
+    pub fn get_filter_countries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_filter_countries()
+    }
     /// <p>An optional parameter. The maximum number of results returned per request. </p>
     /// <p>The default: <code>50</code> </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -221,6 +261,11 @@ impl SearchPlaceIndexForTextFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>An optional parameter. The maximum number of results returned per request. </p>
+    /// <p>The default: <code>50</code> </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
     /// <p>This setting affects the languages used in the results, but not the results themselves. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>
@@ -239,6 +284,14 @@ impl SearchPlaceIndexForTextFluentBuilder {
     pub fn set_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_language(input);
         self
+    }
+    /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
+    /// <p>This setting affects the languages used in the results, but not the results themselves. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>
+    /// <p>For an example, we'll use the Greek language. You search for <code>Athens, Greece</code>, with the <code>language</code> parameter set to <code>en</code>. The result found will most likely be returned as <code>Athens</code>.</p>
+    /// <p>If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the result found will more likely be returned as <code>Αθήνα</code>.</p>
+    /// <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p>
+    pub fn get_language(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_language()
     }
     /// Appends an item to `FilterCategories`.
     ///
@@ -262,6 +315,13 @@ impl SearchPlaceIndexForTextFluentBuilder {
         self.inner = self.inner.set_filter_categories(input);
         self
     }
+    /// <p>A list of one or more Amazon Location categories to filter the returned places. If you include more than one category, the results will include results that match <i>any</i> of the categories listed.</p>
+    /// <p>For more information about using categories, including a list of Amazon Location categories, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+    pub fn get_filter_categories(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_filter_categories()
+    }
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key(input.into());
@@ -271,5 +331,9 @@ impl SearchPlaceIndexForTextFluentBuilder {
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key(input);
         self
+    }
+    /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_key()
     }
 }

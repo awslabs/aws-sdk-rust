@@ -102,6 +102,19 @@ impl StateExitedEventDetailsBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the state.</p>
+    /// <p>A name must <i>not</i> contain:</p>
+    /// <ul>
+    /// <li> <p>white space</p> </li>
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
+    /// </ul>
+    /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The JSON output data of the state. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn output(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output = ::std::option::Option::Some(input.into());
@@ -111,6 +124,10 @@ impl StateExitedEventDetailsBuilder {
     pub fn set_output(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output = input;
         self
+    }
+    /// <p>The JSON output data of the state. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
+    pub fn get_output(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output
     }
     /// <p>Contains details about the output of an execution history event.</p>
     pub fn output_details(mut self, input: crate::types::HistoryEventExecutionDataDetails) -> Self {
@@ -124,6 +141,12 @@ impl StateExitedEventDetailsBuilder {
     ) -> Self {
         self.output_details = input;
         self
+    }
+    /// <p>Contains details about the output of an execution history event.</p>
+    pub fn get_output_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::HistoryEventExecutionDataDetails> {
+        &self.output_details
     }
     /// Consumes the builder and constructs a [`StateExitedEventDetails`](crate::types::StateExitedEventDetails).
     pub fn build(self) -> crate::types::StateExitedEventDetails {

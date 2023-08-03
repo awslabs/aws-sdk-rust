@@ -36,6 +36,10 @@ impl PutCapacityAssignmentConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutCapacityAssignmentConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_capacity_assignment_configuration::builders::PutCapacityAssignmentConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl PutCapacityAssignmentConfigurationFluentBuilder {
         self.inner = self.inner.set_capacity_reservation_name(input);
         self
     }
+    /// <p>The name of the capacity reservation to put a capacity assignment configuration for.</p>
+    pub fn get_capacity_reservation_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_capacity_reservation_name()
+    }
     /// Appends an item to `CapacityAssignments`.
     ///
     /// To override the contents of this collection use [`set_capacity_assignments`](Self::set_capacity_assignments).
@@ -122,5 +130,11 @@ impl PutCapacityAssignmentConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_capacity_assignments(input);
         self
+    }
+    /// <p>The list of assignments for the capacity assignment configuration.</p>
+    pub fn get_capacity_assignments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityAssignment>> {
+        self.inner.get_capacity_assignments()
     }
 }

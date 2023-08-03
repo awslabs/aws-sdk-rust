@@ -64,6 +64,12 @@ impl BatchGetCommitsInputBuilder {
         self.commit_ids = input;
         self
     }
+    /// <p>The full commit IDs of the commits to get information about.</p> <note>
+    /// <p>You must supply the full SHA IDs of each commit. You cannot use shortened SHA IDs.</p>
+    /// </note>
+    pub fn get_commit_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.commit_ids
+    }
     /// <p>The name of the repository that contains the commits.</p>
     pub fn repository_name(
         mut self,
@@ -79,6 +85,10 @@ impl BatchGetCommitsInputBuilder {
     ) -> Self {
         self.repository_name = input;
         self
+    }
+    /// <p>The name of the repository that contains the commits.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
     }
     /// Consumes the builder and constructs a [`BatchGetCommitsInput`](crate::operation::batch_get_commits::BatchGetCommitsInput).
     pub fn build(

@@ -49,6 +49,10 @@ impl EvaluatePullRequestApprovalRulesOutputBuilder {
         self.evaluation = input;
         self
     }
+    /// <p>The result of the evaluation, including the names of the rules whose conditions have been met (if any), the names of the rules whose conditions have not been met (if any), whether the pull request is in the approved state, and whether the pull request approval rule has been set aside by an override. </p>
+    pub fn get_evaluation(&self) -> &::std::option::Option<crate::types::Evaluation> {
+        &self.evaluation
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

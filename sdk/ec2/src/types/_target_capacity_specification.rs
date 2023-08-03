@@ -82,6 +82,10 @@ impl TargetCapacitySpecificationBuilder {
         self.total_target_capacity = input;
         self
     }
+    /// <p>The number of units to request, filled using <code>DefaultTargetCapacityType</code>.</p>
+    pub fn get_total_target_capacity(&self) -> &::std::option::Option<i32> {
+        &self.total_target_capacity
+    }
     /// <p>The number of On-Demand units to request. If you specify a target capacity for Spot units, you cannot specify a target capacity for On-Demand units.</p>
     pub fn on_demand_target_capacity(mut self, input: i32) -> Self {
         self.on_demand_target_capacity = ::std::option::Option::Some(input);
@@ -92,6 +96,10 @@ impl TargetCapacitySpecificationBuilder {
         self.on_demand_target_capacity = input;
         self
     }
+    /// <p>The number of On-Demand units to request. If you specify a target capacity for Spot units, you cannot specify a target capacity for On-Demand units.</p>
+    pub fn get_on_demand_target_capacity(&self) -> &::std::option::Option<i32> {
+        &self.on_demand_target_capacity
+    }
     /// <p>The maximum number of Spot units to launch. If you specify a target capacity for On-Demand units, you cannot specify a target capacity for Spot units.</p>
     pub fn spot_target_capacity(mut self, input: i32) -> Self {
         self.spot_target_capacity = ::std::option::Option::Some(input);
@@ -101,6 +109,10 @@ impl TargetCapacitySpecificationBuilder {
     pub fn set_spot_target_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.spot_target_capacity = input;
         self
+    }
+    /// <p>The maximum number of Spot units to launch. If you specify a target capacity for On-Demand units, you cannot specify a target capacity for Spot units.</p>
+    pub fn get_spot_target_capacity(&self) -> &::std::option::Option<i32> {
+        &self.spot_target_capacity
     }
     /// <p>The default <code>TotalTargetCapacity</code>, which is either <code>Spot</code> or <code>On-Demand</code>.</p>
     pub fn default_target_capacity_type(
@@ -117,6 +129,12 @@ impl TargetCapacitySpecificationBuilder {
     ) -> Self {
         self.default_target_capacity_type = input;
         self
+    }
+    /// <p>The default <code>TotalTargetCapacity</code>, which is either <code>Spot</code> or <code>On-Demand</code>.</p>
+    pub fn get_default_target_capacity_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::DefaultTargetCapacityType> {
+        &self.default_target_capacity_type
     }
     /// <p>The unit for the target capacity. <code>TargetCapacityUnitType</code> can only be specified when <code>InstanceRequirements</code> is specified.</p>
     /// <p>Default: <code>units</code> (translates to number of instances)</p>
@@ -135,6 +153,13 @@ impl TargetCapacitySpecificationBuilder {
     ) -> Self {
         self.target_capacity_unit_type = input;
         self
+    }
+    /// <p>The unit for the target capacity. <code>TargetCapacityUnitType</code> can only be specified when <code>InstanceRequirements</code> is specified.</p>
+    /// <p>Default: <code>units</code> (translates to number of instances)</p>
+    pub fn get_target_capacity_unit_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::TargetCapacityUnitType> {
+        &self.target_capacity_unit_type
     }
     /// Consumes the builder and constructs a [`TargetCapacitySpecification`](crate::types::TargetCapacitySpecification).
     pub fn build(self) -> crate::types::TargetCapacitySpecification {

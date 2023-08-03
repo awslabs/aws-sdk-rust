@@ -36,6 +36,10 @@ impl GetApiKeysFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetApiKeys as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_api_keys::builders::GetApiKeysInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl GetApiKeysFluentBuilder {
         self.inner = self.inner.set_position(input);
         self
     }
+    /// <p>The current pagination position in the paged result set.</p>
+    pub fn get_position(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_position()
+    }
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -133,6 +141,10 @@ impl GetApiKeysFluentBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
+    }
+    /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
     }
     /// <p>The name of queried API keys.</p>
     pub fn name_query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -144,6 +156,10 @@ impl GetApiKeysFluentBuilder {
         self.inner = self.inner.set_name_query(input);
         self
     }
+    /// <p>The name of queried API keys.</p>
+    pub fn get_name_query(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name_query()
+    }
     /// <p>The identifier of a customer in AWS Marketplace or an external system, such as a developer portal.</p>
     pub fn customer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.customer_id(input.into());
@@ -154,6 +170,10 @@ impl GetApiKeysFluentBuilder {
         self.inner = self.inner.set_customer_id(input);
         self
     }
+    /// <p>The identifier of a customer in AWS Marketplace or an external system, such as a developer portal.</p>
+    pub fn get_customer_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_customer_id()
+    }
     /// <p>A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains key values.</p>
     pub fn include_values(mut self, input: bool) -> Self {
         self.inner = self.inner.include_values(input);
@@ -163,5 +183,9 @@ impl GetApiKeysFluentBuilder {
     pub fn set_include_values(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_values(input);
         self
+    }
+    /// <p>A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains key values.</p>
+    pub fn get_include_values(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_values()
     }
 }

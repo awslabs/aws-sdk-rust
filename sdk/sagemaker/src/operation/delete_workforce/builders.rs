@@ -39,6 +39,12 @@ impl DeleteWorkforceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteWorkforce as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_workforce::builders::DeleteWorkforceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,5 +140,9 @@ impl DeleteWorkforceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_workforce_name(input);
         self
+    }
+    /// <p>The name of the workforce.</p>
+    pub fn get_workforce_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workforce_name()
     }
 }

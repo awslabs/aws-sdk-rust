@@ -48,6 +48,10 @@ impl PackageOriginRestrictionsBuilder {
         self.publish = input;
         self
     }
+    /// <p>The package origin configuration that determines if new versions of the package can be published directly to the repository.</p>
+    pub fn get_publish(&self) -> &::std::option::Option<crate::types::AllowPublish> {
+        &self.publish
+    }
     /// <p>The package origin configuration that determines if new versions of the package can be added to the repository from an external connection or upstream source.</p>
     pub fn upstream(mut self, input: crate::types::AllowUpstream) -> Self {
         self.upstream = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl PackageOriginRestrictionsBuilder {
     ) -> Self {
         self.upstream = input;
         self
+    }
+    /// <p>The package origin configuration that determines if new versions of the package can be added to the repository from an external connection or upstream source.</p>
+    pub fn get_upstream(&self) -> &::std::option::Option<crate::types::AllowUpstream> {
+        &self.upstream
     }
     /// Consumes the builder and constructs a [`PackageOriginRestrictions`](crate::types::PackageOriginRestrictions).
     pub fn build(self) -> crate::types::PackageOriginRestrictions {

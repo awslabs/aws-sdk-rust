@@ -64,6 +64,10 @@ impl GitConfigBuilder {
         self.repository_url = input;
         self
     }
+    /// <p>The URL where the Git repository is located.</p>
+    pub fn get_repository_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_url
+    }
     /// <p>The default branch for the Git repository.</p>
     pub fn branch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl GitConfigBuilder {
     pub fn set_branch(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.branch = input;
         self
+    }
+    /// <p>The default branch for the Git repository.</p>
+    pub fn get_branch(&self) -> &::std::option::Option<::std::string::String> {
+        &self.branch
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the git repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in the following format:</p>
     /// <p> <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code> </p>
@@ -85,6 +93,11 @@ impl GitConfigBuilder {
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the git repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in the following format:</p>
+    /// <p> <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code> </p>
+    pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_arn
     }
     /// Consumes the builder and constructs a [`GitConfig`](crate::types::GitConfig).
     pub fn build(self) -> crate::types::GitConfig {

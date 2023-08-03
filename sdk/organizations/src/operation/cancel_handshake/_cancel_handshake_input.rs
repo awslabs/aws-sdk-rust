@@ -43,6 +43,11 @@ impl CancelHandshakeInputBuilder {
         self.handshake_id = input;
         self
     }
+    /// <p>The unique identifier (ID) of the handshake that you want to cancel. You can get the ID from the <code>ListHandshakesForOrganization</code> operation.</p>
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
+    pub fn get_handshake_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.handshake_id
+    }
     /// Consumes the builder and constructs a [`CancelHandshakeInput`](crate::operation::cancel_handshake::CancelHandshakeInput).
     pub fn build(
         self,

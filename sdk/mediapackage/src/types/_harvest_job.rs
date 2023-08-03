@@ -104,6 +104,10 @@ impl HarvestJobBuilder {
         self.arn = input;
         self
     }
+    /// The Amazon Resource Name (ARN) assigned to the HarvestJob.
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// The ID of the Channel that the HarvestJob will harvest from.
     pub fn channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_id = ::std::option::Option::Some(input.into());
@@ -113,6 +117,10 @@ impl HarvestJobBuilder {
     pub fn set_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_id = input;
         self
+    }
+    /// The ID of the Channel that the HarvestJob will harvest from.
+    pub fn get_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_id
     }
     /// The date and time the HarvestJob was submitted.
     pub fn created_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -124,6 +132,10 @@ impl HarvestJobBuilder {
         self.created_at = input;
         self
     }
+    /// The date and time the HarvestJob was submitted.
+    pub fn get_created_at(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_at
+    }
     /// The end of the time-window which will be harvested.
     pub fn end_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.end_time = ::std::option::Option::Some(input.into());
@@ -134,6 +146,10 @@ impl HarvestJobBuilder {
         self.end_time = input;
         self
     }
+    /// The end of the time-window which will be harvested.
+    pub fn get_end_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.end_time
+    }
     /// The ID of the HarvestJob. The ID must be unique within the region and it cannot be changed after the HarvestJob is submitted.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -143,6 +159,10 @@ impl HarvestJobBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// The ID of the HarvestJob. The ID must be unique within the region and it cannot be changed after the HarvestJob is submitted.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// The ID of the OriginEndpoint that the HarvestJob will harvest from. This cannot be changed after the HarvestJob is submitted.
     pub fn origin_endpoint_id(
@@ -160,6 +180,10 @@ impl HarvestJobBuilder {
         self.origin_endpoint_id = input;
         self
     }
+    /// The ID of the OriginEndpoint that the HarvestJob will harvest from. This cannot be changed after the HarvestJob is submitted.
+    pub fn get_origin_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.origin_endpoint_id
+    }
     /// Configuration parameters for where in an S3 bucket to place the harvested content
     pub fn s3_destination(mut self, input: crate::types::S3Destination) -> Self {
         self.s3_destination = ::std::option::Option::Some(input);
@@ -173,6 +197,10 @@ impl HarvestJobBuilder {
         self.s3_destination = input;
         self
     }
+    /// Configuration parameters for where in an S3 bucket to place the harvested content
+    pub fn get_s3_destination(&self) -> &::std::option::Option<crate::types::S3Destination> {
+        &self.s3_destination
+    }
     /// The start of the time-window which will be harvested.
     pub fn start_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_time = ::std::option::Option::Some(input.into());
@@ -183,6 +211,10 @@ impl HarvestJobBuilder {
         self.start_time = input;
         self
     }
+    /// The start of the time-window which will be harvested.
+    pub fn get_start_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_time
+    }
     /// The current status of the HarvestJob. Consider setting up a CloudWatch Event to listen for HarvestJobs as they succeed or fail. In the event of failure, the CloudWatch Event will include an explanation of why the HarvestJob failed.
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -192,6 +224,10 @@ impl HarvestJobBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.status = input;
         self
+    }
+    /// The current status of the HarvestJob. Consider setting up a CloudWatch Event to listen for HarvestJobs as they succeed or fail. In the event of failure, the CloudWatch Event will include an explanation of why the HarvestJob failed.
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`HarvestJob`](crate::types::HarvestJob).
     pub fn build(self) -> crate::types::HarvestJob {

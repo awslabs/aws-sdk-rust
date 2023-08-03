@@ -49,6 +49,10 @@ impl DeleteLifecyclePolicyInputBuilder {
         self.registry_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_id
+    }
     /// <p>The name of the repository.</p>
     pub fn repository_name(
         mut self,
@@ -64,6 +68,10 @@ impl DeleteLifecyclePolicyInputBuilder {
     ) -> Self {
         self.repository_name = input;
         self
+    }
+    /// <p>The name of the repository.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
     }
     /// Consumes the builder and constructs a [`DeleteLifecyclePolicyInput`](crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyInput).
     pub fn build(

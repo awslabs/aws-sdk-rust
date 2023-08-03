@@ -43,6 +43,10 @@ impl DescribeTrustedAdvisorCheckSummariesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeTrustedAdvisorCheckSummaries as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_trusted_advisor_check_summaries::builders::DescribeTrustedAdvisorCheckSummariesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -113,5 +117,11 @@ impl DescribeTrustedAdvisorCheckSummariesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_check_ids(input);
         self
+    }
+    /// <p>The IDs of the Trusted Advisor checks.</p>
+    pub fn get_check_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::option::Option<::std::string::String>>> {
+        self.inner.get_check_ids()
     }
 }

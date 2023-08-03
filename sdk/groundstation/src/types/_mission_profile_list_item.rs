@@ -70,6 +70,10 @@ impl MissionProfileListItemBuilder {
         self.mission_profile_id = input;
         self
     }
+    /// <p>UUID of a mission profile.</p>
+    pub fn get_mission_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mission_profile_id
+    }
     /// <p>ARN of a mission profile.</p>
     pub fn mission_profile_arn(
         mut self,
@@ -86,6 +90,10 @@ impl MissionProfileListItemBuilder {
         self.mission_profile_arn = input;
         self
     }
+    /// <p>ARN of a mission profile.</p>
+    pub fn get_mission_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mission_profile_arn
+    }
     /// <p>Region of a mission profile.</p>
     pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.region = ::std::option::Option::Some(input.into());
@@ -96,6 +104,10 @@ impl MissionProfileListItemBuilder {
         self.region = input;
         self
     }
+    /// <p>Region of a mission profile.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
+    }
     /// <p>Name of a mission profile.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -105,6 +117,10 @@ impl MissionProfileListItemBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>Name of a mission profile.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`MissionProfileListItem`](crate::types::MissionProfileListItem).
     pub fn build(self) -> crate::types::MissionProfileListItem {

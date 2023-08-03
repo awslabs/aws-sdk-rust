@@ -51,6 +51,10 @@ impl DetectorAdditionalConfigurationBuilder {
         self.name = input;
         self
     }
+    /// <p>Name of the additional configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::FeatureAdditionalConfiguration> {
+        &self.name
+    }
     /// <p>Status of the additional configuration.</p>
     pub fn status(mut self, input: crate::types::FeatureStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl DetectorAdditionalConfigurationBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::FeatureStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Status of the additional configuration.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::FeatureStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`DetectorAdditionalConfiguration`](crate::types::DetectorAdditionalConfiguration).
     pub fn build(self) -> crate::types::DetectorAdditionalConfiguration {

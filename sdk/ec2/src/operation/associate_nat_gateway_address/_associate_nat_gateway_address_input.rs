@@ -69,6 +69,10 @@ impl AssociateNatGatewayAddressInputBuilder {
         self.nat_gateway_id = input;
         self
     }
+    /// <p>The ID of the NAT gateway.</p>
+    pub fn get_nat_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nat_gateway_id
+    }
     /// Appends an item to `allocation_ids`.
     ///
     /// To override the contents of this collection use [`set_allocation_ids`](Self::set_allocation_ids).
@@ -90,6 +94,12 @@ impl AssociateNatGatewayAddressInputBuilder {
     ) -> Self {
         self.allocation_ids = input;
         self
+    }
+    /// <p>The allocation IDs of EIPs that you want to associate with your NAT gateway.</p>
+    pub fn get_allocation_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.allocation_ids
     }
     /// Appends an item to `private_ip_addresses`.
     ///
@@ -113,6 +123,12 @@ impl AssociateNatGatewayAddressInputBuilder {
         self.private_ip_addresses = input;
         self
     }
+    /// <p>The private IPv4 addresses that you want to assign to the NAT gateway.</p>
+    pub fn get_private_ip_addresses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.private_ip_addresses
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -122,6 +138,10 @@ impl AssociateNatGatewayAddressInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`AssociateNatGatewayAddressInput`](crate::operation::associate_nat_gateway_address::AssociateNatGatewayAddressInput).
     pub fn build(

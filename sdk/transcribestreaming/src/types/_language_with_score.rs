@@ -51,6 +51,10 @@ impl LanguageWithScoreBuilder {
         self.language_code = input;
         self
     }
+    /// <p>The language code of the identified language.</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
+        &self.language_code
+    }
     /// <p>The confidence score associated with the identified language code. Confidence scores are values between zero and one; larger values indicate a higher confidence in the identified language.</p>
     pub fn score(mut self, input: f64) -> Self {
         self.score = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl LanguageWithScoreBuilder {
     pub fn set_score(mut self, input: ::std::option::Option<f64>) -> Self {
         self.score = input;
         self
+    }
+    /// <p>The confidence score associated with the identified language code. Confidence scores are values between zero and one; larger values indicate a higher confidence in the identified language.</p>
+    pub fn get_score(&self) -> &::std::option::Option<f64> {
+        &self.score
     }
     /// Consumes the builder and constructs a [`LanguageWithScore`](crate::types::LanguageWithScore).
     pub fn build(self) -> crate::types::LanguageWithScore {

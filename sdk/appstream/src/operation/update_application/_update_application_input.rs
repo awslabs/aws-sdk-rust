@@ -108,6 +108,10 @@ impl UpdateApplicationInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the application. This name is visible to users when display name is not specified.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The display name of the application. This name is visible to users in the application catalog.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -118,6 +122,10 @@ impl UpdateApplicationInputBuilder {
         self.display_name = input;
         self
     }
+    /// <p>The display name of the application. This name is visible to users in the application catalog.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
+    }
     /// <p>The description of the application.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -127,6 +135,10 @@ impl UpdateApplicationInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the application.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The icon S3 location of the application.</p>
     pub fn icon_s3_location(mut self, input: crate::types::S3Location) -> Self {
@@ -141,6 +153,10 @@ impl UpdateApplicationInputBuilder {
         self.icon_s3_location = input;
         self
     }
+    /// <p>The icon S3 location of the application.</p>
+    pub fn get_icon_s3_location(&self) -> &::std::option::Option<crate::types::S3Location> {
+        &self.icon_s3_location
+    }
     /// <p>The launch path of the application.</p>
     pub fn launch_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_path = ::std::option::Option::Some(input.into());
@@ -150,6 +166,10 @@ impl UpdateApplicationInputBuilder {
     pub fn set_launch_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launch_path = input;
         self
+    }
+    /// <p>The launch path of the application.</p>
+    pub fn get_launch_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch_path
     }
     /// <p>The working directory of the application.</p>
     pub fn working_directory(
@@ -167,6 +187,10 @@ impl UpdateApplicationInputBuilder {
         self.working_directory = input;
         self
     }
+    /// <p>The working directory of the application.</p>
+    pub fn get_working_directory(&self) -> &::std::option::Option<::std::string::String> {
+        &self.working_directory
+    }
     /// <p>The launch parameters of the application.</p>
     pub fn launch_parameters(
         mut self,
@@ -183,6 +207,10 @@ impl UpdateApplicationInputBuilder {
         self.launch_parameters = input;
         self
     }
+    /// <p>The launch parameters of the application.</p>
+    pub fn get_launch_parameters(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch_parameters
+    }
     /// <p>The ARN of the app block.</p>
     pub fn app_block_arn(
         mut self,
@@ -198,6 +226,10 @@ impl UpdateApplicationInputBuilder {
     ) -> Self {
         self.app_block_arn = input;
         self
+    }
+    /// <p>The ARN of the app block.</p>
+    pub fn get_app_block_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_block_arn
     }
     /// Appends an item to `attributes_to_delete`.
     ///
@@ -217,6 +249,12 @@ impl UpdateApplicationInputBuilder {
     ) -> Self {
         self.attributes_to_delete = input;
         self
+    }
+    /// <p>The attributes to delete for an application.</p>
+    pub fn get_attributes_to_delete(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationAttribute>> {
+        &self.attributes_to_delete
     }
     /// Consumes the builder and constructs a [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
     pub fn build(

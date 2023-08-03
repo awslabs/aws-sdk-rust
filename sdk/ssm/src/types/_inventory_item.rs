@@ -96,6 +96,10 @@ impl InventoryItemBuilder {
         self.type_name = input;
         self
     }
+    /// <p>The name of the inventory type. Default inventory item type names start with <code>AWS</code>. Custom inventory type names will start with Custom. Default inventory item types include the following: <code>AWS:AWSComponent</code>, <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>, <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.</p>
+    pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.type_name
+    }
     /// <p>The schema version for the inventory item.</p>
     pub fn schema_version(
         mut self,
@@ -112,6 +116,10 @@ impl InventoryItemBuilder {
         self.schema_version = input;
         self
     }
+    /// <p>The schema version for the inventory item.</p>
+    pub fn get_schema_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_version
+    }
     /// <p>The time the inventory information was collected.</p>
     pub fn capture_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capture_time = ::std::option::Option::Some(input.into());
@@ -122,6 +130,10 @@ impl InventoryItemBuilder {
         self.capture_time = input;
         self
     }
+    /// <p>The time the inventory information was collected.</p>
+    pub fn get_capture_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.capture_time
+    }
     /// <p>MD5 hash of the inventory item type contents. The content hash is used to determine whether to update inventory information. The PutInventory API doesn't update the inventory item type contents if the MD5 hash hasn't changed since last update. </p>
     pub fn content_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_hash = ::std::option::Option::Some(input.into());
@@ -131,6 +143,10 @@ impl InventoryItemBuilder {
     pub fn set_content_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_hash = input;
         self
+    }
+    /// <p>MD5 hash of the inventory item type contents. The content hash is used to determine whether to update inventory information. The PutInventory API doesn't update the inventory item type contents if the MD5 hash hasn't changed since last update. </p>
+    pub fn get_content_hash(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_hash
     }
     /// Appends an item to `content`.
     ///
@@ -158,6 +174,14 @@ impl InventoryItemBuilder {
         self.content = input;
         self
     }
+    /// <p>The inventory data of the inventory type.</p>
+    pub fn get_content(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    > {
+        &self.content
+    }
     /// Adds a key-value pair to `context`.
     ///
     /// To override the contents of this collection use [`set_context`](Self::set_context).
@@ -182,6 +206,14 @@ impl InventoryItemBuilder {
     ) -> Self {
         self.context = input;
         self
+    }
+    /// <p>A map of associated properties for a specified inventory type. For example, with this attribute, you can specify the <code>ExecutionId</code>, <code>ExecutionType</code>, <code>ComplianceType</code> properties of the <code>AWS:ComplianceItem</code> type.</p>
+    pub fn get_context(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.context
     }
     /// Consumes the builder and constructs a [`InventoryItem`](crate::types::InventoryItem).
     pub fn build(self) -> crate::types::InventoryItem {

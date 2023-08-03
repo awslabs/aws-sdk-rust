@@ -36,6 +36,10 @@ impl ModifyIpamFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ModifyIpam as a reference.
+    pub fn as_input(&self) -> &crate::operation::modify_ipam::builders::ModifyIpamInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl ModifyIpamFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>The ID of the IPAM you want to modify.</p>
     pub fn ipam_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ipam_id(input.into());
@@ -128,6 +136,10 @@ impl ModifyIpamFluentBuilder {
         self.inner = self.inner.set_ipam_id(input);
         self
     }
+    /// <p>The ID of the IPAM you want to modify.</p>
+    pub fn get_ipam_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ipam_id()
+    }
     /// <p>The description of the IPAM you want to modify.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -137,6 +149,10 @@ impl ModifyIpamFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the IPAM you want to modify.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `AddOperatingRegions`.
     ///
@@ -157,6 +173,13 @@ impl ModifyIpamFluentBuilder {
         self.inner = self.inner.set_add_operating_regions(input);
         self
     }
+    /// <p>Choose the operating Regions for the IPAM. Operating Regions are Amazon Web Services Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only discovers and monitors resources in the Amazon Web Services Regions you select as operating Regions.</p>
+    /// <p>For more information about operating Regions, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+    pub fn get_add_operating_regions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AddIpamOperatingRegion>> {
+        self.inner.get_add_operating_regions()
+    }
     /// Appends an item to `RemoveOperatingRegions`.
     ///
     /// To override the contents of this collection use [`set_remove_operating_regions`](Self::set_remove_operating_regions).
@@ -176,5 +199,11 @@ impl ModifyIpamFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_remove_operating_regions(input);
         self
+    }
+    /// <p>The operating Regions to remove.</p>
+    pub fn get_remove_operating_regions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RemoveIpamOperatingRegion>> {
+        self.inner.get_remove_operating_regions()
     }
 }

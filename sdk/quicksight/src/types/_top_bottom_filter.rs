@@ -84,6 +84,10 @@ impl TopBottomFilterBuilder {
         self.filter_id = input;
         self
     }
+    /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
+    pub fn get_filter_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filter_id
+    }
     /// <p>The column that the filter is applied to.</p>
     pub fn column(mut self, input: crate::types::ColumnIdentifier) -> Self {
         self.column = ::std::option::Option::Some(input);
@@ -97,6 +101,10 @@ impl TopBottomFilterBuilder {
         self.column = input;
         self
     }
+    /// <p>The column that the filter is applied to.</p>
+    pub fn get_column(&self) -> &::std::option::Option<crate::types::ColumnIdentifier> {
+        &self.column
+    }
     /// <p>The number of items to include in the top bottom filter results.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -106,6 +114,10 @@ impl TopBottomFilterBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
+    }
+    /// <p>The number of items to include in the top bottom filter results.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// Appends an item to `aggregation_sort_configurations`.
     ///
@@ -129,6 +141,12 @@ impl TopBottomFilterBuilder {
         self.aggregation_sort_configurations = input;
         self
     }
+    /// <p>The aggregation and sort configuration of the top bottom filter.</p>
+    pub fn get_aggregation_sort_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregationSortConfiguration>> {
+        &self.aggregation_sort_configurations
+    }
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
     pub fn time_granularity(mut self, input: crate::types::TimeGranularity) -> Self {
         self.time_granularity = ::std::option::Option::Some(input);
@@ -141,6 +159,10 @@ impl TopBottomFilterBuilder {
     ) -> Self {
         self.time_granularity = input;
         self
+    }
+    /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
+    pub fn get_time_granularity(&self) -> &::std::option::Option<crate::types::TimeGranularity> {
+        &self.time_granularity
     }
     /// <p>The parameter whose value should be used for the filter value.</p>
     pub fn parameter_name(
@@ -157,6 +179,10 @@ impl TopBottomFilterBuilder {
     ) -> Self {
         self.parameter_name = input;
         self
+    }
+    /// <p>The parameter whose value should be used for the filter value.</p>
+    pub fn get_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_name
     }
     /// Consumes the builder and constructs a [`TopBottomFilter`](crate::types::TopBottomFilter).
     pub fn build(self) -> crate::types::TopBottomFilter {

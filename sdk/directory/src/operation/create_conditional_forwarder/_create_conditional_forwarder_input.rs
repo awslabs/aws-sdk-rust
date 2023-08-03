@@ -56,6 +56,10 @@ impl CreateConditionalForwarderInputBuilder {
         self.directory_id = input;
         self
     }
+    /// <p>The directory ID of the Amazon Web Services directory for which you are creating the conditional forwarder.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
+    }
     /// <p>The fully qualified domain name (FQDN) of the remote domain with which you will set up a trust relationship.</p>
     pub fn remote_domain_name(
         mut self,
@@ -71,6 +75,10 @@ impl CreateConditionalForwarderInputBuilder {
     ) -> Self {
         self.remote_domain_name = input;
         self
+    }
+    /// <p>The fully qualified domain name (FQDN) of the remote domain with which you will set up a trust relationship.</p>
+    pub fn get_remote_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.remote_domain_name
     }
     /// Appends an item to `dns_ip_addrs`.
     ///
@@ -90,6 +98,12 @@ impl CreateConditionalForwarderInputBuilder {
     ) -> Self {
         self.dns_ip_addrs = input;
         self
+    }
+    /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName.</p>
+    pub fn get_dns_ip_addrs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.dns_ip_addrs
     }
     /// Consumes the builder and constructs a [`CreateConditionalForwarderInput`](crate::operation::create_conditional_forwarder::CreateConditionalForwarderInput).
     pub fn build(

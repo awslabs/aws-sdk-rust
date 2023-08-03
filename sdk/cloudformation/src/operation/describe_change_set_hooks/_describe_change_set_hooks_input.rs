@@ -71,6 +71,10 @@ impl DescribeChangeSetHooksInputBuilder {
         self.change_set_name = input;
         self
     }
+    /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to describe.</p>
+    pub fn get_change_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.change_set_name
+    }
     /// <p>If you specified the name of a change set, specify the stack name or stack ID (ARN) of the change set you want to describe.</p>
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_name = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl DescribeChangeSetHooksInputBuilder {
         self.stack_name = input;
         self
     }
+    /// <p>If you specified the name of a change set, specify the stack name or stack ID (ARN) of the change set you want to describe.</p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_name
+    }
     /// <p>A string, provided by the <code>DescribeChangeSetHooks</code> response output, that identifies the next page of information that you want to retrieve.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -90,6 +98,10 @@ impl DescribeChangeSetHooksInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A string, provided by the <code>DescribeChangeSetHooks</code> response output, that identifies the next page of information that you want to retrieve.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>If specified, lists only the hooks related to the specified <code>LogicalResourceId</code>.</p>
     pub fn logical_resource_id(
@@ -106,6 +118,10 @@ impl DescribeChangeSetHooksInputBuilder {
     ) -> Self {
         self.logical_resource_id = input;
         self
+    }
+    /// <p>If specified, lists only the hooks related to the specified <code>LogicalResourceId</code>.</p>
+    pub fn get_logical_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.logical_resource_id
     }
     /// Consumes the builder and constructs a [`DescribeChangeSetHooksInput`](crate::operation::describe_change_set_hooks::DescribeChangeSetHooksInput).
     pub fn build(

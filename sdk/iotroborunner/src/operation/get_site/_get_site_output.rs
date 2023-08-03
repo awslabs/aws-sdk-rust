@@ -94,6 +94,10 @@ impl GetSiteOutputBuilder {
         self.arn = input;
         self
     }
+    /// Site ARN.
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Filters access by the site's identifier
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -103,6 +107,10 @@ impl GetSiteOutputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// Filters access by the site's identifier
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Human friendly name of the resource.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -114,6 +122,10 @@ impl GetSiteOutputBuilder {
         self.name = input;
         self
     }
+    /// Human friendly name of the resource.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
     pub fn country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.country_code = ::std::option::Option::Some(input.into());
@@ -124,6 +136,10 @@ impl GetSiteOutputBuilder {
         self.country_code = input;
         self
     }
+    /// A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
+    pub fn get_country_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.country_code
+    }
     /// A high-level description of the site.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -133,6 +149,10 @@ impl GetSiteOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// A high-level description of the site.
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Timestamp at which the resource was created.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -147,6 +167,10 @@ impl GetSiteOutputBuilder {
         self.created_at = input;
         self
     }
+    /// Timestamp at which the resource was created.
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// Timestamp at which the resource was last updated.
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
@@ -159,6 +183,10 @@ impl GetSiteOutputBuilder {
     ) -> Self {
         self.updated_at = input;
         self
+    }
+    /// Timestamp at which the resource was last updated.
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

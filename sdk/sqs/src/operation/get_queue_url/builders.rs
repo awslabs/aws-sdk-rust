@@ -37,6 +37,10 @@ impl GetQueueUrlFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetQueueUrl as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_queue_url::builders::GetQueueUrlInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -121,6 +125,11 @@ impl GetQueueUrlFluentBuilder {
         self.inner = self.inner.set_queue_name(input);
         self
     }
+    /// <p>The name of the queue whose URL must be fetched. Maximum 80 characters. Valid values: alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>).</p>
+    /// <p>Queue URLs and names are case-sensitive.</p>
+    pub fn get_queue_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_queue_name()
+    }
     /// <p>The Amazon Web Services account ID of the account that created the queue.</p>
     pub fn queue_owner_aws_account_id(
         mut self,
@@ -136,5 +145,9 @@ impl GetQueueUrlFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_queue_owner_aws_account_id(input);
         self
+    }
+    /// <p>The Amazon Web Services account ID of the account that created the queue.</p>
+    pub fn get_queue_owner_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_queue_owner_aws_account_id()
     }
 }

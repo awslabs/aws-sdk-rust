@@ -50,6 +50,10 @@ impl AgentInfoBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the agent who accepted the contact.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The timestamp when the contact was connected to the agent.</p>
     pub fn connected_to_agent_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.connected_to_agent_timestamp = ::std::option::Option::Some(input);
@@ -62,6 +66,12 @@ impl AgentInfoBuilder {
     ) -> Self {
         self.connected_to_agent_timestamp = input;
         self
+    }
+    /// <p>The timestamp when the contact was connected to the agent.</p>
+    pub fn get_connected_to_agent_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.connected_to_agent_timestamp
     }
     /// Consumes the builder and constructs a [`AgentInfo`](crate::types::AgentInfo).
     pub fn build(self) -> crate::types::AgentInfo {

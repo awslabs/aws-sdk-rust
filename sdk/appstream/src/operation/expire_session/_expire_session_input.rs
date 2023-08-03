@@ -39,6 +39,10 @@ impl ExpireSessionInputBuilder {
         self.session_id = input;
         self
     }
+    /// <p>The identifier of the streaming session.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_id
+    }
     /// Consumes the builder and constructs a [`ExpireSessionInput`](crate::operation::expire_session::ExpireSessionInput).
     pub fn build(
         self,

@@ -48,6 +48,10 @@ impl CreateSnapshotInputBuilder {
         self.directory_id = input;
         self
     }
+    /// <p>The identifier of the directory of which to take a snapshot.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
+    }
     /// <p>The descriptive name to apply to the snapshot.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl CreateSnapshotInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The descriptive name to apply to the snapshot.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`CreateSnapshotInput`](crate::operation::create_snapshot::CreateSnapshotInput).
     pub fn build(

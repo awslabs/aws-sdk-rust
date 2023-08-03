@@ -103,6 +103,10 @@ impl CreateCalculatedAttributeDefinitionInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The unique name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The unique name of the calculated attribute.</p>
     pub fn calculated_attribute_name(
         mut self,
@@ -119,6 +123,10 @@ impl CreateCalculatedAttributeDefinitionInputBuilder {
         self.calculated_attribute_name = input;
         self
     }
+    /// <p>The unique name of the calculated attribute.</p>
+    pub fn get_calculated_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.calculated_attribute_name
+    }
     /// <p>The display name of the calculated attribute.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -129,6 +137,10 @@ impl CreateCalculatedAttributeDefinitionInputBuilder {
         self.display_name = input;
         self
     }
+    /// <p>The display name of the calculated attribute.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
+    }
     /// <p>The description of the calculated attribute.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -138,6 +150,10 @@ impl CreateCalculatedAttributeDefinitionInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the calculated attribute.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Mathematical expression and a list of attribute items specified in that expression.</p>
     pub fn attribute_details(mut self, input: crate::types::AttributeDetails) -> Self {
@@ -152,6 +168,10 @@ impl CreateCalculatedAttributeDefinitionInputBuilder {
         self.attribute_details = input;
         self
     }
+    /// <p>Mathematical expression and a list of attribute items specified in that expression.</p>
+    pub fn get_attribute_details(&self) -> &::std::option::Option<crate::types::AttributeDetails> {
+        &self.attribute_details
+    }
     /// <p>The conditions including range, object count, and threshold for the calculated attribute.</p>
     pub fn conditions(mut self, input: crate::types::Conditions) -> Self {
         self.conditions = ::std::option::Option::Some(input);
@@ -165,6 +185,10 @@ impl CreateCalculatedAttributeDefinitionInputBuilder {
         self.conditions = input;
         self
     }
+    /// <p>The conditions including range, object count, and threshold for the calculated attribute.</p>
+    pub fn get_conditions(&self) -> &::std::option::Option<crate::types::Conditions> {
+        &self.conditions
+    }
     /// <p>The aggregation operation to perform for the calculated attribute.</p>
     pub fn statistic(mut self, input: crate::types::Statistic) -> Self {
         self.statistic = ::std::option::Option::Some(input);
@@ -174,6 +198,10 @@ impl CreateCalculatedAttributeDefinitionInputBuilder {
     pub fn set_statistic(mut self, input: ::std::option::Option<crate::types::Statistic>) -> Self {
         self.statistic = input;
         self
+    }
+    /// <p>The aggregation operation to perform for the calculated attribute.</p>
+    pub fn get_statistic(&self) -> &::std::option::Option<crate::types::Statistic> {
+        &self.statistic
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -199,6 +227,14 @@ impl CreateCalculatedAttributeDefinitionInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateCalculatedAttributeDefinitionInput`](crate::operation::create_calculated_attribute_definition::CreateCalculatedAttributeDefinitionInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_calculated_attribute_definition::CreateCalculatedAttributeDefinitionInput, ::aws_smithy_http::operation::error::BuildError>{

@@ -39,6 +39,10 @@ impl GetBandwidthRateLimitScheduleInputBuilder {
         self.gateway_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html"> <code>ListGateways</code> </a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_arn
+    }
     /// Consumes the builder and constructs a [`GetBandwidthRateLimitScheduleInput`](crate::operation::get_bandwidth_rate_limit_schedule::GetBandwidthRateLimitScheduleInput).
     pub fn build(
         self,

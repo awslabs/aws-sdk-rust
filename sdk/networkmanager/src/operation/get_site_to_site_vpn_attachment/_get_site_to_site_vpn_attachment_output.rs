@@ -55,6 +55,12 @@ impl GetSiteToSiteVpnAttachmentOutputBuilder {
         self.site_to_site_vpn_attachment = input;
         self
     }
+    /// <p>Describes the site-to-site attachment.</p>
+    pub fn get_site_to_site_vpn_attachment(
+        &self,
+    ) -> &::std::option::Option<crate::types::SiteToSiteVpnAttachment> {
+        &self.site_to_site_vpn_attachment
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

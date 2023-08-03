@@ -66,6 +66,10 @@ impl AwsEcsClusterConfigurationExecuteCommandConfigurationDetailsBuilder {
         self.kms_key_id = input;
         self
     }
+    /// <p>The identifier of the KMS key that is used to encrypt the data between the local client and the container.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
+    }
     /// <p>The log configuration for the results of the run command actions. Required if <code>Logging</code> is <code>NONE</code>.</p>
     pub fn log_configuration(
         mut self,
@@ -82,6 +86,14 @@ impl AwsEcsClusterConfigurationExecuteCommandConfigurationDetailsBuilder {
         self.log_configuration = input;
         self
     }
+    /// <p>The log configuration for the results of the run command actions. Required if <code>Logging</code> is <code>NONE</code>.</p>
+    pub fn get_log_configuration(
+        &self,
+    ) -> &::std::option::Option<
+        crate::types::AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails,
+    > {
+        &self.log_configuration
+    }
     /// <p>The log setting to use for redirecting logs for run command results.</p>
     pub fn logging(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.logging = ::std::option::Option::Some(input.into());
@@ -91,6 +103,10 @@ impl AwsEcsClusterConfigurationExecuteCommandConfigurationDetailsBuilder {
     pub fn set_logging(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.logging = input;
         self
+    }
+    /// <p>The log setting to use for redirecting logs for run command results.</p>
+    pub fn get_logging(&self) -> &::std::option::Option<::std::string::String> {
+        &self.logging
     }
     /// Consumes the builder and constructs a [`AwsEcsClusterConfigurationExecuteCommandConfigurationDetails`](crate::types::AwsEcsClusterConfigurationExecuteCommandConfigurationDetails).
     pub fn build(

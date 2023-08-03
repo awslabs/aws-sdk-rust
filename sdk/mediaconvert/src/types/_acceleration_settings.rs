@@ -43,6 +43,10 @@ impl AccelerationSettingsBuilder {
         self.mode = input;
         self
     }
+    /// Specify the conditions when the service will run your job with accelerated transcoding.
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::AccelerationMode> {
+        &self.mode
+    }
     /// Consumes the builder and constructs a [`AccelerationSettings`](crate::types::AccelerationSettings).
     pub fn build(self) -> crate::types::AccelerationSettings {
         crate::types::AccelerationSettings { mode: self.mode }

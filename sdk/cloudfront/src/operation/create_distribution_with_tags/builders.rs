@@ -36,6 +36,10 @@ impl CreateDistributionWithTagsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDistributionWithTags as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_distribution_with_tags::builders::CreateDistributionWithTagsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +135,11 @@ impl CreateDistributionWithTagsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_distribution_config_with_tags(input);
         self
+    }
+    /// <p>The distribution's configuration information.</p>
+    pub fn get_distribution_config_with_tags(
+        &self,
+    ) -> &::std::option::Option<crate::types::DistributionConfigWithTags> {
+        self.inner.get_distribution_config_with_tags()
     }
 }

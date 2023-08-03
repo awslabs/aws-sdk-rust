@@ -49,6 +49,10 @@ impl ReplaceTransitGatewayRouteOutputBuilder {
         self.route = input;
         self
     }
+    /// <p>Information about the modified route.</p>
+    pub fn get_route(&self) -> &::std::option::Option<crate::types::TransitGatewayRoute> {
+        &self.route
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

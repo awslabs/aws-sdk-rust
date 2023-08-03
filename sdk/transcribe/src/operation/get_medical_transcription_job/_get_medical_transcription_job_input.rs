@@ -45,6 +45,12 @@ impl GetMedicalTranscriptionJobInputBuilder {
         self.medical_transcription_job_name = input;
         self
     }
+    /// <p>The name of the medical transcription job you want information about. Job names are case sensitive.</p>
+    pub fn get_medical_transcription_job_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.medical_transcription_job_name
+    }
     /// Consumes the builder and constructs a [`GetMedicalTranscriptionJobInput`](crate::operation::get_medical_transcription_job::GetMedicalTranscriptionJobInput).
     pub fn build(
         self,

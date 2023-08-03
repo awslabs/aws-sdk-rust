@@ -40,6 +40,10 @@ impl TriggerNodeDetailsBuilder {
         self.trigger = input;
         self
     }
+    /// <p>The information of the trigger represented by the trigger node.</p>
+    pub fn get_trigger(&self) -> &::std::option::Option<crate::types::Trigger> {
+        &self.trigger
+    }
     /// Consumes the builder and constructs a [`TriggerNodeDetails`](crate::types::TriggerNodeDetails).
     pub fn build(self) -> crate::types::TriggerNodeDetails {
         crate::types::TriggerNodeDetails {

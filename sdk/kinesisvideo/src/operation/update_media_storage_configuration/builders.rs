@@ -40,6 +40,10 @@ impl UpdateMediaStorageConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateMediaStorageConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_media_storage_configuration::builders::UpdateMediaStorageConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -104,6 +108,10 @@ impl UpdateMediaStorageConfigurationFluentBuilder {
         self.inner = self.inner.set_channel_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the channel.</p>
+    pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_channel_arn()
+    }
     /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
     pub fn media_storage_configuration(
         mut self,
@@ -119,5 +127,11 @@ impl UpdateMediaStorageConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_media_storage_configuration(input);
         self
+    }
+    /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
+    pub fn get_media_storage_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::MediaStorageConfiguration> {
+        self.inner.get_media_storage_configuration()
     }
 }

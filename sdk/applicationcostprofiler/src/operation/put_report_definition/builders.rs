@@ -36,6 +36,12 @@ impl PutReportDefinitionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutReportDefinition as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_report_definition::builders::PutReportDefinitionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl PutReportDefinitionFluentBuilder {
         self.inner = self.inner.set_report_id(input);
         self
     }
+    /// <p>Required. ID of the report. You can choose any valid string matching the pattern for the ID.</p>
+    pub fn get_report_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_report_id()
+    }
     /// <p>Required. Description of the report.</p>
     pub fn report_description(
         mut self,
@@ -142,6 +152,10 @@ impl PutReportDefinitionFluentBuilder {
         self.inner = self.inner.set_report_description(input);
         self
     }
+    /// <p>Required. Description of the report.</p>
+    pub fn get_report_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_report_description()
+    }
     /// <p>Required. The cadence to generate the report.</p>
     pub fn report_frequency(mut self, input: crate::types::ReportFrequency) -> Self {
         self.inner = self.inner.report_frequency(input);
@@ -155,6 +169,10 @@ impl PutReportDefinitionFluentBuilder {
         self.inner = self.inner.set_report_frequency(input);
         self
     }
+    /// <p>Required. The cadence to generate the report.</p>
+    pub fn get_report_frequency(&self) -> &::std::option::Option<crate::types::ReportFrequency> {
+        self.inner.get_report_frequency()
+    }
     /// <p>Required. The format to use for the generated report.</p>
     pub fn format(mut self, input: crate::types::Format) -> Self {
         self.inner = self.inner.format(input);
@@ -164,6 +182,10 @@ impl PutReportDefinitionFluentBuilder {
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::Format>) -> Self {
         self.inner = self.inner.set_format(input);
         self
+    }
+    /// <p>Required. The format to use for the generated report.</p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::Format> {
+        self.inner.get_format()
     }
     /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the report.</p>
     pub fn destination_s3_location(mut self, input: crate::types::S3Location) -> Self {
@@ -177,5 +199,9 @@ impl PutReportDefinitionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_destination_s3_location(input);
         self
+    }
+    /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the report.</p>
+    pub fn get_destination_s3_location(&self) -> &::std::option::Option<crate::types::S3Location> {
+        self.inner.get_destination_s3_location()
     }
 }

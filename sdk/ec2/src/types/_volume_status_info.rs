@@ -57,6 +57,12 @@ impl VolumeStatusInfoBuilder {
         self.details = input;
         self
     }
+    /// <p>The details of the volume status.</p>
+    pub fn get_details(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusDetails>> {
+        &self.details
+    }
     /// <p>The status of the volume.</p>
     pub fn status(mut self, input: crate::types::VolumeStatusInfoStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -69,6 +75,10 @@ impl VolumeStatusInfoBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the volume.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::VolumeStatusInfoStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`VolumeStatusInfo`](crate::types::VolumeStatusInfo).
     pub fn build(self) -> crate::types::VolumeStatusInfo {

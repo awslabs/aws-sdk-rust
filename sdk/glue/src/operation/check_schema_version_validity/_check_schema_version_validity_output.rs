@@ -54,6 +54,10 @@ impl CheckSchemaVersionValidityOutputBuilder {
         self.valid = input;
         self
     }
+    /// <p>Return true, if the schema is valid and false otherwise.</p>
+    pub fn get_valid(&self) -> &::std::option::Option<bool> {
+        &self.valid
+    }
     /// <p>A validation failure error message.</p>
     pub fn error(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl CheckSchemaVersionValidityOutputBuilder {
     pub fn set_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error = input;
         self
+    }
+    /// <p>A validation failure error message.</p>
+    pub fn get_error(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

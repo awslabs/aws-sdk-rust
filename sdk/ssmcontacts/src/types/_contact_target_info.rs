@@ -48,6 +48,10 @@ impl ContactTargetInfoBuilder {
         self.contact_id = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the contact.</p>
+    pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_id
+    }
     /// <p>A Boolean value determining if the contact's acknowledgement stops the progress of stages in the plan.</p>
     pub fn is_essential(mut self, input: bool) -> Self {
         self.is_essential = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ContactTargetInfoBuilder {
     pub fn set_is_essential(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_essential = input;
         self
+    }
+    /// <p>A Boolean value determining if the contact's acknowledgement stops the progress of stages in the plan.</p>
+    pub fn get_is_essential(&self) -> &::std::option::Option<bool> {
+        &self.is_essential
     }
     /// Consumes the builder and constructs a [`ContactTargetInfo`](crate::types::ContactTargetInfo).
     pub fn build(self) -> crate::types::ContactTargetInfo {

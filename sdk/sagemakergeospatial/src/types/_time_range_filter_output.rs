@@ -57,6 +57,10 @@ impl TimeRangeFilterOutputBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The starting time for the time range filter.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The ending time for the time range filter.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl TimeRangeFilterOutputBuilder {
     ) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>The ending time for the time range filter.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// Consumes the builder and constructs a [`TimeRangeFilterOutput`](crate::types::TimeRangeFilterOutput).
     pub fn build(self) -> crate::types::TimeRangeFilterOutput {

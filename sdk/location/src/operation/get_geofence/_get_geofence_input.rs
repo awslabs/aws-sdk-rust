@@ -53,6 +53,10 @@ impl GetGeofenceInputBuilder {
         self.collection_name = input;
         self
     }
+    /// <p>The geofence collection storing the target geofence.</p>
+    pub fn get_collection_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collection_name
+    }
     /// <p>The geofence you're retrieving details for.</p>
     pub fn geofence_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.geofence_id = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl GetGeofenceInputBuilder {
     pub fn set_geofence_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.geofence_id = input;
         self
+    }
+    /// <p>The geofence you're retrieving details for.</p>
+    pub fn get_geofence_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.geofence_id
     }
     /// Consumes the builder and constructs a [`GetGeofenceInput`](crate::operation::get_geofence::GetGeofenceInput).
     pub fn build(

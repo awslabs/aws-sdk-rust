@@ -44,6 +44,13 @@ impl DeletePublicAccessBlockFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeletePublicAccessBlock as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_public_access_block::builders::DeletePublicAccessBlockInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +141,10 @@ impl DeletePublicAccessBlockFluentBuilder {
         self.inner = self.inner.set_bucket(input);
         self
     }
+    /// <p>The Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you want to delete. </p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bucket()
+    }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(
         mut self,
@@ -149,5 +160,9 @@ impl DeletePublicAccessBlockFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_expected_bucket_owner(input);
         self
+    }
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
+    pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_expected_bucket_owner()
     }
 }

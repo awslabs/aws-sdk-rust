@@ -36,6 +36,10 @@ impl UpdateEventSourcesConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateEventSourcesConfig as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_event_sources_config::builders::UpdateEventSourcesConfigInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,5 +132,9 @@ impl UpdateEventSourcesConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_event_sources(input);
         self
+    }
+    /// <p>Configuration information about the integration of DevOps Guru as the Consumer via EventBridge with another AWS Service.</p>
+    pub fn get_event_sources(&self) -> &::std::option::Option<crate::types::EventSourcesConfig> {
+        self.inner.get_event_sources()
     }
 }

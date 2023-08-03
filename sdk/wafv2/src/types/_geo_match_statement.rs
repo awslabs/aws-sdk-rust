@@ -83,6 +83,13 @@ impl GeoMatchStatementBuilder {
         self.country_codes = input;
         self
     }
+    /// <p>An array of two-character country codes that you want to match against, for example, <code>[ "US", "CN" ]</code>, from the alpha-2 country ISO codes of the ISO 3166 international standard. </p>
+    /// <p>When you use a geo match statement just for the region and country labels that it adds to requests, you still have to supply a country code for the rule to evaluate. In this case, you configure the rule to only count matching requests, but it will still generate logging and count metrics for any matches. You can reduce the logging and metrics that the rule produces by specifying a country that's unlikely to be a source of traffic to your site.</p>
+    pub fn get_country_codes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CountryCode>> {
+        &self.country_codes
+    }
     /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p> <note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
     /// </note>
@@ -99,6 +106,14 @@ impl GeoMatchStatementBuilder {
     ) -> Self {
         self.forwarded_ip_config = input;
         self
+    }
+    /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p> <note>
+    /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
+    /// </note>
+    pub fn get_forwarded_ip_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ForwardedIpConfig> {
+        &self.forwarded_ip_config
     }
     /// Consumes the builder and constructs a [`GeoMatchStatement`](crate::types::GeoMatchStatement).
     pub fn build(self) -> crate::types::GeoMatchStatement {

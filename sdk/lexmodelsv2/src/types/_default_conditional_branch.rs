@@ -51,6 +51,10 @@ impl DefaultConditionalBranchBuilder {
         self.next_step = input;
         self
     }
+    /// <p>The next step in the conversation.</p>
+    pub fn get_next_step(&self) -> &::std::option::Option<crate::types::DialogState> {
+        &self.next_step
+    }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
     pub fn response(mut self, input: crate::types::ResponseSpecification) -> Self {
         self.response = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl DefaultConditionalBranchBuilder {
     ) -> Self {
         self.response = input;
         self
+    }
+    /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
+    pub fn get_response(&self) -> &::std::option::Option<crate::types::ResponseSpecification> {
+        &self.response
     }
     /// Consumes the builder and constructs a [`DefaultConditionalBranch`](crate::types::DefaultConditionalBranch).
     pub fn build(self) -> crate::types::DefaultConditionalBranch {

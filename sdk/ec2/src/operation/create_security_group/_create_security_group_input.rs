@@ -86,6 +86,12 @@ impl CreateSecurityGroupInputBuilder {
         self.description = input;
         self
     }
+    /// <p>A description for the security group.</p>
+    /// <p>Constraints: Up to 255 characters in length</p>
+    /// <p>Valid characters: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The name of the security group.</p>
     /// <p>Constraints: Up to 255 characters in length. Cannot start with <code>sg-</code>.</p>
     /// <p>Valid characters: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*</p>
@@ -100,6 +106,12 @@ impl CreateSecurityGroupInputBuilder {
         self.group_name = input;
         self
     }
+    /// <p>The name of the security group.</p>
+    /// <p>Constraints: Up to 255 characters in length. Cannot start with <code>sg-</code>.</p>
+    /// <p>Valid characters: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
+    }
     /// <p>The ID of the VPC. Required for a nondefault VPC.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -109,6 +121,10 @@ impl CreateSecurityGroupInputBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The ID of the VPC. Required for a nondefault VPC.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// Appends an item to `tag_specifications`.
     ///
@@ -129,6 +145,12 @@ impl CreateSecurityGroupInputBuilder {
         self.tag_specifications = input;
         self
     }
+    /// <p>The tags to assign to the security group.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        &self.tag_specifications
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -138,6 +160,10 @@ impl CreateSecurityGroupInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`CreateSecurityGroupInput`](crate::operation::create_security_group::CreateSecurityGroupInput).
     pub fn build(

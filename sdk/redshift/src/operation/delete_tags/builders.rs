@@ -36,6 +36,10 @@ impl DeleteTagsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteTags as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_tags::builders::DeleteTagsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl DeleteTagsFluentBuilder {
         self.inner = self.inner.set_resource_name(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) from which you want to remove the tag or tags. For example, <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>. </p>
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_name()
+    }
     /// Appends an item to `TagKeys`.
     ///
     /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
@@ -140,5 +148,9 @@ impl DeleteTagsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tag_keys(input);
         self
+    }
+    /// <p>The tag key that you want to delete.</p>
+    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_tag_keys()
     }
 }

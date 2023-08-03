@@ -46,6 +46,10 @@ impl GetCardinalityOutputBuilder {
         self.cardinality = input;
         self
     }
+    /// <p>The approximate count of unique values that match the query.</p>
+    pub fn get_cardinality(&self) -> &::std::option::Option<i32> {
+        &self.cardinality
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

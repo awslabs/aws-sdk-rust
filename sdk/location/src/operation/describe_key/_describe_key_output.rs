@@ -138,6 +138,10 @@ impl DescribeKeyOutputBuilder {
         self.key = input;
         self
     }
+    /// <p>The key value/string of an API key.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>The Amazon Resource Name (ARN) for the API key resource. Used when you need to specify a resource across all Amazon Web Services.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:key/ExampleKey</code> </p> </li>
@@ -154,6 +158,13 @@ impl DescribeKeyOutputBuilder {
         self.key_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the API key resource. Used when you need to specify a resource across all Amazon Web Services.</p>
+    /// <ul>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:key/ExampleKey</code> </p> </li>
+    /// </ul>
+    pub fn get_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_arn
+    }
     /// <p>The name of the API key resource.</p>
     pub fn key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_name = ::std::option::Option::Some(input.into());
@@ -163,6 +174,10 @@ impl DescribeKeyOutputBuilder {
     pub fn set_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_name = input;
         self
+    }
+    /// <p>The name of the API key resource.</p>
+    pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_name
     }
     /// <p>API Restrictions on the allowed actions, resources, and referers for an API key resource.</p>
     pub fn restrictions(mut self, input: crate::types::ApiKeyRestrictions) -> Self {
@@ -177,6 +192,10 @@ impl DescribeKeyOutputBuilder {
         self.restrictions = input;
         self
     }
+    /// <p>API Restrictions on the allowed actions, resources, and referers for an API key resource.</p>
+    pub fn get_restrictions(&self) -> &::std::option::Option<crate::types::ApiKeyRestrictions> {
+        &self.restrictions
+    }
     /// <p>The timestamp for when the API key resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
@@ -189,6 +208,10 @@ impl DescribeKeyOutputBuilder {
     ) -> Self {
         self.create_time = input;
         self
+    }
+    /// <p>The timestamp for when the API key resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_time
     }
     /// <p>The timestamp for when the API key resource will expire in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub fn expire_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -203,6 +226,10 @@ impl DescribeKeyOutputBuilder {
         self.expire_time = input;
         self
     }
+    /// <p>The timestamp for when the API key resource will expire in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    pub fn get_expire_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expire_time
+    }
     /// <p>The timestamp for when the API key resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
@@ -216,6 +243,10 @@ impl DescribeKeyOutputBuilder {
         self.update_time = input;
         self
     }
+    /// <p>The timestamp for when the API key resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_time
+    }
     /// <p>The optional description for the API key resource.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -225,6 +256,10 @@ impl DescribeKeyOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The optional description for the API key resource.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -250,6 +285,14 @@ impl DescribeKeyOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Tags associated with the API key resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

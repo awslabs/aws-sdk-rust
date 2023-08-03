@@ -36,6 +36,12 @@ impl CreateNamespaceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateNamespace as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_namespace::builders::CreateNamespaceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl CreateNamespaceFluentBuilder {
         self.inner = self.inner.set_namespace_name(input);
         self
     }
+    /// <p>The name of the namespace.</p>
+    pub fn get_namespace_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_namespace_name()
+    }
     /// <p>The username of the administrator for the first database created in the namespace.</p>
     pub fn admin_username(
         mut self,
@@ -147,6 +157,10 @@ impl CreateNamespaceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_admin_username(input);
         self
+    }
+    /// <p>The username of the administrator for the first database created in the namespace.</p>
+    pub fn get_admin_username(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_admin_username()
     }
     /// <p>The password of the administrator for the first database created in the namespace.</p>
     pub fn admin_user_password(
@@ -164,6 +178,10 @@ impl CreateNamespaceFluentBuilder {
         self.inner = self.inner.set_admin_user_password(input);
         self
     }
+    /// <p>The password of the administrator for the first database created in the namespace.</p>
+    pub fn get_admin_user_password(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_admin_user_password()
+    }
     /// <p>The name of the first database created in the namespace.</p>
     pub fn db_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_name(input.into());
@@ -174,6 +192,10 @@ impl CreateNamespaceFluentBuilder {
         self.inner = self.inner.set_db_name(input);
         self
     }
+    /// <p>The name of the first database created in the namespace.</p>
+    pub fn get_db_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_name()
+    }
     /// <p>The ID of the Amazon Web Services Key Management Service key used to encrypt your data.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
@@ -183,6 +205,10 @@ impl CreateNamespaceFluentBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
         self
+    }
+    /// <p>The ID of the Amazon Web Services Key Management Service key used to encrypt your data.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key_id()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace.</p>
     pub fn default_iam_role_arn(
@@ -199,6 +225,10 @@ impl CreateNamespaceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_default_iam_role_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace.</p>
+    pub fn get_default_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_default_iam_role_arn()
     }
     /// Appends an item to `iamRoles`.
     ///
@@ -217,6 +247,10 @@ impl CreateNamespaceFluentBuilder {
         self.inner = self.inner.set_iam_roles(input);
         self
     }
+    /// <p>A list of IAM roles to associate with the namespace.</p>
+    pub fn get_iam_roles(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_iam_roles()
+    }
     /// Appends an item to `logExports`.
     ///
     /// To override the contents of this collection use [`set_log_exports`](Self::set_log_exports).
@@ -234,6 +268,12 @@ impl CreateNamespaceFluentBuilder {
         self.inner = self.inner.set_log_exports(input);
         self
     }
+    /// <p>The types of logs the namespace can export. Available export types are <code>userlog</code>, <code>connectionlog</code>, and <code>useractivitylog</code>.</p>
+    pub fn get_log_exports(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LogExport>> {
+        self.inner.get_log_exports()
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -250,5 +290,9 @@ impl CreateNamespaceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A list of tag instances.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

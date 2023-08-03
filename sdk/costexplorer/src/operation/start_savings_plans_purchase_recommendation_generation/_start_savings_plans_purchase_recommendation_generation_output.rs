@@ -68,6 +68,10 @@ impl StartSavingsPlansPurchaseRecommendationGenerationOutputBuilder {
         self.recommendation_id = input;
         self
     }
+    /// <p>The ID for this specific recommendation.</p>
+    pub fn get_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommendation_id
+    }
     /// <p>The start time of the recommendation generation.</p>
     pub fn generation_started_time(
         mut self,
@@ -84,6 +88,10 @@ impl StartSavingsPlansPurchaseRecommendationGenerationOutputBuilder {
         self.generation_started_time = input;
         self
     }
+    /// <p>The start time of the recommendation generation.</p>
+    pub fn get_generation_started_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.generation_started_time
+    }
     /// <p>The estimated time for when the recommendation generation will complete.</p>
     pub fn estimated_completion_time(
         mut self,
@@ -99,6 +107,10 @@ impl StartSavingsPlansPurchaseRecommendationGenerationOutputBuilder {
     ) -> Self {
         self.estimated_completion_time = input;
         self
+    }
+    /// <p>The estimated time for when the recommendation generation will complete.</p>
+    pub fn get_estimated_completion_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.estimated_completion_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

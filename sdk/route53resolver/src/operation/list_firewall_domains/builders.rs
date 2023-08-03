@@ -37,6 +37,12 @@ impl ListFirewallDomainsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListFirewallDomains as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_firewall_domains::builders::ListFirewallDomainsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -144,6 +150,10 @@ impl ListFirewallDomainsFluentBuilder {
         self.inner = self.inner.set_firewall_domain_list_id(input);
         self
     }
+    /// <p>The ID of the domain list whose domains you want to retrieve. </p>
+    pub fn get_firewall_domain_list_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_firewall_domain_list_id()
+    }
     /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -156,6 +166,11 @@ impl ListFirewallDomainsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+    /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>For the first call to this list request, omit this value.</p>
     /// <p>When you request a list of objects, Resolver returns at most the number of objects specified in <code>MaxResults</code>. If more objects are available for retrieval, Resolver returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token that was returned for the prior request in your next request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -167,5 +182,10 @@ impl ListFirewallDomainsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>For the first call to this list request, omit this value.</p>
+    /// <p>When you request a list of objects, Resolver returns at most the number of objects specified in <code>MaxResults</code>. If more objects are available for retrieval, Resolver returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token that was returned for the prior request in your next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

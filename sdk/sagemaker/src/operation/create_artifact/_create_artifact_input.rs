@@ -93,6 +93,10 @@ impl CreateArtifactInputBuilder {
         self.artifact_name = input;
         self
     }
+    /// <p>The name of the artifact. Must be unique to your account in an Amazon Web Services Region.</p>
+    pub fn get_artifact_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.artifact_name
+    }
     /// <p>The ID, ID type, and URI of the source.</p>
     pub fn source(mut self, input: crate::types::ArtifactSource) -> Self {
         self.source = ::std::option::Option::Some(input);
@@ -105,6 +109,10 @@ impl CreateArtifactInputBuilder {
     ) -> Self {
         self.source = input;
         self
+    }
+    /// <p>The ID, ID type, and URI of the source.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::ArtifactSource> {
+        &self.source
     }
     /// <p>The artifact type.</p>
     pub fn artifact_type(
@@ -121,6 +129,10 @@ impl CreateArtifactInputBuilder {
     ) -> Self {
         self.artifact_type = input;
         self
+    }
+    /// <p>The artifact type.</p>
+    pub fn get_artifact_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.artifact_type
     }
     /// Adds a key-value pair to `properties`.
     ///
@@ -147,6 +159,14 @@ impl CreateArtifactInputBuilder {
         self.properties = input;
         self
     }
+    /// <p>A list of properties to add to the artifact.</p>
+    pub fn get_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.properties
+    }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     pub fn metadata_properties(mut self, input: crate::types::MetadataProperties) -> Self {
         self.metadata_properties = ::std::option::Option::Some(input);
@@ -159,6 +179,12 @@ impl CreateArtifactInputBuilder {
     ) -> Self {
         self.metadata_properties = input;
         self
+    }
+    /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
+    pub fn get_metadata_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::MetadataProperties> {
+        &self.metadata_properties
     }
     /// Appends an item to `tags`.
     ///
@@ -178,6 +204,10 @@ impl CreateArtifactInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of tags to apply to the artifact.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateArtifactInput`](crate::operation::create_artifact::CreateArtifactInput).
     pub fn build(

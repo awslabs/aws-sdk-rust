@@ -38,6 +38,12 @@ impl CreateProductFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateProduct as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_product::builders::CreateProductInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +140,14 @@ impl CreateProductFluentBuilder {
         self.inner = self.inner.set_accept_language(input);
         self
     }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_accept_language()
+    }
     /// <p>The name of the product.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -143,6 +157,10 @@ impl CreateProductFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the product.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The owner of the product.</p>
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -154,6 +172,10 @@ impl CreateProductFluentBuilder {
         self.inner = self.inner.set_owner(input);
         self
     }
+    /// <p>The owner of the product.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_owner()
+    }
     /// <p>The description of the product.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -164,6 +186,10 @@ impl CreateProductFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>The description of the product.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>The distributor of the product.</p>
     pub fn distributor(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.distributor(input.into());
@@ -173,6 +199,10 @@ impl CreateProductFluentBuilder {
     pub fn set_distributor(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_distributor(input);
         self
+    }
+    /// <p>The distributor of the product.</p>
+    pub fn get_distributor(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_distributor()
     }
     /// <p>The support information about the product.</p>
     pub fn support_description(
@@ -190,6 +220,10 @@ impl CreateProductFluentBuilder {
         self.inner = self.inner.set_support_description(input);
         self
     }
+    /// <p>The support information about the product.</p>
+    pub fn get_support_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_support_description()
+    }
     /// <p>The contact email for product support.</p>
     pub fn support_email(
         mut self,
@@ -206,6 +240,10 @@ impl CreateProductFluentBuilder {
         self.inner = self.inner.set_support_email(input);
         self
     }
+    /// <p>The contact email for product support.</p>
+    pub fn get_support_email(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_support_email()
+    }
     /// <p>The contact URL for product support.</p>
     /// <p> <code>^https?:\/\// </code>/ is the pattern used to validate SupportUrl.</p>
     pub fn support_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -217,6 +255,11 @@ impl CreateProductFluentBuilder {
     pub fn set_support_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_support_url(input);
         self
+    }
+    /// <p>The contact URL for product support.</p>
+    /// <p> <code>^https?:\/\// </code>/ is the pattern used to validate SupportUrl.</p>
+    pub fn get_support_url(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_support_url()
     }
     /// <p>The type of product.</p>
     pub fn product_type(mut self, input: crate::types::ProductType) -> Self {
@@ -230,6 +273,10 @@ impl CreateProductFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_product_type(input);
         self
+    }
+    /// <p>The type of product.</p>
+    pub fn get_product_type(&self) -> &::std::option::Option<crate::types::ProductType> {
+        self.inner.get_product_type()
     }
     /// Appends an item to `Tags`.
     ///
@@ -248,6 +295,10 @@ impl CreateProductFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>One or more tags.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>The configuration of the provisioning artifact. </p>
     pub fn provisioning_artifact_parameters(
         mut self,
@@ -264,6 +315,12 @@ impl CreateProductFluentBuilder {
         self.inner = self.inner.set_provisioning_artifact_parameters(input);
         self
     }
+    /// <p>The configuration of the provisioning artifact. </p>
+    pub fn get_provisioning_artifact_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProvisioningArtifactProperties> {
+        self.inner.get_provisioning_artifact_parameters()
+    }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     pub fn idempotency_token(
         mut self,
@@ -279,6 +336,10 @@ impl CreateProductFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self
+    }
+    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
+    pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_idempotency_token()
     }
     /// <p>Specifies connection details for the created product and syncs the product to the connection source artifact. This automatically manages the product's artifacts based on changes to the source. The <code>SourceConnection</code> parameter consists of the following sub-fields.</p>
     /// <ul>
@@ -300,5 +361,13 @@ impl CreateProductFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_source_connection(input);
         self
+    }
+    /// <p>Specifies connection details for the created product and syncs the product to the connection source artifact. This automatically manages the product's artifacts based on changes to the source. The <code>SourceConnection</code> parameter consists of the following sub-fields.</p>
+    /// <ul>
+    /// <li> <p> <code>Type</code> </p> </li>
+    /// <li> <p> <code>ConnectionParamters</code> </p> </li>
+    /// </ul>
+    pub fn get_source_connection(&self) -> &::std::option::Option<crate::types::SourceConnection> {
+        self.inner.get_source_connection()
     }
 }

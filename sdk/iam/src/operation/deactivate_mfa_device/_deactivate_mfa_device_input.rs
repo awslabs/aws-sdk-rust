@@ -55,6 +55,11 @@ impl DeactivateMfaDeviceInputBuilder {
         self.user_name = input;
         self
     }
+    /// <p>The name of the user whose MFA device you want to deactivate.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
+    }
     /// <p>The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@:/-</p>
     pub fn serial_number(
@@ -72,6 +77,11 @@ impl DeactivateMfaDeviceInputBuilder {
     ) -> Self {
         self.serial_number = input;
         self
+    }
+    /// <p>The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN.</p>
+    /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@:/-</p>
+    pub fn get_serial_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.serial_number
     }
     /// Consumes the builder and constructs a [`DeactivateMfaDeviceInput`](crate::operation::deactivate_mfa_device::DeactivateMfaDeviceInput).
     pub fn build(

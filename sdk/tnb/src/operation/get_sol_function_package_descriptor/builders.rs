@@ -38,6 +38,10 @@ impl GetSolFunctionPackageDescriptorFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetSolFunctionPackageDescriptor as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_sol_function_package_descriptor::builders::GetSolFunctionPackageDescriptorInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -102,6 +106,10 @@ impl GetSolFunctionPackageDescriptorFluentBuilder {
         self.inner = self.inner.set_vnf_pkg_id(input);
         self
     }
+    /// <p>ID of the function package.</p>
+    pub fn get_vnf_pkg_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vnf_pkg_id()
+    }
     /// <p>Indicates which content types, expressed as MIME types, the client is able to understand.</p>
     pub fn accept(mut self, input: crate::types::DescriptorContentType) -> Self {
         self.inner = self.inner.accept(input);
@@ -114,5 +122,9 @@ impl GetSolFunctionPackageDescriptorFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_accept(input);
         self
+    }
+    /// <p>Indicates which content types, expressed as MIME types, the client is able to understand.</p>
+    pub fn get_accept(&self) -> &::std::option::Option<crate::types::DescriptorContentType> {
+        self.inner.get_accept()
     }
 }

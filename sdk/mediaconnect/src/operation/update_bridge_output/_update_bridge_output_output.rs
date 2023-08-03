@@ -55,6 +55,10 @@ impl UpdateBridgeOutputOutputBuilder {
         self.bridge_arn = input;
         self
     }
+    /// The Amazon Resource Number (ARN) of the bridge.
+    pub fn get_bridge_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bridge_arn
+    }
     /// The output that you updated.
     pub fn output(mut self, input: crate::types::BridgeOutput) -> Self {
         self.output = ::std::option::Option::Some(input);
@@ -64,6 +68,10 @@ impl UpdateBridgeOutputOutputBuilder {
     pub fn set_output(mut self, input: ::std::option::Option<crate::types::BridgeOutput>) -> Self {
         self.output = input;
         self
+    }
+    /// The output that you updated.
+    pub fn get_output(&self) -> &::std::option::Option<crate::types::BridgeOutput> {
+        &self.output
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

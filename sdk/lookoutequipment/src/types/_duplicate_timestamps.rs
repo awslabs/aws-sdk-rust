@@ -43,6 +43,10 @@ impl DuplicateTimestampsBuilder {
         self.total_number_of_duplicate_timestamps = input;
         self
     }
+    /// <p> Indicates the total number of duplicate timestamps. </p>
+    pub fn get_total_number_of_duplicate_timestamps(&self) -> &::std::option::Option<i32> {
+        &self.total_number_of_duplicate_timestamps
+    }
     /// Consumes the builder and constructs a [`DuplicateTimestamps`](crate::types::DuplicateTimestamps).
     pub fn build(self) -> crate::types::DuplicateTimestamps {
         crate::types::DuplicateTimestamps {

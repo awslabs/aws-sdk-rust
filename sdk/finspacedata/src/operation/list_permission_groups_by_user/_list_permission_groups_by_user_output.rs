@@ -67,6 +67,12 @@ impl ListPermissionGroupsByUserOutputBuilder {
         self.permission_groups = input;
         self
     }
+    /// <p>A list of returned permission groups.</p>
+    pub fn get_permission_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionGroupByUser>> {
+        &self.permission_groups
+    }
     /// <p>A token that indicates where a results page should begin.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -76,6 +82,10 @@ impl ListPermissionGroupsByUserOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token that indicates where a results page should begin.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

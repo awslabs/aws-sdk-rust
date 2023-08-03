@@ -52,6 +52,10 @@ impl GetMediaFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetMedia as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_media::builders::GetMediaInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +138,10 @@ impl GetMediaFluentBuilder {
         self.inner = self.inner.set_stream_name(input);
         self
     }
+    /// <p>The Kinesis video stream name from where you want to get the media content. If you don't specify the <code>streamName</code>, you must specify the <code>streamARN</code>.</p>
+    pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_name()
+    }
     /// <p>The ARN of the stream from where you want to get the media content. If you don't specify the <code>streamARN</code>, you must specify the <code>streamName</code>.</p>
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stream_arn(input.into());
@@ -143,6 +151,10 @@ impl GetMediaFluentBuilder {
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stream_arn(input);
         self
+    }
+    /// <p>The ARN of the stream from where you want to get the media content. If you don't specify the <code>streamARN</code>, you must specify the <code>streamName</code>.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_arn()
     }
     /// <p>Identifies the starting chunk to get from the specified stream. </p>
     pub fn start_selector(mut self, input: crate::types::StartSelector) -> Self {
@@ -156,5 +168,9 @@ impl GetMediaFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_start_selector(input);
         self
+    }
+    /// <p>Identifies the starting chunk to get from the specified stream. </p>
+    pub fn get_start_selector(&self) -> &::std::option::Option<crate::types::StartSelector> {
+        self.inner.get_start_selector()
     }
 }

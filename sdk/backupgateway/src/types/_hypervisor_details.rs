@@ -111,6 +111,10 @@ impl HypervisorDetailsBuilder {
         self.host = input;
         self
     }
+    /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
+    pub fn get_host(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host
+    }
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
     pub fn hypervisor_arn(
         mut self,
@@ -127,6 +131,10 @@ impl HypervisorDetailsBuilder {
         self.hypervisor_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
+    pub fn get_hypervisor_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hypervisor_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the KMS used to encrypt the hypervisor.</p>
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_arn = ::std::option::Option::Some(input.into());
@@ -137,6 +145,10 @@ impl HypervisorDetailsBuilder {
         self.kms_key_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the KMS used to encrypt the hypervisor.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
+    }
     /// <p>This is the name of the specified hypervisor.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -146,6 +158,10 @@ impl HypervisorDetailsBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>This is the name of the specified hypervisor.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The Amazon Resource Name (ARN) of the group of gateways within the requested log.</p>
     pub fn log_group_arn(
@@ -163,6 +179,10 @@ impl HypervisorDetailsBuilder {
         self.log_group_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the group of gateways within the requested log.</p>
+    pub fn get_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group_arn
+    }
     /// <p>This is the current state of the specified hypervisor.</p>
     /// <p>The possible states are <code>PENDING</code>, <code>ONLINE</code>, <code>OFFLINE</code>, or <code>ERROR</code>.</p>
     pub fn state(mut self, input: crate::types::HypervisorState) -> Self {
@@ -177,6 +197,11 @@ impl HypervisorDetailsBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>This is the current state of the specified hypervisor.</p>
+    /// <p>The possible states are <code>PENDING</code>, <code>ONLINE</code>, <code>OFFLINE</code>, or <code>ERROR</code>.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::HypervisorState> {
+        &self.state
     }
     /// <p>This is the time when the most recent successful sync of metadata occurred.</p>
     pub fn last_successful_metadata_sync_time(
@@ -193,6 +218,12 @@ impl HypervisorDetailsBuilder {
     ) -> Self {
         self.last_successful_metadata_sync_time = input;
         self
+    }
+    /// <p>This is the time when the most recent successful sync of metadata occurred.</p>
+    pub fn get_last_successful_metadata_sync_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_successful_metadata_sync_time
     }
     /// <p>This is the most recent status for the indicated metadata sync.</p>
     pub fn latest_metadata_sync_status_message(
@@ -211,6 +242,12 @@ impl HypervisorDetailsBuilder {
         self
     }
     /// <p>This is the most recent status for the indicated metadata sync.</p>
+    pub fn get_latest_metadata_sync_status_message(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.latest_metadata_sync_status_message
+    }
+    /// <p>This is the most recent status for the indicated metadata sync.</p>
     pub fn latest_metadata_sync_status(mut self, input: crate::types::SyncMetadataStatus) -> Self {
         self.latest_metadata_sync_status = ::std::option::Option::Some(input);
         self
@@ -222,6 +259,12 @@ impl HypervisorDetailsBuilder {
     ) -> Self {
         self.latest_metadata_sync_status = input;
         self
+    }
+    /// <p>This is the most recent status for the indicated metadata sync.</p>
+    pub fn get_latest_metadata_sync_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::SyncMetadataStatus> {
+        &self.latest_metadata_sync_status
     }
     /// Consumes the builder and constructs a [`HypervisorDetails`](crate::types::HypervisorDetails).
     pub fn build(self) -> crate::types::HypervisorDetails {

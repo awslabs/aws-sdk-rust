@@ -56,6 +56,10 @@ impl DetectorStateBuilder {
         self.state_name = input;
         self
     }
+    /// <p>The name of the state.</p>
+    pub fn get_state_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_name
+    }
     /// Appends an item to `variables`.
     ///
     /// To override the contents of this collection use [`set_variables`](Self::set_variables).
@@ -75,6 +79,10 @@ impl DetectorStateBuilder {
         self.variables = input;
         self
     }
+    /// <p>The current values of the detector's variables.</p>
+    pub fn get_variables(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Variable>> {
+        &self.variables
+    }
     /// Appends an item to `timers`.
     ///
     /// To override the contents of this collection use [`set_timers`](Self::set_timers).
@@ -93,6 +101,10 @@ impl DetectorStateBuilder {
     ) -> Self {
         self.timers = input;
         self
+    }
+    /// <p>The current state of the detector's timers.</p>
+    pub fn get_timers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Timer>> {
+        &self.timers
     }
     /// Consumes the builder and constructs a [`DetectorState`](crate::types::DetectorState).
     pub fn build(self) -> crate::types::DetectorState {

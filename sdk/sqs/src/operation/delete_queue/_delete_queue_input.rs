@@ -44,6 +44,11 @@ impl DeleteQueueInputBuilder {
         self.queue_url = input;
         self
     }
+    /// <p>The URL of the Amazon SQS queue to delete.</p>
+    /// <p>Queue URLs and names are case-sensitive.</p>
+    pub fn get_queue_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.queue_url
+    }
     /// Consumes the builder and constructs a [`DeleteQueueInput`](crate::operation::delete_queue::DeleteQueueInput).
     pub fn build(
         self,

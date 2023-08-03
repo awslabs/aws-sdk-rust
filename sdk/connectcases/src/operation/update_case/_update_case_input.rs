@@ -55,6 +55,10 @@ impl UpdateCaseInputBuilder {
         self.domain_id = input;
         self
     }
+    /// <p>The unique identifier of the Cases domain. </p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_id
+    }
     /// <p>A unique identifier of the case.</p>
     pub fn case_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.case_id = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl UpdateCaseInputBuilder {
     pub fn set_case_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.case_id = input;
         self
+    }
+    /// <p>A unique identifier of the case.</p>
+    pub fn get_case_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.case_id
     }
     /// Appends an item to `fields`.
     ///
@@ -83,6 +91,10 @@ impl UpdateCaseInputBuilder {
     ) -> Self {
         self.fields = input;
         self
+    }
+    /// <p>An array of objects with <code>fieldId</code> (matching ListFields/DescribeField) and value union data, structured identical to <code>CreateCase</code>.</p>
+    pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldValue>> {
+        &self.fields
     }
     /// Consumes the builder and constructs a [`UpdateCaseInput`](crate::operation::update_case::UpdateCaseInput).
     pub fn build(

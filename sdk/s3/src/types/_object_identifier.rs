@@ -56,6 +56,12 @@ impl ObjectIdentifierBuilder {
         self.key = input;
         self
     }
+    /// <p>Key name of the object.</p> <important>
+    /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
+    /// </important>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>VersionId for the specific version of the object to delete.</p>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_id = ::std::option::Option::Some(input.into());
@@ -65,6 +71,10 @@ impl ObjectIdentifierBuilder {
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_id = input;
         self
+    }
+    /// <p>VersionId for the specific version of the object to delete.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_id
     }
     /// Consumes the builder and constructs a [`ObjectIdentifier`](crate::types::ObjectIdentifier).
     pub fn build(self) -> crate::types::ObjectIdentifier {

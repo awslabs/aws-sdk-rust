@@ -83,6 +83,12 @@ impl LocalGatewayVirtualInterfaceGroupBuilder {
         self.local_gateway_virtual_interface_group_id = input;
         self
     }
+    /// <p>The ID of the virtual interface group.</p>
+    pub fn get_local_gateway_virtual_interface_group_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.local_gateway_virtual_interface_group_id
+    }
     /// Appends an item to `local_gateway_virtual_interface_ids`.
     ///
     /// To override the contents of this collection use [`set_local_gateway_virtual_interface_ids`](Self::set_local_gateway_virtual_interface_ids).
@@ -105,6 +111,12 @@ impl LocalGatewayVirtualInterfaceGroupBuilder {
         self.local_gateway_virtual_interface_ids = input;
         self
     }
+    /// <p>The IDs of the virtual interfaces.</p>
+    pub fn get_local_gateway_virtual_interface_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.local_gateway_virtual_interface_ids
+    }
     /// <p>The ID of the local gateway.</p>
     pub fn local_gateway_id(
         mut self,
@@ -121,6 +133,10 @@ impl LocalGatewayVirtualInterfaceGroupBuilder {
         self.local_gateway_id = input;
         self
     }
+    /// <p>The ID of the local gateway.</p>
+    pub fn get_local_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.local_gateway_id
+    }
     /// <p>The ID of the Amazon Web Services account that owns the local gateway virtual interface group.</p>
     pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_id = ::std::option::Option::Some(input.into());
@@ -130,6 +146,10 @@ impl LocalGatewayVirtualInterfaceGroupBuilder {
     pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_id = input;
         self
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the local gateway virtual interface group.</p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
     }
     /// Appends an item to `tags`.
     ///
@@ -149,6 +169,10 @@ impl LocalGatewayVirtualInterfaceGroupBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags assigned to the virtual interface group.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`LocalGatewayVirtualInterfaceGroup`](crate::types::LocalGatewayVirtualInterfaceGroup).
     pub fn build(self) -> crate::types::LocalGatewayVirtualInterfaceGroup {

@@ -60,6 +60,12 @@ impl WaterfallChartSortConfigurationBuilder {
         self.category_sort = input;
         self
     }
+    /// <p>The sort configuration of the category fields.</p>
+    pub fn get_category_sort(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>> {
+        &self.category_sort
+    }
     /// <p>The limit on the number of bar groups that are displayed.</p>
     pub fn breakdown_items_limit(mut self, input: crate::types::ItemsLimitConfiguration) -> Self {
         self.breakdown_items_limit = ::std::option::Option::Some(input);
@@ -72,6 +78,12 @@ impl WaterfallChartSortConfigurationBuilder {
     ) -> Self {
         self.breakdown_items_limit = input;
         self
+    }
+    /// <p>The limit on the number of bar groups that are displayed.</p>
+    pub fn get_breakdown_items_limit(
+        &self,
+    ) -> &::std::option::Option<crate::types::ItemsLimitConfiguration> {
+        &self.breakdown_items_limit
     }
     /// Consumes the builder and constructs a [`WaterfallChartSortConfiguration`](crate::types::WaterfallChartSortConfiguration).
     pub fn build(self) -> crate::types::WaterfallChartSortConfiguration {

@@ -56,6 +56,10 @@ impl ItemsLimitConfigurationBuilder {
         self.items_limit = input;
         self
     }
+    /// <p>The limit on how many items of a field are showed in the chart. For example, the number of slices that are displayed in a pie chart.</p>
+    pub fn get_items_limit(&self) -> &::std::option::Option<i64> {
+        &self.items_limit
+    }
     /// <p>The <code>Show other</code> of an axis in the chart. Choose one of the following options:</p>
     /// <ul>
     /// <li> <p> <code>INCLUDE</code> </p> </li>
@@ -76,6 +80,14 @@ impl ItemsLimitConfigurationBuilder {
     ) -> Self {
         self.other_categories = input;
         self
+    }
+    /// <p>The <code>Show other</code> of an axis in the chart. Choose one of the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>INCLUDE</code> </p> </li>
+    /// <li> <p> <code>EXCLUDE</code> </p> </li>
+    /// </ul>
+    pub fn get_other_categories(&self) -> &::std::option::Option<crate::types::OtherCategories> {
+        &self.other_categories
     }
     /// Consumes the builder and constructs a [`ItemsLimitConfiguration`](crate::types::ItemsLimitConfiguration).
     pub fn build(self) -> crate::types::ItemsLimitConfiguration {

@@ -45,6 +45,10 @@ impl DescribeModelBiasJobDefinitionInputBuilder {
         self.job_definition_name = input;
         self
     }
+    /// <p>The name of the model bias job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
+    pub fn get_job_definition_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_definition_name
+    }
     /// Consumes the builder and constructs a [`DescribeModelBiasJobDefinitionInput`](crate::operation::describe_model_bias_job_definition::DescribeModelBiasJobDefinitionInput).
     pub fn build(
         self,

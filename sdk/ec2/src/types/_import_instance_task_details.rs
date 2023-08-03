@@ -68,6 +68,10 @@ impl ImportInstanceTaskDetailsBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of the task.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The ID of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -77,6 +81,10 @@ impl ImportInstanceTaskDetailsBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
+    }
+    /// <p>The ID of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
     }
     /// <p>The instance operating system.</p>
     pub fn platform(mut self, input: crate::types::PlatformValues) -> Self {
@@ -90,6 +98,10 @@ impl ImportInstanceTaskDetailsBuilder {
     ) -> Self {
         self.platform = input;
         self
+    }
+    /// <p>The instance operating system.</p>
+    pub fn get_platform(&self) -> &::std::option::Option<crate::types::PlatformValues> {
+        &self.platform
     }
     /// Appends an item to `volumes`.
     ///
@@ -109,6 +121,12 @@ impl ImportInstanceTaskDetailsBuilder {
     ) -> Self {
         self.volumes = input;
         self
+    }
+    /// <p>The volumes.</p>
+    pub fn get_volumes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportInstanceVolumeDetailItem>> {
+        &self.volumes
     }
     /// Consumes the builder and constructs a [`ImportInstanceTaskDetails`](crate::types::ImportInstanceTaskDetails).
     pub fn build(self) -> crate::types::ImportInstanceTaskDetails {

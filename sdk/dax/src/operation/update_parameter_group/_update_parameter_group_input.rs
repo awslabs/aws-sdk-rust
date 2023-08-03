@@ -62,6 +62,10 @@ impl UpdateParameterGroupInputBuilder {
         self.parameter_group_name = input;
         self
     }
+    /// <p>The name of the parameter group.</p>
+    pub fn get_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameter_group_name
+    }
     /// Appends an item to `parameter_name_values`.
     ///
     /// To override the contents of this collection use [`set_parameter_name_values`](Self::set_parameter_name_values).
@@ -84,6 +88,14 @@ impl UpdateParameterGroupInputBuilder {
     ) -> Self {
         self.parameter_name_values = input;
         self
+    }
+    /// <p>An array of name-value pairs for the parameters in the group. Each element in the array represents a single parameter.</p> <note>
+    /// <p> <code>record-ttl-millis</code> and <code>query-ttl-millis</code> are the only supported parameter names. For more details, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl">Configuring TTL Settings</a>.</p>
+    /// </note>
+    pub fn get_parameter_name_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterNameValue>> {
+        &self.parameter_name_values
     }
     /// Consumes the builder and constructs a [`UpdateParameterGroupInput`](crate::operation::update_parameter_group::UpdateParameterGroupInput).
     pub fn build(

@@ -54,6 +54,10 @@ impl AlertTargetBuilder {
         self.alert_target_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the notification target to which alerts are sent.</p>
+    pub fn get_alert_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alert_target_arn
+    }
     /// <p>The ARN of the role that grants permission to send alerts to the notification target.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl AlertTargetBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The ARN of the role that grants permission to send alerts to the notification target.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Consumes the builder and constructs a [`AlertTarget`](crate::types::AlertTarget).
     pub fn build(self) -> crate::types::AlertTarget {

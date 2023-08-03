@@ -43,6 +43,10 @@ impl NotificationTargetActionsBuilder {
         self.lambda_action = input;
         self
     }
+    /// <p>Calls a Lambda function, passing in information about the detector model instance and the event that triggered the action.</p>
+    pub fn get_lambda_action(&self) -> &::std::option::Option<crate::types::LambdaAction> {
+        &self.lambda_action
+    }
     /// Consumes the builder and constructs a [`NotificationTargetActions`](crate::types::NotificationTargetActions).
     pub fn build(self) -> crate::types::NotificationTargetActions {
         crate::types::NotificationTargetActions {

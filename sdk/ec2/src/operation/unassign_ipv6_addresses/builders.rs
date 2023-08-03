@@ -36,6 +36,13 @@ impl UnassignIpv6AddressesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UnassignIpv6Addresses as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::unassign_ipv6_addresses::builders::UnassignIpv6AddressesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +143,12 @@ impl UnassignIpv6AddressesFluentBuilder {
         self.inner = self.inner.set_ipv6_addresses(input);
         self
     }
+    /// <p>The IPv6 addresses to unassign from the network interface.</p>
+    pub fn get_ipv6_addresses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_ipv6_addresses()
+    }
     /// Appends an item to `Ipv6Prefixes`.
     ///
     /// To override the contents of this collection use [`set_ipv6_prefixes`](Self::set_ipv6_prefixes).
@@ -156,6 +169,12 @@ impl UnassignIpv6AddressesFluentBuilder {
         self.inner = self.inner.set_ipv6_prefixes(input);
         self
     }
+    /// <p>The IPv6 prefixes to unassign from the network interface.</p>
+    pub fn get_ipv6_prefixes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_ipv6_prefixes()
+    }
     /// <p>The ID of the network interface.</p>
     pub fn network_interface_id(
         mut self,
@@ -171,5 +190,9 @@ impl UnassignIpv6AddressesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_network_interface_id(input);
         self
+    }
+    /// <p>The ID of the network interface.</p>
+    pub fn get_network_interface_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_network_interface_id()
     }
 }

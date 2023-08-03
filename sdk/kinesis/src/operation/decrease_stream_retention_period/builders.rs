@@ -39,6 +39,10 @@ impl DecreaseStreamRetentionPeriodFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DecreaseStreamRetentionPeriod as a reference.
+    pub fn as_input(&self) -> &crate::operation::decrease_stream_retention_period::builders::DecreaseStreamRetentionPeriodInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +133,10 @@ impl DecreaseStreamRetentionPeriodFluentBuilder {
         self.inner = self.inner.set_stream_name(input);
         self
     }
+    /// <p>The name of the stream to modify.</p>
+    pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_name()
+    }
     /// <p>The new retention period of the stream, in hours. Must be less than the current retention period.</p>
     pub fn retention_period_hours(mut self, input: i32) -> Self {
         self.inner = self.inner.retention_period_hours(input);
@@ -139,6 +147,10 @@ impl DecreaseStreamRetentionPeriodFluentBuilder {
         self.inner = self.inner.set_retention_period_hours(input);
         self
     }
+    /// <p>The new retention period of the stream, in hours. Must be less than the current retention period.</p>
+    pub fn get_retention_period_hours(&self) -> &::std::option::Option<i32> {
+        self.inner.get_retention_period_hours()
+    }
     /// <p>The ARN of the stream.</p>
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stream_arn(input.into());
@@ -148,5 +160,9 @@ impl DecreaseStreamRetentionPeriodFluentBuilder {
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stream_arn(input);
         self
+    }
+    /// <p>The ARN of the stream.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stream_arn()
     }
 }

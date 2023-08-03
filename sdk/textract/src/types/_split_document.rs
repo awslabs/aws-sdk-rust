@@ -48,6 +48,10 @@ impl SplitDocumentBuilder {
         self.index = input;
         self
     }
+    /// <p>The index for a given document in a DocumentGroup of a specific Type.</p>
+    pub fn get_index(&self) -> &::std::option::Option<i32> {
+        &self.index
+    }
     /// Appends an item to `pages`.
     ///
     /// To override the contents of this collection use [`set_pages`](Self::set_pages).
@@ -63,6 +67,10 @@ impl SplitDocumentBuilder {
     pub fn set_pages(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.pages = input;
         self
+    }
+    /// <p>An array of page numbers for a for a given document, ordered by logical boundary.</p>
+    pub fn get_pages(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        &self.pages
     }
     /// Consumes the builder and constructs a [`SplitDocument`](crate::types::SplitDocument).
     pub fn build(self) -> crate::types::SplitDocument {

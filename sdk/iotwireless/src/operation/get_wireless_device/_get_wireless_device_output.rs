@@ -130,6 +130,10 @@ impl GetWirelessDeviceOutputBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The wireless device type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::WirelessDeviceType> {
+        &self.r#type
+    }
     /// <p>The name of the resource.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -140,6 +144,10 @@ impl GetWirelessDeviceOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the resource.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the resource.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -149,6 +157,10 @@ impl GetWirelessDeviceOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the resource.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The name of the destination to which the device is assigned.</p>
     pub fn destination_name(
@@ -166,6 +178,10 @@ impl GetWirelessDeviceOutputBuilder {
         self.destination_name = input;
         self
     }
+    /// <p>The name of the destination to which the device is assigned.</p>
+    pub fn get_destination_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_name
+    }
     /// <p>The ID of the wireless device.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -175,6 +191,10 @@ impl GetWirelessDeviceOutputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The ID of the wireless device.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The Amazon Resource Name of the resource.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -186,6 +206,10 @@ impl GetWirelessDeviceOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name of the resource.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the thing associated with the wireless device. The value is empty if a thing isn't associated with the device.</p>
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_name = ::std::option::Option::Some(input.into());
@@ -196,6 +220,10 @@ impl GetWirelessDeviceOutputBuilder {
         self.thing_name = input;
         self
     }
+    /// <p>The name of the thing associated with the wireless device. The value is empty if a thing isn't associated with the device.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_name
+    }
     /// <p>The ARN of the thing associated with the wireless device.</p>
     pub fn thing_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_arn = ::std::option::Option::Some(input.into());
@@ -205,6 +233,10 @@ impl GetWirelessDeviceOutputBuilder {
     pub fn set_thing_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_arn = input;
         self
+    }
+    /// <p>The ARN of the thing associated with the wireless device.</p>
+    pub fn get_thing_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_arn
     }
     /// <p>Information about the wireless device.</p>
     pub fn lo_ra_wan(mut self, input: crate::types::LoRaWanDevice) -> Self {
@@ -219,6 +251,10 @@ impl GetWirelessDeviceOutputBuilder {
         self.lo_ra_wan = input;
         self
     }
+    /// <p>Information about the wireless device.</p>
+    pub fn get_lo_ra_wan(&self) -> &::std::option::Option<crate::types::LoRaWanDevice> {
+        &self.lo_ra_wan
+    }
     /// <p>Sidewalk device object.</p>
     pub fn sidewalk(mut self, input: crate::types::SidewalkDevice) -> Self {
         self.sidewalk = ::std::option::Option::Some(input);
@@ -232,6 +268,10 @@ impl GetWirelessDeviceOutputBuilder {
         self.sidewalk = input;
         self
     }
+    /// <p>Sidewalk device object.</p>
+    pub fn get_sidewalk(&self) -> &::std::option::Option<crate::types::SidewalkDevice> {
+        &self.sidewalk
+    }
     /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
     pub fn positioning(mut self, input: crate::types::PositioningConfigStatus) -> Self {
         self.positioning = ::std::option::Option::Some(input);
@@ -244,6 +284,10 @@ impl GetWirelessDeviceOutputBuilder {
     ) -> Self {
         self.positioning = input;
         self
+    }
+    /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
+    pub fn get_positioning(&self) -> &::std::option::Option<crate::types::PositioningConfigStatus> {
+        &self.positioning
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

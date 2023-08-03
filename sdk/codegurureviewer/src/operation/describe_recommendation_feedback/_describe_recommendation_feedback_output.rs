@@ -51,6 +51,12 @@ impl DescribeRecommendationFeedbackOutputBuilder {
         self.recommendation_feedback = input;
         self
     }
+    /// <p>The recommendation feedback given by the user.</p>
+    pub fn get_recommendation_feedback(
+        &self,
+    ) -> &::std::option::Option<crate::types::RecommendationFeedback> {
+        &self.recommendation_feedback
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

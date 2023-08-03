@@ -47,6 +47,10 @@ impl GetContentInputBuilder {
         self.content_id = input;
         self
     }
+    /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn get_content_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_id
+    }
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn knowledge_base_id(
         mut self,
@@ -62,6 +66,10 @@ impl GetContentInputBuilder {
     ) -> Self {
         self.knowledge_base_id = input;
         self
+    }
+    /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.knowledge_base_id
     }
     /// Consumes the builder and constructs a [`GetContentInput`](crate::operation::get_content::GetContentInput).
     pub fn build(

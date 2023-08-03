@@ -40,6 +40,10 @@ impl GetImportJobInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The ID of the import job.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// Consumes the builder and constructs a [`GetImportJobInput`](crate::operation::get_import_job::GetImportJobInput).
     pub fn build(
         self,

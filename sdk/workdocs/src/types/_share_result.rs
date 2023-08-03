@@ -90,6 +90,10 @@ impl ShareResultBuilder {
         self.principal_id = input;
         self
     }
+    /// <p>The ID of the principal.</p>
+    pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.principal_id
+    }
     /// <p>The ID of the invited user.</p>
     pub fn invitee_principal_id(
         mut self,
@@ -106,6 +110,10 @@ impl ShareResultBuilder {
         self.invitee_principal_id = input;
         self
     }
+    /// <p>The ID of the invited user.</p>
+    pub fn get_invitee_principal_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.invitee_principal_id
+    }
     /// <p>The role.</p>
     pub fn role(mut self, input: crate::types::RoleType) -> Self {
         self.role = ::std::option::Option::Some(input);
@@ -115,6 +123,10 @@ impl ShareResultBuilder {
     pub fn set_role(mut self, input: ::std::option::Option<crate::types::RoleType>) -> Self {
         self.role = input;
         self
+    }
+    /// <p>The role.</p>
+    pub fn get_role(&self) -> &::std::option::Option<crate::types::RoleType> {
+        &self.role
     }
     /// <p>The status.</p>
     pub fn status(mut self, input: crate::types::ShareStatusType) -> Self {
@@ -129,6 +141,10 @@ impl ShareResultBuilder {
         self.status = input;
         self
     }
+    /// <p>The status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ShareStatusType> {
+        &self.status
+    }
     /// <p>The ID of the resource that was shared.</p>
     pub fn share_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.share_id = ::std::option::Option::Some(input.into());
@@ -138,6 +154,10 @@ impl ShareResultBuilder {
     pub fn set_share_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.share_id = input;
         self
+    }
+    /// <p>The ID of the resource that was shared.</p>
+    pub fn get_share_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.share_id
     }
     /// <p>The status message.</p>
     pub fn status_message(
@@ -154,6 +174,10 @@ impl ShareResultBuilder {
     ) -> Self {
         self.status_message = input;
         self
+    }
+    /// <p>The status message.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     /// Consumes the builder and constructs a [`ShareResult`](crate::types::ShareResult).
     pub fn build(self) -> crate::types::ShareResult {

@@ -68,6 +68,12 @@ impl BatchGetDeploymentGroupsOutputBuilder {
         self.deployment_groups_info = input;
         self
     }
+    /// <p>Information about the deployment groups.</p>
+    pub fn get_deployment_groups_info(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentGroupInfo>> {
+        &self.deployment_groups_info
+    }
     /// <p>Information about errors that might have occurred during the API call.</p>
     pub fn error_message(
         mut self,
@@ -83,6 +89,10 @@ impl BatchGetDeploymentGroupsOutputBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>Information about errors that might have occurred during the API call.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

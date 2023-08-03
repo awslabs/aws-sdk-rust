@@ -53,6 +53,12 @@ impl DescribeJournalS3ExportOutputBuilder {
         self.export_description = input;
         self
     }
+    /// <p>Information about the journal export job returned by a <code>DescribeJournalS3Export</code> request.</p>
+    pub fn get_export_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::JournalS3ExportDescription> {
+        &self.export_description
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -54,6 +54,10 @@ impl VerifiedAccessInstanceLoggingConfigurationBuilder {
         self.verified_access_instance_id = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
+    pub fn get_verified_access_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.verified_access_instance_id
+    }
     /// <p>Details about the logging options.</p>
     pub fn access_logs(mut self, input: crate::types::VerifiedAccessLogs) -> Self {
         self.access_logs = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl VerifiedAccessInstanceLoggingConfigurationBuilder {
     ) -> Self {
         self.access_logs = input;
         self
+    }
+    /// <p>Details about the logging options.</p>
+    pub fn get_access_logs(&self) -> &::std::option::Option<crate::types::VerifiedAccessLogs> {
+        &self.access_logs
     }
     /// Consumes the builder and constructs a [`VerifiedAccessInstanceLoggingConfiguration`](crate::types::VerifiedAccessInstanceLoggingConfiguration).
     pub fn build(self) -> crate::types::VerifiedAccessInstanceLoggingConfiguration {

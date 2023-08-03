@@ -39,6 +39,10 @@ impl DeleteMlModelInputBuilder {
         self.ml_model_id = input;
         self
     }
+    /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>.</p>
+    pub fn get_ml_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ml_model_id
+    }
     /// Consumes the builder and constructs a [`DeleteMlModelInput`](crate::operation::delete_ml_model::DeleteMlModelInput).
     pub fn build(
         self,

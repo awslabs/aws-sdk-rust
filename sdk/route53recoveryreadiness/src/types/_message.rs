@@ -40,6 +40,10 @@ impl MessageBuilder {
         self.message_text = input;
         self
     }
+    /// <p>The text of a readiness check message.</p>
+    pub fn get_message_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message_text
+    }
     /// Consumes the builder and constructs a [`Message`](crate::types::Message).
     pub fn build(self) -> crate::types::Message {
         crate::types::Message {

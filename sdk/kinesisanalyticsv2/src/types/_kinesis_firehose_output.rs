@@ -40,6 +40,10 @@ impl KinesisFirehoseOutputBuilder {
         self.resource_arn = input;
         self
     }
+    /// <p>The ARN of the destination delivery stream to write to.</p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// Consumes the builder and constructs a [`KinesisFirehoseOutput`](crate::types::KinesisFirehoseOutput).
     pub fn build(self) -> crate::types::KinesisFirehoseOutput {
         crate::types::KinesisFirehoseOutput {

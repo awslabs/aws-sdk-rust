@@ -72,6 +72,10 @@ impl PutPartnerEventsRequestEntryBuilder {
         self.time = input;
         self
     }
+    /// <p>The date and time of the event.</p>
+    pub fn get_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.time
+    }
     /// <p>The event source that is generating the entry.</p>
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl PutPartnerEventsRequestEntryBuilder {
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source = input;
         self
+    }
+    /// <p>The event source that is generating the entry.</p>
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source
     }
     /// Appends an item to `resources`.
     ///
@@ -101,6 +109,10 @@ impl PutPartnerEventsRequestEntryBuilder {
         self.resources = input;
         self
     }
+    /// <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number, including zero, may be present.</p>
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resources
+    }
     /// <p>A free-form string, with a maximum of 128 characters, used to decide what fields to expect in the event detail.</p>
     pub fn detail_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detail_type = ::std::option::Option::Some(input.into());
@@ -111,6 +123,10 @@ impl PutPartnerEventsRequestEntryBuilder {
         self.detail_type = input;
         self
     }
+    /// <p>A free-form string, with a maximum of 128 characters, used to decide what fields to expect in the event detail.</p>
+    pub fn get_detail_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detail_type
+    }
     /// <p>A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested subobjects.</p>
     pub fn detail(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detail = ::std::option::Option::Some(input.into());
@@ -120,6 +136,10 @@ impl PutPartnerEventsRequestEntryBuilder {
     pub fn set_detail(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detail = input;
         self
+    }
+    /// <p>A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested subobjects.</p>
+    pub fn get_detail(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detail
     }
     /// Consumes the builder and constructs a [`PutPartnerEventsRequestEntry`](crate::types::PutPartnerEventsRequestEntry).
     pub fn build(self) -> crate::types::PutPartnerEventsRequestEntry {

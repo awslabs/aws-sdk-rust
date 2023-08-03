@@ -81,6 +81,10 @@ impl TerminationBuilder {
         self.cps_limit = input;
         self
     }
+    /// <p>The limit on calls per second. Max value based on account service quota. Default value of 1.</p>
+    pub fn get_cps_limit(&self) -> &::std::option::Option<i32> {
+        &self.cps_limit
+    }
     /// <p>The default caller ID phone number.</p>
     pub fn default_phone_number(
         mut self,
@@ -96,6 +100,10 @@ impl TerminationBuilder {
     ) -> Self {
         self.default_phone_number = input;
         self
+    }
+    /// <p>The default caller ID phone number.</p>
+    pub fn get_default_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.default_phone_number
     }
     /// Appends an item to `calling_regions`.
     ///
@@ -119,6 +127,12 @@ impl TerminationBuilder {
         self.calling_regions = input;
         self
     }
+    /// <p>The countries to which calls are allowed, in ISO 3166-1 alpha-2 format. Required.</p>
+    pub fn get_calling_regions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.calling_regions
+    }
     /// Appends an item to `cidr_allowed_list`.
     ///
     /// To override the contents of this collection use [`set_cidr_allowed_list`](Self::set_cidr_allowed_list).
@@ -141,6 +155,12 @@ impl TerminationBuilder {
         self.cidr_allowed_list = input;
         self
     }
+    /// <p>The IP addresses allowed to make calls, in CIDR format. Required.</p>
+    pub fn get_cidr_allowed_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.cidr_allowed_list
+    }
     /// <p>When termination settings are disabled, outbound calls can not be made.</p>
     pub fn disabled(mut self, input: bool) -> Self {
         self.disabled = ::std::option::Option::Some(input);
@@ -150,6 +170,10 @@ impl TerminationBuilder {
     pub fn set_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disabled = input;
         self
+    }
+    /// <p>When termination settings are disabled, outbound calls can not be made.</p>
+    pub fn get_disabled(&self) -> &::std::option::Option<bool> {
+        &self.disabled
     }
     /// Consumes the builder and constructs a [`Termination`](crate::types::Termination).
     pub fn build(self) -> crate::types::Termination {

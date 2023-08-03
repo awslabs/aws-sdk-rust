@@ -36,6 +36,10 @@ impl GetAccessPointPolicyStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetAccessPointPolicyStatus as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_access_point_policy_status::builders::GetAccessPointPolicyStatusInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl GetAccessPointPolicyStatusFluentBuilder {
         self.inner = self.inner.set_account_id(input);
         self
     }
+    /// <p>The account ID for the account that owns the specified access point.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// <p>The name of the access point whose policy status you want to retrieve.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -135,5 +143,9 @@ impl GetAccessPointPolicyStatusFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the access point whose policy status you want to retrieve.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
 }

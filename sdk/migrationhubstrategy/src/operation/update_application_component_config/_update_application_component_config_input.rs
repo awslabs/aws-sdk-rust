@@ -104,6 +104,10 @@ impl UpdateApplicationComponentConfigInputBuilder {
         self.application_component_id = input;
         self
     }
+    /// <p> The ID of the application component. The ID is unique within an AWS account. </p>
+    pub fn get_application_component_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_component_id
+    }
     /// <p> Indicates whether the application component has been included for server recommendation or not. </p>
     pub fn inclusion_status(mut self, input: crate::types::InclusionStatus) -> Self {
         self.inclusion_status = ::std::option::Option::Some(input);
@@ -117,6 +121,10 @@ impl UpdateApplicationComponentConfigInputBuilder {
         self.inclusion_status = input;
         self
     }
+    /// <p> Indicates whether the application component has been included for server recommendation or not. </p>
+    pub fn get_inclusion_status(&self) -> &::std::option::Option<crate::types::InclusionStatus> {
+        &self.inclusion_status
+    }
     /// <p> The preferred strategy options for the application component. Use values from the <code>GetApplicationComponentStrategies</code> response. </p>
     pub fn strategy_option(mut self, input: crate::types::StrategyOption) -> Self {
         self.strategy_option = ::std::option::Option::Some(input);
@@ -129,6 +137,10 @@ impl UpdateApplicationComponentConfigInputBuilder {
     ) -> Self {
         self.strategy_option = input;
         self
+    }
+    /// <p> The preferred strategy options for the application component. Use values from the <code>GetApplicationComponentStrategies</code> response. </p>
+    pub fn get_strategy_option(&self) -> &::std::option::Option<crate::types::StrategyOption> {
+        &self.strategy_option
     }
     /// Appends an item to `source_code_list`.
     ///
@@ -149,6 +161,12 @@ impl UpdateApplicationComponentConfigInputBuilder {
         self.source_code_list = input;
         self
     }
+    /// <p> The list of source code configurations to update for the application component. </p>
+    pub fn get_source_code_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceCode>> {
+        &self.source_code_list
+    }
     /// <p> Database credentials. </p>
     pub fn secrets_manager_key(
         mut self,
@@ -165,6 +183,10 @@ impl UpdateApplicationComponentConfigInputBuilder {
         self.secrets_manager_key = input;
         self
     }
+    /// <p> Database credentials. </p>
+    pub fn get_secrets_manager_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secrets_manager_key
+    }
     /// <p>Update the configuration request of an application component. If it is set to true, the source code and/or database credentials are updated. If it is set to false, the source code and/or database credentials are updated and an analysis is initiated.</p>
     pub fn configure_only(mut self, input: bool) -> Self {
         self.configure_only = ::std::option::Option::Some(input);
@@ -175,6 +197,10 @@ impl UpdateApplicationComponentConfigInputBuilder {
         self.configure_only = input;
         self
     }
+    /// <p>Update the configuration request of an application component. If it is set to true, the source code and/or database credentials are updated. If it is set to false, the source code and/or database credentials are updated and an analysis is initiated.</p>
+    pub fn get_configure_only(&self) -> &::std::option::Option<bool> {
+        &self.configure_only
+    }
     /// <p>The type of known component.</p>
     pub fn app_type(mut self, input: crate::types::AppType) -> Self {
         self.app_type = ::std::option::Option::Some(input);
@@ -184,6 +210,10 @@ impl UpdateApplicationComponentConfigInputBuilder {
     pub fn set_app_type(mut self, input: ::std::option::Option<crate::types::AppType>) -> Self {
         self.app_type = input;
         self
+    }
+    /// <p>The type of known component.</p>
+    pub fn get_app_type(&self) -> &::std::option::Option<crate::types::AppType> {
+        &self.app_type
     }
     /// Consumes the builder and constructs a [`UpdateApplicationComponentConfigInput`](crate::operation::update_application_component_config::UpdateApplicationComponentConfigInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_application_component_config::UpdateApplicationComponentConfigInput, ::aws_smithy_http::operation::error::BuildError>{

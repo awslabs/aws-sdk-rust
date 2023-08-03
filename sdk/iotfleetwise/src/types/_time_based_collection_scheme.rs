@@ -40,6 +40,10 @@ impl TimeBasedCollectionSchemeBuilder {
         self.period_ms = input;
         self
     }
+    /// <p>The time period (in milliseconds) to decide how often to collect data. For example, if the time period is <code>60000</code>, the Edge Agent software collects data once every minute.</p>
+    pub fn get_period_ms(&self) -> &::std::option::Option<i64> {
+        &self.period_ms
+    }
     /// Consumes the builder and constructs a [`TimeBasedCollectionScheme`](crate::types::TimeBasedCollectionScheme).
     pub fn build(self) -> crate::types::TimeBasedCollectionScheme {
         crate::types::TimeBasedCollectionScheme {

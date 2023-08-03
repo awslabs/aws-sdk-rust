@@ -73,6 +73,10 @@ impl WebsiteConfigurationBuilder {
         self.error_document = input;
         self
     }
+    /// <p>The name of the error document for the website.</p>
+    pub fn get_error_document(&self) -> &::std::option::Option<crate::types::ErrorDocument> {
+        &self.error_document
+    }
     /// <p>The name of the index document for the website.</p>
     pub fn index_document(mut self, input: crate::types::IndexDocument) -> Self {
         self.index_document = ::std::option::Option::Some(input);
@@ -85,6 +89,10 @@ impl WebsiteConfigurationBuilder {
     ) -> Self {
         self.index_document = input;
         self
+    }
+    /// <p>The name of the index document for the website.</p>
+    pub fn get_index_document(&self) -> &::std::option::Option<crate::types::IndexDocument> {
+        &self.index_document
     }
     /// <p>The redirect behavior for every request to this bucket's website endpoint.</p> <important>
     /// <p>If you specify this property, you can't specify any other property.</p>
@@ -102,6 +110,14 @@ impl WebsiteConfigurationBuilder {
     ) -> Self {
         self.redirect_all_requests_to = input;
         self
+    }
+    /// <p>The redirect behavior for every request to this bucket's website endpoint.</p> <important>
+    /// <p>If you specify this property, you can't specify any other property.</p>
+    /// </important>
+    pub fn get_redirect_all_requests_to(
+        &self,
+    ) -> &::std::option::Option<crate::types::RedirectAllRequestsTo> {
+        &self.redirect_all_requests_to
     }
     /// Appends an item to `routing_rules`.
     ///
@@ -121,6 +137,12 @@ impl WebsiteConfigurationBuilder {
     ) -> Self {
         self.routing_rules = input;
         self
+    }
+    /// <p>Rules that define when a redirect is applied and the redirect behavior.</p>
+    pub fn get_routing_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingRule>> {
+        &self.routing_rules
     }
     /// Consumes the builder and constructs a [`WebsiteConfiguration`](crate::types::WebsiteConfiguration).
     pub fn build(self) -> crate::types::WebsiteConfiguration {

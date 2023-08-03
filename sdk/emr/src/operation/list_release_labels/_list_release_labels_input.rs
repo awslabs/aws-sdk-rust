@@ -59,6 +59,10 @@ impl ListReleaseLabelsInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>Filters the results of the request. <code>Prefix</code> specifies the prefix of release labels to return. <code>Application</code> specifies the application (with/without version) of release labels to return.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::ReleaseLabelFilter> {
+        &self.filters
+    }
     /// <p>Specifies the next page of results. If <code>NextToken</code> is not specified, which is usually the case for the first request of ListReleaseLabels, the first page of results are determined by other filtering parameters or by the latest version. The <code>ListReleaseLabels</code> request fails if the identity (Amazon Web Services account ID) and all filtering parameters are different from the original request, or if the <code>NextToken</code> is expired or tampered with.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -69,6 +73,10 @@ impl ListReleaseLabelsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Specifies the next page of results. If <code>NextToken</code> is not specified, which is usually the case for the first request of ListReleaseLabels, the first page of results are determined by other filtering parameters or by the latest version. The <code>ListReleaseLabels</code> request fails if the identity (Amazon Web Services account ID) and all filtering parameters are different from the original request, or if the <code>NextToken</code> is expired or tampered with.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>Defines the maximum number of release labels to return in a single response. The default is <code>100</code>.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -78,6 +86,10 @@ impl ListReleaseLabelsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>Defines the maximum number of release labels to return in a single response. The default is <code>100</code>.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListReleaseLabelsInput`](crate::operation::list_release_labels::ListReleaseLabelsInput).
     pub fn build(

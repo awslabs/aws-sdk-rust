@@ -40,6 +40,10 @@ impl GetResourcePolicyInputBuilder {
         self.identifier = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the resource associated with the policy. </p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
+    }
     /// Consumes the builder and constructs a [`GetResourcePolicyInput`](crate::operation::get_resource_policy::GetResourcePolicyInput).
     pub fn build(
         self,

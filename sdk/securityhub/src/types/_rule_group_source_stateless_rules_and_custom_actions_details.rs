@@ -72,6 +72,13 @@ impl RuleGroupSourceStatelessRulesAndCustomActionsDetailsBuilder {
         self.custom_actions = input;
         self
     }
+    /// <p>Custom actions for the rule group.</p>
+    pub fn get_custom_actions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleGroupSourceCustomActionsDetails>>
+    {
+        &self.custom_actions
+    }
     /// Appends an item to `stateless_rules`.
     ///
     /// To override the contents of this collection use [`set_stateless_rules`](Self::set_stateless_rules).
@@ -95,6 +102,13 @@ impl RuleGroupSourceStatelessRulesAndCustomActionsDetailsBuilder {
     ) -> Self {
         self.stateless_rules = input;
         self
+    }
+    /// <p>Stateless rules for the rule group.</p>
+    pub fn get_stateless_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleGroupSourceStatelessRulesDetails>>
+    {
+        &self.stateless_rules
     }
     /// Consumes the builder and constructs a [`RuleGroupSourceStatelessRulesAndCustomActionsDetails`](crate::types::RuleGroupSourceStatelessRulesAndCustomActionsDetails).
     pub fn build(self) -> crate::types::RuleGroupSourceStatelessRulesAndCustomActionsDetails {

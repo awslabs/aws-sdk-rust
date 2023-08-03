@@ -95,6 +95,10 @@ impl FleetUtilizationBuilder {
         self.fleet_id = input;
         self
     }
+    /// <p>A unique identifier for the fleet associated with the location.</p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_id
+    }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
@@ -111,6 +115,13 @@ impl FleetUtilizationBuilder {
         self.fleet_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
+    /// <region>
+    /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
+    /// </region></code>.</p>
+    pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_arn
+    }
     /// <p>The number of server processes in <code>ACTIVE</code> status that are currently running across all instances in the fleet location. </p>
     pub fn active_server_process_count(mut self, input: i32) -> Self {
         self.active_server_process_count = ::std::option::Option::Some(input);
@@ -120,6 +131,10 @@ impl FleetUtilizationBuilder {
     pub fn set_active_server_process_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.active_server_process_count = input;
         self
+    }
+    /// <p>The number of server processes in <code>ACTIVE</code> status that are currently running across all instances in the fleet location. </p>
+    pub fn get_active_server_process_count(&self) -> &::std::option::Option<i32> {
+        &self.active_server_process_count
     }
     /// <p>The number of active game sessions that are currently being hosted across all instances in the fleet location.</p>
     pub fn active_game_session_count(mut self, input: i32) -> Self {
@@ -131,6 +146,10 @@ impl FleetUtilizationBuilder {
         self.active_game_session_count = input;
         self
     }
+    /// <p>The number of active game sessions that are currently being hosted across all instances in the fleet location.</p>
+    pub fn get_active_game_session_count(&self) -> &::std::option::Option<i32> {
+        &self.active_game_session_count
+    }
     /// <p>The number of active player sessions that are currently being hosted across all instances in the fleet location.</p>
     pub fn current_player_session_count(mut self, input: i32) -> Self {
         self.current_player_session_count = ::std::option::Option::Some(input);
@@ -140,6 +159,10 @@ impl FleetUtilizationBuilder {
     pub fn set_current_player_session_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.current_player_session_count = input;
         self
+    }
+    /// <p>The number of active player sessions that are currently being hosted across all instances in the fleet location.</p>
+    pub fn get_current_player_session_count(&self) -> &::std::option::Option<i32> {
+        &self.current_player_session_count
     }
     /// <p>The maximum number of players allowed across all game sessions that are currently being hosted across all instances in the fleet location.</p>
     pub fn maximum_player_session_count(mut self, input: i32) -> Self {
@@ -151,6 +174,10 @@ impl FleetUtilizationBuilder {
         self.maximum_player_session_count = input;
         self
     }
+    /// <p>The maximum number of players allowed across all game sessions that are currently being hosted across all instances in the fleet location.</p>
+    pub fn get_maximum_player_session_count(&self) -> &::std::option::Option<i32> {
+        &self.maximum_player_session_count
+    }
     /// <p>The fleet location for the fleet utilization information, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
@@ -160,6 +187,10 @@ impl FleetUtilizationBuilder {
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
+    }
+    /// <p>The fleet location for the fleet utilization information, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
     }
     /// Consumes the builder and constructs a [`FleetUtilization`](crate::types::FleetUtilization).
     pub fn build(self) -> crate::types::FleetUtilization {

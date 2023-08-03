@@ -48,6 +48,10 @@ impl TrialMinutesBuilder {
         self.total = input;
         self
     }
+    /// <p>The total number of free trial minutes that the account started with.</p>
+    pub fn get_total(&self) -> &::std::option::Option<f64> {
+        &self.total
+    }
     /// <p>The number of free trial minutes remaining in the account.</p>
     pub fn remaining(mut self, input: f64) -> Self {
         self.remaining = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl TrialMinutesBuilder {
     pub fn set_remaining(mut self, input: ::std::option::Option<f64>) -> Self {
         self.remaining = input;
         self
+    }
+    /// <p>The number of free trial minutes remaining in the account.</p>
+    pub fn get_remaining(&self) -> &::std::option::Option<f64> {
+        &self.remaining
     }
     /// Consumes the builder and constructs a [`TrialMinutes`](crate::types::TrialMinutes).
     pub fn build(self) -> crate::types::TrialMinutes {

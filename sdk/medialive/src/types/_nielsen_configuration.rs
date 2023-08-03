@@ -58,6 +58,10 @@ impl NielsenConfigurationBuilder {
         self.distributor_id = input;
         self
     }
+    /// Enter the Distributor ID assigned to your organization by Nielsen.
+    pub fn get_distributor_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.distributor_id
+    }
     /// Enables Nielsen PCM to ID3 tagging
     pub fn nielsen_pcm_to_id3_tagging(
         mut self,
@@ -73,6 +77,12 @@ impl NielsenConfigurationBuilder {
     ) -> Self {
         self.nielsen_pcm_to_id3_tagging = input;
         self
+    }
+    /// Enables Nielsen PCM to ID3 tagging
+    pub fn get_nielsen_pcm_to_id3_tagging(
+        &self,
+    ) -> &::std::option::Option<crate::types::NielsenPcmToId3TaggingState> {
+        &self.nielsen_pcm_to_id3_tagging
     }
     /// Consumes the builder and constructs a [`NielsenConfiguration`](crate::types::NielsenConfiguration).
     pub fn build(self) -> crate::types::NielsenConfiguration {

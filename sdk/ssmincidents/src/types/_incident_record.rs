@@ -154,6 +154,10 @@ impl IncidentRecordBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the incident record.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The title of the incident.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
@@ -164,6 +168,10 @@ impl IncidentRecordBuilder {
         self.title = input;
         self
     }
+    /// <p>The title of the incident.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
+    }
     /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what's currently happening, and context of the incident.</p>
     pub fn summary(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.summary = ::std::option::Option::Some(input.into());
@@ -173,6 +181,10 @@ impl IncidentRecordBuilder {
     pub fn set_summary(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.summary = input;
         self
+    }
+    /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what's currently happening, and context of the incident.</p>
+    pub fn get_summary(&self) -> &::std::option::Option<::std::string::String> {
+        &self.summary
     }
     /// <p>The current status of the incident.</p>
     pub fn status(mut self, input: crate::types::IncidentRecordStatus) -> Self {
@@ -187,6 +199,10 @@ impl IncidentRecordBuilder {
         self.status = input;
         self
     }
+    /// <p>The current status of the incident.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::IncidentRecordStatus> {
+        &self.status
+    }
     /// <p>The impact of the incident on customers and applications.</p>
     pub fn impact(mut self, input: i32) -> Self {
         self.impact = ::std::option::Option::Some(input);
@@ -196,6 +212,10 @@ impl IncidentRecordBuilder {
     pub fn set_impact(mut self, input: ::std::option::Option<i32>) -> Self {
         self.impact = input;
         self
+    }
+    /// <p>The impact of the incident on customers and applications.</p>
+    pub fn get_impact(&self) -> &::std::option::Option<i32> {
+        &self.impact
     }
     /// <p>The time that Incident Manager created the incident record.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -210,6 +230,10 @@ impl IncidentRecordBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The time that Incident Manager created the incident record.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The time at which the incident was resolved. This appears as a timeline event.</p>
     pub fn resolved_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.resolved_time = ::std::option::Option::Some(input);
@@ -223,6 +247,10 @@ impl IncidentRecordBuilder {
         self.resolved_time = input;
         self
     }
+    /// <p>The time at which the incident was resolved. This appears as a timeline event.</p>
+    pub fn get_resolved_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.resolved_time
+    }
     /// <p>The time at which the incident was most recently modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -235,6 +263,10 @@ impl IncidentRecordBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>The time at which the incident was most recently modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     /// <p>Who modified the incident most recently.</p>
     pub fn last_modified_by(
@@ -251,6 +283,10 @@ impl IncidentRecordBuilder {
     ) -> Self {
         self.last_modified_by = input;
         self
+    }
+    /// <p>Who modified the incident most recently.</p>
+    pub fn get_last_modified_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_by
     }
     /// Appends an item to `automation_executions`.
     ///
@@ -271,6 +307,12 @@ impl IncidentRecordBuilder {
         self.automation_executions = input;
         self
     }
+    /// <p>The runbook, or automation document, that's run at the beginning of the incident.</p>
+    pub fn get_automation_executions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutomationExecution>> {
+        &self.automation_executions
+    }
     /// <p>Details about the action that started the incident.</p>
     pub fn incident_record_source(mut self, input: crate::types::IncidentRecordSource) -> Self {
         self.incident_record_source = ::std::option::Option::Some(input);
@@ -283,6 +325,12 @@ impl IncidentRecordBuilder {
     ) -> Self {
         self.incident_record_source = input;
         self
+    }
+    /// <p>Details about the action that started the incident.</p>
+    pub fn get_incident_record_source(
+        &self,
+    ) -> &::std::option::Option<crate::types::IncidentRecordSource> {
+        &self.incident_record_source
     }
     /// <p>The string Incident Manager uses to prevent duplicate incidents from being created by the same incident in the same account.</p>
     pub fn dedupe_string(
@@ -300,6 +348,10 @@ impl IncidentRecordBuilder {
         self.dedupe_string = input;
         self
     }
+    /// <p>The string Incident Manager uses to prevent duplicate incidents from being created by the same incident in the same account.</p>
+    pub fn get_dedupe_string(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dedupe_string
+    }
     /// <p>The chat channel used for collaboration during an incident.</p>
     pub fn chat_channel(mut self, input: crate::types::ChatChannel) -> Self {
         self.chat_channel = ::std::option::Option::Some(input);
@@ -312,6 +364,10 @@ impl IncidentRecordBuilder {
     ) -> Self {
         self.chat_channel = input;
         self
+    }
+    /// <p>The chat channel used for collaboration during an incident.</p>
+    pub fn get_chat_channel(&self) -> &::std::option::Option<crate::types::ChatChannel> {
+        &self.chat_channel
     }
     /// Appends an item to `notification_targets`.
     ///
@@ -331,6 +387,12 @@ impl IncidentRecordBuilder {
     ) -> Self {
         self.notification_targets = input;
         self
+    }
+    /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
+    pub fn get_notification_targets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationTargetItem>> {
+        &self.notification_targets
     }
     /// Consumes the builder and constructs a [`IncidentRecord`](crate::types::IncidentRecord).
     pub fn build(self) -> crate::types::IncidentRecord {

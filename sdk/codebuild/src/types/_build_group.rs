@@ -74,6 +74,10 @@ impl BuildGroupBuilder {
         self.identifier = input;
         self
     }
+    /// <p>Contains the identifier of the build group.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
+    }
     /// Appends an item to `depends_on`.
     ///
     /// To override the contents of this collection use [`set_depends_on`](Self::set_depends_on).
@@ -93,6 +97,10 @@ impl BuildGroupBuilder {
         self.depends_on = input;
         self
     }
+    /// <p>An array of strings that contain the identifiers of the build groups that this build group depends on.</p>
+    pub fn get_depends_on(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.depends_on
+    }
     /// <p>Specifies if failures in this build group can be ignored.</p>
     pub fn ignore_failure(mut self, input: bool) -> Self {
         self.ignore_failure = ::std::option::Option::Some(input);
@@ -102,6 +110,10 @@ impl BuildGroupBuilder {
     pub fn set_ignore_failure(mut self, input: ::std::option::Option<bool>) -> Self {
         self.ignore_failure = input;
         self
+    }
+    /// <p>Specifies if failures in this build group can be ignored.</p>
+    pub fn get_ignore_failure(&self) -> &::std::option::Option<bool> {
+        &self.ignore_failure
     }
     /// <p>A <code>BuildSummary</code> object that contains a summary of the current build group.</p>
     pub fn current_build_summary(mut self, input: crate::types::BuildSummary) -> Self {
@@ -115,6 +127,10 @@ impl BuildGroupBuilder {
     ) -> Self {
         self.current_build_summary = input;
         self
+    }
+    /// <p>A <code>BuildSummary</code> object that contains a summary of the current build group.</p>
+    pub fn get_current_build_summary(&self) -> &::std::option::Option<crate::types::BuildSummary> {
+        &self.current_build_summary
     }
     /// Appends an item to `prior_build_summary_list`.
     ///
@@ -134,6 +150,12 @@ impl BuildGroupBuilder {
     ) -> Self {
         self.prior_build_summary_list = input;
         self
+    }
+    /// <p>An array of <code>BuildSummary</code> objects that contain summaries of previous build groups.</p>
+    pub fn get_prior_build_summary_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BuildSummary>> {
+        &self.prior_build_summary_list
     }
     /// Consumes the builder and constructs a [`BuildGroup`](crate::types::BuildGroup).
     pub fn build(self) -> crate::types::BuildGroup {

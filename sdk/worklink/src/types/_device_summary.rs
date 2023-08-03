@@ -48,6 +48,10 @@ impl DeviceSummaryBuilder {
         self.device_id = input;
         self
     }
+    /// <p>The ID of the device.</p>
+    pub fn get_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_id
+    }
     /// <p>The status of the device.</p>
     pub fn device_status(mut self, input: crate::types::DeviceStatus) -> Self {
         self.device_status = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl DeviceSummaryBuilder {
     ) -> Self {
         self.device_status = input;
         self
+    }
+    /// <p>The status of the device.</p>
+    pub fn get_device_status(&self) -> &::std::option::Option<crate::types::DeviceStatus> {
+        &self.device_status
     }
     /// Consumes the builder and constructs a [`DeviceSummary`](crate::types::DeviceSummary).
     pub fn build(self) -> crate::types::DeviceSummary {

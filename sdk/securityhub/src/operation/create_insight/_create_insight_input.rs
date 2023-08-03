@@ -55,6 +55,10 @@ impl CreateInsightInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the custom insight to create.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>One or more attributes used to filter the findings included in the insight. The insight only includes findings that match the criteria defined in the filters.</p>
     pub fn filters(mut self, input: crate::types::AwsSecurityFindingFilters) -> Self {
         self.filters = ::std::option::Option::Some(input);
@@ -67,6 +71,10 @@ impl CreateInsightInputBuilder {
     ) -> Self {
         self.filters = input;
         self
+    }
+    /// <p>One or more attributes used to filter the findings included in the insight. The insight only includes findings that match the criteria defined in the filters.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::AwsSecurityFindingFilters> {
+        &self.filters
     }
     /// <p>The attribute used to group the findings for the insight. The grouping attribute identifies the type of item that the insight applies to. For example, if an insight is grouped by resource identifier, then the insight produces a list of resource identifiers.</p>
     pub fn group_by_attribute(
@@ -83,6 +91,10 @@ impl CreateInsightInputBuilder {
     ) -> Self {
         self.group_by_attribute = input;
         self
+    }
+    /// <p>The attribute used to group the findings for the insight. The grouping attribute identifies the type of item that the insight applies to. For example, if an insight is grouped by resource identifier, then the insight produces a list of resource identifiers.</p>
+    pub fn get_group_by_attribute(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_by_attribute
     }
     /// Consumes the builder and constructs a [`CreateInsightInput`](crate::operation::create_insight::CreateInsightInput).
     pub fn build(

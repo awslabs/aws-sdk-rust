@@ -81,6 +81,10 @@ impl LimitationBuilder {
         self.database_id = input;
         self
     }
+    /// <p>The identifier of the source database.</p>
+    pub fn get_database_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_id
+    }
     /// <p>The name of the target engine that Fleet Advisor should use in the target engine recommendation. Valid values include <code>"rds-aurora-mysql"</code>, <code>"rds-aurora-postgresql"</code>, <code>"rds-mysql"</code>, <code>"rds-oracle"</code>, <code>"rds-sql-server"</code>, and <code>"rds-postgresql"</code>.</p>
     pub fn engine_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_name = ::std::option::Option::Some(input.into());
@@ -90,6 +94,10 @@ impl LimitationBuilder {
     pub fn set_engine_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_name = input;
         self
+    }
+    /// <p>The name of the target engine that Fleet Advisor should use in the target engine recommendation. Valid values include <code>"rds-aurora-mysql"</code>, <code>"rds-aurora-postgresql"</code>, <code>"rds-mysql"</code>, <code>"rds-oracle"</code>, <code>"rds-sql-server"</code>, and <code>"rds-postgresql"</code>.</p>
+    pub fn get_engine_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_name
     }
     /// <p>The name of the limitation. Describes unsupported database features, migration action items, and other limitations.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -101,6 +109,10 @@ impl LimitationBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the limitation. Describes unsupported database features, migration action items, and other limitations.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A description of the limitation. Provides additional information about the limitation, and includes recommended actions that you can take to address or avoid this limitation.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -110,6 +122,10 @@ impl LimitationBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the limitation. Provides additional information about the limitation, and includes recommended actions that you can take to address or avoid this limitation.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The impact of the limitation. You can use this parameter to prioritize limitations that you want to address. Valid values include <code>"Blocker"</code>, <code>"High"</code>, <code>"Medium"</code>, and <code>"Low"</code>.</p>
     pub fn impact(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -121,6 +137,10 @@ impl LimitationBuilder {
         self.impact = input;
         self
     }
+    /// <p>The impact of the limitation. You can use this parameter to prioritize limitations that you want to address. Valid values include <code>"Blocker"</code>, <code>"High"</code>, <code>"Medium"</code>, and <code>"Low"</code>.</p>
+    pub fn get_impact(&self) -> &::std::option::Option<::std::string::String> {
+        &self.impact
+    }
     /// <p>The type of the limitation, such as action required, upgrade required, and limited feature.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -130,6 +150,10 @@ impl LimitationBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of the limitation, such as action required, upgrade required, and limited feature.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`Limitation`](crate::types::Limitation).
     pub fn build(self) -> crate::types::Limitation {

@@ -49,6 +49,10 @@ impl GetStoredQueryOutputBuilder {
         self.stored_query = input;
         self
     }
+    /// <p>Returns a <code>StoredQuery</code> object.</p>
+    pub fn get_stored_query(&self) -> &::std::option::Option<crate::types::StoredQuery> {
+        &self.stored_query
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -40,6 +40,10 @@ impl CustomLineItemFlatChargeDetailsBuilder {
         self.charge_value = input;
         self
     }
+    /// <p>The custom line item's fixed charge value in USD.</p>
+    pub fn get_charge_value(&self) -> &::std::option::Option<f64> {
+        &self.charge_value
+    }
     /// Consumes the builder and constructs a [`CustomLineItemFlatChargeDetails`](crate::types::CustomLineItemFlatChargeDetails).
     pub fn build(self) -> crate::types::CustomLineItemFlatChargeDetails {
         crate::types::CustomLineItemFlatChargeDetails {

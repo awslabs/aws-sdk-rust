@@ -54,6 +54,10 @@ impl DeleteEnvironmentInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The application ID that includes the environment that you want to delete.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The ID of the environment that you want to delete.</p>
     pub fn environment_id(
         mut self,
@@ -69,6 +73,10 @@ impl DeleteEnvironmentInputBuilder {
     ) -> Self {
         self.environment_id = input;
         self
+    }
+    /// <p>The ID of the environment that you want to delete.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
     }
     /// Consumes the builder and constructs a [`DeleteEnvironmentInput`](crate::operation::delete_environment::DeleteEnvironmentInput).
     pub fn build(

@@ -36,6 +36,13 @@ impl ImportDecoderManifestFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ImportDecoderManifest as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::import_decoder_manifest::builders::ImportDecoderManifestInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl ImportDecoderManifestFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p> The name of the decoder manifest to import. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// Appends an item to `networkFileDefinitions`.
     ///
     /// To override the contents of this collection use [`set_network_file_definitions`](Self::set_network_file_definitions).
@@ -142,5 +153,11 @@ impl ImportDecoderManifestFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_network_file_definitions(input);
         self
+    }
+    /// <p> The file to load into an Amazon Web Services account. </p>
+    pub fn get_network_file_definitions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkFileDefinition>> {
+        self.inner.get_network_file_definitions()
     }
 }

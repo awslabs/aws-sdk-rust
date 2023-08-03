@@ -121,6 +121,10 @@ impl MembershipSummaryBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique ID for the membership's collaboration.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The unique ARN for the membership.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -130,6 +134,10 @@ impl MembershipSummaryBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The unique ARN for the membership.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The unique ARN for the membership's associated collaboration.</p>
     pub fn collaboration_arn(
@@ -147,6 +155,10 @@ impl MembershipSummaryBuilder {
         self.collaboration_arn = input;
         self
     }
+    /// <p>The unique ARN for the membership's associated collaboration.</p>
+    pub fn get_collaboration_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collaboration_arn
+    }
     /// <p>The unique ID for the membership's collaboration.</p>
     pub fn collaboration_id(
         mut self,
@@ -162,6 +174,10 @@ impl MembershipSummaryBuilder {
     ) -> Self {
         self.collaboration_id = input;
         self
+    }
+    /// <p>The unique ID for the membership's collaboration.</p>
+    pub fn get_collaboration_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collaboration_id
     }
     /// <p>The identifier of the Amazon Web Services principal that created the collaboration. Currently only supports Amazon Web Services account ID.</p>
     pub fn collaboration_creator_account_id(
@@ -179,6 +195,12 @@ impl MembershipSummaryBuilder {
         self.collaboration_creator_account_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Web Services principal that created the collaboration. Currently only supports Amazon Web Services account ID.</p>
+    pub fn get_collaboration_creator_account_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.collaboration_creator_account_id
+    }
     /// <p>The display name of the collaboration creator.</p>
     pub fn collaboration_creator_display_name(
         mut self,
@@ -194,6 +216,12 @@ impl MembershipSummaryBuilder {
     ) -> Self {
         self.collaboration_creator_display_name = input;
         self
+    }
+    /// <p>The display name of the collaboration creator.</p>
+    pub fn get_collaboration_creator_display_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.collaboration_creator_display_name
     }
     /// <p>The name for the membership's collaboration.</p>
     pub fn collaboration_name(
@@ -211,6 +239,10 @@ impl MembershipSummaryBuilder {
         self.collaboration_name = input;
         self
     }
+    /// <p>The name for the membership's collaboration.</p>
+    pub fn get_collaboration_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.collaboration_name
+    }
     /// <p>The time when the membership was created.</p>
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
@@ -223,6 +255,10 @@ impl MembershipSummaryBuilder {
     ) -> Self {
         self.create_time = input;
         self
+    }
+    /// <p>The time when the membership was created.</p>
+    pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_time
     }
     /// <p>The time the membership metadata was last updated.</p>
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -237,6 +273,10 @@ impl MembershipSummaryBuilder {
         self.update_time = input;
         self
     }
+    /// <p>The time the membership metadata was last updated.</p>
+    pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_time
+    }
     /// <p>The status of the membership. Valid values are `ACTIVE`, `REMOVED`, and `COLLABORATION_DELETED`.</p>
     pub fn status(mut self, input: crate::types::MembershipStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -249,6 +289,10 @@ impl MembershipSummaryBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the membership. Valid values are `ACTIVE`, `REMOVED`, and `COLLABORATION_DELETED`.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::MembershipStatus> {
+        &self.status
     }
     /// Appends an item to `member_abilities`.
     ///
@@ -268,6 +312,12 @@ impl MembershipSummaryBuilder {
     ) -> Self {
         self.member_abilities = input;
         self
+    }
+    /// <p>The abilities granted to the collaboration member.</p>
+    pub fn get_member_abilities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>> {
+        &self.member_abilities
     }
     /// Consumes the builder and constructs a [`MembershipSummary`](crate::types::MembershipSummary).
     pub fn build(self) -> crate::types::MembershipSummary {

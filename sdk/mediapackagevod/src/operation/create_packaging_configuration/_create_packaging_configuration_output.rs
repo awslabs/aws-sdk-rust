@@ -118,6 +118,10 @@ impl CreatePackagingConfigurationOutputBuilder {
         self.arn = input;
         self
     }
+    /// The ARN of the PackagingConfiguration.
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// A CMAF packaging configuration.
     pub fn cmaf_package(mut self, input: crate::types::CmafPackage) -> Self {
         self.cmaf_package = ::std::option::Option::Some(input);
@@ -131,6 +135,10 @@ impl CreatePackagingConfigurationOutputBuilder {
         self.cmaf_package = input;
         self
     }
+    /// A CMAF packaging configuration.
+    pub fn get_cmaf_package(&self) -> &::std::option::Option<crate::types::CmafPackage> {
+        &self.cmaf_package
+    }
     /// The time the PackagingConfiguration was created.
     pub fn created_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_at = ::std::option::Option::Some(input.into());
@@ -140,6 +148,10 @@ impl CreatePackagingConfigurationOutputBuilder {
     pub fn set_created_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_at = input;
         self
+    }
+    /// The time the PackagingConfiguration was created.
+    pub fn get_created_at(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_at
     }
     /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
     pub fn dash_package(mut self, input: crate::types::DashPackage) -> Self {
@@ -154,6 +166,10 @@ impl CreatePackagingConfigurationOutputBuilder {
         self.dash_package = input;
         self
     }
+    /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
+    pub fn get_dash_package(&self) -> &::std::option::Option<crate::types::DashPackage> {
+        &self.dash_package
+    }
     /// An HTTP Live Streaming (HLS) packaging configuration.
     pub fn hls_package(mut self, input: crate::types::HlsPackage) -> Self {
         self.hls_package = ::std::option::Option::Some(input);
@@ -167,6 +183,10 @@ impl CreatePackagingConfigurationOutputBuilder {
         self.hls_package = input;
         self
     }
+    /// An HTTP Live Streaming (HLS) packaging configuration.
+    pub fn get_hls_package(&self) -> &::std::option::Option<crate::types::HlsPackage> {
+        &self.hls_package
+    }
     /// The ID of the PackagingConfiguration.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -176,6 +196,10 @@ impl CreatePackagingConfigurationOutputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// The ID of the PackagingConfiguration.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// A Microsoft Smooth Streaming (MSS) PackagingConfiguration.
     pub fn mss_package(mut self, input: crate::types::MssPackage) -> Self {
@@ -189,6 +213,10 @@ impl CreatePackagingConfigurationOutputBuilder {
     ) -> Self {
         self.mss_package = input;
         self
+    }
+    /// A Microsoft Smooth Streaming (MSS) PackagingConfiguration.
+    pub fn get_mss_package(&self) -> &::std::option::Option<crate::types::MssPackage> {
+        &self.mss_package
     }
     /// The ID of a PackagingGroup.
     pub fn packaging_group_id(
@@ -205,6 +233,10 @@ impl CreatePackagingConfigurationOutputBuilder {
     ) -> Self {
         self.packaging_group_id = input;
         self
+    }
+    /// The ID of a PackagingGroup.
+    pub fn get_packaging_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.packaging_group_id
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -230,6 +262,14 @@ impl CreatePackagingConfigurationOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// A collection of tags associated with a resource
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

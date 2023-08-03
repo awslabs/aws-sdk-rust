@@ -38,6 +38,10 @@ impl DescribeDBSnapshotAttributesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeDBSnapshotAttributes as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_db_snapshot_attributes::builders::DescribeDbSnapshotAttributesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,5 +137,9 @@ impl DescribeDBSnapshotAttributesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_db_snapshot_identifier(input);
         self
+    }
+    /// <p>The identifier for the DB snapshot to describe the attributes for.</p>
+    pub fn get_db_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_snapshot_identifier()
     }
 }

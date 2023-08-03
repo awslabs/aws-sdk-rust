@@ -41,6 +41,10 @@ impl DescribeDomainHealthInputBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>The name of the domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// Consumes the builder and constructs a [`DescribeDomainHealthInput`](crate::operation::describe_domain_health::DescribeDomainHealthInput).
     pub fn build(
         self,

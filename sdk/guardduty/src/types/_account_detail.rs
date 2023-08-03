@@ -48,6 +48,10 @@ impl AccountDetailBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The member account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The email address of the member account.</p>
     pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.email = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl AccountDetailBuilder {
     pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email = input;
         self
+    }
+    /// <p>The email address of the member account.</p>
+    pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email
     }
     /// Consumes the builder and constructs a [`AccountDetail`](crate::types::AccountDetail).
     pub fn build(self) -> crate::types::AccountDetail {

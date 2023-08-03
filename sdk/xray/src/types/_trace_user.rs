@@ -48,6 +48,10 @@ impl TraceUserBuilder {
         self.user_name = input;
         self
     }
+    /// <p>The user's name.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
+    }
     /// Appends an item to `service_ids`.
     ///
     /// To override the contents of this collection use [`set_service_ids`](Self::set_service_ids).
@@ -66,6 +70,12 @@ impl TraceUserBuilder {
     ) -> Self {
         self.service_ids = input;
         self
+    }
+    /// <p>Services that the user's request hit.</p>
+    pub fn get_service_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceId>> {
+        &self.service_ids
     }
     /// Consumes the builder and constructs a [`TraceUser`](crate::types::TraceUser).
     pub fn build(self) -> crate::types::TraceUser {

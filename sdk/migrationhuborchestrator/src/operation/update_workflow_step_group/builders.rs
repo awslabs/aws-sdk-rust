@@ -37,6 +37,13 @@ impl UpdateWorkflowStepGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateWorkflowStepGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_workflow_step_group::builders::UpdateWorkflowStepGroupInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl UpdateWorkflowStepGroupFluentBuilder {
         self.inner = self.inner.set_workflow_id(input);
         self
     }
+    /// <p>The ID of the migration workflow.</p>
+    pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workflow_id()
+    }
     /// <p>The ID of the step group.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
@@ -136,6 +147,10 @@ impl UpdateWorkflowStepGroupFluentBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
+    }
+    /// <p>The ID of the step group.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
     }
     /// <p>The name of the step group.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -147,6 +162,10 @@ impl UpdateWorkflowStepGroupFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the step group.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The description of the step group.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -156,6 +175,10 @@ impl UpdateWorkflowStepGroupFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description of the step group.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `next`.
     ///
@@ -174,6 +197,10 @@ impl UpdateWorkflowStepGroupFluentBuilder {
         self.inner = self.inner.set_next(input);
         self
     }
+    /// <p>The next step group.</p>
+    pub fn get_next(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_next()
+    }
     /// Appends an item to `previous`.
     ///
     /// To override the contents of this collection use [`set_previous`](Self::set_previous).
@@ -190,5 +217,9 @@ impl UpdateWorkflowStepGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_previous(input);
         self
+    }
+    /// <p>The previous step group.</p>
+    pub fn get_previous(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_previous()
     }
 }

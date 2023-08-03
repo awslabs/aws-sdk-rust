@@ -65,6 +65,12 @@ impl RepositoryAggregationBuilder {
         self.repositories = input;
         self
     }
+    /// <p>The names of repositories to aggregate findings on.</p>
+    pub fn get_repositories(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.repositories
+    }
     /// <p>The order to sort results by.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -74,6 +80,10 @@ impl RepositoryAggregationBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.sort_order = input;
         self
+    }
+    /// <p>The order to sort results by.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.sort_order
     }
     /// <p>The value to sort results by.</p>
     pub fn sort_by(mut self, input: crate::types::RepositorySortBy) -> Self {
@@ -87,6 +97,10 @@ impl RepositoryAggregationBuilder {
     ) -> Self {
         self.sort_by = input;
         self
+    }
+    /// <p>The value to sort results by.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::RepositorySortBy> {
+        &self.sort_by
     }
     /// Consumes the builder and constructs a [`RepositoryAggregation`](crate::types::RepositoryAggregation).
     pub fn build(self) -> crate::types::RepositoryAggregation {

@@ -37,6 +37,10 @@ impl GetCrlFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetCrl as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_crl::builders::GetCrlInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,5 +122,9 @@ impl GetCrlFluentBuilder {
     pub fn set_crl_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_crl_id(input);
         self
+    }
+    /// <p>The unique identifier of the certificate revocation list (CRL).</p>
+    pub fn get_crl_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_crl_id()
     }
 }

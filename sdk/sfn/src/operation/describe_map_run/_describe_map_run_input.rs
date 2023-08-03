@@ -39,6 +39,10 @@ impl DescribeMapRunInputBuilder {
         self.map_run_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that identifies a Map Run.</p>
+    pub fn get_map_run_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.map_run_arn
+    }
     /// Consumes the builder and constructs a [`DescribeMapRunInput`](crate::operation::describe_map_run::DescribeMapRunInput).
     pub fn build(
         self,

@@ -80,6 +80,10 @@ impl ListMlTransformsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A continuation token, if this is a continuation request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum size of a list to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -89,6 +93,10 @@ impl ListMlTransformsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum size of a list to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>A <code>TransformFilterCriteria</code> used to filter the machine learning transforms.</p>
     pub fn filter(mut self, input: crate::types::TransformFilterCriteria) -> Self {
@@ -103,6 +111,10 @@ impl ListMlTransformsInputBuilder {
         self.filter = input;
         self
     }
+    /// <p>A <code>TransformFilterCriteria</code> used to filter the machine learning transforms.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::TransformFilterCriteria> {
+        &self.filter
+    }
     /// <p>A <code>TransformSortCriteria</code> used to sort the machine learning transforms.</p>
     pub fn sort(mut self, input: crate::types::TransformSortCriteria) -> Self {
         self.sort = ::std::option::Option::Some(input);
@@ -115,6 +127,10 @@ impl ListMlTransformsInputBuilder {
     ) -> Self {
         self.sort = input;
         self
+    }
+    /// <p>A <code>TransformSortCriteria</code> used to sort the machine learning transforms.</p>
+    pub fn get_sort(&self) -> &::std::option::Option<crate::types::TransformSortCriteria> {
+        &self.sort
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -140,6 +156,14 @@ impl ListMlTransformsInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>Specifies to return only these tagged resources.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`ListMlTransformsInput`](crate::operation::list_ml_transforms::ListMlTransformsInput).
     pub fn build(

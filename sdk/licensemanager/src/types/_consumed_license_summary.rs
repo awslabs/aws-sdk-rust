@@ -51,6 +51,10 @@ impl ConsumedLicenseSummaryBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>Resource type of the resource consuming a license.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
+    }
     /// <p>Number of licenses consumed by the resource.</p>
     pub fn consumed_licenses(mut self, input: i64) -> Self {
         self.consumed_licenses = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl ConsumedLicenseSummaryBuilder {
     pub fn set_consumed_licenses(mut self, input: ::std::option::Option<i64>) -> Self {
         self.consumed_licenses = input;
         self
+    }
+    /// <p>Number of licenses consumed by the resource.</p>
+    pub fn get_consumed_licenses(&self) -> &::std::option::Option<i64> {
+        &self.consumed_licenses
     }
     /// Consumes the builder and constructs a [`ConsumedLicenseSummary`](crate::types::ConsumedLicenseSummary).
     pub fn build(self) -> crate::types::ConsumedLicenseSummary {

@@ -40,6 +40,10 @@ impl ListVariantStoresFilterBuilder {
         self.status = input;
         self
     }
+    /// <p>A status to filter on.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::StoreStatus> {
+        &self.status
+    }
     /// Consumes the builder and constructs a [`ListVariantStoresFilter`](crate::types::ListVariantStoresFilter).
     pub fn build(self) -> crate::types::ListVariantStoresFilter {
         crate::types::ListVariantStoresFilter {

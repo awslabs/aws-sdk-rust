@@ -55,6 +55,12 @@ impl DescribeModelPackagingJobOutputBuilder {
         self.model_packaging_description = input;
         self
     }
+    /// <p>The description of the model packaging job. </p>
+    pub fn get_model_packaging_description(
+        &self,
+    ) -> &::std::option::Option<crate::types::ModelPackagingDescription> {
+        &self.model_packaging_description
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

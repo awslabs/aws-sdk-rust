@@ -48,6 +48,10 @@ impl AssociationStateDetailsBuilder {
         self.state = input;
         self
     }
+    /// <p> The state of the association. </p>
+    pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state
+    }
     /// <p> The status message, if applicable. </p>
     pub fn status_message(
         mut self,
@@ -63,6 +67,10 @@ impl AssociationStateDetailsBuilder {
     ) -> Self {
         self.status_message = input;
         self
+    }
+    /// <p> The status message, if applicable. </p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     /// Consumes the builder and constructs a [`AssociationStateDetails`](crate::types::AssociationStateDetails).
     pub fn build(self) -> crate::types::AssociationStateDetails {

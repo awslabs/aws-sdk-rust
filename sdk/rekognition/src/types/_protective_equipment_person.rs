@@ -77,6 +77,12 @@ impl ProtectiveEquipmentPersonBuilder {
         self.body_parts = input;
         self
     }
+    /// <p>An array of body parts detected on a person's body (including body parts without PPE). </p>
+    pub fn get_body_parts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProtectiveEquipmentBodyPart>> {
+        &self.body_parts
+    }
     /// <p>A bounding box around the detected person.</p>
     pub fn bounding_box(mut self, input: crate::types::BoundingBox) -> Self {
         self.bounding_box = ::std::option::Option::Some(input);
@@ -90,6 +96,10 @@ impl ProtectiveEquipmentPersonBuilder {
         self.bounding_box = input;
         self
     }
+    /// <p>A bounding box around the detected person.</p>
+    pub fn get_bounding_box(&self) -> &::std::option::Option<crate::types::BoundingBox> {
+        &self.bounding_box
+    }
     /// <p>The confidence that Amazon Rekognition has that the bounding box contains a person.</p>
     pub fn confidence(mut self, input: f32) -> Self {
         self.confidence = ::std::option::Option::Some(input);
@@ -100,6 +110,10 @@ impl ProtectiveEquipmentPersonBuilder {
         self.confidence = input;
         self
     }
+    /// <p>The confidence that Amazon Rekognition has that the bounding box contains a person.</p>
+    pub fn get_confidence(&self) -> &::std::option::Option<f32> {
+        &self.confidence
+    }
     /// <p>The identifier for the detected person. The identifier is only unique for a single call to <code>DetectProtectiveEquipment</code>.</p>
     pub fn id(mut self, input: i32) -> Self {
         self.id = ::std::option::Option::Some(input);
@@ -109,6 +123,10 @@ impl ProtectiveEquipmentPersonBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The identifier for the detected person. The identifier is only unique for a single call to <code>DetectProtectiveEquipment</code>.</p>
+    pub fn get_id(&self) -> &::std::option::Option<i32> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`ProtectiveEquipmentPerson`](crate::types::ProtectiveEquipmentPerson).
     pub fn build(self) -> crate::types::ProtectiveEquipmentPerson {

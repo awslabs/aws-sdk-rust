@@ -57,6 +57,10 @@ impl ResourceCountBuilder {
         self.total_resources = input;
         self
     }
+    /// <p>The number of resources that match the search query. This value can't exceed 1,000. If there are more than 1,000 resources that match the query, then only 1,000 are counted and the <code>Complete</code> field is set to false. We recommend that you refine your query to return a smaller number of results.</p>
+    pub fn get_total_resources(&self) -> &::std::option::Option<i64> {
+        &self.total_resources
+    }
     /// <p>Indicates whether the <code>TotalResources</code> value represents an exhaustive count of search results.</p>
     /// <ul>
     /// <li> <p>If <code>True</code>, it indicates that the search was exhaustive. Every resource that matches the query was counted.</p> </li>
@@ -74,6 +78,14 @@ impl ResourceCountBuilder {
     pub fn set_complete(mut self, input: ::std::option::Option<bool>) -> Self {
         self.complete = input;
         self
+    }
+    /// <p>Indicates whether the <code>TotalResources</code> value represents an exhaustive count of search results.</p>
+    /// <ul>
+    /// <li> <p>If <code>True</code>, it indicates that the search was exhaustive. Every resource that matches the query was counted.</p> </li>
+    /// <li> <p>If <code>False</code>, then the search reached the limit of 1,000 matching results, and stopped counting.</p> </li>
+    /// </ul>
+    pub fn get_complete(&self) -> &::std::option::Option<bool> {
+        &self.complete
     }
     /// Consumes the builder and constructs a [`ResourceCount`](crate::types::ResourceCount).
     pub fn build(self) -> crate::types::ResourceCount {

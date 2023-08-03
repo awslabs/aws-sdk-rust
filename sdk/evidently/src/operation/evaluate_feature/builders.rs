@@ -43,6 +43,12 @@ impl EvaluateFeatureFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the EvaluateFeature as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::evaluate_feature::builders::EvaluateFeatureInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl EvaluateFeatureFluentBuilder {
         self.inner = self.inner.set_project(input);
         self
     }
+    /// <p>The name or ARN of the project that contains this feature.</p>
+    pub fn get_project(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project()
+    }
     /// <p>The name of the feature being evaluated.</p>
     pub fn feature(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.feature(input.into());
@@ -143,6 +153,10 @@ impl EvaluateFeatureFluentBuilder {
         self.inner = self.inner.set_feature(input);
         self
     }
+    /// <p>The name of the feature being evaluated.</p>
+    pub fn get_feature(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_feature()
+    }
     /// <p>An internal ID that represents a unique user of the application. This <code>entityID</code> is checked against any override rules assigned for this feature.</p>
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.entity_id(input.into());
@@ -152,6 +166,10 @@ impl EvaluateFeatureFluentBuilder {
     pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_entity_id(input);
         self
+    }
+    /// <p>An internal ID that represents a unique user of the application. This <code>entityID</code> is checked against any override rules assigned for this feature.</p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_entity_id()
     }
     /// <p>A JSON object of attributes that you can optionally pass in as part of the evaluation event sent to Evidently from the user session. Evidently can use this value to match user sessions with defined audience segments. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Use segments to focus your audience</a>.</p>
     /// <p>If you include this parameter, the value must be a JSON object. A JSON array is not supported.</p>
@@ -170,5 +188,10 @@ impl EvaluateFeatureFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_evaluation_context(input);
         self
+    }
+    /// <p>A JSON object of attributes that you can optionally pass in as part of the evaluation event sent to Evidently from the user session. Evidently can use this value to match user sessions with defined audience segments. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Use segments to focus your audience</a>.</p>
+    /// <p>If you include this parameter, the value must be a JSON object. A JSON array is not supported.</p>
+    pub fn get_evaluation_context(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_evaluation_context()
     }
 }

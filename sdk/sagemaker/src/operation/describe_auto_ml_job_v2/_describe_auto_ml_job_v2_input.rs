@@ -46,6 +46,10 @@ impl DescribeAutoMlJobV2InputBuilder {
         self.auto_ml_job_name = input;
         self
     }
+    /// <p>Requests information about an AutoML job V2 using its unique name.</p>
+    pub fn get_auto_ml_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auto_ml_job_name
+    }
     /// Consumes the builder and constructs a [`DescribeAutoMlJobV2Input`](crate::operation::describe_auto_ml_job_v2::DescribeAutoMlJobV2Input).
     pub fn build(
         self,

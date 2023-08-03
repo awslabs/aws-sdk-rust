@@ -38,6 +38,12 @@ impl DeletePackageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeletePackage as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_package::builders::DeletePackageInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -120,6 +126,10 @@ impl DeletePackageFluentBuilder {
         self.inner = self.inner.set_package_id(input);
         self
     }
+    /// <p>The package's ID.</p>
+    pub fn get_package_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_package_id()
+    }
     /// <p>Delete the package even if it has artifacts stored in its access point. Deletes the package's artifacts from Amazon S3.</p>
     pub fn force_delete(mut self, input: bool) -> Self {
         self.inner = self.inner.force_delete(input);
@@ -129,5 +139,9 @@ impl DeletePackageFluentBuilder {
     pub fn set_force_delete(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force_delete(input);
         self
+    }
+    /// <p>Delete the package even if it has artifacts stored in its access point. Deletes the package's artifacts from Amazon S3.</p>
+    pub fn get_force_delete(&self) -> &::std::option::Option<bool> {
+        self.inner.get_force_delete()
     }
 }

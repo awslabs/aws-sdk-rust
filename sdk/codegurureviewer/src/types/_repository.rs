@@ -70,6 +70,10 @@ impl RepositoryBuilder {
         self.code_commit = input;
         self
     }
+    /// <p>Information about an Amazon Web Services CodeCommit repository.</p>
+    pub fn get_code_commit(&self) -> &::std::option::Option<crate::types::CodeCommitRepository> {
+        &self.code_commit
+    }
     /// <p> Information about a Bitbucket repository. </p>
     pub fn bitbucket(mut self, input: crate::types::ThirdPartySourceRepository) -> Self {
         self.bitbucket = ::std::option::Option::Some(input);
@@ -82,6 +86,12 @@ impl RepositoryBuilder {
     ) -> Self {
         self.bitbucket = input;
         self
+    }
+    /// <p> Information about a Bitbucket repository. </p>
+    pub fn get_bitbucket(
+        &self,
+    ) -> &::std::option::Option<crate::types::ThirdPartySourceRepository> {
+        &self.bitbucket
     }
     /// <p>Information about a GitHub Enterprise Server repository.</p>
     pub fn git_hub_enterprise_server(
@@ -99,6 +109,12 @@ impl RepositoryBuilder {
         self.git_hub_enterprise_server = input;
         self
     }
+    /// <p>Information about a GitHub Enterprise Server repository.</p>
+    pub fn get_git_hub_enterprise_server(
+        &self,
+    ) -> &::std::option::Option<crate::types::ThirdPartySourceRepository> {
+        &self.git_hub_enterprise_server
+    }
     /// <p>Information about a repository in an S3 bucket.</p>
     pub fn s3_bucket(mut self, input: crate::types::S3Repository) -> Self {
         self.s3_bucket = ::std::option::Option::Some(input);
@@ -111,6 +127,10 @@ impl RepositoryBuilder {
     ) -> Self {
         self.s3_bucket = input;
         self
+    }
+    /// <p>Information about a repository in an S3 bucket.</p>
+    pub fn get_s3_bucket(&self) -> &::std::option::Option<crate::types::S3Repository> {
+        &self.s3_bucket
     }
     /// Consumes the builder and constructs a [`Repository`](crate::types::Repository).
     pub fn build(self) -> crate::types::Repository {

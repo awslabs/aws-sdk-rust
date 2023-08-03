@@ -48,6 +48,10 @@ impl BatchStopJobRunSuccessfulSubmissionBuilder {
         self.job_name = input;
         self
     }
+    /// <p>The name of the job definition used in the job run that was stopped.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
+    }
     /// <p>The <code>JobRunId</code> of the job run that was stopped.</p>
     pub fn job_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_run_id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl BatchStopJobRunSuccessfulSubmissionBuilder {
     pub fn set_job_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_run_id = input;
         self
+    }
+    /// <p>The <code>JobRunId</code> of the job run that was stopped.</p>
+    pub fn get_job_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_run_id
     }
     /// Consumes the builder and constructs a [`BatchStopJobRunSuccessfulSubmission`](crate::types::BatchStopJobRunSuccessfulSubmission).
     pub fn build(self) -> crate::types::BatchStopJobRunSuccessfulSubmission {

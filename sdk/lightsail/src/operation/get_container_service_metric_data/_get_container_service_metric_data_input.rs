@@ -107,6 +107,10 @@ impl GetContainerServiceMetricDataInputBuilder {
         self.service_name = input;
         self
     }
+    /// <p>The name of the container service for which to get metric data.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
+    }
     /// <p>The metric for which you want to return information.</p>
     /// <p>Valid container service metric names are listed below, along with the most useful statistics to include in your request, and the published unit value.</p>
     /// <ul>
@@ -130,6 +134,17 @@ impl GetContainerServiceMetricDataInputBuilder {
         self.metric_name = input;
         self
     }
+    /// <p>The metric for which you want to return information.</p>
+    /// <p>Valid container service metric names are listed below, along with the most useful statistics to include in your request, and the published unit value.</p>
+    /// <ul>
+    /// <li> <p> <code>CPUUtilization</code> - The average percentage of compute units that are currently in use across all nodes of the container service. This metric identifies the processing power required to run containers on each node of the container service.</p> <p>Statistics: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p> <p>Unit: The published unit is <code>Percent</code>.</p> </li>
+    /// <li> <p> <code>MemoryUtilization</code> - The average percentage of available memory that is currently in use across all nodes of the container service. This metric identifies the memory required to run containers on each node of the container service.</p> <p>Statistics: The most useful statistics are <code>Maximum</code> and <code>Average</code>.</p> <p>Unit: The published unit is <code>Percent</code>.</p> </li>
+    /// </ul>
+    pub fn get_metric_name(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContainerServiceMetricName> {
+        &self.metric_name
+    }
     /// <p>The start time of the time period.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -142,6 +157,10 @@ impl GetContainerServiceMetricDataInputBuilder {
     ) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>The start time of the time period.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p>The end time of the time period.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -156,6 +175,10 @@ impl GetContainerServiceMetricDataInputBuilder {
         self.end_time = input;
         self
     }
+    /// <p>The end time of the time period.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>The granularity, in seconds, of the returned data points.</p>
     /// <p>All container service metric data is available in 5-minute (300 seconds) granularity.</p>
     pub fn period(mut self, input: i32) -> Self {
@@ -167,6 +190,11 @@ impl GetContainerServiceMetricDataInputBuilder {
     pub fn set_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.period = input;
         self
+    }
+    /// <p>The granularity, in seconds, of the returned data points.</p>
+    /// <p>All container service metric data is available in 5-minute (300 seconds) granularity.</p>
+    pub fn get_period(&self) -> &::std::option::Option<i32> {
+        &self.period
     }
     /// Appends an item to `statistics`.
     ///
@@ -202,6 +230,20 @@ impl GetContainerServiceMetricDataInputBuilder {
     ) -> Self {
         self.statistics = input;
         self
+    }
+    /// <p>The statistic for the metric.</p>
+    /// <p>The following statistics are available:</p>
+    /// <ul>
+    /// <li> <p> <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low volumes of activity for your application.</p> </li>
+    /// <li> <p> <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high volumes of activity for your application.</p> </li>
+    /// <li> <p> <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to determine the total volume of a metric.</p> </li>
+    /// <li> <p> <code>Average</code> - The value of <code>Sum</code> / <code>SampleCount</code> during the specified period. By comparing this statistic with the <code>Minimum</code> and <code>Maximum</code> values, you can determine the full scope of a metric and how close the average use is to the <code>Minimum</code> and <code>Maximum</code> values. This comparison helps you to know when to increase or decrease your resources.</p> </li>
+    /// <li> <p> <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.</p> </li>
+    /// </ul>
+    pub fn get_statistics(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>> {
+        &self.statistics
     }
     /// Consumes the builder and constructs a [`GetContainerServiceMetricDataInput`](crate::operation::get_container_service_metric_data::GetContainerServiceMetricDataInput).
     pub fn build(

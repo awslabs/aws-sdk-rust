@@ -62,6 +62,10 @@ impl UnprocessedSecurityControlBuilder {
         self.security_control_id = input;
         self
     }
+    /// <p> The control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) for which a response couldn't be returned. </p>
+    pub fn get_security_control_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_control_id
+    }
     /// <p> The error code for the unprocessed security control. </p>
     pub fn error_code(mut self, input: crate::types::UnprocessedErrorCode) -> Self {
         self.error_code = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl UnprocessedSecurityControlBuilder {
         self.error_code = input;
         self
     }
+    /// <p> The error code for the unprocessed security control. </p>
+    pub fn get_error_code(&self) -> &::std::option::Option<crate::types::UnprocessedErrorCode> {
+        &self.error_code
+    }
     /// <p> The reason why the security control was unprocessed. </p>
     pub fn error_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_reason = ::std::option::Option::Some(input.into());
@@ -84,6 +92,10 @@ impl UnprocessedSecurityControlBuilder {
     pub fn set_error_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_reason = input;
         self
+    }
+    /// <p> The reason why the security control was unprocessed. </p>
+    pub fn get_error_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_reason
     }
     /// Consumes the builder and constructs a [`UnprocessedSecurityControl`](crate::types::UnprocessedSecurityControl).
     pub fn build(self) -> crate::types::UnprocessedSecurityControl {

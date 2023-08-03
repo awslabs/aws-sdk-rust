@@ -41,6 +41,10 @@ impl DescribeCreateCaseOptionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeCreateCaseOptions as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_create_case_options::builders::DescribeCreateCaseOptionsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +135,10 @@ impl DescribeCreateCaseOptionsFluentBuilder {
         self.inner = self.inner.set_issue_type(input);
         self
     }
+    /// <p>The type of issue for the case. You can specify <code>customer-service</code> or <code>technical</code>. If you don't specify a value, the default is <code>technical</code>.</p>
+    pub fn get_issue_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_issue_type()
+    }
     /// <p>The code for the Amazon Web Services service. You can use the <code>DescribeServices</code> operation to get the possible <code>serviceCode</code> values.</p>
     pub fn service_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_code(input.into());
@@ -141,6 +149,10 @@ impl DescribeCreateCaseOptionsFluentBuilder {
         self.inner = self.inner.set_service_code(input);
         self
     }
+    /// <p>The code for the Amazon Web Services service. You can use the <code>DescribeServices</code> operation to get the possible <code>serviceCode</code> values.</p>
+    pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_code()
+    }
     /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     pub fn language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.language(input.into());
@@ -150,6 +162,10 @@ impl DescribeCreateCaseOptionsFluentBuilder {
     pub fn set_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_language(input);
         self
+    }
+    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
+    pub fn get_language(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_language()
     }
     /// <p>The category of problem for the support case. You also use the <code>DescribeServices</code> operation to get the category code for a service. Each Amazon Web Services service defines its own set of category codes.</p>
     pub fn category_code(
@@ -166,5 +182,9 @@ impl DescribeCreateCaseOptionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_category_code(input);
         self
+    }
+    /// <p>The category of problem for the support case. You also use the <code>DescribeServices</code> operation to get the category code for a service. Each Amazon Web Services service defines its own set of category codes.</p>
+    pub fn get_category_code(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_category_code()
     }
 }

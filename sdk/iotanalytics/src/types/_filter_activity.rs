@@ -56,6 +56,10 @@ impl FilterActivityBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the filter activity.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>An expression that looks like a SQL WHERE clause that must return a Boolean value. Messages that satisfy the condition are passed to the next activity. </p>
     pub fn filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.filter = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl FilterActivityBuilder {
         self.filter = input;
         self
     }
+    /// <p>An expression that looks like a SQL WHERE clause that must return a Boolean value. Messages that satisfy the condition are passed to the next activity. </p>
+    pub fn get_filter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filter
+    }
     /// <p>The next activity in the pipeline.</p>
     pub fn next(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl FilterActivityBuilder {
     pub fn set_next(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next = input;
         self
+    }
+    /// <p>The next activity in the pipeline.</p>
+    pub fn get_next(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next
     }
     /// Consumes the builder and constructs a [`FilterActivity`](crate::types::FilterActivity).
     pub fn build(self) -> crate::types::FilterActivity {

@@ -40,6 +40,10 @@ impl DeleteConnectionInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the connection to delete.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DeleteConnectionInput`](crate::operation::delete_connection::DeleteConnectionInput).
     pub fn build(
         self,

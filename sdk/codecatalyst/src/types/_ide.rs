@@ -48,6 +48,10 @@ impl IdeBuilder {
         self.runtime = input;
         self
     }
+    /// <p>A link to the IDE runtime image.</p>
+    pub fn get_runtime(&self) -> &::std::option::Option<::std::string::String> {
+        &self.runtime
+    }
     /// <p>The name of the IDE.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl IdeBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the IDE.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`Ide`](crate::types::Ide).
     pub fn build(self) -> crate::types::Ide {

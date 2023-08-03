@@ -56,6 +56,10 @@ impl CostAllocationTagBuilder {
         self.tag_key = input;
         self
     }
+    /// <p>The key for the cost allocation tag. </p>
+    pub fn get_tag_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tag_key
+    }
     /// <p>The type of cost allocation tag. You can use <code>AWSGenerated</code> or <code>UserDefined</code> type tags. <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. <code>UserDefined</code> type tags are tags that you define, create, and apply to resources. </p>
     pub fn r#type(mut self, input: crate::types::CostAllocationTagType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl CostAllocationTagBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of cost allocation tag. You can use <code>AWSGenerated</code> or <code>UserDefined</code> type tags. <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. <code>UserDefined</code> type tags are tags that you define, create, and apply to resources. </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::CostAllocationTagType> {
+        &self.r#type
+    }
     /// <p>The status of a cost allocation tag. </p>
     pub fn status(mut self, input: crate::types::CostAllocationTagStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl CostAllocationTagBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of a cost allocation tag. </p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::CostAllocationTagStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`CostAllocationTag`](crate::types::CostAllocationTag).
     pub fn build(self) -> crate::types::CostAllocationTag {

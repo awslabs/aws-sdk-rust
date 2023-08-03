@@ -36,6 +36,12 @@ impl ListIpRoutesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListIpRoutes as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_ip_routes::builders::ListIpRoutesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl ListIpRoutesFluentBuilder {
         self.inner = self.inner.set_directory_id(input);
         self
     }
+    /// <p>Identifier (ID) of the directory for which you want to retrieve the IP addresses.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_id()
+    }
     /// <p>The <i>ListIpRoutes.NextToken</i> value from a previous call to <code>ListIpRoutes</code>. Pass null if this is the first call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -139,6 +149,10 @@ impl ListIpRoutesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The <i>ListIpRoutes.NextToken</i> value from a previous call to <code>ListIpRoutes</code>. Pass null if this is the first call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>Maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -148,5 +162,9 @@ impl ListIpRoutesFluentBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
+    }
+    /// <p>Maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
     }
 }

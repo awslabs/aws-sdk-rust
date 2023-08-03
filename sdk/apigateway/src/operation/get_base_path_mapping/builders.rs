@@ -36,6 +36,12 @@ impl GetBasePathMappingFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetBasePathMapping as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_base_path_mapping::builders::GetBasePathMappingInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl GetBasePathMappingFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p>The domain name of the BasePathMapping resource to be described.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
     /// <p>The base path name that callers of the API must provide as part of the URL after the domain name. This value must be unique for all of the mappings across a single API. Specify '(none)' if you do not want callers to specify any base path name after the domain name.</p>
     pub fn base_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.base_path(input.into());
@@ -135,5 +145,9 @@ impl GetBasePathMappingFluentBuilder {
     pub fn set_base_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_base_path(input);
         self
+    }
+    /// <p>The base path name that callers of the API must provide as part of the URL after the domain name. This value must be unique for all of the mappings across a single API. Specify '(none)' if you do not want callers to specify any base path name after the domain name.</p>
+    pub fn get_base_path(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_base_path()
     }
 }

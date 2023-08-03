@@ -36,6 +36,10 @@ impl DescribeSubscriptionFiltersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeSubscriptionFilters as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_subscription_filters::builders::DescribeSubscriptionFiltersInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +142,10 @@ impl DescribeSubscriptionFiltersFluentBuilder {
         self.inner = self.inner.set_log_group_name(input);
         self
     }
+    /// <p>The name of the log group.</p>
+    pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_log_group_name()
+    }
     /// <p>The prefix to match. If you don't specify a value, no prefix filter is applied.</p>
     pub fn filter_name_prefix(
         mut self,
@@ -154,6 +162,10 @@ impl DescribeSubscriptionFiltersFluentBuilder {
         self.inner = self.inner.set_filter_name_prefix(input);
         self
     }
+    /// <p>The prefix to match. If you don't specify a value, no prefix filter is applied.</p>
+    pub fn get_filter_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_filter_name_prefix()
+    }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -164,6 +176,10 @@ impl DescribeSubscriptionFiltersFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -173,5 +189,9 @@ impl DescribeSubscriptionFiltersFluentBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
+    }
+    /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
     }
 }

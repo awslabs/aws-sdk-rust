@@ -79,6 +79,10 @@ impl UpdateApiDestinationOutputBuilder {
         self.api_destination_arn = input;
         self
     }
+    /// <p>The ARN of the API destination that was updated.</p>
+    pub fn get_api_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_destination_arn
+    }
     /// <p>The state of the API destination that was updated.</p>
     pub fn api_destination_state(mut self, input: crate::types::ApiDestinationState) -> Self {
         self.api_destination_state = ::std::option::Option::Some(input);
@@ -91,6 +95,12 @@ impl UpdateApiDestinationOutputBuilder {
     ) -> Self {
         self.api_destination_state = input;
         self
+    }
+    /// <p>The state of the API destination that was updated.</p>
+    pub fn get_api_destination_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApiDestinationState> {
+        &self.api_destination_state
     }
     /// <p>A time stamp for the time that the API destination was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -105,6 +115,10 @@ impl UpdateApiDestinationOutputBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>A time stamp for the time that the API destination was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>A time stamp for the time that the API destination was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -117,6 +131,10 @@ impl UpdateApiDestinationOutputBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>A time stamp for the time that the API destination was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

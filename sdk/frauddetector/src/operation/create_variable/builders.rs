@@ -36,6 +36,12 @@ impl CreateVariableFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateVariable as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_variable::builders::CreateVariableInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +124,10 @@ impl CreateVariableFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the variable.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The data type of the variable.</p>
     pub fn data_type(mut self, input: crate::types::DataType) -> Self {
         self.inner = self.inner.data_type(input);
@@ -127,6 +137,10 @@ impl CreateVariableFluentBuilder {
     pub fn set_data_type(mut self, input: ::std::option::Option<crate::types::DataType>) -> Self {
         self.inner = self.inner.set_data_type(input);
         self
+    }
+    /// <p>The data type of the variable.</p>
+    pub fn get_data_type(&self) -> &::std::option::Option<crate::types::DataType> {
+        self.inner.get_data_type()
     }
     /// <p>The source of the data.</p>
     pub fn data_source(mut self, input: crate::types::DataSource) -> Self {
@@ -140,6 +154,10 @@ impl CreateVariableFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_data_source(input);
         self
+    }
+    /// <p>The source of the data.</p>
+    pub fn get_data_source(&self) -> &::std::option::Option<crate::types::DataSource> {
+        self.inner.get_data_source()
     }
     /// <p>The default value for the variable when no value is received.</p>
     pub fn default_value(
@@ -157,6 +175,10 @@ impl CreateVariableFluentBuilder {
         self.inner = self.inner.set_default_value(input);
         self
     }
+    /// <p>The default value for the variable when no value is received.</p>
+    pub fn get_default_value(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_default_value()
+    }
     /// <p>The description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -166,6 +188,10 @@ impl CreateVariableFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>. </p>
     /// <p>Valid Values: <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT</code> </p>
@@ -185,6 +211,11 @@ impl CreateVariableFluentBuilder {
         self.inner = self.inner.set_variable_type(input);
         self
     }
+    /// <p>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>. </p>
+    /// <p>Valid Values: <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT</code> </p>
+    pub fn get_variable_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_variable_type()
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -201,5 +232,9 @@ impl CreateVariableFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A collection of key and value pairs.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

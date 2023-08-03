@@ -57,6 +57,10 @@ impl UpdateReplicationSetInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the replication set you're updating.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Appends an item to `actions`.
     ///
     /// To override the contents of this collection use [`set_actions`](Self::set_actions).
@@ -76,6 +80,12 @@ impl UpdateReplicationSetInputBuilder {
         self.actions = input;
         self
     }
+    /// <p>An action to add or delete a Region.</p>
+    pub fn get_actions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateReplicationSetAction>> {
+        &self.actions
+    }
     /// <p>A token that ensures that the operation is called only once with the specified details.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -85,6 +95,10 @@ impl UpdateReplicationSetInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A token that ensures that the operation is called only once with the specified details.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateReplicationSetInput`](crate::operation::update_replication_set::UpdateReplicationSetInput).
     pub fn build(

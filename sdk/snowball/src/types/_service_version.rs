@@ -40,6 +40,10 @@ impl ServiceVersionBuilder {
         self.version = input;
         self
     }
+    /// <p>The version number of the requested service.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
+    }
     /// Consumes the builder and constructs a [`ServiceVersion`](crate::types::ServiceVersion).
     pub fn build(self) -> crate::types::ServiceVersion {
         crate::types::ServiceVersion {

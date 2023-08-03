@@ -37,6 +37,13 @@ impl AuthorizeEndpointAccessFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AuthorizeEndpointAccess as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::authorize_endpoint_access::builders::AuthorizeEndpointAccessInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl AuthorizeEndpointAccessFluentBuilder {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
+    /// <p>The cluster identifier of the cluster to grant access to.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_identifier()
+    }
     /// <p>The Amazon Web Services account ID to grant access to.</p>
     pub fn account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account(input.into());
@@ -142,6 +153,10 @@ impl AuthorizeEndpointAccessFluentBuilder {
     pub fn set_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account(input);
         self
+    }
+    /// <p>The Amazon Web Services account ID to grant access to.</p>
+    pub fn get_account(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account()
     }
     /// Appends an item to `VpcIds`.
     ///
@@ -159,5 +174,9 @@ impl AuthorizeEndpointAccessFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_vpc_ids(input);
         self
+    }
+    /// <p>The virtual private cloud (VPC) identifiers to grant access to.</p>
+    pub fn get_vpc_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_vpc_ids()
     }
 }

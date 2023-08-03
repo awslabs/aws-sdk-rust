@@ -69,6 +69,10 @@ impl AwsCredentialsBuilder {
         self.access_key_id = input;
         self
     }
+    /// <p>Temporary key allowing access to the Amazon GameLift S3 account.</p>
+    pub fn get_access_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_key_id
+    }
     /// <p>Temporary secret key allowing access to the Amazon GameLift S3 account.</p>
     pub fn secret_access_key(
         mut self,
@@ -85,6 +89,10 @@ impl AwsCredentialsBuilder {
         self.secret_access_key = input;
         self
     }
+    /// <p>Temporary secret key allowing access to the Amazon GameLift S3 account.</p>
+    pub fn get_secret_access_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_access_key
+    }
     /// <p>Token used to associate a specific build ID with the files uploaded using these credentials.</p>
     pub fn session_token(
         mut self,
@@ -100,6 +108,10 @@ impl AwsCredentialsBuilder {
     ) -> Self {
         self.session_token = input;
         self
+    }
+    /// <p>Token used to associate a specific build ID with the files uploaded using these credentials.</p>
+    pub fn get_session_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_token
     }
     /// Consumes the builder and constructs a [`AwsCredentials`](crate::types::AwsCredentials).
     pub fn build(self) -> crate::types::AwsCredentials {

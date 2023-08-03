@@ -56,6 +56,10 @@ impl ListServiceTemplatesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token that indicates the location of the next service template in the array of service templates, after the current requested list of service templates.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `templates`.
     ///
     /// To override the contents of this collection use [`set_templates`](Self::set_templates).
@@ -74,6 +78,12 @@ impl ListServiceTemplatesOutputBuilder {
     ) -> Self {
         self.templates = input;
         self
+    }
+    /// <p>An array of service templates with detail data.</p>
+    pub fn get_templates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceTemplateSummary>> {
+        &self.templates
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

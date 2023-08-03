@@ -69,6 +69,10 @@ impl ListMedicalTranscriptionJobsOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>Lists all medical transcription jobs that have the status specified in your request. Jobs are ordered by creation date, with the newest job first.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::TranscriptionJobStatus> {
+        &self.status
+    }
     /// <p>If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -78,6 +82,10 @@ impl ListMedicalTranscriptionJobsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Appends an item to `medical_transcription_job_summaries`.
     ///
@@ -100,6 +108,12 @@ impl ListMedicalTranscriptionJobsOutputBuilder {
     ) -> Self {
         self.medical_transcription_job_summaries = input;
         self
+    }
+    /// <p>Provides a summary of information about each result.</p>
+    pub fn get_medical_transcription_job_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MedicalTranscriptionJobSummary>> {
+        &self.medical_transcription_job_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

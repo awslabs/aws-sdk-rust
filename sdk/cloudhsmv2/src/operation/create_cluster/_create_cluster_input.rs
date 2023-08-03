@@ -84,6 +84,12 @@ impl CreateClusterInputBuilder {
         self.backup_retention_policy = input;
         self
     }
+    /// <p>A policy that defines how the service retains backups.</p>
+    pub fn get_backup_retention_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::BackupRetentionPolicy> {
+        &self.backup_retention_policy
+    }
     /// <p>The type of HSM to use in the cluster. Currently the only allowed value is <code>hsm1.medium</code>.</p>
     pub fn hsm_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hsm_type = ::std::option::Option::Some(input.into());
@@ -93,6 +99,10 @@ impl CreateClusterInputBuilder {
     pub fn set_hsm_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hsm_type = input;
         self
+    }
+    /// <p>The type of HSM to use in the cluster. Currently the only allowed value is <code>hsm1.medium</code>.</p>
+    pub fn get_hsm_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hsm_type
     }
     /// <p>The identifier (ID) of the cluster backup to restore. Use this value to restore the cluster from a backup instead of creating a new cluster. To find the backup ID, use <code>DescribeBackups</code>.</p>
     pub fn source_backup_id(
@@ -109,6 +119,10 @@ impl CreateClusterInputBuilder {
     ) -> Self {
         self.source_backup_id = input;
         self
+    }
+    /// <p>The identifier (ID) of the cluster backup to restore. Use this value to restore the cluster from a backup instead of creating a new cluster. To find the backup ID, use <code>DescribeBackups</code>.</p>
+    pub fn get_source_backup_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_backup_id
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -137,6 +151,14 @@ impl CreateClusterInputBuilder {
         self.subnet_ids = input;
         self
     }
+    /// <p>The identifiers (IDs) of the subnets where you are creating the cluster. You must specify at least one subnet. If you specify multiple subnets, they must meet the following criteria:</p>
+    /// <ul>
+    /// <li> <p>All subnets must be in the same virtual private cloud (VPC).</p> </li>
+    /// <li> <p>You can specify only one subnet per Availability Zone.</p> </li>
+    /// </ul>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
+    }
     /// Appends an item to `tag_list`.
     ///
     /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
@@ -155,6 +177,10 @@ impl CreateClusterInputBuilder {
     ) -> Self {
         self.tag_list = input;
         self
+    }
+    /// <p>Tags to apply to the CloudHSM cluster during creation.</p>
+    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tag_list
     }
     /// Consumes the builder and constructs a [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
     pub fn build(

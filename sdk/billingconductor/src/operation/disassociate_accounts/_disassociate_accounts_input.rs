@@ -49,6 +49,10 @@ impl DisassociateAccountsInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the billing group that the array of account IDs will disassociate from. </p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Appends an item to `account_ids`.
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
@@ -67,6 +71,12 @@ impl DisassociateAccountsInputBuilder {
     ) -> Self {
         self.account_ids = input;
         self
+    }
+    /// <p>The array of account IDs to disassociate. </p>
+    pub fn get_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.account_ids
     }
     /// Consumes the builder and constructs a [`DisassociateAccountsInput`](crate::operation::disassociate_accounts::DisassociateAccountsInput).
     pub fn build(

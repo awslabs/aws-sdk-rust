@@ -36,6 +36,10 @@ impl GetMappingFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetMapping as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_mapping::builders::GetMappingInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl GetMappingFluentBuilder {
         self.inner = self.inner.set_source(input);
         self
     }
+    /// <p>Specifies the source table.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::CatalogEntry> {
+        self.inner.get_source()
+    }
     /// Appends an item to `Sinks`.
     ///
     /// To override the contents of this collection use [`set_sinks`](Self::set_sinks).
@@ -135,6 +143,10 @@ impl GetMappingFluentBuilder {
         self.inner = self.inner.set_sinks(input);
         self
     }
+    /// <p>A list of target tables.</p>
+    pub fn get_sinks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CatalogEntry>> {
+        self.inner.get_sinks()
+    }
     /// <p>Parameters for the mapping.</p>
     pub fn location(mut self, input: crate::types::Location) -> Self {
         self.inner = self.inner.location(input);
@@ -144,5 +156,9 @@ impl GetMappingFluentBuilder {
     pub fn set_location(mut self, input: ::std::option::Option<crate::types::Location>) -> Self {
         self.inner = self.inner.set_location(input);
         self
+    }
+    /// <p>Parameters for the mapping.</p>
+    pub fn get_location(&self) -> &::std::option::Option<crate::types::Location> {
+        self.inner.get_location()
     }
 }

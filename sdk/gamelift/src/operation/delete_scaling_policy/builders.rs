@@ -37,6 +37,12 @@ impl DeleteScalingPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteScalingPolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_scaling_policy::builders::DeleteScalingPolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl DeleteScalingPolicyFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>A unique identifier for the fleet to be deleted. You can use either the fleet ID or ARN value.</p>
     pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fleet_id(input.into());
@@ -136,5 +146,9 @@ impl DeleteScalingPolicyFluentBuilder {
     pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fleet_id(input);
         self
+    }
+    /// <p>A unique identifier for the fleet to be deleted. You can use either the fleet ID or ARN value.</p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_fleet_id()
     }
 }

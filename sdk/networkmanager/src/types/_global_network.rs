@@ -86,6 +86,10 @@ impl GlobalNetworkBuilder {
         self.global_network_id = input;
         self
     }
+    /// <p>The ID of the global network.</p>
+    pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_network_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the global network.</p>
     pub fn global_network_arn(
         mut self,
@@ -102,6 +106,10 @@ impl GlobalNetworkBuilder {
         self.global_network_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the global network.</p>
+    pub fn get_global_network_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_network_arn
+    }
     /// <p>The description of the global network.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -111,6 +119,10 @@ impl GlobalNetworkBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the global network.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The date and time that the global network was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -125,6 +137,10 @@ impl GlobalNetworkBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The date and time that the global network was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The state of the global network.</p>
     pub fn state(mut self, input: crate::types::GlobalNetworkState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -137,6 +153,10 @@ impl GlobalNetworkBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the global network.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::GlobalNetworkState> {
+        &self.state
     }
     /// Appends an item to `tags`.
     ///
@@ -156,6 +176,10 @@ impl GlobalNetworkBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags for the global network.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`GlobalNetwork`](crate::types::GlobalNetwork).
     pub fn build(self) -> crate::types::GlobalNetwork {

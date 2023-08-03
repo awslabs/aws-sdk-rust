@@ -54,6 +54,11 @@ impl ListRouteCalculatorsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>An optional maximum number of results returned in a single call.</p>
+    /// <p>Default Value: <code>100</code> </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
     /// <p>Default Value: <code>null</code> </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -65,6 +70,11 @@ impl ListRouteCalculatorsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
+    /// <p>Default Value: <code>null</code> </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListRouteCalculatorsInput`](crate::operation::list_route_calculators::ListRouteCalculatorsInput).
     pub fn build(

@@ -55,6 +55,12 @@ impl DescribeAppInstanceUserEndpointOutputBuilder {
         self.app_instance_user_endpoint = input;
         self
     }
+    /// <p>The full details of an <code>AppInstanceUserEndpoint</code>: the <code>AppInstanceUserArn</code>, ID, name, type, resource ARN, attributes, allow messages, state, and created and last updated timestamps. All timestamps use epoch milliseconds.</p>
+    pub fn get_app_instance_user_endpoint(
+        &self,
+    ) -> &::std::option::Option<crate::types::AppInstanceUserEndpoint> {
+        &self.app_instance_user_endpoint
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

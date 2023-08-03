@@ -63,6 +63,12 @@ impl ListAuthorizersOutputBuilder {
         self.authorizers = input;
         self
     }
+    /// <p>The authorizers.</p>
+    pub fn get_authorizers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthorizerSummary>> {
+        &self.authorizers
+    }
     /// <p>A marker used to get the next set of results.</p>
     pub fn next_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_marker = ::std::option::Option::Some(input.into());
@@ -72,6 +78,10 @@ impl ListAuthorizersOutputBuilder {
     pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_marker = input;
         self
+    }
+    /// <p>A marker used to get the next set of results.</p>
+    pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

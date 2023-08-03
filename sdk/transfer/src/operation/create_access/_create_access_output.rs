@@ -54,6 +54,10 @@ impl CreateAccessOutputBuilder {
         self.server_id = input;
         self
     }
+    /// <p>The identifier of the server that the user is attached to.</p>
+    pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_id
+    }
     /// <p>The external identifier of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family.</p>
     pub fn external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.external_id = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl CreateAccessOutputBuilder {
     pub fn set_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.external_id = input;
         self
+    }
+    /// <p>The external identifier of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family.</p>
+    pub fn get_external_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.external_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

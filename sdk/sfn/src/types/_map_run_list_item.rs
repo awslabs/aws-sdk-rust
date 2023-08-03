@@ -78,6 +78,10 @@ impl MapRunListItemBuilder {
         self.execution_arn = input;
         self
     }
+    /// <p>The <code>executionArn</code> of the execution from which the Map Run was started.</p>
+    pub fn get_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the Map Run.</p>
     pub fn map_run_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.map_run_arn = ::std::option::Option::Some(input.into());
@@ -87,6 +91,10 @@ impl MapRunListItemBuilder {
     pub fn set_map_run_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.map_run_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Map Run.</p>
+    pub fn get_map_run_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.map_run_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the executed state machine.</p>
     pub fn state_machine_arn(
@@ -104,6 +112,10 @@ impl MapRunListItemBuilder {
         self.state_machine_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the executed state machine.</p>
+    pub fn get_state_machine_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_machine_arn
+    }
     /// <p>The date on which the Map Run started.</p>
     pub fn start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_date = ::std::option::Option::Some(input);
@@ -117,6 +129,10 @@ impl MapRunListItemBuilder {
         self.start_date = input;
         self
     }
+    /// <p>The date on which the Map Run started.</p>
+    pub fn get_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_date
+    }
     /// <p>The date on which the Map Run stopped.</p>
     pub fn stop_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.stop_date = ::std::option::Option::Some(input);
@@ -129,6 +145,10 @@ impl MapRunListItemBuilder {
     ) -> Self {
         self.stop_date = input;
         self
+    }
+    /// <p>The date on which the Map Run stopped.</p>
+    pub fn get_stop_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.stop_date
     }
     /// Consumes the builder and constructs a [`MapRunListItem`](crate::types::MapRunListItem).
     pub fn build(self) -> crate::types::MapRunListItem {

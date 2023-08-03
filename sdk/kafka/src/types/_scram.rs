@@ -40,6 +40,10 @@ impl ScramBuilder {
         self.enabled = input;
         self
     }
+    /// <p>SASL/SCRAM authentication is enabled or not.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// Consumes the builder and constructs a [`Scram`](crate::types::Scram).
     pub fn build(self) -> crate::types::Scram {
         crate::types::Scram {

@@ -45,6 +45,12 @@ impl GetOrganizationCustomRulePolicyInputBuilder {
         self.organization_config_rule_name = input;
         self
     }
+    /// <p>The name of your organization Config Custom Policy rule. </p>
+    pub fn get_organization_config_rule_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.organization_config_rule_name
+    }
     /// Consumes the builder and constructs a [`GetOrganizationCustomRulePolicyInput`](crate::operation::get_organization_custom_rule_policy::GetOrganizationCustomRulePolicyInput).
     pub fn build(
         self,

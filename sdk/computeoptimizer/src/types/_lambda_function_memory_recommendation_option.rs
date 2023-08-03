@@ -72,6 +72,11 @@ impl LambdaFunctionMemoryRecommendationOptionBuilder {
         self.rank = input;
         self
     }
+    /// <p>The rank of the function recommendation option.</p>
+    /// <p>The top recommendation option is ranked as <code>1</code>.</p>
+    pub fn get_rank(&self) -> &::std::option::Option<i32> {
+        &self.rank
+    }
     /// <p>The memory size, in MB, of the function recommendation option.</p>
     pub fn memory_size(mut self, input: i32) -> Self {
         self.memory_size = ::std::option::Option::Some(input);
@@ -81,6 +86,10 @@ impl LambdaFunctionMemoryRecommendationOptionBuilder {
     pub fn set_memory_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.memory_size = input;
         self
+    }
+    /// <p>The memory size, in MB, of the function recommendation option.</p>
+    pub fn get_memory_size(&self) -> &::std::option::Option<i32> {
+        &self.memory_size
     }
     /// Appends an item to `projected_utilization_metrics`.
     ///
@@ -106,6 +115,13 @@ impl LambdaFunctionMemoryRecommendationOptionBuilder {
         self.projected_utilization_metrics = input;
         self
     }
+    /// <p>An array of objects that describe the projected utilization metrics of the function recommendation option.</p>
+    pub fn get_projected_utilization_metrics(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionMemoryProjectedMetric>>
+    {
+        &self.projected_utilization_metrics
+    }
     /// <p>An object that describes the savings opportunity for the Lambda function recommendation option. Savings opportunity includes the estimated monthly savings amount and percentage.</p>
     pub fn savings_opportunity(mut self, input: crate::types::SavingsOpportunity) -> Self {
         self.savings_opportunity = ::std::option::Option::Some(input);
@@ -118,6 +134,12 @@ impl LambdaFunctionMemoryRecommendationOptionBuilder {
     ) -> Self {
         self.savings_opportunity = input;
         self
+    }
+    /// <p>An object that describes the savings opportunity for the Lambda function recommendation option. Savings opportunity includes the estimated monthly savings amount and percentage.</p>
+    pub fn get_savings_opportunity(
+        &self,
+    ) -> &::std::option::Option<crate::types::SavingsOpportunity> {
+        &self.savings_opportunity
     }
     /// Consumes the builder and constructs a [`LambdaFunctionMemoryRecommendationOption`](crate::types::LambdaFunctionMemoryRecommendationOption).
     pub fn build(self) -> crate::types::LambdaFunctionMemoryRecommendationOption {

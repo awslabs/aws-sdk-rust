@@ -45,6 +45,10 @@ impl GetResolverRuleInputBuilder {
         self.resolver_rule_id = input;
         self
     }
+    /// <p>The ID of the Resolver rule that you want to get information about.</p>
+    pub fn get_resolver_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resolver_rule_id
+    }
     /// Consumes the builder and constructs a [`GetResolverRuleInput`](crate::operation::get_resolver_rule::GetResolverRuleInput).
     pub fn build(
         self,

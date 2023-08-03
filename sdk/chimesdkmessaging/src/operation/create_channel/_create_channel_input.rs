@@ -165,6 +165,10 @@ impl CreateChannelInputBuilder {
         self.app_instance_arn = input;
         self
     }
+    /// <p>The ARN of the channel request.</p>
+    pub fn get_app_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_instance_arn
+    }
     /// <p>The name of the channel.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -175,6 +179,10 @@ impl CreateChannelInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the channel.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators, moderators, and channel members can add themselves and other members to unrestricted channels. Only administrators and moderators can add members to restricted channels.</p>
     pub fn mode(mut self, input: crate::types::ChannelMode) -> Self {
         self.mode = ::std::option::Option::Some(input);
@@ -184,6 +192,10 @@ impl CreateChannelInputBuilder {
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::ChannelMode>) -> Self {
         self.mode = input;
         self
+    }
+    /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators, moderators, and channel members can add themselves and other members to unrestricted channels. Only administrators and moderators can add members to restricted channels.</p>
+    pub fn get_mode(&self) -> &::std::option::Option<crate::types::ChannelMode> {
+        &self.mode
     }
     /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private channels aren't discoverable by users outside the channel. Public channels are discoverable by anyone in the <code>AppInstance</code>.</p>
     pub fn privacy(mut self, input: crate::types::ChannelPrivacy) -> Self {
@@ -198,6 +210,10 @@ impl CreateChannelInputBuilder {
         self.privacy = input;
         self
     }
+    /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private channels aren't discoverable by users outside the channel. Public channels are discoverable by anyone in the <code>AppInstance</code>.</p>
+    pub fn get_privacy(&self) -> &::std::option::Option<crate::types::ChannelPrivacy> {
+        &self.privacy
+    }
     /// <p>The metadata of the creation request. Limited to 1KB and UTF-8.</p>
     pub fn metadata(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.metadata = ::std::option::Option::Some(input.into());
@@ -207,6 +223,10 @@ impl CreateChannelInputBuilder {
     pub fn set_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metadata = input;
         self
+    }
+    /// <p>The metadata of the creation request. Limited to 1KB and UTF-8.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metadata
     }
     /// <p>The client token for the request. An <code>Idempotency</code> token.</p>
     pub fn client_request_token(
@@ -223,6 +243,10 @@ impl CreateChannelInputBuilder {
     ) -> Self {
         self.client_request_token = input;
         self
+    }
+    /// <p>The client token for the request. An <code>Idempotency</code> token.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
     }
     /// Appends an item to `tags`.
     ///
@@ -243,6 +267,10 @@ impl CreateChannelInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags for the creation request.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.chime_bearer = ::std::option::Option::Some(input.into());
@@ -253,6 +281,10 @@ impl CreateChannelInputBuilder {
         self.chime_bearer = input;
         self
     }
+    /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
+    pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
+        &self.chime_bearer
+    }
     /// <p>The ID of the channel in the request.</p>
     pub fn channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel_id = ::std::option::Option::Some(input.into());
@@ -262,6 +294,10 @@ impl CreateChannelInputBuilder {
     pub fn set_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_id = input;
         self
+    }
+    /// <p>The ID of the channel in the request.</p>
+    pub fn get_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_id
     }
     /// Appends an item to `member_arns`.
     ///
@@ -281,6 +317,12 @@ impl CreateChannelInputBuilder {
     ) -> Self {
         self.member_arns = input;
         self
+    }
+    /// <p>The ARNs of the channel members in the request.</p>
+    pub fn get_member_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.member_arns
     }
     /// Appends an item to `moderator_arns`.
     ///
@@ -304,6 +346,12 @@ impl CreateChannelInputBuilder {
         self.moderator_arns = input;
         self
     }
+    /// <p>The ARNs of the channel moderators in the request.</p>
+    pub fn get_moderator_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.moderator_arns
+    }
     /// <p>The attributes required to configure and create an elastic channel. An elastic channel can support a maximum of 1-million users, excluding moderators.</p>
     pub fn elastic_channel_configuration(
         mut self,
@@ -320,6 +368,12 @@ impl CreateChannelInputBuilder {
         self.elastic_channel_configuration = input;
         self
     }
+    /// <p>The attributes required to configure and create an elastic channel. An elastic channel can support a maximum of 1-million users, excluding moderators.</p>
+    pub fn get_elastic_channel_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ElasticChannelConfiguration> {
+        &self.elastic_channel_configuration
+    }
     /// <p>Settings that control the interval after which the channel is automatically deleted.</p>
     pub fn expiration_settings(mut self, input: crate::types::ExpirationSettings) -> Self {
         self.expiration_settings = ::std::option::Option::Some(input);
@@ -332,6 +386,12 @@ impl CreateChannelInputBuilder {
     ) -> Self {
         self.expiration_settings = input;
         self
+    }
+    /// <p>Settings that control the interval after which the channel is automatically deleted.</p>
+    pub fn get_expiration_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExpirationSettings> {
+        &self.expiration_settings
     }
     /// Consumes the builder and constructs a [`CreateChannelInput`](crate::operation::create_channel::CreateChannelInput).
     pub fn build(

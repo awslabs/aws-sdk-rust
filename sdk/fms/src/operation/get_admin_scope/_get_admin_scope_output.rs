@@ -69,6 +69,10 @@ impl GetAdminScopeOutputBuilder {
         self.admin_scope = input;
         self
     }
+    /// <p>Contains details about the administrative scope of the requested account.</p>
+    pub fn get_admin_scope(&self) -> &::std::option::Option<crate::types::AdminScope> {
+        &self.admin_scope
+    }
     /// <p>The current status of the request to onboard a member account as an Firewall Manager administator.</p>
     /// <ul>
     /// <li> <p> <code>ONBOARDING</code> - The account is onboarding to Firewall Manager as an administrator.</p> </li>
@@ -93,6 +97,16 @@ impl GetAdminScopeOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the request to onboard a member account as an Firewall Manager administator.</p>
+    /// <ul>
+    /// <li> <p> <code>ONBOARDING</code> - The account is onboarding to Firewall Manager as an administrator.</p> </li>
+    /// <li> <p> <code>ONBOARDING_COMPLETE</code> - Firewall Manager The account is onboarded to Firewall Manager as an administrator, and can perform actions on the resources defined in their <code>AdminScope</code>.</p> </li>
+    /// <li> <p> <code>OFFBOARDING</code> - The account is being removed as an Firewall Manager administrator.</p> </li>
+    /// <li> <p> <code>OFFBOARDING_COMPLETE</code> - The account has been removed as an Firewall Manager administrator.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::OrganizationStatus> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

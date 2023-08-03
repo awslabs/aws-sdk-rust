@@ -48,6 +48,10 @@ impl TimeBasedCanaryBuilder {
         self.canary_percentage = input;
         self
     }
+    /// <p>The percentage of traffic to shift in the first increment of a <code>TimeBasedCanary</code> deployment.</p>
+    pub fn get_canary_percentage(&self) -> &::std::option::Option<i32> {
+        &self.canary_percentage
+    }
     /// <p>The number of minutes between the first and second traffic shifts of a <code>TimeBasedCanary</code> deployment.</p>
     pub fn canary_interval(mut self, input: i32) -> Self {
         self.canary_interval = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl TimeBasedCanaryBuilder {
     pub fn set_canary_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.canary_interval = input;
         self
+    }
+    /// <p>The number of minutes between the first and second traffic shifts of a <code>TimeBasedCanary</code> deployment.</p>
+    pub fn get_canary_interval(&self) -> &::std::option::Option<i32> {
+        &self.canary_interval
     }
     /// Consumes the builder and constructs a [`TimeBasedCanary`](crate::types::TimeBasedCanary).
     pub fn build(self) -> crate::types::TimeBasedCanary {

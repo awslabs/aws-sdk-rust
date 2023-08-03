@@ -77,6 +77,10 @@ impl DeleteRecordInputBuilder {
         self.feature_group_name = input;
         self
     }
+    /// <p>The name or Amazon Resource Name (ARN) of the feature group to delete the record from. </p>
+    pub fn get_feature_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.feature_group_name
+    }
     /// <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in string format. </p>
     pub fn record_identifier_value_as_string(
         mut self,
@@ -93,6 +97,12 @@ impl DeleteRecordInputBuilder {
         self.record_identifier_value_as_string = input;
         self
     }
+    /// <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in string format. </p>
+    pub fn get_record_identifier_value_as_string(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.record_identifier_value_as_string
+    }
     /// <p>Timestamp indicating when the deletion event occurred. <code>EventTime</code> can be used to query data at a certain point in time.</p>
     pub fn event_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_time = ::std::option::Option::Some(input.into());
@@ -102,6 +112,10 @@ impl DeleteRecordInputBuilder {
     pub fn set_event_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_time = input;
         self
+    }
+    /// <p>Timestamp indicating when the deletion event occurred. <code>EventTime</code> can be used to query data at a certain point in time.</p>
+    pub fn get_event_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_time
     }
     /// Appends an item to `target_stores`.
     ///
@@ -122,6 +136,12 @@ impl DeleteRecordInputBuilder {
         self.target_stores = input;
         self
     }
+    /// <p>A list of stores from which you're deleting the record. By default, Feature Store deletes the record from all of the stores that you're using for the <code>FeatureGroup</code>.</p>
+    pub fn get_target_stores(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetStore>> {
+        &self.target_stores
+    }
     /// <p>The name of the deletion mode for deleting the record. By default, the deletion mode is set to <code>SoftDelete</code>.</p>
     pub fn deletion_mode(mut self, input: crate::types::DeletionMode) -> Self {
         self.deletion_mode = ::std::option::Option::Some(input);
@@ -134,6 +154,10 @@ impl DeleteRecordInputBuilder {
     ) -> Self {
         self.deletion_mode = input;
         self
+    }
+    /// <p>The name of the deletion mode for deleting the record. By default, the deletion mode is set to <code>SoftDelete</code>.</p>
+    pub fn get_deletion_mode(&self) -> &::std::option::Option<crate::types::DeletionMode> {
+        &self.deletion_mode
     }
     /// Consumes the builder and constructs a [`DeleteRecordInput`](crate::operation::delete_record::DeleteRecordInput).
     pub fn build(

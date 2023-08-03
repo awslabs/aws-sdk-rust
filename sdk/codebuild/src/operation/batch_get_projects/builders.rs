@@ -36,6 +36,12 @@ impl BatchGetProjectsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchGetProjects as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_get_projects::builders::BatchGetProjectsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +138,9 @@ impl BatchGetProjectsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_names(input);
         self
+    }
+    /// <p>The names or ARNs of the build projects. To get information about a project shared with your Amazon Web Services account, its ARN must be specified. You cannot specify a shared project using its name.</p>
+    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_names()
     }
 }

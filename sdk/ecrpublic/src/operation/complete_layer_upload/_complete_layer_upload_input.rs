@@ -65,6 +65,10 @@ impl CompleteLayerUploadInputBuilder {
         self.registry_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID, or registry alias, associated with the registry where layers are uploaded. If you do not specify a registry, the default public registry is assumed.</p>
+    pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.registry_id
+    }
     /// <p>The name of the repository in a public registry to associate with the image layer.</p>
     pub fn repository_name(
         mut self,
@@ -81,6 +85,10 @@ impl CompleteLayerUploadInputBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name of the repository in a public registry to associate with the image layer.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>The upload ID from a previous <code>InitiateLayerUpload</code> operation to associate with the image layer.</p>
     pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upload_id = ::std::option::Option::Some(input.into());
@@ -90,6 +98,10 @@ impl CompleteLayerUploadInputBuilder {
     pub fn set_upload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.upload_id = input;
         self
+    }
+    /// <p>The upload ID from a previous <code>InitiateLayerUpload</code> operation to associate with the image layer.</p>
+    pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.upload_id
     }
     /// Appends an item to `layer_digests`.
     ///
@@ -112,6 +124,12 @@ impl CompleteLayerUploadInputBuilder {
     ) -> Self {
         self.layer_digests = input;
         self
+    }
+    /// <p>The <code>sha256</code> digest of the image layer.</p>
+    pub fn get_layer_digests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.layer_digests
     }
     /// Consumes the builder and constructs a [`CompleteLayerUploadInput`](crate::operation::complete_layer_upload::CompleteLayerUploadInput).
     pub fn build(

@@ -48,6 +48,10 @@ impl ServiceBuilder {
         self.service_code = input;
         self
     }
+    /// <p>The code for the Amazon Web Services service.</p>
+    pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_code
+    }
     /// Appends an item to `attribute_names`.
     ///
     /// To override the contents of this collection use [`set_attribute_names`](Self::set_attribute_names).
@@ -69,6 +73,12 @@ impl ServiceBuilder {
     ) -> Self {
         self.attribute_names = input;
         self
+    }
+    /// <p>The attributes that are available for this service.</p>
+    pub fn get_attribute_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.attribute_names
     }
     /// Consumes the builder and constructs a [`Service`](crate::types::Service).
     pub fn build(self) -> crate::types::Service {

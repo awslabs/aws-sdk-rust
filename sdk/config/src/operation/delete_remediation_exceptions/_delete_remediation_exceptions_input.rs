@@ -57,6 +57,10 @@ impl DeleteRemediationExceptionsInputBuilder {
         self.config_rule_name = input;
         self
     }
+    /// <p>The name of the Config rule for which you want to delete remediation exception configuration.</p>
+    pub fn get_config_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.config_rule_name
+    }
     /// Appends an item to `resource_keys`.
     ///
     /// To override the contents of this collection use [`set_resource_keys`](Self::set_resource_keys).
@@ -77,6 +81,13 @@ impl DeleteRemediationExceptionsInputBuilder {
     ) -> Self {
         self.resource_keys = input;
         self
+    }
+    /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys. </p>
+    pub fn get_resource_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RemediationExceptionResourceKey>>
+    {
+        &self.resource_keys
     }
     /// Consumes the builder and constructs a [`DeleteRemediationExceptionsInput`](crate::operation::delete_remediation_exceptions::DeleteRemediationExceptionsInput).
     pub fn build(

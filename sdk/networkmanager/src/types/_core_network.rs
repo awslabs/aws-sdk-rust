@@ -110,6 +110,10 @@ impl CoreNetworkBuilder {
         self.global_network_id = input;
         self
     }
+    /// <p>The ID of the global network that your core network is a part of. </p>
+    pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_network_id
+    }
     /// <p>The ID of a core network.</p>
     pub fn core_network_id(
         mut self,
@@ -125,6 +129,10 @@ impl CoreNetworkBuilder {
     ) -> Self {
         self.core_network_id = input;
         self
+    }
+    /// <p>The ID of a core network.</p>
+    pub fn get_core_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.core_network_id
     }
     /// <p>The ARN of a core network.</p>
     pub fn core_network_arn(
@@ -142,6 +150,10 @@ impl CoreNetworkBuilder {
         self.core_network_arn = input;
         self
     }
+    /// <p>The ARN of a core network.</p>
+    pub fn get_core_network_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.core_network_arn
+    }
     /// <p>The description of a core network.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -151,6 +163,10 @@ impl CoreNetworkBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of a core network.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The timestamp when a core network was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -165,6 +181,10 @@ impl CoreNetworkBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The timestamp when a core network was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The current state of a core network.</p>
     pub fn state(mut self, input: crate::types::CoreNetworkState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -177,6 +197,10 @@ impl CoreNetworkBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The current state of a core network.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::CoreNetworkState> {
+        &self.state
     }
     /// Appends an item to `segments`.
     ///
@@ -197,6 +221,12 @@ impl CoreNetworkBuilder {
         self.segments = input;
         self
     }
+    /// <p>The segments within a core network.</p>
+    pub fn get_segments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkSegment>> {
+        &self.segments
+    }
     /// Appends an item to `edges`.
     ///
     /// To override the contents of this collection use [`set_edges`](Self::set_edges).
@@ -216,6 +246,12 @@ impl CoreNetworkBuilder {
         self.edges = input;
         self
     }
+    /// <p>The edges within a core network.</p>
+    pub fn get_edges(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkEdge>> {
+        &self.edges
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -234,6 +270,10 @@ impl CoreNetworkBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The list of key-value tags associated with a core network.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CoreNetwork`](crate::types::CoreNetwork).
     pub fn build(self) -> crate::types::CoreNetwork {

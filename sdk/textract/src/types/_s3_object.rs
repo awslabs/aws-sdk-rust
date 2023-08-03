@@ -58,6 +58,10 @@ impl S3ObjectBuilder {
         self.bucket = input;
         self
     }
+    /// <p>The name of the S3 bucket. Note that the # character is not valid in the file name.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p>The file name of the input document. Synchronous operations can use image files that are in JPEG or PNG format. Asynchronous operations also support PDF and TIFF format files.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -68,6 +72,10 @@ impl S3ObjectBuilder {
         self.name = input;
         self
     }
+    /// <p>The file name of the input document. Synchronous operations can use image files that are in JPEG or PNG format. Asynchronous operations also support PDF and TIFF format files.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>If the bucket has versioning enabled, you can specify the object version. </p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -77,6 +85,10 @@ impl S3ObjectBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>If the bucket has versioning enabled, you can specify the object version. </p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// Consumes the builder and constructs a [`S3Object`](crate::types::S3Object).
     pub fn build(self) -> crate::types::S3Object {

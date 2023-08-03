@@ -89,6 +89,10 @@ impl AwsCertificateManagerCertificateDomainValidationOptionBuilder {
         self.domain_name = input;
         self
     }
+    /// <p>A fully qualified domain name (FQDN) in the certificate.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p>The CNAME record that is added to the DNS database for domain validation.</p>
     pub fn resource_record(
         mut self,
@@ -105,6 +109,12 @@ impl AwsCertificateManagerCertificateDomainValidationOptionBuilder {
         self.resource_record = input;
         self
     }
+    /// <p>The CNAME record that is added to the DNS database for domain validation.</p>
+    pub fn get_resource_record(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsCertificateManagerCertificateResourceRecord> {
+        &self.resource_record
+    }
     /// <p>The domain name that Certificate Manager uses to send domain validation emails.</p>
     pub fn validation_domain(
         mut self,
@@ -120,6 +130,10 @@ impl AwsCertificateManagerCertificateDomainValidationOptionBuilder {
     ) -> Self {
         self.validation_domain = input;
         self
+    }
+    /// <p>The domain name that Certificate Manager uses to send domain validation emails.</p>
+    pub fn get_validation_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.validation_domain
     }
     /// Appends an item to `validation_emails`.
     ///
@@ -143,6 +157,12 @@ impl AwsCertificateManagerCertificateDomainValidationOptionBuilder {
         self.validation_emails = input;
         self
     }
+    /// <p>A list of email addresses that Certificate Manager uses to send domain validation emails.</p>
+    pub fn get_validation_emails(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.validation_emails
+    }
     /// <p>The method used to validate the domain name.</p>
     pub fn validation_method(
         mut self,
@@ -159,6 +179,10 @@ impl AwsCertificateManagerCertificateDomainValidationOptionBuilder {
         self.validation_method = input;
         self
     }
+    /// <p>The method used to validate the domain name.</p>
+    pub fn get_validation_method(&self) -> &::std::option::Option<::std::string::String> {
+        &self.validation_method
+    }
     /// <p>The validation status of the domain name.</p>
     pub fn validation_status(
         mut self,
@@ -174,6 +198,10 @@ impl AwsCertificateManagerCertificateDomainValidationOptionBuilder {
     ) -> Self {
         self.validation_status = input;
         self
+    }
+    /// <p>The validation status of the domain name.</p>
+    pub fn get_validation_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.validation_status
     }
     /// Consumes the builder and constructs a [`AwsCertificateManagerCertificateDomainValidationOption`](crate::types::AwsCertificateManagerCertificateDomainValidationOption).
     pub fn build(self) -> crate::types::AwsCertificateManagerCertificateDomainValidationOption {

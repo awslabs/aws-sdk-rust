@@ -40,6 +40,10 @@ impl GetResolverConfigInputBuilder {
         self.resource_id = input;
         self
     }
+    /// <p>Resource ID of the Amazon VPC that you want to get information about.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
+    }
     /// Consumes the builder and constructs a [`GetResolverConfigInput`](crate::operation::get_resolver_config::GetResolverConfigInput).
     pub fn build(
         self,

@@ -38,6 +38,13 @@ impl CreateBatchPredictionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateBatchPrediction as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_batch_prediction::builders::CreateBatchPredictionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +141,10 @@ impl CreateBatchPredictionFluentBuilder {
         self.inner = self.inner.set_batch_prediction_id(input);
         self
     }
+    /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</p>
+    pub fn get_batch_prediction_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_batch_prediction_id()
+    }
     /// <p>A user-supplied name or description of the <code>BatchPrediction</code>. <code>BatchPredictionName</code> can only use the UTF-8 character set.</p>
     pub fn batch_prediction_name(
         mut self,
@@ -150,6 +161,10 @@ impl CreateBatchPredictionFluentBuilder {
         self.inner = self.inner.set_batch_prediction_name(input);
         self
     }
+    /// <p>A user-supplied name or description of the <code>BatchPrediction</code>. <code>BatchPredictionName</code> can only use the UTF-8 character set.</p>
+    pub fn get_batch_prediction_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_batch_prediction_name()
+    }
     /// <p>The ID of the <code>MLModel</code> that will generate predictions for the group of observations. </p>
     pub fn ml_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ml_model_id(input.into());
@@ -159,6 +174,10 @@ impl CreateBatchPredictionFluentBuilder {
     pub fn set_ml_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ml_model_id(input);
         self
+    }
+    /// <p>The ID of the <code>MLModel</code> that will generate predictions for the group of observations. </p>
+    pub fn get_ml_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ml_model_id()
     }
     /// <p>The ID of the <code>DataSource</code> that points to the group of observations to predict.</p>
     pub fn batch_prediction_data_source_id(
@@ -176,6 +195,12 @@ impl CreateBatchPredictionFluentBuilder {
         self.inner = self.inner.set_batch_prediction_data_source_id(input);
         self
     }
+    /// <p>The ID of the <code>DataSource</code> that points to the group of observations to predict.</p>
+    pub fn get_batch_prediction_data_source_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_batch_prediction_data_source_id()
+    }
     /// <p>The location of an Amazon Simple Storage Service (Amazon S3) bucket or directory to store the batch prediction results. The following substrings are not allowed in the <code>s3 key</code> portion of the <code>outputURI</code> field: ':', '//', '/./', '/../'.</p>
     /// <p>Amazon ML needs permissions to store and retrieve the logs on your behalf. For information about how to set permissions, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.</p>
     pub fn output_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -187,5 +212,10 @@ impl CreateBatchPredictionFluentBuilder {
     pub fn set_output_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_output_uri(input);
         self
+    }
+    /// <p>The location of an Amazon Simple Storage Service (Amazon S3) bucket or directory to store the batch prediction results. The following substrings are not allowed in the <code>s3 key</code> portion of the <code>outputURI</code> field: ':', '//', '/./', '/../'.</p>
+    /// <p>Amazon ML needs permissions to store and retrieve the logs on your behalf. For information about how to set permissions, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.</p>
+    pub fn get_output_uri(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_output_uri()
     }
 }

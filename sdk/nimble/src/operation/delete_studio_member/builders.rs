@@ -36,6 +36,12 @@ impl DeleteStudioMemberFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteStudioMember as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_studio_member::builders::DeleteStudioMemberInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DeleteStudioMemberFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
     pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.principal_id(input.into());
@@ -136,6 +146,10 @@ impl DeleteStudioMemberFluentBuilder {
         self.inner = self.inner.set_principal_id(input);
         self
     }
+    /// <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
+    pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_principal_id()
+    }
     /// <p>The studio ID. </p>
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.studio_id(input.into());
@@ -145,5 +159,9 @@ impl DeleteStudioMemberFluentBuilder {
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_studio_id(input);
         self
+    }
+    /// <p>The studio ID. </p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_studio_id()
     }
 }

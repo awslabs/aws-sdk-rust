@@ -151,6 +151,10 @@ impl UpdateSlotTypeOutputBuilder {
         self.slot_type_id = input;
         self
     }
+    /// <p>The unique identifier of the updated slot type.</p>
+    pub fn get_slot_type_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.slot_type_id
+    }
     /// <p>The updated name of the slot type.</p>
     pub fn slot_type_name(
         mut self,
@@ -167,6 +171,10 @@ impl UpdateSlotTypeOutputBuilder {
         self.slot_type_name = input;
         self
     }
+    /// <p>The updated name of the slot type.</p>
+    pub fn get_slot_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.slot_type_name
+    }
     /// <p>The updated description of the slot type.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -176,6 +184,10 @@ impl UpdateSlotTypeOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The updated description of the slot type.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `slot_type_values`.
     ///
@@ -196,6 +208,12 @@ impl UpdateSlotTypeOutputBuilder {
         self.slot_type_values = input;
         self
     }
+    /// <p>The updated values that the slot type provides.</p>
+    pub fn get_slot_type_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SlotTypeValue>> {
+        &self.slot_type_values
+    }
     /// <p>The updated strategy that Amazon Lex uses to determine which value to select from the slot type.</p>
     pub fn value_selection_setting(
         mut self,
@@ -211,6 +229,12 @@ impl UpdateSlotTypeOutputBuilder {
     ) -> Self {
         self.value_selection_setting = input;
         self
+    }
+    /// <p>The updated strategy that Amazon Lex uses to determine which value to select from the slot type.</p>
+    pub fn get_value_selection_setting(
+        &self,
+    ) -> &::std::option::Option<crate::types::SlotValueSelectionSetting> {
+        &self.value_selection_setting
     }
     /// <p>The updated signature of the built-in slot type that is the parent of this slot type.</p>
     pub fn parent_slot_type_signature(
@@ -228,6 +252,10 @@ impl UpdateSlotTypeOutputBuilder {
         self.parent_slot_type_signature = input;
         self
     }
+    /// <p>The updated signature of the built-in slot type that is the parent of this slot type.</p>
+    pub fn get_parent_slot_type_signature(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent_slot_type_signature
+    }
     /// <p>The identifier of the bot that contains the slot type.</p>
     pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_id = ::std::option::Option::Some(input.into());
@@ -237,6 +265,10 @@ impl UpdateSlotTypeOutputBuilder {
     pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_id = input;
         self
+    }
+    /// <p>The identifier of the bot that contains the slot type.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
     }
     /// <p>The version of the bot that contains the slot type. This is always <code>DRAFT</code>.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -248,6 +280,10 @@ impl UpdateSlotTypeOutputBuilder {
         self.bot_version = input;
         self
     }
+    /// <p>The version of the bot that contains the slot type. This is always <code>DRAFT</code>.</p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_version
+    }
     /// <p>The language and locale of the updated slot type.</p>
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
@@ -257,6 +293,10 @@ impl UpdateSlotTypeOutputBuilder {
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.locale_id = input;
         self
+    }
+    /// <p>The language and locale of the updated slot type.</p>
+    pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale_id
     }
     /// <p>The timestamp of the date and time that the slot type was created.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -271,6 +311,10 @@ impl UpdateSlotTypeOutputBuilder {
         self.creation_date_time = input;
         self
     }
+    /// <p>The timestamp of the date and time that the slot type was created.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
+    }
     /// <p>A timestamp of the date and time that the slot type was last updated.</p>
     pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date_time = ::std::option::Option::Some(input);
@@ -284,6 +328,12 @@ impl UpdateSlotTypeOutputBuilder {
         self.last_updated_date_time = input;
         self
     }
+    /// <p>A timestamp of the date and time that the slot type was last updated.</p>
+    pub fn get_last_updated_date_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date_time
+    }
     /// <p>Provides information about the external source of the slot type's definition.</p>
     pub fn external_source_setting(mut self, input: crate::types::ExternalSourceSetting) -> Self {
         self.external_source_setting = ::std::option::Option::Some(input);
@@ -296,6 +346,12 @@ impl UpdateSlotTypeOutputBuilder {
     ) -> Self {
         self.external_source_setting = input;
         self
+    }
+    /// <p>Provides information about the external source of the slot type's definition.</p>
+    pub fn get_external_source_setting(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExternalSourceSetting> {
+        &self.external_source_setting
     }
     /// <p>Specifications for a composite slot type.</p>
     pub fn composite_slot_type_setting(
@@ -312,6 +368,12 @@ impl UpdateSlotTypeOutputBuilder {
     ) -> Self {
         self.composite_slot_type_setting = input;
         self
+    }
+    /// <p>Specifications for a composite slot type.</p>
+    pub fn get_composite_slot_type_setting(
+        &self,
+    ) -> &::std::option::Option<crate::types::CompositeSlotTypeSetting> {
+        &self.composite_slot_type_setting
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

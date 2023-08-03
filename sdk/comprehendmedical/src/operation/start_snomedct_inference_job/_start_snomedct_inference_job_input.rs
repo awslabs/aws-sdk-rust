@@ -90,6 +90,10 @@ impl StartSnomedctInferenceJobInputBuilder {
         self.input_data_config = input;
         self
     }
+    /// <p>The input properties for an entities detection job. This includes the name of the S3 bucket and the path to the files to be analyzed. </p>
+    pub fn get_input_data_config(&self) -> &::std::option::Option<crate::types::InputDataConfig> {
+        &self.input_data_config
+    }
     /// <p>The output properties for a detection job.</p>
     pub fn output_data_config(mut self, input: crate::types::OutputDataConfig) -> Self {
         self.output_data_config = ::std::option::Option::Some(input);
@@ -102,6 +106,10 @@ impl StartSnomedctInferenceJobInputBuilder {
     ) -> Self {
         self.output_data_config = input;
         self
+    }
+    /// <p>The output properties for a detection job.</p>
+    pub fn get_output_data_config(&self) -> &::std::option::Option<crate::types::OutputDataConfig> {
+        &self.output_data_config
     }
     /// <p> The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. </p>
     pub fn data_access_role_arn(
@@ -119,6 +127,10 @@ impl StartSnomedctInferenceJobInputBuilder {
         self.data_access_role_arn = input;
         self
     }
+    /// <p> The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. </p>
+    pub fn get_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_access_role_arn
+    }
     /// <p> The user generated name the asynchronous InferSNOMEDCT job. </p>
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name = ::std::option::Option::Some(input.into());
@@ -128,6 +140,10 @@ impl StartSnomedctInferenceJobInputBuilder {
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_name = input;
         self
+    }
+    /// <p> The user generated name the asynchronous InferSNOMEDCT job. </p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
     }
     /// <p> A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one. </p>
     pub fn client_request_token(
@@ -145,6 +161,10 @@ impl StartSnomedctInferenceJobInputBuilder {
         self.client_request_token = input;
         self
     }
+    /// <p> A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one. </p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
+    }
     /// <p> An AWS Key Management Service key used to encrypt your output files. If you do not specify a key, the files are written in plain text. </p>
     pub fn kms_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key = ::std::option::Option::Some(input.into());
@@ -154,6 +174,10 @@ impl StartSnomedctInferenceJobInputBuilder {
     pub fn set_kms_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key = input;
         self
+    }
+    /// <p> An AWS Key Management Service key used to encrypt your output files. If you do not specify a key, the files are written in plain text. </p>
+    pub fn get_kms_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key
     }
     /// <p> The language of the input documents. All documents must be in the same language. </p>
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
@@ -167,6 +191,10 @@ impl StartSnomedctInferenceJobInputBuilder {
     ) -> Self {
         self.language_code = input;
         self
+    }
+    /// <p> The language of the input documents. All documents must be in the same language. </p>
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
+        &self.language_code
     }
     /// Consumes the builder and constructs a [`StartSnomedctInferenceJobInput`](crate::operation::start_snomedct_inference_job::StartSnomedctInferenceJobInput).
     pub fn build(

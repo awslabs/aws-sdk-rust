@@ -64,6 +64,10 @@ impl ApplicationMetricsBuilder {
         self.duration = input;
         self
     }
+    /// <p>The amount of time that the metrics cover (usually 10 seconds). For example, you might have 5 requests (<code>request_count</code>) within the most recent time slice of 10 seconds (<code>duration</code>).</p>
+    pub fn get_duration(&self) -> &::std::option::Option<i32> {
+        &self.duration
+    }
     /// <p>Average number of requests handled by the web server per second over the last 10 seconds.</p>
     pub fn request_count(mut self, input: i32) -> Self {
         self.request_count = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl ApplicationMetricsBuilder {
     pub fn set_request_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.request_count = input;
         self
+    }
+    /// <p>Average number of requests handled by the web server per second over the last 10 seconds.</p>
+    pub fn get_request_count(&self) -> &::std::option::Option<i32> {
+        &self.request_count
     }
     /// <p>Represents the percentage of requests over the last 10 seconds that resulted in each type of status code response.</p>
     pub fn status_codes(mut self, input: crate::types::StatusCodes) -> Self {
@@ -87,6 +95,10 @@ impl ApplicationMetricsBuilder {
         self.status_codes = input;
         self
     }
+    /// <p>Represents the percentage of requests over the last 10 seconds that resulted in each type of status code response.</p>
+    pub fn get_status_codes(&self) -> &::std::option::Option<crate::types::StatusCodes> {
+        &self.status_codes
+    }
     /// <p>Represents the average latency for the slowest X percent of requests over the last 10 seconds. Latencies are in seconds with one millisecond resolution.</p>
     pub fn latency(mut self, input: crate::types::Latency) -> Self {
         self.latency = ::std::option::Option::Some(input);
@@ -96,6 +108,10 @@ impl ApplicationMetricsBuilder {
     pub fn set_latency(mut self, input: ::std::option::Option<crate::types::Latency>) -> Self {
         self.latency = input;
         self
+    }
+    /// <p>Represents the average latency for the slowest X percent of requests over the last 10 seconds. Latencies are in seconds with one millisecond resolution.</p>
+    pub fn get_latency(&self) -> &::std::option::Option<crate::types::Latency> {
+        &self.latency
     }
     /// Consumes the builder and constructs a [`ApplicationMetrics`](crate::types::ApplicationMetrics).
     pub fn build(self) -> crate::types::ApplicationMetrics {

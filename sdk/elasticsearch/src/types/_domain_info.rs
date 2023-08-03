@@ -47,6 +47,10 @@ impl DomainInfoBuilder {
         self.domain_name = input;
         self
     }
+    /// <p> Specifies the <code>DomainName</code>.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name
+    }
     /// <p> Specifies the <code>EngineType</code> of the domain.</p>
     pub fn engine_type(mut self, input: crate::types::EngineType) -> Self {
         self.engine_type = ::std::option::Option::Some(input);
@@ -59,6 +63,10 @@ impl DomainInfoBuilder {
     ) -> Self {
         self.engine_type = input;
         self
+    }
+    /// <p> Specifies the <code>EngineType</code> of the domain.</p>
+    pub fn get_engine_type(&self) -> &::std::option::Option<crate::types::EngineType> {
+        &self.engine_type
     }
     /// Consumes the builder and constructs a [`DomainInfo`](crate::types::DomainInfo).
     pub fn build(self) -> crate::types::DomainInfo {

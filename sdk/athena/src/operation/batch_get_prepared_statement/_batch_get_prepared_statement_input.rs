@@ -60,6 +60,12 @@ impl BatchGetPreparedStatementInputBuilder {
         self.prepared_statement_names = input;
         self
     }
+    /// <p>A list of prepared statement names to return.</p>
+    pub fn get_prepared_statement_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.prepared_statement_names
+    }
     /// <p>The name of the workgroup to which the prepared statements belong.</p>
     pub fn work_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.work_group = ::std::option::Option::Some(input.into());
@@ -69,6 +75,10 @@ impl BatchGetPreparedStatementInputBuilder {
     pub fn set_work_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.work_group = input;
         self
+    }
+    /// <p>The name of the workgroup to which the prepared statements belong.</p>
+    pub fn get_work_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.work_group
     }
     /// Consumes the builder and constructs a [`BatchGetPreparedStatementInput`](crate::operation::batch_get_prepared_statement::BatchGetPreparedStatementInput).
     pub fn build(

@@ -62,6 +62,10 @@ impl DestinationConfigurationRequestBuilder {
         self.destination_ip = input;
         self
     }
+    /// The IP address where you want MediaConnect to send contents of the media stream.
+    pub fn get_destination_ip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_ip
+    }
     /// The port that you want MediaConnect to use when it distributes the media stream to the output.
     pub fn destination_port(mut self, input: i32) -> Self {
         self.destination_port = ::std::option::Option::Some(input);
@@ -71,6 +75,10 @@ impl DestinationConfigurationRequestBuilder {
     pub fn set_destination_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.destination_port = input;
         self
+    }
+    /// The port that you want MediaConnect to use when it distributes the media stream to the output.
+    pub fn get_destination_port(&self) -> &::std::option::Option<i32> {
+        &self.destination_port
     }
     /// The VPC interface that you want to use for the media stream associated with the output.
     pub fn interface(mut self, input: crate::types::InterfaceRequest) -> Self {
@@ -84,6 +92,10 @@ impl DestinationConfigurationRequestBuilder {
     ) -> Self {
         self.interface = input;
         self
+    }
+    /// The VPC interface that you want to use for the media stream associated with the output.
+    pub fn get_interface(&self) -> &::std::option::Option<crate::types::InterfaceRequest> {
+        &self.interface
     }
     /// Consumes the builder and constructs a [`DestinationConfigurationRequest`](crate::types::DestinationConfigurationRequest).
     pub fn build(self) -> crate::types::DestinationConfigurationRequest {

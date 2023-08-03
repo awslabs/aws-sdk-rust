@@ -96,6 +96,10 @@ impl PipelineSummaryBuilder {
         self.pipeline_arn = input;
         self
     }
+    /// <p> The Amazon Resource Name (ARN) of the pipeline.</p>
+    pub fn get_pipeline_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_arn
+    }
     /// <p>The name of the pipeline.</p>
     pub fn pipeline_name(
         mut self,
@@ -111,6 +115,10 @@ impl PipelineSummaryBuilder {
     ) -> Self {
         self.pipeline_name = input;
         self
+    }
+    /// <p>The name of the pipeline.</p>
+    pub fn get_pipeline_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_name
     }
     /// <p>The display name of the pipeline.</p>
     pub fn pipeline_display_name(
@@ -128,6 +136,10 @@ impl PipelineSummaryBuilder {
         self.pipeline_display_name = input;
         self
     }
+    /// <p>The display name of the pipeline.</p>
+    pub fn get_pipeline_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_display_name
+    }
     /// <p>The description of the pipeline.</p>
     pub fn pipeline_description(
         mut self,
@@ -144,6 +156,10 @@ impl PipelineSummaryBuilder {
         self.pipeline_description = input;
         self
     }
+    /// <p>The description of the pipeline.</p>
+    pub fn get_pipeline_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_description
+    }
     /// <p>The Amazon Resource Name (ARN) that the pipeline used to execute.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -153,6 +169,10 @@ impl PipelineSummaryBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) that the pipeline used to execute.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// <p>The creation time of the pipeline.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -167,6 +187,10 @@ impl PipelineSummaryBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The creation time of the pipeline.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The time that the pipeline was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -180,6 +204,10 @@ impl PipelineSummaryBuilder {
         self.last_modified_time = input;
         self
     }
+    /// <p>The time that the pipeline was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
     /// <p>The last time that a pipeline execution began.</p>
     pub fn last_execution_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_execution_time = ::std::option::Option::Some(input);
@@ -192,6 +220,10 @@ impl PipelineSummaryBuilder {
     ) -> Self {
         self.last_execution_time = input;
         self
+    }
+    /// <p>The last time that a pipeline execution began.</p>
+    pub fn get_last_execution_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_execution_time
     }
     /// Consumes the builder and constructs a [`PipelineSummary`](crate::types::PipelineSummary).
     pub fn build(self) -> crate::types::PipelineSummary {

@@ -74,6 +74,13 @@ impl DescribeTransitGatewayRouteTableAnnouncementsOutputBuilder {
         self.transit_gateway_route_table_announcements = input;
         self
     }
+    /// <p>Describes the transit gateway route table announcement.</p>
+    pub fn get_transit_gateway_route_table_announcements(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRouteTableAnnouncement>>
+    {
+        &self.transit_gateway_route_table_announcements
+    }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -83,6 +90,10 @@ impl DescribeTransitGatewayRouteTableAnnouncementsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

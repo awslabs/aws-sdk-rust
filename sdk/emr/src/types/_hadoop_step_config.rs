@@ -72,6 +72,10 @@ impl HadoopStepConfigBuilder {
         self.jar = input;
         self
     }
+    /// <p>The path to the JAR file that runs during the step.</p>
+    pub fn get_jar(&self) -> &::std::option::Option<::std::string::String> {
+        &self.jar
+    }
     /// Adds a key-value pair to `properties`.
     ///
     /// To override the contents of this collection use [`set_properties`](Self::set_properties).
@@ -97,6 +101,14 @@ impl HadoopStepConfigBuilder {
         self.properties = input;
         self
     }
+    /// <p>The list of Java properties that are set when the step runs. You can use these properties to pass key-value pairs to your main function.</p>
+    pub fn get_properties(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.properties
+    }
     /// <p>The name of the main class in the specified Java file. If not specified, the JAR file should specify a main class in its manifest file.</p>
     pub fn main_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.main_class = ::std::option::Option::Some(input.into());
@@ -106,6 +118,10 @@ impl HadoopStepConfigBuilder {
     pub fn set_main_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.main_class = input;
         self
+    }
+    /// <p>The name of the main class in the specified Java file. If not specified, the JAR file should specify a main class in its manifest file.</p>
+    pub fn get_main_class(&self) -> &::std::option::Option<::std::string::String> {
+        &self.main_class
     }
     /// Appends an item to `args`.
     ///
@@ -125,6 +141,10 @@ impl HadoopStepConfigBuilder {
     ) -> Self {
         self.args = input;
         self
+    }
+    /// <p>The list of command line arguments to pass to the JAR file's main function for execution.</p>
+    pub fn get_args(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.args
     }
     /// Consumes the builder and constructs a [`HadoopStepConfig`](crate::types::HadoopStepConfig).
     pub fn build(self) -> crate::types::HadoopStepConfig {

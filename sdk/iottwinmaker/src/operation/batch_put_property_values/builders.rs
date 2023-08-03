@@ -37,6 +37,13 @@ impl BatchPutPropertyValuesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchPutPropertyValues as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_put_property_values::builders::BatchPutPropertyValuesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl BatchPutPropertyValuesFluentBuilder {
         self.inner = self.inner.set_workspace_id(input);
         self
     }
+    /// <p>The ID of the workspace that contains the properties to set.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workspace_id()
+    }
     /// Appends an item to `entries`.
     ///
     /// To override the contents of this collection use [`set_entries`](Self::set_entries).
@@ -143,5 +154,11 @@ impl BatchPutPropertyValuesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_entries(input);
         self
+    }
+    /// <p>An object that maps strings to the property value entries to set. Each string in the mapping must be unique to this object.</p>
+    pub fn get_entries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PropertyValueEntry>> {
+        self.inner.get_entries()
     }
 }

@@ -73,6 +73,10 @@ impl CreateDeviceProfileInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the new resource.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The device profile information to use to create the device profile.</p>
     pub fn lo_ra_wan(mut self, input: crate::types::LoRaWanDeviceProfile) -> Self {
         self.lo_ra_wan = ::std::option::Option::Some(input);
@@ -85,6 +89,10 @@ impl CreateDeviceProfileInputBuilder {
     ) -> Self {
         self.lo_ra_wan = input;
         self
+    }
+    /// <p>The device profile information to use to create the device profile.</p>
+    pub fn get_lo_ra_wan(&self) -> &::std::option::Option<crate::types::LoRaWanDeviceProfile> {
+        &self.lo_ra_wan
     }
     /// Appends an item to `tags`.
     ///
@@ -105,6 +113,10 @@ impl CreateDeviceProfileInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags to attach to the new device profile. Tags are metadata that you can use to manage a resource.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
     pub fn client_request_token(
         mut self,
@@ -121,6 +133,10 @@ impl CreateDeviceProfileInputBuilder {
         self.client_request_token = input;
         self
     }
+    /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_request_token
+    }
     /// <p>The Sidewalk-related information for creating the Sidewalk device profile.</p>
     pub fn sidewalk(mut self, input: crate::types::SidewalkCreateDeviceProfile) -> Self {
         self.sidewalk = ::std::option::Option::Some(input);
@@ -133,6 +149,12 @@ impl CreateDeviceProfileInputBuilder {
     ) -> Self {
         self.sidewalk = input;
         self
+    }
+    /// <p>The Sidewalk-related information for creating the Sidewalk device profile.</p>
+    pub fn get_sidewalk(
+        &self,
+    ) -> &::std::option::Option<crate::types::SidewalkCreateDeviceProfile> {
+        &self.sidewalk
     }
     /// Consumes the builder and constructs a [`CreateDeviceProfileInput`](crate::operation::create_device_profile::CreateDeviceProfileInput).
     pub fn build(

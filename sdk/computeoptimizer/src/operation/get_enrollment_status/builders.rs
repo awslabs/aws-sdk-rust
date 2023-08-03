@@ -37,6 +37,12 @@ impl GetEnrollmentStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetEnrollmentStatus as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_enrollment_status::builders::GetEnrollmentStatusInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(

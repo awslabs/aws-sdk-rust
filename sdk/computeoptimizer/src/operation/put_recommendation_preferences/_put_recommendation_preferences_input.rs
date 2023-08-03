@@ -121,6 +121,13 @@ impl PutRecommendationPreferencesInputBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The target resource type of the recommendation preference to create.</p>
+    /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p> <note>
+    /// <p>The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p>
+    /// </note>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
+    }
     /// <p>An object that describes the scope of the recommendation preference to create.</p>
     /// <p>You can create recommendation preferences at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p> <note>
     /// <p>You cannot create recommendation preferences for Auto Scaling groups at the organization and account levels. You can create recommendation preferences for Auto Scaling groups only at the resource level by specifying a scope name of <code>ResourceArn</code> and a scope value of the Auto Scaling group Amazon Resource Name (ARN). This will configure the preference for all instances that are part of the specified Auto Scaling group. You also cannot create recommendation preferences at the resource level for instances that are part of an Auto Scaling group. You can create recommendation preferences at the resource level only for standalone instances.</p>
@@ -136,6 +143,13 @@ impl PutRecommendationPreferencesInputBuilder {
     pub fn set_scope(mut self, input: ::std::option::Option<crate::types::Scope>) -> Self {
         self.scope = input;
         self
+    }
+    /// <p>An object that describes the scope of the recommendation preference to create.</p>
+    /// <p>You can create recommendation preferences at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p> <note>
+    /// <p>You cannot create recommendation preferences for Auto Scaling groups at the organization and account levels. You can create recommendation preferences for Auto Scaling groups only at the resource level by specifying a scope name of <code>ResourceArn</code> and a scope value of the Auto Scaling group Amazon Resource Name (ARN). This will configure the preference for all instances that are part of the specified Auto Scaling group. You also cannot create recommendation preferences at the resource level for instances that are part of an Auto Scaling group. You can create recommendation preferences at the resource level only for standalone instances.</p>
+    /// </note>
+    pub fn get_scope(&self) -> &::std::option::Option<crate::types::Scope> {
+        &self.scope
     }
     /// <p>The status of the enhanced infrastructure metrics recommendation preference to create or update.</p>
     /// <p>Specify the <code>Active</code> status to activate the preference, or specify <code>Inactive</code> to deactivate the preference.</p>
@@ -156,6 +170,14 @@ impl PutRecommendationPreferencesInputBuilder {
     ) -> Self {
         self.enhanced_infrastructure_metrics = input;
         self
+    }
+    /// <p>The status of the enhanced infrastructure metrics recommendation preference to create or update.</p>
+    /// <p>Specify the <code>Active</code> status to activate the preference, or specify <code>Inactive</code> to deactivate the preference.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    pub fn get_enhanced_infrastructure_metrics(
+        &self,
+    ) -> &::std::option::Option<crate::types::EnhancedInfrastructureMetrics> {
+        &self.enhanced_infrastructure_metrics
     }
     /// <p>The status of the inferred workload types recommendation preference to create or update.</p> <note>
     /// <p>The inferred workload type feature is active by default. To deactivate it, create a recommendation preference.</p>
@@ -181,6 +203,16 @@ impl PutRecommendationPreferencesInputBuilder {
         self.inferred_workload_types = input;
         self
     }
+    /// <p>The status of the inferred workload types recommendation preference to create or update.</p> <note>
+    /// <p>The inferred workload type feature is active by default. To deactivate it, create a recommendation preference.</p>
+    /// </note>
+    /// <p>Specify the <code>Inactive</code> status to deactivate the feature, or specify <code>Active</code> to activate it.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/inferred-workload-types.html">Inferred workload types</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    pub fn get_inferred_workload_types(
+        &self,
+    ) -> &::std::option::Option<crate::types::InferredWorkloadTypesPreference> {
+        &self.inferred_workload_types
+    }
     /// <p>The provider of the external metrics recommendation preference to create or update.</p>
     /// <p>Specify a valid provider in the <code>source</code> field to activate the preference. To delete this preference, see the <code>DeleteRecommendationPreferences</code> action.</p>
     /// <p>This preference can only be set for the <code>Ec2Instance</code> resource type.</p>
@@ -202,6 +234,15 @@ impl PutRecommendationPreferencesInputBuilder {
     ) -> Self {
         self.external_metrics_preference = input;
         self
+    }
+    /// <p>The provider of the external metrics recommendation preference to create or update.</p>
+    /// <p>Specify a valid provider in the <code>source</code> field to activate the preference. To delete this preference, see the <code>DeleteRecommendationPreferences</code> action.</p>
+    /// <p>This preference can only be set for the <code>Ec2Instance</code> resource type.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">External metrics ingestion</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    pub fn get_external_metrics_preference(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExternalMetricsPreference> {
+        &self.external_metrics_preference
     }
     /// Consumes the builder and constructs a [`PutRecommendationPreferencesInput`](crate::operation::put_recommendation_preferences::PutRecommendationPreferencesInput).
     pub fn build(

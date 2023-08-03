@@ -59,6 +59,10 @@ impl DescribeReservedCacheNodesOfferingsOutputBuilder {
         self.marker = input;
         self
     }
+    /// <p>Provides an identifier to allow retrieval of paginated results.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// Appends an item to `reserved_cache_nodes_offerings`.
     ///
     /// To override the contents of this collection use [`set_reserved_cache_nodes_offerings`](Self::set_reserved_cache_nodes_offerings).
@@ -80,6 +84,12 @@ impl DescribeReservedCacheNodesOfferingsOutputBuilder {
     ) -> Self {
         self.reserved_cache_nodes_offerings = input;
         self
+    }
+    /// <p>A list of reserved cache node offerings. Each element in the list contains detailed information about one offering.</p>
+    pub fn get_reserved_cache_nodes_offerings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReservedCacheNodesOffering>> {
+        &self.reserved_cache_nodes_offerings
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

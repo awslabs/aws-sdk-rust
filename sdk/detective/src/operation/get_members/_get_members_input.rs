@@ -49,6 +49,10 @@ impl GetMembersInputBuilder {
         self.graph_arn = input;
         self
     }
+    /// <p>The ARN of the behavior graph for which to request the member details.</p>
+    pub fn get_graph_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.graph_arn
+    }
     /// Appends an item to `account_ids`.
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
@@ -69,6 +73,13 @@ impl GetMembersInputBuilder {
     ) -> Self {
         self.account_ids = input;
         self
+    }
+    /// <p>The list of Amazon Web Services account identifiers for the member account for which to return member details. You can request details for up to 50 member accounts at a time.</p>
+    /// <p>You cannot use <code>GetMembers</code> to retrieve information about member accounts that were removed from the behavior graph.</p>
+    pub fn get_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.account_ids
     }
     /// Consumes the builder and constructs a [`GetMembersInput`](crate::operation::get_members::GetMembersInput).
     pub fn build(

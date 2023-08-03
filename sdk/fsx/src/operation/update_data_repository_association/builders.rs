@@ -36,6 +36,10 @@ impl UpdateDataRepositoryAssociationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDataRepositoryAssociation as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_data_repository_association::builders::UpdateDataRepositoryAssociationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl UpdateDataRepositoryAssociationFluentBuilder {
         self.inner = self.inner.set_association_id(input);
         self
     }
+    /// <p>The ID of the data repository association that you are updating.</p>
+    pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_association_id()
+    }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn client_request_token(
         mut self,
@@ -122,6 +130,10 @@ impl UpdateDataRepositoryAssociationFluentBuilder {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
+    /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
+    }
     /// <p>For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system.</p>
     /// <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
     pub fn imported_file_chunk_size(mut self, input: i32) -> Self {
@@ -133,6 +145,11 @@ impl UpdateDataRepositoryAssociationFluentBuilder {
     pub fn set_imported_file_chunk_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_imported_file_chunk_size(input);
         self
+    }
+    /// <p>For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system.</p>
+    /// <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
+    pub fn get_imported_file_chunk_size(&self) -> &::std::option::Option<i32> {
+        self.inner.get_imported_file_chunk_size()
     }
     /// <p>The configuration for an Amazon S3 data repository linked to an Amazon FSx Lustre file system with a data repository association. The configuration defines which file events (new, changed, or deleted files or directories) are automatically imported from the linked data repository to the file system or automatically exported from the file system to the data repository.</p>
     pub fn s3(mut self, input: crate::types::S3DataRepositoryConfiguration) -> Self {
@@ -146,5 +163,9 @@ impl UpdateDataRepositoryAssociationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_s3(input);
         self
+    }
+    /// <p>The configuration for an Amazon S3 data repository linked to an Amazon FSx Lustre file system with a data repository association. The configuration defines which file events (new, changed, or deleted files or directories) are automatically imported from the linked data repository to the file system or automatically exported from the file system to the data repository.</p>
+    pub fn get_s3(&self) -> &::std::option::Option<crate::types::S3DataRepositoryConfiguration> {
+        self.inner.get_s3()
     }
 }

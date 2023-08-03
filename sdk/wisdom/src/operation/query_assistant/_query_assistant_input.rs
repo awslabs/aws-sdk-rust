@@ -71,6 +71,10 @@ impl QueryAssistantInputBuilder {
         self.assistant_id = input;
         self
     }
+    /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    pub fn get_assistant_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assistant_id
+    }
     /// <p>The text to search for.</p>
     pub fn query_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_text = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl QueryAssistantInputBuilder {
     pub fn set_query_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_text = input;
         self
+    }
+    /// <p>The text to search for.</p>
+    pub fn get_query_text(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_text
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -91,6 +99,10 @@ impl QueryAssistantInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of results to return per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -100,6 +112,10 @@ impl QueryAssistantInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return per page.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`QueryAssistantInput`](crate::operation::query_assistant::QueryAssistantInput).
     pub fn build(

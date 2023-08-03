@@ -59,6 +59,12 @@ impl CompromisedCredentialsRiskConfigurationTypeBuilder {
         self.event_filter = input;
         self
     }
+    /// <p>Perform the action for these events. The default is to perform all events if no event filter is specified.</p>
+    pub fn get_event_filter(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventFilterType>> {
+        &self.event_filter
+    }
     /// <p>The compromised credentials risk configuration actions.</p>
     pub fn actions(mut self, input: crate::types::CompromisedCredentialsActionsType) -> Self {
         self.actions = ::std::option::Option::Some(input);
@@ -71,6 +77,12 @@ impl CompromisedCredentialsRiskConfigurationTypeBuilder {
     ) -> Self {
         self.actions = input;
         self
+    }
+    /// <p>The compromised credentials risk configuration actions.</p>
+    pub fn get_actions(
+        &self,
+    ) -> &::std::option::Option<crate::types::CompromisedCredentialsActionsType> {
+        &self.actions
     }
     /// Consumes the builder and constructs a [`CompromisedCredentialsRiskConfigurationType`](crate::types::CompromisedCredentialsRiskConfigurationType).
     pub fn build(self) -> crate::types::CompromisedCredentialsRiskConfigurationType {

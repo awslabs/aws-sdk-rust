@@ -137,6 +137,10 @@ impl WorkflowExecutionContinuedAsNewEventAttributesBuilder {
         self.input = input;
         self
     }
+    /// <p>The input provided to the new workflow execution.</p>
+    pub fn get_input(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input
+    }
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>ContinueAsNewWorkflowExecution</code> decision that started this execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn decision_task_completed_event_id(mut self, input: i64) -> Self {
         self.decision_task_completed_event_id = ::std::option::Option::Some(input);
@@ -149,6 +153,10 @@ impl WorkflowExecutionContinuedAsNewEventAttributesBuilder {
     ) -> Self {
         self.decision_task_completed_event_id = input;
         self
+    }
+    /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>ContinueAsNewWorkflowExecution</code> decision that started this execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
+    pub fn get_decision_task_completed_event_id(&self) -> &::std::option::Option<i64> {
+        &self.decision_task_completed_event_id
     }
     /// <p>The <code>runId</code> of the new workflow execution.</p>
     pub fn new_execution_run_id(
@@ -165,6 +173,10 @@ impl WorkflowExecutionContinuedAsNewEventAttributesBuilder {
     ) -> Self {
         self.new_execution_run_id = input;
         self
+    }
+    /// <p>The <code>runId</code> of the new workflow execution.</p>
+    pub fn get_new_execution_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.new_execution_run_id
     }
     /// <p>The total duration allowed for the new workflow execution.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
@@ -184,6 +196,13 @@ impl WorkflowExecutionContinuedAsNewEventAttributesBuilder {
         self.execution_start_to_close_timeout = input;
         self
     }
+    /// <p>The total duration allowed for the new workflow execution.</p>
+    /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+    pub fn get_execution_start_to_close_timeout(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.execution_start_to_close_timeout
+    }
     /// <p>The task list to use for the decisions of the new (continued) workflow execution.</p>
     pub fn task_list(mut self, input: crate::types::TaskList) -> Self {
         self.task_list = ::std::option::Option::Some(input);
@@ -193,6 +212,10 @@ impl WorkflowExecutionContinuedAsNewEventAttributesBuilder {
     pub fn set_task_list(mut self, input: ::std::option::Option<crate::types::TaskList>) -> Self {
         self.task_list = input;
         self
+    }
+    /// <p>The task list to use for the decisions of the new (continued) workflow execution.</p>
+    pub fn get_task_list(&self) -> &::std::option::Option<crate::types::TaskList> {
+        &self.task_list
     }
     /// <p>The priority of the task to use for the decisions of the new (continued) workflow execution.</p>
     pub fn task_priority(
@@ -209,6 +232,10 @@ impl WorkflowExecutionContinuedAsNewEventAttributesBuilder {
     ) -> Self {
         self.task_priority = input;
         self
+    }
+    /// <p>The priority of the task to use for the decisions of the new (continued) workflow execution.</p>
+    pub fn get_task_priority(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_priority
     }
     /// <p>The maximum duration of decision tasks for the new workflow execution.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
@@ -227,6 +254,11 @@ impl WorkflowExecutionContinuedAsNewEventAttributesBuilder {
     ) -> Self {
         self.task_start_to_close_timeout = input;
         self
+    }
+    /// <p>The maximum duration of decision tasks for the new workflow execution.</p>
+    /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+    pub fn get_task_start_to_close_timeout(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_start_to_close_timeout
     }
     /// <p>The policy to use for the child workflow executions of the new execution if it is terminated by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout.</p>
     /// <p>The supported child policies are:</p>
@@ -253,6 +285,16 @@ impl WorkflowExecutionContinuedAsNewEventAttributesBuilder {
         self.child_policy = input;
         self
     }
+    /// <p>The policy to use for the child workflow executions of the new execution if it is terminated by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout.</p>
+    /// <p>The supported child policies are:</p>
+    /// <ul>
+    /// <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>
+    /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
+    /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
+    /// </ul>
+    pub fn get_child_policy(&self) -> &::std::option::Option<crate::types::ChildPolicy> {
+        &self.child_policy
+    }
     /// Appends an item to `tag_list`.
     ///
     /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
@@ -272,6 +314,10 @@ impl WorkflowExecutionContinuedAsNewEventAttributesBuilder {
         self.tag_list = input;
         self
     }
+    /// <p>The list of tags associated with the new workflow execution.</p>
+    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tag_list
+    }
     /// <p>The workflow type of this execution.</p>
     pub fn workflow_type(mut self, input: crate::types::WorkflowType) -> Self {
         self.workflow_type = ::std::option::Option::Some(input);
@@ -285,6 +331,10 @@ impl WorkflowExecutionContinuedAsNewEventAttributesBuilder {
         self.workflow_type = input;
         self
     }
+    /// <p>The workflow type of this execution.</p>
+    pub fn get_workflow_type(&self) -> &::std::option::Option<crate::types::WorkflowType> {
+        &self.workflow_type
+    }
     /// <p>The IAM role to attach to the new (continued) workflow execution.</p>
     pub fn lambda_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lambda_role = ::std::option::Option::Some(input.into());
@@ -294,6 +344,10 @@ impl WorkflowExecutionContinuedAsNewEventAttributesBuilder {
     pub fn set_lambda_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lambda_role = input;
         self
+    }
+    /// <p>The IAM role to attach to the new (continued) workflow execution.</p>
+    pub fn get_lambda_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lambda_role
     }
     /// Consumes the builder and constructs a [`WorkflowExecutionContinuedAsNewEventAttributes`](crate::types::WorkflowExecutionContinuedAsNewEventAttributes).
     pub fn build(self) -> crate::types::WorkflowExecutionContinuedAsNewEventAttributes {

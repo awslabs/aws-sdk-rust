@@ -36,6 +36,10 @@ impl AbortMultipartReadSetUploadFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AbortMultipartReadSetUpload as a reference.
+    pub fn as_input(&self) -> &crate::operation::abort_multipart_read_set_upload::builders::AbortMultipartReadSetUploadInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl AbortMultipartReadSetUploadFluentBuilder {
         self.inner = self.inner.set_sequence_store_id(input);
         self
     }
+    /// <p> The sequence store ID for the store involved in the multipart upload. </p>
+    pub fn get_sequence_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_sequence_store_id()
+    }
     /// <p> The ID for the multipart upload. </p>
     pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.upload_id(input.into());
@@ -141,5 +149,9 @@ impl AbortMultipartReadSetUploadFluentBuilder {
     pub fn set_upload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_upload_id(input);
         self
+    }
+    /// <p> The ID for the multipart upload. </p>
+    pub fn get_upload_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_upload_id()
     }
 }

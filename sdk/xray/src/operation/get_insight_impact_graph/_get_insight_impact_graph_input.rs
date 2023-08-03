@@ -65,6 +65,10 @@ impl GetInsightImpactGraphInputBuilder {
         self.insight_id = input;
         self
     }
+    /// <p>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.</p>
+    pub fn get_insight_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.insight_id
+    }
     /// <p>The estimated start time of the insight, in Unix time seconds. The StartTime is inclusive of the value provided and can't be more than 30 days old.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -77,6 +81,10 @@ impl GetInsightImpactGraphInputBuilder {
     ) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>The estimated start time of the insight, in Unix time seconds. The StartTime is inclusive of the value provided and can't be more than 30 days old.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p>The estimated end time of the insight, in Unix time seconds. The EndTime is exclusive of the value provided. The time range between the start time and end time can't be more than six hours. </p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -91,6 +99,10 @@ impl GetInsightImpactGraphInputBuilder {
         self.end_time = input;
         self
     }
+    /// <p>The estimated end time of the insight, in Unix time seconds. The EndTime is exclusive of the value provided. The time range between the start time and end time can't be more than six hours. </p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p>Specify the pagination token returned by a previous request to retrieve the next page of results. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -100,6 +112,10 @@ impl GetInsightImpactGraphInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Specify the pagination token returned by a previous request to retrieve the next page of results. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`GetInsightImpactGraphInput`](crate::operation::get_insight_impact_graph::GetInsightImpactGraphInput).
     pub fn build(

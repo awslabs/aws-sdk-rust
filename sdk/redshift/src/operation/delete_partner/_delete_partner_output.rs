@@ -60,6 +60,10 @@ impl DeletePartnerOutputBuilder {
         self.database_name = input;
         self
     }
+    /// <p>The name of the database that receives data from the partner.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>The name of the partner that is authorized to send data.</p>
     pub fn partner_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.partner_name = ::std::option::Option::Some(input.into());
@@ -69,6 +73,10 @@ impl DeletePartnerOutputBuilder {
     pub fn set_partner_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.partner_name = input;
         self
+    }
+    /// <p>The name of the partner that is authorized to send data.</p>
+    pub fn get_partner_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.partner_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

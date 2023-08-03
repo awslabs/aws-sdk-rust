@@ -40,6 +40,10 @@ impl DescribeOfferingInputBuilder {
         self.offering_arn = input;
         self
     }
+    /// The Amazon Resource Name (ARN) of the offering.
+    pub fn get_offering_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.offering_arn
+    }
     /// Consumes the builder and constructs a [`DescribeOfferingInput`](crate::operation::describe_offering::DescribeOfferingInput).
     pub fn build(
         self,

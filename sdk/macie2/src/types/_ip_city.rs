@@ -40,6 +40,10 @@ impl IpCityBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the city.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`IpCity`](crate::types::IpCity).
     pub fn build(self) -> crate::types::IpCity {
         crate::types::IpCity { name: self.name }

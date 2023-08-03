@@ -336,6 +336,10 @@ impl PublishVersionOutputBuilder {
         self.function_name = input;
         self
     }
+    /// <p>The name of the function.</p>
+    pub fn get_function_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.function_name
+    }
     /// <p>The function's Amazon Resource Name (ARN).</p>
     pub fn function_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.function_arn = ::std::option::Option::Some(input.into());
@@ -345,6 +349,10 @@ impl PublishVersionOutputBuilder {
     pub fn set_function_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.function_arn = input;
         self
+    }
+    /// <p>The function's Amazon Resource Name (ARN).</p>
+    pub fn get_function_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.function_arn
     }
     /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive.</p>
     /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
@@ -358,6 +366,11 @@ impl PublishVersionOutputBuilder {
         self.runtime = input;
         self
     }
+    /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive.</p>
+    /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
+    pub fn get_runtime(&self) -> &::std::option::Option<crate::types::Runtime> {
+        &self.runtime
+    }
     /// <p>The function's execution role.</p>
     pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role = ::std::option::Option::Some(input.into());
@@ -367,6 +380,10 @@ impl PublishVersionOutputBuilder {
     pub fn set_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role = input;
         self
+    }
+    /// <p>The function's execution role.</p>
+    pub fn get_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role
     }
     /// <p>The function that Lambda calls to begin running your function.</p>
     pub fn handler(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -378,6 +395,10 @@ impl PublishVersionOutputBuilder {
         self.handler = input;
         self
     }
+    /// <p>The function that Lambda calls to begin running your function.</p>
+    pub fn get_handler(&self) -> &::std::option::Option<::std::string::String> {
+        &self.handler
+    }
     /// <p>The size of the function's deployment package, in bytes.</p>
     pub fn code_size(mut self, input: i64) -> Self {
         self.code_size = ::std::option::Option::Some(input);
@@ -387,6 +408,10 @@ impl PublishVersionOutputBuilder {
     pub fn set_code_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.code_size = input;
         self
+    }
+    /// <p>The size of the function's deployment package, in bytes.</p>
+    pub fn get_code_size(&self) -> &::std::option::Option<i64> {
+        &self.code_size
     }
     /// <p>The function's description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -398,6 +423,10 @@ impl PublishVersionOutputBuilder {
         self.description = input;
         self
     }
+    /// <p>The function's description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The amount of time in seconds that Lambda allows a function to run before stopping it.</p>
     pub fn timeout(mut self, input: i32) -> Self {
         self.timeout = ::std::option::Option::Some(input);
@@ -408,6 +437,10 @@ impl PublishVersionOutputBuilder {
         self.timeout = input;
         self
     }
+    /// <p>The amount of time in seconds that Lambda allows a function to run before stopping it.</p>
+    pub fn get_timeout(&self) -> &::std::option::Option<i32> {
+        &self.timeout
+    }
     /// <p>The amount of memory available to the function at runtime.</p>
     pub fn memory_size(mut self, input: i32) -> Self {
         self.memory_size = ::std::option::Option::Some(input);
@@ -417,6 +450,10 @@ impl PublishVersionOutputBuilder {
     pub fn set_memory_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.memory_size = input;
         self
+    }
+    /// <p>The amount of memory available to the function at runtime.</p>
+    pub fn get_memory_size(&self) -> &::std::option::Option<i32> {
+        &self.memory_size
     }
     /// <p>The date and time that the function was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
     pub fn last_modified(
@@ -434,6 +471,10 @@ impl PublishVersionOutputBuilder {
         self.last_modified = input;
         self
     }
+    /// <p>The date and time that the function was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+    pub fn get_last_modified(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified
+    }
     /// <p>The SHA256 hash of the function's deployment package.</p>
     pub fn code_sha256(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code_sha256 = ::std::option::Option::Some(input.into());
@@ -444,6 +485,10 @@ impl PublishVersionOutputBuilder {
         self.code_sha256 = input;
         self
     }
+    /// <p>The SHA256 hash of the function's deployment package.</p>
+    pub fn get_code_sha256(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code_sha256
+    }
     /// <p>The version of the Lambda function.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -453,6 +498,10 @@ impl PublishVersionOutputBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The version of the Lambda function.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// <p>The function's networking configuration.</p>
     pub fn vpc_config(mut self, input: crate::types::VpcConfigResponse) -> Self {
@@ -467,6 +516,10 @@ impl PublishVersionOutputBuilder {
         self.vpc_config = input;
         self
     }
+    /// <p>The function's networking configuration.</p>
+    pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfigResponse> {
+        &self.vpc_config
+    }
     /// <p>The function's dead letter queue.</p>
     pub fn dead_letter_config(mut self, input: crate::types::DeadLetterConfig) -> Self {
         self.dead_letter_config = ::std::option::Option::Some(input);
@@ -479,6 +532,10 @@ impl PublishVersionOutputBuilder {
     ) -> Self {
         self.dead_letter_config = input;
         self
+    }
+    /// <p>The function's dead letter queue.</p>
+    pub fn get_dead_letter_config(&self) -> &::std::option::Option<crate::types::DeadLetterConfig> {
+        &self.dead_letter_config
     }
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>. Omitted from CloudTrail logs.</p>
     pub fn environment(mut self, input: crate::types::EnvironmentResponse) -> Self {
@@ -493,6 +550,10 @@ impl PublishVersionOutputBuilder {
         self.environment = input;
         self
     }
+    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>. Omitted from CloudTrail logs.</p>
+    pub fn get_environment(&self) -> &::std::option::Option<crate::types::EnvironmentResponse> {
+        &self.environment
+    }
     /// <p>The KMS key that's used to encrypt the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption">environment variables</a>. When <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda SnapStart</a> is activated, this key is also used to encrypt the function's snapshot. This key is returned only if you've configured a customer managed key.</p>
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_arn = ::std::option::Option::Some(input.into());
@@ -502,6 +563,10 @@ impl PublishVersionOutputBuilder {
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_arn = input;
         self
+    }
+    /// <p>The KMS key that's used to encrypt the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption">environment variables</a>. When <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda SnapStart</a> is activated, this key is also used to encrypt the function's snapshot. This key is returned only if you've configured a customer managed key.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
     }
     /// <p>The function's X-Ray tracing configuration.</p>
     pub fn tracing_config(mut self, input: crate::types::TracingConfigResponse) -> Self {
@@ -516,6 +581,12 @@ impl PublishVersionOutputBuilder {
         self.tracing_config = input;
         self
     }
+    /// <p>The function's X-Ray tracing configuration.</p>
+    pub fn get_tracing_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::TracingConfigResponse> {
+        &self.tracing_config
+    }
     /// <p>For Lambda@Edge functions, the ARN of the main function.</p>
     pub fn master_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_arn = ::std::option::Option::Some(input.into());
@@ -526,6 +597,10 @@ impl PublishVersionOutputBuilder {
         self.master_arn = input;
         self
     }
+    /// <p>For Lambda@Edge functions, the ARN of the main function.</p>
+    pub fn get_master_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.master_arn
+    }
     /// <p>The latest updated revision of the function or alias.</p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
@@ -535,6 +610,10 @@ impl PublishVersionOutputBuilder {
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision_id = input;
         self
+    }
+    /// <p>The latest updated revision of the function or alias.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision_id
     }
     /// Appends an item to `layers`.
     ///
@@ -555,6 +634,10 @@ impl PublishVersionOutputBuilder {
         self.layers = input;
         self
     }
+    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">layers</a>.</p>
+    pub fn get_layers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Layer>> {
+        &self.layers
+    }
     /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
     pub fn state(mut self, input: crate::types::State) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -565,6 +648,10 @@ impl PublishVersionOutputBuilder {
         self.state = input;
         self
     }
+    /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::State> {
+        &self.state
+    }
     /// <p>The reason for the function's current state.</p>
     pub fn state_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_reason = ::std::option::Option::Some(input.into());
@@ -574,6 +661,10 @@ impl PublishVersionOutputBuilder {
     pub fn set_state_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_reason = input;
         self
+    }
+    /// <p>The reason for the function's current state.</p>
+    pub fn get_state_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_reason
     }
     /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
     pub fn state_reason_code(mut self, input: crate::types::StateReasonCode) -> Self {
@@ -588,6 +679,10 @@ impl PublishVersionOutputBuilder {
         self.state_reason_code = input;
         self
     }
+    /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
+    pub fn get_state_reason_code(&self) -> &::std::option::Option<crate::types::StateReasonCode> {
+        &self.state_reason_code
+    }
     /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
     pub fn last_update_status(mut self, input: crate::types::LastUpdateStatus) -> Self {
         self.last_update_status = ::std::option::Option::Some(input);
@@ -600,6 +695,10 @@ impl PublishVersionOutputBuilder {
     ) -> Self {
         self.last_update_status = input;
         self
+    }
+    /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
+    pub fn get_last_update_status(&self) -> &::std::option::Option<crate::types::LastUpdateStatus> {
+        &self.last_update_status
     }
     /// <p>The reason for the last update that was performed on the function.</p>
     pub fn last_update_status_reason(
@@ -617,6 +716,10 @@ impl PublishVersionOutputBuilder {
         self.last_update_status_reason = input;
         self
     }
+    /// <p>The reason for the last update that was performed on the function.</p>
+    pub fn get_last_update_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_update_status_reason
+    }
     /// <p>The reason code for the last update that was performed on the function.</p>
     pub fn last_update_status_reason_code(
         mut self,
@@ -632,6 +735,12 @@ impl PublishVersionOutputBuilder {
     ) -> Self {
         self.last_update_status_reason_code = input;
         self
+    }
+    /// <p>The reason code for the last update that was performed on the function.</p>
+    pub fn get_last_update_status_reason_code(
+        &self,
+    ) -> &::std::option::Option<crate::types::LastUpdateStatusReasonCode> {
+        &self.last_update_status_reason_code
     }
     /// Appends an item to `file_system_configs`.
     ///
@@ -652,6 +761,12 @@ impl PublishVersionOutputBuilder {
         self.file_system_configs = input;
         self
     }
+    /// <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
+    pub fn get_file_system_configs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FileSystemConfig>> {
+        &self.file_system_configs
+    }
     /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
     pub fn package_type(mut self, input: crate::types::PackageType) -> Self {
         self.package_type = ::std::option::Option::Some(input);
@@ -665,6 +780,10 @@ impl PublishVersionOutputBuilder {
         self.package_type = input;
         self
     }
+    /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
+    pub fn get_package_type(&self) -> &::std::option::Option<crate::types::PackageType> {
+        &self.package_type
+    }
     /// <p>The function's image configuration values.</p>
     pub fn image_config_response(mut self, input: crate::types::ImageConfigResponse) -> Self {
         self.image_config_response = ::std::option::Option::Some(input);
@@ -677,6 +796,12 @@ impl PublishVersionOutputBuilder {
     ) -> Self {
         self.image_config_response = input;
         self
+    }
+    /// <p>The function's image configuration values.</p>
+    pub fn get_image_config_response(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImageConfigResponse> {
+        &self.image_config_response
     }
     /// <p>The ARN of the signing profile version.</p>
     pub fn signing_profile_version_arn(
@@ -694,6 +819,10 @@ impl PublishVersionOutputBuilder {
         self.signing_profile_version_arn = input;
         self
     }
+    /// <p>The ARN of the signing profile version.</p>
+    pub fn get_signing_profile_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.signing_profile_version_arn
+    }
     /// <p>The ARN of the signing job.</p>
     pub fn signing_job_arn(
         mut self,
@@ -709,6 +838,10 @@ impl PublishVersionOutputBuilder {
     ) -> Self {
         self.signing_job_arn = input;
         self
+    }
+    /// <p>The ARN of the signing job.</p>
+    pub fn get_signing_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.signing_job_arn
     }
     /// Appends an item to `architectures`.
     ///
@@ -729,6 +862,12 @@ impl PublishVersionOutputBuilder {
         self.architectures = input;
         self
     }
+    /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
+    pub fn get_architectures(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Architecture>> {
+        &self.architectures
+    }
     /// <p>The size of the function’s <code>/tmp</code> directory in MB. The default value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
     pub fn ephemeral_storage(mut self, input: crate::types::EphemeralStorage) -> Self {
         self.ephemeral_storage = ::std::option::Option::Some(input);
@@ -741,6 +880,10 @@ impl PublishVersionOutputBuilder {
     ) -> Self {
         self.ephemeral_storage = input;
         self
+    }
+    /// <p>The size of the function’s <code>/tmp</code> directory in MB. The default value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
+    pub fn get_ephemeral_storage(&self) -> &::std::option::Option<crate::types::EphemeralStorage> {
+        &self.ephemeral_storage
     }
     /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with Lambda SnapStart</a>.</p>
     pub fn snap_start(mut self, input: crate::types::SnapStartResponse) -> Self {
@@ -755,6 +898,10 @@ impl PublishVersionOutputBuilder {
         self.snap_start = input;
         self
     }
+    /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with Lambda SnapStart</a>.</p>
+    pub fn get_snap_start(&self) -> &::std::option::Option<crate::types::SnapStartResponse> {
+        &self.snap_start
+    }
     /// <p>The ARN of the runtime and any errors that occured.</p>
     pub fn runtime_version_config(mut self, input: crate::types::RuntimeVersionConfig) -> Self {
         self.runtime_version_config = ::std::option::Option::Some(input);
@@ -767,6 +914,12 @@ impl PublishVersionOutputBuilder {
     ) -> Self {
         self.runtime_version_config = input;
         self
+    }
+    /// <p>The ARN of the runtime and any errors that occured.</p>
+    pub fn get_runtime_version_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::RuntimeVersionConfig> {
+        &self.runtime_version_config
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

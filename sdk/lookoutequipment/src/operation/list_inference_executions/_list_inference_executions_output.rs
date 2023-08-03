@@ -60,6 +60,10 @@ impl ListInferenceExecutionsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p> An opaque pagination token indicating where to continue the listing of inference executions. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `inference_execution_summaries`.
     ///
     /// To override the contents of this collection use [`set_inference_execution_summaries`](Self::set_inference_execution_summaries).
@@ -81,6 +85,12 @@ impl ListInferenceExecutionsOutputBuilder {
     ) -> Self {
         self.inference_execution_summaries = input;
         self
+    }
+    /// <p>Provides an array of information about the individual inference executions returned from the <code>ListInferenceExecutions</code> operation, including model used, inference scheduler, data configuration, and so on. </p>
+    pub fn get_inference_execution_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InferenceExecutionSummary>> {
+        &self.inference_execution_summaries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

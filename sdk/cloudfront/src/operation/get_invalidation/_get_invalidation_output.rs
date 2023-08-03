@@ -50,6 +50,10 @@ impl GetInvalidationOutputBuilder {
         self.invalidation = input;
         self
     }
+    /// <p>The invalidation's information. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation Complex Type</a>.</p>
+    pub fn get_invalidation(&self) -> &::std::option::Option<crate::types::Invalidation> {
+        &self.invalidation
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

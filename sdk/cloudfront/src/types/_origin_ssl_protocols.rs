@@ -48,6 +48,10 @@ impl OriginSslProtocolsBuilder {
         self.quantity = input;
         self
     }
+    /// <p>The number of SSL/TLS protocols that you want to allow CloudFront to use when establishing an HTTPS connection with this origin.</p>
+    pub fn get_quantity(&self) -> &::std::option::Option<i32> {
+        &self.quantity
+    }
     /// Appends an item to `items`.
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
@@ -66,6 +70,10 @@ impl OriginSslProtocolsBuilder {
     ) -> Self {
         self.items = input;
         self
+    }
+    /// <p>A list that contains allowed SSL/TLS protocols for this distribution.</p>
+    pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SslProtocol>> {
+        &self.items
     }
     /// Consumes the builder and constructs a [`OriginSslProtocols`](crate::types::OriginSslProtocols).
     pub fn build(self) -> crate::types::OriginSslProtocols {

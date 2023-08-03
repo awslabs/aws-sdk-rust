@@ -96,6 +96,10 @@ impl InstanceHealthSummaryBuilder {
         self.no_data = input;
         self
     }
+    /// <p> <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting no data on an instance.</p>
+    pub fn get_no_data(&self) -> &::std::option::Option<i32> {
+        &self.no_data
+    }
     /// <p> <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting an insufficient amount of data on an instance.</p>
     pub fn unknown(mut self, input: i32) -> Self {
         self.unknown = ::std::option::Option::Some(input);
@@ -105,6 +109,10 @@ impl InstanceHealthSummaryBuilder {
     pub fn set_unknown(mut self, input: ::std::option::Option<i32>) -> Self {
         self.unknown = input;
         self
+    }
+    /// <p> <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting an insufficient amount of data on an instance.</p>
+    pub fn get_unknown(&self) -> &::std::option::Option<i32> {
+        &self.unknown
     }
     /// <p> <b>Grey.</b> An operation is in progress on an instance within the command timeout.</p>
     pub fn pending(mut self, input: i32) -> Self {
@@ -116,6 +124,10 @@ impl InstanceHealthSummaryBuilder {
         self.pending = input;
         self
     }
+    /// <p> <b>Grey.</b> An operation is in progress on an instance within the command timeout.</p>
+    pub fn get_pending(&self) -> &::std::option::Option<i32> {
+        &self.pending
+    }
     /// <p> <b>Green.</b> An instance is passing health checks and the health agent is not reporting any problems.</p>
     pub fn ok(mut self, input: i32) -> Self {
         self.ok = ::std::option::Option::Some(input);
@@ -125,6 +137,10 @@ impl InstanceHealthSummaryBuilder {
     pub fn set_ok(mut self, input: ::std::option::Option<i32>) -> Self {
         self.ok = input;
         self
+    }
+    /// <p> <b>Green.</b> An instance is passing health checks and the health agent is not reporting any problems.</p>
+    pub fn get_ok(&self) -> &::std::option::Option<i32> {
+        &self.ok
     }
     /// <p> <b>Green.</b> An operation is in progress on an instance.</p>
     pub fn info(mut self, input: i32) -> Self {
@@ -136,6 +152,10 @@ impl InstanceHealthSummaryBuilder {
         self.info = input;
         self
     }
+    /// <p> <b>Green.</b> An operation is in progress on an instance.</p>
+    pub fn get_info(&self) -> &::std::option::Option<i32> {
+        &self.info
+    }
     /// <p> <b>Yellow.</b> The health agent is reporting a moderate number of request failures or other issues for an instance or environment.</p>
     pub fn warning(mut self, input: i32) -> Self {
         self.warning = ::std::option::Option::Some(input);
@@ -145,6 +165,10 @@ impl InstanceHealthSummaryBuilder {
     pub fn set_warning(mut self, input: ::std::option::Option<i32>) -> Self {
         self.warning = input;
         self
+    }
+    /// <p> <b>Yellow.</b> The health agent is reporting a moderate number of request failures or other issues for an instance or environment.</p>
+    pub fn get_warning(&self) -> &::std::option::Option<i32> {
+        &self.warning
     }
     /// <p> <b>Red.</b> The health agent is reporting a high number of request failures or other issues for an instance or environment.</p>
     pub fn degraded(mut self, input: i32) -> Self {
@@ -156,6 +180,10 @@ impl InstanceHealthSummaryBuilder {
         self.degraded = input;
         self
     }
+    /// <p> <b>Red.</b> The health agent is reporting a high number of request failures or other issues for an instance or environment.</p>
+    pub fn get_degraded(&self) -> &::std::option::Option<i32> {
+        &self.degraded
+    }
     /// <p> <b>Red.</b> The health agent is reporting a very high number of request failures or other issues for an instance or environment.</p>
     pub fn severe(mut self, input: i32) -> Self {
         self.severe = ::std::option::Option::Some(input);
@@ -165,6 +193,10 @@ impl InstanceHealthSummaryBuilder {
     pub fn set_severe(mut self, input: ::std::option::Option<i32>) -> Self {
         self.severe = input;
         self
+    }
+    /// <p> <b>Red.</b> The health agent is reporting a very high number of request failures or other issues for an instance or environment.</p>
+    pub fn get_severe(&self) -> &::std::option::Option<i32> {
+        &self.severe
     }
     /// Consumes the builder and constructs a [`InstanceHealthSummary`](crate::types::InstanceHealthSummary).
     pub fn build(self) -> crate::types::InstanceHealthSummary {

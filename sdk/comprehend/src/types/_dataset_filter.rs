@@ -64,6 +64,10 @@ impl DatasetFilterBuilder {
         self.status = input;
         self
     }
+    /// <p>Filter the datasets based on the dataset status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::DatasetStatus> {
+        &self.status
+    }
     /// <p>Filter the datasets based on the dataset type.</p>
     pub fn dataset_type(mut self, input: crate::types::DatasetType) -> Self {
         self.dataset_type = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl DatasetFilterBuilder {
     ) -> Self {
         self.dataset_type = input;
         self
+    }
+    /// <p>Filter the datasets based on the dataset type.</p>
+    pub fn get_dataset_type(&self) -> &::std::option::Option<crate::types::DatasetType> {
+        &self.dataset_type
     }
     /// <p>Filter the datasets to include datasets created after the specified time.</p>
     pub fn creation_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -90,6 +98,10 @@ impl DatasetFilterBuilder {
         self.creation_time_after = input;
         self
     }
+    /// <p>Filter the datasets to include datasets created after the specified time.</p>
+    pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time_after
+    }
     /// <p>Filter the datasets to include datasets created before the specified time.</p>
     pub fn creation_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time_before = ::std::option::Option::Some(input);
@@ -102,6 +114,10 @@ impl DatasetFilterBuilder {
     ) -> Self {
         self.creation_time_before = input;
         self
+    }
+    /// <p>Filter the datasets to include datasets created before the specified time.</p>
+    pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time_before
     }
     /// Consumes the builder and constructs a [`DatasetFilter`](crate::types::DatasetFilter).
     pub fn build(self) -> crate::types::DatasetFilter {

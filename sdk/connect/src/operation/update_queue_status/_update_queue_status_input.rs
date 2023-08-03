@@ -56,6 +56,10 @@ impl UpdateQueueStatusInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The identifier for the queue.</p>
     pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_id = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl UpdateQueueStatusInputBuilder {
         self.queue_id = input;
         self
     }
+    /// <p>The identifier for the queue.</p>
+    pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.queue_id
+    }
     /// <p>The status of the queue.</p>
     pub fn status(mut self, input: crate::types::QueueStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl UpdateQueueStatusInputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::QueueStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the queue.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::QueueStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`UpdateQueueStatusInput`](crate::operation::update_queue_status::UpdateQueueStatusInput).
     pub fn build(

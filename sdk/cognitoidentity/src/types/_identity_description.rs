@@ -64,6 +64,10 @@ impl IdentityDescriptionBuilder {
         self.identity_id = input;
         self
     }
+    /// <p>A unique identifier in the format REGION:GUID.</p>
+    pub fn get_identity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_id
+    }
     /// Appends an item to `logins`.
     ///
     /// To override the contents of this collection use [`set_logins`](Self::set_logins).
@@ -83,6 +87,10 @@ impl IdentityDescriptionBuilder {
         self.logins = input;
         self
     }
+    /// <p>The provider names.</p>
+    pub fn get_logins(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.logins
+    }
     /// <p>Date on which the identity was created.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
@@ -96,6 +104,10 @@ impl IdentityDescriptionBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>Date on which the identity was created.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
+    }
     /// <p>Date on which the identity was last modified.</p>
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input);
@@ -108,6 +120,10 @@ impl IdentityDescriptionBuilder {
     ) -> Self {
         self.last_modified_date = input;
         self
+    }
+    /// <p>Date on which the identity was last modified.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_date
     }
     /// Consumes the builder and constructs a [`IdentityDescription`](crate::types::IdentityDescription).
     pub fn build(self) -> crate::types::IdentityDescription {

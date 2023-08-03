@@ -37,6 +37,10 @@ impl AssociateSkillGroupWithRoomFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateSkillGroupWithRoom as a reference.
+    pub fn as_input(&self) -> &crate::operation::associate_skill_group_with_room::builders::AssociateSkillGroupWithRoomInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +137,10 @@ impl AssociateSkillGroupWithRoomFluentBuilder {
         self.inner = self.inner.set_skill_group_arn(input);
         self
     }
+    /// <p>The ARN of the skill group to associate with a room. Required.</p>
+    pub fn get_skill_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_skill_group_arn()
+    }
     /// <p>The ARN of the room with which to associate the skill group. Required.</p>
     pub fn room_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.room_arn(input.into());
@@ -142,5 +150,9 @@ impl AssociateSkillGroupWithRoomFluentBuilder {
     pub fn set_room_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_room_arn(input);
         self
+    }
+    /// <p>The ARN of the room with which to associate the skill group. Required.</p>
+    pub fn get_room_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_room_arn()
     }
 }

@@ -51,6 +51,10 @@ impl DeploymentCircuitBreakerBuilder {
         self.enable = input;
         self
     }
+    /// <p>Determines whether to use the deployment circuit breaker logic for the service.</p>
+    pub fn get_enable(&self) -> &::std::option::Option<bool> {
+        &self.enable
+    }
     /// <p>Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If rollback is on, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
     pub fn rollback(mut self, input: bool) -> Self {
         self.rollback = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl DeploymentCircuitBreakerBuilder {
     pub fn set_rollback(mut self, input: ::std::option::Option<bool>) -> Self {
         self.rollback = input;
         self
+    }
+    /// <p>Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If rollback is on, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
+    pub fn get_rollback(&self) -> &::std::option::Option<bool> {
+        &self.rollback
     }
     /// Consumes the builder and constructs a [`DeploymentCircuitBreaker`](crate::types::DeploymentCircuitBreaker).
     pub fn build(self) -> crate::types::DeploymentCircuitBreaker {

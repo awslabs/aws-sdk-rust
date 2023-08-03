@@ -137,6 +137,23 @@ impl DescribeKeyPairsInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>The filters.</p>
+    /// <ul>
+    /// <li> <p> <code>key-pair-id</code> - The ID of the key pair.</p> </li>
+    /// <li> <p> <code>fingerprint</code> - The fingerprint of the key pair.</p> </li>
+    /// <li> <p> <code>key-name</code> - The name of the key pair.</p> </li>
+    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
+    /// <li> <p> <code>tag</code>:<key>
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
+    /// <code>Owner</code> and the value
+    /// <code>TeamA</code>, specify
+    /// <code>tag:Owner</code> for the filter name and
+    /// <code>TeamA</code> for the filter value.
+    /// </key></p> </li>
+    /// </ul>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
+    }
     /// Appends an item to `key_names`.
     ///
     /// To override the contents of this collection use [`set_key_names`](Self::set_key_names).
@@ -158,6 +175,11 @@ impl DescribeKeyPairsInputBuilder {
         self.key_names = input;
         self
     }
+    /// <p>The key pair names.</p>
+    /// <p>Default: Describes all of your key pairs.</p>
+    pub fn get_key_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.key_names
+    }
     /// Appends an item to `key_pair_ids`.
     ///
     /// To override the contents of this collection use [`set_key_pair_ids`](Self::set_key_pair_ids).
@@ -177,6 +199,12 @@ impl DescribeKeyPairsInputBuilder {
         self.key_pair_ids = input;
         self
     }
+    /// <p>The IDs of the key pairs.</p>
+    pub fn get_key_pair_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.key_pair_ids
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -186,6 +214,10 @@ impl DescribeKeyPairsInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// <p>If <code>true</code>, the public key material is included in the response.</p>
     /// <p>Default: <code>false</code> </p>
@@ -198,6 +230,11 @@ impl DescribeKeyPairsInputBuilder {
     pub fn set_include_public_key(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_public_key = input;
         self
+    }
+    /// <p>If <code>true</code>, the public key material is included in the response.</p>
+    /// <p>Default: <code>false</code> </p>
+    pub fn get_include_public_key(&self) -> &::std::option::Option<bool> {
+        &self.include_public_key
     }
     /// Consumes the builder and constructs a [`DescribeKeyPairsInput`](crate::operation::describe_key_pairs::DescribeKeyPairsInput).
     pub fn build(

@@ -48,6 +48,10 @@ impl RegistryScanningConfigurationBuilder {
         self.scan_type = input;
         self
     }
+    /// <p>The type of scanning configured for the registry.</p>
+    pub fn get_scan_type(&self) -> &::std::option::Option<crate::types::ScanType> {
+        &self.scan_type
+    }
     /// Appends an item to `rules`.
     ///
     /// To override the contents of this collection use [`set_rules`](Self::set_rules).
@@ -66,6 +70,12 @@ impl RegistryScanningConfigurationBuilder {
     ) -> Self {
         self.rules = input;
         self
+    }
+    /// <p>The scanning rules associated with the registry.</p>
+    pub fn get_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RegistryScanningRule>> {
+        &self.rules
     }
     /// Consumes the builder and constructs a [`RegistryScanningConfiguration`](crate::types::RegistryScanningConfiguration).
     pub fn build(self) -> crate::types::RegistryScanningConfiguration {

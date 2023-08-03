@@ -48,6 +48,10 @@ impl AwsElbLoadBalancerSourceSecurityGroupBuilder {
         self.group_name = input;
         self
     }
+    /// <p>The name of the security group.</p>
+    pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_name
+    }
     /// <p>The owner of the security group.</p>
     pub fn owner_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_alias = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl AwsElbLoadBalancerSourceSecurityGroupBuilder {
     pub fn set_owner_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_alias = input;
         self
+    }
+    /// <p>The owner of the security group.</p>
+    pub fn get_owner_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_alias
     }
     /// Consumes the builder and constructs a [`AwsElbLoadBalancerSourceSecurityGroup`](crate::types::AwsElbLoadBalancerSourceSecurityGroup).
     pub fn build(self) -> crate::types::AwsElbLoadBalancerSourceSecurityGroup {

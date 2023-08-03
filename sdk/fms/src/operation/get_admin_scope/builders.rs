@@ -36,6 +36,12 @@ impl GetAdminScopeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetAdminScope as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_admin_scope::builders::GetAdminScopeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -123,5 +129,9 @@ impl GetAdminScopeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_admin_account(input);
         self
+    }
+    /// <p>The administator account that you want to get the details for.</p>
+    pub fn get_admin_account(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_admin_account()
     }
 }

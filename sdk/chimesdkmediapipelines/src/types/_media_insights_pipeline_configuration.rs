@@ -142,6 +142,12 @@ impl MediaInsightsPipelineConfigurationBuilder {
         self.media_insights_pipeline_configuration_name = input;
         self
     }
+    /// <p>The name of the configuration.</p>
+    pub fn get_media_insights_pipeline_configuration_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.media_insights_pipeline_configuration_name
+    }
     /// <p>The ARN of the configuration.</p>
     pub fn media_insights_pipeline_configuration_arn(
         mut self,
@@ -157,6 +163,12 @@ impl MediaInsightsPipelineConfigurationBuilder {
     ) -> Self {
         self.media_insights_pipeline_configuration_arn = input;
         self
+    }
+    /// <p>The ARN of the configuration.</p>
+    pub fn get_media_insights_pipeline_configuration_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.media_insights_pipeline_configuration_arn
     }
     /// <p>The ARN of the role used by the service to access Amazon Web Services resources.</p>
     pub fn resource_access_role_arn(
@@ -174,6 +186,10 @@ impl MediaInsightsPipelineConfigurationBuilder {
         self.resource_access_role_arn = input;
         self
     }
+    /// <p>The ARN of the role used by the service to access Amazon Web Services resources.</p>
+    pub fn get_resource_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_access_role_arn
+    }
     /// <p>Lists the rules that trigger a real-time alert.</p>
     pub fn real_time_alert_configuration(
         mut self,
@@ -189,6 +205,12 @@ impl MediaInsightsPipelineConfigurationBuilder {
     ) -> Self {
         self.real_time_alert_configuration = input;
         self
+    }
+    /// <p>Lists the rules that trigger a real-time alert.</p>
+    pub fn get_real_time_alert_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::RealTimeAlertConfiguration> {
+        &self.real_time_alert_configuration
     }
     /// Appends an item to `elements`.
     ///
@@ -214,6 +236,14 @@ impl MediaInsightsPipelineConfigurationBuilder {
         self.elements = input;
         self
     }
+    /// <p>The elements in the configuration.</p>
+    pub fn get_elements(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<crate::types::MediaInsightsPipelineConfigurationElement>,
+    > {
+        &self.elements
+    }
     /// <p>The ID of the configuration.</p>
     pub fn media_insights_pipeline_configuration_id(
         mut self,
@@ -230,6 +260,12 @@ impl MediaInsightsPipelineConfigurationBuilder {
         self.media_insights_pipeline_configuration_id = input;
         self
     }
+    /// <p>The ID of the configuration.</p>
+    pub fn get_media_insights_pipeline_configuration_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.media_insights_pipeline_configuration_id
+    }
     /// <p>The time at which the configuration was created.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_timestamp = ::std::option::Option::Some(input);
@@ -243,6 +279,10 @@ impl MediaInsightsPipelineConfigurationBuilder {
         self.created_timestamp = input;
         self
     }
+    /// <p>The time at which the configuration was created.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
+    }
     /// <p>The time at which the configuration was last updated.</p>
     pub fn updated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_timestamp = ::std::option::Option::Some(input);
@@ -255,6 +295,10 @@ impl MediaInsightsPipelineConfigurationBuilder {
     ) -> Self {
         self.updated_timestamp = input;
         self
+    }
+    /// <p>The time at which the configuration was last updated.</p>
+    pub fn get_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_timestamp
     }
     /// Consumes the builder and constructs a [`MediaInsightsPipelineConfiguration`](crate::types::MediaInsightsPipelineConfiguration).
     pub fn build(self) -> crate::types::MediaInsightsPipelineConfiguration {

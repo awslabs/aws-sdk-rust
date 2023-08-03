@@ -64,6 +64,10 @@ impl ListTapePoolsInputBuilder {
         self.pool_ar_ns = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of each of the custom tape pools you want to list. If you don't specify a custom tape pool ARN, the response lists all custom tape pools. </p>
+    pub fn get_pool_ar_ns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.pool_ar_ns
+    }
     /// <p>A string that indicates the position at which to begin the returned list of tape pools.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl ListTapePoolsInputBuilder {
         self.marker = input;
         self
     }
+    /// <p>A string that indicates the position at which to begin the returned list of tape pools.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// <p>An optional number limit for the tape pools in the list returned by this call.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -83,6 +91,10 @@ impl ListTapePoolsInputBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
+    }
+    /// <p>An optional number limit for the tape pools in the list returned by this call.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// Consumes the builder and constructs a [`ListTapePoolsInput`](crate::operation::list_tape_pools::ListTapePoolsInput).
     pub fn build(

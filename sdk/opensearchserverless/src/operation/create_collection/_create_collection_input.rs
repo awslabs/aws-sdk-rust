@@ -72,6 +72,10 @@ impl CreateCollectionInputBuilder {
         self.name = input;
         self
     }
+    /// <p>Name of the collection.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The type of collection.</p>
     pub fn r#type(mut self, input: crate::types::CollectionType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -82,6 +86,10 @@ impl CreateCollectionInputBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of collection.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::CollectionType> {
+        &self.r#type
+    }
     /// <p>Description of the collection.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl CreateCollectionInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>Description of the collection.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `tags`.
     ///
@@ -111,6 +123,10 @@ impl CreateCollectionInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>An arbitrary set of tags (key–value pairs) to associate with the OpenSearch Serverless collection.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -120,6 +136,10 @@ impl CreateCollectionInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateCollectionInput`](crate::operation::create_collection::CreateCollectionInput).
     pub fn build(

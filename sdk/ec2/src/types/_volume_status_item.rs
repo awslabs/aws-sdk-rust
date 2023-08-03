@@ -101,6 +101,12 @@ impl VolumeStatusItemBuilder {
         self.actions = input;
         self
     }
+    /// <p>The details of the operation.</p>
+    pub fn get_actions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusAction>> {
+        &self.actions
+    }
     /// <p>The Availability Zone of the volume.</p>
     pub fn availability_zone(
         mut self,
@@ -117,6 +123,10 @@ impl VolumeStatusItemBuilder {
         self.availability_zone = input;
         self
     }
+    /// <p>The Availability Zone of the volume.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     pub fn outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outpost_arn = ::std::option::Option::Some(input.into());
@@ -126,6 +136,10 @@ impl VolumeStatusItemBuilder {
     pub fn set_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outpost_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
+    pub fn get_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.outpost_arn
     }
     /// Appends an item to `events`.
     ///
@@ -146,6 +160,12 @@ impl VolumeStatusItemBuilder {
         self.events = input;
         self
     }
+    /// <p>A list of events associated with the volume.</p>
+    pub fn get_events(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusEvent>> {
+        &self.events
+    }
     /// <p>The volume ID.</p>
     pub fn volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_id = ::std::option::Option::Some(input.into());
@@ -155,6 +175,10 @@ impl VolumeStatusItemBuilder {
     pub fn set_volume_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_id = input;
         self
+    }
+    /// <p>The volume ID.</p>
+    pub fn get_volume_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_id
     }
     /// <p>The volume status.</p>
     pub fn volume_status(mut self, input: crate::types::VolumeStatusInfo) -> Self {
@@ -168,6 +192,10 @@ impl VolumeStatusItemBuilder {
     ) -> Self {
         self.volume_status = input;
         self
+    }
+    /// <p>The volume status.</p>
+    pub fn get_volume_status(&self) -> &::std::option::Option<crate::types::VolumeStatusInfo> {
+        &self.volume_status
     }
     /// Appends an item to `attachment_statuses`.
     ///
@@ -190,6 +218,12 @@ impl VolumeStatusItemBuilder {
     ) -> Self {
         self.attachment_statuses = input;
         self
+    }
+    /// <p>Information about the instances to which the volume is attached.</p>
+    pub fn get_attachment_statuses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusAttachmentStatus>> {
+        &self.attachment_statuses
     }
     /// Consumes the builder and constructs a [`VolumeStatusItem`](crate::types::VolumeStatusItem).
     pub fn build(self) -> crate::types::VolumeStatusItem {

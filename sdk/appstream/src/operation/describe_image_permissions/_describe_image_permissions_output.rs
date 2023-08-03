@@ -68,6 +68,10 @@ impl DescribeImagePermissionsOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the private image.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `shared_image_permissions_list`.
     ///
     /// To override the contents of this collection use [`set_shared_image_permissions_list`](Self::set_shared_image_permissions_list).
@@ -90,6 +94,12 @@ impl DescribeImagePermissionsOutputBuilder {
         self.shared_image_permissions_list = input;
         self
     }
+    /// <p>The permissions for a private image that you own. </p>
+    pub fn get_shared_image_permissions_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SharedImagePermissions>> {
+        &self.shared_image_permissions_list
+    }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -99,6 +109,10 @@ impl DescribeImagePermissionsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

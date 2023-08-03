@@ -56,6 +56,10 @@ impl UpdateMultiplexInputBuilder {
         self.multiplex_id = input;
         self
     }
+    /// ID of the multiplex to update.
+    pub fn get_multiplex_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.multiplex_id
+    }
     /// The new settings for a multiplex.
     pub fn multiplex_settings(mut self, input: crate::types::MultiplexSettings) -> Self {
         self.multiplex_settings = ::std::option::Option::Some(input);
@@ -69,6 +73,12 @@ impl UpdateMultiplexInputBuilder {
         self.multiplex_settings = input;
         self
     }
+    /// The new settings for a multiplex.
+    pub fn get_multiplex_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::MultiplexSettings> {
+        &self.multiplex_settings
+    }
     /// Name of the multiplex.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -78,6 +88,10 @@ impl UpdateMultiplexInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// Name of the multiplex.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Consumes the builder and constructs a [`UpdateMultiplexInput`](crate::operation::update_multiplex::UpdateMultiplexInput).
     pub fn build(

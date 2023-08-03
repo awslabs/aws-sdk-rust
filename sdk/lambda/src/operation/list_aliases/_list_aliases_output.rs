@@ -54,6 +54,10 @@ impl ListAliasesOutputBuilder {
         self.next_marker = input;
         self
     }
+    /// <p>The pagination token that's included if more results are available.</p>
+    pub fn get_next_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_marker
+    }
     /// Appends an item to `aliases`.
     ///
     /// To override the contents of this collection use [`set_aliases`](Self::set_aliases).
@@ -72,6 +76,12 @@ impl ListAliasesOutputBuilder {
     ) -> Self {
         self.aliases = input;
         self
+    }
+    /// <p>A list of aliases.</p>
+    pub fn get_aliases(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AliasConfiguration>> {
+        &self.aliases
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

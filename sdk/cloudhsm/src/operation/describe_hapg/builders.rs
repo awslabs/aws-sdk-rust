@@ -38,6 +38,10 @@ impl DescribeHapgFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeHapg as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_hapg::builders::DescribeHapgInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,5 +123,9 @@ impl DescribeHapgFluentBuilder {
     pub fn set_hapg_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hapg_arn(input);
         self
+    }
+    /// <p>The ARN of the high-availability partition group to describe.</p>
+    pub fn get_hapg_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_hapg_arn()
     }
 }

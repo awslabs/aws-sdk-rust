@@ -64,6 +64,10 @@ impl PublicKeyBuilder {
         self.value = input;
         self
     }
+    /// <p>The DER encoded public key value in PKCS#1 format.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.value
+    }
     /// <p>The starting time of validity of the public key.</p>
     pub fn validity_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.validity_start_time = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl PublicKeyBuilder {
     ) -> Self {
         self.validity_start_time = input;
         self
+    }
+    /// <p>The starting time of validity of the public key.</p>
+    pub fn get_validity_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.validity_start_time
     }
     /// <p>The ending time of validity of the public key.</p>
     pub fn validity_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -90,6 +98,10 @@ impl PublicKeyBuilder {
         self.validity_end_time = input;
         self
     }
+    /// <p>The ending time of validity of the public key.</p>
+    pub fn get_validity_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.validity_end_time
+    }
     /// <p>The fingerprint of the public key.</p>
     pub fn fingerprint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fingerprint = ::std::option::Option::Some(input.into());
@@ -99,6 +111,10 @@ impl PublicKeyBuilder {
     pub fn set_fingerprint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fingerprint = input;
         self
+    }
+    /// <p>The fingerprint of the public key.</p>
+    pub fn get_fingerprint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fingerprint
     }
     /// Consumes the builder and constructs a [`PublicKey`](crate::types::PublicKey).
     pub fn build(self) -> crate::types::PublicKey {

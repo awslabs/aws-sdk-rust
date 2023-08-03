@@ -56,6 +56,10 @@ impl DescribeGlobalClustersOutputBuilder {
         self.marker = input;
         self
     }
+    /// <p>A pagination token. If this parameter is returned in the response, more records are available, which can be retrieved by one or more additional calls to <code>DescribeGlobalClusters</code>.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// Appends an item to `global_clusters`.
     ///
     /// To override the contents of this collection use [`set_global_clusters`](Self::set_global_clusters).
@@ -74,6 +78,12 @@ impl DescribeGlobalClustersOutputBuilder {
     ) -> Self {
         self.global_clusters = input;
         self
+    }
+    /// <p>The list of global clusters and instances returned by this request.</p>
+    pub fn get_global_clusters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GlobalCluster>> {
+        &self.global_clusters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

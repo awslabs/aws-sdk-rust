@@ -55,6 +55,12 @@ impl BandwidthReductionFilterBuilder {
         self.sharpening = input;
         self
     }
+    /// Optionally specify the level of sharpening to apply when you use the Bandwidth reduction filter. Sharpening adds contrast to the edges of your video content and can reduce softness. Keep the default value Off to apply no sharpening. Set Sharpening strength to Low to apply a minimal amount of sharpening, or High to apply a maximum amount of sharpening.
+    pub fn get_sharpening(
+        &self,
+    ) -> &::std::option::Option<crate::types::BandwidthReductionFilterSharpening> {
+        &self.sharpening
+    }
     /// Specify the strength of the Bandwidth reduction filter. For most workflows, we recommend that you choose Auto to reduce the bandwidth of your output with little to no perceptual decrease in video quality. For high quality and high bitrate outputs, choose Low. For the most bandwidth reduction, choose High. We recommend that you choose High for low bitrate outputs. Note that High may incur a slight increase in the softness of your output.
     pub fn strength(mut self, input: crate::types::BandwidthReductionFilterStrength) -> Self {
         self.strength = ::std::option::Option::Some(input);
@@ -67,6 +73,12 @@ impl BandwidthReductionFilterBuilder {
     ) -> Self {
         self.strength = input;
         self
+    }
+    /// Specify the strength of the Bandwidth reduction filter. For most workflows, we recommend that you choose Auto to reduce the bandwidth of your output with little to no perceptual decrease in video quality. For high quality and high bitrate outputs, choose Low. For the most bandwidth reduction, choose High. We recommend that you choose High for low bitrate outputs. Note that High may incur a slight increase in the softness of your output.
+    pub fn get_strength(
+        &self,
+    ) -> &::std::option::Option<crate::types::BandwidthReductionFilterStrength> {
+        &self.strength
     }
     /// Consumes the builder and constructs a [`BandwidthReductionFilter`](crate::types::BandwidthReductionFilter).
     pub fn build(self) -> crate::types::BandwidthReductionFilter {

@@ -66,6 +66,10 @@ impl DbClusterRoleBuilder {
         self.role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that is associated with the DB cluster.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// <p>Describes the state of association between the IAM role and the DB cluster. The Status property returns one of the following values:</p>
     /// <ul>
     /// <li> <p> <code>ACTIVE</code> - the IAM role ARN is associated with the DB cluster and can be used to access other Amazon Web Services on your behalf.</p> </li>
@@ -86,6 +90,15 @@ impl DbClusterRoleBuilder {
         self.status = input;
         self
     }
+    /// <p>Describes the state of association between the IAM role and the DB cluster. The Status property returns one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> - the IAM role ARN is associated with the DB cluster and can be used to access other Amazon Web Services on your behalf.</p> </li>
+    /// <li> <p> <code>PENDING</code> - the IAM role ARN is being associated with the DB cluster.</p> </li>
+    /// <li> <p> <code>INVALID</code> - the IAM role ARN is associated with the DB cluster, but the DB cluster is unable to assume the IAM role in order to access other Amazon Web Services on your behalf.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>The name of the feature associated with the Amazon Web Services Identity and Access Management (IAM) role. For information about supported feature names, see <code>DBEngineVersion</code>.</p>
     pub fn feature_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_name = ::std::option::Option::Some(input.into());
@@ -95,6 +108,10 @@ impl DbClusterRoleBuilder {
     pub fn set_feature_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feature_name = input;
         self
+    }
+    /// <p>The name of the feature associated with the Amazon Web Services Identity and Access Management (IAM) role. For information about supported feature names, see <code>DBEngineVersion</code>.</p>
+    pub fn get_feature_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.feature_name
     }
     /// Consumes the builder and constructs a [`DbClusterRole`](crate::types::DbClusterRole).
     pub fn build(self) -> crate::types::DbClusterRole {

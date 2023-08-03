@@ -93,6 +93,10 @@ impl CreateRotationInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the rotation.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `contact_ids`.
     ///
     /// To override the contents of this collection use [`set_contact_ids`](Self::set_contact_ids).
@@ -114,6 +118,13 @@ impl CreateRotationInputBuilder {
         self.contact_ids = input;
         self
     }
+    /// <p>The Amazon Resource Names (ARNs) of the contacts to add to the rotation.</p>
+    /// <p>The order that you list the contacts in is their shift order in the rotation schedule. To change the order of the contact's shifts, use the <code>UpdateRotation</code> operation.</p>
+    pub fn get_contact_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.contact_ids
+    }
     /// <p>The date and time that the rotation goes into effect.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -126,6 +137,10 @@ impl CreateRotationInputBuilder {
     ) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>The date and time that the rotation goes into effect.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
     }
     /// <p>The time zone to base the rotation’s activity on in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p> <note>
     /// <p>Designators for time zones that don’t support Daylight Savings Time rules, such as Pacific Standard Time (PST) and Pacific Daylight Time (PDT), are not supported.</p>
@@ -141,6 +156,12 @@ impl CreateRotationInputBuilder {
         self.time_zone_id = input;
         self
     }
+    /// <p>The time zone to base the rotation’s activity on in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p> <note>
+    /// <p>Designators for time zones that don’t support Daylight Savings Time rules, such as Pacific Standard Time (PST) and Pacific Daylight Time (PDT), are not supported.</p>
+    /// </note>
+    pub fn get_time_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.time_zone_id
+    }
     /// <p>Information about the rule that specifies when a shift's team members rotate.</p>
     pub fn recurrence(mut self, input: crate::types::RecurrenceSettings) -> Self {
         self.recurrence = ::std::option::Option::Some(input);
@@ -153,6 +174,10 @@ impl CreateRotationInputBuilder {
     ) -> Self {
         self.recurrence = input;
         self
+    }
+    /// <p>Information about the rule that specifies when a shift's team members rotate.</p>
+    pub fn get_recurrence(&self) -> &::std::option::Option<crate::types::RecurrenceSettings> {
+        &self.recurrence
     }
     /// Appends an item to `tags`.
     ///
@@ -173,6 +198,10 @@ impl CreateRotationInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Optional metadata to assign to the rotation. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/incident-manager/latest/userguide/tagging.html">Tagging Incident Manager resources</a> in the <i>Incident Manager User Guide</i>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>A token that ensures that the operation is called only once with the specified details.</p>
     pub fn idempotency_token(
         mut self,
@@ -188,6 +217,10 @@ impl CreateRotationInputBuilder {
     ) -> Self {
         self.idempotency_token = input;
         self
+    }
+    /// <p>A token that ensures that the operation is called only once with the specified details.</p>
+    pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.idempotency_token
     }
     /// Consumes the builder and constructs a [`CreateRotationInput`](crate::operation::create_rotation::CreateRotationInput).
     pub fn build(

@@ -50,6 +50,10 @@ impl CreateDbSubnetGroupOutputBuilder {
         self.db_subnet_group = input;
         self
     }
+    /// <p>Detailed information about a subnet group. </p>
+    pub fn get_db_subnet_group(&self) -> &::std::option::Option<crate::types::DbSubnetGroup> {
+        &self.db_subnet_group
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -107,6 +107,10 @@ impl ObjectBuilder {
         self.key = input;
         self
     }
+    /// <p>The name that you assign to an object. You use the object key to retrieve the object.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key
+    }
     /// <p>Creation date of the object.</p>
     pub fn last_modified(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified = ::std::option::Option::Some(input);
@@ -119,6 +123,10 @@ impl ObjectBuilder {
     ) -> Self {
         self.last_modified = input;
         self
+    }
+    /// <p>Creation date of the object.</p>
+    pub fn get_last_modified(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified
     }
     /// <p>The entity tag is a hash of the object. The ETag reflects changes only to the contents of an object, not its metadata. The ETag may or may not be an MD5 digest of the object data. Whether or not it is depends on how the object was created and how it is encrypted as described below:</p>
     /// <ul>
@@ -140,6 +148,15 @@ impl ObjectBuilder {
         self.e_tag = input;
         self
     }
+    /// <p>The entity tag is a hash of the object. The ETag reflects changes only to the contents of an object, not its metadata. The ETag may or may not be an MD5 digest of the object data. Whether or not it is depends on how the object was created and how it is encrypted as described below:</p>
+    /// <ul>
+    /// <li> <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the Amazon Web Services Management Console, and are encrypted by SSE-S3 or plaintext, have ETags that are an MD5 digest of their object data.</p> </li>
+    /// <li> <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the Amazon Web Services Management Console, and are encrypted by SSE-C or SSE-KMS, have ETags that are not an MD5 digest of their object data.</p> </li>
+    /// <li> <p>If an object is created by either the Multipart Upload or Part Copy operation, the ETag is not an MD5 digest, regardless of the method of encryption. If an object is larger than 16 MB, the Amazon Web Services Management Console will upload or copy that object as a Multipart Upload, and therefore the ETag will not be an MD5 digest.</p> </li>
+    /// </ul>
+    pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.e_tag
+    }
     /// Appends an item to `checksum_algorithm`.
     ///
     /// To override the contents of this collection use [`set_checksum_algorithm`](Self::set_checksum_algorithm).
@@ -159,6 +176,12 @@ impl ObjectBuilder {
         self.checksum_algorithm = input;
         self
     }
+    /// <p>The algorithm that was used to create a checksum of the object.</p>
+    pub fn get_checksum_algorithm(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ChecksumAlgorithm>> {
+        &self.checksum_algorithm
+    }
     /// <p>Size in bytes of the object</p>
     pub fn size(mut self, input: i64) -> Self {
         self.size = ::std::option::Option::Some(input);
@@ -168,6 +191,10 @@ impl ObjectBuilder {
     pub fn set_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.size = input;
         self
+    }
+    /// <p>Size in bytes of the object</p>
+    pub fn get_size(&self) -> &::std::option::Option<i64> {
+        &self.size
     }
     /// <p>The class of storage used to store the object.</p>
     pub fn storage_class(mut self, input: crate::types::ObjectStorageClass) -> Self {
@@ -182,6 +209,10 @@ impl ObjectBuilder {
         self.storage_class = input;
         self
     }
+    /// <p>The class of storage used to store the object.</p>
+    pub fn get_storage_class(&self) -> &::std::option::Option<crate::types::ObjectStorageClass> {
+        &self.storage_class
+    }
     /// <p>The owner of the object</p>
     pub fn owner(mut self, input: crate::types::Owner) -> Self {
         self.owner = ::std::option::Option::Some(input);
@@ -191,6 +222,10 @@ impl ObjectBuilder {
     pub fn set_owner(mut self, input: ::std::option::Option<crate::types::Owner>) -> Self {
         self.owner = input;
         self
+    }
+    /// <p>The owner of the object</p>
+    pub fn get_owner(&self) -> &::std::option::Option<crate::types::Owner> {
+        &self.owner
     }
     /// <p>Specifies the restoration status of an object. Objects in certain storage classes must be restored before they can be retrieved. For more information about these storage classes and how to work with archived objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/archived-objects.html"> Working with archived objects</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn restore_status(mut self, input: crate::types::RestoreStatus) -> Self {
@@ -204,6 +239,10 @@ impl ObjectBuilder {
     ) -> Self {
         self.restore_status = input;
         self
+    }
+    /// <p>Specifies the restoration status of an object. Objects in certain storage classes must be restored before they can be retrieved. For more information about these storage classes and how to work with archived objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/archived-objects.html"> Working with archived objects</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn get_restore_status(&self) -> &::std::option::Option<crate::types::RestoreStatus> {
+        &self.restore_status
     }
     /// Consumes the builder and constructs a [`Object`](crate::types::Object).
     pub fn build(self) -> crate::types::Object {

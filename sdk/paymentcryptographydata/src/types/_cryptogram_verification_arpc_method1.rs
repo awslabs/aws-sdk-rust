@@ -46,6 +46,10 @@ impl CryptogramVerificationArpcMethod1Builder {
         self.auth_response_code = input;
         self
     }
+    /// <p>The auth code used to calculate APRC after ARQC verification is successful. This is the same auth code used for ARQC generation outside of Amazon Web Services Payment Cryptography.</p>
+    pub fn get_auth_response_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.auth_response_code
+    }
     /// Consumes the builder and constructs a [`CryptogramVerificationArpcMethod1`](crate::types::CryptogramVerificationArpcMethod1).
     pub fn build(self) -> crate::types::CryptogramVerificationArpcMethod1 {
         crate::types::CryptogramVerificationArpcMethod1 {

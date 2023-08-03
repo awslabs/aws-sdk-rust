@@ -54,6 +54,12 @@ impl DescribeProfilingGroupOutputBuilder {
         self.profiling_group = input;
         self
     }
+    /// <p> The returned <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> object that contains information about the requested profiling group. </p>
+    pub fn get_profiling_group(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProfilingGroupDescription> {
+        &self.profiling_group
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

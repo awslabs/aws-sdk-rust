@@ -62,6 +62,10 @@ impl SankeyDiagramChartConfigurationBuilder {
         self.field_wells = input;
         self
     }
+    /// <p>The field well configuration of a sankey diagram.</p>
+    pub fn get_field_wells(&self) -> &::std::option::Option<crate::types::SankeyDiagramFieldWells> {
+        &self.field_wells
+    }
     /// <p>The sort configuration of a sankey diagram.</p>
     pub fn sort_configuration(
         mut self,
@@ -78,6 +82,12 @@ impl SankeyDiagramChartConfigurationBuilder {
         self.sort_configuration = input;
         self
     }
+    /// <p>The sort configuration of a sankey diagram.</p>
+    pub fn get_sort_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SankeyDiagramSortConfiguration> {
+        &self.sort_configuration
+    }
     /// <p>The data label configuration of a sankey diagram.</p>
     pub fn data_labels(mut self, input: crate::types::DataLabelOptions) -> Self {
         self.data_labels = ::std::option::Option::Some(input);
@@ -90,6 +100,10 @@ impl SankeyDiagramChartConfigurationBuilder {
     ) -> Self {
         self.data_labels = input;
         self
+    }
+    /// <p>The data label configuration of a sankey diagram.</p>
+    pub fn get_data_labels(&self) -> &::std::option::Option<crate::types::DataLabelOptions> {
+        &self.data_labels
     }
     /// Consumes the builder and constructs a [`SankeyDiagramChartConfiguration`](crate::types::SankeyDiagramChartConfiguration).
     pub fn build(self) -> crate::types::SankeyDiagramChartConfiguration {

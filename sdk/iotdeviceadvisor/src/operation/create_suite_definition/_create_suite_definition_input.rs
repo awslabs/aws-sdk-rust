@@ -67,6 +67,12 @@ impl CreateSuiteDefinitionInputBuilder {
         self.suite_definition_configuration = input;
         self
     }
+    /// <p>Creates a Device Advisor test suite with suite definition configuration.</p>
+    pub fn get_suite_definition_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SuiteDefinitionConfiguration> {
+        &self.suite_definition_configuration
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -91,6 +97,14 @@ impl CreateSuiteDefinitionInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags to be attached to the suite definition.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateSuiteDefinitionInput`](crate::operation::create_suite_definition::CreateSuiteDefinitionInput).
     pub fn build(

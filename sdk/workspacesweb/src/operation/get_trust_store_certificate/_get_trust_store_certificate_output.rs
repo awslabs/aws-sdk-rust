@@ -60,6 +60,10 @@ impl GetTrustStoreCertificateOutputBuilder {
         self.trust_store_arn = input;
         self
     }
+    /// <p>The ARN of the trust store certificate.</p>
+    pub fn get_trust_store_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trust_store_arn
+    }
     /// <p>The certificate of the trust store certificate.</p>
     pub fn certificate(mut self, input: crate::types::Certificate) -> Self {
         self.certificate = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl GetTrustStoreCertificateOutputBuilder {
     ) -> Self {
         self.certificate = input;
         self
+    }
+    /// <p>The certificate of the trust store certificate.</p>
+    pub fn get_certificate(&self) -> &::std::option::Option<crate::types::Certificate> {
+        &self.certificate
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

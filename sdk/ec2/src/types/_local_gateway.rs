@@ -78,6 +78,10 @@ impl LocalGatewayBuilder {
         self.local_gateway_id = input;
         self
     }
+    /// <p>The ID of the local gateway.</p>
+    pub fn get_local_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.local_gateway_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     pub fn outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outpost_arn = ::std::option::Option::Some(input.into());
@@ -87,6 +91,10 @@ impl LocalGatewayBuilder {
     pub fn set_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outpost_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
+    pub fn get_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.outpost_arn
     }
     /// <p>The ID of the Amazon Web Services account that owns the local gateway.</p>
     pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -98,6 +106,10 @@ impl LocalGatewayBuilder {
         self.owner_id = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services account that owns the local gateway.</p>
+    pub fn get_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_id
+    }
     /// <p>The state of the local gateway.</p>
     pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state = ::std::option::Option::Some(input.into());
@@ -107,6 +119,10 @@ impl LocalGatewayBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the local gateway.</p>
+    pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state
     }
     /// Appends an item to `tags`.
     ///
@@ -126,6 +142,10 @@ impl LocalGatewayBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags assigned to the local gateway.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`LocalGateway`](crate::types::LocalGateway).
     pub fn build(self) -> crate::types::LocalGateway {

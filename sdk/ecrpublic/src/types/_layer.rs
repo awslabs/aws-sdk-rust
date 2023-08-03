@@ -64,6 +64,10 @@ impl LayerBuilder {
         self.layer_digest = input;
         self
     }
+    /// <p>The <code>sha256</code> digest of the image layer.</p>
+    pub fn get_layer_digest(&self) -> &::std::option::Option<::std::string::String> {
+        &self.layer_digest
+    }
     /// <p>The availability status of the image layer.</p>
     pub fn layer_availability(mut self, input: crate::types::LayerAvailability) -> Self {
         self.layer_availability = ::std::option::Option::Some(input);
@@ -77,6 +81,12 @@ impl LayerBuilder {
         self.layer_availability = input;
         self
     }
+    /// <p>The availability status of the image layer.</p>
+    pub fn get_layer_availability(
+        &self,
+    ) -> &::std::option::Option<crate::types::LayerAvailability> {
+        &self.layer_availability
+    }
     /// <p>The size, in bytes, of the image layer.</p>
     pub fn layer_size(mut self, input: i64) -> Self {
         self.layer_size = ::std::option::Option::Some(input);
@@ -87,6 +97,10 @@ impl LayerBuilder {
         self.layer_size = input;
         self
     }
+    /// <p>The size, in bytes, of the image layer.</p>
+    pub fn get_layer_size(&self) -> &::std::option::Option<i64> {
+        &self.layer_size
+    }
     /// <p>The media type of the layer, such as <code>application/vnd.docker.image.rootfs.diff.tar.gzip</code> or <code>application/vnd.oci.image.layer.v1.tar+gzip</code>.</p>
     pub fn media_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.media_type = ::std::option::Option::Some(input.into());
@@ -96,6 +110,10 @@ impl LayerBuilder {
     pub fn set_media_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.media_type = input;
         self
+    }
+    /// <p>The media type of the layer, such as <code>application/vnd.docker.image.rootfs.diff.tar.gzip</code> or <code>application/vnd.oci.image.layer.v1.tar+gzip</code>.</p>
+    pub fn get_media_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.media_type
     }
     /// Consumes the builder and constructs a [`Layer`](crate::types::Layer).
     pub fn build(self) -> crate::types::Layer {

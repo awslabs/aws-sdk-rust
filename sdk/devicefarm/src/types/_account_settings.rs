@@ -117,6 +117,10 @@ impl AccountSettingsBuilder {
         self.aws_account_number = input;
         self
     }
+    /// <p>The AWS account number specified in the <code>AccountSettings</code> container.</p>
+    pub fn get_aws_account_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_number
+    }
     /// Adds a key-value pair to `unmetered_devices`.
     ///
     /// To override the contents of this collection use [`set_unmetered_devices`](Self::set_unmetered_devices).
@@ -137,6 +141,13 @@ impl AccountSettingsBuilder {
     ) -> Self {
         self.unmetered_devices = input;
         self
+    }
+    /// <p>Returns the unmetered devices you have purchased or want to purchase.</p>
+    pub fn get_unmetered_devices(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::DevicePlatform, i32>>
+    {
+        &self.unmetered_devices
     }
     /// Adds a key-value pair to `unmetered_remote_access_devices`.
     ///
@@ -163,6 +174,13 @@ impl AccountSettingsBuilder {
         self.unmetered_remote_access_devices = input;
         self
     }
+    /// <p>Returns the unmetered remote access devices you have purchased or want to purchase.</p>
+    pub fn get_unmetered_remote_access_devices(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<crate::types::DevicePlatform, i32>>
+    {
+        &self.unmetered_remote_access_devices
+    }
     /// <p>The maximum number of minutes a test run executes before it times out.</p>
     pub fn max_job_timeout_minutes(mut self, input: i32) -> Self {
         self.max_job_timeout_minutes = ::std::option::Option::Some(input);
@@ -172,6 +190,10 @@ impl AccountSettingsBuilder {
     pub fn set_max_job_timeout_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_job_timeout_minutes = input;
         self
+    }
+    /// <p>The maximum number of minutes a test run executes before it times out.</p>
+    pub fn get_max_job_timeout_minutes(&self) -> &::std::option::Option<i32> {
+        &self.max_job_timeout_minutes
     }
     /// <p>Information about an AWS account's usage of free trial device minutes.</p>
     pub fn trial_minutes(mut self, input: crate::types::TrialMinutes) -> Self {
@@ -185,6 +207,10 @@ impl AccountSettingsBuilder {
     ) -> Self {
         self.trial_minutes = input;
         self
+    }
+    /// <p>Information about an AWS account's usage of free trial device minutes.</p>
+    pub fn get_trial_minutes(&self) -> &::std::option::Option<crate::types::TrialMinutes> {
+        &self.trial_minutes
     }
     /// Adds a key-value pair to `max_slots`.
     ///
@@ -209,6 +235,12 @@ impl AccountSettingsBuilder {
         self.max_slots = input;
         self
     }
+    /// <p>The maximum number of device slots that the AWS account can purchase. Each maximum is expressed as an <code>offering-id:number</code> pair, where the <code>offering-id</code> represents one of the IDs returned by the <code>ListOfferings</code> command.</p>
+    pub fn get_max_slots(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, i32>> {
+        &self.max_slots
+    }
     /// <p>The default number of minutes (at the account level) a test run executes before it times out. The default value is 150 minutes.</p>
     pub fn default_job_timeout_minutes(mut self, input: i32) -> Self {
         self.default_job_timeout_minutes = ::std::option::Option::Some(input);
@@ -218,6 +250,10 @@ impl AccountSettingsBuilder {
     pub fn set_default_job_timeout_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.default_job_timeout_minutes = input;
         self
+    }
+    /// <p>The default number of minutes (at the account level) a test run executes before it times out. The default value is 150 minutes.</p>
+    pub fn get_default_job_timeout_minutes(&self) -> &::std::option::Option<i32> {
+        &self.default_job_timeout_minutes
     }
     /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
     /// <p>For more information about how Device Farm re-signs your apps, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
@@ -230,6 +266,11 @@ impl AccountSettingsBuilder {
     pub fn set_skip_app_resign(mut self, input: ::std::option::Option<bool>) -> Self {
         self.skip_app_resign = input;
         self
+    }
+    /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
+    /// <p>For more information about how Device Farm re-signs your apps, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+    pub fn get_skip_app_resign(&self) -> &::std::option::Option<bool> {
+        &self.skip_app_resign
     }
     /// Consumes the builder and constructs a [`AccountSettings`](crate::types::AccountSettings).
     pub fn build(self) -> crate::types::AccountSettings {

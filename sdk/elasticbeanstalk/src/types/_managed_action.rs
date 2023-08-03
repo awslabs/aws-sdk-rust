@@ -72,6 +72,10 @@ impl ManagedActionBuilder {
         self.action_id = input;
         self
     }
+    /// <p>A unique identifier for the managed action.</p>
+    pub fn get_action_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_id
+    }
     /// <p>A description of the managed action.</p>
     pub fn action_description(
         mut self,
@@ -88,6 +92,10 @@ impl ManagedActionBuilder {
         self.action_description = input;
         self
     }
+    /// <p>A description of the managed action.</p>
+    pub fn get_action_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_description
+    }
     /// <p>The type of managed action.</p>
     pub fn action_type(mut self, input: crate::types::ActionType) -> Self {
         self.action_type = ::std::option::Option::Some(input);
@@ -101,6 +109,10 @@ impl ManagedActionBuilder {
         self.action_type = input;
         self
     }
+    /// <p>The type of managed action.</p>
+    pub fn get_action_type(&self) -> &::std::option::Option<crate::types::ActionType> {
+        &self.action_type
+    }
     /// <p>The status of the managed action. If the action is <code>Scheduled</code>, you can apply it immediately with <code>ApplyEnvironmentManagedAction</code>.</p>
     pub fn status(mut self, input: crate::types::ActionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -110,6 +122,10 @@ impl ManagedActionBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ActionStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the managed action. If the action is <code>Scheduled</code>, you can apply it immediately with <code>ApplyEnvironmentManagedAction</code>.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ActionStatus> {
+        &self.status
     }
     /// <p>The start time of the maintenance window in which the managed action will execute.</p>
     pub fn window_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -123,6 +139,10 @@ impl ManagedActionBuilder {
     ) -> Self {
         self.window_start_time = input;
         self
+    }
+    /// <p>The start time of the maintenance window in which the managed action will execute.</p>
+    pub fn get_window_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.window_start_time
     }
     /// Consumes the builder and constructs a [`ManagedAction`](crate::types::ManagedAction).
     pub fn build(self) -> crate::types::ManagedAction {

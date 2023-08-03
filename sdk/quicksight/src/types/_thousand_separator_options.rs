@@ -51,6 +51,10 @@ impl ThousandSeparatorOptionsBuilder {
         self.symbol = input;
         self
     }
+    /// <p>Determines the thousands separator symbol.</p>
+    pub fn get_symbol(&self) -> &::std::option::Option<crate::types::NumericSeparatorSymbol> {
+        &self.symbol
+    }
     /// <p>Determines the visibility of the thousands separator.</p>
     pub fn visibility(mut self, input: crate::types::Visibility) -> Self {
         self.visibility = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl ThousandSeparatorOptionsBuilder {
     ) -> Self {
         self.visibility = input;
         self
+    }
+    /// <p>Determines the visibility of the thousands separator.</p>
+    pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
+        &self.visibility
     }
     /// Consumes the builder and constructs a [`ThousandSeparatorOptions`](crate::types::ThousandSeparatorOptions).
     pub fn build(self) -> crate::types::ThousandSeparatorOptions {

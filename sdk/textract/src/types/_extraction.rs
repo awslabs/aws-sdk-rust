@@ -59,6 +59,10 @@ impl ExtractionBuilder {
         self.lending_document = input;
         self
     }
+    /// <p>Holds the structured data returned by AnalyzeDocument for lending documents.</p>
+    pub fn get_lending_document(&self) -> &::std::option::Option<crate::types::LendingDocument> {
+        &self.lending_document
+    }
     /// <p>The structure holding all the information returned by AnalyzeExpense</p>
     pub fn expense_document(mut self, input: crate::types::ExpenseDocument) -> Self {
         self.expense_document = ::std::option::Option::Some(input);
@@ -72,6 +76,10 @@ impl ExtractionBuilder {
         self.expense_document = input;
         self
     }
+    /// <p>The structure holding all the information returned by AnalyzeExpense</p>
+    pub fn get_expense_document(&self) -> &::std::option::Option<crate::types::ExpenseDocument> {
+        &self.expense_document
+    }
     /// <p>The structure that lists each document processed in an AnalyzeID operation.</p>
     pub fn identity_document(mut self, input: crate::types::IdentityDocument) -> Self {
         self.identity_document = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl ExtractionBuilder {
     ) -> Self {
         self.identity_document = input;
         self
+    }
+    /// <p>The structure that lists each document processed in an AnalyzeID operation.</p>
+    pub fn get_identity_document(&self) -> &::std::option::Option<crate::types::IdentityDocument> {
+        &self.identity_document
     }
     /// Consumes the builder and constructs a [`Extraction`](crate::types::Extraction).
     pub fn build(self) -> crate::types::Extraction {

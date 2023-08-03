@@ -36,6 +36,12 @@ impl StartCostEstimationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartCostEstimation as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::start_cost_estimation::builders::StartCostEstimationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,12 @@ impl StartCostEstimationFluentBuilder {
         self.inner = self.inner.set_resource_collection(input);
         self
     }
+    /// <p>The collection of Amazon Web Services resources used to create a monthly DevOps Guru cost estimate.</p>
+    pub fn get_resource_collection(
+        &self,
+    ) -> &::std::option::Option<crate::types::CostEstimationResourceCollectionFilter> {
+        self.inner.get_resource_collection()
+    }
     /// <p>The idempotency token used to identify each cost estimate request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -141,5 +153,9 @@ impl StartCostEstimationFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>The idempotency token used to identify each cost estimate request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

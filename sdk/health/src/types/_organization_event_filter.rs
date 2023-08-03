@@ -137,6 +137,12 @@ impl OrganizationEventFilterBuilder {
         self.event_type_codes = input;
         self
     }
+    /// <p>A list of unique identifiers for event types. For example, <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED".</code> </p>
+    pub fn get_event_type_codes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.event_type_codes
+    }
     /// Appends an item to `aws_account_ids`.
     ///
     /// To override the contents of this collection use [`set_aws_account_ids`](Self::set_aws_account_ids).
@@ -159,6 +165,12 @@ impl OrganizationEventFilterBuilder {
         self.aws_account_ids = input;
         self
     }
+    /// <p>A list of 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
+    pub fn get_aws_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.aws_account_ids
+    }
     /// Appends an item to `services`.
     ///
     /// To override the contents of this collection use [`set_services`](Self::set_services).
@@ -177,6 +189,10 @@ impl OrganizationEventFilterBuilder {
     ) -> Self {
         self.services = input;
         self
+    }
+    /// <p>The Amazon Web Services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
+    pub fn get_services(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.services
     }
     /// Appends an item to `regions`.
     ///
@@ -197,6 +213,10 @@ impl OrganizationEventFilterBuilder {
         self.regions = input;
         self
     }
+    /// <p>A list of Amazon Web Services Regions.</p>
+    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.regions
+    }
     /// <p>A range of dates and times that is used by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventFilter.html">EventFilter</a> and <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EntityFilter.html">EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.</p>
     pub fn start_time(mut self, input: crate::types::DateTimeRange) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -209,6 +229,10 @@ impl OrganizationEventFilterBuilder {
     ) -> Self {
         self.start_time = input;
         self
+    }
+    /// <p>A range of dates and times that is used by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventFilter.html">EventFilter</a> and <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EntityFilter.html">EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<crate::types::DateTimeRange> {
+        &self.start_time
     }
     /// <p>A range of dates and times that is used by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventFilter.html">EventFilter</a> and <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EntityFilter.html">EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.</p>
     pub fn end_time(mut self, input: crate::types::DateTimeRange) -> Self {
@@ -224,6 +248,10 @@ impl OrganizationEventFilterBuilder {
         self
     }
     /// <p>A range of dates and times that is used by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventFilter.html">EventFilter</a> and <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EntityFilter.html">EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<crate::types::DateTimeRange> {
+        &self.end_time
+    }
+    /// <p>A range of dates and times that is used by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventFilter.html">EventFilter</a> and <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EntityFilter.html">EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.</p>
     pub fn last_updated_time(mut self, input: crate::types::DateTimeRange) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
         self
@@ -235,6 +263,10 @@ impl OrganizationEventFilterBuilder {
     ) -> Self {
         self.last_updated_time = input;
         self
+    }
+    /// <p>A range of dates and times that is used by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventFilter.html">EventFilter</a> and <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EntityFilter.html">EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set: match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set and <code>to</code> is set: match items where the timestamp value is equal to or before <code>to</code>.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<crate::types::DateTimeRange> {
+        &self.last_updated_time
     }
     /// Appends an item to `entity_arns`.
     ///
@@ -254,6 +286,12 @@ impl OrganizationEventFilterBuilder {
     ) -> Self {
         self.entity_arns = input;
         self
+    }
+    /// <p>A list of entity ARNs (unique identifiers).</p>
+    pub fn get_entity_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.entity_arns
     }
     /// Appends an item to `entity_values`.
     ///
@@ -277,6 +315,12 @@ impl OrganizationEventFilterBuilder {
         self.entity_values = input;
         self
     }
+    /// <p>A list of entity identifiers, such as EC2 instance IDs (i-34ab692e) or EBS volumes (vol-426ab23e).</p>
+    pub fn get_entity_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.entity_values
+    }
     /// Appends an item to `event_type_categories`.
     ///
     /// To override the contents of this collection use [`set_event_type_categories`](Self::set_event_type_categories).
@@ -296,6 +340,12 @@ impl OrganizationEventFilterBuilder {
         self.event_type_categories = input;
         self
     }
+    /// <p>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't supported at this time.</p>
+    pub fn get_event_type_categories(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventTypeCategory>> {
+        &self.event_type_categories
+    }
     /// Appends an item to `event_status_codes`.
     ///
     /// To override the contents of this collection use [`set_event_status_codes`](Self::set_event_status_codes).
@@ -314,6 +364,12 @@ impl OrganizationEventFilterBuilder {
     ) -> Self {
         self.event_status_codes = input;
         self
+    }
+    /// <p>A list of event status codes.</p>
+    pub fn get_event_status_codes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventStatusCode>> {
+        &self.event_status_codes
     }
     /// Consumes the builder and constructs a [`OrganizationEventFilter`](crate::types::OrganizationEventFilter).
     pub fn build(self) -> crate::types::OrganizationEventFilter {

@@ -63,6 +63,12 @@ impl DetectTextOutputBuilder {
         self.text_detections = input;
         self
     }
+    /// <p>An array of text that was detected in the input image.</p>
+    pub fn get_text_detections(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TextDetection>> {
+        &self.text_detections
+    }
     /// <p>The model version used to detect text.</p>
     pub fn text_model_version(
         mut self,
@@ -78,6 +84,10 @@ impl DetectTextOutputBuilder {
     ) -> Self {
         self.text_model_version = input;
         self
+    }
+    /// <p>The model version used to detect text.</p>
+    pub fn get_text_model_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text_model_version
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -41,6 +41,10 @@ impl ListPolicyVersionsInputBuilder {
         self.policy_name = input;
         self
     }
+    /// <p>The policy name.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_name
+    }
     /// Consumes the builder and constructs a [`ListPolicyVersionsInput`](crate::operation::list_policy_versions::ListPolicyVersionsInput).
     pub fn build(
         self,

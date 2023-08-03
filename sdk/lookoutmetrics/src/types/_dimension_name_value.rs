@@ -54,6 +54,10 @@ impl DimensionNameValueBuilder {
         self.dimension_name = input;
         self
     }
+    /// <p>The name of the dimension.</p>
+    pub fn get_dimension_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dimension_name
+    }
     /// <p>The value of the dimension.</p>
     pub fn dimension_value(
         mut self,
@@ -69,6 +73,10 @@ impl DimensionNameValueBuilder {
     ) -> Self {
         self.dimension_value = input;
         self
+    }
+    /// <p>The value of the dimension.</p>
+    pub fn get_dimension_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dimension_value
     }
     /// Consumes the builder and constructs a [`DimensionNameValue`](crate::types::DimensionNameValue).
     pub fn build(self) -> crate::types::DimensionNameValue {

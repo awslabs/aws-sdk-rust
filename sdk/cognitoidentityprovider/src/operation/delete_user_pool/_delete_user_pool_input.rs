@@ -40,6 +40,10 @@ impl DeleteUserPoolInputBuilder {
         self.user_pool_id = input;
         self
     }
+    /// <p>The user pool ID for the user pool you want to delete.</p>
+    pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_pool_id
+    }
     /// Consumes the builder and constructs a [`DeleteUserPoolInput`](crate::operation::delete_user_pool::DeleteUserPoolInput).
     pub fn build(
         self,

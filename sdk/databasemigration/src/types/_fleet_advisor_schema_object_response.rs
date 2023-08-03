@@ -84,6 +84,10 @@ impl FleetAdvisorSchemaObjectResponseBuilder {
         self.schema_id = input;
         self
     }
+    /// <p>The ID of a schema object in a Fleet Advisor collector inventory.</p>
+    pub fn get_schema_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_id
+    }
     /// <p>The type of the schema object, as reported by the database engine. Examples include the following:</p>
     /// <ul>
     /// <li> <p> <code>function</code> </p> </li>
@@ -106,6 +110,16 @@ impl FleetAdvisorSchemaObjectResponseBuilder {
         self.object_type = input;
         self
     }
+    /// <p>The type of the schema object, as reported by the database engine. Examples include the following:</p>
+    /// <ul>
+    /// <li> <p> <code>function</code> </p> </li>
+    /// <li> <p> <code>trigger</code> </p> </li>
+    /// <li> <p> <code>SYSTEM_TABLE</code> </p> </li>
+    /// <li> <p> <code>QUEUE</code> </p> </li>
+    /// </ul>
+    pub fn get_object_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_type
+    }
     /// <p>The number of objects in a schema object in a Fleet Advisor collector inventory.</p>
     pub fn number_of_objects(mut self, input: i64) -> Self {
         self.number_of_objects = ::std::option::Option::Some(input);
@@ -115,6 +129,10 @@ impl FleetAdvisorSchemaObjectResponseBuilder {
     pub fn set_number_of_objects(mut self, input: ::std::option::Option<i64>) -> Self {
         self.number_of_objects = input;
         self
+    }
+    /// <p>The number of objects in a schema object in a Fleet Advisor collector inventory.</p>
+    pub fn get_number_of_objects(&self) -> &::std::option::Option<i64> {
+        &self.number_of_objects
     }
     /// <p>The number of lines of code in a schema object in a Fleet Advisor collector inventory.</p>
     pub fn code_line_count(mut self, input: i64) -> Self {
@@ -126,6 +144,10 @@ impl FleetAdvisorSchemaObjectResponseBuilder {
         self.code_line_count = input;
         self
     }
+    /// <p>The number of lines of code in a schema object in a Fleet Advisor collector inventory.</p>
+    pub fn get_code_line_count(&self) -> &::std::option::Option<i64> {
+        &self.code_line_count
+    }
     /// <p>The size level of the code in a schema object in a Fleet Advisor collector inventory.</p>
     pub fn code_size(mut self, input: i64) -> Self {
         self.code_size = ::std::option::Option::Some(input);
@@ -135,6 +157,10 @@ impl FleetAdvisorSchemaObjectResponseBuilder {
     pub fn set_code_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.code_size = input;
         self
+    }
+    /// <p>The size level of the code in a schema object in a Fleet Advisor collector inventory.</p>
+    pub fn get_code_size(&self) -> &::std::option::Option<i64> {
+        &self.code_size
     }
     /// Consumes the builder and constructs a [`FleetAdvisorSchemaObjectResponse`](crate::types::FleetAdvisorSchemaObjectResponse).
     pub fn build(self) -> crate::types::FleetAdvisorSchemaObjectResponse {

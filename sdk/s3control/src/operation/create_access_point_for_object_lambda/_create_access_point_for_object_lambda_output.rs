@@ -60,6 +60,12 @@ impl CreateAccessPointForObjectLambdaOutputBuilder {
         self.object_lambda_access_point_arn = input;
         self
     }
+    /// <p>Specifies the ARN for the Object Lambda Access Point.</p>
+    pub fn get_object_lambda_access_point_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.object_lambda_access_point_arn
+    }
     /// <p>The alias of the Object Lambda Access Point.</p>
     pub fn alias(mut self, input: crate::types::ObjectLambdaAccessPointAlias) -> Self {
         self.alias = ::std::option::Option::Some(input);
@@ -72,6 +78,10 @@ impl CreateAccessPointForObjectLambdaOutputBuilder {
     ) -> Self {
         self.alias = input;
         self
+    }
+    /// <p>The alias of the Object Lambda Access Point.</p>
+    pub fn get_alias(&self) -> &::std::option::Option<crate::types::ObjectLambdaAccessPointAlias> {
+        &self.alias
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

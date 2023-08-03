@@ -68,6 +68,15 @@ impl InstanceMetadataOptionsBuilder {
         self.http_tokens = input;
         self
     }
+    /// <p>Indicates whether a signed token header is required for instance metadata retrieval requests. The values affect the response as follows:</p>
+    /// <ul>
+    /// <li> <p> <b>required</b> – When you retrieve the IAM role credentials, version 2.0 credentials are returned in all cases.</p> </li>
+    /// <li> <p> <b>optional</b> – You can include a signed token header in your request to retrieve instance metadata, or you can leave it out. If you include it, version 2.0 credentials are returned for the IAM role. Otherwise, version 1.0 credentials are returned.</p> </li>
+    /// </ul>
+    /// <p>The default setting is <b>optional</b>.</p>
+    pub fn get_http_tokens(&self) -> &::std::option::Option<::std::string::String> {
+        &self.http_tokens
+    }
     /// <p>Limit the number of hops that an instance metadata request can traverse to reach its destination. The default is one hop. However, if HTTP tokens are required, container image builds need a minimum of two hops.</p>
     pub fn http_put_response_hop_limit(mut self, input: i32) -> Self {
         self.http_put_response_hop_limit = ::std::option::Option::Some(input);
@@ -77,6 +86,10 @@ impl InstanceMetadataOptionsBuilder {
     pub fn set_http_put_response_hop_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.http_put_response_hop_limit = input;
         self
+    }
+    /// <p>Limit the number of hops that an instance metadata request can traverse to reach its destination. The default is one hop. However, if HTTP tokens are required, container image builds need a minimum of two hops.</p>
+    pub fn get_http_put_response_hop_limit(&self) -> &::std::option::Option<i32> {
+        &self.http_put_response_hop_limit
     }
     /// Consumes the builder and constructs a [`InstanceMetadataOptions`](crate::types::InstanceMetadataOptions).
     pub fn build(self) -> crate::types::InstanceMetadataOptions {

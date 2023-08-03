@@ -70,6 +70,12 @@ impl BatchGetQueryExecutionOutputBuilder {
         self.query_executions = input;
         self
     }
+    /// <p>Information about a query execution.</p>
+    pub fn get_query_executions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryExecution>> {
+        &self.query_executions
+    }
     /// Appends an item to `unprocessed_query_execution_ids`.
     ///
     /// To override the contents of this collection use [`set_unprocessed_query_execution_ids`](Self::set_unprocessed_query_execution_ids).
@@ -91,6 +97,12 @@ impl BatchGetQueryExecutionOutputBuilder {
     ) -> Self {
         self.unprocessed_query_execution_ids = input;
         self
+    }
+    /// <p>Information about the query executions that failed to run.</p>
+    pub fn get_unprocessed_query_execution_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UnprocessedQueryExecutionId>> {
+        &self.unprocessed_query_execution_ids
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

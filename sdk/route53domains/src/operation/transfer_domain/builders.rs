@@ -46,6 +46,12 @@ impl TransferDomainFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the TransferDomain as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::transfer_domain::builders::TransferDomainInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -142,6 +148,17 @@ impl TransferDomainFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p>The name of the domain that you want to transfer to Route 53. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
+    /// <p>The domain name can contain only the following characters:</p>
+    /// <ul>
+    /// <li> <p>Letters a through z. Domain names are not case sensitive.</p> </li>
+    /// <li> <p>Numbers 0 through 9.</p> </li>
+    /// <li> <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p> </li>
+    /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>
+    /// </ul>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
     /// <p>Reserved for future use.</p>
     pub fn idn_lang_code(
         mut self,
@@ -158,6 +175,10 @@ impl TransferDomainFluentBuilder {
         self.inner = self.inner.set_idn_lang_code(input);
         self
     }
+    /// <p>Reserved for future use.</p>
+    pub fn get_idn_lang_code(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_idn_lang_code()
+    }
     /// <p>The number of years that you want to register the domain for. Domains are registered for a minimum of one year. The maximum period depends on the top-level domain.</p>
     /// <p>Default: 1</p>
     pub fn duration_in_years(mut self, input: i32) -> Self {
@@ -169,6 +190,11 @@ impl TransferDomainFluentBuilder {
     pub fn set_duration_in_years(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_duration_in_years(input);
         self
+    }
+    /// <p>The number of years that you want to register the domain for. Domains are registered for a minimum of one year. The maximum period depends on the top-level domain.</p>
+    /// <p>Default: 1</p>
+    pub fn get_duration_in_years(&self) -> &::std::option::Option<i32> {
+        self.inner.get_duration_in_years()
     }
     /// Appends an item to `Nameservers`.
     ///
@@ -187,6 +213,12 @@ impl TransferDomainFluentBuilder {
         self.inner = self.inner.set_nameservers(input);
         self
     }
+    /// <p>Contains details for the host and glue IP addresses.</p>
+    pub fn get_nameservers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Nameserver>> {
+        self.inner.get_nameservers()
+    }
     /// <p>The authorization code for the domain. You get this value from the current registrar.</p>
     pub fn auth_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auth_code(input.into());
@@ -196,6 +228,10 @@ impl TransferDomainFluentBuilder {
     pub fn set_auth_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_auth_code(input);
         self
+    }
+    /// <p>The authorization code for the domain. You get this value from the current registrar.</p>
+    pub fn get_auth_code(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_auth_code()
     }
     /// <p>Indicates whether the domain will be automatically renewed (true) or not (false). Auto renewal only takes effect after the account is charged.</p>
     /// <p>Default: true</p>
@@ -208,6 +244,11 @@ impl TransferDomainFluentBuilder {
     pub fn set_auto_renew(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_auto_renew(input);
         self
+    }
+    /// <p>Indicates whether the domain will be automatically renewed (true) or not (false). Auto renewal only takes effect after the account is charged.</p>
+    /// <p>Default: true</p>
+    pub fn get_auto_renew(&self) -> &::std::option::Option<bool> {
+        self.inner.get_auto_renew()
     }
     /// <p>Provides detailed contact information.</p>
     pub fn admin_contact(mut self, input: crate::types::ContactDetail) -> Self {
@@ -223,6 +264,10 @@ impl TransferDomainFluentBuilder {
         self
     }
     /// <p>Provides detailed contact information.</p>
+    pub fn get_admin_contact(&self) -> &::std::option::Option<crate::types::ContactDetail> {
+        self.inner.get_admin_contact()
+    }
+    /// <p>Provides detailed contact information.</p>
     pub fn registrant_contact(mut self, input: crate::types::ContactDetail) -> Self {
         self.inner = self.inner.registrant_contact(input);
         self
@@ -236,6 +281,10 @@ impl TransferDomainFluentBuilder {
         self
     }
     /// <p>Provides detailed contact information.</p>
+    pub fn get_registrant_contact(&self) -> &::std::option::Option<crate::types::ContactDetail> {
+        self.inner.get_registrant_contact()
+    }
+    /// <p>Provides detailed contact information.</p>
     pub fn tech_contact(mut self, input: crate::types::ContactDetail) -> Self {
         self.inner = self.inner.tech_contact(input);
         self
@@ -247,6 +296,10 @@ impl TransferDomainFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tech_contact(input);
         self
+    }
+    /// <p>Provides detailed contact information.</p>
+    pub fn get_tech_contact(&self) -> &::std::option::Option<crate::types::ContactDetail> {
+        self.inner.get_tech_contact()
     }
     /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information for the registrar, the phrase "REDACTED FOR PRIVACY", or "On behalf of <domain name>
     /// owner.".
@@ -268,6 +321,15 @@ impl TransferDomainFluentBuilder {
         self.inner = self.inner.set_privacy_protect_admin_contact(input);
         self
     }
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information for the registrar, the phrase "REDACTED FOR PRIVACY", or "On behalf of <domain name>
+    /// owner.".
+    /// </domain></p> <note>
+    /// <p>While some domains may allow different privacy settings per contact, we recommend specifying the same privacy setting for all contacts.</p>
+    /// </note>
+    /// <p>Default: <code>true</code> </p>
+    pub fn get_privacy_protect_admin_contact(&self) -> &::std::option::Option<bool> {
+        self.inner.get_privacy_protect_admin_contact()
+    }
     /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (domain owner).</p> <note>
     /// <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>
     /// </note>
@@ -287,6 +349,13 @@ impl TransferDomainFluentBuilder {
         self.inner = self.inner.set_privacy_protect_registrant_contact(input);
         self
     }
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (domain owner).</p> <note>
+    /// <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>
+    /// </note>
+    /// <p>Default: <code>true</code> </p>
+    pub fn get_privacy_protect_registrant_contact(&self) -> &::std::option::Option<bool> {
+        self.inner.get_privacy_protect_registrant_contact()
+    }
     /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p> <note>
     /// <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>
     /// </note>
@@ -302,5 +371,12 @@ impl TransferDomainFluentBuilder {
     pub fn set_privacy_protect_tech_contact(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_privacy_protect_tech_contact(input);
         self
+    }
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p> <note>
+    /// <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>
+    /// </note>
+    /// <p>Default: <code>true</code> </p>
+    pub fn get_privacy_protect_tech_contact(&self) -> &::std::option::Option<bool> {
+        self.inner.get_privacy_protect_tech_contact()
     }
 }

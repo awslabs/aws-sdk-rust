@@ -48,6 +48,10 @@ impl VideoDetailBuilder {
         self.height_in_px = input;
         self
     }
+    /// Height in pixels for the output
+    pub fn get_height_in_px(&self) -> &::std::option::Option<i32> {
+        &self.height_in_px
+    }
     /// Width in pixels for the output
     pub fn width_in_px(mut self, input: i32) -> Self {
         self.width_in_px = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl VideoDetailBuilder {
     pub fn set_width_in_px(mut self, input: ::std::option::Option<i32>) -> Self {
         self.width_in_px = input;
         self
+    }
+    /// Width in pixels for the output
+    pub fn get_width_in_px(&self) -> &::std::option::Option<i32> {
+        &self.width_in_px
     }
     /// Consumes the builder and constructs a [`VideoDetail`](crate::types::VideoDetail).
     pub fn build(self) -> crate::types::VideoDetail {

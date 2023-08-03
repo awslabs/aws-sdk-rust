@@ -86,6 +86,10 @@ impl UpdateServiceOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the service.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The Amazon Resource Name (ARN) of the service.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -96,6 +100,10 @@ impl UpdateServiceOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the service.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name of the service.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -105,6 +113,10 @@ impl UpdateServiceOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the service.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The custom domain name of the service.</p>
     pub fn custom_domain_name(
@@ -122,6 +134,10 @@ impl UpdateServiceOutputBuilder {
         self.custom_domain_name = input;
         self
     }
+    /// <p>The custom domain name of the service.</p>
+    pub fn get_custom_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_domain_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the certificate. </p>
     pub fn certificate_arn(
         mut self,
@@ -138,6 +154,10 @@ impl UpdateServiceOutputBuilder {
         self.certificate_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the certificate. </p>
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.certificate_arn
+    }
     /// <p>The type of IAM policy.</p>
     pub fn auth_type(mut self, input: crate::types::AuthType) -> Self {
         self.auth_type = ::std::option::Option::Some(input);
@@ -147,6 +167,10 @@ impl UpdateServiceOutputBuilder {
     pub fn set_auth_type(mut self, input: ::std::option::Option<crate::types::AuthType>) -> Self {
         self.auth_type = input;
         self
+    }
+    /// <p>The type of IAM policy.</p>
+    pub fn get_auth_type(&self) -> &::std::option::Option<crate::types::AuthType> {
+        &self.auth_type
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -52,6 +52,10 @@ impl CopyFpgaImageOutputBuilder {
         self.fpga_image_id = input;
         self
     }
+    /// <p>The ID of the new AFI.</p>
+    pub fn get_fpga_image_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fpga_image_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

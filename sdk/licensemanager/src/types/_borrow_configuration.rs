@@ -48,6 +48,10 @@ impl BorrowConfigurationBuilder {
         self.allow_early_check_in = input;
         self
     }
+    /// <p>Indicates whether early check-ins are allowed.</p>
+    pub fn get_allow_early_check_in(&self) -> &::std::option::Option<bool> {
+        &self.allow_early_check_in
+    }
     /// <p>Maximum time for the borrow configuration, in minutes.</p>
     pub fn max_time_to_live_in_minutes(mut self, input: i32) -> Self {
         self.max_time_to_live_in_minutes = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl BorrowConfigurationBuilder {
     pub fn set_max_time_to_live_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_time_to_live_in_minutes = input;
         self
+    }
+    /// <p>Maximum time for the borrow configuration, in minutes.</p>
+    pub fn get_max_time_to_live_in_minutes(&self) -> &::std::option::Option<i32> {
+        &self.max_time_to_live_in_minutes
     }
     /// Consumes the builder and constructs a [`BorrowConfiguration`](crate::types::BorrowConfiguration).
     pub fn build(self) -> crate::types::BorrowConfiguration {

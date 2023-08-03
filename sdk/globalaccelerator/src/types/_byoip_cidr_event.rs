@@ -48,6 +48,10 @@ impl ByoipCidrEventBuilder {
         self.message = input;
         self
     }
+    /// <p>A string that contains an <code>Event</code> message describing changes that you make in the status of an IP address range that you bring to Global Accelerator through bring your own IP address (BYOIP).</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>A timestamp for when you make a status change for an IP address range that you bring to Global Accelerator through bring your own IP address (BYOIP).</p>
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl ByoipCidrEventBuilder {
     ) -> Self {
         self.timestamp = input;
         self
+    }
+    /// <p>A timestamp for when you make a status change for an IP address range that you bring to Global Accelerator through bring your own IP address (BYOIP).</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.timestamp
     }
     /// Consumes the builder and constructs a [`ByoipCidrEvent`](crate::types::ByoipCidrEvent).
     pub fn build(self) -> crate::types::ByoipCidrEvent {

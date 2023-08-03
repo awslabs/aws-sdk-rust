@@ -37,6 +37,13 @@ impl ListManagedInsightRulesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListManagedInsightRules as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_managed_insight_rules::builders::ListManagedInsightRulesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +143,10 @@ impl ListManagedInsightRulesFluentBuilder {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
+    /// <p> The ARN of an Amazon Web Services resource that has managed Contributor Insights rules. </p>
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_arn()
+    }
     /// <p> Include this value to get the next set of rules if the value was returned by the previous operation. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -146,6 +157,10 @@ impl ListManagedInsightRulesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p> Include this value to get the next set of rules if the value was returned by the previous operation. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p> The maximum number of results to return in one operation. If you omit this parameter, the default number is used. The default number is <code>100</code>. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -155,5 +170,9 @@ impl ListManagedInsightRulesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p> The maximum number of results to return in one operation. If you omit this parameter, the default number is used. The default number is <code>100</code>. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

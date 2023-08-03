@@ -56,6 +56,10 @@ impl RxNormConceptBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the RxNorm concept.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>RxNorm concept ID, also known as the RxCUI.</p>
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl RxNormConceptBuilder {
         self.code = input;
         self
     }
+    /// <p>RxNorm concept ID, also known as the RxCUI.</p>
+    pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code
+    }
     /// <p>The level of confidence that Amazon Comprehend Medical has that the entity is accurately linked to the reported RxNorm concept.</p>
     pub fn score(mut self, input: f32) -> Self {
         self.score = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl RxNormConceptBuilder {
     pub fn set_score(mut self, input: ::std::option::Option<f32>) -> Self {
         self.score = input;
         self
+    }
+    /// <p>The level of confidence that Amazon Comprehend Medical has that the entity is accurately linked to the reported RxNorm concept.</p>
+    pub fn get_score(&self) -> &::std::option::Option<f32> {
+        &self.score
     }
     /// Consumes the builder and constructs a [`RxNormConcept`](crate::types::RxNormConcept).
     pub fn build(self) -> crate::types::RxNormConcept {

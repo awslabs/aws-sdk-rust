@@ -46,6 +46,10 @@ impl DeleteCoipPoolOutputBuilder {
         self.coip_pool = input;
         self
     }
+    /// <p>Information about the CoIP address pool.</p>
+    pub fn get_coip_pool(&self) -> &::std::option::Option<crate::types::CoipPool> {
+        &self.coip_pool
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

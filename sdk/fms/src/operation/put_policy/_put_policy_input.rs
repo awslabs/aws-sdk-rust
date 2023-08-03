@@ -47,6 +47,10 @@ impl PutPolicyInputBuilder {
         self.policy = input;
         self
     }
+    /// <p>The details of the Firewall Manager policy to be created.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<crate::types::Policy> {
+        &self.policy
+    }
     /// Appends an item to `tag_list`.
     ///
     /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
@@ -65,6 +69,10 @@ impl PutPolicyInputBuilder {
     ) -> Self {
         self.tag_list = input;
         self
+    }
+    /// <p>The tags to add to the Amazon Web Services resource.</p>
+    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tag_list
     }
     /// Consumes the builder and constructs a [`PutPolicyInput`](crate::operation::put_policy::PutPolicyInput).
     pub fn build(

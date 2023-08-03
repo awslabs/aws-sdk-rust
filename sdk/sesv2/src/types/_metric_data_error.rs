@@ -64,6 +64,10 @@ impl MetricDataErrorBuilder {
         self.id = input;
         self
     }
+    /// <p>The query identifier.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The query error code. Can be one of:</p>
     /// <ul>
     /// <li> <p> <code>INTERNAL_FAILURE</code> – Amazon SES has failed to process one of the queries.</p> </li>
@@ -82,6 +86,14 @@ impl MetricDataErrorBuilder {
         self.code = input;
         self
     }
+    /// <p>The query error code. Can be one of:</p>
+    /// <ul>
+    /// <li> <p> <code>INTERNAL_FAILURE</code> – Amazon SES has failed to process one of the queries.</p> </li>
+    /// <li> <p> <code>ACCESS_DENIED</code> – You have insufficient access to retrieve metrics based on the given query.</p> </li>
+    /// </ul>
+    pub fn get_code(&self) -> &::std::option::Option<crate::types::QueryErrorCode> {
+        &self.code
+    }
     /// <p>The error message associated with the current query error.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -91,6 +103,10 @@ impl MetricDataErrorBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>The error message associated with the current query error.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`MetricDataError`](crate::types::MetricDataError).
     pub fn build(self) -> crate::types::MetricDataError {

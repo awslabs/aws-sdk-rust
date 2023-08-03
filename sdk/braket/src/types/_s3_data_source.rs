@@ -40,6 +40,10 @@ impl S3DataSourceBuilder {
         self.s3_uri = input;
         self
     }
+    /// <p>Depending on the value specified for the <code>S3DataType</code>, identifies either a key name prefix or a manifest that locates the S3 data source.</p>
+    pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_uri
+    }
     /// Consumes the builder and constructs a [`S3DataSource`](crate::types::S3DataSource).
     pub fn build(self) -> crate::types::S3DataSource {
         crate::types::S3DataSource {

@@ -80,6 +80,10 @@ impl VsamDetailAttributesBuilder {
         self.encoding = input;
         self
     }
+    /// <p>The character set used by the data set. Can be ASCII, EBCDIC, or unknown.</p>
+    pub fn get_encoding(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encoding
+    }
     /// <p>The record format of the data set.</p>
     pub fn record_format(
         mut self,
@@ -96,6 +100,10 @@ impl VsamDetailAttributesBuilder {
         self.record_format = input;
         self
     }
+    /// <p>The record format of the data set.</p>
+    pub fn get_record_format(&self) -> &::std::option::Option<::std::string::String> {
+        &self.record_format
+    }
     /// <p>Indicates whether indexes for this dataset are stored as compressed values. If you have a large data set (typically &gt; 100 Mb), consider setting this flag to True.</p>
     pub fn compressed(mut self, input: bool) -> Self {
         self.compressed = ::std::option::Option::Some(input);
@@ -106,6 +114,10 @@ impl VsamDetailAttributesBuilder {
         self.compressed = input;
         self
     }
+    /// <p>Indicates whether indexes for this dataset are stored as compressed values. If you have a large data set (typically &gt; 100 Mb), consider setting this flag to True.</p>
+    pub fn get_compressed(&self) -> &::std::option::Option<bool> {
+        &self.compressed
+    }
     /// <p>If set to True, enforces loading the data set into cache before it’s used by the application.</p>
     pub fn cache_at_startup(mut self, input: bool) -> Self {
         self.cache_at_startup = ::std::option::Option::Some(input);
@@ -115,6 +127,10 @@ impl VsamDetailAttributesBuilder {
     pub fn set_cache_at_startup(mut self, input: ::std::option::Option<bool>) -> Self {
         self.cache_at_startup = input;
         self
+    }
+    /// <p>If set to True, enforces loading the data set into cache before it’s used by the application.</p>
+    pub fn get_cache_at_startup(&self) -> &::std::option::Option<bool> {
+        &self.cache_at_startup
     }
     /// <p>The primary key of the data set.</p>
     pub fn primary_key(mut self, input: crate::types::PrimaryKey) -> Self {
@@ -128,6 +144,10 @@ impl VsamDetailAttributesBuilder {
     ) -> Self {
         self.primary_key = input;
         self
+    }
+    /// <p>The primary key of the data set.</p>
+    pub fn get_primary_key(&self) -> &::std::option::Option<crate::types::PrimaryKey> {
+        &self.primary_key
     }
     /// Appends an item to `alternate_keys`.
     ///
@@ -147,6 +167,12 @@ impl VsamDetailAttributesBuilder {
     ) -> Self {
         self.alternate_keys = input;
         self
+    }
+    /// <p>The alternate key definitions, if any. A legacy dataset might not have any alternate key defined, but if those alternate keys definitions exist, provide them as some applications will make use of them.</p>
+    pub fn get_alternate_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AlternateKey>> {
+        &self.alternate_keys
     }
     /// Consumes the builder and constructs a [`VsamDetailAttributes`](crate::types::VsamDetailAttributes).
     pub fn build(self) -> crate::types::VsamDetailAttributes {

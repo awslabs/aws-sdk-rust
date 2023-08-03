@@ -123,6 +123,10 @@ impl ParameterMetadataBuilder {
         self.name = input;
         self
     }
+    /// <p>The parameter name.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The type of parameter. Valid parameter types include the following: <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p>
     pub fn r#type(mut self, input: crate::types::ParameterType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -133,6 +137,10 @@ impl ParameterMetadataBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of parameter. Valid parameter types include the following: <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ParameterType> {
+        &self.r#type
+    }
     /// <p>The ID of the query key used for this parameter.</p>
     pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_id = ::std::option::Option::Some(input.into());
@@ -142,6 +150,10 @@ impl ParameterMetadataBuilder {
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_id = input;
         self
+    }
+    /// <p>The ID of the query key used for this parameter.</p>
+    pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_id
     }
     /// <p>Date the parameter was last changed or updated.</p>
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -155,6 +167,10 @@ impl ParameterMetadataBuilder {
     ) -> Self {
         self.last_modified_date = input;
         self
+    }
+    /// <p>Date the parameter was last changed or updated.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_date
     }
     /// <p>Amazon Resource Name (ARN) of the Amazon Web Services user who last changed the parameter.</p>
     pub fn last_modified_user(
@@ -172,6 +188,10 @@ impl ParameterMetadataBuilder {
         self.last_modified_user = input;
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the Amazon Web Services user who last changed the parameter.</p>
+    pub fn get_last_modified_user(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_user
+    }
     /// <p>Description of the parameter actions.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -181,6 +201,10 @@ impl ParameterMetadataBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>Description of the parameter actions.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>A parameter name can include only the following letters and symbols.</p>
     /// <p>a-zA-Z0-9_.-</p>
@@ -200,6 +224,11 @@ impl ParameterMetadataBuilder {
         self.allowed_pattern = input;
         self
     }
+    /// <p>A parameter name can include only the following letters and symbols.</p>
+    /// <p>a-zA-Z0-9_.-</p>
+    pub fn get_allowed_pattern(&self) -> &::std::option::Option<::std::string::String> {
+        &self.allowed_pattern
+    }
     /// <p>The parameter version.</p>
     pub fn version(mut self, input: i64) -> Self {
         self.version = ::std::option::Option::Some(input);
@@ -210,6 +239,10 @@ impl ParameterMetadataBuilder {
         self.version = input;
         self
     }
+    /// <p>The parameter version.</p>
+    pub fn get_version(&self) -> &::std::option::Option<i64> {
+        &self.version
+    }
     /// <p>The parameter tier.</p>
     pub fn tier(mut self, input: crate::types::ParameterTier) -> Self {
         self.tier = ::std::option::Option::Some(input);
@@ -219,6 +252,10 @@ impl ParameterMetadataBuilder {
     pub fn set_tier(mut self, input: ::std::option::Option<crate::types::ParameterTier>) -> Self {
         self.tier = input;
         self
+    }
+    /// <p>The parameter tier.</p>
+    pub fn get_tier(&self) -> &::std::option::Option<crate::types::ParameterTier> {
+        &self.tier
     }
     /// Appends an item to `policies`.
     ///
@@ -239,6 +276,12 @@ impl ParameterMetadataBuilder {
         self.policies = input;
         self
     }
+    /// <p>A list of policies associated with a parameter.</p>
+    pub fn get_policies(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterInlinePolicy>> {
+        &self.policies
+    }
     /// <p>The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
     pub fn data_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_type = ::std::option::Option::Some(input.into());
@@ -248,6 +291,10 @@ impl ParameterMetadataBuilder {
     pub fn set_data_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_type = input;
         self
+    }
+    /// <p>The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
+    pub fn get_data_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_type
     }
     /// Consumes the builder and constructs a [`ParameterMetadata`](crate::types::ParameterMetadata).
     pub fn build(self) -> crate::types::ParameterMetadata {

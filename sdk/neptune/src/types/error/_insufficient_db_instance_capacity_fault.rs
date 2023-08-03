@@ -72,6 +72,10 @@ impl InsufficientDbInstanceCapacityFaultBuilder {
         self.message = input;
         self
     }
+    /// <p>A message describing the details of the problem.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);

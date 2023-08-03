@@ -64,6 +64,10 @@ impl TfiMetricDataPointBuilder {
         self.fpr = input;
         self
     }
+    /// <p> The false positive rate. This is the percentage of total legitimate events that are incorrectly predicted as fraud. </p>
+    pub fn get_fpr(&self) -> &::std::option::Option<f32> {
+        &self.fpr
+    }
     /// <p> The percentage of fraud events correctly predicted as fraudulent as compared to all events predicted as fraudulent. </p>
     pub fn precision(mut self, input: f32) -> Self {
         self.precision = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl TfiMetricDataPointBuilder {
     pub fn set_precision(mut self, input: ::std::option::Option<f32>) -> Self {
         self.precision = input;
         self
+    }
+    /// <p> The percentage of fraud events correctly predicted as fraudulent as compared to all events predicted as fraudulent. </p>
+    pub fn get_precision(&self) -> &::std::option::Option<f32> {
+        &self.precision
     }
     /// <p> The true positive rate. This is the percentage of total fraud the model detects. Also known as capture rate. </p>
     pub fn tpr(mut self, input: f32) -> Self {
@@ -84,6 +92,10 @@ impl TfiMetricDataPointBuilder {
         self.tpr = input;
         self
     }
+    /// <p> The true positive rate. This is the percentage of total fraud the model detects. Also known as capture rate. </p>
+    pub fn get_tpr(&self) -> &::std::option::Option<f32> {
+        &self.tpr
+    }
     /// <p> The model threshold that specifies an acceptable fraud capture rate. For example, a threshold of 500 means any model score 500 or above is labeled as fraud. </p>
     pub fn threshold(mut self, input: f32) -> Self {
         self.threshold = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl TfiMetricDataPointBuilder {
     pub fn set_threshold(mut self, input: ::std::option::Option<f32>) -> Self {
         self.threshold = input;
         self
+    }
+    /// <p> The model threshold that specifies an acceptable fraud capture rate. For example, a threshold of 500 means any model score 500 or above is labeled as fraud. </p>
+    pub fn get_threshold(&self) -> &::std::option::Option<f32> {
+        &self.threshold
     }
     /// Consumes the builder and constructs a [`TfiMetricDataPoint`](crate::types::TfiMetricDataPoint).
     pub fn build(self) -> crate::types::TfiMetricDataPoint {

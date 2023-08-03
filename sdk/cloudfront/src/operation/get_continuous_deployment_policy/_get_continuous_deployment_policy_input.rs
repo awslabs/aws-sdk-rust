@@ -39,6 +39,10 @@ impl GetContinuousDeploymentPolicyInputBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier of the continuous deployment policy that you are getting.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`GetContinuousDeploymentPolicyInput`](crate::operation::get_continuous_deployment_policy::GetContinuousDeploymentPolicyInput).
     pub fn build(
         self,

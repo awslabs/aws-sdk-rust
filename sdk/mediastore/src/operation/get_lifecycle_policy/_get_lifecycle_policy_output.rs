@@ -53,6 +53,10 @@ impl GetLifecyclePolicyOutputBuilder {
         self.lifecycle_policy = input;
         self
     }
+    /// <p>The object lifecycle policy that is assigned to the container.</p>
+    pub fn get_lifecycle_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lifecycle_policy
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

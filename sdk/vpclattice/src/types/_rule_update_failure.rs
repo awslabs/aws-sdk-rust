@@ -62,6 +62,10 @@ impl RuleUpdateFailureBuilder {
         self.rule_identifier = input;
         self
     }
+    /// <p>The ID or Amazon Resource Name (ARN) of the rule.</p>
+    pub fn get_rule_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_identifier
+    }
     /// <p>The failure code.</p>
     pub fn failure_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_code = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl RuleUpdateFailureBuilder {
     pub fn set_failure_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_code = input;
         self
+    }
+    /// <p>The failure code.</p>
+    pub fn get_failure_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_code
     }
     /// <p>The failure message.</p>
     pub fn failure_message(
@@ -87,6 +95,10 @@ impl RuleUpdateFailureBuilder {
     ) -> Self {
         self.failure_message = input;
         self
+    }
+    /// <p>The failure message.</p>
+    pub fn get_failure_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_message
     }
     /// Consumes the builder and constructs a [`RuleUpdateFailure`](crate::types::RuleUpdateFailure).
     pub fn build(self) -> crate::types::RuleUpdateFailure {

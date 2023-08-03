@@ -55,6 +55,10 @@ impl AutoTuneOptionsInputBuilder {
         self.desired_state = input;
         self
     }
+    /// <p>Specifies the Auto-Tune desired state. Valid values are ENABLED, DISABLED. </p>
+    pub fn get_desired_state(&self) -> &::std::option::Option<crate::types::AutoTuneDesiredState> {
+        &self.desired_state
+    }
     /// Appends an item to `maintenance_schedules`.
     ///
     /// To override the contents of this collection use [`set_maintenance_schedules`](Self::set_maintenance_schedules).
@@ -76,6 +80,12 @@ impl AutoTuneOptionsInputBuilder {
     ) -> Self {
         self.maintenance_schedules = input;
         self
+    }
+    /// <p>Specifies list of maitenance schedules. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information.</p>
+    pub fn get_maintenance_schedules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoTuneMaintenanceSchedule>> {
+        &self.maintenance_schedules
     }
     /// Consumes the builder and constructs a [`AutoTuneOptionsInput`](crate::types::AutoTuneOptionsInput).
     pub fn build(self) -> crate::types::AutoTuneOptionsInput {

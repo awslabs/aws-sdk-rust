@@ -55,6 +55,10 @@ impl UpdateReadinessCheckInputBuilder {
         self.readiness_check_name = input;
         self
     }
+    /// <p>Name of a readiness check.</p>
+    pub fn get_readiness_check_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.readiness_check_name
+    }
     /// <p>The name of the resource set to be checked.</p>
     pub fn resource_set_name(
         mut self,
@@ -70,6 +74,10 @@ impl UpdateReadinessCheckInputBuilder {
     ) -> Self {
         self.resource_set_name = input;
         self
+    }
+    /// <p>The name of the resource set to be checked.</p>
+    pub fn get_resource_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_set_name
     }
     /// Consumes the builder and constructs a [`UpdateReadinessCheckInput`](crate::operation::update_readiness_check::UpdateReadinessCheckInput).
     pub fn build(

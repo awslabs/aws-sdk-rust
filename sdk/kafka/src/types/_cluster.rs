@@ -134,6 +134,10 @@ impl ClusterBuilder {
         self.active_operation_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies a cluster operation.</p>
+    pub fn get_active_operation_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.active_operation_arn
+    }
     /// <p>Cluster Type.</p>
     pub fn cluster_type(mut self, input: crate::types::ClusterType) -> Self {
         self.cluster_type = ::std::option::Option::Some(input);
@@ -147,6 +151,10 @@ impl ClusterBuilder {
         self.cluster_type = input;
         self
     }
+    /// <p>Cluster Type.</p>
+    pub fn get_cluster_type(&self) -> &::std::option::Option<crate::types::ClusterType> {
+        &self.cluster_type
+    }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_arn = ::std::option::Option::Some(input.into());
@@ -157,6 +165,10 @@ impl ClusterBuilder {
         self.cluster_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_arn
+    }
     /// <p>The name of the cluster.</p>
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
@@ -166,6 +178,10 @@ impl ClusterBuilder {
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_name = input;
         self
+    }
+    /// <p>The name of the cluster.</p>
+    pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_name
     }
     /// <p>The time when the cluster was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -179,6 +195,10 @@ impl ClusterBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The time when the cluster was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The current version of the MSK cluster.</p>
     pub fn current_version(
@@ -196,6 +216,10 @@ impl ClusterBuilder {
         self.current_version = input;
         self
     }
+    /// <p>The current version of the MSK cluster.</p>
+    pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.current_version
+    }
     /// <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
     pub fn state(mut self, input: crate::types::ClusterState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -206,6 +230,10 @@ impl ClusterBuilder {
         self.state = input;
         self
     }
+    /// <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ClusterState> {
+        &self.state
+    }
     /// <p>State Info for the Amazon MSK cluster.</p>
     pub fn state_info(mut self, input: crate::types::StateInfo) -> Self {
         self.state_info = ::std::option::Option::Some(input);
@@ -215,6 +243,10 @@ impl ClusterBuilder {
     pub fn set_state_info(mut self, input: ::std::option::Option<crate::types::StateInfo>) -> Self {
         self.state_info = input;
         self
+    }
+    /// <p>State Info for the Amazon MSK cluster.</p>
+    pub fn get_state_info(&self) -> &::std::option::Option<crate::types::StateInfo> {
+        &self.state_info
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -241,6 +273,14 @@ impl ClusterBuilder {
         self.tags = input;
         self
     }
+    /// <p>Tags attached to the cluster.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>Information about the provisioned cluster.</p>
     pub fn provisioned(mut self, input: crate::types::Provisioned) -> Self {
         self.provisioned = ::std::option::Option::Some(input);
@@ -254,6 +294,10 @@ impl ClusterBuilder {
         self.provisioned = input;
         self
     }
+    /// <p>Information about the provisioned cluster.</p>
+    pub fn get_provisioned(&self) -> &::std::option::Option<crate::types::Provisioned> {
+        &self.provisioned
+    }
     /// <p>Information about the serverless cluster.</p>
     pub fn serverless(mut self, input: crate::types::Serverless) -> Self {
         self.serverless = ::std::option::Option::Some(input);
@@ -266,6 +310,10 @@ impl ClusterBuilder {
     ) -> Self {
         self.serverless = input;
         self
+    }
+    /// <p>Information about the serverless cluster.</p>
+    pub fn get_serverless(&self) -> &::std::option::Option<crate::types::Serverless> {
+        &self.serverless
     }
     /// Consumes the builder and constructs a [`Cluster`](crate::types::Cluster).
     pub fn build(self) -> crate::types::Cluster {

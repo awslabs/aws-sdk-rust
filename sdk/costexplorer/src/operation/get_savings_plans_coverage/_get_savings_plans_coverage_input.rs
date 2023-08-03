@@ -140,6 +140,10 @@ impl GetSavingsPlansCoverageInputBuilder {
         self.time_period = input;
         self
     }
+    /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
+    pub fn get_time_period(&self) -> &::std::option::Option<crate::types::DateInterval> {
+        &self.time_period
+    }
     /// Appends an item to `group_by`.
     ///
     /// To override the contents of this collection use [`set_group_by`](Self::set_group_by).
@@ -159,6 +163,12 @@ impl GetSavingsPlansCoverageInputBuilder {
         self.group_by = input;
         self
     }
+    /// <p>You can group the data using the attributes <code>INSTANCE_FAMILY</code>, <code>REGION</code>, or <code>SERVICE</code>.</p>
+    pub fn get_group_by(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>> {
+        &self.group_by
+    }
     /// <p>The granularity of the Amazon Web Services cost data for your Savings Plans. <code>Granularity</code> can't be set if <code>GroupBy</code> is set.</p>
     /// <p>The <code>GetSavingsPlansCoverage</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
     pub fn granularity(mut self, input: crate::types::Granularity) -> Self {
@@ -173,6 +183,11 @@ impl GetSavingsPlansCoverageInputBuilder {
     ) -> Self {
         self.granularity = input;
         self
+    }
+    /// <p>The granularity of the Amazon Web Services cost data for your Savings Plans. <code>Granularity</code> can't be set if <code>GroupBy</code> is set.</p>
+    /// <p>The <code>GetSavingsPlansCoverage</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
+    pub fn get_granularity(&self) -> &::std::option::Option<crate::types::Granularity> {
+        &self.granularity
     }
     /// <p>Filters Savings Plans coverage data by dimensions. You can filter data for Savings Plans usage with the following dimensions:</p>
     /// <ul>
@@ -200,6 +215,18 @@ impl GetSavingsPlansCoverageInputBuilder {
         self.filter = input;
         self
     }
+    /// <p>Filters Savings Plans coverage data by dimensions. You can filter data for Savings Plans usage with the following dimensions:</p>
+    /// <ul>
+    /// <li> <p> <code>LINKED_ACCOUNT</code> </p> </li>
+    /// <li> <p> <code>REGION</code> </p> </li>
+    /// <li> <p> <code>SERVICE</code> </p> </li>
+    /// <li> <p> <code>INSTANCE_FAMILY</code> </p> </li>
+    /// </ul>
+    /// <p> <code>GetSavingsPlansCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension. If there are multiple values for a dimension, they are OR'd together.</p>
+    /// <p>Cost category is also supported.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::Expression> {
+        &self.filter
+    }
     /// Appends an item to `metrics`.
     ///
     /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
@@ -219,6 +246,10 @@ impl GetSavingsPlansCoverageInputBuilder {
         self.metrics = input;
         self
     }
+    /// <p>The measurement that you want your Savings Plans coverage reported in. The only valid value is <code>SpendCoveredBySavingsPlans</code>.</p>
+    pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.metrics
+    }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -229,6 +260,10 @@ impl GetSavingsPlansCoverageInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The number of items to be returned in a response. The default is <code>20</code>, with a minimum value of <code>1</code>.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -238,6 +273,10 @@ impl GetSavingsPlansCoverageInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The number of items to be returned in a response. The default is <code>20</code>, with a minimum value of <code>1</code>.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The value that you want to sort the data by.</p>
     /// <p>The following values are supported for <code>Key</code>:</p>
@@ -273,6 +312,21 @@ impl GetSavingsPlansCoverageInputBuilder {
     ) -> Self {
         self.sort_by = input;
         self
+    }
+    /// <p>The value that you want to sort the data by.</p>
+    /// <p>The following values are supported for <code>Key</code>:</p>
+    /// <ul>
+    /// <li> <p> <code>SpendCoveredBySavingsPlan</code> </p> </li>
+    /// <li> <p> <code>OnDemandCost</code> </p> </li>
+    /// <li> <p> <code>CoveragePercentage</code> </p> </li>
+    /// <li> <p> <code>TotalCost</code> </p> </li>
+    /// <li> <p> <code>InstanceFamily</code> </p> </li>
+    /// <li> <p> <code>Region</code> </p> </li>
+    /// <li> <p> <code>Service</code> </p> </li>
+    /// </ul>
+    /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::SortDefinition> {
+        &self.sort_by
     }
     /// Consumes the builder and constructs a [`GetSavingsPlansCoverageInput`](crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageInput).
     pub fn build(

@@ -66,6 +66,10 @@ impl GetEcsServiceRecommendationsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p> The token to advance to the next page of Amazon ECS service recommendations. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `ecs_service_recommendations`.
     ///
     /// To override the contents of this collection use [`set_ecs_service_recommendations`](Self::set_ecs_service_recommendations).
@@ -88,6 +92,12 @@ impl GetEcsServiceRecommendationsOutputBuilder {
         self.ecs_service_recommendations = input;
         self
     }
+    /// <p> An array of objects that describe the Amazon ECS service recommendations. </p>
+    pub fn get_ecs_service_recommendations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EcsServiceRecommendation>> {
+        &self.ecs_service_recommendations
+    }
     /// Appends an item to `errors`.
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
@@ -106,6 +116,12 @@ impl GetEcsServiceRecommendationsOutputBuilder {
     ) -> Self {
         self.errors = input;
         self
+    }
+    /// <p> An array of objects that describe errors of the request. </p>
+    pub fn get_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GetRecommendationError>> {
+        &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

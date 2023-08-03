@@ -64,6 +64,10 @@ impl EndpointRequestBuilder {
         self.container_name = input;
         self
     }
+    /// <p>The name of the container for the endpoint.</p>
+    pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.container_name
+    }
     /// <p>The port of the container to which traffic is forwarded to.</p>
     pub fn container_port(mut self, input: i32) -> Self {
         self.container_port = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl EndpointRequestBuilder {
     pub fn set_container_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.container_port = input;
         self
+    }
+    /// <p>The port of the container to which traffic is forwarded to.</p>
+    pub fn get_container_port(&self) -> &::std::option::Option<i32> {
+        &self.container_port
     }
     /// <p>An object that describes the health check configuration of the container.</p>
     pub fn health_check(mut self, input: crate::types::ContainerServiceHealthCheckConfig) -> Self {
@@ -86,6 +94,12 @@ impl EndpointRequestBuilder {
     ) -> Self {
         self.health_check = input;
         self
+    }
+    /// <p>An object that describes the health check configuration of the container.</p>
+    pub fn get_health_check(
+        &self,
+    ) -> &::std::option::Option<crate::types::ContainerServiceHealthCheckConfig> {
+        &self.health_check
     }
     /// Consumes the builder and constructs a [`EndpointRequest`](crate::types::EndpointRequest).
     pub fn build(self) -> crate::types::EndpointRequest {

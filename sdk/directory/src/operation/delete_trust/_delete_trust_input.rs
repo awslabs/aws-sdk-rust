@@ -48,6 +48,10 @@ impl DeleteTrustInputBuilder {
         self.trust_id = input;
         self
     }
+    /// <p>The Trust ID of the trust relationship to be deleted.</p>
+    pub fn get_trust_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trust_id
+    }
     /// <p>Delete a conditional forwarder as part of a DeleteTrustRequest.</p>
     pub fn delete_associated_conditional_forwarder(mut self, input: bool) -> Self {
         self.delete_associated_conditional_forwarder = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl DeleteTrustInputBuilder {
     ) -> Self {
         self.delete_associated_conditional_forwarder = input;
         self
+    }
+    /// <p>Delete a conditional forwarder as part of a DeleteTrustRequest.</p>
+    pub fn get_delete_associated_conditional_forwarder(&self) -> &::std::option::Option<bool> {
+        &self.delete_associated_conditional_forwarder
     }
     /// Consumes the builder and constructs a [`DeleteTrustInput`](crate::operation::delete_trust::DeleteTrustInput).
     pub fn build(

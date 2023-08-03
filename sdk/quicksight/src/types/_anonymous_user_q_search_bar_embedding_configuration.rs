@@ -51,6 +51,11 @@ impl AnonymousUserQSearchBarEmbeddingConfigurationBuilder {
         self.initial_topic_id = input;
         self
     }
+    /// <p>The QuickSight Q topic ID of the topic that you want the anonymous user to see first. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders the Q search bar with this topic pre-selected.</p>
+    /// <p>The Amazon Resource Name (ARN) of this Q topic must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.</p>
+    pub fn get_initial_topic_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.initial_topic_id
+    }
     /// Consumes the builder and constructs a [`AnonymousUserQSearchBarEmbeddingConfiguration`](crate::types::AnonymousUserQSearchBarEmbeddingConfiguration).
     pub fn build(self) -> crate::types::AnonymousUserQSearchBarEmbeddingConfiguration {
         crate::types::AnonymousUserQSearchBarEmbeddingConfiguration {

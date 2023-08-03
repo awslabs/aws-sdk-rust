@@ -74,6 +74,10 @@ impl DescribeWorkspaceImagesInputBuilder {
         self.image_ids = input;
         self
     }
+    /// <p>The identifier of the image.</p>
+    pub fn get_image_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.image_ids
+    }
     /// <p>The type (owned or shared) of the image.</p>
     pub fn image_type(mut self, input: crate::types::ImageType) -> Self {
         self.image_type = ::std::option::Option::Some(input);
@@ -83,6 +87,10 @@ impl DescribeWorkspaceImagesInputBuilder {
     pub fn set_image_type(mut self, input: ::std::option::Option<crate::types::ImageType>) -> Self {
         self.image_type = input;
         self
+    }
+    /// <p>The type (owned or shared) of the image.</p>
+    pub fn get_image_type(&self) -> &::std::option::Option<crate::types::ImageType> {
+        &self.image_type
     }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -94,6 +102,10 @@ impl DescribeWorkspaceImagesInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of items to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -103,6 +115,10 @@ impl DescribeWorkspaceImagesInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of items to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeWorkspaceImagesInput`](crate::operation::describe_workspace_images::DescribeWorkspaceImagesInput).
     pub fn build(

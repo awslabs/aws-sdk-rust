@@ -89,6 +89,12 @@ impl PipeTargetEventBridgeEventBusParametersBuilder {
         self.endpoint_id = input;
         self
     }
+    /// <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is <code>abcde.veo</code>.</p> <important>
+    /// <p>When using Java, you must include <code>auth-crt</code> on the class path.</p>
+    /// </important>
+    pub fn get_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_id
+    }
     /// <p>A free-form string, with a maximum of 128 characters, used to decide what fields to expect in the event detail.</p>
     pub fn detail_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detail_type = ::std::option::Option::Some(input.into());
@@ -99,6 +105,10 @@ impl PipeTargetEventBridgeEventBusParametersBuilder {
         self.detail_type = input;
         self
     }
+    /// <p>A free-form string, with a maximum of 128 characters, used to decide what fields to expect in the event detail.</p>
+    pub fn get_detail_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detail_type
+    }
     /// <p>The source of the event.</p>
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source = ::std::option::Option::Some(input.into());
@@ -108,6 +118,10 @@ impl PipeTargetEventBridgeEventBusParametersBuilder {
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source = input;
         self
+    }
+    /// <p>The source of the event.</p>
+    pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source
     }
     /// Appends an item to `resources`.
     ///
@@ -128,6 +142,10 @@ impl PipeTargetEventBridgeEventBusParametersBuilder {
         self.resources = input;
         self
     }
+    /// <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number, including zero, may be present.</p>
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resources
+    }
     /// <p>The time stamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no time stamp is provided, the time stamp of the <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEvents.html">PutEvents</a> call is used.</p>
     pub fn time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.time = ::std::option::Option::Some(input.into());
@@ -137,6 +155,10 @@ impl PipeTargetEventBridgeEventBusParametersBuilder {
     pub fn set_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.time = input;
         self
+    }
+    /// <p>The time stamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no time stamp is provided, the time stamp of the <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEvents.html">PutEvents</a> call is used.</p>
+    pub fn get_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.time
     }
     /// Consumes the builder and constructs a [`PipeTargetEventBridgeEventBusParameters`](crate::types::PipeTargetEventBridgeEventBusParameters).
     pub fn build(self) -> crate::types::PipeTargetEventBridgeEventBusParameters {

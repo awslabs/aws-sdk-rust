@@ -55,6 +55,12 @@ impl MetricGoalConfigBuilder {
         self.metric_definition = input;
         self
     }
+    /// <p>A structure that contains details about the metric.</p>
+    pub fn get_metric_definition(
+        &self,
+    ) -> &::std::option::Option<crate::types::MetricDefinitionConfig> {
+        &self.metric_definition
+    }
     /// <p> <code>INCREASE</code> means that a variation with a higher number for this metric is performing better.</p>
     /// <p> <code>DECREASE</code> means that a variation with a lower number for this metric is performing better.</p>
     pub fn desired_change(mut self, input: crate::types::ChangeDirectionEnum) -> Self {
@@ -69,6 +75,11 @@ impl MetricGoalConfigBuilder {
     ) -> Self {
         self.desired_change = input;
         self
+    }
+    /// <p> <code>INCREASE</code> means that a variation with a higher number for this metric is performing better.</p>
+    /// <p> <code>DECREASE</code> means that a variation with a lower number for this metric is performing better.</p>
+    pub fn get_desired_change(&self) -> &::std::option::Option<crate::types::ChangeDirectionEnum> {
+        &self.desired_change
     }
     /// Consumes the builder and constructs a [`MetricGoalConfig`](crate::types::MetricGoalConfig).
     pub fn build(self) -> crate::types::MetricGoalConfig {

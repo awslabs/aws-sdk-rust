@@ -182,6 +182,10 @@ impl TranscriptionJobSummaryBuilder {
         self.transcription_job_name = input;
         self
     }
+    /// <p>The name of the transcription job. Job names are case sensitive and must be unique within an Amazon Web Services account.</p>
+    pub fn get_transcription_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transcription_job_name
+    }
     /// <p>The date and time the specified transcription job request was made.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents a transcription job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -196,6 +200,11 @@ impl TranscriptionJobSummaryBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The date and time the specified transcription job request was made.</p>
+    /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents a transcription job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The date and time your transcription job began processing.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.789000-07:00</code> represents a transcription job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
@@ -212,6 +221,11 @@ impl TranscriptionJobSummaryBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The date and time your transcription job began processing.</p>
+    /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.789000-07:00</code> represents a transcription job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The date and time the specified transcription job finished processing.</p>
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:33:13.922000-07:00</code> represents a transcription job that started processing at 12:33 PM UTC-7 on May 4, 2022.</p>
     pub fn completion_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -227,6 +241,11 @@ impl TranscriptionJobSummaryBuilder {
         self.completion_time = input;
         self
     }
+    /// <p>The date and time the specified transcription job finished processing.</p>
+    /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:33:13.922000-07:00</code> represents a transcription job that started processing at 12:33 PM UTC-7 on May 4, 2022.</p>
+    pub fn get_completion_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.completion_time
+    }
     /// <p>The language code used to create your transcription.</p>
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
@@ -239,6 +258,10 @@ impl TranscriptionJobSummaryBuilder {
     ) -> Self {
         self.language_code = input;
         self
+    }
+    /// <p>The language code used to create your transcription.</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
+        &self.language_code
     }
     /// <p>Provides the status of your transcription job.</p>
     /// <p>If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified in <code>TranscriptFileUri</code> (or <code>RedactedTranscriptFileUri</code>, if you requested transcript redaction). If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription job failed.</p>
@@ -255,6 +278,13 @@ impl TranscriptionJobSummaryBuilder {
         self.transcription_job_status = input;
         self
     }
+    /// <p>Provides the status of your transcription job.</p>
+    /// <p>If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified in <code>TranscriptFileUri</code> (or <code>RedactedTranscriptFileUri</code>, if you requested transcript redaction). If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription job failed.</p>
+    pub fn get_transcription_job_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::TranscriptionJobStatus> {
+        &self.transcription_job_status
+    }
     /// <p>If <code>TranscriptionJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why the transcription job failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.</p>
     pub fn failure_reason(
         mut self,
@@ -270,6 +300,10 @@ impl TranscriptionJobSummaryBuilder {
     ) -> Self {
         self.failure_reason = input;
         self
+    }
+    /// <p>If <code>TranscriptionJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why the transcription job failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
     }
     /// <p>Indicates where the specified transcription output is stored.</p>
     /// <p>If the value is <code>CUSTOMER_BUCKET</code>, the location is the Amazon S3 bucket you specified using the <code>OutputBucketName</code> parameter in your request. If you also included <code>OutputKey</code> in your request, your output is located in the path you specified in your request.</p>
@@ -288,6 +322,14 @@ impl TranscriptionJobSummaryBuilder {
         self.output_location_type = input;
         self
     }
+    /// <p>Indicates where the specified transcription output is stored.</p>
+    /// <p>If the value is <code>CUSTOMER_BUCKET</code>, the location is the Amazon S3 bucket you specified using the <code>OutputBucketName</code> parameter in your request. If you also included <code>OutputKey</code> in your request, your output is located in the path you specified in your request.</p>
+    /// <p>If the value is <code>SERVICE_BUCKET</code>, the location is a service-managed Amazon S3 bucket. To access a transcript stored in a service-managed bucket, use the URI shown in the <code>TranscriptFileUri</code> or <code>RedactedTranscriptFileUri</code> field.</p>
+    pub fn get_output_location_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::OutputLocationType> {
+        &self.output_location_type
+    }
     /// <p>The content redaction settings of the transcription job.</p>
     pub fn content_redaction(mut self, input: crate::types::ContentRedaction) -> Self {
         self.content_redaction = ::std::option::Option::Some(input);
@@ -300,6 +342,10 @@ impl TranscriptionJobSummaryBuilder {
     ) -> Self {
         self.content_redaction = input;
         self
+    }
+    /// <p>The content redaction settings of the transcription job.</p>
+    pub fn get_content_redaction(&self) -> &::std::option::Option<crate::types::ContentRedaction> {
+        &self.content_redaction
     }
     /// <p>Provides the name of the custom language model that was included in the specified transcription job.</p>
     /// <p>Only use <code>ModelSettings</code> with the <code>LanguageModelName</code> sub-parameter if you're <b>not</b> using automatic language identification (<code></code>). If using <code>LanguageIdSettings</code> in your request, this parameter contains a <code>LanguageModelName</code> sub-parameter.</p>
@@ -316,6 +362,11 @@ impl TranscriptionJobSummaryBuilder {
         self.model_settings = input;
         self
     }
+    /// <p>Provides the name of the custom language model that was included in the specified transcription job.</p>
+    /// <p>Only use <code>ModelSettings</code> with the <code>LanguageModelName</code> sub-parameter if you're <b>not</b> using automatic language identification (<code></code>). If using <code>LanguageIdSettings</code> in your request, this parameter contains a <code>LanguageModelName</code> sub-parameter.</p>
+    pub fn get_model_settings(&self) -> &::std::option::Option<crate::types::ModelSettings> {
+        &self.model_settings
+    }
     /// <p>Indicates whether automatic language identification was enabled (<code>TRUE</code>) for the specified transcription job.</p>
     pub fn identify_language(mut self, input: bool) -> Self {
         self.identify_language = ::std::option::Option::Some(input);
@@ -326,6 +377,10 @@ impl TranscriptionJobSummaryBuilder {
         self.identify_language = input;
         self
     }
+    /// <p>Indicates whether automatic language identification was enabled (<code>TRUE</code>) for the specified transcription job.</p>
+    pub fn get_identify_language(&self) -> &::std::option::Option<bool> {
+        &self.identify_language
+    }
     /// <p>Indicates whether automatic multi-language identification was enabled (<code>TRUE</code>) for the specified transcription job.</p>
     pub fn identify_multiple_languages(mut self, input: bool) -> Self {
         self.identify_multiple_languages = ::std::option::Option::Some(input);
@@ -335,6 +390,10 @@ impl TranscriptionJobSummaryBuilder {
     pub fn set_identify_multiple_languages(mut self, input: ::std::option::Option<bool>) -> Self {
         self.identify_multiple_languages = input;
         self
+    }
+    /// <p>Indicates whether automatic multi-language identification was enabled (<code>TRUE</code>) for the specified transcription job.</p>
+    pub fn get_identify_multiple_languages(&self) -> &::std::option::Option<bool> {
+        &self.identify_multiple_languages
     }
     /// <p>The confidence score associated with the language identified in your media file.</p>
     /// <p>Confidence scores are values between 0 and 1; a larger value indicates a higher probability that the identified language correctly matches the language spoken in your media.</p>
@@ -347,6 +406,11 @@ impl TranscriptionJobSummaryBuilder {
     pub fn set_identified_language_score(mut self, input: ::std::option::Option<f32>) -> Self {
         self.identified_language_score = input;
         self
+    }
+    /// <p>The confidence score associated with the language identified in your media file.</p>
+    /// <p>Confidence scores are values between 0 and 1; a larger value indicates a higher probability that the identified language correctly matches the language spoken in your media.</p>
+    pub fn get_identified_language_score(&self) -> &::std::option::Option<f32> {
+        &self.identified_language_score
     }
     /// Appends an item to `language_codes`.
     ///
@@ -367,6 +431,12 @@ impl TranscriptionJobSummaryBuilder {
         self.language_codes = input;
         self
     }
+    /// <p>The language codes used to create your transcription job. This parameter is used with multi-language identification. For single-language identification, the singular version of this parameter, <code>LanguageCode</code>, is present.</p>
+    pub fn get_language_codes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LanguageCodeItem>> {
+        &self.language_codes
+    }
     /// Appends an item to `toxicity_detection`.
     ///
     /// To override the contents of this collection use [`set_toxicity_detection`](Self::set_toxicity_detection).
@@ -385,6 +455,12 @@ impl TranscriptionJobSummaryBuilder {
     ) -> Self {
         self.toxicity_detection = input;
         self
+    }
+    /// <p>Indicates whether toxicity detection was enabled for the specified transcription job.</p>
+    pub fn get_toxicity_detection(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ToxicityDetectionSettings>> {
+        &self.toxicity_detection
     }
     /// Consumes the builder and constructs a [`TranscriptionJobSummary`](crate::types::TranscriptionJobSummary).
     pub fn build(self) -> crate::types::TranscriptionJobSummary {

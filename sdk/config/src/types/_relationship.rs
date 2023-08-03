@@ -67,6 +67,10 @@ impl RelationshipBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The resource type of the related resource.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
+    }
     /// <p>The ID of the related resource (for example, <code>sg-xxxxxx</code>).</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -76,6 +80,10 @@ impl RelationshipBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>The ID of the related resource (for example, <code>sg-xxxxxx</code>).</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// <p>The custom name of the related resource, if available.</p>
     pub fn resource_name(
@@ -93,6 +101,10 @@ impl RelationshipBuilder {
         self.resource_name = input;
         self
     }
+    /// <p>The custom name of the related resource, if available.</p>
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_name
+    }
     /// <p>The type of relationship with the related resource.</p>
     pub fn relationship_name(
         mut self,
@@ -108,6 +120,10 @@ impl RelationshipBuilder {
     ) -> Self {
         self.relationship_name = input;
         self
+    }
+    /// <p>The type of relationship with the related resource.</p>
+    pub fn get_relationship_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.relationship_name
     }
     /// Consumes the builder and constructs a [`Relationship`](crate::types::Relationship).
     pub fn build(self) -> crate::types::Relationship {

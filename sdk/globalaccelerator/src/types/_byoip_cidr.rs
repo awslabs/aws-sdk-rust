@@ -70,6 +70,10 @@ impl ByoipCidrBuilder {
         self.cidr = input;
         self
     }
+    /// <p>The address range, in CIDR notation.</p>
+    pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidr
+    }
     /// <p>The state of the address pool.</p>
     pub fn state(mut self, input: crate::types::ByoipCidrState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -79,6 +83,10 @@ impl ByoipCidrBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ByoipCidrState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the address pool.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ByoipCidrState> {
+        &self.state
     }
     /// Appends an item to `events`.
     ///
@@ -98,6 +106,12 @@ impl ByoipCidrBuilder {
     ) -> Self {
         self.events = input;
         self
+    }
+    /// <p>A history of status changes for an IP address range that you bring to Global Accelerator through bring your own IP address (BYOIP).</p>
+    pub fn get_events(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ByoipCidrEvent>> {
+        &self.events
     }
     /// Consumes the builder and constructs a [`ByoipCidr`](crate::types::ByoipCidr).
     pub fn build(self) -> crate::types::ByoipCidr {

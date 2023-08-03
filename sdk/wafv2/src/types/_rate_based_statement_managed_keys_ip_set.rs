@@ -53,6 +53,10 @@ impl RateBasedStatementManagedKeysIpSetBuilder {
         self.ip_address_version = input;
         self
     }
+    /// <p>The version of the IP addresses, either <code>IPV4</code> or <code>IPV6</code>. </p>
+    pub fn get_ip_address_version(&self) -> &::std::option::Option<crate::types::IpAddressVersion> {
+        &self.ip_address_version
+    }
     /// Appends an item to `addresses`.
     ///
     /// To override the contents of this collection use [`set_addresses`](Self::set_addresses).
@@ -71,6 +75,10 @@ impl RateBasedStatementManagedKeysIpSetBuilder {
     ) -> Self {
         self.addresses = input;
         self
+    }
+    /// <p>The IP addresses that are currently blocked.</p>
+    pub fn get_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.addresses
     }
     /// Consumes the builder and constructs a [`RateBasedStatementManagedKeysIpSet`](crate::types::RateBasedStatementManagedKeysIpSet).
     pub fn build(self) -> crate::types::RateBasedStatementManagedKeysIpSet {

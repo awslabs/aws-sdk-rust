@@ -251,6 +251,12 @@ impl DbClusterSnapshotBuilder {
         self.availability_zones = input;
         self
     }
+    /// <p>Provides the list of Availability Zones (AZs) where instances in the DB cluster snapshot can be restored.</p>
+    pub fn get_availability_zones(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.availability_zones
+    }
     /// <p>Specifies the identifier for the DB cluster snapshot.</p>
     pub fn db_cluster_snapshot_identifier(
         mut self,
@@ -266,6 +272,12 @@ impl DbClusterSnapshotBuilder {
     ) -> Self {
         self.db_cluster_snapshot_identifier = input;
         self
+    }
+    /// <p>Specifies the identifier for the DB cluster snapshot.</p>
+    pub fn get_db_cluster_snapshot_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_snapshot_identifier
     }
     /// <p>Specifies the DB cluster identifier of the DB cluster that this DB cluster snapshot was created from.</p>
     pub fn db_cluster_identifier(
@@ -283,6 +295,10 @@ impl DbClusterSnapshotBuilder {
         self.db_cluster_identifier = input;
         self
     }
+    /// <p>Specifies the DB cluster identifier of the DB cluster that this DB cluster snapshot was created from.</p>
+    pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_identifier
+    }
     /// <p>Provides the time when the snapshot was taken, in Universal Coordinated Time (UTC).</p>
     pub fn snapshot_create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.snapshot_create_time = ::std::option::Option::Some(input);
@@ -296,6 +312,10 @@ impl DbClusterSnapshotBuilder {
         self.snapshot_create_time = input;
         self
     }
+    /// <p>Provides the time when the snapshot was taken, in Universal Coordinated Time (UTC).</p>
+    pub fn get_snapshot_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.snapshot_create_time
+    }
     /// <p>Specifies the name of the database engine for this DB cluster snapshot.</p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
@@ -305,6 +325,10 @@ impl DbClusterSnapshotBuilder {
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
         self
+    }
+    /// <p>Specifies the name of the database engine for this DB cluster snapshot.</p>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine
     }
     /// <p>Provides the engine mode of the database engine for this DB cluster snapshot.</p>
     pub fn engine_mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -316,6 +340,10 @@ impl DbClusterSnapshotBuilder {
         self.engine_mode = input;
         self
     }
+    /// <p>Provides the engine mode of the database engine for this DB cluster snapshot.</p>
+    pub fn get_engine_mode(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_mode
+    }
     /// <p>Specifies the allocated storage size in gibibytes (GiB).</p>
     pub fn allocated_storage(mut self, input: i32) -> Self {
         self.allocated_storage = ::std::option::Option::Some(input);
@@ -325,6 +353,10 @@ impl DbClusterSnapshotBuilder {
     pub fn set_allocated_storage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.allocated_storage = input;
         self
+    }
+    /// <p>Specifies the allocated storage size in gibibytes (GiB).</p>
+    pub fn get_allocated_storage(&self) -> &::std::option::Option<i32> {
+        &self.allocated_storage
     }
     /// <p>Specifies the status of this DB cluster snapshot. Valid statuses are the following:</p>
     /// <ul>
@@ -346,6 +378,15 @@ impl DbClusterSnapshotBuilder {
         self.status = input;
         self
     }
+    /// <p>Specifies the status of this DB cluster snapshot. Valid statuses are the following:</p>
+    /// <ul>
+    /// <li> <p> <code>available</code> </p> </li>
+    /// <li> <p> <code>copying</code> </p> </li>
+    /// <li> <p> <code>creating</code> </p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>Specifies the port that the DB cluster was listening on at the time of the snapshot.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -356,6 +397,10 @@ impl DbClusterSnapshotBuilder {
         self.port = input;
         self
     }
+    /// <p>Specifies the port that the DB cluster was listening on at the time of the snapshot.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
+    }
     /// <p>Provides the VPC ID associated with the DB cluster snapshot.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -365,6 +410,10 @@ impl DbClusterSnapshotBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>Provides the VPC ID associated with the DB cluster snapshot.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// <p>Specifies the time when the DB cluster was created, in Universal Coordinated Time (UTC).</p>
     pub fn cluster_create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -378,6 +427,10 @@ impl DbClusterSnapshotBuilder {
     ) -> Self {
         self.cluster_create_time = input;
         self
+    }
+    /// <p>Specifies the time when the DB cluster was created, in Universal Coordinated Time (UTC).</p>
+    pub fn get_cluster_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.cluster_create_time
     }
     /// <p>Provides the master username for this DB cluster snapshot.</p>
     pub fn master_username(
@@ -395,6 +448,10 @@ impl DbClusterSnapshotBuilder {
         self.master_username = input;
         self
     }
+    /// <p>Provides the master username for this DB cluster snapshot.</p>
+    pub fn get_master_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.master_username
+    }
     /// <p>Provides the version of the database engine for this DB cluster snapshot.</p>
     pub fn engine_version(
         mut self,
@@ -410,6 +467,10 @@ impl DbClusterSnapshotBuilder {
     ) -> Self {
         self.engine_version = input;
         self
+    }
+    /// <p>Provides the version of the database engine for this DB cluster snapshot.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.engine_version
     }
     /// <p>Provides the license model information for this DB cluster snapshot.</p>
     pub fn license_model(
@@ -427,6 +488,10 @@ impl DbClusterSnapshotBuilder {
         self.license_model = input;
         self
     }
+    /// <p>Provides the license model information for this DB cluster snapshot.</p>
+    pub fn get_license_model(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_model
+    }
     /// <p>Provides the type of the DB cluster snapshot.</p>
     pub fn snapshot_type(
         mut self,
@@ -443,6 +508,10 @@ impl DbClusterSnapshotBuilder {
         self.snapshot_type = input;
         self
     }
+    /// <p>Provides the type of the DB cluster snapshot.</p>
+    pub fn get_snapshot_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_type
+    }
     /// <p>Specifies the percentage of the estimated data that has been transferred.</p>
     pub fn percent_progress(mut self, input: i32) -> Self {
         self.percent_progress = ::std::option::Option::Some(input);
@@ -453,6 +522,10 @@ impl DbClusterSnapshotBuilder {
         self.percent_progress = input;
         self
     }
+    /// <p>Specifies the percentage of the estimated data that has been transferred.</p>
+    pub fn get_percent_progress(&self) -> &::std::option::Option<i32> {
+        &self.percent_progress
+    }
     /// <p>Specifies whether the DB cluster snapshot is encrypted.</p>
     pub fn storage_encrypted(mut self, input: bool) -> Self {
         self.storage_encrypted = ::std::option::Option::Some(input);
@@ -462,6 +535,10 @@ impl DbClusterSnapshotBuilder {
     pub fn set_storage_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.storage_encrypted = input;
         self
+    }
+    /// <p>Specifies whether the DB cluster snapshot is encrypted.</p>
+    pub fn get_storage_encrypted(&self) -> &::std::option::Option<bool> {
+        &self.storage_encrypted
     }
     /// <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB cluster snapshot.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
@@ -474,6 +551,11 @@ impl DbClusterSnapshotBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB cluster snapshot.</p>
+    /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// <p>The Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
     pub fn db_cluster_snapshot_arn(
@@ -491,6 +573,10 @@ impl DbClusterSnapshotBuilder {
         self.db_cluster_snapshot_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
+    pub fn get_db_cluster_snapshot_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_snapshot_arn
+    }
     /// <p>If the DB cluster snapshot was copied from a source DB cluster snapshot, the Amazon Resource Name (ARN) for the source DB cluster snapshot, otherwise, a null value.</p>
     pub fn source_db_cluster_snapshot_arn(
         mut self,
@@ -507,6 +593,12 @@ impl DbClusterSnapshotBuilder {
         self.source_db_cluster_snapshot_arn = input;
         self
     }
+    /// <p>If the DB cluster snapshot was copied from a source DB cluster snapshot, the Amazon Resource Name (ARN) for the source DB cluster snapshot, otherwise, a null value.</p>
+    pub fn get_source_db_cluster_snapshot_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.source_db_cluster_snapshot_arn
+    }
     /// <p>True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
     pub fn iam_database_authentication_enabled(mut self, input: bool) -> Self {
         self.iam_database_authentication_enabled = ::std::option::Option::Some(input);
@@ -519,6 +611,10 @@ impl DbClusterSnapshotBuilder {
     ) -> Self {
         self.iam_database_authentication_enabled = input;
         self
+    }
+    /// <p>True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
+    pub fn get_iam_database_authentication_enabled(&self) -> &::std::option::Option<bool> {
+        &self.iam_database_authentication_enabled
     }
     /// Appends an item to `tag_list`.
     ///
@@ -539,6 +635,10 @@ impl DbClusterSnapshotBuilder {
         self.tag_list = input;
         self
     }
+    /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tag_list
+    }
     /// <p>Reserved for future use.</p>
     pub fn db_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_system_id = ::std::option::Option::Some(input.into());
@@ -548,6 +648,10 @@ impl DbClusterSnapshotBuilder {
     pub fn set_db_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_system_id = input;
         self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn get_db_system_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_system_id
     }
     /// <p>The storage type associated with the DB cluster snapshot.</p>
     /// <p>This setting is only for Aurora DB clusters.</p>
@@ -560,6 +664,11 @@ impl DbClusterSnapshotBuilder {
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_type = input;
         self
+    }
+    /// <p>The storage type associated with the DB cluster snapshot.</p>
+    /// <p>This setting is only for Aurora DB clusters.</p>
+    pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_type
     }
     /// Consumes the builder and constructs a [`DbClusterSnapshot`](crate::types::DbClusterSnapshot).
     pub fn build(self) -> crate::types::DbClusterSnapshot {

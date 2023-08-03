@@ -65,6 +65,10 @@ impl AwsVpcConfigurationBuilder {
         self.subnets = input;
         self
     }
+    /// <p>Specifies the subnets associated with the task. These subnets must all be in the same VPC. You can specify as many as 16 subnets.</p>
+    pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnets
+    }
     /// Appends an item to `security_groups`.
     ///
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
@@ -87,6 +91,12 @@ impl AwsVpcConfigurationBuilder {
         self.security_groups = input;
         self
     }
+    /// <p>Specifies the security groups associated with the task. These security groups must all be in the same VPC. You can specify as many as five security groups. If you do not specify a security group, the default security group for the VPC is used.</p>
+    pub fn get_security_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_groups
+    }
     /// <p>Specifies whether the task's elastic network interface receives a public IP address. You can specify <code>ENABLED</code> only when <code>LaunchType</code> in <code>EcsParameters</code> is set to <code>FARGATE</code>.</p>
     pub fn assign_public_ip(mut self, input: crate::types::AssignPublicIp) -> Self {
         self.assign_public_ip = ::std::option::Option::Some(input);
@@ -99,6 +109,10 @@ impl AwsVpcConfigurationBuilder {
     ) -> Self {
         self.assign_public_ip = input;
         self
+    }
+    /// <p>Specifies whether the task's elastic network interface receives a public IP address. You can specify <code>ENABLED</code> only when <code>LaunchType</code> in <code>EcsParameters</code> is set to <code>FARGATE</code>.</p>
+    pub fn get_assign_public_ip(&self) -> &::std::option::Option<crate::types::AssignPublicIp> {
+        &self.assign_public_ip
     }
     /// Consumes the builder and constructs a [`AwsVpcConfiguration`](crate::types::AwsVpcConfiguration).
     pub fn build(self) -> crate::types::AwsVpcConfiguration {

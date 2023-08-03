@@ -48,6 +48,10 @@ impl PsDetailAttributesBuilder {
         self.format = input;
         self
     }
+    /// <p>The format of the data set records.</p>
+    pub fn get_format(&self) -> &::std::option::Option<::std::string::String> {
+        &self.format
+    }
     /// <p>The character set encoding of the data set.</p>
     pub fn encoding(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encoding = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl PsDetailAttributesBuilder {
     pub fn set_encoding(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encoding = input;
         self
+    }
+    /// <p>The character set encoding of the data set.</p>
+    pub fn get_encoding(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encoding
     }
     /// Consumes the builder and constructs a [`PsDetailAttributes`](crate::types::PsDetailAttributes).
     pub fn build(self) -> crate::types::PsDetailAttributes {

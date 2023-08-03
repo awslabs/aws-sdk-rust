@@ -36,6 +36,10 @@ impl SubscribeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the Subscribe as a reference.
+    pub fn as_input(&self) -> &crate::operation::subscribe::builders::SubscribeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl SubscribeFluentBuilder {
         self.inner = self.inner.set_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the notification rule for which you want to create the association.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
+    }
     /// <p>Information about the Chatbot topics or Chatbot clients associated with a notification rule.</p>
     pub fn target(mut self, input: crate::types::Target) -> Self {
         self.inner = self.inner.target(input);
@@ -127,6 +135,10 @@ impl SubscribeFluentBuilder {
     pub fn set_target(mut self, input: ::std::option::Option<crate::types::Target>) -> Self {
         self.inner = self.inner.set_target(input);
         self
+    }
+    /// <p>Information about the Chatbot topics or Chatbot clients associated with a notification rule.</p>
+    pub fn get_target(&self) -> &::std::option::Option<crate::types::Target> {
+        self.inner.get_target()
     }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     pub fn client_request_token(
@@ -143,5 +155,9 @@ impl SubscribeFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
+    }
+    /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
     }
 }

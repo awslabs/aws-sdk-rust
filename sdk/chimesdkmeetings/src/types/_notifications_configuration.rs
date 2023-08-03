@@ -69,6 +69,10 @@ impl NotificationsConfigurationBuilder {
         self.lambda_function_arn = input;
         self
     }
+    /// <p>The ARN of the AWS Lambda function in the notifications configuration.</p>
+    pub fn get_lambda_function_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lambda_function_arn
+    }
     /// <p>The ARN of the SNS topic.</p>
     pub fn sns_topic_arn(
         mut self,
@@ -85,6 +89,10 @@ impl NotificationsConfigurationBuilder {
         self.sns_topic_arn = input;
         self
     }
+    /// <p>The ARN of the SNS topic.</p>
+    pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sns_topic_arn
+    }
     /// <p>The ARN of the SQS queue.</p>
     pub fn sqs_queue_arn(
         mut self,
@@ -100,6 +108,10 @@ impl NotificationsConfigurationBuilder {
     ) -> Self {
         self.sqs_queue_arn = input;
         self
+    }
+    /// <p>The ARN of the SQS queue.</p>
+    pub fn get_sqs_queue_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sqs_queue_arn
     }
     /// Consumes the builder and constructs a [`NotificationsConfiguration`](crate::types::NotificationsConfiguration).
     pub fn build(self) -> crate::types::NotificationsConfiguration {

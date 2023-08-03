@@ -100,6 +100,12 @@ impl AggregateEvaluationResultBuilder {
         self.evaluation_result_identifier = input;
         self
     }
+    /// <p>Uniquely identifies the evaluation result.</p>
+    pub fn get_evaluation_result_identifier(
+        &self,
+    ) -> &::std::option::Option<crate::types::EvaluationResultIdentifier> {
+        &self.evaluation_result_identifier
+    }
     /// <p>The resource compliance status.</p>
     /// <p>For the <code>AggregationEvaluationResult</code> data type, Config supports only the <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config does not support the <code>NOT_APPLICABLE</code> and <code>INSUFFICIENT_DATA</code> value.</p>
     pub fn compliance_type(mut self, input: crate::types::ComplianceType) -> Self {
@@ -115,6 +121,11 @@ impl AggregateEvaluationResultBuilder {
         self.compliance_type = input;
         self
     }
+    /// <p>The resource compliance status.</p>
+    /// <p>For the <code>AggregationEvaluationResult</code> data type, Config supports only the <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config does not support the <code>NOT_APPLICABLE</code> and <code>INSUFFICIENT_DATA</code> value.</p>
+    pub fn get_compliance_type(&self) -> &::std::option::Option<crate::types::ComplianceType> {
+        &self.compliance_type
+    }
     /// <p>The time when Config recorded the aggregate evaluation result.</p>
     pub fn result_recorded_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.result_recorded_time = ::std::option::Option::Some(input);
@@ -127,6 +138,10 @@ impl AggregateEvaluationResultBuilder {
     ) -> Self {
         self.result_recorded_time = input;
         self
+    }
+    /// <p>The time when Config recorded the aggregate evaluation result.</p>
+    pub fn get_result_recorded_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.result_recorded_time
     }
     /// <p>The time when the Config rule evaluated the Amazon Web Services resource.</p>
     pub fn config_rule_invoked_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -141,6 +156,12 @@ impl AggregateEvaluationResultBuilder {
         self.config_rule_invoked_time = input;
         self
     }
+    /// <p>The time when the Config rule evaluated the Amazon Web Services resource.</p>
+    pub fn get_config_rule_invoked_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.config_rule_invoked_time
+    }
     /// <p>Supplementary information about how the agrregate evaluation determined the compliance.</p>
     pub fn annotation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.annotation = ::std::option::Option::Some(input.into());
@@ -150,6 +171,10 @@ impl AggregateEvaluationResultBuilder {
     pub fn set_annotation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.annotation = input;
         self
+    }
+    /// <p>Supplementary information about how the agrregate evaluation determined the compliance.</p>
+    pub fn get_annotation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.annotation
     }
     /// <p>The 12-digit account ID of the source account.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -161,6 +186,10 @@ impl AggregateEvaluationResultBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The 12-digit account ID of the source account.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The source region from where the data is aggregated.</p>
     pub fn aws_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_region = ::std::option::Option::Some(input.into());
@@ -170,6 +199,10 @@ impl AggregateEvaluationResultBuilder {
     pub fn set_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_region = input;
         self
+    }
+    /// <p>The source region from where the data is aggregated.</p>
+    pub fn get_aws_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_region
     }
     /// Consumes the builder and constructs a [`AggregateEvaluationResult`](crate::types::AggregateEvaluationResult).
     pub fn build(self) -> crate::types::AggregateEvaluationResult {

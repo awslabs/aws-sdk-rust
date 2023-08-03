@@ -40,6 +40,10 @@ impl GetDeviceInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The device type's ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`GetDeviceInput`](crate::operation::get_device::GetDeviceInput).
     pub fn build(
         self,

@@ -49,6 +49,10 @@ impl WorkflowDetailBuilder {
         self.workflow_id = input;
         self
     }
+    /// <p>A unique identifier for the workflow.</p>
+    pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workflow_id
+    }
     /// <p>Includes the necessary permissions for S3, EFS, and Lambda operations that Transfer can assume, so that all workflow steps can operate on the required resources</p>
     pub fn execution_role(
         mut self,
@@ -64,6 +68,10 @@ impl WorkflowDetailBuilder {
     ) -> Self {
         self.execution_role = input;
         self
+    }
+    /// <p>Includes the necessary permissions for S3, EFS, and Lambda operations that Transfer can assume, so that all workflow steps can operate on the required resources</p>
+    pub fn get_execution_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_role
     }
     /// Consumes the builder and constructs a [`WorkflowDetail`](crate::types::WorkflowDetail).
     pub fn build(self) -> crate::types::WorkflowDetail {

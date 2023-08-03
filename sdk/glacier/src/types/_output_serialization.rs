@@ -40,6 +40,10 @@ impl OutputSerializationBuilder {
         self.csv = input;
         self
     }
+    /// <p>Describes the serialization of CSV-encoded query results.</p>
+    pub fn get_csv(&self) -> &::std::option::Option<crate::types::CsvOutput> {
+        &self.csv
+    }
     /// Consumes the builder and constructs a [`OutputSerialization`](crate::types::OutputSerialization).
     pub fn build(self) -> crate::types::OutputSerialization {
         crate::types::OutputSerialization { csv: self.csv }

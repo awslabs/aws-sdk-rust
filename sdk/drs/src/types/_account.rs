@@ -40,6 +40,10 @@ impl AccountBuilder {
         self.account_id = input;
         self
     }
+    /// <p>Account ID of AWS account.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// Consumes the builder and constructs a [`Account`](crate::types::Account).
     pub fn build(self) -> crate::types::Account {
         crate::types::Account {

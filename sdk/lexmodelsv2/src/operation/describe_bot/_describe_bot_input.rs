@@ -39,6 +39,10 @@ impl DescribeBotInputBuilder {
         self.bot_id = input;
         self
     }
+    /// <p>The unique identifier of the bot to describe.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
+    }
     /// Consumes the builder and constructs a [`DescribeBotInput`](crate::operation::describe_bot::DescribeBotInput).
     pub fn build(
         self,

@@ -91,6 +91,10 @@ impl AmiDistributionConfigurationBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the output AMI.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the AMI distribution configuration. Minimum and maximum length are in characters.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -100,6 +104,10 @@ impl AmiDistributionConfigurationBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the AMI distribution configuration. Minimum and maximum length are in characters.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `target_account_ids`.
     ///
@@ -122,6 +130,12 @@ impl AmiDistributionConfigurationBuilder {
     ) -> Self {
         self.target_account_ids = input;
         self
+    }
+    /// <p>The ID of an account to which you want to distribute an image.</p>
+    pub fn get_target_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.target_account_ids
     }
     /// Adds a key-value pair to `ami_tags`.
     ///
@@ -148,6 +162,14 @@ impl AmiDistributionConfigurationBuilder {
         self.ami_tags = input;
         self
     }
+    /// <p>The tags to apply to AMIs distributed to this Region.</p>
+    pub fn get_ami_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.ami_tags
+    }
     /// <p>The KMS key identifier used to encrypt the distributed image.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -157,6 +179,10 @@ impl AmiDistributionConfigurationBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p>The KMS key identifier used to encrypt the distributed image.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// <p>Launch permissions can be used to configure which Amazon Web Services accounts can use the AMI to launch instances.</p>
     pub fn launch_permission(mut self, input: crate::types::LaunchPermissionConfiguration) -> Self {
@@ -170,6 +196,12 @@ impl AmiDistributionConfigurationBuilder {
     ) -> Self {
         self.launch_permission = input;
         self
+    }
+    /// <p>Launch permissions can be used to configure which Amazon Web Services accounts can use the AMI to launch instances.</p>
+    pub fn get_launch_permission(
+        &self,
+    ) -> &::std::option::Option<crate::types::LaunchPermissionConfiguration> {
+        &self.launch_permission
     }
     /// Consumes the builder and constructs a [`AmiDistributionConfiguration`](crate::types::AmiDistributionConfiguration).
     pub fn build(self) -> crate::types::AmiDistributionConfiguration {

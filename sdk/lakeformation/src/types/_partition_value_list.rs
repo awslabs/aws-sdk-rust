@@ -49,6 +49,10 @@ impl PartitionValueListBuilder {
         self.values = input;
         self
     }
+    /// <p>The list of partition values.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
+    }
     /// Consumes the builder and constructs a [`PartitionValueList`](crate::types::PartitionValueList).
     pub fn build(self) -> crate::types::PartitionValueList {
         crate::types::PartitionValueList {

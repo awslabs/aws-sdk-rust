@@ -40,6 +40,10 @@ impl TimestampValueBuilder {
         self.time_in_millis = input;
         self
     }
+    /// <p>The value of the timestamp, in the Unix epoch format.</p>
+    pub fn get_time_in_millis(&self) -> &::std::option::Option<i64> {
+        &self.time_in_millis
+    }
     /// Consumes the builder and constructs a [`TimestampValue`](crate::types::TimestampValue).
     pub fn build(self) -> crate::types::TimestampValue {
         crate::types::TimestampValue {

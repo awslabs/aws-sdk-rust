@@ -58,6 +58,10 @@ impl ConditionExpressionBuilder {
         self.condition = input;
         self
     }
+    /// <p>A specific condition to apply to a recipe action. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe structure</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
+    pub fn get_condition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.condition
+    }
     /// <p>A value that the condition must evaluate to for the condition to succeed.</p>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
@@ -67,6 +71,10 @@ impl ConditionExpressionBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>A value that the condition must evaluate to for the condition to succeed.</p>
+    pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.value
     }
     /// <p>A column to apply this condition to.</p>
     pub fn target_column(
@@ -83,6 +91,10 @@ impl ConditionExpressionBuilder {
     ) -> Self {
         self.target_column = input;
         self
+    }
+    /// <p>A column to apply this condition to.</p>
+    pub fn get_target_column(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_column
     }
     /// Consumes the builder and constructs a [`ConditionExpression`](crate::types::ConditionExpression).
     pub fn build(self) -> crate::types::ConditionExpression {

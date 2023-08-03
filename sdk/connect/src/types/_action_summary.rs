@@ -43,6 +43,10 @@ impl ActionSummaryBuilder {
         self.action_type = input;
         self
     }
+    /// <p>The action type.</p>
+    pub fn get_action_type(&self) -> &::std::option::Option<crate::types::ActionType> {
+        &self.action_type
+    }
     /// Consumes the builder and constructs a [`ActionSummary`](crate::types::ActionSummary).
     pub fn build(self) -> crate::types::ActionSummary {
         crate::types::ActionSummary {

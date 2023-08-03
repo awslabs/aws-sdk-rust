@@ -36,6 +36,12 @@ impl ProvisionDeviceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ProvisionDevice as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::provision_device::builders::ProvisionDeviceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl ProvisionDeviceFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>A name for the device.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>A description for the device.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -135,6 +145,10 @@ impl ProvisionDeviceFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description for the device.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -159,6 +173,14 @@ impl ProvisionDeviceFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>Tags for the device.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// <p>A networking configuration for the device.</p>
     pub fn networking_configuration(mut self, input: crate::types::NetworkPayload) -> Self {
         self.inner = self.inner.networking_configuration(input);
@@ -171,5 +193,11 @@ impl ProvisionDeviceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_networking_configuration(input);
         self
+    }
+    /// <p>A networking configuration for the device.</p>
+    pub fn get_networking_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkPayload> {
+        self.inner.get_networking_configuration()
     }
 }

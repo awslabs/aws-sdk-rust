@@ -36,6 +36,10 @@ impl CreateLoggerDefinitionVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateLoggerDefinitionVersion as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_logger_definition_version::builders::CreateLoggerDefinitionVersionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl CreateLoggerDefinitionVersionFluentBuilder {
         self.inner = self.inner.set_amzn_client_token(input);
         self
     }
+    /// A client token used to correlate requests and responses.
+    pub fn get_amzn_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_amzn_client_token()
+    }
     /// The ID of the logger definition.
     pub fn logger_definition_id(
         mut self,
@@ -147,6 +155,10 @@ impl CreateLoggerDefinitionVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_logger_definition_id(input);
         self
+    }
+    /// The ID of the logger definition.
+    pub fn get_logger_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_logger_definition_id()
     }
     /// Appends an item to `Loggers`.
     ///
@@ -164,5 +176,9 @@ impl CreateLoggerDefinitionVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_loggers(input);
         self
+    }
+    /// A list of loggers.
+    pub fn get_loggers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Logger>> {
+        self.inner.get_loggers()
     }
 }

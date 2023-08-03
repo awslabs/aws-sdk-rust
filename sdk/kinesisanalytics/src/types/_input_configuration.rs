@@ -52,6 +52,10 @@ impl InputConfigurationBuilder {
         self.id = input;
         self
     }
+    /// <p>Input source ID. You can get this ID by calling the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>Point at which you want the application to start processing records from the streaming source.</p>
     pub fn input_starting_position_configuration(
         mut self,
@@ -67,6 +71,12 @@ impl InputConfigurationBuilder {
     ) -> Self {
         self.input_starting_position_configuration = input;
         self
+    }
+    /// <p>Point at which you want the application to start processing records from the streaming source.</p>
+    pub fn get_input_starting_position_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::InputStartingPositionConfiguration> {
+        &self.input_starting_position_configuration
     }
     /// Consumes the builder and constructs a [`InputConfiguration`](crate::types::InputConfiguration).
     pub fn build(self) -> crate::types::InputConfiguration {

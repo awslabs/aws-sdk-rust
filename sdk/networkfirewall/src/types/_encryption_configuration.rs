@@ -48,6 +48,10 @@ impl EncryptionConfigurationBuilder {
         self.key_id = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services Key Management Service (KMS) customer managed key. You can use any of the key identifiers that KMS supports, unless you're using a key that's managed by another account. If you're using a key managed by another account, then specify the key ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key ID</a> in the <i>Amazon Web Services KMS Developer Guide</i>.</p>
+    pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_id
+    }
     /// <p>The type of Amazon Web Services KMS key to use for encryption of your Network Firewall resources.</p>
     pub fn r#type(mut self, input: crate::types::EncryptionType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl EncryptionConfigurationBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::EncryptionType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of Amazon Web Services KMS key to use for encryption of your Network Firewall resources.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::EncryptionType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`EncryptionConfiguration`](crate::types::EncryptionConfiguration).
     pub fn build(self) -> crate::types::EncryptionConfiguration {

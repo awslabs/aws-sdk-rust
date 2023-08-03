@@ -38,6 +38,10 @@ impl PutDedicatedIpPoolScalingAttributesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutDedicatedIpPoolScalingAttributes as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_dedicated_ip_pool_scaling_attributes::builders::PutDedicatedIpPoolScalingAttributesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -102,6 +106,10 @@ impl PutDedicatedIpPoolScalingAttributesFluentBuilder {
         self.inner = self.inner.set_pool_name(input);
         self
     }
+    /// <p>The name of the dedicated IP pool.</p>
+    pub fn get_pool_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pool_name()
+    }
     /// <p>The scaling mode to apply to the dedicated IP pool.</p> <note>
     /// <p>Changing the scaling mode from <code>MANAGED</code> to <code>STANDARD</code> is not supported.</p>
     /// </note>
@@ -118,5 +126,11 @@ impl PutDedicatedIpPoolScalingAttributesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_scaling_mode(input);
         self
+    }
+    /// <p>The scaling mode to apply to the dedicated IP pool.</p> <note>
+    /// <p>Changing the scaling mode from <code>MANAGED</code> to <code>STANDARD</code> is not supported.</p>
+    /// </note>
+    pub fn get_scaling_mode(&self) -> &::std::option::Option<crate::types::ScalingMode> {
+        self.inner.get_scaling_mode()
     }
 }

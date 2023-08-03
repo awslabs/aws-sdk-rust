@@ -181,6 +181,10 @@ impl ServiceBuilder {
         self.service_name = input;
         self
     }
+    /// <p>The customer-provided service name.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_name
+    }
     /// <p>An ID that App Runner generated for this service. It's unique within the Amazon Web Services Region.</p>
     pub fn service_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_id = ::std::option::Option::Some(input.into());
@@ -190,6 +194,10 @@ impl ServiceBuilder {
     pub fn set_service_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_id = input;
         self
+    }
+    /// <p>An ID that App Runner generated for this service. It's unique within the Amazon Web Services Region.</p>
+    pub fn get_service_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_id
     }
     /// <p>The Amazon Resource Name (ARN) of this service.</p>
     pub fn service_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -201,6 +209,10 @@ impl ServiceBuilder {
         self.service_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of this service.</p>
+    pub fn get_service_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_arn
+    }
     /// <p>A subdomain URL that App Runner generated for this service. You can use this URL to access your service web application.</p>
     pub fn service_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_url = ::std::option::Option::Some(input.into());
@@ -210,6 +222,10 @@ impl ServiceBuilder {
     pub fn set_service_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_url = input;
         self
+    }
+    /// <p>A subdomain URL that App Runner generated for this service. You can use this URL to access your service web application.</p>
+    pub fn get_service_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_url
     }
     /// <p>The time when the App Runner service was created. It's in the Unix time stamp format.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -224,6 +240,10 @@ impl ServiceBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The time when the App Runner service was created. It's in the Unix time stamp format.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The time when the App Runner service was last updated at. It's in the Unix time stamp format.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
@@ -237,6 +257,10 @@ impl ServiceBuilder {
         self.updated_at = input;
         self
     }
+    /// <p>The time when the App Runner service was last updated at. It's in the Unix time stamp format.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
+    }
     /// <p>The time when the App Runner service was deleted. It's in the Unix time stamp format.</p>
     pub fn deleted_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.deleted_at = ::std::option::Option::Some(input);
@@ -249,6 +273,10 @@ impl ServiceBuilder {
     ) -> Self {
         self.deleted_at = input;
         self
+    }
+    /// <p>The time when the App Runner service was deleted. It's in the Unix time stamp format.</p>
+    pub fn get_deleted_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.deleted_at
     }
     /// <p>The current state of the App Runner service. These particular values mean the following.</p>
     /// <ul>
@@ -268,6 +296,14 @@ impl ServiceBuilder {
         self.status = input;
         self
     }
+    /// <p>The current state of the App Runner service. These particular values mean the following.</p>
+    /// <ul>
+    /// <li> <p> <code>CREATE_FAILED</code> – The service failed to create. To troubleshoot this failure, read the failure events and logs, change any parameters that need to be fixed, and retry the call to create the service.</p> <p>The failed service isn't usable, and still counts towards your service quota. When you're done analyzing the failure, delete the service.</p> </li>
+    /// <li> <p> <code>DELETE_FAILED</code> – The service failed to delete and can't be successfully recovered. Retry the service deletion call to ensure that all related resources are removed.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ServiceStatus> {
+        &self.status
+    }
     /// <p>The source deployed to the App Runner service. It can be a code or an image repository.</p>
     pub fn source_configuration(mut self, input: crate::types::SourceConfiguration) -> Self {
         self.source_configuration = ::std::option::Option::Some(input);
@@ -281,6 +317,12 @@ impl ServiceBuilder {
         self.source_configuration = input;
         self
     }
+    /// <p>The source deployed to the App Runner service. It can be a code or an image repository.</p>
+    pub fn get_source_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::SourceConfiguration> {
+        &self.source_configuration
+    }
     /// <p>The runtime configuration of instances (scaling units) of this service.</p>
     pub fn instance_configuration(mut self, input: crate::types::InstanceConfiguration) -> Self {
         self.instance_configuration = ::std::option::Option::Some(input);
@@ -293,6 +335,12 @@ impl ServiceBuilder {
     ) -> Self {
         self.instance_configuration = input;
         self
+    }
+    /// <p>The runtime configuration of instances (scaling units) of this service.</p>
+    pub fn get_instance_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceConfiguration> {
+        &self.instance_configuration
     }
     /// <p>The encryption key that App Runner uses to encrypt the service logs and the copy of the source repository that App Runner maintains for the service. It can be either a customer-provided encryption key or an Amazon Web Services managed key.</p>
     pub fn encryption_configuration(
@@ -310,6 +358,12 @@ impl ServiceBuilder {
         self.encryption_configuration = input;
         self
     }
+    /// <p>The encryption key that App Runner uses to encrypt the service logs and the copy of the source repository that App Runner maintains for the service. It can be either a customer-provided encryption key or an Amazon Web Services managed key.</p>
+    pub fn get_encryption_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+        &self.encryption_configuration
+    }
     /// <p>The settings for the health check that App Runner performs to monitor the health of this service.</p>
     pub fn health_check_configuration(
         mut self,
@@ -325,6 +379,12 @@ impl ServiceBuilder {
     ) -> Self {
         self.health_check_configuration = input;
         self
+    }
+    /// <p>The settings for the health check that App Runner performs to monitor the health of this service.</p>
+    pub fn get_health_check_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::HealthCheckConfiguration> {
+        &self.health_check_configuration
     }
     /// <p>Summary information for the App Runner automatic scaling configuration resource that's associated with this service.</p>
     pub fn auto_scaling_configuration_summary(
@@ -342,6 +402,12 @@ impl ServiceBuilder {
         self.auto_scaling_configuration_summary = input;
         self
     }
+    /// <p>Summary information for the App Runner automatic scaling configuration resource that's associated with this service.</p>
+    pub fn get_auto_scaling_configuration_summary(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoScalingConfigurationSummary> {
+        &self.auto_scaling_configuration_summary
+    }
     /// <p>Configuration settings related to network traffic of the web application that this service runs.</p>
     pub fn network_configuration(mut self, input: crate::types::NetworkConfiguration) -> Self {
         self.network_configuration = ::std::option::Option::Some(input);
@@ -354,6 +420,12 @@ impl ServiceBuilder {
     ) -> Self {
         self.network_configuration = input;
         self
+    }
+    /// <p>Configuration settings related to network traffic of the web application that this service runs.</p>
+    pub fn get_network_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkConfiguration> {
+        &self.network_configuration
     }
     /// <p>The observability configuration of this service.</p>
     pub fn observability_configuration(
@@ -370,6 +442,12 @@ impl ServiceBuilder {
     ) -> Self {
         self.observability_configuration = input;
         self
+    }
+    /// <p>The observability configuration of this service.</p>
+    pub fn get_observability_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServiceObservabilityConfiguration> {
+        &self.observability_configuration
     }
     /// Consumes the builder and constructs a [`Service`](crate::types::Service).
     pub fn build(self) -> crate::types::Service {

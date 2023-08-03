@@ -60,6 +60,12 @@ impl GrantFlowEntitlementsInputBuilder {
         self.entitlements = input;
         self
     }
+    /// The list of entitlements that you want to grant.
+    pub fn get_entitlements(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GrantEntitlementRequest>> {
+        &self.entitlements
+    }
     /// The flow that you want to grant entitlements on.
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_arn = ::std::option::Option::Some(input.into());
@@ -69,6 +75,10 @@ impl GrantFlowEntitlementsInputBuilder {
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_arn = input;
         self
+    }
+    /// The flow that you want to grant entitlements on.
+    pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_arn
     }
     /// Consumes the builder and constructs a [`GrantFlowEntitlementsInput`](crate::operation::grant_flow_entitlements::GrantFlowEntitlementsInput).
     pub fn build(

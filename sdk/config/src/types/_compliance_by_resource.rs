@@ -62,6 +62,10 @@ impl ComplianceByResourceBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The type of the Amazon Web Services resource that was evaluated.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
+    }
     /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl ComplianceByResourceBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// <p>Indicates whether the Amazon Web Services resource complies with all of the Config rules that evaluated it.</p>
     pub fn compliance(mut self, input: crate::types::Compliance) -> Self {
@@ -84,6 +92,10 @@ impl ComplianceByResourceBuilder {
     ) -> Self {
         self.compliance = input;
         self
+    }
+    /// <p>Indicates whether the Amazon Web Services resource complies with all of the Config rules that evaluated it.</p>
+    pub fn get_compliance(&self) -> &::std::option::Option<crate::types::Compliance> {
+        &self.compliance
     }
     /// Consumes the builder and constructs a [`ComplianceByResource`](crate::types::ComplianceByResource).
     pub fn build(self) -> crate::types::ComplianceByResource {

@@ -37,6 +37,10 @@ impl ListRulesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListRules as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_rules::builders::ListRulesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl ListRulesFluentBuilder {
         self.inner = self.inner.set_name_prefix(input);
         self
     }
+    /// <p>The prefix matching the rule name.</p>
+    pub fn get_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name_prefix()
+    }
     /// <p>The name or ARN of the event bus to list the rules for. If you omit this, the default event bus is used.</p>
     pub fn event_bus_name(
         mut self,
@@ -135,6 +143,10 @@ impl ListRulesFluentBuilder {
         self.inner = self.inner.set_event_bus_name(input);
         self
     }
+    /// <p>The name or ARN of the event bus to list the rules for. If you omit this, the default event bus is used.</p>
+    pub fn get_event_bus_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_event_bus_name()
+    }
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -145,6 +157,10 @@ impl ListRulesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -154,5 +170,9 @@ impl ListRulesFluentBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
     }
 }

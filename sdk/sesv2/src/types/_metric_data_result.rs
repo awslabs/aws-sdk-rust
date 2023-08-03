@@ -56,6 +56,10 @@ impl MetricDataResultBuilder {
         self.id = input;
         self
     }
+    /// <p>The query identifier.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Appends an item to `timestamps`.
     ///
     /// To override the contents of this collection use [`set_timestamps`](Self::set_timestamps).
@@ -75,6 +79,12 @@ impl MetricDataResultBuilder {
         self.timestamps = input;
         self
     }
+    /// <p>A list of timestamps for the metric data results.</p>
+    pub fn get_timestamps(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>> {
+        &self.timestamps
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -90,6 +100,10 @@ impl MetricDataResultBuilder {
     pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<i64>>) -> Self {
         self.values = input;
         self
+    }
+    /// <p>A list of values (cumulative / sum) for the metric data results.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<i64>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`MetricDataResult`](crate::types::MetricDataResult).
     pub fn build(self) -> crate::types::MetricDataResult {

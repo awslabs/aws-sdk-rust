@@ -41,6 +41,10 @@ impl AwsGuardDutyDetectorDataSourcesS3LogsDetailsBuilder {
         self.status = input;
         self
     }
+    /// <p> A value that describes whether S3 data event logs are automatically enabled for new members of an organization. </p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// Consumes the builder and constructs a [`AwsGuardDutyDetectorDataSourcesS3LogsDetails`](crate::types::AwsGuardDutyDetectorDataSourcesS3LogsDetails).
     pub fn build(self) -> crate::types::AwsGuardDutyDetectorDataSourcesS3LogsDetails {
         crate::types::AwsGuardDutyDetectorDataSourcesS3LogsDetails {

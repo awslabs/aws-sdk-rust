@@ -43,6 +43,12 @@ impl KafkaClusterBuilder {
         self.apache_kafka_cluster = input;
         self
     }
+    /// <p>The Apache Kafka cluster to which the connector is connected.</p>
+    pub fn get_apache_kafka_cluster(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApacheKafkaCluster> {
+        &self.apache_kafka_cluster
+    }
     /// Consumes the builder and constructs a [`KafkaCluster`](crate::types::KafkaCluster).
     pub fn build(self) -> crate::types::KafkaCluster {
         crate::types::KafkaCluster {

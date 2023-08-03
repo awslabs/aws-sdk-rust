@@ -40,6 +40,10 @@ impl MulticastGroupByFuotaTaskBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the multicast group.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`MulticastGroupByFuotaTask`](crate::types::MulticastGroupByFuotaTask).
     pub fn build(self) -> crate::types::MulticastGroupByFuotaTask {
         crate::types::MulticastGroupByFuotaTask { id: self.id }

@@ -59,6 +59,10 @@ impl AggregateOperationBuilder {
         self.column = input;
         self
     }
+    /// <p>Specifies the column on the data set on which the aggregation function will be applied.</p>
+    pub fn get_column(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.column
+    }
     /// <p>Specifies the aggregation function to apply.</p>
     /// <p>Possible aggregation functions include: avg countDistinct, count, first, last, kurtosis, max, min, skewness, stddev_samp, stddev_pop, sum, sumDistinct, var_samp, var_pop</p>
     pub fn agg_func(mut self, input: crate::types::AggFunction) -> Self {
@@ -70,6 +74,11 @@ impl AggregateOperationBuilder {
     pub fn set_agg_func(mut self, input: ::std::option::Option<crate::types::AggFunction>) -> Self {
         self.agg_func = input;
         self
+    }
+    /// <p>Specifies the aggregation function to apply.</p>
+    /// <p>Possible aggregation functions include: avg countDistinct, count, first, last, kurtosis, max, min, skewness, stddev_samp, stddev_pop, sum, sumDistinct, var_samp, var_pop</p>
+    pub fn get_agg_func(&self) -> &::std::option::Option<crate::types::AggFunction> {
+        &self.agg_func
     }
     /// Consumes the builder and constructs a [`AggregateOperation`](crate::types::AggregateOperation).
     pub fn build(self) -> crate::types::AggregateOperation {

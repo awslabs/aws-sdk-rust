@@ -101,6 +101,10 @@ impl VideoPreprocessorBuilder {
         self.color_corrector = input;
         self
     }
+    /// Use these settings to convert the color space or to modify properties such as hue and contrast for this output. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/converting-the-color-space.html.
+    pub fn get_color_corrector(&self) -> &::std::option::Option<crate::types::ColorCorrector> {
+        &self.color_corrector
+    }
     /// Use the deinterlacer to produce smoother motion and a clearer picture. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-scan-type.html.
     pub fn deinterlacer(mut self, input: crate::types::Deinterlacer) -> Self {
         self.deinterlacer = ::std::option::Option::Some(input);
@@ -113,6 +117,10 @@ impl VideoPreprocessorBuilder {
     ) -> Self {
         self.deinterlacer = input;
         self
+    }
+    /// Use the deinterlacer to produce smoother motion and a clearer picture. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-scan-type.html.
+    pub fn get_deinterlacer(&self) -> &::std::option::Option<crate::types::Deinterlacer> {
+        &self.deinterlacer
     }
     /// Enable Dolby Vision feature to produce Dolby Vision compatible video output.
     pub fn dolby_vision(mut self, input: crate::types::DolbyVision) -> Self {
@@ -127,6 +135,10 @@ impl VideoPreprocessorBuilder {
         self.dolby_vision = input;
         self
     }
+    /// Enable Dolby Vision feature to produce Dolby Vision compatible video output.
+    pub fn get_dolby_vision(&self) -> &::std::option::Option<crate::types::DolbyVision> {
+        &self.dolby_vision
+    }
     /// Enable HDR10+ analysis and metadata injection. Compatible with HEVC only.
     pub fn hdr10_plus(mut self, input: crate::types::Hdr10Plus) -> Self {
         self.hdr10_plus = ::std::option::Option::Some(input);
@@ -136,6 +148,10 @@ impl VideoPreprocessorBuilder {
     pub fn set_hdr10_plus(mut self, input: ::std::option::Option<crate::types::Hdr10Plus>) -> Self {
         self.hdr10_plus = input;
         self
+    }
+    /// Enable HDR10+ analysis and metadata injection. Compatible with HEVC only.
+    pub fn get_hdr10_plus(&self) -> &::std::option::Option<crate::types::Hdr10Plus> {
+        &self.hdr10_plus
     }
     /// Enable the Image inserter feature to include a graphic overlay on your video. Enable or disable this feature for each output individually. This setting is disabled by default.
     pub fn image_inserter(mut self, input: crate::types::ImageInserter) -> Self {
@@ -150,6 +166,10 @@ impl VideoPreprocessorBuilder {
         self.image_inserter = input;
         self
     }
+    /// Enable the Image inserter feature to include a graphic overlay on your video. Enable or disable this feature for each output individually. This setting is disabled by default.
+    pub fn get_image_inserter(&self) -> &::std::option::Option<crate::types::ImageInserter> {
+        &self.image_inserter
+    }
     /// Enable the Noise reducer feature to remove noise from your video output if necessary. Enable or disable this feature for each output individually. This setting is disabled by default. When you enable Noise reducer, you must also select a value for Noise reducer filter. For AVC outputs, when you include Noise reducer, you cannot include the Bandwidth reduction filter.
     pub fn noise_reducer(mut self, input: crate::types::NoiseReducer) -> Self {
         self.noise_reducer = ::std::option::Option::Some(input);
@@ -162,6 +182,10 @@ impl VideoPreprocessorBuilder {
     ) -> Self {
         self.noise_reducer = input;
         self
+    }
+    /// Enable the Noise reducer feature to remove noise from your video output if necessary. Enable or disable this feature for each output individually. This setting is disabled by default. When you enable Noise reducer, you must also select a value for Noise reducer filter. For AVC outputs, when you include Noise reducer, you cannot include the Bandwidth reduction filter.
+    pub fn get_noise_reducer(&self) -> &::std::option::Option<crate::types::NoiseReducer> {
+        &self.noise_reducer
     }
     /// If you work with a third party video watermarking partner, use the group of settings that correspond with your watermarking partner to include watermarks in your output.
     pub fn partner_watermarking(mut self, input: crate::types::PartnerWatermarking) -> Self {
@@ -176,6 +200,12 @@ impl VideoPreprocessorBuilder {
         self.partner_watermarking = input;
         self
     }
+    /// If you work with a third party video watermarking partner, use the group of settings that correspond with your watermarking partner to include watermarks in your output.
+    pub fn get_partner_watermarking(
+        &self,
+    ) -> &::std::option::Option<crate::types::PartnerWatermarking> {
+        &self.partner_watermarking
+    }
     /// Settings for burning the output timecode and specified prefix into the output.
     pub fn timecode_burnin(mut self, input: crate::types::TimecodeBurnin) -> Self {
         self.timecode_burnin = ::std::option::Option::Some(input);
@@ -188,6 +218,10 @@ impl VideoPreprocessorBuilder {
     ) -> Self {
         self.timecode_burnin = input;
         self
+    }
+    /// Settings for burning the output timecode and specified prefix into the output.
+    pub fn get_timecode_burnin(&self) -> &::std::option::Option<crate::types::TimecodeBurnin> {
+        &self.timecode_burnin
     }
     /// Consumes the builder and constructs a [`VideoPreprocessor`](crate::types::VideoPreprocessor).
     pub fn build(self) -> crate::types::VideoPreprocessor {

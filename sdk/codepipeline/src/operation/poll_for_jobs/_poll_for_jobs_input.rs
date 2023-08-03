@@ -67,6 +67,10 @@ impl PollForJobsInputBuilder {
         self.action_type_id = input;
         self
     }
+    /// <p>Represents information about an action type.</p>
+    pub fn get_action_type_id(&self) -> &::std::option::Option<crate::types::ActionTypeId> {
+        &self.action_type_id
+    }
     /// <p>The maximum number of jobs to return in a poll for jobs call.</p>
     pub fn max_batch_size(mut self, input: i32) -> Self {
         self.max_batch_size = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl PollForJobsInputBuilder {
     pub fn set_max_batch_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_batch_size = input;
         self
+    }
+    /// <p>The maximum number of jobs to return in a poll for jobs call.</p>
+    pub fn get_max_batch_size(&self) -> &::std::option::Option<i32> {
+        &self.max_batch_size
     }
     /// Adds a key-value pair to `query_param`.
     ///
@@ -101,6 +109,14 @@ impl PollForJobsInputBuilder {
     ) -> Self {
         self.query_param = input;
         self
+    }
+    /// <p>A map of property names and values. For an action type with no queryable properties, this value must be null or an empty map. For an action type with a queryable property, you must supply that property as a key in the map. Only jobs whose action configuration matches the mapped value are returned.</p>
+    pub fn get_query_param(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.query_param
     }
     /// Consumes the builder and constructs a [`PollForJobsInput`](crate::operation::poll_for_jobs::PollForJobsInput).
     pub fn build(

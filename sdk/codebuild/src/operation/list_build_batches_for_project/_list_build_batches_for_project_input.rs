@@ -79,6 +79,10 @@ impl ListBuildBatchesForProjectInputBuilder {
         self.project_name = input;
         self
     }
+    /// <p>The name of the project.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_name
+    }
     /// <p>A <code>BuildBatchFilter</code> object that specifies the filters for the search.</p>
     pub fn filter(mut self, input: crate::types::BuildBatchFilter) -> Self {
         self.filter = ::std::option::Option::Some(input);
@@ -92,6 +96,10 @@ impl ListBuildBatchesForProjectInputBuilder {
         self.filter = input;
         self
     }
+    /// <p>A <code>BuildBatchFilter</code> object that specifies the filters for the search.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::BuildBatchFilter> {
+        &self.filter
+    }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -101,6 +109,10 @@ impl ListBuildBatchesForProjectInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>Specifies the sort order of the returned items. Valid values include:</p>
     /// <ul>
@@ -123,6 +135,14 @@ impl ListBuildBatchesForProjectInputBuilder {
         self.sort_order = input;
         self
     }
+    /// <p>Specifies the sort order of the returned items. Valid values include:</p>
+    /// <ul>
+    /// <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li>
+    /// <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li>
+    /// </ul>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrderType> {
+        &self.sort_order
+    }
     /// <p>The <code>nextToken</code> value returned from a previous call to <code>ListBuildBatchesForProject</code>. This specifies the next item to return. To return the beginning of the list, exclude this parameter.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -132,6 +152,10 @@ impl ListBuildBatchesForProjectInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The <code>nextToken</code> value returned from a previous call to <code>ListBuildBatchesForProject</code>. This specifies the next item to return. To return the beginning of the list, exclude this parameter.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`ListBuildBatchesForProjectInput`](crate::operation::list_build_batches_for_project::ListBuildBatchesForProjectInput).
     pub fn build(

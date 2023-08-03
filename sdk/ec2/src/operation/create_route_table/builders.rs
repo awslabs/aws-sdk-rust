@@ -37,6 +37,12 @@ impl CreateRouteTableFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateRouteTable as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_route_table::builders::CreateRouteTableInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl CreateRouteTableFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>The ID of the VPC.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_id(input.into());
@@ -136,6 +146,10 @@ impl CreateRouteTableFluentBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpc_id(input);
         self
+    }
+    /// <p>The ID of the VPC.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpc_id()
     }
     /// Appends an item to `TagSpecifications`.
     ///
@@ -153,5 +167,11 @@ impl CreateRouteTableFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
+    }
+    /// <p>The tags to assign to the route table.</p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        self.inner.get_tag_specifications()
     }
 }

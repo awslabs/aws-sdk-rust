@@ -51,6 +51,10 @@ impl MetricKeyDataPointsBuilder {
         self.key = input;
         self
     }
+    /// <p>The dimensions to which the data points apply.</p>
+    pub fn get_key(&self) -> &::std::option::Option<crate::types::ResponseResourceMetricKey> {
+        &self.key
+    }
     /// Appends an item to `data_points`.
     ///
     /// To override the contents of this collection use [`set_data_points`](Self::set_data_points).
@@ -69,6 +73,12 @@ impl MetricKeyDataPointsBuilder {
     ) -> Self {
         self.data_points = input;
         self
+    }
+    /// <p>An array of timestamp-value pairs, representing measurements over a period of time.</p>
+    pub fn get_data_points(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataPoint>> {
+        &self.data_points
     }
     /// Consumes the builder and constructs a [`MetricKeyDataPoints`](crate::types::MetricKeyDataPoints).
     pub fn build(self) -> crate::types::MetricKeyDataPoints {

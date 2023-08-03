@@ -46,6 +46,10 @@ impl GetRegexPatternSetInputBuilder {
         self.regex_pattern_set_id = input;
         self
     }
+    /// <p>The <code>RegexPatternSetId</code> of the <code>RegexPatternSet</code> that you want to get. <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
+    pub fn get_regex_pattern_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.regex_pattern_set_id
+    }
     /// Consumes the builder and constructs a [`GetRegexPatternSetInput`](crate::operation::get_regex_pattern_set::GetRegexPatternSetInput).
     pub fn build(
         self,

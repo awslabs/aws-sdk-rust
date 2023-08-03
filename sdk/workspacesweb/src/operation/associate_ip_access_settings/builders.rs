@@ -36,6 +36,10 @@ impl AssociateIpAccessSettingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateIpAccessSettings as a reference.
+    pub fn as_input(&self) -> &crate::operation::associate_ip_access_settings::builders::AssociateIpAccessSettingsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl AssociateIpAccessSettingsFluentBuilder {
         self.inner = self.inner.set_portal_arn(input);
         self
     }
+    /// <p>The ARN of the web portal.</p>
+    pub fn get_portal_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_portal_arn()
+    }
     /// <p>The ARN of the IP access settings.</p>
     pub fn ip_access_settings_arn(
         mut self,
@@ -141,5 +149,9 @@ impl AssociateIpAccessSettingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_ip_access_settings_arn(input);
         self
+    }
+    /// <p>The ARN of the IP access settings.</p>
+    pub fn get_ip_access_settings_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ip_access_settings_arn()
     }
 }

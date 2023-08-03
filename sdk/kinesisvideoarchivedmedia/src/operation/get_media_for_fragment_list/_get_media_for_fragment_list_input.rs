@@ -57,6 +57,10 @@ impl GetMediaForFragmentListInputBuilder {
         self.stream_name = input;
         self
     }
+    /// <p>The name of the stream from which to retrieve fragment media. Specify either this parameter or the <code>StreamARN</code> parameter.</p>
+    pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_name
+    }
     /// <p>The Amazon Resource Name (ARN) of the stream from which to retrieve fragment media. Specify either this parameter or the <code>StreamName</code> parameter.</p>
     pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stream_arn = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl GetMediaForFragmentListInputBuilder {
     pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the stream from which to retrieve fragment media. Specify either this parameter or the <code>StreamName</code> parameter.</p>
+    pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stream_arn
     }
     /// Appends an item to `fragments`.
     ///
@@ -85,6 +93,10 @@ impl GetMediaForFragmentListInputBuilder {
     ) -> Self {
         self.fragments = input;
         self
+    }
+    /// <p>A list of the numbers of fragments for which to retrieve media. You retrieve these values with <code>ListFragments</code>.</p>
+    pub fn get_fragments(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.fragments
     }
     /// Consumes the builder and constructs a [`GetMediaForFragmentListInput`](crate::operation::get_media_for_fragment_list::GetMediaForFragmentListInput).
     pub fn build(

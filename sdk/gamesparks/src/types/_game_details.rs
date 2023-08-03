@@ -104,6 +104,10 @@ impl GameDetailsBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the game.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Name (ARN) of this game.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -114,6 +118,10 @@ impl GameDetailsBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of this game.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The description of the game.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -123,6 +131,10 @@ impl GameDetailsBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the game.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The date when the game was created.</p>
     pub fn created(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -137,6 +149,10 @@ impl GameDetailsBuilder {
         self.created = input;
         self
     }
+    /// <p>The date when the game was created.</p>
+    pub fn get_created(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created
+    }
     /// <p>The date when the game was last modified.</p>
     pub fn last_updated(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated = ::std::option::Option::Some(input);
@@ -150,6 +166,10 @@ impl GameDetailsBuilder {
         self.last_updated = input;
         self
     }
+    /// <p>The date when the game was last modified.</p>
+    pub fn get_last_updated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated
+    }
     /// <p>The state of the game.</p>
     pub fn state(mut self, input: crate::types::GameState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -160,6 +180,10 @@ impl GameDetailsBuilder {
         self.state = input;
         self
     }
+    /// <p>The state of the game.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::GameState> {
+        &self.state
+    }
     /// <p>Determines if the game can be deleted.</p>
     pub fn enable_termination_protection(mut self, input: bool) -> Self {
         self.enable_termination_protection = ::std::option::Option::Some(input);
@@ -169,6 +193,10 @@ impl GameDetailsBuilder {
     pub fn set_enable_termination_protection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_termination_protection = input;
         self
+    }
+    /// <p>Determines if the game can be deleted.</p>
+    pub fn get_enable_termination_protection(&self) -> &::std::option::Option<bool> {
+        &self.enable_termination_protection
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -194,6 +222,14 @@ impl GameDetailsBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags associated with the game.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`GameDetails`](crate::types::GameDetails).
     pub fn build(self) -> crate::types::GameDetails {

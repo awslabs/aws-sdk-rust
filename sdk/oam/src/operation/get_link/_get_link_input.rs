@@ -39,6 +39,10 @@ impl GetLinkInputBuilder {
         self.identifier = input;
         self
     }
+    /// <p>The ARN of the link to retrieve information for.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
+    }
     /// Consumes the builder and constructs a [`GetLinkInput`](crate::operation::get_link::GetLinkInput).
     pub fn build(
         self,

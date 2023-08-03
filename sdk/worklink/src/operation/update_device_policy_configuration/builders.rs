@@ -39,6 +39,10 @@ impl UpdateDevicePolicyConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDevicePolicyConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_device_policy_configuration::builders::UpdateDevicePolicyConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -103,6 +107,10 @@ impl UpdateDevicePolicyConfigurationFluentBuilder {
         self.inner = self.inner.set_fleet_arn(input);
         self
     }
+    /// <p>The ARN of the fleet.</p>
+    pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_fleet_arn()
+    }
     /// <p>The certificate chain, including intermediate certificates and the root certificate authority certificate used to issue device certificates.</p>
     pub fn device_ca_certificate(
         mut self,
@@ -118,5 +126,9 @@ impl UpdateDevicePolicyConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_device_ca_certificate(input);
         self
+    }
+    /// <p>The certificate chain, including intermediate certificates and the root certificate authority certificate used to issue device certificates.</p>
+    pub fn get_device_ca_certificate(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_device_ca_certificate()
     }
 }

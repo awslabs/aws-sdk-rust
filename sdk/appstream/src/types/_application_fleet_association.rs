@@ -48,6 +48,10 @@ impl ApplicationFleetAssociationBuilder {
         self.fleet_name = input;
         self
     }
+    /// <p>The name of the fleet associated with the application.</p>
+    pub fn get_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fleet_name
+    }
     /// <p>The ARN of the application associated with the fleet.</p>
     pub fn application_arn(
         mut self,
@@ -63,6 +67,10 @@ impl ApplicationFleetAssociationBuilder {
     ) -> Self {
         self.application_arn = input;
         self
+    }
+    /// <p>The ARN of the application associated with the fleet.</p>
+    pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_arn
     }
     /// Consumes the builder and constructs a [`ApplicationFleetAssociation`](crate::types::ApplicationFleetAssociation).
     pub fn build(self) -> crate::types::ApplicationFleetAssociation {

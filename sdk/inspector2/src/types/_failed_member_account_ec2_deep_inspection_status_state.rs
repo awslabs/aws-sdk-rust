@@ -57,6 +57,10 @@ impl FailedMemberAccountEc2DeepInspectionStatusStateBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The unique identifier for the Amazon Web Services account of the organization member that failed to activate Amazon Inspector deep inspection.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The status of EC2 scanning in the account that failed to activate Amazon Inspector deep inspection.</p>
     pub fn ec2_scan_status(mut self, input: crate::types::Status) -> Self {
         self.ec2_scan_status = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl FailedMemberAccountEc2DeepInspectionStatusStateBuilder {
     ) -> Self {
         self.ec2_scan_status = input;
         self
+    }
+    /// <p>The status of EC2 scanning in the account that failed to activate Amazon Inspector deep inspection.</p>
+    pub fn get_ec2_scan_status(&self) -> &::std::option::Option<crate::types::Status> {
+        &self.ec2_scan_status
     }
     /// <p>The error message explaining why the account failed to activate Amazon Inspector deep inspection.</p>
     pub fn error_message(
@@ -85,6 +93,10 @@ impl FailedMemberAccountEc2DeepInspectionStatusStateBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>The error message explaining why the account failed to activate Amazon Inspector deep inspection.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`FailedMemberAccountEc2DeepInspectionStatusState`](crate::types::FailedMemberAccountEc2DeepInspectionStatusState).
     pub fn build(self) -> crate::types::FailedMemberAccountEc2DeepInspectionStatusState {

@@ -39,6 +39,10 @@ impl GetStageInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>ARN of the stage for which the information is to be retrieved.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`GetStageInput`](crate::operation::get_stage::GetStageInput).
     pub fn build(
         self,

@@ -104,6 +104,10 @@ impl KeyUsageBuilder {
         self.digital_signature = input;
         self
     }
+    /// <p> Key can be used for digital signing.</p>
+    pub fn get_digital_signature(&self) -> &::std::option::Option<bool> {
+        &self.digital_signature
+    }
     /// <p>Key can be used for non-repudiation.</p>
     pub fn non_repudiation(mut self, input: bool) -> Self {
         self.non_repudiation = ::std::option::Option::Some(input);
@@ -113,6 +117,10 @@ impl KeyUsageBuilder {
     pub fn set_non_repudiation(mut self, input: ::std::option::Option<bool>) -> Self {
         self.non_repudiation = input;
         self
+    }
+    /// <p>Key can be used for non-repudiation.</p>
+    pub fn get_non_repudiation(&self) -> &::std::option::Option<bool> {
+        &self.non_repudiation
     }
     /// <p>Key can be used to encipher data.</p>
     pub fn key_encipherment(mut self, input: bool) -> Self {
@@ -124,6 +132,10 @@ impl KeyUsageBuilder {
         self.key_encipherment = input;
         self
     }
+    /// <p>Key can be used to encipher data.</p>
+    pub fn get_key_encipherment(&self) -> &::std::option::Option<bool> {
+        &self.key_encipherment
+    }
     /// <p>Key can be used to decipher data.</p>
     pub fn data_encipherment(mut self, input: bool) -> Self {
         self.data_encipherment = ::std::option::Option::Some(input);
@@ -133,6 +145,10 @@ impl KeyUsageBuilder {
     pub fn set_data_encipherment(mut self, input: ::std::option::Option<bool>) -> Self {
         self.data_encipherment = input;
         self
+    }
+    /// <p>Key can be used to decipher data.</p>
+    pub fn get_data_encipherment(&self) -> &::std::option::Option<bool> {
+        &self.data_encipherment
     }
     /// <p>Key can be used in a key-agreement protocol.</p>
     pub fn key_agreement(mut self, input: bool) -> Self {
@@ -144,6 +160,10 @@ impl KeyUsageBuilder {
         self.key_agreement = input;
         self
     }
+    /// <p>Key can be used in a key-agreement protocol.</p>
+    pub fn get_key_agreement(&self) -> &::std::option::Option<bool> {
+        &self.key_agreement
+    }
     /// <p>Key can be used to sign certificates.</p>
     pub fn key_cert_sign(mut self, input: bool) -> Self {
         self.key_cert_sign = ::std::option::Option::Some(input);
@@ -153,6 +173,10 @@ impl KeyUsageBuilder {
     pub fn set_key_cert_sign(mut self, input: ::std::option::Option<bool>) -> Self {
         self.key_cert_sign = input;
         self
+    }
+    /// <p>Key can be used to sign certificates.</p>
+    pub fn get_key_cert_sign(&self) -> &::std::option::Option<bool> {
+        &self.key_cert_sign
     }
     /// <p>Key can be used to sign CRLs.</p>
     pub fn crl_sign(mut self, input: bool) -> Self {
@@ -164,6 +188,10 @@ impl KeyUsageBuilder {
         self.crl_sign = input;
         self
     }
+    /// <p>Key can be used to sign CRLs.</p>
+    pub fn get_crl_sign(&self) -> &::std::option::Option<bool> {
+        &self.crl_sign
+    }
     /// <p>Key can be used only to encipher data.</p>
     pub fn encipher_only(mut self, input: bool) -> Self {
         self.encipher_only = ::std::option::Option::Some(input);
@@ -174,6 +202,10 @@ impl KeyUsageBuilder {
         self.encipher_only = input;
         self
     }
+    /// <p>Key can be used only to encipher data.</p>
+    pub fn get_encipher_only(&self) -> &::std::option::Option<bool> {
+        &self.encipher_only
+    }
     /// <p>Key can be used only to decipher data.</p>
     pub fn decipher_only(mut self, input: bool) -> Self {
         self.decipher_only = ::std::option::Option::Some(input);
@@ -183,6 +215,10 @@ impl KeyUsageBuilder {
     pub fn set_decipher_only(mut self, input: ::std::option::Option<bool>) -> Self {
         self.decipher_only = input;
         self
+    }
+    /// <p>Key can be used only to decipher data.</p>
+    pub fn get_decipher_only(&self) -> &::std::option::Option<bool> {
+        &self.decipher_only
     }
     /// Consumes the builder and constructs a [`KeyUsage`](crate::types::KeyUsage).
     pub fn build(self) -> crate::types::KeyUsage {

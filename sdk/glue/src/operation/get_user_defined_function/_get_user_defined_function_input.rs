@@ -57,6 +57,10 @@ impl GetUserDefinedFunctionInputBuilder {
         self.catalog_id = input;
         self
     }
+    /// <p>The ID of the Data Catalog where the function to be retrieved is located. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// <p>The name of the catalog database where the function is located.</p>
     pub fn database_name(
         mut self,
@@ -73,6 +77,10 @@ impl GetUserDefinedFunctionInputBuilder {
         self.database_name = input;
         self
     }
+    /// <p>The name of the catalog database where the function is located.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>The name of the function.</p>
     pub fn function_name(
         mut self,
@@ -88,6 +96,10 @@ impl GetUserDefinedFunctionInputBuilder {
     ) -> Self {
         self.function_name = input;
         self
+    }
+    /// <p>The name of the function.</p>
+    pub fn get_function_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.function_name
     }
     /// Consumes the builder and constructs a [`GetUserDefinedFunctionInput`](crate::operation::get_user_defined_function::GetUserDefinedFunctionInput).
     pub fn build(

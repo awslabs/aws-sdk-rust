@@ -36,6 +36,12 @@ impl StopEngagementFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StopEngagement as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::stop_engagement::builders::StopEngagementInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl StopEngagementFluentBuilder {
         self.inner = self.inner.set_engagement_id(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
+    pub fn get_engagement_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_engagement_id()
+    }
     /// <p>The reason that you're stopping the engagement.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reason(input.into());
@@ -133,5 +143,9 @@ impl StopEngagementFluentBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reason(input);
         self
+    }
+    /// <p>The reason that you're stopping the engagement.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reason()
     }
 }

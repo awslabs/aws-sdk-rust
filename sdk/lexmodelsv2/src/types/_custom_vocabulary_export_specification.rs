@@ -56,6 +56,10 @@ impl CustomVocabularyExportSpecificationBuilder {
         self.bot_id = input;
         self
     }
+    /// <p>The identifier of the bot that contains the custom vocabulary to export.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
+    }
     /// <p>The version of the bot that contains the custom vocabulary to export.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl CustomVocabularyExportSpecificationBuilder {
         self.bot_version = input;
         self
     }
+    /// <p>The version of the bot that contains the custom vocabulary to export.</p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_version
+    }
     /// <p>The locale of the bot that contains the custom vocabulary to export.</p>
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale_id = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl CustomVocabularyExportSpecificationBuilder {
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.locale_id = input;
         self
+    }
+    /// <p>The locale of the bot that contains the custom vocabulary to export.</p>
+    pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale_id
     }
     /// Consumes the builder and constructs a [`CustomVocabularyExportSpecification`](crate::types::CustomVocabularyExportSpecification).
     pub fn build(self) -> crate::types::CustomVocabularyExportSpecification {

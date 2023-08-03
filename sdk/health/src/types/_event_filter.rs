@@ -163,6 +163,10 @@ impl EventFilterBuilder {
         self.event_arns = input;
         self
     }
+    /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code> </p>
+    pub fn get_event_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.event_arns
+    }
     /// Appends an item to `event_type_codes`.
     ///
     /// To override the contents of this collection use [`set_event_type_codes`](Self::set_event_type_codes).
@@ -185,6 +189,12 @@ impl EventFilterBuilder {
         self.event_type_codes = input;
         self
     }
+    /// <p>A list of unique identifiers for event types. For example, <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED".</code> </p>
+    pub fn get_event_type_codes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.event_type_codes
+    }
     /// Appends an item to `services`.
     ///
     /// To override the contents of this collection use [`set_services`](Self::set_services).
@@ -204,6 +214,10 @@ impl EventFilterBuilder {
         self.services = input;
         self
     }
+    /// <p>The Amazon Web Services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
+    pub fn get_services(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.services
+    }
     /// Appends an item to `regions`.
     ///
     /// To override the contents of this collection use [`set_regions`](Self::set_regions).
@@ -222,6 +236,10 @@ impl EventFilterBuilder {
     ) -> Self {
         self.regions = input;
         self
+    }
+    /// <p>A list of Amazon Web Services Regions.</p>
+    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.regions
     }
     /// Appends an item to `availability_zones`.
     ///
@@ -245,6 +263,12 @@ impl EventFilterBuilder {
         self.availability_zones = input;
         self
     }
+    /// <p>A list of Amazon Web Services Availability Zones.</p>
+    pub fn get_availability_zones(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.availability_zones
+    }
     /// Appends an item to `start_times`.
     ///
     /// To override the contents of this collection use [`set_start_times`](Self::set_start_times).
@@ -263,6 +287,12 @@ impl EventFilterBuilder {
     ) -> Self {
         self.start_times = input;
         self
+    }
+    /// <p>A list of dates and times that the event began.</p>
+    pub fn get_start_times(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DateTimeRange>> {
+        &self.start_times
     }
     /// Appends an item to `end_times`.
     ///
@@ -283,6 +313,12 @@ impl EventFilterBuilder {
         self.end_times = input;
         self
     }
+    /// <p>A list of dates and times that the event ended.</p>
+    pub fn get_end_times(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DateTimeRange>> {
+        &self.end_times
+    }
     /// Appends an item to `last_updated_times`.
     ///
     /// To override the contents of this collection use [`set_last_updated_times`](Self::set_last_updated_times).
@@ -302,6 +338,12 @@ impl EventFilterBuilder {
         self.last_updated_times = input;
         self
     }
+    /// <p>A list of dates and times that the event was last updated.</p>
+    pub fn get_last_updated_times(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DateTimeRange>> {
+        &self.last_updated_times
+    }
     /// Appends an item to `entity_arns`.
     ///
     /// To override the contents of this collection use [`set_entity_arns`](Self::set_entity_arns).
@@ -320,6 +362,12 @@ impl EventFilterBuilder {
     ) -> Self {
         self.entity_arns = input;
         self
+    }
+    /// <p>A list of entity ARNs (unique identifiers).</p>
+    pub fn get_entity_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.entity_arns
     }
     /// Appends an item to `entity_values`.
     ///
@@ -343,6 +391,12 @@ impl EventFilterBuilder {
         self.entity_values = input;
         self
     }
+    /// <p>A list of entity identifiers, such as EC2 instance IDs (<code>i-34ab692e</code>) or EBS volumes (<code>vol-426ab23e</code>).</p>
+    pub fn get_entity_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.entity_values
+    }
     /// Appends an item to `event_type_categories`.
     ///
     /// To override the contents of this collection use [`set_event_type_categories`](Self::set_event_type_categories).
@@ -361,6 +415,12 @@ impl EventFilterBuilder {
     ) -> Self {
         self.event_type_categories = input;
         self
+    }
+    /// <p>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't supported at this time.</p>
+    pub fn get_event_type_categories(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventTypeCategory>> {
+        &self.event_type_categories
     }
     /// Appends an item to `tags`.
     ///
@@ -392,6 +452,16 @@ impl EventFilterBuilder {
         self.tags = input;
         self
     }
+    /// <p>A map of entity tags attached to the affected entity.</p> <note>
+    /// <p>Currently, the <code>tags</code> property isn't supported.</p>
+    /// </note>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    > {
+        &self.tags
+    }
     /// Appends an item to `event_status_codes`.
     ///
     /// To override the contents of this collection use [`set_event_status_codes`](Self::set_event_status_codes).
@@ -410,6 +480,12 @@ impl EventFilterBuilder {
     ) -> Self {
         self.event_status_codes = input;
         self
+    }
+    /// <p>A list of event status codes.</p>
+    pub fn get_event_status_codes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EventStatusCode>> {
+        &self.event_status_codes
     }
     /// Consumes the builder and constructs a [`EventFilter`](crate::types::EventFilter).
     pub fn build(self) -> crate::types::EventFilter {

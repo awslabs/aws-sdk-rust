@@ -138,6 +138,11 @@ impl ItemBuilder {
         self.absolute_time = input;
         self
     }
+    /// <p>The time when the message or event was sent.</p>
+    /// <p>It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
+    pub fn get_absolute_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.absolute_time
+    }
     /// <p>The content of the message or event.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
@@ -147,6 +152,10 @@ impl ItemBuilder {
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
         self
+    }
+    /// <p>The content of the message or event.</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
     }
     /// <p>The type of content of the item.</p>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -158,6 +167,10 @@ impl ItemBuilder {
         self.content_type = input;
         self
     }
+    /// <p>The type of content of the item.</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_type
+    }
     /// <p>The ID of the item.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -168,6 +181,10 @@ impl ItemBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the item.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>Type of the item: message or event. </p>
     pub fn r#type(mut self, input: crate::types::ChatItemType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -177,6 +194,10 @@ impl ItemBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ChatItemType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>Type of the item: message or event. </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ChatItemType> {
+        &self.r#type
     }
     /// <p>The ID of the sender in the session.</p>
     pub fn participant_id(
@@ -194,6 +215,10 @@ impl ItemBuilder {
         self.participant_id = input;
         self
     }
+    /// <p>The ID of the sender in the session.</p>
+    pub fn get_participant_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.participant_id
+    }
     /// <p>The chat display name of the sender.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -203,6 +228,10 @@ impl ItemBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
+    }
+    /// <p>The chat display name of the sender.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// <p>The role of the sender. For example, is it a customer, agent, or system.</p>
     pub fn participant_role(mut self, input: crate::types::ParticipantRole) -> Self {
@@ -216,6 +245,10 @@ impl ItemBuilder {
     ) -> Self {
         self.participant_role = input;
         self
+    }
+    /// <p>The role of the sender. For example, is it a customer, agent, or system.</p>
+    pub fn get_participant_role(&self) -> &::std::option::Option<crate::types::ParticipantRole> {
+        &self.participant_role
     }
     /// Appends an item to `attachments`.
     ///
@@ -236,6 +269,12 @@ impl ItemBuilder {
         self.attachments = input;
         self
     }
+    /// <p>Provides information about the attachments.</p>
+    pub fn get_attachments(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttachmentItem>> {
+        &self.attachments
+    }
     /// <p>The metadata related to the message. Currently this supports only information related to message receipts.</p>
     pub fn message_metadata(mut self, input: crate::types::MessageMetadata) -> Self {
         self.message_metadata = ::std::option::Option::Some(input);
@@ -248,6 +287,10 @@ impl ItemBuilder {
     ) -> Self {
         self.message_metadata = input;
         self
+    }
+    /// <p>The metadata related to the message. Currently this supports only information related to message receipts.</p>
+    pub fn get_message_metadata(&self) -> &::std::option::Option<crate::types::MessageMetadata> {
+        &self.message_metadata
     }
     /// <p>The contactId on which the transcript item was originally sent. This field is only populated for persistent chats when the transcript item is from the past chat session. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable persistent chat</a>.</p>
     pub fn related_contact_id(
@@ -265,6 +308,10 @@ impl ItemBuilder {
         self.related_contact_id = input;
         self
     }
+    /// <p>The contactId on which the transcript item was originally sent. This field is only populated for persistent chats when the transcript item is from the past chat session. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable persistent chat</a>.</p>
+    pub fn get_related_contact_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.related_contact_id
+    }
     /// <p>The contactId on which the transcript item was originally sent. This field is populated only when the transcript item is from the current chat session.</p>
     pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_id = ::std::option::Option::Some(input.into());
@@ -274,6 +321,10 @@ impl ItemBuilder {
     pub fn set_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contact_id = input;
         self
+    }
+    /// <p>The contactId on which the transcript item was originally sent. This field is populated only when the transcript item is from the current chat session.</p>
+    pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_id
     }
     /// Consumes the builder and constructs a [`Item`](crate::types::Item).
     pub fn build(self) -> crate::types::Item {

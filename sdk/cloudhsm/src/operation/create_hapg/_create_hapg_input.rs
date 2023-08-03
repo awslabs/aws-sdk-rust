@@ -40,6 +40,10 @@ impl CreateHapgInputBuilder {
         self.label = input;
         self
     }
+    /// <p>The label of the new high-availability partition group.</p>
+    pub fn get_label(&self) -> &::std::option::Option<::std::string::String> {
+        &self.label
+    }
     /// Consumes the builder and constructs a [`CreateHapgInput`](crate::operation::create_hapg::CreateHapgInput).
     pub fn build(
         self,

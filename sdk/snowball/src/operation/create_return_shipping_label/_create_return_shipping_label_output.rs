@@ -49,6 +49,10 @@ impl CreateReturnShippingLabelOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status information of the task on a Snow device that is being returned to Amazon Web Services.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ShippingLabelStatus> {
+        &self.status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

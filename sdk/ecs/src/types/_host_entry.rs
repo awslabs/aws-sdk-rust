@@ -48,6 +48,10 @@ impl HostEntryBuilder {
         self.hostname = input;
         self
     }
+    /// <p>The hostname to use in the <code>/etc/hosts</code> entry.</p>
+    pub fn get_hostname(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hostname
+    }
     /// <p>The IP address to use in the <code>/etc/hosts</code> entry.</p>
     pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_address = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl HostEntryBuilder {
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_address = input;
         self
+    }
+    /// <p>The IP address to use in the <code>/etc/hosts</code> entry.</p>
+    pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_address
     }
     /// Consumes the builder and constructs a [`HostEntry`](crate::types::HostEntry).
     pub fn build(self) -> crate::types::HostEntry {

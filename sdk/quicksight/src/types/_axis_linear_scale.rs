@@ -49,6 +49,10 @@ impl AxisLinearScaleBuilder {
         self.step_count = input;
         self
     }
+    /// <p>The step count setup of a linear axis.</p>
+    pub fn get_step_count(&self) -> &::std::option::Option<i32> {
+        &self.step_count
+    }
     /// <p>The step size setup of a linear axis.</p>
     pub fn step_size(mut self, input: f64) -> Self {
         self.step_size = ::std::option::Option::Some(input);
@@ -58,6 +62,10 @@ impl AxisLinearScaleBuilder {
     pub fn set_step_size(mut self, input: ::std::option::Option<f64>) -> Self {
         self.step_size = input;
         self
+    }
+    /// <p>The step size setup of a linear axis.</p>
+    pub fn get_step_size(&self) -> &::std::option::Option<f64> {
+        &self.step_size
     }
     /// Consumes the builder and constructs a [`AxisLinearScale`](crate::types::AxisLinearScale).
     pub fn build(self) -> crate::types::AxisLinearScale {

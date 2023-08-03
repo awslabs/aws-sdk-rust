@@ -62,6 +62,10 @@ impl ListMonitorEvaluationsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `predictor_monitor_evaluations`.
     ///
     /// To override the contents of this collection use [`set_predictor_monitor_evaluations`](Self::set_predictor_monitor_evaluations).
@@ -85,6 +89,13 @@ impl ListMonitorEvaluationsOutputBuilder {
     ) -> Self {
         self.predictor_monitor_evaluations = input;
         self
+    }
+    /// <p>The monitoring results and predictor events collected by the monitor resource during different windows of time.</p>
+    /// <p>For information about monitoring see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring-results.html">Viewing Monitoring Results</a>. For more information about retrieving monitoring results see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring-results.html">Viewing Monitoring Results</a>.</p>
+    pub fn get_predictor_monitor_evaluations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PredictorMonitorEvaluation>> {
+        &self.predictor_monitor_evaluations
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

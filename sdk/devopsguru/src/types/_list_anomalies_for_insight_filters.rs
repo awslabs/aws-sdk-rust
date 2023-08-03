@@ -43,6 +43,12 @@ impl ListAnomaliesForInsightFiltersBuilder {
         self.service_collection = input;
         self
     }
+    /// <p>A collection of the names of Amazon Web Services services.</p>
+    pub fn get_service_collection(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServiceCollection> {
+        &self.service_collection
+    }
     /// Consumes the builder and constructs a [`ListAnomaliesForInsightFilters`](crate::types::ListAnomaliesForInsightFilters).
     pub fn build(self) -> crate::types::ListAnomaliesForInsightFilters {
         crate::types::ListAnomaliesForInsightFilters {

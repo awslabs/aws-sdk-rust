@@ -58,6 +58,12 @@ impl AddNotificationChannelsOutputBuilder {
         self.notification_configuration = input;
         self
     }
+    /// <p>The new notification configuration for this profiling group.</p>
+    pub fn get_notification_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::NotificationConfiguration> {
+        &self.notification_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

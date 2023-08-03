@@ -43,6 +43,12 @@ impl EnvironmentResourcesDescriptionBuilder {
         self.load_balancer = input;
         self
     }
+    /// <p>Describes the LoadBalancer.</p>
+    pub fn get_load_balancer(
+        &self,
+    ) -> &::std::option::Option<crate::types::LoadBalancerDescription> {
+        &self.load_balancer
+    }
     /// Consumes the builder and constructs a [`EnvironmentResourcesDescription`](crate::types::EnvironmentResourcesDescription).
     pub fn build(self) -> crate::types::EnvironmentResourcesDescription {
         crate::types::EnvironmentResourcesDescription {

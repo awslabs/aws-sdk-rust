@@ -65,6 +65,10 @@ impl CreateInstanceSnapshotInputBuilder {
         self.instance_snapshot_name = input;
         self
     }
+    /// <p>The name for your new snapshot.</p>
+    pub fn get_instance_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_snapshot_name
+    }
     /// <p>The Lightsail instance on which to base your snapshot.</p>
     pub fn instance_name(
         mut self,
@@ -80,6 +84,10 @@ impl CreateInstanceSnapshotInputBuilder {
     ) -> Self {
         self.instance_name = input;
         self
+    }
+    /// <p>The Lightsail instance on which to base your snapshot.</p>
+    pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_name
     }
     /// Appends an item to `tags`.
     ///
@@ -101,6 +109,11 @@ impl CreateInstanceSnapshotInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tag keys and optional values to add to the resource during create.</p>
+    /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateInstanceSnapshotInput`](crate::operation::create_instance_snapshot::CreateInstanceSnapshotInput).
     pub fn build(

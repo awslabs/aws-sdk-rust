@@ -56,6 +56,12 @@ impl GetBucketAccessKeysOutputBuilder {
         self.access_keys = input;
         self
     }
+    /// <p>An object that describes the access keys for the specified bucket.</p>
+    pub fn get_access_keys(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessKey>> {
+        &self.access_keys
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

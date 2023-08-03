@@ -40,6 +40,10 @@ impl ProvisionedThroughputOverrideBuilder {
         self.read_capacity_units = input;
         self
     }
+    /// <p>Replica-specific read capacity units. If not specified, uses the source table's read capacity settings.</p>
+    pub fn get_read_capacity_units(&self) -> &::std::option::Option<i64> {
+        &self.read_capacity_units
+    }
     /// Consumes the builder and constructs a [`ProvisionedThroughputOverride`](crate::types::ProvisionedThroughputOverride).
     pub fn build(self) -> crate::types::ProvisionedThroughputOverride {
         crate::types::ProvisionedThroughputOverride {

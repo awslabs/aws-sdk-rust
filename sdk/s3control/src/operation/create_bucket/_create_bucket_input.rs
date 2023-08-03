@@ -154,6 +154,12 @@ impl CreateBucketInputBuilder {
         self.acl = input;
         self
     }
+    /// <p>The canned ACL to apply to the bucket.</p> <note>
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+    /// </note>
+    pub fn get_acl(&self) -> &::std::option::Option<crate::types::BucketCannedAcl> {
+        &self.acl
+    }
     /// <p>The name of the bucket.</p>
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
@@ -163,6 +169,10 @@ impl CreateBucketInputBuilder {
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket = input;
         self
+    }
+    /// <p>The name of the bucket.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
     }
     /// <p>The configuration information for the bucket.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
@@ -184,6 +194,14 @@ impl CreateBucketInputBuilder {
         self.create_bucket_configuration = input;
         self
     }
+    /// <p>The configuration information for the bucket.</p> <note>
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+    /// </note>
+    pub fn get_create_bucket_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::CreateBucketConfiguration> {
+        &self.create_bucket_configuration
+    }
     /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
@@ -204,6 +222,12 @@ impl CreateBucketInputBuilder {
         self.grant_full_control = input;
         self
     }
+    /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p> <note>
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+    /// </note>
+    pub fn get_grant_full_control(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grant_full_control
+    }
     /// <p>Allows grantee to list the objects in the bucket.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
@@ -217,6 +241,12 @@ impl CreateBucketInputBuilder {
     pub fn set_grant_read(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.grant_read = input;
         self
+    }
+    /// <p>Allows grantee to list the objects in the bucket.</p> <note>
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+    /// </note>
+    pub fn get_grant_read(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grant_read
     }
     /// <p>Allows grantee to read the bucket ACL.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
@@ -238,6 +268,12 @@ impl CreateBucketInputBuilder {
         self.grant_read_acp = input;
         self
     }
+    /// <p>Allows grantee to read the bucket ACL.</p> <note>
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+    /// </note>
+    pub fn get_grant_read_acp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grant_read_acp
+    }
     /// <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
@@ -251,6 +287,12 @@ impl CreateBucketInputBuilder {
     pub fn set_grant_write(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.grant_write = input;
         self
+    }
+    /// <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p> <note>
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+    /// </note>
+    pub fn get_grant_write(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grant_write
     }
     /// <p>Allows grantee to write the ACL for the applicable bucket.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
@@ -272,6 +314,12 @@ impl CreateBucketInputBuilder {
         self.grant_write_acp = input;
         self
     }
+    /// <p>Allows grantee to write the ACL for the applicable bucket.</p> <note>
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+    /// </note>
+    pub fn get_grant_write_acp(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grant_write_acp
+    }
     /// <p>Specifies whether you want S3 Object Lock to be enabled for the new bucket.</p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
@@ -289,6 +337,12 @@ impl CreateBucketInputBuilder {
         self.object_lock_enabled_for_bucket = input;
         self
     }
+    /// <p>Specifies whether you want S3 Object Lock to be enabled for the new bucket.</p> <note>
+    /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
+    /// </note>
+    pub fn get_object_lock_enabled_for_bucket(&self) -> &::std::option::Option<bool> {
+        &self.object_lock_enabled_for_bucket
+    }
     /// <p>The ID of the Outposts where the bucket is being created.</p> <note>
     /// <p>This ID is required by Amazon S3 on Outposts buckets.</p>
     /// </note>
@@ -302,6 +356,12 @@ impl CreateBucketInputBuilder {
     pub fn set_outpost_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outpost_id = input;
         self
+    }
+    /// <p>The ID of the Outposts where the bucket is being created.</p> <note>
+    /// <p>This ID is required by Amazon S3 on Outposts buckets.</p>
+    /// </note>
+    pub fn get_outpost_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.outpost_id
     }
     /// Consumes the builder and constructs a [`CreateBucketInput`](crate::operation::create_bucket::CreateBucketInput).
     pub fn build(

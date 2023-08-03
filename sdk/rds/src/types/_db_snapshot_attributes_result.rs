@@ -59,6 +59,10 @@ impl DbSnapshotAttributesResultBuilder {
         self.db_snapshot_identifier = input;
         self
     }
+    /// <p>The identifier of the manual DB snapshot that the attributes apply to.</p>
+    pub fn get_db_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_snapshot_identifier
+    }
     /// Appends an item to `db_snapshot_attributes`.
     ///
     /// To override the contents of this collection use [`set_db_snapshot_attributes`](Self::set_db_snapshot_attributes).
@@ -77,6 +81,12 @@ impl DbSnapshotAttributesResultBuilder {
     ) -> Self {
         self.db_snapshot_attributes = input;
         self
+    }
+    /// <p>The list of attributes and values for the manual DB snapshot.</p>
+    pub fn get_db_snapshot_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DbSnapshotAttribute>> {
+        &self.db_snapshot_attributes
     }
     /// Consumes the builder and constructs a [`DbSnapshotAttributesResult`](crate::types::DbSnapshotAttributesResult).
     pub fn build(self) -> crate::types::DbSnapshotAttributesResult {

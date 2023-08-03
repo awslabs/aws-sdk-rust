@@ -43,6 +43,10 @@ impl Ec2SpecificationBuilder {
         self.offering_class = input;
         self
     }
+    /// <p>Indicates whether you want a recommendation for standard or convertible reservations.</p>
+    pub fn get_offering_class(&self) -> &::std::option::Option<crate::types::OfferingClass> {
+        &self.offering_class
+    }
     /// Consumes the builder and constructs a [`Ec2Specification`](crate::types::Ec2Specification).
     pub fn build(self) -> crate::types::Ec2Specification {
         crate::types::Ec2Specification {

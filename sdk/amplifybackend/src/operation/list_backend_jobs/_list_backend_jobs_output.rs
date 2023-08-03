@@ -64,6 +64,12 @@ impl ListBackendJobsOutputBuilder {
         self.jobs = input;
         self
     }
+    /// <p>An array of jobs and their properties.</p>
+    pub fn get_jobs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BackendJobRespObj>> {
+        &self.jobs
+    }
     /// <p>The token for the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -73,6 +79,10 @@ impl ListBackendJobsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

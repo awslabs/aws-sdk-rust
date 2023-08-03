@@ -39,6 +39,12 @@ impl PutResourcePolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutResourcePolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_resource_policy::builders::PutResourcePolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,6 +137,11 @@ impl PutResourcePolicyFluentBuilder {
         self.inner = self.inner.set_secret_id(input);
         self
     }
+    /// <p>The ARN or name of the secret to attach the resource-based policy.</p>
+    /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
+    pub fn get_secret_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_secret_id()
+    }
     /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy. For example policies, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html">Permissions policy examples</a>.</p>
     pub fn resource_policy(
         mut self,
@@ -147,6 +158,10 @@ impl PutResourcePolicyFluentBuilder {
         self.inner = self.inner.set_resource_policy(input);
         self
     }
+    /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy. For example policies, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html">Permissions policy examples</a>.</p>
+    pub fn get_resource_policy(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_policy()
+    }
     /// <p>Specifies whether to block resource-based policies that allow broad access to the secret, for example those that use a wildcard for the principal. By default, public policies aren't blocked.</p>
     pub fn block_public_policy(mut self, input: bool) -> Self {
         self.inner = self.inner.block_public_policy(input);
@@ -156,5 +171,9 @@ impl PutResourcePolicyFluentBuilder {
     pub fn set_block_public_policy(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_block_public_policy(input);
         self
+    }
+    /// <p>Specifies whether to block resource-based policies that allow broad access to the secret, for example those that use a wildcard for the principal. By default, public policies aren't blocked.</p>
+    pub fn get_block_public_policy(&self) -> &::std::option::Option<bool> {
+        self.inner.get_block_public_policy()
     }
 }

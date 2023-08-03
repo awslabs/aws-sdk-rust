@@ -36,6 +36,10 @@ impl CreateResourceDefinitionVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateResourceDefinitionVersion as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_resource_definition_version::builders::CreateResourceDefinitionVersionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl CreateResourceDefinitionVersionFluentBuilder {
         self.inner = self.inner.set_amzn_client_token(input);
         self
     }
+    /// A client token used to correlate requests and responses.
+    pub fn get_amzn_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_amzn_client_token()
+    }
     /// The ID of the resource definition.
     pub fn resource_definition_id(
         mut self,
@@ -121,6 +129,10 @@ impl CreateResourceDefinitionVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_definition_id(input);
         self
+    }
+    /// The ID of the resource definition.
+    pub fn get_resource_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_definition_id()
     }
     /// Appends an item to `Resources`.
     ///
@@ -138,5 +150,9 @@ impl CreateResourceDefinitionVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resources(input);
         self
+    }
+    /// A list of resources.
+    pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Resource>> {
+        self.inner.get_resources()
     }
 }

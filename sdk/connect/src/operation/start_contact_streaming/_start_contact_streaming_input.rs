@@ -69,6 +69,10 @@ impl StartContactStreamingInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
     pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.contact_id = ::std::option::Option::Some(input.into());
@@ -78,6 +82,10 @@ impl StartContactStreamingInputBuilder {
     pub fn set_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contact_id = input;
         self
+    }
+    /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
+    pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_id
     }
     /// <p>The streaming configuration, such as the Amazon SNS streaming endpoint.</p>
     pub fn chat_streaming_configuration(
@@ -95,6 +103,12 @@ impl StartContactStreamingInputBuilder {
         self.chat_streaming_configuration = input;
         self
     }
+    /// <p>The streaming configuration, such as the Amazon SNS streaming endpoint.</p>
+    pub fn get_chat_streaming_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ChatStreamingConfiguration> {
+        &self.chat_streaming_configuration
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -104,6 +118,10 @@ impl StartContactStreamingInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// Consumes the builder and constructs a [`StartContactStreamingInput`](crate::operation::start_contact_streaming::StartContactStreamingInput).
     pub fn build(

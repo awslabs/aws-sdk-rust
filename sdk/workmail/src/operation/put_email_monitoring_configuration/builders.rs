@@ -36,6 +36,10 @@ impl PutEmailMonitoringConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutEmailMonitoringConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_email_monitoring_configuration::builders::PutEmailMonitoringConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl PutEmailMonitoringConfigurationFluentBuilder {
         self.inner = self.inner.set_organization_id(input);
         self
     }
+    /// <p>The ID of the organization for which the email monitoring configuration is set.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organization_id()
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM Role associated with the email monitoring configuration.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -115,6 +123,10 @@ impl PutEmailMonitoringConfigurationFluentBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM Role associated with the email monitoring configuration.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_arn()
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch Log group associated with the email monitoring configuration.</p>
     pub fn log_group_arn(
@@ -131,5 +143,9 @@ impl PutEmailMonitoringConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_log_group_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the CloudWatch Log group associated with the email monitoring configuration.</p>
+    pub fn get_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_log_group_arn()
     }
 }

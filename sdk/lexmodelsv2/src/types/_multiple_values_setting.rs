@@ -48,6 +48,12 @@ impl MultipleValuesSettingBuilder {
         self.allow_multiple_values = input;
         self
     }
+    /// <p>Indicates whether a slot can return multiple values. When <code>true</code>, the slot may return more than one value in a response. When <code>false</code>, the slot returns only a single value.</p>
+    /// <p>Multi-value slots are only available in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>.</p>
+    /// <p>If the <code>allowMutlipleValues</code> is not set, the default value is <code>false</code>.</p>
+    pub fn get_allow_multiple_values(&self) -> &::std::option::Option<bool> {
+        &self.allow_multiple_values
+    }
     /// Consumes the builder and constructs a [`MultipleValuesSetting`](crate::types::MultipleValuesSetting).
     pub fn build(self) -> crate::types::MultipleValuesSetting {
         crate::types::MultipleValuesSetting {

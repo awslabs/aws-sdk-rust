@@ -55,6 +55,12 @@ impl ListMonitoredResourcesFiltersBuilder {
         self.resource_permission = input;
         self
     }
+    /// <p> The permission status of a resource. </p>
+    pub fn get_resource_permission(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourcePermission> {
+        &self.resource_permission
+    }
     /// Appends an item to `resource_type_filters`.
     ///
     /// To override the contents of this collection use [`set_resource_type_filters`](Self::set_resource_type_filters).
@@ -73,6 +79,12 @@ impl ListMonitoredResourcesFiltersBuilder {
     ) -> Self {
         self.resource_type_filters = input;
         self
+    }
+    /// <p> The type of resource that you wish to retrieve, such as log groups. </p>
+    pub fn get_resource_type_filters(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTypeFilter>> {
+        &self.resource_type_filters
     }
     /// Consumes the builder and constructs a [`ListMonitoredResourcesFilters`](crate::types::ListMonitoredResourcesFilters).
     pub fn build(self) -> crate::types::ListMonitoredResourcesFilters {

@@ -37,6 +37,10 @@ impl UpdateRoomFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateRoom as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_room::builders::UpdateRoomInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,6 +123,10 @@ impl UpdateRoomFluentBuilder {
         self.inner = self.inner.set_room_arn(input);
         self
     }
+    /// <p>The ARN of the room to update. </p>
+    pub fn get_room_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_room_arn()
+    }
     /// <p>The updated name for the room.</p>
     pub fn room_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.room_name(input.into());
@@ -129,6 +137,10 @@ impl UpdateRoomFluentBuilder {
         self.inner = self.inner.set_room_name(input);
         self
     }
+    /// <p>The updated name for the room.</p>
+    pub fn get_room_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_room_name()
+    }
     /// <p>The updated description for the room.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -138,6 +150,10 @@ impl UpdateRoomFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>The updated description for the room.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The updated provider calendar ARN for the room.</p>
     pub fn provider_calendar_id(
@@ -155,6 +171,10 @@ impl UpdateRoomFluentBuilder {
         self.inner = self.inner.set_provider_calendar_id(input);
         self
     }
+    /// <p>The updated provider calendar ARN for the room.</p>
+    pub fn get_provider_calendar_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_provider_calendar_id()
+    }
     /// <p>The updated profile ARN for the room.</p>
     pub fn profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.profile_arn(input.into());
@@ -164,5 +184,9 @@ impl UpdateRoomFluentBuilder {
     pub fn set_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_profile_arn(input);
         self
+    }
+    /// <p>The updated profile ARN for the room.</p>
+    pub fn get_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_profile_arn()
     }
 }

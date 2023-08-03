@@ -62,6 +62,10 @@ impl StartFlowOutputBuilder {
         self.flow_arn = input;
         self
     }
+    /// <p> The flow's Amazon Resource Name (ARN). </p>
+    pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.flow_arn
+    }
     /// <p> Indicates the current status of the flow. </p>
     pub fn flow_status(mut self, input: crate::types::FlowStatus) -> Self {
         self.flow_status = ::std::option::Option::Some(input);
@@ -75,6 +79,10 @@ impl StartFlowOutputBuilder {
         self.flow_status = input;
         self
     }
+    /// <p> Indicates the current status of the flow. </p>
+    pub fn get_flow_status(&self) -> &::std::option::Option<crate::types::FlowStatus> {
+        &self.flow_status
+    }
     /// <p> Returns the internal execution ID of an on-demand flow when the flow is started. For scheduled or event-triggered flows, this value is null. </p>
     pub fn execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_id = ::std::option::Option::Some(input.into());
@@ -84,6 +92,10 @@ impl StartFlowOutputBuilder {
     pub fn set_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_id = input;
         self
+    }
+    /// <p> Returns the internal execution ID of an on-demand flow when the flow is started. For scheduled or event-triggered flows, this value is null. </p>
+    pub fn get_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

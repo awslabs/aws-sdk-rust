@@ -50,6 +50,10 @@ impl DeleteRequestValidatorInputBuilder {
         self.rest_api_id = input;
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rest_api_id
+    }
     /// <p>The identifier of the RequestValidator to be deleted.</p>
     pub fn request_validator_id(
         mut self,
@@ -65,6 +69,10 @@ impl DeleteRequestValidatorInputBuilder {
     ) -> Self {
         self.request_validator_id = input;
         self
+    }
+    /// <p>The identifier of the RequestValidator to be deleted.</p>
+    pub fn get_request_validator_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_validator_id
     }
     /// Consumes the builder and constructs a [`DeleteRequestValidatorInput`](crate::operation::delete_request_validator::DeleteRequestValidatorInput).
     pub fn build(

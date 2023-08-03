@@ -39,6 +39,10 @@ impl SignOutUserFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SignOutUser as a reference.
+    pub fn as_input(&self) -> &crate::operation::sign_out_user::builders::SignOutUserInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -121,6 +125,10 @@ impl SignOutUserFluentBuilder {
         self.inner = self.inner.set_fleet_arn(input);
         self
     }
+    /// <p>The ARN of the fleet.</p>
+    pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_fleet_arn()
+    }
     /// <p>The name of the user.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.username(input.into());
@@ -130,5 +138,9 @@ impl SignOutUserFluentBuilder {
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_username(input);
         self
+    }
+    /// <p>The name of the user.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_username()
     }
 }

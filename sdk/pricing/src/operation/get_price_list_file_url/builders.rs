@@ -37,6 +37,12 @@ impl GetPriceListFileUrlFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetPriceListFileUrl as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_price_list_file_url::builders::GetPriceListFileUrlInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +139,10 @@ impl GetPriceListFileUrlFluentBuilder {
         self.inner = self.inner.set_price_list_arn(input);
         self
     }
+    /// <p>The unique identifier that maps to where your Price List files are located. <code>PriceListArn</code> can be obtained from the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html"> <code>ListPriceLists</code> </a> response. </p>
+    pub fn get_price_list_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_price_list_arn()
+    }
     /// <p>The format that you want to retrieve your Price List files in. The <code>FileFormat</code> can be obtained from the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html"> <code>ListPriceLists</code> </a> response. </p>
     pub fn file_format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_format(input.into());
@@ -142,5 +152,9 @@ impl GetPriceListFileUrlFluentBuilder {
     pub fn set_file_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_format(input);
         self
+    }
+    /// <p>The format that you want to retrieve your Price List files in. The <code>FileFormat</code> can be obtained from the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html"> <code>ListPriceLists</code> </a> response. </p>
+    pub fn get_file_format(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_file_format()
     }
 }

@@ -40,6 +40,10 @@ impl OpsResultAttributeBuilder {
         self.type_name = input;
         self
     }
+    /// <p>Name of the data type. Valid value: <code>AWS:OpsItem</code>, <code>AWS:EC2InstanceInformation</code>, <code>AWS:OpsItemTrendline</code>, or <code>AWS:ComplianceSummary</code>.</p>
+    pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.type_name
+    }
     /// Consumes the builder and constructs a [`OpsResultAttribute`](crate::types::OpsResultAttribute).
     pub fn build(self) -> crate::types::OpsResultAttribute {
         crate::types::OpsResultAttribute {

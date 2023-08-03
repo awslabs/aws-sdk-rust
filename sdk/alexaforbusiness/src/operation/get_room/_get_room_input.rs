@@ -39,6 +39,10 @@ impl GetRoomInputBuilder {
         self.room_arn = input;
         self
     }
+    /// <p>The ARN of the room for which to request details. Required.</p>
+    pub fn get_room_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.room_arn
+    }
     /// Consumes the builder and constructs a [`GetRoomInput`](crate::operation::get_room::GetRoomInput).
     pub fn build(
         self,

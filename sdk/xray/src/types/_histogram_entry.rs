@@ -48,6 +48,10 @@ impl HistogramEntryBuilder {
         self.value = input;
         self
     }
+    /// <p>The value of the entry.</p>
+    pub fn get_value(&self) -> &::std::option::Option<f64> {
+        &self.value
+    }
     /// <p>The prevalence of the entry.</p>
     pub fn count(mut self, input: i32) -> Self {
         self.count = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl HistogramEntryBuilder {
     pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count = input;
         self
+    }
+    /// <p>The prevalence of the entry.</p>
+    pub fn get_count(&self) -> &::std::option::Option<i32> {
+        &self.count
     }
     /// Consumes the builder and constructs a [`HistogramEntry`](crate::types::HistogramEntry).
     pub fn build(self) -> crate::types::HistogramEntry {

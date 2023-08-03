@@ -63,6 +63,10 @@ impl DateTimePickerControlDisplayOptionsBuilder {
         self.title_options = input;
         self
     }
+    /// <p>The options to configure the title visibility, name, and font size.</p>
+    pub fn get_title_options(&self) -> &::std::option::Option<crate::types::LabelOptions> {
+        &self.title_options
+    }
     /// <p>Customize how dates are formatted in controls.</p>
     pub fn date_time_format(
         mut self,
@@ -79,6 +83,10 @@ impl DateTimePickerControlDisplayOptionsBuilder {
         self.date_time_format = input;
         self
     }
+    /// <p>Customize how dates are formatted in controls.</p>
+    pub fn get_date_time_format(&self) -> &::std::option::Option<::std::string::String> {
+        &self.date_time_format
+    }
     /// <p>The configuration of info icon label options.</p>
     pub fn info_icon_label_options(
         mut self,
@@ -94,6 +102,12 @@ impl DateTimePickerControlDisplayOptionsBuilder {
     ) -> Self {
         self.info_icon_label_options = input;
         self
+    }
+    /// <p>The configuration of info icon label options.</p>
+    pub fn get_info_icon_label_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::SheetControlInfoIconLabelOptions> {
+        &self.info_icon_label_options
     }
     /// Consumes the builder and constructs a [`DateTimePickerControlDisplayOptions`](crate::types::DateTimePickerControlDisplayOptions).
     pub fn build(self) -> crate::types::DateTimePickerControlDisplayOptions {

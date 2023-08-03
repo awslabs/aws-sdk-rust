@@ -39,6 +39,10 @@ impl DeprecateDomainInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the domain to deprecate.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DeprecateDomainInput`](crate::operation::deprecate_domain::DeprecateDomainInput).
     pub fn build(
         self,

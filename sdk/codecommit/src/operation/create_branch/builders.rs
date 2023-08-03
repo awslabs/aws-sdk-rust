@@ -38,6 +38,10 @@ impl CreateBranchFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateBranch as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_branch::builders::CreateBranchInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl CreateBranchFluentBuilder {
         self.inner = self.inner.set_repository_name(input);
         self
     }
+    /// <p>The name of the repository in which you want to create the new branch.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_repository_name()
+    }
     /// <p>The name of the new branch to create.</p>
     pub fn branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.branch_name(input.into());
@@ -136,6 +144,10 @@ impl CreateBranchFluentBuilder {
         self.inner = self.inner.set_branch_name(input);
         self
     }
+    /// <p>The name of the new branch to create.</p>
+    pub fn get_branch_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_branch_name()
+    }
     /// <p>The ID of the commit to point the new branch to.</p>
     pub fn commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.commit_id(input.into());
@@ -145,5 +157,9 @@ impl CreateBranchFluentBuilder {
     pub fn set_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_commit_id(input);
         self
+    }
+    /// <p>The ID of the commit to point the new branch to.</p>
+    pub fn get_commit_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_commit_id()
     }
 }

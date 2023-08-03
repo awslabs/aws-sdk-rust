@@ -61,6 +61,10 @@ impl ListFunctionsByCodeSigningConfigInputBuilder {
         self.code_signing_config_arn = input;
         self
     }
+    /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
+    pub fn get_code_signing_config_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.code_signing_config_arn
+    }
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marker = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl ListFunctionsByCodeSigningConfigInputBuilder {
         self.marker = input;
         self
     }
+    /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// <p>Maximum number of items to return.</p>
     pub fn max_items(mut self, input: i32) -> Self {
         self.max_items = ::std::option::Option::Some(input);
@@ -80,6 +88,10 @@ impl ListFunctionsByCodeSigningConfigInputBuilder {
     pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_items = input;
         self
+    }
+    /// <p>Maximum number of items to return.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        &self.max_items
     }
     /// Consumes the builder and constructs a [`ListFunctionsByCodeSigningConfigInput`](crate::operation::list_functions_by_code_signing_config::ListFunctionsByCodeSigningConfigInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_functions_by_code_signing_config::ListFunctionsByCodeSigningConfigInput, ::aws_smithy_http::operation::error::BuildError>{

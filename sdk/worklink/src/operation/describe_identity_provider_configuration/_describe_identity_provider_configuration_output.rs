@@ -67,6 +67,12 @@ impl DescribeIdentityProviderConfigurationOutputBuilder {
         self.identity_provider_type = input;
         self
     }
+    /// <p>The type of identity provider.</p>
+    pub fn get_identity_provider_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::IdentityProviderType> {
+        &self.identity_provider_type
+    }
     /// <p>The SAML metadata document uploaded to the user’s identity provider.</p>
     pub fn service_provider_saml_metadata(
         mut self,
@@ -83,6 +89,12 @@ impl DescribeIdentityProviderConfigurationOutputBuilder {
         self.service_provider_saml_metadata = input;
         self
     }
+    /// <p>The SAML metadata document uploaded to the user’s identity provider.</p>
+    pub fn get_service_provider_saml_metadata(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.service_provider_saml_metadata
+    }
     /// <p>The SAML metadata document provided by the user’s identity provider.</p>
     pub fn identity_provider_saml_metadata(
         mut self,
@@ -98,6 +110,12 @@ impl DescribeIdentityProviderConfigurationOutputBuilder {
     ) -> Self {
         self.identity_provider_saml_metadata = input;
         self
+    }
+    /// <p>The SAML metadata document provided by the user’s identity provider.</p>
+    pub fn get_identity_provider_saml_metadata(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.identity_provider_saml_metadata
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

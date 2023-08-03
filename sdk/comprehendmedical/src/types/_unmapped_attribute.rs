@@ -48,6 +48,10 @@ impl UnmappedAttributeBuilder {
         self.r#type = input;
         self
     }
+    /// <p> The type of the unmapped attribute, could be one of the following values: "MEDICATION", "MEDICAL_CONDITION", "ANATOMY", "TEST_AND_TREATMENT_PROCEDURE" or "PROTECTED_HEALTH_INFORMATION". </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::EntityType> {
+        &self.r#type
+    }
     /// <p> The specific attribute that has been extracted but not mapped to an entity. </p>
     pub fn attribute(mut self, input: crate::types::Attribute) -> Self {
         self.attribute = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl UnmappedAttributeBuilder {
     pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::Attribute>) -> Self {
         self.attribute = input;
         self
+    }
+    /// <p> The specific attribute that has been extracted but not mapped to an entity. </p>
+    pub fn get_attribute(&self) -> &::std::option::Option<crate::types::Attribute> {
+        &self.attribute
     }
     /// Consumes the builder and constructs a [`UnmappedAttribute`](crate::types::UnmappedAttribute).
     pub fn build(self) -> crate::types::UnmappedAttribute {

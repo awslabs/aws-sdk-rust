@@ -38,6 +38,12 @@ impl CreatePolicyStoreFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreatePolicyStore as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_policy_store::builders::CreatePolicyStoreInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,12 @@ impl CreatePolicyStoreFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>Specifies a unique, case-sensitive ID that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
+    /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>Specifies the validation setting for this policy store.</p>
     /// <p>Currently, the only valid and required value is <code>Mode</code>.</p> <important>
     /// <p>We recommend that you turn on <code>STRICT</code> mode only after you define a schema. If a schema doesn't exist, then <code>STRICT</code> mode causes any policy to fail validation, and Verified Permissions rejects the policy. You can turn off validation by using the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_UpdatePolicyStore">UpdatePolicyStore</a>. Then, when you have a schema defined, use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_UpdatePolicyStore">UpdatePolicyStore</a> again to turn validation back on.</p>
@@ -150,5 +162,14 @@ impl CreatePolicyStoreFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_validation_settings(input);
         self
+    }
+    /// <p>Specifies the validation setting for this policy store.</p>
+    /// <p>Currently, the only valid and required value is <code>Mode</code>.</p> <important>
+    /// <p>We recommend that you turn on <code>STRICT</code> mode only after you define a schema. If a schema doesn't exist, then <code>STRICT</code> mode causes any policy to fail validation, and Verified Permissions rejects the policy. You can turn off validation by using the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_UpdatePolicyStore">UpdatePolicyStore</a>. Then, when you have a schema defined, use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_UpdatePolicyStore">UpdatePolicyStore</a> again to turn validation back on.</p>
+    /// </important>
+    pub fn get_validation_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::ValidationSettings> {
+        self.inner.get_validation_settings()
     }
 }

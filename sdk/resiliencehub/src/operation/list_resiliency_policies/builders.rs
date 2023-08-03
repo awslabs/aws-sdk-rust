@@ -36,6 +36,13 @@ impl ListResiliencyPoliciesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListResiliencyPolicies as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_resiliency_policies::builders::ListResiliencyPoliciesInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +145,10 @@ impl ListResiliencyPoliciesFluentBuilder {
         self.inner = self.inner.set_policy_name(input);
         self
     }
+    /// <p>The name of the policy</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_name()
+    }
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -148,6 +159,10 @@ impl ListResiliencyPoliciesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>Null, or the token from a previous call to get the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -157,5 +172,9 @@ impl ListResiliencyPoliciesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

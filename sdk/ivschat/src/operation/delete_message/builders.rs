@@ -36,6 +36,12 @@ impl DeleteMessageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteMessage as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_message::builders::DeleteMessageInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl DeleteMessageFluentBuilder {
         self.inner = self.inner.set_room_identifier(input);
         self
     }
+    /// <p>Identifier of the room where the message should be deleted. Currently this must be an ARN. </p>
+    pub fn get_room_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_room_identifier()
+    }
     /// <p>ID of the message to be deleted. This is the <code>Id</code> field in the received message (see <a href="https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/actions-message-subscribe.html"> Message (Subscribe)</a> in the Chat Messaging API).</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
@@ -134,6 +144,10 @@ impl DeleteMessageFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>ID of the message to be deleted. This is the <code>Id</code> field in the received message (see <a href="https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/actions-message-subscribe.html"> Message (Subscribe)</a> in the Chat Messaging API).</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>Reason for deleting the message.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reason(input.into());
@@ -143,5 +157,9 @@ impl DeleteMessageFluentBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reason(input);
         self
+    }
+    /// <p>Reason for deleting the message.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_reason()
     }
 }

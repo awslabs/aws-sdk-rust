@@ -36,6 +36,12 @@ impl StopDeploymentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StopDeployment as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::stop_deployment::builders::StopDeploymentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +130,10 @@ impl StopDeploymentFluentBuilder {
         self.inner = self.inner.set_deployment_id(input);
         self
     }
+    /// <p> The unique ID of a deployment. </p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_deployment_id()
+    }
     /// <p> Indicates, when a deployment is stopped, whether instances that have been updated should be rolled back to the previous version of the application revision. </p>
     pub fn auto_rollback_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.auto_rollback_enabled(input);
@@ -133,5 +143,9 @@ impl StopDeploymentFluentBuilder {
     pub fn set_auto_rollback_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_auto_rollback_enabled(input);
         self
+    }
+    /// <p> Indicates, when a deployment is stopped, whether instances that have been updated should be rolled back to the previous version of the application revision. </p>
+    pub fn get_auto_rollback_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_auto_rollback_enabled()
     }
 }

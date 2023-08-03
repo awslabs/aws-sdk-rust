@@ -104,6 +104,18 @@ impl MetadataCatalogDetailBuilder {
         self.catalog_type = input;
         self
     }
+    /// <p>The type of metadata catalog that Amazon AppFlow used for the associated flow run. This parameter returns the following value:</p>
+    /// <dl>
+    /// <dt>
+    /// GLUE
+    /// </dt>
+    /// <dd>
+    /// <p>The metadata catalog is provided by the Glue Data Catalog. Glue includes the Glue Data Catalog as a component.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_catalog_type(&self) -> &::std::option::Option<crate::types::CatalogType> {
+        &self.catalog_type
+    }
     /// <p>The name of the table that stores the metadata for the associated flow run. The table stores metadata that represents the data that the flow transferred. Amazon AppFlow stores the table in the metadata catalog.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
@@ -113,6 +125,10 @@ impl MetadataCatalogDetailBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
+    }
+    /// <p>The name of the table that stores the metadata for the associated flow run. The table stores metadata that represents the data that the flow transferred. Amazon AppFlow stores the table in the metadata catalog.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
     }
     /// <p>Describes the status of the attempt from Amazon AppFlow to register the metadata table with the metadata catalog. Amazon AppFlow creates or updates this table for the associated flow run.</p>
     pub fn table_registration_output(mut self, input: crate::types::RegistrationOutput) -> Self {
@@ -126,6 +142,12 @@ impl MetadataCatalogDetailBuilder {
     ) -> Self {
         self.table_registration_output = input;
         self
+    }
+    /// <p>Describes the status of the attempt from Amazon AppFlow to register the metadata table with the metadata catalog. Amazon AppFlow creates or updates this table for the associated flow run.</p>
+    pub fn get_table_registration_output(
+        &self,
+    ) -> &::std::option::Option<crate::types::RegistrationOutput> {
+        &self.table_registration_output
     }
     /// <p>Describes the status of the attempt from Amazon AppFlow to register the data partitions with the metadata catalog. The data partitions organize the flow output into a hierarchical path, such as a folder path in an S3 bucket. Amazon AppFlow creates the partitions (if they don't already exist) based on your flow configuration.</p>
     pub fn partition_registration_output(
@@ -142,6 +164,12 @@ impl MetadataCatalogDetailBuilder {
     ) -> Self {
         self.partition_registration_output = input;
         self
+    }
+    /// <p>Describes the status of the attempt from Amazon AppFlow to register the data partitions with the metadata catalog. The data partitions organize the flow output into a hierarchical path, such as a folder path in an S3 bucket. Amazon AppFlow creates the partitions (if they don't already exist) based on your flow configuration.</p>
+    pub fn get_partition_registration_output(
+        &self,
+    ) -> &::std::option::Option<crate::types::RegistrationOutput> {
+        &self.partition_registration_output
     }
     /// Consumes the builder and constructs a [`MetadataCatalogDetail`](crate::types::MetadataCatalogDetail).
     pub fn build(self) -> crate::types::MetadataCatalogDetail {

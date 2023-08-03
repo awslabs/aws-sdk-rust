@@ -55,6 +55,10 @@ impl UntagDeliveryStreamInputBuilder {
         self.delivery_stream_name = input;
         self
     }
+    /// <p>The name of the delivery stream.</p>
+    pub fn get_delivery_stream_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.delivery_stream_name
+    }
     /// Appends an item to `tag_keys`.
     ///
     /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
@@ -73,6 +77,10 @@ impl UntagDeliveryStreamInputBuilder {
     ) -> Self {
         self.tag_keys = input;
         self
+    }
+    /// <p>A list of tag keys. Each corresponding tag is removed from the delivery stream.</p>
+    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tag_keys
     }
     /// Consumes the builder and constructs a [`UntagDeliveryStreamInput`](crate::operation::untag_delivery_stream::UntagDeliveryStreamInput).
     pub fn build(

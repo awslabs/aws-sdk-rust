@@ -83,6 +83,12 @@ impl ProfileConfigurationBuilder {
         self.dataset_statistics_configuration = input;
         self
     }
+    /// <p>Configuration for inter-column evaluations. Configuration can be used to select evaluations and override parameters of evaluations. When configuration is undefined, the profile job will run all supported inter-column evaluations. </p>
+    pub fn get_dataset_statistics_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::StatisticsConfiguration> {
+        &self.dataset_statistics_configuration
+    }
     /// Appends an item to `profile_columns`.
     ///
     /// To override the contents of this collection use [`set_profile_columns`](Self::set_profile_columns).
@@ -101,6 +107,12 @@ impl ProfileConfigurationBuilder {
     ) -> Self {
         self.profile_columns = input;
         self
+    }
+    /// <p>List of column selectors. ProfileColumns can be used to select columns from the dataset. When ProfileColumns is undefined, the profile job will profile all supported columns. </p>
+    pub fn get_profile_columns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnSelector>> {
+        &self.profile_columns
     }
     /// Appends an item to `column_statistics_configurations`.
     ///
@@ -124,6 +136,12 @@ impl ProfileConfigurationBuilder {
         self.column_statistics_configurations = input;
         self
     }
+    /// <p>List of configurations for column evaluations. ColumnStatisticsConfigurations are used to select evaluations and override parameters of evaluations for particular columns. When ColumnStatisticsConfigurations is undefined, the profile job will profile all supported columns and run all supported evaluations. </p>
+    pub fn get_column_statistics_configurations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnStatisticsConfiguration>> {
+        &self.column_statistics_configurations
+    }
     /// <p>Configuration of entity detection for a profile job. When undefined, entity detection is disabled.</p>
     pub fn entity_detector_configuration(
         mut self,
@@ -139,6 +157,12 @@ impl ProfileConfigurationBuilder {
     ) -> Self {
         self.entity_detector_configuration = input;
         self
+    }
+    /// <p>Configuration of entity detection for a profile job. When undefined, entity detection is disabled.</p>
+    pub fn get_entity_detector_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::EntityDetectorConfiguration> {
+        &self.entity_detector_configuration
     }
     /// Consumes the builder and constructs a [`ProfileConfiguration`](crate::types::ProfileConfiguration).
     pub fn build(self) -> crate::types::ProfileConfiguration {

@@ -36,6 +36,10 @@ impl CreateWirelessGatewayTaskFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateWirelessGatewayTask as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_wireless_gateway_task::builders::CreateWirelessGatewayTaskInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl CreateWirelessGatewayTaskFluentBuilder {
         self.inner = self.inner.set_id(input);
         self
     }
+    /// <p>The ID of the resource to update.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
+    }
     /// <p>The ID of the WirelessGatewayTaskDefinition.</p>
     pub fn wireless_gateway_task_definition_id(
         mut self,
@@ -141,5 +149,11 @@ impl CreateWirelessGatewayTaskFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_wireless_gateway_task_definition_id(input);
         self
+    }
+    /// <p>The ID of the WirelessGatewayTaskDefinition.</p>
+    pub fn get_wireless_gateway_task_definition_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_wireless_gateway_task_definition_id()
     }
 }

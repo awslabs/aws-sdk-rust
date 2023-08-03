@@ -45,6 +45,12 @@ impl CaptchaConfigBuilder {
         self.immunity_time_property = input;
         self
     }
+    /// <p>Determines how long a <code>CAPTCHA</code> timestamp in the token remains valid after the client successfully solves a <code>CAPTCHA</code> puzzle. </p>
+    pub fn get_immunity_time_property(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImmunityTimeProperty> {
+        &self.immunity_time_property
+    }
     /// Consumes the builder and constructs a [`CaptchaConfig`](crate::types::CaptchaConfig).
     pub fn build(self) -> crate::types::CaptchaConfig {
         crate::types::CaptchaConfig {

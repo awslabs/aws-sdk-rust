@@ -37,6 +37,10 @@ impl DeleteSMSSandboxPhoneNumberFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteSMSSandboxPhoneNumber as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_sms_sandbox_phone_number::builders::DeleteSmsSandboxPhoneNumberInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,5 +130,9 @@ impl DeleteSMSSandboxPhoneNumberFluentBuilder {
     pub fn set_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_phone_number(input);
         self
+    }
+    /// <p>The destination phone number to delete.</p>
+    pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_phone_number()
     }
 }

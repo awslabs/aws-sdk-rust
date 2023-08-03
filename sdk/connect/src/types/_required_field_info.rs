@@ -43,6 +43,10 @@ impl RequiredFieldInfoBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier for the field.</p>
+    pub fn get_id(&self) -> &::std::option::Option<crate::types::TaskTemplateFieldIdentifier> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`RequiredFieldInfo`](crate::types::RequiredFieldInfo).
     pub fn build(self) -> crate::types::RequiredFieldInfo {
         crate::types::RequiredFieldInfo { id: self.id }

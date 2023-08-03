@@ -36,6 +36,10 @@ impl ListThingRegistrationTaskReportsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListThingRegistrationTaskReports as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_thing_registration_task_reports::builders::ListThingRegistrationTaskReportsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl ListThingRegistrationTaskReportsFluentBuilder {
         self.inner = self.inner.set_task_id(input);
         self
     }
+    /// <p>The id of the task.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_task_id()
+    }
     /// <p>The type of task report.</p>
     pub fn report_type(mut self, input: crate::types::ReportType) -> Self {
         self.inner = self.inner.report_type(input);
@@ -119,6 +127,10 @@ impl ListThingRegistrationTaskReportsFluentBuilder {
         self.inner = self.inner.set_report_type(input);
         self
     }
+    /// <p>The type of task report.</p>
+    pub fn get_report_type(&self) -> &::std::option::Option<crate::types::ReportType> {
+        self.inner.get_report_type()
+    }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -129,6 +141,10 @@ impl ListThingRegistrationTaskReportsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of results to return per request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -138,5 +154,9 @@ impl ListThingRegistrationTaskReportsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return per request.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

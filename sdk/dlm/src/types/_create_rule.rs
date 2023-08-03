@@ -86,6 +86,11 @@ impl CreateRuleBuilder {
         self.location = input;
         self
     }
+    /// <p> <b>[Snapshot policies only]</b> Specifies the destination for snapshots created by the policy. To create snapshots in the same Region as the source resource, specify <code>CLOUD</code>. To create snapshots on the same Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this parameter, <code>CLOUD</code> is used by default.</p>
+    /// <p>If the policy targets resources in an Amazon Web Services Region, then you must create snapshots in the same Region as the source resource. If the policy targets resources on an Outpost, then you can create snapshots on the same Outpost as the source resource, or in the Region of that Outpost.</p>
+    pub fn get_location(&self) -> &::std::option::Option<crate::types::LocationValues> {
+        &self.location
+    }
     /// <p>The interval between snapshots. The supported values are 1, 2, 3, 4, 6, 8, 12, and 24.</p>
     pub fn interval(mut self, input: i32) -> Self {
         self.interval = ::std::option::Option::Some(input);
@@ -95,6 +100,10 @@ impl CreateRuleBuilder {
     pub fn set_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.interval = input;
         self
+    }
+    /// <p>The interval between snapshots. The supported values are 1, 2, 3, 4, 6, 8, 12, and 24.</p>
+    pub fn get_interval(&self) -> &::std::option::Option<i32> {
+        &self.interval
     }
     /// <p>The interval unit.</p>
     pub fn interval_unit(mut self, input: crate::types::IntervalUnitValues) -> Self {
@@ -108,6 +117,10 @@ impl CreateRuleBuilder {
     ) -> Self {
         self.interval_unit = input;
         self
+    }
+    /// <p>The interval unit.</p>
+    pub fn get_interval_unit(&self) -> &::std::option::Option<crate::types::IntervalUnitValues> {
+        &self.interval_unit
     }
     /// Appends an item to `times`.
     ///
@@ -130,6 +143,11 @@ impl CreateRuleBuilder {
         self.times = input;
         self
     }
+    /// <p>The time, in UTC, to start the operation. The supported format is hh:mm.</p>
+    /// <p>The operation occurs within a one-hour window following the specified time. If you do not specify a time, Amazon Data Lifecycle Manager selects a time within the next 24 hours.</p>
+    pub fn get_times(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.times
+    }
     /// <p>The schedule, as a Cron expression. The schedule interval must be between 1 hour and 1 year. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron expressions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
     pub fn cron_expression(
         mut self,
@@ -145,6 +163,10 @@ impl CreateRuleBuilder {
     ) -> Self {
         self.cron_expression = input;
         self
+    }
+    /// <p>The schedule, as a Cron expression. The schedule interval must be between 1 hour and 1 year. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron expressions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    pub fn get_cron_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cron_expression
     }
     /// Consumes the builder and constructs a [`CreateRule`](crate::types::CreateRule).
     pub fn build(self) -> crate::types::CreateRule {

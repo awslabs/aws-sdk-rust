@@ -36,6 +36,12 @@ impl ListInstancesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListInstances as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_instances::builders::ListInstancesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl ListInstancesFluentBuilder {
         self.inner = self.inner.set_cluster_id(input);
         self
     }
+    /// <p>The identifier of the cluster for which to list the instances.</p>
+    pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_id()
+    }
     /// <p>The identifier of the instance group for which to list the instances.</p>
     pub fn instance_group_id(
         mut self,
@@ -144,6 +154,10 @@ impl ListInstancesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_instance_group_id(input);
         self
+    }
+    /// <p>The identifier of the instance group for which to list the instances.</p>
+    pub fn get_instance_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_group_id()
     }
     /// Appends an item to `InstanceGroupTypes`.
     ///
@@ -162,6 +176,12 @@ impl ListInstancesFluentBuilder {
         self.inner = self.inner.set_instance_group_types(input);
         self
     }
+    /// <p>The type of instance group for which to list the instances.</p>
+    pub fn get_instance_group_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupType>> {
+        self.inner.get_instance_group_types()
+    }
     /// <p>The unique identifier of the instance fleet.</p>
     pub fn instance_fleet_id(
         mut self,
@@ -178,6 +198,10 @@ impl ListInstancesFluentBuilder {
         self.inner = self.inner.set_instance_fleet_id(input);
         self
     }
+    /// <p>The unique identifier of the instance fleet.</p>
+    pub fn get_instance_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_fleet_id()
+    }
     /// <p>The node type of the instance fleet. For example MASTER, CORE, or TASK.</p>
     pub fn instance_fleet_type(mut self, input: crate::types::InstanceFleetType) -> Self {
         self.inner = self.inner.instance_fleet_type(input);
@@ -190,6 +214,12 @@ impl ListInstancesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_instance_fleet_type(input);
         self
+    }
+    /// <p>The node type of the instance fleet. For example MASTER, CORE, or TASK.</p>
+    pub fn get_instance_fleet_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceFleetType> {
+        self.inner.get_instance_fleet_type()
     }
     /// Appends an item to `InstanceStates`.
     ///
@@ -208,6 +238,12 @@ impl ListInstancesFluentBuilder {
         self.inner = self.inner.set_instance_states(input);
         self
     }
+    /// <p>A list of instance states that will filter the instances returned with this request.</p>
+    pub fn get_instance_states(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceState>> {
+        self.inner.get_instance_states()
+    }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -217,5 +253,9 @@ impl ListInstancesFluentBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
+    }
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
     }
 }

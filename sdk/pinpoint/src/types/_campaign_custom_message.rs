@@ -40,6 +40,10 @@ impl CampaignCustomMessageBuilder {
         self.data = input;
         self
     }
+    /// <p>The raw, JSON-formatted string to use as the payload for the message. The maximum size is 5 KB.</p>
+    pub fn get_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data
+    }
     /// Consumes the builder and constructs a [`CampaignCustomMessage`](crate::types::CampaignCustomMessage).
     pub fn build(self) -> crate::types::CampaignCustomMessage {
         crate::types::CampaignCustomMessage { data: self.data }

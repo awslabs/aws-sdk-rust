@@ -61,6 +61,10 @@ impl CancelLegalHoldInputBuilder {
         self.legal_hold_id = input;
         self
     }
+    /// <p>Legal hold ID required to remove the specified legal hold on a recovery point.</p>
+    pub fn get_legal_hold_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.legal_hold_id
+    }
     /// <p>String describing the reason for removing the legal hold.</p>
     pub fn cancel_description(
         mut self,
@@ -77,6 +81,10 @@ impl CancelLegalHoldInputBuilder {
         self.cancel_description = input;
         self
     }
+    /// <p>String describing the reason for removing the legal hold.</p>
+    pub fn get_cancel_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cancel_description
+    }
     /// <p>The integer amount in days specifying amount of days after this API operation to remove legal hold.</p>
     pub fn retain_record_in_days(mut self, input: i64) -> Self {
         self.retain_record_in_days = ::std::option::Option::Some(input);
@@ -86,6 +94,10 @@ impl CancelLegalHoldInputBuilder {
     pub fn set_retain_record_in_days(mut self, input: ::std::option::Option<i64>) -> Self {
         self.retain_record_in_days = input;
         self
+    }
+    /// <p>The integer amount in days specifying amount of days after this API operation to remove legal hold.</p>
+    pub fn get_retain_record_in_days(&self) -> &::std::option::Option<i64> {
+        &self.retain_record_in_days
     }
     /// Consumes the builder and constructs a [`CancelLegalHoldInput`](crate::operation::cancel_legal_hold::CancelLegalHoldInput).
     pub fn build(

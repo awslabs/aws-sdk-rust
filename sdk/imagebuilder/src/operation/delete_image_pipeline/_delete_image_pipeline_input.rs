@@ -47,6 +47,10 @@ impl DeleteImagePipelineInputBuilder {
         self.image_pipeline_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the image pipeline to delete.</p>
+    pub fn get_image_pipeline_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.image_pipeline_arn
+    }
     /// Consumes the builder and constructs a [`DeleteImagePipelineInput`](crate::operation::delete_image_pipeline::DeleteImagePipelineInput).
     pub fn build(
         self,

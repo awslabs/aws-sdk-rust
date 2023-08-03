@@ -40,6 +40,10 @@ impl InterfaceRequestBuilder {
         self.name = input;
         self
     }
+    /// The name of the VPC interface.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`InterfaceRequest`](crate::types::InterfaceRequest).
     pub fn build(self) -> crate::types::InterfaceRequest {
         crate::types::InterfaceRequest { name: self.name }

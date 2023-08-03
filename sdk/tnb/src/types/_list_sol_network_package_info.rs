@@ -131,6 +131,10 @@ impl ListSolNetworkPackageInfoBuilder {
         self.id = input;
         self
     }
+    /// <p>ID of the individual network package.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>Network package ARN.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -140,6 +144,10 @@ impl ListSolNetworkPackageInfoBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>Network package ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>Onboarding state of the network service descriptor in the network package.</p>
     pub fn nsd_onboarding_state(mut self, input: crate::types::NsdOnboardingState) -> Self {
@@ -154,6 +162,12 @@ impl ListSolNetworkPackageInfoBuilder {
         self.nsd_onboarding_state = input;
         self
     }
+    /// <p>Onboarding state of the network service descriptor in the network package.</p>
+    pub fn get_nsd_onboarding_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::NsdOnboardingState> {
+        &self.nsd_onboarding_state
+    }
     /// <p>Operational state of the network service descriptor in the network package.</p>
     pub fn nsd_operational_state(mut self, input: crate::types::NsdOperationalState) -> Self {
         self.nsd_operational_state = ::std::option::Option::Some(input);
@@ -166,6 +180,12 @@ impl ListSolNetworkPackageInfoBuilder {
     ) -> Self {
         self.nsd_operational_state = input;
         self
+    }
+    /// <p>Operational state of the network service descriptor in the network package.</p>
+    pub fn get_nsd_operational_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::NsdOperationalState> {
+        &self.nsd_operational_state
     }
     /// <p>Usage state of the network service descriptor in the network package.</p>
     pub fn nsd_usage_state(mut self, input: crate::types::NsdUsageState) -> Self {
@@ -180,6 +200,10 @@ impl ListSolNetworkPackageInfoBuilder {
         self.nsd_usage_state = input;
         self
     }
+    /// <p>Usage state of the network service descriptor in the network package.</p>
+    pub fn get_nsd_usage_state(&self) -> &::std::option::Option<crate::types::NsdUsageState> {
+        &self.nsd_usage_state
+    }
     /// <p>ID of the network service descriptor on which the network package is based.</p>
     pub fn nsd_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nsd_id = ::std::option::Option::Some(input.into());
@@ -189,6 +213,10 @@ impl ListSolNetworkPackageInfoBuilder {
     pub fn set_nsd_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.nsd_id = input;
         self
+    }
+    /// <p>ID of the network service descriptor on which the network package is based.</p>
+    pub fn get_nsd_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nsd_id
     }
     /// <p>Name of the onboarded network service descriptor in the network package.</p>
     pub fn nsd_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -200,6 +228,10 @@ impl ListSolNetworkPackageInfoBuilder {
         self.nsd_name = input;
         self
     }
+    /// <p>Name of the onboarded network service descriptor in the network package.</p>
+    pub fn get_nsd_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nsd_name
+    }
     /// <p>Version of the onboarded network service descriptor in the network package.</p>
     pub fn nsd_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nsd_version = ::std::option::Option::Some(input.into());
@@ -210,6 +242,10 @@ impl ListSolNetworkPackageInfoBuilder {
         self.nsd_version = input;
         self
     }
+    /// <p>Version of the onboarded network service descriptor in the network package.</p>
+    pub fn get_nsd_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nsd_version
+    }
     /// <p>Designer of the onboarded network service descriptor in the network package.</p>
     pub fn nsd_designer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.nsd_designer = ::std::option::Option::Some(input.into());
@@ -219,6 +255,10 @@ impl ListSolNetworkPackageInfoBuilder {
     pub fn set_nsd_designer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.nsd_designer = input;
         self
+    }
+    /// <p>Designer of the onboarded network service descriptor in the network package.</p>
+    pub fn get_nsd_designer(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nsd_designer
     }
     /// <p>Identifies a network service descriptor in a version independent manner.</p>
     pub fn nsd_invariant_id(
@@ -235,6 +275,10 @@ impl ListSolNetworkPackageInfoBuilder {
     ) -> Self {
         self.nsd_invariant_id = input;
         self
+    }
+    /// <p>Identifies a network service descriptor in a version independent manner.</p>
+    pub fn get_nsd_invariant_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nsd_invariant_id
     }
     /// Appends an item to `vnf_pkg_ids`.
     ///
@@ -255,6 +299,12 @@ impl ListSolNetworkPackageInfoBuilder {
         self.vnf_pkg_ids = input;
         self
     }
+    /// <p>Identifies the function package for the function package descriptor referenced by the onboarded network package.</p>
+    pub fn get_vnf_pkg_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.vnf_pkg_ids
+    }
     /// <p>The metadata of the network package.</p>
     pub fn metadata(mut self, input: crate::types::ListSolNetworkPackageMetadata) -> Self {
         self.metadata = ::std::option::Option::Some(input);
@@ -267,6 +317,12 @@ impl ListSolNetworkPackageInfoBuilder {
     ) -> Self {
         self.metadata = input;
         self
+    }
+    /// <p>The metadata of the network package.</p>
+    pub fn get_metadata(
+        &self,
+    ) -> &::std::option::Option<crate::types::ListSolNetworkPackageMetadata> {
+        &self.metadata
     }
     /// Consumes the builder and constructs a [`ListSolNetworkPackageInfo`](crate::types::ListSolNetworkPackageInfo).
     pub fn build(self) -> crate::types::ListSolNetworkPackageInfo {

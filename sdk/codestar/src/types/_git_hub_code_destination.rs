@@ -99,6 +99,10 @@ impl GitHubCodeDestinationBuilder {
         self.name = input;
         self
     }
+    /// <p>Name of the GitHub repository to be created in AWS CodeStar.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Description for the GitHub repository to be created in AWS CodeStar. This description displays in GitHub after the repository is created.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -108,6 +112,10 @@ impl GitHubCodeDestinationBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>Description for the GitHub repository to be created in AWS CodeStar. This description displays in GitHub after the repository is created.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The type of GitHub repository to be created in AWS CodeStar. Valid values are User or Organization.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -119,6 +127,10 @@ impl GitHubCodeDestinationBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of GitHub repository to be created in AWS CodeStar. Valid values are User or Organization.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// <p>The GitHub username for the owner of the GitHub repository to be created in AWS CodeStar. If this repository should be owned by a GitHub organization, provide its name.</p>
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner = ::std::option::Option::Some(input.into());
@@ -128,6 +140,10 @@ impl GitHubCodeDestinationBuilder {
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner = input;
         self
+    }
+    /// <p>The GitHub username for the owner of the GitHub repository to be created in AWS CodeStar. If this repository should be owned by a GitHub organization, provide its name.</p>
+    pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner
     }
     /// <p>Whether the GitHub repository is to be a private repository.</p>
     pub fn private_repository(mut self, input: bool) -> Self {
@@ -139,6 +155,10 @@ impl GitHubCodeDestinationBuilder {
         self.private_repository = input;
         self
     }
+    /// <p>Whether the GitHub repository is to be a private repository.</p>
+    pub fn get_private_repository(&self) -> &::std::option::Option<bool> {
+        &self.private_repository
+    }
     /// <p>Whether to enable issues for the GitHub repository.</p>
     pub fn issues_enabled(mut self, input: bool) -> Self {
         self.issues_enabled = ::std::option::Option::Some(input);
@@ -149,6 +169,10 @@ impl GitHubCodeDestinationBuilder {
         self.issues_enabled = input;
         self
     }
+    /// <p>Whether to enable issues for the GitHub repository.</p>
+    pub fn get_issues_enabled(&self) -> &::std::option::Option<bool> {
+        &self.issues_enabled
+    }
     /// <p>The GitHub user's personal access token for the GitHub repository.</p>
     pub fn token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.token = ::std::option::Option::Some(input.into());
@@ -158,6 +182,10 @@ impl GitHubCodeDestinationBuilder {
     pub fn set_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.token = input;
         self
+    }
+    /// <p>The GitHub user's personal access token for the GitHub repository.</p>
+    pub fn get_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.token
     }
     /// Consumes the builder and constructs a [`GitHubCodeDestination`](crate::types::GitHubCodeDestination).
     pub fn build(self) -> crate::types::GitHubCodeDestination {

@@ -111,6 +111,10 @@ impl GetImportJobOutputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>A string that represents the import job ID.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>The destination of the import job.</p>
     pub fn import_destination(mut self, input: crate::types::ImportDestination) -> Self {
         self.import_destination = ::std::option::Option::Some(input);
@@ -123,6 +127,12 @@ impl GetImportJobOutputBuilder {
     ) -> Self {
         self.import_destination = input;
         self
+    }
+    /// <p>The destination of the import job.</p>
+    pub fn get_import_destination(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImportDestination> {
+        &self.import_destination
     }
     /// <p>The data source of the import job.</p>
     pub fn import_data_source(mut self, input: crate::types::ImportDataSource) -> Self {
@@ -137,6 +147,10 @@ impl GetImportJobOutputBuilder {
         self.import_data_source = input;
         self
     }
+    /// <p>The data source of the import job.</p>
+    pub fn get_import_data_source(&self) -> &::std::option::Option<crate::types::ImportDataSource> {
+        &self.import_data_source
+    }
     /// <p>The failure details about an import job.</p>
     pub fn failure_info(mut self, input: crate::types::FailureInfo) -> Self {
         self.failure_info = ::std::option::Option::Some(input);
@@ -150,6 +164,10 @@ impl GetImportJobOutputBuilder {
         self.failure_info = input;
         self
     }
+    /// <p>The failure details about an import job.</p>
+    pub fn get_failure_info(&self) -> &::std::option::Option<crate::types::FailureInfo> {
+        &self.failure_info
+    }
     /// <p>The status of the import job.</p>
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
         self.job_status = ::std::option::Option::Some(input);
@@ -159,6 +177,10 @@ impl GetImportJobOutputBuilder {
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
         self.job_status = input;
         self
+    }
+    /// <p>The status of the import job.</p>
+    pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
+        &self.job_status
     }
     /// <p>The time stamp of when the import job was created.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -173,6 +195,10 @@ impl GetImportJobOutputBuilder {
         self.created_timestamp = input;
         self
     }
+    /// <p>The time stamp of when the import job was created.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
+    }
     /// <p>The time stamp of when the import job was completed.</p>
     pub fn completed_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.completed_timestamp = ::std::option::Option::Some(input);
@@ -186,6 +212,10 @@ impl GetImportJobOutputBuilder {
         self.completed_timestamp = input;
         self
     }
+    /// <p>The time stamp of when the import job was completed.</p>
+    pub fn get_completed_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.completed_timestamp
+    }
     /// <p>The current number of records processed.</p>
     pub fn processed_records_count(mut self, input: i32) -> Self {
         self.processed_records_count = ::std::option::Option::Some(input);
@@ -196,6 +226,10 @@ impl GetImportJobOutputBuilder {
         self.processed_records_count = input;
         self
     }
+    /// <p>The current number of records processed.</p>
+    pub fn get_processed_records_count(&self) -> &::std::option::Option<i32> {
+        &self.processed_records_count
+    }
     /// <p>The number of records that failed processing because of invalid input or other reasons.</p>
     pub fn failed_records_count(mut self, input: i32) -> Self {
         self.failed_records_count = ::std::option::Option::Some(input);
@@ -205,6 +239,10 @@ impl GetImportJobOutputBuilder {
     pub fn set_failed_records_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.failed_records_count = input;
         self
+    }
+    /// <p>The number of records that failed processing because of invalid input or other reasons.</p>
+    pub fn get_failed_records_count(&self) -> &::std::option::Option<i32> {
+        &self.failed_records_count
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

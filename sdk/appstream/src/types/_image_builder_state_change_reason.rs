@@ -51,6 +51,12 @@ impl ImageBuilderStateChangeReasonBuilder {
         self.code = input;
         self
     }
+    /// <p>The state change reason code.</p>
+    pub fn get_code(
+        &self,
+    ) -> &::std::option::Option<crate::types::ImageBuilderStateChangeReasonCode> {
+        &self.code
+    }
     /// <p>The state change reason message.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -60,6 +66,10 @@ impl ImageBuilderStateChangeReasonBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>The state change reason message.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`ImageBuilderStateChangeReason`](crate::types::ImageBuilderStateChangeReason).
     pub fn build(self) -> crate::types::ImageBuilderStateChangeReason {

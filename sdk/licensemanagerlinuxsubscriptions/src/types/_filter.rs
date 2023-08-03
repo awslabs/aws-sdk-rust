@@ -56,6 +56,10 @@ impl FilterBuilder {
         self.name = input;
         self
     }
+    /// <p>The type of name to filter by.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -75,6 +79,10 @@ impl FilterBuilder {
         self.values = input;
         self
     }
+    /// <p>One or more values for the name to filter by.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
+    }
     /// <p>An operator for filtering results.</p>
     pub fn operator(mut self, input: crate::types::Operator) -> Self {
         self.operator = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl FilterBuilder {
     pub fn set_operator(mut self, input: ::std::option::Option<crate::types::Operator>) -> Self {
         self.operator = input;
         self
+    }
+    /// <p>An operator for filtering results.</p>
+    pub fn get_operator(&self) -> &::std::option::Option<crate::types::Operator> {
+        &self.operator
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
     pub fn build(self) -> crate::types::Filter {

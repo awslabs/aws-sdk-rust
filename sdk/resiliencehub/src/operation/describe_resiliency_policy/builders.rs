@@ -36,6 +36,13 @@ impl DescribeResiliencyPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeResiliencyPolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_resiliency_policy::builders::DescribeResiliencyPolicyInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +132,9 @@ impl DescribeResiliencyPolicyFluentBuilder {
     pub fn set_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+    pub fn get_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_arn()
     }
 }

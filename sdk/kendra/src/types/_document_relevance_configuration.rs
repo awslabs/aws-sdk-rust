@@ -48,6 +48,10 @@ impl DocumentRelevanceConfigurationBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the index field.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>Provides information for tuning the relevance of a field in a search. When a query includes terms that match the field, the results are given a boost in the response based on these tuning parameters.</p>
     pub fn relevance(mut self, input: crate::types::Relevance) -> Self {
         self.relevance = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl DocumentRelevanceConfigurationBuilder {
     pub fn set_relevance(mut self, input: ::std::option::Option<crate::types::Relevance>) -> Self {
         self.relevance = input;
         self
+    }
+    /// <p>Provides information for tuning the relevance of a field in a search. When a query includes terms that match the field, the results are given a boost in the response based on these tuning parameters.</p>
+    pub fn get_relevance(&self) -> &::std::option::Option<crate::types::Relevance> {
+        &self.relevance
     }
     /// Consumes the builder and constructs a [`DocumentRelevanceConfiguration`](crate::types::DocumentRelevanceConfiguration).
     pub fn build(self) -> crate::types::DocumentRelevanceConfiguration {

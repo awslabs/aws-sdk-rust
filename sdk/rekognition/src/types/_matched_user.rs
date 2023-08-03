@@ -48,6 +48,10 @@ impl MatchedUserBuilder {
         self.user_id = input;
         self
     }
+    /// <p>A provided ID for the UserID. Unique within the collection.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
+    }
     /// <p>The status of the user matched to a provided FaceID.</p>
     pub fn user_status(mut self, input: crate::types::UserStatus) -> Self {
         self.user_status = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl MatchedUserBuilder {
     ) -> Self {
         self.user_status = input;
         self
+    }
+    /// <p>The status of the user matched to a provided FaceID.</p>
+    pub fn get_user_status(&self) -> &::std::option::Option<crate::types::UserStatus> {
+        &self.user_status
     }
     /// Consumes the builder and constructs a [`MatchedUser`](crate::types::MatchedUser).
     pub fn build(self) -> crate::types::MatchedUser {

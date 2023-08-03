@@ -114,6 +114,10 @@ impl ReportInstanceStatusInputBuilder {
         self.description = input;
         self
     }
+    /// <p>Descriptive text about the health state of your instance.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -123,6 +127,10 @@ impl ReportInstanceStatusInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// <p>The time at which the reported instance health state ended.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -136,6 +144,10 @@ impl ReportInstanceStatusInputBuilder {
     ) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>The time at which the reported instance health state ended.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// Appends an item to `instances`.
     ///
@@ -155,6 +167,10 @@ impl ReportInstanceStatusInputBuilder {
     ) -> Self {
         self.instances = input;
         self
+    }
+    /// <p>The instances.</p>
+    pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.instances
     }
     /// Appends an item to `reason_codes`.
     ///
@@ -197,6 +213,23 @@ impl ReportInstanceStatusInputBuilder {
         self.reason_codes = input;
         self
     }
+    /// <p>The reason codes that describe the health state of your instance.</p>
+    /// <ul>
+    /// <li> <p> <code>instance-stuck-in-state</code>: My instance is stuck in a state.</p> </li>
+    /// <li> <p> <code>unresponsive</code>: My instance is unresponsive.</p> </li>
+    /// <li> <p> <code>not-accepting-credentials</code>: My instance is not accepting my credentials.</p> </li>
+    /// <li> <p> <code>password-not-available</code>: A password is not available for my instance.</p> </li>
+    /// <li> <p> <code>performance-network</code>: My instance is experiencing performance problems that I believe are network related.</p> </li>
+    /// <li> <p> <code>performance-instance-store</code>: My instance is experiencing performance problems that I believe are related to the instance stores.</p> </li>
+    /// <li> <p> <code>performance-ebs-volume</code>: My instance is experiencing performance problems that I believe are related to an EBS volume.</p> </li>
+    /// <li> <p> <code>performance-other</code>: My instance is experiencing performance problems.</p> </li>
+    /// <li> <p> <code>other</code>: [explain using the description parameter]</p> </li>
+    /// </ul>
+    pub fn get_reason_codes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ReportInstanceReasonCodes>> {
+        &self.reason_codes
+    }
     /// <p>The time at which the reported instance health state began.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -210,6 +243,10 @@ impl ReportInstanceStatusInputBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The time at which the reported instance health state began.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>The status of all instances listed.</p>
     pub fn status(mut self, input: crate::types::ReportStatusType) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -222,6 +259,10 @@ impl ReportInstanceStatusInputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of all instances listed.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ReportStatusType> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`ReportInstanceStatusInput`](crate::operation::report_instance_status::ReportInstanceStatusInput).
     pub fn build(

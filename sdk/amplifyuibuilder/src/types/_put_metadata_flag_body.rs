@@ -40,6 +40,10 @@ impl PutMetadataFlagBodyBuilder {
         self.new_value = input;
         self
     }
+    /// <p>The new information to store.</p>
+    pub fn get_new_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.new_value
+    }
     /// Consumes the builder and constructs a [`PutMetadataFlagBody`](crate::types::PutMetadataFlagBody).
     pub fn build(self) -> crate::types::PutMetadataFlagBody {
         crate::types::PutMetadataFlagBody {

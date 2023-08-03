@@ -82,6 +82,10 @@ impl AnomalousLogGroupBuilder {
         self.log_group_name = input;
         self
     }
+    /// <p> The name of the CloudWatch log group. </p>
+    pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group_name
+    }
     /// <p> The time the anomalous log events began. The impact start time indicates the time of the first log anomaly event that occurs. </p>
     pub fn impact_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.impact_start_time = ::std::option::Option::Some(input);
@@ -94,6 +98,10 @@ impl AnomalousLogGroupBuilder {
     ) -> Self {
         self.impact_start_time = input;
         self
+    }
+    /// <p> The time the anomalous log events began. The impact start time indicates the time of the first log anomaly event that occurs. </p>
+    pub fn get_impact_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.impact_start_time
     }
     /// <p> The time the anomalous log events stopped. </p>
     pub fn impact_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -108,6 +116,10 @@ impl AnomalousLogGroupBuilder {
         self.impact_end_time = input;
         self
     }
+    /// <p> The time the anomalous log events stopped. </p>
+    pub fn get_impact_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.impact_end_time
+    }
     /// <p> The number of log lines that were scanned for anomalous log events. </p>
     pub fn number_of_log_lines_scanned(mut self, input: i32) -> Self {
         self.number_of_log_lines_scanned = ::std::option::Option::Some(input);
@@ -117,6 +129,10 @@ impl AnomalousLogGroupBuilder {
     pub fn set_number_of_log_lines_scanned(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_log_lines_scanned = input;
         self
+    }
+    /// <p> The number of log lines that were scanned for anomalous log events. </p>
+    pub fn get_number_of_log_lines_scanned(&self) -> &::std::option::Option<i32> {
+        &self.number_of_log_lines_scanned
     }
     /// Appends an item to `log_anomaly_showcases`.
     ///
@@ -136,6 +152,12 @@ impl AnomalousLogGroupBuilder {
     ) -> Self {
         self.log_anomaly_showcases = input;
         self
+    }
+    /// <p> The log anomalies in the log group. Each log anomaly displayed represents a cluster of similar anomalous log events. </p>
+    pub fn get_log_anomaly_showcases(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LogAnomalyShowcase>> {
+        &self.log_anomaly_showcases
     }
     /// Consumes the builder and constructs a [`AnomalousLogGroup`](crate::types::AnomalousLogGroup).
     pub fn build(self) -> crate::types::AnomalousLogGroup {

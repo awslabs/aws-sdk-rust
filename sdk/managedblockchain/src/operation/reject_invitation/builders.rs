@@ -37,6 +37,12 @@ impl RejectInvitationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RejectInvitation as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::reject_invitation::builders::RejectInvitationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +138,9 @@ impl RejectInvitationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_invitation_id(input);
         self
+    }
+    /// <p>The unique identifier of the invitation to reject.</p>
+    pub fn get_invitation_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_invitation_id()
     }
 }

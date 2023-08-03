@@ -41,6 +41,10 @@ impl DescribePackageImportJobInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The job's ID.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// Consumes the builder and constructs a [`DescribePackageImportJobInput`](crate::operation::describe_package_import_job::DescribePackageImportJobInput).
     pub fn build(
         self,

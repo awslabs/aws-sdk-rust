@@ -38,6 +38,12 @@ impl DescribeReceiptRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeReceiptRule as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_receipt_rule::builders::DescribeReceiptRuleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +140,10 @@ impl DescribeReceiptRuleFluentBuilder {
         self.inner = self.inner.set_rule_set_name(input);
         self
     }
+    /// <p>The name of the receipt rule set that the receipt rule belongs to.</p>
+    pub fn get_rule_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rule_set_name()
+    }
     /// <p>The name of the receipt rule.</p>
     pub fn rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rule_name(input.into());
@@ -143,5 +153,9 @@ impl DescribeReceiptRuleFluentBuilder {
     pub fn set_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_rule_name(input);
         self
+    }
+    /// <p>The name of the receipt rule.</p>
+    pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rule_name()
     }
 }

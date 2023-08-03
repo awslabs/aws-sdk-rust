@@ -63,6 +63,12 @@ impl GetCostEstimateOutputBuilder {
         self.resources_budget_estimate = input;
         self
     }
+    /// <p>Returns the estimate's forecasted cost or usage.</p>
+    pub fn get_resources_budget_estimate(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceBudgetEstimate>> {
+        &self.resources_budget_estimate
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

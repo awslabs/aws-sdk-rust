@@ -97,6 +97,10 @@ impl DescribeDocumentVersionsInputBuilder {
         self.authentication_token = input;
         self
     }
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authentication_token
+    }
     /// <p>The ID of the document.</p>
     pub fn document_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_id = ::std::option::Option::Some(input.into());
@@ -106,6 +110,10 @@ impl DescribeDocumentVersionsInputBuilder {
     pub fn set_document_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_id = input;
         self
+    }
+    /// <p>The ID of the document.</p>
+    pub fn get_document_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_id
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -117,6 +125,10 @@ impl DescribeDocumentVersionsInputBuilder {
         self.marker = input;
         self
     }
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// <p>The maximum number of versions to return with this call.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -126,6 +138,10 @@ impl DescribeDocumentVersionsInputBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
+    }
+    /// <p>The maximum number of versions to return with this call.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// <p>A comma-separated list of values. Specify "INITIALIZED" to include incomplete versions.</p>
     pub fn include(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -137,6 +153,10 @@ impl DescribeDocumentVersionsInputBuilder {
         self.include = input;
         self
     }
+    /// <p>A comma-separated list of values. Specify "INITIALIZED" to include incomplete versions.</p>
+    pub fn get_include(&self) -> &::std::option::Option<::std::string::String> {
+        &self.include
+    }
     /// <p>Specify "SOURCE" to include initialized versions and a URL for the source document.</p>
     pub fn fields(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fields = ::std::option::Option::Some(input.into());
@@ -146,6 +166,10 @@ impl DescribeDocumentVersionsInputBuilder {
     pub fn set_fields(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fields = input;
         self
+    }
+    /// <p>Specify "SOURCE" to include initialized versions and a URL for the source document.</p>
+    pub fn get_fields(&self) -> &::std::option::Option<::std::string::String> {
+        &self.fields
     }
     /// Consumes the builder and constructs a [`DescribeDocumentVersionsInput`](crate::operation::describe_document_versions::DescribeDocumentVersionsInput).
     pub fn build(

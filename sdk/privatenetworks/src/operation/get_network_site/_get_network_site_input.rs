@@ -45,6 +45,10 @@ impl GetNetworkSiteInputBuilder {
         self.network_site_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the network site.</p>
+    pub fn get_network_site_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_site_arn
+    }
     /// Consumes the builder and constructs a [`GetNetworkSiteInput`](crate::operation::get_network_site::GetNetworkSiteInput).
     pub fn build(
         self,

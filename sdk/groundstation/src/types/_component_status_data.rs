@@ -94,6 +94,10 @@ impl ComponentStatusDataBuilder {
         self.component_type = input;
         self
     }
+    /// <p>The Component type.</p>
+    pub fn get_component_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_type
+    }
     /// <p>Capability ARN of the component.</p>
     pub fn capability_arn(
         mut self,
@@ -110,6 +114,10 @@ impl ComponentStatusDataBuilder {
         self.capability_arn = input;
         self
     }
+    /// <p>Capability ARN of the component.</p>
+    pub fn get_capability_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.capability_arn
+    }
     /// <p>Component status.</p>
     pub fn status(mut self, input: crate::types::AgentStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -119,6 +127,10 @@ impl ComponentStatusDataBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AgentStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Component status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AgentStatus> {
+        &self.status
     }
     /// <p>Bytes sent by the component.</p>
     pub fn bytes_sent(mut self, input: i64) -> Self {
@@ -130,6 +142,10 @@ impl ComponentStatusDataBuilder {
         self.bytes_sent = input;
         self
     }
+    /// <p>Bytes sent by the component.</p>
+    pub fn get_bytes_sent(&self) -> &::std::option::Option<i64> {
+        &self.bytes_sent
+    }
     /// <p>Bytes received by the component.</p>
     pub fn bytes_received(mut self, input: i64) -> Self {
         self.bytes_received = ::std::option::Option::Some(input);
@@ -139,6 +155,10 @@ impl ComponentStatusDataBuilder {
     pub fn set_bytes_received(mut self, input: ::std::option::Option<i64>) -> Self {
         self.bytes_received = input;
         self
+    }
+    /// <p>Bytes received by the component.</p>
+    pub fn get_bytes_received(&self) -> &::std::option::Option<i64> {
+        &self.bytes_received
     }
     /// <p>Packets dropped by component.</p>
     pub fn packets_dropped(mut self, input: i64) -> Self {
@@ -150,6 +170,10 @@ impl ComponentStatusDataBuilder {
         self.packets_dropped = input;
         self
     }
+    /// <p>Packets dropped by component.</p>
+    pub fn get_packets_dropped(&self) -> &::std::option::Option<i64> {
+        &self.packets_dropped
+    }
     /// <p>Dataflow UUID associated with the component.</p>
     pub fn dataflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataflow_id = ::std::option::Option::Some(input.into());
@@ -159,6 +183,10 @@ impl ComponentStatusDataBuilder {
     pub fn set_dataflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataflow_id = input;
         self
+    }
+    /// <p>Dataflow UUID associated with the component.</p>
+    pub fn get_dataflow_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataflow_id
     }
     /// Consumes the builder and constructs a [`ComponentStatusData`](crate::types::ComponentStatusData).
     pub fn build(self) -> crate::types::ComponentStatusData {

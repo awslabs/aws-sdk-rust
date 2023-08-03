@@ -51,6 +51,10 @@ impl PrometheusBuilder {
         self.jmx_exporter = input;
         self
     }
+    /// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
+    pub fn get_jmx_exporter(&self) -> &::std::option::Option<crate::types::JmxExporter> {
+        &self.jmx_exporter
+    }
     /// <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
     pub fn node_exporter(mut self, input: crate::types::NodeExporter) -> Self {
         self.node_exporter = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl PrometheusBuilder {
     ) -> Self {
         self.node_exporter = input;
         self
+    }
+    /// <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
+    pub fn get_node_exporter(&self) -> &::std::option::Option<crate::types::NodeExporter> {
+        &self.node_exporter
     }
     /// Consumes the builder and constructs a [`Prometheus`](crate::types::Prometheus).
     pub fn build(self) -> crate::types::Prometheus {

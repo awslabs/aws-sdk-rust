@@ -50,6 +50,10 @@ impl CreateDataSourceOutputBuilder {
         self.data_source = input;
         self
     }
+    /// <p>The <code>DataSource</code> object.</p>
+    pub fn get_data_source(&self) -> &::std::option::Option<crate::types::DataSource> {
+        &self.data_source
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

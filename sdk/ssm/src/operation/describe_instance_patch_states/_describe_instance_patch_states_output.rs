@@ -67,6 +67,12 @@ impl DescribeInstancePatchStatesOutputBuilder {
         self.instance_patch_states = input;
         self
     }
+    /// <p>The high-level patch state for the requested managed nodes.</p>
+    pub fn get_instance_patch_states(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstancePatchState>> {
+        &self.instance_patch_states
+    }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -76,6 +82,10 @@ impl DescribeInstancePatchStatesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

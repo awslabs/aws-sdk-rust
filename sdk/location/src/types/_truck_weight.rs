@@ -62,6 +62,13 @@ impl TruckWeightBuilder {
         self.total = input;
         self
     }
+    /// <p>The total weight of the truck. </p>
+    /// <ul>
+    /// <li> <p>For example, <code>3500</code>.</p> </li>
+    /// </ul>
+    pub fn get_total(&self) -> &::std::option::Option<f64> {
+        &self.total
+    }
     /// <p>The unit of measurement to use for the truck weight.</p>
     /// <p>Default Value: <code>Kilograms</code> </p>
     pub fn unit(mut self, input: crate::types::VehicleWeightUnit) -> Self {
@@ -76,6 +83,11 @@ impl TruckWeightBuilder {
     ) -> Self {
         self.unit = input;
         self
+    }
+    /// <p>The unit of measurement to use for the truck weight.</p>
+    /// <p>Default Value: <code>Kilograms</code> </p>
+    pub fn get_unit(&self) -> &::std::option::Option<crate::types::VehicleWeightUnit> {
+        &self.unit
     }
     /// Consumes the builder and constructs a [`TruckWeight`](crate::types::TruckWeight).
     pub fn build(self) -> crate::types::TruckWeight {

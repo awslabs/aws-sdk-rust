@@ -80,6 +80,10 @@ impl RdsMetadataBuilder {
         self.database = input;
         self
     }
+    /// <p>The database details required to connect to an Amazon RDS.</p>
+    pub fn get_database(&self) -> &::std::option::Option<crate::types::RdsDatabase> {
+        &self.database
+    }
     /// <p>The username to be used by Amazon ML to connect to database on an Amazon RDS instance. The username should have sufficient permissions to execute an <code>RDSSelectSqlQuery</code> query.</p>
     pub fn database_user_name(
         mut self,
@@ -95,6 +99,10 @@ impl RdsMetadataBuilder {
     ) -> Self {
         self.database_user_name = input;
         self
+    }
+    /// <p>The username to be used by Amazon ML to connect to database on an Amazon RDS instance. The username should have sufficient permissions to execute an <code>RDSSelectSqlQuery</code> query.</p>
+    pub fn get_database_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_user_name
     }
     /// <p>The SQL query that is supplied during <code>CreateDataSourceFromRDS</code>. Returns only if <code>Verbose</code> is true in <code>GetDataSourceInput</code>. </p>
     pub fn select_sql_query(
@@ -112,6 +120,10 @@ impl RdsMetadataBuilder {
         self.select_sql_query = input;
         self
     }
+    /// <p>The SQL query that is supplied during <code>CreateDataSourceFromRDS</code>. Returns only if <code>Verbose</code> is true in <code>GetDataSourceInput</code>. </p>
+    pub fn get_select_sql_query(&self) -> &::std::option::Option<::std::string::String> {
+        &self.select_sql_query
+    }
     /// <p>The role (DataPipelineDefaultResourceRole) assumed by an Amazon EC2 instance to carry out the copy task from Amazon RDS to Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p>
     pub fn resource_role(
         mut self,
@@ -128,6 +140,10 @@ impl RdsMetadataBuilder {
         self.resource_role = input;
         self
     }
+    /// <p>The role (DataPipelineDefaultResourceRole) assumed by an Amazon EC2 instance to carry out the copy task from Amazon RDS to Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p>
+    pub fn get_resource_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_role
+    }
     /// <p>The role (DataPipelineDefaultRole) assumed by the Data Pipeline service to monitor the progress of the copy task from Amazon RDS to Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p>
     pub fn service_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_role = ::std::option::Option::Some(input.into());
@@ -137,6 +153,10 @@ impl RdsMetadataBuilder {
     pub fn set_service_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_role = input;
         self
+    }
+    /// <p>The role (DataPipelineDefaultRole) assumed by the Data Pipeline service to monitor the progress of the copy task from Amazon RDS to Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p>
+    pub fn get_service_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_role
     }
     /// <p>The ID of the Data Pipeline instance that is used to carry to copy data from Amazon RDS to Amazon S3. You can use the ID to find details about the instance in the Data Pipeline console.</p>
     pub fn data_pipeline_id(
@@ -153,6 +173,10 @@ impl RdsMetadataBuilder {
     ) -> Self {
         self.data_pipeline_id = input;
         self
+    }
+    /// <p>The ID of the Data Pipeline instance that is used to carry to copy data from Amazon RDS to Amazon S3. You can use the ID to find details about the instance in the Data Pipeline console.</p>
+    pub fn get_data_pipeline_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_pipeline_id
     }
     /// Consumes the builder and constructs a [`RdsMetadata`](crate::types::RdsMetadata).
     pub fn build(self) -> crate::types::RdsMetadata {

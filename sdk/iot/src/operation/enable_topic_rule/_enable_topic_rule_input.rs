@@ -40,6 +40,10 @@ impl EnableTopicRuleInputBuilder {
         self.rule_name = input;
         self
     }
+    /// <p>The name of the topic rule to enable.</p>
+    pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_name
+    }
     /// Consumes the builder and constructs a [`EnableTopicRuleInput`](crate::operation::enable_topic_rule::EnableTopicRuleInput).
     pub fn build(
         self,

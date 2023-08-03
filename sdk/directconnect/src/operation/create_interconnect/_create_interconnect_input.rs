@@ -86,6 +86,10 @@ impl CreateInterconnectInputBuilder {
         self.interconnect_name = input;
         self
     }
+    /// <p>The name of the interconnect.</p>
+    pub fn get_interconnect_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.interconnect_name
+    }
     /// <p>The port bandwidth, in Gbps. The possible values are 1 and 10.</p>
     pub fn bandwidth(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bandwidth = ::std::option::Option::Some(input.into());
@@ -95,6 +99,10 @@ impl CreateInterconnectInputBuilder {
     pub fn set_bandwidth(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bandwidth = input;
         self
+    }
+    /// <p>The port bandwidth, in Gbps. The possible values are 1 and 10.</p>
+    pub fn get_bandwidth(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bandwidth
     }
     /// <p>The location of the interconnect.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -106,6 +114,10 @@ impl CreateInterconnectInputBuilder {
         self.location = input;
         self
     }
+    /// <p>The location of the interconnect.</p>
+    pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.location
+    }
     /// <p>The ID of the LAG.</p>
     pub fn lag_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lag_id = ::std::option::Option::Some(input.into());
@@ -115,6 +127,10 @@ impl CreateInterconnectInputBuilder {
     pub fn set_lag_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lag_id = input;
         self
+    }
+    /// <p>The ID of the LAG.</p>
+    pub fn get_lag_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lag_id
     }
     /// Appends an item to `tags`.
     ///
@@ -135,6 +151,10 @@ impl CreateInterconnectInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags to associate with the interconnect.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The name of the service provider associated with the interconnect.</p>
     pub fn provider_name(
         mut self,
@@ -150,6 +170,10 @@ impl CreateInterconnectInputBuilder {
     ) -> Self {
         self.provider_name = input;
         self
+    }
+    /// <p>The name of the service provider associated with the interconnect.</p>
+    pub fn get_provider_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provider_name
     }
     /// Consumes the builder and constructs a [`CreateInterconnectInput`](crate::operation::create_interconnect::CreateInterconnectInput).
     pub fn build(

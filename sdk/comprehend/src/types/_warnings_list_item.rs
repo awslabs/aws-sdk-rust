@@ -60,6 +60,10 @@ impl WarningsListItemBuilder {
         self.page = input;
         self
     }
+    /// <p>Page number in the input document.</p>
+    pub fn get_page(&self) -> &::std::option::Option<i32> {
+        &self.page
+    }
     /// <p>The type of warning.</p>
     pub fn warn_code(mut self, input: crate::types::PageBasedWarningCode) -> Self {
         self.warn_code = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl WarningsListItemBuilder {
         self.warn_code = input;
         self
     }
+    /// <p>The type of warning.</p>
+    pub fn get_warn_code(&self) -> &::std::option::Option<crate::types::PageBasedWarningCode> {
+        &self.warn_code
+    }
     /// <p>Text message associated with the warning.</p>
     pub fn warn_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.warn_message = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl WarningsListItemBuilder {
     pub fn set_warn_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.warn_message = input;
         self
+    }
+    /// <p>Text message associated with the warning.</p>
+    pub fn get_warn_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.warn_message
     }
     /// Consumes the builder and constructs a [`WarningsListItem`](crate::types::WarningsListItem).
     pub fn build(self) -> crate::types::WarningsListItem {

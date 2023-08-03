@@ -90,6 +90,10 @@ impl CreateDeploymentConfigInputBuilder {
         self.deployment_config_name = input;
         self
     }
+    /// <p>The name of the deployment configuration to create.</p>
+    pub fn get_deployment_config_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_config_name
+    }
     /// <p>The minimum number of healthy instances that should be available at any time during the deployment. There are two parameters expected in the input: type and value.</p>
     /// <p>The type parameter takes either of the following values:</p>
     /// <ul>
@@ -117,6 +121,19 @@ impl CreateDeploymentConfigInputBuilder {
         self.minimum_healthy_hosts = input;
         self
     }
+    /// <p>The minimum number of healthy instances that should be available at any time during the deployment. There are two parameters expected in the input: type and value.</p>
+    /// <p>The type parameter takes either of the following values:</p>
+    /// <ul>
+    /// <li> <p>HOST_COUNT: The value parameter represents the minimum number of healthy instances as an absolute value.</p> </li>
+    /// <li> <p>FLEET_PERCENT: The value parameter represents the minimum number of healthy instances as a percentage of the total number of instances in the deployment. If you specify FLEET_PERCENT, at the start of the deployment, CodeDeploy converts the percentage to the equivalent number of instances and rounds up fractional instances.</p> </li>
+    /// </ul>
+    /// <p>The value parameter takes an integer.</p>
+    /// <p>For example, to set a minimum of 95% healthy instance, specify a type of FLEET_PERCENT and a value of 95.</p>
+    pub fn get_minimum_healthy_hosts(
+        &self,
+    ) -> &::std::option::Option<crate::types::MinimumHealthyHosts> {
+        &self.minimum_healthy_hosts
+    }
     /// <p>The configuration that specifies how the deployment traffic is routed.</p>
     pub fn traffic_routing_config(mut self, input: crate::types::TrafficRoutingConfig) -> Self {
         self.traffic_routing_config = ::std::option::Option::Some(input);
@@ -130,6 +147,12 @@ impl CreateDeploymentConfigInputBuilder {
         self.traffic_routing_config = input;
         self
     }
+    /// <p>The configuration that specifies how the deployment traffic is routed.</p>
+    pub fn get_traffic_routing_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::TrafficRoutingConfig> {
+        &self.traffic_routing_config
+    }
     /// <p>The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
     pub fn compute_platform(mut self, input: crate::types::ComputePlatform) -> Self {
         self.compute_platform = ::std::option::Option::Some(input);
@@ -142,6 +165,10 @@ impl CreateDeploymentConfigInputBuilder {
     ) -> Self {
         self.compute_platform = input;
         self
+    }
+    /// <p>The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
+    pub fn get_compute_platform(&self) -> &::std::option::Option<crate::types::ComputePlatform> {
+        &self.compute_platform
     }
     /// Consumes the builder and constructs a [`CreateDeploymentConfigInput`](crate::operation::create_deployment_config::CreateDeploymentConfigInput).
     pub fn build(

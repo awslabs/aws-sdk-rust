@@ -76,6 +76,10 @@ impl DescribeIndexOutputBuilder {
         self.index_name = input;
         self
     }
+    /// <p>The index name.</p>
+    pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.index_name
+    }
     /// <p>The index status.</p>
     pub fn index_status(mut self, input: crate::types::IndexStatus) -> Self {
         self.index_status = ::std::option::Option::Some(input);
@@ -88,6 +92,10 @@ impl DescribeIndexOutputBuilder {
     ) -> Self {
         self.index_status = input;
         self
+    }
+    /// <p>The index status.</p>
+    pub fn get_index_status(&self) -> &::std::option::Option<crate::types::IndexStatus> {
+        &self.index_status
     }
     /// <p>Contains a value that specifies the type of indexing performed. Valid values are:</p>
     /// <ul>
@@ -112,6 +120,17 @@ impl DescribeIndexOutputBuilder {
     pub fn set_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema = input;
         self
+    }
+    /// <p>Contains a value that specifies the type of indexing performed. Valid values are:</p>
+    /// <ul>
+    /// <li> <p>REGISTRY – Your thing index contains only registry data.</p> </li>
+    /// <li> <p>REGISTRY_AND_SHADOW - Your thing index contains registry data and shadow data.</p> </li>
+    /// <li> <p>REGISTRY_AND_CONNECTIVITY_STATUS - Your thing index contains registry data and thing connectivity status data.</p> </li>
+    /// <li> <p>REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index contains registry data, shadow data, and thing connectivity status data.</p> </li>
+    /// <li> <p>MULTI_INDEXING_MODE - Your thing index contains multiple data sources. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_GetIndexingConfiguration.html">GetIndexingConfiguration</a>.</p> </li>
+    /// </ul>
+    pub fn get_schema(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -38,6 +38,13 @@ impl UpdateNotificationRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateNotificationRule as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_notification_rule::builders::UpdateNotificationRuleInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +135,10 @@ impl UpdateNotificationRuleFluentBuilder {
         self.inner = self.inner.set_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
+    }
     /// <p>The name of the notification rule.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -137,6 +148,10 @@ impl UpdateNotificationRuleFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the notification rule.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The status of the notification rule. Valid statuses include enabled (sending notifications) or disabled (not sending notifications).</p>
     pub fn status(mut self, input: crate::types::NotificationRuleStatus) -> Self {
@@ -150,6 +165,10 @@ impl UpdateNotificationRuleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_status(input);
         self
+    }
+    /// <p>The status of the notification rule. Valid statuses include enabled (sending notifications) or disabled (not sending notifications).</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::NotificationRuleStatus> {
+        self.inner.get_status()
     }
     /// Appends an item to `EventTypeIds`.
     ///
@@ -171,6 +190,12 @@ impl UpdateNotificationRuleFluentBuilder {
         self.inner = self.inner.set_event_type_ids(input);
         self
     }
+    /// <p>A list of event types associated with this notification rule. For a complete list of event types and IDs, see <a href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification concepts</a> in the <i>Developer Tools Console User Guide</i>.</p>
+    pub fn get_event_type_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_event_type_ids()
+    }
     /// Appends an item to `Targets`.
     ///
     /// To override the contents of this collection use [`set_targets`](Self::set_targets).
@@ -188,6 +213,10 @@ impl UpdateNotificationRuleFluentBuilder {
         self.inner = self.inner.set_targets(input);
         self
     }
+    /// <p>The address and type of the targets to receive notifications from this notification rule.</p>
+    pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Target>> {
+        self.inner.get_targets()
+    }
     /// <p>The level of detail to include in the notifications for this resource. BASIC will include only the contents of the event as it would appear in Amazon CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
     pub fn detail_type(mut self, input: crate::types::DetailType) -> Self {
         self.inner = self.inner.detail_type(input);
@@ -200,5 +229,9 @@ impl UpdateNotificationRuleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_detail_type(input);
         self
+    }
+    /// <p>The level of detail to include in the notifications for this resource. BASIC will include only the contents of the event as it would appear in Amazon CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
+    pub fn get_detail_type(&self) -> &::std::option::Option<crate::types::DetailType> {
+        self.inner.get_detail_type()
     }
 }

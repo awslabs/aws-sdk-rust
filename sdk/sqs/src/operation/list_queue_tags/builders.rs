@@ -38,6 +38,12 @@ impl ListQueueTagsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListQueueTags as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_queue_tags::builders::ListQueueTagsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -119,5 +125,9 @@ impl ListQueueTagsFluentBuilder {
     pub fn set_queue_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_queue_url(input);
         self
+    }
+    /// <p>The URL of the queue.</p>
+    pub fn get_queue_url(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_queue_url()
     }
 }

@@ -61,6 +61,10 @@ impl FailoverGlobalReplicationGroupInputBuilder {
         self.global_replication_group_id = input;
         self
     }
+    /// <p>The name of the Global datastore</p>
+    pub fn get_global_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.global_replication_group_id
+    }
     /// <p>The Amazon region of the primary cluster of the Global datastore</p>
     pub fn primary_region(
         mut self,
@@ -77,6 +81,10 @@ impl FailoverGlobalReplicationGroupInputBuilder {
         self.primary_region = input;
         self
     }
+    /// <p>The Amazon region of the primary cluster of the Global datastore</p>
+    pub fn get_primary_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.primary_region
+    }
     /// <p>The name of the primary replication group</p>
     pub fn primary_replication_group_id(
         mut self,
@@ -92,6 +100,12 @@ impl FailoverGlobalReplicationGroupInputBuilder {
     ) -> Self {
         self.primary_replication_group_id = input;
         self
+    }
+    /// <p>The name of the primary replication group</p>
+    pub fn get_primary_replication_group_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.primary_replication_group_id
     }
     /// Consumes the builder and constructs a [`FailoverGlobalReplicationGroupInput`](crate::operation::failover_global_replication_group::FailoverGlobalReplicationGroupInput).
     pub fn build(

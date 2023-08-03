@@ -64,6 +64,10 @@ impl ScheduleAdBreakBuilder {
         self.approximate_duration_seconds = input;
         self
     }
+    /// <p>The approximate duration of the ad break, in seconds.</p>
+    pub fn get_approximate_duration_seconds(&self) -> &::std::option::Option<i64> {
+        &self.approximate_duration_seconds
+    }
     /// <p>The approximate time that the ad will start playing.</p>
     pub fn approximate_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.approximate_start_time = ::std::option::Option::Some(input);
@@ -76,6 +80,12 @@ impl ScheduleAdBreakBuilder {
     ) -> Self {
         self.approximate_start_time = input;
         self
+    }
+    /// <p>The approximate time that the ad will start playing.</p>
+    pub fn get_approximate_start_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.approximate_start_time
     }
     /// <p>The name of the source location containing the VOD source used for the ad break.</p>
     pub fn source_location_name(
@@ -93,6 +103,10 @@ impl ScheduleAdBreakBuilder {
         self.source_location_name = input;
         self
     }
+    /// <p>The name of the source location containing the VOD source used for the ad break.</p>
+    pub fn get_source_location_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_location_name
+    }
     /// <p>The name of the VOD source used for the ad break.</p>
     pub fn vod_source_name(
         mut self,
@@ -108,6 +122,10 @@ impl ScheduleAdBreakBuilder {
     ) -> Self {
         self.vod_source_name = input;
         self
+    }
+    /// <p>The name of the VOD source used for the ad break.</p>
+    pub fn get_vod_source_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vod_source_name
     }
     /// Consumes the builder and constructs a [`ScheduleAdBreak`](crate::types::ScheduleAdBreak).
     pub fn build(self) -> crate::types::ScheduleAdBreak {

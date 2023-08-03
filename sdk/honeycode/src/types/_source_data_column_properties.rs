@@ -40,6 +40,10 @@ impl SourceDataColumnPropertiesBuilder {
         self.column_index = input;
         self
     }
+    /// <p>The index of the column in the input file.</p>
+    pub fn get_column_index(&self) -> &::std::option::Option<i32> {
+        &self.column_index
+    }
     /// Consumes the builder and constructs a [`SourceDataColumnProperties`](crate::types::SourceDataColumnProperties).
     pub fn build(self) -> crate::types::SourceDataColumnProperties {
         crate::types::SourceDataColumnProperties {

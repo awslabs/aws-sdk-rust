@@ -51,6 +51,12 @@ impl TreeMapFieldWellsBuilder {
         self.tree_map_aggregated_field_wells = input;
         self
     }
+    /// <p>The aggregated field wells of a tree map.</p>
+    pub fn get_tree_map_aggregated_field_wells(
+        &self,
+    ) -> &::std::option::Option<crate::types::TreeMapAggregatedFieldWells> {
+        &self.tree_map_aggregated_field_wells
+    }
     /// Consumes the builder and constructs a [`TreeMapFieldWells`](crate::types::TreeMapFieldWells).
     pub fn build(self) -> crate::types::TreeMapFieldWells {
         crate::types::TreeMapFieldWells {

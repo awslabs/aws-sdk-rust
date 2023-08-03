@@ -125,6 +125,16 @@ impl StartSupportDataExportInputBuilder {
         self.data_set_type = input;
         self
     }
+    /// <p> Specifies the data set type to be written to the output csv file. The data set types customer_support_contacts_data and test_customer_support_contacts_data both result in a csv file containing the following fields: Product Id, Product Code, Customer Guid, Subscription Guid, Subscription Start Date, Organization, AWS Account Id, Given Name, Surname, Telephone Number, Email, Title, Country Code, ZIP Code, Operation Type, and Operation Time. </p>
+    /// <p> </p>
+    /// <ul>
+    /// <li><i>customer_support_contacts_data</i> Customer support contact data. The data set will contain all changes (Creates, Updates, and Deletes) to customer support contact data from the date specified in the from_date parameter.</li>
+    /// <li><i>test_customer_support_contacts_data</i> An example data set containing static test data in the same format as customer_support_contacts_data</li>
+    /// </ul>
+    /// <p></p>
+    pub fn get_data_set_type(&self) -> &::std::option::Option<crate::types::SupportDataSetType> {
+        &self.data_set_type
+    }
     /// The start date from which to retrieve the data set in UTC. This parameter only affects the customer_support_contacts_data data set type.
     pub fn from_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.from_date = ::std::option::Option::Some(input);
@@ -137,6 +147,10 @@ impl StartSupportDataExportInputBuilder {
     ) -> Self {
         self.from_date = input;
         self
+    }
+    /// The start date from which to retrieve the data set in UTC. This parameter only affects the customer_support_contacts_data data set type.
+    pub fn get_from_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.from_date
     }
     /// The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided AWS services.
     pub fn role_name_arn(
@@ -154,6 +168,10 @@ impl StartSupportDataExportInputBuilder {
         self.role_name_arn = input;
         self
     }
+    /// The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided AWS services.
+    pub fn get_role_name_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_name_arn
+    }
     /// The name (friendly name, not ARN) of the destination S3 bucket.
     pub fn destination_s3_bucket_name(
         mut self,
@@ -169,6 +187,10 @@ impl StartSupportDataExportInputBuilder {
     ) -> Self {
         self.destination_s3_bucket_name = input;
         self
+    }
+    /// The name (friendly name, not ARN) of the destination S3 bucket.
+    pub fn get_destination_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_s3_bucket_name
     }
     /// (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file systems. For example, if given the bucket name "mybucket" and the prefix "myprefix/mydatasets", the output file "outputfile" would be published to "s3://mybucket/myprefix/mydatasets/outputfile". If the prefix directory structure does not exist, it will be created. If no prefix is provided, the data set will be published to the S3 bucket root.
     pub fn destination_s3_prefix(
@@ -186,6 +208,10 @@ impl StartSupportDataExportInputBuilder {
         self.destination_s3_prefix = input;
         self
     }
+    /// (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file systems. For example, if given the bucket name "mybucket" and the prefix "myprefix/mydatasets", the output file "outputfile" would be published to "s3://mybucket/myprefix/mydatasets/outputfile". If the prefix directory structure does not exist, it will be created. If no prefix is provided, the data set will be published to the S3 bucket root.
+    pub fn get_destination_s3_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_s3_prefix
+    }
     /// Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an error has occurred.
     pub fn sns_topic_arn(
         mut self,
@@ -201,6 +227,10 @@ impl StartSupportDataExportInputBuilder {
     ) -> Self {
         self.sns_topic_arn = input;
         self
+    }
+    /// Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an error has occurred.
+    pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sns_topic_arn
     }
     /// Adds a key-value pair to `customer_defined_values`.
     ///
@@ -226,6 +256,14 @@ impl StartSupportDataExportInputBuilder {
     ) -> Self {
         self.customer_defined_values = input;
         self
+    }
+    /// (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and the data set metadata file.
+    pub fn get_customer_defined_values(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.customer_defined_values
     }
     /// Consumes the builder and constructs a [`StartSupportDataExportInput`](crate::operation::start_support_data_export::StartSupportDataExportInput).
     pub fn build(

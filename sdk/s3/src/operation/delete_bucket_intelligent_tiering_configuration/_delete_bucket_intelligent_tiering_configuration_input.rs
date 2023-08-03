@@ -47,6 +47,10 @@ impl DeleteBucketIntelligentTieringConfigurationInputBuilder {
         self.bucket = input;
         self
     }
+    /// <p>The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p>The ID used to identify the S3 Intelligent-Tiering configuration.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl DeleteBucketIntelligentTieringConfigurationInputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The ID used to identify the S3 Intelligent-Tiering configuration.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// Consumes the builder and constructs a [`DeleteBucketIntelligentTieringConfigurationInput`](crate::operation::delete_bucket_intelligent_tiering_configuration::DeleteBucketIntelligentTieringConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_bucket_intelligent_tiering_configuration::DeleteBucketIntelligentTieringConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{

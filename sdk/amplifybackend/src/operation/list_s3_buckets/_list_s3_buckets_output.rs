@@ -63,6 +63,12 @@ impl ListS3BucketsOutputBuilder {
         self.buckets = input;
         self
     }
+    /// <p>The list of S3 buckets.</p>
+    pub fn get_buckets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::S3BucketInfo>> {
+        &self.buckets
+    }
     /// <p>Reserved for future use.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -72,6 +78,10 @@ impl ListS3BucketsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

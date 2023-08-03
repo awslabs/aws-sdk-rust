@@ -66,6 +66,12 @@ impl ListInputDevicesOutputBuilder {
         self.input_devices = input;
         self
     }
+    /// The list of input devices.
+    pub fn get_input_devices(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InputDeviceSummary>> {
+        &self.input_devices
+    }
     /// A token to get additional list results.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -75,6 +81,10 @@ impl ListInputDevicesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// A token to get additional list results.
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

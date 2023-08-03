@@ -70,6 +70,10 @@ impl ContentReferenceBuilder {
         self.knowledge_base_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
+    pub fn get_knowledge_base_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.knowledge_base_arn
+    }
     /// <p>The identifier of the knowledge base.</p>
     pub fn knowledge_base_id(
         mut self,
@@ -86,6 +90,10 @@ impl ContentReferenceBuilder {
         self.knowledge_base_id = input;
         self
     }
+    /// <p>The identifier of the knowledge base.</p>
+    pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.knowledge_base_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the content.</p>
     pub fn content_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_arn = ::std::option::Option::Some(input.into());
@@ -96,6 +104,10 @@ impl ContentReferenceBuilder {
         self.content_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the content.</p>
+    pub fn get_content_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_arn
+    }
     /// <p>The identifier of the content.</p>
     pub fn content_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_id = ::std::option::Option::Some(input.into());
@@ -105,6 +117,10 @@ impl ContentReferenceBuilder {
     pub fn set_content_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_id = input;
         self
+    }
+    /// <p>The identifier of the content.</p>
+    pub fn get_content_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_id
     }
     /// Consumes the builder and constructs a [`ContentReference`](crate::types::ContentReference).
     pub fn build(self) -> crate::types::ContentReference {

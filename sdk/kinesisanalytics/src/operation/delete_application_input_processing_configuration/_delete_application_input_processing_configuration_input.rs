@@ -61,6 +61,10 @@ impl DeleteApplicationInputProcessingConfigurationInputBuilder {
         self.application_name = input;
         self
     }
+    /// <p>The Kinesis Analytics application name.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// <p>The version ID of the Kinesis Analytics application.</p>
     pub fn current_application_version_id(mut self, input: i64) -> Self {
         self.current_application_version_id = ::std::option::Option::Some(input);
@@ -71,6 +75,10 @@ impl DeleteApplicationInputProcessingConfigurationInputBuilder {
         self.current_application_version_id = input;
         self
     }
+    /// <p>The version ID of the Kinesis Analytics application.</p>
+    pub fn get_current_application_version_id(&self) -> &::std::option::Option<i64> {
+        &self.current_application_version_id
+    }
     /// <p>The ID of the input configuration from which to delete the input processing configuration. You can get a list of the input IDs for an application by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
     pub fn input_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_id = ::std::option::Option::Some(input.into());
@@ -80,6 +88,10 @@ impl DeleteApplicationInputProcessingConfigurationInputBuilder {
     pub fn set_input_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_id = input;
         self
+    }
+    /// <p>The ID of the input configuration from which to delete the input processing configuration. You can get a list of the input IDs for an application by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
+    pub fn get_input_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_id
     }
     /// Consumes the builder and constructs a [`DeleteApplicationInputProcessingConfigurationInput`](crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{

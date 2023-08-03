@@ -51,6 +51,10 @@ impl ModifyVpnTunnelOptionsOutputBuilder {
         self.vpn_connection = input;
         self
     }
+    /// <p>Information about the VPN connection.</p>
+    pub fn get_vpn_connection(&self) -> &::std::option::Option<crate::types::VpnConnection> {
+        &self.vpn_connection
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

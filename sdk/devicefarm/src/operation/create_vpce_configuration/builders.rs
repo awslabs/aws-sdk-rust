@@ -37,6 +37,13 @@ impl CreateVPCEConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateVPCEConfiguration as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_vpce_configuration::builders::CreateVpceConfigurationInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl CreateVPCEConfigurationFluentBuilder {
         self.inner = self.inner.set_vpce_configuration_name(input);
         self
     }
+    /// <p>The friendly name you give to your VPC endpoint configuration, to manage your configurations more easily.</p>
+    pub fn get_vpce_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpce_configuration_name()
+    }
     /// <p>The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.</p>
     pub fn vpce_service_name(
         mut self,
@@ -148,6 +159,10 @@ impl CreateVPCEConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_vpce_service_name(input);
         self
+    }
+    /// <p>The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.</p>
+    pub fn get_vpce_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpce_service_name()
     }
     /// <p>The DNS name of the service running in your VPC that you want Device Farm to test.</p>
     pub fn service_dns_name(
@@ -165,6 +180,10 @@ impl CreateVPCEConfigurationFluentBuilder {
         self.inner = self.inner.set_service_dns_name(input);
         self
     }
+    /// <p>The DNS name of the service running in your VPC that you want Device Farm to test.</p>
+    pub fn get_service_dns_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_dns_name()
+    }
     /// <p>An optional description that provides details about your VPC endpoint configuration.</p>
     pub fn vpce_configuration_description(
         mut self,
@@ -180,5 +199,11 @@ impl CreateVPCEConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_vpce_configuration_description(input);
         self
+    }
+    /// <p>An optional description that provides details about your VPC endpoint configuration.</p>
+    pub fn get_vpce_configuration_description(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpce_configuration_description()
     }
 }

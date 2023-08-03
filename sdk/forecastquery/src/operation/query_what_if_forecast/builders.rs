@@ -36,6 +36,12 @@ impl QueryWhatIfForecastFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the QueryWhatIfForecast as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::query_what_if_forecast::builders::QueryWhatIfForecastInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl QueryWhatIfForecastFluentBuilder {
         self.inner = self.inner.set_what_if_forecast_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the what-if forecast to query.</p>
+    pub fn get_what_if_forecast_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_what_if_forecast_arn()
+    }
     /// <p>The start date for the what-if forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T08:00:00.</p>
     pub fn start_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.start_date(input.into());
@@ -142,6 +152,10 @@ impl QueryWhatIfForecastFluentBuilder {
         self.inner = self.inner.set_start_date(input);
         self
     }
+    /// <p>The start date for the what-if forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T08:00:00.</p>
+    pub fn get_start_date(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_start_date()
+    }
     /// <p>The end date for the what-if forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T20:00:00. </p>
     pub fn end_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.end_date(input.into());
@@ -151,6 +165,10 @@ impl QueryWhatIfForecastFluentBuilder {
     pub fn set_end_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_end_date(input);
         self
+    }
+    /// <p>The end date for the what-if forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T20:00:00. </p>
+    pub fn get_end_date(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_end_date()
     }
     /// Adds a key-value pair to `Filters`.
     ///
@@ -179,6 +197,16 @@ impl QueryWhatIfForecastFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for <code>client_21</code> in the electricity usage dataset, specify the following:</p>
+    /// <p> <code>{"item_id" : "client_21"}</code> </p>
+    /// <p>To get the full what-if forecast, use the <a href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateWhatIfForecastExport.html">CreateForecastExportJob</a> operation.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_filters()
+    }
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -188,5 +216,9 @@ impl QueryWhatIfForecastFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

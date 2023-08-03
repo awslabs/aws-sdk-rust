@@ -88,6 +88,10 @@ impl VideoMetadataBuilder {
         self.codec = input;
         self
     }
+    /// <p>Type of compression used in the analyzed video. </p>
+    pub fn get_codec(&self) -> &::std::option::Option<::std::string::String> {
+        &self.codec
+    }
     /// <p>Length of the video in milliseconds.</p>
     pub fn duration_millis(mut self, input: i64) -> Self {
         self.duration_millis = ::std::option::Option::Some(input);
@@ -97,6 +101,10 @@ impl VideoMetadataBuilder {
     pub fn set_duration_millis(mut self, input: ::std::option::Option<i64>) -> Self {
         self.duration_millis = input;
         self
+    }
+    /// <p>Length of the video in milliseconds.</p>
+    pub fn get_duration_millis(&self) -> &::std::option::Option<i64> {
+        &self.duration_millis
     }
     /// <p>Format of the analyzed video. Possible values are MP4, MOV and AVI. </p>
     pub fn format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -108,6 +116,10 @@ impl VideoMetadataBuilder {
         self.format = input;
         self
     }
+    /// <p>Format of the analyzed video. Possible values are MP4, MOV and AVI. </p>
+    pub fn get_format(&self) -> &::std::option::Option<::std::string::String> {
+        &self.format
+    }
     /// <p>Number of frames per second in the video.</p>
     pub fn frame_rate(mut self, input: f32) -> Self {
         self.frame_rate = ::std::option::Option::Some(input);
@@ -117,6 +129,10 @@ impl VideoMetadataBuilder {
     pub fn set_frame_rate(mut self, input: ::std::option::Option<f32>) -> Self {
         self.frame_rate = input;
         self
+    }
+    /// <p>Number of frames per second in the video.</p>
+    pub fn get_frame_rate(&self) -> &::std::option::Option<f32> {
+        &self.frame_rate
     }
     /// <p>Vertical pixel dimension of the video.</p>
     pub fn frame_height(mut self, input: i64) -> Self {
@@ -128,6 +144,10 @@ impl VideoMetadataBuilder {
         self.frame_height = input;
         self
     }
+    /// <p>Vertical pixel dimension of the video.</p>
+    pub fn get_frame_height(&self) -> &::std::option::Option<i64> {
+        &self.frame_height
+    }
     /// <p>Horizontal pixel dimension of the video.</p>
     pub fn frame_width(mut self, input: i64) -> Self {
         self.frame_width = ::std::option::Option::Some(input);
@@ -137,6 +157,10 @@ impl VideoMetadataBuilder {
     pub fn set_frame_width(mut self, input: ::std::option::Option<i64>) -> Self {
         self.frame_width = input;
         self
+    }
+    /// <p>Horizontal pixel dimension of the video.</p>
+    pub fn get_frame_width(&self) -> &::std::option::Option<i64> {
+        &self.frame_width
     }
     /// <p> A description of the range of luminance values in a video, either LIMITED (16 to 235) or FULL (0 to 255). </p>
     pub fn color_range(mut self, input: crate::types::VideoColorRange) -> Self {
@@ -150,6 +174,10 @@ impl VideoMetadataBuilder {
     ) -> Self {
         self.color_range = input;
         self
+    }
+    /// <p> A description of the range of luminance values in a video, either LIMITED (16 to 235) or FULL (0 to 255). </p>
+    pub fn get_color_range(&self) -> &::std::option::Option<crate::types::VideoColorRange> {
+        &self.color_range
     }
     /// Consumes the builder and constructs a [`VideoMetadata`](crate::types::VideoMetadata).
     pub fn build(self) -> crate::types::VideoMetadata {

@@ -48,6 +48,10 @@ impl LineItemGroupBuilder {
         self.line_item_group_index = input;
         self
     }
+    /// <p>The number used to identify a specific table in a document. The first table encountered will have a LineItemGroupIndex of 1, the second 2, etc.</p>
+    pub fn get_line_item_group_index(&self) -> &::std::option::Option<i32> {
+        &self.line_item_group_index
+    }
     /// Appends an item to `line_items`.
     ///
     /// To override the contents of this collection use [`set_line_items`](Self::set_line_items).
@@ -66,6 +70,12 @@ impl LineItemGroupBuilder {
     ) -> Self {
         self.line_items = input;
         self
+    }
+    /// <p>The breakdown of information on a particular line of a table. </p>
+    pub fn get_line_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LineItemFields>> {
+        &self.line_items
     }
     /// Consumes the builder and constructs a [`LineItemGroup`](crate::types::LineItemGroup).
     pub fn build(self) -> crate::types::LineItemGroup {

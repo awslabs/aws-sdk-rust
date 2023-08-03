@@ -38,6 +38,10 @@ impl PutReplicationConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutReplicationConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_replication_configuration::builders::PutReplicationConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,5 +137,11 @@ impl PutReplicationConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_replication_configuration(input);
         self
+    }
+    /// <p>An object representing the replication configuration for a registry.</p>
+    pub fn get_replication_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ReplicationConfiguration> {
+        self.inner.get_replication_configuration()
     }
 }

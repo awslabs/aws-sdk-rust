@@ -54,6 +54,10 @@ impl RepositoryNameIdPairBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name associated with the repository.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>The ID associated with the repository.</p>
     pub fn repository_id(
         mut self,
@@ -69,6 +73,10 @@ impl RepositoryNameIdPairBuilder {
     ) -> Self {
         self.repository_id = input;
         self
+    }
+    /// <p>The ID associated with the repository.</p>
+    pub fn get_repository_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_id
     }
     /// Consumes the builder and constructs a [`RepositoryNameIdPair`](crate::types::RepositoryNameIdPair).
     pub fn build(self) -> crate::types::RepositoryNameIdPair {

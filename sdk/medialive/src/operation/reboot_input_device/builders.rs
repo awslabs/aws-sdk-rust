@@ -36,6 +36,12 @@ impl RebootInputDeviceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RebootInputDevice as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::reboot_input_device::builders::RebootInputDeviceInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl RebootInputDeviceFluentBuilder {
         self.inner = self.inner.set_force(input);
         self
     }
+    /// Force a reboot of an input device. If the device is streaming, it will stop streaming and begin rebooting within a few seconds of sending the command. If the device was streaming prior to the reboot, the device will resume streaming when the reboot completes.
+    pub fn get_force(&self) -> &::std::option::Option<crate::types::RebootInputDeviceForce> {
+        self.inner.get_force()
+    }
     /// The unique ID of the input device to reboot. For example, hd-123456789abcdef.
     pub fn input_device_id(
         mut self,
@@ -144,5 +154,9 @@ impl RebootInputDeviceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_input_device_id(input);
         self
+    }
+    /// The unique ID of the input device to reboot. For example, hd-123456789abcdef.
+    pub fn get_input_device_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_input_device_id()
     }
 }

@@ -160,6 +160,10 @@ impl TemplateActionDocumentBuilder {
         self.action_id = input;
         self
     }
+    /// <p>Template post migration custom action ID.</p>
+    pub fn get_action_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_id
+    }
     /// <p>Template post migration custom action name.</p>
     pub fn action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action_name = ::std::option::Option::Some(input.into());
@@ -169,6 +173,10 @@ impl TemplateActionDocumentBuilder {
     pub fn set_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action_name = input;
         self
+    }
+    /// <p>Template post migration custom action name.</p>
+    pub fn get_action_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_name
     }
     /// <p>Template post migration custom action document identifier.</p>
     pub fn document_identifier(
@@ -186,6 +194,10 @@ impl TemplateActionDocumentBuilder {
         self.document_identifier = input;
         self
     }
+    /// <p>Template post migration custom action document identifier.</p>
+    pub fn get_document_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_identifier
+    }
     /// <p>Template post migration custom action order.</p>
     pub fn order(mut self, input: i32) -> Self {
         self.order = ::std::option::Option::Some(input);
@@ -195,6 +207,10 @@ impl TemplateActionDocumentBuilder {
     pub fn set_order(mut self, input: ::std::option::Option<i32>) -> Self {
         self.order = input;
         self
+    }
+    /// <p>Template post migration custom action order.</p>
+    pub fn get_order(&self) -> &::std::option::Option<i32> {
+        &self.order
     }
     /// <p>Template post migration custom action document version.</p>
     pub fn document_version(
@@ -212,6 +228,10 @@ impl TemplateActionDocumentBuilder {
         self.document_version = input;
         self
     }
+    /// <p>Template post migration custom action document version.</p>
+    pub fn get_document_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_version
+    }
     /// <p>Template post migration custom action active status.</p>
     pub fn active(mut self, input: bool) -> Self {
         self.active = ::std::option::Option::Some(input);
@@ -221,6 +241,10 @@ impl TemplateActionDocumentBuilder {
     pub fn set_active(mut self, input: ::std::option::Option<bool>) -> Self {
         self.active = input;
         self
+    }
+    /// <p>Template post migration custom action active status.</p>
+    pub fn get_active(&self) -> &::std::option::Option<bool> {
+        &self.active
     }
     /// <p>Template post migration custom action timeout in seconds.</p>
     pub fn timeout_seconds(mut self, input: i32) -> Self {
@@ -232,6 +256,10 @@ impl TemplateActionDocumentBuilder {
         self.timeout_seconds = input;
         self
     }
+    /// <p>Template post migration custom action timeout in seconds.</p>
+    pub fn get_timeout_seconds(&self) -> &::std::option::Option<i32> {
+        &self.timeout_seconds
+    }
     /// <p>Template post migration custom action must succeed for cutover.</p>
     pub fn must_succeed_for_cutover(mut self, input: bool) -> Self {
         self.must_succeed_for_cutover = ::std::option::Option::Some(input);
@@ -241,6 +269,10 @@ impl TemplateActionDocumentBuilder {
     pub fn set_must_succeed_for_cutover(mut self, input: ::std::option::Option<bool>) -> Self {
         self.must_succeed_for_cutover = input;
         self
+    }
+    /// <p>Template post migration custom action must succeed for cutover.</p>
+    pub fn get_must_succeed_for_cutover(&self) -> &::std::option::Option<bool> {
+        &self.must_succeed_for_cutover
     }
     /// Adds a key-value pair to `parameters`.
     ///
@@ -270,6 +302,17 @@ impl TemplateActionDocumentBuilder {
         self.parameters = input;
         self
     }
+    /// <p>Template post migration custom action parameters.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            ::std::vec::Vec<crate::types::SsmParameterStoreParameter>,
+        >,
+    > {
+        &self.parameters
+    }
     /// <p>Operating system eligible for this template post migration custom action.</p>
     pub fn operating_system(
         mut self,
@@ -285,6 +328,10 @@ impl TemplateActionDocumentBuilder {
     ) -> Self {
         self.operating_system = input;
         self
+    }
+    /// <p>Operating system eligible for this template post migration custom action.</p>
+    pub fn get_operating_system(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operating_system
     }
     /// Adds a key-value pair to `external_parameters`.
     ///
@@ -311,6 +358,14 @@ impl TemplateActionDocumentBuilder {
         self.external_parameters = input;
         self
     }
+    /// <p>Template post migration custom action external parameters.</p>
+    pub fn get_external_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::SsmExternalParameter>,
+    > {
+        &self.external_parameters
+    }
     /// <p>Template post migration custom action description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -320,6 +375,10 @@ impl TemplateActionDocumentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>Template post migration custom action description.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Template post migration custom action category.</p>
     pub fn category(mut self, input: crate::types::ActionCategory) -> Self {
@@ -333,6 +392,10 @@ impl TemplateActionDocumentBuilder {
     ) -> Self {
         self.category = input;
         self
+    }
+    /// <p>Template post migration custom action category.</p>
+    pub fn get_category(&self) -> &::std::option::Option<crate::types::ActionCategory> {
+        &self.category
     }
     /// Consumes the builder and constructs a [`TemplateActionDocument`](crate::types::TemplateActionDocument).
     pub fn build(self) -> crate::types::TemplateActionDocument {

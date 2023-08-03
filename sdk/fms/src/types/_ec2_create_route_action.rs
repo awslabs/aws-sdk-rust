@@ -88,6 +88,10 @@ impl Ec2CreateRouteActionBuilder {
         self.description = input;
         self
     }
+    /// <p>A description of CreateRoute action in Amazon EC2.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>Information about the IPv4 CIDR address block used for the destination match.</p>
     pub fn destination_cidr_block(
         mut self,
@@ -103,6 +107,10 @@ impl Ec2CreateRouteActionBuilder {
     ) -> Self {
         self.destination_cidr_block = input;
         self
+    }
+    /// <p>Information about the IPv4 CIDR address block used for the destination match.</p>
+    pub fn get_destination_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_cidr_block
     }
     /// <p>Information about the ID of a prefix list used for the destination match.</p>
     pub fn destination_prefix_list_id(
@@ -120,6 +128,10 @@ impl Ec2CreateRouteActionBuilder {
         self.destination_prefix_list_id = input;
         self
     }
+    /// <p>Information about the ID of a prefix list used for the destination match.</p>
+    pub fn get_destination_prefix_list_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_prefix_list_id
+    }
     /// <p>Information about the IPv6 CIDR block destination.</p>
     pub fn destination_ipv6_cidr_block(
         mut self,
@@ -136,6 +148,10 @@ impl Ec2CreateRouteActionBuilder {
         self.destination_ipv6_cidr_block = input;
         self
     }
+    /// <p>Information about the IPv6 CIDR block destination.</p>
+    pub fn get_destination_ipv6_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_ipv6_cidr_block
+    }
     /// <p>Information about the ID of a VPC endpoint. Supported for Gateway Load Balancer endpoints only.</p>
     pub fn vpc_endpoint_id(mut self, input: crate::types::ActionTarget) -> Self {
         self.vpc_endpoint_id = ::std::option::Option::Some(input);
@@ -148,6 +164,10 @@ impl Ec2CreateRouteActionBuilder {
     ) -> Self {
         self.vpc_endpoint_id = input;
         self
+    }
+    /// <p>Information about the ID of a VPC endpoint. Supported for Gateway Load Balancer endpoints only.</p>
+    pub fn get_vpc_endpoint_id(&self) -> &::std::option::Option<crate::types::ActionTarget> {
+        &self.vpc_endpoint_id
     }
     /// <p>Information about the ID of an internet gateway or virtual private gateway attached to your VPC.</p>
     pub fn gateway_id(mut self, input: crate::types::ActionTarget) -> Self {
@@ -162,6 +182,10 @@ impl Ec2CreateRouteActionBuilder {
         self.gateway_id = input;
         self
     }
+    /// <p>Information about the ID of an internet gateway or virtual private gateway attached to your VPC.</p>
+    pub fn get_gateway_id(&self) -> &::std::option::Option<crate::types::ActionTarget> {
+        &self.gateway_id
+    }
     /// <p>Information about the ID of the route table for the route.</p>
     pub fn route_table_id(mut self, input: crate::types::ActionTarget) -> Self {
         self.route_table_id = ::std::option::Option::Some(input);
@@ -174,6 +198,10 @@ impl Ec2CreateRouteActionBuilder {
     ) -> Self {
         self.route_table_id = input;
         self
+    }
+    /// <p>Information about the ID of the route table for the route.</p>
+    pub fn get_route_table_id(&self) -> &::std::option::Option<crate::types::ActionTarget> {
+        &self.route_table_id
     }
     /// Consumes the builder and constructs a [`Ec2CreateRouteAction`](crate::types::Ec2CreateRouteAction).
     pub fn build(self) -> crate::types::Ec2CreateRouteAction {

@@ -70,6 +70,10 @@ impl CredentialsBuilder {
         self.access_key_id = input;
         self
     }
+    /// <p>The Access Key portion of the credentials.</p>
+    pub fn get_access_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_key_id
+    }
     /// <p>The Secret Access Key portion of the credentials</p>
     pub fn secret_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_key = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl CredentialsBuilder {
     pub fn set_secret_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_key = input;
         self
+    }
+    /// <p>The Secret Access Key portion of the credentials</p>
+    pub fn get_secret_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_key
     }
     /// <p>The Session Token portion of the credentials</p>
     pub fn session_token(
@@ -96,6 +104,10 @@ impl CredentialsBuilder {
         self.session_token = input;
         self
     }
+    /// <p>The Session Token portion of the credentials</p>
+    pub fn get_session_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_token
+    }
     /// <p>The date at which these credentials will expire.</p>
     pub fn expiration(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.expiration = ::std::option::Option::Some(input);
@@ -108,6 +120,10 @@ impl CredentialsBuilder {
     ) -> Self {
         self.expiration = input;
         self
+    }
+    /// <p>The date at which these credentials will expire.</p>
+    pub fn get_expiration(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expiration
     }
     /// Consumes the builder and constructs a [`Credentials`](crate::types::Credentials).
     pub fn build(self) -> crate::types::Credentials {

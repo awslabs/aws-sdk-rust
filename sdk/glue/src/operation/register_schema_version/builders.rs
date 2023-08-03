@@ -38,6 +38,13 @@ impl RegisterSchemaVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the RegisterSchemaVersion as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::register_schema_version::builders::RegisterSchemaVersionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +143,14 @@ impl RegisterSchemaVersionFluentBuilder {
         self.inner = self.inner.set_schema_id(input);
         self
     }
+    /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
+    /// <ul>
+    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
+    /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
+    /// </ul>
+    pub fn get_schema_id(&self) -> &::std::option::Option<crate::types::SchemaId> {
+        self.inner.get_schema_id()
+    }
     /// <p>The schema definition using the <code>DataFormat</code> setting for the <code>SchemaName</code>.</p>
     pub fn schema_definition(
         mut self,
@@ -151,5 +166,9 @@ impl RegisterSchemaVersionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_schema_definition(input);
         self
+    }
+    /// <p>The schema definition using the <code>DataFormat</code> setting for the <code>SchemaName</code>.</p>
+    pub fn get_schema_definition(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_schema_definition()
     }
 }

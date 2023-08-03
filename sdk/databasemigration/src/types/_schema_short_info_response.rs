@@ -72,6 +72,10 @@ impl SchemaShortInfoResponseBuilder {
         self.schema_id = input;
         self
     }
+    /// <p>The ID of a schema in a Fleet Advisor collector inventory.</p>
+    pub fn get_schema_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_id
+    }
     /// <p>The name of a schema in a Fleet Advisor collector inventory.</p>
     pub fn schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_name = ::std::option::Option::Some(input.into());
@@ -82,6 +86,10 @@ impl SchemaShortInfoResponseBuilder {
         self.schema_name = input;
         self
     }
+    /// <p>The name of a schema in a Fleet Advisor collector inventory.</p>
+    pub fn get_schema_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.schema_name
+    }
     /// <p>The ID of a database in a Fleet Advisor collector inventory.</p>
     pub fn database_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_id = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl SchemaShortInfoResponseBuilder {
     pub fn set_database_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_id = input;
         self
+    }
+    /// <p>The ID of a database in a Fleet Advisor collector inventory.</p>
+    pub fn get_database_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_id
     }
     /// <p>The name of a database in a Fleet Advisor collector inventory.</p>
     pub fn database_name(
@@ -108,6 +120,10 @@ impl SchemaShortInfoResponseBuilder {
         self.database_name = input;
         self
     }
+    /// <p>The name of a database in a Fleet Advisor collector inventory.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>The IP address of a database in a Fleet Advisor collector inventory.</p>
     pub fn database_ip_address(
         mut self,
@@ -123,6 +139,10 @@ impl SchemaShortInfoResponseBuilder {
     ) -> Self {
         self.database_ip_address = input;
         self
+    }
+    /// <p>The IP address of a database in a Fleet Advisor collector inventory.</p>
+    pub fn get_database_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_ip_address
     }
     /// Consumes the builder and constructs a [`SchemaShortInfoResponse`](crate::types::SchemaShortInfoResponse).
     pub fn build(self) -> crate::types::SchemaShortInfoResponse {

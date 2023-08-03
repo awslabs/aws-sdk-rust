@@ -43,6 +43,10 @@ impl GrammarSlotTypeSettingBuilder {
         self.source = input;
         self
     }
+    /// <p>The source of the grammar used to create the slot type.</p>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::GrammarSlotTypeSource> {
+        &self.source
+    }
     /// Consumes the builder and constructs a [`GrammarSlotTypeSetting`](crate::types::GrammarSlotTypeSetting).
     pub fn build(self) -> crate::types::GrammarSlotTypeSetting {
         crate::types::GrammarSlotTypeSetting {

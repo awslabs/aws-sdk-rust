@@ -51,6 +51,10 @@ impl CreateWorkspaceBundleOutputBuilder {
         self.workspace_bundle = input;
         self
     }
+    /// <p>Describes a WorkSpace bundle.</p>
+    pub fn get_workspace_bundle(&self) -> &::std::option::Option<crate::types::WorkspaceBundle> {
+        &self.workspace_bundle
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

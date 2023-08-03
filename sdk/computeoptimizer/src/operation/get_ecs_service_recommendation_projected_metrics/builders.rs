@@ -36,6 +36,10 @@ impl GetECSServiceRecommendationProjectedMetricsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetECSServiceRecommendationProjectedMetrics as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_ecs_service_recommendation_projected_metrics::builders::GetEcsServiceRecommendationProjectedMetricsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -104,6 +108,12 @@ impl GetECSServiceRecommendationProjectedMetricsFluentBuilder {
         self.inner = self.inner.set_service_arn(input);
         self
     }
+    /// <p> The ARN that identifies the Amazon ECS service. </p>
+    /// <p> The following is the format of the ARN: </p>
+    /// <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>
+    pub fn get_service_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_arn()
+    }
     /// <p> The statistic of the projected metrics. </p>
     pub fn stat(mut self, input: crate::types::MetricStatistic) -> Self {
         self.inner = self.inner.stat(input);
@@ -114,6 +124,10 @@ impl GetECSServiceRecommendationProjectedMetricsFluentBuilder {
         self.inner = self.inner.set_stat(input);
         self
     }
+    /// <p> The statistic of the projected metrics. </p>
+    pub fn get_stat(&self) -> &::std::option::Option<crate::types::MetricStatistic> {
+        self.inner.get_stat()
+    }
     /// <p> The granularity, in seconds, of the projected metrics data points. </p>
     pub fn period(mut self, input: i32) -> Self {
         self.inner = self.inner.period(input);
@@ -123,6 +137,10 @@ impl GetECSServiceRecommendationProjectedMetricsFluentBuilder {
     pub fn set_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_period(input);
         self
+    }
+    /// <p> The granularity, in seconds, of the projected metrics data points. </p>
+    pub fn get_period(&self) -> &::std::option::Option<i32> {
+        self.inner.get_period()
     }
     /// <p> The timestamp of the first projected metrics data point to return. </p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -137,6 +155,10 @@ impl GetECSServiceRecommendationProjectedMetricsFluentBuilder {
         self.inner = self.inner.set_start_time(input);
         self
     }
+    /// <p> The timestamp of the first projected metrics data point to return. </p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_time()
+    }
     /// <p> The timestamp of the last projected metrics data point to return. </p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_time(input);
@@ -149,5 +171,9 @@ impl GetECSServiceRecommendationProjectedMetricsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
+    }
+    /// <p> The timestamp of the last projected metrics data point to return. </p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_time()
     }
 }

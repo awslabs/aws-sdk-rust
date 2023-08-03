@@ -36,6 +36,10 @@ impl DisassociateEnvironmentOperationsRoleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DisassociateEnvironmentOperationsRole as a reference.
+    pub fn as_input(&self) -> &crate::operation::disassociate_environment_operations_role::builders::DisassociateEnvironmentOperationsRoleInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -105,5 +109,9 @@ impl DisassociateEnvironmentOperationsRoleFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_environment_name(input);
         self
+    }
+    /// <p>The name of the environment from which to disassociate the operations role.</p>
+    pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_name()
     }
 }

@@ -104,6 +104,10 @@ impl StandardsSubscriptionBuilder {
         self.standards_subscription_arn = input;
         self
     }
+    /// <p>The ARN of a resource that represents your subscription to a supported standard.</p>
+    pub fn get_standards_subscription_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.standards_subscription_arn
+    }
     /// <p>The ARN of a standard.</p>
     pub fn standards_arn(
         mut self,
@@ -119,6 +123,10 @@ impl StandardsSubscriptionBuilder {
     ) -> Self {
         self.standards_arn = input;
         self
+    }
+    /// <p>The ARN of a standard.</p>
+    pub fn get_standards_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.standards_arn
     }
     /// Adds a key-value pair to `standards_input`.
     ///
@@ -144,6 +152,14 @@ impl StandardsSubscriptionBuilder {
     ) -> Self {
         self.standards_input = input;
         self
+    }
+    /// <p>A key-value pair of input for the standard.</p>
+    pub fn get_standards_input(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.standards_input
     }
     /// <p>The status of the standard subscription.</p>
     /// <p>The status values are as follows:</p>
@@ -174,6 +190,18 @@ impl StandardsSubscriptionBuilder {
         self.standards_status = input;
         self
     }
+    /// <p>The status of the standard subscription.</p>
+    /// <p>The status values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>PENDING</code> - Standard is in the process of being enabled.</p> </li>
+    /// <li> <p> <code>READY</code> - Standard is enabled.</p> </li>
+    /// <li> <p> <code>INCOMPLETE</code> - Standard could not be enabled completely. Some controls may not be available.</p> </li>
+    /// <li> <p> <code>DELETING</code> - Standard is in the process of being disabled.</p> </li>
+    /// <li> <p> <code>FAILED</code> - Standard could not be disabled.</p> </li>
+    /// </ul>
+    pub fn get_standards_status(&self) -> &::std::option::Option<crate::types::StandardsStatus> {
+        &self.standards_status
+    }
     /// <p>The reason for the current status.</p>
     pub fn standards_status_reason(mut self, input: crate::types::StandardsStatusReason) -> Self {
         self.standards_status_reason = ::std::option::Option::Some(input);
@@ -186,6 +214,12 @@ impl StandardsSubscriptionBuilder {
     ) -> Self {
         self.standards_status_reason = input;
         self
+    }
+    /// <p>The reason for the current status.</p>
+    pub fn get_standards_status_reason(
+        &self,
+    ) -> &::std::option::Option<crate::types::StandardsStatusReason> {
+        &self.standards_status_reason
     }
     /// Consumes the builder and constructs a [`StandardsSubscription`](crate::types::StandardsSubscription).
     pub fn build(self) -> crate::types::StandardsSubscription {

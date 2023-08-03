@@ -36,6 +36,10 @@ impl GetRecordingConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetRecordingConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_recording_configuration::builders::GetRecordingConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,5 +129,9 @@ impl GetRecordingConfigurationFluentBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_arn(input);
         self
+    }
+    /// <p>ARN of the recording configuration to be retrieved.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
     }
 }

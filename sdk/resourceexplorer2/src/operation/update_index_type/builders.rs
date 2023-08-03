@@ -44,6 +44,12 @@ impl UpdateIndexTypeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateIndexType as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_index_type::builders::UpdateIndexTypeInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -134,6 +140,10 @@ impl UpdateIndexTypeFluentBuilder {
         self.inner = self.inner.set_arn(input);
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index that you want to update.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
+    }
     /// <p>The type of the index. To understand the difference between <code>LOCAL</code> and <code>AGGREGATOR</code>, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-aggregator-region.html">Turning on cross-Region search</a> in the <i>Amazon Web Services Resource Explorer User Guide</i>.</p>
     pub fn r#type(mut self, input: crate::types::IndexType) -> Self {
         self.inner = self.inner.r#type(input);
@@ -143,5 +153,9 @@ impl UpdateIndexTypeFluentBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::IndexType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
+    }
+    /// <p>The type of the index. To understand the difference between <code>LOCAL</code> and <code>AGGREGATOR</code>, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-aggregator-region.html">Turning on cross-Region search</a> in the <i>Amazon Web Services Resource Explorer User Guide</i>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::IndexType> {
+        self.inner.get_type()
     }
 }

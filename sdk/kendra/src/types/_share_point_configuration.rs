@@ -169,6 +169,12 @@ impl SharePointConfigurationBuilder {
         self.share_point_version = input;
         self
     }
+    /// <p>The version of Microsoft SharePoint that you use.</p>
+    pub fn get_share_point_version(
+        &self,
+    ) -> &::std::option::Option<crate::types::SharePointVersion> {
+        &self.share_point_version
+    }
     /// Appends an item to `urls`.
     ///
     /// To override the contents of this collection use [`set_urls`](Self::set_urls).
@@ -188,6 +194,10 @@ impl SharePointConfigurationBuilder {
         self.urls = input;
         self
     }
+    /// <p>The Microsoft SharePoint site URLs for the documents you want to index.</p>
+    pub fn get_urls(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.urls
+    }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the SharePoint instance. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Microsoft SharePoint</a>.</p>
     pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_arn = ::std::option::Option::Some(input.into());
@@ -197,6 +207,10 @@ impl SharePointConfigurationBuilder {
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to connect to the SharePoint instance. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Microsoft SharePoint</a>.</p>
+    pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_arn
     }
     /// <p> <code>TRUE</code> to index document attachments.</p>
     pub fn crawl_attachments(mut self, input: bool) -> Self {
@@ -208,6 +222,10 @@ impl SharePointConfigurationBuilder {
         self.crawl_attachments = input;
         self
     }
+    /// <p> <code>TRUE</code> to index document attachments.</p>
+    pub fn get_crawl_attachments(&self) -> &::std::option::Option<bool> {
+        &self.crawl_attachments
+    }
     /// <p> <code>TRUE</code> to use the SharePoint change log to determine which documents require updating in the index. Depending on the change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in SharePoint.</p>
     pub fn use_change_log(mut self, input: bool) -> Self {
         self.use_change_log = ::std::option::Option::Some(input);
@@ -217,6 +235,10 @@ impl SharePointConfigurationBuilder {
     pub fn set_use_change_log(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_change_log = input;
         self
+    }
+    /// <p> <code>TRUE</code> to use the SharePoint change log to determine which documents require updating in the index. Depending on the change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in SharePoint.</p>
+    pub fn get_use_change_log(&self) -> &::std::option::Option<bool> {
+        &self.use_change_log
     }
     /// Appends an item to `inclusion_patterns`.
     ///
@@ -242,6 +264,13 @@ impl SharePointConfigurationBuilder {
         self.inclusion_patterns = input;
         self
     }
+    /// <p>A list of regular expression patterns to include certain documents in your SharePoint. Documents that match the patterns are included in the index. Documents that don't match the patterns are excluded from the index. If a document matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the document isn't included in the index.</p>
+    /// <p>The regex applies to the display URL of the SharePoint document.</p>
+    pub fn get_inclusion_patterns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.inclusion_patterns
+    }
     /// Appends an item to `exclusion_patterns`.
     ///
     /// To override the contents of this collection use [`set_exclusion_patterns`](Self::set_exclusion_patterns).
@@ -266,6 +295,13 @@ impl SharePointConfigurationBuilder {
         self.exclusion_patterns = input;
         self
     }
+    /// <p>A list of regular expression patterns to exclude certain documents in your SharePoint. Documents that match the patterns are excluded from the index. Documents that don't match the patterns are included in the index. If a document matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the document isn't included in the index.</p>
+    /// <p>The regex applies to the display URL of the SharePoint document.</p>
+    pub fn get_exclusion_patterns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.exclusion_patterns
+    }
     /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Microsoft SharePoint. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
     pub fn vpc_configuration(mut self, input: crate::types::DataSourceVpcConfiguration) -> Self {
         self.vpc_configuration = ::std::option::Option::Some(input);
@@ -278,6 +314,12 @@ impl SharePointConfigurationBuilder {
     ) -> Self {
         self.vpc_configuration = input;
         self
+    }
+    /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your Microsoft SharePoint. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
+    pub fn get_vpc_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataSourceVpcConfiguration> {
+        &self.vpc_configuration
     }
     /// Appends an item to `field_mappings`.
     ///
@@ -298,6 +340,12 @@ impl SharePointConfigurationBuilder {
         self.field_mappings = input;
         self
     }
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map SharePoint data source attributes or field names to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to SharePoint fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The SharePoint data source field names must exist in your SharePoint custom metadata.</p>
+    pub fn get_field_mappings(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>> {
+        &self.field_mappings
+    }
     /// <p>The Microsoft SharePoint attribute field that contains the title of the document.</p>
     pub fn document_title_field_name(
         mut self,
@@ -314,6 +362,10 @@ impl SharePointConfigurationBuilder {
         self.document_title_field_name = input;
         self
     }
+    /// <p>The Microsoft SharePoint attribute field that contains the title of the document.</p>
+    pub fn get_document_title_field_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_title_field_name
+    }
     /// <p> <code>TRUE</code> to disable local groups information.</p>
     pub fn disable_local_groups(mut self, input: bool) -> Self {
         self.disable_local_groups = ::std::option::Option::Some(input);
@@ -323,6 +375,10 @@ impl SharePointConfigurationBuilder {
     pub fn set_disable_local_groups(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disable_local_groups = input;
         self
+    }
+    /// <p> <code>TRUE</code> to disable local groups information.</p>
+    pub fn get_disable_local_groups(&self) -> &::std::option::Option<bool> {
+        &self.disable_local_groups
     }
     /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to SharePoint Server if you require a secure SSL connection.</p>
     /// <p>You can generate a self-signed X509 certificate on any computer using OpenSSL. For an example of using OpenSSL to create an X509 certificate, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create and sign an X509 certificate</a>.</p>
@@ -339,6 +395,11 @@ impl SharePointConfigurationBuilder {
         self.ssl_certificate_s3_path = input;
         self
     }
+    /// <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect to SharePoint Server if you require a secure SSL connection.</p>
+    /// <p>You can generate a self-signed X509 certificate on any computer using OpenSSL. For an example of using OpenSSL to create an X509 certificate, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create and sign an X509 certificate</a>.</p>
+    pub fn get_ssl_certificate_s3_path(&self) -> &::std::option::Option<crate::types::S3Path> {
+        &self.ssl_certificate_s3_path
+    }
     /// <p>Whether you want to connect to SharePoint Online using basic authentication of user name and password, or OAuth authentication of user name, password, client ID, and client secret, or AD App-only authentication of client secret.</p>
     pub fn authentication_type(
         mut self,
@@ -354,6 +415,12 @@ impl SharePointConfigurationBuilder {
     ) -> Self {
         self.authentication_type = input;
         self
+    }
+    /// <p>Whether you want to connect to SharePoint Online using basic authentication of user name and password, or OAuth authentication of user name, password, client ID, and client secret, or AD App-only authentication of client secret.</p>
+    pub fn get_authentication_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::SharePointOnlineAuthenticationType> {
+        &self.authentication_type
     }
     /// <p>Configuration information to connect to your Microsoft SharePoint site URLs via instance via a web proxy. You can use this option for SharePoint Server.</p>
     /// <p>You must provide the website host name and port number. For example, the host name of <i>https://a.example.com/page1.html</i> is "a.example.com" and the port is 443, the standard port for HTTPS.</p>
@@ -373,6 +440,15 @@ impl SharePointConfigurationBuilder {
     ) -> Self {
         self.proxy_configuration = input;
         self
+    }
+    /// <p>Configuration information to connect to your Microsoft SharePoint site URLs via instance via a web proxy. You can use this option for SharePoint Server.</p>
+    /// <p>You must provide the website host name and port number. For example, the host name of <i>https://a.example.com/page1.html</i> is "a.example.com" and the port is 443, the standard port for HTTPS.</p>
+    /// <p>Web proxy credentials are optional and you can use them to connect to a web proxy server that requires basic authentication of user name and password. To store web proxy credentials, you use a secret in Secrets Manager.</p>
+    /// <p>It is recommended that you follow best security practices when configuring your web proxy. This includes setting up throttling, setting up logging and monitoring, and applying security patches on a regular basis. If you use your web proxy with multiple data sources, sync jobs that occur at the same time could strain the load on your proxy. It is recommended you prepare your proxy beforehand for any security and load requirements.</p>
+    pub fn get_proxy_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProxyConfiguration> {
+        &self.proxy_configuration
     }
     /// Consumes the builder and constructs a [`SharePointConfiguration`](crate::types::SharePointConfiguration).
     pub fn build(self) -> crate::types::SharePointConfiguration {

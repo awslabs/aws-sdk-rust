@@ -36,6 +36,12 @@ impl BatchGetCodeSnippetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchGetCodeSnippet as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_get_code_snippet::builders::BatchGetCodeSnippetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +138,11 @@ impl BatchGetCodeSnippetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_finding_arns(input);
         self
+    }
+    /// <p>An array of finding ARNs for the findings you want to retrieve code snippets from.</p>
+    pub fn get_finding_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_finding_arns()
     }
 }

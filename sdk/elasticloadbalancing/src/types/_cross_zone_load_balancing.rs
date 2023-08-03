@@ -40,6 +40,10 @@ impl CrossZoneLoadBalancingBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Specifies whether cross-zone load balancing is enabled for the load balancer.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// Consumes the builder and constructs a [`CrossZoneLoadBalancing`](crate::types::CrossZoneLoadBalancing).
     pub fn build(self) -> crate::types::CrossZoneLoadBalancing {
         crate::types::CrossZoneLoadBalancing {

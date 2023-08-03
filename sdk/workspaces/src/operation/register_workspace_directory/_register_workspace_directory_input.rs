@@ -79,6 +79,10 @@ impl RegisterWorkspaceDirectoryInputBuilder {
         self.directory_id = input;
         self
     }
+    /// <p>The identifier of the directory. You cannot register a directory if it does not have a status of Active. If the directory does not have a status of Active, you will receive an InvalidResourceStateException error. If you have already registered the maximum number of directories that you can register with Amazon WorkSpaces, you will receive a ResourceLimitExceededException error. Deregister directories that you are not using for WorkSpaces, and try again.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_id
+    }
     /// Appends an item to `subnet_ids`.
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
@@ -98,6 +102,10 @@ impl RegisterWorkspaceDirectoryInputBuilder {
         self.subnet_ids = input;
         self
     }
+    /// <p>The identifiers of the subnets for your virtual private cloud (VPC). Make sure that the subnets are in supported Availability Zones. The subnets must also be in separate Availability Zones. If these conditions are not met, you will receive an OperationNotSupportedException error.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
+    }
     /// <p>Indicates whether Amazon WorkDocs is enabled or disabled. If you have enabled this parameter and WorkDocs is not available in the Region, you will receive an OperationNotSupportedException error. Set <code>EnableWorkDocs</code> to disabled, and try again.</p>
     pub fn enable_work_docs(mut self, input: bool) -> Self {
         self.enable_work_docs = ::std::option::Option::Some(input);
@@ -107,6 +115,10 @@ impl RegisterWorkspaceDirectoryInputBuilder {
     pub fn set_enable_work_docs(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_work_docs = input;
         self
+    }
+    /// <p>Indicates whether Amazon WorkDocs is enabled or disabled. If you have enabled this parameter and WorkDocs is not available in the Region, you will receive an OperationNotSupportedException error. Set <code>EnableWorkDocs</code> to disabled, and try again.</p>
+    pub fn get_enable_work_docs(&self) -> &::std::option::Option<bool> {
+        &self.enable_work_docs
     }
     /// <p>Indicates whether self-service capabilities are enabled or disabled.</p>
     pub fn enable_self_service(mut self, input: bool) -> Self {
@@ -118,6 +130,10 @@ impl RegisterWorkspaceDirectoryInputBuilder {
         self.enable_self_service = input;
         self
     }
+    /// <p>Indicates whether self-service capabilities are enabled or disabled.</p>
+    pub fn get_enable_self_service(&self) -> &::std::option::Option<bool> {
+        &self.enable_self_service
+    }
     /// <p>Indicates whether your WorkSpace directory is dedicated or shared. To use Bring Your Own License (BYOL) images, this value must be set to <code>DEDICATED</code> and your Amazon Web Services account must be enabled for BYOL. If your account has not been enabled for BYOL, you will receive an InvalidParameterValuesException error. For more information about BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows Desktop Images</a>.</p>
     pub fn tenancy(mut self, input: crate::types::Tenancy) -> Self {
         self.tenancy = ::std::option::Option::Some(input);
@@ -127,6 +143,10 @@ impl RegisterWorkspaceDirectoryInputBuilder {
     pub fn set_tenancy(mut self, input: ::std::option::Option<crate::types::Tenancy>) -> Self {
         self.tenancy = input;
         self
+    }
+    /// <p>Indicates whether your WorkSpace directory is dedicated or shared. To use Bring Your Own License (BYOL) images, this value must be set to <code>DEDICATED</code> and your Amazon Web Services account must be enabled for BYOL. If your account has not been enabled for BYOL, you will receive an InvalidParameterValuesException error. For more information about BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows Desktop Images</a>.</p>
+    pub fn get_tenancy(&self) -> &::std::option::Option<crate::types::Tenancy> {
+        &self.tenancy
     }
     /// Appends an item to `tags`.
     ///
@@ -146,6 +166,10 @@ impl RegisterWorkspaceDirectoryInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags associated with the directory.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`RegisterWorkspaceDirectoryInput`](crate::operation::register_workspace_directory::RegisterWorkspaceDirectoryInput).
     pub fn build(

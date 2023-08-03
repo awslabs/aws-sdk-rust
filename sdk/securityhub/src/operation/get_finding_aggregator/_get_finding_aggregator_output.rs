@@ -77,6 +77,10 @@ impl GetFindingAggregatorOutputBuilder {
         self.finding_aggregator_arn = input;
         self
     }
+    /// <p>The ARN of the finding aggregator.</p>
+    pub fn get_finding_aggregator_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.finding_aggregator_arn
+    }
     /// <p>The aggregation Region.</p>
     pub fn finding_aggregation_region(
         mut self,
@@ -93,6 +97,10 @@ impl GetFindingAggregatorOutputBuilder {
         self.finding_aggregation_region = input;
         self
     }
+    /// <p>The aggregation Region.</p>
+    pub fn get_finding_aggregation_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.finding_aggregation_region
+    }
     /// <p>Indicates whether to link all Regions, all Regions except for a list of excluded Regions, or a list of included Regions.</p>
     pub fn region_linking_mode(
         mut self,
@@ -108,6 +116,10 @@ impl GetFindingAggregatorOutputBuilder {
     ) -> Self {
         self.region_linking_mode = input;
         self
+    }
+    /// <p>Indicates whether to link all Regions, all Regions except for a list of excluded Regions, or a list of included Regions.</p>
+    pub fn get_region_linking_mode(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region_linking_mode
     }
     /// Appends an item to `regions`.
     ///
@@ -127,6 +139,10 @@ impl GetFindingAggregatorOutputBuilder {
     ) -> Self {
         self.regions = input;
         self
+    }
+    /// <p>The list of excluded Regions or included Regions.</p>
+    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.regions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

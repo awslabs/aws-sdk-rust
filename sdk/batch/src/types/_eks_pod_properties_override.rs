@@ -58,6 +58,12 @@ impl EksPodPropertiesOverrideBuilder {
         self.containers = input;
         self
     }
+    /// <p>The overrides for the container that's used on the Amazon EKS pod.</p>
+    pub fn get_containers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EksContainerOverride>> {
+        &self.containers
+    }
     /// <p>Metadata about the overrides for the container that's used on the Amazon EKS pod.</p>
     pub fn metadata(mut self, input: crate::types::EksMetadata) -> Self {
         self.metadata = ::std::option::Option::Some(input);
@@ -67,6 +73,10 @@ impl EksPodPropertiesOverrideBuilder {
     pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::EksMetadata>) -> Self {
         self.metadata = input;
         self
+    }
+    /// <p>Metadata about the overrides for the container that's used on the Amazon EKS pod.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<crate::types::EksMetadata> {
+        &self.metadata
     }
     /// Consumes the builder and constructs a [`EksPodPropertiesOverride`](crate::types::EksPodPropertiesOverride).
     pub fn build(self) -> crate::types::EksPodPropertiesOverride {

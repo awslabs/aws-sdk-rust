@@ -36,6 +36,10 @@ impl GetThirdPartyFirewallAssociationStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetThirdPartyFirewallAssociationStatus as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_third_party_firewall_association_status::builders::GetThirdPartyFirewallAssociationStatusInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -102,5 +106,11 @@ impl GetThirdPartyFirewallAssociationStatusFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_third_party_firewall(input);
         self
+    }
+    /// <p>The name of the third-party firewall vendor.</p>
+    pub fn get_third_party_firewall(
+        &self,
+    ) -> &::std::option::Option<crate::types::ThirdPartyFirewall> {
+        self.inner.get_third_party_firewall()
     }
 }

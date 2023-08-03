@@ -78,6 +78,10 @@ impl IpamDiscoveredAccountBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The Amazon Web Services Region that the account information is returned from. An account can be discovered in multiple regions and will have a separate discovered account for each Region.</p>
     pub fn discovery_region(
         mut self,
@@ -94,6 +98,10 @@ impl IpamDiscoveredAccountBuilder {
         self.discovery_region = input;
         self
     }
+    /// <p>The Amazon Web Services Region that the account information is returned from. An account can be discovered in multiple regions and will have a separate discovered account for each Region.</p>
+    pub fn get_discovery_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.discovery_region
+    }
     /// <p>The resource discovery failure reason.</p>
     pub fn failure_reason(mut self, input: crate::types::IpamDiscoveryFailureReason) -> Self {
         self.failure_reason = ::std::option::Option::Some(input);
@@ -106,6 +114,12 @@ impl IpamDiscoveredAccountBuilder {
     ) -> Self {
         self.failure_reason = input;
         self
+    }
+    /// <p>The resource discovery failure reason.</p>
+    pub fn get_failure_reason(
+        &self,
+    ) -> &::std::option::Option<crate::types::IpamDiscoveryFailureReason> {
+        &self.failure_reason
     }
     /// <p>The last attempted resource discovery time.</p>
     pub fn last_attempted_discovery_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -120,6 +134,12 @@ impl IpamDiscoveredAccountBuilder {
         self.last_attempted_discovery_time = input;
         self
     }
+    /// <p>The last attempted resource discovery time.</p>
+    pub fn get_last_attempted_discovery_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_attempted_discovery_time
+    }
     /// <p>The last successful resource discovery time.</p>
     pub fn last_successful_discovery_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_successful_discovery_time = ::std::option::Option::Some(input);
@@ -132,6 +152,12 @@ impl IpamDiscoveredAccountBuilder {
     ) -> Self {
         self.last_successful_discovery_time = input;
         self
+    }
+    /// <p>The last successful resource discovery time.</p>
+    pub fn get_last_successful_discovery_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_successful_discovery_time
     }
     /// Consumes the builder and constructs a [`IpamDiscoveredAccount`](crate::types::IpamDiscoveredAccount).
     pub fn build(self) -> crate::types::IpamDiscoveredAccount {

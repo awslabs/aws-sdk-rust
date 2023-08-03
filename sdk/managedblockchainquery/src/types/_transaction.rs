@@ -188,6 +188,10 @@ impl TransactionBuilder {
         self.network = input;
         self
     }
+    /// <p>The blockchain network where the transaction occured.</p>
+    pub fn get_network(&self) -> &::std::option::Option<crate::types::QueryNetwork> {
+        &self.network
+    }
     /// <p>The block hash is a unique identifier for a block. It is a fixed-size string that is calculated by using the information in the block. The block hash is used to verify the integrity of the data in the block.</p>
     pub fn block_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.block_hash = ::std::option::Option::Some(input.into());
@@ -197,6 +201,10 @@ impl TransactionBuilder {
     pub fn set_block_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.block_hash = input;
         self
+    }
+    /// <p>The block hash is a unique identifier for a block. It is a fixed-size string that is calculated by using the information in the block. The block hash is used to verify the integrity of the data in the block.</p>
+    pub fn get_block_hash(&self) -> &::std::option::Option<::std::string::String> {
+        &self.block_hash
     }
     /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
     pub fn transaction_hash(
@@ -214,6 +222,10 @@ impl TransactionBuilder {
         self.transaction_hash = input;
         self
     }
+    /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
+    pub fn get_transaction_hash(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transaction_hash
+    }
     /// <p>The block number in which the transaction is recorded.</p>
     pub fn block_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.block_number = ::std::option::Option::Some(input.into());
@@ -223,6 +235,10 @@ impl TransactionBuilder {
     pub fn set_block_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.block_number = input;
         self
+    }
+    /// <p>The block number in which the transaction is recorded.</p>
+    pub fn get_block_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.block_number
     }
     /// <p>The <code>Timestamp</code> of the transaction. </p>
     pub fn transaction_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -237,6 +253,12 @@ impl TransactionBuilder {
         self.transaction_timestamp = input;
         self
     }
+    /// <p>The <code>Timestamp</code> of the transaction. </p>
+    pub fn get_transaction_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.transaction_timestamp
+    }
     /// <p>The index of the transaction within a blockchain.</p>
     pub fn transaction_index(mut self, input: i64) -> Self {
         self.transaction_index = ::std::option::Option::Some(input);
@@ -247,6 +269,10 @@ impl TransactionBuilder {
         self.transaction_index = input;
         self
     }
+    /// <p>The index of the transaction within a blockchain.</p>
+    pub fn get_transaction_index(&self) -> &::std::option::Option<i64> {
+        &self.transaction_index
+    }
     /// <p>The number of transactions in the block.</p>
     pub fn number_of_transactions(mut self, input: i64) -> Self {
         self.number_of_transactions = ::std::option::Option::Some(input);
@@ -256,6 +282,10 @@ impl TransactionBuilder {
     pub fn set_number_of_transactions(mut self, input: ::std::option::Option<i64>) -> Self {
         self.number_of_transactions = input;
         self
+    }
+    /// <p>The number of transactions in the block.</p>
+    pub fn get_number_of_transactions(&self) -> &::std::option::Option<i64> {
+        &self.number_of_transactions
     }
     /// <p>The status of the transaction.</p>
     pub fn status(mut self, input: crate::types::QueryTransactionStatus) -> Self {
@@ -270,6 +300,10 @@ impl TransactionBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the transaction.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::QueryTransactionStatus> {
+        &self.status
+    }
     /// <p>The identifier of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
     pub fn to(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.to = ::std::option::Option::Some(input.into());
@@ -280,6 +314,10 @@ impl TransactionBuilder {
         self.to = input;
         self
     }
+    /// <p>The identifier of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
+    pub fn get_to(&self) -> &::std::option::Option<::std::string::String> {
+        &self.to
+    }
     /// <p>The initiator of the transaction. It is either in the form a public key or a contract address.</p>
     pub fn from(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.from = ::std::option::Option::Some(input.into());
@@ -289,6 +327,10 @@ impl TransactionBuilder {
     pub fn set_from(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.from = input;
         self
+    }
+    /// <p>The initiator of the transaction. It is either in the form a public key or a contract address.</p>
+    pub fn get_from(&self) -> &::std::option::Option<::std::string::String> {
+        &self.from
     }
     /// <p>The blockchain address for the contract.</p>
     pub fn contract_address(
@@ -306,6 +348,10 @@ impl TransactionBuilder {
         self.contract_address = input;
         self
     }
+    /// <p>The blockchain address for the contract.</p>
+    pub fn get_contract_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contract_address
+    }
     /// <p>The amount of gas used for the transaction.</p>
     pub fn gas_used(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gas_used = ::std::option::Option::Some(input.into());
@@ -315,6 +361,10 @@ impl TransactionBuilder {
     pub fn set_gas_used(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gas_used = input;
         self
+    }
+    /// <p>The amount of gas used for the transaction.</p>
+    pub fn get_gas_used(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gas_used
     }
     /// <p>The amount of gas used up to the specified point in the block.</p>
     pub fn cumulative_gas_used(
@@ -332,6 +382,10 @@ impl TransactionBuilder {
         self.cumulative_gas_used = input;
         self
     }
+    /// <p>The amount of gas used up to the specified point in the block.</p>
+    pub fn get_cumulative_gas_used(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cumulative_gas_used
+    }
     /// <p>The effective gas price.</p>
     pub fn effective_gas_price(
         mut self,
@@ -348,6 +402,10 @@ impl TransactionBuilder {
         self.effective_gas_price = input;
         self
     }
+    /// <p>The effective gas price.</p>
+    pub fn get_effective_gas_price(&self) -> &::std::option::Option<::std::string::String> {
+        &self.effective_gas_price
+    }
     /// <p>The signature of the transaction. The Z coordinate of a point V.</p>
     pub fn signature_v(mut self, input: i32) -> Self {
         self.signature_v = ::std::option::Option::Some(input);
@@ -357,6 +415,10 @@ impl TransactionBuilder {
     pub fn set_signature_v(mut self, input: ::std::option::Option<i32>) -> Self {
         self.signature_v = input;
         self
+    }
+    /// <p>The signature of the transaction. The Z coordinate of a point V.</p>
+    pub fn get_signature_v(&self) -> &::std::option::Option<i32> {
+        &self.signature_v
     }
     /// <p>The signature of the transaction. The X coordinate of a point R.</p>
     pub fn signature_r(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -368,6 +430,10 @@ impl TransactionBuilder {
         self.signature_r = input;
         self
     }
+    /// <p>The signature of the transaction. The X coordinate of a point R.</p>
+    pub fn get_signature_r(&self) -> &::std::option::Option<::std::string::String> {
+        &self.signature_r
+    }
     /// <p>The signature of the transaction. The Y coordinate of a point S.</p>
     pub fn signature_s(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signature_s = ::std::option::Option::Some(input.into());
@@ -377,6 +443,10 @@ impl TransactionBuilder {
     pub fn set_signature_s(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.signature_s = input;
         self
+    }
+    /// <p>The signature of the transaction. The Y coordinate of a point S.</p>
+    pub fn get_signature_s(&self) -> &::std::option::Option<::std::string::String> {
+        &self.signature_s
     }
     /// <p>The transaction fee.</p>
     pub fn transaction_fee(
@@ -394,6 +464,10 @@ impl TransactionBuilder {
         self.transaction_fee = input;
         self
     }
+    /// <p>The transaction fee.</p>
+    pub fn get_transaction_fee(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transaction_fee
+    }
     /// <p>The unique identifier of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
     pub fn transaction_id(
         mut self,
@@ -409,6 +483,10 @@ impl TransactionBuilder {
     ) -> Self {
         self.transaction_id = input;
         self
+    }
+    /// <p>The unique identifier of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
+    pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transaction_id
     }
     /// Consumes the builder and constructs a [`Transaction`](crate::types::Transaction).
     pub fn build(self) -> crate::types::Transaction {

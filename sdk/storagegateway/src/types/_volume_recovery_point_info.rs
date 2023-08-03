@@ -68,6 +68,10 @@ impl VolumeRecoveryPointInfoBuilder {
         self.volume_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the volume target.</p>
+    pub fn get_volume_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_arn
+    }
     /// <p>The size of the volume in bytes.</p>
     pub fn volume_size_in_bytes(mut self, input: i64) -> Self {
         self.volume_size_in_bytes = ::std::option::Option::Some(input);
@@ -77,6 +81,10 @@ impl VolumeRecoveryPointInfoBuilder {
     pub fn set_volume_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.volume_size_in_bytes = input;
         self
+    }
+    /// <p>The size of the volume in bytes.</p>
+    pub fn get_volume_size_in_bytes(&self) -> &::std::option::Option<i64> {
+        &self.volume_size_in_bytes
     }
     /// <p>The size of the data stored on the volume in bytes.</p> <note>
     /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p>
@@ -91,6 +99,12 @@ impl VolumeRecoveryPointInfoBuilder {
     pub fn set_volume_usage_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.volume_usage_in_bytes = input;
         self
+    }
+    /// <p>The size of the data stored on the volume in bytes.</p> <note>
+    /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p>
+    /// </note>
+    pub fn get_volume_usage_in_bytes(&self) -> &::std::option::Option<i64> {
+        &self.volume_usage_in_bytes
     }
     /// <p>The time the recovery point was taken.</p>
     pub fn volume_recovery_point_time(
@@ -107,6 +121,10 @@ impl VolumeRecoveryPointInfoBuilder {
     ) -> Self {
         self.volume_recovery_point_time = input;
         self
+    }
+    /// <p>The time the recovery point was taken.</p>
+    pub fn get_volume_recovery_point_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_recovery_point_time
     }
     /// Consumes the builder and constructs a [`VolumeRecoveryPointInfo`](crate::types::VolumeRecoveryPointInfo).
     pub fn build(self) -> crate::types::VolumeRecoveryPointInfo {

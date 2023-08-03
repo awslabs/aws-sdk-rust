@@ -158,6 +158,10 @@ impl CopyObjectOutputBuilder {
         self.copy_object_result = input;
         self
     }
+    /// <p>Container for all response elements.</p>
+    pub fn get_copy_object_result(&self) -> &::std::option::Option<crate::types::CopyObjectResult> {
+        &self.copy_object_result
+    }
     /// <p>If the object expiration is configured, the response includes this header.</p>
     pub fn expiration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expiration = ::std::option::Option::Some(input.into());
@@ -167,6 +171,10 @@ impl CopyObjectOutputBuilder {
     pub fn set_expiration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expiration = input;
         self
+    }
+    /// <p>If the object expiration is configured, the response includes this header.</p>
+    pub fn get_expiration(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expiration
     }
     /// <p>Version of the copied object in the destination bucket.</p>
     pub fn copy_source_version_id(
@@ -184,6 +192,10 @@ impl CopyObjectOutputBuilder {
         self.copy_source_version_id = input;
         self
     }
+    /// <p>Version of the copied object in the destination bucket.</p>
+    pub fn get_copy_source_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.copy_source_version_id
+    }
     /// <p>Version ID of the newly created copy.</p>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_id = ::std::option::Option::Some(input.into());
@@ -193,6 +205,10 @@ impl CopyObjectOutputBuilder {
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_id = input;
         self
+    }
+    /// <p>Version ID of the newly created copy.</p>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_id
     }
     /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, <code>AES256</code>, <code>aws:kms</code>, <code>aws:kms:dsse</code>).</p>
     pub fn server_side_encryption(mut self, input: crate::types::ServerSideEncryption) -> Self {
@@ -206,6 +222,12 @@ impl CopyObjectOutputBuilder {
     ) -> Self {
         self.server_side_encryption = input;
         self
+    }
+    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, <code>AES256</code>, <code>aws:kms</code>, <code>aws:kms:dsse</code>).</p>
+    pub fn get_server_side_encryption(
+        &self,
+    ) -> &::std::option::Option<crate::types::ServerSideEncryption> {
+        &self.server_side_encryption
     }
     /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.</p>
     pub fn sse_customer_algorithm(
@@ -223,6 +245,10 @@ impl CopyObjectOutputBuilder {
         self.sse_customer_algorithm = input;
         self
     }
+    /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.</p>
+    pub fn get_sse_customer_algorithm(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sse_customer_algorithm
+    }
     /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round-trip message integrity verification of the customer-provided encryption key.</p>
     pub fn sse_customer_key_md5(
         mut self,
@@ -238,6 +264,10 @@ impl CopyObjectOutputBuilder {
     ) -> Self {
         self.sse_customer_key_md5 = input;
         self
+    }
+    /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round-trip message integrity verification of the customer-provided encryption key.</p>
+    pub fn get_sse_customer_key_md5(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sse_customer_key_md5
     }
     /// <p>If present, specifies the ID of the Key Management Service (KMS) symmetric encryption customer managed key that was used for the object.</p>
     pub fn ssekms_key_id(
@@ -255,6 +285,10 @@ impl CopyObjectOutputBuilder {
         self.ssekms_key_id = input;
         self
     }
+    /// <p>If present, specifies the ID of the Key Management Service (KMS) symmetric encryption customer managed key that was used for the object.</p>
+    pub fn get_ssekms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ssekms_key_id
+    }
     /// <p>If present, specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.</p>
     pub fn ssekms_encryption_context(
         mut self,
@@ -271,6 +305,10 @@ impl CopyObjectOutputBuilder {
         self.ssekms_encryption_context = input;
         self
     }
+    /// <p>If present, specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.</p>
+    pub fn get_ssekms_encryption_context(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ssekms_encryption_context
+    }
     /// <p>Indicates whether the copied object uses an S3 Bucket Key for server-side encryption with Key Management Service (KMS) keys (SSE-KMS).</p>
     pub fn bucket_key_enabled(mut self, input: bool) -> Self {
         self.bucket_key_enabled = ::std::option::Option::Some(input);
@@ -280,6 +318,10 @@ impl CopyObjectOutputBuilder {
     pub fn set_bucket_key_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.bucket_key_enabled = input;
         self
+    }
+    /// <p>Indicates whether the copied object uses an S3 Bucket Key for server-side encryption with Key Management Service (KMS) keys (SSE-KMS).</p>
+    pub fn get_bucket_key_enabled(&self) -> &::std::option::Option<bool> {
+        &self.bucket_key_enabled
     }
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub fn request_charged(mut self, input: crate::types::RequestCharged) -> Self {
@@ -293,6 +335,10 @@ impl CopyObjectOutputBuilder {
     ) -> Self {
         self.request_charged = input;
         self
+    }
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
+    pub fn get_request_charged(&self) -> &::std::option::Option<crate::types::RequestCharged> {
+        &self.request_charged
     }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
         self._extended_request_id = Some(extended_request_id.into());

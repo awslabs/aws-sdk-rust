@@ -61,6 +61,10 @@ impl ListAssociatedApprovalRuleTemplatesForRepositoryInputBuilder {
         self.repository_name = input;
         self
     }
+    /// <p>The name of the repository for which you want to list all associated approval rule templates.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository_name
+    }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl ListAssociatedApprovalRuleTemplatesForRepositoryInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -80,6 +88,10 @@ impl ListAssociatedApprovalRuleTemplatesForRepositoryInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListAssociatedApprovalRuleTemplatesForRepositoryInput`](crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryInput, ::aws_smithy_http::operation::error::BuildError>{

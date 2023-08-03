@@ -190,6 +190,10 @@ impl RecoveryInstanceBuilder {
         self.ec2_instance_id = input;
         self
     }
+    /// <p>The EC2 instance ID of the Recovery Instance.</p>
+    pub fn get_ec2_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ec2_instance_id
+    }
     /// <p>The state of the EC2 instance for this Recovery Instance.</p>
     pub fn ec2_instance_state(mut self, input: crate::types::Ec2InstanceState) -> Self {
         self.ec2_instance_state = ::std::option::Option::Some(input);
@@ -203,6 +207,10 @@ impl RecoveryInstanceBuilder {
         self.ec2_instance_state = input;
         self
     }
+    /// <p>The state of the EC2 instance for this Recovery Instance.</p>
+    pub fn get_ec2_instance_state(&self) -> &::std::option::Option<crate::types::Ec2InstanceState> {
+        &self.ec2_instance_state
+    }
     /// <p>The ID of the Job that created the Recovery Instance.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
@@ -212,6 +220,10 @@ impl RecoveryInstanceBuilder {
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_id = input;
         self
+    }
+    /// <p>The ID of the Job that created the Recovery Instance.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
     }
     /// <p>The ID of the Recovery Instance.</p>
     pub fn recovery_instance_id(
@@ -229,6 +241,10 @@ impl RecoveryInstanceBuilder {
         self.recovery_instance_id = input;
         self
     }
+    /// <p>The ID of the Recovery Instance.</p>
+    pub fn get_recovery_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recovery_instance_id
+    }
     /// <p>The Source Server ID that this Recovery Instance is associated with.</p>
     pub fn source_server_id(
         mut self,
@@ -245,6 +261,10 @@ impl RecoveryInstanceBuilder {
         self.source_server_id = input;
         self
     }
+    /// <p>The Source Server ID that this Recovery Instance is associated with.</p>
+    pub fn get_source_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_server_id
+    }
     /// <p>The ARN of the Recovery Instance.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -254,6 +274,10 @@ impl RecoveryInstanceBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The ARN of the Recovery Instance.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -280,6 +304,14 @@ impl RecoveryInstanceBuilder {
         self.tags = input;
         self
     }
+    /// <p>An array of tags that are associated with the Recovery Instance.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>An object representing failback related information of the Recovery Instance.</p>
     pub fn failback(mut self, input: crate::types::RecoveryInstanceFailback) -> Self {
         self.failback = ::std::option::Option::Some(input);
@@ -292,6 +324,10 @@ impl RecoveryInstanceBuilder {
     ) -> Self {
         self.failback = input;
         self
+    }
+    /// <p>An object representing failback related information of the Recovery Instance.</p>
+    pub fn get_failback(&self) -> &::std::option::Option<crate::types::RecoveryInstanceFailback> {
+        &self.failback
     }
     /// <p>The Data Replication Info of the Recovery Instance.</p>
     pub fn data_replication_info(
@@ -309,6 +345,12 @@ impl RecoveryInstanceBuilder {
         self.data_replication_info = input;
         self
     }
+    /// <p>The Data Replication Info of the Recovery Instance.</p>
+    pub fn get_data_replication_info(
+        &self,
+    ) -> &::std::option::Option<crate::types::RecoveryInstanceDataReplicationInfo> {
+        &self.data_replication_info
+    }
     /// <p>Properties of the Recovery Instance machine.</p>
     pub fn recovery_instance_properties(
         mut self,
@@ -324,6 +366,12 @@ impl RecoveryInstanceBuilder {
     ) -> Self {
         self.recovery_instance_properties = input;
         self
+    }
+    /// <p>Properties of the Recovery Instance machine.</p>
+    pub fn get_recovery_instance_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::RecoveryInstanceProperties> {
+        &self.recovery_instance_properties
     }
     /// <p>The date and time of the Point in Time (PIT) snapshot that this Recovery Instance was launched from.</p>
     pub fn point_in_time_snapshot_date_time(
@@ -341,6 +389,12 @@ impl RecoveryInstanceBuilder {
         self.point_in_time_snapshot_date_time = input;
         self
     }
+    /// <p>The date and time of the Point in Time (PIT) snapshot that this Recovery Instance was launched from.</p>
+    pub fn get_point_in_time_snapshot_date_time(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.point_in_time_snapshot_date_time
+    }
     /// <p>Whether this Recovery Instance was created for a drill or for an actual Recovery event.</p>
     pub fn is_drill(mut self, input: bool) -> Self {
         self.is_drill = ::std::option::Option::Some(input);
@@ -350,6 +404,10 @@ impl RecoveryInstanceBuilder {
     pub fn set_is_drill(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_drill = input;
         self
+    }
+    /// <p>Whether this Recovery Instance was created for a drill or for an actual Recovery event.</p>
+    pub fn get_is_drill(&self) -> &::std::option::Option<bool> {
+        &self.is_drill
     }
     /// <p>Environment (On Premises / AWS) of the instance that the recovery instance originated from.</p>
     pub fn origin_environment(mut self, input: crate::types::OriginEnvironment) -> Self {
@@ -363,6 +421,12 @@ impl RecoveryInstanceBuilder {
     ) -> Self {
         self.origin_environment = input;
         self
+    }
+    /// <p>Environment (On Premises / AWS) of the instance that the recovery instance originated from.</p>
+    pub fn get_origin_environment(
+        &self,
+    ) -> &::std::option::Option<crate::types::OriginEnvironment> {
+        &self.origin_environment
     }
     /// <p>AWS availability zone associated with the recovery instance.</p>
     pub fn origin_availability_zone(
@@ -379,6 +443,10 @@ impl RecoveryInstanceBuilder {
     ) -> Self {
         self.origin_availability_zone = input;
         self
+    }
+    /// <p>AWS availability zone associated with the recovery instance.</p>
+    pub fn get_origin_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.origin_availability_zone
     }
     /// Consumes the builder and constructs a [`RecoveryInstance`](crate::types::RecoveryInstance).
     pub fn build(self) -> crate::types::RecoveryInstance {

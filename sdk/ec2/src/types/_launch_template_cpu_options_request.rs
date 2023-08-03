@@ -56,6 +56,10 @@ impl LaunchTemplateCpuOptionsRequestBuilder {
         self.core_count = input;
         self
     }
+    /// <p>The number of CPU cores for the instance.</p>
+    pub fn get_core_count(&self) -> &::std::option::Option<i32> {
+        &self.core_count
+    }
     /// <p>The number of threads per CPU core. To disable multithreading for the instance, specify a value of <code>1</code>. Otherwise, specify the default value of <code>2</code>.</p>
     pub fn threads_per_core(mut self, input: i32) -> Self {
         self.threads_per_core = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl LaunchTemplateCpuOptionsRequestBuilder {
     pub fn set_threads_per_core(mut self, input: ::std::option::Option<i32>) -> Self {
         self.threads_per_core = input;
         self
+    }
+    /// <p>The number of threads per CPU core. To disable multithreading for the instance, specify a value of <code>1</code>. Otherwise, specify the default value of <code>2</code>.</p>
+    pub fn get_threads_per_core(&self) -> &::std::option::Option<i32> {
+        &self.threads_per_core
     }
     /// <p>Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is supported with M6a, R6a, and C6a instance types only. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP</a>.</p>
     pub fn amd_sev_snp(mut self, input: crate::types::AmdSevSnpSpecification) -> Self {
@@ -78,6 +86,10 @@ impl LaunchTemplateCpuOptionsRequestBuilder {
     ) -> Self {
         self.amd_sev_snp = input;
         self
+    }
+    /// <p>Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is supported with M6a, R6a, and C6a instance types only. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP</a>.</p>
+    pub fn get_amd_sev_snp(&self) -> &::std::option::Option<crate::types::AmdSevSnpSpecification> {
+        &self.amd_sev_snp
     }
     /// Consumes the builder and constructs a [`LaunchTemplateCpuOptionsRequest`](crate::types::LaunchTemplateCpuOptionsRequest).
     pub fn build(self) -> crate::types::LaunchTemplateCpuOptionsRequest {

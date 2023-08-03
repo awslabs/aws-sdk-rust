@@ -43,6 +43,10 @@ impl ReadOnlyFieldInfoBuilder {
         self.id = input;
         self
     }
+    /// <p>Identifier of the read-only field.</p>
+    pub fn get_id(&self) -> &::std::option::Option<crate::types::TaskTemplateFieldIdentifier> {
+        &self.id
+    }
     /// Consumes the builder and constructs a [`ReadOnlyFieldInfo`](crate::types::ReadOnlyFieldInfo).
     pub fn build(self) -> crate::types::ReadOnlyFieldInfo {
         crate::types::ReadOnlyFieldInfo { id: self.id }

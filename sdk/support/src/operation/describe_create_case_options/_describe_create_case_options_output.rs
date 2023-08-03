@@ -84,6 +84,15 @@ impl DescribeCreateCaseOptionsOutputBuilder {
         self.language_availability = input;
         self
     }
+    /// <p>Language availability can be any of the following:</p>
+    /// <ul>
+    /// <li> <p> available </p> </li>
+    /// <li> <p> best_effort </p> </li>
+    /// <li> <p> unavailable </p> </li>
+    /// </ul>
+    pub fn get_language_availability(&self) -> &::std::option::Option<::std::string::String> {
+        &self.language_availability
+    }
     /// Appends an item to `communication_types`.
     ///
     /// To override the contents of this collection use [`set_communication_types`](Self::set_communication_types).
@@ -102,6 +111,12 @@ impl DescribeCreateCaseOptionsOutputBuilder {
     ) -> Self {
         self.communication_types = input;
         self
+    }
+    /// <p> A JSON-formatted array that contains the available communication type options, along with the available support timeframes for the given inputs. </p>
+    pub fn get_communication_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CommunicationTypeOptions>> {
+        &self.communication_types
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

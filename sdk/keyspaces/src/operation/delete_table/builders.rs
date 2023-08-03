@@ -36,6 +36,10 @@ impl DeleteTableFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteTable as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_table::builders::DeleteTableInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl DeleteTableFluentBuilder {
         self.inner = self.inner.set_keyspace_name(input);
         self
     }
+    /// <p>The name of the keyspace of the to be deleted table.</p>
+    pub fn get_keyspace_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_keyspace_name()
+    }
     /// <p>The name of the table to be deleted.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.table_name(input.into());
@@ -133,5 +141,9 @@ impl DeleteTableFluentBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_table_name(input);
         self
+    }
+    /// <p>The name of the table to be deleted.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_table_name()
     }
 }

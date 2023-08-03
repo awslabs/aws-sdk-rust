@@ -105,6 +105,12 @@ impl AwsSecretsManagerSecretDetailsBuilder {
         self.rotation_rules = input;
         self
     }
+    /// <p>Defines the rotation schedule for the secret.</p>
+    pub fn get_rotation_rules(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsSecretsManagerSecretRotationRules> {
+        &self.rotation_rules
+    }
     /// <p>Whether the rotation occurred within the specified rotation frequency.</p>
     pub fn rotation_occurred_within_frequency(mut self, input: bool) -> Self {
         self.rotation_occurred_within_frequency = ::std::option::Option::Some(input);
@@ -118,6 +124,10 @@ impl AwsSecretsManagerSecretDetailsBuilder {
         self.rotation_occurred_within_frequency = input;
         self
     }
+    /// <p>Whether the rotation occurred within the specified rotation frequency.</p>
+    pub fn get_rotation_occurred_within_frequency(&self) -> &::std::option::Option<bool> {
+        &self.rotation_occurred_within_frequency
+    }
     /// <p>The ARN, Key ID, or alias of the KMS key used to encrypt the <code>SecretString</code> or <code>SecretBinary</code> values for versions of this secret.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -128,6 +138,10 @@ impl AwsSecretsManagerSecretDetailsBuilder {
         self.kms_key_id = input;
         self
     }
+    /// <p>The ARN, Key ID, or alias of the KMS key used to encrypt the <code>SecretString</code> or <code>SecretBinary</code> values for versions of this secret.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
+    }
     /// <p>Whether rotation is enabled.</p>
     pub fn rotation_enabled(mut self, input: bool) -> Self {
         self.rotation_enabled = ::std::option::Option::Some(input);
@@ -137,6 +151,10 @@ impl AwsSecretsManagerSecretDetailsBuilder {
     pub fn set_rotation_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.rotation_enabled = input;
         self
+    }
+    /// <p>Whether rotation is enabled.</p>
+    pub fn get_rotation_enabled(&self) -> &::std::option::Option<bool> {
+        &self.rotation_enabled
     }
     /// <p>The ARN of the Lambda function that rotates the secret.</p>
     pub fn rotation_lambda_arn(
@@ -154,6 +172,10 @@ impl AwsSecretsManagerSecretDetailsBuilder {
         self.rotation_lambda_arn = input;
         self
     }
+    /// <p>The ARN of the Lambda function that rotates the secret.</p>
+    pub fn get_rotation_lambda_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rotation_lambda_arn
+    }
     /// <p>Whether the secret is deleted.</p>
     pub fn deleted(mut self, input: bool) -> Self {
         self.deleted = ::std::option::Option::Some(input);
@@ -163,6 +185,10 @@ impl AwsSecretsManagerSecretDetailsBuilder {
     pub fn set_deleted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.deleted = input;
         self
+    }
+    /// <p>Whether the secret is deleted.</p>
+    pub fn get_deleted(&self) -> &::std::option::Option<bool> {
+        &self.deleted
     }
     /// <p>The name of the secret.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -174,6 +200,10 @@ impl AwsSecretsManagerSecretDetailsBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the secret.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The user-provided description of the secret.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -183,6 +213,10 @@ impl AwsSecretsManagerSecretDetailsBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The user-provided description of the secret.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Consumes the builder and constructs a [`AwsSecretsManagerSecretDetails`](crate::types::AwsSecretsManagerSecretDetails).
     pub fn build(self) -> crate::types::AwsSecretsManagerSecretDetails {

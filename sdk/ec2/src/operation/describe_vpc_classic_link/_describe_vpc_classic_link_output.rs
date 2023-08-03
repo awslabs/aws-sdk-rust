@@ -57,6 +57,12 @@ impl DescribeVpcClassicLinkOutputBuilder {
         self.vpcs = input;
         self
     }
+    /// <p>The ClassicLink status of the VPCs.</p>
+    pub fn get_vpcs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcClassicLink>> {
+        &self.vpcs
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

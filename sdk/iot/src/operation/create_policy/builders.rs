@@ -38,6 +38,10 @@ impl CreatePolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreatePolicy as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_policy::builders::CreatePolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -120,6 +124,10 @@ impl CreatePolicyFluentBuilder {
         self.inner = self.inner.set_policy_name(input);
         self
     }
+    /// <p>The policy name.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_name()
+    }
     /// <p>The JSON document that describes the policy. <b>policyDocument</b> must have a minimum length of 1, with a maximum length of 2048, excluding whitespace.</p>
     pub fn policy_document(
         mut self,
@@ -135,6 +143,10 @@ impl CreatePolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_policy_document(input);
         self
+    }
+    /// <p>The JSON document that describes the policy. <b>policyDocument</b> must have a minimum length of 1, with a maximum length of 2048, excluding whitespace.</p>
+    pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_document()
     }
     /// Appends an item to `tags`.
     ///
@@ -160,5 +172,13 @@ impl CreatePolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Metadata which can be used to manage the policy.</p> <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
+    /// </note>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

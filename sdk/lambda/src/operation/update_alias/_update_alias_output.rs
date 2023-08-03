@@ -89,6 +89,10 @@ impl UpdateAliasOutputBuilder {
         self.alias_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the alias.</p>
+    pub fn get_alias_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias_arn
+    }
     /// <p>The name of the alias.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -98,6 +102,10 @@ impl UpdateAliasOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the alias.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The function version that the alias invokes.</p>
     pub fn function_version(
@@ -115,6 +123,10 @@ impl UpdateAliasOutputBuilder {
         self.function_version = input;
         self
     }
+    /// <p>The function version that the alias invokes.</p>
+    pub fn get_function_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.function_version
+    }
     /// <p>A description of the alias.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -124,6 +136,10 @@ impl UpdateAliasOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the alias.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing configuration</a> of the alias.</p>
     pub fn routing_config(mut self, input: crate::types::AliasRoutingConfiguration) -> Self {
@@ -138,6 +154,12 @@ impl UpdateAliasOutputBuilder {
         self.routing_config = input;
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing configuration</a> of the alias.</p>
+    pub fn get_routing_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::AliasRoutingConfiguration> {
+        &self.routing_config
+    }
     /// <p>A unique identifier that changes when you update the alias.</p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
@@ -147,6 +169,10 @@ impl UpdateAliasOutputBuilder {
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision_id = input;
         self
+    }
+    /// <p>A unique identifier that changes when you update the alias.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

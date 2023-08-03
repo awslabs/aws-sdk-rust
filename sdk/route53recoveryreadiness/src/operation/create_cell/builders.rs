@@ -36,6 +36,10 @@ impl CreateCellFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateCell as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_cell::builders::CreateCellInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl CreateCellFluentBuilder {
         self.inner = self.inner.set_cell_name(input);
         self
     }
+    /// <p>The name of the cell to create.</p>
+    pub fn get_cell_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cell_name()
+    }
     /// Appends an item to `Cells`.
     ///
     /// To override the contents of this collection use [`set_cells`](Self::set_cells).
@@ -134,6 +142,10 @@ impl CreateCellFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_cells(input);
         self
+    }
+    /// <p>A list of cell Amazon Resource Names (ARNs) contained within this cell, for use in nested cells. For example, Availability Zones within specific Amazon Web Services Regions.</p>
+    pub fn get_cells(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_cells()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -157,5 +169,13 @@ impl CreateCellFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>A collection of tags associated with a resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

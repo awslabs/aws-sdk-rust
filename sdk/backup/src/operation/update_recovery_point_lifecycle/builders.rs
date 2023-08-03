@@ -40,6 +40,10 @@ impl UpdateRecoveryPointLifecycleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateRecoveryPointLifecycle as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_recovery_point_lifecycle::builders::UpdateRecoveryPointLifecycleInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +140,10 @@ impl UpdateRecoveryPointLifecycleFluentBuilder {
         self.inner = self.inner.set_backup_vault_name(input);
         self
     }
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    pub fn get_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_backup_vault_name()
+    }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     pub fn recovery_point_arn(
         mut self,
@@ -152,6 +160,10 @@ impl UpdateRecoveryPointLifecycleFluentBuilder {
         self.inner = self.inner.set_recovery_point_arn(input);
         self
     }
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+    pub fn get_recovery_point_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_recovery_point_arn()
+    }
     /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. </p>
     /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
     pub fn lifecycle(mut self, input: crate::types::Lifecycle) -> Self {
@@ -163,5 +175,10 @@ impl UpdateRecoveryPointLifecycleFluentBuilder {
     pub fn set_lifecycle(mut self, input: ::std::option::Option<crate::types::Lifecycle>) -> Self {
         self.inner = self.inner.set_lifecycle(input);
         self
+    }
+    /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. </p>
+    /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
+    pub fn get_lifecycle(&self) -> &::std::option::Option<crate::types::Lifecycle> {
+        self.inner.get_lifecycle()
     }
 }

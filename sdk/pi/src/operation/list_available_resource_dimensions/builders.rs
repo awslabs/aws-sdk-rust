@@ -36,6 +36,10 @@ impl ListAvailableResourceDimensionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListAvailableResourceDimensions as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_available_resource_dimensions::builders::ListAvailableResourceDimensionsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -109,6 +113,10 @@ impl ListAvailableResourceDimensionsFluentBuilder {
         self.inner = self.inner.set_service_type(input);
         self
     }
+    /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
+    pub fn get_service_type(&self) -> &::std::option::Option<crate::types::ServiceType> {
+        self.inner.get_service_type()
+    }
     /// <p>An immutable identifier for a data source that is unique within an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use an Amazon RDS DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VWZ</code>. </p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identifier(input.into());
@@ -118,6 +126,10 @@ impl ListAvailableResourceDimensionsFluentBuilder {
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identifier(input);
         self
+    }
+    /// <p>An immutable identifier for a data source that is unique within an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use an Amazon RDS DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VWZ</code>. </p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identifier()
     }
     /// Appends an item to `Metrics`.
     ///
@@ -136,6 +148,10 @@ impl ListAvailableResourceDimensionsFluentBuilder {
         self.inner = self.inner.set_metrics(input);
         self
     }
+    /// <p>The types of metrics for which to retrieve dimensions. Valid values include <code>db.load</code>.</p>
+    pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_metrics()
+    }
     /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -146,6 +162,10 @@ impl ListAvailableResourceDimensionsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -155,5 +175,9 @@ impl ListAvailableResourceDimensionsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

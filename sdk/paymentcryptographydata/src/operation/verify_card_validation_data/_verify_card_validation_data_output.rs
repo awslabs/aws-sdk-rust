@@ -54,6 +54,10 @@ impl VerifyCardValidationDataOutputBuilder {
         self.key_arn = input;
         self
     }
+    /// <p>The <code>keyARN</code> of the CVK encryption key that Amazon Web Services Payment Cryptography uses to verify CVV or CSC.</p>
+    pub fn get_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_arn
+    }
     /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
     pub fn key_check_value(
         mut self,
@@ -69,6 +73,10 @@ impl VerifyCardValidationDataOutputBuilder {
     ) -> Self {
         self.key_check_value = input;
         self
+    }
+    /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
+    pub fn get_key_check_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_check_value
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

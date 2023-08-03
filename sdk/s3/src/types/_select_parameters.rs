@@ -69,6 +69,12 @@ impl SelectParametersBuilder {
         self.input_serialization = input;
         self
     }
+    /// <p>Describes the serialization format of the object.</p>
+    pub fn get_input_serialization(
+        &self,
+    ) -> &::std::option::Option<crate::types::InputSerialization> {
+        &self.input_serialization
+    }
     /// <p>The type of the provided expression (for example, SQL).</p>
     pub fn expression_type(mut self, input: crate::types::ExpressionType) -> Self {
         self.expression_type = ::std::option::Option::Some(input);
@@ -82,6 +88,10 @@ impl SelectParametersBuilder {
         self.expression_type = input;
         self
     }
+    /// <p>The type of the provided expression (for example, SQL).</p>
+    pub fn get_expression_type(&self) -> &::std::option::Option<crate::types::ExpressionType> {
+        &self.expression_type
+    }
     /// <p>The expression that is used to query the object.</p>
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression = ::std::option::Option::Some(input.into());
@@ -91,6 +101,10 @@ impl SelectParametersBuilder {
     pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expression = input;
         self
+    }
+    /// <p>The expression that is used to query the object.</p>
+    pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expression
     }
     /// <p>Describes how the results of the Select job are serialized.</p>
     pub fn output_serialization(mut self, input: crate::types::OutputSerialization) -> Self {
@@ -104,6 +118,12 @@ impl SelectParametersBuilder {
     ) -> Self {
         self.output_serialization = input;
         self
+    }
+    /// <p>Describes how the results of the Select job are serialized.</p>
+    pub fn get_output_serialization(
+        &self,
+    ) -> &::std::option::Option<crate::types::OutputSerialization> {
+        &self.output_serialization
     }
     /// Consumes the builder and constructs a [`SelectParameters`](crate::types::SelectParameters).
     pub fn build(self) -> crate::types::SelectParameters {

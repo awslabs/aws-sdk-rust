@@ -46,6 +46,10 @@ impl UpdateRouteOutputBuilder {
         self.route = input;
         self
     }
+    /// <p>A full description of the route that was updated.</p>
+    pub fn get_route(&self) -> &::std::option::Option<crate::types::RouteData> {
+        &self.route
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

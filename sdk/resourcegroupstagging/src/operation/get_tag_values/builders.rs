@@ -37,6 +37,12 @@ impl GetTagValuesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetTagValues as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_tag_values::builders::GetTagValuesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -136,6 +142,10 @@ impl GetTagValuesFluentBuilder {
         self.inner = self.inner.set_pagination_token(input);
         self
     }
+    /// <p>Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p>
+    pub fn get_pagination_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_pagination_token()
+    }
     /// <p>Specifies the tag key for which you want to list all existing values that are currently used in the specified Amazon Web Services Region for the calling account.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key(input.into());
@@ -145,5 +155,9 @@ impl GetTagValuesFluentBuilder {
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key(input);
         self
+    }
+    /// <p>Specifies the tag key for which you want to list all existing values that are currently used in the specified Amazon Web Services Region for the calling account.</p>
+    pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_key()
     }
 }

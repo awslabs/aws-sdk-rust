@@ -48,6 +48,10 @@ impl AwsRedshiftClusterEndpointBuilder {
         self.address = input;
         self
     }
+    /// <p>The DNS address of the cluster.</p>
+    pub fn get_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.address
+    }
     /// <p>The port that the database engine listens on.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl AwsRedshiftClusterEndpointBuilder {
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
+    }
+    /// <p>The port that the database engine listens on.</p>
+    pub fn get_port(&self) -> &::std::option::Option<i32> {
+        &self.port
     }
     /// Consumes the builder and constructs a [`AwsRedshiftClusterEndpoint`](crate::types::AwsRedshiftClusterEndpoint).
     pub fn build(self) -> crate::types::AwsRedshiftClusterEndpoint {

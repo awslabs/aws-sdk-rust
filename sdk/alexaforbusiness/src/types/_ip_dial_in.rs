@@ -48,6 +48,10 @@ impl IpDialInBuilder {
         self.endpoint = input;
         self
     }
+    /// <p>The IP address.</p>
+    pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint
+    }
     /// <p>The protocol, including SIP, SIPS, and H323.</p>
     pub fn comms_protocol(mut self, input: crate::types::CommsProtocol) -> Self {
         self.comms_protocol = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl IpDialInBuilder {
     ) -> Self {
         self.comms_protocol = input;
         self
+    }
+    /// <p>The protocol, including SIP, SIPS, and H323.</p>
+    pub fn get_comms_protocol(&self) -> &::std::option::Option<crate::types::CommsProtocol> {
+        &self.comms_protocol
     }
     /// Consumes the builder and constructs a [`IpDialIn`](crate::types::IpDialIn).
     pub fn build(self) -> crate::types::IpDialIn {

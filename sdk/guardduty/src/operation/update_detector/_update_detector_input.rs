@@ -81,6 +81,10 @@ impl UpdateDetectorInputBuilder {
         self.detector_id = input;
         self
     }
+    /// <p>The unique ID of the detector to update.</p>
+    pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.detector_id
+    }
     /// <p>Specifies whether the detector is enabled or not enabled.</p>
     pub fn enable(mut self, input: bool) -> Self {
         self.enable = ::std::option::Option::Some(input);
@@ -90,6 +94,10 @@ impl UpdateDetectorInputBuilder {
     pub fn set_enable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable = input;
         self
+    }
+    /// <p>Specifies whether the detector is enabled or not enabled.</p>
+    pub fn get_enable(&self) -> &::std::option::Option<bool> {
+        &self.enable
     }
     /// <p>An enum value that specifies how frequently findings are exported, such as to CloudWatch Events.</p>
     pub fn finding_publishing_frequency(
@@ -107,6 +115,12 @@ impl UpdateDetectorInputBuilder {
         self.finding_publishing_frequency = input;
         self
     }
+    /// <p>An enum value that specifies how frequently findings are exported, such as to CloudWatch Events.</p>
+    pub fn get_finding_publishing_frequency(
+        &self,
+    ) -> &::std::option::Option<crate::types::FindingPublishingFrequency> {
+        &self.finding_publishing_frequency
+    }
     /// <p>Describes which data sources will be updated.</p>
     /// <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
@@ -123,6 +137,14 @@ impl UpdateDetectorInputBuilder {
     ) -> Self {
         self.data_sources = input;
         self
+    }
+    /// <p>Describes which data sources will be updated.</p>
+    /// <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
+    #[deprecated(note = "This parameter is deprecated, use Features instead")]
+    pub fn get_data_sources(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataSourceConfigurations> {
+        &self.data_sources
     }
     /// Appends an item to `features`.
     ///
@@ -142,6 +164,12 @@ impl UpdateDetectorInputBuilder {
     ) -> Self {
         self.features = input;
         self
+    }
+    /// <p>Provides the features that will be updated for the detector.</p>
+    pub fn get_features(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DetectorFeatureConfiguration>> {
+        &self.features
     }
     /// Consumes the builder and constructs a [`UpdateDetectorInput`](crate::operation::update_detector::UpdateDetectorInput).
     pub fn build(

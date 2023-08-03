@@ -96,6 +96,10 @@ impl AppInstanceUserEndpointSummaryBuilder {
         self.app_instance_user_arn = input;
         self
     }
+    /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    pub fn get_app_instance_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_instance_user_arn
+    }
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
     pub fn endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_id = ::std::option::Option::Some(input.into());
@@ -106,6 +110,10 @@ impl AppInstanceUserEndpointSummaryBuilder {
         self.endpoint_id = input;
         self
     }
+    /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
+    pub fn get_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_id
+    }
     /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -115,6 +123,10 @@ impl AppInstanceUserEndpointSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The type of the <code>AppInstanceUserEndpoint</code>.</p>
     pub fn r#type(mut self, input: crate::types::AppInstanceUserEndpointType) -> Self {
@@ -129,6 +141,10 @@ impl AppInstanceUserEndpointSummaryBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of the <code>AppInstanceUserEndpoint</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::AppInstanceUserEndpointType> {
+        &self.r#type
+    }
     /// <p>BBoolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages. <code>NONE</code> indicates the endpoint will receive no messages.</p>
     pub fn allow_messages(mut self, input: crate::types::AllowMessages) -> Self {
         self.allow_messages = ::std::option::Option::Some(input);
@@ -142,6 +158,10 @@ impl AppInstanceUserEndpointSummaryBuilder {
         self.allow_messages = input;
         self
     }
+    /// <p>BBoolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages. <code>NONE</code> indicates the endpoint will receive no messages.</p>
+    pub fn get_allow_messages(&self) -> &::std::option::Option<crate::types::AllowMessages> {
+        &self.allow_messages
+    }
     /// <p>A read-only field that represent the state of an <code>AppInstanceUserEndpoint</code>.</p>
     pub fn endpoint_state(mut self, input: crate::types::EndpointState) -> Self {
         self.endpoint_state = ::std::option::Option::Some(input);
@@ -154,6 +174,10 @@ impl AppInstanceUserEndpointSummaryBuilder {
     ) -> Self {
         self.endpoint_state = input;
         self
+    }
+    /// <p>A read-only field that represent the state of an <code>AppInstanceUserEndpoint</code>.</p>
+    pub fn get_endpoint_state(&self) -> &::std::option::Option<crate::types::EndpointState> {
+        &self.endpoint_state
     }
     /// Consumes the builder and constructs a [`AppInstanceUserEndpointSummary`](crate::types::AppInstanceUserEndpointSummary).
     pub fn build(self) -> crate::types::AppInstanceUserEndpointSummary {

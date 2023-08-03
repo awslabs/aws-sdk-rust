@@ -186,6 +186,10 @@ impl ResolverEndpointBuilder {
         self.id = input;
         self
     }
+    /// <p>The ID of the Resolver endpoint.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>A unique string that identifies the request that created the Resolver endpoint. The <code>CreatorRequestId</code> allows failed requests to be retried without the risk of running the operation twice.</p>
     pub fn creator_request_id(
         mut self,
@@ -202,6 +206,10 @@ impl ResolverEndpointBuilder {
         self.creator_request_id = input;
         self
     }
+    /// <p>A unique string that identifies the request that created the Resolver endpoint. The <code>CreatorRequestId</code> allows failed requests to be retried without the risk of running the operation twice.</p>
+    pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creator_request_id
+    }
     /// <p>The ARN (Amazon Resource Name) for the Resolver endpoint.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -212,6 +220,10 @@ impl ResolverEndpointBuilder {
         self.arn = input;
         self
     }
+    /// <p>The ARN (Amazon Resource Name) for the Resolver endpoint.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The name that you assigned to the Resolver endpoint when you submitted a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverEndpoint.html">CreateResolverEndpoint</a> request.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -221,6 +233,10 @@ impl ResolverEndpointBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name that you assigned to the Resolver endpoint when you submitted a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverEndpoint.html">CreateResolverEndpoint</a> request.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Appends an item to `security_group_ids`.
     ///
@@ -244,6 +260,12 @@ impl ResolverEndpointBuilder {
         self.security_group_ids = input;
         self
     }
+    /// <p>The ID of one or more security groups that control access to this VPC. The security group must include one or more inbound rules (for inbound endpoints) or outbound rules (for outbound endpoints). Inbound and outbound rules must allow TCP and UDP access. For inbound access, open port 53. For outbound access, open the port that you're using for DNS queries on your network.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_group_ids
+    }
     /// <p>Indicates whether the Resolver endpoint allows inbound or outbound DNS queries:</p>
     /// <ul>
     /// <li> <p> <code>INBOUND</code>: allows DNS queries to your VPC from your network</p> </li>
@@ -265,6 +287,14 @@ impl ResolverEndpointBuilder {
         self.direction = input;
         self
     }
+    /// <p>Indicates whether the Resolver endpoint allows inbound or outbound DNS queries:</p>
+    /// <ul>
+    /// <li> <p> <code>INBOUND</code>: allows DNS queries to your VPC from your network</p> </li>
+    /// <li> <p> <code>OUTBOUND</code>: allows DNS queries from your VPC to your network</p> </li>
+    /// </ul>
+    pub fn get_direction(&self) -> &::std::option::Option<crate::types::ResolverEndpointDirection> {
+        &self.direction
+    }
     /// <p>The number of IP addresses that the Resolver endpoint can use for DNS queries.</p>
     pub fn ip_address_count(mut self, input: i32) -> Self {
         self.ip_address_count = ::std::option::Option::Some(input);
@@ -275,6 +305,10 @@ impl ResolverEndpointBuilder {
         self.ip_address_count = input;
         self
     }
+    /// <p>The number of IP addresses that the Resolver endpoint can use for DNS queries.</p>
+    pub fn get_ip_address_count(&self) -> &::std::option::Option<i32> {
+        &self.ip_address_count
+    }
     /// <p>The ID of the VPC that you want to create the Resolver endpoint in.</p>
     pub fn host_vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host_vpc_id = ::std::option::Option::Some(input.into());
@@ -284,6 +318,10 @@ impl ResolverEndpointBuilder {
     pub fn set_host_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.host_vpc_id = input;
         self
+    }
+    /// <p>The ID of the VPC that you want to create the Resolver endpoint in.</p>
+    pub fn get_host_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host_vpc_id
     }
     /// <p>A code that specifies the current status of the Resolver endpoint. Valid values include the following:</p>
     /// <ul>
@@ -322,6 +360,22 @@ impl ResolverEndpointBuilder {
         self.status = input;
         self
     }
+    /// <p>A code that specifies the current status of the Resolver endpoint. Valid values include the following:</p>
+    /// <ul>
+    /// <li> <p> <code>CREATING</code>: Resolver is creating and configuring one or more Amazon VPC network interfaces for this endpoint.</p> </li>
+    /// <li> <p> <code>OPERATIONAL</code>: The Amazon VPC network interfaces for this endpoint are correctly configured and able to pass inbound or outbound DNS queries between your network and Resolver.</p> </li>
+    /// <li> <p> <code>UPDATING</code>: Resolver is associating or disassociating one or more network interfaces with this endpoint.</p> </li>
+    /// <li> <p> <code>AUTO_RECOVERING</code>: Resolver is trying to recover one or more of the network interfaces that are associated with this endpoint. During the recovery process, the endpoint functions with limited capacity because of the limit on the number of DNS queries per IP address (per network interface). For the current limit, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities-resolver">Limits on Route 53 Resolver</a>.</p> </li>
+    /// <li> <p> <code>ACTION_NEEDED</code>: This endpoint is unhealthy, and Resolver can't automatically recover it. To resolve the problem, we recommend that you check each IP address that you associated with the endpoint. For each IP address that isn't available, add another IP address and then delete the IP address that isn't available. (An endpoint must always include at least two IP addresses.) A status of <code>ACTION_NEEDED</code> can have a variety of causes. Here are two common causes:</p>
+    /// <ul>
+    /// <li> <p>One or more of the network interfaces that are associated with the endpoint were deleted using Amazon VPC.</p> </li>
+    /// <li> <p>The network interface couldn't be created for some reason that's outside the control of Resolver.</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>DELETING</code>: Resolver is deleting this endpoint and the associated network interfaces.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ResolverEndpointStatus> {
+        &self.status
+    }
     /// <p>A detailed description of the status of the Resolver endpoint.</p>
     pub fn status_message(
         mut self,
@@ -337,6 +391,10 @@ impl ResolverEndpointBuilder {
     ) -> Self {
         self.status_message = input;
         self
+    }
+    /// <p>A detailed description of the status of the Resolver endpoint.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     /// <p>The date and time that the endpoint was created, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub fn creation_time(
@@ -354,6 +412,10 @@ impl ResolverEndpointBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The date and time that the endpoint was created, in Unix time format and Coordinated Universal Time (UTC).</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_time
+    }
     /// <p>The date and time that the endpoint was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub fn modification_time(
         mut self,
@@ -370,6 +432,10 @@ impl ResolverEndpointBuilder {
         self.modification_time = input;
         self
     }
+    /// <p>The date and time that the endpoint was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
+    pub fn get_modification_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.modification_time
+    }
     /// <p> The Resolver endpoint IP address type. </p>
     pub fn resolver_endpoint_type(mut self, input: crate::types::ResolverEndpointType) -> Self {
         self.resolver_endpoint_type = ::std::option::Option::Some(input);
@@ -383,6 +449,12 @@ impl ResolverEndpointBuilder {
         self.resolver_endpoint_type = input;
         self
     }
+    /// <p> The Resolver endpoint IP address type. </p>
+    pub fn get_resolver_endpoint_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResolverEndpointType> {
+        &self.resolver_endpoint_type
+    }
     /// <p>The ARN (Amazon Resource Name) for the Outpost.</p>
     pub fn outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outpost_arn = ::std::option::Option::Some(input.into());
@@ -392,6 +464,10 @@ impl ResolverEndpointBuilder {
     pub fn set_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outpost_arn = input;
         self
+    }
+    /// <p>The ARN (Amazon Resource Name) for the Outpost.</p>
+    pub fn get_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.outpost_arn
     }
     /// <p> The Amazon EC2 instance type. </p>
     pub fn preferred_instance_type(
@@ -408,6 +484,10 @@ impl ResolverEndpointBuilder {
     ) -> Self {
         self.preferred_instance_type = input;
         self
+    }
+    /// <p> The Amazon EC2 instance type. </p>
+    pub fn get_preferred_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.preferred_instance_type
     }
     /// Consumes the builder and constructs a [`ResolverEndpoint`](crate::types::ResolverEndpoint).
     pub fn build(self) -> crate::types::ResolverEndpoint {

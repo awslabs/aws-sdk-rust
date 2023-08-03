@@ -48,6 +48,10 @@ impl AccountSettingsBuilder {
         self.disable_remote_control = input;
         self
     }
+    /// <p>Setting that stops or starts remote control of shared screens during meetings.</p>
+    pub fn get_disable_remote_control(&self) -> &::std::option::Option<bool> {
+        &self.disable_remote_control
+    }
     /// <p>Setting that allows meeting participants to choose the <b>Call me at a phone number</b> option. For more information, see <a href="https://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join a Meeting without the Amazon Chime App</a>.</p>
     pub fn enable_dial_out(mut self, input: bool) -> Self {
         self.enable_dial_out = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl AccountSettingsBuilder {
     pub fn set_enable_dial_out(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_dial_out = input;
         self
+    }
+    /// <p>Setting that allows meeting participants to choose the <b>Call me at a phone number</b> option. For more information, see <a href="https://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join a Meeting without the Amazon Chime App</a>.</p>
+    pub fn get_enable_dial_out(&self) -> &::std::option::Option<bool> {
+        &self.enable_dial_out
     }
     /// Consumes the builder and constructs a [`AccountSettings`](crate::types::AccountSettings).
     pub fn build(self) -> crate::types::AccountSettings {

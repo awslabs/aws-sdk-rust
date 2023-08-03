@@ -83,6 +83,10 @@ impl S3DeltaSourceBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the Delta Lake source.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `paths`.
     ///
     /// To override the contents of this collection use [`set_paths`](Self::set_paths).
@@ -101,6 +105,10 @@ impl S3DeltaSourceBuilder {
     ) -> Self {
         self.paths = input;
         self
+    }
+    /// <p>A list of the Amazon S3 paths to read from.</p>
+    pub fn get_paths(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.paths
     }
     /// Adds a key-value pair to `additional_delta_options`.
     ///
@@ -127,6 +135,14 @@ impl S3DeltaSourceBuilder {
         self.additional_delta_options = input;
         self
     }
+    /// <p>Specifies additional connection options.</p>
+    pub fn get_additional_delta_options(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.additional_delta_options
+    }
     /// <p>Specifies additional options for the connector.</p>
     pub fn additional_options(
         mut self,
@@ -142,6 +158,12 @@ impl S3DeltaSourceBuilder {
     ) -> Self {
         self.additional_options = input;
         self
+    }
+    /// <p>Specifies additional options for the connector.</p>
+    pub fn get_additional_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3DirectSourceAdditionalOptions> {
+        &self.additional_options
     }
     /// Appends an item to `output_schemas`.
     ///
@@ -161,6 +183,12 @@ impl S3DeltaSourceBuilder {
     ) -> Self {
         self.output_schemas = input;
         self
+    }
+    /// <p>Specifies the data schema for the Delta Lake source.</p>
+    pub fn get_output_schemas(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>> {
+        &self.output_schemas
     }
     /// Consumes the builder and constructs a [`S3DeltaSource`](crate::types::S3DeltaSource).
     pub fn build(self) -> crate::types::S3DeltaSource {

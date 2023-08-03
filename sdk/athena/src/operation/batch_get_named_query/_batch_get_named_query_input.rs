@@ -53,6 +53,12 @@ impl BatchGetNamedQueryInputBuilder {
         self.named_query_ids = input;
         self
     }
+    /// <p>An array of query IDs.</p>
+    pub fn get_named_query_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.named_query_ids
+    }
     /// Consumes the builder and constructs a [`BatchGetNamedQueryInput`](crate::operation::batch_get_named_query::BatchGetNamedQueryInput).
     pub fn build(
         self,

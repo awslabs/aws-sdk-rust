@@ -37,6 +37,10 @@ impl UpdateProjectDataDeliveryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateProjectDataDelivery as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_project_data_delivery::builders::UpdateProjectDataDeliveryInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl UpdateProjectDataDeliveryFluentBuilder {
         self.inner = self.inner.set_project(input);
         self
     }
+    /// <p>The name or ARN of the project that you want to modify the data storage options for.</p>
+    pub fn get_project(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project()
+    }
     /// <p>A structure containing the S3 bucket name and bucket prefix where you want to store evaluation events.</p>
     pub fn s3_destination(mut self, input: crate::types::S3DestinationConfig) -> Self {
         self.inner = self.inner.s3_destination(input);
@@ -139,6 +147,10 @@ impl UpdateProjectDataDeliveryFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_s3_destination(input);
         self
+    }
+    /// <p>A structure containing the S3 bucket name and bucket prefix where you want to store evaluation events.</p>
+    pub fn get_s3_destination(&self) -> &::std::option::Option<crate::types::S3DestinationConfig> {
+        self.inner.get_s3_destination()
     }
     /// <p>A structure containing the CloudWatch Logs log group where you want to store evaluation events.</p>
     pub fn cloud_watch_logs(
@@ -155,5 +167,11 @@ impl UpdateProjectDataDeliveryFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_cloud_watch_logs(input);
         self
+    }
+    /// <p>A structure containing the CloudWatch Logs log group where you want to store evaluation events.</p>
+    pub fn get_cloud_watch_logs(
+        &self,
+    ) -> &::std::option::Option<crate::types::CloudWatchLogsDestinationConfig> {
+        self.inner.get_cloud_watch_logs()
     }
 }

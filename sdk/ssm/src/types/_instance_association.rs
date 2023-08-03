@@ -70,6 +70,10 @@ impl InstanceAssociationBuilder {
         self.association_id = input;
         self
     }
+    /// <p>The association ID.</p>
+    pub fn get_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_id
+    }
     /// <p>The managed node ID.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl InstanceAssociationBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The managed node ID.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The content of the association document for the managed node(s).</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
@@ -89,6 +97,10 @@ impl InstanceAssociationBuilder {
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
         self
+    }
+    /// <p>The content of the association document for the managed node(s).</p>
+    pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content
     }
     /// <p>Version information for the association on the managed node.</p>
     pub fn association_version(
@@ -105,6 +117,10 @@ impl InstanceAssociationBuilder {
     ) -> Self {
         self.association_version = input;
         self
+    }
+    /// <p>Version information for the association on the managed node.</p>
+    pub fn get_association_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_version
     }
     /// Consumes the builder and constructs a [`InstanceAssociation`](crate::types::InstanceAssociation).
     pub fn build(self) -> crate::types::InstanceAssociation {

@@ -45,6 +45,10 @@ impl GetEvaluationInputBuilder {
         self.evaluation_id = input;
         self
     }
+    /// <p>The ID of the <code>Evaluation</code> to retrieve. The evaluation of each <code>MLModel</code> is recorded and cataloged. The ID provides the means to access the information. </p>
+    pub fn get_evaluation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evaluation_id
+    }
     /// Consumes the builder and constructs a [`GetEvaluationInput`](crate::operation::get_evaluation::GetEvaluationInput).
     pub fn build(
         self,

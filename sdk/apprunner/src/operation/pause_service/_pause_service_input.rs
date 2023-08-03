@@ -39,6 +39,10 @@ impl PauseServiceInputBuilder {
         self.service_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to pause.</p>
+    pub fn get_service_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_arn
+    }
     /// Consumes the builder and constructs a [`PauseServiceInput`](crate::operation::pause_service::PauseServiceInput).
     pub fn build(
         self,

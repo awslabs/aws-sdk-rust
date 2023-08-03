@@ -54,6 +54,10 @@ impl GetStudioComponentInputBuilder {
         self.studio_component_id = input;
         self
     }
+    /// <p>The studio component ID.</p>
+    pub fn get_studio_component_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_component_id
+    }
     /// <p>The studio ID. </p>
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl GetStudioComponentInputBuilder {
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.studio_id = input;
         self
+    }
+    /// <p>The studio ID. </p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_id
     }
     /// Consumes the builder and constructs a [`GetStudioComponentInput`](crate::operation::get_studio_component::GetStudioComponentInput).
     pub fn build(

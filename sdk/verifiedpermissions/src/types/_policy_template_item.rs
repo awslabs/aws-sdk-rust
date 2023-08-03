@@ -79,6 +79,10 @@ impl PolicyTemplateItemBuilder {
         self.policy_store_id = input;
         self
     }
+    /// <p>The unique identifier of the policy store that contains the template.</p>
+    pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_store_id
+    }
     /// <p>The unique identifier of the policy template.</p>
     pub fn policy_template_id(
         mut self,
@@ -95,6 +99,10 @@ impl PolicyTemplateItemBuilder {
         self.policy_template_id = input;
         self
     }
+    /// <p>The unique identifier of the policy template.</p>
+    pub fn get_policy_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_template_id
+    }
     /// <p>The description attached to the policy template.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -104,6 +112,10 @@ impl PolicyTemplateItemBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description attached to the policy template.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The date and time that the policy template was created.</p>
     pub fn created_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -118,6 +130,10 @@ impl PolicyTemplateItemBuilder {
         self.created_date = input;
         self
     }
+    /// <p>The date and time that the policy template was created.</p>
+    pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_date
+    }
     /// <p>The date and time that the policy template was most recently updated.</p>
     pub fn last_updated_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_date = ::std::option::Option::Some(input);
@@ -130,6 +146,10 @@ impl PolicyTemplateItemBuilder {
     ) -> Self {
         self.last_updated_date = input;
         self
+    }
+    /// <p>The date and time that the policy template was most recently updated.</p>
+    pub fn get_last_updated_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_date
     }
     /// Consumes the builder and constructs a [`PolicyTemplateItem`](crate::types::PolicyTemplateItem).
     pub fn build(self) -> crate::types::PolicyTemplateItem {

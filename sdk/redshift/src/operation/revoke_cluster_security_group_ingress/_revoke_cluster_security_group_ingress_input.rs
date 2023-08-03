@@ -72,6 +72,10 @@ impl RevokeClusterSecurityGroupIngressInputBuilder {
         self.cluster_security_group_name = input;
         self
     }
+    /// <p>The name of the security Group from which to revoke the ingress rule.</p>
+    pub fn get_cluster_security_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_security_group_name
+    }
     /// <p>The IP range for which to revoke access. This range must be a valid Classless Inter-Domain Routing (CIDR) block of IP addresses. If <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code> and <code>EC2SecurityGroupOwnerId</code> cannot be provided. </p>
     pub fn cidrip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cidrip = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl RevokeClusterSecurityGroupIngressInputBuilder {
     pub fn set_cidrip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cidrip = input;
         self
+    }
+    /// <p>The IP range for which to revoke access. This range must be a valid Classless Inter-Domain Routing (CIDR) block of IP addresses. If <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code> and <code>EC2SecurityGroupOwnerId</code> cannot be provided. </p>
+    pub fn get_cidrip(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cidrip
     }
     /// <p>The name of the EC2 Security Group whose access is to be revoked. If <code>EC2SecurityGroupName</code> is specified, <code>EC2SecurityGroupOwnerId</code> must also be provided and <code>CIDRIP</code> cannot be provided. </p>
     pub fn ec2_security_group_name(
@@ -97,6 +105,10 @@ impl RevokeClusterSecurityGroupIngressInputBuilder {
     ) -> Self {
         self.ec2_security_group_name = input;
         self
+    }
+    /// <p>The name of the EC2 Security Group whose access is to be revoked. If <code>EC2SecurityGroupName</code> is specified, <code>EC2SecurityGroupOwnerId</code> must also be provided and <code>CIDRIP</code> cannot be provided. </p>
+    pub fn get_ec2_security_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ec2_security_group_name
     }
     /// <p>The Amazon Web Services account number of the owner of the security group specified in the <code>EC2SecurityGroupName</code> parameter. The Amazon Web Services access key ID is not an acceptable value. If <code>EC2SecurityGroupOwnerId</code> is specified, <code>EC2SecurityGroupName</code> must also be provided. and <code>CIDRIP</code> cannot be provided. </p>
     /// <p>Example: <code>111122223333</code> </p>
@@ -115,6 +127,11 @@ impl RevokeClusterSecurityGroupIngressInputBuilder {
     ) -> Self {
         self.ec2_security_group_owner_id = input;
         self
+    }
+    /// <p>The Amazon Web Services account number of the owner of the security group specified in the <code>EC2SecurityGroupName</code> parameter. The Amazon Web Services access key ID is not an acceptable value. If <code>EC2SecurityGroupOwnerId</code> is specified, <code>EC2SecurityGroupName</code> must also be provided. and <code>CIDRIP</code> cannot be provided. </p>
+    /// <p>Example: <code>111122223333</code> </p>
+    pub fn get_ec2_security_group_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ec2_security_group_owner_id
     }
     /// Consumes the builder and constructs a [`RevokeClusterSecurityGroupIngressInput`](crate::operation::revoke_cluster_security_group_ingress::RevokeClusterSecurityGroupIngressInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::revoke_cluster_security_group_ingress::RevokeClusterSecurityGroupIngressInput, ::aws_smithy_http::operation::error::BuildError>{

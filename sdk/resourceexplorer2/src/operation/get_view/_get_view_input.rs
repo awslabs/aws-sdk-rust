@@ -39,6 +39,10 @@ impl GetViewInputBuilder {
         self.view_arn = input;
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that you want information about.</p>
+    pub fn get_view_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.view_arn
+    }
     /// Consumes the builder and constructs a [`GetViewInput`](crate::operation::get_view::GetViewInput).
     pub fn build(
         self,

@@ -63,6 +63,14 @@ impl PolicyVariablesBuilder {
         self.rule_variables = input;
         self
     }
+    /// <p>The IPv4 or IPv6 addresses in CIDR notation to use for the Suricata <code>HOME_NET</code> variable. If your firewall uses an inspection VPC, you might want to override the <code>HOME_NET</code> variable with the CIDRs of your home networks. If you don't override <code>HOME_NET</code> with your own CIDRs, Network Firewall by default uses the CIDR of your inspection VPC.</p>
+    pub fn get_rule_variables(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::IpSet>,
+    > {
+        &self.rule_variables
+    }
     /// Consumes the builder and constructs a [`PolicyVariables`](crate::types::PolicyVariables).
     pub fn build(self) -> crate::types::PolicyVariables {
         crate::types::PolicyVariables {

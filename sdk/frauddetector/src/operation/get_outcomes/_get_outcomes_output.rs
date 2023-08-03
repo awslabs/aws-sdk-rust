@@ -63,6 +63,10 @@ impl GetOutcomesOutputBuilder {
         self.outcomes = input;
         self
     }
+    /// <p>The outcomes. </p>
+    pub fn get_outcomes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Outcome>> {
+        &self.outcomes
+    }
     /// <p>The next page token for subsequent requests.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl GetOutcomesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The next page token for subsequent requests.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

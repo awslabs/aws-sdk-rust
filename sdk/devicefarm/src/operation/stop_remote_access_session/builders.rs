@@ -37,6 +37,13 @@ impl StopRemoteAccessSessionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StopRemoteAccessSession as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::stop_remote_access_session::builders::StopRemoteAccessSessionInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,5 +133,9 @@ impl StopRemoteAccessSessionFluentBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the remote access session to stop.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
     }
 }

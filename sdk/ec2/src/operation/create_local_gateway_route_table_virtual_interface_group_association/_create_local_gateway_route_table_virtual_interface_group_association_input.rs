@@ -71,6 +71,12 @@ impl CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationInputBuilder {
         self.local_gateway_route_table_id = input;
         self
     }
+    /// <p> The ID of the local gateway route table. </p>
+    pub fn get_local_gateway_route_table_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.local_gateway_route_table_id
+    }
     /// <p> The ID of the local gateway route table virtual interface group association. </p>
     pub fn local_gateway_virtual_interface_group_id(
         mut self,
@@ -86,6 +92,12 @@ impl CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationInputBuilder {
     ) -> Self {
         self.local_gateway_virtual_interface_group_id = input;
         self
+    }
+    /// <p> The ID of the local gateway route table virtual interface group association. </p>
+    pub fn get_local_gateway_virtual_interface_group_id(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.local_gateway_virtual_interface_group_id
     }
     /// Appends an item to `tag_specifications`.
     ///
@@ -106,6 +118,12 @@ impl CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationInputBuilder {
         self.tag_specifications = input;
         self
     }
+    /// <p> The tags assigned to the local gateway route table virtual interface group association. </p>
+    pub fn get_tag_specifications(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        &self.tag_specifications
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -115,6 +133,10 @@ impl CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationInputBuilder {
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
+    }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationInput`](crate::operation::create_local_gateway_route_table_virtual_interface_group_association::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_local_gateway_route_table_virtual_interface_group_association::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationInput, ::aws_smithy_http::operation::error::BuildError>{

@@ -142,6 +142,10 @@ impl GetSceneOutputBuilder {
         self.workspace_id = input;
         self
     }
+    /// <p>The ID of the workspace that contains the scene.</p>
+    pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_id
+    }
     /// <p>The ID of the scene.</p>
     pub fn scene_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scene_id = ::std::option::Option::Some(input.into());
@@ -151,6 +155,10 @@ impl GetSceneOutputBuilder {
     pub fn set_scene_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scene_id = input;
         self
+    }
+    /// <p>The ID of the scene.</p>
+    pub fn get_scene_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scene_id
     }
     /// <p>The relative path that specifies the location of the content definition file.</p>
     pub fn content_location(
@@ -168,6 +176,10 @@ impl GetSceneOutputBuilder {
         self.content_location = input;
         self
     }
+    /// <p>The relative path that specifies the location of the content definition file.</p>
+    pub fn get_content_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_location
+    }
     /// <p>The ARN of the scene.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -177,6 +189,10 @@ impl GetSceneOutputBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The ARN of the scene.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The date and time when the scene was created.</p>
     pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -191,6 +207,10 @@ impl GetSceneOutputBuilder {
         self.creation_date_time = input;
         self
     }
+    /// <p>The date and time when the scene was created.</p>
+    pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date_time
+    }
     /// <p>The date and time when the scene was last updated.</p>
     pub fn update_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_date_time = ::std::option::Option::Some(input);
@@ -204,6 +224,10 @@ impl GetSceneOutputBuilder {
         self.update_date_time = input;
         self
     }
+    /// <p>The date and time when the scene was last updated.</p>
+    pub fn get_update_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_date_time
+    }
     /// <p>The description of the scene.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -213,6 +237,10 @@ impl GetSceneOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the scene.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `capabilities`.
     ///
@@ -232,6 +260,12 @@ impl GetSceneOutputBuilder {
     ) -> Self {
         self.capabilities = input;
         self
+    }
+    /// <p>A list of capabilities that the scene uses to render.</p>
+    pub fn get_capabilities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.capabilities
     }
     /// Adds a key-value pair to `scene_metadata`.
     ///
@@ -258,6 +292,14 @@ impl GetSceneOutputBuilder {
         self.scene_metadata = input;
         self
     }
+    /// <p>The response metadata.</p>
+    pub fn get_scene_metadata(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.scene_metadata
+    }
     /// Adds a key-value pair to `generated_scene_metadata`.
     ///
     /// To override the contents of this collection use [`set_generated_scene_metadata`](Self::set_generated_scene_metadata).
@@ -283,6 +325,14 @@ impl GetSceneOutputBuilder {
         self.generated_scene_metadata = input;
         self
     }
+    /// <p>The generated scene metadata.</p>
+    pub fn get_generated_scene_metadata(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.generated_scene_metadata
+    }
     /// <p>The SceneResponse error.</p>
     pub fn error(mut self, input: crate::types::SceneError) -> Self {
         self.error = ::std::option::Option::Some(input);
@@ -292,6 +342,10 @@ impl GetSceneOutputBuilder {
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::SceneError>) -> Self {
         self.error = input;
         self
+    }
+    /// <p>The SceneResponse error.</p>
+    pub fn get_error(&self) -> &::std::option::Option<crate::types::SceneError> {
+        &self.error
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

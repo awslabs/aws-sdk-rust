@@ -43,6 +43,10 @@ impl DescribePredictorBacktestExportJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribePredictorBacktestExportJob as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_predictor_backtest_export_job::builders::DescribePredictorBacktestExportJobInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -112,5 +116,11 @@ impl DescribePredictorBacktestExportJobFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_predictor_backtest_export_job_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job.</p>
+    pub fn get_predictor_backtest_export_job_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_predictor_backtest_export_job_arn()
     }
 }

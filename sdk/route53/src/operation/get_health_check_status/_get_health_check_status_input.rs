@@ -55,6 +55,12 @@ impl GetHealthCheckStatusInputBuilder {
         self.health_check_id = input;
         self
     }
+    /// <p>The ID for the health check that you want the current status for. When you created the health check, <code>CreateHealthCheck</code> returned the ID in the response, in the <code>HealthCheckId</code> element.</p> <note>
+    /// <p>If you want to check the status of a calculated health check, you must use the Amazon Route 53 console or the CloudWatch console. You can't use <code>GetHealthCheckStatus</code> to get the status of a calculated health check.</p>
+    /// </note>
+    pub fn get_health_check_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.health_check_id
+    }
     /// Consumes the builder and constructs a [`GetHealthCheckStatusInput`](crate::operation::get_health_check_status::GetHealthCheckStatusInput).
     pub fn build(
         self,

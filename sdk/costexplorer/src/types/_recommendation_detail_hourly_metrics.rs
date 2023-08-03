@@ -72,6 +72,10 @@ impl RecommendationDetailHourlyMetricsBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The period of time that you want the usage and costs for.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_time
+    }
     /// <p>The remaining On-Demand cost estimated to not be covered by the recommended Savings Plan, over the length of the lookback period.</p>
     pub fn estimated_on_demand_cost(
         mut self,
@@ -87,6 +91,10 @@ impl RecommendationDetailHourlyMetricsBuilder {
     ) -> Self {
         self.estimated_on_demand_cost = input;
         self
+    }
+    /// <p>The remaining On-Demand cost estimated to not be covered by the recommended Savings Plan, over the length of the lookback period.</p>
+    pub fn get_estimated_on_demand_cost(&self) -> &::std::option::Option<::std::string::String> {
+        &self.estimated_on_demand_cost
     }
     /// <p>The current amount of Savings Plans eligible usage that the Savings Plan covered.</p>
     pub fn current_coverage(
@@ -104,6 +112,10 @@ impl RecommendationDetailHourlyMetricsBuilder {
         self.current_coverage = input;
         self
     }
+    /// <p>The current amount of Savings Plans eligible usage that the Savings Plan covered.</p>
+    pub fn get_current_coverage(&self) -> &::std::option::Option<::std::string::String> {
+        &self.current_coverage
+    }
     /// <p>The estimated coverage amount based on the recommended Savings Plan.</p>
     pub fn estimated_coverage(
         mut self,
@@ -120,6 +132,10 @@ impl RecommendationDetailHourlyMetricsBuilder {
         self.estimated_coverage = input;
         self
     }
+    /// <p>The estimated coverage amount based on the recommended Savings Plan.</p>
+    pub fn get_estimated_coverage(&self) -> &::std::option::Option<::std::string::String> {
+        &self.estimated_coverage
+    }
     /// <p>The estimated utilization for the recommended Savings Plan.</p>
     pub fn estimated_new_commitment_utilization(
         mut self,
@@ -135,6 +151,12 @@ impl RecommendationDetailHourlyMetricsBuilder {
     ) -> Self {
         self.estimated_new_commitment_utilization = input;
         self
+    }
+    /// <p>The estimated utilization for the recommended Savings Plan.</p>
+    pub fn get_estimated_new_commitment_utilization(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.estimated_new_commitment_utilization
     }
     /// Consumes the builder and constructs a [`RecommendationDetailHourlyMetrics`](crate::types::RecommendationDetailHourlyMetrics).
     pub fn build(self) -> crate::types::RecommendationDetailHourlyMetrics {

@@ -84,6 +84,11 @@ impl AwsDynamoDbTableProvisionedThroughputBuilder {
         self.last_decrease_date_time = input;
         self
     }
+    /// <p>Indicates when the provisioned throughput was last decreased.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_last_decrease_date_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_decrease_date_time
+    }
     /// <p>Indicates when the provisioned throughput was last increased.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn last_increase_date_time(
@@ -102,6 +107,11 @@ impl AwsDynamoDbTableProvisionedThroughputBuilder {
         self.last_increase_date_time = input;
         self
     }
+    /// <p>Indicates when the provisioned throughput was last increased.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_last_increase_date_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_increase_date_time
+    }
     /// <p>The number of times during the current UTC calendar day that the provisioned throughput was decreased.</p>
     pub fn number_of_decreases_today(mut self, input: i32) -> Self {
         self.number_of_decreases_today = ::std::option::Option::Some(input);
@@ -111,6 +121,10 @@ impl AwsDynamoDbTableProvisionedThroughputBuilder {
     pub fn set_number_of_decreases_today(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_decreases_today = input;
         self
+    }
+    /// <p>The number of times during the current UTC calendar day that the provisioned throughput was decreased.</p>
+    pub fn get_number_of_decreases_today(&self) -> &::std::option::Option<i32> {
+        &self.number_of_decreases_today
     }
     /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
     pub fn read_capacity_units(mut self, input: i32) -> Self {
@@ -122,6 +136,10 @@ impl AwsDynamoDbTableProvisionedThroughputBuilder {
         self.read_capacity_units = input;
         self
     }
+    /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
+    pub fn get_read_capacity_units(&self) -> &::std::option::Option<i32> {
+        &self.read_capacity_units
+    }
     /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
     pub fn write_capacity_units(mut self, input: i32) -> Self {
         self.write_capacity_units = ::std::option::Option::Some(input);
@@ -131,6 +149,10 @@ impl AwsDynamoDbTableProvisionedThroughputBuilder {
     pub fn set_write_capacity_units(mut self, input: ::std::option::Option<i32>) -> Self {
         self.write_capacity_units = input;
         self
+    }
+    /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
+    pub fn get_write_capacity_units(&self) -> &::std::option::Option<i32> {
+        &self.write_capacity_units
     }
     /// Consumes the builder and constructs a [`AwsDynamoDbTableProvisionedThroughput`](crate::types::AwsDynamoDbTableProvisionedThroughput).
     pub fn build(self) -> crate::types::AwsDynamoDbTableProvisionedThroughput {

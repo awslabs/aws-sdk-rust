@@ -36,6 +36,12 @@ impl DeleteSecurityPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteSecurityPolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_security_policy::builders::DeleteSecurityPolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl DeleteSecurityPolicyFluentBuilder {
         self.inner = self.inner.set_type(input);
         self
     }
+    /// <p>The type of policy.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::SecurityPolicyType> {
+        self.inner.get_type()
+    }
     /// <p>The name of the policy to delete.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -139,6 +149,10 @@ impl DeleteSecurityPolicyFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the policy to delete.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -148,5 +162,9 @@ impl DeleteSecurityPolicyFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

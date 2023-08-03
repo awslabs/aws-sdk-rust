@@ -110,6 +110,10 @@ impl ListNotebookInstanceLifecycleConfigsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If the result of a <code>ListNotebookInstanceLifecycleConfigs</code> request was truncated, the response includes a <code>NextToken</code>. To get the next set of lifecycle configurations, use the token in the next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of lifecycle configurations to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -119,6 +123,10 @@ impl ListNotebookInstanceLifecycleConfigsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of lifecycle configurations to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>Sorts the list of results. The default is <code>CreationTime</code>.</p>
     pub fn sort_by(mut self, input: crate::types::NotebookInstanceLifecycleConfigSortKey) -> Self {
@@ -132,6 +140,12 @@ impl ListNotebookInstanceLifecycleConfigsInputBuilder {
     ) -> Self {
         self.sort_by = input;
         self
+    }
+    /// <p>Sorts the list of results. The default is <code>CreationTime</code>.</p>
+    pub fn get_sort_by(
+        &self,
+    ) -> &::std::option::Option<crate::types::NotebookInstanceLifecycleConfigSortKey> {
+        &self.sort_by
     }
     /// <p>The sort order for results.</p>
     pub fn sort_order(
@@ -149,6 +163,12 @@ impl ListNotebookInstanceLifecycleConfigsInputBuilder {
         self.sort_order = input;
         self
     }
+    /// <p>The sort order for results.</p>
+    pub fn get_sort_order(
+        &self,
+    ) -> &::std::option::Option<crate::types::NotebookInstanceLifecycleConfigSortOrder> {
+        &self.sort_order
+    }
     /// <p>A string in the lifecycle configuration name. This filter returns only lifecycle configurations whose name contains the specified string.</p>
     pub fn name_contains(
         mut self,
@@ -165,6 +185,10 @@ impl ListNotebookInstanceLifecycleConfigsInputBuilder {
         self.name_contains = input;
         self
     }
+    /// <p>A string in the lifecycle configuration name. This filter returns only lifecycle configurations whose name contains the specified string.</p>
+    pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name_contains
+    }
     /// <p>A filter that returns only lifecycle configurations that were created before the specified time (timestamp).</p>
     pub fn creation_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time_before = ::std::option::Option::Some(input);
@@ -177,6 +201,10 @@ impl ListNotebookInstanceLifecycleConfigsInputBuilder {
     ) -> Self {
         self.creation_time_before = input;
         self
+    }
+    /// <p>A filter that returns only lifecycle configurations that were created before the specified time (timestamp).</p>
+    pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time_before
     }
     /// <p>A filter that returns only lifecycle configurations that were created after the specified time (timestamp).</p>
     pub fn creation_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -191,6 +219,10 @@ impl ListNotebookInstanceLifecycleConfigsInputBuilder {
         self.creation_time_after = input;
         self
     }
+    /// <p>A filter that returns only lifecycle configurations that were created after the specified time (timestamp).</p>
+    pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time_after
+    }
     /// <p>A filter that returns only lifecycle configurations that were modified before the specified time (timestamp).</p>
     pub fn last_modified_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time_before = ::std::option::Option::Some(input);
@@ -204,6 +236,12 @@ impl ListNotebookInstanceLifecycleConfigsInputBuilder {
         self.last_modified_time_before = input;
         self
     }
+    /// <p>A filter that returns only lifecycle configurations that were modified before the specified time (timestamp).</p>
+    pub fn get_last_modified_time_before(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time_before
+    }
     /// <p>A filter that returns only lifecycle configurations that were modified after the specified time (timestamp).</p>
     pub fn last_modified_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time_after = ::std::option::Option::Some(input);
@@ -216,6 +254,12 @@ impl ListNotebookInstanceLifecycleConfigsInputBuilder {
     ) -> Self {
         self.last_modified_time_after = input;
         self
+    }
+    /// <p>A filter that returns only lifecycle configurations that were modified after the specified time (timestamp).</p>
+    pub fn get_last_modified_time_after(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time_after
     }
     /// Consumes the builder and constructs a [`ListNotebookInstanceLifecycleConfigsInput`](crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsInput, ::aws_smithy_http::operation::error::BuildError>{

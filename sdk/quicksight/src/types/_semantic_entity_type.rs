@@ -64,6 +64,10 @@ impl SemanticEntityTypeBuilder {
         self.type_name = input;
         self
     }
+    /// <p>The semantic entity type name.</p>
+    pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.type_name
+    }
     /// <p>The semantic entity sub type name.</p>
     pub fn sub_type_name(
         mut self,
@@ -79,6 +83,10 @@ impl SemanticEntityTypeBuilder {
     ) -> Self {
         self.sub_type_name = input;
         self
+    }
+    /// <p>The semantic entity sub type name.</p>
+    pub fn get_sub_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sub_type_name
     }
     /// Adds a key-value pair to `type_parameters`.
     ///
@@ -104,6 +112,14 @@ impl SemanticEntityTypeBuilder {
     ) -> Self {
         self.type_parameters = input;
         self
+    }
+    /// <p>The semantic entity type parameters.</p>
+    pub fn get_type_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.type_parameters
     }
     /// Consumes the builder and constructs a [`SemanticEntityType`](crate::types::SemanticEntityType).
     pub fn build(self) -> crate::types::SemanticEntityType {

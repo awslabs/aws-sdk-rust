@@ -36,6 +36,12 @@ impl UpdateFirewallConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateFirewallConfig as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_firewall_config::builders::UpdateFirewallConfigInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateFirewallConfigFluentBuilder {
         self.inner = self.inner.set_resource_id(input);
         self
     }
+    /// <p>The ID of the VPC that the configuration is for.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_id()
+    }
     /// <p>Determines how Route 53 Resolver handles queries during failures, for example when all traffic that is sent to DNS Firewall fails to receive a reply. </p>
     /// <ul>
     /// <li> <p>By default, fail open is disabled, which means the failure mode is closed. This approach favors security over availability. DNS Firewall blocks queries that it is unable to evaluate properly. </p> </li>
@@ -148,5 +158,16 @@ impl UpdateFirewallConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_firewall_fail_open(input);
         self
+    }
+    /// <p>Determines how Route 53 Resolver handles queries during failures, for example when all traffic that is sent to DNS Firewall fails to receive a reply. </p>
+    /// <ul>
+    /// <li> <p>By default, fail open is disabled, which means the failure mode is closed. This approach favors security over availability. DNS Firewall blocks queries that it is unable to evaluate properly. </p> </li>
+    /// <li> <p>If you enable this option, the failure mode is open. This approach favors availability over security. DNS Firewall allows queries to proceed if it is unable to properly evaluate them. </p> </li>
+    /// </ul>
+    /// <p>This behavior is only enforced for VPCs that have at least one DNS Firewall rule group association. </p>
+    pub fn get_firewall_fail_open(
+        &self,
+    ) -> &::std::option::Option<crate::types::FirewallFailOpenStatus> {
+        self.inner.get_firewall_fail_open()
     }
 }

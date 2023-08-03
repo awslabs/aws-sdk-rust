@@ -37,6 +37,13 @@ impl DeleteClusterSnapshotFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteClusterSnapshot as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_cluster_snapshot::builders::DeleteClusterSnapshotInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +142,11 @@ impl DeleteClusterSnapshotFluentBuilder {
         self.inner = self.inner.set_snapshot_identifier(input);
         self
     }
+    /// <p>The unique identifier of the manual snapshot to be deleted.</p>
+    /// <p>Constraints: Must be the name of an existing snapshot that is in the <code>available</code>, <code>failed</code>, or <code>cancelled</code> state.</p>
+    pub fn get_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_snapshot_identifier()
+    }
     /// <p>The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     /// <p>Constraints: Must be the name of valid cluster.</p>
     pub fn snapshot_cluster_identifier(
@@ -152,5 +164,10 @@ impl DeleteClusterSnapshotFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_snapshot_cluster_identifier(input);
         self
+    }
+    /// <p>The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
+    /// <p>Constraints: Must be the name of valid cluster.</p>
+    pub fn get_snapshot_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_snapshot_cluster_identifier()
     }
 }

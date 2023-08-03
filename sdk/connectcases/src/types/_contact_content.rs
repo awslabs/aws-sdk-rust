@@ -56,6 +56,10 @@ impl ContactContentBuilder {
         self.contact_arn = input;
         self
     }
+    /// <p>A unique identifier of a contact in Amazon Connect.</p>
+    pub fn get_contact_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_arn
+    }
     /// <p>A list of channels to filter on for related items of type <code>Contact</code>.</p>
     pub fn channel(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.channel = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl ContactContentBuilder {
     pub fn set_channel(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel = input;
         self
+    }
+    /// <p>A list of channels to filter on for related items of type <code>Contact</code>.</p>
+    pub fn get_channel(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel
     }
     /// <p>The difference between the <code>InitiationTimestamp</code> and the <code>DisconnectTimestamp</code> of the contact.</p>
     pub fn connected_to_system_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -78,6 +86,12 @@ impl ContactContentBuilder {
     ) -> Self {
         self.connected_to_system_time = input;
         self
+    }
+    /// <p>The difference between the <code>InitiationTimestamp</code> and the <code>DisconnectTimestamp</code> of the contact.</p>
+    pub fn get_connected_to_system_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.connected_to_system_time
     }
     /// Consumes the builder and constructs a [`ContactContent`](crate::types::ContactContent).
     pub fn build(self) -> crate::types::ContactContent {

@@ -46,6 +46,10 @@ impl ServiceNowParametersBuilder {
         self.site_base_url = input;
         self
     }
+    /// <p>URL of the base site.</p>
+    pub fn get_site_base_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.site_base_url
+    }
     /// Consumes the builder and constructs a [`ServiceNowParameters`](crate::types::ServiceNowParameters).
     pub fn build(self) -> crate::types::ServiceNowParameters {
         crate::types::ServiceNowParameters {

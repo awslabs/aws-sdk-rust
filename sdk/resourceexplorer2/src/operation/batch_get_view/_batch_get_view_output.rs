@@ -63,6 +63,10 @@ impl BatchGetViewOutputBuilder {
         self.views = input;
         self
     }
+    /// <p>A structure with a list of objects with details for each of the specified views.</p>
+    pub fn get_views(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::View>> {
+        &self.views
+    }
     /// Appends an item to `errors`.
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
@@ -81,6 +85,12 @@ impl BatchGetViewOutputBuilder {
     ) -> Self {
         self.errors = input;
         self
+    }
+    /// <p>If any of the specified ARNs result in an error, then this structure describes the error.</p>
+    pub fn get_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetViewError>> {
+        &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

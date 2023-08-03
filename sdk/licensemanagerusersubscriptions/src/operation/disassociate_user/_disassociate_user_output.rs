@@ -52,6 +52,12 @@ impl DisassociateUserOutputBuilder {
         self.instance_user_summary = input;
         self
     }
+    /// <p>Metadata that describes the associate user operation.</p>
+    pub fn get_instance_user_summary(
+        &self,
+    ) -> &::std::option::Option<crate::types::InstanceUserSummary> {
+        &self.instance_user_summary
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

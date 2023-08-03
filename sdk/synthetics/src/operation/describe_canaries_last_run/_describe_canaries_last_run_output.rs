@@ -66,6 +66,12 @@ impl DescribeCanariesLastRunOutputBuilder {
         self.canaries_last_run = input;
         self
     }
+    /// <p>An array that contains the information from the most recent run of each canary.</p>
+    pub fn get_canaries_last_run(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CanaryLastRun>> {
+        &self.canaries_last_run
+    }
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanariesLastRun</code> operation to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -75,6 +81,10 @@ impl DescribeCanariesLastRunOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanariesLastRun</code> operation to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

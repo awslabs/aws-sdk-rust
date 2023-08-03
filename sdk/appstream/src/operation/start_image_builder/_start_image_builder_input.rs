@@ -48,6 +48,10 @@ impl StartImageBuilderInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the image builder.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
     pub fn appstream_agent_version(
         mut self,
@@ -63,6 +67,10 @@ impl StartImageBuilderInputBuilder {
     ) -> Self {
         self.appstream_agent_version = input;
         self
+    }
+    /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
+    pub fn get_appstream_agent_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.appstream_agent_version
     }
     /// Consumes the builder and constructs a [`StartImageBuilderInput`](crate::operation::start_image_builder::StartImageBuilderInput).
     pub fn build(

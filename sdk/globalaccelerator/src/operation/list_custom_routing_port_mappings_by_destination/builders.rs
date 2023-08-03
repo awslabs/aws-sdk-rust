@@ -36,6 +36,10 @@ impl ListCustomRoutingPortMappingsByDestinationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListCustomRoutingPortMappingsByDestination as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_custom_routing_port_mappings_by_destination::builders::ListCustomRoutingPortMappingsByDestinationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl ListCustomRoutingPortMappingsByDestinationFluentBuilder {
         self.inner = self.inner.set_endpoint_id(input);
         self
     }
+    /// <p>The ID for the virtual private cloud (VPC) subnet.</p>
+    pub fn get_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_endpoint_id()
+    }
     /// <p>The endpoint IP address in a virtual private cloud (VPC) subnet for which you want to receive back port mappings.</p>
     pub fn destination_address(
         mut self,
@@ -122,6 +130,10 @@ impl ListCustomRoutingPortMappingsByDestinationFluentBuilder {
         self.inner = self.inner.set_destination_address(input);
         self
     }
+    /// <p>The endpoint IP address in a virtual private cloud (VPC) subnet for which you want to receive back port mappings.</p>
+    pub fn get_destination_address(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_address()
+    }
     /// <p>The number of destination port mappings that you want to return with this call. The default value is 10.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -132,6 +144,10 @@ impl ListCustomRoutingPortMappingsByDestinationFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The number of destination port mappings that you want to return with this call. The default value is 10.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -141,5 +157,9 @@ impl ListCustomRoutingPortMappingsByDestinationFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token for the next set of results. You receive this token from a previous call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

@@ -55,6 +55,11 @@ impl DescribeAttachmentOutputBuilder {
         self.attachment = input;
         self
     }
+    /// <p>This object includes the attachment content and file name.</p>
+    /// <p>In the previous response syntax, the value for the <code>data</code> parameter appears as <code>blob</code>, which is represented as a base64-encoded string. The value for <code>fileName</code> is the name of the attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
+    pub fn get_attachment(&self) -> &::std::option::Option<crate::types::Attachment> {
+        &self.attachment
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

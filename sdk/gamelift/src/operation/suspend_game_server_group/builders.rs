@@ -44,6 +44,13 @@ impl SuspendGameServerGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SuspendGameServerGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::suspend_game_server_group::builders::SuspendGameServerGroupInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +147,10 @@ impl SuspendGameServerGroupFluentBuilder {
         self.inner = self.inner.set_game_server_group_name(input);
         self
     }
+    /// <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
+    pub fn get_game_server_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_game_server_group_name()
+    }
     /// Appends an item to `SuspendActions`.
     ///
     /// To override the contents of this collection use [`set_suspend_actions`](Self::set_suspend_actions).
@@ -156,5 +167,11 @@ impl SuspendGameServerGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_suspend_actions(input);
         self
+    }
+    /// <p>The activity to suspend for this game server group.</p>
+    pub fn get_suspend_actions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::GameServerGroupAction>> {
+        self.inner.get_suspend_actions()
     }
 }

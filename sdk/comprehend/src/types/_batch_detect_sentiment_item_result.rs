@@ -56,6 +56,10 @@ impl BatchDetectSentimentItemResultBuilder {
         self.index = input;
         self
     }
+    /// <p>The zero-based index of the document in the input list.</p>
+    pub fn get_index(&self) -> &::std::option::Option<i32> {
+        &self.index
+    }
     /// <p>The sentiment detected in the document.</p>
     pub fn sentiment(mut self, input: crate::types::SentimentType) -> Self {
         self.sentiment = ::std::option::Option::Some(input);
@@ -69,6 +73,10 @@ impl BatchDetectSentimentItemResultBuilder {
         self.sentiment = input;
         self
     }
+    /// <p>The sentiment detected in the document.</p>
+    pub fn get_sentiment(&self) -> &::std::option::Option<crate::types::SentimentType> {
+        &self.sentiment
+    }
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its sentiment detection.</p>
     pub fn sentiment_score(mut self, input: crate::types::SentimentScore) -> Self {
         self.sentiment_score = ::std::option::Option::Some(input);
@@ -81,6 +89,10 @@ impl BatchDetectSentimentItemResultBuilder {
     ) -> Self {
         self.sentiment_score = input;
         self
+    }
+    /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its sentiment detection.</p>
+    pub fn get_sentiment_score(&self) -> &::std::option::Option<crate::types::SentimentScore> {
+        &self.sentiment_score
     }
     /// Consumes the builder and constructs a [`BatchDetectSentimentItemResult`](crate::types::BatchDetectSentimentItemResult).
     pub fn build(self) -> crate::types::BatchDetectSentimentItemResult {

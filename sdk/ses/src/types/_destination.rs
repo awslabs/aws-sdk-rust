@@ -67,6 +67,12 @@ impl DestinationBuilder {
         self.to_addresses = input;
         self
     }
+    /// <p>The recipients to place on the To: line of the message.</p>
+    pub fn get_to_addresses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.to_addresses
+    }
     /// Appends an item to `cc_addresses`.
     ///
     /// To override the contents of this collection use [`set_cc_addresses`](Self::set_cc_addresses).
@@ -85,6 +91,12 @@ impl DestinationBuilder {
     ) -> Self {
         self.cc_addresses = input;
         self
+    }
+    /// <p>The recipients to place on the CC: line of the message.</p>
+    pub fn get_cc_addresses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.cc_addresses
     }
     /// Appends an item to `bcc_addresses`.
     ///
@@ -107,6 +119,12 @@ impl DestinationBuilder {
     ) -> Self {
         self.bcc_addresses = input;
         self
+    }
+    /// <p>The recipients to place on the BCC: line of the message.</p>
+    pub fn get_bcc_addresses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.bcc_addresses
     }
     /// Consumes the builder and constructs a [`Destination`](crate::types::Destination).
     pub fn build(self) -> crate::types::Destination {

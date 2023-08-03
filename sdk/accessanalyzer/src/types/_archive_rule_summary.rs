@@ -72,6 +72,10 @@ impl ArchiveRuleSummaryBuilder {
         self.rule_name = input;
         self
     }
+    /// <p>The name of the archive rule.</p>
+    pub fn get_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_name
+    }
     /// Adds a key-value pair to `filter`.
     ///
     /// To override the contents of this collection use [`set_filter`](Self::set_filter).
@@ -97,6 +101,14 @@ impl ArchiveRuleSummaryBuilder {
         self.filter = input;
         self
     }
+    /// <p>A filter used to define the archive rule.</p>
+    pub fn get_filter(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::Criterion>,
+    > {
+        &self.filter
+    }
     /// <p>The time at which the archive rule was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -110,6 +122,10 @@ impl ArchiveRuleSummaryBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The time at which the archive rule was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The time at which the archive rule was last updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
@@ -122,6 +138,10 @@ impl ArchiveRuleSummaryBuilder {
     ) -> Self {
         self.updated_at = input;
         self
+    }
+    /// <p>The time at which the archive rule was last updated.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
     }
     /// Consumes the builder and constructs a [`ArchiveRuleSummary`](crate::types::ArchiveRuleSummary).
     pub fn build(self) -> crate::types::ArchiveRuleSummary {

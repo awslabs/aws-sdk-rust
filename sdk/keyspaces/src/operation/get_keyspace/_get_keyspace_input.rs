@@ -45,6 +45,10 @@ impl GetKeyspaceInputBuilder {
         self.keyspace_name = input;
         self
     }
+    /// <p>The name of the keyspace.</p>
+    pub fn get_keyspace_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.keyspace_name
+    }
     /// Consumes the builder and constructs a [`GetKeyspaceInput`](crate::operation::get_keyspace::GetKeyspaceInput).
     pub fn build(
         self,

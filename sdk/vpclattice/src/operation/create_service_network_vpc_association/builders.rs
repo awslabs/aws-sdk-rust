@@ -39,6 +39,10 @@ impl CreateServiceNetworkVpcAssociationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateServiceNetworkVpcAssociation as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_service_network_vpc_association::builders::CreateServiceNetworkVpcAssociationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -103,6 +107,10 @@ impl CreateServiceNetworkVpcAssociationFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
     /// <p>The ID or Amazon Resource Name (ARN) of the service network. You must use the ARN when the resources specified in the operation are in different accounts.</p>
     pub fn service_network_identifier(
         mut self,
@@ -119,6 +127,10 @@ impl CreateServiceNetworkVpcAssociationFluentBuilder {
         self.inner = self.inner.set_service_network_identifier(input);
         self
     }
+    /// <p>The ID or Amazon Resource Name (ARN) of the service network. You must use the ARN when the resources specified in the operation are in different accounts.</p>
+    pub fn get_service_network_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_network_identifier()
+    }
     /// <p>The ID of the VPC.</p>
     pub fn vpc_identifier(
         mut self,
@@ -134,6 +146,10 @@ impl CreateServiceNetworkVpcAssociationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_vpc_identifier(input);
         self
+    }
+    /// <p>The ID of the VPC.</p>
+    pub fn get_vpc_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_vpc_identifier()
     }
     /// Appends an item to `securityGroupIds`.
     ///
@@ -154,6 +170,12 @@ impl CreateServiceNetworkVpcAssociationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_security_group_ids(input);
         self
+    }
+    /// <p>The IDs of the security groups. Security groups aren't added by default. You can add a security group to apply network level controls to control which resources in a VPC are allowed to access the service network and its services. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Control traffic to resources using security groups</a> in the <i>Amazon VPC User Guide</i>.</p>
+    pub fn get_security_group_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_security_group_ids()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -177,5 +199,13 @@ impl CreateServiceNetworkVpcAssociationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags for the association.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
     }
 }

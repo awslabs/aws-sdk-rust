@@ -69,6 +69,12 @@ impl ListFhirExportJobsOutputBuilder {
         self.export_job_properties_list = input;
         self
     }
+    /// <p> The properties of listed FHIR export jobs, including the ID, ARN, name, and the status of the job. </p>
+    pub fn get_export_job_properties_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ExportJobProperties>> {
+        &self.export_job_properties_list
+    }
     /// <p> A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -78,6 +84,10 @@ impl ListFhirExportJobsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p> A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

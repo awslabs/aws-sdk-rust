@@ -36,6 +36,10 @@ impl GetImportFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetImport as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_import::builders::GetImportInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -117,5 +121,9 @@ impl GetImportFluentBuilder {
     pub fn set_import_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_import_id(input);
         self
+    }
+    /// <p>The identifier of the import job information to return.</p>
+    pub fn get_import_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_import_id()
     }
 }

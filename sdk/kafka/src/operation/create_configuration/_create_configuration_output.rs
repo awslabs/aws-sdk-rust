@@ -80,6 +80,10 @@ impl CreateConfigurationOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The time when the configuration was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -92,6 +96,10 @@ impl CreateConfigurationOutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The time when the configuration was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>Latest revision of the configuration.</p>
     pub fn latest_revision(mut self, input: crate::types::ConfigurationRevision) -> Self {
@@ -106,6 +114,12 @@ impl CreateConfigurationOutputBuilder {
         self.latest_revision = input;
         self
     }
+    /// <p>Latest revision of the configuration.</p>
+    pub fn get_latest_revision(
+        &self,
+    ) -> &::std::option::Option<crate::types::ConfigurationRevision> {
+        &self.latest_revision
+    }
     /// <p>The name of the configuration.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -115,6 +129,10 @@ impl CreateConfigurationOutputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
     pub fn state(mut self, input: crate::types::ConfigurationState) -> Self {
@@ -128,6 +146,10 @@ impl CreateConfigurationOutputBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::ConfigurationState> {
+        &self.state
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

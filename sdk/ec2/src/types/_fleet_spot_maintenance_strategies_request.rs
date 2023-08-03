@@ -49,6 +49,12 @@ impl FleetSpotMaintenanceStrategiesRequestBuilder {
         self.capacity_rebalance = input;
         self
     }
+    /// <p>The strategy to use when Amazon EC2 emits a signal that your Spot Instance is at an elevated risk of being interrupted.</p>
+    pub fn get_capacity_rebalance(
+        &self,
+    ) -> &::std::option::Option<crate::types::FleetSpotCapacityRebalanceRequest> {
+        &self.capacity_rebalance
+    }
     /// Consumes the builder and constructs a [`FleetSpotMaintenanceStrategiesRequest`](crate::types::FleetSpotMaintenanceStrategiesRequest).
     pub fn build(self) -> crate::types::FleetSpotMaintenanceStrategiesRequest {
         crate::types::FleetSpotMaintenanceStrategiesRequest {

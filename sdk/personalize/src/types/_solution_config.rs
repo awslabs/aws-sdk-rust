@@ -112,6 +112,10 @@ impl SolutionConfigBuilder {
         self.event_value_threshold = input;
         self
     }
+    /// <p>Only events with a value greater than or equal to this threshold are used for training a model.</p>
+    pub fn get_event_value_threshold(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_value_threshold
+    }
     /// <p>Describes the properties for hyperparameter optimization (HPO).</p>
     pub fn hpo_config(mut self, input: crate::types::HpoConfig) -> Self {
         self.hpo_config = ::std::option::Option::Some(input);
@@ -121,6 +125,10 @@ impl SolutionConfigBuilder {
     pub fn set_hpo_config(mut self, input: ::std::option::Option<crate::types::HpoConfig>) -> Self {
         self.hpo_config = input;
         self
+    }
+    /// <p>Describes the properties for hyperparameter optimization (HPO).</p>
+    pub fn get_hpo_config(&self) -> &::std::option::Option<crate::types::HpoConfig> {
+        &self.hpo_config
     }
     /// Adds a key-value pair to `algorithm_hyper_parameters`.
     ///
@@ -147,6 +155,14 @@ impl SolutionConfigBuilder {
         self.algorithm_hyper_parameters = input;
         self
     }
+    /// <p>Lists the hyperparameter names and ranges.</p>
+    pub fn get_algorithm_hyper_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.algorithm_hyper_parameters
+    }
     /// Adds a key-value pair to `feature_transformation_parameters`.
     ///
     /// To override the contents of this collection use [`set_feature_transformation_parameters`](Self::set_feature_transformation_parameters).
@@ -172,6 +188,14 @@ impl SolutionConfigBuilder {
         self.feature_transformation_parameters = input;
         self
     }
+    /// <p>Lists the feature transformation parameters.</p>
+    pub fn get_feature_transformation_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.feature_transformation_parameters
+    }
     /// <p>The <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_AutoMLConfig.html">AutoMLConfig</a> object containing a list of recipes to search when AutoML is performed.</p>
     pub fn auto_ml_config(mut self, input: crate::types::AutoMlConfig) -> Self {
         self.auto_ml_config = ::std::option::Option::Some(input);
@@ -184,6 +208,10 @@ impl SolutionConfigBuilder {
     ) -> Self {
         self.auto_ml_config = input;
         self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_AutoMLConfig.html">AutoMLConfig</a> object containing a list of recipes to search when AutoML is performed.</p>
+    pub fn get_auto_ml_config(&self) -> &::std::option::Option<crate::types::AutoMlConfig> {
+        &self.auto_ml_config
     }
     /// <p>Describes the additional objective for the solution, such as maximizing streaming minutes or increasing revenue. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/optimizing-solution-for-objective.html">Optimizing a solution</a>.</p>
     pub fn optimization_objective(mut self, input: crate::types::OptimizationObjective) -> Self {
@@ -198,6 +226,12 @@ impl SolutionConfigBuilder {
         self.optimization_objective = input;
         self
     }
+    /// <p>Describes the additional objective for the solution, such as maximizing streaming minutes or increasing revenue. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/optimizing-solution-for-objective.html">Optimizing a solution</a>.</p>
+    pub fn get_optimization_objective(
+        &self,
+    ) -> &::std::option::Option<crate::types::OptimizationObjective> {
+        &self.optimization_objective
+    }
     /// <p> Specifies the training data configuration to use when creating a custom solution version (trained model). </p>
     pub fn training_data_config(mut self, input: crate::types::TrainingDataConfig) -> Self {
         self.training_data_config = ::std::option::Option::Some(input);
@@ -210,6 +244,12 @@ impl SolutionConfigBuilder {
     ) -> Self {
         self.training_data_config = input;
         self
+    }
+    /// <p> Specifies the training data configuration to use when creating a custom solution version (trained model). </p>
+    pub fn get_training_data_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::TrainingDataConfig> {
+        &self.training_data_config
     }
     /// Consumes the builder and constructs a [`SolutionConfig`](crate::types::SolutionConfig).
     pub fn build(self) -> crate::types::SolutionConfig {

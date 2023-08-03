@@ -58,6 +58,13 @@ impl TableConditionalFormattingBuilder {
         self.conditional_formatting_options = input;
         self
     }
+    /// <p>Conditional formatting options for a <code>PivotTableVisual</code>.</p>
+    pub fn get_conditional_formatting_options(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::TableConditionalFormattingOption>>
+    {
+        &self.conditional_formatting_options
+    }
     /// Consumes the builder and constructs a [`TableConditionalFormatting`](crate::types::TableConditionalFormatting).
     pub fn build(self) -> crate::types::TableConditionalFormatting {
         crate::types::TableConditionalFormatting {

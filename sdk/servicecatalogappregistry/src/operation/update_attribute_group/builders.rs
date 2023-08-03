@@ -36,6 +36,12 @@ impl UpdateAttributeGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAttributeGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_attribute_group::builders::UpdateAttributeGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateAttributeGroupFluentBuilder {
         self.inner = self.inner.set_attribute_group(input);
         self
     }
+    /// <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
+    pub fn get_attribute_group(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_attribute_group()
+    }
     /// <p>Deprecated: The new name of the attribute group. The name must be unique in the region in which you are updating the attribute group. Please do not use this field as we have stopped supporting name updates.</p>
     #[deprecated(note = "Name update for attribute group is deprecated.")]
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -144,6 +154,11 @@ impl UpdateAttributeGroupFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>Deprecated: The new name of the attribute group. The name must be unique in the region in which you are updating the attribute group. Please do not use this field as we have stopped supporting name updates.</p>
+    #[deprecated(note = "Name update for attribute group is deprecated.")]
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The description of the attribute group that the user provides.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -154,6 +169,10 @@ impl UpdateAttributeGroupFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
+    /// <p>The description of the attribute group that the user provides.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
     /// <p>A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.</p>
     pub fn attributes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attributes(input.into());
@@ -163,5 +182,9 @@ impl UpdateAttributeGroupFluentBuilder {
     pub fn set_attributes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
+    }
+    /// <p>A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.</p>
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_attributes()
     }
 }

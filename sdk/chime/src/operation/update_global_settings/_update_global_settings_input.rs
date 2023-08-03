@@ -53,6 +53,12 @@ impl UpdateGlobalSettingsInputBuilder {
         self.business_calling = input;
         self
     }
+    /// <p>The Amazon Chime Business Calling settings.</p>
+    pub fn get_business_calling(
+        &self,
+    ) -> &::std::option::Option<crate::types::BusinessCallingSettings> {
+        &self.business_calling
+    }
     /// <p>The Amazon Chime Voice Connector settings.</p>
     pub fn voice_connector(mut self, input: crate::types::VoiceConnectorSettings) -> Self {
         self.voice_connector = ::std::option::Option::Some(input);
@@ -65,6 +71,12 @@ impl UpdateGlobalSettingsInputBuilder {
     ) -> Self {
         self.voice_connector = input;
         self
+    }
+    /// <p>The Amazon Chime Voice Connector settings.</p>
+    pub fn get_voice_connector(
+        &self,
+    ) -> &::std::option::Option<crate::types::VoiceConnectorSettings> {
+        &self.voice_connector
     }
     /// Consumes the builder and constructs a [`UpdateGlobalSettingsInput`](crate::operation::update_global_settings::UpdateGlobalSettingsInput).
     pub fn build(

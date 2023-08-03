@@ -73,6 +73,10 @@ impl RequiredActivatedTypeBuilder {
         self.type_name_alias = input;
         self
     }
+    /// <p>An alias assigned to the public extension, in this account and Region. If you specify an alias for the extension, CloudFormation treats the alias as the extension type name within this account and Region. You must use the alias to refer to the extension in your templates, API calls, and CloudFormation console.</p>
+    pub fn get_type_name_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.type_name_alias
+    }
     /// <p>The type name of the public extension.</p>
     /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and Region, CloudFormation treats that alias as the extension's type name within the account and Region, not the type name of the public extension. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn original_type_name(
@@ -91,6 +95,11 @@ impl RequiredActivatedTypeBuilder {
         self.original_type_name = input;
         self
     }
+    /// <p>The type name of the public extension.</p>
+    /// <p>If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and Region, CloudFormation treats that alias as the extension's type name within the account and Region, not the type name of the public extension. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
+    pub fn get_original_type_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.original_type_name
+    }
     /// <p>The publisher ID of the extension publisher.</p>
     pub fn publisher_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.publisher_id = ::std::option::Option::Some(input.into());
@@ -100,6 +109,10 @@ impl RequiredActivatedTypeBuilder {
     pub fn set_publisher_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.publisher_id = input;
         self
+    }
+    /// <p>The publisher ID of the extension publisher.</p>
+    pub fn get_publisher_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.publisher_id
     }
     /// Appends an item to `supported_major_versions`.
     ///
@@ -119,6 +132,10 @@ impl RequiredActivatedTypeBuilder {
     ) -> Self {
         self.supported_major_versions = input;
         self
+    }
+    /// <p>A list of the major versions of the extension type that the macro supports.</p>
+    pub fn get_supported_major_versions(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        &self.supported_major_versions
     }
     /// Consumes the builder and constructs a [`RequiredActivatedType`](crate::types::RequiredActivatedType).
     pub fn build(self) -> crate::types::RequiredActivatedType {

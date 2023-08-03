@@ -57,6 +57,12 @@ impl ApplyPendingMaintenanceActionOutputBuilder {
         self.resource_pending_maintenance_actions = input;
         self
     }
+    /// <p>The DMS resource that the pending maintenance action will be applied to.</p>
+    pub fn get_resource_pending_maintenance_actions(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourcePendingMaintenanceActions> {
+        &self.resource_pending_maintenance_actions
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

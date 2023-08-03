@@ -56,6 +56,10 @@ impl GetAgentConfigurationOutputBuilder {
         self.agent_id = input;
         self
     }
+    /// <p>UUID of agent.</p>
+    pub fn get_agent_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_id
+    }
     /// <p>Tasking document for agent.</p>
     pub fn tasking_document(
         mut self,
@@ -71,6 +75,10 @@ impl GetAgentConfigurationOutputBuilder {
     ) -> Self {
         self.tasking_document = input;
         self
+    }
+    /// <p>Tasking document for agent.</p>
+    pub fn get_tasking_document(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tasking_document
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

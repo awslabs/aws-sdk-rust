@@ -70,6 +70,10 @@ impl DiskResourceUtilizationBuilder {
         self.disk_read_ops_per_second = input;
         self
     }
+    /// <p>The maximum number of read operations per second. </p>
+    pub fn get_disk_read_ops_per_second(&self) -> &::std::option::Option<::std::string::String> {
+        &self.disk_read_ops_per_second
+    }
     /// <p>The maximum number of write operations per second. </p>
     pub fn disk_write_ops_per_second(
         mut self,
@@ -85,6 +89,10 @@ impl DiskResourceUtilizationBuilder {
     ) -> Self {
         self.disk_write_ops_per_second = input;
         self
+    }
+    /// <p>The maximum number of write operations per second. </p>
+    pub fn get_disk_write_ops_per_second(&self) -> &::std::option::Option<::std::string::String> {
+        &self.disk_write_ops_per_second
     }
     /// <p>The maximum read throughput operations per second. </p>
     pub fn disk_read_bytes_per_second(
@@ -102,6 +110,10 @@ impl DiskResourceUtilizationBuilder {
         self.disk_read_bytes_per_second = input;
         self
     }
+    /// <p>The maximum read throughput operations per second. </p>
+    pub fn get_disk_read_bytes_per_second(&self) -> &::std::option::Option<::std::string::String> {
+        &self.disk_read_bytes_per_second
+    }
     /// <p>The maximum write throughput operations per second. </p>
     pub fn disk_write_bytes_per_second(
         mut self,
@@ -117,6 +129,10 @@ impl DiskResourceUtilizationBuilder {
     ) -> Self {
         self.disk_write_bytes_per_second = input;
         self
+    }
+    /// <p>The maximum write throughput operations per second. </p>
+    pub fn get_disk_write_bytes_per_second(&self) -> &::std::option::Option<::std::string::String> {
+        &self.disk_write_bytes_per_second
     }
     /// Consumes the builder and constructs a [`DiskResourceUtilization`](crate::types::DiskResourceUtilization).
     pub fn build(self) -> crate::types::DiskResourceUtilization {

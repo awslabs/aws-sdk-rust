@@ -53,6 +53,10 @@ impl ActivateUserInputBuilder {
         self.user_id = input;
         self
     }
+    /// <p>The ID of the user.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
+    }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn authentication_token(
         mut self,
@@ -68,6 +72,10 @@ impl ActivateUserInputBuilder {
     ) -> Self {
         self.authentication_token = input;
         self
+    }
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authentication_token
     }
     /// Consumes the builder and constructs a [`ActivateUserInput`](crate::operation::activate_user::ActivateUserInput).
     pub fn build(

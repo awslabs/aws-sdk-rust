@@ -56,6 +56,10 @@ impl DeleteBotVersionInputBuilder {
         self.bot_id = input;
         self
     }
+    /// <p>The identifier of the bot that contains the version.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_id
+    }
     /// <p>The version of the bot to delete.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_version = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl DeleteBotVersionInputBuilder {
         self.bot_version = input;
         self
     }
+    /// <p>The version of the bot to delete.</p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bot_version
+    }
     /// <p>By default, Amazon Lex checks if any other resource, such as an alias or bot network, is using the bot version before it is deleted and throws a <code>ResourceInUseException</code> exception if the version is being used by another resource. Set this parameter to <code>true</code> to skip this check and remove the version even if it is being used by another resource.</p>
     pub fn skip_resource_in_use_check(mut self, input: bool) -> Self {
         self.skip_resource_in_use_check = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl DeleteBotVersionInputBuilder {
     pub fn set_skip_resource_in_use_check(mut self, input: ::std::option::Option<bool>) -> Self {
         self.skip_resource_in_use_check = input;
         self
+    }
+    /// <p>By default, Amazon Lex checks if any other resource, such as an alias or bot network, is using the bot version before it is deleted and throws a <code>ResourceInUseException</code> exception if the version is being used by another resource. Set this parameter to <code>true</code> to skip this check and remove the version even if it is being used by another resource.</p>
+    pub fn get_skip_resource_in_use_check(&self) -> &::std::option::Option<bool> {
+        &self.skip_resource_in_use_check
     }
     /// Consumes the builder and constructs a [`DeleteBotVersionInput`](crate::operation::delete_bot_version::DeleteBotVersionInput).
     pub fn build(

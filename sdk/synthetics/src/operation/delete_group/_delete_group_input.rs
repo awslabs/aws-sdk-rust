@@ -45,6 +45,10 @@ impl DeleteGroupInputBuilder {
         self.group_identifier = input;
         self
     }
+    /// <p>Specifies which group to delete. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
+    pub fn get_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_identifier
+    }
     /// Consumes the builder and constructs a [`DeleteGroupInput`](crate::operation::delete_group::DeleteGroupInput).
     pub fn build(
         self,

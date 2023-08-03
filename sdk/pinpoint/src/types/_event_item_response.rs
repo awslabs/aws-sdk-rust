@@ -48,6 +48,10 @@ impl EventItemResponseBuilder {
         self.message = input;
         self
     }
+    /// <p>A custom message that's returned in the response as a result of processing the event.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The status code that's returned in the response as a result of processing the event. Possible values are: 202, for events that were accepted; and, 400, for events that weren't valid.</p>
     pub fn status_code(mut self, input: i32) -> Self {
         self.status_code = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl EventItemResponseBuilder {
     pub fn set_status_code(mut self, input: ::std::option::Option<i32>) -> Self {
         self.status_code = input;
         self
+    }
+    /// <p>The status code that's returned in the response as a result of processing the event. Possible values are: 202, for events that were accepted; and, 400, for events that weren't valid.</p>
+    pub fn get_status_code(&self) -> &::std::option::Option<i32> {
+        &self.status_code
     }
     /// Consumes the builder and constructs a [`EventItemResponse`](crate::types::EventItemResponse).
     pub fn build(self) -> crate::types::EventItemResponse {

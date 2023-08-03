@@ -83,6 +83,10 @@ impl ServiceQuotaExceededExceptionBuilder {
         self.message = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The name of the quota.</p>
     pub fn quota_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.quota_name = ::std::option::Option::Some(input.into());
@@ -93,6 +97,10 @@ impl ServiceQuotaExceededExceptionBuilder {
         self.quota_name = input;
         self
     }
+    /// <p>The name of the quota.</p>
+    pub fn get_quota_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.quota_name
+    }
     /// <p>The value of the quota.</p>
     pub fn quota_value(mut self, input: f64) -> Self {
         self.quota_value = ::std::option::Option::Some(input);
@@ -102,6 +110,10 @@ impl ServiceQuotaExceededExceptionBuilder {
     pub fn set_quota_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.quota_value = input;
         self
+    }
+    /// <p>The value of the quota.</p>
+    pub fn get_quota_value(&self) -> &::std::option::Option<f64> {
+        &self.quota_value
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

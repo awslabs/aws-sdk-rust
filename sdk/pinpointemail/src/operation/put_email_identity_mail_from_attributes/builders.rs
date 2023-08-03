@@ -36,6 +36,10 @@ impl PutEmailIdentityMailFromAttributesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutEmailIdentityMailFromAttributes as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_email_identity_mail_from_attributes::builders::PutEmailIdentityMailFromAttributesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl PutEmailIdentityMailFromAttributesFluentBuilder {
         self.inner = self.inner.set_email_identity(input);
         self
     }
+    /// <p>The verified email identity that you want to set up the custom MAIL FROM domain for.</p>
+    pub fn get_email_identity(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_email_identity()
+    }
     /// <p> The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM domain must meet the following criteria:</p>
     /// <ul>
     /// <li> <p>It has to be a subdomain of the verified identity.</p> </li>
@@ -132,6 +140,15 @@ impl PutEmailIdentityMailFromAttributesFluentBuilder {
         self.inner = self.inner.set_mail_from_domain(input);
         self
     }
+    /// <p> The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM domain must meet the following criteria:</p>
+    /// <ul>
+    /// <li> <p>It has to be a subdomain of the verified identity.</p> </li>
+    /// <li> <p>It can't be used to receive email.</p> </li>
+    /// <li> <p>It can't be used in a "From" address if the MAIL FROM domain is a destination for feedback forwarding emails.</p> </li>
+    /// </ul>
+    pub fn get_mail_from_domain(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_mail_from_domain()
+    }
     /// <p>The action that you want Amazon Pinpoint to take if it can't read the required MX record when you send an email. When you set this value to <code>UseDefaultValue</code>, Amazon Pinpoint uses <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, Amazon Pinpoint returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p>
     /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
     pub fn behavior_on_mx_failure(mut self, input: crate::types::BehaviorOnMxFailure) -> Self {
@@ -146,5 +163,12 @@ impl PutEmailIdentityMailFromAttributesFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_behavior_on_mx_failure(input);
         self
+    }
+    /// <p>The action that you want Amazon Pinpoint to take if it can't read the required MX record when you send an email. When you set this value to <code>UseDefaultValue</code>, Amazon Pinpoint uses <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, Amazon Pinpoint returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p>
+    /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
+    pub fn get_behavior_on_mx_failure(
+        &self,
+    ) -> &::std::option::Option<crate::types::BehaviorOnMxFailure> {
+        self.inner.get_behavior_on_mx_failure()
     }
 }

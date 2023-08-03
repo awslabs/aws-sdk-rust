@@ -58,6 +58,10 @@ impl S3DestinationPropertiesBuilder {
         self.bucket_name = input;
         self
     }
+    /// <p> The Amazon S3 bucket name in which Amazon AppFlow places the transferred data. </p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_name
+    }
     /// <p> The object key for the destination bucket in which Amazon AppFlow places the files. </p>
     pub fn bucket_prefix(
         mut self,
@@ -74,6 +78,10 @@ impl S3DestinationPropertiesBuilder {
         self.bucket_prefix = input;
         self
     }
+    /// <p> The object key for the destination bucket in which Amazon AppFlow places the files. </p>
+    pub fn get_bucket_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_prefix
+    }
     /// <p> The configuration that determines how Amazon AppFlow should format the flow output data when Amazon S3 is used as the destination. </p>
     pub fn s3_output_format_config(mut self, input: crate::types::S3OutputFormatConfig) -> Self {
         self.s3_output_format_config = ::std::option::Option::Some(input);
@@ -86,6 +94,12 @@ impl S3DestinationPropertiesBuilder {
     ) -> Self {
         self.s3_output_format_config = input;
         self
+    }
+    /// <p> The configuration that determines how Amazon AppFlow should format the flow output data when Amazon S3 is used as the destination. </p>
+    pub fn get_s3_output_format_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3OutputFormatConfig> {
+        &self.s3_output_format_config
     }
     /// Consumes the builder and constructs a [`S3DestinationProperties`](crate::types::S3DestinationProperties).
     pub fn build(self) -> crate::types::S3DestinationProperties {

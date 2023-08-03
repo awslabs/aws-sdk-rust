@@ -48,6 +48,10 @@ impl LoggingConfigurationBuilder {
         self.enable_sip_logs = input;
         self
     }
+    /// <p>Boolean that enables SIP message logs to Amazon CloudWatch logs.</p>
+    pub fn get_enable_sip_logs(&self) -> &::std::option::Option<bool> {
+        &self.enable_sip_logs
+    }
     /// <p>Boolean that enables logging of detailed media metrics for Voice Connectors to Amazon CloudWatch logs.</p>
     pub fn enable_media_metric_logs(mut self, input: bool) -> Self {
         self.enable_media_metric_logs = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl LoggingConfigurationBuilder {
     pub fn set_enable_media_metric_logs(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_media_metric_logs = input;
         self
+    }
+    /// <p>Boolean that enables logging of detailed media metrics for Voice Connectors to Amazon CloudWatch logs.</p>
+    pub fn get_enable_media_metric_logs(&self) -> &::std::option::Option<bool> {
+        &self.enable_media_metric_logs
     }
     /// Consumes the builder and constructs a [`LoggingConfiguration`](crate::types::LoggingConfiguration).
     pub fn build(self) -> crate::types::LoggingConfiguration {

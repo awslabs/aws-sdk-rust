@@ -71,6 +71,10 @@ impl GetBucketLifecycleConfigurationInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
     /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
@@ -104,6 +108,22 @@ impl GetBucketLifecycleConfigurationInputBuilder {
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
+    /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :outpost/
+    /// <outpost-id>
+    /// /bucket/
+    /// <my-bucket-name></my-bucket-name>
+    /// </outpost-id>
+    /// </account-id>
+    /// </region></code>. For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
     }
     /// Consumes the builder and constructs a [`GetBucketLifecycleConfigurationInput`](crate::operation::get_bucket_lifecycle_configuration::GetBucketLifecycleConfigurationInput).
     pub fn build(

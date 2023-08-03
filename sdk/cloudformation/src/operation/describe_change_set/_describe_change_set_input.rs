@@ -63,6 +63,10 @@ impl DescribeChangeSetInputBuilder {
         self.change_set_name = input;
         self
     }
+    /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to describe.</p>
+    pub fn get_change_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.change_set_name
+    }
     /// <p>If you specified the name of a change set, specify the stack name or ID (ARN) of the change set you want to describe.</p>
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_name = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl DescribeChangeSetInputBuilder {
         self.stack_name = input;
         self
     }
+    /// <p>If you specified the name of a change set, specify the stack name or ID (ARN) of the change set you want to describe.</p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_name
+    }
     /// <p>A string (provided by the <code>DescribeChangeSet</code> response output) that identifies the next page of information that you want to retrieve.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl DescribeChangeSetInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>A string (provided by the <code>DescribeChangeSet</code> response output) that identifies the next page of information that you want to retrieve.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeChangeSetInput`](crate::operation::describe_change_set::DescribeChangeSetInput).
     pub fn build(

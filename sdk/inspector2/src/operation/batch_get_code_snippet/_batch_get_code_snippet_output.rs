@@ -68,6 +68,12 @@ impl BatchGetCodeSnippetOutputBuilder {
         self.code_snippet_results = input;
         self
     }
+    /// <p>The retrieved code snippets associated with the provided finding ARNs.</p>
+    pub fn get_code_snippet_results(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeSnippetResult>> {
+        &self.code_snippet_results
+    }
     /// Appends an item to `errors`.
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
@@ -86,6 +92,12 @@ impl BatchGetCodeSnippetOutputBuilder {
     ) -> Self {
         self.errors = input;
         self
+    }
+    /// <p>Any errors Amazon Inspector encountered while trying to retrieve the requested code snippets.</p>
+    pub fn get_errors(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeSnippetError>> {
+        &self.errors
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

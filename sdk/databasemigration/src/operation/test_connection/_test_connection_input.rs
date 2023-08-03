@@ -54,6 +54,10 @@ impl TestConnectionInputBuilder {
         self.replication_instance_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+    pub fn get_replication_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_instance_arn
+    }
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
     pub fn endpoint_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_arn = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl TestConnectionInputBuilder {
     pub fn set_endpoint_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
+    pub fn get_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_arn
     }
     /// Consumes the builder and constructs a [`TestConnectionInput`](crate::operation::test_connection::TestConnectionInput).
     pub fn build(

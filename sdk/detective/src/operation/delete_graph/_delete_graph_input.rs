@@ -39,6 +39,10 @@ impl DeleteGraphInputBuilder {
         self.graph_arn = input;
         self
     }
+    /// <p>The ARN of the behavior graph to disable.</p>
+    pub fn get_graph_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.graph_arn
+    }
     /// Consumes the builder and constructs a [`DeleteGraphInput`](crate::operation::delete_graph::DeleteGraphInput).
     pub fn build(
         self,

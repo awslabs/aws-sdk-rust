@@ -50,6 +50,10 @@ impl DescribeAgreementOutputBuilder {
         self.agreement = input;
         self
     }
+    /// <p>The details for the specified agreement, returned as a <code>DescribedAgreement</code> object.</p>
+    pub fn get_agreement(&self) -> &::std::option::Option<crate::types::DescribedAgreement> {
+        &self.agreement
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

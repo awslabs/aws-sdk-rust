@@ -48,6 +48,10 @@ impl DeleteTagsInputBuilder {
         self.resource_arn = input;
         self
     }
+    /// Placeholder documentation for __string
+    pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_arn
+    }
     /// Appends an item to `tag_keys`.
     ///
     /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
@@ -66,6 +70,10 @@ impl DeleteTagsInputBuilder {
     ) -> Self {
         self.tag_keys = input;
         self
+    }
+    /// An array of tag keys to delete
+    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tag_keys
     }
     /// Consumes the builder and constructs a [`DeleteTagsInput`](crate::operation::delete_tags::DeleteTagsInput).
     pub fn build(

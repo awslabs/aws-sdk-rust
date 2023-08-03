@@ -148,6 +148,10 @@ impl DeploymentBuilder {
         self.deployment_id = input;
         self
     }
+    /// <p>The deployment ID.</p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_id
+    }
     /// <p>The stack ID.</p>
     pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_id = ::std::option::Option::Some(input.into());
@@ -157,6 +161,10 @@ impl DeploymentBuilder {
     pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_id = input;
         self
+    }
+    /// <p>The stack ID.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_id
     }
     /// <p>The app ID.</p>
     pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -168,6 +176,10 @@ impl DeploymentBuilder {
         self.app_id = input;
         self
     }
+    /// <p>The app ID.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// <p>Date when the deployment was created.</p>
     pub fn created_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_at = ::std::option::Option::Some(input.into());
@@ -177,6 +189,10 @@ impl DeploymentBuilder {
     pub fn set_created_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>Date when the deployment was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_at
     }
     /// <p>Date when the deployment completed.</p>
     pub fn completed_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -188,6 +204,10 @@ impl DeploymentBuilder {
         self.completed_at = input;
         self
     }
+    /// <p>Date when the deployment completed.</p>
+    pub fn get_completed_at(&self) -> &::std::option::Option<::std::string::String> {
+        &self.completed_at
+    }
     /// <p>The deployment duration.</p>
     pub fn duration(mut self, input: i32) -> Self {
         self.duration = ::std::option::Option::Some(input);
@@ -197,6 +217,10 @@ impl DeploymentBuilder {
     pub fn set_duration(mut self, input: ::std::option::Option<i32>) -> Self {
         self.duration = input;
         self
+    }
+    /// <p>The deployment duration.</p>
+    pub fn get_duration(&self) -> &::std::option::Option<i32> {
+        &self.duration
     }
     /// <p>The user's IAM ARN.</p>
     pub fn iam_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -208,6 +232,10 @@ impl DeploymentBuilder {
         self.iam_user_arn = input;
         self
     }
+    /// <p>The user's IAM ARN.</p>
+    pub fn get_iam_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iam_user_arn
+    }
     /// <p>A user-defined comment.</p>
     pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.comment = ::std::option::Option::Some(input.into());
@@ -217,6 +245,10 @@ impl DeploymentBuilder {
     pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comment = input;
         self
+    }
+    /// <p>A user-defined comment.</p>
+    pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.comment
     }
     /// <p>Used to specify a stack or deployment command.</p>
     pub fn command(mut self, input: crate::types::DeploymentCommand) -> Self {
@@ -230,6 +262,10 @@ impl DeploymentBuilder {
     ) -> Self {
         self.command = input;
         self
+    }
+    /// <p>Used to specify a stack or deployment command.</p>
+    pub fn get_command(&self) -> &::std::option::Option<crate::types::DeploymentCommand> {
+        &self.command
     }
     /// <p>The deployment status:</p>
     /// <ul>
@@ -251,6 +287,15 @@ impl DeploymentBuilder {
         self.status = input;
         self
     }
+    /// <p>The deployment status:</p>
+    /// <ul>
+    /// <li> <p>running</p> </li>
+    /// <li> <p>successful</p> </li>
+    /// <li> <p>failed</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>A string that contains user-defined custom JSON. It can be used to override the corresponding default stack configuration attribute values for stack or to pass data to recipes. The string should be in the following format:</p>
     /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
     /// <p>For more information on custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
@@ -264,6 +309,12 @@ impl DeploymentBuilder {
     pub fn set_custom_json(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_json = input;
         self
+    }
+    /// <p>A string that contains user-defined custom JSON. It can be used to override the corresponding default stack configuration attribute values for stack or to pass data to recipes. The string should be in the following format:</p>
+    /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
+    /// <p>For more information on custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
+    pub fn get_custom_json(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_json
     }
     /// Appends an item to `instance_ids`.
     ///
@@ -283,6 +334,12 @@ impl DeploymentBuilder {
     ) -> Self {
         self.instance_ids = input;
         self
+    }
+    /// <p>The IDs of the target instances.</p>
+    pub fn get_instance_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.instance_ids
     }
     /// Consumes the builder and constructs a [`Deployment`](crate::types::Deployment).
     pub fn build(self) -> crate::types::Deployment {

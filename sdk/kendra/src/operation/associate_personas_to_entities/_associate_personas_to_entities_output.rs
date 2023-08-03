@@ -56,6 +56,12 @@ impl AssociatePersonasToEntitiesOutputBuilder {
         self.failed_entity_list = input;
         self
     }
+    /// <p>Lists the users or groups in your IAM Identity Center identity source that failed to properly configure with your Amazon Kendra experience.</p>
+    pub fn get_failed_entity_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FailedEntity>> {
+        &self.failed_entity_list
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

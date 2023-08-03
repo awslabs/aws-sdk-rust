@@ -73,6 +73,10 @@ impl AddApplicationInputProcessingConfigurationInputBuilder {
         self.application_name = input;
         self
     }
+    /// <p>The name of the application to which you want to add the input processing configuration.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// <p>The version of the application to which you want to add the input processing configuration. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
     pub fn current_application_version_id(mut self, input: i64) -> Self {
         self.current_application_version_id = ::std::option::Option::Some(input);
@@ -83,6 +87,10 @@ impl AddApplicationInputProcessingConfigurationInputBuilder {
         self.current_application_version_id = input;
         self
     }
+    /// <p>The version of the application to which you want to add the input processing configuration. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
+    pub fn get_current_application_version_id(&self) -> &::std::option::Option<i64> {
+        &self.current_application_version_id
+    }
     /// <p>The ID of the input configuration to add the input processing configuration to. You can get a list of the input IDs for an application using the <code>DescribeApplication</code> operation.</p>
     pub fn input_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_id = ::std::option::Option::Some(input.into());
@@ -92,6 +100,10 @@ impl AddApplicationInputProcessingConfigurationInputBuilder {
     pub fn set_input_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_id = input;
         self
+    }
+    /// <p>The ID of the input configuration to add the input processing configuration to. You can get a list of the input IDs for an application using the <code>DescribeApplication</code> operation.</p>
+    pub fn get_input_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_id
     }
     /// <p>The <code>InputProcessingConfiguration</code> to add to the application.</p>
     pub fn input_processing_configuration(
@@ -108,6 +120,12 @@ impl AddApplicationInputProcessingConfigurationInputBuilder {
     ) -> Self {
         self.input_processing_configuration = input;
         self
+    }
+    /// <p>The <code>InputProcessingConfiguration</code> to add to the application.</p>
+    pub fn get_input_processing_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::InputProcessingConfiguration> {
+        &self.input_processing_configuration
     }
     /// Consumes the builder and constructs a [`AddApplicationInputProcessingConfigurationInput`](crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{

@@ -43,6 +43,10 @@ impl MssEncryptionBuilder {
         self.speke_key_provider = input;
         self
     }
+    /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
+    pub fn get_speke_key_provider(&self) -> &::std::option::Option<crate::types::SpekeKeyProvider> {
+        &self.speke_key_provider
+    }
     /// Consumes the builder and constructs a [`MssEncryption`](crate::types::MssEncryption).
     pub fn build(self) -> crate::types::MssEncryption {
         crate::types::MssEncryption {

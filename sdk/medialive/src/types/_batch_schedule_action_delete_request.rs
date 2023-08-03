@@ -49,6 +49,12 @@ impl BatchScheduleActionDeleteRequestBuilder {
         self.action_names = input;
         self
     }
+    /// A list of schedule actions to delete.
+    pub fn get_action_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.action_names
+    }
     /// Consumes the builder and constructs a [`BatchScheduleActionDeleteRequest`](crate::types::BatchScheduleActionDeleteRequest).
     pub fn build(self) -> crate::types::BatchScheduleActionDeleteRequest {
         crate::types::BatchScheduleActionDeleteRequest {

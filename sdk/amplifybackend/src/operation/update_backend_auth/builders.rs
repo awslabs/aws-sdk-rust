@@ -36,6 +36,12 @@ impl UpdateBackendAuthFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateBackendAuth as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_backend_auth::builders::UpdateBackendAuthInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateBackendAuthFluentBuilder {
         self.inner = self.inner.set_app_id(input);
         self
     }
+    /// <p>The app ID.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_id()
+    }
     /// <p>The name of the backend environment.</p>
     pub fn backend_environment_name(
         mut self,
@@ -142,6 +152,10 @@ impl UpdateBackendAuthFluentBuilder {
         self.inner = self.inner.set_backend_environment_name(input);
         self
     }
+    /// <p>The name of the backend environment.</p>
+    pub fn get_backend_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_backend_environment_name()
+    }
     /// <p>The resource configuration for this request object.</p>
     pub fn resource_config(mut self, input: crate::types::UpdateBackendAuthResourceConfig) -> Self {
         self.inner = self.inner.resource_config(input);
@@ -154,6 +168,12 @@ impl UpdateBackendAuthFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_config(input);
         self
+    }
+    /// <p>The resource configuration for this request object.</p>
+    pub fn get_resource_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::UpdateBackendAuthResourceConfig> {
+        self.inner.get_resource_config()
     }
     /// <p>The name of this resource.</p>
     pub fn resource_name(
@@ -170,5 +190,9 @@ impl UpdateBackendAuthFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_name(input);
         self
+    }
+    /// <p>The name of this resource.</p>
+    pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_name()
     }
 }

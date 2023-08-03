@@ -54,6 +54,11 @@ impl QueryFilterBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of a key to search for. The filter returns only the events that match the <code>Name</code> and <code>Values</code> that you specify. </p>
+    /// <p>Valid values for <code>Name</code> are <code>Browser</code> | <code>Device</code> | <code>Country</code> | <code>Page</code> | <code>OS</code> | <code>EventType</code> | <code>Invert</code> </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -72,6 +77,10 @@ impl QueryFilterBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>The values of the <code>Name</code> that are to be be included in the returned results.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`QueryFilter`](crate::types::QueryFilter).
     pub fn build(self) -> crate::types::QueryFilter {

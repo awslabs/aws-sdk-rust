@@ -40,6 +40,10 @@ impl GetTestInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The test's ARN.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`GetTestInput`](crate::operation::get_test::GetTestInput).
     pub fn build(
         self,

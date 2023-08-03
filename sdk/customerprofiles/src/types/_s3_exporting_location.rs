@@ -54,6 +54,10 @@ impl S3ExportingLocationBuilder {
         self.s3_bucket_name = input;
         self
     }
+    /// <p>The name of the S3 bucket name where Identity Resolution Jobs write result files.</p>
+    pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket_name
+    }
     /// <p>The S3 key name of the location where Identity Resolution Jobs write result files.</p>
     pub fn s3_key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_key_name = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl S3ExportingLocationBuilder {
     pub fn set_s3_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_key_name = input;
         self
+    }
+    /// <p>The S3 key name of the location where Identity Resolution Jobs write result files.</p>
+    pub fn get_s3_key_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_key_name
     }
     /// Consumes the builder and constructs a [`S3ExportingLocation`](crate::types::S3ExportingLocation).
     pub fn build(self) -> crate::types::S3ExportingLocation {

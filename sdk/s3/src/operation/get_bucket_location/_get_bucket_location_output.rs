@@ -59,6 +59,12 @@ impl GetBucketLocationOutputBuilder {
         self.location_constraint = input;
         self
     }
+    /// <p>Specifies the Region where the bucket resides. For a list of all the Amazon S3 supported location constraints by Region, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a>. Buckets in Region <code>us-east-1</code> have a LocationConstraint of <code>null</code>.</p>
+    pub fn get_location_constraint(
+        &self,
+    ) -> &::std::option::Option<crate::types::BucketLocationConstraint> {
+        &self.location_constraint
+    }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
         self._extended_request_id = Some(extended_request_id.into());
         self

@@ -37,6 +37,13 @@ impl AssociateDRTLogBucketFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AssociateDRTLogBucket as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::associate_drt_log_bucket::builders::AssociateDrtLogBucketInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,5 +133,9 @@ impl AssociateDRTLogBucketFluentBuilder {
     pub fn set_log_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_log_bucket(input);
         self
+    }
+    /// <p>The Amazon S3 bucket that contains the logs that you want to share.</p>
+    pub fn get_log_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_log_bucket()
     }
 }

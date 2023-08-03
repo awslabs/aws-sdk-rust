@@ -55,6 +55,12 @@ impl AssociateTransitGatewayPolicyTableOutputBuilder {
         self.association = input;
         self
     }
+    /// <p>Describes the association of a transit gateway and a transit gateway policy table.</p>
+    pub fn get_association(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransitGatewayPolicyTableAssociation> {
+        &self.association
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

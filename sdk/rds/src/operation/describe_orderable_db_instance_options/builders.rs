@@ -36,6 +36,10 @@ impl DescribeOrderableDBInstanceOptionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeOrderableDBInstanceOptions as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_orderable_db_instance_options::builders::DescribeOrderableDbInstanceOptionsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -140,6 +144,27 @@ impl DescribeOrderableDBInstanceOptionsFluentBuilder {
         self.inner = self.inner.set_engine(input);
         self
     }
+    /// <p>The name of the engine to retrieve DB instance options for.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li> <p> <code>aurora-mysql</code> </p> </li>
+    /// <li> <p> <code>aurora-postgresql</code> </p> </li>
+    /// <li> <p> <code>custom-oracle-ee</code> </p> </li>
+    /// <li> <p> <code>mariadb</code> </p> </li>
+    /// <li> <p> <code>mysql</code> </p> </li>
+    /// <li> <p> <code>oracle-ee</code> </p> </li>
+    /// <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+    /// <li> <p> <code>oracle-se2</code> </p> </li>
+    /// <li> <p> <code>oracle-se2-cdb</code> </p> </li>
+    /// <li> <p> <code>postgres</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ee</code> </p> </li>
+    /// <li> <p> <code>sqlserver-se</code> </p> </li>
+    /// <li> <p> <code>sqlserver-ex</code> </p> </li>
+    /// <li> <p> <code>sqlserver-web</code> </p> </li>
+    /// </ul>
+    pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_engine()
+    }
     /// <p>The engine version filter value. Specify this parameter to show only the available offerings matching the specified engine version.</p>
     pub fn engine_version(
         mut self,
@@ -156,6 +181,10 @@ impl DescribeOrderableDBInstanceOptionsFluentBuilder {
         self.inner = self.inner.set_engine_version(input);
         self
     }
+    /// <p>The engine version filter value. Specify this parameter to show only the available offerings matching the specified engine version.</p>
+    pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_engine_version()
+    }
     /// <p>The DB instance class filter value. Specify this parameter to show only the available offerings matching the specified DB instance class.</p>
     pub fn db_instance_class(
         mut self,
@@ -171,6 +200,10 @@ impl DescribeOrderableDBInstanceOptionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_db_instance_class(input);
         self
+    }
+    /// <p>The DB instance class filter value. Specify this parameter to show only the available offerings matching the specified DB instance class.</p>
+    pub fn get_db_instance_class(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_instance_class()
     }
     /// <p>The license model filter value. Specify this parameter to show only the available offerings matching the specified license model.</p>
     /// <p>RDS Custom supports only the BYOL licensing model.</p>
@@ -189,6 +222,11 @@ impl DescribeOrderableDBInstanceOptionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_license_model(input);
         self
+    }
+    /// <p>The license model filter value. Specify this parameter to show only the available offerings matching the specified license model.</p>
+    /// <p>RDS Custom supports only the BYOL licensing model.</p>
+    pub fn get_license_model(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_license_model()
     }
     /// <p>The Availability Zone group associated with a Local Zone. Specify this parameter to retrieve available offerings for the Local Zones in the group.</p>
     /// <p>Omit this parameter to show the available offerings in the specified Amazon Web Services Region.</p>
@@ -210,6 +248,12 @@ impl DescribeOrderableDBInstanceOptionsFluentBuilder {
         self.inner = self.inner.set_availability_zone_group(input);
         self
     }
+    /// <p>The Availability Zone group associated with a Local Zone. Specify this parameter to retrieve available offerings for the Local Zones in the group.</p>
+    /// <p>Omit this parameter to show the available offerings in the specified Amazon Web Services Region.</p>
+    /// <p>This setting doesn't apply to RDS Custom.</p>
+    pub fn get_availability_zone_group(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_availability_zone_group()
+    }
     /// <p>A value that indicates whether to show only VPC or non-VPC offerings. RDS Custom supports only VPC offerings.</p>
     /// <p>RDS Custom supports only VPC offerings. If you describe non-VPC offerings for RDS Custom, the output shows VPC offerings.</p>
     pub fn vpc(mut self, input: bool) -> Self {
@@ -221,6 +265,11 @@ impl DescribeOrderableDBInstanceOptionsFluentBuilder {
     pub fn set_vpc(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_vpc(input);
         self
+    }
+    /// <p>A value that indicates whether to show only VPC or non-VPC offerings. RDS Custom supports only VPC offerings.</p>
+    /// <p>RDS Custom supports only VPC offerings. If you describe non-VPC offerings for RDS Custom, the output shows VPC offerings.</p>
+    pub fn get_vpc(&self) -> &::std::option::Option<bool> {
+        self.inner.get_vpc()
     }
     /// Appends an item to `Filters`.
     ///
@@ -239,6 +288,10 @@ impl DescribeOrderableDBInstanceOptionsFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>This parameter isn't currently supported.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        self.inner.get_filters()
+    }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 10000.</p>
@@ -253,6 +306,12 @@ impl DescribeOrderableDBInstanceOptionsFluentBuilder {
         self.inner = self.inner.set_max_records(input);
         self
     }
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: Minimum 20, maximum 10000.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_records()
+    }
     /// <p>An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -262,5 +321,9 @@ impl DescribeOrderableDBInstanceOptionsFluentBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
+    }
+    /// <p>An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
     }
 }

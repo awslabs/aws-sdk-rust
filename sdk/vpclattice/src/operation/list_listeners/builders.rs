@@ -36,6 +36,12 @@ impl ListListenersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListListeners as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_listeners::builders::ListListenersInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +141,10 @@ impl ListListenersFluentBuilder {
         self.inner = self.inner.set_service_identifier(input);
         self
     }
+    /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    pub fn get_service_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_identifier()
+    }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -145,6 +155,10 @@ impl ListListenersFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>A pagination token for the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -154,5 +168,9 @@ impl ListListenersFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>A pagination token for the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

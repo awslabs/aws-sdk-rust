@@ -81,6 +81,10 @@ impl UpdateHoursOfOperationInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The identifier of the hours of operation.</p>
     pub fn hours_of_operation_id(
         mut self,
@@ -97,6 +101,10 @@ impl UpdateHoursOfOperationInputBuilder {
         self.hours_of_operation_id = input;
         self
     }
+    /// <p>The identifier of the hours of operation.</p>
+    pub fn get_hours_of_operation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hours_of_operation_id
+    }
     /// <p>The name of the hours of operation.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -106,6 +114,10 @@ impl UpdateHoursOfOperationInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the hours of operation.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The description of the hours of operation.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -117,6 +129,10 @@ impl UpdateHoursOfOperationInputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the hours of operation.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The time zone of the hours of operation.</p>
     pub fn time_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.time_zone = ::std::option::Option::Some(input.into());
@@ -126,6 +142,10 @@ impl UpdateHoursOfOperationInputBuilder {
     pub fn set_time_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.time_zone = input;
         self
+    }
+    /// <p>The time zone of the hours of operation.</p>
+    pub fn get_time_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.time_zone
     }
     /// Appends an item to `config`.
     ///
@@ -145,6 +165,12 @@ impl UpdateHoursOfOperationInputBuilder {
     ) -> Self {
         self.config = input;
         self
+    }
+    /// <p>Configuration information of the hours of operation.</p>
+    pub fn get_config(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperationConfig>> {
+        &self.config
     }
     /// Consumes the builder and constructs a [`UpdateHoursOfOperationInput`](crate::operation::update_hours_of_operation::UpdateHoursOfOperationInput).
     pub fn build(

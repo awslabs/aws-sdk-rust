@@ -40,6 +40,10 @@ impl PublicAccessBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The value DISABLED indicates that public access is turned off. SERVICE_PROVIDED_EIPS indicates that public access is turned on.</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.r#type
+    }
     /// Consumes the builder and constructs a [`PublicAccess`](crate::types::PublicAccess).
     pub fn build(self) -> crate::types::PublicAccess {
         crate::types::PublicAccess {

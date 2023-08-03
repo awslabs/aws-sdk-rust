@@ -64,6 +64,10 @@ impl LifecycleRuleAndOperatorBuilder {
         self.prefix = input;
         self
     }
+    /// <p>Prefix identifying one or more objects to which the rule applies.</p>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -83,6 +87,10 @@ impl LifecycleRuleAndOperatorBuilder {
         self.tags = input;
         self
     }
+    /// <p>All of these tags must exist in the object's tag set in order for the rule to apply.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>Minimum object size to which the rule applies.</p>
     pub fn object_size_greater_than(mut self, input: i64) -> Self {
         self.object_size_greater_than = ::std::option::Option::Some(input);
@@ -93,6 +101,10 @@ impl LifecycleRuleAndOperatorBuilder {
         self.object_size_greater_than = input;
         self
     }
+    /// <p>Minimum object size to which the rule applies.</p>
+    pub fn get_object_size_greater_than(&self) -> &::std::option::Option<i64> {
+        &self.object_size_greater_than
+    }
     /// <p>Maximum object size to which the rule applies.</p>
     pub fn object_size_less_than(mut self, input: i64) -> Self {
         self.object_size_less_than = ::std::option::Option::Some(input);
@@ -102,6 +114,10 @@ impl LifecycleRuleAndOperatorBuilder {
     pub fn set_object_size_less_than(mut self, input: ::std::option::Option<i64>) -> Self {
         self.object_size_less_than = input;
         self
+    }
+    /// <p>Maximum object size to which the rule applies.</p>
+    pub fn get_object_size_less_than(&self) -> &::std::option::Option<i64> {
+        &self.object_size_less_than
     }
     /// Consumes the builder and constructs a [`LifecycleRuleAndOperator`](crate::types::LifecycleRuleAndOperator).
     pub fn build(self) -> crate::types::LifecycleRuleAndOperator {

@@ -54,6 +54,10 @@ impl DescribeAggregateIdFormatOutputBuilder {
         self.use_long_ids_aggregated = input;
         self
     }
+    /// <p>Indicates whether all resource types in the Region are configured to use longer IDs. This value is only <code>true</code> if all users are configured to use longer IDs for all resources types in the Region.</p>
+    pub fn get_use_long_ids_aggregated(&self) -> &::std::option::Option<bool> {
+        &self.use_long_ids_aggregated
+    }
     /// Appends an item to `statuses`.
     ///
     /// To override the contents of this collection use [`set_statuses`](Self::set_statuses).
@@ -72,6 +76,10 @@ impl DescribeAggregateIdFormatOutputBuilder {
     ) -> Self {
         self.statuses = input;
         self
+    }
+    /// <p>Information about each resource's ID format.</p>
+    pub fn get_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdFormat>> {
+        &self.statuses
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -56,6 +56,10 @@ impl BatchGetDocumentStatusResponseErrorBuilder {
         self.document_id = input;
         self
     }
+    /// <p>The identifier of the document whose status could not be retrieved.</p>
+    pub fn get_document_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.document_id
+    }
     /// <p>Indicates the source of the error.</p>
     pub fn error_code(mut self, input: crate::types::ErrorCode) -> Self {
         self.error_code = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl BatchGetDocumentStatusResponseErrorBuilder {
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::ErrorCode>) -> Self {
         self.error_code = input;
         self
+    }
+    /// <p>Indicates the source of the error.</p>
+    pub fn get_error_code(&self) -> &::std::option::Option<crate::types::ErrorCode> {
+        &self.error_code
     }
     /// <p>States that the API could not get the status of a document. This could be because the request is not valid or there is a system error.</p>
     pub fn error_message(
@@ -81,6 +89,10 @@ impl BatchGetDocumentStatusResponseErrorBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>States that the API could not get the status of a document. This could be because the request is not valid or there is a system error.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`BatchGetDocumentStatusResponseError`](crate::types::BatchGetDocumentStatusResponseError).
     pub fn build(self) -> crate::types::BatchGetDocumentStatusResponseError {

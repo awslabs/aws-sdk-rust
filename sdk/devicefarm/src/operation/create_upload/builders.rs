@@ -36,6 +36,10 @@ impl CreateUploadFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateUpload as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_upload::builders::CreateUploadInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl CreateUploadFluentBuilder {
         self.inner = self.inner.set_project_arn(input);
         self
     }
+    /// <p>The ARN of the project for the upload.</p>
+    pub fn get_project_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_arn()
+    }
     /// <p>The upload's file name. The name should not contain any forward slashes (<code>/</code>). If you are uploading an iOS app, the file name must end with the <code>.ipa</code> extension. If you are uploading an Android app, the file name must end with the <code>.apk</code> extension. For all others, the file name must end with the <code>.zip</code> file extension.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -127,6 +135,10 @@ impl CreateUploadFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The upload's file name. The name should not contain any forward slashes (<code>/</code>). If you are uploading an iOS app, the file name must end with the <code>.ipa</code> extension. If you are uploading an Android app, the file name must end with the <code>.apk</code> extension. For all others, the file name must end with the <code>.zip</code> file extension.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The upload's upload type.</p>
     /// <p>Must be one of the following values:</p>
@@ -210,6 +222,46 @@ impl CreateUploadFluentBuilder {
         self.inner = self.inner.set_type(input);
         self
     }
+    /// <p>The upload's upload type.</p>
+    /// <p>Must be one of the following values:</p>
+    /// <ul>
+    /// <li> <p>ANDROID_APP</p> </li>
+    /// <li> <p>IOS_APP</p> </li>
+    /// <li> <p>WEB_APP</p> </li>
+    /// <li> <p>EXTERNAL_DATA</p> </li>
+    /// <li> <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_PYTHON_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_NODE_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_RUBY_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_WEB_NODE_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p> </li>
+    /// <li> <p>CALABASH_TEST_PACKAGE</p> </li>
+    /// <li> <p>INSTRUMENTATION_TEST_PACKAGE</p> </li>
+    /// <li> <p>UIAUTOMATION_TEST_PACKAGE</p> </li>
+    /// <li> <p>UIAUTOMATOR_TEST_PACKAGE</p> </li>
+    /// <li> <p>XCTEST_TEST_PACKAGE</p> </li>
+    /// <li> <p>XCTEST_UI_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_PYTHON_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_NODE_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_RUBY_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_WEB_PYTHON_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_WEB_NODE_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_WEB_RUBY_TEST_SPEC</p> </li>
+    /// <li> <p>INSTRUMENTATION_TEST_SPEC</p> </li>
+    /// <li> <p>XCTEST_UI_TEST_SPEC</p> </li>
+    /// </ul>
+    /// <p> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS Device Farm throws an <code>ArgumentException</code> error.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::UploadType> {
+        self.inner.get_type()
+    }
     /// <p>The upload's content type (for example, <code>application/octet-stream</code>).</p>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.content_type(input.into());
@@ -219,5 +271,9 @@ impl CreateUploadFluentBuilder {
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_content_type(input);
         self
+    }
+    /// <p>The upload's content type (for example, <code>application/octet-stream</code>).</p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_content_type()
     }
 }

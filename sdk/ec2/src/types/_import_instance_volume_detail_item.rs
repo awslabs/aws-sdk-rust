@@ -94,6 +94,10 @@ impl ImportInstanceVolumeDetailItemBuilder {
         self.availability_zone = input;
         self
     }
+    /// <p>The Availability Zone where the resulting instance will reside.</p>
+    pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone
+    }
     /// <p>The number of bytes converted so far.</p>
     pub fn bytes_converted(mut self, input: i64) -> Self {
         self.bytes_converted = ::std::option::Option::Some(input);
@@ -104,6 +108,10 @@ impl ImportInstanceVolumeDetailItemBuilder {
         self.bytes_converted = input;
         self
     }
+    /// <p>The number of bytes converted so far.</p>
+    pub fn get_bytes_converted(&self) -> &::std::option::Option<i64> {
+        &self.bytes_converted
+    }
     /// <p>A description of the task.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -113,6 +121,10 @@ impl ImportInstanceVolumeDetailItemBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the task.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The image.</p>
     pub fn image(mut self, input: crate::types::DiskImageDescription) -> Self {
@@ -127,6 +139,10 @@ impl ImportInstanceVolumeDetailItemBuilder {
         self.image = input;
         self
     }
+    /// <p>The image.</p>
+    pub fn get_image(&self) -> &::std::option::Option<crate::types::DiskImageDescription> {
+        &self.image
+    }
     /// <p>The status of the import of this particular disk image.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -136,6 +152,10 @@ impl ImportInstanceVolumeDetailItemBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the import of this particular disk image.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// <p>The status information or errors related to the disk image.</p>
     pub fn status_message(
@@ -153,6 +173,10 @@ impl ImportInstanceVolumeDetailItemBuilder {
         self.status_message = input;
         self
     }
+    /// <p>The status information or errors related to the disk image.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// <p>The volume.</p>
     pub fn volume(mut self, input: crate::types::DiskImageVolumeDescription) -> Self {
         self.volume = ::std::option::Option::Some(input);
@@ -165,6 +189,10 @@ impl ImportInstanceVolumeDetailItemBuilder {
     ) -> Self {
         self.volume = input;
         self
+    }
+    /// <p>The volume.</p>
+    pub fn get_volume(&self) -> &::std::option::Option<crate::types::DiskImageVolumeDescription> {
+        &self.volume
     }
     /// Consumes the builder and constructs a [`ImportInstanceVolumeDetailItem`](crate::types::ImportInstanceVolumeDetailItem).
     pub fn build(self) -> crate::types::ImportInstanceVolumeDetailItem {

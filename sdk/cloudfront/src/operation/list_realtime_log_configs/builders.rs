@@ -38,6 +38,13 @@ impl ListRealtimeLogConfigsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListRealtimeLogConfigs as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_realtime_log_configs::builders::ListRealtimeLogConfigsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +135,10 @@ impl ListRealtimeLogConfigsFluentBuilder {
         self.inner = self.inner.set_max_items(input);
         self
     }
+    /// <p>The maximum number of real-time log configurations that you want in the response.</p>
+    pub fn get_max_items(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_items()
+    }
     /// <p>Use this field when paginating results to indicate where to begin in your list of real-time log configurations. The response includes real-time log configurations in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -137,5 +148,9 @@ impl ListRealtimeLogConfigsFluentBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
+    }
+    /// <p>Use this field when paginating results to indicate where to begin in your list of real-time log configurations. The response includes real-time log configurations in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
     }
 }

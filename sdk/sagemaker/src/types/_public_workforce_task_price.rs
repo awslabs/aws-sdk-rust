@@ -150,6 +150,10 @@ impl PublicWorkforceTaskPriceBuilder {
         self.amount_in_usd = input;
         self
     }
+    /// <p>Defines the amount of money paid to an Amazon Mechanical Turk worker in United States dollars.</p>
+    pub fn get_amount_in_usd(&self) -> &::std::option::Option<crate::types::Usd> {
+        &self.amount_in_usd
+    }
     /// Consumes the builder and constructs a [`PublicWorkforceTaskPrice`](crate::types::PublicWorkforceTaskPrice).
     pub fn build(self) -> crate::types::PublicWorkforceTaskPrice {
         crate::types::PublicWorkforceTaskPrice {

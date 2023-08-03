@@ -41,6 +41,13 @@ impl PutPublicAccessBlockFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutPublicAccessBlock as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_public_access_block::builders::PutPublicAccessBlockInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +144,12 @@ impl PutPublicAccessBlockFluentBuilder {
         self.inner = self.inner.set_public_access_block_configuration(input);
         self
     }
+    /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to the specified Amazon Web Services account.</p>
+    pub fn get_public_access_block_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::PublicAccessBlockConfiguration> {
+        self.inner.get_public_access_block_configuration()
+    }
     /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to set.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());
@@ -146,5 +159,9 @@ impl PutPublicAccessBlockFluentBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_id(input);
         self
+    }
+    /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to set.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
     }
 }

@@ -64,6 +64,10 @@ impl DbInstanceStatusInfoBuilder {
         self.status_type = input;
         self
     }
+    /// <p>This value is currently "read replication."</p>
+    pub fn get_status_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_type
+    }
     /// <p>Boolean value that is true if the instance is operating normally, or false if the instance is in an error state.</p>
     pub fn normal(mut self, input: bool) -> Self {
         self.normal = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl DbInstanceStatusInfoBuilder {
     pub fn set_normal(mut self, input: ::std::option::Option<bool>) -> Self {
         self.normal = input;
         self
+    }
+    /// <p>Boolean value that is true if the instance is operating normally, or false if the instance is in an error state.</p>
+    pub fn get_normal(&self) -> &::std::option::Option<bool> {
+        &self.normal
     }
     /// <p>Status of the DB instance. For a StatusType of read replica, the values can be replicating, error, stopped, or terminated.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,6 +92,10 @@ impl DbInstanceStatusInfoBuilder {
         self.status = input;
         self
     }
+    /// <p>Status of the DB instance. For a StatusType of read replica, the values can be replicating, error, stopped, or terminated.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>Details of the error if there is an error for the instance. If the instance is not in an error state, this value is blank.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -93,6 +105,10 @@ impl DbInstanceStatusInfoBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>Details of the error if there is an error for the instance. If the instance is not in an error state, this value is blank.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Consumes the builder and constructs a [`DbInstanceStatusInfo`](crate::types::DbInstanceStatusInfo).
     pub fn build(self) -> crate::types::DbInstanceStatusInfo {

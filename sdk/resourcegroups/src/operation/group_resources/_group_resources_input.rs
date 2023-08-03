@@ -47,6 +47,10 @@ impl GroupResourcesInputBuilder {
         self.group = input;
         self
     }
+    /// <p>The name or the ARN of the resource group to add resources to.</p>
+    pub fn get_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group
+    }
     /// Appends an item to `resource_arns`.
     ///
     /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
@@ -68,6 +72,12 @@ impl GroupResourcesInputBuilder {
     ) -> Self {
         self.resource_arns = input;
         self
+    }
+    /// <p>The list of ARNs of the resources to be added to the group. </p>
+    pub fn get_resource_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resource_arns
     }
     /// Consumes the builder and constructs a [`GroupResourcesInput`](crate::operation::group_resources::GroupResourcesInput).
     pub fn build(

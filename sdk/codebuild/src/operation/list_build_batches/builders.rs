@@ -36,6 +36,12 @@ impl ListBuildBatchesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListBuildBatches as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_build_batches::builders::ListBuildBatchesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,6 +146,10 @@ impl ListBuildBatchesFluentBuilder {
         self.inner = self.inner.set_filter(input);
         self
     }
+    /// <p>A <code>BuildBatchFilter</code> object that specifies the filters for the search.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::BuildBatchFilter> {
+        self.inner.get_filter()
+    }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -149,6 +159,10 @@ impl ListBuildBatchesFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
     /// <p>Specifies the sort order of the returned items. Valid values include:</p>
     /// <ul>
@@ -171,6 +185,14 @@ impl ListBuildBatchesFluentBuilder {
         self.inner = self.inner.set_sort_order(input);
         self
     }
+    /// <p>Specifies the sort order of the returned items. Valid values include:</p>
+    /// <ul>
+    /// <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li>
+    /// <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li>
+    /// </ul>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrderType> {
+        self.inner.get_sort_order()
+    }
     /// <p>The <code>nextToken</code> value returned from a previous call to <code>ListBuildBatches</code>. This specifies the next item to return. To return the beginning of the list, exclude this parameter.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -180,5 +202,9 @@ impl ListBuildBatchesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The <code>nextToken</code> value returned from a previous call to <code>ListBuildBatches</code>. This specifies the next item to return. To return the beginning of the list, exclude this parameter.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

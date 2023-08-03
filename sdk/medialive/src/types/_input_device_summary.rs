@@ -155,6 +155,10 @@ impl InputDeviceSummaryBuilder {
         self.arn = input;
         self
     }
+    /// The unique ARN of the input device.
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// The state of the connection between the input device and AWS.
     pub fn connection_state(mut self, input: crate::types::InputDeviceConnectionState) -> Self {
         self.connection_state = ::std::option::Option::Some(input);
@@ -167,6 +171,12 @@ impl InputDeviceSummaryBuilder {
     ) -> Self {
         self.connection_state = input;
         self
+    }
+    /// The state of the connection between the input device and AWS.
+    pub fn get_connection_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::InputDeviceConnectionState> {
+        &self.connection_state
     }
     /// The status of the action to synchronize the device configuration. If you change the configuration of the input device (for example, the maximum bitrate), MediaLive sends the new data to the device. The device might not update itself immediately. SYNCED means the device has updated its configuration. SYNCING means that it has not updated its configuration.
     pub fn device_settings_sync_state(
@@ -184,6 +194,12 @@ impl InputDeviceSummaryBuilder {
         self.device_settings_sync_state = input;
         self
     }
+    /// The status of the action to synchronize the device configuration. If you change the configuration of the input device (for example, the maximum bitrate), MediaLive sends the new data to the device. The device might not update itself immediately. SYNCED means the device has updated its configuration. SYNCING means that it has not updated its configuration.
+    pub fn get_device_settings_sync_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeviceSettingsSyncState> {
+        &self.device_settings_sync_state
+    }
     /// The status of software on the input device.
     pub fn device_update_status(mut self, input: crate::types::DeviceUpdateStatus) -> Self {
         self.device_update_status = ::std::option::Option::Some(input);
@@ -196,6 +212,12 @@ impl InputDeviceSummaryBuilder {
     ) -> Self {
         self.device_update_status = input;
         self
+    }
+    /// The status of software on the input device.
+    pub fn get_device_update_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeviceUpdateStatus> {
+        &self.device_update_status
     }
     /// Settings that describe an input device that is type HD.
     pub fn hd_device_settings(mut self, input: crate::types::InputDeviceHdSettings) -> Self {
@@ -210,6 +232,12 @@ impl InputDeviceSummaryBuilder {
         self.hd_device_settings = input;
         self
     }
+    /// Settings that describe an input device that is type HD.
+    pub fn get_hd_device_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::InputDeviceHdSettings> {
+        &self.hd_device_settings
+    }
     /// The unique ID of the input device.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -219,6 +247,10 @@ impl InputDeviceSummaryBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// The unique ID of the input device.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// The network MAC address of the input device.
     pub fn mac_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -230,6 +262,10 @@ impl InputDeviceSummaryBuilder {
         self.mac_address = input;
         self
     }
+    /// The network MAC address of the input device.
+    pub fn get_mac_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mac_address
+    }
     /// A name that you specify for the input device.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -239,6 +275,10 @@ impl InputDeviceSummaryBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// A name that you specify for the input device.
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// Network settings for the input device.
     pub fn network_settings(mut self, input: crate::types::InputDeviceNetworkSettings) -> Self {
@@ -252,6 +292,12 @@ impl InputDeviceSummaryBuilder {
     ) -> Self {
         self.network_settings = input;
         self
+    }
+    /// Network settings for the input device.
+    pub fn get_network_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::InputDeviceNetworkSettings> {
+        &self.network_settings
     }
     /// The unique serial number of the input device.
     pub fn serial_number(
@@ -269,6 +315,10 @@ impl InputDeviceSummaryBuilder {
         self.serial_number = input;
         self
     }
+    /// The unique serial number of the input device.
+    pub fn get_serial_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.serial_number
+    }
     /// The type of the input device.
     pub fn r#type(mut self, input: crate::types::InputDeviceType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -278,6 +328,10 @@ impl InputDeviceSummaryBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::InputDeviceType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// The type of the input device.
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::InputDeviceType> {
+        &self.r#type
     }
     /// Settings that describe an input device that is type UHD.
     pub fn uhd_device_settings(mut self, input: crate::types::InputDeviceUhdSettings) -> Self {
@@ -291,6 +345,12 @@ impl InputDeviceSummaryBuilder {
     ) -> Self {
         self.uhd_device_settings = input;
         self
+    }
+    /// Settings that describe an input device that is type UHD.
+    pub fn get_uhd_device_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::InputDeviceUhdSettings> {
+        &self.uhd_device_settings
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -316,6 +376,14 @@ impl InputDeviceSummaryBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// A collection of key-value pairs.
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`InputDeviceSummary`](crate::types::InputDeviceSummary).
     pub fn build(self) -> crate::types::InputDeviceSummary {

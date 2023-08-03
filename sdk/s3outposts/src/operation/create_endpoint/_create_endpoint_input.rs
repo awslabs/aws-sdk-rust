@@ -75,6 +75,10 @@ impl CreateEndpointInputBuilder {
         self.outpost_id = input;
         self
     }
+    /// <p>The ID of the Outposts. </p>
+    pub fn get_outpost_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.outpost_id
+    }
     /// <p>The ID of the subnet in the selected VPC. The endpoint subnet must belong to the Outpost that has Amazon S3 on Outposts provisioned.</p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
@@ -84,6 +88,10 @@ impl CreateEndpointInputBuilder {
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_id = input;
         self
+    }
+    /// <p>The ID of the subnet in the selected VPC. The endpoint subnet must belong to the Outpost that has Amazon S3 on Outposts provisioned.</p>
+    pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subnet_id
     }
     /// <p>The ID of the security group to use with the endpoint.</p>
     pub fn security_group_id(
@@ -100,6 +108,10 @@ impl CreateEndpointInputBuilder {
     ) -> Self {
         self.security_group_id = input;
         self
+    }
+    /// <p>The ID of the security group to use with the endpoint.</p>
+    pub fn get_security_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_group_id
     }
     /// <p>The type of access for the network connectivity for the Amazon S3 on Outposts endpoint. To use the Amazon Web Services VPC, choose <code>Private</code>. To use the endpoint with an on-premises network, choose <code>CustomerOwnedIp</code>. If you choose <code>CustomerOwnedIp</code>, you must also provide the customer-owned IP address pool (CoIP pool).</p> <note>
     /// <p> <code>Private</code> is the default access type value.</p>
@@ -118,6 +130,12 @@ impl CreateEndpointInputBuilder {
         self.access_type = input;
         self
     }
+    /// <p>The type of access for the network connectivity for the Amazon S3 on Outposts endpoint. To use the Amazon Web Services VPC, choose <code>Private</code>. To use the endpoint with an on-premises network, choose <code>CustomerOwnedIp</code>. If you choose <code>CustomerOwnedIp</code>, you must also provide the customer-owned IP address pool (CoIP pool).</p> <note>
+    /// <p> <code>Private</code> is the default access type value.</p>
+    /// </note>
+    pub fn get_access_type(&self) -> &::std::option::Option<crate::types::EndpointAccessType> {
+        &self.access_type
+    }
     /// <p>The ID of the customer-owned IPv4 address pool (CoIP pool) for the endpoint. IP addresses are allocated from this pool for the endpoint.</p>
     pub fn customer_owned_ipv4_pool(
         mut self,
@@ -133,6 +151,10 @@ impl CreateEndpointInputBuilder {
     ) -> Self {
         self.customer_owned_ipv4_pool = input;
         self
+    }
+    /// <p>The ID of the customer-owned IPv4 address pool (CoIP pool) for the endpoint. IP addresses are allocated from this pool for the endpoint.</p>
+    pub fn get_customer_owned_ipv4_pool(&self) -> &::std::option::Option<::std::string::String> {
+        &self.customer_owned_ipv4_pool
     }
     /// Consumes the builder and constructs a [`CreateEndpointInput`](crate::operation::create_endpoint::CreateEndpointInput).
     pub fn build(

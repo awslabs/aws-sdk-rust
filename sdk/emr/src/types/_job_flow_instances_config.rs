@@ -194,6 +194,10 @@ impl JobFlowInstancesConfigBuilder {
         self.master_instance_type = input;
         self
     }
+    /// <p>The Amazon EC2 instance type of the master node.</p>
+    pub fn get_master_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.master_instance_type
+    }
     /// <p>The Amazon EC2 instance type of the core and task nodes.</p>
     pub fn slave_instance_type(
         mut self,
@@ -210,6 +214,10 @@ impl JobFlowInstancesConfigBuilder {
         self.slave_instance_type = input;
         self
     }
+    /// <p>The Amazon EC2 instance type of the core and task nodes.</p>
+    pub fn get_slave_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.slave_instance_type
+    }
     /// <p>The number of Amazon EC2 instances in the cluster.</p>
     pub fn instance_count(mut self, input: i32) -> Self {
         self.instance_count = ::std::option::Option::Some(input);
@@ -219,6 +227,10 @@ impl JobFlowInstancesConfigBuilder {
     pub fn set_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.instance_count = input;
         self
+    }
+    /// <p>The number of Amazon EC2 instances in the cluster.</p>
+    pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
+        &self.instance_count
     }
     /// Appends an item to `instance_groups`.
     ///
@@ -238,6 +250,12 @@ impl JobFlowInstancesConfigBuilder {
     ) -> Self {
         self.instance_groups = input;
         self
+    }
+    /// <p>Configuration for the instance groups in a cluster.</p>
+    pub fn get_instance_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupConfig>> {
+        &self.instance_groups
     }
     /// Appends an item to `instance_fleets`.
     ///
@@ -264,6 +282,15 @@ impl JobFlowInstancesConfigBuilder {
         self.instance_fleets = input;
         self
     }
+    /// <note>
+    /// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.</p>
+    /// </note>
+    /// <p>Describes the Amazon EC2 instances and instance configurations for clusters that use the instance fleet configuration.</p>
+    pub fn get_instance_fleets(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceFleetConfig>> {
+        &self.instance_fleets
+    }
     /// <p>The name of the Amazon EC2 key pair that can be used to connect to the master node using SSH as the user called "hadoop."</p>
     pub fn ec2_key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ec2_key_name = ::std::option::Option::Some(input.into());
@@ -273,6 +300,10 @@ impl JobFlowInstancesConfigBuilder {
     pub fn set_ec2_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ec2_key_name = input;
         self
+    }
+    /// <p>The name of the Amazon EC2 key pair that can be used to connect to the master node using SSH as the user called "hadoop."</p>
+    pub fn get_ec2_key_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ec2_key_name
     }
     /// <p>The Availability Zone in which the cluster runs.</p>
     pub fn placement(mut self, input: crate::types::PlacementType) -> Self {
@@ -287,6 +318,10 @@ impl JobFlowInstancesConfigBuilder {
         self.placement = input;
         self
     }
+    /// <p>The Availability Zone in which the cluster runs.</p>
+    pub fn get_placement(&self) -> &::std::option::Option<crate::types::PlacementType> {
+        &self.placement
+    }
     /// <p>Specifies whether the cluster should remain available after completing all steps. Defaults to <code>true</code>. For more information about configuring cluster termination, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control Cluster Termination</a> in the <i>EMR Management Guide</i>.</p>
     pub fn keep_job_flow_alive_when_no_steps(mut self, input: bool) -> Self {
         self.keep_job_flow_alive_when_no_steps = ::std::option::Option::Some(input);
@@ -300,6 +335,10 @@ impl JobFlowInstancesConfigBuilder {
         self.keep_job_flow_alive_when_no_steps = input;
         self
     }
+    /// <p>Specifies whether the cluster should remain available after completing all steps. Defaults to <code>true</code>. For more information about configuring cluster termination, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control Cluster Termination</a> in the <i>EMR Management Guide</i>.</p>
+    pub fn get_keep_job_flow_alive_when_no_steps(&self) -> &::std::option::Option<bool> {
+        &self.keep_job_flow_alive_when_no_steps
+    }
     /// <p>Specifies whether to lock the cluster to prevent the Amazon EC2 instances from being terminated by API call, user intervention, or in the event of a job-flow error.</p>
     pub fn termination_protected(mut self, input: bool) -> Self {
         self.termination_protected = ::std::option::Option::Some(input);
@@ -309,6 +348,10 @@ impl JobFlowInstancesConfigBuilder {
     pub fn set_termination_protected(mut self, input: ::std::option::Option<bool>) -> Self {
         self.termination_protected = input;
         self
+    }
+    /// <p>Specifies whether to lock the cluster to prevent the Amazon EC2 instances from being terminated by API call, user intervention, or in the event of a job-flow error.</p>
+    pub fn get_termination_protected(&self) -> &::std::option::Option<bool> {
+        &self.termination_protected
     }
     /// <p>Applies only to Amazon EMR release versions earlier than 4.0. The Hadoop version for the cluster. Valid inputs are "0.18" (no longer maintained), "0.20" (no longer maintained), "0.20.205" (no longer maintained), "1.0.3", "2.2.0", or "2.4.0". If you do not set this value, the default of 0.18 is used, unless the <code>AmiVersion</code> parameter is set in the RunJobFlow call, in which case the default version of Hadoop for that AMI version is used.</p>
     pub fn hadoop_version(
@@ -326,6 +369,10 @@ impl JobFlowInstancesConfigBuilder {
         self.hadoop_version = input;
         self
     }
+    /// <p>Applies only to Amazon EMR release versions earlier than 4.0. The Hadoop version for the cluster. Valid inputs are "0.18" (no longer maintained), "0.20" (no longer maintained), "0.20.205" (no longer maintained), "1.0.3", "2.2.0", or "2.4.0". If you do not set this value, the default of 0.18 is used, unless the <code>AmiVersion</code> parameter is set in the RunJobFlow call, in which case the default version of Hadoop for that AMI version is used.</p>
+    pub fn get_hadoop_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hadoop_version
+    }
     /// <p>Applies to clusters that use the uniform instance group configuration. To launch the cluster in Amazon Virtual Private Cloud (Amazon VPC), set this parameter to the identifier of the Amazon VPC subnet where you want the cluster to launch. If you do not specify this value and your account supports EC2-Classic, the cluster launches in EC2-Classic.</p>
     pub fn ec2_subnet_id(
         mut self,
@@ -341,6 +388,10 @@ impl JobFlowInstancesConfigBuilder {
     ) -> Self {
         self.ec2_subnet_id = input;
         self
+    }
+    /// <p>Applies to clusters that use the uniform instance group configuration. To launch the cluster in Amazon Virtual Private Cloud (Amazon VPC), set this parameter to the identifier of the Amazon VPC subnet where you want the cluster to launch. If you do not specify this value and your account supports EC2-Classic, the cluster launches in EC2-Classic.</p>
+    pub fn get_ec2_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ec2_subnet_id
     }
     /// Appends an item to `ec2_subnet_ids`.
     ///
@@ -368,6 +419,14 @@ impl JobFlowInstancesConfigBuilder {
         self.ec2_subnet_ids = input;
         self
     }
+    /// <p>Applies to clusters that use the instance fleet configuration. When multiple Amazon EC2 subnet IDs are specified, Amazon EMR evaluates them and launches instances in the optimal subnet.</p> <note>
+    /// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.</p>
+    /// </note>
+    pub fn get_ec2_subnet_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ec2_subnet_ids
+    }
     /// <p>The identifier of the Amazon EC2 security group for the master node. If you specify <code>EmrManagedMasterSecurityGroup</code>, you must also specify <code>EmrManagedSlaveSecurityGroup</code>.</p>
     pub fn emr_managed_master_security_group(
         mut self,
@@ -383,6 +442,12 @@ impl JobFlowInstancesConfigBuilder {
     ) -> Self {
         self.emr_managed_master_security_group = input;
         self
+    }
+    /// <p>The identifier of the Amazon EC2 security group for the master node. If you specify <code>EmrManagedMasterSecurityGroup</code>, you must also specify <code>EmrManagedSlaveSecurityGroup</code>.</p>
+    pub fn get_emr_managed_master_security_group(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.emr_managed_master_security_group
     }
     /// <p>The identifier of the Amazon EC2 security group for the core and task nodes. If you specify <code>EmrManagedSlaveSecurityGroup</code>, you must also specify <code>EmrManagedMasterSecurityGroup</code>.</p>
     pub fn emr_managed_slave_security_group(
@@ -400,6 +465,12 @@ impl JobFlowInstancesConfigBuilder {
         self.emr_managed_slave_security_group = input;
         self
     }
+    /// <p>The identifier of the Amazon EC2 security group for the core and task nodes. If you specify <code>EmrManagedSlaveSecurityGroup</code>, you must also specify <code>EmrManagedMasterSecurityGroup</code>.</p>
+    pub fn get_emr_managed_slave_security_group(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.emr_managed_slave_security_group
+    }
     /// <p>The identifier of the Amazon EC2 security group for the Amazon EMR service to access clusters in VPC private subnets.</p>
     pub fn service_access_security_group(
         mut self,
@@ -415,6 +486,12 @@ impl JobFlowInstancesConfigBuilder {
     ) -> Self {
         self.service_access_security_group = input;
         self
+    }
+    /// <p>The identifier of the Amazon EC2 security group for the Amazon EMR service to access clusters in VPC private subnets.</p>
+    pub fn get_service_access_security_group(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.service_access_security_group
     }
     /// Appends an item to `additional_master_security_groups`.
     ///
@@ -438,6 +515,12 @@ impl JobFlowInstancesConfigBuilder {
         self.additional_master_security_groups = input;
         self
     }
+    /// <p>A list of additional Amazon EC2 security group IDs for the master node.</p>
+    pub fn get_additional_master_security_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.additional_master_security_groups
+    }
     /// Appends an item to `additional_slave_security_groups`.
     ///
     /// To override the contents of this collection use [`set_additional_slave_security_groups`](Self::set_additional_slave_security_groups).
@@ -459,6 +542,12 @@ impl JobFlowInstancesConfigBuilder {
     ) -> Self {
         self.additional_slave_security_groups = input;
         self
+    }
+    /// <p>A list of additional Amazon EC2 security group IDs for the core and task nodes.</p>
+    pub fn get_additional_slave_security_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.additional_slave_security_groups
     }
     /// Consumes the builder and constructs a [`JobFlowInstancesConfig`](crate::types::JobFlowInstancesConfig).
     pub fn build(self) -> crate::types::JobFlowInstancesConfig {

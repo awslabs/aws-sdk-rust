@@ -48,6 +48,10 @@ impl DeleteDatasetInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// <p>The unique identifier of the Dataset to be deleted.</p>
     pub fn dataset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_id = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl DeleteDatasetInputBuilder {
     pub fn set_dataset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_id = input;
         self
+    }
+    /// <p>The unique identifier of the Dataset to be deleted.</p>
+    pub fn get_dataset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_id
     }
     /// Consumes the builder and constructs a [`DeleteDatasetInput`](crate::operation::delete_dataset::DeleteDatasetInput).
     pub fn build(

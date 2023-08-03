@@ -64,6 +64,12 @@ impl ListDomainsOutputBuilder {
         self.domains = input;
         self
     }
+    /// <p>A list of domains.</p>
+    pub fn get_domains(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DomainSummary>> {
+        &self.domains
+    }
     /// <p>If there are more domains than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
     pub fn next_page_marker(
         mut self,
@@ -79,6 +85,10 @@ impl ListDomainsOutputBuilder {
     ) -> Self {
         self.next_page_marker = input;
         self
+    }
+    /// <p>If there are more domains than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
+    pub fn get_next_page_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_page_marker
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -96,6 +96,10 @@ impl PolicyComplianceDetailBuilder {
         self.policy_owner = input;
         self
     }
+    /// <p>The Amazon Web Services account that created the Firewall Manager policy.</p>
+    pub fn get_policy_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_owner
+    }
     /// <p>The ID of the Firewall Manager policy.</p>
     pub fn policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_id = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl PolicyComplianceDetailBuilder {
     pub fn set_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_id = input;
         self
+    }
+    /// <p>The ID of the Firewall Manager policy.</p>
+    pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_id
     }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn member_account(
@@ -121,6 +129,10 @@ impl PolicyComplianceDetailBuilder {
     ) -> Self {
         self.member_account = input;
         self
+    }
+    /// <p>The Amazon Web Services account ID.</p>
+    pub fn get_member_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.member_account
     }
     /// Appends an item to `violators`.
     ///
@@ -141,6 +153,12 @@ impl PolicyComplianceDetailBuilder {
         self.violators = input;
         self
     }
+    /// <p>An array of resources that aren't protected by the WAF or Shield Advanced policy or that aren't in compliance with the security group policy.</p>
+    pub fn get_violators(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComplianceViolator>> {
+        &self.violators
+    }
     /// <p>Indicates if over 100 resources are noncompliant with the Firewall Manager policy.</p>
     pub fn evaluation_limit_exceeded(mut self, input: bool) -> Self {
         self.evaluation_limit_exceeded = ::std::option::Option::Some(input);
@@ -150,6 +168,10 @@ impl PolicyComplianceDetailBuilder {
     pub fn set_evaluation_limit_exceeded(mut self, input: ::std::option::Option<bool>) -> Self {
         self.evaluation_limit_exceeded = input;
         self
+    }
+    /// <p>Indicates if over 100 resources are noncompliant with the Firewall Manager policy.</p>
+    pub fn get_evaluation_limit_exceeded(&self) -> &::std::option::Option<bool> {
+        &self.evaluation_limit_exceeded
     }
     /// <p>A timestamp that indicates when the returned information should be considered out of date.</p>
     pub fn expired_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -163,6 +185,10 @@ impl PolicyComplianceDetailBuilder {
     ) -> Self {
         self.expired_at = input;
         self
+    }
+    /// <p>A timestamp that indicates when the returned information should be considered out of date.</p>
+    pub fn get_expired_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expired_at
     }
     /// Adds a key-value pair to `issue_info_map`.
     ///
@@ -188,6 +214,14 @@ impl PolicyComplianceDetailBuilder {
     ) -> Self {
         self.issue_info_map = input;
         self
+    }
+    /// <p>Details about problems with dependent services, such as WAF or Config, and the error message received that indicates the problem with the service.</p>
+    pub fn get_issue_info_map(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<crate::types::DependentServiceName, ::std::string::String>,
+    > {
+        &self.issue_info_map
     }
     /// Consumes the builder and constructs a [`PolicyComplianceDetail`](crate::types::PolicyComplianceDetail).
     pub fn build(self) -> crate::types::PolicyComplianceDetail {

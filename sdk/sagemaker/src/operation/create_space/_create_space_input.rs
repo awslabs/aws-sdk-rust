@@ -63,6 +63,10 @@ impl CreateSpaceInputBuilder {
         self.domain_id = input;
         self
     }
+    /// <p>The ID of the associated Domain.</p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_id
+    }
     /// <p>The name of the space.</p>
     pub fn space_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.space_name = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl CreateSpaceInputBuilder {
     pub fn set_space_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.space_name = input;
         self
+    }
+    /// <p>The name of the space.</p>
+    pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.space_name
     }
     /// Appends an item to `tags`.
     ///
@@ -92,6 +100,10 @@ impl CreateSpaceInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>Tags to associated with the space. Each tag consists of a key and an optional value. Tag keys must be unique for each resource. Tags are searchable using the <code>Search</code> API.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>A collection of space settings.</p>
     pub fn space_settings(mut self, input: crate::types::SpaceSettings) -> Self {
         self.space_settings = ::std::option::Option::Some(input);
@@ -104,6 +116,10 @@ impl CreateSpaceInputBuilder {
     ) -> Self {
         self.space_settings = input;
         self
+    }
+    /// <p>A collection of space settings.</p>
+    pub fn get_space_settings(&self) -> &::std::option::Option<crate::types::SpaceSettings> {
+        &self.space_settings
     }
     /// Consumes the builder and constructs a [`CreateSpaceInput`](crate::operation::create_space::CreateSpaceInput).
     pub fn build(

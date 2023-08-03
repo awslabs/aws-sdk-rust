@@ -82,6 +82,10 @@ impl StartProtectedQueryInputBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of the protected query to be started.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ProtectedQueryType> {
+        &self.r#type
+    }
     /// <p>A unique identifier for the membership to run this query against. Currently accepts a membership ID.</p>
     pub fn membership_identifier(
         mut self,
@@ -98,6 +102,10 @@ impl StartProtectedQueryInputBuilder {
         self.membership_identifier = input;
         self
     }
+    /// <p>A unique identifier for the membership to run this query against. Currently accepts a membership ID.</p>
+    pub fn get_membership_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.membership_identifier
+    }
     /// <p>The protected SQL query parameters.</p>
     pub fn sql_parameters(mut self, input: crate::types::ProtectedQuerySqlParameters) -> Self {
         self.sql_parameters = ::std::option::Option::Some(input);
@@ -110,6 +118,12 @@ impl StartProtectedQueryInputBuilder {
     ) -> Self {
         self.sql_parameters = input;
         self
+    }
+    /// <p>The protected SQL query parameters.</p>
+    pub fn get_sql_parameters(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProtectedQuerySqlParameters> {
+        &self.sql_parameters
     }
     /// <p>The details needed to write the query results.</p>
     pub fn result_configuration(
@@ -126,6 +140,12 @@ impl StartProtectedQueryInputBuilder {
     ) -> Self {
         self.result_configuration = input;
         self
+    }
+    /// <p>The details needed to write the query results.</p>
+    pub fn get_result_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::ProtectedQueryResultConfiguration> {
+        &self.result_configuration
     }
     /// Consumes the builder and constructs a [`StartProtectedQueryInput`](crate::operation::start_protected_query::StartProtectedQueryInput).
     pub fn build(

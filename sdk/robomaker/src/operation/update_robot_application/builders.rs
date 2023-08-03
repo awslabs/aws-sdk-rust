@@ -36,6 +36,13 @@ impl UpdateRobotApplicationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateRobotApplication as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_robot_application::builders::UpdateRobotApplicationInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +133,10 @@ impl UpdateRobotApplicationFluentBuilder {
         self.inner = self.inner.set_application(input);
         self
     }
+    /// <p>The application information for the robot application.</p>
+    pub fn get_application(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application()
+    }
     /// Appends an item to `sources`.
     ///
     /// To override the contents of this collection use [`set_sources`](Self::set_sources).
@@ -143,6 +154,12 @@ impl UpdateRobotApplicationFluentBuilder {
         self.inner = self.inner.set_sources(input);
         self
     }
+    /// <p>The sources of the robot application.</p>
+    pub fn get_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceConfig>> {
+        self.inner.get_sources()
+    }
     /// <p>The robot software suite (ROS distribution) used by the robot application.</p>
     pub fn robot_software_suite(mut self, input: crate::types::RobotSoftwareSuite) -> Self {
         self.inner = self.inner.robot_software_suite(input);
@@ -155,6 +172,12 @@ impl UpdateRobotApplicationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_robot_software_suite(input);
         self
+    }
+    /// <p>The robot software suite (ROS distribution) used by the robot application.</p>
+    pub fn get_robot_software_suite(
+        &self,
+    ) -> &::std::option::Option<crate::types::RobotSoftwareSuite> {
+        self.inner.get_robot_software_suite()
     }
     /// <p>The revision id for the robot application.</p>
     pub fn current_revision_id(
@@ -172,6 +195,10 @@ impl UpdateRobotApplicationFluentBuilder {
         self.inner = self.inner.set_current_revision_id(input);
         self
     }
+    /// <p>The revision id for the robot application.</p>
+    pub fn get_current_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_current_revision_id()
+    }
     /// <p>The object that contains the Docker image URI for your robot application.</p>
     pub fn environment(mut self, input: crate::types::Environment) -> Self {
         self.inner = self.inner.environment(input);
@@ -184,5 +211,9 @@ impl UpdateRobotApplicationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_environment(input);
         self
+    }
+    /// <p>The object that contains the Docker image URI for your robot application.</p>
+    pub fn get_environment(&self) -> &::std::option::Option<crate::types::Environment> {
+        self.inner.get_environment()
     }
 }

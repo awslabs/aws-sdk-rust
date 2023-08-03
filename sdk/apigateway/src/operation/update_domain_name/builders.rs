@@ -36,6 +36,12 @@ impl UpdateDomainNameFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDomainName as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_domain_name::builders::UpdateDomainNameInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl UpdateDomainNameFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
+    /// <p>The name of the DomainName resource to be changed.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
+    }
     /// Appends an item to `patchOperations`.
     ///
     /// To override the contents of this collection use [`set_patch_operations`](Self::set_patch_operations).
@@ -142,5 +152,11 @@ impl UpdateDomainNameFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_patch_operations(input);
         self
+    }
+    /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
+    pub fn get_patch_operations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>> {
+        self.inner.get_patch_operations()
     }
 }

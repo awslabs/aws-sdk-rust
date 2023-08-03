@@ -62,6 +62,10 @@ impl IssuerCertificateIdentifierBuilder {
         self.issuer_certificate_subject = input;
         self
     }
+    /// <p>The subject of the issuer certificate.</p>
+    pub fn get_issuer_certificate_subject(&self) -> &::std::option::Option<::std::string::String> {
+        &self.issuer_certificate_subject
+    }
     /// <p>The issuer ID.</p>
     pub fn issuer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.issuer_id = ::std::option::Option::Some(input.into());
@@ -71,6 +75,10 @@ impl IssuerCertificateIdentifierBuilder {
     pub fn set_issuer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.issuer_id = input;
         self
+    }
+    /// <p>The issuer ID.</p>
+    pub fn get_issuer_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.issuer_id
     }
     /// <p>The issuer certificate serial number.</p>
     pub fn issuer_certificate_serial_number(
@@ -87,6 +95,12 @@ impl IssuerCertificateIdentifierBuilder {
     ) -> Self {
         self.issuer_certificate_serial_number = input;
         self
+    }
+    /// <p>The issuer certificate serial number.</p>
+    pub fn get_issuer_certificate_serial_number(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.issuer_certificate_serial_number
     }
     /// Consumes the builder and constructs a [`IssuerCertificateIdentifier`](crate::types::IssuerCertificateIdentifier).
     pub fn build(self) -> crate::types::IssuerCertificateIdentifier {

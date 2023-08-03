@@ -36,6 +36,10 @@ impl UpdateConfigurationProfileFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateConfigurationProfile as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_configuration_profile::builders::UpdateConfigurationProfileInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl UpdateConfigurationProfileFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The application ID.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>The ID of the configuration profile.</p>
     pub fn configuration_profile_id(
         mut self,
@@ -148,6 +156,10 @@ impl UpdateConfigurationProfileFluentBuilder {
         self.inner = self.inner.set_configuration_profile_id(input);
         self
     }
+    /// <p>The ID of the configuration profile.</p>
+    pub fn get_configuration_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration_profile_id()
+    }
     /// <p>The name of the configuration profile.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -158,6 +170,10 @@ impl UpdateConfigurationProfileFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the configuration profile.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>A description of the configuration profile.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -167,6 +183,10 @@ impl UpdateConfigurationProfileFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of the configuration profile.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
     pub fn retrieval_role_arn(
@@ -184,6 +204,10 @@ impl UpdateConfigurationProfileFluentBuilder {
         self.inner = self.inner.set_retrieval_role_arn(input);
         self
     }
+    /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
+    pub fn get_retrieval_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_retrieval_role_arn()
+    }
     /// Appends an item to `Validators`.
     ///
     /// To override the contents of this collection use [`set_validators`](Self::set_validators).
@@ -200,5 +224,11 @@ impl UpdateConfigurationProfileFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_validators(input);
         self
+    }
+    /// <p>A list of methods for validating the configuration.</p>
+    pub fn get_validators(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Validator>> {
+        self.inner.get_validators()
     }
 }

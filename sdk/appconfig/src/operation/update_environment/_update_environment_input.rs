@@ -78,6 +78,10 @@ impl UpdateEnvironmentInputBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The application ID.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The environment ID.</p>
     pub fn environment_id(
         mut self,
@@ -94,6 +98,10 @@ impl UpdateEnvironmentInputBuilder {
         self.environment_id = input;
         self
     }
+    /// <p>The environment ID.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
+    }
     /// <p>The name of the environment.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -104,6 +112,10 @@ impl UpdateEnvironmentInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the environment.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>A description of the environment.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -113,6 +125,10 @@ impl UpdateEnvironmentInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A description of the environment.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Appends an item to `monitors`.
     ///
@@ -132,6 +148,10 @@ impl UpdateEnvironmentInputBuilder {
     ) -> Self {
         self.monitors = input;
         self
+    }
+    /// <p>Amazon CloudWatch alarms to monitor during the deployment process.</p>
+    pub fn get_monitors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Monitor>> {
+        &self.monitors
     }
     /// Consumes the builder and constructs a [`UpdateEnvironmentInput`](crate::operation::update_environment::UpdateEnvironmentInput).
     pub fn build(

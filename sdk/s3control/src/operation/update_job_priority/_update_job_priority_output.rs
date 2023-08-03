@@ -55,6 +55,10 @@ impl UpdateJobPriorityOutputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The ID for the job whose priority Amazon S3 updated.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>The new priority assigned to the specified job.</p>
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
@@ -64,6 +68,10 @@ impl UpdateJobPriorityOutputBuilder {
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
+    }
+    /// <p>The new priority assigned to the specified job.</p>
+    pub fn get_priority(&self) -> &::std::option::Option<i32> {
+        &self.priority
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

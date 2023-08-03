@@ -46,6 +46,10 @@ impl DeleteEndpointConfigInputBuilder {
         self.endpoint_config_name = input;
         self
     }
+    /// <p>The name of the endpoint configuration that you want to delete.</p>
+    pub fn get_endpoint_config_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_config_name
+    }
     /// Consumes the builder and constructs a [`DeleteEndpointConfigInput`](crate::operation::delete_endpoint_config::DeleteEndpointConfigInput).
     pub fn build(
         self,

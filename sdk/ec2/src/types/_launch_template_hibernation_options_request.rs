@@ -44,6 +44,11 @@ impl LaunchTemplateHibernationOptionsRequestBuilder {
         self.configured = input;
         self
     }
+    /// <p>If you set this parameter to <code>true</code>, the instance is enabled for hibernation.</p>
+    /// <p>Default: <code>false</code> </p>
+    pub fn get_configured(&self) -> &::std::option::Option<bool> {
+        &self.configured
+    }
     /// Consumes the builder and constructs a [`LaunchTemplateHibernationOptionsRequest`](crate::types::LaunchTemplateHibernationOptionsRequest).
     pub fn build(self) -> crate::types::LaunchTemplateHibernationOptionsRequest {
         crate::types::LaunchTemplateHibernationOptionsRequest {

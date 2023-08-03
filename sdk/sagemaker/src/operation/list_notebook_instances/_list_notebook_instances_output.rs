@@ -60,6 +60,10 @@ impl ListNotebookInstancesOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>If the response to the previous <code>ListNotebookInstances</code> request was truncated, SageMaker returns this token. To retrieve the next set of notebook instances, use the token in the next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `notebook_instances`.
     ///
     /// To override the contents of this collection use [`set_notebook_instances`](Self::set_notebook_instances).
@@ -78,6 +82,12 @@ impl ListNotebookInstancesOutputBuilder {
     ) -> Self {
         self.notebook_instances = input;
         self
+    }
+    /// <p>An array of <code>NotebookInstanceSummary</code> objects, one for each notebook instance.</p>
+    pub fn get_notebook_instances(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceSummary>> {
+        &self.notebook_instances
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

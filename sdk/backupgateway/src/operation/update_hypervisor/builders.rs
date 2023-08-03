@@ -36,6 +36,12 @@ impl UpdateHypervisorFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateHypervisor as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_hypervisor::builders::UpdateHypervisorInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateHypervisorFluentBuilder {
         self.inner = self.inner.set_hypervisor_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the hypervisor to update.</p>
+    pub fn get_hypervisor_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_hypervisor_arn()
+    }
     /// <p>The updated host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
     pub fn host(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.host(input.into());
@@ -141,6 +151,10 @@ impl UpdateHypervisorFluentBuilder {
     pub fn set_host(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_host(input);
         self
+    }
+    /// <p>The updated host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
+    pub fn get_host(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_host()
     }
     /// <p>The updated username for the hypervisor.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -152,6 +166,10 @@ impl UpdateHypervisorFluentBuilder {
         self.inner = self.inner.set_username(input);
         self
     }
+    /// <p>The updated username for the hypervisor.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_username()
+    }
     /// <p>The updated password for the hypervisor.</p>
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.password(input.into());
@@ -162,6 +180,10 @@ impl UpdateHypervisorFluentBuilder {
         self.inner = self.inner.set_password(input);
         self
     }
+    /// <p>The updated password for the hypervisor.</p>
+    pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_password()
+    }
     /// <p>The updated name for the hypervisor</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -171,6 +193,10 @@ impl UpdateHypervisorFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The updated name for the hypervisor</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// <p>The Amazon Resource Name (ARN) of the group of gateways within the requested log.</p>
     pub fn log_group_arn(
@@ -187,5 +213,9 @@ impl UpdateHypervisorFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_log_group_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the group of gateways within the requested log.</p>
+    pub fn get_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_log_group_arn()
     }
 }

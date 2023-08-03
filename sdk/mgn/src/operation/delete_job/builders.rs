@@ -36,6 +36,10 @@ impl DeleteJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteJob as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_job::builders::DeleteJobInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -118,6 +122,10 @@ impl DeleteJobFluentBuilder {
         self.inner = self.inner.set_job_id(input);
         self
     }
+    /// <p>Request to delete Job from service by Job ID.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_id()
+    }
     /// <p>Request to delete Job from service by Account ID.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());
@@ -127,5 +135,9 @@ impl DeleteJobFluentBuilder {
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_id(input);
         self
+    }
+    /// <p>Request to delete Job from service by Account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
     }
 }

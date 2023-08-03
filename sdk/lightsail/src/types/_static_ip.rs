@@ -104,6 +104,10 @@ impl StaticIpBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the static IP (e.g., <code>StaticIP-Ohio-EXAMPLE</code>).</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Name (ARN) of the static IP (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -114,6 +118,10 @@ impl StaticIpBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the static IP (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The support code. Include this code in your email to support when you have questions about an instance or another resource in Lightsail. This code enables our support team to look up your Lightsail information more easily.</p>
     pub fn support_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.support_code = ::std::option::Option::Some(input.into());
@@ -123,6 +131,10 @@ impl StaticIpBuilder {
     pub fn set_support_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.support_code = input;
         self
+    }
+    /// <p>The support code. Include this code in your email to support when you have questions about an instance or another resource in Lightsail. This code enables our support team to look up your Lightsail information more easily.</p>
+    pub fn get_support_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.support_code
     }
     /// <p>The timestamp when the static IP was created (e.g., <code>1479735304.222</code>).</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -137,6 +149,10 @@ impl StaticIpBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The timestamp when the static IP was created (e.g., <code>1479735304.222</code>).</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The region and Availability Zone where the static IP was created.</p>
     pub fn location(mut self, input: crate::types::ResourceLocation) -> Self {
         self.location = ::std::option::Option::Some(input);
@@ -149,6 +165,10 @@ impl StaticIpBuilder {
     ) -> Self {
         self.location = input;
         self
+    }
+    /// <p>The region and Availability Zone where the static IP was created.</p>
+    pub fn get_location(&self) -> &::std::option::Option<crate::types::ResourceLocation> {
+        &self.location
     }
     /// <p>The resource type (usually <code>StaticIp</code>).</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
@@ -163,6 +183,10 @@ impl StaticIpBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The resource type (usually <code>StaticIp</code>).</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
+    }
     /// <p>The static IP address.</p>
     pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_address = ::std::option::Option::Some(input.into());
@@ -172,6 +196,10 @@ impl StaticIpBuilder {
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_address = input;
         self
+    }
+    /// <p>The static IP address.</p>
+    pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ip_address
     }
     /// <p>The instance where the static IP is attached (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
     pub fn attached_to(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -183,6 +211,10 @@ impl StaticIpBuilder {
         self.attached_to = input;
         self
     }
+    /// <p>The instance where the static IP is attached (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
+    pub fn get_attached_to(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attached_to
+    }
     /// <p>A Boolean value indicating whether the static IP is attached.</p>
     pub fn is_attached(mut self, input: bool) -> Self {
         self.is_attached = ::std::option::Option::Some(input);
@@ -192,6 +224,10 @@ impl StaticIpBuilder {
     pub fn set_is_attached(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_attached = input;
         self
+    }
+    /// <p>A Boolean value indicating whether the static IP is attached.</p>
+    pub fn get_is_attached(&self) -> &::std::option::Option<bool> {
+        &self.is_attached
     }
     /// Consumes the builder and constructs a [`StaticIp`](crate::types::StaticIp).
     pub fn build(self) -> crate::types::StaticIp {

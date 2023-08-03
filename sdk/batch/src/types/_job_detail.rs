@@ -284,6 +284,10 @@ impl JobDetailBuilder {
         self.job_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the job.</p>
+    pub fn get_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_arn
+    }
     /// <p>The job name.</p>
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_name = ::std::option::Option::Some(input.into());
@@ -293,6 +297,10 @@ impl JobDetailBuilder {
     pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_name = input;
         self
+    }
+    /// <p>The job name.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
     }
     /// <p>The job ID.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -304,6 +312,10 @@ impl JobDetailBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The job ID.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the job queue that the job is associated with.</p>
     pub fn job_queue(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_queue = ::std::option::Option::Some(input.into());
@@ -313,6 +325,10 @@ impl JobDetailBuilder {
     pub fn set_job_queue(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_queue = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the job queue that the job is associated with.</p>
+    pub fn get_job_queue(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_queue
     }
     /// <p>The current status for the job.</p> <note>
     /// <p>If your jobs don't progress to <code>STARTING</code>, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs stuck in RUNNABLE status</a> in the troubleshooting section of the <i>Batch User Guide</i>.</p>
@@ -327,6 +343,12 @@ impl JobDetailBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status for the job.</p> <note>
+    /// <p>If your jobs don't progress to <code>STARTING</code>, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs stuck in RUNNABLE status</a> in the troubleshooting section of the <i>Batch User Guide</i>.</p>
+    /// </note>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
+        &self.status
     }
     /// <p>The share identifier for the job.</p>
     pub fn share_identifier(
@@ -344,6 +366,10 @@ impl JobDetailBuilder {
         self.share_identifier = input;
         self
     }
+    /// <p>The share identifier for the job.</p>
+    pub fn get_share_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.share_identifier
+    }
     /// <p>The scheduling policy of the job definition. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
     pub fn scheduling_priority(mut self, input: i32) -> Self {
         self.scheduling_priority = ::std::option::Option::Some(input);
@@ -353,6 +379,10 @@ impl JobDetailBuilder {
     pub fn set_scheduling_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.scheduling_priority = input;
         self
+    }
+    /// <p>The scheduling policy of the job definition. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
+    pub fn get_scheduling_priority(&self) -> &::std::option::Option<i32> {
+        &self.scheduling_priority
     }
     /// Appends an item to `attempts`.
     ///
@@ -373,6 +403,12 @@ impl JobDetailBuilder {
         self.attempts = input;
         self
     }
+    /// <p>A list of job attempts that are associated with this job.</p>
+    pub fn get_attempts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttemptDetail>> {
+        &self.attempts
+    }
     /// <p>A short, human-readable string to provide more details for the current status of the job.</p>
     pub fn status_reason(
         mut self,
@@ -389,6 +425,10 @@ impl JobDetailBuilder {
         self.status_reason = input;
         self
     }
+    /// <p>A short, human-readable string to provide more details for the current status of the job.</p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_reason
+    }
     /// <p>The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs, this is when the job entered the <code>SUBMITTED</code> state. This is specifically at the time <code>SubmitJob</code> was called. For array child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code> state.</p>
     pub fn created_at(mut self, input: i64) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -398,6 +438,10 @@ impl JobDetailBuilder {
     pub fn set_created_at(mut self, input: ::std::option::Option<i64>) -> Self {
         self.created_at = input;
         self
+    }
+    /// <p>The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs, this is when the job entered the <code>SUBMITTED</code> state. This is specifically at the time <code>SubmitJob</code> was called. For array child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code> state.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<i64> {
+        &self.created_at
     }
     /// <p>The retry strategy to use for this job if an attempt fails.</p>
     pub fn retry_strategy(mut self, input: crate::types::RetryStrategy) -> Self {
@@ -412,6 +456,10 @@ impl JobDetailBuilder {
         self.retry_strategy = input;
         self
     }
+    /// <p>The retry strategy to use for this job if an attempt fails.</p>
+    pub fn get_retry_strategy(&self) -> &::std::option::Option<crate::types::RetryStrategy> {
+        &self.retry_strategy
+    }
     /// <p>The Unix timestamp (in milliseconds) for when the job was started. More specifically, it's when the job transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state. This parameter isn't provided for child jobs of array jobs or multi-node parallel jobs.</p>
     pub fn started_at(mut self, input: i64) -> Self {
         self.started_at = ::std::option::Option::Some(input);
@@ -422,6 +470,10 @@ impl JobDetailBuilder {
         self.started_at = input;
         self
     }
+    /// <p>The Unix timestamp (in milliseconds) for when the job was started. More specifically, it's when the job transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state. This parameter isn't provided for child jobs of array jobs or multi-node parallel jobs.</p>
+    pub fn get_started_at(&self) -> &::std::option::Option<i64> {
+        &self.started_at
+    }
     /// <p>The Unix timestamp (in milliseconds) for when the job was stopped. More specifically, it's when the job transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>.</p>
     pub fn stopped_at(mut self, input: i64) -> Self {
         self.stopped_at = ::std::option::Option::Some(input);
@@ -431,6 +483,10 @@ impl JobDetailBuilder {
     pub fn set_stopped_at(mut self, input: ::std::option::Option<i64>) -> Self {
         self.stopped_at = input;
         self
+    }
+    /// <p>The Unix timestamp (in milliseconds) for when the job was stopped. More specifically, it's when the job transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>.</p>
+    pub fn get_stopped_at(&self) -> &::std::option::Option<i64> {
+        &self.stopped_at
     }
     /// Appends an item to `depends_on`.
     ///
@@ -451,6 +507,12 @@ impl JobDetailBuilder {
         self.depends_on = input;
         self
     }
+    /// <p>A list of job IDs that this job depends on.</p>
+    pub fn get_depends_on(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobDependency>> {
+        &self.depends_on
+    }
     /// <p>The Amazon Resource Name (ARN) of the job definition that this job uses.</p>
     pub fn job_definition(
         mut self,
@@ -466,6 +528,10 @@ impl JobDetailBuilder {
     ) -> Self {
         self.job_definition = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the job definition that this job uses.</p>
+    pub fn get_job_definition(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_definition
     }
     /// Adds a key-value pair to `parameters`.
     ///
@@ -492,6 +558,14 @@ impl JobDetailBuilder {
         self.parameters = input;
         self
     }
+    /// <p>Additional parameters that are passed to the job that replace parameter substitution placeholders or override any corresponding parameter defaults from the job definition.</p>
+    pub fn get_parameters(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.parameters
+    }
     /// <p>An object that represents the details for the container that's associated with the job.</p>
     pub fn container(mut self, input: crate::types::ContainerDetail) -> Self {
         self.container = ::std::option::Option::Some(input);
@@ -505,6 +579,10 @@ impl JobDetailBuilder {
         self.container = input;
         self
     }
+    /// <p>An object that represents the details for the container that's associated with the job.</p>
+    pub fn get_container(&self) -> &::std::option::Option<crate::types::ContainerDetail> {
+        &self.container
+    }
     /// <p>An object that represents the details of a node that's associated with a multi-node parallel job.</p>
     pub fn node_details(mut self, input: crate::types::NodeDetails) -> Self {
         self.node_details = ::std::option::Option::Some(input);
@@ -517,6 +595,10 @@ impl JobDetailBuilder {
     ) -> Self {
         self.node_details = input;
         self
+    }
+    /// <p>An object that represents the details of a node that's associated with a multi-node parallel job.</p>
+    pub fn get_node_details(&self) -> &::std::option::Option<crate::types::NodeDetails> {
+        &self.node_details
     }
     /// <p>An object that represents the node properties of a multi-node parallel job.</p> <note>
     /// <p>This isn't applicable to jobs that are running on Fargate resources.</p>
@@ -535,6 +617,12 @@ impl JobDetailBuilder {
         self.node_properties = input;
         self
     }
+    /// <p>An object that represents the node properties of a multi-node parallel job.</p> <note>
+    /// <p>This isn't applicable to jobs that are running on Fargate resources.</p>
+    /// </note>
+    pub fn get_node_properties(&self) -> &::std::option::Option<crate::types::NodeProperties> {
+        &self.node_properties
+    }
     /// <p>The array properties of the job, if it's an array job.</p>
     pub fn array_properties(mut self, input: crate::types::ArrayPropertiesDetail) -> Self {
         self.array_properties = ::std::option::Option::Some(input);
@@ -548,6 +636,12 @@ impl JobDetailBuilder {
         self.array_properties = input;
         self
     }
+    /// <p>The array properties of the job, if it's an array job.</p>
+    pub fn get_array_properties(
+        &self,
+    ) -> &::std::option::Option<crate::types::ArrayPropertiesDetail> {
+        &self.array_properties
+    }
     /// <p>The timeout configuration for the job.</p>
     pub fn timeout(mut self, input: crate::types::JobTimeout) -> Self {
         self.timeout = ::std::option::Option::Some(input);
@@ -557,6 +651,10 @@ impl JobDetailBuilder {
     pub fn set_timeout(mut self, input: ::std::option::Option<crate::types::JobTimeout>) -> Self {
         self.timeout = input;
         self
+    }
+    /// <p>The timeout configuration for the job.</p>
+    pub fn get_timeout(&self) -> &::std::option::Option<crate::types::JobTimeout> {
+        &self.timeout
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -583,6 +681,14 @@ impl JobDetailBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tags that are applied to the job.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
+    }
     /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks when the tasks are created. For tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.</p>
     pub fn propagate_tags(mut self, input: bool) -> Self {
         self.propagate_tags = ::std::option::Option::Some(input);
@@ -592,6 +698,10 @@ impl JobDetailBuilder {
     pub fn set_propagate_tags(mut self, input: ::std::option::Option<bool>) -> Self {
         self.propagate_tags = input;
         self
+    }
+    /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks when the tasks are created. For tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.</p>
+    pub fn get_propagate_tags(&self) -> &::std::option::Option<bool> {
+        &self.propagate_tags
     }
     /// Appends an item to `platform_capabilities`.
     ///
@@ -612,6 +722,12 @@ impl JobDetailBuilder {
         self.platform_capabilities = input;
         self
     }
+    /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.</p>
+    pub fn get_platform_capabilities(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PlatformCapability>> {
+        &self.platform_capabilities
+    }
     /// <p>An object with various properties that are specific to Amazon EKS based jobs. Only one of <code>container</code>, <code>eksProperties</code>, or <code>nodeDetails</code> is specified.</p>
     pub fn eks_properties(mut self, input: crate::types::EksPropertiesDetail) -> Self {
         self.eks_properties = ::std::option::Option::Some(input);
@@ -624,6 +740,10 @@ impl JobDetailBuilder {
     ) -> Self {
         self.eks_properties = input;
         self
+    }
+    /// <p>An object with various properties that are specific to Amazon EKS based jobs. Only one of <code>container</code>, <code>eksProperties</code>, or <code>nodeDetails</code> is specified.</p>
+    pub fn get_eks_properties(&self) -> &::std::option::Option<crate::types::EksPropertiesDetail> {
+        &self.eks_properties
     }
     /// Appends an item to `eks_attempts`.
     ///
@@ -644,6 +764,12 @@ impl JobDetailBuilder {
         self.eks_attempts = input;
         self
     }
+    /// <p>A list of job attempts that are associated with this job.</p>
+    pub fn get_eks_attempts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EksAttemptDetail>> {
+        &self.eks_attempts
+    }
     /// <p>Indicates whether the job is canceled.</p>
     pub fn is_cancelled(mut self, input: bool) -> Self {
         self.is_cancelled = ::std::option::Option::Some(input);
@@ -654,6 +780,10 @@ impl JobDetailBuilder {
         self.is_cancelled = input;
         self
     }
+    /// <p>Indicates whether the job is canceled.</p>
+    pub fn get_is_cancelled(&self) -> &::std::option::Option<bool> {
+        &self.is_cancelled
+    }
     /// <p>Indicates whether the job is terminated.</p>
     pub fn is_terminated(mut self, input: bool) -> Self {
         self.is_terminated = ::std::option::Option::Some(input);
@@ -663,6 +793,10 @@ impl JobDetailBuilder {
     pub fn set_is_terminated(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_terminated = input;
         self
+    }
+    /// <p>Indicates whether the job is terminated.</p>
+    pub fn get_is_terminated(&self) -> &::std::option::Option<bool> {
+        &self.is_terminated
     }
     /// Consumes the builder and constructs a [`JobDetail`](crate::types::JobDetail).
     pub fn build(self) -> crate::types::JobDetail {

@@ -65,6 +65,10 @@ impl StopProductSubscriptionInputBuilder {
         self.username = input;
         self
     }
+    /// <p>The user name from the identity provider for the user.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        &self.username
+    }
     /// <p>An object that specifies details for the identity provider.</p>
     pub fn identity_provider(mut self, input: crate::types::IdentityProvider) -> Self {
         self.identity_provider = ::std::option::Option::Some(input);
@@ -78,6 +82,10 @@ impl StopProductSubscriptionInputBuilder {
         self.identity_provider = input;
         self
     }
+    /// <p>An object that specifies details for the identity provider.</p>
+    pub fn get_identity_provider(&self) -> &::std::option::Option<crate::types::IdentityProvider> {
+        &self.identity_provider
+    }
     /// <p>The name of the user-based subscription product.</p>
     pub fn product(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product = ::std::option::Option::Some(input.into());
@@ -88,6 +96,10 @@ impl StopProductSubscriptionInputBuilder {
         self.product = input;
         self
     }
+    /// <p>The name of the user-based subscription product.</p>
+    pub fn get_product(&self) -> &::std::option::Option<::std::string::String> {
+        &self.product
+    }
     /// <p>The domain name of the user.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
@@ -97,6 +109,10 @@ impl StopProductSubscriptionInputBuilder {
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain = input;
         self
+    }
+    /// <p>The domain name of the user.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
     }
     /// Consumes the builder and constructs a [`StopProductSubscriptionInput`](crate::operation::stop_product_subscription::StopProductSubscriptionInput).
     pub fn build(

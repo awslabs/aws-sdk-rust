@@ -49,6 +49,12 @@ impl LoggingConfigurationBuilder {
         self.destinations = input;
         self
     }
+    /// <p>A list of the locations where SimSpace Weaver sends simulation log data.</p>
+    pub fn get_destinations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LogDestination>> {
+        &self.destinations
+    }
     /// Consumes the builder and constructs a [`LoggingConfiguration`](crate::types::LoggingConfiguration).
     pub fn build(self) -> crate::types::LoggingConfiguration {
         crate::types::LoggingConfiguration {

@@ -49,6 +49,10 @@ impl DescribeCostCategoryDefinitionOutputBuilder {
         self.cost_category = input;
         self
     }
+    /// <p>The structure of Cost Categories. This includes detailed metadata and the set of rules for the <code>CostCategory</code> object.</p>
+    pub fn get_cost_category(&self) -> &::std::option::Option<crate::types::CostCategory> {
+        &self.cost_category
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

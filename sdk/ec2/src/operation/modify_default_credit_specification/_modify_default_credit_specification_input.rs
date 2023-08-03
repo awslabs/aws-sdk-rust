@@ -60,6 +60,10 @@ impl ModifyDefaultCreditSpecificationInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>The instance family.</p>
     pub fn instance_family(
         mut self,
@@ -76,6 +80,12 @@ impl ModifyDefaultCreditSpecificationInputBuilder {
         self.instance_family = input;
         self
     }
+    /// <p>The instance family.</p>
+    pub fn get_instance_family(
+        &self,
+    ) -> &::std::option::Option<crate::types::UnlimitedSupportedInstanceFamily> {
+        &self.instance_family
+    }
     /// <p>The credit option for CPU usage of the instance family.</p>
     /// <p>Valid Values: <code>standard</code> | <code>unlimited</code> </p>
     pub fn cpu_credits(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -87,6 +97,11 @@ impl ModifyDefaultCreditSpecificationInputBuilder {
     pub fn set_cpu_credits(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cpu_credits = input;
         self
+    }
+    /// <p>The credit option for CPU usage of the instance family.</p>
+    /// <p>Valid Values: <code>standard</code> | <code>unlimited</code> </p>
+    pub fn get_cpu_credits(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cpu_credits
     }
     /// Consumes the builder and constructs a [`ModifyDefaultCreditSpecificationInput`](crate::operation::modify_default_credit_specification::ModifyDefaultCreditSpecificationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::modify_default_credit_specification::ModifyDefaultCreditSpecificationInput, ::aws_smithy_http::operation::error::BuildError>{

@@ -55,6 +55,10 @@ impl DescribeDeviceInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>Next token of device description.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The unique ID of the device.</p>
     pub fn device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_name = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl DescribeDeviceInputBuilder {
     pub fn set_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_name = input;
         self
+    }
+    /// <p>The unique ID of the device.</p>
+    pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_name
     }
     /// <p>The name of the fleet the devices belong to.</p>
     pub fn device_fleet_name(
@@ -80,6 +88,10 @@ impl DescribeDeviceInputBuilder {
     ) -> Self {
         self.device_fleet_name = input;
         self
+    }
+    /// <p>The name of the fleet the devices belong to.</p>
+    pub fn get_device_fleet_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.device_fleet_name
     }
     /// Consumes the builder and constructs a [`DescribeDeviceInput`](crate::operation::describe_device::DescribeDeviceInput).
     pub fn build(

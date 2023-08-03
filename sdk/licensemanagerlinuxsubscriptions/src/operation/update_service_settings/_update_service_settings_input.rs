@@ -71,6 +71,12 @@ impl UpdateServiceSettingsInputBuilder {
         self.linux_subscriptions_discovery = input;
         self
     }
+    /// <p>Describes if the discovery of Linux subscriptions is enabled.</p>
+    pub fn get_linux_subscriptions_discovery(
+        &self,
+    ) -> &::std::option::Option<crate::types::LinuxSubscriptionsDiscovery> {
+        &self.linux_subscriptions_discovery
+    }
     /// <p>The settings defined for Linux subscriptions discovery. The settings include if Organizations integration has been enabled, and which Regions data will be aggregated from.</p>
     pub fn linux_subscriptions_discovery_settings(
         mut self,
@@ -87,6 +93,12 @@ impl UpdateServiceSettingsInputBuilder {
         self.linux_subscriptions_discovery_settings = input;
         self
     }
+    /// <p>The settings defined for Linux subscriptions discovery. The settings include if Organizations integration has been enabled, and which Regions data will be aggregated from.</p>
+    pub fn get_linux_subscriptions_discovery_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::LinuxSubscriptionsDiscoverySettings> {
+        &self.linux_subscriptions_discovery_settings
+    }
     /// <p>Describes if updates are allowed to the service settings for Linux subscriptions. If you allow updates, you can aggregate Linux subscription data in more than one home Region.</p>
     pub fn allow_update(mut self, input: bool) -> Self {
         self.allow_update = ::std::option::Option::Some(input);
@@ -96,6 +108,10 @@ impl UpdateServiceSettingsInputBuilder {
     pub fn set_allow_update(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_update = input;
         self
+    }
+    /// <p>Describes if updates are allowed to the service settings for Linux subscriptions. If you allow updates, you can aggregate Linux subscription data in more than one home Region.</p>
+    pub fn get_allow_update(&self) -> &::std::option::Option<bool> {
+        &self.allow_update
     }
     /// Consumes the builder and constructs a [`UpdateServiceSettingsInput`](crate::operation::update_service_settings::UpdateServiceSettingsInput).
     pub fn build(

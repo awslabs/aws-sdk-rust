@@ -54,6 +54,10 @@ impl CreateClusterOutputBuilder {
         self.cluster_id = input;
         self
     }
+    /// <p>The automatically generated ID for a cluster.</p>
+    pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_id
+    }
     /// Appends an item to `job_list_entries`.
     ///
     /// To override the contents of this collection use [`set_job_list_entries`](Self::set_job_list_entries).
@@ -72,6 +76,12 @@ impl CreateClusterOutputBuilder {
     ) -> Self {
         self.job_list_entries = input;
         self
+    }
+    /// <p>List of jobs created for this cluster. For syntax, see <a href="http://amazonaws.com/snowball/latest/api-reference/API_ListJobs.html#API_ListJobs_ResponseSyntax">ListJobsResult$JobListEntries</a> in this guide.</p>
+    pub fn get_job_list_entries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::JobListEntry>> {
+        &self.job_list_entries
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

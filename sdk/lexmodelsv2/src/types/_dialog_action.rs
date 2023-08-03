@@ -59,6 +59,10 @@ impl DialogActionBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The action that the bot should execute. </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::DialogActionType> {
+        &self.r#type
+    }
     /// <p>If the dialog action is <code>ElicitSlot</code>, defines the slot to elicit from the user.</p>
     pub fn slot_to_elicit(
         mut self,
@@ -75,6 +79,10 @@ impl DialogActionBuilder {
         self.slot_to_elicit = input;
         self
     }
+    /// <p>If the dialog action is <code>ElicitSlot</code>, defines the slot to elicit from the user.</p>
+    pub fn get_slot_to_elicit(&self) -> &::std::option::Option<::std::string::String> {
+        &self.slot_to_elicit
+    }
     /// <p>When true the next message for the intent is not used.</p>
     pub fn suppress_next_message(mut self, input: bool) -> Self {
         self.suppress_next_message = ::std::option::Option::Some(input);
@@ -84,6 +92,10 @@ impl DialogActionBuilder {
     pub fn set_suppress_next_message(mut self, input: ::std::option::Option<bool>) -> Self {
         self.suppress_next_message = input;
         self
+    }
+    /// <p>When true the next message for the intent is not used.</p>
+    pub fn get_suppress_next_message(&self) -> &::std::option::Option<bool> {
+        &self.suppress_next_message
     }
     /// Consumes the builder and constructs a [`DialogAction`](crate::types::DialogAction).
     pub fn build(self) -> crate::types::DialogAction {

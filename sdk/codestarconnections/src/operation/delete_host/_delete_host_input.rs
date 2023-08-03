@@ -39,6 +39,10 @@ impl DeleteHostInputBuilder {
         self.host_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the host to be deleted.</p>
+    pub fn get_host_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.host_arn
+    }
     /// Consumes the builder and constructs a [`DeleteHostInput`](crate::operation::delete_host::DeleteHostInput).
     pub fn build(
         self,

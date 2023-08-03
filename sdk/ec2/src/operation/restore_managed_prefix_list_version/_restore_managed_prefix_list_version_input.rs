@@ -63,6 +63,10 @@ impl RestoreManagedPrefixListVersionInputBuilder {
         self.dry_run = input;
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// <p>The ID of the prefix list.</p>
     pub fn prefix_list_id(
         mut self,
@@ -79,6 +83,10 @@ impl RestoreManagedPrefixListVersionInputBuilder {
         self.prefix_list_id = input;
         self
     }
+    /// <p>The ID of the prefix list.</p>
+    pub fn get_prefix_list_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix_list_id
+    }
     /// <p>The version to restore.</p>
     pub fn previous_version(mut self, input: i64) -> Self {
         self.previous_version = ::std::option::Option::Some(input);
@@ -89,6 +97,10 @@ impl RestoreManagedPrefixListVersionInputBuilder {
         self.previous_version = input;
         self
     }
+    /// <p>The version to restore.</p>
+    pub fn get_previous_version(&self) -> &::std::option::Option<i64> {
+        &self.previous_version
+    }
     /// <p>The current version number for the prefix list.</p>
     pub fn current_version(mut self, input: i64) -> Self {
         self.current_version = ::std::option::Option::Some(input);
@@ -98,6 +110,10 @@ impl RestoreManagedPrefixListVersionInputBuilder {
     pub fn set_current_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.current_version = input;
         self
+    }
+    /// <p>The current version number for the prefix list.</p>
+    pub fn get_current_version(&self) -> &::std::option::Option<i64> {
+        &self.current_version
     }
     /// Consumes the builder and constructs a [`RestoreManagedPrefixListVersionInput`](crate::operation::restore_managed_prefix_list_version::RestoreManagedPrefixListVersionInput).
     pub fn build(

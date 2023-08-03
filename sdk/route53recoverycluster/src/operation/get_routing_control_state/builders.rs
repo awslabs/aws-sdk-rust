@@ -45,6 +45,13 @@ impl GetRoutingControlStateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetRoutingControlState as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_routing_control_state::builders::GetRoutingControlStateInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -140,5 +147,9 @@ impl GetRoutingControlStateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_routing_control_arn(input);
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) for the routing control that you want to get the state for.</p>
+    pub fn get_routing_control_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_routing_control_arn()
     }
 }

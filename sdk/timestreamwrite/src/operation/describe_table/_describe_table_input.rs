@@ -53,6 +53,10 @@ impl DescribeTableInputBuilder {
         self.database_name = input;
         self
     }
+    /// <p>The name of the Timestream database.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>The name of the Timestream table.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl DescribeTableInputBuilder {
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
+    }
+    /// <p>The name of the Timestream table.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
     }
     /// Consumes the builder and constructs a [`DescribeTableInput`](crate::operation::describe_table::DescribeTableInput).
     pub fn build(

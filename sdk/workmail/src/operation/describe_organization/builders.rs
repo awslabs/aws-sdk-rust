@@ -36,6 +36,12 @@ impl DescribeOrganizationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeOrganization as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_organization::builders::DescribeOrganizationInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +137,9 @@ impl DescribeOrganizationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_organization_id(input);
         self
+    }
+    /// <p>The identifier for the organization to be described.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organization_id()
     }
 }

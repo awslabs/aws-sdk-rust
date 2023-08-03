@@ -74,6 +74,10 @@ impl CreateRecoveryGroupInputBuilder {
         self.cells = input;
         self
     }
+    /// <p>A list of the cell Amazon Resource Names (ARNs) in the recovery group.</p>
+    pub fn get_cells(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.cells
+    }
     /// <p>The name of the recovery group to create.</p>
     pub fn recovery_group_name(
         mut self,
@@ -89,6 +93,10 @@ impl CreateRecoveryGroupInputBuilder {
     ) -> Self {
         self.recovery_group_name = input;
         self
+    }
+    /// <p>The name of the recovery group to create.</p>
+    pub fn get_recovery_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recovery_group_name
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -114,6 +122,14 @@ impl CreateRecoveryGroupInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A collection of tags associated with a resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateRecoveryGroupInput`](crate::operation::create_recovery_group::CreateRecoveryGroupInput).
     pub fn build(

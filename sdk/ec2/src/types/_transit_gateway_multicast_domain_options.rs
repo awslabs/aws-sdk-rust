@@ -66,6 +66,10 @@ impl TransitGatewayMulticastDomainOptionsBuilder {
         self.igmpv2_support = input;
         self
     }
+    /// <p>Indicates whether Internet Group Management Protocol (IGMP) version 2 is turned on for the transit gateway multicast domain.</p>
+    pub fn get_igmpv2_support(&self) -> &::std::option::Option<crate::types::Igmpv2SupportValue> {
+        &self.igmpv2_support
+    }
     /// <p>Indicates whether support for statically configuring transit gateway multicast group sources is turned on.</p>
     pub fn static_sources_support(
         mut self,
@@ -82,6 +86,12 @@ impl TransitGatewayMulticastDomainOptionsBuilder {
         self.static_sources_support = input;
         self
     }
+    /// <p>Indicates whether support for statically configuring transit gateway multicast group sources is turned on.</p>
+    pub fn get_static_sources_support(
+        &self,
+    ) -> &::std::option::Option<crate::types::StaticSourcesSupportValue> {
+        &self.static_sources_support
+    }
     /// <p>Indicates whether to automatically cross-account subnet associations that are associated with the transit gateway multicast domain.</p>
     pub fn auto_accept_shared_associations(
         mut self,
@@ -97,6 +107,12 @@ impl TransitGatewayMulticastDomainOptionsBuilder {
     ) -> Self {
         self.auto_accept_shared_associations = input;
         self
+    }
+    /// <p>Indicates whether to automatically cross-account subnet associations that are associated with the transit gateway multicast domain.</p>
+    pub fn get_auto_accept_shared_associations(
+        &self,
+    ) -> &::std::option::Option<crate::types::AutoAcceptSharedAssociationsValue> {
+        &self.auto_accept_shared_associations
     }
     /// Consumes the builder and constructs a [`TransitGatewayMulticastDomainOptions`](crate::types::TransitGatewayMulticastDomainOptions).
     pub fn build(self) -> crate::types::TransitGatewayMulticastDomainOptions {

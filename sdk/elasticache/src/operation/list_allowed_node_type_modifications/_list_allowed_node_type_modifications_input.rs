@@ -66,6 +66,12 @@ impl ListAllowedNodeTypeModificationsInputBuilder {
         self.cache_cluster_id = input;
         self
     }
+    /// <p>The name of the cluster you want to scale up to a larger node instanced type. ElastiCache uses the cluster id to identify the current node type of this cluster and from that to create a list of node types you can scale up to.</p> <important>
+    /// <p>You must provide a value for either the <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.</p>
+    /// </important>
+    pub fn get_cache_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_cluster_id
+    }
     /// <p>The name of the replication group want to scale up to a larger node type. ElastiCache uses the replication group id to identify the current node type being used by this replication group, and from that to create a list of node types you can scale up to.</p> <important>
     /// <p>You must provide a value for either the <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.</p>
     /// </important>
@@ -85,6 +91,12 @@ impl ListAllowedNodeTypeModificationsInputBuilder {
     ) -> Self {
         self.replication_group_id = input;
         self
+    }
+    /// <p>The name of the replication group want to scale up to a larger node type. ElastiCache uses the replication group id to identify the current node type being used by this replication group, and from that to create a list of node types you can scale up to.</p> <important>
+    /// <p>You must provide a value for either the <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.</p>
+    /// </important>
+    pub fn get_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_group_id
     }
     /// Consumes the builder and constructs a [`ListAllowedNodeTypeModificationsInput`](crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModificationsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModificationsInput, ::aws_smithy_http::operation::error::BuildError>{

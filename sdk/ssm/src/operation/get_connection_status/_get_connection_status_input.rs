@@ -41,6 +41,10 @@ impl GetConnectionStatusInputBuilder {
         self.target = input;
         self
     }
+    /// <p>The managed node ID.</p>
+    pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target
+    }
     /// Consumes the builder and constructs a [`GetConnectionStatusInput`](crate::operation::get_connection_status::GetConnectionStatusInput).
     pub fn build(
         self,

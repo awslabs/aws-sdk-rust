@@ -91,6 +91,10 @@ impl RegionBuilder {
         self.continent_code = input;
         self
     }
+    /// <p>The continent code (e.g., <code>NA</code>, meaning North America).</p>
+    pub fn get_continent_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.continent_code
+    }
     /// <p>The description of the Amazon Web Services Region (e.g., <code>This region is recommended to serve users in the eastern United States and eastern Canada</code>).</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -100,6 +104,10 @@ impl RegionBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the Amazon Web Services Region (e.g., <code>This region is recommended to serve users in the eastern United States and eastern Canada</code>).</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The display name (e.g., <code>Ohio</code>).</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -111,6 +119,10 @@ impl RegionBuilder {
         self.display_name = input;
         self
     }
+    /// <p>The display name (e.g., <code>Ohio</code>).</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
+    }
     /// <p>The region name (e.g., <code>us-east-2</code>).</p>
     pub fn name(mut self, input: crate::types::RegionName) -> Self {
         self.name = ::std::option::Option::Some(input);
@@ -120,6 +132,10 @@ impl RegionBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::RegionName>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The region name (e.g., <code>us-east-2</code>).</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::RegionName> {
+        &self.name
     }
     /// Appends an item to `availability_zones`.
     ///
@@ -139,6 +155,12 @@ impl RegionBuilder {
     ) -> Self {
         self.availability_zones = input;
         self
+    }
+    /// <p>The Availability Zones. Follows the format <code>us-east-2a</code> (case-sensitive).</p>
+    pub fn get_availability_zones(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>> {
+        &self.availability_zones
     }
     /// Appends an item to `relational_database_availability_zones`.
     ///
@@ -163,6 +185,12 @@ impl RegionBuilder {
     ) -> Self {
         self.relational_database_availability_zones = input;
         self
+    }
+    /// <p>The Availability Zones for databases. Follows the format <code>us-east-2a</code> (case-sensitive).</p>
+    pub fn get_relational_database_availability_zones(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>> {
+        &self.relational_database_availability_zones
     }
     /// Consumes the builder and constructs a [`Region`](crate::types::Region).
     pub fn build(self) -> crate::types::Region {

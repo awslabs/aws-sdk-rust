@@ -58,6 +58,10 @@ impl S3SourcePropertiesBuilder {
         self.bucket_name = input;
         self
     }
+    /// <p> The Amazon S3 bucket name where the source files are stored. </p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_name
+    }
     /// <p> The object key for the Amazon S3 bucket in which the source files are stored. </p>
     pub fn bucket_prefix(
         mut self,
@@ -74,6 +78,10 @@ impl S3SourcePropertiesBuilder {
         self.bucket_prefix = input;
         self
     }
+    /// <p> The object key for the Amazon S3 bucket in which the source files are stored. </p>
+    pub fn get_bucket_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_prefix
+    }
     /// <p> When you use Amazon S3 as the source, the configuration format that you provide the flow input data. </p>
     pub fn s3_input_format_config(mut self, input: crate::types::S3InputFormatConfig) -> Self {
         self.s3_input_format_config = ::std::option::Option::Some(input);
@@ -86,6 +94,12 @@ impl S3SourcePropertiesBuilder {
     ) -> Self {
         self.s3_input_format_config = input;
         self
+    }
+    /// <p> When you use Amazon S3 as the source, the configuration format that you provide the flow input data. </p>
+    pub fn get_s3_input_format_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3InputFormatConfig> {
+        &self.s3_input_format_config
     }
     /// Consumes the builder and constructs a [`S3SourceProperties`](crate::types::S3SourceProperties).
     pub fn build(self) -> crate::types::S3SourceProperties {

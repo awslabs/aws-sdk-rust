@@ -76,6 +76,10 @@ impl ScanDetectionsBuilder {
         self.scanned_item_count = input;
         self
     }
+    /// <p>Total number of scanned files.</p>
+    pub fn get_scanned_item_count(&self) -> &::std::option::Option<crate::types::ScannedItemCount> {
+        &self.scanned_item_count
+    }
     /// <p>Total number of infected files.</p>
     pub fn threats_detected_item_count(
         mut self,
@@ -91,6 +95,12 @@ impl ScanDetectionsBuilder {
     ) -> Self {
         self.threats_detected_item_count = input;
         self
+    }
+    /// <p>Total number of infected files.</p>
+    pub fn get_threats_detected_item_count(
+        &self,
+    ) -> &::std::option::Option<crate::types::ThreatsDetectedItemCount> {
+        &self.threats_detected_item_count
     }
     /// <p>Details of the highest severity threat detected during malware scan and number of infected files.</p>
     pub fn highest_severity_threat_details(
@@ -108,6 +118,12 @@ impl ScanDetectionsBuilder {
         self.highest_severity_threat_details = input;
         self
     }
+    /// <p>Details of the highest severity threat detected during malware scan and number of infected files.</p>
+    pub fn get_highest_severity_threat_details(
+        &self,
+    ) -> &::std::option::Option<crate::types::HighestSeverityThreatDetails> {
+        &self.highest_severity_threat_details
+    }
     /// <p>Contains details about identified threats organized by threat name.</p>
     pub fn threat_detected_by_name(mut self, input: crate::types::ThreatDetectedByName) -> Self {
         self.threat_detected_by_name = ::std::option::Option::Some(input);
@@ -120,6 +136,12 @@ impl ScanDetectionsBuilder {
     ) -> Self {
         self.threat_detected_by_name = input;
         self
+    }
+    /// <p>Contains details about identified threats organized by threat name.</p>
+    pub fn get_threat_detected_by_name(
+        &self,
+    ) -> &::std::option::Option<crate::types::ThreatDetectedByName> {
+        &self.threat_detected_by_name
     }
     /// Consumes the builder and constructs a [`ScanDetections`](crate::types::ScanDetections).
     pub fn build(self) -> crate::types::ScanDetections {

@@ -86,6 +86,10 @@ impl DeleteJobExecutionInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The ID of the job whose execution on a particular device will be deleted.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>The name of the thing whose job execution will be deleted.</p>
     pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.thing_name = ::std::option::Option::Some(input.into());
@@ -95,6 +99,10 @@ impl DeleteJobExecutionInputBuilder {
     pub fn set_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_name = input;
         self
+    }
+    /// <p>The name of the thing whose job execution will be deleted.</p>
+    pub fn get_thing_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thing_name
     }
     /// <p>The ID of the job execution to be deleted. The <code>executionNumber</code> refers to the execution of a particular job on a particular device.</p>
     /// <p>Note that once a job execution is deleted, the <code>executionNumber</code> may be reused by IoT, so be sure you get and use the correct value here.</p>
@@ -107,6 +115,11 @@ impl DeleteJobExecutionInputBuilder {
     pub fn set_execution_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.execution_number = input;
         self
+    }
+    /// <p>The ID of the job execution to be deleted. The <code>executionNumber</code> refers to the execution of a particular job on a particular device.</p>
+    /// <p>Note that once a job execution is deleted, the <code>executionNumber</code> may be reused by IoT, so be sure you get and use the correct value here.</p>
+    pub fn get_execution_number(&self) -> &::std::option::Option<i64> {
+        &self.execution_number
     }
     /// <p>(Optional) When true, you can delete a job execution which is "IN_PROGRESS". Otherwise, you can only delete a job execution which is in a terminal state ("SUCCEEDED", "FAILED", "REJECTED", "REMOVED" or "CANCELED") or an exception will occur. The default is false.</p> <note>
     /// <p>Deleting a job execution which is "IN_PROGRESS", will cause the device to be unable to access job information or update the job execution status. Use caution and ensure that the device is able to recover to a valid state.</p>
@@ -121,6 +134,12 @@ impl DeleteJobExecutionInputBuilder {
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force = input;
         self
+    }
+    /// <p>(Optional) When true, you can delete a job execution which is "IN_PROGRESS". Otherwise, you can only delete a job execution which is in a terminal state ("SUCCEEDED", "FAILED", "REJECTED", "REMOVED" or "CANCELED") or an exception will occur. The default is false.</p> <note>
+    /// <p>Deleting a job execution which is "IN_PROGRESS", will cause the device to be unable to access job information or update the job execution status. Use caution and ensure that the device is able to recover to a valid state.</p>
+    /// </note>
+    pub fn get_force(&self) -> &::std::option::Option<bool> {
+        &self.force
     }
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
     /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
@@ -139,6 +158,14 @@ impl DeleteJobExecutionInputBuilder {
     pub fn set_namespace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace_id = input;
         self
+    }
+    /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
+    /// <p>The <code>namespaceId</code> feature is in public preview.</p>
+    /// </note>
+    pub fn get_namespace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace_id
     }
     /// Consumes the builder and constructs a [`DeleteJobExecutionInput`](crate::operation::delete_job_execution::DeleteJobExecutionInput).
     pub fn build(

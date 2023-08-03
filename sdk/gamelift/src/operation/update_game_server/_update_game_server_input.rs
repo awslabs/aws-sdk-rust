@@ -80,6 +80,10 @@ impl UpdateGameServerInputBuilder {
         self.game_server_group_name = input;
         self
     }
+    /// <p>A unique identifier for the game server group where the game server is running.</p>
+    pub fn get_game_server_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.game_server_group_name
+    }
     /// <p>A custom string that uniquely identifies the game server to update.</p>
     pub fn game_server_id(
         mut self,
@@ -95,6 +99,10 @@ impl UpdateGameServerInputBuilder {
     ) -> Self {
         self.game_server_id = input;
         self
+    }
+    /// <p>A custom string that uniquely identifies the game server to update.</p>
+    pub fn get_game_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.game_server_id
     }
     /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers. </p>
     pub fn game_server_data(
@@ -112,6 +120,10 @@ impl UpdateGameServerInputBuilder {
         self.game_server_data = input;
         self
     }
+    /// <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers. </p>
+    pub fn get_game_server_data(&self) -> &::std::option::Option<::std::string::String> {
+        &self.game_server_data
+    }
     /// <p>Indicates whether the game server is available or is currently hosting gameplay.</p>
     pub fn utilization_status(mut self, input: crate::types::GameServerUtilizationStatus) -> Self {
         self.utilization_status = ::std::option::Option::Some(input);
@@ -125,6 +137,12 @@ impl UpdateGameServerInputBuilder {
         self.utilization_status = input;
         self
     }
+    /// <p>Indicates whether the game server is available or is currently hosting gameplay.</p>
+    pub fn get_utilization_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::GameServerUtilizationStatus> {
+        &self.utilization_status
+    }
     /// <p>Indicates health status of the game server. A request that includes this parameter updates the game server's <i>LastHealthCheckTime</i> timestamp. </p>
     pub fn health_check(mut self, input: crate::types::GameServerHealthCheck) -> Self {
         self.health_check = ::std::option::Option::Some(input);
@@ -137,6 +155,10 @@ impl UpdateGameServerInputBuilder {
     ) -> Self {
         self.health_check = input;
         self
+    }
+    /// <p>Indicates health status of the game server. A request that includes this parameter updates the game server's <i>LastHealthCheckTime</i> timestamp. </p>
+    pub fn get_health_check(&self) -> &::std::option::Option<crate::types::GameServerHealthCheck> {
+        &self.health_check
     }
     /// Consumes the builder and constructs a [`UpdateGameServerInput`](crate::operation::update_game_server::UpdateGameServerInput).
     pub fn build(

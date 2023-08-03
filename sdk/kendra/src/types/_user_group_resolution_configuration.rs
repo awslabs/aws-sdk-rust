@@ -51,6 +51,12 @@ impl UserGroupResolutionConfigurationBuilder {
         self.user_group_resolution_mode = input;
         self
     }
+    /// <p>The identity store provider (mode) you want to use to get users and groups. IAM Identity Center (successor to Single Sign-On) is currently the only available mode. Your users and groups must exist in an IAM Identity Center identity source in order to use this mode.</p>
+    pub fn get_user_group_resolution_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::UserGroupResolutionMode> {
+        &self.user_group_resolution_mode
+    }
     /// Consumes the builder and constructs a [`UserGroupResolutionConfiguration`](crate::types::UserGroupResolutionConfiguration).
     pub fn build(self) -> crate::types::UserGroupResolutionConfiguration {
         crate::types::UserGroupResolutionConfiguration {

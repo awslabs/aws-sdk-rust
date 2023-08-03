@@ -62,6 +62,14 @@ impl GetRuleOutputBuilder {
         self.rule = input;
         self
     }
+    /// <p>Information about the <code>Rule</code> that you specified in the <code>GetRule</code> request. For more information, see the following topics:</p>
+    /// <ul>
+    /// <li> <p> <code>Rule</code>: Contains <code>MetricName</code>, <code>Name</code>, an array of <code>Predicate</code> objects, and <code>RuleId</code> </p> </li>
+    /// <li> <p> <code>Predicate</code>: Each <code>Predicate</code> object contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code> </p> </li>
+    /// </ul>
+    pub fn get_rule(&self) -> &::std::option::Option<crate::types::Rule> {
+        &self.rule
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

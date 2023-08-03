@@ -69,6 +69,12 @@ impl ListComponentVersionsOutputBuilder {
         self.component_versions = input;
         self
     }
+    /// <p>A list of versions that exist for the component.</p>
+    pub fn get_component_versions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentVersionListItem>> {
+        &self.component_versions
+    }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -78,6 +84,10 @@ impl ListComponentVersionsOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token for the next set of results, or null if there are no additional results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

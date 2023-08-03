@@ -38,6 +38,10 @@ impl SetIdentityHeadersInNotificationsEnabledFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SetIdentityHeadersInNotificationsEnabled as a reference.
+    pub fn as_input(&self) -> &crate::operation::set_identity_headers_in_notifications_enabled::builders::SetIdentityHeadersInNotificationsEnabledInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -102,6 +106,10 @@ impl SetIdentityHeadersInNotificationsEnabledFluentBuilder {
         self.inner = self.inner.set_identity(input);
         self
     }
+    /// <p>The identity for which to enable or disable headers in notifications. Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
+    pub fn get_identity(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity()
+    }
     /// <p>The notification type for which to enable or disable headers in notifications. </p>
     pub fn notification_type(mut self, input: crate::types::NotificationType) -> Self {
         self.inner = self.inner.notification_type(input);
@@ -115,6 +123,10 @@ impl SetIdentityHeadersInNotificationsEnabledFluentBuilder {
         self.inner = self.inner.set_notification_type(input);
         self
     }
+    /// <p>The notification type for which to enable or disable headers in notifications. </p>
+    pub fn get_notification_type(&self) -> &::std::option::Option<crate::types::NotificationType> {
+        self.inner.get_notification_type()
+    }
     /// <p>Sets whether Amazon SES includes the original email headers in Amazon SNS notifications of the specified notification type. A value of <code>true</code> specifies that Amazon SES will include headers in notifications, and a value of <code>false</code> specifies that Amazon SES will not include headers in notifications.</p>
     /// <p>This value can only be set when <code>NotificationType</code> is already set to use a particular Amazon SNS topic.</p>
     pub fn enabled(mut self, input: bool) -> Self {
@@ -126,5 +138,10 @@ impl SetIdentityHeadersInNotificationsEnabledFluentBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enabled(input);
         self
+    }
+    /// <p>Sets whether Amazon SES includes the original email headers in Amazon SNS notifications of the specified notification type. A value of <code>true</code> specifies that Amazon SES will include headers in notifications, and a value of <code>false</code> specifies that Amazon SES will not include headers in notifications.</p>
+    /// <p>This value can only be set when <code>NotificationType</code> is already set to use a particular Amazon SNS topic.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enabled()
     }
 }

@@ -69,6 +69,10 @@ impl ListTagsOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -93,6 +97,14 @@ impl ListTagsOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>To help organize your resources, you can assign your own metadata to the resources you create. Each tag is a key-value pair.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

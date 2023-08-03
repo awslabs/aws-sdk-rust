@@ -57,6 +57,10 @@ impl DescribeAttackStatisticsOutputBuilder {
         self.time_range = input;
         self
     }
+    /// <p>The time range of the attack.</p>
+    pub fn get_time_range(&self) -> &::std::option::Option<crate::types::TimeRange> {
+        &self.time_range
+    }
     /// Appends an item to `data_items`.
     ///
     /// To override the contents of this collection use [`set_data_items`](Self::set_data_items).
@@ -75,6 +79,12 @@ impl DescribeAttackStatisticsOutputBuilder {
     ) -> Self {
         self.data_items = input;
         self
+    }
+    /// <p>The data that describes the attacks detected during the time period.</p>
+    pub fn get_data_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AttackStatisticsDataItem>> {
+        &self.data_items
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

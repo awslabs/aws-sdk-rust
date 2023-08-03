@@ -47,6 +47,10 @@ impl GetAwsDefaultServiceQuotaInputBuilder {
         self.service_code = input;
         self
     }
+    /// <p>The service identifier.</p>
+    pub fn get_service_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_code
+    }
     /// <p>The quota identifier.</p>
     pub fn quota_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.quota_code = ::std::option::Option::Some(input.into());
@@ -56,6 +60,10 @@ impl GetAwsDefaultServiceQuotaInputBuilder {
     pub fn set_quota_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.quota_code = input;
         self
+    }
+    /// <p>The quota identifier.</p>
+    pub fn get_quota_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.quota_code
     }
     /// Consumes the builder and constructs a [`GetAwsDefaultServiceQuotaInput`](crate::operation::get_aws_default_service_quota::GetAwsDefaultServiceQuotaInput).
     pub fn build(

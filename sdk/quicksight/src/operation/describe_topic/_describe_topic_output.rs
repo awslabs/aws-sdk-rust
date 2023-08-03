@@ -78,6 +78,10 @@ impl DescribeTopicOutputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the topic.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The ID of the topic that you want to describe. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     pub fn topic_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.topic_id = ::std::option::Option::Some(input.into());
@@ -87,6 +91,10 @@ impl DescribeTopicOutputBuilder {
     pub fn set_topic_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.topic_id = input;
         self
+    }
+    /// <p>The ID of the topic that you want to describe. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
+    pub fn get_topic_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_id
     }
     /// <p>The definition of a topic.</p>
     pub fn topic(mut self, input: crate::types::TopicDetails) -> Self {
@@ -98,6 +106,10 @@ impl DescribeTopicOutputBuilder {
         self.topic = input;
         self
     }
+    /// <p>The definition of a topic.</p>
+    pub fn get_topic(&self) -> &::std::option::Option<crate::types::TopicDetails> {
+        &self.topic
+    }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_id = ::std::option::Option::Some(input.into());
@@ -108,6 +120,10 @@ impl DescribeTopicOutputBuilder {
         self.request_id = input;
         self
     }
+    /// <p>The Amazon Web Services request ID for this operation.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
+    }
     /// <p>The HTTP status of the request.</p>
     pub fn status(mut self, input: i32) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -117,6 +133,10 @@ impl DescribeTopicOutputBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<i32>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The HTTP status of the request.</p>
+    pub fn get_status(&self) -> &::std::option::Option<i32> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

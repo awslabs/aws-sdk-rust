@@ -37,6 +37,12 @@ impl ExportCertificateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ExportCertificate as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::export_certificate::builders::ExportCertificateInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -135,6 +141,11 @@ impl ExportCertificateFluentBuilder {
         self.inner = self.inner.set_certificate_arn(input);
         self
     }
+    /// <p>An Amazon Resource Name (ARN) of the issued certificate. This must be of the form:</p>
+    /// <p> <code>arn:aws:acm:region:account:certificate/12345678-1234-1234-1234-123456789012</code> </p>
+    pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_certificate_arn()
+    }
     /// <p>Passphrase to associate with the encrypted exported private key. </p> <note>
     /// <p>When creating your passphrase, you can use any ASCII character except #, $, or %.</p>
     /// </note>
@@ -155,5 +166,13 @@ impl ExportCertificateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_passphrase(input);
         self
+    }
+    /// <p>Passphrase to associate with the encrypted exported private key. </p> <note>
+    /// <p>When creating your passphrase, you can use any ASCII character except #, $, or %.</p>
+    /// </note>
+    /// <p>If you want to later decrypt the private key, you must have the passphrase. You can use the following OpenSSL command to decrypt a private key. After entering the command, you are prompted for the passphrase.</p>
+    /// <p> <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code> </p>
+    pub fn get_passphrase(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        self.inner.get_passphrase()
     }
 }

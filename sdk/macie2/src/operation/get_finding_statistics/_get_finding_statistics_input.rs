@@ -81,6 +81,10 @@ impl GetFindingStatisticsInputBuilder {
         self.finding_criteria = input;
         self
     }
+    /// <p>The criteria to use to filter the query results.</p>
+    pub fn get_finding_criteria(&self) -> &::std::option::Option<crate::types::FindingCriteria> {
+        &self.finding_criteria
+    }
     /// <p>The finding property to use to group the query results. Valid values are:</p>
     /// <ul>
     /// <li><p>classificationDetails.jobId - The unique identifier for the classification job that produced the finding.</p></li>
@@ -103,6 +107,16 @@ impl GetFindingStatisticsInputBuilder {
         self.group_by = input;
         self
     }
+    /// <p>The finding property to use to group the query results. Valid values are:</p>
+    /// <ul>
+    /// <li><p>classificationDetails.jobId - The unique identifier for the classification job that produced the finding.</p></li>
+    /// <li><p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the finding applies to.</p></li>
+    /// <li><p>severity.description - The severity level of the finding, such as High or Medium.</p></li>
+    /// <li><p>type - The type of finding, such as Policy:IAMUser/S3BucketPublic and SensitiveData:S3Object/Personal.</p></li>
+    /// </ul>
+    pub fn get_group_by(&self) -> &::std::option::Option<crate::types::GroupBy> {
+        &self.group_by
+    }
     /// <p>The maximum number of items to include in each page of the response.</p>
     pub fn size(mut self, input: i32) -> Self {
         self.size = ::std::option::Option::Some(input);
@@ -112,6 +126,10 @@ impl GetFindingStatisticsInputBuilder {
     pub fn set_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.size = input;
         self
+    }
+    /// <p>The maximum number of items to include in each page of the response.</p>
+    pub fn get_size(&self) -> &::std::option::Option<i32> {
+        &self.size
     }
     /// <p>The criteria to use to sort the query results.</p>
     pub fn sort_criteria(mut self, input: crate::types::FindingStatisticsSortCriteria) -> Self {
@@ -125,6 +143,12 @@ impl GetFindingStatisticsInputBuilder {
     ) -> Self {
         self.sort_criteria = input;
         self
+    }
+    /// <p>The criteria to use to sort the query results.</p>
+    pub fn get_sort_criteria(
+        &self,
+    ) -> &::std::option::Option<crate::types::FindingStatisticsSortCriteria> {
+        &self.sort_criteria
     }
     /// Consumes the builder and constructs a [`GetFindingStatisticsInput`](crate::operation::get_finding_statistics::GetFindingStatisticsInput).
     pub fn build(

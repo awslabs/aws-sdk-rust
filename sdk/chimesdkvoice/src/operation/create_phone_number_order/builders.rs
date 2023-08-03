@@ -37,6 +37,13 @@ impl CreatePhoneNumberOrderFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreatePhoneNumberOrder as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_phone_number_order::builders::CreatePhoneNumberOrderInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -130,6 +137,10 @@ impl CreatePhoneNumberOrderFluentBuilder {
         self.inner = self.inner.set_product_type(input);
         self
     }
+    /// <p>The phone number product type.</p>
+    pub fn get_product_type(&self) -> &::std::option::Option<crate::types::PhoneNumberProductType> {
+        self.inner.get_product_type()
+    }
     /// Appends an item to `E164PhoneNumbers`.
     ///
     /// To override the contents of this collection use [`set_e164_phone_numbers`](Self::set_e164_phone_numbers).
@@ -149,5 +160,11 @@ impl CreatePhoneNumberOrderFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_e164_phone_numbers(input);
         self
+    }
+    /// <p>List of phone numbers, in E.164 format.</p>
+    pub fn get_e164_phone_numbers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_e164_phone_numbers()
     }
 }

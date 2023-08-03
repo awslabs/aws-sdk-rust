@@ -36,6 +36,12 @@ impl CreateMetricSetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateMetricSet as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_metric_set::builders::CreateMetricSetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl CreateMetricSetFluentBuilder {
         self.inner = self.inner.set_anomaly_detector_arn(input);
         self
     }
+    /// <p>The ARN of the anomaly detector that will use the dataset.</p>
+    pub fn get_anomaly_detector_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_anomaly_detector_arn()
+    }
     /// <p>The name of the dataset.</p>
     pub fn metric_set_name(
         mut self,
@@ -148,6 +158,10 @@ impl CreateMetricSetFluentBuilder {
         self.inner = self.inner.set_metric_set_name(input);
         self
     }
+    /// <p>The name of the dataset.</p>
+    pub fn get_metric_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_metric_set_name()
+    }
     /// <p>A description of the dataset you are creating.</p>
     pub fn metric_set_description(
         mut self,
@@ -163,6 +177,10 @@ impl CreateMetricSetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_metric_set_description(input);
         self
+    }
+    /// <p>A description of the dataset you are creating.</p>
+    pub fn get_metric_set_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_metric_set_description()
     }
     /// Appends an item to `MetricList`.
     ///
@@ -181,6 +199,10 @@ impl CreateMetricSetFluentBuilder {
         self.inner = self.inner.set_metric_list(input);
         self
     }
+    /// <p>A list of metrics that the dataset will contain.</p>
+    pub fn get_metric_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Metric>> {
+        self.inner.get_metric_list()
+    }
     /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3, Redshift, Athena and datasources.</p>
     pub fn offset(mut self, input: i32) -> Self {
         self.inner = self.inner.offset(input);
@@ -190,6 +212,10 @@ impl CreateMetricSetFluentBuilder {
     pub fn set_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_offset(input);
         self
+    }
+    /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3, Redshift, Athena and datasources.</p>
+    pub fn get_offset(&self) -> &::std::option::Option<i32> {
+        self.inner.get_offset()
     }
     /// <p>Contains information about the column used for tracking time in your source data.</p>
     pub fn timestamp_column(mut self, input: crate::types::TimestampColumn) -> Self {
@@ -203,6 +229,10 @@ impl CreateMetricSetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_timestamp_column(input);
         self
+    }
+    /// <p>Contains information about the column used for tracking time in your source data.</p>
+    pub fn get_timestamp_column(&self) -> &::std::option::Option<crate::types::TimestampColumn> {
+        self.inner.get_timestamp_column()
     }
     /// Appends an item to `DimensionList`.
     ///
@@ -224,6 +254,12 @@ impl CreateMetricSetFluentBuilder {
         self.inner = self.inner.set_dimension_list(input);
         self
     }
+    /// <p>A list of the fields you want to treat as dimensions.</p>
+    pub fn get_dimension_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_dimension_list()
+    }
     /// <p>The frequency with which the source data will be analyzed for anomalies.</p>
     pub fn metric_set_frequency(mut self, input: crate::types::Frequency) -> Self {
         self.inner = self.inner.metric_set_frequency(input);
@@ -236,6 +272,10 @@ impl CreateMetricSetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_metric_set_frequency(input);
         self
+    }
+    /// <p>The frequency with which the source data will be analyzed for anomalies.</p>
+    pub fn get_metric_set_frequency(&self) -> &::std::option::Option<crate::types::Frequency> {
+        self.inner.get_metric_set_frequency()
     }
     /// <p>Contains information about how the source data should be interpreted.</p>
     pub fn metric_source(mut self, input: crate::types::MetricSource) -> Self {
@@ -250,6 +290,10 @@ impl CreateMetricSetFluentBuilder {
         self.inner = self.inner.set_metric_source(input);
         self
     }
+    /// <p>Contains information about how the source data should be interpreted.</p>
+    pub fn get_metric_source(&self) -> &::std::option::Option<crate::types::MetricSource> {
+        self.inner.get_metric_source()
+    }
     /// <p>The time zone in which your source data was recorded.</p>
     pub fn timezone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.timezone(input.into());
@@ -259,6 +303,10 @@ impl CreateMetricSetFluentBuilder {
     pub fn set_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_timezone(input);
         self
+    }
+    /// <p>The time zone in which your source data was recorded.</p>
+    pub fn get_timezone(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_timezone()
     }
     /// Adds a key-value pair to `Tags`.
     ///
@@ -283,6 +331,14 @@ impl CreateMetricSetFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the dataset.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// Appends an item to `DimensionFilterList`.
     ///
     /// To override the contents of this collection use [`set_dimension_filter_list`](Self::set_dimension_filter_list).
@@ -299,5 +355,11 @@ impl CreateMetricSetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_dimension_filter_list(input);
         self
+    }
+    /// <p>A list of filters that specify which data is kept for anomaly detection.</p>
+    pub fn get_dimension_filter_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricSetDimensionFilter>> {
+        self.inner.get_dimension_filter_list()
     }
 }

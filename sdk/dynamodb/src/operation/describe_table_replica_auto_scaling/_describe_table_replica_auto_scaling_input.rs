@@ -39,6 +39,10 @@ impl DescribeTableReplicaAutoScalingInputBuilder {
         self.table_name = input;
         self
     }
+    /// <p>The name of the table.</p>
+    pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.table_name
+    }
     /// Consumes the builder and constructs a [`DescribeTableReplicaAutoScalingInput`](crate::operation::describe_table_replica_auto_scaling::DescribeTableReplicaAutoScalingInput).
     pub fn build(
         self,

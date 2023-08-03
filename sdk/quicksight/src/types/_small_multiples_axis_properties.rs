@@ -51,6 +51,10 @@ impl SmallMultiplesAxisPropertiesBuilder {
         self.scale = input;
         self
     }
+    /// <p>Determines whether scale of the axes are shared or independent. The default value is <code>SHARED</code>.</p>
+    pub fn get_scale(&self) -> &::std::option::Option<crate::types::SmallMultiplesAxisScale> {
+        &self.scale
+    }
     /// <p>Defines the placement of the axis. By default, axes are rendered <code>OUTSIDE</code> of the panels. Axes with <code>INDEPENDENT</code> scale are rendered <code>INSIDE</code> the panels.</p>
     pub fn placement(mut self, input: crate::types::SmallMultiplesAxisPlacement) -> Self {
         self.placement = ::std::option::Option::Some(input);
@@ -63,6 +67,12 @@ impl SmallMultiplesAxisPropertiesBuilder {
     ) -> Self {
         self.placement = input;
         self
+    }
+    /// <p>Defines the placement of the axis. By default, axes are rendered <code>OUTSIDE</code> of the panels. Axes with <code>INDEPENDENT</code> scale are rendered <code>INSIDE</code> the panels.</p>
+    pub fn get_placement(
+        &self,
+    ) -> &::std::option::Option<crate::types::SmallMultiplesAxisPlacement> {
+        &self.placement
     }
     /// Consumes the builder and constructs a [`SmallMultiplesAxisProperties`](crate::types::SmallMultiplesAxisProperties).
     pub fn build(self) -> crate::types::SmallMultiplesAxisProperties {

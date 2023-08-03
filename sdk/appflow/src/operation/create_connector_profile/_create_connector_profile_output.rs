@@ -54,6 +54,10 @@ impl CreateConnectorProfileOutputBuilder {
         self.connector_profile_arn = input;
         self
     }
+    /// <p> The Amazon Resource Name (ARN) of the connector profile. </p>
+    pub fn get_connector_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connector_profile_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -88,6 +88,10 @@ impl EvaluationResultBuilder {
         self.project = input;
         self
     }
+    /// <p>The name or ARN of the project that contains the feature being evaluated.</p>
+    pub fn get_project(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project
+    }
     /// <p>The name of the feature being evaluated.</p>
     pub fn feature(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature = ::std::option::Option::Some(input.into());
@@ -97,6 +101,10 @@ impl EvaluationResultBuilder {
     pub fn set_feature(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feature = input;
         self
+    }
+    /// <p>The name of the feature being evaluated.</p>
+    pub fn get_feature(&self) -> &::std::option::Option<::std::string::String> {
+        &self.feature
     }
     /// <p>The name of the variation that was served to the user session.</p>
     pub fn variation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -108,6 +116,10 @@ impl EvaluationResultBuilder {
         self.variation = input;
         self
     }
+    /// <p>The name of the variation that was served to the user session.</p>
+    pub fn get_variation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.variation
+    }
     /// <p>The value assigned to this variation to differentiate it from the other variations of this feature.</p>
     pub fn value(mut self, input: crate::types::VariableValue) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -117,6 +129,10 @@ impl EvaluationResultBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::VariableValue>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value assigned to this variation to differentiate it from the other variations of this feature.</p>
+    pub fn get_value(&self) -> &::std::option::Option<crate::types::VariableValue> {
+        &self.value
     }
     /// <p>An internal ID that represents a unique user session of the application.</p>
     pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -128,6 +144,10 @@ impl EvaluationResultBuilder {
         self.entity_id = input;
         self
     }
+    /// <p>An internal ID that represents a unique user session of the application.</p>
+    pub fn get_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.entity_id
+    }
     /// <p>Specifies the reason that the user session was assigned this variation. Possible values include <code>DEFAULT</code>, meaning the user was served the default variation; <code>LAUNCH_RULE_MATCH</code>, if the user session was enrolled in a launch; or <code>EXPERIMENT_RULE_MATCH</code>, if the user session was enrolled in an experiment.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
@@ -138,6 +158,10 @@ impl EvaluationResultBuilder {
         self.reason = input;
         self
     }
+    /// <p>Specifies the reason that the user session was assigned this variation. Possible values include <code>DEFAULT</code>, meaning the user was served the default variation; <code>LAUNCH_RULE_MATCH</code>, if the user session was enrolled in a launch; or <code>EXPERIMENT_RULE_MATCH</code>, if the user session was enrolled in an experiment.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
+    }
     /// <p>If this user was assigned to a launch or experiment, this field lists the launch or experiment name.</p>
     pub fn details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.details = ::std::option::Option::Some(input.into());
@@ -147,6 +171,10 @@ impl EvaluationResultBuilder {
     pub fn set_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.details = input;
         self
+    }
+    /// <p>If this user was assigned to a launch or experiment, this field lists the launch or experiment name.</p>
+    pub fn get_details(&self) -> &::std::option::Option<::std::string::String> {
+        &self.details
     }
     /// Consumes the builder and constructs a [`EvaluationResult`](crate::types::EvaluationResult).
     pub fn build(self) -> crate::types::EvaluationResult {

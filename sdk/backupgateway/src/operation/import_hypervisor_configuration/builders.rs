@@ -36,6 +36,10 @@ impl ImportHypervisorConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ImportHypervisorConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::import_hypervisor_configuration::builders::ImportHypervisorConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +130,10 @@ impl ImportHypervisorConfigurationFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>The name of the hypervisor.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
     pub fn host(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.host(input.into());
@@ -135,6 +143,10 @@ impl ImportHypervisorConfigurationFluentBuilder {
     pub fn set_host(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_host(input);
         self
+    }
+    /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
+    pub fn get_host(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_host()
     }
     /// <p>The username for the hypervisor.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -146,6 +158,10 @@ impl ImportHypervisorConfigurationFluentBuilder {
         self.inner = self.inner.set_username(input);
         self
     }
+    /// <p>The username for the hypervisor.</p>
+    pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_username()
+    }
     /// <p>The password for the hypervisor.</p>
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.password(input.into());
@@ -156,6 +172,10 @@ impl ImportHypervisorConfigurationFluentBuilder {
         self.inner = self.inner.set_password(input);
         self
     }
+    /// <p>The password for the hypervisor.</p>
+    pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_password()
+    }
     /// <p>The Key Management Service for the hypervisor.</p>
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_arn(input.into());
@@ -165,6 +185,10 @@ impl ImportHypervisorConfigurationFluentBuilder {
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_arn(input);
         self
+    }
+    /// <p>The Key Management Service for the hypervisor.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key_arn()
     }
     /// Appends an item to `Tags`.
     ///
@@ -182,5 +206,9 @@ impl ImportHypervisorConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags of the hypervisor configuration to import.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

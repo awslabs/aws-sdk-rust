@@ -164,6 +164,10 @@ impl InstanceSnapshotBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the snapshot.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Name (ARN) of the snapshot (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -174,6 +178,10 @@ impl InstanceSnapshotBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the snapshot (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The support code. Include this code in your email to support when you have questions about an instance or another resource in Lightsail. This code enables our support team to look up your Lightsail information more easily.</p>
     pub fn support_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.support_code = ::std::option::Option::Some(input.into());
@@ -183,6 +191,10 @@ impl InstanceSnapshotBuilder {
     pub fn set_support_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.support_code = input;
         self
+    }
+    /// <p>The support code. Include this code in your email to support when you have questions about an instance or another resource in Lightsail. This code enables our support team to look up your Lightsail information more easily.</p>
+    pub fn get_support_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.support_code
     }
     /// <p>The timestamp when the snapshot was created (e.g., <code>1479907467.024</code>).</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -197,6 +209,10 @@ impl InstanceSnapshotBuilder {
         self.created_at = input;
         self
     }
+    /// <p>The timestamp when the snapshot was created (e.g., <code>1479907467.024</code>).</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     /// <p>The region name and Availability Zone where you created the snapshot.</p>
     pub fn location(mut self, input: crate::types::ResourceLocation) -> Self {
         self.location = ::std::option::Option::Some(input);
@@ -210,6 +226,10 @@ impl InstanceSnapshotBuilder {
         self.location = input;
         self
     }
+    /// <p>The region name and Availability Zone where you created the snapshot.</p>
+    pub fn get_location(&self) -> &::std::option::Option<crate::types::ResourceLocation> {
+        &self.location
+    }
     /// <p>The type of resource (usually <code>InstanceSnapshot</code>).</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
@@ -222,6 +242,10 @@ impl InstanceSnapshotBuilder {
     ) -> Self {
         self.resource_type = input;
         self
+    }
+    /// <p>The type of resource (usually <code>InstanceSnapshot</code>).</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
     }
     /// Appends an item to `tags`.
     ///
@@ -242,6 +266,10 @@ impl InstanceSnapshotBuilder {
         self.tags = input;
         self
     }
+    /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The state the snapshot is in.</p>
     pub fn state(mut self, input: crate::types::InstanceSnapshotState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -254,6 +282,10 @@ impl InstanceSnapshotBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state the snapshot is in.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::InstanceSnapshotState> {
+        &self.state
     }
     /// <p>The progress of the snapshot.</p> <note>
     /// <p>This is populated only for disk snapshots, and is <code>null</code> for instance snapshots.</p>
@@ -268,6 +300,12 @@ impl InstanceSnapshotBuilder {
     pub fn set_progress(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.progress = input;
         self
+    }
+    /// <p>The progress of the snapshot.</p> <note>
+    /// <p>This is populated only for disk snapshots, and is <code>null</code> for instance snapshots.</p>
+    /// </note>
+    pub fn get_progress(&self) -> &::std::option::Option<::std::string::String> {
+        &self.progress
     }
     /// Appends an item to `from_attached_disks`.
     ///
@@ -288,6 +326,12 @@ impl InstanceSnapshotBuilder {
         self.from_attached_disks = input;
         self
     }
+    /// <p>An array of disk objects containing information about all block storage disks.</p>
+    pub fn get_from_attached_disks(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Disk>> {
+        &self.from_attached_disks
+    }
     /// <p>The instance from which the snapshot was created.</p>
     pub fn from_instance_name(
         mut self,
@@ -303,6 +347,10 @@ impl InstanceSnapshotBuilder {
     ) -> Self {
         self.from_instance_name = input;
         self
+    }
+    /// <p>The instance from which the snapshot was created.</p>
+    pub fn get_from_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.from_instance_name
     }
     /// <p>The Amazon Resource Name (ARN) of the instance from which the snapshot was created (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
     pub fn from_instance_arn(
@@ -320,6 +368,10 @@ impl InstanceSnapshotBuilder {
         self.from_instance_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the instance from which the snapshot was created (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
+    pub fn get_from_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.from_instance_arn
+    }
     /// <p>The blueprint ID from which you created the snapshot (e.g., <code>os_debian_8_3</code>). A blueprint is a virtual private server (or <i>instance</i>) image used to create instances quickly.</p>
     pub fn from_blueprint_id(
         mut self,
@@ -335,6 +387,10 @@ impl InstanceSnapshotBuilder {
     ) -> Self {
         self.from_blueprint_id = input;
         self
+    }
+    /// <p>The blueprint ID from which you created the snapshot (e.g., <code>os_debian_8_3</code>). A blueprint is a virtual private server (or <i>instance</i>) image used to create instances quickly.</p>
+    pub fn get_from_blueprint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.from_blueprint_id
     }
     /// <p>The bundle ID from which you created the snapshot (e.g., <code>micro_1_0</code>).</p>
     pub fn from_bundle_id(
@@ -352,6 +408,10 @@ impl InstanceSnapshotBuilder {
         self.from_bundle_id = input;
         self
     }
+    /// <p>The bundle ID from which you created the snapshot (e.g., <code>micro_1_0</code>).</p>
+    pub fn get_from_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.from_bundle_id
+    }
     /// <p>A Boolean value indicating whether the snapshot was created from an automatic snapshot.</p>
     pub fn is_from_auto_snapshot(mut self, input: bool) -> Self {
         self.is_from_auto_snapshot = ::std::option::Option::Some(input);
@@ -362,6 +422,10 @@ impl InstanceSnapshotBuilder {
         self.is_from_auto_snapshot = input;
         self
     }
+    /// <p>A Boolean value indicating whether the snapshot was created from an automatic snapshot.</p>
+    pub fn get_is_from_auto_snapshot(&self) -> &::std::option::Option<bool> {
+        &self.is_from_auto_snapshot
+    }
     /// <p>The size in GB of the SSD.</p>
     pub fn size_in_gb(mut self, input: i32) -> Self {
         self.size_in_gb = ::std::option::Option::Some(input);
@@ -371,6 +435,10 @@ impl InstanceSnapshotBuilder {
     pub fn set_size_in_gb(mut self, input: ::std::option::Option<i32>) -> Self {
         self.size_in_gb = input;
         self
+    }
+    /// <p>The size in GB of the SSD.</p>
+    pub fn get_size_in_gb(&self) -> &::std::option::Option<i32> {
+        &self.size_in_gb
     }
     /// Consumes the builder and constructs a [`InstanceSnapshot`](crate::types::InstanceSnapshot).
     pub fn build(self) -> crate::types::InstanceSnapshot {

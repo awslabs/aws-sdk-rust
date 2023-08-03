@@ -90,6 +90,10 @@ impl ListProjectsInputBuilder {
         self.creation_time_after = input;
         self
     }
+    /// <p>A filter that returns the projects that were created after a specified time.</p>
+    pub fn get_creation_time_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time_after
+    }
     /// <p>A filter that returns the projects that were created before a specified time.</p>
     pub fn creation_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time_before = ::std::option::Option::Some(input);
@@ -103,6 +107,10 @@ impl ListProjectsInputBuilder {
         self.creation_time_before = input;
         self
     }
+    /// <p>A filter that returns the projects that were created before a specified time.</p>
+    pub fn get_creation_time_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time_before
+    }
     /// <p>The maximum number of projects to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -112,6 +120,10 @@ impl ListProjectsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of projects to return in the response.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>A filter that returns the projects whose name contains a specified string.</p>
     pub fn name_contains(
@@ -129,6 +141,10 @@ impl ListProjectsInputBuilder {
         self.name_contains = input;
         self
     }
+    /// <p>A filter that returns the projects whose name contains a specified string.</p>
+    pub fn get_name_contains(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name_contains
+    }
     /// <p>If the result of the previous <code>ListProjects</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of projects, use the token in the next request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -138,6 +154,10 @@ impl ListProjectsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If the result of the previous <code>ListProjects</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of projects, use the token in the next request.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The field by which to sort results. The default is <code>CreationTime</code>.</p>
     pub fn sort_by(mut self, input: crate::types::ProjectSortBy) -> Self {
@@ -152,6 +172,10 @@ impl ListProjectsInputBuilder {
         self.sort_by = input;
         self
     }
+    /// <p>The field by which to sort results. The default is <code>CreationTime</code>.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ProjectSortBy> {
+        &self.sort_by
+    }
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
     pub fn sort_order(mut self, input: crate::types::ProjectSortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -164,6 +188,10 @@ impl ListProjectsInputBuilder {
     ) -> Self {
         self.sort_order = input;
         self
+    }
+    /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::ProjectSortOrder> {
+        &self.sort_order
     }
     /// Consumes the builder and constructs a [`ListProjectsInput`](crate::operation::list_projects::ListProjectsInput).
     pub fn build(

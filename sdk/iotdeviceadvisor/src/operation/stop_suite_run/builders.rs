@@ -37,6 +37,12 @@ impl StopSuiteRunFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StopSuiteRun as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::stop_suite_run::builders::StopSuiteRunInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -125,6 +131,10 @@ impl StopSuiteRunFluentBuilder {
         self.inner = self.inner.set_suite_definition_id(input);
         self
     }
+    /// <p>Suite definition ID of the test suite run to be stopped.</p>
+    pub fn get_suite_definition_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_suite_definition_id()
+    }
     /// <p>Suite run ID of the test suite run to be stopped.</p>
     pub fn suite_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.suite_run_id(input.into());
@@ -134,5 +144,9 @@ impl StopSuiteRunFluentBuilder {
     pub fn set_suite_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_suite_run_id(input);
         self
+    }
+    /// <p>Suite run ID of the test suite run to be stopped.</p>
+    pub fn get_suite_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_suite_run_id()
     }
 }

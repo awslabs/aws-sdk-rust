@@ -60,6 +60,12 @@ impl DescribeCachediScsiVolumesOutputBuilder {
         self.cachedi_scsi_volumes = input;
         self
     }
+    /// <p>An array of objects where each object contains metadata about one cached volume.</p>
+    pub fn get_cachedi_scsi_volumes(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CachediScsiVolume>> {
+        &self.cachedi_scsi_volumes
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

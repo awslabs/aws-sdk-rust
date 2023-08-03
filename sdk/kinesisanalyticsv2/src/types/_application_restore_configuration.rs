@@ -54,6 +54,12 @@ impl ApplicationRestoreConfigurationBuilder {
         self.application_restore_type = input;
         self
     }
+    /// <p>Specifies how the application should be restored.</p>
+    pub fn get_application_restore_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApplicationRestoreType> {
+        &self.application_restore_type
+    }
     /// <p>The identifier of an existing snapshot of application state to use to restart an application. The application uses this value if <code>RESTORE_FROM_CUSTOM_SNAPSHOT</code> is specified for the <code>ApplicationRestoreType</code>.</p>
     pub fn snapshot_name(
         mut self,
@@ -69,6 +75,10 @@ impl ApplicationRestoreConfigurationBuilder {
     ) -> Self {
         self.snapshot_name = input;
         self
+    }
+    /// <p>The identifier of an existing snapshot of application state to use to restart an application. The application uses this value if <code>RESTORE_FROM_CUSTOM_SNAPSHOT</code> is specified for the <code>ApplicationRestoreType</code>.</p>
+    pub fn get_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_name
     }
     /// Consumes the builder and constructs a [`ApplicationRestoreConfiguration`](crate::types::ApplicationRestoreConfiguration).
     pub fn build(self) -> crate::types::ApplicationRestoreConfiguration {

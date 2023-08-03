@@ -59,6 +59,10 @@ impl ClusterIssueBuilder {
         self.code = input;
         self
     }
+    /// <p>The error code of the issue.</p>
+    pub fn get_code(&self) -> &::std::option::Option<crate::types::ClusterIssueCode> {
+        &self.code
+    }
     /// <p>A description of the issue.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -68,6 +72,10 @@ impl ClusterIssueBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>A description of the issue.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Appends an item to `resource_ids`.
     ///
@@ -87,6 +95,12 @@ impl ClusterIssueBuilder {
     ) -> Self {
         self.resource_ids = input;
         self
+    }
+    /// <p>The resource IDs that the issue relates to.</p>
+    pub fn get_resource_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.resource_ids
     }
     /// Consumes the builder and constructs a [`ClusterIssue`](crate::types::ClusterIssue).
     pub fn build(self) -> crate::types::ClusterIssue {

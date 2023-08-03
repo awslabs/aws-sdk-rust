@@ -80,6 +80,12 @@ impl FilterOperationSelectedFieldsConfigurationBuilder {
         self.selected_fields = input;
         self
     }
+    /// <p>Chooses the fields that are filtered in <code>CustomActionFilterOperation</code>.</p>
+    pub fn get_selected_fields(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.selected_fields
+    }
     /// <p>A structure that contains the options that choose which fields are filtered in the <code>CustomActionFilterOperation</code>.</p>
     /// <p>Valid values are defined as follows:</p>
     /// <ul>
@@ -101,6 +107,16 @@ impl FilterOperationSelectedFieldsConfigurationBuilder {
         self.selected_field_options = input;
         self
     }
+    /// <p>A structure that contains the options that choose which fields are filtered in the <code>CustomActionFilterOperation</code>.</p>
+    /// <p>Valid values are defined as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>ALL_FIELDS</code>: Applies the filter operation to all fields.</p> </li>
+    /// </ul>
+    pub fn get_selected_field_options(
+        &self,
+    ) -> &::std::option::Option<crate::types::SelectedFieldOptions> {
+        &self.selected_field_options
+    }
     /// Appends an item to `selected_columns`.
     ///
     /// To override the contents of this collection use [`set_selected_columns`](Self::set_selected_columns).
@@ -119,6 +135,12 @@ impl FilterOperationSelectedFieldsConfigurationBuilder {
     ) -> Self {
         self.selected_columns = input;
         self
+    }
+    /// <p>The selected columns of a dataset.</p>
+    pub fn get_selected_columns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ColumnIdentifier>> {
+        &self.selected_columns
     }
     /// Consumes the builder and constructs a [`FilterOperationSelectedFieldsConfiguration`](crate::types::FilterOperationSelectedFieldsConfiguration).
     pub fn build(self) -> crate::types::FilterOperationSelectedFieldsConfiguration {

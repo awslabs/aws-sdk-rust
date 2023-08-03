@@ -51,6 +51,10 @@ impl DynamicPartitioningConfigurationBuilder {
         self.retry_options = input;
         self
     }
+    /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver data to an Amazon S3 prefix.</p>
+    pub fn get_retry_options(&self) -> &::std::option::Option<crate::types::RetryOptions> {
+        &self.retry_options
+    }
     /// <p>Specifies that the dynamic partitioning is enabled for this Kinesis Data Firehose delivery stream.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl DynamicPartitioningConfigurationBuilder {
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
+    }
+    /// <p>Specifies that the dynamic partitioning is enabled for this Kinesis Data Firehose delivery stream.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
     }
     /// Consumes the builder and constructs a [`DynamicPartitioningConfiguration`](crate::types::DynamicPartitioningConfiguration).
     pub fn build(self) -> crate::types::DynamicPartitioningConfiguration {

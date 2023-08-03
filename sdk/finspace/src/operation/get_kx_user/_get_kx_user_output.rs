@@ -70,6 +70,10 @@ impl GetKxUserOutputBuilder {
         self.user_name = input;
         self
     }
+    /// <p>A unique identifier for the user.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
+    }
     /// <p> The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in policies, see <a href="IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>. </p>
     pub fn user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_arn = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl GetKxUserOutputBuilder {
     pub fn set_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_arn = input;
         self
+    }
+    /// <p> The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use ARNs in policies, see <a href="IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>. </p>
+    pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_arn
     }
     /// <p>A unique identifier for the kdb environment.</p>
     pub fn environment_id(
@@ -96,6 +104,10 @@ impl GetKxUserOutputBuilder {
         self.environment_id = input;
         self
     }
+    /// <p>A unique identifier for the kdb environment.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
+    }
     /// <p>The IAM role ARN that is associated with the user.</p>
     pub fn iam_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_role = ::std::option::Option::Some(input.into());
@@ -105,6 +117,10 @@ impl GetKxUserOutputBuilder {
     pub fn set_iam_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_role = input;
         self
+    }
+    /// <p>The IAM role ARN that is associated with the user.</p>
+    pub fn get_iam_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iam_role
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

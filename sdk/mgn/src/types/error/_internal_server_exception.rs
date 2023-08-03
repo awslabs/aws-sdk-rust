@@ -75,6 +75,10 @@ impl InternalServerExceptionBuilder {
         self.message = input;
         self
     }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The server encountered an unexpected condition that prevented it from fulfilling the request. The request will be retried again after x seconds.</p>
     pub fn retry_after_seconds(mut self, input: i64) -> Self {
         self.retry_after_seconds = ::std::option::Option::Some(input);
@@ -84,6 +88,10 @@ impl InternalServerExceptionBuilder {
     pub fn set_retry_after_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
         self.retry_after_seconds = input;
         self
+    }
+    /// <p>The server encountered an unexpected condition that prevented it from fulfilling the request. The request will be retried again after x seconds.</p>
+    pub fn get_retry_after_seconds(&self) -> &::std::option::Option<i64> {
+        &self.retry_after_seconds
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

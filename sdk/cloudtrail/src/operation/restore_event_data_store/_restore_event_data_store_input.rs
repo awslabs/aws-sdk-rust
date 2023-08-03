@@ -47,6 +47,10 @@ impl RestoreEventDataStoreInputBuilder {
         self.event_data_store = input;
         self
     }
+    /// <p>The ARN (or the ID suffix of the ARN) of the event data store that you want to restore.</p>
+    pub fn get_event_data_store(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_data_store
+    }
     /// Consumes the builder and constructs a [`RestoreEventDataStoreInput`](crate::operation::restore_event_data_store::RestoreEventDataStoreInput).
     pub fn build(
         self,

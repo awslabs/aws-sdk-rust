@@ -50,6 +50,10 @@ impl CreateFlowTemplateOutputBuilder {
         self.summary = input;
         self
     }
+    /// <p>The summary object that describes the created workflow.</p>
+    pub fn get_summary(&self) -> &::std::option::Option<crate::types::FlowTemplateSummary> {
+        &self.summary
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

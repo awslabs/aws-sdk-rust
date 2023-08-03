@@ -65,6 +65,10 @@ impl ListApiDestinationsInputBuilder {
         self.name_prefix = input;
         self
     }
+    /// <p>A name prefix to filter results returned. Only API destinations with a name that starts with the prefix are returned.</p>
+    pub fn get_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name_prefix
+    }
     /// <p>The ARN of the connection specified for the API destination.</p>
     pub fn connection_arn(
         mut self,
@@ -81,6 +85,10 @@ impl ListApiDestinationsInputBuilder {
         self.connection_arn = input;
         self
     }
+    /// <p>The ARN of the connection specified for the API destination.</p>
+    pub fn get_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_arn
+    }
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -91,6 +99,10 @@ impl ListApiDestinationsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of API destinations to include in the response.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -100,6 +112,10 @@ impl ListApiDestinationsInputBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
+    }
+    /// <p>The maximum number of API destinations to include in the response.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// Consumes the builder and constructs a [`ListApiDestinationsInput`](crate::operation::list_api_destinations::ListApiDestinationsInput).
     pub fn build(

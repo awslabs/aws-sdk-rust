@@ -51,6 +51,10 @@ impl RuntimeDetailsBuilder {
         self.process = input;
         self
     }
+    /// <p>Information about the observed process.</p>
+    pub fn get_process(&self) -> &::std::option::Option<crate::types::ProcessDetails> {
+        &self.process
+    }
     /// <p>Additional information about the suspicious activity.</p>
     pub fn context(mut self, input: crate::types::RuntimeContext) -> Self {
         self.context = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl RuntimeDetailsBuilder {
     ) -> Self {
         self.context = input;
         self
+    }
+    /// <p>Additional information about the suspicious activity.</p>
+    pub fn get_context(&self) -> &::std::option::Option<crate::types::RuntimeContext> {
+        &self.context
     }
     /// Consumes the builder and constructs a [`RuntimeDetails`](crate::types::RuntimeDetails).
     pub fn build(self) -> crate::types::RuntimeDetails {

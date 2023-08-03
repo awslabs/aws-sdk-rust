@@ -52,6 +52,12 @@ impl NitroTpmInfoBuilder {
         self.supported_versions = input;
         self
     }
+    /// <p>Indicates the supported NitroTPM versions.</p>
+    pub fn get_supported_versions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.supported_versions
+    }
     /// Consumes the builder and constructs a [`NitroTpmInfo`](crate::types::NitroTpmInfo).
     pub fn build(self) -> crate::types::NitroTpmInfo {
         crate::types::NitroTpmInfo {

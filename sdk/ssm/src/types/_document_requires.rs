@@ -64,6 +64,10 @@ impl DocumentRequiresBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the required SSM document. The name can be an Amazon Resource Name (ARN).</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The document version required by the current document.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl DocumentRequiresBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p>The document version required by the current document.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// <p>The document type of the required SSM document.</p>
     pub fn require_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,6 +92,10 @@ impl DocumentRequiresBuilder {
         self.require_type = input;
         self
     }
+    /// <p>The document type of the required SSM document.</p>
+    pub fn get_require_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.require_type
+    }
     /// <p>An optional field specifying the version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
     pub fn version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_name = ::std::option::Option::Some(input.into());
@@ -93,6 +105,10 @@ impl DocumentRequiresBuilder {
     pub fn set_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_name = input;
         self
+    }
+    /// <p>An optional field specifying the version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
+    pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_name
     }
     /// Consumes the builder and constructs a [`DocumentRequires`](crate::types::DocumentRequires).
     pub fn build(self) -> crate::types::DocumentRequires {

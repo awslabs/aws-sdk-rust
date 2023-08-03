@@ -98,6 +98,10 @@ impl GetPackageVersionReadmeOutputBuilder {
         self.format = input;
         self
     }
+    /// <p> The format of the package with the requested readme file. </p>
+    pub fn get_format(&self) -> &::std::option::Option<crate::types::PackageFormat> {
+        &self.format
+    }
     /// <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
     /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
@@ -118,6 +122,15 @@ impl GetPackageVersionReadmeOutputBuilder {
         self.namespace = input;
         self
     }
+    /// <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
+    /// </ul>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
+    }
     /// <p> The name of the package that contains the returned readme file. </p>
     pub fn package(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package = ::std::option::Option::Some(input.into());
@@ -128,6 +141,10 @@ impl GetPackageVersionReadmeOutputBuilder {
         self.package = input;
         self
     }
+    /// <p> The name of the package that contains the returned readme file. </p>
+    pub fn get_package(&self) -> &::std::option::Option<::std::string::String> {
+        &self.package
+    }
     /// <p> The version of the package with the requested readme file. </p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
@@ -137,6 +154,10 @@ impl GetPackageVersionReadmeOutputBuilder {
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
+    }
+    /// <p> The version of the package with the requested readme file. </p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
     }
     /// <p> The current revision associated with the package version. </p>
     pub fn version_revision(
@@ -154,6 +175,10 @@ impl GetPackageVersionReadmeOutputBuilder {
         self.version_revision = input;
         self
     }
+    /// <p> The current revision associated with the package version. </p>
+    pub fn get_version_revision(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_revision
+    }
     /// <p> The text of the returned readme file. </p>
     pub fn readme(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.readme = ::std::option::Option::Some(input.into());
@@ -163,6 +188,10 @@ impl GetPackageVersionReadmeOutputBuilder {
     pub fn set_readme(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.readme = input;
         self
+    }
+    /// <p> The text of the returned readme file. </p>
+    pub fn get_readme(&self) -> &::std::option::Option<::std::string::String> {
+        &self.readme
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

@@ -46,6 +46,12 @@ impl ExplainerConfigBuilder {
         self.clarify_explainer_config = input;
         self
     }
+    /// <p>A member of <code>ExplainerConfig</code> that contains configuration parameters for the SageMaker Clarify explainer.</p>
+    pub fn get_clarify_explainer_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ClarifyExplainerConfig> {
+        &self.clarify_explainer_config
+    }
     /// Consumes the builder and constructs a [`ExplainerConfig`](crate::types::ExplainerConfig).
     pub fn build(self) -> crate::types::ExplainerConfig {
         crate::types::ExplainerConfig {

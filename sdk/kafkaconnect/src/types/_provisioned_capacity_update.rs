@@ -48,6 +48,10 @@ impl ProvisionedCapacityUpdateBuilder {
         self.mcu_count = input;
         self
     }
+    /// <p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>
+    pub fn get_mcu_count(&self) -> &::std::option::Option<i32> {
+        &self.mcu_count
+    }
     /// <p>The number of workers that are allocated to the connector.</p>
     pub fn worker_count(mut self, input: i32) -> Self {
         self.worker_count = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl ProvisionedCapacityUpdateBuilder {
     pub fn set_worker_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.worker_count = input;
         self
+    }
+    /// <p>The number of workers that are allocated to the connector.</p>
+    pub fn get_worker_count(&self) -> &::std::option::Option<i32> {
+        &self.worker_count
     }
     /// Consumes the builder and constructs a [`ProvisionedCapacityUpdate`](crate::types::ProvisionedCapacityUpdate).
     pub fn build(self) -> crate::types::ProvisionedCapacityUpdate {

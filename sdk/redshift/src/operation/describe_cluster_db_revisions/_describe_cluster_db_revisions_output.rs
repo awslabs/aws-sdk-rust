@@ -58,6 +58,10 @@ impl DescribeClusterDbRevisionsOutputBuilder {
         self.marker = input;
         self
     }
+    /// <p>A string representing the starting point for the next set of revisions. If a value is returned in a response, you can retrieve the next set of revisions by providing the value in the <code>marker</code> parameter and retrying the command. If the <code>marker</code> field is empty, all revisions have already been returned.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marker
+    }
     /// Appends an item to `cluster_db_revisions`.
     ///
     /// To override the contents of this collection use [`set_cluster_db_revisions`](Self::set_cluster_db_revisions).
@@ -76,6 +80,12 @@ impl DescribeClusterDbRevisionsOutputBuilder {
     ) -> Self {
         self.cluster_db_revisions = input;
         self
+    }
+    /// <p>A list of revisions.</p>
+    pub fn get_cluster_db_revisions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterDbRevision>> {
+        &self.cluster_db_revisions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

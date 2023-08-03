@@ -74,6 +74,16 @@ impl MlUserDataEncryptionBuilder {
         self.ml_user_data_encryption_mode = input;
         self
     }
+    /// <p>The encryption mode applied to user data. Valid values are:</p>
+    /// <ul>
+    /// <li> <p>DISABLED: encryption is disabled</p> </li>
+    /// <li> <p>SSEKMS: use of server-side encryption with Key Management Service (SSE-KMS) for user data stored in Amazon S3.</p> </li>
+    /// </ul>
+    pub fn get_ml_user_data_encryption_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::MlUserDataEncryptionModeString> {
+        &self.ml_user_data_encryption_mode
+    }
     /// <p>The ID for the customer-provided KMS key.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -83,6 +93,10 @@ impl MlUserDataEncryptionBuilder {
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
+    }
+    /// <p>The ID for the customer-provided KMS key.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// Consumes the builder and constructs a [`MlUserDataEncryption`](crate::types::MlUserDataEncryption).
     pub fn build(self) -> crate::types::MlUserDataEncryption {

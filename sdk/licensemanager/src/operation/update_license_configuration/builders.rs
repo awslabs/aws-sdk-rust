@@ -36,6 +36,10 @@ impl UpdateLicenseConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateLicenseConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_license_configuration::builders::UpdateLicenseConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +136,10 @@ impl UpdateLicenseConfigurationFluentBuilder {
         self.inner = self.inner.set_license_configuration_arn(input);
         self
     }
+    /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
+    pub fn get_license_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_license_configuration_arn()
+    }
     /// <p>New status of the license configuration.</p>
     pub fn license_configuration_status(
         mut self,
@@ -147,6 +155,12 @@ impl UpdateLicenseConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_license_configuration_status(input);
         self
+    }
+    /// <p>New status of the license configuration.</p>
+    pub fn get_license_configuration_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::LicenseConfigurationStatus> {
+        self.inner.get_license_configuration_status()
     }
     /// Appends an item to `LicenseRules`.
     ///
@@ -168,6 +182,12 @@ impl UpdateLicenseConfigurationFluentBuilder {
         self.inner = self.inner.set_license_rules(input);
         self
     }
+    /// <p>New license rule. The only rule that you can add after you create a license configuration is licenseAffinityToHost.</p>
+    pub fn get_license_rules(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_license_rules()
+    }
     /// <p>New number of licenses managed by the license configuration.</p>
     pub fn license_count(mut self, input: i64) -> Self {
         self.inner = self.inner.license_count(input);
@@ -177,6 +197,10 @@ impl UpdateLicenseConfigurationFluentBuilder {
     pub fn set_license_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_license_count(input);
         self
+    }
+    /// <p>New number of licenses managed by the license configuration.</p>
+    pub fn get_license_count(&self) -> &::std::option::Option<i64> {
+        self.inner.get_license_count()
     }
     /// <p>New hard limit of the number of available licenses.</p>
     pub fn license_count_hard_limit(mut self, input: bool) -> Self {
@@ -188,6 +212,10 @@ impl UpdateLicenseConfigurationFluentBuilder {
         self.inner = self.inner.set_license_count_hard_limit(input);
         self
     }
+    /// <p>New hard limit of the number of available licenses.</p>
+    pub fn get_license_count_hard_limit(&self) -> &::std::option::Option<bool> {
+        self.inner.get_license_count_hard_limit()
+    }
     /// <p>New name of the license configuration.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -198,6 +226,10 @@ impl UpdateLicenseConfigurationFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>New name of the license configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>New description of the license configuration.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -207,6 +239,10 @@ impl UpdateLicenseConfigurationFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>New description of the license configuration.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `ProductInformationList`.
     ///
@@ -225,6 +261,12 @@ impl UpdateLicenseConfigurationFluentBuilder {
         self.inner = self.inner.set_product_information_list(input);
         self
     }
+    /// <p>New product information.</p>
+    pub fn get_product_information_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductInformation>> {
+        self.inner.get_product_information_list()
+    }
     /// <p>When true, disassociates a resource when software is uninstalled.</p>
     pub fn disassociate_when_not_found(mut self, input: bool) -> Self {
         self.inner = self.inner.disassociate_when_not_found(input);
@@ -234,5 +276,9 @@ impl UpdateLicenseConfigurationFluentBuilder {
     pub fn set_disassociate_when_not_found(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_disassociate_when_not_found(input);
         self
+    }
+    /// <p>When true, disassociates a resource when software is uninstalled.</p>
+    pub fn get_disassociate_when_not_found(&self) -> &::std::option::Option<bool> {
+        self.inner.get_disassociate_when_not_found()
     }
 }

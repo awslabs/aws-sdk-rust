@@ -48,6 +48,10 @@ impl SortCriterionBuilder {
         self.field_name = input;
         self
     }
+    /// <p>The name of the field on which to sort.</p>
+    pub fn get_field_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_name
+    }
     /// <p>An ascending or descending sort.</p>
     pub fn sort(mut self, input: crate::types::Sort) -> Self {
         self.sort = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl SortCriterionBuilder {
     pub fn set_sort(mut self, input: ::std::option::Option<crate::types::Sort>) -> Self {
         self.sort = input;
         self
+    }
+    /// <p>An ascending or descending sort.</p>
+    pub fn get_sort(&self) -> &::std::option::Option<crate::types::Sort> {
+        &self.sort
     }
     /// Consumes the builder and constructs a [`SortCriterion`](crate::types::SortCriterion).
     pub fn build(self) -> crate::types::SortCriterion {

@@ -51,6 +51,10 @@ impl TurnSpecificationBuilder {
         self.agent_turn = input;
         self
     }
+    /// <p>Contains information about the agent messages in the turn.</p>
+    pub fn get_agent_turn(&self) -> &::std::option::Option<crate::types::AgentTurnSpecification> {
+        &self.agent_turn
+    }
     /// <p>Contains information about the user messages in the turn.</p>
     pub fn user_turn(mut self, input: crate::types::UserTurnSpecification) -> Self {
         self.user_turn = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl TurnSpecificationBuilder {
     ) -> Self {
         self.user_turn = input;
         self
+    }
+    /// <p>Contains information about the user messages in the turn.</p>
+    pub fn get_user_turn(&self) -> &::std::option::Option<crate::types::UserTurnSpecification> {
+        &self.user_turn
     }
     /// Consumes the builder and constructs a [`TurnSpecification`](crate::types::TurnSpecification).
     pub fn build(self) -> crate::types::TurnSpecification {

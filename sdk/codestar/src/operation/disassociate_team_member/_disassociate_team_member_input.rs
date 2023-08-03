@@ -49,6 +49,10 @@ impl DisassociateTeamMemberInputBuilder {
         self.project_id = input;
         self
     }
+    /// <p>The ID of the AWS CodeStar project from which you want to remove a team member.</p>
+    pub fn get_project_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM user or group whom you want to remove from the project.</p>
     pub fn user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_arn = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl DisassociateTeamMemberInputBuilder {
     pub fn set_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM user or group whom you want to remove from the project.</p>
+    pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_arn
     }
     /// Consumes the builder and constructs a [`DisassociateTeamMemberInput`](crate::operation::disassociate_team_member::DisassociateTeamMemberInput).
     pub fn build(

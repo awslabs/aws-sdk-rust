@@ -118,6 +118,10 @@ impl MediaPlacementBuilder {
         self.audio_host_url = input;
         self
     }
+    /// <p>The audio host URL.</p>
+    pub fn get_audio_host_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.audio_host_url
+    }
     /// <p>The audio fallback URL.</p>
     pub fn audio_fallback_url(
         mut self,
@@ -133,6 +137,10 @@ impl MediaPlacementBuilder {
     ) -> Self {
         self.audio_fallback_url = input;
         self
+    }
+    /// <p>The audio fallback URL.</p>
+    pub fn get_audio_fallback_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.audio_fallback_url
     }
     /// <p>The screen data URL.</p> <important>
     /// <p> <b>This parameter is is no longer supported and no longer used by the Amazon Chime SDK.</b> </p>
@@ -154,6 +162,12 @@ impl MediaPlacementBuilder {
         self.screen_data_url = input;
         self
     }
+    /// <p>The screen data URL.</p> <important>
+    /// <p> <b>This parameter is is no longer supported and no longer used by the Amazon Chime SDK.</b> </p>
+    /// </important>
+    pub fn get_screen_data_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.screen_data_url
+    }
     /// <p>The screen sharing URL.</p> <important>
     /// <p> <b>This parameter is is no longer supported and no longer used by the Amazon Chime SDK.</b>.</p>
     /// </important>
@@ -173,6 +187,12 @@ impl MediaPlacementBuilder {
     ) -> Self {
         self.screen_sharing_url = input;
         self
+    }
+    /// <p>The screen sharing URL.</p> <important>
+    /// <p> <b>This parameter is is no longer supported and no longer used by the Amazon Chime SDK.</b>.</p>
+    /// </important>
+    pub fn get_screen_sharing_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.screen_sharing_url
     }
     /// <p>The screen viewing URL.</p> <important>
     /// <p> <b>This parameter is is no longer supported and no longer used by the Amazon Chime SDK.</b> </p>
@@ -194,6 +214,12 @@ impl MediaPlacementBuilder {
         self.screen_viewing_url = input;
         self
     }
+    /// <p>The screen viewing URL.</p> <important>
+    /// <p> <b>This parameter is is no longer supported and no longer used by the Amazon Chime SDK.</b> </p>
+    /// </important>
+    pub fn get_screen_viewing_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.screen_viewing_url
+    }
     /// <p>The signaling URL.</p>
     pub fn signaling_url(
         mut self,
@@ -209,6 +235,10 @@ impl MediaPlacementBuilder {
     ) -> Self {
         self.signaling_url = input;
         self
+    }
+    /// <p>The signaling URL.</p>
+    pub fn get_signaling_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.signaling_url
     }
     /// <p>The turn control URL.</p> <important>
     /// <p> <b>This parameter is is no longer supported and no longer used by the Amazon Chime SDK.</b> </p>
@@ -230,6 +260,12 @@ impl MediaPlacementBuilder {
         self.turn_control_url = input;
         self
     }
+    /// <p>The turn control URL.</p> <important>
+    /// <p> <b>This parameter is is no longer supported and no longer used by the Amazon Chime SDK.</b> </p>
+    /// </important>
+    pub fn get_turn_control_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.turn_control_url
+    }
     /// <p>The event ingestion URL to which you send client meeting events.</p>
     pub fn event_ingestion_url(
         mut self,
@@ -245,6 +281,10 @@ impl MediaPlacementBuilder {
     ) -> Self {
         self.event_ingestion_url = input;
         self
+    }
+    /// <p>The event ingestion URL to which you send client meeting events.</p>
+    pub fn get_event_ingestion_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_ingestion_url
     }
     /// Consumes the builder and constructs a [`MediaPlacement`](crate::types::MediaPlacement).
     pub fn build(self) -> crate::types::MediaPlacement {

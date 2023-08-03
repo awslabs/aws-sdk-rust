@@ -48,6 +48,10 @@ impl CalculationStatisticsBuilder {
         self.dpu_execution_in_millis = input;
         self
     }
+    /// <p>The data processing unit execution time in milliseconds for the calculation.</p>
+    pub fn get_dpu_execution_in_millis(&self) -> &::std::option::Option<i64> {
+        &self.dpu_execution_in_millis
+    }
     /// <p>The progress of the calculation.</p>
     pub fn progress(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.progress = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl CalculationStatisticsBuilder {
     pub fn set_progress(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.progress = input;
         self
+    }
+    /// <p>The progress of the calculation.</p>
+    pub fn get_progress(&self) -> &::std::option::Option<::std::string::String> {
+        &self.progress
     }
     /// Consumes the builder and constructs a [`CalculationStatistics`](crate::types::CalculationStatistics).
     pub fn build(self) -> crate::types::CalculationStatistics {

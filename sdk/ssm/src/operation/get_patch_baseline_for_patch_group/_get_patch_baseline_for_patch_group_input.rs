@@ -47,6 +47,10 @@ impl GetPatchBaselineForPatchGroupInputBuilder {
         self.patch_group = input;
         self
     }
+    /// <p>The name of the patch group whose patch baseline should be retrieved.</p>
+    pub fn get_patch_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.patch_group
+    }
     /// <p>Returns the operating system rule specified for patch groups using the patch baseline.</p>
     pub fn operating_system(mut self, input: crate::types::OperatingSystem) -> Self {
         self.operating_system = ::std::option::Option::Some(input);
@@ -59,6 +63,10 @@ impl GetPatchBaselineForPatchGroupInputBuilder {
     ) -> Self {
         self.operating_system = input;
         self
+    }
+    /// <p>Returns the operating system rule specified for patch groups using the patch baseline.</p>
+    pub fn get_operating_system(&self) -> &::std::option::Option<crate::types::OperatingSystem> {
+        &self.operating_system
     }
     /// Consumes the builder and constructs a [`GetPatchBaselineForPatchGroupInput`](crate::operation::get_patch_baseline_for_patch_group::GetPatchBaselineForPatchGroupInput).
     pub fn build(

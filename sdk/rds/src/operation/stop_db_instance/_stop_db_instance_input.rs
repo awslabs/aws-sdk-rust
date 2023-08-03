@@ -53,6 +53,10 @@ impl StopDbInstanceInputBuilder {
         self.db_instance_identifier = input;
         self
     }
+    /// <p>The user-supplied instance identifier.</p>
+    pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_instance_identifier
+    }
     /// <p>The user-supplied instance identifier of the DB Snapshot created immediately before the DB instance is stopped.</p>
     pub fn db_snapshot_identifier(
         mut self,
@@ -68,6 +72,10 @@ impl StopDbInstanceInputBuilder {
     ) -> Self {
         self.db_snapshot_identifier = input;
         self
+    }
+    /// <p>The user-supplied instance identifier of the DB Snapshot created immediately before the DB instance is stopped.</p>
+    pub fn get_db_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_snapshot_identifier
     }
     /// Consumes the builder and constructs a [`StopDbInstanceInput`](crate::operation::stop_db_instance::StopDbInstanceInput).
     pub fn build(

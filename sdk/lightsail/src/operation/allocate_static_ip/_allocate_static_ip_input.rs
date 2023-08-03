@@ -46,6 +46,10 @@ impl AllocateStaticIpInputBuilder {
         self.static_ip_name = input;
         self
     }
+    /// <p>The name of the static IP address.</p>
+    pub fn get_static_ip_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.static_ip_name
+    }
     /// Consumes the builder and constructs a [`AllocateStaticIpInput`](crate::operation::allocate_static_ip::AllocateStaticIpInput).
     pub fn build(
         self,

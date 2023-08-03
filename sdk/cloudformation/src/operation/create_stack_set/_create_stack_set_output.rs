@@ -46,6 +46,10 @@ impl CreateStackSetOutputBuilder {
         self.stack_set_id = input;
         self
     }
+    /// <p>The ID of the stack set that you're creating.</p>
+    pub fn get_stack_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_set_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

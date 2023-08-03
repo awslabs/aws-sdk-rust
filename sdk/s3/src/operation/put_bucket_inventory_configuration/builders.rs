@@ -79,6 +79,10 @@ impl PutBucketInventoryConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutBucketInventoryConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_bucket_inventory_configuration::builders::PutBucketInventoryConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -143,6 +147,10 @@ impl PutBucketInventoryConfigurationFluentBuilder {
         self.inner = self.inner.set_bucket(input);
         self
     }
+    /// <p>The name of the bucket where the inventory configuration will be stored.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bucket()
+    }
     /// <p>The ID used to identify the inventory configuration.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
@@ -152,6 +160,10 @@ impl PutBucketInventoryConfigurationFluentBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
+    }
+    /// <p>The ID used to identify the inventory configuration.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
     }
     /// <p>Specifies the inventory configuration.</p>
     pub fn inventory_configuration(mut self, input: crate::types::InventoryConfiguration) -> Self {
@@ -165,6 +177,12 @@ impl PutBucketInventoryConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_inventory_configuration(input);
         self
+    }
+    /// <p>Specifies the inventory configuration.</p>
+    pub fn get_inventory_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::InventoryConfiguration> {
+        self.inner.get_inventory_configuration()
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(
@@ -181,5 +199,9 @@ impl PutBucketInventoryConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_expected_bucket_owner(input);
         self
+    }
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
+    pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_expected_bucket_owner()
     }
 }

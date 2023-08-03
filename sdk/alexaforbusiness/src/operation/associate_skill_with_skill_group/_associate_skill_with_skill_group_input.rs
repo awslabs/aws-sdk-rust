@@ -53,6 +53,10 @@ impl AssociateSkillWithSkillGroupInputBuilder {
         self.skill_group_arn = input;
         self
     }
+    /// <p>The ARN of the skill group to associate the skill to. Required.</p>
+    pub fn get_skill_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.skill_group_arn
+    }
     /// <p>The unique identifier of the skill.</p>
     pub fn skill_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.skill_id = ::std::option::Option::Some(input.into());
@@ -62,6 +66,10 @@ impl AssociateSkillWithSkillGroupInputBuilder {
     pub fn set_skill_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.skill_id = input;
         self
+    }
+    /// <p>The unique identifier of the skill.</p>
+    pub fn get_skill_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.skill_id
     }
     /// Consumes the builder and constructs a [`AssociateSkillWithSkillGroupInput`](crate::operation::associate_skill_with_skill_group::AssociateSkillWithSkillGroupInput).
     pub fn build(

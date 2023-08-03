@@ -63,6 +63,10 @@ impl UpdateSiteInputBuilder {
         self.site_id = input;
         self
     }
+    /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
+    pub fn get_site_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.site_id
+    }
     /// <p>The name of the site.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -72,6 +76,10 @@ impl UpdateSiteInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the site.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The description of the site.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -83,6 +91,10 @@ impl UpdateSiteInputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description of the site.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>Notes about a site.</p>
     pub fn notes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.notes = ::std::option::Option::Some(input.into());
@@ -92,6 +104,10 @@ impl UpdateSiteInputBuilder {
     pub fn set_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notes = input;
         self
+    }
+    /// <p>Notes about a site.</p>
+    pub fn get_notes(&self) -> &::std::option::Option<::std::string::String> {
+        &self.notes
     }
     /// Consumes the builder and constructs a [`UpdateSiteInput`](crate::operation::update_site::UpdateSiteInput).
     pub fn build(

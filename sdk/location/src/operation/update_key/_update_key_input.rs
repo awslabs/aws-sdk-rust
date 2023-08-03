@@ -85,6 +85,10 @@ impl UpdateKeyInputBuilder {
         self.key_name = input;
         self
     }
+    /// <p>The name of the API key resource to update.</p>
+    pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_name
+    }
     /// <p>Updates the description for the API key resource.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -94,6 +98,10 @@ impl UpdateKeyInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>Updates the description for the API key resource.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>Updates the timestamp for when the API key resource will expire in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub fn expire_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -108,6 +116,10 @@ impl UpdateKeyInputBuilder {
         self.expire_time = input;
         self
     }
+    /// <p>Updates the timestamp for when the API key resource will expire in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    pub fn get_expire_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expire_time
+    }
     /// <p>Whether the API key should expire. Set to <code>true</code> to set the API key to have no expiration time.</p>
     pub fn no_expiry(mut self, input: bool) -> Self {
         self.no_expiry = ::std::option::Option::Some(input);
@@ -117,6 +129,10 @@ impl UpdateKeyInputBuilder {
     pub fn set_no_expiry(mut self, input: ::std::option::Option<bool>) -> Self {
         self.no_expiry = input;
         self
+    }
+    /// <p>Whether the API key should expire. Set to <code>true</code> to set the API key to have no expiration time.</p>
+    pub fn get_no_expiry(&self) -> &::std::option::Option<bool> {
+        &self.no_expiry
     }
     /// <p>The boolean flag to be included for updating <code>ExpireTime</code> or <code>Restrictions</code> details.</p>
     /// <p>Must be set to <code>true</code> to update an API key resource that has been used in the past 7 days.</p>
@@ -134,6 +150,13 @@ impl UpdateKeyInputBuilder {
         self.force_update = input;
         self
     }
+    /// <p>The boolean flag to be included for updating <code>ExpireTime</code> or <code>Restrictions</code> details.</p>
+    /// <p>Must be set to <code>true</code> to update an API key resource that has been used in the past 7 days.</p>
+    /// <p> <code>False</code> if force update is not preferred</p>
+    /// <p>Default value: <code>False</code> </p>
+    pub fn get_force_update(&self) -> &::std::option::Option<bool> {
+        &self.force_update
+    }
     /// <p>Updates the API key restrictions for the API key resource.</p>
     pub fn restrictions(mut self, input: crate::types::ApiKeyRestrictions) -> Self {
         self.restrictions = ::std::option::Option::Some(input);
@@ -146,6 +169,10 @@ impl UpdateKeyInputBuilder {
     ) -> Self {
         self.restrictions = input;
         self
+    }
+    /// <p>Updates the API key restrictions for the API key resource.</p>
+    pub fn get_restrictions(&self) -> &::std::option::Option<crate::types::ApiKeyRestrictions> {
+        &self.restrictions
     }
     /// Consumes the builder and constructs a [`UpdateKeyInput`](crate::operation::update_key::UpdateKeyInput).
     pub fn build(

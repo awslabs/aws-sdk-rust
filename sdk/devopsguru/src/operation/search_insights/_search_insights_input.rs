@@ -74,6 +74,10 @@ impl SearchInsightsInputBuilder {
         self.start_time_range = input;
         self
     }
+    /// <p> The start of the time range passed in. Returned insights occurred after this time. </p>
+    pub fn get_start_time_range(&self) -> &::std::option::Option<crate::types::StartTimeRange> {
+        &self.start_time_range
+    }
     /// <p> A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
     pub fn filters(mut self, input: crate::types::SearchInsightsFilters) -> Self {
         self.filters = ::std::option::Option::Some(input);
@@ -87,6 +91,10 @@ impl SearchInsightsInputBuilder {
         self.filters = input;
         self
     }
+    /// <p> A <code>SearchInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::SearchInsightsFilters> {
+        &self.filters
+    }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -96,6 +104,10 @@ impl SearchInsightsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -107,6 +119,10 @@ impl SearchInsightsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p> The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
     pub fn r#type(mut self, input: crate::types::InsightType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -116,6 +132,10 @@ impl SearchInsightsInputBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::InsightType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p> The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::InsightType> {
+        &self.r#type
     }
     /// Consumes the builder and constructs a [`SearchInsightsInput`](crate::operation::search_insights::SearchInsightsInput).
     pub fn build(

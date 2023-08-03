@@ -41,6 +41,10 @@ impl GetServerStrategiesInputBuilder {
         self.server_id = input;
         self
     }
+    /// <p> The ID of the server. </p>
+    pub fn get_server_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_id
+    }
     /// Consumes the builder and constructs a [`GetServerStrategiesInput`](crate::operation::get_server_strategies::GetServerStrategiesInput).
     pub fn build(
         self,

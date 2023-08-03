@@ -36,6 +36,10 @@ impl StartObjectFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the StartObject as a reference.
+    pub fn as_input(&self) -> &crate::operation::start_object::builders::StartObjectInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl StartObjectFluentBuilder {
         self.inner = self.inner.set_backup_job_id(input);
         self
     }
+    /// Backup job Id for the in-progress backup
+    pub fn get_backup_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_backup_job_id()
+    }
     /// Name for the object.
     pub fn object_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.object_name(input.into());
@@ -134,6 +142,10 @@ impl StartObjectFluentBuilder {
         self.inner = self.inner.set_object_name(input);
         self
     }
+    /// Name for the object.
+    pub fn get_object_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_object_name()
+    }
     /// Throw an exception if Object name is already exist.
     pub fn throw_on_duplicate(mut self, input: bool) -> Self {
         self.inner = self.inner.throw_on_duplicate(input);
@@ -143,5 +155,9 @@ impl StartObjectFluentBuilder {
     pub fn set_throw_on_duplicate(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_throw_on_duplicate(input);
         self
+    }
+    /// Throw an exception if Object name is already exist.
+    pub fn get_throw_on_duplicate(&self) -> &::std::option::Option<bool> {
+        self.inner.get_throw_on_duplicate()
     }
 }

@@ -41,6 +41,10 @@ impl StopTextTranslationJobInputBuilder {
         self.job_id = input;
         self
     }
+    /// <p>The job ID of the job to be stopped.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// Consumes the builder and constructs a [`StopTextTranslationJobInput`](crate::operation::stop_text_translation_job::StopTextTranslationJobInput).
     pub fn build(
         self,

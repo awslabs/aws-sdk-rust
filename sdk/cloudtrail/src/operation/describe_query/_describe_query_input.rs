@@ -65,6 +65,11 @@ impl DescribeQueryInputBuilder {
         self.event_data_store = input;
         self
     }
+    /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query was run.</p>
+    #[deprecated(note = "EventDataStore is no longer required by DescribeQueryRequest")]
+    pub fn get_event_data_store(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_data_store
+    }
     /// <p>The query ID.</p>
     pub fn query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_id = ::std::option::Option::Some(input.into());
@@ -75,6 +80,10 @@ impl DescribeQueryInputBuilder {
         self.query_id = input;
         self
     }
+    /// <p>The query ID.</p>
+    pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_id
+    }
     /// <p> The alias that identifies a query template. </p>
     pub fn query_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_alias = ::std::option::Option::Some(input.into());
@@ -84,6 +93,10 @@ impl DescribeQueryInputBuilder {
     pub fn set_query_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_alias = input;
         self
+    }
+    /// <p> The alias that identifies a query template. </p>
+    pub fn get_query_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_alias
     }
     /// Consumes the builder and constructs a [`DescribeQueryInput`](crate::operation::describe_query::DescribeQueryInput).
     pub fn build(

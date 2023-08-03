@@ -36,6 +36,12 @@ impl CreateGraphqlApiFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateGraphqlApi as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_graphql_api::builders::CreateGraphqlApiInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl CreateGraphqlApiFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>A user-supplied name for the <code>GraphqlApi</code>.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>The Amazon CloudWatch Logs configuration.</p>
     pub fn log_config(mut self, input: crate::types::LogConfig) -> Self {
         self.inner = self.inner.log_config(input);
@@ -135,6 +145,10 @@ impl CreateGraphqlApiFluentBuilder {
     pub fn set_log_config(mut self, input: ::std::option::Option<crate::types::LogConfig>) -> Self {
         self.inner = self.inner.set_log_config(input);
         self
+    }
+    /// <p>The Amazon CloudWatch Logs configuration.</p>
+    pub fn get_log_config(&self) -> &::std::option::Option<crate::types::LogConfig> {
+        self.inner.get_log_config()
     }
     /// <p>The authentication type: API key, Identity and Access Management (IAM), OpenID Connect (OIDC), Amazon Cognito user pools, or Lambda.</p>
     pub fn authentication_type(mut self, input: crate::types::AuthenticationType) -> Self {
@@ -149,6 +163,12 @@ impl CreateGraphqlApiFluentBuilder {
         self.inner = self.inner.set_authentication_type(input);
         self
     }
+    /// <p>The authentication type: API key, Identity and Access Management (IAM), OpenID Connect (OIDC), Amazon Cognito user pools, or Lambda.</p>
+    pub fn get_authentication_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::AuthenticationType> {
+        self.inner.get_authentication_type()
+    }
     /// <p>The Amazon Cognito user pool configuration.</p>
     pub fn user_pool_config(mut self, input: crate::types::UserPoolConfig) -> Self {
         self.inner = self.inner.user_pool_config(input);
@@ -162,6 +182,10 @@ impl CreateGraphqlApiFluentBuilder {
         self.inner = self.inner.set_user_pool_config(input);
         self
     }
+    /// <p>The Amazon Cognito user pool configuration.</p>
+    pub fn get_user_pool_config(&self) -> &::std::option::Option<crate::types::UserPoolConfig> {
+        self.inner.get_user_pool_config()
+    }
     /// <p>The OIDC configuration.</p>
     pub fn open_id_connect_config(mut self, input: crate::types::OpenIdConnectConfig) -> Self {
         self.inner = self.inner.open_id_connect_config(input);
@@ -174,6 +198,12 @@ impl CreateGraphqlApiFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_open_id_connect_config(input);
         self
+    }
+    /// <p>The OIDC configuration.</p>
+    pub fn get_open_id_connect_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::OpenIdConnectConfig> {
+        self.inner.get_open_id_connect_config()
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -198,6 +228,14 @@ impl CreateGraphqlApiFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>A <code>TagMap</code> object.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        self.inner.get_tags()
+    }
     /// Appends an item to `additionalAuthenticationProviders`.
     ///
     /// To override the contents of this collection use [`set_additional_authentication_providers`](Self::set_additional_authentication_providers).
@@ -220,6 +258,13 @@ impl CreateGraphqlApiFluentBuilder {
         self.inner = self.inner.set_additional_authentication_providers(input);
         self
     }
+    /// <p>A list of additional authentication providers for the <code>GraphqlApi</code> API.</p>
+    pub fn get_additional_authentication_providers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalAuthenticationProvider>>
+    {
+        self.inner.get_additional_authentication_providers()
+    }
     /// <p>A flag indicating whether to use X-Ray tracing for the <code>GraphqlApi</code>.</p>
     pub fn xray_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.xray_enabled(input);
@@ -229,6 +274,10 @@ impl CreateGraphqlApiFluentBuilder {
     pub fn set_xray_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_xray_enabled(input);
         self
+    }
+    /// <p>A flag indicating whether to use X-Ray tracing for the <code>GraphqlApi</code>.</p>
+    pub fn get_xray_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_xray_enabled()
     }
     /// <p>Configuration for Lambda function authorization.</p>
     pub fn lambda_authorizer_config(mut self, input: crate::types::LambdaAuthorizerConfig) -> Self {
@@ -243,6 +292,12 @@ impl CreateGraphqlApiFluentBuilder {
         self.inner = self.inner.set_lambda_authorizer_config(input);
         self
     }
+    /// <p>Configuration for Lambda function authorization.</p>
+    pub fn get_lambda_authorizer_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::LambdaAuthorizerConfig> {
+        self.inner.get_lambda_authorizer_config()
+    }
     /// <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no value is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be changed once the API has been created.</p>
     pub fn visibility(mut self, input: crate::types::GraphQlApiVisibility) -> Self {
         self.inner = self.inner.visibility(input);
@@ -256,6 +311,10 @@ impl CreateGraphqlApiFluentBuilder {
         self.inner = self.inner.set_visibility(input);
         self
     }
+    /// <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no value is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be changed once the API has been created.</p>
+    pub fn get_visibility(&self) -> &::std::option::Option<crate::types::GraphQlApiVisibility> {
+        self.inner.get_visibility()
+    }
     /// <p>The value that indicates whether the GraphQL API is a standard API (<code>GRAPHQL</code>) or merged API (<code>MERGED</code>).</p>
     pub fn api_type(mut self, input: crate::types::GraphQlApiType) -> Self {
         self.inner = self.inner.api_type(input);
@@ -268,6 +327,10 @@ impl CreateGraphqlApiFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_api_type(input);
         self
+    }
+    /// <p>The value that indicates whether the GraphQL API is a standard API (<code>GRAPHQL</code>) or merged API (<code>MERGED</code>).</p>
+    pub fn get_api_type(&self) -> &::std::option::Option<crate::types::GraphQlApiType> {
+        self.inner.get_api_type()
     }
     /// <p>The Identity and Access Management service role ARN for a merged API. The AppSync service assumes this role on behalf of the Merged API to validate access to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update the merged API endpoint with the source API changes automatically.</p>
     pub fn merged_api_execution_role_arn(
@@ -284,6 +347,12 @@ impl CreateGraphqlApiFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_merged_api_execution_role_arn(input);
         self
+    }
+    /// <p>The Identity and Access Management service role ARN for a merged API. The AppSync service assumes this role on behalf of the Merged API to validate access to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update the merged API endpoint with the source API changes automatically.</p>
+    pub fn get_merged_api_execution_role_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_merged_api_execution_role_arn()
     }
     /// <p>The owner contact information for an API resource.</p>
     /// <p>This field accepts any string input with a length of 0 - 256 characters.</p>
@@ -302,5 +371,10 @@ impl CreateGraphqlApiFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_owner_contact(input);
         self
+    }
+    /// <p>The owner contact information for an API resource.</p>
+    /// <p>This field accepts any string input with a length of 0 - 256 characters.</p>
+    pub fn get_owner_contact(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_owner_contact()
     }
 }

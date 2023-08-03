@@ -48,6 +48,10 @@ impl StepBuilder {
         self.component_id = input;
         self
     }
+    /// <p>The component ID.</p>
+    pub fn get_component_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_id
+    }
     /// <p>The component type.</p>
     pub fn component_type(
         mut self,
@@ -63,6 +67,10 @@ impl StepBuilder {
     ) -> Self {
         self.component_type = input;
         self
+    }
+    /// <p>The component type.</p>
+    pub fn get_component_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_type
     }
     /// Consumes the builder and constructs a [`Step`](crate::types::Step).
     pub fn build(self) -> crate::types::Step {

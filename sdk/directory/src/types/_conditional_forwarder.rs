@@ -62,6 +62,10 @@ impl ConditionalForwarderBuilder {
         self.remote_domain_name = input;
         self
     }
+    /// <p>The fully qualified domain name (FQDN) of the remote domains pointed to by the conditional forwarder.</p>
+    pub fn get_remote_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.remote_domain_name
+    }
     /// Appends an item to `dns_ip_addrs`.
     ///
     /// To override the contents of this collection use [`set_dns_ip_addrs`](Self::set_dns_ip_addrs).
@@ -81,6 +85,12 @@ impl ConditionalForwarderBuilder {
         self.dns_ip_addrs = input;
         self
     }
+    /// <p>The IP addresses of the remote DNS server associated with RemoteDomainName. This is the IP address of the DNS server that your conditional forwarder points to.</p>
+    pub fn get_dns_ip_addrs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.dns_ip_addrs
+    }
     /// <p>The replication scope of the conditional forwarder. The only allowed value is <code>Domain</code>, which will replicate the conditional forwarder to all of the domain controllers for your Amazon Web Services directory.</p>
     pub fn replication_scope(mut self, input: crate::types::ReplicationScope) -> Self {
         self.replication_scope = ::std::option::Option::Some(input);
@@ -93,6 +103,10 @@ impl ConditionalForwarderBuilder {
     ) -> Self {
         self.replication_scope = input;
         self
+    }
+    /// <p>The replication scope of the conditional forwarder. The only allowed value is <code>Domain</code>, which will replicate the conditional forwarder to all of the domain controllers for your Amazon Web Services directory.</p>
+    pub fn get_replication_scope(&self) -> &::std::option::Option<crate::types::ReplicationScope> {
+        &self.replication_scope
     }
     /// Consumes the builder and constructs a [`ConditionalForwarder`](crate::types::ConditionalForwarder).
     pub fn build(self) -> crate::types::ConditionalForwarder {

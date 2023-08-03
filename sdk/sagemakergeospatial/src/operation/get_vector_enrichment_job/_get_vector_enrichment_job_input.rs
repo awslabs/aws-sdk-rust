@@ -41,6 +41,10 @@ impl GetVectorEnrichmentJobInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`GetVectorEnrichmentJobInput`](crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobInput).
     pub fn build(
         self,

@@ -99,6 +99,10 @@ impl PiiDetectionBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the transform node.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Appends an item to `inputs`.
     ///
     /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
@@ -118,6 +122,10 @@ impl PiiDetectionBuilder {
         self.inputs = input;
         self
     }
+    /// <p>The node ID inputs to the transform.</p>
+    pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.inputs
+    }
     /// <p>Indicates the type of PIIDetection transform. </p>
     pub fn pii_type(mut self, input: crate::types::PiiType) -> Self {
         self.pii_type = ::std::option::Option::Some(input);
@@ -127,6 +135,10 @@ impl PiiDetectionBuilder {
     pub fn set_pii_type(mut self, input: ::std::option::Option<crate::types::PiiType>) -> Self {
         self.pii_type = input;
         self
+    }
+    /// <p>Indicates the type of PIIDetection transform. </p>
+    pub fn get_pii_type(&self) -> &::std::option::Option<crate::types::PiiType> {
+        &self.pii_type
     }
     /// Appends an item to `entity_types_to_detect`.
     ///
@@ -152,6 +164,13 @@ impl PiiDetectionBuilder {
         self.entity_types_to_detect = input;
         self
     }
+    /// <p>Indicates the types of entities the PIIDetection transform will identify as PII data. </p>
+    /// <p> PII type entities include: PERSON_NAME, DATE, USA_SNN, EMAIL, USA_ITIN, USA_PASSPORT_NUMBER, PHONE_NUMBER, BANK_ACCOUNT, IP_ADDRESS, MAC_ADDRESS, USA_CPT_CODE, USA_HCPCS_CODE, USA_NATIONAL_DRUG_CODE, USA_MEDICARE_BENEFICIARY_IDENTIFIER, USA_HEALTH_INSURANCE_CLAIM_NUMBER,CREDIT_CARD,USA_NATIONAL_PROVIDER_IDENTIFIER,USA_DEA_NUMBER,USA_DRIVING_LICENSE </p>
+    pub fn get_entity_types_to_detect(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.entity_types_to_detect
+    }
     /// <p>Indicates the output column name that will contain any entity type detected in that row. </p>
     pub fn output_column_name(
         mut self,
@@ -168,6 +187,10 @@ impl PiiDetectionBuilder {
         self.output_column_name = input;
         self
     }
+    /// <p>Indicates the output column name that will contain any entity type detected in that row. </p>
+    pub fn get_output_column_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.output_column_name
+    }
     /// <p>Indicates the fraction of the data to sample when scanning for PII entities. </p>
     pub fn sample_fraction(mut self, input: f64) -> Self {
         self.sample_fraction = ::std::option::Option::Some(input);
@@ -177,6 +200,10 @@ impl PiiDetectionBuilder {
     pub fn set_sample_fraction(mut self, input: ::std::option::Option<f64>) -> Self {
         self.sample_fraction = input;
         self
+    }
+    /// <p>Indicates the fraction of the data to sample when scanning for PII entities. </p>
+    pub fn get_sample_fraction(&self) -> &::std::option::Option<f64> {
+        &self.sample_fraction
     }
     /// <p>Indicates the fraction of the data that must be met in order for a column to be identified as PII data. </p>
     pub fn threshold_fraction(mut self, input: f64) -> Self {
@@ -188,6 +215,10 @@ impl PiiDetectionBuilder {
         self.threshold_fraction = input;
         self
     }
+    /// <p>Indicates the fraction of the data that must be met in order for a column to be identified as PII data. </p>
+    pub fn get_threshold_fraction(&self) -> &::std::option::Option<f64> {
+        &self.threshold_fraction
+    }
     /// <p>Indicates the value that will replace the detected entity. </p>
     pub fn mask_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mask_value = ::std::option::Option::Some(input.into());
@@ -197,6 +228,10 @@ impl PiiDetectionBuilder {
     pub fn set_mask_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mask_value = input;
         self
+    }
+    /// <p>Indicates the value that will replace the detected entity. </p>
+    pub fn get_mask_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mask_value
     }
     /// Consumes the builder and constructs a [`PiiDetection`](crate::types::PiiDetection).
     pub fn build(self) -> crate::types::PiiDetection {

@@ -52,6 +52,10 @@ impl StartPipelineReprocessingOutputBuilder {
         self.reprocessing_id = input;
         self
     }
+    /// <p>The ID of the pipeline reprocessing activity that was started.</p>
+    pub fn get_reprocessing_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reprocessing_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -48,6 +48,10 @@ impl MemoryGiBPerVCpuRequestBuilder {
         self.min = input;
         self
     }
+    /// <p>The minimum amount of memory per vCPU, in GiB. To specify no minimum limit, omit this parameter.</p>
+    pub fn get_min(&self) -> &::std::option::Option<f64> {
+        &self.min
+    }
     /// <p>The maximum amount of memory per vCPU, in GiB. To specify no maximum limit, omit this parameter.</p>
     pub fn max(mut self, input: f64) -> Self {
         self.max = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl MemoryGiBPerVCpuRequestBuilder {
     pub fn set_max(mut self, input: ::std::option::Option<f64>) -> Self {
         self.max = input;
         self
+    }
+    /// <p>The maximum amount of memory per vCPU, in GiB. To specify no maximum limit, omit this parameter.</p>
+    pub fn get_max(&self) -> &::std::option::Option<f64> {
+        &self.max
     }
     /// Consumes the builder and constructs a [`MemoryGiBPerVCpuRequest`](crate::types::MemoryGiBPerVCpuRequest).
     pub fn build(self) -> crate::types::MemoryGiBPerVCpuRequest {

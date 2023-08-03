@@ -36,6 +36,12 @@ impl BatchUpdateUserFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchUpdateUser as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::batch_update_user::builders::BatchUpdateUserInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl BatchUpdateUserFluentBuilder {
         self.inner = self.inner.set_account_id(input);
         self
     }
+    /// <p>The Amazon Chime account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// Appends an item to `UpdateUserRequestItems`.
     ///
     /// To override the contents of this collection use [`set_update_user_request_items`](Self::set_update_user_request_items).
@@ -142,5 +152,11 @@ impl BatchUpdateUserFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_update_user_request_items(input);
         self
+    }
+    /// <p>The request containing the user IDs and details to update.</p>
+    pub fn get_update_user_request_items(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateUserRequestItem>> {
+        self.inner.get_update_user_request_items()
     }
 }

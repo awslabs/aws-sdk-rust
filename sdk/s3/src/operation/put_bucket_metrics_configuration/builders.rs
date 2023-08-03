@@ -52,6 +52,10 @@ impl PutBucketMetricsConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutBucketMetricsConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::put_bucket_metrics_configuration::builders::PutBucketMetricsConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -142,6 +146,10 @@ impl PutBucketMetricsConfigurationFluentBuilder {
         self.inner = self.inner.set_bucket(input);
         self
     }
+    /// <p>The name of the bucket for which the metrics configuration is set.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bucket()
+    }
     /// <p>The ID used to identify the metrics configuration. The ID has a 64 character limit and can only contain letters, numbers, periods, dashes, and underscores.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
@@ -151,6 +159,10 @@ impl PutBucketMetricsConfigurationFluentBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
+    }
+    /// <p>The ID used to identify the metrics configuration. The ID has a 64 character limit and can only contain letters, numbers, periods, dashes, and underscores.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
     }
     /// <p>Specifies the metrics configuration.</p>
     pub fn metrics_configuration(mut self, input: crate::types::MetricsConfiguration) -> Self {
@@ -164,6 +176,12 @@ impl PutBucketMetricsConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_metrics_configuration(input);
         self
+    }
+    /// <p>Specifies the metrics configuration.</p>
+    pub fn get_metrics_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::MetricsConfiguration> {
+        self.inner.get_metrics_configuration()
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(
@@ -180,5 +198,9 @@ impl PutBucketMetricsConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_expected_bucket_owner(input);
         self
+    }
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
+    pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_expected_bucket_owner()
     }
 }

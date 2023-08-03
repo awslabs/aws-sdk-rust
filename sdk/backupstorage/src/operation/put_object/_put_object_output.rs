@@ -82,6 +82,10 @@ impl PutObjectOutputBuilder {
         self.inline_chunk_checksum = input;
         self
     }
+    /// Inline chunk checksum
+    pub fn get_inline_chunk_checksum(&self) -> &::std::option::Option<::std::string::String> {
+        &self.inline_chunk_checksum
+    }
     /// Inline chunk checksum algorithm
     pub fn inline_chunk_checksum_algorithm(
         mut self,
@@ -97,6 +101,12 @@ impl PutObjectOutputBuilder {
     ) -> Self {
         self.inline_chunk_checksum_algorithm = input;
         self
+    }
+    /// Inline chunk checksum algorithm
+    pub fn get_inline_chunk_checksum_algorithm(
+        &self,
+    ) -> &::std::option::Option<crate::types::DataChecksumAlgorithm> {
+        &self.inline_chunk_checksum_algorithm
     }
     /// object checksum
     pub fn object_checksum(
@@ -114,6 +124,10 @@ impl PutObjectOutputBuilder {
         self.object_checksum = input;
         self
     }
+    /// object checksum
+    pub fn get_object_checksum(&self) -> &::std::option::Option<::std::string::String> {
+        &self.object_checksum
+    }
     /// object checksum algorithm
     pub fn object_checksum_algorithm(
         mut self,
@@ -129,6 +143,12 @@ impl PutObjectOutputBuilder {
     ) -> Self {
         self.object_checksum_algorithm = input;
         self
+    }
+    /// object checksum algorithm
+    pub fn get_object_checksum_algorithm(
+        &self,
+    ) -> &::std::option::Option<crate::types::SummaryChecksumAlgorithm> {
+        &self.object_checksum_algorithm
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

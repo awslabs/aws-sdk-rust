@@ -51,6 +51,11 @@ impl DetectStackSetDriftOutputBuilder {
         self.operation_id = input;
         self
     }
+    /// <p>The ID of the drift detection stack set operation.</p>
+    /// <p>You can use this operation ID with <code>DescribeStackSetOperation</code> to monitor the progress of the drift detection operation.</p>
+    pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operation_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

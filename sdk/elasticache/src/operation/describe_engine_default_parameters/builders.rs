@@ -36,6 +36,10 @@ impl DescribeEngineDefaultParametersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeEngineDefaultParameters as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_engine_default_parameters::builders::DescribeEngineDefaultParametersInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -114,6 +118,13 @@ impl DescribeEngineDefaultParametersFluentBuilder {
         self.inner = self.inner.set_cache_parameter_group_family(input);
         self
     }
+    /// <p>The name of the cache parameter group family.</p>
+    /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis6.2</code> | <code>redis7</code> </p>
+    pub fn get_cache_parameter_group_family(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cache_parameter_group_family()
+    }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: minimum 20; maximum 100.</p>
@@ -128,6 +139,12 @@ impl DescribeEngineDefaultParametersFluentBuilder {
         self.inner = self.inner.set_max_records(input);
         self
     }
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>Default: 100</p>
+    /// <p>Constraints: minimum 20; maximum 100.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_records()
+    }
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -137,5 +154,9 @@ impl DescribeEngineDefaultParametersFluentBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
+    }
+    /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
     }
 }

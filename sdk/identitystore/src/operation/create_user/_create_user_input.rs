@@ -167,6 +167,10 @@ impl CreateUserInputBuilder {
         self.identity_store_id = input;
         self
     }
+    /// <p>The globally unique identifier for the identity store.</p>
+    pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_store_id
+    }
     /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store. "Administrator" and "AWSAdministrators" are reserved names and can't be used for users or groups.</p>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
@@ -176,6 +180,10 @@ impl CreateUserInputBuilder {
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_name = input;
         self
+    }
+    /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store. "Administrator" and "AWSAdministrators" are reserved names and can't be used for users or groups.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
     }
     /// <p>An object containing the name of the user.</p>
     pub fn name(mut self, input: crate::types::Name) -> Self {
@@ -187,6 +195,10 @@ impl CreateUserInputBuilder {
         self.name = input;
         self
     }
+    /// <p>An object containing the name of the user.</p>
+    pub fn get_name(&self) -> &::std::option::Option<crate::types::Name> {
+        &self.name
+    }
     /// <p>A string containing the name of the user. This value is typically formatted for display when the user is referenced. For example, "John Doe." </p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -196,6 +208,10 @@ impl CreateUserInputBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
+    }
+    /// <p>A string containing the name of the user. This value is typically formatted for display when the user is referenced. For example, "John Doe." </p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// <p>A string containing an alternate name for the user.</p>
     pub fn nick_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -207,6 +223,10 @@ impl CreateUserInputBuilder {
         self.nick_name = input;
         self
     }
+    /// <p>A string containing an alternate name for the user.</p>
+    pub fn get_nick_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.nick_name
+    }
     /// <p>A string containing a URL that might be associated with the user.</p>
     pub fn profile_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_url = ::std::option::Option::Some(input.into());
@@ -216,6 +236,10 @@ impl CreateUserInputBuilder {
     pub fn set_profile_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profile_url = input;
         self
+    }
+    /// <p>A string containing a URL that might be associated with the user.</p>
+    pub fn get_profile_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_url
     }
     /// Appends an item to `emails`.
     ///
@@ -236,6 +260,10 @@ impl CreateUserInputBuilder {
         self.emails = input;
         self
     }
+    /// <p>A list of <code>Email</code> objects containing email addresses associated with the user.</p>
+    pub fn get_emails(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Email>> {
+        &self.emails
+    }
     /// Appends an item to `addresses`.
     ///
     /// To override the contents of this collection use [`set_addresses`](Self::set_addresses).
@@ -254,6 +282,10 @@ impl CreateUserInputBuilder {
     ) -> Self {
         self.addresses = input;
         self
+    }
+    /// <p>A list of <code>Address</code> objects containing addresses associated with the user.</p>
+    pub fn get_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Address>> {
+        &self.addresses
     }
     /// Appends an item to `phone_numbers`.
     ///
@@ -274,6 +306,12 @@ impl CreateUserInputBuilder {
         self.phone_numbers = input;
         self
     }
+    /// <p>A list of <code>PhoneNumber</code> objects containing phone numbers associated with the user.</p>
+    pub fn get_phone_numbers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PhoneNumber>> {
+        &self.phone_numbers
+    }
     /// <p>A string indicating the type of user. Possible values are left unspecified. The value can vary based on your specific use case.</p>
     pub fn user_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_type = ::std::option::Option::Some(input.into());
@@ -284,6 +322,10 @@ impl CreateUserInputBuilder {
         self.user_type = input;
         self
     }
+    /// <p>A string indicating the type of user. Possible values are left unspecified. The value can vary based on your specific use case.</p>
+    pub fn get_user_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_type
+    }
     /// <p>A string containing the title of the user. Possible values are left unspecified. The value can vary based on your specific use case.</p>
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
@@ -293,6 +335,10 @@ impl CreateUserInputBuilder {
     pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
+    }
+    /// <p>A string containing the title of the user. Possible values are left unspecified. The value can vary based on your specific use case.</p>
+    pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
+        &self.title
     }
     /// <p>A string containing the preferred language of the user. For example, "American English" or "en-us."</p>
     pub fn preferred_language(
@@ -310,6 +356,10 @@ impl CreateUserInputBuilder {
         self.preferred_language = input;
         self
     }
+    /// <p>A string containing the preferred language of the user. For example, "American English" or "en-us."</p>
+    pub fn get_preferred_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.preferred_language
+    }
     /// <p>A string containing the geographical region or location of the user.</p>
     pub fn locale(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale = ::std::option::Option::Some(input.into());
@@ -320,6 +370,10 @@ impl CreateUserInputBuilder {
         self.locale = input;
         self
     }
+    /// <p>A string containing the geographical region or location of the user.</p>
+    pub fn get_locale(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale
+    }
     /// <p>A string containing the time zone of the user.</p>
     pub fn timezone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timezone = ::std::option::Option::Some(input.into());
@@ -329,6 +383,10 @@ impl CreateUserInputBuilder {
     pub fn set_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timezone = input;
         self
+    }
+    /// <p>A string containing the time zone of the user.</p>
+    pub fn get_timezone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.timezone
     }
     /// Consumes the builder and constructs a [`CreateUserInput`](crate::operation::create_user::CreateUserInput).
     pub fn build(

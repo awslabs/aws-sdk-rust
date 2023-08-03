@@ -67,6 +67,10 @@ impl AwsSqsQueueDetailsBuilder {
         self.kms_data_key_reuse_period_seconds = input;
         self
     }
+    /// <p>The length of time, in seconds, for which Amazon SQS can reuse a data key to encrypt or decrypt messages before calling KMS again.</p>
+    pub fn get_kms_data_key_reuse_period_seconds(&self) -> &::std::option::Option<i32> {
+        &self.kms_data_key_reuse_period_seconds
+    }
     /// <p>The ID of an Amazon Web Services managed key for Amazon SQS or a custom KMS key.</p>
     pub fn kms_master_key_id(
         mut self,
@@ -83,6 +87,10 @@ impl AwsSqsQueueDetailsBuilder {
         self.kms_master_key_id = input;
         self
     }
+    /// <p>The ID of an Amazon Web Services managed key for Amazon SQS or a custom KMS key.</p>
+    pub fn get_kms_master_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_master_key_id
+    }
     /// <p>The name of the new queue.</p>
     pub fn queue_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.queue_name = ::std::option::Option::Some(input.into());
@@ -92,6 +100,10 @@ impl AwsSqsQueueDetailsBuilder {
     pub fn set_queue_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.queue_name = input;
         self
+    }
+    /// <p>The name of the new queue.</p>
+    pub fn get_queue_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.queue_name
     }
     /// <p>The ARN of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded. </p>
     pub fn dead_letter_target_arn(
@@ -108,6 +120,10 @@ impl AwsSqsQueueDetailsBuilder {
     ) -> Self {
         self.dead_letter_target_arn = input;
         self
+    }
+    /// <p>The ARN of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded. </p>
+    pub fn get_dead_letter_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dead_letter_target_arn
     }
     /// Consumes the builder and constructs a [`AwsSqsQueueDetails`](crate::types::AwsSqsQueueDetails).
     pub fn build(self) -> crate::types::AwsSqsQueueDetails {

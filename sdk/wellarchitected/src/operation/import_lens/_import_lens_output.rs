@@ -54,6 +54,10 @@ impl ImportLensOutputBuilder {
         self.lens_arn = input;
         self
     }
+    /// <p>The ARN for the lens that was created or updated.</p>
+    pub fn get_lens_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lens_arn
+    }
     /// <p>The status of the imported lens.</p>
     pub fn status(mut self, input: crate::types::ImportLensStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl ImportLensOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the imported lens.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ImportLensStatus> {
+        &self.status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

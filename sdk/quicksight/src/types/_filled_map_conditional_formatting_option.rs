@@ -45,6 +45,12 @@ impl FilledMapConditionalFormattingOptionBuilder {
         self.shape = input;
         self
     }
+    /// <p>The conditional formatting that determines the shape of the filled map.</p>
+    pub fn get_shape(
+        &self,
+    ) -> &::std::option::Option<crate::types::FilledMapShapeConditionalFormatting> {
+        &self.shape
+    }
     /// Consumes the builder and constructs a [`FilledMapConditionalFormattingOption`](crate::types::FilledMapConditionalFormattingOption).
     pub fn build(self) -> crate::types::FilledMapConditionalFormattingOption {
         crate::types::FilledMapConditionalFormattingOption { shape: self.shape }

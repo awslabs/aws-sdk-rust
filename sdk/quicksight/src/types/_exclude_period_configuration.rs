@@ -64,6 +64,10 @@ impl ExcludePeriodConfigurationBuilder {
         self.amount = input;
         self
     }
+    /// <p>The amount or number of the exclude period.</p>
+    pub fn get_amount(&self) -> &::std::option::Option<i32> {
+        &self.amount
+    }
     /// <p>The granularity or unit (day, month, year) of the exclude period.</p>
     pub fn granularity(mut self, input: crate::types::TimeGranularity) -> Self {
         self.granularity = ::std::option::Option::Some(input);
@@ -76,6 +80,10 @@ impl ExcludePeriodConfigurationBuilder {
     ) -> Self {
         self.granularity = input;
         self
+    }
+    /// <p>The granularity or unit (day, month, year) of the exclude period.</p>
+    pub fn get_granularity(&self) -> &::std::option::Option<crate::types::TimeGranularity> {
+        &self.granularity
     }
     /// <p>The status of the exclude period. Choose from the following options:</p>
     /// <ul>
@@ -94,6 +102,14 @@ impl ExcludePeriodConfigurationBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::WidgetStatus>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the exclude period. Choose from the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>ENABLED</code> </p> </li>
+    /// <li> <p> <code>DISABLED</code> </p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::WidgetStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`ExcludePeriodConfiguration`](crate::types::ExcludePeriodConfiguration).
     pub fn build(self) -> crate::types::ExcludePeriodConfiguration {

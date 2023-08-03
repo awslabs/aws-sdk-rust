@@ -38,6 +38,13 @@ impl DescribeServiceErrorsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeServiceErrors as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_service_errors::builders::DescribeServiceErrorsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,6 +135,10 @@ impl DescribeServiceErrorsFluentBuilder {
         self.inner = self.inner.set_stack_id(input);
         self
     }
+    /// <p>The stack ID. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the errors associated with the specified stack.</p>
+    pub fn get_stack_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stack_id()
+    }
     /// <p>The instance ID. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the errors associated with the specified instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
@@ -137,6 +148,10 @@ impl DescribeServiceErrorsFluentBuilder {
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
+    }
+    /// <p>The instance ID. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the errors associated with the specified instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
     }
     /// Appends an item to `ServiceErrorIds`.
     ///
@@ -157,5 +172,11 @@ impl DescribeServiceErrorsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_service_error_ids(input);
         self
+    }
+    /// <p>An array of service error IDs. If you use this parameter, <code>DescribeServiceErrors</code> returns descriptions of the specified errors. Otherwise, it returns a description of every error.</p>
+    pub fn get_service_error_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_service_error_ids()
     }
 }

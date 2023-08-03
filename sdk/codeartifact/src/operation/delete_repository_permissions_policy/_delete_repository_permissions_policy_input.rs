@@ -63,6 +63,10 @@ impl DeleteRepositoryPermissionsPolicyInputBuilder {
         self.domain = input;
         self
     }
+    /// <p> The name of the domain that contains the repository associated with the resource policy to be deleted. </p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
+    }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_owner = ::std::option::Option::Some(input.into());
@@ -73,6 +77,10 @@ impl DeleteRepositoryPermissionsPolicyInputBuilder {
         self.domain_owner = input;
         self
     }
+    /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
+    pub fn get_domain_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_owner
+    }
     /// <p> The name of the repository that is associated with the resource policy to be deleted </p>
     pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository = ::std::option::Option::Some(input.into());
@@ -82,6 +90,10 @@ impl DeleteRepositoryPermissionsPolicyInputBuilder {
     pub fn set_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository = input;
         self
+    }
+    /// <p> The name of the repository that is associated with the resource policy to be deleted </p>
+    pub fn get_repository(&self) -> &::std::option::Option<::std::string::String> {
+        &self.repository
     }
     /// <p> The revision of the repository's resource policy to be deleted. This revision is used for optimistic locking, which prevents others from accidentally overwriting your changes to the repository's resource policy. </p>
     pub fn policy_revision(
@@ -98,6 +110,10 @@ impl DeleteRepositoryPermissionsPolicyInputBuilder {
     ) -> Self {
         self.policy_revision = input;
         self
+    }
+    /// <p> The revision of the repository's resource policy to be deleted. This revision is used for optimistic locking, which prevents others from accidentally overwriting your changes to the repository's resource policy. </p>
+    pub fn get_policy_revision(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_revision
     }
     /// Consumes the builder and constructs a [`DeleteRepositoryPermissionsPolicyInput`](crate::operation::delete_repository_permissions_policy::DeleteRepositoryPermissionsPolicyInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_repository_permissions_policy::DeleteRepositoryPermissionsPolicyInput, ::aws_smithy_http::operation::error::BuildError>{

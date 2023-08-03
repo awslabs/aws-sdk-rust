@@ -41,6 +41,10 @@ impl UpdateFacetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateFacet as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_facet::builders::UpdateFacetInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -123,6 +127,10 @@ impl UpdateFacetFluentBuilder {
         self.inner = self.inner.set_schema_arn(input);
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Facet</code>. For more information, see <code>arns</code>.</p>
+    pub fn get_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_schema_arn()
+    }
     /// <p>The name of the facet.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -132,6 +140,10 @@ impl UpdateFacetFluentBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
+    }
+    /// <p>The name of the facet.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
     /// Appends an item to `AttributeUpdates`.
     ///
@@ -150,6 +162,12 @@ impl UpdateFacetFluentBuilder {
         self.inner = self.inner.set_attribute_updates(input);
         self
     }
+    /// <p>List of attributes that need to be updated in a given schema <code>Facet</code>. Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update operation to perform. </p>
+    pub fn get_attribute_updates(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FacetAttributeUpdate>> {
+        self.inner.get_attribute_updates()
+    }
     /// <p>The object type that is associated with the facet. See <code>CreateFacetRequest$ObjectType</code> for more details.</p>
     pub fn object_type(mut self, input: crate::types::ObjectType) -> Self {
         self.inner = self.inner.object_type(input);
@@ -162,5 +180,9 @@ impl UpdateFacetFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_object_type(input);
         self
+    }
+    /// <p>The object type that is associated with the facet. See <code>CreateFacetRequest$ObjectType</code> for more details.</p>
+    pub fn get_object_type(&self) -> &::std::option::Option<crate::types::ObjectType> {
+        self.inner.get_object_type()
     }
 }

@@ -37,6 +37,13 @@ impl CreateServiceSyncConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateServiceSyncConfig as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_service_sync_config::builders::CreateServiceSyncConfigInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +134,10 @@ impl CreateServiceSyncConfigFluentBuilder {
         self.inner = self.inner.set_service_name(input);
         self
     }
+    /// <p>The name of the service the Proton Ops file is for.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_name()
+    }
     /// <p>The provider type for your repository.</p>
     pub fn repository_provider(mut self, input: crate::types::RepositoryProvider) -> Self {
         self.inner = self.inner.repository_provider(input);
@@ -139,6 +150,12 @@ impl CreateServiceSyncConfigFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_repository_provider(input);
         self
+    }
+    /// <p>The provider type for your repository.</p>
+    pub fn get_repository_provider(
+        &self,
+    ) -> &::std::option::Option<crate::types::RepositoryProvider> {
+        self.inner.get_repository_provider()
     }
     /// <p>The repository name.</p>
     pub fn repository_name(
@@ -156,6 +173,10 @@ impl CreateServiceSyncConfigFluentBuilder {
         self.inner = self.inner.set_repository_name(input);
         self
     }
+    /// <p>The repository name.</p>
+    pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_repository_name()
+    }
     /// <p>The repository branch for your Proton Ops file.</p>
     pub fn branch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.branch(input.into());
@@ -166,6 +187,10 @@ impl CreateServiceSyncConfigFluentBuilder {
         self.inner = self.inner.set_branch(input);
         self
     }
+    /// <p>The repository branch for your Proton Ops file.</p>
+    pub fn get_branch(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_branch()
+    }
     /// <p>The path to the Proton Ops file.</p>
     pub fn file_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_path(input.into());
@@ -175,5 +200,9 @@ impl CreateServiceSyncConfigFluentBuilder {
     pub fn set_file_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_path(input);
         self
+    }
+    /// <p>The path to the Proton Ops file.</p>
+    pub fn get_file_path(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_file_path()
     }
 }

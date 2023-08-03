@@ -36,6 +36,10 @@ impl ListServiceInstanceProvisionedResourcesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListServiceInstanceProvisionedResources as a reference.
+    pub fn as_input(&self) -> &crate::operation::list_service_instance_provisioned_resources::builders::ListServiceInstanceProvisionedResourcesInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl ListServiceInstanceProvisionedResourcesFluentBuilder {
         self.inner = self.inner.set_service_name(input);
         self
     }
+    /// <p>The name of the service that <code>serviceInstanceName</code> is associated to.</p>
+    pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_name()
+    }
     /// <p>The name of the service instance whose provisioned resources you want.</p>
     pub fn service_instance_name(
         mut self,
@@ -122,6 +130,10 @@ impl ListServiceInstanceProvisionedResourcesFluentBuilder {
         self.inner = self.inner.set_service_instance_name(input);
         self
     }
+    /// <p>The name of the service instance whose provisioned resources you want.</p>
+    pub fn get_service_instance_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_service_instance_name()
+    }
     /// <p>A token that indicates the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -131,5 +143,9 @@ impl ListServiceInstanceProvisionedResourcesFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>A token that indicates the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

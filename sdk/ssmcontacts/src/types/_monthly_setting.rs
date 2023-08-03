@@ -48,6 +48,10 @@ impl MonthlySettingBuilder {
         self.day_of_month = input;
         self
     }
+    /// <p>The day of the month when monthly recurring on-call rotations begin.</p>
+    pub fn get_day_of_month(&self) -> &::std::option::Option<i32> {
+        &self.day_of_month
+    }
     /// <p>The time of day when a monthly recurring on-call shift rotation begins.</p>
     pub fn hand_off_time(mut self, input: crate::types::HandOffTime) -> Self {
         self.hand_off_time = ::std::option::Option::Some(input);
@@ -60,6 +64,10 @@ impl MonthlySettingBuilder {
     ) -> Self {
         self.hand_off_time = input;
         self
+    }
+    /// <p>The time of day when a monthly recurring on-call shift rotation begins.</p>
+    pub fn get_hand_off_time(&self) -> &::std::option::Option<crate::types::HandOffTime> {
+        &self.hand_off_time
     }
     /// Consumes the builder and constructs a [`MonthlySetting`](crate::types::MonthlySetting).
     pub fn build(self) -> crate::types::MonthlySetting {

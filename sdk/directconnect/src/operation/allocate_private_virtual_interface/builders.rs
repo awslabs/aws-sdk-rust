@@ -37,6 +37,10 @@ impl AllocatePrivateVirtualInterfaceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the AllocatePrivateVirtualInterface as a reference.
+    pub fn as_input(&self) -> &crate::operation::allocate_private_virtual_interface::builders::AllocatePrivateVirtualInterfaceInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -107,6 +111,10 @@ impl AllocatePrivateVirtualInterfaceFluentBuilder {
         self.inner = self.inner.set_connection_id(input);
         self
     }
+    /// <p>The ID of the connection on which the private virtual interface is provisioned.</p>
+    pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connection_id()
+    }
     /// <p>The ID of the Amazon Web Services account that owns the virtual private interface.</p>
     pub fn owner_account(
         mut self,
@@ -122,6 +130,10 @@ impl AllocatePrivateVirtualInterfaceFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_owner_account(input);
         self
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the virtual private interface.</p>
+    pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_owner_account()
     }
     /// <p>Information about the private virtual interface.</p>
     pub fn new_private_virtual_interface_allocation(
@@ -140,5 +152,11 @@ impl AllocatePrivateVirtualInterfaceFluentBuilder {
             .inner
             .set_new_private_virtual_interface_allocation(input);
         self
+    }
+    /// <p>Information about the private virtual interface.</p>
+    pub fn get_new_private_virtual_interface_allocation(
+        &self,
+    ) -> &::std::option::Option<crate::types::NewPrivateVirtualInterfaceAllocation> {
+        self.inner.get_new_private_virtual_interface_allocation()
     }
 }

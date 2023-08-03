@@ -66,6 +66,12 @@ impl GetRecommendationsOutputBuilder {
         self.recommendations = input;
         self
     }
+    /// <p>The recommendations.</p>
+    pub fn get_recommendations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationData>> {
+        &self.recommendations
+    }
     /// Appends an item to `triggers`.
     ///
     /// To override the contents of this collection use [`set_triggers`](Self::set_triggers).
@@ -84,6 +90,12 @@ impl GetRecommendationsOutputBuilder {
     ) -> Self {
         self.triggers = input;
         self
+    }
+    /// <p>The triggers corresponding to recommendations.</p>
+    pub fn get_triggers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationTrigger>> {
+        &self.triggers
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

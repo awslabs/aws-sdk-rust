@@ -36,6 +36,12 @@ impl PutPartnerEventsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the PutPartnerEvents as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::put_partner_events::builders::PutPartnerEventsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,5 +138,11 @@ impl PutPartnerEventsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_entries(input);
         self
+    }
+    /// <p>The list of events to write to the event bus.</p>
+    pub fn get_entries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PutPartnerEventsRequestEntry>> {
+        self.inner.get_entries()
     }
 }

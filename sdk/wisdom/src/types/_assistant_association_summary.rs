@@ -105,6 +105,10 @@ impl AssistantAssociationSummaryBuilder {
         self.assistant_association_id = input;
         self
     }
+    /// <p>The identifier of the assistant association.</p>
+    pub fn get_assistant_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assistant_association_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the assistant association.</p>
     pub fn assistant_association_arn(
         mut self,
@@ -121,6 +125,10 @@ impl AssistantAssociationSummaryBuilder {
         self.assistant_association_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the assistant association.</p>
+    pub fn get_assistant_association_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assistant_association_arn
+    }
     /// <p>The identifier of the Wisdom assistant.</p>
     pub fn assistant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.assistant_id = ::std::option::Option::Some(input.into());
@@ -130,6 +138,10 @@ impl AssistantAssociationSummaryBuilder {
     pub fn set_assistant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assistant_id = input;
         self
+    }
+    /// <p>The identifier of the Wisdom assistant.</p>
+    pub fn get_assistant_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assistant_id
     }
     /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
     pub fn assistant_arn(
@@ -147,6 +159,10 @@ impl AssistantAssociationSummaryBuilder {
         self.assistant_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
+    pub fn get_assistant_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.assistant_arn
+    }
     /// <p>The type of association.</p>
     pub fn association_type(mut self, input: crate::types::AssociationType) -> Self {
         self.association_type = ::std::option::Option::Some(input);
@@ -160,6 +176,10 @@ impl AssistantAssociationSummaryBuilder {
         self.association_type = input;
         self
     }
+    /// <p>The type of association.</p>
+    pub fn get_association_type(&self) -> &::std::option::Option<crate::types::AssociationType> {
+        &self.association_type
+    }
     /// <p>The association data.</p>
     pub fn association_data(mut self, input: crate::types::AssistantAssociationOutputData) -> Self {
         self.association_data = ::std::option::Option::Some(input);
@@ -172,6 +192,12 @@ impl AssistantAssociationSummaryBuilder {
     ) -> Self {
         self.association_data = input;
         self
+    }
+    /// <p>The association data.</p>
+    pub fn get_association_data(
+        &self,
+    ) -> &::std::option::Option<crate::types::AssistantAssociationOutputData> {
+        &self.association_data
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -197,6 +223,14 @@ impl AssistantAssociationSummaryBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`AssistantAssociationSummary`](crate::types::AssistantAssociationSummary).
     pub fn build(self) -> crate::types::AssistantAssociationSummary {

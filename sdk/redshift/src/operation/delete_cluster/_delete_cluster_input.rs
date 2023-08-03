@@ -120,6 +120,17 @@ impl DeleteClusterInputBuilder {
         self.cluster_identifier = input;
         self
     }
+    /// <p>The identifier of the cluster to be deleted.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain lowercase characters.</p> </li>
+    /// <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// </ul>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_identifier
+    }
     /// <p>Determines whether a final snapshot of the cluster is created before Amazon Redshift deletes the cluster. If <code>true</code>, a final cluster snapshot is not created. If <code>false</code>, a final cluster snapshot is created before the cluster is deleted. </p> <note>
     /// <p>The <i>FinalClusterSnapshotIdentifier</i> parameter must be specified if <i>SkipFinalClusterSnapshot</i> is <code>false</code>.</p>
     /// </note>
@@ -135,6 +146,13 @@ impl DeleteClusterInputBuilder {
     pub fn set_skip_final_cluster_snapshot(mut self, input: ::std::option::Option<bool>) -> Self {
         self.skip_final_cluster_snapshot = input;
         self
+    }
+    /// <p>Determines whether a final snapshot of the cluster is created before Amazon Redshift deletes the cluster. If <code>true</code>, a final cluster snapshot is not created. If <code>false</code>, a final cluster snapshot is created before the cluster is deleted. </p> <note>
+    /// <p>The <i>FinalClusterSnapshotIdentifier</i> parameter must be specified if <i>SkipFinalClusterSnapshot</i> is <code>false</code>.</p>
+    /// </note>
+    /// <p>Default: <code>false</code> </p>
+    pub fn get_skip_final_cluster_snapshot(&self) -> &::std::option::Option<bool> {
+        &self.skip_final_cluster_snapshot
     }
     /// <p>The identifier of the final snapshot that is to be created immediately before deleting the cluster. If this parameter is provided, <i>SkipFinalClusterSnapshot</i> must be <code>false</code>. </p>
     /// <p>Constraints:</p>
@@ -164,6 +182,18 @@ impl DeleteClusterInputBuilder {
         self.final_cluster_snapshot_identifier = input;
         self
     }
+    /// <p>The identifier of the final snapshot that is to be created immediately before deleting the cluster. If this parameter is provided, <i>SkipFinalClusterSnapshot</i> must be <code>false</code>. </p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be 1 to 255 alphanumeric characters.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// </ul>
+    pub fn get_final_cluster_snapshot_identifier(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.final_cluster_snapshot_identifier
+    }
     /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.</p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     /// <p>The default value is -1.</p>
@@ -180,6 +210,12 @@ impl DeleteClusterInputBuilder {
     ) -> Self {
         self.final_cluster_snapshot_retention_period = input;
         self
+    }
+    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.</p>
+    /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
+    /// <p>The default value is -1.</p>
+    pub fn get_final_cluster_snapshot_retention_period(&self) -> &::std::option::Option<i32> {
+        &self.final_cluster_snapshot_retention_period
     }
     /// Consumes the builder and constructs a [`DeleteClusterInput`](crate::operation::delete_cluster::DeleteClusterInput).
     pub fn build(

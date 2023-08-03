@@ -178,6 +178,10 @@ impl GetDeploymentOutputBuilder {
         self.target_arn = input;
         self
     }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
+    pub fn get_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_arn
+    }
     /// <p>The revision number of the deployment.</p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
@@ -187,6 +191,10 @@ impl GetDeploymentOutputBuilder {
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision_id = input;
         self
+    }
+    /// <p>The revision number of the deployment.</p>
+    pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision_id
     }
     /// <p>The ID of the deployment.</p>
     pub fn deployment_id(
@@ -204,6 +212,10 @@ impl GetDeploymentOutputBuilder {
         self.deployment_id = input;
         self
     }
+    /// <p>The ID of the deployment.</p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_id
+    }
     /// <p>The name of the deployment.</p>
     pub fn deployment_name(
         mut self,
@@ -220,6 +232,10 @@ impl GetDeploymentOutputBuilder {
         self.deployment_name = input;
         self
     }
+    /// <p>The name of the deployment.</p>
+    pub fn get_deployment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_name
+    }
     /// <p>The status of the deployment.</p>
     pub fn deployment_status(mut self, input: crate::types::DeploymentStatus) -> Self {
         self.deployment_status = ::std::option::Option::Some(input);
@@ -233,6 +249,10 @@ impl GetDeploymentOutputBuilder {
         self.deployment_status = input;
         self
     }
+    /// <p>The status of the deployment.</p>
+    pub fn get_deployment_status(&self) -> &::std::option::Option<crate::types::DeploymentStatus> {
+        &self.deployment_status
+    }
     /// <p>The ID of the IoT job that applies the deployment to target devices.</p>
     pub fn iot_job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iot_job_id = ::std::option::Option::Some(input.into());
@@ -243,6 +263,10 @@ impl GetDeploymentOutputBuilder {
         self.iot_job_id = input;
         self
     }
+    /// <p>The ID of the IoT job that applies the deployment to target devices.</p>
+    pub fn get_iot_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iot_job_id
+    }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT job that applies the deployment to target devices.</p>
     pub fn iot_job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iot_job_arn = ::std::option::Option::Some(input.into());
@@ -252,6 +276,10 @@ impl GetDeploymentOutputBuilder {
     pub fn set_iot_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iot_job_arn = input;
         self
+    }
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT job that applies the deployment to target devices.</p>
+    pub fn get_iot_job_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iot_job_arn
     }
     /// Adds a key-value pair to `components`.
     ///
@@ -281,6 +309,17 @@ impl GetDeploymentOutputBuilder {
         self.components = input;
         self
     }
+    /// <p>The components to deploy. This is a dictionary, where each key is the name of a component, and each key's value is the version and configuration to deploy for that component.</p>
+    pub fn get_components(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::ComponentDeploymentSpecification,
+        >,
+    > {
+        &self.components
+    }
     /// <p>The deployment policies for the deployment. These policies define how the deployment updates components and handles failure.</p>
     pub fn deployment_policies(mut self, input: crate::types::DeploymentPolicies) -> Self {
         self.deployment_policies = ::std::option::Option::Some(input);
@@ -293,6 +332,12 @@ impl GetDeploymentOutputBuilder {
     ) -> Self {
         self.deployment_policies = input;
         self
+    }
+    /// <p>The deployment policies for the deployment. These policies define how the deployment updates components and handles failure.</p>
+    pub fn get_deployment_policies(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeploymentPolicies> {
+        &self.deployment_policies
     }
     /// <p>The job configuration for the deployment configuration. The job configuration specifies the rollout, timeout, and stop configurations for the deployment configuration.</p>
     pub fn iot_job_configuration(
@@ -310,6 +355,12 @@ impl GetDeploymentOutputBuilder {
         self.iot_job_configuration = input;
         self
     }
+    /// <p>The job configuration for the deployment configuration. The job configuration specifies the rollout, timeout, and stop configurations for the deployment configuration.</p>
+    pub fn get_iot_job_configuration(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeploymentIoTJobConfiguration> {
+        &self.iot_job_configuration
+    }
     /// <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
     pub fn creation_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_timestamp = ::std::option::Option::Some(input);
@@ -323,6 +374,10 @@ impl GetDeploymentOutputBuilder {
         self.creation_timestamp = input;
         self
     }
+    /// <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
+    pub fn get_creation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_timestamp
+    }
     /// <p>Whether or not the deployment is the latest revision for its target.</p>
     pub fn is_latest_for_target(mut self, input: bool) -> Self {
         self.is_latest_for_target = ::std::option::Option::Some(input);
@@ -332,6 +387,10 @@ impl GetDeploymentOutputBuilder {
     pub fn set_is_latest_for_target(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_latest_for_target = input;
         self
+    }
+    /// <p>Whether or not the deployment is the latest revision for its target.</p>
+    pub fn get_is_latest_for_target(&self) -> &::std::option::Option<bool> {
+        &self.is_latest_for_target
     }
     /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
     pub fn parent_target_arn(
@@ -348,6 +407,10 @@ impl GetDeploymentOutputBuilder {
     ) -> Self {
         self.parent_target_arn = input;
         self
+    }
+    /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
+    pub fn get_parent_target_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parent_target_arn
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -373,6 +436,14 @@ impl GetDeploymentOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

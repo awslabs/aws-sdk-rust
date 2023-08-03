@@ -117,6 +117,12 @@ impl AwsIamUserDetailsBuilder {
         self.attached_managed_policies = input;
         self
     }
+    /// <p>A list of the managed policies that are attached to the user.</p>
+    pub fn get_attached_managed_policies(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsIamAttachedManagedPolicy>> {
+        &self.attached_managed_policies
+    }
     /// <p>Indicates when the user was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn create_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -128,6 +134,11 @@ impl AwsIamUserDetailsBuilder {
     pub fn set_create_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.create_date = input;
         self
+    }
+    /// <p>Indicates when the user was created.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub fn get_create_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.create_date
     }
     /// Appends an item to `group_list`.
     ///
@@ -148,6 +159,10 @@ impl AwsIamUserDetailsBuilder {
         self.group_list = input;
         self
     }
+    /// <p>A list of IAM groups that the user belongs to.</p>
+    pub fn get_group_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.group_list
+    }
     /// <p>The path to the user.</p>
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path = ::std::option::Option::Some(input.into());
@@ -157,6 +172,10 @@ impl AwsIamUserDetailsBuilder {
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path = input;
         self
+    }
+    /// <p>The path to the user.</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
     }
     /// <p>The permissions boundary for the user.</p>
     pub fn permissions_boundary(mut self, input: crate::types::AwsIamPermissionsBoundary) -> Self {
@@ -171,6 +190,12 @@ impl AwsIamUserDetailsBuilder {
         self.permissions_boundary = input;
         self
     }
+    /// <p>The permissions boundary for the user.</p>
+    pub fn get_permissions_boundary(
+        &self,
+    ) -> &::std::option::Option<crate::types::AwsIamPermissionsBoundary> {
+        &self.permissions_boundary
+    }
     /// <p>The unique identifier for the user.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
@@ -181,6 +206,10 @@ impl AwsIamUserDetailsBuilder {
         self.user_id = input;
         self
     }
+    /// <p>The unique identifier for the user.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
+    }
     /// <p>The name of the user.</p>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
@@ -190,6 +219,10 @@ impl AwsIamUserDetailsBuilder {
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_name = input;
         self
+    }
+    /// <p>The name of the user.</p>
+    pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_name
     }
     /// Appends an item to `user_policy_list`.
     ///
@@ -209,6 +242,12 @@ impl AwsIamUserDetailsBuilder {
     ) -> Self {
         self.user_policy_list = input;
         self
+    }
+    /// <p>The list of inline policies that are embedded in the user.</p>
+    pub fn get_user_policy_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsIamUserPolicy>> {
+        &self.user_policy_list
     }
     /// Consumes the builder and constructs a [`AwsIamUserDetails`](crate::types::AwsIamUserDetails).
     pub fn build(self) -> crate::types::AwsIamUserDetails {

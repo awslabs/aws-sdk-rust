@@ -75,6 +75,10 @@ impl SyncResourceSummaryBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The resource type.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::SyncResourceType> {
+        &self.resource_type
+    }
     /// <p>The external ID.</p>
     pub fn external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.external_id = ::std::option::Option::Some(input.into());
@@ -85,6 +89,10 @@ impl SyncResourceSummaryBuilder {
         self.external_id = input;
         self
     }
+    /// <p>The external ID.</p>
+    pub fn get_external_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.external_id
+    }
     /// <p>The resource ID.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -94,6 +102,10 @@ impl SyncResourceSummaryBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>The resource ID.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// <p>The sync resource summary status.</p>
     pub fn status(mut self, input: crate::types::SyncResourceStatus) -> Self {
@@ -108,6 +120,10 @@ impl SyncResourceSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The sync resource summary status.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::SyncResourceStatus> {
+        &self.status
+    }
     /// <p>The update date and time.</p>
     pub fn update_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_date_time = ::std::option::Option::Some(input);
@@ -120,6 +136,10 @@ impl SyncResourceSummaryBuilder {
     ) -> Self {
         self.update_date_time = input;
         self
+    }
+    /// <p>The update date and time.</p>
+    pub fn get_update_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_date_time
     }
     /// Consumes the builder and constructs a [`SyncResourceSummary`](crate::types::SyncResourceSummary).
     pub fn build(self) -> crate::types::SyncResourceSummary {

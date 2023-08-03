@@ -64,6 +64,10 @@ impl DataLakeExceptionBuilder {
         self.region = input;
         self
     }
+    /// <p>The Amazon Web Services Regions where the exception occurred.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
+    }
     /// <p>The underlying exception of a Security Lake exception.</p>
     pub fn exception(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.exception = ::std::option::Option::Some(input.into());
@@ -74,6 +78,10 @@ impl DataLakeExceptionBuilder {
         self.exception = input;
         self
     }
+    /// <p>The underlying exception of a Security Lake exception.</p>
+    pub fn get_exception(&self) -> &::std::option::Option<::std::string::String> {
+        &self.exception
+    }
     /// <p>List of all remediation steps for a Security Lake exception.</p>
     pub fn remediation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.remediation = ::std::option::Option::Some(input.into());
@@ -83,6 +91,10 @@ impl DataLakeExceptionBuilder {
     pub fn set_remediation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.remediation = input;
         self
+    }
+    /// <p>List of all remediation steps for a Security Lake exception.</p>
+    pub fn get_remediation(&self) -> &::std::option::Option<::std::string::String> {
+        &self.remediation
     }
     /// <p>This error can occur if you configure the wrong timestamp format, or if the subset of entries used for validation had errors or missing values.</p>
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -96,6 +108,10 @@ impl DataLakeExceptionBuilder {
     ) -> Self {
         self.timestamp = input;
         self
+    }
+    /// <p>This error can occur if you configure the wrong timestamp format, or if the subset of entries used for validation had errors or missing values.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.timestamp
     }
     /// Consumes the builder and constructs a [`DataLakeException`](crate::types::DataLakeException).
     pub fn build(self) -> crate::types::DataLakeException {

@@ -41,6 +41,12 @@ impl GetRuleGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetRuleGroup as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_rule_group::builders::GetRuleGroupInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,5 +134,9 @@ impl GetRuleGroupFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_rule_group_id(input);
         self
+    }
+    /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to get. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
+    pub fn get_rule_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rule_group_id()
     }
 }

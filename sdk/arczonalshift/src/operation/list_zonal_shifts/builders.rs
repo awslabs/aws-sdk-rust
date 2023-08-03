@@ -36,6 +36,12 @@ impl ListZonalShiftsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListZonalShifts as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_zonal_shifts::builders::ListZonalShiftsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl ListZonalShiftsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>A status for a zonal shift.</p>
     /// <p>The <code>Status</code> for a zonal shift can have one of the following values:</p>
     /// <ul>
@@ -162,6 +172,16 @@ impl ListZonalShiftsFluentBuilder {
         self.inner = self.inner.set_status(input);
         self
     }
+    /// <p>A status for a zonal shift.</p>
+    /// <p>The <code>Status</code> for a zonal shift can have one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <b>ACTIVE</b>: The zonal shift is started and active.</p> </li>
+    /// <li> <p> <b>EXPIRED</b>: The zonal shift has expired (the expiry time was exceeded).</p> </li>
+    /// <li> <p> <b>CANCELED</b>: The zonal shift was canceled.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ZonalShiftStatus> {
+        self.inner.get_status()
+    }
     /// <p>The number of objects that you want to return with this call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -171,5 +191,9 @@ impl ListZonalShiftsFluentBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
+    }
+    /// <p>The number of objects that you want to return with this call.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
     }
 }

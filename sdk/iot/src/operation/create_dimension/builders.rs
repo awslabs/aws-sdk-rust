@@ -37,6 +37,12 @@ impl CreateDimensionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDimension as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_dimension::builders::CreateDimensionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +133,10 @@ impl CreateDimensionFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>A unique identifier for the dimension. Choose something that describes the type and value to make it easy to remember what it does.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code> </p>
     pub fn r#type(mut self, input: crate::types::DimensionType) -> Self {
         self.inner = self.inner.r#type(input);
@@ -136,6 +146,10 @@ impl CreateDimensionFluentBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DimensionType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
+    }
+    /// <p>Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code> </p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::DimensionType> {
+        self.inner.get_type()
     }
     /// Appends an item to `stringValues`.
     ///
@@ -157,6 +171,12 @@ impl CreateDimensionFluentBuilder {
         self.inner = self.inner.set_string_values(input);
         self
     }
+    /// <p>Specifies the value or list of values for the dimension. For <code>TOPIC_FILTER</code> dimensions, this is a pattern used to match the MQTT topic (for example, "admin/#").</p>
+    pub fn get_string_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_string_values()
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -174,6 +194,10 @@ impl CreateDimensionFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
+    /// <p>Metadata that can be used to manage the dimension.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>Each dimension must have a unique client request token. If you try to create a new dimension with the same token as a dimension that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
     pub fn client_request_token(
         mut self,
@@ -189,5 +213,9 @@ impl CreateDimensionFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
+    }
+    /// <p>Each dimension must have a unique client request token. If you try to create a new dimension with the same token as a dimension that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
+    pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_request_token()
     }
 }

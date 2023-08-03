@@ -36,6 +36,10 @@ impl GetTestExecutionArtifactsUrlFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetTestExecutionArtifactsUrl as a reference.
+    pub fn as_input(&self) -> &crate::operation::get_test_execution_artifacts_url::builders::GetTestExecutionArtifactsUrlInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +135,9 @@ impl GetTestExecutionArtifactsUrlFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_test_execution_id(input);
         self
+    }
+    /// <p>The unique identifier of the completed test execution.</p>
+    pub fn get_test_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_test_execution_id()
     }
 }

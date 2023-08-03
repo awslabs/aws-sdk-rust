@@ -39,6 +39,13 @@ impl DetachPrincipalPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DetachPrincipalPolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::detach_principal_policy::builders::DetachPrincipalPolicyInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +136,10 @@ impl DetachPrincipalPolicyFluentBuilder {
         self.inner = self.inner.set_policy_name(input);
         self
     }
+    /// <p>The name of the policy to detach.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_name()
+    }
     /// <p>The principal.</p>
     /// <p>Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
     pub fn principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -140,5 +151,10 @@ impl DetachPrincipalPolicyFluentBuilder {
     pub fn set_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_principal(input);
         self
+    }
+    /// <p>The principal.</p>
+    /// <p>Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
+    pub fn get_principal(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_principal()
     }
 }

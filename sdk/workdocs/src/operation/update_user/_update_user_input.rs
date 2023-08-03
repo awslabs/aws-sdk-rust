@@ -127,6 +127,10 @@ impl UpdateUserInputBuilder {
         self.authentication_token = input;
         self
     }
+    /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    pub fn get_authentication_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authentication_token
+    }
     /// <p>The ID of the user.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
@@ -136,6 +140,10 @@ impl UpdateUserInputBuilder {
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
+    }
+    /// <p>The ID of the user.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
     }
     /// <p>The given name of the user.</p>
     pub fn given_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -147,6 +155,10 @@ impl UpdateUserInputBuilder {
         self.given_name = input;
         self
     }
+    /// <p>The given name of the user.</p>
+    pub fn get_given_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.given_name
+    }
     /// <p>The surname of the user.</p>
     pub fn surname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.surname = ::std::option::Option::Some(input.into());
@@ -157,6 +169,10 @@ impl UpdateUserInputBuilder {
         self.surname = input;
         self
     }
+    /// <p>The surname of the user.</p>
+    pub fn get_surname(&self) -> &::std::option::Option<::std::string::String> {
+        &self.surname
+    }
     /// <p>The type of the user.</p>
     pub fn r#type(mut self, input: crate::types::UserType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -166,6 +182,10 @@ impl UpdateUserInputBuilder {
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::UserType>) -> Self {
         self.r#type = input;
         self
+    }
+    /// <p>The type of the user.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::UserType> {
+        &self.r#type
     }
     /// <p>The amount of storage for the user.</p>
     pub fn storage_rule(mut self, input: crate::types::StorageRuleType) -> Self {
@@ -180,6 +200,10 @@ impl UpdateUserInputBuilder {
         self.storage_rule = input;
         self
     }
+    /// <p>The amount of storage for the user.</p>
+    pub fn get_storage_rule(&self) -> &::std::option::Option<crate::types::StorageRuleType> {
+        &self.storage_rule
+    }
     /// <p>The time zone ID of the user.</p>
     pub fn time_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.time_zone_id = ::std::option::Option::Some(input.into());
@@ -190,6 +214,10 @@ impl UpdateUserInputBuilder {
         self.time_zone_id = input;
         self
     }
+    /// <p>The time zone ID of the user.</p>
+    pub fn get_time_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.time_zone_id
+    }
     /// <p>The locale of the user.</p>
     pub fn locale(mut self, input: crate::types::LocaleType) -> Self {
         self.locale = ::std::option::Option::Some(input);
@@ -199,6 +227,10 @@ impl UpdateUserInputBuilder {
     pub fn set_locale(mut self, input: ::std::option::Option<crate::types::LocaleType>) -> Self {
         self.locale = input;
         self
+    }
+    /// <p>The locale of the user.</p>
+    pub fn get_locale(&self) -> &::std::option::Option<crate::types::LocaleType> {
+        &self.locale
     }
     /// <p>Boolean value to determine whether the user is granted Power user privileges.</p>
     pub fn grant_poweruser_privileges(mut self, input: crate::types::BooleanEnumType) -> Self {
@@ -212,6 +244,12 @@ impl UpdateUserInputBuilder {
     ) -> Self {
         self.grant_poweruser_privileges = input;
         self
+    }
+    /// <p>Boolean value to determine whether the user is granted Power user privileges.</p>
+    pub fn get_grant_poweruser_privileges(
+        &self,
+    ) -> &::std::option::Option<crate::types::BooleanEnumType> {
+        &self.grant_poweruser_privileges
     }
     /// Consumes the builder and constructs a [`UpdateUserInput`](crate::operation::update_user::UpdateUserInput).
     pub fn build(

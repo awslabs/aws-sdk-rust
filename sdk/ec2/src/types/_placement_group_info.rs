@@ -53,6 +53,12 @@ impl PlacementGroupInfoBuilder {
         self.supported_strategies = input;
         self
     }
+    /// <p>The supported placement group types.</p>
+    pub fn get_supported_strategies(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::PlacementGroupStrategy>> {
+        &self.supported_strategies
+    }
     /// Consumes the builder and constructs a [`PlacementGroupInfo`](crate::types::PlacementGroupInfo).
     pub fn build(self) -> crate::types::PlacementGroupInfo {
         crate::types::PlacementGroupInfo {

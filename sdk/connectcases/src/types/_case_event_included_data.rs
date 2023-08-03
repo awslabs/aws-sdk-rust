@@ -49,6 +49,12 @@ impl CaseEventIncludedDataBuilder {
         self.fields = input;
         self
     }
+    /// <p>List of field identifiers.</p>
+    pub fn get_fields(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>> {
+        &self.fields
+    }
     /// Consumes the builder and constructs a [`CaseEventIncludedData`](crate::types::CaseEventIncludedData).
     pub fn build(self) -> crate::types::CaseEventIncludedData {
         crate::types::CaseEventIncludedData {

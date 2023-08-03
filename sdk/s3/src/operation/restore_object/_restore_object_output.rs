@@ -64,6 +64,10 @@ impl RestoreObjectOutputBuilder {
         self.request_charged = input;
         self
     }
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
+    pub fn get_request_charged(&self) -> &::std::option::Option<crate::types::RequestCharged> {
+        &self.request_charged
+    }
     /// <p>Indicates the path in the provided S3 output location where Select results will be restored to.</p>
     pub fn restore_output_path(
         mut self,
@@ -79,6 +83,10 @@ impl RestoreObjectOutputBuilder {
     ) -> Self {
         self.restore_output_path = input;
         self
+    }
+    /// <p>Indicates the path in the provided S3 output location where Select results will be restored to.</p>
+    pub fn get_restore_output_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.restore_output_path
     }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
         self._extended_request_id = Some(extended_request_id.into());

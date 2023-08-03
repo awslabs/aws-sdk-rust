@@ -50,6 +50,10 @@ impl GetDeploymentOutputBuilder {
         self.deployment_info = input;
         self
     }
+    /// <p>Information about the deployment.</p>
+    pub fn get_deployment_info(&self) -> &::std::option::Option<crate::types::DeploymentInfo> {
+        &self.deployment_info
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

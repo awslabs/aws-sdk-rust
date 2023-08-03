@@ -131,6 +131,12 @@ impl UpdateStageInputBuilder {
         self.access_log_settings = input;
         self
     }
+    /// <p>Settings for logging access in this stage.</p>
+    pub fn get_access_log_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::AccessLogSettings> {
+        &self.access_log_settings
+    }
     /// <p>The API identifier.</p>
     pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_id = ::std::option::Option::Some(input.into());
@@ -141,6 +147,10 @@ impl UpdateStageInputBuilder {
         self.api_id = input;
         self
     }
+    /// <p>The API identifier.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_id
+    }
     /// <p>Specifies whether updates to an API automatically trigger a new deployment. The default value is false.</p>
     pub fn auto_deploy(mut self, input: bool) -> Self {
         self.auto_deploy = ::std::option::Option::Some(input);
@@ -150,6 +160,10 @@ impl UpdateStageInputBuilder {
     pub fn set_auto_deploy(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_deploy = input;
         self
+    }
+    /// <p>Specifies whether updates to an API automatically trigger a new deployment. The default value is false.</p>
+    pub fn get_auto_deploy(&self) -> &::std::option::Option<bool> {
+        &self.auto_deploy
     }
     /// <p>The identifier of a client certificate for a Stage.</p>
     pub fn client_certificate_id(
@@ -167,6 +181,10 @@ impl UpdateStageInputBuilder {
         self.client_certificate_id = input;
         self
     }
+    /// <p>The identifier of a client certificate for a Stage.</p>
+    pub fn get_client_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_certificate_id
+    }
     /// <p>The default route settings for the stage.</p>
     pub fn default_route_settings(mut self, input: crate::types::RouteSettings) -> Self {
         self.default_route_settings = ::std::option::Option::Some(input);
@@ -179,6 +197,12 @@ impl UpdateStageInputBuilder {
     ) -> Self {
         self.default_route_settings = input;
         self
+    }
+    /// <p>The default route settings for the stage.</p>
+    pub fn get_default_route_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::RouteSettings> {
+        &self.default_route_settings
     }
     /// <p>The deployment identifier for the API stage. Can't be updated if autoDeploy is enabled.</p>
     pub fn deployment_id(
@@ -196,6 +220,10 @@ impl UpdateStageInputBuilder {
         self.deployment_id = input;
         self
     }
+    /// <p>The deployment identifier for the API stage. Can't be updated if autoDeploy is enabled.</p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_id
+    }
     /// <p>The description for the API stage.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -205,6 +233,10 @@ impl UpdateStageInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description for the API stage.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// Adds a key-value pair to `route_settings`.
     ///
@@ -231,6 +263,14 @@ impl UpdateStageInputBuilder {
         self.route_settings = input;
         self
     }
+    /// <p>Route settings for the stage.</p>
+    pub fn get_route_settings(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::RouteSettings>,
+    > {
+        &self.route_settings
+    }
     /// <p>The stage name. Stage names can contain only alphanumeric characters, hyphens, and underscores, or be $default. Maximum length is 128 characters.</p>
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_name = ::std::option::Option::Some(input.into());
@@ -240,6 +280,10 @@ impl UpdateStageInputBuilder {
     pub fn set_stage_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stage_name = input;
         self
+    }
+    /// <p>The stage name. Stage names can contain only alphanumeric characters, hyphens, and underscores, or be $default. Maximum length is 128 characters.</p>
+    pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stage_name
     }
     /// Adds a key-value pair to `stage_variables`.
     ///
@@ -265,6 +309,14 @@ impl UpdateStageInputBuilder {
     ) -> Self {
         self.stage_variables = input;
         self
+    }
+    /// <p>A map that defines the stage variables for a Stage. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>
+    pub fn get_stage_variables(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.stage_variables
     }
     /// Consumes the builder and constructs a [`UpdateStageInput`](crate::operation::update_stage::UpdateStageInput).
     pub fn build(

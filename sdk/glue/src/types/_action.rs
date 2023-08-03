@@ -96,6 +96,10 @@ impl ActionBuilder {
         self.job_name = input;
         self
     }
+    /// <p>The name of a job to be run.</p>
+    pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_name
+    }
     /// Adds a key-value pair to `arguments`.
     ///
     /// To override the contents of this collection use [`set_arguments`](Self::set_arguments).
@@ -127,6 +131,17 @@ impl ActionBuilder {
         self.arguments = input;
         self
     }
+    /// <p>The job arguments used when this trigger fires. For this job run, they replace the default arguments set in the job definition itself.</p>
+    /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
+    /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
+    /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
+    pub fn get_arguments(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.arguments
+    }
     /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
     pub fn timeout(mut self, input: i32) -> Self {
         self.timeout = ::std::option::Option::Some(input);
@@ -136,6 +151,10 @@ impl ActionBuilder {
     pub fn set_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.timeout = input;
         self
+    }
+    /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
+    pub fn get_timeout(&self) -> &::std::option::Option<i32> {
+        &self.timeout
     }
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this action.</p>
     pub fn security_configuration(
@@ -153,6 +172,10 @@ impl ActionBuilder {
         self.security_configuration = input;
         self
     }
+    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this action.</p>
+    pub fn get_security_configuration(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_configuration
+    }
     /// <p>Specifies configuration properties of a job run notification.</p>
     pub fn notification_property(mut self, input: crate::types::NotificationProperty) -> Self {
         self.notification_property = ::std::option::Option::Some(input);
@@ -166,6 +189,12 @@ impl ActionBuilder {
         self.notification_property = input;
         self
     }
+    /// <p>Specifies configuration properties of a job run notification.</p>
+    pub fn get_notification_property(
+        &self,
+    ) -> &::std::option::Option<crate::types::NotificationProperty> {
+        &self.notification_property
+    }
     /// <p>The name of the crawler to be used with this action.</p>
     pub fn crawler_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.crawler_name = ::std::option::Option::Some(input.into());
@@ -175,6 +204,10 @@ impl ActionBuilder {
     pub fn set_crawler_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.crawler_name = input;
         self
+    }
+    /// <p>The name of the crawler to be used with this action.</p>
+    pub fn get_crawler_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.crawler_name
     }
     /// Consumes the builder and constructs a [`Action`](crate::types::Action).
     pub fn build(self) -> crate::types::Action {

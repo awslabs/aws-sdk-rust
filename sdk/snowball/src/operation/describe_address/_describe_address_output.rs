@@ -46,6 +46,10 @@ impl DescribeAddressOutputBuilder {
         self.address = input;
         self
     }
+    /// <p>The address that you want the Snow device(s) associated with a specific job to be shipped to.</p>
+    pub fn get_address(&self) -> &::std::option::Option<crate::types::Address> {
+        &self.address
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

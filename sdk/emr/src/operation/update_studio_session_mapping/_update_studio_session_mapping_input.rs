@@ -71,6 +71,10 @@ impl UpdateStudioSessionMappingInputBuilder {
         self.studio_id = input;
         self
     }
+    /// <p>The ID of the Amazon EMR Studio.</p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_id
+    }
     /// <p>The globally unique identifier (GUID) of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
     pub fn identity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_id = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl UpdateStudioSessionMappingInputBuilder {
     pub fn set_identity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_id = input;
         self
+    }
+    /// <p>The globally unique identifier (GUID) of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+    pub fn get_identity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_id
     }
     /// <p>The name of the user or group to update. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
     pub fn identity_name(
@@ -97,6 +105,10 @@ impl UpdateStudioSessionMappingInputBuilder {
         self.identity_name = input;
         self
     }
+    /// <p>The name of the user or group to update. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+    pub fn get_identity_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_name
+    }
     /// <p>Specifies whether the identity to update is a user or a group.</p>
     pub fn identity_type(mut self, input: crate::types::IdentityType) -> Self {
         self.identity_type = ::std::option::Option::Some(input);
@@ -109,6 +121,10 @@ impl UpdateStudioSessionMappingInputBuilder {
     ) -> Self {
         self.identity_type = input;
         self
+    }
+    /// <p>Specifies whether the identity to update is a user or a group.</p>
+    pub fn get_identity_type(&self) -> &::std::option::Option<crate::types::IdentityType> {
+        &self.identity_type
     }
     /// <p>The Amazon Resource Name (ARN) of the session policy to associate with the specified user or group.</p>
     pub fn session_policy_arn(
@@ -125,6 +141,10 @@ impl UpdateStudioSessionMappingInputBuilder {
     ) -> Self {
         self.session_policy_arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the session policy to associate with the specified user or group.</p>
+    pub fn get_session_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_policy_arn
     }
     /// Consumes the builder and constructs a [`UpdateStudioSessionMappingInput`](crate::operation::update_studio_session_mapping::UpdateStudioSessionMappingInput).
     pub fn build(

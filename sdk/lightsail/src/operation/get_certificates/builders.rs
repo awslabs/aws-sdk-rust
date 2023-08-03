@@ -38,6 +38,12 @@ impl GetCertificatesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetCertificates as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_certificates::builders::GetCertificatesInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -139,6 +145,14 @@ impl GetCertificatesFluentBuilder {
         self.inner = self.inner.set_certificate_statuses(input);
         self
     }
+    /// <p>The status of the certificates for which to return information.</p>
+    /// <p>For example, specify <code>ISSUED</code> to return only certificates with an <code>ISSUED</code> status.</p>
+    /// <p>When omitted, the response includes all of your certificates in the Amazon Web Services Region where the request is made, regardless of their current status.</p>
+    pub fn get_certificate_statuses(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CertificateStatus>> {
+        self.inner.get_certificate_statuses()
+    }
     /// <p>Indicates whether to include detailed information about the certificates in the response.</p>
     /// <p>When omitted, the response includes only the certificate names, Amazon Resource Names (ARNs), domain names, and tags.</p>
     pub fn include_certificate_details(mut self, input: bool) -> Self {
@@ -150,6 +164,11 @@ impl GetCertificatesFluentBuilder {
     pub fn set_include_certificate_details(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_certificate_details(input);
         self
+    }
+    /// <p>Indicates whether to include detailed information about the certificates in the response.</p>
+    /// <p>When omitted, the response includes only the certificate names, Amazon Resource Names (ARNs), domain names, and tags.</p>
+    pub fn get_include_certificate_details(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_certificate_details()
     }
     /// <p>The name for the certificate for which to return information.</p>
     /// <p>When omitted, the response includes all of your certificates in the Amazon Web Services Region where the request is made.</p>
@@ -169,6 +188,11 @@ impl GetCertificatesFluentBuilder {
         self.inner = self.inner.set_certificate_name(input);
         self
     }
+    /// <p>The name for the certificate for which to return information.</p>
+    /// <p>When omitted, the response includes all of your certificates in the Amazon Web Services Region where the request is made.</p>
+    pub fn get_certificate_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_certificate_name()
+    }
     /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetCertificates</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     pub fn page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -180,5 +204,10 @@ impl GetCertificatesFluentBuilder {
     pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_page_token(input);
         self
+    }
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>To get a page token, perform an initial <code>GetCertificates</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
+    pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_page_token()
     }
 }

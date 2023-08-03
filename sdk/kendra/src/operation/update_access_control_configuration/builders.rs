@@ -38,6 +38,10 @@ impl UpdateAccessControlConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateAccessControlConfiguration as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_access_control_configuration::builders::UpdateAccessControlConfigurationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -102,6 +106,10 @@ impl UpdateAccessControlConfigurationFluentBuilder {
         self.inner = self.inner.set_index_id(input);
         self
     }
+    /// <p>The identifier of the index for an access control configuration.</p>
+    pub fn get_index_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_index_id()
+    }
     /// <p>The identifier of the access control configuration you want to update.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
@@ -111,6 +119,10 @@ impl UpdateAccessControlConfigurationFluentBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
+    }
+    /// <p>The identifier of the access control configuration you want to update.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_id()
     }
     /// <p>A new name for the access control configuration.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -122,6 +134,10 @@ impl UpdateAccessControlConfigurationFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
+    /// <p>A new name for the access control configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
     /// <p>A new description for the access control configuration.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -131,6 +147,10 @@ impl UpdateAccessControlConfigurationFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A new description for the access control configuration.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `AccessControlList`.
     ///
@@ -148,6 +168,12 @@ impl UpdateAccessControlConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_access_control_list(input);
         self
+    }
+    /// <p>Information you want to update on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
+    pub fn get_access_control_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::Principal>> {
+        self.inner.get_access_control_list()
     }
     /// Appends an item to `HierarchicalAccessControlList`.
     ///
@@ -168,5 +194,11 @@ impl UpdateAccessControlConfigurationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_hierarchical_access_control_list(input);
         self
+    }
+    /// <p>The updated list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
+    pub fn get_hierarchical_access_control_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::HierarchicalPrincipal>> {
+        self.inner.get_hierarchical_access_control_list()
     }
 }

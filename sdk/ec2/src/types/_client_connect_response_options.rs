@@ -56,6 +56,10 @@ impl ClientConnectResponseOptionsBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Indicates whether client connect options are enabled.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function used for connection authorization.</p>
     pub fn lambda_function_arn(
         mut self,
@@ -72,6 +76,10 @@ impl ClientConnectResponseOptionsBuilder {
         self.lambda_function_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Lambda function used for connection authorization.</p>
+    pub fn get_lambda_function_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lambda_function_arn
+    }
     /// <p>The status of any updates to the client connect options.</p>
     pub fn status(mut self, input: crate::types::ClientVpnEndpointAttributeStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -84,6 +92,12 @@ impl ClientConnectResponseOptionsBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of any updates to the client connect options.</p>
+    pub fn get_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::ClientVpnEndpointAttributeStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`ClientConnectResponseOptions`](crate::types::ClientConnectResponseOptions).
     pub fn build(self) -> crate::types::ClientConnectResponseOptions {

@@ -36,6 +36,10 @@ impl BatchGetRumMetricDefinitionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchGetRumMetricDefinitions as a reference.
+    pub fn as_input(&self) -> &crate::operation::batch_get_rum_metric_definitions::builders::BatchGetRumMetricDefinitionsInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -138,6 +142,10 @@ impl BatchGetRumMetricDefinitionsFluentBuilder {
         self.inner = self.inner.set_app_monitor_name(input);
         self
     }
+    /// <p>The name of the CloudWatch RUM app monitor that is sending the metrics.</p>
+    pub fn get_app_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_app_monitor_name()
+    }
     /// <p>The type of destination that you want to view metrics for. Valid values are <code>CloudWatch</code> and <code>Evidently</code>.</p>
     pub fn destination(mut self, input: crate::types::MetricDestination) -> Self {
         self.inner = self.inner.destination(input);
@@ -150,6 +158,10 @@ impl BatchGetRumMetricDefinitionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_destination(input);
         self
+    }
+    /// <p>The type of destination that you want to view metrics for. Valid values are <code>CloudWatch</code> and <code>Evidently</code>.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<crate::types::MetricDestination> {
+        self.inner.get_destination()
     }
     /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p>
     /// <p>This parameter specifies the ARN of the Evidently experiment that corresponds to the destination.</p>
@@ -169,6 +181,11 @@ impl BatchGetRumMetricDefinitionsFluentBuilder {
         self.inner = self.inner.set_destination_arn(input);
         self
     }
+    /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p>
+    /// <p>This parameter specifies the ARN of the Evidently experiment that corresponds to the destination.</p>
+    pub fn get_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_destination_arn()
+    }
     /// <p>The maximum number of results to return in one operation. The default is 50. The maximum that you can specify is 100.</p>
     /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -181,6 +198,11 @@ impl BatchGetRumMetricDefinitionsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of results to return in one operation. The default is 50. The maximum that you can specify is 100.</p>
+    /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>Use the token returned by the previous operation to request the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -190,5 +212,9 @@ impl BatchGetRumMetricDefinitionsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>Use the token returned by the previous operation to request the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

@@ -84,6 +84,10 @@ impl UpdateBucketInputBuilder {
         self.bucket_name = input;
         self
     }
+    /// <p>The name of the bucket to update.</p>
+    pub fn get_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket_name
+    }
     /// <p>An object that sets the public accessibility of objects in the specified bucket.</p>
     pub fn access_rules(mut self, input: crate::types::AccessRules) -> Self {
         self.access_rules = ::std::option::Option::Some(input);
@@ -96,6 +100,10 @@ impl UpdateBucketInputBuilder {
     ) -> Self {
         self.access_rules = input;
         self
+    }
+    /// <p>An object that sets the public accessibility of objects in the specified bucket.</p>
+    pub fn get_access_rules(&self) -> &::std::option::Option<crate::types::AccessRules> {
+        &self.access_rules
     }
     /// <p>Specifies whether to enable or suspend versioning of objects in the bucket.</p>
     /// <p>The following options can be specified:</p>
@@ -116,6 +124,15 @@ impl UpdateBucketInputBuilder {
     pub fn set_versioning(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.versioning = input;
         self
+    }
+    /// <p>Specifies whether to enable or suspend versioning of objects in the bucket.</p>
+    /// <p>The following options can be specified:</p>
+    /// <ul>
+    /// <li> <p> <code>Enabled</code> - Enables versioning of objects in the specified bucket.</p> </li>
+    /// <li> <p> <code>Suspended</code> - Suspends versioning of objects in the specified bucket. Existing object versions are retained.</p> </li>
+    /// </ul>
+    pub fn get_versioning(&self) -> &::std::option::Option<::std::string::String> {
+        &self.versioning
     }
     /// Appends an item to `readonly_access_accounts`.
     ///
@@ -141,6 +158,13 @@ impl UpdateBucketInputBuilder {
         self.readonly_access_accounts = input;
         self
     }
+    /// <p>An array of strings to specify the Amazon Web Services account IDs that can access the bucket.</p>
+    /// <p>You can give a maximum of 10 Amazon Web Services accounts access to a bucket.</p>
+    pub fn get_readonly_access_accounts(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.readonly_access_accounts
+    }
     /// <p>An object that describes the access log configuration for the bucket.</p>
     pub fn access_log_config(mut self, input: crate::types::BucketAccessLogConfig) -> Self {
         self.access_log_config = ::std::option::Option::Some(input);
@@ -153,6 +177,12 @@ impl UpdateBucketInputBuilder {
     ) -> Self {
         self.access_log_config = input;
         self
+    }
+    /// <p>An object that describes the access log configuration for the bucket.</p>
+    pub fn get_access_log_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::BucketAccessLogConfig> {
+        &self.access_log_config
     }
     /// Consumes the builder and constructs a [`UpdateBucketInput`](crate::operation::update_bucket::UpdateBucketInput).
     pub fn build(

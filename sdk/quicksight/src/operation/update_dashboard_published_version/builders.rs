@@ -36,6 +36,10 @@ impl UpdateDashboardPublishedVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDashboardPublishedVersion as a reference.
+    pub fn as_input(&self) -> &crate::operation::update_dashboard_published_version::builders::UpdateDashboardPublishedVersionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -106,6 +110,10 @@ impl UpdateDashboardPublishedVersionFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're updating.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>The ID for the dashboard.</p>
     pub fn dashboard_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dashboard_id(input.into());
@@ -116,6 +124,10 @@ impl UpdateDashboardPublishedVersionFluentBuilder {
         self.inner = self.inner.set_dashboard_id(input);
         self
     }
+    /// <p>The ID for the dashboard.</p>
+    pub fn get_dashboard_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dashboard_id()
+    }
     /// <p>The version number of the dashboard.</p>
     pub fn version_number(mut self, input: i64) -> Self {
         self.inner = self.inner.version_number(input);
@@ -125,5 +137,9 @@ impl UpdateDashboardPublishedVersionFluentBuilder {
     pub fn set_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_version_number(input);
         self
+    }
+    /// <p>The version number of the dashboard.</p>
+    pub fn get_version_number(&self) -> &::std::option::Option<i64> {
+        self.inner.get_version_number()
     }
 }

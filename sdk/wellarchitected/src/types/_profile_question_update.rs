@@ -48,6 +48,10 @@ impl ProfileQuestionUpdateBuilder {
         self.question_id = input;
         self
     }
+    /// <p>The ID of the question.</p>
+    pub fn get_question_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.question_id
+    }
     /// Appends an item to `selected_choice_ids`.
     ///
     /// To override the contents of this collection use [`set_selected_choice_ids`](Self::set_selected_choice_ids).
@@ -69,6 +73,12 @@ impl ProfileQuestionUpdateBuilder {
     ) -> Self {
         self.selected_choice_ids = input;
         self
+    }
+    /// <p>The selected choices.</p>
+    pub fn get_selected_choice_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.selected_choice_ids
     }
     /// Consumes the builder and constructs a [`ProfileQuestionUpdate`](crate::types::ProfileQuestionUpdate).
     pub fn build(self) -> crate::types::ProfileQuestionUpdate {

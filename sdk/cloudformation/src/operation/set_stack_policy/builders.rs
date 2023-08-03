@@ -36,6 +36,12 @@ impl SetStackPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the SetStackPolicy as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::set_stack_policy::builders::SetStackPolicyInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl SetStackPolicyFluentBuilder {
         self.inner = self.inner.set_stack_name(input);
         self
     }
+    /// <p>The name or unique stack ID that you want to associate a policy with.</p>
+    pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stack_name()
+    }
     /// <p>Structure containing the stack policy body. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent updates to stack resources</a> in the CloudFormation User Guide. You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.</p>
     pub fn stack_policy_body(
         mut self,
@@ -142,6 +152,10 @@ impl SetStackPolicyFluentBuilder {
         self.inner = self.inner.set_stack_policy_body(input);
         self
     }
+    /// <p>Structure containing the stack policy body. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent updates to stack resources</a> in the CloudFormation User Guide. You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.</p>
+    pub fn get_stack_policy_body(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stack_policy_body()
+    }
     /// <p>Location of a file containing the stack policy. The URL must point to a policy (maximum size: 16 KB) located in an Amazon S3 bucket in the same Amazon Web Services Region as the stack. You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.</p>
     pub fn stack_policy_url(
         mut self,
@@ -157,5 +171,9 @@ impl SetStackPolicyFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_stack_policy_url(input);
         self
+    }
+    /// <p>Location of a file containing the stack policy. The URL must point to a policy (maximum size: 16 KB) located in an Amazon S3 bucket in the same Amazon Web Services Region as the stack. You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.</p>
+    pub fn get_stack_policy_url(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_stack_policy_url()
     }
 }

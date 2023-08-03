@@ -37,6 +37,13 @@ impl UpdateDefaultMailDomainFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateDefaultMailDomain as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_default_mail_domain::builders::UpdateDefaultMailDomainInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -133,6 +140,10 @@ impl UpdateDefaultMailDomainFluentBuilder {
         self.inner = self.inner.set_organization_id(input);
         self
     }
+    /// <p>The WorkMail organization for which to list domains.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organization_id()
+    }
     /// <p>The domain name that will become the default domain.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_name(input.into());
@@ -142,5 +153,9 @@ impl UpdateDefaultMailDomainFluentBuilder {
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_name(input);
         self
+    }
+    /// <p>The domain name that will become the default domain.</p>
+    pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_domain_name()
     }
 }

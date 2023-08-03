@@ -64,6 +64,10 @@ impl UsageBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type scan.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::UsageType> {
+        &self.r#type
+    }
     /// <p>The total of usage.</p>
     pub fn total(mut self, input: f64) -> Self {
         self.total = ::std::option::Option::Some(input);
@@ -73,6 +77,10 @@ impl UsageBuilder {
     pub fn set_total(mut self, input: ::std::option::Option<f64>) -> Self {
         self.total = input;
         self
+    }
+    /// <p>The total of usage.</p>
+    pub fn get_total(&self) -> &::std::option::Option<f64> {
+        &self.total
     }
     /// <p>The estimated monthly cost of Amazon Inspector.</p>
     pub fn estimated_monthly_cost(mut self, input: f64) -> Self {
@@ -84,6 +92,10 @@ impl UsageBuilder {
         self.estimated_monthly_cost = input;
         self
     }
+    /// <p>The estimated monthly cost of Amazon Inspector.</p>
+    pub fn get_estimated_monthly_cost(&self) -> &::std::option::Option<f64> {
+        &self.estimated_monthly_cost
+    }
     /// <p>The currency type used when calculating usage data.</p>
     pub fn currency(mut self, input: crate::types::Currency) -> Self {
         self.currency = ::std::option::Option::Some(input);
@@ -93,6 +105,10 @@ impl UsageBuilder {
     pub fn set_currency(mut self, input: ::std::option::Option<crate::types::Currency>) -> Self {
         self.currency = input;
         self
+    }
+    /// <p>The currency type used when calculating usage data.</p>
+    pub fn get_currency(&self) -> &::std::option::Option<crate::types::Currency> {
+        &self.currency
     }
     /// Consumes the builder and constructs a [`Usage`](crate::types::Usage).
     pub fn build(self) -> crate::types::Usage {

@@ -57,6 +57,12 @@ impl FunnelChartAggregatedFieldWellsBuilder {
         self.category = input;
         self
     }
+    /// <p>The category field wells of a funnel chart. Values are grouped by category fields.</p>
+    pub fn get_category(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionField>> {
+        &self.category
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -75,6 +81,12 @@ impl FunnelChartAggregatedFieldWellsBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>The value field wells of a funnel chart. Values are aggregated based on categories.</p>
+    pub fn get_values(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::MeasureField>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`FunnelChartAggregatedFieldWells`](crate::types::FunnelChartAggregatedFieldWells).
     pub fn build(self) -> crate::types::FunnelChartAggregatedFieldWells {

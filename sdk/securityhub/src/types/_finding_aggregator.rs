@@ -46,6 +46,10 @@ impl FindingAggregatorBuilder {
         self.finding_aggregator_arn = input;
         self
     }
+    /// <p>The ARN of the finding aggregator. You use the finding aggregator ARN to retrieve details for, update, and delete the finding aggregator.</p>
+    pub fn get_finding_aggregator_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.finding_aggregator_arn
+    }
     /// Consumes the builder and constructs a [`FindingAggregator`](crate::types::FindingAggregator).
     pub fn build(self) -> crate::types::FindingAggregator {
         crate::types::FindingAggregator {

@@ -40,6 +40,10 @@ impl WisdomInfoBuilder {
         self.session_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Wisdom session.</p>
+    pub fn get_session_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_arn
+    }
     /// Consumes the builder and constructs a [`WisdomInfo`](crate::types::WisdomInfo).
     pub fn build(self) -> crate::types::WisdomInfo {
         crate::types::WisdomInfo {

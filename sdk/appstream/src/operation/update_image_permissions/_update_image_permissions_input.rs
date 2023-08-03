@@ -57,6 +57,10 @@ impl UpdateImagePermissionsInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the private image.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The 12-digit identifier of the AWS account for which you want add or update image permissions.</p>
     pub fn shared_account_id(
         mut self,
@@ -73,6 +77,10 @@ impl UpdateImagePermissionsInputBuilder {
         self.shared_account_id = input;
         self
     }
+    /// <p>The 12-digit identifier of the AWS account for which you want add or update image permissions.</p>
+    pub fn get_shared_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.shared_account_id
+    }
     /// <p>The permissions for the image.</p>
     pub fn image_permissions(mut self, input: crate::types::ImagePermissions) -> Self {
         self.image_permissions = ::std::option::Option::Some(input);
@@ -85,6 +93,10 @@ impl UpdateImagePermissionsInputBuilder {
     ) -> Self {
         self.image_permissions = input;
         self
+    }
+    /// <p>The permissions for the image.</p>
+    pub fn get_image_permissions(&self) -> &::std::option::Option<crate::types::ImagePermissions> {
+        &self.image_permissions
     }
     /// Consumes the builder and constructs a [`UpdateImagePermissionsInput`](crate::operation::update_image_permissions::UpdateImagePermissionsInput).
     pub fn build(

@@ -54,6 +54,10 @@ impl ImportJobSubmitterBuilder {
         self.email = input;
         self
     }
+    /// <p>The email id of the submitter of the import job, if available.</p>
+    pub fn get_email(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email
+    }
     /// <p>The AWS user ARN of the submitter of the import job, if available.</p>
     pub fn user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_arn = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl ImportJobSubmitterBuilder {
     pub fn set_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_arn = input;
         self
+    }
+    /// <p>The AWS user ARN of the submitter of the import job, if available.</p>
+    pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_arn
     }
     /// Consumes the builder and constructs a [`ImportJobSubmitter`](crate::types::ImportJobSubmitter).
     pub fn build(self) -> crate::types::ImportJobSubmitter {

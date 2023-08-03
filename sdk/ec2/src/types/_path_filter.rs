@@ -70,6 +70,10 @@ impl PathFilterBuilder {
         self.source_address = input;
         self
     }
+    /// <p>The source IPv4 address.</p>
+    pub fn get_source_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_address
+    }
     /// <p>The source port range.</p>
     pub fn source_port_range(mut self, input: crate::types::FilterPortRange) -> Self {
         self.source_port_range = ::std::option::Option::Some(input);
@@ -82,6 +86,10 @@ impl PathFilterBuilder {
     ) -> Self {
         self.source_port_range = input;
         self
+    }
+    /// <p>The source port range.</p>
+    pub fn get_source_port_range(&self) -> &::std::option::Option<crate::types::FilterPortRange> {
+        &self.source_port_range
     }
     /// <p>The destination IPv4 address.</p>
     pub fn destination_address(
@@ -99,6 +107,10 @@ impl PathFilterBuilder {
         self.destination_address = input;
         self
     }
+    /// <p>The destination IPv4 address.</p>
+    pub fn get_destination_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_address
+    }
     /// <p>The destination port range.</p>
     pub fn destination_port_range(mut self, input: crate::types::FilterPortRange) -> Self {
         self.destination_port_range = ::std::option::Option::Some(input);
@@ -111,6 +123,12 @@ impl PathFilterBuilder {
     ) -> Self {
         self.destination_port_range = input;
         self
+    }
+    /// <p>The destination port range.</p>
+    pub fn get_destination_port_range(
+        &self,
+    ) -> &::std::option::Option<crate::types::FilterPortRange> {
+        &self.destination_port_range
     }
     /// Consumes the builder and constructs a [`PathFilter`](crate::types::PathFilter).
     pub fn build(self) -> crate::types::PathFilter {

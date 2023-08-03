@@ -46,6 +46,11 @@ impl DescribeEventCategoriesInputBuilder {
         self.source_type = input;
         self
     }
+    /// <p>The source type, such as cluster or parameter group, to which the described event categories apply.</p>
+    /// <p>Valid values: cluster, cluster-snapshot, cluster-parameter-group, cluster-security-group, and scheduled-action.</p>
+    pub fn get_source_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_type
+    }
     /// Consumes the builder and constructs a [`DescribeEventCategoriesInput`](crate::operation::describe_event_categories::DescribeEventCategoriesInput).
     pub fn build(
         self,

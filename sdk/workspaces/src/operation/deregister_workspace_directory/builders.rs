@@ -39,6 +39,10 @@ impl DeregisterWorkspaceDirectoryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeregisterWorkspaceDirectory as a reference.
+    pub fn as_input(&self) -> &crate::operation::deregister_workspace_directory::builders::DeregisterWorkspaceDirectoryInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -128,5 +132,9 @@ impl DeregisterWorkspaceDirectoryFluentBuilder {
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_directory_id(input);
         self
+    }
+    /// <p>The identifier of the directory. If any WorkSpaces are registered to this directory, you must remove them before you deregister the directory, or you will receive an OperationNotSupportedException error.</p>
+    pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_directory_id()
     }
 }

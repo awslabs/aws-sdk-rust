@@ -59,6 +59,10 @@ impl HoursOfOperationConfigBuilder {
         self.day = input;
         self
     }
+    /// <p>The day that the hours of operation applies to.</p>
+    pub fn get_day(&self) -> &::std::option::Option<crate::types::HoursOfOperationDays> {
+        &self.day
+    }
     /// <p>The start time that your contact center opens.</p>
     pub fn start_time(mut self, input: crate::types::HoursOfOperationTimeSlice) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -72,6 +76,12 @@ impl HoursOfOperationConfigBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The start time that your contact center opens.</p>
+    pub fn get_start_time(
+        &self,
+    ) -> &::std::option::Option<crate::types::HoursOfOperationTimeSlice> {
+        &self.start_time
+    }
     /// <p>The end time that your contact center closes.</p>
     pub fn end_time(mut self, input: crate::types::HoursOfOperationTimeSlice) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -84,6 +94,10 @@ impl HoursOfOperationConfigBuilder {
     ) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>The end time that your contact center closes.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<crate::types::HoursOfOperationTimeSlice> {
+        &self.end_time
     }
     /// Consumes the builder and constructs a [`HoursOfOperationConfig`](crate::types::HoursOfOperationConfig).
     pub fn build(self) -> crate::types::HoursOfOperationConfig {

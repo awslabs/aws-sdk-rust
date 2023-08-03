@@ -146,6 +146,10 @@ impl CachediScsiVolumeBuilder {
         self.volume_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the storage volume.</p>
+    pub fn get_volume_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_arn
+    }
     /// <p>The unique identifier of the volume, e.g., vol-AE4B946D.</p>
     pub fn volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_id = ::std::option::Option::Some(input.into());
@@ -156,6 +160,10 @@ impl CachediScsiVolumeBuilder {
         self.volume_id = input;
         self
     }
+    /// <p>The unique identifier of the volume, e.g., vol-AE4B946D.</p>
+    pub fn get_volume_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_id
+    }
     /// <p>One of the VolumeType enumeration values that describes the type of the volume.</p>
     pub fn volume_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.volume_type = ::std::option::Option::Some(input.into());
@@ -165,6 +173,10 @@ impl CachediScsiVolumeBuilder {
     pub fn set_volume_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_type = input;
         self
+    }
+    /// <p>One of the VolumeType enumeration values that describes the type of the volume.</p>
+    pub fn get_volume_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_type
     }
     /// <p>One of the VolumeStatus values that indicates the state of the storage volume.</p>
     pub fn volume_status(
@@ -182,6 +194,10 @@ impl CachediScsiVolumeBuilder {
         self.volume_status = input;
         self
     }
+    /// <p>One of the VolumeStatus values that indicates the state of the storage volume.</p>
+    pub fn get_volume_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_status
+    }
     /// <p>A value that indicates whether a storage volume is attached to or detached from a gateway. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume">Moving your volumes to a different gateway</a>.</p>
     pub fn volume_attachment_status(
         mut self,
@@ -198,6 +214,10 @@ impl CachediScsiVolumeBuilder {
         self.volume_attachment_status = input;
         self
     }
+    /// <p>A value that indicates whether a storage volume is attached to or detached from a gateway. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume">Moving your volumes to a different gateway</a>.</p>
+    pub fn get_volume_attachment_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_attachment_status
+    }
     /// <p>The size, in bytes, of the volume capacity.</p>
     pub fn volume_size_in_bytes(mut self, input: i64) -> Self {
         self.volume_size_in_bytes = ::std::option::Option::Some(input);
@@ -208,6 +228,10 @@ impl CachediScsiVolumeBuilder {
         self.volume_size_in_bytes = input;
         self
     }
+    /// <p>The size, in bytes, of the volume capacity.</p>
+    pub fn get_volume_size_in_bytes(&self) -> &::std::option::Option<i64> {
+        &self.volume_size_in_bytes
+    }
     /// <p>Represents the percentage complete if the volume is restoring or bootstrapping that represents the percent of data transferred. This field does not appear in the response if the cached volume is not restoring or bootstrapping.</p>
     pub fn volume_progress(mut self, input: f64) -> Self {
         self.volume_progress = ::std::option::Option::Some(input);
@@ -217,6 +241,10 @@ impl CachediScsiVolumeBuilder {
     pub fn set_volume_progress(mut self, input: ::std::option::Option<f64>) -> Self {
         self.volume_progress = input;
         self
+    }
+    /// <p>Represents the percentage complete if the volume is restoring or bootstrapping that represents the percent of data transferred. This field does not appear in the response if the cached volume is not restoring or bootstrapping.</p>
+    pub fn get_volume_progress(&self) -> &::std::option::Option<f64> {
+        &self.volume_progress
     }
     /// <p>If the cached volume was created from a snapshot, this field contains the snapshot ID used, e.g., snap-78e22663. Otherwise, this field is not included.</p>
     pub fn source_snapshot_id(
@@ -234,6 +262,10 @@ impl CachediScsiVolumeBuilder {
         self.source_snapshot_id = input;
         self
     }
+    /// <p>If the cached volume was created from a snapshot, this field contains the snapshot ID used, e.g., snap-78e22663. Otherwise, this field is not included.</p>
+    pub fn get_source_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_snapshot_id
+    }
     /// <p>An <code>VolumeiSCSIAttributes</code> object that represents a collection of iSCSI attributes for one stored volume.</p>
     pub fn volumei_scsi_attributes(mut self, input: crate::types::VolumeiScsiAttributes) -> Self {
         self.volumei_scsi_attributes = ::std::option::Option::Some(input);
@@ -247,6 +279,12 @@ impl CachediScsiVolumeBuilder {
         self.volumei_scsi_attributes = input;
         self
     }
+    /// <p>An <code>VolumeiSCSIAttributes</code> object that represents a collection of iSCSI attributes for one stored volume.</p>
+    pub fn get_volumei_scsi_attributes(
+        &self,
+    ) -> &::std::option::Option<crate::types::VolumeiScsiAttributes> {
+        &self.volumei_scsi_attributes
+    }
     /// <p>The date the volume was created. Volumes created prior to March 28, 2017 don’t have this timestamp.</p>
     pub fn created_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_date = ::std::option::Option::Some(input);
@@ -259,6 +297,10 @@ impl CachediScsiVolumeBuilder {
     ) -> Self {
         self.created_date = input;
         self
+    }
+    /// <p>The date the volume was created. Volumes created prior to March 28, 2017 don’t have this timestamp.</p>
+    pub fn get_created_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_date
     }
     /// <p>The size of the data stored on the volume in bytes. This value is calculated based on the number of blocks that are touched, instead of the actual amount of data written. This value can be useful for sequential write patterns but less accurate for random write patterns. <code>VolumeUsedInBytes</code> is different from the compressed size of the volume, which is the value that is used to calculate your bill.</p> <note>
     /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p>
@@ -276,6 +318,13 @@ impl CachediScsiVolumeBuilder {
         self.volume_used_in_bytes = input;
         self
     }
+    /// <p>The size of the data stored on the volume in bytes. This value is calculated based on the number of blocks that are touched, instead of the actual amount of data written. This value can be useful for sequential write patterns but less accurate for random write patterns. <code>VolumeUsedInBytes</code> is different from the compressed size of the volume, which is the value that is used to calculate your bill.</p> <note>
+    /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p>
+    /// <p>If you use a delete tool that overwrites the data on your volume with random data, your usage will not be reduced. This is because the random data is not compressible. If you want to reduce the amount of billed storage on your volume, we recommend overwriting your files with zeros to compress the data to a negligible amount of actual storage.</p>
+    /// </note>
+    pub fn get_volume_used_in_bytes(&self) -> &::std::option::Option<i64> {
+        &self.volume_used_in_bytes
+    }
     /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
     pub fn kms_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key = ::std::option::Option::Some(input.into());
@@ -285,6 +334,10 @@ impl CachediScsiVolumeBuilder {
     pub fn set_kms_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
+    pub fn get_kms_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key
     }
     /// <p>The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>. The target name must be unique across all volumes on a gateway.</p>
     /// <p>If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as the new target name.</p>
@@ -297,6 +350,11 @@ impl CachediScsiVolumeBuilder {
     pub fn set_target_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_name = input;
         self
+    }
+    /// <p>The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>. The target name must be unique across all volumes on a gateway.</p>
+    /// <p>If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as the new target name.</p>
+    pub fn get_target_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_name
     }
     /// Consumes the builder and constructs a [`CachediScsiVolume`](crate::types::CachediScsiVolume).
     pub fn build(self) -> crate::types::CachediScsiVolume {

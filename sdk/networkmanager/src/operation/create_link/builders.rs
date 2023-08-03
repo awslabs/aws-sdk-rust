@@ -36,6 +36,10 @@ impl CreateLinkFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateLink as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_link::builders::CreateLinkInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -124,6 +128,10 @@ impl CreateLinkFluentBuilder {
         self.inner = self.inner.set_global_network_id(input);
         self
     }
+    /// <p>The ID of the global network.</p>
+    pub fn get_global_network_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_global_network_id()
+    }
     /// <p>A description of the link.</p>
     /// <p>Constraints: Maximum length of 256 characters.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -135,6 +143,11 @@ impl CreateLinkFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A description of the link.</p>
+    /// <p>Constraints: Maximum length of 256 characters.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// <p>The type of the link.</p>
     /// <p>Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^</p>
@@ -148,6 +161,11 @@ impl CreateLinkFluentBuilder {
         self.inner = self.inner.set_type(input);
         self
     }
+    /// <p>The type of the link.</p>
+    /// <p>Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^</p>
+    pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_type()
+    }
     /// <p> The upload speed and download speed in Mbps. </p>
     pub fn bandwidth(mut self, input: crate::types::Bandwidth) -> Self {
         self.inner = self.inner.bandwidth(input);
@@ -157,6 +175,10 @@ impl CreateLinkFluentBuilder {
     pub fn set_bandwidth(mut self, input: ::std::option::Option<crate::types::Bandwidth>) -> Self {
         self.inner = self.inner.set_bandwidth(input);
         self
+    }
+    /// <p> The upload speed and download speed in Mbps. </p>
+    pub fn get_bandwidth(&self) -> &::std::option::Option<crate::types::Bandwidth> {
+        self.inner.get_bandwidth()
     }
     /// <p>The provider of the link.</p>
     /// <p>Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^</p>
@@ -170,6 +192,11 @@ impl CreateLinkFluentBuilder {
         self.inner = self.inner.set_provider(input);
         self
     }
+    /// <p>The provider of the link.</p>
+    /// <p>Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^</p>
+    pub fn get_provider(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_provider()
+    }
     /// <p>The ID of the site.</p>
     pub fn site_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.site_id(input.into());
@@ -179,6 +206,10 @@ impl CreateLinkFluentBuilder {
     pub fn set_site_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_site_id(input);
         self
+    }
+    /// <p>The ID of the site.</p>
+    pub fn get_site_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_site_id()
     }
     /// Appends an item to `Tags`.
     ///
@@ -196,5 +227,9 @@ impl CreateLinkFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>The tags to apply to the resource during creation.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

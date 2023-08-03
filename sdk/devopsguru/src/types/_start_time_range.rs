@@ -51,6 +51,10 @@ impl StartTimeRangeBuilder {
         self.from_time = input;
         self
     }
+    /// <p> The start time of the time range. </p>
+    pub fn get_from_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.from_time
+    }
     /// <p> The end time of the time range. </p>
     pub fn to_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.to_time = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl StartTimeRangeBuilder {
     ) -> Self {
         self.to_time = input;
         self
+    }
+    /// <p> The end time of the time range. </p>
+    pub fn get_to_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.to_time
     }
     /// Consumes the builder and constructs a [`StartTimeRange`](crate::types::StartTimeRange).
     pub fn build(self) -> crate::types::StartTimeRange {

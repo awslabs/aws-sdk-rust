@@ -105,6 +105,10 @@ impl CreateQueueInputBuilder {
         self.instance_id = input;
         self
     }
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
     /// <p>The name of the queue.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -115,6 +119,10 @@ impl CreateQueueInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the queue.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description of the queue.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -124,6 +132,10 @@ impl CreateQueueInputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description of the queue.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The outbound caller ID name, number, and outbound whisper flow.</p>
     pub fn outbound_caller_config(mut self, input: crate::types::OutboundCallerConfig) -> Self {
@@ -137,6 +149,12 @@ impl CreateQueueInputBuilder {
     ) -> Self {
         self.outbound_caller_config = input;
         self
+    }
+    /// <p>The outbound caller ID name, number, and outbound whisper flow.</p>
+    pub fn get_outbound_caller_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::OutboundCallerConfig> {
+        &self.outbound_caller_config
     }
     /// <p>The identifier for the hours of operation.</p>
     pub fn hours_of_operation_id(
@@ -154,6 +172,10 @@ impl CreateQueueInputBuilder {
         self.hours_of_operation_id = input;
         self
     }
+    /// <p>The identifier for the hours of operation.</p>
+    pub fn get_hours_of_operation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hours_of_operation_id
+    }
     /// <p>The maximum number of contacts that can be in the queue before it is considered full.</p>
     pub fn max_contacts(mut self, input: i32) -> Self {
         self.max_contacts = ::std::option::Option::Some(input);
@@ -163,6 +185,10 @@ impl CreateQueueInputBuilder {
     pub fn set_max_contacts(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_contacts = input;
         self
+    }
+    /// <p>The maximum number of contacts that can be in the queue before it is considered full.</p>
+    pub fn get_max_contacts(&self) -> &::std::option::Option<i32> {
+        &self.max_contacts
     }
     /// Appends an item to `quick_connect_ids`.
     ///
@@ -185,6 +211,12 @@ impl CreateQueueInputBuilder {
     ) -> Self {
         self.quick_connect_ids = input;
         self
+    }
+    /// <p>The quick connects available to agents who are working the queue.</p>
+    pub fn get_quick_connect_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.quick_connect_ids
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -210,6 +242,14 @@ impl CreateQueueInputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`CreateQueueInput`](crate::operation::create_queue::CreateQueueInput).
     pub fn build(

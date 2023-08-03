@@ -54,6 +54,10 @@ impl DescribeVpcClassicLinkDnsSupportOutputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// Appends an item to `vpcs`.
     ///
     /// To override the contents of this collection use [`set_vpcs`](Self::set_vpcs).
@@ -72,6 +76,12 @@ impl DescribeVpcClassicLinkDnsSupportOutputBuilder {
     ) -> Self {
         self.vpcs = input;
         self
+    }
+    /// <p>Information about the ClassicLink DNS support status of the VPCs.</p>
+    pub fn get_vpcs(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ClassicLinkDnsSupport>> {
+        &self.vpcs
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

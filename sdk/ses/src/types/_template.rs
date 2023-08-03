@@ -70,6 +70,10 @@ impl TemplateBuilder {
         self.template_name = input;
         self
     }
+    /// <p>The name of the template. You will refer to this name when you send email using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code> operations.</p>
+    pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_name
+    }
     /// <p>The subject line of the email.</p>
     pub fn subject_part(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subject_part = ::std::option::Option::Some(input.into());
@@ -79,6 +83,10 @@ impl TemplateBuilder {
     pub fn set_subject_part(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subject_part = input;
         self
+    }
+    /// <p>The subject line of the email.</p>
+    pub fn get_subject_part(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subject_part
     }
     /// <p>The email body that will be visible to recipients whose email clients do not display HTML.</p>
     pub fn text_part(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -90,6 +98,10 @@ impl TemplateBuilder {
         self.text_part = input;
         self
     }
+    /// <p>The email body that will be visible to recipients whose email clients do not display HTML.</p>
+    pub fn get_text_part(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text_part
+    }
     /// <p>The HTML body of the email.</p>
     pub fn html_part(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.html_part = ::std::option::Option::Some(input.into());
@@ -99,6 +111,10 @@ impl TemplateBuilder {
     pub fn set_html_part(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.html_part = input;
         self
+    }
+    /// <p>The HTML body of the email.</p>
+    pub fn get_html_part(&self) -> &::std::option::Option<::std::string::String> {
+        &self.html_part
     }
     /// Consumes the builder and constructs a [`Template`](crate::types::Template).
     pub fn build(self) -> crate::types::Template {

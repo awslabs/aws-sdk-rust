@@ -71,6 +71,10 @@ impl GetVaultLockOutputBuilder {
         self.policy = input;
         self
     }
+    /// <p>The vault lock policy as a JSON string, which uses "\" as an escape character.</p>
+    pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy
+    }
     /// <p>The state of the vault lock. <code>InProgress</code> or <code>Locked</code>.</p>
     pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state = ::std::option::Option::Some(input.into());
@@ -80,6 +84,10 @@ impl GetVaultLockOutputBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of the vault lock. <code>InProgress</code> or <code>Locked</code>.</p>
+    pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state
     }
     /// <p>The UTC date and time at which the lock ID expires. This value can be <code>null</code> if the vault lock is in a <code>Locked</code> state.</p>
     pub fn expiration_date(
@@ -97,6 +105,10 @@ impl GetVaultLockOutputBuilder {
         self.expiration_date = input;
         self
     }
+    /// <p>The UTC date and time at which the lock ID expires. This value can be <code>null</code> if the vault lock is in a <code>Locked</code> state.</p>
+    pub fn get_expiration_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expiration_date
+    }
     /// <p>The UTC date and time at which the vault lock was put into the <code>InProgress</code> state.</p>
     pub fn creation_date(
         mut self,
@@ -112,6 +124,10 @@ impl GetVaultLockOutputBuilder {
     ) -> Self {
         self.creation_date = input;
         self
+    }
+    /// <p>The UTC date and time at which the vault lock was put into the <code>InProgress</code> state.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.creation_date
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

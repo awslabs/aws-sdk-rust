@@ -48,6 +48,13 @@ impl DeleteSizeConstraintSetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteSizeConstraintSet as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_size_constraint_set::builders::DeleteSizeConstraintSetInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -144,6 +151,10 @@ impl DeleteSizeConstraintSetFluentBuilder {
         self.inner = self.inner.set_size_constraint_set_id(input);
         self
     }
+    /// <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to delete. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
+    pub fn get_size_constraint_set_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_size_constraint_set_id()
+    }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.change_token(input.into());
@@ -153,5 +164,9 @@ impl DeleteSizeConstraintSetFluentBuilder {
     pub fn set_change_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_change_token(input);
         self
+    }
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    pub fn get_change_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_change_token()
     }
 }

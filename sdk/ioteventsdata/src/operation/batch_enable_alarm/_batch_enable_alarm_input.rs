@@ -53,6 +53,12 @@ impl BatchEnableAlarmInputBuilder {
         self.enable_action_requests = input;
         self
     }
+    /// <p>The list of enable action requests. You can specify up to 10 requests per operation.</p>
+    pub fn get_enable_action_requests(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::EnableAlarmActionRequest>> {
+        &self.enable_action_requests
+    }
     /// Consumes the builder and constructs a [`BatchEnableAlarmInput`](crate::operation::batch_enable_alarm::BatchEnableAlarmInput).
     pub fn build(
         self,

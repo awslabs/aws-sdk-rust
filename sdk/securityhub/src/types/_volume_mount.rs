@@ -48,6 +48,10 @@ impl VolumeMountBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the volume. </p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The path in the container at which the volume should be mounted. </p>
     pub fn mount_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mount_path = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl VolumeMountBuilder {
     pub fn set_mount_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mount_path = input;
         self
+    }
+    /// <p>The path in the container at which the volume should be mounted. </p>
+    pub fn get_mount_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mount_path
     }
     /// Consumes the builder and constructs a [`VolumeMount`](crate::types::VolumeMount).
     pub fn build(self) -> crate::types::VolumeMount {

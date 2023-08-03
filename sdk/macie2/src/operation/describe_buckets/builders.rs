@@ -36,6 +36,12 @@ impl DescribeBucketsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeBuckets as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_buckets::builders::DescribeBucketsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -153,6 +159,17 @@ impl DescribeBucketsFluentBuilder {
         self.inner = self.inner.set_criteria(input);
         self
     }
+    /// <p>The criteria to use to filter the query results.</p>
+    pub fn get_criteria(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::BucketCriteriaAdditionalProperties,
+        >,
+    > {
+        self.inner.get_criteria()
+    }
     /// <p>The maximum number of items to include in each page of the response. The default value is 50.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -163,6 +180,10 @@ impl DescribeBucketsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p>The maximum number of items to include in each page of the response. The default value is 50.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -172,6 +193,10 @@ impl DescribeBucketsFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The criteria to use to sort the query results.</p>
     pub fn sort_criteria(mut self, input: crate::types::BucketSortCriteria) -> Self {
@@ -185,5 +210,9 @@ impl DescribeBucketsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_sort_criteria(input);
         self
+    }
+    /// <p>The criteria to use to sort the query results.</p>
+    pub fn get_sort_criteria(&self) -> &::std::option::Option<crate::types::BucketSortCriteria> {
+        self.inner.get_sort_criteria()
     }
 }

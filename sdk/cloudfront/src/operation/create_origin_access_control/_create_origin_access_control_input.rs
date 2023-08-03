@@ -49,6 +49,12 @@ impl CreateOriginAccessControlInputBuilder {
         self.origin_access_control_config = input;
         self
     }
+    /// <p>Contains the origin access control.</p>
+    pub fn get_origin_access_control_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::OriginAccessControlConfig> {
+        &self.origin_access_control_config
+    }
     /// Consumes the builder and constructs a [`CreateOriginAccessControlInput`](crate::operation::create_origin_access_control::CreateOriginAccessControlInput).
     pub fn build(
         self,

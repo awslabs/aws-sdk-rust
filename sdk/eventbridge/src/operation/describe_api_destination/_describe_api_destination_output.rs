@@ -128,6 +128,10 @@ impl DescribeApiDestinationOutputBuilder {
         self.api_destination_arn = input;
         self
     }
+    /// <p>The ARN of the API destination retrieved.</p>
+    pub fn get_api_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_destination_arn
+    }
     /// <p>The name of the API destination retrieved.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -138,6 +142,10 @@ impl DescribeApiDestinationOutputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the API destination retrieved.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The description for the API destination retrieved.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -147,6 +155,10 @@ impl DescribeApiDestinationOutputBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>The description for the API destination retrieved.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The state of the API destination retrieved.</p>
     pub fn api_destination_state(mut self, input: crate::types::ApiDestinationState) -> Self {
@@ -160,6 +172,12 @@ impl DescribeApiDestinationOutputBuilder {
     ) -> Self {
         self.api_destination_state = input;
         self
+    }
+    /// <p>The state of the API destination retrieved.</p>
+    pub fn get_api_destination_state(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApiDestinationState> {
+        &self.api_destination_state
     }
     /// <p>The ARN of the connection specified for the API destination retrieved.</p>
     pub fn connection_arn(
@@ -177,6 +195,10 @@ impl DescribeApiDestinationOutputBuilder {
         self.connection_arn = input;
         self
     }
+    /// <p>The ARN of the connection specified for the API destination retrieved.</p>
+    pub fn get_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.connection_arn
+    }
     /// <p>The URL to use to connect to the HTTP endpoint.</p>
     pub fn invocation_endpoint(
         mut self,
@@ -193,6 +215,10 @@ impl DescribeApiDestinationOutputBuilder {
         self.invocation_endpoint = input;
         self
     }
+    /// <p>The URL to use to connect to the HTTP endpoint.</p>
+    pub fn get_invocation_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.invocation_endpoint
+    }
     /// <p>The method to use to connect to the HTTP endpoint.</p>
     pub fn http_method(mut self, input: crate::types::ApiDestinationHttpMethod) -> Self {
         self.http_method = ::std::option::Option::Some(input);
@@ -205,6 +231,12 @@ impl DescribeApiDestinationOutputBuilder {
     ) -> Self {
         self.http_method = input;
         self
+    }
+    /// <p>The method to use to connect to the HTTP endpoint.</p>
+    pub fn get_http_method(
+        &self,
+    ) -> &::std::option::Option<crate::types::ApiDestinationHttpMethod> {
+        &self.http_method
     }
     /// <p>The maximum number of invocations per second to specified for the API destination. Note that if you set the invocation rate maximum to a value lower the rate necessary to send all events received on to the destination HTTP endpoint, some events may not be delivered within the 24-hour retry window. If you plan to set the rate lower than the rate necessary to deliver all events, consider using a dead-letter queue to catch events that are not delivered within 24 hours.</p>
     pub fn invocation_rate_limit_per_second(mut self, input: i32) -> Self {
@@ -219,6 +251,10 @@ impl DescribeApiDestinationOutputBuilder {
         self.invocation_rate_limit_per_second = input;
         self
     }
+    /// <p>The maximum number of invocations per second to specified for the API destination. Note that if you set the invocation rate maximum to a value lower the rate necessary to send all events received on to the destination HTTP endpoint, some events may not be delivered within the 24-hour retry window. If you plan to set the rate lower than the rate necessary to deliver all events, consider using a dead-letter queue to catch events that are not delivered within 24 hours.</p>
+    pub fn get_invocation_rate_limit_per_second(&self) -> &::std::option::Option<i32> {
+        &self.invocation_rate_limit_per_second
+    }
     /// <p>A time stamp for the time that the API destination was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -232,6 +268,10 @@ impl DescribeApiDestinationOutputBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>A time stamp for the time that the API destination was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>A time stamp for the time that the API destination was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -244,6 +284,10 @@ impl DescribeApiDestinationOutputBuilder {
     ) -> Self {
         self.last_modified_time = input;
         self
+    }
+    /// <p>A time stamp for the time that the API destination was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

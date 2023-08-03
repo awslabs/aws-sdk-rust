@@ -56,6 +56,10 @@ impl GetDeploymentInputBuilder {
         self.rest_api_id = input;
         self
     }
+    /// <p>The string identifier of the associated RestApi.</p>
+    pub fn get_rest_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rest_api_id
+    }
     /// <p>The identifier of the Deployment resource to get information about.</p>
     pub fn deployment_id(
         mut self,
@@ -71,6 +75,10 @@ impl GetDeploymentInputBuilder {
     ) -> Self {
         self.deployment_id = input;
         self
+    }
+    /// <p>The identifier of the Deployment resource to get information about.</p>
+    pub fn get_deployment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_id
     }
     /// Appends an item to `embed`.
     ///
@@ -90,6 +98,10 @@ impl GetDeploymentInputBuilder {
     ) -> Self {
         self.embed = input;
         self
+    }
+    /// <p>A query parameter to retrieve the specified embedded resources of the returned Deployment resource in the response. In a REST API call, this <code>embed</code> parameter value is a list of comma-separated strings, as in <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The SDK and other platform-dependent libraries might use a different format for the list. Currently, this request supports only retrieval of the embedded API summary this way. Hence, the parameter value must be a single-valued list containing only the <code>"apisummary"</code> string. For example, <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=apisummary</code>.</p>
+    pub fn get_embed(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.embed
     }
     /// Consumes the builder and constructs a [`GetDeploymentInput`](crate::operation::get_deployment::GetDeploymentInput).
     pub fn build(

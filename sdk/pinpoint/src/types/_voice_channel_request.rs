@@ -40,6 +40,10 @@ impl VoiceChannelRequestBuilder {
         self.enabled = input;
         self
     }
+    /// <p>Specifies whether to enable the voice channel for the application.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// Consumes the builder and constructs a [`VoiceChannelRequest`](crate::types::VoiceChannelRequest).
     pub fn build(self) -> crate::types::VoiceChannelRequest {
         crate::types::VoiceChannelRequest {

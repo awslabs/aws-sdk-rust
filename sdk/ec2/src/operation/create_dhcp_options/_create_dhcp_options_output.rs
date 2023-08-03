@@ -50,6 +50,10 @@ impl CreateDhcpOptionsOutputBuilder {
         self.dhcp_options = input;
         self
     }
+    /// <p>A set of DHCP options.</p>
+    pub fn get_dhcp_options(&self) -> &::std::option::Option<crate::types::DhcpOptions> {
+        &self.dhcp_options
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

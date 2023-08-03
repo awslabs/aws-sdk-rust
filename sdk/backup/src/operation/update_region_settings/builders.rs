@@ -36,6 +36,12 @@ impl UpdateRegionSettingsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateRegionSettings as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_region_settings::builders::UpdateRegionSettingsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,12 @@ impl UpdateRegionSettingsFluentBuilder {
         self.inner = self.inner.set_resource_type_opt_in_preference(input);
         self
     }
+    /// <p>Updates the list of services along with the opt-in preferences for the Region.</p>
+    pub fn get_resource_type_opt_in_preference(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, bool>> {
+        self.inner.get_resource_type_opt_in_preference()
+    }
     /// Adds a key-value pair to `ResourceTypeManagementPreference`.
     ///
     /// To override the contents of this collection use [`set_resource_type_management_preference`](Self::set_resource_type_management_preference).
@@ -157,5 +169,11 @@ impl UpdateRegionSettingsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_resource_type_management_preference(input);
         self
+    }
+    /// <p>Enables or disables full Backup management of backups for a resource type. To enable full Backup management for DynamoDB along with <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html"> Backup's advanced DynamoDB backup features</a>, follow the procedure to <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html#advanced-ddb-backup-enable-cli"> enable advanced DynamoDB backup programmatically</a>.</p>
+    pub fn get_resource_type_management_preference(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, bool>> {
+        self.inner.get_resource_type_management_preference()
     }
 }

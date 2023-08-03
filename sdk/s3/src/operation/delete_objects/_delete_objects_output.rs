@@ -78,6 +78,12 @@ impl DeleteObjectsOutputBuilder {
         self.deleted = input;
         self
     }
+    /// <p>Container element for a successful delete. It identifies the object that was successfully deleted.</p>
+    pub fn get_deleted(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::DeletedObject>> {
+        &self.deleted
+    }
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub fn request_charged(mut self, input: crate::types::RequestCharged) -> Self {
         self.request_charged = ::std::option::Option::Some(input);
@@ -90,6 +96,10 @@ impl DeleteObjectsOutputBuilder {
     ) -> Self {
         self.request_charged = input;
         self
+    }
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
+    pub fn get_request_charged(&self) -> &::std::option::Option<crate::types::RequestCharged> {
+        &self.request_charged
     }
     /// Appends an item to `errors`.
     ///
@@ -109,6 +119,10 @@ impl DeleteObjectsOutputBuilder {
     ) -> Self {
         self.errors = input;
         self
+    }
+    /// <p>Container for a failed delete action that describes the object that Amazon S3 attempted to delete and the error it encountered.</p>
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Error>> {
+        &self.errors
     }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
         self._extended_request_id = Some(extended_request_id.into());

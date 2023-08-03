@@ -53,6 +53,12 @@ impl DeleteCollectionOutputBuilder {
         self.delete_collection_detail = input;
         self
     }
+    /// <p>Details of the deleted collection.</p>
+    pub fn get_delete_collection_detail(
+        &self,
+    ) -> &::std::option::Option<crate::types::DeleteCollectionDetail> {
+        &self.delete_collection_detail
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

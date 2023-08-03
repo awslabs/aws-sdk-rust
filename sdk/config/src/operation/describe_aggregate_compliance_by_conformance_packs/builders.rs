@@ -38,6 +38,10 @@ impl DescribeAggregateComplianceByConformancePacksFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeAggregateComplianceByConformancePacks as a reference.
+    pub fn as_input(&self) -> &crate::operation::describe_aggregate_compliance_by_conformance_packs::builders::DescribeAggregateComplianceByConformancePacksInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -114,6 +118,12 @@ impl DescribeAggregateComplianceByConformancePacksFluentBuilder {
         self.inner = self.inner.set_configuration_aggregator_name(input);
         self
     }
+    /// <p>The name of the configuration aggregator.</p>
+    pub fn get_configuration_aggregator_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration_aggregator_name()
+    }
     /// <p>Filters the result by <code>AggregateConformancePackComplianceFilters</code> object.</p>
     pub fn filters(
         mut self,
@@ -130,6 +140,12 @@ impl DescribeAggregateComplianceByConformancePacksFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
+    /// <p>Filters the result by <code>AggregateConformancePackComplianceFilters</code> object.</p>
+    pub fn get_filters(
+        &self,
+    ) -> &::std::option::Option<crate::types::AggregateConformancePackComplianceFilters> {
+        self.inner.get_filters()
+    }
     /// <p>The maximum number of conformance packs compliance details returned on each page. The default is maximum. If you specify 0, Config uses the default. </p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -140,6 +156,10 @@ impl DescribeAggregateComplianceByConformancePacksFluentBuilder {
         self.inner = self.inner.set_limit(input);
         self
     }
+    /// <p>The maximum number of conformance packs compliance details returned on each page. The default is maximum. If you specify 0, Config uses the default. </p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
+    }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -149,5 +169,9 @@ impl DescribeAggregateComplianceByConformancePacksFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

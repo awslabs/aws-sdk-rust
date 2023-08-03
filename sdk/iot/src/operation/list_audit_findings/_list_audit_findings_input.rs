@@ -96,6 +96,10 @@ impl ListAuditFindingsInputBuilder {
         self.task_id = input;
         self
     }
+    /// <p>A filter to limit results to the audit with the specified ID. You must specify either the taskId or the startTime and endTime, but not both.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task_id
+    }
     /// <p>A filter to limit results to the findings for the specified audit check.</p>
     pub fn check_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.check_name = ::std::option::Option::Some(input.into());
@@ -105,6 +109,10 @@ impl ListAuditFindingsInputBuilder {
     pub fn set_check_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.check_name = input;
         self
+    }
+    /// <p>A filter to limit results to the findings for the specified audit check.</p>
+    pub fn get_check_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.check_name
     }
     /// <p>Information identifying the noncompliant resource.</p>
     pub fn resource_identifier(mut self, input: crate::types::ResourceIdentifier) -> Self {
@@ -119,6 +127,12 @@ impl ListAuditFindingsInputBuilder {
         self.resource_identifier = input;
         self
     }
+    /// <p>Information identifying the noncompliant resource.</p>
+    pub fn get_resource_identifier(
+        &self,
+    ) -> &::std::option::Option<crate::types::ResourceIdentifier> {
+        &self.resource_identifier
+    }
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -129,6 +143,10 @@ impl ListAuditFindingsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of results to return at one time. The default is 25.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The token for the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -138,6 +156,10 @@ impl ListAuditFindingsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token for the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -152,6 +174,10 @@ impl ListAuditFindingsInputBuilder {
         self.start_time = input;
         self
     }
+    /// <p>A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>A filter to limit results to those found before the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -165,6 +191,10 @@ impl ListAuditFindingsInputBuilder {
         self.end_time = input;
         self
     }
+    /// <p>A filter to limit results to those found before the specified time. You must specify either the startTime and endTime or the taskId, but not both.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// <p> Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If this parameter isn't provided, the response will list both suppressed and unsuppressed findings. </p>
     pub fn list_suppressed_findings(mut self, input: bool) -> Self {
         self.list_suppressed_findings = ::std::option::Option::Some(input);
@@ -174,6 +204,10 @@ impl ListAuditFindingsInputBuilder {
     pub fn set_list_suppressed_findings(mut self, input: ::std::option::Option<bool>) -> Self {
         self.list_suppressed_findings = input;
         self
+    }
+    /// <p> Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If this parameter isn't provided, the response will list both suppressed and unsuppressed findings. </p>
+    pub fn get_list_suppressed_findings(&self) -> &::std::option::Option<bool> {
+        &self.list_suppressed_findings
     }
     /// Consumes the builder and constructs a [`ListAuditFindingsInput`](crate::operation::list_audit_findings::ListAuditFindingsInput).
     pub fn build(

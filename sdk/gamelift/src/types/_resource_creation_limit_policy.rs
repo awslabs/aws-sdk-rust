@@ -53,6 +53,11 @@ impl ResourceCreationLimitPolicyBuilder {
         self.new_game_sessions_per_creator = input;
         self
     }
+    /// <p>A policy that puts limits on the number of game sessions that a player can create within a specified span of time. With this policy, you can control players' ability to consume available resources.</p>
+    /// <p>The policy is evaluated when a player tries to create a new game session. On receiving a <code>CreateGameSession</code> request, Amazon GameLift checks that the player (identified by <code>CreatorId</code>) has created fewer than game session limit in the specified time period.</p>
+    pub fn get_new_game_sessions_per_creator(&self) -> &::std::option::Option<i32> {
+        &self.new_game_sessions_per_creator
+    }
     /// <p>The time span used in evaluating the resource creation limit policy. </p>
     pub fn policy_period_in_minutes(mut self, input: i32) -> Self {
         self.policy_period_in_minutes = ::std::option::Option::Some(input);
@@ -62,6 +67,10 @@ impl ResourceCreationLimitPolicyBuilder {
     pub fn set_policy_period_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.policy_period_in_minutes = input;
         self
+    }
+    /// <p>The time span used in evaluating the resource creation limit policy. </p>
+    pub fn get_policy_period_in_minutes(&self) -> &::std::option::Option<i32> {
+        &self.policy_period_in_minutes
     }
     /// Consumes the builder and constructs a [`ResourceCreationLimitPolicy`](crate::types::ResourceCreationLimitPolicy).
     pub fn build(self) -> crate::types::ResourceCreationLimitPolicy {

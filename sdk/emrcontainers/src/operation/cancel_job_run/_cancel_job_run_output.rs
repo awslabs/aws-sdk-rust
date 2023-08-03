@@ -54,6 +54,10 @@ impl CancelJobRunOutputBuilder {
         self.id = input;
         self
     }
+    /// <p>The output contains the ID of the cancelled job run.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The output contains the virtual cluster ID for which the job run is cancelled.</p>
     pub fn virtual_cluster_id(
         mut self,
@@ -69,6 +73,10 @@ impl CancelJobRunOutputBuilder {
     ) -> Self {
         self.virtual_cluster_id = input;
         self
+    }
+    /// <p>The output contains the virtual cluster ID for which the job run is cancelled.</p>
+    pub fn get_virtual_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_cluster_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

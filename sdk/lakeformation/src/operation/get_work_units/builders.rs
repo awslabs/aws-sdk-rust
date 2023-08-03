@@ -36,6 +36,12 @@ impl GetWorkUnitsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the GetWorkUnits as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::get_work_units::builders::GetWorkUnitsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl GetWorkUnitsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>A continuation token, if this is a continuation call.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The size of each page to get in the Amazon Web Services service call. This does not affect the number of items returned in the command's output. Setting a smaller page size results in more calls to the Amazon Web Services service, retrieving fewer items in each call. This can help prevent the Amazon Web Services service calls from timing out.</p>
     pub fn page_size(mut self, input: i32) -> Self {
         self.inner = self.inner.page_size(input);
@@ -139,6 +149,10 @@ impl GetWorkUnitsFluentBuilder {
         self.inner = self.inner.set_page_size(input);
         self
     }
+    /// <p>The size of each page to get in the Amazon Web Services service call. This does not affect the number of items returned in the command's output. Setting a smaller page size results in more calls to the Amazon Web Services service, retrieving fewer items in each call. This can help prevent the Amazon Web Services service calls from timing out.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        self.inner.get_page_size()
+    }
     /// <p>The ID of the plan query operation.</p>
     pub fn query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_id(input.into());
@@ -148,5 +162,9 @@ impl GetWorkUnitsFluentBuilder {
     pub fn set_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query_id(input);
         self
+    }
+    /// <p>The ID of the plan query operation.</p>
+    pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_query_id()
     }
 }

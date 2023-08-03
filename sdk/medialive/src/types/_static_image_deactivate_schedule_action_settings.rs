@@ -48,6 +48,10 @@ impl StaticImageDeactivateScheduleActionSettingsBuilder {
         self.fade_out = input;
         self
     }
+    /// The time in milliseconds for the image to fade out. Default is 0 (no fade-out).
+    pub fn get_fade_out(&self) -> &::std::option::Option<i32> {
+        &self.fade_out
+    }
     /// The image overlay layer to deactivate, 0 to 7. Default is 0.
     pub fn layer(mut self, input: i32) -> Self {
         self.layer = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl StaticImageDeactivateScheduleActionSettingsBuilder {
     pub fn set_layer(mut self, input: ::std::option::Option<i32>) -> Self {
         self.layer = input;
         self
+    }
+    /// The image overlay layer to deactivate, 0 to 7. Default is 0.
+    pub fn get_layer(&self) -> &::std::option::Option<i32> {
+        &self.layer
     }
     /// Consumes the builder and constructs a [`StaticImageDeactivateScheduleActionSettings`](crate::types::StaticImageDeactivateScheduleActionSettings).
     pub fn build(self) -> crate::types::StaticImageDeactivateScheduleActionSettings {

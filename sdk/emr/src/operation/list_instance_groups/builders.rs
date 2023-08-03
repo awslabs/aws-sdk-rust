@@ -36,6 +36,12 @@ impl ListInstanceGroupsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListInstanceGroups as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_instance_groups::builders::ListInstanceGroupsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -137,6 +143,10 @@ impl ListInstanceGroupsFluentBuilder {
         self.inner = self.inner.set_cluster_id(input);
         self
     }
+    /// <p>The identifier of the cluster for which to list the instance groups.</p>
+    pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_id()
+    }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -146,5 +156,9 @@ impl ListInstanceGroupsFluentBuilder {
     pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
+    }
+    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marker()
     }
 }

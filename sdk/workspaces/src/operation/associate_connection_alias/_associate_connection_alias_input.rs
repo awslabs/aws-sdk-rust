@@ -49,6 +49,10 @@ impl AssociateConnectionAliasInputBuilder {
         self.alias_id = input;
         self
     }
+    /// <p>The identifier of the connection alias.</p>
+    pub fn get_alias_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias_id
+    }
     /// <p>The identifier of the directory to associate the connection alias with.</p>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_id = ::std::option::Option::Some(input.into());
@@ -58,6 +62,10 @@ impl AssociateConnectionAliasInputBuilder {
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
+    }
+    /// <p>The identifier of the directory to associate the connection alias with.</p>
+    pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_id
     }
     /// Consumes the builder and constructs a [`AssociateConnectionAliasInput`](crate::operation::associate_connection_alias::AssociateConnectionAliasInput).
     pub fn build(

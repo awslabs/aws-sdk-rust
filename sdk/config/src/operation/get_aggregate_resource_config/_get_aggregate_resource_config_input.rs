@@ -56,6 +56,12 @@ impl GetAggregateResourceConfigInputBuilder {
         self.configuration_aggregator_name = input;
         self
     }
+    /// <p>The name of the configuration aggregator.</p>
+    pub fn get_configuration_aggregator_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_aggregator_name
+    }
     /// <p>An object that identifies aggregate resource.</p>
     pub fn resource_identifier(mut self, input: crate::types::AggregateResourceIdentifier) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input);
@@ -68,6 +74,12 @@ impl GetAggregateResourceConfigInputBuilder {
     ) -> Self {
         self.resource_identifier = input;
         self
+    }
+    /// <p>An object that identifies aggregate resource.</p>
+    pub fn get_resource_identifier(
+        &self,
+    ) -> &::std::option::Option<crate::types::AggregateResourceIdentifier> {
+        &self.resource_identifier
     }
     /// Consumes the builder and constructs a [`GetAggregateResourceConfigInput`](crate::operation::get_aggregate_resource_config::GetAggregateResourceConfigInput).
     pub fn build(

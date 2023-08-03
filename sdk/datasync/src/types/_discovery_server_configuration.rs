@@ -54,6 +54,10 @@ impl DiscoveryServerConfigurationBuilder {
         self.server_hostname = input;
         self
     }
+    /// <p>The domain name or IP address of your storage system's management interface.</p>
+    pub fn get_server_hostname(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_hostname
+    }
     /// <p>The network port for accessing the storage system's management interface.</p>
     pub fn server_port(mut self, input: i32) -> Self {
         self.server_port = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl DiscoveryServerConfigurationBuilder {
     pub fn set_server_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.server_port = input;
         self
+    }
+    /// <p>The network port for accessing the storage system's management interface.</p>
+    pub fn get_server_port(&self) -> &::std::option::Option<i32> {
+        &self.server_port
     }
     /// Consumes the builder and constructs a [`DiscoveryServerConfiguration`](crate::types::DiscoveryServerConfiguration).
     pub fn build(self) -> crate::types::DiscoveryServerConfiguration {

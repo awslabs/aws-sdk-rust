@@ -57,6 +57,10 @@ impl DescribeThumbnailsInputBuilder {
         self.channel_id = input;
         self
     }
+    /// Unique ID of the channel
+    pub fn get_channel_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_id
+    }
     /// Pipeline ID ("0" or "1")
     pub fn pipeline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pipeline_id = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl DescribeThumbnailsInputBuilder {
     pub fn set_pipeline_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_id = input;
         self
+    }
+    /// Pipeline ID ("0" or "1")
+    pub fn get_pipeline_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pipeline_id
     }
     /// thumbnail type
     pub fn thumbnail_type(
@@ -82,6 +90,10 @@ impl DescribeThumbnailsInputBuilder {
     ) -> Self {
         self.thumbnail_type = input;
         self
+    }
+    /// thumbnail type
+    pub fn get_thumbnail_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.thumbnail_type
     }
     /// Consumes the builder and constructs a [`DescribeThumbnailsInput`](crate::operation::describe_thumbnails::DescribeThumbnailsInput).
     pub fn build(

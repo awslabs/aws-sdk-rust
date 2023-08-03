@@ -36,6 +36,12 @@ impl ListApiDestinationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ListApiDestinations as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::list_api_destinations::builders::ListApiDestinationsInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl ListApiDestinationsFluentBuilder {
         self.inner = self.inner.set_name_prefix(input);
         self
     }
+    /// <p>A name prefix to filter results returned. Only API destinations with a name that starts with the prefix are returned.</p>
+    pub fn get_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name_prefix()
+    }
     /// <p>The ARN of the connection specified for the API destination.</p>
     pub fn connection_arn(
         mut self,
@@ -142,6 +152,10 @@ impl ListApiDestinationsFluentBuilder {
         self.inner = self.inner.set_connection_arn(input);
         self
     }
+    /// <p>The ARN of the connection specified for the API destination.</p>
+    pub fn get_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_connection_arn()
+    }
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -152,6 +166,10 @@ impl ListApiDestinationsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token returned by a previous call to retrieve the next set of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of API destinations to include in the response.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
@@ -161,5 +179,9 @@ impl ListApiDestinationsFluentBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
+    }
+    /// <p>The maximum number of API destinations to include in the response.</p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_limit()
     }
 }

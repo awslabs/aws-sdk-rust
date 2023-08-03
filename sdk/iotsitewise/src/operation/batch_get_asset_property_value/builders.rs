@@ -36,6 +36,10 @@ impl BatchGetAssetPropertyValueFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchGetAssetPropertyValue as a reference.
+    pub fn as_input(&self) -> &crate::operation::batch_get_asset_property_value::builders::BatchGetAssetPropertyValueInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -141,6 +145,13 @@ impl BatchGetAssetPropertyValueFluentBuilder {
         self.inner = self.inner.set_entries(input);
         self
     }
+    /// <p>The list of asset property value entries for the batch get request. You can specify up to 128 entries per request.</p>
+    pub fn get_entries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetAssetPropertyValueEntry>>
+    {
+        self.inner.get_entries()
+    }
     /// <p>The token to be used for the next set of paginated results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -150,5 +161,9 @@ impl BatchGetAssetPropertyValueFluentBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
+    }
+    /// <p>The token to be used for the next set of paginated results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

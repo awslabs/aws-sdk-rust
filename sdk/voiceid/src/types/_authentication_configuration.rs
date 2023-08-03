@@ -40,6 +40,10 @@ impl AuthenticationConfigurationBuilder {
         self.acceptance_threshold = input;
         self
     }
+    /// <p>The minimum threshold needed to successfully authenticate a speaker.</p>
+    pub fn get_acceptance_threshold(&self) -> &::std::option::Option<i32> {
+        &self.acceptance_threshold
+    }
     /// Consumes the builder and constructs a [`AuthenticationConfiguration`](crate::types::AuthenticationConfiguration).
     pub fn build(self) -> crate::types::AuthenticationConfiguration {
         crate::types::AuthenticationConfiguration {

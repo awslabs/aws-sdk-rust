@@ -55,6 +55,10 @@ impl TestRenderEmailTemplateOutputBuilder {
         self.rendered_template = input;
         self
     }
+    /// <p>The complete MIME message rendered by applying the data in the <code>TemplateData</code> parameter to the template specified in the TemplateName parameter.</p>
+    pub fn get_rendered_template(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rendered_template
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

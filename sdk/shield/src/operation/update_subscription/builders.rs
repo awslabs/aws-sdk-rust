@@ -38,6 +38,12 @@ impl UpdateSubscriptionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateSubscription as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_subscription::builders::UpdateSubscriptionInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,5 +133,9 @@ impl UpdateSubscriptionFluentBuilder {
     pub fn set_auto_renew(mut self, input: ::std::option::Option<crate::types::AutoRenew>) -> Self {
         self.inner = self.inner.set_auto_renew(input);
         self
+    }
+    /// <p>When you initally create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. If <code>ENABLED</code>, the subscription will be automatically renewed at the end of the existing subscription period. You can change this by submitting an <code>UpdateSubscription</code> request. If the <code>UpdateSubscription</code> request does not included a value for <code>AutoRenew</code>, the existing value for <code>AutoRenew</code> remains unchanged.</p>
+    pub fn get_auto_renew(&self) -> &::std::option::Option<crate::types::AutoRenew> {
+        self.inner.get_auto_renew()
     }
 }

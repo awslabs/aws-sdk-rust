@@ -45,6 +45,10 @@ impl EnableDirectoryInputBuilder {
         self.directory_arn = input;
         self
     }
+    /// <p>The ARN of the directory to enable.</p>
+    pub fn get_directory_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.directory_arn
+    }
     /// Consumes the builder and constructs a [`EnableDirectoryInput`](crate::operation::enable_directory::EnableDirectoryInput).
     pub fn build(
         self,

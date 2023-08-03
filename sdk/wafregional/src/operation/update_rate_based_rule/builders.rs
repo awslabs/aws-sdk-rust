@@ -56,6 +56,12 @@ impl UpdateRateBasedRuleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateRateBasedRule as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_rate_based_rule::builders::UpdateRateBasedRuleInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -146,6 +152,10 @@ impl UpdateRateBasedRuleFluentBuilder {
         self.inner = self.inner.set_rule_id(input);
         self
     }
+    /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to update. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
+    pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_rule_id()
+    }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.change_token(input.into());
@@ -155,6 +165,10 @@ impl UpdateRateBasedRuleFluentBuilder {
     pub fn set_change_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_change_token(input);
         self
+    }
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
+    pub fn get_change_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_change_token()
     }
     /// Appends an item to `Updates`.
     ///
@@ -173,6 +187,10 @@ impl UpdateRateBasedRuleFluentBuilder {
         self.inner = self.inner.set_updates(input);
         self
     }
+    /// <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a <code>RateBasedRule</code>. </p>
+    pub fn get_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleUpdate>> {
+        self.inner.get_updates()
+    }
     /// <p>The maximum number of requests, which have an identical value in the field specified by the <code>RateKey</code>, allowed in a five-minute period. If the number of requests exceeds the <code>RateLimit</code> and the other predicates specified in the rule are also met, AWS WAF triggers the action that is specified for this rule.</p>
     pub fn rate_limit(mut self, input: i64) -> Self {
         self.inner = self.inner.rate_limit(input);
@@ -182,5 +200,9 @@ impl UpdateRateBasedRuleFluentBuilder {
     pub fn set_rate_limit(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_rate_limit(input);
         self
+    }
+    /// <p>The maximum number of requests, which have an identical value in the field specified by the <code>RateKey</code>, allowed in a five-minute period. If the number of requests exceeds the <code>RateLimit</code> and the other predicates specified in the rule are also met, AWS WAF triggers the action that is specified for this rule.</p>
+    pub fn get_rate_limit(&self) -> &::std::option::Option<i64> {
+        self.inner.get_rate_limit()
     }
 }

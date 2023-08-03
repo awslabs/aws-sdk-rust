@@ -80,6 +80,10 @@ impl RecommendationBuilder {
         self.all_matches_count = input;
         self
     }
+    /// <p>How many different places in the profile graph triggered a match.</p>
+    pub fn get_all_matches_count(&self) -> &::std::option::Option<i32> {
+        &self.all_matches_count
+    }
     /// <p>How much of the total sample count is potentially affected.</p>
     pub fn all_matches_sum(mut self, input: f64) -> Self {
         self.all_matches_sum = ::std::option::Option::Some(input);
@@ -90,6 +94,10 @@ impl RecommendationBuilder {
         self.all_matches_sum = input;
         self
     }
+    /// <p>How much of the total sample count is potentially affected.</p>
+    pub fn get_all_matches_sum(&self) -> &::std::option::Option<f64> {
+        &self.all_matches_sum
+    }
     /// <p>The pattern that analysis recognized in the profile to make this recommendation.</p>
     pub fn pattern(mut self, input: crate::types::Pattern) -> Self {
         self.pattern = ::std::option::Option::Some(input);
@@ -99,6 +107,10 @@ impl RecommendationBuilder {
     pub fn set_pattern(mut self, input: ::std::option::Option<crate::types::Pattern>) -> Self {
         self.pattern = input;
         self
+    }
+    /// <p>The pattern that analysis recognized in the profile to make this recommendation.</p>
+    pub fn get_pattern(&self) -> &::std::option::Option<crate::types::Pattern> {
+        &self.pattern
     }
     /// Appends an item to `top_matches`.
     ///
@@ -119,6 +131,10 @@ impl RecommendationBuilder {
         self.top_matches = input;
         self
     }
+    /// <p>List of the matches with most impact. </p>
+    pub fn get_top_matches(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Match>> {
+        &self.top_matches
+    }
     /// <p>The start time of the profile that was used by this analysis. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -132,6 +148,10 @@ impl RecommendationBuilder {
         self.start_time = input;
         self
     }
+    /// <p>The start time of the profile that was used by this analysis. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
     /// <p>End time of the profile that was used by this analysis. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
@@ -144,6 +164,10 @@ impl RecommendationBuilder {
     ) -> Self {
         self.end_time = input;
         self
+    }
+    /// <p>End time of the profile that was used by this analysis. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
     }
     /// Consumes the builder and constructs a [`Recommendation`](crate::types::Recommendation).
     pub fn build(self) -> crate::types::Recommendation {

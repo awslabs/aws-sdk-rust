@@ -91,6 +91,22 @@ impl AutoMlJobObjectiveBuilder {
         self.metric_name = input;
         self
     }
+    /// <p>The name of the objective metric used to measure the predictive quality of a machine learning system. During training, the model's parameters are updated iteratively to optimize its performance based on the feedback provided by the objective metric when evaluating the model on the validation dataset.</p>
+    /// <p>For the list of all available metrics supported by Autopilot, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html#autopilot-metrics">Autopilot metrics</a>.</p>
+    /// <p>If you do not specify a metric explicitly, the default behavior is to automatically use:</p>
+    /// <ul>
+    /// <li> <p>For tabular problem types:</p>
+    /// <ul>
+    /// <li> <p>Regression: <code>MSE</code>.</p> </li>
+    /// <li> <p>Binary classification: <code>F1</code>.</p> </li>
+    /// <li> <p>Multiclass classification: <code>Accuracy</code>.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>For image or text classification problem types: <code>Accuracy</code> </p> </li>
+    /// <li> <p>For time-series forecasting problem types: <code>AverageWeightedQuantileLoss</code> </p> </li>
+    /// </ul>
+    pub fn get_metric_name(&self) -> &::std::option::Option<crate::types::AutoMlMetricEnum> {
+        &self.metric_name
+    }
     /// Consumes the builder and constructs a [`AutoMlJobObjective`](crate::types::AutoMlJobObjective).
     pub fn build(self) -> crate::types::AutoMlJobObjective {
         crate::types::AutoMlJobObjective {

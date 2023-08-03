@@ -57,6 +57,10 @@ impl CreateDeploymentInputBuilder {
         self.api_id = input;
         self
     }
+    /// <p>The API identifier.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_id
+    }
     /// <p>The description for the deployment resource.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -67,6 +71,10 @@ impl CreateDeploymentInputBuilder {
         self.description = input;
         self
     }
+    /// <p>The description for the deployment resource.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// <p>The name of the Stage resource for the Deployment resource to create.</p>
     pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stage_name = ::std::option::Option::Some(input.into());
@@ -76,6 +84,10 @@ impl CreateDeploymentInputBuilder {
     pub fn set_stage_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stage_name = input;
         self
+    }
+    /// <p>The name of the Stage resource for the Deployment resource to create.</p>
+    pub fn get_stage_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stage_name
     }
     /// Consumes the builder and constructs a [`CreateDeploymentInput`](crate::operation::create_deployment::CreateDeploymentInput).
     pub fn build(

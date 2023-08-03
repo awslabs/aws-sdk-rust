@@ -41,6 +41,10 @@ impl DeleteStreamProcessorInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the stream processor you want to delete.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DeleteStreamProcessorInput`](crate::operation::delete_stream_processor::DeleteStreamProcessorInput).
     pub fn build(
         self,

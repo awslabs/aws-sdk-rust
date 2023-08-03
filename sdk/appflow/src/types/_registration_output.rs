@@ -57,6 +57,10 @@ impl RegistrationOutputBuilder {
         self.message = input;
         self
     }
+    /// <p>Explains the status of the registration attempt from Amazon AppFlow. If the attempt fails, the message explains why.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>Indicates the number of resources that Amazon AppFlow created or updated. Possible resources include metadata tables and data partitions.</p>
     pub fn result(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.result = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl RegistrationOutputBuilder {
     pub fn set_result(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.result = input;
         self
+    }
+    /// <p>Indicates the number of resources that Amazon AppFlow created or updated. Possible resources include metadata tables and data partitions.</p>
+    pub fn get_result(&self) -> &::std::option::Option<::std::string::String> {
+        &self.result
     }
     /// <p>Indicates the status of the registration attempt from Amazon AppFlow.</p>
     pub fn status(mut self, input: crate::types::ExecutionStatus) -> Self {
@@ -79,6 +87,10 @@ impl RegistrationOutputBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>Indicates the status of the registration attempt from Amazon AppFlow.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ExecutionStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`RegistrationOutput`](crate::types::RegistrationOutput).
     pub fn build(self) -> crate::types::RegistrationOutput {

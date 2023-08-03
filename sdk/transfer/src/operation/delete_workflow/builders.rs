@@ -36,6 +36,12 @@ impl DeleteWorkflowFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteWorkflow as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_workflow::builders::DeleteWorkflowInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -117,5 +123,9 @@ impl DeleteWorkflowFluentBuilder {
     pub fn set_workflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workflow_id(input);
         self
+    }
+    /// <p>A unique identifier for the workflow.</p>
+    pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workflow_id()
     }
 }

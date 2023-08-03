@@ -43,6 +43,10 @@ impl S3SetObjectLegalHoldOperationBuilder {
         self.legal_hold = input;
         self
     }
+    /// <p>Contains the Object Lock legal hold status to be applied to all objects in the Batch Operations job.</p>
+    pub fn get_legal_hold(&self) -> &::std::option::Option<crate::types::S3ObjectLockLegalHold> {
+        &self.legal_hold
+    }
     /// Consumes the builder and constructs a [`S3SetObjectLegalHoldOperation`](crate::types::S3SetObjectLegalHoldOperation).
     pub fn build(self) -> crate::types::S3SetObjectLegalHoldOperation {
         crate::types::S3SetObjectLegalHoldOperation {

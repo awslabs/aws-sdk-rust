@@ -36,6 +36,10 @@ impl DeleteSuppressedDestinationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteSuppressedDestination as a reference.
+    pub fn as_input(&self) -> &crate::operation::delete_suppressed_destination::builders::DeleteSuppressedDestinationInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -131,5 +135,9 @@ impl DeleteSuppressedDestinationFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_email_address(input);
         self
+    }
+    /// <p>The suppressed email destination to remove from the account suppression list.</p>
+    pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_email_address()
     }
 }

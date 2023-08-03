@@ -54,6 +54,10 @@ impl GetLaunchProfileInputBuilder {
         self.launch_profile_id = input;
         self
     }
+    /// <p>The ID of the launch profile used to control access from the streaming session.</p>
+    pub fn get_launch_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch_profile_id
+    }
     /// <p>The studio ID. </p>
     pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_id = ::std::option::Option::Some(input.into());
@@ -63,6 +67,10 @@ impl GetLaunchProfileInputBuilder {
     pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.studio_id = input;
         self
+    }
+    /// <p>The studio ID. </p>
+    pub fn get_studio_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.studio_id
     }
     /// Consumes the builder and constructs a [`GetLaunchProfileInput`](crate::operation::get_launch_profile::GetLaunchProfileInput).
     pub fn build(

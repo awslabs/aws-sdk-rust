@@ -99,6 +99,10 @@ impl DescribeUserProfileOutputBuilder {
         self.user_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the user.</p>
+    pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_arn
+    }
     /// <p>The display name shown for the user in AWS CodeStar projects. For example, this could be set to both first and last name ("Mary Major") or a single name ("Mary"). The display name is also used to generate the initial icon associated with the user in AWS CodeStar projects. If spaces are included in the display name, the first character that appears after the space will be used as the second character in the user initial icon. The initial icon displays a maximum of two characters, so a display name with more than one space (for example "Mary Jane Major") would generate an initial icon using the first character and the first character after the space ("MJ", not "MM").</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
@@ -108,6 +112,10 @@ impl DescribeUserProfileOutputBuilder {
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
+    }
+    /// <p>The display name shown for the user in AWS CodeStar projects. For example, this could be set to both first and last name ("Mary Major") or a single name ("Mary"). The display name is also used to generate the initial icon associated with the user in AWS CodeStar projects. If spaces are included in the display name, the first character that appears after the space will be used as the second character in the user initial icon. The initial icon displays a maximum of two characters, so a display name with more than one space (for example "Mary Jane Major") would generate an initial icon using the first character and the first character after the space ("MJ", not "MM").</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
     /// <p>The email address for the user. Optional.</p>
     pub fn email_address(
@@ -125,6 +133,10 @@ impl DescribeUserProfileOutputBuilder {
         self.email_address = input;
         self
     }
+    /// <p>The email address for the user. Optional.</p>
+    pub fn get_email_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email_address
+    }
     /// <p>The SSH public key associated with the user. This SSH public key is associated with the user profile, and can be used in conjunction with the associated private key for access to project resources, such as Amazon EC2 instances, if a project owner grants remote access to those resources.</p>
     pub fn ssh_public_key(
         mut self,
@@ -141,6 +153,10 @@ impl DescribeUserProfileOutputBuilder {
         self.ssh_public_key = input;
         self
     }
+    /// <p>The SSH public key associated with the user. This SSH public key is associated with the user profile, and can be used in conjunction with the associated private key for access to project resources, such as Amazon EC2 instances, if a project owner grants remote access to those resources.</p>
+    pub fn get_ssh_public_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ssh_public_key
+    }
     /// <p>The date and time when the user profile was created in AWS CodeStar, in timestamp format.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_timestamp = ::std::option::Option::Some(input);
@@ -154,6 +170,10 @@ impl DescribeUserProfileOutputBuilder {
         self.created_timestamp = input;
         self
     }
+    /// <p>The date and time when the user profile was created in AWS CodeStar, in timestamp format.</p>
+    pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_timestamp
+    }
     /// <p>The date and time when the user profile was last modified, in timestamp format.</p>
     pub fn last_modified_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_timestamp = ::std::option::Option::Some(input);
@@ -166,6 +186,12 @@ impl DescribeUserProfileOutputBuilder {
     ) -> Self {
         self.last_modified_timestamp = input;
         self
+    }
+    /// <p>The date and time when the user profile was last modified, in timestamp format.</p>
+    pub fn get_last_modified_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_timestamp
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

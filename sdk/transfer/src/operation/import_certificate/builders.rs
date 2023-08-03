@@ -36,6 +36,12 @@ impl ImportCertificateFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the ImportCertificate as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::import_certificate::builders::ImportCertificateInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -129,6 +135,10 @@ impl ImportCertificateFluentBuilder {
         self.inner = self.inner.set_usage(input);
         self
     }
+    /// <p>Specifies whether this certificate is used for signing or encryption.</p>
+    pub fn get_usage(&self) -> &::std::option::Option<crate::types::CertificateUsageType> {
+        self.inner.get_usage()
+    }
     /// <ul>
     /// <li> <p>For the CLI, provide a file path for a certificate in URI format. For example, <code>--certificate file://encryption-cert.pem</code>. Alternatively, you can provide the raw content.</p> </li>
     /// <li> <p>For the SDK, specify the raw content of a certificate file. For example, <code>--certificate "`cat encryption-cert.pem`"</code>.</p> </li>
@@ -144,6 +154,13 @@ impl ImportCertificateFluentBuilder {
     pub fn set_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate(input);
         self
+    }
+    /// <ul>
+    /// <li> <p>For the CLI, provide a file path for a certificate in URI format. For example, <code>--certificate file://encryption-cert.pem</code>. Alternatively, you can provide the raw content.</p> </li>
+    /// <li> <p>For the SDK, specify the raw content of a certificate file. For example, <code>--certificate "`cat encryption-cert.pem`"</code>.</p> </li>
+    /// </ul>
+    pub fn get_certificate(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_certificate()
     }
     /// <p>An optional list of certificates that make up the chain for the certificate that's being imported.</p>
     pub fn certificate_chain(
@@ -161,6 +178,10 @@ impl ImportCertificateFluentBuilder {
         self.inner = self.inner.set_certificate_chain(input);
         self
     }
+    /// <p>An optional list of certificates that make up the chain for the certificate that's being imported.</p>
+    pub fn get_certificate_chain(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_certificate_chain()
+    }
     /// <ul>
     /// <li> <p>For the CLI, provide a file path for a private key in URI format.For example, <code>--private-key file://encryption-key.pem</code>. Alternatively, you can provide the raw content of the private key file.</p> </li>
     /// <li> <p>For the SDK, specify the raw content of a private key file. For example, <code>--private-key "`cat encryption-key.pem`"</code> </p> </li>
@@ -177,6 +198,13 @@ impl ImportCertificateFluentBuilder {
         self.inner = self.inner.set_private_key(input);
         self
     }
+    /// <ul>
+    /// <li> <p>For the CLI, provide a file path for a private key in URI format.For example, <code>--private-key file://encryption-key.pem</code>. Alternatively, you can provide the raw content of the private key file.</p> </li>
+    /// <li> <p>For the SDK, specify the raw content of a private key file. For example, <code>--private-key "`cat encryption-key.pem`"</code> </p> </li>
+    /// </ul>
+    pub fn get_private_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_private_key()
+    }
     /// <p>An optional date that specifies when the certificate becomes active.</p>
     pub fn active_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.active_date(input);
@@ -189,6 +217,10 @@ impl ImportCertificateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_active_date(input);
         self
+    }
+    /// <p>An optional date that specifies when the certificate becomes active.</p>
+    pub fn get_active_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_active_date()
     }
     /// <p>An optional date that specifies when the certificate becomes inactive.</p>
     pub fn inactive_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -203,6 +235,10 @@ impl ImportCertificateFluentBuilder {
         self.inner = self.inner.set_inactive_date(input);
         self
     }
+    /// <p>An optional date that specifies when the certificate becomes inactive.</p>
+    pub fn get_inactive_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_inactive_date()
+    }
     /// <p>A short description that helps identify the certificate. </p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -212,6 +248,10 @@ impl ImportCertificateFluentBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
+    }
+    /// <p>A short description that helps identify the certificate. </p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
     }
     /// Appends an item to `Tags`.
     ///
@@ -229,5 +269,9 @@ impl ImportCertificateFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
+    }
+    /// <p>Key-value pairs that can be used to group and search for certificates.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

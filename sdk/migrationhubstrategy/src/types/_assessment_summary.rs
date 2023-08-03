@@ -157,6 +157,12 @@ impl AssessmentSummaryBuilder {
         self.list_server_strategy_summary = input;
         self
     }
+    /// <p> List of ServerStrategySummary. </p>
+    pub fn get_list_server_strategy_summary(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StrategySummary>> {
+        &self.list_server_strategy_summary
+    }
     /// Appends an item to `list_application_component_strategy_summary`.
     ///
     /// To override the contents of this collection use [`set_list_application_component_strategy_summary`](Self::set_list_application_component_strategy_summary).
@@ -181,6 +187,12 @@ impl AssessmentSummaryBuilder {
         self.list_application_component_strategy_summary = input;
         self
     }
+    /// <p> List of ApplicationComponentStrategySummary. </p>
+    pub fn get_list_application_component_strategy_summary(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::StrategySummary>> {
+        &self.list_application_component_strategy_summary
+    }
     /// Appends an item to `list_antipattern_severity_summary`.
     ///
     /// To override the contents of this collection use [`set_list_antipattern_severity_summary`](Self::set_list_antipattern_severity_summary).
@@ -202,6 +214,12 @@ impl AssessmentSummaryBuilder {
     ) -> Self {
         self.list_antipattern_severity_summary = input;
         self
+    }
+    /// <p> List of AntipatternSeveritySummary. </p>
+    pub fn get_list_antipattern_severity_summary(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AntipatternSeveritySummary>> {
+        &self.list_antipattern_severity_summary
     }
     /// Appends an item to `list_application_component_summary`.
     ///
@@ -225,6 +243,12 @@ impl AssessmentSummaryBuilder {
         self.list_application_component_summary = input;
         self
     }
+    /// <p> List of ApplicationComponentSummary. </p>
+    pub fn get_list_application_component_summary(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationComponentSummary>> {
+        &self.list_application_component_summary
+    }
     /// Appends an item to `list_server_summary`.
     ///
     /// To override the contents of this collection use [`set_list_server_summary`](Self::set_list_server_summary).
@@ -244,6 +268,12 @@ impl AssessmentSummaryBuilder {
         self.list_server_summary = input;
         self
     }
+    /// <p> List of ServerSummary. </p>
+    pub fn get_list_server_summary(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerSummary>> {
+        &self.list_server_summary
+    }
     /// <p> The Amazon S3 object containing the anti-pattern report. </p>
     pub fn antipattern_report_s3_object(mut self, input: crate::types::S3Object) -> Self {
         self.antipattern_report_s3_object = ::std::option::Option::Some(input);
@@ -256,6 +286,12 @@ impl AssessmentSummaryBuilder {
     ) -> Self {
         self.antipattern_report_s3_object = input;
         self
+    }
+    /// <p> The Amazon S3 object containing the anti-pattern report. </p>
+    pub fn get_antipattern_report_s3_object(
+        &self,
+    ) -> &::std::option::Option<crate::types::S3Object> {
+        &self.antipattern_report_s3_object
     }
     /// <p> The status of the anti-pattern report. </p>
     pub fn antipattern_report_status(
@@ -273,6 +309,12 @@ impl AssessmentSummaryBuilder {
         self.antipattern_report_status = input;
         self
     }
+    /// <p> The status of the anti-pattern report. </p>
+    pub fn get_antipattern_report_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::AntipatternReportStatus> {
+        &self.antipattern_report_status
+    }
     /// <p> The status message of the anti-pattern report. </p>
     pub fn antipattern_report_status_message(
         mut self,
@@ -289,6 +331,12 @@ impl AssessmentSummaryBuilder {
         self.antipattern_report_status_message = input;
         self
     }
+    /// <p> The status message of the anti-pattern report. </p>
+    pub fn get_antipattern_report_status_message(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.antipattern_report_status_message
+    }
     /// <p> The time the assessment was performed. </p>
     pub fn last_analyzed_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_analyzed_timestamp = ::std::option::Option::Some(input);
@@ -301,6 +349,12 @@ impl AssessmentSummaryBuilder {
     ) -> Self {
         self.last_analyzed_timestamp = input;
         self
+    }
+    /// <p> The time the assessment was performed. </p>
+    pub fn get_last_analyzed_timestamp(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_analyzed_timestamp
     }
     /// Appends an item to `list_application_component_status_summary`.
     ///
@@ -328,6 +382,13 @@ impl AssessmentSummaryBuilder {
         self.list_application_component_status_summary = input;
         self
     }
+    /// <p>List of status summaries of the analyzed application components.</p>
+    pub fn get_list_application_component_status_summary(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationComponentStatusSummary>>
+    {
+        &self.list_application_component_status_summary
+    }
     /// Appends an item to `list_server_status_summary`.
     ///
     /// To override the contents of this collection use [`set_list_server_status_summary`](Self::set_list_server_status_summary).
@@ -346,6 +407,12 @@ impl AssessmentSummaryBuilder {
     ) -> Self {
         self.list_server_status_summary = input;
         self
+    }
+    /// <p>List of status summaries of the analyzed servers.</p>
+    pub fn get_list_server_status_summary(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ServerStatusSummary>> {
+        &self.list_server_status_summary
     }
     /// Consumes the builder and constructs a [`AssessmentSummary`](crate::types::AssessmentSummary).
     pub fn build(self) -> crate::types::AssessmentSummary {

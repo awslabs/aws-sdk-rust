@@ -62,6 +62,10 @@ impl ReportDeliveryChannelBuilder {
         self.s3_bucket_name = input;
         self
     }
+    /// <p>The unique name of the S3 bucket that receives your reports.</p>
+    pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket_name
+    }
     /// <p>The prefix for where Backup Audit Manager delivers your reports to Amazon S3. The prefix is this part of the following path: s3://your-bucket-name/<code>prefix</code>/Backup/us-west-2/year/month/day/report-name. If not specified, there is no prefix.</p>
     pub fn s3_key_prefix(
         mut self,
@@ -77,6 +81,10 @@ impl ReportDeliveryChannelBuilder {
     ) -> Self {
         self.s3_key_prefix = input;
         self
+    }
+    /// <p>The prefix for where Backup Audit Manager delivers your reports to Amazon S3. The prefix is this part of the following path: s3://your-bucket-name/<code>prefix</code>/Backup/us-west-2/year/month/day/report-name. If not specified, there is no prefix.</p>
+    pub fn get_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_key_prefix
     }
     /// Appends an item to `formats`.
     ///
@@ -96,6 +104,10 @@ impl ReportDeliveryChannelBuilder {
     ) -> Self {
         self.formats = input;
         self
+    }
+    /// <p>A list of the format of your reports: <code>CSV</code>, <code>JSON</code>, or both. If not specified, the default format is <code>CSV</code>.</p>
+    pub fn get_formats(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.formats
     }
     /// Consumes the builder and constructs a [`ReportDeliveryChannel`](crate::types::ReportDeliveryChannel).
     pub fn build(self) -> crate::types::ReportDeliveryChannel {

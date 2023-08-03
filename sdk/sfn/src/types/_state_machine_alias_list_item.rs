@@ -54,6 +54,10 @@ impl StateMachineAliasListItemBuilder {
         self.state_machine_alias_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that identifies a state machine alias. The alias ARN is a combination of state machine ARN and the alias name separated by a colon (:). For example, <code>stateMachineARN:PROD</code>.</p>
+    pub fn get_state_machine_alias_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_machine_alias_arn
+    }
     /// <p>The creation date of a state machine alias.</p>
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl StateMachineAliasListItemBuilder {
     ) -> Self {
         self.creation_date = input;
         self
+    }
+    /// <p>The creation date of a state machine alias.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
     }
     /// Consumes the builder and constructs a [`StateMachineAliasListItem`](crate::types::StateMachineAliasListItem).
     pub fn build(self) -> crate::types::StateMachineAliasListItem {

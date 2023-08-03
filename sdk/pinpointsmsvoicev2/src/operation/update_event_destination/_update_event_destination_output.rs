@@ -70,6 +70,10 @@ impl UpdateEventDestinationOutputBuilder {
         self.configuration_set_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) for the ConfigurationSet that was updated.</p>
+    pub fn get_configuration_set_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_set_arn
+    }
     /// <p>The name of the configuration set.</p>
     pub fn configuration_set_name(
         mut self,
@@ -86,6 +90,10 @@ impl UpdateEventDestinationOutputBuilder {
         self.configuration_set_name = input;
         self
     }
+    /// <p>The name of the configuration set.</p>
+    pub fn get_configuration_set_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_set_name
+    }
     /// <p>An EventDestination object containing the details of where events will be logged. </p>
     pub fn event_destination(mut self, input: crate::types::EventDestination) -> Self {
         self.event_destination = ::std::option::Option::Some(input);
@@ -98,6 +106,10 @@ impl UpdateEventDestinationOutputBuilder {
     ) -> Self {
         self.event_destination = input;
         self
+    }
+    /// <p>An EventDestination object containing the details of where events will be logged. </p>
+    pub fn get_event_destination(&self) -> &::std::option::Option<crate::types::EventDestination> {
+        &self.event_destination
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

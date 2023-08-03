@@ -40,6 +40,10 @@ impl AutoMlJobStepMetadataBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the AutoML job.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// Consumes the builder and constructs a [`AutoMlJobStepMetadata`](crate::types::AutoMlJobStepMetadata).
     pub fn build(self) -> crate::types::AutoMlJobStepMetadata {
         crate::types::AutoMlJobStepMetadata { arn: self.arn }

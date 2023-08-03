@@ -63,6 +63,12 @@ impl ListIpRoutesOutputBuilder {
         self.ip_routes_info = input;
         self
     }
+    /// <p>A list of <code>IpRoute</code>s.</p>
+    pub fn get_ip_routes_info(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::IpRouteInfo>> {
+        &self.ip_routes_info
+    }
     /// <p>If not null, more results are available. Pass this value for the <i>NextToken</i> parameter in a subsequent call to <code>ListIpRoutes</code> to retrieve the next set of items.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -72,6 +78,10 @@ impl ListIpRoutesOutputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>If not null, more results are available. Pass this value for the <i>NextToken</i> parameter in a subsequent call to <code>ListIpRoutes</code> to retrieve the next set of items.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

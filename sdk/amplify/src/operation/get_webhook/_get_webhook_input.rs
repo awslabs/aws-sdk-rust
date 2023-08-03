@@ -40,6 +40,10 @@ impl GetWebhookInputBuilder {
         self.webhook_id = input;
         self
     }
+    /// <p> The unique ID for a webhook. </p>
+    pub fn get_webhook_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.webhook_id
+    }
     /// Consumes the builder and constructs a [`GetWebhookInput`](crate::operation::get_webhook::GetWebhookInput).
     pub fn build(
         self,

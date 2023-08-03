@@ -90,6 +90,10 @@ impl AggregatedUtterancesSummaryBuilder {
         self.utterance = input;
         self
     }
+    /// <p>The text of the utterance. If the utterance was used with the <code>RecognizeUtterance</code> operation, the text is the transcription of the audio utterance.</p>
+    pub fn get_utterance(&self) -> &::std::option::Option<::std::string::String> {
+        &self.utterance
+    }
     /// <p>The number of times that the utterance was detected by Amazon Lex during the time period. When an utterance is detected, it activates an intent or a slot.</p>
     pub fn hit_count(mut self, input: i32) -> Self {
         self.hit_count = ::std::option::Option::Some(input);
@@ -100,6 +104,10 @@ impl AggregatedUtterancesSummaryBuilder {
         self.hit_count = input;
         self
     }
+    /// <p>The number of times that the utterance was detected by Amazon Lex during the time period. When an utterance is detected, it activates an intent or a slot.</p>
+    pub fn get_hit_count(&self) -> &::std::option::Option<i32> {
+        &self.hit_count
+    }
     /// <p>The number of times that the utterance was missed by Amazon Lex An utterance is missed when it doesn't activate an intent or slot.</p>
     pub fn missed_count(mut self, input: i32) -> Self {
         self.missed_count = ::std::option::Option::Some(input);
@@ -109,6 +117,10 @@ impl AggregatedUtterancesSummaryBuilder {
     pub fn set_missed_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.missed_count = input;
         self
+    }
+    /// <p>The number of times that the utterance was missed by Amazon Lex An utterance is missed when it doesn't activate an intent or slot.</p>
+    pub fn get_missed_count(&self) -> &::std::option::Option<i32> {
+        &self.missed_count
     }
     /// <p>The date and time that the utterance was first recorded in the time window for aggregation. An utterance may have been sent to Amazon Lex before that time, but only utterances within the time window are counted.</p>
     pub fn utterance_first_recorded_in_aggregation_duration(
@@ -126,6 +138,12 @@ impl AggregatedUtterancesSummaryBuilder {
         self.utterance_first_recorded_in_aggregation_duration = input;
         self
     }
+    /// <p>The date and time that the utterance was first recorded in the time window for aggregation. An utterance may have been sent to Amazon Lex before that time, but only utterances within the time window are counted.</p>
+    pub fn get_utterance_first_recorded_in_aggregation_duration(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.utterance_first_recorded_in_aggregation_duration
+    }
     /// <p>The last date and time that an utterance was recorded in the time window for aggregation. An utterance may be sent to Amazon Lex after that time, but only utterances within the time window are counted.</p>
     pub fn utterance_last_recorded_in_aggregation_duration(
         mut self,
@@ -142,6 +160,12 @@ impl AggregatedUtterancesSummaryBuilder {
         self.utterance_last_recorded_in_aggregation_duration = input;
         self
     }
+    /// <p>The last date and time that an utterance was recorded in the time window for aggregation. An utterance may be sent to Amazon Lex after that time, but only utterances within the time window are counted.</p>
+    pub fn get_utterance_last_recorded_in_aggregation_duration(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.utterance_last_recorded_in_aggregation_duration
+    }
     /// <p>Aggregated utterance data may contain utterances from versions of your bot that have since been deleted. When the aggregated contains this kind of data, this field is set to true.</p>
     pub fn contains_data_from_deleted_resources(mut self, input: bool) -> Self {
         self.contains_data_from_deleted_resources = ::std::option::Option::Some(input);
@@ -154,6 +178,10 @@ impl AggregatedUtterancesSummaryBuilder {
     ) -> Self {
         self.contains_data_from_deleted_resources = input;
         self
+    }
+    /// <p>Aggregated utterance data may contain utterances from versions of your bot that have since been deleted. When the aggregated contains this kind of data, this field is set to true.</p>
+    pub fn get_contains_data_from_deleted_resources(&self) -> &::std::option::Option<bool> {
+        &self.contains_data_from_deleted_resources
     }
     /// Consumes the builder and constructs a [`AggregatedUtterancesSummary`](crate::types::AggregatedUtterancesSummary).
     pub fn build(self) -> crate::types::AggregatedUtterancesSummary {

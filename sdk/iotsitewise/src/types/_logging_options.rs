@@ -40,6 +40,10 @@ impl LoggingOptionsBuilder {
         self.level = input;
         self
     }
+    /// <p>The IoT SiteWise logging verbosity level.</p>
+    pub fn get_level(&self) -> &::std::option::Option<crate::types::LoggingLevel> {
+        &self.level
+    }
     /// Consumes the builder and constructs a [`LoggingOptions`](crate::types::LoggingOptions).
     pub fn build(self) -> crate::types::LoggingOptions {
         crate::types::LoggingOptions { level: self.level }

@@ -37,6 +37,13 @@ impl DescribeScheduledActionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DescribeScheduledActions as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::describe_scheduled_actions::builders::DescribeScheduledActionsInputBuilder
+    {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -142,6 +149,10 @@ impl DescribeScheduledActionsFluentBuilder {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }
+    /// <p>The name of the Auto Scaling group.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_auto_scaling_group_name()
+    }
     /// Appends an item to `ScheduledActionNames`.
     ///
     /// To override the contents of this collection use [`set_scheduled_action_names`](Self::set_scheduled_action_names).
@@ -164,6 +175,13 @@ impl DescribeScheduledActionsFluentBuilder {
         self.inner = self.inner.set_scheduled_action_names(input);
         self
     }
+    /// <p>The names of one or more scheduled actions. If you omit this property, all scheduled actions are described. If you specify an unknown scheduled action, it is ignored with no error.</p>
+    /// <p>Array Members: Maximum number of 50 actions.</p>
+    pub fn get_scheduled_action_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_scheduled_action_names()
+    }
     /// <p>The earliest scheduled start time to return. If scheduled action names are provided, this property is ignored.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
@@ -176,6 +194,10 @@ impl DescribeScheduledActionsFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
+    }
+    /// <p>The earliest scheduled start time to return. If scheduled action names are provided, this property is ignored.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_time()
     }
     /// <p>The latest scheduled start time to return. If scheduled action names are provided, this property is ignored.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -190,6 +212,10 @@ impl DescribeScheduledActionsFluentBuilder {
         self.inner = self.inner.set_end_time(input);
         self
     }
+    /// <p>The latest scheduled start time to return. If scheduled action names are provided, this property is ignored.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_end_time()
+    }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -200,6 +226,10 @@ impl DescribeScheduledActionsFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
+    }
     /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.inner = self.inner.max_records(input);
@@ -209,5 +239,9 @@ impl DescribeScheduledActionsFluentBuilder {
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_records(input);
         self
+    }
+    /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
+    pub fn get_max_records(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_records()
     }
 }

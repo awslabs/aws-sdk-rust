@@ -92,6 +92,10 @@ impl ServiceSettingBuilder {
         self.setting_id = input;
         self
     }
+    /// <p>The ID of the service setting.</p>
+    pub fn get_setting_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.setting_id
+    }
     /// <p>The value of the service setting.</p>
     pub fn setting_value(
         mut self,
@@ -108,6 +112,10 @@ impl ServiceSettingBuilder {
         self.setting_value = input;
         self
     }
+    /// <p>The value of the service setting.</p>
+    pub fn get_setting_value(&self) -> &::std::option::Option<::std::string::String> {
+        &self.setting_value
+    }
     /// <p>The last time the service setting was modified.</p>
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input);
@@ -120,6 +128,10 @@ impl ServiceSettingBuilder {
     ) -> Self {
         self.last_modified_date = input;
         self
+    }
+    /// <p>The last time the service setting was modified.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_date
     }
     /// <p>The ARN of the last modified user. This field is populated only if the setting value was overwritten.</p>
     pub fn last_modified_user(
@@ -137,6 +149,10 @@ impl ServiceSettingBuilder {
         self.last_modified_user = input;
         self
     }
+    /// <p>The ARN of the last modified user. This field is populated only if the setting value was overwritten.</p>
+    pub fn get_last_modified_user(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_user
+    }
     /// <p>The ARN of the service setting.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -146,6 +162,10 @@ impl ServiceSettingBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The ARN of the service setting.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The status of the service setting. The value can be Default, Customized or PendingUpdate.</p>
     /// <ul>
@@ -166,6 +186,15 @@ impl ServiceSettingBuilder {
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The status of the service setting. The value can be Default, Customized or PendingUpdate.</p>
+    /// <ul>
+    /// <li> <p>Default: The current setting uses a default value provisioned by the Amazon Web Services service team.</p> </li>
+    /// <li> <p>Customized: The current setting use a custom value specified by the customer.</p> </li>
+    /// <li> <p>PendingUpdate: The current setting uses a default or custom value, but a setting change request is pending approval.</p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`ServiceSetting`](crate::types::ServiceSetting).
     pub fn build(self) -> crate::types::ServiceSetting {

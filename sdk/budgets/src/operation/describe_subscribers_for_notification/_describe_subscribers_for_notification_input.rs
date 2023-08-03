@@ -72,6 +72,10 @@ impl DescribeSubscribersForNotificationInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>The <code>accountId</code> that is associated with the budget whose subscribers you want descriptions of.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>The name of the budget whose subscribers you want descriptions of.</p>
     pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.budget_name = ::std::option::Option::Some(input.into());
@@ -81,6 +85,10 @@ impl DescribeSubscribersForNotificationInputBuilder {
     pub fn set_budget_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.budget_name = input;
         self
+    }
+    /// <p>The name of the budget whose subscribers you want descriptions of.</p>
+    pub fn get_budget_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.budget_name
     }
     /// <p>The notification whose subscribers you want to list.</p>
     pub fn notification(mut self, input: crate::types::Notification) -> Self {
@@ -95,6 +103,10 @@ impl DescribeSubscribersForNotificationInputBuilder {
         self.notification = input;
         self
     }
+    /// <p>The notification whose subscribers you want to list.</p>
+    pub fn get_notification(&self) -> &::std::option::Option<crate::types::Notification> {
+        &self.notification
+    }
     /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -105,6 +117,10 @@ impl DescribeSubscribersForNotificationInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -114,6 +130,10 @@ impl DescribeSubscribersForNotificationInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeSubscribersForNotificationInput`](crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationInput, ::aws_smithy_http::operation::error::BuildError>{

@@ -39,6 +39,10 @@ impl CloseAccountInputBuilder {
         self.account_id = input;
         self
     }
+    /// <p>Retrieves the Amazon Web Services account Id for the current <code>CloseAccount</code> API request. </p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// Consumes the builder and constructs a [`CloseAccountInput`](crate::operation::close_account::CloseAccountInput).
     pub fn build(
         self,

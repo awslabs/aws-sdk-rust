@@ -51,6 +51,10 @@ impl FailureDescriptionBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of error that caused the failure.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::DeliveryStreamFailureType> {
+        &self.r#type
+    }
     /// <p>A message providing details about the error that caused the failure.</p>
     pub fn details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.details = ::std::option::Option::Some(input.into());
@@ -60,6 +64,10 @@ impl FailureDescriptionBuilder {
     pub fn set_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.details = input;
         self
+    }
+    /// <p>A message providing details about the error that caused the failure.</p>
+    pub fn get_details(&self) -> &::std::option::Option<::std::string::String> {
+        &self.details
     }
     /// Consumes the builder and constructs a [`FailureDescription`](crate::types::FailureDescription).
     pub fn build(self) -> crate::types::FailureDescription {

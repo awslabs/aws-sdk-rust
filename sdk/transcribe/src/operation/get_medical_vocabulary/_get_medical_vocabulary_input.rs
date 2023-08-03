@@ -46,6 +46,10 @@ impl GetMedicalVocabularyInputBuilder {
         self.vocabulary_name = input;
         self
     }
+    /// <p>The name of the custom medical vocabulary you want information about. Custom medical vocabulary names are case sensitive.</p>
+    pub fn get_vocabulary_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vocabulary_name
+    }
     /// Consumes the builder and constructs a [`GetMedicalVocabularyInput`](crate::operation::get_medical_vocabulary::GetMedicalVocabularyInput).
     pub fn build(
         self,

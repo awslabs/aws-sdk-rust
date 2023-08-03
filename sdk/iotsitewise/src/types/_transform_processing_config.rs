@@ -51,6 +51,10 @@ impl TransformProcessingConfigBuilder {
         self.compute_location = input;
         self
     }
+    /// <p>The compute location for the given transform property. </p>
+    pub fn get_compute_location(&self) -> &::std::option::Option<crate::types::ComputeLocation> {
+        &self.compute_location
+    }
     /// <p>The forwarding configuration for a given property.</p>
     pub fn forwarding_config(mut self, input: crate::types::ForwardingConfig) -> Self {
         self.forwarding_config = ::std::option::Option::Some(input);
@@ -63,6 +67,10 @@ impl TransformProcessingConfigBuilder {
     ) -> Self {
         self.forwarding_config = input;
         self
+    }
+    /// <p>The forwarding configuration for a given property.</p>
+    pub fn get_forwarding_config(&self) -> &::std::option::Option<crate::types::ForwardingConfig> {
+        &self.forwarding_config
     }
     /// Consumes the builder and constructs a [`TransformProcessingConfig`](crate::types::TransformProcessingConfig).
     pub fn build(self) -> crate::types::TransformProcessingConfig {

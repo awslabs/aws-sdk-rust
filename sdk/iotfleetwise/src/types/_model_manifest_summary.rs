@@ -88,6 +88,10 @@ impl ModelManifestSummaryBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the vehicle model.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// <p>The Amazon Resource Name (ARN) of the vehicle model.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -97,6 +101,10 @@ impl ModelManifestSummaryBuilder {
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the vehicle model.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The ARN of the signal catalog associated with the vehicle model.</p>
     pub fn signal_catalog_arn(
@@ -114,6 +122,10 @@ impl ModelManifestSummaryBuilder {
         self.signal_catalog_arn = input;
         self
     }
+    /// <p>The ARN of the signal catalog associated with the vehicle model.</p>
+    pub fn get_signal_catalog_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.signal_catalog_arn
+    }
     /// <p>A brief description of the vehicle model.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -123,6 +135,10 @@ impl ModelManifestSummaryBuilder {
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
+    }
+    /// <p>A brief description of the vehicle model.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
     }
     /// <p>The state of the vehicle model. If the status is <code>ACTIVE</code>, the vehicle model can't be edited. If the status is <code>DRAFT</code>, you can edit the vehicle model.</p>
     pub fn status(mut self, input: crate::types::ManifestStatus) -> Self {
@@ -137,6 +153,10 @@ impl ModelManifestSummaryBuilder {
         self.status = input;
         self
     }
+    /// <p>The state of the vehicle model. If the status is <code>ACTIVE</code>, the vehicle model can't be edited. If the status is <code>DRAFT</code>, you can edit the vehicle model.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ManifestStatus> {
+        &self.status
+    }
     /// <p>The time the vehicle model was created, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -150,6 +170,10 @@ impl ModelManifestSummaryBuilder {
         self.creation_time = input;
         self
     }
+    /// <p>The time the vehicle model was created, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
+    }
     /// <p>The time the vehicle model was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub fn last_modification_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modification_time = ::std::option::Option::Some(input);
@@ -162,6 +186,12 @@ impl ModelManifestSummaryBuilder {
     ) -> Self {
         self.last_modification_time = input;
         self
+    }
+    /// <p>The time the vehicle model was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
+    pub fn get_last_modification_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modification_time
     }
     /// Consumes the builder and constructs a [`ModelManifestSummary`](crate::types::ModelManifestSummary).
     pub fn build(self) -> crate::types::ModelManifestSummary {

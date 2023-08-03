@@ -66,6 +66,10 @@ impl ExportVectorEnrichmentJobInputBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -75,6 +79,10 @@ impl ExportVectorEnrichmentJobInputBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
+    }
+    /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM rolewith permission to upload to the location in OutputConfig.</p>
     pub fn execution_role_arn(
@@ -92,6 +100,10 @@ impl ExportVectorEnrichmentJobInputBuilder {
         self.execution_role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM rolewith permission to upload to the location in OutputConfig.</p>
+    pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_role_arn
+    }
     /// <p>Output location information for exporting Vector Enrichment Job results. </p>
     pub fn output_config(
         mut self,
@@ -107,6 +119,12 @@ impl ExportVectorEnrichmentJobInputBuilder {
     ) -> Self {
         self.output_config = input;
         self
+    }
+    /// <p>Output location information for exporting Vector Enrichment Job results. </p>
+    pub fn get_output_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExportVectorEnrichmentJobOutputConfig> {
+        &self.output_config
     }
     /// Consumes the builder and constructs a [`ExportVectorEnrichmentJobInput`](crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobInput).
     pub fn build(

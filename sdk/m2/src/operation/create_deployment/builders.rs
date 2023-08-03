@@ -36,6 +36,12 @@ impl CreateDeploymentFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateDeployment as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::create_deployment::builders::CreateDeploymentInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl CreateDeploymentFluentBuilder {
         self.inner = self.inner.set_environment_id(input);
         self
     }
+    /// <p>The identifier of the runtime environment where you want to deploy this application.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_id()
+    }
     /// <p>The application identifier.</p>
     pub fn application_id(
         mut self,
@@ -148,6 +158,10 @@ impl CreateDeploymentFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The application identifier.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>The version of the application to deploy.</p>
     pub fn application_version(mut self, input: i32) -> Self {
         self.inner = self.inner.application_version(input);
@@ -158,6 +172,10 @@ impl CreateDeploymentFluentBuilder {
         self.inner = self.inner.set_application_version(input);
         self
     }
+    /// <p>The version of the application to deploy.</p>
+    pub fn get_application_version(&self) -> &::std::option::Option<i32> {
+        self.inner.get_application_version()
+    }
     /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request to create a deployment. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires. </p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -167,5 +185,9 @@ impl CreateDeploymentFluentBuilder {
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
+    }
+    /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request to create a deployment. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires. </p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
 }

@@ -48,6 +48,10 @@ impl GetBackendInputBuilder {
         self.app_id = input;
         self
     }
+    /// <p>The app ID.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// <p>The name of the backend environment.</p>
     pub fn backend_environment_name(
         mut self,
@@ -63,6 +67,10 @@ impl GetBackendInputBuilder {
     ) -> Self {
         self.backend_environment_name = input;
         self
+    }
+    /// <p>The name of the backend environment.</p>
+    pub fn get_backend_environment_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backend_environment_name
     }
     /// Consumes the builder and constructs a [`GetBackendInput`](crate::operation::get_backend::GetBackendInput).
     pub fn build(

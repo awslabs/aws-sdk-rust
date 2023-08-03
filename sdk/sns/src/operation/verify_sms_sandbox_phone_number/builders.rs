@@ -37,6 +37,10 @@ impl VerifySMSSandboxPhoneNumberFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the VerifySMSSandboxPhoneNumber as a reference.
+    pub fn as_input(&self) -> &crate::operation::verify_sms_sandbox_phone_number::builders::VerifySmsSandboxPhoneNumberInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -127,6 +131,10 @@ impl VerifySMSSandboxPhoneNumberFluentBuilder {
         self.inner = self.inner.set_phone_number(input);
         self
     }
+    /// <p>The destination phone number to verify.</p>
+    pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_phone_number()
+    }
     /// <p>The OTP sent to the destination number from the <code>CreateSMSSandBoxPhoneNumber</code> call.</p>
     pub fn one_time_password(
         mut self,
@@ -142,5 +150,9 @@ impl VerifySMSSandboxPhoneNumberFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_one_time_password(input);
         self
+    }
+    /// <p>The OTP sent to the destination number from the <code>CreateSMSSandBoxPhoneNumber</code> call.</p>
+    pub fn get_one_time_password(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_one_time_password()
     }
 }

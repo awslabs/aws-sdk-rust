@@ -441,6 +441,10 @@ impl InstanceRequirementsBuilder {
         self.v_cpu_count = input;
         self
     }
+    /// <p>The minimum and maximum number of vCPUs.</p>
+    pub fn get_v_cpu_count(&self) -> &::std::option::Option<crate::types::VCpuCountRange> {
+        &self.v_cpu_count
+    }
     /// <p>The minimum and maximum amount of memory, in MiB.</p>
     pub fn memory_mi_b(mut self, input: crate::types::MemoryMiB) -> Self {
         self.memory_mi_b = ::std::option::Option::Some(input);
@@ -453,6 +457,10 @@ impl InstanceRequirementsBuilder {
     ) -> Self {
         self.memory_mi_b = input;
         self
+    }
+    /// <p>The minimum and maximum amount of memory, in MiB.</p>
+    pub fn get_memory_mi_b(&self) -> &::std::option::Option<crate::types::MemoryMiB> {
+        &self.memory_mi_b
     }
     /// Appends an item to `cpu_manufacturers`.
     ///
@@ -489,6 +497,20 @@ impl InstanceRequirementsBuilder {
         self.cpu_manufacturers = input;
         self
     }
+    /// <p>The CPU manufacturers to include.</p>
+    /// <ul>
+    /// <li> <p>For instance types with Intel CPUs, specify <code>intel</code>.</p> </li>
+    /// <li> <p>For instance types with AMD CPUs, specify <code>amd</code>.</p> </li>
+    /// <li> <p>For instance types with Amazon Web Services CPUs, specify <code>amazon-web-services</code>.</p> </li>
+    /// </ul> <note>
+    /// <p>Don't confuse the CPU manufacturer with the CPU architecture. Instances will be launched with a compatible CPU architecture based on the Amazon Machine Image (AMI) that you specify in your launch template.</p>
+    /// </note>
+    /// <p>Default: Any manufacturer</p>
+    pub fn get_cpu_manufacturers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CpuManufacturer>> {
+        &self.cpu_manufacturers
+    }
     /// <p>The minimum and maximum amount of memory per vCPU, in GiB.</p>
     /// <p>Default: No minimum or maximum limits</p>
     pub fn memory_gi_b_per_v_cpu(mut self, input: crate::types::MemoryGiBPerVCpu) -> Self {
@@ -503,6 +525,13 @@ impl InstanceRequirementsBuilder {
     ) -> Self {
         self.memory_gi_b_per_v_cpu = input;
         self
+    }
+    /// <p>The minimum and maximum amount of memory per vCPU, in GiB.</p>
+    /// <p>Default: No minimum or maximum limits</p>
+    pub fn get_memory_gi_b_per_v_cpu(
+        &self,
+    ) -> &::std::option::Option<crate::types::MemoryGiBPerVCpu> {
+        &self.memory_gi_b_per_v_cpu
     }
     /// Appends an item to `excluded_instance_types`.
     ///
@@ -536,6 +565,17 @@ impl InstanceRequirementsBuilder {
         self.excluded_instance_types = input;
         self
     }
+    /// <p>The instance types to exclude.</p>
+    /// <p>You can use strings with one or more wild cards, represented by an asterisk (<code>*</code>), to exclude an instance type, size, or generation. The following are examples: <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.</p>
+    /// <p>For example, if you specify <code>c5*</code>,Amazon EC2 will exclude the entire C5 instance family, which includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 will exclude all the M5a instance types, but not the M5n instance types.</p> <note>
+    /// <p>If you specify <code>ExcludedInstanceTypes</code>, you can't specify <code>AllowedInstanceTypes</code>.</p>
+    /// </note>
+    /// <p>Default: No excluded instance types</p>
+    pub fn get_excluded_instance_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.excluded_instance_types
+    }
     /// Appends an item to `instance_generations`.
     ///
     /// To override the contents of this collection use [`set_instance_generations`](Self::set_instance_generations).
@@ -560,6 +600,15 @@ impl InstanceRequirementsBuilder {
     ) -> Self {
         self.instance_generations = input;
         self
+    }
+    /// <p>Indicates whether current or previous generation instance types are included. The current generation instance types are recommended for use. Current generation instance types are typically the latest two to three generations in each instance family. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>For current generation instance types, specify <code>current</code>.</p>
+    /// <p>For previous generation instance types, specify <code>previous</code>.</p>
+    /// <p>Default: Current and previous generation instance types</p>
+    pub fn get_instance_generations(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceGeneration>> {
+        &self.instance_generations
     }
     /// <p>The price protection threshold for Spot Instances. This is the maximum you’ll pay for a Spot Instance, expressed as a percentage above the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types priced above your threshold.</p>
     /// <p>The parameter accepts an integer, which Amazon EC2 interprets as a percentage.</p>
@@ -586,6 +635,16 @@ impl InstanceRequirementsBuilder {
         self.spot_max_price_percentage_over_lowest_price = input;
         self
     }
+    /// <p>The price protection threshold for Spot Instances. This is the maximum you’ll pay for a Spot Instance, expressed as a percentage above the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types priced above your threshold.</p>
+    /// <p>The parameter accepts an integer, which Amazon EC2 interprets as a percentage.</p>
+    /// <p>To turn off price protection, specify a high value, such as <code>999999</code>.</p>
+    /// <p>This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p> <note>
+    /// <p>If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is applied based on the per-vCPU or per-memory price instead of the per-instance price.</p>
+    /// </note>
+    /// <p>Default: <code>100</code> </p>
+    pub fn get_spot_max_price_percentage_over_lowest_price(&self) -> &::std::option::Option<i32> {
+        &self.spot_max_price_percentage_over_lowest_price
+    }
     /// <p>The price protection threshold for On-Demand Instances. This is the maximum you’ll pay for an On-Demand Instance, expressed as a percentage above the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types priced above your threshold.</p>
     /// <p>The parameter accepts an integer, which Amazon EC2 interprets as a percentage.</p>
     /// <p>To turn off price protection, specify a high value, such as <code>999999</code>.</p>
@@ -611,6 +670,18 @@ impl InstanceRequirementsBuilder {
         self.on_demand_max_price_percentage_over_lowest_price = input;
         self
     }
+    /// <p>The price protection threshold for On-Demand Instances. This is the maximum you’ll pay for an On-Demand Instance, expressed as a percentage above the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types priced above your threshold.</p>
+    /// <p>The parameter accepts an integer, which Amazon EC2 interprets as a percentage.</p>
+    /// <p>To turn off price protection, specify a high value, such as <code>999999</code>.</p>
+    /// <p>This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p> <note>
+    /// <p>If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is applied based on the per-vCPU or per-memory price instead of the per-instance price.</p>
+    /// </note>
+    /// <p>Default: <code>20</code> </p>
+    pub fn get_on_demand_max_price_percentage_over_lowest_price(
+        &self,
+    ) -> &::std::option::Option<i32> {
+        &self.on_demand_max_price_percentage_over_lowest_price
+    }
     /// <p>Indicates whether bare metal instance types must be included, excluded, or required.</p>
     /// <ul>
     /// <li> <p>To include bare metal instance types, specify <code>included</code>.</p> </li>
@@ -632,6 +703,16 @@ impl InstanceRequirementsBuilder {
     pub fn set_bare_metal(mut self, input: ::std::option::Option<crate::types::BareMetal>) -> Self {
         self.bare_metal = input;
         self
+    }
+    /// <p>Indicates whether bare metal instance types must be included, excluded, or required.</p>
+    /// <ul>
+    /// <li> <p>To include bare metal instance types, specify <code>included</code>.</p> </li>
+    /// <li> <p>To require only bare metal instance types, specify <code>required</code>.</p> </li>
+    /// <li> <p>To exclude bare metal instance types, specify <code>excluded</code>.</p> </li>
+    /// </ul>
+    /// <p>Default: <code>excluded</code> </p>
+    pub fn get_bare_metal(&self) -> &::std::option::Option<crate::types::BareMetal> {
+        &self.bare_metal
     }
     /// <p>Indicates whether burstable performance T instance types are included, excluded, or required. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable performance instances</a>.</p>
     /// <ul>
@@ -658,6 +739,18 @@ impl InstanceRequirementsBuilder {
         self.burstable_performance = input;
         self
     }
+    /// <p>Indicates whether burstable performance T instance types are included, excluded, or required. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable performance instances</a>.</p>
+    /// <ul>
+    /// <li> <p>To include burstable performance instance types, specify <code>included</code>.</p> </li>
+    /// <li> <p>To require only burstable performance instance types, specify <code>required</code>.</p> </li>
+    /// <li> <p>To exclude burstable performance instance types, specify <code>excluded</code>.</p> </li>
+    /// </ul>
+    /// <p>Default: <code>excluded</code> </p>
+    pub fn get_burstable_performance(
+        &self,
+    ) -> &::std::option::Option<crate::types::BurstablePerformance> {
+        &self.burstable_performance
+    }
     /// <p>Indicates whether instance types must support hibernation for On-Demand Instances.</p>
     /// <p>This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>.</p>
     /// <p>Default: <code>false</code> </p>
@@ -671,6 +764,12 @@ impl InstanceRequirementsBuilder {
     pub fn set_require_hibernate_support(mut self, input: ::std::option::Option<bool>) -> Self {
         self.require_hibernate_support = input;
         self
+    }
+    /// <p>Indicates whether instance types must support hibernation for On-Demand Instances.</p>
+    /// <p>This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>.</p>
+    /// <p>Default: <code>false</code> </p>
+    pub fn get_require_hibernate_support(&self) -> &::std::option::Option<bool> {
+        &self.require_hibernate_support
     }
     /// <p>The minimum and maximum number of network interfaces.</p>
     /// <p>Default: No minimum or maximum limits</p>
@@ -686,6 +785,13 @@ impl InstanceRequirementsBuilder {
     ) -> Self {
         self.network_interface_count = input;
         self
+    }
+    /// <p>The minimum and maximum number of network interfaces.</p>
+    /// <p>Default: No minimum or maximum limits</p>
+    pub fn get_network_interface_count(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkInterfaceCount> {
+        &self.network_interface_count
     }
     /// <p>Indicates whether instance types with instance store volumes are included, excluded, or required. For more information, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">Amazon EC2 instance store</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <ul>
@@ -711,6 +817,16 @@ impl InstanceRequirementsBuilder {
     ) -> Self {
         self.local_storage = input;
         self
+    }
+    /// <p>Indicates whether instance types with instance store volumes are included, excluded, or required. For more information, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">Amazon EC2 instance store</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <ul>
+    /// <li> <p>To include instance types with instance store volumes, specify <code>included</code>.</p> </li>
+    /// <li> <p>To require only instance types with instance store volumes, specify <code>required</code>.</p> </li>
+    /// <li> <p>To exclude instance types with instance store volumes, specify <code>excluded</code>.</p> </li>
+    /// </ul>
+    /// <p>Default: <code>included</code> </p>
+    pub fn get_local_storage(&self) -> &::std::option::Option<crate::types::LocalStorage> {
+        &self.local_storage
     }
     /// Appends an item to `local_storage_types`.
     ///
@@ -741,6 +857,17 @@ impl InstanceRequirementsBuilder {
         self.local_storage_types = input;
         self
     }
+    /// <p>The type of local storage that is required.</p>
+    /// <ul>
+    /// <li> <p>For instance types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p> </li>
+    /// <li> <p>For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.</p> </li>
+    /// </ul>
+    /// <p>Default: <code>hdd</code> and <code>ssd</code> </p>
+    pub fn get_local_storage_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::LocalStorageType>> {
+        &self.local_storage_types
+    }
     /// <p>The minimum and maximum amount of total local storage, in GB.</p>
     /// <p>Default: No minimum or maximum limits</p>
     pub fn total_local_storage_gb(mut self, input: crate::types::TotalLocalStorageGb) -> Self {
@@ -755,6 +882,13 @@ impl InstanceRequirementsBuilder {
     ) -> Self {
         self.total_local_storage_gb = input;
         self
+    }
+    /// <p>The minimum and maximum amount of total local storage, in GB.</p>
+    /// <p>Default: No minimum or maximum limits</p>
+    pub fn get_total_local_storage_gb(
+        &self,
+    ) -> &::std::option::Option<crate::types::TotalLocalStorageGb> {
+        &self.total_local_storage_gb
     }
     /// <p>The minimum and maximum baseline bandwidth to Amazon EBS, in Mbps. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html">Amazon EBS–optimized instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>Default: No minimum or maximum limits</p>
@@ -773,6 +907,13 @@ impl InstanceRequirementsBuilder {
     ) -> Self {
         self.baseline_ebs_bandwidth_mbps = input;
         self
+    }
+    /// <p>The minimum and maximum baseline bandwidth to Amazon EBS, in Mbps. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html">Amazon EBS–optimized instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Default: No minimum or maximum limits</p>
+    pub fn get_baseline_ebs_bandwidth_mbps(
+        &self,
+    ) -> &::std::option::Option<crate::types::BaselineEbsBandwidthMbps> {
+        &self.baseline_ebs_bandwidth_mbps
     }
     /// Appends an item to `accelerator_types`.
     ///
@@ -805,6 +946,18 @@ impl InstanceRequirementsBuilder {
         self.accelerator_types = input;
         self
     }
+    /// <p>The accelerator types that must be on the instance type.</p>
+    /// <ul>
+    /// <li> <p>For instance types with GPU accelerators, specify <code>gpu</code>.</p> </li>
+    /// <li> <p>For instance types with FPGA accelerators, specify <code>fpga</code>.</p> </li>
+    /// <li> <p>For instance types with inference accelerators, specify <code>inference</code>.</p> </li>
+    /// </ul>
+    /// <p>Default: Any accelerator type</p>
+    pub fn get_accelerator_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AcceleratorType>> {
+        &self.accelerator_types
+    }
     /// <p>The minimum and maximum number of accelerators (GPUs, FPGAs, or Amazon Web Services Inferentia chips) on an instance.</p>
     /// <p>To exclude accelerator-enabled instance types, set <code>Max</code> to <code>0</code>.</p>
     /// <p>Default: No minimum or maximum limits</p>
@@ -821,6 +974,12 @@ impl InstanceRequirementsBuilder {
     ) -> Self {
         self.accelerator_count = input;
         self
+    }
+    /// <p>The minimum and maximum number of accelerators (GPUs, FPGAs, or Amazon Web Services Inferentia chips) on an instance.</p>
+    /// <p>To exclude accelerator-enabled instance types, set <code>Max</code> to <code>0</code>.</p>
+    /// <p>Default: No minimum or maximum limits</p>
+    pub fn get_accelerator_count(&self) -> &::std::option::Option<crate::types::AcceleratorCount> {
+        &self.accelerator_count
     }
     /// Appends an item to `accelerator_manufacturers`.
     ///
@@ -857,6 +1016,19 @@ impl InstanceRequirementsBuilder {
     ) -> Self {
         self.accelerator_manufacturers = input;
         self
+    }
+    /// <p>Indicates whether instance types must have accelerators by specific manufacturers.</p>
+    /// <ul>
+    /// <li> <p>For instance types with NVIDIA devices, specify <code>nvidia</code>.</p> </li>
+    /// <li> <p>For instance types with AMD devices, specify <code>amd</code>.</p> </li>
+    /// <li> <p>For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.</p> </li>
+    /// <li> <p>For instance types with Xilinx devices, specify <code>xilinx</code>.</p> </li>
+    /// </ul>
+    /// <p>Default: Any manufacturer</p>
+    pub fn get_accelerator_manufacturers(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AcceleratorManufacturer>> {
+        &self.accelerator_manufacturers
     }
     /// Appends an item to `accelerator_names`.
     ///
@@ -901,6 +1073,24 @@ impl InstanceRequirementsBuilder {
         self.accelerator_names = input;
         self
     }
+    /// <p>The accelerators that must be on the instance type.</p>
+    /// <ul>
+    /// <li> <p>For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p> </li>
+    /// <li> <p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p> </li>
+    /// <li> <p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p> </li>
+    /// <li> <p>For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.</p> </li>
+    /// <li> <p>For instance types with NVIDIA M60 GPUs, specify <code>m60</code>.</p> </li>
+    /// <li> <p>For instance types with AMD Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li>
+    /// <li> <p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p> </li>
+    /// <li> <p>For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.</p> </li>
+    /// <li> <p>For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li>
+    /// </ul>
+    /// <p>Default: Any accelerator</p>
+    pub fn get_accelerator_names(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AcceleratorName>> {
+        &self.accelerator_names
+    }
     /// <p>The minimum and maximum amount of total accelerator memory, in MiB.</p>
     /// <p>Default: No minimum or maximum limits</p>
     pub fn accelerator_total_memory_mi_b(
@@ -919,6 +1109,13 @@ impl InstanceRequirementsBuilder {
         self.accelerator_total_memory_mi_b = input;
         self
     }
+    /// <p>The minimum and maximum amount of total accelerator memory, in MiB.</p>
+    /// <p>Default: No minimum or maximum limits</p>
+    pub fn get_accelerator_total_memory_mi_b(
+        &self,
+    ) -> &::std::option::Option<crate::types::AcceleratorTotalMemoryMiB> {
+        &self.accelerator_total_memory_mi_b
+    }
     /// <p>The minimum and maximum amount of network bandwidth, in gigabits per second (Gbps).</p>
     /// <p>Default: No minimum or maximum limits</p>
     pub fn network_bandwidth_gbps(mut self, input: crate::types::NetworkBandwidthGbps) -> Self {
@@ -933,6 +1130,13 @@ impl InstanceRequirementsBuilder {
     ) -> Self {
         self.network_bandwidth_gbps = input;
         self
+    }
+    /// <p>The minimum and maximum amount of network bandwidth, in gigabits per second (Gbps).</p>
+    /// <p>Default: No minimum or maximum limits</p>
+    pub fn get_network_bandwidth_gbps(
+        &self,
+    ) -> &::std::option::Option<crate::types::NetworkBandwidthGbps> {
+        &self.network_bandwidth_gbps
     }
     /// Appends an item to `allowed_instance_types`.
     ///
@@ -965,6 +1169,17 @@ impl InstanceRequirementsBuilder {
     ) -> Self {
         self.allowed_instance_types = input;
         self
+    }
+    /// <p>The instance types to apply your specified attributes against. All other instance types are ignored, even if they match your specified attributes.</p>
+    /// <p>You can use strings with one or more wild cards, represented by an asterisk (<code>*</code>), to allow an instance type, size, or generation. The following are examples: <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.</p>
+    /// <p>For example, if you specify <code>c5*</code>,Amazon EC2 will allow the entire C5 instance family, which includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 will allow all the M5a instance types, but not the M5n instance types.</p> <note>
+    /// <p>If you specify <code>AllowedInstanceTypes</code>, you can't specify <code>ExcludedInstanceTypes</code>.</p>
+    /// </note>
+    /// <p>Default: All instance types</p>
+    pub fn get_allowed_instance_types(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.allowed_instance_types
     }
     /// Consumes the builder and constructs a [`InstanceRequirements`](crate::types::InstanceRequirements).
     pub fn build(self) -> crate::types::InstanceRequirements {

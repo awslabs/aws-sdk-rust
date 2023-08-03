@@ -58,6 +58,10 @@ impl CreateLogPatternOutputBuilder {
         self.log_pattern = input;
         self
     }
+    /// <p>The successfully created log pattern.</p>
+    pub fn get_log_pattern(&self) -> &::std::option::Option<crate::types::LogPattern> {
+        &self.log_pattern
+    }
     /// <p>The name of the resource group.</p>
     pub fn resource_group_name(
         mut self,
@@ -73,6 +77,10 @@ impl CreateLogPatternOutputBuilder {
     ) -> Self {
         self.resource_group_name = input;
         self
+    }
+    /// <p>The name of the resource group.</p>
+    pub fn get_resource_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_group_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

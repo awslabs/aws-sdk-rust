@@ -43,6 +43,10 @@ impl ModelPackagingOutputDetailsBuilder {
         self.greengrass = input;
         self
     }
+    /// <p> Information about the AWS IoT Greengrass component in a model packaging job. </p>
+    pub fn get_greengrass(&self) -> &::std::option::Option<crate::types::GreengrassOutputDetails> {
+        &self.greengrass
+    }
     /// Consumes the builder and constructs a [`ModelPackagingOutputDetails`](crate::types::ModelPackagingOutputDetails).
     pub fn build(self) -> crate::types::ModelPackagingOutputDetails {
         crate::types::ModelPackagingOutputDetails {

@@ -92,6 +92,10 @@ impl InvalidNodeExceptionBuilder {
         self.invalid_nodes = input;
         self
     }
+    /// <p>The specified node type isn't valid.</p>
+    pub fn get_invalid_nodes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Node>> {
+        &self.invalid_nodes
+    }
     /// <p>The reason the node validation failed.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
@@ -102,6 +106,10 @@ impl InvalidNodeExceptionBuilder {
         self.reason = input;
         self
     }
+    /// <p>The reason the node validation failed.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
+    }
     #[allow(missing_docs)] // documentation missing in model
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -111,6 +119,10 @@ impl InvalidNodeExceptionBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

@@ -42,6 +42,10 @@ impl CreateKeyGroupInputBuilder {
         self.key_group_config = input;
         self
     }
+    /// <p>A key group configuration.</p>
+    pub fn get_key_group_config(&self) -> &::std::option::Option<crate::types::KeyGroupConfig> {
+        &self.key_group_config
+    }
     /// Consumes the builder and constructs a [`CreateKeyGroupInput`](crate::operation::create_key_group::CreateKeyGroupInput).
     pub fn build(
         self,

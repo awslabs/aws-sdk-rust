@@ -70,6 +70,10 @@ impl DqResultsPublishingOptionsBuilder {
         self.evaluation_context = input;
         self
     }
+    /// <p>The context of the evaluation.</p>
+    pub fn get_evaluation_context(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evaluation_context
+    }
     /// <p>The Amazon S3 prefix prepended to the results.</p>
     pub fn results_s3_prefix(
         mut self,
@@ -86,6 +90,10 @@ impl DqResultsPublishingOptionsBuilder {
         self.results_s3_prefix = input;
         self
     }
+    /// <p>The Amazon S3 prefix prepended to the results.</p>
+    pub fn get_results_s3_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.results_s3_prefix
+    }
     /// <p>Enable metrics for your data quality results.</p>
     pub fn cloud_watch_metrics_enabled(mut self, input: bool) -> Self {
         self.cloud_watch_metrics_enabled = ::std::option::Option::Some(input);
@@ -96,6 +104,10 @@ impl DqResultsPublishingOptionsBuilder {
         self.cloud_watch_metrics_enabled = input;
         self
     }
+    /// <p>Enable metrics for your data quality results.</p>
+    pub fn get_cloud_watch_metrics_enabled(&self) -> &::std::option::Option<bool> {
+        &self.cloud_watch_metrics_enabled
+    }
     /// <p>Enable publishing for your data quality results.</p>
     pub fn results_publishing_enabled(mut self, input: bool) -> Self {
         self.results_publishing_enabled = ::std::option::Option::Some(input);
@@ -105,6 +117,10 @@ impl DqResultsPublishingOptionsBuilder {
     pub fn set_results_publishing_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.results_publishing_enabled = input;
         self
+    }
+    /// <p>Enable publishing for your data quality results.</p>
+    pub fn get_results_publishing_enabled(&self) -> &::std::option::Option<bool> {
+        &self.results_publishing_enabled
     }
     /// Consumes the builder and constructs a [`DqResultsPublishingOptions`](crate::types::DqResultsPublishingOptions).
     pub fn build(self) -> crate::types::DqResultsPublishingOptions {

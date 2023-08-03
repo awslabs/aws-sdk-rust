@@ -54,6 +54,10 @@ impl StartApplicationInputBuilder {
         self.application_name = input;
         self
     }
+    /// <p>The name of the application.</p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
     /// <p>Identifies the run configuration (start parameters) of a Kinesis Data Analytics application.</p>
     pub fn run_configuration(mut self, input: crate::types::RunConfiguration) -> Self {
         self.run_configuration = ::std::option::Option::Some(input);
@@ -66,6 +70,10 @@ impl StartApplicationInputBuilder {
     ) -> Self {
         self.run_configuration = input;
         self
+    }
+    /// <p>Identifies the run configuration (start parameters) of a Kinesis Data Analytics application.</p>
+    pub fn get_run_configuration(&self) -> &::std::option::Option<crate::types::RunConfiguration> {
+        &self.run_configuration
     }
     /// Consumes the builder and constructs a [`StartApplicationInput`](crate::operation::start_application::StartApplicationInput).
     pub fn build(

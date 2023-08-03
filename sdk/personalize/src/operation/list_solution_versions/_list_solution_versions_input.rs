@@ -56,6 +56,10 @@ impl ListSolutionVersionsInputBuilder {
         self.solution_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the solution.</p>
+    pub fn get_solution_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.solution_arn
+    }
     /// <p>A token returned from the previous call to <code>ListSolutionVersions</code> for getting the next set of solution versions (if they exist).</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl ListSolutionVersionsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>A token returned from the previous call to <code>ListSolutionVersions</code> for getting the next set of solution versions (if they exist).</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum number of solution versions to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -75,6 +83,10 @@ impl ListSolutionVersionsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of solution versions to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Consumes the builder and constructs a [`ListSolutionVersionsInput`](crate::operation::list_solution_versions::ListSolutionVersionsInput).
     pub fn build(

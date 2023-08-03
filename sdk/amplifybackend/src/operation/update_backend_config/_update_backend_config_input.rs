@@ -50,6 +50,10 @@ impl UpdateBackendConfigInputBuilder {
         self.app_id = input;
         self
     }
+    /// <p>The app ID.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
+    }
     /// <p>Describes the Amazon Cognito configuration for Admin UI access.</p>
     pub fn login_auth_config(mut self, input: crate::types::LoginAuthConfigReqObj) -> Self {
         self.login_auth_config = ::std::option::Option::Some(input);
@@ -62,6 +66,12 @@ impl UpdateBackendConfigInputBuilder {
     ) -> Self {
         self.login_auth_config = input;
         self
+    }
+    /// <p>Describes the Amazon Cognito configuration for Admin UI access.</p>
+    pub fn get_login_auth_config(
+        &self,
+    ) -> &::std::option::Option<crate::types::LoginAuthConfigReqObj> {
+        &self.login_auth_config
     }
     /// Consumes the builder and constructs a [`UpdateBackendConfigInput`](crate::operation::update_backend_config::UpdateBackendConfigInput).
     pub fn build(

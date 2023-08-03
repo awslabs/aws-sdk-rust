@@ -102,6 +102,14 @@ impl GetAutoScalingGroupRecommendationsInputBuilder {
         self.account_ids = input;
         self
     }
+    /// <p>The ID of the Amazon Web Services account for which to return Auto Scaling group recommendations.</p>
+    /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return Auto Scaling group recommendations.</p>
+    /// <p>Only one account ID can be specified per request.</p>
+    pub fn get_account_ids(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.account_ids
+    }
     /// Appends an item to `auto_scaling_group_arns`.
     ///
     /// To override the contents of this collection use [`set_auto_scaling_group_arns`](Self::set_auto_scaling_group_arns).
@@ -124,6 +132,12 @@ impl GetAutoScalingGroupRecommendationsInputBuilder {
         self.auto_scaling_group_arns = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Auto Scaling groups for which to return recommendations.</p>
+    pub fn get_auto_scaling_group_arns(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.auto_scaling_group_arns
+    }
     /// <p>The token to advance to the next page of Auto Scaling group recommendations.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -133,6 +147,10 @@ impl GetAutoScalingGroupRecommendationsInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The token to advance to the next page of Auto Scaling group recommendations.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// <p>The maximum number of Auto Scaling group recommendations to return with a single request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
@@ -145,6 +163,11 @@ impl GetAutoScalingGroupRecommendationsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum number of Auto Scaling group recommendations to return with a single request.</p>
+    /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Appends an item to `filters`.
     ///
@@ -165,6 +188,10 @@ impl GetAutoScalingGroupRecommendationsInputBuilder {
         self.filters = input;
         self
     }
+    /// <p>An array of objects to specify a filter that returns a more specific list of Auto Scaling group recommendations.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
+        &self.filters
+    }
     /// <p>An object to specify the preferences for the Auto Scaling group recommendations to return in the response.</p>
     pub fn recommendation_preferences(
         mut self,
@@ -180,6 +207,12 @@ impl GetAutoScalingGroupRecommendationsInputBuilder {
     ) -> Self {
         self.recommendation_preferences = input;
         self
+    }
+    /// <p>An object to specify the preferences for the Auto Scaling group recommendations to return in the response.</p>
+    pub fn get_recommendation_preferences(
+        &self,
+    ) -> &::std::option::Option<crate::types::RecommendationPreferences> {
+        &self.recommendation_preferences
     }
     /// Consumes the builder and constructs a [`GetAutoScalingGroupRecommendationsInput`](crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsInput, ::aws_smithy_http::operation::error::BuildError>{

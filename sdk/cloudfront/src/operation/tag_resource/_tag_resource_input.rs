@@ -48,6 +48,10 @@ impl TagResourceInputBuilder {
         self.resource = input;
         self
     }
+    /// <p>An ARN of a CloudFront resource.</p>
+    pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource
+    }
     /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
     pub fn tags(mut self, input: crate::types::Tags) -> Self {
         self.tags = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl TagResourceInputBuilder {
     pub fn set_tags(mut self, input: ::std::option::Option<crate::types::Tags>) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<crate::types::Tags> {
+        &self.tags
     }
     /// Consumes the builder and constructs a [`TagResourceInput`](crate::operation::tag_resource::TagResourceInput).
     pub fn build(

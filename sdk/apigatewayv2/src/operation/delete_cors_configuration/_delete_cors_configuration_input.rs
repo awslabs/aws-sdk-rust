@@ -41,6 +41,10 @@ impl DeleteCorsConfigurationInputBuilder {
         self.api_id = input;
         self
     }
+    /// <p>The API identifier.</p>
+    pub fn get_api_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_id
+    }
     /// Consumes the builder and constructs a [`DeleteCorsConfigurationInput`](crate::operation::delete_cors_configuration::DeleteCorsConfigurationInput).
     pub fn build(
         self,

@@ -46,6 +46,10 @@ impl DescribeAuthorizerInputBuilder {
         self.authorizer_name = input;
         self
     }
+    /// <p>The name of the authorizer to describe.</p>
+    pub fn get_authorizer_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authorizer_name
+    }
     /// Consumes the builder and constructs a [`DescribeAuthorizerInput`](crate::operation::describe_authorizer::DescribeAuthorizerInput).
     pub fn build(
         self,

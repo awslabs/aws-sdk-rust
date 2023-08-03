@@ -64,6 +64,10 @@ impl RevokeSigningProfileInputBuilder {
         self.profile_name = input;
         self
     }
+    /// <p>The name of the signing profile to be revoked.</p>
+    pub fn get_profile_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_name
+    }
     /// <p>The version of the signing profile to be revoked.</p>
     pub fn profile_version(
         mut self,
@@ -80,6 +84,10 @@ impl RevokeSigningProfileInputBuilder {
         self.profile_version = input;
         self
     }
+    /// <p>The version of the signing profile to be revoked.</p>
+    pub fn get_profile_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.profile_version
+    }
     /// <p>The reason for revoking a signing profile.</p>
     pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reason = ::std::option::Option::Some(input.into());
@@ -89,6 +97,10 @@ impl RevokeSigningProfileInputBuilder {
     pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
+    }
+    /// <p>The reason for revoking a signing profile.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
     }
     /// <p>A timestamp for when revocation of a Signing Profile should become effective. Signatures generated using the signing profile after this timestamp are not trusted.</p>
     pub fn effective_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -102,6 +114,10 @@ impl RevokeSigningProfileInputBuilder {
     ) -> Self {
         self.effective_time = input;
         self
+    }
+    /// <p>A timestamp for when revocation of a Signing Profile should become effective. Signatures generated using the signing profile after this timestamp are not trusted.</p>
+    pub fn get_effective_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.effective_time
     }
     /// Consumes the builder and constructs a [`RevokeSigningProfileInput`](crate::operation::revoke_signing_profile::RevokeSigningProfileInput).
     pub fn build(

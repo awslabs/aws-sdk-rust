@@ -114,6 +114,18 @@ impl ImportKeyMaterialInputBuilder {
         self.key_id = input;
         self
     }
+    /// <p>The identifier of the KMS key that will be associated with the imported key material. This must be the same KMS key specified in the <code>KeyID</code> parameter of the corresponding <code>GetParametersForImport</code> request. The <code>Origin</code> of the KMS key must be <code>EXTERNAL</code> and its <code>KeyState</code> must be <code>PendingImport</code>. </p>
+    /// <p>The KMS key can be a symmetric encryption KMS key, HMAC KMS key, asymmetric encryption KMS key, or asymmetric signing KMS key, including a <a href="kms/latest/developerguide/multi-region-keys-overview.html">multi-Region key</a> of any supported type. You cannot perform this operation on a KMS key in a custom key store, or on a KMS key in a different Amazon Web Services account.</p>
+    /// <p>Specify the key ID or key ARN of the KMS key.</p>
+    /// <p>For example:</p>
+    /// <ul>
+    /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+    /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+    /// </ul>
+    /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
+    pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.key_id
+    }
     /// <p>The import token that you received in the response to a previous <code>GetParametersForImport</code> request. It must be from the same response that contained the public key that you used to encrypt the key material.</p>
     pub fn import_token(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.import_token = ::std::option::Option::Some(input);
@@ -127,6 +139,10 @@ impl ImportKeyMaterialInputBuilder {
         self.import_token = input;
         self
     }
+    /// <p>The import token that you received in the response to a previous <code>GetParametersForImport</code> request. It must be from the same response that contained the public key that you used to encrypt the key material.</p>
+    pub fn get_import_token(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.import_token
+    }
     /// <p>The encrypted key material to import. The key material must be encrypted under the public wrapping key that <code>GetParametersForImport</code> returned, using the wrapping algorithm that you specified in the same <code>GetParametersForImport</code> request.</p>
     pub fn encrypted_key_material(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.encrypted_key_material = ::std::option::Option::Some(input);
@@ -139,6 +155,10 @@ impl ImportKeyMaterialInputBuilder {
     ) -> Self {
         self.encrypted_key_material = input;
         self
+    }
+    /// <p>The encrypted key material to import. The key material must be encrypted under the public wrapping key that <code>GetParametersForImport</code> returned, using the wrapping algorithm that you specified in the same <code>GetParametersForImport</code> request.</p>
+    pub fn get_encrypted_key_material(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
+        &self.encrypted_key_material
     }
     /// <p>The date and time when the imported key material expires. This parameter is required when the value of the <code>ExpirationModel</code> parameter is <code>KEY_MATERIAL_EXPIRES</code>. Otherwise it is not valid.</p>
     /// <p>The value of this parameter must be a future date and time. The maximum value is 365 days from the request date.</p>
@@ -159,6 +179,13 @@ impl ImportKeyMaterialInputBuilder {
         self.valid_to = input;
         self
     }
+    /// <p>The date and time when the imported key material expires. This parameter is required when the value of the <code>ExpirationModel</code> parameter is <code>KEY_MATERIAL_EXPIRES</code>. Otherwise it is not valid.</p>
+    /// <p>The value of this parameter must be a future date and time. The maximum value is 365 days from the request date.</p>
+    /// <p>When the key material expires, KMS deletes the key material from the KMS key. Without its key material, the KMS key is unusable. To use the KMS key in cryptographic operations, you must reimport the same key material.</p>
+    /// <p>You cannot change the <code>ExpirationModel</code> or <code>ValidTo</code> values for the current import after the request completes. To change either value, you must delete (<code>DeleteImportedKeyMaterial</code>) and reimport the key material.</p>
+    pub fn get_valid_to(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.valid_to
+    }
     /// <p>Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>. For help with this choice, see <a href="https://docs.aws.amazon.com/en_us/kms/latest/developerguide/importing-keys.html#importing-keys-expiration">Setting an expiration time</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// <p>When the value of <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, you must specify a value for the <code>ValidTo</code> parameter. When value is <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the <code>ValidTo</code> parameter.</p>
     /// <p>You cannot change the <code>ExpirationModel</code> or <code>ValidTo</code> values for the current import after the request completes. To change either value, you must reimport the key material.</p>
@@ -175,6 +202,14 @@ impl ImportKeyMaterialInputBuilder {
     ) -> Self {
         self.expiration_model = input;
         self
+    }
+    /// <p>Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>. For help with this choice, see <a href="https://docs.aws.amazon.com/en_us/kms/latest/developerguide/importing-keys.html#importing-keys-expiration">Setting an expiration time</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>When the value of <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, you must specify a value for the <code>ValidTo</code> parameter. When value is <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the <code>ValidTo</code> parameter.</p>
+    /// <p>You cannot change the <code>ExpirationModel</code> or <code>ValidTo</code> values for the current import after the request completes. To change either value, you must reimport the key material.</p>
+    pub fn get_expiration_model(
+        &self,
+    ) -> &::std::option::Option<crate::types::ExpirationModelType> {
+        &self.expiration_model
     }
     /// Consumes the builder and constructs a [`ImportKeyMaterialInput`](crate::operation::import_key_material::ImportKeyMaterialInput).
     pub fn build(

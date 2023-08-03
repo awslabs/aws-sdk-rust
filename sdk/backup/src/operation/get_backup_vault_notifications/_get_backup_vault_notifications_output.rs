@@ -77,6 +77,10 @@ impl GetBackupVaultNotificationsOutputBuilder {
         self.backup_vault_name = input;
         self
     }
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
+    pub fn get_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_vault_name
+    }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
     pub fn backup_vault_arn(
         mut self,
@@ -93,6 +97,10 @@ impl GetBackupVaultNotificationsOutputBuilder {
         self.backup_vault_arn = input;
         self
     }
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    pub fn get_backup_vault_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.backup_vault_arn
+    }
     /// <p>An ARN that uniquely identifies an Amazon Simple Notification Service (Amazon SNS) topic; for example, <code>arn:aws:sns:us-west-2:111122223333:MyTopic</code>.</p>
     pub fn sns_topic_arn(
         mut self,
@@ -108,6 +116,10 @@ impl GetBackupVaultNotificationsOutputBuilder {
     ) -> Self {
         self.sns_topic_arn = input;
         self
+    }
+    /// <p>An ARN that uniquely identifies an Amazon Simple Notification Service (Amazon SNS) topic; for example, <code>arn:aws:sns:us-west-2:111122223333:MyTopic</code>.</p>
+    pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sns_topic_arn
     }
     /// Appends an item to `backup_vault_events`.
     ///
@@ -127,6 +139,12 @@ impl GetBackupVaultNotificationsOutputBuilder {
     ) -> Self {
         self.backup_vault_events = input;
         self
+    }
+    /// <p>An array of events that indicate the status of jobs to back up resources to the backup vault.</p>
+    pub fn get_backup_vault_events(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::BackupVaultEvent>> {
+        &self.backup_vault_events
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

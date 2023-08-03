@@ -47,6 +47,10 @@ impl GetEmailIdentityInputBuilder {
         self.email_identity = input;
         self
     }
+    /// <p>The email identity that you want to retrieve details for.</p>
+    pub fn get_email_identity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.email_identity
+    }
     /// Consumes the builder and constructs a [`GetEmailIdentityInput`](crate::operation::get_email_identity::GetEmailIdentityInput).
     pub fn build(
         self,

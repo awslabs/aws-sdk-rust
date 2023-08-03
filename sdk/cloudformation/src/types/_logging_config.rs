@@ -48,6 +48,10 @@ impl LoggingConfigBuilder {
         self.log_role_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the role that CloudFormation should assume when sending log entries to CloudWatch Logs.</p>
+    pub fn get_log_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_role_arn
+    }
     /// <p>The Amazon CloudWatch Logs group to which CloudFormation sends error logging information when invoking the extension's handlers.</p>
     pub fn log_group_name(
         mut self,
@@ -63,6 +67,10 @@ impl LoggingConfigBuilder {
     ) -> Self {
         self.log_group_name = input;
         self
+    }
+    /// <p>The Amazon CloudWatch Logs group to which CloudFormation sends error logging information when invoking the extension's handlers.</p>
+    pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.log_group_name
     }
     /// Consumes the builder and constructs a [`LoggingConfig`](crate::types::LoggingConfig).
     pub fn build(self) -> crate::types::LoggingConfig {

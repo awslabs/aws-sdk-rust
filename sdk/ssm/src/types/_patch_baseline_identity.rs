@@ -72,6 +72,10 @@ impl PatchBaselineIdentityBuilder {
         self.baseline_id = input;
         self
     }
+    /// <p>The ID of the patch baseline.</p>
+    pub fn get_baseline_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.baseline_id
+    }
     /// <p>The name of the patch baseline.</p>
     pub fn baseline_name(
         mut self,
@@ -88,6 +92,10 @@ impl PatchBaselineIdentityBuilder {
         self.baseline_name = input;
         self
     }
+    /// <p>The name of the patch baseline.</p>
+    pub fn get_baseline_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.baseline_name
+    }
     /// <p>Defines the operating system the patch baseline applies to. The default value is <code>WINDOWS</code>. </p>
     pub fn operating_system(mut self, input: crate::types::OperatingSystem) -> Self {
         self.operating_system = ::std::option::Option::Some(input);
@@ -100,6 +108,10 @@ impl PatchBaselineIdentityBuilder {
     ) -> Self {
         self.operating_system = input;
         self
+    }
+    /// <p>Defines the operating system the patch baseline applies to. The default value is <code>WINDOWS</code>. </p>
+    pub fn get_operating_system(&self) -> &::std::option::Option<crate::types::OperatingSystem> {
+        &self.operating_system
     }
     /// <p>The description of the patch baseline.</p>
     pub fn baseline_description(
@@ -117,6 +129,10 @@ impl PatchBaselineIdentityBuilder {
         self.baseline_description = input;
         self
     }
+    /// <p>The description of the patch baseline.</p>
+    pub fn get_baseline_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.baseline_description
+    }
     /// <p>Whether this is the default baseline. Amazon Web Services Systems Manager supports creating multiple default patch baselines. For example, you can create a default patch baseline for each operating system.</p>
     pub fn default_baseline(mut self, input: bool) -> Self {
         self.default_baseline = ::std::option::Option::Some(input);
@@ -126,6 +142,10 @@ impl PatchBaselineIdentityBuilder {
     pub fn set_default_baseline(mut self, input: ::std::option::Option<bool>) -> Self {
         self.default_baseline = input;
         self
+    }
+    /// <p>Whether this is the default baseline. Amazon Web Services Systems Manager supports creating multiple default patch baselines. For example, you can create a default patch baseline for each operating system.</p>
+    pub fn get_default_baseline(&self) -> &::std::option::Option<bool> {
+        &self.default_baseline
     }
     /// Consumes the builder and constructs a [`PatchBaselineIdentity`](crate::types::PatchBaselineIdentity).
     pub fn build(self) -> crate::types::PatchBaselineIdentity {

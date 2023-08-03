@@ -70,6 +70,12 @@ impl ListProvisionedProductPlansOutputBuilder {
         self.provisioned_product_plans = input;
         self
     }
+    /// <p>Information about the plans.</p>
+    pub fn get_provisioned_product_plans(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvisionedProductPlanSummary>> {
+        &self.provisioned_product_plans
+    }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub fn next_page_token(
         mut self,
@@ -85,6 +91,10 @@ impl ListProvisionedProductPlansOutputBuilder {
     ) -> Self {
         self.next_page_token = input;
         self
+    }
+    /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
+    pub fn get_next_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_page_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

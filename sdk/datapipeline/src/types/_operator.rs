@@ -132,6 +132,31 @@ impl OperatorBuilder {
         self.r#type = input;
         self
     }
+    /// <p> The logical operation to be performed: equal (<code>EQ</code>), equal reference (<code>REF_EQ</code>), less than or equal (<code>LE</code>), greater than or equal (<code>GE</code>), or between (<code>BETWEEN</code>). Equal reference (<code>REF_EQ</code>) can be used only with reference fields. The other comparison types can be used only with String fields. The comparison types you can use apply only to certain object fields, as detailed below. </p>
+    /// <p> The comparison operators EQ and REF_EQ act on the following fields: </p>
+    /// <ul>
+    /// <li>name</li>
+    /// <li>@sphere</li>
+    /// <li>parent</li>
+    /// <li>@componentParent</li>
+    /// <li>@instanceParent</li>
+    /// <li>@status</li>
+    /// <li>@scheduledStartTime</li>
+    /// <li>@scheduledEndTime</li>
+    /// <li>@actualStartTime</li>
+    /// <li>@actualEndTime</li>
+    /// </ul>
+    /// <p> The comparison operators <code>GE</code>, <code>LE</code>, and <code>BETWEEN</code> act on the following fields: </p>
+    /// <ul>
+    /// <li>@scheduledStartTime</li>
+    /// <li>@scheduledEndTime</li>
+    /// <li>@actualStartTime</li>
+    /// <li>@actualEndTime</li>
+    /// </ul>
+    /// <p>Note that fields beginning with the at sign (@) are read-only and set by the web service. When you name fields, you should choose names containing only alpha-numeric values, as symbols may be reserved by AWS Data Pipeline. User-defined fields that you add to a pipeline should prefix their name with the string "my".</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::OperatorType> {
+        &self.r#type
+    }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
@@ -150,6 +175,10 @@ impl OperatorBuilder {
     ) -> Self {
         self.values = input;
         self
+    }
+    /// <p>The value that the actual field value will be compared with.</p>
+    pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.values
     }
     /// Consumes the builder and constructs a [`Operator`](crate::types::Operator).
     pub fn build(self) -> crate::types::Operator {

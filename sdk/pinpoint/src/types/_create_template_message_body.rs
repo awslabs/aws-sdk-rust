@@ -56,6 +56,10 @@ impl CreateTemplateMessageBodyBuilder {
         self.arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the message template that was created.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
+    }
     /// <p>The message that's returned from the API for the request to create the message template.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -66,6 +70,10 @@ impl CreateTemplateMessageBodyBuilder {
         self.message = input;
         self
     }
+    /// <p>The message that's returned from the API for the request to create the message template.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// <p>The unique identifier for the request to create the message template.</p>
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_id = ::std::option::Option::Some(input.into());
@@ -75,6 +83,10 @@ impl CreateTemplateMessageBodyBuilder {
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_id = input;
         self
+    }
+    /// <p>The unique identifier for the request to create the message template.</p>
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
     }
     /// Consumes the builder and constructs a [`CreateTemplateMessageBody`](crate::types::CreateTemplateMessageBody).
     pub fn build(self) -> crate::types::CreateTemplateMessageBody {

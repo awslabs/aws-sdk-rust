@@ -79,6 +79,10 @@ impl InternalServerExceptionBuilder {
         self.message = input;
         self
     }
+    /// Description of the error.
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Advice to clients on when the call can be safely retried.
     pub fn retry_after_seconds(mut self, input: i32) -> Self {
         self.retry_after_seconds = ::std::option::Option::Some(input);
@@ -88,6 +92,10 @@ impl InternalServerExceptionBuilder {
     pub fn set_retry_after_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.retry_after_seconds = input;
         self
+    }
+    /// Advice to clients on when the call can be safely retried.
+    pub fn get_retry_after_seconds(&self) -> &::std::option::Option<i32> {
+        &self.retry_after_seconds
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {

@@ -43,6 +43,10 @@ impl CdiInputSpecificationBuilder {
         self.resolution = input;
         self
     }
+    /// Maximum CDI input resolution
+    pub fn get_resolution(&self) -> &::std::option::Option<crate::types::CdiInputResolution> {
+        &self.resolution
+    }
     /// Consumes the builder and constructs a [`CdiInputSpecification`](crate::types::CdiInputSpecification).
     pub fn build(self) -> crate::types::CdiInputSpecification {
         crate::types::CdiInputSpecification {

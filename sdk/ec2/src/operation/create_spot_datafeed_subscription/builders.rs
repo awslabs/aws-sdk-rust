@@ -36,6 +36,10 @@ impl CreateSpotDatafeedSubscriptionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the CreateSpotDatafeedSubscription as a reference.
+    pub fn as_input(&self) -> &crate::operation::create_spot_datafeed_subscription::builders::CreateSpotDatafeedSubscriptionInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl CreateSpotDatafeedSubscriptionFluentBuilder {
         self.inner = self.inner.set_bucket(input);
         self
     }
+    /// <p>The name of the Amazon S3 bucket in which to store the Spot Instance data feed. For more information about bucket names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules">Rules for bucket naming</a> in the <i>Amazon S3 Developer Guide</i>.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bucket()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -110,6 +118,10 @@ impl CreateSpotDatafeedSubscriptionFluentBuilder {
         self.inner = self.inner.set_dry_run(input);
         self
     }
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
     /// <p>The prefix for the data feed file names.</p>
     pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.prefix(input.into());
@@ -119,5 +131,9 @@ impl CreateSpotDatafeedSubscriptionFluentBuilder {
     pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_prefix(input);
         self
+    }
+    /// <p>The prefix for the data feed file names.</p>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_prefix()
     }
 }

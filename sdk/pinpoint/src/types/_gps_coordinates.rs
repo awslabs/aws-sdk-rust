@@ -48,6 +48,10 @@ impl GpsCoordinatesBuilder {
         self.latitude = input;
         self
     }
+    /// <p>The latitude coordinate of the location.</p>
+    pub fn get_latitude(&self) -> &::std::option::Option<f64> {
+        &self.latitude
+    }
     /// <p>The longitude coordinate of the location.</p>
     pub fn longitude(mut self, input: f64) -> Self {
         self.longitude = ::std::option::Option::Some(input);
@@ -57,6 +61,10 @@ impl GpsCoordinatesBuilder {
     pub fn set_longitude(mut self, input: ::std::option::Option<f64>) -> Self {
         self.longitude = input;
         self
+    }
+    /// <p>The longitude coordinate of the location.</p>
+    pub fn get_longitude(&self) -> &::std::option::Option<f64> {
+        &self.longitude
     }
     /// Consumes the builder and constructs a [`GpsCoordinates`](crate::types::GpsCoordinates).
     pub fn build(self) -> crate::types::GpsCoordinates {

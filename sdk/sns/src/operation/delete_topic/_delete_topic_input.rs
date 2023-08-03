@@ -39,6 +39,10 @@ impl DeleteTopicInputBuilder {
         self.topic_arn = input;
         self
     }
+    /// <p>The ARN of the topic you want to delete.</p>
+    pub fn get_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_arn
+    }
     /// Consumes the builder and constructs a [`DeleteTopicInput`](crate::operation::delete_topic::DeleteTopicInput).
     pub fn build(
         self,

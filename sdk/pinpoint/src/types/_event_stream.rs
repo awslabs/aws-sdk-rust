@@ -114,6 +114,10 @@ impl EventStreamBuilder {
         self.application_id = input;
         self
     }
+    /// <p>The unique identifier for the application to publish event data for.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_id
+    }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Kinesis data stream or Amazon Kinesis Data Firehose delivery stream to publish event data to.</p>
     /// <p>For a Kinesis data stream, the ARN format is: arn:aws:kinesis:<replaceable>
     /// region
@@ -158,6 +162,24 @@ impl EventStreamBuilder {
         self.destination_stream_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Kinesis data stream or Amazon Kinesis Data Firehose delivery stream to publish event data to.</p>
+    /// <p>For a Kinesis data stream, the ARN format is: arn:aws:kinesis:<replaceable>
+    /// region
+    /// </replaceable>:<replaceable>
+    /// account-id
+    /// </replaceable>:stream/<replaceable>
+    /// stream_name
+    /// </replaceable> </p>
+    /// <p>For a Kinesis Data Firehose delivery stream, the ARN format is: arn:aws:firehose:<replaceable>
+    /// region
+    /// </replaceable>:<replaceable>
+    /// account-id
+    /// </replaceable>:deliverystream/<replaceable>
+    /// stream_name
+    /// </replaceable> </p>
+    pub fn get_destination_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_stream_arn
+    }
     /// <p>(Deprecated) Your AWS account ID, which you assigned to an external ID key in an IAM trust policy. Amazon Pinpoint previously used this value to assume an IAM role when publishing event data, but we removed this requirement. We don't recommend use of external IDs for IAM roles that are assumed by Amazon Pinpoint.</p>
     pub fn external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.external_id = ::std::option::Option::Some(input.into());
@@ -167,6 +189,10 @@ impl EventStreamBuilder {
     pub fn set_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.external_id = input;
         self
+    }
+    /// <p>(Deprecated) Your AWS account ID, which you assigned to an external ID key in an IAM trust policy. Amazon Pinpoint previously used this value to assume an IAM role when publishing event data, but we removed this requirement. We don't recommend use of external IDs for IAM roles that are assumed by Amazon Pinpoint.</p>
+    pub fn get_external_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.external_id
     }
     /// <p>The date, in ISO 8601 format, when the event stream was last modified.</p>
     pub fn last_modified_date(
@@ -184,6 +210,10 @@ impl EventStreamBuilder {
         self.last_modified_date = input;
         self
     }
+    /// <p>The date, in ISO 8601 format, when the event stream was last modified.</p>
+    pub fn get_last_modified_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_date
+    }
     /// <p>The IAM user who last modified the event stream.</p>
     pub fn last_updated_by(
         mut self,
@@ -200,6 +230,10 @@ impl EventStreamBuilder {
         self.last_updated_by = input;
         self
     }
+    /// <p>The IAM user who last modified the event stream.</p>
+    pub fn get_last_updated_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_updated_by
+    }
     /// <p>The AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint to publish event data to the stream in your AWS account.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -209,6 +243,10 @@ impl EventStreamBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint to publish event data to the stream in your AWS account.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Consumes the builder and constructs a [`EventStream`](crate::types::EventStream).
     pub fn build(self) -> crate::types::EventStream {

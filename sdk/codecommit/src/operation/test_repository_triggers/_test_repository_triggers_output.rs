@@ -73,6 +73,12 @@ impl TestRepositoryTriggersOutputBuilder {
         self.successful_executions = input;
         self
     }
+    /// <p>The list of triggers that were successfully tested. This list provides the names of the triggers that were successfully tested, separated by commas.</p>
+    pub fn get_successful_executions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.successful_executions
+    }
     /// Appends an item to `failed_executions`.
     ///
     /// To override the contents of this collection use [`set_failed_executions`](Self::set_failed_executions).
@@ -96,6 +102,13 @@ impl TestRepositoryTriggersOutputBuilder {
     ) -> Self {
         self.failed_executions = input;
         self
+    }
+    /// <p>The list of triggers that were not tested. This list provides the names of the triggers that could not be tested, separated by commas.</p>
+    pub fn get_failed_executions(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositoryTriggerExecutionFailure>>
+    {
+        &self.failed_executions
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

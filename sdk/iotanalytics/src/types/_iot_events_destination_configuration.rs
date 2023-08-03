@@ -48,6 +48,10 @@ impl IotEventsDestinationConfigurationBuilder {
         self.input_name = input;
         self
     }
+    /// <p>The name of the IoT Events input to which dataset contents are delivered.</p>
+    pub fn get_input_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_name
+    }
     /// <p>The ARN of the role that grants IoT Analytics permission to deliver dataset contents to an IoT Events input.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl IotEventsDestinationConfigurationBuilder {
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
+    }
+    /// <p>The ARN of the role that grants IoT Analytics permission to deliver dataset contents to an IoT Events input.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
     }
     /// Consumes the builder and constructs a [`IotEventsDestinationConfiguration`](crate::types::IotEventsDestinationConfiguration).
     pub fn build(self) -> crate::types::IotEventsDestinationConfiguration {

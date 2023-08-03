@@ -46,6 +46,10 @@ impl DescribeObservationInputBuilder {
         self.observation_id = input;
         self
     }
+    /// <p>The ID of the observation.</p>
+    pub fn get_observation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.observation_id
+    }
     /// Consumes the builder and constructs a [`DescribeObservationInput`](crate::operation::describe_observation::DescribeObservationInput).
     pub fn build(
         self,

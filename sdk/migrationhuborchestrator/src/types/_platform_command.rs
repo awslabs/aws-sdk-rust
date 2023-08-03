@@ -48,6 +48,10 @@ impl PlatformCommandBuilder {
         self.linux = input;
         self
     }
+    /// <p>Command for Linux.</p>
+    pub fn get_linux(&self) -> &::std::option::Option<::std::string::String> {
+        &self.linux
+    }
     /// <p>Command for Windows.</p>
     pub fn windows(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.windows = ::std::option::Option::Some(input.into());
@@ -57,6 +61,10 @@ impl PlatformCommandBuilder {
     pub fn set_windows(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.windows = input;
         self
+    }
+    /// <p>Command for Windows.</p>
+    pub fn get_windows(&self) -> &::std::option::Option<::std::string::String> {
+        &self.windows
     }
     /// Consumes the builder and constructs a [`PlatformCommand`](crate::types::PlatformCommand).
     pub fn build(self) -> crate::types::PlatformCommand {

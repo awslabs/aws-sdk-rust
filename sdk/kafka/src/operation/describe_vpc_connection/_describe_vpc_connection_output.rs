@@ -126,6 +126,10 @@ impl DescribeVpcConnectionOutputBuilder {
         self.vpc_connection_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies a MSK VPC connection.</p>
+    pub fn get_vpc_connection_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_connection_arn
+    }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK cluster.</p>
     pub fn target_cluster_arn(
         mut self,
@@ -142,6 +146,10 @@ impl DescribeVpcConnectionOutputBuilder {
         self.target_cluster_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK cluster.</p>
+    pub fn get_target_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_cluster_arn
+    }
     /// <p>The state of VPC connection.</p>
     pub fn state(mut self, input: crate::types::VpcConnectionState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -154,6 +162,10 @@ impl DescribeVpcConnectionOutputBuilder {
     ) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The state of VPC connection.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::VpcConnectionState> {
+        &self.state
     }
     /// <p>The authentication type of VPC connection.</p>
     pub fn authentication(
@@ -171,6 +183,10 @@ impl DescribeVpcConnectionOutputBuilder {
         self.authentication = input;
         self
     }
+    /// <p>The authentication type of VPC connection.</p>
+    pub fn get_authentication(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authentication
+    }
     /// <p>The VPC Id for the VPC connection.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -180,6 +196,10 @@ impl DescribeVpcConnectionOutputBuilder {
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
+    }
+    /// <p>The VPC Id for the VPC connection.</p>
+    pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_id
     }
     /// Appends an item to `subnets`.
     ///
@@ -199,6 +219,10 @@ impl DescribeVpcConnectionOutputBuilder {
     ) -> Self {
         self.subnets = input;
         self
+    }
+    /// <p>The list of subnets for the VPC connection.</p>
+    pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnets
     }
     /// Appends an item to `security_groups`.
     ///
@@ -222,6 +246,12 @@ impl DescribeVpcConnectionOutputBuilder {
         self.security_groups = input;
         self
     }
+    /// <p>The list of security groups for the VPC connection.</p>
+    pub fn get_security_groups(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.security_groups
+    }
     /// <p>The creation time of the VPC connection.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -234,6 +264,10 @@ impl DescribeVpcConnectionOutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>The creation time of the VPC connection.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -259,6 +293,14 @@ impl DescribeVpcConnectionOutputBuilder {
     ) -> Self {
         self.tags = input;
         self
+    }
+    /// <p>A map of tags for the VPC connection.</p>
+    pub fn get_tags(
+        &self,
+    ) -> &::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
+        &self.tags
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

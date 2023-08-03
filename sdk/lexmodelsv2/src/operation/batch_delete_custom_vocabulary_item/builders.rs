@@ -36,6 +36,10 @@ impl BatchDeleteCustomVocabularyItemFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the BatchDeleteCustomVocabularyItem as a reference.
+    pub fn as_input(&self) -> &crate::operation::batch_delete_custom_vocabulary_item::builders::BatchDeleteCustomVocabularyItemInputBuilder{
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
                         pub async fn customize_middleware(self) -> ::std::result::Result<
@@ -100,6 +104,10 @@ impl BatchDeleteCustomVocabularyItemFluentBuilder {
         self.inner = self.inner.set_bot_id(input);
         self
     }
+    /// <p>The identifier of the bot associated with this custom vocabulary.</p>
+    pub fn get_bot_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bot_id()
+    }
     /// <p>The identifier of the version of the bot associated with this custom vocabulary.</p>
     pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_version(input.into());
@@ -110,6 +118,10 @@ impl BatchDeleteCustomVocabularyItemFluentBuilder {
         self.inner = self.inner.set_bot_version(input);
         self
     }
+    /// <p>The identifier of the version of the bot associated with this custom vocabulary.</p>
+    pub fn get_bot_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_bot_version()
+    }
     /// <p>The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html"> Supported Languages </a>.</p>
     pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.locale_id(input.into());
@@ -119,6 +131,10 @@ impl BatchDeleteCustomVocabularyItemFluentBuilder {
     pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_locale_id(input);
         self
+    }
+    /// <p>The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html"> Supported Languages </a>.</p>
+    pub fn get_locale_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_locale_id()
     }
     /// Appends an item to `customVocabularyItemList`.
     ///
@@ -139,5 +155,11 @@ impl BatchDeleteCustomVocabularyItemFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_custom_vocabulary_item_list(input);
         self
+    }
+    /// <p>A list of custom vocabulary items requested to be deleted. Each entry must contain the unique custom vocabulary entry identifier.</p>
+    pub fn get_custom_vocabulary_item_list(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomVocabularyEntryId>> {
+        self.inner.get_custom_vocabulary_item_list()
     }
 }

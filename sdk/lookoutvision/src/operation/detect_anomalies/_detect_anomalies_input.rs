@@ -60,6 +60,10 @@ impl DetectAnomaliesInputBuilder {
         self.project_name = input;
         self
     }
+    /// <p>The name of the project that contains the model version that you want to use.</p>
+    pub fn get_project_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_name
+    }
     /// <p>The version of the model that you want to use.</p>
     pub fn model_version(
         mut self,
@@ -76,6 +80,10 @@ impl DetectAnomaliesInputBuilder {
         self.model_version = input;
         self
     }
+    /// <p>The version of the model that you want to use.</p>
+    pub fn get_model_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_version
+    }
     /// <p>The unencrypted image bytes that you want to analyze. </p>
     pub fn body(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
         self.body = ::std::option::Option::Some(input);
@@ -89,6 +97,10 @@ impl DetectAnomaliesInputBuilder {
         self.body = input;
         self
     }
+    /// <p>The unencrypted image bytes that you want to analyze. </p>
+    pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+        &self.body
+    }
     /// <p>The type of the image passed in <code>Body</code>. Valid values are <code>image/png</code> (PNG format images) and <code>image/jpeg</code> (JPG format images). </p>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
@@ -98,6 +110,10 @@ impl DetectAnomaliesInputBuilder {
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
         self
+    }
+    /// <p>The type of the image passed in <code>Body</code>. Valid values are <code>image/png</code> (PNG format images) and <code>image/jpeg</code> (JPG format images). </p>
+    pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.content_type
     }
     /// Consumes the builder and constructs a [`DetectAnomaliesInput`](crate::operation::detect_anomalies::DetectAnomaliesInput).
     pub fn build(

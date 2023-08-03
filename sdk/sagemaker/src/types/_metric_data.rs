@@ -56,6 +56,10 @@ impl MetricDataBuilder {
         self.metric_name = input;
         self
     }
+    /// <p>The name of the metric.</p>
+    pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_name
+    }
     /// <p>The value of the metric.</p>
     pub fn value(mut self, input: f32) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -65,6 +69,10 @@ impl MetricDataBuilder {
     pub fn set_value(mut self, input: ::std::option::Option<f32>) -> Self {
         self.value = input;
         self
+    }
+    /// <p>The value of the metric.</p>
+    pub fn get_value(&self) -> &::std::option::Option<f32> {
+        &self.value
     }
     /// <p>The date and time that the algorithm emitted the metric.</p>
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -78,6 +86,10 @@ impl MetricDataBuilder {
     ) -> Self {
         self.timestamp = input;
         self
+    }
+    /// <p>The date and time that the algorithm emitted the metric.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.timestamp
     }
     /// Consumes the builder and constructs a [`MetricData`](crate::types::MetricData).
     pub fn build(self) -> crate::types::MetricData {

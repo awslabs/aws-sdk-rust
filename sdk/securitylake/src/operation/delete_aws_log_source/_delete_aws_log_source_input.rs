@@ -50,6 +50,12 @@ impl DeleteAwsLogSourceInputBuilder {
         self.sources = input;
         self
     }
+    /// <p>Specify the natively-supported Amazon Web Services service to remove as a source in Security Lake.</p>
+    pub fn get_sources(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsLogSourceConfiguration>> {
+        &self.sources
+    }
     /// Consumes the builder and constructs a [`DeleteAwsLogSourceInput`](crate::operation::delete_aws_log_source::DeleteAwsLogSourceInput).
     pub fn build(
         self,

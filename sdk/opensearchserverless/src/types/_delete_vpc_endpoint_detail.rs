@@ -56,6 +56,10 @@ impl DeleteVpcEndpointDetailBuilder {
         self.id = input;
         self
     }
+    /// <p>The unique identifier of the endpoint.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The name of the endpoint.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -65,6 +69,10 @@ impl DeleteVpcEndpointDetailBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the endpoint.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The current status of the endpoint deletion process.</p>
     pub fn status(mut self, input: crate::types::VpcEndpointStatus) -> Self {
@@ -78,6 +86,10 @@ impl DeleteVpcEndpointDetailBuilder {
     ) -> Self {
         self.status = input;
         self
+    }
+    /// <p>The current status of the endpoint deletion process.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::VpcEndpointStatus> {
+        &self.status
     }
     /// Consumes the builder and constructs a [`DeleteVpcEndpointDetail`](crate::types::DeleteVpcEndpointDetail).
     pub fn build(self) -> crate::types::DeleteVpcEndpointDetail {

@@ -55,6 +55,10 @@ impl DeleteBucketAnalyticsConfigurationInputBuilder {
         self.bucket = input;
         self
     }
+    /// <p>The name of the bucket from which an analytics configuration is deleted.</p>
+    pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bucket
+    }
     /// <p>The ID that identifies the analytics configuration.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
@@ -64,6 +68,10 @@ impl DeleteBucketAnalyticsConfigurationInputBuilder {
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
+    }
+    /// <p>The ID that identifies the analytics configuration.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(
@@ -80,6 +88,10 @@ impl DeleteBucketAnalyticsConfigurationInputBuilder {
     ) -> Self {
         self.expected_bucket_owner = input;
         self
+    }
+    /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
+    pub fn get_expected_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expected_bucket_owner
     }
     /// Consumes the builder and constructs a [`DeleteBucketAnalyticsConfigurationInput`](crate::operation::delete_bucket_analytics_configuration::DeleteBucketAnalyticsConfigurationInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_bucket_analytics_configuration::DeleteBucketAnalyticsConfigurationInput, ::aws_smithy_http::operation::error::BuildError>{

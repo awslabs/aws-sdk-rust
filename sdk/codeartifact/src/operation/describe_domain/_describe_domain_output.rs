@@ -49,6 +49,10 @@ impl DescribeDomainOutputBuilder {
         self.domain = input;
         self
     }
+    /// <p> Information about a domain. A domain is a container for repositories. When you create a domain, it is empty until you add one or more repositories. </p>
+    pub fn get_domain(&self) -> &::std::option::Option<crate::types::DomainDescription> {
+        &self.domain
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

@@ -52,6 +52,10 @@ impl ApiPassthroughBuilder {
         self.extensions = input;
         self
     }
+    /// <p>Specifies X.509 extension information for a certificate.</p>
+    pub fn get_extensions(&self) -> &::std::option::Option<crate::types::Extensions> {
+        &self.extensions
+    }
     /// <p>Contains information about the certificate subject. The <code>Subject</code> field in the certificate identifies the entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or service. The <code>Subject </code>must contain an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names (RDNs). The RDNs are separated by commas in the certificate.</p>
     pub fn subject(mut self, input: crate::types::Asn1Subject) -> Self {
         self.subject = ::std::option::Option::Some(input);
@@ -61,6 +65,10 @@ impl ApiPassthroughBuilder {
     pub fn set_subject(mut self, input: ::std::option::Option<crate::types::Asn1Subject>) -> Self {
         self.subject = input;
         self
+    }
+    /// <p>Contains information about the certificate subject. The <code>Subject</code> field in the certificate identifies the entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or service. The <code>Subject </code>must contain an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names (RDNs). The RDNs are separated by commas in the certificate.</p>
+    pub fn get_subject(&self) -> &::std::option::Option<crate::types::Asn1Subject> {
+        &self.subject
     }
     /// Consumes the builder and constructs a [`ApiPassthrough`](crate::types::ApiPassthrough).
     pub fn build(self) -> crate::types::ApiPassthrough {

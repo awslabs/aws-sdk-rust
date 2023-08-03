@@ -48,6 +48,10 @@ impl MetricsConfigurationBuilder {
         self.cloud_metric_enabled = input;
         self
     }
+    /// <p>A Boolean that specifies whether cloud metrics are collected.</p>
+    pub fn get_cloud_metric_enabled(&self) -> &::std::option::Option<bool> {
+        &self.cloud_metric_enabled
+    }
     /// <p>The ARN of the role that is used to collect cloud metrics.</p>
     pub fn metric_rule_role_arn(
         mut self,
@@ -63,6 +67,10 @@ impl MetricsConfigurationBuilder {
     ) -> Self {
         self.metric_rule_role_arn = input;
         self
+    }
+    /// <p>The ARN of the role that is used to collect cloud metrics.</p>
+    pub fn get_metric_rule_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metric_rule_role_arn
     }
     /// Consumes the builder and constructs a [`MetricsConfiguration`](crate::types::MetricsConfiguration).
     pub fn build(self) -> crate::types::MetricsConfiguration {

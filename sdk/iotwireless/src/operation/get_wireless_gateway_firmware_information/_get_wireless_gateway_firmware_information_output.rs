@@ -49,6 +49,12 @@ impl GetWirelessGatewayFirmwareInformationOutputBuilder {
         self.lo_ra_wan = input;
         self
     }
+    /// <p>Information about the wireless gateway's firmware.</p>
+    pub fn get_lo_ra_wan(
+        &self,
+    ) -> &::std::option::Option<crate::types::LoRaWanGatewayCurrentVersion> {
+        &self.lo_ra_wan
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self

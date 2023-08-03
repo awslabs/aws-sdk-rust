@@ -67,6 +67,10 @@ impl FindingTypeAggregationBuilder {
         self.finding_type = input;
         self
     }
+    /// <p>The finding type to aggregate.</p>
+    pub fn get_finding_type(&self) -> &::std::option::Option<crate::types::AggregationFindingType> {
+        &self.finding_type
+    }
     /// <p>The resource type to aggregate.</p>
     pub fn resource_type(mut self, input: crate::types::AggregationResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
@@ -80,6 +84,12 @@ impl FindingTypeAggregationBuilder {
         self.resource_type = input;
         self
     }
+    /// <p>The resource type to aggregate.</p>
+    pub fn get_resource_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::AggregationResourceType> {
+        &self.resource_type
+    }
     /// <p>The order to sort results by.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -89,6 +99,10 @@ impl FindingTypeAggregationBuilder {
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.sort_order = input;
         self
+    }
+    /// <p>The order to sort results by.</p>
+    pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
+        &self.sort_order
     }
     /// <p>The value to sort results by.</p>
     pub fn sort_by(mut self, input: crate::types::FindingTypeSortBy) -> Self {
@@ -102,6 +116,10 @@ impl FindingTypeAggregationBuilder {
     ) -> Self {
         self.sort_by = input;
         self
+    }
+    /// <p>The value to sort results by.</p>
+    pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::FindingTypeSortBy> {
+        &self.sort_by
     }
     /// Consumes the builder and constructs a [`FindingTypeAggregation`](crate::types::FindingTypeAggregation).
     pub fn build(self) -> crate::types::FindingTypeAggregation {

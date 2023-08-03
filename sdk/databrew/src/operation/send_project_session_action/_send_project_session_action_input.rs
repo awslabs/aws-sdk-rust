@@ -91,6 +91,10 @@ impl SendProjectSessionActionInputBuilder {
         self.preview = input;
         self
     }
+    /// <p>If true, the result of the recipe step will be returned, but not applied.</p>
+    pub fn get_preview(&self) -> &::std::option::Option<bool> {
+        &self.preview
+    }
     /// <p>The name of the project to apply the action to.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -100,6 +104,10 @@ impl SendProjectSessionActionInputBuilder {
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
+    }
+    /// <p>The name of the project to apply the action to.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>Represents a single step from a DataBrew recipe to be performed.</p>
     pub fn recipe_step(mut self, input: crate::types::RecipeStep) -> Self {
@@ -114,6 +122,10 @@ impl SendProjectSessionActionInputBuilder {
         self.recipe_step = input;
         self
     }
+    /// <p>Represents a single step from a DataBrew recipe to be performed.</p>
+    pub fn get_recipe_step(&self) -> &::std::option::Option<crate::types::RecipeStep> {
+        &self.recipe_step
+    }
     /// <p>The index from which to preview a step. This index is used to preview the result of steps that have already been applied, so that the resulting view frame is from earlier in the view frame stack.</p>
     pub fn step_index(mut self, input: i32) -> Self {
         self.step_index = ::std::option::Option::Some(input);
@@ -123,6 +135,10 @@ impl SendProjectSessionActionInputBuilder {
     pub fn set_step_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.step_index = input;
         self
+    }
+    /// <p>The index from which to preview a step. This index is used to preview the result of steps that have already been applied, so that the resulting view frame is from earlier in the view frame stack.</p>
+    pub fn get_step_index(&self) -> &::std::option::Option<i32> {
+        &self.step_index
     }
     /// <p>A unique identifier for an interactive session that's currently open and ready for work. The action will be performed on this session.</p>
     pub fn client_session_id(
@@ -140,6 +156,10 @@ impl SendProjectSessionActionInputBuilder {
         self.client_session_id = input;
         self
     }
+    /// <p>A unique identifier for an interactive session that's currently open and ready for work. The action will be performed on this session.</p>
+    pub fn get_client_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_session_id
+    }
     /// <p>Represents the data being transformed during an action.</p>
     pub fn view_frame(mut self, input: crate::types::ViewFrame) -> Self {
         self.view_frame = ::std::option::Option::Some(input);
@@ -149,6 +169,10 @@ impl SendProjectSessionActionInputBuilder {
     pub fn set_view_frame(mut self, input: ::std::option::Option<crate::types::ViewFrame>) -> Self {
         self.view_frame = input;
         self
+    }
+    /// <p>Represents the data being transformed during an action.</p>
+    pub fn get_view_frame(&self) -> &::std::option::Option<crate::types::ViewFrame> {
+        &self.view_frame
     }
     /// Consumes the builder and constructs a [`SendProjectSessionActionInput`](crate::operation::send_project_session_action::SendProjectSessionActionInput).
     pub fn build(

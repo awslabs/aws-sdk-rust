@@ -64,6 +64,12 @@ impl EventDetailsErrorItemBuilder {
         self.event_arn = input;
         self
     }
+    /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
+    /// <p>For example, an event ARN might look like the following:</p>
+    /// <p> <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>
+    pub fn get_event_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.event_arn
+    }
     /// <p>The name of the error.</p>
     pub fn error_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_name = ::std::option::Option::Some(input.into());
@@ -73,6 +79,10 @@ impl EventDetailsErrorItemBuilder {
     pub fn set_error_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_name = input;
         self
+    }
+    /// <p>The name of the error.</p>
+    pub fn get_error_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_name
     }
     /// <p>A message that describes the error.</p>
     pub fn error_message(
@@ -89,6 +99,10 @@ impl EventDetailsErrorItemBuilder {
     ) -> Self {
         self.error_message = input;
         self
+    }
+    /// <p>A message that describes the error.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
     }
     /// Consumes the builder and constructs a [`EventDetailsErrorItem`](crate::types::EventDetailsErrorItem).
     pub fn build(self) -> crate::types::EventDetailsErrorItem {

@@ -38,6 +38,12 @@ impl DeleteAnalysisFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the DeleteAnalysis as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::delete_analysis::builders::DeleteAnalysisInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -126,6 +132,10 @@ impl DeleteAnalysisFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
+    /// <p>The ID of the Amazon Web Services account where you want to delete an analysis.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
     /// <p>The ID of the analysis that you're deleting.</p>
     pub fn analysis_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.analysis_id(input.into());
@@ -135,6 +145,10 @@ impl DeleteAnalysisFluentBuilder {
     pub fn set_analysis_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_analysis_id(input);
         self
+    }
+    /// <p>The ID of the analysis that you're deleting.</p>
+    pub fn get_analysis_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_analysis_id()
     }
     /// <p>A value that specifies the number of days that Amazon QuickSight waits before it deletes the analysis. You can't use this parameter with the <code>ForceDeleteWithoutRecovery</code> option in the same API call. The default value is 30.</p>
     pub fn recovery_window_in_days(mut self, input: i64) -> Self {
@@ -146,6 +160,10 @@ impl DeleteAnalysisFluentBuilder {
         self.inner = self.inner.set_recovery_window_in_days(input);
         self
     }
+    /// <p>A value that specifies the number of days that Amazon QuickSight waits before it deletes the analysis. You can't use this parameter with the <code>ForceDeleteWithoutRecovery</code> option in the same API call. The default value is 30.</p>
+    pub fn get_recovery_window_in_days(&self) -> &::std::option::Option<i64> {
+        self.inner.get_recovery_window_in_days()
+    }
     /// <p>This option defaults to the value <code>NoForceDeleteWithoutRecovery</code>. To immediately delete the analysis, add the <code>ForceDeleteWithoutRecovery</code> option. You can't restore an analysis after it's deleted. </p>
     pub fn force_delete_without_recovery(mut self, input: bool) -> Self {
         self.inner = self.inner.force_delete_without_recovery(input);
@@ -155,5 +173,9 @@ impl DeleteAnalysisFluentBuilder {
     pub fn set_force_delete_without_recovery(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force_delete_without_recovery(input);
         self
+    }
+    /// <p>This option defaults to the value <code>NoForceDeleteWithoutRecovery</code>. To immediately delete the analysis, add the <code>ForceDeleteWithoutRecovery</code> option. You can't restore an analysis after it's deleted. </p>
+    pub fn get_force_delete_without_recovery(&self) -> &::std::option::Option<bool> {
+        self.inner.get_force_delete_without_recovery()
     }
 }

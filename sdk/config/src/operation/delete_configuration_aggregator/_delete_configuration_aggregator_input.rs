@@ -45,6 +45,12 @@ impl DeleteConfigurationAggregatorInputBuilder {
         self.configuration_aggregator_name = input;
         self
     }
+    /// <p>The name of the configuration aggregator.</p>
+    pub fn get_configuration_aggregator_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_aggregator_name
+    }
     /// Consumes the builder and constructs a [`DeleteConfigurationAggregatorInput`](crate::operation::delete_configuration_aggregator::DeleteConfigurationAggregatorInput).
     pub fn build(
         self,

@@ -142,6 +142,12 @@ impl DescribePredictorBacktestExportJobOutputBuilder {
         self.predictor_backtest_export_job_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job.</p>
+    pub fn get_predictor_backtest_export_job_arn(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.predictor_backtest_export_job_arn
+    }
     /// <p>The name of the predictor backtest export job.</p>
     pub fn predictor_backtest_export_job_name(
         mut self,
@@ -157,6 +163,12 @@ impl DescribePredictorBacktestExportJobOutputBuilder {
     ) -> Self {
         self.predictor_backtest_export_job_name = input;
         self
+    }
+    /// <p>The name of the predictor backtest export job.</p>
+    pub fn get_predictor_backtest_export_job_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.predictor_backtest_export_job_name
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor.</p>
     pub fn predictor_arn(
@@ -174,6 +186,10 @@ impl DescribePredictorBacktestExportJobOutputBuilder {
         self.predictor_arn = input;
         self
     }
+    /// <p>The Amazon Resource Name (ARN) of the predictor.</p>
+    pub fn get_predictor_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.predictor_arn
+    }
     /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional). </p>
     pub fn destination(mut self, input: crate::types::DataDestination) -> Self {
         self.destination = ::std::option::Option::Some(input);
@@ -187,6 +203,10 @@ impl DescribePredictorBacktestExportJobOutputBuilder {
         self.destination = input;
         self
     }
+    /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional). </p>
+    pub fn get_destination(&self) -> &::std::option::Option<crate::types::DataDestination> {
+        &self.destination
+    }
     /// <p>Information about any errors that may have occurred during the backtest export.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
@@ -196,6 +216,10 @@ impl DescribePredictorBacktestExportJobOutputBuilder {
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
+    }
+    /// <p>Information about any errors that may have occurred during the backtest export.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
     }
     /// <p>The status of the predictor backtest export job. States include: </p>
     /// <ul>
@@ -219,6 +243,16 @@ impl DescribePredictorBacktestExportJobOutputBuilder {
         self.status = input;
         self
     }
+    /// <p>The status of the predictor backtest export job. States include: </p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
     /// <p>When the predictor backtest export job was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
@@ -231,6 +265,10 @@ impl DescribePredictorBacktestExportJobOutputBuilder {
     ) -> Self {
         self.creation_time = input;
         self
+    }
+    /// <p>When the predictor backtest export job was created.</p>
+    pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_time
     }
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
@@ -259,6 +297,19 @@ impl DescribePredictorBacktestExportJobOutputBuilder {
         self.last_modification_time = input;
         self
     }
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
+    /// <ul>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
+    /// </ul>
+    pub fn get_last_modification_time(
+        &self,
+    ) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modification_time
+    }
     /// <p>The format of the exported data, CSV or PARQUET.</p>
     pub fn format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.format = ::std::option::Option::Some(input.into());
@@ -268,6 +319,10 @@ impl DescribePredictorBacktestExportJobOutputBuilder {
     pub fn set_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.format = input;
         self
+    }
+    /// <p>The format of the exported data, CSV or PARQUET.</p>
+    pub fn get_format(&self) -> &::std::option::Option<::std::string::String> {
+        &self.format
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());

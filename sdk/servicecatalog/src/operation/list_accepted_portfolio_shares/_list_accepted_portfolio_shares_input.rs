@@ -95,6 +95,14 @@ impl ListAcceptedPortfolioSharesInputBuilder {
         self.accept_language = input;
         self
     }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// </ul>
+    pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.accept_language
+    }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.page_token = ::std::option::Option::Some(input.into());
@@ -105,6 +113,10 @@ impl ListAcceptedPortfolioSharesInputBuilder {
         self.page_token = input;
         self
     }
+    /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
+    pub fn get_page_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.page_token
+    }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn page_size(mut self, input: i32) -> Self {
         self.page_size = ::std::option::Option::Some(input);
@@ -114,6 +126,10 @@ impl ListAcceptedPortfolioSharesInputBuilder {
     pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.page_size = input;
         self
+    }
+    /// <p>The maximum number of items to return with this call.</p>
+    pub fn get_page_size(&self) -> &::std::option::Option<i32> {
+        &self.page_size
     }
     /// <p>The type of shared portfolios to list. The default is to list imported portfolios.</p>
     /// <ul>
@@ -137,6 +153,17 @@ impl ListAcceptedPortfolioSharesInputBuilder {
     ) -> Self {
         self.portfolio_share_type = input;
         self
+    }
+    /// <p>The type of shared portfolios to list. The default is to list imported portfolios.</p>
+    /// <ul>
+    /// <li> <p> <code>AWS_ORGANIZATIONS</code> - List portfolios accepted and shared via organizational sharing by the management account or delegated administrator of your organization.</p> </li>
+    /// <li> <p> <code>AWS_SERVICECATALOG</code> - Deprecated type.</p> </li>
+    /// <li> <p> <code>IMPORTED</code> - List imported portfolios that have been accepted and shared through account-to-account sharing.</p> </li>
+    /// </ul>
+    pub fn get_portfolio_share_type(
+        &self,
+    ) -> &::std::option::Option<crate::types::PortfolioShareType> {
+        &self.portfolio_share_type
     }
     /// Consumes the builder and constructs a [`ListAcceptedPortfolioSharesInput`](crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesInput).
     pub fn build(

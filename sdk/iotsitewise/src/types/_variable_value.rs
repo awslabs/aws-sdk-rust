@@ -50,6 +50,10 @@ impl VariableValueBuilder {
         self.property_id = input;
         self
     }
+    /// <p>The ID of the property to use as the variable. You can use the property <code>name</code> if it's from the same asset model.</p>
+    pub fn get_property_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.property_id
+    }
     /// <p>The ID of the hierarchy to query for the property ID. You can use the hierarchy's name instead of the hierarchy's ID.</p>
     /// <p>You use a hierarchy ID instead of a model ID because you can have several hierarchies using the same model and therefore the same <code>propertyId</code>. For example, you might have separately grouped assets that come from the same asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn hierarchy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -61,6 +65,11 @@ impl VariableValueBuilder {
     pub fn set_hierarchy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hierarchy_id = input;
         self
+    }
+    /// <p>The ID of the hierarchy to query for the property ID. You can use the hierarchy's name instead of the hierarchy's ID.</p>
+    /// <p>You use a hierarchy ID instead of a model ID because you can have several hierarchies using the same model and therefore the same <code>propertyId</code>. For example, you might have separately grouped assets that come from the same asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn get_hierarchy_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hierarchy_id
     }
     /// Consumes the builder and constructs a [`VariableValue`](crate::types::VariableValue).
     pub fn build(self) -> crate::types::VariableValue {

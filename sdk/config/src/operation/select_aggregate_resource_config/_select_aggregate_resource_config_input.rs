@@ -71,6 +71,10 @@ impl SelectAggregateResourceConfigInputBuilder {
         self.expression = input;
         self
     }
+    /// <p>The SQL query SELECT command. </p>
+    pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.expression
+    }
     /// <p>The name of the configuration aggregator.</p>
     pub fn configuration_aggregator_name(
         mut self,
@@ -87,6 +91,12 @@ impl SelectAggregateResourceConfigInputBuilder {
         self.configuration_aggregator_name = input;
         self
     }
+    /// <p>The name of the configuration aggregator.</p>
+    pub fn get_configuration_aggregator_name(
+        &self,
+    ) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_aggregator_name
+    }
     /// <p>The maximum number of query results returned on each page. </p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
@@ -96,6 +106,10 @@ impl SelectAggregateResourceConfigInputBuilder {
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
+    }
+    /// <p>The maximum number of query results returned on each page. </p>
+    pub fn get_limit(&self) -> &::std::option::Option<i32> {
+        &self.limit
     }
     /// <p>The maximum number of query results returned on each page. Config also allows the Limit request parameter.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -107,6 +121,10 @@ impl SelectAggregateResourceConfigInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p>The maximum number of query results returned on each page. Config also allows the Limit request parameter.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
+    }
     /// <p>The nextToken string returned in a previous request that you use to request the next page of results in a paginated response. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -116,6 +134,10 @@ impl SelectAggregateResourceConfigInputBuilder {
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
+    }
+    /// <p>The nextToken string returned in a previous request that you use to request the next page of results in a paginated response. </p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     /// Consumes the builder and constructs a [`SelectAggregateResourceConfigInput`](crate::operation::select_aggregate_resource_config::SelectAggregateResourceConfigInput).
     pub fn build(

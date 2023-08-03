@@ -36,6 +36,12 @@ impl UpdateGcmChannelFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
+    /// Access the UpdateGcmChannel as a reference.
+    pub fn as_input(
+        &self,
+    ) -> &crate::operation::update_gcm_channel::builders::UpdateGcmChannelInputBuilder {
+        &self.inner
+    }
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn customize_middleware(
@@ -132,6 +138,10 @@ impl UpdateGcmChannelFluentBuilder {
         self.inner = self.inner.set_application_id(input);
         self
     }
+    /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_application_id()
+    }
     /// <p>Specifies the status and settings of the GCM channel for an application. This channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
     pub fn gcm_channel_request(mut self, input: crate::types::GcmChannelRequest) -> Self {
         self.inner = self.inner.gcm_channel_request(input);
@@ -144,5 +154,11 @@ impl UpdateGcmChannelFluentBuilder {
     ) -> Self {
         self.inner = self.inner.set_gcm_channel_request(input);
         self
+    }
+    /// <p>Specifies the status and settings of the GCM channel for an application. This channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
+    pub fn get_gcm_channel_request(
+        &self,
+    ) -> &::std::option::Option<crate::types::GcmChannelRequest> {
+        self.inner.get_gcm_channel_request()
     }
 }

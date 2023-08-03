@@ -48,6 +48,10 @@ impl ResourceBuilder {
         self.id = input;
         self
     }
+    /// <p>The identifier for the resource.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The identifier for a section of the resource, such as an AWS Lambda layer.</p>
     pub fn sub_resource_id(
         mut self,
@@ -63,6 +67,10 @@ impl ResourceBuilder {
     ) -> Self {
         self.sub_resource_id = input;
         self
+    }
+    /// <p>The identifier for a section of the resource, such as an AWS Lambda layer.</p>
+    pub fn get_sub_resource_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sub_resource_id
     }
     /// Consumes the builder and constructs a [`Resource`](crate::types::Resource).
     pub fn build(self) -> crate::types::Resource {

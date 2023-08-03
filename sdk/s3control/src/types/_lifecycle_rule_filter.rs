@@ -80,6 +80,12 @@ impl LifecycleRuleFilterBuilder {
         self.prefix = input;
         self
     }
+    /// <p>Prefix identifying one or more objects to which the rule applies.</p> <important>
+    /// <p>When you're using XML requests, you must replace special characters (such as carriage returns) in object keys with their equivalent XML entity codes. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML-related object key constraints</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// </important>
+    pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix
+    }
     /// <p>A container for a key-value name pair.</p>
     pub fn tag(mut self, input: crate::types::S3Tag) -> Self {
         self.tag = ::std::option::Option::Some(input);
@@ -89,6 +95,10 @@ impl LifecycleRuleFilterBuilder {
     pub fn set_tag(mut self, input: ::std::option::Option<crate::types::S3Tag>) -> Self {
         self.tag = input;
         self
+    }
+    /// <p>A container for a key-value name pair.</p>
+    pub fn get_tag(&self) -> &::std::option::Option<crate::types::S3Tag> {
+        &self.tag
     }
     /// <p>The container for the <code>AND</code> condition for the lifecycle rule.</p>
     pub fn and(mut self, input: crate::types::LifecycleRuleAndOperator) -> Self {
@@ -103,6 +113,10 @@ impl LifecycleRuleFilterBuilder {
         self.and = input;
         self
     }
+    /// <p>The container for the <code>AND</code> condition for the lifecycle rule.</p>
+    pub fn get_and(&self) -> &::std::option::Option<crate::types::LifecycleRuleAndOperator> {
+        &self.and
+    }
     /// <p>Minimum object size to which the rule applies.</p>
     pub fn object_size_greater_than(mut self, input: i64) -> Self {
         self.object_size_greater_than = ::std::option::Option::Some(input);
@@ -113,6 +127,10 @@ impl LifecycleRuleFilterBuilder {
         self.object_size_greater_than = input;
         self
     }
+    /// <p>Minimum object size to which the rule applies.</p>
+    pub fn get_object_size_greater_than(&self) -> &::std::option::Option<i64> {
+        &self.object_size_greater_than
+    }
     /// <p>Maximum object size to which the rule applies.</p>
     pub fn object_size_less_than(mut self, input: i64) -> Self {
         self.object_size_less_than = ::std::option::Option::Some(input);
@@ -122,6 +140,10 @@ impl LifecycleRuleFilterBuilder {
     pub fn set_object_size_less_than(mut self, input: ::std::option::Option<i64>) -> Self {
         self.object_size_less_than = input;
         self
+    }
+    /// <p>Maximum object size to which the rule applies.</p>
+    pub fn get_object_size_less_than(&self) -> &::std::option::Option<i64> {
+        &self.object_size_less_than
     }
     /// Consumes the builder and constructs a [`LifecycleRuleFilter`](crate::types::LifecycleRuleFilter).
     pub fn build(self) -> crate::types::LifecycleRuleFilter {

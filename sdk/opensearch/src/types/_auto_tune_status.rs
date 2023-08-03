@@ -83,6 +83,10 @@ impl AutoTuneStatusBuilder {
         self.creation_date = input;
         self
     }
+    /// <p>Date and time when Auto-Tune was enabled for the domain.</p>
+    pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.creation_date
+    }
     /// <p>Date and time when the Auto-Tune options were last updated for the domain.</p>
     pub fn update_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_date = ::std::option::Option::Some(input);
@@ -96,6 +100,10 @@ impl AutoTuneStatusBuilder {
         self.update_date = input;
         self
     }
+    /// <p>Date and time when the Auto-Tune options were last updated for the domain.</p>
+    pub fn get_update_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.update_date
+    }
     /// <p>The latest version of the Auto-Tune options.</p>
     pub fn update_version(mut self, input: i32) -> Self {
         self.update_version = ::std::option::Option::Some(input);
@@ -106,6 +114,10 @@ impl AutoTuneStatusBuilder {
         self.update_version = input;
         self
     }
+    /// <p>The latest version of the Auto-Tune options.</p>
+    pub fn get_update_version(&self) -> &::std::option::Option<i32> {
+        &self.update_version
+    }
     /// <p>The current state of Auto-Tune on the domain.</p>
     pub fn state(mut self, input: crate::types::AutoTuneState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -115,6 +127,10 @@ impl AutoTuneStatusBuilder {
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::AutoTuneState>) -> Self {
         self.state = input;
         self
+    }
+    /// <p>The current state of Auto-Tune on the domain.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::AutoTuneState> {
+        &self.state
     }
     /// <p>Any errors that occurred while enabling or disabling Auto-Tune.</p>
     pub fn error_message(
@@ -132,6 +148,10 @@ impl AutoTuneStatusBuilder {
         self.error_message = input;
         self
     }
+    /// <p>Any errors that occurred while enabling or disabling Auto-Tune.</p>
+    pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.error_message
+    }
     /// <p>Indicates whether the domain is being deleted.</p>
     pub fn pending_deletion(mut self, input: bool) -> Self {
         self.pending_deletion = ::std::option::Option::Some(input);
@@ -141,6 +161,10 @@ impl AutoTuneStatusBuilder {
     pub fn set_pending_deletion(mut self, input: ::std::option::Option<bool>) -> Self {
         self.pending_deletion = input;
         self
+    }
+    /// <p>Indicates whether the domain is being deleted.</p>
+    pub fn get_pending_deletion(&self) -> &::std::option::Option<bool> {
+        &self.pending_deletion
     }
     /// Consumes the builder and constructs a [`AutoTuneStatus`](crate::types::AutoTuneStatus).
     pub fn build(self) -> crate::types::AutoTuneStatus {

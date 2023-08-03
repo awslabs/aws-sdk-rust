@@ -39,6 +39,10 @@ impl DeleteSecurityConfigurationInputBuilder {
         self.name = input;
         self
     }
+    /// <p>The name of the security configuration.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`DeleteSecurityConfigurationInput`](crate::operation::delete_security_configuration::DeleteSecurityConfigurationInput).
     pub fn build(
         self,

@@ -53,6 +53,10 @@ impl OriginRequestPolicySummaryBuilder {
         self.r#type = input;
         self
     }
+    /// <p>The type of origin request policy, either <code>managed</code> (created by Amazon Web Services) or <code>custom</code> (created in this Amazon Web Services account).</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::OriginRequestPolicyType> {
+        &self.r#type
+    }
     /// <p>The origin request policy.</p>
     pub fn origin_request_policy(mut self, input: crate::types::OriginRequestPolicy) -> Self {
         self.origin_request_policy = ::std::option::Option::Some(input);
@@ -65,6 +69,12 @@ impl OriginRequestPolicySummaryBuilder {
     ) -> Self {
         self.origin_request_policy = input;
         self
+    }
+    /// <p>The origin request policy.</p>
+    pub fn get_origin_request_policy(
+        &self,
+    ) -> &::std::option::Option<crate::types::OriginRequestPolicy> {
+        &self.origin_request_policy
     }
     /// Consumes the builder and constructs a [`OriginRequestPolicySummary`](crate::types::OriginRequestPolicySummary).
     pub fn build(self) -> crate::types::OriginRequestPolicySummary {

@@ -77,6 +77,10 @@ impl ListCatalogItemsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>The pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     /// <p>The maximum page size.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -86,6 +90,10 @@ impl ListCatalogItemsInputBuilder {
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
+    }
+    /// <p>The maximum page size.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        &self.max_results
     }
     /// Appends an item to `item_class_filter`.
     ///
@@ -106,6 +114,12 @@ impl ListCatalogItemsInputBuilder {
         self.item_class_filter = input;
         self
     }
+    /// <p>Filters the results by item class.</p>
+    pub fn get_item_class_filter(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::CatalogItemClass>> {
+        &self.item_class_filter
+    }
     /// Appends an item to `supported_storage_filter`.
     ///
     /// To override the contents of this collection use [`set_supported_storage_filter`](Self::set_supported_storage_filter).
@@ -124,6 +138,12 @@ impl ListCatalogItemsInputBuilder {
     ) -> Self {
         self.supported_storage_filter = input;
         self
+    }
+    /// <p>Filters the results by storage option.</p>
+    pub fn get_supported_storage_filter(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::SupportedStorageEnum>> {
+        &self.supported_storage_filter
     }
     /// Appends an item to `ec2_family_filter`.
     ///
@@ -146,6 +166,12 @@ impl ListCatalogItemsInputBuilder {
     ) -> Self {
         self.ec2_family_filter = input;
         self
+    }
+    /// <p>Filters the results by EC2 family (for example, M5).</p>
+    pub fn get_ec2_family_filter(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ec2_family_filter
     }
     /// Consumes the builder and constructs a [`ListCatalogItemsInput`](crate::operation::list_catalog_items::ListCatalogItemsInput).
     pub fn build(
